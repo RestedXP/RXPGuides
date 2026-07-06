@@ -8,7 +8,7 @@ local _G = _G
 local len, fmt, lower, find, match, gmatch = string.len, string.format, string.lower, string.find, string.match, string.gmatch
 local tcount, tinsert, twipe, tsort, tremove, tconcat = table.count, table.insert, table.wipe, table.sort, table.remove, table.concat
 local pairs, ipairs, next, type, tostring, tonumber, error, unpack = pairs, ipairs, next, type, tostring, tonumber, error, unpack
-local max, min, abs, floor, ceil, huge = math.max, math.min, math.abs, math.floor, math.ceil, math.huge
+local max, min, abs, floor, ceil, huge, log = math.max, math.min, math.abs, math.floor, math.ceil, math.huge, math.log
 local CanSendAuctionQuery, QueryAuctionItems, SetSelectedAuctionItem = _G.CanSendAuctionQuery, _G.QueryAuctionItems, _G.SetSelectedAuctionItem
 local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo = _G.GetNumAuctionItems, _G.GetAuctionItemLink, _G.GetAuctionItemInfo
 local GetNumPrimaryProfessions, GetProfessionInfo, GetSpellTabInfo = _G.GetNumPrimaryProfessions, _G.GetProfessionInfo, _G.GetSpellTabInfo --GetProfessions is not used in classics
@@ -849,6 +849,14 @@ local function calculatePercent(professionName, recipeName, skillLevel)
     return percent
 end
 
+--Calculate how many attempts are needed to guarantee targetPercent P probability
+local function calculateAttemptCount(percentChance, targetPercent)
+    if percentChance > 1.0 then return 1 end
+    if percentChance == 0 then return huge end
+    local n = log(1 - targetPercent) / log(1 - percentChance)
+    return ceil(n)
+end
+
 --Applies a 'bonus' for the percentage
 local function applyPercentageBonus(percentage, bonus)
     if percentage + bonus > 1.0 then
@@ -884,6 +892,7 @@ end
 
 --Calculates how many recipes it should make based on chances
 --Returns an interger
+--TODO: Deprecate this!!!!
 local function calculateHowManyToMake(professionName, recipeName, skillLevel)
     local percent = calculatePercent(professionName, recipeName, skillLevel)
     local howManyToMake = (percent > 0) and ceil(1 / percent) or 0
@@ -1470,7 +1479,7 @@ local function getSortedKeys(sortedRecipesByPrice)
     return sorted
 end
 --[[
-Assumes one calculation method has been envoked (profSession.recipesToConsider is populated)
+Assumes **both** calculation methods has been envoked (average and minimum)
 General idea:
 0) Create an empty set of actual recipes to craft
 1) Calculate raw value of each recipe
@@ -1510,11 +1519,12 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
         end
         --Check if we have money
         if money >= recipePrice and canCreateIthRecipe then
-            --We have money 
-            howManyToMake = calculateHowManyToMake(professionName, recipeName, skillLevel + skillLevelsGained)
-            if howManyToMake == 0 then
+            --We have money
+            local percent = calculatePercent(professionName, recipeName, skillLevel + skillLevelsGained)
+            howManyToMake = calculateAttemptCount(percent, 0.8) --TODO:Change treshold to dynamic
+            if howManyToMake == 0 or howManyToMake == huge then
                 canCreateIthRecipe = false
-            elseif howManyToMake > 1 then --Move to next 100%
+            elseif howManyToMake > 1 then
                 --TODO: Reimplement this
             end
             while howManyToMake > 0 and canCreateIthRecipe do --Add greedily
