@@ -528,8 +528,19 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         AceGUI:ClearFocus()
     end
 
-    local function Frame_OnMouseUp(frame)
+    local function SaveFrameStatus(frame)
         frame:StopMovingOrSizing()
+        local this = frame.obj
+        local status = this.status or this.localstatus
+        status.width = frame:GetWidth()
+        status.height = frame:GetHeight()
+        status.top = frame:GetTop()
+        status.left = frame:GetLeft()
+        addon.settings:SaveFramePositions()
+    end
+
+    local function Frame_OnMouseUp(frame)
+        SaveFrameStatus(frame)
         AceGUI:ClearFocus()
     end
 
@@ -539,14 +550,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
     end
 
     local function MoverSizer_OnMouseUp(mover)
-        local frame = mover:GetParent()
-        frame:StopMovingOrSizing()
-        local this = frame.obj
-        local status = this.status or this.localstatus
-        status.width = frame:GetWidth()
-        status.height = frame:GetHeight()
-        status.top = frame:GetTop()
-        status.left = frame:GetLeft()
+        SaveFrameStatus(mover:GetParent())
     end
 
     local function Sizer_OnMouseDown(frame)
@@ -582,9 +586,9 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             content.width = contentwidth
         end,
 
-        ["GetWidth"] = function(this) return this.content.width end,
+        ["GetWidth"] = function(this) return this.frame:GetWidth() end,
 
-        ["GetHeight"] = function(this) return this.content.height end,
+        ["GetHeight"] = function(this) return this.frame:GetHeight() end,
 
         ["SetSize"] = function(this, width, height)
             this:SetWidth(width)
@@ -1299,6 +1303,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
                 this.titletext:SetAlpha(0)
                 this.title:SetSize(layout.horizontalPadding or 8, layout.height or 16)
             else
+                this.titletext:SetAlpha(1)
                 this.title:SetAlpha(1)
                 this.titletext:SetText(title)
                 this.title:SetSize(this.titletext:GetStringWidth() + (layout.horizontalPadding or 8),
