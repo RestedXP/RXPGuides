@@ -2636,27 +2636,47 @@ function addon.v2:UpdateActiveStepTheme()
     end
 end
 
+-- hiddentext only hides a step in the main guide list; optional steps still
+-- belong in the active-step window.
+function addon.v2:IsActiveStepShown(step)
+    return step.active and not step.hidewindow and not step.hidetip
+end
+
+function addon.v2:GetActiveStepText(step)
+    if step.text and step.text ~= "" then return step.text end
+    if step.hiddentext and step.hiddentext ~= "" then return step.hiddentext end
+end
+
+function addon.v2:IsActiveStepRenderReady(step)
+    local hasText = not not self:GetActiveStepText(step)
+    for _, element in ipairs(step.elements or {}) do
+        if element.text == " " then
+            return false
+        elseif element.text then
+            hasText = true
+        elseif element.requestFromServer then
+            return false
+        end
+    end
+    return hasText
+end
+
 function addon.v2:EncodePlayerActiveSteps(payload)
     local trimmedPayload = {}
 
-    local trimmedStep, encodeStep
+    local trimmedStep
     -- Only encode values that matter for sharing, activeSteps includes multiple stack overflowing reference loopbacks
     for _, step in ipairs(payload) do
-        encodeStep = true
-
-        if step.hiddentext then
-            encodeStep = false
-        end
-
-        if encodeStep then
+        if self:IsActiveStepShown(step) then
             trimmedStep = { }
 
             -- Copy all top-level not-tables
             for k, v in pairs(step) do
-                if type(v) ~= "table" then
+                if type(v) ~= "table" and k ~= "hiddentext" then
                     trimmedStep[k] = v
                 end
             end
+            trimmedStep.text = self:GetActiveStepText(step)
 
             -- Element tables contain runtime callbacks and frame references.
             -- Party frames intentionally use the rendered step text instead.
@@ -2668,7 +2688,7 @@ function addon.v2:EncodePlayerActiveSteps(payload)
     return LibDeflate:EncodeForWoWChatChannel(LibDeflate:CompressDeflate(addon.comms:Serialize(trimmedPayload)))
 end
 
-local function IsValidActiveStepsPayload(steps)
+function addon.v2:IsValidActiveStepsPayload(steps)
     if type(steps) ~= "table" then return false end
 
     local count = 0
@@ -2689,6 +2709,8 @@ local function IsValidActiveStepsPayload(steps)
         if step.text ~= nil and type(step.text) ~= "string" then return false end
         if step.title ~= nil and type(step.title) ~= "string" then return false end
         if step.hiddentext ~= nil and type(step.hiddentext) ~= "string" then return false end
+        if step.hidewindow ~= nil and type(step.hidewindow) ~= "boolean" then return false end
+        if step.hidetip ~= nil and type(step.hidetip) ~= "boolean" then return false end
 
         local stepIdType = type(step.stepId)
         if step.stepId ~= nil and stepIdType ~= "number" and stepIdType ~= "string" then
@@ -2712,12 +2734,12 @@ function addon.v2:DecodePlayerActiveSteps(encodedPayload)
     if not decompressed then return end
 
     local deserializeResult, deserialized = addon.comms:Deserialize(decompressed)
-    if not deserializeResult or not IsValidActiveStepsPayload(deserialized) then return end
+    if not deserializeResult or not self:IsValidActiveStepsPayload(deserialized) then return end
 
     return deserialized
 end
 
-local function GetActiveStepKey(step, occurrences)
+function addon.v2:GetActiveStepKey(step, occurrences)
     local identity = step.stepId or step.index
     local key = type(identity) .. ":" .. tostring(identity)
     local occurrence = (occurrences[key] or 0) + 1
@@ -2725,7 +2747,7 @@ local function GetActiveStepKey(step, occurrences)
     return key .. ":" .. occurrence
 end
 
-local function ReconcileActiveStepItems(playerState, steps, widgetType, updateItem)
+function addon.v2:ReconcileActiveStepItems(playerState, steps, widgetType, updateItem)
     local childContainer = playerState.childContainer
     local previousItems = playerState.activeStepItemsByKey or {}
     local nextItems = {}
@@ -2734,9 +2756,9 @@ local function ReconcileActiveStepItems(playerState, steps, widgetType, updateIt
     local displayStep, key, stepItem
 
     for _, step in ipairs(steps) do
-        displayStep = step.active and not step.hiddentext
+        displayStep = self:IsActiveStepShown(step)
         if displayStep then
-            key = GetActiveStepKey(step, occurrences)
+            key = self:GetActiveStepKey(step, occurrences)
             stepItem = previousItems[key]
             if stepItem then
                 previousItems[key] = nil
@@ -2745,7 +2767,7 @@ local function ReconcileActiveStepItems(playerState, steps, widgetType, updateIt
                 stepItem:SetFullWidth(true)
             end
 
-            updateItem(stepItem, step)
+            updateItem(self, stepItem, step)
             nextItems[key] = stepItem
             orderedItems[#orderedItems + 1] = stepItem
         end
@@ -2768,7 +2790,7 @@ local function ReconcileActiveStepItems(playerState, steps, widgetType, updateIt
     playerState.activeStepItems = orderedItems
 end
 
-local function UpdatePlayerActiveStepItem(stepItem, step)
+function addon.v2:UpdatePlayerActiveStepItem(stepItem, step)
     stepItem:SetTitle(step.title or fmt(L("Step %d"), step.index))
 
     local elementCount = stepItem:SetElements(step)
@@ -2798,7 +2820,7 @@ local function UpdatePlayerActiveStepItem(stepItem, step)
     end
 end
 
-local function UpdatePartyActiveStepItem(stepItem, step)
+function addon.v2:UpdatePartyActiveStepItem(stepItem, step)
     stepItem:SetTitle(step.title or fmt(L("Step %d"), step.index))
 
     local label = stepItem.stepTextLabel
@@ -2832,18 +2854,9 @@ function addon.v2:UpdateActiveStepsFrame(steps)
     local renderReady = true
 
     for _, step in ipairs(steps) do
-        if step.active and not step.hiddentext and not step.text then
-            payloadReady = false
-            local hasElementText = false
-            for _, element in ipairs(step.elements or {}) do
-                if element.text then
-                    hasElementText = true
-                    break
-                end
-            end
-            if not hasElementText then
-                renderReady = false
-            end
+        if self:IsActiveStepShown(step) then
+            if not self:GetActiveStepText(step) then payloadReady = false end
+            if not self:IsActiveStepRenderReady(step) then renderReady = false end
         end
     end
 
@@ -2857,9 +2870,6 @@ function addon.v2:UpdateActiveStepsFrame(steps)
     end
 
     if not renderReady then
-        for _, stepItem in ipairs(playerState.activeStepItems) do
-            stepItem:RefreshElements()
-        end
         return
     end
 
@@ -2867,8 +2877,8 @@ function addon.v2:UpdateActiveStepsFrame(steps)
 
     if not playerStepFrame then return end
 
-    ReconcileActiveStepItems(
-        playerState, steps, "RXPV2ActiveStepItem", UpdatePlayerActiveStepItem)
+    self:ReconcileActiveStepItems(
+        playerState, steps, "RXPV2ActiveStepItem", self.UpdatePlayerActiveStepItem)
 
     playerState.encodedPayload = encodedPayload
 end
@@ -2884,7 +2894,7 @@ function addon.v2:UpdateActivePartyStepsFrame(encodedPayload, player)
     local payloadReady = true
 
     for _, step in ipairs(steps) do
-        if step.active and not step.hiddentext and not step.text then
+        if self:IsActiveStepShown(step) and not self:GetActiveStepText(step) then
             payloadReady = false
             break
         end
@@ -2899,8 +2909,8 @@ function addon.v2:UpdateActivePartyStepsFrame(encodedPayload, player)
     local playerState = self.state.player[player]
     if playerState.encodedPayload == encodedPayload then return end
 
-    ReconcileActiveStepItems(
-        playerState, steps, "RXPV2ActivePartyStepItem", UpdatePartyActiveStepItem)
+    self:ReconcileActiveStepItems(
+        playerState, steps, "RXPV2ActivePartyStepItem", self.UpdatePartyActiveStepItem)
 
     playerState.encodedPayload = encodedPayload
 end
