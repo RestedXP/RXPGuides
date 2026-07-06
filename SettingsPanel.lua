@@ -2394,6 +2394,11 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 4.1,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end,
                         hidden = isNotAdvanced
                     },
                     activePartyStepsV2WindowScale = {
@@ -4494,39 +4499,35 @@ function addon.settings:SaveFramePositions()
 
 end
 
-function addon.settings:LoadFramePositions()
-    local point, relativeToName, relativePoint, offsetX, offsetYOrNil
-    local result, reason
-    local p = addon.settings.profile
+function addon.settings:LoadFramePosition(frameName, frame)
+    if frame.savePosition == false then return end
 
-    for frameName, frame in pairs(addon.enabledFrames) do
-        if frame.savePosition ~= false and p ~= nil then
-            -- Wipe alpha frame data
-            -- Alpha frame restoration only tracked one point, to [1] would be "TOPLEFT" or similar
-            if p.framePositions[frameName] and p.framePositions[frameName][1] and
-                type(p.framePositions[frameName][1]) ~= "table" then
-                p.framePositions[frameName] = nil
-            end
+    local p = self.profile
+    local positions = p.framePositions and p.framePositions[frameName]
 
-            if p.framePositions[frameName] then
-                for i = 1, frame:GetNumPoints() or 0 do
-                    point, relativeToName, relativePoint, offsetX, offsetYOrNil =
-                        unpack(p.framePositions[frameName][i] or {})
+    -- Alpha frame restoration only tracked one point as a string.
+    if positions and positions[1] and type(positions[1]) ~= "table" then
+        p.framePositions[frameName] = nil
+        positions = nil
+    end
 
-                    frame:ClearAllPoints()
-                    result, reason = pcall(frame.SetPoint, frame, point,
-                                        relativeToName, relativePoint, offsetX,
-                                        offsetYOrNil)
-                end
-            end
-
-            if p.frameSizes[frameName] then
-                frame:SetSize(unpack(p.frameSizes[frameName]))
-            end
+    if positions then
+        frame:ClearAllPoints()
+        for i = 1, #positions do
+            pcall(frame.SetPoint, frame, unpack(positions[i]))
         end
     end
 
-    addon.settings:LoadScales()
+    local size = p.frameSizes and p.frameSizes[frameName]
+    if size then frame:SetSize(unpack(size)) end
+end
+
+function addon.settings:LoadFramePositions()
+    for frameName, frame in pairs(addon.enabledFrames) do
+        self:LoadFramePosition(frameName, frame)
+    end
+
+    self:LoadScales()
 end
 
 function addon.settings:LoadScales()
