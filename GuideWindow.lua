@@ -2666,26 +2666,51 @@ function addon.v2:EncodePlayerActiveSteps(payload)
     return LibDeflate:EncodeForWoWChatChannel(LibDeflate:CompressDeflate(addon.comms:Serialize(trimmedPayload)))
 end
 
--- Not-player encodedPayload gets deserialized upstream in OnCommReceived
-function addon.v2:DecodePlayerActiveSteps(encodedPayload)
+local function IsValidActiveStepsPayload(steps)
+    if type(steps) ~= "table" then return false end
 
-    -- if not encodedPayload then return end
+    local count = 0
+    for index in pairs(steps) do
+        if type(index) ~= "number" or index < 1 or index % 1 ~= 0 then
+            return false
+        end
+        count = count + 1
+    end
+
+    if count ~= #steps then return false end
+
+    for index = 1, count do
+        local step = steps[index]
+        if type(step) ~= "table" then return false end
+
+        if step.active ~= nil and type(step.active) ~= "boolean" then return false end
+        if step.text ~= nil and type(step.text) ~= "string" then return false end
+        if step.title ~= nil and type(step.title) ~= "string" then return false end
+        if step.hiddentext ~= nil and type(step.hiddentext) ~= "string" then return false end
+
+        local stepIdType = type(step.stepId)
+        if step.stepId ~= nil and stepIdType ~= "number" and stepIdType ~= "string" then
+            return false
+        end
+
+        if step.index ~= nil and type(step.index) ~= "number" then return false end
+        if step.title == nil and step.index == nil then return false end
+    end
+
+    return true
+end
+
+function addon.v2:DecodePlayerActiveSteps(encodedPayload)
+    if type(encodedPayload) ~= "string" then return end
 
     local decoded = LibDeflate:DecodeForWoWChatChannel(encodedPayload)
-
-    if not decoded then
-        addon.comms.PrettyPrint(L"Invalid data")
-        return
-    end
+    if not decoded then return end
 
     local decompressed = LibDeflate:DecompressDeflate(decoded)
+    if not decompressed then return end
 
     local deserializeResult, deserialized = addon.comms:Deserialize(decompressed)
-
-    if not deserializeResult then
-        addon.comms.PrettyPrint(L"Error Importing: " .. deserialized)
-        return
-    end
+    if not deserializeResult or not IsValidActiveStepsPayload(deserialized) then return end
 
     return deserialized
 end
@@ -2820,9 +2845,9 @@ function addon.v2:UpdateActiveStepsFrame(steps)
         end
     end
 
-    if payloadReady and playerState.broadcastPayload ~= encodedPayload then
+    if payloadReady and playerState.broadcastPayload ~= encodedPayload and
+        addon.comms.grouping:BroadcastCurrentStep(encodedPayload) then
         playerState.broadcastPayload = encodedPayload
-        addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
     end
 
     if not addon.settings.profile.enableV2ActiveStepsFrame then

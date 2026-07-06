@@ -444,13 +444,9 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
 
         ["Show"] = function(this) this.frame:Show() end,
 
-        ["SetShown"] = function(this)
-            if this.frame:IsShown() then
-                this.frame:Hide()
-            else
-                this.frame:Show()
-            end
-        end,
+        ["SetShown"] = function(this, shown) this.frame:SetShown(shown) end,
+
+        ["IsForbidden"] = function(this) return this.frame:IsForbidden() end,
 
         ["LayoutFinished"] = function(this, width, height)
             if this.noAutoHeight then return end
@@ -623,13 +619,9 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         ["Show"] = function(this) this.frame:Show() end,
 
-        ["SetShown"] = function(this)
-            if this.frame:IsShown() then
-                this.frame:Hide()
-            else
-                this.frame:Show()
-            end
-        end,
+        ["SetShown"] = function(this, shown) this.frame:SetShown(shown) end,
+
+        ["IsForbidden"] = function(this) return this.frame:IsForbidden() end,
 
         -- called to set an external table to store status in
         ["SetStatusTable"] = function(this, status)

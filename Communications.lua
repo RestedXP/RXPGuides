@@ -112,8 +112,7 @@ function addon.comms:GROUP_FORMED()
         addon.comms.grouping:UpdateParty()
 
         if addon.RXPFrame.activeSteps then
-            local encodedPayload = addon.v2:EncodePlayerActiveSteps(addon.RXPFrame.activeSteps)
-            addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
+            addon.v2:UpdateActiveStepsFrame(addon.RXPFrame.activeSteps)
         end
     end)
 end
@@ -131,8 +130,7 @@ function addon.comms:GROUP_ROSTER_UPDATE()
 
     C_Timer.After(5 + mrand(5), function()
         if addon.RXPFrame.activeSteps then
-            local encodedPayload = addon.v2:EncodePlayerActiveSteps(addon.RXPFrame.activeSteps)
-            addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
+            addon.v2:UpdateActiveStepsFrame(addon.RXPFrame.activeSteps)
         end
     end)
 end
@@ -272,7 +270,7 @@ function addon.comms:OnCommReceived(prefix, data, _, sender)
 
     local status, obj = self:Deserialize(data)
 
-    if not status or not obj.command then return end
+    if not status or type(obj) ~= "table" or type(obj.command) ~= "string" then return end
 
     self.state.rxpGroupDetected = true
 
@@ -282,7 +280,7 @@ function addon.comms:OnCommReceived(prefix, data, _, sender)
     elseif obj.command == 'REPLY' then
         self:HandleAnnounce(obj)
         -- Don't respond on REPLY
-    elseif obj.command == 'STEP' then
+    elseif obj.command == 'STEP' and type(obj.encodedPayload) == "string" then
         addon.v2.events:Trigger("UpdateActiveSteps", obj.encodedPayload, sender)
     end
 
@@ -326,6 +324,11 @@ function addon.comms:HandleAnnounce(data)
     self.players[data.player.name].xpPercentage = data.player.xpPercentage
     self.players[data.player.name].isRxp = true
     self.players[data.player.name].lastSeen = GetTime()
+
+    addon.comms.grouping:UpdateParty()
+    if addon.RXPFrame.activeSteps then
+        addon.v2:UpdateActiveStepsFrame(addon.RXPFrame.activeSteps)
+    end
 
     if not addon.settings.profile.checkVersions then return end
 
@@ -848,4 +851,5 @@ function addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
 
     local sz = addon.comms:Serialize(data)
     addon.comms:SendCommMessage(addon.comms._commPrefix, sz, "PARTY")
+    return true
 end
