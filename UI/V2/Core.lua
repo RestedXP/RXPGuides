@@ -933,8 +933,10 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                 questAction = element.tag == "accept" and _G.ACCEPT or
                               element.tag == "turnin" and _G.TURN_IN_QUEST
             end
+            local hasQuestData = questAction and
+                                 addon.EnsureQuestData(element.questId)
             if questAction and element.title and element.title ~= "" and
-                HaveQuestData(element.questId) then
+                hasQuestData then
                 row.text:SetText(format(
                     "%s |cffffff00|Hquest:%d|h[%s]|h|r",
                     questAction, element.questId, element.title))
