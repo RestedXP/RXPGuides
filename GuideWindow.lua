@@ -2585,8 +2585,10 @@ function addon.v2:GetActiveStepsFrame(player)
 
     self.state.player[player].activeStepFrame = stepFrame
 
-    _G["RXPActiveStepsFrame" .. player] = stepFrame
-    addon.enabledFrames["RXPActiveStepsFrame" .. player] = stepFrame
+    local frameName = "RXPActiveStepsFrame" .. player
+    _G[frameName] = stepFrame
+    addon.enabledFrames[frameName] = stepFrame
+    addon.settings:LoadFramePosition(frameName, stepFrame)
 
     self.state.player[player].childContainer = childContainer
 
