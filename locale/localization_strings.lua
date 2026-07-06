@@ -151,7 +151,7 @@ L["Quest is being turned in at"] = "Quest is being turned in at"
 L["Development"] = "Development"
 
 --SettingsPanel.lua
-L["Display Quest Link"] = format("%s %s %s", _G.DISPLAY, _G.LOOT_JOURNAL_LEGENDARIES_SOURCE_QUEST, _G.COMMUNITIES_INVITE_MANAGER_COLUMN_TITLE_LINK)
+L["Display Quest Link"] = "Display Quest Link"
 L["Please restart your game client and try again"] = "Please restart your game client and try again"
 L["Failed to Import Guides: Invalid Import String"] = "Failed to Import Guides: Invalid Import String"
 L["Guide Import"] = "Guide Import"
