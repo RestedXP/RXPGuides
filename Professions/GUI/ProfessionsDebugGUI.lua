@@ -295,7 +295,7 @@ function addon.professions.GUI.createGUI()
         guiFrame.printText.Text:SetText("")
 
         --Get calculation method type: 1 - minimum | 2 - average
-        local calculationMethod = 1 -- minimum by default
+        --[[local calculationMethod = 1 -- minimum by default
         if minimumPriceMethod:GetChecked() then calculationMethod = 1
         elseif averagePriceMethod:GetChecked() then calculationMethod = 2
         end
@@ -305,15 +305,19 @@ function addon.professions.GUI.createGUI()
         if moneyGreedyMethod:GetChecked() then greedMethod = 1
         elseif percentageGreedyMethod:GetChecked() then greedMethod = 2
         elseif moneyAndPercentageGreedyMethod:GetChecked() then greedMethod = 3
-        end
+        end]]
+
 
         local recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent
         local minSegment, maxSegment = aProf.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, RXPCData.professions.segmentRange)
         if true then--not printed then
             --Calculate prices
-            aProf.calculateRecipePrice(RXPCData.professions.profession1.name, calculationMethod)
+            --aProf.calculateRecipePrice(RXPCData.professions.profession1.name, calculationMethod)
+            aProf.calculateRecipePrice(RXPCData.professions.profession1.name, 1)
+            aProf.calculateRecipePrice(RXPCData.professions.profession1.name, 2)
 
             --Use selected methods
+            --[[
             if greedMethod == 1 then
                 recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent =
                 aProf.gatherRecipesToBuyGreedyMoney(
@@ -335,7 +339,13 @@ function addon.professions.GUI.createGUI()
                     RXPCData.professions.profession1.skillLevel,
                     maxSegment, RXPCData.professions.money
                 )
-            end
+            end]]
+            recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent =
+                aProf.gatherRecipesToBuyGreedy(
+                    RXPCData.professions.profession1.name,
+                    RXPCData.professions.profession1.skillLevel,
+                    maxSegment, RXPCData.professions.money
+                )
             textToPrint = aProf.greedyToString(recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent)
             textToPrint = textToPrint .. "==========\n"
             guiFrame.printText.Text:SetText(textToPrint)
