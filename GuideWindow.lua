@@ -215,7 +215,9 @@ function addon.ActiveStepElementOnLeave(frame)
     if frame:IsForbidden() or _G.GameTooltip:IsForbidden() then return end
 
     local element = frame.element or frame:GetParent().element
-    if element and element.tooltip then _G.GameTooltip:Hide() end
+    if element and element.tooltip and _G.GameTooltip:GetOwner() == frame then
+        _G.GameTooltip:Hide()
+    end
 end
 
 function addon.ActiveStepElementPostClick(button)

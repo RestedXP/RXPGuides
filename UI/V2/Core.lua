@@ -2,7 +2,7 @@ local addonName, addon = ...
 
 local locale = _G.GetLocale()
 local pairs, assert, type = pairs, assert, type
-local min, max, floor = math.min, math.max, math.floor
+local min, max, floor, abs = math.min, math.max, math.floor, math.abs
 local CreateFrame, UIParent = CreateFrame, UIParent
 
 -- AceAddon doesn't exist yet
@@ -792,6 +792,8 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             _G.GameTooltip:Hide()
         end
         row.text:SetText("")
+        row.rxpQuestLink = nil
+        row.hoverFrame:Hide()
         row.element = nil
         row.button:SetChecked(false)
         row.button.rxpHovered = nil
@@ -811,7 +813,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         local width = this.content:GetWidth()
         if not width or width <= 0 then return end
 
-        local row, element, hasButton, hasIcon, textLeft, rowHeight
+        local row, element, hasButton, hasIcon, textLeft, textTop, textWidth, textHeight, textAvailable, rowHeight
         local checkboxLeft = elementLayout.checkboxLeft or 3
         local checkboxSize = elementLayout.checkboxSize or 14
         local textGap = elementLayout.textGap or 8
@@ -824,17 +826,30 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             if hasIcon then
                 textLeft = checkboxLeft + checkboxSize + (elementLayout.iconLeftGap or 5) +
                            (elementLayout.iconWidth or 14) + (elementLayout.iconGap or 6)
+                textTop = -3
             else
                 textLeft = hasButton and (checkboxLeft + checkboxSize + textGap) or
                            (elementLayout.textOnlyLeft or 31)
+                textTop = -1
             end
 
             row:SetWidth(width)
-            row.text:SetWidth(max(0, width - textLeft))
+            textAvailable = max(0, width - textLeft)
+            row.text:ClearAllPoints()
+            row.text:SetPoint("TOPLEFT", row, "TOPLEFT", textLeft, textTop)
+            row.text:SetPoint("TOPRIGHT", row, "TOPRIGHT", 0, textTop)
+            row.text:SetWidth(textAvailable)
+            textWidth = min(row.text:GetStringWidth(), textAvailable)
+            textHeight = row.text:GetStringHeight()
 
             rowHeight = max(elementLayout.minHeight or 18,
-                            math.ceil(row.text:GetStringHeight() * 1.05) + 1)
+                            abs(textTop) +
+                            math.ceil(textHeight * 1.05) + 1)
             row:SetHeight(rowHeight)
+            row.hoverFrame:ClearAllPoints()
+            row.hoverFrame:SetPoint("TOPLEFT", row, "TOPLEFT", textLeft, textTop)
+            row.hoverFrame:SetSize(textWidth, textHeight)
+            row.hoverFrame:SetShown(row.rxpQuestLink and textWidth > 0 and textHeight > 0)
             row.layoutHeight = rowHeight
             row:ClearAllPoints()
             row:SetPoint("TOPLEFT", this.content, "TOPLEFT", 0, -height)
@@ -926,7 +941,29 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         end
     end
 
+    local function elementRowOnEnter(hoverFrame)
+        local row = hoverFrame.row
+        if row.rxpQuestLink then
+            elementTextOnHyperlinkEnter(row, row.rxpQuestLink)
+        end
+    end
+
+    local function elementRowOnLeave(hoverFrame)
+        local row = hoverFrame.row
+        if row.rxpQuestLink then
+            elementTextOnHyperlinkLeave(row)
+        end
+    end
+
+    local function elementRowOnClick(hoverFrame, button)
+        local row = hoverFrame.row
+        if row.rxpQuestLink then
+            elementTextOnHyperlinkClick(row, row.rxpQuestLink, row.text:GetText(), button)
+        end
+    end
+
     local function updateElementRowText(row, element, resetPending)
+        row.rxpQuestLink = nil
         if element.text and element.text ~= " " then
             local questAction
             if addon.settings.profile.activeStepsV2RenderQuestName then
@@ -937,6 +974,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                                  addon.EnsureQuestData(element.questId)
             if questAction and element.title and element.title ~= "" and
                 hasQuestData then
+                row.rxpQuestLink = format("quest:%d", element.questId)
                 row.text:SetText(format(
                     "%s |cffffff00|Hquest:%d|h[%s]|h|r",
                     questAction, element.questId, element.title))
@@ -1012,6 +1050,16 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         text:SetWordWrap(true)
         text:SetPoint("TOPLEFT", button, "TOPRIGHT", elementLayout.textGap or 8, -1)
         row.text = text
+
+        local hoverFrame = CreateFrame("Button", nil, row)
+        hoverFrame.row = row
+        hoverFrame:SetFrameLevel(row:GetFrameLevel() + 3)
+        hoverFrame:EnableMouse(true)
+        hoverFrame:SetScript("OnEnter", elementRowOnEnter)
+        hoverFrame:SetScript("OnLeave", elementRowOnLeave)
+        hoverFrame:SetScript("OnClick", elementRowOnClick)
+        hoverFrame:Hide()
+        row.hoverFrame = hoverFrame
 
         return row
     end
