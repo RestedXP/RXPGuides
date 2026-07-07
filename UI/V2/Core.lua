@@ -192,8 +192,9 @@ function addon.ui.v2:AddFrameShadow(frame, xOffset, yOffset, alpha, size, shadow
     right:SetPoint("BOTTOMRIGHT", shadow, "BOTTOMRIGHT", 0, size)
     right:SetWidth(size)
 
+    local corner
     for _, point in ipairs({"TOPLEFT", "TOPRIGHT", "BOTTOMLEFT", "BOTTOMRIGHT"}) do
-        local corner = createShadowTexture()
+        corner = createShadowTexture()
         corner:SetPoint(point)
         corner:SetSize(size, size)
     end

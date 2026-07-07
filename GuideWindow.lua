@@ -2703,8 +2703,9 @@ function addon.v2:IsValidActiveStepsPayload(steps)
 
     if count ~= #steps then return false end
 
+    local step, stepIdType
     for index = 1, count do
-        local step = steps[index]
+        step = steps[index]
         if type(step) ~= "table" then return false end
 
         if step.active ~= nil and type(step.active) ~= "boolean" then return false end
@@ -2714,7 +2715,7 @@ function addon.v2:IsValidActiveStepsPayload(steps)
         if step.hidewindow ~= nil and type(step.hidewindow) ~= "boolean" then return false end
         if step.hidetip ~= nil and type(step.hidetip) ~= "boolean" then return false end
 
-        local stepIdType = type(step.stepId)
+        stepIdType = type(step.stepId)
         if step.stepId ~= nil and stepIdType ~= "number" and stepIdType ~= "string" then
             return false
         end
