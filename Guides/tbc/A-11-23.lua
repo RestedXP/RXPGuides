@@ -1,4 +1,4 @@
-if GetLocale() == "zhCN" then return end
+if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 #displayname 11-14 Darkshore << !Human !Mage
 #displayname 12-14 Darkshore << Gnome Mage
 #subgroup RestedXP Alliance 1-20
-#defaultfor !Draenei
+#defaultfor Human/NightElf/Dwarf/Gnome !Warlock
 #next 14-20 Bloodmyst
 
 step << !NightElf

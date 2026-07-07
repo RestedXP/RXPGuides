@@ -483,7 +483,7 @@ local function enableTotalEPLines(itemData, lines)
 end
 
 local function TooltipSetItem(tooltip, ...)
-    if not addon.settings.profile.enableItemUpgrades or not addon.settings.profile.enableTips then return end
+    if not addon.settings.profile.enableItemUpgrades or not addon.settings.profile.enableTips or addon.settings.profile.disableUpgradeTooltip then return end
 
     local _, itemLink = tooltip:GetItem()
     if not itemLink then return end

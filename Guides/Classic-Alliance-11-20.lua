@@ -4,7 +4,7 @@ if faction == "Horde" then return end
 ----Start of <1.5x Westfall----
 ----Night Elves and Hunters stay in Darkshore and Grind----
 
-if GetLocale() == "zhCN" then return end
+if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
 RXPGuides.RegisterGuide([[
 #xprate <1.5
 #classic
@@ -10422,12 +10422,16 @@ step
     .goto Ashenvale,36.61,49.58
     .accept 991 >> Accept Raene's Cleansing
     .accept 1054 >> Accept Culling the Threat
+step
+    #label HCHunterNoHS --hidden step for #include
 step << !Dwarf/!Hunter
     #xprate <1.59
     .goto Ashenvale,36.99,49.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kimlya|r
     .home >> Set your Hearthstone to Astranaar
     .target Innkeeper Kimlya
+step
+    #label HCHunterNoHSStart --hidden step for #include
 step
     #xprate <1.59
     .goto Ashenvale,36.6,49.8
@@ -10500,6 +10504,8 @@ step
     .target Delgren the Purifier
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
     .turnin 973 >> Turn in The Tower of Althalaxx
+step
+    #label HCHunterEnd --hidden step for #include
 step
     #xprate <1.59
     #sticky

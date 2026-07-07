@@ -1,51 +1,14 @@
---DawnBreakerTeleport
-if GetLocale() == "zhCN" then return end
-RXPGuides.RegisterGuide([[
-#retail
-#version 3
-#group RestedXP War Within Endgame
-#name a) DawnBreakerTeleport
-#internal
+if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
+-- #############################################
+-- #                  MIDNIGHT                 #
+-- #############################################
 
-step
-    .zoneskip 2215
-    .zone 2359 >>Open the Dungeon Finder, navigate to Follower Dungeons, and queue for |cRXP_WARN_'The Dawnbreaker'|r.
-step
-    .zoneskip 2215
-    .gossipoption 124142 >>Talk to |cRXP_FRIENDLY_General Steelstrike|r inside Dawnbreaker. |cRXP_WARN_She should be visible from the entrance. Use the Active Targets frame to mark her.|r
-    .target General Steelstrik
-]])
---Lost Dragonscale
+--GC: Stormwind Quests
 RXPGuides.RegisterGuide([[
 #retail
 #version 4
 #group RestedXP Speed Leveling
-#name a) Lost Dragonscale Horde 12232233232
-#internal
-
-<< Horde
-
-step
-    .accept 65436 >>Accept The Dragon Isles Await
-step
-    .isOnQuest 65435
-    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Orgrimmar.
-    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
-step
-    .isOnQuest 65435
-    .abandon 65435,1
--- step
---     .goto 84,79.83,27.08
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r to receive another |T134309:0|t[Lost Dragonscale] for future use.
---     .accept 65436 >>Accept The Dragon Isles Await
---     .target Wrathion
-]])
---Lost Dragonscale
-RXPGuides.RegisterGuide([[
-#retail
-#version 4
-#group RestedXP Speed Leveling
-#name a) Lost Dragonscale Horde 232332322323
+#name a) Stormwind Quests
 #internal
 
 step
@@ -76,451 +39,171 @@ step
     .target Thurman Schneider
 
 ]])
---Phase Diving
+--Housing Alliance
 RXPGuides.RegisterGuide([[
 #retail
-#version 1
-#group RestedXP War Within Loremaster
-#name a) Phase Diving Unlock Free
+#version 4
+#group RestedXP Speed Leveling
+#name a) Housing Tutorial Alliance
 #internal
 
+step
+    >>Press the macro "In the Active Items Frame" to start the housing tutorial
+    .accept 91863 >>Accept My First Home
+    .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
+step
+    .goto 2352,53.13,40.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyssabel Dawnpetal|r.
+    .complete 91863,1 --1/1 Greet the steward
+    .complete 91863,2 --1/1 Ask the steward to join you
+    .skipgossipid 135761
+    .skipgossipid 135770
+    .target Lyssabel Dawnpetal
+step
+    >>Buy an available House
+    .complete 91863,4 --1/1 Acquire a house
 
-step
-    .goto 2371,50.34,36.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
-    .turnin 90938 >>Turn in A Skip Through the Void
-    .target Hashim
-    .isOnQuest 90938
-step
-    .isQuestTurnedIn account,89561
-    #completewith next
-    #label Reshii Wraps
-    .equip 15,235499 >>Equip |T7110834:0|t[Reshii Wraps]
-    .use 235499
-step
-    #completewith Reshii Wraps
-    .goto 2371,50.34,36.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
-    .collect 235499,1
-    .skipgossipid 133897
-step
-    #requires Reshii Wraps
-    .goto 2371,50.34,36.33
-    .equip 15,235499 >>Equip |T7110834:0|t[Reshii Wraps]
-    .use 235499
-    .subzoneskip 15807,1
-step
-    .goto 2371,74.90,31.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
-    .accept 89380 >>Accept Another World
-    .target Shad'anis
-step
-    .isOnQuest 89380
-    .goto 2371,50.36,36.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
-    .turnin 89380 >>Turn in Another World
-    .accept 89343 >>Accept The Untethered Void
-    .target Shad'anis
-step
-    .goto 2371,50.41,36.40
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Phase Conduit|r
-    .complete 89343,2 --1/1 Untethered Space entered
-step
-    .goto 2371,50.41,36.40
-    >>Use the |T4913234:0|t[|cRXP_WARN_ExtraActionButton|r]
-    *|cRXP_WARN_Relog if you can't turn in the quest after using the |cRXP_WARN_ExtraActionButton|r|r
-    .complete 89343,3 --1/1 Return to Normal Space
-step
-    .goto 2371,50.36,36.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
-    .turnin 89343 >>Turn in The Untethered Void
-    .accept 89344 >>Accept What Doesn't See You
-    .target Shad'anis
-step
-    #completewith next
-    #label WhatDoesntSeeYouA
-    #hidewindow
-    .complete 89344,1 --4/4 Untethered Observers slain
-    .complete 89344,2 --1/1 Phase Energy collected
-step
-    #completewith WhatDoesntSeeYouA
-    .goto 2371,50.41,36.40
-    .aura 1214374,1 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Phase Conduit|r
-step
-    #requires WhatDoesntSeeYouA
-    #completewith next
-    >>Kill |cRXP_ENEMY_Untethered Observers|r
-    .complete 89344,1 --4/4 Untethered Observers slain
-    .mob Untethered Observer
-step
-    #requires WhatDoesntSeeYouA
-    .goto 2371,49.10,37.81
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Phase Energy|r
-    .complete 89344,2 --1/1 Phase Energy collected
-step
-    #loop
-    .goto 2371,48.33,37.15,30,0
-    .goto 2371,49.39,36.27,35,0
-    .goto 2371,49.20,39.49,35,0
-    .goto 2371,48.06,38.61,35,0
-    >>Kill |cRXP_ENEMY_Untethered Observers|r
-    .complete 89344,1 --4/4 Untethered Observers slain
-    .mob Untethered Observer
-step
-    #completewith next
-    #label WhatDoesntSeeYouB
-    #hidewindow
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
-    .turnin 89344 >>Turn in What Doesn't See You
-    .accept 89345 >>Accept The Untethered Horror
-    .target Shad'anis
-step
-    #completewith next
-    .aura -1214374 >>Remove the |T135752:0|t[Phase Diving] buff (with Right-Click)
-    .macro Remove Aura,135752 >>/cancelaura Phase Diving
-step
-    #requires WhatDoesntSeeYouB
-    .goto 2371,50.36,36.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
-    .turnin 89344 >>Turn in What Doesn't See You
-    .accept 89345 >>Accept The Untethered Horror
-    .target Shad'anis
-step
-    #completewith next
-    #label Netherdeath
-    >>Kill |cRXP_ENEMY_Netherdeath|r
-    .complete 89345,1 --1/1 Netherdeath slain within Untethered Space
-    .mob Netherdeath
-step
-    #completewith Netherdeath
-    .goto 2371,50.41,36.41
-    .cast 1239390 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Phase Conduit|r.
-step
-    #requires Netherdeath
-    .goto 2371,48.44,39.56,30,0
-    .goto 2371,47.90,40.57
-    >>Kill |cRXP_ENEMY_Netherdeath|r
-    .complete 89345,1 --1/1 Netherdeath slain within Untethered Space
-    .mob Netherdeath
-step
-    #completewith next
-    #label TheUntetheredHorrorA
-    #hidewindow
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
-    .turnin 89345 >>Turn in The Untethered Horror
-    .target Shad'anis
-step
-    #completewith next
-    .aura -1214374 >>Remove the |T135752:0|t[Phase Diving] buff (with Right-Click)
-    .macro Remove Aura,135752 >>/cancelaura Phase Diving
-step
-    #completewith TheUntetheredHorrorA
-    #hidewindow
-    .goto 2371,50.36,36.31,20 >>Follow the Arrow
-step
-    #requires TheUntetheredHorrorA
-    .goto 2371,50.36,36.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
-    .turnin 89345 >>Turn in The Untethered Horror
-    .target Shad'anis
-step
-    .goto 2371,50.34,36.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
-    .accept 89561 >>Accept Wrapped Up
-    .target Hashim
-step
-    .goto 2371,50.34,36.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
-    .complete 89561,1 --1/1 Ask Hashim about empowering the Reshii Wraps
-    .skipgossipid 132925
-step
-    .goto 2371,50.34,36.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r and select the upgrades.
-    .complete 89561,2 --1/1 Ask Hashim about empowering the Reshii Wraps
-    .skipgossipid 132925
-step
-    .goto 2371,50.34,36.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
-    .turnin 89561 >>Turn in Wrapped Up
-    .target Hashim
+--teleport unlock
 
 
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyssabel Dawnpetal|r |cRXP_WARN_next to you|r.
+    .turnin 91863 >>Turn in My First Home
+    .accept 94455 >>Accept Home at Last
+    .target Lyssabel Dawnpetal
+step
+    >>Enter your House.
+    .complete 94455,1 --1/1 Enter your house via the front door
+    .turnin 94455 >>Turn in Home at Last
+step
+    .goto 2351,54.11,59.08
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 94210,1 --1/1 Visit merchants selling local decor
+step
+    .goto 2351,53.52,58.50
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 94210,3 --1/1 Visit merchants selling elven decor
+step
+    .goto 2351,53.67,57.57
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 94210,2 --1/1 Visit merchants selling flora decor
+step
+    .goto 2351,53.69,57.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Altariath|r.
+    .complete 94210,4 --1/1 Ask the Last Architect about other decor sources
+    .skipgossipid 137162
+    .target Altariath
+step
+    .goto 2351,39.84,72.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"High Tides" Ren|r.
+    .complete 94210,5 --1/1 Visit the smugglers
+    .target "High Tides" Ren
+step
+    .goto 2351,39.84,72.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"High Tides" Ren|r.
+    .complete 94210,6 --1/1 Buy Sethraliss Priest's Pillow
+    .skipgossipid 137315
+    .buy 244778,1
+    .target "High Tides" Ren
+step
+    >>Use |T742183:0|t[Sethraliss Priest's Pillow]
+    .complete 94210,7 --1/1 Add Sethraliss Priest's Pillow to House Chest
+    .use 244778
+step
+    .goto 2351,55.30,57.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tocho Cloudhide|r.
+    .turnin 94210 >>Turn in Feathering the Nest
+    .target Tocho Cloudhide
+    .accept 94379 >>Accept This Old Hearth
+step
+    .goto 2351,53.52,56.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rotha|r.
+    .complete 94379,1 --1/1 Visit the general contractor
+    .target Rotha
 ]])
---Skyriding Panda
+--Housing Horde
 RXPGuides.RegisterGuide([[
 #retail
-#version 1
-#group RestedXP Legion Remix
-#name a) Skyriding Panda
+#version 4
+#group RestedXP Speed Leveling
+#name a) Housing Tutorial Horde
 #internal
 
+<< Horde
+
 step
-    #completewith Skyriding Panda
-    #hidewindow
-    +test
-    .use 245925 -- Artifactium Sand
-    .use 249891 -- Mound of Artifactium Sand
-    .use 246937 -- Perfected Epoch Memento
-    .use 242516 -- Memento of Epoch Legends
-    .use 238726 -- Drake Treat
-    .use 217956 -- Timeless Scroll of Summoning
-    .use 217730 -- Timeless Scroll of Chaos
-    .use 217606 -- Timeless Scroll of Fortitude
-    .use 217731 -- Timeless Scroll of Mystic Power
-    .use 217608 -- Timeless Scroll of Battle Shout
-    .use 217901 -- Timeless Drums
-    .use 217607 -- Timeless Scroll of the Wild
-    .use 217929 -- Timeless Scroll of Cleansing
-    .use 246936 -- Resonant Epoch Memento
-    .use 249786 -- Dreamweaver Champion's Insignia
-    .use 249787 -- Court of Farondis Champion's Insignia
-    .use 249785 -- Highmountain Tribe Champion's Insignia
-    .use 249783 -- Nightfallen Champion's Insignia
-    .use 249781 -- Wardens Champion's Insignia
-    .use 249780 -- Army of the Light Champion's Insignia
-    .use 249782 -- Valarjar Champion's Insignia
-    .use 249784 -- Legionfall Champion's Insignia
-    .use 249788 -- Argussian Reach Champion's Insignia
-    .usespell 1241425 -- Temporal Retreat
-    -- .openitem 237812 -- Cache of Infinite Treasure
-    -- .openitem 243373 -- Timerunner's Weaponry
-    -- .openitem 246814 -- Bronze Cache
-    -- .openitem 246813 -- Greater Bronze Cache
-    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
-    -- .openitem 253224 -- Mote of a Broken Time
-    -- .use 251821
-    -- .use 256763
+    >>Press the macro "In the Active Items Frame" to start the housing tutorial
+    .accept 91863 >>Accept My First Home
+    .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
 step
-    .goto 627,72.05,41.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
-    .accept 90754 >>Accept Skyriding
-    .timer 5,RP
-    .target Moratari
+    .goto 2351,55.30,57.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tocho Cloudhide|r.
+    .complete 91863,1 --1/1 Greet the steward
+    .complete 91863,2 --1/1 Ask the steward to join you
+    .skipgossipid 135727
+    .skipgossipid 135740
 step
-    .goto 627,72.41,41.40
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
-    .complete 90754,1 --1/1 Take Moratari's portal
+    >>Buy an available House
+    .complete 91863,4 --1/1 Acquire a house
 step
-    .goto 371,65.27,37.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r and choose one of the mounts.
-    *|cRXP_WARN_You can still obtain the other mounts at another time|r.
-    .complete 90754,2 --1/1 Acquire a skyriding mount from Lord Andestrasz
-    .target Lord Andestrasz
-    .skipgossipid 120917
-    -- .skipgossipid 120921
-    -- .skipgossipid 120920
-    -- .skipgossipid 120919
-    -- .skipgossipid 120918
+    .goto 2351,56.84,62.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tocho Cloudhide|r |cRXP_WARN_next to you|r.
+    .turnin 91863 >>Turn in My First Home
+    .accept 94455 >>Accept Home at Last
+    .target Tocho Cloudhide
+
+--teleport unlock
+
+
 step
-    .goto 371,65.27,37.18
-    >>Right-click to learn your mount.
-    .complete 90754,3 --1/1 Learn your new skyriding mount from your
-    .use 194034
-    .use 194521
-    .use 194106
-    .use 194549
-    .use 194705
+    >>Enter your House.
+    .complete 94455,1 --1/1 Enter your house via the front door
+    .turnin 94455 >>Turn in Home at Last
 step
-    .goto 371,65.27,37.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .complete 90754,4 --1/1 Speak to Lord Andestrasz about Skyriding
-    .target Lord Andestrasz
-    .skipgossipid 120916
+    .goto 2351,54.11,59.08
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 94210,1 --1/1 Visit merchants selling local decor
 step
-    .goto 371,65.27,37.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .turnin 90754 >>Turn in Skyriding
-    .accept 80013 >>Accept How to Glide with Your Dragon
-    .target Lord Andestrasz
+    .goto 2351,53.52,58.50
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 94210,3 --1/1 Visit merchants selling elven decor
 step
-    .goto 371,65.27,37.27
-    >>Mount up
-    .complete 80013,1 --1/1 Mount your drake from your collection [Shift+P]
+    .goto 2351,53.67,57.57
+    #title |cFFFCDC00Follow the Arrow|r
+    .complete 94210,2 --1/1 Visit merchants selling flora decor
 step
-    .goto 371,66.51,37.16,10,0
-    .goto 371,67.46,36.29
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80013,2,2 --2/5 Glide through the Rings
+    .goto 2351,53.69,57.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Altariath|r.
+    .complete 94210,4 --1/1 Ask the Last Architect about other decor sources
+    .skipgossipid 137162
+    .target Altariath
 step
-    .goto 371,67.46,36.29,10,0
-    .goto 371,67.80,34.64
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80013,2,3 --3/5 Glide through the Rings
+    .goto 2351,39.84,72.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"High Tides" Ren|r.
+    .complete 94210,5 --1/1 Visit the smugglers
+    .target "High Tides" Ren
 step
-    .goto 371,67.80,34.64,10,0
-    .goto 371,67.41,33.91
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80013,2,4 --4/5 Glide through the Rings
+    .goto 2351,39.84,72.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"High Tides" Ren|r.
+    .complete 94210,6 --1/1 Buy Sethraliss Priest's Pillow
+    .skipgossipid 137315
+    .buy 244778,1
+    .target "High Tides" Ren
 step
-    .goto 371,67.41,33.91
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80013,2 --5/5 Glide through the Rings
+    >>Use |T742183:0|t[Sethraliss Priest's Pillow]
+    .complete 94210,7 --1/1 Add Sethraliss Priest's Pillow to House Chest
+    .use 244778
 step
-    .goto 371,66.73,33.58
-    >>Land on the hill
-    .complete 80013,3 --1/1 Land in the target area
+    .goto 2351,55.30,57.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tocho Cloudhide|r.
+    .turnin 94210 >>Turn in Feathering the Nest
+    .target Tocho Cloudhide
+    .accept 94379 >>Accept This Old Hearth
 step
-    .goto 371,66.75,33.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celormu|r
-    .turnin 80013 >>Turn in How to Glide with Your Dragon
-    .timer 3,RP
-    .target Celormu
-step
-    .goto 371,65.27,37.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .accept 80015 >>Accept How to Dive with Your Dragon
-    .target Lord Andestrasz
-step
-    .goto 371,66.64,37.18,10,0
-    .goto 371,67.90,37.18
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] to maintain your speed.
-    .complete 80015,2,2 --2/7 Glide through the Rings
-step
-    .goto 371,67.90,37.18,10,0
-    .goto 371,68.95,37.95
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] to maintain your speed.
-    .complete 80015,2,3 --3/7 Glide through the Rings
-step
-    .goto 371,68.95,37.95,10,0
-    .goto 371,69.83,39.60
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] to maintain your speed.
-    .complete 80015,2,4 --4/7 Glide through the Rings
-step
-    .goto 371,69.83,39.60,10,0
-    .goto 371,70.00,43.96
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] to maintain your speed.
-    .complete 80015,2,5 --5/7 Glide through the Rings
-step
-    .goto 371,70.00,43.96,10,0
-    .goto 371,68.31,46.92
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] to maintain your speed.
-    .complete 80015,2,6 --6/7 Glide through the Rings
-step
-    .goto 371,68.31,46.92
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] to maintain your speed.
-    .complete 80015,2 --7/7 Glide through the Rings
-step
-    .goto 371,66.29,49.31
-    >>Follow the arrow
-    .complete 80015,3 --1/1 Land in the Target Area
-step
-    .goto 371,66.25,49.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celormu|r
-    .turnin 80015 >>Turn in How to Dive with Your Dragon
-    .timer 3,RP
-    .target Celormu
-step
-    .goto 371,65.27,37.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .accept 80016 >>Accept The Need For Higher Velocities
-    .target Lord Andestrasz
-step
-    .goto 371,66.29,37.21,10,0
-    .goto 371,68.27,36.26
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80016,2,2 --2/6 Glide through the Rings
-step
-    .goto 371,68.27,36.26,10,0
-    .goto 371,68.81,32.48
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80016,2,3 --3/6 Glide through the Rings
-step
-    .goto 371,68.81,32.48,10,0
-    .goto 371,67.41,27.37
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80016,2,4 --4/6 Glide through the Rings
-step
-    .goto 371,67.41,27.37,15,0
-    .goto 371,66.02,25.50
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80016,2,5 --5/6 Glide through the Rings
-step
-    .goto 371,66.02,25.50
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80016,2 --6/6 Glide through the Rings
-step
-    .goto 371,65.01,24.46
-    >>Follow the arrow.
-    .complete 80016,3 --1/1 Land in the Target Area
-step
-    .goto 371,64.98,24.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celormu|r
-    .turnin 80016 >>Turn in The Need For Higher Velocities
-    .timer 3,RP
-    .target Celormu
-step
-    .goto 371,65.27,37.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .accept 80017 >>Accept The Need For Higher Altitudes
-    .target Lord Andestrasz
-step
-    .goto 371,66.32,37.22,15,0
-    .goto 371,67.93,35.70
-    >>Let yourself glide down
-    .complete 80017,2,2 --2/6 Glide through the Rings
-step
-    .goto 371,67.93,35.70,15,0
-    .goto 371,68.77,33.45
-    >>Follow the rings. Use |T4640498:0|t[Skyward Ascent] after reaching the ring.
-    .complete 80017,2,3 --3/6 Glide through the Rings
-step
-    .goto 371,68.77,33.45,15,0
-    .goto 371,68.51,29.83
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80017,2,4 --4/6 Glide through the Rings
-step
-    .goto 371,68.51,29.83,15,0
-    .goto 371,65.39,29.58
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80017,2,5 --5/6 Glide through the Rings
-step
-    .goto 371,65.39,29.58
-    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
-    .complete 80017,2 --6/6 Glide through the Rings
-step
-    .goto 371,62.59,28.66
-    >>Follow the arrow
-    .complete 80017,3 --1/1 Land in the Target Area
-step
-    .goto 371,62.47,28.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celormu|r
-    .turnin 80017 >>Turn in The Need For Higher Altitudes
-    .timer 3,RP
-    .target Celormu
-step
-    .goto 371,65.27,37.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .accept 80018 >>Accept Fashionable Flying
-    .target Lord Andestrasz
-step
-    #completewith next
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rostrum of Transformation|r |cRXP_WARN_and leave it immediately|r
-    .complete 80018,1 --1/1 Rostrum of Transformation used
-step
-    #label Skyriding Panda
-    .goto 371,65.07,36.97,10,0
-    .goto 371,65.28,37.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .turnin 80018 >>Turn in Fashionable Flying
-    .accept 90755 >>Accept Time Flies
-    .target Lord Andestrasz
-step
-    #completewith next
-    #label TimeFliesA
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
-    .turnin 90755 >>Turn in Time Flies
-    .target Moratari
-step
-    #completewith TimeFliesA
-    .goto 371,65.13,37.09
-    .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Dalaran|r
-step
-    #requires TimeFliesA
-    #label Skyriding
-    .goto 627,72.04,41.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
-    .turnin 90755 >>Turn in Time Flies
-    .target Moratari
+    .goto 2351,53.52,56.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rotha|r.
+    .complete 94379,1 --1/1 Visit the general contractor
+    .target Rotha
 ]])
 --Darkmoon Faire
 RXPGuides.RegisterGuide([[
@@ -941,336 +624,620 @@ step << Horde
 --     .zoneskip 407,1
 --     .dmf
 ]])
---Skip
+--GC Alliance: Chromie Time Tower 
 RXPGuides.RegisterGuide([[
 #retail
-#version 2
+#version 4
 #group RestedXP Speed Leveling
-#name a) Skip
-#chapter
+#name a) GC Chromie Time Tower
+#internal
 
-]])
---Neighbourhood
-RXPGuides.RegisterGuide([[
-#retail
-#version 2
-#group RestedXP Speed Leveling
-#groupweight 999
-#subgroup |cFFFCDC00(1-90)|r Default
-#name a) Neighbourhood
-#displayname |cFF1EFF001|r - Welcome to the Neighbourhood
-#next ba) DF Alliance Intro (A) << Alliance
-#next b1) BfA Intro << Horde
-#chapter
 
-step << Alliance
-    #hidewindow
-    #completewith HousingEquip
-    +test
-    .usespell 1231411
-    .use 175204
-    .use 175177
-    .use 175196
-    .use 178941
-    .use 175175
-    .use 175185
-    .use 175199
-    .use 175191
-    .use 175180
-step << Horde
-    .zoneskip 1409,1
-    .zone 2351 >>Enter Housing Area
-    .choose 7338835
-step << Horde
-    .goto 2351,53.94,49.42
-    .zone 85 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
-    .zoneskip 2352,1
-step << Horde
-    #completewith next
-    #label HordePortalRoom
-    .goto 85,53.11,90.41,10,0
-    .goto 85,52.14,85.82,20,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    .accept 65435 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Horde
-    #completewith HordePortalRoom
-    .goto 85,40.82,80.13,100 >>Follow the Arrow
-step << Horde
-    #requires HordePortalRoom
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 65435 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Horde
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 51443 >>Accept Battle for Azeroth: Mission Statement
-    .chromietime 15
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Horde
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 43926 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
--- step << Horde
---     .goto 85,48.23,62.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7926 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step << Horde
---     .goto 85,48.23,62.19
---     .zone 7 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40007
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 85,1
---     .dmf
--- step << Horde
---     #include RestedXP Speed Leveling\a) DMF
-step << Alliance
-    .zoneskip 1409,1
-    .zone 2352 >>Enter Housing Area
-    .choose 7338835
-step << Alliance
-    .goto 2352,57.43,26.65
-    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
-    .zoneskip 2352,1
 step << Alliance
     #completewith next
     #label The Legion Returns
-    .goto 84,49.48,86.65,2,0
-    .goto 84,49.05,87.82,5,0
-    .goto 84,48.85,86.89,5,0
-    .goto 84,49.05,87.75,5,0
-    .goto 84,49.52,86.63,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+    .goto 84,49.19,87.25,8,0
+    .goto 84,49,86.94,8,0
+    .goto 84,48.66,87.49,8,0
+    .goto 84,49.11,87.64,8,0
+    .goto 84,49.42,86.83,8,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Hero's Call Board|r
     .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
+    .choose 1851120
 step << Alliance
     #completewith The Legion Returns
     .goto 84,56.257,17.311,812 >>Leave Mage Tower
 step << Alliance
     #requires The Legion Returns
-    #label HousingEquip
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+    .goto 84,62.21,29.84
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Hero's Call Board|r
     .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
+    .choose 1851120
+step << Alliance
+    .goto 84,62.21,29.84
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Hero's Call Board|r
+    .accept 62567 >>Accept Adventurers Wanted: Chromie's Call
+    .choose 1668214
+step << Alliance
+    .goto 84,56.26,17.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
+    .turnin 62567 >>Turn in Adventurers Wanted: Chromie's Call
+    .target Chromie
+step << Alliance
+    .isQuestAvailable 70122
+    .goto 84,56.257,17.311
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
+    -- .complete 53500,1 --Talk to Chromie (1)
+    -- .accept 65436 >>Accept The Dragon Isles Await
+    .cast 452213 >>Enter Chromie Time
+    .chromietime 16
     .skipgossipid 51901
     .skipgossipid 51902
     .target Chromie
--- step << Alliance
+step << Alliance
+    .goto 84,79.81,27.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
+    .accept 65436 >>Accept The Dragon Isles Await
+    .target Wrathion
+-- step
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
 --     .target Darkmoon Faire Mystic Mage
 --     .dmf
--- step << Alliance
+-- step
 --     .goto 84,62.1,32.2
 --     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
 --     .skipgossipid 40457
 --     .target Darkmoon Faire Mystic Mage
 --     .zoneskip 84,1
 --     .dmf
--- step << Alliance
+-- step
 --     #include RestedXP Speed Leveling\a) DMF
--- step << Alliance !VoidElf
---     .isOnQuest 40519
---     .subzone 10523 >>Use |T134418:0|t[Stormwind Portal Stone]
---     .cooldown item,132120,>0,1
---     .use 132120
---     .nodmf
-step << Alliance
+step  << Alliance
+    .subzoneskip 6292
     .isOnQuest 65436
     >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
     .nodmf
 ]])
---Housing Alliance 
+--GC Alliance: Chromie Time Normal
 RXPGuides.RegisterGuide([[
 #retail
 #version 4
 #group RestedXP Speed Leveling
-#name a) Housing Tutorial Alliance
+#name a) GC Chromie Time Normal
 #internal
 
 step
-    >>Press the macro "In the Active Items Frame" to start the housing tutorial
-    .accept 91863 >>Accept My First Home
-    .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
+    #label ChromieTime
+    .isQuestAvailable 70122
+    .goto 84,56.257,17.311
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
+    -- .complete 53500,1 --Talk to Chromie (1)
+    -- .accept 65436 >>Accept The Dragon Isles Await
+    .cast 452213 >>Enter Chromie Time
+    .chromietime 16
+    .skipgossipid 51901
+    .skipgossipid 51902
+    .target Chromie
+-- step
+--     .goto 84,56.257,17.311
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+--     .accept 40519 >>Accept Legion: The Legion Returns
+--     .chromietime 10
+--     .skipgossipid 51901
+--     .skipgossipid 51902
+--     .target Chromie
 step
-    .goto 2352,53.13,40.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyssabel Dawnpetal|r.
-    .complete 91863,1 --1/1 Greet the steward
-    .complete 91863,2 --1/1 Ask the steward to join you
-    .skipgossipid 135761
-    .skipgossipid 135770
-    .target Lyssabel Dawnpetal
+    #label CallBoardStart
+    .goto 84,62.21,29.84
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Hero's Call Board|r
+    .accept 40519 >>Accept Legion: The Legion Returns
+    .choose 1851120
 step
-    >>Buy an available House
-    .complete 91863,4 --1/1 Acquire a house
+    #label CallBoardStart3
+    .goto 84,79.81,27.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
+    .accept 65436 >>Accept The Dragon Isles Await
+    .target Wrathion
+-- step
+--      #label CallBoardStart2
+--     .goto 84,62.10,32.19
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
+--     .accept 7905 >>Accept The Darkmoon Faire
+--     .target Darkmoon Faire Mystic Mage
+--     .dmf
+-- step
+--     .goto 84,62.1,32.2
+--     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
+--     .skipgossipid 40457
+--     .target Darkmoon Faire Mystic Mage
+--     .zoneskip 84,1
+--     .dmf
+-- step
+--     #include RestedXP Speed Leveling\a) DMF
+step
+    #label CallBoardEnd
+    .subzoneskip 6292
+    .isOnQuest 65436
+    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
+    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
+    .nodmf
 
---teleport unlock
-
-
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyssabel Dawnpetal|r |cRXP_WARN_next to you|r.
-    .turnin 91863 >>Turn in My First Home
-    .accept 94455 >>Accept Home at Last
-    .target Lyssabel Dawnpetal
-step
-    >>Enter your House.
-    .complete 94455,1 --1/1 Enter your house via the front door
-    .turnin 94455 >>Turn in Home at Last
-step
-    .goto 2351,54.11,59.08
-    #title |cFFFCDC00Follow the Arrow|r
-    .complete 94210,1 --1/1 Visit merchants selling local decor
-step
-    .goto 2351,53.52,58.50
-    #title |cFFFCDC00Follow the Arrow|r
-    .complete 94210,3 --1/1 Visit merchants selling elven decor
-step
-    .goto 2351,53.67,57.57
-    #title |cFFFCDC00Follow the Arrow|r
-    .complete 94210,2 --1/1 Visit merchants selling flora decor
-step
-    .goto 2351,53.69,57.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Altariath|r.
-    .complete 94210,4 --1/1 Ask the Last Architect about other decor sources
-    .skipgossipid 137162
-    .target Altariath
-step
-    .goto 2351,39.84,72.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"High Tides" Ren|r.
-    .complete 94210,5 --1/1 Visit the smugglers
-    .target "High Tides" Ren
-step
-    .goto 2351,39.84,72.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"High Tides" Ren|r.
-    .complete 94210,6 --1/1 Buy Sethraliss Priest's Pillow
-    .skipgossipid 137315
-    .buy 244778,1
-    .target "High Tides" Ren
-step
-    >>Use |T742183:0|t[Sethraliss Priest's Pillow]
-    .complete 94210,7 --1/1 Add Sethraliss Priest's Pillow to House Chest
-    .use 244778
-step
-    .goto 2351,55.30,57.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tocho Cloudhide|r.
-    .turnin 94210 >>Turn in Feathering the Nest
-    .target Tocho Cloudhide
-    .accept 94379 >>Accept This Old Hearth
-step
-    .goto 2351,53.52,56.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rotha|r.
-    .complete 94379,1 --1/1 Visit the general contractor
-    .target Rotha
 ]])
---Housing Horde
+
+-- #########################################
+-- #                  TWW                  #
+-- #########################################
+
+--DawnBreakerTeleport
 RXPGuides.RegisterGuide([[
 #retail
-#version 4
-#group RestedXP Speed Leveling
-#name a) Housing Tutorial Horde
+#version 3
+#group RestedXP War Within Endgame
+#name a) DawnBreakerTeleport
 #internal
 
-<< Horde
-
 step
-    >>Press the macro "In the Active Items Frame" to start the housing tutorial
-    .accept 91863 >>Accept My First Home
-    .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
+    .zoneskip 2215
+    .zone 2359 >>Open the Dungeon Finder, navigate to Follower Dungeons, and queue for |cRXP_WARN_'The Dawnbreaker'|r.
 step
-    .goto 2351,55.30,57.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tocho Cloudhide|r.
-    .complete 91863,1 --1/1 Greet the steward
-    .complete 91863,2 --1/1 Ask the steward to join you
-    .skipgossipid 135727
-    .skipgossipid 135740
-step
-    >>Buy an available House
-    .complete 91863,4 --1/1 Acquire a house
-step
-    .goto 2351,56.84,62.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tocho Cloudhide|r |cRXP_WARN_next to you|r.
-    .turnin 91863 >>Turn in My First Home
-    .accept 94455 >>Accept Home at Last
-    .target Tocho Cloudhide
-
---teleport unlock
+    .zoneskip 2215
+    .gossipoption 124142 >>Talk to |cRXP_FRIENDLY_General Steelstrike|r inside Dawnbreaker. |cRXP_WARN_She should be visible from the entrance. Use the Active Targets frame to mark her.|r
+    .target General Steelstrik
+]])
+--Phase Diving
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP War Within Loremaster
+#name a) Phase Diving Unlock Free
+#internal
 
 
 step
-    >>Enter your House.
-    .complete 94455,1 --1/1 Enter your house via the front door
-    .turnin 94455 >>Turn in Home at Last
+    .goto 2371,50.34,36.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
+    .turnin 90938 >>Turn in A Skip Through the Void
+    .target Hashim
+    .isOnQuest 90938
 step
-    .goto 2351,54.11,59.08
-    #title |cFFFCDC00Follow the Arrow|r
-    .complete 94210,1 --1/1 Visit merchants selling local decor
+    .isQuestTurnedIn account,89561
+    #completewith next
+    #label Reshii Wraps
+    .equip 15,235499 >>Equip |T7110834:0|t[Reshii Wraps]
+    .use 235499
 step
-    .goto 2351,53.52,58.50
-    #title |cFFFCDC00Follow the Arrow|r
-    .complete 94210,3 --1/1 Visit merchants selling elven decor
+    #completewith Reshii Wraps
+    .goto 2371,50.34,36.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
+    .collect 235499,1
+    .skipgossipid 133897
 step
-    .goto 2351,53.67,57.57
-    #title |cFFFCDC00Follow the Arrow|r
-    .complete 94210,2 --1/1 Visit merchants selling flora decor
+    #requires Reshii Wraps
+    .goto 2371,50.34,36.33
+    .equip 15,235499 >>Equip |T7110834:0|t[Reshii Wraps]
+    .use 235499
+    .subzoneskip 15807,1
 step
-    .goto 2351,53.69,57.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Altariath|r.
-    .complete 94210,4 --1/1 Ask the Last Architect about other decor sources
-    .skipgossipid 137162
-    .target Altariath
+    .goto 2371,74.90,31.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
+    .accept 89380 >>Accept Another World
+    .target Shad'anis
 step
-    .goto 2351,39.84,72.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"High Tides" Ren|r.
-    .complete 94210,5 --1/1 Visit the smugglers
-    .target "High Tides" Ren
+    .isOnQuest 89380
+    .goto 2371,50.36,36.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
+    .turnin 89380 >>Turn in Another World
+    .accept 89343 >>Accept The Untethered Void
+    .target Shad'anis
 step
-    .goto 2351,39.84,72.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"High Tides" Ren|r.
-    .complete 94210,6 --1/1 Buy Sethraliss Priest's Pillow
-    .skipgossipid 137315
-    .buy 244778,1
-    .target "High Tides" Ren
+    .goto 2371,50.41,36.40
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Phase Conduit|r
+    .complete 89343,2 --1/1 Untethered Space entered
 step
-    >>Use |T742183:0|t[Sethraliss Priest's Pillow]
-    .complete 94210,7 --1/1 Add Sethraliss Priest's Pillow to House Chest
-    .use 244778
+    .goto 2371,50.41,36.40
+    >>Use the |T4913234:0|t[|cRXP_WARN_ExtraActionButton|r]
+    *|cRXP_WARN_Relog if you can't turn in the quest after using the |cRXP_WARN_ExtraActionButton|r|r
+    .complete 89343,3 --1/1 Return to Normal Space
 step
-    .goto 2351,55.30,57.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tocho Cloudhide|r.
-    .turnin 94210 >>Turn in Feathering the Nest
-    .target Tocho Cloudhide
-    .accept 94379 >>Accept This Old Hearth
+    .goto 2371,50.36,36.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
+    .turnin 89343 >>Turn in The Untethered Void
+    .accept 89344 >>Accept What Doesn't See You
+    .target Shad'anis
 step
-    .goto 2351,53.52,56.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rotha|r.
-    .complete 94379,1 --1/1 Visit the general contractor
-    .target Rotha
+    #completewith next
+    #label WhatDoesntSeeYouA
+    #hidewindow
+    .complete 89344,1 --4/4 Untethered Observers slain
+    .complete 89344,2 --1/1 Phase Energy collected
+step
+    #completewith WhatDoesntSeeYouA
+    .goto 2371,50.41,36.40
+    .aura 1214374,1 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Phase Conduit|r
+step
+    #requires WhatDoesntSeeYouA
+    #completewith next
+    >>Kill |cRXP_ENEMY_Untethered Observers|r
+    .complete 89344,1 --4/4 Untethered Observers slain
+    .mob Untethered Observer
+step
+    #requires WhatDoesntSeeYouA
+    .goto 2371,49.10,37.81
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Phase Energy|r
+    .complete 89344,2 --1/1 Phase Energy collected
+step
+    #loop
+    .goto 2371,48.33,37.15,30,0
+    .goto 2371,49.39,36.27,35,0
+    .goto 2371,49.20,39.49,35,0
+    .goto 2371,48.06,38.61,35,0
+    >>Kill |cRXP_ENEMY_Untethered Observers|r
+    .complete 89344,1 --4/4 Untethered Observers slain
+    .mob Untethered Observer
+step
+    #completewith next
+    #label WhatDoesntSeeYouB
+    #hidewindow
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
+    .turnin 89344 >>Turn in What Doesn't See You
+    .accept 89345 >>Accept The Untethered Horror
+    .target Shad'anis
+step
+    #completewith next
+    .aura -1214374 >>Remove the |T135752:0|t[Phase Diving] buff (with Right-Click)
+    .macro Remove Aura,135752 >>/cancelaura Phase Diving
+step
+    #requires WhatDoesntSeeYouB
+    .goto 2371,50.36,36.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
+    .turnin 89344 >>Turn in What Doesn't See You
+    .accept 89345 >>Accept The Untethered Horror
+    .target Shad'anis
+step
+    #completewith next
+    #label Netherdeath
+    >>Kill |cRXP_ENEMY_Netherdeath|r
+    .complete 89345,1 --1/1 Netherdeath slain within Untethered Space
+    .mob Netherdeath
+step
+    #completewith Netherdeath
+    .goto 2371,50.41,36.41
+    .cast 1239390 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Phase Conduit|r.
+step
+    #requires Netherdeath
+    .goto 2371,48.44,39.56,30,0
+    .goto 2371,47.90,40.57
+    >>Kill |cRXP_ENEMY_Netherdeath|r
+    .complete 89345,1 --1/1 Netherdeath slain within Untethered Space
+    .mob Netherdeath
+step
+    #completewith next
+    #label TheUntetheredHorrorA
+    #hidewindow
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
+    .turnin 89345 >>Turn in The Untethered Horror
+    .target Shad'anis
+step
+    #completewith next
+    .aura -1214374 >>Remove the |T135752:0|t[Phase Diving] buff (with Right-Click)
+    .macro Remove Aura,135752 >>/cancelaura Phase Diving
+step
+    #completewith TheUntetheredHorrorA
+    #hidewindow
+    .goto 2371,50.36,36.31,20 >>Follow the Arrow
+step
+    #requires TheUntetheredHorrorA
+    .goto 2371,50.36,36.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shad'anis|r
+    .turnin 89345 >>Turn in The Untethered Horror
+    .target Shad'anis
+step
+    .goto 2371,50.34,36.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
+    .accept 89561 >>Accept Wrapped Up
+    .target Hashim
+step
+    .goto 2371,50.34,36.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
+    .complete 89561,1 --1/1 Ask Hashim about empowering the Reshii Wraps
+    .skipgossipid 132925
+step
+    .goto 2371,50.34,36.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r and select the upgrades.
+    .complete 89561,2 --1/1 Ask Hashim about empowering the Reshii Wraps
+    .skipgossipid 132925
+step
+    .goto 2371,50.34,36.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hashim|r
+    .turnin 89561 >>Turn in Wrapped Up
+    .target Hashim
+
+
 ]])
 
 -- ##################################################
 -- #                  LEGION REMIX                  #
 -- ##################################################
+
+--Skyriding Tutorial Pandaria & Legion 
+RXPGuides.RegisterGuide([[
+#retail
+#version 1
+#group RestedXP Legion Remix
+#name a) Skyriding Panda
+#internal
+
+step
+    #completewith Skyriding Panda
+    #hidewindow
+    +test
+    .use 245925 -- Artifactium Sand
+    .use 249891 -- Mound of Artifactium Sand
+    .use 246937 -- Perfected Epoch Memento
+    .use 242516 -- Memento of Epoch Legends
+    .use 238726 -- Drake Treat
+    .use 217956 -- Timeless Scroll of Summoning
+    .use 217730 -- Timeless Scroll of Chaos
+    .use 217606 -- Timeless Scroll of Fortitude
+    .use 217731 -- Timeless Scroll of Mystic Power
+    .use 217608 -- Timeless Scroll of Battle Shout
+    .use 217901 -- Timeless Drums
+    .use 217607 -- Timeless Scroll of the Wild
+    .use 217929 -- Timeless Scroll of Cleansing
+    .use 246936 -- Resonant Epoch Memento
+    .use 249786 -- Dreamweaver Champion's Insignia
+    .use 249787 -- Court of Farondis Champion's Insignia
+    .use 249785 -- Highmountain Tribe Champion's Insignia
+    .use 249783 -- Nightfallen Champion's Insignia
+    .use 249781 -- Wardens Champion's Insignia
+    .use 249780 -- Army of the Light Champion's Insignia
+    .use 249782 -- Valarjar Champion's Insignia
+    .use 249784 -- Legionfall Champion's Insignia
+    .use 249788 -- Argussian Reach Champion's Insignia
+    .usespell 1241425 -- Temporal Retreat
+    -- .openitem 237812 -- Cache of Infinite Treasure
+    -- .openitem 243373 -- Timerunner's Weaponry
+    -- .openitem 246814 -- Bronze Cache
+    -- .openitem 246813 -- Greater Bronze Cache
+    -- .openitem 245553 -- Heroic Cache of Infinite Treasure
+    -- .openitem 253224 -- Mote of a Broken Time
+    -- .use 251821
+    -- .use 256763
+step
+    .goto 627,72.05,41.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
+    .accept 90754 >>Accept Skyriding
+    .timer 5,RP
+    .target Moratari
+step
+    .goto 627,72.41,41.40
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+    .complete 90754,1 --1/1 Take Moratari's portal
+step
+    .goto 371,65.27,37.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r and choose one of the mounts.
+    *|cRXP_WARN_You can still obtain the other mounts at another time|r.
+    .complete 90754,2 --1/1 Acquire a skyriding mount from Lord Andestrasz
+    .target Lord Andestrasz
+    .skipgossipid 120917
+    -- .skipgossipid 120921
+    -- .skipgossipid 120920
+    -- .skipgossipid 120919
+    -- .skipgossipid 120918
+step
+    .goto 371,65.27,37.18
+    >>Right-click to learn your mount.
+    .complete 90754,3 --1/1 Learn your new skyriding mount from your
+    .use 194034
+    .use 194521
+    .use 194106
+    .use 194549
+    .use 194705
+step
+    .goto 371,65.27,37.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
+    .complete 90754,4 --1/1 Speak to Lord Andestrasz about Skyriding
+    .target Lord Andestrasz
+    .skipgossipid 120916
+step
+    .goto 371,65.27,37.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
+    .turnin 90754 >>Turn in Skyriding
+    .accept 80013 >>Accept How to Glide with Your Dragon
+    .target Lord Andestrasz
+step
+    .goto 371,65.27,37.27
+    >>Mount up
+    .complete 80013,1 --1/1 Mount your drake from your collection [Shift+P]
+step
+    .goto 371,66.51,37.16,10,0
+    .goto 371,67.46,36.29
+    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
+    .complete 80013,2,2 --2/5 Glide through the Rings
+step
+    .goto 371,67.46,36.29,10,0
+    .goto 371,67.80,34.64
+    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
+    .complete 80013,2,3 --3/5 Glide through the Rings
+step
+    .goto 371,67.80,34.64,10,0
+    .goto 371,67.41,33.91
+    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
+    .complete 80013,2,4 --4/5 Glide through the Rings
+step
+    .goto 371,67.41,33.91
+    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
+    .complete 80013,2 --5/5 Glide through the Rings
+step
+    .goto 371,66.73,33.58
+    >>Land on the hill
+    .complete 80013,3 --1/1 Land in the target area
+step
+    .goto 371,66.75,33.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celormu|r
+    .turnin 80013 >>Turn in How to Glide with Your Dragon
+    .timer 3,RP
+    .target Celormu
+step
+    .goto 371,65.27,37.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
+    .accept 80015 >>Accept How to Dive with Your Dragon
+    .target Lord Andestrasz
+step
+    .goto 371,66.64,37.18,10,0
+    .goto 371,67.90,37.18
+    >>Follow the rings. Use |T4640490:0|t[Surge Forward] to maintain your speed.
+    .complete 80015,2,2 --2/7 Glide through the Rings
+step
+    .goto 371,67.90,37.18,10,0
+    .goto 371,68.95,37.95
+    >>Follow the rings. Use |T4640490:0|t[Surge Forward] to maintain your speed.
+    .complete 80015,2,3 --3/7 Glide through the Rings
+step
+    .goto 371,68.95,37.95,10,0
+    .goto 371,69.83,39.60
+    >>Follow the rings. Use |T4640490:0|t[Surge Forward] to maintain your speed.
+    .complete 80015,2,4 --4/7 Glide through the Rings
+step
+    .goto 371,69.83,39.60,10,0
+    .goto 371,70.00,43.96
+    >>Follow the rings. Use |T4640490:0|t[Surge Forward] to maintain your speed.
+    .complete 80015,2,5 --5/7 Glide through the Rings
+step
+    .goto 371,70.00,43.96,10,0
+    .goto 371,68.31,46.92
+    >>Follow the rings. Use |T4640490:0|t[Surge Forward] to maintain your speed.
+    .complete 80015,2,6 --6/7 Glide through the Rings
+step
+    .goto 371,68.31,46.92
+    >>Follow the rings. Use |T4640490:0|t[Surge Forward] to maintain your speed.
+    .complete 80015,2 --7/7 Glide through the Rings
+step
+    .goto 371,66.29,49.31
+    >>Follow the arrow
+    .complete 80015,3 --1/1 Land in the Target Area
+step
+    .goto 371,66.25,49.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celormu|r
+    .turnin 80015 >>Turn in How to Dive with Your Dragon
+    .timer 3,RP
+    .target Celormu
+step
+    .goto 371,65.27,37.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
+    .accept 80016 >>Accept The Need For Higher Velocities
+    .target Lord Andestrasz
+step
+    .goto 371,66.29,37.21,10,0
+    .goto 371,68.27,36.26
+    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
+    .complete 80016,2,2 --2/6 Glide through the Rings
+step
+    .goto 371,68.27,36.26,10,0
+    .goto 371,68.81,32.48
+    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
+    .complete 80016,2,3 --3/6 Glide through the Rings
+step
+    .goto 371,68.81,32.48,10,0
+    .goto 371,67.41,27.37
+    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
+    .complete 80016,2,4 --4/6 Glide through the Rings
+step
+    .goto 371,67.41,27.37,15,0
+    .goto 371,66.02,25.50
+    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
+    .complete 80016,2,5 --5/6 Glide through the Rings
+step
+    .goto 371,66.02,25.50
+    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
+    .complete 80016,2 --6/6 Glide through the Rings
+step
+    .goto 371,65.01,24.46
+    >>Follow the arrow.
+    .complete 80016,3 --1/1 Land in the Target Area
+step
+    .goto 371,64.98,24.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celormu|r
+    .turnin 80016 >>Turn in The Need For Higher Velocities
+    .timer 3,RP
+    .target Celormu
+step
+    .goto 371,65.27,37.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
+    .accept 80017 >>Accept The Need For Higher Altitudes
+    .target Lord Andestrasz
+step
+    .goto 371,66.32,37.22,15,0
+    .goto 371,67.93,35.70
+    >>Let yourself glide down
+    .complete 80017,2,2 --2/6 Glide through the Rings
+step
+    .goto 371,67.93,35.70,15,0
+    .goto 371,68.77,33.45
+    >>Follow the rings. Use |T4640498:0|t[Skyward Ascent] after reaching the ring.
+    .complete 80017,2,3 --3/6 Glide through the Rings
+step
+    .goto 371,68.77,33.45,15,0
+    .goto 371,68.51,29.83
+    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
+    .complete 80017,2,4 --4/6 Glide through the Rings
+step
+    .goto 371,68.51,29.83,15,0
+    .goto 371,65.39,29.58
+    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
+    .complete 80017,2,5 --5/6 Glide through the Rings
+step
+    .goto 371,65.39,29.58
+    >>Follow the rings. Use |T4640490:0|t[Surge Forward] or |T4640498:0|t[Skyward Ascent] to maintain your speed.
+    .complete 80017,2 --6/6 Glide through the Rings
+step
+    .goto 371,62.59,28.66
+    >>Follow the arrow
+    .complete 80017,3 --1/1 Land in the Target Area
+step
+    .goto 371,62.47,28.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celormu|r
+    .turnin 80017 >>Turn in The Need For Higher Altitudes
+    .timer 3,RP
+    .target Celormu
+step
+    .goto 371,65.27,37.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
+    .accept 80018 >>Accept Fashionable Flying
+    .target Lord Andestrasz
+step
+    #completewith next
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rostrum of Transformation|r |cRXP_WARN_and leave it immediately|r
+    .complete 80018,1 --1/1 Rostrum of Transformation used
+step
+    #label Skyriding Panda
+    .goto 371,65.07,36.97,10,0
+    .goto 371,65.28,37.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
+    .turnin 80018 >>Turn in Fashionable Flying
+    .accept 90755 >>Accept Time Flies
+    .target Lord Andestrasz
+step
+    #completewith next
+    #label TimeFliesA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
+    .turnin 90755 >>Turn in Time Flies
+    .target Moratari
+step
+    #completewith TimeFliesA
+    .goto 371,65.13,37.09
+    .zone 627 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Dalaran|r
+step
+    #requires TimeFliesA
+    #label Skyriding
+    .goto 627,72.04,41.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
+    .turnin 90755 >>Turn in Time Flies
+    .target Moratari
+]])
 
 -- ================= ARTIFACT WEAPONS ================
 
@@ -1285,6 +1252,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Blood
 #displayname Artifact Weapon: Blood
 #next a) Order Hall Death Knight Part 1
+#internal
 
 << DeathKnight
 
@@ -1513,6 +1481,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Frost DK
 #displayname Artifact Weapon: Frost
 #next a) Order Hall Death Knight Part 1
+#internal
 
 << DeathKnight
 
@@ -1713,6 +1682,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Unholy
 #displayname Artifact Weapon: Unholy
 #next a) Order Hall Death Knight Part 1
+#internal
 
 << DeathKnight
 
@@ -1993,6 +1963,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Blood
 #displayname Artifact Weapon: Blood
 #next ac) Order Hall Death Knight Part 2
+#internal
 
 << DeathKnight
 
@@ -2008,6 +1979,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Frost DK
 #displayname Artifact Weapon: Frost
 #next ac) Order Hall Death Knight Part 2
+#internal
 
 << DeathKnight
 
@@ -2023,6 +1995,8 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Unholy
 #displayname Artifact Weapon: Unholy
 #next ac) Order Hall Death Knight Part 2
+#internal
+
 
 << DeathKnight
 
@@ -2040,6 +2014,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Death Knight
 #chapter
+#internal
 
 << DeathKnight
 
@@ -2118,6 +2093,7 @@ RXPGuides.RegisterGuide([[}
 #name a) Artifact Weapon: Havoc
 #displayname Artifact Weapon: Havoc
 #next a) Order Hall Demon Hunter Part 1
+#internal
 
 << DemonHunter
 
@@ -2408,6 +2384,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Vengeance
 #displayname Artifact Weapon: Vengeance
 #next a) Order Hall Demon Hunter Part 1
+#internal
 
 << DemonHunter
 
@@ -2711,6 +2688,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Havoc
 #displayname Artifact Weapon: Havoc
 #next ac) Order Hall Demon Hunter Part 2
+#internal
 
 << DemonHunter
 
@@ -2726,6 +2704,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Vengeance
 #displayname Artifact Weapon: Vengeance
 #next ac) Order Hall Demon Hunter Part 2
+#internal
 
 << DemonHunter
 
@@ -2743,6 +2722,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Demon Hunter
 #chapter
+#internal
 
 << DemonHunter
 
@@ -2824,6 +2804,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Balance Druid
 #displayname Artifact Weapon: Balance
 #next a) Order Hall Druid Part 1
+#internal
 
 << Druid
 
@@ -3201,6 +3182,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Feral Druid
 #displayname Artifact Weapon: Feral
 #next a) Order Hall Druid Part 1
+#internal
 
 << Druid
 
@@ -3504,6 +3486,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Guardian Druid
 #displayname Artifact Weapon: Guardian
 #next a) Order Hall Druid Part 1
+#internal
 
 << Druid
 
@@ -3872,6 +3855,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Restoration Druid
 #displayname Artifact Weapon: Restoration
 #next a) Order Hall Druid Part 1
+#internal
 
 << Druid
 
@@ -4275,6 +4259,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Balance Druid
 #displayname Artifact Weapon: Balance
 #next ac) Order Hall Druid Part 2
+#internal
 
 << Druid
 
@@ -4290,6 +4275,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Feral Druid
 #displayname Artifact Weapon: Feral
 #next ac) Order Hall Druid Part 2
+#internal
 
 << Druid
 
@@ -4305,6 +4291,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Guardian Druid
 #displayname Artifact Weapon: Guardian
 #next ac) Order Hall Druid Part 2
+#internal
 
 << Druid
 
@@ -4320,6 +4307,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Restoration Druid
 #displayname Artifact Weapon: Restoration
 #next ac) Order Hall Druid Part 2
+#internal
 
 << Druid
 
@@ -4337,6 +4325,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Druid
 #chapter
+#internal
 
 << Druid
 
@@ -4413,6 +4402,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Beast Mastery
 #displayname Artifact Weapon: Beast Mastery
 #next a) Order Hall Hunter Part 1
+#internal
 
 << Hunter
 
@@ -4778,6 +4768,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Marksmanship
 #displayname Artifact Weapon: Marksmanship
 #next a) Order Hall Hunter Part 1
+#internal
 
 << Hunter
 
@@ -5036,6 +5027,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Survival
 #displayname Artifact Weapon: Survival
 #next a) Order Hall Hunter Part 1
+#internal
 
 << Hunter
 
@@ -5323,6 +5315,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Beast Mastery
 #displayname Artifact Weapon: Beast Mastery
 #next ac) Order Hall Hunter Part 2
+#internal
 
 << Hunter
 
@@ -5338,6 +5331,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Marksmanship
 #displayname Artifact Weapon: Marksmanship
 #next ac) Order Hall Hunter Part 2
+#internal
 
 << Hunter
 
@@ -5353,6 +5347,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Survival
 #displayname Artifact Weapon: Survival
 #next ac) Order Hall Hunter Part 2
+#internal
 
 << Hunter
 
@@ -5370,6 +5365,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Hunter
 #chapter
+#internal
 
 << Hunter
 
@@ -5446,6 +5442,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Arcane
 #displayname Artifact Weapon: Arcane
 #next a) Order Hall Mage Part 1
+#internal
 
 << Mage
 
@@ -5841,6 +5838,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Fire
 #displayname Artifact Weapon: Fire
 #next a) Order Hall Mage Part 1
+#internal
 
 << Mage
 
@@ -6171,6 +6169,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Frost Mage
 #displayname Artifact Weapon: Frost
 #next a) Order Hall Mage Part 1
+#internal
 
 << Mage
 
@@ -6722,6 +6721,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Arcane
 #displayname Artifact Weapon: Arcane
 #next ac) Order Hall Mage Part 2
+#internal
 
 << Mage
 
@@ -6737,6 +6737,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Fire
 #displayname Artifact Weapon: Fire
 #next ac) Order Hall Mage Part 2
+#internal
 
 << Mage
 
@@ -6752,6 +6753,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Frost Mage
 #displayname Artifact Weapon: Frost
 #next ac) Order Hall Mage Part 2
+#internal
 
 << Mage
 
@@ -6769,6 +6771,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Mage
 #chapter
+#internal
 
 << Mage
 
@@ -6847,6 +6850,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Brewmaster
 #displayname Artifact Weapon: Brewmaster
 #next a) Order Hall Monk Part 1
+#internal
 
 << Monk
 
@@ -7296,6 +7300,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Mistweaver
 #displayname Artifact Weapon: Mistweaver
 #next a) Order Hall Monk Part 1
+#internal
 
 << Monk
 
@@ -7552,6 +7557,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #displayname Artifact Weapon: Windwalker
 #next a) Order Hall Monk Part 1
+#internal
 
 << Monk
 
@@ -7974,6 +7980,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Brewmaster
 #displayname Artifact Weapon: Brewmaster
 #next ac) Order Hall Monk Part 2
+#internal
 
 << Monk
 
@@ -7990,6 +7997,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #displayname Artifact Weapon: Mistweaver
 #next ac) Order Hall Monk Part 2
+#internal
 
 << Monk
 
@@ -8006,6 +8014,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #displayname Artifact Weapon: Windwalker
 #next ac) Order Hall Monk Part 2
+#internal
 
 << Monk
 
@@ -8023,6 +8032,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Monk
 #chapter
+#internal
 
 << Monk
 
@@ -8107,6 +8117,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Holy Paladin
 #displayname Artifact Weapon: Holy
 #next a) Order Hall Paladin Part 1
+#internal
 
 << Paladin
 
@@ -8549,6 +8560,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Paladin Protection
 #displayname Artifact Weapon: Protection
 #next a) Order Hall Paladin Part 1
+#internal
 
 << Paladin
 
@@ -9005,6 +9017,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Retribution
 #displayname Artifact Weapon: Retribution
 #next a) Order Hall Paladin Part 1
+#internal
 
 << Paladin
 
@@ -9381,6 +9394,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Holy Paladin
 #displayname Artifact Weapon: Holy
 #next ac) Order Hall Paladin Part 2
+#internal
 
 << Paladin
 
@@ -9396,6 +9410,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Paladin Protection
 #displayname Artifact Weapon: Paladin Protection
 #next ac) Order Hall Paladin Part 2
+#internal
 
 << Paladin
 
@@ -9411,6 +9426,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Retribution
 #displayname Artifact Weapon: Retribution
 #next ac) Order Hall Paladin Part 2
+#internal
 
 << Paladin
 
@@ -9428,6 +9444,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Paladin
 #chapter
+#internal
 
 << Paladin
 
@@ -9498,6 +9515,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Discipline
 #displayname Artifact Weapon: Discipline
 #next a) Order Hall Priest Part 1
+#internal
 
 << Priest
 
@@ -9869,6 +9887,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Holy Priest
 #displayname Artifact Weapon: Holy
 #next a) Order Hall Priest Part 1
+#internal
 
 << Priest
 
@@ -10114,6 +10133,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Shadow
 #displayname Artifact Weapon: Shadow
 #next a) Order Hall Priest Part 1
+#internal
 
 << Priest
 
@@ -10348,6 +10368,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Discipline
 #displayname Artifact Weapon: Discipline
 #next ac) Order Hall Priest Part 2
+#internal
 
 << Priest
 
@@ -10363,6 +10384,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Holy Priest
 #displayname Artifact Weapon: Holy
 #next ac) Order Hall Priest Part 2
+#internal
 
 << Priest
 
@@ -10378,6 +10400,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Shadow
 #displayname Artifact Weapon: Shadow
 #next ac) Order Hall Priest Part 2
+#internal
 
 << Priest
 
@@ -10395,6 +10418,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Priest
 #chapter
+#internal
 
 << Priest
 
@@ -10471,6 +10495,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Assassination
 #displayname Artifact Weapon: Assassination
 #next a) Order Hall Rogue Part 1
+#internal
 
 << Rogue
 
@@ -11019,6 +11044,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Outlaw
 #displayname Artifact Weapon: Outlaw
 #next a) Order Hall Rogue Part 1
+#internal
 
 << Rogue
 
@@ -11332,6 +11358,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Subtlety
 #displayname Artifact Weapon: Subtlety
 #next a) Order Hall Rogue Part 1
+#internal
 
 << Rogue
 
@@ -11816,6 +11843,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Assassination
 #displayname Artifact Weapon: Assassination
 #next ac) Order Hall Rogue Part 2
+#internal
 
 << Rogue
 
@@ -11831,6 +11859,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Outlaw
 #displayname Artifact Weapon: Outlaw
 #next ac) Order Hall Rogue Part 2
+#internal
 
 << Rogue
 
@@ -11846,6 +11875,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Subtlety
 #displayname Artifact Weapon: Subtlety
 #next ac) Order Hall Rogue Part 2
+#internal
 
 << Rogue
 
@@ -11863,6 +11893,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Rogue
 #chapter
+#internal
 
 << Rogue
 
@@ -11946,6 +11977,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Elemental
 #displayname Artifact Weapon: Elemental
 #next a) Order Hall Shaman Part 1
+#internal
 
 << Shaman
 
@@ -12282,6 +12314,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Enhancement
 #displayname Artifact Weapon: Enhancement
 #next a) Order Hall Shaman Part 1
+#internal
 
 << Shaman
 
@@ -12574,6 +12607,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Restoration Shaman
 #displayname Artifact Weapon: Restoration
 #next a) Order Hall Shaman Part 1
+#internal
 
 << Shaman
 
@@ -12817,6 +12851,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Elemental
 #displayname Artifact Weapon: Elemental
 #next ac) Order Hall Shaman Part 2
+#internal
 
 << Shaman
 
@@ -12832,6 +12867,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Enhancement
 #displayname Artifact Weapon: Enhancement
 #next ac) Order Hall Shaman Part 2
+#internal
 
 << Shaman
 
@@ -12847,6 +12883,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Restoration Shaman
 #displayname Artifact Weapon: Restoration
 #next ac) Order Hall Shaman Part 2
+#internal
 
 << Shaman
 
@@ -12864,6 +12901,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Shaman
 #chapter
+#internal
 
 << Shaman
 
@@ -12939,6 +12977,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Affliction
 #displayname Artifact Weapon: Affliction
 #next a) Order Hall Warlock Part 1
+#internal
 
 << Warlock
 
@@ -13255,6 +13294,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Demonology
 #displayname Artifact Weapon: Demonology
 #next a) Order Hall Warlock Part 1
+#internal
 
 << Warlock
 
@@ -13519,6 +13559,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Destruction
 #displayname Artifact Weapon: Destruction
 #next a) Order Hall Warlock Part 1
+#internal
 
 << Warlock
 
@@ -13833,6 +13874,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Affliction
 #displayname Artifact Weapon: Affliction
 #next ac) Order Hall Warlock Part 2
+#internal
 
 << Warlock
 
@@ -13848,6 +13890,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Demonology
 #displayname Artifact Weapon: Demonology
 #next ac) Order Hall Warlock Part 2
+#internal
 
 << Warlock
 
@@ -13863,6 +13906,7 @@ RXPGuides.RegisterGuide([[}
 #name z) Artifact Weapon: Destruction
 #displayname Artifact Weapon: Destruction
 #next ac) Order Hall Warlock Part 2
+#internal
 
 << Warlock
 
@@ -13880,6 +13924,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Warlock
 #chapter
+#internal
 
 << Warlock
 
@@ -13961,6 +14006,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Arms
 #displayname Artifact Weapon: Arms
 #next a) Order Hall Campaign Intro
+#internal
 
 << Warrior
 
@@ -14216,6 +14262,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Fury
 #displayname Artifact Weapon: Fury
 #next a) Order Hall Campaign Intro
+#internal
 
 << Warrior
 
@@ -14487,6 +14534,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artifact Weapon: Warrior Protection
 #displayname Artifact Weapon: Protection
 #next a) Order Hall Campaign Intro
+#internal
 
 << Warrior
 
@@ -14735,6 +14783,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Arms
 #displayname Artifact Weapon: Arms
 #next ac) Order Hall Warrior Part 2
+#internal
 
 << Warrior
 
@@ -14750,6 +14799,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Fury
 #displayname Artifact Weapon: Fury
 #next ac) Order Hall Warrior Part 2
+#internal
 
 << Warrior
 
@@ -14765,6 +14815,7 @@ RXPGuides.RegisterGuide([[
 #name z) Artifact Weapon: Warrior Protection
 #displayname Artifact Weapon: Protection
 #next ac) Order Hall Warrior Part 2
+#internal
 
 << Warrior
 
@@ -14782,6 +14833,7 @@ RXPGuides.RegisterGuide([[
 #displayname |cFF00CCFF1|r - Order Hall Intro|r
 #next ac) Order Hall Warrior
 #chapter
+#internal
 
 << Warrior
 

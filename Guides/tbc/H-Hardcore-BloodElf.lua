@@ -1,4 +1,4 @@
-if GetLocale() == "zhCN" then return end
+if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
@@ -239,18 +239,7 @@ step << Warlock
     >>|cRXP_BUY_Buy the|r |T133738:0|t[Grimoire of Blood Pact] |cRXP_BUY_from her|r
     .collect 16321,1,8327,1 --Grimoire of Blood Pact (1)
     .target Yasmine Teli'Larien
-step << Warlock
-    #optional
-    #completewith Measures
-	.cast 20397 >> |cRXP_WARN_Use your|r |T133738:0|t[Grimoire of Blood Pact] |cRXP_WARN_once you are level 4|r
-	.use 16321
-    .xp >4,1
-step << Warlock
-    #optional
-    #completewith Measures
-	.cast 20397 >> |cRXP_WARN_Use your|r |T133738:0|t[Grimoire of Blood Pact]
-	.use 16321
-    .xp <4,1
+    .train 6307,1 --Blood Pact (Rank 1)
 step
     #label Collars
     #loop
@@ -855,6 +844,7 @@ step << Warlock
     .collect 16302,1,8491,1 --Grimoire of Firebolt Rank 2
     .target Daestra
 	.xp <8,1
+    .train 7799,1
 step << Rogue
     .goto Eversong Woods,48.34,45.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larenis|r
@@ -1171,6 +1161,7 @@ step << Warlock
     >>|cRXP_BUY_Buy the|r |T133738:0|t[Grimoire of Firebolt (Rank 2)] |cRXP_BUY_from her|r
     .collect 16302,1,8491,1 --Grimoire of Firebolt Rank 2
     .target Daestra
+    .train 7799,1
 step << Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Geron|r
@@ -2656,7 +2647,7 @@ step << BloodElf Hunter
 step << BloodElf Hunter
     .goto Silvermoon City,86.24,35.45
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celana|r
-    >>|cRXP_BUY_Buy a|r |T135346:0|t[Reinforced Bow] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy a|r |T135490:0|t[Reinforced Bow] |cRXP_BUY_from her|r
     .collect 3026,1,9144,1 --Reinforced Bow (1)
     .target Celana
     .money <0.3621 << BloodElf
@@ -2698,7 +2689,7 @@ step << BloodElf Hunter
 step << BloodElf Hunter
     .goto Silvermoon City,86.24,35.45
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celana|r
-    >>|cRXP_BUY_Buy a|r |T135346:0|t[Reinforced Bow] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy a|r |T135490:0|t[Reinforced Bow] |cRXP_BUY_from her|r
     .collect 3026,1,9144,1 --Reinforced Bow (1)
     .target Celana
     .money <0.3621 << BloodElf
@@ -3314,7 +3305,7 @@ step << Hunter
 step << Hunter
     .goto Silvermoon City,86.24,35.45
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celana|r
-    >>|cRXP_BUY_Buy a|r |T135346:0|t[Reinforced Bow] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy a|r |T135490:0|t[Reinforced Bow] |cRXP_BUY_from her|r
     .collect 3026,1,9144,1 --Reinforced Bow (1)
     .target Celana
     .money <0.3621 << BloodElf
@@ -3350,7 +3341,7 @@ step << Hunter
 step << Hunter
     .goto Silvermoon City,86.24,35.45
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celana|r
-    >>|cRXP_BUY_Buy a|r |T135346:0|t[Reinforced Bow] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy a|r |T135490:0|t[Reinforced Bow] |cRXP_BUY_from her|r
     .collect 3026,1,9144,1 --Reinforced Bow (1)
     .target Celana
     .money <0.3621 << BloodElf
@@ -4686,9 +4677,33 @@ step
     >>|cRXP_ENEMY_Ghostclaw Lynxes|r |cRXP_WARN_share spawns with |cRXP_ENEMY_Vampiric Mistbats|r. Kill them too if there aren't enough |cRXP_ENEMY_Ghostclaw Lynxes|r around|r
     .complete 9158,1 --Kill Ghostclaw Lynx (x10)
     .mob Ghostclaw Lynx
+    .isOnQuest 9158
 step
     #completewith next
     .subzone 3496 >>Travel to Farstrider Enclave
+step
+    #label FarEnclave2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sedina|r
+    .accept 9158 >> Accept Bearers of the Plague
+    .target Farstrider Sedina
+    .goto Ghostlands,72.50,32.14
+    .isQuestAvailable 9158
+step
+    #optional
+    .goto Ghostlands,49.33,42.94,60,0
+    #loop
+    .goto Ghostlands,69.79,35.78,0
+    .goto Ghostlands,60.28,48.06,60,0
+    .goto Ghostlands,66.61,47.13,60,0
+    .goto Ghostlands,68.66,39.81,60,0
+    .goto Ghostlands,69.79,35.78,60,0
+    .goto Ghostlands,73.81,37.97,60,0
+    .goto Ghostlands,76.46,28.25,60,0
+    >>Kill |cRXP_ENEMY_Ghostclaw Lynxes|r
+    >>|cRXP_ENEMY_Ghostclaw Lynxes|r |cRXP_WARN_share spawns with |cRXP_ENEMY_Vampiric Mistbats|r. Kill them too if there aren't enough |cRXP_ENEMY_Ghostclaw Lynxes|r around|r
+    .complete 9158,1 --Kill Ghostclaw Lynx (x10)
+    .mob Ghostclaw Lynx
+    .isOnQuest 9158
 step
     #label FarEnclave2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sedina|r, |cRXP_FRIENDLY_Solanna|r, the |cRXP_FRIENDLY_Wanted Poster|r, and |cRXP_FRIENDLY_Helios|r
@@ -4722,9 +4737,48 @@ step
 step
     .goto Ghostlands,72.29,19.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Geranis|r
+    .accept 9157 >> Accept Forgotten Rituals
+    .target Geranis Whitemorn
+    .maxlevel 17
+    .isQuestAvailable 9157
+step
+    .goto Ghostlands,71.99,28.39,30,0
+    .goto Ghostlands,72.55,27.63,30,0
+    .goto Ghostlands,72.79,26.45,30,0
+    .goto Ghostlands,73.42,22.88,30,0
+    .goto Ghostlands,73.69,22.23,30,0
+    .goto Ghostlands,73.70,21.53,30,0
+    .goto Ghostlands,73.51,21.12,30,0
+    .goto Ghostlands,73.49,18.45,30,0
+    .goto Ghostlands,71.31,15.24,30,0
+    .goto Ghostlands,71.11,15.38,30,0
+    .goto Ghostlands,71.16,13.76,30,0
+    .goto Ghostlands,70.65,13.67,30,0
+    .goto Ghostlands,70.46,17.19,30,0
+    .goto Ghostlands,69.58,18.80,30,0
+    .goto Ghostlands,70.16,21.99,30,0
+    .goto Ghostlands,71.99,28.39,30,0
+    .goto Ghostlands,72.55,27.63,30,0
+    .goto Ghostlands,72.79,26.45,30,0
+    .goto Ghostlands,73.42,22.88
+    >>Loot |cRXP_PICK_Wavefront Medallions|r in the |cRXP_PICK_Glistening Mud Piles|r underwater
+    .complete 9157,1 --Collect Wavefront Medallion (x8)
+    .isOnQuest 9157
+step
+    .goto Ghostlands,72.29,19.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Geranis|r
+    .turnin 9157 >> Turn in Forgotten Rituals
     .accept 9174 >> Accept Vanquishing Aquantion
     .target Geranis Whitemorn
-    .solo
+    .isOnQuest 9157
+step
+    #optional
+    .goto Ghostlands,72.29,19.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Geranis|r
+    .accept 9174 >> Accept Vanquishing Aquantion
+    .target Geranis Whitemorn
+    .isQuestTurnedIn 9157
+    .isQuestAvailable 9174
 step
     #completewith next << !Mage !Priest
     #completewith AquantionKill << Priest/Mage
@@ -4973,6 +5027,7 @@ step
     .mob +Phantasmal Seeker
     .complete 9140,2 --Collect Gargoyle Fragment (x4)
     .mob +Stonewing Slayer
+    .isOnQuest 9140
 step
     #optional
     #completewith SpireT
@@ -5152,6 +5207,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vandril|r
     .turnin 9140 >> Turn in Windrunner Village
     .target Arcanist Vandril
+    .isOnQuest 9140
 step
     .goto Ghostlands,46.02,31.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darenis|r
@@ -5338,6 +5394,14 @@ step
     .accept 9282 >> Accept The Farstrider Enclave
     .target +Magister Kaendris
     .goto Ghostlands,55.07,48.83
+    .isOnQuest 9207
+step
+    #optional
+    .goto Ghostlands,54.84,49.30,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaendris|r
+    .accept 9282 >> Accept The Farstrider Enclave
+    .target Magister Kaendris
+    .goto Ghostlands,55.07,48.83
 step
     #optional
     #completewith Enclave2
@@ -5373,13 +5437,21 @@ step
     .turnin 9166 >> Turn in Deliver the Plans to An'telas
     .accept 9169 >> Accept Deactivate An'owyn
     .target Magister Sylastor
+    .isOnQuest 9166
+step
+    #optional
+    .goto Ghostlands,60.29,35.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylastor|r
+    .accept 9169 >> Accept Deactivate An'owyn
+    .target Magister Sylastor
+    .isQuestTurnedIn 9166
 step
     #completewith Enclave2
     .subzone 3496 >>Travel to Farstrider Enclave
 step << Hunter
     .goto Ghostlands,72.13,32.03
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Narina|r
-    >>|cRXP_BUY_Buy a|r |T135346:0|t[Reinforced Bow] |cRXP_BUY_and|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy a|r |T135490:0|t[Reinforced Bow] |cRXP_BUY_and|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from her|r
     .collect 3026,1,9181,1 --Reinforced Bow (1)
     .collect 2515,2000,9252,1 << Hunter --Sharp Arrow (2000)
     .target Narina
@@ -5390,7 +5462,7 @@ step << Hunter
 step << Hunter
     .goto Ghostlands,72.13,32.03
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Narina|r
-    >>|cRXP_BUY_Buy a|r |T135346:0|t[Reinforced Bow] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy a|r |T135490:0|t[Reinforced Bow] |cRXP_BUY_from her|r
     .collect 3026,1,9181,1 --Reinforced Bow (1)
     .target Narina
     .money <0.3621 << BloodElf
@@ -5411,6 +5483,7 @@ step
     .turnin 9159 >> Turn in Curbing the Plague
     .target Farstrider Sedina
     .goto Ghostlands,72.50,32.14
+    .isOnQuest 9159
 step
     #optional
     .abandon 9274 >> Abandon Spirits of the Drowned
@@ -5999,10 +6072,12 @@ step
     >>Kill |cRXP_ENEMY_Sentinel Infiltrators|r. Loot them for the |cRXP_LOOT_Controlling Orb|r
     .collect 23191,1,9169,1 --Collect Crystal Controlling Orb (x1)
     .mob Sentinel Infiltrator
+    .isOnQuest 9169
 step
     .goto Ghostlands,58.18,65.14
     >>Click the |cRXP_PICK_Moon Crystal|r
     .complete 9169,1 --Collect Night Elf Moon Crystal Deactivated (x1)
+    .isOnQuest 9169
 step
     #completewith Enclave4
     .subzone 3496 >>Travel to Farstrider Enclave
@@ -6058,6 +6133,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylastor|r
     .turnin 9169 >> Turn in Deactivate An'owyn
     .target Magister Sylastor
+    .isOnQuest 9169
 step << !Rogue
     #completewith Truth
     .goto Ghostlands,56.64,45.14,40,0
@@ -6733,6 +6809,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vor'el|r
     .turnin 9281 >> Turn in Clearing the Way
     .target Apprentice Vor'el
+    .isOnQuest 9281
 step
     #optional
     #label Clearing
@@ -7569,6 +7646,25 @@ step
     .target +Ambassador Sunsorrow << BloodElf
     .goto Undercity,57.77,90.57 << BloodElf
     .isOnQuest 9621 << BloodElf
+    .isOnQuest 9180 << BloodElf
+    .isOnQuest 9177 << !BloodElf
+    .isOnQuest 9812 << !BloodElf
+    .group
+step
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylvanas|r and |cRXP_FRIENDLY_Sunsorrow|r
+    .turnin 9621 >> Turn in Envoy to the Horde << BloodElf
+    .accept 9626 >> Accept Meeting the Warchief << BloodElf
+    .turnin 9812 >> Turn in Envoy to the Horde << !BloodElf
+    .accept 9813 >> Accept Meeting the Orcs << !BloodElf
+    .target +Lady Sylvanas Windrunner
+    .goto Undercity,58.06,91.79
+    .accept 9425 >> Accept Report to Tarren Mill << BloodElf
+    .target +Ambassador Sunsorrow << BloodElf
+    .goto Undercity,57.77,90.57 << BloodElf
+    .isOnQuest 9621 << BloodElf
+    .isNotOnQuest 9180 << BloodElf
+    .isNotOnQuest 9177 << !BloodElf
     .isOnQuest 9812 << !BloodElf
     .group
 step
@@ -7585,9 +7681,25 @@ step
     .goto Undercity,57.77,90.57 << BloodElf
     .isQuestTurnedIn 9621 << BloodElf
     .isQuestTurnedIn 9812 << !BloodElf
+    .isOnQuest 9180 << BloodElf
+    .isOnQuest 9177
     .group
 step
-    #label UndercitySM
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylvanas|r and |cRXP_FRIENDLY_Sunsorrow|r
+    .accept 9626 >> Accept Meeting the Warchief << BloodElf
+    .accept 9813 >> Accept Meeting the Orcs << !BloodElf
+    .target +Lady Sylvanas Windrunner
+    .goto Undercity,58.06,91.79
+    .accept 9425 >> Accept Report to Tarren Mill << BloodElf
+    .target +Ambassador Sunsorrow << BloodElf
+    .goto Undercity,57.77,90.57 << BloodElf
+    .isQuestTurnedIn 9621 << BloodElf
+    .isQuestTurnedIn 9812 << !BloodElf
+    .isNotOnQuest 9180 << BloodElf
+    .isNotOnQuest 9177 << !BloodElf
+    .group
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylvanas|r and |cRXP_FRIENDLY_Sunsorrow|r
     .turnin 9177 >> Turn in Journey to Undercity << !BloodElf
     .turnin 9180 >> Turn in Journey to Undercity << BloodElf
@@ -7597,6 +7709,15 @@ step
     .target +Ambassador Sunsorrow << BloodElf
     .goto Undercity,57.77,90.57 << BloodElf
     --TODO: Beta check if 9180 turns in properly
+    .isOnQuest 9180 << BloodElf
+    .isOnQuest 9177 << !BloodElf
+step
+    #optional
+    #label UndercitySM
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sunsorrow|r
+    .accept 9425 >> Accept Report to Tarren Mill << BloodElf
+    .target +Ambassador Sunsorrow << BloodElf
+    .goto Undercity,57.77,90.57 << BloodElf
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varimathras|r
     .turnin 5725 >>Turn in The Power to Destroy...

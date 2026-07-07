@@ -1,7 +1,7 @@
 local _, class = UnitClass("player")
 if class ~= "DEATHKNIGHT" then return end
 
-if GetLocale() == "zhCN" then return end
+if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
 RXPGuides.RegisterGuide([[
 #version 6
 #wotlk
@@ -20,7 +20,7 @@ RXPGuides.RegisterGuide([[
 
 step
     .goto 124,51.345,35.205
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Lich King|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Lich King|r
     .target The Lich King
     .accept 12593 >>Accept In Service Of The Lich King
 step
@@ -47,7 +47,7 @@ step
     .goto 124,47.9,27.6
     .cast 51769 >> |cRXP_WARN_Channel the|r |T135410:0|t[|cRXP_LOOT_Battle-worn Sword|r] |cRXP_WARN_at the|r |cRXP_PICK_Runeforge|r
     .timer 8,Emblazon Runeblade RP
-	.use 38607 
+	.use 38607
     .complete 12619,1 --Runebladed Sword (1)
 step
     #loop
@@ -211,7 +211,7 @@ step
     .goto 124,52.1,38.2,30,0
     .target Orithos the Sky Darkener
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orithos the Sky Darkener|r
-    >>|cRXP_FRIENDLY_Orithos the Sky Darkener|r |cRXP_WARN_patrols Death's Breach|r 
+    >>|cRXP_FRIENDLY_Orithos the Sky Darkener|r |cRXP_WARN_patrols Death's Breach|r
     .accept 12679 >>Accept Tonight We Dine In Havenshire
 step
 	#completewith next
@@ -308,7 +308,7 @@ step
     .goto 124,52.1,38.2,30,0
     .target Orithos the Sky Darkener
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orithos the Sky Darkener|r
-    >>|cRXP_FRIENDLY_Orithos the Sky Darkener|r |cRXP_WARN_patrols Death's Breach|r 
+    >>|cRXP_FRIENDLY_Orithos the Sky Darkener|r |cRXP_WARN_patrols Death's Breach|r
     .turnin 12679 >>Turn in Tonight We Dine In Havenshire
 step
     .goto 124,54.5,34.2
@@ -340,7 +340,7 @@ step
 step
     .goto 124,54.081,35.034
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gothik the Harvester|r
-    .target Gothik the Harvester 
+    .target Gothik the Harvester
     .turnin 12698 >>Turn in The Gift That Keeps On Giving
     .accept 12700 >>Accept An Attack Of Opportunity
 step
@@ -358,7 +358,7 @@ step
     .isOnQuest 12701
     #requires Follow1
     #completewith ScarletCannon
-    .goto 124,65.376,32.933,35 >> |cRXP_WARN_Drop down below again|r    
+    .goto 124,65.376,32.933,35 >> |cRXP_WARN_Drop down below again|r
 step
     .isOnQuest 12701
     #label ScarletCannon
@@ -427,7 +427,7 @@ step
     .turnin 12711 >>Turn in Abandoned Mail
 step
     .goto 124,55.900,52.389
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Noth the Plaguebringer|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Noth the Plaguebringer|r
     .target Noth the Plaguebringer
     .accept 12716 >>Accept The Plaguebringer's Request
 step
@@ -442,7 +442,7 @@ step
 step
     #label LTTS
     .goto 124,54.672,57.440
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baron Rivendare|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baron Rivendare|r
     .target Baron Rivendare
     .accept 12722 >>Accept Lambs To The Slaughter
 step
@@ -452,7 +452,7 @@ step
     .complete 12722,1 --Scarlet Crusade Soldier (10)
     .mob +Scarlet Marksman
     .mob +Scarlet Crusader
-    .mob +Scarlet Commander 
+    .mob +Scarlet Commander
     .mob +Scarlet Preacher
     .complete 12722,2 --Citizen of New Avalon (15)
     .mob +Citizen of New Avalon
@@ -481,7 +481,7 @@ step
     #optional
     .isQuestComplete 12722
     .goto 124,54.672,57.440
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baron Rivendare|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baron Rivendare|r
     .target Baron Rivendare
     .turnin 12722 >>Turn in Lambs To The Slaughter
 step
@@ -490,7 +490,7 @@ step
     .complete 12722,1 --Scarlet Crusade Soldier (10)
     .mob +Scarlet Marksman
     .mob +Scarlet Crusader
-    .mob +Scarlet Commander 
+    .mob +Scarlet Commander
     .mob +Scarlet Preacher
     .complete 12722,2 --Citizen of New Avalon (15)
     .mob +Citizen of New Avalon
@@ -540,7 +540,7 @@ step
     .complete 12722,1 --Scarlet Crusade Soldier (10)
     .mob +Scarlet Marksman
     .mob +Scarlet Crusader
-    .mob +Scarlet Commander 
+    .mob +Scarlet Commander
     .mob +Scarlet Preacher
     .complete 12722,2 --Citizen of New Avalon (15)
     .mob +Citizen of New Avalon
@@ -757,7 +757,7 @@ step
 step
     #label AATO
     .goto 124,56.251,79.847
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orbaz Bloodbane|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orbaz Bloodbane|r
     .target Orbaz Bloodbane
     .accept 12754 >>Accept Ambush At The Overlook
 step

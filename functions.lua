@@ -95,18 +95,23 @@ end
 local L = addon.locale.Get
 addon.functions.__index = addon.functions
 local events = {}
+local UNIT_QUEST_LOG_CHANGED
+if C_EventUtils and C_EventUtils.IsEventValid("UNIT_QUEST_LOG_CHANGED") then
+    UNIT_QUEST_LOG_CHANGED = "UNIT_QUEST_LOG_CHANGED"
+end
 addon.stepUpdateList = {}
 addon.functions.events = events
-events.collect = {"BAG_UPDATE_DELAYED", "QUEST_LOG_UPDATE","MERCHANT_SHOW","CHAT_MSG_LOOT"}
+events.collect = {"BAG_UPDATE_DELAYED", "QUEST_LOG_UPDATE", "MERCHANT_SHOW","CHAT_MSG_LOOT",UNIT_QUEST_LOG_CHANGED}
 events.collectmultiple = events.collect
 events.destroy = events.collect
 events.buy = events.collect
+events.buyAll = events.buy
 events.accept = {"QUEST_ACCEPTED", "QUEST_TURNED_IN", "QUEST_REMOVED"}
-events.turnin = {"QUEST_TURNED_IN","QUEST_LOG_UPDATE"}
+events.turnin = {"QUEST_TURNED_IN","QUEST_LOG_UPDATE", UNIT_QUEST_LOG_CHANGED}
 if C_EventUtils and C_EventUtils.IsEventValid("STOP_MOVIE") then
-    events.complete = {"QUEST_LOG_UPDATE", "CINEMATIC_STOP", "STOP_MOVIE"}
+    events.complete = {"QUEST_LOG_UPDATE", "CINEMATIC_STOP", "STOP_MOVIE", UNIT_QUEST_LOG_CHANGED}
 else
-    events.complete = {"QUEST_LOG_UPDATE", "CINEMATIC_STOP"}
+    events.complete = {"QUEST_LOG_UPDATE", "CINEMATIC_STOP", UNIT_QUEST_LOG_CHANGED}
 end
 events.fp = {"UI_INFO_MESSAGE", "UI_ERROR_MESSAGE", "TAXIMAP_OPENED", "GOSSIP_SHOW", "TAXIMAP_CLOSED"}
 events.hs = "UNIT_SPELLCAST_SUCCEEDED"
@@ -1360,6 +1365,9 @@ function addon.functions.turnin(self, ...)
         local element = self.element
         local step = element.step
         local event, questId = ...
+        if UNIT_QUEST_LOG_CHANGED and event == UNIT_QUEST_LOG_CHANGED and questId ~= "player" then
+            return
+        end
         local id = GetQuestId(element.questId,nil,true)
         local isComplete = IsQuestTurnedIn(id)
 
@@ -1768,7 +1776,10 @@ function addon.functions.complete(self, ...)
         -- local objectives = addon.GetQuestObjectives(id)--queries the server for items/creature names associated with the quest
         return element
     end
-    local event = ...
+    local event,arg1 = ...
+    if UNIT_QUEST_LOG_CHANGED and event == UNIT_QUEST_LOG_CHANGED and arg1 ~= "player" then
+        return
+    end
     local element = self.element
     local step = element.step
     local id = self.element.questId
@@ -1993,7 +2004,7 @@ local function QuestWP(element)
         end
     end
 end
-events.questwaypoint = "QUEST_LOG_UPDATE"
+events.questwaypoint = {"QUEST_LOG_UPDATE", UNIT_QUEST_LOG_CHANGED}
 function addon.functions.questwaypoint(self, text, zone, x, y, radius, questId, objIndex, objMax, lowPrio)
     if type(self) == "string" then
         questId = tonumber(questId)
@@ -2014,7 +2025,7 @@ function addon.functions.questwaypoint(self, text, zone, x, y, radius, questId, 
     UpdateInstanceData(self,text)
 end
 
-events.questgoto = "QUEST_LOG_UPDATE"
+events.questgoto = {"QUEST_LOG_UPDATE", UNIT_QUEST_LOG_CHANGED}
 function addon.functions.questgoto(self, text, zone, x, y, radius, questId, objIndex, objMax, optional)
     if type(self) == "string" then
         questId = tonumber(questId)
@@ -2318,7 +2329,7 @@ function addon.functions.ingamewaypoint(self, ...)
 end
 
 
-events.treasure = "QUEST_LOG_UPDATE"
+events.treasure = {"QUEST_LOG_UPDATE", UNIT_QUEST_LOG_CHANGED}
 function addon.functions.treasure(self, text, zone, x, y, id)
     if type(self) == "string" then
         local element = addon.functions.pin(self, text, zone, x, y)
@@ -2999,6 +3010,10 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
     local numRequired = element.qty
     local event,msg = ...
     local isComplete
+
+    if UNIT_QUEST_LOG_CHANGED and event == UNIT_QUEST_LOG_CHANGED and msg ~= "player" then
+        return
+    end
     if event == "CHAT_MSG_LOOT" and C_Item and C_Item.GetItemInfo then
         local lootId = tonumber(msg:match("item:(%d+):"))
         if lootId == id then
@@ -3734,7 +3749,7 @@ end
 function addon.functions.money(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
-        local text, money = ...
+        local text, money, useNetWorth = ...
         local prefix = money:sub(1, 1)
         if prefix == "<" then
             element.greaterThan = false
@@ -3753,12 +3768,19 @@ function addon.functions.money(self, ...)
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
                            ": Invalid arguments\n" .. self)
         end
+        element.useNetWorth = useNetWorth == "1"
         element.textOnly = true
         if text and text ~= "" then element.text = text end
         return element
     end
     if not self.element.step.active then return end
-    if GetMoney() >= self.element.money then
+    local money
+    if self.element.useNetWorth and addon.inventoryManager then
+        money = addon.inventoryManager.GetNetWorth()
+    else
+        money = GetMoney()
+    end
+    if money >= self.element.money then
         self.element.step.completed = self.element.greaterThan
     else
         self.element.step.completed = not (self.element.greaterThan)
@@ -5432,6 +5454,17 @@ function addon.functions.bronzetube(self, text, rev)
     end
 end
 
+function addon.functions.buyAll(self, ...)
+    if type(self) == "string" then -- on parse
+        local element = addon.functions.buy(self, ...)
+        if type(element) == "table" then
+            element.ignoreCurrent = true
+        end
+        return element
+    end
+    return addon.functions.buy(self, ...)
+end
+
 function addon.functions.buy(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
@@ -5458,8 +5491,10 @@ function addon.functions.buy(self, ...)
     if not (step.active and event and event ~= "WindowUpdate") then return end
 
     local id = element.id
-    local count = GetItemCount(id)
-    local total = element.qty - count
+    local total = element.qty
+    if not element.ignoreCurrent then
+        total = total - GetItemCount(id)
+    end
     local objIndex = element.objIndex
     local questId = element.questId
 
@@ -5477,9 +5512,14 @@ function addon.functions.buy(self, ...)
             local link = GetMerchantItemLink(i)
             local itemID = link and tonumber(link:match("item:(%d+)"))
             if itemID then
-                local name, _, _, quantity = GetMerchantItemInfo(i)
+                -- numAvailable is -1 when unlimited and at least 0 until window is closed (if present)
+                local name, _, _, quantity, numAvailable = GetMerchantItemInfo(i)
 
                 if itemID == id or name == id then
+                    if numAvailable ~= -1 then
+                        total = math.min(total, numAvailable)
+                    end
+
                     addon.comms.PrettyPrint("Buying " .. name .. " x" .. total) -- ok
                     local stack = select(8, GetItemInfo(id))
                     if quantity then
@@ -8082,7 +8122,7 @@ function addon.functions.dailyreset(self, text, hub, arg1)
     end
 end
 
-events.skipOnQuest = {"QUEST_ACCEPTED","QUEST_LOG_UPDATE"}
+events.skipOnQuest = {"QUEST_ACCEPTED","QUEST_LOG_UPDATE", UNIT_QUEST_LOG_CHANGED}
 function addon.functions.skipOnQuest(self, text, id, label)
     if type(self) == "string" then
         id = tonumber(id)
@@ -8161,7 +8201,7 @@ function addon.GetChoiceId()
     local choices = C_PlayerChoice.GetCurrentPlayerChoiceInfo()
     if choices and choices.options then
         for _,t in pairs(choices.options) do
-            addon.comms.PrettyPrint(t.header..":",t.choiceArtID)
+            addon.comms.PrettyPrint(t.header..":"..t.choiceArtID)
         end
         return
     end

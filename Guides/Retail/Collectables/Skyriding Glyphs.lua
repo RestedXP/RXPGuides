@@ -3,7 +3,7 @@
 -- ============================
 
 --Nesting
-if GetLocale() == "zhCN" then return end
+if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -1325,7 +1325,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #retail
 #group RestedXP Miscellaneous
-#name a) Eversong Woods Glyphs 
+#name a) Eversong Woods Glyphs
 #displayname |cFF1EFF001|r - Eversong Woods
 #next a) Zul'aman Glyphs
 #chapter

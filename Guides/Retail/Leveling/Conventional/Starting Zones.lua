@@ -3,7 +3,7 @@
 -- =================================
 --group RestedXP Speed Leveling
 --LEVEL 1-10
-if GetLocale() == "zhCN" then return end
+if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
 RXPGuides.RegisterGuide([[
 #retail
 #group RestedXP Speed Leveling
@@ -3326,41 +3326,7 @@ step << Alliance
     .turnin 13188 >>Turn in Where Kings Walk
     .target Anduin Wrynn
 step << Alliance
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    .accept 65436 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Alliance
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
--- step << Alliance
---     .goto 84,62.10,32.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step << Alliance
---     .goto 84,62.1,32.2
---     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 84,1
---     .dmf
--- step << Alliance
---     #include RestedXP Speed Leveling\a) DMF
-step << Alliance
-    .isOnQuest 65436
-    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
-    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
-    .nodmf
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
 step << Horde
     #completewith next
     #label Saurfang's Blessing
@@ -3460,47 +3426,12 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Death Gate|r.
     .complete 58902,2 --1/1 Death Gate Used
 step << Alliance
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    .accept 65436 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Alliance
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+    .goto 84,62.21,29.84
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Hero's Call Board|r
     .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
+    .choose 1851120
 step << Alliance
-    .goto 84,56.24,17.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[3]|r.
-    -- .complete 58902,4 --1/1 Talk to Chromie
-    .turnin 58902 >>Turn in Defender of Azeroth
-    .target Chromie
--- step << Alliance
---     .goto 84,62.10,32.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step << Alliance
---     .goto 84,62.1,32.2
---     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 84,1
---     .dmf
--- step << Alliance
---     #include RestedXP Speed Leveling\a) DMF
-step << Alliance
-    .isOnQuest 65436
-    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
-    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
-    .nodmf
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
 step << Horde
     .goto 85,40.82,80.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
@@ -4906,20 +4837,21 @@ step << Alliance
     .accept 44473 >>Accept A Weapon of the Alliance
     .target Anduin Wrynn
 step << Alliance
-    #completewith next
-    #label Weapon of the Alliance
-    .goto 84,83.9,30.47,10,0
-    .goto 84,83.11,29.25,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elerion Bladedancer|r
-    .turnin 44473 >>Turn in A Weapon of the Alliance
-    .target Elerion Bladedancer
-    .accept 44663 >>Accept In the Blink of an Eye
-    .disablecheckbox
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart3-CallBoardEnd
+-- step << Alliance
+--     #completewith next
+--     #label Weapon of the Alliance
+--     .goto 84,83.9,30.47,10,0
+--     .goto 84,83.11,29.25,10,0
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elerion Bladedancer|r
+--     .turnin 44473 >>Turn in A Weapon of the Alliance
+--     .target Elerion Bladedancer
+--     .accept 44663 >>Accept In the Blink of an Eye
+--     .disablecheckbox
+-- step << Alliance
+--     #completewith Weapon of the Alliance
+--    .goto 84,40.28,77.68,250 >>Leave the Castle
 step << Alliance
-    #completewith Weapon of the Alliance
-   .goto 84,40.28,77.68,250 >>Leave the Castle
-step << Alliance
-    #requires Weapon of the Alliance
     .goto 84,40.28,77.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elerion Bladedancer|r
     .turnin 44473 >>Turn in A Weapon of the Alliance
@@ -4995,42 +4927,6 @@ step << Horde
     .turnin 41002 >>Turn in A Weapon of the Horde
     .target Elthyn Da'rai
     .accept 44663 >>Accept In the Blink of an Eye
-step << Alliance
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    .accept 65436 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Alliance
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
--- step << Alliance
---     .goto 84,62.10,32.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step << Alliance
---     .goto 84,62.1,32.2
---     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 84,1
---     .dmf
--- step << Alliance
---     #include RestedXP Speed Leveling\a) DMF
-step << Alliance
-    .isOnQuest 65436
-    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
-    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
-    .nodmf
 ]])
 --Dracthyr: The Forbidden Reach
 RXPGuides.RegisterGuide([[
@@ -5087,24 +4983,7 @@ step << !Evoker
     .skipgossipid 51901
     .target Chromie
 step << !Evoker Alliance
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    -- .complete 50313,1 --Talk to Chromie (1)
-    .accept 65436 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << !Evoker Alliance
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << !Evoker Alliance
-    #include RestedXP Speed Leveling\a) DMF
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
 step << !Evoker Horde
     .goto 85,40.834,80.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
@@ -6094,24 +5973,7 @@ step << Alliance Evoker
     .turnin 66513 >>Turn in Ground Leave
 	.target Scalecommander Azurathel
 step << Alliance Evoker
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    -- .complete 50313,1 --Talk to Chromie (1)
-    .accept 65436 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Alliance Evoker
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Alliance Evoker
-    #include RestedXP Speed Leveling\a) DMF
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
 -- step << Alliance Evoker
 --     .goto 84,79.84,27.05
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
@@ -6254,40 +6116,6 @@ step << Horde Evoker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebyssian|r.
     .turnin 65613 >>Turn in An Iconic, Draconic Look
     .target Ebyssian
-step << Alliance
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    .accept 65436 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Alliance
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
--- step << Alliance
---     .goto 84,62.10,32.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step << Alliance
---     .goto 84,62.1,32.2
---     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 84,1
---     .dmf
-step << Alliance
-    .isOnQuest 65436
-    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
-    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
-    .nodmf
 ]])
 --Pandaren: The Wandering Isle
 RXPGuides.RegisterGuide([[
@@ -7831,7 +7659,7 @@ step
 	.target Aysa Cloudsinger
 step
     #completewith Balanced Perspective
-    #arrowtext |cFFFCDC00If you fall|r \n |cRXP_WARN_return to shore and try again|r 
+    #arrowtext |cFFFCDC00If you fall|r \n |cRXP_WARN_return to shore and try again|r
     .goto 378,30.57,37.49,10,0
     .goto 378,31.09,36.82,10,0
     .goto 378,32.19,36.35,5,0
@@ -8477,14 +8305,14 @@ step
 step
     #hidewindow
     .countdown 2 >>Follow the Arrow
-step 
+step
     .zoneskip 84,1
     .goto 84,74.19,91.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r.
     .turnin 31450 >>Turn in A New Fate
 	.accept 30987 >>Accept Joining the Alliance
 	.target Aysa Cloudsinger
--- step 
+-- step
 --     .goto 84,74.19,91.98,-1
 --     .goto 1,45.58,12.61,-1
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r or |cRXP_FRIENDLY_Ji Firepaw|r.
@@ -8509,41 +8337,7 @@ step << Alliance
     .turnin 30987 >>Turn in Joining the Alliance
     .target Anduin Wrynn
 step << Alliance
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    .accept 65436 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Alliance
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
--- step << Alliance
---     .goto 84,62.11,32.18
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r.
---     .accept 7905 >>Accept The Darkmoon Faire
--- 	.target Darkmoon Faire Mystic
---     .dmf
--- step << Alliance
---     .goto 84,62.11,32.18
---     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 84,1
---     .dmf
--- step << Alliance
---     #include RestedXP Speed Leveling\a) DMF
-step << Alliance
-    .isOnQuest 65436
-    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
-    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
-    .nodmf
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
 step
     .zoneskip 1,1
     .goto 1,45.58,12.61
@@ -8593,10 +8387,10 @@ RXPGuides.RegisterGuide([[
 << Harronir
 
 step
-    #completewith 
+    #completewith Invasive Drifter
     .collecttoy 253629,3
-    +|cRXP_WARN_Switch to the Alt Leveling Guide instead:|r
-    .clicknext RestedXP Midnight\cab) Eversong Woods Route 4 (A) >>CLICK HERE FOR GUIDE << Alliance
+    +|cRXP_WARN_You can switch guides now to skip the starting zone(faster), or continue as normal|r.
+    .clicknext RestedXP Speed Leveling\a) Harandar: Skip >>CLICK HERE FOR GUIDE << Alliance
 step
     #hidewindow
     #completewith Enter the rootway
@@ -8825,46 +8619,7 @@ step << Horde
     -- .accept 94444 >>Accept Choose a Path
     .target Ambassador Blackguard
 step << Alliance
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    .accept 65436 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Alliance
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
--- step << Alliance
---     .goto 84,53.86,12.37
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Envoy Manat|r
---     .turnin 94445 >>Turn in Choose a Path
---     .target Envoy Manat
--- step << Alliance
---     .goto 84,62.10,32.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step << Alliance
---     .goto 84,62.1,32.2
---     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 84,1
---     .dmf
--- step << Alliance
---     #include RestedXP Speed Leveling\a) DMF
-step << Alliance
-    .isOnQuest 65436
-    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
-    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
-    .nodmf
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
 ]])
     --Harandar: Skip
 RXPGuides.RegisterGuide([[
@@ -8872,13 +8627,62 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Speed Leveling
 #name a) Harandar: Skip
+#displayname |cFF1EFF001|r - Harandar Skip
 #next ba) DF Alliance Intro Midnight (A) << Alliance
 #next b1) BfA Intro << Horde
 #chapter
 
 << Harronir
 
+--Arcantina Route
 
+step
+    .goto 2541,50.67,90.10,0
+    .zone 2393 >>Use |T7322718:0|t[Personal Key to Arcantina] and leave the instance portal.
+    .use 253629
+    .collecttoy 253629,3
+    .cooldown item,253629,>0,1
+step << Alliance
+    .goto 2393,55.25,70.31,15,0
+    .goto 2393,53.34,66.3,15,0
+    .goto 2393,52.63,64.52
+    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Stormwind|r
+    .collecttoy 253629,3
+step << Horde
+    .goto 2393,55.25,70.31,15,0
+    .goto 2393,53.34,66.3,15,0
+    .goto 2393,52.18,65.21
+    .collecttoy 253629,3
+    .zone 85 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Orgrimmar|r
+
+--Rootwalking Route
+
+step
+    .subzone 364 >>Use |T7491037:0|t[Rootwalking]
+    .usespell 1238686
+    .collecttoy 253629,1
+    .achievementComplete 61506,1
+step
+    .goto 2541,50.36,85.52
+    .zone 2393 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Harandar|r
+    .collecttoy 253629,1
+    .achievementComplete 61506,1
+step << Alliance
+    .goto 2393,52.54,67.08,15,0
+    .goto 2393,53.34,66.3,15,0
+    .goto 2393,52.63,64.52
+    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Stormwind|r
+    .collecttoy 253629,1
+    .achievementComplete 61506,1
+step << Horde
+    .goto 2393,52.54,67.08,15,0
+    .goto 2393,53.34,66.3,15,0
+    .goto 2393,52.18,65.21
+    .zone 85 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Orgrimmar|r
+    .collecttoy 253629,1
+    .achievementComplete 61506,1
+step << Alliance
+    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
 ]])
 --Earthen: Hall of Awakening
 RXPGuides.RegisterGuide([[
@@ -8893,6 +8697,11 @@ RXPGuides.RegisterGuide([[
 
 << EarthenDwarf
 
+step
+    #completewith Invasive Drifter
+    .collecttoy 253629,3
+    +|cRXP_WARN_You can switch guides now to skip the starting zone(faster), or continue as normal|r.
+    .clicknext RestedXP Speed Leveling\a) Hall of Awakening: Skip >>CLICK HERE FOR GUIDE << Alliance
 step
     .goto 2322,89.38,48.77,3,0
     .goto 2322,89.45,48.04
@@ -9107,47 +8916,22 @@ step << Alliance
     .target Ambassador Moorgard
     .accept 81887 >>Accept Stranger in a Strange Land
 step << Alliance
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    -- .complete 81887,1 --Talk to Chromie (1)
-    .accept 65436 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Alliance
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+-- step << Alliance
+--     .goto 84,56.257,17.311
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+--     .accept 40519 >>Accept Legion: The Legion Returns
+--     .chromietime 10
+--     .skipgossipid 51901
+--     .skipgossipid 51902
+--     .target Chromie
 step << Alliance
     .goto 84,56.19,17.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adhelda|r.
     .turnin 81887 >>Turn in Stranger in a Strange Land
     .target Adhelda
--- step << Alliance
---     .goto 84,62.10,32.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step << Alliance
---     .goto 84,62.1,32.2
---     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 84,1
---     .dmf
--- step << Alliance
---     #include RestedXP Speed Leveling\a) DMF
 step << Alliance
-    .isOnQuest 65436
-    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
-    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
-    .nodmf
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
 step << Horde
     #completewith next
     #label For the Horde
@@ -9176,14 +8960,37 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Speed Leveling
 #subgroup |cFFFCDC00(1-90)|r Default
 #name a) Hall of Awakening: Skip
+#displayname |cFF1EFF001|r - Hall of Awakening Skip
 #next ba) DF Alliance Intro Midnight (A) << Alliance
 #next b1) BfA Intro << Horde
+#chapter
 
 << EarthenDwarf
 
+step
+    .goto 2541,50.67,90.10
+    .zone 2393 >>Use |T7322718:0|t[Personal Key to Arcantina] and leave the instance portal.
+    .use 253629
+    .cooldown item,253629,>0,1
+    .collecttoy 253629,3
+step << Alliance
+    .goto 2393,55.25,70.31,15,0
+    .goto 2393,53.34,66.3,15,0
+    .goto 2393,52.63,64.52
+    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Stormwind|r
+    .collecttoy 253629,3
+step << Horde
+    .goto 2393,55.25,70.31,15,0
+    .goto 2393,53.34,66.3,15,0
+    .goto 2393,52.18,65.21
+    .zone 85 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Orgrimmar|r
+    .collecttoy 253629,3
+step << Alliance
+    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
+
 ]])
 --Arathi Highlands Returning Player
-RXPGuides.RegisterGuide([[
+RXPGuides.RegisterGuide([[ 
 #retail
 #version 1
 #group RestedXP Speed Leveling
@@ -9516,7 +9323,6 @@ step
 step
     #completewith Urgent Delivery!
     +If you want to level as fast as possible, choose Exile’s Reach as your starting zone. This requires recreating your character.
-
 step
     .xp >10,1
     .goto 468,61.21,29.63
@@ -10136,6 +9942,7 @@ RXPGuides.RegisterGuide([[
 #next ba) DF Alliance Intro Midnight (A) << Alliance
 #next b1) BfA Intro << Horde
 #chapter
+#internal
 
 << Alliance
 
@@ -10987,59 +10794,9 @@ step << Alliance
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .zoneskip 2352,1
 step << Alliance
-    #completewith next
-    #label The Legion Returns
-    .goto 84,49.48,86.65,2,0
-    .goto 84,49.05,87.82,5,0
-    .goto 84,48.85,86.89,5,0
-    .goto 84,49.05,87.75,5,0
-    .goto 84,49.52,86.63,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Alliance
-    #completewith The Legion Returns
-    .goto 84,56.257,17.311,812 >>Leave Mage Tower
-step << Alliance
-    #requires The Legion Returns
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    .accept 65436 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
--- step
---     .goto 84,62.10,32.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step
---     .goto 84,62.1,32.2
---     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 84,1
---     .dmf
--- step
---     #include RestedXP Speed Leveling\a) DMF
-step
-    .isOnQuest 65436
-    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
-    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
-    .nodmf
+    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
+
+
 ]])
     --Azuremyst Isle >1.3 XP Rate
 RXPGuides.RegisterGuide([[
@@ -12597,6 +12354,7 @@ RXPGuides.RegisterGuide([[
 #next ba) DF Alliance Intro Midnight (A) << Alliance
 #next b1) BfA Intro << Horde
 #chapter
+#internal
 
 << Alliance
 
@@ -12842,11 +12600,11 @@ step << Gnome Warrior
     #completewith next
     #label in The Future of Gnomeregan
     .goto 469,39.71,37.3,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drill Seargent Steamcrank|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drill Sergeant Steamcrank|r.
     .turnin 26203 >>Turn in The Future of Gnomeregan
     .accept 26425 >>Accept Meet the High Tinker
     .disablecheckbox
-    .target Drill Seargent Steamcrank
+    .target Drill Sergeant Steamcrank
 step << Gnome Warrior
     .xp >10,1
     #hidewindow
@@ -12856,10 +12614,10 @@ step << Gnome Warrior
     .xp >10,1
     #requires in The Future of Gnomeregan
     .goto 469,40.68,35.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drill Seargent Steamcrank|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drill Sergeant Steamcrank|r.
     .turnin 26203 >>Turn in The Future of Gnomeregan
     .accept 26425 >>Accept Meet the High Tinker
-    .target Drill Seargent Steamcrank
+    .target Drill Sergeant Steamcrank
 step << Gnome Monk
     .xp >10,1
     .goto 469,40.086,35.614
@@ -13489,6 +13247,7 @@ RXPGuides.RegisterGuide([[
 #next ba) DF Alliance Intro Midnight (A) << Alliance
 #next b1) BfA Intro << Horde
 #chapter
+#internal
 
 << Alliance
 
@@ -14683,62 +14442,7 @@ step << Alliance
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .zoneskip 2352,1
 step << Alliance
-    #completewith next
-    #label The Legion Returns
-    .goto 84,49.48,86.65,2,0
-    .goto 84,49.05,87.82,5,0
-    .goto 84,48.85,86.89,5,0
-    .goto 84,49.05,87.75,5,0
-    .goto 84,49.52,86.63,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Alliance
-    #completewith The Legion Returns
-    .goto 84,56.257,17.311,812 >>Leave Mage Tower
-step << Alliance
-    #requires The Legion Returns
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    .accept 65436 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
--- step
---     .goto 84,62.10,32.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step
---     .goto 84,62.1,32.2
---     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 84,1
---     .dmf
--- step
---     #include RestedXP Speed Leveling\a) DMF
-step << Alliance
-    .isOnQuest 65436
-    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
-    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
-    .nodmf
-
-
-
+    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
 -- step
 --     .goto 27,82.85,48.41
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Bahrum|r
@@ -15322,6 +15026,7 @@ RXPGuides.RegisterGuide([[
 #next ba) DF Alliance Intro Midnight (A) << Alliance
 #next b1) BfA Intro << Horde
 #chapter
+#internal
 
 << Alliance
 
@@ -16452,23 +16157,28 @@ step
     .turnin 83 >>Turn in Fine Linen Goods
     .turnin 59 >>Turn in Cloth and Leather Armor
     .target Sara Timberlain
-step
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
+step 
+    .goto 84,79.81,27.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
     .accept 65436 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
+    .target Wrathion
 step
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+    .goto 84,62.21,29.84
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Hero's Call Board|r
     .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
+    .choose 1851120
+step 
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+-- step
+--     .goto 84,56.257,17.311
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+--     .accept 40519 >>Accept Legion: The Legion Returns
+--     .chromietime 10
+--     .skipgossipid 51901
+--     .skipgossipid 51902
+--     .target Chromie
 step
+    .subzoneskip 6292
     .isOnQuest 65436
     >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
@@ -16945,6 +16655,7 @@ RXPGuides.RegisterGuide([[
 #next ba) DF Alliance Intro Midnight (A) << Alliance
 #next b1) BfA Intro << Horde
 #chapter
+#internal
 
 << Alliance
 
@@ -17555,7 +17266,7 @@ step
     .goto 59,31.01,60.8,10,0
     .goto 59,26.74,47.21,5,0
     .goto 59,23.34,46.51,5,0
-    .goto 59,20.76,43.33,8 >>Check for the |cRXP_PICK_Chest|r along the way, then jump up to |cRXP_ENEMY_Malenas|r.
+    .goto 59,20.76,43.33,8 >>Check for the |cRXP_PICK_Chest|r along the way, then jump up to |cRXP_ENEMY_Melenas|r.
     *|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chest|r; move on if it isn't there.
     *|cRXP_WARN_(1x quest XP)|r.
     .subzoneskip 258,1
@@ -18129,59 +17840,7 @@ step << Alliance
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .zoneskip 2352,1
 step << Alliance
-    #completewith next
-    #label The Legion Returns
-    .goto 84,49.48,86.65,2,0
-    .goto 84,49.05,87.82,5,0
-    .goto 84,48.85,86.89,5,0
-    .goto 84,49.05,87.75,5,0
-    .goto 84,49.52,86.63,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Alliance
-    #completewith The Legion Returns
-    .goto 84,56.257,17.311,812 >>Leave Mage Tower
-step << Alliance
-    #requires The Legion Returns
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    .accept 65436 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
--- step
---     .goto 84,62.10,32.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step
---     .goto 84,62.1,32.2
---     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 84,1
---     .dmf
--- step
---     #include RestedXP Speed Leveling\a) DMF
-step << Alliance
-    .isOnQuest 65436
-    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
-    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
-    .nodmf
+    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
 ]])
 --Worgen: Gilneas
 RXPGuides.RegisterGuide([[
@@ -18838,7 +18497,7 @@ step
 step
     #completewith next
     #title |cFFFCDC00Heads Up|r
-    +|cRXP_WARN_After saving |cRXP_FRIENDLY_Krennas|r|r;
+    +|cRXP_WARN_After saving |cRXP_FRIENDLY_Krennan|r|r;
     *Use the macro in the "Active Items Frame" to dismount and run to the questgiver.
     *|cRXP_WARN_Do NOT use the macro before the rescue|r.
 step
@@ -19953,7 +19612,7 @@ step
     .target Queen Mia Greymane
 step
     #completewith Greymane Manor
-    .goto 181,62.10,49.64,30 >>Enter the Graymane Manor
+    .goto 181,62.10,49.64,30 >>Enter the Greymane Manor
 step
     #requires Greymane Manor
     #label Greymane Manor2
@@ -20304,21 +19963,21 @@ step
     #label The Blackwald
     .goto 179,60.44,91.18,5,0
     .goto 179,61.05,90.43,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belyrsa Starbreeze|r |cRXP_WARN_in the house|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belysra Starbreeze|r |cRXP_WARN_in the house|r.
     .turnin 24578 >>Turn in The Blackwald
     .accept 24616 >>Accept Losing Your Tail
     .disablecheckbox
-    .target Belyrsa Starbreeze
+    .target Belysra Starbreeze
 step
     #completewith The Blackwald
     .goto 179,63.35,82.91,100 >>Follow the Arrow
 step
     #requires The Blackwald
     .goto 179,63.35,82.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belyrsa Starbreeze|r |cRXP_WARN_in the house|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belysra Starbreeze|r |cRXP_WARN_in the house|r.
     .turnin 24578 >>Turn in The Blackwald
     .accept 24616 >>Accept Losing Your Tail
-    .target Belyrsa Starbreeze
+    .target Belysra Starbreeze
 step
     #completewith next
     #label Dark Scout1
@@ -20357,21 +20016,21 @@ step
     .goto 179,62.45,82.62,5,0
     .goto 179,62.57,82.35,5,0
     .goto 179,63,82.41,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belyrsa Starbreeze|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belysra Starbreeze|r.
     .turnin 24616 >>Turn in Losing Your Tail
     .accept 24617 >>Accept Tal'doren, the Wild Home
     .disablecheckbox
-    .target Belyrsa Starbreeze
+    .target Belysra Starbreeze
 step
     #completewith Losing Your Tail
     .goto 179,63.35,82.9,15 >>Ascend the mountain.
 step
     #requires Losing Your Tail
     .goto 179,63.35,82.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belyrsa Starbreeze|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belysra Starbreeze|r.
     .turnin 24616 >>Turn in Losing Your Tail
     .accept 24617 >>Accept Tal'doren, the Wild Home
-    .target Belyrsa Starbreeze
+    .target Belysra Starbreeze
 step
     #completewith next
     #label Tal'doren, the Wild Home
@@ -20787,7 +20446,7 @@ step
     #completewith next
     #label Valov the Mad1
     .goto 179,73.53,28.75,10,0
-    >>Kill |cRXP_ENEMY_Valov the Mad|r.
+    >>Kill |cRXP_ENEMY_Valnov the Mad|r.
     .complete 24676,3 --Valnov the Mad slain (1)
     .mob Valnov the Mad
 step
@@ -20798,7 +20457,7 @@ step
     #requires Valov the Mad1
     #label Valov the Mad2
     .goto 179,74.16,27.43
-    >>Kill |cRXP_ENEMY_Valov the Mad|r.
+    >>Kill |cRXP_ENEMY_Valnov the Mad|r.
     .complete 24676,3 --Valnov the Mad slain (1)
     .mob Valnov the Mad
 step
@@ -21178,72 +20837,12 @@ step
     .accept 14434 >>Accept Rut'theran Village
     .turnin 14434 >>Turn in Rut'theran Village
     .target Admiral Nightwind
-
 step
-    #completewith next
-    #label The Legion Returns0
-    #hidewindow
-    .accept 40519 >>Accept Legion: The Legion Returns
-step
-    #completewith The Legion Returns0
     .goto 57,55.03,93.72
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal to Stormwind|r.
 step << Alliance
-    #requires The Legion Returns0
-    #completewith next
-    #label The Legion Returns
-    .goto 84,49.48,86.65,2,0
-    .goto 84,49.05,87.82,5,0
-    .goto 84,48.85,86.89,5,0
-    .goto 84,49.05,87.75,5,0
-    .goto 84,49.52,86.63,5,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << Alliance
-    #requires The Legion Returns0
-    #completewith The Legion Returns
-    .goto 84,56.257,17.311,812 >>Leave Mage Tower
-step << Alliance
-    #requires The Legion Returns
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    .accept 65436 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
--- step
---     .goto 84,62.10,32.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step
---     .goto 84,62.1,32.2
---     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 84,1
---     .dmf
--- step
---     #include RestedXP Speed Leveling\a) DMF
-step << Alliance
-    .isOnQuest 65436
-    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
-    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
-    .nodmf
+    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
+
 ]])
     --Gilneas: Skip
 RXPGuides.RegisterGuide([[
@@ -21254,6 +20853,7 @@ RXPGuides.RegisterGuide([[
 #next ba) DF Alliance Intro Midnight (A) << Alliance
 #next b1) BfA Intro << Horde
 #chapter
+#internal
 
 << Alliance Worgen !DK
 
@@ -21294,48 +20894,23 @@ step
     .turnin 51486 >>Turn in For the Alliance
     .accept 53500 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
-step
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    -- .complete 53500,1 --Talk to Chromie (1)
-    .accept 65436 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
+step 
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+-- step
+--     .goto 84,56.257,17.311
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+--     .accept 40519 >>Accept Legion: The Legion Returns
+--     .chromietime 10
+--     .skipgossipid 51901
+--     .skipgossipid 51902
+--     .target Chromie
 step
     .goto 84,56.199,17.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mudrik Leger|r.
     .turnin 53500 >>Turn in Stranger in a Strange Land
     .target Mudrik Leger
--- step
---     .goto 84,62.10,32.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step
---     .goto 84,62.1,32.2
---     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 84,1
---     .dmf
--- step
---     #include RestedXP Speed Leveling\a) DMF
-step
-    .isOnQuest 65436
-    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
-    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
-    .nodmf
+step 
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
 ]])
 --KulTiran: Boralus
 RXPGuides.RegisterGuide([[
@@ -21376,51 +20951,23 @@ step
     .turnin 55142 >>Turn in For the Alliance
     .accept 55146 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
-step
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    .accept 65436 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
+step 
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+-- step
+--     .goto 84,56.257,17.311
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+--     .accept 40519 >>Accept Legion: The Legion Returns
+--     .chromietime 10
+--     .skipgossipid 51901
+--     .skipgossipid 51902
+--     .target Chromie
 step
     .goto 84,56.199,17.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Provisioner Fray|r.
     .turnin 55146 >>Turn in Stranger in a Strange Land
     .target Provisioner Fray
--- step
---     .goto 84,62.10,32.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step
---     .goto 84,62.1,32.2
---     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 84,1
---     .dmf
--- step
---     #include RestedXP Speed Leveling\a) DMF
--- step
---     .zoneskip 1161
---     .hs >>Use |T134414:0|t[Hearthstone] to Boralus.
---     .nodmf
 step
-    .isOnQuest 65436
-    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
-    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
-    .nodmf
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
 ]])
 --LightforgedDraenei: The Vindicaar
 RXPGuides.RegisterGuide([[
@@ -21442,6 +20989,8 @@ step
 step
     #completewith next
     #label For the Alliance
+    .goto 941,48.06,59.93,10,0
+    .goto 941,54.21,59.45,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambassador Moorgard|r.
     .turnin 49772 >>Turn in For the Alliance
     .accept 50313 >>Accept Stranger in a Strange Land
@@ -21457,48 +21006,23 @@ step
     .turnin 49772 >>Turn in For the Alliance
     .accept 50313 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
-step
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    -- .complete 50313,1 --Talk to Chromie (1)
-    .accept 65436 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
+step 
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+-- step
+--     .goto 84,56.257,17.311
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+--     .accept 40519 >>Accept Legion: The Legion Returns
+--     .chromietime 10
+--     .skipgossipid 51901
+--     .skipgossipid 51902
+--     .target Chromie
 step
     .goto 84,56.199,17.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicator Minkey|r.
     .turnin 50313 >>Turn in Stranger in a Strange Land
     .target Vindicator Minkey
--- step
---     .goto 84,62.10,32.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step
---     .goto 84,62.1,32.2
---     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 84,1
---     .dmf
--- step
---     #include RestedXP Speed Leveling\a) DMF
 step
-    .isOnQuest 65436
-    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
-    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
-    .nodmf
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
 ]])
 --Mechagnome: Mechagon City
 RXPGuides.RegisterGuide([[
@@ -21519,7 +21043,7 @@ step
     .target High Tinker Mekkartonque
 step
     .goto 1573,20.5,60.0
-    >>Walk |cRXP_WARN_on the Stormwind Teleportation Unit|r.
+    >>Step on the platform.
     .complete 58146,1 --1/1 Teleport to Stormwind
 step
     .goto 84,53.059,15.259
@@ -21527,48 +21051,23 @@ step
     .turnin 58146 >>Turn in For the Alliance
     .accept 58147 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
-step
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    -- .complete 58147,1 --Talk to Chromie (1)
-    .accept 65436 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
+step 
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+-- step
+--     .goto 84,56.257,17.311
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
+--     .accept 40519 >>Accept Legion: The Legion Returns
+--     .chromietime 10
+--     .skipgossipid 51901
+--     .skipgossipid 51902
+--     .target Chromie
 step
     .goto 84,56.199,17.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lulana|r.
     .turnin 58147 >>Turn in Stranger in a Strange Land
     .target Lulana
--- step
---     .goto 84,62.10,32.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7905 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step
---     .goto 84,62.1,32.2
---     .zone 37 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40457
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 84,1
---     .dmf
--- step
---     #include RestedXP Speed Leveling\a) DMF
 step
-    .isOnQuest 65436
-    >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
-    .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
-    .nodmf
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
 ]])
 --VoidElf: Telogrus Rift
 RXPGuides.RegisterGuide([[
@@ -21606,27 +21105,23 @@ step
     .turnin 49788 >>Turn in For the Alliance
     .accept 50305 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
-step
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[1]|r.
-    .accept 65436 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step << !DemonHunter VoidElf
-    .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
-    .accept 40519 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
+step 
+    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
 step
     .goto 84,56.199,17.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keira Onyxraven|r.
     .turnin 50305 >>Turn in Stranger in a Strange Land
     .target Keira Onyxraven
+step << DemonHunter !VoidElf
+    .goto 84,62.21,29.84
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Hero's Call Board|r
+    .accept 40519 >>Accept Legion: The Legion Returns
+    .choose 1851120
+step << DemonHunter !VoidElf
+    .goto 84,79.81,27.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
+    .accept 65436 >>Accept The Dragon Isles Await
+    .target Wrathion
 step << DemonHunter VoidElf
     >>Use |T237449:0|t[Scroll of Reflection] and choose a follower.
     .complete 95215,1 --1/1 Use the Scroll of Reflection to choose between Kayn and Altruis
@@ -21678,20 +21173,12 @@ step << DemonHunter VoidElf
     .accept 44473 >>Accept A Weapon of the Alliance
     .target Anduin Wrynn
 step << DemonHunter VoidElf
-    #completewith next
-    #label Weapon of the Alliance
     .goto 84,83.9,30.47,10,0
-    .goto 84,83.11,29.25,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elerion Bladedancer|r
-    .turnin 44473 >>Turn in A Weapon of the Alliance
-    .target Elerion Bladedancer
-    .accept 44663 >>Accept In the Blink of an Eye
-    .disablecheckbox
+    .goto 84,79.81,27.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
+    .accept 65436 >>Accept The Dragon Isles Await
+    .target Wrathion
 step << DemonHunter VoidElf
-    #completewith Weapon of the Alliance
-   .goto 84,40.28,77.68,250 >>Leave the Castle
-step << DemonHunter VoidElf
-    #requires Weapon of the Alliance
     .goto 84,40.28,77.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elerion Bladedancer|r
     .turnin 44473 >>Turn in A Weapon of the Alliance
@@ -21717,6 +21204,8 @@ step << DemonHunter VoidElf
     .turnin 44663 >>Turn in In the Blink of an Eye
     .target Emissary Auldbridge
 -- step
+--     #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart2-CallBoardEnd
+-- step
 --     .goto 84,62.10,32.19
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
 --     .accept 7905 >>Accept The Darkmoon Faire
@@ -21732,6 +21221,7 @@ step << DemonHunter VoidElf
 -- step
 --     #include RestedXP Speed Leveling\a) DMF
 step
+    .subzoneskip 6292
     .isOnQuest 65436
     >>Use |T134309:0|t[Lost Dragonscale] to teleport to Stormwind.
     .complete 65436,1 --1/1 Lost Dragonscale used to teleport to near Wrathion's location (Optional)
@@ -23826,7 +23316,7 @@ step
     .mob Rotlimb Marauder
     .mob Darkwraith
 step
-    >>|cRXP_WARN_You can die if you pull too many |cRXP_ENEMY_Rotlimb Maurauders|r|r.
+    >>|cRXP_WARN_You can die if you pull too many |cRXP_ENEMY_Rotlimb Marauders|r|r.
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apprentice Mirveda|r.
     .goto 94,54.28,70.98
     .turnin 9254 >>Turn in The Wayward Apprentice
@@ -23870,7 +23360,7 @@ step << Warlock/Hunter
 step
     #completewith next
     .goto 94,51.47,70.39
-    .deathskip >>Pull some mobs around you and die at the waypoint location. Rotlimb Maraudurs are really good at killing you
+    .deathskip >>Pull some mobs around you and die at the waypoint location. Rotlimb Marauders are really good at killing you
 step
     .goto 94,46.93,71.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Sareyn|r.
@@ -23955,7 +23445,7 @@ step
     #completewith IncriminatingDocumentsA
     #label IncriminatingDocumentsB
     .goto 94,51.47,70.39
-    .deathskip >>Pull some mobs around you and die at the waypoint location. Rotlimb Maraudurs are really good at killing you
+    .deathskip >>Pull some mobs around you and die at the waypoint location. Rotlimb Marauders are really good at killing you
 step
     #requires IncriminatingDocumentsB
     #completewith IncriminatingDocumentsA
@@ -24003,47 +23493,6 @@ step
     .zone 2351 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot] then take the |cRXP_PICK_Stormwind Portal|r.
     .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
     .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
-step
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 65435 >>Accept The Dragon Isles Await
-    .chromietime 16
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 51443 >>Accept Battle for Azeroth: Mission Statement
-    .chromietime 15
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    .goto 85,40.82,80.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r.
-    .accept 43926 >>Accept Legion: The Legion Returns
-    .chromietime 10
-    .skipgossipid 51901
-    .skipgossipid 51902
-    .target Chromie
-step
-    #include a) Horde Legion Intro
--- step
---     .goto 85,48.23,62.19
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r
---     .accept 7926 >>Accept The Darkmoon Faire
---     .target Darkmoon Faire Mystic Mage
---     .dmf
--- step
---     .goto 85,48.23,62.19
---     .zone 7 >>Talk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage|r and accept the prompt.
---     .skipgossipid 40007
---     .target Darkmoon Faire Mystic Mage
---     .zoneskip 85,1
---     .dmf
--- step
---     #include RestedXP Speed Leveling\a) DMF
 
 ]])
 --Orc: Valley of Trials
@@ -25960,7 +25409,7 @@ step
     .goto 465,54.14,43.99,15,0
     .goto 465,53.74,51.00,10,0
     .goto 465,47.58,48.29,15,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Scarlet Corpses|r. |cRXP_WARN_Wait for Darneli to pick up the corpse before clicking on the next one|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Scarlet Corpses|r. |cRXP_WARN_Wait for Darnell to pick up the corpse before clicking on the next one|r.
     .complete 26800,1 --6/6 Scarlet Corpses gathered
     .target Scarlet Corpse
 step
@@ -26016,7 +25465,7 @@ step
     .goto 465,64.45,22.78,15,0
     .goto 465,59.24,21.36,25,0
     .goto 465,49.41,21.94,25,0
-    >>Kill |cRXP_ENEMY_Mangy Duskbats|r and |cRXP_ENEMY_Ragged Savengers|r around you. Loot them for the |T134297:0|t[|cRXP_LOOT_Scavenger Paws|r] and |T134360:0|t[|cRXP_LOOT_Duskbat Wings|r].
+    >>Kill |cRXP_ENEMY_Mangy Duskbats|r and |cRXP_ENEMY_Ragged Scavengers|r around you. Loot them for the |T134297:0|t[|cRXP_LOOT_Scavenger Paws|r] and |T134360:0|t[|cRXP_LOOT_Duskbat Wings|r].
     .complete 26802,1 --4/4 Scavenger Paw
     .complete 26802,2 --4/4 Duskbat Wing
     .mob Mangy Duskbat
@@ -26061,7 +25510,7 @@ step
     .target Darnell
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Rotbrain Berserker|r and |cRXP_ENEMY_Rotbrain Magus'|r.
+    >>Kill |cRXP_ENEMY_Rotbrain Berserker|r and |cRXP_ENEMY_Rotbrain Magus|r.
     .complete 24971,2 --8/8 Rotbrain undead slain
     .mob Rotbrain Berserker
     .mob Robrain Magus
@@ -26072,7 +25521,7 @@ step
     .mob Marshal Redpath
 step
     .goto 465,74.1,66.0
-    >>Kill |cRXP_ENEMY_Rotbrain Berserker|r and |cRXP_ENEMY_Rotbrain Magus'|r.
+    >>Kill |cRXP_ENEMY_Rotbrain Berserker|r and |cRXP_ENEMY_Rotbrain Magus|r.
     *|cRXP_WARN_NOTE:|r Focus undeads that are already fighting.
     .complete 24971,2 --8/8 Rotbrain undead slain
     .mob Rotbrain Berserker
@@ -26297,10 +25746,10 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Gloom Weed|r.
     .complete 25038,1 --3/3 Gloom Weed
 step
-    >>Kill the |cRXP_ENEMY_Ravaged Corpses|r and |cRXP_ENEMY_Rotten Dead|r. Loot them for the |T1:0|t[|cRXP_LOOT_Putric Claw|r].
+    >>Kill the |cRXP_ENEMY_Ravaged Corpses|r and |cRXP_ENEMY_Rotting Dead|r. Loot them for the |T1:0|t[|cRXP_LOOT_Putric Claw|r].
     .complete 25090,1 --7/7 Putrid Claw
     .mob Ravaged Corpse
-    .mob Rotten Dead
+    .mob Rotting Dead
 step
     #label GordosTaskA
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Gloom Weed|r.
@@ -26805,7 +26254,7 @@ step
     .complete 14070,3 --1/1 Jack the Hammer beaten down
     .mob Jack the Hammer
 step
-    >>Attack |cRXP_ENEMY_Frankei Gearslipper|r.
+    >>Attack |cRXP_ENEMY_Frankie Gearslipper|r.
     .goto 194,36.84,69.95
     .complete 14070,2 --1/1 Frankie Gearslipper beaten down
     .mob Frankey Gearslipper
@@ -27339,7 +26788,7 @@ step
     .accept 14238 >>Accept Infrared = Infradead
     .target Kilag Gorefang
 step
-    >>Use |T133149:0|t[Infraread Heat Focals] and kill |cRXP_ENEMY_SI:7 Assassins|r.
+    >>Use |T133149:0|t[Infrared Heat Focals] and kill |cRXP_ENEMY_SI:7 Assassins|r.
     .use 49611
     .goto 174,31.67,65.81
     .complete 14238,1 --10/10 SI:7 Assassin slain
@@ -27357,7 +26806,7 @@ step
     .accept 14241 >>Accept Get to the Gyrochoppa!
     .target Scout Brax
 step
-    >>Kill |cRXP_ENEMY_SI:7 Operatives|r and |cRXP_ENEMY_Gyrochopper Pilots|r. Loot them for the [|cRXP_LOOT_Gyrochoppa Keys|r].
+    >>Kill |cRXP_ENEMY_SI:7 Operatives|r and |cRXP_ENEMY_Gyrochoppa Pilot|r. Loot them for the [|cRXP_LOOT_Gyrochoppa Keys|r].
     .goto 174,23.23,67.50
     .complete 14241,1 --1/1 Gyrochoppa Keys
     .mob SI:7 Operative
@@ -27455,7 +26904,7 @@ step
     .use 132516
     .itemcount 132516,1
 step
-    >>Use the |T236997:0|t[Wild Cluster Eggs] to place an egg into a trap. Then wait until a |cRXP_ENEMY_raptor|r steps into the trap and loot the |cRXP_PICK_Spiny Raptor Egg|r.
+    >>Use the |T236997:0|t[Wild Clucker Eggs] to place an egg into a trap. Then wait until a |cRXP_ENEMY_raptor|r steps into the trap and loot the |cRXP_PICK_Spiny Raptor Egg|r.
     .use 50232
     .goto 174,49.64,63.45,30,0
     .goto 174,50.25,65.80,20,0
@@ -27716,7 +27165,7 @@ step
     .goto 174,56.67,44.26,15,0
     .complete 24942,1 --50/50 Goblin Zombies slain
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Dampwick|r, |cRXP_FRIENDLY_Assistant Greedy|r, and |cRXP_FRIENDLY_Coach Crosscheck|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Dampwick|r, |cRXP_FRIENDLY_Assistant Greely|r, and |cRXP_FRIENDLY_Coach Crosscheck|r.
     .turnin 24945 >>Turn in Three Little Pygmies
     .goto 174,51.85,47.20
     .turnin 24946 >>Turn in Rockin' Powder
@@ -27725,7 +27174,7 @@ step
     .accept 24952 >>Accept Rocket Boot Boost
     .goto 174,51.8,47.1
     .target Foreman Dampwick
-    .target Assistant Greedy
+    .target Assistant Greely
     .target Coach Crosscheck
 step
     >>Use the |T133029:0|t[Rockin' Powder Infused Rocket Boots]
@@ -28753,23 +28202,6 @@ step
 -- =================================
 -- =======   NEUTRAL ZONES   =======
 -- =================================
-
---Neighbourhood
--- RXPGuides.RegisterGuide([[
--- #retail
--- #version 2
--- #group RestedXP Midnight
--- #groupweight 1000
--- #subgroup |cFF1EFF00(1-90)|r Default
--- #name a) Neighbourhood 2
--- #displayname |cFF1EFF001|r - Welcome to the Neighbourhood
--- #next ba) DF Alliance Intro Midnight (A) 2 << Alliance
--- #next b1) BfA Intro 2 << Horde
--- #chapter
-
--- step
---     #include RestedXP Speed Leveling\a) Neighbourhood
--- ]])
 
 --Death Knight Plaguelands: The Scarlet Enclave
 RXPGuides.RegisterGuide([[

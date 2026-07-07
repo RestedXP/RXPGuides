@@ -1,5 +1,5 @@
 -- Fate of the Kirin Tor
-if GetLocale() == "zhCN" then return end
+if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
 RXPGuides.RegisterGuide([[
 #retail
 #version 1

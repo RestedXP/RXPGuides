@@ -1315,6 +1315,20 @@ function addon.settings:CreateAceOptionsPanel()
                             SetBinding(key,c)
                         end
                     },
+                    resetDiscardItems = {
+                        name = L("Reset Junk List"),
+                        desc = L("Click to reset the discard list for this character"),
+                        order = 4.88,
+                        type = "execute",
+                        width = optionsWidth,
+                        func = function()
+                            addon.inventoryManager.ResetJunk()
+                        end,
+                        confirm = function()
+                            return L("This action will unmark all junk items.\nAre you sure?")
+                        end,
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
+                    },
                     talentsHeader = {
                         name = function()
                             if addon.talents and addon.talents:IsSupported() then
@@ -2777,6 +2791,22 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 5.5,
+                        hidden = function()
+                            return not addon.itemUpgrades
+                        end,
+                        disabled = function()
+                            return not (self.profile.enableTips and
+                                       self.profile.enableItemUpgrades and
+                                       self.profile.enableQuestChoiceRecommendation) or
+                                       addon.player.level == addon.player.maxlevel
+                        end
+                    },
+                    disableUpgradeTooltip = {
+                        name = L("Disable Tooltips"), -- TODO locale
+                        --desc = L("Displays upgrade information on items"),
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 5.6,
                         hidden = function()
                             return not addon.itemUpgrades
                         end,

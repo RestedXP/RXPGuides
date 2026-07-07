@@ -1,4 +1,4 @@
-if GetLocale() == "zhCN" then return end
+if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
@@ -260,12 +260,22 @@ step
     .target Sputtervalve
 step
     #xprate <1.5
+    #optional
     .goto The Barrens,62.37,37.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok|r
     .accept 865 >>Accept Raptor Horns
     .accept 1069 >>Accept Deepmoss Spider Eggs
     .accept 1491 >>Accept Smart Drinks
     .target Mebok Mizzyrix
+    .isQuestTurnedIn 865
+step
+    #xprate <1.5
+    .goto The Barrens,62.37,37.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok|r
+    .accept 865 >>Accept Raptor Horns
+    .accept 1069 >>Accept Deepmoss Spider Eggs
+    .target Mebok Mizzyrix
+    .isQuestTurnedIn 865
 step << !Tauren
     #xprate >1.49
     #completewith next
@@ -1318,7 +1328,6 @@ step
     .turnin 1130 >> Turn in Melor Sends Word
     .accept 1131 >> Accept Steelsnap
     .target Melor Stonehoof
-    --TODO: Beta check if this quest can't be accepted without doing 1130 first
     .isOnQuest 1130
 step
     #label Steelsnap1
@@ -1746,7 +1755,34 @@ step
     .skill herbalism,1,1
 step
     #xprate <1.5
+    #optional
+    #completewith next
+    >>Kill |cRXP_ENEMY_Deviate Beasts|r. Loot them for their |cRXP_LOOT_Hides|r
+    .complete 1486,1 --Deviate Hide (20)
+    .mob Deviate Slayer
+    .mob Deviate Stinglash
+    .isOnQuest 1486
+step
+    #xprate <1.5
+    #loop
+    .goto Kalimdor,52.21,54.62,0
+    .goto Kalimdor,51.93,54.93,30,0
+    .goto Kalimdor,51.87,54.76,30,0
+    .goto Kalimdor,52.05,54.52,30,0
+    .goto Kalimdor,52.21,54.62,30,0
+    .goto Kalimdor,52.57,54.49,30,0
+    .goto Kalimdor,52.77,54.82,30,0
+    .goto Kalimdor,52.52,55.04,30,0
+    .goto Kalimdor,52.32,55.03,30,0
+    .goto Kalimdor,52.33,54.70,30,0
+    >>Kill |cRXP_ENEMY_Ectoplasms|r. Loot them for their |cRXP_LOOT_Essence|r
+    .complete 1491,1 --Wailing Essence (6)
+    .mob Devouring Ectoplasm
+    .isOnQuest 1491
+step
+    #xprate <1.5
     #label EssenceHides
+    #optional
     #loop
     .goto Kalimdor,52.21,54.62,0
     .goto Kalimdor,51.93,54.93,30,0
@@ -1759,12 +1795,10 @@ step
     .goto Kalimdor,52.32,55.03,30,0
     .goto Kalimdor,52.33,54.70,30,0
     >>Kill |cRXP_ENEMY_Deviate Beasts|r. Loot them for their |cRXP_LOOT_Hides|r
-    >>Kill |cRXP_ENEMY_Ectoplasms|r. Loot them for their |cRXP_LOOT_Essence|r
     .complete 1486,1 --Deviate Hide (20)
-    .mob +Deviate Slayer
-    .mob +Deviate Stinglash
-    .complete 1491,1 --Wailing Essence (6)
-    .mob +Devouring Ectoplasm
+    .mob Deviate Slayer
+    .mob Deviate Stinglash
+    .isOnQuest 1486
 step
     #xprate <1.5
     #optional
@@ -6313,7 +6347,7 @@ step
     .goto Thousand Needles,46.00,50.80
     >>Click on the |cRXP_FRIENDLY_Wanted Poster|r
     .accept 5147 >> Accept Wanted - Arnak Grimtotem
-step 
+step
     #optional
     .goto Thousand Needles,46.10,51.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau|r
