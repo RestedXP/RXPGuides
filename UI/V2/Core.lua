@@ -452,10 +452,10 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
         ["LayoutFinished"] = function(this, width, height)
             if this.noAutoHeight then return end
             local padding = getLayout("outerPadding")
-            local margin = getLayout("stepItemMargin")
+            local margin = getLayout("activeStepItemMargin")
             local bottomPadding = addon.v2:GetTheme().layout.activeStepsBottomPadding or 6
             this:SetHeight((height or 0) + (padding.top or 12) + (padding.bottom or 0) -
-                           (margin.bottom or 10) + bottomPadding)
+                           (margin.bottom or 8) + bottomPadding)
         end,
 
         ["OnHeightSet"] = function(this, height)
@@ -1297,13 +1297,11 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         titletext:SetJustifyH("CENTER")
         titletext:SetJustifyV("MIDDLE")
         titletext:SetTextColor(unpack(badgeTextColor))
-        titletext:SetShadowColor(24 / 255, 210 / 255, 255 / 255, 0.7)
-        titletext:SetShadowOffset(0, 0)
         titletext:SetFontObject(_G.GameFontNormalSmall)
         titletext:SetFont(
             theme.font,
             addon.settings.profile.guideFontSize + (badgeLayout.fontSizeOffset or -3),
-            "OUTLINE")
+            "")
 
         -- local border = CreateFrame("Frame", nil, frame, "BackdropTemplate")
         -- border:SetPoint("TOPLEFT", 0, 0)

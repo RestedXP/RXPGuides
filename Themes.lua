@@ -288,15 +288,18 @@ addon.v2.themes['v2'] = {
 
     borderColors = {
         common = {1, 1, 1, 1},
-        activeStepCheckbox = {52 / 255, 62 / 255, 116 / 255, 1},
+        activeSteps = {55 / 255, 62 / 255, 109 / 255, 1},
+        activeStepItem = {150 / 255, 156 / 255, 185 / 255, 1},
+        activeStepBadge = {150 / 255, 156 / 255, 185 / 255, 1},
+        activeStepCheckbox = {55 / 255, 62 / 255, 109 / 255, 1},
         activeStepCheckboxChecked = {17 / 255, 132 / 255, 1, 1},
     },
 
     layout = {
-        outerPadding = {left = 8, right = 8, top = 12, bottom = 0},
+        outerPadding = {left = 8, right = 8, top = 8, bottom = 8},
         stepItemPadding = {left = 4, right = 6, top = 6, bottom = 2},
         stepItemMargin = {bottom = 10},
-        activeStepItemPadding = {left = 4, right = 6, top = 5, bottom = 1},
+        activeStepItemPadding = {left = 4, right = 6, top = 12, bottom = 4},
         activeStepItemMargin = {bottom = 8},
         activeStepElement = {
             checkboxSize = 11,
@@ -310,9 +313,9 @@ addon.v2.themes['v2'] = {
             minHeight = 14,
             fontSizeOffset = -1,
         },
-        activeStepsBottomPadding = 6,
+        activeStepsBottomPadding = 0,
         stepBadge = {x = 4, y = 10, height = 16, horizontalPadding = 8},
-        activeStepBadge = {x = 3, y = 7, height = 11, horizontalPadding = 5, fontSizeOffset = -4},
+        activeStepBadge = {x = 6, y = 9, height = 18, horizontalPadding = 12, fontSizeOffset = -1},
         activeStepFrameInset = {left = 7, right = 7},
         partyTitle = {left = 12, y = 6, height = 11, horizontalPadding = 7, fontSizeOffset = -2},
         partyFooter = {height = 12},
