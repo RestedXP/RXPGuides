@@ -1755,6 +1755,15 @@ step
     .skill herbalism,1,1
 step
     #xprate <1.5
+    #optional
+    #completewith next
+    >>Kill |cRXP_ENEMY_Deviate Beasts|r. Loot them for their |cRXP_LOOT_Hides|r
+    .complete 1486,1 --Deviate Hide (20)
+    .mob Deviate Slayer
+    .mob Deviate Stinglash
+    .isOnQuest 1486
+step
+    #xprate <1.5
     #loop
     .goto Kalimdor,52.21,54.62,0
     .goto Kalimdor,51.93,54.93,30,0
@@ -1766,17 +1775,14 @@ step
     .goto Kalimdor,52.52,55.04,30,0
     .goto Kalimdor,52.32,55.03,30,0
     .goto Kalimdor,52.33,54.70,30,0
-    >>Kill |cRXP_ENEMY_Deviate Beasts|r. Loot them for their |cRXP_LOOT_Hides|r
     >>Kill |cRXP_ENEMY_Ectoplasms|r. Loot them for their |cRXP_LOOT_Essence|r
-    .complete 1486,1 --Deviate Hide (20)
-    .mob +Deviate Slayer
-    .mob +Deviate Stinglash
     .complete 1491,1 --Wailing Essence (6)
-    .mob +Devouring Ectoplasm
+    .mob Devouring Ectoplasm
     .isOnQuest 1491
 step
     #xprate <1.5
     #label EssenceHides
+    #optional
     #loop
     .goto Kalimdor,52.21,54.62,0
     .goto Kalimdor,51.93,54.93,30,0
@@ -1790,9 +1796,9 @@ step
     .goto Kalimdor,52.33,54.70,30,0
     >>Kill |cRXP_ENEMY_Deviate Beasts|r. Loot them for their |cRXP_LOOT_Hides|r
     .complete 1486,1 --Deviate Hide (20)
-    .mob +Deviate Slayer
-    .mob +Deviate Stinglash
-    .isNotOnQuest 1491
+    .mob Deviate Slayer
+    .mob Deviate Stinglash
+    .isOnQuest 1486
 step
     #xprate <1.5
     #optional

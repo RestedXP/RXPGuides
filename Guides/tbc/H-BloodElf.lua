@@ -662,7 +662,7 @@ step << BloodElf
     .home >> Set your Hearthstone to Falconwing Square
     .target Innkeeper Delaniel
     .bindlocation 3665
-step << !BloodElf !Warlock !Warrior
+step << !BloodElf !Warlock/Orc !Warrior
     .goto Eversong Woods,48.16,47.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delaniel|r
     .home >> Set your Hearthstone to Falconwing Square
@@ -1874,13 +1874,13 @@ step << Undead Warlock
     .goto Undercity,86.64,27.10
     .cast 9221 >>|cRXP_WARN_Use the|r |T134416:0|t[Runes of Summoning] |cRXP_WARN_at the Summoning Circle|r
     .use 6284
-step << Undead Warlock/Orc Warlock
+step << Undead Warlock
     .goto Undercity,86.64,27.10
     >>Kill the |cRXP_ENEMY_Summoned Voidwalker|r
     .complete 1471,1 --Kill Summoned Voidwalker (1)
     .mob Summoned Voidwalker
     .use 6284
-step << Undead Warlock/Orc Warlock
+step << Undead Warlock
     #label VoidWalkerComplete
     .goto Undercity,85.04,25.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin|r
@@ -1910,7 +1910,12 @@ step << Warrior/Undead Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Antheol|r
     .turnin 9066 >> Turn in Swift Discipline
     .target Instructor Antheol
-step << !Warrior !Warlock/BloodElf
+step << !Warrior !Warlock
+    #completewith ExitFalcon
+    .hs >> Hearth to Falconwing Square
+    .bindlocation 3665,1
+    .subzoneskip 3665
+step << Orc Warlock/BloodElf Warlock
     #completewith ExitFalcon
     .hs >> Hearth to Falconwing Square
     .bindlocation 3665,1

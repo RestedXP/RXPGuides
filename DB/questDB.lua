@@ -1155,7 +1155,14 @@ function addon.functions.setquestdb(self,text,str)
         end
         local t = assert(loadstring("return " .. str))
         setfenv(t, {})
-        addon.QuestDB[group] = t()
+        local questdb = t()
+        if type(questdb) ~= "table" then
+            if addon.settings.profile.debug then
+                print("Error loading QuestDB for",group)
+            end
+            return
+        end
+        addon.QuestDB[group] = questdb
         addon:FetchGuide(group,L"Turn in Route")
         --print('loaded QuestDB for',group)
     end

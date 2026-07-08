@@ -1479,8 +1479,8 @@ step
 step << Warlock
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gimrizz Shadowcog|r
-    .train 980 >> |T136139:0|t[Curse of Agony]
-    .train 5782 >> |T136183:0|t[Fear]
+    .train 980 >> Train |T136139:0|t[Curse of Agony]
+    .train 5782 >> Train |T136183:0|t[Fear]
     .goto Dun Morogh,47.327,53.693
     .target +Gimrizz Shadowcog
     .xp <8,1
@@ -3061,6 +3061,7 @@ step
     .use 1307 >>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_Gold Pickup Schedule|r] to start the quest|r
     .collect 1307,1,123 --Collect Gold Pickup Schedule (x1)
     .accept 123 >> Accept The Collector
+    .itemcount 1307,1
 step
     #completewith HoggerTurnin
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
