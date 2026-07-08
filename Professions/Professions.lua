@@ -20,7 +20,7 @@ local date = _G.date
 local GetMoney = _G.GetMoney
 
 
-addon.professions = addon:NewModule("ProfessionsGuide", "AceEvent-3.0") --TODO: maybe change the name
+addon.professions = addon:NewModule("ProfessionsGuide", "AceEvent-3.0")
 
 --Session
 local EVENTS_TO_REGISTER = {
@@ -938,6 +938,7 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
             end
             while howManyToMake > 0 and canCreateIthRecipe do --Add greedily
                 local saveMoneyBeforeRecipe = money
+                local moneyPerItem = 0 --calculates the worth of recipe per one craft rather then the money needed to buy everything (this is for the cases when the stack is n but we only need 1..n-1 items of it)
                 local tempMaterialsToBuy = {}
                 local canCreateRecipe = true --wheter there are enough materials overall; We assume we can
                 --Create temp new tables to add to main ones once we are don with recipe creation
@@ -970,6 +971,7 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
                             --Keep buying until enough
                             while addedMaterials < materialTable.count do
                                 money = money - (PROFESSIONS.VENDOR_ITEMS[materialName].price * 100)
+                                moneyPerItem = moneyPerItem + ceil((PROFESSIONS.VENDOR_ITEMS[materialName].price * 100) * materialTable.count / PROFESSIONS.VENDOR_ITEMS[materialName].count)
                                 addedMaterials = addedMaterials + PROFESSIONS.VENDOR_ITEMS[materialName].count
                                 tempMaterialsToBuy[materialName] = (tempMaterialsToBuy[materialName] or 0) + PROFESSIONS.VENDOR_ITEMS[materialName].count
                                 newBackpackKnapsack[materialName] = (newBackpackKnapsack[materialName] or 0) + PROFESSIONS.VENDOR_ITEMS[materialName].count
@@ -990,6 +992,7 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
                             while addedMaterials < materialTable.count and foundItems and #foundItems[materialName] > 0 and haveMoney do
                                 local foundItemDetails = foundItems[materialName][1]
                                 money = money - foundItemDetails.price
+                                moneyPerItem = moneyPerItem + (foundItemDetails.price * min(foundItemDetails.count, materialTable.count) / foundItemDetails.count) --min, because we want to check if we need more then the current stack has to offer
                                 tempMaterialsToBuy[materialName] = (tempMaterialsToBuy[materialName] or 0) + foundItemDetails.count
                                 newBackpackKnapsack[materialName] = (newBackpackKnapsack[materialName] or 0) + foundItemDetails.count - materialTable.count
                                 addedMaterials = addedMaterials + foundItemDetails.count
@@ -1016,15 +1019,17 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
                 --Check if next recipe is cheaper
                 local nextRecipeKeyIndex = recipeKeyIndex + 1
                 --TODO:next line for debugging purposes
-                local doCheck = false
+                local doCheck = true
                 if doCheck and nextRecipeKeyIndex <= #sortedRecipeKeysMinimum then
-                    --TODO: Rework this entirely - something is very wrong here
+                    --TODO: something is very wrong here
+                    --TODO: re-calculate minPrice for nextRecipe!!!!!
                     local nextRecipeName = sortedRecipeKeysMinimum[nextRecipeKeyIndex]
                     local nextRecipeMinimumPrice, _, _ = getRecipeInfo(professionName, nextRecipeName)
                     local nextPrecent = calculatePercent(professionName, nextRecipeName, skillLevel + skillLevelsGained)
                     local nextHowManyToMake = calculateAttemptCount(nextPrecent, RXPCData.professions.percentageTreshold)
                     --TODO: Very rough estimate:
-                    if nextHowManyToMake * nextRecipeMinimumPrice < saveMoneyBeforeRecipe - money then
+                    --if nextHowManyToMake * nextRecipeMinimumPrice < saveMoneyBeforeRecipe - money then
+                    if nextHowManyToMake * nextRecipeMinimumPrice < moneyPerItem then
                         --Next one is cheaper, mark this one as not created
                         canCreateRecipe = false
                         canCreateIthRecipe = false
@@ -1116,9 +1121,17 @@ end
 function addon.professions:ITEM_PUSH(bagSlot, iconFileID)
 end
 
+--Updates crafted items list
 function addon.professions:ITEM_LOCKED(_, bagIndex, slotIndex)
     local containerInfo = GetContainerItemInfo(bagIndex, slotIndex)
-    --TODO: access player invetory DB and remove the sold item from it
+    local itemID = containerInfo.itemID
+    local stackCount = containerInfo.stackCount
+    if RXPCData.craftedItems[itemID] then
+        RXPCData.craftedItems[itemID] = max(0, RXPCData.craftedItems[itemID] - stackCount)
+        if RXPCData.craftedItems[itemID] == 0 then
+            RXPCData.craftedItems[itemID] = nil
+        end
+    end
 end
 
 function addon.professions:BAG_NEW_ITEMS_UPDATED()
@@ -1145,9 +1158,25 @@ end
 
 --Updates crafted items list
 function addon.professions:CHAT_MSG_LOOT(_, text)
+    --TODO: change only to check prof1 and prof2
+    --TODO: get crafted stack size and update accordingly
     local itemName = match(text, "%[(.*)%]")
-    if not RXPCData.craftedItems[itemName] then RXPCData.craftedItems[itemName] = 0 end
-    RXPCData.craftedItems[itemName] = RXPCData.craftedItems[itemName] + 1
+    local foundRecipe = false
+    for k, recipes in pairs(PROFESSIONS) do
+        if k ~= "VENDOR_ITEMS" and k ~= "testing" then
+            for recipeName, _ in pairs(recipes) do
+                if lower(itemName) == lower(recipeName) then
+                    --Update crafted items
+                    RXPCData.craftedItems[itemName] = (RXPCData.craftedItems[itemName] or 0) + 1
+                    foundRecipe = true
+                    break
+                end
+            end
+            if foundRecipe then
+                break
+            end
+        end
+    end
 end
 
 --Updates skill level
@@ -1380,7 +1409,7 @@ SlashCmdList['qtst'] = function(item)
     calculateRecipeAveragePrice(RXPCData.professions.profession1.name)
     for k, v in pairs(profSession.recipesToConsider) do
         print(tostring(k), " -> ", tostring(v["recipeMinimumPrice"]), " | ", tostring(v["recipeAveragePrice"]))
-    end 
+    end
 end
 
 --Export
