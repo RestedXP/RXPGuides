@@ -838,18 +838,46 @@ function addon.comms.grouping:UpdateParty()
     end
 end
 
-function addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
-    if not addon.settings.profile.shareActiveSteps then return end
-    if not addon.comms.state.group.hasRXP then return end
+local ACTIVE_STEP_BROADCAST_INTERVAL = 0.2
 
-    if UnitInBattleground("player") ~= nil or GetNumGroupMembers() <= 1 then return end
-
+local function SendCurrentStep(self, encodedPayload)
     local data = {
         command = "STEP",
         encodedPayload = encodedPayload
     }
 
     local sz = addon.comms:Serialize(data)
-    addon.comms:SendCommMessage(addon.comms._commPrefix, sz, "PARTY")
+    addon.comms:SendCommMessage(addon.comms._commPrefix, sz, "PARTY", nil, "ALERT")
+    self.activeStepBroadcastLast = GetTime()
+    return true
+end
+
+function addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
+    if not addon.settings.profile.shareActiveSteps then return end
+    if not addon.comms.state.group.hasRXP then return end
+    if UnitInBattleground("player") ~= nil or GetNumGroupMembers() <= 1 then return end
+
+    local now = GetTime()
+    local delay = ACTIVE_STEP_BROADCAST_INTERVAL -
+                    (now - (self.activeStepBroadcastLast or 0))
+
+    if delay <= 0 and not self.activeStepBroadcastQueued then
+        return SendCurrentStep(self, encodedPayload)
+    end
+
+    self.activeStepBroadcastPayload = encodedPayload
+    if self.activeStepBroadcastQueued then return true end
+
+    self.activeStepBroadcastQueued = true
+    C_Timer.After(delay, function()
+        local payload = self.activeStepBroadcastPayload
+        self.activeStepBroadcastQueued = false
+        self.activeStepBroadcastPayload = nil
+
+        if payload then
+            self:BroadcastCurrentStep(payload)
+        end
+    end)
+
     return true
 end
