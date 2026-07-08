@@ -309,7 +309,7 @@ addon.v2.themes['v2'] = {
             textOnlyLeft = 17,
             iconWidth = 14,
             iconLeftGap = 5,
-            iconGap = 5,
+            iconGap = 1,
             minHeight = 14,
             fontSizeOffset = -1,
         },
