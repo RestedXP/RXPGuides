@@ -1489,6 +1489,9 @@ step << NightElf/Dwarf Hunter
     .xp 13 >> Grind to level 13
 step
     #optional
+    #label HCHunterEnd --hidden step for #include
+step
+    #optional
     #completewith AuberdineTurnin2 << NightElf/Hunter/Druid/Warrior
     #completewith AmethStart << !NightElf !Hunter !Druid !Warrior
     .goto 1439,43.509,33.207,0
@@ -1653,7 +1656,7 @@ step << NightElf Hunter
     .goto Darkshore,37.4,40.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalmond|r
     >>|cRXP_WARN_Buy up to 2000|r |T132382:0|t[Sharp Arrows] |cRXP_WARN_from him. You will need them for a grinding section soon|r
-    .collect 2515,2000 --Sharp Arrow (35)
+    .collect 2515,2000 --Sharp Arrow (2000)
     .target Dalmond
     .subzoneskip 442,1 --skip if you leave Auber
     .isQuestTurnedIn 4811 --show step if you turned in red crystal
@@ -1912,6 +1915,9 @@ step << NightElf/Hunter/Druid/Warrior
     .complete 985,2 -- Blackwood Windtalker (5)
     .mob +Blackwood Windtalker
     .isQuestTurnedIn 4811
+step
+    #optional
+    #label HCHunterStart --hidden step for #include
 step << NightElf/Hunter/Druid/Warrior
     #xprate <1.5 --<< !NightElf/Hunter
     #optional
@@ -2114,6 +2120,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .turnin 953 >> Turn in The Fall of Ameth'Aran
     .target Sentinel Tysha Moonblade
+step
+    #optional
+    #label HCHunterEndTwo --hidden step for #include
 step << !sod/Warrior/Rogue
     #optional
     #completewith FurbolgGrind
