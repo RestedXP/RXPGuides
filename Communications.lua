@@ -103,6 +103,7 @@ function addon.comms:PLAYER_ENTERING_WORLD(_, isInitialLogin, isReloadingUi)
     self:AnnounceSelf("ANNOUNCE")
 
     addon.comms.grouping:UpdateParty()
+    self:AdvertiseCurrentStepOnce()
 end
 
 function addon.comms:GROUP_FORMED()
@@ -110,10 +111,7 @@ function addon.comms:GROUP_FORMED()
         self:AnnounceSelf("ANNOUNCE")
 
         addon.comms.grouping:UpdateParty()
-
-        if addon.RXPFrame.activeSteps then
-            addon.v2:UpdateActiveStepsFrame(addon.RXPFrame.activeSteps)
-        end
+        self:AdvertiseCurrentStepOnce()
     end)
 end
 
@@ -129,9 +127,7 @@ function addon.comms:GROUP_ROSTER_UPDATE()
     self:QueueActiveStepFrameCleanup()
 
     C_Timer.After(5 + mrand(5), function()
-        if addon.RXPFrame.activeSteps then
-            addon.v2:UpdateActiveStepsFrame(addon.RXPFrame.activeSteps)
-        end
+        self:AdvertiseCurrentStepOnce()
     end)
 end
 
@@ -152,6 +148,12 @@ end
 
 function addon.comms:PLAYER_REGEN_ENABLED()
     self:ProcessActiveStepFrameCleanup()
+end
+
+function addon.comms:AdvertiseCurrentStepOnce()
+    if not (addon.settings.profile.enableBetaFeatures and addon.RXPFrame and addon.RXPFrame.activeSteps) then return end
+
+    addon.comms.grouping:BroadcastCurrentStep(addon.v2:EncodePlayerActiveSteps(addon.RXPFrame.activeSteps))
 end
 
 function addon.comms:PLAYER_LEVEL_UP(_, level)
@@ -326,9 +328,7 @@ function addon.comms:HandleAnnounce(data)
     self.players[data.player.name].lastSeen = GetTime()
 
     addon.comms.grouping:UpdateParty()
-    if addon.RXPFrame.activeSteps then
-        addon.v2:UpdateActiveStepsFrame(addon.RXPFrame.activeSteps)
-    end
+    self:AdvertiseCurrentStepOnce()
 
     if not addon.settings.profile.checkVersions then return end
 
