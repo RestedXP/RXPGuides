@@ -50,6 +50,11 @@ RXPFrame.ScrollFrame = ScrollFrame
 RXPFrame.ScrollChild = ScrollChild
 RXPFrame.MenuFrame = MenuFrame
 
+function addon.UseV2ActiveStepsFrame()
+    local profile = addon.settings and addon.settings.profile
+    return profile and profile.enableBetaFeatures and profile.enableV2ActiveStepsFrame
+end
+
 function RXPFrame:UpdateVisuals()
     BottomFrame:ClearBackdrop()
     BottomFrame:SetBackdrop(RXPFrame.backdrop.edge)
@@ -295,6 +300,8 @@ function addon.ReleaseActiveStepElement(frame)
 end
 
 local function SetStepFrameAnchor()
+    if addon.UseV2ActiveStepsFrame() then return end
+
     local frame = CurrentStepFrame
     local scale = RXPFrame:GetScale()
     -- local bars = RXPFrame.BarContainer
@@ -757,10 +764,10 @@ function addon.SetStep(n, n2, loopback)
     table.wipe(addon.activeSpells)
     table.wipe(addon.activeMacros)
     table.wipe(addon.inventoryManager.itemsToOpen)
-    ClearFrameData()
+    local useV2ActiveStepsFrame = addon.UseV2ActiveStepsFrame()
+    if not useV2ActiveStepsFrame then ClearFrameData() end
     local level = UnitLevel("player")
     local scrollHeight = 1
-    local activeTargets = {}
 
     for i = 1, n - 1 do
         local step = guide.steps[i]
@@ -830,10 +837,78 @@ function addon.SetStep(n, n2, loopback)
         end
     end
 
+    if useV2ActiveStepsFrame then
+        local activeTargets = {}
+        local stepUnitscan = {}
+        local stepMobs = {}
+        local stepTargets = {}
+        local target, wstep
+
+        local function AddTargets(targetList, output)
+            if not targetList then return end
+            for _, targetId in ipairs(targetList) do
+                target = targetId
+                if not activeTargets[target] then
+                    activeTargets[target] = true
+                    tinsert(output, addon.GetCreatureName(target))
+                end
+            end
+        end
+
+        for _, step in ipairs(activeSteps) do
+            if step.tip then addon.currentTip = step end
+            if step.activeItems then
+                for k, v in pairs(step.activeItems) do
+                    addon.activeItems[k] = v
+                end
+            end
+            if step.activeSpells then
+                for k, v in pairs(step.activeSpells) do
+                    addon.activeSpells[k] = v
+                end
+            end
+            if step.activeMacros then
+                for k, v in pairs(step.activeMacros) do
+                    addon.activeMacros[k] = v
+                end
+            end
+            for _, element in ipairs(step.elements or {}) do
+                AddTargets(element.unitscan, stepUnitscan)
+                AddTargets(element.mobs, stepMobs)
+                AddTargets(element.targets, stepTargets)
+            end
+        end
+        addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs)
+        addon.targeting:UpdateTargetList(stepTargets)
+        if addon.settings.profile.enableTargetAutomation then
+            addon.targeting:CheckNameplates()
+        end
+        addon:QueueMessage("RXP_TARGET_LIST_UPDATE", stepUnitscan, stepMobs, stepTargets)
+
+        for index in pairs(RXPCData.completedWaypoints) do
+            wstep = index == "tip" and lastTip ~= addon.currentTip and
+                        lastTip or guide.steps[index]
+            if not (wstep and wstep.active) then
+                RXPCData.completedWaypoints[index] = nil
+            end
+        end
+
+        addon.v2.events:Trigger("UpdateActiveSteps", activeSteps, addon.player.name)
+        addon.UpdateItemFrame()
+        addon.updateSteps = true
+        addon.UpdateMap()
+        BottomFrame:StepScroll(scrollHeight)
+        CurrentStepFrame:SetHeight(0)
+        CurrentStepFrame:Hide()
+        return
+    end
+
     --local totalHeight = 0
+    CurrentStepFrame:Show()
     local c = 0
     local anchor = 0
     --local heightDiff = RXPFrame:GetHeight() - CurrentStepFrame:GetHeight()
+    local activeTargets = {}
     local stepUnitscan = {}
     local stepMobs = {}
     local stepTargets = {}
@@ -1093,9 +1168,14 @@ function CurrentStepFrame.UpdateText()
         -- TODO throttle, maybe moot when more conversion to v2.events
         addon.v2.events:Trigger("UpdateActiveSteps", activeSteps, addon.player.name)
 
-        -- TODO, uncomment to prevent parallelism
-        -- return
+        if addon.UseV2ActiveStepsFrame() then
+            CurrentStepFrame:SetHeight(0)
+            CurrentStepFrame:Hide()
+            return
+        end
     end
+
+    CurrentStepFrame:Show()
 
     -- StepScroll(n)
     local totalHeight, frameHeight = 0, 0
@@ -2549,8 +2629,7 @@ function addon.v2:GetActiveStepsFrame(player)
         local leftInset = frameInset.left or 0
         local rightInset = frameInset.right or 0
 
-        -- Temporarily during parallel work
-        if addon.settings.profile.anchorOrientation == "bottom" or addon.settings.profile.debug then
+        if addon.settings.profile.anchorOrientation == "bottom" then
             stepFrame:SetPoint("TOPLEFT", addon.RXPFrame, "BOTTOMLEFT", leftInset + 3, 0)
             stepFrame:SetPoint("TOPRIGHT", addon.RXPFrame, "BOTTOMRIGHT", -rightInset - 3, 0)
         else
