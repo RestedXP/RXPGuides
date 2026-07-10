@@ -2906,17 +2906,26 @@ function addon.v2:UpdatePartyActiveStepItem(stepItem, step)
     stepItem:SetTitle(step.title or fmt(L("Step %d"), step.index))
 
     local label = stepItem.stepTextLabel
+    local text = step.text and step.text:gsub("\n%s+", "\n"):gsub("^%s+", "") or " "
+    local theme = self:GetTheme()
+    local elementLayout = theme.layout and theme.layout.activeStepElement or {}
+    local textColor = theme.textColor.activeStepItem or theme.textColor.common
     if not label then
         label = AceGUI:Create("Label")
-        label:SetFullHeight(true)
-        label:SetFullWidth(true)
         label:SetText(" ")
         stepItem:AddChild(label)
         stepItem.stepTextLabel = label
     end
-    if step.text then
-        label:SetText(step.text)
-    end
+    label:SetText(text ~= "" and text or " ")
+    label:SetFullHeight(true)
+    label:SetFullWidth(true)
+    label:SetJustifyH("LEFT")
+    label:SetJustifyV("TOP")
+    label:SetColor(unpack(textColor))
+    label:SetFont(
+        theme.font,
+        addon.settings.profile.guideFontSize + (elementLayout.fontSizeOffset or 0),
+        "")
 end
 
 function addon.v2:UpdateActiveStepsFrame(steps)
