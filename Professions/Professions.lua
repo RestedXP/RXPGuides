@@ -391,12 +391,14 @@ end
 
 --local renaming
 --we do this as to not have addon.professions.etc every time
---TODO: maybe add for RXPCData.professions as well?
 local profSession = addon.professions.profSession
 local PROFESSIONS = addon.professions.PROFESSIONS
 local vah = addon.professions.vah
 local GUI = addon.professions.GUI
 local locale = addon.professions.locale
+local CDATA = RXPCData.professions
+local prof1 = CDATA.profession1
+local prof2 = CDATA.profession2
 
 --local functions
 

@@ -108,6 +108,6 @@ function addon.professions.AH:Scan(itemName)
 
     profSession.sentQuery = true
     -- text, minLevel, maxLevel, page, usable, rarity, getAll, exactMatch, filterData
-    QueryAuctionItems(itemName, nil, nil, profSession.currentPage, false, nil, false, true, nil) --TODO: check if usable should be true, exactMatch should be true by testing
+    QueryAuctionItems(itemName, nil, nil, profSession.currentPage, false, nil, false, true, nil)
 end
 
