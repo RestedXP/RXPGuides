@@ -262,26 +262,66 @@ addon.v2.themes['v2'] = {
 
     backgroundColors = {
         common = {26 / 255, 28 / 255, 48 / 255, 0.95}, -- #1A1C30F2
-        activeSteps = {11 / 255, 12 / 255, 26 / 255, 0.95}, -- #0B0C1AF2
-        activePartySteps = {11 / 255, 12 / 255, 26 / 255, 0.95}, -- #0B0C1AF2
-        activePartyTab = {28 / 255, 31 / 255, 52 / 255, 1}, -- #1C1F34FF
-        inactivePartyTab = {32 / 255, 33 / 255, 49 / 255, 1}, -- #202131FF
-        activePartyFooter = {20 / 255, 22 / 255, 39 / 255, 0.98}, -- #141627FA
-        activeStepItem = {20 / 255, 22 / 255, 39 / 255, 0.98}, -- #141627FA
-        activeStepCheckbox = {5 / 255, 7 / 255, 19 / 255, 1}, -- #050713FF
-        activeStepCheckboxChecked = {17 / 255, 132 / 255, 1, 1}, -- #118401FF
+        activeSteps = {11 / 255, 12 / 255, 26 / 255, 0.95},
+        activePartySteps = {11 / 255, 12 / 255, 26 / 255, 0.95},
+        activePartyTitle = {20 / 255, 22 / 255, 39 / 255, 1},
+        activePartyFooter = {9 / 255, 10 / 255, 22 / 255, 0.95},
+        activeStepItem = {20 / 255, 22 / 255, 39 / 255, 0.98},
+        activeStepCheckbox = {5 / 255, 7 / 255, 19 / 255, 1},
+        activeStepCheckboxChecked = {17 / 255, 132 / 255, 1, 1},
+    },
+
+    shadows = {
+        outer = {
+            size = 2,
+            alpha = 0.4,
+            xOffset = 0,
+            yOffset = 0,
+        },
+        stepItem = {
+            size = 2,
+            alpha = 0.45,
+            xOffset = 0,
+            yOffset = 0,
+        },
     },
 
     borderColors = {
-        common = {1, 1, 1, 1}, -- #FFFFFFFF
-        activeSteps = {55 / 255, 62 / 255, 109 / 255, 1}, -- #373E6DFF
-        activePartySteps = {55 / 255, 62 / 255, 109 / 255, 1}, -- #373E6DFF
-        activePartyTab = {55 / 255, 62 / 255, 109 / 255, 1}, -- #373E6DFF
-        inactivePartyTab = {62 / 255, 66 / 255, 102 / 255, 1}, -- #3E4266FF
-        activeStepItem = {150 / 255, 156 / 255, 185 / 255, 1}, -- #969CB9FF
-        activeStepBadge = {150 / 255, 156 / 255, 185 / 255, 1}, -- #969CB9FF
-        activeStepCheckbox = {55 / 255, 62 / 255, 109 / 255, 1}, -- #373E6DFF
-        activeStepCheckboxChecked = {17 / 255, 132 / 255, 1, 1}, -- #118401FF
+        common = {1, 1, 1, 1},
+        activeSteps = {55 / 255, 62 / 255, 109 / 255, 1},
+        activeStepItem = {150 / 255, 156 / 255, 185 / 255, 1},
+        activeStepBadge = {150 / 255, 156 / 255, 185 / 255, 1},
+        activeStepCheckbox = {55 / 255, 62 / 255, 109 / 255, 1},
+        activeStepCheckboxChecked = {17 / 255, 132 / 255, 1, 1},
+    },
+
+    layout = {
+        outerPadding = {left = 8, right = 8, top = 8, bottom = 8},
+        stepItemPadding = {left = 4, right = 6, top = 6, bottom = 2},
+        stepItemMargin = {bottom = 10},
+        activeStepItemPadding = {left = 4, right = 6, top = 12, bottom = 4},
+        activeStepItemMargin = {bottom = 8},
+        activeStepElement = {
+            checkboxSize = 11,
+            checkboxHoverIconInset = 2,
+            checkboxLeft = 2,
+            textGap = 7,
+            textOnlyLeft = 17,
+            iconWidth = 14,
+            iconLeftGap = 5,
+            iconGap = 1,
+            minHeight = 14,
+            fontSizeOffset = -1,
+        },
+        activeStepsBottomPadding = 0,
+        stepBadge = {x = 4, y = 10, height = 16, horizontalPadding = 8},
+        activeStepBadge = {x = 6, y = 9, height = 18, horizontalPadding = 12, fontSizeOffset = -1},
+        activeStepFrameInset = {left = 7, right = 7},
+        partyTitle = {left = 12, y = 6, height = 11, horizontalPadding = 7, fontSizeOffset = -2},
+        partyFooter = {height = 12},
+        partyContent = {left = 6, right = 6, top = 7, bottom = 14},
+        partyFrame = {defaultWidth = 265, minWidth = 265, minHeight = 105},
+        partyScrollbar = {scale = 0.75},
     },
 
     edges = {
@@ -298,13 +338,10 @@ addon.v2.themes['v2'] = {
     },
 
     textColor = {
-        common = {1, 1, 1, 1}, -- #FFFFFFFF
-        activePartySteps = {24 / 255, 210 / 255, 255 / 255, 1}, -- #18D2FFFF
-        activePartyTab = {24 / 255, 210 / 255, 255 / 255, 1}, -- #18D2FFFF
-        inactivePartyTab = {0.62, 0.62, 0.72, 1}, -- #9E9EB8FF
-        activePartyStepItem = {1, 1, 1, 1}, -- #FFFFFFFF
-        activeStepItem = {1, 1, 1, 1}, -- #FFFFFFFF
-        activeStepBadge = {24 / 255, 210 / 255, 255 / 255, 1}, -- #18D2FFFF
+        common = {1, 1, 1},
+        activePartySteps = {24 / 255, 210 / 255, 255 / 255},
+        activeStepItem = {1, 1, 1},
+        activeStepBadge = {24 / 255, 210 / 255, 255 / 255},
     }
 }
 

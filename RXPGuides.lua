@@ -2267,3 +2267,43 @@ function addon.stepLogic.ProfessionCheck(step)
 end
 
 RXP = addon -- debug purposes
+
+addon.v2 = addon.v2 or {}
+function addon.v2:Setup()
+    addon.v2.events:Setup()
+end
+
+addon.v2.events = addon:NewModule("V2Events", "AceEvent-3.0")
+addon.v2.events.messagePrefix = "RXPGuidesV2_"
+
+function addon.v2.events:Setup()
+    addon.v2.events:Register("UpdateActiveSteps")
+    addon.v2.events:Register("QuestDataLoaded")
+end
+
+function addon.v2.events:Register(key)
+    if not key then return end
+    addon.comms.PrettyDebug("addon.v2.events:Register %s", key)
+    self:RegisterMessage(self.messagePrefix .. key, key)
+end
+
+function addon.v2.events:Trigger(key, ...)
+    if not key then return end
+
+    self:SendMessage(self.messagePrefix .. key, ...)
+end
+
+function addon.v2.events:UpdateActiveSteps(_, activeSteps, name)
+    if name == addon.player.name then
+        addon.v2:UpdateActiveStepsFrame(activeSteps)
+        return
+    end
+
+    addon.v2:UpdateActivePartyStepsFrame(activeSteps, name)
+end
+
+function addon.v2.events:QuestDataLoaded()
+    if addon.RXPFrame.activeSteps then
+        addon.v2:UpdateActiveStepsFrame(addon.RXPFrame.activeSteps)
+    end
+end

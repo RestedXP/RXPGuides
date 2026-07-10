@@ -255,7 +255,7 @@ function addon.BindActiveStepElement(frame, step, element, index)
     frame.element = element
     frame.index = index
     element.frame = frame
-    if frame.button then frame.button:Enable() end
+    frame.button:Enable()
 
     if not element.tag then return end
 
@@ -299,48 +299,8 @@ function addon.ReleaseActiveStepElement(frame)
     frame.index = nil
 end
 
-function addon.v2:ClearActiveStepEventWatchers()
-    local watcher = self.state.activeStepEventWatcher
-    if not watcher then return end
-    AceGUI:Release(watcher)
-    self.state.activeStepEventWatcher = nil
-    self.state.activeStepEventWatcherStep = nil
-end
-
-function addon.v2:UpdateActiveStepEventWatchers(steps)
-    local watcher = self.state.activeStepEventWatcher
-    local watcherStep = self.state.activeStepEventWatcherStep
-    if not watcher then
-        watcher = AceGUI:Create("RXPV2ActiveStepItem")
-        watcher.frame:Hide()
-        self.state.activeStepEventWatcher = watcher
-    end
-    if not watcherStep then
-        watcherStep = {active = true, elements = {}}
-        self.state.activeStepEventWatcherStep = watcherStep
-    end
-    table.wipe(watcherStep.elements)
-
-    local element, step
-    for stepIndex = 1, #steps do
-        step = steps[stepIndex]
-        if step.active then
-            for elementIndex = 1, #(step.elements or {}) do
-                element = step.elements[elementIndex]
-                if element.tag and not (element.text or element.rawtext or element.tooltipText) then
-                    tinsert(watcherStep.elements, element)
-                end
-            end
-        end
-    end
-    watcher:SetElements(watcherStep, true)
-end
-
 local function SetStepFrameAnchor()
-    if addon.UseV2ActiveStepsFrame() then
-        addon.v2:SetActiveStepsFrameAnchor()
-        return
-    end
+    if addon.UseV2ActiveStepsFrame() then return end
 
     local frame = CurrentStepFrame
     local scale = RXPFrame:GetScale()
@@ -805,10 +765,7 @@ function addon.SetStep(n, n2, loopback)
     table.wipe(addon.activeMacros)
     table.wipe(addon.inventoryManager.itemsToOpen)
     local useV2ActiveStepsFrame = addon.UseV2ActiveStepsFrame()
-    if not useV2ActiveStepsFrame then
-        ClearFrameData()
-        addon.v2:ClearActiveStepEventWatchers()
-    end
+    if not useV2ActiveStepsFrame then ClearFrameData() end
     local level = UnitLevel("player")
     local scrollHeight = 1
 
@@ -2652,220 +2609,13 @@ end
 addon.v2 = addon.v2 or {}
 addon.v2.state = {
     player = {},
-    activePartyPlayer = nil,
-    activePartyStepFrame = nil,
 }
-
-function addon.v2:IsActivePartyStepsAvailable()
-    return addon.settings.profile.enableBetaFeatures and
-           addon.settings.profile.enableV2ActivePartyStepsFrame and
-           not _G.IsInRaid()
-end
-
-function addon.v2:GetActivePartyStepsFrame()
-    if self.state.activePartyStepFrame then
-        return self.state.activePartyStepFrame
-    end
-
-    if not self:IsActivePartyStepsAvailable() then return end
-
-    local stepFrame = AceGUI:Create("RXPV2ActivePartyStepsFrame")
-    stepFrame:ClearAllPoints()
-    stepFrame:SetLayout("Fill")
-    stepFrame:SetPoint("LEFT", addon.RXPFrame, "RIGHT", 0, 20)
-    stepFrame:SetCallback("OnTabSelected", function(_, _, player)
-        addon.v2.state.activePartyPlayer = player
-    end)
-    stepFrame:SetCallback("OnMenuRequested", function()
-        addon.v2:ShowActivePartyStepsMenu()
-    end)
-    stepFrame:SetCallback("OnCloseClicked", function()
-        addon.v2:DisableActivePartyStepsFrame()
-    end)
-
-    stepFrame.IsFeatureEnabled = function()
-        return addon.v2:IsActivePartyStepsAvailable(), false
-    end
-
-    self.state.activePartyStepFrame = stepFrame
-
-    local frameName = "RXPActivePartyStepsFrame"
-    _G[frameName] = stepFrame
-    addon.enabledFrames[frameName] = stepFrame
-    addon.settings:LoadFramePosition(frameName, stepFrame)
-
-    stepFrame:UpdateTheme({
-        hideBackground = addon.settings.profile.activePartyStepsV2HideBackground,
-        updateChildren = true,
-        scale = addon.settings.profile.activePartyStepsV2WindowScale,
-    })
-    stepFrame:Show()
-
-    return stepFrame
-end
-
-function addon.v2:GetActivePartyPlayers()
-    local players = {}
-
-    for player, data in pairs(self.state.player) do
-        if player ~= addon.player.name and data.childContainer then
-            players[#players + 1] = player
-        end
-    end
-
-    table.sort(players)
-
-    return players
-end
-
-function addon.v2:IsActivePartyPlayerAvailable(player)
-    local data = player and self.state.player[player]
-    return data and data.childContainer
-end
-
-function addon.v2:HasActivePartySteps()
-    for player, data in pairs(self.state.player) do
-        if player ~= addon.player.name and
-            (data.childContainer or data.pendingActivePartySteps) then
-            return true
-        end
-    end
-
-    return false
-end
-
-function addon.v2:IsActivePartyStepsFrameHidden()
-    if not addon.settings.profile.enableBetaFeatures or _G.IsInRaid() then
-        return false
-    end
-
-    if not self:HasActivePartySteps() then
-        return false
-    end
-
-    if not addon.settings.profile.enableV2ActivePartyStepsFrame then
-        return true
-    end
-
-    return self.state.activePartyStepFrame and #self:GetActivePartyPlayers() > 0 and
-           not self.state.activePartyStepFrame.frame:IsShown()
-end
-
-function addon.v2:ShowActivePartyStepsFrame()
-    if _G.IsInRaid() then return end
-
-    addon.settings.profile.enableV2ActivePartyStepsFrame = true
-
-    for player, data in pairs(self.state.player) do
-        if player ~= addon.player.name and data.pendingActivePartySteps then
-            self:RenderActivePartyStepsFrame(
-                data.pendingActivePartySteps, player, data.pendingActivePartyPayload)
-        end
-    end
-    self:RefreshActivePartyTabs()
-
-    if addon.comms and addon.comms.AnnounceSelf then
-        addon.comms:AnnounceSelf("ANNOUNCE")
-    end
-
-    addon.RXPFrame.GenerateMenuTable()
-end
-
-function addon.v2:CloseActivePartyStepsFrame()
-    if self.state.activePartyStepFrame then
-        self.state.activePartyStepFrame:Hide()
-        addon.RXPFrame.GenerateMenuTable()
-    end
-end
-
-function addon.v2:DisableActivePartyStepsFrame()
-    addon.settings.profile.enableV2ActivePartyStepsFrame = false
-    self:CloseActivePartyStepsFrame()
-end
-
-function addon.v2:ToggleActivePartyStepsBackground()
-    addon.settings.profile.activePartyStepsV2HideBackground =
-        not addon.settings.profile.activePartyStepsV2HideBackground
-    self:UpdateActiveStepTheme()
-end
-
-function addon.v2:ShowActivePartyStepsMenu()
-    local backgroundText = addon.settings.profile.activePartyStepsV2HideBackground and
-                           L("Show Background") or L("Hide Background")
-    local menu = {
-        {
-            text = backgroundText,
-            notCheckable = 1,
-            func = function()
-                addon.v2:ToggleActivePartyStepsBackground()
-            end,
-        },
-        {
-            text = L("Disable Active Party Steps"),
-            notCheckable = 1,
-            func = function()
-                addon.v2:DisableActivePartyStepsFrame()
-            end,
-        },
-        {
-            text = L("Hide"),
-            notCheckable = 1,
-            func = function()
-                addon.v2:CloseActivePartyStepsFrame()
-            end,
-        },
-        {
-            text = _G.CLOSE,
-            notCheckable = 1,
-            func = function()
-                _G.CloseDropDownMenus()
-            end,
-        },
-    }
-
-    if _G.EasyMenu then
-        _G.EasyMenu(menu, MenuFrame, "cursor", 0, 0, "MENU")
-    else
-        LibDD:EasyMenu(menu, MenuFrame, "cursor", 0, 0, "MENU")
-    end
-end
-
-function addon.v2:RefreshActivePartyTabs(preferredPlayer)
-    local stepFrame = self.state.activePartyStepFrame
-    if not stepFrame then return end
-
-    if _G.IsInRaid() then
-        stepFrame:Hide()
-        return
-    end
-
-    local players = self:GetActivePartyPlayers()
-    local activePlayer = self.state.activePartyPlayer
-
-    if preferredPlayer and not self:IsActivePartyPlayerAvailable(activePlayer) then
-        activePlayer = preferredPlayer
-    end
-
-    if not self:IsActivePartyPlayerAvailable(activePlayer) then
-        activePlayer = players[1]
-    end
-
-    self.state.activePartyPlayer = activePlayer
-    stepFrame:SetTabs(players, activePlayer)
-    if #players == 0 or not stepFrame.IsFeatureEnabled() then
-        stepFrame:Hide()
-    else
-        stepFrame:Show()
-    end
-end
 
 function addon.v2:GetActiveStepsFrame(player)
     self.state.player[player] = self.state.player[player] or {}
 
-    if player == addon.player.name and self.state.player[player].activeStepFrame then
+    if self.state.player[player].activeStepFrame then
         return self.state.player[player].activeStepFrame
-    elseif player ~= addon.player.name and self.state.player[player].childContainer then
-        return self.state.activePartyStepFrame
     end
 
     if not addon.settings.profile.enableBetaFeatures then
@@ -2876,7 +2626,7 @@ function addon.v2:GetActiveStepsFrame(player)
         return
     end
 
-    if player ~= addon.player.name and not self:IsActivePartyStepsAvailable() then
+    if player ~= addon.player.name and not addon.settings.profile.enableV2ActivePartyStepsFrame then
         return
     end
 
@@ -2884,6 +2634,20 @@ function addon.v2:GetActiveStepsFrame(player)
     local childContainer
     if player == addon.player.name then
         stepFrame = AceGUI:Create("RXPV2ActiveStepsFrame")
+        stepFrame:ClearAllPoints()
+        local theme = addon.v2:GetTheme()
+        local frameInset = theme.layout and theme.layout.activeStepFrameInset or {}
+        local leftInset = frameInset.left or 0
+        local rightInset = frameInset.right or 0
+
+        if addon.settings.profile.anchorOrientation == "bottom" then
+            stepFrame:SetPoint("TOPLEFT", addon.RXPFrame, "BOTTOMLEFT", leftInset + 3, 0)
+            stepFrame:SetPoint("TOPRIGHT", addon.RXPFrame, "BOTTOMRIGHT", -rightInset - 3, 0)
+        else
+            stepFrame:SetPoint("BOTTOMLEFT", addon.RXPFrame.GuideName, "TOPLEFT", leftInset, 0)
+            stepFrame:SetPoint("BOTTOMRIGHT", addon.RXPFrame.GuideName, "TOPRIGHT", -rightInset, 0)
+        end
+
         stepFrame:SetLayout("Flow")
         childContainer = stepFrame
 
@@ -2891,26 +2655,32 @@ function addon.v2:GetActiveStepsFrame(player)
             return addon.settings.profile.enableV2ActiveStepsFrame, false
         end
     else
-        stepFrame = self:GetActivePartyStepsFrame()
-        if not stepFrame then return end
+        stepFrame = AceGUI:Create("RXPV2ActivePartyStepsFrame")
+        stepFrame:ClearAllPoints()
+        stepFrame:SetLayout("Fill")
 
+        stepFrame:SetPoint("LEFT", addon.RXPFrame, "RIGHT", 0, 20)
+        stepFrame:SetTitle(player)
+
+        -- Only use scroll container for party ActiveSteps
         childContainer = AceGUI:Create("RXPV2ScrollFrame")
         childContainer:SetLayout("Flow")
         childContainer:SetFullWidth(true)
         childContainer:SetFullHeight(true)
-        childContainer:SetParent(stepFrame)
-        stepFrame:SetPlayerContainer(player, childContainer)
+
+        stepFrame:AddChild(childContainer)
+
+        stepFrame.IsFeatureEnabled = function()
+            return addon.settings.profile.enableV2ActivePartyStepsFrame, false
+        end
     end
 
     self.state.player[player].activeStepFrame = stepFrame
 
-    if player == addon.player.name then
-        local frameName = "RXPActiveStepsFrame" .. player
-        _G[frameName] = stepFrame
-        addon.enabledFrames[frameName] = stepFrame
-        self:SetActiveStepsFrameAnchor(stepFrame)
-        addon.settings:LoadFramePosition(frameName, stepFrame)
-    end
+    local frameName = "RXPActiveStepsFrame" .. player
+    _G[frameName] = stepFrame
+    addon.enabledFrames[frameName] = stepFrame
+    addon.settings:LoadFramePosition(frameName, stepFrame)
 
     self.state.player[player].childContainer = childContainer
 
@@ -2929,63 +2699,33 @@ function addon.v2:GetActiveStepsFrame(player)
         updateChildren = true,
         scale = scaleSetting,
     })
-    if player == addon.player.name then
-        stepFrame:Show()
-    end
-    if player ~= addon.player.name then
-        self:RefreshActivePartyTabs(player)
-    end
+    stepFrame:Show()
 
     return stepFrame
 end
 
-function addon.v2:SetActiveStepsFrameAnchor(stepFrame)
-    stepFrame = stepFrame or (self.state.player[addon.player.name] or {}).activeStepFrame
-    if not stepFrame then return end
-
-    stepFrame:ClearAllPoints()
-    local theme = self:GetTheme()
-    local frameInset = theme.layout and theme.layout.activeStepFrameInset or {}
-    local leftInset = frameInset.left or 0
-    local rightInset = frameInset.right or 0
-
-    if addon.settings.profile.anchorOrientation == "bottom" then
-        stepFrame:SetPoint("TOPLEFT", addon.RXPFrame, "BOTTOMLEFT", leftInset + 3, 0)
-        stepFrame:SetPoint("TOPRIGHT", addon.RXPFrame, "BOTTOMRIGHT", -rightInset - 3, 0)
-    else
-        stepFrame:SetPoint("BOTTOMLEFT", addon.RXPFrame.GuideName, "TOPLEFT", leftInset, 0)
-        stepFrame:SetPoint("BOTTOMRIGHT", addon.RXPFrame.GuideName, "TOPRIGHT", -rightInset, 0)
-    end
-end
-
 function addon.v2:UpdateActiveStepTheme()
-    local playerState = self.state.player[addon.player.name]
-    local playerFrame = playerState and playerState.activeStepFrame
-    local partyFrame = self.state.activePartyStepFrame
-
-    if playerFrame then
-        playerFrame:UpdateTheme({
-            hideBackground = addon.settings.profile.activeStepsV2HideBackground,
-            updateChildren = true,
-            scale = addon.settings.profile.activeStepsV2WindowScale,
-        })
-    end
-
-    if not partyFrame then return end
-
-    partyFrame:UpdateTheme({
-        hideBackground = addon.settings.profile.activePartyStepsV2HideBackground,
-        scale = addon.settings.profile.activePartyStepsV2WindowScale,
-    })
+    local f, hideBackground, scaleSetting
 
     for player, data in pairs(self.state.player) do
-        if player ~= addon.player.name and data.childContainer and
-            data.childContainer.UpdateTheme then
-            data.childContainer:UpdateTheme({updateChildren = true})
+        f = data.activeStepFrame
+
+        if f then
+            if player == addon.player.name then
+                hideBackground = addon.settings.profile.activeStepsV2HideBackground
+                scaleSetting = addon.settings.profile.activeStepsV2WindowScale
+            else
+                hideBackground = addon.settings.profile.activePartyStepsV2HideBackground
+                scaleSetting = addon.settings.profile.activePartyStepsV2WindowScale
+            end
+
+            f:UpdateTheme({
+                hideBackground = hideBackground,
+                updateChildren = true,
+                scale = scaleSetting,
+            })
         end
     end
-
-    self:RefreshActivePartyTabs()
 end
 
 -- hiddentext only hides a step in the main guide list; optional steps still
@@ -2997,6 +2737,20 @@ end
 function addon.v2:GetActiveStepText(step)
     if step.text and step.text ~= "" then return step.text end
     if step.hiddentext and step.hiddentext ~= "" then return step.hiddentext end
+end
+
+function addon.v2:IsActiveStepRenderReady(step)
+    local hasText = not not self:GetActiveStepText(step)
+    for _, element in ipairs(step.elements or {}) do
+        if element.text == " " then
+            return false
+        elseif element.text then
+            hasText = true
+        elseif element.requestFromServer then
+            return false
+        end
+    end
+    return hasText
 end
 
 function addon.v2:EncodePlayerActiveSteps(payload)
@@ -3086,20 +2840,13 @@ function addon.v2:GetActiveStepKey(step, occurrences)
     return key .. ":" .. occurrence
 end
 
-function addon.v2:ReconcileActiveStepItems(playerState, steps, widgetType, updateItem,
-                                            shouldUpdateItem, updateArg)
+function addon.v2:ReconcileActiveStepItems(playerState, steps, widgetType, updateItem)
     local childContainer = playerState.childContainer
     local previousItems = playerState.activeStepItemsByKey or {}
-    local previousOrderedItems = playerState.activeStepItems or {}
-    local nextItems = playerState.activeStepItemsScratchByKey or {}
-    local orderedItems = playerState.activeStepItemsScratch or {}
-    local occurrences = playerState.activeStepOccurrences or {}
-    wipe(nextItems)
-    wipe(orderedItems)
-    wipe(occurrences)
+    local nextItems = {}
+    local orderedItems = {}
+    local occurrences = {}
     local displayStep, key, stepItem
-    local itemIndex = 0
-    local itemsChanged = false
 
     for _, step in ipairs(steps) do
         displayStep = self:IsActiveStepShown(step)
@@ -3111,35 +2858,17 @@ function addon.v2:ReconcileActiveStepItems(playerState, steps, widgetType, updat
             else
                 stepItem = AceGUI:Create(widgetType)
                 stepItem:SetFullWidth(true)
-                itemsChanged = true
             end
 
-            if not shouldUpdateItem or shouldUpdateItem(self, stepItem, step, updateArg) then
-                updateItem(self, stepItem, step)
-                itemsChanged = true
-            end
+            updateItem(self, stepItem, step)
             nextItems[key] = stepItem
-            itemIndex = itemIndex + 1
-            orderedItems[itemIndex] = stepItem
-            if previousOrderedItems[itemIndex] ~= stepItem then
-                itemsChanged = true
-            end
+            orderedItems[#orderedItems + 1] = stepItem
         end
     end
 
     for _, removedItem in pairs(previousItems) do
         AceGUI:Release(removedItem)
-        itemsChanged = true
     end
-
-    wipe(previousItems)
-    wipe(previousOrderedItems)
-    playerState.activeStepItemsByKey = nextItems
-    playerState.activeStepItems = orderedItems
-    playerState.activeStepItemsScratchByKey = previousItems
-    playerState.activeStepItemsScratch = previousOrderedItems
-    playerState.activeStepOccurrences = occurrences
-    if not itemsChanged then return end
 
     wipe(childContainer.children)
     for itemIndex = 1, #orderedItems do
@@ -3149,50 +2878,9 @@ function addon.v2:ReconcileActiveStepItems(playerState, steps, widgetType, updat
         stepItem.frame:Show()
     end
     childContainer:DoLayout()
-    for itemIndex = 1, #orderedItems do
-        stepItem = orderedItems[itemIndex]
-        if stepItem.LayoutElements then stepItem:LayoutElements() end
-    end
-end
 
-function addon.v2:PlayerActiveStepItemNeedsUpdate(stepItem, step, questId)
-    local snapshots = stepItem.rxpElementSnapshots or {}
-    if questId then
-        for snapshotIndex = 1, stepItem.rxpVisibleElementCount or 0 do
-            if snapshots[snapshotIndex].questId == questId then return true end
-        end
-    end
-
-    if stepItem.rxpRenderRevision ~= self.state.activeStepRenderRevision or
-        stepItem.rxpRenderTitle ~= step.title or
-        stepItem.rxpRenderIndex ~= step.index or
-        stepItem.rxpRenderText ~= step.text then
-        return true
-    end
-
-    local elements = step.elements or {}
-    local element, snapshot
-    local visibleCount = 0
-    for elementIndex = 1, #elements do
-        element = elements[elementIndex]
-        if element.text or element.rawtext or element.tooltipText then
-            visibleCount = visibleCount + 1
-            snapshot = snapshots[visibleCount]
-            if not snapshot or snapshot.element ~= element or
-                snapshot.text ~= element.text or
-                snapshot.rawtext ~= element.rawtext or
-                snapshot.tooltipText ~= element.tooltipText or
-                snapshot.requestFromServer ~= element.requestFromServer or
-                snapshot.tag ~= element.tag or snapshot.icon ~= element.icon or
-                snapshot.title ~= element.title or snapshot.questId ~= element.questId or
-                snapshot.completed ~= element.completed or snapshot.skip ~= element.skip or
-                snapshot.textOnly ~= element.textOnly then
-                return true
-            end
-        end
-    end
-
-    return visibleCount ~= stepItem.rxpVisibleElementCount
+    playerState.activeStepItemsByKey = nextItems
+    playerState.activeStepItems = orderedItems
 end
 
 function addon.v2:UpdatePlayerActiveStepItem(stepItem, step)
@@ -3223,94 +2911,27 @@ function addon.v2:UpdatePlayerActiveStepItem(stepItem, step)
         AceGUI:Release(stepItem.stepTextLabel)
         stepItem.stepTextLabel = nil
     end
-
-    local snapshots = stepItem.rxpElementSnapshots or {}
-    local elements = step.elements or {}
-    local element, snapshot
-    local visibleCount = 0
-    for elementIndex = 1, #elements do
-        element = elements[elementIndex]
-        if element.text or element.rawtext or element.tooltipText then
-            visibleCount = visibleCount + 1
-            snapshot = snapshots[visibleCount] or {}
-            snapshot.element = element
-            snapshot.text = element.text
-            snapshot.rawtext = element.rawtext
-            snapshot.tooltipText = element.tooltipText
-            snapshot.requestFromServer = element.requestFromServer
-            snapshot.tag = element.tag
-            snapshot.icon = element.icon
-            snapshot.title = element.title
-            snapshot.questId = element.questId
-            snapshot.completed = element.completed
-            snapshot.skip = element.skip
-            snapshot.textOnly = element.textOnly
-            snapshots[visibleCount] = snapshot
-        end
-    end
-    for elementIndex = visibleCount + 1, #snapshots do
-        snapshots[elementIndex] = nil
-    end
-    stepItem.rxpElementSnapshots = snapshots
-    stepItem.rxpVisibleElementCount = visibleCount
-    stepItem.rxpRenderRevision = self.state.activeStepRenderRevision
-    stepItem.rxpRenderTitle = step.title
-    stepItem.rxpRenderIndex = step.index
-    stepItem.rxpRenderText = step.text
 end
 
 function addon.v2:UpdatePartyActiveStepItem(stepItem, step)
     stepItem:SetTitle(step.title or fmt(L("Step %d"), step.index))
 
     local label = stepItem.stepTextLabel
-    local text = step.text and step.text:gsub("\n%s+", "\n"):gsub("^%s+", "") or " "
-    local theme = self:GetTheme()
-    local elementLayout = theme.layout and theme.layout.activeStepElement or {}
-    local textColor = theme.textColor.activePartyStepItem or
-                      theme.textColor.activeStepItem or
-                      theme.textColor.common
     if not label then
         label = AceGUI:Create("Label")
+        label:SetFullHeight(true)
+        label:SetFullWidth(true)
         label:SetText(" ")
         stepItem:AddChild(label)
         stepItem.stepTextLabel = label
     end
-    label:SetText(text ~= "" and text or " ")
-    label:SetFullHeight(true)
-    label:SetFullWidth(true)
-    label:SetJustifyH("LEFT")
-    label:SetJustifyV("TOP")
-    label:SetColor(unpack(textColor))
-    label:SetFont(
-        theme.font,
-        addon.settings.profile.guideFontSize + (elementLayout.fontSizeOffset or 0),
-        "")
-end
-
-function addon.v2:RenderActivePartyStepsFrame(steps, player, encodedPayload)
-    if not self:IsActivePartyStepsAvailable() then return end
-
-    local playerStepFrame = self:GetActiveStepsFrame(player)
-
-    if not playerStepFrame then return end
-
-    local playerState = self.state.player[player]
-    if playerState.encodedPayload == encodedPayload then
-        return
-    end
-
-    self:ReconcileActiveStepItems(
-        playerState, steps, "RXPV2ActivePartyStepItem", self.UpdatePartyActiveStepItem)
-
-    playerState.encodedPayload = encodedPayload
-    if self.state.activePartyPlayer == player then
-        playerStepFrame:RefreshActiveContent()
+    if step.text then
+        label:SetText(step.text)
     end
 end
 
-function addon.v2:UpdateActiveStepsFrame(steps, questId)
+function addon.v2:UpdateActiveStepsFrame(steps)
     if not addon.settings.profile.enableBetaFeatures then
-        self:ClearActiveStepEventWatchers()
         return
     end
 
@@ -3319,54 +2940,44 @@ function addon.v2:UpdateActiveStepsFrame(steps, questId)
     local playerState = self.state.player[player]
     playerState.activeStepItems = playerState.activeStepItems or {}
 
-    -- Player comes from activeSteps, whereas not-player comes over chat channels.
+    -- Player comes from activeSteps, whereas not-player comes over chat channels
+    -- Encoding and broadcasting are independent of the local player frame.
+    local encodedPayload = self:EncodePlayerActiveSteps(steps)
     local payloadReady = true
-    local encodedPayload
+    local renderReady = true
 
     for _, step in ipairs(steps) do
         if self:IsActiveStepShown(step) then
             if not self:GetActiveStepText(step) then payloadReady = false end
+            if not self:IsActiveStepRenderReady(step) then renderReady = false end
         end
     end
 
-    if payloadReady and addon.comms.grouping:CanBroadcastCurrentStep() then
-        encodedPayload = self:EncodePlayerActiveSteps(steps)
-        if playerState.broadcastPayload ~= encodedPayload and
-            addon.comms.grouping:BroadcastCurrentStep(encodedPayload) then
-            playerState.broadcastPayload = encodedPayload
-        end
+    if payloadReady and playerState.broadcastPayload ~= encodedPayload and
+        addon.comms.grouping:BroadcastCurrentStep(encodedPayload) then
+        playerState.broadcastPayload = encodedPayload
     end
 
     if not addon.settings.profile.enableV2ActiveStepsFrame then
-        self:ClearActiveStepEventWatchers()
         return
     end
 
-    self:UpdateActiveStepEventWatchers(steps)
+    if not renderReady then
+        return
+    end
 
     local playerStepFrame = self:GetActiveStepsFrame(player)
 
     if not playerStepFrame then return end
 
     self:ReconcileActiveStepItems(
-        playerState, steps, "RXPV2ActiveStepItem", self.UpdatePlayerActiveStepItem,
-        self.PlayerActiveStepItemNeedsUpdate, questId)
+        playerState, steps, "RXPV2ActiveStepItem", self.UpdatePlayerActiveStepItem)
 
     playerState.encodedPayload = encodedPayload
 end
 
 function addon.v2:UpdateActivePartyStepsFrame(encodedPayload, player)
-    if not addon.settings.profile.enableBetaFeatures then
-        return
-    end
-
-    if _G.IsInRaid() then
-        self:RefreshActivePartyTabs()
-        return
-    end
-
-    local playerState = self.state.player[player]
-    if playerState and playerState.pendingActivePartyPayload == encodedPayload then
+    if not (addon.settings.profile.enableV2ActivePartyStepsFrame and addon.settings.profile.enableBetaFeatures) then
         return
     end
 
@@ -3384,45 +2995,35 @@ function addon.v2:UpdateActivePartyStepsFrame(encodedPayload, player)
 
     if not payloadReady then return end
 
-    self.state.player[player] = self.state.player[player] or {}
-    playerState = self.state.player[player]
-    playerState.pendingActivePartyPayload = encodedPayload
-    playerState.pendingActivePartySteps = steps
+    local playerStepFrame = self:GetActiveStepsFrame(player)
 
-    self:RenderActivePartyStepsFrame(steps, player, encodedPayload)
+    if not playerStepFrame then return end
+
+    local playerState = self.state.player[player]
+    if playerState.encodedPayload == encodedPayload then return end
+
+    self:ReconcileActiveStepItems(
+        playerState, steps, "RXPV2ActivePartyStepItem", self.UpdatePartyActiveStepItem)
+
+    playerState.encodedPayload = encodedPayload
 end
 
 function addon.v2:HideUnusedActiveStepFrames()
     local group = addon.comms.state and addon.comms.state.group
     local members = group and group.members or {}
     local frameName
-    local partyFrame = self.state.activePartyStepFrame
 
     for player, data in pairs(self.state.player) do
         if player ~= addon.player.name and not members[player] then
             frameName = "RXPActiveStepsFrame" .. player
 
-            if partyFrame then
-                partyFrame:RemovePlayerContainer(player)
-            end
-
-            if data.childContainer then
-                AceGUI:Release(data.childContainer)
+            if data.activeStepFrame then
+                AceGUI:Release(data.activeStepFrame)
             end
 
             addon.enabledFrames[frameName] = nil
             _G[frameName] = nil
             self.state.player[player] = nil
         end
-    end
-
-    self:RefreshActivePartyTabs()
-
-    if partyFrame and #self:GetActivePartyPlayers() == 0 then
-        AceGUI:Release(partyFrame)
-        addon.enabledFrames.RXPActivePartyStepsFrame = nil
-        _G.RXPActivePartyStepsFrame = nil
-        self.state.activePartyStepFrame = nil
-        self.state.activePartyPlayer = nil
     end
 end

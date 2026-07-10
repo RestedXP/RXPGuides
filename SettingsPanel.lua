@@ -56,7 +56,7 @@ local L = addon.locale.Get
 
 addon.settings = addon:NewModule("Settings", "AceConsole-3.0")
 addon.settings.enabledBetaFeatures = {
-    ["Active Steps v2"] = "Allow ActiveSteps and ActivePartySteps v2", --GuideWindow/addon.v2
+    ["Modular Step Frame"] = "Use modular currentStep frame", --GuideWindow/addon.v2
 }
 
 if not addon.settings.gui then
@@ -243,7 +243,6 @@ local settingsDBDefaults = {
 
         -- Grouping/V2
         activePartyStepsV2WindowScale = 1.0,
-        activePartyStepsV2AutoSize = true,
         shareActiveSteps = true,
 
         -- V2 UI
@@ -1177,7 +1176,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 4.7
                     },
                     v2UIHeader = {
-                        name = fmt("%s %s %d", _G.INTERFACE_LABEL, _G.GAME_VERSION_LABEL, 2) .. L(" (Beta)"),
+                        name = fmt("%s %s %d", _G.INTERFACE_LABEL, _G.GAME_VERSION_LABEL, 2),
                         type = "header",
                         width = "full",
                         order = 5.0,
@@ -1198,7 +1197,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     activeStepsV2RenderQuestName = {
                         name = L("Display Quest Link"),
-                        desc = L("Display quest tooltips on steps"),
+                        -- desc = L("Display rendered quest name and tooltip"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 5.2,
@@ -2397,7 +2396,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 3.2
                     },
                     activePartyStepsV2Header = {
-                        name = fmt("%s %s %sv2", _G.ACTIVE_PETS, _G.PARTY, L("Step ")) .. L(" (Beta)"),
+                        name = fmt("%s %s %sv2", _G.ACTIVE_PETS, _G.PARTY, L("Step ")),
                         type = "header",
                         width = "full",
                         order = 4.0,
@@ -2418,7 +2417,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     activePartyStepsV2WindowScale = {
                         name = L("Window Scale"),
-                        -- desc = L(""),
+                        -- desc = L"Scale of the Main Window, use alt+left click on the main window to resize it",
                         type = "range",
                         width = optionsWidth,
                         order = 4.2,
@@ -2452,7 +2451,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     shareActiveSteps = {
                         name = fmt("%s %s %s", _G.SHARE_QUEST_ABBREV, _G.ACTIVE_PETS, L("Step ")),
-                        desc = L("Share your Active Step with party members"),
+                        -- desc = L("Whenever you accept a quest in the guide, the addon tries to share it with your group"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 4.4,
@@ -3304,7 +3303,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     activeStepsV2Header = {
-                        name = fmt("%s %sv2", _G.ACTIVE_PETS, L("Step ")).. L(" (Beta)"),
+                        name = fmt("%s %sv2", _G.ACTIVE_PETS, L("Step ")),
                         type = "header",
                         width = "full",
                         order = 4.0,
@@ -3312,7 +3311,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     activeStepsV2WindowScale = {
                         name = L("Window Scale"),
-                        -- desc = L(""),
+                        -- desc = L"Scale of the Main Window, use alt+left click on the main window to resize it",
                         type = "range",
                         width = optionsWidth,
                         order = 4.1,

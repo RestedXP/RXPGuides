@@ -1,4 +1,4 @@
-local L = GetLocale() if L and RXP.enabledLocale[L] then return end
+if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
 -- #############################################
 -- #                  MIDNIGHT                 #
 -- #############################################
@@ -624,7 +624,7 @@ step << Horde
 --     .zoneskip 407,1
 --     .dmf
 ]])
---GC Alliance: Chromie Time Tower
+--GC Alliance: Chromie Time Tower 
 RXPGuides.RegisterGuide([[
 #retail
 #version 4
@@ -962,7 +962,7 @@ step
 -- #                  LEGION REMIX                  #
 -- ##################################################
 
---Skyriding Tutorial Pandaria & Legion
+--Skyriding Tutorial Pandaria & Legion 
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
