@@ -7021,8 +7021,8 @@ step << Hunter
     .goto Ghostlands,72.13,32.03
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Narina|r
     >>|cRXP_BUY_Buy a|r |T135346:0|t[Reinforced Bow] |cRXP_BUY_and|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from her|r
-    .collect 3026,1,9181,1 --Reinforced Bow (1)
-    .collect 2515,2000,9252,1 << Hunter --Sharp Arrow (2000)
+    .collect 3026,1,9276,1 --Reinforced Bow (1)
+    .collect 2515,2000,9276,1 << Hunter --Sharp Arrow (2000)
     .target Narina
     .money <0.4101 << BloodElf
     .money <0.4312 << Troll/Orc
@@ -7032,7 +7032,7 @@ step << Hunter
     .goto Ghostlands,72.13,32.03
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Narina|r
     >>|cRXP_BUY_Buy a|r |T135346:0|t[Reinforced Bow] |cRXP_BUY_from her|r
-    .collect 3026,1,9181,1 --Reinforced Bow (1)
+    .collect 3026,1,9276,1 --Reinforced Bow (1)
     .target Narina
     .money <0.3621 << BloodElf
     .money <0.3812 << Troll/Orc
@@ -7042,7 +7042,7 @@ step << Hunter
     .goto Ghostlands,72.13,32.03
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Narina|r
     >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from her|r
-    .collect 2515,2000,9252,1 << Hunter --Sharp Arrow (2000)
+    .collect 2515,2000,9276,1 << Hunter --Sharp Arrow (2000)
     .target Narina
     .money <0.0480 << BloodElf
     .money <0.0500 << Troll/Orc
@@ -8340,7 +8340,6 @@ step << Rogue
     .turnin 10548,1 >>Turn in The Sad Truth << tbc
     .turnin 10548 >>Turn in The Sad Truth << wotlk
     .target Eralan
-    .isQuestAvailable 9151
 step << Rogue
     #optional
     #label Eralan6
