@@ -27823,6 +27823,7 @@ RXPGuides.RegisterGuide([[
 #internal
 
 step
+    .isOnQuest 43962
     .goto 1,46.01,13.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holgar Stormaxe|r.
     .turnin 43926 >>Turn in Legion: The Legion Returns
@@ -27837,21 +27838,25 @@ step
     .accept 44184 >>Accept In the Blink of an Eye
     .skipgossip
 step
+    .isOnQuest 44281
     .isNotOnQuest 44184
     .goto 1,47.66,13.57
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Food|r.
     .complete 44281,3 --1/1 Last meal eaten
 step
+    .isOnQuest 44281
     .isNotOnQuest 44184
     .goto 1,49.63,14.17
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Barrel|r.
     .complete 44281,1 --1/1 Armor polished
 step
+    .isOnQuest 44281
     .isNotOnQuest 44184
     .goto 1,51.38,12.29
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Sphere|r.
     .complete 44281,2 --1/1 Weapon empowered
 step
+    .isOnQuest 44281
     .isNotOnQuest 44184
     .goto 1,52.82,11.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arienne Black|r and defeat her.
@@ -27860,12 +27865,14 @@ step
     .mob Arienne Black
     .target Arienne Black
 step
+    .isOnQuest 44281
     .isNotOnQuest 44184
     .goto 1,55.63,11.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stone Guard Mukar|r.
     .turnin 44281 >>Turn in To Be Prepared
     .target Stone Guard Mukar
 step
+    .isQuestTurnedIn 44281
     .isNotOnQuest 44184
     .goto 1,55.63,11.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stone Guard Mukar|r.
@@ -28020,6 +28027,7 @@ step
     .mob Felguard Invader
     .mob Grinning Shadowstalker
 step
+    .isOnQuest 40518
     .isNotOnQuest 44184
     #label guldanscenarioend
     .goto 1,57.16,10.51
@@ -28027,18 +28035,21 @@ step
     .turnin 40518 >>Turn in The Battle for Broken Shore
     .target Eitrigg
 step
+    .isQuestTurnedIn 40518
     .isNotOnQuest 44184
     .goto 1,57.16,10.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eitrigg|r.
     .accept 40522 >>Accept Fate of the Horde
     .target Eitrigg
 step
+    .isOnQuest 40522
     .isNotOnQuest 44184
     .goto 85,50.04,75.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Saurfang|r.
     .complete 40522,1 --1/1 Report to Saurfang
     .skipgossipid 45114
 step
+    .isOnQuest 40522
     .isNotOnQuest 44184
     #completewith next
     #label Fate of the Horde
@@ -28046,11 +28057,13 @@ step
     .isOnQuest 40522
     .complete 40522,3 --1/1 Learn the Fate of the Horde
 step
+    .isOnQuest 40522
     .isNotOnQuest 44184
     #completewith Fate of the Horde
     .goto 85,48.38,71.23,10 >>Follow the Arrow
     .timer 63,RP
 step
+    .isOnQuest 40522
     .isNotOnQuest 44184
     #requires Fate of the Horde
     .isOnQuest 40522
@@ -28058,6 +28071,7 @@ step
     >>Wait for the objective to complete.
     .complete 40522,3 --1/1 Learn the Fate of the Horde
 step
+    .isOnQuest 40522
     .isNotOnQuest 44184
     .goto 1,45.71,15.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Sylvanas Windrunner|r.
@@ -28065,18 +28079,21 @@ step
     .target Lady Sylvanas Windrunner
     .skipgossipid 44961
 step
+    .isOnQuest 40522
     .isNotOnQuest 44184
     .goto 1,45.71,15.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Sylvanas Windrunner|r.
     .turnin 40522 >>Turn in Fate of the Horde
     .target Lady Sylvanas Windrunner
 step
+    .isQuestTurnedIn 40522
     .isNotOnQuest 44184
     .goto 1,45.71,15.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Sylvanas Windrunner|r.
     .accept 40760 >>Accept Emissary
     .target Lady Sylvanas Windrunner
 step
+    .isQuestTurnedIn 40522
     .isNotOnQuest 44184
     .goto 1,45.81,15.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allari the Souleater|r.
@@ -28084,6 +28101,7 @@ step
     .accept 40607 >>Accept Demons Among Us
     .target Allari the Souleater
 step
+    .isOnQuest 40607
     .isNotOnQuest 44184
     .goto 1,45.81,15.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allari the Souleater|r.
@@ -28091,6 +28109,7 @@ step
     .target Allari the Souleater
     .skipgossipid 44895
 step
+    .isOnQuest 40607
     .isNotOnQuest 44184
     #loop
     .goto 1,45.62,14.05,30,0
@@ -28102,34 +28121,40 @@ step
     .mob Shard of Hate
     .mob Felblade Assassin
 step
+    .isOnQuest 40607
     .isNotOnQuest 44184
     .goto 1,45.68,15.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Sylvanas Windrunner|r.
     .turnin 40607 >>Turn in Demons Among Us
     .target Lady Sylvanas Windrunner
 step
+    .isQuestTurnedIn 40605
     .isNotOnQuest 44184
     .goto 1,45.68,15.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Sylvanas Windrunner|r.
     .accept 40605 >>Accept Keep Your Friends Close
     .target Lady Sylvanas Windrunner
 step
+    .isOnQuest 40605
     .isNotOnQuest 44184
     .goto 85,52.34,57.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elthyn Da'rai|r.
     .turnin 40605 >>Turn in Keep Your Friends Close
     .target Elthyn Da'rai
 step
+    .isOnQuest 44663
     .isNotOnQuest 44184
     #completewith next
     #label Kirin Tor Emissary
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elthyn Da'rai|r.
     .complete 44663,1 --1/1 Talk to the Kirin Tor Emissary to teleport you to Dalaran (Optional)
 step
+    .isOnQuest 44663
     .isNotOnQuest 44184
     #completewith Kirin Tor Emissary
     .goto 85,52.85,90.57,10 >>Enter the Portal Room
 step
+    .isOnQuest 44663
     .isNotOnQuest 44184
     #requires Kirin Tor Emissary
     .goto 85,54.82,89.78,8,0
@@ -28140,6 +28165,7 @@ step
     .complete 44663,1 --1/1 Talk to the Kirin Tor Emissary to teleport you to Dalaran (Optional)
     .skipgossipid 51032
 step
+    .isOnQuest 44663
     .isNotOnQuest 44184
     #completewith next
     #label Witnessed
@@ -28147,11 +28173,13 @@ step
     .complete 44663,2 --1/1 Dalaran's Teleportation Witnessed
     .target Archmage Khadgar
 step
+    .isOnQuest 44663
     .isNotOnQuest 44184
     #completewith Witnessed
     .goto 41,52.92,51.9,10,0
     .goto 41,49.58,47.83,30 >>Enter the center of Dalaran
 step
+    .isOnQuest 44663
     .isNotOnQuest 44184
     #requires Witnessed
     .goto 41,49.81,48.30
@@ -28160,6 +28188,7 @@ step
     .target Archmage Khadgar
     .skipgossipid 45530
 step
+    .isOnQuest 44663
     .isNotOnQuest 44184
     #label Launch Event 1
     .goto 627,57.59,45.77

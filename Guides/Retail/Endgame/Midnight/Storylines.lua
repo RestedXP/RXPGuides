@@ -314,7 +314,7 @@ step
     .target Magister Rommath
 step
     >>Complete 5 Void Strikes :)
-    .complete 96422,1 --5/5 Dark-Ley Coalescence
+    .complete 96442,1 --5/5 Dark-Ley Coalescence
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Grand Magister Rommath|r
     .goto 2649,59.74,10.92
@@ -362,7 +362,6 @@ step
     .goto 2618,84.38,69.58,12,0
     .goto 2618,42.60,81.31
     >>Kill |cRXP_ENEMY_Imperator Pertinax|r. Loot him for the |T7554216:0|t[|cRXP_LOOT_Singularian Cryocore|r].
-    >>Kill |cRXP_ENEMY_Nexus-Captain Leth'ir|r. Loot him for the |T7548890:0|t[|cRXP_LOOT_Arcfluxion Hydrospore|r].
     >>|cRXP_WARN_NOTE:|r This quest requires multiple people and at least a tank. It's also optional so you can skip it.
     .complete 96444,1 --1/1 Recover a Fragment of Alien Void or Arcane Magic
     .mob Imperator Pertinax
