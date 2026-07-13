@@ -2719,6 +2719,7 @@ function addon.v2:ShowActivePartyStepsFrame()
                 data.pendingActivePartySteps, player, data.pendingActivePartyPayload)
         end
     end
+    self:RefreshActivePartyTabs()
 
     if addon.comms and addon.comms.AnnounceSelf then
         addon.comms:AnnounceSelf("ANNOUNCE")
@@ -3153,7 +3154,6 @@ function addon.v2:RenderActivePartyStepsFrame(steps, player, encodedPayload)
 
     local playerState = self.state.player[player]
     if playerState.encodedPayload == encodedPayload then
-        self:RefreshActivePartyTabs(player)
         return
     end
 
@@ -3161,7 +3161,9 @@ function addon.v2:RenderActivePartyStepsFrame(steps, player, encodedPayload)
         playerState, steps, "RXPV2ActivePartyStepItem", self.UpdatePartyActiveStepItem)
 
     playerState.encodedPayload = encodedPayload
-    self:RefreshActivePartyTabs(player)
+    if self.state.activePartyPlayer == player then
+        playerStepFrame:RefreshActiveContent()
+    end
 end
 
 function addon.v2:UpdateActiveStepsFrame(steps)

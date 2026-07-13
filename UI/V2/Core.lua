@@ -760,18 +760,21 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         ["SetActiveTab"] = function(this, player)
             this.activeTab = player
-            local activeContainer
             for tabPlayer, tab in pairs(this.tabButtons or {}) do
                 this:RefreshTabTheme(tab, tabPlayer == player)
             end
             for containerPlayer, childContainer in pairs(this.playerContainers or {}) do
                 childContainer.frame:SetShown(containerPlayer == player)
-                if containerPlayer == player then activeContainer = childContainer end
             end
-            if activeContainer then
-                activeContainer:DoLayout()
-                this:FitToActiveContent()
-            end
+            this:RefreshActiveContent()
+        end,
+
+        ["RefreshActiveContent"] = function(this)
+            local activeContainer = this.activeTab and this.playerContainers[this.activeTab]
+            if not activeContainer then return end
+
+            activeContainer:DoLayout()
+            this:FitToActiveContent()
         end,
 
         ["FitToActiveContent"] = function(this)
