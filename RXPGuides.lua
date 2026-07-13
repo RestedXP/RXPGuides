@@ -2279,10 +2279,12 @@ function addon.v2.events:UpdateActiveSteps(_, activeSteps, name)
     addon.v2:UpdateActivePartyStepsFrame(activeSteps, name)
 end
 
-function addon.v2.events:QuestDataLoaded()
-    addon.v2.state.activeStepRenderRevision =
-        (addon.v2.state.activeStepRenderRevision or 0) + 1
+function addon.v2.events:QuestDataLoaded(_, questId)
+    if not questId then
+        addon.v2.state.activeStepRenderRevision =
+            (addon.v2.state.activeStepRenderRevision or 0) + 1
+    end
     if addon.RXPFrame.activeSteps then
-        addon.v2:UpdateActiveStepsFrame(addon.RXPFrame.activeSteps)
+        addon.v2:UpdateActiveStepsFrame(addon.RXPFrame.activeSteps, questId)
     end
 end

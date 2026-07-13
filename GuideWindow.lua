@@ -3045,7 +3045,7 @@ function addon.v2:GetActiveStepKey(step, occurrences)
 end
 
 function addon.v2:ReconcileActiveStepItems(playerState, steps, widgetType, updateItem,
-                                            shouldUpdateItem)
+                                            shouldUpdateItem, updateArg)
     local childContainer = playerState.childContainer
     local previousItems = playerState.activeStepItemsByKey or {}
     local previousOrderedItems = playerState.activeStepItems or {}
@@ -3069,7 +3069,7 @@ function addon.v2:ReconcileActiveStepItems(playerState, steps, widgetType, updat
                 itemsChanged = true
             end
 
-            if not shouldUpdateItem or shouldUpdateItem(self, stepItem, step) then
+            if not shouldUpdateItem or shouldUpdateItem(self, stepItem, step, updateArg) then
                 updateItem(self, stepItem, step)
                 itemsChanged = true
             end
@@ -3105,7 +3105,14 @@ function addon.v2:ReconcileActiveStepItems(playerState, steps, widgetType, updat
     end
 end
 
-function addon.v2:PlayerActiveStepItemNeedsUpdate(stepItem, step)
+function addon.v2:PlayerActiveStepItemNeedsUpdate(stepItem, step, questId)
+    local snapshots = stepItem.rxpElementSnapshots or {}
+    if questId then
+        for snapshotIndex = 1, stepItem.rxpVisibleElementCount or 0 do
+            if snapshots[snapshotIndex].questId == questId then return true end
+        end
+    end
+
     if stepItem.rxpRenderRevision ~= self.state.activeStepRenderRevision or
         stepItem.rxpRenderTitle ~= step.title or
         stepItem.rxpRenderIndex ~= step.index or
@@ -3113,7 +3120,6 @@ function addon.v2:PlayerActiveStepItemNeedsUpdate(stepItem, step)
         return true
     end
 
-    local snapshots = stepItem.rxpElementSnapshots or {}
     local elements = step.elements or {}
     local element, snapshot
     local visibleCount = 0
@@ -3248,7 +3254,7 @@ function addon.v2:RenderActivePartyStepsFrame(steps, player, encodedPayload)
     end
 end
 
-function addon.v2:UpdateActiveStepsFrame(steps)
+function addon.v2:UpdateActiveStepsFrame(steps, questId)
     if not addon.settings.profile.enableBetaFeatures then
         return
     end
@@ -3292,7 +3298,7 @@ function addon.v2:UpdateActiveStepsFrame(steps)
 
     self:ReconcileActiveStepItems(
         playerState, steps, "RXPV2ActiveStepItem", self.UpdatePlayerActiveStepItem,
-        self.PlayerActiveStepItemNeedsUpdate)
+        self.PlayerActiveStepItemNeedsUpdate, questId)
 
     playerState.encodedPayload = encodedPayload
 end
