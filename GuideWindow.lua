@@ -2680,8 +2680,23 @@ function addon.v2:IsActivePartyPlayerAvailable(player)
     return data and data.childContainer
 end
 
+function addon.v2:HasActivePartySteps()
+    for player, data in pairs(self.state.player) do
+        if player ~= addon.player.name and
+            (data.childContainer or data.pendingActivePartySteps) then
+            return true
+        end
+    end
+
+    return false
+end
+
 function addon.v2:IsActivePartyStepsFrameHidden()
     if not addon.settings.profile.enableBetaFeatures or _G.IsInRaid() then
+        return false
+    end
+
+    if not self:HasActivePartySteps() then
         return false
     end
 
