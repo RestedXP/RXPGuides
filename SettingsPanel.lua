@@ -243,6 +243,7 @@ local settingsDBDefaults = {
 
         -- Grouping/V2
         activePartyStepsV2WindowScale = 1.0,
+        activePartyStepsV2AutoSize = true,
         shareActiveSteps = true,
 
         -- V2 UI

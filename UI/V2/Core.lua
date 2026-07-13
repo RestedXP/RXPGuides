@@ -572,9 +572,8 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
     local function Sizer_OnMouseDown(frame)
         local this = frame:GetParent().obj
-        local status = this.status or this.localstatus
         this.autoSize = false
-        status.autoSize = false
+        addon.settings.profile.activePartyStepsV2AutoSize = false
         this.frame:StartSizing("BOTTOMRIGHT")
         AceGUI:ClearFocus()
     end
@@ -669,7 +668,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             this.activeTab = nil
             this.playerContainers = this.playerContainers or {}
             this.tabButtons = this.tabButtons or {}
-            this.autoSize = (this.status or this.localstatus).autoSize ~= false
+            this.autoSize = addon.settings.profile.activePartyStepsV2AutoSize ~= false
             this:ApplyStatus()
             this:Show()
             this.IsFeatureEnabled = function() return true, false end
@@ -894,7 +893,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         ["SetStatusTable"] = function(this, status)
             assert(type(status) == "table")
             this.status = status
-            this.autoSize = status.autoSize ~= false
+            this.autoSize = addon.settings.profile.activePartyStepsV2AutoSize ~= false
             this:ApplyStatus()
         end,
 
