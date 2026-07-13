@@ -3220,6 +3220,11 @@ function addon.v2:UpdateActivePartyStepsFrame(encodedPayload, player)
         return
     end
 
+    local playerState = self.state.player[player]
+    if playerState and playerState.pendingActivePartyPayload == encodedPayload then
+        return
+    end
+
     local steps = self:DecodePlayerActiveSteps(encodedPayload)
     if not steps then return end
 
@@ -3235,7 +3240,7 @@ function addon.v2:UpdateActivePartyStepsFrame(encodedPayload, player)
     if not payloadReady then return end
 
     self.state.player[player] = self.state.player[player] or {}
-    local playerState = self.state.player[player]
+    playerState = self.state.player[player]
     playerState.pendingActivePartyPayload = encodedPayload
     playerState.pendingActivePartySteps = steps
 
