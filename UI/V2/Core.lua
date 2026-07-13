@@ -1374,12 +1374,12 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
                     previousElement = row.element
                     row.element = element
+                    row.rxpResetPending = previousElement ~= element
                     row.text:SetTextColor(unpack(textColor))
                     row.text:SetFont(
                         theme.font,
                         addon.settings.profile.guideFontSize + (elementLayout.fontSizeOffset or 0),
                         "")
-                    updateElementRowText(row, element, previousElement ~= element)
 
                     if element.tag and (element.text or element.requestFromServer) then
                         row.icon:SetText(element.icon or addon.icons[element.tag] or "")
@@ -1388,19 +1388,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                         row.icon:Hide()
                     end
 
-                    row.text:ClearAllPoints()
-                    if row.icon:IsShown() then
-                        row.text:SetPoint("TOPLEFT", row.icon, "TOPRIGHT",
-                                          elementLayout.iconGap or 6, 0)
-                    elseif element.textOnly then
-                        row.text:SetPoint("TOPLEFT", row, "TOPLEFT",
-                                          elementLayout.textOnlyLeft or 31, -1)
-                    else
-                        row.text:SetPoint("TOPLEFT", row.button, "TOPRIGHT",
-                                          elementLayout.textGap or 8, -1)
-                    end
-
-                    row.button:SetChecked(element.completed or element.skip or element.textOnly)
                     row.button:SetShown(not element.textOnly)
                     row:Show()
                 end
@@ -1424,7 +1411,8 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                 row.button:SetChecked(
                     element.completed or element.skip or element.textOnly)
                 updateElementCheckbox(row.button)
-                updateElementRowText(row, element)
+                updateElementRowText(row, element, row.rxpResetPending)
+                row.rxpResetPending = nil
             end
             layoutElements(this)
         end,
