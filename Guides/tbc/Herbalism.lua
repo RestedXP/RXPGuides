@@ -1,4 +1,4 @@
-if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
+local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #wotlk
 #group +Profession leveling

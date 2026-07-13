@@ -1,4 +1,4 @@
-if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
+local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
@@ -2225,7 +2225,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #defaultfor !Shaman
 #name 10-12 Eversong Woods
-#displayname 11-13 Eversong Woods << Orc !Hunter !Warlock/Troll !Hunter 
+#displayname 11-13 Eversong Woods << Orc !Hunter !Warlock/Troll !Hunter
 #version 7
 #subgroup RestedXP Horde 1-30
 #next 12-16 Ghostlands

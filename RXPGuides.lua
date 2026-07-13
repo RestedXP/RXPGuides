@@ -122,6 +122,19 @@ addon.version = 40000
 local gameVersion = select(4, GetBuildInfo())
 addon.gameVersion = gameVersion
 local maxLevel
+addon.enabledLocale = {
+    ["enUS"] = false,
+    -- ["deDE"] = true,
+    -- ["esES"] = true,
+    -- ["esMX"] = true,
+    -- ["frFR"] = true,
+    -- ["itIT"] = true,
+    -- ["koKR"] = true,
+    -- ["ptBR"] = true,
+    -- ["ruRU"] = true,
+    -- ["zhCN"] = true,
+    -- ["zhTW"] = true
+}
 
 if gameVersion > 60000 then
     addon.game = "RETAIL"
@@ -141,9 +154,11 @@ elseif gameVersion > 30000 then
 elseif gameVersion > 20000 then
     addon.game = "TBC"
     maxLevel = 70
+    addon.enabledLocale["zhCN"] = true
 else
     addon.game = "CLASSIC"
     maxLevel = 60
+    addon.enabledLocale["zhCN"] = true
 end
 
 function addon.GetSeason()

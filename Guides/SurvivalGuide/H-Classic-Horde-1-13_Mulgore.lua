@@ -2,7 +2,7 @@ local faction = UnitFactionGroup("player")
 if faction == "Alliance" then return end
 
 
-if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
+local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic

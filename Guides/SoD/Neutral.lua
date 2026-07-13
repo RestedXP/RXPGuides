@@ -1,6 +1,6 @@
 local _,addon = ...
 if addon.GetSeason() ~= 2 then return end
-if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
+local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD/Hunter SoD

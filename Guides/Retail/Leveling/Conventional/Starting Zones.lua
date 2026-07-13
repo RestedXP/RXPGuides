@@ -3,7 +3,7 @@
 -- =================================
 --group RestedXP Speed Leveling
 --LEVEL 1-10
-if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
+local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #retail
 #group RestedXP Speed Leveling
@@ -8990,7 +8990,7 @@ step << Alliance
 
 ]])
 --Arathi Highlands Returning Player
-RXPGuides.RegisterGuide([[ 
+RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Speed Leveling
@@ -16157,7 +16157,7 @@ step
     .turnin 83 >>Turn in Fine Linen Goods
     .turnin 59 >>Turn in Cloth and Leather Armor
     .target Sara Timberlain
-step 
+step
     .goto 84,79.81,27.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
     .accept 65436 >>Accept The Dragon Isles Await
@@ -16167,7 +16167,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Hero's Call Board|r
     .accept 40519 >>Accept Legion: The Legion Returns
     .choose 1851120
-step 
+step
     #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
 -- step
 --     .goto 84,56.257,17.311
@@ -20894,7 +20894,7 @@ step
     .turnin 51486 >>Turn in For the Alliance
     .accept 53500 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
-step 
+step
     #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
 -- step
 --     .goto 84,56.257,17.311
@@ -20909,7 +20909,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mudrik Leger|r.
     .turnin 53500 >>Turn in Stranger in a Strange Land
     .target Mudrik Leger
-step 
+step
     #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
 ]])
 --KulTiran: Boralus
@@ -20951,7 +20951,7 @@ step
     .turnin 55142 >>Turn in For the Alliance
     .accept 55146 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
-step 
+step
     #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
 -- step
 --     .goto 84,56.257,17.311
@@ -21006,7 +21006,7 @@ step
     .turnin 49772 >>Turn in For the Alliance
     .accept 50313 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
-step 
+step
     #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
 -- step
 --     .goto 84,56.257,17.311
@@ -21051,7 +21051,7 @@ step
     .turnin 58146 >>Turn in For the Alliance
     .accept 58147 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
-step 
+step
     #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
 -- step
 --     .goto 84,56.257,17.311
@@ -21105,7 +21105,7 @@ step
     .turnin 49788 >>Turn in For the Alliance
     .accept 50305 >>Accept Stranger in a Strange Land
     .target Ambassador Moorgard
-step 
+step
     #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
 step
     .goto 84,56.199,17.671
