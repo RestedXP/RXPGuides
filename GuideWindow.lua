@@ -2613,15 +2613,18 @@ addon.v2.state = {
     activePartyStepFrame = nil,
 }
 
+function addon.v2:IsActivePartyStepsAvailable()
+    return addon.settings.profile.enableBetaFeatures and
+           addon.settings.profile.enableV2ActivePartyStepsFrame and
+           not _G.IsInRaid()
+end
+
 function addon.v2:GetActivePartyStepsFrame()
     if self.state.activePartyStepFrame then
         return self.state.activePartyStepFrame
     end
 
-    if not (addon.settings.profile.enableBetaFeatures and
-        addon.settings.profile.enableV2ActivePartyStepsFrame) then
-        return
-    end
+    if not self:IsActivePartyStepsAvailable() then return end
 
     local stepFrame = AceGUI:Create("RXPV2ActivePartyStepsFrame")
     stepFrame:ClearAllPoints()
@@ -2638,7 +2641,7 @@ function addon.v2:GetActivePartyStepsFrame()
     end)
 
     stepFrame.IsFeatureEnabled = function()
-        return addon.settings.profile.enableV2ActivePartyStepsFrame, false
+        return addon.v2:IsActivePartyStepsAvailable(), false
     end
 
     self.state.activePartyStepFrame = stepFrame
@@ -2678,7 +2681,7 @@ function addon.v2:IsActivePartyPlayerAvailable(player)
 end
 
 function addon.v2:IsActivePartyStepsFrameHidden()
-    if not addon.settings.profile.enableBetaFeatures then
+    if not addon.settings.profile.enableBetaFeatures or _G.IsInRaid() then
         return false
     end
 
@@ -2691,6 +2694,8 @@ function addon.v2:IsActivePartyStepsFrameHidden()
 end
 
 function addon.v2:ShowActivePartyStepsFrame()
+    if _G.IsInRaid() then return end
+
     addon.settings.profile.enableV2ActivePartyStepsFrame = true
 
     for player, data in pairs(self.state.player) do
@@ -2763,6 +2768,11 @@ function addon.v2:RefreshActivePartyTabs(preferredPlayer)
     local stepFrame = self.state.activePartyStepFrame
     if not stepFrame then return end
 
+    if _G.IsInRaid() then
+        stepFrame:Hide()
+        return
+    end
+
     local players = self:GetActivePartyPlayers()
     local activePlayer = self.state.activePartyPlayer
 
@@ -2800,7 +2810,7 @@ function addon.v2:GetActiveStepsFrame(player)
         return
     end
 
-    if player ~= addon.player.name and not addon.settings.profile.enableV2ActivePartyStepsFrame then
+    if player ~= addon.player.name and not self:IsActivePartyStepsAvailable() then
         return
     end
 
@@ -3122,9 +3132,7 @@ function addon.v2:UpdatePartyActiveStepItem(stepItem, step)
 end
 
 function addon.v2:RenderActivePartyStepsFrame(steps, player, encodedPayload)
-    if not addon.settings.profile.enableV2ActivePartyStepsFrame then
-        return
-    end
+    if not self:IsActivePartyStepsAvailable() then return end
 
     local playerStepFrame = self:GetActiveStepsFrame(player)
 
@@ -3194,6 +3202,11 @@ end
 
 function addon.v2:UpdateActivePartyStepsFrame(encodedPayload, player)
     if not addon.settings.profile.enableBetaFeatures then
+        return
+    end
+
+    if _G.IsInRaid() then
+        self:RefreshActivePartyTabs()
         return
     end
 
