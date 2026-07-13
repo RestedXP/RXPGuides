@@ -2630,9 +2630,11 @@ function addon.v2:GetActivePartyStepsFrame()
     stepFrame:SetCallback("OnTabSelected", function(_, _, player)
         addon.v2.state.activePartyPlayer = player
     end)
+    stepFrame:SetCallback("OnMenuRequested", function()
+        addon.v2:ShowActivePartyStepsMenu()
+    end)
     stepFrame:SetCallback("OnCloseClicked", function()
-        addon.settings.profile.enableV2ActivePartyStepsFrame = false
-        addon.RXPFrame.GenerateMenuTable()
+        addon.v2:DisableActivePartyStepsFrame()
     end)
 
     stepFrame.IsFeatureEnabled = function()
@@ -2703,6 +2705,58 @@ function addon.v2:ShowActivePartyStepsFrame()
     end
 
     addon.RXPFrame.GenerateMenuTable()
+end
+
+function addon.v2:CloseActivePartyStepsFrame()
+    if self.state.activePartyStepFrame then
+        self.state.activePartyStepFrame:Hide()
+        addon.RXPFrame.GenerateMenuTable()
+    end
+end
+
+function addon.v2:DisableActivePartyStepsFrame()
+    addon.settings.profile.enableV2ActivePartyStepsFrame = false
+    self:CloseActivePartyStepsFrame()
+end
+
+function addon.v2:ToggleActivePartyStepsBackground()
+    addon.settings.profile.activePartyStepsV2HideBackground =
+        not addon.settings.profile.activePartyStepsV2HideBackground
+    self:UpdateActiveStepTheme()
+end
+
+function addon.v2:ShowActivePartyStepsMenu()
+    local backgroundText = addon.settings.profile.activePartyStepsV2HideBackground and
+                           L("Show Background") or L("Hide Background")
+    local menu = {
+        {
+            text = backgroundText,
+            notCheckable = 1,
+            func = function()
+                addon.v2:ToggleActivePartyStepsBackground()
+            end,
+        },
+        {
+            text = L("Disable Active Party Steps"),
+            notCheckable = 1,
+            func = function()
+                addon.v2:DisableActivePartyStepsFrame()
+            end,
+        },
+        {
+            text = _G.CLOSE,
+            notCheckable = 1,
+            func = function()
+                addon.v2:CloseActivePartyStepsFrame()
+            end,
+        },
+    }
+
+    if _G.EasyMenu then
+        _G.EasyMenu(menu, MenuFrame, "cursor", 0, 0, "MENU")
+    else
+        LibDD:EasyMenu(menu, MenuFrame, "cursor", 0, 0, "MENU")
+    end
 end
 
 function addon.v2:RefreshActivePartyTabs(preferredPlayer)

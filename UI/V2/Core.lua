@@ -575,14 +575,20 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         AceGUI:ClearFocus()
     end
 
-    local function Tab_OnClick(tab)
+    local function Tab_OnClick(tab, button)
         local this = tab:GetParent().obj
+        if button == "RightButton" then
+            this:Fire("OnMenuRequested")
+            return
+        end
 
         this:SetActiveTab(tab.rxpPlayer)
         this:Fire("OnTabSelected", tab.rxpPlayer)
     end
 
-    local function Tab_OnMouseDown(tab)
+    local function Tab_OnMouseDown(tab, button)
+        if button == "RightButton" then return end
+
         tab:GetParent():StartMoving()
         AceGUI:ClearFocus()
     end
@@ -622,8 +628,13 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         return true
     end
 
-    local function CloseButton_OnClick(button)
+    local function CloseButton_OnClick(button, mouseButton)
         local widget = button:GetParent().obj
+        if mouseButton == "RightButton" then
+            widget:Fire("OnMenuRequested")
+            return
+        end
+
         widget:Fire("OnCloseClicked")
         widget:Hide()
     end
@@ -795,7 +806,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                                       BackdropTemplateMixin and "BackdropTemplate")
                     tab:SetFrameLevel(this.frame:GetFrameLevel() + 2)
                     tab:EnableMouse(true)
-                    tab:RegisterForClicks("LeftButtonUp")
+                    tab:RegisterForClicks("LeftButtonUp", "RightButtonUp")
                     tab:SetScript("OnClick", Tab_OnClick)
                     tab:SetScript("OnMouseDown", Tab_OnMouseDown)
                     tab:SetScript("OnMouseUp", MoverSizer_OnMouseUp)
@@ -950,6 +961,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         closebutton:SetNormalTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close")
         closebutton:SetPushedTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close")
         closebutton:SetHighlightTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close", "ADD")
+        closebutton:RegisterForClicks("LeftButtonUp", "RightButtonUp")
         closebutton:SetScript("OnClick", CloseButton_OnClick)
 
         local footerLayout = theme.layout and theme.layout.partyFooter or {}
