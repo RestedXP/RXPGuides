@@ -366,5 +366,5 @@ function addon.professions.GUI.createGUI()
     moneyGreedyMethod:SetChecked(true)
     alchemyButton:SetChecked(true)
 
-    --guiFrame:Hide()
+    guiFrame:Hide()
 end

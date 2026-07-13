@@ -396,9 +396,6 @@ local PROFESSIONS = addon.professions.PROFESSIONS
 local vah = addon.professions.vah
 local GUI = addon.professions.GUI
 local locale = addon.professions.locale
-local CDATA = RXPCData.professions
-local prof1 = CDATA.profession1
-local prof2 = CDATA.profession2
 
 --local functions
 
@@ -1123,7 +1120,8 @@ end
 function addon.professions:ITEM_PUSH(bagSlot, iconFileID)
 end
 
---Updates crafted items list
+--Updates craftedItems when an item is sold
+--TODO: check if this is correct
 function addon.professions:ITEM_LOCKED(_, bagIndex, slotIndex)
     local containerInfo = GetContainerItemInfo(bagIndex, slotIndex)
     local itemID = containerInfo.itemID
@@ -1313,6 +1311,7 @@ function addon.professions:Setup()
     end
     RXPCData.professions.segmentRange = RXPCData.professions.segmentRange or 75
     RXPCData.professions.percentageTreshold = RXPCData.professions.percentageTreshold or 0.8
+    RXPCData.professions.isInitialScanned = RXPCData.professions.isInitialScanned or false
 
     self.AH:Setup()
 
@@ -1402,16 +1401,7 @@ end
 --Quick testing
 SLASH_qtst1 = '/qtst'
 SlashCmdList['qtst'] = function(item)
-    calculateMaterialAveragePrice()
-    for k, v in pairs(profSession.itemAveragePrice) do
-        print(tostring(k), " -> ", tostring(v))
-    end
-    print("==========")
-    calculateRecipeMinimumPrice(RXPCData.professions.profession1.name)
-    calculateRecipeAveragePrice(RXPCData.professions.profession1.name)
-    for k, v in pairs(profSession.recipesToConsider) do
-        print(tostring(k), " -> ", tostring(v["recipeMinimumPrice"]), " | ", tostring(v["recipeAveragePrice"]))
-    end
+    scanInventoryForCraftedItems("a", "b")
 end
 
 --Export
