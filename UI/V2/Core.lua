@@ -3,7 +3,7 @@ local addonName, addon = ...
 local locale = _G.GetLocale()
 local pairs, assert, type = pairs, assert, type
 local min, max, floor, abs = math.min, math.max, math.floor, math.abs
-local strsub = string.sub
+local strbyte, strsub = string.byte, string.sub
 local CreateFrame, UIParent = CreateFrame, UIParent
 
 -- AceAddon doesn't exist yet
@@ -607,6 +607,21 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         end
     end
 
+    local function RemoveLastUTF8Codepoint(text)
+        local index = #text
+        local byte
+
+        while index > 0 do
+            byte = strbyte(text, index)
+            if byte < 0x80 or byte > 0xBF then
+                return strsub(text, 1, index - 1)
+            end
+            index = index - 1
+        end
+
+        return ""
+    end
+
     local function FitTabText(fontString, text, width)
         local label = text or ""
         local availableWidth = max(width or 0, 0)
@@ -617,7 +632,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         end
 
         while #label > 1 do
-            label = strsub(label, 1, #label - 1)
+            label = RemoveLastUTF8Codepoint(label)
             fontString:SetText(label .. "...")
             if fontString:GetStringWidth() <= availableWidth then
                 return true
