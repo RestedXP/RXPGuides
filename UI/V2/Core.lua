@@ -1605,8 +1605,8 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
 
         ["SetTitle"] = function(this, title)
             local layout = getLayout("activeStepBadge")
-            this.titletext:SetText(title)
             if title == "" then
+                this.titletext:SetText("")
                 this.titletext:SetAlpha(0)
                 this.title:SetSize(layout.horizontalPadding or 8, layout.height or 16)
             else
