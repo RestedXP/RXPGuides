@@ -571,7 +571,11 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
     end
 
     local function Sizer_OnMouseDown(frame)
-        frame:GetParent():StartSizing("BOTTOMRIGHT")
+        local this = frame:GetParent().obj
+        local status = this.status or this.localstatus
+        this.autoSize = false
+        status.autoSize = false
+        this.frame:StartSizing("BOTTOMRIGHT")
         AceGUI:ClearFocus()
     end
 
@@ -665,6 +669,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             this.activeTab = nil
             this.playerContainers = this.playerContainers or {}
             this.tabButtons = this.tabButtons or {}
+            this.autoSize = (this.status or this.localstatus).autoSize ~= false
             this:ApplyStatus()
             this:Show()
             this.IsFeatureEnabled = function() return true, false end
@@ -674,6 +679,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             this.status = nil
             wipe(this.localstatus)
             this.activeTab = nil
+            this.autoSize = nil
             wipe(this.playerContainers)
             for _, tab in pairs(this.tabButtons or {}) do
                 tab:Hide()
@@ -772,6 +778,8 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         end,
 
         ["FitToActiveContent"] = function(this)
+            if not this.autoSize then return end
+
             local activeContainer = this.activeTab and this.playerContainers[this.activeTab]
             if not activeContainer or not activeContainer.content then return end
 
@@ -886,6 +894,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         ["SetStatusTable"] = function(this, status)
             assert(type(status) == "table")
             this.status = status
+            this.autoSize = status.autoSize ~= false
             this:ApplyStatus()
         end,
 
