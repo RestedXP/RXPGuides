@@ -264,7 +264,6 @@ addon.v2.themes['v2'] = {
         common = {26 / 255, 28 / 255, 48 / 255, 0.95}, -- #1A1C30F2
         activeSteps = {11 / 255, 12 / 255, 26 / 255, 0.95},
         activePartySteps = {11 / 255, 12 / 255, 26 / 255, 0.95},
-        activePartyTitle = {28 / 255, 31 / 255, 52 / 255, 1},
         activePartyTab = {28 / 255, 31 / 255, 52 / 255, 1},
         inactivePartyTab = {32 / 255, 33 / 255, 49 / 255, 1},
         activePartyFooter = {20 / 255, 22 / 255, 39 / 255, 0.98},
@@ -302,8 +301,6 @@ addon.v2.themes['v2'] = {
 
     layout = {
         outerPadding = {left = 8, right = 8, top = 8, bottom = 8},
-        stepItemPadding = {left = 4, right = 6, top = 6, bottom = 2},
-        stepItemMargin = {bottom = 10},
         activeStepItemPadding = {left = 4, right = 6, top = 12, bottom = 6},
         activeStepItemMargin = {bottom = 8},
         activePartyStepItemPadding = {left = 8, right = 8, top = 10, bottom = 5},
@@ -321,7 +318,6 @@ addon.v2.themes['v2'] = {
             fontSizeOffset = 2,
         },
         activeStepsBottomPadding = 0,
-        stepBadge = {x = 4, y = 10, height = 16, horizontalPadding = 8},
         activeStepBadge = {x = 6, y = 9, height = 18, horizontalPadding = 12, fontSizeOffset = -1},
         activeStepFrameInset = {left = 7, right = 7},
         partyTab = {
