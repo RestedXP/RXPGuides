@@ -2280,6 +2280,8 @@ function addon.v2.events:UpdateActiveSteps(_, activeSteps, name)
 end
 
 function addon.v2.events:QuestDataLoaded()
+    addon.v2.state.activeStepRenderRevision =
+        (addon.v2.state.activeStepRenderRevision or 0) + 1
     if addon.RXPFrame.activeSteps then
         addon.v2:UpdateActiveStepsFrame(addon.RXPFrame.activeSteps)
     end

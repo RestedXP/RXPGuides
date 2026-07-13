@@ -813,6 +813,10 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             local availableWidth = frameWidth - left - right - (gap * max(tabCount - 1, 0))
             local tabWidth = maxWidth
             local labelWidth
+            local theme = addon.v2:GetTheme()
+            local tabFont = theme.font
+            local tabFontSize = addon.settings.profile.guideFontSize +
+                                (layout.fontSizeOffset or 2)
 
             if tabCount > 0 and availableWidth > 0 then
                 tabWidth = min(maxWidth, floor(availableWidth / tabCount))
@@ -847,13 +851,18 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
                 tab.rxpPlayer = player
                 tab.rxpFullName = player
-                tab.text:SetFontObject(_G.GameFontNormalSmall)
-                tab.text:SetFont(addon.v2:GetTheme().font,
-                                 addon.settings.profile.guideFontSize +
-                                 (layout.fontSizeOffset or 2), "")
                 labelWidth = max(tabWidth - horizontalPadding, 1)
-                tab.text:SetWidth(labelWidth)
-                tab.rxpTruncated = FitTabText(tab.text, player, labelWidth)
+                if tab.rxpLabel ~= player or tab.rxpLabelWidth ~= labelWidth or
+                    tab.rxpTabFont ~= tabFont or tab.rxpTabFontSize ~= tabFontSize then
+                    tab.text:SetFontObject(_G.GameFontNormalSmall)
+                    tab.text:SetFont(tabFont, tabFontSize, "")
+                    tab.text:SetWidth(labelWidth)
+                    tab.rxpTruncated = FitTabText(tab.text, player, labelWidth)
+                    tab.rxpLabel = player
+                    tab.rxpLabelWidth = labelWidth
+                    tab.rxpTabFont = tabFont
+                    tab.rxpTabFontSize = tabFontSize
+                end
                 tab:SetSize(tabWidth, layout.height or 20)
                 tab:ClearAllPoints()
                 if previousTab then
@@ -875,6 +884,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                     tab.rxpPlayer = nil
                     tab.rxpFullName = nil
                     tab.rxpTruncated = nil
+                    tab.rxpLabel = nil
                     this.tabButtons[tabPlayer] = nil
                     this.unusedTabButtons[#this.unusedTabButtons + 1] = tab
                 end
@@ -1330,6 +1340,12 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             this.activeElementRows = 0
             this.noAutoHeight = false
             this.stepTextLabel = nil
+            this.rxpElementSnapshots = nil
+            this.rxpVisibleElementCount = nil
+            this.rxpRenderRevision = nil
+            this.rxpRenderTitle = nil
+            this.rxpRenderIndex = nil
+            this.rxpRenderText = nil
         end,
 
         ["SetTitle"] = function(this, title)

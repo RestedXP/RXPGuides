@@ -3044,13 +3044,17 @@ function addon.v2:GetActiveStepKey(step, occurrences)
     return key .. ":" .. occurrence
 end
 
-function addon.v2:ReconcileActiveStepItems(playerState, steps, widgetType, updateItem)
+function addon.v2:ReconcileActiveStepItems(playerState, steps, widgetType, updateItem,
+                                            shouldUpdateItem)
     local childContainer = playerState.childContainer
     local previousItems = playerState.activeStepItemsByKey or {}
+    local previousOrderedItems = playerState.activeStepItems or {}
     local nextItems = {}
     local orderedItems = {}
     local occurrences = {}
     local displayStep, key, stepItem
+    local itemIndex = 0
+    local itemsChanged = false
 
     for _, step in ipairs(steps) do
         displayStep = self:IsActiveStepShown(step)
@@ -3062,17 +3066,30 @@ function addon.v2:ReconcileActiveStepItems(playerState, steps, widgetType, updat
             else
                 stepItem = AceGUI:Create(widgetType)
                 stepItem:SetFullWidth(true)
+                itemsChanged = true
             end
 
-            updateItem(self, stepItem, step)
+            if not shouldUpdateItem or shouldUpdateItem(self, stepItem, step) then
+                updateItem(self, stepItem, step)
+                itemsChanged = true
+            end
             nextItems[key] = stepItem
-            orderedItems[#orderedItems + 1] = stepItem
+            itemIndex = itemIndex + 1
+            orderedItems[itemIndex] = stepItem
+            if previousOrderedItems[itemIndex] ~= stepItem then
+                itemsChanged = true
+            end
         end
     end
 
     for _, removedItem in pairs(previousItems) do
         AceGUI:Release(removedItem)
+        itemsChanged = true
     end
+
+    playerState.activeStepItemsByKey = nextItems
+    playerState.activeStepItems = orderedItems
+    if not itemsChanged then return end
 
     wipe(childContainer.children)
     for itemIndex = 1, #orderedItems do
@@ -3082,9 +3099,38 @@ function addon.v2:ReconcileActiveStepItems(playerState, steps, widgetType, updat
         stepItem.frame:Show()
     end
     childContainer:DoLayout()
+end
 
-    playerState.activeStepItemsByKey = nextItems
-    playerState.activeStepItems = orderedItems
+function addon.v2:PlayerActiveStepItemNeedsUpdate(stepItem, step)
+    if stepItem.rxpRenderRevision ~= self.state.activeStepRenderRevision or
+        stepItem.rxpRenderTitle ~= step.title or
+        stepItem.rxpRenderIndex ~= step.index or
+        stepItem.rxpRenderText ~= step.text then
+        return true
+    end
+
+    local snapshots = stepItem.rxpElementSnapshots or {}
+    local elements = step.elements or {}
+    local element, snapshot
+    local visibleCount = 0
+    for elementIndex = 1, #elements do
+        element = elements[elementIndex]
+        if element.text or element.requestFromServer then
+            visibleCount = visibleCount + 1
+            snapshot = snapshots[visibleCount]
+            if not snapshot or snapshot.element ~= element or
+                snapshot.text ~= element.text or
+                snapshot.requestFromServer ~= element.requestFromServer or
+                snapshot.tag ~= element.tag or snapshot.icon ~= element.icon or
+                snapshot.title ~= element.title or snapshot.questId ~= element.questId or
+                snapshot.completed ~= element.completed or snapshot.skip ~= element.skip or
+                snapshot.textOnly ~= element.textOnly then
+                return true
+            end
+        end
+    end
+
+    return visibleCount ~= stepItem.rxpVisibleElementCount
 end
 
 function addon.v2:UpdatePlayerActiveStepItem(stepItem, step)
@@ -3115,6 +3161,38 @@ function addon.v2:UpdatePlayerActiveStepItem(stepItem, step)
         AceGUI:Release(stepItem.stepTextLabel)
         stepItem.stepTextLabel = nil
     end
+
+    local snapshots = stepItem.rxpElementSnapshots or {}
+    local elements = step.elements or {}
+    local element, snapshot
+    local visibleCount = 0
+    for elementIndex = 1, #elements do
+        element = elements[elementIndex]
+        if element.text or element.requestFromServer then
+            visibleCount = visibleCount + 1
+            snapshot = snapshots[visibleCount] or {}
+            snapshot.element = element
+            snapshot.text = element.text
+            snapshot.requestFromServer = element.requestFromServer
+            snapshot.tag = element.tag
+            snapshot.icon = element.icon
+            snapshot.title = element.title
+            snapshot.questId = element.questId
+            snapshot.completed = element.completed
+            snapshot.skip = element.skip
+            snapshot.textOnly = element.textOnly
+            snapshots[visibleCount] = snapshot
+        end
+    end
+    for elementIndex = visibleCount + 1, #snapshots do
+        snapshots[elementIndex] = nil
+    end
+    stepItem.rxpElementSnapshots = snapshots
+    stepItem.rxpVisibleElementCount = visibleCount
+    stepItem.rxpRenderRevision = self.state.activeStepRenderRevision
+    stepItem.rxpRenderTitle = step.title
+    stepItem.rxpRenderIndex = step.index
+    stepItem.rxpRenderText = step.text
 end
 
 function addon.v2:UpdatePartyActiveStepItem(stepItem, step)
@@ -3176,11 +3254,10 @@ function addon.v2:UpdateActiveStepsFrame(steps)
     local playerState = self.state.player[player]
     playerState.activeStepItems = playerState.activeStepItems or {}
 
-    -- Player comes from activeSteps, whereas not-player comes over chat channels
-    -- Encoding and broadcasting are independent of the local player frame.
-    local encodedPayload = self:EncodePlayerActiveSteps(steps)
+    -- Player comes from activeSteps, whereas not-player comes over chat channels.
     local payloadReady = true
     local renderReady = true
+    local encodedPayload
 
     for _, step in ipairs(steps) do
         if self:IsActiveStepShown(step) then
@@ -3189,9 +3266,12 @@ function addon.v2:UpdateActiveStepsFrame(steps)
         end
     end
 
-    if payloadReady and playerState.broadcastPayload ~= encodedPayload and
-        addon.comms.grouping:BroadcastCurrentStep(encodedPayload) then
-        playerState.broadcastPayload = encodedPayload
+    if payloadReady and addon.comms.grouping:CanBroadcastCurrentStep() then
+        encodedPayload = self:EncodePlayerActiveSteps(steps)
+        if playerState.broadcastPayload ~= encodedPayload and
+            addon.comms.grouping:BroadcastCurrentStep(encodedPayload) then
+            playerState.broadcastPayload = encodedPayload
+        end
     end
 
     if not addon.settings.profile.enableV2ActiveStepsFrame then
@@ -3207,7 +3287,8 @@ function addon.v2:UpdateActiveStepsFrame(steps)
     if not playerStepFrame then return end
 
     self:ReconcileActiveStepItems(
-        playerState, steps, "RXPV2ActiveStepItem", self.UpdatePlayerActiveStepItem)
+        playerState, steps, "RXPV2ActiveStepItem", self.UpdatePlayerActiveStepItem,
+        self.PlayerActiveStepItemNeedsUpdate)
 
     playerState.encodedPayload = encodedPayload
 end

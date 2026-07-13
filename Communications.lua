@@ -840,6 +840,12 @@ end
 
 local ACTIVE_STEP_BROADCAST_INTERVAL = 0.2
 
+function addon.comms.grouping:CanBroadcastCurrentStep()
+    return addon.settings.profile.shareActiveSteps and
+           addon.comms.state.group.hasRXP and
+           UnitInBattleground("player") == nil and GetNumGroupMembers() > 1
+end
+
 local function SendCurrentStep(self, encodedPayload)
     local data = {
         command = "STEP",
@@ -853,9 +859,7 @@ local function SendCurrentStep(self, encodedPayload)
 end
 
 function addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
-    if not addon.settings.profile.shareActiveSteps then return end
-    if not addon.comms.state.group.hasRXP then return end
-    if UnitInBattleground("player") ~= nil or GetNumGroupMembers() <= 1 then return end
+    if not self:CanBroadcastCurrentStep() then return end
 
     local now = GetTime()
     local delay = ACTIVE_STEP_BROADCAST_INTERVAL -
