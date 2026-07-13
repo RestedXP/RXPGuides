@@ -1,0 +1,57 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXMLUI.xsd">
+    <Script file="Import.lua"/>
+
+    <Script file="Classic-Alliance-Mage-1-12.lua"/>
+    <Script file="Classic-Alliance-Mage-12-21.lua"/>
+	<Script file="Classic-Alliance-ADV-AoE-Mage-1-22.lua"/>
+    <Script file="Classic-Alliance-1-10_NightElf.lua"/>
+    <Script file="Classic-Alliance-1-13_Human.lua"/>
+    <Script file="Classic-Alliance-1-14_DwarfGnome.lua"/>
+    <Script file="Classic-Alliance-11-20.lua"/>
+    <Script file="Classic-Horde-01-12_Durotar.lua"/>
+    <Script file="Classic-Horde-01-14_Undead.lua"/>
+    <Script file="Classic-Horde-1-12_Mulgore.lua"/>
+    <Script file="Classic-Horde-12-22_Barrens.lua"/>
+    <Script file="Classic-Horde-Mage-12-21.lua"/>
+
+	<Script file="SurvivalGuide\A-Classic-Alliance-1-10_NightElf.lua"/>
+	<Script file="SurvivalGuide\A-Classic-Alliance-1-13_Human.lua"/>
+	<Script file="SurvivalGuide\A-Classic-Alliance-1-14_DwarfGnome.lua"/>
+	<Script file="SurvivalGuide\A-Classic-Alliance-11-16_NightElf.lua"/>
+	<Script file="SurvivalGuide\A-Classic-Alliance-11-20.lua"/>
+	<Script file="SurvivalGuide\A-Hardcore-18-19 Loch Modan.lua"/>
+	<Script file="SurvivalGuide\A-Hardcore-19-20 Redridge.lua"/>
+
+	<Script file="SurvivalGuide\H-Classic-Horde-01-13_Durotar.lua"/>
+	<Script file="SurvivalGuide\H-Classic-Horde-01-13_Undead.lua"/>
+	<Script file="SurvivalGuide\H-Classic-Horde-1-13_Mulgore.lua"/>
+	<Script file="SurvivalGuide\H-Classic-Horde-13-15_Silverpine.lua"/>
+	<Script file="SurvivalGuide\H-Classic-Horde-15-23_Barrens.lua"/>
+
+	<Script file="SoD\Neutral.lua"/>
+	<Script file="SoD\Rogue.lua"/>
+	<Script file="SoD\Warrior.lua"/>
+	<Script file="SoD\Druid.lua"/>
+	<Script file="SoD\Hunter.lua"/>
+	<Script file="SoD\Mage.lua"/>
+	<Script file="SoD\Paladin.lua"/>
+	<Script file="SoD\Priest.lua"/>
+	<Script file="SoD\Warlock.lua"/>
+	<Script file="SoD\Alliance.lua"/>
+	<Script file="SoD\Shaman.lua"/>
+	<Script file="SoD\Horde.lua"/>
+	<Script file="SoD\Attunements.lua"/>
+	
+	<Script file="SoD\Incursions.lua"/>
+	
+	<Script file="SoD\Alliance\1-10_Dun Morogh.lua"/>
+	<Script file="SoD\Alliance\1-10_Elwynn.lua"/>
+	<Script file="SoD\Alliance\1-13_Teldrassil.lua"/>
+	<Script file="SoD\Alliance\10-16_Loch.lua"/>
+	<Script file="SoD\Alliance\13-22_Darkshore.lua"/>
+	<Script file="SoD\Alliance\16-22_Westfall-Redridge.lua"/>
+	
+	<Script file="Classic-Attunements.lua"/>
+	<Script file="Classic-0.5.lua"/>
+
+</Ui>
