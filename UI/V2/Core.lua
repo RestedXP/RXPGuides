@@ -668,6 +668,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             this.activeTab = nil
             this.playerContainers = this.playerContainers or {}
             this.tabButtons = this.tabButtons or {}
+            this.unusedTabButtons = this.unusedTabButtons or {}
             this.autoSize = addon.settings.profile.activePartyStepsV2AutoSize ~= false
             this:ApplyStatus()
             this:Show()
@@ -680,11 +681,13 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             this.activeTab = nil
             this.autoSize = nil
             wipe(this.playerContainers)
-            for _, tab in pairs(this.tabButtons or {}) do
+            for player, tab in pairs(this.tabButtons or {}) do
                 tab:Hide()
                 tab.rxpPlayer = nil
                 tab.rxpFullName = nil
                 tab.rxpTruncated = nil
+                this.tabButtons[player] = nil
+                this.unusedTabButtons[#this.unusedTabButtons + 1] = tab
             end
         end,
 
@@ -822,6 +825,9 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                 player = players[playerIndex]
                 tab = this.tabButtons[player]
                 if not tab then
+                    tab = table.remove(this.unusedTabButtons)
+                end
+                if not tab then
                     tab = CreateFrame("Button", nil, this.frame,
                                       BackdropTemplateMixin and "BackdropTemplate")
                     tab:SetFrameLevel(this.frame:GetFrameLevel() + 2)
@@ -838,8 +844,8 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                     tab.text:SetJustifyV("MIDDLE")
                     if tab.text.SetWordWrap then tab.text:SetWordWrap(false) end
                     if tab.text.SetNonSpaceWrap then tab.text:SetNonSpaceWrap(false) end
-                    this.tabButtons[player] = tab
                 end
+                this.tabButtons[player] = tab
 
                 tab.rxpPlayer = player
                 tab.rxpFullName = player
@@ -871,6 +877,8 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                     tab.rxpPlayer = nil
                     tab.rxpFullName = nil
                     tab.rxpTruncated = nil
+                    this.tabButtons[tabPlayer] = nil
+                    this.unusedTabButtons[#this.unusedTabButtons + 1] = tab
                 end
             end
 
