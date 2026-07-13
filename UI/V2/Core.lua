@@ -1065,6 +1065,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         local elementLayout = getLayout("activeStepElement")
         local width = this.content:GetWidth()
         if not width or width <= 0 then return end
+        if not this.rxpElementsDirty and this.rxpLayoutWidth == width then return end
 
         local row, element, hasButton, hasIcon, textLeft, textTop, textWidth, textHeight, textAvailable, rowHeight
         local checkboxLeft = elementLayout.checkboxLeft or 3
@@ -1114,6 +1115,8 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         local margin = getLayout("activeStepItemMargin")
         this:SetHeight(height + (padding.top or 6) + (padding.bottom or 2) +
                        (margin.bottom or 10))
+        this.rxpElementsDirty = nil
+        this.rxpLayoutWidth = width
     end
 
     updateElementCheckbox = function(button, force)
@@ -1415,11 +1418,12 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
             this.activeElementRows = visibleCount
             this.noAutoHeight = visibleCount > 0
-            this:RefreshElements()
+            this.rxpElementsDirty = true
+            this:RefreshElements(false)
             return visibleCount
         end,
 
-        ["RefreshElements"] = function(this)
+        ["RefreshElements"] = function(this, layout)
             local row, element
             for rowIndex = 1, this.activeElementRows or 0 do
                 row = this.elementRows[rowIndex]
@@ -1430,6 +1434,13 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                 updateElementRowText(row, element, row.rxpResetPending)
                 row.rxpResetPending = nil
             end
+            if layout ~= false then
+                this.rxpElementsDirty = true
+                layoutElements(this)
+            end
+        end,
+
+        ["LayoutElements"] = function(this)
             layoutElements(this)
         end,
 
@@ -1491,6 +1502,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                 updateElementCheckbox(row.button, true)
                 updateElementRowText(row, row.element)
             end
+            this.rxpElementsDirty = true
             layoutElements(this)
         end
     }

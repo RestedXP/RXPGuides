@@ -3099,6 +3099,10 @@ function addon.v2:ReconcileActiveStepItems(playerState, steps, widgetType, updat
         stepItem.frame:Show()
     end
     childContainer:DoLayout()
+    for itemIndex = 1, #orderedItems do
+        stepItem = orderedItems[itemIndex]
+        if stepItem.LayoutElements then stepItem:LayoutElements() end
+    end
 end
 
 function addon.v2:PlayerActiveStepItemNeedsUpdate(stepItem, step)
