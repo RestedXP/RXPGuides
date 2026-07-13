@@ -767,9 +767,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             end
             if activeContainer then
                 activeContainer:DoLayout()
-                if this.FitToActiveContent then
-                    this:FitToActiveContent()
-                end
+                this:FitToActiveContent()
             end
         end,
 

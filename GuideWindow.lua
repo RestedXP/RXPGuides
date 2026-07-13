@@ -3162,9 +3162,6 @@ function addon.v2:RenderActivePartyStepsFrame(steps, player, encodedPayload)
 
     playerState.encodedPayload = encodedPayload
     self:RefreshActivePartyTabs(player)
-    if playerStepFrame.FitToActiveContent then
-        playerStepFrame:FitToActiveContent()
-    end
 end
 
 function addon.v2:UpdateActiveStepsFrame(steps)
