@@ -1513,14 +1513,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
     local function Constructor()
         local frame = CreateFrame("Frame", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
 
-        -- frame:EnableMouse(true)
-        -- frame:SetScript("OnEnter", Control_OnEnter)
-        -- frame:SetScript("OnLeave", Control_OnLeave)
-        -- frame:SetScript("OnMouseDown", CheckBox_OnMouseDown)
-        -- frame:SetScript("OnMouseUp", CheckBox_OnMouseUp)
-
-        -- frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
-        -- frame:SetBackdropColor(unpack(addon.colors.bottomFrameBG))
         local theme = addon.v2:GetTheme()
         local itemEdge = theme.edges.activeStepItem or theme.edges.common
         local itemBackground = theme.backgroundColors.activeStepItem or theme.backgroundColors.common
@@ -1545,9 +1537,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         title:SetPoint("TOPLEFT", card, "TOPLEFT", badgeLayout.x or 4, badgeLayout.y or 10)
         title:ClearBackdrop()
         setBackdrop(title, badgeEdge, badgeBackground, badgeBorder)
-        -- title:EnableMouse(true)
-        -- title:SetScript("OnMouseDown", Title_OnMouseDown)
-        -- title:SetScript("OnMouseUp", MoverSizer_OnMouseUp)
+
 
         local titletext = title:CreateFontString(nil, "OVERLAY")
         titletext:ClearAllPoints()
@@ -1560,13 +1550,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             theme.font,
             addon.settings.profile.guideFontSize + (badgeLayout.fontSizeOffset or -3),
             "")
-
-        -- local border = CreateFrame("Frame", nil, frame, "BackdropTemplate")
-        -- border:SetPoint("TOPLEFT", 0, 0)
-        -- border:SetPoint("BOTTOMRIGHT", 0, 0)
-        -- border:SetBackdrop(PaneBackdrop)
-        -- border:SetBackdropColor(unpack(addon.colors.bottomFrameBG))
-        -- border:SetBackdropBorderColor(unpack(addon.colors.bottomFrameBG))
 
         -- Container Support
         local content = CreateFrame("Frame", nil, card)
