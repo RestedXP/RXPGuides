@@ -2902,35 +2902,33 @@ function addon.v2:GetActiveStepsFrame(player)
 end
 
 function addon.v2:UpdateActiveStepTheme()
-    local f, hideBackground, scaleSetting
+    local playerState = self.state.player[addon.player.name]
+    local playerFrame = playerState and playerState.activeStepFrame
+    local partyFrame = self.state.activePartyStepFrame
+
+    if playerFrame then
+        playerFrame:UpdateTheme({
+            hideBackground = addon.settings.profile.activeStepsV2HideBackground,
+            updateChildren = true,
+            scale = addon.settings.profile.activeStepsV2WindowScale,
+        })
+    end
+
+    if not partyFrame then return end
+
+    partyFrame:UpdateTheme({
+        hideBackground = addon.settings.profile.activePartyStepsV2HideBackground,
+        scale = addon.settings.profile.activePartyStepsV2WindowScale,
+    })
 
     for player, data in pairs(self.state.player) do
-        f = data.activeStepFrame
-
-        if f then
-            if player == addon.player.name then
-                hideBackground = addon.settings.profile.activeStepsV2HideBackground
-                scaleSetting = addon.settings.profile.activeStepsV2WindowScale
-            else
-                hideBackground = addon.settings.profile.activePartyStepsV2HideBackground
-                scaleSetting = addon.settings.profile.activePartyStepsV2WindowScale
-            end
-
-            f:UpdateTheme({
-                hideBackground = hideBackground,
-                updateChildren = true,
-                scale = scaleSetting,
-            })
-
-            if data.childContainer and data.childContainer ~= f and data.childContainer.UpdateTheme then
-                data.childContainer:UpdateTheme({updateChildren = true})
-            end
+        if player ~= addon.player.name and data.childContainer and
+            data.childContainer.UpdateTheme then
+            data.childContainer:UpdateTheme({updateChildren = true})
         end
     end
 
-    if self.state.activePartyStepFrame then
-        self:RefreshActivePartyTabs()
-    end
+    self:RefreshActivePartyTabs()
 end
 
 -- hiddentext only hides a step in the main guide list; optional steps still
