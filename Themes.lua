@@ -324,7 +324,6 @@ addon.v2.themes['v2'] = {
         stepBadge = {x = 4, y = 10, height = 16, horizontalPadding = 8},
         activeStepBadge = {x = 6, y = 9, height = 18, horizontalPadding = 12, fontSizeOffset = -1},
         activeStepFrameInset = {left = 7, right = 7},
-        partyTitle = {left = 12, y = 6, height = 15, horizontalPadding = 7, fontSizeOffset = 2},
         partyTab = {
             left = 10,
             right = 42,

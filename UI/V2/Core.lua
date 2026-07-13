@@ -561,11 +561,6 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         AceGUI:ClearFocus()
     end
 
-    local function Title_OnMouseDown(frame)
-        frame:GetParent():StartMoving()
-        AceGUI:ClearFocus()
-    end
-
     local function MoverSizer_OnMouseUp(mover)
         SaveFrameStatus(mover:GetParent())
     end
@@ -960,29 +955,6 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         frame:SetScript("OnMouseDown", Frame_OnMouseDown)
         frame:SetScript("OnMouseUp", Frame_OnMouseUp)
 
-        local title = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
-        local titleLayout = theme.layout and theme.layout.partyTitle or {}
-        title:SetFrameLevel(frame:GetFrameLevel() + 2)
-        title:SetPoint("TOPLEFT", frame, "TOPLEFT", titleLayout.left or 12, titleLayout.y or 6)
-        title:ClearBackdrop()
-        setBackdrop(title, theme.edges.activePartySteps or theme.edges.common,
-                    theme.backgroundColors.activePartyTitle or theme.backgroundColors.activePartySteps,
-                    theme.borderColors.activePartySteps or theme.borderColors.common)
-        title:EnableMouse(true)
-        title:SetScript("OnMouseDown", Title_OnMouseDown)
-        title:SetScript("OnMouseUp", MoverSizer_OnMouseUp)
-
-        local titletext = title:CreateFontString(nil, "OVERLAY")
-        titletext:ClearAllPoints()
-        titletext:SetPoint("CENTER", title, 0, 1)
-        titletext:SetJustifyH("CENTER")
-        titletext:SetJustifyV("MIDDLE")
-        titletext:SetTextColor(unpack(theme.textColor.activePartySteps or theme.textColor.common))
-        titletext:SetFontObject(_G.GameFontNormalSmall)
-        titletext:SetFont(theme.font,
-                          addon.settings.profile.guideFontSize + (titleLayout.fontSizeOffset or -2), "")
-        title:Hide()
-
         local closebutton = CreateFrame("Button", nil, frame)
         closebutton:SetFrameLevel(frame:GetFrameLevel() + 3)
         closebutton:SetSize(16, 16)
@@ -1028,14 +1000,9 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         local contentLayout = theme.layout and theme.layout.partyContent or {}
         content:SetPoint("TOPLEFT", contentLayout.left or 6, -(contentLayout.top or 7))
         content:SetPoint("BOTTOMRIGHT", -(contentLayout.right or 6), contentLayout.bottom or 14)
-        -- content:ClearBackdrop()
-        -- content:SetBackdrop(addon.RXPFrame.backdrop.bottom)
-        -- content:SetBackdropColor(unpack(addon.colors.bottomFrameBG))
 
         local widget = {
             localstatus = {},
-            title = title,
-            titletext = titletext,
             closebutton = closebutton,
             footer = footer,
             footertext = footertext,
