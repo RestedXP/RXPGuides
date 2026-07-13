@@ -3049,9 +3049,12 @@ function addon.v2:ReconcileActiveStepItems(playerState, steps, widgetType, updat
     local childContainer = playerState.childContainer
     local previousItems = playerState.activeStepItemsByKey or {}
     local previousOrderedItems = playerState.activeStepItems or {}
-    local nextItems = {}
-    local orderedItems = {}
-    local occurrences = {}
+    local nextItems = playerState.activeStepItemsScratchByKey or {}
+    local orderedItems = playerState.activeStepItemsScratch or {}
+    local occurrences = playerState.activeStepOccurrences or {}
+    wipe(nextItems)
+    wipe(orderedItems)
+    wipe(occurrences)
     local displayStep, key, stepItem
     local itemIndex = 0
     local itemsChanged = false
@@ -3087,8 +3090,13 @@ function addon.v2:ReconcileActiveStepItems(playerState, steps, widgetType, updat
         itemsChanged = true
     end
 
+    wipe(previousItems)
+    wipe(previousOrderedItems)
     playerState.activeStepItemsByKey = nextItems
     playerState.activeStepItems = orderedItems
+    playerState.activeStepItemsScratchByKey = previousItems
+    playerState.activeStepItemsScratch = previousOrderedItems
+    playerState.activeStepOccurrences = occurrences
     if not itemsChanged then return end
 
     wipe(childContainer.children)
