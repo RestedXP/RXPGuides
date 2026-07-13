@@ -1401,7 +1401,6 @@ end
 --Quick testing
 SLASH_qtst1 = '/qtst'
 SlashCmdList['qtst'] = function(item)
-    scanInventoryForCraftedItems("a", "b")
 end
 
 --Export
