@@ -1034,7 +1034,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 end
 
 function addon.ui.v2:RegisterRXPV2ActiveStepItem()
-    local Type, Version = "RXPV2ActiveStepItem", 4
+    local Type, Version = "RXPV2ActiveStepItem", 5
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     local transparent = {0, 0, 0, 0}
@@ -1379,9 +1379,12 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             local previousCount = this.activeElementRows or 0
             local row, element, previousElement, previousStep, rowStep
 
-            local theme = addon.v2:GetTheme()
-            local textColor = theme.textColor.activeStepItem or theme.textColor.common
-            local elementLayout = getLayout("activeStepElement")
+            local theme, textColor, elementLayout
+            if not watchOnly then
+                theme = addon.v2:GetTheme()
+                textColor = theme.textColor.activeStepItem or theme.textColor.common
+                elementLayout = getLayout("activeStepElement")
+            end
             local visibleCount = 0
 
             local elements = step.elements or {}
@@ -1402,23 +1405,25 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                         addon.ReleaseActiveStepElement(row)
                     end
                     row.element = element
-                    row.rxpResetPending = previousElement ~= element
-                    row.text:SetTextColor(unpack(textColor))
-                    row.text:SetFont(
-                        theme.font,
-                        addon.settings.profile.guideFontSize + (elementLayout.fontSizeOffset or 0),
-                        "")
+                    if not watchOnly then
+                        row.rxpResetPending = previousElement ~= element
+                        row.text:SetTextColor(unpack(textColor))
+                        row.text:SetFont(
+                            theme.font,
+                            addon.settings.profile.guideFontSize + (elementLayout.fontSizeOffset or 0),
+                            "")
 
-                    if element.tag and (element.text or element.rawtext or
-                        element.requestFromServer) then
-                        row.icon:SetText(element.icon or addon.icons[element.tag] or "")
-                        row.icon:Show()
-                    else
-                        row.icon:Hide()
+                        if element.tag and (element.text or element.rawtext or
+                            element.requestFromServer) then
+                            row.icon:SetText(element.icon or addon.icons[element.tag] or "")
+                            row.icon:Show()
+                        else
+                            row.icon:Hide()
+                        end
+
+                        row.button:SetShown(not element.textOnly)
+                        row:Show()
                     end
-
-                    row.button:SetShown(not element.textOnly)
-                    row:Show()
                     if previousElement ~= element or previousStep ~= rowStep then
                         addon.BindActiveStepElement(row, rowStep, element, rowStep.index)
                     end
@@ -1430,9 +1435,11 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             end
 
             this.activeElementRows = visibleCount
-            this.noAutoHeight = visibleCount > 0
-            this.rxpElementsDirty = true
-            this:RefreshElements(false)
+            if not watchOnly then
+                this.noAutoHeight = visibleCount > 0
+                this.rxpElementsDirty = true
+                this:RefreshElements(false)
+            end
             return visibleCount
         end,
 
