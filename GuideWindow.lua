@@ -2950,6 +2950,8 @@ function addon.v2:IsActiveStepRenderReady(step)
             return false
         elseif element.text then
             hasText = true
+        elseif element.rawtext then
+            hasText = true
         elseif element.requestFromServer then
             return false
         end
@@ -3138,6 +3140,7 @@ function addon.v2:PlayerActiveStepItemNeedsUpdate(stepItem, step, questId)
             snapshot = snapshots[visibleCount]
             if not snapshot or snapshot.element ~= element or
                 snapshot.text ~= element.text or
+                snapshot.rawtext ~= element.rawtext or
                 snapshot.requestFromServer ~= element.requestFromServer or
                 snapshot.tag ~= element.tag or snapshot.icon ~= element.icon or
                 snapshot.title ~= element.title or snapshot.questId ~= element.questId or
@@ -3186,11 +3189,12 @@ function addon.v2:UpdatePlayerActiveStepItem(stepItem, step)
     local visibleCount = 0
     for elementIndex = 1, #elements do
         element = elements[elementIndex]
-        if element.text or element.requestFromServer then
+        if element.text or element.rawtext or element.requestFromServer then
             visibleCount = visibleCount + 1
             snapshot = snapshots[visibleCount] or {}
             snapshot.element = element
             snapshot.text = element.text
+            snapshot.rawtext = element.rawtext
             snapshot.requestFromServer = element.requestFromServer
             snapshot.tag = element.tag
             snapshot.icon = element.icon

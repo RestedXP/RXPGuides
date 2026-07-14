@@ -1237,6 +1237,8 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             else
                 row.text:SetText(addon.ReplaceNpcIds(L(element.text)))
             end
+        elseif element.rawtext and element.rawtext ~= "" then
+            row.text:SetText(addon.ReplaceNpcIds(L(element.rawtext)))
         elseif not element.requestFromServer then
             row.text:SetText("")
         elseif resetPending then
@@ -1383,7 +1385,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             local elements = step.elements or {}
             for elementIndex = 1, #elements do
                 element = elements[elementIndex]
-                if element.text or element.requestFromServer then
+                if element.text or element.rawtext or element.requestFromServer then
                     visibleCount = visibleCount + 1
                     row = rows[visibleCount]
                     if not row then
@@ -1400,7 +1402,8 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                         addon.settings.profile.guideFontSize + (elementLayout.fontSizeOffset or 0),
                         "")
 
-                    if element.tag and (element.text or element.requestFromServer) then
+                    if element.tag and (element.text or element.rawtext or
+                        element.requestFromServer) then
                         row.icon:SetText(element.icon or addon.icons[element.tag] or "")
                         row.icon:Show()
                     else
