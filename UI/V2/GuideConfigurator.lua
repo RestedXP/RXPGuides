@@ -1159,19 +1159,7 @@ function addon.ui.v2:CreateConfigurator()
         pageForward()
     end)
 
-    page1.ResetConfigurator = function()
-        activePage = 1
-        configuratorSettings.enableDungeons = false
-        configuratorSettings.survival = false
-        configurator.scrollContainer:ReleaseChildren()
-        configurator.submitbutton:SetText(_G.SUBMIT)
-        configurator.resetbutton:SetText(_G.RESET)
-        configurator.resetbutton:Disable()
-        configurator:Hide()
-    end
-
-    guideConfigurator = page1
-    return guideConfigurator
+    return page1
 end
 
 function addon.ui.v2.LaunchConfigurator(login)
@@ -1183,8 +1171,6 @@ function addon.ui.v2.LaunchConfigurator(login)
 
     local f = addon.ui.v2:CreateConfigurator()
 
-    f:ResetConfigurator()
-    f.frame:ClearAllPoints()
     f:SetPoint("TOP", UIParent, "TOP", 400, -60)
 
     f:Show()
