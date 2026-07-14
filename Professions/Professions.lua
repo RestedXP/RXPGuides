@@ -36,6 +36,8 @@ local EVENTS_TO_REGISTER = {
     "TRADE_SKILL_DETAILS_UPDATE", --TODO: test when activated
     "SKILL_LINES_CHANGED", --Learning/unlearning, journeyman -> master
     "ITEM_LOCKED", --Locking the item in bagSlot (when selling to a vendor for example)
+    "ITEM_LOCK_CHANGED", --Changing the item status in bagSlot
+    "ITEM_UNLOCKED",
 
     "CHAT_MSG_LOOT",
     "CHAT_MSG_SKILL",
@@ -717,6 +719,33 @@ function addon.professions.calculateRecipePrice(professionName, option)
 end
 
 
+--Checks if a given item is a recipe
+--professionName is an optional argument
+local function isRecipe(itemName, professionName)
+    if itemName == nil or type(itemName) ~= "string" then
+        return false
+    end
+    if professionName == nil then
+        for profession, _ in pairs(PROFESSIONS) do
+            if profession ~= "VENDOR_ITEMS" then
+                for recipeName, _ in pairs(profession) do
+                    if itemName == recipeName then
+                        return true
+                    end
+                end
+            end
+        end
+    else
+        for recipeName, _ in pairs(PROFESSIONS[professionName]) do
+            if itemName == recipeName then
+                return true
+            end
+        end
+    end
+    return false
+end
+
+
 --Find the last recipe that the given material is used in
 --Might return nil if targetMaterialName is not used anywhere
 local function findLastUse(professionName, targetMaterialName)
@@ -1104,6 +1133,33 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
     return recipesToCraftKnapsack, materialsToBuyKnapsack, backpackKnapsack, skillLevelsGained, moneySpent
 end
 
+
+--Adds item to RXPCData.craftedItems
+--itemCount defaults to 1
+local function addToCraftedItems(itemID, itemCount)
+    if not itemID then return end
+    itemCount = itemCount or 1
+
+    if not RXPCData.craftedItems then
+        RXPCData.craftedItems = {}
+    end
+
+    RXPCData.craftedItems[itemID] = (RXPCData.craftedItems[itemID] or 0) + itemCount
+end
+
+--Removes item from RXPCData.craftedItems
+--itemCount defaults to RXPCData.craftedImtes[itemID] count
+local function removeFromCraftedItems(itemID, itemCount)
+    if not itemID then return end
+    if not RXPCData.craftedItems or not RXPCData.craftedItems[itemID] then return end
+    itemCount = itemCount or RXPCData.craftedItems[itemID]
+
+    RXPCData.craftedItems[itemID] = max(0, RXPCData.craftedItems[itemID] - itemCount)
+    if RXPCData.craftedItems[itemID] <= 0 then -- <= for safety only, should never be below 0
+        RXPCData.craftedItems[itemID] = nil
+    end
+end
+
 --Events
 function addon.professions:TRADE_SKILL_SHOW()
 end
@@ -1117,12 +1173,21 @@ end
 function addon.professions:UPDATE_TRADESKILL_RECAST()
 end
 
-function addon.professions:ITEM_PUSH(bagSlot, iconFileID)
+function addon.professions:ITEM_PUSH(_, bagSlot, iconFileID)
+    print("ITEM_PUSH")
+    print(bagSlot, iconFileID)
+    --TODO: get info by iconFileID
 end
 
---Updates craftedItems when an item is sold
---TODO: check if this is correct
+local tstFrame = {}
+
+function addon.professions:ITEM_LOCK_CHANGED(_, bagIndex, slotIndex)
+end
+
+--Updates craftedItems when an item is removed from inventory
 function addon.professions:ITEM_LOCKED(_, bagIndex, slotIndex)
+    if bagIndex < 0 or bagIndex > 4 then return end
+
     local containerInfo = GetContainerItemInfo(bagIndex, slotIndex)
     local itemID = containerInfo.itemID
     local stackCount = containerInfo.stackCount
@@ -1132,9 +1197,37 @@ function addon.professions:ITEM_LOCKED(_, bagIndex, slotIndex)
             RXPCData.craftedItems[itemID] = nil
         end
     end
+
+    --TODO: debbuging screen -delete this when ready
+    local text = ""
+    for k, v in pairs(RXPCData.craftedItems) do
+        text = text .. tostring(k) .. " -> " .. tostring(v) .. "\n"
+    end
+    tstFrame.text:SetText(text)
 end
 
-function addon.professions:BAG_NEW_ITEMS_UPDATED()
+--Updates craftedItems when an item is stored to inventory
+function addon.professions:ITEM_UNLOCKED(_, bagIndex, slotIndex)
+    if bagIndex < 0 or bagIndex > 4 then return end
+
+    local containerInfo = GetContainerItemInfo(bagIndex, slotIndex)
+    local itemID = containerInfo.itemID
+    local stackCount = containerInfo.stackCount
+    --Check if its a recipe
+    local debug = true
+    if debug or isRecipe(containerInfo.itemName) then
+        RXPCData.craftedItems[itemID] = (RXPCData.craftedItems[itemID] or 0) + stackCount
+    end
+
+    --TODO: debbuging screen -delete this when ready
+    local text = ""
+    for k, v in pairs(RXPCData.craftedItems) do
+        text = text .. tostring(k) .. " -> " .. tostring(v) .. "\n"
+    end
+    tstFrame.text:SetText(text)
+end
+
+function addon.professions:BAG_NEW_ITEMS_UPDATED(_)
 end
 
 function addon.professions:BAG_UPDATE_COOLDOWN()
@@ -1327,6 +1420,25 @@ function addon.professions:Setup()
     gatherPlayerMoneyInfo()
     GUI.createGUI()
     session.isInitialized = true
+
+--TODO: debbuging frame for item tracking, delte when done
+tstFrame = CreateFrame('Frame', 'frameName', UIParent, "BasicFrameTemplateWithInset")
+tstFrame:SetSize(300, 300)
+tstFrame:SetPoint("BOTTOMLEFT", UIParent, "CENTER")
+tstFrame:EnableMouse(true)
+tstFrame:SetMovable(true)
+tstFrame:RegisterForDrag("LeftButton")
+tstFrame:SetScript("OnDragStart", function (self)
+    self:StartMoving()
+end)
+tstFrame:SetScript("OnDragStop", function (self)
+    self:StopMovingOrSizing()
+end)
+tstFrame.text = tstFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+tstFrame.text:SetPoint("TOPLEFT", tstFrame, "TOPLEFT", 0, -50)
+tstFrame.text:SetWidth(200)
+tstFrame.text:SetNonSpaceWrap(true)
+tstFrame.text:SetText("")
 end
 
 
@@ -1354,6 +1466,20 @@ SLASH_r1 = '/r'
 SlashCmdList['r'] = function()
     C_UI.Reload()
 end
+
+SLASH_resetInitScan1 = '/rstInitScan'
+SlashCmdList['resetInitScan'] = function()
+    if not RXPCData.professions.isInitialScanned then RXPCData.professions.isInitialScanned = false end
+    RXPCData.professions.isInitialScanned = false
+    print("Reseted RXPCData.professions.isInitialScanned")
+end
+
+
+SLASH_c1 = '/c'
+SlashCmdList['c'] = function()
+    RXPCData.craftedItems = {}
+end
+
 
 
 SLASH_scan1 = '/scan'
@@ -1401,6 +1527,11 @@ end
 --Quick testing
 SLASH_qtst1 = '/qtst'
 SlashCmdList['qtst'] = function(item)
+    local text = ""
+    for k, v in pairs(RXPCData.craftedItems) do
+        text = text .. tostring(k) .. " -> " .. tostring(v) .. "\n"
+    end
+    tstFrame.text:SetText(text)
 end
 
 --Export

@@ -36,6 +36,9 @@ function addon.professions.AH:Setup()
     for _, event in ipairs(EVENTS_TO_REGISTER_AH) do
         self:RegisterEvent(event)
     end
+    --Re-delcare aliases
+    profSession = addon.professions.profSession
+    PROFESSIONS = addon.professions.PROFESSIONS
 
     profSession.isInitialized = true
 end
@@ -48,7 +51,7 @@ end
 --Because of problems stated in: https://warcraft.wiki.gg/wiki/API_GetContainerNumSlots
 --we call this function when AH is opened for the first time, per player character
 local function initialScanInventoryForCraftedItems(prof1Name, prof2Name)
-    local numberOfSlots, itemID, itemCount
+    local numberOfSlots, itemName, itemID, itemCount
     for bagID = 0, NUM_BAG_SLOTS do
         numberOfSlots = GetContainerNumSlots(bagID)
         if numberOfSlots == 0 then
@@ -57,14 +60,16 @@ local function initialScanInventoryForCraftedItems(prof1Name, prof2Name)
         for slot = 1, numberOfSlots do
             local containerInfo = GetContainerItemInfo(bagID, slot)
             if containerInfo then
+                itemName = containerInfo.itemName
                 itemID = containerInfo.itemID
                 itemCount = containerInfo.stackCount
                 if prof1Name then
-                    if PROFESSIONS[prof1Name].RECIPES[itemID] then
+                    if PROFESSIONS[prof1Name].RECIPES[itemName] then
                         RXPCData.craftedItems[itemID] = (RXPCData.craftedItems[itemID] or 0) + itemCount
                     end
-                elseif prof2Name then
-                    if PROFESSIONS[prof2Name].RECIPES[itemID] then
+                end
+                if prof2Name then
+                    if PROFESSIONS[prof2Name].RECIPES[itemName] then
                         RXPCData.craftedItems[itemID] = (RXPCData.craftedItems[itemID] or 0) + itemCount
                     end
                 end
