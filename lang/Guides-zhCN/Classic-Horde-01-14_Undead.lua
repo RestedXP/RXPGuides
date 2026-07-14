@@ -2,7 +2,6 @@ if GetLocale() ~= "zhCN" then return end
 local faction = UnitFactionGroup("player")
 if faction == "Alliance" then return end
 
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -12,7 +11,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP 部落 1-22级
 #defaultfor Undead
 #name 1-6 提瑞斯法林地
-#next 6-11 提瑞斯法林地
+#next 6-11级 提瑞斯法林地
 
 step << !Undead
     #completewith next
@@ -276,7 +275,7 @@ step << Priest
     #season 2
     .goto Tirisfal Glades,31.11,66.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜斯滕|r 对话
-    .turnin 77670 >>交还 亡者之思
+    .turnin 77670 >>交任务 亡灵之思
     .target 黑暗牧师杜斯滕
 step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.23,65.59,8,0
@@ -786,7 +785,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #xprate <1.99
 << Horde
-#name 6-11 提瑞斯法林地
+#name 6-11级 提瑞斯法林地
 #version 11
 #group RestedXP 部落 1-22级
 #defaultfor Undead
@@ -3166,7 +3165,7 @@ step
 step
     #xprate >1.49
     #completewith ANewPlagueFinal
-    .subzone 159 >>旅行回到布瑞尔
+    .subzone 159 >>返回布瑞尔
     .subzoneskip 159
     .cooldown item,6948,<0
 step
@@ -3442,7 +3441,7 @@ step << Rogue
     #xprate <1.5
     .goto Undercity,54.84,76.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安德隆|r 对话
-    .turnin 1898 >>交任务 亡灵哨兵
+    .turnin 1898 >>交任务亡灵哨兵
     .accept 1899 >>接受任务 亡灵哨兵
     .target Andron Gant
     .isQuestTurnedIn 1886
@@ -3456,7 +3455,7 @@ step << Rogue
     #xprate <1.5
     .goto Undercity,83.53,69.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米奈特|r 对话
-    .turnin 1899 >>交任务 亡灵哨兵
+    .turnin 1899 >>交任务亡灵哨兵
     .accept 1978 >>接受任务 亡灵哨兵
     .target Mennet Carkad
     .isQuestTurnedIn 1886
@@ -3465,7 +3464,7 @@ step << Rogue
     .goto Tirisfal Glades,58.86,78.76,40,0
     .goto Tirisfal Glades,59.75,84.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瓦里玛萨斯|r 对话
-    .turnin 1978 >>交任务 亡灵哨兵
+    .turnin 1978 >>交任务亡灵哨兵
     .target 瓦里玛萨斯
     .isQuestTurnedIn 1886
 step << skip --Rogue
@@ -4008,7 +4007,7 @@ step << Rogue
     #optional
     .goto Undercity,83.52,69.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米奈特|r 对话
-    .turnin 1886 >>交任务 亡灵哨兵
+    .turnin 1886 >>交任务亡灵哨兵
     .target Mennet Carkad
     .isQuestComplete 1886
     .zoneskip Undercity,1
@@ -4023,7 +4022,7 @@ step << Rogue
     #optional
     .goto Undercity,54.84,76.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安德隆|r 对话
-    .turnin 1898 >>交任务 亡灵哨兵
+    .turnin 1898 >>交任务亡灵哨兵
     .accept 1899 >>接受任务 亡灵哨兵
     .target Andron Gant
     .isQuestTurnedIn 1886
@@ -4037,7 +4036,7 @@ step << Rogue
     #optional
     .goto Undercity,83.53,69.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米奈特|r 对话
-    .turnin 1899 >>交任务 亡灵哨兵
+    .turnin 1899 >>交任务亡灵哨兵
     .accept 1978 >>接受任务 亡灵哨兵
     .target Mennet Carkad
     .isQuestTurnedIn 1886
@@ -4046,7 +4045,7 @@ step << Rogue
     .goto Tirisfal Glades,58.86,78.76,40,0
     .goto Tirisfal Glades,59.75,84.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瓦里玛萨斯|r 对话
-    .turnin 1978 >>交任务 亡灵哨兵
+    .turnin 1978 >>交任务亡灵哨兵
     .target 瓦里玛萨斯
     .isQuestTurnedIn 1886
 step << skip --Rogue
@@ -4150,7 +4149,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_兰妮·尤瑞克|r 对话
     .turnin 435 >>交任务 护送埃兰德
     .accept 429 >>接受任务 荒野之心
-    .accept 449 >>接受任务 死亡猎手的报告
+    .accept 449 >>接受任务 亡灵哨兵的报告
     .target Rane Yorick
 step
     #loop
@@ -4652,7 +4651,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
 step << Undead
     .goto Undercity,63.27,48.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
     .turnin 6322 >>交任务 迈克尔·加勒特
     .target 迈克尔·加勒特
 step << Undead Warrior
@@ -4703,7 +4702,7 @@ step << Rogue/Warrior
 step << Undead Rogue
     .goto Undercity,83.52,69.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米奈特|r 对话
-    .turnin 1886 >>交任务 亡灵哨兵
+    .turnin 1886 >>交任务亡灵哨兵
     .accept 1898 >>接受任务 亡灵哨兵
     .target Mennet Carkad
     .isQuestComplete 1886
@@ -4754,7 +4753,7 @@ step << Undead Rogue
 step << Undead Rogue
     .goto Undercity,54.84,76.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安德隆|r 对话
-    .turnin 1898 >>交任务 亡灵哨兵
+    .turnin 1898 >>交任务亡灵哨兵
     .accept 1899 >>接受任务 亡灵哨兵
     .target Andron Gant
     .isQuestTurnedIn 1886
@@ -4775,7 +4774,7 @@ step
     .goto Undercity,48.84,69.25,12 >>向炼金师区的|cRXP_FRIENDLY_大药剂师法拉尼尔|r走去
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在炼金区与 |cRXP_FRIENDLY_大药剂师法拉尼尔|r 和 |cRXP_FRIENDLY_药剂师金格|r 对话
-    .turnin 447 >>交任务 死亡配方
+    .turnin 447 >>交任务 致命的配方
     .target +Master Apothecary Faranell
     .goto Undercity,48.84,69.25
     .turnin 1359 >>交任务 给金格的货物
@@ -4814,7 +4813,7 @@ step << skip --Undead Rogue/Undead Warrior
 step << Undead Rogue
     .goto Undercity,83.53,69.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米奈特|r 对话
-    .turnin 1899 >>交任务 亡灵哨兵
+    .turnin 1899 >>交任务亡灵哨兵
     .accept 1978 >>接受任务 亡灵哨兵
     .target Mennet Carkad
     .isQuestTurnedIn 1886
@@ -4842,7 +4841,7 @@ step << Undead Rogue
     .goto Tirisfal Glades,58.86,78.76,40,0
     .goto Tirisfal Glades,59.75,84.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瓦里玛萨斯|r 对话
-    .turnin 1978 >>交任务 亡灵哨兵
+    .turnin 1978 >>交任务亡灵哨兵
     .target 瓦里玛萨斯
     .isQuestTurnedIn 1886
 step << skip --Undead Rogue
@@ -5040,7 +5039,7 @@ step << skip --Undead !Rogue !Warrior
 step << skip --Undead !Rogue !Warrior
     #xprate <1.5
     .goto Undercity,69.46,25.85 << Priest/Mage/Warlock
-    .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_通过跳到木桶堆顶部然后登出重入来执行返回角色选择跳过|r << Priest/Mage/Warlock
+    .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_跳到桶堆顶部，然后退出并重新登录，执行登出跳过|r << Priest/Mage/Warlock
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >>https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_点击此处查看示例|r
     >>|cRXP_WARN_如果你做不到，就正常跑出幽暗城|r
     .zoneskip Undercity,1
@@ -5679,7 +5678,7 @@ step << Mage
 step << Mage
     #season 2
     #optional
-    .equip 10,711 >>|cRXP_WARN_装备|r |T132961:0|t[破布手套]
+    .equip 10,711 >>|cRXP_WARN_装备|r |T132961:0|t|T132961:0|t[破布手套]
     .use 711
     .engrave 10 >>|cRXP_WARN_在你的手套上铭刻|r |T236220:0|t[活动炸弹]
     .engrave 7 >>|cRXP_WARN_在你的裤子上铭刻|r |T135820:0|t[活火]
@@ -5689,7 +5688,7 @@ step << Mage
     #optional
     #sticky
     .engrave 15 >>留意是否有披风掉落。一旦拿到就在上面铭刻|T135851:0|t[寒冰宝珠]
-    >>|cRXP_WARN_这个技能极其强大|r
+    >>|cRXP_WARN_这个技能过于逆天|r
 step << Warlock
     #season 0
     #label Vendor
@@ -5745,7 +5744,7 @@ step << Warlock
     .engrave 5 >>|cRXP_WARN_在胸部附魔|r |T136150:0|t|T136150:0|t[恶魔战术]
 step << Priest
     #season 2
-    .equip 10,711 >>|cRXP_WARN_装备|r |T132961:0|t[破布手套]
+    .equip 10,711 >>|cRXP_WARN_装备|r |T132961:0|t|T132961:0|t[破布手套]
     .equip 6,3595 >>|cRXP_WARN_装备|r |T132513:0|t[破布腰带]
     .use 711
     .use 3595
@@ -7074,7 +7073,7 @@ step << Warlock
     .xp <8,1
 step << Rogue/Warrior
     .goto Tirisfal Glades,61.81,52.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Neela|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_妮拉|r 对话
     >>|cRXP_WARN_尽量在等待的时候（比如等飞艇）完成这些任务|r
     .train 3273 >>训练 |T135966:0|t[急救]
     .target Nurse Neela
@@ -8175,7 +8174,7 @@ step << skip
     .goto Tirisfal Glades,44.44,30.84,60,0
     .goto Tirisfal Glades,44.10,34.67,60,0
     .goto Tirisfal Glades,46.80,35.10,60,0
-    .xp 9+2510 >>升级至 2510+/6500xp
+    .xp 9+2510 >>刷怪达到2510+/6500经验
     .itemcount 2839,1 --A Letter to Yvette (1)
     .isQuestTurnedIn 375
 step << skip
@@ -8785,7 +8784,7 @@ step << skip --!Mage !Warlock
     .goto Undercity,61.10,54.11 << Priest
     .goto Undercity,78.03,50.36 << Warrior
     .goto Undercity,82.75,65.23 << Rogue
-    .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_通过跳到木桶堆顶部然后登出重入来执行返回角色选择跳过|r << Priest/Warrior
+    .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_跳到桶堆顶部，然后退出并重新登录，执行登出跳过|r << Priest/Warrior
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_通过跳到肉车的研磨机顶部，然后登出重入来执行返回角色选择跳过|r << Rogue
     >>|cRXP_WARN_如果你做不到，就正常跑出幽暗城|r
     .zoneskip Undercity,1

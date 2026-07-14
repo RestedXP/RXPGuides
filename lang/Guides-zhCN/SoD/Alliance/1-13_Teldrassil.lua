@@ -2,7 +2,6 @@ if GetLocale() ~= "zhCN" then return end
 local faction = UnitFactionGroup("player")
 if faction == "Horde" then return end
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance
@@ -160,7 +159,7 @@ step << Hunter/Rogue/Priest
     .goto Teldrassil,58.88,43.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_符文贩子|r 对话
     >>|cRXP_WARN_千万不要把能穿的装备卖给商人|r
-    >>|cRXP_BUY_向商人出售垃圾物品并购买以下所有符文:|r << Hunter/Rogue/Priest
+    >>|cRXP_BUY_垃圾卖店并购买以下的所有AoE符文|r << Hunter/Rogue/Priest
     .collect 212552,1 << Priest --Psychosophic Epiphany
     .collect 221481,1 << Priest --Nihilist Epiphany
     .collect 205940,1 << Priest --Memory of a Dark Purpose
@@ -704,7 +703,7 @@ step << Hunter
 step << Hunter
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达扎拉|r 对话
-    .train 5116 >>训练 震荡射击
+    .train 5116 >>训练震荡射击
     .target 达扎拉
     .xp <8,1
 step << Druid
@@ -1779,7 +1778,7 @@ step << Hunter
 #xprate >1.99
     .goto Darnassus,40.377,8.545
     .target 祖卡斯特
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖卡斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_祖卡斯特|r 对话
     .turnin 6103 >>交任务 训练野兽
 step << !Rogue
     .goto Darnassus,39.72,92.68,10,0
@@ -2163,7 +2162,7 @@ step << Hunter
 	.goto Teldrassil,37.6,28.8,0
     >>|cRXP_WARN_施放|r |T132164:0|t[驯服野兽] |cRXP_WARN_在|cRXP_ENEMY_巨翼猎枭|r 以驯服它|r -- .tame 1997
     .train 2981 >>|cRXP_WARN_用它攻击怪物以学习|r |T132140:0|t [爪击(等级 2)]
-    .link https://www.wow-petopia.com/classic/training.php >>https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击此处了解更多关于宠物训练的信息|r
+    .link https://www.wow-petopia.com/classic/training.php >>https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击这里了解更多关于宠物训练的信息|r
 	.unitscan 巨翼猎枭
 step << Hunter
     #sticky
@@ -2476,7 +2475,7 @@ step << Hunter
 #xprate <1.99
     .goto Darnassus,40.377,8.545
     .target 祖卡斯特
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖卡斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_祖卡斯特|r 对话
     .turnin 6103 >>交任务 训练野兽
 step << Druid
     #season 0
@@ -2655,13 +2654,13 @@ step << Hunter
     #season 0
     .goto Darnassus,58.76,44.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿瑞耶尔·天影|r 对话
-	.vendor >>|cRXP_BUY_Buy|r |T132382:0|t[锋利的箭]
+	.vendor >>|cRXP_BUY_购买|r |T132382:0|t[锋利的箭]
     .target 阿瑞耶尔·天影
 step << Hunter/Sod Rogue
     #season 2
     .goto Darnassus,58.76,44.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿瑞耶尔·天影|r 对话
-	.vendor >>|cRXP_BUY_Buy|r |T132382:0|t[锋利的箭]
+	.vendor >>|cRXP_BUY_购买|r |T132382:0|t[锋利的箭]
     .vendor >>|cRXP_BUY_购买1个|r |T134410:0|t[中型箭袋] |cRXP_BUY_如果你有额外的金币|r << Hunter
     .target 阿瑞耶尔·天影
 step << Hunter

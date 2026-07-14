@@ -1,5 +1,4 @@
 if GetLocale() ~= "zhCN" then return end
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
@@ -84,8 +83,8 @@ step
     .goto The Barrens,55.71,27.21,50,0
     .goto The Barrens,55.44,27.35,50,0
     .goto The Barrens,54.99,26.79,50,0
-    .aura 408828 >>|cRXP_WARN_用|r |T136026:0|t[大地震击] |cRXP_WARN_对敌人造成伤害至少一次，然后杀死他们。重复10次获得|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
-    >>|cRXP_WARN_注释：你必须对能提供经验值的敌人这样做才能获得堆叠|r
+    .aura 408828 >>|cRXP_WARN_击杀敌人时，确保至少对其使用过一次|r |T136026:0|t[大地震击] |cRXP_WARN_并造成伤害。重复此操作10次以获得|r |T136116:0|t[灵感迸发] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_注意：你必须在能提供经验值的敌人身上完成此操作才能获得层数|r
     .mob 钢鬃织棘者
     .mob 钢鬃寻水者
     .mob Razormane Hunter
@@ -179,9 +178,9 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP符文与书籍指南
 #subgroup 手套
-#name Molten Blast - 10 (杜隆塔尔)
-#title Molten Blast
-#next Way of Earth - 12 (The Barrens)
+#name 熔火爆裂 - 10 级(杜隆塔尔)
+#title 熔火爆裂
+#next 土之道 - 12级（贫瘠之地）
 
 
     --Rune of Molten Blast
@@ -215,16 +214,16 @@ step
 step
     #completewith next
     #requires Durotar2
-    .goto Durotar,58.69,45.53,40 >>旅行 向 |cRXP_ENEMY_急冻人 龙虾人|r
+    .goto Durotar,58.69,45.53,40 >>朝|cRXP_ENEMY_冰冻龙虾人|r方向前进
     .train 425344,1
     .xp <10,1
 step
     #label IconS
     .goto Durotar,58.69,45.53
-    >>|cRXP_WARN_在 |cRXP_ENEMY_急冻人 龙虾人|r 附近寻找其他萨满祭司、术士或法师，或在综合聊天中查找（输入 /1）|r
-    >>|cRXP_WARN_施放|r |T135813:0|t[烈焰震击] |cRXP_WARN_对 |cRXP_ENEMY_Frozen 龙虾人|r 以叠加一层|r |T135805:0|t[Applying 热能]|cRXP_WARN_。一次叠加5层以击杀 |cRXP_ENEMY_Frozen 龙虾人|r。拾取它以获得|r |T134918:0|t|cRXP_LOOT_[硫息圣像]|r
+    >>|cRXP_WARN_在|cRXP_ENEMY_冰冻的龙虾人|r附近或综合聊天频道（在聊天框输入/1）寻找其他萨满祭司、术士或法师|r
+    >>|cRXP_WARN_施放|r |T135813:0|t|T135805:0|t[烈焰震击] |cRXP_WARN_在|cRXP_ENEMY_冰冻龙虾人|r身上，叠加一层|r |T134918:0|t|T135805:0|t[加热]|cRXP_WARN_。一次性叠加5层后击杀|cRXP_ENEMY_冰冻龙虾人|r，拾取获得|r |T134918:0|t|T134918:0|t|cRXP_LOOT_[硫息圣像]|r
     >>|cRXP_WARN_或者，你可以|r|cRXP_WARN_独自在莫高雷获取|r |T133816:0|t[铭刻手套 - 熔火爆裂]
-    >>|cRXP_WARN_注释：|r |T135813:0|t[Flametongue 武器] |cRXP_WARN_不应用任何|r |T135805:0|t[应用热能] 层|r
+    >>|cRXP_WARN_注意：|r |T135813:0|t|T135805:0|t[火舌武器] |cRXP_WARN_不会叠加任何|r |T135805:0|t|T135805:0|t[加热]层数|r
     .collect 206388,1 --Sulfurous Icon (1)
     .mob Frozen Makrura
     .train 425344,1
@@ -232,10 +231,10 @@ step
     .xp >12,1
 step
     .goto Durotar,58.69,45.53
-    >>|cRXP_WARN_在 |cRXP_ENEMY_急冻人 龙虾人|r 附近寻找其他萨满祭司、术士或法师，或在综合聊天中查找（输入 /1）|r
-    >>|cRXP_WARN_施放|r |T135813:0|t[烈焰震击] |cRXP_WARN_对 |cRXP_ENEMY_Frozen 龙虾人|r 以叠加一层|r |T135805:0|t[Applying 热能]|cRXP_WARN_。一次叠加5层以击杀 |cRXP_ENEMY_Frozen 龙虾人|r。拾取它以获得|r |T134918:0|t|cRXP_LOOT_[硫息圣像]|r
+    >>|cRXP_WARN_在|cRXP_ENEMY_冰冻的龙虾人|r附近或综合聊天频道（在聊天框输入/1）寻找其他萨满祭司、术士或法师|r
+    >>|cRXP_WARN_施放|r |T135813:0|t|T135805:0|t[烈焰震击] |cRXP_WARN_在|cRXP_ENEMY_冰冻龙虾人|r身上，叠加一层|r |T134918:0|t|T135805:0|t[加热]|cRXP_WARN_。一次性叠加5层后击杀|cRXP_ENEMY_冰冻龙虾人|r，拾取获得|r |T134918:0|t|T134918:0|t|cRXP_LOOT_[硫息圣像]|r
     >>|cRXP_WARN_或者，你可以|r|cRXP_WARN_独自在莫高雷获取|r |T133816:0|t[铭刻手套 - 熔火爆裂]
-    >>|cRXP_WARN_注释：|r |T135813:0|t[Flametongue 武器] |cRXP_WARN_和|r |T135824:0|t[火焰 Nova 图腾] |cRXP_WARN_不应用任何|r |T135805:0|t[Applying 热能] 层|r
+    >>|cRXP_WARN_注意：|r |T135813:0|t|T135824:0|t[火舌武器] |cRXP_WARN_和|r |T135805:0|t|T135824:0|t[火焰新星图腾] |cRXP_WARN_不会叠加|r |T135805:0|t|T135805:0|t[加热]层数|r
     .collect 206388,1 --Sulfurous Icon (1)
     .mob Frozen Makrura
     .train 425344,1
@@ -255,7 +254,7 @@ step
     .goto Durotar,59.40,56.58,50,0
     .goto Durotar,58.41,58.17,50,0
     .goto Durotar,56.21,58.51,50,0
-    .aura 408828 >>|cRXP_WARN_用|r |T136026:0|t[大地震击] |cRXP_WARN_对敌人造成伤害至少一次，然后杀死他们。重复10次获得|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    .aura 408828 >>|cRXP_WARN_击杀敌人时，确保至少对其使用过一次|r |T136026:0|t[大地震击] |cRXP_WARN_并造成伤害。重复此操作10次以获得|r |T136116:0|t[灵感迸发] |cRXP_WARN_buff|r
     >>|cRXP_WARN_注意：你必须在能提供经验值的敌人身上完成此操作才能获得层数|r
     .mob 库尔提拉斯水手
     .mob 库尔提拉斯水兵
@@ -296,8 +295,8 @@ step
     .goto The Barrens,53.73,13.77,50,0
     .goto The Barrens,55.09,15.00,50,0
     .goto The Barrens,55.62,14.86,50,0
-    .aura 408828 >>|cRXP_WARN_用|r |T136026:0|t[大地震击] |cRXP_WARN_对敌人造成伤害至少一次，然后杀死他们。重复10次获得|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
-    >>|cRXP_WARN_注释：你必须对能提供经验值的敌人这样做才能获得堆叠|r
+    .aura 408828 >>|cRXP_WARN_击杀敌人时，确保至少对其使用过一次|r |T136026:0|t[大地震击] |cRXP_WARN_并造成伤害。重复此操作10次以获得|r |T136116:0|t[灵感迸发] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_注意：你必须在能提供经验值的敌人身上完成此操作才能获得层数|r
     .mob Hecklefang Hyena
     .mob 草原徘徊者
     .mob Savannah Huntress
@@ -320,8 +319,8 @@ step
     .goto The Barrens,38.48,14.85,50,0
     .goto The Barrens,37.33,16.23,50,0
     .goto The Barrens,38.64,17.49,50,0
-    .aura 408828 >>|cRXP_WARN_用|r |T136026:0|t[大地震击] |cRXP_WARN_对敌人造成伤害至少一次，然后杀死他们。重复10次获得|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
-    >>|cRXP_WARN_注释：你必须对能提供经验值的敌人这样做才能获得堆叠|r
+    .aura 408828 >>|cRXP_WARN_击杀敌人时，确保至少对其使用过一次|r |T136026:0|t[大地震击] |cRXP_WARN_并造成伤害。重复此操作10次以获得|r |T136116:0|t[灵感迸发] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_注意：你必须在能提供经验值的敌人身上完成此操作才能获得层数|r
     .mob 巫翼杀戮者
     .mob Witchwing Windcaller
     .mob 巫翼伏击者
@@ -347,8 +346,8 @@ step
     .goto Stonetalon Mountains,66.83,45.34,50,0
     .goto Stonetalon Mountains,69.89,53.54,50,0
     .goto Stonetalon Mountains,70.84,56.97,50,0
-    .aura 408828 >>|cRXP_WARN_用|r |T136026:0|t[大地震击] |cRXP_WARN_对敌人造成伤害至少一次，然后杀死他们。重复10次获得|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
-    >>|cRXP_WARN_注释：你必须对能提供经验值的敌人这样做才能获得堆叠|r
+    .aura 408828 >>|cRXP_WARN_击杀敌人时，确保至少对其使用过一次|r |T136026:0|t[大地震击] |cRXP_WARN_并造成伤害。重复此操作10次以获得|r |T136116:0|t[灵感迸发] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_注意：你必须在能提供经验值的敌人身上完成此操作才能获得层数|r
     .mob 风险投资公司樵夫
     .mob Venture Co. Deforester
     .mob 风险投资公司操作员
@@ -374,9 +373,9 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP符文与书籍指南
 #subgroup 手套
-#name 熔岩 娜欣达利的秘法之鞭 - 10 (莫高雷)
-#title 熔岩 娜欣达利的秘法之鞭
-#next Ancestral Guidance - 10 (莫高雷)
+#name 熔岩猛击 - 10级 (莫高雷)
+#title 熔岩猛击
+#next 先祖指引 - 10级 (莫高雷)
 
 
     --Rune of Lava Lash
@@ -402,7 +401,7 @@ step
 step
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
-    >>|cRXP_WARN_他是|r |T132320:0|t[帷幕花]
+    >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态
     .accept 76156 >>接受任务 大地母亲与匿同在
     .target Boarton Shadetotem
     .train 410104,1
@@ -410,7 +409,7 @@ step
 step
     #completewith next
     .goto Mulgore,61.46,47.21,20 >>进入风险投资公司矿洞
-    >>|cRXP_WARN_注释：|r |T132288:0|t[Venture Co 伪装] |cRXP_WARN_无效|r
+    >>|cRXP_WARN_注意：|r |T132288:0|t|T132288:0|t[风险投资公司伪装] |cRXP_WARN_不起作用|r
     .train 410104,1
     .xp <4,1
 step
@@ -425,8 +424,8 @@ step
     .goto Mulgore,60.99,37.00,15,0
     .goto Mulgore,59.64,36.05,15,0 --Outside
     .goto Mulgore,61.72,35.15,15,0 --Outside
-    >>在矿洞内部及外侧打开 |cRXP_PICK_Blasting 补给|r。拾取它们的战利品 |cRXP_LOOT_Seaforium 采矿 Charges|r
-    >>|cRXP_WARN_尽可能停留在洞穴的上层|r
+    >>在矿洞内部及外侧打开 |cRXP_PICK_冲击补给品|r。拾取它们的|cRXP_LOOT_爆盐采矿炸弹|r
+    >>|cRXP_WARN_如果可能的话，尽量待在洞穴的上层|r
     .complete 76156,1 --Seaforium Mining Charge (5)
     .train 410104,1
     .xp <4,1
@@ -434,22 +433,22 @@ step
 step
     #completewith next
     .goto Mulgore,59.99,35.82
-    .subzone 215 >>退出风险投资公司地雷的另一侧
+    .subzone 215 >>从风险投资公司矿洞的另一侧出口离开
     .train 410099,1
     .xp <4,1
 step
     #completewith next
-    .goto Mulgore,60.39,33.54,40 >>前往 |cRXP_FRIENDLY_冒险者的残骸|r
+    .goto Mulgore,60.39,33.54,40 >>去找 |cRXP_FRIENDLY_冒险者的残骸|r
     .train 410099,1
     .xp <4,1
 step
     #label IconS
     .goto Mulgore,60.39,33.54
-    >>|cRXP_WARN_如果你没有|r |T134596:0|t[铭刻护腿 - Ancestral Guidance]|cRXP_WARN_，现在是做这件事的好时机|r
-    >>|cRXP_WARN_如果你不想获得这个符文，跳过这一步|r
-    >>|cRXP_WARN_加入一个包括站在|cRXP_FRIENDLY_ 冒险者的残骸|r附近的另一个萨满祭司、牧师或德鲁伊的小队，或在综合聊天（输入 /1）中向萨满祭司、牧师或德鲁伊寻求帮助|r
-    >>|cRXP_WARN_与|cRXP_FRIENDLY_ 冒险者的残骸|r 交谈在地面上开始仪式，或点击其他玩家的|r |T136223:0|t[精神 Ritual] |cRXP_WARN_（在他们的队伍中）|r
-    >>|cRXP_WARN_一个|cRXP_FRIENDLY_ 冒险者的精神|r会在完成仪式后出现并死亡。从其中拾取|r |T237571:0|t|cRXP_LOOT_[先祖回响]|r
+    >>|cRXP_WARN_如果你还没有|r |T134596:0|t|T134596:0|t[铭刻裤子 - 先祖指引]|cRXP_WARN_，现在正是时候去完成它|r
+    >>|cRXP_WARN_如果你不想获得这个符文，请跳过此步骤|r
+    >>|cRXP_WARN_与站在|cRXP_FRIENDLY_冒险者的遗骸|r旁的萨满、牧师或德鲁伊组队，或在综合频道（在聊天框输入/1）寻求萨满、牧师或德鲁伊的帮助|r
+    >>|cRXP_WARN_与地上的|cRXP_FRIENDLY_|r冒险者的残骸|r|cRXP_WARN_对话以开始仪式，或者在加入队伍后，点击其他玩家的|r |T136223:0|t[灵魂仪式]
+    >>|cRXP_WARN_完成仪式后，一个|cRXP_FRIENDLY_冒险者之魂|r会出现并死亡。拾取它获得|r |T237571:0|t|T237571:0|t|cRXP_LOOT_[先祖回响]|r
     .collect 210589,1 --Echo of the Ancestors (1)
     .target Adventurer's Remains
     .target Adventurer's Spirit
@@ -457,7 +456,7 @@ step
     .train 410099,1
     .xp <4,1
 step
-    .cast 402265 >>|cRXP_WARN_使用|r |T237571:0|t|cRXP_LOOT_[先祖回响]|r |cRXP_WARN_来学习|r |T134596:0|t[铭刻护腿 - Ancestral Guidance]
+    .cast 402265 >>|cRXP_WARN_使用|r |T237571:0|t|T134596:0|t|cRXP_LOOT_[先祖回响]|r |cRXP_WARN_学习|r |T134596:0|t|T134596:0|t[铭刻裤子 - 先祖指引]
     .use 210589
     .itemcount 210589,1 --Echo of the Ancestors (1)
     .train 410099,1
@@ -471,8 +470,8 @@ step
 step
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
-    >>|cRXP_WARN_他是|r |T132320:0|t[帷幕花]
-    .turnin 76156 >>Turn in Stalk With The Earthmother
+    >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态
+    .turnin 76156 >>交任务 大地母亲与匿同在
     .accept 76160 >>接受任务 大地母亲与匿同在
     .target Boarton Shadetotem
     .train 410104,1
@@ -480,7 +479,7 @@ step
 step
     #completewith next
     .goto Mulgore,53.91,23.45
-    .zone Mulgore >>乘坐北边电梯下到莫高雷
+    .zone Mulgore >>乘坐北侧升降梯下到莫高雷
     .train 410104,1
     .xp <4,1
 step
@@ -498,12 +497,12 @@ step
     .goto Mulgore,36.55,12.84,10,0
     .goto Mulgore,36.65,13.26,10,0
     .goto Mulgore,37.18,12.36,10,0
-    >>在地上拾取 |cRXP_LOOT_Windfury Cones|r
+    >>拾取地上的|cRXP_LOOT_风怒锥|r
     .collect 206170,8,76160,1 --Windfury Cone (8)
     .train 410104,1
     .xp <4,1
 step
-    >>使用 |T133748:0|t[研钵和捣杵] 来制作 |T133213:0|t[Pine Salve]
+    >>使用|T133748:0|t|T133213:0|t[研钵和捣杵]制作|T133213:0|t|T133213:0|t[松树药膏]
     .complete 76160,1 --Pine Salve (1)
     .use 206176
     .train 410104,1
@@ -511,9 +510,9 @@ step
 step
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
-    >>|cRXP_WARN_他是|r |T132320:0|t[帷幕花]
-    .turnin 76160 >>Turn in Stalk With The Earthmother
-    .accept 76240 >>Accept Stalk With The Earthmother
+    >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态
+    .turnin 76160 >>交任务 大地母亲与匿同在
+    .accept 76240 >>接受任务 大地母亲与匿同在
     .target Boarton Shadetotem
     .train 410104,1
     .xp <4,1
@@ -521,8 +520,8 @@ step
     #ah
     .goto Thunder Bluff,45.23,59.40,0
     .goto Thunder Bluff,40.41,51.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
-    >>|cRXP_BUY_购买|r |T133894:0|t[Raw Brilliant Smallfish] |cRXP_BUY_从拍卖行|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
+    >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
     .target Auctioneer Stampi
     .train 410104,1
@@ -543,7 +542,7 @@ step
     #sticky
     #label Kah
     .goto Thunder Bluff,56.13,46.39,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡尔·迷雾行者|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡尔·迷雾行者|r 对话
     .train 7734 >>训练 |T136245:0|t[钓鱼]
     .target Kah Mistrunner
     .train 410104,1
@@ -552,8 +551,8 @@ step
     #ssf
     #label Sewa
     .goto Thunder Bluff,55.78,47.02,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_苏瓦·迷雾行者|r 对话
-    >>|cRXP_BUY_从她购买|r |T132932:0|t[鱼竿] |cRXP_BUY_和|r |T134335:0|t[闪光的小珠]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_苏瓦·迷雾行者|r 对话
+    >>|cRXP_BUY_从她那里购买|r |T132932:0|t[鱼竿] |cRXP_BUY_和|r |T134335:0|t[闪光的小珠] |cRXP_BUY_|r
     .collect 6256,1 --Fishing Pole (1)
     .collect 6529,1 --Shiny Bauble (1)
     .target Sewa Mistrunner
@@ -572,7 +571,7 @@ step
     #ssf
     #completewith Fish
     #requires Pole
-    .aura 8087 >>|cRXP_WARN_将|r |T134335:0|t[闪光的小珠] |cRXP_WARN_附加到你的|r |T132932:0|t[鱼竿]
+    .aura 8087 >>|cRXP_WARN_将|r |T134335:0|t[闪光的小珠] |cRXP_WARN_装在你的|r |T132932:0|t[鱼竿]
     .use 6529
     .train 410104,1
     .xp <4,1
@@ -581,12 +580,12 @@ step
     #label Fish
     #requires Kah
     .goto Thunder Bluff,40.42,58.55
-    >>在池塘钓鱼直到获得 |T133894:0|t[|cRXP_LOOT_Raw Brilliant Smallfish|r]
+    >>在池塘里钓鱼，直到获得一条|T133894:0|t[|cRXP_LOOT_新鲜的美味小鱼|r]
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
     .train 410104,1
     .xp <4,1
 step
-    >>使用 |T132147:0|t[特级大师的皇家手套 Set] 来制作 |T134007:0|t[鱼 Chunks]
+    >>使用|T132147:0|t[一套匕首]制作|T134007:0|t[鱼块]
     .complete 76240,1 --Fish Chunks (1)
     .use 206344
     .train 410104,1
@@ -594,8 +593,8 @@ step
 step
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
-    >>|cRXP_WARN_他是|r |T132320:0|t[帷幕花]
-    .turnin 76240 >>Turn in Stalk With The Earthmother
+    >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态
+    .turnin 76240 >>交任务 大地母亲与匿同在
 -- .train 410104 >>|cRXP_WARN_You will train|r |T236289:0|t[Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield] |cRXP_WARN_upon turnin|r
     .target Boarton Shadetotem
     .train 410104,1
@@ -607,9 +606,9 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP符文与书籍指南
 #subgroup 手套
-#name Water 盾牌 - 20 (贫瘠之地)
-#title Water 盾牌
-#next Greater 幽魂之狼 - 25 (石爪山脉)
+#name 水之护盾 - 20 级(贫瘠之地)
+#title 水盾
+#next 高等幽魂之狼 - 25级 (石爪山脉)
 
 
 step
@@ -618,7 +617,7 @@ step
     .train 410097,1
     .xp >20,1
 step
-    .zone Orgrimmar >>旅行到奥格瑞玛或雷霆崖
+    .zone Orgrimmar >>前往奥格瑞玛或雷霆崖
     .zoneskip Thunder Bluff
     .train 8050,1
     .xp <20,1
@@ -630,15 +629,15 @@ step
 step
     #completewith OrgTrain
     .goto Orgrimmar,40.31,37.01,15,0
-    .goto Orgrimmar,38.81,36.37,15 >>前往 |cRXP_FRIENDLY_Kardris|r
+    .goto Orgrimmar,38.81,36.37,15 >>前去找 |cRXP_FRIENDLY_卡德里斯|r
     .zoneskip Thunder Bluff
     .train 410097,1
     .xp <20,1
 step
     .goto Orgrimmar,38.81,36.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .train 8050 >>学习 |T135813:0|t[烈焰震击]
-    .train 8056 >>学习 |T135849:0|t[冰霜震击]
+    .train 8050 >>训练 |T135813:0|t[烈焰震击]
+    .train 8056 >>训练|T135849:0|t[冰霜震击]
     .target 卡德里斯
     .zoneskip Thunder Bluff
     .train 8050,1
@@ -647,7 +646,7 @@ step
 step
     .goto Orgrimmar,38.81,36.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .train 8050 >>学习 |T135813:0|t[烈焰震击]
+    .train 8050 >>训练 |T135813:0|t[烈焰震击]
     .target 卡德里斯
     .zoneskip Thunder Bluff
     .train 410097,1
@@ -656,7 +655,7 @@ step
     #label OrgTrain
     .goto Orgrimmar,38.81,36.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .train 8056 >>学习 |T135849:0|t[冰霜震击]
+    .train 8056 >>训练|T135849:0|t[冰霜震击]
     .target 卡德里斯
     .zoneskip Thunder Bluff
     .train 410097,1
@@ -666,8 +665,8 @@ step
     .goto Orgrimmar,50.67,70.39,0
     .goto Orgrimmar,53.74,64.60,15,0
     .goto Orgrimmar,55.54,64.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师瓦巴恩|r 对话
-    >>|cRXP_BUY_购买|r |T134237:0|t[Kolkar Booty 钥匙] |cRXP_BUY_从拍卖行|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师瓦巴恩|r对话
+    >>|cRXP_BUY_从拍卖行购买一个|r |T134237:0|t[科卡尔宝箱钥匙] |cRXP_BUY_|r
     >>|cRXP_WARN_这会在之后为你节省几分钟|r
     .collect 5020,1 --Kolkar Booty Key (1)
     .target Auctioneer Wabang
@@ -676,14 +675,14 @@ step
     .xp <20,1
 step
     #completewith TBTrain
-    .goto Thunder Bluff,22.82,21.11,15 >>前往 |cRXP_FRIENDLY_Siln|r
+    .goto Thunder Bluff,22.82,21.11,15 >>前去找 |cRXP_FRIENDLY_希恩|r
     .zoneskip Orgrimmar
     .train 410097,1
     .xp <20,1
 step
     .goto Thunder Bluff,22.82,21.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Siln|r 对话
-    .train 8050 >>学习 |T135813:0|t[烈焰震击]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希恩|r 对话
+    .train 8050 >>训练 |T135813:0|t[烈焰震击]
     .train 8056 >>学习 |T135849:0|t[冰霜震击]
     .target Siln Skychaser
     .zoneskip Orgrimmar
@@ -692,8 +691,8 @@ step
     .xp <20,1
 step
     .goto Thunder Bluff,22.82,21.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Siln|r 对话
-    .train 8050 >>学习 |T135813:0|t[烈焰震击]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希恩|r 对话
+    .train 8050 >>训练 |T135813:0|t[烈焰震击]
     .target Siln Skychaser
     .zoneskip Orgrimmar
     .train 410097,1
@@ -701,7 +700,7 @@ step
 step
     #label TBTrain
     .goto Thunder Bluff,22.82,21.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Siln|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希恩|r 对话
     .train 8056 >>学习 |T135849:0|t[冰霜震击]
     .target Siln Skychaser
     .zoneskip Orgrimmar
@@ -711,8 +710,8 @@ step
     #ah
     .goto Thunder Bluff,45.23,59.40,0
     .goto Thunder Bluff,40.41,51.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
-    >>|cRXP_BUY_购买|r |T134237:0|t[Kolkar Booty 钥匙] |cRXP_BUY_从拍卖行|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
+    >>|cRXP_BUY_从拍卖行购买一个|r |T134237:0|t[科卡尔宝箱钥匙] |cRXP_BUY_|r
     >>|cRXP_WARN_这会在之后为你节省几分钟|r
     .collect 5020,1 --Kolkar Booty Key (1)
     .target Auctioneer Stampi
@@ -736,7 +735,7 @@ step
     .goto The Barrens,43.86,21.38,50,0
     .goto The Barrens,43.49,23.57,50,0
     .goto The Barrens,43.56,26.30,50,0
-    >>杀死 |cRXP_ENEMY_Kolkar Wranglers|r 和 |cRXP_ENEMY_Kolkar Stormers|r。拾取它们的 |T134237:0|t[Kolkar Booty 钥匙]
+    >>击杀|cRXP_ENEMY_科卡尔牧民|r 和 |cRXP_ENEMY_科卡尔召雷师|r。拾取它们的|T134237:0|t[科卡尔宝箱钥匙]
     .collect 5020,1 --Kolkar Booty Key (1)
     .mob Kolkar Wrangler
     .mob Kolkar Stormer
@@ -746,13 +745,13 @@ step
     .goto The Barrens,43.02,23.52,-1
 --  .goto The Barrens,52.73,41.84,-1
 --  .goto The Barrens,44.33,37.66,-1
-    >>打开地上的 |cRXP_PICK_Kolkars' Booty|r。拾取其中的 |T135832:0|t|cRXP_LOOT_[风暴圣像]|r
+    >>打开地上的|cRXP_PICK_科卡尔的宝藏|r，从中拾取|T135832:0|t|T135832:0|t|cRXP_LOOT_[风暴圣像]|r
     .collect 206382,1 --Tempest Icon (1)
     .itemcount 5020,1 --Kolkar Booty Key (1)
     .train 410097,1
     .xp <20,1
 step
-    .equip 18,206382 >>|cRXP_WARN_装备|r |T135832:0|t|cRXP_LOOT_[风暴圣像]|r
+    .equip 18,206382 >>|cRXP_WARN_装备这个|r |T135832:0|t|cRXP_LOOT_[风暴圣像]|r
     .use 206382
     .itemcount 206382,1 --Tempest Icon (1)
     .train 410097,1
@@ -767,8 +766,8 @@ step
     .goto The Barrens,38.48,14.85,50,0
     .goto The Barrens,37.33,16.23,50,0
     .goto The Barrens,38.64,17.49,50,0
-    .aura 408828 >>杀死 敌人|cRXP_WARN_ 在对其至少各使用一次自然系法术 (|r|T136026:0|t[大地震击]|cRXP_WARN_)、冰霜系法术 (|r|T135849:0|t[冰霜震击]|cRXP_WARN_) 和火焰系法术 (|r|T135813:0|t[烈焰震击]|cRXP_WARN_) 进行伤害。重复10次以获得|r |T136116:0|t[Inspired] |cRXP_WARN_增益|r
-    >>|cRXP_WARN_注释：你必须对能提供经验值的敌人这样做才能获得堆叠|r
+    .aura 408828 >>|cRXP_WARN_击杀敌人前，至少对其使用一次自然法术（|r|T136026:0|t[大地震击]|cRXP_WARN_）、冰霜法术（|r|T135849:0|t[冰霜震击]|cRXP_WARN_）和火焰法术（|r|T135813:0|t[火焰震击]|cRXP_WARN_）造成伤害，完成10次以获得|r |T136116:0|t[激励] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_注意：你必须在能提供经验值的敌人身上完成此操作才能获得层数|r
     .mob 巫翼杀戮者
     .mob Witchwing Windcaller
     .mob 巫翼伏击者
@@ -794,8 +793,8 @@ step
     .goto Stonetalon Mountains,66.83,45.34,50,0
     .goto Stonetalon Mountains,69.89,53.54,50,0
     .goto Stonetalon Mountains,70.84,56.97,50,0
-    .aura 408828 >>杀死 敌人|cRXP_WARN_ 在对其至少各使用一次自然系法术 (|r|T136026:0|t[大地震击]|cRXP_WARN_)、冰霜系法术 (|r|T135849:0|t[冰霜震击]|cRXP_WARN_) 和火焰系法术 (|r|T135813:0|t[烈焰震击]|cRXP_WARN_) 进行伤害。重复10次以获得|r |T136116:0|t[Inspired] |cRXP_WARN_增益|r
-    >>|cRXP_WARN_注释：你必须对能提供经验值的敌人这样做才能获得堆叠|r
+    .aura 408828 >>|cRXP_WARN_击杀敌人前，至少对其使用一次自然法术（|r|T136026:0|t[大地震击]|cRXP_WARN_）、冰霜法术（|r|T135849:0|t[冰霜震击]|cRXP_WARN_）和火焰法术（|r|T135813:0|t[火焰震击]|cRXP_WARN_）造成伤害，完成10次以获得|r |T136116:0|t[激励] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_注意：你必须在能提供经验值的敌人身上完成此操作才能获得层数|r
     .mob 风险投资公司樵夫
     .mob Venture Co. Deforester
     .mob 风险投资公司操作员
@@ -820,9 +819,9 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP符文与书籍指南
 #subgroup 手套
-#name 水盾 - 20 (银松森林)
+#name 水盾 - 20级 (银松森林)
 #title 水盾
-#next 高等幽魂之狼 - 25 (石爪山脉)
+#next 高等幽魂之狼 - 25级 (石爪山脉)
 
 step
     +你必须至少达到20级才能获取 |T133816:0|t[铭刻手套 - 水之护盾] |cRXP_WARN_因为这是训练|r |T135849:0|t[冰霜震击]|cRXP_WARN_的等级要求|r
@@ -842,14 +841,14 @@ step
 step
     #completewith OrgTrain
     .goto Orgrimmar,40.31,37.01,15,0
-    .goto Orgrimmar,38.81,36.37,15 >>前往 |cRXP_FRIENDLY_Kardris|r
+    .goto Orgrimmar,38.81,36.37,15 >>前去找 |cRXP_FRIENDLY_卡德里斯|r
     .zoneskip Thunder Bluff
     .train 410097,1
     .xp <20,1
 step
     .goto Orgrimmar,38.81,36.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .train 8050 >>学习 |T135813:0|t[烈焰震击]
+    .train 8050 >>训练 |T135813:0|t[烈焰震击]
     .train 8056 >>学习 |T135849:0|t[冰霜震击]
     .target 卡德里斯
     .zoneskip Thunder Bluff
@@ -859,7 +858,7 @@ step
 step
     .goto Orgrimmar,38.81,36.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .train 8050 >>学习 |T135813:0|t[烈焰震击]
+    .train 8050 >>训练 |T135813:0|t[烈焰震击]
     .target 卡德里斯
     .zoneskip Thunder Bluff
     .train 410097,1
@@ -868,22 +867,22 @@ step
     #label OrgTrain
     .goto Orgrimmar,38.81,36.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .train 8056 >>学习 |T135849:0|t[冰霜震击]
+    .train 8056 >>训练|T135849:0|t[冰霜震击]
     .target 卡德里斯
     .zoneskip Thunder Bluff
     .train 410097,1
     .xp <20,1
 step
     #completewith TBTrain
-    .goto Thunder Bluff,22.82,21.11,15 >>前往 |cRXP_FRIENDLY_Siln|r
+    .goto Thunder Bluff,22.82,21.11,15 >>前去找 |cRXP_FRIENDLY_希恩|r
     .zoneskip Orgrimmar
     .train 410097,1
     .xp <20,1
 step
     .goto Thunder Bluff,22.82,21.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Siln|r 对话
-    .train 8050 >>学习 |T135813:0|t[烈焰震击]
-    .train 8056 >>学习 |T135849:0|t[冰霜震击]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希恩|r 对话
+    .train 8050 >>训练 |T135813:0|t[烈焰震击]
+    .train 8056 >>训练|T135849:0|t[冰霜震击]
     .target Siln Skychaser
     .zoneskip Orgrimmar
     .train 8050,1
@@ -891,8 +890,8 @@ step
     .xp <20,1
 step
     .goto Thunder Bluff,22.82,21.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Siln|r 对话
-    .train 8050 >>学习 |T135813:0|t[烈焰震击]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希恩|r 对话
+    .train 8050 >>训练 |T135813:0|t[烈焰震击]
     .target Siln Skychaser
     .zoneskip Orgrimmar
     .train 410097,1
@@ -900,8 +899,8 @@ step
 step
     #label TBTrain
     .goto Thunder Bluff,22.82,21.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Siln|r 对话
-    .train 8056 >>学习 |T135849:0|t[冰霜震击]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希恩|r 对话
+    .train 8056 >>训练|T135849:0|t[冰霜震击]
     .target Siln Skychaser
     .zoneskip Orgrimmar
     .train 410097,1
@@ -924,7 +923,7 @@ step
     #requires Grimson2
     .goto Silverpine Forest,57.28,45.42,10,0
     .goto Silverpine Forest,57.66,44.82,10,0
-    .goto Silverpine Forest,58.59,44.85,30 >>前往 |cRXP_ENEMY_白毛狼人格瑞姆森|r
+    .goto Silverpine Forest,58.59,44.85,30 >>前往|cRXP_ENEMY_白毛狼人格瑞姆森|r
     .train 410097,1
     .xp <20,1
 step
@@ -936,7 +935,7 @@ step
     .train 410097,1
     .xp <20,1
 step
-    .equip 18,206382 >>|cRXP_WARN_装备|r |T135832:0|t|cRXP_LOOT_[风暴圣像]|r
+    .equip 18,206382 >>|cRXP_WARN_装备这个|r |T135832:0|t|cRXP_LOOT_[风暴圣像]|r
     .use 206382
     .itemcount 206382,1 --Tempest Icon (1)
     .train 410097,1
@@ -946,8 +945,8 @@ step
     .goto Silverpine Forest,47.68,86.24,50,0
     .goto Silverpine Forest,45.81,86.37,50,0
     .goto Silverpine Forest,44.26,84.37,50,0
-    .aura 408828 >>杀死 敌人|cRXP_WARN_ 在对其至少各使用一次自然系法术 (|r|T136026:0|t[大地震击]|cRXP_WARN_)、冰霜系法术 (|r|T135849:0|t[冰霜震击]|cRXP_WARN_) 和火焰系法术 (|r|T135813:0|t[烈焰震击]|cRXP_WARN_) 进行伤害。重复10次以获得|r |T136116:0|t[Inspired] |cRXP_WARN_增益|r
-    >>|cRXP_WARN_注释：你必须对能提供经验值的敌人这样做才能获得堆叠|r
+    .aura 408828 >>|cRXP_WARN_击杀敌人前，至少对其使用一次自然法术（|r|T136026:0|t[大地震击]|cRXP_WARN_）、冰霜法术（|r|T135849:0|t[冰霜震击]|cRXP_WARN_）和火焰法术（|r|T135813:0|t[火焰震击]|cRXP_WARN_）造成伤害，完成10次以获得|r |T136116:0|t[激励] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_注意：你必须在能提供经验值的敌人身上完成此操作才能获得层数|r
     .mob Valdred Moray
     .mob Dalin Forgewright
     .mob Haggard Refugee
@@ -982,7 +981,7 @@ step
     .goto Hillsbrad Foothills,63.21,61.04,40,0
     .goto Hillsbrad Foothills,62.56,63.55,40,0
     .goto Hillsbrad Foothills,62.98,63.70,40,0
-    >>杀死 |cRXP_ENEMY_Mudsnout Shamans|r。拾取战利品 |T134920:0|t|cRXP_LOOT_[卡亚圣像]|r
+    >>击杀|cRXP_ENEMY_泥嘴萨满祭司|r。从它们身上拾取 |T134920:0|t|cRXP_LOOT_[卡亚圣像]|r
     .collect 206387,1 --Kajaric Icon (1)
     .mob Mudsnout Shaman
     .train 410095,1
@@ -1000,19 +999,19 @@ step
     .xp <25,1
 step
     .goto Orgrimmar,52.77,48.97
-    .subzone 2437 >>前往位于暗影裂口内的怒焰裂谷
+    .subzone 2437 >>进入暗影裂口内的怒焰裂谷
     .itemStat 18,QUALITY,2
     .train 410095,1
     .xp <25,1
 step
-    >>|cRXP_WARN_贴着墙的右侧走。下坡梯后（大约第5个怪物之后），走进你右边的浅岩浆池|r
-    >>|cRXP_WARN_来自|r |T135805:0|t[熔岩] |cRXP_WARN_的伤害|r在|T134920:0|t|cRXP_LOOT_[卡亚圣像]|r |cRXP_WARN_装备时降低至91|r
-    .aura 408828 >>受到来自|cRXP_WARN_ |T135805:0|t[熔岩] |cRXP_WARN_的5次伤害|r
+    >>|cRXP_WARN_紧贴右侧墙壁前进。走下斜坡后（就在第5只怪后面），走进右侧的浅岩浆池中|r
+    >>|cRXP_WARN_来自|r |T135805:0|t|T134920:0|t[熔岩] |cRXP_WARN_的伤害降低至91点，同时|r |T134920:0|t|T134920:0|t|cRXP_LOOT_[卡亚圣像]|r |cRXP_WARN_装备时生效|r
+    .aura 408828 >>|cRXP_WARN_受到来自 |T135805:0|t[熔岩] |cRXP_WARN_的伤害5次|r
     .itemStat 18,QUALITY,2
     .train 410095,1
     .xp <25,1
 step
-    >>|cRXP_WARN_移动离开|r |T135805:0|t[熔岩]
+    >>|cRXP_WARN_离开|r |T135805:0|t[熔岩]
     .cast 402265 >>|cRXP_WARN_使用|r |T134920:0|t|cRXP_LOOT_[卡亚圣像]|r |cRXP_WARN_来学习|r |T133816:0|t[铭刻手套 - 熔岩爆裂]
     .use 206387
     .aura -408828
@@ -1026,9 +1025,9 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP符文与书籍指南
 #subgroup 手套
-#name 熔岩爆裂 - 25 (希尔斯布莱德丘陵)
+#name 熔岩爆裂 - 25级 (希尔斯布莱德丘陵)
 #title 熔岩爆裂
-#next 大地之盾 - 25 (艾泽拉斯)
+#next 大地之盾 - 25级（艾泽拉斯）
 
 
 step
@@ -1048,7 +1047,7 @@ step
     .goto Hillsbrad Foothills,63.21,61.04,40,0
     .goto Hillsbrad Foothills,62.56,63.55,40,0
     .goto Hillsbrad Foothills,62.98,63.70,40,0
-    >>杀死 |cRXP_ENEMY_Mudsnout Shamans|r。拾取战利品 |T134920:0|t|cRXP_LOOT_[卡亚圣像]|r
+    >>击杀|cRXP_ENEMY_泥嘴萨满祭司|r。从它们身上拾取 |T134920:0|t|cRXP_LOOT_[卡亚圣像]|r
     .collect 206387,1 --Kajaric Icon (1)
     .mob Mudsnout Shaman
     .train 410095,1
@@ -1063,17 +1062,17 @@ step
     .train 410095,1
 step
     .goto Orgrimmar,52.77,48.97
-    .subzone 2437 >>前往位于暗影裂口内的怒焰裂谷
+    .subzone 2437 >>进入暗影裂口内的怒焰裂谷
     .itemStat 18,QUALITY,2
     .train 410095,1
 step
-    >>|cRXP_WARN_贴着墙的右侧走。下坡梯后（大约第5个怪物之后），走进你右边的浅岩浆池|r
-    >>|cRXP_WARN_来自|r |T135805:0|t[熔岩] |cRXP_WARN_的伤害|r在|T134920:0|t|cRXP_LOOT_[卡亚圣像]|r |cRXP_WARN_装备时降低至91|r
-    .aura 408828 >>受到来自|cRXP_WARN_ |T135805:0|t[熔岩] |cRXP_WARN_的5次伤害|r
+    >>|cRXP_WARN_紧贴右侧墙壁前进。走下斜坡后（就在第5只怪后面），走进右侧的浅岩浆池中|r
+    >>|cRXP_WARN_来自|r |T135805:0|t|T134920:0|t[熔岩] |cRXP_WARN_的伤害降低至91点，同时|r |T134920:0|t|T134920:0|t|cRXP_LOOT_[卡亚圣像]|r |cRXP_WARN_装备时生效|r
+    .aura 408828 >>|cRXP_WARN_受到来自 |T135805:0|t[熔岩] |cRXP_WARN_的伤害5次|r
     .itemStat 18,QUALITY,2
     .train 410095,1
 step
-    >>|cRXP_WARN_移动离开|r |T135805:0|t[熔岩]
+    >>|cRXP_WARN_离开|r |T135805:0|t[熔岩]
     .cast 402265 >>|cRXP_WARN_使用|r |T134920:0|t|cRXP_LOOT_[卡亚圣像]|r |cRXP_WARN_来学习|r |T133816:0|t[铭刻手套 - 熔岩爆裂]
     .use 206387
     .aura -408828
@@ -1086,14 +1085,14 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP符文与书籍指南
 #subgroup 胸部
-#name 过载 - 3 (杜隆塔尔)
+#name 过载 - 3 级(杜隆塔尔)
 #title 过载
-#next 盾牌掌握 - 6 (杜隆塔尔)
+#next 盾牌掌握 - 6 级(杜隆塔尔)
 
     --Rune of Overload
 step
-    +|cRXP_WARN_你必须至少达到3级才能获得|r |T133815:0|t[铭刻 胸部 - 过载] |cRXP_WARN_因为这是装备的等级要求|r |T134918:0|t|cRXP_LOOT_[二价圣像]|r
-    >>|cRXP_WARN_你需要升级更多等级后再尝试获得|r |T133815:0|t[铭刻 胸部 - 过载]
+    +|cRXP_WARN_你必须至少达到3级才能获取|r |T133815:0|t|T134918:0|t[铭刻胸甲 - 过载] |cRXP_WARN_，因为这是装备|r |T134918:0|t|T134918:0|t|cRXP_LOOT_[二价圣像]|r的等级要求
+    >>|cRXP_WARN_你需要先提升等级，才能尝试获取|r |T133815:0|t|T133815:0|t[铭刻胸甲 - 过载]
     .train 410094,1
     .xp >3,1
 step
@@ -1104,8 +1103,8 @@ step
 step << !Tauren skip
     .goto Durotar,42.39,69.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r 对话
-    .accept 77587 >>Accept Icons of Power << Troll Shaman
-    .accept 77585 >>Accept Icons of Power << Orc Shaman
+    .accept 77587 >>接受任务 力量神像 << Troll Shaman
+    .accept 77585 >>接受任务 力量神像 << Orc Shaman
     .target 史克里克
     .train 410094,1
     .xp <3,1
@@ -1161,7 +1160,7 @@ step
 	.goto Durotar,45.15,59.46,25,0
 	.goto Durotar,43.91,59.33,25,0
 	.goto Durotar,43.26,58.28,25,0
-    >>杀死 |cRXP_ENEMY_Scorpid Workers|r。拾取战利品 |T134918:0|t|cRXP_LOOT_[二价圣像]|r
+    >>击杀|cRXP_ENEMY_蝎子工人|r，并搜刮它们获取|T134918:0|t|T134918:0|t|cRXP_LOOT_[二价圣像]|r
     .collect 206381,1 --Dyadic Icon (1)
     .mob 蝎子
     .train 410094,1
@@ -1223,13 +1222,13 @@ step
 	.goto Durotar,45.15,59.46,25,0
 	.goto Durotar,43.91,59.33,25,0
 	.goto Durotar,43.26,58.28,25,0
-    .aura 408828 >>|cRXP_WARN_让 |cRXP_ENEMY_Scorpid Workers|r 施放|r |T136016:0|t[弱效毒药] |cRXP_WARN_在你身上，然后受到其10次伤害以获得|r |T136116:0|t[Inspired] |cRXP_WARN_增益|r
+    .aura 408828 >>|cRXP_WARN_让|cRXP_ENEMY_蝎子工人|r对你施放|r |T136016:0|t|T136116:0|t[弱效毒药] |cRXP_WARN_，然后承受其伤害10次，以获得|r |T136116:0|t|T136116:0|t[灵感勃发] |cRXP_WARN_buff|r
     .mob 蝎子
     .itemStat 18,QUALITY,2
     .train 410094,1
     .xp <3,1
 step
-    .cast 402265 >>|cRXP_WARN_使用|r |T134918:0|t|cRXP_LOOT_[二价圣像]|r |cRXP_WARN_来学习|r |T133815:0|t[铭刻 胸部 - 过载]
+    .cast 402265 >>|cRXP_WARN_使用|r |T134918:0|t|T133815:0|t|cRXP_LOOT_[二价圣像]|r |cRXP_WARN_学习|r |T133815:0|t|T133815:0|t[雕文：胸部附魔 - 过载]
     .use 206381
     .aura -408828
     .itemStat 18,QUALITY,2
@@ -1238,8 +1237,8 @@ step
 step << !Tauren skip
     .goto Durotar,42.39,69.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r 对话
-    .turnin 77587 >>Turn in Icons of Power << Troll Shaman
-    .turnin 77585 >>Turn in Icons of Power << Orc Shaman
+    .turnin 77587 >>交任务 力量神像 << Troll Shaman
+    .turnin 77585 >>交任务 力量神像 << Orc Shaman
     .target 史克里克
     .xp <3,1
 ]])
@@ -1249,15 +1248,15 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP符文与书籍指南
 #subgroup 胸部
-#name 过载 - 3 (莫高雷)
+#name 过载 - 3级 (莫高雷)
 #title 过载
-#next 盾牌掌握 - 6 (莫高雷)
+#next 盾牌掌握 - 6级 (莫高雷)
 
 
     --Rune of Overload
 step
-    +|cRXP_WARN_你必须至少达到3级才能获得|r |T133815:0|t[铭刻 胸部 - 过载] |cRXP_WARN_因为这是装备的等级要求|r |T134918:0|t|cRXP_LOOT_[二价圣像]|r
-    >>|cRXP_WARN_你需要升级更多等级后再尝试获得|r |T133815:0|t[铭刻 胸部 - 过载]
+    +|cRXP_WARN_你必须至少达到3级才能获取|r |T133815:0|t|T134918:0|t[铭刻胸甲 - 过载] |cRXP_WARN_，因为这是装备|r |T134918:0|t|T134918:0|t|cRXP_LOOT_[二价圣像]|r的等级要求
+    >>|cRXP_WARN_你需要先提升等级，才能尝试获取|r |T133815:0|t|T133815:0|t[铭刻胸甲 - 过载]
     .train 410094,1
     .xp >3,1
 step
@@ -1268,7 +1267,7 @@ step
 step << Tauren skip
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米拉|r 对话
-    .accept 77652 >>Accept Icons of Power
+    .accept 77652 >>接受任务 力量神像
     .target 米拉·晨行者
     .xp <3,1
 step
@@ -1280,7 +1279,7 @@ step
     .goto Mulgore,65.93,77.10,50,0
     .goto Mulgore,63.57,76.25,50,0
     .goto Mulgore,63.86,80.14
-    >>杀死 |cRXP_ENEMY_Bristleback Shamans|r。拾取战利品 |T134918:0|t[|cRXP_FRIENDLY_二价圣像|r]
+    >>击杀|cRXP_ENEMY_鬃背萨满祭司|r。从他们身上拾取|T134918:0|t|T134918:0|t[|cRXP_FRIENDLY_二价圣像|r]
     .collect 206381,1 --Dyadic Icon (1)
     .mob 刺背萨满祭司
     .train 410094,1
@@ -1299,14 +1298,14 @@ step
     .goto Mulgore,65.93,77.10,50,0
     .goto Mulgore,63.57,76.25,50,0
     .goto Mulgore,63.86,80.14
-    .aura 408828 >>|cRXP_WARN_让 |cRXP_ENEMY_Bristleback Shamans|r 施放|r |T136048:0|t[闪电箭] |cRXP_WARN_伤害你，然后你受10次伤害以获得|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    .aura 408828 >>|cRXP_WARN_让|cRXP_ENEMY_鬃毛萨满|r对|r你|T136048:0|t施放|T136116:0|t[闪电箭]，|cRXP_WARN_承受其伤害10次，以获得|r |T136116:0|t|T136116:0|t[灵感勃发] |cRXP_WARN_buff|r
     .mob 刺背萨满祭司
     .itemStat 18,QUALITY,2
     .train 410094,1
     .xp <3,1
 --XX Loop needs to be added
 step
-    .cast 402265 >>|cRXP_WARN_使用|r |T134918:0|t|cRXP_LOOT_[二价圣像]|r |cRXP_WARN_来学习|r |T133815:0|t[铭刻 胸部 - 过载]
+    .cast 402265 >>|cRXP_WARN_使用|r |T134918:0|t|T133815:0|t|cRXP_LOOT_[二价圣像]|r |cRXP_WARN_学习|r |T133815:0|t|T133815:0|t[雕文：胸部附魔 - 过载]
     .use 206381
     .aura -408828
     .itemStat 18,QUALITY,2
@@ -1315,7 +1314,7 @@ step
 step << Tauren skip
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米拉|r 对话
-    .turnin 77652 >>Turn in Icons of Power
+    .turnin 77652 >>交任务 力量神像
     .target 米拉·晨行者
     .xp <3,1
 ]])
@@ -1325,18 +1324,18 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP符文与书籍指南
 #subgroup 胸部
-#name 盾牌掌握 - 6 (杜隆塔尔)
+#name 盾牌掌握 - 6 级(杜隆塔尔)
 #title 盾牌掌握
-#next Molten Blast - 10 (杜隆塔尔)
+#next 熔火爆裂 - 10 级(杜隆塔尔)
 
 step
-    +|cRXP_WARN_你应该至少达到6级才能获得|r |T133815:0|t[铭刻 胸部 - 盾牌掌握] |cRXP_WARN_单独在杜隆塔尔|r
-    >>|cRXP_WARN_你必须至少达到3级因为这是装备的等级要求|r |T134918:0|t|cRXP_LOOT_[镀电圣像]|r
-    >>|cRXP_WARN_你需要升级更多等级后再尝试获得|r |T133815:0|t[铭刻 胸部 - 盾牌掌握]
+    +|cRXP_WARN_你至少需要达到6级，才能在杜隆塔尔独自获取|r |T133815:0|t|T133815:0|t[铭刻胸甲 - 盾牌精通] |cRXP_WARN_。|r
+    >>|cRXP_WARN_你的角色必须至少达到3级，因为这是装备|r |T134918:0|t|T134918:0|t|cRXP_LOOT_[镀电圣像]|r的等级要求
+    >>|cRXP_WARN_你需要先提升等级，才能尝试获取|r |T133815:0|t|T133815:0|t[铭刻胸甲 - 盾牌精通]
     .train 410098,1
     .xp >3,1
 step
-    +|cRXP_WARN_你应该至少达到6级才能获得|r |T133815:0|t[铭刻 胸部 - 盾牌掌握] |cRXP_WARN_单独在杜隆塔尔|r
+    +|cRXP_WARN_你至少需要达到6级，才能在杜隆塔尔独自获取|r |T133815:0|t|T133815:0|t[铭刻胸甲 - 盾牌精通] |cRXP_WARN_。|r
     .train 410098,1
     .xp <3,1
     .xp >6,1
@@ -1358,15 +1357,15 @@ step
     .goto Durotar,56.50,46.68,50,0
     .goto Durotar,57.03,46.66,50,0
     .goto Durotar,59.00,58.00
-    >>点击 |cRXP_PICK_Galvanic 图标|r 图腾。拾取战利品 |T134918:0|t|cRXP_LOOT_[镀电圣像]|r
-    >>|cRXP_WARN_该 |cRXP_PICK_Galvanic 图标|r 至少有15个刷新点，每次最多2个活跃。被拾取后不到2分钟即消失|r
-    >>|cRXP_WARN_当你在1000码内时，它每5分钟发出一次|r |T136051:0|t[闪电之盾] |cRXP_WARN_的声音；当你在300码内并面向它时，它的位置会显示一道闪电打击|r
+    >>点击|cRXP_PICK_镀电圣像|r图腾。拾取以获得|T134918:0|t|T134918:0|t|cRXP_LOOT_[镀电圣像]|r
+    >>|cRXP_WARN_镀电圣像|cRXP_PICK_至少有15个|r刷新点，同时至少存在2个。被拾取后不到2分钟就会消失|r
+    >>|cRXP_WARN_如果你在1000码范围内，它每5分钟会发出|r |T136051:0|t|T136051:0|t[闪电之盾] |cRXP_WARN_的声音；如果你在300码范围内且面朝它，还会在其位置显示一道闪电打击|r
     .collect 206386,1 --Galvanic Icon (1)
     .train 410098,1
     .xp <3,1
 --XX Need to check for more locations
 step
-    .equip 18,206386 >>|cRXP_WARN_装备|r |T134918:0|t|cRXP_LOOT_[镀电圣像]|r
+    .equip 18,206386 >>|cRXP_WARN_装备|r |T134918:0|t|T134918:0|t|cRXP_LOOT_[镀电圣像]|r
     .use 206386
     .itemcount 206386,1 --Galvanic Icon (1)
     .train 410098,1
@@ -1379,8 +1378,8 @@ step
     .goto Durotar,59.40,56.58,50,0
     .goto Durotar,58.41,58.17,50,0
     .goto Durotar,56.21,58.51,50,0
-    .aura 408828 >>|cRXP_WARN_攻击敌人至低生命值，然后施放|r |T136048:0|t[闪电箭] |cRXP_WARN_击杀它们。重复此操作10次以获得|r |T136116:0|t[Inspired] |cRXP_WARN_增益|r
-    >>|cRXP_WARN_注释：你必须对能提供经验值的敌人这样做才能获得堆叠|r
+    .aura 408828 >>|cRXP_WARN_将敌人打到低血量，然后对他们施放|r |T136048:0|t|T136116:0|t[闪电箭] |cRXP_WARN_将其击杀。重复10次即可获得|r |T136116:0|t|T136116:0|t[灵感勃发] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_注意：你必须在能提供经验值的敌人身上完成此操作才能获得层数|r
     .mob 库尔提拉斯水手
     .mob 库尔提拉斯水兵
     .itemStat 18,QUALITY,2
@@ -1402,8 +1401,8 @@ step
     .goto The Barrens,55.71,27.21,50,0
     .goto The Barrens,55.44,27.35,50,0
     .goto The Barrens,54.99,26.79,50,0
-    .aura 408828 >>|cRXP_WARN_攻击敌人至低生命值，然后施放|r |T136048:0|t[闪电箭] |cRXP_WARN_击杀它们。重复此操作10次以获得|r |T136116:0|t[Inspired] |cRXP_WARN_增益|r
-    >>|cRXP_WARN_注释：你必须对能提供经验值的敌人这样做才能获得堆叠|r
+    .aura 408828 >>|cRXP_WARN_将敌人打到低血量，然后对他们施放|r |T136048:0|t|T136116:0|t[闪电箭] |cRXP_WARN_将其击杀。重复10次即可获得|r |T136116:0|t|T136116:0|t[灵感勃发] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_注意：你必须在能提供经验值的敌人身上完成此操作才能获得层数|r
     .mob 钢鬃织棘者
     .mob 钢鬃寻水者
     .mob Razormane Hunter
@@ -1420,8 +1419,8 @@ step
     .goto The Barrens,53.73,13.77,50,0
     .goto The Barrens,55.09,15.00,50,0
     .goto The Barrens,55.62,14.86,50,0
-    .aura 408828 >>|cRXP_WARN_攻击敌人至低生命值，然后施放|r |T136048:0|t[闪电箭] |cRXP_WARN_击杀它们。重复此操作10次以获得|r |T136116:0|t[Inspired] |cRXP_WARN_增益|r
-    >>|cRXP_WARN_注释：你必须对能提供经验值的敌人这样做才能获得堆叠|r
+    .aura 408828 >>|cRXP_WARN_将敌人打到低血量，然后对他们施放|r |T136048:0|t|T136116:0|t[闪电箭] |cRXP_WARN_将其击杀。重复10次即可获得|r |T136116:0|t|T136116:0|t[灵感勃发] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_注意：你必须在能提供经验值的敌人身上完成此操作才能获得层数|r
     .mob Hecklefang Hyena
     .mob 草原徘徊者
     .mob Savannah Huntress
@@ -1444,8 +1443,8 @@ step
     .goto The Barrens,38.48,14.85,50,0
     .goto The Barrens,37.33,16.23,50,0
     .goto The Barrens,38.64,17.49,50,0
-    .aura 408828 >>|cRXP_WARN_攻击敌人至低生命值，然后施放|r |T136048:0|t[闪电箭] |cRXP_WARN_击杀它们。重复此操作10次以获得|r |T136116:0|t[Inspired] |cRXP_WARN_增益|r
-    >>|cRXP_WARN_注释：你必须对能提供经验值的敌人这样做才能获得堆叠|r
+    .aura 408828 >>|cRXP_WARN_将敌人打到低血量，然后对他们施放|r |T136048:0|t|T136116:0|t[闪电箭] |cRXP_WARN_将其击杀。重复10次即可获得|r |T136116:0|t|T136116:0|t[灵感勃发] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_注意：你必须在能提供经验值的敌人身上完成此操作才能获得层数|r
     .mob 巫翼杀戮者
     .mob Witchwing Windcaller
     .mob 巫翼伏击者
@@ -1471,8 +1470,8 @@ step
     .goto Stonetalon Mountains,66.83,45.34,50,0
     .goto Stonetalon Mountains,69.89,53.54,50,0
     .goto Stonetalon Mountains,70.84,56.97,50,0
-    .aura 408828 >>|cRXP_WARN_攻击敌人至低生命值，然后施放|r |T136048:0|t[闪电箭] |cRXP_WARN_击杀它们。重复此操作10次以获得|r |T136116:0|t[Inspired] |cRXP_WARN_增益|r
-    >>|cRXP_WARN_注释：你必须对能提供经验值的敌人这样做才能获得堆叠|r
+    .aura 408828 >>|cRXP_WARN_将敌人打到低血量，然后对他们施放|r |T136048:0|t|T136116:0|t[闪电箭] |cRXP_WARN_将其击杀。重复10次即可获得|r |T136116:0|t|T136116:0|t[灵感勃发] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_注意：你必须在能提供经验值的敌人身上完成此操作才能获得层数|r
     .mob 风险投资公司樵夫
     .mob Venture Co. Deforester
     .mob 风险投资公司操作员
@@ -1484,7 +1483,7 @@ step
     .train 410098,1
     .xp <22,1
 step
-    .cast 402265 >>|cRXP_WARN_使用|r |T134918:0|t|cRXP_LOOT_[镀电圣像]|r |cRXP_WARN_来学习|r |T133815:0|t[铭刻 胸部 - 盾牌掌握]
+    .cast 402265 >>|cRXP_WARN_使用|r |T134918:0|t|T133815:0|t|cRXP_LOOT_[镀电圣像]|r |cRXP_WARN_学习|r |T133815:0|t|T133815:0|t[铭刻胸甲 - 盾牌精通]
     .use 206386
     .aura -408828
     .itemStat 18,QUALITY,2
@@ -1498,20 +1497,20 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP符文与书籍指南
 #subgroup 胸部
-#name 盾牌掌握 - 6 (莫高雷)
+#name 盾牌掌握 - 6级 (莫高雷)
 #title 盾牌掌握
-#next Molten Blast - 8 (莫高雷)
+#next 熔火爆裂 - 8级 (莫高雷)
 
 
     --Rune of Shield Mastery
  step
-    +|cRXP_WARN_为了在莫高雷中单独获得|r |T133815:0|t[铭刻 胸部 - 盾牌掌握] |cRXP_WARN_，你需要至少6级|r
-    >>你必须至少3级，因为这是装备|cRXP_WARN_ |T134918:0|t|r[镀电圣像]|cRXP_LOOT_ 的等级要求|r
-    >>|cRXP_WARN_你需要升级更多等级才能尝试获得|r |T133815:0|t[铭刻 胸部 - 盾牌掌握]
+    +|cRXP_WARN_你至少需要达到6级，才能在莫高雷独自获取|r |T133815:0|t|T133815:0|t[铭刻胸甲 - 盾牌精通] |cRXP_WARN_|r
+    >>|cRXP_WARN_你的角色必须至少达到3级，因为这是装备|r |T134918:0|t|T134918:0|t|cRXP_LOOT_[镀电圣像]|r的等级要求
+    >>|cRXP_WARN_你需要先提升等级，才能尝试获取|r |T133815:0|t|T133815:0|t[铭刻胸甲 - 盾牌精通]
     .train 410098,1
     .xp >3,1
 step
-    +|cRXP_WARN_为了在莫高雷中单独获得|r |T133815:0|t[铭刻 胸部 - 盾牌掌握] |cRXP_WARN_，你需要至少6级|r
+    +|cRXP_WARN_你至少需要达到6级，才能在莫高雷独自获取|r |T133815:0|t|T133815:0|t[铭刻胸甲 - 盾牌精通] |cRXP_WARN_|r
     .train 410098,1
     .xp <3,1
     .xp >6,1
@@ -1554,14 +1553,14 @@ step
     .goto Mulgore,44.94,11.30,20,0
     .goto Mulgore,36.33,9.79,20,0
     .goto Mulgore,30.50,25.98,20,0
-    >>点击 |cRXP_PICK_Galvanic 图标|r 图腾。拾取它以获得 |T134918:0|t|cRXP_LOOT_[镀电圣像]|r
-    >>|cRXP_WARN_|cRXP_PICK_Galvanic 图标|r 至少有15个生成点，同时至少有2个处于活跃状态。被拾取后<2分钟内消失|r
-    >>|cRXP_WARN_它每5分钟发出|r |T136051:0|t[闪电之盾]|cRXP_WARN_ 声音（如果你在1000码范围内），并在距离300码内且面向它时在其所在地区显示闪电打击|r
+    >>点击|cRXP_PICK_镀电圣像|r图腾。拾取以获得|T134918:0|t|T134918:0|t|cRXP_LOOT_[镀电圣像]|r
+    >>|cRXP_WARN_镀电圣像|cRXP_PICK_至少有15个|r刷新点，同时至少存在2个。被拾取后不到2分钟就会消失|r
+    >>|cRXP_WARN_如果你在1000码范围内，它每5分钟会发出|r |T136051:0|t|T136051:0|t[闪电之盾] |cRXP_WARN_的声音；如果你在300码范围内且面朝它，还会在其位置显示一道闪电打击|r
     .collect 206386,1 --Galvanic Icon (1)
     .train 410098,1
     .xp <3,1
 step
-    .equip 18,206386 >>|cRXP_WARN_装备|r |T134918:0|t|cRXP_LOOT_[镀电圣像]|r
+    .equip 18,206386 >>|cRXP_WARN_装备|r |T134918:0|t|T134918:0|t|cRXP_LOOT_[镀电圣像]|r
     .use 206386
     .itemcount 206386,1 --Galvanic Icon (1)
     .train 410098,1
@@ -1572,8 +1571,8 @@ step
     .goto Mulgore,54.12,65.67,30,0
     .goto Mulgore,53.40,65.49,30,0
     .goto Mulgore,53.19,66.51,30,0
-    .aura 408828 >>|cRXP_WARN_攻击敌人至低生命值，然后施放|r |T136048:0|t[闪电箭] |cRXP_WARN_击杀它们。重复此操作10次以获得|r |T136116:0|t[Inspired] |cRXP_WARN_增益|r
-    >>|cRXP_WARN_注释：你必须对能提供经验值的敌人这样做才能获得堆叠|r
+    .aura 408828 >>|cRXP_WARN_将敌人打到低血量，然后对他们施放|r |T136048:0|t|T136116:0|t[闪电箭] |cRXP_WARN_将其击杀。重复10次即可获得|r |T136116:0|t|T136116:0|t[灵感勃发] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_注意：你必须在能提供经验值的敌人身上完成此操作才能获得层数|r
     .mob Venture Co. Hireling
     .mob Venture Co. Laborer
     .itemStat 18,QUALITY,2
@@ -1589,8 +1588,8 @@ step
     .goto Mulgore,62.02,45.84,30,0
     .goto Mulgore,62.85,45.30,30,0
     .goto Mulgore,64.87,43.32,30,0
-    .aura 408828 >>|cRXP_WARN_攻击敌人至低生命值，然后施放|r |T136048:0|t[闪电箭] |cRXP_WARN_击杀它们。重复此操作10次以获得|r |T136116:0|t[Inspired] |cRXP_WARN_增益|r
-    >>|cRXP_WARN_注释：你必须对能提供经验值的敌人这样做才能获得堆叠|r
+    .aura 408828 >>|cRXP_WARN_将敌人打到低血量，然后对他们施放|r |T136048:0|t|T136116:0|t[闪电箭] |cRXP_WARN_将其击杀。重复10次即可获得|r |T136116:0|t|T136116:0|t[灵感勃发] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_注意：你必须在能提供经验值的敌人身上完成此操作才能获得层数|r
     .mob Venture Co. Worker
     .mob Venture Co. Supervisor
     .itemStat 18,QUALITY,2
@@ -1612,8 +1611,8 @@ step
     .goto The Barrens,55.71,27.21,50,0
     .goto The Barrens,55.44,27.35,50,0
     .goto The Barrens,54.99,26.79,50,0
-    .aura 408828 >>|cRXP_WARN_攻击敌人至低生命值，然后施放|r |T136048:0|t[闪电箭] |cRXP_WARN_击杀它们。重复此操作10次以获得|r |T136116:0|t[Inspired] |cRXP_WARN_增益|r
-    >>|cRXP_WARN_注释：你必须对能提供经验值的敌人这样做才能获得堆叠|r
+    .aura 408828 >>|cRXP_WARN_将敌人打到低血量，然后对他们施放|r |T136048:0|t|T136116:0|t[闪电箭] |cRXP_WARN_将其击杀。重复10次即可获得|r |T136116:0|t|T136116:0|t[灵感勃发] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_注意：你必须在能提供经验值的敌人身上完成此操作才能获得层数|r
     .mob 钢鬃织棘者
     .mob 钢鬃寻水者
     .mob Razormane Hunter
@@ -1630,8 +1629,8 @@ step
     .goto The Barrens,53.73,13.77,50,0
     .goto The Barrens,55.09,15.00,50,0
     .goto The Barrens,55.62,14.86,50,0
-    .aura 408828 >>|cRXP_WARN_攻击敌人至低生命值，然后施放|r |T136048:0|t[闪电箭] |cRXP_WARN_击杀它们。重复此操作10次以获得|r |T136116:0|t[Inspired] |cRXP_WARN_增益|r
-    >>|cRXP_WARN_注释：你必须对能提供经验值的敌人这样做才能获得堆叠|r
+    .aura 408828 >>|cRXP_WARN_将敌人打到低血量，然后对他们施放|r |T136048:0|t|T136116:0|t[闪电箭] |cRXP_WARN_将其击杀。重复10次即可获得|r |T136116:0|t|T136116:0|t[灵感勃发] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_注意：你必须在能提供经验值的敌人身上完成此操作才能获得层数|r
     .mob Hecklefang Hyena
     .mob 草原徘徊者
     .mob Savannah Huntress
@@ -1654,8 +1653,8 @@ step
     .goto The Barrens,38.48,14.85,50,0
     .goto The Barrens,37.33,16.23,50,0
     .goto The Barrens,38.64,17.49,50,0
-    .aura 408828 >>|cRXP_WARN_攻击敌人至低生命值，然后施放|r |T136048:0|t[闪电箭] |cRXP_WARN_击杀它们。重复此操作10次以获得|r |T136116:0|t[Inspired] |cRXP_WARN_增益|r
-    >>|cRXP_WARN_注释：你必须对能提供经验值的敌人这样做才能获得堆叠|r
+    .aura 408828 >>|cRXP_WARN_将敌人打到低血量，然后对他们施放|r |T136048:0|t|T136116:0|t[闪电箭] |cRXP_WARN_将其击杀。重复10次即可获得|r |T136116:0|t|T136116:0|t[灵感勃发] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_注意：你必须在能提供经验值的敌人身上完成此操作才能获得层数|r
     .mob 巫翼杀戮者
     .mob Witchwing Windcaller
     .mob 巫翼伏击者
@@ -1681,8 +1680,8 @@ step
     .goto Stonetalon Mountains,66.83,45.34,50,0
     .goto Stonetalon Mountains,69.89,53.54,50,0
     .goto Stonetalon Mountains,70.84,56.97,50,0
-    .aura 408828 >>|cRXP_WARN_攻击敌人至低生命值，然后施放|r |T136048:0|t[闪电箭] |cRXP_WARN_击杀它们。重复此操作10次以获得|r |T136116:0|t[Inspired] |cRXP_WARN_增益|r
-    >>|cRXP_WARN_注释：你必须对能提供经验值的敌人这样做才能获得堆叠|r
+    .aura 408828 >>|cRXP_WARN_将敌人打至残血，然后对其施放|r |T136048:0|t[闪电箭] |cRXP_WARN_来将其击杀。重复此操作10次以获得|r |T136116:0|t[灵感勃发] |cRXP_WARN_效果|r
+    >>|cRXP_WARN_注意：你必须在能提供经验值的敌人身上完成此操作才能获得层数|r
     .mob 风险投资公司樵夫
     .mob Venture Co. Deforester
     .mob 风险投资公司操作员
@@ -1694,7 +1693,7 @@ step
     .train 410098,1
     .xp <22,1
 step
-    .cast 402265 >>|cRXP_WARN_使用|r |T134918:0|t|cRXP_LOOT_[镀电圣像]|r |cRXP_WARN_来学习|r |T133815:0|t[铭刻 胸部 - 盾牌掌握]
+    .cast 402265 >>|cRXP_WARN_使用|r |T134918:0|t|cRXP_LOOT_[镀电圣像]|r |cRXP_WARN_来学习|r |T133815:0|t[铭刻胸甲 - 盾牌精通]
     .use 206386
     .aura -408828
     .itemStat 18,QUALITY,2
@@ -1708,18 +1707,18 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP符文与书籍指南
 #subgroup 腿部
-#name Ancestral Guidance - 6 (杜隆塔尔)
-#title Ancestral Guidance
-#next Molten Blast - 10 (杜隆塔尔)
+#name 先祖指引 - 6 (杜隆塔尔)
+#title 先祖指引
+#next 熔火爆裂 - 10 (杜隆塔尔)
 
     --Rune of Ancestral Guidance
 step
-    +|cRXP_WARN_为了与其他玩家在杜隆塔尔获得|r |T134596:0|t[铭刻 Pants - Ancestral Guidance] |cRXP_WARN_，你需要至少6级|r
-    >>你必须至少3级，因为这是使用|cRXP_WARN_ |T237571:0|t|r[先祖回响]|cRXP_LOOT_ 的等级要求|r
+    +|cRXP_WARN_你应该至少达到6级才能在杜隆塔尔独自获得|r |T134596:0|t[铭刻裤子 - 先祖指引] |cRXP_WARN_|r
+    >>|cRXP_WARN_你的角色必须至少达到3级，因为这是装备|r |T237571:0|t|cRXP_LOOT_[先祖回响]|r 的等级要求
     .train 410099,1
     .xp <3,1
 step
-    +|cRXP_WARN_为了与其他玩家在杜隆塔尔获得|r |T134596:0|t[铭刻 Pants - Ancestral Guidance] |cRXP_WARN_，你需要至少6级|r
+    +|cRXP_WARN_你应该至少达到6级才能在杜隆塔尔独自获得|r |T134596:0|t[铭刻裤子 - 先祖指引] |cRXP_WARN_|r
     .train 410099,1
     .xp <3,1
     .xp >6,1
@@ -1733,15 +1732,15 @@ step
     #completewith next
     #requires Durotar1
     .goto Durotar,50.84,79.14,40,0
-    .goto Durotar,48.02,79.46,40 >>前往 |cRXP_FRIENDLY_冒险者的残骸|r
+    .goto Durotar,48.02,79.46,40 >>去找 |cRXP_FRIENDLY_冒险者的残骸|r
     .train 410099,1
     .xp <3,1
 step
     #label IconS
     .goto Durotar,48.02,79.46
-    >>|cRXP_WARN_加入一个与另一个萨满祭司、牧师或德鲁伊站在|cRXP_FRIENDLY_ 冒险者的残骸|r 处的小队，或在综合聊天中（输入/1）寻求萨满祭司、牧师或德鲁伊的帮助|r
-    >>|cRXP_WARN_与|cRXP_FRIENDLY_ 冒险者的残骸|r 交谈在地面上开始仪式，或点击其他玩家的|r |T136223:0|t[精神 Ritual] |cRXP_WARN_（在他们的队伍中）|r
-    >>|cRXP_WARN_一个|cRXP_FRIENDLY_ 冒险者的精神|r 会在完成仪式后生成并死亡。拾取它以获得|r |T237571:0|t|cRXP_LOOT_[先祖回响]|r
+    >>|cRXP_WARN_与站在|cRXP_FRIENDLY_冒险者的遗骸|r旁的萨满、牧师或德鲁伊组队，或在综合频道（在聊天框输入/1）寻求萨满、牧师或德鲁伊的帮助|r
+    >>|cRXP_WARN_与地上的|cRXP_FRIENDLY_|r冒险者的残骸|r|cRXP_WARN_对话以开始仪式，或者在加入队伍后，点击其他玩家的|r |T136223:0|t[灵魂仪式]
+    >>|cRXP_WARN_完成仪式后，一个|cRXP_FRIENDLY_冒险者之魂|r 会出现并死亡。拾取它获得|r |T237571:0|t|cRXP_LOOT_[先祖回响]|r
     .collect 210589,1 --Echo of the Ancestors (1)
     .target Adventurer's Remains
     .target Adventurer's Spirit
@@ -1749,7 +1748,7 @@ step
     .train 410099,1
     .xp <3,1
 step
-    .cast 402265 >>|cRXP_WARN_使用|r |T237571:0|t|cRXP_LOOT_[先祖回响]|r |cRXP_WARN_来学习|r |T134596:0|t[铭刻 Pants - Ancestral Guidance]
+    .cast 402265 >>|cRXP_WARN_使用|r |T237571:0|t|cRXP_LOOT_[先祖回响]|r |cRXP_WARN_学习|r |T134596:0|t[铭刻裤子 - 先祖指引]
     .use 210589
     .itemcount 210589,1 --Echo of the Ancestors (1)
     .train 410099,1
@@ -1761,20 +1760,20 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP符文与书籍指南
 #subgroup 腿部
-#name Ancestral Guidance - 10 (莫高雷)
-#title Ancestral Guidance
-#next Way of Earth - 12 (The Barrens)
+#name 先祖指引 - 10级 (莫高雷)
+#title 先祖指引
+#next 土之道 - 12级（贫瘠之地）
 
 
     --Rune of Ancestral Guidance
 
 step
-    +|cRXP_WARN_为了与其他玩家在莫高雷获得|r |T134596:0|t[铭刻 Pants - Ancestral Guidance] |cRXP_WARN_，你需要至少10级|r
-    >>你必须至少3级，因为这是使用|cRXP_WARN_ |T237571:0|t|r[先祖回响]|cRXP_LOOT_ 的等级要求|r
+    +|cRXP_WARN_你应该至少达到6级才能在莫高雷独自获得|r |T134596:0|t[铭刻裤子 - 先祖指引] |cRXP_WARN_|r
+    >>|cRXP_WARN_你的角色必须至少达到3级，因为这是装备|r |T237571:0|t|cRXP_LOOT_[先祖回响]|r 的等级要求
     .train 410099,1
     .xp <3,1
 step
-    +|cRXP_WARN_为了与其他玩家在莫高雷获得|r |T134596:0|t[铭刻 Pants - Ancestral Guidance] |cRXP_WARN_，你需要至少10级|r
+    +|cRXP_WARN_你应该至少达到10级才能在莫高雷独自获得|r |T134596:0|t[铭刻裤子 - 先祖指引] |cRXP_WARN_|r
     .train 410099,1
     .xp <3,1
     .xp >10,1
@@ -1801,22 +1800,22 @@ step
     .goto Mulgore,61.66,41.45,25,0
     .goto Mulgore,63.08,39.33,25,0
     .goto Mulgore,62.69,38.01,25,0
-    .goto Mulgore,60.05,35.82,20 >>从另一侧退出风险投资公司矿洞
+    .goto Mulgore,60.05,35.82,20 >>从风险投资公司矿洞的另一侧出口离开
     .train 410099,1
     .xp <3,1
 step
     #completewith next
     #requires Cave2
-    .goto Mulgore,60.39,33.54,40 >>前往 |cRXP_FRIENDLY_冒险者的残骸|r
+    .goto Mulgore,60.39,33.54,40 >>去找 |cRXP_FRIENDLY_冒险者的残骸|r
     .train 410099,1
     .xp <3,1
 --XX Might be a faster method via the mountains, but don't want to complicate it
 step
     #label IconS
     .goto Mulgore,60.39,33.54
-    >>|cRXP_WARN_加入一个与另一个萨满祭司、牧师或德鲁伊站在|cRXP_FRIENDLY_ 冒险者的残骸|r 处的小队，或在综合聊天中（输入/1）寻求萨满祭司、牧师或德鲁伊的帮助|r
-    >>|cRXP_WARN_与|cRXP_FRIENDLY_ 冒险者的残骸|r 交谈在地面上开始仪式，或点击其他玩家的|r |T136223:0|t[精神 Ritual] |cRXP_WARN_（在他们的队伍中）|r
-    >>|cRXP_WARN_一个|cRXP_FRIENDLY_ 冒险者的精神|r 会在完成仪式后生成并死亡。拾取它以获得|r |T237571:0|t|cRXP_LOOT_[先祖回响]|r
+    >>|cRXP_WARN_与站在|cRXP_FRIENDLY_冒险者的遗骸|r旁的萨满、牧师或德鲁伊组队，或在综合频道（在聊天框输入/1）寻求萨满、牧师或德鲁伊的帮助|r
+    >>|cRXP_WARN_与地上的|cRXP_FRIENDLY_|r冒险者的残骸|r|cRXP_WARN_对话以开始仪式，或者在加入队伍后，点击其他玩家的|r |T136223:0|t[灵魂仪式]
+    >>|cRXP_WARN_完成仪式后，一个|cRXP_FRIENDLY_冒险者之魂|r 会出现并死亡。拾取它获得|r |T237571:0|t|cRXP_LOOT_[先祖回响]|r
     .collect 210589,1 --Echo of the Ancestors (1)
     .target Adventurer's Remains
     .target Adventurer's Spirit
@@ -1824,7 +1823,7 @@ step
     .train 410099,1
     .xp <3,1
 step
-    .cast 402265 >>|cRXP_WARN_使用|r |T237571:0|t|cRXP_LOOT_[先祖回响]|r |cRXP_WARN_来学习|r |T134596:0|t[铭刻 Pants - Ancestral Guidance]
+    .cast 402265 >>|cRXP_WARN_使用|r |T237571:0|t|cRXP_LOOT_[先祖回响]|r |cRXP_WARN_学习|r |T134596:0|t[铭刻裤子 - 先祖指引]
     .use 210589
     .itemcount 210589,1 --Echo of the Ancestors (1)
     .train 410099,1
@@ -1836,16 +1835,16 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP符文与书籍指南
 #subgroup 腿部
-#name Way of Earth - 12 (The Barrens)
-#title Way of Earth
-#next 水之盾 - 20 (The Barrens)
+#name 土之道 - 12级（贫瘠之地）
+#title 土之道
+#next 水之护盾 - 20 级(贫瘠之地)
 
 
 
 step
-    +为了获得 |T134596:0|t[铭刻 Pants - Way of Earth] |cRXP_WARN_，你必须至少12级，因为这是训练|r |T136075:0|t[净化术]|cRXP_WARN_ 的等级要求|r
-    >>|cRXP_WARN_你需要升级更多等级才能尝试获得|r |T134596:0|t[铭刻 Pants - Way of Earth]
-    >>|cRXP_WARN_Alternatively, you can get|r |T134596:0|t[铭刻 Pants - Way of Earth] |cRXP_WARN_in 银松森林 at level 1+|r
+    +|cRXP_WARN_你必须至少达到12级才能获取|r |T134596:0|t|T136075:0|t[铭刻腿甲 - 土之道] |cRXP_WARN_，因为这是学习|r |T136075:0|t|T136075:0|t[净化术]的等级要求
+    >>|cRXP_WARN_你需要先提升等级，才能尝试获取|r |T134596:0|t|T134596:0|t[铭刻护腿 - 土之道]
+    >>|cRXP_WARN_或者，你可以在|r |T134596:0|t|T134596:0|t[铭刻护腿 - 土之道] |cRXP_WARN_在银松森林1级以上时获取|r
     .train 410107,1
     .xp >12,1
 step
@@ -1856,7 +1855,7 @@ step
 step
     #completewith next
     .goto Orgrimmar,40.31,37.01,15,0
-    .goto Orgrimmar,38.81,36.37,15 >>前往 |cRXP_FRIENDLY_Kardris|r
+    .goto Orgrimmar,38.81,36.37,15 >>前去找 |cRXP_FRIENDLY_卡德里斯|r
     .zoneskip Thunder Bluff
     .train 410107,1
     .xp <12,1
@@ -1870,13 +1869,13 @@ step
     .xp <12,1
 step
     #completewith next
-    .goto Thunder Bluff,22.82,21.11,15 >>前往 |cRXP_FRIENDLY_Siln|r
+    .goto Thunder Bluff,22.82,21.11,15 >>前去找 |cRXP_FRIENDLY_希恩|r
     .zoneskip Orgrimmar
     .train 410107,1
     .xp <12,1
 step
     .goto Thunder Bluff,22.82,21.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Siln|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希恩|r 对话
     .train 370 >>训练 |T136075:0|t[净化术]
     .target Siln Skychaser
     .zoneskip Orgrimmar
@@ -1901,14 +1900,14 @@ step
     .goto The Barrens,58.82,37.67,40,0 --Spawn 5
     .goto The Barrens,58.92,37.53,40,0
     .goto The Barrens,58.94,37.73,40,0
-    >>对 |cRXP_ENEMY_沙漠魅影|r 施放 |T136075:0|t[净化术] 来击杀它。战利品 |T134419:0|t|cRXP_LOOT_[地之符文]|r
+    >>对|T136075:0|t|T134419:0|t[沙漠魅影]使用|cRXP_ENEMY_净化术|r将其击杀。拾取尸体获得|T134419:0|t|T134419:0|t|cRXP_LOOT_[地之符文]|r
     .collect 208758,1 --Earthen Rune (1)
     .unitscan Desert Mirage
     .train 410107,1
     .xp <12,1
 --XX Respawns after 85s-170s
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[地之符文]|r |cRXP_WARN_to learn|r |T134596:0|t[铭刻 Pants - Way of Earth]
+    .cast 402265 >>|cRXP_WARN_使用|r |T134419:0|t|T134596:0|t|cRXP_LOOT_[地之符文]|r |cRXP_WARN_学习|r |T134596:0|t|T134596:0|t[铭刻腿甲 - 土之道]
     .use 208758
     .itemcount 208758,1 --Earthen Rune (1)
     .train 410107,1
@@ -1920,13 +1919,13 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP符文与书籍指南
 #subgroup 腿部
-#name Way of Earth - 14 (银松森林)
-#title Way of Earth
-#next Water 盾牌 - 20 (银松森林)
+#name 土之道 - 14级（银松森林）
+#title 土之道
+#next 水盾 - 20级 (银松森林)
 
 step
-    +|cRXP_WARN_You should be at least level 14 in order to acquire|r |T134596:0|t[铭刻 Pants - Way of Earth] |cRXP_WARN_in 银松森林 alone|r
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T134596:0|t[铭刻 Pants - Way of Earth]
+    +|cRXP_WARN_你至少需要达到14级，才能独自在银松森林获得|r |T134596:0|t|T134596:0|t[铭刻腿甲 - 土之道] |cRXP_WARN_|r
+    >>|cRXP_WARN_你需要先提升等级，才能尝试获取|r |T134596:0|t|T134596:0|t[铭刻护腿 - 土之道]
     .train 410107,1
     .xp >14,1
 step
@@ -1945,21 +1944,21 @@ step
     .goto Silverpine Forest,46.18,19.74,30,0
     .goto Silverpine Forest,46.62,20.44,30,0
     .goto Silverpine Forest,46.07,21.92,30,0
-    >>杀死 |cRXP_ENEMY_Rot Hidden Mystics|r。战利品 |T136008:0|t|cRXP_LOOT_[腐化图腾]|r
+    >>击杀|cRXP_ENEMY_溃烂秘教徒|r。从他们身上拾取|T136008:0|t|T136008:0|t|cRXP_LOOT_[腐化图腾]|r
     .collect 210253,1 --Rot Hide Totem (1)
     .mob Rot Hide Mystic
     .itemcount 208758,<1 --Earthen Rune (1)
     .train 410107,1
 step
     #completewith Rune
-    .cast 425285 >>|cRXP_WARN_使用|r |T136008:0|t|cRXP_LOOT_[腐化图腾]|r |cRXP_WARN_来召唤 |cRXP_ENEMY_Decayed 元素|r
+    .cast 425285 >>|cRXP_WARN_使用|r |T136008:0|t|T136008:0|t|cRXP_LOOT_[腐化图腾]|r |cRXP_WARN_来召唤|cRXP_ENEMY_腐朽的元素生物|r
     .use 210253 --Rot Hide Totem (1)
     .itemcount 210253,1 --Rot Hide Totem (1)
     .train 410107,1
     .xp <14,1
 step
     #completewith next
-    .cast 425285 >>|cRXP_WARN_使用|r |T136008:0|t|cRXP_LOOT_[腐化图腾]|r |cRXP_WARN_来召唤 |cRXP_ENEMY_Decayed 元素|r
+    .cast 425285 >>|cRXP_WARN_使用|r |T136008:0|t|T136008:0|t|cRXP_LOOT_[腐化图腾]|r |cRXP_WARN_来召唤|cRXP_ENEMY_腐朽的元素生物|r
     >>|cRXP_WARN_小心，它会施放|r |T135848:0|t|T135848:0|t[冰霜新星] |cRXP_WARN_（远程瞬发：造成约50点伤害并定身8秒），且等级为15|r
     .use 210253 --Rot Hide Totem (1)
     .itemcount 210253,1 --Rot Hide Totem (1)
@@ -1967,13 +1966,13 @@ step
     .xp >14,1
 step
     #label Rune
-    >>杀死 |cRXP_ENEMY_Decayed 元素|r。战利品 |T134419:0|t|cRXP_LOOT_[地之符文]|r
+    >>击杀|cRXP_ENEMY_腐朽的元素生物|r，并拾取|T134419:0|t|T134419:0|t|cRXP_LOOT_[地之符文]|r
     .collect 208758,1 --Earthen Rune (1)
     .mob Decayed Elemental
     .train 410107,1
 --XX Need to test if it can be summoned anywhere, and how much or how scary it is
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[地之符文]|r |cRXP_WARN_to learn|r |T134596:0|t[铭刻 Pants - Way of Earth]
+    .cast 402265 >>|cRXP_WARN_使用|r |T134419:0|t|T134596:0|t|cRXP_LOOT_[地之符文]|r |cRXP_WARN_学习|r |T134596:0|t|T134596:0|t[铭刻腿甲 - 土之道]
     .use 208758
     .itemcount 208758,1 --Earthen Rune (1)
     .train 410107,1
@@ -1984,13 +1983,13 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP符文与书籍指南
 #subgroup 腿部
-#name Greater 幽魂之狼 - 25 (石爪山脉)
-#title Greater 幽魂之狼
-#next 双武器专精 - 25 (棘齿城)
+#name 高等幽魂之狼 - 25级 (石爪山脉)
+#title 高等幽魂之狼
+#next 双武器专精 - 25级 (棘齿城)
 
 
 step
-    +|cRXP_WARN_You should be at least level 25 in order to acquire|r |T134596:0|t[铭刻 Pants - Greater 幽魂之狼] |cRXP_WARN_in 石爪山脉 alone|r
+    +|cRXP_WARN_你至少需要达到25级，才能独自在石爪山脉获得|r |T134596:0|t|T134596:0|t[铭刻腿甲 - 强效幽魂之狼] |cRXP_WARN_|r
     .train 425343,1
     .xp >25,1
 step
@@ -2005,15 +2004,15 @@ step
     .goto Stonetalon Mountains,33.43,68.97,50,0
     .goto Stonetalon Mountains,33.49,69.40,50,0
     .goto Stonetalon Mountains,36.85,72.04,50,0
-    >>杀死 |cRXP_ENEMY_始生异常|r。战利品 |T134419:0|t|cRXP_LOOT_[原始狂怒符文]|r
-    >>确保检查它的形态（减益）。如果处于|cRXP_WARN_ |T136074:0|t[自然 Form]|r，造成|cRXP_WARN_ |T135824:0|t[火焰 伤害]|r。如果处于|cRXP_WARN_ |T135819:0|t[火焰 Form]|r，造成|cRXP_WARN_ |T135865:0|t[福斯特 伤害]|r。如果处于|cRXP_WARN_ |T135861:0|t[Water Form]|r，造成|cRXP_WARN_ |T136085:0|t[自然 伤害]|r
+    >>击杀 |cRXP_ENEMY_始生异常|r，获取 |T134419:0|t|cRXP_LOOT_[原始狂怒符文]|r
+    >>|cRXP_WARN_务必检查它的形态（减益效果）。如果是|r |T136074:0|t|T135824:0|t[自然形态]|cRXP_WARN_，就使用|r |T135819:0|t|T135865:0|t[火焰伤害]|cRXP_WARN_。如果是|r |T135861:0|t|T136085:0|t[火焰形态]|cRXP_WARN_，就使用|r |T135865:0|t|T135865:0|t[冻伤]|cRXP_WARN_。如果是|r |T135861:0|t|T135861:0|t[流水形态]|cRXP_WARN_，就使用|r |T136085:0|t|T136085:0|t[自然伤害]
     >>|cRXP_WARN_小心，它会施放 |T132939:0|t|T132939:0|t[击退] |cRXP_WARN_（近战瞬发：将目标击飞到空中并造成80点伤害）|r
-    >>|cRXP_WARN_它的刷新时间为5-8分钟，每次都会掉落一个随机的装备绑定绿色物品|r
+    >>|cRXP_WARN_刷新时间为5-8分钟，每次掉落一件随机装绑绿色装备|r
     .collect 210811,1 --Rune of Primordial Fury (1)
     .mob Primordial Anomaly
     .train 425343,1
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[原始狂怒符文]|r |cRXP_WARN_to learn|r |T134596:0|t[铭刻 Pants - Greater 幽魂之狼]
+    .cast 402265 >>|cRXP_WARN_使用|r |T134419:0|t|cRXP_LOOT_[原始狂怒符文]|r |cRXP_WARN_来学习|r |T134596:0|t[铭刻腿甲 - 强效幽魂之狼]
     .use 210811
     .itemcount 210811,1 --Rune of Primordial Fury (1)
     .train 425343,1
@@ -2024,14 +2023,14 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP符文与书籍指南
 #subgroup 腿部
-#name Earth 盾牌 - 25 (艾泽拉斯)
-#title Earth 盾牌
-#next 过载 - 3 (杜隆塔尔) << Orc Shaman/Troll Shaman
-#next 过载 - 3 (莫高雷) << Tauren Shaman
+#name 大地之盾 - 25级（艾泽拉斯）
+#title 大地之盾
+#next 过载 - 3 级(杜隆塔尔) << Orc Shaman/Troll Shaman
+#next 过载 - 3级 (莫高雷) << Tauren Shaman
 
 
 step
-    +|cRXP_WARN_You MUST be at least level 25 in order to acquire|r |T134596:0|t[铭刻 Pants - Earth 盾牌] |cRXP_WARN_as it is the level requirement of entering 黑暗深渊|r
+    +|cRXP_WARN_你至少需要达到25级才能获得|r |T134596:0|t|T134596:0|t[铭刻护腿 - 大地之盾] |cRXP_WARN_，因为这是进入黑暗深渊的等级要求|r
     .train 410101,1
     .xp >25,1
 step
@@ -2043,9 +2042,9 @@ step
     .goto Orgrimmar,50.67,70.39,0
     .goto Orgrimmar,53.74,64.60,15,0
     .goto Orgrimmar,55.54,64.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师瓦巴恩|r 对话
-    >>|cRXP_BUY_购买|r |T134797:0|t[水下呼吸药剂] |cRXP_BUY_和|r |T134717:0|t[智慧药剂] |cRXP_BUY_从拍卖行|r
-    >>|cRXP_WARN_或者，购买材料自己制作：2 |T132799:0|t[Blackmouth Oil] |cRXP_WARN_(或4 |T134302:0|t[Oily Blackmouth] |cRXP_WARN_来制作油），1 |T134191:0|t[Stranglekelp]|cRXP_WARN_，1 |T133436:0|t[Mageroyal]|cRXP_WARN_，和2 |T134412:0|t[布瑞尔索恩]|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师瓦巴恩|r对话
+    >>|cRXP_BUY_从拍卖行购买|r |T134797:0|t|T134717:0|t[水下呼吸药剂] |cRXP_BUY_和|r |T134717:0|t|T134717:0|t[智慧药剂] |cRXP_BUY_|r
+    >>|cRXP_WARN_或者，你也可以购买材料自己制作：2|r |T132799:0|t|T134302:0|t[黑口鱼油] |cRXP_WARN_（或4|r |T134191:0|t|T133436:0|t[黑口鱼] |cRXP_WARN_来制作鱼油），1|r |T134412:0|t|T134191:0|t[荆棘藻]|cRXP_WARN_，1|r |T133436:0|t|T133436:0|t[魔皇草]|cRXP_WARN_，以及2|r |T134412:0|t|T134412:0|t[石南草]
     >>|cRXP_WARN_你稍后会需要这些物品。不要在那之前使用它们|r
     .collect 5996,1 --Elixir of Water Breathing (1)
     .collect 3383,1 --Elixir of Wisdom (1)
@@ -2058,8 +2057,8 @@ step
     .goto Orgrimmar,50.67,70.39,0
     .goto Orgrimmar,53.74,64.60,15,0
     .goto Orgrimmar,55.54,64.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师瓦巴恩|r 对话
-    >>|cRXP_BUY_购买|r |T134797:0|t[水下呼吸药剂] |cRXP_BUY_和|r |T134717:0|t[智慧药剂] |cRXP_BUY_从拍卖行|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师瓦巴恩|r对话
+    >>|cRXP_BUY_从拍卖行购买|r |T134797:0|t|T134717:0|t[水下呼吸药剂] |cRXP_BUY_和|r |T134717:0|t|T134717:0|t[智慧药剂] |cRXP_BUY_|r
     >>|cRXP_WARN_你稍后会需要这些物品。不要在那之前使用它们|r
     .collect 5996,1 --Elixir of Water Breathing (1)
     .collect 3383,1 --Elixir of Wisdom (1)
@@ -2070,9 +2069,9 @@ step
 step
     .goto Thunder Bluff,45.23,59.40,0
     .goto Thunder Bluff,40.41,51.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
-    >>|cRXP_BUY_购买|r |T134797:0|t[水下呼吸药剂] |cRXP_BUY_和|r |T134717:0|t[智慧药剂] |cRXP_BUY_从拍卖行|r
-    >>|cRXP_WARN_或者，购买材料自己制作：2 |T132799:0|t[Blackmouth Oil] |cRXP_WARN_(或4 |T134302:0|t[Oily Blackmouth] |cRXP_WARN_来制作油），1 |T134191:0|t[Stranglekelp]|cRXP_WARN_，1 |T133436:0|t[Mageroyal]|cRXP_WARN_，和2 |T134412:0|t[布瑞尔索恩]|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
+    >>|cRXP_BUY_从拍卖行购买|r |T134797:0|t|T134717:0|t[水下呼吸药剂] |cRXP_BUY_和|r |T134717:0|t|T134717:0|t[智慧药剂] |cRXP_BUY_|r
+    >>|cRXP_WARN_或者，你也可以购买材料自己制作：2|r |T132799:0|t|T134302:0|t[黑口鱼油] |cRXP_WARN_（或4|r |T134191:0|t|T133436:0|t[黑口鱼] |cRXP_WARN_来制作鱼油），1|r |T134412:0|t|T134191:0|t[荆棘藻]|cRXP_WARN_，1|r |T133436:0|t|T133436:0|t[魔皇草]|cRXP_WARN_，以及2|r |T134412:0|t|T134412:0|t[石南草]
     >>|cRXP_WARN_你稍后会需要这些物品。不要在那之前使用它们|r
     .collect 5996,1 --Elixir of Water Breathing (1)
     .collect 3383,1 --Elixir of Wisdom (1)
@@ -2084,8 +2083,8 @@ step
 step
     .goto Thunder Bluff,45.23,59.40,0
     .goto Thunder Bluff,40.41,51.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
-    >>|cRXP_BUY_购买|r |T134797:0|t[水下呼吸药剂] |cRXP_BUY_和|r |T134717:0|t[智慧药剂] |cRXP_BUY_从拍卖行|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
+    >>|cRXP_BUY_从拍卖行购买|r |T134797:0|t|T134717:0|t[水下呼吸药剂] |cRXP_BUY_和|r |T134717:0|t|T134717:0|t[智慧药剂] |cRXP_BUY_|r
     >>|cRXP_WARN_你稍后会需要这些物品。不要在那之前使用它们|r
     .collect 5996,1 --Elixir of Water Breathing (1)
     .collect 3383,1 --Elixir of Wisdom (1)
@@ -2106,14 +2105,14 @@ step
     .train 410101,1
     .xp <25,1
 step
-    >>杀死 |cRXP_ENEMY_阿奎尼斯男爵|r 在黑暗深渊。战利品 |T136222:0|t|cRXP_LOOT_[Strange Water Globe]|r
+    >>在黑暗深渊中击杀|cRXP_ENEMY_阿奎尼斯男爵|r。从他身上拾取|T136222:0|t|T136222:0|t|cRXP_LOOT_[奇怪的水球]|r
     .collect 211454,1 --Strange Water Globe (SoD) (1)
     .mob 阿奎尼斯男爵
     .train 410101,1
     .xp <25,1
 step
-    >>使用|T136222:0|t|cRXP_LOOT_[Strange Water Globe]|r来启动任务
-    .accept 78920 >>接受任务阿奎尼斯男爵
+    >>使用|T136222:0|t|T136222:0|t|cRXP_LOOT_[奇怪的水球]|r来开始任务
+    .accept 78920 >>接受任务 阿奎尼斯男爵
     .use 211454
     .itemcount 211454,1 --Strange Water Globe (SoD) (1)
     .train 410101,1
@@ -2134,7 +2133,7 @@ step
     #label Baron
     .goto Ashenvale,11.56,34.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_耶努萨克雷|r 对话
-    .turnin 78920 >>交任务阿奎尼斯男爵
+    .turnin 78920 >>交任务 阿奎尼斯男爵
     .accept 78506 >>接受任务 元素求救
     .target 耶努萨克雷
     .train 410101,1
@@ -2156,7 +2155,7 @@ step
 	.goto Ashenvale,52.08,72.10,50,0
 	.goto Ashenvale,45.84,70.67,50,0
 	.goto Ashenvale,48.36,69.74,50,0
-    >>击杀 |cRXP_ENEMY_Befouled 水元素|r，拾取它们的 |T132844:0|t|cRXP_LOOT_[Mote of Torrential 狂暴]|r
+    >>击杀 |cRXP_ENEMY_污浊的水元素|r。拾取它们的 |T132844:0|t|cRXP_LOOT_[流水狂怒微粒]|r
     .complete 78506,3 --Mote of Torrential Rage (1)
     .mob 污浊的水元素
     .train 410101,1
@@ -2195,8 +2194,8 @@ step
     .goto Stonetalon Mountains,30.13,73.32,50,0
     .goto Stonetalon Mountains,30.97,67.39,50,0
     .goto Stonetalon Mountains,28.25,65.96,50,0
-    >>击杀 |cRXP_ENEMY_Rogue Flame 调酒师桑塔基德 <酒类商人>|r、|cRXP_ENEMY_Burning Destroyers|r 和 |cRXP_ENEMY_Burning Ravagers|r。拾取它们的 |T132839:0|t|cRXP_LOOT_[Mote of 地狱火 狂暴]|r
-    >>|cRXP_ENEMY_Rogue Flame 调酒师桑塔基德 <酒类商人>|r 与|cRXP_WARN_ Blackened Basilisks|r |cRXP_ENEMY_共享刷新点|r
+    >>击杀 |cRXP_ENEMY_游荡的焰灵|r，|cRXP_ENEMY_燃烧的破坏者|r 和 |cRXP_ENEMY_燃烧的掠夺者|r。拾取它们的 |T132839:0|t|cRXP_LOOT_[地狱火狂怒微粒]|r
+    >>|cRXP_ENEMY_游荡的焰灵|r 与|cRXP_WARN_ 黑色石化蜥蜴|r |cRXP_ENEMY_共享刷新点|r
     .complete 78506,2 --Mote of Infernal Rage (1)
     .mob Rogue Flame Spirit
     .mob Burning Destroyer
@@ -2212,7 +2211,7 @@ step
     .goto Stonetalon Mountains,32.49,73.81,50,0
     .goto Stonetalon Mountains,32.64,67.42,50,0
     .goto Stonetalon Mountains,28.99,65.18,50,0
-    >>击杀 |cRXP_ENEMY_Enraged 石头 调酒师桑塔基德 <酒类商人>|r 和 |cRXP_ENEMY_Furious 石头 调酒师桑塔基德 <酒类商人>|r，拾取它们的 |T132838:0|t|cRXP_LOOT_[Mote of Seismic 狂暴]|r |cRXP_WARN_小心该区域的危险敌人。|r
+    >>击杀 |cRXP_ENEMY_狂怒的石灵|r 和 |cRXP_ENEMY_暴烈的石灵|r。拾取它们的 |T132838:0|t|cRXP_LOOT_[地震狂怒微粒]|r。 |cRXP_WARN_小心该区域的危险敌人。|r
     .complete 78506,1 --Mote of Seismic Rage (1)
     .mob Enraged Stone Spirit
     .mob Furious Stone Spirit
@@ -2244,8 +2243,8 @@ step
     .goto Stonetalon Mountains,30.13,73.32,50,0
     .goto Stonetalon Mountains,30.97,67.39,50,0
     .goto Stonetalon Mountains,28.25,65.96,50,0
-    >>击杀 |cRXP_ENEMY_Rogue Flame 调酒师桑塔基德 <酒类商人>|r、|cRXP_ENEMY_Burning Destroyers|r 和 |cRXP_ENEMY_Burning Ravagers|r，拾取它们的 |T132839:0|t|cRXP_LOOT_[Mote of 地狱火 狂暴]|r
-    >>|cRXP_ENEMY_Rogue Flame 调酒师桑塔基德 <酒类商人>|r 与|cRXP_WARN_ Blackened Basilisks|r |cRXP_ENEMY_共享刷新点|r
+    >>击杀 |cRXP_ENEMY_游荡的焰灵|r，|cRXP_ENEMY_燃烧的破坏者|r 和 |cRXP_ENEMY_燃烧的掠夺者|r。拾取它们的 |T132839:0|t|cRXP_LOOT_[地狱火狂怒微粒]|r
+    >>|cRXP_ENEMY_游荡的焰灵|r 与|cRXP_WARN_ 黑色石化蜥蜴|r |cRXP_ENEMY_共享刷新点|r
     .complete 78506,2 --Mote of Infernal Rage (1)
     .mob Rogue Flame Spirit
     .mob Burning Destroyer
@@ -2261,16 +2260,16 @@ step
     .goto Ashenvale,11.56,34.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_耶努萨克雷|r 对话
     .turnin 78506 >>交任务 元素求救
-    .accept 78537 >>Accept Elixir of Insight
-    .accept 78537 >>Turnin Elixir of Insight
-    .accept 78561 >>接受任务 洞察药水
+    .accept 78537 >>接受任务 洞察药剂
+    .accept 78537 >>交任务 洞察药剂
+    .accept 78561 >>接受任务 洞察药剂
     .target 耶努萨克雷
     .train 410101,1
     .xp <25,1
 step
     .goto Ashenvale,11.38,33.08
-    >>Use the |T134791:0|t[Elixir of Insight] near the Bonfire
-    >>|cRXP_WARN_你不需要等待RP演出|r
+    >>在篝火旁使用 |T134791:0|t[洞察药剂]
+    >>|cRXP_WARN_你不需要等待剧情演出|r
     .complete 78561,1 --Vision Witnessed (1)
     .use 210712
     .train 410101,1
@@ -2278,8 +2277,8 @@ step
 step
     .goto Ashenvale,11.56,34.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_耶努萨克雷|r 对话
-    .turnin 78561 >>交任务 洞察药水
-    .accept 78575 >>Accept Hirzek
+    .turnin 78561 >>交任务 洞察药剂
+    .accept 78575 >>接受任务 希尔泽克
     .target 耶努萨克雷
     .train 410101,1
     .xp <25,1
@@ -2290,9 +2289,9 @@ step
     .xp <25,1
 step
     .goto The Barrens,43.18,78.59
-    >>击杀|cRXP_ENEMY_Hirzek|r. Loot him for |T135146:0|t|cRXP_LOOT_[Hirzek's Staff]|r
-    >>小心|cRXP_WARN_ 因为 |cRXP_ENEMY_Hirzek|r 施放|r |T135805:0|t[闪电箭] |cRXP_WARN_（远程施法：造成约110点自然伤害）并且是25级精英。可以独自挑战，但你可能想找人帮助你。|r
-    >>小心|cRXP_WARN_ 因为 |cRXP_ENEMY_Bound Element|r 在你杀死|cRXP_ENEMY_ Hirzek|r 并留下|cRXP_ENEMY_ Bound Element|r 活着时会有无限仇恨范围（它会跟随你直到它消失或你杀死它）|r
+    >>击杀|cRXP_ENEMY_希尔泽克|r。拾取他的 |T135146:0|t|cRXP_LOOT_[希尔泽克的法杖]|r
+    >>小心|cRXP_WARN_ 因为 |cRXP_ENEMY_希尔泽克|r 会施放|r |T135805:0|t[闪电箭] |cRXP_WARN_（远程施法：造成约110点自然伤害）并且是25级精英。它是可以单刷，但是你可能需要找人协助你|r
+    >>|cRXP_WARN_小心！如果你击杀了 |cRXP_ENEMY_希尔泽克|r 却让 |cRXP_ENEMY_被束缚的元素|r 活着，|cRXP_ENEMY_被束缚的元素|r 就会获得无限的仇恨范围（它会一直跟着你，直到它消失或被你击杀）|r
     .complete 78575,1 --Hirzek's Staff (1)
     .complete 78575,2 --Hirzek (1)
     .mob Hirzek
@@ -2308,12 +2307,12 @@ step
 step
     .goto Ashenvale,11.56,34.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_耶努萨克雷|r 对话
-    .turnin 78575 >>Turnin Hirzek
+    .turnin 78575 >>交任务 希尔泽克
     .target 耶努萨克雷
     .train 410101,1
     .xp <25,1
 step
-    .cast 402265 >>|cRXP_WARN_使用|r |T134419:0|t|cRXP_LOOT_[大地之盾符文]|r |cRXP_WARN_来学习|r |T134596:0|t[铭刻 Pants - Earth 盾牌]
+    .cast 402265 >>|cRXP_WARN_使用|r |T134419:0|t|cRXP_LOOT_[大地之盾符文]|r |cRXP_WARN_来学习|r |T134596:0|t[铭刻裤子 - 大地之盾]
     .use 210746
     .itemcount 210746,1 --Rune of Earth Shield (1)
     .train 410101,1
@@ -2351,7 +2350,7 @@ step
     .zone Desolace >>前往 |cFFfa9602凄凉之地|r
 step
     .goto Desolace,56.6,21.8
-    >>杀死 |cRXP_ENEMY_烈焰先知杜贝伦|r。战利品他的 |T136008:0|t|cRXP_LOOT_Corrupted 火焰图腾|r
+    >>击杀 |cRXP_ENEMY_烈焰先知杜贝伦|r。拾取他的 |T136008:0|t[|cRXP_LOOT_腐化火焰图腾|r]
     .collect 213451,1
     .mob Flameseer Dubelen
 step
@@ -2375,8 +2374,8 @@ step
     .goto 1414,39.17,58.09,25,0
     .goto 1414,39.01,57.87,25,0
     .goto 1414,39.26,57.69
-    >>点击橙色晶体中的 |cRXP_PICK_布鲁 水晶|r 来收集 |T134088:0|t[Tear of Theradras]
-    >>|cRXP_WARN_小心，此区域内的敌人都是精英且能眩晕。|r |cFFFF0000你很可能会多次死亡。|r
+    >>点击橙色水晶之中的一个|cRXP_PICK_蓝色能量水晶|r 来收集|T134088:0|t[瑟莱德丝之泪]
+    >>|cRXP_WARN_请小心，因为该区域的敌人是精英怪且会施放昏迷。|r |cFFFF0000你很可能会死亡多次|r
     .collect 213552,1
 step
     .goto 1414,38.45,57.84,25,0
@@ -2385,33 +2384,33 @@ step
     .goto 1414,38.43,57.43,25,0
     .goto 1443,29.65,57.19,25,0
     .goto 1443,27.72,57.51
-    >>在紫色晶体中点击 |cRXP_PICK_布鲁 水晶|r 来收集 |T134088:0|t[Tear of Theradras]
-    >>|cRXP_WARN_小心这个区域的敌人是精英并且能眩晕。|r |cFFFF0000你可能会多次死亡|r
+    >>点击紫色水晶之中的一个|cRXP_PICK_蓝色能量水晶|r来收集|T134088:0|t[瑟莱德丝之泪]
+    >>|cRXP_WARN_请小心，因为该区域的敌人是精英怪且会施放昏迷。|r |cFFFF0000你很可能会死亡多次|r
     .collect 213553,1
 step
     #completewith next
     .zone Orgrimmar >>前往 |cFFfa9602奥格瑞玛|r
 step
     .goto Orgrimmar,38.94,38.39
-    .gossip 4047 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_佐尔·孤树|r 对话并选择选项
+    .gossip 4047 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_佐尔·孤树|r 对话并选择对话选项
     -- .gossipoption --x insert id
     .target 佐尔·孤树
 step
     #completewith next
-    .zone Thunder Bluff >>旅行到 |cFFfa9602雷霆崖|r
+    .zone Thunder Bluff >>前往 |cFFfa9602雷霆崖|r
 step
     .goto Thunder Bluff,78.61,28.55
-    .gossip 5769 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Arch 德鲁伊 哈缪尔·符文图腾|r 对话并选择选项
+    .gossip 5769 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大德鲁伊哈缪尔·符文图腾|r 对话并选择对话选项
     -- .gossipoption --x insert id
     .target 大德鲁伊哈缪尔·符文图腾
 step
     -- .gossipoption --x insert id
     .goto Thunder Bluff,47.00,49.82
-    .gossip 2995 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔尔|r 对话并选择选项飞往 月光林地
+    .gossip 2995 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔尔|r 对话并选择对话选项飞往月光林地
     .target 塔尔
 step
     #completewith next
-    .zone Moonglade >>旅行到 |cFFfa9602月光林地|r
+    .zone Moonglade >>前往 |cFFfa9602月光林地|r
 step
     .goto Moonglade,36.178,41.798
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_守护者雷姆洛斯|r对话
@@ -2432,7 +2431,7 @@ RXPGuides.RegisterGuide([[
 step
     .train 410100,1
     #completewith next
-    .zone The Barrens >>旅行到 |cFFfa9602The Barrens|r
+    .zone The Barrens >>前往 |cFFfa9602贫瘠之地|r
 step
     .train 410100,1
     .goto The Barrens,43.46,90.18,0
@@ -2441,10 +2440,10 @@ step
     .subzone 491,2 >>进入剃刀沼泽
 step
     .train 410100,1
-    >>击杀 |cRXP_ENEMY_卡尔加·刺肋|r，拾取她的 |T134944:0|t|cRXP_LOOT_Tattered 注释|r，使用它来接受任务
-    >>|cRXP_WARN_强烈建议为此组建5人小队|r
+    >>击杀 |cRXP_ENEMY_卡尔加·刺肋|r。拾取他的 |T134944:0|t|cRXP_LOOT_破烂的笔记|r。使用它来接受任务
+    >>|cRXP_WARN_建议组成5人小队。|r
     .collect 212748,1 --Tattered Note (1x)
-    .accept 79358 >>接受任务破烂的笔记
+    .accept 79358 >>接受任务 破烂的笔记
     .mob 卡尔加·刺肋
 step
     .train 410100,1
@@ -2454,14 +2453,14 @@ step
     .train 410100,1
     .goto Thousand Needles,46.10,51.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉乌·峭壁信使|r 对话
-    .turnin 79358 >>交任务破烂的笔记
+    .turnin 79358 >>交任务 破烂的笔记
     .accept 79360 >>接受任务 元素援助
     .target 拉乌·峭壁信使
 step
     .train 410100,1
     .goto Thousand Needles,46.21,51.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_詹迪亚|r 对话
-    >>|cRXP_BUY_购买一个|r |T132793:0|t[水晶 Vial] |cRXP_BUY_从她那里|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_詹迪亚|r 对话
+    >>|cRXP_BUY_从她那里购买一个|r |T132793:0|t|T132793:0|t[水晶瓶] |cRXP_BUY_|r
     .collect 8925,1 --Crystal Vial (1x)
     .target Jandia
 step
@@ -2471,11 +2470,11 @@ step
 step
     .train 410100,1
     .goto Alterac Mountains,80.499,66.923
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_捕风者巴斯拉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_捕风者巴斯拉 |r 对话
     .turnin 79360 >>交任务 元素援助
     .accept 79361 >>接受任务 风之力量
     .accept 79362 >>接受任务 地之力量
-    .accept 79363 >>接受任务 水的力量
+    .accept 79363 >>接受任务 水之力量
     .target 捕风者巴斯拉
 step
     .train 410100,1
@@ -2498,7 +2497,7 @@ step
     .waypoint Desolace,68.4,48.4,25,0
     .waypoint Desolace,69.4,64.6,25,0
     .waypoint Desolace,58.8,65.6,25,0
-    >>杀死凄凉之地的 |cRXP_ENEMY_Whirlwind Elementals|r。拾取它们的 |T132845:0|t|cRXP_LOOT_Whirling 精华|r
+    >>在凄凉之地击杀|cRXP_ENEMY_旋风元素|r，拾取它们掉落的|T132845:0|t|T132845:0|t|cRXP_LOOT_旋转精华|r
     .complete 79361,1 -- Power of da Wind
     .mob Whirlwind Ripper
     .mob Whirlwind Stormwalker
@@ -2518,7 +2517,7 @@ step
     .waypoint Dustwallow Marsh,35.2,44.6,25,0
     .waypoint Dustwallow Marsh,42.6,62.0,25,0
     .waypoint Dustwallow Marsh,50.0,54.0,25,0
-    >>杀死尘泥沼泽的 |cRXP_ENEMY_Withervine Elementals|r。拾取它们的 |T132846:0|t|cRXP_LOOT_Rushing 精华|r
+    >>在尘泥沼泽中击杀|cRXP_ENEMY_枯萎藤元素|r，并从它们身上拾取|T132846:0|t|T132846:0|t|cRXP_LOOT_奔涌精华|r
     .complete 79363,1 -- Power of da Water
     .mob Withervine Mire Beast
     .mob Withervine Rager
@@ -2537,7 +2536,7 @@ step
     .waypoint Badlands,13.8,38.6,50,0
     .waypoint Badlands,21.2,45.8,50,0
     .waypoint Badlands,18.0,42.8,50,0
-    >>杀死 |cRXP_ENEMY_次级石元素|r 和 |cRXP_ENEMY_Rock Elementals|r。拾取它们的 |T132846:0|t|cRXP_LOOT_Rumbling Essences|r
+    >>击杀|cRXP_ENEMY_小型岩石元素生物|r和|cRXP_ENEMY_岩石元素生物|r，拾取它们掉落的|T132846:0|t|T132846:0|t|cRXP_LOOT_轰鸣精华|r
     .complete 79362,1 -- Power of da Earth
     .mob 石元素
     .mob 次级石元素
@@ -2548,10 +2547,10 @@ step
 step
     .train 410100,1
     .goto Alterac Mountains,80.499,66.923
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_捕风者巴斯拉|r 对话
-    .turnin 79361 >>交任务 风之力
-    .turnin 79362 >>交任务 大地之力
-    .turnin 79363 >>交任务 水之力
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_捕风者巴斯拉 |r 对话
+    .turnin 79361 >>交任务 风之力量
+    .turnin 79362 >>交任务 地之力量
+    .turnin 79363 >>交任务 水之力量
     .accept 79364 >>接受任务 简单的容器
     .turnin 79364 >>交任务 简单的容器
     .accept 79365 >>接受任务 翼下之风
@@ -2563,7 +2562,7 @@ step
 step
     .train 410100,1
     .goto Thousand Needles,46.10,51.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉乌·峭壁信使|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拉乌·峭壁信使|r 对话
     .turnin 79365 -- With Wind Beneath Your Wings
     .accept 79366 --Calm Before the Storm
     .target 拉乌·峭壁信使
@@ -2573,20 +2572,20 @@ step
     .target 奈瑟
 step
     .train 410100,1
-    >>击杀 |cRXP_ENEMY_Ravaging Tempest|r。拾取 |cRXP_LOOT_Eye of the Tempest|r
-    >>|cRXP_WARN_如果你在这个过程中死亡，请与|r |cRXP_FRIENDLY_灵魂医者|r |cRXP_WARN_对话，以便将你传送至你的尸体|r
+    >>击杀|cRXP_ENEMY_狂风怒号|r，拾取其掉落的|cRXP_LOOT_狂风之眼|r
+    >>|cRXP_WARN_如果在这个过程中死亡，与|r |cRXP_FRIENDLY_精神医者|r |cRXP_WARN_对话，将你传送至尸体处|r
     .collect 212792,1 --Eye of the Tempest (1x)
     .mob Dreath's Head Necromancer
     .mob Skeletal Servant
     .mob Ravaging Tempest
 step
     .train 410100,1
-    .vehicle >>与 |cRXP_FRIENDLY_乱风岗 双足飞龙|r 交互
-    .timer 9,飞行 剧情演出
+    .vehicle >>与 |cRXP_FRIENDLY_乱风岗双足飞龙|r 互动
+    .timer 9,飞行 剧情BP
 step
     .train 410100,1
     .goto Thousand Needles,46.10,51.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉乌·峭壁信使|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拉乌·峭壁信使|r 对话
     .turnin 79366 --Calm Before the Storm
     .accept 79442 --Catching up
     .target 拉乌·峭壁信使
@@ -2597,11 +2596,11 @@ step
 step
     .train 410100,1
     .goto Alterac Mountains,80.499,66.923
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_捕风者巴斯拉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_捕风者巴斯拉 |r 对话
     .turnin 79442 --Catching up
     .target 捕风者巴斯拉
 step
-    .train 410100 >>使用 |T134419:0|t[|cRXP_WARN_风暴符文|r] |cRXP_FRIENDLY_来学习|r |T136032:0|t[漩涡武器]
+    .train 410100 >>|cRXP_WARN_使用|r |T134419:0|t|T136032:0|t[|cRXP_FRIENDLY_风暴符文|r]学习|T136032:0|t|T136032:0|t[漩涡武器]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2609,7 +2608,7 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP符文与书籍指南
 #subgroup 腰带
-#name 能量涌动 - 30 (阿拉希高地)
+#name 能量涌动 - 30级 (阿拉希高地)
 #title 能量涌动
 
 -- Power Surge
@@ -2617,7 +2616,7 @@ RXPGuides.RegisterGuide([[
 step
     .train 416054,1
     #completewith next
-    .zone Arathi Highlands >>前往 |cFFfa9602阿拉希高地|r |cRXP_WARN_|cRXP_WARN_强烈建议组织一个至少3名玩家的小队。|r
+    .zone Arathi Highlands >>前往 |cFFfa9602阿拉希高地|r |cRXP_WARN_|cRXP_WARN_强烈建议组织一个至少有3名玩家的小队。|r
 step
     .train 416054,1
     .goto Arathi Highlands,31.91,41.15,50,0
@@ -2627,24 +2626,24 @@ step
     .goto Arathi Highlands,31.08,43.68,12,0
     .goto Arathi Highlands,34.40,44.25,12,0
     .goto Arathi Highlands,35.51,44.26
-    >>杀死 |cRXP_ENEMY_Boulderfist 莫加尔大王 <食人魔之王>|r 和 |cRXP_ENEMY_Boulderfist Brutes|r。从它们身上拾取 |T134921:0|t|cRXP_LOOT_[食人魔 引雷针]|r
+    >>击杀|cRXP_ENEMY_石拳食人魔|r和|cRXP_ENEMY_石拳蛮兵|r。从它们身上拾取|T134921:0|t|T134921:0|t|cRXP_LOOT_[食人魔引雷针]|r
     .collect 213426,1 --Ogre Lightning Rod (1x)
     .mob Boulderfist Ogre
     .mob Boulderfist Enforcer
 step
     .train 416054,1
     .goto Arathi Highlands,33.45,44.49
-    .cast 434350 >>点击 |cRXP_PICK_Soft Soil|r 将 |T134921:0|t|cRXP_LOOT_[引雷针]|r 插入地面。
+    .cast 434350 >>点击 |cRXP_PICK_松软土壤|r 将 |T134921:0|t|cRXP_LOOT_[引雷针]|r 插入地面。
 step
     .train 416054,1
     >>对 |cRXP_ENEMY_引雷针|r 施放 |T136048:0|t[闪电箭] 10次
-    >>杀死 |cRXP_ENEMY_Tamkar|r 或在他刷新时风筝他。从他身上拾取 |T134419:0|t[能量符文]
-    >>|cRXP_WARN_他会在30秒后自动死亡，所以你可以风筝他，而不是直接击杀他|r
+    >>击杀 |cRXP_ENEMY_塔姆卡|r 或在等他刷新后风筝他。从他身上拾取 |T134419:0|t[能量符文]
+    >>|cRXP_WARN_他会在30秒后自动死亡，所以可以风筝他拖时间，不必硬杀|r
     .collect 213093,1 --Rune of Power (1x)
     .mob Lightning Rod
     .mob Tamkar
 step
-    .train 416054 >>|cRXP_WARN_使用|r |T134419:0|t[能量符文] |cRXP_WARN_来学习|r |T134337:0|t[能量 Surge]
+    .train 416054 >>|cRXP_WARN_使用|r |T134419:0|t[能量符文] |cRXP_WARN_来学习|r |T134337:0|t[能量涌动]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2653,7 +2652,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP符文与书籍指南
 #subgroup 布兹
 #title 诱饵图腾
-#name 诱饵图腾 - 27 (千针石林)
+#name 诱饵图腾 - 27级 (千针石林)
 
 -- Decoy Totem
 
@@ -2663,8 +2662,8 @@ step
 step
     .train 425882,1
     .goto Thousand Needles,46.21,51.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_詹迪亚|r 对话
-    >>|cRXP_BUY_购买|r |T132906:0|t[丝线] |cRXP_BUY_从她那里|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_詹迪亚|r 对话
+    >>|cRXP_BUY_购买1个|r |T132906:0|t[丝线] |cRXP_BUY_从她那里|r
     .collect 4291,1 --Silken Thread (1)
     .target Jandia
 step
@@ -2675,7 +2674,7 @@ step
     .waypoint Thousand Needles,56.68,49.88,40,0
     .waypoint Thousand Needles,55.97,45.97,40,0
     .waypoint Thousand Needles,54.29,48.10,40,0
-    >>击杀 |cRXP_ENEMY_Cloud Serpents|r，拾取它们的 |cRXP_LOOT_Cloud Serpent 毒牙|r
+    >>击杀 |cRXP_ENEMY_风蛇|r。拾取它们的 |cRXP_LOOT_风蛇利齿|r
     .collect 213709,3 --Cloud Serpent Fang (3x)
     .mob Cloud Serpent
     .mob Venomous Cloud Serpent
@@ -2690,14 +2689,14 @@ step
     .waypoint Thousand Needles,26.29,52.79,15,0
     .waypoint Thousand Needles,27.23,54.04,15,0
     .waypoint Thousand Needles,26.55,55.77,15,0
-    >>击杀 cRXP_ENEMY_Screeching Harpies|r，拾取它们的 |cRXP_LOOT_Strong 鹰身人 乱羽|r
+    >>击杀 cRXP_ENEMY_尖啸鹰身人|r。拾取它们的 |cRXP_LOOT_强健鹰身人羽毛|r
     .collect 213701,10 --Strong Harpy Feather (10x)
     .mob Screeching Harpy
     .mob Screeching Roguefeather
     .mob Screeching Windcaller
 step
     .train 425882,1
-    .use 213709 >>|cRXP_WARN_使用|r 你的 |T133723:0|t[云端翔龙 毒牙] |cRXP_WARN_来制作|r |T133291:0|t[Offering to the 清风之魂]
+    .use 213709 >>|cRXP_WARN_使用|r 你的 |T133723:0|t[风蛇利齿] |cRXP_WARN_来制作|r |T133291:0|t[风灵供品]
     .collect 213737,1 --Offering to the Wind Spirit (1x)
 step
     .goto Thousand Needles,31.47,36.71,30 >>前往黑云峰
@@ -2714,16 +2713,16 @@ step
 step
     .train 425882,1
     .goto Thousand Needles,39.44,41.98
-    .aura 435218 >>|cRXP_WARN_使用|r |T133291:0|t[Offering to the 清风之魂] |cRXP_WARN_在|r |cRXP_PICK_Altar of the 清风之魂|r
+    .aura 435218 >>|cRXP_WARN_在|r |cRXP_WARN_风灵祭坛|r |cRXP_PICK_使用|r |T133291:0|t[风灵供品]
     >>|cRXP_WARN_祭坛位于小屋后面，最东边的高峰上|r
     .use 213737
 step
     .goto Thousand Needles,40.43,43.29
-    >>跳下去向清风之魂展示你的信念来获得 |T134419:0|t|cRXP_FRIENDLY_Rune of Decoys|r
-    >>|cRXP_WARN_确保你的|r |T133291:0|t[Offering to the 清风之魂] |cRXP_WARN_不会过期。它持续30秒|r
+    >>跳下去向清风之魂展示你的信念来获得 |T134419:0|t|cRXP_FRIENDLY_诱饵符文|r
+    >>|cRXP_WARN_确保你的|r |T133291:0|t[风灵供品] |cRXP_WARN_不会过期。它持续30秒|r
     .collect 213096,1 --Rune of Decoys (1x)
 step
-    .train 425882 >>|cRXP_WARN_使用|r |T134419:0|t|cRXP_FRIENDLY_Rune of Decoys|r |cRXP_WARN_来学习|r |T134508:0|t[诱饵图腾]
+    .train 425882 >>|cRXP_WARN_使用|r |T134419:0|t|cRXP_FRIENDLY_诱饵符文|r |cRXP_WARN_来学习|r |T134508:0|t[诱饵图腾]
     .use 213096
 ]])
 
@@ -2743,15 +2742,15 @@ step
 step
     #completewith next
     .train 410103,1
-    .goto Thousand Needles,46.17,52.95,20 >>旅行到乱风岗南边的下桥起点处
+    .goto Thousand Needles,46.17,52.95,20 >>前往乱风岗正南边的低桥的起点
 step
     .train 410103,1
     .goto Thousand Needles,46.82,53.52
-    >>|cRXP_WARN_使用|r |T136095:0|t[幽魂之狼] |cRXP_WARN_来小心地跳向|r |cRXP_PICK_Weathered Cache|r
-    >>点击 |cRXP_PICK_Weathered Cache|r 来拾取 |T136095:0|t|cRXP_FRIENDLY_Echo of the 阿尔法|r
+    >>|cRXP_WARN_使用|r |T136095:0|t[幽魂之狼] |cRXP_WARN_来小心地跳向|r |cRXP_PICK_风蚀储物箱|r
+    >>点击 |cRXP_PICK_风蚀储物箱|r 来拾取 |T136095:0|t|cRXP_FRIENDLY_头狼的回响|r
     .collect 206985,1
 step
-    .train 410103 >>|cRXP_WARN_使用|r |T136095:0|t|cRXP_FRIENDLY_Echo of the 阿尔法|r |cRXP_WARN_来学习|r |T408696:0|t[头狼之魂]
+    .train 410103 >>|cRXP_WARN_使用|r |T136095:0|t|cRXP_FRIENDLY_头狼的回响|r |cRXP_WARN_来学习|r |T408696:0|t[头狼之魂]
     .use 206985
 ]])
 
@@ -2760,8 +2759,8 @@ RXPGuides.RegisterGuide([[
 << Shaman SoD
 #group RestedXP符文与书籍指南
 #subgroup 护腕
-#title 经典怀旧服 道具
-#name 经典怀旧服 道具 - 41 (塔纳利斯)
+#title 滚雷
+#name 滚雷 - 41 (塔纳利斯)
 
 -- Rolling Thunder
 -- PERMOK: Needs better waypoints
@@ -2773,17 +2772,17 @@ step
 step
     .train 432236,1
     .goto Tanaris,43.0,41.2
-    .aura 446888,1 >>|cRXP_WARN_点击|r |cRXP_PICK_Odd 图腾|r。这会将你变身为幽魂之狼 |cRXP_WARN_并增加你的伤害承受 50%|r
+    .aura 446888,1 >>|cRXP_WARN_点击|r|cRXP_PICK_怪异图腾|r。你会变成一头幽魂之狼，|cRXP_WARN_并使你受到的伤害提高50%|r
 step
     .train 432236,1
-    >>|cRXP_WARN_朝另一个图腾跑去，躲避怪物。|r 拾取出现的宝箱以获得 |T134419:0|t[|cRXP_FRIENDLY_Rune of 滚雷符文|r]
-    *|cRXP_WARN_你正在受到50%额外伤害。小心!|r 你也可以提前清除前往另一个图腾路上的怪物
+    >>|cRXP_WARN_朝另一个图腾跑，同时避开小怪。|r 拾取出现的宝箱中的|T134419:0|t[|cRXP_FRIENDLY_滚雷符文|r]
+    *|cRXP_WARN_你正在承受额外50%的伤害。小心！|r 你也可以提前清理通往另一个图腾路径上的小怪
     .goto Tanaris,45.6,37.8
     .collect 220613,1
 step
     .itemcount 220613,1
     .use 220613
-    .train 432236 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 滚雷符文|r] |cRXP_WARN_来学习|r |T136111:0|t[经典怀旧服 道具]
+    .train 432236 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_滚雷符文|r] |cRXP_WARN_来学习|r |T136111:0|t[滚雷]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2791,8 +2790,8 @@ RXPGuides.RegisterGuide([[
 << Shaman SoD
 #group RestedXP符文与书籍指南
 #subgroup 护腕
-#title 静电冲击
-#name 静电冲击 - 44 (菲拉斯)
+#title 静电震击
+#name 静电震击 - 44 (菲拉斯)
 
 -- PERMOK: Needs better waypoints
 
@@ -2806,12 +2805,12 @@ step
 step
     .train 432238,1
     .goto Feralas,60.0,66.8
-    .aura 447259 >>点击 |cRXP_PICK_Charged 图腾|r 来获得 |T136075:0|t[Charged Air] buff
+    .aura 447259 >>点击 |cRXP_PICK_充能的图腾|r 来获得 |T136075:0|t[电化空气] buff
 step
     #label ChargedAir
     .train 432238,1
-    >>停留在图腾附近并击杀周围的 |cRXP_WARN_Gordunni 莫加尔大王 <食人魔之王>|cRXP_ENEMY_ 使用闪电伤害（例如闪电之盾），直到 |r旋刃暴风|cRXP_ENEMY_ 生成。|r
-    >>击杀 |cRXP_ENEMY_旋刃暴风|r。拾取战利品以获得 |T134419:0|t[|cRXP_FRIENDLY_Rune of 静电震击符文|r]
+    >>留在图腾附近并使用闪电伤害（例如闪电盾）击杀周围的|cRXP_WARN_ 戈杜尼食人魔|cRXP_ENEMY_ 直到|r 旋转的风暴|cRXP_ENEMY_ 刷新|r。
+    >>击杀 |cRXP_ENEMY_旋转的风暴|r。拾取|T134419:0|t[|cRXP_FRIENDLY_静电震击符文|r]
     *|cRXP_WARN_队伍中的所有玩家都必须待在图腾范围内|r
     .goto Feralas,60.0,66.8
     .collect 220614,1
@@ -2822,14 +2821,14 @@ step
 step
     .itemcount 220614,1
     .use 220614
-    .train 432238 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 静电震击符文|r] |cRXP_WARN_来学习|r |T237587:0|t[静电冲击]
+    .train 432238 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_静电震击符文|r] |cRXP_WARN_来学习|r |T237587:0|t[静电震击]
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Shaman SoD
 #group RestedXP符文与书籍指南
-#subgroup 经典怀旧服 道具
+#subgroup 头盔
 #title 潮汐奔涌
 #name 潮汐奔涌 - 42 (菲拉斯)
 
@@ -2841,20 +2840,20 @@ step
     .train 432234,1
 step
     .train 432234,1
-    >>点击帐篷后面的 |cRXP_PICK_Old 恐惧哨兵的王庭重靴|r 以拾取 |T134239:0|t[Old 钥匙]
+    >>点击帐篷后面的 |cRXP_PICK_陈旧的箱子|r 以拾取 |T134239:0|t[老旧的钥匙]
     .goto Feralas,76.6,48.0
     .collect 221497,1
 step
     .train 432234,1
-    >>点击海底的 |cRXP_PICK_Old 胸部|r 以拾取 |T134419:0|t[|cRXP_FRIENDLY_Rune of 潮汐奔涌符文|r]
-    *|cRXP_WARN_小心！这会召唤四个 |cRXP_ENEMY_Simmering Elementals|r （等级 42，冰霜免疫）|r
+    >>点击海底的 |cRXP_PICK_老旧的箱子|r 以拾取 |T134419:0|t[|cRXP_FRIENDLY_潮汐奔涌符文|r]
+    *|cRXP_WARN_小心！这会召唤四个 |cRXP_ENEMY_熏烟元素|r （42级，冰霜免疫）|r
     .goto Feralas,79.2,49.4
     .collect 220612,1
     .mob Simmering Elemental
 step
     .itemcount 220612,1
     .use 220612
-    .train 432234 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 潮汐奔涌符文|r] |cRXP_WARN_来学习|r |T237590:0|t[潮汐奔涌]
+    .train 432234 >>|cRXP_WARN_使用|r |T134419:0|t|T237590:0|t[|cRXP_FRIENDLY_潮汐奔涌符文|r] |cRXP_WARN_学习|r |T237590:0|t|T237590:0|t[潮汐奔涌]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2863,7 +2862,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP符文与书籍指南
 #subgroup 护腕
 #title 潮汐奔涌
-#name 潮汐奔涌 - 45 (艾泽拉斯)
+#name 潮汐奔涌 - 45级 (艾泽拉斯)
 
 --x shiek: needs better coordinates
 step
@@ -2876,7 +2875,7 @@ step
     .goto Tanaris,51.2,52.0,40,0
     .goto Tanaris,41.0,48.6,40,0
     .goto Tanaris,41.8,44.0,40,0
-    >>击杀 |cRXP_ENEMY_疱爪土狼|r、|cRXP_ENEMY_陆地暴怒者|r 和 |cRXP_ENEMY_Glasshide Gazer.|r 拾取战利品以获得 |cRXP_LOOT_|T134327:0|tSmudged 萨满祭司's Notes|r
+    >>击杀|cRXP_ENEMY_疱爪土狼|r、|cRXP_ENEMY_土地暴怒者|r和|cRXP_ENEMY_玻璃皮凝视者|r，从它们身上拾取|cRXP_LOOT_|T134327:0|t|T134327:0|t模糊的萨满笔记|r
     .collect 221352,1 --1/1 Smudged Shaman's Notes
     .mob Blisterpaw Hyena
     .mob Land Rager
@@ -2884,21 +2883,21 @@ step
     .train 432241,1
 step
     .goto Tanaris,62,64
-    >>点击 |cRXP_PICK_|T134327:0|tSmudged 萨满祭司's Notes|r 来开始任务
-    .accept 82072,1 >>接受任务净化大地
+    >>点击|cRXP_PICK_|T134327:0|t|T134327:0|t被弄脏的萨满笔记|r以开始任务。
+    .accept 82072,1 >>接受任务 净化大地
     .use 221352
     .train 432241,1
 step
     .isOnQuest 82072
     .goto Tanaris,62,64
-    .cast 446581 >>在 腐化世界 图腾 附近使用 |T134743:0|t[奔波尔霸 大地灵契]。
+    .cast 446581 >>在|T134743:0|t|T134743:0|t[被腐蚀的大地图腾]附近使用[浑浊大地灵契]。
     .use 221349
     .train 432241,1
 step
     .goto Tanaris,62.0,62.6
-    >>击杀|cRXP_ENEMY_Corrupt Moderate Manifestation of Earth|r then >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Earth.|r
-    .turnin 82072 >>交任务净化大地
-    .accept 82075 >>接受任务
+    >>击杀|cRXP_ENEMY_被腐蚀的中等土元素|r，然后>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_中等土元素|r对话
+    .turnin 82072 >>交任务 净化大地
+    .accept 82075 >>接受任务 响应大地的召唤
     .mob Corrupt Moderate Manifestation of Earth
     .target Moderate Manifestation of Earth
     .train 432241,1
@@ -2911,7 +2910,7 @@ step
     .goto Azshara,19.4,64.0,20,0
     .goto Azshara,21.2,60.8,20,0
     .goto Azshara,21.0,60.0,20,0
-    >>杀死 |cRXP_ENEMY_哈达尔萨特|r、|cRXP_ENEMY_哈达尔欺诈者|r 和 |cRXP_ENEMY_哈达尔魔仆|r。拾取战利品以获得 |cRXP_LOOT_|T134331:0|tWaterlogged 萨满祭司's Notes|r
+    >>击杀|cRXP_ENEMY_哈尔达萨特|r、|cRXP_ENEMY_哈尔达欺诈者|r和|cRXP_ENEMY_哈尔达邪能侍僧|r。从他们身上拾取|cRXP_LOOT_|T134331:0|t|T134331:0|t浸水的萨满笔记|r
     .collect 221351,1 --1/1 Waterlogged Shaman's Notes
     .mob Haldarr Satyr
     .mob Haldarr Trickster
@@ -2919,21 +2918,21 @@ step
     .train 432241,1
 step
     .goto Azshara,14,49
-    >>点击 |cRXP_PICK_|T134331:0|tWaterlogged 萨满祭司's Notes|r 来开始任务
-    .accept 82073,1 >>接受任务净化流水
+    >>点击|cRXP_PICK_|T134331:0|t|T134331:0|t浸水的萨满笔记|r以开始任务。
+    .accept 82073,1 >>接受任务 净化流水
     .use 221352
     .train 432241,1
 step
     .isOnQuest 82073
     .goto Azshara,14,49
-    .cast 446581 >>在 Corrupted 水图腾 附近使用 |T134743:0|t[奔波尔霸 大地灵契]。
+    .cast 446581 >>在受污染的水图腾附近使用|T134743:0|t|T134743:0|t[浑浊大地灵契]。
     .use 221348
     .train 432241,1
 step
     .goto Azshara,15.0,49.8
-    >>击杀|cRXP_ENEMY_Corrupt Moderate Manifestation of Water|r then >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Water.|r
-    .turnin 82073 >>交任务净化流水
-    .accept 82076 >>接受任务
+    >>击杀|cRXP_ENEMY_腐化的中型水之实体|r，然后>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_中型水之实体|r交谈
+    .turnin 82073 >>交任务 净化流水
+    .accept 82076 >>接受任务 响应水的召唤
     .mob Corrupt Moderate Manifestation of Water
     .target Moderate Manifestation of Water
     .train 432241,1
@@ -2946,28 +2945,28 @@ step
     .goto The Hinterlands,48.8,53.0,40,0
     .goto The Hinterlands,47.6,40.8,40,0
     .goto The Hinterlands,58.2,41.8,40,0
-    >>击杀 |cRXP_ENEMY_Green 淤泥|r 和 |cRXP_ENEMY_Jade 软泥.|r 拾取战利品以获得 |cRXP_LOOT_|T134332:0|tTorn 萨满祭司's Notes|r
+    >>击杀|cRXP_ENEMY_绿色淤泥|r和|cRXP_ENEMY_翡翠软泥怪|r。从它们身上拾取|cRXP_LOOT_|T134332:0|t|T134332:0|t破损的萨满笔记|r
     .collect 220379,1 --1/1 Torn Shaman's Notes
     .mob Green Sludge
     .mob Jade Ooze
     .train 432241,1
 step
     .goto The Hinterlands,51,46
-    >>点击 |cRXP_PICK_|T134332:0|tTorn 萨满祭司's Notes|r 来开始任务
-    .accept 81960,1 >>接受任务净化空气
+    >>点击|cRXP_PICK_|T134332:0|t|T134332:0|t撕裂的萨满笔记|r以开始任务
+    .accept 81960,1 >>接受任务 净化空气
     .use 220379
     .train 432241,1
 step
     .isOnQuest 82072
     .goto The Hinterlands,51,46
-    .cast 446581 >>在 Corrupted 空气图腾 附近使用 |T134743:0|t[奔波尔霸 大地灵契]。
+    .cast 446581 >>在|T134743:0|t|T134743:0|t[被污染的空气图腾]附近使用浑浊大地灵契。
     .use 221349
     .train 432241,1
 step
     .goto The Hinterlands,51.2,47.0
-    >>击杀|cRXP_ENEMY_Corrupt Moderate Manifestation of Air|r then >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Earth.|r
-    .turnin 81960 >>交任务净化空气
-    .accept 81968 >>接受任务
+    >>击杀|cRXP_ENEMY_被腐蚀的中等空气形态|r，然后>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_中等大地形态|r交谈。
+    .turnin 81960 >>交任务 净化空气
+    .accept 81968 >>接受任务 响应空气的召唤
     .mob Corrupt Moderate Manifestation of Air
     .target Moderate Manifestation of Air
     .train 432241,1
@@ -2983,28 +2982,28 @@ step
     .goto Searing Gorge,28.8,44.4,40,0
     .goto Searing Gorge,30.6,64.6,40,0
     .goto Searing Gorge,31.6,73.8,40,0
-    >>击杀 |cRXP_ENEMY_Magma 元素|r 和 |cRXP_ENEMY_Inferno 元素.|r 拾取战利品以获得 |cRXP_LOOT_|T134327:0|tCharred 萨满祭司's Notes|r
+    >>击杀|cRXP_ENEMY_岩浆元素生物|r和|cRXP_ENEMY_地狱火元素生物。|r从它们身上拾取|cRXP_LOOT_|T134327:0|t|T134327:0|t焦灼萨满的笔记|r
     .collect 221350,1 --1/1 Charred Shaman's Notes
     .mob Inferno Elemental
     .mob Magma Elemental
     .train 432241,1
 step
     .goto Searing Gorge,24,72
-    >>点击 |cRXP_PICK_|T134329:0|tCharred 萨满祭司's Notes|r 来开始任务
-    .accept 82071,1 >>接受任务净化火焰
+    >>点击|cRXP_PICK_|T134329:0|t|T134329:0|t焦灼的萨满笔记|r以开始任务。
+    .accept 82071,1 >>接受任务 净化火焰
     .use 221352
     .train 432241,1
 step
     .isOnQuest 82072
     .goto Searing Gorge,24,72
-    .cast 446581 >>在 Corrupted 火焰图腾 附近使用 |T134743:0|t[奔波尔霸 大地灵契]。
+    .cast 446581 >>在受污染的火焰图腾附近使用|T134743:0|t|T134743:0|t[浑浊大地灵契]。
     .use 221349
     .train 432241,1
 step
     .goto Searing Gorge,24.0,72.4
-    >>杀死 |cRXP_ENEMY_堕落的烈火之魂|r 然后 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_堕落的烈火之魂|r 对话。
-    .turnin 82071 >>交任务净化火焰
-    .accept 82074 >>接受任务
+    >>击杀|cRXP_ENEMY_腐化的中等火焰化身|r，然后>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_中等火焰化身|r交谈
+    .turnin 82071 >>交任务 净化火焰
+    .accept 82074 >>接受任务 响应火焰的召唤
     .mob Corrupt Moderate Manifestation of Fire
     .target Moderate Manifestation of Fire
     .train 432241,1
@@ -3018,54 +3017,16 @@ step
     .goto Feralas,44.8,46.2,20,0
     .goto Feralas,41.0,37.8,20,0
     .goto Feralas,37.4,33.0,20,0
-    >>杀死 |cRXP_ENEMY_巨型海元素|r 和 |cRXP_ENEMY_Sea 元素.|r 拾取它们的 |cRXP_LOOT_|T132849:0|t元素精华|r
+    >>击杀|cRXP_ENEMY_海沫|r和|cRXP_ENEMY_海元素生物。|r 从它们身上拾取|cRXP_LOOT_|T132849:0|t|T132849:0|t元素精华|r
     .collect 220510,3
     .train 432241,1
 step
-    .cast 446803 >>使用 |T134118:0|t[道具 of Earth]
+    .cast 446803 >>使用|T134118:0|t|T134118:0|t[大地碎片]
     .use 221355
     .train 432241,1
 step
     .goto Feralas,36.0,32.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Moderate Manifestation of Earth.|r 对话
-    .turnin 82075 >> Answering Earth's Call
-    .target Moderate Manifestation of Earth
-    .train 432241,1
-step
-    #loop
-    .goto Feralas,37.4,33.0,20,0
-    .goto Feralas,41.0,37.8,20,0
-    .goto Feralas,44.8,46.2,20,0
-    .goto Feralas,50.2,51.4,20,0
-    >>杀死 |cRXP_ENEMY_巨型海元素|r 和 |cRXP_ENEMY_Sea 元素.|r 拾取它们的 |cRXP_LOOT_|T132849:0|t元素精华|r
-    .collect 220510,3
-    .train 432241,1
-step
-    .cast 446802 >>使用 |T134130:0|t[烈焰碎片]
-    .use 221353
-    .train 432241,1
-step
-    .goto Feralas,36.0,32.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Moderate Manifestation of Earth.|r 对话
-    .turnin 82075 >> Answering Earth's Call
-    .target Moderate Manifestation of Earth
-    .train 432241,1
-step
-    #loop
-    .goto Feralas,50.2,51.4,20,0
-    .goto Feralas,44.8,46.2,20,0
-    .goto Feralas,41.0,37.8,20,0
-    .goto Feralas,37.4,33.0,20,0
-    >>杀死 |cRXP_ENEMY_巨型海元素|r 和 |cRXP_ENEMY_Sea 元素.|r 拾取它们的 |cRXP_LOOT_|T132849:0|t元素精华|r
-    .collect 220510,3
-    .train 432241,1
-step
-    .cast 445748 >>使用 |T134133:0|t[道具 of Air]
-    .use 220375
-    .train 432241,1
-step
-    .goto Feralas,36.0,32.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Moderate Manifestation of Earth.|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_温和的大地之灵|r交谈
     .turnin 82075 >>响应大地的召唤
     .target Moderate Manifestation of Earth
     .train 432241,1
@@ -3075,25 +3036,63 @@ step
     .goto Feralas,41.0,37.8,20,0
     .goto Feralas,44.8,46.2,20,0
     .goto Feralas,50.2,51.4,20,0
-    >>杀死 |cRXP_ENEMY_巨型海元素|r 和 |cRXP_ENEMY_Sea 元素.|r 拾取它们的 |cRXP_LOOT_|T132849:0|tElemental 精华|r
+    >>击杀|cRXP_ENEMY_海沫|r和|cRXP_ENEMY_海元素生物。|r 从它们身上拾取|cRXP_LOOT_|T132849:0|t|T132849:0|t元素精华|r
     .collect 220510,3
     .train 432241,1
 step
-    .cast 446804 >>使用 |T134089:0|t[道具 of Water]
+    .cast 446802 >>使用|T134130:0|t|T134130:0|t[火焰碎片]
+    .use 221353
+    .train 432241,1
+step
+    .goto Feralas,36.0,32.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_温和的大地之灵|r交谈
+    .turnin 82075 >>响应大地的召唤
+    .target Moderate Manifestation of Earth
+    .train 432241,1
+step
+    #loop
+    .goto Feralas,50.2,51.4,20,0
+    .goto Feralas,44.8,46.2,20,0
+    .goto Feralas,41.0,37.8,20,0
+    .goto Feralas,37.4,33.0,20,0
+    >>击杀|cRXP_ENEMY_海沫|r和|cRXP_ENEMY_海元素生物。|r 从它们身上拾取|cRXP_LOOT_|T132849:0|t|T132849:0|t元素精华|r
+    .collect 220510,3
+    .train 432241,1
+step
+    .cast 445748 >>使用 |T134133:0|t|T134133:0|t[空气碎片]
+    .use 220375
+    .train 432241,1
+step
+    .goto Feralas,36.0,32.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_温和的大地之灵|r交谈
+    .turnin 82075 >>响应大地的召唤
+    .target Moderate Manifestation of Earth
+    .train 432241,1
+step
+    #loop
+    .goto Feralas,37.4,33.0,20,0
+    .goto Feralas,41.0,37.8,20,0
+    .goto Feralas,44.8,46.2,20,0
+    .goto Feralas,50.2,51.4,20,0
+    >>击杀|cRXP_ENEMY_海沫|r和|cRXP_ENEMY_海元素生物。|r 从它们身上拾取|cRXP_LOOT_|T132849:0|t|T132849:0|t元素精华|r
+    .collect 220510,3
+    .train 432241,1
+step
+    .cast 446804 >>使用 |T134089:0|t|T134089:0|t[流水碎片]
     .use 221354
     .train 432241,1
 step
     .goto Feralas,36.0,32.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Moderate Manifestation of Earth.|r 对话
-    .turnin 82075 >> Answering Earth's Call
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_温和的大地之灵|r交谈
+    .turnin 82075 >>响应大地的召唤
     .target Moderate Manifestation of Earth
     .train 432241,1
 step
-    >>杀死 |cRXP_ENEMY_Twilight Dark 萨满祭司.|r 拾取他的 |cRXP_LOOT_|cRXP_FRIENDLY_|T134419:0|tRune of 能量超载|r|r
+    >>击杀|cRXP_ENEMY_暮光暗影萨满。|r 从他身上拾取|cRXP_LOOT_|cRXP_FRIENDLY_|T134419:0|t|T134419:0|t能量超载符文|r|r
     .collect 220616,1 --1/1 Rune of Overcharged
     .train 432241,1
 step
-    .train 432241 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 能量超载|r] |cRXP_WARN_来训练|r |T132213:0|t[能量超载]
+    .train 432241 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_能量超载符文|r] |cRXP_WARN_来训练|r |T132213:0|t[能量超载]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -3111,7 +3110,7 @@ step
 step
     .goto Felwood,62.4,9.0
     .train 440634,1
-    >>杀死 |cRXP_ENEMY_Deadwood Shamans|r, |cRXP_ENEMY_Deadwood Avengers|r 和 |cRXP_ENEMY_Deadwood Den Watchers|r. 拾取它们的 |T134918:0|t[|cRXP_LOOT_流电圣像|r]
+    >>击杀|cRXP_ENEMY_死木萨满祭司|r，|cRXP_ENEMY_死木复仇者|r 和 |cRXP_ENEMY_死木守卫|r。拾取它们的|T134918:0|t|cRXP_LOOT_被污染的灵魂碎片|r
     .goto Feralas,76.6,48.0
     .collect 225838,1
     .mob Deadwood Shaman
@@ -3123,8 +3122,8 @@ step
     .use 225838
 step
     .train 440634,1
-    .aura 408828 >>|cRXP_WARN_你现在必须用单一施放击杀3个敌人|r |T136015:0|t[闪电链]
-    >>|cRXP_WARN_拉3只怪并将它们的生命值降低到大约5%，然后施放|r |T136015:0|t[闪电链]
+    .aura 408828 >>|cRXP_WARN_你现在必须施放单次|r |T136015:0|t[闪电链] 击杀3个敌人
+    >>|cRXP_WARN_拉3只怪并将每只的血量打到大概5%然后施放|r |T136015:0|t[闪电链]
 step
     .itemcount 225838,1
     .use 225838
@@ -3154,20 +3153,20 @@ step
     .goto Burning Steppes,54.8,62.2,60,0
     .goto Burning Steppes,35.6,61.6,60,0
     .goto Burning Steppes,41.6,43.6,60,0
-    >>杀死 |cRXP_ENEMY_Greater Obsidian Elementals|r. 拾取它们的 |cRXP_LOOT_Molten Obsidian 岩核|r
+    >>击杀|cRXP_ENEMY_巨型黑曜石元素|r。拾取它们的 |cRXP_LOOT_熔火黑曜石之核|r
     .collect 225676,1
     .mob Greater Obsidian Elemental
 step
     .train 416062,1
     .goto Redridge Mountains,44.6,50.0
     >>|cRXP_WARN_你现在有10分钟的时间跳入任何地方的水里|r
-    >>|cRXP_WARN_旅行到赤脊山并跳入湖中|r
-    >>|cRXP_WARN_如果你的炉石靠近水，你也可以那样做|r
-    >>|cRXP_WARN_跳跃进入水中会将 |cRXP_LOOT_Molten Obsidian 岩核|r 转变成|r |T237477:0|t[|cRXP_LOOT_蒙灰黑曜石之核|r]
+    >>|cRXP_WARN_前往赤脊山并跳入湖中|r
+    >>|cRXP_WARN_如果你的炉石绑定在水边，你也可以选择使用炉石|r
+    >>|cRXP_WARN_跳进水中会将 |cRXP_LOOT_熔火黑曜石之核|r 转变成|r |T237477:0|t[|cRXP_LOOT_蒙灰黑曜石之核|r]
     .collect 225675,1
 step
     .train 416062,1
-    .use 225675 >>|cRXP_WARN_打开|r |T237477:0|t[|cRXP_LOOT_Sooty Obsidian 岩核|r] |cRXP_WARN_来获得|r |T134419:0|t[|cRXP_LOOT_沉着符文|r]
+    .use 225675 >>|cRXP_WARN_打开|r |T237477:0|t[|cRXP_LOOT_蒙灰黑曜石之核|r] |cRXP_WARN_来获得|r |T134419:0|t[|cRXP_LOOT_沉着符文|r]
     .collect 225740,1
 step
     .itemcount 225740,1
@@ -3180,27 +3179,27 @@ RXPGuides.RegisterGuide([[
 << Shaman SoD
 #group RestedXP符文与书籍指南
 #subgroup 披风
-#title 野性狼魂
-#name 野性狼魂 - 60 (冬泉谷)
+#title 野性幽魂
+#name 野性幽魂 - 60 (冬泉谷)
 
 step
     .train 440630,1
     #completewith next
-    .zone Winterspring >>旅行到冬泉谷
-    >>|cRXP_WARN_注释你必须击杀一个60级精英。考虑带上一个朋友|r
+    .zone Winterspring >>前往冬泉谷
+    >>|cRXP_WARN_记住你必须击杀一个60级精英。考虑带上一个朋友|r
 step
     #completewith next
     .goto Winterspring,67.93,41.44,50 >>进入雪人洞穴
 step
     .goto Winterspring,69.87,37.92
-    >>|cRXP_WARN_前往雪人洞穴后部|r 与 |cRXP_FRIENDLY_Frijidar|r 对话
-    >>|cRXP_WARN_他将在几秒后变得敌对|r
-    >>击杀 |cRXP_ENEMY_Frijidar|r，从其身上拾取 |T134419:0|t[|cRXP_LOOT_Rune of the Bound 精神|r]
+    >>|cRXP_WARN_前往雪人洞穴后部|r 与 |cRXP_FRIENDLY_弗里吉达尔|r 对话
+    >>|cRXP_WARN_他将在几秒后变成敌对状态|r
+    >>击杀 |cRXP_ENEMY_弗里吉达尔|r。拾取 |T134419:0|t[|cRXP_LOOT_束缚之魂符文|r]
     .collect 225914,1
     .mob Frijidar
     .skipgossip
 step
     .itemcount 225914,1
     .use 225914
-    .train 440630 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_LOOT_Rune of the Bound 精神|r] |cRXP_WARN_来学习|r |T237577:0|t[野性狼魂]
+    .train 440630 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_LOOT_束缚之魂符文|r] |cRXP_WARN_来学习|r |T237577:0|t[野性狼魂]
 ]])

@@ -1,6 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
 
-
 RXPGuides.RegisterGuide([[
 #classic
 #version 1
@@ -103,7 +102,7 @@ step << Warlock
     .train 20387,1
 step << Warlock
     .goto StormwindClassic,25.25,78.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .turnin 1688 >>交任务 苏伦娜·凯尔东
     .accept 1689 >>接受任务誓缚
     .target 黑暗缚灵者加科因
@@ -122,7 +121,7 @@ step << Warlock
     .complete 1689,1 --Kill Summoned Voidwalker (x1)
     .mob 虚空行者
 step << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .target 黑暗缚灵者加科因
     .goto StormwindClassic,25.25,78.59
     .turnin 1689 >>交任务誓缚
@@ -583,7 +582,7 @@ step
     .goto Redridge Mountains,41.52,54.68
     .complete 125,1 --Oslow's Toolbox (1)
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_工头奥斯洛|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_工头奥斯洛|r 对话
 	.target Foreman Oslow
     .goto Redridge Mountains,32.13,48.63
     .turnin 125 >>交任务 丢失的工具
@@ -659,7 +658,7 @@ step
 step
     #optional
     .goto StormwindClassic,63.982,75.338
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马库斯·乔纳森将军|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马库斯·乔纳森将军|r对话
     .turnin 120 >>交任务 送往暴风城的信
     .accept 121 >>接受任务 送往暴风城的信
     .target General Marcus Jonathan
@@ -785,11 +784,11 @@ step
     .goto Redridge Mountains,29.71,44.26
     .target 拜里弗·科纳彻尔
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拜里弗·科纳彻尔|r 对话
-    .accept 91 >>接受任务所罗门的律法
+    .accept 91 >>接受任务 所罗门的律法
 step
     .goto Redridge Mountains,26.75,46.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t点击 |cRXP_FRIENDLY_通缉告示|r
-    .accept 180 >>接受任务通缉：范高雷中尉
+    .accept 180 >>接受任务 通缉：范高雷中尉
 step
     .goto Redridge Mountains,21.85,46.32
     .target 玛蒂·詹罗斯
@@ -878,7 +877,7 @@ step
     .turnin 124 >>交任务 豺狼人的乱吠
     .accept 126 >>接受任务 群山中的嚎叫
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_工头奥斯洛|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_工头奥斯洛|r 对话
 	.target Foreman Oslow
     .goto Redridge Mountains,32.13,48.63
     .turnin 89 >>交任务 止水湖上的桥
@@ -1135,7 +1134,7 @@ step
 .dungeon DM
     .goto Westfall,60.4,72.2
     .goto Westfall,40.4,71.6
-    .subzone 1581 >>现在你应该开始组队准备进入死亡矿井
+    .subzone 1581 >>现在你应该开始寻找前往死亡矿井的小队
     >>在组死亡矿井队伍的同时，刷豺狼人
 step
 .dungeon DM
@@ -1486,7 +1485,7 @@ step
     >>|cRXP_WARN_在跳向海岸之前，小心|cRXP_ENEMY_斯拉丁|r（稀有怪，如果刷新了的话）|r
     >>|cRXP_WARN_到达海边时小心西边的|cRXP_ENEMY_蓝腮袭击者|r|r
     .link https://youtu.be/QcEUvwu49KI?t=336 >>https://youtu.be/QcEUvwu49KI?t=336 >> |cRXP_WARN_点击此处作为参考（强烈建议你这样做）|r
-    .goto Wetlands,12.69,60.97,15 >>将炉石使用回米奈希尔港
+    .goto Wetlands,12.69,60.97,15 >>前往米奈希尔港，湿地
     .mob 湿地鳄鱼幼崽
     .mob 蓝腮袭击者
     .unitscan Sludginn

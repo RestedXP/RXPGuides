@@ -2,7 +2,6 @@ if GetLocale() ~= "zhCN" then return end
 local faction = UnitFactionGroup("player")
 if faction == "Horde" then return end
 
-
 RXPGuides.RegisterGuide([[
 #classic
 #version 1
@@ -33,7 +32,7 @@ step << Mage/Hunter/Priest/Paladin/Warrior/Warlock
     >>|cRXP_BUY_将垃圾卖给商人，并购买|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_暗影打击符文|r]|r << Rogue
     >>|cRXP_BUY_出售你的|r |T135005:0|t[衬衣] |cRXP_BUY_，并从他那里购买 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：活化烈焰|r]|r << Mage
     >>|cRXP_BUY_卖掉你的|r |T135005:0|t|T132540:0|t[衬衣]和|T134419:0|t|T133739:0|t[靴子] |cRXP_WARN_（它们无法铭刻）|r |cRXP_BUY_，然后从他那里购买|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_杀戮命令符文|r]和|T133739:0|t|T133739:0|t[|cRXP_FRIENDLY_论述：雄狮之心|r]|r << Hunter
-    >>|cRXP_BUY_向商人出售垃圾物品并购买以下所有符文:|r << Warlock
+    >>|cRXP_BUY_垃圾卖店并购买以下的所有AoE符文|r << Warlock
     .collect 205947,1 << Priest --Prophecy of a Desecrated Citadel
     .collect 226398,1  << Paladin --Testament of Martyrdom
     .collect 205420,1 << Paladin --Libram of Judgement
@@ -72,7 +71,7 @@ step << Mage/Hunter/Priest/Paladin/Warrior/Warlock
     .train 403619 >>使用 |T133733:0|t[|cRXP_FRIENDLY_魔典：邪甲术|r] 来学习 |T136156:0|t[邪甲术] << Warlock
     .engrave 7 >>在你的裤子上铭刻 |T236174:0|t[夺命射击] << Hunter
     .engrave 7 >>在裤子上铭刻|T135820:0|t|T135820:0|t[活化烈焰] << Mage
-    .engrave 7 >>铭刻 |T237570:0|t[裂魂魔] 在你的裤子上 << Priest
+    .engrave 7 >>在你的裤子上铭刻 |T237570:0|t[裂魂魔] << Priest
     .engrave 7 >>在你的裤子上铭刻 |T236317:0|t[狂乱攻击] << Warrior
     >>|cRXP_WARN_提示：|r 你可以用|T135812:0|t|T135820:0|t[火球术]拉多只|cRXP_ENEMY_霜狼|r，然后用|T135820:0|t|T135820:0|t[活体烈焰]进行AOE击杀 << Mage
 step << Paladin
@@ -372,7 +371,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯兰·库尔曼|r 对话，NPC在里面
     .turnin 3106 >>交任务 简易符文 << Dwarf
     .turnin 3112 >>交任务 简易备忘录 << Gnome
-    .accept 77655 >>接受任务 失落符文 << Dwarf
+    .accept 77655 >>接受任务 失落的符文 << Dwarf
     .turnin 77655 >>交任务 失落的符文 << Dwarf
     .accept 77656 >>接受任务 失落的符文 << Gnome
     .turnin 77656 >>交任务 失落的符文 << Gnome
@@ -384,7 +383,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_索姆·哈格林|r 对话
     .turnin 3109 >>交任务 密文符文 << Dwarf
     .turnin 3113 >>交任务 密文备忘录 << Gnome
-    .accept 77658 >> Accept Thrice Stolen << Dwarf
+    .accept 77658 >>接受任务 三度失窃 << Dwarf
     .turn in 77658 >>in 77658 >> 交任务三度失窃 << Dwarf
     .accept 77659 >>接受任务 三度失窃 << Gnome
     .turnin 77659 >>交任务 三度失窃 << Gnome
@@ -429,7 +428,7 @@ step << Gnome Warlock/Dwarf Priest
     #season 2
     #label GlovesEquip
     #completewith Observations
-    .equip 10,711 >>|cRXP_WARN_装备|r |T132961:0|t[破布手套]
+    .equip 10,711 >>|cRXP_WARN_装备|r |T132961:0|t|T132961:0|t[破布手套]
     .use 711
     .train 402862,3 << Priest
     .train 403919,3 << Warlock
@@ -644,7 +643,7 @@ step << Warlock
     #season 2
     .goto Dun Morogh,28.650,66.145
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在楼上与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话
-    .turnin 1599 >>交任务开端
+    .turnin 1599 >>交任务 开端
     .target 阿拉玛尔·格里姆
 step << Paladin/Warlock/Hunter
     #hardcore
@@ -969,7 +968,7 @@ step << Gnome Mage
     #season 2
     #label GlovesEquip
     #completewith Observations
-    .equip 10,711 >>|cRXP_WARN_装备|r |T132961:0|t[破布手套]
+    .equip 10,711 >>|cRXP_WARN_装备|r |T132961:0|t|T132961:0|t[破布手套]
     .use 711
     .train 401760,3
 step << Gnome Mage
@@ -1181,7 +1180,7 @@ step << Rogue
     .destroy 2947 >>删除包里的|T135426:0|t[小飞刀] 你已不再需要它了
 step << Rogue
     .goto Dun Morogh,47.563,52.608
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在后室里与 |cRXP_FRIENDLY_霍格拉尔·巴坎|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在后室与 |cRXP_FRIENDLY_霍格拉尔·巴坎|r 对话
     .trainer >>训练你的职业技能
     .train 921 >>务必训练|T133644:0|t|T133644:0|t|cRXP_PICK_搜索|r，之后获取符文时会用到
     .target 霍格拉尔·巴坎
@@ -1895,7 +1894,7 @@ step << Dwarf Hunter
     .target 格瑞夫
 step << Rogue
     .goto Dun Morogh,47.563,52.608
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在后室里与 |cRXP_FRIENDLY_霍格拉尔·巴坎|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在后室与 |cRXP_FRIENDLY_霍格拉尔·巴坎|r 对话
     >>|cRXP_WARN_只学习|r |T132147:0|t[双持] |cRXP_WARN_和|r |T132307:0|t[疾跑]|cRXP_WARN_。不要学习其他技能，把金币留到后面使用|r
     .train 674 >>训练 |T132147:0|t[双武器]
     .train 2983 >>训练 |T132307:0|t[疾跑]

@@ -2,7 +2,6 @@ if GetLocale() ~= "zhCN" then return end
 local faction = UnitFactionGroup("player")
 if faction == "Horde" then return end
 
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -592,10 +591,10 @@ step
     #label TheryluneE
     .goto Darkshore,38.65,87.34
 .target 瑟瑞露尼
->>与 |cRXP_FRIENDLY_瑟瑞露尼|r 对话
+>>与|cRXP_FRIENDLY_瑟瑞露尼|r 对话
     .accept 945 >>接受任务 护送瑟瑞露尼
 step
-     >>将占卜碗从背包中丢到地上
+     >>将占卜之碗从背包中丢到地上
     .turnin 944 >>交任务 主宰之剑
     .accept 949 >>接受任务 暮光之锤的营地
 step
@@ -852,7 +851,7 @@ step
     .goto Redridge Mountains,29.72,44.26
 .target 拜里弗·科纳彻尔
 >>与|cRXP_FRIENDLY_拜里弗·科纳彻尔|r交谈
-    .accept 91 >>接受任务所罗门的律法
+    .accept 91 >>接受任务 所罗门的律法
 step
     .goto Redridge Mountains,29.99,44.45
     >>进入建筑内
@@ -866,7 +865,7 @@ step
     .accept 127 >>接受任务卖鱼
 step
     .goto Redridge Mountains,26.75,46.42
-    .accept 180 >>接受任务通缉：范高雷中尉
+    .accept 180 >>接受任务 通缉：范高雷中尉
 step
     >>在旅馆内
     .goto Redridge Mountains,27.09,45.65
@@ -968,7 +967,7 @@ step
     .accept 143 >>接受任务 送往西部荒野的信
 .target 拜里弗·科纳彻尔
 >>与|cRXP_FRIENDLY_拜里弗·科纳彻尔|r交谈
-    .accept 91 >>接受任务所罗门的律法
+    .accept 91 >>接受任务 所罗门的律法
 step
     >>进入旅馆的顶楼
     .goto Redridge Mountains,26.47,45.35

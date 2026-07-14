@@ -422,11 +422,14 @@ RXPGuides.RegisterGuide([[
 #group RestedXP 联盟 1-20 级
 #defaultfor NightElf
 #next 14-16级 黑海岸
+
 step
     .goto Teldrassil,60.5,56.3
     .target 赛恩·腐蹄
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赛恩·腐蹄|r 对话
     .accept 488 >>接受任务 赛恩的要求
+step
+    #label HCHunterStart --hidden step for #include
 step
     #sticky
     #completewith DenlansEarth
@@ -749,6 +752,8 @@ step
     .target 赛恩·腐蹄
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赛恩·腐蹄|r 对话
     .turnin 488 >>交任务  赛恩的要求
+step
+    #label HCHunterEnd --hidden step for #include
 step
     #xprate < 1.5
     .goto Teldrassil,60.7,54.4
@@ -1348,7 +1353,7 @@ step << Hunter
 #xprate >1.99
     .goto Darnassus,40.377,8.545
     .target 祖卡斯特
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖卡斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_祖卡斯特|r 对话
     .turnin 6103 >>交任务 训练野兽
 step << !Rogue
     .goto Darnassus,39.72,92.68,10,0
@@ -1649,7 +1654,7 @@ step << Hunter
 	.goto Teldrassil,37.6,28.8,0
     >>|cRXP_WARN_施放|r |T132164:0|t[驯服野兽] |cRXP_WARN_在|cRXP_ENEMY_巨翼猎枭|r 以驯服它|r -- .tame 1997
     .train 2981 >>|cRXP_WARN_用它攻击怪物以学习|r |T132140:0|t [爪击(等级 2)]
-    .link https://www.wow-petopia.com/classic/training.php >>https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击此处了解更多关于宠物训练的信息|r
+    .link https://www.wow-petopia.com/classic/training.php >>https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击这里了解更多关于宠物训练的信息|r
 	.unitscan 巨翼猎枭
 step
     #sticky
@@ -1675,6 +1680,13 @@ step
     >>|cRXP_WARN_如果她不在河的东侧，则在前往西侧之前完成|r |T134339:0|t[肿瘤]|cRXP_WARN_ 任务|r
     .complete 2518,1 --Collect Silvery Spinnerets (x1)
     .mob 萨丝拉
+step
+    .goto Teldrassil,41.7,41.8
+	>>击杀 |cRXP_ENEMY_林精践踏者|r, |cRXP_ENEMY_林精泥泞兽|r 和 |cRXP_ENEMY_林精长老|r。拾取他们的 |cRXP_LOOT_青苔之瘤|r
+    .complete 923,1 --Collect Mossy Tumor (x5)
+    .mob 林精长老
+    .mob 林精践踏者
+    .mob 林精泥泞兽
 step
     .goto Teldrassil,38.3,34.3
     .target 哨兵阿瑞尼亚·碎云
@@ -1810,7 +1822,7 @@ step << Hunter
 #xprate <1.99
     .goto Darnassus,40.377,8.545
     .target 祖卡斯特
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖卡斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_祖卡斯特|r 对话
     .turnin 6103 >>交任务 训练野兽
 step << Hunter
     >>|cRXP_WARN_从 |r祖卡斯特|cRXP_FRIENDLY_ 右侧的坡道上去|r
@@ -1906,7 +1918,7 @@ step << Hunter
     #season 0
     .goto Darnassus,58.76,44.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿瑞耶尔·天影|r 对话
-	.vendor >>|cRXP_BUY_Buy|r |T132382:0|t[锋利的箭]
+	.vendor >>|cRXP_BUY_购买|r |T132382:0|t[锋利的箭]
     .target 阿瑞耶尔·天影
 step << Hunter
     #completewith next

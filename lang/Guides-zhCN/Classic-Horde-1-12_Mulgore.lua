@@ -3,7 +3,6 @@ local faction = UnitFactionGroup("player")
 if faction == "Alliance" then return end
 
 
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -2004,7 +2003,6 @@ step << Druid
 step << Druid
     #completewith next
     .cast 18960 >>|cRXP_WARN_施放|r |T135758:0|t[传送：月光林地]
-    .zoneskip Moonglade
 step << Druid
     .goto Moonglade,56.21,30.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特|r 对话
@@ -2066,7 +2064,7 @@ step
     .target 图加·符文图腾
 step << Tauren
     .goto The Barrens,51.5,30.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索克|r 对话
     .turnin 854 >>交任务 十字路口之旅
     .target 索克
 step
@@ -2117,7 +2115,7 @@ step
 step
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图加|r 对话
-    .turnin 870 >>交任务遗忘之池
+    .turnin 870 >>交任务  遗忘之池
     .accept 877 >>接受任务死水绿洲
     .target 图加·符文图腾
     .isQuestComplete 870
@@ -2311,7 +2309,7 @@ step
 step
     #ah
     .goto Thunder Bluff,40.39,51.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
     >>|cRXP_BUY_从拍卖行购买12个|r |T134252:0|t[轻皮] |cRXP_BUY_|r
     .collect 2318,12,768,1 --Light Leather (12)
     .target Auctioneer Stampi
@@ -2334,7 +2332,7 @@ step << Shaman
     #loop
     #completewith VentureCoKills
     >>在矿洞内部及外侧打开 |cRXP_PICK_冲击补给品|r。拾取它们的|cRXP_LOOT_爆盐采矿炸弹|r
-    >>|cRXP_WARN_停留在洞穴的上层，如果可能的话|r
+    >>|cRXP_WARN_如果可能的话，尽量待在洞穴的上层|r
     .complete 76156,1 --Seaforium Mining Charge (5)
     .train 410104,1
     .xp <4,1
@@ -2390,7 +2388,7 @@ step << Shaman
     .goto Mulgore,59.64,36.05,15,0 --Outside
     .goto Mulgore,61.72,35.15,15,0 --Outside
     >>在矿洞内部及外侧打开 |cRXP_PICK_冲击补给品|r。拾取它们的|cRXP_LOOT_爆盐采矿炸弹|r
-    >>|cRXP_WARN_尽可能停留在洞穴的上层|r
+    >>|cRXP_WARN_如果可能的话，尽量待在洞穴的上层|r
     .complete 76156,1 --Seaforium Mining Charge (5)
     .train 410104,1
     .xp <4,1
@@ -2566,7 +2564,7 @@ step
 step
     #label RFCPickups1
     .goto Thunder Bluff,70.4,29.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉哈罗|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拉哈罗|r 对话
     .accept 5722 >>接受任务 寻找背包
     .accept 5723 >>接受任务 试探敌人
     .target Rahauro
@@ -2597,7 +2595,7 @@ step << Shaman
     #ah
     .goto Thunder Bluff,45.23,59.40,0
     .goto Thunder Bluff,40.41,51.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
     >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
     .target Auctioneer Stampi
@@ -2621,7 +2619,7 @@ step << Shaman
     #sticky
     #label Kah
     .goto Thunder Bluff,56.13,46.39,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡尔·迷雾行者|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡尔·迷雾行者|r 对话
     .train 7734 >>训练 |T136245:0|t[钓鱼]
     .target Kah Mistrunner
     .train 410104,1
@@ -2631,8 +2629,8 @@ step << Shaman
     #ssf
     #label Sewa
     .goto Thunder Bluff,55.78,47.02,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_苏瓦·迷雾行者|r 对话
-    >>|cRXP_BUY_从她那里购买|r |T132932:0|t[鱼竿] |cRXP_BUY_和|r |T134335:0|t[闪光的小珠]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_苏瓦·迷雾行者|r 对话
+    >>|cRXP_BUY_从她那里购买|r |T132932:0|t[鱼竿] |cRXP_BUY_和|r |T134335:0|t[闪光的小珠] |cRXP_BUY_|r
     .collect 6256,1 --Fishing Pole (1)
     .collect 6529,1 --Shiny Bauble (1)
     .target Sewa Mistrunner
@@ -2854,7 +2852,7 @@ step
     .target 药剂师赫布瑞姆
 step
     .goto The Barrens,51.50,30.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索克|r 对话
     .accept 871 >>接受任务 保卫前沿哨所
     .accept 5041 >>接受任务 十字路口的补给品
     .target 索克
@@ -2972,7 +2970,7 @@ step
     >>|cRXP_BUY_卖掉你的|r |T135005:0|t[衬衣] |cRXP_BUY_和其中一个|r |T134534:0|t[蘑菇菌盖] |cRXP_WARN_（可以通过按住 Shift 点击来拆分）|r ，并向他购买|cRXP_BUY_ |T134920:0|t[|cRXP_FRIENDLY_卡亚圣像|r] |cRXP_BUY_和|r |T134918:0|t[|cRXP_FRIENDLY_二价圣像|r] |cRXP_BUY_|r << Shaman
     >>|cRXP_BUY_出售你的|r |T135005:0|t[衬衣] |cRXP_BUY_和|r |T132794:0|t[水] |cRXP_BUY_并购买以下符文：|r  << Hunter
     >>|cRXP_BUY_出售你的|r |T133975:0|t[苹果] |cRXP_BUY_并购买以下符文：|r << Druid
-    >>|cRXP_BUY_向商人出售垃圾物品并购买以下所有符文:|r << Shaman
+    >>|cRXP_BUY_垃圾卖店并购买以下的所有AoE符文|r << Shaman
     .collect 204716,1 << Warrior --Rune of Frenzied Assault
     .collect 204806,1 << Warrior --Rune of Victory Rush
     .collect 209852,1 << Hunter --Rune of Kill Command
@@ -3152,7 +3150,7 @@ step << Hunter
     .goto Mulgore,44.35,76.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_符文贩子|r 对话
     >>|cRXP_WARN_千万不要把能穿的装备卖给商人|r
-    .vendor >>|cRXP_BUY_向商人出售垃圾物品并购买以下所有符文:|r << Hunter
+    .vendor >>|cRXP_BUY_垃圾卖店并购买以下的所有AoE符文|r << Hunter
     .collect 210818,1 << Hunter --Rune of Lone Wolf
     .collect 213124,1 << Hunter --Rune of Close Combat
     .collect 226252,1 << Hunter --Rune of the Guerrilla
@@ -4627,7 +4625,6 @@ step << Druid
 step << Druid
     #completewith next
     .cast 18960 >>释放 |T135758:0|t[传送：月光林地]
-    .zoneskip Moonglade
 step << Druid
     .goto Moonglade,56.21,30.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特|r 对话
@@ -5136,8 +5133,8 @@ step << Hunter
     .goto Mulgore,65.56,59.37,50,0
     .goto Mulgore,67.62,59.06,50,0
     .goto Mulgore,66.34,67.01,50,0
-    .cast 1515 >>驯服1只|cRXP_ENEMY_草原狼前锋|r
-    >>|cRXP_WARN_这将使你能够学习|r |T132140:0|t[爪击（等级 2）]
+    .train 16828 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Prairie Wolf Alpha|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 3)]
+    .link https://www.wow-petopia.com/classic/training.php >>https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击这里了解更多关于宠物训练的信息|r
     .mob 草原狼前锋
 step
     #xprate >2.09
@@ -5352,7 +5349,6 @@ step << Druid
 step << Druid
     #completewith next
     .cast 18960 >>释放 |T135758:0|t[传送：月光林地]
-    .zoneskip Moonglade
 step << Druid
     .goto Moonglade,56.21,30.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特|r 对话
@@ -5424,7 +5420,7 @@ step
     .subzoneskip 380
 step << Tauren
     .goto The Barrens,51.5,30.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索克|r 对话
     .turnin 854 >>交任务 十字路口之旅
     .target 索克
 step
@@ -5477,7 +5473,7 @@ step
     #xprate <2.1
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图加|r 对话
-    .turnin 870 >>交任务遗忘之池
+    .turnin 870 >>交任务  遗忘之池
     .accept 877 >>接受任务死水绿洲
     .target 图加·符文图腾
     .isQuestComplete 870
@@ -5486,7 +5482,7 @@ step
     #optional
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图加|r 对话
-    .turnin 870 >>交任务遗忘之池
+    .turnin 870 >>交任务  遗忘之池
     .accept 877 >>接受任务死水绿洲
     .target 图加·符文图腾
     .isQuestTurnedIn 877
@@ -5681,7 +5677,7 @@ step << Druid
     .xp <12,1
 step
     .goto Thunder Bluff,70.4,29.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉哈罗|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拉哈罗|r 对话
     .accept 5722 >>接受任务 寻找背包
     .accept 5723 >>接受任务 试探敌人
     .target Rahauro
@@ -5705,7 +5701,7 @@ step
     #optional
     #ah
     .goto Thunder Bluff,40.39,51.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
     >>|cRXP_BUY_从拍卖行购买12个|r |T134252:0|t[轻皮] |cRXP_BUY_|r
     .collect 2318,12,768,1 --Light Leather (12)
     .target Auctioneer Stampi
@@ -5791,7 +5787,7 @@ step << Shaman
     #ah
     .goto Thunder Bluff,45.23,59.40,0
     .goto Thunder Bluff,40.41,51.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
     >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
     .target Auctioneer Stampi
@@ -5813,7 +5809,7 @@ step << Shaman
     #sticky
     #label Kah
     .goto Thunder Bluff,56.13,46.39,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡尔·迷雾行者|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡尔·迷雾行者|r 对话
     .train 7734 >>训练 |T136245:0|t[钓鱼]
     .target Kah Mistrunner
     .train 410104,1
@@ -5822,7 +5818,7 @@ step << Shaman
     #ssf
     #label Sewa
     .goto Thunder Bluff,55.78,47.02,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_苏瓦·迷雾行者|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_苏瓦·迷雾行者|r 对话
     >>|cRXP_BUY_从她那里购买|r |T132932:0|t[鱼竿] |cRXP_BUY_和|r |T134335:0|t[闪光的小珠] |cRXP_BUY_|r
     .collect 6256,1 --Fishing Pole (1)
     .collect 6529,1 --Shiny Bauble (1)
@@ -5897,7 +5893,7 @@ step
     .target 药剂师赫布瑞姆
 step
     .goto The Barrens,51.50,30.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索克|r 对话
     .accept 871 >>接受任务 保卫前沿哨所
     .accept 5041 >>接受任务 十字路口的补给品
     .target 索克

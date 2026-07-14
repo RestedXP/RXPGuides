@@ -1,5 +1,4 @@
 if GetLocale() ~= "zhCN" then return end
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -506,7 +505,7 @@ step
 step
     #completewith next
     .goto Eastern Kingdoms,48.95,63.89
-    .subzone 1583 >>进入 黑石塔
+    .subzone 1583 >>进入黑石塔
     >>|cRXP_WARN_这是一个10人副本。你或者你的队伍中的某人必须拥有|r |T133343:0|t[|cRXP_LOOT_晋升印章|r] |cRXP_WARN_才能进入黑石塔上层|r
 step
     >>击杀任何类型的 |cRXP_ENEMY_龙类|r。拾取它们的 |cRXP_LOOT_黑色龙人的眼球|r

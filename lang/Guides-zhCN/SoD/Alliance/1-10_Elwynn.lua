@@ -2,12 +2,11 @@ if GetLocale() ~= "zhCN" then return end
 local faction = UnitFactionGroup("player")
 if faction == "Horde" then return end
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance
 #name 1-6 北郡 探索赛季
-#displayname 1-6 北郡
+#displayname 1-6级 北郡
 #version 1
 #group RestedXP 联盟 1-20 级
 #defaultfor Human
@@ -49,7 +48,7 @@ step << Warrior/Rogue/Mage/Warlock
     .goto Elwynn Forest,48.22,41.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_符文贩子|r 对话
     >>|cRXP_WARN_千万不要把能穿的装备卖给商人|r
-    .vendor >>|cRXP_BUY_向商人出售垃圾并购买|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 乘胜追击|r] << Warrior
+    .vendor >>|cRXP_BUY_垃圾卖店然后购买|r |T134419:0|t[|cRXP_FRIENDLY_乘胜追击符文|r] << Warrior
     .vendor >>|cRXP_BUY_将垃圾卖给商人，并购买|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_暗影打击符文|r]|r << Rogue
     .vendor >>|cRXP_BUY_购买所有关键AOE符文|r << Mage
     .vendor >>|cRXP_BUY_购买以下所有符文：|r << Warlock
@@ -136,7 +135,7 @@ step << Warlock
     #season 2
     .goto Elwynn Forest,49.873,42.649
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜希拉·拉萨雷|r 对话
-    .accept 1598 >>接受任务失窃的典籍
+    .accept 1598 >>接受任务 失窃的典籍
     .accept 77621 >>接受任务 失窃的力量 << Human
     .turnin 77621 >>交任务 失窃的力量 << Human
     .train 348 >>学习 |T135817:0|t[献祭]
@@ -145,7 +144,7 @@ step << Human Warlock
     #season 2
     #label GlovesEquip
     #completewith RestandR
-    .equip 10,711 >>|cRXP_WARN_装备|r |T132961:0|t[破布手套]
+    .equip 10,711 >>|cRXP_WARN_装备|r |T132961:0|t|T132961:0|t[破布手套]
     .use 711
     .itemcount 711,1 --Tattered Cloth Gloves (1)
     .train 403919,3
@@ -191,7 +190,7 @@ step << Warlock
 step << Warlock
     .goto Elwynn Forest,49.873,42.649
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜希拉·拉萨雷|r 对话
-    .turnin 1598 >>交任务失窃的典籍
+    .turnin 1598 >>交任务 失窃的典籍
     .target 杜希拉·拉萨雷
 step << Warlock
     #optional
@@ -273,7 +272,7 @@ step << Mage
     #optional
     #sticky
     .engrave 15 >>留意是否有披风掉落。一旦拿到就在上面铭刻|T135851:0|t[寒冰宝珠]
-    >>|cRXP_WARN_这个技能极其强大|r
+    >>|cRXP_WARN_这个技能过于逆天|r
 step << Mage/Warlock
     #completewith next
     .goto Elwynn Forest,46.2,40.4,40,0
@@ -522,7 +521,7 @@ step
     .accept 15 >>接受任务 回音山调查行动
     .accept 3100 >>接受任务 简要的信件 << Warrior
     .accept 3101 >>接受任务 圣洁信件 << Paladin
-    .accept 3102 >>接受任务 密文信件 << Rogue
+    .accept 3102 >>接受任务密文信件 << Rogue
     .accept 3103 >>接受任务 神圣信件 << Priest
     .accept 3104 >>接受任务 雕文信件 << Mage
     .accept 3105 >>接受任务 被污染的信件 << Warlock
@@ -662,7 +661,7 @@ step << Rogue
     #requires Shadowstrike2
     .goto Elwynn Forest,50.314,39.916
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔里克·克里丹|r 对话
-    .turnin 3102 >>交任务 密文信件
+    .turnin 3102 >>交任务密文信件
     .target 乔里克·克里丹
 step << !Warlock
     #xprate >1.59
@@ -1026,7 +1025,7 @@ step << Warlock
 step << Warlock
     .goto Elwynn Forest,44.397,65.989
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞琳娜·达克哈特|r 对话
-    .vendor 6374 >>|cRXP_BUY_如果钱够，从她那里购买一本|r |T133738:0|t[魔典：血契(等级 1)] |cRXP_BUY_如果钱不够，可以今后再来买|r
+    .vendor 6374 >>|cRXP_BUY_如果钱够，就从她那里购买一本|r |T133738:0|t[魔典：血契(等级 1)] |cRXP_BUY_如果钱不够，可以今后再来买|r
     .target 塞琳娜·达克哈特
     .money <0.0100
     .itemcount 16321,<1 --Grimoire of Blood Pact (Rank 1)
@@ -1929,7 +1928,7 @@ step << Priest
     #optional
     #label ExitJasperlode
     #completewith Find
-    .goto 1429,61.820,53.871,15 >>退出玉石矿洞
+    .goto 1429,61.820,53.871,15 >>离开玉石矿洞
     .subzoneskip 54,1
 step << Priest
     #season 2
@@ -2236,7 +2235,7 @@ step
     #requires GoldshireVendor
     .goto Elwynn Forest,43.154,89.625
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅贝尔·马科伦|r 对话
-    .turnin 114 >>交任务  梅贝尔的隐形水
+    .turnin 114 >>交任务 梅贝尔的隐形水
     .target 梅贝尔·马科伦
 step
     #label GoldtoothEnd
@@ -2645,7 +2644,7 @@ step << Warlock
 step << Warlock
     #label GakinStart
     .goto StormwindClassic,25.25,78.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .turnin 1685 >>交任务 加科因的召唤
     .accept 1688 >>接受任务 苏伦娜·凯尔东
     .target 黑暗缚灵者加科因
@@ -2788,7 +2787,7 @@ step << Warlock
     .target 厄苏拉·德林
 step << Warlock
     .goto StormwindClassic,25.25,78.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .turnin 1688 >>交任务 苏伦娜·凯尔东
     .accept 1689 >>接受任务誓缚
     .target 黑暗缚灵者加科因
@@ -2807,7 +2806,7 @@ step << Warlock
     .complete 1689,1 --Kill Summoned Voidwalker (x1)
     .mob 虚空行者
 step << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .target 黑暗缚灵者加科因
     .goto StormwindClassic,25.25,78.59
     .turnin 1689 >>交任务誓缚
@@ -2948,7 +2947,7 @@ step << Rogue
     #optional
     #completewith next
     .goto Stormwind City,56.93,29.54,8,0
-    .goto Stormwind City,58.65,27.56,10 >>进入暴风城矮人区的切喉小巷
+    .goto Stormwind City,58.65,27.56,10 >>进入暴风城矮人区的屠夫巷
     .train 400081,1
 step << Rogue
     #season 2
@@ -3063,7 +3062,7 @@ step << Warrior
     .goto Ironforge,65.905,88.405,12 >>前往 |cRXP_FRIENDLY_比尔班·飞钳|r
 step << Warrior
     .goto Ironforge,65.905,88.405
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
     >>|cRXP_WARN_确保你保留20银70铜以备后用|r
     .train 2687 >>训练你的职业技能
     .target 比尔班·飞钳
@@ -3074,7 +3073,7 @@ step << Warrior
     #optional
     #label WarriorTrain
     .goto Ironforge,65.905,88.405
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
     >>|cRXP_WARN_确保你保留20银70铜以备后用|r
     .train 5242 >>训练你的职业技能
     .target 比尔班·飞钳
@@ -3174,7 +3173,7 @@ step << Paladin/Warrior
     >>击败|cRXP_ENEMY_布鲁阿特|r
     >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r << Paladin
-    >>|cRXP_WARN_千万别不小心施放|r |T135906:0|t[力量祝福] |cRXP_WARN_在他身上|r << Paladin
+    >>|cRXP_WARN_不要意外对他施放|r |T135906:0|t|T135906:0|t[力量祝福] |cRXP_WARN_ |r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，如果有/需要的话使用|r |T133688:0|t|T133688:0|t[绷带]|cRXP_WARN_ |r << Warrior
     >>|cRXP_WARN_尝试使用|r |T132316:0|t|T132324:0|t[|cRXP_FRIENDLY_断筋|r] |cRXP_WARN_和|r |T132324:0|t|T132324:0|t[|cRXP_FRIENDLY_投掷|r]来风筝他 << Warrior
@@ -3192,7 +3191,7 @@ step << Paladin/Warrior
     >>击败|cRXP_ENEMY_布鲁阿特|r
     >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r << Paladin
-    >>|cRXP_WARN_千万别不小心施放|r |T135906:0|t[力量祝福] |cRXP_WARN_在他身上|r << Paladin
+    >>|cRXP_WARN_不要意外对他施放|r |T135906:0|t|T135906:0|t[力量祝福] |cRXP_WARN_ |r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，如果有/需要的话使用|r |T133688:0|t|T133688:0|t[绷带]|cRXP_WARN_ |r << Warrior
     >>|cRXP_WARN_击败|cRXP_ENEMY_布鲁阿尔特|r后：|r
@@ -3231,7 +3230,7 @@ step << Warrior
     .train 425447,3
 step
     .goto Ironforge,55.501,47.742
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fp Ironforge >>获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
 step << Mage/Paladin
@@ -3258,7 +3257,7 @@ step << Mage
 step << Mage
     #xprate >1.49
     .goto Ironforge,26.8,8.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丁克|r 在里面对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_丁克|r 对话
     .train 145 >>训练你的职业技能
     .target 丁克
     .xp <12,1

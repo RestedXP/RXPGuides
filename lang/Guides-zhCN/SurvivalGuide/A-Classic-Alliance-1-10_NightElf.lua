@@ -2,7 +2,6 @@ if GetLocale() ~= "zhCN" then return end
 local faction = UnitFactionGroup("player")
 if faction == "Horde" then return end
 
-
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
@@ -1141,7 +1140,7 @@ step << Hunter
 	.goto Teldrassil,37.6,28.8,0
     >>|cRXP_WARN_施放|r |T132164:0|t[驯服野兽] |cRXP_WARN_在|cRXP_ENEMY_巨翼猎枭|r 以驯服它|r -- .tame 1997
     .train 2981 >>|cRXP_WARN_用它攻击怪物以学习|r |T132140:0|t [爪击(等级 2)]
-    .link https://www.wow-petopia.com/classic/training.php >>https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击此处了解更多关于宠物训练的信息|r
+    .link https://www.wow-petopia.com/classic/training.php >>https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击这里了解更多关于宠物训练的信息|r
 	.unitscan 巨翼猎枭
 step
     .goto Teldrassil,43.2,42.8,55,0
@@ -1281,7 +1280,7 @@ step
 step << Hunter
     .goto Darnassus,40.377,8.545
     .target 祖卡斯特
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖卡斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_祖卡斯特|r 对话
     .turnin 6103 >>交任务 训练野兽
 step << Rogue
     .goto Darnassus,31.21,17.72,8,0
@@ -1344,7 +1343,7 @@ step << Hunter
 	.money <0.1751
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿瑞耶尔·天影|r 对话
 	>>|cRXP_BUY_购买并装备1把|r |T135489:0|t[多层弯弓]
-    >>|cRXP_BUY_Buy|r |T132382:0|t[锋利的箭]
+    >>|cRXP_BUY_购买|r |T132382:0|t[锋利的箭]
 	.collect 2507,1
     .target 阿瑞耶尔·天影
 step << Warrior

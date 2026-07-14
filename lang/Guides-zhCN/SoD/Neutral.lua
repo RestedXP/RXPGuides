@@ -1,7 +1,6 @@
 if GetLocale() ~= "zhCN" then return end
 local _,addon = ...
 if addon.GetSeason() ~= 2 then return end
-
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD/Hunter SoD
@@ -258,9 +257,9 @@ step
     .train 410122 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_独来独往符文|r] |cRXP_WARN_来学习|r |T132266:0|t[独来独往] << Hunter
     .train 416042 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_优胜劣汰符文|r] |cRXP_WARN_以习得|r |T132126:0|t[优胜劣汰] << Druid
     .train 425445 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_战神符文|r] |cRXP_WARN_来学习|r |T236319:0|t[战神] << Warrior
-    .train 425476 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_契约符文|r] |cRXP_WARN_来训练|r |T237562:0|t[恶魔契约] << Warlock
+    .train 425476 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T237562:0|t[|cRXP_FRIENDLY_契约符文|r] |cRXP_WARN_来训练|r |T237562:0|t|T237562:0|t[恶魔契约] << Warlock
     .train 424990 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_左右开弓符文|r] |cRXP_WARN_来训练|r |T237531:0|t[左右开弓] << Rogue
-    .train 410096 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_双武器专精符文|r] |cRXP_WARN_来训练|r |T132686:0|t[铭刻 胸部 - 双武器专精] << Shaman
+    .train 410096 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T132686:0|t[|cRXP_FRIENDLY_双武器专精符文|r] |cRXP_WARN_来学习|r |T132686:0|t|T132686:0|t[铭刻胸甲 - 双武器专精] << Shaman
     .target Grizzby
 ]])
 
@@ -429,11 +428,11 @@ RXPGuides.RegisterGuide([[
 #group RestedXP符文与书籍指南
 #subgroup 胸部 << Warrior
 #subgroup 腿部 << Mage
-#name 暮色森林 Lich 符文
+#name 暮色森林的巫妖符文
 #displayname 狂热鞭笞 - 25 (暮色森林) << Warrior
-#displayname 群体回复 - 25 (暮色森林) << Mage
+#displayname 群体再生 - 25 (暮色森林) << Mage
 #title 狂热鞭笞 << Warrior
-#title 群体回复 << Mage
+#title 群体再生 << Mage
 
 step << Warrior/Mage
     #completewith next
@@ -461,7 +460,7 @@ step << Warrior/Mage
 step << Warrior/Mage
     .goto Duskwood,18.140,37.940
     >>击杀 |cRXP_ENEMY_觉醒巫妖|r。拾取它的 |T134419:0|t[|cRXP_FRIENDLY_狂热鞭笞符文|r] << Warrior
-    >>击杀 |cRXP_ENEMY_Awakened Lich|r，拾取它的 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：群体再生|r] << Mage
+    >>击杀 |cRXP_ENEMY_觉醒巫妖|r，拾取它的 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：群体再生|r] << Mage
     >>|cRXP_WARN_如果有人在杀|cRXP_ENEMY_觉醒巫妖|r，你也可以帮他们一起打，你同样可以拾取到任务道具|r
     .collect 210569,1 << Warrior -- Rune of Flagellation (1)
     .collect 211514,1 << Mage -- Spell Notes: Mass Regeneration (1)
@@ -721,8 +720,8 @@ RXPGuides.RegisterGuide([[
 << Hunter SoD
 #group RestedXP符文与书籍指南
 #subgroup 腿部
-#name 杀戮射击 - 25 (多个区域)
-#title 杀戮射击
+#name 夺命射击 - 25 (多个区域)
+#title 夺命射击
 
 step
     #completewith WyvernWrangling
@@ -799,7 +798,7 @@ step
     .train 410111,1
 step
     #season 2
-    .train 410111 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 杀死 命令|r] |cRXP_WARN_来学习|r |T236174:0|t[杀戮射击]
+    .train 410111 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_杀戮命令符文|r] |cRXP_WARN_来学习|r |T236174:0|t[杀戮命令]
     .use 209852
     .itemcount 209852,1
 
@@ -822,7 +821,7 @@ RXPGuides.RegisterGuide([[
 #displayname 恶魔知识 - 40 (艾泽拉斯) << Warlock
 #displayname 圣光灌注 - 40 (艾泽拉斯) << Paladin
 #displayname 飞弹速射 - 40 (艾泽拉斯) << Mage
-#displayname 打劫 - 40 (艾泽拉斯) << Rogue
+#displayname 埋伏 - 40 (艾泽拉斯) << Rogue
 #title 救赎者之魂 << Priest
 #title 近战专家 << Hunter
 #title 丛林之王 << Druid
@@ -831,7 +830,7 @@ RXPGuides.RegisterGuide([[
 #title 恶魔知识 << Warlock
 #title 圣光灌注 << Paladin
 #title 飞弹速射 << Mage
-#title 打劫 << Rogue
+#title 埋伏 << Rogue
 
 step
     #completewith Sigil
@@ -1152,14 +1151,14 @@ step
     .train 436368,1 << Shaman
     .goto Deadwind Pass,52.095,34.119
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_达拉然特使|r交谈
-    .turnin 80147 >>Turn in Curious Dalaran Relic
-    .turnin 80149 >>Turn in Curious Dalaran Relic
-    .turnin 80098 >>Turn in Curious Dalaran Relic
-    .turnin 80152 >>Turn in Curious Dalaran Relic
-    .turnin 80148 >>Turn in Curious Dalaran Relic
-    .turnin 80150 >>Turn in Curious Dalaran Relic
-    .turnin 80151 >>Turn in Curious Dalaran Relic
-    .turnin 80120 >>Turn in A Service to Dalaran
+    .turnin 80147 >>交任务 奇异的达拉然圣物
+    .turnin 80149 >>交任务 奇异的达拉然圣物
+    .turnin 80098 >>交任务 奇异的达拉然圣物
+    .turnin 80152 >>交任务 奇异的达拉然圣物
+    .turnin 80148 >>交任务 奇异的达拉然圣物
+    .turnin 80150 >>交任务 奇异的达拉然圣物
+    .turnin 80151 >>交任务 奇异的达拉然圣物
+    .turnin 80120 >>交任务 为达拉然服务
     .target Dalaran Agent
 step
     .train 425312,1 << Priest
@@ -1211,13 +1210,13 @@ step
     .use 216606 << Shaman
     .train 425312 >>|cRXP_WARN_使用|r |T135791:0|t|T132864:0|t[|cRXP_FRIENDLY_璀璨顿悟|r] |cRXP_WARN_训练|r |T132864:0|t|T132864:0|t[救赎者之魂] << Priest
     .train 426180 >>|cRXP_WARN_使用|r |T134419:0|t|T236254:0|t[|cRXP_FRIENDLY_灌注符文|r] |cRXP_WARN_来训练|r |T236254:0|t|T236254:0|t[圣光灌注] << Paladin
-    .train 401763 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术 Notes: 飞弹速射|r] |cRXP_WARN_来学习|r |T236221:0|t[飞弹速射] << Mage
-    .train 416086 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 关闭 战斗|r] |cRXP_WARN_来学习|r |T132394:0|t[近战专家] << Hunter
-    .train 424765 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Jungle King|r] |cRXP_WARN_来学习|r |T236159:0|t[丛林之王] << Druid
-    .train 416005 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Ruthless Precision|r] |cRXP_WARN_来学习|r |T134377:0|t[精准猛击] << Warrior
-    .train 416014 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Forbidden 知识|r] |cRXP_WARN_来学习|r |T136172:0|t[恶魔知识] << Warlock
-    .train 415926 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assailant|r] |cRXP_WARN_来学习|r |T236286:0|t[打劫] << Rogue
-    .train 436368 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Two-Handed 精通|r] |cRXP_WARN_来学习|r |T135145:0|t[Two-Handed 精通] << Shaman
+    .train 401763 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：飞弹速射|r] |cRXP_WARN_来学习|r |T236221:0|t[飞弹速射] << Mage
+    .train 416086 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_短兵相接符文|r] |cRXP_WARN_来学习|r |T132394:0|t[近战专家] << Hunter
+    .train 424765 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_丛林之王符文|r] |cRXP_WARN_来学习|r |T236159:0|t[丛林之王] << Druid
+    .train 416005 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_无情精准符文|r] |cRXP_WARN_来学习|r |T134377:0|t[精准猛击] << Warrior
+    .train 416014 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_禁断知识符文|r] |cRXP_WARN_来学习|r |T136172:0|t[恶魔知识] << Warlock
+    .train 415926 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_袭击者符文|r] |cRXP_WARN_来学习|r |T236286:0|t[埋伏] << Rogue
+    .train 436368 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_双手精通符文|r] |cRXP_WARN_来学习|r |T135145:0|t[双手精通] << Shaman
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1230,22 +1229,22 @@ RXPGuides.RegisterGuide([[
 #name 凄凉之地符文链
 #displayname 心灵尖刺 - 35 (艾泽拉斯) << Priest
 #displayname 陷阱发射器 - 35 (艾泽拉斯) << Hunter
-#displayname 蚀星蔽月 - 35 (艾泽拉斯) << Druid
+#displayname 日月之蚀 - 35 (艾泽拉斯) << Druid
 #displayname 狂怒回复 - 35 (艾泽拉斯) << Warrior
 #displayname 先祖复苏 - 35 (艾泽拉斯) << Shaman
-#displayname 暗影与火焰 - 35 (艾泽拉斯) << Warlock
-#displayname 战争的艺术 - 35 (艾泽拉斯) << Paladin
+#displayname 影与焰 - 35 (艾泽拉斯) << Warlock
+#displayname 战争艺术 - 35 (艾泽拉斯) << Paladin
 #displayname 冰冷智慧 - 35 (艾泽拉斯) << Mage
-#displayname 毒药之刃 - 35 (艾泽拉斯) << Rogue
+#displayname 剧毒之刃 - 35 (艾泽拉斯) << Rogue
 #title 心灵尖刺 << Priest
 #title 陷阱发射器 << Hunter
-#title 蚀星蔽月 << Druid
+#title 日月之蚀 << Druid
 #title 狂怒回复 << Warrior
 #title 先祖复苏 << Shaman
-#title 暗影与火焰 << Warlock
-#title 战争的艺术 << Paladin
+#title 影与焰 << Warlock
+#title 战争艺术 << Paladin
 #title 冰冷智慧 << Mage
-#title 经典怀旧服 道具 << Rogue
+#title 剧毒之刃 << Rogue
 
 step
     #completewith next
@@ -1307,7 +1306,7 @@ step
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_尼克拉克斯·菲拉莫格|r 对话
-    >>|cRXP_BUY_购买|r |T132790:0|t[樱桃 Grog]
+    >>|cRXP_BUY_购买|r |T132790:0|t[樱桃酒]
     .goto Stranglethorn Vale,27.039,77.168
     .collect 4600,1,79236,1
     .target Nixxrax Fillamug
@@ -1487,27 +1486,27 @@ RXPGuides.RegisterGuide([[
 #subgroup 法术书籍
 #name 法术书籍符文
 
-#displayname 扩展智力 (TBC 道具) << Alliance Mage
-#displayname 扩展智力 (奥格瑞玛) << Horde Mage
-#title 扩展智力 << Mage
-#displayname 蝰蛇守护/雄狮之心 (TBC 道具) << Alliance Hunter
-#displayname 蝰蛇守护/雄狮之心 (奥格瑞玛) << Horde Hunter
+#displayname 智慧延展（暴风城） << Alliance Mage
+#displayname 智慧延展（奥格瑞玛） << Horde Mage
+#title 智慧延展 << Mage
+#displayname 蝰蛇守护/雄狮之心（暴风城） << Alliance Hunter
+#displayname 蝰蛇守护/雄狮之心（奥格瑞玛） << Horde Hunter
 #title 蝰蛇守护/雄狮之心 << Hunter
-#displayname 灵魂收割/召唤传送门/邪甲术 (暴风城) << Alliance Warlock
-#displayname 灵魂收割/召唤传送门/邪甲术 (奥格瑞玛) << Horde Warlock
+#displayname 灵魂收割/召唤传送门/邪甲术（暴风城） << Alliance Warlock
+#displayname 灵魂收割/召唤传送门/邪甲术（奥格瑞玛） << Horde Warlock
 #title 灵魂收割/召唤传送门/邪甲术 << Warlock
-#displayname 转嫁/Occult Poison/Numbing Poison/Sebacious Poison/Atrophic Poison (暴风城) << Alliance Rogue
-#displayname 转嫁/Occult Poison/Numbing Poison/Sebacious Poison/Atrophic Poison (奥格瑞玛) << Horde Rogue
-#title 转嫁/Occult Poison/Numbing Poison/Sebacious Poison/Atrophic Poison << Rogue
-#displayname 暗影魔/强化坚韧 (暴风城) << Alliance Priest
-#displayname 暗影魔/强化坚韧 (奥格瑞玛) << Horde Priest
+#displayname 转嫁/玄秘毒药/麻痹毒药/解离毒药/萎缩毒药（暴风城） << Alliance Rogue
+#displayname 转嫁/玄秘毒药/麻痹毒药/解离毒药/萎缩毒药（奥格瑞玛） << Horde Rogue
+#title 转嫁/玄秘毒药/麻痹毒药/解离毒药/萎缩毒药 << Rogue
+#displayname 暗影魔/强化坚韧（暴风城） << Alliance Priest
+#displayname 暗影魔/强化坚韧（奥格瑞玛） << Horde Priest
 #title 暗影魔/强化坚韧 << Priest
-#displayname Enhanced Restoration/Revive/Deeper Wilds (TBC 道具) << Alliance Druid
-#displayname Enhanced Restoration/Revive/Deeper Wilds (奥格瑞玛) << Horde Druid
-#title Enhanced Restoration/Revive/Deeper Wilds << Druid
-#displayname Commanding Shout/Meathook (TBC 道具) << Alliance Warrior
-#displayname Commanding Shout/Meathook (奥格瑞玛) << Horde Warrior
-#title Commanding Shout/Meathook << Warrior
+#displayname 强化恢复/起死回生/野性深远（暴风城） << Alliance Druid
+#displayname 强化恢复/起死回生/野性深远（奥格瑞玛） << Horde Druid
+#title 强化恢复/起死回生/野性深远 << Druid
+#displayname 命令怒吼/肉钩 （暴风城） << Alliance Warrior
+#displayname 命令怒吼/肉钩 （奥格瑞玛） << Horde Warrior
+#title 命令怒吼/肉钩 << Warrior
 #displayname 论述：驱魔人/强化祝福 (暴风城) << Paladin
 #title 论述：驱魔人/强化祝福 << Paladin
 #displayname 图腾投射/萨满之怒 (奥格瑞玛) << Shaman
@@ -1515,8 +1514,8 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith BuyBook
-    >>|cRXP_WARN_Skill Books can now bought with gold from TBC 道具 instead of having to run 血色修道院 for them.|r << Alliance
-    >>|cRXP_WARN_Skill Books can now bought with gold from 奥格瑞玛 instead of having to run 血色修道院 for them.|r << Horde
+    >>|cRXP_WARN_现在可以在暴风城用金币购买技能书，而无需为了获取它们去刷血色修道院。|r << Alliance
+    >>|cRXP_WARN_现在可以在奥格瑞玛用金币购买技能书，而无需为了获取它们去刷血色修道院。|r << Horde
     .zone Stormwind City >>前往暴风城 << Alliance
     .zone Orgrimmar >>前往奥格瑞玛 << Horde
 step << Alliance
@@ -1530,27 +1529,27 @@ step
     .goto Orgrimmar,38.923,38.398 << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米尔顿·西弗|r 对话 << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_佐尔·孤树|r 对话 << Horde
-    >>|cRXP_WARN_注释: |T133736:0|t|cRXP_LOOT_[秘典：智慧延展]|r需要等级25才能使用|r << Mage
-    >>|cRXP_WARN_注释: |T133733:0|t|cRXP_LOOT_[魔典：灵魂收割]|r 和 |T133733:0|t|cRXP_LOOT_[魔典：召唤传送门]|r 需要等级25才能使用|r << Warlock
-    >>|cRXP_WARN_注释: |T133733:0|t|cRXP_LOOT_[魔典：邪甲术]|r需要等级50才能使用|r << Warlock
-    >>|cRXP_WARN_注释: |T133745:0|t|cRXP_LOOT_[论述：驱魔人]|r 和 |T133745:0|t|cRXP_LOOT_[论述：殉道]|r需要等级10才能使用|r << Paladin
-    >>|cRXP_WARN_注释: |T133745:0|t|cRXP_LOOT_[圣约：强化祝福]|r需要等级25才能使用|r << Paladin
-    >>|cRXP_WARN_注释: |T133739:0|t|cRXP_LOOT_[论述：雄狮之心]|r需要等级10才能使用|r << Hunter
-    >>|cRXP_WARN_注释: |T133739:0|t|cRXP_LOOT_[论述：蝰蛇守护]|r需要等级25才能使用|r << Hunter
-    >>|cRXP_WARN_注释: |T133735:0|t|cRXP_LOOT_[转嫁手册]|r需要等级25才能使用|r << Rogue
-    >>|cRXP_WARN_注释: |T133735:0|t|cRXP_LOOT_[玄秘毒药手册]|r需要等级54才能使用|r << Rogue
-    >>|cRXP_WARN_注释: |T133735:0|t|cRXP_LOOT_[麻痹毒药手册]|r、|cRXP_LOOT_[解离毒药手册]|r 和 |cRXP_LOOT_[萎缩毒药手册]|r需要等级60才能使用|r << Rogue
-    >>|cRXP_WARN_注释: |T237162:0|t|cRXP_LOOT_[卷轴：暗影魔]|r 和 |T237162:0|t|cRXP_LOOT_[卷轴：强化坚韧]|r需要等级25才能使用|r << Priest
-    >>|cRXP_WARN_注释: |T134914:0|t|cRXP_LOOT_[活页：野性深远]|r|cRXP_WARN_、|r |T134914:0|t|cRXP_LOOT_[活页：强化恢复]|r |cRXP_WARN_和 |T134914:0|t|cRXP_LOOT_[活页：起死回生]|r需要等级25才能使用|r << Druid
-    >>|cRXP_WARN_注释: |T133741:0|t|cRXP_LOOT_[手册：命令怒吼]|r需要等级25才能使用|r << Warrior
-    >>|cRXP_WARN_注释: |T133741:0|t|cRXP_LOOT_[肉钩手册]|r需要等级40才能使用|r << Warrior
-    >>|cRXP_WARN_注释: |T133747:0|t|cRXP_LOOT_[启示：萨满之怒]|r需要等级10才能使用|r << Shaman
-    >>|cRXP_WARN_注释: |T133747:0|t|cRXP_LOOT_[启示：图腾投射]|r需要等级25才能使用|r << Shaman
-    .train 438040 >>|cRXP_WARN_购买并使用|r |T133735:0|t|cRXP_LOOT_[转嫁手册]|r |cRXP_WARN_来学习|r |T135425:0|t[套装：蓝色热带沙滩装] << Rogue
-    .train 458822 >>|cRXP_WARN_购买并使用|r |T133735:0|t|cRXP_LOOT_[玄秘毒药手册]|r |cRXP_WARN_来学习|r |T135935:0|t[Occult Poison I] << Rogue
-    .train 438040 >>|cRXP_WARN_购买并使用|r |T133735:0|t|cRXP_LOOT_[麻痹毒药手册]|r |cRXP_WARN_来学习|r |T132098:0|t[Numbing Poison] << Rogue
-    .train 439500 >>|cRXP_WARN_购买并使用|r |T133735:0|t|cRXP_LOOT_[解离毒药手册]|r |cRXP_WARN_来学习|r |T132108:0|t[Sebacious Poison] << Rogue
-    .train 438040 >>|cRXP_WARN_购买并使用|r |T133735:0|t|cRXP_LOOT_[萎缩毒药手册]|r |cRXP_WARN_来学习|r |T132100:0|t[Atrophic Poison] << Rogue
+    >>|cRXP_WARN_注意：|T133736:0|t|cRXP_LOOT_[秘典：智慧延展]|r 需要达到25级才能使用 |r << Mage
+    >>|cRXP_WARN_注意：|T133733:0|t|cRXP_LOOT_[魔典：灵魂收割]|r 和 |T133733:0|t|cRXP_LOOT_[魔典：召唤传送门]|r 需要达到25级才能使用|r << Warlock
+    >>|cRXP_WARN_注意：|T133733:0|t|cRXP_LOOT_[魔典：邪甲术]|r 需要达到50级才能使用|r << Warlock
+    >>|cRXP_WARN_注意：|T133745:0|t|cRXP_LOOT_[论述：驱魔人]|r 和 |T133745:0|t|cRXP_LOOT_[论述：殉道]|r 需要达到10级才能使用|r << Paladin
+    >>|cRXP_WARN_注意：|T133745:0|t|cRXP_LOOT_[圣约：强化祝福]|r 需要达到25级才能使用|r << Paladin
+    >>|cRXP_WARN_注意：|T133739:0|t|cRXP_LOOT_[论述：雄狮之心]|r 需要达到10级才能使用|r << Hunter
+    >>|cRXP_WARN_注意： |T133739:0|t|cRXP_LOOT_[论述：蝰蛇守护]|r 需要达到25级才能使用|r << Hunter
+    >>|cRXP_WARN_注意：|T133735:0|t|cRXP_LOOT_[转嫁手册]|r 需要达到25级才能使用|r << Rogue
+    >>|cRXP_WARN_注意：|T133735:0|t|cRXP_LOOT_[玄秘毒药手册]|r 需要达到54级才能使用|r << Rogue
+    >>|cRXP_WARN_注意：|T133735:0|t|cRXP_LOOT_[麻痹毒药手册]|r，|cRXP_LOOT_[解离毒药手册]|r 和 |cRXP_LOOT_[萎缩毒药手册]|r 需要达到60级才能使用|r << Rogue
+    >>|cRXP_WARN_注意：|T237162:0|t|cRXP_LOOT_[卷轴：暗影魔]|r 和 |T237162:0|t|cRXP_LOOT_[卷轴：强化坚韧]|r 需要达到25级才能使用|r << Priest
+    >>|cRXP_WARN_注意：|T134914:0|t|cRXP_LOOT_[活页：野性深远]|r|cRXP_WARN_，|r |T134914:0|t|cRXP_LOOT_[活页：强化恢复]|r |cRXP_WARN_和 |T134914:0|t|cRXP_LOOT_[活页：起死回生]|r 需要达到25级才能使用|r << Druid
+    >>|cRXP_WARN_注意：|T133741:0|t|cRXP_LOOT_[手册：命令怒吼]|r 需要达到25级才能使用|r << Warrior
+    >>|cRXP_WARN_注意：|T133741:0|t|cRXP_LOOT_[肉钩手册]|r 需要达到40级才能使用|r << Warrior
+    >>|cRXP_WARN_注意：|T133747:0|t|cRXP_LOOT_[启示：萨满之怒]|r 需要达到10级才能使用|r << Shaman
+    >>|cRXP_WARN_注意：|T133747:0|t|cRXP_LOOT_[启示：图腾投射]|r 需要达到25级才能使用|r << Shaman
+    .train 438040 >>|cRXP_WARN_购买并使用|r |T133735:0|t|cRXP_LOOT_[转嫁手册]|r |cRXP_WARN_来学习|r |T135425:0|t[转嫁] << Rogue
+    .train 458822 >>|cRXP_WARN_购买并使用|r |T133735:0|t|cRXP_LOOT_[玄秘毒药手册]|r |cRXP_WARN_来学习|r |T135935:0|t[[玄秘毒药 I] << Rogue
+    .train 438040 >>|cRXP_WARN_购买并使用|r |T133735:0|t|cRXP_LOOT_[麻痹毒药手册]|r |cRXP_WARN_来学习|r |T132098:0|t[麻痹毒药] << Rogue
+    .train 439500 >>|cRXP_WARN_购买并使用|r |T133735:0|t|cRXP_LOOT_[解离毒药手册]|r |cRXP_WARN_来学习|r |T132108:0|t[解离毒药] << Rogue
+    .train 438040 >>|cRXP_WARN_购买并使用|r |T133735:0|t|cRXP_LOOT_[萎缩毒药手册]|r |cRXP_WARN_来学习|r |T132100:0|t[萎缩毒药] << Rogue
     .train 436949 >>|cRXP_WARN_购买并使用|r |T133736:0|t|cRXP_LOOT_[秘典：智慧延展]|r |cRXP_WARN_来学习|r |T236513:0|t[智慧延展] << Mage
     .train 436956 >>|cRXP_WARN_购买并使用|r |T134914:0|t|cRXP_LOOT_[活页：野性深远]|r |cRXP_WARN_来学习|r |T132124:0|t[野性深远] << Druid
     .train 417123 >>|cRXP_WARN_购买和使用|r |T134914:0|t|cRXP_LOOT_[活页：强化恢复]|r |cRXP_WARN_来学习|r |T136073:0|t[强化恢复] << Druid
@@ -1601,7 +1600,7 @@ RXPGuides.RegisterGuide([[
 << Hunter SoD/Druid SoD
 #group RestedXP符文与书籍指南
 #subgroup 布兹
-#name Bugcatcher 符文
+#name 捕虫者符文
 #displayname 翼龙打击 - 35 (艾泽拉斯) << Hunter
 #displayname 生存本能 - 35 (艾泽拉斯) << Druid
 #title 翼龙打击 << Hunter
@@ -1734,22 +1733,22 @@ step << Alliance
     .goto The Barrens,46.361,73.904
     >>点击地面上的|cRXP_PICK_烧焦的残骸|r
     .turnin 79008 >>交任务 ……你所找到的纸条
-    .accept 79192 >> Accept Stepping Stones
+    .accept 79192 >>接受任务 垫脚石
 step << Horde
     #completewith next
     .zone The Barrens >>前往贫瘠之地
 step << Horde
     .goto The Barrens,46.361,73.904
     >>点击地面上的|cRXP_PICK_烧焦的残骸|r
-    .accept 79007 >>接受 ……你所找到的纸条
+    .accept 79007 >>接受任务 ……你所找到的纸条
 step << Horde
     #completewith next
     .zone Westfall >>前往西部荒野
 step << Horde
     .goto Westfall,37.413,50.701
     >>点击地面上的|cRXP_PICK_烧焦的残骸|r
-    .turnin 79007 >>交还 ……你所找到的纸条
-    .accept 79192 >>接受任务 踏脚石
+    .turnin 79007 >>交任务 ……你所找到的纸条
+    .accept 79192 >>接受任务 垫脚石
 step
     #completewith next
     .zone Stonetalon Mountains >>前往石爪山脉
@@ -1758,7 +1757,7 @@ step
     .goto Stonetalon Mountains,50.29,52.94,25 >>沿着烈日石居北面的土路旅行
 step
     .goto Stonetalon Mountains,40.748,52.576
-    >>点击盒子上的 |cRXP_PICK_Pocket Litter|r
+    >>点击盒子上的 |cRXP_PICK_垃圾袋|r
     .turnin 79192 >>交任务 踏脚石
     .accept 79980 >>接受任务 争分夺秒
 step
@@ -1779,26 +1778,26 @@ step
     .goto Loch Modan,49.4,12.9,8 >>|cRXP_WARN_前往洛克莫丹大坝墙体，小心地掉到大坝中心的突出处，跟随箭头|r
 step
     .goto Loch Modan,49.421,12.917
-    >>点击突出处的 |cRXP_PICK_Carved Figurine|r
+    >>在壁架上点击|cRXP_PICK_雕刻塑像|r
     .turnin 79974 >>交任务 湿活
     .accept 79975 >>接受任务 鹰爪
 step
     #completewith next
-    .goto Hillsbrad Foothills,87.691,48.166,10 >>旅行到索拉丁之墙，在阿拉希高地/希尔斯布莱德丘陵的区域边界
+    .goto Hillsbrad Foothills,87.691,48.166,10 >>前往位于阿拉希高地与希尔斯布莱德丘陵区域边界处的索拉丁之墙
 step
     #completewith next
-    .goto Arathi Highlands,24.132,21.470,7 >>爬上手推车，沿着墙向上走你的路
+    .goto Arathi Highlands,24.132,21.470,7 >>爬上推车，然后沿着墙壁向上走
 step
     .goto Arathi Highlands,22.466,24.127
-    >>点击挂在墙上的 |cRXP_PICK_Messenger 背包|r
+    >>点击挂在墙上的 |cRXP_PICK_信使行囊|r
     .turnin 79975 >>交任务 鹰爪
     .accept 79976 >>接受任务 这一定就是那个地方
 step
     .goto Arathi Highlands,22.466,24.127
-    >>点击地上的 |cRXP_PICK_Hastily Rolled-Up Satchel|r
+    >>点击地上的 |cRXP_PICK_草草收起的包裹|r
     .turnin 79976 >>交任务 这一定就是那个地方
 step
-    +|cRXP_WARN_强烈建议你在消耗前将|r |T134057:0|t[|cRXP_LOOT_混调干果|r] |cRXP_WARN_留到更高等级再用。每次使用|r |T134057:0|t[|cRXP_LOOT_混调干果|r] |cRXP_WARN_会为你的角色增加20%的休息经验，因此在更高等级使用效率更高|r
+    +|cRXP_WARN_在食用|r |T134057:0|t[|cRXP_LOOT_混调干果|r] |cRXP_WARN_之前，强烈建议将其留到更高的等级。每次使用|r |T134057:0|t[|cRXP_LOOT_混调干果|r] |cRXP_WARN_都会为你的角色增加20%的双倍经验，因此在等级更高时使用会更有效率|r
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1807,19 +1806,19 @@ RXPGuides.RegisterGuide([[
 #group RestedXP符文与书籍指南
 #subgroup 头盔 <<Druid/Shaman/Warrior
 #subgroup 护腕 <<Mage/Hunter/Paladin/Priest/Rogue/Warlock
-#name Emerald Wardens 符文
-#displayname 熔火护甲 <<Mage
-#displayname 戈尔 <<Druid
+#name 翡翠卫士符文
+#displayname 熔岩护甲 <<Mage
+#displayname 淤血 <<Druid
 #displayname T.N.T. <<Hunter
 #displayname 强化愤怒之锤 <<Paladin
-#displayname 虚空地带 <<Priest
-#displayname 剑刃乱舞 <<Rogue
+#displayname 虚空领域 <<Priest
+#displayname 穷追猛砍 <<Rogue
 #displayname 燃烧 <<Shaman
 #displayname 痛苦无常 <<Warlock
-#displayname 盾牌掌握 <<Warrior
+#displayname 盾牌精通 <<Warrior
 
 step
-    +|cRXP_WARN_前往下面列出的任何区域。在各自标记的位置，你会找到来自新阵营的NPC，|r |cRXP_FRIENDLY_The Emerald Wardens|r。
+    +|cRXP_WARN_前往下面列出的任意区域。在每个区域的标记位置，你会找到一个来自新阵营|r 翡翠卫士|cRXP_FRIENDLY_ 的NPC|r。
     >>暮色森林
     >>灰谷
     >>菲拉斯
@@ -1852,7 +1851,7 @@ step
     .train 429308 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：熔岩护甲|r] |cRXP_WARN_来学习|r |T132221:0|t[熔岩护甲] << Mage
     .train 431747 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_痛苦符文|r] |cRXP_WARN_来学习|r |T136228:0|t[痛苦无常] << Warlock
     .train 416066 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_燃烧符文|r] |cRXP_WARN_来学习|r |T135822:0|t[燃烧] << Shaman
-    .train 410098 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Protector|r] |cRXP_WARN_来训练|r |T132359:0|t[盾牌掌握] << Warrior
+    .train 410098 >>|cRXP_WARN_使用|r|T134419:0|t[|cRXP_FRIENDLY_守护符文|r] |cRXP_WARN_来学习|r|T132359:0|t[盾牌精通] << Warrior
     .train 432297 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_敏锐符文|r] |cRXP_WARN_来学习|r |T236269:0|t[穷追猛砍] << Rogue
     .train 431611 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_爆破符文|r] |cRXP_WARN_来学习|r |T133713:0|t[T.N.T.] << Hunter
     .train 431447 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_溅血符文|r] |cRXP_WARN_来学习|r |T304501:0|t[淤血] << Druid
@@ -1876,7 +1875,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP符文与书籍指南
 #subgroup 头盔 <<Mage/Hunter/Paladin/Priest/Rogue/Warlock
 #subgroup 护腕 <<Druid/Shaman/Warrior
-#name Wild Offering 符文
+#name 荒野祭品符文
 #displayname 进阶结界 - 40 (艾泽拉斯) <<Mage
 #displayname 荷枪实弹 - 40 (艾泽拉斯) <<Hunter
 #displayname 强化庇护 - 40 (艾泽拉斯) <<Paladin
@@ -1899,22 +1898,22 @@ step
     #optional
     #completewith next
     .goto The Hinterlands,66.27,65.13,0
-    >>|cRXP_WARN_为了完成此任务，你需要一个队伍成员拥有|r |T134799:0|t|cRXP_LOOT_Wildwshiper Draught|r |cRXP_WARN_。它掉落自Hinterlands的Jintha'alor精英巨魔。仅当你的队伍中没有人拥有它时才获得|r
+    >>|cRXP_WARN_为了完成这个任务，你需要队伍中有一个人的背包里有|r|T134799:0|t|cRXP_LOOT_荒野呢喃饮剂|r|cRXP_WARN_。它掉落自辛特兰辛萨罗的精英巨魔。只有在你的剃刀高地队伍中没有任何人拥有该物品时，才需要去获取它|r
     .collect 221261,1 --Wildwhisper Draught
 step
     .goto The Barrens,45.5,92.4
     >>寻找一个队伍前往剃刀高地。你需要清除螺旋式通道到最终Boss |cRXP_ENEMY_寒冰之王亚门纳尔|r 并击杀他。之后，队伍中的一个人必须使用他们的 |T134799:0|t|cRXP_LOOT_Wildwshiper Draught|r 来召唤一个幽灵 |cRXP_FRIENDLY_阿迦玛甘灵魂|r。与他对话来交任务并接收后续任务
     .turnin 82043 >>交任务 荒野之神
-    .accept 82044 >>接受 荒野之神
+    .accept 82044 >>接受任务 荒野之神
     .target Spirit of Agamaggan
     .mob 寒冰之王亚门纳尔
     .use 221261
 step
-    >>你已获得 |T237378:0|t|cRXP_LOOT_Agamaggan's Roar|r。此物品可在 |cRXP_PICK_黑石深渊|r、|cRXP_PICK_Zul'farrak|r 和 |cRXP_PICK_玛拉顿|r 的特定区域使用，以召唤一个新的 |cRXP_ENEMY_谵妄古魂|r Boss，击杀时总是掉落一个 |T132119:0|t|cRXP_LOOT_Wild Offering|r。收集3个以完成任务。|T132119:0|t|cRXP_LOOT_Wild Offerings|r 也可用作货币从 |cRXP_FRIENDLY_影齿大使|r 处购买强力物品，因此你可能想多刷几个来强化你的符文
-    >>|cRXP_WARN_在|r |cRXP_FRIENDLY_祖尔法拉克|r |cRXP_WARN_击杀任意3个Boss，你将能够在Ghaz'rilla水池附近生成一个|r |cRXP_ENEMY_谵妄古魂|r
-    >>|cRXP_WARN_在|r |cRXP_FRIENDLY_玛拉顿|r |cRXP_WARN_击杀|r |cRXP_ENEMY_瑟莱德丝公主|r |cRXP_WARN_后，你将能够召唤一个|r |cRXP_ENEMY_谵妄古魂|r |cRXP_WARN_在她的竞技场中|r
-    >>|cRXP_WARN_在|r |cRXP_FRIENDLY_黑石深渊|r |cRXP_WARN_击杀|r |cRXP_ENEMY_高级讯问官格斯塔恩|r、|cRXP_ENEMY_猎犬大师格瑞布玛|r |cRXP_WARN_并完成|r |cRXP_ENEMY_the “点背”西梅斯 <搏击竞技场军需官>|r |cRXP_WARN_活动。之后你将能够召唤一个|r |cRXP_ENEMY_谵妄古魂|r |cRXP_WARN_在黑铁公路（通往贝尔加的路）上|r
-    >>|cRXP_WARN_提示：|r 这些供品可以在团队中收集，你可以反复运行相同的副本。目前农它们最快的方式是 |cRXP_WARN_加入一个10人团队|r 并运行 |cRXP_WARN_重复玛拉顿公主或祖尔'farrak副本|r
+    >>你现在已经获得了|T237378:0|t|cRXP_LOOT_阿迦玛甘之啸|r。该物品可在|cRXP_PICK_黑石深渊|r、|cRXP_PICK_祖尔法拉克|r和|cRXP_PICK_玛拉顿|r的特定区域使用，以召唤出一个全新的|cRXP_ENEMY_谵妄古魂|r首领，击杀它必定会掉落一个|T132119:0|t|cRXP_LOOT_荒野祭品|r。收集3个即可完成任务。|T132119:0|t|cRXP_LOOT_荒野祭品|r同时也是一种货币，可用于从|cRXP_FRIENDLY_影齿大使|r处购买非常强大的装备，因此除了获取符文所需的3个之外，你可能还会想刷取更多
+    >>|cRXP_WARN_在|r |cRXP_FRIENDLY_祖尔法拉克|r |cRXP_WARN_击杀任意3个Boss，你将能够在 |r加兹瑞拉水池附近|cRXP_ENEMY_ 生成一个|r |cRXP_WARN_谵妄古魂|r
+    >>|cRXP_WARN_在|r |cRXP_FRIENDLY_玛拉顿|r |cRXP_WARN_击杀|r |cRXP_ENEMY_瑟莱德丝公主|r |cRXP_WARN_后，你将能够 |r在她的竞技场中|cRXP_ENEMY_ 召唤一个 |r |cRXP_WARN_谵妄古魂|r
+    >>|cRXP_WARN_在|r|cRXP_FRIENDLY_黑石深渊|r|cRXP_WARN_中，击杀|r|cRXP_ENEMY_审判官格斯塔恩|r、|cRXP_ENEMY_驯犬者格雷布玛尔|r|cRXP_WARN_并完成|r|cRXP_ENEMY_竞技场|r|cRXP_WARN_事件。之后你将可以在黑铁大道（通往贝尔加的道路）上召唤一个|r|cRXP_ENEMY_狂乱的古树|r |cRXP_WARN_|r
+    >>|cRXP_WARN_提示：|r 你可以在团队副本状态下收集献祭，并且可以重复运行同一个地下城。目前最快的刷取方式是|cRXP_WARN_加入一个10人团队|r，然后|cRXP_WARN_重复运行玛拉顿公主或祖尔法拉克|r
     .complete 82044,1 --Wild Offering 3/3
     .use 221418
     .mob Delirious Ancient
@@ -1925,7 +1924,7 @@ step
 step
     .goto Felwood,51.6,82.0
     >>在翡翠圣地附近与 |cRXP_FRIENDLY_影齿大使|r 对话
-    .turnin 82044 >>交还 荒野之神
+    .turnin 82044 >>交任务 荒野之神
     .target Shadowtooth Emissary
 step
     .train 431650 >>|cRXP_WARN_使用|r |T236160:0|t[|cRXP_FRIENDLY_海加尔的智慧|r] 物品 |cRXP_WARN_来训练|r |T237539:0|t[神圣庇护] << Priest
@@ -1945,10 +1944,10 @@ RXPGuides.RegisterGuide([[
 << SoD
 #classic
 #group RestedXP符文与书籍指南
-#subgroup 经典怀旧服 道具 <<Warlock
+#subgroup 头盔 <<Warlock
 #subgroup 护腕 <<Paladin/Priest/Mage
-#name Ley 水晶 符文
-#displayname 转移 - 45 (艾泽拉斯) <<Mage
+#name 魔网水晶符文
+#displayname 闪回 - 45 (艾泽拉斯) <<Mage
 #displayname 净化之力 - 45 (艾泽拉斯) <<Paladin
 #displayname 绝望 - 45 (艾泽拉斯) <<Priest
 #displayname 爆燃 - 45 (艾泽拉斯) <<Warlock
@@ -1956,34 +1955,34 @@ RXPGuides.RegisterGuide([[
 step
     #optional
     #completewith next
-    >>|cRXP_WARN_为了找到这个符文，你需要获得4个|r |T134938:0|t|cRXP_LOOT_经典怀旧服 道具地卜术卷轴|r 并将其中一个引导到世界各地的四个 Ley 水晶 中以生成|cRXP_WARN_ Enraged Leywalkers|r。|cRXP_ENEMY_或者，你可以与拥有卷轴的法师或者拥有|r |T132842:0|t|cRXP_WARN_Worldcore 碎片|r|cRXP_FRIENDLY_的术士组队|r << Mage
-    >>|cRXP_WARN_为了找到这个符文，你需要从你的|r |T132842:0|t[|cRXP_FRIENDLY_探险小鬼|r] |cRXP_WARN_远征任务中获得4个|r |T236294:0|t|cRXP_FRIENDLY_Worldcore 碎片|r，并在世界各地的四个 Ley 水晶 中引导其中一个以生成|cRXP_WARN_ Enraged Leywalkers|r。|cRXP_ENEMY_或者，你可以与拥有碎片的其他术士或者拥有|r |T134938:0|t|cRXP_WARN_经典怀旧服 道具地卜术卷轴|r|cRXP_LOOT_的法师组队|r << Warlock
-    +|cRXP_WARN_你需要与拥有|r |T132842:0|t|cRXP_FRIENDLY_Worldcore 碎片|r|cRXP_WARN_的术士或拥有|r |T134938:0|t|cRXP_LOOT_经典怀旧服 道具地卜术卷轴|r|cRXP_WARN_的法师组队来召唤所需的怪物。你无法独自召唤它们|r << Priest/Paladin
+    >>|cRXP_WARN_为了找到这个符文，你需要获取4个|r|T134938:0|t|cRXP_LOOT_地卜术卷轴|r，|cRXP_WARN_并在世界各地的四个地脉水晶处引导卷轴，以召唤出|r暴怒的魔网行者|cRXP_ENEMY_。|r或者，你也可以与拥有该卷轴的其他法师，或拥有|cRXP_WARN_|T132842:0|t|r世界之核碎块|cRXP_FRIENDLY_ 的术士组队|r << Mage
+    >>|cRXP_WARN_为了找到这个符文，你需要通过你的|r|T132842:0|t[|cRXP_FRIENDLY_探险小鬼|r] |cRXP_WARN_派遣任务获取4个|r|T236294:0|t|cRXP_FRIENDLY_世界之核碎块|r，|cRXP_WARN_并在世界各地的四个地脉水晶处引导碎片，以召唤出|r暴怒的魔网行者|cRXP_ENEMY_。|r或者，你也可以与拥有该碎片的其他术士，或拥有|cRXP_WARN_|T134938:0|t|r地卜术卷轴|cRXP_LOOT_ 的法师组队|r << Warlock
+    +|cRXP_WARN_为了找到这个符文，你需要与拥有|r|T132842:0|t|cRXP_FRIENDLY_世界之核碎块|r |cRXP_WARN_的术士，或拥有|r|T134938:0|t|cRXP_LOOT_地卜术卷轴|r |cRXP_WARN_的法师组队来召唤所需的怪物。你无法独自召唤它们|r << Priest/Paladin
     .collect 223171,4 << Mage
     .collect 223168,4 << Warlock
 
 step
-    >>前往地图上标记的每个 Ley 水晶，对其使用你的 |T134938:0|t|cRXP_LOOT_Scroll of Geomancy|r，或者让你的队伍中的某人使用它来召唤|cRXP_ENEMY_ 暴怒的魔网行者|r。击败它并拾取其 |cRXP_LOOT_Leycryst|r。这可以任意顺序进行。 << Mage
-    >>前往地图上标记的每个 Ley 水晶，对其使用你的 |T132842:0|t|cRXP_FRIENDLY_Worldcore 道具|r，或者让你的队伍中的某人使用它来召唤|cRXP_ENEMY_ 暴怒的魔网行者|r。击败它并拾取其 |cRXP_LOOT_Leycryst|r。这可以任意顺序进行。 << Warlock
-    >>前往地图上标记的每个 Ley 水晶，并让你的队伍中的术士或法师来召唤|cRXP_ENEMY_ 暴怒的魔网行者|r。击败它并拾取其 |cRXP_LOOT_Leycryst|r。这可以任意顺序进行。 << Priest/Paladin
+    >>前往地图上标记的每个地脉水晶处，并在其上使用你的|T134938:0|t|cRXP_LOOT_地卜术卷轴|r，或者让你小队中的其他人来使用，以召唤出|cRXP_ENEMY_暴怒的魔网行者|r。击败它并拾取|cRXP_LOOT_魔力结晶|r。这可以按任意顺序完成 << Mage
+    >>前往地图上标记的每个地脉水晶处，并在其上使用你的|T132842:0|t|cRXP_FRIENDLY_世界之核碎块|r，或者让你小队中的其他人来使用，以召唤出|cRXP_ENEMY_暴怒的魔网行者|r。击败它并拾取|cRXP_LOOT_魔力结晶|r。这可以按任意顺序完成 << Warlock
+    >>前往地图上标记的每个魔网水晶处，并让你小队中的术士或法师召唤出|cRXP_ENEMY_暴怒的魔网行者|r。击败它并拾取|cRXP_LOOT_魔力结晶|r。这可以按任意顺序完成 << Priest/Paladin
     .goto Azshara,22.0,79.0,-1
     .goto Feralas,57.0,60.0,-1
     .goto The Hinterlands,48.0,59.0,-1
     .goto Searing Gorge,55,65,-1
-    .collect 221318,1 >>|T237193:0|t|cRXP_LOOT_艾萨拉魔力结晶|r 来自 |cRXP_PICK_艾萨拉|r near The 凄凉山
-    .collect 221317,1 >>|T237189:0|t|cRXP_LOOT_菲拉斯魔力结晶|r 来自 |cRXP_PICK_菲拉斯|r in the 高原荒野
-    .collect 221319,1 >>|T237192:0|t|cRXP_LOOT_黑石魔力结晶|r from southern |cRXP_PICK_灼热峡谷|r
-    .collect 221320,1 >>|T237191:0|t|cRXP_LOOT_辛特兰魔力结晶|r 来自 |cRXP_PICK_辛特兰|r north of 祖尔祭坛
+    .collect 221318,1 >>|T237193:0|t|cRXP_LOOT_艾萨拉魔力结晶|r 来自凄凉山旁边的 |cRXP_PICK_艾萨拉|r
+    .collect 221317,1 >>|T237189:0|t|cRXP_LOOT_菲拉斯魔力结晶|r 来自于高原荒野的|cRXP_PICK_菲拉斯|r
+    .collect 221319,1 >>|T237192:0|t|cRXP_LOOT_黑石魔力结晶|r 来自|cRXP_PICK_灼热峡谷|r 南部
+    .collect 221320,1 >>|T237191:0|t|cRXP_LOOT_辛特兰魔力结晶|r 来自 |cRXP_PICK_辛特兰|r 北部的祖尔祭坛
     .mob Enraged Leywalker
     .train 429309,1 << Mage
     .train 431745,1 << Warlock
     .train 429255,1 << Paladin
     .train 431673,1 << Priest
 step
-    .train 429309 >>|cRXP_WARN_使用你收集的任何一个结晶来组合它们并学习|r |T132171:0|t[转移] << Mage
-    .train 431745 >>|cRXP_WARN_使用你收集的任何一个结晶来组合它们并学习|r |T236290:0|t[爆燃] << Warlock
-    .train 429255 >>|cRXP_WARN_使用你收集的任何一个结晶来组合它们并学习|r |T135950:0|t[净化之力] << Paladin
-    .train 431673 >>|cRXP_WARN_使用你收集的任何一个结晶来组合它们并学习|r |T237555:0|t[绝望] << Priest
+    .train 429309 >>|cRXP_WARN_使用你收集到的四个水晶中的任意一个来将它们组合并学会|r |T132171:0|t[闪回] << Mage
+    .train 431745 >>|cRXP_WARN_使用你收集到的四个水晶中的任意一个来将它们组合并学会|r |T236290:0|t[爆燃] << Warlock
+    .train 429255 >>|cRXP_WARN_使用你收集到的四个水晶中的任意一个来将它们组合并学会|r |T135950:0|t[净化之力] << Paladin
+    .train 431673 >>|cRXP_WARN_使用你收集到的四个水晶中的任意一个来将它们组合并学会|r |T237555:0|t[绝望] << Priest
     .use 221318 --Azshara Leycryst
 ]])
 
@@ -1993,9 +1992,9 @@ RXPGuides.RegisterGuide([[
 #group RestedXP符文与书籍指南
 #subgroup 头盔
 #title 聪慧 << Shaman
-#title 痛苦与磨难 << Priest
+#title 饱受折磨 << Priest
 #name 聪慧 - 43 (塔纳利斯) << Shaman
-#name 痛苦与磨难 - 43 (塔纳利斯) << Priest
+#name 饱受折磨 - 43 (塔纳利斯) << Priest
 
 -- Mental Dexterity/Pain and Suffering
 -- PERMOK: Needs better waypoints
@@ -2007,7 +2006,7 @@ step
     .train 415991,1 << Priest
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_Wastewander 小影 Mages|r。拾取他们身上的 |T134939:0|t[|cRXP_LOOT_加密的术士笔记|r]
+    >>击杀 |cRXP_ENEMY_废土暗法师|r。拾取他们身上的 |T134939:0|t[|cRXP_LOOT_加密的术士笔记|r]
     .collect 221547,1
     .mob Wastewander Shadow Mage
     .train 416055,1 << Shaman
@@ -2019,7 +2018,7 @@ step
     .goto Tanaris,59.8,24.0,35,0
     .goto Tanaris,65.6,32.2,35,0
     .goto Tanaris,62.4,33.2,30,0
-    >>杀死 |cRXP_ENEMY_Wastewander Thieves|r并拾取它们的战利品 |T134329:0|t[|cRXP_LOOT_废土解码表|r]
+    >>击杀|cRXP_ENEMY_废土窃贼|r。拾取他们的|T134329:0|t[|cRXP_LOOT_废土解码表|r]
     .collect 221549,1
     .mob Wastewander Thief
 step
@@ -2029,22 +2028,22 @@ step
     .goto Tanaris,58.4,38.6,40,0
     .goto Tanaris,60.3,23.4,40,0
     .goto Tanaris,66.2,35.0,40,0
-    >>杀死 |cRXP_ENEMY_Wastewander 小影 Mages|r并拾取它们的战利品 |T134939:0|t[|cRXP_LOOT_加密的术士笔记|r]
+    >>击杀 |cRXP_ENEMY_废土暗法师|r。拾取他们身上的 |T134939:0|t[|cRXP_LOOT_加密的术士笔记|r]
     .collect 221547,1
     .mob Wastewander Shadow Mage
 step
     .train 416055,1 << Shaman
     .train 415991,1 << Priest
-    >>|cRXP_WARN_使用|r |T134329:0|t[废土解码表] |cRXP_WARN_来获得|r |T237018:0|t[Deciphered 术士 Notes]
+    >>|cRXP_WARN_使用|r |T134329:0|t[废土解码表] |cRXP_WARN_来获得|r |T237018:0|t[解译的术士笔记]
     .goto Tanaris,58.0,36.0
     .use 221549
     .collect 221545,1
 step
     .train 416055,1 << Shaman
     .train 415991,1 << Priest
-    >>|cRXP_WARN_站在|r "Cryptic 炽蓝丝绸 of Summoning" 顶部。|cRXP_WARN_在使用|r |T237018:0|t[Deciphered 术士 Notes] |cRXP_WARN_时站在卷轴顶部|r。
-    >>杀死 |cRXP_ENEMY_暴怒的虚空行者|r并拾取它的战利品 |T134419:0|t[|cRXP_FRIENDLY_Rune of 聪慧|r] << Shaman
-    >>杀死 |cRXP_ENEMY_暴怒的虚空行者|r并拾取它的战利品 |T135975:0|t[|cRXP_FRIENDLY_Prophecy of Verdant 冰冷|r] << Priest
+    >>|cRXP_WARN_站在|r “神秘的召唤卷轴” |cRXP_WARN_上面|r。|cRXP_WARN_站在卷轴上面时使用|r |T237018:0|t[解译的术士笔记]。
+    >>杀死 |cRXP_ENEMY_暴怒的虚空行者|r。拾取它的 |T134419:0|t[|cRXP_FRIENDLY_聪慧符文|r] << Shaman
+    >>击杀 |cRXP_ENEMY_暴怒的虚空行者|r。拾取它的 |T135975:0|t[|cRXP_FRIENDLY_青翠冬日的预言|r] << Priest
     .collect 220610,1 << Shaman
     .collect 221979,1 << Priest
 step
@@ -2052,8 +2051,8 @@ step
     .itemcount 221979,1 << Priest
     .use 220610 << Shaman
     .use 221979 << Priest
-    .train 416055 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 聪慧|r] |cRXP_WARN_来学习|r |T136055:0|t[聪慧] << Shaman
-    .train 415991 >>|cRXP_WARN_使用|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of Verdant 冰冷|r] |cRXP_WARN_来学习|r |T237567:0|t[痛苦与磨难] << Priest
+    .train 416055 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_聪慧符文|r] |cRXP_WARN_来学习|r |T136055:0|t[聪慧] << Shaman
+    .train 415991 >>|cRXP_WARN_使用|r |T135975:0|t[|cRXP_FRIENDLY_青翠冬日的预言|r] |cRXP_WARN_来学习|r |T237567:0|t[饱受折磨] << Priest
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2070,18 +2069,18 @@ step
 step << Horde
     #label rangeSpec
     .goto Eastern Plaguelands,26.0,74.0
-    >>拾取 |cRXP_FRIENDLY_纳萨诺斯·凋零者|r 旁边的红书。它在房子外面，门的左边。它包含 |T134419:0|t[|cRXP_FRIENDLY_Rune of 远程武器专精|r]
+    >>拾取|cRXP_FRIENDLY_纳萨诺斯·凋零者|r 旁边的红色书籍。它在房子外面，门的左边。里面有|T134419:0|t[|cRXP_FRIENDLY_远程武器专精符文|r]
     .collect 226410,1 --Rune of Ranged Weapon Specialization
 step << Alliance
     #label rangeSpec
     .goto Eastern Plaguelands,26.0,74.0
-    >>拾取 |cRXP_ENEMY_纳萨诺斯·凋零者|r 旁边的红书。它在房子外面，门的左边。它包含 |T134419:0|t[|cRXP_FRIENDLY_Rune of 远程武器专精|r]
-    >>|cRXP_WARN_如果附近有人，请让他们把|r |cRXP_ENEMY_纳萨诺斯·凋零者|r |cRXP_WARN_牵到远处，这样你可以安全地拾取符文|r
-    >>|cRXP_WARN_如果附近没有人，可以被|r |cRXP_ENEMY_Nathanos|r |cRXP_WARN_杀死，然后在房子内远离他视线的地方重生。然后在房子内拾取书籍，要么使用交互键，要么调整你的摄像头使其可被点击|r << Warrior/Rogue
-    >>|cRXP_WARN_如果附近没有人，将你的宠物设置为|r |T136106:0|t[停留] |cRXP_WARN_距离|r Nathanos|cRXP_ENEMY_ 较远的地方，然后发送宠物|r |T132152:0|t[攻击] |cRXP_WARN_命令以吸引他的仇恨。一旦他以你的宠物为目标，将你的宠物设置为|r |T132311:0|t[被动型]，|cRXP_WARN_这会让你的宠物返回到停留位置。走到书籍旁边并使用|r |T132293:0|t[Disengage] |cRXP_WARN_来脱离战斗并拾取符文|r << Hunter
+    >>拾取|cRXP_ENEMY_纳萨诺斯·凋零者|r旁边的红色书籍。它在房子外面，门的左边。里面有|T134419:0|t[|cRXP_FRIENDLY_远程武器专精符文|r]
+    >>|cRXP_WARN_如果附近有人，请他们帮忙把|r|cRXP_ENEMY_纳萨诺斯·凋零者|r|cRXP_WARN_暂时拉走，这样你就可以安全地拾取符文了|r
+    >>|cRXP_WARN_如果附近没有人，你可以死在|r|cRXP_ENEMY_纳萨诺斯|r|cRXP_WARN_手里，然后站在房子里面且在他的视线范围之外复活。接着通过使用交互键或者调整你的镜头角度来点击它，从而在房子内部拾取书籍|r << Warrior/Rogue
+    >>|cRXP_WARN_如果附近没有人，将你的宠物|T136106:0|t[停留]在距离|r纳萨诺斯|cRXP_WARN_较远的地方|r，|cRXP_ENEMY_然后让宠物|r|T132152:0|t[攻击]|cRXP_WARN_他拉住仇恨。一旦他开始攻击你的宠物，将你的宠物设置为|r|T132311:0|t[被动]，|cRXP_WARN_这会让你的宠物返回到它的停留位置。走到书籍旁边，使用|r|T132293:0|t[假死]|cRXP_WARN_来脱离战斗并拾取符文|r << Hunter
     .collect 226410,1 --Rune of Ranged Weapon Specialization
 step
-    .train 453692 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 远程武器专精|r] |cRXP_WARN_来学习|r |T135490:0|t[远程武器专精]
+    .train 453692 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_远程武器专精符文|r] |cRXP_WARN_来学习|r |T135490:0|t[远程武器专精]
     .use 226410
 ]])
 
@@ -2089,21 +2088,21 @@ RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD/Paladin SoD
 #group RestedXP符文与书籍指南
-#subgroup 环
+#subgroup 戒指
 #title 神圣专精
 #name 神圣专精 - 60 (东瘟疫之地)
 
 step
     #completewith next
-    >>|cRXP_WARN_获取这个符文需要你在精英区域与小怪战斗。单独完成是可能的，但如果你等级较低或装备不够好，请考虑寻找其他人帮助你|r
+    >>|cRXP_WARN_获取这个符文需要你在精英区域击杀怪物。虽然可以单人完成，但如果你的等级较低或装备较差，建议寻找其他人来协助你|r
     .zone Eastern Plaguelands >>前往东瘟疫之地
 step
-    >>|cRXP_WARN_你可以在进行该任务线的同时获取这个符文，一起获得|r |T135883:0|t[|cRXP_FRIENDLY_联结治疗|r] |cRXP_WARN_如果你想同时获取两个符文，请转到|r |T135883:0|t[|cRXP_FRIENDLY_联结治疗|r] |cRXP_WARN_符文指南|r << Priest
-    .goto Eastern Plaguelands,77.5,81.7,50 >>前往提尔之手号，|cRXP_WARN_记住这是一个精英区域|r
+    >>|cRXP_WARN_如果你先推进那条任务线，你可以在获取|r|T135883:0|t[|cRXP_FRIENDLY_联结治疗|r]|cRXP_WARN_的同时获得这个符文。如果你更想同时获得这两个符文，请前往|r|T135883:0|t[|cRXP_FRIENDLY_联结治疗|r]|cRXP_WARN_符文指南|r << Priest
+    .goto Eastern Plaguelands,77.5,81.7,50 >>前往提尔之手，|cRXP_WARN_请注意这是精英区域|r
 step
     .goto Eastern Plaguelands,83.6,78.2
-    >>|cRXP_WARN_前往建筑物的图书馆区（在你的地图上标记），寻找放在书架上的一本书。拾取它以获取符文。请注意你无法在战斗中拾取它|r
-    >>|cRXP_WARN_你可以清除房间里的所有小怪，或者死在书旁边，在小怪的视线盲区内复活以拾取符文，而无需击杀任何东西|r
+    >>|cRXP_WARN_前往地图上标记的建筑图书馆区域，寻找书架顶部的一本书。拾取它即可获得符文。请注意，你无法在战斗中拾取它。|r
+    >>|cRXP_WARN_你可以清光房间里的所有怪物，或者死在书旁边，然后在一个怪物视线之外的位置释放灵魂，这样就能在不杀任何怪的情况下拾取符文|r
     .collect 226418,1 --Rune of Holy Specialization
     .train 453702,1
 step
@@ -2124,13 +2123,13 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    >>|cRXP_WARN_获取这个符文需要你在精英区域与小怪战斗。虽然可以单人完成，但如果你等级较低或装备不足，建议寻求帮助|r
-    .zone Western Plaguelands >>前往西瘟疫之地
+    >>|cRXP_WARN_获取这个符文需要你在精英区域击杀怪物。虽然可以单人完成，但如果你的等级较低或装备较差，建议寻找其他人来协助你|r
+    .zone Western Plaguelands >>前往 西瘟疫之地
 step
-    .goto Western Plaguelands,48.7,22.4,50 >>前往壁炉谷，|cRXP_WARN_记住这是一个精英区域|r
+    .goto Western Plaguelands,48.7,22.4,50 >>前往壁炉谷，|cRXP_WARN_请注意这是一个精英区域|r
 step
     .goto Western Plaguelands,47.3,13.6
-    >>|cRXP_WARN_前往地图上标记的塔顶。寻找放在书架旁角落里的红色书籍，它由|r |cRXP_ENEMY_猩红牧师|r |cRXP_WARN_守卫。拾取它以获取符文|r
+    >>|cRXP_WARN_前往地图上标记的塔顶。寻找放在书架旁角落里的一本红色书籍，它由一位|r |cRXP_ENEMY_血色神父|r |cRXP_WARN_看守。拾取以获取符文|r
     .collect 226413,1 --Rune of Arcane Specialization
     .train 453702,1
 step
@@ -2156,7 +2155,7 @@ step
     .goto Burning Steppes,40.3,34.9,100 >>前往黑石要塞
 step
     .goto Burning Steppes,39.9,34.1
-    >>|cRXP_WARN_进入堡垒并寻找放在你的地图上标记的位置的红色书籍。拾取它以获取符文|r
+    >>|cRXP_WARN_进入堡垒并寻找一本位于你地图标记位置的红色书籍。拾取它以获取符文|r
     .collect 226407,1 --Rune of Axe Specialization
 step
     #completewith next
@@ -2180,7 +2179,7 @@ step
     .goto Silithus,20,85,50 >>前往该区域南部的帐篷，它位于安其拉的大门附近
 step
     .goto Silithus,20,85
-    >>|cRXP_WARN_进入帐篷并寻找放在你的地图上标记的位置的红色书籍。拾取它以获取符文|r
+    >>|cRXP_WARN_进入帐篷并寻找一本位于你地图标记位置的红色书籍。拾取它以获取符文|r
     .collect 226409,1 --Rune of Dagger Specialization
 step
     #completewith next
@@ -2199,14 +2198,14 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone 25 >>前往黑石山，可以通过灼热峡谷或燃烧平原到达
+    .zone 25 >>前往黑石山，你可以选择穿过灼热峡谷或燃烧平原
 step
-    .goto 1415/0,-1232.500,-7612.600,20 >>前往熔岩地带东侧，直到找到通往下层黑石塔的入口
+    .goto 1415/0,-1232.500,-7612.600,20 >>前往熔铁桥环路的东侧，直到你找到一个通往黑石塔下层通道的入口
 step
-    .goto 1415/0,-1294.200,-7574.700,5 >>沿着路往上走并进入你右边的第一个侧房。|cRXP_WARN_你可能需要击杀挡在你面前的精英怪，因为你无法在战斗中拾取书籍|r
+    .goto 1415/0,-1294.200,-7574.700,5 >>沿着通道向上走，并进入你右侧的第一个侧房。|cRXP_WARN_你可能需要击杀挡在路上的精英怪，因为你在战斗状态下无法拾取书籍|r
 step
     .goto 1415/0,-1302.100,-7583.400
-    >>|cRXP_WARN_寻找放在这个房间地上的红色书籍。它可能在多个位置刷新。拾取它以获取符文|r
+    >>|cRXP_WARN_寻找放在这个房间地上的一本红色书籍。它可能在多个位置刷新。拾取它以获取符文|r
     .collect 226694,1 --Rune of Defense Specialization
 step
     #completewith next
@@ -2230,11 +2229,11 @@ step
     .goto Winterspring,49.0,8.0,50 >>前往北边的霜刀石
 step
     .goto Winterspring,49.0,8.0
-    >>|cRXP_WARN_在标记的位置寻找红色书籍。它可能由两只等级55-56的|r |cRXP_ENEMY_Frostsabers|r |cRXP_WARN_守卫。拾取它以获取符文|r
+    >>|cRXP_WARN_在标记位置寻找一本红色的书。它可能由两只55-56级的|r |cRXP_ENEMY_霜刃豹|r |cRXP_WARN_看守，拾取符文|r
     .collect 226419,1 --Rune of Feral Combat Specialization
 step
     #completewith next
-    .train 453703 >>使用 |T134419:0|t[|cRXP_FRIENDLY_野性战斗专精符文|r] 来学习 |T132116:0|t[野性战斗专精]
+    .train 453703 >>使用 |T134419:0|t[|cRXP_FRIENDLY_野性战斗专精狂野符文|r] 来学习 |T132116:0|t[野性战斗专精]
     .itemcount 226419,1
     .use 226419
 ]])
@@ -2251,7 +2250,7 @@ step
     #completewith next
     .zone Searing Gorge >>前往灼热峡谷
 step
-    .goto 1427/0,-1425.800,-6772.400,25 >>通过地图上标记的洞穴入口进入熔渣池
+    .goto 1427/0,-1425.800,-6772.400,25 >>通过地图上标记的洞穴入口进入熔渣之池
 step
     .goto 1427/0,-1306.900,-6642.800,25 >>穿过北方的桥梁
 step
@@ -2280,7 +2279,7 @@ step
     .zone Silithus >>前往希利苏斯
 step
     .goto 1427/0,-1225.300,-6623.600
-    >>|cRXP_WARN_在标记的位置寻找红色书籍。它被暮光所笼罩，可能有点难以看到|r
+    >>|cRXP_WARN_在标记的位置寻找一本红色书籍。它被暮光所笼罩，可能有点难以看到|r
     .collect 226411,1 --Rune of Fist Weapon Specialization
 step
     #completewith next
@@ -2301,10 +2300,10 @@ step
     #completewith next
     .zone Winterspring >>前往冬泉谷
 step
-    .goto Winterspring,59.0,59.0,50 >>向南前往Owlbeast Camp
+    .goto Winterspring,59.0,59.0,50 >>向南前往枭兽营地
 step
     .goto Winterspring,59.0,59.0
-    >>|cRXP_WARN_在所在地区寻找红书。可能被数个57-58级|r |cRXP_ENEMY_Owlbeasts|r |cRXP_WARN_守卫。拾取战利品以获得符文|r
+    >>|cRXP_WARN_在标记位置寻找一本红色的书。它可能由几只57-58级的|r |cRXP_ENEMY_枭兽|r |cRXP_WARN_看守，拾取符文|r
     .collect 226415,1 --Rune of Frost Specialization
 step
     #completewith next
@@ -2328,7 +2327,7 @@ step
     .goto Felwood,63.42,7.71,50 >>向北前往魔爪村
 step
     .goto Felwood,62.8,7.5
-    >>|cRXP_WARN_在所在地区寻找红书。在|r |cRXP_ENEMY_血喉酋长|r |cRXP_WARN_旁边的营地中。拾取战利品以获得符文|r
+    >>|cRXP_WARN_在标记位置寻找一本红色书籍。它位于|r|cRXP_ENEMY_血喉酋长|r|cRXP_WARN_旁边的营地里。拾取它以获取符文|r
     .collect 226416,1 --Rune of Nature Specialization
 step
     #completewith next
@@ -2347,11 +2346,11 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Wetlands >>旅行到湿地
+    .zone Wetlands >>前往湿地
 step
-    .goto 1437/0,-3451.700,-3450.800,25 >>向东前往通往格瑞姆巴托的路径起点
+    .goto 1437/0,-3451.700,-3450.800,25 >>向东前往通往格瑞姆巴托的道路起点
 step
-    .goto 1437/0,-3582.500,-4138.200,25 >>跟随道路一直向上前往格瑞姆巴托。|cRXP_WARN_沿途不要与红龙交战，你可以绕过它们到达那里|r
+    .goto 1437/0,-3582.500,-4138.200,25 >>沿路一直向上前往格瑞姆巴托。|cRXP_WARN_沿途不要与红龙交战，你可以绕过它们到达那里|r
 step
      .goto 1437/0,-3451.900,-4052.500
     >>|cRXP_WARN_沿着路径前往格瑞姆巴托的大门。在入口右侧寻找红书。拾取战利品以获得符文|r
@@ -2375,14 +2374,14 @@ step
     #completewith next
     .zone Azshara >>前往艾萨拉
 step
-    .goto Azshara,76.43,43.95,100 >>前往阿克卡隆神殿
+    .goto Azshara,76.43,43.95,100 >>前往亚考兰神殿
 step
     .goto Azshara,76.88,44.24
-    >>|cRXP_WARN_在庙内寻找放在月井上的红书。拾取战利品以获得符文|r
+    >>|cRXP_WARN_在神殿内寻找一本放在月井上的红书。拾取它以获得符文|r
     .collect 226412,1 --Rune of Pole Weapon Specialization
 step
     #completewith next
-    .train 453694 >>使用 |T134419:0|t[|cRXP_FRIENDLY_长柄军械专精符文|r] 来学习 |T135145:0|t[长柄军械专精]
+    .train 453694 >>使用 |T134419:0|t[|cRXP_FRIENDLY_长柄武器专精符文|r] 来学习 |T135145:0|t[长柄军械专精]
     .itemcount 226412,1
     .use 226412
 ]])
@@ -2399,10 +2398,10 @@ step
     #completewith next
     .zone Blasted Lands >>前往诅咒之地
 step
-    .goto Blasted Lands,45.19,55.29,100 >>向南前往腐蚀之痕。|cRXP_WARN_你需要穿过一个精英区域，里面有许多免疫控制的高级怪物。你很可能需要死亡跑来到符文所在地区|r
+    .goto Blasted Lands,45.19,55.29,100 >>向南前往腐烂之痕。|cRXP_WARN_你必须穿过一个有着大量免疫控制效果的高等级精英怪区域。你极有可能需要一路拖尸体前往符文所在的位置|r
 step
     .goto Blasted Lands,33.0,48.0
-    >>|cRXP_WARN_寻找放在你的地图上标记的祭坛上的红书。拾取战利品以获得符文|r
+    >>|cRXP_WARN_寻找地图上标记的祭坛上放着的一本红色书籍。拾取它以获得符文|r
     .collect 226417,1 --Rune of Shadow Specialization
 step
     #completewith next
@@ -2425,7 +2424,7 @@ step
 step
     .goto Deadwind Pass,47.40,75.50 >>向南前往卡拉赞
 step
-    .goto 1430/0,-2019.100,-11170.300,10 >>进入大师地窖
+    .goto 1430/0,-2019.100,-11170.300,10 >>进入麦迪文的酒窖
 step
     .goto Deadwind Pass,43.06,74.58
     >>|cRXP_WARN_进入洞穴区域，并在地图标记的位置寻找一本红书。拾取战利品以获得符文|r
@@ -2448,7 +2447,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     .zone Thousand Needles >>前往千针石林的闪光平原
-    >>距离符文所在地区最近的飞行路径是加基森
+    >>距离符文所在地最近的飞行点是加基森
 step
     .goto Thousand Needles,80,77,10 >>进入你的地图上标记的小屋
 step
@@ -2476,7 +2475,7 @@ step
     .goto Arathi Highlands,21.98,79.75,40 >>前往法迪尔海湾，跟随山脉和斯托姆加德东南墙之间的路径
 step
     .goto Arathi Highlands,35.2,79.1
-    >>|cRXP_WARN_前往营火,在|cRXP_FRIENDLY_菲兹索普教授|r旁边,寻找|cRXP_WARN_gray book|r放在营火旁的箱子上。拾取它来获得rune|r
+    >>|cRXP_WARN_前往|cRXP_FRIENDLY_菲兹尔索普教授|r旁边的营地，寻找放在营地旁箱子上的一本|cRXP_WARN_灰色书籍|r。拾取它以获得符文|r
     .collect 231829,1 --Rune of Healing Specialization
     .target 菲兹索普教授
 step

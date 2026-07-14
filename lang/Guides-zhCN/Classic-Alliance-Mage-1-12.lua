@@ -2,7 +2,6 @@ if GetLocale() ~= "zhCN" then return end
 local faction = UnitFactionGroup("player")
 if faction == "Horde" then return end
 
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -96,7 +95,7 @@ step
     .xp 3+1110 >>在回城的路上刷到1110+/1400经验值
 step
     .goto Elwynn Forest,47.7,41.4
-    .vendor >>把垃圾物品卖给商人
+    .vendor >>垃圾卖店
 step
     .goto Elwynn Forest,48.923,41.606
 >>与|cRXP_FRIENDLY_治安官玛克布莱德|r 对话
@@ -603,7 +602,7 @@ step
     .goto Elwynn Forest,43.2,89.6
 .target 梅贝尔·马科伦
 >>与|cRXP_FRIENDLY_梅贝尔·马科伦|r 对话
-    .turnin 114 >>交任务  梅贝尔的隐形水
+    .turnin 114 >>交任务 梅贝尔的隐形水
 step
     .goto Elwynn Forest,34.660,84.482
 .target 斯通菲尔德妈妈
@@ -642,7 +641,7 @@ step
     .turnin 109 >>交任务 向格里安·斯托曼报到
 step
     .goto Westfall,57.002,47.169
-    .vendor >>把垃圾物品卖给商人
+    .vendor >>垃圾卖店
 .target 军需官刘易斯
 >>与|cRXP_FRIENDLY_军需官刘易斯|r 对话
     .accept 6181 >>接受任务 快捷的消息
@@ -798,7 +797,7 @@ step
     .turnin 419 >>交任务 失踪的驾驶员
     .accept 417 >>接受任务 驾驶员的复仇
 step
-    >>击杀癞爪。拾取它的爪子
+    >>击杀癞爪，拾取它的爪子
     .goto Dun Morogh,80.0,36.4
     .complete 417,1 --Collect Mangy Claw (x1)
 step
@@ -940,7 +939,7 @@ step
     .turnin 3364 >>交任务 热酒快递
 .target 德南·弗卡特
     .accept 3365 >>接受任务 归还酒杯
-    .vendor >>把垃圾物品卖给商人
+    .vendor >>垃圾卖店
 step
     .goto Dun Morogh,28.709,66.366
 .target 玛瑞克·斯托纳尔
@@ -1036,7 +1035,7 @@ step
 step
     #completewith next
     .goto Dun Morogh,46.7,53.5
-    .vendor >>把垃圾物品卖给商人
+    .vendor >>垃圾卖店
 step
     .goto Dun Morogh,46.8,52.4
 .target 拉格纳·雷酒
@@ -1753,7 +1752,7 @@ step << Gnome
 .target 布洛克·寻石者
 >>与|cRXP_FRIENDLY_布洛克·寻石者|r 对话
     .accept 6387 >>接受任务 荣誉学员
->>与 |cRXP_FRIENDLY_吉恩·角盔|r 对话
+>>与|cRXP_FRIENDLY_吉恩·角盔|r 对话
     .turnin 298 >>交任务 挖掘进度报告
 .target Jern Hornhelm
     .accept 301 >>接受任务 向铁炉堡报告
@@ -1845,7 +1844,7 @@ step
     >>走无伤翻山路线。从丹莫罗直接翻山前往湿地
     >>走水路的时候小心避开海里的鳄鱼
     .link https://www.youtube.com/watch?v=9afQTimaiZQ >>https://www.youtube.com/watch?v=9afQTimaiZQ >> 点击此处查看参考视频
-    .goto Wetlands,12.1,60.3,80 >>将炉石使用回米奈希尔港
+    .goto Wetlands,12.1,60.3,80 >>前往米奈希尔港，湿地
 step
     #softcore
     .goto Dun Morogh,30.3,37.5,50 >>跑到这里

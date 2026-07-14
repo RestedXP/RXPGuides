@@ -1,5 +1,4 @@
 if GetLocale() ~= "zhCN" then return end
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -343,7 +342,7 @@ step << Alliance
 step << Alliance
     .goto Ironforge,43.54,52.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德莉亚娜|r 对话
-    .accept 8922 >>接受任务超自然的设备
+    .accept 8922 >>接受任务 超自然的设备
     .target Deliana
 step << Horde
     #completewith next
@@ -915,7 +914,7 @@ step
 step
     #optional
     #completewith AnthionsFriend
-    .goto Kalimdor,43.39,66.52,20 >>进入厄运之槌北入口
+    .goto Kalimdor,43.39,66.52,20 >>进入厄运之槌的北入口
     .itemcount 18249,1 << !Rogue --Crescent Key
     .skill lockpicking,<300,1 << Rogue
 step
@@ -1096,10 +1095,10 @@ step << Horde
 step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫克瓦尔|r 对话
-    >>你需要 |T132542:0|t[|cRXP_LOOT_野性之心长靴|r], |T134588:0|t[|cRXP_LOOT_野性之心褶裙|r] 和 |T135032:0|t[|cRXP_LOOT_野性之心肩甲|r] 来完成此任务 << Druid
-    >>你需要 |T132588:0|t[|cRXP_LOOT_野兽追猎者长靴|r], |T134583:0|t[|cRXP_LOOT_野兽追猎者短裤|r] 和 |T135041:0|t[|cRXP_LOOT_野兽追猎者衬肩|r] 来完成此任务 << Hunter
+    >>你需要 |T132542:0|t[|cRXP_LOOT_野性之心长靴|r]、|T134588:0|t[|cRXP_LOOT_野性之心褶裙|r] 和 |T135032:0|t[|cRXP_LOOT_野性之心肩甲|r] 来完成这个任务 << Druid
+    >>你需要 |T132588:0|t[|cRXP_LOOT_野兽追猎者长靴|r]、|T134583:0|t[|cRXP_LOOT_野兽追猎者短裤|r] 和 |T135041:0|t[|cRXP_LOOT_野兽追猎者衬肩|r] 来完成这个任务 << Hunter
     >>你需要 |T132536:0|t[|cRXP_LOOT_博学者长靴|r], |T134586:0|t[|cRXP_LOOT_博学者护腿|r] 和 |T135054:0|t[|cRXP_LOOT_博学者衬肩|r] 来完成此任务 << Mage
-    >>你需要 |T132539:0|t[|cRXP_LOOT_虔诚软鞋|r], |T134588:0|t[|cRXP_LOOT_虔诚长裙|r] 和 |T135033:0|t[|cRXP_LOOT_虔诚衬肩|r] 来完成此任务 << Priest
+    >>你需要 |T132539:0|t[|cRXP_LOOT_虔诚软鞋|r]、|T134588:0|t[|cRXP_LOOT_虔诚长裙|r] 和 |T135033:0|t[|cRXP_LOOT_虔诚衬肩|r] 来完成这个任务 << Priest
     >>你需要 |T132542:0|t[|cRXP_LOOT_迅影长靴|r], |T134582:0|t[|cRXP_LOOT_迅影短裤|r] 和 |T135038:0|t[|cRXP_LOOT_迅影肩甲|r] 来完成此任务 << Rogue
     >>你需要|T132592:0|t[|cRXP_LOOT_元素长靴|r]、|T134583:0|t[|cRXP_LOOT_元素护腿|r] 和 |T135060:0|t[|cRXP_LOOT_元素护肩|r] 来完成此任务 << Shaman
     >>你需要 |T132539:0|t[|cRXP_LOOT_鬼雾便鞋|r]、|T134588:0|t[|cRXP_LOOT_鬼雾护腿|r] 和 |T133732:0|t[|cRXP_LOOT_鬼雾衬肩|r] 来完成这个任务 << Warlock
@@ -2164,7 +2163,7 @@ step
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .turnin 8996 >>交任务 向伯德雷回复
     .accept 8997 >>接受任务 回到起点 << Alliance
-    .accept 8998 >>接受任务回到起点 << Horde
+    .accept 8998 >>接受任务 回到起点 << Horde
     .target Bodley
 step << Alliance
     #completewith next

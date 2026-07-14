@@ -1,5 +1,4 @@
 if GetLocale() ~= "zhCN" then return end
-
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
@@ -106,7 +105,7 @@ step << Warrior
     .goto Elwynn Forest,40.6,74.7
     >>与 |cRXP_FRIENDLY_漫游的剑士|r 在艾尔文森林对话
     >>在一场单挑中击败|cRXP_ENEMY_漫游的剑士|r
-    >>打开它掉落在地上的 |cRXP_PICK_Swordsman's Reward|r。拾取它以获得 |T134419:0|t[|cRXP_FRIENDLY_血之狂暴符文|r]
+    >>打开|cRXP_PICK_剑士的奖励|r，它会掉在地上。拾取以获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_血之狂暴符文|r]
     >>|cRXP_WARN_注释|cRXP_FRIENDLY_：|r漫游的剑士|r 可以在艾尔文森林的任何地方刷新出现
     .collect 204441,1 -- Rune of Blood Frenzy (1)
     .train 403474,1
@@ -131,8 +130,8 @@ step << Warrior
     #season 2
     .goto Dun Morogh,53.47,47.60
     >>与 |cRXP_FRIENDLY_漫游的剑士|r 在丹莫罗对话
-    >>击败 |cRXP_ENEMY_漫游的剑士|r 在一场单挑中
-    >>打开它掉落在地上的 |cRXP_PICK_Swordsman's Reward|r。拾取它以获得 |T134419:0|t[|cRXP_FRIENDLY_血之狂暴符文|r]
+    >>在一场单挑中击败|cRXP_ENEMY_漫游的剑士|r
+    >>打开|cRXP_PICK_剑士的奖励|r，它会掉在地上。拾取以获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_血之狂暴符文|r]
     .collect 204441,1 -- Rune of Blood Frenzy (1)
     .train 403474,1
     .skipgossip
@@ -161,7 +160,7 @@ step << Warrior
     .goto Teldrassil,39.6,37.6
     >>与 |cRXP_FRIENDLY_漫游的剑士|r 在泰达希尔对话
     >>在一场单挑中击败|cRXP_ENEMY_漫游的剑士|r
-    >>打开它掉落在地上的 |cRXP_PICK_Swordsman's Reward|r。拾取它以获得 |T134419:0|t[|cRXP_FRIENDLY_血之狂暴符文|r]
+    >>打开|cRXP_PICK_剑士的奖励|r，它会掉在地上。拾取以获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_血之狂暴符文|r]
     >>|cRXP_WARN_注释|cRXP_FRIENDLY_：|r漫游的剑士|r 可以在泰达希尔的任何地方生成
     .collect 204441,1 -- Rune of Blood Frenzy (1)
     .train 403474,1
@@ -190,7 +189,7 @@ step << Warrior
 step << Warrior
     #season 2
     .goto Elwynn Forest,41.7,78.1
-    >>杀死 |cRXP_ENEMY_金牙|r。拾取他以获得 |T134419:0|t[|cRXP_FRIENDLY_狂怒雷霆符文|r]
+    >>击杀 |cRXP_ENEMY_金牙|r。拾取他的 |T134419:0|t[|cRXP_FRIENDLY_狂怒雷霆符文|r]
     .collect 204809,1 -- Rune of Furious Thunder (1)
     .mob 金牙
     .train 403476,1
@@ -233,7 +232,7 @@ step << Warrior
     .goto 1426,62.434,48.989,40,0
     .goto 1426,62.538,46.195
     >>击杀|cRXP_ENEMY_瓦加什|r。从他身上拾取|T134419:0|t|T134419:0|t|cRXP_LOOT_[狂怒雷霆符文]|r
-    >>|cRXP_WARN_注意|r：|T134419:0|t|cRXP_LOOT_[狂怒雷霆符文]|r |cRXP_WARN_也可能从丹莫罗的所有稀有怪掉落，包括 |cRXP_ENEMY_菲欧迪|r, |cRXP_ENEMY_癞爪|r, 和 |cRXP_ENEMY_冰须|r
+    >>|cRXP_WARN_注意：|r |T134419:0|t|cRXP_LOOT_[狂怒雷霆符文]|r |cRXP_WARN_也可从丹莫罗的所有稀有怪物身上掉落，包括|cRXP_ENEMY_菲欧迪|r、|cRXP_ENEMY_癞爪|r和|r|cRXP_ENEMY_冰须|r
     .collect 204809,1 -- Rune of Furious Thunder (1)
     .mob 瓦加什
     .train 403476,1
@@ -241,7 +240,7 @@ step << Warrior
 step << Warrior
     #label FuriousThunder
     #season 2
-    .train 403476 >>|cRXP_WARN_使用|r |T134419:0|t|cRXP_LOOT_[狂怒雷霆符文]|r |cRXP_WARN_来训练|r |T136048:0|t[狂怒雷霆]
+    .train 403476 >>|cRXP_WARN_使用|r |T134419:0|t|T136048:0|t|cRXP_LOOT_[狂怒雷霆符文]|r |cRXP_WARN_来训练|r |T136048:0|t|T136048:0|t[狂怒雷霆]
     .use 204809
     .itemcount 204809,1
 ]])
@@ -265,7 +264,7 @@ step << Warrior
     .gossipoption 109044 >>击倒|cRXP_FRIENDLY_斯图阿特|r后，再次与|cRXP_ENEMY_莉芙·布拉德福德|r对话，即可获得 |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .goto Stormwind City,22.608,64.621
     .train 425447,1 >>|cRXP_WARN_使用|r |T134419:0|t|T236317:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r] |cRXP_WARN_训练|r |T236317:0|t|T236317:0|t[狂乱攻击]
-    >>|cRXP_WARN_注释：这可能很难单独完成，具体取决于你的等级。如果需要的话寻求帮助|r
+    >>|cRXP_WARN_注意：根据你的等级，这个任务单刷可能会相当困难。如果需要的话，可以找些帮手。|r
     .use 204716
     .target Liv Bradford
     .mob Stuart
@@ -283,9 +282,9 @@ step << Warrior
     #season 2
     .goto Ironforge,72.512,76.942
     >>与 |cRXP_FRIENDLY_布鲁克·麦须|r 在军事结界处对话
-    >>与 |cRXP_ENEMY_布鲁阿特|r 在门口对话，然后击败他。他会在血量达到0%时昏倒
-    >>如果 |cRXP_ENEMY_布鲁阿特|r 不在那里，等待他重新生成
-    >>击败 |cRXP_FRIENDLY_布鲁阿特|r 后，与 |cRXP_ENEMY_布鲁克·麦须|r 再次对话以获得 |T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    >>在门口与 |cRXP_ENEMY_布鲁阿特|r 对话，然后击败他。他会在生命值降至0%时昏倒
+    >>如果|cRXP_ENEMY_布鲁阿特|r不在那里，等待他刷新
+    >>击倒 |cRXP_FRIENDLY_布鲁阿特|r 后，再次与 |cRXP_ENEMY_布鲁克·麦须|r 对话，即可获得 |T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .train 425447,1 >>|cRXP_WARN_使用|r |T134419:0|t|T236317:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r] |cRXP_WARN_训练|r |T236317:0|t|T236317:0|t[狂乱攻击]
     >>|cRXP_WARN_注意：根据你的等级，这个任务单刷可能会相当困难。如果需要的话，可以找些帮手。|r
     .use 204716
@@ -331,7 +330,7 @@ step << Warrior
     .goto Westfall,26.42,65.88,60,0
     .goto Westfall,34.43,83.93
     .line Westfall,34.43,83.93,33.88,83.32,33.08,82.86,32.56,82.71,32.08,82.49,31.91,82.36,31.55,81.88,30.86,81.42,30.63,81.16,30.33,80.81,30.02,80.11,29.68,79.22,29.32,78.19,29.29,77.60,29.27,77.31,29.18,76.26,29.07,75.29,28.95,74.14,28.85,73.29,28.79,72.48,28.37,71.94,27.84,71.29,27.44,70.25,27.29,69.47,27.13,68.65,27.09,67.57,27.07,67.01,26.74,66.09,27.07,67.01,27.09,67.57,27.13,68.65,27.29,69.47,27.44,70.25,27.84,71.29,28.37,71.94,28.79,72.48,28.85,73.29,28.95,74.14,29.07,75.29,29.18,76.26,29.27,77.31,29.29,77.60,29.32,78.19,29.68,79.22,30.02,80.11,30.33,80.81,30.63,81.16,30.86,81.42,31.55,81.88,31.91,82.36,32.08,82.49,32.56,82.71,33.08,82.86,33.88,83.32,34.43,83.93
-    >>杀死 |cRXP_ENEMY_老瞎眼|r。拾取他以获得 |T132347:0|t[|cRXP_FRIENDLY_无尽怒气符文|r]
+    >>击杀|cRXP_ENEMY_老瞎眼|r。拾取他的 |T132347:0|t[|cRXP_FRIENDLY_无尽怒气符文|r]
     >>|cRXP_ENEMY_老瞎眼|r|cRXP_WARN_在长滩上来回巡逻。如果你在长滩上看不到他，就等他刷新在最南边的|cRXP_ENEMY_鱼人|r营地|r
     .collect 208741,1 -- Rune of Endless Rage (1)
     .unitscan Old Murk-Eye
@@ -348,8 +347,8 @@ RXPGuides.RegisterGuide([[
 << Alliance Warrior SoD
 #group RestedXP符文与书籍指南
 #subgroup 手套
-#name 经典怀旧服 道具 - 16 (黑海岸)
-#title 经典怀旧服 道具
+#name 无尽怒气 - 16 (黑海岸)
+#title 无尽怒气
 
 step << Warrior
     #season 2
@@ -359,8 +358,8 @@ step << Warrior
 step << Warrior
     #season 2
     .goto Darkshore,55.40,36.05
-    >>击杀 |cRXP_ENEMY_Lady Sedorax|r。拾取她的 |T132347:0|t[|cRXP_FRIENDLY_无尽怒气符文|r]
-    >>|cRXP_ENEMY_Lady Sedorax|r |cRXP_WARN_是18级精英怪，周围还有其他小怪。你也可以从西部荒野获得，这样容易得多|r
+    >>击杀 |cRXP_ENEMY_赛多拉克斯女士|r。拾取她的 |T132347:0|t[|cRXP_FRIENDLY_无尽怒气符文|r]
+    >>|cRXP_ENEMY_塞多拉克斯女士|r |cRXP_WARN_是一个18级精英怪，周围还有其他怪物。你也可以选择去西部荒野获取，那里要容易得多|r
     .collect 208741,1 -- Rune of Endless Rage (1)
     .unitscan Lady Sedorax
     .train 403489,1
@@ -376,14 +375,14 @@ RXPGuides.RegisterGuide([[
 << Alliance Warrior SoD
 #group RestedXP符文与书籍指南
 #subgroup 手套
-#name 高地符文布绷带 - 8 (艾尔文森林)
-#title 高地符文布绷带
+#name 毁灭打击 - 8 (艾尔文森林)
+#title 毁灭打击
 
 step << Warrior
     #season 2
-    >>击杀 |cRXP_ENEMY_Kobold Miners|r 和 |cRXP_ENEMY_Kobold Tunnelers|r。拾取他们的 |T134168:0|t[|cRXP_LOOT_被砍下的狗头人的头|r]
-    >>击杀 |cRXP_ENEMY_Murlocs|r 和 |cRXP_ENEMY_Murloc Streamrunners|r。拾取他们的 |T134169:0|t[|cRXP_LOOT_被砍下的鱼人的头|r]
-    >>击杀 |cRXP_ENEMY_Riverpaw 小鬼|r 和 |cRXP_ENEMY_Riverpaw Outrunners|r。拾取他们的 |T134163:0|t[|cRXP_LOOT_被砍下的豺狼人的头|r]
+    >>击杀|cRXP_ENEMY_狗头人矿工|r和|cRXP_ENEMY_狗头人隧道工|r，从它们身上拾取|T134168:0|t|T134168:0|t[|cRXP_LOOT_被砍下的狗头人的头|r]
+    >>击杀 |cRXP_ENEMY_鱼人|r 和 |cRXP_ENEMY_鱼人士兵|r。拾取 |T134169:0|t[|cRXP_LOOT_被砍下的鱼人的头|r]
+    >>击杀|cRXP_ENEMY_河爪幼崽|r和|cRXP_ENEMY_河爪斥候|r。从它们身上拾取|T134163:0|t[|cRXP_LOOT_被砍下的豺狼人的头|r]
     .collect 204476,1 -- Severed Kobold Head (1)
     .goto Elwynn Forest,40.5,82.3,25,0
     .goto Elwynn Forest,37.71,83.76,25,0
@@ -415,7 +414,7 @@ step << Warrior
     #season 2
     #completewith RoDSW
     .goto Stormwind City,69.690,51.023
-    .gossipoption 109028 >>与 |cRXP_FRIENDLY_维多利亚·伍兹 <怪物猎手>|r 对话，交上你的 |T134168:0|t[|cRXP_LOOT_被砍下的狗头人的头|r] 来换取 |T134455:0|t[怪物 Hunter's First Rune 道具]
+    .gossipoption 109028 >>与|cRXP_FRIENDLY_维多利亚·伍兹|r对话，上交|T134168:0|t[|cRXP_LOOT_被砍下的狗头人的头|r]，获得|T134455:0|t[怪物猎手的第一个符文碎片]
     .collect 204688,1 -- Monster Hunter's First Rune Fragment (1)
     .itemcount 204476,1 -- Severed Kobold Head (1)
     .target Viktoria Woods
@@ -424,7 +423,7 @@ step << Warrior
     #season 2
     #completewith RoDSW
     .goto Stormwind City,69.690,51.023
-    .gossipoption 109027 >>与 |cRXP_FRIENDLY_维多利亚·伍兹 <怪物猎手>|r 对话，交上你的 |T134169:0|t[|cRXP_LOOT_被砍下的鱼人的头|r] 来换取 |T134455:0|t[怪物 Hunter's Second Rune 道具]
+    .gossipoption 109027 >>与|cRXP_FRIENDLY_维科里亚·伍兹|r对话，上交|T134169:0|t[|cRXP_LOOT_被砍下的鱼人的头|r]，获得|T134455:0|t[怪物猎手的第二个符文碎片]
     .collect 204689,1 -- Monster Hunter's Second Rune Fragment (1)
     .itemcount 204477,1 -- Severed Murloc Head (1)
     .target Viktoria Woods
@@ -434,7 +433,7 @@ step << Warrior
     #label GnollHead
     #completewith RoDSW
     .goto Stormwind City,69.690,51.023
-    .gossipoption 109026 >>与 |cRXP_FRIENDLY_维多利亚·伍兹 <怪物猎手>|r 对话，交上你的 |T134163:0|t[|cRXP_LOOT_被砍下的豺狼人的头|r] 来换取 |T134455:0|t[怪物 Hunter's Third Rune 道具]
+    .gossipoption 109026 >>与|cRXP_FRIENDLY_维多利亚·伍兹|r对话，上交|T134163:0|t[|cRXP_LOOT_被砍下的豺狼人的头|r]，获得|T134455:0|t[怪物猎手的第三个符文碎片]
     .collect 204690,1 -- Monster Hunter's Third Rune Fragment (1)
     .itemcount 204478,1 -- Severed Gnoll Head (1)
     .target Viktoria Woods
@@ -443,7 +442,7 @@ step << Warrior
     #season 2
     #label RoDSW
     #requires GnollHead
-    .cast 406651 >>|cRXP_WARN_使用任何一个|r |T134455:0|t[怪物 Hunter's Rune 碎片] |cRXP_WARN_来制作|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 高地符文布绷带|r]
+    .cast 406651 >>|cRXP_WARN_使用任意|r |T134455:0|t[怪物猎人符文碎片] |cRXP_WARN_来制作|r |T134419:0|t[|cRXP_FRIENDLY_毁灭打击符文|r]
     .collect 204703,1 -- Rune of Devastate (1)
     .use 204690
     .use 204689
@@ -454,7 +453,7 @@ step << Warrior
     .train 403475,1
 step << Warrior
     #season 2
-    .train 403475 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 高地符文布绷带|r] |cRXP_WARN_来训练|r |T135291:0|t[高地符文布绷带]
+    .train 403475 >>|cRXP_WARN_使用|r |T134419:0|t|T135291:0|t[|cRXP_FRIENDLY_毁灭打击符文|r] |cRXP_WARN_来训练|r |T135291:0|t|T135291:0|t[毁灭打击]
     .use 204703
     .itemcount 204703,1
 ]])
@@ -464,14 +463,14 @@ RXPGuides.RegisterGuide([[
 << Alliance Warrior SoD
 #group RestedXP符文与书籍指南
 #subgroup 手套
-#name 高地符文布绷带 - 6 (泰达希尔)
-#title 高地符文布绷带
+#name 毁灭打击 - 6 (泰达希尔)
+#title 毁灭打击
 
 step << Warrior
     #season 2
-    >>杀死 |cRXP_ENEMY_Nightsabers|r 或 |cRXP_ENEMY_Nightsaber Stalkers|r。从他们身上拾取 |cRXP_LOOT_Severed 丛林虎 头部|r
-    >>杀死 |cRXP_ENEMY_Strigid Owls|r 或 |cRXP_ENEMY_Strigid 破坏者哒克|r。从他们身上拾取 |cRXP_LOOT_Severed Owl 头部|r
-    >>杀死 |cRXP_ENEMY_Webwood Lurkers|r 或 |cRXP_ENEMY_Webwood Venomfangs|r。从他们身上拾取 |cRXP_LOOT_Severed 蜘蛛 头部|r
+    >>击杀|cRXP_ENEMY_夜刃豹|r或|cRXP_ENEMY_夜刃豹追踪者|r，拾取它们的|cRXP_LOOT_被砍下的老虎的头|r
+    >>击杀|cRXP_ENEMY_斯特里吉德猫头鹰|r或|cRXP_ENEMY_斯特里吉德尖啸者|r，拾取它们的|cRXP_LOOT_被砍下的猫头鹰的头|r
+    >>击杀|cRXP_ENEMY_蛛网潜伏者|r或|cRXP_ENEMY_蛛网毒牙蜘蛛|r，从它们身上拾取|cRXP_LOOT_被砍下的蜘蛛的头|r
     .collect 208611,1 -- Severed Tiger Head (1)
     .goto Teldrassil,53.6,62.4
     .collect 208610,1 -- Severed Owl Head (1)
@@ -491,9 +490,9 @@ step << Warrior
 step << Warrior
     #season 2
     .goto Darnassus,63.108,21.858
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_戴尔威娜 <怪物猎手>|r 在楼上对话
-    >>|cRXP_WARN_交上|cRXP_LOOT_ 砍下来的脑袋|r 之后你将获得|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 高地符文布绷带|r]
-    .train 403475 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 高地符文布绷带|r] |cRXP_WARN_来训练|r |T135291:0|t[高地符文布绷带]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼上与 |cRXP_FRIENDLY_戴尔威娜|r 对话
+    >>|cRXP_WARN_交上三颗|cRXP_LOOT_ 砍下来的脑袋|r 之后，你将获得|r |T134419:0|t[|cRXP_FRIENDLY_毁灭打击符文|r]
+    .train 403475 >>|cRXP_WARN_使用|r |T134419:0|t|T135291:0|t[|cRXP_FRIENDLY_毁灭打击符文|r] |cRXP_WARN_来训练|r |T135291:0|t|T135291:0|t[毁灭打击]
     .use 204703
     .skipgossip
     .target Delwynna
@@ -504,14 +503,14 @@ RXPGuides.RegisterGuide([[
 << Alliance Warrior SoD
 #group RestedXP符文与书籍指南
 #subgroup 手套
-#name 高地符文布绷带 - 6 (丹莫罗)
-#title 高地符文布绷带
+#name 毁灭打击 - 6 (丹莫罗)
+#title 毁灭打击
 
 step << Warrior
     #season 2
-    >>击杀 |cRXP_ENEMY_Wendigos|r。拾取他们的 |cRXP_LOOT_Severed 雪怪 Paw|r
-    >>击杀 |cRXP_ENEMY_Frostmane Trolls|r。拾取他们的 |cRXP_LOOT_Severed 巨魔 头部|r
-    >>击杀 |cRXP_ENEMY_Rockjaw Troggs|r。拾取他们的 |cRXP_LOOT_Pristine 穴居人 Heart|r
+    >>击杀|cRXP_ENEMY_雪怪|r，从它们身上拾取|cRXP_LOOT_被砍下的雪怪的爪子|r
+    >>击杀|cRXP_ENEMY_霜鬃巨魔|r，从它们身上拾取|cRXP_LOOT_被砍下的巨魔的头|r
+    >>击杀 |cRXP_ENEMY_石腭穴居人|r。拾取 |cRXP_LOOT_完好的穴居人之心|r
     .collect 208160,1 -- Severed Wendigo Paw (1)
     .goto Dun Morogh,42.2,52.6
     .collect 208159,1 -- Severed Troll Head (1)
@@ -532,9 +531,9 @@ step << Warrior
 step << Warrior
     #season 2
     .goto Dun Morogh,46.611,53.335
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加尼·钢关 <怪物猎手>|r 对话
-    >>|cRXP_WARN_交上三个物品后，你将获得|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 高地符文布绷带|r]
-    .train 403475 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 高地符文布绷带|r] |cRXP_WARN_来训练|r |T135291:0|t[高地符文布绷带]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加尼·钢关|r 对话
+    >>|cRXP_WARN_上交三件物品后，你将获得|r |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_毁灭打击符文|r]
+    .train 403475 >>|cRXP_WARN_使用|r |T134419:0|t|T135291:0|t[|cRXP_FRIENDLY_毁灭打击符文|r] |cRXP_WARN_来训练|r |T135291:0|t|T135291:0|t[毁灭打击]
     .use 204703
     .skipgossip
     .target Junni Steelpass
@@ -555,27 +554,27 @@ step << Orc/Troll
     #season 2
     .goto Durotar,42.89,69.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r 对话
-    .accept 77588 >>接受任务 NO TRANSLATION FOUND TO THIS ELEMENT << Troll
-    .accept 77582 >>接受任务 NO TRANSLATION FOUND TO THIS ELEMENT << Orc
+    .accept 77588 >>接受任务 体能的试炼 << Troll
+    .accept 77582 >>接受任务 体能的试炼 << Orc
     .target 弗朗恩
 step
     #season 2
     .goto Durotar,43.27,69.51
-    >>拾取 |cRXP_PICK_隐藏的宝箱|r 来换取 |T134419:0|t[|cRXP_FRIENDLY_Rune of 乘胜追击|r]
-    >>|cRXP_WARN_绕过|r |cRXP_ENEMY_萨科斯|r |cRXP_WARN_跳下来到达宝箱|r
+    >>拾取 |cRXP_PICK_隐藏的宝箱|r 以获得 |T134419:0|t[|cRXP_FRIENDLY_乘胜追击符文|r]
+    >>|cRXP_WARN_绕过|r |cRXP_ENEMY_萨科斯|r |cRXP_WARN_跳下去拿宝箱|r
     .collect 204806,1 --Rune of Victory Rush (1)
     .train 403470,1
 step
     #season 2
-    .train 403470 >>使用 |T134419:0|t[|cRXP_FRIENDLY_Rune of 乘胜追击|r]
+    .train 403470 >>使用 |T134419:0|t[|cRXP_FRIENDLY_乘胜追击符文|r]
     .use 204806
     .itemcount 204806,1
 step << Orc/Troll
     #season 2
     .goto Durotar,42.89,69.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r 对话
-    .turnin 77588 >>交任务 NO TRANSLATION FOUND TO THIS ELEMENT << Troll
-    .turnin 77582 >>交任务 NO TRANSLATION FOUND TO THIS ELEMENT << Orc
+    .turnin 77588 >>交任务 体能的试炼 << Troll
+    .turnin 77582 >>交任务 体能的试炼 << Orc
     .target 弗朗恩
 
 ]])
@@ -595,25 +594,25 @@ step << Tauren
     #season 2
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈鲁特|r 对话
-    .accept 77651 >>Accept Into the Brambles
+    .accept 77651 >>Accept 深入荆棘
     .target 哈鲁特·雷角
 step
     #season 2
     .goto Mulgore,60.33,75.10,30,0
     .goto Mulgore,61.62,76.04
-    >>拾取 |cRXP_PICK_刺背战利品宝箱|r 来换取 |T134419:0|t[|cRXP_FRIENDLY_Rune of 乘胜追击|r]
+    >>拾取 |cRXP_PICK_刺背战利品宝箱|r 以获得 |T134419:0|t[|cRXP_FRIENDLY_乘胜追击符文|r]
     .collect 204806,1 --Rune of Victory Rush (1)
     .train 403470,1
 step
     #season 2
-    .train 403470 >>使用 |T134419:0|t[|cRXP_FRIENDLY_Rune of 乘胜追击|r]
+    .train 403470 >>使用 |T134419:0|t[|cRXP_FRIENDLY_乘胜追击符文|r]
     .use 204806
     .itemcount 204806,1
 step << Tauren
     #season 2
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈鲁特|r 对话
-    .turnin 77651 >>Turn in Into the Brambles
+    .turnin 77651 >>交任务 深入荆棘
     .target 哈鲁特·雷角
 
 ]])
@@ -623,7 +622,7 @@ RXPGuides.RegisterGuide([[
 << Horde Warrior SoD
 #group RestedXP符文与书籍指南
 #subgroup 手套
-#name 乘胜追击 - 2 (Tirisfal)
+#name 乘胜追击 - 2 (提瑞斯法)
 #title 乘胜追击
 
     --Rune of Victory Rush
@@ -637,12 +636,12 @@ step << Undead
 step
     #season 2
     .goto Tirisfal Glades,24.60,59.45
-    >>拾取洞穴内的 |cRXP_PICK_失落的藏宝|r 来换取 |T134419:0|t[|cRXP_FRIENDLY_Rune of 乘胜追击|r]
+    >>拾取洞穴内的 |cRXP_PICK_失落的藏宝|r 以获得 |T134419:0|t[|cRXP_FRIENDLY_乘胜追击符文|r]
     .collect 204806,1 --Rune of Victory Rush (1)
     .train 403470,1
 step
     #season 2
-    .train 403470 >>使用 |T134419:0|t[|cRXP_FRIENDLY_Rune of 乘胜追击|r]
+    .train 403470 >>使用 |T134419:0|t[|cRXP_FRIENDLY_乘胜追击符文|r]
     .use 204806
     .itemcount 204806,1
 step << Undead
@@ -667,13 +666,13 @@ RXPGuides.RegisterGuide([[
 step
     #season 2
     .goto Durotar,40.60,66.80
-    >>击杀 |cRXP_ENEMY_萨科斯|r。拾取他的战利品 |T134419:0|t[|cRXP_FRIENDLY_Rune of 狂怒雷霆|r]
+    >>击杀 |cRXP_ENEMY_萨科斯|r。拾取他的 |T134419:0|t[|cRXP_FRIENDLY_狂怒雷霆符文|r]
     .collect 204809,1 --Rune of Furious Thunder(1)
     .mob 萨科斯
     .train 403476,1
 step
     #season 2
-    .train 403476 >>使用 |T134419:0|t[|cRXP_FRIENDLY_Rune of 狂怒雷霆|r]
+    .train 403476 >>使用 |T134419:0|t[|cRXP_FRIENDLY_狂怒雷霆符文|r]
     .use 204809
     .itemcount 204809,1
 
@@ -684,7 +683,7 @@ RXPGuides.RegisterGuide([[
 << Horde Warrior SoD
 #group RestedXP符文与书籍指南
 #subgroup 腿部
-#name 狂怒雷霆 - 10 (Tirisfal)
+#name 狂怒雷霆 - 10 (提瑞斯法)
 #title 狂怒雷霆
 
 
@@ -693,14 +692,14 @@ RXPGuides.RegisterGuide([[
 step
     #season 2
     .goto Tirisfal Glades,25.79,48.00
-    >>击杀 |cRXP_ENEMY_Gillgar|r。拾取他的 |T134419:0|t[|cRXP_FRIENDLY_Rune of 狂怒雷霆|r]
-    >>|cRXP_WARN_这是一个7级精英|r
+    >>击杀 |cRXP_ENEMY_吉尔加|r。拾取他的 |T134419:0|t[|cRXP_FRIENDLY_狂怒雷霆符文|r]
+    >>|cRXP_WARN_这是一个7级精英怪|r
     .collect 204809,1 --Rune of Furious Thunder(1)
     .mob Gillgar
     .train 403476,1
 step
     #season 2
-    .train 403476 >>使用 |T134419:0|t[|cRXP_FRIENDLY_Rune of 狂怒雷霆|r]
+    .train 403476 >>使用 |T134419:0|t[|cRXP_FRIENDLY_狂怒雷霆符文|r]
     .use 204809
     .itemcount 204809,1
 
@@ -711,8 +710,8 @@ RXPGuides.RegisterGuide([[
 << Horde Warrior SoD
 #group RestedXP符文与书籍指南
 #subgroup 腿部
-#name 经典怀旧服 道具 - 10 (奥格瑞玛)
-#title 经典怀旧服 道具
+#name 狂乱攻击 - 10 (奥格瑞玛)
+#title 狂乱攻击
 
 
     --Rune of Frenzied Assault
@@ -722,8 +721,8 @@ step
     #completewith next
     .goto Orgrimmar,57.40,53.93,-1
     .goto Orgrimmar,58.05,51.40,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎姆沙|r 和 |cRXP_FRIENDLY_格鲁阿克|r 对话
-    +击杀 |cRXP_ENEMY_格鲁阿克|r 当他变得敌对时
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_扎姆沙|r 和 |cRXP_FRIENDLY_格鲁阿克|r 对话
+    +当|cRXP_ENEMY_格鲁阿克|r 变为敌对状态时将其击杀
     .target Zamja
     .target Gru'ark
     .skipgossip
@@ -731,15 +730,15 @@ step
 step
     #season 2
     .goto Orgrimmar,58.52,52.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎姆沙|r 对话
-    >>从她那里获得 |T134419:0|t[|cRXP_FRIENDLY_Rune of 经典怀旧服 道具|r]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_扎姆沙|r 对话
+    >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Zamja
     .train 425447,1
     .skipgossip
 step
     #season 2
-    .train 425447 >>使用 |T134419:0|t[|cRXP_FRIENDLY_Rune of 经典怀旧服 道具|r]
+    .train 425447 >>使用 |T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .use 204716
     .itemcount 204716,1
 
@@ -750,8 +749,8 @@ RXPGuides.RegisterGuide([[
 << Horde Warrior SoD
 #group RestedXP符文与书籍指南
 #subgroup 腿部
-#name 经典怀旧服 道具 - 10 (雷霆崖)
-#title 经典怀旧服 道具
+#name 狂乱攻击 - 10 (雷霆崖)
+#title 狂乱攻击
 
 
     --Rune of Frenzied Assault
@@ -761,8 +760,8 @@ step
     #completewith next
     .goto Thunder Bluff,28.73,18.00,-1
     .goto Thunder Bluff,26.19,18.65,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Netali|r 和 |cRXP_FRIENDLY_穆阿特|r 在灵魂高地对话
-    +当 |cRXP_FRIENDLY_穆阿特|r 变为敌对时击杀他
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奈塔里|r 和 |cRXP_FRIENDLY_穆阿特|r 在灵魂高地对话
+    +当 |cRXP_FRIENDLY_穆阿特|r 变为敌对时杀死他
     .target Netali Proudwind
     .target Mooart
     .skipgossip
@@ -770,15 +769,15 @@ step
 step
     #season 2
     .goto Thunder Bluff,28.73,18.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Netali|r 对话
-    >>从她那里获得 |T134419:0|t[|cRXP_FRIENDLY_Rune of 经典怀旧服 道具|r]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奈塔里|r 对话
+    >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .train 425447,1
     .skipgossip
 step
     #season 2
-    .train 425447 >>使用 |T134419:0|t[|cRXP_FRIENDLY_Rune of 经典怀旧服 道具|r]
+    .train 425447 >>使用 |T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .use 204716
     .itemcount 204716,1
 
@@ -789,15 +788,15 @@ RXPGuides.RegisterGuide([[
 << Horde Warrior SoD
 #group RestedXP符文与书籍指南
 #subgroup 腿部
-#name 经典怀旧服 道具 - 10 (提瑞斯法)
-#title 经典怀旧服 道具
+#name 狂乱攻击 - 10 (提瑞斯法)
+#title 狂乱攻击
 
 
     --Rune of Frenzied Assault
 
 step
     .goto Tirisfal Glades,61.73,51.91
-    .gossipoption 110750 >>与 |cRXP_FRIENDLY_本尼|r 对话
+    .gossipoption 110750 >>与|cRXP_FRIENDLY_本尼|r 对话
     .target Penny Hawkins
     .train 425447,1
 step
@@ -809,7 +808,7 @@ step
     #season 2
     .goto Tirisfal Glades,61.72,51.91
     >>击杀 |cRXP_ENEMY_蓝心|r，然后与楼上的 |cRXP_FRIENDLY_本尼|r 对话
-    .gossipoption 110751 >>从她那里获得 |T134419:0|t[|cRXP_FRIENDLY_Rune of 经典怀旧服 道具|r]
+    .gossipoption 110751 >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .mob Blueheart
@@ -817,7 +816,7 @@ step
     .skipgossip
 step
     #season 2
-    .train 425447 >>使用 |T134419:0|t[|cRXP_FRIENDLY_Rune of 经典怀旧服 道具|r]
+    .train 425447 >>使用 |T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .use 204716
     .itemcount 204716,1
 
@@ -828,8 +827,8 @@ RXPGuides.RegisterGuide([[
 << Horde Warrior SoD
 #group RestedXP符文与书籍指南
 #subgroup 手套
-#name 高地符文布绷带 - 8 (杜隆塔尔)
-#title 高地符文布绷带
+#name 毁灭打击 - 8 (杜隆塔尔)
+#title 毁灭打击
 
 
     --Rune of Devastate
@@ -840,7 +839,7 @@ step
     .goto Durotar,47.74,80.35,40,0
     .goto Durotar,46.54,80.12,40,0
     .goto Durotar,50.10,79.24
-    >>击杀 |cRXP_ENEMY_Kolkar Drudges|r 和 |cRXP_ENEMY_Kolkar Outrunners|r。拾取他们的 |cRXP_LOOT_Severed Centaur 头部|r
+    >>击杀 |cRXP_ENEMY_科卡尔苦工|r 和 |cRXP_ENEMY_科卡尔前锋|r。拾取他们的 |cRXP_LOOT_被砍下的半人马的头|r
     .collect 207062,1 --Severed Centaur Head (1)
     .mob Kolkar Drudge
     .mob Kolkar Outrunner
@@ -854,7 +853,7 @@ step
     .goto Durotar,52.13,20.77,40,0
     .goto Durotar,51.26,19.19,40,0
     .goto Durotar,53.98,23.70
-    >>击杀 |cRXP_ENEMY_Dustwind Harpies|r。拾取他们的 |cRXP_LOOT_Severed 鹰身人 头部|r
+    >>击杀|cRXP_ENEMY_尘风鹰身人|r，并从它们身上拾取|cRXP_LOOT_被砍下的鹰身人的头|r
     .collect 206995,1 ---Severed Harpy Head (1)
     .mob Dustwind Savage
     .mob Dustwind Storm Witch
@@ -873,7 +872,7 @@ step
     .goto Durotar,47.06,49.53,30,0
     .goto Durotar,46.90,48.11,30,0
     .goto Durotar,49.22,48.96
-    >>击杀 |cRXP_ENEMY_Razormane Quilboars|r。拾取他们的 |cRXP_LOOT_Severed Quilboar 头部|r
+    >>击杀 |cRXP_ENEMY_钢鬃野猪人|r。从它们身上拾取|cRXP_LOOT_被砍下的野猪人的头|r
     .collect 206994,1 ---Severed Quilboar Head (1)
     .mob Razormane Quilboar
     .mob Razormane Scout
@@ -881,8 +880,8 @@ step
 step
     #season 2
     .goto Durotar,53.14,43.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Vahi|r 对话
-    >>交还你收集的 |cRXP_LOOT_Heads|r 以换取 |T134455:0|t[Rune 碎片]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瓦希|r 对话
+    >>交还你收集的 |cRXP_LOOT_被砍下的巨魔的头|r 以换取 |T134455:0|t[符文碎片]
     .collect 204688,1 --Monster Hunter's First Rune Fragment (1)
     .collect 204689,1 --Monster Hunter's Second Rune Fragment (1)
     .collect 204690,1 --Monster Hunter's Third Rune Fragment (1)
@@ -890,12 +889,12 @@ step
     .train 403475,1
 step
     #season 2
-    .use 204688 >>使用 |T134455:0|t[Rune 碎片] 来制作 |T134419:0|t[|cRXP_FRIENDLY_Rune of 高地符文布绷带|r]
+    .use 204688 >>使用 |T134455:0|t[符文碎片] 来制作 |T134419:0|t[|cRXP_FRIENDLY_毁灭打击符文|r]
     .collect 204703,1 --Rune of Devastate (1)
     .train 403475,1
 step
     #season 2
-    .train 403475 >>使用 |T134419:0|t[|cRXP_FRIENDLY_Rune of 高地符文布绷带|r]
+    .train 403475 >>使用 |T134419:0|t[|cRXP_FRIENDLY_毁灭打击符文|r]
     .use 204703
     .itemcount 204703,1
 
@@ -906,8 +905,8 @@ RXPGuides.RegisterGuide([[
 << Horde Warrior SoD
 #group RestedXP符文与书籍指南
 #subgroup 手套
-#name 高地符文布绷带 - 8 (莫高雷)
-#title 高地符文布绷带
+#name 毁灭打击 - 8 (莫高雷)
+#title 毁灭打击
 
 
     --Rune of Devastate
@@ -920,7 +919,7 @@ step
     .goto Mulgore,48.3,72.0,90,0
     .goto Mulgore,53.5,73.0,90,0
     .goto Mulgore,48.3,72.0
-    >>击杀 |cRXP_ENEMY_Palemane Gnolls|r。拾取他们的 |cRXP_LOOT_被砍下的豺狼人的头|r
+    >>击杀 |cRXP_ENEMY_白鬃豺狼人|r。从它们身上拾取 |cRXP_LOOT_被砍下的豺狼人的头|r
     .collect 204478,1 --Severed Gnoll Head (1)
     .unitscan 断矛
     .mob Palemane Tanner
@@ -942,7 +941,7 @@ step
 	.goto Mulgore,33.82,40.26,25,0
 	.goto Mulgore,34.48,41.21,25,0
 	.goto Mulgore,34.50,42.29,25,0
-    >>击杀 |cRXP_ENEMY_Windfury Wind Witches|r 和 |cRXP_ENEMY_Windfury Harpies|r。拾取他们的 |cRXP_LOOT_Severed 鹰身人 头部|r
+    >>击杀 |cRXP_ENEMY_风怒唤风者|r 和 |cRXP_ENEMY_风怒鹰身人|r。拾取一颗 |cRXP_LOOT_被砍下的鹰身人的头|r
     .collect 206995,1 ---Severed Harpy Head (1)
     .mob 风怒唤风者
     .mob 风怒鹰身人
@@ -968,8 +967,8 @@ step
 step
     #season 2
     .goto Mulgore,46.29,61.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Vateya|r 在血蹄村对话
-    >>交还你收集的 |cRXP_LOOT_Heads|r 以换取 |T134455:0|t[Rune 碎片]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与血蹄村的 |cRXP_FRIENDLY_瓦泰亚|r 对话
+    >>交还你收集的 |cRXP_LOOT_被砍下的巨魔的头|r 以换取 |T134455:0|t[符文碎片]
     .collect 204688,1 --Monster Hunter's First Rune Fragment (1)
     .collect 204689,1 --Monster Hunter's Second Rune Fragment (1)
     .collect 204690,1 --Monster Hunter's Third Rune Fragment (1)
@@ -977,12 +976,12 @@ step
     .train 403475,1
 step
     #season 2
-    .use 204688 >>使用 |T134455:0|t[Rune 碎片] 来制作 |T134419:0|t[|cRXP_FRIENDLY_Rune of 高地符文布绷带|r]
+    .use 204688 >>使用 |T134455:0|t[符文碎片] 来制作 |T134419:0|t[|cRXP_FRIENDLY_毁灭打击符文|r]
     .collect 204703,1 --Rune of Devastate (1)
     .train 403475,1
 step
     #season 2
-    .train 403475 >>使用 |T134419:0|t[|cRXP_FRIENDLY_Rune of 高地符文布绷带|r]
+    .train 403475 >>使用 |T134419:0|t[|cRXP_FRIENDLY_毁灭打击符文|r]
     .use 204703
     .itemcount 204703,1
 
@@ -993,8 +992,8 @@ RXPGuides.RegisterGuide([[
 << Horde Warrior SoD
 #group RestedXP符文与书籍指南
 #subgroup 手套
-#name 高地符文布绷带 - 8 (提瑞斯法)
-#title 高地符文布绷带
+#name 毁灭打击 - 8 (提瑞斯法)
+#title 毁灭打击
 
 
     --Rune of Devastate
@@ -1011,7 +1010,7 @@ step
     .goto Tirisfal Glades,46.09,59.70,50,0
     .goto Tirisfal Glades,43.49,61.81,50,0
     .goto Tirisfal Glades,56.45,62.62
-    >>击杀 |cRXP_ENEMY_Duskbats|r。拾取他们的 |cRXP_LOOT_Severed 蝙蝠 头部|r
+    >>击杀|cRXP_ENEMY_夜行蝙蝠|r，从它们身上拾取|cRXP_LOOT_被砍下的蝙蝠的头|r
     .collect 207975,1 --Severed Bat Head (1)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -1024,7 +1023,7 @@ step
     .goto Tirisfal Glades,55.24,42.54,40,0
     .goto Tirisfal Glades,56.43,43.92,40,0
     .goto Tirisfal Glades,55.24,42.54
-    >>击杀 |cRXP_ENEMY_Rot Hidden Gnolls|r，拾取他们的 |cRXP_LOOT_Severed 豺狼人 头部|r
+    >>击杀 |cRXP_ENEMY_腐皮豺狼人|r。从它们身上拾取 |cRXP_LOOT_被砍下的豺狼人的头|r
     .collect 204478,1 --Severed Gnoll Head (1)
     .mob Rot Hide Mongrel
     .mob Rot Hide Graverobber
@@ -1041,7 +1040,7 @@ step
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
     .goto Tirisfal Glades,59.54,27.86
-    >>击杀 |cRXP_ENEMY_Murlocs|r。拾取他们的 |cRXP_LOOT_被砍下的鱼人的头|r
+    >>击杀 |cRXP_ENEMY_渔人|r。拾取他们的 |cRXP_LOOT_被砍下的鱼人的头|r
     .collect 204477,1 --Severed Murloc Head (1)
     .mob Vile Fin Puddlejumper
     .mob Vile Fin Minor Oracle
@@ -1050,8 +1049,8 @@ step
 step
     #season 2
     .goto Undercity,48.03,70.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Dorac|r 在幽暗城对话
-    >>交还你收集的 |cRXP_LOOT_Heads|r 以换取 |T134455:0|t[Rune 碎片]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与幽暗城的|cRXP_FRIENDLY_多拉克|r交谈
+    >>交还你收集的 |cRXP_LOOT_被砍下的巨魔的头|r 以换取 |T134455:0|t[符文碎片]
     .collect 204688,1 --Monster Hunter's First Rune Fragment (1)
     .collect 204689,1 --Monster Hunter's Second Rune Fragment (1)
     .collect 204690,1 --Monster Hunter's Third Rune Fragment (1)
@@ -1059,12 +1058,12 @@ step
     .train 403475,1
 step
     #season 2
-    .use 204688 >>使用 |T134455:0|t[Rune 碎片] 来制作 |T134419:0|t[|cRXP_FRIENDLY_Rune of 高地符文布绷带|r]
+    .use 204688 >>使用 |T134455:0|t[符文碎片] 来制作 |T134419:0|t[|cRXP_FRIENDLY_毁灭打击符文|r]
     .collect 204703,1 --Rune of Devastate (1)
     .train 403475,1
 step
     #season 2
-    .train 403475 >>使用 |T134419:0|t[|cRXP_FRIENDLY_Rune of 高地符文布绷带|r]
+    .train 403475 >>使用 |T134419:0|t[|cRXP_FRIENDLY_毁灭打击符文|r]
     .use 204703
     .itemcount 204703,1
 
@@ -1094,14 +1093,14 @@ step
     .goto Durotar,40.65,48.24,100,0
     .goto Durotar,36.11,47.85,100,0
     .goto Durotar,56.10,21.61
-    >>寻找并与 |cRXP_FRIENDLY_漫游的剑士|r 决斗。拾取他掉落的 |cRXP_PICK_Box|r 来获得 |T134419:0|t[|cRXP_FRIENDLY_Rune of 血之狂暴|r]
-    >>|cRXP_ENEMY_他在整个区域巡逻，很难找到。路标会引导你经过已知的刷新位置|r
+    >>寻找并与 |cRXP_FRIENDLY_漫游的剑士|r 决斗。拾取他掉落的 |cRXP_PICK_盒子|r 来获得 |T134419:0|t[|cRXP_FRIENDLY_血之狂暴符文|r]
+    >>|cRXP_ENEMY_他在整个区域巡逻，很难找到。路径点会带你经过他的已知刷新位置|r
     .collect 204441,1 --Rune of Blood Frenzy (1)
     .unitscan Wandering Swordsman
     .train 403474,1
 step
     #season 2
-    .train 403474 >>使用 |T134419:0|t[|cRXP_FRIENDLY_Rune of 血之狂暴|r]
+    .train 403474 >>使用 |T134419:0|t[|cRXP_FRIENDLY_血之狂暴符文|r]
     .use 204441
     .itemcount 204441,1
 
@@ -1129,14 +1128,14 @@ step
     .goto Mulgore,52.56,43.61,100,0
     .goto Mulgore,60.43,68.56,100,0
     .goto Mulgore,37.38,56.58
-    >>寻找并与 |cRXP_FRIENDLY_漫游的剑士|r 决斗。拾取他掉落的 |cRXP_PICK_Box|r 来获得 |T134419:0|t[|cRXP_FRIENDLY_Rune of 血之狂暴|r]
-    >>|cRXP_ENEMY_他在整个区域巡逻，很难找到。路标会引导你经过已知的刷新位置|r
+    >>寻找并与 |cRXP_FRIENDLY_漫游的剑士|r 决斗。拾取他掉落的 |cRXP_PICK_盒子|r 来获得 |T134419:0|t[|cRXP_FRIENDLY_血之狂暴符文|r]
+    >>|cRXP_ENEMY_他在整个区域巡逻，很难找到。路径点会带你经过他的已知刷新位置|r
     .collect 204441,1 --Rune of Blood Frenzy (1)
     .unitscan Wandering Swordsman
     .train 403474,1
 step
     #season 2
-    .train 403474 >>使用 |T134419:0|t[|cRXP_FRIENDLY_Rune of 血之狂暴|r]
+    .train 403474 >>使用 |T134419:0|t[|cRXP_FRIENDLY_血之狂暴符文|r]
     .use 204441
     .itemcount 204441,1
 
@@ -1147,7 +1146,7 @@ RXPGuides.RegisterGuide([[
 << Horde Warrior SoD
 #group RestedXP符文与书籍指南
 #subgroup 胸部
-#name 血之狂暴 - 8 (Tirisfal)
+#name 血之狂暴 - 8 (提瑞斯法)
 #title 血之狂暴
 
 
@@ -1156,14 +1155,14 @@ RXPGuides.RegisterGuide([[
 step
     #season 2
     .goto Tirisfal Glades,79.25,65.02
-    >>寻找并与 |cRXP_FRIENDLY_漫游的剑士|r 决斗。拾取他掉落的 |cRXP_PICK_Box|r 来获得 |T134419:0|t[|cRXP_FRIENDLY_Rune of 血之狂暴|r]
+    >>寻找并与 |cRXP_FRIENDLY_漫游的剑士|r 决斗。拾取他掉落的 |cRXP_PICK_盒子|r 来获得 |T134419:0|t[|cRXP_FRIENDLY_血之狂暴符文|r]
     >>|cRXP_ENEMY_他在巴尼尔农场的正东方刷新|r
     .collect 204441,1 --Rune of Blood Frenzy (1)
     .unitscan Wandering Swordsman
     .train 403474,1
 step
     #season 2
-    .train 403474 >>使用 |T134419:0|t[|cRXP_FRIENDLY_Rune of 血之狂暴|r]
+    .train 403474 >>使用 |T134419:0|t[|cRXP_FRIENDLY_血之狂暴符文|r]
     .use 204441
     .itemcount 204441,1
 
@@ -1179,24 +1178,24 @@ RXPGuides.RegisterGuide([[
 
 step << Warrior
     .goto Loch Modan,33.2,73.8
-    >>击杀 |cRXP_ENEMY_Troggs|r。从他们身上拾取 |cRXP_LOOT_骷髅-Shaped Geode|r
+    >>击杀|cRXP_ENEMY_穴居怪|r，从它们身上拾取|cRXP_LOOT_头骨形晶簇|r
     .collect 208847,1 -- Skull-Shaped Geode (1)
     .mob 碎石怪斥候
     .mob 碎石穴居人
     .train 425443,1
 step << Warrior
     .goto Loch Modan,33.2,73.8
-    >>击杀 |cRXP_ENEMY_碎石怪击颅者|r
-    >>|cRXP_WARN_战斗中它会给你狠狠一击，这将把 |cRXP_LOOT_Skull-Shaped Geode|r 变成 |r|T236489:0|t[|cRXP_LOOT_开裂的头骨形晶簇|r]
+    >>击杀一名|cRXP_ENEMY_碎石怪击颅者|r
+    >>|cRXP_WARN_战斗中它会给你狠狠一击，这将把 |cRXP_LOOT_头骨形晶簇|r 转化为 |r|T236489:0|t[|cRXP_LOOT_开裂的头骨形晶簇|r]
     .collect 208848,1 -- Cracked Skull-Shaped Geode (1)
     .mob Stonesplinter Skullthumper
     .train 425443,1
 step << Warrior
-    .use 208848 >>|cRXP_WARN_使用|r |T236489:0|t[|cRXP_LOOT_开裂的头骨形晶簇|r] |cRXP_WARN_来学习|r |T134419:0|t[|cRXP_FRIENDLY_迅捷打击符文|r]
+    .use 208848 >>|cRXP_WARN_使用|r |T236489:0|t|T134419:0|t[|cRXP_LOOT_开裂的头骨形晶簇|r] |cRXP_WARN_获得|r |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_迅捷打击符文|r]
     .collect 208778,1 -- Rune of Quick Strike (1)
     .train 425443,1
 step << Warrior
-    .train 425443 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 迅捷打击|r] |cRXP_WARN_来训练|r |T132394:0|t[迅捷打击]
+    .train 425443 >>|cRXP_WARN_使用|r |T134419:0|t|T132394:0|t[|cRXP_FRIENDLY_迅捷打击符文|r] |cRXP_WARN_训练|r |T132394:0|t|T132394:0|t[迅捷打击]
     .use 208778
     .itemcount 208778,1
 ]])
@@ -1206,8 +1205,8 @@ RXPGuides.RegisterGuide([[
 << Horde Warrior SoD
 #group RestedXP符文与书籍指南
 #subgroup 手套
-#name 经典怀旧服 道具 - 15 (The Barrens)
-#title 经典怀旧服 道具
+#name 无尽怒气 - 15 (荒芜之地)
+#title 无尽怒气
 
 
     --Rune of Endless Rage
@@ -1231,13 +1230,13 @@ step
     #season 2
     .goto The Barrens,62.55,56.31
     >>点击 |cRXP_PICK_联盟战旗|r
-    >>击杀重生的 |cRXP_ENEMY_Lieutenant Stonebrew|r，拾取他的 |T134419:0|t[|cRXP_FRIENDLY_Rune of 经典怀旧服 道具|r]
+    >>击杀刷新的 |cRXP_ENEMY_石麦副官|r。拾取他的 |T134419:0|t[|cRXP_FRIENDLY_无尽怒气符文|r]
     .collect 208741,1 --Rune of Endless Rage (1)
     .mob Lieutenant Stonebrew
     .train 403489,1
 step
     #season 2
-    .train 403489 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 经典怀旧服 道具|r] |cRXP_WARN_来训练|r |T132347:0|t[经典怀旧服 道具]
+    .train 403489 >>|cRXP_WARN_使用|r |T134419:0|t|T132347:0|t[|cRXP_FRIENDLY_无尽怒气符文|r] |cRXP_WARN_来学习|r |T132347:0|t|T132347:0|t[无尽怒气]
     .use 208741
     .itemcount 208741,1
 
@@ -1248,8 +1247,8 @@ RXPGuides.RegisterGuide([[
 << Horde Warrior SoD
 #group RestedXP符文与书籍指南
 #subgroup 手套
-#name 经典怀旧服 道具 - 15 (银松森林)
-#title 经典怀旧服 道具
+#name 无尽怒气 - 15 (银松森林)
+#title 无尽怒气
 
 
     --Rune of Endless Rage
@@ -1257,19 +1256,19 @@ RXPGuides.RegisterGuide([[
 step
     #season 2
     #completewith next
-    +|cRXP_WARN_建议组队|r因为你需要击杀一个17级精英怪
+    +|cRXP_WARN_建议组队，因为你需要击杀一个17级精英怪|r
 step
     #season 2
     .goto Silverpine Forest,35.03,7.73
-    >>攻击 |cRXP_ENEMY_Webbed Victim|r 并击杀刷出的 |cRXP_ENEMY_迷失的冒险者|r。从他身上拾取 |T134419:0|t[|cRXP_FRIENDLY_Rune of 经典怀旧服 道具|r]
-    >>|cRXP_WARN_你必须快速击杀|r |cRXP_ENEMY_Webbed Victim|r |cRXP_WARN_因为它每几秒就会恢复生命值|r
+    >>攻击 |cRXP_ENEMY_被蛛网缠住的受害者|r 并击杀刷新的 |cRXP_ENEMY_迷失的冒险者|r。拾取他的 |T134419:0|t[|cRXP_FRIENDLY_无尽怒气符文|r]
+    >>|cRXP_WARN_你必须快速击杀|r |cRXP_ENEMY_被网住的受害者|r |cRXP_WARN_因为它每几秒就会恢复生命值|r
     .collect 208741,1 --Rune of Endless Rage (1)
     .mob Webbed Victim
     .mob Lost Adventurer
     .train 403489,1
 step
     #season 2
-    .train 403489 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 经典怀旧服 道具|r] |cRXP_WARN_来修炼|r |T132347:0|t[经典怀旧服 道具]
+    .train 403489 >>|cRXP_WARN_使用|r |T134419:0|t|T132347:0|t[|cRXP_FRIENDLY_无尽怒气符文|r] |cRXP_WARN_来学习|r |T132347:0|t|T132347:0|t[无尽怒气]
     .use 208741
     .itemcount 208741,1
 
@@ -1285,13 +1284,13 @@ RXPGuides.RegisterGuide([[
 
 step << Warrior
     .goto 1439,44.081,20.739
-    >>在骷髅眼窝中拾取 |T135129:0|t[多节鱼叉]
+    >>拾取骷髅的眼珠来获得 |T135129:0|t[多节鱼叉]
     .collect 209047,1 --Gnarled Harpoon (1)
     .train 425443,1
 step << Warrior
     #completewith next
     .goto 1439,44.081,20.739
-    .cast 422397 >>|cRXP_WARN_使用|r |T135129:0|t[多节鱼叉] |cRXP_WARN_对|cRXP_ENEMY_ |r帕克斯诺兹|r 来将其最大生命值降低至743
+    .cast 422397 >>|cRXP_WARN_使用|r |T135129:0|t[多节鱼叉] |cRXP_WARN_将|cRXP_ENEMY_ |r帕克斯诺兹|r 的最大血量打到743
     .train 425443,1
 step << Warrior
     #loop
@@ -1303,14 +1302,14 @@ step << Warrior
     .goto Darkshore,47.6,13.2,40,0
     .goto Darkshore,50.4,12.0,40,0
     .goto Darkshore,48.8,16.0,40,0
-    >>杀死 |cRXP_ENEMY_帕克斯诺兹|r。从他身上战利品|T134419:0|t[|cRXP_LOOT_Rune of 迅捷打击|r]
+    >>杀死 |cRXP_ENEMY_帕克斯诺兹|r。拾取他的 |T134419:0|t|cRXP_LOOT_[迅捷打击符文]|r
     >>|cRXP_WARN_小心，他是一个20级精英|r
     .collect 208778,1 -- Rune of Quick Strike (1)
     .unitscan Paxnozz
     .use 209047
     .train 425443,1
 step << Warrior
-    .train 425443 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 迅捷打击|r] |cRXP_WARN_来训练|r |T132394:0|t[迅捷打击]
+    .train 425443 >>|cRXP_WARN_使用|r |T134419:0|t|T132394:0|t[|cRXP_FRIENDLY_迅捷打击符文|r] |cRXP_WARN_训练|r |T132394:0|t|T132394:0|t[迅捷打击]
     .use 208778
     .itemcount 208778,1
 ]])
@@ -1329,7 +1328,7 @@ step
     .zone Arathi Highlands >>前往阿拉希高地
 step
     #completewith IllegibleReciple
-    +|cRXP_WARN_你可能想找个小队，因为你必须击杀37级或以上的精英怪来获得|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 血涌|r]
+    +|cRXP_WARN_你可能需要组队，因为你必须击杀37级以上的精英怪才能获得|r |T134419:0|t[|cRXP_FRIENDLY_血涌符文|r]
     .subzoneskip 324
 step
     #label IllegibleReciple
@@ -1341,11 +1340,11 @@ step
     .goto Arathi Highlands,24.25,64.97,30,0
     .goto Arathi Highlands,21.22,66.52,40,0
     .goto Arathi Highlands,20.21,67.17,40,0
-    >>在激流堡击杀 |cRXP_ENEMY_Boulderfist 莫加尔大王 <食人魔之王>|r。从他们身上拾取 |T237451:0|t[|cRXP_LOOT_Illegible Recipe|r]
-    >>|cRXP_WARN_使用|r |T237451:0|t[|cRXP_LOOT_Illegible Recipe|r] |cRXP_WARN_来开始任务|r
-    >>|cRXP_WARN_或者你也可以在奥特兰克山脉击杀|cRXP_ENEMY_ |rCrushridge 莫加尔大王 <食人魔之王>|r
+    >>在激流堡内击杀 |cRXP_ENEMY_石拳食人魔|r。拾取他们的 |T237451:0|t[|cRXP_LOOT_模糊不清的食谱|r]
+    >>|cRXP_WARN_使用|r |T237451:0|t[|cRXP_LOOT_模糊不清的食谱|r] |cRXP_WARN_来开始任务|r
+    >>|cRXP_WARN_或者你也可以在奥特兰克山脉击杀|cRXP_ENEMY_ |r破碎岭食人魔|r
     .collect 213422,1,79624 --Illegible Recipe (1x)
-    .accept 79624 >>接受任务 NO TRANSLATION FOUND TO THIS ELEMENT
+    .accept 79624 >>接受任务 人人都会做饭
     .mob 石拳萨满祭司
     .mob Boulderfist Mauler
     .mob Boulderfist Lord
@@ -1355,13 +1354,13 @@ step
     .mob 破碎岭好战者
 step
     #completewith next
-    .goto Arathi Highlands,57.587,72.499,10 >>上山前往 |cRXP_FRIENDLY_Skonk|r
+    .goto Arathi Highlands,57.587,72.499,10 >>上山去找 |cRXP_FRIENDLY_斯康克|r
 step
     .train 416004,1
     .goto Arathi Highlands,57.68,74.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Skonk|r 对话
-    .turnin 79624 >>交任务 NO TRANSLATION FOUND TO THIS ELEMENT
-    .accept 79677 >>接受任务 NO TRANSLATION FOUND TO THIS ELEMENT
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯康克|r 对话
+    .turnin 79624 >>交任务 人人都会做饭
+    .accept 79677 >>接受任务 顺路买点菜
     .target Skonk
 step
     #completewith SpiceBlend
@@ -1374,8 +1373,8 @@ step
     .train 416004,1
     .goto Arathi Highlands,20.47,84.90,8,0
     .goto Arathi Highlands,21.379,83.919
-    >>打开 |cRXP_PICK_密封的木桶|r。从中拾取 |cRXP_LOOT_Smuggler's Spice Blend|r
-    >>|cRXP_WARN_它位于沉船的底部。游过最底部的大孔洞到达它|r
+    >>打开 |cRXP_PICK_密封的桶|r。从中拾取 |cRXP_LOOT_走私者的混合香料|r
+    >>|cRXP_WARN_它位于沉船的底部。从最底部的巨大破洞游进去即可找到它|r
     .complete 79677,2 --Smuggler's Spice Blend (1x)
 step
     .train 416004,1
@@ -1388,7 +1387,7 @@ step
     .goto Hillsbrad Foothills,81.33,34.03,50,0
     .goto Hillsbrad Foothills,84.34,32.40,50,0
     .goto Hillsbrad Foothills,82.09,36.92,50,0
-    >>击杀 |cRXP_ENEMY_Wild Gryphons|r。拾取他们的 |cRXP_LOOT_Hybrid Haunch|r
+    >>击杀 |cRXP_ENEMY_野生狮鹫|r。拾取他们的 |cRXP_LOOT_杂类腰腿肉|r
     .complete 79677,1 --Hybrid Haunch (1x)
     .mob Kurdros << Horde
     .mob Granistad << Horde
@@ -1404,8 +1403,8 @@ step
     .train 416004,1
     .goto Badlands,41.92,26.26,20,0
     .goto Badlands,41.383,27.964
-    >>点击 |cRXP_PICK_Tapped Shadowforge Keg|r。从中拾取 |cRXP_LOOT_Balmy Brew|r
-    >>|cRXP_WARN_停留在最大范围以避免惊动|r |cRXP_ENEMY_Ambassador 因弗努斯|r
+    >>点击 |cRXP_PICK_开过口的暗铁酒桶|r。从中拾取 |cRXP_LOOT_沁脾佳酿|r
+    >>|cRXP_WARN_保持在最远距离以避免引到|r |cRXP_ENEMY_因弗努斯大使|r
     .complete 79677,3 --Balmy Brew (1x)
 step
     .train 416004,1
@@ -1424,7 +1423,7 @@ step
     .goto Swamp of Sorrows,68.52,73.12,60,0
     .goto Swamp of Sorrows,72.50,82.18,60,0
     .goto Swamp of Sorrows,78.49,88.19,60,0
-    >>击杀 |cRXP_ENEMY_Deathstrike Tarantulas|r。拾取他们的 |cRXP_LOOT_Viscous 毒针|r
+    >>击杀 |cRXP_ENEMY_死亡狼蛛|r。拾取他们的 |cRXP_LOOT_粘性毒液|r
     >>|cRXP_WARN_它们可以在悲伤沼泽的东南区域找到|r
     .complete 79677,4 --Viscous Venom (1x)
     .mob Deathstrike Tarantula
@@ -1434,30 +1433,30 @@ step
     .zone Arathi Highlands >>前往阿拉希高地
 step
     #completewith next
-    .goto Arathi Highlands,57.587,72.499,10 >>上山前往 |cRXP_FRIENDLY_Skonk|r
+    .goto Arathi Highlands,57.587,72.499,10 >>上山去找 |cRXP_FRIENDLY_斯康克|r
 step
     #label GroceryRun
     .train 416004,1
     .goto Arathi Highlands,57.68,74.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Skonk|r 对话
-    .turnin 79677 >>交任务 NO TRANSLATION FOUND TO THIS ELEMENT
-    .accept 79678 >>接受任务 NO TRANSLATION FOUND TO THIS ELEMENT
-    .timer 23,NO TRANSLATION FOUND TO THIS ELEMENT 剧情演出
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯康克|r 对话
+    .turnin 79677 >>交任务 顺路买点菜
+    .accept 79678 >>接受任务 味道测试
+    .timer 23,味道测试 剧情演出
     .target Skonk
 step
     .train 416004,1
     .goto Arathi Highlands,57.68,74.66
-    >>在 |cRXP_ENEMY_Skonk|r 吃完饭后击败他
+    >>在 |cRXP_ENEMY_斯康克|r 吃完饭后击败他
     .complete 79678,1 --Taste Testing
     .mob Skonk
 step
     .train 416004,1
     .goto Arathi Highlands,57.68,74.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Skonk|r 对话
-    .turnin 79678 >>交任务 NO TRANSLATION FOUND TO THIS ELEMENT
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯康克|r 对话
+    .turnin 79678 >>交任务 味道测试
     .target Skonk
 step
-    .train 416004 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 血涌|r] |cRXP_WARN_来训练|r |T236306:0|t[血涌]
+    .train 416004 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_血涌符文|r] |cRXP_WARN_来训练|r |T236306:0|t[血涌]
     .use 213103
 ]])
 
@@ -1474,7 +1473,7 @@ RXPGuides.RegisterGuide([[
 step
     .train 409163,1
     #completewith WitherbarkCave
-    +|cRXP_WARN_建议先寻找额外的队伍成员，然后再尝试获得|r |T134419:0|t[|cRXP_LOOT_Rune of 怒火聚焦|r] |cRXP_WARN_，因为这需要同时击杀一个35级精英和2只小怪|r
+    +|cRXP_WARN_在尝试获取|r |T134419:0|t[|cRXP_LOOT_怒火聚焦符文|r] |cRXP_WARN_之前，建议先寻找额外的队友，因为这需要同时击杀一个35级精英和2个小怪|r
 step
     .train 409163,1
     #completewith WitherbarkCave
@@ -1487,8 +1486,8 @@ step
     .goto Arathi Highlands,61.35,71.72,70,0
     .goto Arathi Highlands,64.23,67.72,70,0
     .goto Arathi Highlands,66.56,63.98
-    >>杀死 |cRXP_ENEMY_枯木巨魔|r。从他们身上战利品|T133057:0|t[|cRXP_LOOT_枯木 Mallet|r]
-    >>|cRXP_WARN_你也可以从拍卖行购买|r |T133057:0|t[|cRXP_LOOT_枯木 Mallet|r]
+    >>击杀 |cRXP_ENEMY_枯木巨魔|r。拾取它们的 |T133057:0|t[|cRXP_LOOT_枯木槌|r]
+    >>|cRXP_WARN_你也可以从拍卖行购买|r |T133057:0|t[|cRXP_LOOT_枯木锤|r] |cRXP_WARN_|r
     .collect 216483,1
     .mob Witherbark Shadow Hunter
     .mob Witherbark Axe Thrower
@@ -1502,16 +1501,16 @@ step
     .train 409163,1
     #completewith next
     .goto Arathi Highlands,69.502,81.924
-    .cast 436278 >>|cRXP_WARN_在洞穴内的|r |cRXP_LOOT_锣|r |cRXP_WARN_处使用|cRXP_PICK_ |T133057:0|t[|r枯木 Mallet|r]
-    .use 216483 >>|cRXP_WARN_这会刷出一个|cRXP_ENEMY_ 枯木歌利亚|r (35级精英)以及2个额外的小怪|r
+    .cast 436278 >>|cRXP_WARN_在洞穴内使用|r |T133057:0|t[|cRXP_LOOT_枯木锤|r] |cRXP_WARN_敲击|cRXP_PICK_铜锣|r|r
+    .use 216483 >>|cRXP_WARN_这会召唤一个|cRXP_ENEMY_枯木巨魔|r（35级精英）以及2个额外的怪物|r
 step
     .train 409163,1
     .goto Arathi Highlands,69.61,81.60
-    >>杀死 |cRXP_ENEMY_枯木歌利亚|r。从它身上战利品|T134419:0|t[|cRXP_LOOT_Rune of 怒火聚焦|r]
+    >>击杀|cRXP_ENEMY_枯木巨怪|r。拾取 |T134419:0|t[|cRXP_LOOT_怒火聚焦符文|r]
     .collect 213109,1
     .mob Witherbark Goliath
 step
-    .train 409163 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_LOOT_Rune of 怒火聚焦|r] |cRXP_WARN_来训练|r |T132345:0|t[怒火聚焦]
+    .train 409163 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_LOOT_怒火聚焦符文|r] |cRXP_WARN_训练|r |T132345:0|t[怒火聚焦]
     .use 213109
 ]])
 
@@ -1528,7 +1527,7 @@ RXPGuides.RegisterGuide([[
 step
     #optional
     .train 403472,1
-    +|cRXP_WARN_你必须至少达到24级才能获得|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 干涉介入|r]
+    +|cRXP_WARN_你必须至少达到24级才能获得|r |T134419:0|t[|cRXP_FRIENDLY_援护符文|r]
     .xp >24,1
 step
     .train 403472,1
@@ -1536,7 +1535,7 @@ step
     .train 72,1
     .train 1671,1
     .train 1672,1
-    +|cRXP_WARN_你必须训练|r |T132357:0|t[盾击] |cRXP_WARN_来获得|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 干涉介入|r]
+    +|cRXP_WARN_你必须训练|r |T132357:0|t[盾击] |cRXP_WARN_来获得|r |T134419:0|t[|cRXP_FRIENDLY_援护符文|r]
 step
     .train 403472,1
     .train 5308,1
@@ -1544,14 +1543,14 @@ step
     .train 20660,1
     .train 20661,1
     .train 20662,1
-    +|cRXP_WARN_你必须训练|r |T135358:0|t[斩杀] |cRXP_WARN_来获得|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 干涉介入|r]
+    +|cRXP_WARN_你必须训练|r |T135358:0|t[斩杀] |cRXP_WARN_来获得|r |T134419:0|t[|cRXP_FRIENDLY_援护符文|r]
 step
     .train 403472,1
     #optional
     .train 72,1
     .train 1671,1
     .train 1672,1
-    +|cRXP_WARN_你必须学习|r |T132357:0|t[盾击] |cRXP_WARN_来获得|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 援护符文|r]
+    +|cRXP_WARN_你必须训练|r |T132357:0|t[盾击] |cRXP_WARN_来获得|r |T134419:0|t[|cRXP_FRIENDLY_援护符文|r]
 step
     .train 403472,1
     #completewith next
@@ -1560,32 +1559,32 @@ step
     +盾牌
 step
     .train 403472,1
-    .goto Thousand Needles,67.84,89.50,100 >>前往位于 |cFFfa9602千针石林|r 的Rustmaul Digsite
+    .goto Thousand Needles,67.84,89.50,100 >>前往|cFFfa9602千针石林|r 的锈槌挖掘场
 step
     #completewith next
-    +|cRXP_WARN_确保你已装备你的单手武器和盾牌|r
+    +|cRXP_WARN_确保你已装备好单手武器和盾牌|r
 step
     .train 403472,1
     .goto Thousand Needles,67.968,89.800
-    .cast 5308,20658,20660,20661,20662 >>|cRXP_WARN_施放|r |T135358:0|t[斩杀] |cRXP_WARN_对|cRXP_ENEMY_ 作战假人|r，然后移动到下一个|r |cRXP_ENEMY_作战假人|r
+    .cast 5308,20658,20660,20661,20662 >>|cRXP_WARN_对|r 作战假人|cRXP_WARN_ |cRXP_ENEMY_施放|r |T135358:0|t[斩杀] ，然后移动到下一个|r |cRXP_ENEMY_作战假人|r
     .mob Combat Dummy
 step
     .train 403472,1
     .goto Thousand Needles,67.845,89.511
-    .cast 355 >>|cRXP_WARN_施放|r |T136080:0|t[嘲讽] |cRXP_WARN_对|cRXP_ENEMY_ 作战假人|r，然后移动到下一个|r |cRXP_ENEMY_作战假人|r
+    .cast 355 >>|cRXP_WARN_对|r 作战假人|cRXP_WARN_ |cRXP_ENEMY_施放|r |T136080:0|t[嘲讽] ，然后移动到下一个|r |cRXP_ENEMY_作战假人|r
     .mob Combat Dummy
 step
     .train 403472,1
     .goto Thousand Needles,67.713,89.245
-    .cast 72,1671,1672 >>|cRXP_WARN_施放|r |T132357:0|t[盾击] |cRXP_WARN_对|r |cRXP_ENEMY_作战假人|r
+    .cast 72,1671,1672 >>|cRXP_WARN_对|r |cRXP_WARN_作战假人|r |cRXP_ENEMY_施放|r |T132357:0|t[盾击]
     .mob Combat Dummy
 step
     .train 403472,1
     .goto Thousand Needles,67.933,89.408
-    >>打开 |cRXP_PICK_战士的奖励|r 宝箱。拾取战利品 |T134419:0|t[|cRXP_FRIENDLY_Rune of 援护符文|r]
+    >>打开 |cRXP_PICK_战士的奖励|r 宝箱。拾取 |T134419:0|t[|cRXP_FRIENDLY_援护符文|r]
     .collect 213111,1 --Rune of Intervention (1x)
 step
-    .train 403472 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 援护符文|r] |cRXP_WARN_来学习|r |T132365:0|t[援护]
+    .train 403472 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_援护符文|r] |cRXP_WARN_来学习|r |T132365:0|t[援护]
     .use 213111
 ]])
 
@@ -1594,8 +1593,8 @@ RXPGuides.RegisterGuide([[
 << Warrior SoD
 #group RestedXP符文与书籍指南
 #subgroup 布兹
-#name 道具 - 40 (荒芜之地)
-#title 道具
+#name 集结呐喊 - 40 (荒芜之地)
+#title 集结呐喊
 
 -- Rallying Cry
 
@@ -1621,15 +1620,15 @@ step
     .goto Badlands,27.8,67.8,30,0 << Horde
     .goto Badlands,20.0,57.0,30,0 << Horde
     .goto Badlands,15.6,45.8,30,0 << Horde
-    >>在荒芜之地与 |cRXP_FRIENDLY_漫游的剑士|r 对话
+    >>与荒芜之地的 |cRXP_FRIENDLY_漫游的剑士|r 对话
     >>在决斗中击败 |cRXP_ENEMY_漫游的剑士|r
-    >>打开地上他掉落的 |cRXP_PICK_Swordsman's Reward|r。拾取战利品 |T134419:0|t[|cRXP_FRIENDLY_Rune of the 指挥官|r]
-    >>注释|cRXP_WARN_：|cRXP_FRIENDLY_漫游的剑士|r 可以在荒芜之地的许多地点刷新|r
+    >>打开地上他掉落的 |cRXP_PICK_剑士的奖励|r。拾取战利品 |T134419:0|t[|cRXP_FRIENDLY_统领符文|r]
+    >>注释|cRXP_WARN_：|cRXP_FRIENDLY_漫游的剑士|r 会在荒芜之地的许多地点刷新|r
     .collect 213110,1 --Rune of the Commander (1x)
     .unitscan Wandering Swordsman
     .skipgossip
 step
-    .train 426491 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the 指挥官|r] |cRXP_WARN_来学习|r |T132339:0|t[道具]
+    .train 426491 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_统领符文|r] |cRXP_WARN_来学习|r |T132339:0|t[集结呐喊]
     .use 213110
 ]])
 
@@ -1651,12 +1650,12 @@ step
     .train 427081,1
 step
     .goto Feralas,74.8,24.9
-    >>进入洞穴，寻找一个等级43的精英食人魔。击杀它获得 |T134419:0|t[|cRXP_FRIENDLY_狂放符文|r]
+    >>进入洞穴，寻找43级的精英食人魔 奥克奇。击败他以获取 |T134419:0|t[|cRXP_FRIENDLY_狂放符文|r]
     .collect 220682,1 -- Rune of Unbridled 1/1
     .unitscan Ohk'zi
     .train 427081,1
 step
-    .train 427081 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_狂放符文|r] |cRXP_WARN_来学习|r |T132352:0|t[狂暴]
+    .train 427081 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_狂放符文|r] |cRXP_WARN_来学习|r |T132352:0|t[暴怒]
     .use 220682
 
 ]])
@@ -1677,7 +1676,7 @@ step
     .goto The Hinterlands,23.6,57.4
     .goto The Hinterlands,36.6,66.2,0
     .goto The Hinterlands,31.6,59.8,0
-    >>击杀地图西部的|cRXP_ENEMY_枯木巨魔|r直到从它们身上拾取 |T133054:0|t|cRXP_LOOT_晶体之锤|r
+    >>击杀地图西部区域的任何 |cRXP_ENEMY_枯木巨魔|r，直到从他们身上拾取到 |T133054:0|t|cRXP_LOOT_晶体之锤|r
     .collect 220912,1 --Geode Hammer 1/1
     .mob Witherbark Sadist
     .mob Witherbark Scalper
@@ -1686,15 +1685,15 @@ step
     .mob Witherbark Venomblood
     .train 427084,1
 step
-    .equip 16,220912 >>装备 |T133054:0|t|cRXP_LOOT_晶体之锤|r 作为你的主手武器。继续与怪物战斗直到锤子破碎变成 |T133054:0|t|cRXP_LOOT_破损的晶体之锤|r
+    .equip 16,220912 >>装备|T133054:0|t|cRXP_LOOT_晶体之锤|r 作为主手武器。继续击杀怪物，直到锤子碎裂并变为|T133054:0|t|cRXP_LOOT_破损的晶体之锤|r
     .collect 220914,1 --Broken Geode Hammer
     .train 427084,1
 step
-    >>右键点击 |T133054:0|t|cRXP_LOOT_破损的晶体之锤|r 拾取战利品 |T134419:0|t[|cRXP_FRIENDLY_Rune of the Demolition|r]
+    >>右键点击 |T133054:0|t|cRXP_LOOT_破损的晶体之锤|r 拾取 |T134419:0|t[|cRXP_FRIENDLY_毁灭符文|r]
     .collect 220913,1 --Rune of the Demolition
     .train 427084,1
 step
-    .train 427084 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Demolition|r] |cRXP_WARN_来学习|r |T132364:0|t[破坏能手]
+    .train 427084 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_毁灭符文|r] |cRXP_WARN_来学习|r |T132364:0|t[破坏能手]
     .use 220913
 ]])
 
@@ -1702,9 +1701,9 @@ RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD
 #group RestedXP符文与书籍指南
-#subgroup 经典怀旧服 道具
-#title 血腥气息
-#name 血腥气息 - 50 (灼热峡谷)
+#subgroup 头盔
+#title 血之气息
+#name 血之气息 - 50 (灼热峡谷)
 
 step
     #completewith SlagPits
@@ -1712,29 +1711,29 @@ step
 step
     #sticky
     #completewith summonIodax
-    >>|cRXP_WARN_要完成这个任务，你需要召唤并击杀一个等级50的精英傀儡（约12000生命值）。虽然可以单人完成，但我建议找个小队。为了召唤傀儡，你需要从灼热峡谷的熔渣坑地收集4个部分。但如果你能找人为你召唤Boss，可以跳过收集。这种情况下可以直接跳到第13步。|r
+    >>|cRXP_WARN_要完成此任务你需要召唤并击杀一个拥有约1.2万生命值的50级精英魔像。虽然可以单刷但建议组队完成。为了召唤该魔像你需要从灼热峡谷的熔渣之池收集4个部件。不过如果你能找到其他人帮你召唤该首领则无需收集这些部件。在这种情况下你可以直接跳到第13步|r
     .collect 221258,1 --Right Foot of the Obliterator
     .collect 221256,1 --Right Arm of the Obliterator
     .collect 221259,1 --Left Foot of the Obliterator
     .collect 221257,1 --Left Arm of the Obliterator
 step
     #label SlagPits
-    .goto 1427/0,-1247.100,-6906.900,10 >>进入熔渣坑地（通过这里的洞穴）
+    .goto 1427/0,-1247.100,-6906.900,10 >>从这里的洞穴进入熔渣之池
     .train 427076,1
 step
     .goto 1427/0,-1257.200,-6764.300
-    >>进入洞穴后，沿着弯曲的道路前进。|cRXP_LOOT_右毁灭者之臂|r 躺在地上，靠近一堆箱子和桶。
+    >>进入洞穴后沿着弯曲的路径前进。|cRXP_LOOT_湮灭者的右臂|r 躺在一堆箱子和木桶旁的地面上
     .collect 221256,1 --Right Arm of the Obliterator 1/1
     .train 427076,1
 step
     .goto 1427/0,-1161.500,-6756.500,10 >>跑向并穿过大门
     .train 427076,1
 step
-    .goto 1427/0,-1303.200,-6461.500,15 >>沿着道路继续前进。在有大傀儡的房间里，走上坡道到坑地的上层。
+    .goto 1427/0,-1303.200,-6461.500,15 >>沿着前方的路径继续前进。在有一个巨大魔像躺在地上的大房间里，沿着坡道前往深坑的上层区域
     .train 427076,1
 step
     .goto 1427/0,-1301.900,-6584.700
-    >>在地上拾取战利品 |cRXP_LOOT_右毁灭者之足|r
+    >>拾取地上的|cRXP_LOOT_湮灭者的右足|r
     .collect 221258,1 --Right Foot of the Obliterator
     .train 427076,1
 step
@@ -1742,34 +1741,34 @@ step
     .train 427076,1
 step
     .goto 1427/0,-1428.600,-6656.800
-    >>从桥上跳向熏火龙洞穴。在熔岩池旁的地板上拾取战利品 |cRXP_LOOT_左毁灭者之臂|r
+    >>从桥上跳向熏火龙洞穴。从岩浆池旁边的地上拾取 |T231885:0|t|cRXP_LOOT_毁灭者的左臂|r
     .collect 221257,1 --Left Arm of the Obliterator
     .train 427076,1
 step
     .goto 1427/0,-1271.900,-6553.500
-    >>去熏火龙洞穴的最深处。拾取战利品地上的 |cRXP_LOOT_左毁灭者之足|r
+    >>走到熏火龙洞穴的最深处，从地上拾取|cRXP_LOOT_湮灭者的左足|r
     .collect 221259,1
     .train 427076,1
 step
 	#completewith next
-	+通过跳到脚后面的岩石上然后登出来返回角色选择界面
+	+通过跳到脚部后面的岩石上并下线，来进行下线传送
 	.link https://youtu.be/oBnDG1AWcxU >>https://youtu.be/oBnDG1AWcxU >> 点击这里参考
 step
     #label summonIodax
     #optional
     #completewith next
     .goto 1427/0,-1791.400,-6774.900
-    .cast 446363 >>前往地图上标记的毁灭者的头部。使用你收集的部分来召唤 |cRXP_ENEMY_Iodax the 毁灭者|r（等级50精英巨人）
+    .cast 446363 >>前往地图上标出的歼灭者头部。使用你收集的零件来召唤|cRXP_ENEMY_歼灭者伊奥达克斯|r 一个50级的精英怪
     .unitscan Iodax the Obliterator
     .train 427076,1
 step
     .goto 1427/0,-1791.400,-6774.900
-    >>击杀 |cRXP_ENEMY_Iodax the 毁灭者|r 并拾取战利品 |T134419:0|t[|cRXP_FRIENDLY_渴血符文|r]
+    >>击杀 |cRXP_ENEMY_毁灭者约达克斯|r 并拾取他的 |T134419:0|t[|cRXP_FRIENDLY_渴血符文|r]
     .collect 221267,1 --Rune of the Bloodthirsty
     .unitscan Iodax the Obliterator
     .train 427076,1
 step
-    .train 427076 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_渴血符文|r] |cRXP_WARN_来学习|r |T236276:0|t[血腥气息]
+    .train 427076 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_渴血符文|r] |cRXP_WARN_来学习|r |T236276:0|t[血之气息]
     .use 221267
     .itemcount 221267,1
 ]])
@@ -1778,7 +1777,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD
 #group RestedXP符文与书籍指南
-#subgroup 经典怀旧服 道具
+#subgroup 头盔
 #title 警戒
 #name 警戒 - 46 (菲拉斯)
 
@@ -1786,16 +1785,16 @@ step
     #completewith next
     .zone Feralas >>前往菲拉斯
 step
-    .goto Feralas,77.6,62.0,30 >>前往菲拉斯的蠕动之深（一个甲虫蜂巢）。|cRXP_WARN_你需要击杀一个伤害很高的等级46精英怪。如果还不是等级50，建议找个小队。|r
+    .goto Feralas,77.6,62.0,30 >>前往痛苦深渊，这是菲拉斯的一个异种蝎巢穴。|cRXP_WARN_你需要击杀一个伤害极高的46级精英怪。如果你还没到50级建议寻找队伍|r
     .train 427078,1
 step
     .goto Feralas,77.6,62.0
-    >>寻找 |cRXP_ENEMY_Tyrant of the Hive|r，击杀他并拾取 |T134419:0|t[|cRXP_FRIENDLY_看守符文|r]
+    >>寻找|cRXP_ENEMY_虫巢暴君|r，击杀它并拾取|T134419:0|t[|cRXP_FRIENDLY_看守符文|r]
     .collect 221473,1 --Rune of the watchman
     .unitscan Tyrant of the Hive
     .train 427078,1
 step
-    .train 427078 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_看守符文|r] |cRXP_WARN_来学习|r |T236318:0|t[经典怀旧服 道具]
+    .train 427078 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_看守符文|r] |cRXP_WARN_来学习|r |T236318:0|t[警戒]
     .use 221473
 ]])
 RXPGuides.RegisterGuide([[
@@ -1808,39 +1807,39 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith theOldChamp
-    +|cRXP_WARN_为了解锁|r |T236541:0|t[角斗姿态] |cRXP_WARN_你需要打败两个流浪剑士，他们会奖励|r |T132334:0|t[血之狂暴] 和 |T132339:0|t[道具] |cRXP_WARN_符文。确保你在继续之前做过这个。如果你不确定在哪里找到它们，请使用各自的符文指南|r
-    +|cRXP_WARN_进行此任务线时不要和任何人组队。目前报告称经常会导致任务出现bug，无法完成|r
+    +|cRXP_WARN_为了解锁|r |T236541:0|t[角斗姿态] |cRXP_WARN_你需要先击败那两个奖励|r |T132334:0|t[血之狂暴] 和 |T132339:0|t[集结呐喊] |cRXP_WARN_符文的流浪剑客。在继续之前请确保你已经完成了这些。如果你不确定在哪里可以找到他们请使用他们各自的符文指南|r
+    +|cRXP_WARN_在进行此任务线时千万不要与任何人组队。目前有报告称组队经常会导致任务卡Bug从而无法完成|r
 step
     #completewith next
     .zone Tanaris >>前往塔纳利斯
 step
     #label theOldChamp
     .goto Tanaris,51.6,27.6
-    >>与 |cRXP_FRIENDLY_费斯巴斯·秘银|r 在加基森对话
-    .accept 81682 >>接受任务
+    >>与加基森的 |cRXP_FRIENDLY_费斯巴斯·秘银|r 对话
+    .accept 81682 >>接受任务 老冠军
     .target Fizbuz Mithril
 step
     #completewith next
     .zone Azshara >>前往艾萨拉
 step
-    .goto Azshara,27,61,40 >>寻找一条通向山顶的路径。它用部落旗帜标记。
+    .goto Azshara,27,61,40 >>寻找一条通向山顶的路径。它用部落旗帜标记
     .train 416002,1
 step
     .goto Azshara,25.4,66.2
-    >>在山路顶端与 |cRXP_FRIENDLY_卡金德 <竞技场冠军>|r 对话
-    .turnin 81682 >>交任务
-    .accept 81697 >>接受任务
+    >>与山路顶部的 |cRXP_FRIENDLY_卡金德|r 对话
+    .turnin 81682 >>交任务 老冠军
+    .accept 81697 >>接受任务 拔牙
     .target Kajind
 step
     .goto Azshara,39.4,72.4
-    >>寻找|cRXP_ENEMY_瑟鲁雷奥斯|r，一条50级的蓝龙。它在湖的北侧巡逻。拾取他的|T251962:0|t|cRXP_LOOT_Kajind's Blade|r
+    >>寻找|cRXP_ENEMY_瑟鲁雷奥斯|r，一条50级的蓝龙。它在湖的北侧巡逻。拾取他的|T251962:0|t|cRXP_LOOT_卡金德之刃|r
     .complete 81697,1 --Kajind's Blade
     .unitscan Ceruleos
 step
     .goto Azshara,25.4,66.2
-    >>回到|cRXP_FRIENDLY_卡金德 <竞技场冠军>|r
-    .turnin 81697 >>转向
-    .accept 81801 >>接受任务
+    >>回去找|cRXP_FRIENDLY_卡金德|r
+    .turnin 81697 >>交任务 拔牙
+    .accept 81801 >>接受任务 返回竞技场
     .target Kajind
 step
     #completewith next
@@ -1848,20 +1847,20 @@ step
 step
     .goto Tanaris,51.6,27.6
     >>回到加基森并与 |cRXP_FRIENDLY_费斯巴斯·秘银|r 对话
-    .turnin 81801 >>交任务
-    .accept 81877 >>接受任务
+    .turnin 81801 >>交任务 返回竞技场
+    .accept 81877 >>接受任务 格斗之夜
     .target Fizbuz Mithril
 step
-    >>在加基森击杀|cRXP_ENEMY_卡金德 <竞技场冠军>|r
+    >>在加基森击败|cRXP_ENEMY_卡金德|r
     .complete 81877,1 --Arena Victory 1/1
     .unitscan Kajind
 step
     .goto Tanaris,51.6,27.6
-    >>在|cRXP_FRIENDLY_费斯巴斯·秘银|r处交任务
-    .turnin 81877 >>交任务
+    >>在|cRXP_FRIENDLY_费斯巴斯·秘银|r 处交任务
+    .turnin 81877 >>交任务 格斗之夜
     .target Fizbuz Mithril
 step
-    .train 416002 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Gladiator|r] |cRXP_WARN_来学习|r |T236541:0|t[角斗姿态]
+    .train 416002 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_角斗士符文|r] |cRXP_WARN_来学习|r |T236541:0|t[角斗姿态]
     .use 220164
 ]])
 
@@ -1870,8 +1869,8 @@ RXPGuides.RegisterGuide([[
 << Warrior SoD
 #group RestedXP符文与书籍指南
 #subgroup 披风
-#title 新鲜的肉
-#name 新鲜的肉 - 55 (燃烧平原)
+#title 新鲜的螃蟹腿
+#name 新鲜的螃蟹腿 - 55 (燃烧平原)
 
 step
     #completewith next
@@ -1879,7 +1878,7 @@ step
 step
     .train 440492,1
     .goto Burning Steppes,40.4,33.6
-    .aura 459616 >>|cRXP_WARN_杀死 |cRXP_ENEMY_Blackrock Orcs|r在黑石要塞直到你获得|r |T132353:0|t[战争律动] |cRXP_WARN_增益|r
+    .aura 459616 >>|cRXP_WARN_在黑石要塞击杀|cRXP_ENEMY_黑石兽人|r，直到获得|r |T132353:0|t[战争律动] |cRXP_WARN_buff|r
     .mob Blackrock Battlemaster
     .mob Blackrock Slayer
     .mob Blackrock Warlock
@@ -1887,14 +1886,14 @@ step
 step
     .train 440492,1
     .goto Burning Steppes,39.549,27.828
-    >>|cRXP_WARN_前往|r |cRXP_PICK_Altar of Reverence|r
-    >>|cRXP_WARN_一旦到达，在你的聊天框中输入 "/敬礼"。这将召唤一个|r |cRXP_ENEMY_崇敬 勇士|r
-    >>击杀 |cRXP_ENEMY_崇尊勇士|r，之后点击 |cRXP_PICK_Altar of Reverence|r
-    .accept 84124 >>接受任务
-    .turnin 84124 >>交任务
+    >>|cRXP_WARN_前往|r|cRXP_PICK_崇尊祭坛|r
+    >>|cRXP_WARN_到达后，在聊天框输入"/敬礼"。这将召唤一个|r |cRXP_ENEMY_崇尊勇士|r
+    >>击杀 |cRXP_ENEMY_崇尊勇士 |r，然后点击 |cRXP_PICK_崇尊祭坛|r
+    .accept 84124 >>接受任务 勇气的传承
+    .turnin 84124 >>交任务 勇气的传承
     .mob Revered Champion
 step
-    .train 440492 >>|cRXP_WARN_使用|r |T133747:0|t[|cRXP_LOOT_Rune of the First 战士|r] |cRXP_WARN_来学习|r |T237516:0|t[新鲜的肉]
+    .train 440492 >>|cRXP_WARN_使用|r |T133747:0|t[|cRXP_LOOT_第一勇士符文|r] |cRXP_WARN_来学习|r |T237516:0|t[新鲜血肉]
     .use 226680
 ]])
 
@@ -1920,19 +1919,19 @@ step
     .goto Silithus,41.0,65.2,60,0
     .goto Silithus,34.8,33.6,60,0
     .goto Silithus,31.0,17.2,60,0
-    .gossip 228611,2 >>|cRXP_WARN_寻找一个 |cRXP_FRIENDLY_漫游的剑士|r 在希利苏斯各处|r
-    >>|cRXP_WARN_与 |cRXP_FRIENDLY_漫游的剑士|r对话。你必须选择中等或困难难度来获得符文|r
-    >>|cRXP_WARN_你将被瞬间传送到一个小平台，战斗将对阵|r |cRXP_ENEMY_Khonsu|r
-    >>|cRXP_WARN_它将施放看起来像[顺劈]的能力。当你看到那些动画时快速远离它们|r
-    >>|cRXP_WARN_当他施放 [Thundering 道具] 时，你必须移动到平台边缘的小突起处，否则你会被击飞|r
+    .gossip 228611,2 >>|cRXP_WARN_在整个希利苏斯寻找一名|cRXP_FRIENDLY_ |r漫游的剑士|r
+    >>|cRXP_WARN_与 |cRXP_FRIENDLY_漫游的剑士|r 对话。你必须选择中等或困难难度来获得符文|r
+    >>|cRXP_WARN_你将被立即传送至一个小型平台上，随后与|r 孔苏|cRXP_ENEMY_ 的战斗将会开始|r
+    >>|cRXP_WARN_它将施放看起来像顺劈的技能。当你看到那些动画时快速远离它们|r
+    >>|cRXP_WARN_当他施放雷霆践踏时，你必须移动到平台边缘的小突起处，否则你会被击飞|r
     >>|cRXP_WARN_建议你也使用|r |T132342:0|t[乘胜追击] |cRXP_WARN_符文，因为你将在整个战斗中击杀小怪|r
     .unitscan Wandering Swordsman
 step
     .train 440494,1
-    >>|cRXP_WARN_击败 |cRXP_ENEMY_Khonsu|r
-    >>|cRXP_WARN_它会施放看起来像[顺劈]的能力。当你看到这些动画时，迅速远离它们|r
-    >>|cRXP_WARN_当他施放[Thundering 道具]时，你必须移至平台边缘的突出处，否则会被击飞|r
-    >>|cRXP_WARN_一旦你成功，接受并交任务|r
+    >>|cRXP_WARN_击败 |cRXP_ENEMY_孔苏|r
+    >>|cRXP_WARN_它将施放看起来像[顺劈]的技能。当你看到那些动画时快速远离它们|r
+    >>|cRXP_WARN_当他施放雷霆践踏时，你必须移动到平台边缘的小突起处，否则你会被击飞|r
+    >>|cRXP_WARN_一旦你成功了，接受并交任务|r
     .accept 84317 >>接受任务 午夜无明
     .turnin 84317 >>交任务 午夜无明
     .mob Titanic Watcher
@@ -1955,27 +1954,27 @@ step
 step
     .train 440496,1
     .goto Tanaris,59.2,91.5
-    >>|cRXP_WARN_前往塔纳利斯南部沿着海岸线|r
-    >>点击地上的 |cRXP_PICK_Half-Buried Mech|r 和 |cRXP_PICK_Access Hatch|r
+    >>|cRXP_WARN_沿着海岸线前往塔纳利斯南部|r
+    >>点击地上的 |cRXP_PICK_半埋的机甲|r 和 |cRXP_PICK_暗门|r
     .accept 84135 >>接受任务 迷滩机器人
     .turnin 84135 >>交任务 迷滩机器人
     .accept 84137 >>接受任务 机械罗曼史
 step
     .train 440496,1
     #completewith next
-    .cast 459613 >>|cRXP_WARN_使用|r |T134731:0|t[制导浮力加速器] |cRXP_WARN_来提升游泳速度（持续4分钟）|r
+    .cast 459613 >>|cRXP_WARN_使用|r |T134731:0|t[制导浮力加速器] |cRXP_WARN_来提升游泳速度，持续4分钟。|r
     .use 226856
 step
     .train 440496,1
     >>|cRXP_WARN_注释：此步骤没有箭头！|r
-    >>|cRXP_WARN_你现在必须向南游到远方岛屿与 |cRXP_FRIENDLY_塞巴斯迪安·尤根斯|r 对话。你必须游过疲劳水域才能到达他那里。前往岛上的钻井平台来找到他|r
+    >>|cRXP_WARN_你现在必须向南游到那座偏远的小岛并与|cRXP_FRIENDLY_ 塞巴斯蒂安·尤尔根斯|r 对话。你必须游过疲劳水域才能到达他身边。朝岛上的钻井平台方向游去即可找到他|r
     .turnin 84137 >>交任务 机械罗曼史
     .accept 84138 >>接受任务 冷淡之谊
     .target Sebastian Jurgens
 step
     .train 440496,1
     #completewith next
-    .zone Winterspring >>旅行到冬泉谷
+    .zone Winterspring >>前往冬泉谷
 step
     .train 440496,1
     .goto Winterspring,61.2,37.0
@@ -1999,7 +1998,7 @@ step
     .goto Burning Steppes,47.0,27.2,45,0
     .goto Burning Steppes,46.4,21.4,45,0
     .goto Burning Steppes,52.95,24.37,45,0
-    >>击杀 |cRXP_ENEMY_Blackrock Bootleggers|r 和 |cRXP_ENEMY_Sulfuron Smugglers|r。拾取它们的 |cRXP_LOOT_Vertically Composited 补丁 Hamplers|r 和 |cRXP_LOOT_Brass-fitted Flam-Tamp Flange|r
+    >>击杀 |cRXP_ENEMY_黑石私运商|r 和 |cRXP_ENEMY_萨弗隆私运者|r。拾取它们的 |cRXP_LOOT_垂直复合补片加装器|r 和 |cRXP_LOOT_黄铜配制耐热法兰|r
     .complete 84211,1
     .complete 84211,2
     .mob Blackrock Bootlegger
@@ -2007,7 +2006,7 @@ step
 step
     .train 440496,1
     #completewith next
-    .zone Winterspring >>旅行到冬泉谷
+    .zone Winterspring >>前往冬泉谷
 step
     .train 440496,1
     .goto Winterspring,61.2,37.0
@@ -2031,14 +2030,14 @@ step
     .target Sebastian Jurgens
 step
     .train 440496,1
-    >>|cRXP_WARN_找一个小队来帮你！你必须至少有一个坦克和一个治疗者！|r
-    >>与 |cRXP_FRIENDLY_塞巴斯迪安·尤根斯|r 对话来召唤 |cRXP_ENEMY_Harvest 魔像 V000-A|r
-    >>击杀 |cRXP_ENEMY_Harvest 魔像 V000-A|r
+    >>|cRXP_WARN_找一个小队来帮你！你必须至少有一个坦克和一个治疗！|r
+    >>与 |cRXP_FRIENDLY_塞巴斯迪安·尤根斯|r 对话来召唤 |cRXP_ENEMY_麦田傀儡V000-A|r
+    >>击杀 |cRXP_ENEMY_麦田傀儡V000-A|r
     .complete 84213,1
     .mob Harvest Golem V000-A
 step
     .train 440496,1
-    >>点击地上的 |cRXP_PICK_Mech Arm|r
+    >>点击地上的 |cRXP_PICK_机械臂|r
     .turnin 84213 >>交任务 朝来隙往
 step
     .train 440496 >>|cRXP_WARN_使用|r |T133738:0|t[|cRXP_LOOT_预感与战斗远见|r] |cRXP_WARN_来学习|r |T236312:0|t[震荡波]

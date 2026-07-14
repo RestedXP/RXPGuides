@@ -2,7 +2,6 @@ if GetLocale() ~= "zhCN" then return end
 local faction = UnitFactionGroup("player")
 if faction == "Alliance" then return end
 
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -3850,7 +3849,7 @@ step << Warrior/Shaman
     .subzoneskip 380,1
 step << Warrior/Shaman
     .goto The Barrens,51.50,30.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索克|r 对话
     .accept 871 >>接受任务 保卫前沿哨所
     .accept 5041 >>接受任务 十字路口的补给品
     .target 索克
@@ -3924,7 +3923,7 @@ step << Warrior/Shaman
 step << Warrior/Shaman
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图加|r 对话
-    .turnin 870 >>交任务遗忘之池
+    .turnin 870 >>交任务  遗忘之池
     .target 图加·符文图腾
 step << Warrior/Shaman
     #completewith next
@@ -4327,7 +4326,7 @@ step << Shaman
     #season 2
     #completewith VentureCoKills
     >>在矿洞内部及外侧打开 |cRXP_PICK_冲击补给品|r。拾取它们的|cRXP_LOOT_爆盐采矿炸弹|r
-    >>|cRXP_WARN_尽可能停留在洞穴的上层|r
+    >>|cRXP_WARN_如果可能的话，尽量待在洞穴的上层|r
     .complete 76156,1 --Seaforium Mining Charge (5)
     .train 410104,1
     .xp <4,1
@@ -4375,7 +4374,7 @@ step << Shaman
     .goto Mulgore,59.64,36.05,15,0 --Outside
     .goto Mulgore,61.72,35.15,15,0 --Outside
     >>在矿洞内部及外侧打开 |cRXP_PICK_冲击补给品|r。拾取它们的|cRXP_LOOT_爆盐采矿炸弹|r
-    >>|cRXP_WARN_尽可能停留在洞穴的上层|r
+    >>|cRXP_WARN_如果可能的话，尽量待在洞穴的上层|r
     .complete 76156,1 --Seaforium Mining Charge (5)
     .train 410104,1
     .xp <4,1
@@ -4553,7 +4552,7 @@ step << Shaman
     #label Sewa
     .goto Thunder Bluff,55.78,47.02,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_苏瓦·迷雾行者|r 对话
-    >>|cRXP_BUY_从她购买|r |T132932:0|t[鱼竿] |cRXP_BUY_和|r |T134335:0|t[闪光的小珠]
+    >>|cRXP_BUY_从她那里购买|r |T132932:0|t[鱼竿] |cRXP_BUY_和|r |T134335:0|t[闪光的小珠] |cRXP_BUY_|r
     .collect 6256,1 --Fishing Pole (1)
     .collect 6529,1 --Shiny Bauble (1)
     .target Sewa Mistrunner
@@ -4574,7 +4573,7 @@ step << Shaman
     #ssf
     #completewith Fish
     #requires Pole
-    .aura 8087 >>|cRXP_WARN_将|r |T134335:0|t[闪光的小珠] |cRXP_WARN_附加到你的|r |T132932:0|t[鱼竿]
+    .aura 8087 >>|cRXP_WARN_将|r |T134335:0|t[闪光的小珠] |cRXP_WARN_装在你的|r |T132932:0|t[鱼竿]
     .use 6529
     .train 410104,1
     .xp <4,1
@@ -4991,7 +4990,7 @@ step << Warrior/Shaman/Hunter
     .dungeon !RFC
 step << Rogue
     .goto Orgrimmar,42.75,53.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瑟祖克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_瑟祖克|r 对话
 	.accept 1963 >>接受任务 碎手氏族 << Orc Rogue/Troll Rogue
     .target Therzok
 step << Warrior/Shaman/Hunter
@@ -5634,7 +5633,7 @@ step << Warlock/Mage
 step << Warlock/Mage
     #label UCflightpath1
     .goto Undercity,63.25,48.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
     .fp Undercity >>开启幽暗城的飞行点
     .target 迈克尔·加勒特
 step << Warlock/Mage
@@ -6021,7 +6020,7 @@ step
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
     .goto Tirisfal Glades,59.54,27.86,50,0
-    >>击杀 |cRXP_ENEMY_Murlocs|r，拾取它们的 |cRXP_LOOT_鳞片|r
+    >>击杀 |cRXP_ENEMY_鱼人|r，拾取它们的 |cRXP_LOOT_鳞片|r
     .complete 368,1 --Vile Fin Scale (5)
     .mob Vile Fin Puddlejumper
     .mob Vile Fin Minor Oracle
@@ -6791,7 +6790,7 @@ step << !Rogue !Mage
 step << !Undead
     #label UCflightpath3
     .goto Undercity,63.25,48.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
     .fp Undercity >>开启幽暗城的飞行点
     >>|cRXP_WARN_若已解锁飞行点，请跳过此步骤！|r
     .target 迈克尔·加勒特
@@ -7141,7 +7140,7 @@ step << Warlock
     .aura 403619 >>记得激活你的 |T136156:0|t[邪甲术]
 step << Warlock
     .goto Durotar,42.59,69.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
     .accept 1485 >>接受任务 邪灵劣魔
     .target Ruzan
 step << Shaman
@@ -7184,7 +7183,7 @@ step << Priest
     .target 肯杰
 step << Priest
     #season 2
-    .equip 10,711 >>|cRXP_WARN_装备|r |T132961:0|t[破布手套]
+    .equip 10,711 >>|cRXP_WARN_装备|r |T132961:0|t|T132961:0|t[破布手套]
     .equip 6,3595 >>|cRXP_WARN_装备|r |T132513:0|t[破布腰带]
     .use 711
     .use 3595
@@ -7203,7 +7202,7 @@ step << Mage
 step << Mage
     #season 2
     #optional
-    .equip 10,711 >>|cRXP_WARN_装备|r |T132961:0|t[破布手套]
+    .equip 10,711 >>|cRXP_WARN_装备|r |T132961:0|t|T132961:0|t[破布手套]
     .use 711
     .engrave 10 >>|cRXP_WARN_在你的手套上铭刻|r |T236220:0|t[活动炸弹]
     .engrave 7 >>|cRXP_WARN_在你的裤子上铭刻|r |T135820:0|t[活火]
@@ -7327,7 +7326,7 @@ step << Warlock
     .target Huklah
 step << Warlock
     #season 2
-    .equip 10,711 >>|cRXP_WARN_装备|r |T132961:0|t[破布手套]
+    .equip 10,711 >>|cRXP_WARN_装备|r |T132961:0|t|T132961:0|t[破布手套]
     .equip 9,3596 >>|cRXP_ENEMY_装备|r |T132606:0|t[破布护腕]
     .use 711
     .use 3596
@@ -7367,7 +7366,7 @@ step << Warlock
     .complete 788,1 --Mottled Boar (10)
     .mob 杂斑野猪
 step << Warlock
-    .goto Durotar,45.30,56.42,100 >>前往火刃集会所
+    .goto Durotar,45.30,56.42,100 >>前去火刃集会所
     .isOnQuest 1485
 step << Warlock
     #loop
@@ -7494,7 +7493,7 @@ step << Rogue
 step << Warlock
     #label Ruzan2
     .goto Durotar,42.59,69.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
     .turnin 1485 >>交任务 邪灵劣魔
     .accept 1499 >>接受任务 邪灵劣魔
     .target Ruzan
@@ -7605,7 +7604,7 @@ step << !Rogue
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >>把垃圾物品卖给商人
     .target 多克纳
-    .money >0.1 << Rogue/Warrior
+    .money >0.01 << Rogue/Warrior
     .itemcount 159,<15 << !Rogue !Warrior !Hunter !Shaman
 step << !Rogue
     #xprate >1.49
@@ -9856,7 +9855,7 @@ step
 step
     #xprate >2.09
     .goto The Barrens,51.50,30.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索克|r 对话
     .accept 871 >>接受任务 保卫前沿哨所
     .accept 5041 >>接受任务 十字路口的补给品
     .target 索克
@@ -9950,7 +9949,7 @@ step << Troll Priest
     .target 乌尔库
 step << Rogue
     .goto Orgrimmar,42.75,53.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瑟祖克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_瑟祖克|r 对话
 	.accept 1963 >>接受任务 碎手氏族 << Orc Rogue/Troll Rogue
     .target Therzok
 step << Rogue
@@ -10026,7 +10025,7 @@ step << Warrior
 step << Warrior
     #season 2
     .goto Orgrimmar,58.52,52.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎姆沙|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_扎姆沙|r 对话
     >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Zamja

@@ -2,7 +2,6 @@ if GetLocale() ~= "zhCN" then return end
 local faction = UnitFactionGroup("player")
 if faction == "Alliance" then return end
 
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -198,7 +197,7 @@ step
 step
     .goto The Barrens,62.3,38.4
 >>与 |cRXP_FRIENDLY_酿酒师德罗恩|r 对话
-    .turnin 819 >>交任务  老陈的空酒桶
+    .turnin 819 >>交任务 老陈的空酒桶
 .target 酿酒师德罗恩
     .accept 821 >>接受任务 老陈的空酒桶
 step
@@ -230,7 +229,7 @@ step
 step
     .goto The Barrens,63.3,38.4
 >>与 |cRXP_FRIENDLY_码头管理员迪兹维格|r 对话
-    .turnin 1492 >>交任务码头主管迪兹维格
+    .turnin 1492 >>交任务码头管理员迪兹维格
     .turnin 890 >>交任务  丢失的货物
 .target 码头管理员迪兹维格
     .accept 892 >>接受任务 丢失的货物
@@ -469,7 +468,7 @@ step
 step
     .goto The Barrens,52.20,31.90
 >>与 |cRXP_FRIENDLY_图加·符文图腾|r 对话
-    .turnin 870 >>交任务遗忘之池
+    .turnin 870 >>交任务  遗忘之池
 .target 图加·符文图腾
     .accept 877 >>接受任务死水绿洲
 step
@@ -497,7 +496,7 @@ step
     .goto The Barrens,63.0,37.2
 >>与 |cRXP_FRIENDLY_斯布特瓦夫|r 对话
     .turnin 902 >>交任务  什么什么平衡器
-    .turnin 863 >>交任务  梅贝尔的隐形水
+    .turnin 863 >>交任务 梅贝尔的隐形水
 .target 斯布特瓦夫
     .accept 1483 >>接受任务菲兹克斯
 step
@@ -614,9 +613,9 @@ step
 step
     .goto The Barrens,52.2,31.9
 >>与 |cRXP_FRIENDLY_图加·符文图腾|r 对话
-    .turnin 877 >>交任务 死水绿洲
+    .turnin 877 >>交任务  死水绿洲
 .target 图加·符文图腾
-    .accept 880 >>接受任务变异的生物
+    .accept 880 >>接受任务 变异的生物
 step
     .goto The Barrens,52.0,31.6
 .target 曼科里克
@@ -779,7 +778,7 @@ step
 >>与 |cRXP_FRIENDLY_菲兹克斯|r 对话
     .turnin 1483 >>交任务菲兹克斯
 .target 菲兹克斯
-    .accept 1093 >>接受任务超级收割机6000
+    .accept 1093 >>接受任务 超级收割机6000
 step
     #sticky
     #requires deepmossegg
@@ -812,7 +811,7 @@ step
 >>与 |cRXP_FRIENDLY_菲兹克斯|r 对话
     .turnin 1093 >>交任务超级收割机6000
 .target 菲兹克斯
-    .accept 1094 >>接受任务新的指示
+    .accept 1094 >>接受任务 新的指示
 step
     .hs >>使用炉石返回陶拉祖营地
 step
@@ -887,29 +886,29 @@ step
 step
     .goto The Barrens,63.0,37.2
 >>与 |cRXP_FRIENDLY_斯布特瓦夫|r 对话
-    .turnin 1094 >>交任务新的指示
+    .turnin 1094 >>交任务 新的指示
 .target 斯布特瓦夫
-    .accept 1095 >>接受任务新的指示
+    .accept 1095 >>接受任务 新的指示
 step
     .goto The Barrens,62.4,37.6
 .target 麦伯克·米希瑞克斯
 >>与 |cRXP_FRIENDLY_麦伯克·米希瑞克斯|r 对话
-    .turnin 865 >>交任务一定是因为角
+    .turnin 865 >>交任务  一定是因为角
     .turnin 1069 >>交任务深苔蜘蛛的卵
 step
     .goto The Barrens,62.3,38.4
 .target 酿酒师德罗恩
 >>与 |cRXP_FRIENDLY_酿酒师德罗恩|r 对话
-    .turnin 821 >>交任务  老陈的空酒桶
+    .turnin 821 >>交任务 老陈的空酒桶
 step
     .goto The Barrens,63.1,37.1
     .fly Crossroads >>飞往十字路口
 step
     .goto The Barrens,52.2,31.9
 >>与 |cRXP_FRIENDLY_图加·符文图腾|r 对话
-    .turnin 880 >>交任务变异的生物
+    .turnin 880 >>交任务  变异的生物
 .target 图加·符文图腾
-    .accept 1489 >>接受任务哈缪尔·符文图腾
+    .accept 1489 >>接受任务 哈缪尔·符文图腾
     .accept 3301 >>接受任务茉拉·符文图腾
 step
     .goto The Barrens,52.0,31.6
@@ -974,7 +973,7 @@ step
     .goto The Barrens,49.6,60.0,0
     >>在这个区域搜索奥瓦坦卡（蓝色雷霆蜥蜴）。如果找到他，拾取他的尾刺并接受任务。如果找不到他，就跳过这个任务
     .collect 5102,1,884 --Collect Owatanka's Tailspike
-    .accept 884 >>接受任务奥瓦坦卡
+    .accept 884 >>接受任务 奥瓦坦卡
 step
     .goto The Barrens,42.5,60.3,30,0
     .goto The Barrens,47.1,63.7,30,0
@@ -1012,7 +1011,7 @@ step
     .goto The Barrens,44.8,59.1
 .target 乔恩·星眼
 >>与 |cRXP_FRIENDLY_乔恩·星眼|r 对话
-    .turnin 913 >>交任务  雷鹰的嘶鸣
+    .turnin 913 >>交任务 雷鹰的嘶鸣
 --    .accept 874 >>Accept Mahren Skyseer
 step
     #completewith next
@@ -1031,7 +1030,7 @@ step
 >>与 |cRXP_FRIENDLY_梅洛·石蹄|r 对话
     .turnin 1130 >>交任务 梅洛的关注
 .target 梅洛·石蹄
-    .accept 1131 >>接受任务钢齿土狼
+    .accept 1131 >>接受任务 钢齿土狼
 step
  	>>进入幻象之池
 	.goto Thunder Bluff,30.1,30.0,30,0
@@ -1077,12 +1076,12 @@ step
     .goto Stonetalon Mountains,58.989,62.599
 .target 菲兹克斯
 >>与 |cRXP_FRIENDLY_菲兹克斯|r 对话
-    .turnin 1095 >>交任务新的指示
+    .turnin 1095 >>交任务 新的指示
 step
     .goto Stonetalon Mountains,47.5,58.4
 .target 塔姆拉·荒原
 >>与 |cRXP_FRIENDLY_塔姆拉·荒原|r 对话
-    .turnin 6401 >>交任务卡雅还活着
+    .turnin 6401 >>交任务 卡雅还活着
 step
     .goto Stonetalon Mountains,45.12,59.84
     .fp Sun Rock>>开启烈日石居飞行点

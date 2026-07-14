@@ -1,5 +1,4 @@
 if GetLocale() ~= "zhCN" then return end
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD/Horde Hunter SoD
@@ -65,7 +64,7 @@ step
 step
     #season 2
     .goto The Barrens,62.77,38.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基尔克斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_基尔克斯|r 对话
     >>|cRXP_BUY_从他那里购买|r |T135129:0|t[猎鱼叉] |cRXP_BUY_|r
     .collect 208773,1 --Fishing Harpoon (1)
     .target Kilxx

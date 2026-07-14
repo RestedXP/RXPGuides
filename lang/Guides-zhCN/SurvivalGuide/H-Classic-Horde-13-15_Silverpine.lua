@@ -1,5 +1,4 @@
 if GetLocale() ~= "zhCN" then return end
-
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
@@ -90,7 +89,7 @@ step
     .goto Silverpine Forest,43.98,39.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德温|r 对话
     >>|cRXP_BUY_购买|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_从他那里|r << Mage/Warlock/Priest/Shaman/Druid
-    .vendor >>|cRXP_BUY_购买|r |T134830:0|t[Lesser 治疗 Potions] |cRXP_BUY_如果有货就从他那里买|r
+    .vendor >>|cRXP_BUY_购买|r |T134830:0|t|T134830:0|t[次级治疗药水] |cRXP_BUY_从他那里（如果有货的话）|r
     .collect 1179,20,421,1 << Mage/Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
     .target Edwin Harly
     .money <0.05 << Mage/Warlock/Priest/Shaman/Druid
@@ -105,7 +104,7 @@ step << Undead
 step
     #label BorderCrossings
     .goto Silverpine Forest,43.98,40.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Allister|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 对话
     .accept 477 >>接受任务 越境
     .target Shadow Priest Allister
 step
@@ -142,7 +141,7 @@ step
     .goto Silverpine Forest,51.80,46.60,50,0
     .goto Silverpine Forest,50.83,47.74,50,0
     .goto Silverpine Forest,49.12,36.72,50,0
-    >>杀死 |cRXP_ENEMY_Moonrage Whitescalps|r
+    >>击杀|cRXP_ENEMY_月怒白头狼人|r
     .complete 421,1 --Moonrage Whitescalp (5)
     .mob Moonrage Whitescalp
     .unitscan Son of Arugal
@@ -185,7 +184,7 @@ step
     .goto Silverpine Forest,51.89,13.82,6,0
     .goto Silverpine Forest,51.54,13.91
     >>杀死 |cRXP_ENEMY_邪恶的伊瓦|r。拾取他掉落的|cRXP_LOOT_头部|r
-    >>|cRXP_WARN_小心！清除农舍前方的整个区域并一次一个地将|r |cRXP_ENEMY_Ravenclaw Slaves|r |cRXP_WARN_拉到外面。|r
+    >>|cRXP_WARN_小心！清空谷仓前的整个区域，将|r |cRXP_ENEMY_鸦爪奴隶|r |cRXP_WARN_逐个拉到外面。|r
     >>|cRXP_WARN_伊瓦尔受到谷仓内两名|r |cRXP_ENEMY_拉文克劳奴隶|r |cRXP_WARN_的保护。你可以在他向前巡逻时单独拉出一名|r
     >>|cRXP_WARN_它们对恐惧免疫！|r << Priest/Warlock
     .complete 425,1 --Ivar's Head (1)
@@ -198,7 +197,7 @@ step
     .target Rane Yorick
 step
     #completewith ArugalTurnin
-    +|cRXP_WARN_小心！这里可能有一个|r |cRXP_ENEMY_阿鲁高之子|r |cRXP_WARN_在这个区域！这是一个25级精英怪，远离他！|r
+    +|cRXP_WARN_小心！附近可能有|r |cRXP_ENEMY_阿鲁高之子|r |cRXP_WARN_出没！这是25级精英怪，务必远离他！|r
     .unitscan Son of Arugal
 step
     #completewith Nightlash
@@ -291,32 +290,32 @@ step
 step
     .goto Silverpine Forest,43.43,40.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与地穴中的|cRXP_FRIENDLY_高级执行官哈德瑞克|r交谈
-    .turnin 437 >>交任务亡者农场
-    .accept 438 >>接受任务破旧渡口
+    .turnin 437 >>交任务 亡者农场
+    .accept 438 >>接受任务 破旧渡口
     .target 高级执行官哈德瑞克
 step << !Mage !Priest
     .goto Silverpine Forest,44.05,39.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格乌恩|r 对话
-    >>|cRXP_BUY_购买|r |T134532:0|t[红色-speckled Mushrooms] |cRXP_BUY_从她那里|r
+    >>|cRXP_BUY_从她那里购买|r |T134532:0|t|T134532:0|t[红斑蘑菇] |cRXP_BUY_|r
     .vendor >>把垃圾物品卖给商人
     .collect 4605,20,423,1 --Red-speckled Mushroom (20)
     .target Gwyn Farrow
 step
     .goto Silverpine Forest,43.98,39.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Edwin|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德温|r 对话
     >>|cRXP_BUY_购买|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_从他那里|r << Warlock/Priest/Shaman/Druid
-    .vendor >>|cRXP_BUY_购买|r |T134830:0|t[Lesser 治疗 Potions]|cRXP_BUY_ （如果有货）|r
+    .vendor >>|cRXP_BUY_从他那里购买|r|T134830:0|t[次级治疗药水] |cRXP_BUY_（如果有货的话）|r
     .collect 1179,20,421,1 << Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
     .target Edwin Harly
 step << Warlock/Mage/Priest
     .goto Silverpine Forest,44.80,39.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Andrea|r 对话
-    .vendor >>从她那里购买 |T132491:0|t[|cRXP_FRIENDLY_智者腰带|r]（如果有货）
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安德利亚|r 对话
+    .vendor >>购买 |T132491:0|t[|cRXP_FRIENDLY_智者腰带|r]，如果她有货的话
     .target Andrea Boynton
     .money <0.1400
 step << Hunter
     .goto Silverpine Forest,45.01,39.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Nadia|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳迪亚|r 对话
     >>如果有货就从她那里购买 |T135490:0|t[|cRXP_FRIENDLY_精良的长弓|r]
     .collect 11304,1,438,1 --Fine Longbow (1)
     .collect 2515,1200,438,1 << Hunter --Sharp Arrow (1200)
@@ -327,13 +326,13 @@ step << Hunter
     .equip 18,2515
 step << Hunter/Rogue
     .goto Silverpine Forest,44.61,39.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Alexandre|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_亚历山德勒|r 对话
     .vendor >>从她那里购买 |T132539:0|t[|cRXP_FRIENDLY_轻便靴|r]（如果有货）
     .target Alexandre Lefevre
     .money <0.2633
 step << Shaman/Warrior/Druid
     .goto Silverpine Forest,44.61,39.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Alexandre|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_亚历山德勒|r 对话
     .vendor >>从她那里购买 |T132539:0|t[|cRXP_FRIENDLY_轻便靴|r] 或 |T132537:0|t[|cRXP_FRIENDLY_马靴|r]（如果其中一个有货）
     .target Alexandre Lefevre
     .money <0.2000
@@ -380,10 +379,10 @@ step
     #completewith Shackles
     .goto Silverpine Forest,44.20,38.17,15,0
     .goto Silverpine Forest,44.46,36.65,15,0
-    .goto Silverpine Forest,44.91,33.14,30 >>下山旅行
+    .goto Silverpine Forest,44.91,33.14,30 >>下山
 step
     #completewith DecrepitFerry
-    +|cRXP_WARN_小心！区域内可能出现|r |cRXP_ENEMY_阿鲁高之子|r |cRXP_WARN_！这是一个25级精英，远离他！|r
+    +|cRXP_WARN_小心！附近可能有|r |cRXP_ENEMY_阿鲁高之子|r |cRXP_WARN_出没！这是25级精英怪，务必远离他！|r
     .unitscan Son of Arugal
 step
     #label Shackles
@@ -405,8 +404,8 @@ step
 	.goto Silverpine Forest,41.17,28.26,50,0
 	.goto Silverpine Forest,42.01,29.27,50,0
 	.goto Silverpine Forest,43.83,31.00,50,0
-    >>杀死 |cRXP_ENEMY_Moonrage Gluttons|r 和 |cRXP_ENEMY_Moonrage Darksouls|r。拾取它们的 |cRXP_LOOT_镣铐|r
-    >>|cRXP_WARN_小心！|r |cRXP_ENEMY_Moonrage Darksouls|r |cRXP_WARN_当生命值低于25%时会狂暴。当他们生命值较低时快速击杀它们|r
+    >>击杀|cRXP_ENEMY_月怒暴食者|r和|cRXP_ENEMY_月怒暗魂|r，从它们身上拾取|cRXP_LOOT_镣铐|r
+    >>|cRXP_WARN_小心！|r |cRXP_ENEMY_月怒暗魂|r |cRXP_WARN_在生命值低于25%时会狂暴。当它们血量较低时，请迅速击杀|r
     .complete 423,1 --Glutton Shackle (6)
     .mob +Moonrage Glutton
     .complete 423,2 --Darksoul Shackle (3)
@@ -416,23 +415,23 @@ step
     #label DecrepitFerry
     .goto Silverpine Forest,58.39,34.79
     >>点击码头旁的 |cRXP_PICK_船只|r
-    >>|cRXP_WARN_小心！|r |cRXP_ENEMY_Hands of Ravenclaw|r |cRXP_WARN_等级高达16级，拥有5秒冷却的近战范围眩晕能力|r
-    .turnin 438 >>交任务破旧渡口
-    .accept 439 >>接受任务线索
+    >>|cRXP_WARN_小心！|r |cRXP_ENEMY_鸦爪之手|r |cRXP_WARN_等级高达16级，拥有5秒冷却的近战范围眩晕能力|r
+    .turnin 438 >>交任务 破旧渡口
+    .accept 439 >>接受任务 线索
 step
     .goto Silverpine Forest,49.89,60.33
-    >>点击营地中的 |cRXP_PICK_Crate|r
+    >>点击营地中的|cRXP_PICK_箱子|r
     >>|cRXP_WARN_小心！这些小怪会施放|r |T135846:0|t[寒冰箭] |cRXP_WARN_并在低生命值时逃离。把它们拉回来，一个一个击杀，直到你能安全地点击箱子为止|r
-    .turnin 477 >>交任务越境
+    .turnin 477 >>交任务 越境
     .accept 478 >>接受任务 地图与符记
     .mob Dalaran Apprentice
 step
     #completewith next
-    .goto Silverpine Forest,45.51,41.26,100 >>回到瑟伯切尔
+    .goto Silverpine Forest,45.51,41.26,100 >>返回瑟伯切尔
     .subzoneskip 228
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Allister|r 和 |cRXP_FRIENDLY_Dalar|r 对话
-    .turnin 478 >>交任务地图与符记
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 和 |cRXP_FRIENDLY_达拉尔|r 对话
+    .turnin 478 >>交任务 地图与符记
     .accept 481 >>接受任务 达拉尔的推理
     .target +Shadow Priest Allister
     .goto Silverpine Forest,43.98,40.93
@@ -444,42 +443,42 @@ step
     .goto Silverpine Forest,44.20,39.73
     .group
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Allister|r 和 |cRXP_FRIENDLY_Dalar|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 和 |cRXP_FRIENDLY_达拉尔|r 对话
     .turnin 478 >>交任务 地图与符记
-    .accept 481 >>接受任务达拉尔的推理
+    .accept 481 >>接受任务 达拉尔的推理
     .target +Shadow Priest Allister
     .goto Silverpine Forest,43.98,40.93
     .turnin 423 >>交任务 阿鲁高的愚行
-    .turnin 481 >>交任务达拉尔的推理
+    .turnin 481 >>交任务 达拉尔的推理
     .accept 482 >>接受任务 达拉然的意图
     .target +Dalar Dawnweaver
     .goto Silverpine Forest,44.20,39.73
 step
     .goto Silverpine Forest,43.98,40.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Allister|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 对话
     .turnin 482 >>交任务 达拉然的意图
     .target Shadow Priest Allister
 step
     .goto Silverpine Forest,43.98,40.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Allister|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 对话
     .accept 479 >>接受任务 调查安伯米尔
     .target Shadow Priest Allister
     .group
 step
     .goto Silverpine Forest,43.98,40.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Allister|r 对话
-    .turnin 482 >>交任务达拉然的意图
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 对话
+    .turnin 482 >>交任务 达拉然的意图
     .target Shadow Priest Allister
 step
     #completewith next
     .goto Silverpine Forest,43.09,41.33,8,0
     .goto Silverpine Forest,42.75,41.30,8,0
     .goto Silverpine Forest,42.76,40.90,8,0
-    .goto Silverpine Forest,43.43,40.87,2 >>进入 地穴
+    .goto Silverpine Forest,43.43,40.87,2 >>进入地穴
 step
     #label RotHideCluesTurnIn
     .goto Silverpine Forest,43.43,40.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Hadrec|r 在 地穴 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与地穴中的|cRXP_FRIENDLY_高级执行官哈德瑞克|r交谈
     .turnin 439 >>交任务 烂皮线索
     .accept 440 >>接受任务 黛丽娅的戒指
     .target 高级执行官哈德瑞克
@@ -493,19 +492,19 @@ step
     #completewith ZingeAndFaranell
     .goto Silverpine Forest,45.62,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡鲁斯|r 对话
-    .fp Sepulcher >>获得墓穴飞行路径 << !Undead
+    .fp Sepulcher >>获取泰雷多尔的飞行路径 << !Undead
     .fly Undercity >>飞往幽暗城
     .target 卡洛斯·拉佐克
     .zoneskip Undercity
 step << Undead
     .goto Undercity,61.48,41.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Gordon|r 对话
-    .turnin 6323 >>交任务飞往幽暗城
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高顿|r 对话
+    .turnin 6323 >>交任务 飞往幽暗城
     .accept 6322 >>接受任务 迈克尔·加勒特
     .target Gordon Wendham
 step << Troll Warrior/Undead Warrior
     .goto Undercity,61.15,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_Louis|r |cRXP_BUY_对话。从他那里购买|r |T135147:0|t[法师之杖]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_刘易斯|r|cRXP_BUY_对话。|r从他那里购买1把|cRXP_BUY_ |T135147:0|t[法师之杖] |r
     .collect 2030,1,479,1 --Collect Gnarled Staff (1)
     .money <0.5544
     .target 刘易斯·瓦伦
@@ -520,7 +519,7 @@ step << Troll Warrior/Undead Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Orc Warrior
     .goto Undercity,61.15,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_对话，从他那里购买|r |T132394:0|t[芒刺斧]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_刘易斯|r|cRXP_BUY_对话，|r|cRXP_BUY_从他那里购买|r |T132394:0|t[芒刺斧]
     .collect 2025,1,479,1 --Collect Bearded Axe (1)
     .money <0.5304
     .itemStat 16,QUALITY,<7
@@ -534,7 +533,7 @@ step << Orc Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
 step << Tauren Warrior
     .goto Undercity,61.15,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_对话，从他那里购买|r |T133046:0|t[巨型石锤]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_刘易斯|r|cRXP_BUY_对话，|r|cRXP_BUY_从他那里购买|r |T133046:0|t[巨型石锤]
     .collect 2026,1,479,1 --Collect Rock Hammer (1)
     .money <0.6286
     .target 刘易斯·瓦伦
@@ -550,7 +549,7 @@ step << Tauren Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step << Shaman
     .goto Undercity,61.15,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_对话，从他那里购买|r |T135147:0|t[法师之杖]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_刘易斯|r|cRXP_BUY_对话，|r|cRXP_BUY_从他那里购买|r |T135147:0|t[法师之杖]
     .collect 2030,1,479,1 --Collect Gnarled Staff (1)
     .money <0.5544
     .target 刘易斯·瓦伦
@@ -566,7 +565,7 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Rogue
     .goto Undercity,61.15,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_对话，从他那里购买|r |T135343:0|t[战士阔剑]|cRXP_BUY_。|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_刘易斯|r|cRXP_BUY_对话，从他那里购买|r |T135343:0|t[战士阔剑]|cRXP_BUY_。|r
     .collect 2027,1,479,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
@@ -585,9 +584,9 @@ step
     .goto Undercity,47.20,59.69,0
     .goto Undercity,47.20,59.69,12,0
     .goto Undercity,43.55,68.11,12,0
-    .goto Undercity,45.20,71.67,12 >>前往 |cRXP_FRIENDLY_药剂师金格 <皇家药剂师协会>|r 和 |cRXP_FRIENDLY_大药剂师法拉尼尔|r
+    .goto Undercity,45.20,71.67,12 >>前去找 |cRXP_FRIENDLY_药剂师金格|r 和 |cRXP_FRIENDLY_大药剂师法拉尼尔|r
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大药剂师法拉尼尔|r 和 |cRXP_FRIENDLY_药剂师金格 <皇家药剂师协会>|r 在炼金房对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在炼金区与 |cRXP_FRIENDLY_大药剂师法拉尼尔|r 和 |cRXP_FRIENDLY_药剂师金格|r 对话
     .turnin 447 >>交任务 致命的配方
     .target +Master Apothecary Faranell
     .goto Undercity,48.84,69.25
@@ -597,12 +596,12 @@ step
     .goto Undercity,50.16,67.97
     .solo
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在炼金区与 |cRXP_FRIENDLY_大药剂师法拉尼尔|r 和 |cRXP_FRIENDLY_药剂师金格|r 对话
-    .turnin 447 >>交任务 死亡配方
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在炼金区与 |cRXP_FRIENDLY_大药剂师法拉尼尔|r 和 |cRXP_FRIENDLY_药剂师金格|r 对话
+    .turnin 447 >>交任务 致命的配方
     .accept 450 >>接受任务 致命的配方
     .target +Master Apothecary Faranell
     .goto Undercity,48.84,69.25
-    .turnin 1359 >>交任务给金格的货物
+    .turnin 1359 >>交任务 给金格的货物
     .accept 1358 >>接受任务 给赫布瑞姆的样本
     .target +Apothecary Zinge
     .goto Undercity,50.16,67.97
@@ -656,7 +655,7 @@ step << Warlock
     .group
 step << Priest/Mage/Warlock
     .goto Undercity,69.54,26.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_Zane|r|cRXP_BUY_对话，从他那里购买|r |T133718:0|t[烟尘魔杖]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_赞恩|r|cRXP_BUY_对话。|r |cRXP_BUY_从他那里购买1把|r |T133718:0|t[烟尘魔杖]
     .collect 5208,1 --Smoldering Wand (1)
     .money <0.3515
     .itemStat 18,QUALITY,<7
@@ -664,32 +663,32 @@ step << Priest/Mage/Warlock
 	.target 赞恩·布拉德弗
  step << Undead Rogue
     .goto Undercity,83.52,69.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Mennet|r 对话
-    .turnin 1886 >>交任务 暗影守望者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米奈特|r 对话
+    .turnin 1886 >>交任务亡灵哨兵
     .target Mennet Carkad
     .isQuestComplete 1886
 step << Undead Rogue
     .goto Undercity,83.52,69.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Mennet|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米奈特|r 对话
     .accept 1898 >>接受任务 亡灵哨兵
     .target Mennet Carkad
     .isQuestTurnedIn 1886
 step << Undead Rogue
     .goto Undercity,54.84,76.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Andron|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安德隆|r 对话
     .turnin 1898 >>交任务亡灵哨兵
     .accept 1899 >>接受任务 亡灵哨兵
     .target Andron Gant
     .isQuestTurnedIn 1886
 step << Undead Rogue
     .goto Undercity,55.43,76.87
-    >>在|cRXP_PICK_Andron|r后面战利品|cRXP_FRIENDLY_Andron的书架|r
+    >>拾取|cRXP_PICK_安德隆的书架|r，它位于|cRXP_FRIENDLY_安德隆|r身后
     .complete 1899,1 --Andron's Ledger (1)
     .isQuestTurnedIn 1886
 step << Undead Rogue
     .goto Undercity,83.53,69.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Mennet|r 对话
-    .turnin 1899 >>交任务 亡灵哨兵
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米奈特|r 对话
+    .turnin 1899 >>交任务亡灵哨兵
     .accept 1978 >>接受任务 亡灵哨兵
     .target Mennet Carkad
     .isQuestTurnedIn 1886
@@ -702,13 +701,13 @@ step << Undead Rogue
     .isQuestTurnedIn 1886
 step
     .goto Undercity,73.19,55.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_Mary|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_茉拉|r 对话
     .train 3276 >>学习 |T133688:0|t[厚亚麻绷带]
     .target Mary Edras
     .skill firstaid,<40,1
 step
     .goto Undercity,73.19,55.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_Mary|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_茉拉|r 对话
     .train 3274 >>学习 中级急救
     .target Mary Edras
     .skill firstaid,<50,1
@@ -755,14 +754,14 @@ step
     .dungeon RFC
 step << Undead
     .goto Undercity,63.27,48.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
     .turnin 6322 >>交任务 迈克尔·加勒特
     .accept 6324 >>接受任务 向博迪瑞格回报
     .target 迈克尔·加勒特
 step
     #completewith GrimsonthePale
     .goto Undercity,63.27,48.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
     .fly The Supulcher >>飞往瑟伯切尔
     .target 迈克尔·加勒特
     .zoneskip Silverpine Forest
@@ -770,7 +769,7 @@ step
 step << Undead
     #completewith next
     .goto Undercity,63.27,48.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
     .fly The Supulcher >>飞往瑟伯切尔
     .target 迈克尔·加勒特
     .zoneskip Silverpine Forest
@@ -778,11 +777,11 @@ step << Undead
 step << Undead
     .goto Silverpine Forest,43.43,41.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_博迪瑞格|r 对话
-    .turnin 6324 >>交任务 返回至Podrig
+    .turnin 6324 >>交任务 向博迪瑞格回报
 step
     .goto Silverpine Forest,43.98,39.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Gwyn|r 对话
-    .vendor >>|cRXP_BUY_向他购买|r |T134830:0|t[次级治疗药剂] |cRXP_BUY_（若有库存）|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格乌恩|r 对话
+    .vendor >>|cRXP_BUY_从他那里购买|r|T134830:0|t[次级治疗药水] |cRXP_BUY_（如果有货的话）|r
     .target Edwin Harly
     .group
 step
@@ -792,13 +791,13 @@ step
 step
     #label GrimsonthePale
     .goto Silverpine Forest,58.56,44.85
-    >>杀死 |cRXP_ENEMY_白毛狼人格瑞姆森|r. 拾取他身上的战利品|cRXP_LOOT_头部|r
+    >>击杀 |cRXP_ENEMY_白毛狼人格瑞姆森|r，拾取他的 |cRXP_LOOT_头颅|r
     .complete 424,1 --Head of Grimson (1)
     .target Grimson the Pale
     .group 2
 step << skip
     .goto Silverpine Forest,58.12,45.50
-    .goto Silverpine Forest,44.29,41.09,30 >>|cRXP_WARN_跳跃到木轮上。通过登出并重新登录来返回角色选择。如果没有做成，跑回瑟伯切尔|r
+    .goto Silverpine Forest,44.29,41.09,30 >>|cRXP_WARN_跳跃到木轮上，通过登出再登入执行返回角色选择跳过。如果你没有成功就跑回瑟伯切尔|r
     .link https://www.youtube.com/watch?v=uD2CUb3rdQ0&ab >>https://www.youtube.com/watch?v=uD2CUb3rdQ0&ab >> |cRXP_WARN_点击这里查看示例|r
     .group
 step
@@ -827,7 +826,7 @@ step
 	.goto Silverpine Forest,57.56,67.57,50,0
 	.goto Silverpine Forest,57.62,65.17,50,0
 	.goto Silverpine Forest,57.12,63.39,50,0
-    >>杀死 |cRXP_ENEMY_达拉然防御者|r和 |cRXP_ENEMY_达拉然法师|r. 拾取他们的战利品|cRXP_LOOT_Pendants|r
+    >>击杀 |cRXP_ENEMY_达拉然保卫者|r和 |cRXP_ENEMY_达拉然法师|r。拾取她们的|cRXP_LOOT_坠饰|r
     .complete 479,1 --Dalaran Pendant (8)
     .mob Dalaran Mage
     .mob Dalaran Protector
@@ -839,7 +838,7 @@ step
     .group
 step
     #completewith PyrewoodAmbush
-    >>击杀 |cRXP_ENEMY_Pyrewood|r小怪. 拾取他们身上的战利品|cRXP_LOOT_镣铐|r
+    >>击杀 |cRXP_ENEMY_焚木|r小怪。拾取他们身上的|cRXP_LOOT_镣铐|r
     .complete 99,1 -- Pyrewood Shackle (6)
     .mob Pyrewood Watcher
     .mob Pyrewood Tailor
@@ -857,7 +856,7 @@ step
 step
     #label BerardsJournal
     .goto Silverpine Forest,42.98,73.22
-    >>杀死 |cRXP_ENEMY_药剂师伯纳德|r. 在书架上拾取他的战利品|cRXP_LOOT_书籍|r
+    >>击杀 |cRXP_ENEMY_药剂师伯纳德|r。在拾取书架上的|cRXP_LOOT_书籍|r
     .complete 450,1 --Berard's Journal (1)
     .mob Apothecary Berard
     .isOnQuest 450
@@ -869,7 +868,7 @@ step
     .group
 step
     .goto Silverpine Forest,46.50,74.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Faerleia|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_费雷亚|r 对话
     .accept 452 >>接受任务 焚木村中的伏击
     .mob Deathstalker Faerleia
     .isOnQuest 99
@@ -877,7 +876,7 @@ step
 step
     #label PyrewoodAmbush
     .goto Silverpine Forest,46.48,74.10
-    >>击杀出现的 |cRXP_ENEMY_Councilman|r和 |cRXP_ENEMY_莫瑞森村长|r
+    >>击杀出现的 |cRXP_ENEMY_议员|r和 |cRXP_ENEMY_莫瑞森村长|r
     .complete 452,1 --Aid Faerleia in killing the Pyrewood Council
     .mob Councilman Smithers
     .mob Councilman Hendricks
@@ -892,7 +891,7 @@ step
     .group 4
 step
     .goto Silverpine Forest,46.50,74.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Faerleia|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_费雷亚|r 对话
     .turnin 452 >>交任务 焚木村中的伏击
     .mob Deathstalker Faerleia
     .isQuestComplete 452
@@ -905,7 +904,7 @@ step
     .goto Silverpine Forest,45.41,72.42,40,0
     .goto Silverpine Forest,46.61,73.00,40,0
     .goto Silverpine Forest,45.48,73.43,40,0
-    >>继续击杀|cRXP_ENEMY_Pyrewood|r小怪. 拾取他们身上的战利品|cRXP_LOOT_镣铐|r
+    >>继续击杀 |cRXP_ENEMY_焚木|r小怪。拾取他们身上的|cRXP_LOOT_镣铐|r
     .complete 99,1 -- Pyrewood Shackle (6)
     .mob Pyrewood Watcher
     .mob Pyrewood Tailor
@@ -922,7 +921,7 @@ step
     .group
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达尔拉|r 对话
-    .turnin 99 >>交任务阿鲁高的愚行
+    .turnin 99 >>交任务 阿鲁高的愚行
     .goto Silverpine Forest,44.20,39.73
     .target 达拉尔·道恩维沃尔
     .isQuestComplete 99
@@ -930,22 +929,22 @@ step
 step
     .goto Silverpine Forest,42.79,40.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伦弗利尔|r 对话
-    .turnin 450 >>交任务 死亡的配方
+    .turnin 450 >>交任务 致命的配方
     .target 药剂师伦弗利尔
     .isQuestComplete 450
     .group
 step
     #label AmbermillTurnin
     .goto Silverpine Forest,43.98,40.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Allister|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 对话
     .turnin 479 >>交任务 调查安伯米尔
     .target Shadow Priest Allister
     .isQuestComplete 479
     .group
 step << Hunter
     .goto Silverpine Forest,45.01,39.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Nadia|r 对话
-    >>如果有就购买|T135490:0|t[|cRXP_FRIENDLY_精良的长弓|r]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳迪亚|r 对话
+    >>如果有货就从她那里购买 |T135490:0|t[|cRXP_FRIENDLY_精良的长弓|r]
     .collect 11304,1,438,1 --Fine Longbow (1)
     .collect 2515,1200,438,1 << Hunter --Sharp Arrow (1200)
     .target Nadia Vernon
@@ -964,7 +963,7 @@ step << Druid
     .target 洛甘纳尔
 step
     #optional
-    .abandon 424 >>放弃任务阿鲁高的愚行
+    .abandon 424 >>放弃任务 阿鲁高的愚行
     .isOnQuest 424
 step
     #optional
@@ -976,7 +975,7 @@ step
     .isOnQuest 99
 step
     #optional
-    .abandon 450 >>放弃任务奇妙的配方
+    .abandon 450 >>放弃任务 致命的配方
     .isOnQuest 450
 step
     #optional

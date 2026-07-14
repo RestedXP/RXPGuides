@@ -2,7 +2,6 @@ if GetLocale() ~= "zhCN" then return end
 local faction = UnitFactionGroup("player")
 if faction == "Horde" then return end
 
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -682,7 +681,7 @@ step
     #completewith next
     .goto Elwynn Forest,60.68,50.84,12,0
     .goto Elwynn Forest,61.19,51.47,12,0
-    .goto Elwynn Forest,61.81,53.89,15 >>退出玉石矿洞
+    .goto Elwynn Forest,61.81,53.89,15 >>离开玉石矿洞
 step
     .goto Elwynn Forest,73.973,72.179
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托马斯|r 对话
@@ -879,7 +878,7 @@ step
 step
     .goto Elwynn Forest,43.16,89.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_梅贝尔|r 对话
-    .turnin 114 >>交任务  梅贝尔的隐形水
+    .turnin 114 >>交任务 梅贝尔的隐形水
     .target 梅贝尔·马科伦
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯通菲尔德妈妈|r 和 |cRXP_FRIENDLY_波尼斯|r 对话
@@ -992,10 +991,10 @@ step
     .turnin 61,1 >>交任务 送往暴风城的货物
     .target 摩根·匹斯特
 step
-    .goto StormwindClassic,52.62,65.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_阿莉森|r 对话
-    .home >>将你的炉石设置为暴风城
-    .target 旅店老板奥里森
+    .goto Stormwind City,55.46,65.26
+    >>Talk to |cRXP_FRIENDLY_Keldric|r
+    .vendor 1257 >>|cRXP_BUY_购买|r |T134830:0|t|T134830:0|t[次级治疗药水] |cRXP_BUY_从他那里（如果有货的话）|r
+    .target Keldric Boucher
 step << skip
     #completewith next
     .goto Stormwind City,51.68,59.86,8,0
@@ -1015,21 +1014,6 @@ step << skip
 step << skip
     #completewith next
     .goto Stormwind City,36.30,82.90,6 >>穿过绿色传送门
-step << skip
-    #completewith next
-    .goto Stormwind City,42.07,79.44,30,0
-    .goto Stormwind City,45.12,75.37,30,0
-    .goto Stormwind City,44.33,70.20,30,0
-    .goto Stormwind City,46.20,67.09,30,0
-    .goto Stormwind City,49.44,63.25,30,0
-    .goto Stormwind City,52.20,61.49,30,0
-    .goto Stormwind City,55.46,65.26,10 >>前去找 |cRXP_FRIENDLY_凯德雷克·布舍尔|r
-step
-    .goto Stormwind City,55.46,65.26
-    >>透过墙与 |cRXP_FRIENDLY_凯德雷克|r 对话
-    >>|cRXP_WARN_注意：要实现此操作，请在选项菜单的“游戏功能 -> 控制”中绑定“与目标互动”按键|r
-    .vendor 1257 >>|cRXP_BUY_购买|r |T134830:0|t|T134830:0|t[次级治疗药水] |cRXP_BUY_从他那里（如果有货的话）|r
-    .target Keldric Boucher
 step
     #completewith next
     .goto StormwindClassic,57.32,59.15,10,0
@@ -1107,7 +1091,7 @@ step
     .goto Ironforge,55.49,47.74,10 >>前去找 |cRXP_FRIENDLY_格莱斯|r
 step
     .goto Ironforge,55.50,47.74
-    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
+    >>与|cRXP_FRIENDLY_格莱斯|r 对话
     .fp Ironforge >>获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
 step
@@ -1117,7 +1101,7 @@ step
     .goto Ironforge,40.84,44.59,20,0
     .goto Ironforge,35.30,32.76,20,0
     .goto Ironforge,27.60,11.06,20,0
-    .goto Ironforge,27.17,8.58,10 >>前往 |cRXP_FRIENDLY_丁克|r
+    .goto Ironforge,27.17,8.58,10 >>前去找 |cRXP_FRIENDLY_丁克|r
 step
     .goto Ironforge,27.17,8.58
     >>与|cRXP_FRIENDLY_丁克|r对话
@@ -1695,7 +1679,7 @@ step
 step << skip
     #completewith next
     +|cRXP_WARN_如果你不知道如何登出跳过，请先观看这个视频|r
-    .link https://www.youtube.com/watch?v=SWBtPqm5M0Q >>https://www.youtube.com/watch?v=SWBtPqm5M0Q >>|cRXP_WARN_点击此处了解如何登出跳过|r
+    .link https://www.youtube.com/watch?v=SWBtPqm5M0Q >>https://www.youtube.com/watch?v=SWBtPqm5M0Q >>|cRXP_WARN_点击这里学习如何跳过登出|r
 step << skip
     >>与|cRXP_FRIENDLY_格瑞林·白须|r 和 |cRXP_FRIENDLY_诺里斯·激流|r 对话
     >>|cRXP_WARN_请注意，"热酒快递"有5分钟倒计时|r
@@ -3075,7 +3059,7 @@ step
     >>|cRXP_WARN_到达海边时小心西边的|cRXP_ENEMY_蓝腮袭击者|r|r
     >>|cRXP_WARN_渡海时避开|cRXP_ENEMY_湿地幼年鳄鱼|r，等它们巡逻走远再通过|r
     .link https://youtu.be/QcEUvwu49KI?t=336 >>https://youtu.be/QcEUvwu49KI?t=336 >> |cRXP_WARN_点击此处作为参考（强烈建议你这样做）|r
-    .goto Wetlands,12.69,60.97,15 >>将炉石使用回米奈希尔港
+    .goto Wetlands,12.69,60.97,15 >>前往米奈希尔港，湿地
     .mob 湿地鳄鱼幼崽
     .mob 蓝腮袭击者
     .unitscan Sludginn
@@ -3630,7 +3614,7 @@ step
     >>|cRXP_WARN_到达海边时小心西边的|cRXP_ENEMY_蓝腮袭击者|r|r
     >>|cRXP_WARN_渡海时避开|cRXP_ENEMY_湿地幼年鳄鱼|r，等它们巡逻走远再通过|r
     .link https://youtu.be/QcEUvwu49KI?t=336 >>https://youtu.be/QcEUvwu49KI?t=336 >> |cRXP_WARN_点击此处作为参考（强烈建议你这样做）|r
-    .goto Wetlands,12.69,60.97,15 >>将炉石使用回米奈希尔港
+    .goto Wetlands,12.69,60.97,15 >>前往米奈希尔港，湿地
     .mob 湿地鳄鱼幼崽
     .mob 蓝腮袭击者
     .unitscan Sludginn
@@ -3719,7 +3703,7 @@ step
     .mob 小潮行蟹
 step
     .goto Darkshore,36.77,44.28
-    >>与 |cRXP_FRIENDLY_莱尔德|r 对话
+    >>与|cRXP_FRIENDLY_莱尔德|r 对话
     >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买最多 20 条|r |T133918:0|t[长嘴泥鳅]
     .vendor >>把垃圾物品卖给商人
     .collect 4592,20,983,1 --Longjaw Mud Snapper (20)
@@ -4062,7 +4046,7 @@ step
     .goto Darkshore,32.41,43.82,25 >>沿着码头跑向|cRXP_LOOT_海龟的残骸|r
 step
     .goto Darkshore,31.86,46.33
-    >>潜水
+    >>水下游泳
     >>拾取 |cRXP_LOOT_海龟的残骸|r
     .complete 4681,1 --Sea Turtle Remains (1)
 step
@@ -4688,7 +4672,7 @@ step << Gnome
     .use 17117
 step
     >>与|cRXP_FRIENDLY_蒙提|r 对话
-    >>等剧情结束 << Gnome
+    >>|cRXP_WARN_等待剧情演出完成|r << Gnome
     .turnin 6661 >>交任务 捕捉矿道老鼠 << Gnome
     .timer 13,捕捉矿道老鼠剧情表演 << Gnome
     .accept 6662 >>接受任务 我的兄弟，尼普希
@@ -4933,7 +4917,7 @@ step
     +|cRXP_WARN_保留你获得的|T132917:0|t|T132917:0|t[轻羽毛]以备后用|r
 step
     .goto Darkshore,36.77,44.28
-    >>与 |cRXP_FRIENDLY_莱尔德|r 对话
+    >>与|cRXP_FRIENDLY_莱尔德|r 对话
     >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买最多 20 条|r |T133918:0|t[长嘴泥鳅]
     .collect 4592,20,982,1 --Longjaw Mud Snapper (20)
     .target 莱尔德
@@ -5401,7 +5385,7 @@ step
 step
     #label Talisman
     .goto Darkshore,52.24,33.08
-    >>等剧情结束
+    >>|cRXP_WARN_等待剧情演出完成|r
     >>击杀|cRXP_ENEMY_萨巴克希斯|r
     >>拾取掉落地上的|cRXP_PICK_萨布拉克斯的恶魔之袋|r，从中获得|cRXP_LOOT_堕落护符|r
     >>|cRXP_WARN_该操作有 5 秒施法时间|r
@@ -6176,7 +6160,7 @@ step
     >>|cRXP_WARN_跳上火把，然后落下进入暴风城下方|r
     >>|cRXP_WARN_在阴影设置为"一般"或"低"时，站在德里克恐龙双脚中间（地上较亮的部分），就在蓝色虚空前方，然后径直向前走|r
     >>|cRXP_WARN_注意：使用此方法有极小概率死亡。若你愿意，也可以正常步行前往法师塔|r
-    .link https://youtu.be/gV8-wgQEomc >>https://youtu.be/gV8-wgQEomc >> 点击此处查看指南
+    .link https://youtu.be/gV8-wgQEomc >>https://youtu.be/gV8-wgQEomc >> 点击这里查看指南
     .goto Stormwind City,38.61,79.39,10 >>前去找 |cRXP_FRIENDLY_詹妮亚·坎农|r
 step
     .goto Stormwind City,38.61,79.39
@@ -6727,7 +6711,7 @@ step
     .use 13536
 step
     #completewith next
-    +以后不要再唤醒 |cRXP_FRIENDLY_Kerlonian|r
+    +别再唤醒 |cRXP_FRIENDLY_克罗尼亚|r
     >>留意寻找|cRXP_ENEMY_雌性森林陆行鸟|r
     .unitscan Strider Clutchmother
  step
@@ -7379,8 +7363,8 @@ step
 step
     .goto Duskwood,75.34,48.74
     >>与 |cRXP_FRIENDLY_伊莱恩|r 对话
-    .accept 163 >>接受任务乌鸦岭
-    .accept 164 >>接受任务斯温的货物
+    .accept 163 >>接受任务 乌鸦岭
+    .accept 164 >>接受任务 斯温的货物
     .accept 165 >>接受任务隐士
     .target 艾莱尼·卡尔文
 step
@@ -7393,7 +7377,7 @@ step
     .goto Duskwood,79.78,48.06
     >>与 |cRXP_FRIENDLY_维克托|r 对话
     .accept 174 >>接受任务眺望群星
-    .turnin 174 >>交任务眺望群星
+    .turnin 174 >>交任务 眺望群星
     .accept 175 >>接受任务眺望群星
     .target 维克托·安特拉斯
     .itemcount 4371,1
@@ -7407,7 +7391,7 @@ step
 step
     .goto Duskwood,81.46,59.02
     >>与|cRXP_FRIENDLY_玛丽|r 对话
-    .turnin 175 >>交任务眺望群星
+    .turnin 175 >>交任务 眺望群星
     .accept 177 >>接受任务眺望群星
     .target 盲眼玛丽
     .isQuestTurnedIn 174
@@ -7523,7 +7507,7 @@ step
     >>与 |cRXP_FRIENDLY_科纳彻尔|r 对话
 --  .accept 120 >>Accept Messenger to Stormwind
 --  .goto Redridge Mountains,29.99,44.45
-    .accept 91 >>接受任务所罗门的律法
+    .accept 91 >>接受任务 所罗门的律法
     .goto Redridge Mountains,29.72,44.26
 --  .target Magistrate Solomon
     .target 拜里弗·科纳彻尔
@@ -7531,7 +7515,7 @@ step
     >>与 |cRXP_FRIENDLY_码头管理员巴伦|r 对话并点击 |cRXP_PICK_通缉告示|r
     .accept 127 >>接受任务卖鱼
     .goto Redridge Mountains,27.72,47.38
-    .accept 180 >>接受任务通缉：范高雷中尉
+    .accept 180 >>接受任务 通缉：范高雷中尉
     .goto Redridge Mountains,26.75,46.42
     .target 码头管理员巴伦
 step
@@ -7558,7 +7542,7 @@ step
     .target Wiley the Black
 step
     .goto Redridge Mountains,29.32,53.64
-    >>与 |cRXP_FRIENDLY_肖恩|r 对话
+    >>与|cRXP_FRIENDLY_肖恩|r 对话
     .accept 3741 >>接受任务 希拉里的项链
     .target 肖恩
 step
@@ -7894,7 +7878,7 @@ step
 step
     >>与 |cRXP_FRIENDLY_玛蒂|r 和 |cRXP_FRIENDLY_工头奥斯洛|r 对话
     .turnin 20 >>交任务黑石氏族的威胁
-    .accept 19 >>接受任务萨瑞尔祖恩
+    .accept 19 >>接受任务 萨瑞尔祖恩
     .target +Marshal Marris
     .goto Redridge Mountains,33.51,48.96
     .turnin 89,1 >>交任务 止水湖上的桥
@@ -7932,7 +7916,7 @@ step
     >>前去找 |cRXP_FRIENDLY_厨师布雷纳|r
 step
     .goto Redridge Mountains,22.68,43.83
-    >>进去
+    >>进入里面
     >>与 |cRXP_FRIENDLY_厨师布雷纳|r 对话
     .accept 92 >>接受任务 赤脊山炖肉
     .turnin 92 >>交任务 赤脊山炖肉

@@ -1,5 +1,4 @@
 if GetLocale() ~= "zhCN" then return end
-
 RXPGuides.RegisterGuide([[
 #classic
 #season 2
@@ -503,7 +502,7 @@ step
     #season 2
     .goto Ashenvale,89.60,40.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_军需官基琳|r 对话
-    .vendor >>|cRXP_BUY_如果像的话，从她那里最多购买5个|r |T236885:0|t[特效治疗药水] |cRXP_BUY_|r
+    .vendor >>|cRXP_BUY_如果需要的话，|r|cRXP_BUY_可以从她那里最多购买5瓶|r |T236885:0|t[特效治疗药水]
     >>|cRXP_WARN_这些只能在梦魇进犯区域内使用|r
     .target Quartermaster Kyleen
     .maxlevel 53

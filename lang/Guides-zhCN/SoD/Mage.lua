@@ -1,5 +1,4 @@
 if GetLocale() ~= "zhCN" then return end
-
 RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP符文与书籍指南
@@ -171,7 +170,7 @@ step
     .xp <2,1
 step
     .goto Dun Morogh,28.709,66.366
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛瑞克·斯托纳尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛瑞克·斯托纳尔|r对话
     .turnin 77667 >>交任务 法术研究
     .target 玛瑞克·斯托纳尔
     .isQuestComplete 77667
@@ -240,7 +239,7 @@ step
     .goto 1411,43.241,55.384,12,0
     .goto 1411,44.103,55.254,12,0
     .goto 1411,45.306,55.177,12,0
-    .goto 1411,45.245,56.520,15 >>退出燃烧刃洞穴
+    .goto 1411,45.245,56.520,15 >>离开燃烧刃洞穴
     .isQuestComplete 77643
     .subzoneskip 363
     .train 401760,1
@@ -3390,7 +3389,7 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401764,1
-    .zone Western Plaguelands >>前往西瘟疫之地
+    .zone Western Plaguelands >>前往 西瘟疫之地
 step
     .train 401764,1
     #loop -- not sure which coord is tied to which itemid, update in future
@@ -3490,7 +3489,7 @@ RXPGuides.RegisterGuide([[
 step
     .train 401722,1
     #completewith Necromancy101
-    .zone Western Plaguelands >>前往西瘟疫之地
+    .zone Western Plaguelands >>前往 西瘟疫之地
 step
     .train 401722,1
     .goto Western Plaguelands,38.3,54.6
@@ -3507,7 +3506,7 @@ step
 step
     .train 401722,1
     #completewith UndeadMenace
-    .zone Eastern Plaguelands >>前往西瘟疫之地
+    .zone Eastern Plaguelands >>前往 西瘟疫之地
 step
     .train 401722,1
     .goto Eastern Plaguelands,81.7,57.8

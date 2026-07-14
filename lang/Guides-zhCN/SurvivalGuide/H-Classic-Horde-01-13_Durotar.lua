@@ -2,7 +2,6 @@ if GetLocale() ~= "zhCN" then return end
 local faction = UnitFactionGroup("player")
 if faction == "Alliance" then return end
 
-
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
@@ -33,7 +32,7 @@ step << Warrior/Shaman/Warlock
     .money >0.01
 step << Warlock
     .goto Durotar,42.59,69.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
     .accept 1485 >>接受任务 邪灵劣魔
     .target Ruzan
 step << Warrior/Shaman
@@ -102,7 +101,7 @@ step << Warlock
     .complete 788,1 --Mottled Boar (10)
     .mob 杂斑野猪
 step << Warlock
-    .goto Durotar,45.30,56.42,100 >>前往火刃集会所
+    .goto Durotar,45.30,56.42,100 >>前去火刃集会所
     .isOnQuest 1485
 step << Warlock
     #loop
@@ -751,7 +750,7 @@ step
     .goto Durotar,43.88,52.71,15,0
     .goto Durotar,43.39,52.07,15,0
     .goto Durotar,42.90,52.34,15,0
-    .goto Durotar,42.70,52.99,35 >>前往 |cRXP_ENEMY_亚罗格·刺影|r
+    .goto Durotar,42.70,52.99,35 >>前去找 |cRXP_ENEMY_亚罗格·刺影|r
 step
     #label Yarrog
     .goto Durotar,42.70,52.99
@@ -2406,7 +2405,7 @@ step << Shaman
     #completewith next
     .goto The Barrens,52.34,29.27,150 >>前往十字路口
 step << Shaman
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎尔夫|r、|cRXP_FRIENDLY_Sergra|r、|cRXP_FRIENDLY_索克|r 和 |cRXP_FRIENDLY_加兹罗格|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎尔夫|r、|cRXP_FRIENDLY_瑟格拉|r、|cRXP_FRIENDLY_索克|r 和 |cRXP_FRIENDLY_加兹罗格|r 对话
     .accept 6365 >>接受任务 送往奥格瑞玛的肉
     .target +Zargh
     .goto The Barrens,52.62,29.84
@@ -2804,7 +2803,7 @@ step << Hunter
     .group
 step << Hunter
     .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_格劳特|r|cRXP_BUY_。购买一个|r |T135499:0|t[多层弯弓] |cRXP_BUY_从他|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_格劳特|r|cRXP_BUY_对话。|r |cRXP_BUY_从她那里购买一把|r|T135499:0|t[多层弯弓]
     .collect 2507,1,828,1 --Collect Laminated Recurve Bow (1)
     .money <0.1751
     .itemStat 18,QUALITY,<7
@@ -2862,7 +2861,7 @@ step << !Shaman
     .goto Durotar,52.84,26.80,12,0
     .goto Durotar,52.07,26.85,12,0
     .goto Durotar,52.70,27.97,12,0
-    >>击杀 |cRXP_ENEMY_Burning Blade Thugs|r、|cRXP_ENEMY_Neophytes|r 和 |cRXP_ENEMY_Cultists|r。拾取他们的 |cRXP_LOOT_Collars|r
+    >>击杀 |cRXP_ENEMY_火刃暴徒|r、|cRXP_ENEMY_新兵|r 和 |cRXP_ENEMY_祭司|r。拾取他们的 |cRXP_LOOT_项圈|r
     .complete 827,1 --Searing Collar (6)
     .mob Burning Blade Thug
     .mob Burning Blade Neophyte
@@ -2879,7 +2878,7 @@ step << Shaman
     .goto Durotar,52.84,26.80,12,0
     .goto Durotar,52.07,26.85,12,0
     .goto Durotar,52.70,27.97,12,0
-    >>击杀 |cRXP_ENEMY_Thugs|r 和 |cRXP_ENEMY_Neophytes|r。拾取他们的 |cRXP_LOOT_Collars|r
+    >>击杀 |cRXP_ENEMY_暴徒|r 和 |cRXP_ENEMY_新兵|r。拾取他们的 |cRXP_LOOT_项圈|r
     >>击杀 |cRXP_ENEMY_祭司|r，拾取他们掉落的 |cRXP_LOOT_试剂袋|r
     .complete 827,1 --Searing Collar (6)
     .mob +Burning Blade Thug
@@ -3095,7 +3094,7 @@ step << Orc Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.2
 step << Orc Warrior
     .goto Orgrimmar,47.54,68.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_乌萨罗|r|cRXP_BUY_对话。购买一个|r |T132395:0|t[大板斧] |cRXP_BUY_从他那里|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_乌萨罗|r|cRXP_BUY_对话。|r|cRXP_BUY_从他那里购买一把|r|T132395:0|t[大板斧]
     .collect 1196,1,398,1 --Collect Tabar (1)
     .money <0.2214
     .itemStat 16,QUALITY,<7
@@ -3110,7 +3109,7 @@ step << Orc Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.2
 step << Shaman
     .goto Orgrimmar,47.54,68.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_乌萨罗|r|cRXP_BUY_。购买|r |T135154:0|t[短杖] |cRXP_BUY_从他那里|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_乌萨罗|r|cRXP_BUY_。|r|cRXP_BUY_从他那里购买|r|T135154:0|t[短杖]
     .collect 854,1,398,1 --Collect Quarter Staff (1)
     .money <0.3022
     .target Urtharo
@@ -3269,7 +3268,7 @@ step << Hunter
     .goto The Barrens,52.34,29.27,150 >>前往十字路口
 step << Hunter
     #label HunterCrossRoadsVisit1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎尔夫|r、|cRXP_FRIENDLY_Sergra|r、|cRXP_FRIENDLY_索克|r 和 |cRXP_FRIENDLY_加兹罗格|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎尔夫|r、|cRXP_FRIENDLY_瑟格拉|r、|cRXP_FRIENDLY_索克|r 和 |cRXP_FRIENDLY_加兹罗格|r 对话
     .accept 6365 >>接受任务 送往奥格瑞玛的肉
     .target +Zargh
     .goto The Barrens,52.62,29.84
@@ -3319,7 +3318,7 @@ step << Shaman/Hunter
     .isOnQuest 924
 step << Shaman/Hunter
     #completewith next
-    +|cRXP_WARN_如果|r |cRXP_ENEMY_拉索利安|r |cRXP_WARN_出现了，小心他，他是15级稀有怪。准备好使用你的|r |T133728:0|t[微弱发光的骷髅] |cRXP_WARN_和|r |T134712:0|t[超粘胶水] |cRXP_WARN_如果需要|r
+    +|cRXP_WARN_如果|r |cRXP_ENEMY_拉索利安|r |cRXP_WARN_出现了，小心点，他是15级稀有精英。准备好用你的|r |T133728:0|t[微弱发光的骷髅] |cRXP_WARN_和|r |T134712:0|t[超粘胶水] |cRXP_WARN_如果需要的话|r
     .unitscan Rathorian
 step << Shaman/Hunter
     #label DemonSeed
@@ -3409,7 +3408,7 @@ step << Hunter
 	.goto The Barrens,52.99,26.88,60,0
     .xp 11+6980 >>刷怪达到6980/8800经验
 step << Shaman/Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎尔夫|r、|cRXP_FRIENDLY_Sergra|r 和 |cRXP_FRIENDLY_索克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎尔夫|r、|cRXP_FRIENDLY_瑟格拉|r 和 |cRXP_FRIENDLY_索克|r 对话
     .turnin 6386 >>交任务 返回十字路口
     .target +Zargh
     .goto The Barrens,52.62,29.84
@@ -3502,7 +3501,7 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.4
 step << Shaman
     .goto Orgrimmar,47.54,68.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_乌萨罗|r|cRXP_BUY_。购买|r |T135154:0|t[短杖] |cRXP_BUY_从他那里|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_乌萨罗|r|cRXP_BUY_。|r|cRXP_BUY_从他那里购买|r|T135154:0|t[短杖]
     .collect 854,1,398,1 --Collect Quarter Staff (1)
     .money <0.3022
     .target Urtharo
@@ -3521,7 +3520,7 @@ step << Hunter
     .goto Orgrimmar,68.02,38.69,30 >>前往荣耀谷
 step << Hunter
     .goto Orgrimmar,66.06,18.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Ormakl|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥玛克|r 对话
     .train 14281 >>训练你的职业技能
     .target 奥玛克
     .xp <12,1
@@ -3583,7 +3582,7 @@ step << Orc Rogue/Troll Rogue
 step << Orc Rogue/Troll Rogue
     #optional
     .goto Undercity,63.25,48.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
     .fp Undercity >>获得幽暗城的飞行路径
     .target 迈克尔·加勒特
     .money <0.3023
@@ -3994,7 +3993,7 @@ step << Warlock/Mage
 step << Warlock/Mage
     #label UCflightpath1
     .goto Undercity,63.25,48.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
     .fp Undercity >>获得幽暗城的飞行路径
     .target 迈克尔·加勒特
 step << Warlock/Mage
@@ -4464,7 +4463,7 @@ step
 step
     #optional
     .goto Tirisfal Glades,61.26,50.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Dillinger|r、|cRXP_FRIENDLY_Johaan|r、|cRXP_FRIENDLY_Zygand|r 和 |cRXP_FRIENDLY_Sevren|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪林格尔|r、|cRXP_FRIENDLY_乔汉|r、|cRXP_FRIENDLY_塞加德|r 和 |cRXP_FRIENDLY_塞弗伦|r 对话
     .turnin 358 >>交任务 盗墓贼
     .accept 359 >>接受任务 亡灵卫兵的职责
     .target Magistrate Sevren
@@ -4472,7 +4471,7 @@ step
 step
     #optional
     .goto Tirisfal Glades,61.26,50.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Dillinger|r、|cRXP_FRIENDLY_Johaan|r、|cRXP_FRIENDLY_Zygand|r 和 |cRXP_FRIENDLY_Sevren|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪林格尔|r、|cRXP_FRIENDLY_乔汉|r、|cRXP_FRIENDLY_塞加德|r 和 |cRXP_FRIENDLY_塞弗伦|r 对话
     .accept 359 >>接受任务 亡灵卫兵的职责
     .target Magistrate Sevren
     .isQuestTurnedIn 358
@@ -4490,7 +4489,7 @@ step
     .isOnQuest 375
 step
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Yvette|r、|cRXP_FRIENDLY_Coleman|r 和 |cRXP_FRIENDLY_Gretchen|r 对话，他们在旅馆内
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与旅馆内的 |cRXP_FRIENDLY_伊维特|r、|cRXP_FRIENDLY_库勒曼|r 和 |cRXP_FRIENDLY_格莉丝|r 对话
     >>|cRXP_FRIENDLY_格莉丝|r |cRXP_WARN_在二楼|r
     .turnin 361 >>交任务 未寄出的信件
     .target +Yvette Farthing
@@ -4522,7 +4521,7 @@ step
     .group
 step
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Yvette|r 和 |cRXP_FRIENDLY_Coleman|r 对话，他们在旅馆内
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与旅馆内的 |cRXP_FRIENDLY_伊维特|r 和 |cRXP_FRIENDLY_库勒曼|r 对话
     >>|cRXP_FRIENDLY_格莉丝|r |cRXP_WARN_在二楼|r
     .turnin 361 >>交任务 未寄出的信件
     .target +Yvette Farthing
@@ -4546,7 +4545,7 @@ step
     .isQuestComplete 354
 step
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Yvette|r、|cRXP_FRIENDLY_Coleman|r 和 |cRXP_FRIENDLY_Gretchen|r 对话，他们在旅馆内
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与旅馆内的 |cRXP_FRIENDLY_伊维特|r、|cRXP_FRIENDLY_库勒曼|r 和 |cRXP_FRIENDLY_格莉丝|r 对话
     >>|cRXP_FRIENDLY_格莉丝|r |cRXP_WARN_在二楼|r
     .turnin 361 >>交任务 未寄出的信件
     .target +Yvette Farthing
@@ -4576,7 +4575,7 @@ step
     .isQuestComplete 375
 step
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Yvette|r 和 |cRXP_FRIENDLY_Coleman|r 对话，他们在旅馆内
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与旅馆内的 |cRXP_FRIENDLY_伊维特|r 和 |cRXP_FRIENDLY_库勒曼|r 对话
     >>|cRXP_FRIENDLY_格莉丝|r |cRXP_WARN_在二楼|r
     .turnin 361 >>交任务 未寄出的信件
     .target +Yvette Farthing
@@ -4842,7 +4841,7 @@ step
     .isOnQuest 375
 step
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Burgess|r、|cRXP_FRIENDLY_Zygand|r、|cRXP_FRIENDLY_Sevren|r 和 |cRXP_FRIENDLY_Johaan|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯吉斯|r、|cRXP_FRIENDLY_塞加德|r、|cRXP_FRIENDLY_塞弗伦|r 和 |cRXP_FRIENDLY_乔汉|r 对话
     .turnin 374 >>交任务 死亡证明
     .target +Deathguard Burgess
     .goto Tirisfal Glades,60.93,52.01
@@ -4864,7 +4863,7 @@ step
     .group
 step
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Burgess|r、|cRXP_FRIENDLY_Zygand|r、|cRXP_FRIENDLY_Sevren|r 和 |cRXP_FRIENDLY_Johaan|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯吉斯|r、|cRXP_FRIENDLY_塞加德|r、|cRXP_FRIENDLY_塞弗伦|r 和 |cRXP_FRIENDLY_乔汉|r 对话
     .turnin 374 >>交任务 死亡证明
     .target +Deathguard Burgess
     .goto Tirisfal Glades,60.93,52.01
@@ -4884,7 +4883,7 @@ step
     .isQuestComplete 374
 step
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Sevren|r 和 |cRXP_FRIENDLY_Johaan|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞弗伦|r 和 |cRXP_FRIENDLY_乔汉|r 对话
     .turnin 360 >>交任务 向塞弗伦回报
     .turnin 355 >>交任务 与塞弗伦交谈
     .accept 408 >>接受任务 家族墓穴
@@ -4900,7 +4899,7 @@ step
     .group
 step
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Sevren|r 和 |cRXP_FRIENDLY_Johaan|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞弗伦|r 和 |cRXP_FRIENDLY_乔汉|r 对话
     .turnin 360 >>交任务 向塞弗伦回报
     .turnin 355 >>交任务 与塞弗伦交谈
     .target +Magistrate Sevren
@@ -5198,7 +5197,7 @@ step << !Undead
 step << !Undead
     #label UCflightpath3
     .goto Undercity,63.25,48.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
     .fp Undercity >>获得幽暗城的飞行路径
     >>|cRXP_WARN_若已解锁飞行点，请跳过此步骤！|r
     .target 迈克尔·加勒特
@@ -5239,7 +5238,7 @@ step << Rogue
     .zoneskip Undercity,1
 step << Rogue
     .goto Undercity,77.08,49.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_Charles|r |cRXP_BUY_在盗贼区对话。向他购买|r |T135346:0|t[斗士短剑]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与盗贼区的|r |cRXP_FRIENDLY_查尔斯|r |cRXP_BUY_对话。从他那里|r|cRXP_BUY_购买一把|r |T135346:0|t[斗士短剑]
     .collect 851,1,435,1 --Collect Cutlass (1)
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8

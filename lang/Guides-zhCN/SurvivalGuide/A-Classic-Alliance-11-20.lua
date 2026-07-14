@@ -3,7 +3,6 @@ local faction = UnitFactionGroup("player")
 if faction == "Horde" then return end
 
 
-
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
@@ -38,7 +37,7 @@ step
 step
     .goto Westfall,56.04,31.23
     .target Farmer Saldean
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_农夫萨丁|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_农夫萨丁|r 对话
     .accept 9 >>接受任务 清理荒野
 step
     #label SalmaS
@@ -85,9 +84,9 @@ step << !Human
 step
     .goto Westfall,52.86,53.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_与旅店老板对话|r
-	>>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
-	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
-    .vendor >>|T133918:0|t[溢血者] |cRXP_WARN_非常便宜|r
+	>>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
+	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
+    .vendor >>|T133918:0|t[长嘴泥鳅] |cRXP_WARN_非常便宜|r
 	.target 旅店老板希瑟尔
 step
 	#completewith bennytime
@@ -146,7 +145,7 @@ step
     .goto Westfall,42.82,14.70,60,0
     .goto Westfall,52.36,14.82,60,0
     .goto Westfall,45.83,13.75
-    >>击杀 |cRXP_ENEMY_Riverpaw Gnolls|r 和 |cRXP_ENEMY_Riverpaw Scouts|r。拾取他们的 |cRXP_LOOT_Gnoll Paws|r
+    >>击杀 |cRXP_ENEMY_河爪豺狼人|r 和 |cRXP_ENEMY_河爪斥候|r。拾取它们的|cRXP_LOOT_豺狼人的爪子|r
     .complete 102,1 --Gnoll Paw (8)
     .mob Riverpaw Gnoll
     .mob Riverpaw Scout
@@ -198,7 +197,7 @@ step
 	.goto Westfall,56.04,31.23
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_农夫萨丁|r 对话
     .vendor
-    >>|cRXP_WARN_千万不要出售 |T133884:0|t[鱼人 眼睛]、|T135997:0|t[血牙野猪 Snouts]、|T134341:0|t[血牙野猪 Livers] 或 |T133972:0|t[Stringy Vulture 肉]|r
+    >>|cRXP_WARN_不要出售|T133884:0|t|T135997:0|t[鱼人的眼球]、|T134341:0|t|T133972:0|t[血牙野猪的头]、|T134341:0|t|T134341:0|t[血牙野猪的肝]或|T133972:0|t|T133972:0|t[秃鹫肉条]|r
 	.target Farmer Saldean
 step
     #label HarvestW
@@ -211,7 +210,7 @@ step
     .goto Westfall,53.84,32.00,60,0
     .goto Westfall,44.47,35.35,60,0
     .goto Westfall,50.80,21.76
-    >>击杀 |cRXP_ENEMY_Harvest Watchers|r。拾取他们的 |cRXP_LOOT_灯油|r 和 |cRXP_LOOT_Okra|r
+    >>击杀|cRXP_ENEMY_看守傀儡|r。从它们身上拾取|cRXP_LOOT_灯油|r和|cRXP_LOOT_秋葵|r
     .complete 9,1 --Harvest Watcher (20)
     .collect 732,3,38,1 --Okra (3)
     .collect 814,5,103,1
@@ -295,18 +294,18 @@ step << Human/Dwarf Paladin
     .target 索尔
 step << !NightElf
     .goto Ironforge,55.093,58.269
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_尼莎·火石|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_尼莎·火石|r 对话
     >>升级你的|T135966:0|t[急救]
     .train 3274 >>学习 中级急救
     .target Nissa Firestone
 step << Human Warrior
     .goto Ironforge,62.0,89.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比克斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比克斯|r 对话
     .train 2567 >>训练 投掷武器
     .target 比克斯
 step << Dwarf Paladin
     .goto Ironforge,24.55,4.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝尔杜克·凝眉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_贝尔杜克·凝眉|r 对话
     .trainer >>训练你的职业技能
     .target Beldruk Doombrow
 step << Dwarf Paladin
@@ -374,10 +373,10 @@ step << !NightElf
     .goto Wetlands,15.1,64.0,40,0
     .goto Wetlands,12.1,60.3,40,0
     >>|cRXP_WARN_首先观看视频指南作为参考，了解如何跳过！|r
-    >>|cRXP_WARN_执行 Deathless 丹莫罗 -> 湿地 捷径|r
+    >>|cRXP_WARN_走无伤翻山路线，从丹莫罗翻山前往湿地|r
     >>|cRXP_WARN_Avoid the |cRXP_ENEMY_湿地鳄鱼|r 和 |cRXP_ENEMY_鱼人|r when crossing the water|r
     .link https://www.youtube.com/watch?v=9afQTimaiZQ >>https://www.youtube.com/watch?v=9afQTimaiZQ >> |cRXP_WARN_点击此处查看视频指南|r
-    .goto Wetlands,12.1,60.3,80 >>将炉石使用回米奈希尔港
+    .goto Wetlands,12.1,60.3,80 >>前往米奈希尔港，湿地
     .mob 湿地鳄鱼
     .mob 湿地鳄鱼幼崽
     .mob 蓝腮袭击者
@@ -388,20 +387,20 @@ step << !NightElf
     .goto Wetlands,10.6,57.2,15,0
     .goto Wetlands,10.761,56.737
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_尼尔·奥雷|r 对话
-    .vendor >>|cRXP_BUY_Buy a|r |T133024:0|t[青铜管]
+    .vendor >>|cRXP_BUY_买一个|r |T133024:0|t[青铜管]
     >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_尼尔·奥雷|r 没有库存，请跳过此步骤|r
 	.target 尼尔·奥雷
     .bronzetube
 step << !NightElf
     .goto Wetlands,10.43,61.01,10,0
     .goto Wetlands,10.496,60.201
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨莫尔·菲斯蒂沃斯|r 在楼上对话
-    .vendor >>|cRXP_BUY_尽可能多购买|r |T134831:0|t[治疗药水] |cRXP_BUY_有库存的话|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_萨莫尔·菲斯蒂沃斯|r 对话
+    .vendor >>|cRXP_BUY_尽可能多地购买|r |T134831:0|t[治疗药水] |cRXP_BUY_（如果有售）|r
     >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_萨莫尔·菲斯蒂沃斯|r 没有库存，请跳过此步骤|r
     .target Samor Festivus
 step << !NightElf
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
     .fp Wetlands>>获取湿地的飞行路径
     .target 谢尔雷·布隆迪尔
 step << Hunter !NightElf
@@ -414,7 +413,7 @@ step << Hunter !NightElf
 step << !NightElf
     .goto Wetlands,7.95,56.38
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_德温·晨光|r 对话
-    .vendor >>|cRXP_BUY_尽可能多购买|r |T134831:0|t[治疗药水] |cRXP_BUY_有库存的话|r
+    .vendor >>|cRXP_BUY_尽可能多地购买|r |T134831:0|t[治疗药水] |cRXP_BUY_（如果有售）|r
     >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_德温·晨光|r 没有库存，请跳过此步骤|r
     .target 德温·晨光
 step << !NightElf
@@ -423,12 +422,12 @@ step << !NightElf
     .goto Wetlands,4.61,57.26,15 >>前往米奈希尔港码头。等待前往黑海岸的船
 step << !NightElf
     .zone Darkshore >>乘船前往黑海岸
-    >>|cRXP_WARN_升级你的|r |T135966:0|t[急救] |cRXP_WARN_和|r |T133971:0|t[烹饪] |cRXP_WARN_在等船前往黑海岸时|r
-    >>|cRXP_WARN_升级你的|r |T133971:0|t[烹饪] |cRXP_WARN_使用你之前刷来的|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r |cRXP_WARN_，尽量升到10级|r
+    >>|cRXP_WARN_在等船去黑海岸的时候，|r|cRXP_WARN_顺便升级|r |T135966:0|t[急救] |cRXP_WARN_和|r |T133971:0|t[烹饪]
+    >>|cRXP_WARN_用你之前打到的|r |T133971:0|t|cRXP_WARN_[大块野猪肉]|r |cRXP_LOOT_升级你的|r |T133970:0|t[烹饪]。|cRXP_WARN_尽量升到10级|r
 step << NightElf !Druid
     .goto Westfall,56.556,52.643
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索尔|r 对话
-    .fp Westfall >>获得西部荒野的飞行路径
+    .fp Westfall >>解锁西部荒野飞行路线
     .fly Stormwind >>飞往暴风城
     .target 索尔
 step << Druid
@@ -466,14 +465,14 @@ step << Druid
     .target 德迪利特·星焰
 step << Druid
     .goto Moonglade,52.6,51.6
-    >>游入Lake Elune'Ara
-    >>打开一个 |cRXP_PICK_Bauble 容器|r。拾取它以获得 |T134125:0|t[神殿灵珠]
-    >>|cRXP_WARN_它可能会在水下的不同位置出现|r
+    >>游入月神湖
+    >>打开一个 |cRXP_PICK_神殿灵珠容器|r。拾取 |T134125:0|t[神殿灵珠]
+    >>|cRXP_WARN_它可能会在水下的不同位置刷新|r
     .collect 15877,1,29,1 -- Shrine Bauble (1)
 step << Druid
     #completewith next
     .cast 18960 >>施放传送：月光林地
-    >>|cRXP_WARN_这样会更快，所以你不需要游这么久|r
+    >>|cRXP_WARN_这样会更快，你就不用游那么久了|r
 step << Druid
     .goto Moonglade,36.026,41.374
     .use 15877 >>|cRXP_WARN_在雷姆洛斯神殿使用|r |T134125:0|t[神殿灵珠] |cRXP_WARN_|r
@@ -492,12 +491,12 @@ step << NightElf Priest
 step << NightElf Warrior
     .goto StormwindClassic,57.547,57.076
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_冈瑟尔·维勒|r 对话
-    .vendor >>|cRXP_BUY_购买|r |T133046:0|[巨型石锤] |cRXP_BUY_如果你负担得起的话|r
+    .vendor >>|cRXP_BUY_如果买得起，|r|cRXP_BUY_就购买一把|r |T133046:0|[巨型石锤]
     .target 冈瑟尔·维勒
 step << NightElf Rogue
     .goto StormwindClassic,57.547,57.076
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_冈瑟尔·维勒|r 对话
-    .vendor >>|cRXP_BUY_购买|r |T133052:0|[锤子] |cRXP_BUY_如果你负担得起的话|r
+    .vendor >>|cRXP_BUY_如果买得起，|r|cRXP_BUY_就购买一把|r |T133052:0|[锤子]
     .target 冈瑟尔·维勒
 step << NightElf Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吴平|r 对话
@@ -506,15 +505,15 @@ step << NightElf Rogue
     .train 201 >>学习单手剑
 step << NightElf Hunter
     .goto StormwindClassic,49.990,57.641
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗德瑞克·斯图瓦|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗德瑞克·斯图瓦|r 对话
     >>|cRXP_BUY_购买|r |T135490:0|t[强化弓]
-    >>|cRXP_BUY_备足|r |T132382:0|t[经典怀旧服 道具]
+    >>|cRXP_BUY_补充 |T132382:0|t[锋利的箭] 库存|r
     .collect 3026,1
     .target Frederick Stover
 step << NightElf
     .goto StormwindClassic,43.065,26.156
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
-    >>升级你的 |T135966:0|t[急救]
+    >>升级你的|T135966:0|t[急救]
     .train 3274 >>学习 中级急救
     .target Shaina Fuller
 step << NightElf Warrior
@@ -544,12 +543,12 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Alliance
-#name 15-18 黑海岸
+#name 15-18级 黑海岸
 #version 1
 #group RestedXP 生存指南 (联盟版)
 #subgroup RXP 生存指南 1-20级
 --#defaultfor !NightElf
-#next 18-19 洛克莫丹
+#next 18-19级 洛克莫丹
 
 step
 #map Darkshore
@@ -603,7 +602,7 @@ step
     .goto Darkshore,35.88,47.01,0
     .goto Darkshore,36.50,53.30,0
     .goto Darkshore,35.72,55.84,0
-    >>杀死 |cRXP_ENEMY_Pygmy Tide Crawlers|r 和 |cRXP_ENEMY_Young Reef Crawlers|r。拾取它们的 |cRXP_LOOT_长腿|r
+    >>击杀 |cRXP_ENEMY_小潮行蟹|r 和 |cRXP_ENEMY_暗礁蟹幼崽|r。拾取它们的 |cRXP_LOOT_蟹腿|r
     >>你可能需要下水才能获得它们
     .complete 983,1
     .mob 小潮行蟹
@@ -611,12 +610,12 @@ step
 step
 #map Darkshore
     .goto Felwood,18.81,26.69
-    >>拾取 |cRXP_PICK_Beached 大海 怪物|r 以获得 |cRXP_LOOT_Sea 怪物 瘦骨|r
+    >>拾取 |cRXP_PICK_搁浅的海洋生物|r 以获得 |cRXP_LOOT_海洋生物骨骼|r
     .complete 3524,1
 step
 #map Darkshore
     .goto Felwood,22.39,29.45
-    >>发现熊怪营地
+    >>探索熊怪营地
     .complete 984,1 -- Find a corrupt furbolg camp
 step
     #label RabidThistle
@@ -624,7 +623,7 @@ step
     .goto Darkshore,39.79,58.33,50,0
     .goto Darkshore,38.86,60.72,50,0
     .goto Darkshore,38.47,57.92
-    .use 7586 >>|cRXP_WARN_使用|r |T134335:0|t[萨纳瑞恩的希望] |cRXP_WARN_对一只|r |cRXP_ENEMY_狂暴蓟熊|r
+    .use 7586 >>|cRXP_WARN_对|r |cRXP_WARN_狂暴蓟熊|r |cRXP_ENEMY_使用|r |T134335:0|t[萨纳瑞恩的希望]
     .complete 2118,1
     .unitscan 狂暴蓟熊
 step
@@ -633,7 +632,7 @@ step
     .goto Darkshore,35.11,54.69,55,0
     .goto Darkshore,35.79,47.35,55,0
     .goto Darkshore,36.53,53.39
-    >>杀死 |cRXP_ENEMY_Pygmy Tide Crawlers|r 和 |cRXP_ENEMY_Young Reef Crawlers|r。拾取它们的 |cRXP_LOOT_长腿|r
+    >>击杀 |cRXP_ENEMY_小潮行蟹|r 和 |cRXP_ENEMY_暗礁蟹幼崽|r。拾取它们的 |cRXP_LOOT_蟹腿|r
     >>你可能需要下水才能获得它们
     .complete 983,1
     .mob 小潮行蟹
@@ -749,7 +748,7 @@ step
     .mob Darkshore Thresher
 step
     #completewith next
-    .goto Darkshore,38.95,29.36,30 >>游往沉没的 白银级 Dawning 船
+    .goto Darkshore,38.95,29.36,30 >>游到沉船“银色清晨号”那里
 step
 #map Darkshore
     .goto Darkshore,38.95,29.36,10,0
@@ -759,7 +758,7 @@ step
     .complete 982,1
 step
     #completewith next
-    .goto Darkshore,40.30,27.56,30 >>游往沉没的 密斯特 Veil 船
+    .goto Darkshore,40.30,27.56,30 >>游到沉船“迷雾之纱号”那里
 step
     #label MistVeil
     .goto Darkshore,40.30,27.56,10,0
@@ -786,20 +785,20 @@ step
 	#era/som
     .goto Felwood,25.19,1.29
     >>点击地上的 |cRXP_PICK_传声盒411号|r
-    .turnin 1001 >>交还传声盒411号
+    .turnin 1001 >>交任务 传声盒411号
     .accept 1002 >>接受任务 传声盒323号
 step
 #map Darkshore
     .goto Felwood,25.15,4.61
-    >>点击 |cRXP_PICK_Beached 大海 怪物|r
-    .accept 4723 >>接受任务搁浅的海洋生物
+    >>点击 |cRXP_PICK_搁浅的海洋生物|r
+    .accept 4723 >>接受任务 搁浅的海洋生物
 step << Druid
     #completewith cure1
-    >>做任务时收集5个 |T134187:0|t[Earthroot]
+    >>边做任务边收集5个|T134187:0|t[地根草]
     .collect 2449,5,6123,1
 step
     #completewith Ameth
-    >>击杀 |cRXP_ENEMY_Foreststriders|r 和 |cRXP_ENEMY_森林陆行鸟 Fledglings|r。从他们身上拾取 |cRXP_LOOT_Strider 肉|r
+    >>击杀 |cRXP_ENEMY_森林陆行鸟|r 和 |cRXP_ENEMY_森林陆行鸟雏鸟|r，拾取它们的 |cRXP_LOOT_陆行鸟肉|r
     .collect 5469,5,2178,1 -- Strider Meat
     .mob 森林陆行鸟雏鸟
     .mob 森林陆行鸟
@@ -842,7 +841,7 @@ step
     .goto Darkshore,47.36,36.86,40,0
     .goto Darkshore,44.80,36.91,40,0
     .goto Darkshore,46.30,39.01
-    >>击杀 |cRXP_ENEMY_Wild Grells|r 和 |cRXP_ENEMY_Vile Sprites|r，拾取它们的 |cRXP_LOOT_耳环|r
+    >>击杀 |cRXP_ENEMY_野生劣魔|r 和 |cRXP_ENEMY_恶灵劣魔|r。拾取他们的 |cRXP_LOOT_耳环|r
     .complete 955,1
     .mob 野生劣魔
     .mob 恶灵劣魔
@@ -871,15 +870,15 @@ step
 step << !NightElf
 #map Darkshore
     .goto Felwood,31.29,24.14
-    >>击杀 |cRXP_ENEMY_月夜枭兽|r。从他们身上拾取 |T132832:0|t[|cRXP_LOOT_小道具|r]
-    >>你之后将使用 |T133971:0|t[|cRXP_WARN_Small 道具|r] |cRXP_WARN_把|r |T132832:0|t[烹饪] |cRXP_LOOT_升到10级|r
+    >>击杀 |cRXP_ENEMY_枭兽|r，拾取它们的 |T132832:0|t[|cRXP_LOOT_小蛋|r]
+    >>稍后将使用 |T133971:0|t[|cRXP_WARN_小蛋|r] |cRXP_WARN_把|r |T132832:0|t[烹饪] |cRXP_LOOT_练到10级|r
     .collect 6889,10,2178,1,0x21,cooking -- Small Egg
-    >>前往 |cRXP_PICK_The 红色 水晶|r
+    >>前往|cRXP_PICK_红色水晶|r
     .complete 4811,1
 step << NightElf
 #map Darkshore
     .goto Felwood,31.29,24.14
-    >>前往 |cRXP_PICK_The 红色 水晶|r
+    >>前往|cRXP_PICK_红色水晶|r
     .complete 4811,1
 step
     .goto Darkshore,45.34,49.70,60,0
@@ -888,7 +887,7 @@ step
     .goto Darkshore,45.34,49.70,60,0
     .goto Darkshore,45.48,45.24,60,0
     .goto Darkshore,42.73,45.67
-    >>击杀 |cRXP_ENEMY_月夜枭兽|r。从他们身上拾取 |T132832:0|t[|cRXP_LOOT_小道具|r]
+    >>击杀 |cRXP_ENEMY_枭兽|r，拾取它们的 |T132832:0|t[|cRXP_LOOT_小蛋|r]
     .collect 6889,10,2178,1,0x20,cooking -- Small Egg
     .mob 小月夜枭兽
     .mob 狂暴的月夜枭兽
@@ -896,7 +895,7 @@ step
     .mob 月夜枭兽
 step
     #completewith next
-    .goto Darkshore,40.30,59.70,70 >>前往亚米萨兰靠近 |cRXP_FRIENDLY_哨兵坦莎·月刃|r
+    .goto Darkshore,40.30,59.70,70 >>向南前往亚米萨兰废墟，去找|cRXP_FRIENDLY_哨兵坦莎·月刃|r
 step
     #label Ameth
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵坦莎·月刃|r 对话
@@ -906,7 +905,7 @@ step
 step
     #completewith TheLay
     >>击杀 |cRXP_ENEMY_安娜雅·晨路|r，从她身上拾取 |cRXP_LOOT_吊坠|r
-    >>|cRXP_ENEMY_安娜雅·晨行者|r |cRXP_WARN_巡逻亚米萨兰|r
+    >>|cRXP_ENEMY_安娜雅·晨行者|r |cRXP_WARN_在亚米萨兰巡逻|r
     .complete 963,1
     .unitscan 安娜雅·晨行者
 step
@@ -965,7 +964,7 @@ step
     .goto Darkshore,42.92,62.50,50,0
     .goto Darkshore,43.30,58.70
     >>击杀 |cRXP_ENEMY_安娜雅·晨路|r，从她身上拾取 |cRXP_LOOT_吊坠|r
-    >>|cRXP_ENEMY_安娜雅·晨行者|r |cRXP_WARN_巡逻亚米萨兰。她的重生时间很长，如果现在还未出现，可以跳过此步骤|r
+    >>|cRXP_ENEMY_安娜雅·晨行者|r |cRXP_WARN_在亚米萨兰废墟巡逻。她的刷新时间很长，如果现在还未出现，可以直接跳过这步|r
     .complete 963,1
     .unitscan 安娜雅·晨行者
 step
@@ -982,7 +981,7 @@ step
     .unitscan Moonstalker;Moonstalker Runt
 step
     #completewith BearComplete
-    >>击杀 |cRXP_ENEMY_Foreststriders|r 和 |cRXP_ENEMY_森林陆行鸟 Fledglings|r。从他们身上拾取 |cRXP_LOOT_Strider 肉|r
+    >>击杀 |cRXP_ENEMY_森林陆行鸟|r 和 |cRXP_ENEMY_森林陆行鸟雏鸟|r，拾取它们的 |cRXP_LOOT_陆行鸟肉|r
     .collect 5469,5,2178,1 -- Strider Meat
     .mob 森林陆行鸟雏鸟
     .mob 森林陆行鸟
@@ -1015,8 +1014,8 @@ step
 #map Darkshore
     #label Beached4728
     .goto Felwood,18.41,49.43
-    >>点击 |cRXP_PICK_Beached 大海 怪物|r
-    .accept 4728 >>接受任务搁浅的海洋生物
+    >>点击 |cRXP_PICK_搁浅的海洋生物|r
+    .accept 4728 >>接受任务 搁浅的海洋生物
 step
     #label BearComplete
     .goto Darkshore,40.11,69.39,60,0
@@ -1035,7 +1034,7 @@ step
     .goto Darkshore,38.51,64.72,70,0
     .goto Darkshore,38.67,59.54,60,0
     .goto Darkshore,40.11,69.39
-    >>击杀 |cRXP_ENEMY_Foreststriders|r 和 |cRXP_ENEMY_Foreststrider Fledglings|r，拾取它们的 |cRXP_LOOT_Strider 肉|r
+    >>击杀 |cRXP_ENEMY_森林陆行鸟|r 和 |cRXP_ENEMY_森林陆行鸟雏鸟|r，拾取它们的 |cRXP_LOOT_陆行鸟肉|r
     .collect 5469,5,2178,1 -- Strider Meat
     .mob 森林陆行鸟雏鸟
     .mob 森林陆行鸟
@@ -1058,7 +1057,7 @@ step
     .goto Darkshore,36.71,44.98,5,0
     .goto Felwood,19.10,20.63
     .turnin 4723 >>交任务 搁浅的海洋生物
-    .turnin 4728 >>交任务搁浅的海洋生物
+    .turnin 4728 >>交任务 搁浅的海洋生物
     .turnin 4722 >>交任务 搁浅的海龟
     .turnin 4725 >>交任务 搁浅的海龟
 step
@@ -1083,7 +1082,7 @@ step << !NightElf !Mage !Paladin !Warlock
     .zone Darnassus >>进入通往达纳苏斯的紫色传送门
 step << !NightElf Hunter
     .goto Darnassus,40.377,8.545
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖卡斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_祖卡斯特|r 对话
     .trainer >>训练你的职业技能
     .target 祖卡斯特
 step << !NightElf Priest
@@ -1099,7 +1098,7 @@ step << !NightElf Warrior
 step << !NightElf Rogue
     .goto Darnassus,31.21,17.72,8,0
     .goto Darnassus,36.99,21.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞尤娜|r 在树屋内对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与树屋内的 |cRXP_FRIENDLY_塞尤娜|r 对话
     .trainer >>训练你的职业技能
     .target 塞尤娜
 step << !NightElf Hunter/!NightElf Warrior
@@ -1124,12 +1123,12 @@ step
     .goto Darkshore,37.512,41.674
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高尔博德·钢手|r 对话
     +购买 |T134059:0|t[甜香料]
-    >>|cRXP_WARN_使用|r |T134059:0|t[甜香料] |cRXP_WARN_和你的|r |T132832:0|t[小 道具] |cRXP_WARN_来制作 Herb Baked 道具。这样做直到你的烹饪达到10级|r
+    >>|cRXP_WARN_使用|r |T134059:0|t[甜香料] |cRXP_WARN_和|r |T132832:0|t[小蛋] |cRXP_WARN_来制作草药烘蛋。把烹饪练到10级|r
     .skill cooking,10,1 -- step only displays if cooking skill is less than 10
     .target 高尔博德·钢手
 step
     #completewith ezstrider
-    +|cRXP_WARN_使用你的|r |T133971:0|t[烹饪] |cRXP_WARN_专业制作草药烘焙蛋。直到你的|r |T133971:0|t[烹饪] |cRXP_WARN_达到等级 10|r
+    +|cRXP_WARN_用|r |T133971:0|t[烹饪] |cRXP_WARN_专业来做草药烘蛋。把|r |T133971:0|t[烹饪] |cRXP_WARN_练到10级|r
     .skill cooking,10,1 -- step only displays if cooking skill is less than 10
     .target 高尔博德·钢手
 step
@@ -1165,11 +1164,11 @@ step
 #sticky
 #label tube1
     .goto Darkshore,37.78,44.06
-    .use 14338 >>|cRXP_WARN_使用|r |T134865:0|t[空水瓶] |cRXP_WARN_在 羽月岗哨|r
+    .use 14338 >>|cRXP_WARN_使用|r |T134865:0|t[空水瓶] |cRXP_WARN_在奥伯丁的月亮井处使用|r
     .complete 4812,1
 step
     .goto Darkshore,37.78,44.06
-    .use 12346 >>|cRXP_WARN_使用|r |T133748:0|t[空的净化碗] |cRXP_WARN_在 羽月岗哨|r
+    .use 12346 >>|cRXP_WARN_在奥伯丁月亮井|r|cRXP_WARN_使用|r |T133748:0|t[空的净化碗]
     .collect 12347,1,4763,1
 step
 #requires tube1
@@ -1196,7 +1195,7 @@ step
 #map Darkshore
     .goto Darkshore,39.26,43.04,5,0
     .goto Felwood,21.86,18.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵艾莉萨·星风|r 在楼上对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_哨兵艾莉萨·星风|r 对话
     .accept 965 >>接受任务 奥萨拉克斯之塔
     .target 哨兵艾莉萨·星风
 step
@@ -1208,17 +1207,17 @@ step
 step
 #map Darkshore
     #completewith next
-    .goto Felwood,31.29,24.14,15 >>前往 红色水晶 再次
+    .goto Felwood,31.29,24.14,15 >>再次前往红色水晶
 step
 #map Darkshore
     .goto Felwood,31.29,24.14
-    >>点击 |cRXP_PICK_The 红色 水晶|r
+    >>点击|cRXP_PICK_红色水晶|r
     .turnin 4812 >>交任务 清洗水晶
     .accept 4813 >>接受任务 水晶中的碎骨
 step
 #map Darkshore
     #completewith next
-    .goto Felwood,27.70,10.03,70 >>前往 |cRXP_FRIENDLY_阿斯特利安|r 在 巴莎兰
+    .goto Felwood,27.70,10.03,70 >>前往巴莎兰的 |cRXP_FRIENDLY_阿斯特利安|r
 step
 #map Darkshore
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯特利安|r 对话
@@ -1227,16 +1226,16 @@ step
     .turnin 957 >>交任务 巴莎兰
 step << Paladin
     .goto Darkshore,50.74,34.68
-	>>杀死 |cRXP_ENEMY_Blackwood Warriors|r 和 |cRXP_ENEMY_Blackwood Totemics|r。拾取他们的 |T132889:0|t[亚麻布]
-    >>|cRXP_WARN_你需要保留 10|r |T132889:0|t[亚麻布] |cRXP_WARN_给你稍后的|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_职业任务|r
+	>>杀死 |cRXP_ENEMY_黑木战士|r 和 |cRXP_ENEMY_黑木图腾师|r。拾取他们的 |T132889:0|t[亚麻布]
+    >>|cRXP_WARN_你需要保留 10个|r |T132889:0|t[亚麻布] |cRXP_WARN_给后面的|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_职业任务用|r
 	.collect 2589,10,1,1644 --Linen Cloth (10)
     .mob Blackwood Warrior
     .mob Blackwood Totemic
 step
 .group
     .goto Darkshore,50.66,34.94
-    >>打开 |cRXP_PICK_Blackwood 谷物 Stores|r。拾取 |cRXP_LOOT_Blackwood 谷物 Sample|r
-    >>|cRXP_WARN_正在拾取 这个会生成 2 |cRXP_ENEMY_Blackwood Furbolgs|r，它们会仇恨并冲向你。做好准备或重置它们。|r
+    >>打开|cRXP_PICK_黑木谷物仓库|r，搜刮获得|cRXP_LOOT_黑木谷物|r
+    >>|cRXP_WARN_拾取该物品会刷新 2 个 |cRXP_ENEMY_黑木熊怪|r，它们会立刻仇恨并向你冲来。请做好战斗准备，或想办法重置它们|r
     .collect 12342,1,4763,1 -- Blackwood Grain Stores (1)
 step
 .group
@@ -1250,15 +1249,15 @@ step
 step
 .group
     .goto Darkshore,51.83,33.50
-    >>打开 |cRXP_PICK_Blackwood Nut Stores|r。拾取 |cRXP_LOOT_Blackwood Nut Sample|r
-    >>|cRXP_WARN_正在拾取 这个会生成 2 |cRXP_ENEMY_Blackwood Furbolgs|r，它们会仇恨并冲向你。做好准备或重置它们。|r
+    >>打开|cRXP_PICK_黑木坚果储藏处|r，拾取|cRXP_LOOT_黑木坚果|r
+    >>|cRXP_WARN_拾取该物品会刷新 2 个 |cRXP_ENEMY_黑木熊怪|r，它们会立刻仇恨并向你冲来。请做好战斗准备，或想办法重置它们|r
     .collect 12343,1,4763,1 -- Blackwood Nut Sample (1)
 step
 .group
     #label Fruit
     .goto Darkshore,52.86,33.41
-    >>打开 |cRXP_PICK_Blackwood Fruit Stores|r。拾取 |cRXP_LOOT_Blackwood Fruit Sample|r
-    >>|cRXP_WARN_拾取这个会生成 2 个 |cRXP_ENEMY_Blackwood Furbolgs|r，它们会攻击并冲向你。准备好战斗或重置它们|r
+    >>打开|cRXP_PICK_黑木水果仓库|r，从中拾取|cRXP_LOOT_黑木水果样本|r
+    >>|cRXP_WARN_拾取该物品会刷新 2 个 |cRXP_ENEMY_黑木熊怪|r，它们会立刻仇恨并向你冲来。请做好战斗准备，或想办法重置它们|r
     .collect 12341,1,4763,1 -- Blackwood Fruit Sample (1)
 step
 .group
@@ -1288,15 +1287,15 @@ step << Druid
 step
 .group
     .goto Darkshore,55.66,34.89
-    >>在地上拾取 |cRXP_LOOT_Scaber Stalks|r 和 |cRXP_LOOT_Death Cap|r
-    >>|cRXP_WARN_停留在上层。如果 |cRXP_LOOT_Death Cap|r 不在顶部末端，下去从下面拿一个|r
-    >>|cRXP_WARN_不要背对中心！|cRXP_ENEMY_Stormscale Wave Rider's|r 可以击退你！|r
+    >>拾取地上的 |cRXP_LOOT_粗柄蘑菇|r 和 |cRXP_LOOT_毒帽蘑菇|r
+    >>|cRXP_WARN_待在上层区域。如果上侧尽头没有 |cRXP_LOOT_毒帽蘑菇|r，就跳下去到下方南侧的房间获取一个|r
+    >>|cRXP_WARN_不要背对中间！|cRXP_ENEMY_雷鳞御浪者|r 可以击退你！|r
     .complete 947,1 --Scaber Stalk (5)
     .complete 947,2 --Death Cap (1)
 step
 .group
     .isQuestComplete 947
-    .goto Darkshore,54.81,32.92,30 >>退出壁泉河洞穴
+    .goto Darkshore,54.81,32.92,30 >>离开壁泉河洞穴
 step
     #completewith next
     >>击杀 |cRXP_ENEMY_月夜猛虎|r 和 |cRXP_ENEMY_月夜猛虎幼崽|r。拾取他们的 |cRXP_LOOT_牙齿|r
@@ -1315,7 +1314,7 @@ step << !Paladin
     .goto Darkshore,57.54,25.99,40,0
     .goto Darkshore,56.92,27.27,40,0
     .goto Darkshore,55.27,27.74
-    >>杀死 |cRXP_ENEMY_Dark Strand Fanatics|r。拾取它们的|cRXP_LOOT_Parchments|r
+    >>击杀 |cRXP_ENEMY_暗滩狂热者|r，拾取他们的 |cRXP_LOOT_羊皮纸|r
     .complete 966,1 --Worn Parchment (4)
     .mob 暗滩狂热者
 step << Paladin
@@ -1324,8 +1323,8 @@ step << Paladin
     .goto Darkshore,57.54,25.99,40,0
     .goto Darkshore,56.92,27.27,40,0
     .goto Darkshore,55.27,27.74
-    >>杀死 |cRXP_ENEMY_Dark Strand Fanatics|r。拾取它们的|cRXP_LOOT_Parchments|r和|T132889:0|t[亚麻布]
-    >>|cRXP_WARN_You need to save 10|r |T132889:0|t[亚麻布] |cRXP_WARN_for 你的|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_class quest later|r
+    >>击杀 |cRXP_ENEMY_暗滩狂热者|r，拾取他们的 |cRXP_LOOT_羊皮纸|r 和|T132889:0|t[亚麻布]
+    >>|cRXP_WARN_你需要保留 10个|r |T132889:0|t[亚麻布] |cRXP_WARN_给后面的|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_职业任务用|r
     .complete 966,1 --Worn Parchment (4)
     .collect 2589,10,1,1644 --Linen Cloth (10)
     .mob 暗滩狂热者
@@ -1340,7 +1339,7 @@ step
 .group 3
 #map Darkshore
     #completewith next
-    .goto Winterspring,6.37,16.66,50 >>旅行至薄雾海
+    .goto Winterspring,6.37,16.66,50 >>前往薄雾海
 step
 .group 3
 #map Darkshore
@@ -1361,8 +1360,8 @@ step
 .group 3
     .goto Darkshore,54.93,12.19
     >>击杀 |cRXP_ENEMY_灰雾智者|r 和 |cRXP_ENEMY_灰雾潮行者|r，拾取他们的 |cRXP_LOOT_基尔卡克钥匙的中部|r
-    >>|cRXP_WARN_警惕|cRXP_ENEMY_Greymist Oracles|r |T136048:0|t[闪电箭] 伤害，它们也可以用|T136052:0|t[治疗波]治疗|r
-    >>小心|cRXP_ENEMY_Greymist Tidehunters|r可以施放|T136016:0|t[|cRXP_FRIENDLY_Poison|r]在近战中造成持续伤害每3秒13伤害持续30秒
+    >>注意 灰雾智者 的|cRXP_WARN_ |T136048:0|t[闪电箭] |cRXP_ENEMY_伤害，他们还会使用|r |T136052:0|t[治疗波]|r
+    >>小心|cRXP_ENEMY_灰雾潮行者|r 会施放 |T136016:0|t[|cRXP_FRIENDLY_毒药|r]，在近战攻击时会留下一个持续伤害，每3秒造成13伤害，持续30秒
     .complete 2098,2 -- Middle of Gelkak's Key (1)
     .mob 灰雾智者
     .mob 灰雾潮行者
@@ -1393,9 +1392,9 @@ step
 .group
     .goto Darkshore,61.40,9.40,45,0
     .goto Darkshore,62.42,7.67
-    >>杀死 |cRXP_ENEMY_月光追猎者|r Sires 和 |cRXP_ENEMY_月光追猎者|r Matriarchs。拾取它们的|cRXP_LOOT_Pelts|r和|cRXP_LOOT_毒牙|r
+    >>击杀 |cRXP_ENEMY_月夜雄虎|r 和 |cRXP_ENEMY_月夜雌虎|r，拾取它们的 |cRXP_LOOT_毛皮|r 和 |cRXP_LOOT_牙齿|r
     >>|cRXP_WARN_注意 |cRXP_ENEMY_月夜雌虎|r。它们身边总会带着一只 |cRXP_ENEMY_月夜猛虎幼崽|r 一起攻击|r
-    >>如果你背对它们，|cRXP_ENEMY_Moonstalker Sires|r 可以施放 |T132090:0|t[Exploit Weakness] 背刺攻击，造成 20-40 点伤害
+    >>如果你背对它们，月夜雄虎会施放 |T132090:0|t[|cRXP_ENEMY_攻击弱点|r]，这是一种背刺攻击，会造成20-40点伤害的
     .complete 986,1 -- Fine Moonstalker Pelt (5)
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob 月夜雄虎
@@ -1448,8 +1447,8 @@ step << Druid
     .collect 15883,1,272,1 --Collect Half Pendant of Aquatic Agility (x1)
 step
     #completewith next
-    >>杀死 |cRXP_ENEMY_Encrusted Tide Crawlers|r 和 |cRXP_ENEMY_Reef Crawlers|r。拾取它们的 |cRXP_LOOT_Crab Chunks|r
-    >>|cRXP_WARN_如果|cRXP_ENEMY_Encrusted Tide Crawlers|r太强，只专注于|r |cRXP_ENEMY_Reef Crawlers|r
+    >>击杀 |cRXP_ENEMY_硬壳潮行蟹|r 和 |cRXP_ENEMY_暗礁蟹|r。拾取他们的 |cRXP_LOOT_蟹肉|r
+    >>|cRXP_WARN_如果|cRXP_ENEMY_硬壳潮行蟹|r太难打，就专杀|r |cRXP_ENEMY_暗礁蟹|r
     >>小心|cRXP_ENEMY_暗礁蟹|r 会施放 |T132155:0|t[撕裂肌肉] 这是一个顺发攻击，会造成30-55伤害
     .complete 1138,1 -- Fine Crab Chunks (6)
     .mob 硬壳潮行蟹
@@ -1457,22 +1456,22 @@ step
 step
 #map Darkshore
     .goto Winterspring,1.42,26.89
-    >>点击地上的|cRXP_PICK_传声盒323号|r
-    .turnin 1002 >>交还传声盒323号
-    .accept 1003 >>接受任务传声盒525号
+    >>点击地上的 |cRXP_PICK_传声盒323号|r
+    .turnin 1002 >>交任务 传声盒323号
+    .accept 1003 >>接受任务 传声盒525号
 step
     .goto Darkshore,51.50,22.26,50,0
     .goto Darkshore,49.66,21.39
-    >>杀死 |cRXP_ENEMY_Encrusted Tide Crawlers|r 和 |cRXP_ENEMY_Reef Crawlers|r。拾取它们的|cRXP_LOOT_Crab Chunks|r
-    >>|cRXP_WARN_如果 |cRXP_ENEMY_Encrusted Tide Crawlers|r 太强，只专注|r |cRXP_ENEMY_Reef Crawlers|r
+    >>击杀 |cRXP_ENEMY_硬壳潮行蟹|r 和 |cRXP_ENEMY_暗礁蟹|r。拾取他们的 |cRXP_LOOT_蟹肉|r
+    >>|cRXP_WARN_如果|cRXP_ENEMY_硬壳潮行蟹|r太难打，就专杀|r |cRXP_ENEMY_暗礁蟹|r
     >>小心|cRXP_ENEMY_暗礁蟹|r 会施放 |T132155:0|t[撕裂肌肉] 这是一个顺发攻击，会造成30-55伤害
     .complete 1138,1 -- Fine Crab Chunks (6)
     .mob 硬壳潮行蟹
     .mob 暗礁蟹
 step
     .goto Darkshore,50.74,34.68
-	.xp 18-2750 >>刷怪直到你距离18级只差2750经验
-    >>杀死 |cRXP_ENEMY_Blackwood Warriors|r 和 |cRXP_ENEMY_Blackwood Totemics|r。
+	.xp 18-2750 >>刷怪刷到距离18级还差2750经验
+    >>击杀 |cRXP_ENEMY_黑木战士|r 和 |cRXP_ENEMY_黑木图腾师|r。
     .mob Blackwood Warrior
     .mob Blackwood Totemic
 step
@@ -1545,7 +1544,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥兰达利亚·夜歌|r 对话
     .turnin 6122 >>交任务 毒水之源
     .target 奥兰达利亚·夜歌
-    .accept 6123 >>接受任务收集解药
+    .accept 6123 >>接受任务 收集解药
 step << Druid
 #label cure1
     .goto Darkshore,43.4,45.9,90,0
@@ -1557,10 +1556,10 @@ step << Druid
     .goto Darkshore,43.3,49.1,0
     .goto Darkshore,42.4,52.6,0
     .goto Darkshore,45.7,50.3,0
-    >>杀死 |cRXP_ENEMY_月夜枭兽|r。拾取它们的 |T132832:0|t[|cRXP_LOOT_Small 道具|r]
-    >>你稍后需要烹饪等级50来做任务
+    >>击杀 |cRXP_ENEMY_枭兽|r，拾取它们的 |T132832:0|t[|cRXP_LOOT_小蛋|r]
+    >>后续任务需要50级烹饪
     .collect 6889,40,90,1,0x21,cooking
-    >>在洞穴地上拾取|cRXP_LOOT_Lunar Fungi|r
+    >>在洞穴地上拾取|cRXP_LOOT_月亮菇|r
     .complete 6123,2
 step
     .goto Darkshore,45.34,49.70,60,0
@@ -1569,27 +1568,27 @@ step
     .goto Darkshore,45.34,49.70,60,0
     .goto Darkshore,45.48,45.24,60,0
     .goto Darkshore,42.73,45.67
-    >>杀死 |cRXP_ENEMY_月夜枭兽|r。拾取它们的 |T132832:0|t[|cRXP_LOOT_Small 道具|r]
-    >>你稍后会需要50点烹饪技能用于一个任务
+    >>击杀 |cRXP_ENEMY_枭兽|r，拾取它们的 |T132832:0|t[|cRXP_LOOT_小蛋|r]
+    >>后续任务需要50级烹饪
     .collect 6889,40,90,1,0x20,cooking
     .mob 小月夜枭兽
     .mob 狂暴的月夜枭兽
     .mob 月夜枭兽圣者
     .mob 月夜枭兽
 step << Druid
-    >>收集5个|T134187:0|t[Earthroot]
-    >>你可以沿着东边的山收集它们
+    >>收集完5根|T134187:0|t[地根草]
+    >>你可以在东边的山脚一带采集它们
     .collect 2449,5,6123,1
 step << Druid
     #requires earthroot
     .goto Darkshore,37.7,40.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥兰达利亚·夜歌|r 对话
-    .turnin 6123 >>交还收集解药
-    .accept 6124 >>接受任务消除疾病
+    .turnin 6123 >>交任务 收集解药
+    .accept 6124 >>接受任务 消除疾病
     .target 奥兰达利亚·夜歌
 step << Druid
     .goto Darkshore,41.0,79.6
-    >>|cRXP_WARN_向南走的同时使用|r |T132801:0|t[Curative Animal Salve] |cRXP_WARN_在|r Sickly 鹿|cRXP_ENEMY_身上|r
+    >>|cRXP_WARN_一边南行一边对|r |cRXP_WARN_生病的鹿|r |cRXP_ENEMY_使用|r |T132801:0|t[动物医疗药膏]
     .complete 6124,1 -- Sickly Deer cured (10)
     .unitscan Sickly Deer
 step << Druid
@@ -1601,7 +1600,7 @@ step << Druid
     >>前往月光林地
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
     .turnin 6124 >>消除疾病
-    .accept 6125 >>接受任务解毒之术
+    .accept 6125 >>接受任务 解毒之术
     .target 德迪利特·星焰
 step << Druid
     .goto Moonglade,52.53,40.57
@@ -1652,7 +1651,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Alliance
-#name 20-21 黑海岸/灰谷
+#name 20-21级 黑海岸/灰谷
 #version 1
 #group RestedXP 生存指南 (联盟版)
 #subgroup RXP 生存指南 1-20级
@@ -1696,7 +1695,7 @@ step
     .accept 4763 >>接受任务 黑木熊怪的堕落
 step
     .goto Darkshore,37.78,44.06
-    .use 12346 >>|cRXP_WARN_使用|r |T133748:0|t[空的净化碗] |cRXP_WARN_在羽月岗哨|r
+    .use 12346 >>|cRXP_WARN_在奥伯丁月亮井|r|cRXP_WARN_使用|r |T133748:0|t[空的净化碗]
     .collect 12347,1,4763,1
 step
     .goto Darkshore,38.326,43.040
@@ -1711,8 +1710,8 @@ step
     .accept 2139 >>接受任务 萨纳瑞恩的希望
 step
     .goto Darkshore,50.66,34.94
-    >>打开 |cRXP_PICK_Blackwood 谷物 Stores|r。拾取其中的 |cRXP_LOOT_黑木谷物|r
-    >>|cRXP_WARN_拾取这个会刷新2个 |cRXP_ENEMY_Blackwood Furbolgs|r 并将它们吸引过来。做好战斗或重置它们的准备|r
+    >>打开|cRXP_PICK_黑木谷物仓库|r，搜刮获得|cRXP_LOOT_黑木谷物|r
+    >>|cRXP_WARN_拾取该物品会刷新 2 个 |cRXP_ENEMY_黑木熊怪|r，它们会立刻仇恨并向你冲来。请做好战斗准备，或想办法重置它们|r
     .collect 12342,1,4763,1 -- Blackwood Grain Stores (1)
 step
     .goto Darkshore,52.60,36.65,45,0
@@ -1724,14 +1723,14 @@ step
     .mob Thistle Cub
 step
     .goto Darkshore,51.83,33.50
-    >>打开 |cRXP_PICK_Blackwood Nut Stores|r。拾取其中的 |cRXP_LOOT_黑木坚果|r
-    >>|cRXP_WARN_拾取此物会生成2个 |cRXP_ENEMY_Blackwood Furbolgs|r，它们会进入战斗状态并向你跑来。准备好战斗或重置它们|r
+    >>打开|cRXP_PICK_黑木坚果储藏处|r，拾取|cRXP_LOOT_黑木坚果|r
+    >>|cRXP_WARN_拾取该物品会刷新 2 个 |cRXP_ENEMY_黑木熊怪|r，它们会立刻仇恨并向你冲来。请做好战斗准备，或想办法重置它们|r
     .collect 12343,1,4763,1 -- Blackwood Nut Sample (1)
 step
     #label Fruit
     .goto Darkshore,52.86,33.41
-    >>打开 |cRXP_PICK_Blackwood Fruit Stores|r。拾取其中的 |cRXP_LOOT_黑木水果|r
-    >>|cRXP_WARN_拾取此物会生成2个 |cRXP_ENEMY_Blackwood Furbolgs|r，它们会进入战斗状态并向你跑来。准备好战斗或重置它们|r
+    >>打开|cRXP_PICK_黑木水果仓库|r，从中拾取|cRXP_LOOT_黑木水果样本|r
+    >>|cRXP_WARN_拾取该物品会刷新 2 个 |cRXP_ENEMY_黑木熊怪|r，它们会立刻仇恨并向你冲来。请做好战斗准备，或想办法重置它们|r
     .collect 12341,1,4763,1 -- Blackwood Fruit Sample (1)
 step
     #completewith next
@@ -1747,9 +1746,9 @@ step
     .mob 萨巴克希斯
 step
     .goto Darkshore,55.66,34.89
-    >>拾取地上的 |cRXP_LOOT_Scaber Stalks|r 和 |cRXP_LOOT_Death Cap|r
-    >>|cRXP_WARN_停留在上层区域。如果 |cRXP_LOOT_Death Cap|r 不在顶层末端，就下去从下面拿一个|r
-    >>|cRXP_WARN_不要背对中心！ |cRXP_ENEMY_Stormscale Wave Rider's|r 可以将你击退！|r
+    >>拾取地上的 |cRXP_LOOT_粗柄蘑菇|r 和 |cRXP_LOOT_毒帽蘑菇|r
+    >>|cRXP_WARN_待在上层区域。如果上侧尽头没有 |cRXP_LOOT_毒帽蘑菇|r，就跳下去到下方南侧的房间获取一个|r
+    >>|cRXP_WARN_不要背对中间！|cRXP_ENEMY_雷鳞御浪者|r 可以击退你！|r
     .complete 947,1 --Scaber Stalk (5)
     .complete 947,2 --Death Cap (1)
 --TODO: Add logout skip video
@@ -1779,9 +1778,9 @@ step
     .accept 986 >>接受任务 丢失的主人
 step
     #completewith moonstalkers
-    >>杀死 |cRXP_ENEMY_Moonstalker Sires|r 和 |cRXP_ENEMY_Moonstalker Matriarchs|r。拾取它们的 |cRXP_LOOT_Pelts|r 和 |cRXP_LOOT_毒牙|r
+    >>击杀 |cRXP_ENEMY_月夜雄虎|r 和 |cRXP_ENEMY_月夜雌虎|r，拾取它们的 |cRXP_LOOT_毛皮|r 和 |cRXP_LOOT_牙齿|r
     >>|cRXP_WARN_注意 |cRXP_ENEMY_月夜雌虎|r。它们身边总会带着一只 |cRXP_ENEMY_月夜猛虎幼崽|r 一起攻击|r
-    >>|cRXP_ENEMY_Moonstalker Sires|r 可以施放 |T132090:0|t[Exploit Weakness]，若你背对它们，此技能将造成20-40点背刺伤害
+    >>如果你背对它们，月夜雄虎会施放 |T132090:0|t[|cRXP_ENEMY_攻击弱点|r]，这是一种背刺攻击，会造成20-40点伤害的
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .mob 月夜雄虎
     .mob 月夜雌虎
@@ -1791,7 +1790,7 @@ step
     #completewith Murkdeep
     #optional
     .goto Darkshore,40.23,81.28,0
-    >>杀死 |cRXP_ENEMY_Grizzled Thistle 熊|r。拾取它们的 |cRXP_LOOT_Scalps|r
+    >>击杀 |cRXP_ENEMY_灰斑蓟熊|r。拾取它们的 |cRXP_LOOT_头皮|r
     >>小心，它们会施放 |T132152:0|t[毁灭]。这是一种可以造成20-40伤害的顺发攻击，|cRXP_WARN_会将你击倒2秒|r
     .complete 1003,1
     .isOnQuest 1003
@@ -1817,8 +1816,8 @@ step
 #label moonstalkers
     .goto Darkshore,38.54,86.05
     >>发现主宰之剑
-    >>|cRXP_ENEMY_暮光 Thugs|r |cRXP_WARN_可以|r |T132343:0|t[缴械] |cRXP_WARN_你持续6 秒|r << Rogue/Paladin/Warrior
-    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_施放|r |T135953:0|t[打斗者短裤] |cRXP_WARN_以及3秒|r |T135915:0|t[Heal]
+    >>|cRXP_ENEMY_暮光暴徒|r |cRXP_WARN_可以|r |T132343:0|t[缴械] |cRXP_WARN_你持续6 秒|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_暮光信徒|r |cRXP_WARN_会施放|r |T135953:0|t[恢复] |cRXP_WARN_和3秒的|r |T135915:0|t[治疗术]
     .complete 944,1
 step
     #completewith next
@@ -1826,31 +1825,31 @@ step
     .use 5251
 step
     .goto Darkshore,38.54,86.05
-    .use 5251 >>点击 |cRXP_PICK_占卜碗|r
+    .use 5251 >>点击 |cRXP_PICK_占卜之碗|r
     .turnin 944 >>交任务 主宰之剑
     .accept 949 >>接受任务 暮光之锤的营地
-    >>|cRXP_ENEMY_暮光 Thugs|r |cRXP_WARN_可以|r |T132343:0|t[缴械] |cRXP_WARN_你持续6 秒|r << Rogue/Paladin/Warrior
-    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_施放|r |T135953:0|t[打斗者短裤] |cRXP_WARN_和一个3秒的|r |T135915:0|t[Heal]
+    >>|cRXP_ENEMY_暮光暴徒|r |cRXP_WARN_可以|r |T132343:0|t[缴械] |cRXP_WARN_你持续6 秒|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_暮光信徒|r |cRXP_WARN_会施放|r |T135953:0|t[恢复] |cRXP_WARN_和3秒的|r |T135915:0|t[治疗术]
 step
     .goto Ashenvale,22.24,2.52
-    >>点击 |cRXP_PICK_暮光道具|r
+    >>点击|cRXP_PICK_暮光典籍|r
     .turnin 949 >>交任务 暮光之锤的营地
-    .accept 950 >>接受 向安努回复
-    >>|cRXP_ENEMY_暮光 Thugs|r |cRXP_WARN_可以|r |T132343:0|t[缴械] |cRXP_WARN_你持续6 秒|r << Rogue/Paladin/Warrior
-    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_施放|r |T135953:0|t[打斗者短裤] |cRXP_WARN_以及3秒|r |T135915:0|t[Heal]
+    .accept 950 >>接受任务 向安努回复
+    >>|cRXP_ENEMY_暮光暴徒|r |cRXP_WARN_可以|r |T132343:0|t[缴械] |cRXP_WARN_你持续6 秒|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_暮光信徒|r |cRXP_WARN_会施放|r |T135953:0|t[恢复] |cRXP_WARN_和3秒的|r |T135915:0|t[治疗术]
 step
     .goto Ashenvale,22.36,3.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瑟瑞露尼|r 对话，这将开始一次护送任务
     >>|cRXP_WARN_如果他不在，就跳过这一步|r
-    >>|cRXP_ENEMY_Twilight Thugs|r |cRXP_WARN_可以|r |T132343:0|t[缴械] |cRXP_WARN_你6秒|r << Rogue/Paladin/Warrior
-    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_施放|r |T135953:0|t[打斗者短裤] |cRXP_WARN_以及3秒|r |T135915:0|t[Heal]
+    >>|cRXP_ENEMY_暮光暴徒|r |cRXP_WARN_可以|r |T132343:0|t[缴械] |cRXP_WARN_你持续6 秒|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_暮光信徒|r |cRXP_WARN_会施放|r |T135953:0|t[恢复] |cRXP_WARN_和3秒的|r |T135915:0|t[治疗术]
     .accept 945 >>接受任务 护送瑟瑞露尼
     .target 瑟瑞露尼
 step
     .goto Darkshore,40.51,87.09
     >>|cRXP_WARN_护送 |cRXP_FRIENDLY_瑟瑞露尼|r 离开主宰之剑|r
-    >>|cRXP_ENEMY_暮光 Thugs|r |cRXP_WARN_可以|r |T132343:0|t[缴械] |cRXP_WARN_你持续6 秒|r << Rogue/Paladin/Warrior
-    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_施放|r |T135953:0|t[打斗者短裤] |cRXP_WARN_以及3秒|r |T135915:0|t[Heal]
+    >>|cRXP_ENEMY_暮光暴徒|r |cRXP_WARN_可以|r |T132343:0|t[缴械] |cRXP_WARN_你持续6 秒|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_暮光信徒|r |cRXP_WARN_会施放|r |T135953:0|t[恢复] |cRXP_WARN_和3秒的|r |T135915:0|t[治疗术]
     .complete 945,1 -- Escort Therylune
     .isOnQuest 945
 step
@@ -1862,9 +1861,9 @@ step
     .goto Darkshore,43.82,82.08,100,0
     .goto Darkshore,38.96,80.07,0
 	.goto Darkshore,39.3,91.8
-    >>杀死 |cRXP_ENEMY_Moonstalker Sires|r 和 |cRXP_ENEMY_Moonstalker Matriarchs|r。拾取它们的 |cRXP_LOOT_Pelts|r 和 |cRXP_LOOT_毒牙|r
+    >>击杀 |cRXP_ENEMY_月夜雄虎|r 和 |cRXP_ENEMY_月夜雌虎|r，拾取它们的 |cRXP_LOOT_毛皮|r 和 |cRXP_LOOT_牙齿|r
     >>|cRXP_WARN_注意 |cRXP_ENEMY_月夜雌虎|r。它们身边总会带着一只 |cRXP_ENEMY_月夜猛虎幼崽|r 一起攻击|r
-    >>|cRXP_ENEMY_Moonstalker Sires|r 可以施放 |T132090:0|t[Exploit Weakness]，若你背对它们，此技能将造成20-40点背刺伤害
+    >>如果你背对它们，月夜雄虎会施放 |T132090:0|t[|cRXP_ENEMY_攻击弱点|r]，这是一种背刺攻击，会造成20-40点伤害的
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .mob 月夜雄虎
     .mob 月夜雌虎
@@ -1882,8 +1881,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勘察员雷塔维|r 对话
     >>这将开始一个护送
     .accept 731,1 >>接受任务 健忘的勘察员
-    >>|cRXP_WARN_这个任务非常困难。如果你无法找到小队或不能单独完成，请跳过此步|r
-    .link https://youtu.be/3d-htESNztE >>https://youtu.be/3d-htESNztE >> |cRXP_WARN_点击此处查看视频指南|r
+    >>|cRXP_WARN_这个任务非常困难。如果你无法找到队伍或单独完成，请跳过此步骤|r
+    .link https://youtu.be/3d-htESNztE >>https://youtu.be/3d-htESNztE >> |cRXP_WARN_点击此处观看视频指南|r
     .target 勘察员雷塔维
 step
     #requires prospector
@@ -1894,9 +1893,9 @@ step
     .isOnQuest 731
 step
     .goto Ashenvale,13.97,4.10
-    >>点击 |cRXP_PICK_Beached 大海 怪物|r
-    .accept 4733 >>接受任务搁浅的海洋生物
-    >>|cRXP_WARN_这个任务可能非常困难。逐个与 |cRXP_ENEMY_Murlocs|r 交战，否则你可能会同时激怒多个|r
+    >>点击 |cRXP_PICK_搁浅的海洋生物|r
+    .accept 4733 >>接受任务 搁浅的海洋生物
+    >>|cRXP_WARN_这个任务可能会非常困难。请与 |cRXP_ENEMY_鱼人|r 逐个交战，否则你可能会同时引到多个|r
     .link https://youtu.be/lfQM3Q-Ag5A >>https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_点击此处查看视频指南|r
 step
     .goto Ashenvale,13.93,2.01
@@ -1910,14 +1909,14 @@ step
 step
 #map Darkshore
     .goto Felwood,14.62,60.72
-    >>点击 |cRXP_PICK_Beached 大海 怪物|r
-    .accept 4730 >>接受 搁浅的海洋生物
+    >>点击 |cRXP_PICK_搁浅的海洋生物|r
+    .accept 4730 >>接受任务 搁浅的海洋生物
 step
     #label Murkdeep
     .goto Darkshore,36.64,76.53
-    >>杀死营地的 |cRXP_ENEMY_Greymist Warriors|r 和 |cRXP_ENEMY_Greymist Hunters|r
-    >>|cRXP_WARN_移动到营地中心的大篝火来召唤|r |cRXP_ENEMY_莫克迪普|r
-    >>杀死 |cRXP_ENEMY_莫克迪普|r。它会从水中跑过来
+    >>击杀营地内的 |cRXP_ENEMY_灰雾战士|r 和 |cRXP_ENEMY_灰雾猎人|r
+    >>|cRXP_WARN_移动到营地中央的篝火处以召唤|r |cRXP_ENEMY_莫克迪普|r
+    >>击杀 |cRXP_ENEMY_莫克迪普|r。它会从水中跑过来
     .complete 4740,1
     .unitscan 莫克迪普
     .mob 灰雾战士
@@ -1932,7 +1931,7 @@ step
     .goto Darkshore,39.74,80.43,50,0
     .goto Darkshore,38.00,83.55
     #optional
-    >>击杀 |cRXP_ENEMY_Grizzled Thistle 熊|r。拾取它们的 |cRXP_LOOT_Scalps|r
+    >>击杀 |cRXP_ENEMY_灰斑蓟熊|r。拾取它们的 |cRXP_LOOT_头皮|r
     >>小心，它们会施放 |T132152:0|t[毁灭]。这是一种可以造成20-40伤害的顺发攻击，|cRXP_WARN_会将你击倒2秒|r
     .complete 1003,1 -- Grizzled Scalp (4)
     .isOnQuest 1003
@@ -1941,25 +1940,25 @@ step
     #era/som
     .goto Darkshore,41.389,80.565
     >>点击地上的 |cRXP_PICK_传声盒525号|r
-    .turnin 1003 >>交还 传声盒525号
+    .turnin 1003 >>交任务 传声盒525号
     .isOnQuest 1003
 step
 .group
     #completewith next
-    .goto Darkshore,45.00,85.30,30 >>旅行到洞穴中的 |cRXP_FRIENDLY_沃科尔|r
+    .goto Darkshore,45.00,85.30,30 >>前往洞穴中的|cRXP_FRIENDLY_沃科尔|r
 step
 .group
     .goto Darkshore,45.00,85.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃科尔|r 对话
     .turnin 993 >>交任务 丢失的主人
-    .accept 995 >>接受 偷偷溜走
-    .timer 20,偷偷溜走 RP
+    .accept 995 >>接受任务 偷偷溜走
+    .timer 20,偷偷溜走 剧情演出
     .target 沃科尔
     .isQuestTurnedIn 986
 step
 .group
     .goto Darkshore,44.44,84.69
-    >>等剧情结束
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 995,1
     .isQuestTurnedIn 986
 step
@@ -1967,25 +1966,25 @@ step
     .goto Felwood,27.00,55.59
     .target 安努
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安努|r 对话
-    .turnin 951 >>交还 玛塞斯特拉遗物
+    .turnin 951 >>交任务 玛塞斯特拉遗物
     .isQuestComplete 951
 step
 #map Darkshore
     .goto Felwood,27.00,55.59
     .target 安努
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安努|r 对话
-    .turnin 950 >>交还 向安努回复
+    .turnin 950 >>交任务 向安努回复
 step
 #map Darkshore
     .goto Felwood,27.96,55.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗尼亚·恒影|r 对话来启动护送
-    >>|cRXP_WARN_如果他不在那里，跳过这一步。他最多需要25分钟时间重生|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗尼亚·恒影|r 对话来开启护送任务
+    >>|cRXP_WARN_如果他不在那里就跳过这一步。他最多需要25分钟才会重新刷新|r
 	.target Kerlonian Evershade
-    .accept 5321 >>接受任务苏醒者已醒
+    .accept 5321 >>接受任务 苏醒者已醒
 step
     .isOnQuest 5321
     .goto Darkshore,44.38,76.30
-    >>打开 |cRXP_PICK_Kerlonian's 胸部|r。拾取它以获得 |T134229:0|t[|cRXP_LOOT_唤醒号角|r]
+    >>打开 |cRXP_PICK_克罗尼亚的箱子|r。拾取 |T134229:0|t[|cRXP_LOOT_唤醒号角|r]
     .complete 5321,1 -- Horn of Awakening (1)
 step
     #completewith tower
@@ -1994,15 +1993,15 @@ step
 step
     .goto Ashenvale,27.26,35.58
     >>|cRXP_WARN_护送 |cRXP_FRIENDLY_克罗尼亚|r 前往灰谷的梅伊瑟娜岗哨|r
-    .use 13536 >>|cRXP_WARN_当 |cRXP_FRIENDLY_克罗尼亚|r 在他身边睡着时，使用|r |T134229:0|t[|cRXP_LOOT_唤醒号角|r]
+    .use 13536 >>|cRXP_WARN_每当|r|cRXP_LOOT_克罗尼亚|r|cRXP_WARN_在他身边睡着时，就吹|cRXP_FRIENDLY_ |T134229:0|t[|r唤醒号角|r]
     >>|cRXP_WARN_尽可能避免在主干道上奔跑。只有当你在路上时敌人才会刷新|r
     .complete 5321,2
     .isOnQuest 5321
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Liadris Moonriver|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利拉迪斯·月河|r 对话
 	.target Liladris Moonriver
     .goto Ashenvale,27.26,35.58
-    .turnin 5321 >>交任务苏醒者已醒
+    .turnin 5321 >>交任务 苏醒者已醒
     .isQuestComplete 5321
 step
     #label tower
@@ -2094,7 +2093,7 @@ step
     .goto Ashenvale,34.67,48.83
     .accept 1008 >>接受任务 佐拉姆海岸
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵塞恩希尔|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_哨兵塞恩希尔|r对话
 	.target Sentinel Thenysil
     .goto Ashenvale,34.89,49.79
     .accept 1070 >>接受任务 守卫石爪山
@@ -2102,7 +2101,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_法德瑞斯·戈森沙尔|r 对话
 	.target Faldreas Goeth'Shael
     .goto Ashenvale,35.76,49.10
-    .accept 1056 >>接受任务石爪峰之旅
+    .accept 1056 >>接受任务 石爪峰之旅
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莱恩·狼行者|r 对话
 	.target 莱恩·狼行者
@@ -2122,7 +2121,7 @@ step
 .dungeon WC
     #completewith TravelRatchet
     .goto Ashenvale,20.31,42.33,0
-    .zone The Barrens >>在寻找哀嚎洞穴 队伍的同时，刷 |cRXP_ENEMY_咸水嘴鱼人|r。它们的位置已标记在你的地图上
+    .zone The Barrens >>在寻找哀嚎洞穴队伍的同时，刷|cRXP_ENEMY_咸水嘴鱼人|r。它们的位置已标记在你的地图上
 	.mob 盐沫战士
 	.mob 盐沫泥浆鱼人
 	.mob 盐沫智者
@@ -2160,7 +2159,7 @@ step
 step
 .dungeon WC
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳尔帕克|r 和 |cRXP_FRIENDLY_厄布鲁|r 对话
-    .accept 1486 >>接受任务变异皮革
+    .accept 1486 >>接受任务 变异皮革
     .target 纳尔帕克
     .goto 1414,51.912,55.422 -- Nalpak
     .accept 1487 >>接受任务 清除变异者

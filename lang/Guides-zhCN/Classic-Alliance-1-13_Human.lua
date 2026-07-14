@@ -2,7 +2,6 @@ if GetLocale() ~= "zhCN" then return end
 local faction = UnitFactionGroup("player")
 if faction == "Horde" then return end
 
-
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
@@ -71,7 +70,7 @@ step << Warlock
     #season 0,1
     .goto Elwynn Forest,49.873,42.649
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜希拉·拉萨雷|r 对话
-    .accept 1598 >>接受任务失窃的典籍
+    .accept 1598 >>接受任务 失窃的典籍
     .train 348 >>学习 |T135817:0|t[献祭]
     .target 杜希拉·拉萨雷
 step << Warlock
@@ -79,7 +78,7 @@ step << Warlock
     #requires WarlockVendor << Human
     .goto Elwynn Forest,49.873,42.649
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜希拉·拉萨雷|r 对话
-    .accept 1598 >>接受任务失窃的典籍
+    .accept 1598 >>接受任务 失窃的典籍
     .accept 77621 >>接受任务 失窃的力量 << Human
     .train 348 >>学习 |T135817:0|t[献祭]
     .target 杜希拉·拉萨雷
@@ -131,14 +130,14 @@ step << Warlock
     #season 0,1
     .goto Elwynn Forest,49.873,42.649
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜希拉·拉萨雷|r 对话
-    .turnin 1598 >>交任务失窃的典籍
+    .turnin 1598 >>交任务 失窃的典籍
     .target 杜希拉·拉萨雷
 step << Warlock
     #season 2
     .goto Elwynn Forest,49.873,42.649
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜希拉·拉萨雷|r 对话
-    .turnin 1598 >>交任务失窃的典籍
-    .turnin 77621 >>交任务失窃的力量 << Human
+    .turnin 1598 >>交任务 失窃的典籍
+    .turnin 77621 >>交任务 失窃的力量 << Human
     .target 杜希拉·拉萨雷
 step << Human Warlock
     #season 2
@@ -328,7 +327,7 @@ step
     .accept 15 >>接受任务 回音山调查行动
     .accept 3100 >>接受任务 简要的信件 << Warrior
     .accept 3101 >>接受任务 圣洁信件 << Paladin
-    .accept 3102 >>接受任务 密文信件 << Rogue
+    .accept 3102 >>接受任务密文信件 << Rogue
     .accept 3103 >>接受任务 神圣信件 << Priest
     .accept 3104 >>接受任务 雕文信件 << Mage
     .accept 3105 >>接受任务 被污染的信件 << Warlock
@@ -626,7 +625,7 @@ step << Rogue
     #season 2
     .goto Elwynn Forest,50.314,39.916
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔里克·克里丹|r 对话
-    .turnin 3102 >>交任务 密文信件
+    .turnin 3102 >>交任务密文信件
     .accept 77618 >>接受任务 三度失窃 << Human
     .train 1784 >>学习 |T132320:0|t[潜行]
     .train 921 >>学习 |T133644:0|t[偷窃技能]
@@ -1010,7 +1009,7 @@ step << Rogue
     #season 0,1
     .goto Elwynn Forest,50.314,39.916
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔里克·克里丹|r 对话
-    .turnin 3102 >>交任务 密文信件
+    .turnin 3102 >>交任务密文信件
     .train 1784 >>学习 |T132320:0|t[潜行]
     .train 921 >>学习 |T133644:0|t[偷窃技能]
     .target 乔里克·克里丹
@@ -1318,7 +1317,7 @@ step << Warlock
 step << Warlock
     .goto Elwynn Forest,44.397,65.989
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞琳娜·达克哈特|r 对话
-    .vendor 6374 >>|cRXP_BUY_如果钱够，从她那里购买一本|r |T133738:0|t[魔典：血契(等级 1)] |cRXP_BUY_如果钱不够，可以今后再来买|r
+    .vendor 6374 >>|cRXP_BUY_如果钱够，就从她那里购买一本|r |T133738:0|t[魔典：血契(等级 1)] |cRXP_BUY_如果钱不够，可以今后再来买|r
     .target 塞琳娜·达克哈特
     .money <0.0100
     .itemcount 16321,<1 --Grimoire of Blood Pact (Rank 1)
@@ -2287,7 +2286,7 @@ step
     #optional
     #label ExitJasperlode
     #completewith Find
-    .goto 1429,61.820,53.871,15 >>退出玉石矿洞
+    .goto 1429,61.820,53.871,15 >>离开玉石矿洞
     .subzoneskip 54,1
 step
     #optional
@@ -3150,7 +3149,7 @@ step
     #requires GoldshireVendor
     .goto Elwynn Forest,43.154,89.625
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅贝尔·马科伦|r 对话
-    .turnin 114 >>交任务  梅贝尔的隐形水
+    .turnin 114 >>交任务 梅贝尔的隐形水
     .target 梅贝尔·马科伦
 step
     #xprate <1.5
@@ -3727,7 +3726,7 @@ step << Warlock
 step << Warlock
     #label GakinStart
     .goto StormwindClassic,25.25,78.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .turnin 1685 >>交任务 加科因的召唤
     .accept 1688 >>接受任务 苏伦娜·凯尔东
     .target 黑暗缚灵者加科因
@@ -3923,7 +3922,7 @@ step << Warlock
     .xp <12,1
 step << Warlock
     .goto StormwindClassic,25.25,78.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .turnin 1688 >>交任务 苏伦娜·凯尔东
     .accept 1689 >>接受任务誓缚
     .target 黑暗缚灵者加科因
@@ -3942,7 +3941,7 @@ step << Warlock
     .complete 1689,1 --Kill Summoned Voidwalker (x1)
     .mob 虚空行者
 step << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .target 黑暗缚灵者加科因
     .goto StormwindClassic,25.25,78.59
     .turnin 1689 >>交任务誓缚
@@ -4344,7 +4343,7 @@ step << Warrior
     .goto Ironforge,65.905,88.405,12 >>前往 |cRXP_FRIENDLY_比尔班·飞钳|r
 step << Warrior
     .goto Ironforge,65.905,88.405
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
     >>|cRXP_WARN_确保你保留20银70铜以备后用|r
     .train 2687 >>训练你的职业技能
     .target 比尔班·飞钳
@@ -4354,7 +4353,7 @@ step << Warrior
     #xprate >1.59
     #optional
     .goto Ironforge,65.905,88.405
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
     >>|cRXP_WARN_确保你保留20银70铜以备后用|r
     .train 5242 >>训练你的职业技能
     .target 比尔班·飞钳
@@ -4432,7 +4431,7 @@ step << Warrior
     .goto 1455,61.356,88.398,6 >>离开木材线武器店建筑
 step
     .goto Ironforge,55.501,47.742
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fp Ironforge >>获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
 step
@@ -4456,7 +4455,7 @@ step << Mage/Paladin
     .goto Ironforge,35.30,32.76,20,0
     .goto Ironforge,27.17,12.58,20,0 << Paladin
     .goto Ironforge,27.60,11.06,20,0 << Mage
-    .goto Ironforge,27.17,8.58,12 >>前往 |cRXP_FRIENDLY_丁克|r << Mage
+    .goto Ironforge,27.17,8.58,12 >>前去找 |cRXP_FRIENDLY_丁克|r << Mage
     .goto Ironforge,23.131,6.143,12 >>前往 |cRXP_FRIENDLY_布兰度尔·铁锤|r << Paladin
 step << Mage
     #xprate >1.49
@@ -4555,7 +4554,7 @@ step << Mage/Paladin
     .goto Ironforge,35.30,32.76,20,0
     .goto Ironforge,27.17,12.58,20,0 << Paladin
     .goto Ironforge,27.60,11.06,20,0 << Mage
-    .goto Ironforge,27.17,8.58,12 >>前往 |cRXP_FRIENDLY_丁克|r << Mage
+    .goto Ironforge,27.17,8.58,12 >>前去找 |cRXP_FRIENDLY_丁克|r << Mage
     .goto Ironforge,23.131,6.143,12 >>前往 |cRXP_FRIENDLY_布兰度尔·铁锤|r << Paladin
 step << Mage
     #xprate <1.5
@@ -6026,7 +6025,7 @@ step << Rogue
 step << Warrior
     #xprate >1.49
     .goto Ironforge,65.905,88.405
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
     .trainer >>训练你的职业技能
     .target 比尔班·飞钳
 step << skip --logout skip << Warrior
@@ -6103,7 +6102,7 @@ step << Dwarf/Gnome
     #softcore
     #completewith DarkshoreBoat
     .goto Ironforge,55.501,47.742
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fly Wetlands>>飞往湿地
     .target 格莱斯·瑟登
 step
@@ -6142,7 +6141,7 @@ step
     >>|cRXP_WARN_走无伤翻山路线，从丹莫罗翻山前往湿地|r
     >>|cRXP_WARN_Avoid the |cRXP_ENEMY_湿地鳄鱼|r 和 |cRXP_ENEMY_鱼人|r when crossing the water|r
     .link https://www.youtube.com/watch?v=9afQTimaiZQ >>https://www.youtube.com/watch?v=9afQTimaiZQ >> |cRXP_WARN_点击此处查看视频指南|r
-    .goto Wetlands,12.1,60.3,80 >>将炉石使用回米奈希尔港
+    .goto Wetlands,12.1,60.3,80 >>前往米奈希尔港，湿地
     .mob 湿地鳄鱼
     .mob 湿地鳄鱼幼崽
     .mob 蓝腮袭击者
@@ -6180,7 +6179,7 @@ step << Human
     >>|cRXP_WARN_Avoid the |cRXP_ENEMY_湿地鳄鱼|r 和 |cRXP_ENEMY_鱼人|r when crossing the water|r
     >>|cRXP_WARN_注意：你正在执行较慢的无死亡跳过，因为你拥有|r |T134916:0|t|T134916:0|t[灵感火花] |cRXP_WARN_世界增益效果|r
     .link https://www.youtube.com/watch?v=9afQTimaiZQ >>https://www.youtube.com/watch?v=9afQTimaiZQ >> |cRXP_WARN_点击此处查看视频指南|r
-    .subzone 150 >>将炉石使用回米奈希尔港
+    .subzone 150 >>前往米奈希尔港，湿地
     .mob 湿地鳄鱼
     .mob 湿地鳄鱼幼崽
     .mob 蓝腮袭击者
@@ -6239,7 +6238,7 @@ step
     #xprate >1.49
     #optional
     #completewith next
-    .goto 1437,10.233,56.201,15 >>退出米奈希尔城堡
+    .goto 1437,10.233,56.201,15 >>离开米奈希尔城堡
     .subzoneskip 2103,1 --Menethil Keep
 step
     #xprate >1.49
