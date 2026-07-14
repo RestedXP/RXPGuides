@@ -2808,10 +2808,17 @@ function addon.v2:ShowActivePartyStepsMenu()
             end,
         },
         {
-            text = _G.CLOSE,
+            text = L("Hide"),
             notCheckable = 1,
             func = function()
                 addon.v2:CloseActivePartyStepsFrame()
+            end,
+        },
+        {
+            text = _G.CLOSE,
+            notCheckable = 1,
+            func = function()
+                _G.CloseDropDownMenus()
             end,
         },
     }
