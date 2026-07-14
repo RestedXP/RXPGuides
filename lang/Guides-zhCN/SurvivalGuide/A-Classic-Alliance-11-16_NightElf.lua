@@ -1,5 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
-if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
+
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
@@ -540,7 +540,7 @@ RXPGuides.RegisterGuide([[
 #name 13-13 洛克莫丹 (Night Elf)
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP Survival 向导 1-20
+#subgroup RXP 生存指南 1-20级
 #next 13-15 西部荒野
 #defaultfor NightElf
 

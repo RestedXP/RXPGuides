@@ -3,7 +3,7 @@ local faction = UnitFactionGroup("player")
 if faction == "Alliance" then return end
 
 
-if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
+
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
@@ -435,7 +435,7 @@ RXPGuides.RegisterGuide([[
 #name 6-13 牛头人
 #version 1
 #group RestedXP 生存指南 (部落版)
-#subgroup RXP Survival 向导 1-20
+#subgroup RXP 生存指南 1-20级
 #defaultfor Tauren
 #next 13-15 银松森林
 

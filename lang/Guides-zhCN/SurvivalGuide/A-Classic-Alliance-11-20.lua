@@ -3,7 +3,7 @@ local faction = UnitFactionGroup("player")
 if faction == "Horde" then return end
 
 
-if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
+
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
@@ -547,7 +547,7 @@ RXPGuides.RegisterGuide([[
 #name 15-18 黑海岸
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP Survival 向导 1-20
+#subgroup RXP 生存指南 1-20级
 --#defaultfor !NightElf
 #next 18-19 洛克莫丹
 
@@ -1655,7 +1655,7 @@ RXPGuides.RegisterGuide([[
 #name 20-21 黑海岸/灰谷
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP Survival 向导 1-20
+#subgroup RXP 生存指南 1-20级
 #next 21-23级 石爪山 / 灰谷
 
 step << Druid

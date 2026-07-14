@@ -2,7 +2,7 @@ if GetLocale() ~= "zhCN" then return end
 local faction = UnitFactionGroup("player")
 if faction == "Horde" then return end
 
-if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
+
 RXPGuides.RegisterGuide([[
 #classic
 #tbc

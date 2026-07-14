@@ -2,7 +2,7 @@ if GetLocale() ~= "zhCN" then return end
 local faction = UnitFactionGroup("player")
 if faction == "Horde" then return end
 
-if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
+
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
@@ -418,7 +418,7 @@ RXPGuides.RegisterGuide([[
 #name 6-10 丹莫罗
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP Survival 向导 1-20
+#subgroup RXP 生存指南 1-20级
 #defaultfor Dwarf/Gnome
 #next 10-11 Elwynn (矮人/侏儒)
 step
@@ -1705,7 +1705,7 @@ RXPGuides.RegisterGuide([[
 #name 10-11 Elwynn (Dwarf/Gnome)
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP Survival 向导 1-20
+#subgroup RXP 生存指南 1-20级
 #defaultfor Gnome/Dwarf
 #next 11-13 洛克莫丹 (Dwarf/Gnome)
 
@@ -2368,7 +2368,7 @@ RXPGuides.RegisterGuide([[
 #name 11-13 洛克莫丹 (Dwarf/Gnome)
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP Survival 向导 1-20
+#subgroup RXP 生存指南 1-20级
 #defaultfor Gnome/Dwarf
 #next 13-15 西部荒野
 

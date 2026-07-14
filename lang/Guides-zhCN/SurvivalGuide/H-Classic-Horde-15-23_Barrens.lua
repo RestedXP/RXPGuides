@@ -2,7 +2,7 @@ if GetLocale() ~= "zhCN" then return end
 local faction = UnitFactionGroup("player")
 if faction == "Alliance" then return end
 
-if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
+
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
@@ -2118,7 +2118,7 @@ RXPGuides.RegisterGuide([[
 #name 19-23 石爪山脉/贫瘠之地/灰谷
 #version 1
 #group RestedXP 生存指南 (部落版)
-#subgroup RXP Survival 向导 1-20
+#subgroup RXP 生存指南 1-20级
 #next 23-25 希尔斯布莱德
 
 step

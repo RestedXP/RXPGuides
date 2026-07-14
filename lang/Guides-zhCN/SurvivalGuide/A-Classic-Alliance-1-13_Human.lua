@@ -2,7 +2,7 @@ if GetLocale() ~= "zhCN" then return end
 local faction = UnitFactionGroup("player")
 if faction == "Horde" then return end
 
-if GetLocale() == "zhCN" and RXP.gameVersion > 20000 then return end
+
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
@@ -376,7 +376,7 @@ RXPGuides.RegisterGuide([[
 #name 6-11 艾尔文森林
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP Survival 向导 1-20
+#subgroup RXP 生存指南 1-20级
 #defaultfor Human
 #next 11-13 洛克莫丹
 step
@@ -1859,7 +1859,7 @@ RXPGuides.RegisterGuide([[
 #name 11-13 洛克莫丹
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP Survival 向导 1-20
+#subgroup RXP 生存指南 1-20级
 #defaultfor Human
 #next 13-15 西部荒野
 
