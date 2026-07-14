@@ -1198,7 +1198,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     activeStepsV2RenderQuestName = {
                         name = L("Display Quest Link"),
-                        -- desc = L("Display rendered quest name and tooltip"),
+                        desc = L("Display quest tooltips on steps"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 5.2,
@@ -2418,7 +2418,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     activePartyStepsV2WindowScale = {
                         name = L("Window Scale"),
-                        -- desc = L"Scale of the Main Window, use alt+left click on the main window to resize it",
+                        -- desc = L(""),
                         type = "range",
                         width = optionsWidth,
                         order = 4.2,
@@ -2452,7 +2452,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     shareActiveSteps = {
                         name = fmt("%s %s %s", _G.SHARE_QUEST_ABBREV, _G.ACTIVE_PETS, L("Step ")),
-                        -- desc = L("Whenever you accept a quest in the guide, the addon tries to share it with your group"),
+                        desc = L("Share your Active Step with party members"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 4.4,
@@ -3312,7 +3312,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     activeStepsV2WindowScale = {
                         name = L("Window Scale"),
-                        -- desc = L"Scale of the Main Window, use alt+left click on the main window to resize it",
+                        -- desc = L(""),
                         type = "range",
                         width = optionsWidth,
                         order = 4.1,

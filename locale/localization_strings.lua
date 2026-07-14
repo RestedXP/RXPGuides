@@ -152,6 +152,8 @@ L["Development"] = "Development"
 
 --SettingsPanel.lua
 L["Display Quest Link"] = "Display Quest Link"
+L["Display quest tooltips on steps"] = "Display quest tooltips on steps"
+L["Share your Active Step with party members"] = "Share your Active Step with party members"
 L["Please restart your game client and try again"] = "Please restart your game client and try again"
 L["Failed to Import Guides: Invalid Import String"] = "Failed to Import Guides: Invalid Import String"
 L["Guide Import"] = "Guide Import"
