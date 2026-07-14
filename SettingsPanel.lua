@@ -56,7 +56,7 @@ local L = addon.locale.Get
 
 addon.settings = addon:NewModule("Settings", "AceConsole-3.0")
 addon.settings.enabledBetaFeatures = {
-    ["Modular Step Frame"] = "Use modular currentStep frame", --GuideWindow/addon.v2
+    ["Active Steps v2"] = "Allow ActiveSteps and ActivePartySteps v2", --GuideWindow/addon.v2
 }
 
 if not addon.settings.gui then
