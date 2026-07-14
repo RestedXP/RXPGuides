@@ -337,7 +337,10 @@ function addon.v2:UpdateActiveStepEventWatchers(steps)
 end
 
 local function SetStepFrameAnchor()
-    if addon.UseV2ActiveStepsFrame() then return end
+    if addon.UseV2ActiveStepsFrame() then
+        addon.v2:SetActiveStepsFrameAnchor()
+        return
+    end
 
     local frame = CurrentStepFrame
     local scale = RXPFrame:GetScale()
@@ -2874,20 +2877,6 @@ function addon.v2:GetActiveStepsFrame(player)
     local childContainer
     if player == addon.player.name then
         stepFrame = AceGUI:Create("RXPV2ActiveStepsFrame")
-        stepFrame:ClearAllPoints()
-        local theme = addon.v2:GetTheme()
-        local frameInset = theme.layout and theme.layout.activeStepFrameInset or {}
-        local leftInset = frameInset.left or 0
-        local rightInset = frameInset.right or 0
-
-        if addon.settings.profile.anchorOrientation == "bottom" then
-            stepFrame:SetPoint("TOPLEFT", addon.RXPFrame, "BOTTOMLEFT", leftInset + 3, 0)
-            stepFrame:SetPoint("TOPRIGHT", addon.RXPFrame, "BOTTOMRIGHT", -rightInset - 3, 0)
-        else
-            stepFrame:SetPoint("BOTTOMLEFT", addon.RXPFrame.GuideName, "TOPLEFT", leftInset, 0)
-            stepFrame:SetPoint("BOTTOMRIGHT", addon.RXPFrame.GuideName, "TOPRIGHT", -rightInset, 0)
-        end
-
         stepFrame:SetLayout("Flow")
         childContainer = stepFrame
 
@@ -2912,6 +2901,7 @@ function addon.v2:GetActiveStepsFrame(player)
         local frameName = "RXPActiveStepsFrame" .. player
         _G[frameName] = stepFrame
         addon.enabledFrames[frameName] = stepFrame
+        self:SetActiveStepsFrameAnchor(stepFrame)
         addon.settings:LoadFramePosition(frameName, stepFrame)
     end
 
@@ -2940,6 +2930,25 @@ function addon.v2:GetActiveStepsFrame(player)
     end
 
     return stepFrame
+end
+
+function addon.v2:SetActiveStepsFrameAnchor(stepFrame)
+    stepFrame = stepFrame or (self.state.player[addon.player.name] or {}).activeStepFrame
+    if not stepFrame then return end
+
+    stepFrame:ClearAllPoints()
+    local theme = self:GetTheme()
+    local frameInset = theme.layout and theme.layout.activeStepFrameInset or {}
+    local leftInset = frameInset.left or 0
+    local rightInset = frameInset.right or 0
+
+    if addon.settings.profile.anchorOrientation == "bottom" then
+        stepFrame:SetPoint("TOPLEFT", addon.RXPFrame, "BOTTOMLEFT", leftInset + 3, 0)
+        stepFrame:SetPoint("TOPRIGHT", addon.RXPFrame, "BOTTOMRIGHT", -rightInset - 3, 0)
+    else
+        stepFrame:SetPoint("BOTTOMLEFT", addon.RXPFrame.GuideName, "TOPLEFT", leftInset, 0)
+        stepFrame:SetPoint("BOTTOMRIGHT", addon.RXPFrame.GuideName, "TOPRIGHT", -rightInset, 0)
+    end
 end
 
 function addon.v2:UpdateActiveStepTheme()
