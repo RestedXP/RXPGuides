@@ -308,7 +308,7 @@ function addon.professions.GUI.createGUI()
         end]]
 
 
-        local recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent
+        local recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent, timeNeeded
         local minSegment, maxSegment = aProf.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, RXPCData.professions.segmentRange)
         if true then--not printed then
             --Calculate prices
@@ -340,13 +340,13 @@ function addon.professions.GUI.createGUI()
                     maxSegment, RXPCData.professions.money
                 )
             end]]
-            recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent =
+            recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent, timeNeeded =
                 aProf.gatherRecipesToBuyGreedy(
                     RXPCData.professions.profession1.name,
                     RXPCData.professions.profession1.skillLevel,
                     maxSegment, RXPCData.professions.money
                 )
-            textToPrint = aProf.greedyToString(recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent)
+            textToPrint = aProf.greedyToString(recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent, timeNeeded)
             textToPrint = textToPrint .. "==========\n"
             guiFrame.printText.Text:SetText(textToPrint)
         end

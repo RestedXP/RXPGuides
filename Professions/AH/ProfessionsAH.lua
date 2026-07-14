@@ -51,6 +51,10 @@ end
 --Because of problems stated in: https://warcraft.wiki.gg/wiki/API_GetContainerNumSlots
 --we call this function when AH is opened for the first time, per player character
 local function initialScanInventoryForCraftedItems(prof1Name, prof2Name)
+    --Check for test professions
+    if prof1Name == "test" then prof1Name = nil end
+    if prof2Name == "test" then prof2Name = nil end
+
     local numberOfSlots, itemName, itemID, itemCount
     for bagID = 0, NUM_BAG_SLOTS do
         numberOfSlots = GetContainerNumSlots(bagID)

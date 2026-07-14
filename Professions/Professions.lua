@@ -140,6 +140,13 @@ local function formatMoney(money)
     return fmt("%dc", money)
 end
 
+--Formats time to xm ys.z
+local function formatTime(time)
+    local mins = floor(time / 60)
+    local secs = time % 60
+    return fmt("%dm %.2fs", mins, secs)
+end
+
 --Validates that RXPCData.professions.profession1 and RXPCData.professions.profession2 are set up correctly
 local function validatePlayerProfessions(level)
     level = level or 0
@@ -920,10 +927,11 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
     local craftedRecipes = {} --pairs{[name] = count} --We take from this knapsack when we need it for another recipe
     local recipesToCraftKnapsack = {} --pairs{[name] = count} --This is the one that stores all necessary crafts
     local backpackKnapsack = {} --pairs{[name] = count} --Backpack containing items that we bought this session
+    local timeNeeded = 0.0 --Time needed to craft every recipe in the list in seconds with decimals
     local skillLevelsToGain = segmentMaxLevel - skillLevel
     local skillLevelsGained = 0
     local moneySpent = money
-    local howManyToMake = 0
+    local howManyToMake, howManyLeftToMake = 0, 0
     local recipeKeyIndex = 1
     while recipeKeyIndex <= #sortedRecipeKeysMinimum and skillLevelsToGain > 0 and haveMoney do
         local canCreateIthRecipe = true
@@ -939,6 +947,7 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
             --We have money
             local percent = calculatePercent(professionName, recipeName, skillLevel + skillLevelsGained)
             howManyToMake = calculateAttemptCount(percent, RXPCData.professions.percentageTreshold)
+            howManyLeftToMake = howManyToMake
             if howManyToMake == 0 or howManyToMake == huge then
                 canCreateIthRecipe = false
             elseif howManyToMake > 1 then
@@ -957,14 +966,14 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
                             --We found more profitable one, save its values
                             recipeName, recipeMinimumPrice, recipeAveragePrice, recipeTable, percent, howManyToMake = nextRecipeName, nextRecipeMinimumPrice, nextRecipeAveragePrice, nextRecipeTable, nextPrecent, nextHowManyToMake
                             recipeKeyIndex = nextRecipeKeyIndex
-                            print("new target: ", recipeName, " ", percent, "% ", howManyToMake)
+                            print("new target: ", recipeName, " ", percent, "% ", nextHowManyToMake)
                             --Continue on, since then next one might be even more profitable
                         end
                         nextRecipeKeyIndex = nextRecipeKeyIndex + 1
                     end
                 end
             end
-            while howManyToMake > 0 and canCreateIthRecipe do --Add greedily
+            while howManyLeftToMake > 0 and canCreateIthRecipe do --Add greedily
                 local saveMoneyBeforeRecipe = money
                 local moneyPerItem = 0 --calculates the worth of recipe per one craft rather then the money needed to buy everything (this is for the cases when the stack is n but we only need 1..n-1 items of it)
                 local tempMaterialsToBuy = {}
@@ -1070,7 +1079,7 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
                 if canCreateRecipe then
                     print(recipeName, ": ", (saveMoneyBeforeRecipe - money))
                     recipeCreated = true
-                    howManyToMake = howManyToMake - 1
+                    howManyLeftToMake = howManyLeftToMake - 1
                     --add everything to knapsack and update accordingly
                     for materialName, materialCount in pairs(tempMaterialsToBuy) do
                         materialsToBuyKnapsack[materialName] = (materialsToBuyKnapsack[materialName] or 0) + materialCount
@@ -1106,6 +1115,8 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
             if PROFESSIONS[professionName].RECIPES[recipeName].grey <= skillLevel + skillLevelsGained then
                 canCreateIthRecipe = false
             end
+            --Update needed time
+            timeNeeded = timeNeeded + howManyToMake * recipeTable.castTime
         end
         --Check if we have to move to another recipe
         if not canCreateIthRecipe then
@@ -1130,7 +1141,7 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
     --Finish up
     RXPCData.professions.money = money --TODO: delete once we implement actual buying (and then move this logic to that function)
     moneySpent = moneySpent - money
-    return recipesToCraftKnapsack, materialsToBuyKnapsack, backpackKnapsack, skillLevelsGained, moneySpent
+    return recipesToCraftKnapsack, materialsToBuyKnapsack, backpackKnapsack, skillLevelsGained, moneySpent, timeNeeded
 end
 
 
@@ -1366,7 +1377,7 @@ function addon.professions:testScan()
 end
 
 --Stringifies results form Greedy algorthim - For testing purposes only
-function addon.professions.greedyToString(recipesToCraft, materialsToBuy, backPack, skillLevelsGained, moneySpent)
+function addon.professions.greedyToString(recipesToCraft, materialsToBuy, backPack, skillLevelsGained, moneySpent, timeNeeded)
     local sb = stringBuilder("====Recipe costs====\n")
     local sorted = sortRecipesByChosenPrice(1)
     for _, v in ipairs(sorted) do
@@ -1388,6 +1399,7 @@ function addon.professions.greedyToString(recipesToCraft, materialsToBuy, backPa
     sb:append("Money: "):append(formatMoney(RXPCData.professions.money)):append("\n")
     sb:append("Money spent: "):append(formatMoney(moneySpent)):append("\n")
     sb:append("Skill level reached: "):append(tostring((RXPCData.professions.profession1.skillLevel + skillLevelsGained))):append("\n")
+    sb:append("Time needed: "):append(formatTime(timeNeeded)):append("\n")
 
     return sb:build()
 end
