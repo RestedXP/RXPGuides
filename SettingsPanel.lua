@@ -1177,7 +1177,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 4.7
                     },
                     v2UIHeader = {
-                        name = fmt("%s %s %d", _G.INTERFACE_LABEL, _G.GAME_VERSION_LABEL, 2),
+                        name = fmt("%s %s %d", _G.INTERFACE_LABEL, _G.GAME_VERSION_LABEL, 2) .. L(" (Beta)"),
                         type = "header",
                         width = "full",
                         order = 5.0,
@@ -2164,7 +2164,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     enableLevelingReportInspections = {
                         name = L("Enable Leveling Report Inspections") ..
-                            " (Beta)",
+                            L(" (Beta)"),
                         desc =
                             L"Send or receive inspection requests for other Leveling Reports",
                         type = "toggle",
@@ -2397,7 +2397,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 3.2
                     },
                     activePartyStepsV2Header = {
-                        name = fmt("%s %s %sv2", _G.ACTIVE_PETS, _G.PARTY, L("Step ")),
+                        name = fmt("%s %s %sv2", _G.ACTIVE_PETS, _G.PARTY, L("Step ")) .. L(" (Beta)"),
                         type = "header",
                         width = "full",
                         order = 4.0,
@@ -3304,7 +3304,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     activeStepsV2Header = {
-                        name = fmt("%s %sv2", _G.ACTIVE_PETS, L("Step ")),
+                        name = fmt("%s %sv2", _G.ACTIVE_PETS, L("Step ")).. L(" (Beta)"),
                         type = "header",
                         width = "full",
                         order = 4.0,

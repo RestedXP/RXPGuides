@@ -151,6 +151,7 @@ L["Quest is being turned in at"] = "Quest is being turned in at"
 L["Development"] = "Development"
 
 --SettingsPanel.lua
+L[" (Beta)"] = " (Beta)"
 L["Display Quest Link"] = "Display Quest Link"
 L["Display quest tooltips on steps"] = "Display quest tooltips on steps"
 L["Share your Active Step with party members"] = "Share your Active Step with party members"

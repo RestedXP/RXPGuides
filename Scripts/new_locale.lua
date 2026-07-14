@@ -355,6 +355,7 @@ L["Development"] = ""
 
 -- SettingsPanel.lua file
 
+L[" (Beta)"] = ""
 L["Display Quest Link"] = ""
 L["Display quest tooltips on steps"] = ""
 L["Share your Active Step with party members"] = ""
