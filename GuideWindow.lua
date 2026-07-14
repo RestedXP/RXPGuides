@@ -3175,7 +3175,7 @@ function addon.v2:PlayerActiveStepItemNeedsUpdate(stepItem, step, questId)
     local visibleCount = 0
     for elementIndex = 1, #elements do
         element = elements[elementIndex]
-        if element.text or element.requestFromServer then
+        if element.text or element.rawtext or element.requestFromServer then
             visibleCount = visibleCount + 1
             snapshot = snapshots[visibleCount]
             if not snapshot or snapshot.element ~= element or
