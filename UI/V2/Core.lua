@@ -44,24 +44,24 @@ local function updateTheme(this, payload)
     end
 end
 
-local function setBackdropChromeShown(frame, shown)
+local function setFrameBackdropShown(frame, shown)
     if frame.rxpBackground then frame.rxpBackground:SetShown(shown) end
     if frame.rxpBorder then frame.rxpBorder:SetShown(shown) end
 end
 
-local function updateFrameChrome(this, payload)
+local function updateFrameBackgroundVisibility(this, payload)
     if not payload or payload.hideBackground == nil then return end
 
     local shown = not payload.hideBackground
-    setBackdropChromeShown(this.frame, shown)
+    setFrameBackdropShown(this.frame, shown)
 
     if this.frame.rxpShadow then this.frame.rxpShadow:SetShown(shown) end
 end
 
-local function updatePartyFrameChrome(this, payload)
+local function updatePartyFrameBackgroundVisibility(this, payload)
     if not payload or payload.hideBackground == nil then return end
 
-    updateFrameChrome(this, payload)
+    updateFrameBackgroundVisibility(this, payload)
 
     local shown = not payload.hideBackground
     this.closebutton:SetShown(shown)
@@ -434,7 +434,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
 
         ["UpdateTheme"] = updateTheme,
 
-        ["UpdateSubTheme"] = updateFrameChrome,
+        ["UpdateSubTheme"] = updateFrameBackgroundVisibility,
 
         ["Hide"] = function(this) this.frame:Hide() end,
 
@@ -853,7 +853,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         ["UpdateTheme"] = updateTheme,
 
-        ["UpdateSubTheme"] = updatePartyFrameChrome,
+        ["UpdateSubTheme"] = updatePartyFrameBackgroundVisibility,
 
         ["Hide"] = function(this) this.frame:Hide() end,
 
