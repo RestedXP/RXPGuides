@@ -1041,6 +1041,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
     local updateElementCheckbox
 
     local function releaseElementRow(row)
+        addon.ReleaseActiveStepElement(row)
         if _G.GameTooltip:GetOwner() == row then
             _G.GameTooltip:Hide()
         end
@@ -1375,7 +1376,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         ["SetElements"] = function(this, step)
             local rows = this.elementRows
             local previousCount = this.activeElementRows or 0
-            local row, element, previousElement
+            local row, element, previousElement, previousStep
 
             local theme = addon.v2:GetTheme()
             local textColor = theme.textColor.activeStepItem or theme.textColor.common
@@ -1394,6 +1395,10 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                     end
 
                     previousElement = row.element
+                    previousStep = row.step
+                    if previousElement ~= element or previousStep ~= step then
+                        addon.ReleaseActiveStepElement(row)
+                    end
                     row.element = element
                     row.rxpResetPending = previousElement ~= element
                     row.text:SetTextColor(unpack(textColor))
@@ -1412,6 +1417,9 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
                     row.button:SetShown(not element.textOnly)
                     row:Show()
+                    if previousElement ~= element or previousStep ~= step then
+                        addon.BindActiveStepElement(row, step, element, step.index)
+                    end
                 end
             end
 
