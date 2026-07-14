@@ -1520,7 +1520,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                     addon.settings.profile.guideFontSize + (elementLayout.fontSizeOffset or 0),
                     "")
                 updateElementCheckbox(row.button, true)
-                updateElementRowText(row, row.element)
             end
             this.rxpElementsDirty = true
             layoutElements(this)
