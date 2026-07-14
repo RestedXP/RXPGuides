@@ -2260,7 +2260,7 @@ end
 
 function addon.v2.events:Register(key)
     if not key then return end
-    addon.comms.PrettyDebug("addon.v2.events:Register %s", key)
+
     self:RegisterMessage(self.messagePrefix .. key, key)
 end
 
