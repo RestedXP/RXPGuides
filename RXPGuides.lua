@@ -1255,6 +1255,8 @@ function addon:OnInitialize()
     addon.arrowFrame.text:SetFont(addon.font,
                                   addon.settings.profile.arrowText, "OUTLINE")
     addon.activeItemFrame:SetScale(addon.settings.profile.activeItemsScale)
+
+    addon.v2:Setup()
 end
 
 function addon:OnEnable()
@@ -1511,11 +1513,32 @@ function addon:UNIT_PET(_, unit)
     addon.petFamily = GetPetIcon() or addon.petFamily
 end
 
+local V2_QUEST_DATA_REQUEST_PREFIX = "v2:"
+
+function addon.EnsureQuestData(questId)
+    if not questId then return false end
+    if HaveQuestData(questId) then return true end
+    if not (C_QuestLog and C_QuestLog.RequestLoadQuestByID) then return false end
+
+    local requestKey = V2_QUEST_DATA_REQUEST_PREFIX .. questId
+    if not addon.requestQuestInfo[requestKey] then
+        addon.requestQuestInfo[requestKey] = true
+        C_QuestLog.RequestLoadQuestByID(questId)
+    end
+    return false
+end
+
 function addon:QUEST_DATA_LOAD_RESULT(_, questId, success)
+    local requestKey = V2_QUEST_DATA_REQUEST_PREFIX .. questId
+    local requestedForV2 = addon.requestQuestInfo[requestKey]
+    addon.requestQuestInfo[requestKey] = nil
+
     if not success then return end
 
     addon.requestQuestInfo[questId] = 0
     addon.updateStepText = true
+
+    if requestedForV2 then addon.v2.events:Trigger("QuestDataLoaded", questId) end
 end
 
 function addon:GROUP_LEFT()
@@ -2236,3 +2259,47 @@ function addon.stepLogic.ProfessionCheck(step)
 end
 
 RXP = addon -- debug purposes
+
+addon.v2 = addon.v2 or {}
+function addon.v2:Setup()
+    addon.v2.events:Setup()
+end
+
+addon.v2.events = addon:NewModule("V2Events", "AceEvent-3.0")
+addon.v2.events.messagePrefix = "RXPGuidesV2_"
+
+function addon.v2.events:Setup()
+    addon.v2.events:Register("UpdateActiveSteps")
+    addon.v2.events:Register("QuestDataLoaded")
+end
+
+function addon.v2.events:Register(key)
+    if not key then return end
+
+    self:RegisterMessage(self.messagePrefix .. key, key)
+end
+
+function addon.v2.events:Trigger(key, ...)
+    if not key then return end
+
+    self:SendMessage(self.messagePrefix .. key, ...)
+end
+
+function addon.v2.events:UpdateActiveSteps(_, activeSteps, name)
+    if name == addon.player.name then
+        addon.v2:UpdateActiveStepsFrame(activeSteps)
+        return
+    end
+
+    addon.v2:UpdateActivePartyStepsFrame(activeSteps, name)
+end
+
+function addon.v2.events:QuestDataLoaded(_, questId)
+    if not questId then
+        addon.v2.state.activeStepRenderRevision =
+            (addon.v2.state.activeStepRenderRevision or 0) + 1
+    end
+    if addon.RXPFrame.activeSteps then
+        addon.v2:UpdateActiveStepsFrame(addon.RXPFrame.activeSteps, questId)
+    end
+end

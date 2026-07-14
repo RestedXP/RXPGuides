@@ -53,6 +53,7 @@ function addon.comms:Setup()
     self:RegisterEvent("GROUP_LEFT")
     self:RegisterEvent("GROUP_ROSTER_UPDATE")
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
+    self:RegisterEvent("PLAYER_REGEN_ENABLED")
 
     self:RegisterComm(self._commPrefix)
 
@@ -102,6 +103,7 @@ function addon.comms:PLAYER_ENTERING_WORLD(_, isInitialLogin, isReloadingUi)
     self:AnnounceSelf("ANNOUNCE")
 
     addon.comms.grouping:UpdateParty()
+    self:AdvertiseCurrentStepOnce()
 end
 
 function addon.comms:GROUP_FORMED()
@@ -109,6 +111,7 @@ function addon.comms:GROUP_FORMED()
         self:AnnounceSelf("ANNOUNCE")
 
         addon.comms.grouping:UpdateParty()
+        self:AdvertiseCurrentStepOnce()
     end)
 end
 
@@ -116,10 +119,41 @@ function addon.comms:GROUP_LEFT()
     self.state.rxpGroupDetected = false
 
     addon.comms.grouping:UpdateParty()
+    self:QueueActiveStepFrameCleanup()
 end
 
 function addon.comms:GROUP_ROSTER_UPDATE()
     addon.comms.grouping:UpdateParty()
+    self:QueueActiveStepFrameCleanup()
+
+    C_Timer.After(5 + mrand(5), function()
+        self:AdvertiseCurrentStepOnce()
+    end)
+end
+
+function addon.comms:QueueActiveStepFrameCleanup()
+    self.activeStepFrameCleanupPending = true
+
+    if not InCombatLockdown() then
+        self:ProcessActiveStepFrameCleanup()
+    end
+end
+
+function addon.comms:ProcessActiveStepFrameCleanup()
+    if not self.activeStepFrameCleanupPending or InCombatLockdown() then return end
+
+    self.activeStepFrameCleanupPending = nil
+    addon.v2:HideUnusedActiveStepFrames()
+end
+
+function addon.comms:PLAYER_REGEN_ENABLED()
+    self:ProcessActiveStepFrameCleanup()
+end
+
+function addon.comms:AdvertiseCurrentStepOnce()
+    if not (addon.settings.profile.enableBetaFeatures and addon.RXPFrame and addon.RXPFrame.activeSteps) then return end
+
+    addon.comms.grouping:BroadcastCurrentStep(addon.v2:EncodePlayerActiveSteps(addon.RXPFrame.activeSteps))
 end
 
 function addon.comms:PLAYER_LEVEL_UP(_, level)
@@ -238,7 +272,7 @@ function addon.comms:OnCommReceived(prefix, data, _, sender)
 
     local status, obj = self:Deserialize(data)
 
-    if not status or not obj.command then return end
+    if not status or type(obj) ~= "table" or type(obj.command) ~= "string" then return end
 
     self.state.rxpGroupDetected = true
 
@@ -248,6 +282,8 @@ function addon.comms:OnCommReceived(prefix, data, _, sender)
     elseif obj.command == 'REPLY' then
         self:HandleAnnounce(obj)
         -- Don't respond on REPLY
+    elseif obj.command == 'STEP' and type(obj.encodedPayload) == "string" then
+        addon.v2.events:Trigger("UpdateActiveSteps", obj.encodedPayload, sender)
     end
 
 end
@@ -290,6 +326,9 @@ function addon.comms:HandleAnnounce(data)
     self.players[data.player.name].xpPercentage = data.player.xpPercentage
     self.players[data.player.name].isRxp = true
     self.players[data.player.name].lastSeen = GetTime()
+
+    addon.comms.grouping:UpdateParty()
+    self:AdvertiseCurrentStepOnce()
 
     if not addon.settings.profile.checkVersions then return end
 
@@ -797,4 +836,52 @@ function addon.comms.grouping:UpdateParty()
             markerIndex = markerIndex + 1
         end
     end
+end
+
+local ACTIVE_STEP_BROADCAST_INTERVAL = 0.2
+
+function addon.comms.grouping:CanBroadcastCurrentStep()
+    return addon.settings.profile.shareActiveSteps and
+           addon.comms.state.group.hasRXP and
+           UnitInBattleground("player") == nil and GetNumGroupMembers() > 1
+end
+
+local function SendCurrentStep(self, encodedPayload)
+    local data = {
+        command = "STEP",
+        encodedPayload = encodedPayload
+    }
+
+    local sz = addon.comms:Serialize(data)
+    addon.comms:SendCommMessage(addon.comms._commPrefix, sz, "PARTY", nil, "ALERT")
+    self.activeStepBroadcastLast = GetTime()
+    return true
+end
+
+function addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
+    if not self:CanBroadcastCurrentStep() then return end
+
+    local now = GetTime()
+    local delay = ACTIVE_STEP_BROADCAST_INTERVAL -
+                    (now - (self.activeStepBroadcastLast or 0))
+
+    if delay <= 0 and not self.activeStepBroadcastQueued then
+        return SendCurrentStep(self, encodedPayload)
+    end
+
+    self.activeStepBroadcastPayload = encodedPayload
+    if self.activeStepBroadcastQueued then return true end
+
+    self.activeStepBroadcastQueued = true
+    C_Timer.After(delay, function()
+        local payload = self.activeStepBroadcastPayload
+        self.activeStepBroadcastQueued = false
+        self.activeStepBroadcastPayload = nil
+
+        if payload then
+            self:BroadcastCurrentStep(payload)
+        end
+    end)
+
+    return true
 end

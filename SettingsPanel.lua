@@ -55,7 +55,9 @@ local ProcessBuffer
 local L = addon.locale.Get
 
 addon.settings = addon:NewModule("Settings", "AceConsole-3.0")
-addon.settings.enabledBetaFeatures = {}
+addon.settings.enabledBetaFeatures = {
+    ["Active Steps v2"] = "Allow ActiveSteps and ActivePartySteps v2", --GuideWindow/addon.v2
+}
 
 if not addon.settings.gui then
     addon.settings.gui = {selectedDeleteGuide = "", importStatusHistory = {}}
@@ -235,8 +237,19 @@ local settingsDBDefaults = {
         frameSizes = {},
         questPrio = {},
         questPrioIndex = {},
+
         -- Grouping
         shareQuests = false,
+
+        -- Grouping/V2
+        activePartyStepsV2WindowScale = 1.0,
+        activePartyStepsV2AutoSize = true,
+        shareActiveSteps = true,
+
+        -- V2 UI
+        activeStepsV2WindowScale = 1.0,
+        activeStepsV2HideBackground = true,
+        activeStepsV2RenderQuestName = true,
     }
 }
 
@@ -1088,6 +1101,7 @@ function addon.settings:CreateAceOptionsPanel()
                             p.showUnusedGuides = true
 
                             p.shareQuests = true
+                            p.shareActiveSteps = true
 
                             p.enableLevelUpAnnounceGroup = true
                             p.enableFlyStepAnnouncements = true
@@ -1162,11 +1176,46 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 4.7
                     },
+                    v2UIHeader = {
+                        name = fmt("%s %s %d", _G.INTERFACE_LABEL, _G.GAME_VERSION_LABEL, 2) .. L(" (Beta)"),
+                        type = "header",
+                        width = "full",
+                        order = 5.0,
+                        hidden = isNotAdvanced,
+                    },
+                    enableV2ActiveStepsFrame = {
+                        name = fmt("%s %s %sv2", _G.ENABLE, _G.ACTIVE_PETS, L("Step ")),
+                        -- desc = L"",
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 5.1,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end,
+                        hidden = isNotAdvanced
+                    },
+                    activeStepsV2RenderQuestName = {
+                        name = L("Display Quest Link"),
+                        desc = L("Display quest tooltips on steps"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 5.2,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.v2:UpdateActiveStepTheme()
+                        end,
+                        hidden = isNotAdvanced,
+                        disabled = function()
+                            return not self.profile.enableV2ActiveStepsFrame
+                        end
+                    },
                     inventoryHeader = {
                         name = _G.INVENTORY_TOOLTIP,
                         type = "header",
                         width = "full",
-                        order = 4.8,
+                        order = 6.1,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                     },
                     showJunkIcon = {
@@ -1174,7 +1223,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Any items marked as junk will display a gold coin icon on the top left corner of the item icon within your bags"),
                         type = "toggle",
                         width = optionsWidth * 1.5,
-                        order = 4.81,
+                        order = 6.11,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                     },
                     autoDiscardItems = {
@@ -1182,7 +1231,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Automatically attempts to discard the cheapest junk item from your bags if your inventory is full"),
                         type = "toggle",
                         width = optionsWidth * 1.5,
-                        order = 4.83,
+                        order = 6.12,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                     },
                     rightClickJunk = {
@@ -1190,14 +1239,14 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Allows you to toggle items as junk by clicking on it with CTRL+RightClick or ALT+RightClick"),
                         type = "toggle",
                         width = optionsWidth * 1.5,
-                        order = 4.84,
+                        order = 6.13,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                     },
                     rightClickMod = {
                         name = L("Right Click Modifier"), -- TODO locale
                         type = "select",
                         width = optionsWidth*0.6,
-                        order = 4.85,
+                        order = 6.14,
                         get = function()
                             return
                                 self.profile.rightClickMod or 1
@@ -1217,7 +1266,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Automatically sell all gray items and all other items that you set as junk"),
                         type = "toggle",
                         width = optionsWidth * 1.5,
-                        order = 4.86,
+                        order = 6.15,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                     },
                     maxSoulShards = {
@@ -1231,7 +1280,7 @@ function addon.settings:CreateAceOptionsPanel()
                         pattern = "^%d+$",
                         usage = L"You must input an integer number",
                         width = optionsWidth * 0.7,
-                        order = 4.875,
+                        order = 6.16,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook and addon.player.class == "WARLOCK" and addon.gameVersion < 40000),
                     },
                     sellKeybind = {
@@ -1239,7 +1288,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Click to set a keybind"),
                         type = "keybinding",
                         width = optionsWidth * 1.25,
-                        order = 4.87,
+                        order = 6.17,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                         get = function()
                             local commandName = "CLICK RXPInventory_DeleteJunk:LeftButton"
@@ -1292,7 +1341,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         type = "header",
                         width = "full",
-                        order = 5.0,
+                        order = 7.0,
                         hidden = addon.gameVersion >= 50000,
                     },
                     enableTalentGuides = {
@@ -1300,7 +1349,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Enable Talents Guides"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 5.2,
+                        order = 7.2,
                         disabled = function()
                             return not (addon.talents and
                                        addon.talents:IsSupported())
@@ -1317,7 +1366,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Enable Talent Previews"),
                         type = "toggle",
                         width = optionsWidth * 2,
-                        order = 5.3,
+                        order = 7.3,
                         disabled = function()
                             return not (addon.talents and
                                        addon.settings.profile.enableTalentGuides and
@@ -1330,7 +1379,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Highlight or list levels for each talent"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 5.5,
+                        order = 7.5,
                         disabled = function()
                             return not (addon.talents and
                                        addon.settings.profile.enableTalentGuides and
@@ -1343,7 +1392,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Sets maximum number of talents to layout"),
                         type = "range",
                         width = optionsWidth,
-                        order = 5.6,
+                        order = 7.6,
                         min = 1,
                         max = addon.talents and addon.talents.maxLevel or 1,
                         step = 1,
@@ -2115,7 +2164,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     enableLevelingReportInspections = {
                         name = L("Enable Leveling Report Inspections") ..
-                            " (Beta)",
+                            L(" (Beta)"),
                         desc =
                             L"Send or receive inspection requests for other Leveling Reports",
                         type = "toggle",
@@ -2346,6 +2395,68 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 3.2
+                    },
+                    activePartyStepsV2Header = {
+                        name = fmt("%s %s %sv2", _G.ACTIVE_PETS, _G.PARTY, L("Step ")) .. L(" (Beta)"),
+                        type = "header",
+                        width = "full",
+                        order = 4.0,
+                        hidden = isNotAdvanced
+                    },
+                    enableV2ActivePartyStepsFrame = {
+                        name = fmt("%s %s %s %sv2", _G.ENABLE, _G.ACTIVE_PETS, _G.PARTY, L("Step ")),
+                        -- desc = L"",
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 4.1,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end,
+                        hidden = isNotAdvanced
+                    },
+                    activePartyStepsV2WindowScale = {
+                        name = L("Window Scale"),
+                        -- desc = L(""),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 4.2,
+                        min = 0.5,
+                        max = 2,
+                        step = 0.05,
+                        isPercent = true,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.v2:UpdateActiveStepTheme()
+                        end,
+                        hidden = isNotAdvanced,
+                        disabled = function()
+                            return not self.profile.enableV2ActivePartyStepsFrame
+                        end
+                    },
+                    activePartyStepsV2HideBackground = {
+                        name = fmt("%s %s %s", _G.HIDE, _G.PARTY, _G.BACKGROUND),
+                        desc = L("Make background transparent"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 4.3,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.v2:UpdateActiveStepTheme()
+                        end,
+                        hidden = isNotAdvanced,
+                        disabled = function()
+                            return not self.profile.enableV2ActivePartyStepsFrame
+                        end
+                    },
+                    shareActiveSteps = {
+                        name = fmt("%s %s %s", _G.SHARE_QUEST_ABBREV, _G.ACTIVE_PETS, L("Step ")),
+                        desc = L("Share your Active Step with party members"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 4.4,
+                        hidden = isNotAdvanced
                     }
                 }
             },
@@ -2758,6 +2869,7 @@ function addon.settings:CreateAceOptionsPanel()
                             SetProfileOption(info, value)
                             if self.profile.enableThemeLiveReload then
                                 addon.RenderFrame('themeReload')
+                                addon.v2:UpdateActiveStepTheme()
                             end
                         end,
                         values = function()
@@ -3191,18 +3303,59 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.RXPFrame.GenerateMenuTable()
                         end
                     },
+                    activeStepsV2Header = {
+                        name = fmt("%s %sv2", _G.ACTIVE_PETS, L("Step ")).. L(" (Beta)"),
+                        type = "header",
+                        width = "full",
+                        order = 4.0,
+                        hidden = isNotAdvanced
+                    },
+                    activeStepsV2WindowScale = {
+                        name = L("Window Scale"),
+                        -- desc = L(""),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 4.1,
+                        min = 0.5,
+                        max = 2,
+                        step = 0.05,
+                        isPercent = true,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.v2:UpdateActiveStepTheme()
+                        end,
+                        hidden = isNotAdvanced,
+                        disabled = function()
+                            return not self.profile.enableV2ActiveStepsFrame
+                        end
+                    },
+                    activeStepsV2HideBackground = {
+                        name = fmt("%s %s", _G.HIDE, _G.BACKGROUND),
+                        desc = L("Make background transparent"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 4.2,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.v2:UpdateActiveStepTheme()
+                        end,
+                        hidden = isNotAdvanced,
+                        disabled = function()
+                            return not self.profile.enableV2ActiveStepsFrame
+                        end
+                    },
                     arrowHeader = {
                         name = L("Waypoint Arrow"), -- TODO locale
                         type = "header",
                         width = "full",
-                        order = 3.9
+                        order = 5.0
                     },
                     arrowScale = {
                         name = L("Arrow Scale"),
                         desc = L("Scale of the Waypoint Arrow"),
                         type = "range",
                         width = optionsWidth,
-                        order = 3.92,
+                        order = 5.1,
                         min = 0.2,
                         max = 2,
                         step = 0.05,
@@ -3217,7 +3370,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Size of the waypoint arrow text"),
                         type = "range",
                         width = optionsWidth,
-                        order = 3.93,
+                        order = 5.2,
                         min = 5,
                         max = 20,
                         step = 1,
@@ -3229,7 +3382,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     resetArrowPosition = {
                         name = L("Reset Arrow Position"), -- TODO locale
-                        order = 3.94,
+                        order = 5.3,
                         type = "execute",
                         width = optionsWidth,
                         func = function()
@@ -3240,14 +3393,14 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Active Items"),
                         type = "header",
                         width = "full",
-                        order = 4.0
+                        order = 6.0
                     },
                     activeItemsScale = {
                         name = L("Active Item Scale"), -- TODO locale
                         desc = L("Scale of the Active Item frame"),
                         type = "range",
                         width = optionsWidth,
-                        order = 4.1,
+                        order = 6.1,
                         min = 0.8,
                         max = 3,
                         step = 0.05,
@@ -3262,7 +3415,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Make background transparent"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 4.2,
+                        order = 6.2,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             if addon.activeItemFrame then
@@ -3272,7 +3425,7 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     resetItemPosition = {
                         name = L("Reset Window Position"), -- TODO locale
-                        order = 4.21,
+                        order = 6.21,
                         type = "execute",
                         width = optionsWidth,
                         func = function()
@@ -3283,13 +3436,13 @@ function addon.settings:CreateAceOptionsPanel()
                         name = _G.MAP_OPTIONS_TEXT,
                         type = "header",
                         width = "full",
-                        order = 5.1
+                        order = 7.1
                     },
                     hideMiniMapPins = {
                         name = L("Hide Mini Map Pins"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 5.2,
+                        order = 7.2,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.UpdateMap()
@@ -3301,7 +3454,7 @@ function addon.settings:CreateAceOptionsPanel()
                             L"Show a targeting circle around active map pins",
                         type = "toggle",
                         width = optionsWidth,
-                        order = 5.3,
+                        order = 7.3,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.UpdateMap()
@@ -3312,7 +3465,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Number of map pins shown on the world map"),
                         type = "range",
                         width = optionsWidth,
-                        order = 5.4,
+                        order = 7.4,
                         min = 0,
                         max = 20,
                         step = 1,
@@ -3326,7 +3479,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Adjusts the size of the world map pins"),
                         type = "range",
                         width = optionsWidth,
-                        order = 5.5,
+                        order = 7.5,
                         min = 0.05,
                         max = 1,
                         step = 0.05,
@@ -3342,7 +3495,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Adjusts the size of the world map pins"),
                         type = "range",
                         width = optionsWidth,
-                        order = 5.6,
+                        order = 7.6,
                         min = 0.05,
                         max = 1,
                         step = 0.05,
@@ -3362,7 +3515,7 @@ function addon.settings:CreateAceOptionsPanel()
                             L"If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group.",
                         type = "range",
                         width = optionsWidth,
-                        order = 5.7,
+                        order = 7.7,
                         min = 0.05,
                         max = 2,
                         step = 0.05,
@@ -3377,7 +3530,7 @@ function addon.settings:CreateAceOptionsPanel()
                             L"The opacity of the black circles on the map and mini map",
                         type = "range",
                         width = optionsWidth,
-                        order = 5.8,
+                        order = 7.8,
                         min = 0,
                         max = 1,
                         step = 0.05,
@@ -4352,60 +4505,60 @@ function addon.settings:SaveFramePositions()
           offsetYOrNil
 
     for frameName, frame in pairs(addon.enabledFrames) do
-        addon.settings.profile.frameSizes[frameName] = {
-            frame:GetWidth(), frame:GetHeight()
-        }
-
-        addon.settings.profile.framePositions[frameName] = {}
-
-        for i = 1, frame:GetNumPoints() or 0 do
-            point, relativeToFrameOrPoint, relativePointOrX, offsetXOrY, offsetYOrNil =
-                frame:GetPoint(i)
-
-            if type(relativeToFrameOrPoint) == "table" then
-                relativeToFrameOrPoint = relativeToFrameOrPoint:GetName()
-            end
-
-            addon.settings.profile.framePositions[frameName][i] = {
-                point, relativeToFrameOrPoint, relativePointOrX, offsetXOrY,
-                offsetYOrNil
+        if frame.savePosition ~= false then
+            addon.settings.profile.frameSizes[frameName] = {
+                frame:GetWidth(), frame:GetHeight()
             }
+
+            addon.settings.profile.framePositions[frameName] = {}
+
+            for i = 1, frame:GetNumPoints() or 0 do
+                point, relativeToFrameOrPoint, relativePointOrX, offsetXOrY, offsetYOrNil =
+                    frame:GetPoint(i)
+
+                if type(relativeToFrameOrPoint) == "table" then
+                    relativeToFrameOrPoint = relativeToFrameOrPoint:GetName()
+                end
+
+                addon.settings.profile.framePositions[frameName][i] = {
+                    point, relativeToFrameOrPoint, relativePointOrX, offsetXOrY,
+                    offsetYOrNil
+                }
+            end
         end
     end
 
 end
 
-function addon.settings:LoadFramePositions()
-    local point, relativeToName, relativePoint, offsetX, offsetYOrNil
-    local result, reason
-    local p = addon.settings.profile
+function addon.settings:LoadFramePosition(frameName, frame)
+    if frame.savePosition == false then return end
 
-    for frameName, frame in pairs(addon.enabledFrames) do
-        -- Wipe alpha frame data
-        -- Alpha frame restoration only tracked one point, to [1] would be "TOPLEFT" or similar
-        if p.framePositions[frameName] and p.framePositions[frameName][1] and
-            type(p.framePositions[frameName][1]) ~= "table" then
-            p.framePositions[frameName] = nil
-        end
+    local p = self.profile
+    local positions = p.framePositions and p.framePositions[frameName]
 
-        if p.framePositions[frameName] then
-            for i = 1, frame:GetNumPoints() or 0 do
-                point, relativeToName, relativePoint, offsetX, offsetYOrNil =
-                    unpack(p.framePositions[frameName][i])
+    -- Alpha frame restoration only tracked one point as a string.
+    if positions and positions[1] and type(positions[1]) ~= "table" then
+        p.framePositions[frameName] = nil
+        positions = nil
+    end
 
-                frame:ClearAllPoints()
-                result, reason = pcall(frame.SetPoint, frame, point,
-                                       relativeToName, relativePoint, offsetX,
-                                       offsetYOrNil)
-            end
-        end
-
-        if p.frameSizes[frameName] then
-            frame:SetSize(unpack(p.frameSizes[frameName]))
+    if positions then
+        frame:ClearAllPoints()
+        for i = 1, #positions do
+            pcall(frame.SetPoint, frame, unpack(positions[i]))
         end
     end
 
-    addon.settings:LoadScales()
+    local size = p.frameSizes and p.frameSizes[frameName]
+    if size then frame:SetSize(unpack(size)) end
+end
+
+function addon.settings:LoadFramePositions()
+    for frameName, frame in pairs(addon.enabledFrames) do
+        self:LoadFramePosition(frameName, frame)
+    end
+
+    self:LoadScales()
 end
 
 function addon.settings:LoadScales()

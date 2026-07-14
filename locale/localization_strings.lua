@@ -151,6 +151,10 @@ L["Quest is being turned in at"] = "Quest is being turned in at"
 L["Development"] = "Development"
 
 --SettingsPanel.lua
+L[" (Beta)"] = " (Beta)"
+L["Display Quest Link"] = "Display Quest Link"
+L["Display quest tooltips on steps"] = "Display quest tooltips on steps"
+L["Share your Active Step with party members"] = "Share your Active Step with party members"
 L["Please restart your game client and try again"] = "Please restart your game client and try again"
 L["Failed to Import Guides: Invalid Import String"] = "Failed to Import Guides: Invalid Import String"
 L["Guide Import"] = "Guide Import"
@@ -213,6 +217,7 @@ L["Checks for heirlooms and experience buffs"] = "Checks for heirlooms and exper
 L["Experience rates"] = "Experience rates"
 L["Skip overleveled steps"] = "Skip overleveled steps"
 L["Skip steps you're overleveled for"] = "Skip steps you're overleveled for"
+L["Skip step"] = "Skip step"
 L["Show Group Quests"] = "Show Group Quests"
 L["Solo Self Found Mode"] = "Solo Self Found Mode"
 L["Northrend Loremaster"] = "Northrend Loremaster"
