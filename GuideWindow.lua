@@ -255,7 +255,7 @@ function addon.BindActiveStepElement(frame, step, element, index)
     frame.element = element
     frame.index = index
     element.frame = frame
-    frame.button:Enable()
+    if frame.button then frame.button:Enable() end
 
     if not element.tag then return end
 
@@ -297,6 +297,43 @@ function addon.ReleaseActiveStepElement(frame)
     frame.element = nil
     frame.step = nil
     frame.index = nil
+end
+
+function addon.v2:ClearActiveStepEventWatchers()
+    local watcher = self.state.activeStepEventWatcher
+    if not watcher then return end
+    AceGUI:Release(watcher)
+    self.state.activeStepEventWatcher = nil
+    self.state.activeStepEventWatcherStep = nil
+end
+
+function addon.v2:UpdateActiveStepEventWatchers(steps)
+    local watcher = self.state.activeStepEventWatcher
+    local watcherStep = self.state.activeStepEventWatcherStep
+    if not watcher then
+        watcher = AceGUI:Create("RXPV2ActiveStepItem")
+        watcher.frame:Hide()
+        self.state.activeStepEventWatcher = watcher
+    end
+    if not watcherStep then
+        watcherStep = {active = true, elements = {}}
+        self.state.activeStepEventWatcherStep = watcherStep
+    end
+    table.wipe(watcherStep.elements)
+
+    local element, step
+    for stepIndex = 1, #steps do
+        step = steps[stepIndex]
+        if step.active then
+            for elementIndex = 1, #(step.elements or {}) do
+                element = step.elements[elementIndex]
+                if element.tag and not (element.text or element.rawtext or element.requestFromServer) then
+                    tinsert(watcherStep.elements, element)
+                end
+            end
+        end
+    end
+    watcher:SetElements(watcherStep, true)
 end
 
 local function SetStepFrameAnchor()
@@ -765,7 +802,10 @@ function addon.SetStep(n, n2, loopback)
     table.wipe(addon.activeMacros)
     table.wipe(addon.inventoryManager.itemsToOpen)
     local useV2ActiveStepsFrame = addon.UseV2ActiveStepsFrame()
-    if not useV2ActiveStepsFrame then ClearFrameData() end
+    if not useV2ActiveStepsFrame then
+        ClearFrameData()
+        addon.v2:ClearActiveStepEventWatchers()
+    end
     local level = UnitLevel("player")
     local scrollHeight = 1
 
@@ -3268,6 +3308,7 @@ end
 
 function addon.v2:UpdateActiveStepsFrame(steps, questId)
     if not addon.settings.profile.enableBetaFeatures then
+        self:ClearActiveStepEventWatchers()
         return
     end
 
@@ -3297,8 +3338,11 @@ function addon.v2:UpdateActiveStepsFrame(steps, questId)
     end
 
     if not addon.settings.profile.enableV2ActiveStepsFrame then
+        self:ClearActiveStepEventWatchers()
         return
     end
+
+    self:UpdateActiveStepEventWatchers(steps)
 
     if not renderReady then
         return

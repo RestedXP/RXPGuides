@@ -1034,7 +1034,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 end
 
 function addon.ui.v2:RegisterRXPV2ActiveStepItem()
-    local Type, Version = "RXPV2ActiveStepItem", 2
+    local Type, Version = "RXPV2ActiveStepItem", 4
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     local transparent = {0, 0, 0, 0}
@@ -1304,6 +1304,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         row.icon = icon
 
         local text = row:CreateFontString(nil, "OVERLAY")
+        text:SetFontObject(_G.GameFontNormalSmall)
         text:SetJustifyH("LEFT")
         text:SetJustifyV("MIDDLE")
         text:SetWordWrap(true)
@@ -1373,10 +1374,10 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             this.frame:SetScale(scale)
         end,
 
-        ["SetElements"] = function(this, step)
+        ["SetElements"] = function(this, step, watchOnly)
             local rows = this.elementRows
             local previousCount = this.activeElementRows or 0
-            local row, element, previousElement, previousStep
+            local row, element, previousElement, previousStep, rowStep
 
             local theme = addon.v2:GetTheme()
             local textColor = theme.textColor.activeStepItem or theme.textColor.common
@@ -1386,7 +1387,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             local elements = step.elements or {}
             for elementIndex = 1, #elements do
                 element = elements[elementIndex]
-                if element.text or element.rawtext or element.requestFromServer then
+                if watchOnly or element.text or element.rawtext or element.requestFromServer then
                     visibleCount = visibleCount + 1
                     row = rows[visibleCount]
                     if not row then
@@ -1396,7 +1397,8 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
                     previousElement = row.element
                     previousStep = row.step
-                    if previousElement ~= element or previousStep ~= step then
+                    rowStep = watchOnly and (element.step or step) or step
+                    if previousElement ~= element or previousStep ~= rowStep then
                         addon.ReleaseActiveStepElement(row)
                     end
                     row.element = element
@@ -1417,8 +1419,8 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
                     row.button:SetShown(not element.textOnly)
                     row:Show()
-                    if previousElement ~= element or previousStep ~= step then
-                        addon.BindActiveStepElement(row, step, element, step.index)
+                    if previousElement ~= element or previousStep ~= rowStep then
+                        addon.BindActiveStepElement(row, rowStep, element, rowStep.index)
                     end
                 end
             end
