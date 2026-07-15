@@ -45,3 +45,9 @@ Talents.lua
 Guides/Talents/tbc.xml
 
 ItemUpgrades.lua
+
+Professions\Professions.lua
+Professions\locale\ProfessionsLocale.lua
+Professions\AH\ProfessionsAH.lua
+Professions\DB\ProfessionsDB.lua
+Professions\GUI\ProfessionsDebugGUI.lua

@@ -355,10 +355,7 @@ L["Development"] = ""
 
 -- SettingsPanel.lua file
 
-L[" (Beta)"] = ""
 L["Display Quest Link"] = ""
-L["Display quest tooltips on steps"] = ""
-L["Share your Active Step with party members"] = ""
 L["Migrating %s = %s"] = ""
 L["Character profile (%s) already migrated"] = ""
 L["Please restart your game client and try again"] = ""

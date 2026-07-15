@@ -30,6 +30,7 @@ local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
 local IsSpellKnown = C_Spell and C_Spell.IsSpellKnown or _G.IsSpellKnown
 local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
 local NewTicker = C_Timer.NewTicker
+local GetMoney = _G.GetMoney
 local messageList = {}
 
 local function MessageHandler(message,...)
@@ -1174,6 +1175,9 @@ function addon:OnInitialize()
     RXPData = RXPData or {}
     RXPCData = RXPCData or {}
     RXPCData.exploredZones = RXPCData.exploredZones or {}
+    RXPCData.craftedItems = RXPCData.craftedItems or {}
+    RXPCData.professions = RXPCData.professions or {}
+    RXPCData.money = 0
 
     local realm = _G.GetRealmName()
     RXPData.realmData = RXPData.realmData or {}
@@ -1241,6 +1245,10 @@ function addon:OnInitialize()
     if addon.itemUpgrades then
         addon.itemUpgrades:Setup()
     end
+    if addon.professions then
+        addon.professions:Setup()
+    end
+    RXPCData.money = GetMoney()
 
     if addon.player.season == 2 then
         addon.settings.profile.phase = 6
@@ -2275,7 +2283,7 @@ end
 
 function addon.v2.events:Register(key)
     if not key then return end
-
+    addon.comms.PrettyDebug("addon.v2.events:Register %s", key)
     self:RegisterMessage(self.messagePrefix .. key, key)
 end
 
@@ -2294,12 +2302,8 @@ function addon.v2.events:UpdateActiveSteps(_, activeSteps, name)
     addon.v2:UpdateActivePartyStepsFrame(activeSteps, name)
 end
 
-function addon.v2.events:QuestDataLoaded(_, questId)
-    if not questId then
-        addon.v2.state.activeStepRenderRevision =
-            (addon.v2.state.activeStepRenderRevision or 0) + 1
-    end
+function addon.v2.events:QuestDataLoaded()
     if addon.RXPFrame.activeSteps then
-        addon.v2:UpdateActiveStepsFrame(addon.RXPFrame.activeSteps, questId)
+        addon.v2:UpdateActiveStepsFrame(addon.RXPFrame.activeSteps)
     end
 end
