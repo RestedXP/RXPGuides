@@ -832,7 +832,7 @@ function addon.targeting:CreateTargetFrame()
     f:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
 
     f.title = CreateFrame("Frame", "$parent_title", f, BackdropTemplateMixin and "BackdropTemplate" or nil)
-    f.title:SetPoint("TOPLEFT", f, 5, 5)
+    f.title:SetPoint("TOPLEFT", f, 5, 10)
     f.title:SetFrameLevel(f:GetFrameLevel() + 3)
 
     local theme = addon.v2:GetTheme()
