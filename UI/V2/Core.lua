@@ -474,7 +474,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
         frame:SetFrameLevel(100)
         self:ApplyFrameBackdrop(frame, theme.edges.activeSteps or theme.edges.common,
                                 theme.backgroundColors.activeSteps or theme.backgroundColors.common,
-                                theme.borderColors.activeSteps or theme.borderColors.common)
+                                theme.borderColors.commonEdge or theme.borderColors.common)
         self:AddFrameShadow(frame)
 
         frame:SetScript("OnShow", Frame_OnShow)
@@ -903,7 +903,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         self:ApplyFrameBackdrop(frame, theme.edges.activeSteps or theme.edges.activePartySteps or theme.edges.common,
                                 theme.backgroundColors.activeSteps or theme.backgroundColors.activePartySteps or theme.backgroundColors.common,
-                                theme.borderColors.activeSteps or theme.borderColors.activePartySteps or theme.borderColors.common)
+                                theme.borderColors.commonEdge or theme.borderColors.activePartySteps or theme.borderColors.common)
         self:AddFrameShadow(frame)
 
         if frame.SetResizeBounds then -- WoW 10.0
@@ -1439,7 +1439,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             local theme = addon.v2:GetTheme()
             local itemEdge = theme.edges.activeStepItem or theme.edges.common
             local itemBackground = theme.backgroundColors.activeStepItem or theme.backgroundColors.common
-            local itemBorder = theme.borderColors.activeStepItem or theme.borderColors.common
+            local itemBorder = theme.borderColors.itemEdge or theme.borderColors.common
             local badgeEdge = theme.edges.activeStepBadge or itemEdge
             local badgeBackground = theme.backgroundColors.activeStepBadge or itemBackground
             local badgeBorder = theme.borderColors.activeStepBadge or itemBorder
@@ -1472,7 +1472,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         local theme = addon.v2:GetTheme()
         local itemEdge = theme.edges.activeStepItem or theme.edges.common
         local itemBackground = theme.backgroundColors.activeStepItem or theme.backgroundColors.common
-        local itemBorder = theme.borderColors.activeStepItem or theme.borderColors.common
+        local itemBorder = theme.borderColors.itemEdge or theme.borderColors.common
         local itemTextColor = theme.textColor.activeStepItem or theme.textColor.common
         local badgeEdge = theme.edges.activeStepBadge or itemEdge
         local badgeBackground = theme.backgroundColors.activeStepBadge or itemBackground
@@ -1585,7 +1585,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
             local itemEdge = theme.edges.activeStepItem or theme.edges.common
             local itemBackground = theme.backgroundColors.activeStepItem or
                                    theme.backgroundColors.common
-            local itemBorder = theme.borderColors.activeStepItem or
+            local itemBorder = theme.borderColors.itemEdge or
                                theme.borderColors.common
             local badgeEdge = theme.edges.activeStepBadge or itemEdge
             local badgeBackground = theme.backgroundColors.activeStepBadge or
@@ -1608,7 +1608,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
         local itemEdge = theme.edges.activeStepItem or theme.edges.common
         local itemBackground = theme.backgroundColors.activeStepItem or
                                theme.backgroundColors.common
-        local itemBorder = theme.borderColors.activeStepItem or
+        local itemBorder = theme.borderColors.itemEdge or
                            theme.borderColors.common
         local itemTextColor = theme.textColor.activePartyStepItem or
                               theme.textColor.activeStepItem or

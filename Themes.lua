@@ -274,11 +274,11 @@ addon.v2.themes['v2'] = {
 
     borderColors = {
         common = {1, 1, 1, 1}, -- #FFFFFFFF
-        activeSteps = {55 / 255, 62 / 255, 109 / 255, 1}, -- #373E6DFF
+        commonEdge = {55 / 255, 62 / 255, 109 / 255, 1}, -- #373E6DFF
         activePartySteps = {55 / 255, 62 / 255, 109 / 255, 1}, -- #373E6DFF
         activePartyTab = {55 / 255, 62 / 255, 109 / 255, 1}, -- #373E6DFF
         inactivePartyTab = {62 / 255, 66 / 255, 102 / 255, 1}, -- #3E4266FF
-        activeStepItem = {150 / 255, 156 / 255, 185 / 255, 1}, -- #969CB9FF
+        itemEdge = {150 / 255, 156 / 255, 185 / 255, 1}, -- #969CB9FF
         activeStepBadge = {150 / 255, 156 / 255, 185 / 255, 1}, -- #969CB9FF
         activeStepCheckbox = {55 / 255, 62 / 255, 109 / 255, 1}, -- #373E6DFF
         activeStepCheckboxChecked = {17 / 255, 132 / 255, 1, 1}, -- #118401FF
