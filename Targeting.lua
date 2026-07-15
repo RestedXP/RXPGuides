@@ -785,7 +785,7 @@ local function UpdateIconFrameVisuals(self, updateFrame)
     addon.targeting:RenderTargetFrameBackground()
     self.title.text:SetFont(addon.font, 9, "")
     self.title.text:SetTextColor(unpack(addon.v2:GetTheme().textColor.activePartySteps))
-    self.title:SetSize(self.title.text:GetStringWidth() + 14, 19)
+    self.title:SetSize(self.title.text:GetStringWidth() + 10, 19)
 end
 
 function addon.targeting:CreateTargetFrame()
@@ -832,7 +832,7 @@ function addon.targeting:CreateTargetFrame()
     f:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
 
     f.title = CreateFrame("Frame", "$parent_title", f, BackdropTemplateMixin and "BackdropTemplate" or nil)
-    f.title:SetPoint("TOPLEFT", f, 5, 10)
+    f.title:SetPoint("TOPLEFT", f, 5, 8)
     f.title:SetFrameLevel(f:GetFrameLevel() + 3)
 
     local theme = addon.v2:GetTheme()
@@ -849,7 +849,7 @@ function addon.targeting:CreateTargetFrame()
     f.title.text:SetFont(addon.font, 9, "")
     f.title.text:SetText(L"Active Targets")
 
-    f.title:SetSize(f.title.text:GetStringWidth() + 14, 19)
+    f.title:SetSize(f.title.text:GetStringWidth() + 10, 19)
 
     f.title:EnableMouse(true)
     f.title:SetScript("OnMouseDown", f.onMouseDown)
@@ -1081,8 +1081,21 @@ local function ResizeTargetsFrame(targetFrame, friendlyCount, enemyCount)
 
     targetFrame:SetWidth(mmax(targetFrame.title:GetWidth() + 10, friendlyWidth, enemyWidth))
 
-    -- Header offset + rows
-    targetFrame:SetHeight(18 + topDown + bottomUp)
+    -- Header offset + rows, plus separation when both groups are present.
+    local groupGap = friendlyCount > 0 and enemyCount > 0 and 5 or 0
+    targetFrame:SetHeight(18 + topDown + bottomUp + groupGap)
+
+    if enemyCount > 0 then
+        local firstEnemyButton = targetFrame.enemyTargetButtons[1]
+        firstEnemyButton:ClearAllPoints()
+        firstEnemyButton:SetPoint("TOPLEFT", targetFrame, "TOPLEFT", 6, -15)
+    end
+
+    if friendlyCount > 0 then
+        local firstFriendlyButton = targetFrame.friendlyTargetButtons[1]
+        firstFriendlyButton:ClearAllPoints()
+        firstFriendlyButton:SetPoint("BOTTOMLEFT", targetFrame, "BOTTOMLEFT", 6, 6)
+    end
 end
 
 function addon.targeting:UpdateTargetFrame(selector)
