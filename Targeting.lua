@@ -783,11 +783,8 @@ function addon.targeting:CanCreateMacro() return GetNumMacros() < 119 end
 local function UpdateIconFrameVisuals(self, updateFrame)
     self:SetScale(addon.settings.profile.activeTargetScale or 1)
     addon.targeting:RenderTargetFrameBackground()
-    self.title:ClearBackdrop()
-    self.title:SetBackdrop(addon.RXPFrame.backdrop.edge)
-    self.title:SetBackdropColor(unpack(addon.colors.background))
     self.title.text:SetFont(addon.font, 9, "")
-    self.title.text:SetTextColor(unpack(addon.activeTheme.textColor))
+    self.title.text:SetTextColor(unpack(addon.v2:GetTheme().textColor.activePartySteps))
     self.title:SetSize(self.title.text:GetStringWidth() + 14, 19)
 end
 
@@ -836,16 +833,19 @@ function addon.targeting:CreateTargetFrame()
 
     f.title = CreateFrame("Frame", "$parent_title", f, BackdropTemplateMixin and "BackdropTemplate" or nil)
     f.title:SetPoint("TOPLEFT", f, 5, 5)
-    f.title:ClearBackdrop()
-    f.title:SetBackdrop(addon.RXPFrame.backdrop.edge)
-    f.title:SetBackdropColor(unpack(addon.colors.background))
+    f.title:SetFrameLevel(f:GetFrameLevel() + 3)
+
+    local theme = addon.v2:GetTheme()
+    addon.ui.v2:ApplyFrameBackdrop(f.title, theme.edges.common, theme.backgroundColors.activeSteps,
+                                   theme.borderColors.activeStepItem)
+    addon.ui.v2:AddFrameShadow(f.title)
 
     f.title.text = f.title:CreateFontString(nil, "OVERLAY")
     f.title.text:ClearAllPoints()
-    f.title.text:SetPoint("CENTER", f.title, 0, 2)
+    f.title.text:SetPoint("CENTER", f.title, 0, 0)
     f.title.text:SetJustifyH("CENTER")
     f.title.text:SetJustifyV("MIDDLE")
-    f.title.text:SetTextColor(unpack(addon.activeTheme.textColor))
+    f.title.text:SetTextColor(unpack(theme.textColor.activePartySteps))
     f.title.text:SetFont(addon.font, 9, "")
     f.title.text:SetText(L"Active Targets")
 
@@ -864,13 +864,14 @@ function addon.targeting:RenderTargetFrameBackground()
     if not self.activeTargetFrame then return end
 
     local f = self.activeTargetFrame
-    -- print(RXP.activeTheme.texturePath)
     if addon.settings.profile.hideActiveTargetsBackground then
-        f:ClearBackdrop()
+        addon.ui.v2:SetFrameBackdropShown(f, false)
     else
-        f:ClearBackdrop()
-        f:SetBackdrop(addon.RXPFrame.backdrop.edge)
-        f:SetBackdropColor(unpack(addon.colors.background))
+        local theme = addon.v2:GetTheme()
+        addon.ui.v2:ApplyFrameBackdrop(f, theme.edges.common, theme.backgroundColors.activeSteps,
+                                       theme.borderColors.activeStepItem)
+        addon.ui.v2:AddFrameShadow(f)
+        addon.ui.v2:SetFrameBackdropShown(f, true)
     end
 end
 
@@ -1029,7 +1030,7 @@ local function RowifyTargets(targetFrame, btn, buttons, kind)
 
     if buttonKindCount == 1 then
         if kind == "enemy" then
-            btn:SetPoint("TOPLEFT", targetFrame, "TOPLEFT", 6, -11)
+            btn:SetPoint("TOPLEFT", targetFrame, "TOPLEFT", 6, -15)
         else -- Friendly
             btn:SetPoint("BOTTOMLEFT", targetFrame, "BOTTOMLEFT", 6, 6)
         end
