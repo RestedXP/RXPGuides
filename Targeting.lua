@@ -839,7 +839,6 @@ function addon.targeting:CreateTargetFrame()
     local theme = addon.v2:GetTheme()
     addon.ui.v2:ApplyFrameBackdrop(f.title, theme.edges.common, theme.backgroundColors.activeSteps,
                                    theme.borderColors.itemEdge)
-    addon.ui.v2:AddFrameShadow(f.title)
 
     f.title.text = f.title:CreateFontString(nil, "OVERLAY")
     f.title.text:ClearAllPoints()
