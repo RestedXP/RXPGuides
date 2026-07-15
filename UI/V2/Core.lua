@@ -1181,6 +1181,13 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             else
                 row.text:SetText(addon.ReplaceNpcIds(L(element.text)))
             end
+        elseif element.tooltipText and element.tooltipText ~= "" then
+            local text = element.tooltipText
+            local icon = element.icon or addon.icons[element.tag]
+            if icon and text:sub(1, #icon) == icon then
+                text = text:sub(#icon + 1)
+            end
+            row.text:SetText(addon.ReplaceNpcIds(L(text)))
         elseif element.rawtext and element.rawtext ~= "" then
             row.text:SetText(addon.ReplaceNpcIds(L(element.rawtext)))
         elseif not element.requestFromServer then
@@ -1329,7 +1336,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             local elements = step.elements or {}
             for elementIndex = 1, #elements do
                 element = elements[elementIndex]
-                if watchOnly or element.text or element.rawtext or element.requestFromServer then
+                if watchOnly or element.text or element.rawtext or element.tooltipText then
                     visibleCount = visibleCount + 1
                     row = rows[visibleCount]
                     if not row then
@@ -1353,7 +1360,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                             "")
 
                         if element.tag and (element.text or element.rawtext or
-                            element.requestFromServer) then
+                            element.tooltipText) then
                             row.icon:SetText(element.icon or addon.icons[element.tag] or "")
                             row.icon:Show()
                         else
