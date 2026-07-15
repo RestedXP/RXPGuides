@@ -327,7 +327,7 @@ function addon.v2:UpdateActiveStepEventWatchers(steps)
         if step.active then
             for elementIndex = 1, #(step.elements or {}) do
                 element = step.elements[elementIndex]
-                if element.tag and not (element.text or element.rawtext or element.requestFromServer) then
+                if element.tag and not (element.text or element.rawtext or element.tooltipText) then
                     tinsert(watcherStep.elements, element)
                 end
             end
@@ -2999,22 +2999,6 @@ function addon.v2:GetActiveStepText(step)
     if step.hiddentext and step.hiddentext ~= "" then return step.hiddentext end
 end
 
-function addon.v2:IsActiveStepRenderReady(step)
-    local hasText = not not self:GetActiveStepText(step)
-    for _, element in ipairs(step.elements or {}) do
-        if element.text == " " then
-            return false
-        elseif element.text then
-            hasText = true
-        elseif element.rawtext then
-            hasText = true
-        elseif element.requestFromServer then
-            return false
-        end
-    end
-    return hasText
-end
-
 function addon.v2:EncodePlayerActiveSteps(payload)
     local trimmedPayload = {}
 
@@ -3191,12 +3175,13 @@ function addon.v2:PlayerActiveStepItemNeedsUpdate(stepItem, step, questId)
     local visibleCount = 0
     for elementIndex = 1, #elements do
         element = elements[elementIndex]
-        if element.text or element.rawtext or element.requestFromServer then
+        if element.text or element.rawtext or element.tooltipText then
             visibleCount = visibleCount + 1
             snapshot = snapshots[visibleCount]
             if not snapshot or snapshot.element ~= element or
                 snapshot.text ~= element.text or
                 snapshot.rawtext ~= element.rawtext or
+                snapshot.tooltipText ~= element.tooltipText or
                 snapshot.requestFromServer ~= element.requestFromServer or
                 snapshot.tag ~= element.tag or snapshot.icon ~= element.icon or
                 snapshot.title ~= element.title or snapshot.questId ~= element.questId or
@@ -3245,12 +3230,13 @@ function addon.v2:UpdatePlayerActiveStepItem(stepItem, step)
     local visibleCount = 0
     for elementIndex = 1, #elements do
         element = elements[elementIndex]
-        if element.text or element.rawtext or element.requestFromServer then
+        if element.text or element.rawtext or element.tooltipText then
             visibleCount = visibleCount + 1
             snapshot = snapshots[visibleCount] or {}
             snapshot.element = element
             snapshot.text = element.text
             snapshot.rawtext = element.rawtext
+            snapshot.tooltipText = element.tooltipText
             snapshot.requestFromServer = element.requestFromServer
             snapshot.tag = element.tag
             snapshot.icon = element.icon
@@ -3335,13 +3321,11 @@ function addon.v2:UpdateActiveStepsFrame(steps, questId)
 
     -- Player comes from activeSteps, whereas not-player comes over chat channels.
     local payloadReady = true
-    local renderReady = true
     local encodedPayload
 
     for _, step in ipairs(steps) do
         if self:IsActiveStepShown(step) then
             if not self:GetActiveStepText(step) then payloadReady = false end
-            if not self:IsActiveStepRenderReady(step) then renderReady = false end
         end
     end
 
@@ -3359,10 +3343,6 @@ function addon.v2:UpdateActiveStepsFrame(steps, questId)
     end
 
     self:UpdateActiveStepEventWatchers(steps)
-
-    if not renderReady then
-        return
-    end
 
     local playerStepFrame = self:GetActiveStepsFrame(player)
 
