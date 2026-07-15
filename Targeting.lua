@@ -838,7 +838,7 @@ function addon.targeting:CreateTargetFrame()
 
     local theme = addon.v2:GetTheme()
     addon.ui.v2:ApplyFrameBackdrop(f.title, theme.edges.common, theme.backgroundColors.activeSteps,
-                                   theme.borderColors.activeStepItem)
+                                   theme.borderColors.itemEdge)
     addon.ui.v2:AddFrameShadow(f.title)
 
     f.title.text = f.title:CreateFontString(nil, "OVERLAY")
@@ -870,7 +870,7 @@ function addon.targeting:RenderTargetFrameBackground()
     else
         local theme = addon.v2:GetTheme()
         addon.ui.v2:ApplyFrameBackdrop(f, theme.edges.common, theme.backgroundColors.activeSteps,
-                                       theme.borderColors.activeStepItem)
+                                       theme.borderColors.itemEdge)
         addon.ui.v2:AddFrameShadow(f)
         addon.ui.v2:SetFrameBackdropShown(f, true)
     end
@@ -1061,7 +1061,6 @@ end
 local function ResizeTargetsFrame(targetFrame, friendlyCount, enemyCount)
     local enemyWidth, enemyRows = GetTargetGridMetrics(enemyCount, 10)
     local friendlyWidth, friendlyRows = GetTargetGridMetrics(friendlyCount, 8)
-    local singleTarget = enemyCount + friendlyCount == 1
     local soloFriendlyRow = enemyRows == 0 and friendlyRows == 1
 
     targetFrame:SetWidth(mmax(targetFrame.title:GetWidth() + 10, friendlyWidth, enemyWidth))
@@ -1070,7 +1069,7 @@ local function ResizeTargetsFrame(targetFrame, friendlyCount, enemyCount)
     if enemyRows > 0 then
         local firstEnemyButton = targetFrame.enemyTargetButtons[1]
         firstEnemyButton:ClearAllPoints()
-        firstEnemyButton:SetPoint("TOPLEFT", targetFrame, "TOPLEFT", 6, singleTarget and -18 or -15)
+        firstEnemyButton:SetPoint("TOPLEFT", targetFrame, "TOPLEFT", 6, -15)
     end
 
     if friendlyRows > 0 then
