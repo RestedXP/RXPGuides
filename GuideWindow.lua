@@ -2852,7 +2852,8 @@ function addon.v2:RefreshActivePartyTabs(preferredPlayer)
 
     self.state.activePartyPlayer = activePlayer
     stepFrame:SetTabs(players, activePlayer)
-    if #players == 0 or not stepFrame.IsFeatureEnabled() then
+    if #players == 0 or not stepFrame.IsFeatureEnabled() or
+        not addon.RXPFrame:IsShown() then
         stepFrame:Hide()
     else
         stepFrame:Show()
