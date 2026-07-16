@@ -44,18 +44,17 @@ local function updateTheme(this, payload)
     end
 end
 
-local function setFrameBackdropShown(frame, shown)
+function addon.ui.v2:SetFrameBackdropShown(frame, shown)
     if frame.rxpBackground then frame.rxpBackground:SetShown(shown) end
     if frame.rxpBorder then frame.rxpBorder:SetShown(shown) end
+    if frame.rxpShadow then frame.rxpShadow:SetShown(shown) end
 end
 
 local function updateFrameBackgroundVisibility(this, payload)
     if not payload or payload.hideBackground == nil then return end
 
     local shown = not payload.hideBackground
-    setFrameBackdropShown(this.frame, shown)
-
-    if this.frame.rxpShadow then this.frame.rxpShadow:SetShown(shown) end
+    addon.ui.v2:SetFrameBackdropShown(this.frame, shown)
 end
 
 local function updatePartyFrameBackgroundVisibility(this, payload)
@@ -78,7 +77,7 @@ local function setTextureGroupColor(group, color)
     end
 end
 
-local function setBackdrop(frame, edge, backgroundColor, borderColor)
+function addon.ui.v2:ApplyFrameBackdrop(frame, edge, backgroundColor, borderColor)
     local path = edge.edgeFile
     local size = edge.edgeSize
     local texCoords = edge.texCoords
@@ -473,9 +472,9 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
 
         frame:SetFrameStrata("BACKGROUND")
         frame:SetFrameLevel(100)
-        setBackdrop(frame, theme.edges.activeSteps or theme.edges.common,
-                    theme.backgroundColors.activeSteps or theme.backgroundColors.common,
-                    theme.borderColors.activeSteps or theme.borderColors.common)
+        self:ApplyFrameBackdrop(frame, theme.edges.activeSteps or theme.edges.common,
+                                theme.backgroundColors.activeSteps or theme.backgroundColors.common,
+                                theme.borderColors.commonEdge or theme.borderColors.common)
         self:AddFrameShadow(frame)
 
         frame:SetScript("OnShow", Frame_OnShow)
@@ -724,9 +723,9 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                                (textColor.activePartyTab or textColor.activePartySteps) or
                                (textColor.inactivePartyTab or textColor.common)
 
-            setBackdrop(tab, theme.edges.activePartySteps or theme.edges.common,
-                        background or backgroundColors.common,
-                        border or borderColors.common)
+            addon.ui.v2:ApplyFrameBackdrop(tab, theme.edges.activePartySteps or theme.edges.common,
+                                           background or backgroundColors.common,
+                                           border or borderColors.common)
             tab.text:SetTextColor(unpack(labelColor or textColor.common))
         end,
 
@@ -902,9 +901,9 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         local theme = addon.v2:GetTheme()
 
-        setBackdrop(frame, theme.edges.activeSteps or theme.edges.activePartySteps or theme.edges.common,
-                    theme.backgroundColors.activeSteps or theme.backgroundColors.activePartySteps or theme.backgroundColors.common,
-                    theme.borderColors.activeSteps or theme.borderColors.activePartySteps or theme.borderColors.common)
+        self:ApplyFrameBackdrop(frame, theme.edges.activeSteps or theme.edges.activePartySteps or theme.edges.common,
+                                theme.backgroundColors.activeSteps or theme.backgroundColors.activePartySteps or theme.backgroundColors.common,
+                                theme.borderColors.commonEdge or theme.borderColors.activePartySteps or theme.borderColors.common)
         self:AddFrameShadow(frame)
 
         if frame.SetResizeBounds then -- WoW 10.0
@@ -1083,14 +1082,14 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                        theme.borderColors.activeStepCheckboxChecked or
                        theme.borderColors.activeStepCheckbox
 
-        setBackdrop(button, theme.edges.common, background, border)
+        addon.ui.v2:ApplyFrameBackdrop(button, theme.edges.common, background, border)
         button.rxpBackground:SetShown(not hovered)
         button.rxpBorder:SetShown(not hovered)
         button.rxpCheckShort:SetShown(checked and not hovered)
         button.rxpCheckLong:SetShown(checked and not hovered)
 
-        setBackdrop(button.rxpHoverFrame, theme.edges.common, transparent,
-                    theme.borderColors.activeStepCheckbox)
+        addon.ui.v2:ApplyFrameBackdrop(button.rxpHoverFrame, theme.edges.common, transparent,
+                                       theme.borderColors.activeStepCheckbox)
         button.rxpHoverFrame:SetShown(hovered)
     end
 
@@ -1440,13 +1439,13 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             local theme = addon.v2:GetTheme()
             local itemEdge = theme.edges.activeStepItem or theme.edges.common
             local itemBackground = theme.backgroundColors.activeStepItem or theme.backgroundColors.common
-            local itemBorder = theme.borderColors.activeStepItem or theme.borderColors.common
+            local itemBorder = theme.borderColors.itemEdge or theme.borderColors.common
             local badgeEdge = theme.edges.activeStepBadge or itemEdge
             local badgeBackground = theme.backgroundColors.activeStepBadge or itemBackground
             local badgeBorder = theme.borderColors.activeStepBadge or itemBorder
 
-            setBackdrop(this.card, itemEdge, itemBackground, itemBorder)
-            setBackdrop(this.title, badgeEdge, badgeBackground, badgeBorder)
+            addon.ui.v2:ApplyFrameBackdrop(this.card, itemEdge, itemBackground, itemBorder)
+            addon.ui.v2:ApplyFrameBackdrop(this.title, badgeEdge, badgeBackground, badgeBorder)
 
             local textColor = theme.textColor.activeStepItem or theme.textColor.common
             local row
@@ -1473,7 +1472,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         local theme = addon.v2:GetTheme()
         local itemEdge = theme.edges.activeStepItem or theme.edges.common
         local itemBackground = theme.backgroundColors.activeStepItem or theme.backgroundColors.common
-        local itemBorder = theme.borderColors.activeStepItem or theme.borderColors.common
+        local itemBorder = theme.borderColors.itemEdge or theme.borderColors.common
         local itemTextColor = theme.textColor.activeStepItem or theme.textColor.common
         local badgeEdge = theme.edges.activeStepBadge or itemEdge
         local badgeBackground = theme.backgroundColors.activeStepBadge or itemBackground
@@ -1483,14 +1482,14 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         local card = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         card:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
         card:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, 8)
-        setBackdrop(card, itemEdge, itemBackground, itemBorder)
+        addon.ui.v2:ApplyFrameBackdrop(card, itemEdge, itemBackground, itemBorder)
         addon.ui.v2:AddFrameShadow(card, nil, nil, nil, nil, "stepItem")
 
         local title = CreateFrame("Frame", nil, card, BackdropTemplateMixin and "BackdropTemplate")
         title:SetFrameLevel(card:GetFrameLevel() + 2)
         title:SetPoint("TOPLEFT", card, "TOPLEFT", 6, 9)
         title:ClearBackdrop()
-        setBackdrop(title, badgeEdge, badgeBackground, badgeBorder)
+        addon.ui.v2:ApplyFrameBackdrop(title, badgeEdge, badgeBackground, badgeBorder)
 
 
         local titletext = title:CreateFontString(nil, "OVERLAY")
@@ -1586,7 +1585,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
             local itemEdge = theme.edges.activeStepItem or theme.edges.common
             local itemBackground = theme.backgroundColors.activeStepItem or
                                    theme.backgroundColors.common
-            local itemBorder = theme.borderColors.activeStepItem or
+            local itemBorder = theme.borderColors.itemEdge or
                                theme.borderColors.common
             local badgeEdge = theme.edges.activeStepBadge or itemEdge
             local badgeBackground = theme.backgroundColors.activeStepBadge or
@@ -1594,8 +1593,8 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
             local badgeBorder = theme.borderColors.activeStepBadge or
                                 itemBorder
 
-            setBackdrop(this.card, itemEdge, itemBackground, itemBorder)
-            setBackdrop(this.title, badgeEdge, badgeBackground, badgeBorder)
+            addon.ui.v2:ApplyFrameBackdrop(this.card, itemEdge, itemBackground, itemBorder)
+            addon.ui.v2:ApplyFrameBackdrop(this.title, badgeEdge, badgeBackground, badgeBorder)
         end
     }
 
@@ -1609,7 +1608,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
         local itemEdge = theme.edges.activeStepItem or theme.edges.common
         local itemBackground = theme.backgroundColors.activeStepItem or
                                theme.backgroundColors.common
-        local itemBorder = theme.borderColors.activeStepItem or
+        local itemBorder = theme.borderColors.itemEdge or
                            theme.borderColors.common
         local itemTextColor = theme.textColor.activePartyStepItem or
                               theme.textColor.activeStepItem or
@@ -1625,14 +1624,14 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
         local card = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         card:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
         card:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, 8)
-        setBackdrop(card, itemEdge, itemBackground, itemBorder)
+        addon.ui.v2:ApplyFrameBackdrop(card, itemEdge, itemBackground, itemBorder)
         addon.ui.v2:AddFrameShadow(card, nil, nil, nil, nil, "stepItem")
 
         local title = CreateFrame("Frame", nil, card, BackdropTemplateMixin and "BackdropTemplate")
         title:SetFrameLevel(card:GetFrameLevel() + 2)
         title:SetPoint("TOPLEFT", card, "TOPLEFT", 6, 9)
         title:ClearBackdrop()
-        setBackdrop(title, badgeEdge, badgeBackground, badgeBorder)
+        addon.ui.v2:ApplyFrameBackdrop(title, badgeEdge, badgeBackground, badgeBorder)
 
         local titletext = title:CreateFontString(nil, "OVERLAY")
         titletext:ClearAllPoints()

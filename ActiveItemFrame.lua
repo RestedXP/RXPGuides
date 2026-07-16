@@ -209,18 +209,20 @@ local function UpdateCooldowns()
 end
 
 local function UpdateIconFrameVisuals(self,updateFrame)
-    self:ClearBackdrop()
-    if not addon.settings.profile.activeItemHideBG then
-        self:SetBackdrop(addon.RXPFrame.backdrop.edge)
-        local r, g, b = unpack(addon.colors.background)
-        self:SetBackdropColor(r, g, b, 0.4)
+    local theme = addon.v2:GetTheme()
+    if addon.settings.profile.activeItemHideBG then
+        addon.ui.v2:SetFrameBackdropShown(self, false)
+    else
+        addon.ui.v2:ApplyFrameBackdrop(self, theme.edges.common, theme.backgroundColors.activeSteps,
+                                       theme.borderColors.commonEdge)
+        addon.ui.v2:AddFrameShadow(self)
+        addon.ui.v2:SetFrameBackdropShown(self, true)
     end
-    self.title:ClearBackdrop()
-    self.title:SetBackdrop(addon.RXPFrame.backdrop.edge)
-    self.title:SetBackdropColor(unpack(addon.colors.background))
+    addon.ui.v2:ApplyFrameBackdrop(self.title, theme.edges.common, theme.backgroundColors.activeSteps,
+                                   theme.borderColors.itemEdge)
     self.title.text:SetFont(addon.font, 9, "")
-    self.title.text:SetTextColor(unpack(addon.activeTheme.textColor))
-    self.title:SetSize(self.title.text:GetStringWidth() + 14, 19)
+    self.title.text:SetTextColor(unpack(theme.textColor.activePartySteps))
+    self.title:SetSize(self.title.text:GetStringWidth() + 10, 19)
     if updateFrame and self.UpdateFrame then
         return self:UpdateFrame()
     end
@@ -271,13 +273,14 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
 
     if not f.title then
         f.title = CreateFrame("Frame", "$parent_title", f, BackdropTemplate)
-        f.title:SetPoint("TOPLEFT", f, 5, 5)
+        f.title:SetPoint("TOPLEFT", f, 5, 10)
+        f.title:SetFrameLevel(f:GetFrameLevel() + 3)
         f.title.text = f.title:CreateFontString(nil, "OVERLAY")
         f.title.text:ClearAllPoints()
-        f.title.text:SetPoint("CENTER", f.title, 2, 1)
+        f.title.text:SetPoint("CENTER", f.title, 0, 0)
         f.title.text:SetJustifyH("CENTER")
         f.title.text:SetJustifyV("MIDDLE")
-        f.title.text:SetTextColor(unpack(addon.activeTheme.textColor))
+        f.title.text:SetTextColor(unpack(addon.v2:GetTheme().textColor.activePartySteps))
         f.title.text:SetFont(addon.font, 9, "")
         f.title.text:SetText(L"Active Items")
         f.title:EnableMouse(true)
@@ -288,7 +291,7 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
     f.UpdateFrame = addon.UpdateItemFrame
     f:UpdateVisuals()
 
-    f:SetHeight(40);
+    f:SetHeight(43);
 end
 
 local fOnEnter = function(self)
@@ -374,7 +377,7 @@ function addon.UpdateItemFrame(itemFrame)
     local buttonList = itemFrame.buttonList
     local itemList = GetActiveItemList()
 
-    itemFrame.title:SetSize(itemFrame.title.text:GetStringWidth() + 10, 17)
+    itemFrame.title:SetSize(itemFrame.title.text:GetStringWidth() + 10, 19)
     local i = 0
     for _, item in ipairs(itemList) do
         i = i + 1
@@ -393,7 +396,7 @@ function addon.UpdateItemFrame(itemFrame)
 
             btn:ClearAllPoints()
             if n == 1 then
-                btn:SetPoint("BOTTOMLEFT", itemFrame, "BOTTOMLEFT", 6, 6)
+                btn:SetPoint("BOTTOMLEFT", itemFrame, "BOTTOMLEFT", 4, 2)
             else
                 btn:SetPoint("CENTER", buttonList[n - 1], "CENTER", 27, 0)
             end
