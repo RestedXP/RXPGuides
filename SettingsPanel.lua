@@ -1177,7 +1177,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 4.7
                     },
                     v2UIHeader = {
-                        name = fmt("%s %s %d", _G.INTERFACE_LABEL, _G.GAME_VERSION_LABEL, 2) .. L(" (Beta)"),
+                        name = fmt("%s %s %d", _G.INTERFACE_LABEL or "", _G.GAME_VERSION_LABEL or "", 2) .. L(" (Beta)"),
                         type = "header",
                         width = "full",
                         order = 5.0,
