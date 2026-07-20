@@ -1151,10 +1151,6 @@ function addon.GroupOverride(guide,arg2)
                     grp = "RXP TBC Survival Guide"..SG
                 end
             end
-        else
-            if grp:match("RXP MoP 1%-80") then
-                return grp:gsub("RXP MoP 1%-80","RXP MoP 1-60"),subgrp
-            end
         end
         return grp,subgrp,swap
     end

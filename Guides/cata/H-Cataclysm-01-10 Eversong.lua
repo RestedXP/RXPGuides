@@ -14,7 +14,7 @@ RXPGuides.RegisterGuide([[
 --#group RXP Cataclysm (H) << cata
 #defaultfor BloodElf
 #group RXP Cataclysm 1-80 (H) << cata
-#group RXP MoP 1-60 (H) << mop
+#group RXP MoP 1-80 (H) << mop
 #subweight 10000
 
 
@@ -530,7 +530,7 @@ RXPGuides.RegisterGuide([[
 
 #defaultfor BloodElf/Undead
 #group RXP Cataclysm 1-80 (H) << cata
-#group RXP MoP 1-60 (H) << mop
+#group RXP MoP 1-80 (H) << mop
 #subweight 10000
 
 step << Undead
