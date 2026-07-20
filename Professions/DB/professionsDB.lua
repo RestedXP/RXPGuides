@@ -4884,12 +4884,9 @@ addon.professions.PROFESSIONS = {
                 "Mithril Shield Spike",
             },
             [220] = {
-                "Ornate Mithril Gloves",
-                "Ornate Mithril Pants",
                 "Blue Glittering Axe",
             },
             [225] = {
-                "Ornate Mithril Shoulders",
                 "Wicked Mithril Blade",
             },
             [230] = {
@@ -4905,15 +4902,12 @@ addon.professions.PROFESSIONS = {
                 "Mithril Spurs",
             },
             [240] = {
-                "Ornate Mithril Breastplate",
                 "Dazzling Mithril Rapier",
             },
             [245] = {
                 "Truesilver Breastplate",
                 "Phantom Blade",
                 "Heavy Mithril Helm",
-                "Ornate Mithril Boots",
-                "Ornate Mithril Helm",
                 "Runed Mithril Hammer",
             },
             [250] = {
@@ -11488,7 +11482,7 @@ addon.professions.PROFESSIONS = {
                 "Stylish Green Shirt",
                 "Stylish Blue Shirt",
                 "Reinforced Woolen Shoulders",
-                "Colorful Kit",
+                "Colorful Kilt",
             },
             [125] = {
                 "Bolt of Silk Cloth",
@@ -11534,7 +11528,6 @@ addon.professions.PROFESSIONS = {
             },
             [205] = {
                 "Black Mageweave Leggings",
-                "Blackmageweave Leggings",
             },
             [215] = {
                 "Orange Mageweave Shirt",
@@ -13796,7 +13789,7 @@ addon.professions.PROFESSIONS = {
             },
             [70] = {
                 "Greater Magic Wand",
-                "Greater Magic Want",
+                "Greater Magic Wand",
             },
             [80] = {
                 "Enchant Bracer - Minor Agility",

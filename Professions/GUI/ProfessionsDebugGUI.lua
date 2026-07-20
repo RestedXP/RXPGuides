@@ -365,6 +365,8 @@ function addon.professions.GUI.createGUI()
     minimumPriceMethod:SetChecked(true)
     moneyGreedyMethod:SetChecked(true)
     alchemyButton:SetChecked(true)
+    selectSkillLevelFrame:SetValue(1)
+    selectSegmentFrame:SetValue(300)
 
-    guiFrame:Hide()
+    --guiFrame:Hide()
 end

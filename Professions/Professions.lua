@@ -1433,33 +1433,25 @@ function addon.professions:Setup()
     GUI.createGUI()
     session.isInitialized = true
 
---TODO: debbuging frame for item tracking, delte when done
-tstFrame = CreateFrame('Frame', 'frameName', UIParent, "BasicFrameTemplateWithInset")
-tstFrame:SetSize(300, 300)
-tstFrame:SetPoint("BOTTOMLEFT", UIParent, "CENTER")
-tstFrame:EnableMouse(true)
-tstFrame:SetMovable(true)
-tstFrame:RegisterForDrag("LeftButton")
-tstFrame:SetScript("OnDragStart", function (self)
-    self:StartMoving()
-end)
-tstFrame:SetScript("OnDragStop", function (self)
-    self:StopMovingOrSizing()
-end)
-tstFrame.text = tstFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-tstFrame.text:SetPoint("TOPLEFT", tstFrame, "TOPLEFT", 0, -50)
-tstFrame.text:SetWidth(200)
-tstFrame.text:SetNonSpaceWrap(true)
-tstFrame.text:SetText("")
+    --TODO: debbuging frame for item tracking, delte when done
+    tstFrame = CreateFrame('Frame', 'frameName', UIParent, "BasicFrameTemplateWithInset")
+    tstFrame:SetSize(300, 300)
+    tstFrame:SetPoint("BOTTOMLEFT", UIParent, "CENTER")
+    tstFrame:EnableMouse(true)
+    tstFrame:SetMovable(true)
+    tstFrame:RegisterForDrag("LeftButton")
+    tstFrame:SetScript("OnDragStart", function (self)
+        self:StartMoving()
+    end)
+    tstFrame:SetScript("OnDragStop", function (self)
+        self:StopMovingOrSizing()
+    end)
+    tstFrame.text = tstFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    tstFrame.text:SetPoint("TOPLEFT", tstFrame, "TOPLEFT", 0, -50)
+    tstFrame.text:SetWidth(200)
+    tstFrame.text:SetNonSpaceWrap(true)
+    tstFrame.text:SetText("")
 end
-
-
-
---Testing
---[[ 
-local variables and functions
-for testing purposes
-]]
 
 
 --Slash commands
@@ -1547,7 +1539,7 @@ SlashCmdList['qtst'] = function(item)
 end
 
 --Export
-SLASH_export1 = '/export'
+--[[SLASH_export1 = '/export'
 SlashCmdList['export'] = function(option)
     if not option then option = 1 else option = tonumber(option) end
     calculateMaterialAveragePrice()
@@ -1557,6 +1549,7 @@ SlashCmdList['export'] = function(option)
     GUI.guiFrame.printText:SetFocus()
     GUI.guiFrame.printText:HighlightText()
 end
+--]]
 
 
 
