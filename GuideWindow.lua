@@ -52,10 +52,16 @@ RXPFrame.MenuFrame = MenuFrame
 
 function addon.UseV2ActiveStepsFrame()
     local profile = addon.settings and addon.settings.profile
-    return profile and profile.enableBetaFeatures and profile.enableV2ActiveStepsFrame
+    return profile and profile.enableBetaFeatures and
+               (profile.enableV2ActiveStepsFrame or profile.enableV2GuideWindow)
 end
 
 function RXPFrame:UpdateVisuals()
+    if addon.v2:IsGuideWindowEnabled() then
+        addon.v2.events:Trigger("GuideWindowRefresh", "visuals")
+        return
+    end
+
     BottomFrame:ClearBackdrop()
     BottomFrame:SetBackdrop(RXPFrame.backdrop.edge)
     BottomFrame:SetBackdropColor(unpack(addon.colors.background))
@@ -145,6 +151,8 @@ RXPFrame.backdrop.bottom = {
 }
 
 function addon.SetupGuideWindow()
+    if addon.v2:IsGuideWindowEnabled() then return end
+
     -- These were in-line, but now rely on settings
 
     BottomFrame:SetBackdrop(RXPFrame.backdrop.edge)
@@ -419,6 +427,8 @@ local stepPos = {}
 
 local lastScrollValue
 function BottomFrame:StepScroll(n)
+    if addon.v2:IsGuideWindowEnabled() then return end
+
     local value
     local step = addon.currentGuide.steps[n]
     if not step or not IsFrameShown(nil,step) then
@@ -721,7 +731,11 @@ function addon.UpdateStepCompletion()
                 step.active = nil
             elseif step.index >= RXPCData.currentStep then
                 step.completed = true
-                RXPFrame.BottomFrame.UpdateFrame(nil, step.index)
+                if addon.v2:IsGuideWindowEnabled() then
+                    addon.v2.events:Trigger("GuideOutlineChanged")
+                else
+                    RXPFrame.BottomFrame.UpdateFrame(nil, step.index)
+                end
 
                 if step.index == RXPCData.currentStep or
                       (step.index > RXPCData.currentStep and not step.sticky) then
@@ -856,7 +870,7 @@ function addon.SetStep(n, n2, loopback)
         step.completed = false
         addon.settings.ReplaceColors(step)
         tinsert(activeSteps, step)
-        ScrollChild.framePool[n]:SetAlpha(1)
+        if not addon.v2:IsGuideWindowEnabled() then ScrollChild.framePool[n]:SetAlpha(1) end
         step.active = true
         scrollHeight = n
         if step.tipWindow then
@@ -937,6 +951,7 @@ function addon.SetStep(n, n2, loopback)
         end
 
         addon.v2.events:Trigger("UpdateActiveSteps", activeSteps, addon.player.name)
+        addon.v2.events:Trigger("GuideOutlineChanged")
         addon.UpdateItemFrame()
         addon.updateSteps = true
         addon.UpdateMap()
@@ -1206,6 +1221,13 @@ function CurrentStepFrame.UpdateText()
     addon.updateStepText = false
     local guide = addon.currentGuide
     if not guide then return end
+
+    if addon.v2:IsGuideWindowEnabled() then
+        addon.v2.events:Trigger("UpdateActiveSteps", activeSteps, addon.player.name)
+        CurrentStepFrame:SetHeight(0)
+        CurrentStepFrame:Hide()
+        return
+    end
 
     if addon.settings.profile.enableBetaFeatures then
         -- TODO throttle, maybe moot when more conversion to v2.events
@@ -1795,6 +1817,7 @@ end
 
 function addon:LoadGuide(guide, OnLoad)
     addon.loadNextStep = false
+    local useV2GuideWindow = addon.v2:IsGuideWindowEnabled()
 
     if not guide or guide.internal or guide.disabled or not guide.empty and not addon.IsGuideActive(guide) and
         (guide.farm and not RXPCData.GA or not guide.farm and RXPCData.GA) then
@@ -1821,12 +1844,14 @@ function addon:LoadGuide(guide, OnLoad)
             addon.RenderFrame(true,true)
     end
 
-    if addon.settings.profile.frameHeight then
+    if not useV2GuideWindow and addon.settings.profile.frameHeight then
         RXPFrame:SetHeight(addon.settings.profile.frameHeight)
     end
     if addon.noGuide then
-        RXPFrame:SetHeight(addon.height)
-        RXPFrame.BottomFrame.UpdateFrame()
+        if not useV2GuideWindow then
+            RXPFrame:SetHeight(addon.height)
+            RXPFrame.BottomFrame.UpdateFrame()
+        end
         addon.noGuide = nil
     end
 
@@ -1841,7 +1866,6 @@ function addon:LoadGuide(guide, OnLoad)
     end
     -- local totalHeight = 0
     local nframes = 0
-
     table.wipe(addon.scheduledTasks)
     table.wipe(addon.stepUpdateList)
     addon.updateTipWindow = false
@@ -1882,11 +1906,13 @@ function addon:LoadGuide(guide, OnLoad)
     addon.currentGuideName = guide.name
     RXPCData.currentGuideName = guide.name
     RXPCData.currentGuideGroup = guide.group
-    local guidename = guide.title or addon.GetGuideName(guide)
-    if guide.subgroup and not guide.title then
-        GuideName.text:SetText(guidename .. "\n" .. guide.subgroup)
-    else
-        GuideName.text:SetText(guidename:gsub("\\n","\n"))
+    if not useV2GuideWindow then
+        local guidename = guide.title or addon.GetGuideName(guide)
+        if guide.subgroup and not guide.title then
+            GuideName.text:SetText(guidename .. "\n" .. guide.subgroup)
+        else
+            GuideName.text:SetText(guidename:gsub("\\n","\n"))
+        end
     end
 
     guide.labels = {}
@@ -1927,6 +1953,7 @@ function addon:LoadGuide(guide, OnLoad)
         step.level = tonumber(step.level) or 0
         if step.label then guide.labels[step.label] = n end
 
+        if not useV2GuideWindow then
         nframes = nframes + 1
         ScrollChild.framePool[n] = ScrollChild.framePool[n] or
                                        CreateFrame("Frame",
@@ -2027,24 +2054,30 @@ function addon:LoadGuide(guide, OnLoad)
         -- frame.text:SetText(text)
 
         frame:SetHeight(20)
+        end
 
     end
-    if #ScrollChild.framePool > nframes then
+    if not useV2GuideWindow and #ScrollChild.framePool > nframes then
         for i = nframes + 1, #ScrollChild.framePool do
             ScrollChild.framePool[i]:Hide()
         end
     end
-    ScrollChild.f1 = ScrollChild.f1 or CreateFrame("Frame", nil, ScrollChild)
-    ScrollChild.f1:ClearAllPoints()
-    ScrollChild.f1:SetPoint("TOPLEFT", ScrollChild.framePool[1], 0, 10)
-    ScrollChild.f1:SetPoint("BOTTOMRIGHT", ScrollChild.framePool[nframes])
-    ScrollChild.f1:Hide()
-    ScrollChild:SetHeight(200)
+    if not useV2GuideWindow then
+        ScrollChild.f1 = ScrollChild.f1 or CreateFrame("Frame", nil, ScrollChild)
+        ScrollChild.f1:ClearAllPoints()
+        ScrollChild.f1:SetPoint("TOPLEFT", ScrollChild.framePool[1], 0, 10)
+        ScrollChild.f1:SetPoint("BOTTOMRIGHT", ScrollChild.framePool[nframes])
+        ScrollChild.f1:Hide()
+        ScrollChild:SetHeight(200)
+    end
     addon.SetStep(RXPCData.currentStep)
-    BottomFrame.hiddenFrames = 0
-    BottomFrame.UpdateFrame()
+    if not useV2GuideWindow then
+        BottomFrame.hiddenFrames = 0
+        BottomFrame.UpdateFrame()
+    end
     addon.tickTimer = 0
     addon:QueueMessage("RXP_GUIDE_LOADED",guide)
+    addon.v2.events:Trigger("GuideOutlineChanged")
     addon:ScheduleTask(RXPFrame.GenerateMenuTable)
 end
 
@@ -2055,6 +2088,8 @@ function addon:ReloadGuide(keepStep)
 end
 
 function BottomFrame.UpdateFrame(self, stepn, startFrom, skip)
+    if addon.v2:IsGuideWindowEnabled() then return end
+
     local level = UnitLevel("player")
 
     if stepPos[0] and ((not self and stepn) or (self and self.step)) and IsFrameShown(self,self and self.step) then
@@ -2873,7 +2908,7 @@ function addon.v2:GetActiveStepsFrame(player)
         return
     end
 
-    if player == addon.player.name and not addon.settings.profile.enableV2ActiveStepsFrame then
+    if player == addon.player.name and not addon.UseV2ActiveStepsFrame() then
         return
     end
 
@@ -2889,7 +2924,7 @@ function addon.v2:GetActiveStepsFrame(player)
         childContainer = stepFrame
 
         stepFrame.IsFeatureEnabled = function()
-            return addon.settings.profile.enableV2ActiveStepsFrame, false
+            return addon.UseV2ActiveStepsFrame(), false
         end
     else
         stepFrame = self:GetActivePartyStepsFrame()
@@ -2950,12 +2985,19 @@ function addon.v2:SetActiveStepsFrameAnchor(stepFrame)
     local leftInset = frameInset.left or 0
     local rightInset = frameInset.right or 0
 
+    local guideWindow = self:GetGuideWindowAnchorFrame()
     if addon.settings.profile.anchorOrientation == "bottom" then
-        stepFrame:SetPoint("TOPLEFT", addon.RXPFrame, "BOTTOMLEFT", leftInset + 3, 0)
-        stepFrame:SetPoint("TOPRIGHT", addon.RXPFrame, "BOTTOMRIGHT", -rightInset - 3, 0)
+        guideWindow = guideWindow or addon.RXPFrame
+        stepFrame:SetPoint("TOPLEFT", guideWindow, "BOTTOMLEFT", leftInset + 3, 0)
+        stepFrame:SetPoint("TOPRIGHT", guideWindow, "BOTTOMRIGHT", -rightInset - 3, 0)
     else
-        stepFrame:SetPoint("BOTTOMLEFT", addon.RXPFrame.GuideName, "TOPLEFT", leftInset, 0)
-        stepFrame:SetPoint("BOTTOMRIGHT", addon.RXPFrame.GuideName, "TOPRIGHT", -rightInset, 0)
+        if guideWindow then
+            stepFrame:SetPoint("BOTTOMLEFT", guideWindow, "TOPLEFT", leftInset, 18)
+            stepFrame:SetPoint("BOTTOMRIGHT", guideWindow, "TOPRIGHT", -rightInset, 18)
+        else
+            stepFrame:SetPoint("BOTTOMLEFT", addon.RXPFrame.GuideName, "TOPLEFT", leftInset, 0)
+            stepFrame:SetPoint("BOTTOMRIGHT", addon.RXPFrame.GuideName, "TOPRIGHT", -rightInset, 0)
+        end
     end
 end
 
@@ -3338,7 +3380,7 @@ function addon.v2:UpdateActiveStepsFrame(steps, questId)
         end
     end
 
-    if not addon.settings.profile.enableV2ActiveStepsFrame then
+    if not addon.UseV2ActiveStepsFrame() then
         self:ClearActiveStepEventWatchers()
         return
     end

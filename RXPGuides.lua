@@ -1257,6 +1257,9 @@ function addon:OnInitialize()
     addon.activeItemFrame:SetScale(addon.settings.profile.activeItemsScale)
 
     addon.v2:Setup()
+    if addon.v2:IsGuideWindowEnabled() then
+        addon.v2.events:Trigger("GuideWindowRefresh", "settings")
+    end
 end
 
 function addon:OnEnable()
@@ -1715,6 +1718,12 @@ function addon.LegacyUpdateLoop()
             event = event .. "/textsingle"
 
             addon.updateStepText = false
+            if addon.v2:IsGuideWindowEnabled() then
+                table.wipe(addon.stepUpdateList)
+                addon.updateTipWindow = false
+                addon.v2.events:Trigger("GuideOutlineChanged")
+                return
+            end
             local updateText
             local steps = addon.currentGuide.steps
             local update = {}
@@ -1743,6 +1752,12 @@ function addon.LegacyUpdateLoop()
             event = event .. "/bottomFrame"
 
             errorCount = 0
+            if addon.v2:IsGuideWindowEnabled() then
+                addon.updateBottomFrame = false
+                addon.RXPFrame.SetStepFrameAnchor()
+                addon.v2.events:Trigger("GuideOutlineChanged")
+                return
+            end
             addon.RXPFrame.BottomFrame.UpdateFrame()
             addon.RXPFrame.SetStepFrameAnchor()
             updateError = false
@@ -1787,7 +1802,8 @@ function addon.LegacyUpdateLoop()
         addon.tickers.CycleSixteen()
     elseif cycle32 == 29 then
         addon.tickers.CycleThirty()
-    elseif skip ~= 1 and not guideLoaded and addon.currentGuide then
+    elseif skip ~= 1 and not guideLoaded and addon.currentGuide and
+           not addon.v2:IsGuideWindowEnabled() then
 
         event = event .. "/istep"
         local max = #addon.currentGuide.steps
@@ -2271,6 +2287,8 @@ addon.v2.events.messagePrefix = "RXPGuidesV2_"
 function addon.v2.events:Setup()
     addon.v2.events:Register("UpdateActiveSteps")
     addon.v2.events:Register("QuestDataLoaded")
+    addon.v2.events:Register("GuideOutlineChanged")
+    addon.v2.events:Register("GuideWindowRefresh")
 end
 
 function addon.v2.events:Register(key)
@@ -2301,5 +2319,24 @@ function addon.v2.events:QuestDataLoaded(_, questId)
     end
     if addon.RXPFrame.activeSteps then
         addon.v2:UpdateActiveStepsFrame(addon.RXPFrame.activeSteps, questId)
+    end
+    addon.v2.events:Trigger("GuideOutlineChanged")
+end
+
+function addon.v2.events:GuideOutlineChanged()
+    addon.v2:UpdateGuideWindow()
+end
+
+function addon.v2.events:GuideWindowRefresh(_, change, value)
+    if change == "settings" then
+        addon.v2:SetGuideWindowEnabled(addon.v2:IsGuideWindowEnabled())
+    elseif change == "visuals" then
+        local window = addon.v2.state and addon.v2.state.guideWindow
+        if window then window:RefreshVisuals() end
+    elseif change == "visibility" then
+        local window = addon.v2:GetGuideWindowAnchorFrame()
+        if window then window:SetShown(value) end
+    elseif change == "layout" and addon.UseV2ActiveStepsFrame() then
+        addon.v2:SetActiveStepsFrameAnchor()
     end
 end

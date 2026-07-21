@@ -247,6 +247,8 @@ local settingsDBDefaults = {
         shareActiveSteps = true,
 
         -- V2 UI
+        enableV2GuideWindow = false,
+        v2GuideWindowSplashBranding = true,
         activeStepsV2WindowScale = 1.0,
         activeStepsV2HideBackground = true,
         activeStepsV2RenderQuestName = true,
@@ -1183,12 +1185,25 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 5.0,
                         hidden = isNotAdvanced,
                     },
+                    enableV2GuideWindow = {
+                        name = fmt("%s %s v2", _G.ENABLE, L("Guide Window")),
+                        -- desc = L"",
+                        type = "toggle",
+                        width = optionsWidth * 2,
+                        order = 5.1,
+                        confirm = requiresReload,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end,
+                        hidden = isNotAdvanced
+                    },
                     enableV2ActiveStepsFrame = {
                         name = fmt("%s %s %sv2", _G.ENABLE, _G.ACTIVE_PETS, L("Step ")),
                         -- desc = L"",
                         type = "toggle",
                         width = optionsWidth,
-                        order = 5.1,
+                        order = 5.2,
                         confirm = requiresReload,
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -1201,14 +1216,14 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Display quest tooltips on steps"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 5.2,
+                        order = 5.3,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.v2:UpdateActiveStepTheme()
                         end,
                         hidden = isNotAdvanced,
                         disabled = function()
-                            return not self.profile.enableV2ActiveStepsFrame
+                            return not addon.UseV2ActiveStepsFrame()
                         end
                     },
                     inventoryHeader = {
@@ -3234,7 +3249,23 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame:SetScale(value)
+                            if addon.v2:IsGuideWindowEnabled() then
+                                local window = addon.v2:GetGuideWindowAnchorFrame()
+                                if window then window:SetScale(value) end
+                                addon.v2.events:Trigger("GuideWindowRefresh", "layout")
+                            end
                         end
+                    },
+                    v2GuideWindowSplashBranding = {
+                        name = L("Splash Branding"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 3.15,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.v2.events:Trigger("GuideWindowRefresh", "visuals")
+                        end,
+                        disabled = function() return not addon.v2:IsGuideWindowEnabled() end,
                     },
                     guideFontSize = {
                         name = L("Guide Font Size"), -- TODO locale
@@ -3289,6 +3320,9 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.ScrollFrame.ScrollBar:SetValue(0)
+                            if addon.v2:IsGuideWindowEnabled() then
+                                addon.v2.events:Trigger("GuideOutlineChanged")
+                            end
                         end
                     },
                     showUnusedGuides = {
@@ -3326,7 +3360,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = isNotAdvanced,
                         disabled = function()
-                            return not self.profile.enableV2ActiveStepsFrame
+                            return not addon.UseV2ActiveStepsFrame()
                         end
                     },
                     activeStepsV2HideBackground = {
@@ -3341,7 +3375,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = isNotAdvanced,
                         disabled = function()
-                            return not self.profile.enableV2ActiveStepsFrame
+                            return not addon.UseV2ActiveStepsFrame()
                         end
                     },
                     arrowHeader = {
@@ -4559,6 +4593,9 @@ function addon.settings:LoadFramePositions()
     end
 
     self:LoadScales()
+    if addon.v2 and addon.v2.ApplyGuideWindowGeometryMigration then
+        addon.v2:ApplyGuideWindowGeometryMigration()
+    end
 end
 
 function addon.settings:LoadScales()
