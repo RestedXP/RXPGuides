@@ -1270,11 +1270,6 @@ function addon:OnInitialize()
         addon.tracker:SetupTracker()
     end
     if addon.tips then addon.tips:Setup() end
-    if addon.VendorTreasures then addon.VendorTreasures:Setup() end
-    if addon.itemUpgrades then
-        addon.itemUpgrades:Setup()
-    end
-
     if addon.player.season == 2 then
         addon.settings.profile.phase = 6
     end
@@ -1415,6 +1410,11 @@ function addon:OnEnable()
 
     RXPData.release = addon.release
     RXPData.cacheVersion = cacheVersion
+
+    C_Timer.After(0.2, function()
+        if addon.VendorTreasures then addon.VendorTreasures:Setup() end
+        if addon.itemUpgrades then addon.itemUpgrades:Setup() end
+    end)
 end
 
 -- Tracks if a player is on a loading screen and pauses the main update loop
