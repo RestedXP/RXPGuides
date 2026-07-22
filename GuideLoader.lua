@@ -553,22 +553,28 @@ function addon.ProcessInputBuffer(workerFrame)
     return false
 end
 
-local embeddedGuidesLoaded
+local embeddedGuidesLoaded, embeddedGuideIndex
 function addon.LoadEmbeddedGuides()
     if not addon.db then
         error('Initialization error, db not set')
         return
     end
+
     if embeddedGuidesLoaded then
         return
     else
         embeddedGuidesLoaded = true
     end
+
     --A1 = GetTimePreciseSec()
     if RXPCData.guideDisabled[0] ~= #embeddedGuides then
         RXPCData.guideDisabled = {[0] = #embeddedGuides}
     end
-    for n, guideData in ipairs(embeddedGuides) do
+
+    local guideData
+    for n = embeddedGuideIndex or 1, #embeddedGuides do
+        guideData = embeddedGuides[n]
+
         if guideData.cache then
             addon.ImportGuide(guideData.groupOrContent, guideData.text,
                               guideData.defaultFor, true)
@@ -667,8 +673,15 @@ function addon.LoadEmbeddedGuides()
                 addon.AddGuide(guide)
             end
         end
+        embeddedGuideIndex = n + 1
+        if embeddedGuideIndex <= #embeddedGuides then
+            embeddedGuidesLoaded = false
+            C_Timer.After(0, addon.LoadEmbeddedGuides)
+            return
+        end
     end
 
+    embeddedGuideIndex = nil
     if addon.addonLoaded then
         embeddedGuides = nil
     else
@@ -677,6 +690,10 @@ function addon.LoadEmbeddedGuides()
 
     --A1 = GetTimePreciseSec() - A1
     addon.RXPFrame.GenerateMenuTable()
+    if addon.addonLoaded then
+        addon:LoadGuide(addon.GetGuideTable(RXPCData.currentGuideGroup,
+                                             RXPCData.currentGuideName), true)
+    end
 end
 
 function addon.BuildGuideKey(arg1,arg2,arg3)
