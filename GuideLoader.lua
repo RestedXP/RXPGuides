@@ -744,7 +744,7 @@ function addon.LoadCachedGuides()
                 local data = guideData
                 addon.guideCache[key] = function(self)
                     local g
-                    if addon.player.hardcore then
+                    if addon.player.hardcore and not addon.settings.profile.loadAllGuides then
                         if not decompressedGuides[key] then
                             decompressedGuides[key] = LibDeflate:DecompressDeflate(data.groupOrContent)
                             return
