@@ -1455,6 +1455,7 @@ Footer.cog:SetScript("OnClick", function(self) RXPFrame.DropDownMenu() end)
 -- Footer.cog:HookScript("OnLeave", function(self) self:Hide() end)
 
 function RXPFrame.DropDownMenu()
+    RXPFrame.GenerateMenuTable()
     if _G.EasyMenu then
         _G.EasyMenu(RXPFrame.menuList, MenuFrame, "cursor", 0, 0, "MENU");
     else
@@ -1777,7 +1778,7 @@ function addon:FetchGuide(guide,arg2,arg3)
             guide = newGuide
             addon:ScheduleTask(addon.UpdateQuestButton)
             addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
-        else
+        elseif not parser then
             --print(guide.name,guide.group)
             --GG = guide
             addon.comms.PrettyDebug('Error: Tried to load an invalid Guide: %s v%s', key, guide.version or 0)

@@ -8,6 +8,38 @@ local RegisterMessage_OLD = addon.RegisterMessage
 local rand, tinsert, select = math.random, table.insert, _G.select
 local IsAddOnLoadOnDemand = C_AddOns and C_AddOns.IsAddOnLoadOnDemand or _G.IsAddOnLoadOnDemand
 local GetSpellInfo
+local updateFrame = CreateFrame("Frame")
+local isMainUpdate = 0
+
+local function LoadCache(guide)
+    if updateFrame:GetScript("OnUpdate") then
+        return
+    end
+    updateFrame:SetScript("OnUpdate",function(self)
+        if isMainUpdate == GetTime() then
+            return
+        end
+        local start = debugprofilestop()
+        if #addon.embeddedGuides ~= 0 then
+            if addon.player.hardcore then
+                --During patch 1.15.9 Lua scripts have a maximum run time of 200ms (HC only)
+                while #addon.embeddedGuides > 0 and debugprofilestop() - start < 95 do
+                    addon.LoadEmbeddedGuides(1)
+                    --print(#addon.embeddedGuides)
+                end
+                --print('----',#addon.embeddedGuides)
+            else
+                addon.LoadEmbeddedGuides()
+            end
+        else
+            if guide then
+                addon:FetchGuide(guide)
+            end
+            updateFrame:SetScript("OnUpdate",nil)
+        end
+    end)
+end
+
 if C_Spell and C_Spell.GetSpellInfo then
     addon.GetSpellInfo = function(...)
         local id = ...
@@ -197,7 +229,8 @@ addon.player = {
     maxlevel = maxLevel,
     season = addon.GetSeason(),
     beta = GetCurrentRegion() >= 20,
-    lang = GetLocale():sub(1,2)
+    lang = GetLocale():sub(1,2),
+    hardcore = C_GameRules and C_GameRules.IsHardcoreActive and C_GameRules.IsHardcoreActive(),
 }
 addon.player.neutral = addon.player.faction == "Neutral"
 
@@ -1261,7 +1294,8 @@ end
 
 function addon:OnEnable()
     addon.ParseCompletedQuests()
-    addon.LoadEmbeddedGuides()
+    --addon.LoadEmbeddedGuides()
+    LoadCache()
     if addon.settings.profile.preLoadData then
         addon.LoadAllGuides()
     end
@@ -1671,7 +1705,10 @@ function addon.LegacyUpdateLoop()
         skipframe = false
         return
     end
-
+    isMainUpdate = GetTime()
+    if #addon.embeddedGuides > 0 then
+        print(GetTime())
+    end
     skipframe = true
     updateError = true
     local guideLoaded
@@ -1755,12 +1792,17 @@ function addon.LegacyUpdateLoop()
 
             for _,guide in pairs(addon.guides) do
                 if (loadGuide or guide.disablecaching) and not guide.steps then
-                    addon:FetchGuide(guide)
-                    guideLoaded = true
-                    --print('f',not guide.steps and guide.name)
-                    local elapsed = debugprofilestop() - start
-                    if elapsed > 20 or framerate < 50 then
+                    if addon.player.hardcore then
+                        LoadCache(guide)
                         loadGuide = false
+                    else
+                        addon:FetchGuide(guide)
+                        guideLoaded = true
+                        --print('f',not guide.steps and guide.name)
+                        local elapsed = debugprofilestop() - start
+                        if elapsed > 20 or framerate < 50 then
+                            loadGuide = false
+                        end
                     end
                 end
             end
