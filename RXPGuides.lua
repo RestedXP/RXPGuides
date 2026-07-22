@@ -1706,9 +1706,6 @@ function addon.LegacyUpdateLoop()
         return
     end
     isMainUpdate = GetTime()
-    if #addon.embeddedGuides > 0 then
-        print(GetTime())
-    end
     skipframe = true
     updateError = true
     local guideLoaded

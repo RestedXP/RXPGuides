@@ -761,6 +761,7 @@ function addon.LoadCachedGuides()
                         tbl.parse = self
                     end
                     tbl.imported = true
+                    decompressedGuides[key] = nil
                     return tbl
                 end
                 guide = guideData.metadata
