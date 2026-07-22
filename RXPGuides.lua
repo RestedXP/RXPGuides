@@ -1,4 +1,5 @@
 local addonName, addon = ...
+addon.startTime = debugprofilestop()
 
 local _G = _G
 local UnitInRaid = UnitInRaid
@@ -1415,6 +1416,17 @@ function addon:OnEnable()
         if addon.VendorTreasures then addon.VendorTreasures:Setup() end
         if addon.itemUpgrades then addon.itemUpgrades:Setup() end
     end)
+
+    if addon.player.hardcore then
+        for _,guide in pairs(addon.guides) do
+            if debugprofilestop() - addon.startTime > 3000 then
+                break
+            end
+            if not guide.steps then
+                addon:FetchGuide(guide)
+            end
+        end
+    end
 end
 
 -- Tracks if a player is on a loading screen and pauses the main update loop

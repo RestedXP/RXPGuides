@@ -781,10 +781,17 @@ function addon.settings:CreateImportOptionsPanel()
             args = {
                 hardcoreWarning = {
                     order = 1,
-                    name = L("Guide import is temporarily disabled on Hardcore servers, please switch to a normal server to import a guide"),
+                    name = L("Guide import is temporarily disabled on Hardcore servers, please switch to a normal server to import a guide").."\n\n",
                     type = "description",
                     width = "full",
                     fontSize = "large"
+                },
+                hardcoreWarningDesc = {
+                    order = 2,
+                    name = L("On patch 1.15.9, the allowed execution time for lua code was severely reduced on Hardcore servers only, addon processing time is a very scarce resource, so in order to be able to import a guide without any errors or crashes, this process has to be done on a non Hardcore server"),
+                    type = "description",
+                    width = "full",
+                    fontSize = "medium"
                 }
             }
         }
