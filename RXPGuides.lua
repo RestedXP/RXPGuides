@@ -23,7 +23,7 @@ local function LoadCache(guide)
         if #addon.embeddedGuides ~= 0 then
             if addon.player.hardcore then
                 --During patch 1.15.9 Lua scripts have a maximum run time of 200ms (HC only)
-                while #addon.embeddedGuides > 0 and debugprofilestop() - start < 95 do
+                while #addon.embeddedGuides > 0 and debugprofilestop() - start < 30 do
                     addon.LoadEmbeddedGuides(1)
                     --print(#addon.embeddedGuides)
                 end
