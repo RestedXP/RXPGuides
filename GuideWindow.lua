@@ -50,12 +50,6 @@ RXPFrame.ScrollFrame = ScrollFrame
 RXPFrame.ScrollChild = ScrollChild
 RXPFrame.MenuFrame = MenuFrame
 
-function addon.UseV2ActiveStepsFrame()
-    local profile = addon.settings and addon.settings.profile
-    return profile and profile.enableBetaFeatures and
-               (profile.enableV2ActiveStepsFrame or profile.enableV2GuideWindow)
-end
-
 function RXPFrame:UpdateVisuals()
     if addon.v2:IsGuideWindowEnabled() then
         addon.v2.events:Trigger("GuideWindowRefresh", "visuals")
@@ -345,7 +339,7 @@ function addon.v2:UpdateActiveStepEventWatchers(steps)
 end
 
 local function SetStepFrameAnchor()
-    if addon.UseV2ActiveStepsFrame() then
+    if addon.v2:IsGuideWindowEnabled() then
         addon.v2:SetActiveStepsFrameAnchor()
         return
     end
@@ -572,6 +566,9 @@ function addon.RegisterGeneratedSteps()
 
     addon:ScheduleTask(addon.ProcessGeneratedSteps, CheckStepCompletion, true)
     addon.UpdateMap()
+    if addon.v2:IsGuideWindowEnabled() then
+        addon.v2.events:Trigger("GuideStepsChanged")
+    end
 end
 
 function addon:ProcessGeneratedSteps(func, ...)
@@ -732,7 +729,7 @@ function addon.UpdateStepCompletion()
             elseif step.index >= RXPCData.currentStep then
                 step.completed = true
                 if addon.v2:IsGuideWindowEnabled() then
-                    addon.v2.events:Trigger("GuideOutlineChanged")
+                    addon.v2.events:Trigger("GuideStepsChanged")
                 else
                     RXPFrame.BottomFrame.UpdateFrame(nil, step.index)
                 end
@@ -818,8 +815,8 @@ function addon.SetStep(n, n2, loopback)
     table.wipe(addon.activeSpells)
     table.wipe(addon.activeMacros)
     table.wipe(addon.inventoryManager.itemsToOpen)
-    local useV2ActiveStepsFrame = addon.UseV2ActiveStepsFrame()
-    if not useV2ActiveStepsFrame then
+    local useV2GuideWindow = addon.v2:IsGuideWindowEnabled()
+    if not useV2GuideWindow then
         ClearFrameData()
         addon.v2:ClearActiveStepEventWatchers()
     end
@@ -894,7 +891,7 @@ function addon.SetStep(n, n2, loopback)
         end
     end
 
-    if useV2ActiveStepsFrame then
+    if useV2GuideWindow then
         local activeTargets = {}
         local stepUnitscan = {}
         local stepMobs = {}
@@ -951,7 +948,7 @@ function addon.SetStep(n, n2, loopback)
         end
 
         addon.v2.events:Trigger("UpdateActiveSteps", activeSteps, addon.player.name)
-        addon.v2.events:Trigger("GuideOutlineChanged")
+        addon.v2.events:Trigger("GuideStepsChanged")
         addon.UpdateItemFrame()
         addon.updateSteps = true
         addon.UpdateMap()
@@ -1233,11 +1230,6 @@ function CurrentStepFrame.UpdateText()
         -- TODO throttle, maybe moot when more conversion to v2.events
         addon.v2.events:Trigger("UpdateActiveSteps", activeSteps, addon.player.name)
 
-        if addon.UseV2ActiveStepsFrame() then
-            CurrentStepFrame:SetHeight(0)
-            CurrentStepFrame:Hide()
-            return
-        end
     end
 
     CurrentStepFrame:Show()
@@ -2079,7 +2071,7 @@ function addon:LoadGuide(guide, OnLoad)
     end
     addon.tickTimer = 0
     addon:QueueMessage("RXP_GUIDE_LOADED",guide)
-    addon.v2.events:Trigger("GuideOutlineChanged")
+    addon.v2.events:Trigger("GuideStepsChanged")
     addon:ScheduleTask(RXPFrame.GenerateMenuTable)
 end
 
@@ -2391,6 +2383,8 @@ function RXPFrame:GenerateMenuTable(menu)
         else
             addon:LoadGuide(guide)
         end
+        if _G.CloseDropDownMenus then _G.CloseDropDownMenus() end
+        if LibDD then LibDD:CloseDropDownMenus() end
     end
     for group in pairs(addon.guideList) do
         local firstChar = group:sub(1, 1)
@@ -2916,7 +2910,7 @@ function addon.v2:GetActiveStepsFrame(player)
         return
     end
 
-    if player == addon.player.name and not addon.UseV2ActiveStepsFrame() then
+    if player == addon.player.name and not addon.v2:IsGuideWindowEnabled() then
         return
     end
 
@@ -2932,7 +2926,7 @@ function addon.v2:GetActiveStepsFrame(player)
         childContainer = stepFrame
 
         stepFrame.IsFeatureEnabled = function()
-            return addon.UseV2ActiveStepsFrame(), false
+            return addon.v2:IsGuideWindowEnabled(), false
         end
     else
         stepFrame = self:GetActivePartyStepsFrame()
@@ -3388,7 +3382,7 @@ function addon.v2:UpdateActiveStepsFrame(steps, questId)
         end
     end
 
-    if not addon.UseV2ActiveStepsFrame() then
+    if not addon.v2:IsGuideWindowEnabled() then
         self:ClearActiveStepEventWatchers()
         return
     end
