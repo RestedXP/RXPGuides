@@ -615,166 +615,189 @@ function addon.settings:CreateImportOptionsPanel()
 
         return not RXPData.cache
     end
-
-    local importOptionsTable = {
-        type = "group",
-        name = fmt("RestedXP %s - %s", L("Guide Import"), addon.versionText),
-        handler = self,
-        args = {
-            buffer = {
-                order = 1,
-                name = L("Paste encoded strings"),
-                type = "description",
-                width = "full",
-                fontSize = "medium"
-            },
-            importBox = {
-                order = 10,
-                type = 'input',
-                name = L('Guides to import'),
-                width = "full",
-                multiline = 5,
-                get = function()
-                    -- Prevent auto clearing on NotifyChange
-                    return importCache.bufferString:sub(1, 500)
-                end,
-                validate = importCache.validate,
-                disabled = function() return notOnline() end
-            },
-            currentGuides = {
-                order = 11,
-                type = 'select',
-                style = 'dropdown',
-                name = L("Currently loaded imported guides"),
-                width = 'full',
-                values = function()
-                    return self.GetImportedGuides()
-                end,
-                disabled = function()
-                    return next(addon.db.profile.guides) == nil or
-                               not self.gui.selectedDeleteGuide
-                end,
-                get = function()
-                    return self.gui.selectedDeleteGuide
-                end,
-                set = function(_, value)
-                    self.gui.selectedDeleteGuide = value
-                end
-            },
-            deleteSelectedGuide = {
-                order = 12,
-                type = 'execute',
-                name = L("Delete imported guide"),
-                confirm = function()
-                    if next(addon.db.profile.guides) == nil or
-                        not self.gui.selectedDeleteGuide then
-                        return false
+    local importOptionsTable
+    if not addon.player.hardcore then
+        importOptionsTable = {
+            type = "group",
+            name = fmt("RestedXP %s - %s", L("Guide Import"), addon.versionText),
+            handler = self,
+            args = {
+                buffer = {
+                    order = 1,
+                    name = L("Paste encoded strings"),
+                    type = "description",
+                    width = "full",
+                    fontSize = "medium"
+                },
+                importBox = {
+                    order = 10,
+                    type = 'input',
+                    name = L('Guides to import'),
+                    width = "full",
+                    multiline = 5,
+                    get = function()
+                        -- Prevent auto clearing on NotifyChange
+                        return importCache.bufferString:sub(1, 500)
+                    end,
+                    validate = importCache.validate,
+                    disabled = function() return notOnline() end
+                },
+                currentGuides = {
+                    order = 11,
+                    type = 'select',
+                    style = 'dropdown',
+                    name = L("Currently loaded imported guides"),
+                    width = 'full',
+                    values = function()
+                        return self.GetImportedGuides()
+                    end,
+                    disabled = function()
+                        return next(addon.db.profile.guides) == nil or
+                                not self.gui.selectedDeleteGuide
+                    end,
+                    get = function()
+                        return self.gui.selectedDeleteGuide
+                    end,
+                    set = function(_, value)
+                        self.gui.selectedDeleteGuide = value
                     end
-                    return string.format(L("Remove") .. " %s?",
-                                         self.gui.selectedDeleteGuide)
-                end,
-                disabled = function()
-                    return next(addon.db.profile.guides) == nil or
-                               not self.gui.selectedDeleteGuide or
-                               self.gui.selectedDeleteGuide == "" or
-                               self.gui.selectedDeleteGuide == "none"
-                end,
-                func = function()
-                    if addon.RemoveGuide(self.gui.selectedDeleteGuide) then
-                        addon.db.profile.guides[self.gui.selectedDeleteGuide] =
-                            nil
+                },
+                deleteSelectedGuide = {
+                    order = 12,
+                    type = 'execute',
+                    name = L("Delete imported guide"),
+                    confirm = function()
+                        if next(addon.db.profile.guides) == nil or
+                            not self.gui.selectedDeleteGuide then
+                            return false
+                        end
+                        return string.format(L("Remove") .. " %s?",
+                                            self.gui.selectedDeleteGuide)
+                    end,
+                    disabled = function()
+                        return next(addon.db.profile.guides) == nil or
+                                not self.gui.selectedDeleteGuide or
+                                self.gui.selectedDeleteGuide == "" or
+                                self.gui.selectedDeleteGuide == "none"
+                    end,
+                    func = function()
+                        if addon.RemoveGuide(self.gui.selectedDeleteGuide) then
+                            addon.db.profile.guides[self.gui.selectedDeleteGuide] =
+                                nil
+                        end
                     end
-                end
-            },
-            purgeAll = {
-                order = 13,
-                type = 'execute',
-                name = L("Purge All Data"),
-                confirm = function()
-                    return
-                               L"This action will remove ALL guides from the database\nAre you sure?"
-                end,
-                --[[disabled = function()
-                    return next(addon.db.profile.guides) == nil
-                end,]]
-                --Let people purge the data even without any installed guides in case they experience caching issues
-                func = function()
-                    addon.db.profile.guides = {}
-                    addon.settings.profile.skipQuest = {}
-                    addon.settings.profile.questPrio = {}
-                    addon.settings.profile.questPrioIndex = {}
-                    addon.db.profile.guideId = nil
-                    addon.db.profile.guideLength = nil
-                    addon.db.profile.guideContent = nil
-                    addon:CreateMetaDataTable(true)
-                end
-            },
-            reloadUi = {
-                order = 14,
-                name = L("Reload guides and UI"),
-                type = 'execute',
-                func = function() _G.ReloadUI() end
-            },
-            ImportSplicedString = {
-                order = 15,
-                name = L("Import Spliced String"),
-                type = 'execute',
-                func = function()
-                    _G.RunNextFrame(function()
-                        _G.SettingsPanel:Hide()
-                        AceConfigDialog:CloseAll()
-                        addon.settings.ImportSplicedString()
-                    end)
-                end,
-                hidden = not self.profile.enableBetaFeatures,
-            },
+                },
+                purgeAll = {
+                    order = 13,
+                    type = 'execute',
+                    name = L("Purge All Data"),
+                    confirm = function()
+                        return
+                                L"This action will remove ALL guides from the database\nAre you sure?"
+                    end,
+                    --[[disabled = function()
+                        return next(addon.db.profile.guides) == nil
+                    end,]]
+                    --Let people purge the data even without any installed guides in case they experience caching issues
+                    func = function()
+                        addon.db.profile.guides = {}
+                        addon.settings.profile.skipQuest = {}
+                        addon.settings.profile.questPrio = {}
+                        addon.settings.profile.questPrioIndex = {}
+                        addon.db.profile.guideId = nil
+                        addon.db.profile.guideLength = nil
+                        addon.db.profile.guideContent = nil
+                        addon:CreateMetaDataTable(true)
+                    end
+                },
+                reloadUi = {
+                    order = 14,
+                    name = L("Reload guides and UI"),
+                    type = 'execute',
+                    func = function() _G.ReloadUI() end
+                },
+                ImportSplicedString = {
+                    order = 15,
+                    name = L("Import Spliced String"),
+                    type = 'execute',
+                    func = function()
+                        _G.RunNextFrame(function()
+                            _G.SettingsPanel:Hide()
+                            AceConfigDialog:CloseAll()
+                            addon.settings.ImportSplicedString()
+                        end)
+                    end,
+                    hidden = not self.profile.enableBetaFeatures,
+                },
 
-            loadStatusBox = {
-                order = 90,
-                name = _G.HISTORY,
-                type = 'group',
-                inline = true,
-                hidden = function()
-                    return next(self.gui.importStatusHistory) == nil
-                end,
-                args = {
-                    loadHistory = {
-                        order = 1,
-                        name = function()
-                            return table.concat(self.gui.importStatusHistory,
-                                                '\n')
-                        end,
-                        type = "description",
-                        width = "full",
-                        fontSize = "medium"
+                loadStatusBox = {
+                    order = 90,
+                    name = _G.HISTORY,
+                    type = 'group',
+                    inline = true,
+                    hidden = function()
+                        return next(self.gui.importStatusHistory) == nil
+                    end,
+                    args = {
+                        loadHistory = {
+                            order = 1,
+                            name = function()
+                                return table.concat(self.gui.importStatusHistory,
+                                                    '\n')
+                            end,
+                            type = "description",
+                            width = "full",
+                            fontSize = "medium"
+                        }
                     }
+                },
+                debugData = {
+                    order = 91,
+                    name = _G.BINDING_HEADER_DEBUG,
+                    type = "header",
+                    width = "full",
+                    hidden = function()
+                        return not addon.settings.profile.debug
+                    end
+                },
+                battleNetID = {
+                    order = 91.1,
+                    name = function()
+                        local _, bt = BNGetInfo()
+                        return fmt("Battle.net ID: %s", bt or 'Offline')
+                    end,
+                    type = "description",
+                    width = "full",
+                    fontSize = "small",
+                    hidden = function()
+                        return not addon.settings.profile.debug
+                    end
                 }
-            },
-            debugData = {
-                order = 91,
-                name = _G.BINDING_HEADER_DEBUG,
-                type = "header",
-                width = "full",
-                hidden = function()
-                    return not addon.settings.profile.debug
-                end
-            },
-            battleNetID = {
-                order = 91.1,
-                name = function()
-                    local _, bt = BNGetInfo()
-                    return fmt("Battle.net ID: %s", bt or 'Offline')
-                end,
-                type = "description",
-                width = "full",
-                fontSize = "small",
-                hidden = function()
-                    return not addon.settings.profile.debug
-                end
             }
         }
-    }
-
+    else
+        importOptionsTable = {
+            type = "group",
+            name = fmt("RestedXP %s - %s", L("Guide Import"), addon.versionText),
+            handler = self,
+            args = {
+                hardcoreWarning = {
+                    order = 1,
+                    name = L("Guide import is temporarily disabled on Hardcore servers, please switch to a normal server to import a guide").."\n\n",
+                    type = "description",
+                    width = "full",
+                    fontSize = "large"
+                },
+                hardcoreWarningDesc = {
+                    order = 2,
+                    name = L("On patch 1.15.9, the allowed execution time for lua code was severely reduced on Hardcore servers only, addon processing time is a very scarce resource, so in order to be able to import a guide without any errors or crashes, this process has to be done on a non Hardcore server"),
+                    type = "description",
+                    width = "full",
+                    fontSize = "medium"
+                }
+            }
+        }
+    end
     AceConfig:RegisterOptionsTable(addon.RXPOptions.name .. "/Import",
                                    importOptionsTable)
 
@@ -3714,7 +3737,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     optimizePerformance = {
-                        name = fmt("%s %s %s", _G.LOW, _G.QUALITY, _G.SETTINGS),
+                        name = L"Low Quality Settings",
                         desc = _G.OPTION_TOOLTIP_COMBAT_TARGET_MODE_NEW,
                         order = 1.3,
                         type = "toggle", -- type = "execute",

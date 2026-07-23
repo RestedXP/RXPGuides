@@ -1546,7 +1546,7 @@ step
     >>|cRXP_WARN_注意：|T133747:0|t|cRXP_LOOT_[启示：萨满之怒]|r 需要达到10级才能使用|r << Shaman
     >>|cRXP_WARN_注意：|T133747:0|t|cRXP_LOOT_[启示：图腾投射]|r 需要达到25级才能使用|r << Shaman
     .train 438040 >>|cRXP_WARN_购买并使用|r |T133735:0|t|cRXP_LOOT_[转嫁手册]|r |cRXP_WARN_来学习|r |T135425:0|t[转嫁] << Rogue
-    .train 458822 >>|cRXP_WARN_购买并使用|r |T133735:0|t|cRXP_LOOT_[玄秘毒药手册]|r |cRXP_WARN_来学习|r |T135935:0|t[[玄秘毒药 I] << Rogue
+    .train 458822 >>|cRXP_WARN_购买并使用|r |T133735:0|t|cRXP_LOOT_[玄秘毒药手册]|r |cRXP_WARN_来学习|r |T135935:0|t[玄秘毒药 I] << Rogue
     .train 438040 >>|cRXP_WARN_购买并使用|r |T133735:0|t|cRXP_LOOT_[麻痹毒药手册]|r |cRXP_WARN_来学习|r |T132098:0|t[麻痹毒药] << Rogue
     .train 439500 >>|cRXP_WARN_购买并使用|r |T133735:0|t|cRXP_LOOT_[解离毒药手册]|r |cRXP_WARN_来学习|r |T132108:0|t[解离毒药] << Rogue
     .train 438040 >>|cRXP_WARN_购买并使用|r |T133735:0|t|cRXP_LOOT_[萎缩毒药手册]|r |cRXP_WARN_来学习|r |T132100:0|t[萎缩毒药] << Rogue

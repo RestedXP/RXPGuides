@@ -1477,6 +1477,7 @@ Footer.cog:SetScript("OnClick", function(self) RXPFrame.DropDownMenu() end)
 -- Footer.cog:HookScript("OnLeave", function(self) self:Hide() end)
 
 function RXPFrame.DropDownMenu()
+    RXPFrame.GenerateMenuTable()
     if _G.EasyMenu then
         _G.EasyMenu(RXPFrame.menuList, MenuFrame, "cursor", 0, 0, "MENU");
     else
@@ -1604,6 +1605,7 @@ function addon.BetaVersionCheck()
 end
 
 function addon.ProcessGuideTable(guide)
+    if not guide then return end
     local currentGuide = {}
 
     for k, v in pairs(guide) do
@@ -1747,7 +1749,7 @@ function addon:FetchGuide(guide,arg2,arg3)
             local grp, name = guide,arg2
             local g = addon:FetchGuide(addon.GetGuideTable(grp,name),nil,arg3)
             if g then return g end
-            if arg3 then return end
+            if arg3 or not name then return end
             local newGrp
             local newName
             if addon.groupAlias[grp] then
@@ -1799,7 +1801,7 @@ function addon:FetchGuide(guide,arg2,arg3)
             guide = newGuide
             addon:ScheduleTask(addon.UpdateQuestButton)
             addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
-        else
+        elseif not parser then
             --print(guide.name,guide.group)
             --GG = guide
             addon.comms.PrettyDebug('Error: Tried to load an invalid Guide: %s v%s', key, guide.version or 0)
@@ -2366,6 +2368,12 @@ local function IsGuideActive(guide,includeInternal)
     end
 end
 
+local function SwapNames(name)
+    if addon.GuideNames and addon.GuideNames[name] then
+        name = addon.GuideNames[name]
+    end
+    return L(name) or name
+end
 addon.IsGuideActive = IsGuideActive
 
 function RXPFrame:GenerateMenuTable(menu)
@@ -2429,7 +2437,7 @@ function RXPFrame:GenerateMenuTable(menu)
                         arg1 = guide.group,
                         arg2 = chapterName,
                         func = OnClick,
-                        text = addon.GetGuideName(chapter),
+                        text = SwapNames(addon.GetGuideName(chapter)),
                         notCheckable = 1,
                     }
                     if not activeChapters[chapterName] then
@@ -2452,7 +2460,7 @@ function RXPFrame:GenerateMenuTable(menu)
             table.sort(t.names_)
         end
         local item = {
-            text = addon.GroupOverride(group),
+            text = SwapNames(addon.GroupOverride(group)),
             notCheckable = 1,
             hasArrow = true,
             menuList = {}
@@ -2474,7 +2482,7 @@ function RXPFrame:GenerateMenuTable(menu)
                         local subname = subgroup:gsub("^(%d)-(%d%d?)",
                                                       addon.affix)
                         subtable = {
-                            text = subgroup,
+                            text = SwapNames(subgroup),
                             notCheckable = 1,
                             hasArrow = true,
                             menuList = {},
@@ -2484,7 +2492,7 @@ function RXPFrame:GenerateMenuTable(menu)
                         tinsert(item.subgroups, subname)
                     end
                     local subitem = {}
-                    subitem.text = addon.GetGuideName(guide)
+                    subitem.text = SwapNames(addon.GetGuideName(guide))
                     if guide.disabled then
                         subitem.isTitle = 1
                     else
@@ -2501,7 +2509,7 @@ function RXPFrame:GenerateMenuTable(menu)
                     guide.menuIndex = menuIndex
                     guide.submenuIndex = submenuIndex
                     local subitem = {}
-                    subitem.text = addon.GetGuideName(guide)
+                    subitem.text = SwapNames(addon.GetGuideName(guide))
                     if guide.disabled then
                         subitem.isTitle = 1
                     else

@@ -13,7 +13,7 @@ RXPGuides.RegisterGuide([[
 
 #defaultfor Goblin
 #group RXP Cataclysm 1-80 (H) << cata
-#group RXP MoP 1-60 (H) << mop
+#group RXP MoP 1-80 (H) << mop
 #subweight 10000
 
 
@@ -685,7 +685,7 @@ RXPGuides.RegisterGuide([[
 
 #defaultfor Goblin
 #group RXP Cataclysm 1-80 (H) << cata
-#group RXP MoP 1-60 (H) << mop
+#group RXP MoP 1-80 (H) << mop
 #subweight 10000
 
 step

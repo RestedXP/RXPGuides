@@ -22,6 +22,7 @@ local L = addon.locale.Get
 
 -- File guides and string-imports need different load order support
 local embeddedGuides = {}
+addon.embeddedGuides = embeddedGuides
 
 addon.minGuideVersion = 0
 addon.maxGuideVersion = 0
@@ -554,21 +555,29 @@ function addon.ProcessInputBuffer(workerFrame)
 end
 
 local embeddedGuidesLoaded
-function addon.LoadEmbeddedGuides()
+function addon.LoadEmbeddedGuides(maxIterations)
     if not addon.db then
         error('Initialization error, db not set')
         return
     end
-    if embeddedGuidesLoaded then
-        return
-    else
-        embeddedGuidesLoaded = true
-    end
+    -- if embeddedGuidesLoaded then
+    --     return
+    -- else
+    --     embeddedGuidesLoaded = true
+    -- end
     --A1 = GetTimePreciseSec()
-    if RXPCData.guideDisabled[0] ~= #embeddedGuides then
+    if not RXPCData.guideDisabled[0] or RXPCData.guideDisabled[0] <= #embeddedGuides then
         RXPCData.guideDisabled = {[0] = #embeddedGuides}
     end
-    for n, guideData in ipairs(embeddedGuides) do
+    local iterations = 0
+    for n = #embeddedGuides, 1, -1 do
+        iterations = iterations + 1
+        if maxIterations and iterations > maxIterations then
+            --print(iterations, maxIterations)
+            break
+        end
+        local guideData = embeddedGuides[n]
+        embeddedGuides[n] = nil
         if guideData.cache then
             addon.ImportGuide(guideData.groupOrContent, guideData.text,
                               guideData.defaultFor, true)
@@ -669,14 +678,14 @@ function addon.LoadEmbeddedGuides()
         end
     end
 
-    if addon.addonLoaded then
+    --[[if addon.addonLoaded then
         embeddedGuides = nil
     else
         embeddedGuides = {}
-    end
+    end]]
 
     --A1 = GetTimePreciseSec() - A1
-    addon.RXPFrame.GenerateMenuTable()
+    addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
 end
 
 function addon.BuildGuideKey(arg1,arg2,arg3)
@@ -688,6 +697,8 @@ function addon.BuildGuideKey(arg1,arg2,arg3)
                          arg3)
     end
 end
+
+local decompressedGuides = {}
 
 function addon.LoadCachedGuides()
     if not addon.db then
@@ -732,7 +743,16 @@ function addon.LoadCachedGuides()
                     guideData.metadata.length == addon.ReadCacheData("string") then
                 local data = guideData
                 addon.guideCache[key] = function(self)
-                    local g = LibDeflate:DecompressDeflate(data.groupOrContent)
+                    local g
+                    if addon.player.hardcore and not addon.settings.profile.loadAllGuides then
+                        if not decompressedGuides[key] then
+                            decompressedGuides[key] = LibDeflate:DecompressDeflate(data.groupOrContent)
+                            return
+                        end
+                        g = decompressedGuides[key]
+                    else
+                        g = LibDeflate:DecompressDeflate(data.groupOrContent)
+                    end
                     local tbl = addon.ParseGuide(g)
                     if RXPCData and RXPCData.guideMetaData then
                         RXPCData.guideMetaData[guide.key] = metadata
@@ -741,6 +761,7 @@ function addon.LoadCachedGuides()
                         tbl.parse = self
                     end
                     tbl.imported = true
+                    decompressedGuides[key] = nil
                     return tbl
                 end
                 guide = guideData.metadata
@@ -1150,10 +1171,6 @@ function addon.GroupOverride(guide,arg2)
                     swap = true
                     grp = "RXP TBC Survival Guide"..SG
                 end
-            end
-        else
-            if grp:match("RXP MoP 1%-80") then
-                return grp:gsub("RXP MoP 1%-80","RXP MoP 1-60"),subgrp
             end
         end
         return grp,subgrp,swap

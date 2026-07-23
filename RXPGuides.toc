@@ -1,7 +1,7 @@
-## Interface: 11508, 50504, 120100, 120005, 120007
+## Interface: 11509, 50504, 120100, 120005, 120007
 ## Interface-Mists: 50504
 ## Interface-TBC: 20506
-## Interface-Classic: 11508
+## Interface-Classic: 11509
 ## Title: RestedXP Guides
 ## Title-zhCN: RestedXP 指南
 ## Notes: In-game leveling guides
