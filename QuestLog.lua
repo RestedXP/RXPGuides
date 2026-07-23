@@ -804,7 +804,7 @@ local function CreateCleanupButton()
             AnchorCleanupButton()
             if cleanupBtn then
                 local enabled = addon.currentGuide and not addon.currentGuide.empty
-                local grp = addon.currentGuide.group
+                local grp = addon.currentGuide and addon.currentGuide.group
                 local isPrepGuide = grp and strlower(grp):find("prep")
                 cleanupBtn:SetShown(not addon.isHidden and enabled and not isPrepGuide)
             end
