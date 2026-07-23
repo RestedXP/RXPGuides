@@ -106,6 +106,7 @@ events.collectmultiple = events.collect
 events.destroy = events.collect
 events.buy = events.collect
 events.buyAll = events.buy
+events.buyUntilBroke = events.buy
 events.accept = {"QUEST_ACCEPTED", "QUEST_TURNED_IN", "QUEST_REMOVED"}
 events.turnin = {"QUEST_TURNED_IN","QUEST_LOG_UPDATE", UNIT_QUEST_LOG_CHANGED}
 if C_EventUtils and C_EventUtils.IsEventValid("STOP_MOVIE") then
@@ -5454,11 +5455,23 @@ function addon.functions.bronzetube(self, text, rev)
     end
 end
 
+-- Buys specified amount without taking into account current player item count
 function addon.functions.buyAll(self, ...)
     if type(self) == "string" then -- on parse
         local element = addon.functions.buy(self, ...)
         if type(element) == "table" then
             element.ignoreCurrent = true
+        end
+        return element
+    end
+    return addon.functions.buy(self, ...)
+end
+
+function addon.functions.buyUntilBroke(self, ...)
+    if type(self) == "string" then -- on parse
+        local element = addon.functions.buy(self, ...)
+        if type(element) == "table" then
+            element.buyUntilBroke = true
         end
         return element
     end
@@ -5513,11 +5526,16 @@ function addon.functions.buy(self, ...)
             local itemID = link and tonumber(link:match("item:(%d+)"))
             if itemID then
                 -- numAvailable is -1 when unlimited and at least 0 until window is closed (if present)
-                local name, _, _, quantity, numAvailable = GetMerchantItemInfo(i)
+                local name, _, cost, quantity, numAvailable = GetMerchantItemInfo(i)
 
                 if itemID == id or name == id then
                     if numAvailable ~= -1 then
                         total = math.min(total, numAvailable)
+                    end
+
+                    if (element.buyUntilBroke) then
+                        cost = cost / quantity -- quantity is 5 for drinks/food for example, cost is per 5 in that case
+                        total = math.min(total, GetMoney() / cost)
                     end
 
                     addon.comms.PrettyPrint("Buying " .. name .. " x" .. total) -- ok
