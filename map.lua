@@ -15,8 +15,12 @@ addon.arrowFrame = CreateFrame("Frame", "RXPG_ARROW", UIParent)
 local af = addon.arrowFrame
 
 function addon.arrowFrame:UpdateVisuals()
-    self.texture:SetTexture(addon.GetTexture(
-        "rxp_navigation_arrow-1"))
+    local texture = addon.GetTexture("rxp_navigation_arrow-1")
+    if addon.v2 and addon.v2:IsGuideWindowEnabled() then
+        texture = "Interface/AddOns/" .. addonName ..
+                      "/Textures/v2/rxp_navigation_arrow-1"
+    end
+    self.texture:SetTexture(texture)
 end
 
 local function IsInInstance()
@@ -63,7 +67,7 @@ end)
 
 function addon.SetupArrow()
     af.text:SetFont(addon.font, 9,"OUTLINE")
-    af.texture:SetTexture(addon.GetTexture("rxp_navigation_arrow-1"))
+    af:UpdateVisuals()
     af.text:SetTextColor(unpack(addon.activeTheme.textColor))
 
     addon.arrowFrame:SetScript("OnUpdate", addon.DrawArrow)
