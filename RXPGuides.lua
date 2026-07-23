@@ -9,37 +9,6 @@ local RegisterMessage_OLD = addon.RegisterMessage
 local rand, tinsert, select = math.random, table.insert, _G.select
 local IsAddOnLoadOnDemand = C_AddOns and C_AddOns.IsAddOnLoadOnDemand or _G.IsAddOnLoadOnDemand
 local GetSpellInfo
-local updateFrame = CreateFrame("Frame")
-local isMainUpdate = 0
-
-local function LoadCache(guide)
-    if updateFrame:GetScript("OnUpdate") then
-        return
-    end
-    updateFrame:SetScript("OnUpdate",function(self)
-        if isMainUpdate == GetTime() then
-            return
-        end
-        local start = debugprofilestop()
-        if #addon.embeddedGuides ~= 0 then
-            if addon.player.hardcore then
-                --During patch 1.15.9 Lua scripts have a maximum run time of 200ms (HC only)
-                while #addon.embeddedGuides > 0 and debugprofilestop() - start < 30 do
-                    addon.LoadEmbeddedGuides(1)
-                    --print(#addon.embeddedGuides)
-                end
-                --print('----',#addon.embeddedGuides)
-            else
-                addon.LoadEmbeddedGuides()
-            end
-        else
-            if guide then
-                addon:FetchGuide(guide)
-            end
-            updateFrame:SetScript("OnUpdate",nil)
-        end
-    end)
-end
 
 if C_Spell and C_Spell.GetSpellInfo then
     addon.GetSpellInfo = function(...)
@@ -1199,6 +1168,56 @@ function addon:CreateMetaDataTable(wipe)
 
 end
 
+local updateFrame = CreateFrame("Frame")
+local isMainUpdate = 0
+
+local currentGuideGroup
+local currentGuideName
+local startStep
+local function LoadCache(guide)
+    if updateFrame:GetScript("OnUpdate") then
+        return
+    end
+    updateFrame:SetScript("OnUpdate",function(self)
+        if isMainUpdate == GetTime() then
+            return
+        end
+        local start = debugprofilestop()
+        if not guide then
+            local empty = not addon.currentGuide or addon.currentGuide.empty
+            if currentGuideGroup and empty then
+                local g = addon.GetGuideTable(currentGuideGroup,
+                                    currentGuideName)
+                if g then
+                    RXPCData.currentStep = startStep
+                    addon:LoadGuide(g, true)
+                    currentGuideGroup = nil
+                    currentGuideName = nil
+                    return
+                end
+            end
+        end
+        if #addon.embeddedGuides ~= 0 then
+            if addon.player.hardcore then
+                --During patch 1.15.9 Lua scripts have a maximum run time of 200ms (HC only)
+                while #addon.embeddedGuides > 0 and debugprofilestop() - start < 25 do
+                    addon.LoadEmbeddedGuides(1)
+                    --print(#addon.embeddedGuides)
+                end
+                --print('----',#addon.embeddedGuides)
+            else
+                addon.LoadEmbeddedGuides()
+            end
+        else
+            if guide then
+                addon:FetchGuide(guide)
+            end
+            updateFrame:SetScript("OnUpdate",nil)
+        end
+    end)
+end
+
+
 function addon:OnInitialize()
     local importGuidesDefault = {
         profile = {guides = {}, reports = {splits = {}}}
@@ -1286,26 +1305,41 @@ function addon:OnInitialize()
     addon.activeItemFrame:SetScale(addon.settings.profile.activeItemsScale)
 
     addon.v2:Setup()
-end
 
-function addon:OnEnable()
-    addon.ParseCompletedQuests()
-    --addon.LoadEmbeddedGuides()
     LoadCache()
+    ProcessSpells()
+    addon.GetProfessionLevel()
+
     if addon.settings.profile.preLoadData then
         addon.LoadAllGuides()
     end
-    addon.addonLoaded = true
-    ProcessSpells()
-    addon.GetProfessionLevel()
-    local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
-                                      RXPCData.currentGuideName)
-    addon:LoadGuide(guide, true)
-    if not addon.currentGuide then
-        addon.RXPFrame:SetHeight(20)
-        addon.RXPFrame.BottomFrame.UpdateFrame()
-        addon.noGuide = true
+
+    currentGuideGroup = RXPCData.currentGuideGroup
+    currentGuideName = RXPCData.currentGuideName
+    startStep = RXPCData.currentStep
+    -- addon:LoadGuide(guide, true)
+    -- if not addon.currentGuide then
+    --     addon.RXPFrame:SetHeight(20)
+    --     addon.RXPFrame.BottomFrame.UpdateFrame()
+    --     addon.noGuide = true
+    -- end
+    addon.ParseCompletedQuests()
+
+    if addon.player.hardcore then
+        for _,guide in pairs(addon.guides) do
+            if debugprofilestop() - addon.startTime > 3000 then
+                break
+            end
+            if not guide.steps then
+                addon:FetchGuide(guide)
+            end
+        end
     end
+end
+
+function addon:OnEnable()
+    addon.addonLoaded = true
+
     --addon.RXPFrame.GenerateMenuTable()
 
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
@@ -1417,16 +1451,6 @@ function addon:OnEnable()
         if addon.itemUpgrades then addon.itemUpgrades:Setup() end
     end)
 
-    if addon.player.hardcore then
-        for _,guide in pairs(addon.guides) do
-            if debugprofilestop() - addon.startTime > 3000 then
-                break
-            end
-            if not guide.steps then
-                addon:FetchGuide(guide)
-            end
-        end
-    end
 end
 
 -- Tracks if a player is on a loading screen and pauses the main update loop

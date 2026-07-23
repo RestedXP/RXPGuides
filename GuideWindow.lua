@@ -1583,6 +1583,7 @@ function addon.BetaVersionCheck()
 end
 
 function addon.ProcessGuideTable(guide)
+    if not guide then return end
     local currentGuide = {}
 
     for k, v in pairs(guide) do
@@ -1726,7 +1727,7 @@ function addon:FetchGuide(guide,arg2,arg3)
             local grp, name = guide,arg2
             local g = addon:FetchGuide(addon.GetGuideTable(grp,name),nil,arg3)
             if g then return g end
-            if arg3 then return end
+            if arg3 or not name then return end
             local newGrp
             local newName
             if addon.groupAlias[grp] then
