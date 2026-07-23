@@ -56,7 +56,7 @@ local L = addon.locale.Get
 
 addon.settings = addon:NewModule("Settings", "AceConsole-3.0")
 addon.settings.enabledBetaFeatures = {
-    ["Active Steps v2"] = "Allow ActiveSteps and ActivePartySteps v2", --GuideWindow/addon.v2
+    ["Guide Window v2"] = "Allow the Guide Window and Active Steps v2", --GuideWindow/addon.v2
 }
 
 if not addon.settings.gui then
@@ -284,6 +284,28 @@ function addon.settings:InitializeSettings()
     self:RegisterChatCommand("rxp", self.ChatCommand)
     self:RegisterChatCommand("rxpg", self.ChatCommand)
     self:RegisterChatCommand("rxpguides", self.ChatCommand)
+end
+
+function addon.settings:IsStepListShown()
+    local frameHeight = self.profile and self.profile.frameHeight
+    return frameHeight == nil or frameHeight >= 35
+end
+
+function addon.settings:SetStepListShown(value)
+    if addon.currentGuide and addon.currentGuide.hidewindow then return end
+
+    addon.RXPFrame:SetHeight(value and addon.height or 10)
+    self.profile.frameHeight = value and addon.height or 10
+    addon.updateBottomFrame = true
+    if addon.v2:IsGuideWindowEnabled() then addon.v2:UpdateGuideWindow() end
+end
+
+function addon.settings:SetHideCompletedSteps(value)
+    self.profile.hideCompletedSteps = value
+    addon.RXPFrame.ScrollFrame.ScrollBar:SetValue(0)
+    if addon.v2:IsGuideWindowEnabled() then
+        addon.v2.events:Trigger("GuideStepsChanged")
+    end
 end
 
 function addon.settings:MigrateLegacySettings()
@@ -905,21 +927,6 @@ function addon.settings:CreateAceOptionsPanel()
         return L("This requires a reload to take effect, continue?")
     end
 
-    local function showStepList(value)
-        if addon.currentGuide and addon.currentGuide.hidewindow then
-            return
-        end
-
-        if value then
-            addon.RXPFrame:SetHeight(addon.height)
-            addon.settings.profile.frameHeight = addon.height
-        else
-            addon.RXPFrame:SetHeight(10)
-            addon.settings.profile.frameHeight = 10
-        end
-        addon.updateBottomFrame = true
-    end
-
     local function listBetaFeatures(first)
         if next(addon.settings.enabledBetaFeatures) == nil then
             return first
@@ -1063,6 +1070,9 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame:SetShown(not value)
+                            addon.v2.events:Trigger("GuideWindowRefresh", "visibility",
+                                                    not value and
+                                                        addon.settings.profile.showEnabled ~= false)
                         end
                     },
                     disableArrow = {
@@ -1221,19 +1231,6 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = isNotAdvanced
                     },
-                    enableV2ActiveStepsFrame = {
-                        name = fmt("%s %s %sv2", _G.ENABLE, _G.ACTIVE_PETS, L("Step ")),
-                        -- desc = L"",
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 5.2,
-                        confirm = requiresReload,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            _G.ReloadUI()
-                        end,
-                        hidden = isNotAdvanced
-                    },
                     activeStepsV2RenderQuestName = {
                         name = L("Display Quest Link"),
                         desc = L("Display quest tooltips on steps"),
@@ -1246,7 +1243,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = isNotAdvanced,
                         disabled = function()
-                            return not addon.UseV2ActiveStepsFrame()
+                            return not addon.v2:IsGuideWindowEnabled()
                         end
                     },
                     inventoryHeader = {
@@ -3327,10 +3324,10 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 3.4,
                         get = function()
-                            return addon.RXPFrame.BottomFrame:GetHeight() >= 35
+                            return self:IsStepListShown()
                         end,
                         set = function(_, value)
-                            showStepList(value)
+                            self:SetStepListShown(value)
                         end
                     },
                     hideCompletedSteps = {
@@ -3340,13 +3337,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 3.5,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.RXPFrame.ScrollFrame.ScrollBar:SetValue(0)
-                            if addon.v2:IsGuideWindowEnabled() then
-                                addon.v2.events:Trigger("GuideOutlineChanged")
-                            end
-                        end
+                        set = function(_, value) self:SetHideCompletedSteps(value) end
                     },
                     showUnusedGuides = {
                         name = L("Show unused guides"),
@@ -3383,7 +3374,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = isNotAdvanced,
                         disabled = function()
-                            return not addon.UseV2ActiveStepsFrame()
+                            return not addon.v2:IsGuideWindowEnabled()
                         end
                     },
                     activeStepsV2HideBackground = {
@@ -3398,7 +3389,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = isNotAdvanced,
                         disabled = function()
-                            return not addon.UseV2ActiveStepsFrame()
+                            return not addon.v2:IsGuideWindowEnabled()
                         end
                     },
                     arrowHeader = {
@@ -3791,7 +3782,7 @@ function addon.settings:CreateAceOptionsPanel()
 
                             -- Only impact step list if disabling
                             if not value then
-                                showStepList(false)
+                                self:SetStepListShown(false)
                             end
 
                             _G.ReloadUI()
@@ -3943,10 +3934,16 @@ function addon.settings:UpdateMinimapButton()
                                                   "UIDropDownMenuTemplate")
     end
 
+    local icon = addon.GetTexture("rxp_logo-64")
+    if addon.v2:IsGuideWindowEnabled() then
+        icon = "Interface/AddOns/" .. addonName ..
+                   "/Textures/v2/rxp-minimap-icon"
+    end
+
     local minimapButton = LibDataBroker:NewDataObject(addonName, {
         type = "data source",
         label = addonName,
-        icon = addon.GetTexture("rxp_logo-64"),
+        icon = icon,
         tocname = addonName,
         OnClick = function(_, button)
             if button == "RightButton" then
@@ -3975,6 +3972,10 @@ function addon.settings.ToggleActive()
             frame:SetShown(addon.settings.profile.showEnabled)
         end
     end
+
+    addon.v2.events:Trigger("GuideWindowRefresh", "visibility",
+                            addon.settings.profile.showEnabled and
+                                not addon.settings.profile.hideGuideWindow)
 
 end
 
