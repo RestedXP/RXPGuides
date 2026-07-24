@@ -1,4 +1,4 @@
-## Interface: 20505
+## Interface: 20506
 ## Title: RestedXP Guides
 ## Notes: In-game leveling guides
 ## Author: RestedXP

@@ -131,12 +131,6 @@ function addon.UpdateQuestButton(index)
             end
         end
 
-        -- Only evaluates true on first load
-        -- addon.orphanedList is updated when QuestLogFrame opens/closes
-        if not addon.orphanedList then
-            addon.GetOrphanedQuests()
-        end
-
         -- If showButton, then it's a pickUp or turnIn, without the table lookup cost
         if not showButton and addon.orphanedList and addon.orphanedList[questID] then
             tooltip = format("%s%s%s%s%s|r", tooltip, separator,
@@ -436,9 +430,13 @@ local function getQuestData(questLogIndex)
     return data
 end
 
--- Set on first GetOrphanedQuests run, likely by UpdateQuestButton call
+-- Set when orphaned quests are explicitly inventoried.
 addon.orphanedList = nil -- {}
 function addon.GetOrphanedQuests()
+    if addon.player.hardcore then
+        addon.orphanedList = {}
+        return {}, {}
+    end
     if addon.isHidden or not addon.currentGuide or not addon.currentGuide.key then
         return {}, {}
     end
@@ -796,7 +794,7 @@ local function CreateCleanupButton()
 
     createdCleanupBtn = true
     SetCleanupBtnEnabled(not (InCombatLockdown and InCombatLockdown()))
-    cleanupBtn:SetShown(not addon.isHidden)
+    cleanupBtn:SetShown(not addon.isHidden and not addon.player.hardcore)
 
     -- Re-anchor
     if parent.HookScript then
@@ -806,7 +804,7 @@ local function CreateCleanupButton()
                 local enabled = addon.currentGuide and not addon.currentGuide.empty
                 local grp = addon.currentGuide and addon.currentGuide.group
                 local isPrepGuide = grp and strlower(grp):find("prep")
-                cleanupBtn:SetShown(not addon.isHidden and enabled and not isPrepGuide)
+                cleanupBtn:SetShown(not addon.isHidden and not addon.player.hardcore and enabled and not isPrepGuide)
             end
         end)
     end
@@ -815,7 +813,7 @@ local function CreateCleanupButton()
         _G.WorldMapFrame:HookScript("OnShow", function()
             AnchorCleanupButton()
             if cleanupBtn then
-                cleanupBtn:SetShown(not addon.isHidden)
+                cleanupBtn:SetShown(not addon.isHidden and not addon.player.hardcore)
             end
         end)
     end
@@ -861,7 +859,7 @@ do
             end
 
             if cleanupBtn then
-                cleanupBtn:SetShown(not addon.isHidden)
+                cleanupBtn:SetShown(not addon.isHidden and not addon.player.hardcore)
             end
 
         elseif ev == "PLAYER_REGEN_DISABLED" then
