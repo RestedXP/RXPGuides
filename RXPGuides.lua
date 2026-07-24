@@ -1306,7 +1306,7 @@ function addon:OnInitialize()
 
     addon.v2:Setup()
     if addon.v2:IsGuideWindowEnabled() then
-        addon.v2.events:Trigger("GuideWindowRefresh", "settings")
+        addon.v2:EnableGuideWindow()
     end
 
     LoadCache()
@@ -1791,7 +1791,7 @@ function addon.LegacyUpdateLoop()
             if addon.v2:IsGuideWindowEnabled() then
                 table.wipe(addon.stepUpdateList)
                 addon.updateTipWindow = false
-                addon.v2.events:Trigger("GuideOutlineChanged")
+                addon.v2.events:Trigger("GuideStepsChanged")
                 return
             end
             local updateText
@@ -1825,7 +1825,7 @@ function addon.LegacyUpdateLoop()
             if addon.v2:IsGuideWindowEnabled() then
                 addon.updateBottomFrame = false
                 addon.RXPFrame.SetStepFrameAnchor()
-                addon.v2.events:Trigger("GuideOutlineChanged")
+                addon.v2.events:Trigger("GuideStepsChanged")
                 return
             end
             addon.RXPFrame.BottomFrame.UpdateFrame()
@@ -2362,7 +2362,7 @@ addon.v2.events.messagePrefix = "RXPGuidesV2_"
 function addon.v2.events:Setup()
     addon.v2.events:Register("UpdateActiveSteps")
     addon.v2.events:Register("QuestDataLoaded")
-    addon.v2.events:Register("GuideOutlineChanged")
+    addon.v2.events:Register("GuideStepsChanged")
     addon.v2.events:Register("GuideWindowRefresh")
 end
 
@@ -2395,23 +2395,28 @@ function addon.v2.events:QuestDataLoaded(_, questId)
     if addon.RXPFrame.activeSteps then
         addon.v2:UpdateActiveStepsFrame(addon.RXPFrame.activeSteps, questId)
     end
-    addon.v2.events:Trigger("GuideOutlineChanged")
+    addon.v2.events:Trigger("GuideStepsChanged")
 end
 
-function addon.v2.events:GuideOutlineChanged()
-    addon.v2:UpdateGuideWindow()
+function addon.v2.events:GuideStepsChanged(_, scheduled)
+    -- Quest-data callbacks often arrive in bursts; one scheduled rebuild is enough.
+    if scheduled then
+        addon.v2:UpdateGuideWindow()
+    elseif addon.v2:IsGuideWindowEnabled() then
+        addon:ScheduleTask(addon.v2.events.GuideStepsChanged, false, true)
+    end
 end
 
 function addon.v2.events:GuideWindowRefresh(_, change, value)
-    if change == "settings" then
-        addon.v2:SetGuideWindowEnabled(addon.v2:IsGuideWindowEnabled())
-    elseif change == "visuals" then
+    if change == "visuals" then
         local window = addon.v2.state and addon.v2.state.guideWindow
         if window then window:RefreshVisuals() end
     elseif change == "visibility" then
-        local window = addon.v2:GetGuideWindowAnchorFrame()
-        if window then window:SetShown(value) end
-    elseif change == "layout" and addon.UseV2ActiveStepsFrame() then
+        if addon.v2:IsGuideWindowEnabled() then
+            local window = addon.v2:GetGuideWindow()
+            if window then window.frame:SetShown(value) end
+        end
+    elseif change == "layout" and addon.v2:IsGuideWindowEnabled() then
         addon.v2:SetActiveStepsFrameAnchor()
     end
 end
