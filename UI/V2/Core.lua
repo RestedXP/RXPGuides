@@ -1034,12 +1034,15 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
         end,
 
         ["ScrollToOffset"] = function(this, offset)
+            local value
             local scrollable = this.content:GetHeight() - this.scrollframe:GetHeight()
             if scrollable > 0 then
-                this:SetScroll(min(max(offset, 0), scrollable) / scrollable * 1000)
+                value = min(max(offset, 0), scrollable) / scrollable * 1000
             else
-                this:SetScroll(0)
+                value = 0
             end
+            this.scrollbar:SetValue(value)
+            this:SetScroll(value)
         end,
 
         ["MoveScroll"] = function(this, value)

@@ -304,7 +304,17 @@ function addon.settings:SetHideCompletedSteps(value)
     self.profile.hideCompletedSteps = value
     addon.RXPFrame.ScrollFrame.ScrollBar:SetValue(0)
     if addon.v2:IsGuideWindowEnabled() then
-        addon.v2.events:Trigger("GuideStepsChanged")
+        addon.v2:UpdateGuideWindow()
+        local window = addon.v2:GetGuideWindow()
+        if window then
+            if value then
+                local scroll = window.guideSteps.scroll
+                scroll.scrollbar:SetValue(0)
+                scroll:SetScroll(0)
+            else
+                window.guideSteps:ScrollToActive()
+            end
+        end
     end
 end
 
