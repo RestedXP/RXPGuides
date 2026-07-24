@@ -297,7 +297,7 @@ function addon.settings:SetStepListShown(value)
     addon.RXPFrame:SetHeight(value and addon.height or 10)
     self.profile.frameHeight = value and addon.height or 10
     addon.updateBottomFrame = true
-    if addon.v2:IsGuideWindowEnabled() then addon.v2:UpdateGuideWindow() end
+    if addon.v2:IsGuideWindowEnabled() then addon.v2:UpdateGuideWindow(value) end
 end
 
 function addon.settings:SetHideCompletedSteps(value)

@@ -486,9 +486,10 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
             this.minimumRowsHeight = nil
             this.rowsWidth = nil
             this.activeIndex = nil
+            this.activeOffset = nil
             this.frame:Hide()
         end,
-        ["SetRows"] = function(this, rows, force)
+        ["SetRows"] = function(this, rows, force, scrollToActive)
             local previous, item, height, minimumHeight, activeOffset, activeIndex,
                   itemHeight, _, textChanged = nil, nil, 0, nil, nil, nil, nil, nil, nil
             force = force or this.rowsWidth ~= this.scroll.scrollframe:GetWidth()
@@ -528,9 +529,12 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
             end
             this.rowsHeight = height
             this.minimumRowsHeight = minimumHeight or 0
+            this.activeOffset = activeOffset
             this.content:SetHeight(math.max(height, 1))
             this:UpdateScrollbar()
-            if activeOffset and activeIndex ~= this.activeIndex then this.scroll:ScrollToOffset(activeOffset) end
+            if activeOffset and (scrollToActive or activeIndex ~= this.activeIndex) then
+                this.scroll:ScrollToOffset(activeOffset)
+            end
             this.activeIndex = activeIndex
         end,
         ["UpdateScrollbar"] = function(this)
@@ -545,6 +549,9 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
             else
                 scroll:FixScroll()
             end
+        end,
+        ["ScrollToActive"] = function(this)
+            if this.activeOffset then this.scroll:ScrollToOffset(this.activeOffset) end
         end,
         ["RefreshVisuals"] = function(this)
             if this.rows then this:SetRows(this.rows, true) end
@@ -609,7 +616,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         ["OnRelease"] = function(this)
             this.frame:Hide()
         end,
-        ["SetSnapshot"] = function(this, snapshot)
+        ["SetSnapshot"] = function(this, snapshot, scrollToActive)
             local title, subtitle = snapshot.title:match("^([^\n]*)\n?(.*)$")
             local compactHeight = this:GetCompactHeight()
             local guideStepsShown = this.guideSteps.frame:IsShown()
@@ -619,7 +626,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             if addon.settings:IsStepListShown() and not snapshot.empty then
                 this.frame:SetHeight(this.guideHeight)
             end
-            this.guideSteps:SetRows(snapshot.rows)
+            this.guideSteps:SetRows(snapshot.rows, nil, scrollToActive)
             local rowsHeight = this.guideSteps.rowsHeight or 0
             local hasRows = not snapshot.empty and rowsHeight > 0
             local empty = not hasRows or not addon.settings:IsStepListShown()
@@ -637,7 +644,12 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             this.sizer:SetShown(not empty)
             if guideStepsShown ~= not empty then addon:SortTimers() end
             this:UpdateResizeBounds(not empty)
-            if not empty then this.guideSteps:UpdateScrollbar() end
+            if not empty then
+                this.guideSteps:UpdateScrollbar()
+                if scrollToActive or not guideStepsShown then
+                    this.guideSteps:ScrollToActive()
+                end
+            end
         end,
         ["RefreshLayout"] = function(this)
             if this.guideSteps.rows then this.guideSteps:SetRows(this.guideSteps.rows) end
@@ -905,12 +917,12 @@ function addon.v2:GetGuideWindowAnchorFrame()
     return window and window.frame
 end
 
-function addon.v2:UpdateGuideWindow()
+function addon.v2:UpdateGuideWindow(scrollToActive)
     if not self:IsGuideWindowEnabled() then return end
     local window = self:GetGuideWindow()
     if not window then return end
 
-    window:SetSnapshot(self:BuildGuideStepsSnapshot())
+    window:SetSnapshot(self:BuildGuideStepsSnapshot(), scrollToActive)
     window.frame:SetShown(not addon.settings.profile.hideGuideWindow and
                               addon.settings.profile.showEnabled ~= false)
 end
