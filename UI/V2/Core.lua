@@ -210,14 +210,17 @@ function addon.v2:IsGuideWindowEnabled()
     return profile and profile.enableBetaFeatures and profile.enableV2GuideWindow
 end
 
-function addon.v2:ShowGuideWindowMenu(menu)
+function addon:ShowMenu(menu, menuFrame, anchor, x, y, displayMode, autoHideDelay)
     if _G.EasyMenu then
-        _G.EasyMenu(menu, addon.RXPFrame.MenuFrame, "cursor", 0, 0, "MENU")
+        _G.EasyMenu(menu, menuFrame, anchor, x, y, displayMode, autoHideDelay)
     else
-        LibStub:GetLibrary("LibUIDropDownMenu-4.0"):EasyMenu(menu,
-                                                               addon.RXPFrame.MenuFrame,
-                                                               "cursor", 0, 0, "MENU")
+        LibStub:GetLibrary("LibUIDropDownMenu-4.0"):EasyMenu(menu, menuFrame, anchor, x, y, displayMode,
+                                                               autoHideDelay)
     end
+end
+
+function addon.v2:ShowGuideWindowMenu(menu)
+    addon:ShowMenu(menu, addon.RXPFrame.MenuFrame, "cursor", 0, 0, "MENU")
 end
 
 function addon.v2:ShowGuideSelectionMenu()
@@ -365,12 +368,7 @@ function addon.ui.v2:RegisterRXPV2GuideStepsItem()
                 break
             end
         end
-        if _G.EasyMenu then
-            _G.EasyMenu(menu, menuFrame, "cursor", 0, 0, "MENU")
-        else
-            LibStub:GetLibrary("LibUIDropDownMenu-4.0"):EasyMenu(menu, menuFrame,
-                                                                    "cursor", 0, 0, "MENU")
-        end
+        addon:ShowMenu(menu, menuFrame, "cursor", 0, 0, "MENU")
     end
 
     local methods = {

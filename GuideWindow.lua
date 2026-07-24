@@ -605,11 +605,7 @@ local tipMenu = {{
 local TipWindowMouseDown = function(self,button)
     if self.step and self.step.tip then
         if (button == "RightButton") then
-            if _G.EasyMenu then
-                _G.EasyMenu(tipMenu, MenuFrame, "cursor", 0, 0, "MENU");
-            else
-                LibDD:EasyMenu(tipMenu, MenuFrame, "cursor", 0, 0, "MENU");
-            end
+            addon:ShowMenu(tipMenu, MenuFrame, "cursor", 0, 0, "MENU")
         else
             self:StartMoving()
         end
@@ -1470,11 +1466,7 @@ Footer.cog:SetScript("OnClick", function(self) RXPFrame.DropDownMenu() end)
 
 function RXPFrame.DropDownMenu()
     RXPFrame.GenerateMenuTable()
-    if _G.EasyMenu then
-        _G.EasyMenu(RXPFrame.menuList, MenuFrame, "cursor", 0, 0, "MENU");
-    else
-        LibDD:EasyMenu(RXPFrame.menuList, MenuFrame, "cursor", 0, 0, "MENU");
-    end
+    addon:ShowMenu(RXPFrame.menuList, MenuFrame, "cursor", 0, 0, "MENU")
 end
 
 GuideName.OnMouseDown = function(self, button)
@@ -2000,11 +1992,7 @@ function addon:LoadGuide(guide, OnLoad)
                 bottomMenu[1].text = L("Go to step") .. " " .. n
                 bottomMenu[1].arg1 = n
                 bottomMenu[feedbackMenuIndex].arg1 = n
-                if _G.EasyMenu then
-                    _G.EasyMenu(bottomMenu, MenuFrame, "cursor", 0, 0, "MENU");
-                else
-                    LibDD:EasyMenu(bottomMenu, MenuFrame, "cursor", 0, 0, "MENU");
-                end
+                addon:ShowMenu(bottomMenu, MenuFrame, "cursor", 0, 0, "MENU")
             else
                 self.timer = GetTime()
             end
@@ -2860,11 +2848,7 @@ function addon.v2:ShowActivePartyStepsMenu()
         },
     }
 
-    if _G.EasyMenu then
-        _G.EasyMenu(menu, MenuFrame, "cursor", 0, 0, "MENU")
-    else
-        LibDD:EasyMenu(menu, MenuFrame, "cursor", 0, 0, "MENU")
-    end
+    addon:ShowMenu(menu, MenuFrame, "cursor", 0, 0, "MENU")
 end
 
 function addon.v2:RefreshActivePartyTabs(preferredPlayer)
