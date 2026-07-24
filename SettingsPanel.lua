@@ -238,6 +238,7 @@ local settingsDBDefaults = {
         activePartyStepsV2WindowScale = 1.0,
         activePartyStepsV2AutoSize = true,
         shareActiveSteps = true,
+        enableV2ActivePartyStepsFrame = true,
 
         -- V2 UI
         enableV2Interface = false,
