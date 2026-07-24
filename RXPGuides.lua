@@ -1217,7 +1217,8 @@ local function LoadCache(guide)
                 currentGuideGroup = nil
                 currentGuideName = nil
                 startStep = nil
-                if addon.LoadDefaultGuide and addon.currentGuide.empty then
+                if addon.LoadDefaultGuide and
+                    (not addon.currentGuide or addon.currentGuide.empty) then
                     addon.LoadDefaultGuide()
                 end
             end
@@ -1478,7 +1479,8 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
     C_Timer.After(2, function()
         addon.player.maxlevel = _G.GetMaxPlayerLevel()
 
-        if addon.LoadDefaultGuide and addon.currentGuide.empty and
+        if addon.LoadDefaultGuide and
+            (not addon.currentGuide or addon.currentGuide.empty) and
             not currentGuideGroup then
             addon.LoadDefaultGuide()
         end
