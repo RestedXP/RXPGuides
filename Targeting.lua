@@ -810,7 +810,7 @@ function addon.targeting:CreateTargetFrame()
             return proxmityPolling.match and shouldTargetCheck(), true
         end
 
-        return shouldTargetCheck()
+        return shouldTargetCheck(), true
     end
 
     self:RenderTargetFrameBackground()
