@@ -693,3 +693,6 @@ L["off"] = "关闭"
 L["on"] = "开启"
 L["unknown argument"] = "未知参数"
 L["unknown selection"] = "未知选择"
+
+L["Guide import is temporarily disabled on Hardcore servers, please switch to a normal server to import a guide"] = "硬核模式服务器暂时禁用了指南导入功能，请切换到普通服务器进行导入。"
+L["On patch 1.15.9, the allowed execution time for lua code was severely reduced on Hardcore servers only, addon processing time is a very scarce resource, so in order to be able to import a guide without any errors or crashes, this process has to be done on a non Hardcore server"] = "在 1.15.9 版本中，暴雪大幅缩短了硬核服务器上LUA代码的允许执行时间。由于插件的处理时间变得非常吃紧，为了确保导入指南时不会出现任何报错或游戏卡死，您必须在非硬核服务器上完成导入过程。"
