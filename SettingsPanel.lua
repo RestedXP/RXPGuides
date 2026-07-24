@@ -3631,6 +3631,19 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 10.2,
                     },
+                    luaErrors = {
+                        --Somehow this option got removed from the base UI in classic
+                        name = _G.SHOW_LUA_ERRORS or "",
+                        type = "toggle",
+                        width = optionsWidth,
+                        get = function()
+                            return _G.GetCVarBool("scriptErrors")
+                        end,
+                        set = function(_, value)
+                            _G.SetCVar("scriptErrors", value and "1" or "0")
+                        end,
+                        order = 10.25,
+                    },
                     debugQuestImport = {
                         order = 10.3,
                         name = L("Import Completed Quests"),
