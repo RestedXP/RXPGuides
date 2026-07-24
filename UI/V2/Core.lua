@@ -654,9 +654,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             addon.ui.v2:ApplyFrameBackdrop(this.guideNameFrame, theme.edges.common,
                                            theme.backgroundColors.activePartyTab,
                                            theme.borderColors.itemEdge)
-            addon.ui.v2:ApplyFrameBackdrop(this.guideSelectButton, theme.edges.common,
-                                           theme.backgroundColors.inactivePartyTab,
-                                           theme.borderColors.inactivePartyTab)
+            this.guideSelectBackground:SetColorTexture(unpack(theme.backgroundColors.inactivePartyTab))
+            this.guideSelectDivider:SetColorTexture(unpack(theme.borderColors.inactivePartyTab))
             this.splashBranding:SetShown(addon.settings.profile.v2GuideWindowSplashBranding)
             this.guideSteps:RefreshVisuals()
         end,
@@ -725,9 +724,15 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         guideSelectButton:SetPoint("TOPRIGHT")
         guideSelectButton:SetSize(20, 34)
         guideSelectButton:SetFrameLevel(guideNameFrame:GetFrameLevel() + 2)
-        addon.ui.v2:ApplyFrameBackdrop(guideSelectButton, theme.edges.common,
-                                       theme.backgroundColors.inactivePartyTab,
-                                       theme.borderColors.inactivePartyTab)
+        local guideSelectBackground = guideSelectButton:CreateTexture(nil, "BACKGROUND")
+        guideSelectBackground:SetPoint("TOPLEFT", 1, -1)
+        guideSelectBackground:SetPoint("BOTTOMRIGHT", -1, 1)
+        guideSelectBackground:SetColorTexture(unpack(theme.backgroundColors.inactivePartyTab))
+        local guideSelectDivider = guideSelectButton:CreateTexture(nil, "BORDER")
+        guideSelectDivider:SetPoint("TOPLEFT", 1, -1)
+        guideSelectDivider:SetPoint("BOTTOMLEFT", 1, 1)
+        guideSelectDivider:SetWidth(1)
+        guideSelectDivider:SetColorTexture(unpack(theme.borderColors.inactivePartyTab))
         local guideSelectHighlight = guideSelectButton:CreateTexture(nil, "HIGHLIGHT")
         guideSelectHighlight:SetAllPoints()
         guideSelectHighlight:SetColorTexture(1, 1, 1, 0.12)
@@ -739,8 +744,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         guideSelectArrow:SetVertexColor(1, 1, 1)
         guideSelectButton:SetScript("OnClick", function() addon.v2:ShowGuideSelectionMenu() end)
         local title = guideNameFrame:CreateFontString(nil, "OVERLAY")
-        title:SetPoint("TOPLEFT", guideNameFrame, "TOPLEFT", 48, -5)
-        title:SetPoint("TOPRIGHT", guideSelectButton, "TOPLEFT", -4, -5)
+        title:SetPoint("TOPLEFT", guideNameFrame, "TOPLEFT", 48, -8)
+        title:SetPoint("TOPRIGHT", guideSelectButton, "TOPLEFT", -4, -8)
         title:SetJustifyH("LEFT")
         title:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
         title:SetTextColor(1, 0.82, 0)
@@ -794,7 +799,9 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
 
         local widget = {frame = frame, header = header, title = title, subtitle = subtitle, footer = footer,
                         footerBackground = footerBackground, footerText = footerText,
-                        guideNameFrame = guideNameFrame, guideSelectButton = guideSelectButton, sizer = sizer,
+                        guideNameFrame = guideNameFrame, guideSelectButton = guideSelectButton,
+                        guideSelectBackground = guideSelectBackground, guideSelectDivider = guideSelectDivider,
+                        sizer = sizer,
                         splashBranding = splashBranding, guideSteps = guideSteps,
                         guideStepsBackground = guideStepsBackground, type = Type}
         for method, func in pairs(methods) do widget[method] = func end
@@ -1176,7 +1183,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
     --[[-----------------------------------------------------------------------------
     Frame Container
     -------------------------------------------------------------------------------]]
-    local Type, Version = "RXPV2ActiveStepsFrame", 2
+    local Type, Version = "RXPV2ActiveStepsFrame", 3
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     --[[-----------------------------------------------------------------------------
@@ -1246,7 +1253,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
         frame:SetFrameStrata("LOW")
         frame:SetFrameLevel(100)
         self:ApplyFrameBackdrop(frame, theme.edges.activeSteps or theme.edges.common,
-                                theme.backgroundColors.activeSteps or theme.backgroundColors.common,
+                                theme.backgroundColors.common,
                                 theme.borderColors.commonEdge or theme.borderColors.common)
         self:AddFrameShadow(frame)
 
@@ -1754,7 +1761,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 end
 
 function addon.ui.v2:RegisterRXPV2ActiveStepItem()
-    local Type, Version = "RXPV2ActiveStepItem", 5
+    local Type, Version = "RXPV2ActiveStepItem", 6
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     local transparent = {0, 0, 0, 0}
@@ -2211,7 +2218,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
             local theme = addon.v2:GetTheme()
             local itemEdge = theme.edges.activeStepItem or theme.edges.common
-            local itemBackground = theme.backgroundColors.activeStepItem or theme.backgroundColors.common
+            local itemBackground = theme.backgroundColors.common
             local itemBorder = theme.borderColors.itemEdge or theme.borderColors.common
             local badgeEdge = theme.edges.activeStepBadge or itemEdge
             local badgeBackground = theme.backgroundColors.activeStepBadge or itemBackground
@@ -2244,7 +2251,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
         local theme = addon.v2:GetTheme()
         local itemEdge = theme.edges.activeStepItem or theme.edges.common
-        local itemBackground = theme.backgroundColors.activeStepItem or theme.backgroundColors.common
+        local itemBackground = theme.backgroundColors.common
         local itemBorder = theme.borderColors.itemEdge or theme.borderColors.common
         local itemTextColor = theme.textColor.activeStepItem or theme.textColor.common
         local badgeEdge = theme.edges.activeStepBadge or itemEdge
