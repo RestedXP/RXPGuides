@@ -1287,14 +1287,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
             this.savePosition = false
         end,
 
-        ["SetScale"] = function(this, scale)
-            this.frame:SetScale(scale)
-        end,
-
-        ["UpdateTheme"] = updateTheme,
-
-        ["UpdateSubTheme"] = updateFrameBackgroundVisibility,
-
         ["Hide"] = function(this) this.frame:Hide() end,
 
         ["Show"] = function(this) this.frame:Show() end,
@@ -1320,7 +1312,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
     -------------------------------------------------------------------------------]]
 
     local function Constructor()
-        local frame = CreateFrame("Frame", nil, addon.RXPFrame or UIParent, BackdropTemplateMixin and "BackdropTemplate")
+        local frame = CreateFrame("Frame", nil, addon.RXPFrame or UIParent)
         frame:Hide()
 
         frame:EnableMouse(true)
@@ -1328,22 +1320,16 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
         frame:SetResizable(false)
         frame:SetToplevel(true)
 
-        local theme = addon.v2:GetTheme()
-
         -- Keep Active Steps above every guide-header decoration, even after the
         -- movable guide window receives focus and raises within BACKGROUND.
         frame:SetFrameStrata("LOW")
         frame:SetFrameLevel(100)
-        self:ApplyFrameBackdrop(frame, theme.edges.activeSteps or theme.edges.common,
-                                theme.backgroundColors.activePartyTab,
-                                theme.borderColors.activePartySteps or theme.borderColors.common)
-        self:AddFrameShadow(frame)
 
         frame:SetScript("OnShow", Frame_OnShow)
         frame:SetScript("OnHide", Frame_OnClose)
 
         -- Container Support
-        local content = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
+        local content = CreateFrame("Frame", nil, frame)
         content:SetPoint("TOPLEFT", 8, -8)
         content:SetPoint("BOTTOMRIGHT", -8, 8)
 

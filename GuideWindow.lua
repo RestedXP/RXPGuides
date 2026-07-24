@@ -2937,20 +2937,13 @@ function addon.v2:GetActiveStepsFrame(player)
     self.state.player[player].childContainer = childContainer
 
 
-    local hideBackground, scaleSetting
-    if player == addon.player.name then
-        hideBackground = addon.settings.profile.activeStepsV2HideBackground
-        scaleSetting = addon.settings.profile.activeStepsV2WindowScale
-    else
-        hideBackground = addon.settings.profile.activePartyStepsV2HideBackground
-        scaleSetting = addon.settings.profile.activePartyStepsV2WindowScale
+    if player ~= addon.player.name then
+        stepFrame:UpdateTheme({
+            hideBackground = addon.settings.profile.activePartyStepsV2HideBackground,
+            updateChildren = true,
+            scale = addon.settings.profile.activePartyStepsV2WindowScale,
+        })
     end
-
-    stepFrame:UpdateTheme({
-        hideBackground = hideBackground,
-        updateChildren = true,
-        scale = scaleSetting,
-    })
     if player == addon.player.name then
         stepFrame:Show()
     end
@@ -2993,11 +2986,9 @@ function addon.v2:UpdateActiveStepTheme()
     local partyFrame = self.state.activePartyStepFrame
 
     if playerFrame then
-        playerFrame:UpdateTheme({
-            hideBackground = addon.settings.profile.activeStepsV2HideBackground,
-            updateChildren = true,
-            scale = addon.settings.profile.activeStepsV2WindowScale,
-        })
+        for _, child in pairs(playerFrame.children or {}) do
+            if child.UpdateTheme then child:UpdateTheme({updateChildren = true}) end
+        end
     end
 
     if not partyFrame then return end

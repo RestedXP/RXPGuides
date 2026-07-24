@@ -244,8 +244,6 @@ local settingsDBDefaults = {
         enableV2Interface = false,
         enableV2MenuTheme = true,
         guideWindowV2SplashBranding = true,
-        activeStepsV2WindowScale = 1.0,
-        activeStepsV2HideBackground = true,
         activeStepsV2RenderQuestName = true,
     }
 }
@@ -3387,47 +3385,6 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.GenerateMenuTable()
-                        end
-                    },
-                    activeStepsV2Header = {
-                        name = fmt("%s %sv2", _G.ACTIVE_PETS, L("Step ")).. L(" (Beta)"),
-                        type = "header",
-                        width = "full",
-                        order = 4.0,
-                        hidden = isNotAdvanced
-                    },
-                    activeStepsV2WindowScale = {
-                        name = L("Window Scale"),
-                        -- desc = L(""),
-                        type = "range",
-                        width = optionsWidth,
-                        order = 4.1,
-                        min = 0.5,
-                        max = 2,
-                        step = 0.05,
-                        isPercent = true,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.v2:UpdateActiveStepTheme()
-                        end,
-                        hidden = isNotAdvanced,
-                        disabled = function()
-                            return not addon.v2:IsGuideWindowEnabled()
-                        end
-                    },
-                    activeStepsV2HideBackground = {
-                        name = fmt("%s %s", _G.HIDE, _G.BACKGROUND),
-                        desc = L("Make background transparent"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 4.2,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.v2:UpdateActiveStepTheme()
-                        end,
-                        hidden = isNotAdvanced,
-                        disabled = function()
-                            return not addon.v2:IsGuideWindowEnabled()
                         end
                     },
                     arrowHeader = {
