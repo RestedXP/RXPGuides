@@ -35,6 +35,21 @@ function addon:SortTimers()
         table.insert(bars,bar)
     end
 
+    local guideWindow = addon.v2 and addon.v2.IsGuideWindowEnabled and
+                            addon.v2:IsGuideWindowEnabled() and addon.v2:GetGuideWindow()
+    local guideStepsShown
+    if guideWindow then
+        guideStepsShown = guideWindow.guideSteps.frame:IsShown()
+        BarContainer:ClearAllPoints()
+        if guideStepsShown then
+            BarContainer:SetPoint("TOPLEFT", guideWindow.footer, "TOPLEFT", 4, 0)
+            BarContainer:SetPoint("TOPRIGHT", guideWindow.footer, "TOPRIGHT", 0, 0)
+        else
+            BarContainer:SetPoint("TOPLEFT", guideWindow.frame, "BOTTOMLEFT", 4, -2)
+            BarContainer:SetPoint("TOPRIGHT", guideWindow.frame, "BOTTOMRIGHT", 0, -2)
+        end
+        BarContainer:SetHeight(BarContainer.height * #bars)
+    else
     if RXPFrame.CurrentStepFrame.anchor == "BOTTOM" and #bars > 1 then
         BarContainer:ClearAllPoints()
         BarContainer:SetPoint("BOTTOMLEFT",RXPFrame.GuideName,"TOPLEFT",4,0)
@@ -46,6 +61,9 @@ function addon:SortTimers()
         BarContainer:SetPoint("TOPLEFT",RXPFrame.Footer,"TOPLEFT",4,0)
         BarContainer:SetPoint("BOTTOMRIGHT",RXPFrame.Footer,"BOTTOMRIGHT",0,1)
     end
+    end
+
+    if guideWindow then guideWindow.footerText:SetAlpha(guideStepsShown and #bars > 0 and 0 or 1) end
 
     table.sort(bars,function(b1,b2)
         return b1.exp > b2.exp
