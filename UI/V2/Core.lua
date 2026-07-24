@@ -572,7 +572,7 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
 end
 
 function addon.ui.v2:RegisterRXPV2GuideWindow()
-    local Type, Version = "RXPV2GuideWindow", 44
+    local Type, Version = "RXPV2GuideWindow", 46
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     local function SaveStatus(this, saveHeight)
@@ -768,7 +768,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         local footer = CreateFrame("Frame", nil, frame)
         footer:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", 1, 1)
         footer:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -1, 1)
-        footer:SetHeight(12)
+        footer:SetHeight(16)
         footer:SetFrameLevel(frame:GetFrameLevel() + 1)
         local footerBackground = footer:CreateTexture(nil, "BACKGROUND")
         footerBackground:SetAllPoints()
@@ -790,12 +790,12 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
 
         local guideStepsBackground = frame:CreateTexture(nil, "BACKGROUND")
         guideStepsBackground:SetPoint("TOPLEFT", frame, "TOPLEFT", 5, -83)
-        guideStepsBackground:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -5, 13)
+        guideStepsBackground:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -5, 17)
         guideStepsBackground:SetColorTexture(unpack(guideStepsViewportColor))
         local guideSteps = AceGUI:Create("RXPV2GuideSteps")
         guideSteps.frame:SetParent(frame)
         guideSteps.frame:SetPoint("TOPLEFT", frame, "TOPLEFT", 6, -84)
-        guideSteps.frame:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -6, 14)
+        guideSteps.frame:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -6, 18)
 
         local widget = {frame = frame, header = header, title = title, subtitle = subtitle, footer = footer,
                         footerBackground = footerBackground, footerText = footerText,
@@ -1183,7 +1183,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
     --[[-----------------------------------------------------------------------------
     Frame Container
     -------------------------------------------------------------------------------]]
-    local Type, Version = "RXPV2ActiveStepsFrame", 3
+    local Type, Version = "RXPV2ActiveStepsFrame", 4
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     --[[-----------------------------------------------------------------------------
@@ -1253,8 +1253,8 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
         frame:SetFrameStrata("LOW")
         frame:SetFrameLevel(100)
         self:ApplyFrameBackdrop(frame, theme.edges.activeSteps or theme.edges.common,
-                                theme.backgroundColors.common,
-                                theme.borderColors.commonEdge or theme.borderColors.common)
+                                theme.backgroundColors.activePartyTab,
+                                theme.borderColors.activePartySteps or theme.borderColors.common)
         self:AddFrameShadow(frame)
 
         frame:SetScript("OnShow", Frame_OnShow)
