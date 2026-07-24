@@ -1164,6 +1164,11 @@ end
 
 function addon.ui.v2.LaunchConfigurator(login)
     if login then
+        if RXPCData and RXPCData.currentGuideName and
+            RXPCData.currentGuideName ~= "" then
+            return
+        end
+
         if addon.currentGuide and not addon.currentGuide.empty then return end
 
         if not (addon.player.level == 1) then return end
