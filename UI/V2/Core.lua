@@ -349,7 +349,7 @@ function addon.v2:BuildGuideStepsSnapshot()
 end
 
 function addon.ui.v2:RegisterRXPV2GuideStepsItem()
-    local Type, Version = "RXPV2GuideStepsItem", 2
+    local Type, Version = "RXPV2GuideStepsItem", 3
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     local function ShowMenu(this)
@@ -382,29 +382,46 @@ function addon.ui.v2:RegisterRXPV2GuideStepsItem()
             this.index = nil
             this.frame:Hide()
         end,
-        ["SetRow"] = function(this, row)
+        ["SetRow"] = function(this, row, force)
+            local previous = this.row
+            local textChanged = force or not previous or previous.index ~= row.index or previous.text ~= row.text
+            local visualChanged = force or not previous or previous.complete ~= row.complete or
+                                      previous.current ~= row.current
+            if not textChanged and not visualChanged then return false, false end
+
             this.row = row
             this.index = row.index
             this.frame:SetShown(not row.hidden)
-            this.text:SetText(row.text)
-            this.number:SetText(row.index)
-            this.numberFrame:SetWidth(max(this.number:GetStringWidth() + 6, 16))
-            this.frame:SetAlpha(row.complete and 0.5 or 1)
             local theme = addon.v2:GetTheme()
-            local background = guideStepsCardColor
-            local border = theme.borderColors.itemEdge or theme.borderColors.commonEdge
-            local badgeEdge = theme.edges.activeStepBadge or theme.edges.activeStepItem or
-                                  theme.edges.common
-            local badgeBackground = guideStepsBadgeColor
-            local badgeBorder = theme.borderColors.activeStepBadge or border
-            addon.ui.v2:ApplyFrameBackdrop(this.frame,
-                                           theme.edges.activeStepItem or theme.edges.common,
-                                           background, border)
-            addon.ui.v2:ApplyFrameBackdrop(this.numberFrame, badgeEdge,
-                                           badgeBackground, badgeBorder)
-            this.text:SetTextColor(unpack(theme.textColor.common))
-            this.number:SetTextColor(unpack(row.current and theme.textColor.activeStepBadge or
-                                                theme.textColor.inactivePartyTab))
+            if force or not previous then
+                this.text:SetFont(theme.font, addon.settings.profile.guideFontSize, "")
+                this.number:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
+            end
+            if textChanged then
+                this.text:SetText(row.text)
+                this.number:SetText(row.index)
+                this.numberFrame:SetWidth(max(this.number:GetStringWidth() + 6, 16))
+            end
+            if force or not previous then
+                local background = guideStepsCardColor
+                local border = theme.borderColors.itemEdge or theme.borderColors.commonEdge
+                local badgeEdge = theme.edges.activeStepBadge or theme.edges.activeStepItem or
+                                      theme.edges.common
+                local badgeBackground = guideStepsBadgeColor
+                local badgeBorder = theme.borderColors.activeStepBadge or border
+                addon.ui.v2:ApplyFrameBackdrop(this.frame,
+                                               theme.edges.activeStepItem or theme.edges.common,
+                                               background, border)
+                addon.ui.v2:ApplyFrameBackdrop(this.numberFrame, badgeEdge,
+                                               badgeBackground, badgeBorder)
+                this.text:SetTextColor(unpack(theme.textColor.common))
+            end
+            if visualChanged then
+                this.frame:SetAlpha(row.complete and 0.5 or 1)
+                this.number:SetTextColor(unpack(row.current and theme.textColor.activeStepBadge or
+                                                    theme.textColor.inactivePartyTab))
+            end
+            return true, textChanged
         end,
         ["UpdateHeight"] = function(this)
             this.frame:SetHeight(math.max(this.text:GetStringHeight() + 5, 30))
@@ -447,7 +464,7 @@ function addon.ui.v2:RegisterRXPV2GuideStepsItem()
 end
 
 function addon.ui.v2:RegisterRXPV2GuideSteps()
-    local Type, Version = "RXPV2GuideSteps", 3
+    local Type, Version = "RXPV2GuideSteps", 4
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     local function ReleaseItem(this, index)
@@ -467,10 +484,13 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
             for index in pairs(this.items) do ReleaseItem(this, index) end
             this.rowsHeight = nil
             this.minimumRowsHeight = nil
+            this.rowsWidth = nil
+            this.activeIndex = nil
             this.frame:Hide()
         end,
-        ["SetRows"] = function(this, rows)
-            local previous, item, height, minimumHeight, activeOffset = nil, nil, 0, nil, nil
+        ["SetRows"] = function(this, rows, force)
+            local previous, item, height, minimumHeight, activeOffset, activeIndex = nil, nil, 0, nil, nil, nil
+            force = force or this.rowsWidth ~= this.scroll.scrollframe:GetWidth()
             this.rows = rows
             this.rowsWidth = this.scroll.scrollframe:GetWidth()
             for index, row in ipairs(rows) do
@@ -490,10 +510,13 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
                         item.frame:SetPoint("TOPLEFT", this.content, "TOPLEFT", 0, 0)
                     end
                     item.frame:SetPoint("TOPRIGHT", this.content, "TOPRIGHT", 0, 0)
-                    item:SetRow(row)
-                    item:UpdateHeight()
+                    local _, textChanged = item:SetRow(row, force)
+                    if textChanged then item:UpdateHeight() end
                     minimumHeight = minimumHeight or item:GetHeight()
-                    if row.current then activeOffset = height end
+                    if row.current then
+                        activeOffset = height
+                        activeIndex = row.index
+                    end
                     previous = item
                     height = height + item:GetHeight() + 5
                 end
@@ -505,7 +528,8 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
             this.minimumRowsHeight = minimumHeight or 0
             this.content:SetHeight(math.max(height, 1))
             this:UpdateScrollbar()
-            if activeOffset then this.scroll:ScrollToOffset(activeOffset) end
+            if activeOffset and activeIndex ~= this.activeIndex then this.scroll:ScrollToOffset(activeOffset) end
+            this.activeIndex = activeIndex
         end,
         ["UpdateScrollbar"] = function(this)
             local scroll = this.scroll
@@ -521,7 +545,7 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
             end
         end,
         ["RefreshVisuals"] = function(this)
-            if this.rows then this:SetRows(this.rows) end
+            if this.rows then this:SetRows(this.rows, true) end
         end,
     }
 
