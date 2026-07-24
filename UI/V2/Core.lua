@@ -210,12 +210,77 @@ function addon.v2:IsGuideWindowEnabled()
     return profile and profile.enableBetaFeatures and profile.enableV2GuideWindow
 end
 
+local function updateMenuTheme(listFrame, enabled)
+    if not listFrame then return end
+
+    local name = listFrame:GetName()
+    local backdrop, menuBackdrop = _G[name .. "Backdrop"], _G[name .. "MenuBackdrop"]
+    if not enabled then
+        addon.ui.v2:SetFrameBackdropShown(listFrame, false)
+        if listFrame.rxpV2MenuThemeApplied then
+            if backdrop then backdrop:Show() end
+            if menuBackdrop then menuBackdrop:Show() end
+            listFrame.rxpV2MenuThemeApplied = nil
+        end
+        return
+    end
+
+    local theme = addon.v2:GetTheme()
+    if backdrop then backdrop:Hide() end
+    if menuBackdrop then menuBackdrop:Hide() end
+    addon.ui.v2:ApplyFrameBackdrop(listFrame, theme.edges.common, theme.backgroundColors.activeSteps,
+                                   theme.borderColors.itemEdge)
+    addon.ui.v2:AddFrameShadow(listFrame)
+    addon.ui.v2:SetFrameBackdropShown(listFrame, true)
+    listFrame.rxpV2MenuThemeApplied = true
+
+    local text
+    for index = 1, listFrame.numButtons or 0 do
+        text = _G[name .. "Button" .. index .. "NormalText"]
+        if text then text:SetFont(theme.font, select(2, text:GetFont())) end
+    end
+end
+
+local function hookMenuSubmenus(prefix)
+    local listFrame
+    for level = 2, 3 do
+        listFrame = _G[prefix .. level]
+        if listFrame and not listFrame.rxpV2MenuThemeHooked then
+            listFrame:HookScript("OnShow", function(this)
+                local dropdown = this.dropdown
+                if dropdown and dropdown.rxpV2MenuTheme ~= nil then
+                    updateMenuTheme(this, dropdown.rxpV2MenuTheme)
+                elseif this.rxpV2MenuThemeApplied then
+                    updateMenuTheme(this, false)
+                end
+            end)
+            listFrame.rxpV2MenuThemeHooked = true
+        end
+    end
+end
+
 function addon:ShowMenu(menu, menuFrame, anchor, x, y, displayMode, autoHideDelay)
+    local v2GuideWindow = addon.v2:IsGuideWindowEnabled()
+    local hadV2MenuTheme = menuFrame.rxpV2MenuTheme ~= nil
+    if v2GuideWindow then
+        menuFrame.rxpV2MenuTheme = addon.settings.profile.enableV2MenuTheme
+    elseif hadV2MenuTheme then
+        menuFrame.rxpV2MenuTheme = false
+    end
+
     if _G.EasyMenu then
         _G.EasyMenu(menu, menuFrame, anchor, x, y, displayMode, autoHideDelay)
+        if v2GuideWindow or hadV2MenuTheme then
+            updateMenuTheme(_G.DropDownList1, menuFrame.rxpV2MenuTheme)
+        end
+        if v2GuideWindow then hookMenuSubmenus("DropDownList") end
     else
         LibStub:GetLibrary("LibUIDropDownMenu-4.0"):EasyMenu(menu, menuFrame, anchor, x, y, displayMode,
                                                                autoHideDelay)
+        if v2GuideWindow or hadV2MenuTheme then
+            updateMenuTheme(_G.L_DropDownList1, menuFrame.rxpV2MenuTheme)
+        end
+        if v2GuideWindow then hookMenuSubmenus("L_DropDownList") end
     end
 end
 

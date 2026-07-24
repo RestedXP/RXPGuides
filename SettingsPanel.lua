@@ -241,6 +241,7 @@ local settingsDBDefaults = {
 
         -- V2 UI
         enableV2GuideWindow = false,
+        enableV2MenuTheme = true,
         v2GuideWindowSplashBranding = true,
         activeStepsV2WindowScale = 1.0,
         activeStepsV2HideBackground = true,
@@ -1233,6 +1234,17 @@ function addon.settings:CreateAceOptionsPanel()
                             _G.ReloadUI()
                         end,
                         hidden = isNotAdvanced
+                    },
+                    enableV2MenuTheme = {
+                        name = L("Use V2 Menu Theme"),
+                        desc = L("Apply the V2 style to RestedXP menus"),
+                        type = "toggle",
+                        width = optionsWidth * 2,
+                        order = 5.2,
+                        hidden = isNotAdvanced,
+                        disabled = function()
+                            return not addon.v2:IsGuideWindowEnabled()
+                        end
                     },
                     activeStepsV2RenderQuestName = {
                         name = L("Display Quest Link"),
