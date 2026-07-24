@@ -489,7 +489,8 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
             this.frame:Hide()
         end,
         ["SetRows"] = function(this, rows, force)
-            local previous, item, height, minimumHeight, activeOffset, activeIndex = nil, nil, 0, nil, nil, nil
+            local previous, item, height, minimumHeight, activeOffset, activeIndex,
+                  itemHeight, _, textChanged = nil, nil, 0, nil, nil, nil, nil, nil, nil
             force = force or this.rowsWidth ~= this.scroll.scrollframe:GetWidth()
             this.rows = rows
             this.rowsWidth = this.scroll.scrollframe:GetWidth()
@@ -510,15 +511,16 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
                         item.frame:SetPoint("TOPLEFT", this.content, "TOPLEFT", 0, 0)
                     end
                     item.frame:SetPoint("TOPRIGHT", this.content, "TOPRIGHT", 0, 0)
-                    local _, textChanged = item:SetRow(row, force)
+                    _, textChanged = item:SetRow(row, force)
                     if textChanged then item:UpdateHeight() end
-                    minimumHeight = minimumHeight or item:GetHeight()
+                    itemHeight = item:GetHeight()
+                    minimumHeight = min(minimumHeight or itemHeight, itemHeight)
                     if row.current then
                         activeOffset = height
                         activeIndex = row.index
                     end
                     previous = item
-                    height = height + item:GetHeight() + 5
+                    height = height + itemHeight + 5
                 end
             end
             for index in pairs(this.items) do
