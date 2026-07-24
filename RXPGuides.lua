@@ -10,6 +10,8 @@ local rand, tinsert, select = math.random, table.insert, _G.select
 local IsAddOnLoadOnDemand = C_AddOns and C_AddOns.IsAddOnLoadOnDemand or _G.IsAddOnLoadOnDemand
 local GetSpellInfo
 
+local busy = 0
+
 if C_Spell and C_Spell.GetSpellInfo then
     addon.GetSpellInfo = function(...)
         local id = ...
@@ -1169,7 +1171,6 @@ function addon:CreateMetaDataTable(wipe)
 end
 
 local updateFrame = CreateFrame("Frame")
-local isMainUpdate = 0
 
 local currentGuideGroup
 local currentGuideName
@@ -1179,7 +1180,7 @@ local function LoadCache(guide)
         return
     end
     updateFrame:SetScript("OnUpdate",function(self)
-        if isMainUpdate == GetTime() then
+        if busy == GetTime() then
             return
         end
         local start = debugprofilestop()
@@ -1336,7 +1337,7 @@ function addon:OnInitialize()
 
     if addon.player.hardcore then
         for _,guide in pairs(addon.guides) do
-            if debugprofilestop() - addon.startTime > 3000 then
+            if debugprofilestop() - addon.startTime > 4000 then
                 break
             end
             if not guide.steps then
@@ -1697,13 +1698,21 @@ function addon.UpdateScheduledTasks()
     --return update
 end
 
-function addon.ScheduleTask(self, ref, ...)
---    print('w',ref)
+local function GetUpdateFrequency()
     local updateFrequency = 0.075
 
     if addon.settings.profile and addon.settings.profile.updateFrequency then
-        updateFrequency = addon.settings.profile.updateFrequency / 1000
+        updateFrequency = math.max(addon.settings.profile.updateFrequency / 1000, 0.005)
     end
+    if addon.player.hardcore then
+        updateFrequency = updateFrequency * 1.5
+    end
+    return updateFrequency
+end
+
+function addon.ScheduleTask(self, ref, ...)
+--    print('w',ref)
+    local updateFrequency = GetUpdateFrequency()
     local time = type(self) == "number" and self or GetTime() + updateFrequency
     --print(type(ref))
 
@@ -1731,7 +1740,6 @@ local skip = 0
 local updateError
 local errorCount = 0
 local event = ""
-local busy = 0
 local updateStepIndex = 0
 
 function addon.LegacyUpdateLoop()
@@ -1751,7 +1759,7 @@ function addon.LegacyUpdateLoop()
         skipframe = false
         return
     end
-    isMainUpdate = GetTime()
+
     skipframe = true
     updateError = true
     local guideLoaded
@@ -1923,11 +1931,7 @@ end
 
 addon.tickers = {}
 function addon.tickers:SetupTickerLoops()
-    local updateFrequency = 0.075
-
-    if addon.settings.profile and addon.settings.profile.updateFrequency then
-        updateFrequency = math.max(addon.settings.profile.updateFrequency / 1000, 0.005)
-    end
+    local updateFrequency = GetUpdateFrequency()
     self.tickRate = 1/updateFrequency
 
     --[[
