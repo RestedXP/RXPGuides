@@ -266,7 +266,7 @@ addon.v2.themes['v2'] = {
         activePartySteps = {11 / 255, 12 / 255, 26 / 255, 0.95}, -- #0B0C1AF2
         activePartyTab = {28 / 255, 31 / 255, 52 / 255, 1}, -- #1C1F34FF
         inactivePartyTab = {32 / 255, 33 / 255, 49 / 255, 1}, -- #202131FF
-        activePartyFooter = {20 / 255, 22 / 255, 39 / 255, 0.98}, -- #141627FA
+        activePartyFooter = {11 / 255, 12 / 255, 26 / 255, 1}, -- #0B0C1AFF
         activeStepItem = {20 / 255, 22 / 255, 39 / 255, 0.98}, -- #141627FA
         activeStepCheckbox = {5 / 255, 7 / 255, 19 / 255, 1}, -- #050713FF
         activeStepCheckboxChecked = {17 / 255, 132 / 255, 1, 1}, -- #118401FF
@@ -274,12 +274,12 @@ addon.v2.themes['v2'] = {
 
     borderColors = {
         common = {1, 1, 1, 1}, -- #FFFFFFFF
-        commonEdge = {55 / 255, 62 / 255, 109 / 255, 1}, -- #373E6DFF
+        commonEdge = {184 / 255, 190 / 255, 215 / 255, 1}, -- #B8BED7FF
         activePartySteps = {55 / 255, 62 / 255, 109 / 255, 1}, -- #373E6DFF
         activePartyTab = {55 / 255, 62 / 255, 109 / 255, 1}, -- #373E6DFF
         inactivePartyTab = {62 / 255, 66 / 255, 102 / 255, 1}, -- #3E4266FF
-        itemEdge = {150 / 255, 156 / 255, 185 / 255, 1}, -- #969CB9FF
-        activeStepBadge = {150 / 255, 156 / 255, 185 / 255, 1}, -- #969CB9FF
+        itemEdge = {184 / 255, 190 / 255, 215 / 255, 1}, -- #B8BED7FF
+        activeStepBadge = {184 / 255, 190 / 255, 215 / 255, 1}, -- #B8BED7FF
         activeStepCheckbox = {55 / 255, 62 / 255, 109 / 255, 1}, -- #373E6DFF
         activeStepCheckboxChecked = {17 / 255, 132 / 255, 1, 1}, -- #118401FF
     },
