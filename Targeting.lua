@@ -1059,7 +1059,7 @@ end
 
 local function ResizeTargetsFrame(targetFrame, friendlyCount, enemyCount)
     local enemyWidth, enemyRows = GetTargetGridMetrics(enemyCount, 10)
-    local friendlyWidth, friendlyRows = GetTargetGridMetrics(friendlyCount, 8)
+    local friendlyWidth, friendlyRows = GetTargetGridMetrics(friendlyCount, 10)
     local soloFriendlyRow = enemyRows == 0 and friendlyRows == 1
 
     targetFrame:SetWidth(mmax(targetFrame.title:GetWidth() + 10, friendlyWidth, enemyWidth))
