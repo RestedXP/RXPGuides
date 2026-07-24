@@ -610,6 +610,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         ["SetSnapshot"] = function(this, snapshot)
             local title, subtitle = snapshot.title:match("^([^\n]*)\n?(.*)$")
             local compactHeight = this:GetCompactHeight()
+            local guideStepsShown = this.guideSteps.frame:IsShown()
             this.guideHeight = this.guideHeight or
                                    addon.settings.profile.v2GuideWindowExpandedHeight or
                                    guideWindowDefaultHeight
@@ -632,6 +633,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             this.guideStepsBackground:SetShown(not empty)
             this.footer:SetShown(not empty)
             this.sizer:SetShown(not empty)
+            if guideStepsShown ~= not empty then addon:SortTimers() end
             this:UpdateResizeBounds(not empty)
             if not empty then this.guideSteps:UpdateScrollbar() end
         end,
