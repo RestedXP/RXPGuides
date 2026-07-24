@@ -1772,7 +1772,10 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Quest Cleanup"),
                         type = "header",
                         width = "full",
-                        order = 10.0
+                        order = 10.0,
+                        hidden = function()
+                            return addon.player.hardcore
+                        end
                     },
                     abandonOrphanedQuests = {
                         name = L("Cleanup Orphaned Quests"), -- TODO locale
@@ -1780,6 +1783,9 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 10.1,
                         type = "execute",
                         width = optionsWidth,
+                        hidden = function()
+                            return addon.player.hardcore
+                        end,
                         func = function()
                             addon.AbandonOrphanedQuests(settingsCache.invertedOrphans)
                             wipe(settingsCache.invertedOrphans)
@@ -1802,6 +1808,9 @@ function addon.settings:CreateAceOptionsPanel()
                     orphanedQuestBox = {
                         order = 10.2,
                         type = 'description',
+                        hidden = function()
+                            return addon.player.hardcore
+                        end,
                         name = function()
                             -- TODO prevent double call on settings frame load, optimization
                             -- Explicity not using addon.orphanedList to reduce chance of outdated results
