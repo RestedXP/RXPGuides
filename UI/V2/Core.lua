@@ -207,7 +207,7 @@ end
 
 function addon.v2:IsGuideWindowEnabled()
     local profile = addon.settings and addon.settings.profile
-    return profile and profile.enableBetaFeatures and profile.enableV2GuideWindow
+    return profile and profile.enableBetaFeatures and profile.enableV2Interface
 end
 
 local function updateMenuTheme(listFrame, enabled)
@@ -735,7 +735,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
                                            theme.borderColors.itemEdge)
             this.guideSelectBackground:SetColorTexture(unpack(theme.backgroundColors.inactivePartyTab))
             this.guideSelectDivider:SetColorTexture(unpack(theme.borderColors.inactivePartyTab))
-            this.splashBranding:SetShown(addon.settings.profile.v2GuideWindowSplashBranding)
+            this.splashBranding:SetShown(addon.settings.profile.guideWindowV2SplashBranding)
             this.guideSteps:RefreshVisuals()
         end,
     }
@@ -783,7 +783,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         splashBranding:SetSize(128, 80)
         splashBranding:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-header-images")
         splashBranding:SetTexCoord(256 / 512, 512 / 512, 0, 160 / 512)
-        splashBranding:SetShown(addon.settings.profile.v2GuideWindowSplashBranding)
+        splashBranding:SetShown(addon.settings.profile.guideWindowV2SplashBranding)
         local iconLogo = header:CreateTexture(nil, "ARTWORK")
         iconLogo:SetPoint("LEFT", -12, 27)
         iconLogo:SetSize(64, 64)

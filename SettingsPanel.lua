@@ -240,9 +240,9 @@ local settingsDBDefaults = {
         shareActiveSteps = true,
 
         -- V2 UI
-        enableV2GuideWindow = false,
+        enableV2Interface = false,
         enableV2MenuTheme = true,
-        v2GuideWindowSplashBranding = true,
+        guideWindowV2SplashBranding = true,
         activeStepsV2WindowScale = 1.0,
         activeStepsV2HideBackground = true,
         activeStepsV2RenderQuestName = true,
@@ -1222,9 +1222,9 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 5.0,
                         hidden = isNotAdvanced,
                     },
-                    enableV2GuideWindow = {
-                        name = fmt("%s %s v2", _G.ENABLE, L("Guide Window")),
-                        -- desc = L"",
+                    enableV2Interface = {
+                        name = L("Enable V2 Interface"),
+                        desc = L("Replace the legacy guide window with the V2 interface"),
                         type = "toggle",
                         width = optionsWidth * 2,
                         order = 5.1,
@@ -1236,11 +1236,11 @@ function addon.settings:CreateAceOptionsPanel()
                         hidden = isNotAdvanced
                     },
                     enableV2MenuTheme = {
-                        name = L("Use V2 Menu Theme"),
+                        name = L("Brand Menus"),
                         desc = L("Apply the V2 style to RestedXP menus"),
                         type = "toggle",
                         width = optionsWidth * 2,
-                        order = 5.2,
+                        order = 5.3,
                         hidden = isNotAdvanced,
                         disabled = function()
                             return not addon.v2:IsGuideWindowEnabled()
@@ -1251,7 +1251,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Display quest tooltips on steps"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 5.3,
+                        order = 5.4,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.v2:UpdateActiveStepTheme()
@@ -1260,6 +1260,18 @@ function addon.settings:CreateAceOptionsPanel()
                         disabled = function()
                             return not addon.v2:IsGuideWindowEnabled()
                         end
+                    },
+                    guideWindowV2SplashBranding = {
+                        name = L("Splash Branding"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 5.2,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.v2.events:Trigger("GuideWindowRefresh", "visuals")
+                        end,
+                        disabled = function() return not addon.v2:IsGuideWindowEnabled() end,
+                        hidden = isNotAdvanced,
                     },
                     inventoryHeader = {
                         name = _G.INVENTORY_TOOLTIP,
@@ -2933,7 +2945,8 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         values = function()
                             return addon:GetThemeOptions()
-                        end
+                        end,
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
                         --[[disabled = function()
                             -- Disable selector if GA/Hardcore as they're special and branded
                             return RXPCData.GA or self.profile.hardcore
@@ -2960,7 +2973,8 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = function()
                             return self.profile.activeTheme ~= 'Custom'
-                        end
+                        end,
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
                     },
                     customThemeBottomFrameBG = {
                         name = L("Step List Background"), -- TODO locale
@@ -2984,7 +2998,8 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = function()
                             return self.profile.activeTheme ~= 'Custom'
-                        end
+                        end,
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
                     },
                     customThemeBottomFrameHighlight = {
                         name = L("Step Highlight"), -- TODO locale
@@ -3009,7 +3024,8 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = function()
                             return self.profile.activeTheme ~= 'Custom'
-                        end
+                        end,
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
                     },
                     customThemeMapPins = {
                         name = L("Map Pins"), -- TODO locale
@@ -3030,7 +3046,8 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = function()
                             return self.profile.activeTheme ~= 'Custom'
-                        end
+                        end,
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
                     },
                     customThemeTooltip = {
                         name = L("Tooltip"), -- TODO locale
@@ -3052,7 +3069,8 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = function()
                             return self.profile.activeTheme ~= 'Custom'
-                        end
+                        end,
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
                     },
                     customThemeFont = {
                         name = L("Font"), -- TODO locale
@@ -3087,7 +3105,8 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = function()
                             return self.profile.activeTheme ~= 'Custom'
-                        end
+                        end,
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
                     },
                     customThemeTextColor = {
                         name = L("Text Color"), -- TODO locale
@@ -3109,7 +3128,8 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = function()
                             return self.profile.activeTheme ~= 'Custom'
-                        end
+                        end,
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
                     },
                     customThemeApply = {
                         name = _G.APPLY,
@@ -3117,7 +3137,8 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.9,
                         confirm = requiresReload,
-                        func = function() _G.ReloadUI() end
+                        func = function() _G.ReloadUI() end,
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
                     },
                     customThemeReset = {
                         name = _G.RESET,
@@ -3133,14 +3154,16 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = function()
                             return self.profile.activeTheme ~= 'Custom'
-                        end
+                        end,
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
                     },
                     enableThemeLiveReload = {
                         name = L("Preview Changes"),
                         desc = L("Preview theme changes"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 1.92
+                        order = 1.92,
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
                     },
                     previewFramePositions = {
                         name = fmt(L("%s Frame Positions"), _G.PREVIEW),
@@ -3299,17 +3322,6 @@ function addon.settings:CreateAceOptionsPanel()
                                 addon.v2.events:Trigger("GuideWindowRefresh", "layout")
                             end
                         end
-                    },
-                    v2GuideWindowSplashBranding = {
-                        name = L("Splash Branding"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 3.15,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.v2.events:Trigger("GuideWindowRefresh", "visuals")
-                        end,
-                        disabled = function() return not addon.v2:IsGuideWindowEnabled() end,
                     },
                     guideFontSize = {
                         name = L("Guide Font Size"), -- TODO locale
