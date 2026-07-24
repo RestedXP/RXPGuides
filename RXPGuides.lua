@@ -2417,6 +2417,9 @@ end
 function addon.v2.events:GuideStepsChanged(_, scheduled)
     -- Quest-data callbacks often arrive in bursts; one scheduled rebuild is enough.
     if scheduled then
+        if addon.comms then
+            addon.comms:AdvertiseCurrentStepOnce()
+        end
         addon.v2:UpdateGuideWindow()
     elseif addon.v2:IsGuideWindowEnabled() then
         addon:ScheduleTask(addon.v2.events.GuideStepsChanged, false, true)

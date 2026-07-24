@@ -1222,12 +1222,6 @@ function CurrentStepFrame.UpdateText()
         return
     end
 
-    if addon.settings.profile.enableBetaFeatures then
-        -- TODO throttle, maybe moot when more conversion to v2.events
-        addon.v2.events:Trigger("UpdateActiveSteps", activeSteps, addon.player.name)
-
-    end
-
     CurrentStepFrame:Show()
 
     -- StepScroll(n)
@@ -1382,6 +1376,10 @@ function CurrentStepFrame.UpdateText()
     end
 
     CurrentStepFrame:SetHeight(totalHeight - 5)
+
+    if addon.settings.profile.enableBetaFeatures then
+        addon.v2.events:Trigger("UpdateActiveSteps", activeSteps, addon.player.name)
+    end
 end
 
 BottomFrame:SetPoint("TOPLEFT", RXPFrame, 3, -3)
@@ -2873,8 +2871,7 @@ function addon.v2:RefreshActivePartyTabs(preferredPlayer)
 
     self.state.activePartyPlayer = activePlayer
     stepFrame:SetTabs(players, activePlayer)
-    if #players == 0 or not stepFrame.IsFeatureEnabled() or
-        not addon.RXPFrame:IsShown() then
+    if #players == 0 or not stepFrame.IsFeatureEnabled() then
         stepFrame:Hide()
     else
         stepFrame:Show()
@@ -3017,15 +3014,28 @@ end
 function addon.v2:GetActiveStepText(step)
     if step.text and step.text ~= "" then return step.text end
     if step.hiddentext and step.hiddentext ~= "" then return step.hiddentext end
+
+    local elementText = {}
+    local text
+    for _, element in ipairs(step.elements or {}) do
+        text = element.tooltipText or element.rawtext or element.text
+        if type(text) == "string" and text ~= "" and text ~= " " and
+            not element.hideTooltip then
+            elementText[#elementText + 1] = addon.ReplaceNpcIds(text, element)
+        end
+    end
+
+    if #elementText > 0 then return table.concat(elementText, "\n") end
 end
 
 function addon.v2:EncodePlayerActiveSteps(payload)
     local trimmedPayload = {}
 
     local trimmedStep
-    -- Only encode values that matter for sharing, activeSteps includes multiple stack overflowing reference loopbacks
+    -- activeSteps is already the curated active list; it can contain entries whose
+    -- transient .active flag was cleared while V2 refreshes its guide snapshot.
     for _, step in ipairs(payload) do
-        if self:IsActiveStepShown(step) then
+        if not step.hidewindow and not step.hidetip then
             trimmedStep = { }
 
             -- Copy all top-level not-tables
@@ -3035,6 +3045,7 @@ function addon.v2:EncodePlayerActiveSteps(payload)
                 end
             end
             trimmedStep.text = self:GetActiveStepText(step)
+            trimmedStep.active = true
 
             -- Element tables contain runtime callbacks and frame references.
             -- Party frames intentionally use the rendered step text instead.
@@ -3286,9 +3297,7 @@ function addon.v2:UpdatePartyActiveStepItem(stepItem, step)
     local text = step.text and step.text:gsub("\n%s+", "\n"):gsub("^%s+", "") or " "
     local theme = self:GetTheme()
     local elementLayout = theme.layout and theme.layout.activeStepElement or {}
-    local textColor = theme.textColor.activePartyStepItem or
-                      theme.textColor.activeStepItem or
-                      theme.textColor.common
+    local textColor = theme.textColor.activeStepItem or theme.textColor.common
     if not label then
         label = AceGUI:Create("Label")
         label:SetText(" ")
@@ -3296,7 +3305,7 @@ function addon.v2:UpdatePartyActiveStepItem(stepItem, step)
         stepItem.stepTextLabel = label
     end
     label:SetText(text ~= "" and text or " ")
-    label:SetFullHeight(true)
+    label:SetFullHeight(false)
     label:SetFullWidth(true)
     label:SetJustifyH("LEFT")
     label:SetJustifyV("TOP")
@@ -3308,7 +3317,7 @@ function addon.v2:UpdatePartyActiveStepItem(stepItem, step)
 end
 
 function addon.v2:RenderActivePartyStepsFrame(steps, player, encodedPayload)
-    if not self:IsActivePartyStepsAvailable() then return end
+    if not self:IsActivePartyStepsAvailable() or #steps == 0 then return end
 
     local playerStepFrame = self:GetActiveStepsFrame(player)
 
@@ -3344,7 +3353,7 @@ function addon.v2:UpdateActiveStepsFrame(steps, questId)
     local encodedPayload
 
     for _, step in ipairs(steps) do
-        if self:IsActiveStepShown(step) then
+        if not step.hidewindow and not step.hidetip then
             if not self:GetActiveStepText(step) then payloadReady = false end
         end
     end
@@ -3391,7 +3400,7 @@ function addon.v2:UpdateActivePartyStepsFrame(encodedPayload, player)
     end
 
     local steps = self:DecodePlayerActiveSteps(encodedPayload)
-    if not steps then return end
+    if not steps or #steps == 0 then return end
 
     local payloadReady = true
 

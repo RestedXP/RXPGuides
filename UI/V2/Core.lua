@@ -1039,9 +1039,8 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
     ScrollFrame Container
     Plain container that scrolls its content and doesn't grow in height.
     -------------------------------------------------------------------------------]]
-    local Type, Version = "RXPV2ScrollFrame", 15
+    local Type, Version = "RXPV2ScrollFrame", 16
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
-    local contentTopPadding = 0
 
     --[[-----------------------------------------------------------------------------
     Support functions
@@ -1065,6 +1064,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
     -------------------------------------------------------------------------------]]
     local methods = {
         ["OnAcquire"] = function(this)
+            this.contentTopPadding = 0
             this:SetScroll(0)
             this.scrollframe:SetScript("OnUpdate", FixScrollOnUpdate)
         end,
@@ -1076,6 +1076,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
             this.scrollframe:SetPoint("BOTTOMRIGHT")
             this.scrollbar:Hide()
             this.scrollBarShown = nil
+            this.contentTopPadding = nil
             this.content.height, this.content.width, this.content.original_width = nil, nil, nil
         end,
 
@@ -1090,8 +1091,8 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
                 offset = floor((height - viewheight) / 1000.0 * value)
             end
             this.content:ClearAllPoints()
-            this.content:SetPoint("TOPLEFT", 2, offset - contentTopPadding)
-            this.content:SetPoint("TOPRIGHT", -2, offset - contentTopPadding)
+            this.content:SetPoint("TOPLEFT", 2, offset - (this.contentTopPadding or 0))
+            this.content:SetPoint("TOPRIGHT", -2, offset - (this.contentTopPadding or 0))
             status.offset = offset
             status.scrollvalue = value
         end,
@@ -1164,8 +1165,8 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
                 this:SetScroll(value)
                 if value < 1000 then
                     this.content:ClearAllPoints()
-                    this.content:SetPoint("TOPLEFT", 2, offset - contentTopPadding)
-                    this.content:SetPoint("TOPRIGHT", -2, offset - contentTopPadding)
+                    this.content:SetPoint("TOPLEFT", 2, offset - (this.contentTopPadding or 0))
+                    this.content:SetPoint("TOPRIGHT", -2, offset - (this.contentTopPadding or 0))
                     status.offset = offset
                 end
             end
@@ -1173,7 +1174,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
         end,
 
         ["LayoutFinished"] = function(this, width, height)
-            this.content:SetHeight((height or 0) + 20)
+            this.content:SetHeight((height or 0) + 20 + (this.contentTopPadding or 0))
 
             -- update the scrollframe
             this:FixScroll()
@@ -1184,7 +1185,12 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
 
         ["UpdateTheme"] = updateTheme,
 
-        ["GetContentTopPadding"] = function() return contentTopPadding end,
+        ["GetContentTopPadding"] = function(this) return this.contentTopPadding or 0 end,
+
+        ["SetContentTopPadding"] = function(this, padding)
+            this.contentTopPadding = padding or 0
+            this:SetScroll((this.status or this.localstatus).scrollvalue or 0)
+        end,
 
         ["SetStatusTable"] = function(this, status)
             assert(type(status) == "table")
@@ -1238,8 +1244,8 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
 
         -- Container Support
         local content = CreateFrame("Frame", nil, scrollframe)
-        content:SetPoint("TOPLEFT", 2, -contentTopPadding)
-        content:SetPoint("TOPRIGHT", -2, -contentTopPadding)
+        content:SetPoint("TOPLEFT", 2, 0)
+        content:SetPoint("TOPRIGHT", -2, 0)
         content:SetHeight(400)
         scrollframe:SetScrollChild(content)
 
@@ -1351,7 +1357,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
     --[[-----------------------------------------------------------------------------
     Frame Container
     -------------------------------------------------------------------------------]]
-    local Type, Version = "RXPV2ActivePartyStepsFrame", 2
+    local Type, Version = "RXPV2ActivePartyStepsFrame", 4
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     --[[-----------------------------------------------------------------------------
@@ -1547,6 +1553,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             childContainer.frame:ClearAllPoints()
             childContainer.frame:SetPoint("TOPLEFT", this.content, "TOPLEFT", 0, 0)
             childContainer.frame:SetPoint("BOTTOMRIGHT", this.content, "BOTTOMRIGHT", 0, 0)
+            childContainer:SetContentTopPadding(12)
             childContainer:SetWidth(this.content.width or this.content:GetWidth())
             childContainer:SetHeight(this.content.height or this.content:GetHeight())
             childContainer.frame:SetShown(this.activeTab == player)
@@ -1749,10 +1756,10 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         local theme = addon.v2:GetTheme()
 
-        self:ApplyFrameBackdrop(frame, theme.edges.activeSteps or theme.edges.activePartySteps or theme.edges.common,
-                                theme.backgroundColors.activeSteps or theme.backgroundColors.activePartySteps or theme.backgroundColors.common,
-                                theme.borderColors.commonEdge or theme.borderColors.activePartySteps or theme.borderColors.common)
-        self:AddFrameShadow(frame)
+        self:ApplyFrameBackdrop(frame, theme.edges.activeStepItem or theme.edges.common,
+                                theme.backgroundColors.common,
+                                theme.borderColors.itemEdge or theme.borderColors.common)
+        self:AddFrameShadow(frame, nil, nil, nil, nil, "stepItem")
 
         if frame.SetResizeBounds then -- WoW 10.0
             frame:SetResizeBounds(265, 105)
@@ -2369,7 +2376,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 end
 
 function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
-    local Type, Version = "RXPV2ActivePartyStepItem", 3
+    local Type, Version = "RXPV2ActivePartyStepItem", 4
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     --[[-----------------------------------------------------------------------------
@@ -2431,10 +2438,8 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
 
             local theme = addon.v2:GetTheme()
             local itemEdge = theme.edges.activeStepItem or theme.edges.common
-            local itemBackground = theme.backgroundColors.activeStepItem or
-                                   theme.backgroundColors.common
-            local itemBorder = theme.borderColors.itemEdge or
-                               theme.borderColors.common
+            local itemBackground = theme.backgroundColors.common
+            local itemBorder = theme.borderColors.itemEdge or theme.borderColors.common
             local badgeEdge = theme.edges.activeStepBadge or itemEdge
             local badgeBackground = theme.backgroundColors.activeStepBadge or
                                     itemBackground
@@ -2454,13 +2459,9 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
 
         local theme = addon.v2:GetTheme()
         local itemEdge = theme.edges.activeStepItem or theme.edges.common
-        local itemBackground = theme.backgroundColors.activeStepItem or
-                               theme.backgroundColors.common
-        local itemBorder = theme.borderColors.itemEdge or
-                           theme.borderColors.common
-        local itemTextColor = theme.textColor.activePartyStepItem or
-                              theme.textColor.activeStepItem or
-                              theme.textColor.common
+        local itemBackground = theme.backgroundColors.common
+        local itemBorder = theme.borderColors.itemEdge or theme.borderColors.common
+        local itemTextColor = theme.textColor.activeStepItem or theme.textColor.common
         local badgeEdge = theme.edges.activeStepBadge or itemEdge
         local badgeBackground = theme.backgroundColors.activeStepBadge or
                                 itemBackground
