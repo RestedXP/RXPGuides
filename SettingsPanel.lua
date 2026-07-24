@@ -3176,7 +3176,8 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         func = function()
                             addon.settings:EnableFramePreviews()
-                        end
+                        end,
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     textColorsHeader = {
                         name = _G.LOCALE_TEXT_LABEL,
@@ -3196,7 +3197,8 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(_, r, g, b, a)
                             self.profile.textEnemyColor =
                                 self:RGBToString(r, g, b, a)
-                        end
+                        end,
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     textFriendlyColor = {
                         name = _G.FRIENDLY,
@@ -3212,7 +3214,8 @@ function addon.settings:CreateAceOptionsPanel()
                                                                               g,
                                                                               b,
                                                                               a)
-                        end
+                        end,
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     textLootColor = {
                         name = _G.LOOT,
@@ -3226,7 +3229,8 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(_, r, g, b, a)
                             self.profile.textLootColor =
                                 self:RGBToString(r, g, b, a)
-                        end
+                        end,
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     textWarnColor = {
                         name = L("Warning"),
@@ -3240,7 +3244,8 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(_, r, g, b, a)
                             self.profile.textWarnColor =
                                 self:RGBToString(r, g, b, a)
-                        end
+                        end,
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     textPickColor = {
                         name = L("Pick Up"),
@@ -3254,7 +3259,8 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(_, r, g, b, a)
                             self.profile.textPickColor =
                                 self:RGBToString(r, g, b, a)
-                        end
+                        end,
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     textBuyColor = {
                         name = L("Buy"),
@@ -3268,7 +3274,8 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(_, r, g, b, a)
                             self.profile.textBuyColor =
                                 self:RGBToString(r, g, b, a)
-                        end
+                        end,
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     customTextColorApply = {
                         name = _G.APPLY,
@@ -3276,7 +3283,8 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.9,
                         confirm = requiresReload,
-                        func = function() _G.ReloadUI() end -- TODO easier redraw?
+                        func = function() _G.ReloadUI() end, -- TODO easier redraw?
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     customTextColorReset = {
                         name = _G.RESET,
@@ -3285,7 +3293,8 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.91,
                         func = function()
                             self:ResetTextColors()
-                        end
+                        end,
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     disableColorText = {
                         name = L("Disable Colors"),
@@ -3294,7 +3303,8 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.92,
                         func = function()
                             self:DisableTextColors()
-                        end
+                        end,
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     guideWindowHeader = {
                         name = L("Guide Window"),
