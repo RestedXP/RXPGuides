@@ -1227,7 +1227,7 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Enable V2 Interface"),
                         desc = L("Replace the legacy guide window with the V2 interface"),
                         type = "toggle",
-                        width = optionsWidth * 2,
+                        width = optionsWidth,
                         order = 5.1,
                         confirm = requiresReload,
                         set = function(info, value)
@@ -1236,23 +1236,12 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = isNotAdvanced
                     },
-                    enableV2MenuTheme = {
-                        name = L("Brand Menus"),
-                        desc = L("Apply the V2 style to RestedXP menus"),
-                        type = "toggle",
-                        width = optionsWidth * 2,
-                        order = 5.3,
-                        hidden = isNotAdvanced,
-                        disabled = function()
-                            return not addon.v2:IsGuideWindowEnabled()
-                        end
-                    },
                     activeStepsV2RenderQuestName = {
                         name = L("Display Quest Link"),
                         desc = L("Display quest tooltips on steps"),
                         type = "toggle",
-                        width = optionsWidth,
-                        order = 5.4,
+                        width = optionsWidth * 1.5,
+                        order = 5.2,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.v2:UpdateActiveStepTheme()
@@ -1262,11 +1251,23 @@ function addon.settings:CreateAceOptionsPanel()
                             return not addon.v2:IsGuideWindowEnabled()
                         end
                     },
-                    guideWindowV2SplashBranding = {
-                        name = L("Splash Branding"),
+                    enableV2MenuTheme = {
+                        name = L("Brand Menus"),
+                        desc = L("Apply the V2 style to RestedXP menus"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 5.2,
+                        order = 5.3,
+                        hidden = isNotAdvanced,
+                        disabled = function()
+                            return not addon.v2:IsGuideWindowEnabled()
+                        end
+                    },
+                    guideWindowV2SplashBranding = {
+                        name = L("Splash Branding"),
+                        -- desc = "",
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 5.4,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.v2.events:Trigger("GuideWindowRefresh", "visuals")
