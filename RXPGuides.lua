@@ -1212,6 +1212,14 @@ local function LoadCache(guide)
             if guide then
                 addon:FetchGuide(guide)
             end
+            if currentGuideGroup then
+                currentGuideGroup = nil
+                currentGuideName = nil
+                startStep = nil
+                if addon.LoadDefaultGuide and addon.currentGuide.empty then
+                    addon.LoadDefaultGuide()
+                end
+            end
             updateFrame:SetScript("OnUpdate",nil)
         end
     end)
@@ -1309,6 +1317,10 @@ function addon:OnInitialize()
         addon.v2:EnableGuideWindow()
     end
 
+    currentGuideGroup = RXPCData.currentGuideGroup
+    currentGuideName = RXPCData.currentGuideName
+    startStep = RXPCData.currentStep
+
     LoadCache()
     ProcessSpells()
     addon.GetProfessionLevel()
@@ -1317,9 +1329,6 @@ function addon:OnInitialize()
         addon.LoadAllGuides()
     end
 
-    currentGuideGroup = RXPCData.currentGuideGroup
-    currentGuideName = RXPCData.currentGuideName
-    startStep = RXPCData.currentStep
     -- addon:LoadGuide(guide, true)
     -- if not addon.currentGuide then
     --     addon.RXPFrame:SetHeight(20)
@@ -1471,7 +1480,8 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
     C_Timer.After(2, function()
         addon.player.maxlevel = _G.GetMaxPlayerLevel()
 
-        if addon.LoadDefaultGuide and addon.currentGuide.empty then
+        if addon.LoadDefaultGuide and addon.currentGuide.empty and
+            not currentGuideGroup then
             addon.LoadDefaultGuide()
         end
     end)
