@@ -644,16 +644,22 @@ local function createRewardChoiceIcons()
 
     if not questRewardChoiceIcons["ratio"] then
         questRewardChoiceIcons["ratio"] = _G.QuestInfoRewardsFrame:CreateTexture()
-        questRewardChoiceIcons["ratio"]:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
+        questRewardChoiceIcons["ratio"]:SetTexture(addon.settings.profile.enableV2Interface and
+                                                         "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-reward-upgrade" or
+                                                         "Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
         questRewardChoiceIcons["ratio"]:SetSize(20, 20)
+        questRewardChoiceIcons["ratio"]:SetDrawLayer("OVERLAY", 1)
     end
 
     if questRewardChoiceIcons["ratio"].isHooked then return end
 
     if not questRewardChoiceIcons["value"] then
         questRewardChoiceIcons["value"] = _G.QuestInfoRewardsFrame:CreateTexture()
-        questRewardChoiceIcons["value"]:SetTexture("Interface/GossipFrame/VendorGossipIcon.blp")
+        questRewardChoiceIcons["value"]:SetTexture(addon.settings.profile.enableV2Interface and
+                                                         "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-reward-gold" or
+                                                         "Interface/GossipFrame/VendorGossipIcon.blp")
         questRewardChoiceIcons["value"]:SetSize(20, 20)
+        questRewardChoiceIcons["value"]:SetDrawLayer("OVERLAY", 1)
     end
 
     _G.QuestInfoRewardsFrame:HookScript("OnHide", hideRewardChoiceIcons)
@@ -668,16 +674,22 @@ local function createLogRewardChoiceIcons()
 
     if not questLogRewardChoiceIcons["ratio"] then
         questLogRewardChoiceIcons["ratio"] = _G.QuestLogDetailScrollFrame:CreateTexture()
-        questLogRewardChoiceIcons["ratio"]:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
+        questLogRewardChoiceIcons["ratio"]:SetTexture(addon.settings.profile.enableV2Interface and
+                                                            "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-reward-upgrade" or
+                                                            "Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
         questLogRewardChoiceIcons["ratio"]:SetSize(20, 20)
+        questLogRewardChoiceIcons["ratio"]:SetDrawLayer("OVERLAY", 1)
     end
 
     if questLogRewardChoiceIcons["ratio"].isHooked then return end
 
     if not questLogRewardChoiceIcons["value"] then
         questLogRewardChoiceIcons["value"] = _G.QuestLogDetailScrollFrame:CreateTexture()
-        questLogRewardChoiceIcons["value"]:SetTexture("Interface/GossipFrame/VendorGossipIcon.blp")
+        questLogRewardChoiceIcons["value"]:SetTexture(addon.settings.profile.enableV2Interface and
+                                                            "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-reward-gold" or
+                                                            "Interface/GossipFrame/VendorGossipIcon.blp")
         questLogRewardChoiceIcons["value"]:SetSize(20, 20)
+        questLogRewardChoiceIcons["value"]:SetDrawLayer("OVERLAY", 1)
     end
 
     -- Triggers on open and selection in Classic
@@ -698,12 +710,6 @@ local function createLogRewardChoiceIcons()
     end
 
     questLogRewardChoiceIcons["ratio"].isHooked = true
-end
-
--- Retail has enough helpers and massive UI differences
-if addon.gameVersion < 40000 then
-    createRewardChoiceIcons()
-    createLogRewardChoiceIcons()
 end
 
 local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
@@ -1265,6 +1271,12 @@ function addon:OnInitialize()
     addon.settings:InitializeDatabase()
     addon.CreateMetaDataTable()
     addon.settings:InitializeSettings()
+
+    -- Retail has enough helpers and massive UI differences
+    if addon.gameVersion < 40000 then
+        createRewardChoiceIcons()
+        createLogRewardChoiceIcons()
+    end
 
     RXPCData.completedWaypoints = RXPCData.completedWaypoints or {}
     addon.settings.profile.hardcore =
