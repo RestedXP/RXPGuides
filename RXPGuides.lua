@@ -629,12 +629,48 @@ local GossipGetAvailableQuests = C_GossipInfo.GetAvailableQuests or
 -- TODO handle Pawn compatibility
 local questRewardChoiceIcons = {}
 local questLogRewardChoiceIcons = {}
+local function createRewardChoiceGlow(parent, icon)
+    icon.glow = parent:CreateTexture(nil, "OVERLAY", nil, 0)
+    icon.glow:SetTexture("Interface/Minimap/UI-Minimap-ZoomButton-Highlight")
+    icon.glow:SetBlendMode("ADD")
+    icon.glow:SetVertexColor(1, 0.72, 0.1, 0.9)
+    icon.glow:SetSize(32, 32)
+end
+
+local function showRewardChoiceIcon(icon, rewardButton, point, x, y)
+    local overlay = icon.overlay
+    if not overlay then
+        overlay = _G.CreateFrame("Frame", nil, rewardButton)
+        icon.overlay = overlay
+    else
+        overlay:SetParent(rewardButton)
+    end
+
+    overlay:SetFrameLevel(rewardButton:GetFrameLevel() + 1)
+    overlay:Show()
+
+    icon:SetParent(overlay)
+    icon:ClearAllPoints()
+    icon:SetPoint(point, rewardButton, x, y)
+    if icon.glow then
+        icon.glow:SetParent(overlay)
+        icon.glow:ClearAllPoints()
+        icon.glow:SetPoint("CENTER", icon, "CENTER")
+        icon.glow:Show()
+    end
+    icon:Show()
+end
+
 local function hideRewardChoiceIcons()
     for _, f in pairs(questRewardChoiceIcons) do
+        if f.glow then f.glow:Hide() end
+        if f.overlay then f.overlay:Hide() end
         if not f:IsForbidden() then f:Hide() end
     end
 
     for _, f in pairs(questLogRewardChoiceIcons) do
+        if f.glow then f.glow:Hide() end
+        if f.overlay then f.overlay:Hide() end
         if not f:IsForbidden() then f:Hide() end
     end
 end
@@ -660,6 +696,11 @@ local function createRewardChoiceIcons()
                                                          "Interface/GossipFrame/VendorGossipIcon.blp")
         questRewardChoiceIcons["value"]:SetSize(20, 20)
         questRewardChoiceIcons["value"]:SetDrawLayer("OVERLAY", 1)
+    end
+
+    if addon.settings.profile.enableV2Interface then
+        createRewardChoiceGlow(_G.QuestInfoRewardsFrame, questRewardChoiceIcons["ratio"])
+        createRewardChoiceGlow(_G.QuestInfoRewardsFrame, questRewardChoiceIcons["value"])
     end
 
     _G.QuestInfoRewardsFrame:HookScript("OnHide", hideRewardChoiceIcons)
@@ -690,6 +731,11 @@ local function createLogRewardChoiceIcons()
                                                             "Interface/GossipFrame/VendorGossipIcon.blp")
         questLogRewardChoiceIcons["value"]:SetSize(20, 20)
         questLogRewardChoiceIcons["value"]:SetDrawLayer("OVERLAY", 1)
+    end
+
+    if addon.settings.profile.enableV2Interface then
+        createRewardChoiceGlow(_G.QuestLogDetailScrollFrame, questLogRewardChoiceIcons["ratio"])
+        createRewardChoiceGlow(_G.QuestLogDetailScrollFrame, questLogRewardChoiceIcons["value"])
     end
 
     -- Triggers on open and selection in Classic
@@ -837,9 +883,7 @@ local function handleQuestComplete()
             local bestRatioFrame = QuestInfo_GetRewardButton(QuestInfoFrame.rewardsFrame, bestRatioOption)
 
             if bestRatioFrame then
-                questRewardChoiceIcons["ratio"]:SetPoint("TOPRIGHT", bestRatioFrame , -1, 1)
-                questRewardChoiceIcons["ratio"]:SetParent(bestRatioFrame)
-                questRewardChoiceIcons["ratio"]:Show()
+                showRewardChoiceIcon(questRewardChoiceIcons["ratio"], bestRatioFrame, "TOPRIGHT", 0, 2)
             end
         end
     end
@@ -849,16 +893,12 @@ local function handleQuestComplete()
 
         if bestSellFrame then
             if bestSellOption > 0 then
-                questRewardChoiceIcons["value"]:SetPoint("BOTTOMRIGHT", bestSellFrame , -1, 1)
-                questRewardChoiceIcons["value"]:SetParent(bestSellFrame)
-                questRewardChoiceIcons["value"]:Show()
+                showRewardChoiceIcon(questRewardChoiceIcons["value"], bestSellFrame, "BOTTOMRIGHT", 0, 0)
             end
 
             -- No calculated best upgrade, so add recommendation to value as well, only if weights added
             if addon.itemUpgrades and bestRatioOption < 1 then
-                questRewardChoiceIcons["ratio"]:SetPoint("TOPRIGHT", bestSellFrame , -1, 1)
-                questRewardChoiceIcons["ratio"]:SetParent(bestSellFrame)
-                questRewardChoiceIcons["ratio"]:Show()
+                showRewardChoiceIcon(questRewardChoiceIcons["ratio"], bestSellFrame, "TOPRIGHT", 0, 2)
             end
         end
     end
@@ -905,9 +945,7 @@ function addon.DisplayQuestLogRewards(questLogIndex)
             QuestInfo_GetRewardButton(QuestInfoFrame.rewardsFrame, bestRatioOption)
 
         if bestRatioFrame then
-            questLogRewardChoiceIcons["ratio"]:SetPoint("TOPRIGHT", bestRatioFrame , -1, 1)
-            questLogRewardChoiceIcons["ratio"]:SetParent(bestRatioFrame)
-            questLogRewardChoiceIcons["ratio"]:Show()
+            showRewardChoiceIcon(questLogRewardChoiceIcons["ratio"], bestRatioFrame, "TOPRIGHT", 0, 2)
         end
     end
 
@@ -916,15 +954,11 @@ function addon.DisplayQuestLogRewards(questLogIndex)
             QuestInfo_GetRewardButton(QuestInfoFrame.rewardsFrame, bestSellOption)
 
         if bestSellFrame then
-            questLogRewardChoiceIcons["value"]:SetPoint("BOTTOMRIGHT", bestSellFrame , -1, 1)
-            questLogRewardChoiceIcons["value"]:SetParent(bestSellFrame)
-            questLogRewardChoiceIcons["value"]:Show()
+            showRewardChoiceIcon(questLogRewardChoiceIcons["value"], bestSellFrame, "BOTTOMRIGHT", 0, 0)
 
             -- No calculated best upgrade, so add recommendation to value as well, only if weights added
             if addon.itemUpgrades and bestRatioOption < 1 then
-                questLogRewardChoiceIcons["ratio"]:SetParent(bestSellFrame)
-                questLogRewardChoiceIcons["ratio"]:SetPoint("TOPRIGHT", bestSellFrame , -1, 1)
-                questLogRewardChoiceIcons["ratio"]:Show()
+                showRewardChoiceIcon(questLogRewardChoiceIcons["ratio"], bestSellFrame, "TOPRIGHT", 0, 2)
             end
         end
     end
