@@ -1342,7 +1342,7 @@ function addon.settings:CreateAceOptionsPanel()
                     resetDiscardItems = {
                         name = L("Reset Junk List"),
                         desc = L("Click to reset the discard list for this character"),
-                        order = 4.88,
+                        order = 6.18,
                         type = "execute",
                         width = optionsWidth,
                         func = function()
