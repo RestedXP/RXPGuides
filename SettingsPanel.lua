@@ -58,6 +58,11 @@ end
 
 function addon.settings.OpenSettings(panelName)
 
+    if _G.InCombatLockdown() then
+        addon.settingsPanelAfterCombat = panelName or true
+        return
+    end
+
     -- panelName only provided for Import currently
     if panelName then
         local optionsName = fmt("%s/%s", addon.RXPOptions.name, panelName)

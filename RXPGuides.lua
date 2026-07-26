@@ -1591,7 +1591,14 @@ function addon:ZONE_CHANGED() addon.UpdateMap() end
 
 function addon:BAG_UPDATE_DELAYED(...) addon.UpdateItemFrame() end
 
-function addon:PLAYER_REGEN_ENABLED(...) addon.UpdateItemFrame() end
+function addon:PLAYER_REGEN_ENABLED(...)
+    addon.UpdateItemFrame()
+    if addon.settingsPanelAfterCombat ~= nil then
+        local panelName = addon.settingsPanelAfterCombat
+        addon.settingsPanelAfterCombat = nil
+        addon.settings.OpenSettings(panelName ~= true and panelName)
+    end
+end
 
 function addon:QUEST_TURNED_IN(_, questId, xpReward)
     -- scryer/aldor quest
