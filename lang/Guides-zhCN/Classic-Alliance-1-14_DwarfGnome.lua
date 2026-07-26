@@ -4434,7 +4434,7 @@ step << Paladin
     >>击败|cRXP_ENEMY_布鲁阿特|r
     >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r
-    >>|cRXP_WARN_不要意外对他施放|r |T135906:0|t|T135906:0|t[力量祝福] |cRXP_WARN_ |r
+    >>|cRXP_WARN_千万不要失误对他施放|r |T135906:0|t[力量祝福] |cRXP_WARN_|r
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r
     >>|cRXP_WARN_击败|cRXP_ENEMY_布鲁阿尔特|r后：|r
     >>再次与|cRXP_FRIENDLY_布鲁克·麦须|r对话，领取|T134419:0|t|T134419:0|t[责难符文]
@@ -4643,7 +4643,7 @@ step
     #completewith TramEnd
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
     >>|T133971:0|t[烹饪] 以下物品：
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
     >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
     .usespell 2550
     .zoneskip Stormwind City
@@ -4670,7 +4670,7 @@ step
     #label TramCook6
     #completewith TramEnd
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
     .usespell 2550
     .zoneskip Stormwind City
     .itemcount 769,1 --Chunk of Boar Meat (1)
@@ -5761,7 +5761,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔玛·萨丁|r 对话
     .target 萨尔玛·萨丁
     .goto Westfall,56.40,30.50
-    .turnin 36 >>交任务《 前往熔光镇》 杂味炖肉
+    .turnin 36 >>交任务 杂味炖肉
     .accept 38 >>接受任务 杂味炖肉
     .accept 22 >>接受任务 猪肝馅饼
 step
@@ -6776,7 +6776,7 @@ step << !Paladin
     #completewith WestfallTramEnd
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
     >>|T133971:0|t[烹饪] 以下物品：
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
     >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
     .usespell 2550
     .zoneskip Stormwind City
@@ -6805,7 +6805,7 @@ step << !Paladin
     #label WestfallTramCook6
     #completewith WestfallTramEnd
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
     .usespell 2550
     .zoneskip Stormwind City
     .itemcount 769,1 --Chunk of Boar Meat (1)
@@ -7512,7 +7512,7 @@ step
     #completewith DarkshoreBoat
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
     >>|T133971:0|t[烹饪] 以下物品：
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
     >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
     .usespell 2550
     .zoneskip Darkshore
@@ -7541,7 +7541,7 @@ step
     #label DarkshoreCook6
     #completewith DarkshoreBoat
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1)
@@ -7691,7 +7691,7 @@ step
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格瑞夫|r 对话
     .trainer >>训练你的职业技能
-    .train 3044 >>训练奥术射击
+    .train 3044 >>训练 奥术射击
     .target 格瑞夫
 step
     .goto Dun Morogh,44.13,56.95
@@ -8269,7 +8269,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Hunter
 #group RestedXP 联盟 1-20 级
 #name 11-13 洛克莫丹 (猎人)
-#displayname 11-13 洛克莫丹 << !SoD
+#displayname 11-13级 洛克莫丹 << !SoD
 #displayname 12-15 洛克莫丹 << SoD
 #next 14-16级 黑海岸
 #defaultfor Dwarf
@@ -8820,7 +8820,7 @@ step
     .goto Wetlands,7.95,56.38
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_德温·晨光|r 对话
     .vendor >>|cRXP_BUY_尽可能多地购买|r |T134831:0|t[治疗药水] |cRXP_BUY_（如果有售）|r
-    >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_德温·晨光|r 没有库存，请跳过此步骤|r
+    >>|cRXP_WARN_这是限量供应物品，如果 |cRXP_FRIENDLY_德温·晨光|r 没有库存，请跳过此步骤|r
     .target 德温·晨光
 step
     #optional
@@ -8878,7 +8878,7 @@ step
     #completewith DarkshoreBoat
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
     >>|T133971:0|t[烹饪] 以下物品：
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
     >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
     .usespell 2550
     .zoneskip Darkshore
@@ -8905,7 +8905,7 @@ step
     #label DarkshoreCook6
     #completewith DarkshoreBoat
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1)

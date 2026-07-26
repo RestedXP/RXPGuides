@@ -15,7 +15,7 @@ RXPGuides.RegisterGuide([[
 
 
 step << !Tauren !Hunter !Shaman
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加索克|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加索克|r 对话
     .turnin 837 >>交任务 野猪人的进犯
     .goto Durotar,51.95,43.50
     .target 加索克
@@ -345,7 +345,7 @@ step << !Tauren !Undead
 step
     #sticky
     #completewith EnterRFC
-    .subzone 2437 >>现在你应该找个队伍去怒焰裂谷了
+    .subzone 2437 >>现在你应该开始寻找怒焰裂谷的小队
     .dungeon RFC
 step
     .goto The Barrens,51.99,29.89
@@ -2481,7 +2481,7 @@ step
     .mob 雷角蜥蜴
 step
     #completewith next
-    >>击杀|cRXP_ENEMY_刚鬃野猪人|r，拾取它们的|cRXP_LOOT_冰寒獠牙|r。保留你获得的|T134128:0|t|T134128:0|t[|cRXP_LOOT_血石碎片|r]
+    >>击杀|cRXP_ENEMY_刺背野猪人|r，拾取它们的|cRXP_LOOT_冰寒獠牙|r。保留你获得的|T134128:0|t|T134128:0|t[|cRXP_LOOT_血石碎片|r]
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob 刺背寻水者
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
@@ -2503,7 +2503,7 @@ step
     .goto The Barrens,45.93,49.08,80,0
     .goto The Barrens,47.43,51.37,80,0
     .goto The Barrens,50.10,53.34,80,0
-	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
+	>>击杀|cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
     >>|cRXP_WARN_使用 |T132318:0|t [|cRXP_LOOT_拉克塔曼尼之蹄|r]以开启该任务|r
     >>|cRXP_WARN_他有 4 个刷新点（已在地图上标记）|r
     >>|cRXP_WARN_如果找不到他，请跳过此步骤|r
@@ -2538,7 +2538,7 @@ step
     .goto The Barrens,52.41,53.07,60,0
     .goto The Barrens,52.32,53.71,60,0
     .goto The Barrens,51.39,54.22,60,0
-    >>击杀|cRXP_ENEMY_刚鬃野猪人|r，拾取它们的|cRXP_LOOT_冰寒獠牙|r。保留你获得的|T134128:0|t|T134128:0|t[|cRXP_LOOT_血石碎片|r]
+    >>击杀|cRXP_ENEMY_刺背野猪人|r，拾取它们的|cRXP_LOOT_冰寒獠牙|r。保留你获得的|T134128:0|t|T134128:0|t[|cRXP_LOOT_血石碎片|r]
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob 刺背寻水者
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
@@ -4007,7 +4007,7 @@ step
     .dungeon WC
 step
     .goto Thunder Bluff,23.0,21.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_药剂师扎玛|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_药剂师扎玛|r 对话
     .turnin 962 >>交任务  毒蛇花
     .target 药剂师扎玛
     .isQuestComplete 962
@@ -4359,7 +4359,7 @@ step
     .goto Stonetalon Mountains,71.25,43.45,50,0
     .goto Stonetalon Mountains,64.82,47.23,50,0
     .goto Stonetalon Mountains,64.82,47.23,0
-    >>击杀 |cRXP_ENEMY_XT:4|r。它在河的北侧巡逻
+    >>击杀 |cRXP_ENEMY_XT:4|r。它在河北侧巡逻
     >>|cRXP_WARN_该任务现在不需要完成|r
     .complete 1068,1 --XT:4 (1)
     .unitscan XT:4
@@ -4461,7 +4461,7 @@ step
     .accept 6563 >>接受任务 阿库麦尔的精华
     .target 耶努萨克雷
     .goto Ashenvale,11.56,34.29
-    .accept 216 >>接受任务蓟皮熊怪的麻烦
+    .accept 216 >>接受任务 蓟皮熊怪的麻烦
     .target 卡拉恩·阿玛卡
     .goto Ashenvale,11.90,34.53
     .accept 6462 >>接受任务巨魔符咒
@@ -4476,7 +4476,7 @@ step
     .turnin 6562 >>交任务  帮助耶努萨克雷
     .target 耶努萨克雷
     .goto Ashenvale,11.56,34.29
-    .accept 216 >>接受任务蓟皮熊怪的麻烦
+    .accept 216 >>接受任务 蓟皮熊怪的麻烦
     .target 卡拉恩·阿玛卡
     .goto Ashenvale,11.90,34.53
     .accept 6462 >>接受任务巨魔符咒
@@ -4648,7 +4648,7 @@ step
 step
     .goto Ashenvale,11.90,34.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯朗|r 对话
-    .accept 216 >>接受任务蓟皮熊怪的麻烦
+    .accept 216 >>接受任务 蓟皮熊怪的麻烦
     .target 卡拉恩·阿玛卡
 step
     #completewith flytoORG

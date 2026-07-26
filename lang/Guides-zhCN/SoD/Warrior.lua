@@ -594,7 +594,7 @@ step << Tauren
     #season 2
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈鲁特|r 对话
-    .accept 77651 >>Accept 深入荆棘
+    .accept 77651 >>接受任务 深入荆棘
     .target 哈鲁特·雷角
 step
     #season 2
@@ -722,7 +722,7 @@ step
     .goto Orgrimmar,57.40,53.93,-1
     .goto Orgrimmar,58.05,51.40,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_扎姆沙|r 和 |cRXP_FRIENDLY_格鲁阿克|r 对话
-    +当|cRXP_ENEMY_格鲁阿克|r 变为敌对状态时将其击杀
+    +当|cRXP_ENEMY_格鲁阿克|r变为敌对状态时将其击杀
     .target Zamja
     .target Gru'ark
     .skipgossip
@@ -731,7 +731,7 @@ step
     #season 2
     .goto Orgrimmar,58.52,52.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_扎姆沙|r 对话
-    >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Zamja
     .train 425447,1
@@ -770,7 +770,7 @@ step
     #season 2
     .goto Thunder Bluff,28.73,18.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奈塔里|r 对话
-    >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .train 425447,1
@@ -808,7 +808,7 @@ step
     #season 2
     .goto Tirisfal Glades,61.72,51.91
     >>击杀 |cRXP_ENEMY_蓝心|r，然后与楼上的 |cRXP_FRIENDLY_本尼|r 对话
-    .gossipoption 110751 >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    .gossipoption 110751 >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .mob Blueheart
@@ -853,7 +853,7 @@ step
     .goto Durotar,52.13,20.77,40,0
     .goto Durotar,51.26,19.19,40,0
     .goto Durotar,53.98,23.70
-    >>击杀|cRXP_ENEMY_尘风鹰身人|r，并从它们身上拾取|cRXP_LOOT_被砍下的鹰身人的头|r
+    >>击杀|cRXP_ENEMY_尘风鹰身人|r。拾取他们的|cRXP_LOOT_被砍下的鹰身人的头|r
     .collect 206995,1 ---Severed Harpy Head (1)
     .mob Dustwind Savage
     .mob Dustwind Storm Witch

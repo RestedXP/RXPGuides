@@ -215,7 +215,7 @@ step << Hunter
     .target 索加斯·格瑞姆森
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索加斯·格瑞姆森|r 对话
     .turnin 3108 >>交任务 风蚀符文
-    .train 1978 >>训练毒蛇钉刺
+    .train 1978 >>训练 毒蛇钉刺
 step << Dwarf Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布罗莫斯·格鲁诺尔|r对话
     .target 布罗莫斯·格鲁诺尔
@@ -399,7 +399,7 @@ step
     .turnin 282 >>交任务 森内尔的观察站
     .accept 420 >>接受任务 森内尔的观察站
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_汉兹·跳链|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_汉兹·跳链|r对话
     .target Hands Springsprocket
     .goto Dun Morogh,33.847,72.236
     .accept 2160 >>接受任务 塔诺克的补给品
@@ -469,7 +469,7 @@ step << Hunter
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格瑞夫|r 对话
     .trainer >>训练你的职业技能
-    .train 3044 >>训练奥术射击
+    .train 3044 >>训练 奥术射击
     .target 格瑞夫
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉格纳·雷酒|r 对话
@@ -1177,7 +1177,7 @@ step
     .mob 麻风侏儒
 step
     #era
-    .xp 9 >>刷怪升到9级
+    .xp 9 >>刷怪到9级
 step
     #completewith next
     .goto Dun Morogh,24.509,50.831,20 >>进入霜鬃巨魔要塞
@@ -2317,7 +2317,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔玛·萨丁|r 对话
     .target 萨尔玛·萨丁
     .goto Westfall,56.40,30.50
-    .turnin 36 >>交任务《 前往熔光镇》 杂味炖肉
+    .turnin 36 >>交任务 杂味炖肉
     .accept 38 >>接受任务 杂味炖肉
     .accept 22 >>接受任务 猪肝馅饼
 step
@@ -2801,7 +2801,7 @@ step
     .goto StormwindClassic,55.21,7.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
     .vendor 5519 >>|cRXP_BUY_从他这里|r|T133024:0|t|cRXP_BUY_买一个|r [青铜管] (如果有)
-    >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_比利巴布·旋轮|r 没有库存，请跳过此步骤|r
+    >>|cRXP_WARN_这是限量供应物品，如果 |cRXP_FRIENDLY_比利巴布·旋轮|r 没有库存，请跳过此步骤|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
     .target 比利巴布·旋轮

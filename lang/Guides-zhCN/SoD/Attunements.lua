@@ -58,7 +58,7 @@ step
     .goto Deadwind Pass,51.28,39.91,20,0
     .goto Deadwind Pass,52.32,34.09
     >>回到北方的达拉然特工营地
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈里森·琼斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈里森·琼斯|r对话
     .turnin 86967 >>交任务 实施营救
     .accept 86968 >>接受任务 你怕黑吗？
     .target 哈里森·琼斯

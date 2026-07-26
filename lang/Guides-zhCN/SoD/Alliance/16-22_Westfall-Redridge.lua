@@ -795,7 +795,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛蒂·詹罗斯|r 对话
     .turnin 130 >>交任务 寻访草药师
     .accept 131 >>接受任务 水仙诉衷情
-    .accept 34 >>接受任务不速之客
+    .accept 34 >>接受任务 不速之客
 step
 #optional
 	#completewith BayingOfGnolls
@@ -1348,7 +1348,7 @@ step
 	.target 码头管理员巴伦
     .goto Redridge Mountains,27.72,47.38
     .turnin 127 >>交任务卖鱼
-    .accept 150 >>接受任务鱼人偷猎者
+    .accept 150 >>接受任务 鱼人偷猎者
     .turnin 150 >>交任务鱼人偷猎者
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话

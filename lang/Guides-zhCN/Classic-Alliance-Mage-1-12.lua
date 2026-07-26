@@ -628,7 +628,7 @@ step
     .goto Westfall,56.416,30.519
 .target 萨尔玛·萨丁
 >>与|cRXP_FRIENDLY_萨尔玛·萨丁|r 对话
-    .turnin 36 >>交任务《 前往熔光镇》 杂味炖肉
+    .turnin 36 >>交任务 杂味炖肉
 step
     #softcore
     #sticky

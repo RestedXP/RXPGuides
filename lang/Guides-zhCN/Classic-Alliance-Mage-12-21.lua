@@ -1069,7 +1069,7 @@ step
 >>与|cRXP_FRIENDLY_码头管理员巴伦|r 对话
     .turnin 127 >>交任务卖鱼
 .target 码头管理员巴伦
-    .accept 150 >>接受任务鱼人偷猎者
+    .accept 150 >>接受任务 鱼人偷猎者
     .turnin 150 >>交任务鱼人偷猎者
 step
     .goto Redridge Mountains,27.72,47.38
@@ -1082,7 +1082,7 @@ step
     .turnin 130 >>交任务 寻访草药师
 .target 玛蒂·詹罗斯
     .accept 131 >>接受任务 水仙诉衷情
-    .accept 34 >>接受任务不速之客
+    .accept 34 >>接受任务 不速之客
 step
     >>杀死贝利格拉布。将其一路风筝到镇里的卫兵亚当斯那里
     >>小心她的震颤（瞬间80点AOE伤害）和冲锋（尽量保持减速并冰环她）
@@ -1095,7 +1095,7 @@ step
     .goto Redridge Mountains,21.85,46.32
 .target 玛蒂·詹罗斯
 >>与|cRXP_FRIENDLY_玛蒂·詹罗斯|r 对话
-    .turnin 34 >>交任务不速之客
+    .turnin 34 >>交任务 不速之客
 step
     .goto Redridge Mountains,21.23,36.17,60,0
     .goto Redridge Mountains,34.20,39.70,60,0

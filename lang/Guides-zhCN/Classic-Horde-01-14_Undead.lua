@@ -1194,8 +1194,8 @@ step << Mage
 step << Mage/Priest
     #season 2
     .goto Tirisfal Glades,25.6,48.2
-    >>击杀 |cRXP_ENEMY_Gillgar|r。拾取他的 |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] << Mage
-    >>击杀 |cRXP_ENEMY_Gillgar|r。拾取他的 |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] << Priest
+    >>击杀|cRXP_ENEMY_吉尔加|r。拾取他的|T134939:0|t[|cRXP_FRIENDLY_法术笔记：IGBHNHZNAI|r] << Mage
+    >>击杀|cRXP_ENEMY_吉尔加|r。从他身上拾取|T136222:0|t[|cRXP_FRIENDLY_黑暗意图的记忆|r] << Priest
     >>|cRXP_WARN_这是一个7级精英怪，不易击杀，如果太难就先跳过|r
     .collect 203753,1 << Mage --Spell Notes: RING SEFF OSTROF (1)
     .collect 205940,1 << Priest --Memory of Dark Purpose (1)
@@ -2344,8 +2344,8 @@ step
     .isOnQuest 375
 step << Mage/Priest
     #season 2
-    >>击杀 |cRXP_ENEMY_Gillgar|r。拾取他的 |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] << Mage
-    >>击杀 |cRXP_ENEMY_Gillgar|r。拾取他的 |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] << Priest
+    >>击杀|cRXP_ENEMY_吉尔加|r。拾取他的|T134939:0|t[|cRXP_FRIENDLY_法术笔记：IGBHNHZNAI|r] << Mage
+    >>击杀|cRXP_ENEMY_吉尔加|r。从他身上拾取|T136222:0|t[|cRXP_FRIENDLY_黑暗意图的记忆|r] << Priest
     >>|cRXP_WARN_这是一个7级精英怪，不易击杀，如果太难就先跳过|r
     .collect 203753,1 << Mage --Spell Notes: RING SEFF OSTROF (1)
     .collect 205940,1 << Priest --Memory of Dark Purpose (1)
@@ -6919,8 +6919,8 @@ step << Mage
 step << Mage/Priest
     #season 2
     .goto Tirisfal Glades,25.6,48.2
-    >>击杀 |cRXP_ENEMY_Gillgar|r，拾取他的 |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] << Mage
-    >>击杀 |cRXP_ENEMY_Gillgar|r。拾取他的 |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] << Priest
+    >>击杀|cRXP_ENEMY_吉尔加|r。拾取他的|T134939:0|t[|cRXP_FRIENDLY_法术笔记：IGBHNHZNAI|r] << Mage
+    >>击杀|cRXP_ENEMY_吉尔加|r。从他身上拾取|T136222:0|t[|cRXP_FRIENDLY_黑暗意图的记忆|r] << Priest
     >>|cRXP_WARN_这是一个7级精英怪，不易击杀，如果太难就先跳过|r
     .collect 203753,1 << Mage --Spell Notes: RING SEFF OSTROF (1)
     .collect 205940,1 << Priest --Memory of Dark Purpose (1)
@@ -8194,8 +8194,8 @@ step << skip
 step << Mage/Priest
     #xprate <2.1
     #season 2
-    >>击杀 |cRXP_ENEMY_Gillgar|r。拾取他的 |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] << Mage
-    >>击杀 |cRXP_ENEMY_Gillgar|r。拾取他的 |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] << Priest
+    >>击杀|cRXP_ENEMY_吉尔加|r。拾取他的|T134939:0|t[|cRXP_FRIENDLY_法术笔记：IGBHNHZNAI|r] << Mage
+    >>击杀|cRXP_ENEMY_吉尔加|r。从他身上拾取|T136222:0|t[|cRXP_FRIENDLY_黑暗意图的记忆|r] << Priest
     .collect 203753,1 << Mage --Spell Notes: RING SEFF OSTROF (1)
     .collect 205940,1 << Priest --Memory of Dark Purpose (1)
     .mob Gillgar
@@ -8948,8 +8948,8 @@ step
 step << Mage/Priest
     #xprate >2.09
     #season 2
-    >>击杀 |cRXP_ENEMY_Gillgar|r。拾取他的 |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] << Mage
-    >>击杀 |cRXP_ENEMY_Gillgar|r。拾取他的 |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] << Priest
+    >>击杀|cRXP_ENEMY_吉尔加|r。拾取他的|T134939:0|t[|cRXP_FRIENDLY_法术笔记：IGBHNHZNAI|r] << Mage
+    >>击杀|cRXP_ENEMY_吉尔加|r。从他身上拾取|T136222:0|t[|cRXP_FRIENDLY_黑暗意图的记忆|r] << Priest
     .collect 203753,1 << Mage --Spell Notes: RING SEFF OSTROF (1)
     .collect 205940,1 << Priest --Memory of Dark Purpose (1)
     .mob Gillgar

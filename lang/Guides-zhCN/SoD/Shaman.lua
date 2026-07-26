@@ -521,7 +521,7 @@ step
     .goto Thunder Bluff,45.23,59.40,0
     .goto Thunder Bluff,40.41,51.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
-    >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
+    >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t|T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
     .target Auctioneer Stampi
     .train 410104,1
@@ -2676,7 +2676,7 @@ step
     .waypoint Thousand Needles,54.29,48.10,40,0
     >>击杀 |cRXP_ENEMY_风蛇|r。拾取它们的 |cRXP_LOOT_风蛇利齿|r
     .collect 213709,3 --Cloud Serpent Fang (3x)
-    .mob Cloud Serpent
+    .mob 云端翔龙
     .mob Venomous Cloud Serpent
     .mob Elder Cloud Serpent
 step

@@ -1913,7 +1913,7 @@ step
     .goto Durotar,55.95,73.93
 step
     #completewith Stolensupplies
-    +|cRXP_WARN_将你的|r |T133728:0|t[微光颅骨] |cRXP_WARN_和|r |T134712:0|t[强力胶水]|cRXP_WARN_设为快捷键。留着它们以备不时之需|r
+    +|cRXP_WARN_绑定你的|r |T133728:0|t|T134712:0|t[微光徽记] |cRXP_WARN_和|r |T134712:0|t|T134712:0|t[强力胶水]|cRXP_WARN_。将它们保留以备紧急情况使用|r
 step
     #loop
     .goto Durotar,49.22,48.96,0
@@ -2524,7 +2524,7 @@ step << Warlock/Mage/Priest
     .zoneskip Undercity,1
 step << Warlock
     .goto Undercity,85.07,25.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_凯伦丁|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_卡伦丁|r交谈
     .turnin 1478 >>交任务 哈加尔的召唤
     .accept 1473 >>接受任务 虚空中的生物
 step << Mage
@@ -2672,7 +2672,7 @@ step << Warlock
     .zone Undercity >>从下水道返回幽暗城
 step << Warlock
     .goto Undercity,85.07,25.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_凯伦丁|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_卡伦丁|r交谈
     .turnin 1473 >>交任务 虚空中的生物
     .accept 1471 >>接受任务誓缚
     .target 凯伦丁·哈加尔
@@ -2703,7 +2703,7 @@ step << Warlock
     .zoneskip Tirisfal Glades
 step
     #completewith next
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -2813,7 +2813,7 @@ step
     .mob Vile Fin Muckdweller
 step
     #completewith RotHideGnolls
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -3048,7 +3048,7 @@ step << Warrior
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与二楼的 |cRXP_FRIENDLY_贝里尔|r 对话
-	.train 588 >>训练 |T135926:0|t[心灵之火]
+	.train 588 >>学习 |T135926:0|t[心灵之火]
     .target Dark Cleric Beryl
     .xp <12,1
 step << Mage
@@ -3106,7 +3106,7 @@ step
     .target Deathguard Linnea
 step
     #completewith HorrorsandSpirits
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -3206,7 +3206,7 @@ step << Priest/Warlock
     .mob Scarlet Zealot
 step
     #completewith next
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -3334,7 +3334,7 @@ step
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与二楼的 |cRXP_FRIENDLY_贝里尔|r 对话
-	.train 588 >>训练 |T135926:0|t[心灵之火]
+	.train 588 >>学习 |T135926:0|t[心灵之火]
     .target Dark Cleric Beryl
     .xp <12,1
 step << Mage
@@ -3484,7 +3484,7 @@ step
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与二楼的 |cRXP_FRIENDLY_贝里尔|r 对话
-	.train 588,1 >>训练 |T135926:0|t[心灵之火]
+	.train 588,1 >>学习 |T135926:0|t[心灵之火]
     .target Dark Cleric Beryl
     .xp <12,1
     .xp >14,1

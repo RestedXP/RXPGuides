@@ -1593,7 +1593,7 @@ step
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
     .goto Felwood,51.4,82.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_影齿大使|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_影齿大使|r对话
     .accept 84384 >>接受任务 恶魔骗术
     .target Shadowtooth Emissary
     .itemcount 228172,<1 --Only shows if you don't have the trinket
@@ -1621,7 +1621,7 @@ step
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
     .goto Felwood,51.4,82.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_影齿大使|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_影齿大使|r对话
     .turnin 84384 >>交任务 恶魔骗术
     .target Shadowtooth Emissary
     .itemcount 228172,<1 --Only shows if you don't have the trinket
