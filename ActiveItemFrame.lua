@@ -213,14 +213,12 @@ local function UpdateIconFrameVisuals(self,updateFrame)
     if addon.settings.profile.activeItemHideBG then
         addon.ui.v2:SetFrameBackdropShown(self, false)
     else
-        addon.ui.v2:ApplyFrameBackdrop(self, theme.edge,
-                                       theme.version == 1 and theme.backgroundColors.common or
-                                           theme.backgroundColors.activeSteps,
+        addon.ui.v2:ApplyFrameBackdrop(self, theme.edge, theme.backgroundColors.common,
                                        theme.borderColors.commonEdge)
         addon.ui.v2:AddFrameShadow(self)
         addon.ui.v2:SetFrameBackdropShown(self, true)
     end
-    addon.ui.v2:ApplyFrameBackdrop(self.title, theme.edge, theme.backgroundColors.activeSteps,
+    addon.ui.v2:ApplyFrameBackdrop(self.title, theme.edge, theme.backgroundColors.common,
                                    theme.borderColors.commonEdge)
     self.title.text:SetFont(addon.font, 9, "")
     self.title.text:SetTextColor(unpack(theme.textColor.title))

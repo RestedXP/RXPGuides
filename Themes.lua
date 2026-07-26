@@ -324,7 +324,6 @@ addon.v2.themes['RXP Blue V2'] = {
 
     backgroundColors = {
         common = {26 / 255, 28 / 255, 48 / 255, 0.95}, -- #1A1C30F2
-        activeSteps = {11 / 255, 12 / 255, 26 / 255, 0.95}, -- #0B0C1AF2
         inactivePartyTab = {32 / 255, 33 / 255, 49 / 255, 1}, -- #202131FF
         activeStepCheckbox = {5 / 255, 7 / 255, 19 / 255, 1}, -- #050713FF
         activeStepCheckboxChecked = {17 / 255, 132 / 255, 1, 1}, -- #118401FF
@@ -387,7 +386,6 @@ function addon.v2:ConvertThemes()
                 converted.applicable = source.applicable
 
                 backgroundColors.common = CopyTable(source.background)
-                backgroundColors.activeSteps = CopyTable(source.bottomFrameBG)
                 backgroundColors.inactivePartyTab = CopyTable(source.background)
                 backgroundColors.activeStepCheckbox = CopyTable(source.background)
                 backgroundColors.activeStepCheckboxChecked = CopyTable(source.mapPins)
