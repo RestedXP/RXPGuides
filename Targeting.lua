@@ -781,7 +781,18 @@ end
 
 function addon.targeting:CanCreateMacro() return GetNumMacros() < 119 end
 
-local function UpdateIconFrameVisuals(self, updateFrame)
+local function UpdateV1IconFrameVisuals(self)
+    self:SetScale(addon.settings.profile.activeTargetScale or 1)
+    addon.targeting:RenderTargetFrameBackground()
+    self.title:ClearBackdrop()
+    self.title:SetBackdrop(addon.RXPFrame.backdrop.edge)
+    self.title:SetBackdropColor(unpack(addon.colors.background))
+    self.title.text:SetFont(addon.font, 9, "")
+    self.title.text:SetTextColor(unpack(addon.activeTheme.textColor))
+    self.title:SetSize(self.title.text:GetStringWidth() + 10, 19)
+end
+
+local function UpdateV2IconFrameVisuals(self)
     local theme = addon.v2:GetTheme()
     self:SetScale(addon.settings.profile.activeTargetScale or 1)
     addon.targeting:RenderTargetFrameBackground()
@@ -799,6 +810,7 @@ function addon.targeting:CreateTargetFrame()
     self.activeTargetFrame = CreateFrame("Frame", "RXPTargetFrame", UIParent,
                                          BackdropTemplateMixin and "BackdropTemplate" or nil)
     local f = self.activeTargetFrame
+    f.v2 = addon.v2:IsGuideWindowEnabled()
 
     f:SetClampedToScreen(true)
     f:EnableMouse(true)
@@ -838,35 +850,38 @@ function addon.targeting:CreateTargetFrame()
     f.title = CreateFrame("Frame", "$parent_title", f, BackdropTemplateMixin and "BackdropTemplate" or nil)
     f.title:SetPoint("TOPLEFT", f, 5, 8)
     f.title:SetFrameLevel(f:GetFrameLevel() + 3)
-
-    local theme = addon.v2:GetTheme()
-    addon.ui.v2:ApplyFrameBackdrop(f.title, theme.edge, theme.backgroundColors.common,
-                                   theme.borderColors.commonEdge)
-
     f.title.text = f.title:CreateFontString(nil, "OVERLAY")
     f.title.text:ClearAllPoints()
     f.title.text:SetPoint("CENTER", f.title, 0, 0)
     f.title.text:SetJustifyH("CENTER")
     f.title.text:SetJustifyV("MIDDLE")
-    f.title.text:SetTextColor(unpack(theme.textColor.title))
     f.title.text:SetFont(addon.font, 9, "")
     f.title.text:SetText(L"Active Targets")
-
-    f.title:SetSize(f.title.text:GetStringWidth() + 10, 19)
 
     f.title:EnableMouse(true)
     f.title:SetScript("OnMouseDown", f.onMouseDown)
     f.title:SetScript("OnMouseUp", f.onMouseUp)
 
-    f.UpdateVisuals = UpdateIconFrameVisuals
+    f.UpdateVisuals = f.v2 and UpdateV2IconFrameVisuals or UpdateV1IconFrameVisuals
     f:SetHeight(40)
-    f:SetScale(addon.settings.profile.activeTargetScale)
+    f:UpdateVisuals()
 end
 
 function addon.targeting:RenderTargetFrameBackground()
     if not self.activeTargetFrame then return end
 
     local f = self.activeTargetFrame
+    if not f.v2 then
+        if addon.settings.profile.hideActiveTargetsBackground then
+            f:ClearBackdrop()
+        else
+            f:ClearBackdrop()
+            f:SetBackdrop(addon.RXPFrame.backdrop.edge)
+            f:SetBackdropColor(unpack(addon.colors.background))
+        end
+        return
+    end
+
     if addon.settings.profile.hideActiveTargetsBackground then
         addon.ui.v2:SetFrameBackdropShown(f, false)
     else
