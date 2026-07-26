@@ -160,7 +160,7 @@ function addon.ui.v2:AddFrameShadow(frame, xOffset, yOffset, alpha, size, shadow
 
     xOffset = xOffset or 0
     yOffset = yOffset or 0
-    alpha = alpha or (shadowKey == "stepItem" and 0.45 or 0.4)
+    alpha = alpha or (shadowKey == "stepItem" and 0.55 or 0.5)
     size = size or 2
     if alpha <= 0 or size <= 0 then return end
 
@@ -757,7 +757,6 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
                 this.settingsButton:SetHighlightTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-wrench", "ADD")
             end
             this.banner:SetTexture(theme.headerTexture)
-            this.banner:SetVertexColor(1, 1, 1, 1)
             if theme.splash then
                 this.splashBranding:SetTexture(theme.splash.path)
                 this.splashBranding:SetTexCoord(unpack(theme.splash.texCoords))
