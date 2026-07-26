@@ -3,11 +3,9 @@ local L = addon.locale.Get
 local fmt = string.format
 
 local themes = {}
-local convertedBorderColors = {"commonEdge", "activePartySteps", "activePartyTab",
-                                "inactivePartyTab", "itemEdge", "activeStepBadge",
-                                "activeStepCheckbox", "activeStepCheckboxChecked"}
-local convertedTextColors = {"common", "activePartySteps", "activePartyTab",
-                              "inactivePartyTab", "activeStepBadge"}
+local convertedBorderColors = {"common", "commonEdge", "inactivePartyTab",
+                                "activeStepCheckboxChecked"}
+local convertedTextColors = {"common", "title", "inactivePartyTab"}
 local UnitName = addon.GetUnitName
 addon.themes = themes
 
@@ -233,6 +231,10 @@ function addon:ReloadTheme()
         self.v2:UpdateGuideWindow()
         self.v2:GetGuideWindow():RefreshVisuals()
         self.v2:UpdateActiveStepTheme()
+        if self.activeItemFrame then self.activeItemFrame:UpdateVisuals() end
+        if self.targeting and self.targeting.activeTargetFrame then
+            self.targeting.activeTargetFrame:UpdateVisuals()
+        end
     end
 end
 
@@ -323,23 +325,15 @@ addon.v2.themes['RXP Blue V2'] = {
     backgroundColors = {
         common = {26 / 255, 28 / 255, 48 / 255, 0.95}, -- #1A1C30F2
         activeSteps = {11 / 255, 12 / 255, 26 / 255, 0.95}, -- #0B0C1AF2
-        activePartyTab = {28 / 255, 31 / 255, 52 / 255, 1}, -- #1C1F34FF
         inactivePartyTab = {32 / 255, 33 / 255, 49 / 255, 1}, -- #202131FF
-        activePartyFooter = {11 / 255, 12 / 255, 26 / 255, 1}, -- #0B0C1AFF
-        activeStepItem = {20 / 255, 22 / 255, 39 / 255, 0.98}, -- #141627FA
         activeStepCheckbox = {5 / 255, 7 / 255, 19 / 255, 1}, -- #050713FF
         activeStepCheckboxChecked = {17 / 255, 132 / 255, 1, 1}, -- #118401FF
     },
 
     borderColors = {
-        common = {1, 1, 1, 1}, -- #FFFFFFFF
+        common = {55 / 255, 62 / 255, 109 / 255, 1}, -- #373E6DFF
         commonEdge = {184 / 255, 190 / 255, 215 / 255, 1}, -- #B8BED7FF
-        activePartySteps = {55 / 255, 62 / 255, 109 / 255, 1}, -- #373E6DFF
-        activePartyTab = {55 / 255, 62 / 255, 109 / 255, 1}, -- #373E6DFF
         inactivePartyTab = {62 / 255, 66 / 255, 102 / 255, 1}, -- #3E4266FF
-        itemEdge = {184 / 255, 190 / 255, 215 / 255, 1}, -- #B8BED7FF
-        activeStepBadge = {184 / 255, 190 / 255, 215 / 255, 1}, -- #B8BED7FF
-        activeStepCheckbox = {55 / 255, 62 / 255, 109 / 255, 1}, -- #373E6DFF
         activeStepCheckboxChecked = {17 / 255, 132 / 255, 1, 1}, -- #118401FF
     },
 
@@ -355,13 +349,9 @@ addon.v2.themes['RXP Blue V2'] = {
     },
 
     textColor = {
-        common = {1, 1, 1, 1}, -- #FFFFFFFF
-        activePartySteps = {24 / 255, 210 / 255, 255 / 255, 1}, -- #18D2FFFF
-        activePartyTab = {24 / 255, 210 / 255, 255 / 255, 1}, -- #18D2FFFF
+        common = {210 / 255, 210 / 255, 220 / 255, 1}, -- #D2D2DCFF
+        title = {24 / 255, 210 / 255, 255 / 255, 1}, -- #18D2FFFF
         inactivePartyTab = {0.62, 0.62, 0.72, 1}, -- #9E9EB8FF
-        activePartyStepItem = {1, 1, 1, 1}, -- #FFFFFFFF
-        activeStepItem = {1, 1, 1, 1}, -- #FFFFFFFF
-        activeStepBadge = {24 / 255, 210 / 255, 255 / 255, 1}, -- #18D2FFFF
     }
 }
 
@@ -398,9 +388,7 @@ function addon.v2:ConvertThemes()
 
                 backgroundColors.common = CopyTable(source.background)
                 backgroundColors.activeSteps = CopyTable(source.bottomFrameBG)
-                backgroundColors.activePartyTab = CopyTable(source.background)
                 backgroundColors.inactivePartyTab = CopyTable(source.background)
-                backgroundColors.activePartyFooter = CopyTable(source.bottomFrameBG)
                 backgroundColors.activeStepCheckbox = CopyTable(source.background)
                 backgroundColors.activeStepCheckboxChecked = CopyTable(source.mapPins)
                 for _, key in ipairs(convertedBorderColors) do borderColors[key] = edgeColor end

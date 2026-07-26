@@ -3295,7 +3295,7 @@ function addon.v2:UpdatePartyActiveStepItem(stepItem, step)
     local text = step.text and step.text:gsub("\n%s+", "\n"):gsub("^%s+", "") or " "
     local theme = self:GetTheme()
     local elementLayout = theme.layout and theme.layout.activeStepElement or {}
-    local textColor = theme.textColor.activeStepItem or theme.textColor.common
+    local textColor = theme.textColor.common
     if not label then
         label = AceGUI:Create("Label")
         label:SetText(" ")

@@ -232,7 +232,7 @@ local function updateMenuTheme(listFrame, enabled)
     if backdrop then backdrop:Hide() end
     if menuBackdrop then menuBackdrop:Hide() end
     addon.ui.v2:ApplyFrameBackdrop(listFrame, theme.edge, theme.backgroundColors.activeSteps,
-                                   theme.borderColors.itemEdge)
+                                   theme.borderColors.commonEdge)
     addon.ui.v2:AddFrameShadow(listFrame)
     addon.ui.v2:SetFrameBackdropShown(listFrame, true)
     listFrame.rxpV2MenuThemeApplied = true
@@ -471,10 +471,10 @@ function addon.ui.v2:RegisterRXPV2GuideStepsItem()
             if force or not previous then
                 local background = theme.version == 1 and theme.backgroundColors.common or
                                        guideStepsCardColor
-                local border = theme.borderColors.itemEdge or theme.borderColors.commonEdge
+                local border = theme.borderColors.commonEdge
                 local badgeBackground = theme.version == 1 and theme.backgroundColors.activeSteps or
                                             guideStepsBadgeColor
-                local badgeBorder = theme.borderColors.activeStepBadge or border
+                local badgeBorder = theme.borderColors.commonEdge
                 addon.ui.v2:ApplyFrameBackdrop(this.frame, theme.edge, background, border)
                 addon.ui.v2:ApplyFrameBackdrop(this.numberFrame, theme.edge,
                                                badgeBackground, badgeBorder)
@@ -482,7 +482,7 @@ function addon.ui.v2:RegisterRXPV2GuideStepsItem()
             end
             if visualChanged then
                 this.frame:SetAlpha(row.complete and 0.5 or 1)
-                this.number:SetTextColor(unpack(row.current and theme.textColor.activeStepBadge or
+                this.number:SetTextColor(unpack(row.current and theme.textColor.title or
                                                     theme.textColor.inactivePartyTab))
             end
             return true, textChanged
@@ -724,22 +724,20 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             addon.ui.v2:ApplyFrameBackdrop(this.frame, theme.edge,
                                            theme.version == 1 and theme.backgroundColors.common or
                                                guideWindowBackgroundColor,
-                                           theme.borderColors.commonEdge or theme.borderColors.activePartySteps)
+                                           theme.borderColors.commonEdge)
             this.title:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
             this.title:SetTextColor(1, 0.82, 0)
             this.subtitle:SetFont(theme.font, addon.settings.profile.guideFontSize + 1, "")
             this.subtitle:SetTextColor(unpack(theme.textColor.common))
             this.footerText:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
-            this.footerBackground:SetColorTexture(unpack(theme.version == 1 and
-                                                               theme.backgroundColors.activeSteps or
-                                                               theme.backgroundColors.activePartyFooter))
+            this.footerBackground:SetColorTexture(unpack(theme.backgroundColors.activeSteps))
             this.guideStepsBackground:SetColorTexture(unpack(theme.version == 1 and
                                                                   theme.backgroundColors.common or
                                                                   guideStepsViewportColor))
             addon.ui.v2:ApplyFrameBackdrop(this.guideNameFrame, theme.edge,
                                            theme.version == 1 and theme.backgroundColors.common or
-                                               theme.backgroundColors.activePartyTab,
-                                           theme.borderColors.itemEdge)
+                                               theme.backgroundColors.common,
+                                           theme.borderColors.commonEdge)
             this.guideSelectBackground:SetColorTexture(unpack(theme.version == 1 and
                                                                     theme.backgroundColors.common or
                                                                     theme.backgroundColors.inactivePartyTab))
@@ -784,7 +782,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         addon.ui.v2:ApplyFrameBackdrop(frame, theme.edge,
                                        theme.version == 1 and theme.backgroundColors.common or
                                            guideWindowBackgroundColor,
-                                       theme.borderColors.commonEdge or theme.borderColors.activePartySteps)
+                                       theme.borderColors.commonEdge)
         frame:SetToplevel(true)
 
         local header = CreateFrame("Frame", nil, frame)
@@ -805,8 +803,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         guideNameFrame:EnableMouse(true)
         addon.ui.v2:ApplyFrameBackdrop(guideNameFrame, theme.edge,
                                        theme.version == 1 and theme.backgroundColors.common or
-                                           theme.backgroundColors.activePartyTab,
-                                       theme.borderColors.itemEdge)
+                                           theme.backgroundColors.common,
+                                       theme.borderColors.commonEdge)
         local splashBranding = header:CreateTexture(nil, "ARTWORK")
         -- Crop only the gnome splash from the atlas.  Its lower neighbor begins
         -- immediately below this region, so extending the crop leaves a visible
@@ -897,8 +895,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         footer:SetFrameLevel(frame:GetFrameLevel() + 1)
         local footerBackground = footer:CreateTexture(nil, "BACKGROUND")
         footerBackground:SetAllPoints()
-        footerBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.activeSteps or
-                                                    theme.backgroundColors.activePartyFooter))
+        footerBackground:SetColorTexture(unpack(theme.backgroundColors.activeSteps))
         local footerText = footer:CreateFontString(nil, "OVERLAY")
         footerText:SetPoint("CENTER")
         footerText:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
@@ -1639,14 +1636,11 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             local backgroundColors = theme.backgroundColors or {}
             local borderColors = theme.borderColors or {}
             local textColor = theme.textColor or {}
-            local background = active and
-                               (backgroundColors.activePartyTab or backgroundColors.activePartyTitle) or
+            local background = active and backgroundColors.common or
                                (backgroundColors.inactivePartyTab or backgroundColors.activeSteps)
-            local border = active and
-                           (borderColors.activePartyTab or borderColors.activePartySteps) or
-                           (borderColors.inactivePartyTab or borderColors.activePartySteps)
-            local labelColor = active and
-                               (textColor.activePartyTab or textColor.activePartySteps) or
+            local border = active and borderColors.common or
+                               (borderColors.inactivePartyTab or borderColors.common)
+            local labelColor = active and textColor.title or
                                (textColor.inactivePartyTab or textColor.common)
 
             addon.ui.v2:ApplyFrameBackdrop(tab, theme.edge,
@@ -1829,7 +1823,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         self:ApplyFrameBackdrop(frame, theme.edge,
                                 theme.backgroundColors.common,
-                                theme.borderColors.itemEdge or theme.borderColors.common)
+                                theme.borderColors.commonEdge)
         self:AddFrameShadow(frame, nil, nil, nil, nil, "stepItem")
 
         if frame.SetResizeBounds then -- WoW 10.0
@@ -1861,9 +1855,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         local footerBackground = footer:CreateTexture(nil, "BACKGROUND")
         footerBackground:SetAllPoints()
-        local footerColor = theme.backgroundColors.activePartyFooter or
-                                theme.backgroundColors.activeSteps
-        footerBackground:SetColorTexture(unpack(footerColor))
+        footerBackground:SetColorTexture(unpack(theme.backgroundColors.activeSteps))
 
         local footertext = footer:CreateFontString(nil, "OVERLAY")
         footertext:SetPoint("CENTER", footer, 0, 0)
@@ -2006,7 +1998,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                            theme.backgroundColors.activeStepCheckbox
         local border = not hovered and checked and
                        theme.borderColors.activeStepCheckboxChecked or
-                       theme.borderColors.activeStepCheckbox
+                       theme.borderColors.common
 
         addon.ui.v2:ApplyFrameBackdrop(button, theme.edge, background, border)
         button.rxpBackground:SetShown(not hovered)
@@ -2015,7 +2007,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         button.rxpCheckLong:SetShown(checked and not hovered)
 
         addon.ui.v2:ApplyFrameBackdrop(button.rxpHoverFrame, theme.edge, transparent,
-                                       theme.borderColors.activeStepCheckbox)
+                                       theme.borderColors.common)
         button.rxpHoverFrame:SetShown(hovered)
     end
 
@@ -2254,7 +2246,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             local theme, textColor
             if not watchOnly then
                 theme = addon.v2:GetTheme()
-                textColor = theme.textColor.activeStepItem or theme.textColor.common
+                textColor = theme.textColor.common
             end
             local visibleCount = 0
 
@@ -2365,16 +2357,16 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             local theme = addon.v2:GetTheme()
             local itemBackground = theme.version == 1 and theme.backgroundColors.activeSteps or
                                        theme.backgroundColors.common
-            local itemBorder = theme.borderColors.itemEdge or theme.borderColors.common
-            local badgeBackground = theme.backgroundColors.activeStepBadge or itemBackground
-            local badgeBorder = theme.borderColors.activeStepBadge or itemBorder
-            local badgeTextColor = theme.textColor.activeStepBadge or theme.textColor.common
+            local itemBorder = theme.borderColors.commonEdge
+            local badgeBackground = itemBackground
+            local badgeBorder = theme.borderColors.commonEdge
+            local badgeTextColor = theme.textColor.title
 
             addon.ui.v2:ApplyFrameBackdrop(this.card, theme.edge, itemBackground, itemBorder)
             addon.ui.v2:ApplyFrameBackdrop(this.title, theme.edge, badgeBackground, badgeBorder)
             this.titletext:SetTextColor(unpack(badgeTextColor))
 
-            local textColor = theme.textColor.activeStepItem or theme.textColor.common
+            local textColor = theme.textColor.common
             local row
             for rowIndex = 1, this.activeElementRows or 0 do
                 row = this.elementRows[rowIndex]
@@ -2399,11 +2391,10 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         local theme = addon.v2:GetTheme()
         local itemBackground = theme.version == 1 and theme.backgroundColors.activeSteps or
                                    theme.backgroundColors.common
-        local itemBorder = theme.borderColors.itemEdge or theme.borderColors.common
-        local itemTextColor = theme.textColor.activeStepItem or theme.textColor.common
-        local badgeBackground = theme.backgroundColors.activeStepBadge or itemBackground
-        local badgeBorder = theme.borderColors.activeStepBadge or itemBorder
-        local badgeTextColor = theme.textColor.activeStepBadge or itemTextColor
+        local itemBorder = theme.borderColors.commonEdge
+        local badgeBackground = itemBackground
+        local badgeBorder = theme.borderColors.commonEdge
+        local badgeTextColor = theme.textColor.title
 
         local card = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         card:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
@@ -2509,14 +2500,13 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
 
             local theme = addon.v2:GetTheme()
             local itemBackground = theme.backgroundColors.common
-            local itemBorder = theme.borderColors.itemEdge or theme.borderColors.common
-            local badgeBackground = theme.backgroundColors.activeStepBadge or
-                                    itemBackground
-            local badgeBorder = theme.borderColors.activeStepBadge or
-                                itemBorder
+            local itemBorder = theme.borderColors.commonEdge
+            local badgeBackground = itemBackground
+            local badgeBorder = theme.borderColors.commonEdge
 
             addon.ui.v2:ApplyFrameBackdrop(this.card, theme.edge, itemBackground, itemBorder)
             addon.ui.v2:ApplyFrameBackdrop(this.title, theme.edge, badgeBackground, badgeBorder)
+            this.titletext:SetTextColor(unpack(theme.textColor.title))
         end
     }
 
@@ -2528,14 +2518,10 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
 
         local theme = addon.v2:GetTheme()
         local itemBackground = theme.backgroundColors.common
-        local itemBorder = theme.borderColors.itemEdge or theme.borderColors.common
-        local itemTextColor = theme.textColor.activeStepItem or theme.textColor.common
-        local badgeBackground = theme.backgroundColors.activeStepBadge or
-                                itemBackground
-        local badgeBorder = theme.borderColors.activeStepBadge or
-                            itemBorder
-        local badgeTextColor = theme.textColor.activeStepBadge or
-                               itemTextColor
+        local itemBorder = theme.borderColors.commonEdge
+        local badgeBackground = itemBackground
+        local badgeBorder = theme.borderColors.commonEdge
+        local badgeTextColor = theme.textColor.title
 
         local card = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         card:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)

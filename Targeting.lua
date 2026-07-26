@@ -786,9 +786,9 @@ local function UpdateIconFrameVisuals(self, updateFrame)
     self:SetScale(addon.settings.profile.activeTargetScale or 1)
     addon.targeting:RenderTargetFrameBackground()
     addon.ui.v2:ApplyFrameBackdrop(self.title, theme.edge, theme.backgroundColors.activeSteps,
-                                   theme.borderColors.itemEdge)
+                                   theme.borderColors.commonEdge)
     self.title.text:SetFont(addon.font, 9, "")
-    self.title.text:SetTextColor(unpack(theme.textColor.activePartySteps))
+    self.title.text:SetTextColor(unpack(theme.textColor.title))
     self.title:SetSize(self.title.text:GetStringWidth() + 10, 19)
 end
 
@@ -841,14 +841,14 @@ function addon.targeting:CreateTargetFrame()
 
     local theme = addon.v2:GetTheme()
     addon.ui.v2:ApplyFrameBackdrop(f.title, theme.edge, theme.backgroundColors.activeSteps,
-                                   theme.borderColors.itemEdge)
+                                   theme.borderColors.commonEdge)
 
     f.title.text = f.title:CreateFontString(nil, "OVERLAY")
     f.title.text:ClearAllPoints()
     f.title.text:SetPoint("CENTER", f.title, 0, 0)
     f.title.text:SetJustifyH("CENTER")
     f.title.text:SetJustifyV("MIDDLE")
-    f.title.text:SetTextColor(unpack(theme.textColor.activePartySteps))
+    f.title.text:SetTextColor(unpack(theme.textColor.title))
     f.title.text:SetFont(addon.font, 9, "")
     f.title.text:SetText(L"Active Targets")
 
@@ -874,7 +874,7 @@ function addon.targeting:RenderTargetFrameBackground()
         addon.ui.v2:ApplyFrameBackdrop(f, theme.edge,
                                        theme.version == 1 and theme.backgroundColors.common or
                                            theme.backgroundColors.activeSteps,
-                                       theme.borderColors.itemEdge)
+                                       theme.borderColors.commonEdge)
         addon.ui.v2:AddFrameShadow(f)
         addon.ui.v2:SetFrameBackdropShown(f, true)
     end
