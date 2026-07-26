@@ -264,23 +264,25 @@ end
 
 function addon:ShowMenu(menu, menuFrame, anchor, x, y, displayMode, autoHideDelay)
     local v2GuideWindow = addon.v2:IsGuideWindowEnabled()
-    local hadV2MenuTheme = menuFrame.rxpV2MenuTheme ~= nil
+    local hadV2MenuTheme = menuFrame.rxpV2MenuTheme
     if v2GuideWindow then
         menuFrame.rxpV2MenuTheme = addon.settings.profile.enableV2MenuTheme
-    elseif hadV2MenuTheme then
-        menuFrame.rxpV2MenuTheme = false
+    else
+        menuFrame.rxpV2MenuTheme = nil
     end
 
     if _G.EasyMenu then
+        if hadV2MenuTheme then updateMenuTheme(_G.DropDownList1, false) end
         _G.EasyMenu(menu, menuFrame, anchor, x, y, displayMode, autoHideDelay)
-        if v2GuideWindow or hadV2MenuTheme then
+        if menuFrame.rxpV2MenuTheme then
             updateMenuTheme(_G.DropDownList1, menuFrame.rxpV2MenuTheme)
         end
         if v2GuideWindow then hookMenuSubmenus("DropDownList") end
     else
+        if hadV2MenuTheme then updateMenuTheme(_G.L_DropDownList1, false) end
         LibStub:GetLibrary("LibUIDropDownMenu-4.0"):EasyMenu(menu, menuFrame, anchor, x, y, displayMode,
                                                                autoHideDelay)
-        if v2GuideWindow or hadV2MenuTheme then
+        if menuFrame.rxpV2MenuTheme then
             updateMenuTheme(_G.L_DropDownList1, menuFrame.rxpV2MenuTheme)
         end
         if v2GuideWindow then hookMenuSubmenus("L_DropDownList") end
