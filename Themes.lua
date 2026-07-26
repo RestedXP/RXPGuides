@@ -227,6 +227,7 @@ function addon:ReloadTheme()
 
     self.RenderFrame('themeReload')
     self.v2:ConvertThemes()
+    self.SetupArrow()
 
     if self.v2:IsGuideWindowEnabled() then
         self.v2:UpdateGuideWindow()
@@ -313,6 +314,7 @@ addon.v2.themes['RXP Blue V2'] = {
     font = _G.GameFontNormal:GetFont(),
     mapPins = {26 / 255, 28 / 255, 48 / 255, 0.95}, -- #1A1C30F2
     headerTexture = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-header-texture",
+    navigationArrow = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp_navigation_arrow-1",
     splash = {
         path = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-header-images",
         texCoords = {256 / 512, 512 / 512, 0, 160 / 512},
@@ -388,6 +390,7 @@ function addon.v2:ConvertThemes()
                 converted.name = name
                 converted.version = sourceVersion
                 converted.headerTexture = source.texturePath .. source.headerTexture
+                converted.navigationArrow = source.texturePath .. "rxp_navigation_arrow-1"
                 converted.edge.edgeFile = source.bgTextures and source.bgTextures.edge or
                                              "Interface/BUTTONS/WHITE8X8"
                 converted.splash = source.splash and CopyTable(source.splash)
