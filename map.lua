@@ -15,7 +15,7 @@ addon.arrowFrame = CreateFrame("Frame", "RXPG_ARROW", UIParent)
 local af = addon.arrowFrame
 
 function addon.arrowFrame:UpdateVisuals()
-    local texture = addon.GetTexture("rxp_navigation_arrow-1")
+    local texture = addon.GetV1Texture("rxp_navigation_arrow-1")
     if addon.v2 and addon.v2:IsGuideWindowEnabled() then
         texture = "Interface/AddOns/" .. addonName ..
                       "/Textures/v2/rxp_navigation_arrow-1"
@@ -266,7 +266,7 @@ MapPinPool.creationFunc = function(framePool)
 
     -- Styling
     f:SetBackdrop({
-        bgFile = addon.GetTexture("white_circle"),
+        bgFile = addon.GetV1Texture("white_circle"),
         insets = {left = 0, right = 0, top = 0, bottom = 0}
     })
     f:SetWidth(0)
@@ -278,7 +278,7 @@ MapPinPool.creationFunc = function(framePool)
     f.inner = CreateFrame("Button", nil, f,
                           BackdropTemplateMixin and "BackdropTemplate")
     f.inner:SetBackdrop({
-        bgFile = addon.GetTexture("map_active_step_target_icon"),
+        bgFile = addon.GetV1Texture("map_active_step_target_icon"),
         insets = {left = 0, right = 0, top = 0, bottom = 0}
     })
     f.inner:SetPoint("CENTER", 0, 0)

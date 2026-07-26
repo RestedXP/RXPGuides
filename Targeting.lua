@@ -782,10 +782,13 @@ end
 function addon.targeting:CanCreateMacro() return GetNumMacros() < 119 end
 
 local function UpdateIconFrameVisuals(self, updateFrame)
+    local theme = addon.v2:GetTheme()
     self:SetScale(addon.settings.profile.activeTargetScale or 1)
     addon.targeting:RenderTargetFrameBackground()
+    addon.ui.v2:ApplyFrameBackdrop(self.title, theme.edge, theme.backgroundColors.activeSteps,
+                                   theme.borderColors.itemEdge)
     self.title.text:SetFont(addon.font, 9, "")
-    self.title.text:SetTextColor(unpack(addon.v2:GetTheme().textColor.activePartySteps))
+    self.title.text:SetTextColor(unpack(theme.textColor.activePartySteps))
     self.title:SetSize(self.title.text:GetStringWidth() + 10, 19)
 end
 
@@ -837,7 +840,7 @@ function addon.targeting:CreateTargetFrame()
     f.title:SetFrameLevel(f:GetFrameLevel() + 3)
 
     local theme = addon.v2:GetTheme()
-    addon.ui.v2:ApplyFrameBackdrop(f.title, theme.edges.common, theme.backgroundColors.activeSteps,
+    addon.ui.v2:ApplyFrameBackdrop(f.title, theme.edge, theme.backgroundColors.activeSteps,
                                    theme.borderColors.itemEdge)
 
     f.title.text = f.title:CreateFontString(nil, "OVERLAY")
@@ -868,7 +871,9 @@ function addon.targeting:RenderTargetFrameBackground()
         addon.ui.v2:SetFrameBackdropShown(f, false)
     else
         local theme = addon.v2:GetTheme()
-        addon.ui.v2:ApplyFrameBackdrop(f, theme.edges.common, theme.backgroundColors.activeSteps,
+        addon.ui.v2:ApplyFrameBackdrop(f, theme.edge,
+                                       theme.version == 1 and theme.backgroundColors.common or
+                                           theme.backgroundColors.activeSteps,
                                        theme.borderColors.itemEdge)
         addon.ui.v2:AddFrameShadow(f)
         addon.ui.v2:SetFrameBackdropShown(f, true)

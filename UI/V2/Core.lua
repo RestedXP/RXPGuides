@@ -111,6 +111,9 @@ function addon.ui.v2:ApplyFrameBackdrop(frame, edge, backgroundColor, borderColo
     setTextureGroupColor(frame.rxpBackground, backgroundColor)
 
     if frame.rxpBorder then
+        for index, key in ipairs({"top", "bottom", "left", "right"}) do
+            setBorderTexture(frame.rxpBorder.textures[index], key)
+        end
         setTextureGroupColor(frame.rxpBorder, borderColor)
         return
     end
@@ -228,7 +231,7 @@ local function updateMenuTheme(listFrame, enabled)
     local theme = addon.v2:GetTheme()
     if backdrop then backdrop:Hide() end
     if menuBackdrop then menuBackdrop:Hide() end
-    addon.ui.v2:ApplyFrameBackdrop(listFrame, theme.edges.common, theme.backgroundColors.activeSteps,
+    addon.ui.v2:ApplyFrameBackdrop(listFrame, theme.edge, theme.backgroundColors.activeSteps,
                                    theme.borderColors.itemEdge)
     addon.ui.v2:AddFrameShadow(listFrame)
     addon.ui.v2:SetFrameBackdropShown(listFrame, true)
@@ -466,16 +469,14 @@ function addon.ui.v2:RegisterRXPV2GuideStepsItem()
                 this.numberFrame:SetWidth(max(this.number:GetStringWidth() + 6, 16))
             end
             if force or not previous then
-                local background = guideStepsCardColor
+                local background = theme.version == 1 and theme.backgroundColors.common or
+                                       guideStepsCardColor
                 local border = theme.borderColors.itemEdge or theme.borderColors.commonEdge
-                local badgeEdge = theme.edges.activeStepBadge or theme.edges.activeStepItem or
-                                      theme.edges.common
-                local badgeBackground = guideStepsBadgeColor
+                local badgeBackground = theme.version == 1 and theme.backgroundColors.activeSteps or
+                                            guideStepsBadgeColor
                 local badgeBorder = theme.borderColors.activeStepBadge or border
-                addon.ui.v2:ApplyFrameBackdrop(this.frame,
-                                               theme.edges.activeStepItem or theme.edges.common,
-                                               background, border)
-                addon.ui.v2:ApplyFrameBackdrop(this.numberFrame, badgeEdge,
+                addon.ui.v2:ApplyFrameBackdrop(this.frame, theme.edge, background, border)
+                addon.ui.v2:ApplyFrameBackdrop(this.numberFrame, theme.edge,
                                                badgeBackground, badgeBorder)
                 this.text:SetTextColor(unpack(theme.textColor.common))
             end
@@ -617,6 +618,7 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
             if this.activeOffset then this.scroll:ScrollToOffset(this.activeOffset) end
         end,
         ["RefreshVisuals"] = function(this)
+            this.scroll:RefreshVisuals()
             if this.rows then this:SetRows(this.rows, true) end
         end,
     }
@@ -719,23 +721,52 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         end,
         ["RefreshVisuals"] = function(this)
             local theme = addon.v2:GetTheme()
-            addon.ui.v2:ApplyFrameBackdrop(this.frame,
-                                           theme.edges.activeSteps or theme.edges.activePartySteps or theme.edges.common,
-                                           guideWindowBackgroundColor,
+            addon.ui.v2:ApplyFrameBackdrop(this.frame, theme.edge,
+                                           theme.version == 1 and theme.backgroundColors.common or
+                                               guideWindowBackgroundColor,
                                            theme.borderColors.commonEdge or theme.borderColors.activePartySteps)
             this.title:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
             this.title:SetTextColor(1, 0.82, 0)
             this.subtitle:SetFont(theme.font, addon.settings.profile.guideFontSize + 1, "")
             this.subtitle:SetTextColor(unpack(theme.textColor.common))
             this.footerText:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
-            this.footerBackground:SetColorTexture(unpack(theme.backgroundColors.activePartyFooter or
-                                                         theme.backgroundColors.activePartySteps))
-            addon.ui.v2:ApplyFrameBackdrop(this.guideNameFrame, theme.edges.common,
-                                           theme.backgroundColors.activePartyTab,
+            this.footerBackground:SetColorTexture(unpack(theme.version == 1 and
+                                                               theme.backgroundColors.activeSteps or
+                                                               theme.backgroundColors.activePartyFooter))
+            this.guideStepsBackground:SetColorTexture(unpack(theme.version == 1 and
+                                                                  theme.backgroundColors.common or
+                                                                  guideStepsViewportColor))
+            addon.ui.v2:ApplyFrameBackdrop(this.guideNameFrame, theme.edge,
+                                           theme.version == 1 and theme.backgroundColors.common or
+                                               theme.backgroundColors.activePartyTab,
                                            theme.borderColors.itemEdge)
-            this.guideSelectBackground:SetColorTexture(unpack(theme.backgroundColors.inactivePartyTab))
+            this.guideSelectBackground:SetColorTexture(unpack(theme.version == 1 and
+                                                                    theme.backgroundColors.common or
+                                                                    theme.backgroundColors.inactivePartyTab))
+            this.guideSelectDivider:SetShown(theme.version ~= 1)
             this.guideSelectDivider:SetColorTexture(unpack(theme.borderColors.inactivePartyTab))
-            this.splashBranding:SetShown(addon.settings.profile.guideWindowV2SplashBranding)
+            this.closebutton:SetShown(theme.version ~= 1)
+            this.classIcon:SetTexture(addon.GetV1Texture(addon.player.class))
+            if theme.version == 1 then
+                this.iconLogo:SetTexture(addon.GetV1Texture("rxp_logo-64"))
+                this.settingsButton:SetNormalTexture(addon.GetV1Texture("rxp_cog-32"))
+                this.settingsButton:SetPushedTexture(addon.GetV1Texture("rxp_cog-32"))
+                this.settingsButton:SetHighlightTexture(addon.GetV1Texture("rxp_cog-32"), "ADD")
+            else
+                this.iconLogo:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-icon-logo")
+                this.settingsButton:SetNormalTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-wrench")
+                this.settingsButton:SetPushedTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-wrench")
+                this.settingsButton:SetHighlightTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-wrench", "ADD")
+            end
+            this.banner:SetTexture(theme.headerTexture)
+            this.banner:SetVertexColor(1, 1, 1, 1)
+            if theme.splash then
+                this.splashBranding:SetTexture(theme.splash.path)
+                this.splashBranding:SetTexCoord(unpack(theme.splash.texCoords))
+                this.splashBranding:SetShown(addon.settings.profile.guideWindowV2SplashBranding)
+            else
+                this.splashBranding:Hide()
+            end
             this.guideSteps:RefreshVisuals()
         end,
     }
@@ -750,9 +781,9 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         frame:SetFrameStrata("BACKGROUND")
         frame:SetFrameLevel(100)
         local theme = addon.v2:GetTheme()
-        addon.ui.v2:ApplyFrameBackdrop(frame,
-                                       theme.edges.activeSteps or theme.edges.activePartySteps or theme.edges.common,
-                                       guideWindowBackgroundColor,
+        addon.ui.v2:ApplyFrameBackdrop(frame, theme.edge,
+                                       theme.version == 1 and theme.backgroundColors.common or
+                                           guideWindowBackgroundColor,
                                        theme.borderColors.commonEdge or theme.borderColors.activePartySteps)
         frame:SetToplevel(true)
 
@@ -766,14 +797,15 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         banner:SetPoint("TOPLEFT")
         banner:SetPoint("TOPRIGHT")
         banner:SetHeight(44)
-        banner:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-header-texture")
+        banner:SetTexture(theme.headerTexture)
         local guideNameFrame = CreateFrame("Frame", nil, header)
         guideNameFrame:SetPoint("TOPLEFT", header, "TOPLEFT", 0, -44)
         guideNameFrame:SetPoint("BOTTOMRIGHT")
         guideNameFrame:SetFrameLevel(header:GetFrameLevel() + 1)
         guideNameFrame:EnableMouse(true)
-        addon.ui.v2:ApplyFrameBackdrop(guideNameFrame, theme.edges.common,
-                                       theme.backgroundColors.activePartyTab,
+        addon.ui.v2:ApplyFrameBackdrop(guideNameFrame, theme.edge,
+                                       theme.version == 1 and theme.backgroundColors.common or
+                                           theme.backgroundColors.activePartyTab,
                                        theme.borderColors.itemEdge)
         local splashBranding = header:CreateTexture(nil, "ARTWORK")
         -- Crop only the gnome splash from the atlas.  Its lower neighbor begins
@@ -781,23 +813,34 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         -- white remnant beneath the guide header.
     splashBranding:SetPoint("TOPLEFT", header, "TOPLEFT", 38, 32)
         splashBranding:SetSize(128, 80)
-        splashBranding:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-header-images")
-        splashBranding:SetTexCoord(256 / 512, 512 / 512, 0, 160 / 512)
-        splashBranding:SetShown(addon.settings.profile.guideWindowV2SplashBranding)
+        if theme.splash then
+            splashBranding:SetTexture(theme.splash.path)
+            splashBranding:SetTexCoord(unpack(theme.splash.texCoords))
+            splashBranding:SetShown(addon.settings.profile.guideWindowV2SplashBranding)
+        else
+            splashBranding:Hide()
+        end
         local iconLogo = header:CreateTexture(nil, "ARTWORK")
         iconLogo:SetPoint("LEFT", -12, 27)
         iconLogo:SetSize(64, 64)
-        iconLogo:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-icon-logo")
         local classIcon = guideNameFrame:CreateTexture(nil, "OVERLAY")
         classIcon:SetPoint("BOTTOMRIGHT", iconLogo, "BOTTOMRIGHT", 14, 2)
         classIcon:SetSize(28, 28)
-        classIcon:SetTexture(addon.GetTexture(addon.player.class))
+        classIcon:SetTexture(addon.GetV1Texture(addon.player.class))
         local settingsButton = CreateFrame("Button", nil, guideNameFrame)
         settingsButton:SetPoint("LEFT", guideNameFrame, "LEFT", 6, 0)
         settingsButton:SetSize(24, 24)
-        settingsButton:SetNormalTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-wrench")
-        settingsButton:SetPushedTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-wrench")
-        settingsButton:SetHighlightTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-wrench", "ADD")
+        if theme.version == 1 then
+            iconLogo:SetTexture(addon.GetV1Texture("rxp_logo-64"))
+            settingsButton:SetNormalTexture(addon.GetV1Texture("rxp_cog-32"))
+            settingsButton:SetPushedTexture(addon.GetV1Texture("rxp_cog-32"))
+            settingsButton:SetHighlightTexture(addon.GetV1Texture("rxp_cog-32"), "ADD")
+        else
+            iconLogo:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-icon-logo")
+            settingsButton:SetNormalTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-wrench")
+            settingsButton:SetPushedTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-wrench")
+            settingsButton:SetHighlightTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-wrench", "ADD")
+        end
         settingsButton:SetScript("OnClick", function() addon.v2:ShowSettingsMenu() end)
         local guideSelectButton = CreateFrame("Button", nil, guideNameFrame)
         guideSelectButton:SetPoint("TOPRIGHT")
@@ -806,11 +849,13 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         local guideSelectBackground = guideSelectButton:CreateTexture(nil, "BACKGROUND")
         guideSelectBackground:SetPoint("TOPLEFT", 1, -1)
         guideSelectBackground:SetPoint("BOTTOMRIGHT", -1, 1)
-        guideSelectBackground:SetColorTexture(unpack(theme.backgroundColors.inactivePartyTab))
+        guideSelectBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
+                                                         theme.backgroundColors.inactivePartyTab))
         local guideSelectDivider = guideSelectButton:CreateTexture(nil, "BORDER")
         guideSelectDivider:SetPoint("TOPLEFT", 1, -1)
         guideSelectDivider:SetPoint("BOTTOMLEFT", 1, 1)
         guideSelectDivider:SetWidth(1)
+        guideSelectDivider:SetShown(theme.version ~= 1)
         guideSelectDivider:SetColorTexture(unpack(theme.borderColors.inactivePartyTab))
         local guideSelectHighlight = guideSelectButton:CreateTexture(nil, "HIGHLIGHT")
         guideSelectHighlight:SetAllPoints()
@@ -843,6 +888,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         closebutton:SetPushedTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close")
         closebutton:SetHighlightTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close", "ADD")
         closebutton:RegisterForClicks("LeftButtonUp")
+        closebutton:SetShown(theme.version ~= 1)
 
         local footer = CreateFrame("Frame", nil, frame)
         footer:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", 1, 1)
@@ -851,8 +897,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         footer:SetFrameLevel(frame:GetFrameLevel() + 1)
         local footerBackground = footer:CreateTexture(nil, "BACKGROUND")
         footerBackground:SetAllPoints()
-        footerBackground:SetColorTexture(unpack(theme.backgroundColors.activePartyFooter or
-                                                 theme.backgroundColors.activePartySteps))
+        footerBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.activeSteps or
+                                                    theme.backgroundColors.activePartyFooter))
         local footerText = footer:CreateFontString(nil, "OVERLAY")
         footerText:SetPoint("CENTER")
         footerText:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
@@ -870,13 +916,16 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         local guideStepsBackground = frame:CreateTexture(nil, "BACKGROUND")
         guideStepsBackground:SetPoint("TOPLEFT", frame, "TOPLEFT", 5, -83)
         guideStepsBackground:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -5, 17)
-        guideStepsBackground:SetColorTexture(unpack(guideStepsViewportColor))
+        guideStepsBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
+                                                        guideStepsViewportColor))
         local guideSteps = AceGUI:Create("RXPV2GuideSteps")
         guideSteps.frame:SetParent(frame)
         guideSteps.frame:SetPoint("TOPLEFT", frame, "TOPLEFT", 6, -84)
         guideSteps.frame:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -6, 18)
 
-        local widget = {frame = frame, header = header, title = title, subtitle = subtitle, footer = footer,
+        local widget = {frame = frame, header = header, banner = banner, closebutton = closebutton,
+                        iconLogo = iconLogo, classIcon = classIcon,
+                        settingsButton = settingsButton, title = title, subtitle = subtitle, footer = footer,
                         footerBackground = footerBackground, footerText = footerText,
                         guideNameFrame = guideNameFrame, guideSelectButton = guideSelectButton,
                         guideSelectBackground = guideSelectBackground, guideSelectDivider = guideSelectDivider,
@@ -1183,6 +1232,27 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
             this.scrollframe:SetScript("OnUpdate", FixScrollOnUpdate)
         end,
 
+        ["RefreshVisuals"] = function(this)
+            local theme = addon.v2:GetTheme()
+            if theme.version == 1 then
+                this.scrollbg:SetColorTexture(unpack(theme.backgroundColors.common))
+                this.scrollbar.ThumbTexture:SetDesaturated(true)
+                this.scrollbar.ThumbTexture:SetVertexColor(unpack(theme.backgroundColors.activeSteps))
+                for _, button in ipairs({this.scrollbar.ScrollUpButton, this.scrollbar.ScrollDownButton}) do
+                    button.Normal:SetDesaturated(true)
+                    button.Normal:SetVertexColor(unpack(theme.backgroundColors.activeSteps))
+                end
+            else
+                this.scrollbg:SetColorTexture(0, 0, 0, 0.4)
+                this.scrollbar.ThumbTexture:SetDesaturated(false)
+                this.scrollbar.ThumbTexture:SetVertexColor(1, 1, 1, 1)
+                for _, button in ipairs({this.scrollbar.ScrollUpButton, this.scrollbar.ScrollDownButton}) do
+                    button.Normal:SetDesaturated(false)
+                    button.Normal:SetVertexColor(1, 1, 1, 1)
+                end
+            end
+        end,
+
         ["UpdateTheme"] = updateTheme,
 
         ["GetContentTopPadding"] = function(this) return this.contentTopPadding or 0 end,
@@ -1240,7 +1310,6 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
 
         local scrollbg = scrollbar:CreateTexture(nil, "BACKGROUND")
         scrollbg:SetAllPoints(scrollbar)
-        scrollbg:SetColorTexture(0, 0, 0, 0.4)
 
         -- Container Support
         local content = CreateFrame("Frame", nil, scrollframe)
@@ -1253,12 +1322,14 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
             localstatus = {scrollvalue = 0},
             scrollframe = scrollframe,
             scrollbar = scrollbar,
+            scrollbg = scrollbg,
             content = content,
             frame = frame,
             type = Type
         }
         for method, func in pairs(methods) do widget[method] = func end
         scrollframe.obj, scrollbar.obj = widget, widget
+        widget:RefreshVisuals()
 
         return AceGUI:RegisterAsContainer(widget)
     end
@@ -1570,7 +1641,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             local textColor = theme.textColor or {}
             local background = active and
                                (backgroundColors.activePartyTab or backgroundColors.activePartyTitle) or
-                               (backgroundColors.inactivePartyTab or backgroundColors.activePartySteps)
+                               (backgroundColors.inactivePartyTab or backgroundColors.activeSteps)
             local border = active and
                            (borderColors.activePartyTab or borderColors.activePartySteps) or
                            (borderColors.inactivePartyTab or borderColors.activePartySteps)
@@ -1578,7 +1649,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                                (textColor.activePartyTab or textColor.activePartySteps) or
                                (textColor.inactivePartyTab or textColor.common)
 
-            addon.ui.v2:ApplyFrameBackdrop(tab, theme.edges.activePartySteps or theme.edges.common,
+            addon.ui.v2:ApplyFrameBackdrop(tab, theme.edge,
                                            background or backgroundColors.common,
                                            border or borderColors.common)
             tab.text:SetTextColor(unpack(labelColor or textColor.common))
@@ -1756,7 +1827,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         local theme = addon.v2:GetTheme()
 
-        self:ApplyFrameBackdrop(frame, theme.edges.activeStepItem or theme.edges.common,
+        self:ApplyFrameBackdrop(frame, theme.edge,
                                 theme.backgroundColors.common,
                                 theme.borderColors.itemEdge or theme.borderColors.common)
         self:AddFrameShadow(frame, nil, nil, nil, nil, "stepItem")
@@ -1791,7 +1862,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         local footerBackground = footer:CreateTexture(nil, "BACKGROUND")
         footerBackground:SetAllPoints()
         local footerColor = theme.backgroundColors.activePartyFooter or
-                                theme.backgroundColors.activePartySteps
+                                theme.backgroundColors.activeSteps
         footerBackground:SetColorTexture(unpack(footerColor))
 
         local footertext = footer:CreateFontString(nil, "OVERLAY")
@@ -1937,13 +2008,13 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                        theme.borderColors.activeStepCheckboxChecked or
                        theme.borderColors.activeStepCheckbox
 
-        addon.ui.v2:ApplyFrameBackdrop(button, theme.edges.common, background, border)
+        addon.ui.v2:ApplyFrameBackdrop(button, theme.edge, background, border)
         button.rxpBackground:SetShown(not hovered)
         button.rxpBorder:SetShown(not hovered)
         button.rxpCheckShort:SetShown(checked and not hovered)
         button.rxpCheckLong:SetShown(checked and not hovered)
 
-        addon.ui.v2:ApplyFrameBackdrop(button.rxpHoverFrame, theme.edges.common, transparent,
+        addon.ui.v2:ApplyFrameBackdrop(button.rxpHoverFrame, theme.edge, transparent,
                                        theme.borderColors.activeStepCheckbox)
         button.rxpHoverFrame:SetShown(hovered)
     end
@@ -2292,15 +2363,16 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             if not payload then return end
 
             local theme = addon.v2:GetTheme()
-            local itemEdge = theme.edges.activeStepItem or theme.edges.common
-            local itemBackground = theme.backgroundColors.common
+            local itemBackground = theme.version == 1 and theme.backgroundColors.activeSteps or
+                                       theme.backgroundColors.common
             local itemBorder = theme.borderColors.itemEdge or theme.borderColors.common
-            local badgeEdge = theme.edges.activeStepBadge or itemEdge
             local badgeBackground = theme.backgroundColors.activeStepBadge or itemBackground
             local badgeBorder = theme.borderColors.activeStepBadge or itemBorder
+            local badgeTextColor = theme.textColor.activeStepBadge or theme.textColor.common
 
-            addon.ui.v2:ApplyFrameBackdrop(this.card, itemEdge, itemBackground, itemBorder)
-            addon.ui.v2:ApplyFrameBackdrop(this.title, badgeEdge, badgeBackground, badgeBorder)
+            addon.ui.v2:ApplyFrameBackdrop(this.card, theme.edge, itemBackground, itemBorder)
+            addon.ui.v2:ApplyFrameBackdrop(this.title, theme.edge, badgeBackground, badgeBorder)
+            this.titletext:SetTextColor(unpack(badgeTextColor))
 
             local textColor = theme.textColor.activeStepItem or theme.textColor.common
             local row
@@ -2325,11 +2397,10 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         local frame = CreateFrame("Frame", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
 
         local theme = addon.v2:GetTheme()
-        local itemEdge = theme.edges.activeStepItem or theme.edges.common
-        local itemBackground = theme.backgroundColors.common
+        local itemBackground = theme.version == 1 and theme.backgroundColors.activeSteps or
+                                   theme.backgroundColors.common
         local itemBorder = theme.borderColors.itemEdge or theme.borderColors.common
         local itemTextColor = theme.textColor.activeStepItem or theme.textColor.common
-        local badgeEdge = theme.edges.activeStepBadge or itemEdge
         local badgeBackground = theme.backgroundColors.activeStepBadge or itemBackground
         local badgeBorder = theme.borderColors.activeStepBadge or itemBorder
         local badgeTextColor = theme.textColor.activeStepBadge or itemTextColor
@@ -2337,14 +2408,14 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         local card = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         card:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
         card:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, 8)
-        addon.ui.v2:ApplyFrameBackdrop(card, itemEdge, itemBackground, itemBorder)
+        addon.ui.v2:ApplyFrameBackdrop(card, theme.edge, itemBackground, itemBorder)
         addon.ui.v2:AddFrameShadow(card, nil, nil, nil, nil, "stepItem")
 
         local title = CreateFrame("Frame", nil, card, BackdropTemplateMixin and "BackdropTemplate")
         title:SetFrameLevel(card:GetFrameLevel() + 2)
         title:SetPoint("TOPLEFT", card, "TOPLEFT", 6, 9)
         title:ClearBackdrop()
-        addon.ui.v2:ApplyFrameBackdrop(title, badgeEdge, badgeBackground, badgeBorder)
+        addon.ui.v2:ApplyFrameBackdrop(title, theme.edge, badgeBackground, badgeBorder)
 
 
         local titletext = title:CreateFontString(nil, "OVERLAY")
@@ -2437,17 +2508,15 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
             if not payload then return end
 
             local theme = addon.v2:GetTheme()
-            local itemEdge = theme.edges.activeStepItem or theme.edges.common
             local itemBackground = theme.backgroundColors.common
             local itemBorder = theme.borderColors.itemEdge or theme.borderColors.common
-            local badgeEdge = theme.edges.activeStepBadge or itemEdge
             local badgeBackground = theme.backgroundColors.activeStepBadge or
                                     itemBackground
             local badgeBorder = theme.borderColors.activeStepBadge or
                                 itemBorder
 
-            addon.ui.v2:ApplyFrameBackdrop(this.card, itemEdge, itemBackground, itemBorder)
-            addon.ui.v2:ApplyFrameBackdrop(this.title, badgeEdge, badgeBackground, badgeBorder)
+            addon.ui.v2:ApplyFrameBackdrop(this.card, theme.edge, itemBackground, itemBorder)
+            addon.ui.v2:ApplyFrameBackdrop(this.title, theme.edge, badgeBackground, badgeBorder)
         end
     }
 
@@ -2458,11 +2527,9 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
         local frame = CreateFrame("Frame", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
 
         local theme = addon.v2:GetTheme()
-        local itemEdge = theme.edges.activeStepItem or theme.edges.common
         local itemBackground = theme.backgroundColors.common
         local itemBorder = theme.borderColors.itemEdge or theme.borderColors.common
         local itemTextColor = theme.textColor.activeStepItem or theme.textColor.common
-        local badgeEdge = theme.edges.activeStepBadge or itemEdge
         local badgeBackground = theme.backgroundColors.activeStepBadge or
                                 itemBackground
         local badgeBorder = theme.borderColors.activeStepBadge or
@@ -2473,14 +2540,14 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
         local card = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         card:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
         card:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, 8)
-        addon.ui.v2:ApplyFrameBackdrop(card, itemEdge, itemBackground, itemBorder)
+        addon.ui.v2:ApplyFrameBackdrop(card, theme.edge, itemBackground, itemBorder)
         addon.ui.v2:AddFrameShadow(card, nil, nil, nil, nil, "stepItem")
 
         local title = CreateFrame("Frame", nil, card, BackdropTemplateMixin and "BackdropTemplate")
         title:SetFrameLevel(card:GetFrameLevel() + 2)
         title:SetPoint("TOPLEFT", card, "TOPLEFT", 6, 9)
         title:ClearBackdrop()
-        addon.ui.v2:ApplyFrameBackdrop(title, badgeEdge, badgeBackground, badgeBorder)
+        addon.ui.v2:ApplyFrameBackdrop(title, theme.edge, badgeBackground, badgeBorder)
 
         local titletext = title:CreateFontString(nil, "OVERLAY")
         titletext:ClearAllPoints()

@@ -190,7 +190,7 @@ local settingsDBDefaults = {
         enableVendorTreasure = true,
 
         -- Themes
-        activeTheme = 'Default',
+        activeTheme = 'RXP Blue',
         customTheme = addon.customThemeBase,
         enableThemeLiveReload = true,
 
@@ -2928,25 +2928,14 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "select",
                         width = optionsWidth,
                         order = 1.1,
-                        get = function()
-                            return
-                                self.profile.activeTheme == "Default" and "" or
-                                    self.profile.activeTheme
-                        end,
+                        get = function() return self.profile.activeTheme end,
                         set = function(info, value)
-                            if value == "" then
-                                value = "Default"
-                            end
                             SetProfileOption(info, value)
-                            if self.profile.enableThemeLiveReload then
-                                addon.RenderFrame('themeReload')
-                                addon.v2:UpdateActiveStepTheme()
-                            end
+                            addon:ReloadTheme()
                         end,
                         values = function()
                             return addon:GetThemeOptions()
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
                         --[[disabled = function()
                             -- Disable selector if GA/Hardcore as they're special and branded
                             return RXPCData.GA or self.profile.hardcore
@@ -2967,14 +2956,11 @@ function addon.settings:CreateAceOptionsPanel()
                                 r, g, b, a or 1
                             }
                             addon:RegisterTheme(self.profile.customTheme)
-                            if self.profile.enableThemeLiveReload then
-                                addon.RenderFrame('themeReload')
-                            end
+                            addon:ReloadTheme()
                         end,
                         hidden = function()
                             return self.profile.activeTheme ~= 'Custom'
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
                     },
                     customThemeBottomFrameBG = {
                         name = L("Step List Background"), -- TODO locale
@@ -2992,14 +2978,11 @@ function addon.settings:CreateAceOptionsPanel()
                                 r, g, b, a or 1
                             }
                             addon:RegisterTheme(self.profile.customTheme)
-                            if self.profile.enableThemeLiveReload then
-                                addon.RenderFrame('themeReload')
-                            end
+                            addon:ReloadTheme()
                         end,
                         hidden = function()
                             return self.profile.activeTheme ~= 'Custom'
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
                     },
                     customThemeBottomFrameHighlight = {
                         name = L("Step Highlight"), -- TODO locale
@@ -3018,14 +3001,12 @@ function addon.settings:CreateAceOptionsPanel()
                                 r, g, b, a or 1
                             }
                             addon:RegisterTheme(self.profile.customTheme)
-                            if self.profile.enableThemeLiveReload then
-                                addon.RenderFrame('themeReload')
-                            end
+                            addon:ReloadTheme()
                         end,
                         hidden = function()
                             return self.profile.activeTheme ~= 'Custom'
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     customThemeMapPins = {
                         name = L("Map Pins"), -- TODO locale
@@ -3040,14 +3021,12 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(_, r, g, b, a)
                             self.profile.customTheme.mapPins = {r, g, b, a or 1}
                             addon:RegisterTheme(self.profile.customTheme)
-                            if self.profile.enableThemeLiveReload then
-                                addon.RenderFrame('themeReload')
-                            end
+                            addon:ReloadTheme()
                         end,
                         hidden = function()
                             return self.profile.activeTheme ~= 'Custom'
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     customThemeTooltip = {
                         name = L("Tooltip"), -- TODO locale
@@ -3063,14 +3042,12 @@ function addon.settings:CreateAceOptionsPanel()
                             self.profile.customTheme.tooltip = fmt('|c%sFF',
                                                                    value)
                             addon:RegisterTheme(self.profile.customTheme)
-                            if self.profile.enableThemeLiveReload then
-                                addon.RenderFrame('themeReload')
-                            end
+                            addon:ReloadTheme()
                         end,
                         hidden = function()
                             return self.profile.activeTheme ~= 'Custom'
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
+                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     customThemeFont = {
                         name = L("Font"), -- TODO locale
@@ -3099,14 +3076,11 @@ function addon.settings:CreateAceOptionsPanel()
 
                             addon:RegisterTheme(self.profile.customTheme)
 
-                            if self.profile.enableThemeLiveReload then
-                                addon.RenderFrame('themeReload')
-                            end
+                            addon:ReloadTheme()
                         end,
                         hidden = function()
                             return self.profile.activeTheme ~= 'Custom'
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
                     },
                     customThemeTextColor = {
                         name = L("Text Color"), -- TODO locale
@@ -3122,14 +3096,11 @@ function addon.settings:CreateAceOptionsPanel()
                                 r, g, b, a or 1
                             }
                             addon:RegisterTheme(self.profile.customTheme)
-                            if self.profile.enableThemeLiveReload then
-                                addon.RenderFrame('themeReload')
-                            end
+                            addon:ReloadTheme()
                         end,
                         hidden = function()
                             return self.profile.activeTheme ~= 'Custom'
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
                     },
                     customThemeApply = {
                         name = _G.APPLY,
@@ -3138,7 +3109,6 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 1.9,
                         confirm = requiresReload,
                         func = function() _G.ReloadUI() end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
                     },
                     customThemeReset = {
                         name = _G.RESET,
@@ -3148,14 +3118,11 @@ function addon.settings:CreateAceOptionsPanel()
                         func = function()
                             self.profile.customTheme = addon.customThemeBase
                             addon:RegisterTheme(self.profile.customTheme)
-                            if self.profile.enableThemeLiveReload then
-                                addon.RenderFrame('themeReload')
-                            end
+                            addon:ReloadTheme()
                         end,
                         hidden = function()
                             return self.profile.activeTheme ~= 'Custom'
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
                     },
                     enableThemeLiveReload = {
                         name = L("Preview Changes"),
@@ -3163,7 +3130,6 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 1.92,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end
                     },
                     previewFramePositions = {
                         name = fmt(L("%s Frame Positions"), _G.PREVIEW),
@@ -3195,10 +3161,9 @@ function addon.settings:CreateAceOptionsPanel()
                             return self:HexToRGB(self.profile.textEnemyColor)
                         end,
                         set = function(_, r, g, b, a)
-                            self.profile.textEnemyColor =
-                                self:RGBToString(r, g, b, a)
+                            self.profile.textEnemyColor = self:RGBToString(r, g, b, a)
+                            self:RefreshTextColors()
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     textFriendlyColor = {
                         name = _G.FRIENDLY,
@@ -3210,12 +3175,9 @@ function addon.settings:CreateAceOptionsPanel()
                             return self:HexToRGB(self.profile.textFriendlyColor)
                         end,
                         set = function(_, r, g, b, a)
-                            self.profile.textFriendlyColor = self:RGBToString(r,
-                                                                              g,
-                                                                              b,
-                                                                              a)
+                            self.profile.textFriendlyColor = self:RGBToString(r, g, b, a)
+                            self:RefreshTextColors()
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     textLootColor = {
                         name = _G.LOOT,
@@ -3227,10 +3189,9 @@ function addon.settings:CreateAceOptionsPanel()
                             return self:HexToRGB(self.profile.textLootColor)
                         end,
                         set = function(_, r, g, b, a)
-                            self.profile.textLootColor =
-                                self:RGBToString(r, g, b, a)
+                            self.profile.textLootColor = self:RGBToString(r, g, b, a)
+                            self:RefreshTextColors()
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     textWarnColor = {
                         name = L("Warning"),
@@ -3242,10 +3203,9 @@ function addon.settings:CreateAceOptionsPanel()
                             return self:HexToRGB(self.profile.textWarnColor)
                         end,
                         set = function(_, r, g, b, a)
-                            self.profile.textWarnColor =
-                                self:RGBToString(r, g, b, a)
+                            self.profile.textWarnColor = self:RGBToString(r, g, b, a)
+                            self:RefreshTextColors()
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     textPickColor = {
                         name = L("Pick Up"),
@@ -3257,10 +3217,9 @@ function addon.settings:CreateAceOptionsPanel()
                             return self:HexToRGB(self.profile.textPickColor)
                         end,
                         set = function(_, r, g, b, a)
-                            self.profile.textPickColor =
-                                self:RGBToString(r, g, b, a)
+                            self.profile.textPickColor = self:RGBToString(r, g, b, a)
+                            self:RefreshTextColors()
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     textBuyColor = {
                         name = L("Buy"),
@@ -3272,10 +3231,9 @@ function addon.settings:CreateAceOptionsPanel()
                             return self:HexToRGB(self.profile.textBuyColor)
                         end,
                         set = function(_, r, g, b, a)
-                            self.profile.textBuyColor =
-                                self:RGBToString(r, g, b, a)
+                            self.profile.textBuyColor = self:RGBToString(r, g, b, a)
+                            self:RefreshTextColors()
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     customTextColorApply = {
                         name = _G.APPLY,
@@ -3284,7 +3242,6 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.9,
                         confirm = requiresReload,
                         func = function() _G.ReloadUI() end, -- TODO easier redraw?
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     customTextColorReset = {
                         name = _G.RESET,
@@ -3294,7 +3251,6 @@ function addon.settings:CreateAceOptionsPanel()
                         func = function()
                             self:ResetTextColors()
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     disableColorText = {
                         name = L("Disable Colors"),
@@ -3304,7 +3260,6 @@ function addon.settings:CreateAceOptionsPanel()
                         func = function()
                             self:DisableTextColors()
                         end,
-                        disabled = function() return addon.v2:IsGuideWindowEnabled() end,
                     },
                     guideWindowHeader = {
                         name = L("Guide Window"),
@@ -3374,7 +3329,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         set = function(_, value)
                             self:SetStepListShown(value)
-                        end
+                        end,
                     },
                     hideCompletedSteps = {
                         name = L("Hide completed steps"),
@@ -3952,7 +3907,7 @@ function addon.settings:UpdateMinimapButton()
                                                   "UIDropDownMenuTemplate")
     end
 
-    local icon = addon.GetTexture("rxp_logo-64")
+    local icon = addon.GetV1Texture("rxp_logo-64")
     if addon.v2:IsGuideWindowEnabled() then
         icon = "Interface/AddOns/" .. addonName ..
                    "/Textures/v2/rxp-minimap-icon"
@@ -4345,6 +4300,18 @@ function addon.settings:LoadTextColors()
     gtc.default["error"] = {1, 1, 1}
 end
 
+function addon.settings:RefreshTextColors()
+    self:LoadTextColors()
+
+    if addon.v2:IsGuideWindowEnabled() then
+        addon.v2:UpdateGuideWindow()
+        if addon.RXPFrame.activeSteps then
+            addon.v2.events:Trigger("UpdateActiveSteps", addon.RXPFrame.activeSteps,
+                                    addon.player.name)
+        end
+    end
+end
+
 function addon.settings:ResetTextColors()
     self.profile.textEnemyColor = addon.guideTextColors.default['RXP_ENEMY_']
     self.profile.textFriendlyColor =
@@ -4353,7 +4320,7 @@ function addon.settings:ResetTextColors()
     self.profile.textWarnColor = addon.guideTextColors.default['RXP_WARN_']
     self.profile.textPickColor = addon.guideTextColors.default['RXP_PICK_']
     self.profile.textBuyColor = addon.guideTextColors.default['RXP_BUY_']
-    self:LoadTextColors()
+    self:RefreshTextColors()
 end
 
 function addon.settings:DisableTextColors()
@@ -4365,7 +4332,7 @@ function addon.settings:DisableTextColors()
     self.profile.textWarnColor = default
     self.profile.textPickColor = default
     self.profile.textBuyColor = default
-    self:LoadTextColors()
+    self:RefreshTextColors()
 end
 
 function addon.settings.ReplaceColors(element)
@@ -4482,7 +4449,7 @@ function addon.settings:SetupMapButton()
     self.worldMapButton:SetSize(36, 36)
     self.worldMapButton:SetPoint("TOPRIGHT", _G.WorldMapFrame, "TOPRIGHT", -10,
                                  -26)
-    self.worldMapButton:SetNormalTexture(addon.GetTexture("rxp_logo-64"))
+    self.worldMapButton:SetNormalTexture(addon.GetV1Texture("rxp_logo-64"))
     self.worldMapButton:SetHighlightTexture(
         "Interface/MINIMAP/UI-Minimap-ZoomButton-Highlight", "ADD")
 

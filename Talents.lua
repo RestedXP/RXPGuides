@@ -274,7 +274,7 @@ function addon.talents:UpdateTalentsButton()
     -- Build a button to match Wrath dual-spec talent tabs
     if not button then
         button = CreateFrame("Button", "$parentRXPTalents", iconReference.frame)
-        button:SetNormalTexture(addon.GetTexture("rxp_logo-64"))
+        button:SetNormalTexture(addon.GetV1Texture("rxp_logo-64"))
 
         button.bg = button:CreateTexture("$parentBG", "BACKGROUND")
         button.bg:SetSize(64, 64)

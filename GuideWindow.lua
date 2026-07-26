@@ -73,12 +73,12 @@ function RXPFrame:UpdateVisuals()
     Footer:ClearBackdrop()
     Footer:SetBackdrop(RXPFrame.backdrop.guideName)
     Footer:SetBackdropColor(unpack(addon.colors.background))
-    Footer.bg:SetTexture(addon.GetTexture("rxp-banner"))
+    Footer.bg:SetTexture(addon.GetV1Texture("rxp-banner"))
 
-    GuideName.bg:SetTexture(addon.GetTexture("rxp-banner"))
-    GuideName.icon:SetTexture(addon.GetTexture("rxp_logo-64"))
-    GuideName.classIcon:SetTexture(addon.GetTexture(class))
-    Footer.cog:SetNormalTexture(addon.GetTexture("rxp_cog-32"))
+    GuideName.bg:SetTexture(addon.GetV1Texture("rxp-banner"))
+    GuideName.icon:SetTexture(addon.GetV1Texture("rxp_logo-64"))
+    GuideName.classIcon:SetTexture(addon.GetV1Texture(class))
+    Footer.cog:SetNormalTexture(addon.GetV1Texture("rxp_cog-32"))
     RXPFrame.UpdateScrollBar()
 end
 
@@ -123,7 +123,7 @@ RXPFrame.backdrop.edge = {
     bgFile = "Interface/BUTTONS/WHITE8X8",
     -- edgeFile = "Interface/BUTTONS/WHITE8X8",
     -- edgeFile = "Interface/ARENAENEMYFRAME/UI-Arena-Border",
-    edgeFile = addon.GetTexture("rxp-borders"),
+    edgeFile = addon.GetV1Texture("rxp-borders"),
     tile = true,
     edgeSize = 8,
     tileSize = 8,
@@ -131,7 +131,7 @@ RXPFrame.backdrop.edge = {
 }
 
 RXPFrame.backdrop.guideName = {
-    edgeFile = addon.GetTexture("rxp-borders"),
+    edgeFile = addon.GetV1Texture("rxp-borders"),
     edgeSize = 8,
     insets = {left = 4, right = 2, top = 2, bottom = 4}
 }
@@ -168,16 +168,16 @@ function addon.SetupGuideWindow()
     end
     Footer.text:SetTextColor(unpack(addon.activeTheme.textColor))
 
-    GuideName.bg:SetTexture(addon.GetTexture("rxp-banner"))
+    GuideName.bg:SetTexture(addon.GetV1Texture("rxp-banner"))
 
     Footer:SetBackdrop(RXPFrame.backdrop.guideName)
     Footer:SetBackdropColor(unpack(addon.colors.background))
-    Footer.bg:SetTexture(addon.GetTexture("rxp-banner"))
+    Footer.bg:SetTexture(addon.GetV1Texture("rxp-banner"))
 
-    GuideName.icon:SetTexture(addon.GetTexture("rxp_logo-64"))
+    GuideName.icon:SetTexture(addon.GetV1Texture("rxp_logo-64"))
 
-    GuideName.classIcon:SetTexture(addon.GetTexture(class))
-    Footer.cog:SetNormalTexture(addon.GetTexture("rxp_cog-32"))
+    GuideName.classIcon:SetTexture(addon.GetV1Texture(class))
+    Footer.cog:SetNormalTexture(addon.GetV1Texture("rxp_cog-32"))
 
     RXPFrame.UpdateScrollBar()
 
@@ -1116,12 +1116,9 @@ function addon.SetStep(n, n2, loopback)
             end
             if elementFrame.button.theme ~= addon.activeTheme then
                 elementFrame.button.theme = addon.activeTheme
-                elementFrame.button:SetNormalTexture(addon.GetTexture(
-                                                         "rxp-btn-blank-32"))
-                elementFrame.button:SetCheckedTexture(addon.GetTexture(
-                                                          "rxp-checked-32"))
-                elementFrame.button:SetDisabledCheckedTexture(addon.GetTexture(
-                                                                  "rxp-checked-32"))
+                elementFrame.button:SetNormalTexture(addon.GetV1Texture("rxp-btn-blank-32"))
+                elementFrame.button:SetCheckedTexture(addon.GetV1Texture("rxp-checked-32"))
+                elementFrame.button:SetDisabledCheckedTexture(addon.GetV1Texture("rxp-checked-32"))
             end
             addon.BindActiveStepElement(elementFrame, step, element, index)
 
@@ -1493,7 +1490,7 @@ ScrollFrame:SetPoint("BOTTOMRIGHT", BottomFrame, -20, 7)
 ScrollFrame.ScrollBar:SetPoint("TOPLEFT", ScrollFrame, "TOPRIGHT", 0, -18)
 
 function RXPFrame.UpdateScrollBar()
-    local prefix = addon.GetTexture("Scrollbar/")
+    local prefix = addon.GetV1Texture("Scrollbar/")
 
     local s = ScrollFrame.ScrollBar.ScrollDownButton
     s.Normal:SetTexture(prefix .. "Down-Normal")

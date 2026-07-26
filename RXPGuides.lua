@@ -1332,6 +1332,7 @@ function addon:OnInitialize()
     end
 
     addon:ImportCustomThemes()
+    addon.v2:ConvertThemes()
     addon:LoadActiveTheme()
     addon.settings:UpdateMinimapButton()
     addon.settings:SetupMapButton()
