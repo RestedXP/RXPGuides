@@ -1362,9 +1362,6 @@ function addon:OnInitialize()
     addon.activeItemFrame:SetScale(addon.settings.profile.activeItemsScale)
 
     addon.v2:Setup()
-    if addon.v2:IsGuideWindowEnabled() then
-        addon.v2:EnableGuideWindow()
-    end
 
     currentGuideGroup = RXPCData.currentGuideGroup
     currentGuideName = RXPCData.currentGuideName
@@ -2421,9 +2418,55 @@ end
 
 RXP = addon -- debug purposes
 
+function addon:ShowMenu(menu, menuFrame, anchor, x, y, displayMode, autoHideDelay)
+    menuFrame = menuFrame or addon.RXPFrame.MenuFrame
+    anchor = anchor or "cursor"
+    x = x or 0
+    y = y or 0
+    displayMode = displayMode or "MENU"
+
+    local v2GuideWindow = addon.v2:IsGuideWindowEnabled()
+    local hadV2MenuTheme = menuFrame.rxpV2MenuTheme
+    if v2GuideWindow then
+        menuFrame.rxpV2MenuTheme = addon.settings.profile.enableV2MenuTheme
+    else
+        menuFrame.rxpV2MenuTheme = nil
+    end
+
+    if _G.EasyMenu then
+        if hadV2MenuTheme then addon.v2:UpdateMenuTheme(_G.DropDownList1, false) end
+        _G.EasyMenu(menu, menuFrame, anchor, x, y, displayMode, autoHideDelay)
+        if menuFrame.rxpV2MenuTheme then
+            addon.v2:UpdateMenuTheme(_G.DropDownList1, menuFrame.rxpV2MenuTheme)
+        end
+        if v2GuideWindow then addon.v2:HookMenuSubmenus("DropDownList") end
+    else
+        if hadV2MenuTheme then addon.v2:UpdateMenuTheme(_G.L_DropDownList1, false) end
+        LibStub:GetLibrary("LibUIDropDownMenu-4.0"):EasyMenu(menu, menuFrame, anchor, x, y, displayMode,
+                                                               autoHideDelay)
+        if menuFrame.rxpV2MenuTheme then
+            addon.v2:UpdateMenuTheme(_G.L_DropDownList1, menuFrame.rxpV2MenuTheme)
+        end
+        if v2GuideWindow then addon.v2:HookMenuSubmenus("L_DropDownList") end
+    end
+end
+
 addon.v2 = addon.v2 or {}
 function addon.v2:Setup()
     addon.v2.events:Setup()
+    if not self:IsGuideWindowEnabled() then return end
+
+    local legacy = addon.RXPFrame
+    self:GetGuideWindow()
+    self:DisableLegacyGuideWindow()
+    self:UpdateGuideWindow()
+
+    local activeStepsFrame = self:GetActiveStepsFrame(addon.player.name)
+    if activeStepsFrame and legacy.activeSteps then
+        self:UpdateActiveStepsFrame(legacy.activeSteps)
+    end
+
+    self:SetActiveStepsFrameAnchor()
 end
 
 addon.v2.events = addon:NewModule("V2Events", "AceEvent-3.0")

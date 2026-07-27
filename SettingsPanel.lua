@@ -4620,9 +4620,6 @@ function addon.settings:LoadFramePositions()
     end
 
     self:LoadScales()
-    if addon.v2 and addon.v2.ApplyGuideWindowGeometryMigration then
-        addon.v2:ApplyGuideWindowGeometryMigration()
-    end
 end
 
 function addon.settings:LoadScales()

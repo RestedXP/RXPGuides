@@ -9,10 +9,6 @@ local CreateFrame, UIParent = CreateFrame, UIParent
 -- AceAddon doesn't exist yet
 local AceGUI = LibStub("AceGUI-3.0")
 local guideWindowDefaultWidth, guideWindowDefaultHeight = 235, 270
-local guideWindowBackgroundColor = {7 / 255, 8 / 255, 19 / 255, 0.68} -- #070813AD
-local guideStepsViewportColor = {7 / 255, 8 / 255, 19 / 255, 0.68} -- #070813AD
-local guideStepsCardColor = {22 / 255, 24 / 255, 42 / 255, 0.98} -- #16182AFA
-local guideStepsBadgeColor = {11 / 255, 12 / 255, 26 / 255, 1} -- #0B0C1AFF
 
 addon.ui = {v2 = {}}
 addon.v2 = addon.v2 or {}
@@ -155,12 +151,12 @@ function addon.ui.v2:ApplyFrameBackdrop(frame, edge, backgroundColor, borderColo
     frame.rxpBorder = border
 end
 
-function addon.ui.v2:AddFrameShadow(frame, xOffset, yOffset, alpha, size, shadowKey)
+function addon.ui.v2:AddFrameShadow(frame, xOffset, yOffset, alpha, size)
     if frame.rxpShadow then return frame.rxpShadow end
 
     xOffset = xOffset or 0
     yOffset = yOffset or 0
-    alpha = alpha or (shadowKey == "stepItem" and 0.55 or 0.5)
+    alpha = alpha or 0.5
     size = size or 2
     if alpha <= 0 or size <= 0 then return end
 
@@ -213,11 +209,12 @@ function addon.v2:IsGuideWindowEnabled()
     return profile and profile.enableBetaFeatures and profile.enableV2Interface
 end
 
-local function updateMenuTheme(listFrame, enabled)
-    if not listFrame then return end
+function addon.v2:UpdateMenuTheme(listFrame, enabled)
+    if not self:IsGuideWindowEnabled() or not listFrame then return end
 
     local name = listFrame:GetName()
-    local backdrop, menuBackdrop = _G[name .. "Backdrop"], _G[name .. "MenuBackdrop"]
+    local backdrop = _G[name .. "Backdrop"]
+    local menuBackdrop = _G[name .. "MenuBackdrop"]
     if not enabled then
         addon.ui.v2:SetFrameBackdropShown(listFrame, false)
         if listFrame.rxpV2MenuThemeApplied then
@@ -228,9 +225,10 @@ local function updateMenuTheme(listFrame, enabled)
         return
     end
 
-    local theme = addon.v2:GetTheme()
+    local theme = self:GetTheme()
     if backdrop then backdrop:Hide() end
     if menuBackdrop then menuBackdrop:Hide() end
+
     addon.ui.v2:ApplyFrameBackdrop(listFrame, theme.edge, theme.backgroundColors.common,
                                    theme.borderColors.commonEdge)
     addon.ui.v2:AddFrameShadow(listFrame)
@@ -244,7 +242,9 @@ local function updateMenuTheme(listFrame, enabled)
     end
 end
 
-local function hookMenuSubmenus(prefix)
+function addon.v2:HookMenuSubmenus(prefix)
+    if not self:IsGuideWindowEnabled() then return end
+
     local listFrame
     for level = 2, 3 do
         listFrame = _G[prefix .. level]
@@ -252,45 +252,14 @@ local function hookMenuSubmenus(prefix)
             listFrame:HookScript("OnShow", function(this)
                 local dropdown = this.dropdown
                 if dropdown and dropdown.rxpV2MenuTheme ~= nil then
-                    updateMenuTheme(this, dropdown.rxpV2MenuTheme)
+                    addon.v2:UpdateMenuTheme(this, dropdown.rxpV2MenuTheme)
                 elseif this.rxpV2MenuThemeApplied then
-                    updateMenuTheme(this, false)
+                    addon.v2:UpdateMenuTheme(this, false)
                 end
             end)
             listFrame.rxpV2MenuThemeHooked = true
         end
     end
-end
-
-function addon:ShowMenu(menu, menuFrame, anchor, x, y, displayMode, autoHideDelay)
-    local v2GuideWindow = addon.v2:IsGuideWindowEnabled()
-    local hadV2MenuTheme = menuFrame.rxpV2MenuTheme
-    if v2GuideWindow then
-        menuFrame.rxpV2MenuTheme = addon.settings.profile.enableV2MenuTheme
-    else
-        menuFrame.rxpV2MenuTheme = nil
-    end
-
-    if _G.EasyMenu then
-        if hadV2MenuTheme then updateMenuTheme(_G.DropDownList1, false) end
-        _G.EasyMenu(menu, menuFrame, anchor, x, y, displayMode, autoHideDelay)
-        if menuFrame.rxpV2MenuTheme then
-            updateMenuTheme(_G.DropDownList1, menuFrame.rxpV2MenuTheme)
-        end
-        if v2GuideWindow then hookMenuSubmenus("DropDownList") end
-    else
-        if hadV2MenuTheme then updateMenuTheme(_G.L_DropDownList1, false) end
-        LibStub:GetLibrary("LibUIDropDownMenu-4.0"):EasyMenu(menu, menuFrame, anchor, x, y, displayMode,
-                                                               autoHideDelay)
-        if menuFrame.rxpV2MenuTheme then
-            updateMenuTheme(_G.L_DropDownList1, menuFrame.rxpV2MenuTheme)
-        end
-        if v2GuideWindow then hookMenuSubmenus("L_DropDownList") end
-    end
-end
-
-function addon.v2:ShowGuideWindowMenu(menu)
-    addon:ShowMenu(menu, addon.RXPFrame.MenuFrame, "cursor", 0, 0, "MENU")
 end
 
 function addon.v2:ShowGuideSelectionMenu()
@@ -308,7 +277,7 @@ function addon.v2:ShowGuideSelectionMenu()
         notCheckable = 1,
         func = function(self) self:Hide() end,
     }
-    if #menu > 0 then self:ShowGuideWindowMenu(menu) end
+    if #menu > 0 then addon:ShowMenu(menu) end
 end
 
 function addon.v2:ShowSettingsMenu()
@@ -358,10 +327,11 @@ function addon.v2:ShowSettingsMenu()
             foundGuideDivider = true
         end
     end
-    if #menu > 0 then self:ShowGuideWindowMenu(menu) end
+    if #menu > 0 then addon:ShowMenu(menu) end
 end
 
 function addon.v2:BuildGuideStepsSnapshot()
+    -- Translate the mutable legacy guide state into rows consumed by the V2 guide window.
     local guide = addon.currentGuide
     local profile = addon.settings and addon.settings.profile
     local currentStep = RXPCData and RXPCData.currentStep or 1
@@ -432,7 +402,7 @@ function addon.v2:BuildGuideStepsSnapshot()
 end
 
 function addon.ui.v2:RegisterRXPV2GuideStepsItem()
-    local Type, Version = "RXPV2GuideStepsItem", 3
+    local Type, Version = "RXPV2GuideStepsItem", 1
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     local function ShowMenu(this)
@@ -481,11 +451,10 @@ function addon.ui.v2:RegisterRXPV2GuideStepsItem()
                 this.numberFrame:SetWidth(max(this.number:GetStringWidth() + 6, 16))
             end
             if force or not previous then
-                local background = theme.version == 1 and theme.backgroundColors.common or
-                                       guideStepsCardColor
+                local background = theme.backgroundColors.common
                 local border = theme.borderColors.commonEdge
                 local badgeBackground = theme.version == 1 and theme.backgroundColors.common or
-                                            guideStepsBadgeColor
+                                            theme.backgroundColors.activeStepCheckbox
                 addon.ui.v2:ApplyFrameBackdrop(this.frame, theme.edge, background, border)
                 addon.ui.v2:ApplyFrameBackdrop(this.numberFrame, theme.edge,
                                                badgeBackground, theme.borderColors.commonEdge)
@@ -520,7 +489,9 @@ function addon.ui.v2:RegisterRXPV2GuideStepsItem()
         numberFrame:SetFrameLevel(frame:GetFrameLevel() + 2)
         numberFrame:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT")
         numberFrame:SetSize(16, 16)
+
         text:SetPoint("BOTTOMRIGHT", numberFrame, "BOTTOMLEFT", -4, 4)
+
         local number = numberFrame:CreateFontString(nil, "OVERLAY")
         number:SetPoint("CENTER")
         number:SetJustifyH("CENTER")
@@ -539,7 +510,7 @@ function addon.ui.v2:RegisterRXPV2GuideStepsItem()
 end
 
 function addon.ui.v2:RegisterRXPV2GuideSteps()
-    local Type, Version = "RXPV2GuideSteps", 4
+    local Type, Version = "RXPV2GuideSteps", 1
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     local function ReleaseItem(this, index)
@@ -565,8 +536,8 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
             this.frame:Hide()
         end,
         ["SetRows"] = function(this, rows, force, scrollToActive)
-            local previous, item, height, minimumHeight, activeOffset, activeIndex,
-                  itemHeight, _, textChanged = nil, nil, 0, nil, nil, nil, nil, nil, nil
+            local previous, item, minimumHeight, activeOffset, activeIndex, itemHeight, _, textChanged
+            local height = 0
             force = force or this.rowsWidth ~= this.scroll.scrollframe:GetWidth()
             this.rows = rows
             this.rowsWidth = this.scroll.scrollframe:GetWidth()
@@ -657,7 +628,7 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
 end
 
 function addon.ui.v2:RegisterRXPV2GuideWindow()
-    local Type, Version = "RXPV2GuideWindow", 47
+    local Type, Version = "RXPV2GuideWindow", 1
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     local function SaveStatus(this, saveHeight)
@@ -763,8 +734,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         ["RefreshVisuals"] = function(this)
             local theme = addon.v2:GetTheme()
             addon.ui.v2:ApplyFrameBackdrop(this.frame, theme.edge,
-                                           theme.version == 1 and theme.backgroundColors.common or
-                                               guideWindowBackgroundColor,
+                                            theme.version == 1 and theme.backgroundColors.common or
+                                                theme.backgroundColors.guideWindow,
                                            theme.borderColors.commonEdge)
             this.title:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
             this.title:SetTextColor(1, 0.82, 0)
@@ -773,11 +744,10 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             this.footerText:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
             this.footerBackground:SetColorTexture(unpack(theme.backgroundColors.common))
             this.guideStepsBackground:SetColorTexture(unpack(theme.version == 1 and
-                                                                  theme.backgroundColors.common or
-                                                                  guideStepsViewportColor))
+                                                                   theme.backgroundColors.common or
+                                                                   theme.backgroundColors.guideWindow))
             addon.ui.v2:ApplyFrameBackdrop(this.guideNameFrame, theme.edge,
-                                           theme.version == 1 and theme.backgroundColors.common or
-                                               theme.backgroundColors.common,
+                                           theme.backgroundColors.common,
                                            theme.borderColors.commonEdge)
             this.guideSelectBackground:SetColorTexture(unpack(theme.version == 1 and
                                                                     theme.backgroundColors.common or
@@ -821,8 +791,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         frame:SetFrameLevel(100)
         local theme = addon.v2:GetTheme()
         addon.ui.v2:ApplyFrameBackdrop(frame, theme.edge,
-                                       theme.version == 1 and theme.backgroundColors.common or
-                                           guideWindowBackgroundColor,
+                                        theme.version == 1 and theme.backgroundColors.common or
+                                            theme.backgroundColors.guideWindow,
                                        theme.borderColors.commonEdge)
         frame:SetToplevel(true)
 
@@ -843,14 +813,13 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         guideNameFrame:SetFrameLevel(header:GetFrameLevel() + 1)
         guideNameFrame:EnableMouse(true)
         addon.ui.v2:ApplyFrameBackdrop(guideNameFrame, theme.edge,
-                                       theme.version == 1 and theme.backgroundColors.common or
-                                           theme.backgroundColors.common,
-                                       theme.borderColors.commonEdge)
+                                        theme.backgroundColors.common,
+                                        theme.borderColors.commonEdge)
         local splashBranding = header:CreateTexture(nil, "ARTWORK")
         -- Crop only the gnome splash from the atlas.  Its lower neighbor begins
         -- immediately below this region, so extending the crop leaves a visible
         -- white remnant beneath the guide header.
-    splashBranding:SetPoint("TOPLEFT", header, "TOPLEFT", 38, 32)
+        splashBranding:SetPoint("TOPLEFT", header, "TOPLEFT", 38, 32)
         splashBranding:SetSize(128, 80)
         if theme.splash then
             splashBranding:SetTexture(theme.splash.path)
@@ -955,7 +924,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         guideStepsBackground:SetPoint("TOPLEFT", frame, "TOPLEFT", 5, -83)
         guideStepsBackground:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -5, 17)
         guideStepsBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
-                                                        guideStepsViewportColor))
+                                                         theme.backgroundColors.guideWindow))
         local guideSteps = AceGUI:Create("RXPV2GuideSteps")
         guideSteps.frame:SetParent(frame)
         guideSteps.frame:SetPoint("TOPLEFT", frame, "TOPLEFT", 6, -84)
@@ -1046,22 +1015,6 @@ function addon.v2:GetGuideWindow()
     return window
 end
 
-function addon.v2:ApplyGuideWindowGeometryMigration()
-    local profile = addon.settings and addon.settings.profile
-    local window = self.state and self.state.guideWindow
-    if not (profile and window) then return end
-
-    if (profile.v2GuideWindowGeometryVersion or 0) < 5 then
-        window.frame:SetSize(guideWindowDefaultWidth, guideWindowDefaultHeight)
-        window.guideHeight = window.frame:GetHeight()
-        profile.v2GuideWindowExpandedHeight = window.guideHeight
-        profile.v2GuideWindowGeometryVersion = 5
-    end
-
-    self:UpdateGuideWindow()
-    if addon.v2:IsGuideWindowEnabled() then self:SetActiveStepsFrameAnchor() end
-end
-
 function addon.v2:GetGuideWindowAnchorFrame()
     if not self:IsGuideWindowEnabled() then return end
     local window = self.state and self.state.guideWindow
@@ -1109,19 +1062,6 @@ function addon.v2:DisableLegacyGuideWindow()
     end
 end
 
-function addon.v2:EnableGuideWindow()
-    local legacy = addon.RXPFrame
-    self:GetGuideWindow()
-    self:DisableLegacyGuideWindow()
-    self:UpdateGuideWindow()
-    local activeStepsFrame = self:GetActiveStepsFrame(addon.player.name)
-    if activeStepsFrame and legacy.activeSteps then
-        self:UpdateActiveStepsFrame(legacy.activeSteps)
-    end
-    self:SetActiveStepsFrameAnchor()
-end
-
-
 function addon.ui.v2:RegisterRXPV2ScrollFrame()
     --[[-----------------------------------------------------------------------------
     ScrollFrame Container
@@ -1164,7 +1104,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
             this.scrollframe:SetPoint("BOTTOMRIGHT")
             this.scrollbar:Hide()
             this.scrollBarShown = nil
-            this.contentTopPadding = nil
+            this.contentTopPadding = 0
             this.content.height, this.content.width, this.content.original_width = nil, nil, nil
         end,
 
@@ -1179,8 +1119,8 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
                 offset = floor((height - viewheight) / 1000.0 * value)
             end
             this.content:ClearAllPoints()
-            this.content:SetPoint("TOPLEFT", 2, offset - (this.contentTopPadding or 0))
-            this.content:SetPoint("TOPRIGHT", -2, offset - (this.contentTopPadding or 0))
+            this.content:SetPoint("TOPLEFT", 2, offset - this.contentTopPadding)
+            this.content:SetPoint("TOPRIGHT", -2, offset - this.contentTopPadding)
             status.offset = offset
             status.scrollvalue = value
         end,
@@ -1253,8 +1193,8 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
                 this:SetScroll(value)
                 if value < 1000 then
                     this.content:ClearAllPoints()
-                    this.content:SetPoint("TOPLEFT", 2, offset - (this.contentTopPadding or 0))
-                    this.content:SetPoint("TOPRIGHT", -2, offset - (this.contentTopPadding or 0))
+                    this.content:SetPoint("TOPLEFT", 2, offset - this.contentTopPadding)
+                    this.content:SetPoint("TOPRIGHT", -2, offset - this.contentTopPadding)
                     status.offset = offset
                 end
             end
@@ -1262,7 +1202,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
         end,
 
         ["LayoutFinished"] = function(this, width, height)
-            this.content:SetHeight((height or 0) + 20 + (this.contentTopPadding or 0))
+            this.content:SetHeight((height or 0) + 20 + this.contentTopPadding)
 
             -- update the scrollframe
             this:FixScroll()
@@ -1294,7 +1234,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
 
         ["UpdateTheme"] = updateTheme,
 
-        ["GetContentTopPadding"] = function(this) return this.contentTopPadding or 0 end,
+        ["GetContentTopPadding"] = function(this) return this.contentTopPadding end,
 
         ["SetContentTopPadding"] = function(this, padding)
             this.contentTopPadding = padding or 0
@@ -1358,6 +1298,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
         scrollframe:SetScrollChild(content)
 
         local widget = {
+            contentTopPadding = 0,
             localstatus = {scrollvalue = 0},
             scrollframe = scrollframe,
             scrollbar = scrollbar,
@@ -1675,19 +1616,15 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         ["RefreshTabTheme"] = function(this, tab, active)
             local theme = addon.v2:GetTheme()
-            local backgroundColors = theme.backgroundColors or {}
-            local borderColors = theme.borderColors or {}
-            local textColor = theme.textColor or {}
+            local backgroundColors = theme.backgroundColors
+            local borderColors = theme.borderColors
+            local textColor = theme.textColor
             local background = active and backgroundColors.common or backgroundColors.inactivePartyTab
-            local border = active and borderColors.common or
-                               (borderColors.inactivePartyTab or borderColors.common)
-            local labelColor = active and textColor.title or
-                               (textColor.inactivePartyTab or textColor.common)
+            local border = active and borderColors.common or borderColors.inactivePartyTab
+            local labelColor = active and textColor.title or textColor.inactivePartyTab
 
-            addon.ui.v2:ApplyFrameBackdrop(tab, theme.edge,
-                                           background or backgroundColors.common,
-                                           border or borderColors.common)
-            tab.text:SetTextColor(unpack(labelColor or textColor.common))
+            addon.ui.v2:ApplyFrameBackdrop(tab, theme.edge, background, border)
+            tab.text:SetTextColor(unpack(labelColor))
         end,
 
         ["SetActiveTab"] = function(this, player)
@@ -1865,7 +1802,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         self:ApplyFrameBackdrop(frame, theme.edge,
                                 theme.backgroundColors.common,
                                 theme.borderColors.commonEdge)
-        self:AddFrameShadow(frame, nil, nil, nil, nil, "stepItem")
+        self:AddFrameShadow(frame)
 
         if frame.SetResizeBounds then -- WoW 10.0
             frame:SetResizeBounds(265, 105)
@@ -2431,7 +2368,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         card:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, 8)
         addon.ui.v2:ApplyFrameBackdrop(card, theme.edge, theme.backgroundColors.common,
                                        theme.borderColors.commonEdge)
-        addon.ui.v2:AddFrameShadow(card, nil, nil, nil, nil, "stepItem")
+        addon.ui.v2:AddFrameShadow(card)
 
         local title = CreateFrame("Frame", nil, card, BackdropTemplateMixin and "BackdropTemplate")
         title:SetFrameLevel(card:GetFrameLevel() + 2)
@@ -2552,7 +2489,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
         card:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, 8)
         addon.ui.v2:ApplyFrameBackdrop(card, theme.edge, theme.backgroundColors.common,
                                        theme.borderColors.commonEdge)
-        addon.ui.v2:AddFrameShadow(card, nil, nil, nil, nil, "stepItem")
+        addon.ui.v2:AddFrameShadow(card)
 
         local title = CreateFrame("Frame", nil, card, BackdropTemplateMixin and "BackdropTemplate")
         title:SetFrameLevel(card:GetFrameLevel() + 2)

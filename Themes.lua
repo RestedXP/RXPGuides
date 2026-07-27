@@ -333,6 +333,7 @@ addon.v2.themes['RXP Blue V2'] = {
 
     backgroundColors = {
         common = {26 / 255, 28 / 255, 48 / 255, 0.95}, -- #1A1C30F2
+        guideWindow = {7 / 255, 8 / 255, 19 / 255, 0.68}, -- #070813AD
         inactivePartyTab = {32 / 255, 33 / 255, 49 / 255, 1}, -- #202131FF
         activeStepCheckbox = {5 / 255, 7 / 255, 19 / 255, 1}, -- #050713FF
         activeStepCheckboxChecked = {17 / 255, 132 / 255, 1, 1}, -- #118401FF
