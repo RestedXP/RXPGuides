@@ -1859,7 +1859,7 @@ function addon:LoadGuide(guide, OnLoad)
     end
 
     --TODO: add better theme handling
-    if guide.theme and addon.settings.profile.activeTheme == "Default" then
+    if guide.theme and addon:UsesDefaultTheme() then
         renderFrame = true
     end
 

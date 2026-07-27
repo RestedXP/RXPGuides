@@ -160,9 +160,17 @@ local function GetDefaultTheme()
     return themes['RXP Blue']
 end
 
+function addon:UsesDefaultTheme()
+    local profile = self.settings and self.settings.profile
+    local theme = profile and profile.activeTheme
+    -- V2 stores the default selection as RXP Blue V2 while active.
+    return theme == 'Default' or theme == 'RXP Blue' or theme == 'RXP Blue V2'
+end
+
 function addon:LoadActiveTheme()
     local applicableTheme = addon.settings.profile.activeTheme
     local v2Enabled = addon.v2:IsGuideWindowEnabled()
+    local useDefaultTheme = self:UsesDefaultTheme()
     if applicableTheme == 'Default' then
         applicableTheme = 'RXP Blue'
         addon.settings.profile.activeTheme = applicableTheme
@@ -182,7 +190,8 @@ function addon:LoadActiveTheme()
     local defaultTheme = GetDefaultTheme()
     local fallbackTheme = themes[defaultTheme.name] or defaultTheme
     local selectedTheme = v2Enabled and addon.v2.themes[applicableTheme]
-    local newTheme = themes[selectedTheme and selectedTheme.name or applicableTheme] or fallbackTheme
+    local newTheme = useDefaultTheme and fallbackTheme or
+                         themes[selectedTheme and selectedTheme.name or applicableTheme] or fallbackTheme
 
     -- Reset theme to default if selected goes away
 
@@ -403,7 +412,8 @@ end
 function addon.v2:GetTheme()
     local profile = addon.settings and addon.settings.profile
     local name = profile and profile.activeTheme
-    self.activeTheme = self.themes[name] or GetDefaultTheme()
+    self.activeTheme = addon:UsesDefaultTheme() and GetDefaultTheme() or
+                           self.themes[name] or GetDefaultTheme()
 
     return self.activeTheme
 end
