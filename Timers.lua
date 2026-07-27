@@ -50,17 +50,17 @@ function addon:SortTimers()
         end
         BarContainer:SetHeight(BarContainer.height * #bars)
     else
-    if RXPFrame.CurrentStepFrame.anchor == "BOTTOM" and #bars > 1 then
-        BarContainer:ClearAllPoints()
-        BarContainer:SetPoint("BOTTOMLEFT",RXPFrame.GuideName,"TOPLEFT",4,0)
-        BarContainer:SetPoint("BOTTOMRIGHT",RXPFrame.GuideName,"TOPRIGHT",0,1)
-        BarContainer:SetHeight(BarContainer.height*#bars)
-        reverse = true
-    else
-        BarContainer:ClearAllPoints()
-        BarContainer:SetPoint("TOPLEFT",RXPFrame.Footer,"TOPLEFT",4,0)
-        BarContainer:SetPoint("BOTTOMRIGHT",RXPFrame.Footer,"BOTTOMRIGHT",0,1)
-    end
+        if RXPFrame.CurrentStepFrame.anchor == "BOTTOM" and #bars > 1 then
+            BarContainer:ClearAllPoints()
+            BarContainer:SetPoint("BOTTOMLEFT",RXPFrame.GuideName,"TOPLEFT",4,0)
+            BarContainer:SetPoint("BOTTOMRIGHT",RXPFrame.GuideName,"TOPRIGHT",0,1)
+            BarContainer:SetHeight(BarContainer.height*#bars)
+            reverse = true
+        else
+            BarContainer:ClearAllPoints()
+            BarContainer:SetPoint("TOPLEFT",RXPFrame.Footer,"TOPLEFT",4,0)
+            BarContainer:SetPoint("BOTTOMRIGHT",RXPFrame.Footer,"BOTTOMRIGHT",0,1)
+        end
     end
 
     if guideWindow then guideWindow.footerText:SetAlpha(guideStepsShown and #bars > 0 and 0 or 1) end
