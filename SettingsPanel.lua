@@ -896,6 +896,31 @@ function addon.settings:CreateImportOptionsPanel()
     self.gui.import.obj.frame:HookScript("OnShow", textboxHook)
 end
 
+if GetLocale() ~= "enUS" then
+    addon.locale.AddGenericTranslation("Enable Group Settings",fmt("%s %s", _G.ENABLE, _G.COMMUNITIES_SETTINGS_LABEL))
+    addon.locale.AddGenericTranslation("Interface Version 2 (Beta)",fmt("%s %s %d", _G.INTERFACE_LABEL or "", _G.GAME_VERSION_LABEL or "", 2) .. L(" (Beta)"))
+    addon.locale.AddGenericTranslation("Enable Active Step v2",fmt("%s %s %sv2", _G.ENABLE, _G.ACTIVE_PETS, L("Step ")))
+    addon.locale.AddGenericTranslation("Enable Targeting",fmt("%s %s", _G.ENABLE, _G.BINDING_HEADER_TARGETING))
+    addon.locale.AddGenericTranslation("Enable Target Markers (Group)",fmt("%s %s (%s)", _G.ENABLE, _G.BINDING_HEADER_RAID_TARGET, _G.GROUP))
+    addon.locale.AddGenericTranslation("You are not a group leader. Enable Target Markers",fmt("%s %s %s", _G.ERR_TRAVEL_PASS_NOT_LEADER, _G.ENABLE, _G.BINDING_HEADER_RAID_TARGET))
+    addon.locale.AddGenericTranslation("Follow Party Leader Macro",fmt("%s %s %s", _G.FOLLOW, _G.PARTY_LEADER, _G.MACRO))
+    addon.locale.AddGenericTranslation("Enable follow party leader macro",fmt("%s %s %s %s", _G.ENABLE, strlower(_G.FOLLOW), strlower(_G.PARTY_LEADER), strlower(_G.MACRO)))
+    addon.locale.AddGenericTranslation("Active Target Frame",fmt("%s %s",_G.ACTIVE_PETS, _G.HELPFRAME_REPORT_PLAYER_EXAMPLE_TARGET_CLICK_LOCATION))
+    addon.locale.AddGenericTranslation("Enable Active Target Frame",fmt("%s %s %s", _G.ENABLE, _G.ACTIVE_PETS, _G.HELPFRAME_REPORT_PLAYER_EXAMPLE_TARGET_CLICK_LOCATION))
+    addon.locale.AddGenericTranslation("Show Enemy Target",fmt("%s %s %s", _G.SHOW, _G.ENEMY, _G.TARGET))
+    addon.locale.AddGenericTranslation("Show Friendly Target",fmt("%s %s %s", _G.SHOW, _G.FRIENDLY, _G.TARGET))
+    addon.locale.AddGenericTranslation("Follow Party Leader Target",fmt("%s %s %s", _G.FOLLOW, _G.PARTY_LEADER, _G.TARGET))
+    addon.locale.AddGenericTranslation("Show party leader target",fmt("%s %s %s", _G.SHOW, strlower(_G.PARTY_LEADER), strlower(_G.TARGET)))
+    addon.locale.AddGenericTranslation("Active Party Step v2 (Beta)",fmt("%s %s %sv2", _G.ACTIVE_PETS, _G.PARTY, L("Step ")) .. L(" (Beta)"))
+    addon.locale.AddGenericTranslation("Enable Active Party Step v2",fmt("%s %s %s %sv2", _G.ENABLE, _G.ACTIVE_PETS, _G.PARTY, L("Step ")))
+    addon.locale.AddGenericTranslation("Hide Party Background",fmt("%s %s %s", _G.HIDE, _G.PARTY, _G.BACKGROUND))
+    addon.locale.AddGenericTranslation("Share Active Step ",fmt("%s %s %s", _G.SHARE_QUEST_ABBREV, _G.ACTIVE_PETS, L("Step ")))
+    addon.locale.AddGenericTranslation("Item Upgrade - Max Level",fmt("%s - %s", _G.ITEM_UPGRADE, _G.GUILD_RECRUITMENT_MAXLEVEL))
+    addon.locale.AddGenericTranslation("Enable Item Upgrade",fmt("%s %s", _G.ENABLE, _G.ITEM_UPGRADE))
+    addon.locale.AddGenericTranslation("Auction Item Search",fmt("%s %s", _G.AUCTION_ITEM, _G.SEARCH))
+    addon.locale.AddGenericTranslation("Hide Background",fmt("%s %s", _G.HIDE, _G.BACKGROUND))
+end
+
 function addon.settings:CreateAceOptionsPanel()
     local function isNotAdvanced() return not self.profile.enableBetaFeatures end
 
@@ -1106,7 +1131,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     groupMode = {
-                        name = fmt("%s %s", _G.ENABLE, _G.COMMUNITIES_SETTINGS_LABEL),
+                        name = L("Enable Group Settings"),
                         -- desc = "",
                         order = 2.7,
                         type = "toggle", -- type = "execute",
@@ -1200,14 +1225,14 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 4.7
                     },
                     v2UIHeader = {
-                        name = fmt("%s %s %d", _G.INTERFACE_LABEL or "", _G.GAME_VERSION_LABEL or "", 2) .. L(" (Beta)"),
+                        name = L("Interface Version 2 (Beta)"),
                         type = "header",
                         width = "full",
                         order = 5.0,
                         hidden = isNotAdvanced,
                     },
                     enableV2ActiveStepsFrame = {
-                        name = fmt("%s %s %sv2", _G.ENABLE, _G.ACTIVE_PETS, L("Step ")),
+                        name = L("Enable Active Step v2"),
                         -- desc = L"",
                         type = "toggle",
                         width = optionsWidth,
@@ -1836,7 +1861,7 @@ function addon.settings:CreateAceOptionsPanel()
                 order = 4,
                 args = {
                     enableTargetAutomation = {
-                        name = fmt("%s %s", _G.ENABLE, _G.BINDING_HEADER_TARGETING),
+                        name = L("Enable Targeting"),
                         -- desc = L("Create Active Targets frame"), -- "Automatically scan nearby targets"
                         type = "toggle",
                         width = unitscanEnabled and optionsWidth or optionsWidth * 3,
@@ -1896,8 +1921,8 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     enableNonLeadMarking = {
-                        name = fmt("%s %s (%s)", _G.ENABLE, _G.BINDING_HEADER_RAID_TARGET, _G.GROUP),
-                        desc = fmt("%s %s %s", _G.ERR_TRAVEL_PASS_NOT_LEADER, _G.ENABLE, _G.BINDING_HEADER_RAID_TARGET),
+                        name = L("Enable Target Markers (Group)"),
+                        desc = L("You are not a group leader. Enable Target Markers"),
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 1.4,
@@ -1931,8 +1956,8 @@ function addon.settings:CreateAceOptionsPanel()
                             not self.profile.enableTargetMacro
                     },
                     createFollowMacro = {
-                        name = fmt("%s %s %s", _G.FOLLOW, _G.PARTY_LEADER, _G.MACRO),
-                        desc = fmt("%s %s %s %s", _G.ENABLE, strlower(_G.FOLLOW), strlower(_G.PARTY_LEADER), strlower(_G.MACRO)),
+                        name = L("Follow Party Leader Macro"),
+                        desc = L("Enable follow party leader macro"),
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 2.3,
@@ -1943,13 +1968,13 @@ function addon.settings:CreateAceOptionsPanel()
                         disabled = not addon.targeting:CanCreateMacro()
                     },
                     activeTargetsHeader = {
-                        name = fmt("%s %s",_G.ACTIVE_PETS, _G.HELPFRAME_REPORT_PLAYER_EXAMPLE_TARGET_CLICK_LOCATION),
+                        name = L("Active Target Frame"),
                         type = "header",
                         width = "full",
                         order = 3
                     },
                     enableTargetFrame = { -- <4.8.26 Formerly enableTargetAutomation
-                        name = fmt("%s %s %s", _G.ENABLE, _G.ACTIVE_PETS, _G.HELPFRAME_REPORT_PLAYER_EXAMPLE_TARGET_CLICK_LOCATION),
+                        name = L("Enable Active Target Frame"),
                         -- desc = L("Create Active Targets frame"), -- "Automatically scan nearby targets"
                         type = "toggle",
                         width = unitscanEnabled and optionsWidth or optionsWidth * 3,
@@ -1980,7 +2005,7 @@ function addon.settings:CreateAceOptionsPanel()
                         hidden = not unitscanEnabled
                     },
                     enableEnemyTargeting = {
-                        name = fmt("%s %s %s", _G.SHOW, _G.ENEMY, _G.TARGET), -- L("Scan Enemy Targets"), -- TODO locale
+                        name = L("Show Enemy Target"), -- L("Scan Enemy Targets"), -- TODO locale
                         -- desc = L("Scan for enemy targets"),
                         type = "toggle",
                         width = optionsWidth,
@@ -1990,7 +2015,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     enableFriendlyTargeting = {
-                        name = fmt("%s %s %s", _G.SHOW, _G.FRIENDLY, _G.TARGET), -- L("Scan Friendly Targets"),
+                        name = L("Show Friendly Target"), -- L("Scan Friendly Targets"),
                         -- desc = L("Scan for friendly targets"),
                         type = "toggle",
                         width = optionsWidth,
@@ -2000,8 +2025,8 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     createFollowTarget = { --TODO implement /target + /follow
-                        name = fmt("%s %s %s", _G.FOLLOW, _G.PARTY_LEADER, _G.TARGET),
-                        desc = "TODO" .. fmt("%s %s %s", _G.SHOW, strlower(_G.PARTY_LEADER), strlower(_G.TARGET)),
+                        name = L("Follow Party Leader Target"),
+                        desc = "TODO" .. L("Show party leader target"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 3.14,
@@ -2429,14 +2454,14 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 3.2
                     },
                     activePartyStepsV2Header = {
-                        name = fmt("%s %s %sv2", _G.ACTIVE_PETS, _G.PARTY, L("Step ")) .. L(" (Beta)"),
+                        name = L("Active Party Step v2 (Beta)"),
                         type = "header",
                         width = "full",
                         order = 4.0,
                         hidden = isNotAdvanced
                     },
                     enableV2ActivePartyStepsFrame = {
-                        name = fmt("%s %s %s %sv2", _G.ENABLE, _G.ACTIVE_PETS, _G.PARTY, L("Step ")),
+                        name = L("Enable Active Party Step v2"),
                         -- desc = L"",
                         type = "toggle",
                         width = optionsWidth * 1.5,
@@ -2468,7 +2493,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     activePartyStepsV2HideBackground = {
-                        name = fmt("%s %s %s", _G.HIDE, _G.PARTY, _G.BACKGROUND),
+                        name = L("Hide Party Background"),
                         desc = L("Make background transparent"),
                         type = "toggle",
                         width = optionsWidth,
@@ -2483,7 +2508,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     shareActiveSteps = {
-                        name = fmt("%s %s %s", _G.SHARE_QUEST_ABBREV, _G.ACTIVE_PETS, L("Step ")),
+                        name = L("Share Active Step "),
                         desc = L("Share your Active Step with party members"),
                         type = "toggle",
                         width = optionsWidth,
@@ -2742,7 +2767,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     enableItemUpgrades = {
-                        name = fmt("%s %s", _G.ENABLE, _G.ITEM_UPGRADE),
+                        name = L("Enable Item Upgrade"),
                         desc =
                             L("Calculates item upgrades with Tactics' effective power weights"),
                         type = "toggle",
@@ -2853,7 +2878,7 @@ function addon.settings:CreateAceOptionsPanel()
                     enableItemUpgradesAH = {
                         name = fmt("%s %s", _G.ENABLE,
                                    _G.MINIMAP_TRACKING_AUCTIONEER),
-                        desc = fmt("%s %s", _G.AUCTION_ITEM, _G.SEARCH),
+                        desc = L("Auction Item Search"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 5.6,
@@ -3362,7 +3387,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     activeStepsV2HideBackground = {
-                        name = fmt("%s %s", _G.HIDE, _G.BACKGROUND),
+                        name = L("Hide Background"),
                         desc = L("Make background transparent"),
                         type = "toggle",
                         width = optionsWidth,

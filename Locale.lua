@@ -51,3 +51,9 @@ if locale == 'zhCN' or locale == 'zhTW' or locale == 'frFR' or locale == 'koKR' 
 else
     addon.locale.Get = noop
 end
+
+function addon.locale.AddGenericTranslation(source,translation)
+    if source == getForeign(source) then
+        lazyTranslationCache[source] = translation
+    end
+end
