@@ -1374,7 +1374,7 @@ function CurrentStepFrame.UpdateText()
 
     CurrentStepFrame:SetHeight(totalHeight - 5)
 
-    if addon.settings.profile.enableBetaFeatures and addon.comms.grouping:CanBroadcastCurrentStep() then
+    if addon.comms.grouping:CanBroadcastCurrentStep() then
         addon.v2.events:Trigger("UpdateActiveSteps", activeSteps, addon.player.name)
     end
 end

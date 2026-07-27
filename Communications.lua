@@ -841,7 +841,8 @@ end
 local ACTIVE_STEP_BROADCAST_INTERVAL = 0.2
 
 function addon.comms.grouping:CanBroadcastCurrentStep()
-    return addon.settings.profile.shareActiveSteps and
+    return addon.settings.profile.enableBetaFeatures and
+           addon.settings.profile.shareActiveSteps and
            UnitInBattleground("player") == nil and GetNumGroupMembers() > 1
 end
 
