@@ -846,7 +846,7 @@ function addon.comms.grouping:CanBroadcastCurrentStep()
            UnitInBattleground("player") == nil and GetNumGroupMembers() > 1
 end
 
-function addon.v2:SendCurrentStep(grouping, encodedPayload)
+function addon.comms.grouping:SendCurrentStep(encodedPayload)
     local data = {
         command = "STEP",
         encodedPayload = encodedPayload
@@ -854,7 +854,7 @@ function addon.v2:SendCurrentStep(grouping, encodedPayload)
 
     local serialized = addon.comms:Serialize(data)
     addon.comms:SendCommMessage(addon.comms._commPrefix, serialized, "PARTY", nil, "ALERT")
-    grouping.activeStepBroadcastLast = GetTime()
+    self.activeStepBroadcastLast = GetTime()
     return true
 end
 
@@ -866,7 +866,7 @@ function addon.comms.grouping:BroadcastCurrentStep(encodedPayload)
                     (now - (self.activeStepBroadcastLast or 0))
 
     if delay <= 0 and not self.activeStepBroadcastQueued then
-        return addon.v2:SendCurrentStep(self, encodedPayload)
+        return self:SendCurrentStep(encodedPayload)
     end
 
     self.activeStepBroadcastPayload = encodedPayload
