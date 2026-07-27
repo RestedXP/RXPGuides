@@ -1,7 +1,7 @@
 local addonName, addon = ...
 
 local fmt, tinsert, tremove, mmax, mmin, mrand = string.format, table.insert, table.remove, math.max, math.min,
-                                               math.random
+                                                 math.random
 local GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown, GetNumMacros = GetMacroInfo, CreateMacro, EditMacro,
                                                                              InCombatLockdown, GetNumMacros
 local TargetUnit, UnitName, next, IsInRaid, UnitIsDead, UnitIsGroupLeader, IsInGroup, UnitOnTaxi, UnitIsPlayer,
@@ -46,7 +46,6 @@ local mobPlaceholder = 135274 -- Inv_sword_04
 local unitscanList = {}
 
 local rareTargets = {}
-
 
 local pendingLeaderUpdate
 
@@ -113,9 +112,7 @@ function addon.targeting:Setup()
     end
 end
 
-function addon.targeting.GetCurrentTargets()
-    return targetList,mobList,unitscanList,rareTargets
-end
+function addon.targeting.GetCurrentTargets() return targetList, mobList, unitscanList, rareTargets end
 
 local function shouldTargetCheck()
     return not IsInRaid() and not UnitOnTaxi("player") and not addon.isCastingHS and
@@ -210,7 +207,7 @@ function addon.targeting:UpdateMacro(queuedTargets)
         nil then
         C_Timer.After(1, function()
             addon.comms.PrettyPrint(L(
-            "A macro has been automatically built to aid in leveling. Please move %s to your action bars."),
+                                        "A macro has been automatically built to aid in leveling. Please move %s to your action bars."),
                                     self.macroName)
 
         end)
@@ -248,9 +245,7 @@ function addon.targeting:UpdateFollowMacro(leaderName)
         return
     end
 
-    if not leaderName then
-        leaderName = addon.comms.state.group.leader
-    end
+    if not leaderName then leaderName = addon.comms.state.group.leader end
 
     if not leaderName then return end
 
@@ -264,9 +259,7 @@ function addon.targeting:PLAYER_REGEN_ENABLED()
 
     self:UpdateTargetFrame()
 
-    if pendingLeaderUpdate then
-        C_Timer.After(mrand(1), function() self:UpdateFollowMacro(pendingLeaderUpdate) end)
-    end
+    if pendingLeaderUpdate then C_Timer.After(mrand(1), function() self:UpdateFollowMacro(pendingLeaderUpdate) end) end
 end
 
 function addon.targeting:CheckNameplate(nameplateID)
@@ -340,19 +333,13 @@ function addon.targeting:CheckNameplates()
     for _, nameplate in ipairs(nameplatesArray) do self:CheckNameplate(nameplate.namePlateUnitToken) end
 end
 
-function addon.targeting:PLAYER_ENTERING_WORLD()
-    C_Timer.After(mrand(3), function() self:UpdateFollowMacro() end)
-end
+function addon.targeting:PLAYER_ENTERING_WORLD() C_Timer.After(mrand(3), function() self:UpdateFollowMacro() end) end
 
-function addon.targeting:GROUP_FORMED()
-    C_Timer.After(3 + mrand(2), function() self:UpdateFollowMacro() end)
-end
+function addon.targeting:GROUP_FORMED() C_Timer.After(3 + mrand(2), function() self:UpdateFollowMacro() end) end
 
 function addon.targeting:GROUP_LEFT() self:UpdateFollowMacro("") end
 
-function addon.targeting:PARTY_LEADER_CHANGED()
-    self:UpdateFollowMacro()
-end
+function addon.targeting:PARTY_LEADER_CHANGED() self:UpdateFollowMacro() end
 
 function addon.targeting:NAME_PLATE_UNIT_ADDED(_, nameplateID)
     if not nameplateID or not shouldTargetCheck() then return end
@@ -487,7 +474,9 @@ function addon.targeting:GOSSIP_SHOW()
             self:UpdateTargetFrame("target")
             self:UpdateMacro()
 
-            if addon.gameVersion < 120000 and GetRaidTargetIndex("target") ~= nil then SetRaidTarget("target", 0) end
+            if addon.gameVersion < 120000 and GetRaidTargetIndex("target") ~= nil then
+                SetRaidTarget("target", 0)
+            end
             return
         end
     end
@@ -783,23 +772,30 @@ function addon.targeting:CanCreateMacro() return GetNumMacros() < 119 end
 
 local function UpdateV1IconFrameVisuals(self)
     self:SetScale(addon.settings.profile.activeTargetScale or 1)
+
     addon.targeting:RenderTargetFrameBackground()
+
     self.title:ClearBackdrop()
     self.title:SetBackdrop(addon.RXPFrame.backdrop.edge)
     self.title:SetBackdropColor(unpack(addon.colors.background))
+
     self.title.text:SetFont(addon.font, 9, "")
     self.title.text:SetTextColor(unpack(addon.activeTheme.textColor))
+
     self.title:SetSize(self.title.text:GetStringWidth() + 10, 19)
 end
 
 local function UpdateV2IconFrameVisuals(self)
     local theme = addon.v2:GetTheme()
+
     self:SetScale(addon.settings.profile.activeTargetScale or 1)
+
     addon.targeting:RenderTargetFrameBackground()
-    addon.ui.v2:ApplyFrameBackdrop(self.title, theme.edge, theme.backgroundColors.common,
-                                   theme.borderColors.commonEdge)
+    addon.ui.v2:ApplyFrameBackdrop(self.title, theme.edge, theme.backgroundColors.common, theme.borderColors.commonEdge)
+
     self.title.text:SetFont(addon.font, 9, "")
     self.title.text:SetTextColor(unpack(theme.textColor.title))
+
     self.title:SetSize(self.title.text:GetStringWidth() + 10, 19)
 end
 
@@ -856,7 +852,7 @@ function addon.targeting:CreateTargetFrame()
     f.title.text:SetJustifyH("CENTER")
     f.title.text:SetJustifyV("MIDDLE")
     f.title.text:SetFont(addon.font, 9, "")
-    f.title.text:SetText(L"Active Targets")
+    f.title.text:SetText(L "Active Targets")
 
     f.title:EnableMouse(true)
     f.title:SetScript("OnMouseDown", f.onMouseDown)
@@ -886,8 +882,7 @@ function addon.targeting:RenderTargetFrameBackground()
         addon.ui.v2:SetFrameBackdropShown(f, false)
     else
         local theme = addon.v2:GetTheme()
-        addon.ui.v2:ApplyFrameBackdrop(f, theme.edge, theme.backgroundColors.common,
-                                       theme.borderColors.commonEdge)
+        addon.ui.v2:ApplyFrameBackdrop(f, theme.edge, theme.backgroundColors.common, theme.borderColors.commonEdge)
         addon.ui.v2:AddFrameShadow(f)
         addon.ui.v2:SetFrameBackdropShown(f, true)
     end
@@ -935,8 +930,8 @@ function addon.targeting:GetMarkerIndex(kind, kindIndex)
         -- 0 % 4 = 0 + 1, 3 % 4 = 3 + 1, 4 % 4 = 0 + 1, 5 % 4 = 1 + 1
         raidTargetIndex = (kindIndex % 4) + 1
     elseif kind == 'unitscan' or kind == 'rare' then
-         -- Use moon 5
-         -- Use Moon for all party members
+        -- Use moon 5
+        -- Use Moon for all party members
         raidTargetIndex = 5
     elseif kind == 'mob' then
         -- Use skull 8, cross 7, square 6
@@ -953,9 +948,7 @@ function addon.targeting:UpdateMarker(kind, unitId, index)
     if IsInGroup() and not UnitIsGroupLeader('player') then
         if not addon.settings.profile.enableNonLeadMarking then return end
     end
-    if addon.gameVersion >= 120000 then
-        return
-    end
+    if addon.gameVersion >= 120000 then return end
     local markerId = self:GetMarkerIndex(kind, index)
 
     if GetRaidTargetIndex(unitId) == nil and GetRaidTargetIndex(unitId) ~= markerId then
@@ -1141,7 +1134,8 @@ function addon.targeting:UpdateTargetFrame(selector)
         btn = enemyTargetButtons[enemyTargetButtonIndex]
 
         if not btn then
-            btn = CreateFrame("Button", "RXPTargetFrame_EnemyButton" .. enemyTargetButtonIndex, targetFrame, "SecureActionButtonTemplate")
+            btn = CreateFrame("Button", "RXPTargetFrame_EnemyButton" .. enemyTargetButtonIndex, targetFrame,
+                              "SecureActionButtonTemplate")
 
             btn:SetAttribute("type", "macro")
             btn:SetSize(25, 25)
@@ -1208,7 +1202,8 @@ function addon.targeting:UpdateTargetFrame(selector)
         btn = friendlyTargetButtons[friendlyTargetButtonIndex]
 
         if not btn then
-            btn = CreateFrame("Button", "RXPTargetFrame_FriendlyButton" .. friendlyTargetButtonIndex, targetFrame, "SecureActionButtonTemplate")
+            btn = CreateFrame("Button", "RXPTargetFrame_FriendlyButton" .. friendlyTargetButtonIndex, targetFrame,
+                              "SecureActionButtonTemplate")
             btn:SetAttribute("type", "macro")
             btn:SetSize(25, 25)
 

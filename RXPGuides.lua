@@ -629,8 +629,10 @@ local GossipGetAvailableQuests = C_GossipInfo.GetAvailableQuests or
 -- TODO handle Pawn compatibility
 local questRewardChoiceIcons = {}
 local questLogRewardChoiceIcons = {}
+
 local function createRewardChoiceGlow(parent, icon)
     icon.glow = parent:CreateTexture(nil, "OVERLAY", nil, 0)
+
     icon.glow:SetTexture("Interface/Minimap/UI-Minimap-ZoomButton-Highlight")
     icon.glow:SetBlendMode("ADD")
     icon.glow:SetVertexColor(1, 0.72, 0.1, 0.9)
@@ -639,8 +641,10 @@ end
 
 local function showRewardChoiceIcon(icon, rewardButton, point, x, y)
     local overlay = icon.overlay
+
     if not overlay then
         overlay = _G.CreateFrame("Frame", nil, rewardButton)
+
         icon.overlay = overlay
     else
         overlay:SetParent(rewardButton)
@@ -652,12 +656,14 @@ local function showRewardChoiceIcon(icon, rewardButton, point, x, y)
     icon:SetParent(overlay)
     icon:ClearAllPoints()
     icon:SetPoint(point, rewardButton, x, y)
+
     if icon.glow then
         icon.glow:SetParent(overlay)
         icon.glow:ClearAllPoints()
         icon.glow:SetPoint("CENTER", icon, "CENTER")
         icon.glow:Show()
     end
+
     icon:Show()
 end
 
@@ -742,6 +748,7 @@ local function createLogRewardChoiceIcons()
     -- Only triggers on selection in Wrath
     hooksecurefunc("SelectQuestLogEntry", function(questLogIndex)
         hideRewardChoiceIcons()
+
         addon.DisplayQuestLogRewards(questLogIndex)
     end)
 
@@ -1590,9 +1597,12 @@ function addon:BAG_UPDATE_DELAYED(...) addon.UpdateItemFrame() end
 
 function addon:PLAYER_REGEN_ENABLED(...)
     addon.UpdateItemFrame()
+
     if addon.settingsPanelAfterCombat ~= nil then
         local panelName = addon.settingsPanelAfterCombat
+
         addon.settingsPanelAfterCombat = nil
+
         addon.settings.OpenSettings(panelName ~= true and panelName)
     end
 end
@@ -1859,12 +1869,15 @@ function addon.LegacyUpdateLoop()
             event = event .. "/textsingle"
 
             addon.updateStepText = false
+
             if addon.v2:IsGuideWindowEnabled() then
                 table.wipe(addon.stepUpdateList)
                 addon.updateTipWindow = false
                 addon.v2.events:Trigger("GuideStepsChanged")
+
                 return
             end
+
             local updateText
             local steps = addon.currentGuide.steps
             local update = {}
@@ -1893,14 +1906,18 @@ function addon.LegacyUpdateLoop()
             event = event .. "/bottomFrame"
 
             errorCount = 0
+
             if addon.v2:IsGuideWindowEnabled() then
                 addon.updateBottomFrame = false
                 addon.RXPFrame.SetStepFrameAnchor()
                 addon.v2.events:Trigger("GuideStepsChanged")
+
                 return
             end
+
             addon.RXPFrame.BottomFrame.UpdateFrame()
             addon.RXPFrame.SetStepFrameAnchor()
+
             updateError = false
             skip = 1
 
@@ -2435,18 +2452,24 @@ function addon:ShowMenu(menu, menuFrame, anchor, x, y, displayMode, autoHideDela
 
     if _G.EasyMenu then
         if hadV2MenuTheme then addon.v2:UpdateMenuTheme(_G.DropDownList1, false) end
+
         _G.EasyMenu(menu, menuFrame, anchor, x, y, displayMode, autoHideDelay)
+
         if menuFrame.rxpV2MenuTheme then
             addon.v2:UpdateMenuTheme(_G.DropDownList1, menuFrame.rxpV2MenuTheme)
         end
+
         if v2GuideWindow then addon.v2:HookMenuSubmenus("DropDownList") end
     else
         if hadV2MenuTheme then addon.v2:UpdateMenuTheme(_G.L_DropDownList1, false) end
+
         LibStub:GetLibrary("LibUIDropDownMenu-4.0"):EasyMenu(menu, menuFrame, anchor, x, y, displayMode,
                                                                autoHideDelay)
+
         if menuFrame.rxpV2MenuTheme then
             addon.v2:UpdateMenuTheme(_G.L_DropDownList1, menuFrame.rxpV2MenuTheme)
         end
+
         if v2GuideWindow then addon.v2:HookMenuSubmenus("L_DropDownList") end
     end
 end
@@ -2494,6 +2517,7 @@ end
 function addon.v2.events:UpdateActiveSteps(_, activeSteps, name)
     if name == addon.player.name then
         addon.v2:UpdateActiveStepsFrame(activeSteps)
+
         return
     end
 
@@ -2505,9 +2529,11 @@ function addon.v2.events:QuestDataLoaded(_, questId)
         addon.v2.state.activeStepRenderRevision =
             (addon.v2.state.activeStepRenderRevision or 0) + 1
     end
+
     if addon.RXPFrame.activeSteps then
         addon.v2:UpdateActiveStepsFrame(addon.RXPFrame.activeSteps, questId)
     end
+
     addon.v2.events:Trigger("GuideStepsChanged")
 end
 
@@ -2517,6 +2543,7 @@ function addon.v2.events:GuideStepsChanged(_, scheduled)
         if addon.RXPFrame.activeSteps then
             addon.v2:UpdateActiveStepsFrame(addon.RXPFrame.activeSteps)
         end
+
         addon.v2:UpdateGuideWindow()
     elseif addon.v2:IsGuideWindowEnabled() then
         addon:ScheduleTask(addon.v2.events.GuideStepsChanged, false, true)
@@ -2526,10 +2553,12 @@ end
 function addon.v2.events:GuideWindowRefresh(_, change, value)
     if change == "visuals" then
         local window = addon.v2.state and addon.v2.state.guideWindow
+
         if window then window:RefreshVisuals() end
     elseif change == "visibility" then
         if addon.v2:IsGuideWindowEnabled() then
             local window = addon.v2:GetGuideWindow()
+
             if window then window.frame:SetShown(value) end
         end
     elseif change == "layout" and addon.v2:IsGuideWindowEnabled() then

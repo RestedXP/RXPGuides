@@ -60,6 +60,7 @@ function addon.settings.OpenSettings(panelName)
 
     if _G.InCombatLockdown() then
         addon.settingsPanelAfterCombat = panelName or true
+
         return
     end
 
@@ -287,6 +288,7 @@ end
 
 function addon.settings:IsStepListShown()
     local frameHeight = self.profile and self.profile.frameHeight
+
     return frameHeight == nil or frameHeight >= 35
 end
 
@@ -296,15 +298,19 @@ function addon.settings:SetStepListShown(value)
     addon.RXPFrame:SetHeight(value and addon.height or 10)
     self.profile.frameHeight = value and addon.height or 10
     addon.updateBottomFrame = true
+
     if addon.v2:IsGuideWindowEnabled() then addon.v2:UpdateGuideWindow(value) end
 end
 
 function addon.settings:SetHideCompletedSteps(value)
     self.profile.hideCompletedSteps = value
     addon.RXPFrame.ScrollFrame.ScrollBar:SetValue(0)
+
     if addon.v2:IsGuideWindowEnabled() then
         addon.v2:UpdateGuideWindow()
+
         local window = addon.v2:GetGuideWindow()
+
         if window then
             if value then
                 local scroll = window.guideSteps.scroll
@@ -3299,9 +3305,12 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame:SetScale(value)
+
                             if addon.v2:IsGuideWindowEnabled() then
                                 local window = addon.v2:GetGuideWindowAnchorFrame()
+
                                 if window then window:SetScale(value) end
+
                                 addon.v2.events:Trigger("GuideWindowRefresh", "layout")
                             end
                         end
@@ -4323,6 +4332,7 @@ function addon.settings:RefreshTextColors()
 
     if addon.v2:IsGuideWindowEnabled() then
         addon.v2:UpdateGuideWindow()
+
         if addon.RXPFrame.activeSteps then
             addon.v2.events:Trigger("UpdateActiveSteps", addon.RXPFrame.activeSteps,
                                     addon.player.name)

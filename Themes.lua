@@ -3,9 +3,6 @@ local L = addon.locale.Get
 local fmt = string.format
 
 local themes = {}
-local convertedBorderColors = {"common", "commonEdge", "inactivePartyTab",
-                                "activeStepCheckboxChecked"}
-local convertedTextColors = {"common", "title", "inactivePartyTab"}
 local UnitName = addon.GetUnitName
 addon.themes = themes
 
@@ -109,7 +106,7 @@ addon.customThemeBase = CopyTable(themes['RXP Blue'])
 addon.customThemeBase.name = "Custom"
 addon.customThemeBase.displayName = _G.CUSTOM
 addon.customThemeBase.applicable = true
-addon.customThemeBase.author = UnitName("player") or L"Unknown"
+addon.customThemeBase.author = UnitName("player") or L "Unknown"
 addon.customThemeBase.bgTextures.guideName = "Interface/BUTTONS/WHITE8X8"
 
 addon.guideTextColors = {}
@@ -157,13 +154,14 @@ local function GetDefaultTheme()
     elseif addon.settings.profile.hardcore then
         return themes['RXP Red']
     end
+
     return themes['RXP Blue']
 end
 
 function addon:UsesDefaultTheme()
     local profile = self.settings and self.settings.profile
     local theme = profile and profile.activeTheme
-    -- V2 stores the default selection as RXP Blue V2 while active.
+
     return theme == 'Default' or theme == 'RXP Blue' or theme == 'RXP Blue V2'
 end
 
@@ -171,18 +169,20 @@ function addon:LoadActiveTheme()
     local applicableTheme = addon.settings.profile.activeTheme
     local v2Enabled = addon.v2:IsGuideWindowEnabled()
     local useDefaultTheme = self:UsesDefaultTheme()
+
     if applicableTheme == 'Default' then
         applicableTheme = 'RXP Blue'
+
         addon.settings.profile.activeTheme = applicableTheme
     end
 
     if v2Enabled then
         if applicableTheme == 'RXP Blue' then
             applicableTheme = 'RXP Blue V2'
+
             addon.settings.profile.activeTheme = applicableTheme
         end
-    elseif addon.v2.themes[applicableTheme] and
-        themes[addon.v2.themes[applicableTheme].name] then
+    elseif addon.v2.themes[applicableTheme] and themes[addon.v2.themes[applicableTheme].name] then
         applicableTheme = addon.v2.themes[applicableTheme].name
         addon.settings.profile.activeTheme = applicableTheme
     end
@@ -203,8 +203,7 @@ function addon:LoadActiveTheme()
 
     if newTheme.bgTextures then
         for name, frame in pairs(RXPFrame.backdrop) do
-            local texture = newTheme.bgTextures[name] or RXPFrame.defaultBackground[name]
-            frame.bgFile = texture
+            frame.bgFile = newTheme.bgTextures[name] or RXPFrame.defaultBackground[name]
         end
     end
 
@@ -213,8 +212,9 @@ function addon:LoadActiveTheme()
     RXPFrame.backdrop.bottom.edgeFile = nil
 
     if newTheme.edges then
+        local frame
         for name, texture in pairs(newTheme.edges) do
-            local frame = RXPFrame.backdrop[name]
+            frame = RXPFrame.backdrop[name]
             frame.edgeFile = texture
         end
     end
@@ -228,9 +228,7 @@ function addon:LoadActiveTheme()
 end
 
 function addon:ReloadTheme()
-    if not self.settings.profile.enableThemeLiveReload then
-        return
-    end
+    if not self.settings.profile.enableThemeLiveReload then return end
 
     self.RenderFrame('themeReload')
     self.v2:ConvertThemes()
@@ -240,7 +238,9 @@ function addon:ReloadTheme()
         self.v2:UpdateGuideWindow()
         self.v2:GetGuideWindow():RefreshVisuals()
         self.v2:UpdateActiveStepTheme()
+
         if self.activeItemFrame then self.activeItemFrame:UpdateVisuals() end
+
         if self.targeting and self.targeting.activeTargetFrame then
             self.targeting.activeTargetFrame:UpdateVisuals()
         end
@@ -268,7 +268,7 @@ function addon:RegisterTheme(theme)
     if not theme then return end
 
     if not theme['name'] or not theme['author'] then
-        self.comms.PrettyPrint(L"Theme missing name or author")
+        self.comms.PrettyPrint(L "Theme missing name or author")
         return
     end
 
@@ -281,7 +281,7 @@ function addon:RegisterTheme(theme)
     end
 
     if not themeApplies(theme.applicable) then
-        self.comms.PrettyPrint(L"%s does not apply to current mode, importing anyway", theme.name)
+        self.comms.PrettyPrint(L "%s does not apply to current mode, importing anyway", theme.name)
     end
 
     themes[theme.name] = theme
@@ -326,9 +326,10 @@ addon.v2.themes['RXP Blue V2'] = {
     mapPins = {26 / 255, 28 / 255, 48 / 255, 0.95}, -- #1A1C30F2
     headerTexture = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-header-texture",
     navigationArrow = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp_navigation_arrow-1",
+
     splash = {
         path = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-header-images",
-        texCoords = {256 / 512, 512 / 512, 0, 160 / 512},
+        texCoords = {256 / 512, 512 / 512, 0, 160 / 512}
     },
 
     backgroundColors = {
@@ -336,14 +337,14 @@ addon.v2.themes['RXP Blue V2'] = {
         guideWindow = {7 / 255, 8 / 255, 19 / 255, 0.68}, -- #070813AD
         inactivePartyTab = {32 / 255, 33 / 255, 49 / 255, 1}, -- #202131FF
         activeStepCheckbox = {5 / 255, 7 / 255, 19 / 255, 1}, -- #050713FF
-        activeStepCheckboxChecked = {17 / 255, 132 / 255, 1, 1}, -- #118401FF
+        activeStepCheckboxChecked = {17 / 255, 132 / 255, 1, 1} -- #118401FF
     },
 
     borderColors = {
         common = {55 / 255, 62 / 255, 109 / 255, 1}, -- #373E6DFF
         commonEdge = {184 / 255, 190 / 255, 215 / 255, 1}, -- #B8BED7FF
         inactivePartyTab = {62 / 255, 66 / 255, 102 / 255, 1}, -- #3E4266FF
-        activeStepCheckboxChecked = {17 / 255, 132 / 255, 1, 1}, -- #118401FF
+        activeStepCheckboxChecked = {17 / 255, 132 / 255, 1, 1} -- #118401FF
     },
 
     edge = {
@@ -353,24 +354,28 @@ addon.v2.themes['RXP Blue V2'] = {
             top = {0, 0.25, 0, 1},
             bottom = {0.25, 0.5, 0, 1},
             left = {0.5, 0.75, 0, 1},
-            right = {0.75, 1, 0, 1},
-        },
+            right = {0.75, 1, 0, 1}
+        }
     },
 
     textColor = {
         common = {210 / 255, 210 / 255, 220 / 255, 1}, -- #D2D2DCFF
         title = {24 / 255, 210 / 255, 255 / 255, 1}, -- #18D2FFFF
-        inactivePartyTab = {0.62, 0.62, 0.72, 1}, -- #9E9EB8FF
+        inactivePartyTab = {0.62, 0.62, 0.72, 1} -- #9E9EB8FF
     }
 }
 
 function addon.v2:ConvertThemes()
+    local convertedBorderColors = {"common", "commonEdge", "inactivePartyTab", "activeStepCheckboxChecked"}
+    local convertedTextColors = {"common", "title", "inactivePartyTab"}
+
     local baseTheme = self.themes['RXP Blue V2']
     local converted, edgeColor, backgroundColors, borderColors, textColor, sourceVersion, existingTheme
 
     for name, source in pairs(addon.themes) do
         sourceVersion = source.version or 1
         existingTheme = self.themes[name]
+
         if not (existingTheme and existingTheme.version and sourceVersion < existingTheme.version) then
             if name ~= 'RXP Blue' then
                 converted = CopyTable(baseTheme)
@@ -390,8 +395,7 @@ function addon.v2:ConvertThemes()
                 converted.version = sourceVersion
                 converted.headerTexture = source.texturePath .. source.headerTexture
                 converted.navigationArrow = source.texturePath .. "rxp_navigation_arrow-1"
-                converted.edge.edgeFile = source.bgTextures and source.bgTextures.edge or
-                                             "Interface/BUTTONS/WHITE8X8"
+                converted.edge.edgeFile = source.bgTextures and source.bgTextures.edge or "Interface/BUTTONS/WHITE8X8"
                 converted.splash = source.splash and CopyTable(source.splash)
                 converted.applicable = source.applicable
 
@@ -409,12 +413,11 @@ function addon.v2:ConvertThemes()
     end
 end
 
-
 function addon.v2:GetTheme()
     local profile = addon.settings and addon.settings.profile
     local name = profile and profile.activeTheme
-    self.activeTheme = addon:UsesDefaultTheme() and GetDefaultTheme() or
-                           self.themes[name] or GetDefaultTheme()
+
+    self.activeTheme = addon:UsesDefaultTheme() and GetDefaultTheme() or self.themes[name] or GetDefaultTheme()
 
     return self.activeTheme
 end
