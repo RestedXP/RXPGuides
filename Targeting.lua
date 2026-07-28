@@ -1072,6 +1072,7 @@ local function ResizeTargetsFrame(targetFrame, friendlyCount, enemyCount)
     local enemyWidth, enemyRows = GetTargetGridMetrics(enemyCount, 10)
     local friendlyWidth, friendlyRows = GetTargetGridMetrics(friendlyCount, 10)
     local soloFriendlyRow = enemyRows == 0 and friendlyRows == 1
+    local contentOffset = targetFrame.v2 and 0 or 3
 
     targetFrame:SetWidth(mmax(targetFrame.title:GetWidth() + 10, friendlyWidth, enemyWidth))
     targetFrame:SetHeight(18 + (enemyRows + friendlyRows) * 25 + (enemyRows > 0 and friendlyRows > 0 and 5 or 0))
@@ -1079,13 +1080,14 @@ local function ResizeTargetsFrame(targetFrame, friendlyCount, enemyCount)
     if enemyRows > 0 then
         local firstEnemyButton = targetFrame.enemyTargetButtons[1]
         firstEnemyButton:ClearAllPoints()
-        firstEnemyButton:SetPoint("TOPLEFT", targetFrame, "TOPLEFT", 6, -15)
+        firstEnemyButton:SetPoint("TOPLEFT", targetFrame, "TOPLEFT", 6, -15 + contentOffset)
     end
 
     if friendlyRows > 0 then
         local firstFriendlyButton = targetFrame.friendlyTargetButtons[1]
         firstFriendlyButton:ClearAllPoints()
-        firstFriendlyButton:SetPoint("BOTTOMLEFT", targetFrame, "BOTTOMLEFT", 6, soloFriendlyRow and 4 or 6)
+        firstFriendlyButton:SetPoint("BOTTOMLEFT", targetFrame, "BOTTOMLEFT", 6,
+                                    (soloFriendlyRow and 4 or 6) + contentOffset)
     end
 end
 
