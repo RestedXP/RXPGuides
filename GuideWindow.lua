@@ -210,21 +210,27 @@ function addon.ActiveStepElementOnEnter(frame)
     if frame:IsForbidden() or _G.GameTooltip:IsForbidden() then return end
 
     local element = frame.element or frame:GetParent().element
-    if element and element.tooltip then
-        _G.GameTooltip:SetOwner(frame, "ANCHOR_BOTTOM", 0, -10)
-        _G.GameTooltip:ClearLines()
-        _G.GameTooltip:AddLine(element.tooltip, 1, 1, 1)
-        _G.GameTooltip:Show()
+    local isCheckbox = frame:GetObjectType() == "CheckButton"
+    local tooltip = isCheckbox and L("Skip step") or
+                        (element and type(element.tooltip) == "string" and element.tooltip)
+    if not tooltip then return end
+
+    _G.GameTooltip:SetOwner(frame, "ANCHOR_BOTTOM", 0, -10)
+    _G.GameTooltip:ClearLines()
+    _G.GameTooltip:AddLine(tooltip, 1, 1, 1)
+
+    local debugId = element and (element.questId or element.tooltip)
+    if isCheckbox and addon.settings.profile.debug and debugId then
+        _G.GameTooltip:AddLine(tostring(debugId), 0.65, 0.7, 0.9)
     end
+
+    _G.GameTooltip:Show()
 end
 
 function addon.ActiveStepElementOnLeave(frame)
     if frame:IsForbidden() or _G.GameTooltip:IsForbidden() then return end
 
-    local element = frame.element or frame:GetParent().element
-    if element and element.tooltip and _G.GameTooltip:GetOwner() == frame then
-        _G.GameTooltip:Hide()
-    end
+    if _G.GameTooltip:GetOwner() == frame then _G.GameTooltip:Hide() end
 end
 
 function addon.ActiveStepElementPostClick(button)
