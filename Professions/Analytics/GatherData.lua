@@ -157,7 +157,7 @@ end
 
 SLASH_export1 = '/export'
 SlashCmdList['export'] = function(option)
-    print("exporting ..")
+    print("exporting", RXPCData.professions.profession1.name, "...")
     if not gui:IsVisible() then gui:Show() end
     if not option then option = 1 else option = tonumber(option) end
 
