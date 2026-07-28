@@ -132,7 +132,7 @@ end
 --2 -> JSON Object
 local function exportFoundItems(option)
     local currentDate = tostring(date("%m/%d/%y %H:%M:%S"))
-    local sb = stringBuilder("---"):append(currentDate):append(" "):append(tostring(RXPCData.professions.profession1.name)):append(" "):append(RXPCData.professions.faction):append("---\n")
+    local sb = stringBuilder("---"):append(currentDate):append(" "):append(tostring(RXPCData.professions.profession1.name)):append(" "):append(RXPCData.professions.faction):append(" - "):append(GetRealmName()):append("---\n")
     local converted
     if option == 2 then
         converted = foundItemsToJSONObject()
