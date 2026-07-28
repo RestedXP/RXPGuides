@@ -532,7 +532,7 @@ step << Priest
     .train 425215,1
 step << Priest
     .train 425215 >>|cRXP_WARN_使用|r |T136222:0|t|T237566:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r] |cRXP_WARN_来训练|r |T237566:0|t|T237566:0|t[扭曲信仰]
-    >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel以获得|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_增益效果|r
+    >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel以获得|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_buff|r
     .use 205905
     .itemcount 205905,1
 ]])
@@ -595,7 +595,7 @@ step << Priest
     .mob 霜鬃先知
     .train 402852,1
 step << Priest
-    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|T237570:0|t|cRXP_FRIENDLY_遭渎城堡的预言|r |cRXP_WARN_来训练|r |T237570:0|t|T237570:0|t裂魂魔
+    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|cRXP_FRIENDLY_遭渎城堡的预言|r |cRXP_WARN_来训练|r |T237570:0|t[裂魂魔]
     >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光明祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel，以获得2层|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_增益效果|r
     .use 205947
     .itemcount 205947,1
@@ -644,7 +644,7 @@ step << Priest
     .mob Shadow Sprite
     .train 402852,1
 step << Priest
-    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|T237570:0|t|cRXP_FRIENDLY_遭渎城堡的预言|r |cRXP_WARN_来训练|r |T237570:0|t|T237570:0|t裂魂魔
+    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|cRXP_FRIENDLY_遭渎城堡的预言|r |cRXP_WARN_来训练|r |T237570:0|t[裂魂魔]
     >>|cRXP_WARN_你必须在圣洁区域（如一座月亮井、北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/下跪以获得2层|r |T135934:0|t|T136057:0|t[冥想] |cRXP_WARN_buff|r
     .use 205947
     .itemcount 205947,1
@@ -958,7 +958,7 @@ step << Priest
     .train 425216,1
 step << Priest
     #season 2
-    .train 425216 >>|cRXP_WARN_使用|r |T136222:0|t|T237514:0|t[|cRXP_FRIENDLY_黑暗意图的回忆|r] |cRXP_WARN_训练|r |T237514:0|t|T237514:0|t[虚空疫病]
+    .train 425216 >>|cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_黑暗意图的回忆|r] |cRXP_WARN_训练|r |T237514:0|t[虚空疫病]
     .use 205940
 ]])
 
@@ -1299,7 +1299,7 @@ step
     .goto Azshara,89.8,33.6
     >>目标 |cRXP_FRIENDLY_洞悉神龛|r
     .emote KNEEL,223590
-    .accept 82316,1 >>接受任务 NO TRANSLATION FOUND TO THIS ELEMENT
+    .accept 82316,1 >>接受任务 寻找七只眼……
     .target Shrine of the Watcher
     .train 402864,1
 ]])
@@ -1560,7 +1560,7 @@ step
     .goto Eastern Plaguelands,83.6,78.2
     >>|cRXP_WARN_进入钟楼并前往顶层。与那里的上锁箱子互动|r
     .turnin 84322 >>交任务 血色研究
-    .accept 84323 >>接受任务 其中的奖品
+    .accept 84323 >>接受任务 匣中珍宝
 step
     .goto Eastern Plaguelands,83.6,78.2
     >>击杀提尔之手的所有血色怪物。从它们身上拾取|T134245:0|t|T134245:0|t[|cRXP_LOOT_神器仓库钥匙|r]
@@ -1576,7 +1576,7 @@ step << Alliance
 step << Alliance
     .goto Stormwind City,38.8,26.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在暴风城大教堂与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r对话
-    .turnin 84323 >>交任务 箱中之物
+    .turnin 84323 >>交任务 匣中珍宝
     .target 高阶牧师劳瑞娜
 step << Horde
     #completewith next
@@ -1584,7 +1584,7 @@ step << Horde
 step << Horde
     .goto Orgrimmar,35.8,87.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在精神谷与 |cRXP_FRIENDLY_迪特里希·普雷斯|r对话
-    .turnin 84323 >>交任务 The Prize Within
+    .turnin 84323 >>交任务 匣中珍宝
     .target Dietrich Praice
 step
     .train 402853 >>使用|T135791:0|t|T135883:0|t[|cRXP_FRIENDLY_欣悦顿悟|r]训练|T135883:0|t|T135883:0|t[|cRXP_FRIENDLY_联结治疗|r]
@@ -1601,7 +1601,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    >>该符文从屠魔峡谷最终首领处掉落，符文为 |T135978:0|t[|cRXP_FRIENDLY_Vampiric Touch|r]（SoD新增地下城）
+    >>|T135978:0|t[|cRXP_FRIENDLY_吸血鬼之触符文|r] 由探索赛季新增地下城恶魔之陨峡谷的最终首领掉落
     .zone Felwood >>|cRXP_WARN_要进入此地下城，你需要先完成一个短任务来获得饰品，前往费伍德森林来开始该任务|r
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
@@ -1626,7 +1626,7 @@ step
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
     .goto Felwood,51.4,82.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_影齿大使|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_影齿大使|r对话
     .turnin 84384 >>交任务 恶魔骗术
     .target Shadowtooth Emissary
     .itemcount 228172,<1 --Only shows if you don't have the trinket
@@ -1636,7 +1636,7 @@ step
     .use 228172
     .itemcount 228172,<1
 step
-    >>|T135978:0|t|cRXP_WARN_该符文从屠魔峡谷（SoD新增地下城）的最终首领处掉落。当你前往灰谷时开始寻找队伍|r
+    >>|cRXP_WARN_|T135978:0|t[|r吸血鬼之触|cRXP_FRIENDLY_] |r符文|cRXP_WARN_ 由探索赛季新增地下城恶魔之陨峡谷的最终首领掉落。在你前往灰谷时，就可以开始寻找该副本的队伍了|r
     >>如果你在飞行，请直接飞往艾萨拉的塔伦迪斯据点，而不是阿斯特兰纳。那里离副本入口更近 << Alliance
     .zone Ashenvale >>前往灰谷
 step
@@ -1727,8 +1727,8 @@ step
     .goto Eastern Plaguelands,47,58
     >>|cRXP_WARN_前往位于东瘟疫之地的|r |cRXP_FRIENDLY_合作神殿|r|cRXP_WARN_。与对立阵营的牧师互相造成伤害，然后使用|r |T134918:0|t|T134918:0|t[|cRXP_FRIENDLY_利众结界|r] |cRXP_WARN_（通过提交上一个任务获得的物品）来治疗彼此|r
     >>如果操作正确，|cRXP_FRIENDLY_合作神殿|r会提供一个任务，接受它
-    .accept 84325 >>接受任务 Shrine of Cooperation << Alliance
-    .accept 84410 >>接受任务 << Horde
+    .accept 84325 >>接受任务 合作神龛 << Alliance
+    .accept 84410 >>接受任务 合作神龛 << Horde
     .use 228130
 step << Alliance
     #completewith next
@@ -1744,9 +1744,9 @@ step << Alliance
 step << Alliance
     .goto Stormwind City,38.8,26.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在暴风城大教堂与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r对话
-    .turnin 84325 >>交任务
-    .accept 84326 >>接受任务
-    .turnin 84326 >>交任务
+    .turnin 84325 >>交任务 合作神龛
+    .accept 84326 >>接受任务 外交之戒
+    .turnin 84326 >>交任务 外交之戒
     .accept 84327 >>接受任务 外交任务
     .target 高阶牧师劳瑞娜
 step << Horde
@@ -1763,9 +1763,9 @@ step << Horde
 step << Horde
     .goto Orgrimmar,35.8,87.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在精神谷与 |cRXP_FRIENDLY_迪特里希·普雷斯|r对话
-    .turnin 84410 >>交任务 Shrine of Cooperation
-    .accept 84411 >>接受任务 Diplomat 环
-    .turnin 84411 >>交任务 Diplomat 环
+    .turnin 84410 >>交任务 合作神龛
+    .accept 84411 >>接受任务 外交之戒
+    .turnin 84411 >>交任务 外交之戒
     .accept 84412 >>接受任务 外交任务
     .target Dietrich Praice
 step << Horde
@@ -1864,22 +1864,22 @@ step
     +|cRXP_WARN_阅读完上面的内容后点击这里查看更多关于哪条线索对应哪个首领的详情，如果需要，你可以随时回到这一步|r
 step
     >>|cRXP_WARN_以下是线索及其对应的首领：|r
-    >>在死亡的一方与侍从和冰法术同在的凡人 = 苍白的玛勒基
-    >>一个被诅咒守卫塔的幽灵，无法从财富或权力中获得安慰 = Baroness Anastari
-    >>被重新发现的远古王国，用一个主人换取另一个 = Nerub'enkan
+    >>此人身处死者之中，与侍僧和冰霜法术为伴 = 苍白的玛勒基
+    >>被诅咒守卫高塔的幽灵，财富与权力无法带来慰藉 = 安娜丝塔丽男爵夫人
+    >>古老王国重见天日，只是换了一个主人 = 奈鲁布恩坎
     >>由血肉构成的科学罪恶，被遗弃者精英追捕 = 吞咽者拉姆斯登
-    >>人民寄希望于他在其最困难之时领导 = Magistrate Barthilas
+    >>人民寄希望于他在其最困难之时领导 = 巴瑟拉斯镇长
     >>邪恶恶意的拥护者，庞大的恐怖守卫其宫殿 = 瑞文戴尔男爵
     >>神圣的狂热净化罪恶，然而一个影子潜伏其中 = 巴纳扎尔
-    >>硫磺气味弥漫房间。这个狂热者用轰鸣声向你问好 = 火炮大师Willey
+    >>硫磺气味弥漫房间。这个狂热者用轰鸣声向你问好 = 炮手威利
     +|cRXP_WARN_如果你想查看完成任务的推荐有效步骤顺序，请点击这里。如果需要，你可以随时回到这一步重新阅读线索|r
 step
     >>|cRXP_WARN_完成此任务的有效步骤顺序如下：|r
-    >>1. 从副本的生者区开始
-    >>2. 拾取三个[|cRXP_PICK_Postbox Parcels|r]来获得|T134799:0|t[|cRXP_LOOT_Stratholme 小影 Jars|r]，罐子是独特的，所以让不同的玩家各拾取一个
-    >>3. 前往柱子房间，找出在你的副本ID中哪些首领有精华
-    >>4. 在通过副本的过程中收集所有精华
-    >>5. 返回柱子房间并用其精华激活每一个
+    >>1. 从该地下城的活人区开始
+    >>2. 搜刮三个[|cRXP_PICK_邮箱包裹|r]以获得|T134799:0|t[|cRXP_LOOT_斯坦索姆阴影之瓮|r]。这些罐子是唯一物品，因此需要由不同的玩家各拾取一个
+    >>3. 清理小怪直到抵达基座房间，在你的副本ID中找出哪些首领拥有这些精华
+    >>4. 在打副本的过程中收集所有精华
+    >>5. 返回基座房间，并使用对应的精华激活每一个基座
     >>6. 拾取生成的球体来获得你的符文
     .collect 228124,1 --Oneiric Epiphany
 step

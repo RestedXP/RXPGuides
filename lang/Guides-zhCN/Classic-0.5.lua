@@ -432,7 +432,7 @@ step
 	.goto Silithus,60.00,55.80,60,0
 	.goto Silithus,60.60,52.80,60,0
     >>击杀 |cRXP_ENEMY_被折磨的德鲁伊|r 和 |cRXP_ENEMY_被折磨的哨兵|r。拾取它们的 |cRXP_LOOT_烧焦的灵质|r
-    >>|cRXP_WARN_在击杀它们时将它们拉向|r |T133882:0|t[灵质提纯器]
+    >>|cRXP_WARN_在击杀它们时|r|cRXP_WARN_将它们拉向|r |T133882:0|t[灵质提纯器]
     .complete 8924,1 --Scorched Ectoplasm (x12)
 	.mob Tortured Druid
 	.mob Tortured Sentinel
@@ -1298,7 +1298,7 @@ step
     .subzone 254 >>前往 |cFFfa9602黑石山|r
 step
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .turnin 8960 >>交任务 伯德雷的不幸
     .accept 8961 >>接受任务 烈焰之王
@@ -1406,7 +1406,7 @@ step
     .subzone 254 >>前往 |cFFfa9602黑石山|r
 step
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .turnin 8961 >>交任务 烈焰之王
     .acceptmultiple 8962,8963,8964,8965 >>接受任务 重要的材料
@@ -1648,7 +1648,7 @@ step
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .turnin 8966 >>交任务 塔拉克饰品的左瓣
     .accept 8970 >>接受任务 奥卡兹岛在你前方……
@@ -1657,7 +1657,7 @@ step
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .turnin 8967 >>交任务 塔拉克饰品的左瓣
     .accept 8970 >>接受任务 奥卡兹岛在你前方……
@@ -1666,7 +1666,7 @@ step
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .turnin 8968 >>交任务 塔拉克饰品的左瓣
     .accept 8970 >>接受任务 奥卡兹岛在你前方……
@@ -1674,7 +1674,7 @@ step
     .isQuestComplete 8968
 step
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .turnin 8969 >>交任务 塔拉克饰品的左瓣
     .accept 8970 >>接受任务 奥卡兹岛在你前方……
@@ -1683,7 +1683,7 @@ step
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .accept 8970 >>接受任务 奥卡兹岛在你前方……
     .target Bodley
@@ -1691,7 +1691,7 @@ step
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .accept 8970 >>接受任务 奥卡兹岛在你前方……
     .target Bodley
@@ -1699,7 +1699,7 @@ step
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .accept 8970 >>接受任务 奥卡兹岛在你前方……
     .target Bodley
@@ -1707,7 +1707,7 @@ step
 step
     #label AlcazIslandPU
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .accept 8970 >>接受任务 奥卡兹岛在你前方……
     .target Bodley
@@ -1738,13 +1738,13 @@ step
     .subzone 254 >>前往 |cFFfa9602黑石山|r
 step
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .turnin 8970 >>交任务 奥卡兹岛在你前方……
     .target Bodley
 step
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .acceptmultiple 8985,8986,8987,8988 >>接受任务 更多重要的材料
     .target Bodley
@@ -1848,7 +1848,7 @@ step
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .turnin 8985 >>交任务 更多重要的材料
     .target Bodley
@@ -1856,7 +1856,7 @@ step
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .turnin 8986 >>交任务 更多重要的材料
     .target Bodley
@@ -1879,7 +1879,7 @@ step
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .acceptmultiple 8989,8990,8991,8992 >>接受任务 瓦塔拉克饰品的右瓣
     .target Bodley
@@ -1887,7 +1887,7 @@ step
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .acceptmultiple 8989,8990,8991,8992 >>接受任务 瓦塔拉克饰品的右瓣
     .target Bodley
@@ -1895,7 +1895,7 @@ step
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .acceptmultiple 8989,8990,8991,8992 >>接受任务 瓦塔拉克饰品的右瓣
     .target Bodley
@@ -1903,7 +1903,7 @@ step
 step
     #label RightPiecePU
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .acceptmultiple 8989,8990,8991,8992 >>接受任务 瓦塔拉克饰品的右瓣
     .target Bodley
@@ -2085,7 +2085,7 @@ step
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .accept 8994 >>接受任务 最后的准备
     .target Bodley
@@ -2093,7 +2093,7 @@ step
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .accept 8994 >>接受任务 最后的准备
     .target Bodley
@@ -2101,7 +2101,7 @@ step
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .accept 8994 >>接受任务 最后的准备
     .target Bodley
@@ -2109,7 +2109,7 @@ step
 step
     #label FinalPrepPU
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .accept 8994 >>接受任务 最后的准备
     .target Bodley
@@ -2132,7 +2132,7 @@ step
     .subzone 254 >>前往 |cFFfa9602黑石山|r
 step
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .turnin 8994 >>交任务 最后的准备
     .accept 8995 >>接受任务 瓦塔拉克公爵
@@ -2159,7 +2159,7 @@ step
     .subzone 254 >>前往 |cFFfa9602黑石山|r
 step
     .goto Eastern Kingdoms,48.90,63.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伯德雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_伯德雷|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_伯德雷|r
     .turnin 8996 >>交任务 向伯德雷回复
     .accept 8997 >>接受任务 回到起点 << Alliance

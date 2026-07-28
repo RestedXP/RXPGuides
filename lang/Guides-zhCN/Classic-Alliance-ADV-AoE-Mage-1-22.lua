@@ -945,7 +945,7 @@ step
     .accept 9 >>接受任务 清理荒野
     .target +Farmer Saldean
     .goto Westfall,56.04,31.23
-    .turnin 36 >>交任务《 前往熔光镇》 杂味炖肉
+    .turnin 36 >>交任务 杂味炖肉
     .accept 38 >>接受任务 杂味炖肉
     .accept 22 >>接受任务 猪肝馅饼
     .target +Salma Saldean
@@ -992,7 +992,7 @@ step
     .target 摩根·匹斯特
 step
     .goto Stormwind City,55.46,65.26
-    >>Talk to |cRXP_FRIENDLY_Keldric|r
+    >>与 |cRXP_FRIENDLY_凯德雷克·布舍尔|r 对话
     .vendor 1257 >>|cRXP_BUY_购买|r |T134830:0|t|T134830:0|t[次级治疗药水] |cRXP_BUY_从他那里（如果有货的话）|r
     .target Keldric Boucher
 step << skip
@@ -1175,7 +1175,7 @@ step
     .goto Dun Morogh,62.57,46.14,0
     .goto Dun Morogh,62.78,54.60,40,0
     .goto Dun Morogh,62.82,55.73
-    >>击杀 |cRXP_ENEMY_瓦加什|r。从他身上拾取 |cRXP_LOOT_瓦加什的牙齿|r
+    >>击杀 |cRXP_ENEMY_瓦加什|r，从他身上拾取 |cRXP_LOOT_瓦加什的牙齿|r
     >>|cRXP_WARN_将|cRXP_ENEMY_瓦加什|r风筝到牧场南边的|cRXP_FRIENDLY_丹莫洛巡山人|r处。确保你对它造成51%以上的伤害|r
     >>|cRXP_WARN_记得拿冻土岭的探索经验，方便的话把|cRXP_ENEMY_雪豹|r拉到|cRXP_FRIENDLY_丹莫洛巡山人|r旁边|r
     .complete 314,1 --Collect Fang of Vagash (1)
@@ -2617,7 +2617,7 @@ step
     .goto Dun Morogh,62.57,46.14,0
     .goto Dun Morogh,62.78,54.60,40,0
     .goto Dun Morogh,62.82,55.73
-    >>击杀 |cRXP_ENEMY_瓦加什|r。从他身上拾取 |cRXP_LOOT_瓦加什的牙齿|r
+    >>击杀 |cRXP_ENEMY_瓦加什|r，从他身上拾取 |cRXP_LOOT_瓦加什的牙齿|r
     >>|cRXP_WARN_将|cRXP_ENEMY_瓦加什|r风筝到牧场南边的|cRXP_FRIENDLY_丹莫洛巡山人|r处。确保你对它造成51%以上的伤害|r
     >>|cRXP_WARN_记得拿冻土岭的探索经验，方便的话把|cRXP_ENEMY_雪豹|r拉到|cRXP_FRIENDLY_丹莫洛巡山人|r旁边|r
     .link https://youtu.be/Zg4FNWw-P5k?t=3815 >>https://youtu.be/Zg4FNWw-P5k?t=3815 >>|cRXP_WARN_如果你遇到困难请点击这里|r
@@ -4672,7 +4672,7 @@ step << Gnome
     .use 17117
 step
     >>与|cRXP_FRIENDLY_蒙提|r 对话
-    >>|cRXP_WARN_等待剧情演出完成|r << Gnome
+    >>|cRXP_WARN_等剧情结束|r << Gnome
     .turnin 6661 >>交任务 捕捉矿道老鼠 << Gnome
     .timer 13,捕捉矿道老鼠剧情表演 << Gnome
     .accept 6662 >>接受任务 我的兄弟，尼普希
@@ -5385,7 +5385,7 @@ step
 step
     #label Talisman
     .goto Darkshore,52.24,33.08
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     >>击杀|cRXP_ENEMY_萨巴克希斯|r
     >>拾取掉落地上的|cRXP_PICK_萨布拉克斯的恶魔之袋|r，从中获得|cRXP_LOOT_堕落护符|r
     >>|cRXP_WARN_该操作有 5 秒施法时间|r
@@ -5711,7 +5711,7 @@ step
     .accept 9 >>接受任务 清理荒野
     .target +Farmer Saldean
     .goto Westfall,56.04,31.23
-    .turnin 36 >>交任务《 前往熔光镇》 杂味炖肉
+    .turnin 36 >>交任务 杂味炖肉
     .accept 38 >>接受任务 杂味炖肉
     .accept 22 >>接受任务 猪肝馅饼
     .goto Westfall,56.42,30.52
@@ -6120,7 +6120,7 @@ step
     .target +Farmer Saldean
     .goto Westfall,56.04,31.23
     .turnin 22 >>交任务 猪肝馅饼
-    .turnin 38 >>交任务《 前往熔光镇》 杂味炖肉
+    .turnin 38 >>交任务 杂味炖肉
     .goto Westfall,56.42,30.52
     .target +Salma Saldean
 step
@@ -7345,7 +7345,7 @@ step
     #completewith next
     #requires Dawn2
     .goto Duskwood,73.79,45.98,20,0
-    .goto Duskwood,74.01,45.36,10 >>进入旅馆
+    .goto Duskwood,74.01,45.36,10 >>进入旅店
 step
     #requires Dawn2
     .goto Duskwood,73.81,44.02
@@ -7376,23 +7376,23 @@ step
 step
     .goto Duskwood,79.78,48.06
     >>与 |cRXP_FRIENDLY_维克托|r 对话
-    .accept 174 >>接受任务眺望群星
+    .accept 174 >>接受任务 眺望群星
     .turnin 174 >>交任务 眺望群星
-    .accept 175 >>接受任务眺望群星
+    .accept 175 >>接受任务 眺望群星
     .target 维克托·安特拉斯
     .itemcount 4371,1
 step
     #label Viktori
     .goto Duskwood,79.78,48.06
     >>与 |cRXP_FRIENDLY_维克托|r 对话
-    .accept 175 >>接受任务眺望群星
+    .accept 175 >>接受任务 眺望群星
     .target 维克托·安特拉斯
     .isQuestTurnedIn 174
 step
     .goto Duskwood,81.46,59.02
     >>与|cRXP_FRIENDLY_玛丽|r 对话
     .turnin 175 >>交任务 眺望群星
-    .accept 177 >>接受任务眺望群星
+    .accept 177 >>接受任务 眺望群星
     .target 盲眼玛丽
     .isQuestTurnedIn 174
 step
@@ -7769,7 +7769,7 @@ step
     >>与 |cRXP_FRIENDLY_玛蒂|r 对话
     .turnin 130 >>交任务 寻访草药师
     .accept 131 >>接受任务 水仙诉衷情
-    .accept 34 >>接受任务不速之客
+    .accept 34 >>接受任务 不速之客
     .target 玛蒂·詹罗斯
 step
     #completewith next
@@ -7789,7 +7789,7 @@ step
 step
     .goto Redridge Mountains,21.86,46.33
     >>与 |cRXP_FRIENDLY_玛蒂|r 对话
-    .turnin 34 >>交任务不速之客
+    .turnin 34 >>交任务 不速之客
     .target 玛蒂·詹罗斯
 step
     .goto Redridge Mountains,17.47,43.62,60,0
@@ -7893,7 +7893,7 @@ step
     .goto Redridge Mountains,27.72,47.38
     >>与 |cRXP_FRIENDLY_码头管理员巴伦|r 对话
     .turnin 127 >>交任务卖鱼
-    .accept 150 >>接受任务鱼人偷猎者
+    .accept 150 >>接受任务 鱼人偷猎者
     .turnin 150 >>交任务鱼人偷猎者
     .goto Redridge Mountains,27.72,47.38
     .target 码头管理员巴伦

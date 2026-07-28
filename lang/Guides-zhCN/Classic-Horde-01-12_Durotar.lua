@@ -1542,7 +1542,7 @@ RXPGuides.RegisterGuide([[
 #version 11
 #group RestedXP 部落 1-22级
 #defaultfor Troll/Orc
-#next 10-12 杜隆塔尔
+#next 10-12级 杜隆塔尔
 
 step
     .goto Durotar,52.06,68.30
@@ -7028,7 +7028,7 @@ step
 step
     #season 2
     .goto Durotar,42.73,68.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_符文贩子|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_符文贩子|r 对话
     >>|cRXP_WARN_千万不要把能穿的装备卖给商人|r
     >>|cRXP_BUY_垃圾卖店然后购买|r |T134419:0|t[|cRXP_FRIENDLY_乘胜追击符文|r] 和 |T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r] << Orc Warrior
     >>|cRXP_BUY_垃圾卖店然后购买|r |T134419:0|t[|cRXP_FRIENDLY_乘胜追击符文|r] << Troll Warrior
@@ -8284,7 +8284,7 @@ step
 step
     #season 2
     .goto Durotar,42.74,68.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_符文贩子|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_符文贩子|r 对话
     >>|cRXP_WARN_千万不要把能穿的装备卖给商人|r
     .vendor >>|cRXP_BUY_向商人贩卖垃圾物品并购买你需要的所有 |T134419:0|t|cRXP_WARN_[符文]|r|r
     .target Rune Broker

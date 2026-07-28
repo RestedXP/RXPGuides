@@ -458,7 +458,7 @@ step
 step
     .train 403932,1
     >>|cRXP_WARN_前往荆棘祭坛|r。使用 |T136126:0|t[生命分流] 将生命值降到极低。然后对你的宠物施放 |T136168:0|t[生命通道] 直到自己死亡，即可获得 |T134419:0|t[|cRXP_FRIENDLY_引导符文|r]
-    *|cRXP_WARN_你死亡后会立刻复活|r
+    *|cRXP_WARN_死亡后会立刻复活|r
     .goto The Barrens,58.2,26.7
     .cast 1454
     .cast 735
@@ -1604,7 +1604,7 @@ step
     .unitscan Fel Scar
     .unitscan Fel Rift
 step
-    .train 431756 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_恶魔卫士符文|r] |cRXP_WARN_学习|r |T136216:0|t[召唤恶魔卫士]
+    .train 431756 >>|cRXP_WARN_使用|r |T134419:0|t|T136216:0|t[|cRXP_FRIENDLY_恶魔卫士符文|r] |cRXP_WARN_学习|r |T136216:0|t|T136216:0|t[召唤恶魔卫士]
     .use 221499
 
 ]])

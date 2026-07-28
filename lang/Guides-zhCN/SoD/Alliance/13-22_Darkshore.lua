@@ -2496,7 +2496,7 @@ step << Warrior
     #sticky
     #label EndlessRage
     .goto Darkshore,55.40,36.05,0,0
-    >>击杀 |cRXP_ENEMY_Lady Sedorax|r。拾取她的 |T132347:0|t[|cRXP_FRIENDLY_无尽怒气符文|r]
+    >>击杀 |cRXP_ENEMY_赛多拉克斯女士|r。拾取她的 |T132347:0|t[|cRXP_FRIENDLY_无尽怒气符文|r]
     >>|cRXP_ENEMY_塞多拉克斯女士|r |cRXP_WARN_是一个18级精英怪，周围还有其他怪物。你也可以选择去西部荒野获取，那里要容易得多|r
     >>|cRXP_WARN_在综合聊天频道(/1)询问是否有其他人也想击杀她或能提供帮助，尝试组队|r
     >>|cRXP_WARN_如果无法完成，请跳过此步骤|r
@@ -3280,8 +3280,8 @@ step << Priest
     .goto Darnassus,37.90,82.74
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_麦丝拉·炉心|r 对话
-    .turnin 78192 >>交任务
-    .accept 78193 >>接受任务
+    .turnin 78192 >>交任务 圣光的秘密
+    .accept 78193 >>接受任务 圣光的秘密
     .target Maethra Slagheart
 step << !Druid !Hunter
     #season 2
@@ -4367,7 +4367,7 @@ step
     .goto Wetlands,7.95,56.38
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_德温·晨光|r 对话
     .vendor 1453 >>|cRXP_WARN_尽可能多地购买|r |T134831:0|t [治疗药水] |cRXP_WARN_能买多少买多少|r
-    >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_德温·晨光|r 没有库存，请跳过此步骤|r
+    >>|cRXP_WARN_这是限量供应物品，如果 |cRXP_FRIENDLY_德温·晨光|r 没有库存，请跳过此步骤|r
     .target 德温·晨光
 step << Rogue
     #season 2

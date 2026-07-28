@@ -198,8 +198,8 @@ step << Hunter
     .goto Teldrassil,58.659,40.449
     >>爬上奥达希尔之树
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿亚娜·远途|r 对话
-    .turnin 3117 >>交任务  风化符记
-    .train 1978 >>训练毒蛇钉刺
+    .turnin 3117 >>交任务 风化符记
+    .train 1978 >>训练 毒蛇钉刺
     .target 阿亚娜·远途
 step
     .goto Teldrassil,57.95,38.20,10,0
@@ -263,7 +263,7 @@ step
 step
     .goto Teldrassil,60.899,41.961
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪兰妮亚·银辉|r 对话
-    .turnin 3521 >>交任务  埃沃隆的解药
+    .turnin 3521 >>交任务 埃沃隆的解药
     .target 迪兰妮亚·月光
     .accept 3522 >>接受任务 埃沃隆的解药
 step << !Priest !Warrior
@@ -290,7 +290,7 @@ step << Priest
 	.goto Teldrassil,59.174,40.442
     .target 珊达
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊达|r 对话
-	.turnin 3119 >>交任务  神圣符记 << !sod
+	.turnin 3119 >>交任务 神圣符记 << !sod
     .turnin 77574 >>交任务 艾露恩之思 << sod
 	.trainer >>训练你的职业技能
 step
@@ -313,7 +313,7 @@ step << Druid
     >>爬上奥达希尔之树
     .target 玛丹特·硬木
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛丹特·硬木|r 对话
-	.turnin 3120 >>交任务  绿色符记
+	.turnin 3120 >>交任务 绿色符记
 	.train 8921 >>学习 |T136096:0|t[月火术]
 step
     #season 0 << Warrior
@@ -321,7 +321,7 @@ step
     .target 埃沃隆
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃沃隆|r 对话
     >>提示：|cRXP_WARN_选择短裤作为奖励。你稍后需要用它来刻印符文|r << Priest sod
-    .turnin 3522 >>交任务  埃沃隆的解药
+    .turnin 3522 >>交任务 埃沃隆的解药
 step
     #season 0 << Warrior
     #completewith next
@@ -564,14 +564,14 @@ step
     .goto Teldrassil,55.619,59.788
     .target 旅店老板凯达米尔
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板凯达米尔|r 对话
-    .turnin 2159,2 >>交任务  多兰纳尔的货物 << Hunter
-    .turnin 2159 >>交任务  多兰纳尔的货物 << !Hunter
+    .turnin 2159,2 >>交任务 多兰纳尔的货物 << Hunter
+    .turnin 2159 >>交任务 多兰纳尔的货物 << !Hunter
     .vendor >>|cRXP_BUY_购买10瓶|T132815:0|t|cRXP_LOOT_冰镇牛奶|r 或者能买多少买多少 << Priest
     .home >>将你的炉石绑定在多兰纳尔
 step << Hunter
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达扎拉|r 对话
-	.train 3044 >>训练奥术射击 << era
+	.train 3044 >>训练 奥术射击 << era
     .train 5116 >>训练震荡射击 << sod
     .target 达扎拉
 step << Druid
@@ -654,7 +654,7 @@ step
     #label DenlanStart
     .goto Teldrassil,60.900,68.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德纳兰|r 对话
-    .turnin 997 >>交任务  德纳兰的泥土
+    .turnin 997 >>交任务 德纳兰的泥土
     .target 德纳兰
     .accept 918 >>接受任务 林精的种子
     .accept 919 >>接受任务 林精的新芽
@@ -674,10 +674,10 @@ step
 step
     .goto Teldrassil,60.900,68.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德纳兰|r 对话
-    .turnin 918 >>交任务  林精的种子
+    .turnin 918 >>交任务 林精的种子
     .target 德纳兰
     .accept 922 >>接受任务 雷利亚·绿树
-    .turnin 919 >>交任务  林精的新芽
+    .turnin 919 >>交任务 林精的新芽
 step
     #sticky
     #completewith Starbreeze
@@ -711,7 +711,7 @@ step
     #label zenn
     .goto Teldrassil,66.26,58.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_盖洛拉斯·塔文斯伦|r 对话
-    .turnin 475 >>交任务  烦恼之风
+    .turnin 475 >>交任务 烦恼之风
     .target 盖洛拉斯·塔文斯伦
     .accept 476 >>接受任务 瘤背熊怪的堕落
 step
@@ -771,7 +771,7 @@ step
     .goto Teldrassil,55.954,57.272
     .target 阿斯瑞达斯·熊皮
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿斯瑞达斯·熊皮|r 对话
-    .turnin 476 >>交任务  瘤背熊怪的堕落
+    .turnin 476 >>交任务 瘤背熊怪的堕落
 step << Priest
     .goto Teldrassil,55.564,56.746
     .target 劳尔娜·晨光
@@ -904,7 +904,7 @@ step
     .goto Teldrassil,60.4,56.4
     .target 赛恩·腐蹄
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赛恩·腐蹄|r 对话
-    .turnin 489 >>交任务  寻求救赎！
+    .turnin 489 >>交任务 寻求救赎！
     .itemcount 3418,3
     .isOnQuest 489
 step
@@ -960,7 +960,7 @@ step
     .goto Teldrassil,60.4,56.4
     .target 赛恩·腐蹄
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赛恩·腐蹄|r 对话
-    .turnin 489 >>交任务  寻求救赎！
+    .turnin 489 >>交任务 寻求救赎！
     .isOnQuest 489
 step
     #sticky
@@ -1022,7 +1022,7 @@ step
 	#xprate <1.5
 	#label spiderLegs
 	.goto Teldrassil,42.41,67.07
-    .use 5621 >>|cRXP_WARN_在阿里斯瑞恩之池的月亮井使用|r |T134765:0|t[红玉瓶] |cRXP_WARN_|r
+    .use 5621 >>|cRXP_WARN_在阿里斯瑞恩之池的月亮井|r|cRXP_WARN_使用|r |T134765:0|t[红玉瓶]
 	.complete 933,1
 step
 	#xprate <1.5
@@ -1069,7 +1069,7 @@ step
     .target 塔隆凯·捷根
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|在树顶上与 |cRXP_FRIENDLY_塔隆凯·捷根|r 对话
     .turnin 932 >>交任务  扭曲的仇恨
-    .turnin 2459 >>交任务  噬梦者菲罗斯塔
+    .turnin 2459 >>交任务 噬梦者菲罗斯塔
 step
 #xprate >1.99
     .xp 10
@@ -1079,7 +1079,7 @@ step << Priest
     .goto Teldrassil,55.564,56.746
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_劳尔娜·晨光|r 对话
 	.trainer >>训练你的职业技能
-    .accept 5629 >>接受 回家 << sod
+    .accept 5629 >>接受任务 回家 << sod
     .target 劳尔娜·晨光
 step << Warrior
 #xprate >1.99
@@ -1233,14 +1233,14 @@ step << Hunter
     .target 哨兵阿瑞尼亚·碎云
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r 对话
     >>|cRXP_WARN_记住这是一个限时任务，你需要在接受任务之后10分钟之内交任务|r
-    .turnin 938 >>交任务  密斯特
+    .turnin 938 >>交任务 密斯特
 step << Hunter
 	#xprate <1.5
     #completewith xp10
 	#requires harpies
     .goto Teldrassil,38.32,34.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r 对话
-    .turnin 937 >>交任务  神谕林地
+    .turnin 937 >>交任务 神谕林地
     .target 哨兵阿瑞尼亚·碎云
     .accept 940 >>接受任务 泰达希尔
 step << !Hunter
@@ -1256,10 +1256,10 @@ step << !Hunter
     .goto Teldrassil,38.32,34.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r 对话
     >>|cRXP_WARN_记住这是一个限时任务，你需要在接受任务之后10分钟之内交任务|r
-    .turnin 937 >>交任务  神谕林地
+    .turnin 937 >>交任务 神谕林地
     .target 哨兵阿瑞尼亚·碎云
     .accept 940 >>接受任务 泰达希尔
-    .turnin 938 >>交任务  密斯特
+    .turnin 938 >>交任务 密斯特
 step << Druid
     #xprate <1.5
     #label xp10
@@ -1332,7 +1332,7 @@ step << !Rogue
     #requires xp10
     .goto Darnassus,38.18,21.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷利亚·绿树|r 对话
-    .turnin 922 >>交任务  雷利亚·绿树
+    .turnin 922 >>交任务 雷利亚·绿树
     .target 雷利亚·绿树
     .accept 923 >>接受任务 青苔之瘤
 step << !Hunter !Rogue
@@ -1461,8 +1461,8 @@ step
 	.goto Teldrassil,60.900,68.489
     .target 德纳兰
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德纳兰|r 对话
-    .turnin 931 >>交任务  发光的树叶
-    .turnin 930 >>交任务  发光的水果
+    .turnin 931 >>交任务 发光的树叶
+    .turnin 930 >>交任务 发光的水果
 step
 	#xprate <1.5
 	.goto Teldrassil,60.900,68.489
@@ -1611,7 +1611,7 @@ step << Rogue
 step << Rogue
     .goto Darnassus,38.18,21.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷利亚·绿树|r 对话
-    .turnin 922 >>交任务  雷利亚·绿树
+    .turnin 922 >>交任务 雷利亚·绿树
     .target 雷利亚·绿树
     .accept 923 >>接受任务 青苔之瘤
 step << Rogue
@@ -1726,14 +1726,14 @@ step
     .target 哨兵阿瑞尼亚·碎云
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r 对话
     >>|cRXP_WARN_记住这是一个限时任务，你需要在接受任务之后10分钟之内交任务|r
-    .turnin 938 >>交任务  密斯特
+    .turnin 938 >>交任务 密斯特
     .isOnQuest 938
 step
     #requires harpies2
     #label TeldrassilEnd
     .goto Teldrassil,38.3,34.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r 对话
-    .turnin 937 >>交任务  神谕林地
+    .turnin 937 >>交任务 神谕林地
     .target 哨兵阿瑞尼亚·碎云
     .accept 940 >>接受任务 泰达希尔
 step
@@ -1846,7 +1846,7 @@ step
     .goto Darnassus,39.72,92.68,10,0
     .goto Darnassus,36.65,85.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女祭司艾茉拉|r 对话
-    .turnin 2518 >>交任务  月神的泪水
+    .turnin 2518 >>交任务 月神的泪水
     .target 女祭司艾茉拉
     .accept 2520 >>接受任务 萨丝拉的祭品
 step

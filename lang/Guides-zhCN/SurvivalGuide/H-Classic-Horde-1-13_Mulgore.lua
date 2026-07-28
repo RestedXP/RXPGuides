@@ -105,7 +105,7 @@ step
     .goto Mulgore,44.18,76.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鹰风酋长|r 对话
     .turnin 753 >>交任务 一件琐事
-    .accept 755 >>接受任务 大地母亲的仪式
+    .accept 755 >>接受任务 大地之母仪祭
     .target 鹰风酋长
 step << Shaman
     .goto Mulgore,44.07,77.47
@@ -352,7 +352,7 @@ step
     .goto Mulgore,44.73,76.18 << Shaman
     .turnin 781 >>交任务 纳拉其营地的危机
     .turnin 757 >>交任务 力量仪祭
-    .accept 763 >>接受任务 大地母亲的仪式
+    .accept 763 >>接受任务 大地之母仪祭
     .target 鹰风酋长
     .goto Mulgore,44.18,76.07
 step << Shaman
@@ -2154,7 +2154,7 @@ step
     .goto Durotar,55.95,73.93
 step
     #completewith Stolensupplies
-    +|cRXP_WARN_将你的|r |T133728:0|t[微光颅骨] |cRXP_WARN_和|r |T134712:0|t[强力胶水]|cRXP_WARN_设为快捷键。留着它们以备不时之需|r
+    +|cRXP_WARN_绑定你的|r |T133728:0|t|T134712:0|t[微光徽记] |cRXP_WARN_和|r |T134712:0|t|T134712:0|t[强力胶水]|cRXP_WARN_。将它们保留以备紧急情况使用|r
 step
     #loop
     .goto Durotar,49.22,48.96,0
@@ -2409,7 +2409,7 @@ step
     .group
 step
     .goto Durotar,52.24,43.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_ 奥戈尼尔·魂痕|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_ 奥戈尼尔·魂痕|r对话
     .turnin 806 >>交任务 黑暗风暴
     .accept 828 >>接受任务 玛高兹
     .target 奥戈尼尔·魂痕
@@ -2417,14 +2417,14 @@ step
     .group
 step
     .goto Durotar,52.24,43.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_ 奥戈尼尔·魂痕|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_ 奥戈尼尔·魂痕|r对话
     .accept 828 >>接受任务 玛高兹
     .target 奥戈尼尔·魂痕
     .isQuestTurnedIn 806
     .group
 step
     .goto Durotar,51.95,43.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加索克|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加索克|r 对话
     .turnin 837 >>交任务 野猪人的进犯
     .target 加索克
     .group

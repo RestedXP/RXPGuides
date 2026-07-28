@@ -681,12 +681,12 @@ step << Rogue
     #completewith next
     .goto Loch Modan,41.01,12.60,50,0
     .goto Loch Modan,42.86,10.36,60,0
-    .goto Loch Modan,46.20,13.15,10 >>|cRXP_WARN_登上洛克莫丹大坝的墙体，小心地下到大坝中央的平台上。跟随箭头|r
+    .goto Loch Modan,46.20,13.15,10 >>|cRXP_WARN_前往洛克莫丹大坝墙体，小心地掉到大坝中心的突出处，跟随箭头|r
     .train 424785,1
 step << Rogue
     #season 2
     .goto Loch Modan,46.373,12.666
-    >>打开岩架上的 |cRXP_PICK_Stonemason's Toolbox|r。拾取其中的 |T134419:0|t[|cRXP_FRIENDLY_Rune of 军刀猛刺|r]
+    >>打开岩架上的 |cRXP_PICK_石匠的工具箱|r。拾取其中的 |T134419:0|t[|cRXP_FRIENDLY_军刀猛刺符文|r]
     .collect 208772,1 -- Rune of Saber Slash (1)
     .train 424785,1
 step << Rogue
@@ -697,7 +697,7 @@ step << Rogue
 step << Rogue
     #season 2
     .goto Loch Modan,45.823,12.652
-    .cast 6477 >>点击 |cRXP_PICK_Escape 绳子|r 返回顶部
+    .cast 6477 >>点击 |cRXP_PICK_逃生绳|r 返回顶部
     .subzoneskip 146,1
 ]])
 
@@ -712,12 +712,12 @@ RXPGuides.RegisterGuide([[
 step << Rogue
     #season 2
     #completewith next
-    .goto Darkshore,32.80,37.72,20 >>游到有灯塔的小岛上
+    .goto Darkshore,32.80,37.72,20 >>游到有灯塔的小岛
     .train 424785,1
 step << Rogue
     #season 2
     .goto Darkshore,32.729,37.093
-    >>打开树干内的 |cRXP_PICK_Lighthouse Stash|r。拾取其中的 |T134419:0|t[|cRXP_FRIENDLY_Rune of 军刀猛刺|r]
+    >>打开树干的|cRXP_PICK_灯塔储藏箱|r。拾取获得|T134419:0|t[|cRXP_FRIENDLY_军刀猛刺符文|r]
     .collect 208772,1 -- Rune of Saber Slash (1)
     .train 424785,1
 step << Rogue
@@ -1071,7 +1071,7 @@ step
     .goto Tirisfal Glades,35.30,50.91,50,0
     .goto Tirisfal Glades,34.57,51.58,50,0
     .goto Tirisfal Glades,36.63,50.09
-    >>击杀或使用 |T133644:0|t[搜索] 对 |cRXP_ENEMY_Tirisfal Farmers|r 和 |cRXP_ENEMY_Tirisfal Farmhands|r。拾取他们的 |T134327:0|t[|cRXP_LOOT_Top-左 Map Piece|r]
+    >>击杀或使用 |T133644:0|t[搜索] 对 |cRXP_ENEMY_提瑞斯法雇工|r 和 |cRXP_ENEMY_提瑞斯法农夫|r。拾取他们的 |T134327:0|t[|cRXP_LOOT_左上角地图碎片|r]
     .collect 208036,1 --Top-Left Map Piece (1)
     .mob Tirisfal Farmer
     .mob Tirisfal Farmhand
@@ -1091,7 +1091,7 @@ step
     .goto Tirisfal Glades,33.73,45.29,50,0
     .goto Tirisfal Glades,34.10,47.88,50,0
     .goto Tirisfal Glades,33.73,49.34,50,0
-    >>击杀或使用 |T133644:0|t[搜索] 对 |cRXP_ENEMY_Scarlet Warriors|r。拾取他们的 |T134327:0|t[|cRXP_LOOT_Top-右 Map Piece|r]
+    >>击杀或使用 |T133644:0|t[搜索] 对 |cRXP_ENEMY_血色战士|r。拾取他们的 |T134327:0|t[|cRXP_LOOT_右上角地图碎片|r]
     >>|cRXP_WARN_提瑞斯法的任何血色类人生物都有可能掉落地图碎片|r
     .collect 208035,1 --Top-Right Map Piece (1)
     .mob Scarlet Warrior
@@ -1104,7 +1104,7 @@ step
     .goto Tirisfal Glades,55.24,42.54,40,0
     .goto Tirisfal Glades,56.43,43.92,40,0
     .goto Tirisfal Glades,55.24,42.54
-    >>击杀或使用 |T133644:0|t[搜索] 对 |cRXP_ENEMY_Rot 隐藏 Gnolls|r。拾取他们的 |T134327:0|t[|cRXP_LOOT_Bottom-左 Map Piece|r]
+    >>击杀或使用 |T133644:0|t[搜索] 对 |cRXP_ENEMY_腐皮豺狼人|r。拾取他们的 |T134327:0|t[|cRXP_LOOT_左下角地图碎片|r]
     .collect 208038,1 --Bottom-Left Map Piece (1)
     .mob Rot Hide Mongrel
     .mob Rot Hide Graverobber
@@ -1121,7 +1121,7 @@ step
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
     .goto Tirisfal Glades,59.54,27.86
-    >>击杀或使用 |T133644:0|t[搜索] 对 |cRXP_ENEMY_Murlocs|r。拾取他们的 |T134327:0|t[|cRXP_LOOT_Bottom-右 Map Piece|r]
+    >>击杀或使用 |T133644:0|t[搜索] 对 |cRXP_ENEMY_渔人|r。拾取他们的 |T134327:0|t[|cRXP_LOOT_右下角地图碎片|r]
     .collect 208037,1 --Bottom-Right Map Piece (1)
     .mob Vile Fin Puddlejumper
     .mob Vile Fin Minor Oracle
@@ -1129,7 +1129,7 @@ step
     .train 400095,1
 step
     #season 2
-    .use 208036 >>使用 |T134327:0|t[|cRXP_LOOT_Map Pieces|r] 来创建 |T134269:0|t[|cRXP_LOOT_提瑞斯法藏宝图|r]
+    .use 208036 >>使用 |T134327:0|t[|cRXP_LOOT_地图碎片|r] 来创建 |T134269:0|t[|cRXP_LOOT_提瑞斯法藏宝图|r]
     .collect 208034,1 --Tirisfal Treasure Map (1)
     .train 400095,1
 step
@@ -1160,12 +1160,12 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .goto Durotar,54.25,27.64,40 >>前往 尘风洞穴 东边的跳跃点
+    .goto Durotar,54.25,27.64,40 >>前往尘风洞穴东边的跳跃点
 step
     #season 2
     .goto Durotar,54.25,27.64,40,0
     .goto Durotar,53.74,27.14
-    >>拾取 |cRXP_PICK_Rusty Lockbox|r 以获得 |T134419:0|t[|cRXP_FRIENDLY_杀手符文|r]
+    >>拾取 |cRXP_PICK_生锈的锁箱|r 以获得 |T134419:0|t[|cRXP_FRIENDLY_杀手符文|r]
     >>|cRXP_WARN_你必须跳跃才能到达宝箱|r
     .collect 203993,1 --Rune of Slaughter (1)
     .train 42992,1
@@ -1202,7 +1202,7 @@ step
 	.goto Tirisfal Glades,52.61,25.85,15,0
 	.goto Tirisfal Glades,52.60,26.88,15,0
 	.goto Tirisfal Glades,51.90,26.87,15,0
-    >>击杀 |cRXP_ENEMY_Wailing Ancestors|r 和 |cRXP_ENEMY_Rotting Ancestors|r。从他们身上拾取 |T134245:0|t[|cRXP_LOOT_Agamand 圣物 Coffer 钥匙|r]
+    >>击杀 |cRXP_ENEMY_哀嚎的鬼魂|r 和 |cRXP_ENEMY_腐烂的古尸|r。从他们身上拾取 |T134245:0|t[|cRXP_LOOT_阿加曼德遗物匣钥匙|r]
     >>|cRXP_WARN_小心！这个地下室的小怪会动态刷新！|r
     .collect 208005,1 --Agamand Relic Coffer Key (1)
     .mob Wailing Ancestor
@@ -1211,7 +1211,7 @@ step
 step
     #season 2
     .goto Tirisfal Glades,52.53,26.91
-    >>打开 |cRXP_PICK_Relic Coffer|r 以获得 |T134419:0|t[|cRXP_FRIENDLY_杀手符文|r]
+    >>打开 |cRXP_PICK_圣物箱|r 以获得 |T134419:0|t[|cRXP_FRIENDLY_杀手符文|r]
     .collect 203993,1 --Rune of Slaughter (1)
     .train 42992,1
 step
@@ -1227,8 +1227,8 @@ RXPGuides.RegisterGuide([[
 << Horde Rogue SoD
 #group RestedXP符文与书籍指南
 #subgroup 手套
-#name 经典怀旧服 道具 - 8 (Tirisfal)
-#title 经典怀旧服 道具
+#name 毁伤 - 8 (提瑞斯法)
+#title 毁伤
 
 
     --Rune of Mutilate
@@ -1243,7 +1243,7 @@ step
 step
     #season 2
     #completewith next
-    .goto Tirisfal Glades,60.90,51.49,10 >>前往 布瑞尔城镇大厅
+    .goto Tirisfal Glades,60.90,51.49,10 >>前往布瑞尔市镇大厅
 step
     #season 2
     .goto Tirisfal Glades,60.73,50.60
@@ -1272,8 +1272,8 @@ RXPGuides.RegisterGuide([[
 << Horde Rogue SoD
 #group RestedXP符文与书籍指南
 #subgroup 手套
-#name 经典怀旧服 道具 - 10 (杜隆塔尔)
-#title 经典怀旧服 道具
+#name 毁伤 - 10 (杜隆塔尔)
+#title 毁伤
 
 
     --Rune of Mutilate
@@ -1291,7 +1291,7 @@ step
     .goto Durotar,52.84,26.80,12,0
     .goto Durotar,52.07,26.85,12,0
     .goto Durotar,52.70,27.97
-    >>对 |cRXP_ENEMY_Burning Blade Thugs|r 使用 |T133644:0|t[搜索] 来获得 |T134331:0|t[|cRXP_LOOT_来自 Ba'so 的注释|r]
+    >>对 |cRXP_ENEMY_火刃暴徒|r 使用 |T133644:0|t[搜索] 来获得 |T134331:0|t[|cRXP_LOOT_巴索的便条|r]
     .collect 207098,1 --Note from Ba'so (1)
     .mob Burning Blade Thug
     .train 400094,1
@@ -1316,8 +1316,8 @@ RXPGuides.RegisterGuide([[
 << Horde Rogue SoD
 #group RestedXP符文与书籍指南
 #subgroup 腿部
-#name 经典怀旧服 道具 - 8 (Tirisfal)
-#title 经典怀旧服 道具
+#name 正中眉心 - 8 (提瑞斯法)
+#title 正中眉心
 
 
     --Rune of Between the Eyes
@@ -1333,7 +1333,7 @@ step
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
     .goto Tirisfal Glades,59.54,27.86
-    >>对 |cRXP_ENEMY_Vile Fin Murlocs|r 使用 |T133644:0|t[搜索] 来获得 |T134241:0|t[|cRXP_LOOT_Shipwreck Cache 钥匙|r]
+    >>对 |cRXP_ENEMY_邪鳍鱼人|r 使用 |T133644:0|t[搜索] 来获得 |T134241:0|t[|cRXP_LOOT_船只残骸宝箱钥匙|r]
     .collect 208007,1 --Shipwreck Cache Key (1)
     .mob Vile Fin Puddlejumper
     .mob Vile Fin Minor Oracle
@@ -1567,13 +1567,13 @@ step << Alliance
     .target 达尔拉·哈瑞斯
     .train 400101,1
 step
-    .goto Undercity,68.290,38.043,5 >>|cRXP_WARN_进入幽暗城。检查邮箱中来自*C*的信件|r << Horde
-    .goto Ironforge,71.485,72.280,5 >>|cRXP_WARN_进入铁炉堡。检查邮箱中来自*C*的信件。如果你在另一个主城进行此操作，则跳过此步骤|r << Alliance
+    .goto Undercity,68.290,38.043,5 >>|cRXP_WARN_进入幽暗城，检查你的邮箱，查看来自*C*的信件|r << Horde
+    .goto Ironforge,71.485,72.280,5 >>|cRXP_WARN_进入铁炉堡。检查你的邮箱中来自 *C* 的信件。如果你在另一个主城执行，跳过此步骤|r << Alliance
     .train 400101,1
 step
     #completewith next
-    +|cRXP_WARN_打开邮箱并读取来自*C*的邮件。准备好后飞回Silverpine|r << Horde
-    +|cRXP_WARN_打开邮箱并读取来自*C*的邮件。飞回南海镇，当准备好后前往Silverpine|r << Alliance
+    +|cRXP_WARN_打开邮箱，阅读*C*寄来的信件。准备好后飞回银松森林|r << Horde
+    +|cRXP_WARN_打开邮箱，阅读*C*寄来的信件。准备好后飞回南海镇然后前往银松森林|r << Alliance
 step << Horde
     .goto Undercity,63.27,48.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
@@ -1594,11 +1594,11 @@ step << Alliance
     .train 400101,1
 step
     .goto Silverpine Forest,47.114,70.974
-    >>点击 |cRXP_PICK_死亡 掉落|r 宝箱以获得 |T134419:0|t[|cRXP_FRIENDLY_Rune of 暗影步|r]
+    >>点击 |cRXP_PICK_秘密投放点|r 宝箱以获得 |T134419:0|t[|cRXP_FRIENDLY_暗影步符文|r]
     .collect 210979,1 --Rune of Shadowstep (1)
     .train 400101,1
 step
-    .train 400101 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of 暗影步|r] |cRXP_WARN_来学会|r |T132303:0|t[暗影步]
+    .train 400101 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_暗影步符文|r] |cRXP_WARN_来学会|r |T132303:0|t[暗影步]
     .use 210979
     .itemcount 210979,1
 ]])
@@ -1614,22 +1614,22 @@ RXPGuides.RegisterGuide([[
 step
     .train 400096,1
     .train 1842 >>|cRXP_WARN_你必须学会|r |T136162:0|t[解除陷阱] |cRXP_WARN_才能获得|r |T134419:0|t[|cRXP_FRIENDLY_刺客符文|r]
-    .collect 5060,1 >>|cRXP_WARN_你还需要|r |T134065:0|t[Thieves' 工具]
+    .collect 5060,1 >>|cRXP_WARN_你还需要|r |T134065:0|t[潜行者工具]
 step
     #completewith next
     .zone Swamp of Sorrows >>前往悲伤沼泽
 step
     .goto Swamp of Sorrows,41.48,29.97
     .train 400096,1
-    .cast 1842 >>|cRXP_WARN_施放|r |T136162:0|t[解除陷阱] |cRXP_WARN_在|r |cRXP_PICK_飞镖陷阱|r |cRXP_WARN_树上|r
+    .cast 1842 >>|cRXP_WARN_对|r |cRXP_WARN_树上的|r |cRXP_PICK_飞镖陷阱|r |cRXP_WARN_施放|r |T136162:0|t[解除陷阱]
 step
     .goto Swamp of Sorrows,42.76,30.77
-    >>战利品 |cRXP_PICK_Conspicuous Cache|r 已生成以获得 |T134419:0|t[|cRXP_FRIENDLY_刺客符文|r]|r
+    >>拾取 |cRXP_PICK_显眼的箱子|r 以获得|cRXP_FRIENDLY_ |T134419:0|t[|r刺客符文|r]
     .collect 213139,1
 step
     .itemcount 213139,1
     .use 213139
-    .train 400096 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_刺客符文|r] |cRXP_WARN_来学会|r |T132330:0|t[飞镖投掷]
+    .train 400096 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_刺客符文|r] |cRXP_WARN_来学习|r |T132330:0|t[飞镖投掷]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1654,7 +1654,7 @@ step
 step
     .train 425103,1
     #completewith next
-    >>对|cRXP_ENEMY_Kurzen 皇家灰卫精英|r和|cRXP_ENEMY_Kurzen Subchiefs|r施放|T133644:0|t[搜索]以获得|cRXP_LOOT_营地囚笼钥匙|r
+    >>对|cRXP_ENEMY_库尔森精英|r 和 |cRXP_ENEMY_库尔森副首领|r 施放 |T133644:0|t[搜索] 以获得|cRXP_LOOT_营地囚笼钥匙|r
     .collect 216616,1
     .mob Kurzen Elite
     .mob Kurzen Subchief
@@ -1662,14 +1662,14 @@ step
     #label Uniform
     .train 425103,1
     .goto Stranglethorn Vale,49.616,7.743
-    >>打开|cRXP_PICK_Kurzen Supply 恐惧哨兵的王庭重靴|r。拾取其中的|cRXP_LOOT_库尔森斗士制服|r
+    >>打开|cRXP_PICK_库尔森补给箱|r。拾取其中的|cRXP_LOOT_库尔森斗士制服|r
     .collect 216617,1
 step
     .train 425103,1
     .goto Stranglethorn Vale,49.943,3.953,40,0
     .goto Stranglethorn Vale,49.617,7.562,40,0
     .goto Stranglethorn Vale,49.25,6.18
-    >>|T133644:0|t[搜索]|cRXP_ENEMY_Kurzen 皇家灰卫精英|r和|cRXP_ENEMY_Kurzen Subchiefs|r以获得|cRXP_LOOT_营地囚笼钥匙|r
+    >>|T133644:0|t[搜索] |cRXP_ENEMY_库尔森精英|r 和 |cRXP_ENEMY_库尔森副首领|r 以获取|cRXP_LOOT_营地囚笼钥匙|r
     .collect 216616,1
     .mob Kurzen Elite
     .mob Kurzen Subchief
@@ -1680,10 +1680,10 @@ step
 step
     .train 425103,1
     .goto Stranglethorn Vale,44.261,7.908
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温德尔·玛瑟斯|r 在塔楼对话
-    >>|cRXP_WARN_他大约3分钟后复活|r
-    .destroy 216616 >>将|cRXP_LOOT_营地囚笼钥匙|r交给他
-    .destroy 216617 >>将|cRXP_LOOT_库尔森斗士制服|r交给他
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与塔楼里的 |cRXP_FRIENDLY_温德尔·玛瑟斯|r 对话
+    >>|cRXP_WARN_他的刷新时间大约为3分钟|r
+    .destroy 216616 >>将|cRXP_LOOT_营地囚笼钥匙|r 交给他
+    .destroy 216617 >>将|cRXP_LOOT_库尔森斗士制服|r 交给他
     .skipgossip 218230,1
     .target Wendel Mathers
 step
@@ -1693,20 +1693,20 @@ step
 step
     .train 425103,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿兰萨斯船长|r 对话
-    >>她将给你|T133640:0|t[|cRXP_LOOT_阿兰萨斯船长的奖赏|r]
+    >>她会给你|T133640:0|t[|cRXP_LOOT_阿兰萨斯船长的奖赏|r]
     .goto Stranglethorn Vale,27.681,76.648
     .skipgossip
     .collect 216618,1
     .target Captain Aransas
 step
     .train 425103,1
-    .use 216618 >>打开|T133640:0|t[|cRXP_LOOT_阿兰萨斯船长的奖赏|r]获得|T134419:0|t[|cRXP_FRIENDLY_Rune of Sublety|r]和|T338666:0|t[|cRXP_FRIENDLY_加尼的护符|r]
-    >>|cRXP_WARN_不要销毁|r |T338666:0|t[|cRXP_FRIENDLY_加尼的护符|r] |cRXP_WARN_因为它用于获取未来的符文|r
+    .use 216618 >>打开 |T133640:0|t[|cRXP_LOOT_阿兰萨斯船长的奖赏|r] 即可获得 |T134419:0|t[|cRXP_FRIENDLY_敏锐者符文|r] 和 |T338666:0|t[|cRXP_FRIENDLY_加尼的护符|r]
+    >>|cRXP_WARN_请勿摧毁|r |T338666:0|t[|cRXP_FRIENDLY_加尼的护符|r] |cRXP_WARN_，后续收集符文时会用到|r
     .collect 213136,1
 step
     .itemcount 213136,1
     .use 213136
-    .train 425103 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Sublety|r] |cRXP_WARN_来训练|r |T132299:0|t[敏锐大师]
+    .train 425103 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_敏锐者符文|r] |cRXP_WARN_来训练|r |T132299:0|t[敏锐大师]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1733,11 +1733,11 @@ step
 step
     .train 400093,1
     .goto Thousand Needles,18.686,21.126
-    >>打开|cRXP_PICK_Sizable Stolen 保险箱|r。拾取其中的|T132597:0|t[|cRXP_LOOT_Large 保险箱|r]
+    >>打开|cRXP_PICK_失窃的巨大保险箱|r。拾取其中的|T132597:0|t[|cRXP_LOOT_大型保险箱|r]
     .collect 215451,1
 step
     .train 400093,1
-    .cast 1804 >>|cRXP_WARN_对|r |T136058:0|t[|cRXP_WARN_Large 保险箱|r] |cRXP_LOOT_施放|r |T132597:0|t[开锁] |cRXP_WARN_来解锁它|r
+    .cast 1804 >>|cRXP_WARN_对|r |T136058:0|t[|cRXP_WARN_大型坚固宝箱|r] |cRXP_LOOT_施放|r |T132597:0|t[开锁] |cRXP_WARN_以解锁|r
     .usespell 1804
     .use 215451
 step
@@ -1904,7 +1904,7 @@ step
     #optional
     #completewith letterC
     >>|cRXP_WARN_为了开启该符文的任务，你必须先完成“拉文霍德庄园”任务，该任务会向你引入拉文霍德潜行者阵营。要接取该任务，请前往暴风城与|r |cRXP_FRIENDLY_夜行者奥斯伯|r |cRXP_WARN_对话|r << Alliance
-    +|cRXP_WARN_为了开始此符文的任务，你需要完成"拉文霍德庄园"任务来了解Ravenholdt盗贼阵营。为了获得它，请与|r |cRXP_FRIENDLY_奥莫克|r |cRXP_WARN_在奥格瑞玛交谈|r << Horde
+    +|cRXP_WARN_为了开启该符文的任务，你必须先完成“拉文霍德庄园”任务，该任务会向你引入拉文霍德潜行者阵营。要接取该任务，请与奥格瑞玛的|r |cRXP_FRIENDLY_奥莫克|r |cRXP_WARN_对话|r << Horde
     .accept 6681 >>接受任务 拉文霍德庄园 << Alliance
     .isQuestAvailable 6681
 step << Horde
@@ -1912,7 +1912,7 @@ step << Horde
     .gossipoption 96925 >>与 |cRXP_FRIENDLY_奥莫克|r 对话来获得 |T133460:0|t[|cRXP_LOOT_优美的信件|r]。使用它来接受任务
     .disablecheckbox
     .collect 17126,1,6681
-    .accept 6681 >>接受任务 Ravenholdt Manor
+    .accept 6681 >>接受任务 拉文霍德庄园
     .target 奥莫克
     .isQuestAvailable 6681
 step
@@ -1924,7 +1924,7 @@ step
     .goto Hillsbrad Foothills,75.27,23.66,15,0
     .goto Hillsbrad Foothills,75.66,20.30,15,0
     .goto Hillsbrad Foothills,77.24,21.98,15,0
-    .goto Hillsbrad Foothills,78.62,17.96,20 >>前往 拉文霍德庄园
+    .goto Hillsbrad Foothills,78.62,17.96,20 >>进入拉文霍德庄园
     .isOnQuest 6681
 step
     .goto Hillsbrad Foothills,78.62,17.96
@@ -1935,12 +1935,12 @@ step
     .goto Alterac Mountains,85.51,79.41,10,0
     .goto Alterac Mountains,86.11,80.22,10,0
     .goto Alterac Mountains,84.45,80.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼上与 |cRXP_FRIENDLY_法拉德|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_法拉德|r 对话
     .turnin 6681 >>交任务 拉文霍德庄园
     .target Fahrad
     .isOnQuest 6681
 step << Alliance
-    +|cRXP_WARN_旅行到任何主要城市|r
+    +|cRXP_WARN_去任意主城|r
     >>达纳苏斯
     >>铁炉堡
     >>暴风城
@@ -1949,7 +1949,7 @@ step << Alliance
     .zoneskip Stormwind City
     .train 432295,1
 step << Horde
-    +|cRXP_WARN_前往任意主城|r
+    +|cRXP_WARN_去任意主城|r
     >>幽暗城
     >>雷霆崖
     >>奥格瑞玛
@@ -1964,20 +1964,20 @@ step
     .train 432295,1
 step
     #completewith next
-    .zone Hillsbrad Foothills >>旅行至 |cFFfa9602希尔斯布莱德丘陵|r
+    .zone Hillsbrad Foothills >>前往 |cFFfa9602希尔斯布莱德丘陵|r
 step
     #completewith next
     .goto Hillsbrad Foothills,75.27,23.66,15,0
     .goto Hillsbrad Foothills,75.66,20.30,15,0
     .goto Hillsbrad Foothills,77.24,21.98,15,0
-    .goto Hillsbrad Foothills,78.62,17.96,20 >>前往 拉文霍德庄园
+    .goto Hillsbrad Foothills,78.62,17.96,20 >>进入拉文霍德庄园
 step
     .goto Alterac Mountains,85.51,79.41,10,0
     .goto Alterac Mountains,86.11,80.22,10,0
     .goto Alterac Mountains,84.45,80.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼上与 |cRXP_FRIENDLY_法拉德|r 对话
-    .accept 80526 >>接受任务 愚弄我两次
-    .turnin 80526 >>交任务 愚弄我两次
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_法拉德|r 对话
+    .accept 80526 >>接受任务 骗我两次
+    .turnin 80526 >>交任务 骗我两次
     .accept 80411 >>接受任务 卡兹多尔的护符
     .target Fahrad
 step
@@ -1991,54 +1991,54 @@ step
     >>|cRXP_WARN_你不能在队伍中完成此符文的任务|r
 step
     .goto Tanaris,38.69,20.20
-    >>打开 |cRXP_PICK_Clay Vessels|r 以获得 |T134799:0|t[|cRXP_LOOT_Vile Concoctions|r]
-    >>|cRXP_WARN_它们位于 祖尔法拉克 的巨魔帐篷中|r
+    >>打开 |cRXP_PICK_陶罐|r 以获得 |T134799:0|t[|cRXP_LOOT_邪恶混剂|r]
+    >>|cRXP_WARN_它们遍布于祖尔法拉克的巨魔帐篷中|r
     .collect 217716,2
     .train 432295,1
 step
     #completewith next
-    +|cRXP_WARN_朝|r |cRXP_ENEMY_Antu'sul的|r |cRXP_WARN_洞穴移动|r
+    +|cRXP_WARN_前往|r |cRXP_ENEMY_安图苏尔的|r |cRXP_WARN_洞穴|r
 step
-    >>在大锅上使用 |T134799:0|t[|cRXP_LOOT_Vile Concoction|r]。|cRXP_WARN_不会破坏你的隐身|r
-    >>趁老板分心时，拾取 |cRXP_PICK_Antu'Sul's Satchel|r 来获得 |T133724:0|t[|cRXP_LOOT_Offering of 骸骨|r]
+    >>在大锅上使用 |T134799:0|t[|cRXP_LOOT_邪恶混剂|r]。|cRXP_WARN_这不会破坏你的隐身|r
+    >>趁首领的注意力被分散时，从 |cRXP_PICK_安图苏尔的背包|r 中拾取 |T133724:0|t[|cRXP_LOOT_骸骨供品|r]
     .collect 217721,1 --Offering of Bone
     .use 217716
     .train 432295,1
 step
     #completewith next
-    +|cRXP_WARN_朝向 |cRXP_ENEMY_巫医祖穆拉恩|r 在墓地移动|r
+    +|cRXP_WARN_前往墓地区域的|cRXP_ENEMY_ 巫医祖穆拉恩|r |r
 step
-    >>在 |cRXP_LOOT_巫医祖穆拉恩|r 旁边的大锅上使用你的第二个 |T134799:0|t[|cRXP_ENEMY_Vile Concoction|r]。|cRXP_WARN_不会破坏你的隐身|r
-    >>趁他分心时，拾取 |cRXP_PICK_Zum'rahs Satchel|r 来获得 |T136232:0|t|cRXP_LOOT_亡者结界|r
+    >>在 |cRXP_LOOT_巫医祖穆拉恩|r 旁边的大锅上使用你的第二个 |T134799:0|t[|cRXP_ENEMY_邪恶混剂|r]。|cRXP_WARN_这不会解除你的潜行状态|r
+    >>趁他分心时，拾取 |cRXP_PICK_祖穆拉恩的背包|r 来获得 |T136232:0|t|cRXP_LOOT_亡者结界|r
     .collect 217727,1 --ward of the dead
     .use 217716
     .train 432295,1
 step
     #completewith next
     .equip 13,217727 >>装备刚刚拾取的 |T136232:0|t|cRXP_LOOT_亡者结界|r 饰品
-    >>|cRXP_WARN_这将显示哪个|r |cRXP_PICK_浅墓|r |cRXP_WARN_需要被拾取|r
+    >>|cRXP_WARN_这将揭示哪一个|r |cRXP_PICK_浅墓穴|r |cRXP_WARN_需要被搜刮|r
 step
-    >>拾取显示为蓝色光环的 |cRXP_PICK_浅墓|r 来获得 |T236304:0|t|cRXP_LOOT_Offering of Flesh|r
+    >>搜刮显现出蓝色光环的 |cRXP_PICK_浅墓穴|r，以获得 |T236304:0|t[|cRXP_LOOT_血肉供品|r]
     .collect 217720,1 --offering of flesh
     .use 217727
     .train 432295,1
 step
-    >>使用你刚刚收集的 |T236304:0|t[|cRXP_LOOT_Offering of Flesh|r] 与 |T133724:0|t[|cRXP_LOOT_Offering of 骸骨|r] 结合成 |T236305:0|t[|cRXP_LOOT_Blood 魔法 精华|r]
+    >>使用你刚刚收集的 |T236304:0|t[|cRXP_LOOT_血肉供品|r]，将其与 |T133724:0|t[|cRXP_LOOT_骸骨供品|r] 组合成 |T236305:0|t[|cRXP_LOOT_鲜血魔法精华|r]
     .collect 217719,1 --Blood Magic Essence
     .use 217720
     .train 432295,1
 step
-    >>前往金字塔楼梯的底部并向你的右侧看。在墙的一侧你会看到一个小石块。跳跃到它上面，然后走到边缘
-    >>在右侧的第二个木制阳台上，你会找到 |cRXP_PICK_Sandfury Cache|r。拾取它来获得 |T237274:0|t[|cRXP_LOOT_Hollow Emblem|r]
+    >>前往金字塔台阶的底部并向右看。在墙边你会看到一个小石块。跳到它上面，然后走到边缘
+    >>在右侧的第二个木质阳台上，你会找到一个 |cRXP_PICK_沙怒宝箱|r。搜刮它以获得 |T237274:0|t[|cRXP_LOOT_空无纹章|r]
     .collect 217717,1 --Hollow Emblem
     .train 432295,1
 step
-    >>使用你刚刚拾取的 |T237274:0|t|cRXP_LOOT_Hollow Emblem|r 与 |T236305:0|t[|cRXP_LOOT_Blood 魔法 精华|r] 结合成 |T133572:0|t[|cRXP_LOOT_Emblem of 鲜血 魔法|r]
+    >>使用你刚刚拾取的 |T237274:0|t|cRXP_LOOT_空无纹章|r 与 |T236305:0|t[|cRXP_LOOT_鲜血魔法精华|r] 结合成 |T133572:0|t[|cRXP_LOOT_鲜血魔法纹章|r]
     .collect 217718,1 --Emblem of Blood Magic
     .use 217717
     .train 432295,1
 step
-    >>爬上楼梯到达金字塔顶部并拾取 |cRXP_PICK_受咒战箱|r 来获得 |T133313:0|t[|cRXP_LOOT_Talisman of Kazdor|r]
+    >>爬上楼梯到达金字塔顶部并拾取 |cRXP_PICK_受咒战箱|r 来获得 |T133313:0|t[|cRXP_LOOT_卡兹多尔护符|r]
     .collect 217609,1 --Talisman of Kazdor
     .train 432295,1
 step
@@ -2049,29 +2049,29 @@ step
     .goto Hillsbrad Foothills,75.27,23.66,15,0
     .goto Hillsbrad Foothills,75.66,20.30,15,0
     .goto Hillsbrad Foothills,77.24,21.98,15,0
-    .goto Hillsbrad Foothills,78.62,17.96,20 >>返回拉文霍德庄园
+    .goto Hillsbrad Foothills,78.62,17.96,20 >>进入拉文霍德庄园
 step
     .goto Alterac Mountains,85.51,79.41,10,0
     .goto Alterac Mountains,86.11,80.22,10,0
     .goto Alterac Mountains,84.45,80.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼上与 |cRXP_FRIENDLY_法拉德|r 对话
-    .turnin 80411 >>Turn in The Talisman of Kazdor
-    .accept 80453 >>Accept Best Laid Plans
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_法拉德|r 对话
+    .turnin 80411 >>交任务 卡兹多尔的护符
+    .accept 80453 >>接受任务 周密的计划
     .target Fahrad
 step
     .goto Alterac Mountains,86.0,80.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在地下室与 |cRXP_FRIENDLY_萨恩·刀链|r 对话
-    .turnin 80453 >>Turn in Best Laid Plans
-    .accept 80454 >>Accept One Last Drop
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与地下室的 |cRXP_FRIENDLY_萨恩·刀链|r 对话
+    .turnin 80453 >>交任务 周密的计划
+    .accept 80454 >>Accept 最后一投
     .target Zan Shivsproket
 step
     #completewith next
     .zone Silverpine Forest >>前往银松森林
 step
     .goto Silverpine Forest,47.114,70.974
-    >>点击 |cRXP_PICK_死亡 掉落|r chest
-    .turnin 80454 >>Turn in One Last Drop
-    .accept 80455 >>Accept Biding Our Time
+    >>点击 |cRXP_PICK_秘密投放点|r 箱子
+    .turnin 80454 >>交任务 最后一投
+    .accept 80455 >>接受任务 伺机待发
     .train 432295,1
 step
     #completewith next
@@ -2081,16 +2081,16 @@ step
     .goto Hillsbrad Foothills,75.27,23.66,15,0
     .goto Hillsbrad Foothills,75.66,20.30,15,0
     .goto Hillsbrad Foothills,77.24,21.98,15,0
-    .goto Hillsbrad Foothills,78.62,17.96,20 >>进入 拉文霍德庄园
+    .goto Hillsbrad Foothills,78.62,17.96,20 >>进入拉文霍德庄园
 step
     .goto Alterac Mountains,85.51,79.41,10,0
     .goto Alterac Mountains,86.11,80.22,10,0
     .goto Alterac Mountains,84.45,80.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼上与 |cRXP_FRIENDLY_法拉德|r 对话
-    .turnin 80455 >>Turn in Biding Our Time
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_法拉德|r 对话
+    .turnin 80455 >>交任务 伺机待发
     .target Fahrad
 step
-    .train 432295 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Coterie|r] |cRXP_WARN_来训练|r |T236275:0|t[盗贼的尊严]
+    .train 432295 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_同伙符文|r] |cRXP_WARN_来训练|r |T236275:0|t[盗贼的尊严]
     .use 217736
 ]])
 
@@ -2113,26 +2113,26 @@ step
     #label ToolboxKey
     .train 415918,1
     .goto Western Plaguelands,45.0,13.6
-    >>击杀或 |T133644:0|t[搜索] |cRXP_ENEMY_Scarlet Workers|r。拾取战利品 |cRXP_LOOT_Toolbox 钥匙|r
+    >>击杀或|T133644:0|t[搜索] |cRXP_ENEMY_血色工人|r。拾取他们的|cRXP_LOOT_工具箱钥匙|r
     .collect 227928,1 -- Toolbox Key 1/1
     .mob Scarlet Worker
 step
     .train 415918,1
     .goto Western Plaguelands,45.0,14.2
-    >>打开 |cRXP_PICK_Scarlet Toolbox|r。拾取 |cRXP_LOOT_Rusty Crowbar|r
+    >>打开|cRXP_PICK_血色工具箱|r。拾取其中的|cRXP_LOOT_锈蚀撬棒|r
     .collect 227932,1 -- Rusty Crowbar 1/1
 step
     .goto Western Plaguelands,49.5,18.5
-    >>前往壁炉谷中央的塔顶。打开那里的 |cRXP_PICK_Marked 恐惧哨兵的王庭重靴|r。拾取 |T133640:0|t[|cRXP_LOOT_Hidden Bundle|r] 并打开它来拾取 |T134237:0|t[|cRXP_LOOT_Safe 箱子 钥匙|r]
+    >>前往壁炉谷中央的塔楼顶部。打开那里的|cRXP_PICK_标记的箱子|r，从中拾取|T133640:0|t[|cRXP_LOOT_隐藏的包袱|r]并打开，即可获得一把|T134237:0|t[|cRXP_LOOT_保险箱钥匙|r]
     .collect 227930,1
 step
     .goto Western Plaguelands,46.3,14.6
-    >>前往壁炉谷第二座塔中层（位于城市北侧）。使用 |T134237:0|t[|cRXP_LOOT_Safe 箱子 钥匙|r] 打开 [|cRXP_PICK_Belavus' Safe 箱子|r] 并拾取 |T134419:0|t[|cRXP_FRIENDLY_Rune of the 经典怀旧服 道具|r]
+    >>前往位于壁炉谷北侧的第二座塔的中层。使用|T134237:0|t[|cRXP_LOOT_保险箱钥匙|r]打开[|cRXP_PICK_蓓拉芙丝的保险箱|r]，并从中拾取|T134419:0|t[|cRXP_FRIENDLY_猩红风暴符文|r]
     .collect 227456,1 --Rune of the crimson tempest
 step
     .use 227456
     .itemcount 227456,1
-    .train 415918 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the 经典怀旧服 道具|r] |cRXP_WARN_来训练|r |T135315:0|t[经典怀旧服 道具]
+    .train 415918 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_猩红风暴符文|r] |cRXP_WARN_来训练|r |T135315:0|t[猩红风暴]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2149,12 +2149,12 @@ step
 step
     .train 436609,1
     .goto Winterspring,67.7,35.4
-    >>打开 |cRXP_PICK_Wooden 胸部|r。拾取 |T134419:0|t[|cRXP_FRIENDLY_万刀符文|r]
-    >>|cRXP_WARN_打开 |cRXP_PICK_Wooden 胸部|r 时，按照以下顺序选择选项:|r
+    >>打开 |cRXP_PICK_木箱子|r。拾取 |T134419:0|t[|cRXP_FRIENDLY_万刀符文|r]
+    >>|cRXP_WARN_打开 |cRXP_PICK_木箱子|r 时，按照以下顺序选择选项：|r
     >>|cRXP_WARN_霜刃豹|r
-    >>|cRXP_WARN_Owl|r
-    >>|cRXP_WARN_Bear|r
-    >>|cRXP_WARN_Owl|r
+    >>|cRXP_WARN_猫头鹰|r
+    >>|cRXP_WARN_熊|r
+    >>|cRXP_WARN_猫头鹰|r
     .collect 227921,1
 step
     .use 227921
@@ -2176,36 +2176,36 @@ step
 step
     .train 415922,1
     .goto Eastern Plaguelands,83,85
-    >>打开遍布 Try's Hand 的 |cRXP_LOOT_Scarlet Footlockers|r，直到拾取到 |cRXP_LOOT_Sending Signal|r
+    >>打开遍布提尔之手的 |cRXP_LOOT_血色十字军提箱|r，直到拾取到 |cRXP_LOOT_通讯魔符|r
     .collect 227451,1
 step
     .train 415922,1
     #completewith FinalPillar
-    >>|cRXP_WARN_接下来的步骤中，你必须按正确的顺序点击四个 |cRXP_PICK_Sending Pillars|r。点击一个后，你会被随机传送到不同的地方。在点击下一个之前，确保你在正确的所在地区！|r
+    >>|cRXP_WARN_在接下来的步骤中，你必须按照正确的顺序点击四个 |cRXP_PICK_传送石柱|r。点击其中一个后，你会被随机传送至另一个石柱处。在点击下一个石柱之前，请确保你已处于正确的位置！|r
 step
     .train 415922,1
     .goto Eastern Plaguelands,82,57
-    .cast 6477,6478 >>点击第一个 |cRXP_PICK_Sending 柱子|r |cRXP_WARN_在圣光之愿礼拜堂后面|r
+    .cast 6477,6478 >>点击第一个 |cRXP_PICK_在圣光之愿礼拜堂后面|r |cRXP_WARN_通讯支柱|r
 step
     .train 415922,1
     .goto Eastern Plaguelands,40,92
-    .cast 6477,6478 >>点击第二个 |cRXP_PICK_Sending 柱子|r |cRXP_WARN_在达隆郡|r
+    .cast 6477,6478 >>点击第二个|cRXP_PICK_在达隆郡|r |cRXP_WARN_通讯支柱|r
 step
     .train 415922,1
     .goto Eastern Plaguelands,70,34
-    .cast 6477,6478 >>点击第三个 |cRXP_PICK_Sending 柱子|r |cRXP_WARN_在北谷|r
+    .cast 6477,6478 >>点击第三个 |cRXP_PICK_在北谷|r |cRXP_WARN_通讯支柱|r
 step
     .train 415922,1
     #label FinalPillar
     .goto Eastern Plaguelands,14,30
-    .cast 6477,6478 >>点击第四个 |cRXP_PICK_Sending 柱子|r |cRXP_WARN_在恐惧谷|r
+    .cast 6477,6478 >>点击第四个 |cRXP_PICK_在恐惧谷|r |cRXP_WARN_通讯支柱|r
 step
     .train 415922,1
     >>|cRXP_WARN_进入房屋|r
-    >>打开地上的 |cRXP_PICK_Adon's Trunk|r。拾取战利品 |T134419:0|t[|cRXP_LOOT_Rune of the Swashbuckler|r]
+    >>打开地上的 |cRXP_PICK_阿顿的箱子|r。搜刮它以获得 |T134419:0|t[|cRXP_LOOT_豪侠符文|r]
     .collect 227922,1
 step
     .use 227922
     .itemcount 227922,1
-    .train 415922 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Swashbuckler|r] |cRXP_WARN_来训练|r |T134538:0|t[短枪射击]
+    .train 415922 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_豪侠符文|r] |cRXP_WARN_来训练|r |T134538:0|t[短枪射击]
 ]])

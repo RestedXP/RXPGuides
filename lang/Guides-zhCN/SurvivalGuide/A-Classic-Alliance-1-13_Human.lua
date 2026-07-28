@@ -377,7 +377,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP 生存指南 (联盟版)
 #subgroup RXP 生存指南 1-20级
 #defaultfor Human
-#next 11-13 洛克莫丹
+#next 11-13级 洛克莫丹
 step
     #completewith next
     .subzone 87 >>前往金雾村
@@ -903,7 +903,7 @@ step
     .goto Elwynn Forest,76.8,62.4,90,0
     .goto Elwynn Forest,83.7,59.4,90,0
     .goto Elwynn Forest,76.8,62.4
-    .xp 9 >>刷怪升到9级
+    .xp 9 >>刷怪到9级
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨拉·迪博雷恩|r 对话
     .target 萨拉·迪博雷恩
@@ -1282,7 +1282,7 @@ step
 step
     .goto Westfall,56.416,30.519
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔玛·萨丁|r 对话
-    .turnin 36 >>交任务《 前往熔光镇》 杂味炖肉
+    .turnin 36 >>交任务 杂味炖肉
     .target 萨尔玛·萨丁
     .accept 38 >>接受任务 杂味炖肉
     .accept 22 >>接受任务 猪肝馅饼
@@ -1855,7 +1855,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #era/som--h
 << Alliance
-#name 11-13 洛克莫丹
+#name 11-13级 洛克莫丹
 #version 1
 #group RestedXP 生存指南 (联盟版)
 #subgroup RXP 生存指南 1-20级

@@ -26,7 +26,7 @@ step
     .goto StormwindClassic,55.21,7.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
     .vendor >>|cRXP_BUY_买一个|r |T133024:0|t[青铜管]
-    >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_比利巴布·旋轮|r 没有库存，请跳过此步骤|r
+    >>|cRXP_WARN_这是限量供应物品，如果 |cRXP_FRIENDLY_比利巴布·旋轮|r 没有库存，请跳过此步骤|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
     .target 比利巴布·旋轮
@@ -399,7 +399,7 @@ step
     .target 格里安·斯托曼
 step
 .dungeon DM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼顶的 |cRXP_FRIENDLY_格里安·斯托曼|r 和 |cRXP_FRIENDLY_哨兵瑞尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼顶的 |cRXP_FRIENDLY_治安官格里安·斯托曼|r 和 |cRXP_FRIENDLY_哨兵瑞尔|r 对话
     .accept 166 >>接受任务 迪菲亚兄弟会
     .target +Gryan Stoutmantle
     .goto Westfall,56.33,47.52
@@ -484,7 +484,7 @@ step
     .goto Westfall,56.33,47.52,100 >>前往哨兵岭
 step
 .dungeon DM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼顶的 |cRXP_FRIENDLY_格里安·斯托曼|r 和 |cRXP_FRIENDLY_哨兵瑞尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼顶的 |cRXP_FRIENDLY_治安官格里安·斯托曼|r 和 |cRXP_FRIENDLY_哨兵瑞尔|r 对话
     .turnin 166 >>交任务 迪菲亚兄弟会
     .target +Gryan Stoutmantle
     .goto Westfall,56.33,47.52
@@ -613,7 +613,7 @@ step
     .isQuestTurnedIn 343
     .goto Elwynn Forest,65.22,69.71
     .target Theocritus
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞欧克瑞图斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与顶部的|cRXP_FRIENDLY_塞欧克瑞图斯|r交谈
     .accept 94 >>接受任务 法师的眼线
     .xp <20,1
 step
@@ -783,7 +783,7 @@ step
 step
     #era/som
     .isQuestComplete 92
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厨师布雷纳|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厨师布雷纳|r对话
 	.target Chef Breanna
     .goto Redridge Mountains,22.67,43.83
     .turnin 92 >>交任务 赤脊山炖肉
@@ -950,7 +950,7 @@ step << Rogue
     .goto StormwindClassic,78.43,60.15,20,0
     .goto StormwindClassic,78.67,60.13,5 >>进入军情七处总部。向上楼朝 |cRXP_FRIENDLY_“剃刀”雷吉克|r 和 |cRXP_FRIENDLY_大师级 马迪亚斯·肖尔大师|r走去
 step << Rogue
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_"剃刀"雷吉克|r 和 |cRXP_FRIENDLY_马迪亚斯·肖尔大师|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_"剃刀"雷吉克|r 和 |cRXP_FRIENDLY_马迪亚斯·肖尔|r 对话
     .accept 2281 >>接受任务 赤脊山的联络员
     .target +Renzik "The Shiv"
     .goto StormwindClassic,75.76,60.35
@@ -992,7 +992,7 @@ step
 step
     .goto Elwynn Forest,65.22,69.71
     .target Theocritus
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞欧克瑞图斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与顶部的|cRXP_FRIENDLY_塞欧克瑞图斯|r交谈
     .accept 94 >>接受任务 法师的眼线
 step
     .goto Elwynn Forest,64.880,69.192
@@ -1032,7 +1032,7 @@ step
     .accept 122 >>接受任务 雏龙的鳞片
 step << Rogue
     .goto Redridge Mountains,28.07,52.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卢修斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
     .turnin 2281 >>交任务 赤脊山的联络员
     .target Lucius
     .accept 2282 >>接受任务 奥瑟尔伐木场
@@ -1112,13 +1112,13 @@ step
     .turnin 124 >>交任务 豺狼人的乱吠
 step << Rogue
     .goto Redridge Mountains,28.07,52.02
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卢修斯|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
     .turnin 2282 >>交任务 奥瑟尔伐木场
     .target Lucius
 step << Rogue
     #sticky
     #optional
-    .destroy 7907 >>从你的背包中摧毁 |T134328:0|t[偷窃技能认证书]，因为不再需要了
+    .destroy 7907 >>从你的背包中删除 |T134328:0|t[偷窃技能认证书]，因为不再需要了
 step << NightElf Rogue
     #hardcore
     #optional
@@ -1141,7 +1141,7 @@ step << NightElf Rogue
     #optional
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索尔|r 对话
-    .fp Westfall >>解锁西部荒野飞行路线
+    .fp Westfall >>开启西部荒野的飞行路径
     .target 索尔
     .isOnQuest 2360
     .train 1856,3 -- skips step if not 22/doesnt have Vanish
@@ -1355,7 +1355,7 @@ step << Rogue
     #requires AntiVenomEnd2 << Rogue
     .goto StormwindClassic,75.78,59.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马迪亚斯·肖尔大师|r 对话
-    >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备你的主武器|r << Rogue
+    >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备上你的主武器|r << Rogue
     .turnin 2359 >>交任务 克拉文之塔
     .target 马迪亚斯·肖尔大师
     .isQuestComplete 2359

@@ -105,7 +105,7 @@ step
     .goto Mulgore,44.18,76.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鹰风酋长|r 对话
     .turnin 753 >>交任务 一件琐事
-    .accept 755 >>接受任务 大地母亲的仪式
+    .accept 755 >>接受任务 大地之母仪祭
     .target 鹰风酋长
 step << Shaman
     .goto Mulgore,44.07,77.47
@@ -441,7 +441,7 @@ step
     .goto Mulgore,44.73,76.18 << Shaman
     .turnin 781 >>交任务 纳拉其营地的危机
     .turnin 757 >>交任务 力量仪祭
-    .accept 763 >>接受任务 大地母亲的仪式
+    .accept 763 >>接受任务 大地之母仪祭
     .target 鹰风酋长
     .goto Mulgore,44.18,76.07
 step << Shaman
@@ -2282,7 +2282,7 @@ step
     .goto Thunder Bluff,60.0,51.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯恩|r 对话
     .turnin 775 >>交任务 雷霆崖之旅
-    .accept 776 >>接受任务 大地母亲的仪式
+    .accept 776 >>接受任务 大地之母仪祭
     .target 凯恩·血蹄
 step << Druid
     #completewith next
@@ -2964,7 +2964,7 @@ step
 step
     #season 2
     .goto Mulgore,44.35,76.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_符文贩子|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_符文贩子|r 对话
     >>|cRXP_WARN_千万不要把能穿的装备卖给商人|r
     >>卖掉你的|cRXP_BUY_ |T135005:0|t[衬衣] |r和其中一个|cRXP_BUY_ |T133964:0|t[大块面包] |r（可以通过按住 Shift 点击来拆分）|cRXP_WARN_ ，并向他购买|r |T134419:0|t[|cRXP_BUY_狂暴突袭符文|cRXP_FRIENDLY_] |r和|cRXP_FRIENDLY_ |T134419:0|t[|r乘胜追击符文|r] << Warrior
     >>|cRXP_BUY_卖掉你的|r |T135005:0|t[衬衣] |cRXP_BUY_和其中一个|r |T134534:0|t[蘑菇菌盖] |cRXP_WARN_（可以通过按住 Shift 点击来拆分）|r ，并向他购买|cRXP_BUY_ |T134920:0|t[|cRXP_FRIENDLY_卡亚圣像|r] |cRXP_BUY_和|r |T134918:0|t[|cRXP_FRIENDLY_二价圣像|r] |cRXP_BUY_|r << Shaman
@@ -3148,7 +3148,7 @@ step << Warrior/Shaman/Druid
 step << Hunter
     #season 2
     .goto Mulgore,44.35,76.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_符文贩子|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_符文贩子|r 对话
     >>|cRXP_WARN_千万不要把能穿的装备卖给商人|r
     .vendor >>|cRXP_BUY_垃圾卖店并购买以下的所有AoE符文|r << Hunter
     .collect 210818,1 << Hunter --Rune of Lone Wolf
@@ -3234,7 +3234,7 @@ step
     .goto Mulgore,44.18,76.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鹰风酋长|r 对话
     .turnin 753 >>交任务 一件琐事
-    .accept 755 >>接受任务 大地母亲的仪式
+    .accept 755 >>接受任务 大地之母仪祭
     .target 鹰风酋长
 step << Shaman
     .goto Mulgore,44.07,77.47
@@ -3512,7 +3512,7 @@ step
     .goto Mulgore,44.73,76.18 << Shaman
     .turnin 781 >>交任务 纳拉其营地的危机
     .turnin 757 >>交任务 力量仪祭
-    .accept 763 >>接受任务 大地母亲的仪式
+    .accept 763 >>接受任务 大地之母仪祭
     .target 鹰风酋长
     .goto Mulgore,44.18,76.07
 step << Shaman
@@ -3624,7 +3624,7 @@ step << Warrior
 step
     #season 2
     .goto Mulgore,44.35,76.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_符文贩子|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_符文贩子|r 对话
     >>|cRXP_WARN_千万不要把能穿的装备卖给商人|r
     .vendor >>|cRXP_BUY_向商人贩卖垃圾物品并购买你需要的所有 |T134419:0|t|cRXP_WARN_[符文]|r|r
     .target Rune Broker
@@ -5133,7 +5133,7 @@ step << Hunter
     .goto Mulgore,65.56,59.37,50,0
     .goto Mulgore,67.62,59.06,50,0
     .goto Mulgore,66.34,67.01,50,0
-    .train 16828 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Prairie Wolf Alpha|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 3)]
+    .train 16828 >>|cRXP_WARN_对一只|r草原狼前锋|cRXP_WARN_ |cRXP_ENEMY_施放|r |T132164:0|t[驯服野兽]。使用它攻击怪物以学习 |T132140:0|t[爪击(等级3)]|r
     .link https://www.wow-petopia.com/classic/training.php >>https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击这里了解更多关于宠物训练的信息|r
     .mob 草原狼前锋
 step

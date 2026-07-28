@@ -2545,7 +2545,7 @@ step << Warrior
     #season 2
     .goto The Barrens,62.55,56.31
     >>点击 |cRXP_PICK_联盟战旗|r
-    >>击杀重生的 |cRXP_ENEMY_Lieutenant Stonebrew|r，拾取他的 |T134419:0|t[|cRXP_FRIENDLY_Rune of 经典怀旧服 道具|r]
+    >>击杀刷新的 |cRXP_ENEMY_石麦副官|r。拾取他的 |T134419:0|t[|cRXP_FRIENDLY_无尽怒气符文|r]
     .collect 208741,1 --Rune of Endless Rage (1)
     .mob Lieutenant Stonebrew
     .train 403489,1
@@ -2750,7 +2750,7 @@ step
     .goto The Barrens,45.93,49.08,0
     .goto The Barrens,47.43,51.37,0
     .goto The Barrens,50.10,53.34,0
-	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
+	>>击杀|cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
     >>|cRXP_WARN_使用 |T132318:0|t [|cRXP_LOOT_拉克塔曼尼之蹄|r]以开启该任务|r
     >>|cRXP_WARN_他有 4 个刷新点（已在地图上标记）|r
     >>|cRXP_WARN_如果找不到他，请跳过此步骤|r
@@ -3713,7 +3713,7 @@ step
     .goto The Barrens,45.93,49.08,80,0
     .goto The Barrens,47.43,51.37,80,0
     .goto The Barrens,50.10,53.34,80,0
-	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
+	>>击杀|cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
     >>|cRXP_WARN_使用 |T132318:0|t [|cRXP_LOOT_拉克塔曼尼之蹄|r]以开启该任务|r
     >>|cRXP_WARN_他有 4 个刷新点（已在地图上标记）|r
     >>|cRXP_WARN_如果找不到他，请跳过此步骤|r
@@ -5597,7 +5597,7 @@ step << Hunter
     .goto Ashenvale,64.81,75.34
     >>跟随 |cRXP_FRIENDLY_托雷克|r
     >>让 |cRXP_FRIENDLY_托雷克（|r 和他的 |cRXP_FRIENDLY_碎木袭击者|r 抗住 |cRXP_ENEMY_银翼战士|r 和 |cRXP_ENEMY_银翼哨兵|r
-    >>|cRXP_WARN_当你清理完建筑物后，跑向阳台。当 |cRXP_ENEMY_杜瑞尔·月火|r 出现时，先让 |cRXP_FRIENDLY_托雷克|r 和他的 |cRXP_FRIENDLY_碎木袭击者|r 拉住仇恨再造成伤害|r
+    >>|cRXP_WARN_清理完建筑物后，跑向阳台。当 |cRXP_ENEMY_杜瑞尔·月火|r 出现时，先让 |cRXP_FRIENDLY_托雷克|r 和他的 |cRXP_FRIENDLY_碎木袭击者|r 承受仇恨，再对其造成伤害|r
     .complete 6544,1 --Take Silverwing Outpost
     .mob 银翼战士
     .mob 银翼哨兵
@@ -6053,7 +6053,7 @@ step
    .turnin 6562 >>交任务  帮助耶努萨克雷
    .target 耶努萨克雷
    .goto Ashenvale,11.56,34.29
-   .accept 216 >>接受任务蓟皮熊怪的麻烦
+   .accept 216 >>接受任务 蓟皮熊怪的麻烦
    .target 卡拉恩·阿玛卡
    .goto Ashenvale,11.90,34.53
    .accept 6462 >>接受任务巨魔符咒
@@ -6375,7 +6375,7 @@ step
     #xprate <1.5
     .goto Ashenvale,11.90,34.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯朗|r 对话
-    .accept 216 >>接受任务蓟皮熊怪的麻烦
+    .accept 216 >>接受任务 蓟皮熊怪的麻烦
     .target 卡拉恩·阿玛卡
 step
     #xprate >1.49
@@ -9788,7 +9788,7 @@ step << Warrior
     #season 2
     .goto The Barrens,62.55,56.31
     >>点击 |cRXP_PICK_联盟战旗|r
-    >>击杀重生的 |cRXP_ENEMY_Lieutenant Stonebrew|r，拾取他的 |T134419:0|t[|cRXP_FRIENDLY_Rune of 经典怀旧服 道具|r]
+    >>击杀刷新的 |cRXP_ENEMY_石麦副官|r。拾取他的 |T134419:0|t[|cRXP_FRIENDLY_无尽怒气符文|r]
     .collect 208741,1 --Rune of Endless Rage (1)
     .mob Lieutenant Stonebrew
     .train 403489,1
@@ -9986,7 +9986,7 @@ step
     .goto The Barrens,45.93,49.08,0
     .goto The Barrens,47.43,51.37,0
     .goto The Barrens,50.10,53.34,0
-	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
+	>>击杀|cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
     >>|cRXP_WARN_使用 |T132318:0|t [|cRXP_LOOT_拉克塔曼尼之蹄|r]以开启该任务|r
     >>|cRXP_WARN_他有 4 个刷新点（已在地图上标记）|r
     >>|cRXP_WARN_如果找不到他，请跳过此步骤|r
@@ -11056,7 +11056,7 @@ step
     .goto The Barrens,45.93,49.08,80,0
     .goto The Barrens,47.43,51.37,80,0
     .goto The Barrens,50.10,53.34,80,0
-	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
+	>>击杀|cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
     >>|cRXP_WARN_使用 |T132318:0|t [|cRXP_LOOT_拉克塔曼尼之蹄|r]以开启该任务|r
     >>|cRXP_WARN_他有 4 个刷新点（已在地图上标记）|r
     >>|cRXP_WARN_如果找不到他，请跳过此步骤|r
@@ -12980,7 +12980,7 @@ step << Hunter
     .goto Ashenvale,64.81,75.34
     >>跟随 |cRXP_FRIENDLY_托雷克|r
     >>让 |cRXP_FRIENDLY_托雷克（|r 和他的 |cRXP_FRIENDLY_碎木袭击者|r 抗住 |cRXP_ENEMY_银翼战士|r 和 |cRXP_ENEMY_银翼哨兵|r
-    >>|cRXP_WARN_当你清理完建筑物后，跑向阳台。当 |cRXP_ENEMY_杜瑞尔·月火|r 出现时，先让 |cRXP_FRIENDLY_托雷克|r 和他的 |cRXP_FRIENDLY_碎木袭击者|r 拉住仇恨再造成伤害|r
+    >>|cRXP_WARN_清理完建筑物后，跑向阳台。当 |cRXP_ENEMY_杜瑞尔·月火|r 出现时，先让 |cRXP_FRIENDLY_托雷克|r 和他的 |cRXP_FRIENDLY_碎木袭击者|r 承受仇恨，再对其造成伤害|r
     .complete 6544,1 --Take Silverwing Outpost
     .mob 银翼战士
     .mob 银翼哨兵

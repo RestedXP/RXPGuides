@@ -46,7 +46,7 @@ step
     #label SalmaS
     .goto Westfall,56.40,30.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔玛·萨丁|r 对话
-    .turnin 36 >>交任务《 前往熔光镇》 杂味炖肉
+    .turnin 36 >>交任务 杂味炖肉
     .target 萨尔玛·萨丁
     .accept 38 >>接受任务 杂味炖肉
     .accept 22 >>接受任务 猪肝馅饼
@@ -277,7 +277,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔玛·萨丁|r 对话
     .goto Westfall,56.40,30.50
     .turnin 22 >>交任务 猪肝馅饼
-    .turnin 38 >>交任务《 前往熔光镇》 杂味炖肉
+    .turnin 38 >>交任务 杂味炖肉
     .isQuestComplete 22
     .isQuestComplete 38
     .target 萨尔玛·萨丁
@@ -292,7 +292,7 @@ step
     #optional
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔玛·萨丁|r 对话
     .goto Westfall,56.40,30.50
-    .turnin 38 >>交任务《 前往熔光镇》 杂味炖肉
+    .turnin 38 >>交任务 杂味炖肉
     .isQuestComplete 38
     .target 萨尔玛·萨丁
   step
@@ -356,7 +356,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔玛·萨丁|r 对话
 	.target 萨尔玛·萨丁
     .goto Westfall,56.40,30.50
-    .turnin 38 >>交任务《 前往熔光镇》 杂味炖肉
+    .turnin 38 >>交任务 杂味炖肉
     .turnin 22 >>交任务 猪肝馅饼
 step
     .goto Westfall,50.0,45.4
@@ -625,7 +625,7 @@ step
     .goto Wetlands,7.95,56.38
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_德温·晨光|r 对话
     .vendor 1453 >>|cRXP_WARN_尽可能多地购买|r |T134831:0|t [治疗药水] |cRXP_WARN_|r
-    >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_德温·晨光|r 没有库存，请跳过此步骤|r
+    >>|cRXP_WARN_这是限量供应物品，如果 |cRXP_FRIENDLY_德温·晨光|r 没有库存，请跳过此步骤|r
     .target 德温·晨光
 step
     #optional
@@ -683,7 +683,7 @@ step
     #completewith DarkshoreBoat
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
     >>|T133971:0|t[烹饪] 以下物品：
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
     >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
     .usespell 2550
     .zoneskip Darkshore
@@ -710,7 +710,7 @@ step
     #label DarkshoreCook6
     #completewith DarkshoreBoat
     >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1)
@@ -1140,7 +1140,7 @@ step << NightElf Warrior/NightElf Rogue
 step << NightElf Warrior/NightElf Rogue
     #optional
     .goto Darkshore,38.142,41.108
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾丽萨·钢拳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾丽萨·钢拳|r 对话
     >>|cRXP_BUY_购买一把|r |T134708:0|t[矿工锄]|cRXP_BUY_从她那里|r
     .target Elisa Steelhand
     .collect 2901,1 -- Mining Pick (1)
@@ -1170,7 +1170,7 @@ step
     .skill cooking,<10,1 -- step only displays if skill is 10 or higher
 step << NightElf Rogue
     .goto 1439,37.575,40.348
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳拉姆·长爪|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳拉姆·长爪|r对话
     .vendor 4183 >>|cRXP_BUY_如果钱够，从他那里购买|r |T135640:0|t[双刃弯刀] |cRXP_BUY_|r
     .collect 2207,1 -- Jambiya (1)
     .disablecheckbox
@@ -4725,7 +4725,7 @@ step << Mage/Warlock/Rogue
     #xprate >1.59
     #completewith WepTrainNoDM << !Warrior
     >>|cRXP_WARN_在坐地铁期间，如有需要可提升你的 |r|T135966:0|t[急救]|cRXP_WARN_和|r|T133971:0|t[烹饪] |cRXP_WARN_|r
-    >>|cRXP_WARN_后面的任务需要你的|r |T135966:0|t[急救] |cRXP_WARN_达到80以上|r << Rogue !Dwarf
+    >>|cRXP_WARN_后面的任务需要你的|r |T135966:0|t[急救] |cRXP_WARN_达到80点以上|r << Rogue !Dwarf
     .zone Stormwind City >>乘坐地铁前往暴风城
     .zoneskip Darkshore << Warrior
     .zoneskip Elwynn Forest
@@ -5036,7 +5036,7 @@ step << Rogue
     #xprate >1.59
     #label Rendevous
     .goto Redridge Mountains,28.07,52.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卢修斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
     .turnin 2281 >>交任务 赤脊山的联络员
     .accept 2282 >>接受任务 奥瑟尔伐木场
     .target Lucius
@@ -6495,7 +6495,7 @@ step
     #optional << NightElf
     #completewith ShoniAccept
     >>|cRXP_WARN_在坐地铁期间，如有需要可提升你的 |r|T135966:0|t[急救]|cRXP_WARN_和|r|T133971:0|t[烹饪] |cRXP_WARN_|r
-    >>|cRXP_WARN_后面的任务需要你的|r |T135966:0|t[急救] |cRXP_WARN_达到80以上|r << Rogue !Dwarf
+    >>|cRXP_WARN_后面的任务需要你的|r |T135966:0|t[急救] |cRXP_WARN_达到80点以上|r << Rogue !Dwarf
     .zone Stormwind City >>乘坐地铁前往暴风城
     .zoneskip Wetlands << NightElf
     .zoneskip Elwynn Forest
@@ -7043,7 +7043,7 @@ step
 step << Rogue
     #xprate >1.59
     .goto Redridge Mountains,28.07,52.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卢修斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
     .turnin 2281 >>交任务 赤脊山的联络员
     .accept 2282 >>接受任务 奥瑟尔伐木场
     .target Lucius
@@ -8349,7 +8349,7 @@ step
     .goto StormwindClassic,55.21,7.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
     .vendor >>|cRXP_WARN_购买一个|r |T133024:0|t[青铜管]
-    >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_比利巴布·旋轮|r 没有库存，请跳过此步骤|r
+    >>|cRXP_WARN_这是限量供应物品，如果 |cRXP_FRIENDLY_比利巴布·旋轮|r 没有库存，请跳过此步骤|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
     .target 比利巴布·旋轮
@@ -9183,7 +9183,7 @@ step
 step
 #optional
     .goto Redridge Mountains,22.67,43.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厨师布雷纳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厨师布雷纳|r对话
     .accept 92 >>接受任务 赤脊山炖肉
     .turnin 92 >>交任务 赤脊山炖肉
     .itemcount 2296,5 -- Great Goretusk Snout (5)
@@ -9194,7 +9194,7 @@ step << Warlock
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛蒂·詹罗斯|r 对话
 	.target 玛蒂·詹罗斯
     .goto Redridge Mountains,21.85,46.32
-    .accept 34 >>接受任务不速之客
+    .accept 34 >>接受任务 不速之客
 step << Warlock
     .goto Redridge Mountains,15.68,49.30
     >>击杀 |cRXP_ENEMY_贝利格拉布|r。拾取他的 |cRXP_LOOT_獠牙|r
@@ -9207,7 +9207,7 @@ step << Warlock
     .goto Redridge Mountains,21.85,46.32
     .target 玛蒂·詹罗斯
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛蒂·詹罗斯|r 对话
-    .turnin 34 >>交任务不速之客
+    .turnin 34 >>交任务 不速之客
 step << Rogue
     .goto Redridge Mountains,28.07,52.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
@@ -9349,7 +9349,7 @@ step << Rogue
     .goto 1433,51.846,45.116
     >>|cRXP_WARN_你必须完成这一步，才能进行之后的|r |T132290:0|t[毒药] |cRXP_WARN_任务|r
     >>|cRXP_WARN_站在路径点位置。调整你的镜头和鼠标位置，使你无需移动即可一次性点击 3 个|cRXP_PICK_ |r练习用保险箱|r
-    .skill lockpicking,80 >>|cRXP_WARN_在奥瑟尔磨坊打开地上的 |cRXP_PICK_练习用保险箱|r，直到你的|r |T136058:0|t[开锁] 技能达到 80|r
+    .skill lockpicking,80 >>|cRXP_WARN_在奥瑟尔木场打开地上的 |cRXP_PICK_练习用保险箱|r，直到你的|r |T136058:0|t[开锁] 技能达到 80|r
 step << Rogue
 	.goto Redridge Mountains,52.05,44.69
     >>打开 |cRXP_PICK_卢修斯的保险箱|r。从中拾取 |cRXP_LOOT_盗贼徽记|r
@@ -9374,7 +9374,7 @@ step
 	.target 码头管理员巴伦
     .goto Redridge Mountains,27.72,47.38
     .turnin 127 >>交任务卖鱼
-    .accept 150 >>接受任务鱼人偷猎者
+    .accept 150 >>接受任务 鱼人偷猎者
     .turnin 150 >>交任务鱼人偷猎者
     .xp <20,1
 step
@@ -9384,7 +9384,7 @@ step
     .turnin 127 >>交任务卖鱼
 step
 #optional
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厨师布雷纳|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厨师布雷纳|r对话
 	.target Chef Breanna
     .goto Redridge Mountains,22.67,43.83
     .accept 92 >>接受任务 赤脊山炖肉
@@ -9407,7 +9407,7 @@ step
     .goto Redridge Mountains,26.80,44.30
     .turnin 131 >>交任务 水仙诉衷情
 step << Rogue
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卢修斯|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
 	.target Lucius
     .goto Redridge Mountains,28.07,52.02
     .turnin 2282 >>交任务 奥瑟尔伐木场
@@ -9855,12 +9855,12 @@ step
 	.target 码头管理员巴伦
     .goto Redridge Mountains,27.72,47.38
     .turnin 127 >>交任务卖鱼
-    .accept 150 >>接受任务鱼人偷猎者
+    .accept 150 >>接受任务 鱼人偷猎者
     .turnin 150 >>交任务鱼人偷猎者
 step
 #optional
 #xprate >1.49
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厨师布雷纳|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厨师布雷纳|r对话
 	.target Chef Breanna
     .goto Redridge Mountains,22.67,43.83
     .accept 92 >>接受任务 赤脊山炖肉
@@ -9870,7 +9870,7 @@ step
     .itemcount 1081,5 -- Crisp Spider Meat (5)
 step
 #xprate <1.5
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厨师布雷纳|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厨师布雷纳|r对话
 	.target Chef Breanna
     .goto Redridge Mountains,22.67,43.83
     .accept 92 >>接受任务 赤脊山炖肉
@@ -9900,7 +9900,7 @@ step
     .mob Great Goretusk
 step
 #optional
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厨师布雷纳|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厨师布雷纳|r对话
 	.target Chef Breanna
     .goto Redridge Mountains,22.67,43.83
     .accept 92 >>接受任务 赤脊山炖肉
@@ -10233,7 +10233,7 @@ step
 step
 	#xprate >1.49
     .goto Darkshore,44.44,84.69
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 995,1 --Help Volcor escape the cave (1)
     .isQuestTurnedIn 993
 step
@@ -10545,7 +10545,7 @@ step
 step
     #xprate <1.59
     .goto Ashenvale,14.20,20.64
-    >>拾取地上的 |cRXP_LOOT_古代小雕像|r
+    >>拾取地上的 |cRXP_LOOT_古代雕像|r
     .complete 1007,1
 step
     #xprate <1.59
@@ -10898,7 +10898,7 @@ step
 step
     #xprate >1.49
     .goto Darkshore,44.44,84.69
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 995,1 --Help Volcor escape the cave (1)
     .isOnQuest 995
 step
@@ -11189,7 +11189,7 @@ step
 #xprate <1.5
     #label volcorEnd
     .goto Darkshore,44.44,84.69
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 995,1
     .isOnQuest 995
 step -- adjusted to heading there straight from southern most beached sea creature

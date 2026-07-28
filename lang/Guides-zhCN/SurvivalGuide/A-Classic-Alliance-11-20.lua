@@ -43,7 +43,7 @@ step
     #label SalmaS
     .goto Westfall,56.40,30.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔玛·萨丁|r 对话
-    .turnin 36 >>交任务《 前往熔光镇》 杂味炖肉
+    .turnin 36 >>交任务 杂味炖肉
     .target 萨尔玛·萨丁
     .accept 38 >>接受任务 杂味炖肉
     .accept 22 >>接受任务 猪肝馅饼
@@ -243,7 +243,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔玛·萨丁|r 对话
 	.target 萨尔玛·萨丁
     .goto Westfall,56.40,30.50
-    .turnin 38 >>交任务《 前往熔光镇》 杂味炖肉
+    .turnin 38 >>交任务 杂味炖肉
     .turnin 22 >>交任务 猪肝馅饼
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格里安·斯托曼|r 对话
@@ -414,7 +414,7 @@ step << !NightElf
     .goto Wetlands,7.95,56.38
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_德温·晨光|r 对话
     .vendor >>|cRXP_BUY_尽可能多地购买|r |T134831:0|t[治疗药水] |cRXP_BUY_（如果有售）|r
-    >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_德温·晨光|r 没有库存，请跳过此步骤|r
+    >>|cRXP_WARN_这是限量供应物品，如果 |cRXP_FRIENDLY_德温·晨光|r 没有库存，请跳过此步骤|r
     .target 德温·晨光
 step << !NightElf
     #completewith next
@@ -427,7 +427,7 @@ step << !NightElf
 step << NightElf !Druid
     .goto Westfall,56.556,52.643
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索尔|r 对话
-    .fp Westfall >>解锁西部荒野飞行路线
+    .fp Westfall >>开启西部荒野的飞行路径
     .fly Stormwind >>飞往暴风城
     .target 索尔
 step << Druid
@@ -1109,7 +1109,7 @@ step << !NightElf Hunter/!NightElf Warrior
     .train 227 >>学习法杖
     .target 伊琳尼雅·月火
 step << !NightElf !Mage !Paladin !Warlock
-    .goto Darnassus,30.7,41.3,15 >>使用紫色传送门返回鲁瑟兰村
+    .goto Darnassus,30.7,41.3,15 >>通过紫色传送门返回鲁瑟兰村
     .zoneskip Darkshore
     .zoneskip Teldrassil
 step << !NightElf !Mage !Paladin !Warlock
@@ -1625,7 +1625,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t上楼与 |cRXP_FRIENDLY_玛斯雷·驭熊者|r 对话
     .turnin 6125 >>交任务 解毒之术
 step << Druid
-    .goto Darnassus,30.7,41.3 >>使用紫色传送门返回鲁瑟兰村
+    .goto Darnassus,30.7,41.3 >>通过紫色传送门返回鲁瑟兰村
     .zoneskip Darkshore
     .zoneskip Teldrassil
 step << Druid
@@ -1958,7 +1958,7 @@ step
 step
 .group
     .goto Darkshore,44.44,84.69
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 995,1
     .isQuestTurnedIn 986
 step
@@ -2121,7 +2121,7 @@ step
 .dungeon WC
     #completewith TravelRatchet
     .goto Ashenvale,20.31,42.33,0
-    .zone The Barrens >>在寻找哀嚎洞穴队伍的同时，刷|cRXP_ENEMY_咸水嘴鱼人|r。它们的位置已标记在你的地图上
+    .zone The Barrens >>在寻找哀嚎洞穴 队伍的同时，刷 |cRXP_ENEMY_咸水嘴鱼人|r。它们的位置已标记在你的地图上
 	.mob 盐沫战士
 	.mob 盐沫泥浆鱼人
 	.mob 盐沫智者

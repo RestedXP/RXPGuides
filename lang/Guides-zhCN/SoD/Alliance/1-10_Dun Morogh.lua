@@ -384,7 +384,7 @@ step << Rogue
     .turnin 3109 >>交任务 密文符文 << Dwarf
     .turnin 3113 >>交任务 密文备忘录 << Gnome
     .accept 77658 >>接受任务 三度失窃 << Dwarf
-    .turn in 77658 >>in 77658 >> 交任务三度失窃 << Dwarf
+    .turn in 77658 >>in 77658 >> 交任务 三度失窃 << Dwarf
     .accept 77659 >>接受任务 三度失窃 << Gnome
     .turnin 77659 >>交任务 三度失窃 << Gnome
     .train 1784 >>学习 |T132320:0|t[潜行]
