@@ -820,10 +820,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
 
             this.guideSelectBackground:SetColorTexture(unpack(
                                                            theme.version == 1 and theme.backgroundColors.common or
-                                                               theme.backgroundColors.inactivePartyTab))
-
-            this.guideSelectDivider:SetShown(theme.version ~= 1)
-            this.guideSelectDivider:SetColorTexture(unpack(theme.borderColors.inactivePartyTab))
+                                                               theme.borderColors.common))
+            this.guideSelectArrow:SetVertexColor(unpack(theme.borderColors.commonEdge))
 
             this.closebutton:SetShown(theme.version ~= 1)
             this.classIcon:SetTexture(addon.GetV1Texture(addon.player.class))
@@ -943,25 +941,19 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         guideSelectBackground:SetPoint("TOPLEFT", 1, -1)
         guideSelectBackground:SetPoint("BOTTOMRIGHT", -1, 1)
         guideSelectBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
-                                                         theme.backgroundColors.inactivePartyTab))
-
-        local guideSelectDivider = guideSelectButton:CreateTexture(nil, "BORDER")
-        guideSelectDivider:SetPoint("TOPLEFT", 1, -1)
-        guideSelectDivider:SetPoint("BOTTOMLEFT", 1, 1)
-        guideSelectDivider:SetWidth(1)
-        guideSelectDivider:SetShown(theme.version ~= 1)
-        guideSelectDivider:SetColorTexture(unpack(theme.borderColors.inactivePartyTab))
+                                                         theme.borderColors.common))
 
         local guideSelectHighlight = guideSelectButton:CreateTexture(nil, "HIGHLIGHT")
-        guideSelectHighlight:SetAllPoints()
+        guideSelectHighlight:SetAllPoints(guideSelectBackground)
         guideSelectHighlight:SetColorTexture(1, 1, 1, 0.12)
 
         local guideSelectArrow = guideSelectButton:CreateTexture(nil, "OVERLAY")
-        guideSelectArrow:SetPoint("CENTER", 1, 0)
-        guideSelectArrow:SetSize(16, 16)
+        guideSelectArrow:SetPoint("CENTER")
+        guideSelectArrow:SetSize(12, 12)
         guideSelectArrow:SetTexture("Interface\\ChatFrame\\ChatFrameExpandArrow")
+        guideSelectArrow:SetBlendMode("ADD")
         guideSelectArrow:SetDesaturated(true)
-        guideSelectArrow:SetVertexColor(1, 1, 1)
+        guideSelectArrow:SetVertexColor(unpack(theme.borderColors.commonEdge))
         guideSelectButton:SetScript("OnClick", function() addon.v2:ShowGuideSelectionMenu() end)
 
         local title = guideNameFrame:CreateFontString(nil, "OVERLAY")
@@ -1039,7 +1031,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             guideNameFrame = guideNameFrame,
             guideSelectButton = guideSelectButton,
             guideSelectBackground = guideSelectBackground,
-            guideSelectDivider = guideSelectDivider,
+            guideSelectArrow = guideSelectArrow,
             sizer = sizer,
             splashBranding = splashBranding,
             guideSteps = guideSteps,
