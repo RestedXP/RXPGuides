@@ -1195,7 +1195,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
     ScrollFrame Container
     Plain container that scrolls its content and doesn't grow in height.
     -------------------------------------------------------------------------------]]
-    local Type, Version = "RXPV2ScrollFrame", 16
+    local Type, Version = "RXPV2ScrollFrame", 18
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     --[[-----------------------------------------------------------------------------
@@ -1432,8 +1432,8 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
                                       "RXPV2ScrollBarTemplate")
 
         local buttonHeight = scrollbar.ScrollUpButton:GetHeight()
-        scrollbar:SetPoint("TOPLEFT", scrollframe, "TOPRIGHT", 2, -buttonHeight)
-        scrollbar:SetPoint("BOTTOMLEFT", scrollframe, "BOTTOMRIGHT", 2, buttonHeight)
+        scrollbar:SetPoint("TOPLEFT", scrollframe, "TOPRIGHT", 2, -buttonHeight - 1)
+        scrollbar:SetPoint("BOTTOMLEFT", scrollframe, "BOTTOMRIGHT", 2, buttonHeight + 1)
         scrollbar:SetMinMaxValues(0, 1000)
         scrollbar:SetValueStep(1)
         scrollbar:SetValue(0)
