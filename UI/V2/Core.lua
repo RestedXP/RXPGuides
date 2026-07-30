@@ -2065,7 +2065,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 end
 
 function addon.ui.v2:RegisterRXPV2ActiveStepItem()
-    local Type, Version = "RXPV2ActiveStepItem", 6
+    local Type, Version = "RXPV2ActiveStepItem", 7
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     local transparent = {0, 0, 0, 0}
@@ -2149,7 +2149,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             height = height + rowHeight
         end
 
-        this:SetHeight(height + 12 + 6 + 8)
+        this:SetHeight(height + 32)
         this.rxpElementsDirty = nil
         this.rxpLayoutWidth = width
     end
@@ -2506,7 +2506,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         ["LayoutFinished"] = function(this, width, height)
             if this.noAutoHeight then return end
 
-            this:SetHeight((height or 0) + 12 + 6 + 8)
+            this:SetHeight((height or 0) + 32)
         end,
 
         ["OnWidthSet"] = function(this, width)
@@ -2522,7 +2522,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
         ["OnHeightSet"] = function(this, height)
             local content = this.content
-            local contentheight = height - 12 - 6 - 8
+            local contentheight = height - 32
 
             if contentheight < 0 then contentheight = 0 end
 
@@ -2570,7 +2570,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
         local card = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         card:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
-        card:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, 8)
+        card:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, 14)
         addon.ui.v2:ApplyFrameBackdrop(card, theme.edge, theme.backgroundColors.common, theme.borderColors.commonEdge)
         addon.ui.v2:AddFrameShadow(card)
 
@@ -2613,7 +2613,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 end
 
 function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
-    local Type, Version = "RXPV2ActivePartyStepItem", 4
+    local Type, Version = "RXPV2ActivePartyStepItem", 5
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     --[[-----------------------------------------------------------------------------
@@ -2646,7 +2646,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
         ["LayoutFinished"] = function(this, width, height)
             if this.noAutoHeight then return end
 
-            this:SetHeight((height or 0) + 10 + 5 + 8)
+            this:SetHeight((height or 0) + 29)
         end,
 
         ["OnWidthSet"] = function(this, width)
@@ -2661,7 +2661,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
 
         ["OnHeightSet"] = function(this, height)
             local content = this.content
-            local contentheight = height - 10 - 5 - 8
+            local contentheight = height - 29
 
             if contentheight < 0 then contentheight = 0 end
 
@@ -2694,7 +2694,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepItem()
 
         local card = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         card:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
-        card:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, 8)
+        card:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, 14)
 
         addon.ui.v2:ApplyFrameBackdrop(card, theme.edge, theme.backgroundColors.common, theme.borderColors.commonEdge)
         addon.ui.v2:AddFrameShadow(card)
