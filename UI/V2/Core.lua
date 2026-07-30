@@ -579,7 +579,7 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
                     item.frame:ClearAllPoints()
 
                     if previous then
-                        item.frame:SetPoint("TOPLEFT", previous.frame, "BOTTOMLEFT", 0, -5)
+                        item.frame:SetPoint("TOPLEFT", previous.frame, "BOTTOMLEFT", 0, -8)
                     else
                         item.frame:SetPoint("TOPLEFT", this.content, "TOPLEFT", 0, 0)
                     end
@@ -598,7 +598,7 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
                     end
 
                     previous = item
-                    height = height + itemHeight + 5
+                    height = height + itemHeight + 8
                 end
             end
 
