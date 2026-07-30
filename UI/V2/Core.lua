@@ -674,7 +674,7 @@ end
 local guideWindowDefaultWidth, guideWindowDefaultHeight = 235, 270
 
 function addon.ui.v2:RegisterRXPV2GuideWindow()
-    local Type, Version = "RXPV2GuideWindow", 1
+    local Type, Version = "RXPV2GuideWindow", 4
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     local function SaveStatus(this, saveHeight)
@@ -983,8 +983,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
 
         local closebutton = CreateFrame("Button", nil, frame)
         closebutton:SetFrameLevel(frame:GetFrameLevel() + 3)
-        closebutton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 4, 8)
-        closebutton:SetSize(20, 20)
+        closebutton:SetPoint("TOPRIGHT", frame.rxpShadow, "TOPRIGHT", 8, 4)
+        closebutton:SetSize(24, 24)
         closebutton:SetNormalTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close")
         closebutton:SetPushedTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close")
         closebutton:SetHighlightTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close", "ADD")
