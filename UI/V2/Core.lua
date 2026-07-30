@@ -840,7 +840,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
                                                         "ADD")
             end
 
-            this.banner:SetTexture(theme.headerTexture)
+            this.banner:SetTexture(theme.headerTexture.path)
+            this.banner:SetTexCoord(unpack(theme.headerTexture.texCoords))
 
             if theme.splash then
                 this.splashBranding:SetTexture(theme.splash.path)
@@ -883,7 +884,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         banner:SetPoint("TOPLEFT")
         banner:SetPoint("TOPRIGHT")
         banner:SetHeight(38)
-        banner:SetTexture(theme.headerTexture)
+        banner:SetTexture(theme.headerTexture.path)
+        banner:SetTexCoord(unpack(theme.headerTexture.texCoords))
 
         local guideNameFrame = CreateFrame("Frame", nil, header)
         guideNameFrame:SetPoint("TOPLEFT", header, "TOPLEFT", 0, -38)
