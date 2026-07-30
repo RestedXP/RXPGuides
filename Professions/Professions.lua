@@ -132,9 +132,9 @@ end
 
 --Formats money to xg ys zc
 local function formatMoney(money)
-    if money > 10000 then
+    if money >= 10000 then
         return fmt("%dg %ds %dc", money / 10000, (money % 10000) / 100, money % 100)
-    elseif money > 100 then
+    elseif money >= 100 then
         return fmt("%ds %dc", money / 100, money % 100)
     end
     return fmt("%dc", money)
@@ -480,7 +480,7 @@ local function removeNonTrainable(professionName)
 end
 
 --Remove non-faction recipes
-local function removeNonFactionProfessions(professionName)
+local function removeNonFactionRecipes(professionName)
     validatePlayerFaction(2)
 
     local playerFaction = lower(RXPCData.professions.faction)
@@ -587,7 +587,7 @@ local function calculateRecipeMinimumPrice(professionName)
                         elseif profSession.recipesToConsider[materialName]["recipeMinimumPrice"] == huge then
                             totalPrice = huge
                         else
-                            totalPrice = totalPrice + profSession.recipesToConsider[materialName]["recipeMinimumPrice"]
+                            totalPrice = totalPrice + profSession.recipesToConsider[materialName]["recipeMinimumPrice"] * materialTable.count
                         end
                     --If its from a vendor
                     elseif materialTable.fromVendor then
@@ -793,15 +793,12 @@ end
 
 --Checks if a given material(or reipce) is a part of the given recipe
 local function isPartOfTheRecipe(professionName, targetMaterialName, targetRecipe)
-    local isPart = false
     for materialName, _ in pairs(PROFESSIONS[professionName].RECIPES[targetRecipe].materials) do
-        if not isPart then
-            if materialName == targetMaterialName then
-                isPart = true
-            end
+        if materialName == targetMaterialName then
+            return true
         end
     end
-    return isPart
+    return false
 end
 
 --Checks if the given material(or recipe) name is a part of a different recipe.
@@ -836,12 +833,7 @@ end
 
 --Applies a 'bonus' for the percentage
 local function applyPercentageBonus(percentage, bonus)
-    if percentage + bonus > 1.0 then
-        return 1.0
-    elseif percentage + bonus < 0.0 then
-        return 0.0
-    end
-    return percentage + bonus
+    return (percentage + bonus > 1.0 and 1.0 or max(percentage + bonus, 0.0))
 end
 
 
@@ -946,8 +938,7 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
         if money >= recipeMinimumPrice and canCreateIthRecipe then
             --We have money
             local percent = calculatePercent(professionName, recipeName, skillLevel + skillLevelsGained)
-            howManyToMake = calculateAttemptCount(percent, RXPCData.professions.percentageTreshold)
-            howManyLeftToMake = howManyToMake
+            howManyToMake = calculateAttemptCount(percent, RXPCData.professions.percentageThreshold)
             if howManyToMake == 0 or howManyToMake == huge then
                 canCreateIthRecipe = false
             elseif howManyToMake > 1 then
@@ -960,19 +951,20 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
                         local nextRecipeName = sortedRecipeKeysMinimum[nextRecipeKeyIndex]
                         local nextRecipeMinimumPrice, nextRecipeAveragePrice, nextRecipeTable = getRecipeInfo(professionName, nextRecipeName)
                         local nextPrecent = calculatePercent(professionName, nextRecipeName, skillLevel + skillLevelsGained)
-                        local nextHowManyToMake = calculateAttemptCount(nextPrecent, RXPCData.professions.percentageTreshold)
+                        local nextHowManyToMake = calculateAttemptCount(nextPrecent, RXPCData.professions.percentageThreshold)
                         --TODO: Very rough estimate, make better:
                         if nextRecipeMinimumPrice * nextHowManyToMake < recipeMinimumPrice * howManyToMake then
                             --We found more profitable one, save its values
                             recipeName, recipeMinimumPrice, recipeAveragePrice, recipeTable, percent, howManyToMake = nextRecipeName, nextRecipeMinimumPrice, nextRecipeAveragePrice, nextRecipeTable, nextPrecent, nextHowManyToMake
                             recipeKeyIndex = nextRecipeKeyIndex
-                            print("new target: ", recipeName, " ", percent, "% ", nextHowManyToMake)
+                            print("new target: ", recipeName, " ", percent, "% ", howManyToMake)
                             --Continue on, since then next one might be even more profitable
                         end
                         nextRecipeKeyIndex = nextRecipeKeyIndex + 1
                     end
                 end
             end
+            howManyLeftToMake = howManyToMake
             while howManyLeftToMake > 0 and canCreateIthRecipe do --Add greedily
                 local saveMoneyBeforeRecipe = money
                 local moneyPerItem = 0 --calculates the worth of recipe per one craft rather then the money needed to buy everything (this is for the cases when the stack is n but we only need 1..n-1 items of it)
@@ -1017,6 +1009,7 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
                             if money < 0 then
                                 canCreateRecipe = false
                                 canCreateIthRecipe = false --We dont need this here logically, but for safety reasons
+                                haveMoney = false
                             end
                         else --It's not another recipe/vendor item
                             local addedMaterials = 0
@@ -1029,7 +1022,7 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
                             while addedMaterials < materialTable.count and foundItems and #foundItems[materialName] > 0 and haveMoney do
                                 local foundItemDetails = foundItems[materialName][1]
                                 money = money - foundItemDetails.price
-                                moneyPerItem = moneyPerItem + (foundItemDetails.price * min(foundItemDetails.count, materialTable.count) / foundItemDetails.count) --min, because we want to check if we need more then the current stack has to offer
+                                moneyPerItem = moneyPerItem + (foundItemDetails.price * 1.0 * min(foundItemDetails.count, materialTable.count) / foundItemDetails.count) --min, because we want to check if we need more then the current stack has to offer
                                 tempMaterialsToBuy[materialName] = (tempMaterialsToBuy[materialName] or 0) + foundItemDetails.count
                                 newBackpackKnapsack[materialName] = (newBackpackKnapsack[materialName] or 0) + foundItemDetails.count - materialTable.count
                                 addedMaterials = addedMaterials + foundItemDetails.count
@@ -1063,7 +1056,7 @@ function addon.professions.gatherRecipesToBuyGreedy(professionName, skillLevel, 
                     local nextRecipeName = sortedRecipeKeysMinimum[nextRecipeKeyIndex]
                     local nextRecipeMinimumPrice, _, _ = getRecipeInfo(professionName, nextRecipeName)
                     local nextPrecent = calculatePercent(professionName, nextRecipeName, skillLevel + skillLevelsGained)
-                    local nextHowManyToMake = calculateAttemptCount(nextPrecent, RXPCData.professions.percentageTreshold)
+                    local nextHowManyToMake = calculateAttemptCount(nextPrecent, RXPCData.professions.percentageThreshold)
                     --TODO: Very rough estimate:
                     --if nextHowManyToMake * nextRecipeMinimumPrice < saveMoneyBeforeRecipe - money then
                     if nextHowManyToMake * nextRecipeMinimumPrice < moneyPerItem then
@@ -1344,7 +1337,7 @@ function addon.professions:fullScan()
     gatherRecipesBySegment(RXPCData.professions.profession1.name, minSegment, maxSegment)
     removeGreyRecipes(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
     removeNonTrainable(RXPCData.professions.profession1.name)
-    removeNonFactionProfessions(RXPCData.professions.profession1.name)
+    removeNonFactionRecipes(RXPCData.professions.profession1.name)
     gatherMaterialsToScan(RXPCData.professions.profession1.name)
     profSession.materialIndex = 1
     addon.professions.AH:Scan(profSession.materialsToScan[profSession.materialIndex])
@@ -1356,6 +1349,8 @@ function addon.professions:testScan()
     local minSegment, maxSegment = self.calculateSegmentRange(RXPCData.professions.profession1.skillLevel, RXPCData.professions.segmentRange)
     gatherRecipesBySegment(RXPCData.professions.profession1.name, minSegment, maxSegment)
     removeGreyRecipes(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel)
+    removeNonTrainable(RXPCData.professions.profession1.name)
+    removeNonFactionRecipes(RXPCData.professions.profession1.name);
     gatherMaterialsToScan(RXPCData.professions.profession1.name)
     profSession.materialIndex = 1
     --Simulate scanning
@@ -1415,7 +1410,7 @@ function addon.professions:Setup()
         self:RegisterEvent(event)
     end
     RXPCData.professions.segmentRange = RXPCData.professions.segmentRange or 75
-    RXPCData.professions.percentageTreshold = RXPCData.professions.percentageTreshold or 0.8
+    RXPCData.professions.percentageThreshold = RXPCData.professions.percentageThreshold or 0.8
     RXPCData.professions.isInitialScanned = RXPCData.professions.isInitialScanned or false
 
     self.AH:Setup()
