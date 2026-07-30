@@ -708,7 +708,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             this.guideNameFrame:SetPoint("BOTTOMRIGHT", this.header, "BOTTOMRIGHT")
 
             this.title:ClearAllPoints()
-            this.title:SetPoint("TOPLEFT", this.guideNameFrame, "TOPLEFT", enabled and 36 or 48, guideNameTitleTop)
+            this.title:SetPoint("TOPLEFT", this.guideNameFrame, "TOPLEFT", 40, guideNameTitleTop)
             this.title:SetPoint("TOPRIGHT", this.guideSelectButton, "TOPLEFT", -4, guideNameTitleTop)
 
             this.guideStepsBackground:ClearAllPoints()
@@ -963,7 +963,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         guideSelectButton:SetScript("OnClick", function() addon.v2:ShowGuideSelectionMenu() end)
 
         local title = guideNameFrame:CreateFontString(nil, "OVERLAY")
-        title:SetPoint("TOPLEFT", guideNameFrame, "TOPLEFT", 48, -11)
+        title:SetPoint("TOPLEFT", guideNameFrame, "TOPLEFT", 40, -11)
         title:SetPoint("TOPRIGHT", guideSelectButton, "TOPLEFT", -4, -11)
         title:SetJustifyH("LEFT")
         title:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
