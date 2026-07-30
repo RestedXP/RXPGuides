@@ -870,6 +870,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         local theme = addon.v2:GetTheme()
         addon.ui.v2:ApplyFrameBackdrop(frame, theme.edge, theme.version == 1 and theme.backgroundColors.common or
                                            theme.backgroundColors.guideWindow, theme.borderColors.commonEdge)
+        addon.ui.v2:AddFrameShadow(frame, 0, 0, 0.5, 4)
 
         frame:SetToplevel(true)
 
