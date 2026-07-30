@@ -810,7 +810,9 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             this.subtitle:SetFont(theme.font, addon.settings.profile.guideFontSize + 1, "")
             this.subtitle:SetTextColor(unpack(theme.textColor.common))
             this.footerText:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
-            this.footerBackground:SetColorTexture(unpack(theme.backgroundColors.common))
+            this.footerBackground:SetColorTexture(unpack(
+                                                     theme.version == 1 and theme.backgroundColors.common or
+                                                         theme.backgroundColors.scrollbar))
 
             this.guideStepsBackground:SetColorTexture(unpack(
                                                           theme.version == 1 and theme.backgroundColors.common or
@@ -997,7 +999,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
 
         local footerBackground = footer:CreateTexture(nil, "BACKGROUND")
         footerBackground:SetAllPoints()
-        footerBackground:SetColorTexture(unpack(theme.backgroundColors.common))
+        footerBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
+                                                   theme.backgroundColors.scrollbar))
 
         local footerText = footer:CreateFontString(nil, "OVERLAY")
         footerText:SetPoint("CENTER")
@@ -1373,7 +1376,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
                     button.Normal:SetVertexColor(unpack(theme.backgroundColors.common))
                 end
             else
-                this.scrollbg:SetColorTexture(0, 0, 0, 0.4)
+                this.scrollbg:SetColorTexture(unpack(theme.backgroundColors.scrollbar))
                 this.scrollbar.ThumbTexture:SetDesaturated(false)
                 this.scrollbar.ThumbTexture:SetVertexColor(1, 1, 1, 1)
 
