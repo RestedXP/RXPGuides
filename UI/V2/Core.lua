@@ -699,16 +699,17 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         end,
 
         ["SetMinimalistic"] = function(this, enabled)
-            local guideStepsTop = enabled and -40 or -84
+            local guideStepsTop = enabled and -40 or -82
+            local guideNameTitleTop = enabled and -8 or -11
 
-            this.header:SetHeight(enabled and 34 or 78)
+            this.header:SetHeight(enabled and 34 or 76)
             this.guideNameFrame:ClearAllPoints()
-            this.guideNameFrame:SetPoint("TOPLEFT", this.header, "TOPLEFT", 0, enabled and 0 or -44)
+            this.guideNameFrame:SetPoint("TOPLEFT", this.header, "TOPLEFT", 0, enabled and 0 or -38)
             this.guideNameFrame:SetPoint("BOTTOMRIGHT", this.header, "BOTTOMRIGHT")
 
             this.title:ClearAllPoints()
-            this.title:SetPoint("TOPLEFT", this.guideNameFrame, "TOPLEFT", enabled and 36 or 48, -8)
-            this.title:SetPoint("TOPRIGHT", this.guideSelectButton, "TOPLEFT", -4, -8)
+            this.title:SetPoint("TOPLEFT", this.guideNameFrame, "TOPLEFT", enabled and 36 or 48, guideNameTitleTop)
+            this.title:SetPoint("TOPRIGHT", this.guideSelectButton, "TOPLEFT", -4, guideNameTitleTop)
 
             this.guideStepsBackground:ClearAllPoints()
             this.guideStepsBackground:SetPoint("TOPLEFT", this.frame, "TOPLEFT", 5, guideStepsTop + 1)
@@ -876,16 +877,16 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         header:EnableMouse(true)
         header:SetPoint("TOPLEFT", 2, -2)
         header:SetPoint("TOPRIGHT", -2, -2)
-        header:SetHeight(78)
+        header:SetHeight(76)
 
         local banner = header:CreateTexture(nil, "BACKGROUND")
         banner:SetPoint("TOPLEFT")
         banner:SetPoint("TOPRIGHT")
-        banner:SetHeight(44)
+        banner:SetHeight(38)
         banner:SetTexture(theme.headerTexture)
 
         local guideNameFrame = CreateFrame("Frame", nil, header)
-        guideNameFrame:SetPoint("TOPLEFT", header, "TOPLEFT", 0, -44)
+        guideNameFrame:SetPoint("TOPLEFT", header, "TOPLEFT", 0, -38)
         guideNameFrame:SetPoint("BOTTOMRIGHT")
         guideNameFrame:SetFrameLevel(header:GetFrameLevel() + 1)
         guideNameFrame:EnableMouse(true)
@@ -905,12 +906,16 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             splashBranding:Hide()
         end
 
-        local iconLogo = header:CreateTexture(nil, "ARTWORK")
-        iconLogo:SetPoint("LEFT", -12, 27)
+        local logoFrame = CreateFrame("Frame", nil, header)
+        logoFrame:SetAllPoints(header)
+        logoFrame:SetFrameLevel(guideNameFrame:GetFrameLevel() + 2)
+
+        local iconLogo = logoFrame:CreateTexture(nil, "ARTWORK")
+        iconLogo:SetPoint("LEFT", header, "LEFT", -12, 23)
         iconLogo:SetSize(64, 64)
 
-        local classIcon = guideNameFrame:CreateTexture(nil, "OVERLAY")
-        classIcon:SetPoint("BOTTOMRIGHT", iconLogo, "BOTTOMRIGHT", 14, 2)
+        local classIcon = logoFrame:CreateTexture(nil, "OVERLAY")
+        classIcon:SetPoint("BOTTOMRIGHT", iconLogo, "BOTTOMRIGHT", 3, 2)
         classIcon:SetSize(28, 28)
         classIcon:SetTexture(addon.GetV1Texture(addon.player.class))
 
@@ -934,7 +939,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
 
         local guideSelectButton = CreateFrame("Button", nil, guideNameFrame)
         guideSelectButton:SetPoint("TOPRIGHT")
-        guideSelectButton:SetSize(20, 34)
+        guideSelectButton:SetPoint("BOTTOMRIGHT")
+        guideSelectButton:SetWidth(20)
         guideSelectButton:SetFrameLevel(guideNameFrame:GetFrameLevel() + 2)
 
         local guideSelectBackground = guideSelectButton:CreateTexture(nil, "BACKGROUND")
@@ -957,8 +963,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         guideSelectButton:SetScript("OnClick", function() addon.v2:ShowGuideSelectionMenu() end)
 
         local title = guideNameFrame:CreateFontString(nil, "OVERLAY")
-        title:SetPoint("TOPLEFT", guideNameFrame, "TOPLEFT", 48, -8)
-        title:SetPoint("TOPRIGHT", guideSelectButton, "TOPLEFT", -4, -8)
+        title:SetPoint("TOPLEFT", guideNameFrame, "TOPLEFT", 48, -11)
+        title:SetPoint("TOPRIGHT", guideSelectButton, "TOPLEFT", -4, -11)
         title:SetJustifyH("LEFT")
         title:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
         title:SetTextColor(1, 0.82, 0)
