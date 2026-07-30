@@ -821,7 +821,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
 
             this.guideSelectBackground:SetColorTexture(unpack(
                                                            theme.version == 1 and theme.backgroundColors.common or
-                                                               theme.borderColors.common))
+                                                               theme.backgroundColors.guideSelector))
             this.guideSelectArrow:SetVertexColor(unpack(theme.borderColors.commonEdge))
 
             this.closebutton:SetShown(theme.version ~= 1)
@@ -947,10 +947,10 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         guideSelectButton:SetFrameLevel(guideNameFrame:GetFrameLevel() + 2)
 
         local guideSelectBackground = guideSelectButton:CreateTexture(nil, "BACKGROUND")
-        guideSelectBackground:SetPoint("TOPLEFT", 1, -1)
-        guideSelectBackground:SetPoint("BOTTOMRIGHT", -1, 1)
+        guideSelectBackground:SetPoint("TOPLEFT", 0, -2)
+        guideSelectBackground:SetPoint("BOTTOMRIGHT", -1, 0)
         guideSelectBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
-                                                         theme.borderColors.common))
+                                                         theme.backgroundColors.guideSelector))
 
         local guideSelectHighlight = guideSelectButton:CreateTexture(nil, "HIGHLIGHT")
         guideSelectHighlight:SetAllPoints(guideSelectBackground)
