@@ -349,7 +349,7 @@ addon.v2.themes['RXP Blue V2'] = {
 
     edge = {
         edgeFile = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-borders-v2",
-        edgeSize = 1,
+        edgeSize = 2,
         texCoords = {
             top = {0, 0.25, 0, 1},
             bottom = {0.25, 0.5, 0, 1},
