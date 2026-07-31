@@ -409,7 +409,7 @@ function addon.v2:BuildGuideStepsSnapshot()
 end
 
 function addon.ui.v2:RegisterRXPV2GuideStepsItem()
-    local Type, Version = "RXPV2GuideStepsItem", 1
+    local Type, Version = "RXPV2GuideStepsItem", 2
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     local function ShowMenu(this)
@@ -470,6 +470,7 @@ function addon.ui.v2:RegisterRXPV2GuideStepsItem()
                                             theme.backgroundColors.activeStepCheckbox
 
                 addon.ui.v2:ApplyFrameBackdrop(this.frame, theme.edge, background, border)
+                addon.ui.v2:AddFrameShadow(this.frame)
                 addon.ui.v2:ApplyFrameBackdrop(this.numberFrame, theme.edge, badgeBackground,
                                                theme.borderColors.commonEdge)
                 this.text:SetTextColor(unpack(theme.textColor.common))
@@ -1201,7 +1202,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
     ScrollFrame Container
     Plain container that scrolls its content and doesn't grow in height.
     -------------------------------------------------------------------------------]]
-    local Type, Version = "RXPV2ScrollFrame", 18
+    local Type, Version = "RXPV2ScrollFrame", 19
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     --[[-----------------------------------------------------------------------------
@@ -1357,7 +1358,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
         end,
 
         ["LayoutFinished"] = function(this, width, height)
-            this.content:SetHeight((height or 0) + 20 + this.contentTopPadding)
+            this.content:SetHeight((height or 0) + this.contentTopPadding)
 
             -- update the scrollframe
             this:FixScroll()
@@ -1572,8 +1573,10 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
     --[[-----------------------------------------------------------------------------
     Frame Container
     -------------------------------------------------------------------------------]]
-    local Type, Version = "RXPV2ActivePartyStepsFrame", 4
+    local Type, Version = "RXPV2ActivePartyStepsFrame", 11
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
+
+    local tabHeight, activeTabHeight = 22, 24
 
     --[[-----------------------------------------------------------------------------
     Scripts
@@ -1641,6 +1644,8 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
     end
 
     local function Tab_OnEnter(tab)
+        if tab.rxpHighlight then tab.rxpHighlight:Show() end
+
         if not (tab.rxpTruncated and tab.rxpFullName) then return end
 
         _G.GameTooltip:SetOwner(tab, "ANCHOR_TOP")
@@ -1648,7 +1653,10 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         _G.GameTooltip:Show()
     end
 
-    local function Tab_OnLeave(tab) if _G.GameTooltip:IsOwned(tab) then _G.GameTooltip:Hide() end end
+    local function Tab_OnLeave(tab)
+        if tab.rxpHighlight then tab.rxpHighlight:Hide() end
+        if _G.GameTooltip:IsOwned(tab) then _G.GameTooltip:Hide() end
+    end
 
     local function RemoveLastUTF8Codepoint(text)
         local index = #text
@@ -1735,6 +1743,8 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                 tab.rxpFullName = nil
                 tab.rxpTruncated = nil
 
+                if tab.rxpHighlight then tab.rxpHighlight:Hide() end
+
                 this.tabButtons[player] = nil
                 this.unusedTabButtons[#this.unusedTabButtons + 1] = tab
             end
@@ -1781,7 +1791,8 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             childContainer.frame:ClearAllPoints()
             childContainer.frame:SetPoint("TOPLEFT", this.content, "TOPLEFT", 0, 0)
             childContainer.frame:SetPoint("BOTTOMRIGHT", this.content, "BOTTOMRIGHT", 0, 0)
-            childContainer:SetContentTopPadding(12)
+            -- Keep the protruding 9px Step badge inside the scroll frame's clip region.
+            childContainer:SetContentTopPadding(10)
             childContainer:SetWidth(this.content.width or this.content:GetWidth())
             childContainer:SetHeight(this.content.height or this.content:GetHeight())
             childContainer.frame:SetShown(this.activeTab == player)
@@ -1794,11 +1805,20 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             local backgroundColors = theme.backgroundColors
             local borderColors = theme.borderColors
             local textColor = theme.textColor
-            local background = active and backgroundColors.common or backgroundColors.inactivePartyTab
-            local border = active and borderColors.common or borderColors.inactivePartyTab
+            local background = backgroundColors.common
+            local border = borderColors.commonEdge
             local labelColor = active and textColor.title or textColor.inactivePartyTab
 
             addon.ui.v2:ApplyFrameBackdrop(tab, theme.edge, background, border)
+            tab.rxpBorder.textures[1]:Show()
+            tab.rxpBorder.textures[2]:Hide()
+
+            if not tab.rxpHighlight then
+                tab.rxpHighlight = tab.rxpBackground:CreateTexture(nil, "OVERLAY")
+                tab.rxpHighlight:SetAllPoints()
+                tab.rxpHighlight:SetColorTexture(1, 1, 1, 0.12)
+                tab.rxpHighlight:Hide()
+            end
 
             tab.text:SetTextColor(unpack(labelColor))
         end,
@@ -1807,6 +1827,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             this.activeTab = player
 
             for tabPlayer, tab in pairs(this.tabButtons or {}) do
+                tab:SetHeight(tabPlayer == player and activeTabHeight or tabHeight)
                 this:RefreshTabTheme(tab, tabPlayer == player)
             end
 
@@ -1832,7 +1853,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             if not activeContainer or not activeContainer.content then return end
 
             local contentHeight = activeContainer.content:GetHeight() or 0
-            local targetHeight = contentHeight + 5 + 14 + 12
+            local targetHeight = contentHeight + 5 + 14
 
             this:SetHeight(max(targetHeight, 105))
         end,
@@ -1845,12 +1866,12 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
             local frameWidth = this.frame:GetWidth() or 0
             local minWidth = tabCount > 4 and 24 or 58
 
-            local availableWidth = frameWidth - 10 - 42 - (2 * max(tabCount - 1, 0))
+            local availableWidth = frameWidth - 18 - 42 - (3 * max(tabCount - 1, 0))
             local tabWidth = 92
             local labelWidth
             local theme = addon.v2:GetTheme()
             local tabFont = theme.font
-            local tabFontSize = addon.settings.profile.guideFontSize + 2
+            local tabFontSize = 12
 
             if tabCount > 0 and availableWidth > 0 then
                 tabWidth = min(92, floor(availableWidth / tabCount))
@@ -1876,7 +1897,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                     tab:SetScript("OnLeave", Tab_OnLeave)
 
                     tab.text = tab:CreateFontString(nil, "OVERLAY")
-                    tab.text:SetPoint("CENTER", tab, 0, 1)
+                    tab.text:SetPoint("CENTER", tab, 0, -1)
                     tab.text:SetJustifyH("CENTER")
                     tab.text:SetJustifyV("MIDDLE")
 
@@ -1905,13 +1926,13 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                     tab.rxpTabFontSize = tabFontSize
                 end
 
-                tab:SetSize(tabWidth, 20)
+                tab:SetSize(tabWidth, player == activePlayer and activeTabHeight or tabHeight)
                 tab:ClearAllPoints()
 
                 if previousTab then
-                    tab:SetPoint("TOPLEFT", previousTab, "TOPRIGHT", 2, 0)
+                    tab:SetPoint("TOPLEFT", previousTab, "TOPRIGHT", 3, 0)
                 else
-                    tab:SetPoint("TOPLEFT", this.frame, "TOPLEFT", 10, 18)
+                    tab:SetPoint("TOPLEFT", this.frame, "TOPLEFT", 18, tabHeight)
                 end
 
                 this:RefreshTabTheme(tab, player == activePlayer)
@@ -1929,6 +1950,9 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
                     tab.rxpFullName = nil
                     tab.rxpTruncated = nil
                     tab.rxpLabel = nil
+
+                    if tab.rxpHighlight then tab.rxpHighlight:Hide() end
+
                     this.tabButtons[tabPlayer] = nil
                     this.unusedTabButtons[#this.unusedTabButtons + 1] = tab
                 end
@@ -1994,7 +2018,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         local theme = addon.v2:GetTheme()
 
         self:ApplyFrameBackdrop(frame, theme.edge, theme.backgroundColors.common, theme.borderColors.commonEdge)
-        self:AddFrameShadow(frame)
+        self:AddFrameShadow(frame, 0, 0, 0.5, 4)
 
         if frame.SetResizeBounds then -- WoW 10.0
             frame:SetResizeBounds(265, 105)
@@ -2009,9 +2033,9 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         frame:SetScript("OnMouseUp", Frame_OnMouseUp)
 
         local closebutton = CreateFrame("Button", nil, frame)
-        closebutton:SetFrameLevel(frame:GetFrameLevel() + 3)
-        closebutton:SetSize(16, 16)
-        closebutton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 4, 8)
+        closebutton:SetFrameLevel(frame:GetFrameLevel() + 20)
+        closebutton:SetSize(24, 24)
+        closebutton:SetPoint("TOPRIGHT", frame.rxpShadow, "TOPRIGHT", 10, 10)
         closebutton:SetNormalTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close")
         closebutton:SetPushedTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close")
         closebutton:SetHighlightTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close", "ADD")
@@ -2026,7 +2050,8 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 
         local footerBackground = footer:CreateTexture(nil, "BACKGROUND")
         footerBackground:SetAllPoints()
-        footerBackground:SetColorTexture(unpack(theme.backgroundColors.common))
+        footerBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
+                                                   theme.backgroundColors.scrollbar))
 
         local footertext = footer:CreateFontString(nil, "OVERLAY")
         footertext:SetPoint("CENTER", footer, 0, 0)
