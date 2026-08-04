@@ -9,6 +9,7 @@ RXPGuides.RegisterGuide([[
 #displayname 1-6 Northshire
 #version 1
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #defaultfor Human
 #next 6-12 Elwynn Forest SoD
 #season 2
@@ -883,6 +884,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 6-12 Elwynn Forest SoD
 #displayname 6-12 Elwynn Forest
 #next 12-13 Dun Morogh SoD

@@ -9,6 +9,7 @@ RXPGuides.RegisterGuide([[
 #name 20-23 Stonetalon / The Barrens
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #next 23-27 Hillsbrad / Ashenvale
 #xprate <1.5
 
@@ -1672,6 +1673,7 @@ RXPGuides.RegisterGuide([[
 #name 22-25 Hillsbrad / South Barrens
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #next 25-26 Stonetalon; 26-30 Ashenvale / Thousand Needles
 #xprate <1.5
 
@@ -3000,6 +3002,7 @@ RXPGuides.RegisterGuide([[
 #next 26-30 Ashenvale / Thousand Needles
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #xprate <1.5
 
 step
@@ -3145,6 +3148,7 @@ RXPGuides.RegisterGuide([[
 #name 26-30 Ashenvale / Thousand Needles
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #next RestedXP Horde 30-45\30-33 Hillsbrad / Arathi / Shimmering Flats
 #xprate <1.5
 
@@ -4741,6 +4745,7 @@ RXPGuides.RegisterGuide([[
 #name 22-25 Hillsbrad Foothills JJ
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #next 25-27 Ashenvale JJ
 #xprate >1.4999
 
@@ -6564,6 +6569,7 @@ RXPGuides.RegisterGuide([[
 #name 25-27 Ashenvale JJ
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #next 27-28 Southern Barrens JJ
 #xprate >1.4999
 
@@ -8461,6 +8467,7 @@ RXPGuides.RegisterGuide([[
 #name 27-28 Southern Barrens JJ
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #next 28-30 Thousand Needles JJ
 #xprate >1.4999
 
@@ -9280,6 +9287,7 @@ RXPGuides.RegisterGuide([[
 #name 28-30 Thousand Needles JJ
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #next RestedXP Horde 30-45\30-32 Hillsbrad/Arathi JJ
 #xprate >1.4999
 

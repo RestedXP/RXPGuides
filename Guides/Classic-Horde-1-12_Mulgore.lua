@@ -12,6 +12,7 @@ RXPGuides.RegisterGuide([[
 #name 1-6 Mulgore
 #version 11
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #defaultfor Tauren
 #next 6-12 Mulgore;6-13 Mulgore
 
@@ -585,6 +586,7 @@ RXPGuides.RegisterGuide([[
 #name 6-12 Mulgore
 #version 11
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #defaultfor Tauren
 #next 12-17 The Barrens
 
@@ -2947,6 +2949,7 @@ RXPGuides.RegisterGuide([[
 #xprate >1.99
 #version 1
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #name 1-7 Mulgore
 #next 7-13 Mulgore
 #defaultfor Tauren
@@ -3644,6 +3647,7 @@ RXPGuides.RegisterGuide([[
 #xprate >1.99
 #version 1
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #name 7-13 Mulgore
 #next 13-20 The Barrens
 #defaultfor Tauren

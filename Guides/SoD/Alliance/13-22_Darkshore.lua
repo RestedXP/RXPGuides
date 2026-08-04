@@ -8,6 +8,7 @@ RXPGuides.RegisterGuide([[
 #season 2
 << NightElf
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 13-20 Darkshore SoD
 #displayname 13-20 Darkshore << NightElf SoD !Priest
 #displayname 13-22 Darkshore << NightElf SoD Priest
@@ -3516,6 +3517,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 << !sod/Warrior/Rogue/Hunter/Druid
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 20-22 Darkshore SoD
 #displayname 20-22 Darkshore << sod !Warrior
 #displayname 20-22 Darkshore/Ashenvale << sod Warrior

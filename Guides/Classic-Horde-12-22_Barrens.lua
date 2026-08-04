@@ -11,6 +11,7 @@ RXPGuides.RegisterGuide([[
 #displayname 14-18 The Barrens << Undead/Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
 #version 11
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #next 17-22 Stonetalon/Barrens/Ashenvale
 
 
@@ -3216,6 +3217,7 @@ RXPGuides.RegisterGuide([[
 #displayname 18-22 Stonetalon/Barrens/Ashenvale << Undead/Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
 #version 11
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #next RestedXP Horde 22-30\22-24 Hillsbrad
 
 
@@ -6779,6 +6781,7 @@ RXPGuides.RegisterGuide([[
 #name 13-20 The Barrens
 #version 1
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #next 20-24 Stonetalon/Barrens
 
 
@@ -10389,6 +10392,7 @@ RXPGuides.RegisterGuide([[
 #name 20-24 Stonetalon/Barrens
 #version 1
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #next 24-26 Southern Barrens << !Rogue !Shaman
 #next 23-24 Hillsbrad Class Quests << Rogue/Shaman
 

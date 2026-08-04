@@ -8,6 +8,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #defaultfor Orc/Troll
 #name 1-6 Durotar
 #next 6-10 Durotar
@@ -1348,6 +1349,7 @@ RXPGuides.RegisterGuide([[
 #name 6-10 Durotar
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #next 10-13 Durotar << Warrior/Shaman
 #next 10-12 Eversong Woods << !Warrior !Shaman
 
@@ -2167,6 +2169,7 @@ RXPGuides.RegisterGuide([[
 #name 10-13 Durotar
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #defaultfor Warrior !Tauren/Shaman !Tauren
 #next 13-22 The Barrens
 step

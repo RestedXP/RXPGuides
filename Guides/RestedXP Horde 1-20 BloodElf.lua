@@ -9,6 +9,7 @@ RXPGuides.RegisterGuide([[
 #name 1-6 Eversong Woods
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #defaultfor BloodElf
 #next 6-10 Eversong Woods
 
@@ -639,6 +640,7 @@ RXPGuides.RegisterGuide([[
 #name 6-10 Eversong Woods
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #next 10-12 Eversong Woods << !Warrior
 #next 10-13 Durotar << Warrior
 
@@ -2650,6 +2652,7 @@ RXPGuides.RegisterGuide([[
 #next 12-16 Ghostlands
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 
 step << Orc Hunter/Troll Hunter
     #completewith next
@@ -3988,6 +3991,7 @@ RXPGuides.RegisterGuide([[
 #next 16-20 Ghostlands
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawnstrider|r and |cRXP_FRIENDLY_Thedra|r
@@ -7823,6 +7827,7 @@ RXPGuides.RegisterGuide([[
 #next 22-26 Hillsbrad Foothills JJ;20-23 Stonetalon / The Barrens
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 
 step << skip
     .goto Ghostlands,47.3,29.3

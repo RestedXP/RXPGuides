@@ -9,6 +9,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 1-6 Coldridge Valley
 #displayname 1-6 Coldridge Valley << !SoD
 #displayname 1-7 Coldridge Valley << SoD
@@ -1330,6 +1331,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance --!Hunter
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 6-11 Dun Morogh
 #displayname 6-12 Dun Morogh << sod !Warlock
 #next 11-12 Elwynn (Dwarf/Gnome);11-12 Voidwalker Quest;12-14 Loch Modan (Dwarf/Gnome);11-13 Loch Modan (Hunter)
@@ -4837,6 +4839,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Gnome Warlock
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 11-12 Voidwalker Quest
 #displayname 12-13 Voidwalker Quest << SoD
 #next 12-14 Loch Modan (Dwarf/Gnome)
@@ -5105,6 +5108,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 << Alliance !Hunter
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 11-12 Elwynn (Dwarf/Gnome)
 #version 1
 #defaultfor Gnome/Dwarf
@@ -5815,6 +5819,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance !Hunter
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 12-14 Loch Modan (Dwarf/Gnome)
 #displayname 12-15 Loch Modan << SoD !Warlock
 #displayname 13-15 Loch Modan << SoD Warlock
@@ -7569,6 +7574,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance Hunter
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 6-11 Dun Morogh (Hunter)
 #displayname 6-11 Dun Morogh
 #next 11-13 Loch Modan (Hunter)
@@ -8268,6 +8274,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance Hunter
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 11-13 Loch Modan (Hunter)
 #displayname 11-13 Loch Modan << !SoD
 #displayname 12-15 Loch Modan << SoD

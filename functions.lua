@@ -3831,6 +3831,20 @@ function addon.functions.next(skip, guide, arg1)
             next = next:gsub("^(%d)-(%d%d?)", addon.affix)
             --print(1,next,guideSkip)
             guideSkip = addon.GetGuideTable(group, next)
+            if not guideSkip then
+                parentGroup = addon.condenseGroups[group]
+                if parentGroup then
+                    for currentGroup, displayName in pairs(addon.condenseGroups) do
+                        if displayName == parentGroup then
+                            guideSkip = addon.GetGuideTable(currentGroup, next)
+                            if guideSkip then
+                                group = currentGroup
+                                break
+                            end
+                        end
+                    end
+                end
+            end
             --Iterates through every guide until it finds a valid one
             --It uses the last one listed in case none of them are valid
             if guideSkip and addon.IsGuideActive(guideSkip) then

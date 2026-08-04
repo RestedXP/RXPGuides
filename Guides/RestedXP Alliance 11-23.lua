@@ -9,6 +9,7 @@ RXPGuides.RegisterGuide([[
 #name 11-14 Darkshore
 #version 1
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #defaultfor !Draenei
 #next 14-20 Bloodmyst
 #xprate <1.5 << Warlock
@@ -473,6 +474,7 @@ RXPGuides.RegisterGuide([[
 #name 14-20 Bloodmyst
 #version 1
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #defaultfor !Draenei
 #next RestedXP Alliance 20-32\20-23 Darkshore/Ashenvale;RestedXP Alliance 20-32\20-21 Darkshore
 step << Druid
@@ -1516,6 +1518,7 @@ RXPGuides.RegisterGuide([[
 #name 20-21 Darkshore
 #version 1
 #group RestedXP Alliance 20-32
+#groupid RXP-SRGCE-A1
 #defaultfor !Draenei
 #next 21-23 Ashenvale
 step << NightElf wotlk
@@ -2002,6 +2005,7 @@ RXPGuides.RegisterGuide([[
 #name 21-23 Ashenvale
 #version 1
 #group RestedXP Alliance 20-32
+#groupid RXP-SRGCE-A1
 #defaultfor !Draenei
 #next 23-24 Wetlands;24-27 Redridge/Duskwood
 step
@@ -2386,6 +2390,7 @@ RXPGuides.RegisterGuide([[
 #name 20-23 Darkshore/Ashenvale
 #version 1
 #group RestedXP Alliance 20-32
+#groupid RXP-SRGCE-A1
 #next 23-24 Wetlands;24-27 Redridge/Duskwood
 step << tbc
     .goto Darkshore,37.0,44.1

@@ -14,6 +14,7 @@ local bitand = bit.band
 local bitxor = bit.bxor
 local LibDeflate = LibStub("LibDeflate")
 local RXPGuides = addon.RXPGuides
+addon.condenseGroups = {}
 
 local game = strlower(addon.game)
 --local suffix = 1
@@ -154,14 +155,26 @@ function addon.AddGuide(guide)
     local index = fmt("%s||%s",guide.group,guide.name)
     addon.RegisterGroup(group,guide.group ~= group and guide.group)
 
-    if not addon.guideList[group] then
-        addon.guideList[group] = {}
-        addon.guideList[group].names_ = {}
+    local groupDisplayName = group
+    if guide.groupdisplayname then
+        if guide.lowPrio and guide.lowPrio:sub(1,1) == "*" then
+            groupDisplayName = "*" .. guide.groupdisplayname
+        else
+            groupDisplayName = guide.groupdisplayname
+        end
+    end
+    if groupDisplayName ~= group then
+        addon.condenseGroups[group] = groupDisplayName
+    end
+    if not addon.guideList[groupDisplayName] then
+        addon.guideList[groupDisplayName] = {}
+        addon.guideList[groupDisplayName].names_ = {}
     end
     --print(group,guide.group ~= group and guide.group)
-    addon.guideList[group].weight_ = tonumber(guide.groupweight) or addon.guideList[group].weight_
+    addon.guideList[groupDisplayName].weight_ = tonumber(guide.groupweight)
+                                    or addon.guideList[groupDisplayName].weight_
 
-    local list = addon.guideList[group]
+    local list = addon.guideList[groupDisplayName]
 
     if guide.guideId then
         addon.guideIds[guide.guideId] = index
@@ -176,7 +189,7 @@ function addon.AddGuide(guide)
         end
     else -- guide doesn't exist, so insert
         if not addon.guides[index] then
-            tinsert(list.names_, guide.name)
+            tinsert(list.names_, {name = guide.name, group = guide.group:gsub("^%*","")})
         end
         addon.guides[index] = guide
 
@@ -1141,15 +1154,16 @@ function addon.GroupOverride(guide,arg2)
         --local group,subgroup
         local swap
         if addon.game == "CLASSIC" or guide.classic then
-            local faction = grp:match("RestedXP ([AH][lo][lr][id][ea]%w*)")
-            if faction == "Alliance" then
-                subgrp = subgrp or grp:gsub("RestedXP Alliance", "RXP Speedrun Guide")
-                grp = prefix .. "RestedXP Speedrun Guide (A)"
+            local groupId = guide.groupid
+            local faction = not groupId and grp:match("RestedXP ([AH][lo][lr][id][ea]%w*)")
+            if faction == "Alliance" or groupId == "RXP-SRGCE-A1" then
+                subgrp = subgrp or grp
+                guide.groupdisplayname = prefix .. L"RestedXP Speedrun Guide (A)"
                 swap = true
                 --print('\n',grp,subgrp,faction,type(guide) == "table" and guide.name,'\n')
-            elseif faction == "Horde" then
-                subgrp = subgrp or grp:gsub("RestedXP Horde", "RXP Speedrun Guide")
-                grp = prefix .. "RestedXP Speedrun Guide (H)"
+            elseif faction == "Horde" or groupId == "RXP-SRGCE-H1" then
+                subgrp = subgrp or grp
+                guide.groupdisplayname = prefix .. L"RestedXP Speedrun Guide (H)"
                 swap = true
                 --print(group,guide.subgroup,faction,guide.group,guide.name)
             end

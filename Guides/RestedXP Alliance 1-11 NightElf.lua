@@ -9,6 +9,7 @@ RXPGuides.RegisterGuide([[
 #name 1-6 Shadowglen
 #version 1
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 6-11 Teldrassil
 step << !NightElf
@@ -355,6 +356,7 @@ RXPGuides.RegisterGuide([[
 #name 6-11 Teldrassil
 #version 1
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 11-14 Darkshore
 step

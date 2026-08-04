@@ -10,6 +10,7 @@ RXPGuides.RegisterGuide([[
 #displayname 1-13 Elwynn Forest << Warlock
 #version 1
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #defaultfor Human
 #next 12-14 Loch Modan;11-14 Darkshore;14-20 Bloodmyst
 step << !Human
@@ -1574,6 +1575,7 @@ RXPGuides.RegisterGuide([[
 #xprate <1.2 << wotlk
 #version 1
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #defaultfor Human
 #next 14-14 Darkshore << Warlock
 #next 11-14 Darkshore << !Warlock
@@ -2104,6 +2106,7 @@ RXPGuides.RegisterGuide([[
 #name 14-14 Darkshore
 #version 1
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #defaultfor Human Warlock
 #next 14-20 Bloodmyst
 #xprate <1.5 << wotlk

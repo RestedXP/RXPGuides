@@ -10,6 +10,7 @@ RXPGuides.RegisterGuide([[
 #name 1-6 Northshire
 #version 1
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #defaultfor Human
 #next 6-11 Elwynn Forest
 
@@ -1175,6 +1176,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 6-11 Elwynn Forest
 #displayname 6-13 Elwynn Forest << SoD
 #next 11-13 Loch Modan
@@ -4939,6 +4941,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 11-13 Loch Modan
 #displayname 13-15 Loch Modan << SoD
 #next 13-15 Westfall; 14-16 Darkshore

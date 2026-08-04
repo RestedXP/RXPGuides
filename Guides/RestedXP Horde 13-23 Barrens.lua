@@ -9,6 +9,7 @@ RXPGuides.RegisterGuide([[
 #name 13-22 The Barrens
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #defaultfor Shaman/Warrior
 #next 22-25 Hillsbrad / South Barrens;22-25 Hillsbrad Foothills JJ
 

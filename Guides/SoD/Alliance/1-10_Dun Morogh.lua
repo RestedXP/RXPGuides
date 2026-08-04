@@ -8,6 +8,7 @@ RXPGuides.RegisterGuide([[
 #season 2
 << Alliance
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 1-7 Coldridge Valley
 #next 6-11 Dun Morogh SoD
 #displayname 1-7 Coldridge Valley
@@ -1112,6 +1113,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance --!Hunter
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 6-11 Dun Morogh SoD
 #displayname 7-12 Dun Morogh
 #next 12-13 Dun Morogh SoD

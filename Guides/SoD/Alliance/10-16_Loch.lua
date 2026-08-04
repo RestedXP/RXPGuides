@@ -6,6 +6,7 @@ RXPGuides.RegisterGuide([[
 #season 2
 << Alliance
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 12-13 Dun Morogh SoD
 #displayname 12-13 Dun Morogh
 #next 13-16 Loch Modan SoD
@@ -1035,6 +1036,7 @@ RXPGuides.RegisterGuide([[
 #season 2
 << Alliance
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 13-16 Loch Modan SoD
 #displayname 13-16 Loch Modan
 #next 16-17 Westfall SoD

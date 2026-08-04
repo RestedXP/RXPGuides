@@ -6,6 +6,7 @@ RXPGuides.RegisterGuide([[
 #season 2
 << Alliance
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 16-17 Westfall SoD
 #displayname 16-17 Westfall
 #next 17-22 Redridge SoD
@@ -465,6 +466,7 @@ RXPGuides.RegisterGuide([[
 #season 2
 << Alliance
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 17-22 Redridge SoD
 #displayname 17-22 Redridge
 #next RestedXP Alliance 20-30\22-24 Wetlands SoD

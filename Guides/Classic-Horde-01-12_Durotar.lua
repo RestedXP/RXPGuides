@@ -10,6 +10,7 @@ RXPGuides.RegisterGuide([[
 #name 1-6 Durotar
 #version 11
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 6-10 Durotar
 
@@ -1541,6 +1542,7 @@ RXPGuides.RegisterGuide([[
 #name 6-10 Durotar
 #version 11
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 10-12 Durotar
 
@@ -3767,6 +3769,7 @@ RXPGuides.RegisterGuide([[
 #name 10-12 Durotar
 #version 11
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 10-12 Tirisfal << Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
 #next 12-17 The Barrens << Troll !Rogue !Mage !Priest/Orc !Rogue !Warlock
@@ -5177,6 +5180,7 @@ RXPGuides.RegisterGuide([[
 #name 10-12 Tirisfal
 #version 11
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #defaultfor Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
 #next 12-14 Silverpine Forest << Undead/Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
 
@@ -7006,6 +7010,7 @@ RXPGuides.RegisterGuide([[
 #name 1-7 Durotar
 #version 1
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 7-13 Durotar
 
@@ -8476,6 +8481,7 @@ RXPGuides.RegisterGuide([[
 #name 7-13 Durotar
 #version 1
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
 #next 13-20 The Barrens
 

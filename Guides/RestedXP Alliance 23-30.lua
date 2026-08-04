@@ -9,6 +9,7 @@ RXPGuides.RegisterGuide([[
 #name 23-24 Wetlands
 #version 1
 #group RestedXP Alliance 20-32
+#groupid RXP-SRGCE-A1
 #next 24-27 Redridge/Duskwood
 #xprate <1.5
 
@@ -449,6 +450,7 @@ RXPGuides.RegisterGuide([[
 #name 24-27 Redridge/Duskwood
 #version 1
 #group RestedXP Alliance 20-32
+#groupid RXP-SRGCE-A1
 #next 27-30 Wetlands/Hillsbrad;28-30 Duskwood
 step << Warrior
     #sticky
@@ -1366,6 +1368,7 @@ RXPGuides.RegisterGuide([[
 #name 27-30 Wetlands/Hillsbrad
 #version 1
 #group RestedXP Alliance 20-32
+#groupid RXP-SRGCE-A1
 #next 30-32 Duskwood/STV
 #xprate <1.5
 
@@ -1942,6 +1945,7 @@ RXPGuides.RegisterGuide([[
 #name 30-32 Duskwood/STV
 #version 1
 #group RestedXP Alliance 20-32
+#groupid RXP-SRGCE-A1
 #next RestedXP Alliance 32-47\32-33 Shimmering Flats
 #xprate <1.5
 step << skip !Mage
@@ -3031,6 +3035,7 @@ RXPGuides.RegisterGuide([[
 #name 28-30 Duskwood
 #version 1
 #group RestedXP Alliance 20-32
+#groupid RXP-SRGCE-A1
 #next 30-32 Hillsbrad
 #xprate >1.3
 step
@@ -3983,6 +3988,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #version 1
 #group RestedXP Alliance 20-32
+#groupid RXP-SRGCE-A1
 #name 30-32 Hillsbrad
 #next RestedXP Alliance 32-47\32-33 Shimmering Flats
 #xprate >1.3

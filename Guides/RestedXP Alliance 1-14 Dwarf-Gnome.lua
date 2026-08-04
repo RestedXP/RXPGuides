@@ -10,6 +10,7 @@ RXPGuides.RegisterGuide([[
 #next 6-11 Dun Morogh
 #version 1
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #defaultfor Gnome/Dwarf
 step << !Gnome !Dwarf
     #sticky
@@ -402,6 +403,7 @@ RXPGuides.RegisterGuide([[
 #name 6-11 Dun Morogh
 #version 1
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #defaultfor Gnome/Dwarf
 #next 11-14 Darkshore
 step
@@ -1593,6 +1595,7 @@ RXPGuides.RegisterGuide([[
 #name 1-12 Dun Morogh
 #version 1
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #defaultfor Gnome Warlock
 #next 12-14 Loch Modan Gnome;11-14 Darkshore
 step << !Gnome !Dwarf
@@ -2902,6 +2905,7 @@ RXPGuides.RegisterGuide([[
 #name 12-14 Loch Modan Gnome
 #version 1
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #defaultfor Gnome Warlock
 #next 14-20 Bloodmyst
 step
@@ -3264,6 +3268,7 @@ RXPGuides.RegisterGuide([[
 #name 1-11 Dun Morogh
 #version 1
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #defaultfor Dwarf Hunter
 #next 11-14 Darkshore
 step << !Gnome !Dwarf
