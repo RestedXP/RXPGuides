@@ -263,7 +263,6 @@ step
     #optional
     .goto The Barrens,62.37,37.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok|r
-    .accept 865 >>Accept Raptor Horns
     .accept 1069 >>Accept Deepmoss Spider Eggs
     .accept 1491 >>Accept Smart Drinks
     .target Mebok Mizzyrix
@@ -275,7 +274,6 @@ step
     .accept 865 >>Accept Raptor Horns
     .accept 1069 >>Accept Deepmoss Spider Eggs
     .target Mebok Mizzyrix
-    .isQuestTurnedIn 865
 step << !Tauren
     #xprate >1.49
     #completewith next

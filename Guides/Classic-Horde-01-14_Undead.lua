@@ -3162,7 +3162,7 @@ step
     #completewith ANewPlagueFinal
     .hs >> Hearth to Brill
     .subzoneskip 159
-    .bindlocation 159,1
+    .bindlocation 2119,1
     .cooldown item,6948,>0,1
 step
     #xprate >1.49
@@ -4188,7 +4188,7 @@ step
 step << !Mage !Priest
     .goto Silverpine Forest,44.05,39.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwyn|r
-    .vendor >> |cRXP_BUY_Buy|r |T134830:0|t[Lesser Healing Potions] |cRXP_BUY_from him if they're up|r
+    .vendor >> |cRXP_BUY_Buy|r |T134532:0|t[Red-speckled Mushroom] |cRXP_BUY_from him|r
     .collect 4605,20,421,1 --Red-speckled Mushroom (20)
     .target Gwyn Farrow
     .money <0.05
@@ -5067,7 +5067,7 @@ step << Undead
     #completewith ZeptoDurotar
     .hs >> Hearth to Brill
     .zoneskip Undercity,1
-    .bindlocation 159,1
+    .bindlocation 2119,1
 step << Undead Rogue
     #xprate >1.49
     .goto Tirisfal Glades,61.75,52.01
@@ -6944,7 +6944,7 @@ step
     .hs >> Hearth to Brill
     .subzoneskip 159
     .cooldown item,6948,>0,1
-    .bindlocation 159,1
+    .bindlocation 2119,1
 step
     #hardcore
     #completewith BrillTurnin1
@@ -8220,7 +8220,7 @@ step << skip
     .hs >> Hearth to Brill
     .subzoneskip 159
     .cooldown item,6948,>0,1
-    .bindlocation 159,1
+    .bindlocation 2119,1
 step << skip
     #xprate <1.5
     #hardcore
@@ -8824,7 +8824,7 @@ step
     #completewith AgamandStart
     #xprate >2.09
     .hs >>Hearth to Brill
-    .bindlocation 159,1
+    .bindlocation 2119,1
 step
     #optional
     .goto Tirisfal Glades,60.93,52.01
@@ -9367,7 +9367,7 @@ step
     #completewith ANewPlagueFinal
     .hs >> Hearth to Brill
     .subzoneskip 159
-    .bindlocation 159,1
+    .bindlocation 2119,1
     .cooldown item,6948,>0,1
 step
     #xprate <2.1

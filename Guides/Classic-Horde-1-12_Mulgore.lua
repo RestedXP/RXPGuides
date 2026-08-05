@@ -1904,7 +1904,7 @@ step
 step << Hunter
     #completewith next
     .cast 1515 >>Tame a |cRXP_ENEMY_Prairie Wolf Alpha|r
-    >>|cRXP_WARN_This will allow you to train|r |T132140:0|t[Claw Rank 2]
+    >>|cRXP_WARN_This will allow you to train|r |T132278:0|t[Bite Rank 2]
     .mob Prairie Wolf Alpha
 step << Tauren
     #label AlphaTeeth
@@ -4687,7 +4687,7 @@ step << Hunter
     #xprate <2.1
     #completewith SacredBurial
     .cast 1515 >>Tame a |cRXP_ENEMY_Prairie Wolf Alpha|r
-    >>|cRXP_WARN_This will allow you to train|r |T132140:0|t[Claw Rank 2]
+    >>|cRXP_WARN_This will allow you to train|r |T132278:0|t[Bite Rank 2]
     .mob Prairie Wolf Alpha
 step
     #xprate <2.1

@@ -791,7 +791,7 @@ step
     .turnin 8 >>Turn in A Rogue's Deal
     .home >> Set your Hearthstone to Brill << Priest/Warrior
     .target Innkeeper Renee
-    .bindlocation 159 << Priest/Warrior
+    .bindlocation 2119 << Priest/Warrior
 step << Priest
     .goto Tirisfal Glades,61.99,52.19,6,0
     .goto Tirisfal Glades,61.76,52.31,6,0
@@ -859,7 +859,7 @@ step << Priest
 step << Priest
     #completewith next
     .hs >> Hearth to Brill
-    .bindlocation 159,1
+    .bindlocation 2119,1
     .subzoneskip 159
 step << Priest
     .goto Tirisfal Glades,61.99,52.19,6,0

@@ -913,7 +913,7 @@ step
     .hs >> Hearth to Brill
     .use 6948
     .subzoneskip 159
-    .bindlocation 159,1
+    .bindlocation 2119,1
     .cooldown item,6948,>0
 step << Priest
     .goto Tirisfal Glades,61.57,52.19

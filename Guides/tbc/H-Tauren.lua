@@ -1875,7 +1875,7 @@ step << Hunter
     #xprate <1.5
     #completewith next
     .cast 1515 >>Tame a |cRXP_ENEMY_Prairie Wolf Alpha|r
-    >>|cRXP_WARN_This will allow you to train|r |T132140:0|t[Claw Rank 2]
+    >>|cRXP_WARN_This will allow you to train|r |T132278:0|t[Bite Rank 2]
     .mob Prairie Wolf Alpha
 step << Shaman
     #xprate <1.5
@@ -1906,7 +1906,7 @@ step << Hunter
     .goto Mulgore,65.56,59.37,50,0
     .goto Mulgore,67.62,59.06,50,0
     .cast 1515 >>Tame a |cRXP_ENEMY_Prairie Wolf Alpha|r
-    >>|cRXP_WARN_This will allow you to train|r |T132140:0|t[Claw Rank 2]
+    >>|cRXP_WARN_This will allow you to train|r |T132278:0|t[Bite Rank 2]
     .mob Prairie Wolf Alpha
 step << Shaman
     #xprate <1.5

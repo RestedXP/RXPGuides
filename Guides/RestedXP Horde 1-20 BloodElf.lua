@@ -2703,6 +2703,7 @@ step << Undead/BloodElf
     >>|cRXP_BUY_Buy the|r |T133974:0|t[Springpaw Appetizers] |cRXP_BUY_from her|r
     .collect 22776,1,9067,1 --Collect Springpaw Appetizers
     .target Zalene Firstlight
+    .isOnQuest 9067
 step
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawnrunner|r
@@ -3866,6 +3867,7 @@ step << Undead/BloodElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Saltheril|r
     .turnin 9067 >>Turn in The Party Never Ends
     .target Lord Saltheril
+    .isQuestComplete 9067
 step << Undead/BloodElf
     #completewith next
     .destroy 23500 >> Delete |T133461:0|t[Saltheril's Haven Party Invitation] from your bags, as it's no longer needed

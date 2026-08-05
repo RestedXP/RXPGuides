@@ -1393,7 +1393,7 @@ step << !Shaman !Hunter !Warlock
     #softcore
     #completewith next
     .goto Durotar,57.90,57.57
-    .deathskip >> Die at the waypoint arrow (or further south of it), then die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >> Die at the waypoint arrow (or further north of it), then die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step << !Shaman !Hunter !Warlock
     #xprate <1.5 << !Warrior
     #hardcore
@@ -1594,16 +1594,16 @@ step << Warrior
     .target Innkeeper Renee
     .bindlocation 2119
 step << Warrior
-    .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
-    .accept 367 >>Accept A New Plague
-    .target Apothecary Johaan
-    .maxlevel 7 --filler to get level 8 spells
-step << Warrior
     .goto Tirisfal Glades,61.89,52.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretchen|r on the second floor of the inn
     .accept 375 >>Accept in The Chill of Death
     .target Gretchen Dedmar
+    .maxlevel 7 --filler to get level 8 spells
+step << Warrior
+    .goto Tirisfal Glades,59.45,52.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
+    .accept 367 >>Accept A New Plague
+    .target Apothecary Johaan
     .maxlevel 7 --filler to get level 8 spells
 step << Warrior
     #optional
@@ -2667,7 +2667,7 @@ step
     #softcore
     #completewith next
     .goto Durotar,57.93,57.67
-    .deathskip >> Die at the waypoint arrow (or further south of it), then die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >> Die at the waypoint arrow (or further north of it), then die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
     #hardcore
     #completewith next
@@ -3861,7 +3861,7 @@ step << Warrior/Shaman
     #completewith next
     .goto The Barrens,49.75,49.54
     .subzone 378 >>Travel south down the road toward Camp Taurajo
-    >>|cRXP_WARN_Once you are at the waypoint arrow (or further south of it), die and respawn at the|r |cRXP_FRIENDLY_Spirit Healer|r
+    >>|cRXP_WARN_Once you are at the waypoint arrow (or further north of it), die and respawn at the|r |cRXP_FRIENDLY_Spirit Healer|r
 step << Warrior/Shaman
     #xprate <1.5
     #hardcore
