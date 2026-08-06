@@ -407,7 +407,7 @@ step
     .mob Forest Lurker
 step
     .isOnQuest 26860,25118
-    .hs >> Hearth to Thelsemar
+    .hs >> Hearth to Thelsamar
     .cooldown item,6948,>2,1
 step
     .goto 48,35.969,44.330

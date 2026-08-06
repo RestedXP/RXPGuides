@@ -662,8 +662,8 @@ step
     .goto Elwynn Forest,54.10,62.74,50,0
     .goto Elwynn Forest,57.48,63.21,50,0
     .goto Elwynn Forest,56.37,66.50
-    >>Kill |cRXP_ENEMY_Murloc Steamrunners|r and |cRXP_ENEMY_Murlocs|r. Loot them for |cRXP_LOOT_Crystal Kelp Frond|r
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Murloc Steamrunners|r have|r |T132307:0|t[Increased Movespeed]
+    >>Kill |cRXP_ENEMY_Murloc Streamrunners|r and |cRXP_ENEMY_Murlocs|r. Loot them for |cRXP_LOOT_Crystal Kelp Frond|r
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Murloc Streamrunners|r have|r |T132307:0|t[Increased Movespeed]
     .complete 112,1 --Collect Crystal Kelp Frond (x4)
 	.mob Murloc Streamrunner
 	.mob Murloc

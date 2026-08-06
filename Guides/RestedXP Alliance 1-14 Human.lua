@@ -340,7 +340,7 @@ step
     .accept 2158 >> Accept Rest and Relaxation
 step
     #hardcore
-    >> Talk to |cRXP_FRIENDLY_Marshall Dughan|r
+    >> Talk to |cRXP_FRIENDLY_Marshal Dughan|r
     .target Marshal Dughan
     .goto Elwynn Forest,42.105,65.927
     .turnin 54 >> Turn in Report to Goldshire
@@ -379,7 +379,7 @@ step << Mage/Priest/Warlock
     .vendor >> Vendor trash, repair
 step
     #label Goldshire
-    >> Talk to |cRXP_FRIENDLY_Marshall Dughan|r
+    >> Talk to |cRXP_FRIENDLY_Marshal Dughan|r
     .target Marshal Dughan
     .goto Elwynn Forest,42.105,65.927
     .turnin 54 >> Turn in Report to Goldshire

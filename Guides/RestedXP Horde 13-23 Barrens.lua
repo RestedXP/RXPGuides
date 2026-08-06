@@ -432,7 +432,7 @@ step << !Tauren
 .complete 848,1 --Collect Fungal Spores (x4)
 step << !Tauren
 #xprate >1.499
->>Dive underwater to the bubble fissure
+>>Dive underwater to the Bubbling Fissure
 .goto The Barrens,45.1,22.5
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step << !Tauren
@@ -753,7 +753,7 @@ step
     .goto The Barrens,58.0,53.9
     .complete 3281,1 --Stolen Silver (1)
 step
-    >>Click the Bubble Fissure underwater
+    >>Click the Bubbling Fissure underwater
     .goto The Barrens,55.6,42.7
     .complete 877,1 --Test the Dried Seeds (1)
 step

@@ -579,7 +579,7 @@ step << Paladin/Warlock/Hunter
     #optional
     #completewith next
     .goto 1426,28.792,68.804,12,0
-    >>|cRXP_WARN_You have 5 minutes to return to Anvilmar before|r |T132791:0|t[Duncan's Scalding Mornbrew] |cRXP_WARN_expires|r
+    >>|cRXP_WARN_You have 5 minutes to return to Anvilmar before|r |T132791:0|t[Durnan's Scalding Mornbrew] |cRXP_WARN_expires|r
     .goto 1426,28.939,68.387,12 >> Enter Anvilmar
 step << Paladin/Warlock/Hunter
     .goto Dun Morogh,28.769,66.377
@@ -824,7 +824,7 @@ step << !Paladin !Warlock !Hunter
 step << !Paladin !Warlock !Hunter
     #softcore
     #completewith next
-    +|cRXP_WARN_You have 5 minutes to get |cRXP_LOOT_Grelin Whitebeard's Journal|r and return to Anvilmar before|r |T132791:0|t[Duncan's Scalding Mornbrew] |cRXP_WARN_expires|r
+    +|cRXP_WARN_You have 5 minutes to get |cRXP_LOOT_Grelin Whitebeard's Journal|r and return to Anvilmar before|r |T132791:0|t[Durnan's Scalding Mornbrew] |cRXP_WARN_expires|r
     >>|cRXP_WARN_If you fail the quest don't worry as you can get it again later|r
 step
     #optional
@@ -3140,11 +3140,11 @@ step << Priest
 step << Dwarf Rogue/Gnome Rogue
     #xprate >1.59
     .goto Dun Morogh,25.164,44.460
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onin MacHammer|r atop the Flying Machine port
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onin MacHammar|r atop the Flying Machine port
     >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed]
     .turnin 2238 >> Turn in Simple Subterfugin'
     .accept 2239 >> Accept Onin's Report
-    .target Onin MacHammer
+    .target Onin MacHammar
 step
     #xprate <1.5
     #loop

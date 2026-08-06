@@ -1056,9 +1056,9 @@ step
 step
     #completewith next
     #label Barn
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Marshall Wiltshire|r
-    .complete 84658,1 --1/1 Marshall Wiltshire found
-    .target Marshall Wiltshire
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Marshal Wiltshire|r
+    .complete 84658,1 --1/1 Marshal Wiltshire found
+    .target Marshal Wiltshire
 step
     #completewith Barn
     #title |cFFFCDC00Enter the barn|r
@@ -1066,9 +1066,9 @@ step
 step
     #requires Barn
     .goto 2372,14.75,42.72
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Marshall Wiltshire|r
-    .complete 84658,1 --1/1 Marshall Wiltshire found
-    .target Marshall Wiltshire
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Marshal Wiltshire|r
+    .complete 84658,1 --1/1 Marshal Wiltshire found
+    .target Marshal Wiltshire
 step
     #completewith next
     #label Ellie

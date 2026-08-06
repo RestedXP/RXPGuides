@@ -199,7 +199,7 @@ step << Hunter/Rogue/Priest
     .train 410121 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r] to train |T236176:0|t[Chimera Shot] << Hunter
     .train 415423 >> Use the |T133739:0|t[|cRXP_FRIENDLY_Treatise on the Heart of the Viper|r] to train |T132160:0|t[Heart of the Viper] << Hunter
     .train 410122 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Lone Wolf|r] to train |T132266:0|t[Lone Wolf] << Hunter
-    .train 416086 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Close Combat|r] to train |T132394:0|t[Meele Specialist] << Hunter
+    .train 416086 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Close Combat|r] to train |T132394:0|t[Melee Specialist] << Hunter
     .train 440563 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Guerrilla|r] to train |T132171:0|t[Hit and Run] << Hunter
     .train 400101 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Shadowstep|r] to train |T132303:0|t[Shadowstep] << Rogue
     .train 432301 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Foul Play|r] to train |T236285:0|t[Unfair Advantage] << Rogue
@@ -214,7 +214,7 @@ step << Hunter
     #optional
     >> |cRXP_WARN_Be on the lookout for any|r Chest/Belt/Cloak |cRXP_WARN_drops|r|cRXP_WARN_. Equip them and engrave the respective runes|r
     .engrave 5 >> Engrave |T132266:0|t[Lone Wolf] on your |T132724:0|t[Chest]
-    .engrave 6 >> Engrave |T132394:0|t[Meele Specialist] on your |T132513:0|t[Belt]
+    .engrave 6 >> Engrave |T132394:0|t[Melee Specialist] on your |T132513:0|t[Belt]
     .engrave 15 >> Engrave |T132171:0|t[Hit and Run] on your |T133771:0|t[Cloak]
 step << Rogue
     #sticky
@@ -1002,7 +1002,7 @@ step
     .goto 1438/1,854.400,9952.500,6 >>Next to a small tree
     .goto 1438/1,822.200,9948.500,6 >>On the small hill
     .goto 1438/1,809.800,9926.400,6 >>Next to the massive tree
-    >>Loot the 3 felcones from the locations marked on your map.
+    >>Loot the 3 |cRXP_LOOT_Fel Cones|r from the locations marked on your map.
     >>|cRXP_WARN_Skip this step if any of them is not there and you're unable to complete the objective|r
     .complete 489,1 --Fel Cone 3/3
     .isOnQuest 489
@@ -1676,8 +1676,8 @@ step << !Rogue
     #requires xp10
     #completewith next
     .deathskip >> Die and respawn at the Spirit Healer in Darnassus
-    >>|cRXP_WARN_Make sure you're closer to the Darnassus graveyard than to the Dolnaar one or you might end up going the wrong way. Run all the way out of the den and then die if you're not sure about it|r << sod Priest
-    >>|cRXP_WARN_Make sure you're closer to the Darnassus graveyard than to the Dolnaar one or you might end up going the wrong way. Run to the west side of the river if you're not sure about it|r << sod Hunter/sod Warrior/sod Druid
+    >>|cRXP_WARN_Make sure you're closer to the Darnassus graveyard than to the Dolanaar one or you might end up going the wrong way. Run all the way out of the den and then die if you're not sure about it|r << sod Priest
+    >>|cRXP_WARN_Make sure you're closer to the Darnassus graveyard than to the Dolanaar one or you might end up going the wrong way. Run to the west side of the river if you're not sure about it|r << sod Hunter/sod Warrior/sod Druid
     .target Spirit Healer
 step << !Rogue
     #hardcore
@@ -1712,7 +1712,7 @@ step << Warrior
     .goto Darnassus,56.245,54.039,-1
     .goto Darnassus,56.374,51.820,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to a |cRXP_FRIENDLY_Darnassus Auctioneer|r
-    >>Buy one |T134830:0|t[|cRXP_LOOT_Lesser Healing Potion|r]. It will help you get rune of |T236317:0|t[Frenzied Assault] from Dolnaar
+    >>Buy one |T134830:0|t[|cRXP_LOOT_Lesser Healing Potion|r]. It will help you get rune of |T236317:0|t[Frenzied Assault] from Dolanaar
     .collect 929,1 --Lesser Healing Potion (1)
     .target Auctioneer Tolon
     .target Auctioneer Golothas
@@ -1790,7 +1790,7 @@ step << !Rogue
     .accept 2518 >> Accept Tears of the Moon
 step << Warrior
     #season 2
-    .hs >> Hearthstone to Dolnaar
+    .hs >> Hearthstone to Dolanaar
     .vendor >> |cRXP_BUY_Vendor and buy 5-10 |T133968:0|t[|cRXP_LOOT_Freshly Baked Bread|r] from the innkeeper
 step << Warrior
     #season 2
@@ -2392,7 +2392,7 @@ step << Warrior
     #sesaon 2
     .goto Teldrassil,40.8,75.6
     .deathskip >>Die and respawn at the Darnassus graveyard
-    >>|cRXP_WARN_Make sure you're closer to Darnassus graveyard than Dolnaar one or you might end up going the wrong way. If you're uncertain die east of the spot marked on your map|r
+    >>|cRXP_WARN_Make sure you're closer to Darnassus graveyard than Dolanaar one or you might end up going the wrong way. If you're uncertain die east of the spot marked on your map|r
     .target Spirit Healer
 step
     #hardcore

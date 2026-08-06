@@ -1190,7 +1190,7 @@ step
 step
     #hardcore
     .goto Elwynn Forest,42.105,65.927
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshall Dughan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 54 >> Turn in Report to Goldshire
     .accept 62 >> Accept The Fargodeep Mine
     .target Marshal Dughan
@@ -1265,7 +1265,7 @@ step << Mage/Priest/Warlock
 step
     #label Goldshire
     .goto Elwynn Forest,42.105,65.927
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshall Dughan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 54 >> Turn in Report to Goldshire
     .accept 62 >> Accept The Fargodeep Mine
     .target Marshal Dughan
@@ -2070,7 +2070,7 @@ step << Rogue
     .waypoint 1429,55.523,66.707,50,0
     .waypoint 1429,55.203,66.171,50,0
     .waypoint 1429,54.236,66.888,50,0
-    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Murloc Steamrunners|r and |cRXP_ENEMY_Murlocs|r. Loot them for the |T134269:0|t|cRXP_LOOT_[Bottom-Right Map Piece]|r
+    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Murloc Streamrunners|r and |cRXP_ENEMY_Murlocs|r. Loot them for the |T134269:0|t|cRXP_LOOT_[Bottom-Right Map Piece]|r
     >>|cRXP_WARN_You must be|r |T132320:0|t[Stealthed] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
 --   >>|cRXP_WARN_Note: This can also come from any other |cRXP_ENEMY_Murloc|r in Elwynn Forest|r
     .collect 203786,1 -- Bottom-Right Map Piece (1)
@@ -6013,15 +6013,15 @@ step << Rogue
     #xprate >1.49
     .goto Ironforge,62.375,88.679
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
-    >>|cRXP_BUY_Buy a|r |T135425:0|t[Keen Throwing Dagger] |cRXP_BUY_from her|r
-    .collect 3107,100 -- Keen Throwing Dagger
+    >>|cRXP_BUY_Buy a|r |T135425:0|t[Keen Throwing Knife] |cRXP_BUY_from her|r
+    .collect 3107,100 -- Keen Throwing Knife
     .target Brenwyn Wintersteel
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
 step << Rogue
     #xprate >1.49
     #optional
     #completewith next
-    +|cRXP_WARN_Equip the|r |T135425:0|t[Keen Throwing Dagger]
+    +|cRXP_WARN_Equip the|r |T135425:0|t[Keen Throwing Knife]
     .use 3107
     .itemcount 3107,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3

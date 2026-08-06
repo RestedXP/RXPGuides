@@ -2979,7 +2979,7 @@ step << Priest
     .isOnQuest 5321
 step << Priest
     #season 2
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liadris Moonriver|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liladris Moonriver|r
 	.target Liladris Moonriver
     .goto Ashenvale,27.26,35.58
     >>Skip this step if you haven't completed the quest
@@ -4153,7 +4153,7 @@ step << Warrior
     .target Sentinel Onaeya
 step << Warrior
     #season 2
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liadris Moonriver|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liladris Moonriver|r
 	.target Liladris Moonriver
     .goto Ashenvale,27.26,35.58
     >>Skip this step if you haven't completed the quest
@@ -4251,7 +4251,7 @@ step << Druid
     .isOnQuest 5321
 step << Druid
 #season 2
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liadris Moonriver|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liladris Moonriver|r
 	.target Liladris Moonriver
     .goto Ashenvale,27.26,35.58
     .turnin 5321 >> Turn in The Sleeper Has Awakened
@@ -7221,7 +7221,7 @@ step << NightElf Warrior
     #completewith NEIFFP
     .goto 1455,62.378,88.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r downstairs
-    >>|cRXP_BUY_Buy the|r |T135427:0|t[Heavy Throwing Knives] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy the|r |T135427:0|t[Heavy Throwing Dagger] |cRXP_BUY_from her|r
     .collect 3108,200 --Collect Heavy Throwing Knife (200)
     .target Brenwyn Wintersteel
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.7
@@ -7231,7 +7231,7 @@ step << NightElf Warrior
     #requires DeeprunDMNoFP4
     #label DeeprunDMNoFP5
     #completewith NEIFFP
-    +|cRXP_WARN_Equip the|r |T135427:0|t[Heavy Throwing Knives]
+    +|cRXP_WARN_Equip the|r |T135427:0|t[Heavy Throwing Dagger]
     .use 3108
     .itemcount 3108,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.7

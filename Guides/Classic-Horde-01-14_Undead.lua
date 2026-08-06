@@ -2446,7 +2446,7 @@ step << Rogue
 step << Mage
     .goto Tirisfal Glades,61.96,52.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cain|r inside the inn
-    .accept 1881 >> Accept Speak with Anatasia
+    .accept 1881 >> Accept Speak with Anastasia
     .target Cain Firesong
 step
     #label FoodandWater2
@@ -2760,7 +2760,7 @@ step << Mage
 step << Mage
     .goto Undercity,85.12,10.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anastasia|r in the Magic Quarter
-    .turnin 1881 >> Turn in Speak with Anatasia
+    .turnin 1881 >> Turn in Speak with Anastasia
     .accept 1882 >> Accept The Balnir Farmstead
     .target Anastasia Hartwell
 step
@@ -7765,7 +7765,7 @@ step << Mage
     #optional
     .goto Tirisfal Glades,61.96,52.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cain|r
-    --.accept 1881 >> Accept Speak with Anatasia
+    --.accept 1881 >> Accept Speak with Anastasia
     .train 122 >> Train your class spells
     .target Cain Firesong
     .xp <10,1
@@ -8369,7 +8369,7 @@ step << Mage
     #xprate <2.1
     .goto Tirisfal Glades,61.96,52.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cain|r inside the inn
-    .accept 1881 >> Accept Speak with Anatasia
+    .accept 1881 >> Accept Speak with Anastasia
     .target Cain Firesong
 step
     #xprate <2.1
@@ -8762,7 +8762,7 @@ step << skip
 step << skip
     .goto Undercity,85.12,10.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anastasia|r in the Magic Quarter
-    .turnin 1881 >> Turn in Speak with Anatasia
+    .turnin 1881 >> Turn in Speak with Anastasia
     .accept 1882 >> Accept The Balnir Farmstead
     .target Anastasia Hartwell
 step

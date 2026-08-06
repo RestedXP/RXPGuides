@@ -319,7 +319,7 @@ step << Paladin/Warlock/Hunter
     #optional
     #completewith next
     .goto 1426,28.792,68.804,12,0
-    >>|cRXP_WARN_You have 5 minutes to return to Anvilmar before|r |T132791:0|t[Duncan's Scalding Mornbrew] |cRXP_WARN_expires|r
+    >>|cRXP_WARN_You have 5 minutes to return to Anvilmar before|r |T132791:0|t[Durnan's Scalding Mornbrew] |cRXP_WARN_expires|r
     .goto 1426,28.939,68.387,12 >> Enter Anvilmar
 step << Paladin/Warlock/Hunter
     .goto Dun Morogh,28.769,66.377
@@ -423,7 +423,7 @@ step << !Paladin !Warlock !Hunter
     .target Nori Pridedrift
 step << !Paladin !Warlock !Hunter
     #completewith next
-    +|cRXP_WARN_You have 5 minutes to get |cRXP_LOOT_Grelin Whitebeard's Journal|r and return to Anvilmar before|r |T132791:0|t[Duncan's Scalding Mornbrew] |cRXP_WARN_expires|r
+    +|cRXP_WARN_You have 5 minutes to get |cRXP_LOOT_Grelin Whitebeard's Journal|r and return to Anvilmar before|r |T132791:0|t[Durnan's Scalding Mornbrew] |cRXP_WARN_expires|r
     >>|cRXP_WARN_If you fail the quest don't worry as you can get it again later|r
 step
     #optional
@@ -2969,7 +2969,7 @@ step
 step
 #xprate <1.5
     .goto Elwynn Forest,42.105,65.927
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshall Dughan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .accept 62 >> Accept The Fargodeep Mine
     .target Marshal Dughan
 step

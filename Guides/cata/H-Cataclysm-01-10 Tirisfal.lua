@@ -56,7 +56,7 @@ step
 step
     .goto 18,30.66,71.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caice|r
-    .accept 24960 >>Accept The Wakenin
+    .accept 24960 >>Accept The Wakening
     .target Caretaker Caice
 step
     #completewith ValdredMoray

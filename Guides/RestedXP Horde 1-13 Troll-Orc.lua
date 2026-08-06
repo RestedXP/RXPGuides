@@ -2381,7 +2381,7 @@ step << !Tauren
 .complete 848,1 --Collect Fungal Spores (x4)
 step << !Tauren
 #xprate <1.5
->>Dive underwater to the bubble fissure
+>>Dive underwater to the Bubbling Fissure
 .goto The Barrens,45.1,22.5
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step << !Tauren

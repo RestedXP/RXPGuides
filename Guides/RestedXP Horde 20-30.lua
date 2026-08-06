@@ -586,7 +586,7 @@ step
     .complete 848,1 --Collect Fungal Spores (x4)
     .isOnQuest 848
 step
-    >>Dive underwater to the bubble fissure
+    >>Dive underwater to the Bubbling Fissure
     .goto The Barrens,45.1,22.5
     .complete 870,1 --Explore the waters of the Forgotten Pools
     .isOnQuest 870
@@ -830,7 +830,7 @@ step
     .complete 865,1 --Collect Intact Raptor Horn (x5)
     .isOnQuest 865
 step
-    >>Click the Bubble Fissure underwater
+    >>Click the Bubbling Fissure underwater
     .goto The Barrens,55.6,42.7
     .complete 877,1 --Collect Test the Dried Seeds (x1)
     .isOnQuest 877
@@ -1710,7 +1710,7 @@ step << Blood Elf !Warlock wotlk
     >> Teleport to The Undercity if you can << Mage
     .zone Undercity >> Click on the Orb of Translocation to head to the Undercity
 step << Druid tbc
-    >>Loot the gray chest underwater next to the bubble fissure (in the fatigue).
+    >>Loot the gray chest underwater next to the Bubbling Fissure (in the fatigue).
     .goto Silverpine Forest,30.0,29.1
     .collect 15882,1
     --Video link in future?

@@ -286,7 +286,7 @@ step << Mage
     .goto 1426,69.369,58.311
     >>|cRXP_WARN_Look for other Mages or Warlocks near the |cRXP_ENEMY_Frozen Trogg|r or in General Chat (Type /1 into chat). You can still solo this if no one is there|r
     >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Trogg|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Trogg|r. Loot it for the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: Burnout]|r
-    >>|cRXP_WARN_If there is no one there to help you, walk into meele range of the Trogg and use|r |T135820:0|t[Living Flame] |cRXP_WARN_on him. Stay in meele range to keep yourself in combat and keep using|r |T135820:0|t[Living Flame] |cRXP_WARN_on cooldown. It will kill the trogg after 5-6 casts.|r
+    >>|cRXP_WARN_If there is no one there to help you, walk into melee range of the Trogg and use|r |T135820:0|t[Living Flame] |cRXP_WARN_on him. Stay in melee range to keep yourself in combat and keep using|r |T135820:0|t[Living Flame] |cRXP_WARN_on cooldown. It will kill the trogg after 5-6 casts.|r
     .collect 203748,1 --Spell Notes: Burnout (1)
     .train 401759,1
     .mob Frozen Trogg

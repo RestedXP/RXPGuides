@@ -216,7 +216,7 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     #completewith next
     #label ProfessionsDmf1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farner|r.
     .train 2259 >>Train |T4620669:0|t[Alchemy]
     .dmf
 step << Alliance
@@ -230,9 +230,9 @@ step << Alliance
 step << Alliance
     #requires ProfessionsDmf1
     .goto 37,41.95,67.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farner|r.
     .train 2259 >>Train |T4620669:0|t[Alchemy]
-    .target Lien Farmer
+    .target Lien Farner
     .skipgossipid 38859
     .skipgossipid 38886
     .skipgossipid 39726
@@ -242,7 +242,7 @@ step << Alliance
 step << Alliance
     #completewith next
     #label ProfessionsDmf2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farner|r.
     .train 45357 >>Train |T4620676:0|t[Inscription]
     .dmf
 step << Alliance
@@ -256,12 +256,12 @@ step << Alliance
 step << Alliance
     #requires ProfessionsDmf2
     .goto 37,41.95,67.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farner|r.
     .train 45357 >>Train |T4620676:0|t[Inscription]
     .skipgossipid 38859
     .skipgossipid 38890
     .skipgossipid 39321
-    .target Lien Farmer
+    .target Lien Farner
     .subzoneskip 37,1
     .isOnQuest 7905
     .dmf

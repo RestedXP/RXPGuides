@@ -321,7 +321,7 @@ step
 step
     .goto 1411,42.47,69.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Canaga|r
-    .accept 25128 >>Accept Hana'zu
+    .accept 25128 >>Accept Hana'zua
     .target Canaga Earthcaller
 step
     .goto 1411,43.45,67.48
