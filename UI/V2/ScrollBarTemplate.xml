@@ -19,7 +19,7 @@ UI.xsd">
 		<Frames>
 			<Button name="$parentScrollUpButton" parentKey="ScrollUpButton" inherits="RXPV2ScrollUpButtonTemplate">
 				<Anchors>
-					<Anchor point="BOTTOM" relativePoint="TOP"/>
+					<Anchor point="BOTTOM" relativePoint="TOP" y="1"/>
 				</Anchors>
 				<Scripts>
 					<OnClick function="UIPanelScrollBarScrollUpButton_OnClick"/>
@@ -27,7 +27,7 @@ UI.xsd">
 			</Button>
 			<Button name="$parentScrollDownButton" parentKey="ScrollDownButton" inherits="RXPV2ScrollDownButtonTemplate">
 				<Anchors>
-					<Anchor point="TOP" relativePoint="BOTTOM"/>
+					<Anchor point="TOP" relativePoint="BOTTOM" y="-1"/>
 				</Anchors>
 				<Scripts>
 					<OnClick function="UIPanelScrollBarScrollDownButton_OnClick"/>

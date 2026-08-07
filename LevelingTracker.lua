@@ -12,14 +12,7 @@ local issecretvalue = issecretvalue or function() return false end
 local AceGUI = LibStub("AceGUI-3.0")
 local LibDeflate = LibStub("LibDeflate")
 local L = addon.locale.Get
-local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0", true)
-local EasyMenu = function(...)
-    if _G.EasyMenu then
-        _G.EasyMenu(...)
-    else
-        LibDD:EasyMenu(...)
-    end
-end
+local EasyMenu = function(...) addon:ShowMenu(...) end
 local UnitName = addon.GetUnitName
 
 addon.tracker = addon:NewModule("LevelingTracker", "AceEvent-3.0", "AceComm-3.0", "AceSerializer-3.0")
@@ -1028,7 +1021,7 @@ function addon.tracker:CreateLevelSplits()
     -- Disable background texture for now, inconsistently loads
     --[[
     f.bg = f:CreateTexture("RXPLevelSplitsFrameBG", "BACKGROUND")
-    f.bg:SetTexture(addon.GetTexture("rxp-banner"))
+    f.bg:SetTexture(addon.GetV1Texture("rxp-banner"))
     f.bg:SetPoint("TOPLEFT", 4, -2)
     f.bg:SetPoint("BOTTOMRIGHT", -2, 4)
     ]]
@@ -1045,7 +1038,7 @@ function addon.tracker:CreateLevelSplits()
     -- Disable background texture for now, inconsistently loads
     --[[
     f.title.bg = f.title:CreateTexture("$parent_titleBG", "BACKGROUND")
-    f.title.bg:SetTexture(addon.GetTexture("rxp-banner"))
+    f.title.bg:SetTexture(addon.GetV1Texture("rxp-banner"))
     f.title.bg:SetPoint("TOPLEFT", 4, -2)
     f.title.bg:SetPoint("BOTTOMRIGHT", -2, 4)
     ]]
@@ -1061,7 +1054,7 @@ function addon.tracker:CreateLevelSplits()
     f.title.cog:SetWidth(18)
     f.title.cog:SetHeight(18)
     f.title.cog:SetPoint("LEFT", f.title, "LEFT", -9, 0)
-    f.title.cog:SetNormalTexture(addon.GetTexture("rxp_cog-32"))
+    f.title.cog:SetNormalTexture(addon.GetV1Texture("rxp_cog-32"))
     f.title.cog:SetHighlightTexture("Interface/MINIMAP/UI-Minimap-ZoomButton-Highlight", "ADD")
     f.title.cog:Show()
 

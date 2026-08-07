@@ -3,14 +3,7 @@ local _, addon = ...
 if addon.gameVersion > 50000 then return end
 
 local GameTooltip = _G.GameTooltip
-local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0", true)
-local EasyMenu = function(...)
-    if _G.EasyMenu then
-        _G.EasyMenu(...)
-    else
-        LibDD:EasyMenu(...)
-    end
-end
+local EasyMenu = function(...) addon:ShowMenu(...) end
 
 local fmt, sgmatch, strsplittable, strjoin = string.format, string.gmatch, strsplittable, string.join
 local tonumber = tonumber
@@ -281,7 +274,7 @@ function addon.talents:UpdateTalentsButton()
     -- Build a button to match Wrath dual-spec talent tabs
     if not button then
         button = CreateFrame("Button", "$parentRXPTalents", iconReference.frame)
-        button:SetNormalTexture(addon.GetTexture("rxp_logo-64"))
+        button:SetNormalTexture(addon.GetV1Texture("rxp_logo-64"))
 
         button.bg = button:CreateTexture("$parentBG", "BACKGROUND")
         button.bg:SetSize(64, 64)

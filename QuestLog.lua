@@ -30,7 +30,7 @@ function addon.UpdateQuestButton(index)
         button:SetWidth(32)
         button:SetHeight(32)
         button:SetPoint("TOPRIGHT", anchor, "TOPRIGHT", 0, 0)
-        button:SetNormalTexture(addon.GetTexture("rxp_logo-64"))
+        button:SetNormalTexture(addon.GetV1Texture("rxp_logo-64"))
         addon.questLogButton = button
 
         local function tpOnEnter(self)
@@ -142,7 +142,7 @@ function addon.UpdateQuestButton(index)
             showButton = true
         else
             -- Inefficient, but set back to default texture in case of orphans
-            button:SetNormalTexture(addon.GetTexture("rxp_logo-64"))
+            button:SetNormalTexture(addon.GetV1Texture("rxp_logo-64"))
         end
         button.tooltip = tooltip
     end
@@ -802,7 +802,7 @@ local function CreateCleanupButton()
             AnchorCleanupButton()
             if cleanupBtn then
                 local enabled = addon.currentGuide and not addon.currentGuide.empty
-                local grp = addon.currentGuide.group
+                local grp = addon.currentGuide and addon.currentGuide.group
                 local isPrepGuide = grp and strlower(grp):find("prep")
                 cleanupBtn:SetShown(not addon.isHidden and not addon.player.hardcore and enabled and not isPrepGuide)
             end
