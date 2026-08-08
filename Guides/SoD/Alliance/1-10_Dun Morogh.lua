@@ -1460,7 +1460,7 @@ step << Priest !NightElf
     #completewith end
     .train 402852 >> |cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
     >>|cRXP_WARN_You must have 2|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs by typing /pray next to an Altar of Light at the Stormwind Cathedral, Loch Modan or the Mystic Ward in Ironforge|r
-    >>|cRXP_WARN_The |T136057:0|t|cRXP_PICK_Meidtation on Elune|r buff has to come from another priest player, by using the /pray emote on you while you are kneeling down with /kneel, if you see another priest with another meditation buff, ask them for it|r
+    >>|cRXP_WARN_The |T136057:0|t|cRXP_PICK_Meditation on Elune|r buff has to come from another priest player, by using the /pray emote on you while you are kneeling down with /kneel, if you see another priest with another meditation buff, ask them for it|r
     --.use 205947
     .target Altar of Light
     .itemcount 205947,1
@@ -1515,7 +1515,7 @@ step
 step
     .goto Dun Morogh,46.825,52.361
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragnar Thunderbrew|r outside
-    .turnin 384 >> Turn in Beer Blasted Boar Ribs
+    .turnin 384 >> Turn in Beer Basted Boar Ribs
     .target Ragnar Thunderbrew
     .isQuestComplete 384
 step << Paladin/Warrior/Rogue

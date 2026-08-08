@@ -77,7 +77,7 @@ step << Warrior
     .goto Elwynn Forest,47.5,41.6
     .vendor >>vendor trash
 step
-    >> Speak with |cRXP_FRIENDLY_Marshal McBridge|r inside the Abbey
+    >> Speak with |cRXP_FRIENDLY_Marshal McBride|r inside the Abbey
     .target Marshal McBride
     .goto Elwynn Forest,48.923,41.606
     .turnin 783 >> Turn in A Threat Within
@@ -138,7 +138,7 @@ step << !Priest !Mage !Warlock/wotlk
     .vendor >>Vendor trash
 step
     .goto Elwynn Forest,48.923,41.606
-    >> Speak with |cRXP_FRIENDLY_Marshal McBridge|r inside the Abbey
+    >> Speak with |cRXP_FRIENDLY_Marshal McBride|r inside the Abbey
     .target Marshal McBride
     .turnin 7 >> Turn in Kobold Camp Cleanup
     .accept 3100 >> Accept Simple Letter << Warrior
@@ -175,7 +175,7 @@ step
     .vendor >> Vendor trash
 step
     #requires xp3
-    >> Speak with |cRXP_FRIENDLY_Marshal McBridge|r inside the Abbey
+    >> Speak with |cRXP_FRIENDLY_Marshal McBride|r inside the Abbey
     .target Marshal McBride
     .goto Elwynn Forest,48.923,41.606
     .turnin 15 >> Turn in Investigate Echo Ridge
@@ -311,7 +311,7 @@ step
     .turnin 6,2 >> Turn in Bounty on Garrick Padfoot << Warrior/Rogue/Paladin
     .turnin 6 >> Turn in Bounty on Garrick Padfoot << !Warrior !Rogue !Paladin
 step
-    >> Speak with |cRXP_FRIENDLY_Marshal McBridge|r inside the Abbey
+    >> Speak with |cRXP_FRIENDLY_Marshal McBride|r inside the Abbey
     .target Marshal McBride
     .goto Elwynn Forest,48.923,41.606
     .turnin 21,2 >> Turn in Skirmish at Echo Ridge << Warrior/Paladin

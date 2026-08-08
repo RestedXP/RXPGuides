@@ -336,7 +336,7 @@ step
 step
     #completewith next
     .goto The Barrens,43.8,12.2
-    >> If you still didn't get the Heavy Spiked Mace consider try to buy it from BVrang Wildgore << Druid/Warrior
+    >> If you still didn't get the Heavy Spiked Mace consider try to buy it from Vrang Wildgore << Druid/Warrior
     .vendor >> Go vendor at this guy if needed
 step
     #sticky
@@ -823,7 +823,7 @@ step
 step
     #sticky
     #label Lizard
-    >>Kill Stormstouts. Loot them for a Horn
+    >>Kill Stormsnouts. Loot them for a Horn
     .complete 821,3 --Thunder Lizard Horn (1)
 step
 	#sticky

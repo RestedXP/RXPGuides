@@ -2378,7 +2378,7 @@ step
     .target Jorn Skyseer
 step
 	#completewith LakotaMani
-    >>Kill |cRXP_ENEMY_Stormstouts|r. Loot them for a |cRXP_LOOT_Horn|r
+    >>Kill |cRXP_ENEMY_Stormsnout|r. Loot them for a |cRXP_LOOT_Horn|r
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
 step
@@ -2414,7 +2414,7 @@ step
     .unitscan Lakota'mani
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Stormstouts|r. Loot them for a |cRXP_LOOT_Horn|r
+    >>Kill |cRXP_ENEMY_Stormsnout|r. Loot them for a |cRXP_LOOT_Horn|r
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
 step
@@ -2510,7 +2510,7 @@ step
     .goto The Barrens,49.54,55.08,50,0
     .goto The Barrens,49.03,56.24,50,0
     .goto The Barrens,49.72,56.13,50,0
-    >>Kill |cRXP_ENEMY_Stormstouts|r. Loot them for a |cRXP_LOOT_Horn|r
+    >>Kill |cRXP_ENEMY_Stormsnout|r. Loot them for a |cRXP_LOOT_Horn|r
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
 step

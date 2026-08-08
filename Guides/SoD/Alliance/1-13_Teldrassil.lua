@@ -197,7 +197,7 @@ step << Hunter/Rogue/Priest
     .train 402862 >> Use the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r] to train |T237545:0|t[Penance] << Priest
     .train 402849 >> Use the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise|r] to train |T136149:0|t[Shadow Word: Death] << Priest
     .train 410121 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r] to train |T236176:0|t[Chimera Shot] << Hunter
-    .train 415423 >> Use the |T133739:0|t[|cRXP_FRIENDLY_Treatise on the Heart of the Viper|r] to train |T132160:0|t[Heart of the Viper] << Hunter
+    .train 415423 >> Use the |T133739:0|t[|cRXP_FRIENDLY_Treatise on Aspect of the Viper|r] to train |T132160:0|t[Heart of the Viper] << Hunter
     .train 410122 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Lone Wolf|r] to train |T132266:0|t[Lone Wolf] << Hunter
     .train 416086 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Close Combat|r] to train |T132394:0|t[Melee Specialist] << Hunter
     .train 440563 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Guerrilla|r] to train |T132171:0|t[Hit and Run] << Hunter
@@ -251,7 +251,7 @@ step << Priest
     .equip 10 >> Equip the |T132961:0|t[Tattered Cloth Gloves]
     .equip 6 >> Equip the |T132495:0|t[Thin Cloth Belt]
     .equip 8 >> Equip the |T132543:0|t[Thin Cloth Shoes]
-    .equip 9 >> Equip the |T132611:0|t[Steamleaf Bracers]
+    .equip 9 >> Equip the |T132611:0|t[Stemleaf Bracers]
     .engrave 10 >> Engrave |T136149:0|t[Shadow Word: Death] on your gloves
     .engrave 6 >> Engrave |T136181:0|t[Mind Spike] on your bracers
     .engrave 8 >> Engrave |T237514:0|t[Void Plague] on your feet
@@ -259,7 +259,7 @@ step << Priest
     .use 711 --Tattered Cloth Gloves
     .use 3599 --Thin Cloth Belt
     .use 2117 --Thin Cloth Shoes
-    .use 11187 --Steamleaf Bracers
+    .use 11187 --Stemleaf Bracers
 step << NightElf Priest
     #season 2
     .goto Teldrassil,59.6,40.8

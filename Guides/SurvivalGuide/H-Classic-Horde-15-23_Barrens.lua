@@ -1708,7 +1708,7 @@ step
     .goto The Barrens,49.05,11.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wenikee|r
     .turnin 3922 >>Turn in Nugget Slugs
-    .accept 3923 >>Accept Rilly Greasygob
+    .accept 3923 >>Accept Rilli Greasygob
     .target Wenikee Boltbucket
 step
     #loop
@@ -2014,7 +2014,7 @@ step
 step
     #label LizardHorn
     #completewith SetCampTaurajoHS
-    >>Kill |cRXP_ENEMY_Stormstouts|r. Loot them for a |cRXP_LOOT_Horn|r. This does not have to be completed now
+    >>Kill |cRXP_ENEMY_Stormsnout|r. Loot them for a |cRXP_LOOT_Horn|r. This does not have to be completed now
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
 step
@@ -2476,7 +2476,7 @@ step
     .target Jorn Skyseer
 step
 	#completewith LakotaMani
-    >>Kill |cRXP_ENEMY_Stormstouts|r. Loot them for a |cRXP_LOOT_Horn|r
+    >>Kill |cRXP_ENEMY_Stormsnout|r. Loot them for a |cRXP_LOOT_Horn|r
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
 step
@@ -2513,7 +2513,7 @@ step
     .unitscan Lakota'mani
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Stormstouts|r. Loot them for a |cRXP_LOOT_Horn|r
+    >>Kill |cRXP_ENEMY_Stormsnout|r. Loot them for a |cRXP_LOOT_Horn|r
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
 step
@@ -2558,7 +2558,7 @@ step
     .goto The Barrens,49.54,55.08,50,0
     .goto The Barrens,49.03,56.24,50,0
     .goto The Barrens,49.72,56.13,50,0
-    >>Kill |cRXP_ENEMY_Stormstouts|r. Loot them for a |cRXP_LOOT_Horn|r
+    >>Kill |cRXP_ENEMY_Stormsnout|r. Loot them for a |cRXP_LOOT_Horn|r
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
 step

@@ -3520,7 +3520,7 @@ step << Hunter
     .goto Orgrimmar,68.02,38.69,30 >> Travel to the Valley of Honor
 step << Hunter
     .goto Orgrimmar,66.06,18.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormakl|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormak|r
     .train 14281 >> Train your class spells
     .target Ormak Grimshot
     .xp <12,1

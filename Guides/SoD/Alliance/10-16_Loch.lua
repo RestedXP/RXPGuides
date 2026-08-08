@@ -526,7 +526,7 @@ step << Priest Dwarf
     #completewith end
     .train 402852 >> |cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
     >>|cRXP_WARN_You must have 2|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs by typing /pray next to an Altar of Light at the Stormwind Cathedral, Loch Modan or the Mystic Ward in Ironforge|r
-    >>|cRXP_WARN_The |T136057:0|t|cRXP_PICK_Meidtation on Elune|r buff has to come from another priest player, by using the /pray emote on you while you are kneeling down with /kneel, if you see another priest with another meditation buff, ask them for it|r
+    >>|cRXP_WARN_The |T136057:0|t|cRXP_PICK_Meditation on Elune|r buff has to come from another priest player, by using the /pray emote on you while you are kneeling down with /kneel, if you see another priest with another meditation buff, ask them for it|r
     --.use 205947
     .target Altar of Light
     .itemcount 205947,1
@@ -575,8 +575,8 @@ step << Dwarf/Gnome
 step << !Human Rogue
     .goto Ironforge,62.375,88.679
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
-    >>|cRXP_BUY_Buy a|r |135640:0|t[Jambyia] |cRXP_BUY_from her|r
-    .collect 2207,1 --Jambyia
+    >>|cRXP_BUY_Buy a|r |135640:0|t[Jambiya] |cRXP_BUY_from her|r
+    .collect 2207,1 --Jambiya
     .target Brenwyn Wintersteel
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.0
 step << Dwarf/Gnome
@@ -963,7 +963,7 @@ step << Warlock !Human
     .isOnQuest 1688
 step << Warlock !Human
     .goto Elwynn Forest,42.105,65.927
-    .zone Elwynn Forest >> Heat to Elwynn Forest
+    .zone Elwynn Forest >> Travel to Elwynn Forest
     .isOnQuest 1688
 step << Warlock !Human
     #label SChoker

@@ -3594,7 +3594,7 @@ step << Hunter
     #completewith next
     .goto Hillsbrad Foothills,62.31,19.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Theodore|r
-    .stable >> Stable your pet. You will tame a |cRXP_ENEMY_Gray Bear|r and a |cRXP_ENEMY_Forest Most Creeper|r shortly
+    .stable >> Stable your pet. You will tame a |cRXP_ENEMY_Gray Bear|r and a |cRXP_ENEMY_Forest Moss Creeper|r shortly
     .target Theodore Mont Claire
 step << Hunter
     #loop
@@ -3603,14 +3603,14 @@ step << Hunter
     .goto Hillsbrad Foothills,58.88,32.28,60,0
     .goto Hillsbrad Foothills,61.77,36.16,60,0
     .train 16829 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Gray Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 3)]
-    .train 17263 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Forest Most Creeper|r. Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 3)]
+    .train 17263 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Forest Moss Creeper|r. Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 3)]
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Click here for more info about pet training|r
     .mob Gray Bear
-    .mob Forest Most Creeper
+    .mob Forest Moss Creeper
 step << Hunter
     .goto Hillsbrad Foothills,62.31,19.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Theodore|r
-    .stable >> Abandon the |cRXP_ENEMY_Gray Bear|r or |cRXP_ENEMY_Forest Most Creeper|r and retrieve your regular pet
+    .stable >> Abandon the |cRXP_ENEMY_Gray Bear|r or |cRXP_ENEMY_Forest Moss Creeper|r and retrieve your regular pet
     .target Theodore Mont Claire
 step << Rogue
     #completewith Durnholde1

@@ -1229,7 +1229,7 @@ step << Warrior wotlk
 step
     #completewith next
     .goto Darnassus,30.41,41.40
-    .goto Teldrassil,56.3,92.3,175 >> Go to Ruth'theran Village by taking the purple portal next to the bank
+    .goto Teldrassil,56.3,92.3,175 >> Go to Rut'theran Village by taking the purple portal next to the bank
 step
     .goto Teldrassil,56.3,92.3
 >>Talk to |cRXP_FRIENDLY_Nessa Shadowsong|r

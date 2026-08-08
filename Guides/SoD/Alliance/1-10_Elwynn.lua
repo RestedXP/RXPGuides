@@ -374,11 +374,11 @@ step << !Priest !Paladin
 	.mob Timber Wolf
 step << Paladin
     .goto Elwynn Forest,47.70,41.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Godrick Rothgar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Rothgar|r
     >>|cRXP_WARN_Leveling with a shield and one-hander early is much faster due to the power of the shield runes early on|r
     >>|cRXP_BUY_Vendor trash and buy the|r |T134955:0|t[Small Shield]
     .collect 17184,1 --Small Shield (1)
-    .target Godrick Rothgar
+    .target Godric Rothgar
 step << Paladin
     .goto Elwynn Forest,47.25,41.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Janos Hammerknuckle|r

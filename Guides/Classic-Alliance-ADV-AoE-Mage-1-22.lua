@@ -175,7 +175,7 @@ step
     .target Brother Danil
 step
     .goto Elwynn Forest,48.923,41.606
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_McBridge|r inside
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_McBride|r inside
     .turnin 15 >> Turn in Investigate Echo Ridge
     .accept 21 >> Accept Skirmish at Echo Ridge
     .target Marshal McBride
@@ -4993,7 +4993,7 @@ step
 step
     #completewith SeaTurtle1
     .goto Darkshore,43.67,27.81,50,0
-    >>AoE |cRXP_ENEMY_Foreststrider Fledgelings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
+    >>AoE |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
     .collect 5469,5,2178,1 --Strider Meat (5)
     .mob Foreststrider Fledgeling
 step
@@ -5022,7 +5022,7 @@ step
     .accept 4725 >> Accept Beached Sea Turtle
 step
     #completewith River
-    >>Kill |cRXP_ENEMY_Foreststrider Fledgelings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
+    >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
     .collect 5469,5,2178,1 --Strider Meat (5)
     .mob Foreststrider Fledgeling
 step
@@ -6089,7 +6089,7 @@ step
     .goto Westfall,59.72,34.62,80,0
     .goto Westfall,60.24,47.40
     >>AoE |cRXP_ENEMY_Goretusks|r and |cRXP_ENEMY_Young Goretusks|r. Loot them for their |cRXP_LOOT_Goretusk Livers|r and |cRXP_LOOT_Goretusk Snouts|r
-    >>AoE |cRXP_ENEMY_Fleshrippers|r |cRXP_ENEMY_Young Fleshrippers|r. Loot them for their |cRXP_LOOT_Stringy Vulture Meat|r
+    >>AoE |cRXP_ENEMY_Fleshrippers|r and |cRXP_ENEMY_Young Fleshrippers|r. Loot them for their |cRXP_LOOT_Stringy Vulture Meat|r
     .collect 723,8,22,1 --Goretusk Liver (8)
     .mob +Goretusk
     .mob +Young Goretusk
@@ -7928,7 +7928,7 @@ step
     .goto Elwynn Forest,41.71,65.55
     >>Talk to |cRXP_FRIENDLY_Argus|r
     .turnin 118 >>Turn in The Price of Shoes
-    .accept 119 >>Accept Return to Vener
+    .accept 119 >>Accept Return to Verner
     .target Smith Argus
 step
     #completewith next

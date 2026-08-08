@@ -3147,7 +3147,7 @@ step << Priest/Warlock
     .mob Scarlet Zealot
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Scarlet Fiars|r and |cRXP_ENEMY_Scarlet Zealots|r. Loot them for their |cRXP_LOOT_Scarlet Insignia Rings|r
+    >>Kill |cRXP_ENEMY_Scarlet Friars|r and |cRXP_ENEMY_Scarlet Zealots|r. Loot them for their |cRXP_LOOT_Scarlet Insignia Rings|r
     .complete 374,1 --Scarlet Insignia Ring (10)
     .isOnQuest 374
 step
@@ -3183,7 +3183,7 @@ step
     .goto Tirisfal Glades,76.12,57.22,40,0
     .goto Tirisfal Glades,77.16,56.75,40,0
     .goto Tirisfal Glades,79.82,56.40,40,0
-    >>Kill |cRXP_ENEMY_Scarlet Fiars|r and |cRXP_ENEMY_Scarlet Zealots|r. Loot them for their |cRXP_LOOT_Scarlet Insignia Rings|r
+    >>Kill |cRXP_ENEMY_Scarlet Friars|r and |cRXP_ENEMY_Scarlet Zealots|r. Loot them for their |cRXP_LOOT_Scarlet Insignia Rings|r
     .complete 374,1 --Scarlet Insignia Ring (10)
     .mob Scarlet Friar
     .mob Scarlet Zealot

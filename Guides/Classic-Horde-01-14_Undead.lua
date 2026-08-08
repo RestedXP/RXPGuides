@@ -1786,7 +1786,7 @@ step << Warrior
     .goto Tirisfal Glades,65.68,30.22,50,0
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
-    >>Kill |cRXP_ENEMY_Vile Vin Murlocs|r. Loot them for their |cRXP_LOOT_Scales|r and a |cRXP_LOOT_Severed Murloc Head|r
+    >>Kill |cRXP_ENEMY_Vile Fin Murlocs|r. Loot them for their |cRXP_LOOT_Scales|r and a |cRXP_LOOT_Severed Murloc Head|r
     .complete 368,1 --Vile Fin Scale (5)
     .collect 204477,1 --Severed Murloc Head (1)
     .mob Vile Fin Puddlejumper
@@ -1802,7 +1802,7 @@ step << Rogue
 step << Rogue
     #season 2
     #completewith RuneofPrecision
-    >>Cast |T133644:0|t[Pick Pocket] and kill |cRXP_ENEMY_Vile Vin Murlocs|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece|r]
+    >>Cast |T133644:0|t[Pick Pocket] and kill |cRXP_ENEMY_Vile Fin Murlocs|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece|r]
     .collect 208037,1 --Bottom-Right Map Piece (1)
     .train 400095,1
 step
@@ -1817,7 +1817,7 @@ step
     .goto Tirisfal Glades,65.68,30.22,50,0
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
-    >>Kill |cRXP_ENEMY_Vile Vin Murlocs|r. Loot them for their |cRXP_LOOT_Scales|r
+    >>Kill |cRXP_ENEMY_Vile Fin Murlocs|r. Loot them for their |cRXP_LOOT_Scales|r
     .complete 368,1 --Vile Fin Scale (5)
     .mob Vile Fin Puddlejumper
     .mob Vile Fin Minor Oracle
@@ -1864,7 +1864,7 @@ step << Rogue
     .goto Tirisfal Glades,65.68,30.22,50,0
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
-    >>Cast |T133644:0|t[Pick Pocket] and kill |cRXP_ENEMY_Vile Vin Murlocs|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece|r]
+    >>Cast |T133644:0|t[Pick Pocket] and kill |cRXP_ENEMY_Vile Fin Murlocs|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece|r]
     .collect 208037,1 --Bottom-Right Map Piece (1)
     .mob Vile Fin Puddlejumper
     .mob Vile Fin Minor Oracle
@@ -4113,7 +4113,7 @@ step << Undead Warrior
     .train 403475,1
 step << Undead Rogue
     #sticky
-    #completewith RotHideCluesTurnIn
+    #completewith Rot HideCluesTurnIn
     >>|cRXP_WARN_If you see|r |cRXP_FRIENDLY_Astor|r|cRXP_WARN_, talk to him and kill him. Loot him for the letter. He patrols the road between Brill and The Sepulcher|r
     .complete 1886,1 --Astor's Letter of Introduction (1)
     .unitscan Astor Hadren
@@ -4267,7 +4267,7 @@ step
     .goto Silverpine Forest,53.13,27.92,8,0
     .goto Silverpine Forest,52.94,27.88,8,0
     .goto Silverpine Forest,52.83,28.56
-    >>Enter the house and go to the second floor. Loot the |cRXP_PICK_Dusky Spellbooks|r on the ground
+    >>Enter the house and go to the second floor. Loot the |cRXP_PICK_Dusty Spellbooks|r on the ground
     .complete 422,1 --Remedy of Arugal (1)
 step
     #completewith next
@@ -4316,7 +4316,7 @@ step
 step
     #label Nightlash
     .goto Silverpine Forest,45.44,21.01
-    >>Kill |cRXP_ENEMY_Rothide Gnolls|r around The Dead Field until |cRXP_ENEMY_Nightlash|r spawns. Kill and loot her for her |cRXP_LOOT_Essence|r
+    >>Kill |cRXP_ENEMY_Rot Hide Gnolls|r around The Dead Field until |cRXP_ENEMY_Nightlash|r spawns. Kill and loot her for her |cRXP_LOOT_Essence|r
     >>|cRXP_WARN_They are immune to fear!|r << Priest/Warlock
     .complete 437,1 --Enter the Dead Fields (1)
     .complete 437,2 --Essence of Nightlash (1)
@@ -4576,7 +4576,7 @@ step
     .goto Silverpine Forest,42.76,40.90,8,0
     .goto Silverpine Forest,43.43,40.87,2 >> Enter the crypt
 step
-    #label RotHideCluesTurnIn
+    #label Rot HideCluesTurnIn
     .goto Silverpine Forest,43.43,40.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadrec|r in the crypt
     .turnin 439 >>Turn in Rot Hide Clues
@@ -5631,8 +5631,8 @@ step << Priest/Mage
 step << Priest
     .goto Tirisfal Glades,31.11,66.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duesten|r
-    .accept 77670 >> Accept Meditation on the Undeath
-    .turnin 77670 >> Turn in Meditation on the Undeath
+    .accept 77670 >> Accept Meditation on Undeath
+    .turnin 77670 >> Turn in Meditation on Undeath
     .target Dark Cleric Duesten
 step
     #optional
@@ -7563,7 +7563,7 @@ step << Warrior
     .goto Tirisfal Glades,65.68,30.22,50,0
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
-    >>Kill |cRXP_ENEMY_Vile Vin Murlocs|r. Loot them for their |cRXP_LOOT_Scales|r and a |cRXP_LOOT_Severed Murloc Head|r
+    >>Kill |cRXP_ENEMY_Vile Fin Murlocs|r. Loot them for their |cRXP_LOOT_Scales|r and a |cRXP_LOOT_Severed Murloc Head|r
     .complete 368,1 --Vile Fin Scale (5)
     .collect 204477,1 --Severed Murloc Head (1)
     .mob Vile Fin Puddlejumper
@@ -7579,7 +7579,7 @@ step << Rogue
 step << Rogue
     #season 2
     #completewith RuneofPrecision
-    >>Cast |T133644:0|t[Pick Pocket] and kill |cRXP_ENEMY_Vile Vin Murlocs|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece|r]
+    >>Cast |T133644:0|t[Pick Pocket] and kill |cRXP_ENEMY_Vile Fin Murlocs|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece|r]
     .collect 208037,1 --Bottom-Right Map Piece (1)
     .train 400095,1
 step
@@ -7594,7 +7594,7 @@ step
     .goto Tirisfal Glades,65.68,30.22,50,0
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
-    >>Kill |cRXP_ENEMY_Vile Vin Murlocs|r. Loot them for their |cRXP_LOOT_Scales|r
+    >>Kill |cRXP_ENEMY_Vile Fin Murlocs|r. Loot them for their |cRXP_LOOT_Scales|r
     .complete 368,1 --Vile Fin Scale (5)
     .mob Vile Fin Puddlejumper
     .mob Vile Fin Minor Oracle
@@ -7641,7 +7641,7 @@ step << Rogue
     .goto Tirisfal Glades,65.68,30.22,50,0
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
-    >>Cast |T133644:0|t[Pick Pocket] and kill |cRXP_ENEMY_Vile Vin Murlocs|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece|r]
+    >>Cast |T133644:0|t[Pick Pocket] and kill |cRXP_ENEMY_Vile Fin Murlocs|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece|r]
     .collect 208037,1 --Bottom-Right Map Piece (1)
     .mob Vile Fin Puddlejumper
     .mob Vile Fin Minor Oracle

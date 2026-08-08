@@ -359,29 +359,29 @@ step
     .goto Westfall,25.90,47.76
     >>|cRXP_WARN_Use |T134269:0|t[|cRXP_LOOT_Captain Sander's Treasure Map|r] to start the quest|r
     .use 1357
-    .accept 136 >> Accept Captain Sander's Treasure Map
+    .accept 136 >> Accept Captain Sander's Hidden Treasure
     .itemcount 1357,1 -- Captain Sanders' Treasure Map (1)
 step
     .goto Westfall,25.90,47.76
     >>Click the |cRXP_PICK_Captain's Footlocker|r
-    .turnin 136 >> Turn in Captain Sander's Treasure Map
+    .turnin 136 >> Turn in Captain Sander's Hidden Treasure
     .itemcount 1357,1 -- Captain Sanders' Treasure Map (1)
 step
     .goto Westfall,25.90,47.76
     >>Click the |cRXP_PICK_Captain's Footlocker|r
-    .accept 138 >> Accept Captain Sander's Treasure Map
+    .accept 138 >> Accept Captain Sander's Hidden Treasure
     .isQuestTurnedIn 136
 step
     .goto Westfall,40.51,47.80
     >>Click the |cRXP_PICK_Broken Barrel|r
-    .turnin 138 >> Turn in Captain Sander's Treasure Map
-    .accept 139 >> Accept Captain Sander's Treasure Map
+    .turnin 138 >> Turn in Captain Sander's Hidden Treasure
+    .accept 139 >> Accept Captain Sander's Hidden Treasure
     .isQuestTurnedIn 136
 step
     .goto Westfall,40.63,17.03
     >>Click the |cRXP_PICK_Old Jug|r
-    .turnin 139 >> Turn in Captain Sander's Treasure Map
-    .accept 140 >> Accept Captain Sander's Treasure Map
+    .turnin 139 >> Turn in Captain Sander's Hidden Treasure
+    .accept 140 >> Accept Captain Sander's Hidden Treasure
     .isQuestTurnedIn 138
 step
     #completewith next
@@ -390,7 +390,7 @@ step
 step
     .goto Westfall,25.97,16.90
     >>Click the |cRXP_PICK_Locked Chest|r
-    .turnin 140 >> Turn in Captain Sander's Treasure Map
+    .turnin 140 >> Turn in Captain Sander's Hidden Treasure
     .isOnQuest 140
 step
     .goto Westfall,56.33,47.52

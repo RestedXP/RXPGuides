@@ -174,7 +174,7 @@ step << Tauren Hunter
 step << Tauren Hunter
     #optional
     #completewith DisruptTheAttacks
-    +|cRXP_WARN_Equip th|re |T135613:0|t[Hunter's Boomstick]
+    +|cRXP_WARN_Equip the|r |T135613:0|t[Hunter's Boomstick]
     .use 2511
     .itemcount 2511,1
     .itemStat 18,QUALITY,<7
@@ -1046,7 +1046,7 @@ step << Undead Warrior
 step << Undead Warrior
     #optional
     #completewith BaronLongshore
-    +|cRXP_WARN_Equip th|re |T135353:0|t[Espadon] |cRXP_WARN_when you are level 16|r
+    +|cRXP_WARN_Equip the|r |T135353:0|t[Espadon] |cRXP_WARN_when you are level 16|r
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7

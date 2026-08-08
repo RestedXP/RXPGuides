@@ -874,7 +874,7 @@ step
     .unitscan Snagglespear
 step
     .goto Mulgore,47.63,61.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhwana|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhawna|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Shaman/Druid
     >>|cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_from her|r << Warrior
     .vendor >> Vendor trash
@@ -955,7 +955,7 @@ step << Shaman/Druid
 step << Warrior
     #optional
     #completewith Clawsx
-    +|cRXP_WARN_Equip th|re |T133053:0|t[Wooden Mallet]
+    +|cRXP_WARN_Equip the|r |T133053:0|t[Wooden Mallet]
     .use 2493
     .itemcount 2493,1
     .itemStat 16,QUALITY,<7
@@ -1120,7 +1120,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Hunter
     .goto Mulgore,45.86,57.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Loorat|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Moorat|r
     .collect 2516,1000,743,1 << Hunter --Light Shot (1000)
     .target Moorat Longstride
     .itemcount 2512,<800 << Hunter
@@ -1867,7 +1867,7 @@ step << Hunter
     .target Yaw Sharpmane
 step
     .goto Mulgore,47.63,61.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhwana|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhawna|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Shaman/Druid
     >>|cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_from her|r << Warrior
     .collect 1179,20,818,1 << Shaman/Druid --Ice Cold Milk (20)
@@ -3011,7 +3011,7 @@ step
     .train 410111 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Kill Command|r] to train |T236174:0|t[Kill Shot] << Hunter
     .train 410121 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r] to train |T236176:0|t[Chimera Shot] << Hunter
     .train 409580 >> Use the |T133739:0|t[|cRXP_FRIENDLY_Treatise on the Heart of the Lion|r] to train |T132185:0|t[Heart of the Lion] << Hunter
-    .train 415423 >> Use the |T133739:0|t[|cRXP_FRIENDLY_Treatise on the Heart of the Viper|r] to train |T132160:0|t[Heart of the Viper] << Hunter
+    .train 415423 >> Use the |T133739:0|t[|cRXP_FRIENDLY_Treatise on Aspect of the Viper|r] to train |T132160:0|t[Heart of the Viper] << Hunter
     .train 424718 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Stars|r] to train |T135730:0|t[Starsurge] << Druid
     .train 416044 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Sun|r] to train |T236216:0|t[Sunfire] << Druid
     .train 439770 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Falling Star|r] to train |T236168:0|t[Starfall] << Druid
@@ -3951,7 +3951,7 @@ step
     .unitscan Snagglespear
 step
     .goto Mulgore,47.63,61.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhwana|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhawna|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Shaman/Druid
     >>|cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_from her|r << Warrior
     .vendor >> Vendor trash
@@ -4223,7 +4223,7 @@ step << Hunter
 step << Hunter
     #xprate <2.1
     .goto Mulgore,45.86,57.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Loorat|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Moorat|r
     .collect 2516,1000,743,1 << Hunter --Light Shot (1000)
     .target Moorat Longstride
     .itemcount 2512,<800 << Hunter
@@ -5096,7 +5096,7 @@ step << Hunter
     .target Yaw Sharpmane
 step
     .goto Mulgore,47.63,61.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhwana|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhawna|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Shaman/Druid
     >>|cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_from her|r << Warrior
     .collect 1179,20,818,1 << Shaman/Druid --Ice Cold Milk (20)
@@ -5727,7 +5727,7 @@ step << Hunter
 step << Shaman
     #season 2
     #completewith next
-    >>Kill |cRXP_ENEMY_Windfury Sorceresses|r. Loot them for their |cRXP_LOOT_s|r
+    >>Kill |cRXP_ENEMY_Windfury Sorceresses|r. Loot them for their |cRXP_LOOT_Azure Feather|r
     >>Kill |cRXP_ENEMY_Windfury Matriarchs|r. Loot them for their |cRXP_LOOT_Bronze Feathers|r
     .complete 744,1 --Azure Feather (6)
     .mob +Windfury Sorceress

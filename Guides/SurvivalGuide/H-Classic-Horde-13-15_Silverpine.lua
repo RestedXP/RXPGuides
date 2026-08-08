@@ -160,7 +160,7 @@ step
     .goto Silverpine Forest,53.13,27.92,8,0
     .goto Silverpine Forest,52.94,27.88,8,0
     .goto Silverpine Forest,52.83,28.56
-    >>Enter the house and go to the second floor. Loot the |cRXP_PICK_Dusky Spellbooks|r on the ground
+    >>Enter the house and go to the second floor. Loot the |cRXP_PICK_Dusty Spellbooks|r on the ground
     .complete 422,1 --Remedy of Arugal (1)
 step
     #completewith next
@@ -209,7 +209,7 @@ step
 step
     #label Nightlash
     .goto Silverpine Forest,45.44,21.01
-    >>Kill |cRXP_ENEMY_Rothide Gnolls|r around The Dead Field until |cRXP_ENEMY_Nightlash|r spawns. Kill and loot her for her |cRXP_LOOT_Essence|r
+    >>Kill |cRXP_ENEMY_Rot Hide Gnolls|r around The Dead Field until |cRXP_ENEMY_Nightlash|r spawns. Kill and loot her for her |cRXP_LOOT_Essence|r
     >>|cRXP_WARN_They are immune to fear!|r << Priest/Warlock
     .complete 437,1 --Enter the Dead Fields (1)
     .complete 437,2 --Essence of Nightlash (1)

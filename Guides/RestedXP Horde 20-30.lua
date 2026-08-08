@@ -3065,7 +3065,7 @@ step
 step
 	#completewith next
     .goto Stonetalon Mountains,32.60,67.40,0
-     >> Kill Fire Elementals. Loot them for Increndrite
+     >> Kill Fire Elementals. Loot them for Incendrite
     .complete 6393,1
 step
     .goto Stonetalon Mountains,31.10,61.27
@@ -3099,7 +3099,7 @@ step
 step
 	#completewith next
     .goto Stonetalon Mountains,32.60,67.40,0
-     >> Kill Fire Elementals. Loot them for Increndrite
+     >> Kill Fire Elementals. Loot them for Incendrite
     .complete 6393,1
 step
 	#sticky
@@ -3109,7 +3109,7 @@ step
 	.complete 6381,1
 step
     .goto Stonetalon Mountains,32.60,67.40
-     >> Kill Fire Elementals. Loot them for Increndrite
+     >> Kill Fire Elementals. Loot them for Incendrite
     .complete 6393,1
 step
     #label Ripper

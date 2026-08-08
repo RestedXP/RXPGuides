@@ -1775,7 +1775,7 @@ step << Priest
     .goto Darkshore,38.7,68.0,0
     .goto Darkshore,38.7,66.3,0
     .goto Darkshore,38.7,64.5,0
-    >>Fisnish off killing |cRXP_ENEMY_Rabid Thistle Bears|r
+    >>Finish off killing |cRXP_ENEMY_Rabid Thistle Bears|r
     >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
@@ -3021,7 +3021,7 @@ step << Priest
     .goto Ashenvale,33.01,21.41,50,0
     .goto Ashenvale,29.53,24.33,40,0
     .goto Ashenvale,31.89,22.53
-    >>Fisnish off killing |cRXP_ENEMY_Forsaken Herbalists|r and |cRXP_ENEMY_Forsaken Seekers|r
+    >>Finish off killing |cRXP_ENEMY_Forsaken Herbalists|r and |cRXP_ENEMY_Forsaken Seekers|r
     .complete 78192,1 --Forsaken Herbalist (7)
     .complete 78192,2 --Forsaken Seeker (9)
     .mob Forsaken Herbalist
@@ -3321,7 +3321,7 @@ step << Druid
     .turnin 6001 >> Turn in Body and Heart
     .accept 26 >> Accept A Lesson to Learn
     .trainer >> Train your class spells
-    >>You'll soon get a lot of powerful cat runes making cat-feral the faster levling approach |cRXP_WARN_Respec your talents from Balance to Feral|r if u want to. If you do get the movement speed talent for catform asap, it's going to save you a lot of running time.
+    >>You'll soon get a lot of powerful cat runes making cat-feral the faster leveling approach |cRXP_WARN_Respec your talents from Balance to Feral|r if u want to. If you do get the movement speed talent for catform asap, it's going to save you a lot of running time.
     .target Mathrengyl Bearwalker
     .isQuestComplete 6001
 step << Druid

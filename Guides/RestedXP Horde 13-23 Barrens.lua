@@ -1064,7 +1064,7 @@ step
 step
     #sticky
     #label Lizard
-    >>Kill Stormstouts. Loot them for one of their horns
+    >>Kill Stormsnouts. Loot them for one of their horns
     .complete 821,3 --Thunder Lizard Horn (1)
 step
     #sticky
