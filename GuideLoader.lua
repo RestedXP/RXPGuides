@@ -699,7 +699,7 @@ function addon.LoadEmbeddedGuides(maxIterations)
     end
 
     if addon.addonLoaded and loadedGuides == nGuides then
-        embeddedGuides = {}
+        table.wipe(embeddedGuides)
     end
 
     --[[if addon.addonLoaded then
