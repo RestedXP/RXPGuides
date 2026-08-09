@@ -350,7 +350,8 @@ end
 function addon.RegisterGuide(groupOrContent, text, defaultFor)
     if not groupOrContent then
         return error(L'Error: Guide has no contents')
-    elseif addon.addonLoaded then
+    elseif addon.addonLoaded or
+      (addon.addonLoaded == false and (addon.settings.profile.preLoadData or not addon.player.hardcore)) then
         local importedGuide, errorMsg = addon.ParseGuide(groupOrContent, text,
                                                         defaultFor)
 

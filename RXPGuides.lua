@@ -1354,6 +1354,7 @@ function addon:OnInitialize()
     else
         addon.LoadEmbeddedGuides()
     end
+    addon.addonLoaded = false
 end
 
 function addon:OnEnable()
