@@ -190,6 +190,16 @@ events.daily = events.accept
 events.dailyturnin = events.turnin
 events.acceptmultiple = events.accept
 events.turninmultiple = events.turnin
+local dualSpecEvents = {"PLAYER_ENTERING_WORLD"}
+if C_EventUtils then
+    if C_EventUtils.IsEventValid("PLAYER_TALENT_UPDATE") then
+        tinsert(dualSpecEvents, "PLAYER_TALENT_UPDATE")
+    end
+    if C_EventUtils.IsEventValid("ACTIVE_TALENT_GROUP_CHANGED") then
+        tinsert(dualSpecEvents, "ACTIVE_TALENT_GROUP_CHANGED")
+    end
+end
+events.dualspec = dualSpecEvents
 
 local function GetIcon(path,index,size)
     local coords = _G.GetPOITextureCoords or C_Minimap.GetPOITextureCoords
@@ -8402,5 +8412,37 @@ function addon.functions.totalbagslots(self,text,arg1)
     if total < element.maxslots == element.operator then
         step.completed = true
         addon.updateSteps = true
+    end
+end
+
+function addon.functions.dualspec(self, text)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        element.icon = addon.icons.trainer
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.text = L("Learn dual spec")
+        end
+        return element
+    end
+
+    local element = self.element
+    local step = element.step
+    if element.completed or not step.active then return end
+
+    addon:ScheduleTask(element.frame or self)
+
+    if addon.isHidden then return end
+
+    local groups
+    if GetNumTalentGroups then
+        groups = GetNumTalentGroups()
+    elseif GetNumSpecGroups then
+        groups = GetNumSpecGroups()
+    end
+
+    if (groups or 1) > 1 then
+        addon.SetElementComplete(self, true)
     end
 end
