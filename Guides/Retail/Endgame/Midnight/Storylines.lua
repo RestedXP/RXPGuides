@@ -342,20 +342,23 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grand Magister Rommath|r.
     .accept 96444 >>Accept Seeking Knowledge Week 5 of 5: Off-World Magic
     .target Magister Rommath
--- step
---     #arrowtext Click on the\n|cRXP_PICK_Portal to Voidstorm|r
---     .goto 2393,35.27,66.20
---     .zone 2405 >>Click on the |cRXP_PICK_Portal to Voidstorm|r.
--- step
---     .zoneskip 2600
---     #arrowtext Click on the\n|cRXP_PICK_Rift|r
---     .goto 2405,51.43,71.30
---     .zone 2599 >>Click on the |cRXP_PICK_Rift|r.
--- step
---     .zoneskip 2600
---     #arrowtext Click on the\n|cRXP_PICK_Portal|r
---     .goto 2599,49.57,97.00
---     .zone 2618 >>Click on the |cRXP_PICK_Portal|r.
+step
+    .isQuestAvailable 96708,96051
+    +You have to unlock Naigtal or Val
+step
+   #arrowtext Click on the\n|cRXP_PICK_Portal to Voidstorm|r
+   .goto 2393,35.27,66.20
+   .zone 2405 >>Click on the |cRXP_PICK_Portal to Voidstorm|r.
+step
+   .zoneskip 2600
+   #arrowtext Click on the\n|cRXP_PICK_Rift|r
+   .goto 2405,51.43,71.30
+   .zone 2599 >>Click on the |cRXP_PICK_Rift|r.
+step
+   .zoneskip 2600
+   #arrowtext Click on the\n|cRXP_PICK_Portal|r
+   .goto 2599,49.57,97.00
+   .zone 2618 >>Click on the |cRXP_PICK_Portal|r.
 step
     .zoneskip 2600
     #arrowtext Kill |cRXP_ENEMY_Imperator Pertinax|r\nLoot for |T7554216:0|t[|cRXP_LOOT_Singularian Cryocore|r]
