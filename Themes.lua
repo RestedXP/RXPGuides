@@ -335,6 +335,22 @@ addon.v2.themes['RXP Blue V2'] = {
         texCoords = {256 / 512, 512 / 512, 0, 160 / 512}
     },
 
+    auctionHouse = {
+        columnTexture = "Interface\\FriendsFrame\\WhoFrame-ColumnTabs",
+        kindHeaderTexture = "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-Top",
+        rowTexture = "Interface\\AuctionFrame\\UI-AuctionItemNameFrame",
+        rowHighlightTexture = "Interface\\HelpFrame\\HelpFrameButton-Highlight",
+        itemIconTexture = "Interface\\Buttons\\UI-Quickslot2",
+        itemIconHighlightTexture = "Interface\\Buttons\\ButtonHilight-Square",
+        buttonDividerTexture = "Interface\\FrameGeneral\\UI-Frame",
+        upgradeRatioColor = "|cffffff00",
+        upgradeEPColor = "|cffff00ff",
+        upgradeIcon = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-reward-upgrade",
+        valueIcon = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-reward-gold",
+        legacyUpgradeIcon = "Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64",
+        legacyValueIcon = "Interface/GossipFrame/VendorGossipIcon.blp"
+    },
+
     backgroundColors = {
         common = {26 / 255, 28 / 255, 48 / 255, 0.95}, -- #1A1C30F2
         guideName = {26 / 255, 28 / 255, 48 / 255, 1}, -- #1A1C30FF
@@ -429,4 +445,10 @@ function addon.v2:GetTheme()
     self.activeTheme = addon:UsesDefaultTheme() and GetDefaultTheme() or self.themes[name] or GetDefaultTheme()
 
     return self.activeTheme
+end
+
+function addon.v2:GetAuctionHouseTheme()
+    local theme = self:GetTheme()
+
+    return theme.auctionHouse or self.themes['RXP Blue V2'].auctionHouse
 end
