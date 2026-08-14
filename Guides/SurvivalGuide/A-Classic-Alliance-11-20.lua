@@ -1882,13 +1882,13 @@ step
     >>This will start an escort
     .accept 731,1 >> Accept The Absent Minded Prospector
     >>|cRXP_WARN_This quest is VERY difficult. Skip this step if you're unable to find a group or solo it|r
-    .link https://youtu.be/3d-htESNztE >> |cRXP_WARN_Click here for a video guide|r
+    .link https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_Click here for a video guide|r
     .target Prospector Remtravel
 step
     #requires prospector
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Prospector Remtravel|r through the Excavation|r
     >>|cRXP_WARN_This quest is VERY difficult. Skip this step if you're unable to find a group or solo it|r
-    .link https://youtu.be/3d-htESNztE >> |cRXP_WARN_Click here for a video guide|r
+    .link https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_Click here for a video guide|r
     .complete 731,1
     .isOnQuest 731
 step

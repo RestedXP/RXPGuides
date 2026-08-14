@@ -2844,7 +2844,7 @@ step
     >>|cRXP_WARN_This quest is VERY difficult. Skip this step if you fail it|r << !Warrior
     >>|cRXP_WARN_You will most likely not be able to solo this quest!|r I'd recommend not even attempting it unless you can find another player to group with << Warrior
     >>Skip this step if you fail or there's no one to group with << Warrior
-    .link https://youtu.be/3d-htESNztE >> |cRXP_WARN_Click here for a video guide|r << Hunter
+    .link https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_Click here for a video guide|r << Hunter
     .link https://youtu.be/md926sh3L6U >> |cRXP_WARN_Click here for a video walkthrough|r << !Hunter
     .target Prospector Remtravel
 step
@@ -2852,7 +2852,7 @@ step
     #season 2
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Prospector Remtravel|r through the Excavation|r
     >>|cRXP_WARN_This quest is VERY difficult. Skip this step if you fail it|r
-    .link https://youtu.be/3d-htESNztE >> |cRXP_WARN_Click here for a video guide|r << Hunter
+    .link https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_Click here for a video guide|r << Hunter
     .complete 731,1
     .isOnQuest 731
 step << Druid/Hunter/Warrior
