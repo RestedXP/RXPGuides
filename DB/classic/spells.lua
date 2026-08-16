@@ -567,32 +567,31 @@ s["HUNTER"] = {
         1978 -- serpent sting
     },
     [6] = {
-        3044 -- arcane shot
+        3044, -- arcane shot
+        1130 -- hunter's mark
     },
     [8] = {
         5116, -- concussive shot
         14260, -- raptor strike r2
-        1130, -- hunter's mark
-        13163, -- aspect of the monkey
-        3127 -- parry
+        13163 -- aspect of the monkey
     },
     [10] = {
         13165, -- aspect of the hawk
         13549, -- serpent string r2
+        3127, -- parry
         4187, -- great stamina
         24545, -- natural armor
         1494 -- track beasts
     },
     [12] = {
-        136, -- mend pet
         2974, -- wing clip
+        136, -- mend pet
         4188, -- great stamina r2
         24549 -- natural armor r2
     },
     [14] = {
         14281, -- arcane shot 2
-        6197, -- eagle eye
-        1513 -- scare beast
+        6197 -- eagle eye
     },
     [16] = {
         13795, -- immolation trap
@@ -606,19 +605,19 @@ s["HUNTER"] = {
     },
     [20] = {
         781, -- disengage r1
+        2643, -- multishot
+        14282, -- arcane shot r3
+        1499, -- freezing trap r1
         4187, -- great stamina r3
         24550, -- natural armor r3
         24494, -- nature res
         24490, -- shadow res
+        24475, -- frost res
         24440 -- fire res
     },
     [22] = {
-        2643, -- multishot
-        14282, -- arcane shot r3
-        1499, -- freezing trap r1
         14323, -- hunters mark r2
         24519, -- arcane res r1
-        24475, -- frost res
         19883, -- track humanoids
         1002 -- eyes of the beast
     },
@@ -627,19 +626,19 @@ s["HUNTER"] = {
         24551 -- natural armor r4
     },
     [26] = {
-        3045, -- rapid fire
         13551, -- serpent sting r4
-        14302 -- immolation trap r2
+        14302, -- immolation trap r2
+        3045 -- rapid fire
     },
     [28] = {
         14319, -- aspect of the hawk r3
         13809, -- frost trap
         3661, -- mend pet r3
         5384, -- feign death
+        14283, -- arcane shot r4
         14924 -- growl r4
     },
     [30] = {
-        14924, -- Growl r4
         4191, -- great stamina r5
         24552 -- natural armor r5
     },
@@ -647,15 +646,16 @@ s["HUNTER"] = {
         14283 -- arcane shot r4
     },
     [34] = {
-        13552 -- serpent sting r5
+        13552, -- serpent sting r5
+        14272 -- disengage r2
     },
     [36] = {
+        14303, -- immolation trap r3
         3034, -- viper sting
         3662, -- mend pet r4
         14284, -- arcane shot r5
         4192, -- great stamina r6
-        24553, -- natural armor r6
-        14303 -- immolation trap r3
+        24553 -- natural armor r6
     },
     [38] = {
         14320 -- aspect of the hawk r4
@@ -663,6 +663,7 @@ s["HUNTER"] = {
     [40] = {
         -- 14310, -- freezing trap r2
         14324, -- hunter's mark r3
+        8737, --Mail armor
         14925 -- growl r5
     },
     [42] = {
@@ -671,12 +672,12 @@ s["HUNTER"] = {
         24561 -- natural armor r7
     },
     [44] = {
-        14304, -- immolation trap r4
-        13542, -- mend pet r5
-        14285 -- arcaneshot r6
+        14304 -- immolation trap r4
     },
     [48] = {
         14321, -- aspect of the hawk r5
+        13542, -- mend pet r5
+        14285, -- arcaneshot r6
         4194, -- great stamina r8
         24555 -- natural armor r8
     },
@@ -691,6 +692,10 @@ s["HUNTER"] = {
         24515 -- sr r3
     },
     [52] = {
+        20900, --Aimed Shot r2
+        20901, --Aimed Shot r3
+        20902, --Aimed Shot r4
+        20903, --Aimed Shot r5
         13543 -- mend pet r6
     },
     [54] = {
