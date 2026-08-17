@@ -9,6 +9,7 @@ RXPGuides.RegisterGuide([[
 #name 20-23 Stonetalon / The Barrens
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #next 23-27 Hillsbrad / Ashenvale
 #xprate <1.5
 
@@ -585,7 +586,7 @@ step
     .complete 848,1 --Collect Fungal Spores (x4)
     .isOnQuest 848
 step
-    >>Dive underwater to the bubble fissure
+    >>Dive underwater to the Bubbling Fissure
     .goto The Barrens,45.1,22.5
     .complete 870,1 --Explore the waters of the Forgotten Pools
     .isOnQuest 870
@@ -829,7 +830,7 @@ step
     .complete 865,1 --Collect Intact Raptor Horn (x5)
     .isOnQuest 865
 step
-    >>Click the Bubble Fissure underwater
+    >>Click the Bubbling Fissure underwater
     .goto The Barrens,55.6,42.7
     .complete 877,1 --Collect Test the Dried Seeds (x1)
     .isOnQuest 877
@@ -1672,6 +1673,7 @@ RXPGuides.RegisterGuide([[
 #name 22-25 Hillsbrad / South Barrens
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #next 25-26 Stonetalon; 26-30 Ashenvale / Thousand Needles
 #xprate <1.5
 
@@ -1708,7 +1710,7 @@ step << Blood Elf !Warlock wotlk
     >> Teleport to The Undercity if you can << Mage
     .zone Undercity >> Click on the Orb of Translocation to head to the Undercity
 step << Druid tbc
-    >>Loot the gray chest underwater next to the bubble fissure (in the fatigue).
+    >>Loot the gray chest underwater next to the Bubbling Fissure (in the fatigue).
     .goto Silverpine Forest,30.0,29.1
     .collect 15882,1
     --Video link in future?
@@ -3000,6 +3002,7 @@ RXPGuides.RegisterGuide([[
 #next 26-30 Ashenvale / Thousand Needles
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #xprate <1.5
 
 step
@@ -3062,7 +3065,7 @@ step
 step
 	#completewith next
     .goto Stonetalon Mountains,32.60,67.40,0
-     >> Kill Fire Elementals. Loot them for Increndrite
+     >> Kill Fire Elementals. Loot them for Incendrite
     .complete 6393,1
 step
     .goto Stonetalon Mountains,31.10,61.27
@@ -3096,7 +3099,7 @@ step
 step
 	#completewith next
     .goto Stonetalon Mountains,32.60,67.40,0
-     >> Kill Fire Elementals. Loot them for Increndrite
+     >> Kill Fire Elementals. Loot them for Incendrite
     .complete 6393,1
 step
 	#sticky
@@ -3106,7 +3109,7 @@ step
 	.complete 6381,1
 step
     .goto Stonetalon Mountains,32.60,67.40
-     >> Kill Fire Elementals. Loot them for Increndrite
+     >> Kill Fire Elementals. Loot them for Incendrite
     .complete 6393,1
 step
     #label Ripper
@@ -3145,6 +3148,7 @@ RXPGuides.RegisterGuide([[
 #name 26-30 Ashenvale / Thousand Needles
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #next RestedXP Horde 30-45\30-33 Hillsbrad / Arathi / Shimmering Flats
 #xprate <1.5
 
@@ -4741,6 +4745,7 @@ RXPGuides.RegisterGuide([[
 #name 22-25 Hillsbrad Foothills JJ
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #next 25-27 Ashenvale JJ
 #xprate >1.4999
 
@@ -6564,6 +6569,7 @@ RXPGuides.RegisterGuide([[
 #name 25-27 Ashenvale JJ
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #next 27-28 Southern Barrens JJ
 #xprate >1.4999
 
@@ -8461,6 +8467,7 @@ RXPGuides.RegisterGuide([[
 #name 27-28 Southern Barrens JJ
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #next 28-30 Thousand Needles JJ
 #xprate >1.4999
 
@@ -9280,6 +9287,7 @@ RXPGuides.RegisterGuide([[
 #name 28-30 Thousand Needles JJ
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #next RestedXP Horde 30-45\30-32 Hillsbrad/Arathi JJ
 #xprate >1.4999
 

@@ -9,6 +9,7 @@ RXPGuides.RegisterGuide([[
 #name 1-6 Mulgore
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #defaultfor Tauren
 #next 6-10 Mulgore
 
@@ -277,6 +278,7 @@ RXPGuides.RegisterGuide([[
 #name 6-10 Mulgore
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #defaultfor Tauren
 #next 10-12 Eversong Woods << !Warrior !Shaman
 #next 10-13 Mulgore << Warrior/Shaman
@@ -1010,7 +1012,7 @@ step
     >>Collect the white mushrooms around The Forgotten Pools
 .complete 848,1 --Collect Fungal Spores (x4)
 step
-    >>Dive underwater to the bubble fissure
+    >>Dive underwater to the Bubbling Fissure
     .goto The Barrens,45.1,22.5
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step
@@ -1137,6 +1139,7 @@ RXPGuides.RegisterGuide([[
 #name 10-13 Mulgore
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #defaultfor Tauren
 #next 13-23 The Barrens
 step

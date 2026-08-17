@@ -189,7 +189,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mary|r inside the house
     .turnin 26652 >>Turn in Ghost Hair Thread
     .accept 26654 >>Accept Return the Comb
-    .turnin 26683 >>Turn in Turn in Look To The Stars
+    .turnin 26683 >>Turn in Look To The Stars
     .accept 26684 >>Accept The Insane Ghoul
 	.target Blind Mary
 step

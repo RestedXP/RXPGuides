@@ -188,8 +188,8 @@ function addon.GetExpectedQuestLog()
         if guide.standalone then
             startGuide = guide
         else
-            local group = guide.group
-            local list = addon.guideList[group]
+            local list = addon.guideList[guide.groupdisplayname or guide.group]
+            local group = list.defaultGroup_
             local name = list.defaultGuide_
             startGuide = addon:FetchGuide(group,name)
         end

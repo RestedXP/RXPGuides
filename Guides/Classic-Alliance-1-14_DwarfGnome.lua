@@ -9,6 +9,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 1-6 Coldridge Valley
 #displayname 1-6 Coldridge Valley << !SoD
 #displayname 1-7 Coldridge Valley << SoD
@@ -578,7 +579,7 @@ step << Paladin/Warlock/Hunter
     #optional
     #completewith next
     .goto 1426,28.792,68.804,12,0
-    >>|cRXP_WARN_You have 5 minutes to return to Anvilmar before|r |T132791:0|t[Duncan's Scalding Mornbrew] |cRXP_WARN_expires|r
+    >>|cRXP_WARN_You have 5 minutes to return to Anvilmar before|r |T132791:0|t[Durnan's Scalding Mornbrew] |cRXP_WARN_expires|r
     .goto 1426,28.939,68.387,12 >> Enter Anvilmar
 step << Paladin/Warlock/Hunter
     .goto Dun Morogh,28.769,66.377
@@ -823,7 +824,7 @@ step << !Paladin !Warlock !Hunter
 step << !Paladin !Warlock !Hunter
     #softcore
     #completewith next
-    +|cRXP_WARN_You have 5 minutes to get |cRXP_LOOT_Grelin Whitebeard's Journal|r and return to Anvilmar before|r |T132791:0|t[Duncan's Scalding Mornbrew] |cRXP_WARN_expires|r
+    +|cRXP_WARN_You have 5 minutes to get |cRXP_LOOT_Grelin Whitebeard's Journal|r and return to Anvilmar before|r |T132791:0|t[Durnan's Scalding Mornbrew] |cRXP_WARN_expires|r
     >>|cRXP_WARN_If you fail the quest don't worry as you can get it again later|r
 step
     #optional
@@ -1330,6 +1331,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance --!Hunter
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 6-11 Dun Morogh
 #displayname 6-12 Dun Morogh << sod !Warlock
 #next 11-12 Elwynn (Dwarf/Gnome);11-12 Voidwalker Quest;12-14 Loch Modan (Dwarf/Gnome);11-13 Loch Modan (Hunter)
@@ -3138,11 +3140,11 @@ step << Priest
 step << Dwarf Rogue/Gnome Rogue
     #xprate >1.59
     .goto Dun Morogh,25.164,44.460
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onin MacHammer|r atop the Flying Machine port
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onin MacHammar|r atop the Flying Machine port
     >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed]
     .turnin 2238 >> Turn in Simple Subterfugin'
     .accept 2239 >> Accept Onin's Report
-    .target Onin MacHammer
+    .target Onin MacHammar
 step
     #xprate <1.5
     #loop
@@ -4837,6 +4839,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Gnome Warlock
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 11-12 Voidwalker Quest
 #displayname 12-13 Voidwalker Quest << SoD
 #next 12-14 Loch Modan (Dwarf/Gnome)
@@ -5105,6 +5108,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 << Alliance !Hunter
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 11-12 Elwynn (Dwarf/Gnome)
 #version 1
 #defaultfor Gnome/Dwarf
@@ -5815,6 +5819,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance !Hunter
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 12-14 Loch Modan (Dwarf/Gnome)
 #displayname 12-15 Loch Modan << SoD !Warlock
 #displayname 13-15 Loch Modan << SoD Warlock
@@ -7569,6 +7574,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance Hunter
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 6-11 Dun Morogh (Hunter)
 #displayname 6-11 Dun Morogh
 #next 11-13 Loch Modan (Hunter)
@@ -8268,6 +8274,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance Hunter
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 11-13 Loch Modan (Hunter)
 #displayname 11-13 Loch Modan << !SoD
 #displayname 12-15 Loch Modan << SoD

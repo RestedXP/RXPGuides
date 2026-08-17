@@ -1222,6 +1222,36 @@ local updateFrame = CreateFrame("Frame")
 local currentGuideGroup
 local currentGuideName
 local startStep
+
+local function LoadEmbeddedGuides(start,limit,guide)
+    if #addon.embeddedGuides ~= 0 then
+        if addon.player.hardcore then
+            --During patch 1.15.9 Lua scripts have a maximum run time of 200ms (HC only)
+            while #addon.embeddedGuides > 0 and debugprofilestop() - start < limit do
+                addon.LoadEmbeddedGuides(1)
+                --print(#addon.embeddedGuides)
+            end
+            --print('----',#addon.embeddedGuides)
+        else
+            addon.LoadEmbeddedGuides()
+        end
+    elseif addon.addonLoaded then
+        if guide then
+            addon:FetchGuide(guide)
+        end
+        if currentGuideGroup then
+            currentGuideGroup = nil
+            currentGuideName = nil
+            startStep = nil
+            if addon.LoadDefaultGuide and
+                (not addon.currentGuide or addon.currentGuide.empty) then
+                addon.LoadDefaultGuide()
+            end
+        end
+        updateFrame:SetScript("OnUpdate",nil)
+    end
+end
+
 local function LoadCache(guide)
     if updateFrame:GetScript("OnUpdate") then
         return
@@ -1245,32 +1275,7 @@ local function LoadCache(guide)
                 end
             end
         end
-        if #addon.embeddedGuides ~= 0 then
-            if addon.player.hardcore then
-                --During patch 1.15.9 Lua scripts have a maximum run time of 200ms (HC only)
-                while #addon.embeddedGuides > 0 and debugprofilestop() - start < 25 do
-                    addon.LoadEmbeddedGuides(1)
-                    --print(#addon.embeddedGuides)
-                end
-                --print('----',#addon.embeddedGuides)
-            else
-                addon.LoadEmbeddedGuides()
-            end
-        else
-            if guide then
-                addon:FetchGuide(guide)
-            end
-            if currentGuideGroup then
-                currentGuideGroup = nil
-                currentGuideName = nil
-                startStep = nil
-                if addon.LoadDefaultGuide and
-                    (not addon.currentGuide or addon.currentGuide.empty) then
-                    addon.LoadDefaultGuide()
-                end
-            end
-            updateFrame:SetScript("OnUpdate",nil)
-        end
+        LoadEmbeddedGuides(start,25,guide)
     end)
 end
 
@@ -1389,17 +1394,21 @@ function addon:OnInitialize()
     --     addon.noGuide = true
     -- end
     addon.ParseCompletedQuests()
-
+    local start = addon.startTime
     if addon.player.hardcore then
+        LoadEmbeddedGuides(start, 4000)
         for _,guide in pairs(addon.guides) do
-            if debugprofilestop() - addon.startTime > 4000 then
+            if debugprofilestop() - start > 4000 then
                 break
             end
             if not guide.steps then
                 addon:FetchGuide(guide)
             end
         end
+    else
+        addon.LoadEmbeddedGuides()
     end
+    addon.addonLoaded = false
 end
 
 function addon:OnEnable()

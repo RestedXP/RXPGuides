@@ -2462,7 +2462,9 @@ function RXPFrame:GenerateMenuTable(menu)
 
         if t.sorted_ ~= #t.names_ then
             t.sorted_ = #t.names_
-            table.sort(t.names_)
+            table.sort(t.names_,function(t1,t2)
+                return t1.name < t2.name
+            end)
         end
         local item = {
             text = SwapNames(addon.GroupOverride(group)),
@@ -2473,9 +2475,10 @@ function RXPFrame:GenerateMenuTable(menu)
         item.subgroups = {}
         item.subtable = {}
         local submenuIndex = 0
-        local groupName = group:gsub("^%*","")
         local nActive = 0
-        for j, guideName in ipairs(t.names_) do
+        for j, g in ipairs(t.names_) do
+            local guideName = g.name
+            local groupName = g.group
             local guide = addon.GetGuideTable(groupName, guideName)
             --if not guide then print(guide,group,guideName) end
             if IsGuideActive(guide) and not guide.chapter then
@@ -2535,7 +2538,8 @@ function RXPFrame:GenerateMenuTable(menu)
                     addon.defaultGuideHC = guideName
                 end
                 if nActive == 1 then
-                    t.defaultGuide_ = guideName
+                    t.defaultGuide_ = guide.name
+                    t.defaultGroup_ = guide.group
                 end
             end
         end

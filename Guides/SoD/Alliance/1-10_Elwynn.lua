@@ -9,6 +9,7 @@ RXPGuides.RegisterGuide([[
 #displayname 1-6 Northshire
 #version 1
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #defaultfor Human
 #next 6-12 Elwynn Forest SoD
 #season 2
@@ -373,11 +374,11 @@ step << !Priest !Paladin
 	.mob Timber Wolf
 step << Paladin
     .goto Elwynn Forest,47.70,41.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Godrick Rothgar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Rothgar|r
     >>|cRXP_WARN_Leveling with a shield and one-hander early is much faster due to the power of the shield runes early on|r
     >>|cRXP_BUY_Vendor trash and buy the|r |T134955:0|t[Small Shield]
     .collect 17184,1 --Small Shield (1)
-    .target Godrick Rothgar
+    .target Godric Rothgar
 step << Paladin
     .goto Elwynn Forest,47.25,41.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Janos Hammerknuckle|r
@@ -883,6 +884,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 6-12 Elwynn Forest SoD
 #displayname 6-12 Elwynn Forest
 #next 12-13 Dun Morogh SoD
@@ -896,7 +898,7 @@ step
 step
     #hardcore
     .goto Elwynn Forest,42.105,65.927
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshall Dughan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 54 >> Turn in Report to Goldshire
     .accept 62 >> Accept The Fargodeep Mine
     .target Marshal Dughan
@@ -910,7 +912,7 @@ step
 step
     #softcore
     .goto Elwynn Forest,42.105,65.927
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshall Dughan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 54 >> Turn in Report to Goldshire
     .accept 62 >> Accept The Fargodeep Mine
     .target Marshal Dughan
@@ -1708,7 +1710,7 @@ step << Rogue
     .waypoint 1429,55.523,66.707,50,0
     .waypoint 1429,55.203,66.171,50,0
     .waypoint 1429,54.236,66.888,50,0
-    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Murloc Steamrunners|r and |cRXP_ENEMY_Murlocs|r. Loot them for the |T134269:0|t|cRXP_LOOT_[Bottom-Right Map Piece]|r
+    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Murloc Streamrunners|r and |cRXP_ENEMY_Murlocs|r. Loot them for the |T134269:0|t|cRXP_LOOT_[Bottom-Right Map Piece]|r
     >>|cRXP_WARN_You must be|r |T132320:0|t[Stealthed] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
     >>|cRXP_ENEMY_NOTE:|r |cRXP_WARN_All of the|r |T134327:0|t[|cRXP_LOOT_Map Piece|r] |cRXP_WARN_steps are for unlocking the|r |T134536:0|t[Quick Draw] |cRXP_WARN_rune.|r |cRXP_WARN_It's useful but not mandatory for leveling and becomes obsolete around level 22 after unlocking your poisons. Feel free to skip all of those steps if you aren't interested in getting the rune ASAP and want to save some time in the short term.|r
     .collect 203786,1 -- Bottom-Right Map Piece (1)

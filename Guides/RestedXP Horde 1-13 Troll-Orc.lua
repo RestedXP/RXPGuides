@@ -8,6 +8,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #defaultfor Orc/Troll
 #name 1-6 Durotar
 #next 6-10 Durotar
@@ -1348,6 +1349,7 @@ RXPGuides.RegisterGuide([[
 #name 6-10 Durotar
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #next 10-13 Durotar << Warrior/Shaman
 #next 10-12 Eversong Woods << !Warrior !Shaman
 
@@ -2167,6 +2169,7 @@ RXPGuides.RegisterGuide([[
 #name 10-13 Durotar
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #defaultfor Warrior !Tauren/Shaman !Tauren
 #next 13-22 The Barrens
 step
@@ -2378,7 +2381,7 @@ step << !Tauren
 .complete 848,1 --Collect Fungal Spores (x4)
 step << !Tauren
 #xprate <1.5
->>Dive underwater to the bubble fissure
+>>Dive underwater to the Bubbling Fissure
 .goto The Barrens,45.1,22.5
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step << !Tauren

@@ -859,7 +859,7 @@ step
     .turnin 930 >>Turn in The Glowing Fruit
 step
     .goto 57,56.74,53.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyoma.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyoma|r
     .accept 6344 >>Accept Reminders of Home
 	.target Nyoma
 step

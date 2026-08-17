@@ -1,7 +1,6 @@
 local addonName, addon = ...
 if addon.game ~= "MOP" then return end
 local faction = UnitFactionGroup("player")
-local L = addon.locale.Get
 
 addon.skipPreReq = {
     [9573] = 1,
@@ -50,11 +49,6 @@ elseif faction == "Alliance" then
     addon.defaultGroup = "RXP MoP 1-80 (A)"
 end
 
-addon.GuideNames =
-{
-    [L"RXP MoP 1-80 (A)"] = L"RXP MoP 1-60 (A)",
-    [L"RXP MoP 1-80 (H)"] = L"RXP MoP 1-60 (H)",
-}
 function addon.LoadDefaultGuide()
     local played
     if not addon.tracker.waitingForTimePlayed then

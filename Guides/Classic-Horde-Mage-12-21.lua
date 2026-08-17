@@ -281,7 +281,7 @@ step
     .complete 848,1 --Collect Fungal Spores (x4)
 step
     .goto The Barrens,45.06,22.54
-    >>Dive underwater to the |cRXP_PICK_Bubble Fissure|r
+    >>Dive underwater to the |cRXP_PICK_Bubbling Fissure|r
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step
     #label Barak
@@ -336,7 +336,7 @@ step
 step
     #completewith next
     .goto The Barrens,43.8,12.2
-    >> If you still didn't get the Heavy Spiked Mace consider try to buy it from BVrang Wildgore << Druid/Warrior
+    >> If you still didn't get the Heavy Spiked Mace consider try to buy it from Vrang Wildgore << Druid/Warrior
     .vendor >> Go vendor at this guy if needed
 step
     #sticky
@@ -532,7 +532,7 @@ step
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Stagnant Oasis
     .complete 848,1 --Collect Fungal Spores (x4)
 step
-    >>Click the Bubble Fissure underwater
+    >>Click the Bubbling Fissure underwater
     .goto The Barrens,55.6,42.7
     .complete 877,1 --Test the Dried Seeds (1)
 step
@@ -823,7 +823,7 @@ step
 step
     #sticky
     #label Lizard
-    >>Kill Stormstouts. Loot them for a Horn
+    >>Kill Stormsnouts. Loot them for a Horn
     .complete 821,3 --Thunder Lizard Horn (1)
 step
 	#sticky

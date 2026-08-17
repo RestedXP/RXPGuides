@@ -9,6 +9,7 @@ RXPGuides.RegisterGuide([[
 #name 1-12 Azuremyst Isle
 #version 1
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #defaultfor Draenei
 #next 11-20 Bloodmyst (Draenei)
 step
@@ -1006,6 +1007,7 @@ RXPGuides.RegisterGuide([[
 #name 11-20 Bloodmyst (Draenei)
 #version 1
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #defaultfor Draenei
 #next RestedXP Alliance 20-32\20-21 Darkshore (Draenei)
 step
@@ -2260,6 +2262,7 @@ RXPGuides.RegisterGuide([[
 #name 20-21 Darkshore (Draenei)
 #version 1
 #group RestedXP Alliance 20-32
+#groupid RXP-SRGCE-A1
 #defaultfor Draenei
 #next 21-23 Ashenvale (Draenei)
 step
@@ -2574,6 +2577,7 @@ RXPGuides.RegisterGuide([[
 #name 21-23 Ashenvale (Draenei)
 #version 1
 #group RestedXP Alliance 20-32
+#groupid RXP-SRGCE-A1
 #defaultfor Draenei
 #next RestedXP Alliance 20-32\23-24 Wetlands;RestedXP Alliance 20-32\24-27 Redridge/Duskwood
 step

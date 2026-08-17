@@ -6,6 +6,7 @@ RXPGuides.RegisterGuide([[
 #season 2
 << Alliance
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 12-13 Dun Morogh SoD
 #displayname 12-13 Dun Morogh
 #next 13-16 Loch Modan SoD
@@ -285,7 +286,7 @@ step << Mage
     .goto 1426,69.369,58.311
     >>|cRXP_WARN_Look for other Mages or Warlocks near the |cRXP_ENEMY_Frozen Trogg|r or in General Chat (Type /1 into chat). You can still solo this if no one is there|r
     >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Trogg|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Trogg|r. Loot it for the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: Burnout]|r
-    >>|cRXP_WARN_If there is no one there to help you, walk into meele range of the Trogg and use|r |T135820:0|t[Living Flame] |cRXP_WARN_on him. Stay in meele range to keep yourself in combat and keep using|r |T135820:0|t[Living Flame] |cRXP_WARN_on cooldown. It will kill the trogg after 5-6 casts.|r
+    >>|cRXP_WARN_If there is no one there to help you, walk into melee range of the Trogg and use|r |T135820:0|t[Living Flame] |cRXP_WARN_on him. Stay in melee range to keep yourself in combat and keep using|r |T135820:0|t[Living Flame] |cRXP_WARN_on cooldown. It will kill the trogg after 5-6 casts.|r
     .collect 203748,1 --Spell Notes: Burnout (1)
     .train 401759,1
     .mob Frozen Trogg
@@ -525,7 +526,7 @@ step << Priest Dwarf
     #completewith end
     .train 402852 >> |cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
     >>|cRXP_WARN_You must have 2|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs by typing /pray next to an Altar of Light at the Stormwind Cathedral, Loch Modan or the Mystic Ward in Ironforge|r
-    >>|cRXP_WARN_The |T136057:0|t|cRXP_PICK_Meidtation on Elune|r buff has to come from another priest player, by using the /pray emote on you while you are kneeling down with /kneel, if you see another priest with another meditation buff, ask them for it|r
+    >>|cRXP_WARN_The |T136057:0|t|cRXP_PICK_Meditation on Elune|r buff has to come from another priest player, by using the /pray emote on you while you are kneeling down with /kneel, if you see another priest with another meditation buff, ask them for it|r
     --.use 205947
     .target Altar of Light
     .itemcount 205947,1
@@ -574,8 +575,8 @@ step << Dwarf/Gnome
 step << !Human Rogue
     .goto Ironforge,62.375,88.679
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
-    >>|cRXP_BUY_Buy a|r |135640:0|t[Jambyia] |cRXP_BUY_from her|r
-    .collect 2207,1 --Jambyia
+    >>|cRXP_BUY_Buy a|r |135640:0|t[Jambiya] |cRXP_BUY_from her|r
+    .collect 2207,1 --Jambiya
     .target Brenwyn Wintersteel
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.0
 step << Dwarf/Gnome
@@ -962,7 +963,7 @@ step << Warlock !Human
     .isOnQuest 1688
 step << Warlock !Human
     .goto Elwynn Forest,42.105,65.927
-    .zone Elwynn Forest >> Heat to Elwynn Forest
+    .zone Elwynn Forest >> Travel to Elwynn Forest
     .isOnQuest 1688
 step << Warlock !Human
     #label SChoker
@@ -1035,6 +1036,7 @@ RXPGuides.RegisterGuide([[
 #season 2
 << Alliance
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 13-16 Loch Modan SoD
 #displayname 13-16 Loch Modan
 #next 16-17 Westfall SoD

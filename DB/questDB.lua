@@ -1750,7 +1750,7 @@ end
 
 local SendChatMessage = C_ChatInfo and C_ChatInfo.SendChatMessage or _G.SendChatMessage
 function addon.CompleteStep()
-    if _G.Settings and _G.Settings.GetCategory then
+    if _G.C_SettingsUtil then
         return
     end
     for i,step in pairs(addon.RXPFrame.activeSteps) do
@@ -1777,7 +1777,7 @@ end
 local cs
 local mobData = {}
 function addon.Goto()
-    if _G.Settings and _G.Settings.GetCategory then
+    if _G.C_SettingsUtil then
         return
     end
     if cs ~= RXPCData.currentStep then

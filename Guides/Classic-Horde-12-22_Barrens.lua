@@ -11,6 +11,7 @@ RXPGuides.RegisterGuide([[
 #displayname 14-18 The Barrens << Undead/Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
 #version 11
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #next 17-22 Stonetalon/Barrens/Ashenvale
 
 
@@ -173,7 +174,7 @@ step << Tauren Hunter
 step << Tauren Hunter
     #optional
     #completewith DisruptTheAttacks
-    +|cRXP_WARN_Equip th|re |T135613:0|t[Hunter's Boomstick]
+    +|cRXP_WARN_Equip the|r |T135613:0|t[Hunter's Boomstick]
     .use 2511
     .itemcount 2511,1
     .itemStat 18,QUALITY,<7
@@ -1045,7 +1046,7 @@ step << Undead Warrior
 step << Undead Warrior
     #optional
     #completewith BaronLongshore
-    +|cRXP_WARN_Equip th|re |T135353:0|t[Espadon] |cRXP_WARN_when you are level 16|r
+    +|cRXP_WARN_Equip the|r |T135353:0|t[Espadon] |cRXP_WARN_when you are level 16|r
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
@@ -1549,7 +1550,7 @@ step << Druid
     .train 416049,1
 step
     .goto The Barrens,45.06,22.54
-    >>Dive underwater to the |cRXP_PICK_Bubble Fissure|r
+    >>Dive underwater to the |cRXP_PICK_Bubbling Fissure|r
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step
     #label Barak
@@ -2590,7 +2591,7 @@ step
 step
     #label TestSeeds
     .goto The Barrens,55.61,42.75
-    >>Click the |cRXP_PICK_Bubble Fissure|r underwater
+    >>Click the |cRXP_PICK_Bubbling Fissure|r underwater
     .complete 877,1 --Test the Dried Seeds (1)
 step << Druid/Mage
     #optional
@@ -3216,6 +3217,7 @@ RXPGuides.RegisterGuide([[
 #displayname 18-22 Stonetalon/Barrens/Ashenvale << Undead/Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
 #version 11
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #next RestedXP Horde 22-30\22-24 Hillsbrad
 
 
@@ -6072,8 +6074,8 @@ step
 step
     #xprate <1.5
     #completewith next
-   >>Kill |cRXP_ENEMY_Wraithtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
-   .complete 6442,1 --Wraithtail Head (20)
+   >>Kill |cRXP_ENEMY_Wrathtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
+   .complete 6442,1 --Wrathtail Head (20)
    .mob Wrathtail Razortail
    .mob Wrathtail Wave Rider
    .mob Wrathtail Sorceress
@@ -6126,8 +6128,8 @@ step
 	.goto Ashenvale,11.22,31.04,50,0
 	.goto Ashenvale,10.38,29.60,50,0
 	.goto Ashenvale,11.01,28.57,50,0
-   >>Kill |cRXP_ENEMY_Wraithtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
-   .complete 6442,1 --Wraithtail Head (20)
+   >>Kill |cRXP_ENEMY_Wrathtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
+   .complete 6442,1 --Wrathtail Head (20)
    .mob Wrathtail Razortail
    .mob Wrathtail Wave Rider
    .mob Wrathtail Sorceress
@@ -6261,9 +6263,9 @@ step << Priest
 step << Priest
     #xprate <1.5
     #season 0,1
-    >>Kill |cRXP_ENEMY_Lorguss Jett |r
-    .complete 6565,1 --Lorguss Jett slain (1)
-    .mob Lorguss Jett
+    >>Kill |cRXP_ENEMY_Lorgus Jett|r
+    .complete 6565,1 --Lorgus Jett slain (1)
+    .mob Lorgus Jett
     .isOnQuest 6565
     .dungeon BFD
 step << Priest
@@ -6779,6 +6781,7 @@ RXPGuides.RegisterGuide([[
 #name 13-20 The Barrens
 #version 1
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #next 20-24 Stonetalon/Barrens
 
 
@@ -8571,7 +8574,7 @@ step << Druid
     .train 416049,1
 step
     .goto The Barrens,45.06,22.54
-    >>Dive underwater to the |cRXP_PICK_Bubble Fissure|r
+    >>Dive underwater to the |cRXP_PICK_Bubbling Fissure|r
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step
     #label Barak
@@ -9837,7 +9840,7 @@ step
 step
     #label TestSeeds
     .goto The Barrens,55.61,42.75
-    >>Click the |cRXP_PICK_Bubble Fissure|r underwater
+    >>Click the |cRXP_PICK_Bubbling Fissure|r underwater
     .complete 877,1 --Test the Dried Seeds (1)
 step << Druid
     #xprate <2.1
@@ -10389,6 +10392,7 @@ RXPGuides.RegisterGuide([[
 #name 20-24 Stonetalon/Barrens
 #version 1
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #next 24-26 Southern Barrens << !Rogue !Shaman
 #next 23-24 Hillsbrad Class Quests << Rogue/Shaman
 
