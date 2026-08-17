@@ -1159,6 +1159,8 @@ end
 
 addon.groupAlias = {}
 function addon.GroupOverride(guide,arg2)
+    local guideTable = type(guide) == "table" and guide
+
     local function SwapGroup(grp,subgrp)
         local prefix = ""
         if grp:sub(1,1) == "*" then
@@ -1166,22 +1168,26 @@ function addon.GroupOverride(guide,arg2)
         end
         --local group,subgroup
         local swap
-        if addon.game == "CLASSIC" or guide.classic then
-            local groupId = guide.groupid
+        if addon.game == "CLASSIC" or guideTable and guideTable.classic then
+            local groupId = guideTable and guideTable.groupid
             local faction = not groupId and grp:match("RestedXP ([AH][lo][lr][id][ea]%w*)")
             if faction == "Alliance" or groupId == "RXP-SRGCE-A1" then
                 subgrp = subgrp or grp
-                guide.groupdisplayname = prefix .. L"RestedXP Speedrun Guide (A)"
+                if guideTable then
+                    guideTable.groupdisplayname = prefix .. L"RestedXP Speedrun Guide (A)"
+                end
                 swap = true
                 --print('\n',grp,subgrp,faction,type(guide) == "table" and guide.name,'\n')
             elseif faction == "Horde" or groupId == "RXP-SRGCE-H1" then
                 subgrp = subgrp or grp
-                guide.groupdisplayname = prefix .. L"RestedXP Speedrun Guide (H)"
+                if guideTable then
+                    guideTable.groupdisplayname = prefix .. L"RestedXP Speedrun Guide (H)"
+                end
                 swap = true
                 --print(group,guide.subgroup,faction,guide.group,guide.name)
             end
         elseif addon.game == "TBC" then
-            if not guide.classic then
+            if not guideTable or not guideTable.classic then
                 local range = subgrp and subgrp:match("^RestedXP Survival.-( %d+%-%d+)$")
                 if range then
                     subgrp = "TBC Survival Guide"..range
