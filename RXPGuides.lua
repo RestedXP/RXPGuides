@@ -1181,11 +1181,10 @@ local function LoadEmbeddedGuides(start,limit,guide)
         if addon.player.hardcore then
             --During patch 1.15.9 Lua scripts have a maximum run time of 200ms (HC only)
             local nGuides = #addon.embeddedGuides
-            local n = 1
+            local n = 1 + addon.GetLoadedGuides()
             while #addon.embeddedGuides > 0 and n <= nGuides and debugprofilestop() - start < limit do
                 addon.LoadEmbeddedGuides(1)
                 n = n + 1
-                --print(#addon.embeddedGuides)
             end
             --print('----',#addon.embeddedGuides)
         else

@@ -672,6 +672,9 @@ end
 
 --local embeddedGuidesLoaded
 local loadedGuides = 0
+function addon.GetLoadedGuides()
+    return loadedGuides
+end
 function addon.LoadEmbeddedGuides(maxIterations)
     if not addon.db then
         error('Initialization error, db not set')
