@@ -78,7 +78,7 @@ local function GetXPMods()
 end
 
 local function GetGroup()
-    local group = addon.currentGuide.group or ""
+    local group = addon.currentGuide and addon.currentGuide.group or ""
     return group:gsub("^*","")
 end
 

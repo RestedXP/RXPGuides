@@ -267,8 +267,9 @@ function addon.error(text, arg1)
     if type(text) ~= "string" then
         text = ""
     end
-
-    if arg1 then
+    if arg1 and addon.ignoredMaps and addon.ignoredMaps[arg1] then
+        return
+    elseif arg1 then
         addon.comms.PrettyPrint("%s %s: %s\n%s", L("Error parsing guide"), addon.currentGuideName, arg1, text)
     else
         addon.comms.PrettyPrint(text)
@@ -1899,7 +1900,7 @@ addon.functions["goto"] = function(self, ...)
         if not (element.x and element.y and element.zone) then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
-                           ": Invalid coordinates or map name\n" .. self)
+                           ": Invalid coordinates or map name\n" .. self, element.zone or zone)
         end
 
         element.radius = tonumber(radius)
@@ -1920,7 +1921,7 @@ addon.functions["goto"] = function(self, ...)
                 if not (zx and zy) then
                     return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
-                           ": Invalid coordinates or map name\n" .. self)
+                           ": Invalid coordinates or map name\n" .. self, element.zone or zone)
                 end
                 element.x = zx * 100
                 element.y = zy * 100
@@ -2091,7 +2092,7 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
         if not (element.x and element.y and element.zone) then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
-                           ": Invalid coordinates or map name\n" .. self)
+                           ": Invalid coordinates or map name\n" .. self, element.zone or zone)
         end
 
         radius = tonumber(radius)
@@ -2131,7 +2132,7 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
                 else
                     return addon.error(
                         '2-'..L("Error parsing guide") .. " "  .. addon.currentGuideName ..
-                           ": Invalid coordinates or map name\n" .. self)
+                           ": Invalid coordinates or map name\n" .. self, element.zone or zone)
                 end
             end
         end
@@ -2178,7 +2179,7 @@ function addon.functions.wpradius(self,_,zone,x,y,radius)
         else
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
-                           ": Invalid coordinates or map name\n" .. self)
+                           ": Invalid coordinates or map name\n" .. self, element.zone or zone)
         end
     end
 end
@@ -2218,7 +2219,7 @@ function addon.functions.pin(self, ...)
         if not (element.x and element.y and element.zone) then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
-                           ": Invalid coordinates or map name\n" .. self)
+                           ": Invalid coordinates or map name\n" .. self, element.zone or zone)
         end
         if not subzone then
         element.wx, element.wy, element.instance =
@@ -2284,7 +2285,7 @@ function addon.functions.ingamewaypoint(self, ...)
         if not (element.zx and element.zy and element.zone) then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
-                           ": Invalid coordinates or map name\n" .. self)
+                           ": Invalid coordinates or map name\n" .. self, element.zone or zone)
         end
         if not subzone then
         element.wx, element.wy, element.instance =
@@ -2455,7 +2456,7 @@ function addon.functions.line(self, text, zone, ...)
         if not (segments and #segments > 0 and zone and mapID) then
             return addon.error(
                         L("Error parsing guide") .. " " .. (addon.currentGuideName or _G.NONE) ..
-                           ": Invalid coordinates or map name\n" .. self)
+                           ": Invalid coordinates or map name\n" .. self, zone)
         end
         element.zone = mapID
         -- element.hidePin = true
@@ -2503,7 +2504,7 @@ function addon.functions.loop(self, text, range, zone, ...)
         if not (segments and #segments > 0 and zone and mapID) then
             return addon.error(
                         L("Error parsing guide") .. " "  .. (addon.currentGuideName or _G.NONE) ..
-                           ": Invalid coordinates or map name\n" .. self)
+                           ": Invalid coordinates or map name\n" .. self, zone)
         end
         element.zone = mapID
         -- element.hidePin = true
@@ -4600,7 +4601,7 @@ function addon.functions.zone(self, ...)
         if not (mapID and text) then
             return addon.error(
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
-                           ": Invalid text/map name\n" .. self)
+                           ": Invalid text/map name\n" .. self, zone)
         end
         element.map = mapID
         element.icon = addon.icons["goto"]
