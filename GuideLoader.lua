@@ -701,6 +701,7 @@ function addon.LoadEmbeddedGuides(maxIterations)
 
     if addon.addonLoaded and loadedGuides == nGuides then
         table.wipe(embeddedGuides)
+        loadedGuides = 0
     end
 
     --[[if addon.addonLoaded then
@@ -820,11 +821,21 @@ end
 
 function addon.LoadAllGuides()
     addon.LoadEmbeddedGuides()
-    for _,guide in pairs(addon.guides) do
-        if not guide.steps then
-            addon:FetchGuide(guide)
+    print'ok1'
+
+    local n = 1
+    if addon.player.hardcore then
+        n = 2
+    end
+
+    for i = 1,n do
+        for _,guide in pairs(addon.guides) do
+            if not guide.steps then
+                addon:FetchGuide(guide)
+            end
         end
     end
+    print('L-total time: ', debugprofilestop() - addon.startTime)
 end
 
 local function parseLine(linetext,step,parsingLogic)

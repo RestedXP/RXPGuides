@@ -1180,8 +1180,11 @@ local function LoadEmbeddedGuides(start,limit,guide)
     if #addon.embeddedGuides ~= 0 then
         if addon.player.hardcore then
             --During patch 1.15.9 Lua scripts have a maximum run time of 200ms (HC only)
-            while #addon.embeddedGuides > 0 and debugprofilestop() - start < limit do
+            local nGuides = #addon.embeddedGuides
+            local n = 1
+            while #addon.embeddedGuides > 0 and n <= nGuides and debugprofilestop() - start < limit do
                 addon.LoadEmbeddedGuides(1)
+                n = n + 1
                 --print(#addon.embeddedGuides)
             end
             --print('----',#addon.embeddedGuides)
@@ -1240,6 +1243,7 @@ function addon:OnInitialize()
 
     addon.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault, 'global')
     RXPData = RXPData or {}
+    RXPData.maxLoadTime = RXPData.maxLoadTime or 4000
     RXPCData = RXPCData or {}
     RXPCData.exploredZones = RXPCData.exploredZones or {}
 
@@ -1342,9 +1346,9 @@ function addon:OnInitialize()
     addon.ParseCompletedQuests()
     local start = addon.startTime
     if addon.player.hardcore then
-        LoadEmbeddedGuides(start, 4000)
+        LoadEmbeddedGuides(start, RXPData.maxLoadTime)
         for _,guide in pairs(addon.guides) do
-            if debugprofilestop() - start > 4000 then
+            if debugprofilestop() - start > RXPData.maxLoadTime then
                 break
             end
             if not guide.steps then
@@ -1354,10 +1358,15 @@ function addon:OnInitialize()
     else
         addon.LoadEmbeddedGuides()
     end
+    --print('load time: ' .. (debugprofilestop() - start))
+    --print('preload data: ' .. (addon.settings.profile.preLoadData and 'true' or 'false'))
     addon.addonLoaded = false
 end
 
 function addon:OnEnable()
+    if addon.addonLoaded ~= false then
+        RXPData.maxLoadTime = math.ceil(RXPData.maxLoadTime/1.5)
+    end
     addon.addonLoaded = true
 
     --addon.RXPFrame.GenerateMenuTable()
