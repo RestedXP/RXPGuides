@@ -340,7 +340,6 @@ addon.v2.themes['RXP Blue V2'] = {
         guideName = {26 / 255, 28 / 255, 48 / 255, 1}, -- #1A1C30FF
         guideWindow = {7 / 255, 8 / 255, 19 / 255, 0.95}, -- #070813F2
         scrollbar = {1 / 255, 1 / 255, 11 / 255, 1}, -- #01010BFF
-        guideSelector = {57 / 255, 51 / 255, 95 / 255, 1}, -- #39335FFF
         inactivePartyTab = {32 / 255, 33 / 255, 49 / 255, 1}, -- #202131FF
         activeStepCheckbox = {5 / 255, 7 / 255, 19 / 255, 1}, -- #050713FF
         activeStepCheckboxChecked = {17 / 255, 132 / 255, 1, 1} -- #118401FF
