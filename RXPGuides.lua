@@ -2563,7 +2563,7 @@ function addon.v2.events:GuideWindowRefresh(_, change, value)
     if change == "visuals" then
         local window = addon.v2.state and addon.v2.state.guideWindow
 
-        if window then window:RefreshVisuals() end
+        if window then window:UpdateTheme({}) end
     elseif change == "visibility" then
         if addon.v2:IsGuideWindowEnabled() then
             local window = addon.v2:GetGuideWindow()

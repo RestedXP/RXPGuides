@@ -3016,8 +3016,8 @@ function addon.v2:SetActiveStepsFrameAnchor(stepFrame)
         stepFrame:SetPoint("TOPRIGHT", guideWindow, "BOTTOMRIGHT", -rightInset - 3, 0)
     else
         if guideWindow then
-            stepFrame:SetPoint("BOTTOMLEFT", guideWindow, "TOPLEFT", leftInset, 18)
-            stepFrame:SetPoint("BOTTOMRIGHT", guideWindow, "TOPRIGHT", -rightInset, 18)
+            stepFrame:SetPoint("BOTTOMLEFT", guideWindow, "TOPLEFT", leftInset, 3)
+            stepFrame:SetPoint("BOTTOMRIGHT", guideWindow, "TOPRIGHT", -rightInset, 3)
         else
             stepFrame:SetPoint("BOTTOMLEFT", addon.RXPFrame.GuideName, "TOPLEFT", leftInset, 0)
             stepFrame:SetPoint("BOTTOMRIGHT", addon.RXPFrame.GuideName, "TOPRIGHT", -rightInset, 0)
