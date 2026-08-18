@@ -838,13 +838,13 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         ["UpdateSubTheme"] = function(this)
             local theme = addon.v2:GetTheme()
 
-            addon.ui.v2:ApplyFrameBackdrop(this.upperFrame, theme.edge,
-                                           theme.version == 1 and theme.backgroundColors.common or
-                                               theme.backgroundColors.guideWindow, theme.borderColors.commonEdge)
+            addon.ui.v2:ApplyFrameBackdrop(this.upperFrame, theme.edge, theme.version == 1 and
+                                               theme.backgroundColors.common or theme.backgroundColors.guideWindow,
+                                           theme.borderColors.commonEdge)
             addon.ui.v2:SetFrameBottomShadowShown(this.upperFrame, not this.guideStepsFrame:IsShown())
 
-            addon.ui.v2:ApplyFrameBackdrop(this.guideStepsFrame, theme.edge,
-                                           theme.backgroundColors.common, theme.borderColors.commonEdge)
+            addon.ui.v2:ApplyFrameBackdrop(this.guideStepsFrame, theme.edge, theme.backgroundColors.common,
+                                           theme.borderColors.commonEdge)
             addon.ui.v2:HideFrameTopEdge(this.guideStepsFrame)
 
             this.title:SetFont(theme.font, addon.settings.profile.guideFontSize, "")
@@ -852,12 +852,10 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             this.subtitle:SetFont(theme.font, addon.settings.profile.guideFontSize + 2, "")
             this.subtitle:SetTextColor(unpack(theme.textColor.common))
             this.footerText:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
-            this.footerBackground:SetColorTexture(unpack(
-                                                     theme.version == 1 and theme.backgroundColors.common or
-                                                         theme.backgroundColors.scrollbar))
+            this.footerBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
+                                                             theme.backgroundColors.scrollbar))
 
-            addon.ui.v2:ApplyFrameBackdrop(this.guideNameFrame, theme.edge,
-                                           GetGuideWindowHeaderBackgroundColor(theme),
+            addon.ui.v2:ApplyFrameBackdrop(this.guideNameFrame, theme.edge, GetGuideWindowHeaderBackgroundColor(theme),
                                            {0, 0, 0, 0})
 
             this.closebutton:SetShown(theme.version ~= 1)
@@ -898,8 +896,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         upperFrame:SetPoint("TOPRIGHT")
         upperFrame:SetHeight(80)
         upperFrame:SetFrameLevel(frame:GetFrameLevel() + 1)
-        addon.ui.v2:ApplyFrameBackdrop(upperFrame, theme.edge,
-                                       theme.version == 1 and theme.backgroundColors.common or
+        addon.ui.v2:ApplyFrameBackdrop(upperFrame, theme.edge, theme.version == 1 and theme.backgroundColors.common or
                                            theme.backgroundColors.guideWindow, theme.borderColors.commonEdge)
         addon.ui.v2:AddFrameShadow(upperFrame, 0, 0, 0.5, 4)
 
@@ -923,8 +920,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         guideNameFrame:SetFrameLevel(header:GetFrameLevel() + 1)
         guideNameFrame:EnableMouse(true)
 
-        addon.ui.v2:ApplyFrameBackdrop(guideNameFrame, theme.edge,
-                                       GetGuideWindowHeaderBackgroundColor(theme), {0, 0, 0, 0})
+        addon.ui.v2:ApplyFrameBackdrop(guideNameFrame, theme.edge, GetGuideWindowHeaderBackgroundColor(theme),
+                                       {0, 0, 0, 0})
 
         local logoFrame = CreateFrame("Frame", nil, header)
         logoFrame:SetAllPoints(header)
@@ -1000,7 +997,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         local footerBackground = footer:CreateTexture(nil, "BACKGROUND")
         footerBackground:SetAllPoints()
         footerBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
-                                                   theme.backgroundColors.scrollbar))
+                                                    theme.backgroundColors.scrollbar))
 
         local footerText = footer:CreateFontString(nil, "OVERLAY")
         footerText:SetPoint("CENTER")
@@ -2037,7 +2034,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         local footerBackground = footer:CreateTexture(nil, "BACKGROUND")
         footerBackground:SetAllPoints()
         footerBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
-                                                   theme.backgroundColors.scrollbar))
+                                                    theme.backgroundColors.scrollbar))
 
         local footertext = footer:CreateFontString(nil, "OVERLAY")
         footertext:SetPoint("CENTER", footer, 0, 0)

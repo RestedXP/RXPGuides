@@ -398,10 +398,7 @@ function addon.v2:ConvertThemes()
                 converted.author = source.author
                 converted.name = name
                 converted.version = sourceVersion
-                converted.headerTexture = {
-                    path = source.texturePath .. source.headerTexture,
-                    texCoords = {0, 1, 0, 1}
-                }
+                converted.headerTexture = {path = source.texturePath .. source.headerTexture, texCoords = {0, 1, 0, 1}}
                 converted.guideWindow = {
                     logo = source.texturePath .. "rxp_logo-64",
                     settingsIcon = source.texturePath .. "rxp_cog-32",
