@@ -1676,7 +1676,7 @@ step
     .goto The Hinterlands,23.6,57.4
     .goto The Hinterlands,36.6,66.2,0
     .goto The Hinterlands,31.6,59.8,0
-    >>Kill any of the |cRXP_ENEMY_Witherbark Trolls|r in the western part of the map untill you loot a |T133054:0|t|cRXP_LOOT_Geode Hammer|r from them
+    >>Kill any of the |cRXP_ENEMY_Witherbark Trolls|r in the western part of the map until you loot a |T133054:0|t|cRXP_LOOT_Geode Hammer|r from them
     .collect 220912,1 --Geode Hammer 1/1
     .mob Witherbark Sadist
     .mob Witherbark Scalper
@@ -1685,7 +1685,7 @@ step
     .mob Witherbark Venomblood
     .train 427084,1
 step
-    .equip 16,220912 >>Equip the |T133054:0|t|cRXP_LOOT_Geode Hammer|r as your mainhand weapon. Continue fighting mobs untill the hammer breaks and turns into a |T133054:0|t|cRXP_LOOT_Broken Geode Hammer|r
+    .equip 16,220912 >>Equip the |T133054:0|t|cRXP_LOOT_Geode Hammer|r as your mainhand weapon. Continue fighting mobs until the hammer breaks and turns into a |T133054:0|t|cRXP_LOOT_Broken Geode Hammer|r
     .collect 220914,1 --Broken Geode Hammer
     .train 427084,1
 step

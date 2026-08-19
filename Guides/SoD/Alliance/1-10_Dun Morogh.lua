@@ -301,7 +301,7 @@ step << Hunter
     .engrave 15 >> Engrave |T132171:0|t[Hit and Run] on your |T133771:0|t[Cloak]
 step << Paladin
     #completewith next
-    +Kill more |cRXP_ENEMY_Wolves|r or |cRXP_ENEMY_Troggs|r untill you have 88 copper worth of vendor trash. |cRXP_WARN_You will need it to buy weapons soon|r
+    +Kill more |cRXP_ENEMY_Wolves|r or |cRXP_ENEMY_Troggs|r until you have 88 copper worth of vendor trash. |cRXP_WARN_You will need it to buy weapons soon|r
     .money >0.0088
     .goto 1426,29.529,73.286,0
     .goto 1426,28.117,75.088,0

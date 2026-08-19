@@ -1829,7 +1829,7 @@ step
 	.goto Tanaris,72.58,45.30,50,0
 	.goto Tanaris,72.22,44.35,50,0
 	.goto Tanaris,70.94,42.85,50,0
-    >>|cRXP_WARN_Cast|r |T133644:0|t[Pick Pocket] |cRXP_WARN_on|r |cRXP_ENEMY_Southsea Pirates|r |cRXP_WARN_and|r |cRXP_ENEMY_Southsea Freebooters|r |cRXP_WARN_untill you receive a|r |T133639:0|t|cRXP_LOOT_Kidnapper's Coin Purse|r
+    >>|cRXP_WARN_Cast|r |T133644:0|t[Pick Pocket] |cRXP_WARN_on|r |cRXP_ENEMY_Southsea Pirates|r |cRXP_WARN_and|r |cRXP_ENEMY_Southsea Freebooters|r |cRXP_WARN_until you receive a|r |T133639:0|t|cRXP_LOOT_Kidnapper's Coin Purse|r
     .collect 221371,1 - Kidnapper's Coin Purse 1/1
     .mob Southsea Pirate
     .mob Southsea Freebooter

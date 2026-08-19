@@ -2335,7 +2335,7 @@ step
 step
     .goto 1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
-    .turnin 4812 >> Turn As Water Cascades
+    .turnin 4812 >> Turn in As Water Cascades
     .target Sentinel Glynda Nal'Shea
     .isQuestComplete 4812
 step
@@ -10331,7 +10331,7 @@ step
     .isOnQuest 1010
 step
     .goto Ashenvale,31.25,30.70
-    .xp 20-1650 >>Keep killing |cRXP_ENEMY_Dark Strand mobs|r untill you have enough xp to reach level 20
+    .xp 20-1650 >>Keep killing |cRXP_ENEMY_Dark Strand mobs|r until you have enough xp to reach level 20
     .mob Dark Strand Cultist
     .mob Dark Strand Adept
     .mob Dark Strand Enforcer
@@ -11280,7 +11280,7 @@ step
     .mob Dark Strand Adept
 step
     .goto Ashenvale,31.25,30.70
-    .xp 20-1650 >>Keep killing |cRXP_ENEMY_Dark Strand mobs|r untill you have enough xp to reach level 20
+    .xp 20-1650 >>Keep killing |cRXP_ENEMY_Dark Strand mobs|r until you have enough xp to reach level 20
     .mob Dark Strand Cultist
     .mob Dark Strand Adept
     .mob Dark Strand Enforcer

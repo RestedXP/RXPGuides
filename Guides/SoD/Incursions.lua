@@ -289,7 +289,7 @@ step
 step
     #requires Worgen
     .goto Duskwood,70.93,65.90
-    .goto Duskwood,44.60,65.80,50 >> Head west untill you reach an out of bounds area of the nightmare. Your screen will start glowing green and you will be teleported back near the entrance. |cRXP_WARN_Don't worry the NPCs you're escorting will follow you back|r
+    .goto Duskwood,44.60,65.80,50 >> Head west until you reach an out of bounds area of the nightmare. Your screen will start glowing green and you will be teleported back near the entrance. |cRXP_WARN_Don't worry the NPCs you're escorting will follow you back|r
     .maxlevel 53
 step
     #completewith next
@@ -895,7 +895,7 @@ step
 step
     #optional
     .group 3
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|ttalk to |cRXP_FRIENDLY_Field Captain Korlian|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Field Captain Korlian|r
     >>|cRXP_WARN_If you're in a group consider taking the elite kill quests as well. The bosses you will need to kill for these quests have massive amounts of HP and might be challenging depending on your group|r
     .accept 81837 >> Accept Hinterlands Mission XIII: Defeat Florius
     .accept 81838 >> Accept Hinterlands Mission XIV: Defeat Doomkin
@@ -1008,7 +1008,7 @@ step
 step
     #requires Dragonkin
     .goto The Hinterlands,42.31,31.43
-    .goto The Hinterlands,60.67,38.32,150 >> Head west into the mountains untill your screen starts glowing green. You will be teleported closer to the starting location
+    .goto The Hinterlands,60.67,38.32,150 >> Head west into the mountains until your screen starts glowing green. You will be teleported closer to the starting location
     >>|cRXP_WARN_Don't worry, all the escort NPCs will follow you eventually|r
     .maxlevel 53
 step
@@ -1060,7 +1060,7 @@ step
     .maxlevel 53
 step
     .goto The Hinterlands,77.13,54.35
-    .goto The Hinterlands,60.67,38.32,150 >> Head east untill your screen starts glowing green. You will be teleported closer to the starting location
+    .goto The Hinterlands,60.67,38.32,150 >> Head east until your screen starts glowing green. You will be teleported closer to the starting location
     >>|cRXP_WARN_Don't worry, all the escort NPCs will follow you eventually|r
     .maxlevel 53
 step
@@ -1096,7 +1096,7 @@ step
     .maxlevel 53
 step
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|ttalk to |cRXP_FRIENDLY_Field Captain Korlian|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Field Captain Korlian|r
     .turnin -81837 >> Turn in Hinterlands Mission XIII: Defeat Florius
     .turnin -81838 >> Turn in Hinterlands Mission XIV: Defeat Doomkin
     .turnin -81839 >> Turn in Hinterlands Mission XV: Defeat Ghamoo-Raja

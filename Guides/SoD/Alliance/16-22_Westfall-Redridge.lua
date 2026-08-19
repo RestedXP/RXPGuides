@@ -1314,7 +1314,7 @@ step << Rogue
     .goto Redridge Mountains,70.11,77.34,60,0
     .goto Redridge Mountains,74.00,79.00,60,0
     .goto Redridge Mountains,74.00,79.00,0
-    .xp 22-18500 >> Grind untill you're 18500 xp away from level 22
+    .xp 22-18500 >> Grind until you're 18500 xp away from level 22
     .itemcount 1080,5 --Tough condor meat (5)
     .itemcount 2296,5 --Great goretusk snout (5)
     .itemcount 1221,5 --Underbelly Whelp Scale (6)
@@ -1338,7 +1338,7 @@ step
     .collect 2296,5,92,1
     .mob Great Goretusk
 step << Rogue
-    .xp 22-18500 >> Grind mobs untill you're 18500 xp away from level 22
+    .xp 22-18500 >> Grind mobs until you're 18500 xp away from level 22
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
 	.target Chef Breanna

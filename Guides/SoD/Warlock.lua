@@ -1391,7 +1391,7 @@ step
     .goto Ashenvale,93.5,38.0,100 >> Head to the Ashenvale Nightmare Incursion area marked on your map
     .train 431758,1
 step
-    >>Kill the demons outside the portal untill you loot all of the three items listed below
+    >>Kill the demons outside the portal until you loot all of the three items listed below
     .collect 221972,1 >>|T132839:0|t|cRXP_LOOT_Dreampyre Fire|r dropped by |cRXP_ENEMY_Dreampyre Imps|r
     .collect 221971,1 >>|T237396:0|t|cRXP_LOOT_Dreamsworn Horn|r dropped by |cRXP_ENEMY_Emberspark Dreamsworn|r
     .collect 221973,1 >>|T133724:0|t|cRXP_LOOT_Dreamhunter Fang|r dropped by |cRXP_ENEMY_Dreampyre Hounds|r
@@ -1445,7 +1445,7 @@ step
     .zoneskip Azshara
     .zoneskip Blasted Lands
 step
-    >>Look for |cRXP_FRIENDLY_Fel Portals|r in the locations pinned on your map. Once you find one summon your |T236294:0|t|cRXP_FRIENDLY_Explorer Imp|r and complete its dialogue while standing next to the portal. The Imp will begin exploring it and you will receive an |T136164:0|t|cRXP_FRIENDLY_Imp on a Mission|r buff. After around 10-20 minutes your Imp will either return to you or you will be able to resummon it and talk to it again to turn in a repeatable quest rewarding |T133639:0|t|cRXP_LOOT_Otherworldly Treasure|r. Upon opening it you will receive loot and have a chance to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r]. Keep looking for rifts and looting treasures untill you find it
+    >>Look for |cRXP_FRIENDLY_Fel Portals|r in the locations pinned on your map. Once you find one summon your |T236294:0|t|cRXP_FRIENDLY_Explorer Imp|r and complete its dialogue while standing next to the portal. The Imp will begin exploring it and you will receive an |T136164:0|t|cRXP_FRIENDLY_Imp on a Mission|r buff. After around 10-20 minutes your Imp will either return to you or you will be able to resummon it and talk to it again to turn in a repeatable quest rewarding |T133639:0|t|cRXP_LOOT_Otherworldly Treasure|r. Upon opening it you will receive loot and have a chance to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r]. Keep looking for rifts and looting treasures until you find it
     .goto Westfall,28.6,44.0,0
     .goto Westfall,29.0,47.8,0
     .goto Westfall,29.0,58.2,0

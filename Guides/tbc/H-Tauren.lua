@@ -1928,7 +1928,7 @@ step << Shaman
 step << !Shaman
     #optional
     #completewith CampTFP
-    .abandon 765 >>Supervisor Fizsprocket
+    .abandon 765 >>Abandon Supervisor Fizsprocket
 step << !Shaman
     #optional
     #completewith CampTFP

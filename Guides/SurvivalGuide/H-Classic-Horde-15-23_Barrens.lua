@@ -1758,7 +1758,7 @@ step
 step
     #completewith FoodandWater1
     .goto The Barrens,52.09,30.43,120 >>Travel to The Crossroads
-    >>|cRXP_WARN_You can also grind untill your|r |T134414:0|t[Hearthstone] |cRXP_WARN_is back up|r
+    >>|cRXP_WARN_You can also grind until your|r |T134414:0|t[Hearthstone] |cRXP_WARN_is back up|r
     .cooldown item,6948,<0
     .subzoneskip 380
 step
@@ -3294,7 +3294,7 @@ step
     #completewith DeathDUPpickup
     .goto Thunder Bluff,28.55,25.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clarice|r
-    .accept 264 >> Until Death Do Us Part
+    .accept 264 >> Accept Until Death Do Us Part
     .target Clarice Foster
     .dungeon !WC
 step
@@ -3416,7 +3416,7 @@ step << Druid
     #completewith next
     .goto Moonglade,54.30,55.68
     .collect 15877,1,28,1 >>Loot the |cRXP_PICK_Bauble Container|r at the bottom of the lake for a|T134125:0|t[Shrine Bauble]
-    >>|cRXP_WARN_Do not go underwater untill you arive right above the Bauble|r
+    >>|cRXP_WARN_Do not go underwater until you arive right above the Bauble|r
 step << Druid
     .goto Moonglade,36.40,42.01
     .cast 19719 >> |cRXP_WARN_Use the|r |T134125:0|t[Shrine Bauble] |cRXP_WARN_at the Shrine of Remulos|r
@@ -3977,7 +3977,7 @@ step
     .dungeon WC
 step
     .goto Kalimdor,51.91,55.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nalpak|
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nalpak|r
     >>|cRXP_WARN_He is located above the the Wailing Caverns cave entrance|r
     .turnin 1486 >> Turn in Deviate Hides
     .target Nalpak
@@ -4015,7 +4015,7 @@ step
 step
     .goto Thunder Bluff,28.55,25.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clarice|r
-    .accept 264 >> Until Death Do Us Part
+    .accept 264 >> Accept Until Death Do Us Part
     .target Clarice Foster
     .dungeon WC
 step
@@ -4382,7 +4382,7 @@ step
 step
     .goto Stonetalon Mountains,71.87,60.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piznik|r
-    .turnin 1090 >> Turnin Gerenzo's Orders
+    .turnin 1090 >> Turn in Gerenzo's Orders
     .accept 1092 >> Accept Gerenzo's Orders
     .target Piznik
     .group
@@ -4394,7 +4394,7 @@ step << skip
 step
     .goto Stonetalon Mountains,58.99,62.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz|r
-    .turnin 1092 >> Turnin Gerenzo's Orders
+    .turnin 1092 >> Turn in Gerenzo's Orders
     .target Ziz Fizziks
     .isQuestTurnedIn 1090
     .group

@@ -2200,7 +2200,7 @@ step
     #completewith next
     .zone 25 >> Travel to the Blackrock Mountain either through Searing Gorge or the Burning Steppes
 step
-    .goto 1415/0,-1232.500,-7612.600,20 >> Travel to the east side of the molten span circle untill you find a doorway leading to a path to the Lower Blackrock Spire
+    .goto 1415/0,-1232.500,-7612.600,20 >> Travel to the east side of the molten span circle until you find a doorway leading to a path to the Lower Blackrock Spire
 step
     .goto 1415/0,-1294.200,-7574.700,5 >> Travel up the path and enter the first side room to your right. |cRXP_WARN_You might have to kill elite mobs standing in your way as you cannot loot the book while in combat|r
 step

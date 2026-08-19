@@ -448,7 +448,7 @@ step << Druid
     .goto Darnassus,35.375,8.405
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
     .accept 6121 >> Accept Lessons Anew
-    .accept 26 >> A Lesson to Learn
+    .accept 26 >> Accept A Lesson to Learn
     .trainer >> Train your class spells
     .target Mathrengyl Bearwalker
 step << Druid
@@ -1599,7 +1599,7 @@ step << Druid
     .goto Moonglade,56.2,30.4
     >>Go to Moonglade
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze|r
-    .turnin 6124 >> Curing the Sick
+    .turnin 6124 >> Turn in Curing the Sick
     .accept 6125 >> Accept Power over Poison
     .target Dendrite Starblaze
 step << Druid

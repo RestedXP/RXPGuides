@@ -1437,7 +1437,7 @@ step << Rogue
     .waypoint Elwynn Forest,37.81,85.40,35,0
     .waypoint Elwynn Forest,36.76,83.19,35,0
     .waypoint Elwynn Forest,38.02,81.70,35,0
-    .xp 9+2000 >> Grind kobolds untill you're 2000 xp into level 9.
+    .xp 9+2000 >> Grind kobolds until you're 2000 xp into level 9.
     >> |cRXP_WARN_If you're not close you can turn in the goldtooth quest but grinding mobs is more efficient|r
 step << Warrior
     #season 2
