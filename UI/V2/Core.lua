@@ -697,6 +697,21 @@ local function GetGuideWindowHeaderBackgroundColor(theme)
     return {color[1], color[2], color[3], 0.5}
 end
 
+local function GuideWindowButton_OnEnter(button)
+    if button:IsForbidden() or _G.GameTooltip:IsForbidden() then return end
+
+    _G.GameTooltip:SetOwner(button, "ANCHOR_TOP")
+    _G.GameTooltip:ClearLines()
+    _G.GameTooltip:AddLine(button.rxpTooltipText, 1, 1, 1)
+    _G.GameTooltip:Show()
+end
+
+local function GuideWindowButton_OnLeave(button)
+    if not button:IsForbidden() and not _G.GameTooltip:IsForbidden() and _G.GameTooltip:IsOwned(button) then
+        _G.GameTooltip:Hide()
+    end
+end
+
 function addon.ui.v2:RegisterRXPV2GuideWindow()
     local Type, Version = "RXPV2GuideWindow", 10
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
@@ -945,6 +960,9 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         settingsButton:SetPushedTexture(theme.guideWindow.settingsIcon)
         settingsButton:SetHighlightTexture(theme.guideWindow.settingsIcon, "ADD")
 
+        settingsButton.rxpTooltipText = L("Open Settings")
+        settingsButton:SetScript("OnEnter", GuideWindowButton_OnEnter)
+        settingsButton:SetScript("OnLeave", GuideWindowButton_OnLeave)
         settingsButton:SetScript("OnClick", function() addon.v2:ShowSettingsMenu() end)
 
         local guideSelectButton = CreateFrame("Button", nil, guideNameFrame)
@@ -954,6 +972,9 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         guideSelectButton:SetNormalTexture(theme.guideWindow.guideSelectIcon)
         guideSelectButton:SetPushedTexture(theme.guideWindow.guideSelectIcon)
         guideSelectButton:SetHighlightTexture(theme.guideWindow.guideSelectIcon, "ADD")
+        guideSelectButton.rxpTooltipText = L("Browse Guides")
+        guideSelectButton:SetScript("OnEnter", GuideWindowButton_OnEnter)
+        guideSelectButton:SetScript("OnLeave", GuideWindowButton_OnLeave)
         guideSelectButton:SetScript("OnClick", function() addon.v2:ShowGuideSelectionMenu() end)
 
         local title = guideNameFrame:CreateFontString(nil, "OVERLAY")
