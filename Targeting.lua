@@ -816,6 +816,7 @@ function addon.targeting:CreateTargetFrame()
     addon.enabledFrames["activeTargetFrame"] = f
     f.IsFeatureEnabled = function()
         if not addon.settings.profile.enableTargetFrame then return nil, true end
+        if (self.activeTargetCount or 0) == 0 then return nil, true end
 
         if addon.settings.profile.showTargetingOnProximity then
             return proxmityPolling.match and shouldTargetCheck(), true
@@ -1269,6 +1270,8 @@ function addon.targeting:UpdateTargetFrame(selector)
         enemyTargetButtons[e].placeholder:SetTexture(mobPlaceholder)
         enemyTargetButtons[e].icon.isDefault = true
     end
+
+    self.activeTargetCount = friendlyTargetButtonIndex + enemyTargetButtonIndex
 
     ResizeTargetsFrame(targetFrame, friendlyTargetButtonIndex, enemyTargetButtonIndex)
 

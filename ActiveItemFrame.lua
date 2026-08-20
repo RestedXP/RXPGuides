@@ -319,6 +319,7 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
     f.UpdateFrame = addon.UpdateItemFrame
     f:UpdateVisuals()
     f:SetHeight(43)
+    f:Hide()
 end
 
 local fOnEnter = function(self)
