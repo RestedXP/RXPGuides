@@ -501,7 +501,11 @@ function addon.ui.v2:RegisterRXPV2GuideStepsItem()
             return true, textChanged
         end,
 
-        ["UpdateHeight"] = function(this) this.frame:SetHeight(math.max(this.text:GetStringHeight() + 5, 30)) end,
+        ["UpdateHeight"] = function(this)
+            this.text:SetWidth(max(this.frame:GetWidth() - this.numberFrame:GetWidth() - 8, 0))
+
+            this.frame:SetHeight(math.max(this.text:GetStringHeight() + 9, 30))
+        end,
 
         ["SetWidth"] = function(this, width) this.frame:SetWidth(width) end,
 
@@ -518,13 +522,12 @@ function addon.ui.v2:RegisterRXPV2GuideStepsItem()
         text:SetJustifyH("LEFT")
         text:SetJustifyV("MIDDLE")
         text:SetFont(addon.v2:GetTheme().font, addon.settings.profile.guideFontSize, "")
+        text:SetWordWrap(true)
 
         local numberFrame = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         numberFrame:SetFrameLevel(frame:GetFrameLevel() + 2)
         numberFrame:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT")
         numberFrame:SetSize(16, 16)
-
-        text:SetPoint("BOTTOMRIGHT", numberFrame, "BOTTOMLEFT", -4, 4)
 
         local number = numberFrame:CreateFontString(nil, "OVERLAY")
         number:SetPoint("CENTER")
@@ -604,7 +607,7 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
                     item.frame:SetPoint("TOPRIGHT", this.content, "TOPRIGHT", 0, 0)
 
                     _, textChanged = item:SetRow(row, force)
-                    if textChanged then item:UpdateHeight() end
+                    if textChanged or force then item:UpdateHeight() end
                     addon.ui.v2:SetFrameTopShadowShown(item.frame, previous ~= nil)
 
                     itemHeight = item:GetHeight()
