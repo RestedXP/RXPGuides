@@ -737,8 +737,11 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         ["GetCollapsedHeight"] = function(this) return this.upperFrame:GetHeight() end,
 
         ["UpdateFrameLayout"] = function(this)
-            this.header:SetHeight(34)
             this.upperFrame:SetHeight(38)
+            this.header:ClearAllPoints()
+            this.header:SetPoint("TOPLEFT", this.upperFrame, "TOPLEFT", 1, -1)
+            this.header:SetPoint("TOPRIGHT", this.upperFrame, "TOPRIGHT", -1, -1)
+            this.header:SetHeight(36)
             this.guideNameFrame:ClearAllPoints()
             this.guideNameFrame:SetPoint("TOPLEFT", this.header, "TOPLEFT", 0, 0)
             this.guideNameFrame:SetPoint("BOTTOMRIGHT", this.header, "BOTTOMRIGHT")
@@ -768,7 +771,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             this.guideSteps.frame:ClearAllPoints()
             this.guideSteps.frame:SetPoint("TOPLEFT", this.guideStepsFrame, "TOPLEFT", 2, -2)
             this.guideSteps.frame:SetPoint("BOTTOMRIGHT", this.guideStepsFrame, "BOTTOMRIGHT", -2, 22)
-            this.guideSteps.scroll:SetContentTopPadding(2)
+            this.guideSteps.scroll:SetContentTopPadding(4)
 
             this.banner:ClearAllPoints()
             this.banner:SetPoint("TOPLEFT", this.header, "TOPLEFT")
@@ -921,9 +924,9 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         local header = CreateFrame("Frame", nil, upperFrame)
         header:SetFrameLevel(upperFrame:GetFrameLevel() + 1)
         header:EnableMouse(true)
-        header:SetPoint("TOPLEFT", 2, -2)
-        header:SetPoint("TOPRIGHT", -2, -2)
-        header:SetHeight(76)
+        header:SetPoint("TOPLEFT", 1, -1)
+        header:SetPoint("TOPRIGHT", -1, -1)
+        header:SetHeight(78)
 
         local banner = header:CreateTexture(nil, "BACKGROUND")
         banner:SetPoint("TOPLEFT")
@@ -2107,7 +2110,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     local transparent = {0, 0, 0, 0}
-    local checkboxEdge = {edgeSize = 1}
     local updateElementCheckbox
 
     local function releaseElementRow(row)
@@ -2204,8 +2206,6 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         button.rxpChecked = checked
         button.rxpHoverState = hovered
         button.rxpCheckboxTheme = theme
-        checkboxEdge.edgeFile = theme.edge.edgeFile
-        checkboxEdge.texCoords = theme.edge.texCoords
 
         local background = not hovered and checked and theme.backgroundColors.activeStepCheckboxChecked or
                                theme.backgroundColors.activeStepCheckbox
@@ -2213,14 +2213,14 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         local border = not hovered and checked and theme.borderColors.activeStepCheckboxChecked or
                            theme.borderColors.commonEdge
 
-        addon.ui.v2:ApplyFrameBackdrop(button, checkboxEdge, background, border)
+        addon.ui.v2:ApplyFrameBackdrop(button, theme.edge, background, border)
 
         button.rxpBackground:SetShown(not hovered)
         button.rxpBorder:SetShown(not hovered)
         button.rxpCheckShort:SetShown(checked and not hovered)
         button.rxpCheckLong:SetShown(checked and not hovered)
 
-        addon.ui.v2:ApplyFrameBackdrop(button.rxpHoverFrame, checkboxEdge, transparent, theme.borderColors.commonEdge)
+        addon.ui.v2:ApplyFrameBackdrop(button.rxpHoverFrame, theme.edge, transparent, theme.borderColors.commonEdge)
 
         button.rxpHoverFrame:SetShown(hovered)
     end
