@@ -2486,7 +2486,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                         row.rxpResetPending = previousElement ~= element
 
                         row.text:SetTextColor(unpack(textColor))
-                        row.text:SetFont(theme.font, addon.settings.profile.guideFontSize + 1, "")
+                        row.text:SetFont(theme.font, addon.settings.profile.guideFontSize, "")
 
                         if element.tag and (element.text or element.rawtext or element.tooltipText) then
                             row.icon:SetText(element.icon or addon.icons[element.tag] or "")
@@ -2588,7 +2588,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                 row = this.elementRows[rowIndex]
 
                 row.text:SetTextColor(unpack(textColor))
-                row.text:SetFont(theme.font, addon.settings.profile.guideFontSize + 1, "")
+                row.text:SetFont(theme.font, addon.settings.profile.guideFontSize, "")
 
                 updateElementCheckbox(row.button, true)
             end
