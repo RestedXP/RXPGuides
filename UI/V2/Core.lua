@@ -2107,6 +2107,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     local transparent = {0, 0, 0, 0}
+    local checkboxEdge = {edgeSize = 1}
     local updateElementCheckbox
 
     local function releaseElementRow(row)
@@ -2203,21 +2204,23 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         button.rxpChecked = checked
         button.rxpHoverState = hovered
         button.rxpCheckboxTheme = theme
+        checkboxEdge.edgeFile = theme.edge.edgeFile
+        checkboxEdge.texCoords = theme.edge.texCoords
 
         local background = not hovered and checked and theme.backgroundColors.activeStepCheckboxChecked or
                                theme.backgroundColors.activeStepCheckbox
 
         local border = not hovered and checked and theme.borderColors.activeStepCheckboxChecked or
-                           theme.borderColors.common
+                           theme.borderColors.commonEdge
 
-        addon.ui.v2:ApplyFrameBackdrop(button, theme.edge, background, border)
+        addon.ui.v2:ApplyFrameBackdrop(button, checkboxEdge, background, border)
 
         button.rxpBackground:SetShown(not hovered)
         button.rxpBorder:SetShown(not hovered)
         button.rxpCheckShort:SetShown(checked and not hovered)
         button.rxpCheckLong:SetShown(checked and not hovered)
 
-        addon.ui.v2:ApplyFrameBackdrop(button.rxpHoverFrame, theme.edge, transparent, theme.borderColors.common)
+        addon.ui.v2:ApplyFrameBackdrop(button.rxpHoverFrame, checkboxEdge, transparent, theme.borderColors.commonEdge)
 
         button.rxpHoverFrame:SetShown(hovered)
     end
