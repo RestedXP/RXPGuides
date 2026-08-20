@@ -2183,6 +2183,9 @@ function addon.HardcoreToggle()
         end
         if hc ~= addon.settings.profile.hardcore then
             addon.RenderFrame()
+            if addon.v2:IsGuideWindowEnabled() then
+                addon.v2:UpdateActiveStepTheme()
+            end
         end
     end
 end
