@@ -82,6 +82,38 @@ addon.professions.PROFESSIONS = {
             price = 1.12,
             count = 1,
         },
+        ["Red Dye"] =	{
+            price = 0.5,
+            count = 1,
+        },
+        ["Blue Dye"] =	{
+            price = 0.5,
+            count = 1,
+        },
+        ["Yellow Dye"] =	{
+            price = 5.0,
+            count = 1,
+        },
+        ["Black Dye"] =	{
+            price = 10.00,
+            count = 1,
+        },
+        ["Purple Dye"] =	{
+            price = 25.00,
+            count = 1,
+        },
+        ["Gray Dye"] =	{
+            price = 3.5,
+            count = 1,
+        },
+        ["Copper Rod"] =	{
+            price = 1.24,
+            count = 1,
+        },
+        ["Wooden Stock"] =	{
+            price = 2.00,
+            count = 1,
+        },
     },
     ["blacksmithing"] = {
         RECIPES = {
