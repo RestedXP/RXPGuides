@@ -249,8 +249,6 @@ local settingsDBDefaults = {
         -- V2 UI
         enableV2Interface = false,
         enableV2MenuTheme = true,
-        guideWindowV2SplashBranding = true,
-        guideWindowV2Minimalistic = false,
         activeStepsV2RenderQuestName = true,
     }
 }
@@ -1296,31 +1294,6 @@ function addon.settings:CreateAceOptionsPanel()
                         disabled = function()
                             return not addon.v2:IsGuideWindowEnabled()
                         end
-                    },
-                    guideWindowV2SplashBranding = {
-                        name = L("Splash Branding"),
-                        -- desc = "",
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 5.4,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.v2.events:Trigger("GuideWindowRefresh", "visuals")
-                        end,
-                        disabled = function() return not addon.v2:IsGuideWindowEnabled() end,
-                        hidden = isNotAdvanced,
-                    },
-                    guideWindowV2Minimalistic = {
-                        name = L("Minimalistic"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 5.5,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.v2.events:Trigger("GuideWindowRefresh", "visuals")
-                        end,
-                        disabled = function() return not addon.v2:IsGuideWindowEnabled() end,
-                        hidden = isNotAdvanced,
                     },
                     inventoryHeader = {
                         name = _G.INVENTORY_TOOLTIP,

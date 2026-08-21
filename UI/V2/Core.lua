@@ -171,11 +171,13 @@ function addon.ui.v2:AddFrameShadow(frame, xOffset, yOffset, alpha, size)
     top:SetPoint("TOPLEFT", shadow, "TOPLEFT", size, 0)
     top:SetPoint("TOPRIGHT", shadow, "TOPRIGHT", -size, 0)
     top:SetHeight(size)
+    shadow.top = top
 
     local bottom = createShadowTexture()
     bottom:SetPoint("BOTTOMLEFT", shadow, "BOTTOMLEFT", size, 0)
     bottom:SetPoint("BOTTOMRIGHT", shadow, "BOTTOMRIGHT", -size, 0)
     bottom:SetHeight(size)
+    shadow.bottom = bottom
 
     local left = createShadowTexture()
     left:SetPoint("TOPLEFT", shadow, "TOPLEFT", 0, -size)
@@ -192,11 +194,34 @@ function addon.ui.v2:AddFrameShadow(frame, xOffset, yOffset, alpha, size)
         corner = createShadowTexture()
         corner:SetPoint(point)
         corner:SetSize(size, size)
+        shadow[point] = corner
     end
 
     frame.rxpShadow = shadow
 
     return shadow
+end
+
+function addon.ui.v2.SetFrameTopShadowShown(this, frame, shown)
+    if not frame.rxpShadow then return end
+
+    if frame.rxpShadow.top then frame.rxpShadow.top:SetShown(shown) end
+    if frame.rxpShadow.TOPLEFT then frame.rxpShadow.TOPLEFT:SetShown(shown) end
+    if frame.rxpShadow.TOPRIGHT then frame.rxpShadow.TOPRIGHT:SetShown(shown) end
+end
+
+function addon.ui.v2.SetFrameBottomShadowShown(this, frame, shown)
+    if not frame.rxpShadow then return end
+
+    if frame.rxpShadow.bottom then frame.rxpShadow.bottom:SetShown(shown) end
+    if frame.rxpShadow.BOTTOMLEFT then frame.rxpShadow.BOTTOMLEFT:SetShown(shown) end
+    if frame.rxpShadow.BOTTOMRIGHT then frame.rxpShadow.BOTTOMRIGHT:SetShown(shown) end
+end
+
+function addon.ui.v2.HideFrameTopEdge(this, frame)
+    if frame.rxpBorder and frame.rxpBorder.textures[1] then frame.rxpBorder.textures[1]:Hide() end
+
+    this:SetFrameTopShadowShown(frame, false)
 end
 
 function addon.v2:IsGuideWindowEnabled()
@@ -314,15 +339,6 @@ function addon.v2:ShowSettingsMenu()
             this:Hide()
         end
     }
-    menu[#menu + 1] = {
-        text = L("Minimalistic"),
-        checked = function() return addon.settings.profile.guideWindowV2Minimalistic end,
-        func = function(this)
-            addon.settings.profile.guideWindowV2Minimalistic = not addon.settings.profile.guideWindowV2Minimalistic
-            addon.v2.events:Trigger("GuideWindowRefresh", "visuals")
-            this:Hide()
-        end
-    }
     menu[#menu + 1] = {text = "", notCheckable = 1, isTitle = 1}
 
     for _, item in ipairs(menuList) do
@@ -359,10 +375,10 @@ function addon.v2:BuildGuideStepsSnapshot()
     local level = addon.player.level
     local step, hidden, complete, text, rawtext
 
-    if not profile then return {title = "", rows = rows} end
+    if not profile then return {title = "", subtitle = "", rows = rows} end
 
     if not guide or guide.empty then
-        return {title = L("Welcome to RestedXP Guides\nRight click to pick a guide"), rows = rows, empty = true}
+        return {title = L("Welcome to RestedXP"), subtitle = L("Select a guide:"), rows = rows, empty = true}
     end
 
     for index, guideStep in ipairs(guide.steps or {}) do
@@ -401,11 +417,15 @@ function addon.v2:BuildGuideStepsSnapshot()
         }
     end
 
-    local title = guide.title or addon.GetGuideName(guide) or ""
+    local guideName = addon.GetGuideName(guide) or ""
+    local title = guide.title or guide.subgroup or guideName
+    local subtitle = not guide.title and guide.subgroup and guideName or ""
 
-    if guide.subgroup and not guide.title then title = title .. "\n" .. guide.subgroup end
-
-    return {title = title:gsub("\\n", "\n"), rows = rows}
+    return {
+        title = title,
+        subtitle = subtitle,
+        rows = rows
+    }
 end
 
 function addon.ui.v2:RegisterRXPV2GuideStepsItem()
@@ -485,7 +505,11 @@ function addon.ui.v2:RegisterRXPV2GuideStepsItem()
             return true, textChanged
         end,
 
-        ["UpdateHeight"] = function(this) this.frame:SetHeight(math.max(this.text:GetStringHeight() + 5, 30)) end,
+        ["UpdateHeight"] = function(this)
+            this.text:SetWidth(max(this.frame:GetWidth() - this.numberFrame:GetWidth() - 8, 0))
+
+            this.frame:SetHeight(math.max(this.text:GetStringHeight() + 9, 30))
+        end,
 
         ["SetWidth"] = function(this, width) this.frame:SetWidth(width) end,
 
@@ -502,13 +526,12 @@ function addon.ui.v2:RegisterRXPV2GuideStepsItem()
         text:SetJustifyH("LEFT")
         text:SetJustifyV("MIDDLE")
         text:SetFont(addon.v2:GetTheme().font, addon.settings.profile.guideFontSize, "")
+        text:SetWordWrap(true)
 
         local numberFrame = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         numberFrame:SetFrameLevel(frame:GetFrameLevel() + 2)
         numberFrame:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT")
         numberFrame:SetSize(16, 16)
-
-        text:SetPoint("BOTTOMRIGHT", numberFrame, "BOTTOMLEFT", -4, 4)
 
         local number = numberFrame:CreateFontString(nil, "OVERLAY")
         number:SetPoint("CENTER")
@@ -588,7 +611,8 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
                     item.frame:SetPoint("TOPRIGHT", this.content, "TOPRIGHT", 0, 0)
 
                     _, textChanged = item:SetRow(row, force)
-                    if textChanged then item:UpdateHeight() end
+                    if textChanged or force then item:UpdateHeight() end
+                    addon.ui.v2:SetFrameTopShadowShown(item.frame, previous ~= nil)
 
                     itemHeight = item:GetHeight()
                     minimumHeight = min(minimumHeight or itemHeight, itemHeight)
@@ -672,7 +696,28 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
     AceGUI:RegisterWidgetType(Type, Constructor, Version)
 end
 
-local guideWindowDefaultWidth, guideWindowDefaultHeight = 235, 270
+local guideWindowDefaultWidth, guideWindowDefaultHeight = 265, 270
+
+local function GetGuideWindowHeaderBackgroundColor(theme)
+    local color = theme.version == 1 and theme.backgroundColors.common or theme.backgroundColors.guideName
+
+    return {color[1], color[2], color[3], 0.5}
+end
+
+local function GuideWindowButton_OnEnter(button)
+    if button:IsForbidden() or _G.GameTooltip:IsForbidden() then return end
+
+    _G.GameTooltip:SetOwner(button, "ANCHOR_TOP")
+    _G.GameTooltip:ClearLines()
+    _G.GameTooltip:AddLine(button.rxpTooltipText, 1, 1, 1)
+    _G.GameTooltip:Show()
+end
+
+local function GuideWindowButton_OnLeave(button)
+    if not button:IsForbidden() and not _G.GameTooltip:IsForbidden() and _G.GameTooltip:IsOwned(button) then
+        _G.GameTooltip:Hide()
+    end
+end
 
 function addon.ui.v2:RegisterRXPV2GuideWindow()
     local Type, Version = "RXPV2GuideWindow", 10
@@ -683,7 +728,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
 
         frame:StopMovingOrSizing()
 
-        if saveHeight and frame:GetHeight() > this:GetCompactHeight() then
+        if saveHeight and this.guideSteps.frame:IsShown() and frame:GetHeight() > this:GetCollapsedHeight() then
             this.guideHeight = frame:GetHeight()
             addon.settings.profile.v2GuideWindowExpandedHeight = this.guideHeight
         end
@@ -693,57 +738,96 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
     end
 
     local methods = {
-        ["GetCompactHeight"] = function(this) return this.upperFrame:GetHeight() end,
+        ["GetCollapsedHeight"] = function(this) return this.upperFrame:GetHeight() end,
 
-        ["SetMinimalistic"] = function(this, enabled)
-            local guideNameTitleTop = enabled and -8 or -11
-            local guideStepsTop = enabled and -19 or -59
-            local guideStepsContentTop = enabled and -27 or -29
+        ["GetShellHeight"] = function(this) return this:GetCollapsedHeight() + this.footer:GetHeight() - 2 end,
 
-            this.header:SetHeight(enabled and 34 or 76)
-            this.upperFrame:SetHeight(enabled and 38 or 80)
-            this.guideNameFrame:ClearAllPoints()
-            this.guideNameFrame:SetPoint("TOPLEFT", this.header, "TOPLEFT", 0, enabled and 0 or -38)
-            this.guideNameFrame:SetPoint("BOTTOMRIGHT", this.header, "BOTTOMRIGHT")
+        ["UpdateHeaderHeight"] = function(this)
+            local headerHeight = this.snapshotEmpty and 34 or 36
 
-            this.title:ClearAllPoints()
-            this.title:SetPoint("TOPLEFT", this.guideNameFrame, "TOPLEFT", 40, guideNameTitleTop)
-            this.title:SetPoint("TOPRIGHT", this.guideSelectButton, "TOPLEFT", -4, guideNameTitleTop)
+            this.upperFrame:SetHeight(headerHeight)
+            this.header:SetHeight(headerHeight - 2)
 
             this.guideStepsFrame:ClearAllPoints()
-            this.guideStepsFrame:SetPoint("TOPLEFT", this.upperFrame, "TOPLEFT", 3, guideStepsTop)
-            this.guideStepsFrame:SetPoint("BOTTOMRIGHT", this.frame, "BOTTOMRIGHT", -3, 0)
+            this.guideStepsFrame:SetPoint("TOPLEFT", this.upperFrame, "TOPLEFT", 0, -headerHeight)
+            this.guideStepsFrame:SetPoint("BOTTOMRIGHT", this.frame, "BOTTOMRIGHT", 0, 0)
+        end,
+
+        ["UpdateFrameLayout"] = function(this)
+            this:UpdateHeaderHeight()
+            this.header:ClearAllPoints()
+            this.header:SetPoint("TOPLEFT", this.upperFrame, "TOPLEFT", 1, -1)
+            this.header:SetPoint("TOPRIGHT", this.upperFrame, "TOPRIGHT", -1, -1)
+            this.header:SetHeight(this.upperFrame:GetHeight() - 2)
+            this.guideNameFrame:ClearAllPoints()
+            this.guideNameFrame:SetPoint("TOPLEFT", this.header, "TOPLEFT", 0, 0)
+            this.guideNameFrame:SetPoint("BOTTOMRIGHT", this.header, "BOTTOMRIGHT")
+
+            this.iconLogo:ClearAllPoints()
+            this.iconLogo:SetPoint("LEFT", this.header, "LEFT", 6, 0)
+            this.iconLogo:SetSize(30, 30)
+            this.classIcon:ClearAllPoints()
+            this.classIcon:SetPoint("BOTTOMRIGHT", this.iconLogo, "BOTTOMRIGHT", 2, 1)
+            this.classIcon:SetSize(17, 17)
+
+            this.settingsButton:ClearAllPoints()
+            this.settingsButton:SetPoint("RIGHT", this.guideNameFrame, "RIGHT", -16, 0)
+            this.settingsButton:SetSize(21, 21)
+            this.guideSelectButton:ClearAllPoints()
+            this.guideSelectButton:SetPoint("RIGHT", this.settingsButton, "LEFT", -7, 0)
+            this.guideSelectButton:SetSize(21, 21)
+
+            this.title:ClearAllPoints()
+            this.title:SetPoint("TOPLEFT", this.guideNameFrame, "TOPLEFT", 42, -6)
+            this.title:SetPoint("TOPRIGHT", this.guideSelectButton, "TOPLEFT", -4, -6)
+            this.subtitle:ClearAllPoints()
+            this.subtitle:SetPoint("TOPLEFT", this.title, "BOTTOMLEFT", 0, -2)
+            this.subtitle:SetPoint("TOPRIGHT", this.title, "BOTTOMRIGHT", 0, -2)
 
             this.guideSteps.frame:ClearAllPoints()
-            this.guideSteps.frame:SetPoint("TOPLEFT", this.guideStepsFrame, "TOPLEFT", 8, guideStepsContentTop)
-            this.guideSteps.frame:SetPoint("BOTTOMRIGHT", this.guideStepsFrame, "BOTTOMRIGHT", -8, 22)
+            this.guideSteps.frame:SetPoint("TOPLEFT", this.guideStepsFrame, "TOPLEFT", 2, -2)
+            this.guideSteps.frame:SetPoint("BOTTOMRIGHT", this.guideStepsFrame, "BOTTOMRIGHT", -2, 22)
+            this.guideSteps.scroll:SetContentTopPadding(4)
 
-            this.banner:SetShown(not enabled)
+            this.footer:ClearAllPoints()
+            this.footer:SetPoint("BOTTOMLEFT", this.guideStepsFrame, "BOTTOMLEFT", 0, 0)
+            this.footer:SetPoint("BOTTOMRIGHT", this.guideStepsFrame, "BOTTOMRIGHT", 0, 0)
 
-            this.splashBranding:SetShown(not enabled and
-                                             (this.splashBranding.hasTexture or addon.v2:GetTheme().splash and
-                                                 addon.settings.profile.guideWindowV2SplashBranding))
-            this.iconLogo:SetShown(not enabled)
-            this.classIcon:SetShown(not enabled)
-            this.closebutton:SetShown(not enabled and addon.v2:GetTheme().version ~= 1)
+            this.banner:ClearAllPoints()
+            this.banner:SetPoint("TOPLEFT", this.header, "TOPLEFT")
+            this.banner:SetPoint("BOTTOMRIGHT", this.header, "BOTTOMRIGHT")
+            this.banner:Show()
+            this.iconLogo:Show()
+            this.classIcon:Show()
+            this.settingsButton:Show()
+            this.guideSelectButton:Show()
+            this.closebutton:SetShown(addon.v2:GetTheme().version ~= 1)
+            addon.ui.v2:SetFrameBottomShadowShown(this.upperFrame, not this.guideStepsFrame:IsShown())
 
-            this:UpdateResizeBounds(this.guideStepsFrame:IsShown())
+            this:UpdateResizeBounds(this.guideStepsFrame:IsShown() and this.guideSteps.frame:IsShown(),
+                                    this.snapshotEmpty)
 
-            if not this.guideStepsFrame:IsShown() then this.frame:SetHeight(this:GetCompactHeight()) end
+            if this.snapshotEmpty then
+                this.frame:SetHeight(this:GetShellHeight())
+            elseif not this.guideStepsFrame:IsShown() then
+                this.frame:SetHeight(this:GetShellHeight())
+            end
 
             this:RefreshLayout()
         end,
 
-        ["UpdateResizeBounds"] = function(this, hasRows)
-            local minimumHeight = this:GetCompactHeight()
+        ["UpdateResizeBounds"] = function(this, hasRows, emptyGuide)
+            local minimumHeight = this:GetCollapsedHeight()
 
-            if hasRows then
+            if emptyGuide or not hasRows then
+                minimumHeight = max(minimumHeight, this:GetShellHeight())
+            elseif hasRows then
                 local guideStepsInset = this.frame:GetHeight() - this.guideSteps.frame:GetHeight()
                 minimumHeight = max(minimumHeight, guideStepsInset + (this.guideSteps.minimumRowsHeight or 0) +
                                         this.guideSteps.scroll:GetContentTopPadding())
             end
 
-            addon.SetResizeBounds(this.frame, 280, minimumHeight)
+            addon.SetResizeBounds(this.frame, guideWindowDefaultWidth, minimumHeight)
         end,
 
         ["OnAcquire"] = function(this) this.frame:Show() end,
@@ -751,14 +835,22 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         ["OnRelease"] = function(this) this.frame:Hide() end,
 
         ["SetSnapshot"] = function(this, snapshot, scrollToActive)
-            local title, subtitle = snapshot.title:match("^([^\n]*)\n?(.*)$")
-            local compactHeight = this:GetCompactHeight()
-            local guideStepsShown = this.guideStepsFrame:IsShown()
+            local guideStepsShown = this.guideSteps.frame:IsShown()
+            local wasEmptyGuide = this.snapshotEmpty == true
+            local emptyGuide = snapshot.empty
+            local stepListShown = addon.settings:IsStepListShown()
 
             this.guideHeight = this.guideHeight or addon.settings.profile.v2GuideWindowExpandedHeight or
                                    guideWindowDefaultHeight
 
-            if addon.settings:IsStepListShown() and not snapshot.empty then
+            if wasEmptyGuide and not snapshot.empty then
+                addon.settings.profile.frameHeight = max(addon.settings.profile.frameHeight or 0, addon.height or 35)
+                stepListShown = true
+            end
+
+            if stepListShown and not snapshot.empty then
+                this.guideStepsFrame:Show()
+                this.guideSteps.frame:Show()
                 this.frame:SetHeight(this.guideHeight)
             end
 
@@ -766,25 +858,30 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
 
             local rowsHeight = this.guideSteps.rowsHeight or 0
             local hasRows = not snapshot.empty and rowsHeight > 0
-            local empty = not hasRows or not addon.settings:IsStepListShown()
+            local empty = not hasRows or not stepListShown
 
-            if empty then
-                this.frame:SetHeight(compactHeight)
+            this.snapshotEmpty = emptyGuide
+            this:UpdateHeaderHeight()
+
+            if emptyGuide then
+                this.frame:SetHeight(this:GetShellHeight())
+            elseif empty then
+                this.frame:SetHeight(this:GetShellHeight())
             else
                 this.frame:SetHeight(this.guideHeight)
             end
 
-            if hasRows and subtitle ~= "" then title, subtitle = subtitle, title end
+            this.title:SetText(snapshot.title)
+            this.subtitle:SetText(snapshot.subtitle)
+            this.guideStepsFrame:Show()
+            this.guideSteps.frame:SetShown(not empty)
+            this.footer:Show()
+            this.sizer:Show()
+            addon.ui.v2:SetFrameBottomShadowShown(this.upperFrame, false)
 
-            this.title:SetText(title)
-            this.subtitle:SetText(subtitle)
-            this.guideStepsFrame:SetShown(not empty)
-            this.footer:SetShown(not empty)
-            this.sizer:SetShown(not empty)
+            if guideStepsShown ~= (not empty) then addon:SortTimers() end
 
-            if guideStepsShown ~= not empty then addon:SortTimers() end
-
-            this:UpdateResizeBounds(not empty)
+            this:UpdateResizeBounds(not empty, emptyGuide)
 
             if not empty then
                 this.guideSteps:UpdateScrollbar()
@@ -796,62 +893,46 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             if this.guideSteps.rows then this.guideSteps:SetRows(this.guideSteps.rows) end
         end,
 
-        ["RefreshVisuals"] = function(this)
+        ["UpdateTheme"] = updateTheme,
+
+        ["UpdateSubTheme"] = function(this)
             local theme = addon.v2:GetTheme()
 
-            addon.ui.v2:ApplyFrameBackdrop(this.upperFrame, theme.edge,
-                                           theme.version == 1 and theme.backgroundColors.common or
-                                               theme.backgroundColors.guideWindow, theme.borderColors.commonEdge)
+            addon.ui.v2:ApplyFrameBackdrop(this.upperFrame, theme.edge, theme.version == 1 and
+                                               theme.backgroundColors.common or theme.backgroundColors.guideWindow,
+                                           theme.borderColors.commonEdge)
+            addon.ui.v2:SetFrameBottomShadowShown(this.upperFrame, not this.guideStepsFrame:IsShown())
 
-            addon.ui.v2:ApplyFrameBackdrop(this.guideStepsFrame, theme.edge,
-                                           theme.backgroundColors.common, theme.borderColors.commonEdge)
+            addon.ui.v2:ApplyFrameBackdrop(this.guideStepsFrame, theme.edge, theme.backgroundColors.common,
+                                           {0, 0, 0, 0})
+            addon.ui.v2:HideFrameTopEdge(this.guideStepsFrame)
 
-            this.title:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
+            this.title:SetFont(theme.font, addon.settings.profile.guideFontSize, "")
             this.title:SetTextColor(1, 0.82, 0)
-            this.subtitle:SetFont(theme.font, addon.settings.profile.guideFontSize + 1, "")
+            this.subtitle:SetFont(theme.font, addon.settings.profile.guideFontSize + 2, "")
             this.subtitle:SetTextColor(unpack(theme.textColor.common))
             this.footerText:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
-            this.footerBackground:SetColorTexture(unpack(
-                                                     theme.version == 1 and theme.backgroundColors.common or
-                                                         theme.backgroundColors.scrollbar))
+            this.footerBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
+                                                             theme.backgroundColors.scrollbar))
 
-            addon.ui.v2:ApplyFrameBackdrop(this.guideNameFrame, theme.edge,
-                                           theme.version == 1 and theme.backgroundColors.common or
-                                               theme.backgroundColors.guideName, theme.borderColors.commonEdge)
-
-            this.guideSelectBackground:SetColorTexture(unpack(
-                                                           theme.version == 1 and theme.backgroundColors.common or
-                                                               theme.backgroundColors.guideSelector))
-            this.guideSelectArrow:SetVertexColor(unpack(theme.borderColors.commonEdge))
+            addon.ui.v2:ApplyFrameBackdrop(this.guideNameFrame, theme.edge, GetGuideWindowHeaderBackgroundColor(theme),
+                                           {0, 0, 0, 0})
 
             this.closebutton:SetShown(theme.version ~= 1)
             this.classIcon:SetTexture(addon.GetV1Texture(addon.player.class))
 
-            if theme.version == 1 then
-                this.iconLogo:SetTexture(addon.GetV1Texture("rxp_logo-64"))
-                this.settingsButton:SetNormalTexture(addon.GetV1Texture("rxp_cog-32"))
-                this.settingsButton:SetPushedTexture(addon.GetV1Texture("rxp_cog-32"))
-                this.settingsButton:SetHighlightTexture(addon.GetV1Texture("rxp_cog-32"), "ADD")
-            else
-                this.iconLogo:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-icon-logo")
-                this.settingsButton:SetNormalTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-wrench")
-                this.settingsButton:SetPushedTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-wrench")
-                this.settingsButton:SetHighlightTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-wrench",
-                                                        "ADD")
-            end
+            this.iconLogo:SetTexture(theme.guideWindow.logo)
+            this.settingsButton:SetNormalTexture(theme.guideWindow.settingsIcon)
+            this.settingsButton:SetPushedTexture(theme.guideWindow.settingsIcon)
+            this.settingsButton:SetHighlightTexture(theme.guideWindow.settingsIcon, "ADD")
+            this.guideSelectButton:SetNormalTexture(theme.guideWindow.guideSelectIcon)
+            this.guideSelectButton:SetPushedTexture(theme.guideWindow.guideSelectIcon)
+            this.guideSelectButton:SetHighlightTexture(theme.guideWindow.guideSelectIcon, "ADD")
 
             this.banner:SetTexture(theme.headerTexture.path)
             this.banner:SetTexCoord(unpack(theme.headerTexture.texCoords))
 
-            if theme.splash then
-                this.splashBranding:SetTexture(theme.splash.path)
-                this.splashBranding:SetTexCoord(unpack(theme.splash.texCoords))
-                this.splashBranding.hasTexture = addon.settings.profile.guideWindowV2SplashBranding
-            else
-                this.splashBranding.hasTexture = nil
-            end
-
-            this:SetMinimalistic(addon.settings.profile.guideWindowV2Minimalistic)
+            this:UpdateFrameLayout()
 
             this.guideSteps:RefreshVisuals()
         end
@@ -875,17 +956,16 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         upperFrame:SetPoint("TOPRIGHT")
         upperFrame:SetHeight(80)
         upperFrame:SetFrameLevel(frame:GetFrameLevel() + 1)
-        addon.ui.v2:ApplyFrameBackdrop(upperFrame, theme.edge,
-                                       theme.version == 1 and theme.backgroundColors.common or
+        addon.ui.v2:ApplyFrameBackdrop(upperFrame, theme.edge, theme.version == 1 and theme.backgroundColors.common or
                                            theme.backgroundColors.guideWindow, theme.borderColors.commonEdge)
         addon.ui.v2:AddFrameShadow(upperFrame, 0, 0, 0.5, 4)
 
         local header = CreateFrame("Frame", nil, upperFrame)
         header:SetFrameLevel(upperFrame:GetFrameLevel() + 1)
         header:EnableMouse(true)
-        header:SetPoint("TOPLEFT", 2, -2)
-        header:SetPoint("TOPRIGHT", -2, -2)
-        header:SetHeight(76)
+        header:SetPoint("TOPLEFT", 1, -1)
+        header:SetPoint("TOPRIGHT", -1, -1)
+        header:SetHeight(78)
 
         local banner = header:CreateTexture(nil, "BACKGROUND")
         banner:SetPoint("TOPLEFT")
@@ -900,94 +980,65 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         guideNameFrame:SetFrameLevel(header:GetFrameLevel() + 1)
         guideNameFrame:EnableMouse(true)
 
-        addon.ui.v2:ApplyFrameBackdrop(guideNameFrame, theme.edge,
-                                       theme.version == 1 and theme.backgroundColors.common or
-                                           theme.backgroundColors.guideName, theme.borderColors.commonEdge)
-
-        local splashBranding = header:CreateTexture(nil, "ARTWORK")
-        splashBranding:SetPoint("TOPLEFT", header, "TOPLEFT", 38, 32)
-        splashBranding:SetSize(128, 80)
-
-        if theme.splash then
-            splashBranding:SetTexture(theme.splash.path)
-            splashBranding:SetTexCoord(unpack(theme.splash.texCoords))
-            splashBranding:SetShown(addon.settings.profile.guideWindowV2SplashBranding)
-        else
-            splashBranding:Hide()
-        end
+        addon.ui.v2:ApplyFrameBackdrop(guideNameFrame, theme.edge, GetGuideWindowHeaderBackgroundColor(theme),
+                                       {0, 0, 0, 0})
 
         local logoFrame = CreateFrame("Frame", nil, header)
         logoFrame:SetAllPoints(header)
         logoFrame:SetFrameLevel(guideNameFrame:GetFrameLevel() + 2)
 
         local iconLogo = logoFrame:CreateTexture(nil, "ARTWORK")
-        iconLogo:SetPoint("LEFT", header, "LEFT", -12, 23)
-        iconLogo:SetSize(64, 64)
+        iconLogo:SetPoint("LEFT", header, "LEFT", 6, 0)
+        iconLogo:SetSize(30, 30)
 
         local classIcon = logoFrame:CreateTexture(nil, "OVERLAY")
-        classIcon:SetPoint("BOTTOMRIGHT", iconLogo, "BOTTOMRIGHT", 3, 2)
-        classIcon:SetSize(28, 28)
+        classIcon:SetPoint("BOTTOMRIGHT", iconLogo, "BOTTOMRIGHT", 2, 1)
+        classIcon:SetSize(17, 17)
         classIcon:SetTexture(addon.GetV1Texture(addon.player.class))
 
         local settingsButton = CreateFrame("Button", nil, guideNameFrame)
-        settingsButton:SetPoint("LEFT", guideNameFrame, "LEFT", 6, 0)
-        settingsButton:SetSize(24, 24)
+        settingsButton:SetPoint("RIGHT", guideNameFrame, "RIGHT", -16, 0)
+        settingsButton:SetSize(21, 21)
 
-        if theme.version == 1 then
-            iconLogo:SetTexture(addon.GetV1Texture("rxp_logo-64"))
-            settingsButton:SetNormalTexture(addon.GetV1Texture("rxp_cog-32"))
-            settingsButton:SetPushedTexture(addon.GetV1Texture("rxp_cog-32"))
-            settingsButton:SetHighlightTexture(addon.GetV1Texture("rxp_cog-32"), "ADD")
-        else
-            iconLogo:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-icon-logo")
-            settingsButton:SetNormalTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-wrench")
-            settingsButton:SetPushedTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-wrench")
-            settingsButton:SetHighlightTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-wrench", "ADD")
-        end
+        iconLogo:SetTexture(theme.guideWindow.logo)
+        settingsButton:SetNormalTexture(theme.guideWindow.settingsIcon)
+        settingsButton:SetPushedTexture(theme.guideWindow.settingsIcon)
+        settingsButton:SetHighlightTexture(theme.guideWindow.settingsIcon, "ADD")
 
+        settingsButton.rxpTooltipText = L("Open Settings")
+        settingsButton:SetScript("OnEnter", GuideWindowButton_OnEnter)
+        settingsButton:SetScript("OnLeave", GuideWindowButton_OnLeave)
         settingsButton:SetScript("OnClick", function() addon.v2:ShowSettingsMenu() end)
 
         local guideSelectButton = CreateFrame("Button", nil, guideNameFrame)
-        guideSelectButton:SetPoint("TOPRIGHT")
-        guideSelectButton:SetPoint("BOTTOMRIGHT")
-        guideSelectButton:SetWidth(20)
+        guideSelectButton:SetPoint("RIGHT", settingsButton, "LEFT", -7, 0)
+        guideSelectButton:SetSize(21, 21)
         guideSelectButton:SetFrameLevel(guideNameFrame:GetFrameLevel() + 2)
-
-        local guideSelectBackground = guideSelectButton:CreateTexture(nil, "BACKGROUND")
-        guideSelectBackground:SetPoint("TOPLEFT", 0, -2)
-        guideSelectBackground:SetPoint("BOTTOMRIGHT", -1, 0)
-        guideSelectBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
-                                                         theme.backgroundColors.guideSelector))
-
-        local guideSelectHighlight = guideSelectButton:CreateTexture(nil, "HIGHLIGHT")
-        guideSelectHighlight:SetAllPoints(guideSelectBackground)
-        guideSelectHighlight:SetColorTexture(1, 1, 1, 0.12)
-
-        local guideSelectArrow = guideSelectButton:CreateTexture(nil, "OVERLAY")
-        guideSelectArrow:SetPoint("CENTER")
-        guideSelectArrow:SetSize(12, 12)
-        guideSelectArrow:SetTexture("Interface\\ChatFrame\\ChatFrameExpandArrow")
-        guideSelectArrow:SetBlendMode("ADD")
-        guideSelectArrow:SetDesaturated(true)
-        guideSelectArrow:SetVertexColor(unpack(theme.borderColors.commonEdge))
+        guideSelectButton:SetNormalTexture(theme.guideWindow.guideSelectIcon)
+        guideSelectButton:SetPushedTexture(theme.guideWindow.guideSelectIcon)
+        guideSelectButton:SetHighlightTexture(theme.guideWindow.guideSelectIcon, "ADD")
+        guideSelectButton.rxpTooltipText = L("Browse Guides")
+        guideSelectButton:SetScript("OnEnter", GuideWindowButton_OnEnter)
+        guideSelectButton:SetScript("OnLeave", GuideWindowButton_OnLeave)
         guideSelectButton:SetScript("OnClick", function() addon.v2:ShowGuideSelectionMenu() end)
 
         local title = guideNameFrame:CreateFontString(nil, "OVERLAY")
-        title:SetPoint("TOPLEFT", guideNameFrame, "TOPLEFT", 40, -11)
-        title:SetPoint("TOPRIGHT", guideSelectButton, "TOPLEFT", -4, -11)
+        title:SetPoint("TOPLEFT", guideNameFrame, "TOPLEFT", 40, -9)
+        title:SetPoint("TOPRIGHT", guideSelectButton, "TOPLEFT", -4, -9)
         title:SetJustifyH("LEFT")
-        title:SetFont(theme.font, addon.settings.profile.guideFontSize - 1, "")
+        title:SetFont(theme.font, addon.settings.profile.guideFontSize, "")
         title:SetTextColor(1, 0.82, 0)
 
         local subtitle = guideNameFrame:CreateFontString(nil, "OVERLAY")
-        subtitle:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, 0)
-        subtitle:SetPoint("TOPRIGHT", title, "BOTTOMRIGHT", 0, 0)
+        subtitle:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -2)
+        subtitle:SetPoint("TOPRIGHT", title, "BOTTOMRIGHT", 0, -2)
         subtitle:SetJustifyH("LEFT")
-        subtitle:SetFont(theme.font, addon.settings.profile.guideFontSize + 1, "")
+        subtitle:SetFont(theme.font, addon.settings.profile.guideFontSize + 2, "")
         subtitle:SetTextColor(unpack(theme.textColor.common))
 
         local closebutton = CreateFrame("Button", nil, upperFrame)
-        closebutton:SetFrameLevel(upperFrame:GetFrameLevel() + 3)
+        closebutton:SetFrameStrata("LOW")
+        closebutton:SetFrameLevel(120)
         closebutton:SetPoint("TOPRIGHT", upperFrame.rxpShadow, "TOPRIGHT", 8, 4)
         closebutton:SetSize(24, 24)
         closebutton:SetNormalTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close")
@@ -998,20 +1049,20 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
 
         local guideStepsFrame = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         guideStepsFrame:SetFrameLevel(frame:GetFrameLevel())
-        addon.ui.v2:ApplyFrameBackdrop(guideStepsFrame, theme.edge, theme.backgroundColors.common,
-                                       theme.borderColors.commonEdge)
+        addon.ui.v2:ApplyFrameBackdrop(guideStepsFrame, theme.edge, theme.backgroundColors.common, {0, 0, 0, 0})
         addon.ui.v2:AddFrameShadow(guideStepsFrame, 0, 0, 0.5, 4)
+        addon.ui.v2:HideFrameTopEdge(guideStepsFrame)
 
         local footer = CreateFrame("Frame", nil, guideStepsFrame)
-        footer:SetPoint("BOTTOMLEFT", guideStepsFrame, "BOTTOMLEFT", 1, 1)
-        footer:SetPoint("BOTTOMRIGHT", guideStepsFrame, "BOTTOMRIGHT", -1, 1)
+        footer:SetPoint("BOTTOMLEFT", guideStepsFrame, "BOTTOMLEFT", 0, 0)
+        footer:SetPoint("BOTTOMRIGHT", guideStepsFrame, "BOTTOMRIGHT", 0, 0)
         footer:SetHeight(16)
         footer:SetFrameLevel(guideStepsFrame:GetFrameLevel() + 1)
 
         local footerBackground = footer:CreateTexture(nil, "BACKGROUND")
         footerBackground:SetAllPoints()
         footerBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
-                                                   theme.backgroundColors.scrollbar))
+                                                    theme.backgroundColors.scrollbar))
 
         local footerText = footer:CreateFontString(nil, "OVERLAY")
         footerText:SetPoint("CENTER")
@@ -1021,8 +1072,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
 
         local sizer = CreateFrame("Button", nil, guideStepsFrame)
         sizer:SetFrameLevel(footer:GetFrameLevel() + 2)
-        sizer:SetPoint("BOTTOMRIGHT", guideStepsFrame, "BOTTOMRIGHT", -2, 2)
-        sizer:SetSize(10, 10)
+        sizer:SetPoint("BOTTOMRIGHT", guideStepsFrame, "BOTTOMRIGHT", 0, 0)
+        sizer:SetSize(12, 12)
         sizer:SetNormalTexture("Interface/CHATFRAME/UI-ChatIM-SizeGrabber-Up")
         sizer:SetHighlightTexture("Interface/CHATFRAME/UI-ChatIM-SizeGrabber-Highlight", "ADD")
         sizer:EnableMouse(true)
@@ -1046,10 +1097,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             footerText = footerText,
             guideNameFrame = guideNameFrame,
             guideSelectButton = guideSelectButton,
-            guideSelectBackground = guideSelectBackground,
-            guideSelectArrow = guideSelectArrow,
             sizer = sizer,
-            splashBranding = splashBranding,
             guideSteps = guideSteps,
             guideStepsFrame = guideStepsFrame,
             type = Type
@@ -1057,7 +1105,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
 
         for method, func in pairs(methods) do widget[method] = func end
 
-        widget:SetMinimalistic(addon.settings.profile.guideWindowV2Minimalistic)
+        widget:UpdateTheme({})
 
         guideNameFrame:SetScript("OnMouseDown", function(_, button)
             if button == "LeftButton" and not addon.settings.profile.lockFrames then frame:StartMoving() end
@@ -1122,6 +1170,7 @@ function addon.v2:GetGuideWindow()
 
     if positions and positions.RXPV2GuideWindow then
         addon.settings:LoadFramePosition("RXPV2GuideWindow", frame)
+        frame:SetWidth(max(frame:GetWidth(), guideWindowDefaultWidth))
     else
         frame:SetSize(guideWindowDefaultWidth, guideWindowDefaultHeight)
         frame:ClearAllPoints()
@@ -1130,7 +1179,7 @@ function addon.v2:GetGuideWindow()
 
     frame:SetScale(profile.windowScale)
 
-    if not profile.v2GuideWindowExpandedHeight and frame:GetHeight() > window:GetCompactHeight() then
+    if not profile.v2GuideWindowExpandedHeight and frame:GetHeight() > window:GetCollapsedHeight() then
         profile.v2GuideWindowExpandedHeight = frame:GetHeight()
     end
 
@@ -1555,8 +1604,8 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
 
         -- Container Support
         local content = CreateFrame("Frame", nil, frame)
-        content:SetPoint("TOPLEFT", 8, -8)
-        content:SetPoint("BOTTOMRIGHT", -8, 8)
+        content:SetPoint("TOPLEFT", 0, -8)
+        content:SetPoint("BOTTOMRIGHT", 0, 8)
 
         local widget = {content = content, frame = frame, type = Type}
 
@@ -2051,7 +2100,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         local footerBackground = footer:CreateTexture(nil, "BACKGROUND")
         footerBackground:SetAllPoints()
         footerBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
-                                                   theme.backgroundColors.scrollbar))
+                                                    theme.backgroundColors.scrollbar))
 
         local footertext = footer:CreateFontString(nil, "OVERLAY")
         footertext:SetPoint("CENTER", footer, 0, 0)
@@ -2180,7 +2229,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             height = height + rowHeight
         end
 
-        this:SetHeight(height + 32)
+        this:SetHeight(height + 22)
         this.rxpElementsDirty = nil
         this.rxpLayoutWidth = width
     end
@@ -2201,7 +2250,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                                theme.backgroundColors.activeStepCheckbox
 
         local border = not hovered and checked and theme.borderColors.activeStepCheckboxChecked or
-                           theme.borderColors.common
+                           theme.borderColors.commonEdge
 
         addon.ui.v2:ApplyFrameBackdrop(button, theme.edge, background, border)
 
@@ -2210,7 +2259,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         button.rxpCheckShort:SetShown(checked and not hovered)
         button.rxpCheckLong:SetShown(checked and not hovered)
 
-        addon.ui.v2:ApplyFrameBackdrop(button.rxpHoverFrame, theme.edge, transparent, theme.borderColors.common)
+        addon.ui.v2:ApplyFrameBackdrop(button.rxpHoverFrame, theme.edge, transparent, theme.borderColors.commonEdge)
 
         button.rxpHoverFrame:SetShown(hovered)
     end
@@ -2427,12 +2476,12 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
             if title == "" then
                 this.titletext:SetText("")
                 this.titletext:SetAlpha(0)
-                this.title:SetSize(12, 18)
+                this.title:SetSize(10, 16)
             else
                 this.titletext:SetAlpha(1)
                 this.title:SetAlpha(1)
                 this.titletext:SetText(title)
-                this.title:SetSize(this.titletext:GetStringWidth() + 12, 18)
+                this.title:SetSize(this.titletext:GetStringWidth() + 10, 16)
             end
         end,
 
@@ -2479,7 +2528,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                         row.rxpResetPending = previousElement ~= element
 
                         row.text:SetTextColor(unpack(textColor))
-                        row.text:SetFont(theme.font, addon.settings.profile.guideFontSize + 2, "")
+                        row.text:SetFont(theme.font, addon.settings.profile.guideFontSize, "")
 
                         if element.tag and (element.text or element.rawtext or element.tooltipText) then
                             row.icon:SetText(element.icon or addon.icons[element.tag] or "")
@@ -2537,7 +2586,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         ["LayoutFinished"] = function(this, width, height)
             if this.noAutoHeight then return end
 
-            this:SetHeight((height or 0) + 32)
+            this:SetHeight((height or 0) + 22)
         end,
 
         ["OnWidthSet"] = function(this, width)
@@ -2553,7 +2602,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
         ["OnHeightSet"] = function(this, height)
             local content = this.content
-            local contentheight = height - 32
+            local contentheight = height - 22
 
             if contentheight < 0 then contentheight = 0 end
 
@@ -2581,7 +2630,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
                 row = this.elementRows[rowIndex]
 
                 row.text:SetTextColor(unpack(textColor))
-                row.text:SetFont(theme.font, addon.settings.profile.guideFontSize + 2, "")
+                row.text:SetFont(theme.font, addon.settings.profile.guideFontSize, "")
 
                 updateElementCheckbox(row.button, true)
             end
@@ -2601,7 +2650,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
         local card = CreateFrame("Frame", nil, frame, BackdropTemplateMixin and "BackdropTemplate")
         card:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
-        card:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, 14)
+        card:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, 8)
         addon.ui.v2:ApplyFrameBackdrop(card, theme.edge, theme.backgroundColors.common, theme.borderColors.commonEdge)
         addon.ui.v2:AddFrameShadow(card)
 
@@ -2622,8 +2671,8 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
 
         -- Container Support
         local content = CreateFrame("Frame", nil, card)
-        content:SetPoint("TOPLEFT", 4, -12)
-        content:SetPoint("BOTTOMRIGHT", -6, 6)
+        content:SetPoint("TOPLEFT", 4, -10)
+        content:SetPoint("BOTTOMRIGHT", -6, 4)
 
         local widget = {
             card = card,

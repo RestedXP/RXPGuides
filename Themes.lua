@@ -236,7 +236,7 @@ function addon:ReloadTheme()
 
     if self.v2:IsGuideWindowEnabled() then
         self.v2:UpdateGuideWindow()
-        self.v2:GetGuideWindow():RefreshVisuals()
+        self.v2:GetGuideWindow():UpdateTheme({})
         self.v2:UpdateActiveStepTheme()
 
         if self.activeItemFrame then self.activeItemFrame:UpdateVisuals() end
@@ -328,13 +328,11 @@ addon.v2.themes['RXP Blue V2'] = {
         path = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-header-texture",
         texCoords = {0, 1, 0, 63 / 64}
     },
-    navigationArrow = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp_navigation_arrow-1",
-
-    splash = {
-        path = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-header-images",
-        texCoords = {256 / 512, 512 / 512, 0, 160 / 512}
+    guideWindow = {
+        logo = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-icon-logo",
+        settingsIcon = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-icon-cog",
+        guideSelectIcon = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-icon-scroll"
     },
-
     auctionHouse = {
         columnTexture = "Interface\\FriendsFrame\\WhoFrame-ColumnTabs",
         kindHeaderTexture = "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-Top",
@@ -350,13 +348,13 @@ addon.v2.themes['RXP Blue V2'] = {
         legacyUpgradeIcon = "Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64",
         legacyValueIcon = "Interface/GossipFrame/VendorGossipIcon.blp"
     },
+    navigationArrow = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp_navigation_arrow-1",
 
     backgroundColors = {
         common = {26 / 255, 28 / 255, 48 / 255, 0.95}, -- #1A1C30F2
         guideName = {26 / 255, 28 / 255, 48 / 255, 1}, -- #1A1C30FF
         guideWindow = {7 / 255, 8 / 255, 19 / 255, 0.95}, -- #070813F2
         scrollbar = {1 / 255, 1 / 255, 11 / 255, 1}, -- #01010BFF
-        guideSelector = {57 / 255, 51 / 255, 95 / 255, 1}, -- #39335FFF
         inactivePartyTab = {32 / 255, 33 / 255, 49 / 255, 1}, -- #202131FF
         activeStepCheckbox = {5 / 255, 7 / 255, 19 / 255, 1}, -- #050713FF
         activeStepCheckboxChecked = {17 / 255, 132 / 255, 1, 1} -- #118401FF
@@ -371,7 +369,7 @@ addon.v2.themes['RXP Blue V2'] = {
 
     edge = {
         edgeFile = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-borders-v2",
-        edgeSize = 2,
+        edgeSize = 1,
         texCoords = {
             top = {0, 0.25, 0, 1},
             bottom = {0.25, 0.5, 0, 1},
@@ -415,13 +413,14 @@ function addon.v2:ConvertThemes()
                 converted.author = source.author
                 converted.name = name
                 converted.version = sourceVersion
-                converted.headerTexture = {
-                    path = source.texturePath .. source.headerTexture,
-                    texCoords = {0, 1, 0, 1}
+                converted.headerTexture = {path = source.texturePath .. source.headerTexture, texCoords = {0, 1, 0, 1}}
+                converted.guideWindow = {
+                    logo = source.texturePath .. "rxp_logo-64",
+                    settingsIcon = source.texturePath .. "rxp_cog-32",
+                    guideSelectIcon = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-minimap-icon"
                 }
                 converted.navigationArrow = source.texturePath .. "rxp_navigation_arrow-1"
                 converted.edge.edgeFile = source.bgTextures and source.bgTextures.edge or "Interface/BUTTONS/WHITE8X8"
-                converted.splash = source.splash and CopyTable(source.splash)
                 converted.applicable = source.applicable
 
                 backgroundColors.common = CopyTable(source.background)
