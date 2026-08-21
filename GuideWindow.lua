@@ -1897,6 +1897,18 @@ function addon:LoadGuide(guide, OnLoad)
     RXPCData.currentGuideName = guide.name
     RXPCData.currentGuideGroup = guide.group
 
+    if useV2GuideWindow and addon.v2:IsGuideWindowEnabled() then
+        local guideWindow = addon.v2:GetGuideWindow()
+
+        if guideWindow then
+            local guideName = addon.GetGuideName(guide) or ""
+            local title = guide.title or guide.subgroup or guideName
+
+            guideWindow.title:SetText(title)
+            guideWindow.subtitle:SetText(not guide.title and guide.subgroup and guideName or "")
+        end
+    end
+
     if not useV2GuideWindow then
         local guidename = guide.title or addon.GetGuideName(guide)
 
@@ -2462,7 +2474,9 @@ function RXPFrame:GenerateMenuTable(menu)
 
         if t.sorted_ ~= #t.names_ then
             t.sorted_ = #t.names_
-            table.sort(t.names_)
+            table.sort(t.names_,function(t1,t2)
+                return t1.name < t2.name
+            end)
         end
         local item = {
             text = SwapNames(addon.GroupOverride(group)),
@@ -2473,9 +2487,10 @@ function RXPFrame:GenerateMenuTable(menu)
         item.subgroups = {}
         item.subtable = {}
         local submenuIndex = 0
-        local groupName = group:gsub("^%*","")
         local nActive = 0
-        for j, guideName in ipairs(t.names_) do
+        for j, g in ipairs(t.names_) do
+            local guideName = g.name
+            local groupName = g.group
             local guide = addon.GetGuideTable(groupName, guideName)
             --if not guide then print(guide,group,guideName) end
             if IsGuideActive(guide) and not guide.chapter then
@@ -2535,7 +2550,8 @@ function RXPFrame:GenerateMenuTable(menu)
                     addon.defaultGuideHC = guideName
                 end
                 if nActive == 1 then
-                    t.defaultGuide_ = guideName
+                    t.defaultGuide_ = guide.name
+                    t.defaultGroup_ = guide.group
                 end
             end
         end
@@ -3012,8 +3028,8 @@ function addon.v2:SetActiveStepsFrameAnchor(stepFrame)
         stepFrame:SetPoint("TOPRIGHT", guideWindow, "BOTTOMRIGHT", -rightInset - 3, 0)
     else
         if guideWindow then
-            stepFrame:SetPoint("BOTTOMLEFT", guideWindow, "TOPLEFT", leftInset, 18)
-            stepFrame:SetPoint("BOTTOMRIGHT", guideWindow, "TOPRIGHT", -rightInset, 18)
+            stepFrame:SetPoint("BOTTOMLEFT", guideWindow, "TOPLEFT", leftInset, 3)
+            stepFrame:SetPoint("BOTTOMRIGHT", guideWindow, "TOPRIGHT", -rightInset, 3)
         else
             stepFrame:SetPoint("BOTTOMLEFT", addon.RXPFrame.GuideName, "TOPLEFT", leftInset, 0)
             stepFrame:SetPoint("BOTTOMRIGHT", addon.RXPFrame.GuideName, "TOPRIGHT", -rightInset, 0)

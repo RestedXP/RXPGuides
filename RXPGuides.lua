@@ -1222,6 +1222,38 @@ local updateFrame = CreateFrame("Frame")
 local currentGuideGroup
 local currentGuideName
 local startStep
+
+local function LoadEmbeddedGuides(start,limit,guide)
+    if #addon.embeddedGuides ~= 0 then
+        if addon.player.hardcore then
+            --During patch 1.15.9 Lua scripts have a maximum run time of 200ms (HC only)
+            local nGuides = #addon.embeddedGuides
+            local n = 1 + addon.GetLoadedGuides()
+            while #addon.embeddedGuides > 0 and n <= nGuides and debugprofilestop() - start < limit do
+                addon.LoadEmbeddedGuides(1)
+                n = n + 1
+            end
+            --print('----',#addon.embeddedGuides)
+        else
+            addon.LoadEmbeddedGuides()
+        end
+    elseif addon.addonLoaded then
+        if guide then
+            addon:FetchGuide(guide)
+        end
+        if currentGuideGroup then
+            currentGuideGroup = nil
+            currentGuideName = nil
+            startStep = nil
+            if addon.LoadDefaultGuide and
+                (not addon.currentGuide or addon.currentGuide.empty) then
+                addon.LoadDefaultGuide()
+            end
+        end
+        updateFrame:SetScript("OnUpdate",nil)
+    end
+end
+
 local function LoadCache(guide)
     if updateFrame:GetScript("OnUpdate") then
         return
@@ -1245,32 +1277,7 @@ local function LoadCache(guide)
                 end
             end
         end
-        if #addon.embeddedGuides ~= 0 then
-            if addon.player.hardcore then
-                --During patch 1.15.9 Lua scripts have a maximum run time of 200ms (HC only)
-                while #addon.embeddedGuides > 0 and debugprofilestop() - start < 25 do
-                    addon.LoadEmbeddedGuides(1)
-                    --print(#addon.embeddedGuides)
-                end
-                --print('----',#addon.embeddedGuides)
-            else
-                addon.LoadEmbeddedGuides()
-            end
-        else
-            if guide then
-                addon:FetchGuide(guide)
-            end
-            if currentGuideGroup then
-                currentGuideGroup = nil
-                currentGuideName = nil
-                startStep = nil
-                if addon.LoadDefaultGuide and
-                    (not addon.currentGuide or addon.currentGuide.empty) then
-                    addon.LoadDefaultGuide()
-                end
-            end
-            updateFrame:SetScript("OnUpdate",nil)
-        end
+        LoadEmbeddedGuides(start,25,guide)
     end)
 end
 
@@ -1282,6 +1289,7 @@ function addon:OnInitialize()
 
     addon.db = LibStub("AceDB-3.0"):New("RXPDB", importGuidesDefault, 'global')
     RXPData = RXPData or {}
+    RXPData.maxLoadTime = RXPData.maxLoadTime or 4000
     RXPCData = RXPCData or {}
     RXPCData.exploredZones = RXPCData.exploredZones or {}
 
@@ -1389,20 +1397,29 @@ function addon:OnInitialize()
     --     addon.noGuide = true
     -- end
     addon.ParseCompletedQuests()
-
+    local start = addon.startTime
     if addon.player.hardcore then
+        LoadEmbeddedGuides(start, RXPData.maxLoadTime)
         for _,guide in pairs(addon.guides) do
-            if debugprofilestop() - addon.startTime > 4000 then
+            if debugprofilestop() - start > RXPData.maxLoadTime then
                 break
             end
             if not guide.steps then
                 addon:FetchGuide(guide)
             end
         end
+    else
+        addon.LoadEmbeddedGuides()
     end
+    --print('load time: ' .. (debugprofilestop() - start))
+    --print('preload data: ' .. (addon.settings.profile.preLoadData and 'true' or 'false'))
+    addon.addonLoaded = false
 end
 
 function addon:OnEnable()
+    if addon.addonLoaded ~= false then
+        RXPData.maxLoadTime = math.ceil(RXPData.maxLoadTime/1.5)
+    end
     addon.addonLoaded = true
 
     --addon.RXPFrame.GenerateMenuTable()
@@ -2174,6 +2191,9 @@ function addon.HardcoreToggle()
         end
         if hc ~= addon.settings.profile.hardcore then
             addon.RenderFrame()
+            if addon.v2:IsGuideWindowEnabled() then
+                addon.v2:UpdateActiveStepTheme()
+            end
         end
     end
 end
@@ -2554,7 +2574,7 @@ function addon.v2.events:GuideWindowRefresh(_, change, value)
     if change == "visuals" then
         local window = addon.v2.state and addon.v2.state.guideWindow
 
-        if window then window:RefreshVisuals() end
+        if window then window:UpdateTheme({}) end
     elseif change == "visibility" then
         if addon.v2:IsGuideWindowEnabled() then
             local window = addon.v2:GetGuideWindow()
