@@ -333,6 +333,14 @@ addon.v2.themes['RXP Blue V2'] = {
         settingsIcon = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-icon-cog",
         guideSelectIcon = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-icon-scroll"
     },
+    auctionHouse = {
+        upgradeRatioColor = "|cffffff00",
+        upgradeEPColor = "|cffff00ff",
+        upgradeIcon = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-reward-upgrade",
+        valueIcon = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-reward-gold",
+        legacyUpgradeIcon = "Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64",
+        legacyValueIcon = "Interface/GossipFrame/VendorGossipIcon.blp"
+    },
     navigationArrow = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp_navigation_arrow-1",
 
     backgroundColors = {
@@ -429,4 +437,10 @@ function addon.v2:GetTheme()
     self.activeTheme = addon:UsesDefaultTheme() and GetDefaultTheme() or self.themes[name] or GetDefaultTheme()
 
     return self.activeTheme
+end
+
+function addon.v2:GetAuctionHouseTheme()
+    local theme = self:GetTheme()
+
+    return theme.auctionHouse or self.themes['RXP Blue V2'].auctionHouse
 end
