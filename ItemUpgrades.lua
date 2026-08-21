@@ -1390,8 +1390,11 @@ local CanSendAuctionQuery, QueryAuctionItems, SetSelectedAuctionItem = _G.CanSen
                                                                        _G.SetSelectedAuctionItem
 local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo = _G.GetNumAuctionItems, _G.GetAuctionItemLink,
                                                                    _G.GetAuctionItemInfo
+local time = _G.time
 
 local AuctionFilterButtons = {["Weapons"] = 1, ["Armor"] = 2}
+local AHCacheVersion = 1
+local AHCacheTTL = 1200
 
 local ahSession = {
     isInitialized = false,
@@ -1426,12 +1429,52 @@ local function invalidateAHCallbacks()
     ahSession.refreshQueued = nil
 end
 
+local function getAHCache()
+    local cache = RXPCData and RXPCData.itemUpgradeAHCache
+    if not cache or cache.version ~= AHCacheVersion or not cache.createdAt or time() - cache.createdAt > AHCacheTTL or
+        cache.class ~= addon.player.class or cache.level ~= addon.player.level or cache.spec ~=
+        (addon.settings.profile.itemUpgradeSpec or false) then
+
+        if RXPCData then RXPCData.itemUpgradeAHCache = nil end
+
+        return
+    end
+
+    local slotId, equippedItemLink
+    for _, slotData in pairs(session.equippableSlots) do
+        if type(slotData) == "table" then
+            for _, nestedSlotId in pairs(slotData) do
+                equippedItemLink = GetInventoryItemLink("player", nestedSlotId) or false
+
+                if not cache.gear or cache.gear[nestedSlotId] ~= equippedItemLink then
+                    RXPCData.itemUpgradeAHCache = nil
+
+                    return
+                end
+            end
+        else
+            slotId = slotData
+            equippedItemLink = GetInventoryItemLink("player", slotId) or false
+
+            if not cache.gear or cache.gear[slotId] ~= equippedItemLink then
+                RXPCData.itemUpgradeAHCache = nil
+
+                return
+            end
+        end
+    end
+
+    return cache
+end
+
 local function resetAHScanResults()
     invalidateAHCallbacks()
     clearAHSelection()
     ahSession.scanData = {}
     ahSession.pendingItemInfo = {}
     ahSession.bestAnalysis = nil
+
+    if RXPCData then RXPCData.itemUpgradeAHCache = nil end
 end
 
 local function resetAHScanProgress()
@@ -1864,6 +1907,66 @@ function addon.itemUpgrades.AH:Analyze()
         --      scanData.relativeWeightPerCopper, "ratio", scanData.ratio)
         analyzeSlotUpgrade(scanData, itemLink, bAS)
     end
+
+    if not RXPCData then return end
+
+    local cache = {
+        version = AHCacheVersion,
+        createdAt = time(),
+        class = addon.player.class,
+        level = UnitLevel("player"),
+        spec = addon.settings.profile.itemUpgradeSpec or false,
+        gear = {},
+        results = {}
+    }
+
+    local slotId
+    for _, slotData in pairs(session.equippableSlots) do
+        if type(slotData) == "table" then
+            for _, nestedSlotId in pairs(slotData) do
+                cache.gear[nestedSlotId] = GetInventoryItemLink("player", nestedSlotId) or false
+            end
+        else
+            slotId = slotData
+            cache.gear[slotId] = GetInventoryItemLink("player", slotId) or false
+        end
+    end
+
+    local sourceRow, targetRow
+    for invEquipType, data in pairs(ahSession.bestAnalysis) do
+        if data.best.itemLink or data.budget.itemLink then
+            cache.results[invEquipType] = {slotName = data.slotName, best = {}, budget = {}}
+
+            sourceRow = data.best
+            if sourceRow.itemLink then
+                targetRow = cache.results[invEquipType].best
+                targetRow.itemLink = sourceRow.itemLink
+                targetRow.itemID = sourceRow.itemID
+                targetRow.itemIcon = sourceRow.itemIcon
+                targetRow.name = sourceRow.name
+                targetRow.level = sourceRow.level
+                targetRow.ratio = sourceRow.ratio
+                targetRow.weightIncrease = sourceRow.weightIncrease
+                targetRow.lowestPrice = sourceRow.lowestPrice
+            end
+
+            sourceRow = data.budget
+            if sourceRow.itemLink then
+                targetRow = cache.results[invEquipType].budget
+                targetRow.itemLink = sourceRow.itemLink
+                targetRow.itemID = sourceRow.itemID
+                targetRow.itemIcon = sourceRow.itemIcon
+                targetRow.name = sourceRow.name
+                targetRow.level = sourceRow.level
+                targetRow.ratio = sourceRow.ratio
+                targetRow.rwpc = sourceRow.rwpc
+                targetRow.weightIncrease = sourceRow.weightIncrease
+                targetRow.lowestPrice = sourceRow.lowestPrice
+            end
+        end
+    end
+
+    RXPCData.itemUpgradeAHCache = cache
 end
 
 local function isAHV2Enabled() return addon.v2 and addon.v2:IsGuideWindowEnabled() end
@@ -2108,10 +2211,9 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
 
         ahSession.displayFrame:Show()
 
-        if next(ahSession.scanData) then
-            addon.itemUpgrades.AH:Analyze()
-            addon.itemUpgrades.AH:DisplayEmbeddedResults()
-        end
+        if next(ahSession.scanData) then addon.itemUpgrades.AH:Analyze() end
+
+        addon.itemUpgrades.AH:DisplayEmbeddedResults()
 
         _G.AuctionFrame.type = "list"
         _G.SetAuctionsTabShowing(false)
@@ -2153,6 +2255,11 @@ StaticPopupDialogs["RXPNoUpgradesFound"] = {
 function addon.itemUpgrades.AH:DisplayEmbeddedResults(showEmptyResults)
     self:CreateEmbeddedGui()
     if not _G.AuctionFrame:IsShown() then return end
+
+    if not ahSession.bestAnalysis then
+        local cache = getAHCache()
+        if cache then ahSession.bestAnalysis = cache.results end
+    end
 
     if ahSession.scanCancelled then
         ahSession.displayFrame.Title:SetText(getAHCancelledTitle(next(ahSession.scanData) ~= nil))
