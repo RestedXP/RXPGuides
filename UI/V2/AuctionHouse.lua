@@ -4,13 +4,20 @@ local CreateFrame, UIParent = CreateFrame, UIParent
 -- Core.lua creates addon.ui.v2 before this module is loaded.
 local AceGUI = LibStub("AceGUI-3.0")
 local kindHeaderHeight, itemRowHeight, itemRowSpacing = 19, 37, 4
+local columnTexture = "Interface\\FriendsFrame\\WhoFrame-ColumnTabs"
+local kindHeaderTexture = "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-Top"
+local rowTexture = "Interface\\AuctionFrame\\UI-AuctionItemNameFrame"
+local rowHighlightTexture = "Interface\\HelpFrame\\HelpFrameButton-Highlight"
+local itemIconTexture = "Interface\\Buttons\\UI-Quickslot2"
+local itemIconHighlightTexture = "Interface\\Buttons\\ButtonHilight-Square"
+local buttonDividerTexture = "Interface\\FrameGeneral\\UI-Frame"
 
 function addon.ui.v2:InitializeAuctionHouse()
     self:RegisterRXPV2AuctionHouseItemBlock()
     self:RegisterRXPV2AuctionHouse()
 end
 
-local function createAuctionHouseColumnButton(parent, text, width, columnTexture)
+local function createAuctionHouseColumnButton(parent, text, width)
     local button = CreateFrame("Button", nil, parent)
     button:SetSize(width, 19)
 
@@ -43,20 +50,20 @@ local function createAuctionHouseColumnButton(parent, text, width, columnTexture
     return button
 end
 
-local function createAuctionHouseItemRow(parent, theme, moneyFrameName)
+local function createAuctionHouseItemRow(parent, moneyFrameName)
     local row = CreateFrame("Button", nil, parent)
     row:SetHeight(itemRowHeight)
 
     local left = row:CreateTexture(nil, "BORDER")
     left:SetSize(10, itemRowHeight)
     left:SetPoint("LEFT", 34, 0)
-    left:SetTexture(theme.rowTexture)
+    left:SetTexture(rowTexture)
     left:SetTexCoord(0, 0.078125, 0, 1)
 
     local right = row:CreateTexture(nil, "BORDER")
     right:SetSize(10, itemRowHeight)
     right:SetPoint("RIGHT")
-    right:SetTexture(theme.rowTexture)
+    right:SetTexture(rowTexture)
     right:SetTexCoord(0.75, 0.828125, 0, 1)
 
     local middle = row:CreateTexture(nil, "BORDER")
@@ -64,7 +71,7 @@ local function createAuctionHouseItemRow(parent, theme, moneyFrameName)
     middle:SetPoint("RIGHT", right, "LEFT")
     middle:SetPoint("TOP", row, "TOP")
     middle:SetPoint("BOTTOM", row, "BOTTOM")
-    middle:SetTexture(theme.rowTexture)
+    middle:SetTexture(rowTexture)
     middle:SetTexCoord(0.078125, 0.75, 0, 1)
 
     row:EnableMouse(true)
@@ -72,7 +79,7 @@ local function createAuctionHouseItemRow(parent, theme, moneyFrameName)
     row:SetScript("OnLeave", function(this) if this.OnLeave then this.OnLeave(this) end end)
     row:SetScript("OnClick", function(this) if this.OnClick then this.OnClick(this) end end)
 
-    row:SetHighlightTexture(theme.rowHighlightTexture, "ADD")
+    row:SetHighlightTexture(rowHighlightTexture, "ADD")
     row.Highlight = row:GetHighlightTexture()
     row.Highlight:SetAllPoints(row)
     row.Highlight:SetTexCoord(0, 1, 0, 0.578125)
@@ -85,14 +92,14 @@ local function createAuctionHouseItemRow(parent, theme, moneyFrameName)
     row.ItemIcon = CreateFrame("Button", nil, row)
     row.ItemIcon:SetSize(32, 32)
     row.ItemIcon:SetPoint("TOPLEFT", 1, -2)
-    row.ItemIcon:SetNormalTexture(theme.itemIconTexture)
+    row.ItemIcon:SetNormalTexture(itemIconTexture)
     row.ItemIcon:GetNormalTexture():ClearAllPoints()
     row.ItemIcon:GetNormalTexture():SetSize(60, 60)
     row.ItemIcon:GetNormalTexture():SetPoint("CENTER")
 
     row.ItemIcon.IconTexture = row.ItemIcon:CreateTexture(nil, "BORDER")
     row.ItemIcon.IconTexture:SetAllPoints(row.ItemIcon)
-    row.ItemIcon:SetHighlightTexture(theme.itemIconHighlightTexture, "ADD")
+    row.ItemIcon:SetHighlightTexture(itemIconHighlightTexture, "ADD")
 
     row.ItemIcon:SetScript("OnEnter", function(this)
         local itemRow = this:GetParent()
@@ -179,7 +186,7 @@ local function createAuctionHouseItemRow(parent, theme, moneyFrameName)
     return row
 end
 
-local function createAuctionHousePanelButton(parent, text, dividerTexture)
+local function createAuctionHousePanelButton(parent, text)
     local button = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
     button:SetSize(80, 22)
     button:SetText(text)
@@ -187,7 +194,7 @@ local function createAuctionHousePanelButton(parent, text, dividerTexture)
     local divider = button:CreateTexture(nil, "BORDER")
     divider:SetSize(13, 25)
     divider:SetPoint("TOPRIGHT", button, "TOPLEFT", 5, 1)
-    divider:SetTexture(dividerTexture)
+    divider:SetTexture(buttonDividerTexture)
     divider:SetTexCoord(0.0078125, 0.109375, 0.7578125, 0.953125)
 
     return button
@@ -196,8 +203,6 @@ end
 function addon.ui.v2:RegisterRXPV2AuctionHouseItemBlock()
     local Type, Version = "RXPV2AuctionHouseItemBlock", 1
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
-
-    local theme = addon.v2:GetAuctionHouseTheme()
 
     local function resetRow(row)
         row:UnlockHighlight()
@@ -252,14 +257,14 @@ function addon.ui.v2:RegisterRXPV2AuctionHouseItemBlock()
         headerTop:SetPoint("TOPLEFT")
         headerTop:SetPoint("TOPRIGHT")
         headerTop:SetHorizTile(true)
-        headerTop:SetTexture(theme.kindHeaderTexture, true)
+        headerTop:SetTexture(kindHeaderTexture, true)
         headerTop:SetTexCoord(0, 1, 15 / 256, 25 / 256)
 
         local headerBottom = frame.Header:CreateTexture(nil, "BACKGROUND")
         headerBottom:SetPoint("TOPLEFT", headerTop, "BOTTOMLEFT")
         headerBottom:SetPoint("BOTTOMRIGHT")
         headerBottom:SetHorizTile(true)
-        headerBottom:SetTexture(theme.kindHeaderTexture, true)
+        headerBottom:SetTexture(kindHeaderTexture, true)
         headerBottom:SetTexCoord(0, 1, 25 / 256, 15 / 256)
 
         frame.Header.Name = frame.Header:CreateFontString(nil, "OVERLAY", "GameFontNormal")
@@ -267,11 +272,11 @@ function addon.ui.v2:RegisterRXPV2AuctionHouseItemBlock()
         frame.Header.Name:SetPoint("LEFT", 8, 0)
         frame.Header.Name:SetJustifyH("LEFT")
 
-        frame.Best = createAuctionHouseItemRow(frame, theme, moneyFramePrefix .. "BestMoneyFrame")
+        frame.Best = createAuctionHouseItemRow(frame, moneyFramePrefix .. "BestMoneyFrame")
         frame.Best:SetPoint("TOPLEFT", frame.Header, "BOTTOMLEFT", 0, -itemRowSpacing)
         frame.Best:SetPoint("TOPRIGHT", frame.Header, "BOTTOMRIGHT", 0, -itemRowSpacing)
 
-        frame.Budget = createAuctionHouseItemRow(frame, theme, moneyFramePrefix .. "BudgetMoneyFrame")
+        frame.Budget = createAuctionHouseItemRow(frame, moneyFramePrefix .. "BudgetMoneyFrame")
         frame.Budget:SetPoint("TOPLEFT", frame.Best, "BOTTOMLEFT", 0, -itemRowSpacing)
         frame.Budget:SetPoint("TOPRIGHT", frame.Best, "BOTTOMRIGHT", 0, -itemRowSpacing)
 
@@ -288,8 +293,6 @@ end
 function addon.ui.v2:RegisterRXPV2AuctionHouse()
     local Type, Version = "RXPV2AuctionHouse", 1
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
-
-    local theme = addon.v2:GetAuctionHouseTheme()
 
     local methods = {
         ["OnAcquire"] = function(this)
@@ -328,23 +331,23 @@ function addon.ui.v2:RegisterRXPV2AuctionHouse()
         title:SetText(_G.MINIMAP_TRACKING_AUCTIONEER)
         frame.Title = title
 
-        local itemName = createAuctionHouseColumnButton(frame, "Item Name", 260, theme.columnTexture)
+        local itemName = createAuctionHouseColumnButton(frame, "Item Name", 260)
         itemName:SetPoint("TOPLEFT", 65, -52)
 
-        local level = createAuctionHouseColumnButton(frame, _G.REQ_LEVEL_ABBR, 86, theme.columnTexture)
+        local level = createAuctionHouseColumnButton(frame, _G.REQ_LEVEL_ABBR, 86)
         level:SetPoint("LEFT", itemName, "RIGHT", -2, 0)
 
-        local upgradeEP = createAuctionHouseColumnButton(frame, "Upgrade/EP", 208, theme.columnTexture)
+        local upgradeEP = createAuctionHouseColumnButton(frame, "Upgrade/EP", 208)
         upgradeEP:SetPoint("LEFT", level, "RIGHT", -2, 0)
 
-        local buyout = createAuctionHouseColumnButton(frame, _G.AUCTION_PRICE, 186, theme.columnTexture)
+        local buyout = createAuctionHouseColumnButton(frame, _G.AUCTION_PRICE, 186)
         buyout:SetPoint("LEFT", upgradeEP, "RIGHT", -2, 0)
 
-        local closeButton = createAuctionHousePanelButton(frame, _G.CLOSE, theme.buttonDividerTexture)
+        local closeButton = createAuctionHousePanelButton(frame, _G.CLOSE)
         closeButton:SetPoint("BOTTOMRIGHT", -6, 14)
         closeButton:SetScript("OnClick", function(this) HideUIPanel(this:GetParent():GetParent()) end)
 
-        local buyButton = createAuctionHousePanelButton(frame, _G.BUYOUT, theme.buttonDividerTexture)
+        local buyButton = createAuctionHousePanelButton(frame, _G.BUYOUT)
         buyButton:SetPoint("RIGHT", closeButton, "LEFT")
 
         buyButton:SetScript("OnClick", function(this)
@@ -355,7 +358,7 @@ function addon.ui.v2:RegisterRXPV2AuctionHouse()
             if handler then handler() end
         end)
 
-        local searchButton = createAuctionHousePanelButton(frame, _G.SEARCH, theme.buttonDividerTexture)
+        local searchButton = createAuctionHousePanelButton(frame, _G.SEARCH)
         searchButton:SetPoint("RIGHT", buyButton, "LEFT")
 
         frame.searchButton = searchButton

@@ -334,13 +334,6 @@ addon.v2.themes['RXP Blue V2'] = {
         guideSelectIcon = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-icon-scroll"
     },
     auctionHouse = {
-        columnTexture = "Interface\\FriendsFrame\\WhoFrame-ColumnTabs",
-        kindHeaderTexture = "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-Top",
-        rowTexture = "Interface\\AuctionFrame\\UI-AuctionItemNameFrame",
-        rowHighlightTexture = "Interface\\HelpFrame\\HelpFrameButton-Highlight",
-        itemIconTexture = "Interface\\Buttons\\UI-Quickslot2",
-        itemIconHighlightTexture = "Interface\\Buttons\\ButtonHilight-Square",
-        buttonDividerTexture = "Interface\\FrameGeneral\\UI-Frame",
         upgradeRatioColor = "|cffffff00",
         upgradeEPColor = "|cffff00ff",
         upgradeIcon = "Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-reward-upgrade",
