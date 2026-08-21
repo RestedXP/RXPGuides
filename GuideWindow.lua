@@ -1897,6 +1897,18 @@ function addon:LoadGuide(guide, OnLoad)
     RXPCData.currentGuideName = guide.name
     RXPCData.currentGuideGroup = guide.group
 
+    if useV2GuideWindow and addon.v2:IsGuideWindowEnabled() then
+        local guideWindow = addon.v2:GetGuideWindow()
+
+        if guideWindow then
+            local guideName = addon.GetGuideName(guide) or ""
+            local title = guide.title or guide.subgroup or guideName
+
+            guideWindow.title:SetText(title)
+            guideWindow.subtitle:SetText(not guide.title and guide.subgroup and guideName or "")
+        end
+    end
+
     if not useV2GuideWindow then
         local guidename = guide.title or addon.GetGuideName(guide)
 

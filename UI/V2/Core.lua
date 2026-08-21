@@ -375,10 +375,10 @@ function addon.v2:BuildGuideStepsSnapshot()
     local level = addon.player.level
     local step, hidden, complete, text, rawtext
 
-    if not profile then return {title = "", rows = rows} end
+    if not profile then return {title = "", subtitle = "", rows = rows} end
 
     if not guide or guide.empty then
-        return {title = L("Welcome to RestedXP\nSelect a guide:"), rows = rows, empty = true}
+        return {title = L("Welcome to RestedXP"), subtitle = L("Select a guide:"), rows = rows, empty = true}
     end
 
     for index, guideStep in ipairs(guide.steps or {}) do
@@ -417,11 +417,15 @@ function addon.v2:BuildGuideStepsSnapshot()
         }
     end
 
-    local title = guide.title or addon.GetGuideName(guide) or ""
+    local guideName = addon.GetGuideName(guide) or ""
+    local title = guide.title or guide.subgroup or guideName
+    local subtitle = not guide.title and guide.subgroup and guideName or ""
 
-    if guide.subgroup and not guide.title then title = title .. "\n" .. guide.subgroup end
-
-    return {title = title:gsub("\\n", "\n"), rows = rows}
+    return {
+        title = title,
+        subtitle = subtitle,
+        rows = rows
+    }
 end
 
 function addon.ui.v2:RegisterRXPV2GuideStepsItem()
@@ -831,7 +835,6 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         ["OnRelease"] = function(this) this.frame:Hide() end,
 
         ["SetSnapshot"] = function(this, snapshot, scrollToActive)
-            local title, subtitle = snapshot.title:match("^([^\n]*)\n?(.*)$")
             local guideStepsShown = this.guideSteps.frame:IsShown()
             local wasEmptyGuide = this.snapshotEmpty == true
             local emptyGuide = snapshot.empty
@@ -868,10 +871,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
                 this.frame:SetHeight(this.guideHeight)
             end
 
-            if hasRows and subtitle ~= "" then title, subtitle = subtitle, title end
-
-            this.title:SetText(title)
-            this.subtitle:SetText(subtitle)
+            this.title:SetText(snapshot.title)
+            this.subtitle:SetText(snapshot.subtitle)
             this.guideStepsFrame:Show()
             this.guideSteps.frame:SetShown(not empty)
             this.footer:Show()
