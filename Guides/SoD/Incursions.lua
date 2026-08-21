@@ -962,10 +962,10 @@ step
     #requires Moonkin
     #requires groupSkulk
     .goto The Hinterlands,53.58,39.10
-    .gossipoption 122141 >> Talk to |cRXP_FRIENDLY_Ealianar Shadowdrinker|r laying on the ground. He should start following you around
+    .gossipoption 122141 >> Talk to |cRXP_FRIENDLY_Elianar Shadowdrinker|r laying on the ground. He should start following you around
     >>|cRXP_WARN_You can talk to him through the back side of the wooden fence without having to go inside|r
     >>|cRXP_WARN_If he's not there that means someone else is escorting him, skip this step if u can't find him|r
-    .target Ealianar Shadowdrinker
+    .target Elianar Shadowdrinker
     .maxlevel 53
 step
     #sticky
