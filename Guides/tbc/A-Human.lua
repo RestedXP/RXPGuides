@@ -533,7 +533,7 @@ step << Mage/Priest/Warlock
 step
     #label Goldshire
     .goto Elwynn Forest,42.105,65.927
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshall Dughan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 54 >> Turn in Report to Goldshire
     .accept 62 >> Accept The Fargodeep Mine
     .target Marshal Dughan

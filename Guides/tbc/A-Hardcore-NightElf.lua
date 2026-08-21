@@ -733,7 +733,7 @@ step
     .goto 1438/1,854.400,9952.500,6 >>Next to a small tree
     .goto 1438/1,822.200,9948.500,6 >>On the small hill
     .goto 1438/1,809.800,9926.400,6 >>Next to the massive tree
-    >>Loot the 3 felcones from the locations marked on your map.
+    >>Loot the 3 |cRXP_LOOT_Fel Cones|r from the locations marked on your map.
     >>|cRXP_WARN_Skip this step if any of them is not there and you're unable to complete the objective|r
     .complete 489,1 --Fel Cone 3/3
     .isOnQuest 489

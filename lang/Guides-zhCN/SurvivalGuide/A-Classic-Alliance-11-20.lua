@@ -1882,13 +1882,13 @@ step
     >>这将开始一个护送
     .accept 731,1 >>接受任务 健忘的勘察员
     >>|cRXP_WARN_这个任务非常困难。如果你无法找到队伍或单独完成，请跳过此步骤|r
-    .link https://youtu.be/3d-htESNztE >>https://youtu.be/3d-htESNztE >> |cRXP_WARN_点击此处观看视频指南|r
+    .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_点击此处观看视频指南|r
     .target 勘察员雷塔维
 step
     #requires prospector
     >>|cRXP_WARN_护送 |cRXP_FRIENDLY_勘察员雷塔维|r 穿过挖掘场|r
     >>|cRXP_WARN_这个任务非常困难。如果你无法找到队伍或单独完成，请跳过此步骤|r
-    .link https://youtu.be/3d-htESNztE >>https://youtu.be/3d-htESNztE >> |cRXP_WARN_点击此处观看视频指南|r
+    .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_点击此处观看视频指南|r
     .complete 731,1
     .isOnQuest 731
 step

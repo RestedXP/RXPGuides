@@ -383,7 +383,7 @@ step
     .subzone 87 >> Travel to Goldshire
 step
     #hardcore
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshall Dughan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .target Marshal Dughan
     .goto Elwynn Forest,42.105,65.927
     .turnin 54 >> Turn in Report to Goldshire
@@ -424,7 +424,7 @@ step << Mage/Priest/Warlock
     .vendor >> |cRXP_WARN_Vendor trash|r
 step
     #label Goldshire
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshall Dughan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .target Marshal Dughan
     .goto Elwynn Forest,42.105,65.927
     .turnin 54 >> Turn in Report to Goldshire

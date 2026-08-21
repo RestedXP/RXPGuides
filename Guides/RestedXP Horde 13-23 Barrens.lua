@@ -9,6 +9,7 @@ RXPGuides.RegisterGuide([[
 #name 13-22 The Barrens
 #version 1
 #group RestedXP Horde 1-30
+#groupid RXP-SRGCE-H1
 #defaultfor Shaman/Warrior
 #next 22-25 Hillsbrad / South Barrens;22-25 Hillsbrad Foothills JJ
 
@@ -431,7 +432,7 @@ step << !Tauren
 .complete 848,1 --Collect Fungal Spores (x4)
 step << !Tauren
 #xprate >1.499
->>Dive underwater to the bubble fissure
+>>Dive underwater to the Bubbling Fissure
 .goto The Barrens,45.1,22.5
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step << !Tauren
@@ -752,7 +753,7 @@ step
     .goto The Barrens,58.0,53.9
     .complete 3281,1 --Stolen Silver (1)
 step
-    >>Click the Bubble Fissure underwater
+    >>Click the Bubbling Fissure underwater
     .goto The Barrens,55.6,42.7
     .complete 877,1 --Test the Dried Seeds (1)
 step
@@ -1063,7 +1064,7 @@ step
 step
     #sticky
     #label Lizard
-    >>Kill Stormstouts. Loot them for one of their horns
+    >>Kill Stormsnouts. Loot them for one of their horns
     .complete 821,3 --Thunder Lizard Horn (1)
 step
     #sticky

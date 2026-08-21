@@ -3474,13 +3474,13 @@ step
     .mob Fen Creeper
     .isOnQuest 275
 step
-    .isOnQuest 464
+    .isQuestTurnedIn 464
     .goto Wetlands,47.45,47.01
     >>Click the |cRXP_PICK_Dragonmaw Catapult|r
     .turnin 465 >>Turn in Nek'rosh's Gambit
     .accept 474 >>Accept Defeat Nek'rosh
 step
-    .isQuestTurnedIn 464
+    .isQuestTurnedIn 474
     .goto Wetlands,47.45,47.01
     >>Click the |cRXP_PICK_Dragonmaw Catapult|r
     .accept 474 >>Accept Defeat Nek'rosh
@@ -4171,7 +4171,7 @@ step
 step
     .goto Duskwood,73.59,46.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
-    >>|cRXP_WARN_She may be dead or busy fighting|r |cRXP_ENEMY_Stitches|r |cRXP_WARN_if he attacks Darkshire. If that happens consider grinding mobs near the town untill she respawns or changing your layer (if possible)|r
+    >>|cRXP_WARN_She may be dead or busy fighting|r |cRXP_ENEMY_Stitches|r |cRXP_WARN_if he attacks Darkshire. If that happens consider grinding mobs near the town until she respawns or changing your layer (if possible)|r
     .turnin 57 >> Turn in The Night Watch
     .accept 58 >> Accept The Night Watch
     .target Commander Althea Ebonlocke
@@ -4253,7 +4253,7 @@ step << Shaman
 step << Shaman
     .goto Duskwood,73.59,46.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
-    >>|cRXP_WARN_She may be dead or busy fighting|r |cRXP_ENEMY_Stitches|r |cRXP_WARN_if he attacks Darkshire. If that happens consider grinding mobs near the town untill she respawns or changing your layer (if possible)|r
+    >>|cRXP_WARN_She may be dead or busy fighting|r |cRXP_ENEMY_Stitches|r |cRXP_WARN_if he attacks Darkshire. If that happens consider grinding mobs near the town until she respawns or changing your layer (if possible)|r
     .turnin 79 >> Turn in The Legend of Stalvan
     .accept 80 >> Accept The Legend of Stalvan
     .target Commander Althea Ebonlocke
@@ -4459,7 +4459,7 @@ step << !Shaman
 step
     .goto Duskwood,73.59,46.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
-    >>|cRXP_WARN_She may be dead or busy fighting|r |cRXP_ENEMY_Stitches|r |cRXP_WARN_if he attacks Darkshire. If that happens consider grinding mobs near the town untill she respawns or changing your layer (if possible)|r
+    >>|cRXP_WARN_She may be dead or busy fighting|r |cRXP_ENEMY_Stitches|r |cRXP_WARN_if he attacks Darkshire. If that happens consider grinding mobs near the town until she respawns or changing your layer (if possible)|r
     .turnin 58 >> Turn in The Night Watch
     .turnin 79 >> Turn in The Legend of Stalvan << !Shaman
     .accept 80 >> Accept The Legend of Stalvan << !Shaman
@@ -5387,7 +5387,7 @@ step
 step
     .goto Duskwood,73.59,46.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
-    >>|cRXP_WARN_She may be dead or busy fighting|r |cRXP_ENEMY_Stitches|r |cRXP_WARN_if he attacks Darkshire. If that happens consider grinding mobs near the town untill she respawns or changing your layer (if possible)|r
+    >>|cRXP_WARN_She may be dead or busy fighting|r |cRXP_ENEMY_Stitches|r |cRXP_WARN_if he attacks Darkshire. If that happens consider grinding mobs near the town until she respawns or changing your layer (if possible)|r
     .turnin 57 >> Turn in The Night Watch
     .accept 58 >> Accept The Night Watch
     .target Commander Althea Ebonlocke
@@ -5469,7 +5469,7 @@ step << Shaman
 step << Shaman
     .goto Duskwood,73.59,46.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
-    >>|cRXP_WARN_She may be dead or busy fighting|r |cRXP_ENEMY_Stitches|r |cRXP_WARN_if he attacks Darkshire. If that happens consider grinding mobs near the town untill she respawns or changing your layer (if possible)|r
+    >>|cRXP_WARN_She may be dead or busy fighting|r |cRXP_ENEMY_Stitches|r |cRXP_WARN_if he attacks Darkshire. If that happens consider grinding mobs near the town until she respawns or changing your layer (if possible)|r
     .turnin 79 >> Turn in The Legend of Stalvan
     .accept 80 >> Accept The Legend of Stalvan
     .target Commander Althea Ebonlocke
@@ -5648,7 +5648,7 @@ step << !Shaman
 step
     .goto Duskwood,73.59,46.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
-    >>|cRXP_WARN_She may be dead or busy fighting|r |cRXP_ENEMY_Stitches|r |cRXP_WARN_if he attacks Darkshire. If that happens consider grinding mobs near the town untill she respawns or changing your layer (if possible)|r
+    >>|cRXP_WARN_She may be dead or busy fighting|r |cRXP_ENEMY_Stitches|r |cRXP_WARN_if he attacks Darkshire. If that happens consider grinding mobs near the town until she respawns or changing your layer (if possible)|r
     .turnin 58 >> Turn in The Night Watch
     .turnin 79 >> Turn in The Legend of Stalvan << !Shaman
     .accept 80 >> Accept The Legend of Stalvan << !Shaman

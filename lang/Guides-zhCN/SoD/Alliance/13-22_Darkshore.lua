@@ -2843,7 +2843,7 @@ step
     >>|cRXP_WARN_此任务非常困难。如果失败，请跳过此步骤|r << !Warrior
     >>|cRXP_WARN_这个任务你很可能无法独自完成！|r 除非你能找到其他玩家组队，否则我建议你甚至不要尝试 << Warrior
     >>如果失败或没有人组队，请跳过此步骤 << Warrior
-    .link https://youtu.be/3d-htESNztE >>https://youtu.be/3d-htESNztE >> |cRXP_WARN_点击此处观看视频指南|r << Hunter
+    .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_点击此处观看视频指南|r << Hunter
     .link https://youtu.be/md926sh3L6U >>https://youtu.be/md926sh3L6U >> |cRXP_WARN_点击此处查看视频攻略|r << !Hunter
     .target 勘察员雷塔维
 step
@@ -2851,7 +2851,7 @@ step
     #season 2
     >>|cRXP_WARN_护送 |cRXP_FRIENDLY_勘察员雷塔维|r 穿过挖掘场|r
     >>|cRXP_WARN_此任务非常困难。如果失败，请跳过此步骤|r
-    .link https://youtu.be/3d-htESNztE >>https://youtu.be/3d-htESNztE >> |cRXP_WARN_点击此处观看视频指南|r << Hunter
+    .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_点击此处观看视频指南|r << Hunter
     .complete 731,1
     .isOnQuest 731
 step << Druid/Hunter/Warrior

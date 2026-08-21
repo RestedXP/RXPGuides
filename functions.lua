@@ -190,6 +190,16 @@ events.daily = events.accept
 events.dailyturnin = events.turnin
 events.acceptmultiple = events.accept
 events.turninmultiple = events.turnin
+local dualSpecEvents = {"PLAYER_ENTERING_WORLD"}
+if C_EventUtils then
+    if C_EventUtils.IsEventValid("PLAYER_TALENT_UPDATE") then
+        tinsert(dualSpecEvents, "PLAYER_TALENT_UPDATE")
+    end
+    if C_EventUtils.IsEventValid("ACTIVE_TALENT_GROUP_CHANGED") then
+        tinsert(dualSpecEvents, "ACTIVE_TALENT_GROUP_CHANGED")
+    end
+end
+events.dualspec = dualSpecEvents
 
 local function GetIcon(path,index,size)
     local coords = _G.GetPOITextureCoords or C_Minimap.GetPOITextureCoords
@@ -257,8 +267,9 @@ function addon.error(text, arg1)
     if type(text) ~= "string" then
         text = ""
     end
-
-    if arg1 then
+    if arg1 and addon.ignoredMaps and addon.ignoredMaps[arg1] then
+        return
+    elseif arg1 then
         addon.comms.PrettyPrint("%s %s: %s\n%s", L("Error parsing guide"), addon.currentGuideName, arg1, text)
     else
         addon.comms.PrettyPrint(text)
@@ -1889,7 +1900,7 @@ addon.functions["goto"] = function(self, ...)
         if not (element.x and element.y and element.zone) then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
-                           ": Invalid coordinates or map name\n" .. self)
+                           ": Invalid coordinates or map name\n" .. self, element.zone or zone)
         end
 
         element.radius = tonumber(radius)
@@ -1910,7 +1921,7 @@ addon.functions["goto"] = function(self, ...)
                 if not (zx and zy) then
                     return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
-                           ": Invalid coordinates or map name\n" .. self)
+                           ": Invalid coordinates or map name\n" .. self, element.zone or zone)
                 end
                 element.x = zx * 100
                 element.y = zy * 100
@@ -2081,7 +2092,7 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
         if not (element.x and element.y and element.zone) then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
-                           ": Invalid coordinates or map name\n" .. self)
+                           ": Invalid coordinates or map name\n" .. self, element.zone or zone)
         end
 
         radius = tonumber(radius)
@@ -2121,7 +2132,7 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
                 else
                     return addon.error(
                         '2-'..L("Error parsing guide") .. " "  .. addon.currentGuideName ..
-                           ": Invalid coordinates or map name\n" .. self)
+                           ": Invalid coordinates or map name\n" .. self, element.zone or zone)
                 end
             end
         end
@@ -2168,7 +2179,7 @@ function addon.functions.wpradius(self,_,zone,x,y,radius)
         else
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
-                           ": Invalid coordinates or map name\n" .. self)
+                           ": Invalid coordinates or map name\n" .. self, element.zone or zone)
         end
     end
 end
@@ -2208,7 +2219,7 @@ function addon.functions.pin(self, ...)
         if not (element.x and element.y and element.zone) then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
-                           ": Invalid coordinates or map name\n" .. self)
+                           ": Invalid coordinates or map name\n" .. self, element.zone or zone)
         end
         if not subzone then
         element.wx, element.wy, element.instance =
@@ -2274,7 +2285,7 @@ function addon.functions.ingamewaypoint(self, ...)
         if not (element.zx and element.zy and element.zone) then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
-                           ": Invalid coordinates or map name\n" .. self)
+                           ": Invalid coordinates or map name\n" .. self, element.zone or zone)
         end
         if not subzone then
         element.wx, element.wy, element.instance =
@@ -2445,7 +2456,7 @@ function addon.functions.line(self, text, zone, ...)
         if not (segments and #segments > 0 and zone and mapID) then
             return addon.error(
                         L("Error parsing guide") .. " " .. (addon.currentGuideName or _G.NONE) ..
-                           ": Invalid coordinates or map name\n" .. self)
+                           ": Invalid coordinates or map name\n" .. self, zone)
         end
         element.zone = mapID
         -- element.hidePin = true
@@ -2493,7 +2504,7 @@ function addon.functions.loop(self, text, range, zone, ...)
         if not (segments and #segments > 0 and zone and mapID) then
             return addon.error(
                         L("Error parsing guide") .. " "  .. (addon.currentGuideName or _G.NONE) ..
-                           ": Invalid coordinates or map name\n" .. self)
+                           ": Invalid coordinates or map name\n" .. self, zone)
         end
         element.zone = mapID
         -- element.hidePin = true
@@ -3831,6 +3842,20 @@ function addon.functions.next(skip, guide, arg1)
             next = next:gsub("^(%d)-(%d%d?)", addon.affix)
             --print(1,next,guideSkip)
             guideSkip = addon.GetGuideTable(group, next)
+            if not guideSkip then
+                parentGroup = addon.condenseGroups[group]
+                if parentGroup then
+                    for currentGroup, displayName in pairs(addon.condenseGroups) do
+                        if displayName == parentGroup then
+                            guideSkip = addon.GetGuideTable(currentGroup, next)
+                            if guideSkip then
+                                group = currentGroup
+                                break
+                            end
+                        end
+                    end
+                end
+            end
             --Iterates through every guide until it finds a valid one
             --It uses the last one listed in case none of them are valid
             if guideSkip and addon.IsGuideActive(guideSkip) then
@@ -4576,7 +4601,7 @@ function addon.functions.zone(self, ...)
         if not (mapID and text) then
             return addon.error(
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
-                           ": Invalid text/map name\n" .. self)
+                           ": Invalid text/map name\n" .. self, zone)
         end
         element.map = mapID
         element.icon = addon.icons["goto"]
@@ -8388,5 +8413,37 @@ function addon.functions.totalbagslots(self,text,arg1)
     if total < element.maxslots == element.operator then
         step.completed = true
         addon.updateSteps = true
+    end
+end
+
+function addon.functions.dualspec(self, text)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        element.icon = addon.icons.trainer
+        if text and text ~= "" then
+            element.text = text
+        else
+            element.text = L("Learn dual spec")
+        end
+        return element
+    end
+
+    local element = self.element
+    local step = element.step
+    if element.completed or not step.active then return end
+
+    addon:ScheduleTask(element.frame or self)
+
+    if addon.isHidden then return end
+
+    local groups
+    if GetNumTalentGroups then
+        groups = GetNumTalentGroups()
+    elseif GetNumSpecGroups then
+        groups = GetNumSpecGroups()
+    end
+
+    if (groups or 1) > 1 then
+        addon.SetElementComplete(self, true)
     end
 end

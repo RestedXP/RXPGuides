@@ -2474,7 +2474,7 @@ step
     >>Interact with the |cRXP_PICK_Dusty Shelf|r |cRXP_WARN_inside the castle in the top left tower (go left after the first staircase)|r
     .goto Silverpine Forest,65.3,24.8
     .turnin 461 >>Turn in The Hidden Niche
-    .accept 491 >>Accept Want to Bethor
+    .accept 491 >>Accept Wand to Bethor
     .target Dusty Shelf
 step
     .train 415936,1
@@ -2483,7 +2483,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bethor Iceshard|r.
     .goto Undercity,83.8,16.2
-    .turnin 491 >>Turn in Want to Bethor
+    .turnin 491 >>Turn in Wand to Bethor
     .accept 78277 >>Accept A Token of Gratitude
     .turnin 78277 >>Turn in A Token of Gratitude
     .train 415936 >>|cRXP_WARN_You will automatically train the rune by turning in the quest|r

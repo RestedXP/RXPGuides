@@ -405,7 +405,7 @@ step << Undead Warrior
 step << Undead Warrior
     #optional
     #completewith BaronLongshore
-    +|cRXP_WARN_Equip th|re |T135353:0|t[普通长剑] |cRXP_WARN_when you are level 16|r
+    +|cRXP_WARN_Equip the|r |T135353:0|t[普通长剑] |cRXP_WARN_when you are level 16|r
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7

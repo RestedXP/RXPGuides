@@ -2859,7 +2859,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Saltheril|r
     .turnin 9067 >>Turn in The Party Never Ends
     .target Lord Saltheril
-    .isOnQuest 9067
+    .isQuestComplete 9067
 step
     #completewith next
     .destroy 23500 >> |cRXP_WARN_Delete|r |T133461:0|t[Saltheril's Haven Party Invitation] |cRXP_WARN_from your bags, as it's no longer needed|r

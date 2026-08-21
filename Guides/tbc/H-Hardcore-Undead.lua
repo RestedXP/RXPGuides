@@ -781,7 +781,7 @@ step << Priest
 step << Priest
     #completewith next
     .hs >> Hearth to Brill
-    .bindlocation 159,1
+    .bindlocation 2119,1
     .subzoneskip 159
 step << Priest
     .goto Tirisfal Glades,61.99,52.19,6,0

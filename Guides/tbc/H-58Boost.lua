@@ -197,7 +197,7 @@ step
     .complete 5098,4 --Tower Four marked (1)
 step
     .goto Western Plaguelands,46.04,52.33
-    >>Kill |cRXP_ENEMY_Cauldron Lord Malvinous|r. Loot him for his |cRXP_LOOT_Cauldron Key|r
+    >>Kill |cRXP_ENEMY_Cauldron Lord Malvinious|r. Loot him for his |cRXP_LOOT_Cauldron Key|r
     .complete 5231,1 --Dalson's Tears Cauldron Key (1)
 	.unitscan Cauldron Lord Malvinious
 step
@@ -739,7 +739,7 @@ step
 	.goto Western Plaguelands,38.60,56.20,50,0
 	.goto Western Plaguelands,37.80,57.60,50,0
 	>>Kill the |cRXP_ENEMY_Jabbering Ghoul|r. Loot it for the |cRXP_LOOT_Good Luck Other-Half-Charm|r
-    .use 12722 >> Use it to create the |cRXP_LOOT_Good Luck Good Luck Charm|r
+    .use 12722 >> Use it to create the |cRXP_LOOT_Good Luck Charm|r
     .complete 5051,1 --Good Luck Charm (1)
 	.unitscan Jabbering Ghoul
 step

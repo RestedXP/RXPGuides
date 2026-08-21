@@ -288,7 +288,7 @@ step
 step
     #label TestSeeds
     .goto The Barrens,55.61,42.75
-    >>Click the |cRXP_PICK_Bubble Fissure|r underwater
+    >>Click the |cRXP_PICK_Bubbling Fissure|r underwater
     .complete 877,1 --Test the Dried Seeds (1)
 step
     #completewith next
@@ -1036,7 +1036,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clarice|r
     >>|cRXP_WARN_She patrols around|r
-    .accept 264 >>Until Death Do Us Part
+    .accept 264 >> Accept Until Death Do Us Part
     .target Clarice Foster
 step
     .goto Thunder Bluff,22.82,20.88
@@ -1077,7 +1077,7 @@ step
     .goto Thunder Bluff,28.55,25.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clarice|r
     >>|cRXP_WARN_She patrols around|r
-    .accept 264 >>Until Death Do Us Part
+    .accept 264 >> Accept Until Death Do Us Part
     .target Clarice Foster
 step << Shaman
     .goto Thunder Bluff,23.64,18.74
@@ -2079,8 +2079,8 @@ step
     .group 2
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Wraithtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
-    .complete 6442,1 --Wraithtail Head (20)
+    >>Kill |cRXP_ENEMY_Wrathtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
+    .complete 6442,1 --Wrathtail Head (20)
     .mob Wrathtail Razortail
     .mob Wrathtail Wave Rider
     .mob Wrathtail Sorceress
@@ -2130,8 +2130,8 @@ step
     .goto Ashenvale,11.22,31.04,50,0
     .goto Ashenvale,10.38,29.60,50,0
     .goto Ashenvale,11.01,28.57,50,0
-    >>Kill |cRXP_ENEMY_Wraithtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
-    .complete 6442,1 --Wraithtail Head (20)
+    >>Kill |cRXP_ENEMY_Wrathtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
+    .complete 6442,1 --Wrathtail Head (20)
     .mob Wrathtail Razortail
     .mob Wrathtail Wave Rider
     .mob Wrathtail Sorceress
@@ -2194,9 +2194,9 @@ step
     .target Argent Guard Thaelrid
     .dungeon BFD
 step
-    >>Kill |cRXP_ENEMY_Lorguss Jett |r
-    .complete 6565,1 --Lorguss Jett slain (1)
-    .mob Lorguss Jett
+    >>Kill |cRXP_ENEMY_Lorgus Jett|r
+    .complete 6565,1 --Lorgus Jett slain (1)
+    .mob Lorgus Jett
     .isOnQuest 6565
     .dungeon BFD
 step
@@ -2328,7 +2328,7 @@ step << Druid
     #completewith next
     .goto Moonglade,54.30,55.68
     .collect 15877,1,30,1 >>Loot the |cRXP_PICK_Bauble Container|r at the bottom of the lake for a |T134125:0|t[|cRXP_LOOT_Shrine Bauble|r]
-    >>|cRXP_WARN_Do not go underwater untill you arive right above the Bauble|r
+    >>|cRXP_WARN_Do not go underwater until you arive right above the Bauble|r
 step << Druid
     .goto Moonglade,36.40,42.01
     .cast 19719 >> |cRXP_WARN_Use the|r |T134125:0|t[Shrine Bauble] |cRXP_WARN_at the Shrine of Remulos|r
@@ -3157,7 +3157,7 @@ step << Hunter
     #completewith next
     .goto Hillsbrad Foothills,62.31,19.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Theodore|r
-    .stable >> Stable your pet. You will tame a |cRXP_ENEMY_Gray Bear|r and a |cRXP_ENEMY_Forest Most Creeper|r shortly
+    .stable >> Stable your pet. You will tame a |cRXP_ENEMY_Gray Bear|r and a |cRXP_ENEMY_Forest Moss Creeper|r shortly
     .target Theodore Mont Claire
 step << Hunter
     #loop
@@ -3166,14 +3166,14 @@ step << Hunter
     .goto Hillsbrad Foothills,58.88,32.28,60,0
     .goto Hillsbrad Foothills,61.77,36.16,60,0
     .train 16829 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Gray Bear|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 3)]
-    .train 17263 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Forest Most Creeper|r. Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 3)]
+    .train 17263 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Forest Moss Creeper|r. Attack mobs with it to learn|r |T132278:0|t[Bite (Rank 3)]
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Click here for more info about pet training|r
     .mob Gray Bear
-    .mob Forest Most Creeper
+    .mob Forest Moss Creeper
 step << Hunter
     .goto Hillsbrad Foothills,62.31,19.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Theodore|r
-    .stable >> Abandon the |cRXP_ENEMY_Gray Bear|r or |cRXP_ENEMY_Forest Most Creeper|r and retrieve your regular pet
+    .stable >> Abandon the |cRXP_ENEMY_Gray Bear|r or |cRXP_ENEMY_Forest Moss Creeper|r and retrieve your regular pet
     .target Theodore Mont Claire
 step << Rogue
     #completewith Durnholde1
@@ -5466,9 +5466,9 @@ step
     .target Argent Guard Thaelrid
     .dungeon BFD
 step
-    >>Kill |cRXP_ENEMY_Lorguss Jett |r
-    .complete 6565,1 --Lorguss Jett slain (1)
-    .mob Lorguss Jett
+    >>Kill |cRXP_ENEMY_Lorgus Jett |r
+    .complete 6565,1 --Lorgus Jett slain (1)
+    .mob Lorgus Jett
     .isOnQuest 6565
     .dungeon BFD
 step

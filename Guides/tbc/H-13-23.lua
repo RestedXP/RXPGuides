@@ -924,7 +924,7 @@ step
     .complete 848,1 --Collect Fungal Spores (x4)
 step
     .goto The Barrens,45.06,22.54
-    >>Dive underwater to the |cRXP_PICK_Bubble Fissure|r
+    >>Dive underwater to the |cRXP_PICK_Bubbling Fissure|r
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step
     #label Barak
@@ -1818,7 +1818,7 @@ step
 step
     #label TestSeeds
     .goto The Barrens,55.61,42.75
-    >>Click the |cRXP_PICK_Bubble Fissure|r underwater
+    >>Click the |cRXP_PICK_Bubbling Fissure|r underwater
     .complete 877,1 --Test the Dried Seeds (1)
 step
     #completewith next
@@ -2378,7 +2378,7 @@ step
     .target Jorn Skyseer
 step
 	#completewith LakotaMani
-    >>Kill |cRXP_ENEMY_Stormstouts|r. Loot them for a |cRXP_LOOT_Horn|r
+    >>Kill |cRXP_ENEMY_Stormsnout|r. Loot them for a |cRXP_LOOT_Horn|r
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
 step
@@ -2414,7 +2414,7 @@ step
     .unitscan Lakota'mani
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Stormstouts|r. Loot them for a |cRXP_LOOT_Horn|r
+    >>Kill |cRXP_ENEMY_Stormsnout|r. Loot them for a |cRXP_LOOT_Horn|r
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
 step
@@ -2510,7 +2510,7 @@ step
     .goto The Barrens,49.54,55.08,50,0
     .goto The Barrens,49.03,56.24,50,0
     .goto The Barrens,49.72,56.13,50,0
-    >>Kill |cRXP_ENEMY_Stormstouts|r. Loot them for a |cRXP_LOOT_Horn|r
+    >>Kill |cRXP_ENEMY_Stormsnout|r. Loot them for a |cRXP_LOOT_Horn|r
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
 step
@@ -2944,7 +2944,7 @@ step
     #completewith ZamahTurnin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clarice|r
     >>|cRXP_WARN_She patrols around|r
-    .accept 264 >>Until Death Do Us Part
+    .accept 264 >> Accept Until Death Do Us Part
     .target Clarice Foster
 step
     #xprate <1.5
@@ -2994,7 +2994,7 @@ step
     .goto Thunder Bluff,28.55,25.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clarice|r
     >>|cRXP_WARN_She patrols around|r
-    .accept 264 >>Until Death Do Us Part
+    .accept 264 >> Accept Until Death Do Us Part
     .target Clarice Foster
 step
     #optional
@@ -3109,7 +3109,7 @@ step << Druid
     #completewith next
     .goto Moonglade,54.30,55.68
     .collect 15877,1,30,1 >>Loot the |cRXP_PICK_Bauble Container|r at the bottom of the lake for a |T134125:0|t[|cRXP_LOOT_Shrine Bauble|r]
-    >>|cRXP_WARN_Do not go underwater untill you arive right above the Bauble|r
+    >>|cRXP_WARN_Do not go underwater until you arive right above the Bauble|r
 step << Druid
     .goto Moonglade,36.40,42.01
     .cast 19719 >> |cRXP_WARN_Use the|r |T134125:0|t[Shrine Bauble] |cRXP_WARN_at the Shrine of Remulos|r
@@ -4090,8 +4090,8 @@ step
 step
     #xprate <1.5
     #completewith next
-    >>Kill |cRXP_ENEMY_Wraithtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
-    .complete 6442,1 --Wraithtail Head (20)
+    >>Kill |cRXP_ENEMY_Wrathtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
+    .complete 6442,1 --Wrathtail Head (20)
     .mob Wrathtail Razortail
     .mob Wrathtail Wave Rider
     .mob Wrathtail Sorceress
@@ -4154,8 +4154,8 @@ step
     .goto Ashenvale,11.22,31.04,50,0
     .goto Ashenvale,10.38,29.60,50,0
     .goto Ashenvale,11.01,28.57,50,0
-    >>Kill |cRXP_ENEMY_Wraithtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
-    .complete 6442,1 --Wraithtail Head (20)
+    >>Kill |cRXP_ENEMY_Wrathtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
+    .complete 6442,1 --Wrathtail Head (20)
     .mob Wrathtail Razortail
     .mob Wrathtail Wave Rider
     .mob Wrathtail Sorceress
@@ -4338,9 +4338,9 @@ step
     .target Argent Guard Thaelrid
     .dungeon BFD
 step
-    >>Kill |cRXP_ENEMY_Lorguss Jett |r
-    .complete 6565,1 --Lorguss Jett slain (1)
-    .mob Lorguss Jett
+    >>Kill |cRXP_ENEMY_Lorgus Jett|r
+    .complete 6565,1 --Lorgus Jett slain (1)
+    .mob Lorgus Jett
     .isOnQuest 6565
     .dungeon BFD
 step

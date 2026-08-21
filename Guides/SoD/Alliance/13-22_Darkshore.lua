@@ -8,6 +8,7 @@ RXPGuides.RegisterGuide([[
 #season 2
 << NightElf
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 13-20 Darkshore SoD
 #displayname 13-20 Darkshore << NightElf SoD !Priest
 #displayname 13-22 Darkshore << NightElf SoD Priest
@@ -193,7 +194,7 @@ step << Warlock
     #label ExplorerImpDarkshore
     #sticky
     #completewith DarkshoreEnd
-    >>As you're questing cast |T136163:0|t|cRXP_FRIENDLY_[Drain Soul]|r on mobs untill you receive an |T133257:0|t|cRXP_LOOT_Explorer's Soul|r. |cRXP_WARN_Use it to learn how to summon an|r |T236294:0|t|cRXP_FRIENDLY_[Explorer Imp]|r
+    >>As you're questing cast |T136163:0|t|cRXP_FRIENDLY_[Drain Soul]|r on mobs until you receive an |T133257:0|t|cRXP_LOOT_Explorer's Soul|r. |cRXP_WARN_Use it to learn how to summon an|r |T236294:0|t|cRXP_FRIENDLY_[Explorer Imp]|r
     .train 445459 >>|cRXP_WARN_Use|r |T133257:0|t|cRXP_LOOT_Explorer's Soul|r |cRXP_WARN_to learn how to summon an|r |T236294:0|t[|cRXP_FRIENDLY_Explorer Imp|r]
     .train 445459,1 --Skips if you already have Explorer Imp
     .train 1120,3 --Skips if you don't have drain soul
@@ -206,7 +207,7 @@ step << Warlock/Mage
     #label FelPortalRuneDarkshore
     >>You are in a zone with |cRXP_FRIENDLY_Fel Portals|r present. If you find one summon your |T236294:0|t[|cRXP_FRIENDLY_Explorer Imp|r] and talk to it while next to a portal to send it on an expedition. After 10-20 minutes it will return with loot and a chance to award you with |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] << Warlock
     >>You are in a zone with |cRXP_FRIENDLY_Fel Portals|r present. If you find one close it using a |T134945:0|t[|cRXP_LOOT_Scroll of Spatial Mending|r]. This will award you with |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r] << Mage
-    >>|cRXP_WARN_Be on the lookout for the portals untill you get the rune|r
+    >>|cRXP_WARN_Be on the lookout for the portals until you get the rune|r
     .collect 221499,1 << Warlock --rune of the felguard
     .collect 223147,1 << Mage --Spell Notes: Balefire Bolt
     .itemcount 220792,1 << Mage --Skips if you don't have a Scroll of Spatial Mending
@@ -798,7 +799,7 @@ step << !Warrior !Rogue
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
 step << Druid
     #season 2
-    .xp 14-1600 >>Grind the moonkin untill you're 1600 xp away from lvl 14
+    .xp 14-1600 >>Grind the moonkin until you're 1600 xp away from lvl 14
 step << skip --logout skip !Warrior !Rogue
     #season 2
     .goto 1439/1,-33.200,6141.300,20 >> Head to the nearby cave
@@ -1774,7 +1775,7 @@ step << Priest
     .goto Darkshore,38.7,68.0,0
     .goto Darkshore,38.7,66.3,0
     .goto Darkshore,38.7,64.5,0
-    >>Fisnish off killing |cRXP_ENEMY_Rabid Thistle Bears|r
+    >>Finish off killing |cRXP_ENEMY_Rabid Thistle Bears|r
     >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
@@ -1934,7 +1935,7 @@ step
 step << !sod/Warrior/Rogue/Priest
     .goto 1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
-    .turnin 4812 >> Turn As Water Cascades
+    .turnin 4812 >> Turn in As Water Cascades
     .target Sentinel Glynda Nal'Shea
     .isQuestComplete 4812
 step
@@ -2843,7 +2844,7 @@ step
     >>|cRXP_WARN_This quest is VERY difficult. Skip this step if you fail it|r << !Warrior
     >>|cRXP_WARN_You will most likely not be able to solo this quest!|r I'd recommend not even attempting it unless you can find another player to group with << Warrior
     >>Skip this step if you fail or there's no one to group with << Warrior
-    .link https://youtu.be/3d-htESNztE >> |cRXP_WARN_Click here for a video guide|r << Hunter
+    .link https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_Click here for a video guide|r << Hunter
     .link https://youtu.be/md926sh3L6U >> |cRXP_WARN_Click here for a video walkthrough|r << !Hunter
     .target Prospector Remtravel
 step
@@ -2851,7 +2852,7 @@ step
     #season 2
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Prospector Remtravel|r through the Excavation|r
     >>|cRXP_WARN_This quest is VERY difficult. Skip this step if you fail it|r
-    .link https://youtu.be/3d-htESNztE >> |cRXP_WARN_Click here for a video guide|r << Hunter
+    .link https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_Click here for a video guide|r << Hunter
     .complete 731,1
     .isOnQuest 731
 step << Druid/Hunter/Warrior
@@ -2939,7 +2940,7 @@ step << !Warrior !Rogue !Priest
     .accept 4722 >> Accept Beached Sea Turtle
 step << skip -- Hunter
     .goto Darkshore,39.5,55.5
-    .xp 19+800 >> Grind untill you're 800 xp into level 19. This way you will have level 20 for training in Darnassus after turning in all the quests
+    .xp 19+800 >> Grind until you're 800 xp into level 19. This way you will have level 20 for training in Darnassus after turning in all the quests
 
 ----Start of SoD Priest Ashenvale Meditation quest section----
 
@@ -2978,7 +2979,7 @@ step << Priest
     .isOnQuest 5321
 step << Priest
     #season 2
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liadris Moonriver|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liladris Moonriver|r
 	.target Liladris Moonriver
     .goto Ashenvale,27.26,35.58
     >>Skip this step if you haven't completed the quest
@@ -3020,7 +3021,7 @@ step << Priest
     .goto Ashenvale,33.01,21.41,50,0
     .goto Ashenvale,29.53,24.33,40,0
     .goto Ashenvale,31.89,22.53
-    >>Fisnish off killing |cRXP_ENEMY_Forsaken Herbalists|r and |cRXP_ENEMY_Forsaken Seekers|r
+    >>Finish off killing |cRXP_ENEMY_Forsaken Herbalists|r and |cRXP_ENEMY_Forsaken Seekers|r
     .complete 78192,1 --Forsaken Herbalist (7)
     .complete 78192,2 --Forsaken Seeker (9)
     .mob Forsaken Herbalist
@@ -3320,7 +3321,7 @@ step << Druid
     .turnin 6001 >> Turn in Body and Heart
     .accept 26 >> Accept A Lesson to Learn
     .trainer >> Train your class spells
-    >>You'll soon get a lot of powerful cat runes making cat-feral the faster levling approach |cRXP_WARN_Respec your talents from Balance to Feral|r if u want to. If you do get the movement speed talent for catform asap, it's going to save you a lot of running time.
+    >>You'll soon get a lot of powerful cat runes making cat-feral the faster leveling approach |cRXP_WARN_Respec your talents from Balance to Feral|r if u want to. If you do get the movement speed talent for catform asap, it's going to save you a lot of running time.
     .target Mathrengyl Bearwalker
     .isQuestComplete 6001
 step << Druid
@@ -3516,6 +3517,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 << !sod/Warrior/Rogue/Hunter/Druid
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #name 20-22 Darkshore SoD
 #displayname 20-22 Darkshore << sod !Warrior
 #displayname 20-22 Darkshore/Ashenvale << sod Warrior
@@ -3538,7 +3540,7 @@ step << Warlock
     #sticky
     #completewith TravelMenethilNoDMBoat
     #label ExplorerImpDarkshoreTwo
-    >>As you're questing cast |T136163:0|t|cRXP_FRIENDLY_[Drain Soul]|r on mobs untill you receive an |T133257:0|t|cRXP_LOOT_Explorer's Soul|r. |cRXP_WARN_Use it to learn how to summon an|r |T236294:0|t|cRXP_FRIENDLY_[Explorer Imp]|r
+    >>As you're questing cast |T136163:0|t|cRXP_FRIENDLY_[Drain Soul]|r on mobs until you receive an |T133257:0|t|cRXP_LOOT_Explorer's Soul|r. |cRXP_WARN_Use it to learn how to summon an|r |T236294:0|t|cRXP_FRIENDLY_[Explorer Imp]|r
     .train 445459 >>|cRXP_WARN_Use|r |T133257:0|t|cRXP_LOOT_Explorer's Soul|r |cRXP_WARN_to learn how to summon an|r |T236294:0|t[|cRXP_FRIENDLY_Explorer Imp|r]
     .train 445459,1 --Skips if you already have Explorer Imp
     .train 1120,3 --Skips if you don't have drain soul
@@ -3551,7 +3553,7 @@ step << Warlock/Mage
     #label FelPortalRuneDarkshore
     >>You are in a zone with |cRXP_FRIENDLY_Fel Portals|r present. If you find one summon your |T236294:0|t[|cRXP_FRIENDLY_Explorer Imp|r] and talk to it while next to a portal to send it on an expedition. After 10-20 minutes it will return with loot and a chance to award you with |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] << Warlock
     >>You are in a zone with |cRXP_FRIENDLY_Fel Portals|r present. If you find one close it using a |T134945:0|t[|cRXP_LOOT_Scroll of Spatial Mending|r]. This will award you with |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r] << Mage
-    >>|cRXP_WARN_Be on the lookout for the portals untill you get the rune|r
+    >>|cRXP_WARN_Be on the lookout for the portals until you get the rune|r
     .collect 221499,1 << Warlock --rune of the felguard
     .collect 223147,1 << Mage --Spell Notes: Balefire Bolt
     .itemcount 220792,1 << Mage --Scroll of Spatial Mending
@@ -4151,7 +4153,7 @@ step << Warrior
     .target Sentinel Onaeya
 step << Warrior
     #season 2
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liadris Moonriver|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liladris Moonriver|r
 	.target Liladris Moonriver
     .goto Ashenvale,27.26,35.58
     >>Skip this step if you haven't completed the quest
@@ -4249,7 +4251,7 @@ step << Druid
     .isOnQuest 5321
 step << Druid
 #season 2
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liadris Moonriver|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liladris Moonriver|r
 	.target Liladris Moonriver
     .goto Ashenvale,27.26,35.58
     .turnin 5321 >> Turn in The Sleeper Has Awakened
@@ -4314,7 +4316,7 @@ step << Druid
     #completewith wildStrikesEnd
     >>|cRXP_WARN_Cast|r |T136085:0|t[Regrowth] |cRXP_WARN_or|r |T136041:0|t[Healing Touch] |cRXP_WARN_on 10 different friendly Beasts such as Hunter Pets/Druids in Bear Form/Shamans in Ghost Wolf|r << Horde
     >>|cRXP_WARN_Cast|r |T136085:0|t[Regrowth] |cRXP_WARN_or|r |T136041:0|t[Healing Touch] |cRXP_WARN_on 10 different friendly Beasts such as Hunter Pets or Druids in Bear/Cat Form|r << Alliance
-    >>This may take a while to complete depending on how many friendly beasts you find. |cRXP_WARN_DO NOT DIE OR UNEQUIP THE RELIC|r untill you get 10 stacks of inspiration or your progress will be lost
+    >>This may take a while to complete depending on how many friendly beasts you find. |cRXP_WARN_DO NOT DIE OR UNEQUIP THE RELIC|r until you get 10 stacks of inspiration or your progress will be lost
     .train 410021 >> |cRXP_WARN_Use the|r |T134233:0|t[|cRXP_FRIENDLY_Idol of the Wild|r] |cRXP_WARN_to train|r |T132143:0|t[Wild Strikes]
     .itemcount 210534,1
 step << Druid
@@ -5069,7 +5071,7 @@ step << Dwarf Rogue
     .dungeon !DM
 step << Rogue
     #xprate >1.59
-    .xp 22-8200 >> Grind untill you're 8200 xp away from level 22. You will need to reach it in Stormwind to train |T132331:0|t[Vanish] which is required for an extremely powerful rune later
+    .xp 22-8200 >> Grind until you're 8200 xp away from level 22. You will need to reach it in Stormwind to train |T132331:0|t[Vanish] which is required for an extremely powerful rune later
 step << Rogue
     #xprate >1.59
     #optional
@@ -7219,7 +7221,7 @@ step << NightElf Warrior
     #completewith NEIFFP
     .goto 1455,62.378,88.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r downstairs
-    >>|cRXP_BUY_Buy the|r |T135427:0|t[Heavy Throwing Knives] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy the|r |T135427:0|t[Heavy Throwing Dagger] |cRXP_BUY_from her|r
     .collect 3108,200 --Collect Heavy Throwing Knife (200)
     .target Brenwyn Wintersteel
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.7
@@ -7229,7 +7231,7 @@ step << NightElf Warrior
     #requires DeeprunDMNoFP4
     #label DeeprunDMNoFP5
     #completewith NEIFFP
-    +|cRXP_WARN_Equip the|r |T135427:0|t[Heavy Throwing Knives]
+    +|cRXP_WARN_Equip the|r |T135427:0|t[Heavy Throwing Dagger]
     .use 3108
     .itemcount 3108,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.7

@@ -11,6 +11,7 @@ RXPGuides.RegisterGuide([[
 #displayname 14-18 The Barrens << Undead/Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
 #version 11
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #next 17-22 Stonetalon/Barrens/Ashenvale
 
 
@@ -173,7 +174,7 @@ step << Tauren Hunter
 step << Tauren Hunter
     #optional
     #completewith DisruptTheAttacks
-    +|cRXP_WARN_Equip th|re |T135613:0|t[Hunter's Boomstick]
+    +|cRXP_WARN_Equip the|r |T135613:0|t[Hunter's Boomstick]
     .use 2511
     .itemcount 2511,1
     .itemStat 18,QUALITY,<7
@@ -1045,7 +1046,7 @@ step << Undead Warrior
 step << Undead Warrior
     #optional
     #completewith BaronLongshore
-    +|cRXP_WARN_Equip th|re |T135353:0|t[Espadon] |cRXP_WARN_when you are level 16|r
+    +|cRXP_WARN_Equip the|r |T135353:0|t[Espadon] |cRXP_WARN_when you are level 16|r
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
@@ -1549,7 +1550,7 @@ step << Druid
     .train 416049,1
 step
     .goto The Barrens,45.06,22.54
-    >>Dive underwater to the |cRXP_PICK_Bubble Fissure|r
+    >>Dive underwater to the |cRXP_PICK_Bubbling Fissure|r
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step
     #label Barak
@@ -2590,7 +2591,7 @@ step
 step
     #label TestSeeds
     .goto The Barrens,55.61,42.75
-    >>Click the |cRXP_PICK_Bubble Fissure|r underwater
+    >>Click the |cRXP_PICK_Bubbling Fissure|r underwater
     .complete 877,1 --Test the Dried Seeds (1)
 step << Druid/Mage
     #optional
@@ -3216,6 +3217,7 @@ RXPGuides.RegisterGuide([[
 #displayname 18-22 Stonetalon/Barrens/Ashenvale << Undead/Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
 #version 11
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #next RestedXP Horde 22-30\22-24 Hillsbrad
 
 
@@ -4694,7 +4696,7 @@ step
     #completewith DeathDUPpickup
     .goto Thunder Bluff,28.55,25.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clarice|r
-    .accept 264 >> Until Death Do Us Part
+    .accept 264 >> Accept Until Death Do Us Part
     .target Clarice Foster
 step
     .goto Thunder Bluff,22.82,20.88
@@ -4815,7 +4817,7 @@ step << Druid
     #completewith next
     .goto Moonglade,54.30,55.68
     .collect 15877,1,28,1 >>Loot the |cRXP_PICK_Bauble Container|r at the bottom of the lake for a|T134125:0|t[Shrine Bauble]
-    >>|cRXP_WARN_Do not go underwater untill you arive right above the Bauble|r
+    >>|cRXP_WARN_Do not go underwater until you arive right above the Bauble|r
 step << Druid
     .goto Moonglade,36.40,42.01
     .cast 19719 >> |cRXP_WARN_Use the|r |T134125:0|t[Shrine Bauble] |cRXP_WARN_at the Shrine of Remulos|r
@@ -5909,7 +5911,7 @@ step
     #xprate <1.5
     .goto Stonetalon Mountains,71.87,60.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piznik|r
-    .turnin 1090 >> Turnin Gerenzo's Orders
+    .turnin 1090 >> Turn in Gerenzo's Orders
     .accept 1092 >> Accept Gerenzo's Orders
     .target Piznik
     .group
@@ -6072,8 +6074,8 @@ step
 step
     #xprate <1.5
     #completewith next
-   >>Kill |cRXP_ENEMY_Wraithtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
-   .complete 6442,1 --Wraithtail Head (20)
+   >>Kill |cRXP_ENEMY_Wrathtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
+   .complete 6442,1 --Wrathtail Head (20)
    .mob Wrathtail Razortail
    .mob Wrathtail Wave Rider
    .mob Wrathtail Sorceress
@@ -6126,8 +6128,8 @@ step
 	.goto Ashenvale,11.22,31.04,50,0
 	.goto Ashenvale,10.38,29.60,50,0
 	.goto Ashenvale,11.01,28.57,50,0
-   >>Kill |cRXP_ENEMY_Wraithtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
-   .complete 6442,1 --Wraithtail Head (20)
+   >>Kill |cRXP_ENEMY_Wrathtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
+   .complete 6442,1 --Wrathtail Head (20)
    .mob Wrathtail Razortail
    .mob Wrathtail Wave Rider
    .mob Wrathtail Sorceress
@@ -6261,9 +6263,9 @@ step << Priest
 step << Priest
     #xprate <1.5
     #season 0,1
-    >>Kill |cRXP_ENEMY_Lorguss Jett |r
-    .complete 6565,1 --Lorguss Jett slain (1)
-    .mob Lorguss Jett
+    >>Kill |cRXP_ENEMY_Lorgus Jett|r
+    .complete 6565,1 --Lorgus Jett slain (1)
+    .mob Lorgus Jett
     .isOnQuest 6565
     .dungeon BFD
 step << Priest
@@ -6779,6 +6781,7 @@ RXPGuides.RegisterGuide([[
 #name 13-20 The Barrens
 #version 1
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #next 20-24 Stonetalon/Barrens
 
 
@@ -6997,7 +7000,7 @@ step << Warlock
     #sticky
     #completewith BarrensEnd
     #label ExplorerImp
-    >>As you're questing cast |T136163:0|t|cRXP_FRIENDLY_[Drain Soul]|r on mobs untill you receive an |T133257:0|t|cRXP_LOOT_Explorer's Soul|r. |cRXP_WARN_Use it to learn how to summon an|r |T236294:0|t|cRXP_FRIENDLY_[Explorer Imp]|r
+    >>As you're questing cast |T136163:0|t|cRXP_FRIENDLY_[Drain Soul]|r on mobs until you receive an |T133257:0|t|cRXP_LOOT_Explorer's Soul|r. |cRXP_WARN_Use it to learn how to summon an|r |T236294:0|t|cRXP_FRIENDLY_[Explorer Imp]|r
     .train 445459 >>|cRXP_WARN_Use|r |T133257:0|t|cRXP_LOOT_Explorer's Soul|r |cRXP_WARN_to learn how to summon an|r |T236294:0|t[|cRXP_FRIENDLY_Explorer Imp|r]
     .train 445459,1 --Skips if you already have Explorer Imp
     .train 1120,3 --Skips if you don't have drain soul
@@ -7010,7 +7013,7 @@ step << Warlock/Mage
     #label FelPortalRune
     >>You are in a zone with |cRXP_FRIENDLY_Fel Portals|r present. If you find one summon your |T236294:0|t[|cRXP_FRIENDLY_Explorer Imp|r] and talk to it while next to a portal to send it on an expedition. After 10-20 minutes it will return with loot and a chance to award you with |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] << Warlock
     >>You are in a zone with |cRXP_FRIENDLY_Fel Portals|r present. If you find one close it using a |T134945:0|t[|cRXP_LOOT_Scroll of Spatial Mending|r]. This will award you with |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r] << Mage
-    >>|cRXP_WARN_Be on the lookout for the portals untill you get the rune|r
+    >>|cRXP_WARN_Be on the lookout for the portals until you get the rune|r
     .collect 221499,1 << Warlock --rune of the felguard
     .collect 223147,1 << Mage --Spell Notes: Balefire Bolt
     .itemcount 220792,1 << Mage --Scroll of Spatial Mending
@@ -8571,7 +8574,7 @@ step << Druid
     .train 416049,1
 step
     .goto The Barrens,45.06,22.54
-    >>Dive underwater to the |cRXP_PICK_Bubble Fissure|r
+    >>Dive underwater to the |cRXP_PICK_Bubbling Fissure|r
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step
     #label Barak
@@ -9837,7 +9840,7 @@ step
 step
     #label TestSeeds
     .goto The Barrens,55.61,42.75
-    >>Click the |cRXP_PICK_Bubble Fissure|r underwater
+    >>Click the |cRXP_PICK_Bubbling Fissure|r underwater
     .complete 877,1 --Test the Dried Seeds (1)
 step << Druid
     #xprate <2.1
@@ -10389,6 +10392,7 @@ RXPGuides.RegisterGuide([[
 #name 20-24 Stonetalon/Barrens
 #version 1
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #next 24-26 Southern Barrens << !Rogue !Shaman
 #next 23-24 Hillsbrad Class Quests << Rogue/Shaman
 
@@ -10992,7 +10996,7 @@ step << Warlock
     #sticky
     #completewith CounterattackTurnin3
     #label ExplorerImp
-    >>As you're questing cast |T136163:0|t|cRXP_FRIENDLY_[Drain Soul]|r on mobs untill you receive an |T133257:0|t|cRXP_LOOT_Explorer's Soul|r. |cRXP_WARN_Use it to learn how to summon an|r |T236294:0|t|cRXP_FRIENDLY_[Explorer Imp]|r
+    >>As you're questing cast |T136163:0|t|cRXP_FRIENDLY_[Drain Soul]|r on mobs until you receive an |T133257:0|t|cRXP_LOOT_Explorer's Soul|r. |cRXP_WARN_Use it to learn how to summon an|r |T236294:0|t|cRXP_FRIENDLY_[Explorer Imp]|r
     .train 445459 >>|cRXP_WARN_Use|r |T133257:0|t|cRXP_LOOT_Explorer's Soul|r |cRXP_WARN_to learn how to summon an|r |T236294:0|t[|cRXP_FRIENDLY_Explorer Imp|r]
     .train 445459,1 --Skips if you already have Explorer Imp
     .train 1120,3 --Skips if you don't have drain soul
@@ -11005,7 +11009,7 @@ step << Warlock/Mage
     #label FelPortalRune
     >>You are in a zone with |cRXP_FRIENDLY_Fel Portals|r present. If you find one summon your |T236294:0|t[|cRXP_FRIENDLY_Explorer Imp|r] and talk to it while next to a portal to send it on an expedition. After 10-20 minutes it will return with loot and a chance to award you with |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] << Warlock
     >>You are in a zone with |cRXP_FRIENDLY_Fel Portals|r present. If you find one close it using a |T134945:0|t[|cRXP_LOOT_Scroll of Spatial Mending|r]. This will award you with |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r] << Mage
-    >>|cRXP_WARN_Be on the lookout for the portals untill you get the rune|r
+    >>|cRXP_WARN_Be on the lookout for the portals until you get the rune|r
     .collect 221499,1 << Warlock --rune of the felguard
     .collect 223147,1 << Mage --Spell Notes: Balefire Bolt
     .itemcount 220792,1 << Mage --Scroll of Spatial Mending
@@ -12085,7 +12089,7 @@ step << Rogue/Shaman
     #completewith DeathDUPpickup
     .goto Thunder Bluff,28.55,25.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clarice|r
-    .accept 264 >> Until Death Do Us Part
+    .accept 264 >> Accept Until Death Do Us Part
     .target Clarice Foster
 step
     .goto Thunder Bluff,22.82,20.88

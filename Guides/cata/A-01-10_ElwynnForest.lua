@@ -733,7 +733,7 @@ step << skip
     #optional
     #completewith RemyTT
     .goto 37,41.95,67.16,0
-    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r next to |cRXP_FRIENDLY_Remy "Two Times"|r if you wish to train Professions
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farner|r next to |cRXP_FRIENDLY_Remy "Two Times"|r if you wish to train Professions
     .target Lien Farner
 step
     #optional
@@ -1121,7 +1121,7 @@ step << Human
     .goto 37,57.29,62.51,40,0
     .goto 37,55.14,63.48,40,0
     .goto 37,54.79,66.42,40,0
-    >>Kill |cRXP_ENEMY_Murloc Steamrunners|r and |cRXP_ENEMY_Murlocs|r. Loot them for their |cRXP_LOOT_Crystal Kelp Frond|r
+    >>Kill |cRXP_ENEMY_Murloc Streamrunners|r and |cRXP_ENEMY_Murlocs|r. Loot them for their |cRXP_LOOT_Crystal Kelp Frond|r
     .complete 112,1 --Crystal Kelp Frond (4)
     .mob Murloc Steamrunner
     .mob Murloc

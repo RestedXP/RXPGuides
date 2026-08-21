@@ -2326,13 +2326,13 @@ step
     .train 440792,1 --Righteous Vengeance
 step
     .goto Eastern Plaguelands,78.6,47.6
-    >>|cRXP_WARN_Use the|r |T237377:0|t[|cFF0070FFDalton's Horn|r] |cRXP_WARN_to summon|r |cRXP_FRIENDLY_Squire Cuthbert|r |cRXP_WARN_and kill mobs untill he levels up. Once he does he will give you a free turn-in quest|r
+    >>|cRXP_WARN_Use the|r |T237377:0|t[|cFF0070FFDalton's Horn|r] |cRXP_WARN_to summon|r |cRXP_FRIENDLY_Squire Cuthbert|r |cRXP_WARN_and kill mobs until he levels up. Once he does he will give you a free turn-in quest|r
     .accept 83823 >> Accept a Lesson in Violence
     .turnin 83823 >> Turn in a Lesson in Violence
     .use 226122
 step
     .goto Eastern Plaguelands,78.6,47.6
-    >>|cRXP_WARN_Use the|r |T237377:0|t[|cFF0070FFDalton's Horn|r] |cRXP_WARN_to summon|r |cRXP_FRIENDLY_Squire Cuthbert|r |cRXP_WARN_and keep killing mobs untill he levels up again. Once he does he will give you another free turn-in quest and another quest to find a lich named|r |cRXP_ENEMY_Arkonos the Cursed|r
+    >>|cRXP_WARN_Use the|r |T237377:0|t[|cFF0070FFDalton's Horn|r] |cRXP_WARN_to summon|r |cRXP_FRIENDLY_Squire Cuthbert|r |cRXP_WARN_and keep killing mobs until he levels up again. Once he does he will give you another free turn-in quest and another quest to find a lich named|r |cRXP_ENEMY_Arkonos the Cursed|r
     .accept 84008 >> Accept a Lesson in Grace
     .turnin 84008 >> Turn in a Lesson in Grace
     .accept 84017 >> Accept A Time to Kill

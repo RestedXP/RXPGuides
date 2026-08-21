@@ -92,6 +92,25 @@ addon.mapId = {
     ["Eastern Kingdoms"] = 1415,
 }
 
+addon.ignoredMaps = {
+	["Eversong Woods"] = 1941,
+	["Ghostlands"] = 1942,
+	["Azuremyst Isle"] = 1943,
+	["Hellfire Peninsula"] = 1944,
+	["Zangarmarsh"] = 1946,
+	["The Exodar"] = 1947,
+	["Shadowmoon Valley"] = 1948,
+	["Blade's Edge Mountains"] = 1949,
+	["Bloodmyst Isle"] = 1950,
+	["Nagrand"] = 1951,
+	["Terokkar Forest"] = 1952,
+	["Netherstorm"] = 1953,
+	["Silvermoon City"] = 1954,
+	["Shattrath City"] = 1955,
+	["Isle of Quel'Danas"] = 1957,
+	["Outland"] = 1945 --987?
+}
+
 addon.mapIdToName = {}
 for name,id in pairs(addon.mapId) do
     addon.mapIdToName[id] = name

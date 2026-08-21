@@ -10,6 +10,7 @@ RXPGuides.RegisterGuide([[
 #displayname 1-13 Elwynn Forest << Warlock
 #version 1
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #defaultfor Human
 #next 12-14 Loch Modan;11-14 Darkshore;14-20 Bloodmyst
 step << !Human
@@ -76,7 +77,7 @@ step << Warrior
     .goto Elwynn Forest,47.5,41.6
     .vendor >>vendor trash
 step
-    >> Speak with |cRXP_FRIENDLY_Marshal McBridge|r inside the Abbey
+    >> Speak with |cRXP_FRIENDLY_Marshal McBride|r inside the Abbey
     .target Marshal McBride
     .goto Elwynn Forest,48.923,41.606
     .turnin 783 >> Turn in A Threat Within
@@ -137,7 +138,7 @@ step << !Priest !Mage !Warlock/wotlk
     .vendor >>Vendor trash
 step
     .goto Elwynn Forest,48.923,41.606
-    >> Speak with |cRXP_FRIENDLY_Marshal McBridge|r inside the Abbey
+    >> Speak with |cRXP_FRIENDLY_Marshal McBride|r inside the Abbey
     .target Marshal McBride
     .turnin 7 >> Turn in Kobold Camp Cleanup
     .accept 3100 >> Accept Simple Letter << Warrior
@@ -174,7 +175,7 @@ step
     .vendor >> Vendor trash
 step
     #requires xp3
-    >> Speak with |cRXP_FRIENDLY_Marshal McBridge|r inside the Abbey
+    >> Speak with |cRXP_FRIENDLY_Marshal McBride|r inside the Abbey
     .target Marshal McBride
     .goto Elwynn Forest,48.923,41.606
     .turnin 15 >> Turn in Investigate Echo Ridge
@@ -310,7 +311,7 @@ step
     .turnin 6,2 >> Turn in Bounty on Garrick Padfoot << Warrior/Rogue/Paladin
     .turnin 6 >> Turn in Bounty on Garrick Padfoot << !Warrior !Rogue !Paladin
 step
-    >> Speak with |cRXP_FRIENDLY_Marshal McBridge|r inside the Abbey
+    >> Speak with |cRXP_FRIENDLY_Marshal McBride|r inside the Abbey
     .target Marshal McBride
     .goto Elwynn Forest,48.923,41.606
     .turnin 21,2 >> Turn in Skirmish at Echo Ridge << Warrior/Paladin
@@ -339,7 +340,7 @@ step
     .accept 2158 >> Accept Rest and Relaxation
 step
     #hardcore
-    >> Talk to |cRXP_FRIENDLY_Marshall Dughan|r
+    >> Talk to |cRXP_FRIENDLY_Marshal Dughan|r
     .target Marshal Dughan
     .goto Elwynn Forest,42.105,65.927
     .turnin 54 >> Turn in Report to Goldshire
@@ -378,7 +379,7 @@ step << Mage/Priest/Warlock
     .vendor >> Vendor trash, repair
 step
     #label Goldshire
-    >> Talk to |cRXP_FRIENDLY_Marshall Dughan|r
+    >> Talk to |cRXP_FRIENDLY_Marshal Dughan|r
     .target Marshal Dughan
     .goto Elwynn Forest,42.105,65.927
     .turnin 54 >> Turn in Report to Goldshire
@@ -1574,6 +1575,7 @@ RXPGuides.RegisterGuide([[
 #xprate <1.2 << wotlk
 #version 1
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #defaultfor Human
 #next 14-14 Darkshore << Warlock
 #next 11-14 Darkshore << !Warlock
@@ -2104,6 +2106,7 @@ RXPGuides.RegisterGuide([[
 #name 14-14 Darkshore
 #version 1
 #group RestedXP Alliance 1-20
+#groupid RXP-SRGCE-A1
 #defaultfor Human Warlock
 #next 14-20 Bloodmyst
 #xprate <1.5 << wotlk

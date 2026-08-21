@@ -195,7 +195,7 @@ step
 step
     .goto IcecrownGlacier,44.7,20.4
 	>>Talk to Lankral
-    .turnin 12943 >>Turn in Shadow Vault Decreestep
+    .turnin 12943 >>Turn in Shadow Vault Decree
     .accept 13084 >>Accept Vandalizing Jotunheim
 step
     .goto IcecrownGlacier,29.5,43.4,50,0

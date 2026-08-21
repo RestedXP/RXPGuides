@@ -45,7 +45,7 @@ step
     .target Injured Adventurer
 step
     .goto Deadwind Pass,65.0,78.0
-    >>Kill any of the |cRXP_ENEMY_Ogres|r and loot them untill you find a |cRXP_LOOT_Deadwind Cage "Key"|r. Use it on the cage to complete the quest
+    >>Kill any of the |cRXP_ENEMY_Ogres|r and loot them until you find a |cRXP_LOOT_Deadwind Cage "Key"|r. Use it on the cage to complete the quest
     >>|cRXP_WARN_If someone else completes this objective while you're nearby you will also get credit even if you're not in a group with them|r
     .complete 86967,1
     .collect 235785,1 --Deadwind Cage "Key"
@@ -89,7 +89,7 @@ step
     .goto Wetlands,88.07,60.72,0
     .goto Wetlands,85.72,69.33,0
     .goto Wetlands,87.04,51.45
-    >>Kill any of the |cRXP_ENEMY_Dragonkin|r in the area untill you loot the |T132839:0|t[|cRXP_LOOT_Flame of Life|r]
+    >>Kill any of the |cRXP_ENEMY_Dragonkin|r in the area until you loot the |T132839:0|t[|cRXP_LOOT_Flame of Life|r]
     .collect 235789,1 --Flame of Life
     .mob Red Scalebane
     .mob Scalebane Lieutenant

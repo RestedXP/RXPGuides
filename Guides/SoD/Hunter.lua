@@ -1352,14 +1352,14 @@ step
     .goto Eastern Plaguelands,55.6,67.0,0
     .goto Eastern Plaguelands,54.3,70.1,0
     .goto Eastern Plaguelands,51.9,70.0,0
-    >>Kill and loot any |cRXP_ENEMY_Rotting Sludges|r and |cRXP_ENEMY_Living Decay|r untill you loot a |T132108:0|t[|cRXP_LOOT_Bubbling Green Ichor|r]
+    >>Kill and loot any |cRXP_ENEMY_Rotting Sludges|r and |cRXP_ENEMY_Living Decay|r until you loot a |T132108:0|t[|cRXP_LOOT_Bubbling Green Ichor|r]
     >>|cRXP_WARN_The ichor is a gray item, be careful not to vendor it!|r
     .collect 20770,1 --Bubbling Green Ichor (1)
     .mob Living Decay
     .mob Rotting Sludge
 step
     .goto Eastern Plaguelands,17.8,30.2
-    >>Head to Terrordale and kill |cRXP_ENEMY_Plagued Swines|r untill you loot a |T134046:0|t[|cRXP_LOOT_Tainted Boar Meat|r]
+    >>Head to Terrordale and kill |cRXP_ENEMY_Plagued Swines|r until you loot a |T134046:0|t[|cRXP_LOOT_Tainted Boar Meat|r]
     .collect 225942,1 --Tainted Boar Meat (1)
     .mob Plagued Swine
 step
@@ -1392,7 +1392,7 @@ step
     #completewith next
     .zone Silithus >>Travel to Silithus
 step
-    >>Kill |cRXP_WARN_ANY mobs|r in silithus untill you loot a |T132997:0|t[|cRXP_LOOT_Busted Gizmo|r]. The droprate is relatively low but it can drop from all mobs in the zone
+    >>Kill |cRXP_WARN_ANY mobs|r in silithus until you loot a |T132997:0|t[|cRXP_LOOT_Busted Gizmo|r]. The droprate is relatively low but it can drop from all mobs in the zone
     .collect 226526,1
     .itemcount 226546,<1
 step
@@ -1402,7 +1402,7 @@ step
     .itemcount 226546,<1
 step
     .goto Silithus,36.00,71.00
-    >>|cRXP_WARN_Run around the spot marked on your map untill you see the ground moving. When you do, use the|r |T133878:0|t[Desert Sonar] |cRXP_WARN_to summon a |cRXP_ENEMY_Sandworm|r. Kill it and loot for the rune|r
+    >>|cRXP_WARN_Run around the spot marked on your map until you see the ground moving. When you do, use the|r |T133878:0|t[Desert Sonar] |cRXP_WARN_to summon a |cRXP_ENEMY_Sandworm|r. Kill it and loot for the rune|r
     >>The worm has a solid amount of HP and a burrow ability allowing it to disappear for a while. Make sure you're ready for a fight before spawning it
     .collect 226587,1 --rune of shelling
     .mob Sandworm

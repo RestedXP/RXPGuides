@@ -12,6 +12,7 @@ RXPGuides.RegisterGuide([[
 #name 1-6 Mulgore
 #version 11
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #defaultfor Tauren
 #next 6-12 Mulgore;6-13 Mulgore
 
@@ -585,6 +586,7 @@ RXPGuides.RegisterGuide([[
 #name 6-12 Mulgore
 #version 11
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #defaultfor Tauren
 #next 12-17 The Barrens
 
@@ -872,7 +874,7 @@ step
     .unitscan Snagglespear
 step
     .goto Mulgore,47.63,61.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhwana|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhawna|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Shaman/Druid
     >>|cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_from her|r << Warrior
     .vendor >> Vendor trash
@@ -953,7 +955,7 @@ step << Shaman/Druid
 step << Warrior
     #optional
     #completewith Clawsx
-    +|cRXP_WARN_Equip th|re |T133053:0|t[Wooden Mallet]
+    +|cRXP_WARN_Equip the|r |T133053:0|t[Wooden Mallet]
     .use 2493
     .itemcount 2493,1
     .itemStat 16,QUALITY,<7
@@ -1118,7 +1120,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Hunter
     .goto Mulgore,45.86,57.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Loorat|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Moorat|r
     .collect 2516,1000,743,1 << Hunter --Light Shot (1000)
     .target Moorat Longstride
     .itemcount 2512,<800 << Hunter
@@ -1865,7 +1867,7 @@ step << Hunter
     .target Yaw Sharpmane
 step
     .goto Mulgore,47.63,61.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhwana|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhawna|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Shaman/Druid
     >>|cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_from her|r << Warrior
     .collect 1179,20,818,1 << Shaman/Druid --Ice Cold Milk (20)
@@ -1902,7 +1904,7 @@ step
 step << Hunter
     #completewith next
     .cast 1515 >>Tame a |cRXP_ENEMY_Prairie Wolf Alpha|r
-    >>|cRXP_WARN_This will allow you to train|r |T132140:0|t[Claw Rank 2]
+    >>|cRXP_WARN_This will allow you to train|r |T132278:0|t[Bite Rank 2]
     .mob Prairie Wolf Alpha
 step << Tauren
     #label AlphaTeeth
@@ -2091,7 +2093,7 @@ step
     .complete 848,1 --Collect Fungal Spores (x4)
 step
     .goto The Barrens,45.06,22.54
-    >>Dive underwater to the |cRXP_PICK_Bubble Fissure|r
+    >>Dive underwater to the |cRXP_PICK_Bubbling Fissure|r
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step
     #loop
@@ -2947,6 +2949,7 @@ RXPGuides.RegisterGuide([[
 #xprate >1.99
 #version 1
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #name 1-7 Mulgore
 #next 7-13 Mulgore
 #defaultfor Tauren
@@ -3008,7 +3011,7 @@ step
     .train 410111 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Kill Command|r] to train |T236174:0|t[Kill Shot] << Hunter
     .train 410121 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r] to train |T236176:0|t[Chimera Shot] << Hunter
     .train 409580 >> Use the |T133739:0|t[|cRXP_FRIENDLY_Treatise on the Heart of the Lion|r] to train |T132185:0|t[Heart of the Lion] << Hunter
-    .train 415423 >> Use the |T133739:0|t[|cRXP_FRIENDLY_Treatise on the Heart of the Viper|r] to train |T132160:0|t[Heart of the Viper] << Hunter
+    .train 415423 >> Use the |T133739:0|t[|cRXP_FRIENDLY_Treatise on Aspect of the Viper|r] to train |T132160:0|t[Heart of the Viper] << Hunter
     .train 424718 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Stars|r] to train |T135730:0|t[Starsurge] << Druid
     .train 416044 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Sun|r] to train |T236216:0|t[Sunfire] << Druid
     .train 439770 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Falling Star|r] to train |T236168:0|t[Starfall] << Druid
@@ -3160,7 +3163,7 @@ step << Hunter
 step << Hunter
     #season 2
     .train 410122 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Lone Wolf|r] to train |T132266:0|t[Lone Wolf] << Hunter
-    .train 416086 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Close Combat|r] to train |T132394:0|t[Meele Specialist] << Hunter
+    .train 416086 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Close Combat|r] to train |T132394:0|t[Melee Specialist] << Hunter
     .train 440563 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Guerrilla|r] to train |T132171:0|t[Hit and Run] << Hunter
     .use 210818 << Hunter --Rune of Lone Wolf
     .use 213124 << Hunter --Rune of Close Combat
@@ -3174,7 +3177,7 @@ step << Hunter
     #optional
     >> |cRXP_WARN_Be on the lookout for any|r Chest/Belt/Cloak |cRXP_WARN_drops|r|cRXP_WARN_. Equip them and engrave the respective runes|r
     .engrave 5 >> Engrave |T132266:0|t[Lone Wolf] on your |T132724:0|t[Chest]
-    .engrave 6 >> Engrave |T132394:0|t[Meele Specialist] on your |T132513:0|t[Belt]
+    .engrave 6 >> Engrave |T132394:0|t[Melee Specialist] on your |T132513:0|t[Belt]
     .engrave 15 >> Engrave |T132171:0|t[Hit and Run] on your |T133771:0|t[Cloak]
 step << Druid
     #sticky
@@ -3644,6 +3647,7 @@ RXPGuides.RegisterGuide([[
 #xprate >1.99
 #version 1
 #group RestedXP Horde 1-22
+#groupid RXP-SRGCE-H1
 #name 7-13 Mulgore
 #next 13-20 The Barrens
 #defaultfor Tauren
@@ -3947,7 +3951,7 @@ step
     .unitscan Snagglespear
 step
     .goto Mulgore,47.63,61.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhwana|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhawna|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Shaman/Druid
     >>|cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_from her|r << Warrior
     .vendor >> Vendor trash
@@ -4219,7 +4223,7 @@ step << Hunter
 step << Hunter
     #xprate <2.1
     .goto Mulgore,45.86,57.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Loorat|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Moorat|r
     .collect 2516,1000,743,1 << Hunter --Light Shot (1000)
     .target Moorat Longstride
     .itemcount 2512,<800 << Hunter
@@ -4683,7 +4687,7 @@ step << Hunter
     #xprate <2.1
     #completewith SacredBurial
     .cast 1515 >>Tame a |cRXP_ENEMY_Prairie Wolf Alpha|r
-    >>|cRXP_WARN_This will allow you to train|r |T132140:0|t[Claw Rank 2]
+    >>|cRXP_WARN_This will allow you to train|r |T132278:0|t[Bite Rank 2]
     .mob Prairie Wolf Alpha
 step
     #xprate <2.1
@@ -5092,7 +5096,7 @@ step << Hunter
     .target Yaw Sharpmane
 step
     .goto Mulgore,47.63,61.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhwana|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhawna|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Shaman/Druid
     >>|cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_from her|r << Warrior
     .collect 1179,20,818,1 << Shaman/Druid --Ice Cold Milk (20)
@@ -5445,7 +5449,7 @@ step
 step
     #xprate <2.1
     .goto The Barrens,45.06,22.54
-    >>Dive underwater to the |cRXP_PICK_Bubble Fissure|r
+    >>Dive underwater to the |cRXP_PICK_Bubbling Fissure|r
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step
     #xprate <2.1
@@ -5723,7 +5727,7 @@ step << Hunter
 step << Shaman
     #season 2
     #completewith next
-    >>Kill |cRXP_ENEMY_Windfury Sorceresses|r. Loot them for their |cRXP_LOOT_s|r
+    >>Kill |cRXP_ENEMY_Windfury Sorceresses|r. Loot them for their |cRXP_LOOT_Azure Feather|r
     >>Kill |cRXP_ENEMY_Windfury Matriarchs|r. Loot them for their |cRXP_LOOT_Bronze Feathers|r
     .complete 744,1 --Azure Feather (6)
     .mob +Windfury Sorceress

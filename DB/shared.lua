@@ -41,3 +41,10 @@ function addon.GetSubZones(map)
         return addon.subzoneList[map]
     end
 end
+
+local L = addon.locale.Get
+addon.GuideNames =
+{
+    [L"RXP MoP 1-80 (A)"] = L"RXP MoP 1-60 (A)",
+    [L"RXP MoP 1-80 (H)"] = L"RXP MoP 1-60 (H)",
+}

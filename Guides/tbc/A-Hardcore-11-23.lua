@@ -4818,7 +4818,7 @@ step
     .complete 5321,2
     .isOnQuest 5321
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liadris Moonriver|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liladris Moonriver|r
 	.target Liladris Moonriver
     .goto Ashenvale,27.26,35.58
     .turnin 5321 >> Turn in The Sleeper Has Awakened
@@ -4874,7 +4874,7 @@ step
     .goto Ashenvale,31.89,22.53
     >>Open the |cRXP_PICK_Plant Bundles|r in the ground. Loot them for |cRXP_LOOT_Bathran's Hairs|r
     >>|cRXP_WARN_They look like small brown sacks and can be partially buried into the ground. They can be hard to see|r
-    >>|cRXP_WARN_Make sure you have|r |T134916:0|t[Track Herbs] |cRXP_WARN_enabled to see them on the minimap|r
+    >>|cRXP_WARN_Make sure you have|r |T134916:0|t[Find Herbs] |cRXP_WARN_enabled to see them on the minimap|r
     .complete 1010,1 --Bathran's Hair (5)
     .skill herbalism,<1,1
 step
