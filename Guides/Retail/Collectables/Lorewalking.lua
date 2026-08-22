@@ -55,7 +55,7 @@ step
     .target Lorewalker Cho
 step
     .isOnQuest 84371
-    .zone 18 >> Enter Tirasfal Glades
+    .zone 18 >> Enter Tirisfal Glades
 step
     #completewith next
     #label Blade in Twilight

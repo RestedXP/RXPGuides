@@ -421,10 +421,10 @@ step
     .train 471009,3
 step
     #label MetalworkmingCheatSheet
-    #arrowtext Click on |cRXP_PICK_Metalworkming Cheat Sheet|r
+    #arrowtext Click on |cRXP_PICK_Metalworking Cheat Sheet|r
     .isQuestAvailable 89180
     .goto 2395,56.84,40.77
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Metalworkming Cheat Sheet|r inside the building.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Metalworking Cheat Sheet|r inside the building.
     .turnin 89180 >>Blacksmithing Knowledge Treasure
     .train 471004,3
 step

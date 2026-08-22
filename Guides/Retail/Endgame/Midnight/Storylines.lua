@@ -80,7 +80,7 @@ step
     .goto 2649,61.71,15.17
     .target +Magister Umbric
     .turnin 96227 >>Turn in Lycaneum Chaos
-    .accept 96230 >>Accept Unravelling the Wards
+    .accept 96230 >>Accept Unraveling the Wards
     .goto 2649,63.37,16.57
     .target +Grand Magister Rommath
     .accept 96228 >>Accept The Shadowed Spire
@@ -127,7 +127,7 @@ step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Grand Magister Rommath|r
     .goto 2424,58.91,57.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grand Magister Rommath|r.
-    .turnin 96230 >>Turn in Unravelling the Wards
+    .turnin 96230 >>Turn in Unraveling the Wards
     .accept 96231 >>Accept The Grand Magister's Key-Cipher
     .target Grand Magister Rommath
 step
@@ -310,7 +310,7 @@ step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Grand Magister Rommath|r
     .goto 2649,59.74,10.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grand Magister Rommath|r.
-    .accept 96442 >>Accept Seeking Knowledge Week 3 of 5: Leyline Assaults
+    .accept 96442 >>Accept Seeking Knowledge Week 3 of 5: Ley Line Assaults
     .target Magister Rommath
 step
     >>Complete 5 Void Strikes :)
@@ -319,7 +319,7 @@ step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Grand Magister Rommath|r
     .goto 2649,59.74,10.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grand Magister Rommath|r.
-    .turnin 96442 >>Turn in Seeking Knowledge Week 3 of 5: Leyline Assaults
+    .turnin 96442 >>Turn in Seeking Knowledge Week 3 of 5: Ley Line Assaults
     .target Magister Rommath
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Grand Magister Rommath|r
@@ -1351,7 +1351,7 @@ step
 step
     #label AzjkahetK
     .goto 2216,67.11,31.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin Wrynn|r |cRXP_WARN_after the rolepla|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin Wrynn|r |cRXP_WARN_after the roleplay|r.
     .turnin 78226 >>Turn in A Most Intriguing Invitation
     .accept 78228 >>Accept Into a Skittering City
     .target Anduin Wrynn

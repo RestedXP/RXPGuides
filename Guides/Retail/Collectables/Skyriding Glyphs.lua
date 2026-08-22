@@ -93,7 +93,7 @@ step
     +From the Life-Binder Observatory: Just glide. Try to stay as high as possible while gliding at full speed
     *From somewhere else: Fly to the Obsidian Throne, wait form 4 vigor charges and use |T4640498:0|t[Skyward Ascend] to reach the tower
 step
-    #title Dragon Glyph: Obisidan Throne
+    #title Dragon Glyph: Obsidian Throne
     >>Use |T4640498:0|t[Skyward Ascend] only when you need to fly up the mountain.
     >>You probably have to take some breaks in between to wait for vigor (some good spots are marked on your map)
     .line 2022,73.21,20.51,21.91,51.41
@@ -102,11 +102,11 @@ step
     .goto 2022,30.02,47.88,0
     .goto 2022,21.91,51.41
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
-    .achievement 16575,12 >>Pick up the Dragon Glyph: Obisidan Throne at the top of the mountain above a lava pool
+    .achievement 16575,12 >>Pick up the Dragon Glyph: Obsidian Throne at the top of the mountain above a lava pool
 step
     #completewith next
-    +From the Obisidan Throne: Try to stay as high as possible while gliding at full speed. It shouldn't be necessary to use any vigor
-    *From somwhere else: Fly to the Obsidian Bulwark. Use |T4640498:0|t[Skyward Ascend] 1-3 times to reach the glyph
+    +From the Obsidian Throne: Try to stay as high as possible while gliding at full speed. It shouldn't be necessary to use any vigor
+    *From somewhere else: Fly to the Obsidian Bulwark. Use |T4640498:0|t[Skyward Ascend] 1-3 times to reach the glyph
 step
     #title Dragon Glyph: Obsidian Bulwark
     .line 2022,21.91,51.41,40.98,71.91
@@ -201,14 +201,14 @@ step
     +From the Rusza'thar Reach: Try to stay as high as possible while gliding at full speed. You should be able recharge at least 2 vigor on the way. Use |T4640498:0|t[Skyward Ascend] as often as necessary to get to the top when you reach the mountain
     *From somewhere else: Fly to Maruukai, wait for 4 vigor charges and use |T4640498:0|t[Skyward Ascend] to reach the glyph
 step
-    #title Dragon Glyph: Ohn'ahran's Roost
+    #title Dragon Glyph: Ohn'ahra's Roost
     .line 2023,86.51,39.40,57.97,31.11
     .goto 2023,57.97,31.11
     *Use |T4640477:0|t[Whirling Surge] on cooldown.
-    .achievement 16576,1 >>Pick up the Dragon Glyph: Ohn'ahran's Roost at the top of the mountain above the statue
+    .achievement 16576,1 >>Pick up the Dragon Glyph: Ohn'ahra's Roost at the top of the mountain above the statue
 step
     #completewith next
-    +From the Ohn'ahran's Roost: Try to stay as high as possible while gliding at full speed. You should be able recharge all your vigor on the way. Use |T4640498:0|t[Skyward Ascend] 2-3 times to get to the top
+    +From the Ohn'ahra's Roost: Try to stay as high as possible while gliding at full speed. You should be able recharge all your vigor on the way. Use |T4640498:0|t[Skyward Ascend] 2-3 times to get to the top
     *From somewhere else: Get to the bottom of the mountain, wait for your vigor charges and spam |T4640498:0|t[Skyward Ascend] until you're at the top
 step
     #title Dragon Glyph: Nokhud Hold
@@ -788,7 +788,7 @@ step
 step
     .goto 2112,62.70,57.33,-1
     .goto 2023,18.40,52.37,-1
-    .zone 2200 >>Enter Emerald Dream |cRXP_WARN_through the Ohn'ahnran Planes portal or the portal in Valdrakken above the bank|r.
+    .zone 2200 >>Enter Emerald Dream |cRXP_WARN_through the Ohn'ahran Plains portal or the portal in Valdrakken above the bank|r.
 step
     #completewith DragonGlpyhsEmeraldDream
     +Use |T4640498:0|t[Skyward Ascend] to ascend and |T2103880:0|t[Surge Forward] to speed up.

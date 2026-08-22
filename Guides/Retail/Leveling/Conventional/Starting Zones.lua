@@ -22506,7 +22506,7 @@ step
     .skipgossipid 55297
 	.noskyriding
 step
-    >>Kill |cRXP_ENEMY_Meatgrinder Sotok|r. Loot him for the |T237451:0|t[|cRXP_LOOT_Qualashi Plans|r].
+    >>Kill |cRXP_ENEMY_Meatgrinder Sotok|r. Loot him for the |T237451:0|t[|cRXP_LOOT_Qalashi Plans|r].
     .goto 2022,62.96,29.43
     .complete 65993,1 --1/1 Meatgrinder Sotok slain
     .collect 193874,1,65995,1

@@ -1352,15 +1352,15 @@ step
 step
     .isQuestAvailable 43962
     .goto 627,73.10,46.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chakheg|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r.
     .accept 40740 >>Accept The Dead and the Damned
-    .target Chakheg
+    .target Highlord Darion Mograine
 step
     #optional
     .goto 647,57.76,60.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chakheg|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r.
     .accept 40740 >>Accept The Dead and the Damned
-    .target Chakheg
+    .target Highlord Darion Mograine
 step
     .goto 646,31.97,31.91
     >>|cRXP_WARN_Follow the arrow and enter the portal.|r
@@ -1399,10 +1399,10 @@ step
 step
     .goto 714,43.82,38.27
     .isInScenario 940
-    >>Kill |cRXP_PICK_Inquisitor Zalinor|r.
+    >>Kill |cRXP_PICK_Inquisitior Zalinor|r.
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Legion Keystone|r
-    .scenario 2137,1 --Hunt down Inquisitor Zalinor and obtain his key.
-    .mob Inquisitor Zalinor
+    .scenario 2137,1 --Hunt down Inquisitior Zalinor and obtain his key.
+    .mob Inquisitior Zalinor
 step
     #completewith next
     #hidewindow
@@ -1580,9 +1580,9 @@ step
     +|cRXP_WARN_Ensure you have a usable weapon equipped. If not, equip one until you obtain your artifact, or switch to a specialization that already has its artifact|r.
 step
     .goto 627,73.09,46.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chakheg|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
     .accept 38990 >>Accept The Call of Icecrown
-    .target Chakheg
+    .target Highlord Darion Mograine
 step
     .goto 627,73.60,46.85
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Death Gate|r
@@ -1664,7 +1664,7 @@ step
 step
     .zoneskip 648
     .goto 701,47.64,90.58
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Archerus Waygate|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Acherus Waygate|r
     .scenario 2923,1 --1/1 Acherus Waygate taken
 step
     .goto 648,51.01,50.69
@@ -2788,7 +2788,7 @@ step
     *|cRXP_WARN_You’ll be able to do the other questlines later|r
     *|cFFFF0000You can't progress if you don't select one|r.
     .clicknext RestedXP Legion Remix\a) Artifact Weapon: Havoc >> Havoc(DPS) Questline
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Vengeance >> Vengeance(DPS) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Vengeance >> Vengeance(Tank) Questline
 step
     #include ac) Order Hall Demon Hunter Part 2@Eternal Vigil-Champion: Asha Ravensong
 ]])
@@ -7248,11 +7248,11 @@ step
     .mob Arbiter of the Inquisiiton
 step
     .goto 791,69.73,60.48
-    >>Kill |cRXP_ENEMY_Lord Korthis|r
+    >>Kill |cRXP_ENEMY_Lord Korithis|r
     *|cRXP_WARN_More accurate arrow is not possible|r.
     .scenario 2665,1
     .isInScenario 1137
-    .mob Lord Korthis
+    .mob Lord Korithis
 step
     .isInScenario 1137
     #label Artifact Weapon: Brewmaster
@@ -7877,7 +7877,7 @@ step
 step
     .isInScenario 983
     .goto 716,31.6,66.01
-    >>Kill his |cRXP_ENEMY_Minios|r
+    >>Kill his |cRXP_ENEMY_Minions|r
     .scenario 2008,1,1
     .timer 5,RP
     .mob Kaeled
@@ -7885,7 +7885,7 @@ step
 step
     .isInScenario 983
     .goto 716,31.26,66.71
-    >>Kill his |cRXP_ENEMY_Minios|r
+    >>Kill his |cRXP_ENEMY_Minions|r
     .scenario 2008,1,2
     .timer 7,RP
     .mob Storm Cloud
@@ -7894,7 +7894,7 @@ step
 step
     .isInScenario 983
     .goto 716,31.88,67.53
-    >>Kill his |cRXP_ENEMY_Minios|r
+    >>Kill his |cRXP_ENEMY_Minions|r
     .scenario 2008,1,3
     .timer 15,RP
     .mob Melezan
@@ -9669,10 +9669,10 @@ step
     .complete 41627,1 --1/1 Activate the communication device
 step
     .goto 115,56.69,69.11
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Airictora|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Image of Kalec|r.
     .turnin 41627 >>Turn in A Forgotten Enemy
     .accept 41628 >>Accept Eyes of the Dragon
-    .target Airictora
+    .target Image of Kalec
 step
     #title Use the |T254294:0|t[Nexus Teleport Scroll]
     .goto 114,29.25,28.57
@@ -9702,10 +9702,10 @@ step
     .mob Wrath Ember
 step
     .goto 114,26.60,23.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Airictora|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Image of Kalec|r.
     .turnin 41629 >>Turn in Harnessing the Holy Fire
     .accept 41630 >>Accept Unleashing Judgment
-    .target Airictora
+    .target Image of Kalec
 step
     .goto 114,27.32,20.43
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Focused Void|r.
@@ -9720,10 +9720,10 @@ step
     .complete 41630,1 --1/1 East Surge Needle destroyed
 step
     .goto 114,32.66,27.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Airictora|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Image of Kalec|r.
     .turnin 41630 >>Turn in Unleashing Judgment
     .accept 41631 >>Accept The Nexus Vault
-    .target Airictora
+    .target Image of Kalec
 step
     .isOnQuest 41631
     .goto 114,27.84,28.37,30,0
@@ -9764,9 +9764,9 @@ step
 step
     .isInScenario 1065
     .goto 736,27.59,39.89
-    >>Kill the |cRXP_ENEMY_Judgement's Flame|r.
-    .scenario 2278,1 --Judgement's Flame defeated
-    .mob Judgement's Flame
+    >>Kill the |cRXP_ENEMY_Judgment's Flame|r.
+    .scenario 2278,1 --Judgment's Flame defeated
+    .mob Judgment's Flame
 step
     .isInScenario 1065
     .goto 736,26.83,25.13,25,0
@@ -10017,9 +10017,9 @@ step
     .target Lightfeather
 step
     .goto 646,34.08,33.57
-    >>Kill the |cRXP_ENEMY_Niskaran Executor|r.
+    >>Kill the |cRXP_ENEMY_Niskaran Executioner|r.
     .complete 41967,2 --1/1 Demon Camp cleared
-    .mob Niskaran Executor
+    .mob Niskaran Executioner
 step
     #completewith next
     #hidewindow
@@ -11658,7 +11658,7 @@ step
     .goto 627,50.69,40.98,5,0
     .goto 627,49.48,41.21,5,0
     .goto 627,47.78,40.7
-    >>Enter the house and go upstaris to kill |cRXP_ENEMY_Akaari Shadowgore|r
+    >>Enter the house and go upstairs to kill |cRXP_ENEMY_Akaari Shadowgore|r
     #title |cFFFCDC00Enter House|r
     .complete 41921,1 --1/1 Akaari confronted
     .mob Akaari Shadowgore
@@ -12267,7 +12267,7 @@ step
     #completewith next
     #label WeaponsOfStormA
     .isInScenario 976
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fists of Ra-den|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fist of Ra-den|r
     .scenario 2078,1 --Equip the Weapons of the Storm
 step
     #completewith WeaponsOfStormA
@@ -12277,7 +12277,7 @@ step
     #requires WeaponsOfStormA
     .isInScenario 976
     .goto 379,68.79,43.70
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fists of Ra-den|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Fist of Ra-den|r
     .scenario 2078,1 --Equip the Weapons of the Storm
     .timer 25,Roleplay Duration
 step
@@ -13837,9 +13837,9 @@ step
     .complete 43254,2 --1/1 Listen to Gul'dan
 step
     .goto 646,55.91,62.89
-    >>Kill |cRXP_ENEMY_Allaris Nassarin|r.
-    .complete 43254,3 --1/1 Slay Allaris Nassarin
-    .mob Allaris Nassarin
+    >>Kill |cRXP_ENEMY_Allaris Narassin|r.
+    .complete 43254,3 --1/1 Slay Allaris Narassin
+    .mob Allaris Narassin
 step
     .goto 646,60.17,25.43
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Scepter of Sargeras|r.

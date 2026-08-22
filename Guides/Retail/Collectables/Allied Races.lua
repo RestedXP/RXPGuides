@@ -48,7 +48,7 @@ step
     .complete 50239,4 --1/1 Learn about the Kul Tirans
 step
     .goto 84,51.73,13.34
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Mechagnome Banner|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Mechagon Banner|r.
     .complete 50239,5 --1/1 Learn about the Mechagnomes
 step
     .goto 84,51.78,13.73
@@ -784,7 +784,7 @@ step
     .goto 895,68.88,20.44,5,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorian Atwater|r |cRXP_WARN_after the roleplay|r.
     .turnin 54726 >>Turn in Frame Work
-    .accept 54727 >>Accept Team Carr
+    .accept 54727 >>Accept Team Carry
     .disablecheckbox
     .target Dorian Atwater
 step
@@ -796,7 +796,7 @@ step
     .goto 895,68.95,20.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorian Atwater|r |cRXP_WARN_after the roleplay|r.
     .turnin 54726 >>Turn in Frame Work
-    .accept 54727 >>Accept Team Carr
+    .accept 54727 >>Accept Team Carry
     .target Dorian Atwater
 step
     .goto 895,68.77,19.17
@@ -931,7 +931,7 @@ step
     .target Ulfar
 step
     .goto 896,44.97,45.83
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Nut|r |cRXP_WARN_after the roleplay|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ancient Seedling|r |cRXP_WARN_after the roleplay|r.
     .complete 54731,2 --1/1 Begin the ritual
 step
     >>Step into the orbs and kill any incoming |cRXP_ENEMY_Manifestations|r.
@@ -1089,9 +1089,9 @@ step
 step
     #completewith Escape Pod
     .goto 1161,36.73,62.63
-    .cast 316417 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Mekkatorgue's Escape Pod|r.
+    .cast 316417 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Mekkatorque's Escape Pod|r.
     .timer 15,RP
-    .target Mekkatorgue's Escape Pod
+    .target Mekkatorque's Escape Pod
 step
     #requires Escape Pod
     .goto 1161,36.85,63.48
@@ -1234,7 +1234,7 @@ step
     .target Stuard Sharpsprocket
 step
     .goto 1462,71.28,34.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elya Idee Quickcoil|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Idee Quickcoil|r.
     .complete 57492,2 --1/1 Speak with Idee Quickcoil
     .skipgossipid 49516
     .target Idee Quickcoil
@@ -1252,7 +1252,7 @@ step
     .target Flouresce Brightgear
 step
     .goto 1462,74.31,34.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pegi Cogsterh|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pegi Cogster|r.
     .complete 57492,3 --1/1 Speak with Pegi Cogster
     .skipgossipid 49517
     .target Pegi Cogster
@@ -1890,15 +1890,15 @@ step
 step
     .goto 88,59.65,51.68,10,0
     .goto 88,61.61,52.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bain Bloodhoof|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine Bloodhoof|r.
     .turnin 48066 >>Turn in A Feast for Our Kin
     .timer 30,RP
     .target Baine Bloodhoof
 step
     .goto 88,61.52,51.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bain Bloodhoof|r after a short roleplay.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine Bloodhoof|r after a short roleplay.
     .accept 48067 >>Accept Shadow Over Thunder Bluff
-    .target Bain Bloodhoof
+    .target Baine Bloodhoof
 step
     #loop
     .goto 88,59.82,51.38,30,0
@@ -1911,10 +1911,10 @@ step
     .complete 48067,1 --4/4 Dark Tendril slain
     .complete 48067,2 --12/12 Shadow of Uul slain
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bain Bloodhoof|r next to you.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine Bloodhoof|r next to you.
     .turnin 48067 >>Turn in Shadow Over Thunder Bluff
     .accept 49756 >>Accept Dark Forces
-    .target Bain Bloodhoof
+    .target Baine Bloodhoof
 step
     #title |cFFFCDC00NPC Patrols|r
     #loop
@@ -1925,10 +1925,10 @@ step
     .complete 49756,1 --1/1 Qy'telek slain
 step
     .goto 88,42.18,57.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bain Bloodhoof|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine Bloodhoof|r.
     .turnin 49756 >>Turn in Dark Forces
     .accept 48079 >>Accept Return to Highmountain
-    .target Bain Bloodhoof
+    .target Baine Bloodhoof
 step
     .goto 652,68.78,71.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mayla Highmountain|r.
@@ -2061,17 +2061,17 @@ step
     .goto 650,53.70,66.32,25,0
     .goto 650,52.99,66.76,25,0
     .goto 650,51.50,66.64,25,0
-    >>Kill |cRXP_ENEMY_Necrotic Defilers|r.
+    >>Kill |cRXP_ENEMY_Necrodark Defiler|r.
     *Use |T134174:0|t[Gore Charge] (3) on cooldown and spam |T644382:0|t[Wild Carve] (1)
     .complete 41800,2 --10/10 Necrotic Defiler slain
     .mob Necrotic Defiler
 step
     #title |cFFFCDC00NPC Patrols|r
     .goto 650,53.00,69.40
-    >>Kill |cRXP_ENEMY_Necrogg the Darkspear|r.
+    >>Kill |cRXP_ENEMY_Necrogg the Darkspeaker|r.
     *Use |T135127:0|t[Harpoon Stomp] (2) after the knockback
-    .complete 41800,3 --1/1 Necrogg the Darkspear slain
-    .mob Necrogg the Darkspear
+    .complete 41800,3 --1/1 Necrogg the Darkspeaker slain
+    .mob Necrogg the Darkspeaker
 step
     .goto 650,53.32,69.47
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ward|r
@@ -2230,7 +2230,7 @@ step
     .complete 48403,1 --1/1 Uul'gyneth slain
     .mob Uul'gyneth
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mayla Highmountain|r and |cRXP_FRIENDLY_Bain Bloodhoof|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mayla Highmountain|r and |cRXP_FRIENDLY_Baine Bloodhoof|r.
     .turnin 48403 >>Turn in The Darkness
     .goto 650,56.66,92.71
     .accept 48433 >>Accept Together We Are the Horde!
@@ -2531,7 +2531,7 @@ step
     .scenario 3980,1
 step
     .isInScenario
-    >>Climb the tower. Mount the Mag'har Turrent. Use |T879998:0|t[Iron Lightseeker] (2) on cooldown, otherwise spam |T252185:0|t[Turret Blast] to kill the incoming mobs
+    >>Climb the tower. Mount the Mag'har Turret. Use |T879998:0|t[Iron Lightseeker] (2) on cooldown, otherwise spam |T252185:0|t[Turret Blast] to kill the incoming mobs
     .goto 1170,43.48,71.38,10,0
     .goto 1170,43.63,71.48
     .scenario 3978,1
@@ -2639,7 +2639,7 @@ step
     .complete 53826,1 --1/1 Enforcer Malzon confronted
     .mob Enforcer Malzon
 step
-    >>Defeat |cRXP_ENEMY_Rioting Speakers|r or talk to |cRXP_ENEMY_Rioting Zocalo Druges|r.
+    >>Defeat |cRXP_ENEMY_Rioting Speakers|r or talk to |cRXP_ENEMY_Rioting Zocalo Drudges|r.
     .goto 1165,36.17,7.69,20,0
     .goto 1165,34.96,10.72,20,0
     .goto 1165,36.49,15.16,20,0
@@ -2653,7 +2653,7 @@ step
     .skipgossip 147781,1
     .complete 54419,1 --12/12 Rioters subdued
     .mob Rioting Speaker
-    .mob Rioting Zocalo Druges
+    .mob Rioting Zocalo Drudges
 step
     #completewith next
 
@@ -3070,7 +3070,7 @@ step
     .accept 53898 >>Accept Strength and Honor
     .target Kiro
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Magrok|r and defaet him
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Magrok|r and defeat him
     .goto 241,45.67,76.42
     .complete 53898,1 --1/1 Foreman Magrok confronted
     .complete 53898,2 --1/1 Foreman Magrok defeated
@@ -3137,23 +3137,23 @@ step
     .complete 58087,1 --3/3 Nazeshi Powercell destroyed
 step
     #title Explosives placed 2/8
-    >>Place the explosives at the highlightes locations
+    >>Place the explosives at the highlighted locations
     .goto 862,75.73,67.67
     .complete 53901,1,2 --2/8 Explosives placed
 step
     #title Explosives placed 4/8
-    >>Place the explosives at the highlightes locations
+    >>Place the explosives at the highlighted locations
     .goto 862,75.03,67.89
     .complete 53901,1,4 --4/8 Explosives placed
 step
     #title Explosives placed 6/8
-    >>Place the explosives at the highlightes locations
+    >>Place the explosives at the highlighted locations
     .goto 862,74.31,67.83
     .complete 53901,1,6 --6/8 Explosives placed
 step
     #label VulperaExplosionsAlwaysWork
     #title Explosives placed 8/8
-    >>Place the explosives at the highlightes locations
+    >>Place the explosives at the highlighted locations
     .goto 862,73.71,66.84
     .complete 53901,1 --8/8 Explosives placed
 step
@@ -4479,10 +4479,10 @@ step
     #requires Shaw talked 1
     #completewith Shaw talked 2
     .goto 37,43.77,65.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farlay|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r
     .home >>Set your Hearthstone to Lion's Pride Inn
     .skipgossipid 28605
-    .target Innkeeper Farlay
+    .target Innkeeper Farley
 step
     #requires Shaw talked 2
     .goto 37,43.98,66.07,5,0
@@ -4770,7 +4770,7 @@ step
     .target Marshal McBride
 step
     #completewith Enforcer Horb's Signet
-    >>Kill |cRXP_ENEMY_Defias,|r |cRXP_ENEMY_Confused Citizens|r and |cRXP_ENEMY_Clessington Attendant|r
+    >>Kill |cRXP_ENEMY_Defias,|r |cRXP_ENEMY_Confused Commoners|r and |cRXP_ENEMY_Clessington Attendant|r
     .complete 72446,1 --Northshire defended (100%)
     .mob Clessington Attendant
     .mob Confused Acolyte
@@ -4812,7 +4812,7 @@ step
     .goto 425,47.25,59.06,40,0
     .goto 425,43.14,46.45,40,0
     .goto 425,31.35,21.82,40,0
-    >>Kill |cRXP_ENEMY_Defias,|r |cRXP_ENEMY_Confused Citizens|r and |cRXP_ENEMY_Clessington Attendant|r
+    >>Kill |cRXP_ENEMY_Defias,|r |cRXP_ENEMY_Confused Commoners|r and |cRXP_ENEMY_Clessington Attendant|r
     .complete 72446,1 --Northshire defended (100%)
     .mob Clessington Attendant
     .mob Confused Acolyte
@@ -5176,7 +5176,7 @@ step
     .target Brann Bronzebeard
 step
     .goto 120,41.59,17.67
-    >>Enter Ulduar through it's portal in Northend(Storm Peaks).
+    >>Enter Ulduar through it's portal in Northrend(Storm Peaks).
     .complete 53844,1 --1/1 Travel to Ulduar
 step
     #completewith Titan Flame
@@ -5496,7 +5496,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maiev Shadowsong|r
     .turnin 76203 >>Turn in Stepping into the Shadows
     .target Maiev Shadowsong
-    .accept 76197 >>Accept A Glimpse of Terro
+    .accept 76197 >>Accept A Glimpse of Terror
 step
     .goto 77,37.85,52.77
     >>Kill |cRXP_ENEMY_Cultist Nethus|r
@@ -5749,7 +5749,7 @@ step
     .accept 54580 >>Accept A Tundra Conundrum
 step
     .goto 114,55.28,18.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cog Captain Winklespring|r in the Borean Tundra(Northend)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cog Captain Winklespring|r in the Borean Tundra(Northrend)
     .turnin 54580 >>Turn in A Tundra Conundrum
     .target Cog Captain Winklespring
 step
@@ -5933,22 +5933,22 @@ step
 step
     .isOnQuest 78069
     .goto 103,55.55,78.78
-    .cast 3365 >>Click on the |cRXP_PICK_Arcanite Pillar|r
+    .cast 3365 >>Click on the |cRXP_PICK_Arkonite Pillar|r
     .target Arkonite Generator
 step
     .isOnQuest 78069
     .goto 103,54.72,78.81
-    .cast 3365 >>Click on the |cRXP_PICK_Arcanite Pillar|r
+    .cast 3365 >>Click on the |cRXP_PICK_Arkonite Pillar|r
     .target Arkonite Generator
 step
     .isOnQuest 78069
     .goto 103,54.32,81.45
-    .cast 3365 >>Click on the |cRXP_PICK_Arcanite Pillar|r
+    .cast 3365 >>Click on the |cRXP_PICK_Arkonite Pillar|r
     .target Arkonite Generator
 step
     .isOnQuest 78069
     .goto 103,53.97,80.18
-    .cast 3365 >>Click on the |cRXP_PICK_Arcanite Pillar|r
+    .cast 3365 >>Click on the |cRXP_PICK_Arkonite Pillar|r
     .target Arkonite Generator
 step
     #label EndIncludePrepGuide
@@ -6484,7 +6484,7 @@ step
 step
     .isOnQuest 54984
     .goto 47,46.57,35.31
-    .enterScenario 1732 >>Go trough the Portal
+    .enterScenario 1732 >>Go through the Portal
 step
     .isInScenario 1732
     #completewith next
@@ -7068,7 +7068,7 @@ step
     .complete 72466,2 --1/1 Return to the Ancient Skeleton
 step
     .goto 1,40.60,26.77
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_SKeleton|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Skeleton|r
     .complete 72466,3 --1/1 Seeds Planted in Ancient Skeleton
     .target The Spirit of Thunder Ridge
 step
@@ -7532,7 +7532,7 @@ step
     .turnin 65668 >>Turn in The Desolate Council
     .goto 2070,61.79,67.78
     .target +Calia Menethil
-    .turnin 66091 >>Turn in Path of the Dark Ranger
+    .turnin 66091 >>Turn in Path of the Dark Rangers
     .goto 2070,61.93,67.78
     .target +Dark Ranger Velonara
     .accept 65788 >>Accept A Walk with Ghosts
@@ -8871,8 +8871,8 @@ step
     .accept 57053 >>Accept Blunt Force Testing
 step
     .goto 1532,53.23,59.97
-    >>Use |T431762:0|t[X-52 Body Armor]
-    .complete 57053,1 --1/1 X-52 Body Armor Equipped
+    >>Use |T431762:0|t[X-52 Personnel Armor]
+    .complete 57053,1 --1/1 X-52 Personnel Armor Equipped
     .use 171114
 step
     .goto 1532,53.23,59.97
@@ -8892,7 +8892,7 @@ step
     .accept 57058 >>Accept Fun With Landmines
 step
     .goto 1532,46.24,47.98
-    >>Use |T431762:0|t[X-52 Body Armor]
+    >>Use |T431762:0|t[X-52 Personnel Armor]
     .complete 57058,1 --1/1 X-52 Personnel Armor equipped
     .use 174059
 step
