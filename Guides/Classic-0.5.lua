@@ -845,7 +845,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anthion|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Anthion|r
     .turnin 8929 >>Turn in In Search of Anthion << Alliance
-    .turnin 8930 >>Turn in Search of Anthion << Horde
+    .turnin 8930 >>Turn in In Search of Anthion << Horde
     .accept 8945 >>Accept Dead Man's Plea
     .target Anthion Harmon
 step

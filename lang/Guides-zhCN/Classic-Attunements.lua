@@ -1186,7 +1186,7 @@ step
     >>|cRXP_ENEMY_阿拉基|r |cRXP_WARN_是一个强大的精英怪。建议至少3名玩家组队击杀他|r
     .use 12650 >>|cRXP_WARN_如果你有的话，对他使用|r |T134961:0|t[疫病中和器] |cRXP_WARN_|r
     .complete 5803,1 --Araj's Scarab (1x)
-    .mob Araj the Summonor
+    .mob Araj the Summoner
     .itemcount 12650,1 --Attuned Dampener
 step
     #softcore
@@ -1195,7 +1195,7 @@ step
     >>击杀 |cRXP_ENEMY_召唤者阿拉基|r。拾取地上 |cRXP_PICK_阿拉基的护符匣|r 以获得 |cRXP_LOOT_阿拉基的圣甲虫|r
     >>|cRXP_ENEMY_阿拉基|r |cRXP_WARN_是一个强大的精英怪。建议至少3名玩家组队击杀他|r
     .complete 5803,1 --Araj's Scarab (1x)
-    .mob Araj the Summonor
+    .mob Araj the Summoner
 step
     #hardcore
     .goto Western Plaguelands,45.60,69.28
@@ -1203,7 +1203,7 @@ step
     >>|cRXP_ENEMY_阿拉基|r |cRXP_WARN_是一个强力的精英，并且周围有许多怪物，请小心清理它们。建议组成一个至少有4名玩家的队伍来击杀他|r
     .use 12650 >>|cRXP_WARN_如果你有的话，对他使用|r |T134961:0|t[疫病中和器] |cRXP_WARN_|r
     .complete 5803,1 --Araj's Scarab (1x)
-    .mob Araj the Summonor
+    .mob Araj the Summoner
     .itemcount 12650,1 --Attuned Dampener
 step
     #hardcore
@@ -1212,7 +1212,7 @@ step
     >>击杀 |cRXP_ENEMY_召唤者阿拉基|r。拾取地上 |cRXP_PICK_阿拉基的护符匣|r 以获得 |cRXP_LOOT_阿拉基的圣甲虫|r
     >>|cRXP_ENEMY_阿拉基|r |cRXP_WARN_是一个强力的精英，并且周围有许多怪物，请小心清理它们。建议组成一个至少有4名玩家的队伍来击杀他|r
     .complete 5803,1 --Araj's Scarab (1x)
-    .mob Araj the Summonor
+    .mob Araj the Summoner
 step
     .goto Western Plaguelands,42.665,83.774
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_化学家阿尔比顿|r 对话
@@ -1263,7 +1263,7 @@ step
     .acceptmultiple 5093,5094,5095 >>接受任务战斗的号角：瘟疫之地！
     >>|cRXP_WARN_此任务也可在|r |cFFfa9602奥格瑞玛|r |cRXP_WARN_或者|r |cFFfa9602雷霆崖|r 接取
     .unitscan 公告员高拉克 --ORG
-    .unitscan Harbinger Balthazad --UC
+    .unitscan Harbinger Balthazadd --UC
     .unitscan Bluff Runner Windstrider --TB
     .isQuestAvailable 5096
     --VV TODO: Patrol paths
@@ -1445,7 +1445,7 @@ step
     >>|cRXP_ENEMY_阿拉基|r |cRXP_WARN_是一个强大的精英怪。建议至少3名玩家组队击杀他|r
     .use 12650 >>|cRXP_WARN_如果你有的话，对他使用|r |T134961:0|t[疫病中和器] |cRXP_WARN_|r
     .complete 5804,1 --Araj's Scarab (1x)
-    .mob Araj the Summonor
+    .mob Araj the Summoner
     .itemcount 12650,1 --Attuned Dampener
 step
     #softcore
@@ -1454,7 +1454,7 @@ step
     >>击杀 |cRXP_ENEMY_召唤者阿拉基|r。拾取地上 |cRXP_PICK_阿拉基的护符匣|r 以获得 |cRXP_LOOT_阿拉基的圣甲虫|r
     >>|cRXP_ENEMY_阿拉基|r |cRXP_WARN_是一个强大的精英怪。建议至少3名玩家组队击杀他|r
     .complete 5804,1 --Araj's Scarab (1x)
-    .mob Araj the Summonor
+    .mob Araj the Summoner
 step
     #hardcore
     .goto Western Plaguelands,45.60,69.28
@@ -1462,7 +1462,7 @@ step
     >>|cRXP_ENEMY_阿拉基|r |cRXP_WARN_是一个强力的精英，并且周围有许多怪物，请小心清理它们。建议组成一个至少有4名玩家的队伍来击杀他|r
     .use 12650 >>|cRXP_WARN_如果你有的话，对他使用|r |T134961:0|t[疫病中和器] |cRXP_WARN_|r
     .complete 5804,1 --Araj's Scarab (1x)
-    .mob Araj the Summonor
+    .mob Araj the Summoner
     .itemcount 12650,1 --Attuned Dampener
 step
     #hardcore
@@ -1471,7 +1471,7 @@ step
     >>击杀 |cRXP_ENEMY_召唤者阿拉基|r。拾取地上 |cRXP_PICK_阿拉基的护符匣|r 以获得 |cRXP_LOOT_阿拉基的圣甲虫|r
     >>|cRXP_ENEMY_阿拉基|r |cRXP_WARN_是一个强力的精英，并且周围有许多怪物，请小心清理它们。建议组成一个至少有4名玩家的队伍来击杀他|r
     .complete 5804,1 --Araj's Scarab (1x)
-    .mob Araj the Summonor
+    .mob Araj the Summoner
 step
     .goto Tirisfal Glades,83.28,69.23
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪瑟斯|r 对话

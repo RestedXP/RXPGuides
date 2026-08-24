@@ -11174,7 +11174,7 @@ step
 #xprate <1.5
     #completewith volcorEnd
     .goto Ashenvale,27.26,35.58
-    +|cRXP_FRIENDLY_Kerlonian|r will follow you and ocasionally help in combat. |cRXP_WARN_Make sure you don't lose him as he will stop moving when he falls asleep. You have 25 minutes to reach Ashenvale and complete this quest|r
+    +|cRXP_FRIENDLY_Kerlonian|r will follow you and occasionally help in combat. |cRXP_WARN_Make sure you don't lose him as he will stop moving when he falls asleep. You have 25 minutes to reach Ashenvale and complete this quest|r
     .use 13536 >> |cRXP_WARN_Use the|r |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_whenever |cRXP_FRIENDLY_Kerlonian|r falls asleep while standing next to him to wake him up|r
     >>|cRXP_WARN_Avoid running on the main road as much as possible. Enemies will only spawn if you're on the road|r
     .isOnQuest 5321

@@ -810,14 +810,14 @@ step
     >>|cRXP_WARN_Make sure you have a group ready|r
 step
     #softcore
-    >>Take a right before entering the The Exyceum and loot the |cRXP_LOOT_Core Fragment|r on the ground outside the |cFFfa9602Molton Core|r instance portal
+    >>Take a right before entering the The Lyceum and loot the |cRXP_LOOT_Core Fragment|r on the ground outside the |cFFfa9602Molten Core|r instance portal
     >>|cRXP_WARN_The fastest way to get here is by doing the 'Lava skip'. This starts from the platform of|r |cRXP_ENEMY_Lord Incendius|r
     --.link >> |cRXP_WARN_Click here for video reference|r
     .complete 7848,1 --Core Fragment 1/1
     --VV TODO: Lava skip video
 step
     #hardcore
-    >>Take a right before entering the The Exyceum and loot the |cRXP_LOOT_Core Fragment|r on the ground outside the |cFFfa9602Molton Core|r instance portal
+    >>Take a right before entering the The Lyceum and loot the |cRXP_LOOT_Core Fragment|r on the ground outside the |cFFfa9602Molten Core|r instance portal
     .complete 7848,1 --Core Fragment 1/1
 step
     #completewith next
@@ -1102,7 +1102,7 @@ step
 step
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
-    .turnin 5098 >> Turn in All Along the Watchtower
+    .turnin 5098 >> Turn in All Along the Watchtowers
     .accept 5533 >> Accept Scholomance
     .target Commander Ashlam Valorfist
 step
@@ -1182,37 +1182,37 @@ step
 step
     #softcore
     .goto Western Plaguelands,45.60,69.28
-    >>Kill |cRXP_ENEMY_Araj the Summonor|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
+    >>Kill |cRXP_ENEMY_Araj the Summoner|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite. It is recommended to kill him in a group of at least 3 players|r
     .use 12650 >>|cRXP_WARN_Use an|r |T134961:0|t[Attuned Dampener] |cRXP_WARN_on him if you have one|r
     .complete 5803,1 --Araj's Scarab (1x)
-    .mob Araj the Summonor
+    .mob Araj the Summoner
     .itemcount 12650,1 --Attuned Dampener
 step
     #softcore
     #label ArajTheSummoner
     .goto Western Plaguelands,45.60,69.28
-    >>Kill |cRXP_ENEMY_Araj the Summonor|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
+    >>Kill |cRXP_ENEMY_Araj the Summoner|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite. It is recommended to kill him in a group of at least 3 players|r
     .complete 5803,1 --Araj's Scarab (1x)
-    .mob Araj the Summonor
+    .mob Araj the Summoner
 step
     #hardcore
     .goto Western Plaguelands,45.60,69.28
-    >>Kill |cRXP_ENEMY_Araj the Summonor|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
+    >>Kill |cRXP_ENEMY_Araj the Summoner|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite and is surrunded by many mobs, clear them carefully. It is recommended to kill him in a group of at least 4 players|r
     .use 12650 >>|cRXP_WARN_Use an|r |T134961:0|t[Attuned Dampener] |cRXP_WARN_on him if you have one|r
     .complete 5803,1 --Araj's Scarab (1x)
-    .mob Araj the Summonor
+    .mob Araj the Summoner
     .itemcount 12650,1 --Attuned Dampener
 step
     #hardcore
     #label ArajTheSummoner
     .goto Western Plaguelands,45.60,69.28
-    >>Kill |cRXP_ENEMY_Araj the Summonor|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
+    >>Kill |cRXP_ENEMY_Araj the Summoner|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite and is surrunded by many mobs, clear them carefully. It is recommended to kill him in a group of at least 4 players|r
     .complete 5803,1 --Araj's Scarab (1x)
-    .mob Araj the Summonor
+    .mob Araj the Summoner
 step
     .goto Western Plaguelands,42.665,83.774
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
@@ -1259,11 +1259,11 @@ step
     .goto Undercity,60.98,51.69,50,0
     .goto Undercity,66.07,54.64,50,0
     .goto Undercity,70.81,51.49,50,0
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harbinger Balthaza|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harbinger Balthazad|r
     .acceptmultiple 5093,5094,5095 >>Accept A Call to Arms: The Plaguelands!
     >>|cRXP_WARN_This quest can be also be accepted in|r |cFFfa9602Orgrimmar|r |cRXP_WARN_or|r |cFFfa9602Thunder Bluff|r
     .unitscan Warcaller Gorlach --ORG
-    .unitscan Harbinger Balthazad --UC
+    .unitscan Harbinger Balthazadd --UC
     .unitscan Bluff Runner Windstrider --TB
     .isQuestAvailable 5096
     --VV TODO: Patrol paths
@@ -1441,37 +1441,37 @@ step
 step
     #softcore
     .goto Western Plaguelands,45.60,69.28
-    >>Kill |cRXP_ENEMY_Araj the Summonor|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
+    >>Kill |cRXP_ENEMY_Araj the Summoner|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite. It is recommended to kill him in a group of at least 3 players|r
     .use 12650 >>|cRXP_WARN_Use an|r |T134961:0|t[Attuned Dampener] |cRXP_WARN_on him if you have one|r
     .complete 5804,1 --Araj's Scarab (1x)
-    .mob Araj the Summonor
+    .mob Araj the Summoner
     .itemcount 12650,1 --Attuned Dampener
 step
     #softcore
     #label ArajTheSummoner
     .goto Western Plaguelands,45.60,69.28
-    >>Kill |cRXP_ENEMY_Araj the Summonor|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
+    >>Kill |cRXP_ENEMY_Araj the Summoner|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite. It is recommended to kill him in a group of at least 3 players|r
     .complete 5804,1 --Araj's Scarab (1x)
-    .mob Araj the Summonor
+    .mob Araj the Summoner
 step
     #hardcore
     .goto Western Plaguelands,45.60,69.28
-    >>Kill |cRXP_ENEMY_Araj the Summonor|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
+    >>Kill |cRXP_ENEMY_Araj the Summoner|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite and is surrunded by many mobs, clear them carefully. It is recommended to kill him in a group of at least 4 players|r
     .use 12650 >>|cRXP_WARN_Use an|r |T134961:0|t[Attuned Dampener] |cRXP_WARN_on him if you have one|r
     .complete 5804,1 --Araj's Scarab (1x)
-    .mob Araj the Summonor
+    .mob Araj the Summoner
     .itemcount 12650,1 --Attuned Dampener
 step
     #hardcore
     #label ArajTheSummoner
     .goto Western Plaguelands,45.60,69.28
-    >>Kill |cRXP_ENEMY_Araj the Summonor|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
+    >>Kill |cRXP_ENEMY_Araj the Summoner|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite and is surrunded by many mobs, clear them carefully. It is recommended to kill him in a group of at least 4 players|r
     .complete 5804,1 --Araj's Scarab (1x)
-    .mob Araj the Summonor
+    .mob Araj the Summoner
 step
     .goto Tirisfal Glades,83.28,69.23
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dithers|r
