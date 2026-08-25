@@ -3982,6 +3982,7 @@ function addon.settings.ToggleActive()
                             addon.settings.profile.showEnabled and
                                 not addon.settings.profile.hideGuideWindow)
 
+    addon:CloseMenu()
 end
 
 local function CheckBuff(buffId)

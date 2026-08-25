@@ -379,7 +379,7 @@ function addon.tracker.UpdateReportLevels(levelData, playerLevel, target, attach
                 addon.tracker:UpdateReport(l, target, attachment)
 
                 trackerUi.levelButton:SetText(text)
-                _G.CloseDropDownMenus()
+                addon:CloseMenu()
             end
         }
 
@@ -919,7 +919,7 @@ function addon.tracker:UpdateSplitsMenu(menuFrame, button)
             addon.comms.OpenBrandedExport(L"Export Level Splits",
                                           L"Export string for Importing into another character's comparison data",
                                           addon.tracker:BuildSplitsExport(), 20, 200)
-            _G.CloseDropDownMenus()
+            addon:CloseMenu()
         end
     })
 
@@ -931,7 +931,7 @@ function addon.tracker:UpdateSplitsMenu(menuFrame, button)
                                           addon.tracker.ImportSplits)
             -- Regenerate menu on next load
             addon.tracker.state.splitsMenu = nil
-            _G.CloseDropDownMenus()
+            addon:CloseMenu()
         end
     })
 
@@ -944,7 +944,7 @@ function addon.tracker:UpdateSplitsMenu(menuFrame, button)
                 arg1 = k,
                 func = function(_, key)
                     addon.tracker.state.splitsComparisonKey = key
-                    _G.CloseDropDownMenus()
+                    addon:CloseMenu()
                     addon.tracker:UpdateLevelSplits("full")
                 end,
                 checked = function() return k == self.state.splitsComparisonKey end
@@ -956,7 +956,7 @@ function addon.tracker:UpdateSplitsMenu(menuFrame, button)
         text = _G.NONE,
         func = function()
             addon.tracker.state.splitsComparisonKey = nil
-            _G.CloseDropDownMenus()
+            addon:CloseMenu()
             addon.tracker:UpdateLevelSplits("full")
         end,
         checked = function() return not self.state.splitsComparisonKey end
