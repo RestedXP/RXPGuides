@@ -740,7 +740,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
     local methods = {
         ["GetCollapsedHeight"] = function(this) return this.upperFrame:GetHeight() end,
 
-        ["GetShellHeight"] = function(this) return this:GetCollapsedHeight() + this.footer:GetHeight() - 2 end,
+        ["GetShellHeight"] = function(this) return this:GetCollapsedHeight() + this.footer:GetHeight() end,
 
         ["GetMinimumWidth"] = function(this)
             local textWidth = max(this.title:GetStringWidth() or 0, this.subtitle:GetStringWidth() or 0)
@@ -794,7 +794,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
 
             this.guideSteps.frame:ClearAllPoints()
             this.guideSteps.frame:SetPoint("TOPLEFT", this.guideStepsFrame, "TOPLEFT", 2, -2)
-            this.guideSteps.frame:SetPoint("BOTTOMRIGHT", this.guideStepsFrame, "BOTTOMRIGHT", -2, 22)
+            this.guideSteps.frame:SetPoint("BOTTOMRIGHT", this.guideStepsFrame, "BOTTOMRIGHT", -2, 16)
             this.guideSteps.scroll:SetContentTopPadding(4)
 
             this.footer:ClearAllPoints()

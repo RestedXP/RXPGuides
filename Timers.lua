@@ -30,6 +30,7 @@ function addon:SortTimers()
     local lastBar = false
     local bars = {}
     local reverse
+    local timerHeight = BarContainer.height
 
     for l,bar in pairs(BarContainer.bars) do
         table.insert(bars,bar)
@@ -37,18 +38,10 @@ function addon:SortTimers()
 
     local guideWindow = addon.v2 and addon.v2.IsGuideWindowEnabled and
                             addon.v2:IsGuideWindowEnabled() and addon.v2:GetGuideWindow()
-    local guideStepsShown
     if guideWindow then
-        guideStepsShown = guideWindow.guideSteps.frame:IsShown()
         BarContainer:ClearAllPoints()
-        if guideStepsShown then
-            BarContainer:SetPoint("TOPLEFT", guideWindow.footer, "TOPLEFT", 4, 0)
-            BarContainer:SetPoint("TOPRIGHT", guideWindow.footer, "TOPRIGHT", 0, 0)
-        else
-            BarContainer:SetPoint("TOPLEFT", guideWindow.frame, "BOTTOMLEFT", 4, -2)
-            BarContainer:SetPoint("TOPRIGHT", guideWindow.frame, "BOTTOMRIGHT", 0, -2)
-        end
-        BarContainer:SetHeight(BarContainer.height * #bars)
+        BarContainer:SetPoint("TOPLEFT", guideWindow.footer, "TOPLEFT", 0, 0)
+        BarContainer:SetPoint("BOTTOMRIGHT", guideWindow.footer, "BOTTOMRIGHT", -12, 0)
     else
         if RXPFrame.CurrentStepFrame.anchor == "BOTTOM" and #bars > 1 then
             BarContainer:ClearAllPoints()
@@ -63,7 +56,7 @@ function addon:SortTimers()
         end
     end
 
-    if guideWindow then guideWindow.footerText:SetAlpha(guideStepsShown and #bars > 0 and 0 or 1) end
+    if guideWindow then guideWindow.footerText:SetAlpha(#bars > 0 and 0 or 1) end
 
     table.sort(bars,function(b1,b2)
         return b1.exp > b2.exp
@@ -83,13 +76,16 @@ function addon:SortTimers()
             if reverse then
                 bar:SetPoint("BOTTOMLEFT",BarContainer,"BOTTOMLEFT")
                 bar:SetPoint("BOTTOMRIGHT",BarContainer,"BOTTOMRIGHT")
+            elseif guideWindow then
+                bar:SetPoint("TOPLEFT",BarContainer,"TOPLEFT")
+                bar:SetPoint("BOTTOMRIGHT",BarContainer,"BOTTOMRIGHT")
             else
                 bar:SetPoint("TOPLEFT",BarContainer,"TOPLEFT")
                 bar:SetPoint("TOPRIGHT",BarContainer,"TOPRIGHT")
             end
         end
         lastBar = bar
-        bar:SetHeight(BarContainer.height)
+        if not guideWindow then bar:SetHeight(timerHeight) end
     end
 end
 
