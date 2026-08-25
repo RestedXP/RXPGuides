@@ -2176,7 +2176,7 @@ step
 step
     .train 415922,1
     .goto Eastern Plaguelands,83,85
-    >>Open |cRXP_LOOT_Scarlet Footlockers|r throughout Try's Hand until you loot a |cRXP_LOOT_Sending Signal|r
+    >>Open |cRXP_LOOT_Scarlet Footlockers|r throughout Try's Hand until you loot a |cRXP_LOOT_Sending Sigil|r
     .collect 227451,1
 step
     .train 415922,1

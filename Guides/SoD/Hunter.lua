@@ -1047,13 +1047,13 @@ step
 step
     #completewith next
     .goto Badlands,22.352,67.733
-    +Click the |cRXP_PICK_Large Nest|r atop the mountain to summon |cRXP_ENEMY_Gharik|r
+    +Click the |cRXP_PICK_Large Nest|r atop the mountain to summon |cRXP_ENEMY_Gharrik|r
     .itemcount 211272,<1
 step
     .goto Badlands,22.352,67.733
-    >>Kill |cRXP_ENEMY_Gharik|r. Loot her for the |cRXP_LOOT_Crimson Trophy Quill|r
+    >>Kill |cRXP_ENEMY_Gharrik|r. Loot her for the |cRXP_LOOT_Crimson Trophy Quill|r
     .complete 78830,1 --Crimson Trophy Quill (1)
-    .mob Gharik
+    .mob Gharrik
     .train 410114,1
 step
     #completewith next
@@ -1194,7 +1194,7 @@ step
     .goto 1446/1,-3290.200,-7330.700,0
     >>Kill |cRXP_ENEMY_Zopilote|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of The Raptor|r]
     >>|cRXP_ENEMY_Zopilote|r |cRXP_WARN_is a carrion bird that patrols east to west in a large area spanning from south of Sandsorrow Watch to Gadgetzan|r
-    >>TIP: Instead of running around you can use |T132172:0|t[|cRXP_FRIENDLY_Eagle Eye|r] to scout for his position. If you can't find him he's probably dead and should respawn arond the spot marked with "2+" on your map
+    >>TIP: Instead of running around you can use |T132172:0|t[|cRXP_FRIENDLY_Eagle Eye|r] to scout for his position. If you can't find him he's probably dead and should respawn around the spot marked with "2+" on your map
     .collect 220687,1
     .unitscan Zopilote
     .train 416093,1
@@ -1216,11 +1216,11 @@ step
     #completewith next
     .zone Feralas >>Travel to Feralas
 step
-    +|cRXP_WARN_You will need one of either |T133951:0|t|cRXP_PICK_Soft Banana Bread|r or |T133980:0|t|cRXP_PICK_Tel'Abim Banana|r to acquire this rune. |cRXP_FRIENDLY_Madrack Greenwell|r sells the bread in Feathermoon for Alliance. |cRXP_FRIENDLY_Innkeeper Greul|r sells it in Camp Mojache for Horde.
+    +|cRXP_WARN_You will need one of either |T133951:0|t|cRXP_PICK_Soft Banana Bread|r or |T133980:0|t|cRXP_PICK_Tel'Abim Banana|r to acquire this rune. |cRXP_FRIENDLY_Mardrack Greenwell|r sells the bread in Feathermoon for Alliance. |cRXP_FRIENDLY_Innkeeper Greul|r sells it in Camp Mojache for Horde.
     .itemcount 4601,<1 --Soft Banana Bread
     .itemcount 4537,<1 --Tel'Abim Banana
     .target Innkeeper Greul
-    .target Madrack Greenwell
+    .target Mardrack Greenwell
     .train 416083,1
 step
     >>Go to the Yeti cave in The High Wilderness

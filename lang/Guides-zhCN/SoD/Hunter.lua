@@ -1053,7 +1053,7 @@ step
     .goto Badlands,22.352,67.733
     >>击杀 |cRXP_ENEMY_嘎里克|r。拾取她的 |cRXP_LOOT_深红战利品翎羽|r
     .complete 78830,1 --Crimson Trophy Quill (1)
-    .mob Gharik
+    .mob Gharrik
     .train 410114,1
 step
     #completewith next
@@ -1220,7 +1220,7 @@ step
     .itemcount 4601,<1 --Soft Banana Bread
     .itemcount 4537,<1 --Tel'Abim Banana
     .target Innkeeper Greul
-    .target Madrack Greenwell
+    .target Mardrack Greenwell
     .train 416083,1
 step
     >>前往高原荒野的雪人洞穴
