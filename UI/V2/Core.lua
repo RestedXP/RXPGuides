@@ -859,12 +859,6 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
                 addon.settings.profile.frameHeight = max(addon.settings.profile.frameHeight or 0, addon.height or 35)
             end
 
-            if stepListShown and not snapshot.empty then
-                this.guideStepsFrame:Show()
-                this.guideSteps.frame:Show()
-                this.frame:SetHeight(this.guideHeight)
-            end
-
             this.guideSteps:SetRows(snapshot.rows, nil, scrollToActive)
 
             local rowsHeight = this.guideSteps.rowsHeight or 0
@@ -1117,6 +1111,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         for method, func in pairs(methods) do widget[method] = func end
 
         widget:UpdateTheme({})
+        frame:SetHeight(widget:GetShellHeight())
+        guideSteps.frame:Hide()
 
         guideNameFrame:SetScript("OnMouseDown", function(_, button)
             if button == "LeftButton" and not addon.settings.profile.lockFrames then frame:StartMoving() end
@@ -1183,7 +1179,7 @@ function addon.v2:GetGuideWindow()
         addon.settings:LoadFramePosition("RXPV2GuideWindow", frame)
         frame:SetWidth(max(frame:GetWidth(), guideWindowDefaultWidth))
     else
-        frame:SetSize(guideWindowDefaultWidth, guideWindowDefaultHeight)
+        frame:SetSize(guideWindowDefaultWidth, window:GetShellHeight())
         frame:ClearAllPoints()
         frame:SetPoint("LEFT", UIParent, "LEFT", 0, 35)
     end
@@ -1195,6 +1191,7 @@ function addon.v2:GetGuideWindow()
     end
 
     window.guideHeight = profile.v2GuideWindowExpandedHeight or guideWindowDefaultHeight
+    frame:SetHeight(window:GetShellHeight())
 
     return window
 end

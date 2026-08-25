@@ -1482,6 +1482,7 @@ function addon:OnEnable()
     end
 
     addon.settings:LoadFramePositions()
+    addon.v2:UpdateGuideWindow()
 
     if addon.settings.profile.hideInRaid then
         self:RegisterEvent("GROUP_JOINED", addon.HideInRaid)
