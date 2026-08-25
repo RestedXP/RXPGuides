@@ -855,9 +855,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             this.guideHeight = this.guideHeight or addon.settings.profile.v2GuideWindowExpandedHeight or
                                    guideWindowDefaultHeight
 
-            if wasEmptyGuide and not snapshot.empty then
+            if wasEmptyGuide and not snapshot.empty and stepListShown then
                 addon.settings.profile.frameHeight = max(addon.settings.profile.frameHeight or 0, addon.height or 35)
-                stepListShown = true
             end
 
             if stepListShown and not snapshot.empty then
