@@ -1906,6 +1906,7 @@ function addon:LoadGuide(guide, OnLoad)
 
             guideWindow.title:SetText(title)
             guideWindow.subtitle:SetText(not guide.title and guide.subgroup and guideName or "")
+            guideWindow:UpdateResizeBounds(guideWindow.guideSteps.frame:IsShown(), false)
         end
     end
 

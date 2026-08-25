@@ -2,7 +2,7 @@ local addonName, addon = ...
 
 local locale = _G.GetLocale()
 local pairs, assert, type = pairs, assert, type
-local min, max, floor, abs = math.min, math.max, math.floor, math.abs
+local min, max, floor, ceil, abs = math.min, math.max, math.floor, math.ceil, math.abs
 local strbyte, strsub = string.byte, string.sub
 local CreateFrame, UIParent = CreateFrame, UIParent
 
@@ -742,6 +742,14 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
 
         ["GetShellHeight"] = function(this) return this:GetCollapsedHeight() + this.footer:GetHeight() - 2 end,
 
+        ["GetMinimumWidth"] = function(this)
+            local textWidth = max(this.title:GetStringWidth() or 0, this.subtitle:GetStringWidth() or 0)
+
+            if textWidth <= 0 then return guideWindowDefaultWidth end
+
+            return max(guideWindowDefaultWidth, ceil(textWidth + 121))
+        end,
+
         ["UpdateHeaderHeight"] = function(this)
             local headerHeight = this.snapshotEmpty and 34 or 36
 
@@ -827,7 +835,11 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
                                         this.guideSteps.scroll:GetContentTopPadding())
             end
 
-            addon.SetResizeBounds(this.frame, guideWindowDefaultWidth, minimumHeight)
+            local minimumWidth = this:GetMinimumWidth()
+
+            addon.SetResizeBounds(this.frame, minimumWidth, minimumHeight)
+
+            if this.frame:GetWidth() < minimumWidth then this.frame:SetWidth(minimumWidth) end
         end,
 
         ["OnAcquire"] = function(this) this.frame:Show() end,
