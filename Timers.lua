@@ -124,6 +124,24 @@ function addon.HideTimers()
     RXPFrame.Footer.cog:SetAlpha(1)
 end
 
+function addon.ShowTimers()
+    local shown
+    local ctime = GetTime()
+    for _,bar in pairs(barPool) do
+        if not bar:IsShown() and bar.exp and bar.exp > ctime then
+            BarContainer.bars[bar:GetLabel()] = bar
+            bar:Show()
+            shown = true
+        end
+    end
+    if shown then
+        RXPFrame.Footer.icon:SetAlpha(0)
+        RXPFrame.Footer.text:SetAlpha(0)
+        RXPFrame.Footer.cog:SetAlpha(0)
+        addon:SortTimers()
+    end
+end
+
 function addon.StopTimer(label)
     local bar = BarContainer.bars[label]
     if not bar then
