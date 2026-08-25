@@ -1152,6 +1152,8 @@ function addon.settings:CreateAceOptionsPanel()
                             SetProfileOption(info, value)
                             if not value then
                                 addon.HideTimers()
+                            else
+                                addon.ShowTimers()
                             end
                         end
                     },
@@ -3963,6 +3965,11 @@ end
 
 function addon.settings.ToggleActive()
     addon.settings.profile.showEnabled = not addon.settings.profile.showEnabled
+    if addon.settings.profile.showEnabled and addon.settings.profile.showFlightTimers then
+        addon.ShowTimers()
+    else
+        addon.HideTimers()
+    end
 
     for _, frame in pairs(addon.enabledFrames) do
         local shown, isSecure = frame.IsFeatureEnabled()
