@@ -2286,15 +2286,17 @@ function BottomFrame.UpdateFrame(self, stepn, startFrom, skip)
             end
             step.text = text
 
-            if fheight == 1 and not IsFrameShown(frame,step) then
-                frame:SetHeight(1)
-                fheight = -3
-            else
-                frame:SetHeight(fheight)
-            end
+            if fheight then
+                if fheight == 1 and not IsFrameShown(frame,step) then
+                    frame:SetHeight(1)
+                    fheight = -3
+                else
+                    frame:SetHeight(fheight)
+                end
 
-            totalHeight = totalHeight + fheight + 2
-            stepPos[n] = totalHeight - 5
+                totalHeight = totalHeight + fheight + 2
+                stepPos[n] = totalHeight - 5
+            end
         end
         --[[if hiddenFrames ~= BottomFrame.hiddenFrames then
             BottomFrame.SortSteps()
