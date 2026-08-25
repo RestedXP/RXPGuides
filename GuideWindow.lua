@@ -3025,8 +3025,8 @@ function addon.v2:SetActiveStepsFrameAnchor(stepFrame)
     if addon.settings.profile.anchorOrientation == "bottom" then
         guideWindow = guideWindow or addon.RXPFrame
 
-        stepFrame:SetPoint("TOPLEFT", guideWindow, "BOTTOMLEFT", leftInset + 3, 0)
-        stepFrame:SetPoint("TOPRIGHT", guideWindow, "BOTTOMRIGHT", -rightInset - 3, 0)
+        stepFrame:SetPoint("TOPLEFT", guideWindow, "BOTTOMLEFT", leftInset + 3, -5)
+        stepFrame:SetPoint("TOPRIGHT", guideWindow, "BOTTOMRIGHT", -rightInset - 3, -5)
     else
         if guideWindow then
             stepFrame:SetPoint("BOTTOMLEFT", guideWindow, "TOPLEFT", leftInset, 3)
