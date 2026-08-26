@@ -2253,9 +2253,17 @@ step << Mage/Priest/Warlock
     .collect 1179,20,8476,1 --Ice Cold Milk (20)
     .target Zalene Firstlight
 step
+    #optional
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawnrunner|r
     .turnin 9359 >>Turn in Farstrider Retreat << !Tauren !Hunter/BloodElf
+    .accept 8476 >>Accept Amani Encroachment
+    .accept 9484 >>Accept Taming the Beast << BloodElf Hunter
+    .target Lieutenant Dawnrunner
+    .isOnQuest 9359
+step
+    .goto Eversong Woods,60.32,62.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawnrunner|r
     .accept 8476 >>Accept Amani Encroachment
     .accept 9484 >>Accept Taming the Beast << BloodElf Hunter
     .target Lieutenant Dawnrunner
@@ -3874,6 +3882,35 @@ step
     .isOnQuest 9158
     .xp <15,1
     .xp >30,1
+step << Hunter
+    #completewith next
+    .goto Ghostlands,48.48,31.36,0
+    +|cRXP_WARN_Abandon your current pet. Alternatively you talk to|r |cRXP_FRIENDLY_Paniar|r |cRXP_WARN_in Tranquillien to stable your current pet|r
+    .target Paniar
+step << Hunter
+    #loop
+    .goto Ghostlands,72.68,41.63,0
+    .goto Ghostlands,69.61,31.21,40,0
+    .goto Ghostlands,66.93,35.04,40,0
+    .goto Ghostlands,69.21,36.19,40,0
+    .goto Ghostlands,68.34,39.28,40,0
+    .goto Ghostlands,66.16,42.71,40,0
+    .goto Ghostlands,68.48,46.50,40,0
+    .goto Ghostlands,71.08,44.62,40,0
+    .goto Ghostlands,72.68,41.63,40,0
+    .goto Ghostlands,73.06,39.68,40,0
+    .goto Ghostlands,74.79,39.15,40,0
+    .goto Ghostlands,73.82,36.71,40,0
+    .goto Ghostlands,76.03,36.52,40,0
+    .goto Ghostlands,76.39,34.86,40,0
+    .goto Ghostlands,74.79,39.15,40,0
+    .goto Ghostlands,77.29,31.89,40,0
+    .goto Ghostlands,77.16,27.58,40,0
+    .goto Ghostlands,76.07,25.13,40,0
+    .goto Ghostlands,74.82,29.77,40,0
+    .train 16830 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on an |cRXP_ENEMY_Ghostclaw Lynx|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 2)]
+    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Click here for more info about pet training|r
+    .mob Ghostclaw Lynx
 step
     #loop
     .goto Ghostlands,72.68,41.63,0

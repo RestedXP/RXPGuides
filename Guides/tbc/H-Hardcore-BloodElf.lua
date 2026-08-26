@@ -4664,21 +4664,6 @@ step << Rogue
     .target Eralan
     .isQuestTurnedIn 10372
 step
-    .goto Ghostlands,49.33,42.94,60,0
-    #loop
-    .goto Ghostlands,69.79,35.78,0
-    .goto Ghostlands,60.28,48.06,60,0
-    .goto Ghostlands,66.61,47.13,60,0
-    .goto Ghostlands,68.66,39.81,60,0
-    .goto Ghostlands,69.79,35.78,60,0
-    .goto Ghostlands,73.81,37.97,60,0
-    .goto Ghostlands,76.46,28.25,60,0
-    >>Kill |cRXP_ENEMY_Ghostclaw Lynxes|r
-    >>|cRXP_ENEMY_Ghostclaw Lynxes|r |cRXP_WARN_share spawns with |cRXP_ENEMY_Vampiric Mistbats|r. Kill them too if there aren't enough |cRXP_ENEMY_Ghostclaw Lynxes|r around|r
-    .complete 9158,1 --Kill Ghostclaw Lynx (x10)
-    .mob Ghostclaw Lynx
-    .isOnQuest 9158
-step
     #completewith next
     .subzone 3496 >>Travel to Farstrider Enclave
 step
@@ -4688,6 +4673,35 @@ step
     .target Farstrider Sedina
     .goto Ghostlands,72.50,32.14
     .isQuestAvailable 9158
+step << Hunter
+    #completewith next
+    .goto Ghostlands,48.48,31.36,0
+    +|cRXP_WARN_Abandon your current pet. Alternatively you talk to|r |cRXP_FRIENDLY_Paniar|r |cRXP_WARN_in Tranquillien to stable your current pet|r
+    .target Paniar
+step << Hunter
+    #loop
+    .goto Ghostlands,72.68,41.63,0
+    .goto Ghostlands,69.61,31.21,40,0
+    .goto Ghostlands,66.93,35.04,40,0
+    .goto Ghostlands,69.21,36.19,40,0
+    .goto Ghostlands,68.34,39.28,40,0
+    .goto Ghostlands,66.16,42.71,40,0
+    .goto Ghostlands,68.48,46.50,40,0
+    .goto Ghostlands,71.08,44.62,40,0
+    .goto Ghostlands,72.68,41.63,40,0
+    .goto Ghostlands,73.06,39.68,40,0
+    .goto Ghostlands,74.79,39.15,40,0
+    .goto Ghostlands,73.82,36.71,40,0
+    .goto Ghostlands,76.03,36.52,40,0
+    .goto Ghostlands,76.39,34.86,40,0
+    .goto Ghostlands,74.79,39.15,40,0
+    .goto Ghostlands,77.29,31.89,40,0
+    .goto Ghostlands,77.16,27.58,40,0
+    .goto Ghostlands,76.07,25.13,40,0
+    .goto Ghostlands,74.82,29.77,40,0
+    .train 16830 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on an |cRXP_ENEMY_Ghostclaw Lynx|r. Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 2)]
+    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Click here for more info about pet training|r
+    .mob Ghostclaw Lynx
 step
     #optional
     .goto Ghostlands,49.33,42.94,60,0
