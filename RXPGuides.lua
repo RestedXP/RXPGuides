@@ -2460,7 +2460,7 @@ RXP = addon -- debug purposes
 local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0", true)
 
 function addon:CloseMenu()
-    if _G.CloseDropDownMenus then _G.CloseDropDownMenus() end
+    if _G.CloseDropDownMenus then return _G.CloseDropDownMenus() end
 
     if LibDD then LibDD:CloseDropDownMenus() end
 end
