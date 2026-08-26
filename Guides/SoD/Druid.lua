@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Druid SoD
 #group RestedXP Rune & Books Guide
 #subgroup Chest
-#name Fury of Stormrage - 4 (Nightglen)
+#name Fury of Stormrage - 4 (Shadowglen)
 #title Fury of Stormrage
 
 step << Druid
@@ -1025,21 +1025,21 @@ step
     .goto Azshara,16.0,49.6,30,0
     .goto Azshara,18.6,66.6,30,0
     .goto Azshara,21.0,56.2,30,0
-    >>Look for a |cRXP_ENEMY_Thunderhead Hyppogryph|r with the |T136134:0|t[Satyr Corruption] debuff
+    >>Look for a |cRXP_ENEMY_Thunderhead Hippogryph|r with the |T136134:0|t[Satyr Corruption] debuff
     *|cRXP_WARN_If it has the debuff then it emits a green poison cloud|r.
-    .cast 2637 >>Use |T136090:0|t[Hybernate] on the |cRXP_ENEMY_Thunderhead Hyppogryph|r
-    .mob Thunderhead Hyppogryph
+    .cast 2637 >>Use |T136090:0|t[Hibernate] on the |cRXP_ENEMY_Thunderhead Hippogryph|r
+    .mob Thunderhead Hippogryph
 step
     .train 416051,1
-    >>|cRXP_WARN_Use the|r |T236868:0|t[Satyrweed Tincture] |cRXP_WARN_on the |cRXP_ENEMY_Thunderhead Hyppogryph|r to remove the|r |T136134:0|t[Satyr Corruption] |cRXP_WARN_debuff|r and get the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Moon Goddess|r]
+    >>|cRXP_WARN_Use the|r |T236868:0|t[Satyrweed Tincture] |cRXP_WARN_on the |cRXP_ENEMY_Thunderhead Hippogryph|r to remove the|r |T136134:0|t[Satyr Corruption] |cRXP_WARN_debuff|r and get the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Moon Goddess|r]
     .itemcount 221199,1
     .use 221199
     .collect 221020,1
-    .mob Thunderhead Hyppogryph
+    .mob Thunderhead Hippogryph
 step
     .itemcount 221020,1
     .use 221020
-    .train 416051 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Windstorm|r] |cRXP_WARN_to train|r |T236163:0|t[Elune's Fires]
+    .train 416051 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Windstorm|r] |cRXP_WARN_to train|r |T236154:0|t[Gale Winds]
 ]])
 
 -- RXPGuides.RegisterGuide([[

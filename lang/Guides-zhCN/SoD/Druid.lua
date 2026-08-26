@@ -1028,14 +1028,14 @@ step
     >>寻找一个带有 |T136134:0|t[萨特腐蚀] debuff的 |cRXP_ENEMY_雷首角鹰兽|r
     *|cRXP_WARN_如果它带有该减益效果，就会释放出一片绿色毒云|r。
     .cast 2637 >>对 |cRXP_ENEMY_雷首角鹰兽|r 使用 |T136090:0|t[休眠]
-    .mob Thunderhead Hyppogryph
+    .mob Thunderhead Hippogryph
 step
     .train 416051,1
     >>|cRXP_WARN_对 |r雷首角鹰兽|cRXP_WARN_ |cRXP_ENEMY_使用|r |T236868:0|t[萨特草酊剂] 来移除|r |T136134:0|t[萨特腐蚀] |cRXP_WARN_debuff|r 并获得 |T134419:0|t[|cRXP_FRIENDLY_月亮女神符文|r]
     .itemcount 221199,1
     .use 221199
     .collect 221020,1
-    .mob Thunderhead Hyppogryph
+    .mob Thunderhead Hippogryph
 step
     .itemcount 221020,1
     .use 221020
