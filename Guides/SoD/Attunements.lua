@@ -257,8 +257,8 @@ step
    >>Head north to the scarlet camp << Alliance
    >>Head east to the scarlet camp << Horde
    >>Click on the |cRXP_PICK_Ball and Chain|r outside of the small tent. It will spawn an |cRXP_WARN_elite|r |cRXP_ENEMY_Scarlet Infiltrator|r who will attack you
-   >>Kill and |cRXP_LOOT_loot|r him for the |T133471:0|t[Orders from the High General]
-   .complete 87459,1 --Orders from the High General
+   >>Kill and |cRXP_LOOT_loot|r him for the |T133471:0|t[Orders from the Commander]
+   .complete 87459,1 --Orders from the Commander
    .mob Scarlet Infiltrator
    .isOnQuest 87459
 step

@@ -472,7 +472,7 @@ step << Priest
     .train 425215,1
 step << Priest
     .goto Loch Modan,36.689,20.964
-    .use 208823 >> |cRXP_WARN_Use the|r |T237281:0|t[|cRXP_LOOT_Offering Coin|r] |cRXP_WARN_at the well inside of the Silverstream Mine|r |cRXP_WARN_to receive the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion|r]
+    .use 208823 >> |cRXP_WARN_Use the|r |T237281:0|t[|cRXP_LOOT_Offering Coin|r] |cRXP_WARN_at the well inside of the Silver Stream Mine|r |cRXP_WARN_to receive the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion|r]
     .collect 205905,1 -- Memory of a Devout Champion (1)
     .train 425215,1
 step << Priest
@@ -774,7 +774,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone The Barrens >> Trave to The Barrens
+    .zone The Barrens >> Travel to The Barrens
 step
     #loop
     .goto The Barrens,54.8,35.6,40,0
@@ -816,7 +816,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Silverpine Forest >> Trave to the Silverpine Forest
+    .zone Silverpine Forest >> Travel to the Silverpine Forest
 step
     .goto Silverpine Forest,65.8,23.6
     >>Pick up the |cRXP_PICK_Scroll|r behind |cRXP_ENEMY_Thule Ravenclaw|r (lvl 24 elite) for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise|r]
@@ -864,7 +864,7 @@ step
     .collect 205905,1
     .mob Wailing Spirit
 step
-    .train 425215 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion] |cRXP_WARN_to train|r |T237566:0|t[Twisted Fate]
+    .train 425215 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion] |cRXP_WARN_to train|r |T237566:0|t[Twisted Faith]
     >>|cRXP_WARN_You must have a|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buff by typing|r /kneel |cRXP_WARN_in front of |cRXP_PICK_Loa Shrine|r (in Durotar or The Barrens) or by kneeling in front of another priest with the buff when they /pray for you|r << Troll
     >>|cRXP_WARN_You must have a|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buff by typing|r /kneel |cRXP_WARN_at a graveyard or by kneeling in front of another priest with the buff when they /pray for you|r << Undead
     .goto Durotar,55.32,72.66,0
@@ -896,10 +896,10 @@ step
     .mob Razormane Defender
 step
     .train 425215,1
-    >>|cRXP_WARN_Find a dead player or pet that you can ressurect (with |T135955:0|t[Ressurection]) to get the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion]
+    >>|cRXP_WARN_Find a dead player or pet that you can ressurect (with |T135955:0|t[Resurrection]) to get the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion]
     .collect 205905,1
 step
-    .train 425215 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion] |cRXP_WARN_to train|r |T237566:0|t[Twisted Fate]
+    .train 425215 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion] |cRXP_WARN_to train|r |T237566:0|t[Twisted Faith]
     >>|cRXP_WARN_You must have a|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buff by typing|r /kneel |cRXP_WARN_in front of |cRXP_PICK_Loa Shrine|r (in Durotar or The Barrens) or by kneeling in front of another priest with the buff when they /pray for you|r << Troll
     >>|cRXP_WARN_You must have a|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buff by typing|r /kneel |cRXP_WARN_at a graveyard or by kneeling in front of another priest with the buff when they /pray for you|r << Undead
     .goto Durotar,55.32,72.66,0

@@ -10027,7 +10027,7 @@ step
     .timer 5,Alora Roleplay
 step
     .goto 646,33.99,33.93
-    >>Use |T135955:0|t[Ressurection] on |cRXP_FRIENDLY_Alora|r.
+    >>Use |T135955:0|t[Resurrection] on |cRXP_FRIENDLY_Alora|r.
     .complete 41967,3 --1/1 Alora resurrected
     .macro Resurrection,135955 >>/target Alora\n/cast spell:213109
 step

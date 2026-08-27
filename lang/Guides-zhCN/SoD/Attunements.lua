@@ -258,7 +258,7 @@ step
    >>向东前往血色营地 << Horde
    >>点击小帐篷外的 |cRXP_PICK_锁链|r。它会生成一个会攻击你的 |cRXP_WARN_精英|r |cRXP_ENEMY_血色渗透者|r
    >>击杀并 |cRXP_LOOT_拾取|r 他以获得 |T133471:0|t[高级指挥官的命令]
-   .complete 87459,1 --Orders from the High General
+   .complete 87459,1 --Orders from the Commander
    .mob Scarlet Infiltrator
    .isOnQuest 87459
 step
