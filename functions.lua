@@ -8418,13 +8418,16 @@ function addon.functions.totalbagslots(self,text,arg1)
     end
 end
 
-function addon.functions.dualspec(self, text)
+function addon.functions.dualspec(self, text, skipstep)
     if type(self) == "string" then -- on parse
         local element = {}
         element.icon = addon.icons.trainer
+        element.skipstep = tonumber(skipstep) == 1
+        if element.skipstep then element.textOnly = true end
+
         if text and text ~= "" then
             element.text = text
-        else
+        elseif not element.skipstep then
             element.text = L("Learn dual spec")
         end
         return element
@@ -8438,14 +8441,17 @@ function addon.functions.dualspec(self, text)
 
     if addon.isHidden then return end
 
-    local groups
-    if GetNumTalentGroups then
-        groups = GetNumTalentGroups()
-    elseif GetNumSpecGroups then
+    local ok, groups = pcall(GetNumTalentGroups)
+    if not ok then
         groups = GetNumSpecGroups()
     end
 
     if (groups or 1) > 1 then
-        addon.SetElementComplete(self, true)
+        if element.skipstep then
+            step.completed = true
+            addon.updateSteps = true
+        else
+            addon.SetElementComplete(self, true)
+        end
     end
 end
