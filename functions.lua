@@ -2730,7 +2730,9 @@ function addon.functions.fp(self, ...)
             end
         end
 
-        element.tooltipText = addon.icons.fp .. element.text
+        if element.text then
+            element.tooltipText = addon.icons.fp .. element.text
+        end
         return element
     end
     local event, arg1, arg2 = ...
