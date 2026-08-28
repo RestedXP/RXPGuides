@@ -1583,6 +1583,79 @@ RXPGuides.RegisterGuide([[
 #tbc
 
 #group RestedXP Endgame Guides
+#name Naxxramas Attunement
+#subgroup Attunements
+
+step
+    >>|cRXP_BUY_Collect the following items|r:
+    >>Five |T134135:0|t[|cRXP_FRIENDLY_Arcane Crystals|r]
+    >>Two |T132880:0|t[|cRXP_PICK_Nexus Crystals|r]
+    >>One |T134122:0|t[|cRXP_FRIENDLY_Righteous Orb|r]
+    >>|cRXP_WARN_Buy them from the auction house if possible|r
+    >>|cRXP_WARN_You will need them to turn in the quest that attunes you to Naxxramas. Reaching higher reputation thresholds with the Argent Dawn makes it cost less materials and gold!|r
+    .collect 12363,5 --Arcane Crystal (x5)
+    .collect 20725,2 --Nexus Crystal (x2)
+    .collect 12811,1 --Righteous Orb (x1)
+    .reputation 529,revered,>0,1 --Below Revered AD
+    .isQuestAvailable 9121 --The Dread Citadel - Naxxramas
+step
+    >>|cRXP_BUY_Collect the following items|r:
+    >>Two |T134135:0|t[|cRXP_FRIENDLY_Arcane Crystals|r]
+    >>One |T132880:0|t[|cRXP_PICK_Nexus Crystal|r]
+    >>|cRXP_WARN_Buy them from the auction house if possible|r
+    >>|cRXP_WARN_You will need them to turn in the quest that attunes you to Naxxramas. Reaching higher reputation thresholds with the Argent Dawn makes it cost less materials and gold!|r
+    .collect 12363,2 --Arcane Crystal (x2)
+    .collect 20725,1 --Nexus Crystal (x1)
+    .reputation 529,exalted,>0,1 --Below Exalted AD
+    .reputation 529,revered,<0,1 --Revered AD
+    .isQuestAvailable 9122 --The Dread Citadel - Naxxramas
+step
+    #completewith AttuneComplete
+    .zone Eastern Plaguelands >>Travel to |cFFfa9602Eastern Plaguelands|r
+step
+    #optional
+    .reputation 529,honored >>Get an honored reputation with the Argent Dawn
+    >>|cRXP_WARN_Grind |cRXP_ENEMY_Undead|r mobs in EPL/WPL or do dungeons with your|r |T133440:0|t[Argent Dawn Commission] |cRXP_WARN_equipped for to collect and turn in|r |T133447:0|t[Scourgestones]
+step
+    .goto Eastern Plaguelands,81.523,58.269
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Angela Dosantos|r
+    >>|cRXP_WARN_Your reputation must be Honored to accept this quest|r
+    >>|cRXP_WARN_You will also need to pay|r |cRXP_WARN_60 gold|r |cRXP_WARN_to turn in the quest|r
+    .accept 9121 >>Accept The Dread Citadel - Naxxramas
+    .turnin 9121 >>Turn in The Dread Citadel - Naxxramas
+    .target Archmage Angela Dosantos
+    .reputation 529,revered,>0,1 --Below Revered AD
+    .isQuestAvailable 9121 --The Dread Citadel - Naxxramas
+step
+    .goto Eastern Plaguelands,81.523,58.269
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Angela Dosantos|r
+    >>|cRXP_WARN_Your reputation must be Revered to accept this quest|r
+    >>|cRXP_WARN_You will also need to pay|r |cRXP_WARN_60 gold|r |cRXP_WARN_to turn in the quest|r
+    .accept 9122 >>Accept The Dread Citadel - Naxxramas
+    .turnin 9122 >>Turn in The Dread Citadel - Naxxramas
+    .target Archmage Angela Dosantos
+    .reputation 529,exalted,>0,1 --Below Exalted AD
+    .reputation 529,revered,<0,1 --Revered AD
+    .isQuestAvailable 9122 --The Dread Citadel - Naxxramas
+step
+    #label AttuneComplete
+    .goto Eastern Plaguelands,81.523,58.269
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Angela Dosantos|r
+    >>|cRXP_WARN_Your reputation must be Exalted to accept this quest|r
+    .accept 9123 >>Accept The Dread Citadel - Naxxramas
+    .turnin 9123 >>Turn in The Dread Citadel - Naxxramas
+    .target Archmage Angela Dosantos
+    .reputation 529,exalted,<0,1 --Exalted AD
+    .isQuestAvailable 9123 --The Dread Citadel - Naxxramas
+
+]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+#tbc
+
+#group RestedXP Endgame Guides
 #name Demon Fall Canyon Attunement
 #subgroup Attunements
 <<sod
