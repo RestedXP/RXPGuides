@@ -4701,7 +4701,32 @@ function addon.settings.dungeons:ScoreDungeons()
 end
 
 function addon.settings.dungeons:GetDungeons()
-    return RXPCData.guideMetaData.enabledDungeons[addon.player.faction] or {}
+    local dungeons = RXPCData.guideMetaData.enabledDungeons[addon.player.faction] or {}
+
+    if not addon.player.hardcore then
+        return dungeons
+    end
+
+    local stats = addon.dungeonStats and addon.dungeonStats[addon.player.faction]
+    if not stats or not addon.GetDungeonName then return dungeons end
+
+    local fallback = {}
+    for tag, dungeonName in pairs(dungeons) do
+        fallback[tag] = dungeonName
+    end
+
+    local name
+    for tag in pairs(stats) do
+        if not fallback[tag] then
+            name = addon.GetDungeonName(tag)
+
+            if name then
+                fallback[tag] = name
+            end
+        end
+    end
+
+    return fallback
 end
 
 function addon.settings.dungeons:SetRecommended()
