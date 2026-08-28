@@ -51,9 +51,11 @@ end
 
 function addon.LoadDefaultGuide()
     local played
-    if not addon.tracker.waitingForTimePlayed then
-        local login = addon.tracker.state.login
-        played = difftime(time(),login.time) + login.totalTimePlayed
+    if addon.tracker.state and addon.tracker.state.login then
+        if not addon.tracker.waitingForTimePlayed then
+            local login = addon.tracker.state.login
+            played = difftime(time(),login.time) + login.totalTimePlayed
+        end
     end
     if not played then
         C_Timer.After(5,addon.LoadDefaultGuide)
