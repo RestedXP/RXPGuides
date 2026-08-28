@@ -1630,7 +1630,7 @@ step
     .goto Eastern Plaguelands,81.523,58.269
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Angela Dosantos|r
     >>|cRXP_WARN_Your reputation must be Revered to accept this quest|r
-    >>|cRXP_WARN_You will also need to pay|r |cRXP_WARN_60 gold|r |cRXP_WARN_to turn in the quest|r
+    >>|cRXP_WARN_You will also need to pay|r |cRXP_WARN_30 gold|r |cRXP_WARN_to turn in the quest|r
     .accept 9122 >>Accept The Dread Citadel - Naxxramas
     .turnin 9122 >>Turn in The Dread Citadel - Naxxramas
     .target Archmage Angela Dosantos
