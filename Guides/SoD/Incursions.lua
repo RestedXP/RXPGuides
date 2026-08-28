@@ -40,7 +40,7 @@ step
     .collect 221482,1 << Warlock --Rune of Affliciton
     .collect 221483,1 << Shaman --Rune of Burn
     .collect 221511,1 << Warrior --Rune of the Protector
-    .collect 221512,1 << Rogue --Rune of Alclarity
+    .collect 221512,1 << Rogue --Rune of Alacrity
     .collect 221515,1 << Hunter --Rune of Detonation
     .collect 221517,1 << Druid --Rune of Bloodshed
     .collect 223288,1 << Paladin --Rune of the Hammer
@@ -60,7 +60,7 @@ step
     .train 429308 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Molten Armor|r] |cRXP_WARN_to train|r |T132221:0|t[Molten Armor] << Mage
     .train 431747 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Affliction|r] |cRXP_WARN_to train|r |T136228:0|t[Unstable Affliction] << Warlock
     .train 416066 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Burn|r] |cRXP_WARN_to train|r |T135822:0|t[Burn] << Shaman
-    .train 432297 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Alclarity|r] |cRXP_WARN_to train|r |T236269:0|t[Cut to the Chase] << Rogue
+    .train 432297 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Alacrity|r] |cRXP_WARN_to train|r |T236269:0|t[Cut to the Chase] << Rogue
     .train 431611 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Detonation|r] |cRXP_WARN_to train|r |T133713:0|t[T.N.T.] << Hunter
     .train 431447 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Bloodshed|r] |cRXP_WARN_to train|r |T304501:0|t[Gore] << Druid
     .train 429261 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Hammer|r] |cRXP_WARN_to train|r |T236262:0|t[Improved Hammer of Wrath] << Paladin
@@ -68,7 +68,7 @@ step
     .use 221481 << Priest --Nihilist Epiphany
     .use 221482 << Warlock --Rune of Affliciton
     .use 221483 << Shaman --Rune of Burn
-    .use 221512 << Rogue --Rune of Alclarity
+    .use 221512 << Rogue --Rune of Alacrity
     .use 221515 << Hunter --Rune of Detonation
     .use 221517 << Druid --Rune of Bloodshed
     .use 223288,1 << Paladin --Rune of the Hammer
@@ -382,7 +382,7 @@ step
     .collect 221482,1 << Warlock --Rune of Affliciton
     .collect 221483,1 << Shaman --Rune of Burn
     .collect 221511,1 << Warrior --Rune of the Protector
-    .collect 221512,1 << Rogue --Rune of Alclarity
+    .collect 221512,1 << Rogue --Rune of Alacrity
     .collect 221515,1 << Hunter --Rune of Detonation
     .collect 221517,1 << Druid --Rune of Bloodshed
     .collect 223288,1 << Paladin --Rune of the Hammer
@@ -402,7 +402,7 @@ step
     .train 429308 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Molten Armor|r] |cRXP_WARN_to train|r |T132221:0|t[Molten Armor] << Mage
     .train 431747 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Affliction|r] |cRXP_WARN_to train|r |T136228:0|t[Unstable Affliction] << Warlock
     .train 416066 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Burn|r] |cRXP_WARN_to train|r |T135822:0|t[Burn] << Shaman
-    .train 432297 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Alclarity|r] |cRXP_WARN_to train|r |T236269:0|t[Cut to the Chase] << Rogue
+    .train 432297 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Alacrity|r] |cRXP_WARN_to train|r |T236269:0|t[Cut to the Chase] << Rogue
     .train 431611 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Detonation|r] |cRXP_WARN_to train|r |T133713:0|t[T.N.T.] << Hunter
     .train 431447 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Bloodshed|r] |cRXP_WARN_to train|r |T304501:0|t[Gore] << Druid
     .train 429261 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Hammer|r] |cRXP_WARN_to train|r |T236262:0|t[Improved Hammer of Wrath] << Paladin
@@ -410,7 +410,7 @@ step
     .use 221481 << Priest --Nihilist Epiphany
     .use 221482 << Warlock --Rune of Affliciton
     .use 221483 << Shaman --Rune of Burn
-    .use 221512 << Rogue --Rune of Alclarity
+    .use 221512 << Rogue --Rune of Alacrity
     .use 221515 << Hunter --Rune of Detonation
     .use 221517 << Druid --Rune of Bloodshed
     .use 223288,1 << Paladin --Rune of the Hammer
@@ -788,7 +788,7 @@ step
     .collect 221482,1 << Warlock --Rune of Affliciton
     .collect 221483,1 << Shaman --Rune of Burn
     .collect 221511,1 << Warrior --Rune of the Protector
-    .collect 221512,1 << Rogue --Rune of Alclarity
+    .collect 221512,1 << Rogue --Rune of Alacrity
     .collect 221515,1 << Hunter --Rune of Detonation
     .collect 221517,1 << Druid --Rune of Bloodshed
     .collect 223288,1 << Paladin --Rune of the Hammer
@@ -808,7 +808,7 @@ step
     .train 429308 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Molten Armor|r] |cRXP_WARN_to train|r |T132221:0|t[Molten Armor] << Mage
     .train 431747 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Affliction|r] |cRXP_WARN_to train|r |T136228:0|t[Unstable Affliction] << Warlock
     .train 416066 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Burn|r] |cRXP_WARN_to train|r |T135822:0|t[Burn] << Shaman
-    .train 432297 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Alclarity|r] |cRXP_WARN_to train|r |T236269:0|t[Cut to the Chase] << Rogue
+    .train 432297 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Alacrity|r] |cRXP_WARN_to train|r |T236269:0|t[Cut to the Chase] << Rogue
     .train 431611 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Detonation|r] |cRXP_WARN_to train|r |T133713:0|t[T.N.T.] << Hunter
     .train 431447 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Bloodshed|r] |cRXP_WARN_to train|r |T304501:0|t[Gore] << Druid
     .train 429261 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Hammer|r] |cRXP_WARN_to train|r |T236262:0|t[Improved Hammer of Wrath] << Paladin
@@ -816,7 +816,7 @@ step
     .use 221481 << Priest --Nihilist Epiphany
     .use 221482 << Warlock --Rune of Affliciton
     .use 221483 << Shaman --Rune of Burn
-    .use 221512 << Rogue --Rune of Alclarity
+    .use 221512 << Rogue --Rune of Alacrity
     .use 221515 << Hunter --Rune of Detonation
     .use 221517 << Druid --Rune of Bloodshed
     .use 223288,1 << Paladin --Rune of the Hammer
@@ -1144,7 +1144,7 @@ step
     .collect 221482,1 << Warlock --Rune of Affliciton
     .collect 221483,1 << Shaman --Rune of Burn
     .collect 221511,1 << Warrior --Rune of the Protector
-    .collect 221512,1 << Rogue --Rune of Alclarity
+    .collect 221512,1 << Rogue --Rune of Alacrity
     .collect 221515,1 << Hunter --Rune of Detonation
     .collect 221517,1 << Druid --Rune of Bloodshed
     .collect 223288,1 << Paladin --Rune of the Hammer
@@ -1165,7 +1165,7 @@ step
     .train 429308 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Molten Armor|r] |cRXP_WARN_to train|r |T132221:0|t[Molten Armor] << Mage
     .train 431747 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Affliction|r] |cRXP_WARN_to train|r |T136228:0|t[Unstable Affliction] << Warlock
     .train 416066 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Burn|r] |cRXP_WARN_to train|r |T135822:0|t[Burn] << Shaman
-    .train 432297 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Alclarity|r] |cRXP_WARN_to train|r |T236269:0|t[Cut to the Chase] << Rogue
+    .train 432297 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Alacrity|r] |cRXP_WARN_to train|r |T236269:0|t[Cut to the Chase] << Rogue
     .train 431611 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Detonation|r] |cRXP_WARN_to train|r |T133713:0|t[T.N.T.] << Hunter
     .train 431447 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Bloodshed|r] |cRXP_WARN_to train|r |T304501:0|t[Gore] << Druid
     .train 429261 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Hammer|r] |cRXP_WARN_to train|r |T236262:0|t[Improved Hammer of Wrath] << Paladin
@@ -1173,7 +1173,7 @@ step
     .use 221481 << Priest --Nihilist Epiphany
     .use 221482 << Warlock --Rune of Affliciton
     .use 221483 << Shaman --Rune of Burn
-    .use 221512 << Rogue --Rune of Alclarity
+    .use 221512 << Rogue --Rune of Alacrity
     .use 221515 << Hunter --Rune of Detonation
     .use 221517 << Druid --Rune of Bloodshed
     .use 223288,1 << Paladin --Rune of the Hammer

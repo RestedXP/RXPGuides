@@ -2069,7 +2069,7 @@ step
 step
     .goto Felwood,45.0,52.0
     .gossip 217996,5 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洗冤者埃欧纳斯|r 对话
-    .target Aoenas the Vindicated
+    .target Aeonas the Vindicated
     .train 410013,1
 step
     .goto Felwood,44.6,52.0
@@ -2168,7 +2168,7 @@ step
     .goto Felwood,45.0,52.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洗冤者埃欧纳斯|r 对话
     .accept 81885,1 >>接受任务 仪式
-    .target Aoenas the Vindicated
+    .target Aeonas the Vindicated
     .train 410013,1
 step
     .goto Felwood,44.6,52.0
@@ -2180,7 +2180,7 @@ step
     .goto Felwood,45.0,52.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洗冤者埃欧纳斯|r 对话
     .turnin 81885 >>交任务 仪式
-    .target Aoenas the Vindicated
+    .target Aeonas the Vindicated
     .train 410013,1
 ]])
 

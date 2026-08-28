@@ -1842,7 +1842,7 @@ step
     .collect 221482,1 << Warlock --Rune of Affliciton
     .collect 221483,1 << Shaman --Rune of Burn
     .collect 221511,1 << Warrior --Rune of the Protector
-    .collect 221512,1 << Rogue --Rune of Alclarity
+    .collect 221512,1 << Rogue --Rune of Alacrity
     .collect 221515,1 << Hunter --Rune of Detonation
     .collect 221517,1 << Druid --Rune of Bloodshed
     .collect 223288,1 << Paladin --Rune of the Hammer
@@ -1861,7 +1861,7 @@ step
     .use 221482 << Warlock --Rune of Affliciton
     .use 221483 << Shaman --Rune of Burn
     .use 221511 << Warrior --Rune of the Protector
-    .use 221512 << Rogue --Rune of Alclarity
+    .use 221512 << Rogue --Rune of Alacrity
     .use 221515 << Hunter --Rune of Detonation
     .use 221517 << Druid --Rune of Bloodshed
     .use 223288,1 << Paladin --Rune of the Hammer
@@ -1902,7 +1902,7 @@ step
     .collect 221261,1 --Wildwhisper Draught
 step
     .goto The Barrens,45.5,92.4
-    >>寻找一个队伍前往剃刀高地。你需要清除螺旋式通道到最终Boss |cRXP_ENEMY_寒冰之王亚门纳尔|r 并击杀他。之后，队伍中的一个人必须使用他们的 |T134799:0|t|cRXP_LOOT_Wildwshiper Draught|r 来召唤一个幽灵 |cRXP_FRIENDLY_阿迦玛甘灵魂|r。与他对话来交任务并接收后续任务
+    >>寻找一个队伍前往剃刀高地。你需要清除螺旋式通道到最终Boss |cRXP_ENEMY_寒冰之王亚门纳尔|r 并击杀他。之后，队伍中的一个人必须使用他们的 |T134799:0|t|cRXP_LOOT_Wildwhisper Draught|r 来召唤一个幽灵 |cRXP_FRIENDLY_阿迦玛甘灵魂|r。与他对话来交任务并接收后续任务
     .turnin 82043 >>交任务 荒野之神
     .accept 82044 >>接受任务 荒野之神
     .target Spirit of Agamaggan

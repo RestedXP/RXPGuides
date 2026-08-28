@@ -1797,7 +1797,7 @@ step
     >>Click the |cRXP_PICK_Hastily Rolled-Up Satchel|r on the ground
     .turnin 79976 >> Turn in This Must Be The Place
 step
-    +|cRXP_WARN_It is strongly adivsed you save your|r |T134057:0|t[|cRXP_LOOT_Student Fodder|r] |cRXP_WARN_for higher levels before consuming them. Each use of|r |T134057:0|t[|cRXP_LOOT_Student Fodder|r] |cRXP_WARN_adds 20% rested experience to your character, therefore it is more efficient to use at higher levels|r
+    +|cRXP_WARN_It is strongly advised you save your|r |T134057:0|t[|cRXP_LOOT_Student Fodder|r] |cRXP_WARN_for higher levels before consuming them. Each use of|r |T134057:0|t[|cRXP_LOOT_Student Fodder|r] |cRXP_WARN_adds 20% rested experience to your character, therefore it is more efficient to use at higher levels|r
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1842,7 +1842,7 @@ step
     .collect 221482,1 << Warlock --Rune of Affliciton
     .collect 221483,1 << Shaman --Rune of Burn
     .collect 221511,1 << Warrior --Rune of the Protector
-    .collect 221512,1 << Rogue --Rune of Alclarity
+    .collect 221512,1 << Rogue --Rune of Alacrity
     .collect 221515,1 << Hunter --Rune of Detonation
     .collect 221517,1 << Druid --Rune of Bloodshed
     .collect 223288,1 << Paladin --Rune of the Hammer
@@ -1852,7 +1852,7 @@ step
     .train 431747 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Affliction|r] |cRXP_WARN_to train|r |T136228:0|t[Unstable Affliction] << Warlock
     .train 416066 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Burn|r] |cRXP_WARN_to train|r |T135822:0|t[Burn] << Shaman
     .train 410098 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Protector|r] |cRXP_WARN_to train|r |T132359:0|t[Shield Mastery] << Warrior
-    .train 432297 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Alclarity|r] |cRXP_WARN_to train|r |T236269:0|t[Cut to the Chase] << Rogue
+    .train 432297 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Alacrity|r] |cRXP_WARN_to train|r |T236269:0|t[Cut to the Chase] << Rogue
     .train 431611 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Detonation|r] |cRXP_WARN_to train|r |T133713:0|t[T.N.T.] << Hunter
     .train 431447 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Bloodshed|r] |cRXP_WARN_to train|r |T304501:0|t[Gore] << Druid
     .train 429261 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Hammer|r] |cRXP_WARN_to train|r |T236262:0|t[Improved Hammer of Wrath] << Paladin
@@ -1861,7 +1861,7 @@ step
     .use 221482 << Warlock --Rune of Affliciton
     .use 221483 << Shaman --Rune of Burn
     .use 221511 << Warrior --Rune of the Protector
-    .use 221512 << Rogue --Rune of Alclarity
+    .use 221512 << Rogue --Rune of Alacrity
     .use 221515 << Hunter --Rune of Detonation
     .use 221517 << Druid --Rune of Bloodshed
     .use 223288,1 << Paladin --Rune of the Hammer
@@ -1898,11 +1898,11 @@ step
     #optional
     #completewith next
     .goto The Hinterlands,66.27,65.13,0
-    >>|cRXP_WARN_In order to complete this quest you will need one person with a|r |T134799:0|t|cRXP_LOOT_Wildwshiper Draught|r |cRXP_WARN_in bags. It drops from the elite trolls in Jintha'alor in the Hinterlands. Only get it if no one in your Razorfen Downs party has it|r
+    >>|cRXP_WARN_In order to complete this quest you will need one person with a|r |T134799:0|t|cRXP_LOOT_Wildwhisper Draught|r |cRXP_WARN_in bags. It drops from the elite trolls in Jintha'alor in the Hinterlands. Only get it if no one in your Razorfen Downs party has it|r
     .collect 221261,1 --Wildwhisper Draught
 step
     .goto The Barrens,45.5,92.4
-    >>Look for a group for Razorfen Downs. You will need to clear up the spiral to the end boss |cRXP_ENEMY_Amnennar the Coldbringer|r and kill him. Afterward one person from the group has to use their |T134799:0|t|cRXP_LOOT_Wildwshiper Draught|r to summon a ghostly |cRXP_FRIENDLY_Spirit of Agamaggan|r. Speak to him to turn in the quest and receive a followup
+    >>Look for a group for Razorfen Downs. You will need to clear up the spiral to the end boss |cRXP_ENEMY_Amnennar the Coldbringer|r and kill him. Afterward one person from the group has to use their |T134799:0|t|cRXP_LOOT_Wildwhisper Draught|r to summon a ghostly |cRXP_FRIENDLY_Spirit of Agamaggan|r. Speak to him to turn in the quest and receive a followup
     .turnin 82043 >>Turn in The Wild Gods
     .accept 82044 >>Accept The Wild Gods
     .target Spirit of Agamaggan

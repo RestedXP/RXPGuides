@@ -40,7 +40,7 @@ step
     .collect 221482,1 << Warlock --Rune of Affliciton
     .collect 221483,1 << Shaman --Rune of Burn
     .collect 221511,1 << Warrior --Rune of the Protector
-    .collect 221512,1 << Rogue --Rune of Alclarity
+    .collect 221512,1 << Rogue --Rune of Alacrity
     .collect 221515,1 << Hunter --Rune of Detonation
     .collect 221517,1 << Druid --Rune of Bloodshed
     .collect 223288,1 << Paladin --Rune of the Hammer
@@ -68,7 +68,7 @@ step
     .use 221481 << Priest --Nihilist Epiphany
     .use 221482 << Warlock --Rune of Affliciton
     .use 221483 << Shaman --Rune of Burn
-    .use 221512 << Rogue --Rune of Alclarity
+    .use 221512 << Rogue --Rune of Alacrity
     .use 221515 << Hunter --Rune of Detonation
     .use 221517 << Druid --Rune of Bloodshed
     .use 223288,1 << Paladin --Rune of the Hammer
@@ -382,7 +382,7 @@ step
     .collect 221482,1 << Warlock --Rune of Affliciton
     .collect 221483,1 << Shaman --Rune of Burn
     .collect 221511,1 << Warrior --Rune of the Protector
-    .collect 221512,1 << Rogue --Rune of Alclarity
+    .collect 221512,1 << Rogue --Rune of Alacrity
     .collect 221515,1 << Hunter --Rune of Detonation
     .collect 221517,1 << Druid --Rune of Bloodshed
     .collect 223288,1 << Paladin --Rune of the Hammer
@@ -410,7 +410,7 @@ step
     .use 221481 << Priest --Nihilist Epiphany
     .use 221482 << Warlock --Rune of Affliciton
     .use 221483 << Shaman --Rune of Burn
-    .use 221512 << Rogue --Rune of Alclarity
+    .use 221512 << Rogue --Rune of Alacrity
     .use 221515 << Hunter --Rune of Detonation
     .use 221517 << Druid --Rune of Bloodshed
     .use 223288,1 << Paladin --Rune of the Hammer
@@ -788,7 +788,7 @@ step
     .collect 221482,1 << Warlock --Rune of Affliciton
     .collect 221483,1 << Shaman --Rune of Burn
     .collect 221511,1 << Warrior --Rune of the Protector
-    .collect 221512,1 << Rogue --Rune of Alclarity
+    .collect 221512,1 << Rogue --Rune of Alacrity
     .collect 221515,1 << Hunter --Rune of Detonation
     .collect 221517,1 << Druid --Rune of Bloodshed
     .collect 223288,1 << Paladin --Rune of the Hammer
@@ -816,7 +816,7 @@ step
     .use 221481 << Priest --Nihilist Epiphany
     .use 221482 << Warlock --Rune of Affliciton
     .use 221483 << Shaman --Rune of Burn
-    .use 221512 << Rogue --Rune of Alclarity
+    .use 221512 << Rogue --Rune of Alacrity
     .use 221515 << Hunter --Rune of Detonation
     .use 221517 << Druid --Rune of Bloodshed
     .use 223288,1 << Paladin --Rune of the Hammer
@@ -1144,7 +1144,7 @@ step
     .collect 221482,1 << Warlock --Rune of Affliciton
     .collect 221483,1 << Shaman --Rune of Burn
     .collect 221511,1 << Warrior --Rune of the Protector
-    .collect 221512,1 << Rogue --Rune of Alclarity
+    .collect 221512,1 << Rogue --Rune of Alacrity
     .collect 221515,1 << Hunter --Rune of Detonation
     .collect 221517,1 << Druid --Rune of Bloodshed
     .collect 223288,1 << Paladin --Rune of the Hammer
@@ -1173,7 +1173,7 @@ step
     .use 221481 << Priest --Nihilist Epiphany
     .use 221482 << Warlock --Rune of Affliciton
     .use 221483 << Shaman --Rune of Burn
-    .use 221512 << Rogue --Rune of Alclarity
+    .use 221512 << Rogue --Rune of Alacrity
     .use 221515 << Hunter --Rune of Detonation
     .use 221517 << Druid --Rune of Bloodshed
     .use 223288,1 << Paladin --Rune of the Hammer

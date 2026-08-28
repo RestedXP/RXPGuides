@@ -1609,7 +1609,7 @@ step
     .collect 213447,1
 step
     .train 426175,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Atticus|r inside Stormgarde Keep to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Atticus|r inside Stromgrade Keep to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r]
     .goto Arathi Highlands,26.06,55.75,20,0
     .goto Arathi Highlands,25.71,59.92,20,0
     .goto Arathi Highlands,23.69,60.52,20,0
@@ -1823,11 +1823,11 @@ RXPGuides.RegisterGuide([[
 step
     #optional
     .train 416028,1
-    +|cRXP_WARN_You must be at least level 18 before you can acquire the|r |T236249:0|t[Sacred Shield] |cRXP_WARN_enraving|r
+    +|cRXP_WARN_You must be at least level 18 before you can acquire the|r |T236249:0|t[Sacred Shield] |cRXP_WARN_engraving|r
     .xp >18,1
 step
     .train 416028,1
-    .train 1044 >> |cRXP_WARN_You must train|r |T135968:0|t[Blessing of Freedom] |cRXP_WARN_to acquire the|r |T236249:0|t[Sacred Shield] |cRXP_WARN_enraving|r
+    .train 1044 >> |cRXP_WARN_You must train|r |T135968:0|t[Blessing of Freedom] |cRXP_WARN_to acquire the|r |T236249:0|t[Sacred Shield] |cRXP_WARN_engraving|r
 step
     .train 416028,1
     #completewith Deliverance
@@ -2068,8 +2068,8 @@ step
     .train 410013,1
 step
     .goto Felwood,45.0,52.0
-    .gossip 217996,5 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aoenas the Vindicated|r
-    .target Aoenas the Vindicated
+    .gossip 217996,5 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeonas the Vindicated|r
+    .target Aeonas the Vindicated
     .train 410013,1
 step
     .goto Felwood,44.6,52.0
@@ -2166,9 +2166,9 @@ step
     .train 410013,1
 step
     .goto Felwood,45.0,52.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aoenas the Vindicated|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeonas the Vindicated|r
     .accept 81885,1 >>Accept The Ritual
-    .target Aoenas the Vindicated
+    .target Aeonas the Vindicated
     .train 410013,1
 step
     .goto Felwood,44.6,52.0
@@ -2178,9 +2178,9 @@ step
     .train 410013,1
 step
     .goto Felwood,45.0,52.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aoenas the Vindicated|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeonas the Vindicated|r
     .turnin 81885 >>Turn in The Ritual
-    .target Aoenas the Vindicated
+    .target Aeonas the Vindicated
     .train 410013,1
 ]])
 
