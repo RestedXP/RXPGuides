@@ -27823,7 +27823,7 @@ RXPGuides.RegisterGuide([[
 #internal
 
 step
-    .isOnQuest 43962
+    .isOnQuest 43926
     .goto 1,46.01,13.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holgar Stormaxe|r.
     .turnin 43926 >>Turn in Legion: The Legion Returns
