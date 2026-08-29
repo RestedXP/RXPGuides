@@ -9,6 +9,9 @@ local barLabel = "Hearthstone"
 local batchingWindow = 0.006
 local bindConfirmation = string.gsub(CONFIRM_BINDER,"%%s",".-")
 local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
+local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo and addon.GetSpellInfo or _G.GetSpellInfo
+local GetItemInfoInstant = C_Item and C_Item.GetItemInfoInstant or _G.GetItemInfoInstant
+local GetContainerItemID = C_Container and C_Container.GetContainerItemID or _G.GetContainerItemID
 
 local ConfirmBinder
 if C_PlayerInteractionManager and C_PlayerInteractionManager.ConfirmationInteraction and Enum and Enum.PlayerInteractionType and Enum.PlayerInteractionType.Binder then
@@ -31,12 +34,12 @@ local function SwitchBindLocation()
     if GetTime() - HSstart > 10 - batchingWindow then
         ConfirmBinder()
         StopHSTimer()
-        -- print('bind-ok')
     elseif GetFramerate() < 20 then
         SetCVar("maxfps", currentFPS)
     end
     addon.isCastingHS = false
 end
+
 --[[
 hooksecurefunc("SetCVar",function(n,v)
     if n == "maxfps" then
@@ -50,7 +53,6 @@ end)
 
 local function StartHSTimer()
     if HSstart == 0 and addon.settings.profile.enableHSbatch then
-        --print('start-hs')
         local size = addon.settings.profile.batchSize or 6
         batchingWindow = size / 1e3
         currentFPS = GetCVar("maxfps")
@@ -71,29 +73,63 @@ HSframe:SetScript("OnEvent", function(self, event, ...)
         local unitTarget, _, spellID = ...
         -- Player interrupted Hearthstone cast
         if unitTarget == "player" and spellID == 8690 then
-            StopHSTimer()
+            if HSstart > 0 then StopHSTimer() end
         end
     end
 end)
 
 HSframe:RegisterEvent("UNIT_SPELLCAST_INTERRUPTED")
 
+-- Using HS from bags
 if _G.C_Container and _G.C_Container.UseContainerItem then -- DF+
-    hooksecurefunc(C_Container, "UseContainerItem", function(...)
-        if (C_Container.GetContainerItemID(...) == 6948) then
-            StartHSTimer()
-        end
+    hooksecurefunc(C_Container, "UseContainerItem", function(bag, slot)
+        if GetContainerItemID(bag, slot) == 6948 then StartHSTimer() end
     end)
 else
-    hooksecurefunc("UseContainerItem", function(...)
-        if _G.GetContainerItemID(...) == 6948 then StartHSTimer() end
+    hooksecurefunc("UseContainerItem", function(bag, slot)
+        if GetContainerItemID(bag, slot) == 6948 then StartHSTimer() end
     end)
 end
 
+-- Using HS from the active item frame
+if C_Item and C_Item.UseItemByName then -- DF+
+    hooksecurefunc(C_Item, "UseItemByName", function(itemInfo)
+        if GetItemInfoInstant(itemInfo) == 6948 then StartHSTimer() end
+    end)
+else
+    hooksecurefunc("UseItemByName", function(itemInfo)
+        if GetItemInfoInstant(itemInfo) == 6948 then StartHSTimer() end
+    end)
+end
+
+-- Astral Recall
+hooksecurefunc("CastSpellByName", function(spellName)
+    if spellName == GetSpellInfo(556) then StartHSTimer() end
+end)
+
+-- Astral Recall
+hooksecurefunc("CastSpellByID", function(spellID)
+    if spellID == 556 then StartHSTimer() end
+end)
+
 hooksecurefunc("UseAction", function(...)
     local event, id = GetActionInfo(...)
-    --print(event,id,IsCurrentSpell(id))
-    if event == "item" and id == 6948 or
-        event == "macro" and (IsCurrentSpell(8690) or IsCurrentSpell(556)) or
-        event == "spell" and id == 556 then StartHSTimer() end
+    if (event == "item" and id == 6948) or (event == "macro" and (IsCurrentSpell(8690) or IsCurrentSpell(556))) or (event == "spell" and id == 556) then
+        StartHSTimer()
+    end
 end)
+
+local binderPopup = _G.StaticPopupDialogs and _G.StaticPopupDialogs.CONFIRM_BINDER
+if binderPopup then
+    if binderPopup.OnCancel then
+        hooksecurefunc(binderPopup, "OnCancel", function()
+            if HSstart > 0 then StopHSTimer() end
+        end)
+    end
+
+    if binderPopup.OnAccept then
+        hooksecurefunc(binderPopup, "OnAccept", function()
+            if HSstart > 0 then StopHSTimer() end
+        end)
+    end
+end
