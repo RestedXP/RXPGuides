@@ -4866,7 +4866,7 @@ step
 	#completewith next
 	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Argent Warhorse|r << Alliance
 	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Argent Warhorse|r << Horde
-	>>If you have misplayed your |T135128:0|t|c99ffff99Lance|r there are Racks throughout the Stables
+	>>If you have misplaced your |T135128:0|t|c99ffff99Lance|r there are Racks throughout the Stables
 	.use 46069 << Alliance
 	.use 46070 << Horde
 	.goto IcecrownGlacier,72.30,22.55
@@ -5022,7 +5022,7 @@ step << !DK Alliance -- Among the Champions
 	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the Stabled Gnomeregan Mechanostrider << Gnome
 	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the Stabled Stormwind Steed << Human
 	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the Stabled Darnassian Nightsaber << NightElf
-	>>If you have misplayed your |T135128:0|t|c99ffff99Alliance Lance|r there are Racks throughout the Stables
+	>>If you have misplaced your |T135128:0|t|c99ffff99Alliance Lance|r there are Racks throughout the Stables
 	.goto IcecrownGlacier,71.56,22.41 << Human
 	.goto IcecrownGlacier,71.62,22.50 << NightElf
 	.goto IcecrownGlacier,71.68,22.38 << Draenei
@@ -5124,7 +5124,7 @@ step << DK Alliance -- Among the Champions
 	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the Stabled Gnomeregan Mechanostrider << Gnome
 	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the Stabled Stormwind Steed << Human
 	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the Stabled Darnassian Nightsaber << NightElf
-	>>If you have misplayed your |T135128:0|t|c99ffff99Alliance Lance|r there are Racks throughout the Stables
+	>>If you have misplaced your |T135128:0|t|c99ffff99Alliance Lance|r there are Racks throughout the Stables
 	.goto IcecrownGlacier,71.56,22.41 << Human
 	.goto IcecrownGlacier,71.62,22.50 << NightElf
 	.goto IcecrownGlacier,71.68,22.38 << Draenei
@@ -5442,7 +5442,7 @@ step
 	.goto Hrothgar's Landing,58.6,31.6
 step
 	.isOnQuest 14107
-	>>Loot |cRXP_PICK_Discarded Sould Crystals|r on the ground.
+	>>Loot |cRXP_PICK_Discarded Soul Crystals|r on the ground.
 	>>Use the |c99ffff99Light-Blessed Relic|r on Fallen Hero's Spirits.
 	.collect 47035,6,14107,1,-1
 	.complete 14107,1

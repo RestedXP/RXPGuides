@@ -223,7 +223,7 @@ step
     .collect 205183,1
 step
     .train 416009,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carentin Halgar|r in Undercity
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin Halgar|r in Undercity
     .goto Undercity,85.0,25.6
     .collect 205215,1
     .skipgossip 5675,1
@@ -775,7 +775,7 @@ step
     .target Raszel Ander
 step
     .train 426445,1
-    >>|cRXP_WARN_Acquire the following materials and have an Engeineer make a|r |T133254:0|t[Soul Vessel] |cRXP_WARN_for you. Note the|r |T134133:0|t[Black Vitriol] |cRXP_WARN_and|r |T134074:0|t[Shadowgem] |cRXP_WARN_can be bought from the Auction House and the|r |T134337:0|t[Demonic Figurine] |cRXP_WARN_from a|r |cRXP_FRIENDLY_Reagent Vendor|r
+    >>|cRXP_WARN_Acquire the following materials and have an Engineer make a|r |T133254:0|t[Soul Vessel] |cRXP_WARN_for you. Note the|r |T134133:0|t[Black Vitriol] |cRXP_WARN_and|r |T134074:0|t[Shadowgem] |cRXP_WARN_can be bought from the Auction House and the|r |T134337:0|t[Demonic Figurine] |cRXP_WARN_from a|r |cRXP_FRIENDLY_Reagent Vendor|r
     .collect 9262,1,78914,1,1 -- Black Vitriol
     .collect 1210,4,78914,1,1 -- Shadowgem
     .collect 16583,1,78914,1,1 -- Demonic Figurine
@@ -796,7 +796,7 @@ step
 step
     .train 426445,1
     .goto Desolace,51.171,82.425
-    .gossip 215850,1 >> Talk to |cRXP_FRIENDLY_Raszel Ander|r to begin the ritaul
+    .gossip 215850,1 >> Talk to |cRXP_FRIENDLY_Raszel Ander|r to begin the ritual
     .timer 14,Tempting Fate RP
     .skipgossip
 step

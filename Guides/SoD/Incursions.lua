@@ -335,12 +335,12 @@ step
 step
     #optional
     +|cRXP_WARN_You have outleveled all incursion zones and will no longer be able to accept any of the regular quests in any of them|r
-    >>If you're looking to gain reputation with the|r |cRXP_FRIENDLY_Emerald Wardens|r there are infinitely repeatable quests in Feralas where you can turn in 10 of either |T134186:0|t[|cRXP_LOOT_Moonroot|r], |T133594:0|t[|cRXP_LOOT_Greater Moonstones|r] or |T134312:0|t[|cRXP_LOOT_Moon Dragon Scales|r]
+    >>If you're looking to gain reputation with the|r |cRXP_FRIENDLY_Emerald Wardens|r there are infinitely repeatable quests in Feralas where you can turn in 10 of either |T134186:0|t[|cRXP_LOOT_Moonroot|r], |T133594:0|t[|cRXP_LOOT_Greater Moonstones|r] or |T134312:0|t[|cRXP_LOOT_Moondragon Scales|r]
     >>These quests give no xp or gold and reward 100 reputation per turnin. Buy as many of the most cost efficient materials from the Auction House as you need and head to Feralas to turn them in
     .xp <53,1
 step
     #optional
-    +You have completed this Nightmare Incursion loop. The quests will become available again after the daily reset. |cRXP_WARN_Select a differnt guide from the list to continue|r
+    +You have completed this Nightmare Incursion loop. The quests will become available again after the daily reset. |cRXP_WARN_Select a different guide from the list to continue|r
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -748,12 +748,12 @@ step
 step
     #optional
     +|cRXP_WARN_You have outleveled all incursion zones and will no longer be able to accept any of the regular quests in any of them|r
-    >>If you're looking to gain reputation with the|r |cRXP_FRIENDLY_Emerald Wardens|r there are infinitely repeatable quests in Feralas where you can turn in 10 of either |T134186:0|t[|cRXP_LOOT_Moonroot|r], |T133594:0|t[|cRXP_LOOT_Greater Moonstones|r] or |T134312:0|t[|cRXP_LOOT_Moon Dragon Scales|r]
+    >>If you're looking to gain reputation with the|r |cRXP_FRIENDLY_Emerald Wardens|r there are infinitely repeatable quests in Feralas where you can turn in 10 of either |T134186:0|t[|cRXP_LOOT_Moonroot|r], |T133594:0|t[|cRXP_LOOT_Greater Moonstones|r] or |T134312:0|t[|cRXP_LOOT_Moondragon Scales|r]
     >>These quests give no xp or gold and reward 100 reputation per turnin. Buy as many of the most cost efficient materials from the Auction House as you need and head to Feralas to turn them in
     .xp <53,1
 step
     #optional
-    +You have completed this Nightmare Incursion loop. The quests will become available again after the daily reset. |cRXP_WARN_Select a differnt guide from the list to continue|r
+    +You have completed this Nightmare Incursion loop. The quests will become available again after the daily reset. |cRXP_WARN_Select a different guide from the list to continue|r
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1107,12 +1107,12 @@ step
 step
     #optional
     +|cRXP_WARN_You have outleveled all incursion zones and will no longer be able to accept any of the regular quests in any of them|r
-    >>If you're looking to gain reputation with the|r |cRXP_FRIENDLY_Emerald Wardens|r there are infinitely repeatable quests in Feralas where you can turn in 10 of either |T134186:0|t[|cRXP_LOOT_Moonroot|r], |T133594:0|t[|cRXP_LOOT_Greater Moonstones|r] or |T134312:0|t[|cRXP_LOOT_Moon Dragon Scales|r]
+    >>If you're looking to gain reputation with the|r |cRXP_FRIENDLY_Emerald Wardens|r there are infinitely repeatable quests in Feralas where you can turn in 10 of either |T134186:0|t[|cRXP_LOOT_Moonroot|r], |T133594:0|t[|cRXP_LOOT_Greater Moonstones|r] or |T134312:0|t[|cRXP_LOOT_Moondragon Scales|r]
     >>These quests give no xp or gold and reward 100 reputation per turnin. Buy as many of the most cost efficient materials from the Auction House as you need and head to Feralas to turn them in
     .xp <53,1
 step
     #optional
-    +You have completed this Nightmare Incursion loop. The quests will become available again after the daily reset. |cRXP_WARN_Select a differnt guide from the list to continue|r
+    +You have completed this Nightmare Incursion loop. The quests will become available again after the daily reset. |cRXP_WARN_Select a different guide from the list to continue|r
     ]])
 
 RXPGuides.RegisterGuide([[
@@ -1123,7 +1123,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #ah
-    >>Buy 10 |T134186:0|t[|cRXP_LOOT_Moonroot|r], |T133594:0|t[|cRXP_LOOT_Greater Moonstones|r] and |T134312:0|t[|cRXP_LOOT_Moon Dragon Scales|r] from the auction house before heading to the Hinterlands
+    >>Buy 10 |T134186:0|t[|cRXP_LOOT_Moonroot|r], |T133594:0|t[|cRXP_LOOT_Greater Moonstones|r] and |T134312:0|t[|cRXP_LOOT_Moondragon Scales|r] from the auction house before heading to the Hinterlands
     >>|cRXP_WARN_Skip this step if you're not near an auction house location or the prices don't seem worth it. These three quests give a combined amount of 38.250xp and 300 reputation|r
     .maxlevel 53
     .collect 219514,10 --Moonroot
@@ -1530,10 +1530,10 @@ step
 step
     #optional
     +|cRXP_WARN_You have outleveled all incursion zones and will no longer be able to accept any of the regular quests in any of them|r
-    >>If you're looking to gain reputation with the|r |cRXP_FRIENDLY_Emerald Wardens|r there are infinitely repeatable quests in Feralas where you can turn in 10 of either |T134186:0|t[|cRXP_LOOT_Moonroot|r], |T133594:0|t[|cRXP_LOOT_Greater Moonstones|r] or |T134312:0|t[|cRXP_LOOT_Moon Dragon Scales|r]
+    >>If you're looking to gain reputation with the|r |cRXP_FRIENDLY_Emerald Wardens|r there are infinitely repeatable quests in Feralas where you can turn in 10 of either |T134186:0|t[|cRXP_LOOT_Moonroot|r], |T133594:0|t[|cRXP_LOOT_Greater Moonstones|r] or |T134312:0|t[|cRXP_LOOT_Moondragon Scales|r]
     >>These quests give no xp or gold and reward 100 reputation per turnin. Buy as many of the most cost efficient materials from the Auction House as you need and head to Feralas to turn them in
     .xp <53,1
 step
     #optional
-    +You have completed this Nightmare Incursion loop. The quests will become available again after the daily reset. |cRXP_WARN_Select a differnt guide from the list to continue|r
+    +You have completed this Nightmare Incursion loop. The quests will become available again after the daily reset. |cRXP_WARN_Select a different guide from the list to continue|r
 ]])
