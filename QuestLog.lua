@@ -176,7 +176,7 @@ function addon.GetExpectedQuestLog()
         return {},{}
     end
     local startGuide
-    local currentStep = RXPCData.currentStep
+    local currentStep = addon.GetGuideProgress()
     local scanQuests
     if guideKey ~= guide.key or stepIndex ~= currentStep or not qLogCache then
         scanQuests = true

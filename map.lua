@@ -574,6 +574,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
     if addon.currentGuide.empty then return pins end
     local numActivePins = 0
     local numSteps = #steps
+    local progressStep = addon.GetGuideProgress()
     local activeSteps = addon.RXPFrame.activeSteps
 
     local numActive = 0
@@ -590,7 +591,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
 
     for _, step in pairs(activeSteps) do GetNumPins(step) end
 
-    for i = RXPCData.currentStep + 1, RXPCData.currentStep + numPins do
+    for i = progressStep + 1, progressStep + numPins do
         local step = addon.currentGuide.steps[i]
         GetNumPins(step)
         if step and step.centerPins then
@@ -689,7 +690,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
     for _, step in pairs(activeSteps) do ProcessMapPin(step) end
 
     if not isMiniMap then
-        local currentStep = steps[RXPCData.currentStep]
+        local currentStep = steps[progressStep]
         if (currentStep and not currentStep.active) then
             ProcessMapPin(currentStep)
         end
@@ -710,6 +711,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
     if addon.currentGuide.empty then return pins end
     local numActivePins = 0
     local numSteps = #steps
+    local progressStep = addon.GetGuideProgress()
     local activeSteps = addon.RXPFrame.activeSteps
 
     local numActive = 0
@@ -726,7 +728,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
 
     for _, step in pairs(activeSteps) do GetNumPins(step) end
 
-    for i = RXPCData.currentStep + 1, RXPCData.currentStep + numPins do
+    for i = progressStep + 1, progressStep + numPins do
         GetNumPins(addon.currentGuide.steps[i])
     end
 
@@ -861,7 +863,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
     for _, step in pairs(activeSteps) do ProcessLine(step) end
 
     if not isMiniMap then
-        local currentStep = steps[RXPCData.currentStep]
+        local currentStep = steps[progressStep]
         if not (currentStep and currentStep.active) then
             ProcessLine(currentStep)
         end
@@ -885,7 +887,7 @@ local function addWorldMapPins()
 
     -- Calculate which pins should be on the world map
     local pins = generatePins(addon.currentGuide.steps, addon.settings.profile.numMapPins,
-                              RXPCData.currentStep, false)
+                              addon.GetGuideProgress(), false)
 
     -- Convert each "pin" data structure into a WoW frame. Then add that frame to the world map
     if IsInInstance() then return end
@@ -925,7 +927,7 @@ end
 
 local function addWorldMapLines()
     local lineData = generateLines(addon.currentGuide.steps, addon.settings.profile.numMapPins,
-                                   RXPCData.currentStep, false)
+                                   addon.GetGuideProgress(), false)
 
     if #lineData > 0 then
         local canvas = _G.WorldMapFrame:GetCanvas()
@@ -955,7 +957,7 @@ local function addMiniMapPins(pins)
     if addon.settings.profile.hideMiniMapPins then return end
     -- Calculate which pins should be on the mini map
     local pins = generatePins(addon.currentGuide.steps, addon.settings.profile.numMapPins,
-                              RXPCData.currentStep, true)
+                              addon.GetGuideProgress(), true)
 
     -- Convert each "pin" data structure into a WoW frame. Then add that frame to the mini map
     if IsInInstance() then return end

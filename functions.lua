@@ -721,7 +721,7 @@ end
 function addon.GetQuestObjectives(id, step, useCache)
     id = GetQuestId(id,nil,true)
     if not id then return end
-    local stepdiff = step and math.abs(RXPCData.currentStep - step) or 0
+    local stepdiff = step and math.abs(addon.GetGuideProgress() - step) or 0
 
     local questObjectivesCache = RXPCData.questObjectivesCache
     local err = false
@@ -1732,7 +1732,7 @@ function addon.UpdateQuestCompletionData(self)
         addon.comms:AnnounceStepEvent('.complete', {
             title = element.title,
             completionText = element.text,
-            step = RXPCData.currentStep,
+            step = addon.GetGuideProgress(),
             guideName = RXPCData.currentGuideName
         })
 
@@ -1820,7 +1820,7 @@ function addon.functions.complete(self, ...)
         end
     else
         if not step.active and step.index then
-            if math.abs(RXPCData.currentStep - step.index) > 2 then
+            if math.abs(addon.GetGuideProgress() - step.index) > 2 then
                 local update = true
                 for _,v in pairs(addon.updateInactiveQuest) do
                     if v == self then
@@ -3190,7 +3190,7 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
             addon.comms:AnnounceStepEvent('.collect', {
                 title = element.text,
                 completionText = element.text,
-                step = RXPCData.currentStep,
+                step = addon.GetGuideProgress(),
                 guideName = RXPCData.currentGuideName
             })
         end
@@ -4892,7 +4892,7 @@ local function UpdateNpcNames(element)
         local reload
 
         local i = element.step.index or 0
-        if not element.step.active and math.abs(i-RXPCData.currentStep) > 2 or GetTime() - addon.lastStepUpdate < 1 then
+        if not element.step.active and math.abs(i-addon.GetGuideProgress()) > 2 or GetTime() - addon.lastStepUpdate < 1 then
             return
         end
 

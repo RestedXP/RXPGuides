@@ -82,7 +82,7 @@ function RXPFrame:UpdateVisuals()
 end
 
 function addon.ReloadStep()
-    addon.SetStep(RXPCData.currentStep)
+    addon.SetStep(addon.GetGuideProgress())
 end
 
 function addon.RenderFrame(themeUpdate,isLoading)
@@ -409,7 +409,7 @@ RXPFrame.OnMouseUp = function(self, button)
     RXPFrame:StopMovingOrSizing()
     if isResizing then
         addon.settings.profile.frameHeight = RXPFrame:GetHeight()
-        addon.SetStep(RXPCData.currentStep)
+        addon.SetStep(addon.GetGuideProgress())
         RXPFrame:SetScript("OnUpdate", nil)
     end
     SetStepFrameAnchor()
@@ -670,6 +670,7 @@ RXPFrame.activeSteps = activeSteps
 function addon.UpdateStepCompletion()
     addon.updateSteps = false
     if addon.currentGuide.empty then return end
+    local currentStep = addon.GetGuideProgress()
 
     addon:ScheduleTask(addon.ProcessGeneratedSteps,CheckStepCompletion)
 
@@ -703,7 +704,7 @@ function addon.UpdateStepCompletion()
                         c = true
                     end
                 else
-                    if RXPCData.currentStep > completewith then
+                    if currentStep > completewith then
                         completed = true
                         c = true
                     end
@@ -727,7 +728,7 @@ function addon.UpdateStepCompletion()
                 RXPCData.stepSkip[step.index] = true
                 update = true
                 step.active = nil
-            elseif step.index >= RXPCData.currentStep then
+            elseif step.index >= currentStep then
                 step.completed = true
                 if addon.v2:IsGuideWindowEnabled() then
                     addon.v2.events:Trigger("GuideStepsChanged")
@@ -735,16 +736,13 @@ function addon.UpdateStepCompletion()
                     RXPFrame.BottomFrame.UpdateFrame(nil, step.index)
                 end
 
-                if step.index == RXPCData.currentStep or
-                      (step.index > RXPCData.currentStep and not step.sticky) then
-                    addon.loadNextStep = true
-                end
+                addon.loadNextStep = true
                 return
             end
         end
     end
 
-    if update then return addon.SetStep(RXPCData.currentStep) end
+    if update then return addon.SetStep(currentStep) end
 end
 
 function addon.SetStep(n, n2, loopback)
@@ -777,8 +775,7 @@ function addon.SetStep(n, n2, loopback)
             n = #guide.steps
         end
     end
-    RXPCData.currentStep = n
-    RXPCData.currentStepId = guide.steps[n].stepId
+    addon.SaveGuideProgress(guide, n)
     -- isUpdating = true
 
     if not guide.steps[n].active then
@@ -1515,10 +1512,10 @@ end
 hooksecurefunc(ScrollFrame.ScrollBar, "SetValue", function(self, value)
     local h = math.floor(ScrollChild:GetHeight() + 10)
     local scroll = h - BottomFrame:GetHeight()
-    local index = RXPCData.currentStep and RXPCData.currentStep > 1 and
-                      stepPos[RXPCData.currentStep - 1]
+    local currentStep = addon.GetGuideProgress()
+    local index = currentStep > 1 and stepPos[currentStep - 1]
     local zero = addon.settings.profile.hideCompletedSteps and index and
-                     index + RXPCData.currentStep or 0
+                     index + currentStep or 0
     if scroll < zero then scroll = zero end
     if scroll <= value then ScrollFrame.ScrollBar.ScrollDownButton:Disable() end
     ScrollFrame.ScrollBar:SetMinMaxValues(zero, scroll)
@@ -1806,15 +1803,26 @@ end
 function addon:LoadGuide(guide, OnLoad)
     addon.loadNextStep = false
     local useV2GuideWindow = addon.v2:IsGuideWindowEnabled()
+    addon.SaveGuideProgress(addon.currentGuide, addon.GetGuideProgress())
 
     if not guide or guide.internal or guide.disabled or not guide.empty and not addon.IsGuideActive(guide) and
         (guide.farm and not RXPCData.GA or not guide.farm and RXPCData.GA) then
         return addon:LoadGuide(addon.emptyGuide)
     end
 
+    local guideKey = guide.key
+    local guideStep, guideStepId = addon.GetGuideProgress(guide)
+
     guide = addon:FetchGuide(guide)
     if not guide or not guide.steps then
         return addon:LoadGuide(addon.emptyGuide)
+    end
+
+    local fetchedGuideProgress = RXPCData.guideProgress and guide.key and
+                                     RXPCData.guideProgress[guide.key]
+
+    if guide.key ~= guideKey and fetchedGuideProgress then
+        guideStep, guideStepId = addon.GetGuideProgress(guide)
     end
 
     if addon.game ~= "CLASSIC" then
@@ -1846,8 +1854,7 @@ function addon:LoadGuide(guide, OnLoad)
 
     addon:CloseMenu()
 
-    if not (OnLoad and RXPCData and RXPCData.currentStep) then
-        RXPCData.currentStep = 1
+    if not OnLoad then
         RXPCData.stepSkip = {}
         RXPCData.completedWaypoints = {}
         --Detects XP rate again when switching guides, in case player equipped heirlooms in between guides
@@ -1877,6 +1884,17 @@ function addon:LoadGuide(guide, OnLoad)
 
     addon.currentGuide = addon.ProcessGuideTable(guide)
     guide = addon.currentGuide
+
+    if guideStepId then
+        for index, step in ipairs(guide.steps) do
+            if step.stepId == guideStepId then
+                guideStep = index
+                break
+            end
+        end
+    end
+    guideStep = math.max(1, math.min(guideStep, #guide.steps))
+    addon.SaveGuideProgress(guide, guideStep)
 
     local disabledQuests = {}
     if guide.disabledQuests then
@@ -2084,7 +2102,7 @@ function addon:LoadGuide(guide, OnLoad)
         ScrollChild:SetHeight(200)
     end
 
-    addon.SetStep(RXPCData.currentStep)
+    addon.SetStep(addon.GetGuideProgress())
 
     if not useV2GuideWindow then
         BottomFrame.hiddenFrames = 0
@@ -2108,6 +2126,7 @@ function BottomFrame.UpdateFrame(self, stepn, startFrom, skip)
     if addon.v2:IsGuideWindowEnabled() then return end
 
     local level = UnitLevel("player")
+    local currentStep = addon.GetGuideProgress()
 
     if stepPos[0] and ((not self and stepn) or (self and self.step)) and IsFrameShown(self,self and self.step) then
         local stepNumber = stepn or self.step.index
@@ -2136,7 +2155,7 @@ function BottomFrame.UpdateFrame(self, stepn, startFrom, skip)
             local element = elements[i]
             if element.text or element.tooltipText or element.requestFromServer or step.active then
 
-            stepDiff = element.step.index - RXPCData.currentStep
+            stepDiff = element.step.index - currentStep
             element.element = element
 
             if element.requestFromServer then
@@ -2222,7 +2241,7 @@ function BottomFrame.UpdateFrame(self, stepn, startFrom, skip)
             local fheight
             for _, element in ipairs(frame.step.elements or {}) do
                 if not self then
-                    local stepDiff = element.step.index - RXPCData.currentStep
+                    local stepDiff = element.step.index - currentStep
 
                     element.element = element
 
@@ -2266,7 +2285,7 @@ function BottomFrame.UpdateFrame(self, stepn, startFrom, skip)
                 text = ""
             end
             if step.completed or
-                (not step.sticky and RXPCData.currentStep > step.index) or
+                (not step.sticky and currentStep > step.index) or
                 RXPCData.stepSkip[step.index] then
                 frame:SetAlpha(0.5)
             else

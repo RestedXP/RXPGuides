@@ -356,7 +356,7 @@ function addon.v2:BuildGuideStepsSnapshot()
     -- Translate the mutable legacy guide state into rows consumed by the V2 guide window.
     local guide = addon.currentGuide
     local profile = addon.settings and addon.settings.profile
-    local currentStep = RXPCData and RXPCData.currentStep or 1
+    local currentStep = addon.GetGuideProgress()
     local activeSteps = addon.RXPFrame and addon.RXPFrame.activeSteps
     local activeStepIndex
 
