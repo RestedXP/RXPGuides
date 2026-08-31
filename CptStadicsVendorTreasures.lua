@@ -149,7 +149,7 @@ function Frame:InitializeZones()
     Frame:SetZoneNPCData(ZONE_FERALAS, L"Logannas", 32.6, 44.0, CLASS_POTION, ALLIANCE, {3928, 6149})
     Frame:SetZoneNPCData(ZONE_FERALAS, L"Bronk", 76.0, 43.4, CLASS_POTION, HORDE, {3928, 6149})
     Frame:SetZoneNPCData(ZONE_FERALAS, L"Cawind Trueaim", 74.8, 45.6, CLASS_GEAR, HORDE, {11308})
-    Frame:SetZoneNPCData(ZONE_FERALAS, L"Worb Strongstich", 74.6, 42.6, CLASS_GEAR, HORDE, {12254, 12253})
+    Frame:SetZoneNPCData(ZONE_FERALAS, L"Worb Strongstitch", 74.6, 42.6, CLASS_GEAR, HORDE, {12254, 12253})
 
     -- Thousand Needles
     Frame:SetZoneNPCData(ZONE_THOUSAND_NEEDLES, L"Starn & Montarr", 45.0, 50.6, CLASS_GEAR, HORDE,
@@ -174,7 +174,7 @@ function Frame:InitializeZones()
                          {4818, 4817, 4778, 4777, 11304, 929})
 
     -- Hillsbrad Foothills
-    Frame:SetZoneNPCData(ZONE_HILLSBRAD_FOOTHILLS, L"Kirs Legace", 80.0, 39.0, CLASS_GEAR, NEUTRAL,
+    Frame:SetZoneNPCData(ZONE_HILLSBRAD_FOOTHILLS, L"Kris Legace", 80.0, 39.0, CLASS_GEAR, NEUTRAL,
                          {4832, 4830, 4831, 4794, 4795, 4796})
     Frame:SetZoneNPCData(ZONE_HILLSBRAD_FOOTHILLS, L"Zixil", 55.6, 34.6, CLASS_GEAR, NEUTRAL, {4829, 4827, 4828, 4838})
     Frame:SetZoneNPCData(ZONE_HILLSBRAD_FOOTHILLS, L"Ott", 60.4, 26.0, CLASS_GEAR, HORDE,
@@ -231,7 +231,7 @@ function Frame:InitializeZones()
                          {4829, 4827, 4828, 4838, 4837, 3385, 929})
     Frame:SetZoneNPCData(ZONE_DUSKWOOD, L"Bliztik", 18.0, 54.6, CLASS_POTION, NEUTRAL, {3385, 929})
     Frame:SetZoneNPCData(ZONE_DUSKWOOD, L"Avette Fellwood", 73.2, 44.8, CLASS_GEAR, ALLIANCE, {11304})
-    Frame:SetZoneNPCData(ZONE_DUSKWOOD, L"Morg & Gaving Gnarltree", 73.8, 48.6, CLASS_GEAR, ALLIANCE,
+    Frame:SetZoneNPCData(ZONE_DUSKWOOD, L"Morg & Gavin Gnarltree", 73.8, 48.6, CLASS_GEAR, ALLIANCE,
                          {4798, 4816, 4799, 4800, 12247, 12249})
 
     -- Westfall

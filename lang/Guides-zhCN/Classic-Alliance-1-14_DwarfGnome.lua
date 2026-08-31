@@ -3142,7 +3142,7 @@ step << Dwarf Rogue/Gnome Rogue
     >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态。
     .turnin 2238 >>交任务 国王的财宝
     .accept 2239 >>接受任务 奥宁的报告
-    .target Onin MacHammer
+    .target Onin MacHammar
 step
     #xprate <1.5
     #loop
