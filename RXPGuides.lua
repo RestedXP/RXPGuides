@@ -1182,7 +1182,7 @@ function addon:CreateMetaDataTable(wipe)
         local guides = addon.db.profile.guides
         for key,v in pairs(guides) do
             --print(i,v)
-            local group,subgroup,name = key:match("^(.-)|([^|]*)|(.-)")
+            local group,subgroup,name = key:match("^(.-)|([^|]*)|([^|]+)")
 
             local newgrp,newsubgrp = addon.GroupOverride(group,subgroup)
             if newgrp ~= group or newsubgrp ~= subgroup then
