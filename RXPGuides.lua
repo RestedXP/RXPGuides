@@ -178,6 +178,59 @@ local RXPGuides = {}
 addon.RXPGuides = RXPGuides
 _G.RXPGuides = RXPGuides
 
+function addon.SaveGuideProgress(guide, step, stepId)
+    if not guide or not step or not RXPCData then return end
+
+    -- Preserve downgrade functionality
+    RXPCData.currentStep = step
+
+    local stepData = guide.steps and guide.steps[step]
+    stepId = stepId or stepData and stepData.stepId
+
+    if stepId then
+        RXPCData.currentStepId = stepId
+    end
+
+    if not guide.empty and guide.key then
+        RXPCData.guideProgress[guide.key] = {
+            step = step,
+            stepId = stepId,
+        }
+    end
+end
+
+function addon.GetGuideProgress(guide)
+    guide = guide or addon.currentGuide
+
+    if not guide then
+        return tonumber(RXPCData and RXPCData.currentStep) or 1,
+               RXPCData and RXPCData.currentStepId
+    end
+
+    local guideProgress = RXPCData and RXPCData.guideProgress
+    local progress = guide.key and guideProgress and guideProgress[guide.key]
+    local step = progress and progress.step
+    local stepId = progress and progress.stepId
+
+    if not step and RXPCData and
+            RXPCData.currentGuideGroup == guide.group and
+            RXPCData.currentGuideName == guide.name then
+
+        addon.SaveGuideProgress(guide, RXPCData.currentStep,
+                               RXPCData.currentStepId)
+
+        step = RXPCData.currentStep
+        stepId = RXPCData.currentStepId
+    end
+
+    if step then
+        step = tonumber(step) or 1
+        return step, stepId
+    end
+
+    return 1, stepId
+end
+
 addon.guideCache = {}
 addon.questQueryList = {}
 addon.itemQueryList = {}
@@ -1180,15 +1233,24 @@ function addon:CreateMetaDataTable(wipe)
         local deleteIndexes = {}
         local insertItems = {}
         local guides = addon.db.profile.guides
+        local guideProgress = RXPCData.guideProgress
+
         for key,v in pairs(guides) do
             --print(i,v)
             local group,subgroup,name = key:match("^(.-)|([^|]*)|([^|]+)")
 
             local newgrp,newsubgrp = addon.GroupOverride(group,subgroup)
             if newgrp ~= group or newsubgrp ~= subgroup then
+                local oldkey = v.key or addon.BuildGuideKey(group,subgroup,name)
                 local newkey = addon.BuildGuideKey(newgrp,newsubgrp,name)
                 insertItems[newkey] = v
                 table.insert(deleteIndexes,key)
+
+                if guideProgress and oldkey ~= newkey and guideProgress[oldkey] then
+
+                    guideProgress[newkey] = guideProgress[newkey] or guideProgress[oldkey]
+                    guideProgress[oldkey] = nil
+                end
             end
         end
         for i,v in pairs(insertItems) do
@@ -1222,6 +1284,7 @@ local updateFrame = CreateFrame("Frame")
 local currentGuideGroup
 local currentGuideName
 local startStep
+local startStepId
 
 local function LoadEmbeddedGuides(start,limit,guide)
     if #addon.embeddedGuides ~= 0 then
@@ -1245,6 +1308,7 @@ local function LoadEmbeddedGuides(start,limit,guide)
             currentGuideGroup = nil
             currentGuideName = nil
             startStep = nil
+            startStepId = nil
             if addon.LoadDefaultGuide and
                 (not addon.currentGuide or addon.currentGuide.empty) then
                 addon.LoadDefaultGuide()
@@ -1269,7 +1333,7 @@ local function LoadCache(guide)
                 local g = addon.GetGuideTable(currentGuideGroup,
                                     currentGuideName)
                 if g then
-                    RXPCData.currentStep = startStep
+                    addon.SaveGuideProgress(g, startStep, startStepId)
                     addon:LoadGuide(g, true)
                     currentGuideGroup = nil
                     currentGuideName = nil
@@ -1328,6 +1392,8 @@ function addon:OnInitialize()
     end
 
     RXPCData.completedWaypoints = RXPCData.completedWaypoints or {}
+    RXPCData.guideProgress = RXPCData.guideProgress or {}
+
     addon.settings.profile.hardcore =
         addon.game == "CLASSIC" and addon.settings.profile.hardcore
     RXPCData.stepSkip = RXPCData.stepSkip or {}
@@ -1380,7 +1446,7 @@ function addon:OnInitialize()
 
     currentGuideGroup = RXPCData.currentGuideGroup
     currentGuideName = RXPCData.currentGuideName
-    startStep = RXPCData.currentStep
+    startStep, startStepId = addon.GetGuideProgress()
 
     LoadCache()
     ProcessSpells()
@@ -1665,7 +1731,7 @@ function addon:PLAYER_LEVEL_UP(_, level)
         addon.RXPFrame.GenerateMenuTable()
         addon.ReloadGuide()
     --[[else
-        local stepn = RXPCData.currentStep
+        local stepn = addon.GetGuideProgress()
         -- addon:LoadGuide(addon.currentGuide)
         addon.SetStep(1)
         addon.SetStep(stepn)]]
@@ -1875,7 +1941,7 @@ function addon.LegacyUpdateLoop()
         event = event .. "/loadNext"
 
         addon.loadNextStep = false
-        addon.SetStep(RXPCData.currentStep + 1)
+        addon.SetStep(addon.GetGuideProgress() + 1)
         addon.questAutoAccept = true
         skip = 1
         addon.updateBottomFrame = true
@@ -1989,8 +2055,9 @@ function addon.LegacyUpdateLoop()
 
         event = event .. "/istep"
         local max = #addon.currentGuide.steps
+        local currentStep = addon.GetGuideProgress()
 
-        if stepCounter == RXPCData.currentStep then
+        if stepCounter == currentStep then
             stepCounter = stepCounter + 4
         end
         local batchMax = 10
@@ -1999,7 +2066,7 @@ function addon.LegacyUpdateLoop()
         end
 
         if updateStepIndex < 5 then
-            addon.RXPFrame.BottomFrame.UpdateFrame(nil,RXPCData.currentStep + updateStepIndex)
+            addon.RXPFrame.BottomFrame.UpdateFrame(nil,currentStep + updateStepIndex)
         end
 
         stepCounter = stepCounter + batchSize

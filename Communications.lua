@@ -350,7 +350,7 @@ function addon.comms:AnnounceStepEvent(event, data)
 
     -- Probably step replay, shush
     -- currentStep == 1 is probably spam from rapid replay
-    if RXPCData.currentStep == 1 or GetTime() - addon.lastStepUpdate < 1 then return end
+    if addon.GetGuideProgress() == 1 or GetTime() - addon.lastStepUpdate < 1 then return end
 
     if not self.db.profile.announcements[data.guideName] then
         self.db.profile.announcements[data.guideName] = {complete = {}, collect = {}}
@@ -479,7 +479,7 @@ function addon.comms.OpenBugReport(stepNumber)
                     (addon.currentGuide.guideId) or 'N/A')
     end
 
-    stepNumber = stepNumber or RXPCData.currentStep
+    stepNumber = stepNumber or addon.GetGuideProgress()
     local stepData = ""
     if addon.currentGuide and addon.currentGuide.steps and stepNumber then
         local step = addon.currentGuide.steps[stepNumber]
