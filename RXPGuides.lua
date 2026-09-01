@@ -1382,6 +1382,7 @@ function addon:OnInitialize()
         RXPData.gameVersion = gameVersion
     end
     addon.settings:InitializeDatabase()
+    RXPCData.guideProgress = RXPCData.guideProgress or {}
     addon.CreateMetaDataTable()
     addon.settings:InitializeSettings()
 
@@ -1392,7 +1393,6 @@ function addon:OnInitialize()
     end
 
     RXPCData.completedWaypoints = RXPCData.completedWaypoints or {}
-    RXPCData.guideProgress = RXPCData.guideProgress or {}
 
     addon.settings.profile.hardcore =
         addon.game == "CLASSIC" and addon.settings.profile.hardcore
