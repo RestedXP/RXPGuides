@@ -3831,7 +3831,12 @@ function addon.functions.next(skip, guide, arg1)
     --print(guide,next)
 
     if next then
-        local group = guide.group
+        local group
+        if guide then
+            group = guide.group
+        else
+            group = ""
+        end
         local guideSkip
         local nextGuide
         --Different guides can be separated by a semicolon when using #next
