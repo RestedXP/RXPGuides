@@ -1198,7 +1198,7 @@ step << Mage/Priest
     >>击杀|cRXP_ENEMY_吉尔加|r。从他身上拾取|T136222:0|t[|cRXP_FRIENDLY_黑暗意图的记忆|r] << Priest
     >>|cRXP_WARN_这是一个7级精英怪，不易击杀，如果太难就先跳过|r
     .collect 203753,1 << Mage --Spell Notes: RING SEFF OSTROF (1)
-    .collect 205940,1 << Priest --Memory of Dark Purpose (1)
+    .collect 205940,1 << Priest --Memory of a Dark Purpose (1)
     .mob Gillgar
     .train 401765,1 << Mage
     .train 425216,1 << Priest
@@ -1635,7 +1635,7 @@ step << Rogue
     >>施放|T133644:0|t|T134327:0|t[搜索]并击杀|cRXP_ENEMY_溃烂豺狼人|r。从它们身上拾取|T134327:0|t|T134327:0|t[|cRXP_LOOT_左下角地图碎片|r]
     .collect 208038,1 --Bottom-Left Map Piece (1)
     .mob Rot Hide Mongrel
-    .mob Rote Hide Gnoll
+    .mob Rot Hide Gnoll
     .mob Rot Hide Graverobber
     .train 400095,1
 step << Warrior
@@ -1644,7 +1644,7 @@ step << Warrior
     >>击杀任意类型的|cRXP_ENEMY_腐烂的豺狼人|r。从它们身上拾取|cRXP_LOOT_被砍下的豺狼人的头|r
     .collect 204478,1 --Severed Gnoll Head (1)
     .mob Rot Hide Mongrel
-    .mob Rote Hide Gnoll
+    .mob Rot Hide Gnoll
     .mob Rot Hide Graverobber
     .train 403475,1
 step
@@ -1742,7 +1742,7 @@ step
     >>击杀|cRXP_ENEMY_腐皮豺狼人|r，拾取|cRXP_LOOT_防腐剂|r
     .complete 358,3 --Embalming Ichor (8)
     .mob Rot Hide Mongrel
-    .mob Rote Hide Gnoll
+    .mob Rot Hide Gnoll
     .mob Rot Hide Graverobber
 step << Rogue
     #season 2
@@ -1769,7 +1769,7 @@ step << Warrior
     >>击杀任意类型的|cRXP_ENEMY_腐烂的豺狼人|r。从它们身上拾取|cRXP_LOOT_被砍下的豺狼人的头|r
     .collect 204478,1 --Severed Gnoll Head (1)
     .mob Rot Hide Mongrel
-    .mob Rote Hide Gnoll
+    .mob Rot Hide Gnoll
     .mob Rot Hide Graverobber
     .train 403475,1
 step << Warrior
@@ -2348,7 +2348,7 @@ step << Mage/Priest
     >>击杀|cRXP_ENEMY_吉尔加|r。从他身上拾取|T136222:0|t[|cRXP_FRIENDLY_黑暗意图的记忆|r] << Priest
     >>|cRXP_WARN_这是一个7级精英怪，不易击杀，如果太难就先跳过|r
     .collect 203753,1 << Mage --Spell Notes: RING SEFF OSTROF (1)
-    .collect 205940,1 << Priest --Memory of Dark Purpose (1)
+    .collect 205940,1 << Priest --Memory of a Dark Purpose (1)
     .mob Gillgar
     .train 401765,1 << Mage
     .train 425216,1 << Priest
@@ -6923,7 +6923,7 @@ step << Mage/Priest
     >>击杀|cRXP_ENEMY_吉尔加|r。从他身上拾取|T136222:0|t[|cRXP_FRIENDLY_黑暗意图的记忆|r] << Priest
     >>|cRXP_WARN_这是一个7级精英怪，不易击杀，如果太难就先跳过|r
     .collect 203753,1 << Mage --Spell Notes: RING SEFF OSTROF (1)
-    .collect 205940,1 << Priest --Memory of Dark Purpose (1)
+    .collect 205940,1 << Priest --Memory of a Dark Purpose (1)
     .mob Gillgar
     .train 401765,1 << Mage
     .train 425216,1 << Priest
@@ -7376,7 +7376,7 @@ step << Rogue
     >>施放|T133644:0|t|T134327:0|t[搜索]并击杀|cRXP_ENEMY_溃烂豺狼人|r。从它们身上拾取|T134327:0|t|T134327:0|t[|cRXP_LOOT_左下角地图碎片|r]
     .collect 208038,1 --Bottom-Left Map Piece (1)
     .mob Rot Hide Mongrel
-    .mob Rote Hide Gnoll
+    .mob Rot Hide Gnoll
     .mob Rot Hide Graverobber
     .train 400095,1
 step << Warrior
@@ -7385,7 +7385,7 @@ step << Warrior
     >>击杀任意类型的|cRXP_ENEMY_腐烂的豺狼人|r。从它们身上拾取|cRXP_LOOT_被砍下的豺狼人的头|r
     .collect 204478,1 --Severed Gnoll Head (1)
     .mob Rot Hide Mongrel
-    .mob Rote Hide Gnoll
+    .mob Rot Hide Gnoll
     .mob Rot Hide Graverobber
     .train 403475,1
 step << skip
@@ -7486,7 +7486,7 @@ step
     >>击杀|cRXP_ENEMY_腐皮豺狼人|r，拾取|cRXP_LOOT_防腐剂|r
     .complete 358,3 --Embalming Ichor (8)
     .mob Rot Hide Mongrel
-    .mob Rote Hide Gnoll
+    .mob Rot Hide Gnoll
     .mob Rot Hide Graverobber
 step << Rogue
     #season 2
@@ -7513,7 +7513,7 @@ step << Warrior
     >>击杀任意类型的|cRXP_ENEMY_腐烂的豺狼人|r。从它们身上拾取|cRXP_LOOT_被砍下的豺狼人的头|r
     .collect 204478,1 --Severed Gnoll Head (1)
     .mob Rot Hide Mongrel
-    .mob Rote Hide Gnoll
+    .mob Rot Hide Gnoll
     .mob Rot Hide Graverobber
     .train 403475,1
 step << Mage
@@ -8197,7 +8197,7 @@ step << Mage/Priest
     >>击杀|cRXP_ENEMY_吉尔加|r。拾取他的|T134939:0|t[|cRXP_FRIENDLY_法术笔记：IGBHNHZNAI|r] << Mage
     >>击杀|cRXP_ENEMY_吉尔加|r。从他身上拾取|T136222:0|t[|cRXP_FRIENDLY_黑暗意图的记忆|r] << Priest
     .collect 203753,1 << Mage --Spell Notes: RING SEFF OSTROF (1)
-    .collect 205940,1 << Priest --Memory of Dark Purpose (1)
+    .collect 205940,1 << Priest --Memory of a Dark Purpose (1)
     .mob Gillgar
     .train 401765,1 << Mage
     .train 425216,1 << Priest
@@ -8951,7 +8951,7 @@ step << Mage/Priest
     >>击杀|cRXP_ENEMY_吉尔加|r。拾取他的|T134939:0|t[|cRXP_FRIENDLY_法术笔记：IGBHNHZNAI|r] << Mage
     >>击杀|cRXP_ENEMY_吉尔加|r。从他身上拾取|T136222:0|t[|cRXP_FRIENDLY_黑暗意图的记忆|r] << Priest
     .collect 203753,1 << Mage --Spell Notes: RING SEFF OSTROF (1)
-    .collect 205940,1 << Priest --Memory of Dark Purpose (1)
+    .collect 205940,1 << Priest --Memory of a Dark Purpose (1)
     .mob Gillgar
     .train 401765,1 << Mage
     .train 425216,1 << Priest

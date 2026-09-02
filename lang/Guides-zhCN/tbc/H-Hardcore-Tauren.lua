@@ -1636,7 +1636,7 @@ step << Tauren
 step
     #completewith next
     .subzone 380 >>Travel north toward The Crossroads
-    >>|cRXP_WARN_Make sure you stay on the road. Otherwise you may agro high level mobs|r
+    >>|cRXP_WARN_Make sure you stay on the road. Otherwise you may aggro high level mobs|r
  step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tonga|r, |cRXP_FRIENDLY_Sergra|r, |cRXP_FRIENDLY_加兹罗格|r|cRXP_FRIENDLY_索克|r 和 |cRXP_FRIENDLY_贾汉|r
     .accept 870 >>接受任务《物归己用》 遗忘之池

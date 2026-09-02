@@ -2050,7 +2050,7 @@ step << Tauren
 step
     #completewith next
     .subzone 380 >>Travel north toward The Crossroads
-    >>|cRXP_WARN_Make sure you stay on the road. Otherwise you may agro high level mobs|r
+    >>|cRXP_WARN_Make sure you stay on the road. Otherwise you may aggro high level mobs|r
 step
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r

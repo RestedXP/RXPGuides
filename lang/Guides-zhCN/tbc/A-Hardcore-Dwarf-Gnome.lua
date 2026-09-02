@@ -1790,7 +1790,7 @@ step
     #label Prowlers
     .goto Elwynn Forest,79.80,55.50
     >>点击地上的 |cRXP_PICK_Rolf's corpse|r on the ground
-    >>|cRXP_WARN_Be careful as nearby |cRXP_ENEMY_鱼人|r may agro once you click|r |cRXP_PICK_Rolf's corpse|r
+    >>|cRXP_WARN_Be careful as nearby |cRXP_ENEMY_鱼人|r may aggro once you click|r |cRXP_PICK_Rolf's corpse|r
     >>|cRXP_ENEMY_鱼人强盗|r |cRXP_WARN_will cast|r |T135915:0|t[Drink Minor Potion] |cRXP_WARN_which heals themselves for 61-68|r
     .turnin 45 >>交任务《 前往熔光镇》 罗尔夫的下落
     .accept 71 >>接受任务《物归己用》 回复托马斯
@@ -1857,7 +1857,7 @@ step
 step
     .goto Elwynn Forest,69.3,79.0
     >>Kill |cRXP_ENEMY_Princess|r. Loot her for her |cRXP_LOOT_Collar|r
-    >>|cRXP_ENEMY_公主|r |cRXP_WARN_will agro with both of her|r |cRXP_ENEMY_Porcine Entourage|r
+    >>|cRXP_ENEMY_公主|r |cRXP_WARN_will aggro with both of her|r |cRXP_ENEMY_Porcine Entourage|r
     >>|cRXP_ENEMY_公主|r |cRXP_WARN_will also cast|r |T132368:0|t[Rushing Charge] |cRXP_WARN_which deals heavy damage|r
     .complete 88,1
     .mob 公主

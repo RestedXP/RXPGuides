@@ -1200,7 +1200,7 @@ step << Mage/Priest
     >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] << Priest
     >>|cRXP_WARN_This is a level 7 elite and not easy to kill. Skip him for now if it's too hard|r
     .collect 203753,1 << Mage --Spell Notes: RING SEFF OSTROF (1)
-    .collect 205940,1 << Priest --Memory of Dark Purpose (1)
+    .collect 205940,1 << Priest --Memory of a Dark Purpose (1)
     .mob Gillgar
     .train 401765,1 << Mage
     .train 425216,1 << Priest
@@ -1637,7 +1637,7 @@ step << Rogue
     >>Cast |T133644:0|t[Pick Pocket] and kill |cRXP_ENEMY_Rot Hide Gnolls|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece|r]
     .collect 208038,1 --Bottom-Left Map Piece (1)
     .mob Rot Hide Mongrel
-    .mob Rote Hide Gnoll
+    .mob Rot Hide Gnoll
     .mob Rot Hide Graverobber
     .train 400095,1
 step << Warrior
@@ -1646,7 +1646,7 @@ step << Warrior
     >>Kill any type of |cRXP_ENEMY_Rote Hide Gnoll|r. Loot them for a |cRXP_LOOT_Severed Gnoll Head|r
     .collect 204478,1 --Severed Gnoll Head (1)
     .mob Rot Hide Mongrel
-    .mob Rote Hide Gnoll
+    .mob Rot Hide Gnoll
     .mob Rot Hide Graverobber
     .train 403475,1
 step
@@ -1744,7 +1744,7 @@ step
     >>Kill |cRXP_ENEMY_Rot Hide Gnolls|r. Loot them for their |cRXP_LOOT_Ichor|r
     .complete 358,3 --Embalming Ichor (8)
     .mob Rot Hide Mongrel
-    .mob Rote Hide Gnoll
+    .mob Rot Hide Gnoll
     .mob Rot Hide Graverobber
 step << Rogue
     #season 2
@@ -1771,7 +1771,7 @@ step << Warrior
     >>Kill any type of |cRXP_ENEMY_Rote Hide Gnoll|r. Loot them for a |cRXP_LOOT_Severed Gnoll Head|r
     .collect 204478,1 --Severed Gnoll Head (1)
     .mob Rot Hide Mongrel
-    .mob Rote Hide Gnoll
+    .mob Rot Hide Gnoll
     .mob Rot Hide Graverobber
     .train 403475,1
 step << Warrior
@@ -2350,7 +2350,7 @@ step << Mage/Priest
     >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] << Priest
     >>|cRXP_WARN_This is a level 7 elite and not easy to kill. Skip him for now if it's too hard|r
     .collect 203753,1 << Mage --Spell Notes: RING SEFF OSTROF (1)
-    .collect 205940,1 << Priest --Memory of Dark Purpose (1)
+    .collect 205940,1 << Priest --Memory of a Dark Purpose (1)
     .mob Gillgar
     .train 401765,1 << Mage
     .train 425216,1 << Priest
@@ -6928,7 +6928,7 @@ step << Mage/Priest
     >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] << Priest
     >>|cRXP_WARN_This is a level 7 elite and not easy to kill. Skip him for now if it's too hard|r
     .collect 203753,1 << Mage --Spell Notes: RING SEFF OSTROF (1)
-    .collect 205940,1 << Priest --Memory of Dark Purpose (1)
+    .collect 205940,1 << Priest --Memory of a Dark Purpose (1)
     .mob Gillgar
     .train 401765,1 << Mage
     .train 425216,1 << Priest
@@ -7381,7 +7381,7 @@ step << Rogue
     >>Cast |T133644:0|t[Pick Pocket] and kill |cRXP_ENEMY_Rot Hide Gnolls|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece|r]
     .collect 208038,1 --Bottom-Left Map Piece (1)
     .mob Rot Hide Mongrel
-    .mob Rote Hide Gnoll
+    .mob Rot Hide Gnoll
     .mob Rot Hide Graverobber
     .train 400095,1
 step << Warrior
@@ -7390,7 +7390,7 @@ step << Warrior
     >>Kill any type of |cRXP_ENEMY_Rote Hide Gnoll|r. Loot them for a |cRXP_LOOT_Severed Gnoll Head|r
     .collect 204478,1 --Severed Gnoll Head (1)
     .mob Rot Hide Mongrel
-    .mob Rote Hide Gnoll
+    .mob Rot Hide Gnoll
     .mob Rot Hide Graverobber
     .train 403475,1
 step << skip
@@ -7491,7 +7491,7 @@ step
     >>Kill |cRXP_ENEMY_Rot Hide Gnolls|r. Loot them for their |cRXP_LOOT_Ichor|r
     .complete 358,3 --Embalming Ichor (8)
     .mob Rot Hide Mongrel
-    .mob Rote Hide Gnoll
+    .mob Rot Hide Gnoll
     .mob Rot Hide Graverobber
 step << Rogue
     #season 2
@@ -7518,7 +7518,7 @@ step << Warrior
     >>Kill any type of |cRXP_ENEMY_Rote Hide Gnoll|r. Loot them for a |cRXP_LOOT_Severed Gnoll Head|r
     .collect 204478,1 --Severed Gnoll Head (1)
     .mob Rot Hide Mongrel
-    .mob Rote Hide Gnoll
+    .mob Rot Hide Gnoll
     .mob Rot Hide Graverobber
     .train 403475,1
 step << Mage
@@ -8202,7 +8202,7 @@ step << Mage/Priest
     >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] << Mage
     >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] << Priest
     .collect 203753,1 << Mage --Spell Notes: RING SEFF OSTROF (1)
-    .collect 205940,1 << Priest --Memory of Dark Purpose (1)
+    .collect 205940,1 << Priest --Memory of a Dark Purpose (1)
     .mob Gillgar
     .train 401765,1 << Mage
     .train 425216,1 << Priest
@@ -8956,7 +8956,7 @@ step << Mage/Priest
     >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] << Mage
     >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] << Priest
     .collect 203753,1 << Mage --Spell Notes: RING SEFF OSTROF (1)
-    .collect 205940,1 << Priest --Memory of Dark Purpose (1)
+    .collect 205940,1 << Priest --Memory of a Dark Purpose (1)
     .mob Gillgar
     .train 401765,1 << Mage
     .train 425216,1 << Priest

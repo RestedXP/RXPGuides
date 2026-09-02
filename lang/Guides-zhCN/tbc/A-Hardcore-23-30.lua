@@ -3886,7 +3886,7 @@ step
 step
     #completewith next
     .zone Western Plaguelands >>前往西部荒野 Plaguelands
-    >>|cRXP_WARN_NOTE: You may encounter a level 34 |cRXP_ENEMY_山地狮|r on the way there. Just run away from it if you agro it|r
+    >>|cRXP_WARN_NOTE: You may encounter a level 34 |cRXP_ENEMY_山地狮|r on the way there. Just run away from it if you aggro it|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比比尔法兹|r
     .goto Western Plaguelands,42.924,85.061

@@ -1404,7 +1404,7 @@ step
     .goto Badlands,41.92,26.26,20,0
     .goto Badlands,41.383,27.964
     >>Click on the |cRXP_PICK_Tapped Shadowforge Keg|r. Loot it for the |cRXP_LOOT_Balmy Brew|r
-    >>|cRXP_WARN_Stay at maximum range to avoid agroing|r |cRXP_ENEMY_Ambassador Infernus|r
+    >>|cRXP_WARN_Stay at maximum range to avoid aggroing|r |cRXP_ENEMY_Ambassador Infernus|r
     .complete 79677,3 --Balmy Brew (1x)
 step
     .train 416004,1
