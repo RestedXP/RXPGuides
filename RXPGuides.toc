@@ -68,6 +68,7 @@ Professions\Professions.lua
 Professions\locale\ProfessionsLocale.lua
 Professions\AH\ProfessionsAH.lua
 Professions\DB\ProfessionsDB.lua
+Professions\DB\VirtualAH.lua
 Professions\GUI\ProfessionsDebugGUI.lua
 Professions\Analytics\GatherData.lua
 Professions\Analytics\ProfessionsAnalyzer.lua

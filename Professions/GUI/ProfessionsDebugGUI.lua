@@ -340,13 +340,19 @@ function addon.professions.GUI.createGUI()
                     maxSegment, RXPCData.professions.money
                 )
             end]]
-            recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent, timeNeeded =
-                aProf.gatherRecipesToBuyGreedy(
-                    RXPCData.professions.profession1.name,
-                    RXPCData.professions.profession1.skillLevel,
-                    maxSegment, RXPCData.professions.money
-                )
-            textToPrint = aProf.greedyToString(recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent, timeNeeded)
+            local _, _, _,
+            currentSkillLevel, skillLevelsGained,
+            moneySpent, timeNeeded, sellValue,
+            _, _ = aProf.generatePath(RXPCData.professions.profession1.name, RXPCData.professions.profession1.skillLevel, 300, 10000000)
+            --recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent, timeNeeded =
+                --aProf.gatherRecipesToBuyGreedy(
+                --    RXPCData.professions.profession1.name,
+                --    RXPCData.professions.profession1.skillLevel,
+                --    maxSegment, RXPCData.professions.money
+                --)
+            --textToPrint = aProf.greedyToString(recipeKnapsack, materialKnapsack, backpackKnapsack, skillLevelsGained, moneySpent, timeNeeded)
+            --professionName, skillLevelReached, skillLevelsGained, moneySpent, timeNeeded, sellValue
+            textToPrint = aProf.pathToString(RXPCData.professions.profession1.name, currentSkillLevel, skillLevelsGained, moneySpent, timeNeeded, sellValue)
             textToPrint = textToPrint .. "==========\n"
             guiFrame.printText.Text:SetText(textToPrint)
         end
