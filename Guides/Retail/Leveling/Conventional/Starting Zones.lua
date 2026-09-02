@@ -222,13 +222,31 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
     .turnin 58208 >>Turn in Brace for Impact
     .target Lady Jaina Proudmoore
--- step
---     .isQuestAvailable 55122
---     #label HousingSelect
---     +You can skip Exile’s Reach and start at level 10 instantly by choosing the “housing” option.
---     *|cRXP_WARN_Skip this step manually if you want to play through Exile’s Reach|r.
---     .clicknext RestedXP Speed Leveling\a) Neighbourhood >>CLICK HERE FOR GUIDE
---     #veteran
+step
+    #label HousingSelect1
+    #hidewindow
+    .countdown 2 >>1
+step
+    .zoneskip 1409,1
+    .isQuestAvailable 55122
+    +Immediately reach Level 10 and skip Exile's Reach by selecting |cRXP_WARN_the guide below|r
+    *|cRXP_WARN_Don't if you want to continue Exile's Reach|r.
+    .clicknext RestedXP Speed Leveling\a) No House Skip >>CLICK HERE FOR GUIDE
+step
+    .goto 2352,57.44,26.64
+    .zoneskip 2352,1
+    .zone 84 >>Click on the |cRXP_PICK_Portal|r
+    .skipto guide,RestedXP Speed Leveling\ba) DF Alliance Intro Midnight (A) << Alliance
+    .skipto guide,RestedXP Speed Leveling\b1) BfA Intro << Horde
+    .zoneskip 85
+step
+    #label HousingSelect
+    .zoneskip 2351,1
+    .goto 2351,53.93,49.4
+    .zone 85 >>Click on the |cRXP_PICKs_Portal|r
+    .skipto guide,RestedXP Speed Leveling\ba) DF Alliance Intro Midnight (A) << Alliance
+    .skipto guide,RestedXP Speed Leveling\b1) BfA Intro << Horde
+    .zoneskip 84
 step
     .goto 1409,61.88,82.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
@@ -672,17 +690,20 @@ step << Warlock
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Book|r.
     .complete 58962,2 --1/1 Old Grimoire
 step << Warlock
+    .zoneskip 1409,1
     .goto 1409,52.61,45.65
     >>Use the |T538444:0|t[Old Grimoire]
     .complete 58962,3 --1/1 Voidwalker summoned with grimoire
     .use 174947
 step << Warlock
+    .zoneskip 1409,1
     #label WarlockClassEnd
     .goto 1409,52.62,45.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Voidwalker|r.
     .turnin 58962 >>Turn in A Warlock's Bargain
     .target Summoned Voidwalker
 step << Warrior
+    .zoneskip 1409,1
     #completewith next
     #label Hjalmar's Final Execution
     .goto 1409,52.91,48.85,15,0
@@ -692,10 +713,12 @@ step << Warrior
     .accept 58915 >>Accept Hjalmar's Final Execution
     .target Hjalmar the Undying
 step << Warrior
+    .zoneskip 1409,1
     #hidewindow
     #completewith Hjalmar's Final Execution
     .goto 1409,51.47,47.79,30 >>Follow the Arrow
 step << Warrior
+    .zoneskip 1409,1
     #requires Hjalmar's Final Execution
     .goto 1409,51.47,47.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hjalmar the Undying|r.
@@ -703,18 +726,21 @@ step << Warrior
     .accept 58915 >>Accept Hjalmar's Final Execution
     .target Hjalmar the Undying
 step << Warrior
+    .zoneskip 1409,1
     #completewith next
     #label Hjalmar the Undying
     >>Follow and kill|cRXP_ENEMY_Hjalmar the Undying|r.
     *|cRXP_WARN_Below 20% you need to use|r |T135358:0|t[Execute]
     .complete 58915,1 --1/1 Hjalmar the Undying slain with Execute
 step << Warrior
+    .zoneskip 1409,1
     #completewith Hjalmar the Undying
     .goto 1409,51.47,47.79
     .gossipoption 51265 >>Talk to |cRXP_FRIENDLY_Hjalmar the Undying|r.
     .timer 13,RP
     .target Hjalmar the Undying
 step << Warrior
+    .zoneskip 1409,1
     #requires Hjalmar the Undying
     #label Execute
     >>Follow and kill|cRXP_ENEMY_Hjalmar the Undying|r.
@@ -722,6 +748,7 @@ step << Warrior
     .complete 58915,1 --1/1 Hjalmar the Undying slain with Execute
     .mob Hjalmar the Undying
 step
+    .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Henry Garrick|r and |cRXP_FRIENDLY_Kee-La|r.
     .turnin 55196 >>Turn in The Harpy Problem
     .accept 55763 >>Accept The Rescue of Herbert Gloomburst
@@ -732,6 +759,7 @@ step
     .goto 1409,56.93,46.25
     .target +Kee-La
 step
+    .zoneskip 1409,1
     #label HarpiesAreaStart
     #completewith Harpytotem
     >>Kill |cRXP_ENEMY_Harpies|r and |cRXP_ENEMY_Worgen|r.
@@ -740,30 +768,37 @@ step
     .mob Harpy Snatcher
     .mob Hunting Worg
 step
+    .zoneskip 1409,1
     .goto 1409,58.23,44.49
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Harpy Totem|r.
     .complete 55881,1,1 --1/5 Harpy Totems burned
 step
+    .zoneskip 1409,1
     .goto 1409,58.84,42.95
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Harpy Totem|r.
     .complete 55881,1,2 --2/5 Harpy Totems burned
 step
+    .zoneskip 1409,1
     .goto 1409,61.23,41.31
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Harpy Totem|r.
     .complete 55881,1,3 --3/5 Harpy Totems burned
 step
+    .zoneskip 1409,1
     .goto 1409,59.33,37.63
     .turnin 56581 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chest|r.
 step
+    .zoneskip 1409,1
     .goto 1409,59.01,39.10
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Harpy Totem|r.
     .complete 55881,1,4 --4/5 Harpy Totems burned
 step
+    .zoneskip 1409,1
     #label HarpiesAreaEnd
     .goto 1409,57.18,42.23
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Harpy Totem|r.
     .complete 55881,1 --5/5 Harpy Totems burned
 step
+    .zoneskip 1409,1
     #label Harpytotem
     .goto 1409,54.29,41.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meredy Huntswell|r.
@@ -773,6 +808,7 @@ step
     .target Meredy Huntswell
     .mob Bloodbeak
 step
+    .zoneskip 1409,1
     #label HarpiesAreaEnd2
     #loop
     .goto 1409,56.4,45.12,35,0
@@ -785,6 +821,7 @@ step
     .mob Harpy Snatcher
     .mob Hunting Worg
 step
+    .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meredy Huntswell|r, |cRXP_FRIENDLY_Kee-La|r and |cRXP_FRIENDLY_Henry Garrick|r.
     .turnin 55763 >>Turn in The Rescue of Meredy Huntswell
     .goto 1409,56.90,46.14
@@ -797,36 +834,43 @@ step
     .goto 1409,56.83,46.18
     .target +Henry Garrick
 step
+    .zoneskip 1409,1
     #label LightspawnStart1
     .goto 1409,58.20,50.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Lightspawn|r.
     .accept 54933 >>Accept Freeing the Light
     .target Lightspawn
 step
+    .zoneskip 1409,1
     .goto 1409,57.42,49.68
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Orb|r.
     .complete 54933,1 --1/1 First necrotic energy dispersed
 step
+    .zoneskip 1409,1
     #label LightspawnStart2
     .goto 1409,58.49,49.16
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Orb|r.
     .complete 54933,2 --1/1 Second necrotic energy dispersed
 step
+    .zoneskip 1409,1
     .goto 1409,59.00,50.69
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Orb|r.
     .complete 54933,3 --1/1 Third necrotic energy dispersed
 step
+    .zoneskip 1409,1
     #label LightspawnEnd2
     .goto 1409,57.82,51.19
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Orb|r.
     .complete 54933,4 --1/1 Fourth necrotic energy dispersed
     .timer 11,Freeing the Light RP
 step << Priest
+    .zoneskip 1409,1
     #label PriestClass1
     .goto 1409,56.12,53.79
     #title |cFFFCDC00Follow the Arrow|r
     .complete 58953,1 --1/1 Look for the corpses of the first expedition recruits
 step << Paladin
+    .zoneskip 1409,1
     #label PaladinClass1Start
     .goto 1409,57.57,52.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yorah|r.
@@ -835,64 +879,75 @@ step << Paladin
     .skipgossipid 52641
     .target Yorah
 step << Paladin
+    .zoneskip 1409,1
     .goto 1409,57.57,52.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yorah|r.
     .turnin 58923 >>Turn in A Paladin Service
     .accept 58946 >>Accept The Divine's Shield
     .target Yorah
 step << Paladin
+    .zoneskip 1409,1
     #completewith next
     #label Necrotic altar destroyed
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Altar|r.
     .complete 58946,2 --1/1 Necrotic altar destroyed
 step << Paladin
+    .zoneskip 1409,1
     #completewith Necrotic altar destroyed
     .goto 1409,57.41,52.31
     >>Use |T524354:0|t[Divine Shield] to become immune |cRXP_WARN_on the waypoint location|r.
     .complete 58946,1 --1/1 Divine shield used
     .usespell 642
 step << Paladin
+    .zoneskip 1409,1
     #requires Necrotic altar destroyed
     .goto 1409,57.08,52.73
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Altar|r |cRXP_WARN_don't pass through the barrier|r.
     .complete 58946,2 --1/1 Necrotic altar destroyed
     .skipgossipid 51270
 step << Paladin
+    .zoneskip 1409,1
     #label PaladinClass1End
     .goto 1409,57.57,52.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yorah|r.
     .turnin 58946 >>Turn in The Divine's Shield
     .target Yorah
 step
+    .zoneskip 1409,1
     #label Freeing the Light
     .goto 1409,58.20,50.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Lightspawn|r.
     .turnin 54933 >>Turn in Freeing the Light
     .target Lightspawn
 step << Shaman
+    .zoneskip 1409,1
     #label Capturedghostwolves1
     .goto 1409,55.40,50.78
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ghost Wolf|r.
     .complete 59002,3,1 --3/3 Captured ghost wolves freed
     .target Ghost Wolf
 step << Shaman
+    .zoneskip 1409,1
     .goto 1409,55.28,52.79
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ghost Wolf|r.
     .complete 59002,3,2 --2/3 Captured ghost wolves freed
     .target Ghost Wolf
 step << Shaman
+    .zoneskip 1409,1
     #label Capturedghostwolves2
     .goto 1409,54.40,58.45
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ghost Wolf|r.
     .complete 59002,3,3 --1/3 Captured ghost wolves freed
     .target Ghost Wolf
 step << Priest
+    .zoneskip 1409,1
     .goto 1409,56.12,53.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branven Hammerheart|r.
     .turnin 58953 >>Turn in A Priest's End
     .accept 58960 >>Accept Resurrecting the Recruits
     .target Branven Hammerheart
 step << Priest
+    .zoneskip 1409,1
     #label PriestsEnd1
     .goto 1409,56.11,53.7
     >>Use |T135955:0|t[Resurrection] on the |cRXP_FRIENDLY_First Expedition Recruits|r.
@@ -900,25 +955,30 @@ step << Priest
     .target First Expedition Recruit
     .usespell 317434
 step << Priest
+    .zoneskip 1409,1
     .goto 1409,56.12,53.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branven Hammerheart|r.
     .turnin 58960 >>Turn in Resurrecting the Recruits
     .target Branven Hammerheart
 step << Warrior
+    .zoneskip 1409,1
     .goto 1409,52.08,55.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Private Cole|r.
     .turnin 58915 >>Turn In Hjalmar's Final Execution
     .target Private Cole
 step << !Shaman
+    .zoneskip 1409,1
     .goto 1409,52.26,55.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garrick|r.
     .turnin 55882 >>Turn in Message to Base
     .target Captain Garrick
 step << Rogue
+    .zoneskip 1409,1
     #completewith RogueExilesEnd1
     +Beaware of |cRXP_ENEMY_Killclaw the Terrible|r don't pull him.
     .mob Killclaw the Terrible
 step << Rogue
+    .zoneskip 1409,1
     .goto 1409,47.95,54.8,15,0
     .goto 1409,45.64,56.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coulston Nereus|r.
@@ -927,41 +987,49 @@ step << Rogue
     .skipgossipid 51267
     .target Coulston Nereus
 step << Rogue
+    .zoneskip 1409,1
     #label RogueExilesStart1
     .goto 1409,45.17,55.69
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Plant|r.
     .complete 58917,2,1 --3/3 Withering Hemlock
 step << Rogue
+    .zoneskip 1409,1
     .goto 1409,44.76,56.42
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Plant|r.
     .complete 58917,2,2 --3/3 Withering Hemlock
 step << Rogue
+    .zoneskip 1409,1
     #label RogueExilesEnd1
     .goto 1409,45.09,54.66
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Plant|r.
     .complete 58917,2 --3/3 Withering Hemlock
 step << Rogue
+    .zoneskip 1409,1
     .goto 1409,45.64,56.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coulston Nereus|r.
     .turnin 58917 >>Turn in A Rogue's End
     .accept 58933 >>Accept The Deadliest of Poisons
     .target Coulston Nereus
 step << Rogue
+    .zoneskip 1409,1
     #label RogueExilesStart2
     .goto 1409,48.41,53.42
     .complete 58933,1 >>Use |T132273:0|t[Instant Poison]
     .usespell 315584
 step << Rogue
+    .zoneskip 1409,1
     #completewith next
     #label Gutgruk
     >>Kill |cRXP_ENEMY_Gutgruk|r.
     .complete 58933,2--1/1 Gutgruk the Tough slain
     .mob Gutgruk the Tough
 step << Rogue
+    .zoneskip 1409,1
     #hidewindow
     #completewith Gutgruk
     .goto 1409,48.41,53.42,20 >>Follow the Arrow
 step << Rogue
+    .zoneskip 1409,1
     #requires Gutgruk
     #label RogueExilesEnd2
     #loop
@@ -971,61 +1039,72 @@ step << Rogue
     .complete 58933,2--1/1 Gutgruk the Tough slain
     .mob Gutgruk the Tough
 step << Hunter
+    .zoneskip 1409,1
     .goto 1409,52.55,55.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austin Huxworth|r.
     .accept 59355 >>Accept A Hunter's Trap
     .target Austin Huxworth
 step << Hunter
+    .zoneskip 1409,1
     .goto 1409,52.29,55.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meredy Huntswell|r.
     .complete 59355,1 --1/1 Ice mote received from Meredy Huntswell
     .skipgossipid 51803
     .target Meredy Huntswell
 step << Hunter
+    .zoneskip 1409,1
     #label Rusted Chain
     .goto 1409,52.09,53.03,10,0
     .goto 1409,52.25,53.03
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chain|r.
     .complete 59355,2 --1/1 Rusted Chain
 step << Hunter
+    .zoneskip 1409,1
     #label Old Spring
     .goto 1409,51.83,51.60
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Spring|r.
     .complete 59355,3 --1/1 Old Spring
 step << Hunter
+    .zoneskip 1409,1
     .goto 1409,52.55,55.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austin Huxworth|r.
     .turnin 59355 >>Turn in A Hunter's Trap
     .accept 59356 >>Accept Hunting the Stalker
     .target Austin Huxworth
 step << Hunter
+    .zoneskip 1409,1
     #label Freezing trap
     .goto 1409,52.58,54.05
     >>Use a |T135834:0|t[Freezing Trap] |cRXP_WARN_from range to place it in front of the fence|r.
     .complete 59356,1 --1/1 Freezing trap used within Ogre Ruins to capture stalker
     .usespell 321164
 step << Hunter
+    .zoneskip 1409,1
     .goto 1409,52.55,55.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austin Huxworth|r |cRXP_WARN_after a short roleplay|r.
     .turnin 59356 >>Turn in Hunting the Stalker
     .accept 60168 >>Accept The Art of Taming
     .target Austin Huxworth
 step << Hunter
+    .zoneskip 1409,1
     #label DismissPet
     >>Use |T136095:0|t[Dismiss Pet]|r.
     .complete 60168,1 --Use "Dismiss Pet" to temporarily dismiss your current pet
     .usespell 2641
 step << Hunter
+    .zoneskip 1409,1
     #completewith next
     #label Art of Taming
     #hidewindow
     .complete 60168,2 -- Speak with Austin to summon and tame your new pet
 step << Hunter
+    .zoneskip 1409,1
     #completewith Art of Taming
     .goto 1409,52.55,55.48
     .gossipoption 49525 >>Talk to |cRXP_FRIENDLY_Austin Huxworth|r.
     .timer 7,The Art of Taming RP
 step << Hunter
+    .zoneskip 1409,1
     #requires Art of Taming
     .goto 1409,52.55,55.48
     >>Use |T132164:0|t[Tame Beast] on the |cRXP_ENEMY_Moth|r |cRXP_WARN_from far away|r. << Draenei
@@ -1045,39 +1124,46 @@ step << Hunter
     .mob Mechanical Bunny << Gnome
     .mob Tiger << NightElf
 step << Hunter
+    .zoneskip 1409,1
     .goto 1409,52.55,55.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austin Huxworth|r.
     .complete 60168,3 --Speak with Austin to learn about pet stables
     .skipgossipid 49523
     .target Austin Huxworth
 step << Hunter
+    .zoneskip 1409,1
     .goto 1409,52.55,55.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austin Huxworth|r.
     .turnin 60168 >>Turn in The Art of Taming
     .target Austin Huxworth
 step << Monk
+    .zoneskip 1409,1
     .goto 1409,52.14,55.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kee-La|r.
     .accept 59347 >>Accept A Monk's Focus
     .timer 34,A Monk's Focus RP
     .target Kee-La
 step << Monk
+    .zoneskip 1409,1
     #completewith next
     #label Meditate with Kee-La
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 59347,1 --1/1 Meditate with Kee-La
 step << Monk
+    .zoneskip 1409,1
     #completewith Meditate with Kee-La
     .goto 1409,52.62,49.49
     .gossipoption 51237 >>Talk to |cRXP_FRIENDLY_Kee-La|r |cRXP_WARN_after the roleplay|r.
     .timer 42,A Monk's Focus RP
 step << Monk
+    .zoneskip 1409,1
     #requires Meditate with Kee-La
     .goto 1409,52.62,49.49
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 59347,1 --1/1 Meditate with Kee-La
     .target Kee-La
 step << Monk
+    .zoneskip 1409,1
     .goto 1409,52.63,49.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kee-La|r.
     .turnin 59347 >>Turn in A Monk's Focus
@@ -1085,37 +1171,44 @@ step << Monk
     .timer 5,One Last Spar RP
     .target Kee-La
 step << Monk
+    .zoneskip 1409,1
     .goto 1409,53.72,50.24
     >>Defeat |cRXP_ENEMY_Kee-La|r use |T606552:0|t[Touch of Death] |cRXP_WARN_when you can|r.
     .complete 59349,1 --1/1 Touch of Death used on Kee-La
     .mob Kee-La
 step << Monk
+    .zoneskip 1409,1
     .goto 1409,52.26,55.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garrick|r.
     .turnin 59349 >>Turn in One Last Spar
     .target Captain Garrick
 step << Mage
+    .zoneskip 1409,1
     .goto 1409,52.28,55.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meredy Huntswell|r.
     .accept 59352 >>Accept A Mage's Knowledge
     .target Meredy Huntswell
 step << Mage
+    .zoneskip 1409,1
     #label Spell Book
     .goto 1409,51.95,49.84
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Book|r.
     .complete 59352,1 --1/1 Meredy's Spell Book
 step << Mage
+    .zoneskip 1409,1
     .goto 1409,52.28,55.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meredy Huntswell|r.
     .turnin 59352 >>Turn in A Mage's Knowledge
     .timer 12,RP
     .target Meredy Huntswell
 step << Mage
+    .zoneskip 1409,1
     .goto 1409,52.28,55.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meredy Huntswell|r.
     .accept 59354 >>Accept The Best Way to Use Sheep
     .target Meredy Huntswell
 step << Mage
+    .zoneskip 1409,1
     .goto 1409,52.28,55.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meredy Huntswell|r.
     .complete 59354,1 --Speak with Meredy to being sparring (1)
@@ -1123,6 +1216,7 @@ step << Mage
     .skipgossipid 51802
     .target Meredy Huntswell
 step << Mage
+    .zoneskip 1409,1
     >>Follow |cRXP_FRIENDLY_Meredy Huntswell|r and |cRXP_FRIENDLY_Private Cole|r.
     *Use |T136071:0|t[Polymorph] on one of them, wait a moment, then attack the polymorphed one.
     .complete 59354,2 --Practice Polymorph with Meredy or Cole
@@ -1131,11 +1225,13 @@ step << Mage
     .mob Meredy Huntswell
     .mob Private Cole
 step << Mage
+    .zoneskip 1409,1
     .goto 1409,52.30,55.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meredy Huntswell|r.
     .turnin 59354 >>Turn in The Best Way to Use Sheep
     .target Meredy Huntswell
 step
+    .zoneskip 1409,1
     #completewith next
     #label Who Lurks in the Pit1
     .goto 1409,52.36,56.6,10,0 <<!Shaman/!Rogue
@@ -1145,10 +1241,12 @@ step
     .target Bjorn Stouthands
     .target Alaria
 step
+    .zoneskip 1409,1
     #hidewindow
     #completewith Who Lurks in the Pit1
     .goto 1409,51.18,59.61,80 >>Follow the Arrow
 step
+    .zoneskip 1409,1
     #requires Who Lurks in the Pit1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bjorn Stouthands|r and |cRXP_FRIENDLY_Alaria|r.
     .turnin 55965 >>Turn in Westward Bound
@@ -1158,6 +1256,7 @@ step
     .target Bjorn Stouthands
     .target Alaria
 step
+    .zoneskip 1409,1
     #completewith next
     #label Trapped Expedition
     .goto 1409,50.76,59.89,5,0
@@ -1165,18 +1264,22 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cocoon|r.
     .complete 55639,1,1 --1/5 Trapped Expedition Member rescued from cocoons
 step
+    .zoneskip 1409,1
     #completewith Trapped Expedition
     .goto 1409,51.53,60.37,5 >>Enter the Cave.
 step
+    .zoneskip 1409,1
     #requires Trapped Expedition
     #completewith Expedition Member3
     +|cRXP_WARN_Avoid fighting Spiders whenever possible|r.
 step
+    .zoneskip 1409,1
     #requires Trapped Expedition
     .goto 1409,52.07,59.99
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cocoon|r.
     .complete 55639,1,1 --1/5 Trapped Expedition Member rescued from cocoons
 step
+    .zoneskip 1409,1
     #completewith next
     #label Expedition Member
     .goto 1409,52.1,58.52,10,0
@@ -1184,30 +1287,36 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cocoon|r.
     .complete 55639,1,2 --2/5 Trapped Expedition Member rescued from cocoons
 step
+    .zoneskip 1409,1
     #hidewindow
     #completewith Expedition Member
     .goto 1409,50.26,58.69,50 >>Follow the Arrow
 step
+    .zoneskip 1409,1
     #requires Expedition Member
     .goto 1409,50.26,58.69
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cocoon|r.
     .complete 55639,1,2 --2/5 Trapped Expedition Member rescued from cocoons
 step
+    .zoneskip 1409,1
     #completewith next
     #label Expedition Member1
     .goto 1409,49.77,60.28,15,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cocoon|r.
     .complete 55639,1,3 --3/5 Trapped Expedition Member rescued from cocoons
 step
+    .zoneskip 1409,1
     #hidewindow
     #completewith Expedition Member1
     .goto 1409,49.70,62.02,40 >>Follow the Arrow
 step
+    .zoneskip 1409,1
     #requires Expedition Member1
     .goto 1409,49.70,62.02
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cocoon|r.
     .complete 55639,1,3 --3/5 Trapped Expedition Member rescued from cocoons
 step
+    .zoneskip 1409,1
     #completewith next
     #label Expedition Member2
     .goto 1409,50.1,62.23,10,0
@@ -1215,15 +1324,18 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cocoon|r.
     .complete 55639,1,4 --4/5 Trapped Expedition Member rescued from cocoons
 step
+    .zoneskip 1409,1
     #hidewindow
     #completewith Expedition Member2
     .goto 1409,51.96,60.67,32 >>Follow the Arrow
 step
+    .zoneskip 1409,1
     #requires Expedition Member2
     .goto 1409,51.96,60.67
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cocoon|r.
     .complete 55639,1,4 --4/5 Trapped Expedition Member rescued from cocoons
 step
+    .zoneskip 1409,1
     #completewith next
     #label Expedition Member3
     .goto 1409,51.97,59.47,10,0
@@ -1231,16 +1343,19 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cocoon|r.
     .complete 55639,1 --5/5 Trapped Expedition Member rescued from cocoons
 step
+    .zoneskip 1409,1
     #hidewindow
     #completewith Expedition Member3
     .goto 1409,50.87,58.12,18 >>Follow the Arrow
 step
+    .zoneskip 1409,1
     #requires Expedition Member3
     #label Expedition Member4
     .goto 1409,50.87,58.12
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cocoon|r.
     .complete 55639,1 --5/5 Trapped Expedition Member rescued from cocoons
 step
+    .zoneskip 1409,1
     #completewith next
     #label Hrun
     .goto 1409,50.53,59.72,10,0
@@ -1249,10 +1364,12 @@ step
     .complete 55639,2 --Defeat Hrun to rescue Ralia Dreamchaser (1)
     .mob Hrun the Exiled
 step
+    .zoneskip 1409,1
     #completewith Hrun
     #hidewindow
     .goto 1409,47.79,60.27,60 >>Follow the Arrow
 step
+    .zoneskip 1409,1
     #requires Hrun
     .goto 1409,47.79,60.27
     >>Kill |cRXP_ENEMY_Hrun the Exiled|r.
@@ -1260,17 +1377,20 @@ step
     .timer 7,RP
     .mob Hrun the Exiled
 step
+    .zoneskip 1409,1
     #completewith next
     #label Ralia Dreamchaser
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 55639,3 --Ride Ralia Dreamchaser to escape (1)
     .target Ralia Dreamchaser
 step
+    .zoneskip 1409,1
     #completewith Ralia Dreamchaser
     .goto 1409,47.79,60.27
     .cast 312463 >>Click on |cRXP_PICK_Ralia Dreamchaser|r.
     .timer 52.5,RP
 step
+    .zoneskip 1409,1
     #requires Ralia Dreamchaser
     #label escape1
     >>|cRXP_WARN_Wait for the Roleplay|r.
@@ -1278,11 +1398,13 @@ step
     .timer 28,RP << Druid
     .target Ralia Dreamchaser
 step << Rogue
+    .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Private Cole|r.
     .turnin 58933 >>Turn in The Deadliest of Poisons
     .goto 1409,52.08,55.29
     .target Private Cole
 step << Shaman
+    .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Ghost Wolf|r and |cRXP_FRIENDLY_Captain Garrick|r.
     .turnin 59002 >>Turn in A Shaman's Duty to learn Ghost Wolf
     .goto 1409,52.30,55.66
@@ -1293,43 +1415,51 @@ step << Shaman
     .goto 1409,52.26,55.62
     .target +Captain Garrick
 step << !Shaman
+    .zoneskip 1409,1
     .goto 1409,52.26,55.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garrick|r.
     .turnin 55639 >>Turn in Who Lurks in the Pit
     .accept 85678 >>Accept Repair Yourself
     .target Captain Garrick
 step
+    .zoneskip 1409,1
     .goto 1409,52.23,55.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Richter|r and |cRXP_WARN_repair all items|r.
     .complete 85678,1 --1/1 Speak With Quartmaster Richter to Repair All Items
     .target Quartermaster Richter
 step
+    .zoneskip 1409,1
     .goto 1409,52.27,55.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garrick|r.
     .turnin 85678 >>Turn in Repair Yourself
     .target Captain Garrick
 step << Druid
+    .zoneskip 1409,1
     .goto 1409,52.33,55.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ralia Dreamchaser|r.
     *|cRXP_WARN_You must wait for the roleplay before able to speak to her|r.
     .accept 59350 >>Accept A Druid's Form
     .target Ralia Dreamchaser
 step << Druid
+    .zoneskip 1409,1
     #label DruidStone
     .goto 1409,45.34,49.19
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Druid Stone|r.
     .complete 59350,1 --1/1 Commune with the Druid Stone
 step << Druid
+    .zoneskip 1409,1
     .goto 1409,45.34,49.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ralia Dreamchaser|r.
     .turnin 59350 >>Turn in A Druid's Form
     .target Ralia Dreamchaser
 step
+    .zoneskip 1409,1
     .goto 1409,52.27,55.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garrick|r.
     .accept 56344 >>Accept To Darkmaul Citadel
     .target Captain Garrick
 step
+    .zoneskip 1409,1
     #completewith next
     #label Right Beneath Their Eyes1
     .goto 1409,49.55,52.49,20,0
@@ -1339,10 +1469,12 @@ step
     .disablecheckbox
     .target Lady Jaina Proudmoore
 step
+    .zoneskip 1409,1
     #completewith Right Beneath Their Eyes1
     #hidearrow
     .goto 1409,48.9,49.51,90 >>Follow the Arrow
 step
+    .zoneskip 1409,1
     #requires Right Beneath Their Eyes1
     .goto 1409,48.9,49.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
@@ -1350,27 +1482,32 @@ step
     .accept 55981 >>Accept Right Beneath Their Eyes
     .target Lady Jaina Proudmoore
 step
+    .zoneskip 1409,1
     #completewith next
     #label transformation spell2
     >>After talking to her |cRXP_WARN_run away quickly|r.
     .complete 55981,1 --1/1 Ask Meredy to perform ogre transformation spell
 step
+    .zoneskip 1409,1
     #completewith transformation spell2
     .goto 1409,49.04,49.20
     .gossipoption 50819 >>Talk to |cRXP_FRIENDLY_Meredy Huntswell|r.
     .target Meredy Huntswell
 step
+    .zoneskip 1409,1
     #requires transformation spell2
     .goto 1409,45.72,44.35
     >>After talking to her |cRXP_WARN_run away quickly|r.
     .complete 55981,1 --1/1 Ask Meredy to perform ogre transformation spell
     .target Meredy Huntswell
 step
+    .zoneskip 1409,1
     #label DarkmaulCitadelStart
     .goto 1409,45.72,44.35
     #title |cFFFCDC00Follow the Arrow|r
     .complete 55981,2 --1/1 Enter Darkmaul Citadel
 step
+    .zoneskip 1409,1
     #completewith next
     #label ogre cooking Area
     .goto 1409,44.9,42.39,10,0
@@ -1378,15 +1515,18 @@ step
     #title |cFFFCDC00Follow the Arrow|r
     .complete 55981,3 --Find the ogre cooking Area
 step
+    .zoneskip 1409,1
     #hidewindow
     #completewith ogre cooking Area
     .goto 1409,45.68,37.55,68 >>Follow the Arrow
 step
+    .zoneskip 1409,1
     #requires ogre cooking Area
     .goto 1409,45.68,37.55
     #title |cFFFCDC00Follow the Arrow|r
     .complete 55981,3 --Find the ogre cooking Area
 step
+    .zoneskip 1409,1
     #label DarkmaulCitadelEnd
     .goto 1409,45.68,37.55
     >>Target |cRXP_FRIENDLY_Gor'groth|r to automatically wave at him.
@@ -1395,6 +1535,7 @@ step
     .emote WAVE,153580
     .target Gor'groth
 step
+    .zoneskip 1409,1
     #completewith next
     #label Right Beneath Their Eyes2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r.
@@ -1403,6 +1544,7 @@ step
     .disablecheckbox
     .target Lady Jaina Proudmoore
 step
+    .zoneskip 1409,1
     #completewith Right Beneath Their Eyes2
     .goto 1409,45.95,36.07,15,0
     .goto 1409,40.16,32.35
@@ -1410,6 +1552,7 @@ step
     .complete 55981,6 --Reach the Citadel entrance
     .timer 8.5, RP
 step
+    .zoneskip 1409,1
     #requires Right Beneath Their Eyes2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore|r
     .turnin 55981 >>Turn in Right Beneath Their Eyes
@@ -1417,6 +1560,7 @@ step
     .goto 1409,40.16,32.35
     .target Lady Jaina Proudmoore
 step
+    .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meredy Huntswell|r and |cRXP_FRIENDLY_Henry Garrick|r.
     .accept 55989 >>Accept Catapult Destruction
     .goto 1409,40.19,32.64
@@ -1425,6 +1569,7 @@ step
     .goto 1409,40.35,32.27
     .target +Henry Garrick
 step
+    .zoneskip 1409,1
     #completewith next
     #label Wug's ward
     .goto 1409,43.95,35.21,15,0
@@ -1433,9 +1578,11 @@ step
     .complete 55990,2 --1/1 Wug's ward stone recovered
     .mob Wug
 step
+    .zoneskip 1409,1
     #completewith Wug's ward
     .goto 1409,44.13,37.29,40 >>Enter the building
 step
+    .zoneskip 1409,1
     #requires Wug's ward
     .goto 1409,44.13,37.29
     >>Kill |cRXP_ENEMY_Wug|r.
@@ -1443,6 +1590,7 @@ step
     .complete 55990,2 --1/1 Wug's ward stone recovered
     .mob Wug
 step
+    .zoneskip 1409,1
     #completewith KillOgre
     >>Kill |cRXP_ENEMY_Ogres|r.
     .complete 55988,1 --8/8 Ogres slain
@@ -1450,6 +1598,7 @@ step
     .mob Ogre Chef
     .mob Ogre Shadowcaster
 step
+    .zoneskip 1409,1
     #completewith next
     #label Jugnug's ward
     >>Kill |cRXP_ENEMY_Jugnug|r.
@@ -1457,9 +1606,11 @@ step
     .complete 55990,1 --1/1 Jugnug's ward stone recovered
     .mob Jugnug
 step
+    .zoneskip 1409,1
     #completewith Jugnug's ward
     .goto 1409,47.57,34.17,40 >>Enter the building
 step
+    .zoneskip 1409,1
     #requires Jugnug's ward
     .goto 1409,47.57,34.17
     >>Kill |cRXP_ENEMY_Jugnug|r.
@@ -1467,6 +1618,7 @@ step
     .complete 55990,1 --1/1 Jugnug's ward stone recovered
     .mob Jugnug
 step
+    .zoneskip 1409,1
     #loop
     .goto 1409,47.21,36.44,15,0
     .goto 1409,46.26,39.71,15,0
@@ -1474,6 +1626,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Catapults|r.
     .complete 55989,1,3 --2/4 Catapults destroyed
 step
+    .zoneskip 1409,1
     #completewith next
     #label Grunk's ward
     >>Kill |cRXP_ENEMY_Grunk|r.
@@ -1481,9 +1634,11 @@ step
     .complete 55990,3 --1/1 Grunk's ward stone recovered
     .mob Grunk
 step
+    .zoneskip 1409,1
     #completewith Grunk's ward
     .goto 1409,42.80,41.00,40 >>Enter the building
 step
+    .zoneskip 1409,1
     #requires Grunk's ward
     .goto 1409,42.80,41.00
     >>Kill |cRXP_ENEMY_Grunk|r.
@@ -1491,14 +1646,17 @@ step
     .complete 55990,3 --1/1 Grunk's ward stone recovered
     .mob Grunk
 step
+    .zoneskip 1409,1
     .goto 1409,43.74,42.86
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Catapult|r.
     .complete 55989,1 --4/4 Catapults destroyed
 step
+    .zoneskip 1409,1
     #label KillOgre
     .goto 1409,41.81,42.88
     .turnin 56088 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chest|r.
 step
+    .zoneskip 1409,1
     #label Ogres
     #loop
     .goto 1409,44.91,33.42,40,0
@@ -1511,6 +1669,7 @@ step
     .mob Ogre Chef
     .mob Ogre Shadowcaster
 step
+    .zoneskip 1409,1
     #completewith next
     #label Catapult Destruction
     .goto 1409,43.78,34.67,20,0
@@ -1519,33 +1678,40 @@ step
     .target Captain Garrick
     .target Henry Garrick
 step
+    .zoneskip 1409,1
     #completewith Catapult Destruction
     .goto 1409,40.36,32.26,130 >>Follow the Arrow
 step
+    .zoneskip 1409,1
     #requires Catapult Destruction
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Henry Garrick|r.
     .turnin 55988 >>Turn in Like Ogres to the Slaughter
     .goto 1409,40.36,32.26
     .target +Henry Garrick
 step
+    .zoneskip 1409,1
     .goto 1409,40.07,31.96
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ogre Runestone|r.
     .complete 55990,4,1 --3/3 Disable runes holding Warlord Thunderwalker
 step
+    .zoneskip 1409,1
     .goto 1409,39.93,32.44
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ogre Runestone|r.
     .complete 55990,4,2 --1/3 Disable runes holding Warlord Thunderwalker
 step
+    .zoneskip 1409,1
     .goto 1409,39.73,32.04
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ogre Runestone|r.
     .complete 55990,4,3 --2/3 Disable runes holding Warlord Thunderwalker
     .timer 6.5,RP
 step
+    .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Garrick|r.
     .turnin 55989 >>Turn in Catapult Destruction
     .goto 1409,40.19,32.64
     .target +Captain Garrick
 step
+    .zoneskip 1409,1
     .goto 1409,39.93,32.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Kelra|r.
     .turnin 55990 >>Turn in Controlling their Stones
@@ -1569,12 +1735,14 @@ step
     .mob Darkmaul Centurion
     .mob Darkmaul Channeler
 step
+    .isInScenario 1779
     >>Go upstairs to the center of the room and wait for the short roleplay.
     *Kill |cRXP_ENEMY_Gor'groth|r and defeat |cRXP_ENEMY_Kalecgos|r.
     .complete 55992,2 --1/1 Gor'groth's final ritual stopped
     .mob Gor'groth
     .mob Kalecgos
 step
+    .isInScenario 1779
     #label Darkmaul Citadel
     >>Press the macro in the "Active Items Frame" to leave the dungeon.
     .complete 55992,3 --1/1 Speak with Captain Garrick to leave Darkmaul Citadel
@@ -1637,7 +1805,39 @@ step
     .turnin 87562 >>Turn in Aiding the Dragon Isles
     .target Toddy Whiskers
 ]])
+    -- No House Skip
+RXPGuides.RegisterGuide([[
+#retail
+#version 4
+#group RestedXP Speed Leveling
+#name a) No House Skip 
+#chapter
 
+step
+    .zoneskip 1409,1
+    .zone 2352 >>Enter Neighbourhood
+    .choose 5403
+    .zoneskip 2351
+step
+    .zoneskip 1409,1
+    .zone 2351 >>Enter Neighbourhood
+    .choose 5403
+    .zoneskip 2352
+step
+    .goto 2352,57.44,26.64
+    .zoneskip 2352,1
+    .zone 84 >>Click on the |cRXP_PICK_Portal|r
+    .skipto guide,RestedXP Speed Leveling\ba) DF Alliance Intro Midnight (A) << Alliance
+    .skipto guide,RestedXP Speed Leveling\b1) BfA Intro << Horde
+    .zoneskip 85
+step
+    .goto 2351,53.93,49.4
+    .zoneskip 2351,1
+    .zone 85 >>Click on the |cRXP_PICK_Portal|r
+    .skipto guide,RestedXP Speed Leveling\ba) DF Alliance Intro Midnight (A) << Alliance
+    .skipto guide,RestedXP Speed Leveling\b1) BfA Intro << Horde
+    .zoneskip 84
+]])
 --Death Knight Plaguelands: The Scarlet Enclave
 RXPGuides.RegisterGuide([[
 #retail
@@ -5019,14 +5219,14 @@ step << Evoker
     .use 1191808 -- Crimson Dracthyr Battlegear Leggings
     .use 1194335 -- Emerald Tear Necklace
     .use 1191811 -- Crimson Dracthyr Battlegear Bracers
-    .use 1194333 -- Ekrazathal’s Colored Fang
+    .use 1194333 -- Ekrazathal Colored Fang
     .use 1191805 -- Crimson Dracthyr Battlegear Hauberk
     .use 1191810 -- Crimson Dracthyr Battlegear Belt
     .use 1191806 -- Crimson Dracthyr Battlegear Grips
-    .use 1194109 -- Verdant Dracthyr’s Band
+    .use 1194109 -- Verdant Dracthyr Band
     .use 191812 -- Crimson Dracthyr Battlegear Treads
     .use 1193481 -- Emblazoned Ruby Staff
-    .use 1194422 -- Crimson Dracthyr’s Drape
+    .use 1194422 -- Crimson Dracthyr Drape
     .use 1193914 -- Crystalline Lapis
 step << Evoker Horde
     .goto 2109,47.50,84.52,-1
@@ -6487,7 +6687,7 @@ step
     .goto 378,67.77,22.77
     -- .goto 378,65.97,22.8
     >>Defeat |cRXP_ENEMY_Jaomin Ro|r.
-    *|cRXP_WARN_While fighting, move him to the bridge’s peak for a quick turn-in|r.
+    *|cRXP_WARN_While fighting, move him to the bridge peak for a quick turn-in|r.
     .complete 29409,1 --1/1 Defeat Jaomin Ro
 	.mob Jaomin Ro
 step
@@ -18522,7 +18722,7 @@ step
     #completewith Krennan Aranas
     #title |cFFFCDC00Run Fast|r
     .goto 202,55.79,80.07,40 >>Use the macro in the "Active Items Frame" to dismount and run to the questgiver.
-    *|cRXP_WARN_You may die; release and resurrect it’s still faster|r.
+    *|cRXP_WARN_You may die; release and resurrect it still faster|r.
     .macro Leave Vehicle,6656430 >>/leavevehicle
 step
     #requires Krennan Aranas
@@ -20750,7 +20950,7 @@ step
     #label Glaive Thrower
     >>Use |T236303:0|t[Glaive Barrage] (2) on cooldown; otherwise, use |T132330:0|t[Launch Glaive] (1).
     *Use |T136106:0|t[Double Speed] to sprint.
-    *Stay clear of the |cRXP_ENEMY_monsters|r. The |cRXP_FRIENDLY_Glaive Thrower|r is fragile; |cRXP_WARN_if it’s destroyed, return to pick up a new one|r.
+    *Stay clear of the |cRXP_ENEMY_monsters|r. The |cRXP_FRIENDLY_Glaive Thrower|r is fragile; |cRXP_WARN_if it destroyed, return to pick up a new one|r.
     .complete 24681,1 --Orc Raider slain (40)
     .complete 24681,2 --Wolfmaw Outrider slain (8)
     .complete 24681,3 --Orcish War Machine slain (4)
@@ -20773,7 +20973,7 @@ step
     .goto 179,28.83,39.97,30,0
     >>Use |T236303:0|t[Glaive Barrage] (2) on cooldown; otherwise, use |T132330:0|t[Launch Glaive] (1).
     *Use |T136106:0|t[Double Speed] to sprint.
-    *Stay clear of the |cRXP_ENEMY_monsters|r. The |cRXP_FRIENDLY_Glaive Thrower|r is fragile; |cRXP_WARN_if it’s destroyed, return to pick up a new one|r.
+    *Stay clear of the |cRXP_ENEMY_monsters|r. The |cRXP_FRIENDLY_Glaive Thrower|r is fragile; |cRXP_WARN_if it destroyed, return to pick up a new one|r.
     .complete 24681,1 --Orc Raider slain (40)
     .complete 24681,2 --Wolfmaw Outrider slain (8)
     .complete 24681,3 --Orcish War Machine slain (4)
@@ -21430,9 +21630,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .turnin 58208 >>Turn in Brace for Impact
     .target Thrall
--- step
---     #include RestedXP Speed Leveling\a) Exile's Reach@HousingSelect-HousingSelect
 step
+    #include RestedXP Speed Leveling\a) Exile's Reach@HousingSelect1-HousingSelect2
+step
+    .zoneskip 1409,1
     .goto 1409,61.88,82.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .accept 55122 >>Accept Murloc Mania
@@ -21441,12 +21642,14 @@ step
 step
     #include RestedXP Speed Leveling\a) Exile's Reach@Murlocs-Murlocs
 step
+    .zoneskip 1409,1
     .goto 1409,61.88,82.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .turnin 55122 >>Turn in Murloc Mania
     .accept 54951 >>Accept Emergency First Aid
     .target Thrall
 step
+    .zoneskip 1409,1
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bo|r , |cRXP_PICK_Mithdran Dawntracker|r, and |cRXP_PICK_Lana Jordan|r.
     .complete 54951,2 --1/1 First Aid Kit used on Kee-La
     .goto 1409,61.73,83.48,-1
@@ -21459,6 +21662,7 @@ step
     .target Mithdran Dawntracker
     .target Lana Jordan
 step
+    .zoneskip 1409,1
     .goto 1409,61.88,82.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .turnin 54951 >>Turn in Emergency First Aid
@@ -21467,6 +21671,7 @@ step
 step
     #include RestedXP Speed Leveling\a) Exile's Reach@expedition survivors-expedition survivors
 step
+    .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warlord Breka Grimaxe|r.
     .turnin 54952 >>Turn in Finding the Lost Expedition
     .accept 55174 >>Accept Cooking Meat
@@ -21475,17 +21680,20 @@ step
 step
     #include RestedXP Speed Leveling\a) Exile's Reach@Raw Meat-campfire
 step << Hunter
+    .zoneskip 1409,1
     .goto 1409,58.36,74.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Won'sa|r.
     .turnin 55174 >>Turn in Cooking Meat
     .timer 3,RP
     .target Won'sa
 step << Hunter
+    .zoneskip 1409,1
     .goto 1409,58.36,74.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Won'sa|r again |cRXP_WARN_after the roleplay|r.
     .accept 55173 >>Accept Northbound
     .target Won'sa
 step << !Hunter
+    .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Won'sa|r and |cRXP_FRIENDLY_Warlord Breka Grimaxe|r. << !Hunter
     .turnin 55174 >>Turn in Cooking Meat
     .goto 1409,58.36,74.47
@@ -21497,6 +21705,7 @@ step << !Hunter
 step
     #include RestedXP Speed Leveling\a) Exile's Reach@ClassQuests-ClassQuests
 step << !Hunter
+    .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warlord Breka Grimaxe|r and |cRXP_FRIENDLY_Won'sa|r |cRXP_WARN_after the roleplay|r.
     .turnin 59339 >>Turn in Enhanced Combat Tactics <<Monk
     .turnin 59254 >>Turn in Enhanced Combat Tactics <<!Hunter !Monk
@@ -21506,6 +21715,7 @@ step << !Hunter
     .goto 1409,58.36,74.48
     .target +Won'sa
 step
+    .zoneskip 1409,1
     .goto 1409,62.72,69.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r.
     .turnin 55173 >>Turn in Northbound
@@ -21516,6 +21726,7 @@ step
 step
     #include RestedXP Speed Leveling\a) Exile's Reach@HunterTameStart-HunterTameEnd
 step << Hunter
+    .zoneskip 1409,1
     .goto 1409,62.72,69.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r.
     .turnin 59342 >>Turn in Taming the Wilds
@@ -21525,6 +21736,7 @@ step << Hunter
 step
     #include RestedXP Speed Leveling\a) Exile's Reach@Quilboar Shadow Magic-QuilboarEnd
 step
+    .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r and |cRXP_FRIENDLY_Cork Fizzlepop|r.
     .turnin 55184 >>Turn in Forbidden Quilboar Shadow Magic
     .goto 1409,56.26,59.17
@@ -21535,32 +21747,38 @@ step
     .goto 1409,56.17,59.12
     .target +Cork Fizzlepop
 step
+    .zoneskip 1409,1
     .goto 1409,58.51,59.30
     .turnin 56579 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Chest|r
 step
+    .zoneskip 1409,1
     #completewith next
     #label The Choppy Booster Mk. 5
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 55193,1 --1/1 Use the The Choppy Booster Mk. 5 to scout the Area
 step
+    .zoneskip 1409,1
     #completewith The Choppy Booster Mk. 5
     .goto 1409,56.08,58.81
     .vehicle >>Click on |cRXP_PICK_The Choppy Booster Mk. 5|r
     .timer 32.5,RP
     .target The Choppy Booster Mk. 5
 step
+    .zoneskip 1409,1
     #requires The Choppy Booster Mk. 5
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .goto 1409,56.08,58.81
     .complete 55193,1 --1/1 Use the The The Choppy Booster Mk. 5 to scout the Area
     .timer 28,The Choppy Booster Mk. 5 Flight RP
 step
+    .zoneskip 1409,1
     .goto 1409,56.16,59.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cork Fizzlepop|r.
     .turnin 55193 >>Turn in The Choppy Booster Mk. 5
     .accept 56034 >>Accept Re-sizing the Situation
     .target Cork Fizzlepop
 step
+    .zoneskip 1409,1
     #loop
     .goto 1409,55.9,59.79,10,0
     .goto 1409,56.04,60.68,10,0
@@ -21576,21 +21794,25 @@ step
     .mob Wandering Boar
     .use 170557
 step
+    .zoneskip 1409,1
     .goto 1409,56.24,59.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .turnin 56034 >>Turn in Re-sizing the Situation
     .target Thrall
 step
+    .zoneskip 1409,1
     .goto 1409,56.17,59.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cork Fizzlepop|r.
     .accept 55879 >>Accept The Re-Deather
     .target Cork Fizzlepop
 step
+    .zoneskip 1409,1
     .goto 1409,56.06,58.79
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Choppy Booster Mk. 5|r.
     .complete 55879,1 --1/1 Ride the Giant Boar
     .target Choppy Booster Mk. 5
 step
+    .zoneskip 1409,1
     >>Use |T2735166:0|t[Re-sizer Blast] (1) on |cRXP_ENEMY_Monstrous Cadavers|r.
     .complete 55879,2 --8/8 Monstrous Cadaver slain
     .timer 12.5,RP
@@ -21598,27 +21820,32 @@ step
 step
     #include RestedXP Speed Leveling\a) Exile's Reach@GiantBoarEnd-GiantBoarEnd
 step
+    .zoneskip 1409,1
     .goto 1409,52.59,53.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
     .turnin 55879,1 >>Turn in The Re-Deather
     .target Wrathion
 step
+    .zoneskip 1409,1
     .goto 1409,52.17,55.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warlord Breka Grimaxe|r.
     .accept 59950 >>Accept Stocking Up on Supplies
     .target Warlord Breka Grimaxe
 step
+    .zoneskip 1409,1
     .goto 1409,52.46,55.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Provisioner Jin'hake|r and sell any item.
     .complete 55194,2 --Any Item sold to Provisioner Jin'hake
     .complete 55194,1 --Any Item purchased from Provisioner Jin'hake
     .target Provisioner Jin'hake
 step
+    .zoneskip 1409,1
     .goto 1409,52.17,55.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .turnin 59950 >>Turn in Stocking Up on Supplies
     .target Thrall
 step << Warrior/Warlock/Paladin/Priest/Rogue
+    .zoneskip 1409,1
     .goto 1409,52.03,55.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grunt Throg|r.
     .accept 58917 >>Accept A Rogue's End << Rogue
@@ -21630,11 +21857,13 @@ step << Warrior/Warlock/Paladin/Priest/Rogue
 step << Shaman
     #include RestedXP Speed Leveling\a) Exile's Reach@GhostWolf-GhostWolf
 step
+    .zoneskip 1409,1
     .goto 1409,52.89,56.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Jordan|r.
     .accept 59948 >>Accept Westward Bound
     .target Lana Jordan
 step
+    .zoneskip 1409,1
     .goto 1409,53.79,52.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shuja Grimaxe|r.
     .accept 55196 >>Accept The Harpy Problem
@@ -21647,16 +21876,19 @@ step << Warlock
 step << Warrior
     #include RestedXP Speed Leveling\a) Exile's Reach@Hjalmar's Final Execution-Execute
 step << !Shaman\!Warlock\!Warrior
+    .zoneskip 1409,1
     .goto 1409,55.71,48.32,15,0
     .goto 1409,58.20,50.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Lightspawn|r.
     .accept 54933 >>Accept Freeing the Light
     .target Lightspawn
 step << !Shaman\!Warlock\!Warrior
+    .zoneskip 1409,1
     .goto 1409,57.42,49.68
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Orb|r.
     .complete 54933,1 --1/1 First necrotic energy dispersed
 step
+    .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bo|r and |cRXP_FRIENDLY_Shuja Grimaxe|r.
     .turnin 55196 >>Turn in The Harpy Problem
     .accept 55764 >>Accept Harpy Culling
@@ -21669,6 +21901,7 @@ step
 step
     #include RestedXP Speed Leveling\a) Exile's Reach@HarpiesAreaStart-HarpiesAreaEnd
 step
+    .zoneskip 1409,1
     .goto 1409,54.29,41.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert Gloomburst|r.
     *Kill the enemy waves, then kill |cRXP_ENEMY_Bloodbeak|r when he appears.
@@ -21679,6 +21912,7 @@ step
 step
     #include RestedXP Speed Leveling\a) Exile's Reach@HarpiesAreaEnd2-HarpiesAreaEnd2
 step
+    .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert Gloomburst|r, |cRXP_FRIENDLY_Bo|r, and |cRXP_FRIENDLY_Shuja Grimaxe|r.
     .turnin 55763 >>Turn in The Rescue of Meredy Huntswell
     .goto 1409,56.90,46.14
@@ -21701,6 +21935,7 @@ step
 step << Shaman
     #include RestedXP Speed Leveling\a) Exile's Reach@Capturedghostwolves1-Capturedghostwolves2
 step << Priest
+    .zoneskip 1409,1
     .goto 1409,56.12,53.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sha'zul|r.
     .turnin 58953 >>Turn in A Priest's End
@@ -21709,25 +21944,30 @@ step << Priest
 step << Priest
     #include RestedXP Speed Leveling\a) Exile's Reach@PriestsEnd1-PriestsEnd1
 step << Priest
+    .zoneskip 1409,1
     .goto 1409,56.12,53.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sha'zul|r.
     .turnin 58960 >>Turn in Resurrecting the Recruits
     .target Sha'zul
 step << Warrior
+    .zoneskip 1409,1
     .goto 1409,52.08,55.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grunt Throg|r.
     .turnin 58915 >>Turn In Hjalmar's Final Execution
     .target Grunt Throg
 step << !Shaman
+    .zoneskip 1409,1
     .goto 1409,52.18,55.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .turnin 55882 >>Turn in Message to Base
     .target Thrall
 step << Rogue
+    .zoneskip 1409,1
     #completewith RogueExilesEnd
     +Beaware of |cRXP_ENEMY_Killclaw the Terrible|r don't pull him.
     .mob Killclaw the Terrible
 step << Rogue
+    .zoneskip 1409,1
     .goto 1409,47.95,54.8,15,0
     .goto 1409,45.64,56.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drizza Sidestabber|r.
@@ -21738,6 +21978,7 @@ step << Rogue
 step << Rogue
     #include RestedXP Speed Leveling\a) Exile's Reach@RogueExilesStart1-RogueExilesEnd1
 step << Rogue
+    .zoneskip 1409,1
     .goto 1409,45.66,56.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drizza Sidestabber|r.
     .turnin 58917 >>Turn in A Rogue's End
@@ -21746,11 +21987,13 @@ step << Rogue
 step << Rogue
     #include RestedXP Speed Leveling\a) Exile's Reach@RogueExilesStart2-RogueExilesEnd2
 step << Hunter
+    .zoneskip 1409,1
     .goto 1409,52.56,55.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r.
     .accept 59355 >>Accept A Hunter's Trap
     .target Mithdran Dawntracker
 step << Hunter
+    .zoneskip 1409,1
     .goto 1409,52.16,55.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert Gloomburst|r.
     .complete 59355,1 --1/1 Ice mote received from Herbert Gloomburst
@@ -21759,6 +22002,7 @@ step << Hunter
 step << Hunter
     #include RestedXP Speed Leveling\a) Exile's Reach@Rusted Chain-Old Spring
 step << Hunter
+    .zoneskip 1409,1
     .goto 1409,52.56,55.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r.
     .turnin 59355 >>Turn in A Hunter's Trap
@@ -21767,6 +22011,7 @@ step << Hunter
 step << Hunter
     #include RestedXP Speed Leveling\a) Exile's Reach@Freezing trap-Freezing trap
 step << Hunter
+    .zoneskip 1409,1
    .goto 1409,52.56,55.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r |cRXP_WARN_after a short roleplay|r.
     .turnin 59356 >>Turn in Hunting the Stalker
@@ -21775,17 +22020,20 @@ step << Hunter
 step << Hunter
     #include RestedXP Speed Leveling\a) Exile's Reach@DismissPet-DismissPet
 step << Hunter
+    .zoneskip 1409,1
     #completewith next
     #label Art of Taming
     #hidewindow
     .complete 60168,2 -- Speak with Mithdran Dawntracker to summon and tame your new pet
 step << Hunter
+    .zoneskip 1409,1
     #completewith Art of Taming
     .goto 1409,52.56,55.45
     .gossipoption 52668 >>Talk to |cRXP_FRIENDLY_Mithdran Dawntracker|r.
     .timer 7,The Art of Taming RP
     .target Mithdran Dawntracker
 step << Hunter
+    .zoneskip 1409,1
     #requires Art of Taming
     .goto 1409,52.56,55.45
     >>|cRXP_WARN_Dismiss your Pet if it's active|r.
@@ -21810,39 +22058,46 @@ step << Hunter
     .mob Tiger << NightElf
     .mob Boar << BloodElf
 step << Hunter
+    .zoneskip 1409,1
     .goto 1409,52.56,55.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r.
     .complete 60168,3 --Speak with Austin to learn about pet stables
     .skipgossipid 52666
     .target Mithdran Dawntracker
 step << Hunter
+    .zoneskip 1409,1
     .goto 1409,52.56,55.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithdran Dawntracker|r.
     .turnin 60168 >>Turn in Mithdran Dawntracker
     .target Mithdran Dawntracker
 step << Monk
+    .zoneskip 1409,1
     .goto 1409,52.04,55.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bo|r.
     .accept 59347 >>Accept A Monk's Focus
     .timer 34,A Monk's Focus RP
     .target Bo
 step << Monk
+    .zoneskip 1409,1
     #completewith next
     #label Meditate with Bo
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 59347,1 --1/1 Meditate with Bo
 step << Monk
+    .zoneskip 1409,1
     #completewith Meditate with Bo
     .goto 1409,52.62,49.49
     .gossipoption 52640 >>Talk to |cRXP_FRIENDLY_Bo|r |cRXP_WARN_after the roleplay|r.
     .timer 42,A Monk's Focus RP
 step << Monk
+    .zoneskip 1409,1
     #requires Meditate with Bo
     .goto 1409,52.62,49.49
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 59347,1 --1/1 Meditate with Bo
     .target Bo
 step << Monk
+    .zoneskip 1409,1
     .goto 1409,52.63,49.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bo|r.
     .turnin 59347 >>Turn in A Monk's Focus
@@ -21850,16 +22105,19 @@ step << Monk
     .timer 5,One Last Spar RP
     .target Bo
 step << Monk
+    .zoneskip 1409,1
     .goto 1409,53.72,50.24
     >>Defeat |cRXP_ENEMY_Bo|r use |T606552:0|t[Touch of Death] |cRXP_WARN_when you can|r.
     .complete 59349,1 --1/1 Touch of Death used on Bo
     .mob Bo
 step << Monk
+    .zoneskip 1409,1
     .goto 1409,52.17,55.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .turnin 59349 >>Turn in One Last Spar
     .target Thrall
 step << Mage
+    .zoneskip 1409,1
     .goto 1409,52.16,55.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert Gloomburst|r.
     .accept 59352 >>Accept A Mage's Knowledge
@@ -21867,17 +22125,20 @@ step << Mage
 step << Mage
     #include RestedXP Speed Leveling\a) Exile's Reach@Spell Book-Spell Book
 step << Mage
+    .zoneskip 1409,1
     .goto 1409,52.16,55.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert Gloomburst|r.
     .turnin 59352 >>Turn in A Mage's Knowledge
     .timer 12,RP
     .target Herbert Gloomburst
 step << Mage
+    .zoneskip 1409,1
     .goto 1409,52.16,55.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert Gloomburst|r.
     .accept 59354 >>Accept The Best Way to Use Sheep
     .target Herbert Gloomburst
 step << Mage
+    .zoneskip 1409,1
     .goto 1409,52.16,55.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert Gloomburst|r.
     .complete 59354,1 --Speak with Meredy to being sparring (1)
@@ -21885,6 +22146,7 @@ step << Mage
     .skipgossipid 52665
     .target Herbert Gloomburst
 step << Mage
+    .zoneskip 1409,1
     >>Follow |cRXP_FRIENDLY_Herbert Gloomburst|r and |cRXP_FRIENDLY_Grunt Throg|r.
     *Use |T136071:0|t[Polymorph] on one of them, wait a moment, then attack the polymorphed one.
     .complete 59354,2 --Practice Polymorph with Meredy or Cole
@@ -21893,11 +22155,13 @@ step << Mage
     .target Herbert Gloomburst
     .target Grunt Throg
 step << Mage
+    .zoneskip 1409,1
     .goto 1409,52.16,55.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert Gloomburst|r.
     .turnin 59354 >>Turn in The Best Way to Use Sheep
     .target Herbert Gloomburst
 step
+    .zoneskip 1409,1
     #completewith next
     #label Who Lurks in the Pit1
     .goto 1409,52.36,56.6,10,0 <<!Shaman/!Rogue
@@ -21908,10 +22172,12 @@ step
     .target Lana Jordan
     .target Won'sa
 step
+    .zoneskip 1409,1
     #hidewindow
     #completewith Who Lurks in the Pit1
     .goto 1409,51.18,59.61,80 >>Follow the Arrow
 step
+    .zoneskip 1409,1
     #requires Who Lurks in the Pit1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Jordan|r.
     .turnin 55965 >>Turn in Westward Bound
@@ -21921,6 +22187,7 @@ step
 step
     #include RestedXP Speed Leveling\a) Exile's Reach@Trapped Expedition-Expedition Member4
 step
+    .zoneskip 1409,1
     #completewith next
     #label Hrun
     .goto 1409,50.53,59.72,10,0
@@ -21929,10 +22196,12 @@ step
     .complete 55639,2 --Defeat Hrun to rescue Crenna Earth-Daughter(1)
     .mob Hrun the Exiled
 step
+    .zoneskip 1409,1
     #completewith Hrun
     #hidewindow
     .goto 1409,47.79,60.27,60 >>Follow the Arrow
 step
+    .zoneskip 1409,1
     #requires Hrun
     .goto 1409,47.79,60.27
     >>Kill |cRXP_ENEMY_Hrun the Exiled|r.
@@ -21940,28 +22209,33 @@ step
     .timer 5.5,RP
     .mob Hrun the Exiled
 step
+    .zoneskip 1409,1
     #completewith next
     #label Crenna Earth-Daughter
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 55639,3 --Ride Crenna Earth-Daughter to escape (1)
     .target Crenna Earth-Daughter
 step
+    .zoneskip 1409,1
     #completewith Crenna Earth-Daughter
     .goto 1409,47.79,60.27
     .cast 325531 >>Click on the |cRXP_PICK_Crenna Earth-Daughter|r
     .timer 52.5,RP
 step
+    .zoneskip 1409,1
     #requires Crenna Earth-Daughter
     >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 55639,3 --Ride Crenna Earth-Daughter to escape (1)
     .timer 28,RP << Druid
     .target Crenna Earth-Daughter
 step << Rogue
+    .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grunt Throg|r
     .turnin 58933 >>Turn in The Deadliest of Poisons
     .goto 1409,52.03,55.45
     .target Grunt Throg
 step << Shaman
+    .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Ghost Wolf|r and |cRXP_FRIENDLY_Thrall|r.
     .turnin 59002 >>Turn in A Shaman's Duty to learn Ghost Wolf
     .goto 1409,52.30,55.66
@@ -21972,22 +22246,26 @@ step << Shaman
     .goto 1409,52.18,55.35
     .target +Thrall
 step << !Shaman
+    .zoneskip 1409,1
     .goto 1409,52.18,55.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .turnin 55639 >>Turn in Who Lurks in the Pit
     .accept 85678 >>Accept Repair Yourself
     .target Thrall
 step
+    .zoneskip 1409,1
     .goto 1409,52.47,55.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Provisioner Jin'hake|r and |cRXP_WARN_repair all items|r.
     .complete 85678,1 --1/1 Speak With Quartmaster Richter to Repair All Items
     .target Provisioner Jin'hake
 step
+    .zoneskip 1409,1
     .goto 1409,52.18,55.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .turnin 85678 >>Turn in Repair Yourself
     .target Thrall
 step << Druid
+    .zoneskip 1409,1
     .goto 1409,52.33,55.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crenna Earth-Daughter|r.
     *|cRXP_WARN_You must wait for the roleplay before able to speak to her|r.
@@ -21996,16 +22274,19 @@ step << Druid
 step
     #include RestedXP Speed Leveling\a) Exile's Reach@DruidStone-DruidStone
 step << Druid
+    .zoneskip 1409,1
     .goto 1409,45.51,49.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crenna Earth-Daughter|r.
     .turnin 59350 >>Turn in A Druid's Form
     .target Crenna Earth-Daughter
 step
+    .zoneskip 1409,1
     .goto 1409,52.18,55.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .accept 56344 >>Accept To Darkmaul Citadel
     .target Thrall
 step
+    .zoneskip 1409,1
     #completewith next
     #label DarkMaul Citadal Horde
     .goto 1409,49.55,52.49,20,0
@@ -22015,10 +22296,12 @@ step
     .disablecheckbox
     .target Thrall
 step
+    .zoneskip 1409,1
     #hidewindow
     #completewith DarkMaul Citadal Horde
     .goto 1409,48.9,49.51,90 >>Follow the Arrow
 step
+    .zoneskip 1409,1
     #requires DarkMaul Citadal Horde
     .goto 1409,48.9,49.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
@@ -22026,16 +22309,19 @@ step
     .accept 55981 >>Accept Right Beneath Their Eyes
     .target Thrall
 step
+    .zoneskip 1409,1
     #completewith next
     #label transformation spell
     >>After talking to him |cRXP_WARN_run away quickly|r.
     .complete 55981,1 --1/1 Ask Meredy to perform ogre transformation spell
 step
+    .zoneskip 1409,1
     #completewith transformation spell
     .goto 1409,48.94,49.46
     .gossipoption 54297 >>Talk to |cRXP_FRIENDLY_Herbert Gloomburst|r.
     .target Herbert Gloomburst
 step
+    .zoneskip 1409,1
     #requires transformation spell
     .goto 1409,45.72,44.35
     >>After talking to him |cRXP_WARN_run away quickly|r.
@@ -22045,6 +22331,7 @@ step
 step
     #include RestedXP Speed Leveling\a) Exile's Reach@DarkmaulCitadelStart-DarkmaulCitadelEnd
 step
+    .zoneskip 1409,1
     #completewith next
     #label Right Beneath Their Eyes3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
@@ -22053,6 +22340,7 @@ step
     .disablecheckbox
     .target Thrall
 step
+    .zoneskip 1409,1
     #completewith Right Beneath Their Eyes3
     .goto 1409,45.95,36.07,15,0
     .goto 1409,40.16,32.35
@@ -22060,6 +22348,7 @@ step
     .complete 55981,6 --Reach the Citadel entrance
     .timer 7.5, RP
 step
+    .zoneskip 1409,1
     #requires Right Beneath Their Eyes3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .turnin 55981 >>Turn in Right Beneath Their Eyes
@@ -22067,6 +22356,7 @@ step
     .goto 1409,40.3,32.46
     .target Thrall
 step
+    .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Breka Grimaxe|r and |cRXP_FRIENDLY_Shuja Grimaxe|r.
     .accept 55988 >>Accept Like Ogres to the Slaughter
     .goto 1409,40.24,32.59
@@ -22077,6 +22367,7 @@ step
 step
     #include RestedXP Speed Leveling\a) Exile's Reach@Wug's ward-Ogres
 step
+    .zoneskip 1409,1
     #completewith next
     #label Catapult Destruction
     .goto 1409,43.78,34.67,20,0
@@ -22084,33 +22375,40 @@ step
     .turnin 55989 >>Turn in Catapult Destruction
     .target Shuja Grimaxe
 step
+    .zoneskip 1409,1
     #completewith Catapult Destruction
     .goto 1409,40.3,32.71,130 >>Follow the Arrow
 step
+    .zoneskip 1409,1
     #requires Catapult Destruction
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shuja Grimaxe|r.
     .turnin 55989 >>Turn in Catapult Destruction
     .goto 1409,40.3,32.71
     .target Shuja Grimaxe
 step
+    .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Breka Grimaxe|r.
     .turnin 55988 >>Turn in Like Ogres to the Slaughter
     .goto 1409,40.19,32.64
     .target Breka Grimaxe
 step
+    .zoneskip 1409,1
     .goto 1409,39.96,32.45
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ogre Runestone|r.
     .complete 55990,4,1 --3/3 Disable runes holding Warlord Thunderwalker
 step
+    .zoneskip 1409,1
     .goto 1409,39.76,32.07
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ogre Runestone|r.
     .complete 55990,4,2 --1/3 Disable runes holding Warlord Thunderwalker
 step
+    .zoneskip 1409,1
     .goto 1409,40.08,32
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ogre Runestone|r.
     .complete 55990,4,3 --2/3 Disable runes holding Warlord Thunderwalker
     .timer 5.5,RP
 step
+    .zoneskip 1409,1
     .goto 1409,39.93,32.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warlord Mulgrin Thunderwalker|r.
     .turnin 55990 >>Turn in Controlling their Stones
@@ -22119,6 +22417,7 @@ step
 step
     #include RestedXP Speed Leveling\a) Exile's Reach@Controlling their Stones-Darkmaul Citadel
 step
+    .zoneskip 1409,1
     .goto 1409,39.65,31.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r.
     .turnin 55992 >>Turn in Dungeon: Darkmaul Citadel
@@ -22173,7 +22472,6 @@ step
     .turnin 90843 >>Turn in Aiding the Dragon Isles
     .target Naleidea Rivergleam
 step
-    .zoneskip 2022,1
     .zone 2351 >>Teleport to a Neighbourhood with the House finder, not |T7252953:0|t[Teleport to Plot] then take the |cRXP_PICK_Stormwind Portal|r.
     .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLICK HERE FOR VIDEO
     .macro House Teleport, 975747 >>/run C_Housing.StartTutorial()
