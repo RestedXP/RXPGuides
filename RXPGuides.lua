@@ -1615,7 +1615,8 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
                          addon.settings.profile.hideGuideWindow or
                          not (addon.RXPFrame and addon.RXPFrame:IsShown())
 
-    C_Timer.After(2, function()
+    local delay = addon.player.hardcore and 5 or 2
+    C_Timer.After(delay, function()
         addon.player.maxlevel = _G.GetMaxPlayerLevel()
 
         if addon.LoadDefaultGuide and
