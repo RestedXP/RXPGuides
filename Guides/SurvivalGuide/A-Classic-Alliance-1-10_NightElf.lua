@@ -1329,6 +1329,7 @@ step << Druid
 step << Hunter/Warrior/Priest
     .goto Darnassus,57.56,46.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    .skipgossip 11866,1
     .train 227 >>Train Staves
     >>If you have a Staff in your bags, equip it << Hunter
     .target Ilyenia Moonfire

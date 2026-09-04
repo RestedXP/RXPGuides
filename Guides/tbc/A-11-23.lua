@@ -2458,6 +2458,7 @@ step << !NightElf Hunter
     .target Silvaria
 step << !NightElf Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    .skipgossip 11866,1
     .goto Darnassus,57.56,46.72
     .train 264 >> Train Bows
     .train 227 >> Train Staves
@@ -4772,6 +4773,7 @@ step
     .accept 942 >> Accept The Absent Minded Prospector
 step << Mage/Priest/Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    .skipgossip 11866,1
     .goto Darnassus,57.56,46.72
     .train 227 >> Train Staves
     .target Ilyenia Moonfire
@@ -5846,6 +5848,7 @@ step
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    .skipgossip 11866,1
     .goto Darnassus,57.56,46.72
     .train 227 >> Train Staves
     .target Ilyenia Moonfire

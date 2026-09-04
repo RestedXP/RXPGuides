@@ -272,6 +272,7 @@ step << NightElf Warrior
     .target Arias'ta Bladesinger
 step << NightElf Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    .skipgossip 11866,1
     .goto Darnassus,57.56,46.72
     .train 2567 >> Train Thrown
     .target Ilyenia Moonfire

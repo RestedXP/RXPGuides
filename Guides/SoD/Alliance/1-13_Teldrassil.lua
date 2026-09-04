@@ -1696,6 +1696,7 @@ step << Druid
     #season 2
     .goto Darnassus,57.56,46.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    .skipgossip 11866,1
     .train 227 >>Train Staves << Warrior
     .train 2567 >> Train Thrown << Warrior
     .target Ilyenia Moonfire
@@ -2632,6 +2633,7 @@ step << Hunter
 step << Hunter/Warrior/Priest/Sod Rogue
     .goto Darnassus,57.56,46.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    .skipgossip 11866,1
     .train 227 >>Train Staves << Hunter/Warrior/Priest
     .train 265 >>Train Bows << Sod Rogue
     >>If you have a Staff in your bags, equip it << Hunter

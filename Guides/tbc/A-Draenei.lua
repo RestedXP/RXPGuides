@@ -4315,6 +4315,7 @@ step << Hunter
     #label TrainWeps
     .goto Darnassus,57.56,46.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    .skipgossip 11866,1
     .train 264 >> Train Bows
     .train 227 >> Train Staves
     .target Ilyenia Moonfire
@@ -5133,6 +5134,7 @@ step << Warrior
     .zoneskip Darnassus,1
 step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    .skipgossip 11866,1
     .goto Darnassus,57.56,46.72
     .train 227 >> Train Staves
     .target Ilyenia Moonfire
