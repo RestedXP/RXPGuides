@@ -839,7 +839,7 @@ step
     .target 碎牙
 step << Warlock
     #completewith next
-    >>击杀 |cRXP_ENEMY_Bristleback Quillboars|r。拾取他们的 |cRXP_LOOT_獠牙|r
+    >>击杀 |cRXP_ENEMY_Bristleback Quilboars|r。拾取他们的 |cRXP_LOOT_獠牙|r
     >>|cRXP_WARN_Save the|r |T134128:0|t[|cRXP_LOOT_血岩碎片|r] |cRXP_WARN_you get|r
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob 刺背寻水者
@@ -872,7 +872,7 @@ step
     .goto The Barrens,43.11,48.70,60,0
     .goto The Barrens,43.40,52.22,60,0
     .goto The Barrens,43.00,55.21,60,0
-    >>击杀 |cRXP_ENEMY_Bristleback Quillboars|r。拾取他们的 |cRXP_LOOT_獠牙|r
+    >>击杀 |cRXP_ENEMY_Bristleback Quilboars|r。拾取他们的 |cRXP_LOOT_獠牙|r
     >>|cRXP_WARN_Save the|r |T134128:0|t[|cRXP_LOOT_血岩碎片|r] |cRXP_WARN_you get|r
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob 刺背寻水者

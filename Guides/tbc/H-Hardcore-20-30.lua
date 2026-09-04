@@ -839,7 +839,7 @@ step
     .target Mangletooth
 step << Warlock
     #completewith next
-    >>Kill |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r
+    >>Kill |cRXP_ENEMY_Bristleback Quilboars|r. Loot them for their |cRXP_LOOT_Tusks|r
     >>|cRXP_WARN_Save the|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r] |cRXP_WARN_you get|r
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob +Bristleback Water Seeker
@@ -872,7 +872,7 @@ step
     .goto The Barrens,43.11,48.70,60,0
     .goto The Barrens,43.40,52.22,60,0
     .goto The Barrens,43.00,55.21,60,0
-    >>Kill |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r
+    >>Kill |cRXP_ENEMY_Bristleback Quilboars|r. Loot them for their |cRXP_LOOT_Tusks|r
     >>|cRXP_WARN_Save the|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r] |cRXP_WARN_you get|r
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob +Bristleback Water Seeker
@@ -916,7 +916,7 @@ step
     .mob Ornery Plainstrider
 step
     .goto The Barrens,44.55,59.27
-    >>Kill |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for a |T134128:0|t[|cRXP_LOOT_Blood Shard|r
+    >>Kill |cRXP_ENEMY_Bristleback Quilboars|r. Loot them for a |T134128:0|t[|cRXP_LOOT_Blood Shard|r
     .collect 5075,1,5052,1 --Blood Shard (1)
     .mob Bristleback Water Seeker
     .mob Bristleback Thornweaver
