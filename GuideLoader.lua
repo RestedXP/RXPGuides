@@ -477,7 +477,7 @@ addon.importBufferSize = 0
 local showConfigFrame = false
 local importIndex = 0
 local guideContent,guideLength,guideId
-function addon.ImportString(str, workerFrame, showFrame)
+function addon.ImportString(str, showFrame)
     showConfigFrame = showFrame
     importIndex = 0
     local errorMsg
@@ -518,11 +518,8 @@ function addon.ImportString(str, workerFrame, showFrame)
     addon.importBufferSize = #importBuffer
 
     if addon.importBufferSize > 0 then
-        if workerFrame then
-            workerFrame:SetScript("OnUpdate", addon.ProcessInputBuffer)
-        else
-            while addon.ProcessInputBuffer() do end
-        end
+        addon.workerFrame:SetScript("OnUpdate", addon.ProcessInputBuffer)
+        addon.workerFrame:Show()
     end
 
     if not errorMsg then return true end
@@ -545,11 +542,13 @@ function addon.ProcessInputBuffer(workerFrame)
                 L("Loading Guides") .. "... (%d/%d)",
                 addon.importBufferSize - #importBuffer, addon.importBufferSize)
         end
-        return true
-    elseif workerFrame then
+
+        return
+    else
         showConfigFrame = false
         importIndex = 0
         workerFrame:SetScript("OnUpdate", nil)
+        workerFrame:Hide()
         if guideContent or guideLength or guideId then
             addon.db.profile.guideContent = guideContent
             addon.db.profile.guideLength = guideLength
@@ -564,8 +563,6 @@ function addon.ProcessInputBuffer(workerFrame)
     end
 
     addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
-
-    return false
 end
 
 local function LoadGuide(guideData,n)
@@ -745,9 +742,8 @@ function addon.LoadCachedGuides()
             guideLength = n
             guideContent = content
 
-            local isValid = addon.ImportString(string,addon.RXPFrame,true)
+            local isValid = addon.ImportString(string,true)
             if isValid then
-                addon.RXPFrame:Show()
                 addon.db.profile.guides = {}
             end
             --print(addon.string:len())
