@@ -855,6 +855,8 @@ function addon.settings:CreateImportOptionsPanel()
     end
 
     function ProcessBuffer(this)
+        if this then this:SetScript('OnUpdate', nil) end
+
         importCache.bufferString = table.concat(importCache.bufferData)
         if #importCache.bufferString > 500 then
             addon.settings:UpdateImportStatusHistory(
@@ -868,7 +870,6 @@ function addon.settings:CreateImportOptionsPanel()
         end
         if this then
             this:SetMaxBytes(0)
-            this:SetScript('OnUpdate', nil)
             this:ClearFocus()
         end
         importCache.bufferData = {}
