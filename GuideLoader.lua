@@ -476,8 +476,24 @@ local importBuffer = {}
 addon.importBufferSize = 0
 local showConfigFrame = false
 local importIndex = 0
+local scriptErrorsBeforeImport
 local guideContent,guideLength,guideId
+
+function addon.RestoreScriptErrorSetting()
+    if scriptErrorsBeforeImport == "0" then
+        _G.SetCVar("scriptErrors", scriptErrorsBeforeImport)
+    end
+
+    scriptErrorsBeforeImport = nil
+end
+
 function addon.ImportString(str, showFrame)
+    scriptErrorsBeforeImport = _G.GetCVar("scriptErrors")
+
+    if scriptErrorsBeforeImport == "0" then
+        _G.SetCVar("scriptErrors", "1")
+    end
+
     showConfigFrame = showFrame
     importIndex = 0
     local errorMsg
@@ -486,9 +502,12 @@ function addon.ImportString(str, showFrame)
     local nGuides = str:match("^(%d+)|")
     local validHash = str:match("|(%d+):")
     local base = str:match("|(%d+)$")
+
     if not nGuides or not base or not validHash then
-        addon.settings:UpdateImportStatusHistory(
-                                                     L"Incomplete or invalid encoded string")
+        addon.settings:UpdateImportStatusHistory(L"Incomplete or invalid encoded string")
+
+        addon.RestoreScriptErrorSetting()
+
         return false, L("Incomplete or invalid encoded string")
     end
 
@@ -496,6 +515,9 @@ function addon.ImportString(str, showFrame)
         addon.settings:UpdateImportStatusHistory(
             L"Incompatible guide game %d version vs %d", tonumber(base),
             addon.version)
+
+        addon.RestoreScriptErrorSetting()
+
         return false, fmt(L"Incompatible guide, for %d version vs %d",
                           tonumber(base), addon.version)
     end
@@ -520,6 +542,8 @@ function addon.ImportString(str, showFrame)
     if addon.importBufferSize > 0 then
         addon.workerFrame:SetScript("OnUpdate", addon.ProcessInputBuffer)
         addon.workerFrame:Show()
+    else
+        addon.RestoreScriptErrorSetting()
     end
 
     if not errorMsg then return true end
@@ -545,6 +569,8 @@ function addon.ProcessInputBuffer(workerFrame)
 
         return
     else
+        addon.RestoreScriptErrorSetting()
+
         showConfigFrame = false
         importIndex = 0
         workerFrame:SetScript("OnUpdate", nil)

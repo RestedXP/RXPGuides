@@ -561,8 +561,19 @@ function addon.settings:UpdateImportStatusHistory(data, ...)
 end
 
 --importCache.widget.obj.button:GetScript("OnClick")
-function importCache.validate(self)
-    local status, errorMsg = addon.settings.ProcessImportBox(self)
+function importCache.validate()
+    local success, status, errorMsg = xpcall(addon.settings.ProcessImportBox, function(errorMsg)
+        geterrorhandler()(errorMsg)
+
+        return tostring(errorMsg)
+    end)
+
+    if not success then
+        addon.RestoreScriptErrorSetting()
+        addon.settings:UpdateImportStatusHistory("%s", status)
+        errorMsg = L("Guide import failed due to a Lua error.")
+    end
+
     importCache.bufferString = ""
     importCache.bufferData = {}
     -- Gets disabled on paste, re-enable after processing completes

@@ -165,6 +165,7 @@ L["Apply the V2 style to RestedXP menus"] = "Apply the V2 style to RestedXP menu
 L["Share your Active Step with party members"] = "Share your Active Step with party members"
 L["Please restart your game client and try again"] = "Please restart your game client and try again"
 L["Failed to Import Guides: Invalid Import String"] = "Failed to Import Guides: Invalid Import String"
+L["Guide import failed due to a Lua error."] = "Guide import failed due to a Lua error."
 L["Guide Import"] = "Guide Import"
 L["Paste encoded strings"] = "Paste encoded strings"
 L["Guides to import"] = "Guides to import"
