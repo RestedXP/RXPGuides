@@ -5,6 +5,18 @@ local _G = _G
 local UnitInRaid = UnitInRaid
 local fmt = string.format
 
+function addon.safeCall(callback, ...)
+    local args = {...}
+
+    return xpcall(function() return callback(unpack(args)) end, function(message)
+        message = tostring(message)
+        local handler = geterrorhandler()
+        pcall(handler, message)
+
+        return message
+    end)
+end
+
 local RegisterMessage_OLD = addon.RegisterMessage
 local rand, tinsert, select = math.random, table.insert, _G.select
 local IsAddOnLoadOnDemand = C_AddOns and C_AddOns.IsAddOnLoadOnDemand or _G.IsAddOnLoadOnDemand
