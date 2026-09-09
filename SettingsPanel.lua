@@ -37,11 +37,10 @@ local loadedProfileKey
 local L = addon.locale.Get
 
 addon.settings = addon:NewModule("Settings", "AceConsole-3.0")
+if not addon.settings.gui then addon.settings.gui = {} end
 addon.settings.enabledBetaFeatures = {
     ["Guide Window v2"] = "Allow the Guide Window and Active Steps v2", --GuideWindow/addon.v2
 }
-
-if not addon.settings.gui then addon.settings.gui = {} end
 
 function addon.settings.OpenSettings(panelName)
 
@@ -249,7 +248,6 @@ end
 
 function addon.settings:InitializeSettings()
     self:CreateAceOptionsPanel()
-    addon.guideImporter:CreateOptionsPanel()
     self:MigrateLegacySettings()
     self:MigrateProfile()
     self:LoadTextColors()
