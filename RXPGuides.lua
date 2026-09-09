@@ -1689,7 +1689,11 @@ function addon:PLAYER_REGEN_ENABLED(...)
 
         addon.settingsPanelAfterCombat = nil
 
-        addon.settings.OpenSettings(panelName ~= true and panelName)
+        if panelName == "Import" then
+            addon.guideImporter:Open()
+        else
+            addon.settings.OpenSettings()
+        end
     end
 end
 

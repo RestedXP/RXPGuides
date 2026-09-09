@@ -2679,7 +2679,7 @@ function RXPFrame:GenerateMenuTable(menu)
         text = L("Import guide"),
         notCheckable = 1,
         func = function()
-            addon.settings.OpenSettings('Import')
+            addon.guideImporter:Open()
         end
     })
 

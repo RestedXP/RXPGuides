@@ -5,7 +5,6 @@ local _G = _G
 local AceConfig = LibStub("AceConfig-3.0")
 local LibDBIcon = LibStub("LibDBIcon-1.0")
 local LibDataBroker = LibStub("LibDataBroker-1.1")
-local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
 local AceConfigDialog = LibStub("AceConfigDialog-3.0")
 local EasyMenu = function(...) addon:ShowMenu(...) end
 
@@ -30,18 +29,9 @@ elseif (tonumber(select(3,_G.GetBuildInfo()):match("%d+$")) or 0) < 2025 then
     unitscanEnabled = true
 end
 
-local importCache = {
-    bufferString = "",
-    displayString = "",
-    bufferData = {},
-    lastBuffer = 0,
-    widget = nil,
-    lastBNetQuery = GetTime()
-}
 local incompatibleAddons = {}
 local settingsDB
 local loadedProfileKey
-local ProcessBuffer
 
 -- Alias addon.locale.Get
 local L = addon.locale.Get
@@ -51,9 +41,7 @@ addon.settings.enabledBetaFeatures = {
     ["Guide Window v2"] = "Allow the Guide Window and Active Steps v2", --GuideWindow/addon.v2
 }
 
-if not addon.settings.gui then
-    addon.settings.gui = {selectedDeleteGuide = "", importStatusHistory = {}}
-end
+if not addon.settings.gui then addon.settings.gui = {} end
 
 function addon.settings.OpenSettings(panelName)
 
@@ -63,27 +51,15 @@ function addon.settings.OpenSettings(panelName)
         return
     end
 
-    -- panelName only provided for Import currently
     if panelName then
         local optionsName = fmt("%s/%s", addon.RXPOptions.name, panelName)
-
-        -- If sub category, open dedicated standalone window
-        local s = AceConfigDialog:GetStatusTable(optionsName)
-        s.height = 565
+        local status = AceConfigDialog:GetStatusTable(optionsName)
+        status.height = 565
         AceConfigDialog:Open(optionsName)
 
-        local acdFrame = AceConfigDialog.OpenFrames and
-                             AceConfigDialog.OpenFrames[optionsName]
-
-        if acdFrame and acdFrame:IsShown() then
-            if not acdFrame.isHooked then
-                addon.settings.textboxHook()
-                acdFrame.isHooked = true
-            end
-
-            -- Successfully opened sub menu
-            return
-        end -- else, fall through to generic handling
+        local frame = AceConfigDialog.OpenFrames and
+                          AceConfigDialog.OpenFrames[optionsName]
+        if frame and frame:IsShown() then return end
     elseif not _G.C_SettingsUtil then
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
@@ -102,7 +78,7 @@ function addon.settings.ChatCommand(input)
 
     input = input:trim()
     if input == "import" then
-        addon.settings.OpenSettings('Import')
+        addon.guideImporter:Open()
     elseif input == "debug" then
         addon.settings.profile.debug = not addon.settings.profile.debug
     elseif input == "splits" then
@@ -273,7 +249,7 @@ end
 
 function addon.settings:InitializeSettings()
     self:CreateAceOptionsPanel()
-    self:CreateImportOptionsPanel()
+    addon.guideImporter:CreateOptionsPanel()
     self:MigrateLegacySettings()
     self:MigrateProfile()
     self:LoadTextColors()
@@ -505,421 +481,6 @@ local function SetProfileOption(info, value)
     addon.settings.profile[info[#info]] = value
 end
 
-function addon.settings.ProcessImportBox()
-    if not addon.settings.profile.showEnabled then addon.settings.ToggleActive() end
-
-    local guidesLoaded, errorMsg = addon.ImportString(importCache.bufferString)
-    if guidesLoaded and not errorMsg then
-        if addon.settings.gui then
-            addon.settings.gui.selectedDeleteGuide = ""
-        end
-        return true
-    else
-        local relog = ""
-        if not RXPData.cache then
-            relog = "\n" .. L("Please restart your game client and try again")
-        end
-
-        return false, errorMsg or
-                   (L("Failed to Import Guides: Invalid Import String") .. relog)
-    end
-end
-
-function addon.settings.GetImportedGuides()
-    local display = {[""] = ""}
-    local importedGuidesFound = false
-
-    for _, guide in pairs(addon.guides) do
-        if (guide.imported or guide.cache) and (guide.group ~= "RXPGuides" or addon.settings.profile.debug) then
-            importedGuidesFound = true
-            local group, subgroup, name = guide.key:match("^(.*)|(.*)|(.*)")
-            if subgroup ~= "" then group = group .. "/" .. subgroup end
-            display[guide.key] = string.format("%s/%s - version %s", group,
-                                               name, guide.version)
-        end
-    end
-
-    table.sort(display)
-
-    if importedGuidesFound then
-        return display
-    else
-        addon.settings.gui.selectedDeleteGuide = "none"
-        return {none = L"none"}
-    end
-
-end
-
-function addon.settings:UpdateImportStatusHistory(data, ...)
-    if type(data) == "table" then
-        self.gui.importStatusHistory = data
-    elseif type(data) == "string" then
-        tinsert(self.gui.importStatusHistory, 1, fmt(data, ...))
-    end
-
-    AceConfigRegistry:NotifyChange(addon.RXPOptions.name .. "/Import")
-end
-
---importCache.widget.obj.button:GetScript("OnClick")
-function importCache.validate()
-    local success, status, errorMsg = xpcall(addon.settings.ProcessImportBox, function(errorMsg)
-        geterrorhandler()(errorMsg)
-
-        return tostring(errorMsg)
-    end)
-
-    if not success then
-        addon.RestoreScriptErrorSetting()
-        addon.settings:UpdateImportStatusHistory("%s", status)
-        errorMsg = L("Guide import failed due to a Lua error.")
-    end
-
-    importCache.bufferString = ""
-    importCache.bufferData = {}
-    -- Gets disabled on paste, re-enable after processing completes
-    importCache.widget.obj.editBox:Enable()
-    if errorMsg then
-        addon.settings:UpdateImportStatusHistory(errorMsg)
-        return errorMsg
-    end
-    return status
-end
-
---/run StaticPopup_Show("RXP_Import")
-function addon.settings.ImportSplicedString()
-    return StaticPopup_Show("RXP_Import")
-end
-local strbuffer = {}
-_G.StaticPopupDialogs["RXP_Import"] = {
-    text = "",
-    hasEditBox = 1,
-    button1 = _G.OKAY,
-    OnShow = function(self)
-        local text = getglobal(self:GetName() .. "Text")
-        local n = #strbuffer
-        text:SetText(fmt(L"Press Ctrl+V to paste a piece of the string (%d)\nPress ESC to cancel\n\nThis process is slow and should only be used if your operating system have clipboard length restrictions",n))
-    end,
-    EditBoxOnEscapePressed = function(self)
-        self:GetParent():Hide()
-        importCache.bufferString = ""
-        strbuffer = {}
-        importCache.bufferData = {}
-        addon.settings.OpenSettings('Import')
-    end,
-    OnAccept = function(self,...)
-        local text = getglobal(self:GetName() .. "EditBox"):GetText()
-        --text = text:gsub("||","|")
-        local n = #strbuffer
-        local header = text:find("^%d+[|]+%d+:")
-        if n > 0 or header then
-            table.insert(strbuffer,text)
-        else
-            addon.comms.PrettyPrint(L'Import Error - Invalid String Header')
-            addon.settings.OpenSettings('Import')
-            return
-        end
-        if text:find("%%[|]+%d+$") then
-            addon.settings.OpenSettings('Import')
-            --[[
-            local status, errorMsg = addon.settings.ProcessImportBox()
-            print(status, errorMsg, importCache.bufferString:len())
-            ]]
-            _G.RunNextFrame(function()
-                importCache.bufferData = strbuffer
-                ProcessBuffer(importCache.widget.obj.editBox)
-                local button = importCache.widget.obj.button
-                button:Enable()
-                importCache.widget.obj.editBox:SetText(importCache.bufferString:sub(1, 500))
-                button:GetScript("OnClick")(button)
-                strbuffer = {}
-                importCache.bufferData = {}
-                importCache.bufferString = ""
-            end)
-        else
-            _G.RunNextFrame(function() StaticPopup_Show("RXP_Import") end)
-        end
-    end,
-    timeout = 0,
-    whileDead = 1,
-    hideOnEscape = 1
-}
-
-
-function addon.settings:CreateImportOptionsPanel()
-    if not addon.workerFrame then
-        addon.workerFrame = CreateFrame("Frame")
-        addon.workerFrame:Hide()
-    end
-
-    local function notOnline()
-        if not RXPData.cache and GetTime() - importCache.lastBNetQuery > 5 then
-            addon.comms.PrettyDebug("Battle.net not cached, querying")
-            importCache.lastBNetQuery = GetTime()
-            _, RXPData.cache = _G[addon.DeserializeTable(addon.base)]()
-        end
-
-        return not RXPData.cache
-    end
-
-    local importOptionsTable = {
-        type = "group",
-        name = fmt("RestedXP %s - %s", L("Guide Import"), addon.versionText),
-        handler = self,
-        args = {
-            buffer = {
-                order = 1,
-                name = L("Paste encoded strings"),
-                type = "description",
-                width = "full",
-                fontSize = "medium"
-            },
-            importBox = {
-                order = 10,
-                type = 'input',
-                name = L('Guides to import'),
-                width = "full",
-                multiline = 5,
-                get = function()
-                    -- Prevent auto clearing on NotifyChange
-                    return importCache.bufferString:sub(1, 500)
-                end,
-                validate = importCache.validate,
-                disabled = function() return notOnline() end
-            },
-            currentGuides = {
-                order = 11,
-                type = 'select',
-                style = 'dropdown',
-                name = L("Currently loaded imported guides"),
-                width = 'full',
-                values = function()
-                    return self.GetImportedGuides()
-                end,
-                disabled = function()
-                    return next(addon.db.profile.guides) == nil or
-                            not self.gui.selectedDeleteGuide
-                end,
-                get = function()
-                    return self.gui.selectedDeleteGuide
-                end,
-                set = function(_, value)
-                    self.gui.selectedDeleteGuide = value
-                end
-            },
-            deleteSelectedGuide = {
-                order = 12,
-                type = 'execute',
-                name = L("Delete imported guide"),
-                confirm = function()
-                    if next(addon.db.profile.guides) == nil or
-                        not self.gui.selectedDeleteGuide then
-                        return false
-                    end
-                    return string.format(L("Remove") .. " %s?",
-                                        self.gui.selectedDeleteGuide)
-                end,
-                disabled = function()
-                    return next(addon.db.profile.guides) == nil or
-                            not self.gui.selectedDeleteGuide or
-                            self.gui.selectedDeleteGuide == "" or
-                            self.gui.selectedDeleteGuide == "none"
-                end,
-                func = function()
-                    if addon.RemoveGuide(self.gui.selectedDeleteGuide) then
-                        addon.db.profile.guides[self.gui.selectedDeleteGuide] =
-                            nil
-                    end
-                end
-            },
-            purgeAll = {
-                order = 13,
-                type = 'execute',
-                name = L("Purge All Data"),
-                confirm = function()
-                    return
-                            L"This action will remove ALL guides from the database\nAre you sure?"
-                end,
-                --[[disabled = function()
-                    return next(addon.db.profile.guides) == nil
-                end,]]
-                --Let people purge the data even without any installed guides in case they experience caching issues
-                func = function()
-                    addon.db.profile.guides = {}
-                    addon.settings.profile.skipQuest = {}
-                    addon.settings.profile.questPrio = {}
-                    addon.settings.profile.questPrioIndex = {}
-                    addon.db.profile.guideId = nil
-                    addon.db.profile.guideLength = nil
-                    addon.db.profile.guideContent = nil
-                    addon:CreateMetaDataTable(true)
-                end
-            },
-            reloadUi = {
-                order = 14,
-                name = L("Reload guides and UI"),
-                type = 'execute',
-                func = function() _G.ReloadUI() end
-            },
-            ImportSplicedString = {
-                order = 15,
-                name = L("Import Spliced String"),
-                type = 'execute',
-                func = function()
-                    _G.RunNextFrame(function()
-                        _G.SettingsPanel:Hide()
-                        AceConfigDialog:CloseAll()
-                        addon.settings.ImportSplicedString()
-                    end)
-                end,
-                hidden = not self.profile.enableBetaFeatures,
-            },
-
-            loadStatusBox = {
-                order = 90,
-                name = _G.HISTORY,
-                type = 'group',
-                inline = true,
-                hidden = function()
-                    return next(self.gui.importStatusHistory) == nil
-                end,
-                args = {
-                    loadHistory = {
-                        order = 1,
-                        name = function()
-                            return table.concat(self.gui.importStatusHistory,
-                                                '\n')
-                        end,
-                        type = "description",
-                        width = "full",
-                        fontSize = "medium"
-                    }
-                }
-            },
-            debugData = {
-                order = 91,
-                name = _G.BINDING_HEADER_DEBUG,
-                type = "header",
-                width = "full",
-                hidden = function()
-                    return not addon.settings.profile.debug
-                end
-            },
-            battleNetID = {
-                order = 91.1,
-                name = function()
-                    local _, bt = BNGetInfo()
-                    return fmt("Battle.net ID: %s", bt or 'Offline')
-                end,
-                type = "description",
-                width = "full",
-                fontSize = "small",
-                hidden = function()
-                    return not addon.settings.profile.debug
-                end
-            }
-        }
-    }
-
-    AceConfig:RegisterOptionsTable(addon.RXPOptions.name .. "/Import",
-                                   importOptionsTable)
-
-    self.gui.import = AceConfigDialog:AddToBlizOptions(
-                          addon.RXPOptions.name .. "/Import", L("Import"),
-                          addon.RXPOptions.name)
-
-    -- Ace3 ConfigDialog doesn't support embedding icons in header
-    -- Directly references Ace3 built frame object
-
-    local iconFrameParent = self.gui.import.obj.frame
-    iconFrameParent.icon = iconFrameParent:CreateTexture()
-    -- Theme load order, leave default settings branding unthemed
-    iconFrameParent.icon:SetTexture("Interface/AddOns/" .. addonName ..
-                                        "/Textures/rxp_logo-64")
-    iconFrameParent.icon:SetPoint("TOPRIGHT", -5, -5)
-
-    if notOnline() then
-        self:UpdateImportStatusHistory(
-                                           L"Battle.net unreachable, please exit your client, restart Battle.net, and try again")
-    end
-
-    local function EditBoxHook(this)
-        if this:IsShown() then
-            -- Prevent double paste input lag
-            this:SetText("")
-            this.isMaxBytesSet = true
-            this:SetMaxBytes(1)
-        elseif this.isMaxBytesSet then
-            this.isMaxBytesSet = false
-            this:SetMaxBytes(0)
-        end
-    end
-
-    function ProcessBuffer(this)
-        if this then this:SetScript('OnUpdate', nil) end
-
-        importCache.bufferString = table.concat(importCache.bufferData)
-        if #importCache.bufferString > 500 then
-            addon.settings:UpdateImportStatusHistory(
-                                                         L"Loaded %d characters into import buffer, %d shown",
-                                                     #importCache.bufferString,
-                                                     500)
-        else
-            addon.settings:UpdateImportStatusHistory(
-                                                         L"Loaded %d characters into import buffer",
-                                                     #importCache.bufferString)
-        end
-        if this then
-            this:SetMaxBytes(0)
-            this:ClearFocus()
-        end
-        importCache.bufferData = {}
-    end
-
-    local function PasteHook(this, char)
-        local time = GetTime()
-        if this:IsEnabled() then
-            -- Disable input while processing paste
-            this:Disable()
-        end
-        if importCache.lastBuffer ~= time then
-            importCache.lastBuffer = time
-            this:SetScript('OnUpdate', ProcessBuffer)
-        end
-
-        tinsert(importCache.bufferData, char)
-    end
-
-    local function textboxHook()
-        -- Prevent hooking multiple times on show
-        if importCache.widget then return end
-
-        local n = 1
-        local inputWidget = true
-
-        while inputWidget do
-            inputWidget = _G["MultiLineEditBox" .. n .. "ScrollFrame"]
-
-            if inputWidget and inputWidget.obj.label:GetText() ==
-                L('Guides to import') then
-                importCache.widget = inputWidget
-                inputWidget.obj.button:SetText(L("Import")) -- TODO locale
-                local editBox = inputWidget.obj.editBox
-
-                editBox:HookScript("OnEditFocusGained", EditBoxHook)
-                editBox:HookScript("OnChar", PasteHook)
-                -- Prevent Accept button from being disabled by programatic text update
-                editBox:SetScript("OnTextSet", nil)
-                break
-            end
-            n = n + 1
-        end
-    end
-
-    self.textboxHook = textboxHook
-
-    -- Hook embedded settings
-    self.gui.import.obj.frame:HookScript("OnShow", textboxHook)
-end
 
 if GetLocale() ~= "enUS" then
     addon.locale.AddGenericTranslation("Enable Group Settings",fmt("%s %s", _G.ENABLE, _G.COMMUNITIES_SETTINGS_LABEL))
@@ -986,6 +547,19 @@ function addon.settings:CreateAceOptionsPanel()
                     addon.url = "https://discord.gg/restedxp"
                     _G.StaticPopup_Show("RXP_Link")
                     addon.url = nil
+                end
+            },
+            importGuidesButton = {
+                order = 1.05,
+                name = L("Import Guides"),
+                type = "execute",
+                width = "normal",
+                func = function()
+                    _G.RunNextFrame(function()
+                        _G.SettingsPanel:Hide()
+                        AceConfigDialog:CloseAll()
+                        addon.guideImporter:Open()
+                    end)
                 end
             },
             feedbackButton = {
