@@ -7,8 +7,7 @@ local fmt, tinsert, GetTime = string.format, table.insert, GetTime
 local _G = _G
 local strbuffer = {}
 
--- GuideLoader replaces this prototype with the Ace module after all files load.
-addon.guideImporter = {}
+addon.guideImporter = addon.guideImporter or {}
 
 function addon.ui.v2:InitializeGuideImporter()
     self:RegisterRXPV2GuideImporter()
@@ -331,6 +330,7 @@ function addon.ui.v2:RegisterRXPV2GuideImporterEditBox()
         editBox:SetPoint("BOTTOMRIGHT", background, "BOTTOMRIGHT", -4, 4)
         editBox:SetFontObject(ChatFontNormal)
         editBox:SetMultiLine(true)
+        editBox:SetTextInsets(4, 4, 2, 2)
         editBox:EnableMouse(true)
         editBox:SetAutoFocus(false)
         editBox:SetCountInvisibleLetters(false)
@@ -623,7 +623,6 @@ _G.StaticPopupDialogs["RXP_Import"] = {
             _G.RunNextFrame(function()
                 importCache.bufferData = strbuffer
                 addon.guideImporter:ProcessBuffer(addon.guideImporter.widgets.importBox:GetEditBox())
-                addon.guideImporter.widgets.importBox:SetText(importCache.bufferString:sub(1, 500))
                 addon.guideImporter:Validate()
                 strbuffer = {}
                 importCache.bufferData = {}
@@ -648,9 +647,10 @@ function addon.guideImporter:ProcessBuffer(editBox)
     end
 
     importCache.bufferString = table.concat(importCache.bufferData)
-    if #importCache.bufferString > 500 then
+    local shownLength = math.min(#importCache.bufferString, 150)
+    if #importCache.bufferString > shownLength then
         self:UpdateImportStatusHistory(addon.locale.Get "Loaded %d characters into import buffer, %d shown",
-                                       #importCache.bufferString, 500)
+                                       #importCache.bufferString, shownLength)
     else
         self:UpdateImportStatusHistory(addon.locale.Get "Loaded %d characters into import buffer",
                                        #importCache.bufferString)
@@ -658,6 +658,7 @@ function addon.guideImporter:ProcessBuffer(editBox)
 
     if editBox then
         editBox:SetMaxBytes(0)
+        editBox:SetText(importCache.bufferString:sub(1, shownLength))
         editBox:ClearFocus()
         if not self.importInProgress then editBox:Enable() end
     end
