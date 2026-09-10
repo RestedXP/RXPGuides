@@ -512,11 +512,12 @@ function addon.guideImporter:CheckBattleNet()
     return RXPData.cache
 end
 
-function addon.guideImporter:UpdateImportStatusHistory(data, ...)
+function addon.guideImporter:UpdateImportStatusHistory(data, isError, ...)
     local message
     if type(data) == "table" then
         self.gui.importStatusHistory = data
         self.gui.progressMessage = nil
+        self.gui.progressError = false
     elseif type(data) == "string" then
         message = fmt(data, ...)
         local previous = self.gui.progressMessage
@@ -533,19 +534,28 @@ function addon.guideImporter:UpdateImportStatusHistory(data, ...)
                 if not alreadyRecorded then tinsert(self.gui.importStatusHistory, 1, previous) end
             end
             self.gui.progressMessage = message
+            self.gui.progressError = not not isError
         end
     end
 
     local latest = self.gui.progressMessage
     local current, total = latest and latest:match("%((%d+)/(%d+)%)")
-    if current and self.widgets.progress then
-        self.widgets.progress:SetMinMaxValues(0, tonumber(total))
-        self.widgets.progress:SetValue(tonumber(current))
+    current, total = tonumber(current), tonumber(total)
+    if current and total and total > 0 and self.widgets.progress then
+        self.widgets.progress:SetMinMaxValues(0, total)
+        self.widgets.progress:SetValue(current)
     elseif self.widgets.progress then
         self.widgets.progress:SetMinMaxValues(0, 1)
         self.widgets.progress:SetValue(0)
     end
-    if self.widgets.progressText then self.widgets.progressText:SetText(latest or "") end
+    if self.widgets.progressText then
+        if self.gui.progressError then
+            self.widgets.progressText:SetTextColor(1, 0.45, 0.35)
+        else
+            self.widgets.progressText:SetTextColor(unpack(getTheme().textColor.common))
+        end
+        self.widgets.progressText:SetText(latest or "")
+    end
 
     self:RefreshImportPanel()
 end
@@ -563,7 +573,7 @@ function addon.guideImporter:Validate()
 
     if not success then
         self:AbortImport()
-        self:UpdateImportStatusHistory("%s", status)
+        self:UpdateImportStatusHistory("%s", true, status)
         errorMsg = addon.locale.Get("Guide import failed due to a Lua error.")
     end
 
@@ -572,7 +582,7 @@ function addon.guideImporter:Validate()
     if not self.importInProgress then editBox:Enable() end
 
     if errorMsg then
-        self:UpdateImportStatusHistory(errorMsg)
+        self:UpdateImportStatusHistory(errorMsg, true)
 
         return errorMsg
     end
@@ -649,10 +659,10 @@ function addon.guideImporter:ProcessBuffer(editBox)
     importCache.bufferString = table.concat(importCache.bufferData)
     local shownLength = math.min(#importCache.bufferString, 150)
     if #importCache.bufferString > shownLength then
-        self:UpdateImportStatusHistory(addon.locale.Get "Loaded %d characters into import buffer, %d shown",
+        self:UpdateImportStatusHistory(addon.locale.Get "Loaded %d characters into import buffer, %d shown", false,
                                        #importCache.bufferString, shownLength)
     else
-        self:UpdateImportStatusHistory(addon.locale.Get "Loaded %d characters into import buffer",
+        self:UpdateImportStatusHistory(addon.locale.Get "Loaded %d characters into import buffer", false,
                                        #importCache.bufferString)
     end
 
@@ -982,7 +992,7 @@ function addon.ui.v2:CreateGuideImporter()
     history:SetJustifyH("LEFT")
     history:SetWordWrap(true)
     history:SetFont(theme.font, 8, "")
-    history:SetTextColor(1, 0.45, 0.35)
+    history:SetTextColor(unpack(textColor))
     history:Hide()
 
     widgets.progress = progress
@@ -997,7 +1007,7 @@ function addon.ui.v2:CreateGuideImporter()
 
     if not RXPData.cache then
         guideImporter:UpdateImportStatusHistory(
-            L("Battle.net unreachable, please exit your client, restart Battle.net, and try again"))
+            L("Battle.net unreachable, please exit your client, restart Battle.net, and try again"), true)
     end
 
     return importer

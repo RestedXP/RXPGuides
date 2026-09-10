@@ -691,10 +691,10 @@ function addon.LoadCachedGuides()
             elseif not success then
                 addon.safeCall(function() addon.guideImporter:AbortImport() end)
                 addon.safeCall(function()
-                    addon.guideImporter:UpdateImportStatusHistory("%s", importError or isValid)
+                    addon.guideImporter:UpdateImportStatusHistory("%s", true, importError or isValid)
                 end)
                 addon.safeCall(function()
-                    addon.guideImporter:UpdateImportStatusHistory(L("Guide import failed due to a Lua error."))
+                    addon.guideImporter:UpdateImportStatusHistory(L("Guide import failed due to a Lua error."), true)
                 end)
             elseif not isValid then
                 addon.safeCall(function() addon.guideImporter:AbortImport() end)
@@ -1208,7 +1208,12 @@ local importCache = {bufferString = "", bufferData = {}, lastBuffer = 0}
 addon.guideImporter = addon:NewModule("GuideImporter", addon.guideImporter)
 addon.guideImporter.importCache = importCache
 addon.guideImporter.widgets = {}
-addon.guideImporter.gui = {selectedDeleteGuide = "", importStatusHistory = {}, progressMessage = nil}
+addon.guideImporter.gui = {
+    selectedDeleteGuide = "",
+    importStatusHistory = {},
+    progressMessage = nil,
+    progressError = false
+}
 addon.guideImporter.lastBNetQuery = 0
 addon.guideImporter.cachedGuides = nil
 addon.guideImporter.cachedState = nil
@@ -1242,12 +1247,14 @@ local importBuffer = {}
 addon.guideImporter.importBufferSize = 0
 local showConfigFrame = false
 local importIndex = 0
+local importedGuideCount = 0
 local scriptErrorsBeforeImport
 
 function addon.guideImporter:AbortImport()
     importBuffer = {}
     showConfigFrame = false
     importIndex = 0
+    importedGuideCount = 0
     self.importBufferSize = 0
     self.importInProgress = false
     self.importReady = false
@@ -1318,6 +1325,7 @@ function addon.guideImporter:ImportString(str, showFrame)
     self:Setup()
     importBuffer = {}
     self.importBufferSize = 0
+    importedGuideCount = 0
     scriptErrorsBeforeImport = _G.GetCVar("scriptErrors")
 
     if scriptErrorsBeforeImport == "0" then _G.SetCVar("scriptErrors", "1") end
@@ -1336,7 +1344,7 @@ function addon.guideImporter:ImportString(str, showFrame)
     if not nGuides or not base or not validHash then
         self.importInProgress = false
         addon.safeCall(function()
-            self:UpdateImportStatusHistory(L "Incomplete or invalid encoded string")
+            self:UpdateImportStatusHistory(L "Incomplete or invalid encoded string", true)
         end)
         addon.guideImporter.RestoreScriptErrorSetting()
 
@@ -1346,7 +1354,7 @@ function addon.guideImporter:ImportString(str, showFrame)
     if tonumber(base) < addon.version then
         self.importInProgress = false
         addon.safeCall(function()
-            self:UpdateImportStatusHistory(L "Incompatible guide game %d version vs %d", tonumber(base), addon.version)
+            self:UpdateImportStatusHistory(L "Incompatible guide game %d version vs %d", true, tonumber(base), addon.version)
         end)
         addon.guideImporter.RestoreScriptErrorSetting()
 
@@ -1401,27 +1409,35 @@ function addon.guideImporter.ProcessInputBuffer(workerFrame)
         end)
         if not success then
             addon.safeCall(function() addon.guideImporter:AbortImport() end)
-            addon.safeCall(function() addon.guideImporter:UpdateImportStatusHistory("%s", parseGuide) end)
+            addon.safeCall(function() addon.guideImporter:UpdateImportStatusHistory("%s", true, parseGuide) end)
             addon.safeCall(function()
-                addon.guideImporter:UpdateImportStatusHistory(L("Guide import failed due to a Lua error."))
+                addon.guideImporter:UpdateImportStatusHistory(L("Guide import failed due to a Lua error."), true)
             end)
 
             return
         end
+        if type(parseGuide) ~= "table" or not parseGuide.name then
+            addon.safeCall(function() addon.guideImporter:AbortImport() end)
+            addon.safeCall(function()
+                addon.guideImporter:UpdateImportStatusHistory(L("Error parsing guide"), true)
+            end)
+
+            return
+        end
+        if parseGuide.imported then importedGuideCount = importedGuideCount + 1 end
         if importIndex == 0 and showConfigFrame then
             addon.safeCall(function() addon.guideImporter:Open() end)
         end
 
         importIndex = importIndex + 1
 
-        if type(parseGuide) == "table" and parseGuide.name then
-            addon.safeCall(function()
-                addon.guideImporter:UpdateImportStatusHistory(
-                    L("Loading Guides") .. "... (%d/%d)",
-                    addon.guideImporter.importBufferSize - #importBuffer,
-                    addon.guideImporter.importBufferSize)
-            end)
-        end
+        addon.safeCall(function()
+            addon.guideImporter:UpdateImportStatusHistory(
+                L("Loading Guides") .. "... (%d/%d)",
+                false,
+                addon.guideImporter.importBufferSize - #importBuffer,
+                addon.guideImporter.importBufferSize)
+        end)
 
         return
     else
@@ -1445,14 +1461,20 @@ function addon.guideImporter.ProcessInputBuffer(workerFrame)
 
     end
 
-    if addon.guideImporter.importBufferSize > 0 then
+    if importedGuideCount > 0 then
         addon.guideImporter.importReady = false
         addon.safeCall(function()
-            addon.guideImporter:UpdateImportStatusHistory(L("Guides Loaded Successfully"))
+            addon.guideImporter:UpdateImportStatusHistory(L("Guides Loaded Successfully"), false)
         end)
 
         addon.guideImporter.importBufferSize = 0
         addon.guideImporter.importInProgress = false
+        importedGuideCount = 0
+    else
+        addon.safeCall(function() addon.guideImporter:AbortImport() end)
+        addon.safeCall(function()
+            addon.guideImporter:UpdateImportStatusHistory(L("Error parsing guide"), true)
+        end)
     end
 
     addon.safeCall(function() addon.guideImporter:RefreshImportPanel() end)
