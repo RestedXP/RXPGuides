@@ -267,49 +267,91 @@ function addon.DeserializeTable(tbl)
     return table.concat(t)
 end
 
-local function CheckDataIntegrity(str, h1, mode)
-    if h1 then
-        if mode == 58 then
-            local S = {};
-            local i, j
-            local buffer = {}
+local importChunkSize = 4096
+local function CheckDataIntegrity(str, h1, mode, yieldImport)
+    if not h1 then return addon.A32(str) end
+    if mode ~= 58 then return end
 
-            local n = addon.ReadCacheData("buffer")
-            if not n then
-                addon.comms.PrettyDebug('Failed to ReadCacheData') -- TODO locale
-                return false, L('Failed to ReadCacheData')
-            end
-            for k = 0, 255 do S[k] = n[k] end
+    local S = {}
+    local i, j
+    local buffer = {}
+    local n = addon.ReadCacheData("buffer")
 
-            i, j, str = 0, 0, addon.read(str)
+    if not n then
+        addon.comms.PrettyDebug('Failed to ReadCacheData')
 
-            for k = 0, #str - 1 do
-                i = bitand(i + 1, 0xff)
-                j = bitand(j + S[i], 0xff)
-                S[i], S[j] = S[j], S[i]
-                tinsert(buffer, strchar(
-                                 bitxor(strbyte(str, k + 1),
-                                        S[bitand((S[i] + S[j]), 0xff)])))
-            end
-
-            str = LibDeflate:DecompressZlib(table.concat(buffer))
-
-            if str then return h1 % 4294967296 == addon.A32(str), str end
-
-            return false,
-                       L'Account mismatch, import string does not apply to current account' -- TODO locale
-        end
-    else
-        return addon.A32(str)
+        return false, L('Failed to ReadCacheData')
     end
+
+    for k = 0, 255 do S[k] = n[k] end
+
+    local decoded, decodeError
+    if _G.C_EncodingUtil and _G.C_EncodingUtil.DecodeBase64 then
+        local success
+        success, decoded, decodeError = pcall(_G.C_EncodingUtil.DecodeBase64, str)
+
+        if not success then return false, decoded end
+    else
+        decoded, decodeError = addon.read(str)
+    end
+
+    if not decoded then return false, decodeError or L("Failed integrity check") end
+
+    i, j = 0, 0
+    local chunkEnd
+    for chunkStart = 1, #decoded, importChunkSize do
+        chunkEnd = chunkStart + importChunkSize - 1
+
+        if chunkEnd > #decoded then chunkEnd = #decoded end
+
+        for k = chunkStart, chunkEnd do
+            i = bitand(i + 1, 0xff)
+            j = bitand(j + S[i], 0xff)
+            S[i], S[j] = S[j], S[i]
+            tinsert(buffer, strchar(bitxor(strbyte(decoded, k), S[bitand((S[i] + S[j]), 0xff)])))
+        end
+
+        if yieldImport then yieldImport() end
+    end
+
+    local compressed = table.concat(buffer)
+    local decompressed, decompressError
+
+    if _G.C_EncodingUtil and _G.C_EncodingUtil.DecompressString then
+        local success
+        success, decompressed, decompressError = pcall(_G.C_EncodingUtil.DecompressString, compressed, 1)
+
+        if not success then return false, decompressed end
+    else
+        decompressed = LibDeflate:DecompressZlib(compressed)
+    end
+
+    if not decompressed then return false, decompressError or L("Failed integrity check") end
+
+    str = decompressed
+
+    if h1 % 4294967296 == addon.A32(str) then return true, str end
+
+    return false, L('Account mismatch, import string does not apply to current account')
+end
+
+local function CompressDeflate(str)
+    if _G.C_EncodingUtil and _G.C_EncodingUtil.CompressString then
+        local success, compressed = pcall(_G.C_EncodingUtil.CompressString, str, 0)
+
+        if success and compressed then return compressed end
+    end
+
+    return LibDeflate:CompressDeflate(str)
 end
 
 local ncache = 0
 function addon.CacheGuide(key, guide, enabledFor, guideVersion, metadata)
     ncache = ncache + 1
     local profileKey = key .. "|" .. ncache
+
     if type(guide) == "table" then
-        guide.groupOrContent = LibDeflate:CompressDeflate(guide.groupOrContent)
+        guide.groupOrContent = CompressDeflate(guide.groupOrContent)
         guide.key = key
         addon.db.profile.guides[profileKey] = guide
     else
@@ -317,7 +359,8 @@ function addon.CacheGuide(key, guide, enabledFor, guideVersion, metadata)
         guide = guide:gsub("[\t ][\t ]+", " ")
         guide = guide:gsub("%-%-[^\n]*", "")
         guide = "--" .. addon.ReadCacheData("string") .. "\n" .. guide
-        guide = LibDeflate:CompressDeflate(guide)
+        guide = CompressDeflate(guide)
+
         --print(profileKey:gsub("|","||"))
         addon.db.profile.guides[profileKey] = addon.BuildCacheObject(guide, enabledFor,
                                                              guideVersion, metadata, key)
@@ -655,8 +698,8 @@ function addon.LoadCachedGuides()
                 return addon.guideImporter:ImportString(string, true)
             end)
             if success and isValid and addon.guideImporter.importBufferSize > 0 then
-                addon.guideImporter.cachedGuides = addon.db.profile.guides
                 addon.guideImporter.cachedState = {
+                    profileGuides = addon.db.profile.guides,
                     guides = addon.guides,
                     guideList = addon.guideList,
                     guideIds = addon.guideIds,
@@ -688,13 +731,11 @@ function addon.LoadCachedGuides()
                 addon.defaultGuide = nil
                 addon.farmGuides = 0
                 addon.db.profile.guides = {}
+                addon.safeCall(function() addon.guideImporter:Open() end)
             elseif not success then
                 addon.safeCall(function() addon.guideImporter:AbortImport() end)
                 addon.safeCall(function()
                     addon.guideImporter:UpdateImportStatusHistory("%s", true, importError or isValid)
-                end)
-                addon.safeCall(function()
-                    addon.guideImporter:UpdateImportStatusHistory(L("Guide import failed due to a Lua error."), true)
                 end)
             elseif not isValid then
                 addon.safeCall(function() addon.guideImporter:AbortImport() end)
@@ -1215,10 +1256,9 @@ addon.guideImporter.gui = {
     progressError = false
 }
 addon.guideImporter.lastBNetQuery = 0
-addon.guideImporter.cachedGuides = nil
 addon.guideImporter.cachedState = nil
-addon.guideImporter.importInProgress = false
 addon.guideImporter.importReady = false
+addon.guideImporter.importCoroutine = nil
 
 function addon.guideImporter:Setup()
     if not addon.workerFrame then
@@ -1240,23 +1280,48 @@ function addon.guideImporter:Open()
     end
 
     self.widgets.import:Show()
-    self:RefreshImportPanel()
+    self:UpdateImportUI()
 end
 
-local importBuffer = {}
 addon.guideImporter.importBufferSize = 0
-local showConfigFrame = false
-local importIndex = 0
+local importBuffer = {}
 local importedGuideCount = 0
 local scriptErrorsBeforeImport
 
+local function LoadImportBuffer(str, nGuides, yieldImport)
+    local errorMsg, validData, dataOrError
+
+    for hash, mode, content in str:gmatch("(%-?%d+)(%D)([A-Za-z0-9%+%/%=]+)%%") do
+        validData, dataOrError = CheckDataIntegrity(content, tonumber(hash),
+                                                        strbyte(mode), yieldImport)
+
+        if not validData or not dataOrError then
+            errorMsg = dataOrError or L("Failed integrity check")
+
+            break
+        end
+
+        for v in dataOrError:gmatch("[^%z]+") do tinsert(importBuffer, v) end
+    end
+
+    local importedCount = #importBuffer
+    if not errorMsg and importedCount == 0 then
+        errorMsg = L("Incomplete or invalid encoded string")
+    end
+
+    if errorMsg then
+        errorMsg = fmt("%s\n%s", errorMsg,
+                       fmt(L("Total guides loaded: %d/%s"), importedCount, nGuides))
+    end
+
+    return errorMsg
+end
+
 function addon.guideImporter:AbortImport()
+    self.importCoroutine = nil
     importBuffer = {}
-    showConfigFrame = false
-    importIndex = 0
     importedGuideCount = 0
     self.importBufferSize = 0
-    self.importInProgress = false
     self.importReady = false
     self.importCache.bufferString = ""
     self.importCache.bufferData = {}
@@ -1264,13 +1329,10 @@ function addon.guideImporter:AbortImport()
     self.guideLength = nil
     self.guideId = nil
 
-    local cachedGuides = self.cachedGuides
     local cachedState = self.cachedState
-    if cachedGuides then
-        addon.db.profile.guides = cachedGuides
-        self.cachedGuides = nil
-    end
+
     if cachedState then
+        addon.db.profile.guides = cachedState.profileGuides
         addon.guides = cachedState.guides
         addon.guideList = cachedState.guideList
         addon.guideIds = cachedState.guideIds
@@ -1292,6 +1354,7 @@ function addon.guideImporter:AbortImport()
         addon.db.profile.guideContent = cachedState.guideContent
         addon.db.profile.guideLength = cachedState.guideLength
         addon.db.profile.guideId = cachedState.guideId
+
         self.cachedState = nil
     end
 
@@ -1316,12 +1379,7 @@ function addon.guideImporter.RestoreScriptErrorSetting()
     scriptErrorsBeforeImport = nil
 end
 
-function addon.guideImporter:ImportString(str, showFrame)
-    if self.importInProgress then
-
-        return false, L("Guide import already in progress")
-    end
-
+function addon.guideImporter:ImportString(str, synchronous)
     self:Setup()
     importBuffer = {}
     self.importBufferSize = 0
@@ -1330,11 +1388,6 @@ function addon.guideImporter:ImportString(str, showFrame)
 
     if scriptErrorsBeforeImport == "0" then _G.SetCVar("scriptErrors", "1") end
 
-    showConfigFrame = showFrame
-    importIndex = 0
-    self.importInProgress = true
-
-    local errorMsg
     str = str:gsub("^%D+", "")
     str = str:gsub("%D+$", "")
     local nGuides = str:match("^(%d+)|")
@@ -1342,94 +1395,110 @@ function addon.guideImporter:ImportString(str, showFrame)
     local base = str:match("|(%d+)$")
 
     if not nGuides or not base or not validHash then
-        self.importInProgress = false
         addon.safeCall(function()
-            self:UpdateImportStatusHistory(L "Incomplete or invalid encoded string", true)
+            self:UpdateImportStatusHistory(L("Incomplete or invalid encoded string"), true)
         end)
+
         addon.guideImporter.RestoreScriptErrorSetting()
 
         return false, L("Incomplete or invalid encoded string")
     end
 
     if tonumber(base) < addon.version then
-        self.importInProgress = false
         addon.safeCall(function()
-            self:UpdateImportStatusHistory(L "Incompatible guide game %d version vs %d", true, tonumber(base), addon.version)
+            self:UpdateImportStatusHistory(L("Incompatible guide game %d version vs %d"), true, tonumber(base), addon.version)
         end)
+
         addon.guideImporter.RestoreScriptErrorSetting()
 
-        return false, fmt(L "Incompatible guide, for %d version vs %d", tonumber(base), addon.version)
+        return false, fmt(L("Incompatible guide, for %d version vs %d"), tonumber(base), addon.version)
     end
 
-    local validData, dataOrError
-    for hash, mode, content in str:gmatch("(%-?%d+)(%D)([A-Za-z0-9%+%/%=]+)%%") do
-        validData, dataOrError = CheckDataIntegrity(content, tonumber(hash), strbyte(mode))
+    addon.safeCall(function()
+        self:UpdateImportStatusHistory(L("Loading Guides") .. "... (0/%d)", false, tonumber(nGuides))
+    end)
 
-        if validData and dataOrError then
-            for v in dataOrError:gmatch("[^%z]+") do tinsert(importBuffer, v) end
-        else
-            errorMsg = (dataOrError or L 'Failed integrity check') .. '\n' .. L("Total guides loaded: %d/%s") -- TODO locale
-            break
-        end
-    end
+    if not synchronous then
+        self.importCoroutine = coroutine.create(function()
+            return LoadImportBuffer(str, nGuides, coroutine.yield)
+        end)
 
-    addon.guideImporter.importBufferSize = #importBuffer
-    local importedCount = addon.guideImporter.importBufferSize
-    if not errorMsg and importedCount == 0 then
-        errorMsg = L "Incomplete or invalid encoded string"
-    end
-
-    if not errorMsg and importedCount > 0 then
-        addon.workerFrame:SetScript("OnUpdate", addon.guideImporter.ProcessInputBuffer)
-
+        addon.workerFrame:SetScript("OnUpdate", self.ProcessInputBuffer)
         addon.workerFrame:Show()
-    else
-        importBuffer = {}
-        addon.guideImporter.importBufferSize = 0
-        addon.guideImporter.RestoreScriptErrorSetting()
-        self.importInProgress = false
-    end
-
-    if not errorMsg then
 
         return true
     end
 
-    return false, errorMsg:format(importedCount, nGuides)
+    local errorMsg = LoadImportBuffer(str, nGuides)
+    self.importBufferSize = #importBuffer
+
+    if errorMsg then
+        importBuffer = {}
+
+        self.importBufferSize = 0
+        self.RestoreScriptErrorSetting()
+
+        return false, errorMsg
+    end
+
+    addon.workerFrame:SetScript("OnUpdate", addon.guideImporter.ProcessInputBuffer)
+    addon.workerFrame:Show()
+
+    return true
 end
 
 function addon.guideImporter.ProcessInputBuffer(workerFrame)
+    local guideImporter = addon.guideImporter
+    local importCoroutine = guideImporter.importCoroutine
+
+    if importCoroutine then
+        local success, errorMsg = coroutine.resume(importCoroutine)
+        if success and coroutine.status(importCoroutine) ~= "dead" then return end
+
+        guideImporter.importCoroutine = nil
+
+        if not success or errorMsg then
+            addon.safeCall(function() guideImporter:AbortImport() end)
+            addon.safeCall(function()
+                guideImporter:UpdateImportStatusHistory(
+                    "%s", true,
+                    tostring(errorMsg or L("Guide import failed due to a Lua error.")))
+            end)
+
+            return
+        end
+
+        guideImporter.importBufferSize = #importBuffer
+    end
+
     local parseGuide
 
     if #importBuffer > 0 then
         local guideString = tremove(importBuffer)
         local success
+
         success, parseGuide = addon.safeCall(function()
             return RXPGuides.ImportGuide(guideString)
         end)
+
         if not success then
             addon.safeCall(function() addon.guideImporter:AbortImport() end)
             addon.safeCall(function() addon.guideImporter:UpdateImportStatusHistory("%s", true, parseGuide) end)
-            addon.safeCall(function()
-                addon.guideImporter:UpdateImportStatusHistory(L("Guide import failed due to a Lua error."), true)
-            end)
 
             return
         end
+
         if type(parseGuide) ~= "table" or not parseGuide.name then
             addon.safeCall(function() addon.guideImporter:AbortImport() end)
+
             addon.safeCall(function()
                 addon.guideImporter:UpdateImportStatusHistory(L("Error parsing guide"), true)
             end)
 
             return
         end
-        if parseGuide.imported then importedGuideCount = importedGuideCount + 1 end
-        if importIndex == 0 and showConfigFrame then
-            addon.safeCall(function() addon.guideImporter:Open() end)
-        end
 
-        importIndex = importIndex + 1
+        if parseGuide.imported then importedGuideCount = importedGuideCount + 1 end
 
         addon.safeCall(function()
             addon.guideImporter:UpdateImportStatusHistory(
@@ -1441,8 +1510,6 @@ function addon.guideImporter.ProcessInputBuffer(workerFrame)
 
         return
     else
-        showConfigFrame = false
-        importIndex = 0
         workerFrame:SetScript("OnUpdate", nil)
         workerFrame:Hide()
 
@@ -1463,12 +1530,12 @@ function addon.guideImporter.ProcessInputBuffer(workerFrame)
 
     if importedGuideCount > 0 then
         addon.guideImporter.importReady = false
+
         addon.safeCall(function()
             addon.guideImporter:UpdateImportStatusHistory(L("Guides Loaded Successfully"), false)
         end)
 
         addon.guideImporter.importBufferSize = 0
-        addon.guideImporter.importInProgress = false
         importedGuideCount = 0
     else
         addon.safeCall(function() addon.guideImporter:AbortImport() end)
@@ -1477,7 +1544,7 @@ function addon.guideImporter.ProcessInputBuffer(workerFrame)
         end)
     end
 
-    addon.safeCall(function() addon.guideImporter:RefreshImportPanel() end)
+    addon.safeCall(function() addon.guideImporter:UpdateImportUI() end)
 
     local importBox = addon.guideImporter.widgets.importBox
     if importBox then
@@ -1487,6 +1554,5 @@ function addon.guideImporter.ProcessInputBuffer(workerFrame)
     end
 
     addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
-    addon.guideImporter.cachedGuides = nil
     addon.guideImporter.cachedState = nil
 end

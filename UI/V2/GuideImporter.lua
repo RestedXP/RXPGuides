@@ -557,7 +557,7 @@ function addon.guideImporter:UpdateImportStatusHistory(data, isError, ...)
         self.widgets.progressText:SetText(latest or "")
     end
 
-    self:RefreshImportPanel()
+    self:UpdateImportUI()
 end
 
 function addon.guideImporter:Validate()
@@ -579,9 +579,9 @@ function addon.guideImporter:Validate()
 
     importCache.bufferString = ""
     importCache.bufferData = {}
-    if not self.importInProgress then editBox:Enable() end
 
     if errorMsg then
+        editBox:Enable()
         self:UpdateImportStatusHistory(errorMsg, true)
 
         return errorMsg
@@ -650,11 +650,6 @@ _G.StaticPopupDialogs["RXP_Import"] = {
 function addon.guideImporter:ProcessBuffer(editBox)
     local importCache = self.importCache
     if editBox then editBox:SetScript("OnUpdate", nil) end
-    if self.importInProgress then
-        importCache.bufferData = {}
-
-        return
-    end
 
     importCache.bufferString = table.concat(importCache.bufferData)
     local shownLength = math.min(#importCache.bufferString, 150)
@@ -670,12 +665,12 @@ function addon.guideImporter:ProcessBuffer(editBox)
         editBox:SetMaxBytes(0)
         editBox:SetText(importCache.bufferString:sub(1, shownLength))
         editBox:ClearFocus()
-        if not self.importInProgress then editBox:Enable() end
+        editBox:Enable()
     end
     importCache.bufferData = {}
 end
 
-function addon.guideImporter:RefreshImportPanel()
+function addon.guideImporter:UpdateImportUI()
     local gui, widgets = self.gui, self.widgets
     if not widgets.import then
 
@@ -686,21 +681,16 @@ function addon.guideImporter:RefreshImportPanel()
     if widgets.currentGuides then
         widgets.currentGuides:SetList(self:GetImportedGuides())
         widgets.currentGuides:SetValue(gui.selectedDeleteGuide)
-        widgets.currentGuides:SetDisabled(self.importInProgress or not next(addon.db.profile.guides))
+        widgets.currentGuides:SetDisabled(not next(addon.db.profile.guides))
     end
     if widgets.deleteSelectedGuide then
-        widgets.deleteSelectedGuide:SetDisabled(self.importInProgress or not gui.selectedDeleteGuide or
+        widgets.deleteSelectedGuide:SetDisabled(not gui.selectedDeleteGuide or
                                                     gui.selectedDeleteGuide == "" or gui.selectedDeleteGuide == "none")
     end
     if widgets.importButton then
-        widgets.importButton:SetDisabled(self.importInProgress or not self.importReady or not RXPData.cache)
-    end
-    local editBox = widgets.importBox and widgets.importBox:GetEditBox()
-    if self.importInProgress and editBox then
-        editBox:Disable()
+        widgets.importButton:SetDisabled(not self.importReady or not RXPData.cache)
     end
     if widgets.importSplicedString then
-        widgets.importSplicedString:SetDisabled(self.importInProgress)
         widgets.importSplicedString.frame:SetShown(addon.settings.profile.enableBetaFeatures)
     end
     if widgets.importButton and widgets.importBox and widgets.importSplicedString then
@@ -720,8 +710,6 @@ function addon.guideImporter:RefreshImportPanel()
             importButton.frame:SetPoint("TOPRIGHT", widgets.importBox.frame, "BOTTOMRIGHT", 0, -8)
         end
     end
-    if widgets.purgeAll then widgets.purgeAll:SetDisabled(self.importInProgress) end
-    if widgets.reloadUi then widgets.reloadUi:SetDisabled(self.importInProgress) end
     if widgets.history then
         widgets.history:SetText(table.concat(gui.importStatusHistory, "\n"))
         local historyShown = next(gui.importStatusHistory) ~= nil
@@ -766,7 +754,7 @@ function addon.ui.v2:CreateGuideImporter()
             addon.db.profile.guideLength = nil
             addon.db.profile.guideContent = nil
             addon:CreateMetaDataTable(true)
-            guideImporter:RefreshImportPanel()
+            guideImporter:UpdateImportUI()
         end,
         timeout = 0,
         whileDead = 1,
@@ -798,7 +786,7 @@ function addon.ui.v2:CreateGuideImporter()
     widgets.importBox = importBox
     importBox:SetCallback("OnEditFocusGained", function()
         guideImporter.importReady = true
-        guideImporter:RefreshImportPanel()
+        guideImporter:UpdateImportUI()
     end)
 
     local importButton = AceGUI:Create("RXPV2GuideImporterButton")
@@ -868,7 +856,7 @@ function addon.ui.v2:CreateGuideImporter()
 
     currentGuides:SetCallback("OnValueChanged", function(_, _, value)
         guideImporter.gui.selectedDeleteGuide = value
-        guideImporter:RefreshImportPanel()
+        guideImporter:UpdateImportUI()
     end)
 
     widgets.currentGuides = currentGuides
@@ -949,7 +937,7 @@ function addon.ui.v2:CreateGuideImporter()
             addon.db.profile.guides[guide] = nil
         end
         guideImporter.gui.selectedDeleteGuide = ""
-        guideImporter:RefreshImportPanel()
+        guideImporter:UpdateImportUI()
         deleteConfirmation:Hide()
     end)
     cancelDeleteButton:SetCallback("OnClick", function() deleteConfirmation:Hide() end)
@@ -1001,9 +989,9 @@ function addon.ui.v2:CreateGuideImporter()
 
     widgets.import = importer
     importer:SetCallback("OnShow", function()
-        guideImporter:RefreshImportPanel()
+        guideImporter:UpdateImportUI()
     end)
-    guideImporter:RefreshImportPanel()
+    guideImporter:UpdateImportUI()
 
     if not RXPData.cache then
         guideImporter:UpdateImportStatusHistory(
