@@ -1038,7 +1038,7 @@ RXPGuides.RegisterGuide([[
 step
     #optional
     .train 425310,1
-    .train 605 >> |cRXP_WARN_You must have|r |T136206:0|t[Mind Control] |cRXP_WARN_trained in order to aquire the|r |T135923:0|t[Renewed Hope] |cRXP_WARN_rune|r
+    .train 605 >> |cRXP_WARN_You must have|r |T136206:0|t[Mind Control] |cRXP_WARN_trained in order to acquire the|r |T135923:0|t[Renewed Hope] |cRXP_WARN_rune|r
 step
     #optional
     .train 425310,1

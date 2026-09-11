@@ -1965,7 +1965,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
-    .train 5599 >>|cRXP_WARN_You must have|r |T135964:0|t[Blessing of Protection] |cRXP_WARN_trained in order to aquire the|r |T135931:0|t[Light's Grace] |cRXP_WARN_rune|r
+    .train 5599 >>|cRXP_WARN_You must have|r |T135964:0|t[Blessing of Protection] |cRXP_WARN_trained in order to acquire the|r |T135931:0|t[Light's Grace] |cRXP_WARN_rune|r
 step
     #optional
     #completewith TeleporterTaken
@@ -2026,7 +2026,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
-    .train 5502 >>|cRXP_WARN_You must have|r |T135974:0|t[Sense Undead] |cRXP_WARN_trained in order to aquire the|r |T236260:0|t[Wrath] |cRXP_WARN_rune|r
+    .train 5502 >>|cRXP_WARN_You must have|r |T135974:0|t[Sense Undead] |cRXP_WARN_trained in order to acquire the|r |T236260:0|t[Wrath] |cRXP_WARN_rune|r
     .train 429249,1
 step
     #completewith RuneLearned

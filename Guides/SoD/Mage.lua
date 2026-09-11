@@ -2659,7 +2659,7 @@ step
     .train 2121,1 -- flamestrike r2
     .train 8422,1 -- flamestrike r3
     .train 8423,1 -- flamestrike r4
-    .train 2120 >> |cRXP_WARN_You must have|r |T135826:0|t[Flamestrike] |cRXP_WARN_trained in order to aquire the|r |T236218:0|t[Hot Streak] |cRXP_WARN_rune|r
+    .train 2120 >> |cRXP_WARN_You must have|r |T135826:0|t[Flamestrike] |cRXP_WARN_trained in order to acquire the|r |T236218:0|t[Hot Streak] |cRXP_WARN_rune|r
 step
     .train 401749,1
     .goto Alterac Mountains,60.510,46.286

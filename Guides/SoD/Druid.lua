@@ -559,7 +559,7 @@ step
 step
     #optional
     .train 424760,1
-    .train 5209 >> |cRXP_WARN_You must have|r |T132117:0|t[Challenging Roar] |cRXP_WARN_trained in order to aquire the|r |T236149:0|t[Berserk] |cRXP_WARN_rune|r
+    .train 5209 >> |cRXP_WARN_You must have|r |T132117:0|t[Challenging Roar] |cRXP_WARN_trained in order to acquire the|r |T236149:0|t[Berserk] |cRXP_WARN_rune|r
 step
     #completewith next
     .train 424760,1
@@ -829,23 +829,23 @@ RXPGuides.RegisterGuide([[
 step
     #optional
     .train 431468,1
-    .train 2728 >> |cRXP_WARN_You must have|r |T135952:0|t[Remove Curse] |cRXP_WARN_trained in order to aquire the|r |T134222:0|t[Efflorescence] |cRXP_WARN_rune|r
+    .train 2728 >> |cRXP_WARN_You must have|r |T135952:0|t[Remove Curse] |cRXP_WARN_trained in order to acquire the|r |T134222:0|t[Efflorescence] |cRXP_WARN_rune|r
 step
     #optional
     .train 431468,1
-    .train 8946 >> |cRXP_WARN_You must have|r |T136067:0|t[Cure Poison] |cRXP_WARN_trained in order to aquire the|r |T134222:0|t[Efflorescence] |cRXP_WARN_rune|r
+    .train 8946 >> |cRXP_WARN_You must have|r |T136067:0|t[Cure Poison] |cRXP_WARN_trained in order to acquire the|r |T134222:0|t[Efflorescence] |cRXP_WARN_rune|r
 step
     #optional
     .train 431468,1
-    .train 16914 >> |cRXP_WARN_You must have|r |T136018:0|t[Hurricane] |cRXP_WARN_trained in order to aquire the|r |T134222:0|t[Efflorescence] |cRXP_WARN_rune|r
+    .train 16914 >> |cRXP_WARN_You must have|r |T136018:0|t[Hurricane] |cRXP_WARN_trained in order to acquire the|r |T134222:0|t[Efflorescence] |cRXP_WARN_rune|r
 step
     #optional
     .train 431468,1
-    .train 740 >> |cRXP_WARN_You must have|r |T136107:0|t[Tranquility] |cRXP_WARN_trained in order to aquire the|r |T134222:0|t[Efflorescence] |cRXP_WARN_rune|r
+    .train 740 >> |cRXP_WARN_You must have|r |T136107:0|t[Tranquility] |cRXP_WARN_trained in order to acquire the|r |T134222:0|t[Efflorescence] |cRXP_WARN_rune|r
 step
     #optional
     .train 431468,1
-    .train 768 >> |cRXP_WARN_You must have|r |T132115:0|t[Cat Form] |cRXP_WARN_trained in order to aquire the|r |T134222:0|t[Efflorescence] |cRXP_WARN_rune|r
+    .train 768 >> |cRXP_WARN_You must have|r |T132115:0|t[Cat Form] |cRXP_WARN_trained in order to acquire the|r |T134222:0|t[Efflorescence] |cRXP_WARN_rune|r
 step
     #completewith next
     .zone Feralas >>Travel to Feralas
@@ -1063,7 +1063,7 @@ RXPGuides.RegisterGuide([[
 step
     #optional
     .train 431449,1
-    .train 22812 >> |cRXP_WARN_You must have|r |T136097:0|t[Barkskin] |cRXP_WARN_trained in order to aquire the|r |T136097:0|t[Improved Barkskin] |cRXP_WARN_rune|r
+    .train 22812 >> |cRXP_WARN_You must have|r |T136097:0|t[Barkskin] |cRXP_WARN_trained in order to acquire the|r |T136097:0|t[Improved Barkskin] |cRXP_WARN_rune|r
 step
     #completewith next
     .zone Tanaris >>Travel to Tanaris
