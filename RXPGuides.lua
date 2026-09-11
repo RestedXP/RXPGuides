@@ -1809,10 +1809,15 @@ end
 
 questFrame:SetScript("OnEvent", addon.QuestAutomation)
 
-function addon.GetGuideTable(guideGroup, guideName)
+function addon.GetGuideTable(guideGroup, guideName, loop)
     local index = guideGroup and guideName and
         fmt("%s||%s",guideGroup,guideName) or guideGroup or 0
-    return addon.guides[index]
+    local guide = addon.guides[index]
+    if not guide and not loop and addon.game == "TBC" then
+        return addon.GetGuideTable(addon.classicPrefix .. guideGroup, guideName, true)
+    else
+        return guide
+    end
 end
 
 addon.scheduledTasks = {}

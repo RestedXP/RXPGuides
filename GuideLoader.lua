@@ -27,6 +27,9 @@ addon.embeddedGuides = embeddedGuides
 
 addon.minGuideVersion = 0
 addon.maxGuideVersion = 0
+
+addon.classicPrefix = "C-"
+
 local aCache = {}
 
 local function applies(textEntry,customClass,func)
@@ -1125,7 +1128,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
             end
         end
         if groupOrContent:sub(1,8) == "RestedXP" then
-            groupOrContent = "C-"..groupOrContent
+            groupOrContent = addon.classicPrefix..groupOrContent
             guide.group = groupOrContent
         end
         defaultFor = "!tbc"
