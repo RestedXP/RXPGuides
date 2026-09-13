@@ -554,7 +554,6 @@ function addon.settings:CreateAceOptionsPanel()
                 width = "normal",
                 func = function()
                     _G.RunNextFrame(function()
-                        _G.SettingsPanel:Hide()
                         AceConfigDialog:CloseAll()
                         addon.guideImporter:Open()
                     end)
