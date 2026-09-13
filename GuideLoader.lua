@@ -295,7 +295,9 @@ local function CheckDataIntegrity(str, h1, mode, yieldImport)
         decoded, decodeError = addon.read(str)
     end
 
-    if not decoded then return false, decodeError or L("Failed integrity check") end
+    if not decoded or decodeError then
+        return false, decodeError or L("Failed integrity check")
+    end
 
     i, j = 0, 0
     local chunkEnd
@@ -315,6 +317,23 @@ local function CheckDataIntegrity(str, h1, mode, yieldImport)
     end
 
     local compressed = table.concat(buffer)
+    -- Reject likely account mismatches before passing data to the native decoder.
+    local compressedLength = #compressed
+    local cmf, flg = strbyte(compressed, 1, 2)
+    local checksum = compressedLength >= 8 and
+                     strbyte(compressed, compressedLength - 3) * 0x1000000 +
+                     strbyte(compressed, compressedLength - 2) * 0x10000 +
+                     strbyte(compressed, compressedLength - 1) * 0x100 +
+                     strbyte(compressed, compressedLength)
+
+    if not checksum or bitand(cmf, 0xf) ~= 8 or cmf > 0x78 or
+        bitand(flg, 0x20) ~= 0 or (cmf * 256 + flg) % 31 ~= 0 or
+        checksum ~= h1 % 4294967296 then
+        return false, L('Account mismatch, import string does not apply to current account')
+    end
+
+    if yieldImport then yieldImport() end
+
     local decompressed, decompressError
 
     if _G.C_EncodingUtil and _G.C_EncodingUtil.DecompressString then
