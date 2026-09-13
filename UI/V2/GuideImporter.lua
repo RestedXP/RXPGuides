@@ -10,6 +10,7 @@ local strbuffer = {}
 addon.guideImporter = addon.guideImporter or {}
 
 function addon.ui.v2:InitializeGuideImporter()
+    self:RegisterRXPV2Popup()
     self:RegisterRXPV2GuideImporter()
     self:RegisterRXPV2GuideImporterEditBox()
     self:RegisterRXPV2GuideImporterButton()
@@ -24,15 +25,18 @@ end
 
 local function applyTheme(frame, ...)
     local theme = getTheme()
+    local baseTheme = addon.v2.themes["RXP Blue V2"]
+    local borderColor = theme.version == 1 and baseTheme.borderColors.common or
+                        theme.borderColors.commonEdge
     local textColor = theme.textColor.common
     if not addon.v2:IsGuideWindowEnabled() then
         local legacyTheme = addon.themes[addon.settings.profile.activeTheme]
         if legacyTheme then textColor = legacyTheme.textColor end
     end
 
-    addon.ui.v2:ApplyFrameBackdrop(frame, addon.v2.themes["RXP Blue V2"].edge,
+    addon.ui.v2:ApplyFrameBackdrop(frame, baseTheme.edge,
                                     theme.backgroundColors.common,
-                                    theme.borderColors.commonEdge)
+                                    borderColor)
     frame.rxpBackground:Hide()
 
     if not frame.importerBackground then
@@ -682,6 +686,7 @@ function addon.guideImporter:UpdateImportUI()
         widgets.currentGuides:SetList(self:GetImportedGuides())
         widgets.currentGuides:SetValue(gui.selectedDeleteGuide)
         widgets.currentGuides:SetDisabled(not next(addon.db.profile.guides))
+        addon.ui.v2:ApplyDropdownTheme(widgets.currentGuides, getTheme())
     end
     if widgets.deleteSelectedGuide then
         widgets.deleteSelectedGuide:SetDisabled(not gui.selectedDeleteGuide or
@@ -738,28 +743,30 @@ function addon.ui.v2:CreateGuideImporter()
 
     local theme = getTheme()
     local content = importer.content
-    local edge = addon.v2.themes["RXP Blue V2"].edge
+    local baseTheme = addon.v2.themes["RXP Blue V2"]
+    local edge = baseTheme.edge
+    local borderColor = theme.version == 1 and baseTheme.borderColors.common or
+                        theme.borderColors.commonEdge
     local textColor = theme.textColor.common
 
-    _G.StaticPopupDialogs["RXP_ImportPurge"] = {
-        text = L"This action will remove ALL guides from the database\nAre you sure?",
-        button1 = _G.YES or _G.OKAY,
-        button2 = _G.NO or _G.CANCEL,
-        OnAccept = function()
-            addon.db.profile.guides = {}
-            addon.settings.profile.skipQuest = {}
-            addon.settings.profile.questPrio = {}
-            addon.settings.profile.questPrioIndex = {}
-            addon.db.profile.guideId = nil
-            addon.db.profile.guideLength = nil
-            addon.db.profile.guideContent = nil
-            addon:CreateMetaDataTable(true)
-            guideImporter:UpdateImportUI()
-        end,
-        timeout = 0,
-        whileDead = 1,
-        hideOnEscape = 1
-    }
+    local purgeConfirmation = AceGUI:Create("RXPV2Popup")
+    purgeConfirmation:SetTitle(L("Purge"))
+    purgeConfirmation:SetMessage(L("This action will remove ALL guides from the database\nAre you sure?"))
+    purgeConfirmation:SetButton(1, _G.YES or _G.OKAY, function()
+        addon.db.profile.guides = {}
+        addon.settings.profile.skipQuest = {}
+        addon.settings.profile.questPrio = {}
+        addon.settings.profile.questPrioIndex = {}
+        addon.db.profile.guideId = nil
+        addon.db.profile.guideLength = nil
+        addon.db.profile.guideContent = nil
+        addon:CreateMetaDataTable(true)
+        guideImporter:UpdateImportUI()
+        purgeConfirmation:Hide()
+    end)
+    purgeConfirmation:SetButton(2, _G.NO or _G.CANCEL, function() purgeConfirmation:Hide() end)
+    purgeConfirmation:Hide()
+    widgets.purgeConfirmation = purgeConfirmation
 
     local importLabel = content:CreateFontString(nil, "ARTWORK")
     importLabel:SetPoint("TOPLEFT", content, "TOPLEFT", 8, -1)
@@ -781,7 +788,7 @@ function addon.ui.v2:CreateGuideImporter()
     editBox:SetTextColor(unpack(textColor))
     addon.ui.v2:ApplyFrameBackdrop(importBox.background, edge,
                                     theme.backgroundColors.scrollbar,
-                                    theme.borderColors.commonEdge)
+                                    borderColor)
 
     widgets.importBox = importBox
     importBox:SetCallback("OnEditFocusGained", function()
@@ -799,8 +806,8 @@ function addon.ui.v2:CreateGuideImporter()
     importButton.frame:SetHighlightTexture(
         "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-hover", "ADD")
     addon.ui.v2:ApplyFrameBackdrop(importButton.frame, edge,
-                                    theme.backgroundColors.activeStepCheckboxChecked,
-                                    theme.borderColors.commonEdge)
+                                    theme.borderColors.inactivePartyTab,
+                                    borderColor)
     importButton.text:SetFont(theme.font, 9, "")
     importButton.text:SetTextColor(unpack(textColor))
     importButton:SetCallback("OnClick", function()
@@ -818,7 +825,7 @@ function addon.ui.v2:CreateGuideImporter()
         "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-hover", "ADD")
     addon.ui.v2:ApplyFrameBackdrop(spliceButton.frame, edge,
                                     theme.borderColors.inactivePartyTab,
-                                    theme.borderColors.commonEdge)
+                                    borderColor)
     spliceButton.text:SetFont(theme.font, 9, "")
     spliceButton.text:SetTextColor(unpack(textColor))
     spliceButton.frame:SetShown(addon.settings.profile.enableBetaFeatures)
@@ -842,6 +849,7 @@ function addon.ui.v2:CreateGuideImporter()
     currentGuides.label:Hide()
     currentGuides.text:SetFont(theme.font, 9, "")
     currentGuides.text:SetTextColor(unpack(textColor))
+    currentGuides.button_cover:Hide()
     local dropdownName = currentGuides.dropdown:GetName()
     _G[dropdownName .. "Left"]:Hide()
     _G[dropdownName .. "Middle"]:Hide()
@@ -850,13 +858,21 @@ function addon.ui.v2:CreateGuideImporter()
                                                        "/Textures/v2/scrollbar_down")
     currentGuides.button:SetPushedTexture("Interface/AddOns/" .. addonName ..
                                                        "/Textures/v2/scrollbar_down")
+    currentGuides.button:SetHighlightTexture("Interface/AddOns/" .. addonName ..
+                                             "/Textures/v2/scrollbar_down", "ADD")
+    currentGuides.button:ClearAllPoints()
+    currentGuides.button:SetSize(24, 24)
+    currentGuides.button:SetPoint("TOPRIGHT", currentGuides.frame, "TOPRIGHT")
     addon.ui.v2:ApplyFrameBackdrop(currentGuides.frame, edge,
                                     theme.backgroundColors.scrollbar,
-                                    theme.borderColors.commonEdge)
+                                    borderColor)
 
     currentGuides:SetCallback("OnValueChanged", function(_, _, value)
         guideImporter.gui.selectedDeleteGuide = value
         guideImporter:UpdateImportUI()
+    end)
+    currentGuides:SetCallback("OnOpened", function()
+        addon.ui.v2:ApplyDropdownTheme(currentGuides, getTheme())
     end)
 
     widgets.currentGuides = currentGuides
@@ -872,10 +888,10 @@ function addon.ui.v2:CreateGuideImporter()
         "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-hover", "ADD")
     addon.ui.v2:ApplyFrameBackdrop(purgeButton.frame, edge,
                                     theme.borderColors.inactivePartyTab,
-                                    theme.borderColors.commonEdge)
+                                    borderColor)
     purgeButton.text:SetFont(theme.font, 9, "")
     purgeButton.text:SetTextColor(unpack(textColor))
-    purgeButton:SetCallback("OnClick", function() StaticPopup_Show("RXP_ImportPurge") end)
+    purgeButton:SetCallback("OnClick", function() purgeConfirmation:Show() end)
     widgets.purgeAll = purgeButton
 
     local reloadButton = AceGUI:Create("RXPV2GuideImporterButton")
@@ -889,7 +905,7 @@ function addon.ui.v2:CreateGuideImporter()
         "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-hover", "ADD")
     addon.ui.v2:ApplyFrameBackdrop(reloadButton.frame, edge,
                                     theme.borderColors.inactivePartyTab,
-                                    theme.borderColors.commonEdge)
+                                    borderColor)
     reloadButton.text:SetFont(theme.font, 9, "")
     reloadButton.text:SetTextColor(unpack(textColor))
     reloadButton:SetCallback("OnClick", function() _G.ReloadUI() end)
@@ -906,32 +922,14 @@ function addon.ui.v2:CreateGuideImporter()
         "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-hover", "ADD")
     addon.ui.v2:ApplyFrameBackdrop(deleteButton.frame, edge,
                                     theme.borderColors.inactivePartyTab,
-                                    theme.borderColors.commonEdge)
+                                    borderColor)
     deleteButton.text:SetFont(theme.font, 9, "")
     deleteButton.text:SetTextColor(unpack(textColor))
     widgets.deleteSelectedGuide = deleteButton
 
-    local deleteConfirmation = AceGUI:Create("Frame")
+    local deleteConfirmation = AceGUI:Create("RXPV2Popup")
     deleteConfirmation:SetTitle(L("Remove"))
-    deleteConfirmation:SetLayout("Flow")
-    deleteConfirmation:SetWidth(300)
-    deleteConfirmation:SetHeight(110)
-
-    local deleteMessage = AceGUI:Create("Label")
-    deleteMessage:SetFullWidth(true)
-    deleteConfirmation:AddChild(deleteMessage)
-
-    local confirmDeleteButton = AceGUI:Create("Button")
-    confirmDeleteButton:SetText(_G.YES or _G.OKAY)
-    confirmDeleteButton:SetWidth(120)
-    deleteConfirmation:AddChild(confirmDeleteButton)
-
-    local cancelDeleteButton = AceGUI:Create("Button")
-    cancelDeleteButton:SetText(_G.NO or _G.CANCEL)
-    cancelDeleteButton:SetWidth(120)
-    deleteConfirmation:AddChild(cancelDeleteButton)
-
-    confirmDeleteButton:SetCallback("OnClick", function()
+    deleteConfirmation:SetButton(1, _G.YES or _G.OKAY, function()
         local guide = guideImporter.gui.selectedDeleteGuide
         if guide and addon.RemoveGuide(guide) then
             addon.db.profile.guides[guide] = nil
@@ -940,12 +938,12 @@ function addon.ui.v2:CreateGuideImporter()
         guideImporter:UpdateImportUI()
         deleteConfirmation:Hide()
     end)
-    cancelDeleteButton:SetCallback("OnClick", function() deleteConfirmation:Hide() end)
+    deleteConfirmation:SetButton(2, _G.NO or _G.CANCEL, function() deleteConfirmation:Hide() end)
     deleteConfirmation:Hide()
     widgets.deleteConfirmation = deleteConfirmation
 
     deleteButton:SetCallback("OnClick", function()
-        deleteMessage:SetText(L("Remove") .. " " .. guideImporter.gui.selectedDeleteGuide .. "?")
+        deleteConfirmation:SetMessage(L("Remove") .. " " .. guideImporter.gui.selectedDeleteGuide .. "?")
         deleteConfirmation:Show()
     end)
 
@@ -959,12 +957,20 @@ function addon.ui.v2:CreateGuideImporter()
     progress:SetPoint("TOPLEFT", progressLabel, "BOTTOMLEFT", 0, -4)
     progress:SetPoint("TOPRIGHT", content, "TOPRIGHT", -8, -198)
     progress:SetHeight(18)
-    progress:SetStatusBarTexture("Interface/BUTTONS/WHITE8X8")
-    progress:SetStatusBarColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
+    progress:SetOrientation("HORIZONTAL")
     progress:SetMinMaxValues(0, 1)
-    progress:SetValue(0)
+    progress:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
+    local progressTexture = progress:GetStatusBarTexture()
+    if progressTexture then progressTexture:SetDrawLayer("ARTWORK") end
+    progress:SetStatusBarColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
     addon.ui.v2:ApplyFrameBackdrop(progress, edge, theme.backgroundColors.scrollbar,
-                                    theme.borderColors.commonEdge)
+                                    borderColor)
+    progress.rxpBackground:Hide()
+    local progressBackground = progress:CreateTexture(nil, "BACKGROUND")
+    progressBackground:SetAllPoints(progress)
+    progressBackground:SetDrawLayer("BACKGROUND", -1)
+    progressBackground:SetColorTexture(unpack(theme.backgroundColors.scrollbar))
+    progress:SetValue(0)
 
     local progressText = progress:CreateFontString(nil, "OVERLAY")
     progressText:SetPoint("LEFT", progress, "LEFT", 6, 0)
