@@ -44,6 +44,317 @@ local function updateTheme(this, payload)
     end
 end
 
+function addon.ui.v2:RegisterRXPV2Popup()
+    local Type, Version = "RXPV2Popup", 1
+    if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then
+
+        return
+    end
+
+    local function frame_OnHide(frame)
+        frame.obj:Fire("OnClose")
+    end
+
+    local function frame_OnMouseDown()
+        AceGUI:ClearFocus()
+    end
+
+    local function frame_OnDragStart(frame)
+        frame:StartMoving()
+    end
+
+    local function frame_OnDragStop(frame)
+        frame:StopMovingOrSizing()
+        local widget = frame.obj
+        local status = widget.status or widget.localstatus
+        status.top = frame:GetTop()
+        status.left = frame:GetLeft()
+    end
+
+    local function updatePopupTheme(this)
+        local baseTheme = addon.v2.themes["RXP Blue V2"]
+        local theme = addon.v2.themes[addon.settings and addon.settings.profile.activeTheme]
+        if addon.v2:IsGuideWindowEnabled() then theme = addon.v2:GetTheme() end
+        theme = theme or baseTheme
+
+        local borderColor = theme.version == 1 and baseTheme.borderColors.common or
+                            theme.borderColors.commonEdge
+        addon.ui.v2:ApplyFrameBackdrop(this.frame, baseTheme.edge, theme.backgroundColors.common,
+                                       borderColor)
+        addon.ui.v2:AddFrameShadow(this.frame)
+
+        this.title:SetFont(theme.font, 10, "")
+        this.title:SetTextColor(unpack(theme.textColor.title))
+        this.message:SetFont(theme.font, 9, "")
+        this.message:SetTextColor(unpack(theme.textColor.common))
+        for _, button in ipairs(this.buttons) do
+            addon.ui.v2:ApplyFrameBackdrop(button, baseTheme.edge,
+                                           theme.backgroundColors.inactivePartyTab,
+                                           borderColor)
+            button.text:SetFont(theme.font, 9, "")
+            button.text:SetTextColor(unpack(theme.textColor.common))
+        end
+    end
+
+    local methods = {
+        ["OnAcquire"] = function(this)
+            this.frame:SetParent(UIParent)
+            this.frame:SetFrameStrata("DIALOG")
+            this.frame:SetFrameLevel(200)
+            this:SetWidth(320)
+            this:SetHeight(126)
+            this:UpdateSubTheme()
+            this:SetTitle()
+            this:SetMessage()
+            this:SetButton(1)
+            this:SetButton(2)
+            this:ApplyStatus()
+        end,
+
+        ["OnRelease"] = function(this)
+            this:Hide()
+            this.status = nil
+            wipe(this.localstatus)
+            this.buttonCallbacks = {}
+        end,
+
+        ["OnWidthSet"] = function(this, width)
+            local buttonWidth = math.max((width - 36) / 2, 1)
+            this.buttons[1]:SetWidth(buttonWidth)
+            this.buttons[2]:SetWidth(buttonWidth)
+        end,
+
+        ["OnHeightSet"] = function(this, height)
+            this.message:SetHeight(math.max(height - 70, 1))
+        end,
+
+        ["Hide"] = function(this)
+            this.frame:Hide()
+        end,
+
+        ["Show"] = function(this)
+            this:UpdateSubTheme()
+            this.frame:Show()
+        end,
+
+        ["UpdateTheme"] = updateTheme,
+
+        ["UpdateSubTheme"] = updatePopupTheme,
+
+        ["SetTitle"] = function(this, title)
+            this.title:SetText(title or "")
+        end,
+
+        ["SetMessage"] = function(this, message)
+            this.message:SetText(message or "")
+        end,
+
+        ["SetButton"] = function(this, index, text, callback)
+            local button = this.buttons[index]
+            if not button then return end
+
+            this.buttonCallbacks[index] = callback
+            button.text:SetText(text or "")
+            button:SetShown(text ~= nil)
+        end,
+
+        ["SetStatusTable"] = function(this, status)
+            assert(type(status) == "table")
+            this.status = status
+            this:ApplyStatus()
+        end,
+
+        ["ApplyStatus"] = function(this)
+            local status = this.status or this.localstatus
+            this:SetWidth(status.width or 320)
+            this:SetHeight(status.height or 126)
+            this.frame:ClearAllPoints()
+            if status.top and status.left then
+                this.frame:SetPoint("TOP", UIParent, "BOTTOM", 0, status.top)
+                this.frame:SetPoint("LEFT", UIParent, "LEFT", status.left, 0)
+            else
+                this.frame:SetPoint("CENTER")
+            end
+        end
+    }
+
+    local function Constructor()
+        local frame = CreateFrame("Frame", nil, UIParent)
+        frame:Hide()
+        frame:EnableMouse(true)
+        frame:SetMovable(true)
+        frame:SetFrameStrata("DIALOG")
+        frame:SetFrameLevel(200)
+        frame:SetSize(320, 126)
+        frame:SetToplevel(true)
+        frame:SetScript("OnHide", frame_OnHide)
+        frame:SetScript("OnMouseDown", frame_OnMouseDown)
+        frame:RegisterForDrag("LeftButton")
+        frame:SetScript("OnDragStart", frame_OnDragStart)
+        frame:SetScript("OnDragStop", frame_OnDragStop)
+
+        local closebutton = CreateFrame("Button", nil, frame)
+        closebutton:SetFrameLevel(frame:GetFrameLevel() + 3)
+        closebutton:SetNormalTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close")
+        closebutton:SetPushedTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close")
+        closebutton:SetHighlightTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/rxp-btn-close", "ADD")
+        closebutton:SetSize(20, 20)
+        closebutton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 6, 6)
+
+        local title = frame:CreateFontString(nil, "ARTWORK")
+        title:SetPoint("TOP", frame, "TOP", 0, -9)
+
+        local message = frame:CreateFontString(nil, "ARTWORK")
+        message:SetPoint("TOPLEFT", frame, "TOPLEFT", 14, -35)
+        message:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -14, -35)
+        message:SetJustifyH("LEFT")
+        message:SetJustifyV("TOP")
+        message:SetWordWrap(true)
+
+        local buttons = {}
+        local button
+        for index = 1, 2 do
+            button = CreateFrame("Button", nil, frame)
+            button:SetHeight(24)
+            button:SetHighlightTexture("Interface/AddOns/" .. addonName ..
+                                       "/Textures/v2/configurator-option-hover", "ADD")
+            local highlight = button:GetHighlightTexture()
+            highlight:ClearAllPoints()
+            highlight:SetPoint("TOPLEFT", button, "TOPLEFT", 2, -2)
+            highlight:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -2, 2)
+
+            button.text = button:CreateFontString(nil, "OVERLAY")
+            button.text:SetPoint("TOPLEFT", button, "TOPLEFT", 8, -1)
+            button.text:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -8, 1)
+            button.text:SetJustifyH("CENTER")
+            button.text:SetJustifyV("MIDDLE")
+            if index == 1 then
+                button:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", 12, 12)
+            else
+                button:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -12, 12)
+            end
+            button.index = index
+            buttons[index] = button
+        end
+
+        local widget = {
+            localstatus = {},
+            buttonCallbacks = {},
+            buttons = buttons,
+            frame = frame,
+            title = title,
+            message = message,
+            type = Type
+        }
+        for method, func in pairs(methods) do widget[method] = func end
+
+        for _, button in ipairs(buttons) do
+            button:SetScript("OnClick", function(this)
+                local callback = widget.buttonCallbacks[this.index]
+                if callback then callback() end
+            end)
+        end
+        closebutton:SetScript("OnClick", function() widget:Hide() end)
+
+        return AceGUI:RegisterAsWidget(widget)
+    end
+
+    AceGUI:RegisterWidgetType(Type, Constructor, Version)
+end
+
+function addon.ui.v2:ApplyDropdownTheme(dropdown, theme)
+    local pullout = dropdown and dropdown.pullout
+    if not pullout then return end
+
+    local baseTheme = addon.v2.themes["RXP Blue V2"]
+    theme = theme or addon.v2.themes[addon.settings and addon.settings.profile.activeTheme] or baseTheme
+    local borderColor = theme.version == 1 and baseTheme.borderColors.common or
+                        theme.borderColors.commonEdge
+    local frame = pullout.frame
+    local button = dropdown.button
+
+    if button then
+        local normal = button:GetNormalTexture()
+        local pushed = button:GetPushedTexture()
+        local highlight = button:GetHighlightTexture()
+        for _, texture in ipairs({normal, pushed, highlight}) do
+            if texture then
+                if theme.version == 1 then
+                    texture:SetDesaturated(true)
+                    texture:SetVertexColor(unpack(theme.backgroundColors.common))
+                else
+                    texture:SetDesaturated(false)
+                    texture:SetVertexColor(1, 1, 1, 1)
+                end
+            end
+        end
+    end
+
+    frame:SetBackdrop(nil)
+    self:ApplyFrameBackdrop(frame, baseTheme.edge, theme.backgroundColors.common, borderColor)
+    frame.rxpBackground:Hide()
+    if not pullout.rxpV2Background then
+        pullout.rxpV2Background = frame:CreateTexture(nil, "BACKGROUND")
+        pullout.rxpV2Background:SetAllPoints(frame)
+    end
+    pullout.rxpV2Background:SetColorTexture(unpack(theme.backgroundColors.common))
+    self:AddFrameShadow(frame)
+
+    local slider = pullout.rxpV2Slider
+    if not slider then
+        pullout.slider:Hide()
+        slider = CreateFrame("Slider", nil, pullout.scrollFrame, "RXPV2ScrollBarTemplate")
+        slider:SetOrientation("VERTICAL")
+        local buttonHeight = slider.ScrollUpButton:GetHeight()
+        slider:SetPoint("TOPLEFT", pullout.scrollFrame, "TOPRIGHT", -16, -buttonHeight - 1)
+        slider:SetPoint("BOTTOMLEFT", pullout.scrollFrame, "BOTTOMRIGHT", -16, buttonHeight + 1)
+        slider:SetHitRectInsets(0, 0, -10, 0)
+        slider:SetFrameStrata("FULLSCREEN_DIALOG")
+        slider:SetWidth(16)
+        slider:SetMinMaxValues(0, 1000)
+        slider:SetValueStep(1)
+        slider:SetValue(pullout.scrollStatus.scrollvalue or 0)
+        slider:SetScript("OnValueChanged", function(this, value) pullout:SetScroll(value) end)
+        slider.obj = pullout
+        pullout.rxpV2Slider = slider
+        pullout.slider = slider
+    end
+
+    if not pullout.rxpV2SliderBackground then
+        pullout.rxpV2SliderBackground = slider:CreateTexture(nil, "BACKGROUND")
+        pullout.rxpV2SliderBackground:SetAllPoints(slider)
+    end
+    pullout.rxpV2SliderBackground:SetColorTexture(unpack(theme.backgroundColors.scrollbar))
+    for _, button in ipairs({slider.ScrollUpButton, slider.ScrollDownButton}) do
+        if theme.version == 1 then
+            button.Normal:SetDesaturated(true)
+            button.Normal:SetVertexColor(unpack(theme.backgroundColors.common))
+        else
+            button.Normal:SetDesaturated(false)
+            button.Normal:SetVertexColor(1, 1, 1, 1)
+        end
+    end
+    if theme.version == 1 then
+        slider.ThumbTexture:SetDesaturated(true)
+        slider.ThumbTexture:SetVertexColor(unpack(theme.backgroundColors.common))
+    else
+        slider.ThumbTexture:SetDesaturated(false)
+        slider.ThumbTexture:SetVertexColor(1, 1, 1, 1)
+    end
+
+    for _, item in ipairs(pullout.items) do
+        item.text:SetFont(theme.font, 9, "")
+        item.text:SetTextColor(unpack(theme.textColor.common))
+        item.highlight:ClearAllPoints()
+        item.highlight:SetAllPoints(item.frame)
+        item.highlight:SetColorTexture(unpack(baseTheme.borderColors.common))
+        item.highlight:SetBlendMode("BLEND")
+        if item.check then item.check:SetVertexColor(unpack(theme.backgroundColors.activeStepCheckboxChecked)) end
+        if item.sub then item.sub:SetVertexColor(unpack(theme.textColor.common)) end
+    end
+    pullout:FixScroll()
+end
+
 function addon.ui.v2:SetFrameBackdropShown(frame, shown)
     if frame.rxpBackground then frame.rxpBackground:SetShown(shown) end
     if frame.rxpBorder then frame.rxpBorder:SetShown(shown) end
