@@ -593,7 +593,7 @@ function addon.guideImporter:GetImportedGuides()
 
     self.gui.selectedDeleteGuide = "none"
 
-    return {none = addon.locale.Get "none"}
+    return {none = addon.locale.Get("none")}
 end
 
 function addon.guideImporter:CheckBattleNet()
@@ -654,7 +654,8 @@ function addon.guideImporter:UpdateImportStatusHistory(data, isError, ...)
     end
 
     local latest = self.gui.progressMessage
-    current, total = latest and latest:match("(%d+)/(%d+)")
+    current, total = nil, nil
+    if latest then current, total = latest:match("(%d+)/(%d+)") end
     current, total = tonumber(current), tonumber(total)
     if current and total and total > 0 and self.widgets.progress then
         self.widgets.progress:SetMinMaxValues(0, total)
@@ -717,7 +718,7 @@ _G.StaticPopupDialogs["RXP_Import"] = {
     OnShow = function(this)
         local text = _G[this:GetName() .. "Text"]
         text:SetText(fmt(
-            addon.locale.Get "Press Ctrl+V to paste a piece of the string (%d)\nPress ESC to cancel\n\nThis process is slow and should only be used if your operating system have clipboard length restrictions",
+            addon.locale.Get("Press Ctrl+V to paste a piece of the string (%d)\nPress ESC to cancel\n\nThis process is slow and should only be used if your operating system have clipboard length restrictions"),
             #strbuffer))
     end,
     EditBoxOnEscapePressed = function(this)
@@ -737,7 +738,7 @@ _G.StaticPopupDialogs["RXP_Import"] = {
         if n > 0 or header then
             tinsert(strbuffer, text)
         else
-            addon.comms.PrettyPrint(addon.locale.Get 'Import Error - Invalid String Header')
+            addon.comms.PrettyPrint(addon.locale.Get("Import Error - Invalid String Header"))
             addon.guideImporter:Open()
 
             return
@@ -769,10 +770,10 @@ function addon.guideImporter:ProcessBuffer(editBox)
     importCache.bufferString = table.concat(importCache.bufferData)
     local shownLength = math.min(#importCache.bufferString, 150)
     if #importCache.bufferString > shownLength then
-        self:UpdateImportStatusHistory(addon.locale.Get "Loaded %d characters into import buffer, %d shown", false,
+        self:UpdateImportStatusHistory(addon.locale.Get("Loaded %d characters into import buffer, %d shown"), false,
                                        #importCache.bufferString, shownLength)
     else
-        self:UpdateImportStatusHistory(addon.locale.Get "Loaded %d characters into import buffer", false,
+        self:UpdateImportStatusHistory(addon.locale.Get("Loaded %d characters into import buffer"), false,
                                        #importCache.bufferString)
     end
 
@@ -799,9 +800,9 @@ function addon.guideImporter:UpdateImportUI()
         widgets.currentGuides:SetDisabled(not next(addon.db.profile.guides))
         addon.ui.v2:ApplyDropdownTheme(widgets.currentGuides, getTheme())
     end
-    if widgets.deleteSelectedGuide then
-        widgets.deleteSelectedGuide:SetDisabled(not gui.selectedDeleteGuide or
-                                                    gui.selectedDeleteGuide == "" or gui.selectedDeleteGuide == "none")
+    if widgets.deleteButton then
+        widgets.deleteButton:SetDisabled(not gui.selectedDeleteGuide or
+                                          gui.selectedDeleteGuide == "" or gui.selectedDeleteGuide == "none")
     end
     if widgets.importButton then
         widgets.importButton:SetDisabled(not self.importReady or not RXPData.cache)
@@ -1012,7 +1013,6 @@ function addon.ui.v2:CreateGuideImporter()
     purgeButton.text:SetFont(theme.font, 9, "")
     purgeButton.text:SetTextColor(unpack(textColor))
     purgeButton:SetCallback("OnClick", function() purgeConfirmation:Show() end)
-    widgets.purgeAll = purgeButton
 
     local reloadButton = AceGUI:Create("RXPV2GuideImporterButton")
     reloadButton:SetText(L("Reload"))
@@ -1029,7 +1029,6 @@ function addon.ui.v2:CreateGuideImporter()
     reloadButton.text:SetFont(theme.font, 9, "")
     reloadButton.text:SetTextColor(unpack(textColor))
     reloadButton:SetCallback("OnClick", function() _G.ReloadUI() end)
-    widgets.reloadUi = reloadButton
 
     local deleteButton = AceGUI:Create("RXPV2GuideImporterButton")
     deleteButton:SetText(L("Delete"))
@@ -1045,7 +1044,6 @@ function addon.ui.v2:CreateGuideImporter()
                                     borderColor)
     deleteButton.text:SetFont(theme.font, 9, "")
     deleteButton.text:SetTextColor(unpack(textColor))
-    widgets.deleteSelectedGuide = deleteButton
 
     local deleteConfirmation = AceGUI:Create("RXPV2Popup")
     deleteConfirmation:SetTitle(L("Remove"))
