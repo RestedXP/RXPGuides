@@ -6,6 +6,9 @@ local wipe = table.wipe
 local fmt, tinsert, GetTime = string.format, table.insert, GetTime
 local _G = _G
 local strbuffer = {}
+local importerBaseHeight = 298
+local maxHistoryEntries = 6
+local maxHistoryHeight = 72
 
 addon.guideImporter = addon.guideImporter or {}
 
@@ -144,7 +147,7 @@ function addon.ui.v2:RegisterRXPV2GuideImporter()
         ["ApplyStatus"] = function(this)
             local status = this.status or this.localstatus
             this:SetWidth(status.width or 500)
-            this:SetHeight(status.height or 320)
+            this:SetHeight(status.height or importerBaseHeight)
             this.frame:ClearAllPoints()
             if status.top and status.left then
                 this.frame:SetPoint("TOP", UIParent, "BOTTOM", 0, status.top)
@@ -163,7 +166,7 @@ function addon.ui.v2:RegisterRXPV2GuideImporter()
         frame:SetResizable(false)
         frame:SetFrameStrata("MEDIUM")
         frame:SetFrameLevel(100)
-        frame:SetSize(500, 320)
+        frame:SetSize(500, importerBaseHeight)
         frame:SetToplevel(true)
         frame:SetScript("OnShow", frame_OnShow)
         frame:SetScript("OnHide", frame_OnHide)
@@ -516,34 +519,54 @@ function addon.guideImporter:CheckBattleNet()
     return RXPData.cache
 end
 
+local function addHistoryEntry(history, message)
+    if not message or message == "" then return end
+
+    for _, entry in ipairs(history) do
+        if entry == message then return end
+    end
+
+    tinsert(history, 1, message)
+
+    for index = #history, maxHistoryEntries + 1, -1 do
+        history[index] = nil
+    end
+end
+
 function addon.guideImporter:UpdateImportStatusHistory(data, isError, ...)
-    local message
+    local current, total
     if type(data) == "table" then
         self.gui.importStatusHistory = data
+        for index = #data, maxHistoryEntries + 1, -1 do
+            data[index] = nil
+        end
         self.gui.progressMessage = nil
         self.gui.progressError = false
     elseif type(data) == "string" then
-        message = fmt(data, ...)
-        local previous = self.gui.progressMessage
-        local previousIsProgress = previous and previous:match("%(%d+/%d+%)")
-        if message ~= previous then
-            local alreadyRecorded
-            if previous and not previousIsProgress then
-                for _, entry in ipairs(self.gui.importStatusHistory) do
-                    if entry == previous then
-                        alreadyRecorded = true
-                        break
-                    end
+        local message = fmt(data, ...)
+        current, total = message:match("(%d+)/(%d+)")
+        current, total = tonumber(current), tonumber(total)
+
+        if current and total then
+            local details
+            for line in message:gmatch("[^\n]+") do
+                if not line:match("%d+/%d+") then
+                    details = details and details .. "\n" .. line or line
                 end
-                if not alreadyRecorded then tinsert(self.gui.importStatusHistory, 1, previous) end
             end
-            self.gui.progressMessage = message
+
+            addHistoryEntry(self.gui.importStatusHistory, details)
+            self.gui.progressMessage = fmt(addon.locale.Get("Total guides loaded: %d/%s"),
+                                           current, total)
+            self.gui.progressError = not not isError
+        else
+            addHistoryEntry(self.gui.importStatusHistory, message)
             self.gui.progressError = not not isError
         end
     end
 
     local latest = self.gui.progressMessage
-    local current, total = latest and latest:match("%((%d+)/(%d+)%)")
+    current, total = latest and latest:match("(%d+)/(%d+)")
     current, total = tonumber(current), tonumber(total)
     if current and total and total > 0 and self.widgets.progress then
         self.widgets.progress:SetMinMaxValues(0, total)
@@ -719,9 +742,11 @@ function addon.guideImporter:UpdateImportUI()
         widgets.history:SetText(table.concat(gui.importStatusHistory, "\n"))
         local historyShown = next(gui.importStatusHistory) ~= nil
         widgets.history:SetShown(historyShown)
-        local historyHeight = historyShown and math.max(widgets.history:GetStringHeight(), 18) or 0
+        local historyHeight = historyShown and
+                              math.min(math.max(widgets.history:GetStringHeight(), 18),
+                                       maxHistoryHeight) or 0
         widgets.history:SetHeight(historyHeight)
-        local frameHeight = historyShown and 338 + historyHeight or 320
+        local frameHeight = importerBaseHeight + historyHeight
         widgets.import:SetHeight(frameHeight)
     end
 end
@@ -980,11 +1005,12 @@ function addon.ui.v2:CreateGuideImporter()
     progressText:SetTextColor(unpack(textColor))
 
     local history = content:CreateFontString(nil, "ARTWORK")
-    history:SetPoint("TOPLEFT", progress, "BOTTOMLEFT", 0, -16)
-    history:SetPoint("TOPRIGHT", progress, "BOTTOMRIGHT", 0, -16)
+    history:SetPoint("TOPLEFT", progress, "BOTTOMLEFT", 0, -13)
+    history:SetPoint("TOPRIGHT", progress, "BOTTOMRIGHT", 0, -13)
     history:SetHeight(36)
     history:SetJustifyH("LEFT")
     history:SetWordWrap(true)
+    history:SetMaxLines(maxHistoryEntries)
     history:SetFont(theme.font, 8, "")
     history:SetTextColor(unpack(textColor))
     history:Hide()

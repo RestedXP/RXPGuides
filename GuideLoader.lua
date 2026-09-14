@@ -1403,6 +1403,8 @@ function addon.guideImporter:ImportString(str, synchronous)
     importBuffer = {}
     self.importBufferSize = 0
     importedGuideCount = 0
+    self.gui.progressMessage = nil
+    self.gui.progressError = false
     scriptErrorsBeforeImport = _G.GetCVar("scriptErrors")
 
     if scriptErrorsBeforeImport == "0" then _G.SetCVar("scriptErrors", "1") end
