@@ -289,13 +289,13 @@ step
    >>Return to the Light's Hope Chapel
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leonid Barthalomew the Revered|r inside
     .turnin 87497 >> Turn in The Schism
-    .accept 87498 >> Accept The Scarlet Redemption
+    .accept 87498 >> Accept The Scarlet Reclamation
     .target Leonid Barthalomew the Revered
 step
     .goto Eastern Plaguelands,67.8,83.2
     >>Return to the scarlet base camp
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Beatrix|r
-    .turnin 87498 >> Turn in The Scarlet Redemption
+    .turnin 87498 >> Turn in The Scarlet Reclamation
     .target Commander Beatrix
 step
     .goto Eastern Plaguelands,68.25,82.70

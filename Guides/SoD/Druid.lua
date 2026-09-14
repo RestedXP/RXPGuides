@@ -1003,7 +1003,7 @@ step
 step
     --PERMOK: Check coordiantes
     .train 416051,1
-    >>Click on the |cRXP_PICK_Traveller's Knapsack|r to loot the |T236229:0|t[|cRXP_LOOT_Field Medicine Kit|r] and |T133741:0|t[|cRXP_LOOT_Kelara's Log|r]
+    >>Click on the |cRXP_PICK_Traveller's Knapsack|r to loot the |T236229:0|t[|cRXP_LOOT_Field Medicine Kit|r] and |T133741:0|t[|cRXP_LOOT_Keldara's Log|r]
     .goto Azshara,20.61,61.97
     .collect 221018,1
     .collect 221017,1

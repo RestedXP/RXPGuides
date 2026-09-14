@@ -169,10 +169,10 @@ level -- Arcane Focus (Rank 2)
 level -- Arcane Focus (Rank 3)
     .talent 1,1,2,3
 
-level -- Arcane Sublety (Rank 1)
+level -- Arcane Subtlety (Rank 1)
     .talent 1,1,1,1
 
-level -- Arcane Sublety (Rank 2)
+level -- Arcane Subtlety (Rank 2)
     .talent 1,1,1,2
 
 level -- Arcane Concentration (Rank 1)
@@ -395,10 +395,10 @@ level -- Arcane Focus (Rank 2)
 level -- Arcane Focus (Rank 3)
     .talent 1,1,2,3
 
-level -- Arcane Sublety (Rank 1)
+level -- Arcane Subtlety (Rank 1)
     .talent 1,1,1,1
 
-level -- Arcane Sublety (Rank 2)
+level -- Arcane Subtlety (Rank 2)
     .talent 1,1,1,2
 
 level -- Arcane Concentration (Rank 1)

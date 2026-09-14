@@ -24298,7 +24298,7 @@ step << Shaman
 step << Druid
     .goto 463,57.66,52.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zen'tabra|r.
-    .turnin 24768 >>Turn in Proving PitMage
+    .turnin 24768 >>Turn in Proving Pit
     .accept 24769 >>Accept More Than Expected
     .target Zen'tabra
 step << Rogue

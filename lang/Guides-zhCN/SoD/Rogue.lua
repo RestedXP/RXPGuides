@@ -1836,7 +1836,7 @@ step
     .train 432301,1
 step
     >>打开|T133639:0|t|cRXP_LOOT_绑匪的钱包|r 并拾取 |T133302:0|t|cRXP_LOOT_珍贵奖章|r
-    .collect 221370,1 -- Precious Medalion 1/1
+    .collect 221370,1 -- Precious Precious Medallion 1/1
     .use 221371
     .train 432301,1
 step << Rogue

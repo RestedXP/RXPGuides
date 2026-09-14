@@ -5125,7 +5125,7 @@ step << Draenei !Paladin
 step << Shaman
     #completewith next
     .goto The Exodar,42.29,71.54
-    .zone The Exodar >> Enter The Exodar through the back enterance
+    .zone The Exodar >> Enter The Exodar through the back entrance
 step << Shaman
     #completewith next
     .goto The Exodar,27.90,29.43,10 >> Travel toward |cRXP_FRIENDLY_Farseer Nobundo|r up the ramp
@@ -6300,7 +6300,7 @@ step << Draenei !Paladin
 step << Shaman
     #completewith next
     .goto The Exodar,42.29,71.54
-    .zone The Exodar >> Enter The Exodar through the back enterance
+    .zone The Exodar >> Enter The Exodar through the back entrance
 step << Shaman
     #completewith next
     .goto The Exodar,27.90,29.43,10 >> Travel toward |cRXP_FRIENDLY_Farseer Nobundo|r up the ramp

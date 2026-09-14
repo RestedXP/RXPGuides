@@ -180,7 +180,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .goto Zangarmarsh,50.37,40.90,20,0 -- coilfang reservoir enterance
+    .goto Zangarmarsh,50.37,40.90,20,0 -- coilfang reservoir entrance
     .goto Zangarmarsh,49.018,35.631 -- slave pens
     .subzone 3717 >>|cRXP_WARN_在赞加沼泽寻找一个英雄难度：奴隶围栏的队伍。找到队伍后，进入奴隶围栏|r
 step
@@ -194,7 +194,7 @@ step
     .complete 10901,1 -- Earthen Signet (1)
     .complete 10901,2 -- Blazing Signet (2)
 step
-    .goto Zangarmarsh,50.37,40.90,20,0 -- coilfang reservoir enterance
+    .goto Zangarmarsh,50.37,40.90,20,0 -- coilfang reservoir entrance
     .goto Zangarmarsh,49.018,35.631 -- slave pens
     >>|cRXP_WARN_Return to |cRXP_FRIENDLY_异教徒斯卡希斯|r对话，NPC在里面 HEROIC:Slave Pens|r
     .turnin 10901 >>交任务《 前往熔光镇》 卡达什圣杖

@@ -5375,7 +5375,7 @@ step
     #optional
     #completewith FlyZoramS2
     .subzone 431 >>|cRXP_WARN_Perform a 'Ghetto Hearth' in Blackfathom Deeps|r
-	.link /run InviteUnit("aa");C_Timer.After(1,function() LeaveParty() end) >> |cRXP_WARN_Copy paste this macro inside Blackfathrom Deeps to ghetto Hearth back to Splintertree Post|r
+	.link /run InviteUnit("aa");C_Timer.After(1,function() LeaveParty() end) >> |cRXP_WARN_Copy paste this macro inside Blackfathom Deeps to ghetto Hearth back to Splintertree Post|r
     .cooldown item,6948,<0
     .bindlocation 431,1
     .dungeon BFD

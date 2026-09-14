@@ -50,7 +50,7 @@ step
     .goto Deadwind Pass,46.84,74.90,25,0
     .goto Deadwind Pass,45.84,78.04,15,0
     .goto Deadwind Pass,48.74,78.87,10,0
-    .subzone 2562 >> |cRXP_WARN_Head back the way you came from to exit the Master's Cellar. You will shortly enter another enterance into the Master's Callar again|r
+    .subzone 2562 >> |cRXP_WARN_Head back the way you came from to exit the Master's Cellar. You will shortly enter another entrance into the Master's Callar again|r
     .subzoneskip 2837,1
 step
     #completewith next
@@ -190,7 +190,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .goto Zangarmarsh,50.37,40.90,20,0 -- coilfang reservoir enterance
+    .goto Zangarmarsh,50.37,40.90,20,0 -- coilfang reservoir entrance
     .goto Zangarmarsh,49.018,35.631 -- slave pens
     .subzone 3717 >> |cRXP_WARN_Find a group for HEROIC: Slave Pens in Zangarmarsh. Once you have found a group, zone into the Slave Pens|r
 step
@@ -198,13 +198,13 @@ step
     .accept 10901 >> Accept The Cudgel of Kar'desh
     .target Skar'this the Heretic
 step
-    >>|cRXP_WARN_Find raids for both Gruul the Dragonslayer and Karazhan|r
+    >>|cRXP_WARN_Find raids for both Gruul the Dragonkiller and Karazhan|r
     >>Kill |cRXP_ENEMY_Gruul|r. Loot him for the |cRXP_LOOT_Earthen Signet|r
     >>Kill |cRXP_ENEMY_Nightbane|r. Loot him for the |cRXP_LOOT_Blazing Signet|r
     .complete 10901,1 -- Earthen Signet (1)
     .complete 10901,2 -- Blazing Signet (2)
 step
-    .goto Zangarmarsh,50.37,40.90,20,0 -- coilfang reservoir enterance
+    .goto Zangarmarsh,50.37,40.90,20,0 -- coilfang reservoir entrance
     .goto Zangarmarsh,49.018,35.631 -- slave pens
     >>|cRXP_WARN_Return to |cRXP_FRIENDLY_Skar'this the Heretic|r inside HEROIC: Slave Pens|r
     .turnin 10901 >> Turn in The Cudgel of Kar'desh

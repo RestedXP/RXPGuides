@@ -303,7 +303,7 @@ step
     .complete 81747,1
     .maxlevel 53
 step
-    .goto Duskwood,46.63,47.90,5 >> Return to the portal you ussed to phase into the emerald dream and |cRXP_WARN_click it to phase back into the normal world|r
+    .goto Duskwood,46.63,47.90,5 >> Return to the portal you used to phase into the emerald dream and |cRXP_WARN_click it to phase back into the normal world|r
     .maxlevel 53
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Field Captain Palandar|r

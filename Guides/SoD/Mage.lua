@@ -3533,7 +3533,7 @@ step
 step
     .train 401722,1
     .goto 1415,48.388,63.626
-    >>|cRXP_WARN_Drop down the chain and head towards the Blackrock Depths enterance|r
+    >>|cRXP_WARN_Drop down the chain and head towards the Blackrock Depths entrance|r
     >>Loot the |cRXP_LOOT_Magma or Lava?|r book on the ground
     .collect 228133,1
     .isQuestAvailable 84396

@@ -1260,7 +1260,7 @@ step
 step
     #completewith next
     .train 426443,1
-    .goto Arathi Highlands,29.292,62.283,10 >> |cRXP_WARN_Enter the large house on the lower level of Stromgade Keep, and head up to the 2nd floor|r
+    .goto Arathi Highlands,29.292,62.283,10 >> |cRXP_WARN_Enter the large house on the lower level of Stromgarde Keep, and head up to the 2nd floor|r
 step
     #completewith next
     .train 426443,1

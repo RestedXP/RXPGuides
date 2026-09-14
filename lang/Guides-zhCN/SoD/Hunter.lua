@@ -760,7 +760,7 @@ step
     >>击杀他并拾取|T134419:0|t[|cRXP_FRIENDLY_野兽控制符文|r]
     .collect 208701,1 --Rune of Beast Mastery (1)
     .mob Ferocious Grizzled Bear
-    .mob Grizzled Protecter
+    .mob Grizzled Protector
 step
     #season 2
     .train 410110 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_野兽控制符文|r] |cRXP_WARN_来训练|r |T132270:0|t[野兽控制]
