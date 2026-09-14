@@ -56,26 +56,110 @@ local function applyTheme(frame, ...)
         text:SetTextColor(unpack(textColor))
     end
 
-    return theme
+    return theme, textColor
 end
 
 local function applyWindowTheme(frame, ...)
-    local theme = applyTheme(frame, ...)
+    local theme, textColor = applyTheme(frame, ...)
 
-    local body = frame:CreateTexture(nil, "BACKGROUND", nil, 1)
-    body:SetPoint("TOPLEFT", frame, "TOPLEFT", 1, -18)
-    body:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -1, -18)
-    body:SetPoint("BOTTOM", frame, "BOTTOM", 0, 1)
+    local body = frame.importerBody
+    if not body then
+        body = frame:CreateTexture(nil, "BACKGROUND", nil, 1)
+        body:SetPoint("TOPLEFT", frame, "TOPLEFT", 1, -18)
+        body:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -1, -18)
+        body:SetPoint("BOTTOM", frame, "BOTTOM", 0, 1)
+        frame.importerBody = body
+    end
     body:SetColorTexture(unpack(theme.backgroundColors.guideWindow))
     body:SetAlpha(0.65)
 
-    local header = frame:CreateTexture(nil, "BACKGROUND", nil, 1)
-    header:SetPoint("TOPLEFT", frame, "TOPLEFT", 1, -1)
-    header:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -1, -1)
-    header:SetHeight(18)
+    local header = frame.importerHeader
+    if not header then
+        header = frame:CreateTexture(nil, "BACKGROUND", nil, 1)
+        header:SetPoint("TOPLEFT", frame, "TOPLEFT", 1, -1)
+        header:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -1, -1)
+        header:SetHeight(18)
+        frame.importerHeader = header
+    end
     header:SetColorTexture(unpack(theme.backgroundColors.scrollbar))
 
-    return theme
+    return theme, textColor
+end
+
+local function updateTheme(this, payload)
+    if not payload then return end
+
+    if payload.scale and this.SetScale then this:SetScale(payload.scale) end
+
+    if this.UpdateSubTheme then this:UpdateSubTheme(payload) end
+
+    if payload.updateChildren then
+        for _, child in pairs(this.children or {}) do
+            if child.UpdateTheme then child:UpdateTheme({updateChildren = true}) end
+        end
+    end
+end
+
+local function updateImporterTheme(this)
+    local widgets = addon.guideImporter.widgets
+    if not widgets.importButton then return end
+
+    local theme, textColor = applyWindowTheme(this.frame, this.title, this.description)
+    local baseTheme = addon.v2.themes["RXP Blue V2"]
+    local borderColor = theme.version == 1 and baseTheme.borderColors.common or
+                        theme.borderColors.commonEdge
+
+    this.title:SetFont(theme.font, 10, "")
+    this.title:SetTextColor(unpack(theme.textColor.title))
+
+    widgets.importLabel:SetFont(theme.font, 8, "")
+    widgets.importLabel:SetTextColor(unpack(theme.textColor.title))
+    widgets.importBox:GetEditBox():SetFont(theme.font, 9, "")
+    widgets.importBox:GetEditBox():SetTextColor(unpack(textColor))
+    addon.ui.v2:ApplyFrameBackdrop(widgets.importBox.background, baseTheme.edge,
+                                    theme.backgroundColors.scrollbar,
+                                    borderColor)
+
+    for _, button in ipairs({widgets.importButton, widgets.importSplicedString, widgets.purgeButton,
+                             widgets.reloadButton, widgets.deleteButton}) do
+        addon.ui.v2:ApplyFrameBackdrop(button.frame, baseTheme.edge,
+                                       theme.borderColors.inactivePartyTab,
+                                       borderColor)
+        button.text:SetFont(theme.font, 9, "")
+        button.text:SetTextColor(unpack(textColor))
+        button:SetDisabled(button.disabled)
+    end
+
+    widgets.guidesLabel:SetFont(theme.font, 8, "")
+    widgets.guidesLabel:SetTextColor(unpack(textColor))
+    widgets.currentGuides.text:SetFont(theme.font, 9, "")
+    widgets.currentGuides.text:SetTextColor(unpack(textColor))
+    addon.ui.v2:ApplyFrameBackdrop(widgets.currentGuides.frame, baseTheme.edge,
+                                    theme.backgroundColors.scrollbar,
+                                    borderColor)
+    addon.ui.v2:ApplyDropdownTheme(widgets.currentGuides, theme)
+
+    widgets.progressLabel:SetFont(theme.font, 8, "")
+    widgets.progressLabel:SetTextColor(unpack(textColor))
+    addon.ui.v2:ApplyFrameBackdrop(widgets.progress, baseTheme.edge,
+                                    theme.backgroundColors.scrollbar,
+                                    borderColor)
+    widgets.progress:SetStatusBarColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
+    widgets.progressBackground:SetColorTexture(unpack(theme.backgroundColors.scrollbar))
+    widgets.progressText:SetFont(theme.font, 8, "")
+    if addon.guideImporter.gui.progressError then
+        widgets.progressText:SetTextColor(1, 0.45, 0.35)
+    else
+        widgets.progressText:SetTextColor(unpack(textColor))
+    end
+    widgets.history:SetFont(theme.font, 8, "")
+    widgets.history:SetTextColor(unpack(textColor))
+
+    for _, popup in ipairs({widgets.purgeConfirmation, widgets.deleteConfirmation}) do
+        popup:UpdateTheme({})
+    end
+
+    addon.guideImporter:UpdateImportUI()
 end
 
 function addon.ui.v2:RegisterRXPV2GuideImporter()
@@ -144,6 +228,10 @@ function addon.ui.v2:RegisterRXPV2GuideImporter()
             this:ApplyStatus()
         end,
 
+        ["UpdateTheme"] = updateTheme,
+
+        ["UpdateSubTheme"] = updateImporterTheme,
+
         ["ApplyStatus"] = function(this)
             local status = this.status or this.localstatus
             this:SetWidth(status.width or 500)
@@ -192,7 +280,7 @@ function addon.ui.v2:RegisterRXPV2GuideImporter()
 
         local theme = applyWindowTheme(frame, title, description)
         title:SetFont(theme.font, 10, "")
-        title:SetTextColor(1, 0.82, 0)
+        title:SetTextColor(unpack(theme.textColor.title))
         addon.ui.v2:AddFrameShadow(frame)
 
         local content = CreateFrame("Frame", nil, frame)
@@ -751,6 +839,11 @@ function addon.guideImporter:UpdateImportUI()
     end
 end
 
+function addon.guideImporter:UpdateTheme()
+    local importer = self.widgets.import
+    if importer then importer:UpdateTheme({}) end
+end
+
 function addon.ui.v2:CreateGuideImporter()
     local guideImporter = addon.guideImporter
     local widgets = guideImporter.widgets
@@ -797,7 +890,7 @@ function addon.ui.v2:CreateGuideImporter()
     importLabel:SetPoint("TOPLEFT", content, "TOPLEFT", 8, -1)
     importLabel:SetFont(theme.font, 8, "")
     importLabel:SetText(L("Paste your guide string into the text field and click \"Import\"."))
-    importLabel:SetTextColor(1, 0.82, 0)
+    importLabel:SetTextColor(unpack(theme.textColor.title))
 
     local importBox = AceGUI:Create("RXPV2GuideImporterEditBox")
     importBox:SetLabel(nil)
@@ -1017,15 +1110,27 @@ function addon.ui.v2:CreateGuideImporter()
     history:SetTextColor(unpack(textColor))
     history:Hide()
 
+    widgets.import = importer
+    widgets.importLabel = importLabel
+    widgets.importBox = importBox
+    widgets.importButton = importButton
+    widgets.importSplicedString = spliceButton
+    widgets.guidesLabel = guidesLabel
+    widgets.currentGuides = currentGuides
+    widgets.purgeButton = purgeButton
+    widgets.reloadButton = reloadButton
+    widgets.deleteButton = deleteButton
+    widgets.purgeConfirmation = purgeConfirmation
+    widgets.deleteConfirmation = deleteConfirmation
+    widgets.progressLabel = progressLabel
     widgets.progress = progress
+    widgets.progressBackground = progressBackground
     widgets.progressText = progressText
     widgets.history = history
-
-    widgets.import = importer
     importer:SetCallback("OnShow", function()
         guideImporter:UpdateImportUI()
     end)
-    guideImporter:UpdateImportUI()
+    importer:UpdateSubTheme()
 
     if not RXPData.cache then
         guideImporter:UpdateImportStatusHistory(

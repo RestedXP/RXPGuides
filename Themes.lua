@@ -245,6 +245,8 @@ function addon:ReloadTheme()
             self.targeting.activeTargetFrame:UpdateVisuals()
         end
     end
+
+    if self.guideImporter then self.guideImporter:UpdateTheme() end
 end
 
 function addon:GetThemeOptions()
