@@ -883,6 +883,8 @@ function addon.ui.v2:CreateGuideImporter()
                                                        "/Textures/v2/scrollbar_down")
     currentGuides.button:SetPushedTexture("Interface/AddOns/" .. addonName ..
                                                        "/Textures/v2/scrollbar_down")
+    currentGuides.button:SetDisabledTexture("Interface/AddOns/" .. addonName ..
+                                                         "/Textures/v2/scrollbar_down")
     currentGuides.button:SetHighlightTexture("Interface/AddOns/" .. addonName ..
                                              "/Textures/v2/scrollbar_down", "ADD")
     currentGuides.button:ClearAllPoints()

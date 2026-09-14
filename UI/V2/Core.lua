@@ -277,7 +277,8 @@ function addon.ui.v2:ApplyDropdownTheme(dropdown, theme)
         local normal = button:GetNormalTexture()
         local pushed = button:GetPushedTexture()
         local highlight = button:GetHighlightTexture()
-        for _, texture in ipairs({normal, pushed, highlight}) do
+        local disabled = button:GetDisabledTexture()
+        for _, texture in ipairs({normal, pushed, highlight, disabled}) do
             if texture then
                 if theme.version == 1 then
                     texture:SetDesaturated(true)
