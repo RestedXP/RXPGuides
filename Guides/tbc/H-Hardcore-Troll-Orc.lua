@@ -2293,6 +2293,7 @@ step
     .turnin 837 >>Turn in Encroachment
     .target Gar'Thok
 step
+    #optional
     #loop
 	.goto Durotar,41.94,40.46,0
 	.goto Durotar,44.45,39.74,30,0
@@ -2317,13 +2318,12 @@ step << Warrior
     .trainer >>Train your class spells
     .target Tarshaw Jaggedscar
     --Warrior will do def stance q in Brill
-step << Warlock
+step << Orc Warlock
     .goto Durotar,54.37,41.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dhugru|r
-    --.accept 1506 >>Accept Gan'rul's Summons
+    .accept 1506 >>Accept Gan'rul's Summons
     .train 1120 >>Train your class spells
     .target Dhugru Gorelust
-    --Warlock will do voidwalker class q in Tirisfal
 step << Warlock
     #completewith next
     .goto Durotar,54.70,41.49
@@ -2349,7 +2349,7 @@ step << Hunter
     >>Go inside the bunker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside
     .accept 6062 >>Accept Taming the Beast
-    .trainer >> Train your class spells
+    .trainer >>Train your class spells
     .target Thotar
 step << Hunter
     .goto Durotar,52.97,41.04
@@ -2559,6 +2559,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vol'Jin|r
     .turnin 831 >>Turn in The Admiral's Orders
     .target Vol'Jin
+step << Orc Warlock
+    .goto Orgrimmar,31.74,37.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .accept 5726 >>Accept Hidden Enemies
+    .target Thrall
 step << Hunter
     #completewith next
     .goto Orgrimmar,68.02,38.69,30 >> Travel to the Valley of Honor
@@ -2594,6 +2599,106 @@ step << skip --Orc Rogue/Troll Rogue
 	.accept 1963 >> Accept The Shattered Hand
     .target Therzok
     --can't do this if ghostlands rogue q is done instead
+step << Orc Warlock
+    #completewith SkullRockWarlock
+    .zone Durotar >> Leave Orgrimmar
+    .zoneskip Durotar
+step << Orc Warlock
+    #label SkullRockWarlock
+    .goto Durotar,54.95,9.61
+    .subzone 817 >>Travel to Skull Rock
+    .isOnQuest 1501
+step << Orc Warlock
+    #completewith VergaTablet
+    >>Kill |cRXP_ENEMY_Gazz'uz|r if he is up. Loot him for |T134085:0|t[|cRXP_LOOT_Eye of Burning Shadow|r]. Use it to start the quest
+    .collect 4903,1,832 --Collect Eye of Burning Shadow
+    .accept 832 >>Accept Burning Shadows
+    .unitscan Gazz'uz
+step << Orc Warlock
+    #completewith next
+    >>Kill |cRXP_ENEMY_Burning Blade Orcs|r. Loot them for a |cRXP_LOOT_Lieutenant's Insignia|r
+    >>|cRXP_WARN_Skip this if you're unlucky with the drop|r
+    .complete 5726,1 --Lieutenant's Insignia (1)
+    .mob Burning Blade Fanatic
+    .mob Burning Blade Apprentice
+step << Orc Warlock
+    #label VergaTablet
+    .goto Durotar,54.16,8.95,15,0
+    .goto Durotar,51.62,9.76
+    >>Loot the |cRXP_PICK_Burning Blade Stash|r in the back of the cave for |cRXP_LOOT_Tablet of Verga|r
+    .complete 1501,1 --Tablet of Verga (1)
+step << Orc Warlock
+    #softcore
+    .goto Durotar,47.05,17.58
+    .deathskip >> Die and Respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .isQuestComplete 1501
+step << Orc Warlock
+    .goto Orgrimmar,48.97,92.84,50,0
+    .zone Orgrimmar >> Enter Orgrimmar
+    .zoneskip Orgrimmar
+    .isQuestComplete 1501
+step << Orc Warlock
+    .goto Orgrimmar,31.74,37.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .turnin 5726 >>Turn in Hidden Enemies
+    .accept 5727 >>Accept Hidden Enemies
+    .target Thrall
+    .isQuestComplete 5726
+step << Orc Warlock
+    #optional
+    .goto Orgrimmar,31.74,37.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .accept 5727 >>Accept Hidden Enemies
+    .target Thrall
+    .isQuestTurnedIn 5726
+step << Orc Warlock
+    .goto Orgrimmar,48.246,45.281
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Gan'rul Bloodeye|r
+    .turnin 1501 >>Turn in Creature of the Void
+    .accept 1504 >>Accept The Binding
+    .target Gan'rul Bloodeye
+step << Orc Warlock
+    .goto Orgrimmar,49.49,50.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
+    .accept 832 >>Accept Burning Shadows
+    .turnin 832 >>Turn in Burning Shadows
+    .target Neeru Fireblade
+    .skipgossip
+    .itemcount 4903,1
+step << Orc Warlock
+    .goto Orgrimmar,49.6,50.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
+    .complete 5727,1 --Gauge Neeru Fireblade's reaction to you being a member of the Burning Blade
+    .skipgossip
+    .target Neeru Fireblade
+    .isQuestTurnedIn 5726
+step << Orc Warlock
+    #completewith next
+    .cast 9221 >>|cRXP_WARN_Use the|r |T134416:0|t[Glyphs of Summoning] |cRXP_WARN_at the Summoning Circle|r
+    .use 6284
+step << Orc Warlock
+    .goto Orgrimmar,49.45,50.02
+    >>Kill the |cRXP_ENEMY_Summoned Voidwalker|r
+    .complete 1504,1 --Summoned Voidwalker (1)
+    .mob Summoned Voidwalker
+    .use 6284
+step << Orc Warlock
+    .goto Orgrimmar,48.246,45.281
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Gan'rul Bloodeye|r
+    .turnin 1504 >>Turn in The Binding
+    .target Gan'rul Bloodeye
+step << Orc Warlock
+    .goto Orgrimmar,31.74,37.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .turnin 5727 >>Turn in Hidden Enemies
+    .target Thrall
+    .isQuestTurnedIn 5726
+step << Orc Warlock
+    #optional
+    .abandon 5726 >>Abandon Hidden Enemies
+step << Orc Warlock
+    #optional
+    .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
 step
     #completewith ZeptoUC1
     .goto Durotar,45.54,12.14
@@ -2619,9 +2724,8 @@ step
     .goto Durotar,50.8,13.8,40 >>Go up the Zeppelin Tower
     .zone Tirisfal Glades >>Take the Zeppelin to Tirisfal Glades
     .zoneskip Tirisfal Glades
-step << Warlock/Warrior
-    #completewith WarDefStance << Warrior
-    #completewith HalgarPickup << Warlock
+step << Warrior
+    #completewith WarDefStance
     .goto Tirisfal Glades,61.52,53.20,80 >> Travel to Brill
     .subzoneskip 159
 step << Warrior
@@ -2638,12 +2742,6 @@ step << Warrior
     .accept 1818 >> Accept Speak with Dillinger
     .target Austil de Mon
     .isQuestAvailable 1498
-step << Warlock
-    #label HalgarPickup
-    .goto Tirisfal Glades,61.62,52.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ageron|r inside the inn
-    .accept 1478 >> Accept Halgar's Summons
-    .target Ageron Kargal
 step << Warrior
     .goto Tirisfal Glades,58.19,51.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
@@ -2670,86 +2768,12 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r inside the inn
     .turnin 1820 >>Turn in Speak with Coleman
     .isQuestTurnedIn 1819
-step << Warlock
-    #completewith UCflightpath1
-    .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >> Enter Undercity
-    .zoneskip Undercity
-step << Warlock
-    #completewith UCflightpath1
-    .goto Undercity,66.09,20.06,35,0
-    .goto Undercity,64.37,23.94,35,0
-    .goto Undercity,65.93,26.71,10,0
-    .goto Undercity,65.89,34.03,10,0
-    .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >> Take the lift down to the Undercity
-step << Warlock
-    #label UCflightpath1
-    .goto Undercity,63.25,48.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael|r
-    .fp Undercity >> Get the Undercity flight path
-    .target Michael Garrett
-step << Warlock
-    .goto Undercity,85.07,25.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin|r in the Magic Quarter
-    .turnin 1478 >> Turn in Halgar's Summons
-    .accept 1473 >> Accept Creature of the Void
-step << Warlock
-    #optional
-    .goto Undercity,47.25,39.12,50,0
-    .goto Undercity,46.35,43.86,10,0
-    .goto Undercity,45.24,39.35,10,0
-    .goto Undercity,41.32,38.40,10,0
-    .goto Undercity,40.74,33.95,10,0
-    .goto Undercity,34.80,33.19,15,0
-    .goto Undercity,27.39,30.23,35,0
-    .goto Undercity,21.89,43.35,35,0
-    .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >> Leave Undercity through the Sewers
-    .zoneskip Tirisfal Glades
-step << Warlock
-    .goto Tirisfal Glades,51.06,67.57
-    >>Loot |cRXP_PICK_Perrine's Chest|r on the ground for |T133733:0|t[Egalin's Grimoire]
-    .complete 1473,1 --Egalin's Grimoire (1)
-step << Warlock
-    #completewith next
-    .goto Undercity,16.51,42.76,35,0
-    .goto Undercity,22.98,39.76,35,0
-    .goto Undercity,24.93,32.54,35,0
-    .goto Undercity,34.78,33.24,10,0
-    .goto Undercity,40.83,34.08,10,0
-    .goto Undercity,41.35,38.40,10,0
-    .goto Undercity,45.25,39.20,10,0
-    .goto Undercity,45.67,43.60,10,0
-    .zone Undercity >> Travel back into the Undercity through the sewers
-step << Warlock
-    .goto Undercity,85.07,25.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin|r in the Magic Quarter
-    .turnin 1473 >> Turn in Creature of the Void
-    .accept 1471 >> Accept The Binding
-    .target Carendin Halgar
-step << Warlock
-    #completewith next
-    .goto Undercity,86.64,27.10
-    .cast 9221 >>|cRXP_WARN_Use the|r |T134416:0|t[Runes of Summoning] |cRXP_WARN_at the Summoning Circle|r
-    .use 6284
-step << Warlock
-    .goto Undercity,86.64,27.10
-    >>Kill the |cRXP_ENEMY_Summoned Voidwalker|r
-    .complete 1471,1 --Kill Summoned Voidwalker (1)
-    .mob Summoned Voidwalker
-    .use 6284
-step << Warlock
-    .goto Undercity,85.04,25.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin|r
-    .turnin 1471 >>Turn in The Binding
-    .target Carendin Halgar
-step << !Warlock
+step
     #completewith PorttoSilvermoon
     .goto Tirisfal Glades,61.80,65.06,20,0
     .zone Undercity >> Enter Undercity
     .zoneskip Undercity
-step << !Warlock
+step
     #completewith RFCPowerPickup
     .goto Undercity,66.09,20.06,35,0
     .goto Undercity,64.37,23.94,35,0
@@ -2758,7 +2782,7 @@ step << !Warlock
     .goto Undercity,64.22,39.77,10,0
     .goto Undercity,65.53,43.62,15 >> Take the lift down to the Undercity
     .dungeon RFC
-step << !Warlock
+step
     #completewith next
     .goto Undercity,51.99,64.54,10,0
     .goto Undercity,46.25,73.22,10,0
@@ -2774,15 +2798,14 @@ step
     .accept 5725 >>Accept The Power to Destroy...
     .target Varimathras
     .dungeon RFC
-step << !Warlock
+step
     #completewith PorttoSilvermoon
     .goto Undercity,62.0,11.3,18 >>Take the elevator back to the upper level and the go up the stairs toward the |cRXP_PICK_Orb of Translocation|r
     .dungeon RFC
 step
     #completewith PorttoSilvermoon
-    .goto Undercity,62.0,11.3,18 >>Go up the stairs here << !Warlock
-    .goto Undercity,62.0,11.3,18 >>Take the elevator back to the upper level and the go up the stairs toward the |cRXP_PICK_Orb of Translocation|r << Warlock
-    .dungeon !RFC << !Warlock
+    .goto Undercity,62.0,11.3,18 >>Go up the stairs here
+    .dungeon !RFC
 step
     #label PorttoSilvermoon
     .goto Undercity,54.9,11.3
