@@ -887,7 +887,7 @@ step
     .accept 81826 >> Accept Hinterlands Mission VII: Recover Star-Touched Dragonegg
     .accept 81830 >> Accept Hinterlands Mission VIII: Recover Elunar Relic
     .accept 81832 >> Accept Hinterlands Mission IX: Recover Dreampearl
-    .accept 81850 >> Accept Hinterlands Mission XVI: Rescue Elinar Shadowdrinker
+    .accept 81850 >> Accept Hinterlands Mission XVI: Rescue Elianar Shadowdrinker
     .accept 81851 >> Accept Hinterlands Mission XVII: Rescue Serlina Starbright
     .accept 81852 >> Accept Hinterlands Mission XVII: Rescue Veanna Cloudsleeper
     .target Field Captain Korlian
@@ -1089,7 +1089,7 @@ step
     .turnin 81826 >> Turn in Hinterlands Mission VII: Recover Star-Touched Dragonegg
     .turnin 81830 >> Turn in Hinterlands Mission VIII: Recover Elunar Relic
     .turnin 81832 >> Turn in Hinterlands Mission IX: Recover Dreampearl
-    .turnin 81850 >> Turn in Hinterlands Mission XVI: Rescue Elinar Shadowdrinker
+    .turnin 81850 >> Turn in Hinterlands Mission XVI: Rescue Elianar Shadowdrinker
     .turnin 81851 >> Turn in Hinterlands Mission XVII: Rescue Serlina Starbright
     .turnin 81852 >> Turn in Hinterlands Mission XVII: Rescue Veanna Cloudsleeper
     .target Field Captain Korlian
