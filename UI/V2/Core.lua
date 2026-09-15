@@ -77,10 +77,8 @@ function addon.ui.v2:RegisterRXPV2Popup()
         if addon.v2:IsGuideWindowEnabled() then theme = addon.v2:GetTheme() end
         theme = theme or baseTheme
 
-        local borderColor = theme.version == 1 and baseTheme.borderColors.common or
-                            theme.borderColors.commonEdge
-        addon.ui.v2:ApplyFrameBackdrop(this.frame, baseTheme.edge, theme.backgroundColors.common,
-                                       borderColor)
+        addon.ui.v2:ApplyFrameBackdrop(this.frame, theme.edge, theme.backgroundColors.common,
+                                       theme.borderColors.commonEdge)
         addon.ui.v2:AddFrameShadow(this.frame)
 
         this.title:SetFont(theme.font, 10, "")
@@ -88,9 +86,9 @@ function addon.ui.v2:RegisterRXPV2Popup()
         this.message:SetFont(theme.font, 9, "")
         this.message:SetTextColor(unpack(theme.textColor.common))
         for _, button in ipairs(this.buttons) do
-            addon.ui.v2:ApplyFrameBackdrop(button, baseTheme.edge,
+            addon.ui.v2:ApplyFrameBackdrop(button, theme.edge,
                                            theme.backgroundColors.inactivePartyTab,
-                                           borderColor)
+                                           theme.borderColors.commonEdge)
             button.text:SetFont(theme.font, 9, "")
             button.text:SetTextColor(unpack(theme.textColor.common))
         end
@@ -268,8 +266,6 @@ function addon.ui.v2:ApplyDropdownTheme(dropdown, theme)
 
     local baseTheme = addon.v2.themes["RXP Blue V2"]
     theme = theme or addon.v2.themes[addon.settings and addon.settings.profile.activeTheme] or baseTheme
-    local borderColor = theme.version == 1 and baseTheme.borderColors.common or
-                        theme.borderColors.commonEdge
     local frame = pullout.frame
     local button = dropdown.button
 
@@ -282,7 +278,7 @@ function addon.ui.v2:ApplyDropdownTheme(dropdown, theme)
             if texture then
                 if theme.version == 1 then
                     texture:SetDesaturated(true)
-                    texture:SetVertexColor(unpack(theme.backgroundColors.common))
+                    texture:SetVertexColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
                 else
                     texture:SetDesaturated(false)
                     texture:SetVertexColor(1, 1, 1, 1)
@@ -292,7 +288,8 @@ function addon.ui.v2:ApplyDropdownTheme(dropdown, theme)
     end
 
     frame:SetBackdrop(nil)
-    self:ApplyFrameBackdrop(frame, baseTheme.edge, theme.backgroundColors.common, borderColor)
+    self:ApplyFrameBackdrop(frame, theme.edge, theme.backgroundColors.common,
+                            theme.borderColors.commonEdge)
     frame.rxpBackground:Hide()
     if not pullout.rxpV2Background then
         pullout.rxpV2Background = frame:CreateTexture(nil, "BACKGROUND")
@@ -325,11 +322,12 @@ function addon.ui.v2:ApplyDropdownTheme(dropdown, theme)
         pullout.rxpV2SliderBackground = slider:CreateTexture(nil, "BACKGROUND")
         pullout.rxpV2SliderBackground:SetAllPoints(slider)
     end
-    pullout.rxpV2SliderBackground:SetColorTexture(unpack(theme.backgroundColors.scrollbar))
+    pullout.rxpV2SliderBackground:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
+                                                          theme.backgroundColors.scrollbar))
     for _, button in ipairs({slider.ScrollUpButton, slider.ScrollDownButton}) do
         if theme.version == 1 then
             button.Normal:SetDesaturated(true)
-            button.Normal:SetVertexColor(unpack(theme.backgroundColors.common))
+            button.Normal:SetVertexColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
         else
             button.Normal:SetDesaturated(false)
             button.Normal:SetVertexColor(1, 1, 1, 1)
@@ -337,7 +335,7 @@ function addon.ui.v2:ApplyDropdownTheme(dropdown, theme)
     end
     if theme.version == 1 then
         slider.ThumbTexture:SetDesaturated(true)
-        slider.ThumbTexture:SetVertexColor(unpack(theme.backgroundColors.common))
+        slider.ThumbTexture:SetVertexColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
     else
         slider.ThumbTexture:SetDesaturated(false)
         slider.ThumbTexture:SetVertexColor(1, 1, 1, 1)
@@ -348,7 +346,7 @@ function addon.ui.v2:ApplyDropdownTheme(dropdown, theme)
         item.text:SetTextColor(unpack(theme.textColor.common))
         item.highlight:ClearAllPoints()
         item.highlight:SetAllPoints(item.frame)
-        item.highlight:SetColorTexture(unpack(baseTheme.borderColors.common))
+        item.highlight:SetColorTexture(unpack(theme.borderColors.common))
         item.highlight:SetBlendMode("BLEND")
         if item.check then item.check:SetVertexColor(unpack(theme.backgroundColors.activeStepCheckboxChecked)) end
         if item.sub then item.sub:SetVertexColor(unpack(theme.textColor.common)) end

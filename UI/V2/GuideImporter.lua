@@ -28,25 +28,23 @@ end
 
 local function applyTheme(frame, ...)
     local theme = getTheme()
-    local baseTheme = addon.v2.themes["RXP Blue V2"]
-    local borderColor = theme.version == 1 and baseTheme.borderColors.common or
-                        theme.borderColors.commonEdge
+    local backgroundColor = theme.version == 1 and theme.backgroundColors.common or
+                            theme.backgroundColors.guideWindow
     local textColor = theme.textColor.common
     if not addon.v2:IsGuideWindowEnabled() then
         local legacyTheme = addon.themes[addon.settings.profile.activeTheme]
         if legacyTheme then textColor = legacyTheme.textColor end
     end
 
-    addon.ui.v2:ApplyFrameBackdrop(frame, baseTheme.edge,
-                                    theme.backgroundColors.common,
-                                    borderColor)
+    addon.ui.v2:ApplyFrameBackdrop(frame, theme.edge, backgroundColor,
+                                    theme.borderColors.commonEdge)
     frame.rxpBackground:Hide()
 
     if not frame.importerBackground then
         frame.importerBackground = frame:CreateTexture(nil, "BACKGROUND")
         frame.importerBackground:SetAllPoints()
     end
-    frame.importerBackground:SetColorTexture(unpack(theme.backgroundColors.common))
+    frame.importerBackground:SetColorTexture(unpack(backgroundColor))
 
     local text, _, size, flags
     for index = 1, select("#", ...) do
@@ -70,8 +68,8 @@ local function applyWindowTheme(frame, ...)
         body:SetPoint("BOTTOM", frame, "BOTTOM", 0, 1)
         frame.importerBody = body
     end
-    body:SetColorTexture(unpack(theme.backgroundColors.guideWindow))
-    body:SetAlpha(0.65)
+    body:SetColorTexture(unpack(theme.backgroundColors.common))
+    body:SetAlpha(1)
 
     local header = frame.importerHeader
     if not header then
@@ -81,7 +79,9 @@ local function applyWindowTheme(frame, ...)
         header:SetHeight(18)
         frame.importerHeader = header
     end
-    header:SetColorTexture(unpack(theme.backgroundColors.scrollbar))
+    header:SetColorTexture(unpack(theme.version == 1 and theme.backgroundColors.common or
+                                      theme.backgroundColors.guideName))
+    header:SetAlpha(0.5)
 
     return theme, textColor
 end
@@ -105,9 +105,8 @@ local function updateImporterTheme(this)
     if not widgets.importButton then return end
 
     local theme, textColor = applyWindowTheme(this.frame, this.title, this.description)
-    local baseTheme = addon.v2.themes["RXP Blue V2"]
-    local borderColor = theme.version == 1 and baseTheme.borderColors.common or
-                        theme.borderColors.commonEdge
+    local fieldBackground = theme.version == 1 and theme.backgroundColors.inactivePartyTab or
+                            theme.backgroundColors.scrollbar
 
     this.title:SetFont(theme.font, 10, "")
     this.title:SetTextColor(unpack(theme.textColor.title))
@@ -116,15 +115,15 @@ local function updateImporterTheme(this)
     widgets.importLabel:SetTextColor(unpack(theme.textColor.title))
     widgets.importBox:GetEditBox():SetFont(theme.font, 9, "")
     widgets.importBox:GetEditBox():SetTextColor(unpack(textColor))
-    addon.ui.v2:ApplyFrameBackdrop(widgets.importBox.background, baseTheme.edge,
-                                    theme.backgroundColors.scrollbar,
-                                    borderColor)
+    addon.ui.v2:ApplyFrameBackdrop(widgets.importBox.background, theme.edge,
+                                    fieldBackground,
+                                    theme.borderColors.commonEdge)
 
     for _, button in ipairs({widgets.importButton, widgets.importSplicedString, widgets.purgeButton,
                              widgets.reloadButton, widgets.deleteButton}) do
-        addon.ui.v2:ApplyFrameBackdrop(button.frame, baseTheme.edge,
-                                       theme.borderColors.inactivePartyTab,
-                                       borderColor)
+        addon.ui.v2:ApplyFrameBackdrop(button.frame, theme.edge,
+                                       theme.backgroundColors.inactivePartyTab,
+                                       theme.borderColors.commonEdge)
         button.text:SetFont(theme.font, 9, "")
         button.text:SetTextColor(unpack(textColor))
         button:SetDisabled(button.disabled)
@@ -134,18 +133,18 @@ local function updateImporterTheme(this)
     widgets.guidesLabel:SetTextColor(unpack(textColor))
     widgets.currentGuides.text:SetFont(theme.font, 9, "")
     widgets.currentGuides.text:SetTextColor(unpack(textColor))
-    addon.ui.v2:ApplyFrameBackdrop(widgets.currentGuides.frame, baseTheme.edge,
-                                    theme.backgroundColors.scrollbar,
-                                    borderColor)
+    addon.ui.v2:ApplyFrameBackdrop(widgets.currentGuides.frame, theme.edge,
+                                    fieldBackground,
+                                    theme.borderColors.commonEdge)
     addon.ui.v2:ApplyDropdownTheme(widgets.currentGuides, theme)
 
     widgets.progressLabel:SetFont(theme.font, 8, "")
     widgets.progressLabel:SetTextColor(unpack(textColor))
-    addon.ui.v2:ApplyFrameBackdrop(widgets.progress, baseTheme.edge,
-                                    theme.backgroundColors.scrollbar,
-                                    borderColor)
+    addon.ui.v2:ApplyFrameBackdrop(widgets.progress, theme.edge,
+                                    fieldBackground,
+                                    theme.borderColors.commonEdge)
     widgets.progress:SetStatusBarColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
-    widgets.progressBackground:SetColorTexture(unpack(theme.backgroundColors.scrollbar))
+    widgets.progressBackground:SetColorTexture(unpack(fieldBackground))
     widgets.progressText:SetFont(theme.font, 8, "")
     if addon.guideImporter.gui.progressError then
         widgets.progressText:SetTextColor(1, 0.45, 0.35)
@@ -862,10 +861,8 @@ function addon.ui.v2:CreateGuideImporter()
 
     local theme = getTheme()
     local content = importer.content
-    local baseTheme = addon.v2.themes["RXP Blue V2"]
-    local edge = baseTheme.edge
-    local borderColor = theme.version == 1 and baseTheme.borderColors.common or
-                        theme.borderColors.commonEdge
+    local fieldBackground = theme.version == 1 and theme.backgroundColors.inactivePartyTab or
+                            theme.backgroundColors.scrollbar
     local textColor = theme.textColor.common
 
     local purgeConfirmation = AceGUI:Create("RXPV2Popup")
@@ -905,9 +902,9 @@ function addon.ui.v2:CreateGuideImporter()
     local editBox = importBox:GetEditBox()
     editBox:SetFont(theme.font, 9, "")
     editBox:SetTextColor(unpack(textColor))
-    addon.ui.v2:ApplyFrameBackdrop(importBox.background, edge,
-                                    theme.backgroundColors.scrollbar,
-                                    borderColor)
+    addon.ui.v2:ApplyFrameBackdrop(importBox.background, theme.edge,
+                                    fieldBackground,
+                                    theme.borderColors.commonEdge)
 
     widgets.importBox = importBox
     importBox:SetCallback("OnEditFocusGained", function()
@@ -924,9 +921,9 @@ function addon.ui.v2:CreateGuideImporter()
     importButton:SetHeight(24)
     importButton.frame:SetHighlightTexture(
         "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-hover", "ADD")
-    addon.ui.v2:ApplyFrameBackdrop(importButton.frame, edge,
-                                    theme.borderColors.inactivePartyTab,
-                                    borderColor)
+    addon.ui.v2:ApplyFrameBackdrop(importButton.frame, theme.edge,
+                                    theme.backgroundColors.inactivePartyTab,
+                                    theme.borderColors.commonEdge)
     importButton.text:SetFont(theme.font, 9, "")
     importButton.text:SetTextColor(unpack(textColor))
     importButton:SetCallback("OnClick", function()
@@ -942,9 +939,9 @@ function addon.ui.v2:CreateGuideImporter()
     spliceButton:SetHeight(24)
     spliceButton.frame:SetHighlightTexture(
         "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-hover", "ADD")
-    addon.ui.v2:ApplyFrameBackdrop(spliceButton.frame, edge,
-                                    theme.borderColors.inactivePartyTab,
-                                    borderColor)
+    addon.ui.v2:ApplyFrameBackdrop(spliceButton.frame, theme.edge,
+                                    theme.backgroundColors.inactivePartyTab,
+                                    theme.borderColors.commonEdge)
     spliceButton.text:SetFont(theme.font, 9, "")
     spliceButton.text:SetTextColor(unpack(textColor))
     spliceButton.frame:SetShown(addon.settings.profile.enableBetaFeatures)
@@ -984,9 +981,9 @@ function addon.ui.v2:CreateGuideImporter()
     currentGuides.button:ClearAllPoints()
     currentGuides.button:SetSize(24, 24)
     currentGuides.button:SetPoint("TOPRIGHT", currentGuides.frame, "TOPRIGHT")
-    addon.ui.v2:ApplyFrameBackdrop(currentGuides.frame, edge,
-                                    theme.backgroundColors.scrollbar,
-                                    borderColor)
+    addon.ui.v2:ApplyFrameBackdrop(currentGuides.frame, theme.edge,
+                                    fieldBackground,
+                                    theme.borderColors.commonEdge)
 
     currentGuides:SetCallback("OnValueChanged", function(_, _, value)
         guideImporter.gui.selectedDeleteGuide = value
@@ -1007,9 +1004,9 @@ function addon.ui.v2:CreateGuideImporter()
     purgeButton:SetHeight(24)
     purgeButton.frame:SetHighlightTexture(
         "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-hover", "ADD")
-    addon.ui.v2:ApplyFrameBackdrop(purgeButton.frame, edge,
-                                    theme.borderColors.inactivePartyTab,
-                                    borderColor)
+    addon.ui.v2:ApplyFrameBackdrop(purgeButton.frame, theme.edge,
+                                    theme.backgroundColors.inactivePartyTab,
+                                    theme.borderColors.commonEdge)
     purgeButton.text:SetFont(theme.font, 9, "")
     purgeButton.text:SetTextColor(unpack(textColor))
     purgeButton:SetCallback("OnClick", function() purgeConfirmation:Show() end)
@@ -1023,9 +1020,9 @@ function addon.ui.v2:CreateGuideImporter()
     reloadButton:SetHeight(24)
     reloadButton.frame:SetHighlightTexture(
         "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-hover", "ADD")
-    addon.ui.v2:ApplyFrameBackdrop(reloadButton.frame, edge,
-                                    theme.borderColors.inactivePartyTab,
-                                    borderColor)
+    addon.ui.v2:ApplyFrameBackdrop(reloadButton.frame, theme.edge,
+                                    theme.backgroundColors.inactivePartyTab,
+                                    theme.borderColors.commonEdge)
     reloadButton.text:SetFont(theme.font, 9, "")
     reloadButton.text:SetTextColor(unpack(textColor))
     reloadButton:SetCallback("OnClick", function() _G.ReloadUI() end)
@@ -1039,9 +1036,9 @@ function addon.ui.v2:CreateGuideImporter()
     deleteButton:SetHeight(24)
     deleteButton.frame:SetHighlightTexture(
         "Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-hover", "ADD")
-    addon.ui.v2:ApplyFrameBackdrop(deleteButton.frame, edge,
-                                    theme.borderColors.inactivePartyTab,
-                                    borderColor)
+    addon.ui.v2:ApplyFrameBackdrop(deleteButton.frame, theme.edge,
+                                    theme.backgroundColors.inactivePartyTab,
+                                    theme.borderColors.commonEdge)
     deleteButton.text:SetFont(theme.font, 9, "")
     deleteButton.text:SetTextColor(unpack(textColor))
 
@@ -1081,13 +1078,13 @@ function addon.ui.v2:CreateGuideImporter()
     local progressTexture = progress:GetStatusBarTexture()
     if progressTexture then progressTexture:SetDrawLayer("ARTWORK") end
     progress:SetStatusBarColor(unpack(theme.backgroundColors.activeStepCheckboxChecked))
-    addon.ui.v2:ApplyFrameBackdrop(progress, edge, theme.backgroundColors.scrollbar,
-                                    borderColor)
+    addon.ui.v2:ApplyFrameBackdrop(progress, theme.edge, fieldBackground,
+                                    theme.borderColors.commonEdge)
     progress.rxpBackground:Hide()
     local progressBackground = progress:CreateTexture(nil, "BACKGROUND")
     progressBackground:SetAllPoints(progress)
     progressBackground:SetDrawLayer("BACKGROUND", -1)
-    progressBackground:SetColorTexture(unpack(theme.backgroundColors.scrollbar))
+    progressBackground:SetColorTexture(unpack(fieldBackground))
     progress:SetValue(0)
 
     local progressText = progress:CreateFontString(nil, "OVERLAY")
