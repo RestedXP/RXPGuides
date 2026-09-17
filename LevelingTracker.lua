@@ -421,8 +421,8 @@ function addon.tracker:CreateGui(attachment, target)
     local attachmentName = attachment.GetName and attachment:GetName()
     if not attachmentName then return end
     if addon.tracker.ui[attachmentName] then return end
-
-    local offset = {x = -38, y = -32, tabsHeight = _G.CharacterFrameTab1:GetHeight()}
+    local h = _G.CharacterFrameTab1 and _G.CharacterFrameTab1:GetHeight() or _G.CharacterFrame:GetHeight()
+    local offset = {x = -38, y = -32, tabsHeight = h}
     local padding = 4
     local levelData, playerLevel
 

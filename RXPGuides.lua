@@ -586,7 +586,7 @@ local spellRequest = {}
 local trainerUpdate = 0
 
 local function ProcessSpells(names, rank)
-    if gameVersion > 90000 then return end
+    if gameVersion > 90000 or not addon.defaultSpellList then return end
     local _, race = UnitRace("player")
     local level = UnitLevel("player")
     local entries = {race, addon.player.class}
