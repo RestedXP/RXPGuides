@@ -1,3 +1,4 @@
+if not _G.GetNumTalentTabs then return end
 local _, addon = ...
 local L = addon.locale.Get
 local AceGUI = LibStub("AceGUI-3.0")

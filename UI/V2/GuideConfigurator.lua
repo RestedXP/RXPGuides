@@ -1,3 +1,4 @@
+if not SetDesaturation then return end
 local addonName, addon = ...
 
 local locale = _G.GetLocale()

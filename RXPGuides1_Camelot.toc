@@ -1,0 +1,67 @@
+## Interface: 11509, 50504, 120100, 120005, 120007
+## Interface-Mists: 50504
+## Interface-TBC: 20506
+## Interface-Classic: 11509
+## Title: RestedXP Guides (Beta)
+## Title-zhCN: RestedXP 指南
+## Notes: In-game leveling guides
+## Author: RestedXP
+## Version: @project-version@
+## Category: Quests
+## Category-deDE: Quests
+## Category-esES: Misiones
+## Category-esMX: Misiones
+## Category-frFR: Quêtes
+## Category-itIT: Missioni
+## Category-koKR: 퀘스트
+## Category-ptBR: Missões
+## Category-ruRU: Задания
+## Category-zhCN: 任务
+## Category-zhTW: 任務
+## OptionalDeps: Questie, RXPGuides_Themes
+## SavedVariables: RXPData, RXPDB, RXPSettings, RXPString
+## SavedVariablesPerCharacter: RXPCData, RXPCTrackingData, RXPCComms, RXPCSettings
+## X-Curse-Project-ID: 486246
+## X-Wago-ID: ZKbebq61
+
+libs\embeds.xml
+locale\locales.xml
+UI\includes.xml
+
+Locale.lua
+Themes.lua
+Communications.lua
+RXPGuides.lua
+GuideWindow.lua
+Help.lua
+SettingsPanel.lua
+
+
+DB/classic.xml
+
+HSBatching.lua
+QuestLog.lua
+ActiveItemFrame.lua
+LevelingTracker.lua
+Timers.lua
+Targeting.lua
+Tips.lua
+InventoryManager.lua
+
+
+map.lua
+functions.lua
+GuideLoader.lua
+
+Guides/GuideList-classic.xml
+
+lang/Guides-zhCN/GuideList-classic.xml
+
+#Talents.lua
+#Guides/Talents/cata.xml
+#Guides/Talents/tbc.xml
+#Guides/Talents/classic.xml
+
+ItemUpgrades.lua
+
+CptStadicsVendorTreasures.lua

@@ -24,8 +24,9 @@
 ## X-Curse-Project-ID: 486246
 ## X-Wago-ID: ZKbebq61
 
-libs\embeds_Mainline.xml [AllowLoadGameType mainline]
+libs\embeds_Mainline.xml [AllowLoadGameType standard]
 libs\embeds.xml [AllowLoadGameType classic]
+libs\embeds.xml [AllowLoadGameType camelot]
 locale\locales.xml
 UI\includes.xml
 
@@ -37,12 +38,13 @@ GuideWindow.lua
 Help.lua
 SettingsPanel.lua
 
-DB/mainline.xml [AllowLoadGameType mainline]
+DB/mainline.xml [AllowLoadGameType standard]
 DB/mop.xml [AllowLoadGameType mists]
 DB/cata.xml [AllowLoadGameType cata]
 DB/wotlk.xml [AllowLoadGameType wrath]
 DB/tbc.xml [AllowLoadGameType tbc]
-DB/classic.xml [AllowLoadGameType vanilla]
+DB/classic.xml [AllowLoadGameType vanilla,camelot]
+DB/forever.xml [AllowLoadGameType camelot]
 
 HSBatching.lua
 QuestLog.lua
@@ -58,20 +60,22 @@ map.lua
 functions.lua
 GuideLoader.lua
 
-Guides/GuideList-Mainline.xml [AllowLoadGameType mainline]
+Guides/GuideList-Mainline.xml [AllowLoadGameType standard]
 Guides/GuideList-cata.xml [AllowLoadGameType cata]
 Guides/GuideList-mop.xml [AllowLoadGameType mists]
 Guides/GuideList-classic.xml [AllowLoadGameType vanilla]
+Guides/GuideList-forever.xml [AllowLoadGameType camelot]
+
 Guides/GuideList-tbc.xml [AllowLoadGameType tbc]
 
 lang/Guides-zhCN/GuideList-tbc.xml [AllowLoadGameType tbc]
-lang/Guides-zhCN/GuideList-classic.xml [AllowLoadGameType vanilla]
+lang/Guides-zhCN/GuideList-classic.xml [AllowLoadGameType vanilla,camelot]
 
-Talents.lua [AllowLoadGameType cata,vanilla,tbc]
+Talents.lua [AllowLoadGameType cata,vanilla,camelot,tbc]
 Guides/Talents/cata.xml [AllowLoadGameType cata]
 Guides/Talents/tbc.xml [AllowLoadGameType tbc]
-Guides/Talents/classic.xml [AllowLoadGameType vanilla]
+Guides/Talents/classic.xml [AllowLoadGameType vanilla,camelot]
 
-ItemUpgrades.lua [AllowLoadGameType tbc,vanilla,cata]
+ItemUpgrades.lua [AllowLoadGameType tbc,vanilla,camelot,cata]
 
-CptStadicsVendorTreasures.lua [AllowLoadGameType vanilla,tbc,wrath]
+CptStadicsVendorTreasures.lua [AllowLoadGameType vanilla,camelot,tbc,wrath]

@@ -1648,7 +1648,7 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
         end)
     end
 
-    if addon.gameVersion < 30000 then
+    if addon.ui.v2.LaunchConfigurator then
         addon.ui.v2.LaunchConfigurator(true)
     end
 
