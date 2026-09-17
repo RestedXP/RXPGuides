@@ -12,6 +12,7 @@ local GetTime, FlashClientIcon, PlaySound = GetTime, FlashClientIcon, PlaySound
 local wipe = wipe
 local GetRealZoneText = GetRealZoneText
 local GetNamePlates = C_NamePlate.GetNamePlates
+local issecretvalue = issecretvalue or function() return false end
 
 local HBD = LibStub("HereBeDragons-2.0")
 
@@ -99,9 +100,9 @@ function addon.targeting:Setup()
         end
 
         self.ticker = C_Timer.NewTicker(proxmityPolling.frequency, self.CheckTargetProximity)
-
-        self:RegisterEvent("ADDON_ACTION_FORBIDDEN")
-
+        if StaticPopupDialogs["ADDON_ACTION_FORBIDDEN"] then
+            self:RegisterEvent("ADDON_ACTION_FORBIDDEN")
+        end
         -- Prevent default forbidden UI popup
         UIParent:UnregisterEvent("ADDON_ACTION_FORBIDDEN")
     end
@@ -474,7 +475,7 @@ function addon.targeting:GOSSIP_SHOW()
             self:UpdateTargetFrame("target")
             self:UpdateMacro()
 
-            if addon.gameVersion < 120000 and GetRaidTargetIndex("target") ~= nil then
+            if addon.gameVersion < 120000 and not issecretvalue(UnitHealth("player")) and GetRaidTargetIndex("target") ~= nil then
                 SetRaidTarget("target", 0)
             end
             return
@@ -542,6 +543,7 @@ function addon.targeting.CheckTargetProximity()
     end
 end
 
+if StaticPopupDialogs["ADDON_ACTION_FORBIDDEN"] then
 -- Disables and mutes the annoying dialog that shows up
 local actionForbiddenText = fmt(ADDON_ACTION_FORBIDDEN, addonName)
 
@@ -592,6 +594,8 @@ function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
         (proxmityPolling.scanData.kind == 'rare' or proxmityPolling.scanData.kind == 'unitscan') then
         PlaySound(addon.settings.profile.soundOnFind, addon.settings.profile.soundOnFindChannel)
     end
+end
+
 end
 
 function addon.targeting:UpdateUnitList()
@@ -949,7 +953,7 @@ function addon.targeting:UpdateMarker(kind, unitId, index)
     if IsInGroup() and not UnitIsGroupLeader('player') then
         if not addon.settings.profile.enableNonLeadMarking then return end
     end
-    if addon.gameVersion >= 120000 then return end
+    if addon.gameVersion >= 120000 or issecretvalue(UnitHealth("player")) then return end
     local markerId = self:GetMarkerIndex(kind, index)
 
     if GetRaidTargetIndex(unitId) == nil and GetRaidTargetIndex(unitId) ~= markerId then
