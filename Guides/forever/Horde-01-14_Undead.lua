@@ -8,8 +8,9 @@ RXPGuides.RegisterGuide([[
 #xprate <1.99
 << Horde
 #version 11
-#group RestedXP Horde 1-22
-#groupid RXP-SRGCE-H1
+#group RXP Forever (H)
+#subgroup Speedrun Guide 1-22
+--#groupid RXP-SRGCE-H1
 #defaultfor Undead
 #name 1-6 Tirisfal Glades
 #next 6-11 Tirisfal Glades
@@ -788,8 +789,9 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-11 Tirisfal Glades
 #version 11
-#group RestedXP Horde 1-22
-#groupid RXP-SRGCE-H1
+#group RXP Forever (H)
+#subgroup Speedrun Guide 1-22
+--#groupid RXP-SRGCE-H1
 #defaultfor Undead
 #next 12-14 Silverpine Forest; 12-17 The Barrens
 
@@ -4090,8 +4092,9 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#group RestedXP Horde 1-22
-#groupid RXP-SRGCE-H1
+#group RXP Forever (H)
+#subgroup Speedrun Guide 1-22
+--#groupid RXP-SRGCE-H1
 #xprate <1.99
 << Horde
 #version 11
@@ -5448,8 +5451,9 @@ RXPGuides.RegisterGuide([[
 << Horde
 #xprate >1.99
 #version 1
-#group RestedXP Horde 1-22
-#groupid RXP-SRGCE-H1
+#group RXP Forever (H)
+#subgroup Speedrun Guide 1-22
+--#groupid RXP-SRGCE-H1
 #defaultfor Undead
 #name 1-7 Tirisfal Glades
 #next 7-13 Tirisfal Glades
@@ -6516,8 +6520,9 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 7-13 Tirisfal Glades
 #version 1
-#group RestedXP Horde 1-22
-#groupid RXP-SRGCE-H1
+#group RXP Forever (H)
+#subgroup Speedrun Guide 1-22
+--#groupid RXP-SRGCE-H1
 #defaultfor Undead
 #next 13-20 The Barrens
 

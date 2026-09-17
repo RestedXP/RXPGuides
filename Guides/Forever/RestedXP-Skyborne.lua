@@ -3,7 +3,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #name 1-10 Zephras Isle
 #displayname 1-10 Skyborne
-#group RestedXP Alliance 1-20
+#group RXP Forever (A)
+#subgroup Speedrun Guide 1-20
 #internal
 
 step

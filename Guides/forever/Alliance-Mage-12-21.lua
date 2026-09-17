@@ -8,7 +8,8 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 12-18 Darkshore Mage AoE
 #version 1
-#group RestedXP Alliance Mage
+#group RXP Forever (A)
+#subgroup Speedrun Guide Mage
 #defaultfor Alliance Mage
 #next 18-21 Redridge Mage AoE
 
@@ -803,7 +804,8 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 18-21 Redridge Mage AoE
 #version 1
-#group RestedXP Alliance Mage
+#group RXP Forever (A)
+#subgroup Speedrun Guide Mage
 #defaultfor Alliance Mage
 #next 21-22 Duskwood Mage AoE
 
