@@ -2,9 +2,12 @@ RXPGuides.RegisterGuide([[
 #classic
 #version 1
 #name 1-10 Zephras Isle
-#displayname 1-10 Skyborne
-#group RXP Forever (A)
-#subgroup Speedrun Guide 1-20
+#displayname 1-10 Skyborne << Alliance
+#displayname 1-12 Skyborne << Horde
+#group RXP Forever (A) << Alliance
+#group RXP Forever (H) << Horde
+#subgroup Speedrun Guide 1-20 << Alliance
+#subgroup Speedrun Guide 1-22 << Horde
 
 
 step
