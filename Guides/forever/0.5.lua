@@ -57,7 +57,7 @@ step << Alliance
     #completewith next
     .zone Ironforge >>Travel to |cFFfa9602Ironforge|r
 step << Alliance
-    .goto Ironforge,43.54,52.68
+    .goto 1455/0,-1057.83,-4847.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deliana|r
     .accept 8905 >>Accept An Earnest Proposition << Druid
     .accept 8906 >>Accept An Earnest Proposition << Hunter
@@ -73,14 +73,14 @@ step << Alliance
     .zone Winterspring >>Travel to |cFFfa9602Winterspring|r
 step << Alliance
     #loop
-    .goto Winterspring,50.54,14.27,0
-    .goto Winterspring,50.54,14.27,50,0
-    .goto Winterspring,48.52,12.15,50,0
-    .goto Winterspring,49.72,8.84,50,0
-    .goto Winterspring,48.54,7.89,50,0
-    .goto Winterspring,49.67,7.03,50,0
-    .goto Winterspring,51.94,9.31,50,0
-    .goto Winterspring,51.64,11.34,50,0
+    .goto 1452/1,-3905.01,7857.89,0
+    .goto 1452/1,-3905.01,7857.89,50,0
+    .goto 1452/1,-3761.59,7958.23,50,0
+    .goto 1452/1,-3846.79,8114.91,50,0
+    .goto 1452/1,-3763.01,8159.87,50,0
+    .goto 1452/1,-3843.24,8200.58,50,0
+    .goto 1452/1,-4004.41,8092.66,50,0
+    .goto 1452/1,-3983.11,7996.57,50,0
     >>Kill all types of |cRXP_ENEMY_Shardtooth Bears|r and |cRXP_ENEMY_Frostsabers|r. Loot them for their |cRXP_LOOT_Winterspring Blood Samples|r
     .complete 8905,1 << Druid --Winterspring Blood Sample (x15)
     .complete 8906,1 << Hunter --Winterspring Blood Sample (x15)
@@ -103,7 +103,7 @@ step << Alliance
     #completewith next
     .zone Ironforge >>Travel to |cFFfa9602Ironforge|r
 step << Alliance
-    .goto Ironforge,43.54,52.68
+    .goto 1455/0,-1057.83,-4847.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deliana|r
     >>|cRXP_WARN_You will need 20 gold and|r |T132608:0|t[|cRXP_LOOT_Wildheart Bracers|r] |cRXP_WARN_to turn in this quest|r << Druid
     >>|cRXP_WARN_You will need 20 gold and|r |T132616:0|t[|cRXP_LOOT_Beaststalker's Bindings|r] |cRXP_WARN_to turn in this quest|r << Hunter
@@ -135,7 +135,7 @@ step << Horde
     #completewith next
     .zone Orgrimmar >>Travel to |cFFfa9602Orgrimmar|r
 step << Horde
-    .goto Orgrimmar,34.96,38.28
+    .goto 1454/1,-4170.95,1915.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokvar|r
     .accept 8913 >>Accept An Earnest Proposition << Druid
     .accept 8914 >>Accept An Earnest Proposition << Hunter
@@ -151,18 +151,18 @@ step << Horde
     .zone Silithus >>Travel to |cFFfa9602Silithus|r
 step << Horde
     #loop
-    .goto Silithus,64.82,41.47,0
-    .goto Silithus,58.38,21.10,0
-    .goto Silithus,33.34,35.27,0
-    .goto Silithus,36.65,62.73,0
-    .goto Silithus,28.52,77.73,0
+    .goto 1451/1,279.60,-6921.65,0
+    .goto 1451/1,503.93,-6448.470,0
+    .goto 1451/1,1376.16,-6777.63,0
+    .goto 1451/1,1260.86,-7415.50,0
+    .goto 1451/1,1544.05,-7763.94,0
     .goto Silithus,45.40,80.20,0
     .goto Silithus,58.80,61.99,0
-    .goto Silithus,64.82,41.47,90,0
-    .goto Silithus,58.38,21.10,90,0
-    .goto Silithus,33.34,35.27,90,0
-    .goto Silithus,36.65,62.73,90,0
-    .goto Silithus,28.52,77.73,90,0
+    .goto 1451/1,279.60,-6921.65,90,0
+    .goto 1451/1,503.93,-6448.470,90,0
+    .goto 1451/1,1376.16,-6777.63,90,0
+    .goto 1451/1,1260.86,-7415.50,90,0
+    .goto 1451/1,1544.05,-7763.94,90,0
     .goto Silithus,45.40,80.20,90,0
     .goto Silithus,58.80,61.99,90,0
     >>Kill all types of |cRXP_ENEMY_Spiders|r and |cRXP_ENEMY_Scorpids|r. Loot them for their |cRXP_LOOT_Silithus Venom Samples|r
@@ -183,7 +183,7 @@ step << Horde
     #completewith next
     .zone Orgrimmar >>Travel to |cFFfa9602Orgrimmar|r
 step << Horde
-    .goto Orgrimmar,34.96,38.28
+    .goto 1454/1,-4170.95,1915.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokvar|r
     >>|cRXP_WARN_You will need 20 gold and|r |T132608:0|t[|cRXP_LOOT_Wildheart Bracers|r] |cRXP_WARN_to turn in this quest|r << Druid
     >>|cRXP_WARN_You will need 20 gold and|r |T132616:0|t[|cRXP_LOOT_Beaststalker's Bindings|r] |cRXP_WARN_to turn in this quest|r << Hunter
@@ -340,7 +340,7 @@ step << Alliance
     #completewith next
     .zone Ironforge >>Travel to |cFFfa9602Ironforge|r
 step << Alliance
-    .goto Ironforge,43.54,52.68
+    .goto 1455/0,-1057.83,-4847.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deliana|r
     .accept 8922 >>Accept A Supernatural Device
     .target Deliana
@@ -348,7 +348,7 @@ step << Horde
     #completewith next
     .zone Orgrimmar >>Travel to |cFFfa9602Orgrimmar|r
 step << Horde
-    .goto Orgrimmar,34.96,38.28
+    .goto 1454/1,-4170.95,1915.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokvar|r
     .accept 8923 >>Accept A Supernatural Device
     .target Mokvar
@@ -356,7 +356,7 @@ step
     #completewith next
     .subzone 976 >>Travel to Gadgetzan in |cFFfa9602Tanaris|r
 step
-    .goto Tanaris,52.47,27.23
+    .goto 1446/1,-3839.18,-7127.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mux Manascrambler|r
     .turnin 8922 >>Turn in A Supernatural Device << Alliance
     .turnin 8923 >>Turn in A Supernatural Device << Horde
@@ -367,24 +367,24 @@ step
     .zone Burning Steppes >>Travel to |cFFfa9602Burning Steppes|r
 step
     #loop
-    .goto Burning Steppes,71.87,29.57,0
-    .goto Burning Steppes,64.74,33.56,0
-    .goto Burning Steppes,50.35,35.24,0
-    .goto Burning Steppes,52.08,42.58,0
-    .goto Burning Steppes,40.66,43.78,0
-    .goto Burning Steppes,34.95,47.61,0
+    .goto 1428/0,-2371.86,-7608.48,0
+    .goto 1428/0,-2163.01,-7686.37,0
+    .goto 1428/0,-1741.50,-7719.16,0
+    .goto 1428/0,-1792.18,-7862.45,0
+    .goto 1428/0,-1457.67,-7885.87,0
+    .goto 1428/0,-1290.41,-7960.64,0
     .goto Burning Steppes,23.40,46.28,0
-    .goto Burning Steppes,34.32,58.78,0
-    .goto Burning Steppes,55.26,47.90,0
-    .goto Burning Steppes,71.87,29.57,60,0
-    .goto Burning Steppes,64.74,33.56,60,0
-    .goto Burning Steppes,50.35,35.24,60,0
-    .goto Burning Steppes,52.08,42.58,60,0
-    .goto Burning Steppes,40.66,43.78,60,0
-    .goto Burning Steppes,34.95,47.61,60,0
+    .goto 1428/0,-1271.96,-8178.68,0
+    .goto 1428/0,-1885.32,-7966.300,0
+    .goto 1428/0,-2371.86,-7608.48,60,0
+    .goto 1428/0,-2163.01,-7686.37,60,0
+    .goto 1428/0,-1741.50,-7719.16,60,0
+    .goto 1428/0,-1792.18,-7862.45,60,0
+    .goto 1428/0,-1457.67,-7885.87,60,0
+    .goto 1428/0,-1290.41,-7960.64,60,0
     .goto Burning Steppes,23.40,46.28,60,0
-    .goto Burning Steppes,34.32,58.78,60,0
-    .goto Burning Steppes,55.26,47.90,60,0
+    .goto 1428/0,-1271.96,-8178.68,60,0
+    .goto 1428/0,-1885.32,-7966.300,60,0
     >>Loot |cRXP_LOOT_Volcanic Ash|r on the ground
     >>|cRXP_WARN_They look like large piles of grey dirt and can be found in mainly in Northern Burning Steppes among the lava pools and rivers|r
     .collect 22338,25,8921,1 --Volcanic Ash (x25)
@@ -403,7 +403,7 @@ step
     #completewith next
     .subzone 976 >>Travel to Gadgetzan in |cFFfa9602Tanaris|r
 step
-    .goto Tanaris,52.47,27.23
+    .goto 1446/1,-3839.18,-7127.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mux Manascrambler|r
     >>|cRXP_WARN_You will need 40 gold to turn in this quest|r
     .turnin 8921 >>Turn in The Ectoplasmic Distiller
@@ -445,11 +445,11 @@ step
     .use 21946 >>|cRXP_WARN_One|r |T132621:0|t[Goblin Rocket Fuel] |cRXP_WARN_is needed each time you use the|r |T133882:0|t[Ectoplasmic Distiller]
 step
     #loop
-    .goto Winterspring,55.42,43.41,0
-    .goto Winterspring,53.29,43.82,0
+    .goto 1452/1,-4251.49,6478.59,0
+    .goto 1452/1,-4100.26,6459.19,0
     .goto Winterspring,52.60,40.59,0
-    .goto Winterspring,55.42,43.41,50,0
-    .goto Winterspring,53.29,43.82,50,0
+    .goto 1452/1,-4251.49,6478.59,50,0
+    .goto 1452/1,-4100.26,6459.19,50,0
     .goto Winterspring,52.60,40.59,50,0
     >>Kill |cRXP_ENEMY_Suffering Highborne|r and |cRXP_ENEMY_Anguished Highborne|r. Loot them for their |cRXP_LOOT_Frozen Ectoplasms|r
     >>|cRXP_WARN_Pull them to the|r |T133882:0|t[Ectoplasmic Distiller] |cRXP_WARN_as you kill them|r
@@ -465,7 +465,7 @@ step
     +|cRXP_WARN_Be careful! You will encounter level 60 mobs on the way to|r |cRXP_FRIENDLY_Vi'el|r|cRXP_WARN_. Avoid them as much as possible|r
 step
     #label FelElemRod
-    .goto Winterspring,58.87,78.40
+    .goto 1452/1,-4496.44,4822.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vi'el|r
     >>|cRXP_BUY_Buy a|r |T135155:0|t[|cRXP_LOOT_Fel Elemental Rod|r] |cRXP_BUY_from him|r
     >>|cRXP_WARN_This will cost 40 gold|r
@@ -485,9 +485,9 @@ step
     .use 21946 >>|cRXP_WARN_One|r |T132621:0|t[Goblin Rocket Fuel] |cRXP_WARN_is needed each time you use the|r |T133882:0|t[Ectoplasmic Distiller]
 step
     #loop
-    .goto Eastern Plaguelands,60.67,67.35,0
-    .goto Eastern Plaguelands,60.67,67.35,50,0
-    .goto Eastern Plaguelands,58.55,70.50,50,0
+    .goto 1423/0,-4533.85,2061.53,0
+    .goto 1423/0,-4533.85,2061.53,50,0
+    .goto 1423/0,-4451.79,1980.220,50,0
     >>Kill |cRXP_ENEMY_Unseen Servants|r and |cRXP_ENEMY_Hate Shriekers|r. Loot them for their |cRXP_LOOT_Stable Ectoplasms|r
     >>|cRXP_WARN_Pull them to the|r |T133882:0|t[Ectoplasmic Distiller] |cRXP_WARN_as you kill them|r
     .complete 8924,3 --Stable Ectoplasm (x12)
@@ -497,7 +497,7 @@ step
     #completewith next
     .subzone 976 >>Travel to Gadgetzan in |cFFfa9602Tanaris|r
 step
-    .goto Tanaris,52.47,27.23
+    .goto 1446/1,-3839.18,-7127.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mux Manascrambler|r
     .turnin 8924 >>Turn in Hunting for Ectoplasm
     .accept 8925 >>Accept A Portable Power Source
@@ -506,7 +506,7 @@ step
     #completewith next
     .zone Burning Steppes >>Travel to |cFFfa9602Burning Steppes|r
 step
-    .goto Burning Steppes,35.38,57.73
+    .goto 1428/0,-1303.01,-8158.19
     >>Kill |cRXP_ENEMY_Magma Lord Bokk|r. Loot him for his |cRXP_LOOT_Magma Core|r
     .complete 8925,1 --Magma Core (x1)
     .mob Magma Lord Bokk
@@ -514,7 +514,7 @@ step
     #completewith next
     .subzone 976 >>Travel to Gadgetzan in |cFFfa9602Tanaris|r
 step
-    .goto Tanaris,52.47,27.23
+    .goto 1446/1,-3839.18,-7127.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mux Manascrambler|r
     .turnin 8925 >>Turn in A Portable Power Source
     .accept 8928 >>Accept A Shifty Merchant
@@ -531,7 +531,7 @@ step
 step
     #label FelElemRod2
     #optional --user should already have bought this during .complete 8924,2 earlier in Winterspring
-    .goto Winterspring,58.87,78.40
+    .goto 1452/1,-4496.44,4822.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vi'el|r
     >>|cRXP_BUY_Buy a|r |T135155:0|t[|cRXP_LOOT_Fel Elemental Rod|r] |cRXP_BUY_from him|r
     >>|cRXP_WARN_This will cost 40 gold|r
@@ -543,7 +543,7 @@ step
     .subzone 976 >>Travel to Gadgetzan in |cFFfa9602Tanaris|r
     .zoneskip Winterspring,1
 step
-    .goto Tanaris,52.47,27.23
+    .goto 1446/1,-3839.18,-7127.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mux Manascrambler|r
     .turnin 8928 >>Turn in A Shifty Merchant
     .accept 8977 >>Accept Return to Deliana << Alliance
@@ -553,7 +553,7 @@ step << Alliance
     #completewith next
     .zone Ironforge >>Travel to |cFFfa9602Ironforge|r
 step << Alliance
-    .goto Ironforge,43.54,52.68
+    .goto 1455/0,-1057.83,-4847.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deliana|r
     .turnin 8977 >>Turn in Return to Deliana
     .accept 8926 >>Accept Just Compensation << Druid
@@ -566,7 +566,7 @@ step << Alliance
     .accept 8937 >>Accept Just Compensation << Warrior
     .target Deliana
 step << Alliance
-    .goto Ironforge,43.54,52.68
+    .goto 1455/0,-1057.83,-4847.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deliana|r
     >>You will need |T132504:0|t[|cRXP_LOOT_Wildheart Belt|r] and |T132951:0|t[|cRXP_LOOT_Wildheart Gloves|r] to turn in this quest << Druid
     >>You will need |T132517:0|t[|cRXP_LOOT_Beaststalker's Belt|r] and |T132944:0|t[|cRXP_LOOT_Beaststalker's Gloves|r] to turn in this quest << Hunter
@@ -606,7 +606,7 @@ step << Horde
     #completewith next
     .zone Orgrimmar >>Travel to |cFFfa9602Orgrimmar|r
 step << Horde
-    .goto Orgrimmar,34.96,38.28
+    .goto 1454/1,-4170.95,1915.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokvar|r
     .turnin 8978 >>Turn in Return to Mokvar
     .accept 8927 >>Accept Just Compensation << Druid
@@ -619,7 +619,7 @@ step << Horde
     .accept 8944 >>Accept Just Compensation << Warrior
     .target Mokvar
 step << Horde
-    .goto Orgrimmar,34.96,38.28
+    .goto 1454/1,-4170.95,1915.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokvar|r
     >>You will need |T132504:0|t[|cRXP_LOOT_Wildheart Belt|r] and |T132951:0|t[|cRXP_LOOT_Wildheart Gloves|r] to turn in this quest << Druid
     >>You will need |T132517:0|t[|cRXP_LOOT_Beaststalker's Belt|r] and |T132944:0|t[|cRXP_LOOT_Beaststalker's Gloves|r] to turn in this quest << Hunter
@@ -821,7 +821,7 @@ step << Alliance
     #completewith next
     .zone Ironforge >>Travel to |cFFfa9602Ironforge|r
 step << Alliance
-    .goto Ironforge,43.54,52.68
+    .goto 1455/0,-1057.83,-4847.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deliana|r
     .accept 8929 >>Accept In Search of Anthion
     .target Deliana
@@ -829,7 +829,7 @@ step << Horde
     #completewith next
     .zone Orgrimmar >>Travel to |cFFfa9602Orgrimmar|r
 step << Horde
-    .goto Orgrimmar,34.96,38.28
+    .goto 1454/1,-4170.95,1915.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokvar|r
     .accept 8930 >>Accept In Search of Anthion
     .target Mokvar
@@ -841,7 +841,7 @@ step
     .zone Eastern Plaguelands >>Travel to |cFFfa9602Eastern Plaguelands|r
 step
     #label FindingAnthion
-    .goto Eastern Kingdoms,55.06,17.51
+    .goto 1415/0,-3381.07,3357.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anthion|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Anthion|r
     .turnin 8929 >>Turn in In Search of Anthion << Alliance
@@ -864,7 +864,7 @@ step
     .accept 8946 >>Accept Proof of Life
     .target Ysida Harmon
 step
-    .goto Eastern Kingdoms,55.06,17.51
+    .goto 1415/0,-3381.07,3357.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anthion|r outside Stratholme
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Anthion|r
     .turnin 8946 >>Turn in Proof of Life
@@ -885,7 +885,7 @@ step
     .collect 15407,4,8947,1 --Cured Rugged Hide (x4)
     .collect 20520,4,8950,1 --Dark Rune (x4)
 step
-    .goto Eastern Kingdoms,55.06,17.51
+    .goto 1415/0,-3381.07,3357.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anthion|r outside Stratholme
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Anthion|r
     .turnin 8947 >>Turn in Anthion's Strange Request
@@ -905,7 +905,7 @@ step
     .subzoneskip 2557
 step
     #completewith AnthionsFriend
-    .goto Kalimdor,43.39,66.52,20 >>Enter the Northern entrance of Dire Maul
+    .goto 1414/1,1099.16,-3519.58,20 >>Enter the Northern entrance of Dire Maul
     >>|cRXP_WARN_You must have the|r |T134244:0|t[Crescent Key] |cRXP_WARN_to be able to open the door into Dire Maul North and into the library|r << !Rogue
     >>|cRXP_WARN_You must have the|r |T134244:0|t[Crescent Key] |cRXP_WARN_or have 300 skill in lockpicking to be able to open the door into Dire Maul North and into the library|r << Rogue
     >>|cRXP_WARN_Alternatively ask another player to open the doors for you|r
@@ -914,7 +914,7 @@ step
 step
     #optional
     #completewith AnthionsFriend
-    .goto Kalimdor,43.39,66.52,20 >>Enter the Northern entrance of Dire Maul
+    .goto 1414/1,1099.16,-3519.58,20 >>Enter the Northern entrance of Dire Maul
     .itemcount 18249,1 << !Rogue --Crescent Key
     .skill lockpicking,<300,1 << Rogue
 step
@@ -950,7 +950,7 @@ step
     .target Falrin Treeshaper
 step
     #completewith SpectreEssence
-    .goto Kalimdor,42.98,67.73,20 >>Enter the Western instance of Dire Maul
+    .goto 1414/1,1250.04,-3816.44,20 >>Enter the Western instance of Dire Maul
     >>|cRXP_WARN_You must have the|r |T134244:0|t[Crescent Key] |cRXP_WARN_to be able to open the door into Dire Maul West|r << !Rogue
     >>|cRXP_WARN_You must have the|r |T134244:0|t[Crescent Key] |cRXP_WARN_or have 300 skill in lockpicking to be able to open the door into Dire Maul West|r << Rogue
     >>|cRXP_WARN_Alternatively ask another player to open the door for you|r
@@ -958,7 +958,7 @@ step
     .skill lockpicking,300,1 << Rogue
 step
     #completewith SpectreEssence
-    .goto Kalimdor,42.98,67.73,20 >>Enter the Western entrance of Dire Maul
+    .goto 1414/1,1250.04,-3816.44,20 >>Enter the Western entrance of Dire Maul
     .itemcount 18249,1 << !Rogue --Crescent Key
     .skill lockpicking,<300,1 << Rogue
 step
@@ -981,7 +981,7 @@ step
     .collect 20520,4,8950,1 --Dark Rune (x4)
 step
     #completewith AnthionsFriend2
-    .goto Kalimdor,43.39,66.52,20 >>Enter the Northern entrance of Dire Maul
+    .goto 1414/1,1099.16,-3519.58,20 >>Enter the Northern entrance of Dire Maul
     >>|cRXP_WARN_You must have the|r |T134244:0|t[Crescent Key] |cRXP_WARN_to be able to open the door into Dire Maul North and into the library|r << !Rogue
     >>|cRXP_WARN_You must have the|r |T134244:0|t[Crescent Key] |cRXP_WARN_or have 300 skill in lockpicking to be able to open the door into Dire Maul North and into the library|r << Rogue
     >>|cRXP_WARN_Alternatively ask another player to open the doors for you|r
@@ -990,7 +990,7 @@ step
 step
     #optional
     #completewith AnthionsFriend2
-    .goto Kalimdor,43.39,66.52,20 >>Enter the Northern entrance of Dire Maul
+    .goto 1414/1,1099.16,-3519.58,20 >>Enter the Northern entrance of Dire Maul
     .itemcount 18249,1 << !Rogue --Crescent Key
     .skill lockpicking,<300,1 << Rogue
 step
@@ -1006,7 +1006,7 @@ step
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
     #completewith next
-    .goto Eastern Kingdoms,48.07,62.42
+    .goto 1415/0,-920.59,-7181.25
     .subzone 1584,2 >>Enter Blackrock Depths
     >>|cRXP_WARN_Make sure you have a group ready|r
 step
@@ -1020,7 +1020,7 @@ step
     #completewith next
     .zone Eastern Plaguelands >>Travel to Eastern Plaguelands
 step
-    .goto Eastern Kingdoms,55.06,17.51
+    .goto 1415/0,-3381.07,3357.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anthion|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Anthion|r
     .turnin 9015 >>Turn in The Challenge
@@ -1045,7 +1045,7 @@ step << Alliance
     #completewith next
     .zone Ironforge >>Travel to |cFFfa9602Ironforge|r
 step << Alliance
-    .goto Ironforge,43.54,52.68
+    .goto 1455/0,-1057.83,-4847.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deliana|r
     >>You will need |T132542:0|t[|cRXP_LOOT_Wildheart Boots|r], |T134588:0|t[|cRXP_LOOT_Wildheart Kilt|r] and |T135032:0|t[|cRXP_LOOT_Wildheart Spaulders|r] to turn in this quest << Druid
     >>You will need |T132588:0|t[|cRXP_LOOT_Beaststalker's Boots|r], |T134583:0|t[|cRXP_LOOT_Beaststalker's Pants|r] and |T135041:0|t[|cRXP_LOOT_Beaststalker's Mantle|r] to turn in this quest << Hunter
@@ -1093,7 +1093,7 @@ step << Horde
     #completewith next
     .zone Orgrimmar >>Travel to |cFFfa9602Orgrimmar|r
 step << Horde
-    .goto Orgrimmar,34.96,38.28
+    .goto 1454/1,-4170.95,1915.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokvar|r
     >>You will need |T132542:0|t[|cRXP_LOOT_Wildheart Boots|r], |T134588:0|t[|cRXP_LOOT_Wildheart Kilt|r] and |T135032:0|t[|cRXP_LOOT_Wildheart Spaulders|r] to turn in this quest << Druid
     >>You will need |T132588:0|t[|cRXP_LOOT_Beaststalker's Boots|r], |T134583:0|t[|cRXP_LOOT_Beaststalker's Pants|r] and |T135041:0|t[|cRXP_LOOT_Beaststalker's Mantle|r] to turn in this quest << Hunter
@@ -1252,7 +1252,7 @@ step << Alliance
     #completewith next
     .zone Ironforge >>Travel to |cFFfa9602Ironforge|r
 step << Alliance
-    .goto Ironforge,43.54,52.68
+    .goto 1455/0,-1057.83,-4847.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deliana|r
     .accept 8960 >>Accept Bodley's Unfortunate Fate
     .target Deliana
@@ -1260,7 +1260,7 @@ step << Horde
     #completewith next
     .zone Orgrimmar >>Travel to |cFFfa9602Orgrimmar|r
 step << Horde
-    .goto Orgrimmar,34.96,38.28
+    .goto 1454/1,-4170.95,1915.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokvar|r
     .accept 8960 >>Accept Bodley's Unfortunate Fate
     .target Mokvar
@@ -1277,7 +1277,7 @@ step << Alliance
     #completewith next
     .subzone 3197 >>Travel to Chillwind Camp in |cFFfa9602Western Plaguelands|r
 step << Alliance
-    .goto Western Plaguelands,42.84,83.71
+    .goto 1422/0,-1425.45,966.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argent Quartermaster Lightspark|r
     >>|cRXP_BUY_Buy a|r |T133879:0|t[Hallowed Brazier] |cRXP_BUY_from him|r
     >>|cRXP_WARN_This costs 120 gold|r
@@ -1287,7 +1287,7 @@ step << Horde
     #completewith next
     .subzone 2268 >>Travel to Light's Hope Chapel in |cFFfa9602Eastern Plaguelands|r
 step << Horde
-    .goto Eastern Plaguelands,81.63,60.00
+    .goto 1423/0,-5345.18,2251.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quartermaster Miranda Breechlock|r
     >>|cRXP_BUY_Buy a|r |T133879:0|t[Hallowed Brazier] |cRXP_BUY_from her|r
     >>|cRXP_WARN_This costs 120 gold|r
@@ -1305,7 +1305,7 @@ step
     .target Bodley
 step
     #completewith next
-    .goto Eastern Kingdoms,48.95,63.89
+    .goto 1415/0,-1230.35,-7526.21
     .subzone 1583 >>Enter Upper Blackrock Spire
     >>|cRXP_WARN_This is a 10-man dungeon. You or somebody in your party must have the|r |T133343:0|t[|cRXP_LOOT_Seal of Ascension|r] |cRXP_WARN_to be able to enter Upper Blackrock Spire|r
 step
@@ -1315,7 +1315,7 @@ step
     .mob Pyroguard Emberseer
 step
     #completewith next
-    .goto Eastern Kingdoms,48.07,62.42
+    .goto 1415/0,-920.59,-7181.25
     .subzone 1584,2 >>Enter Blackrock Depths
     >>|cRXP_WARN_Make sure you have a group ready|r
 step
@@ -1327,12 +1327,12 @@ step
     .zone Silithus >>Travel to |cFFfa9602Silithus|r
 step
     #loop
-    .goto Silithus,38.31,46.42,0
-    .goto Silithus,27.93,30.66,0
-    .goto Silithus,20.47,86.11,0
-    .goto Silithus,38.31,46.42,80,0
-    .goto Silithus,27.93,30.66,80,0
-    .goto Silithus,20.47,86.11,80,0
+    .goto 1451/1,1203.03,-7036.63,0
+    .goto 1451/1,1564.60,-6670.54,0
+    .goto 1451/1,1824.46,-7958.60,0
+    .goto 1451/1,1203.03,-7036.63,80,0
+    .goto 1451/1,1564.60,-6670.54,80,0
+    .goto 1451/1,1824.46,-7958.60,80,0
     >>Kill |cRXP_ENEMY_Twilight|r mobs in |cFFfa9602Silithus|r. Loot them for their |T132658:0|t[|cRXP_FRIENDLY_Twilight Cultist|r] gear
     >>|cRXP_WARN_You are going to need multiple|r |T132658:0|t[|cRXP_FRIENDLY_Twilight Cultist|r] |cRXP_WARN_sets. It is recommended for your group to have at least 5 sets|r
     >>|cRXP_WARN_Alternatively buy them from the auction house|r
@@ -1351,23 +1351,23 @@ step
     .reputation 609,friendly >>Get a friendly reputation with the Cenarion Circle
     >>|cRXP_WARN_Grind |cRXP_ENEMY_Twilight|r mobs or complete Cenarion Circle quests in Silithus to obtain reputation|r
 step
-    .goto Silithus,48.62,37.87
+    .goto 1451/1,843.90,-6838.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huum Wildmane|r
     .accept 8331 >>Accept Aurel Goldleaf
     .target Huum Wildmane
     .itemcount 20422,<1
 step
-    .goto Silithus,51.96,38.1
+    .goto 1451/1,727.56,-6843.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aurel Goldleaf|r
     .turnin 8331 >>Turn in Aurel Goldleaf
     .accept 8332 >>Accept Dukes of the Council
     .target Aurel Goldleaf
     .itemcount 20422,<1
 step
-    .goto Silithus,38.31,46.42
-    .goto Silithus,38.31,46.42,0
-    .goto Silithus,27.93,30.66,0
-    .goto Silithus,20.47,86.11,0
+    .goto 1451/1,1203.03,-7036.63
+    .goto 1451/1,1203.03,-7036.63,0
+    .goto 1451/1,1564.60,-6670.54,0
+    .goto 1451/1,1824.46,-7958.60,0
     >>Travel to a |cRXP_PICK_Lesser Wind Stone|r in one of the three |cRXP_ENEMY_Twilight|r camps. They are marked on your map
     >>Summon |cRXP_ENEMY_Templars|r and kill them. Loot them for their |T133438:0|t[|cRXP_LOOT_Abyssal Crests|r]
     >>|cRXP_WARN_You or somebody in your group must equip a|r |T132658:0|t[|cRXP_FRIENDLY_Twilight Cultist|r] |cRXP_WARN_set every time to summon a|r |cRXP_ENEMY_Templar|r
@@ -1378,23 +1378,23 @@ step
     .mob Hoary Templar
     .mob Azure Templar
 step
-    .goto Silithus,51.96,38.1
+    .goto 1451/1,727.56,-6843.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aurel Goldleaf|r
     .turnin 8332 >>Turn in Dukes of the Council
     .target Aurel Goldleaf
     .itemcount 20513,3
 step
-    .goto Silithus,51.96,38.1
+    .goto 1451/1,727.56,-6843.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aurel Goldleaf|r
     .turnin 8333 >>Turn in Medallion of Station
     .target Aurel Goldleaf
     .itemcount 20513,3
 step
     #label DukeofCynders
-    .goto Silithus,37.67,44.81
-    .goto Silithus,37.67,44.81,0
-    .goto Silithus,24.74,32.68,0
-    .goto Silithus,17.24,84.75,0
+    .goto 1451/1,1225.33,-6999.23
+    .goto 1451/1,1225.33,-6999.23,0
+    .goto 1451/1,1675.72,-6717.46,0
+    .goto 1451/1,1936.97,-7927.01,0
     >>Travel to a |cRXP_PICK_Wind Stone|r in one of the three |cRXP_ENEMY_Twilight|r camps. They are marked on your map
     >>Summon |cRXP_ENEMY_Dukes|r until the |cRXP_ENEMY_The Duke of Cynders|r spawns |cRXP_WARN_(25% spawn chance)|r. Kill him and loot him for the |cRXP_LOOT_Cinder of Cynders|r
     >>|cRXP_WARN_You or somebody in your group must have a|r |T133281:0|t[|cRXP_LOOT_Twilight Cultist Medallion of Station|r] |cRXP_WARN_and must equip a|r |T132658:0|t[|cRXP_FRIENDLY_Twilight Cultist|r] |cRXP_WARN_set every time to summon a new|r |cRXP_ENEMY_Duke|r
@@ -1417,16 +1417,16 @@ step
     .isOnQuest 8962
 step
     #loop
-    .goto Silithus,55.77,71.71,0
-    .goto Silithus,60.92,82.04,0
-    .goto Silithus,60.43,89.80,0
-    .goto Silithus,56.57,86.74,0
-    .goto Silithus,54.55,82.84,0
-    .goto Silithus,55.77,71.71,70,0
-    .goto Silithus,60.92,82.04,70,0
-    .goto Silithus,60.43,89.80,70,0
-    .goto Silithus,56.57,86.74,70,0
-    .goto Silithus,54.55,82.84,70,0
+    .goto 1451/1,594.84,-7624.10,0
+    .goto 1451/1,415.45,-7864.05,0
+    .goto 1451/1,432.52,-8044.310,0
+    .goto 1451/1,566.98,-7973.23,0
+    .goto 1451/1,637.34,-7882.64,0
+    .goto 1451/1,594.84,-7624.10,70,0
+    .goto 1451/1,415.45,-7864.05,70,0
+    .goto 1451/1,432.52,-8044.310,70,0
+    .goto 1451/1,566.98,-7973.23,70,0
+    .goto 1451/1,637.34,-7882.64,70,0
     >>Kill |cRXP_ENEMY_Hive'Regal|r mobs (elite). Loot them for the |cRXP_LOOT_Druidical Remains|r
     >>|cRXP_WARN_This has a very low droprate and can take quite some time. It is recommended to grind them in a 5-man group|r
     .complete 8962,1 --Druidical Remains (x1)
@@ -1442,15 +1442,15 @@ step
     .isOnQuest 8963
 step
     #loop
-    .goto Winterspring,61.44,68.26,0
-    .goto Winterspring,59.64,67.32,60,0
-    .goto Winterspring,61.44,68.26,60,0
-    .goto Winterspring,63.62,69.30,60,0
-    .goto Winterspring,61.44,68.26,60,0
-    .goto Winterspring,59.64,67.32,60,0
-    .goto Winterspring,60.19,64.96,60,0
-    .goto Winterspring,64.06,66.80,60,0
-    .goto Winterspring,65.81,69.15,60,0
+    .goto 1452/1,-4678.91,5302.36,0
+    .goto 1452/1,-4551.11,5346.85,60,0
+    .goto 1452/1,-4678.91,5302.36,60,0
+    .goto 1452/1,-4833.69,5253.130,60,0
+    .goto 1452/1,-4678.91,5302.36,60,0
+    .goto 1452/1,-4551.11,5346.85,60,0
+    .goto 1452/1,-4590.16,5458.56,60,0
+    .goto 1452/1,-4864.93,5371.470,60,0
+    .goto 1452/1,-4989.18,5260.23,60,0
     .goto Winterspring,65.10,72.07,60,0
     .goto Winterspring,61.50,72.64,60,0
     .goto Winterspring,59.60,69.74,60,0
@@ -1467,14 +1467,14 @@ step
     .isOnQuest 8964
 step
     #loop
-    .goto Eastern Plaguelands,84.17,83.38,0
-    .goto Eastern Plaguelands,84.17,83.38,60,0
-    .goto Eastern Plaguelands,86.39,84.86,20,0
-    .goto Eastern Plaguelands,87.36,85.57,15,0
-    .goto Eastern Plaguelands,85.23,86.80,30,0
-    .goto Eastern Plaguelands,87.16,87.39,30,0
-    .goto Eastern Plaguelands,86.36,82.80,30,0
-    .goto Eastern Plaguelands,87.69,81.23,40,0
+    .goto 1423/0,-5443.50,1647.75,0
+    .goto 1423/0,-5443.50,1647.75,60,0
+    .goto 1423/0,-5529.43,1609.55,20,0
+    .goto 1423/0,-5566.98,1591.22,15,0
+    .goto 1423/0,-5484.53,1559.480,30,0
+    .goto 1423/0,-5559.23,1544.25,30,0
+    .goto 1423/0,-5528.27,1662.730,30,0
+    .goto 1423/0,-5579.75,1703.25,40,0
     >>Kill |cRXP_ENEMY_Scarlet Praetorians|r (elite). Loot them for the |cRXP_ENEMY_Brilliant Sword of Zealotry|r
     >>|cRXP_WARN_This has a very low droprate and can take quite some time. It is recommended to grind them in a 5-man group|r
     .complete 8964,1 --Brilliant Sword of Zealotry (x1)
@@ -1482,19 +1482,19 @@ step
     .isOnQuest 8964
 step
     #completewith next
-    .goto Hillsbrad Foothills,19.67,76.92
+    .goto 1424/0,437.23,-1240.96
     .subzone 896 >>Travel to Purgation Isle in |cFFfa9602Hillsbrad Foothills|r
     .isOnQuest 8965
 step
     #loop
-    .goto Hillsbrad Foothills,15.72,81.41,0
-    .goto Hillsbrad Foothills,19.67,76.92,30,0
+    .goto 1424/0,563.63,-1336.75,0
+    .goto 1424/0,437.23,-1240.96,30,0
     .goto Hillsbrad Foothills,15.50,77.64,30,0
-    .goto Hillsbrad Foothills,13.16,81.53,30,0
-    .goto Hillsbrad Foothills,14.53,84.33,30,0
-    .goto Hillsbrad Foothills,16.14,84.13,30,0
-    .goto Hillsbrad Foothills,16.84,81.48,30,0
-    .goto Hillsbrad Foothills,15.72,81.41,40,0
+    .goto 1424/0,645.55,-1339.31,30,0
+    .goto 1424/0,601.71,-1399.04,30,0
+    .goto 1424/0,550.19,-1394.77,30,0
+    .goto 1424/0,527.79,-1338.24,30,0
+    .goto 1424/0,563.63,-1336.75,40,0
     >>Kill |cRXP_ENEMY_Undead Ghosts|r (elite) on the island. Loot them for |cRXP_LOOT_Soul Ashes of the Banished|r
     >>|cRXP_WARN_This has a very low droprate and can take quite some time. It is recommended to grind them in a 5-man group|r
     .complete 8965,1 --Soul Ashes of the Banished (x1)
@@ -1572,7 +1572,7 @@ step
     .isQuestTurnedIn 8965
 step
     #completewith next
-    .goto Eastern Kingdoms,48.95,63.89
+    .goto 1415/0,-1230.35,-7526.21
     .subzone 1583 >>Enter Blackrock Spire
     >>|cRXP_WARN_Make sure you have a group ready|r
     .isOnQuest 8966
@@ -1591,7 +1591,7 @@ step
     .isOnQuest 8967
 step
     #completewith next
-    .goto Kalimdor,43.84,67.41,20 >>Enter the Eastern entrance of Dire Maul
+    .goto 1414/1,933.56,-3737.93,20 >>Enter the Eastern entrance of Dire Maul
     >>|cRXP_WARN_Make sure you have a group ready|r
     .isOnQuest 8967
 step
@@ -1609,7 +1609,7 @@ step
     .isOnQuest 8968
 step
     #completewith next
-    .goto Eastern Kingdoms,55.06,17.51
+    .goto 1415/0,-3381.07,3357.60
     .subzone 2017 >>Enter Stratholme
     >>|cRXP_WARN_Make sure you have a group ready|r
     .isOnQuest 8968
@@ -1630,7 +1630,7 @@ step
     .isOnQuest 8969
 step
     #completewith next
-    .goto Eastern Kingdoms,52.75,26.41
+    .goto 1415/0,-2567.95,1269.07
     .subzone 2057 >>Enter Scholomance
     >>|cRXP_WARN_Make sure you have a group ready|r
     .isOnQuest 8969
@@ -1714,17 +1714,17 @@ step
     .isQuestTurnedIn 8969
 step
     #completewith next
-    .goto Dustwallow Marsh,72.26,18.28
+    .goto 1445/1,-4768.65,-2673.13
     .subzone 2079 >>Travel to Alcaz Island in |cFFfa9602Dustwallow Marsh|r
 step
     #loop
-    .goto Dustwallow Marsh,76.91,18.24,0
-    .goto Dustwallow Marsh,74.38,17.99,50,0
-    .goto Dustwallow Marsh,74.89,14.68,50,0
-    .goto Dustwallow Marsh,74.38,17.99,50,0
-    .goto Dustwallow Marsh,76.91,18.24,50,0
-    .goto Dustwallow Marsh,76.56,22.15,50,0
-    .goto Dustwallow Marsh,75.49,21.75,50,0
+    .goto 1445/1,-5012.78,-2671.73,0
+    .goto 1445/1,-4879.95,-2662.98,50,0
+    .goto 1445/1,-4906.73,-2547.13,50,0
+    .goto 1445/1,-4879.95,-2662.98,50,0
+    .goto 1445/1,-5012.78,-2671.73,50,0
+    .goto 1445/1,-4994.40,-2808.58,50,0
+    .goto 1445/1,-4938.23,-2794.58,50,0
     >>Kill |cRXP_ENEMY_Strashaz Naga|r (elite). Loot them for their |cRXP_LOOT_Bloodkelp|r
     >>|cRXP_WARN_This has a very low droprate and can take quite some time. It is recommended to grind them in a 5-man group|r
     .complete 8970,1 --Bloodkelp (x20)
@@ -1755,16 +1755,16 @@ step
     .isOnQuest 8986
 step
     #loop
-    .goto Silithus,55.77,71.71,0
-    .goto Silithus,60.92,82.04,0
-    .goto Silithus,60.43,89.80,0
-    .goto Silithus,56.57,86.74,0
-    .goto Silithus,54.55,82.84,0
-    .goto Silithus,55.77,71.71,70,0
-    .goto Silithus,60.92,82.04,70,0
-    .goto Silithus,60.43,89.80,70,0
-    .goto Silithus,56.57,86.74,70,0
-    .goto Silithus,54.55,82.84,70,0
+    .goto 1451/1,594.84,-7624.10,0
+    .goto 1451/1,415.45,-7864.05,0
+    .goto 1451/1,432.52,-8044.310,0
+    .goto 1451/1,566.98,-7973.23,0
+    .goto 1451/1,637.34,-7882.64,0
+    .goto 1451/1,594.84,-7624.10,70,0
+    .goto 1451/1,415.45,-7864.05,70,0
+    .goto 1451/1,432.52,-8044.310,70,0
+    .goto 1451/1,566.98,-7973.23,70,0
+    .goto 1451/1,637.34,-7882.64,70,0
     >>Kill |cRXP_ENEMY_Hive'Regal|r mobs (elite). Loot them for the |cRXP_LOOT_Druidical Remains|r
     >>|cRXP_WARN_This has a very low droprate and can take quite some time. It is recommended to grind them in a 5-man group|r
     .complete 8986,1 --Druidical Remains (x1)
@@ -1780,15 +1780,15 @@ step
     .isOnQuest 8985
 step
     #loop
-    .goto Winterspring,61.44,68.26,0
-    .goto Winterspring,59.64,67.32,60,0
-    .goto Winterspring,61.44,68.26,60,0
-    .goto Winterspring,63.62,69.30,60,0
-    .goto Winterspring,61.44,68.26,60,0
-    .goto Winterspring,59.64,67.32,60,0
-    .goto Winterspring,60.19,64.96,60,0
-    .goto Winterspring,64.06,66.80,60,0
-    .goto Winterspring,65.81,69.15,60,0
+    .goto 1452/1,-4678.91,5302.36,0
+    .goto 1452/1,-4551.11,5346.85,60,0
+    .goto 1452/1,-4678.91,5302.36,60,0
+    .goto 1452/1,-4833.69,5253.130,60,0
+    .goto 1452/1,-4678.91,5302.36,60,0
+    .goto 1452/1,-4551.11,5346.85,60,0
+    .goto 1452/1,-4590.16,5458.56,60,0
+    .goto 1452/1,-4864.93,5371.470,60,0
+    .goto 1452/1,-4989.18,5260.23,60,0
     .goto Winterspring,65.10,72.07,60,0
     .goto Winterspring,61.50,72.64,60,0
     .goto Winterspring,59.60,69.74,60,0
@@ -1805,14 +1805,14 @@ step
     .isOnQuest 8987
 step
     #loop
-    .goto Eastern Plaguelands,84.17,83.38,0
-    .goto Eastern Plaguelands,84.17,83.38,60,0
-    .goto Eastern Plaguelands,86.39,84.86,20,0
-    .goto Eastern Plaguelands,87.36,85.57,15,0
-    .goto Eastern Plaguelands,85.23,86.80,30,0
-    .goto Eastern Plaguelands,87.16,87.39,30,0
-    .goto Eastern Plaguelands,86.36,82.80,30,0
-    .goto Eastern Plaguelands,87.69,81.23,40,0
+    .goto 1423/0,-5443.50,1647.75,0
+    .goto 1423/0,-5443.50,1647.75,60,0
+    .goto 1423/0,-5529.43,1609.55,20,0
+    .goto 1423/0,-5566.98,1591.22,15,0
+    .goto 1423/0,-5484.53,1559.480,30,0
+    .goto 1423/0,-5559.23,1544.25,30,0
+    .goto 1423/0,-5528.27,1662.730,30,0
+    .goto 1423/0,-5579.75,1703.25,40,0
     >>Kill |cRXP_ENEMY_Scarlet Praetorians|r (elite). Loot them for the |cRXP_ENEMY_Brilliant Sword of Zealotry|r
     >>|cRXP_WARN_This has a very low droprate and can take quite some time. It is recommended to grind them in a 5-man group|r
     .complete 8987,1 --Brilliant Sword of Zealotry (x1)
@@ -1820,19 +1820,19 @@ step
     .isOnQuest 8987
 step
     #completewith next
-    .goto Hillsbrad Foothills,19.67,76.92
+    .goto 1424/0,437.23,-1240.96
     .subzone 896 >>Travel to Purgation Isle in |cFFfa9602Hillsbrad Foothills|r
     .isOnQuest 8988
 step
     #loop
-    .goto Hillsbrad Foothills,15.72,81.41,0
-    .goto Hillsbrad Foothills,19.67,76.92,30,0
+    .goto 1424/0,563.63,-1336.75,0
+    .goto 1424/0,437.23,-1240.96,30,0
     .goto Hillsbrad Foothills,15.50,77.64,30,0
-    .goto Hillsbrad Foothills,13.16,81.53,30,0
-    .goto Hillsbrad Foothills,14.53,84.33,30,0
-    .goto Hillsbrad Foothills,16.14,84.13,30,0
-    .goto Hillsbrad Foothills,16.84,81.48,30,0
-    .goto Hillsbrad Foothills,15.72,81.41,40,0
+    .goto 1424/0,645.55,-1339.31,30,0
+    .goto 1424/0,601.71,-1399.04,30,0
+    .goto 1424/0,550.19,-1394.77,30,0
+    .goto 1424/0,527.79,-1338.24,30,0
+    .goto 1424/0,563.63,-1336.75,40,0
     >>Kill |cRXP_ENEMY_Undead Ghosts|r (elite) on the island. Loot them for |cRXP_LOOT_Soul Ashes of the Banished|r
     >>|cRXP_WARN_This has a very low droprate and can take quite some time. It is recommended to grind them in a 5-man group|r
     .complete 8988,1 --Soul Ashes of the Banished (x1)
@@ -1910,7 +1910,7 @@ step
     .isQuestTurnedIn 8988
 step
     #completewith next
-    .goto Eastern Kingdoms,48.95,63.89
+    .goto 1415/0,-1230.35,-7526.21
     .subzone 1583 >>Enter Blackrock Spire
     >>|cRXP_WARN_Make sure you have a group ready|r
     .isOnQuest 8989
@@ -1945,7 +1945,7 @@ step
     .isOnQuest 8990
 step
     #completewith next
-    .goto Kalimdor,43.84,67.41,20 >>Enter the Eastern entrance of Dire Maul
+    .goto 1414/1,933.56,-3737.93,20 >>Enter the Eastern entrance of Dire Maul
     >>|cRXP_WARN_Make sure you have a group ready|r
     .isOnQuest 8990
 step
@@ -1979,7 +1979,7 @@ step
     .isOnQuest 8991
 step
     #completewith next
-    .goto Eastern Kingdoms,55.06,17.51
+    .goto 1415/0,-3381.07,3357.60
     .subzone 2017 >>Enter Stratholme
     >>|cRXP_WARN_Make sure you have a group ready|r
     .isOnQuest 8991
@@ -2016,7 +2016,7 @@ step
     .isOnQuest 8992
 step
     #completewith next
-    .goto Eastern Kingdoms,52.75,26.41
+    .goto 1415/0,-2567.95,1269.07
     .subzone 2057 >>Enter Scholomance
     >>|cRXP_WARN_Make sure you have a group ready|r
     .isOnQuest 8992
@@ -2116,7 +2116,7 @@ step
     .isQuestTurnedIn 8992
 step
     #completewith next
-    .goto Eastern Kingdoms,48.95,63.89
+    .goto 1415/0,-1230.35,-7526.21
     .subzone 1583 >>Enter Blackrock Spire
     >>|cRXP_WARN_Make sure you have a group ready|r
 step
@@ -2139,7 +2139,7 @@ step
     .target Bodley
 step
     #completewith next
-    .goto Eastern Kingdoms,48.95,63.89
+    .goto 1415/0,-1230.35,-7526.21
     .subzone 1583 >>Enter Upper Blackrock Spire
     >>|cRXP_WARN_This is a 10-man dungeon. You or somebody in your party must have the|r |T133343:0|t[|cRXP_LOOT_Seal of Ascension|r] |cRXP_WARN_to be able to enter Upper Blackrock Spire|r
 step
@@ -2169,7 +2169,7 @@ step << Alliance
     #completewith next
     .zone Ironforge >>Travel to |cFFfa9602Ironforge|r
 step << Alliance
-    .goto Ironforge,43.54,52.68
+    .goto 1455/0,-1057.83,-4847.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deliana|r
     .turnin 8997 >>Turn in Back to the Beginning
     .accept 8999 >>Accept Saving the Best for Last << Druid
@@ -2182,7 +2182,7 @@ step << Alliance
     .accept 9006 >>Accept Saving the Best for Last << Warrior
     .target Deliana
 step << Alliance
-    .goto Ironforge,43.54,52.68
+    .goto 1455/0,-1057.83,-4847.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deliana|r
     >>You will need |T133129:0|t[|cRXP_LOOT_Wildheart Cowl|r] and |T132741:0|t[|cRXP_LOOT_Wildheart Vest|r] to turn in this quest << Druid
     >>You will need |T133126:0|t[|cRXP_LOOT_Beaststalker's Cap|r] and |T132625:0|t[|cRXP_LOOT_Beaststalker's Tunic|r] to turn in this quest <<  Hunter
@@ -2221,7 +2221,7 @@ step << Horde
     #completewith next
     .zone Orgrimmar >>Travel to |cFFfa9602Orgrimmar|r
 step << Horde
-    .goto Orgrimmar,34.96,38.28
+    .goto 1454/1,-4170.95,1915.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokvar|r
     .turnin 8998 >>Turn in Back to the Beginning
     .accept 9007 >>Accept Saving the Best for Last << Druid
@@ -2234,7 +2234,7 @@ step << Horde
     .accept 9014 >>Accept Saving the Best for Last << Mage
     .target Mokvar
 step << Horde
-    .goto Orgrimmar,34.96,38.28
+    .goto 1454/1,-4170.95,1915.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokvar|r
     >>You will need |T133129:0|t[|cRXP_LOOT_Wildheart Cowl|r] and |T132741:0|t[|cRXP_LOOT_Wildheart Vest|r] to turn in this quest << Druid
     >>You will need |T133126:0|t[|cRXP_LOOT_Beaststalker's Cap|r] and |T132625:0|t[|cRXP_LOOT_Beaststalker's Tunic|r] to turn in this quest <<  Hunter

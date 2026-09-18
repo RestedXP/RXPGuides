@@ -23,12 +23,12 @@ step << Mage
     #completewith next
 	+Note that you have selected the AoE guide. AoE is typically a lot harder than single target mage, and is also slower due to the recent 100% Quest xp changes in SoM
 step
-    .goto The Barrens,52.2,31.8
+    .goto 1413/1,-2666.68,-481.94.8
 .target Tonga Runetotem
 >>Talk to |cRXP_FRIENDLY_Tonga Runetotem|r
     .accept 870 >>Accept The Forgotten Pools
 step
-    .goto The Barrens,52.2,31.0
+    .goto 1413/1,-2666.68,-481.94
 >>Talk to |cRXP_FRIENDLY_Sergra Darkthorn|r
     .turnin 842 >>Turn in Crossroads Conscription
 .target Sergra Darkthorn
@@ -44,7 +44,7 @@ step
 >>Talk to |cRXP_FRIENDLY_Gazrog|r
     .accept 869 >>Accept Raptor Thieves
 step
-    .goto The Barrens,51.99,29.89
+    .goto 1413/1,-2645.40,-406.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >> Set your Hearthstone to Crossroads
     .target Innkeeper Boorand Plainswind
@@ -74,7 +74,7 @@ step
     #sticky
     #completewith next
     >>Check this location for Chen's Empty Keg. Loot it and start the quest, otherwise you'll get it later
-    .goto The Barrens,55.7,27.3
+    .goto 1413/1,-3021.35,-231.96
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step
@@ -123,7 +123,7 @@ step
 >>Talk to |cRXP_FRIENDLY_Darsok Swiftdagger|r
     .accept 867 >>Accept Harpy Raiders
 step
-    .goto The Barrens,52.2,31.0
+    .goto 1413/1,-2666.68,-481.94
 >>Talk to |cRXP_FRIENDLY_Sergra Darkthorn|r
     .turnin 844 >>Turn in Plainstrider Menace
 .target Sergra Darkthorn
@@ -242,7 +242,7 @@ step
 .target Gazlowe
     .accept 888 >>Accept Stolen Booty
 step
-    .goto The Barrens,63.08,37.16
+    .goto 1413/1,-3769.19,-898.12
     .fly Crossroads >> Fly to The Crossroads
 step
     .goto The Barrens,51.5,30.8
@@ -251,7 +251,7 @@ step
     .turnin 5041 >>Turn in Supplies for the Crossroads
     .turnin 872 >>Turn in The Disruption Ends
 step
-    .goto The Barrens,52.2,31.0
+    .goto 1413/1,-2666.68,-481.94
 >>Talk to |cRXP_FRIENDLY_Sergra Darkthorn|r
     .turnin 845 >>Turn in The Zhevra
 .target Sergra Darkthorn
@@ -263,7 +263,7 @@ step
     .complete 821,2 --Plainstrider Kidney (5)
 step
     #label RegtharDeathgate1
-    .goto The Barrens,45.35,28.41
+    .goto 1413/1,-1972.55,-306.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .accept 850 >>Accept Kolkar Leaders
     .accept 855 >> Accept Centaur Bracers
@@ -281,18 +281,18 @@ step
     >>|cRXP_WARN_This quest does not have to be completed now|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step
-    .goto The Barrens,45.06,22.54
+    .goto 1413/1,-1943.16,89.64
     >>Dive underwater to the |cRXP_PICK_Bubbling Fissure|r
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step
     #label Barak
-    .goto The Barrens,42.82,23.52
+    .goto 1413/1,-1716.18,23.43
     >>Kill |cRXP_ENEMY_Barak Kodobane|r. Loot him for his |cRXP_LOOT_Head|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Barak Kodobane|r's melee hits deal a LOT of damage and he is protected by a |cRXP_ENEMY_Kolkar Wrangler|r. They can net you and shoot at you from ranged distance|r
     .complete 850,1 --Kodobane's Head (1)
     .mob Barak Kodobane
 step
-    .goto The Barrens,45.35,28.41
+    .goto 1413/1,-1972.55,-306.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 850 >>Turn in Kolkar Leaders
     .accept 851 >>Accept Verog the Dervish
@@ -301,7 +301,7 @@ step
     .isQuestComplete 855
 step
     #label KodobaneTurnin
-    .goto The Barrens,45.35,28.41
+    .goto 1413/1,-1972.55,-306.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 850 >>Turn in Kolkar Leaders
     .accept 851 >>Accept Verog the Dervish
@@ -328,10 +328,10 @@ step
 step
     .goto The Barrens,40.2,18.9,40,0
     .goto The Barrens,40.7,14.6,40,0
-    .goto The Barrens,42.6,15.1,40,0
+    .goto 1413/1,-1693.88,592.31,40,0
     .goto The Barrens,40.2,18.9,40,0
     .goto The Barrens,40.7,14.6,40,0
-    .goto The Barrens,42.6,15.1,40,0
+    .goto 1413/1,-1693.88,592.31,40,0
     >>Kill Harpies. Loot them for their Talons
     .complete 867,1 --Witchwing Talon (8)
 step
@@ -345,12 +345,12 @@ step
     >>Kill Plainstriders. Loot them for their Kidneys
     .complete 821,2 --Plainstrider Kidney (5)
 step
-    .goto The Barrens,54.3,12.3,40,0
-    .goto The Barrens,54.6,16.7,40,0
-    .goto The Barrens,42.6,15.1,40,0
-    .goto The Barrens,54.3,12.3,40,0
-    .goto The Barrens,54.6,16.7,40,0
-    .goto The Barrens,42.6,15.1,40,0
+    .goto 1413/1,-2879.48,781.48,40,0
+    .goto 1413/1,-2909.88,484.21,40,0
+    .goto 1413/1,-1693.88,592.31,40,0
+    .goto 1413/1,-2879.48,781.48,40,0
+    .goto 1413/1,-2909.88,484.21,40,0
+    .goto 1413/1,-1693.88,592.31,40,0
     >>Kill Raptors. Loot them for their heads
     .complete 869,1 --Raptor Head (12)
 step
@@ -360,7 +360,7 @@ step
     .accept 900 >>Accept Samophlange
 step
     >>Click the Valve
-    .goto The Barrens,52.4,11.4
+    .goto 1413/1,-2686.95,842.29
     .complete 900,2 --Shut off Fuel Control Valve (1)
 step
     >>Click the Valve. Mobs will spawn when you click either
@@ -383,7 +383,7 @@ step
     .accept 902 >>Accept Samophlange
 step
     >>Accept Ignition from the Shredder
-    .goto The Barrens,56.5,7.5
+    .goto 1413/1,-3102.42,1105.78
 .target Wizzlecrank's Shredder
 >>Talk to |cRXP_FRIENDLY_Wizzlecrank's Shredder|r
     .accept 858 >>Accept Ignition
@@ -396,7 +396,7 @@ step
     .complete 858,1 --Ignition Key (1)
 step
     >>This will begin an escort
-    .goto The Barrens,56.5,7.5
+    .goto 1413/1,-3102.42,1105.78
 >>Talk to |cRXP_FRIENDLY_Wizzlecrank's Shredder|r
     .turnin 858 >>Turn in Ignition
 .target Wizzlecrank's Shredder
@@ -461,7 +461,7 @@ step
     .goto The Barrens,55.5,17.3
     .complete 881,1 --Echeyakee's Hide (1)
 step
-    .goto The Barrens,52.2,31.0
+    .goto 1413/1,-2666.68,-481.94
 >>Talk to |cRXP_FRIENDLY_Sergra Darkthorn|r
     .turnin 881 >>Turn in Echeyakee
 .target Sergra Darkthorn
@@ -589,7 +589,7 @@ step
     .goto The Barrens,49.3,50.4
     .complete 4921,1 --Find Mankrik's Wife (1)
 step
-    .goto The Barrens,45.6,59.0
+    .goto 1413/1,-1997.88,-2373.69
     .home >>Set your Hearthstone to Camp Taurajo
 step
     .goto The Barrens,44.5,59.2
@@ -606,13 +606,13 @@ step
 >>Talk to |cRXP_FRIENDLY_Gazrog|r
     .turnin 3281 >>Turn in Stolen Silver
 step
-    .goto The Barrens,52.2,31.0
+    .goto 1413/1,-2666.68,-481.94
 >>Talk to |cRXP_FRIENDLY_Sergra Darkthorn|r
     .turnin 905 >>Turn in The Angry Scytheclaws
 .target Sergra Darkthorn
     .accept 3261 >>Accept Jorn Skyseer
 step
-    .goto The Barrens,52.2,31.9
+    .goto 1413/1,-2666.68,-481.94.9
 >>Talk to |cRXP_FRIENDLY_Tonga Runetotem|r
     .turnin 877 >>Turn in The Stagnant Oasis
 .target Tonga Runetotem
@@ -790,12 +790,12 @@ step
 step
     #requires deepmossegg
     >>Kill Venture Co. Operators until you get the Blueprints
-    .goto Stonetalon Mountains,62.8,53.7,40,0
-    .goto Stonetalon Mountains,61.7,51.5,40,0
-    .goto Stonetalon Mountains,66.8,45.3,40,0
-    .goto Stonetalon Mountains,71.7,49.9,40,0
-    .goto Stonetalon Mountains,74.3,54.7,40,0
-    .goto Stonetalon Mountains,62.8,53.7,40,0
+    .goto 1442/1,179.10,1168.06,40,0
+    .goto 1442/1,232.82,1239.70,40,0
+    .goto 1442/1,-16.23,1441.59,40,0
+    .goto 1442/1,-255.52,1291.80,40,0
+    .goto 1442/1,-382.48,1135.50,40,0
+    .goto 1442/1,179.10,1168.06,40,0
     .complete 1093,1 --Collect Super Reaper 6000 Blueprints (x1)
 step
     >>Finish killing Loggers
@@ -892,7 +892,7 @@ step
 .target Sputtervalve
     .accept 1095 >>Accept Further Instructions
 step
-    .goto The Barrens,62.4,37.6
+    .goto 1413/1,-3700.28,-927.85
 .target Mebok Mizzyrix
 >>Talk to |cRXP_FRIENDLY_Mebok Mizzyrix|r
     .turnin 865 >>Turn in Raptor Horns
@@ -906,7 +906,7 @@ step
     .goto The Barrens,63.1,37.1
     .fly Crossroads >>Fly to Crossroads
 step
-    .goto The Barrens,52.2,31.9
+    .goto 1413/1,-2666.68,-481.94.9
 >>Talk to |cRXP_FRIENDLY_Tonga Runetotem|r
     .turnin 880 >>Turn in Altered Beings
 .target Tonga Runetotem
@@ -926,7 +926,7 @@ step
     .accept 876 >> Accept Serena Bloodfeather
 step
     >>This starts a timed quest
-    .goto The Barrens,51.4,30.2
+    .goto 1413/1,-2585.62,-427.89
 >>Talk to |cRXP_FRIENDLY_Apothecary Helbrim|r
     .turnin 848 >>Turn in Fungal Spores
 .target Apothecary Helbrim
@@ -1017,7 +1017,7 @@ step
 --    .accept 874 >>Accept Mahren Skyseer
 step
     #completewith next
-    .goto The Barrens,44.54,59.27
+    .goto 1413/1,-1890.47,-2391.93
     >>Turn in your Blood Shards for the Spirit of the Wind buff from Mangletooth. If you accidentally sold any shards, skip this step
 .target Mangletooth
 >>Talk to |cRXP_FRIENDLY_Mangletooth|r
@@ -1045,7 +1045,7 @@ step
     .trainer >> Train your class spells
 	>>Don't respec to AoE yet (if you've gone fire spec)
 step
-    .goto Thunder Bluff,28.4,27.7
+    .goto 1456/1,220.24,-1042.75
 .target Clarice Foster
 >>Talk to |cRXP_FRIENDLY_Clarice Foster|r
     .accept 264 >>Accept Until Death Do Us Part

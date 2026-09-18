@@ -1583,17 +1583,17 @@ step
     .goto Alterac Mountains,12.30,56.31
     .accept 94947 >>Accept Welcome to Azeroth
 step
-    .goto Alterac Mountains,12.05,56.25
+    .goto 1416/0,445.93,450.00
     .complete 94947,1 --Take the Skyborne Portal to Stormwind
 step
-    .goto Stormwind City,80.19,38.36
+    .goto 1453/0,303.00,-8622.69
     .turnin 94947 >>Turn in Welcome to Azeroth
 
 step
-    .goto Stormwind City,80.19,38.36
+    .goto 1453/0,303.00,-8622.69
     .accept 93963 >>Accept Exploring the Alliance
 step
-    .goto Stormwind City,78.98,44.98
+    .goto 1453/0,319.27,-8682.03
     
     .complete 93963,1 --1/1 Recieve Instructions from Randal Emerson
     .skipgossipid 142485

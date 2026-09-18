@@ -19,15 +19,15 @@ step
     .target Helendis Riverhorn
 step
     #loop
-    .goto Burning Steppes,90.6,43.6,0
-    .goto Burning Steppes,81.8,27.8,70,0
-    .goto Burning Steppes,91.4,32.6,70,0
-    .goto Burning Steppes,89.8,54.6,70,0
-    .goto Burning Steppes,81.8,60.0,70,0
-    .goto Burning Steppes,89.8,54.6,70,0
-    .goto Burning Steppes,91.4,32.6,70,0
-    .goto Burning Steppes,81.8,27.8,70,0
-    .goto Burning Steppes,90.6,43.6,70,0
+    .goto 1428/0,-2920.49,-7882.36,0
+    .goto 1428/0,-2662.73,-7573.93,70,0
+    .goto 1428/0,-2943.93,-7667.63,70,0
+    .goto 1428/0,-2897.06,-8097.09,70,0
+    .goto 1428/0,-2662.73,-8202.50,70,0
+    .goto 1428/0,-2897.06,-8097.09,70,0
+    .goto 1428/0,-2943.93,-7667.63,70,0
+    .goto 1428/0,-2662.73,-7573.93,70,0
+    .goto 1428/0,-2920.49,-7882.36,70,0
     >>Kill |cRXP_ENEMY_Black Broodlings|r, |cRXP_ENEMY_Black Dragonspawns|r, |cRXP_ENEMY_Black Wyrmkins|r and a |cRXP_ENEMY_Black Drake|r
     >>|cRXP_ENEMY_Black Dragonspawns|r|cRXP_WARN_,|r |cRXP_ENEMY_Black Wyrmkins|r |cRXP_WARN_and|r |cRXP_ENEMY_Black Drakes|r |cRXP_WARN_are elite. Group up if needed|r
     .complete 4182,1 -- Black Broodling slain (15)
@@ -54,13 +54,13 @@ step
 step
     .isQuestTurnedIn 4182
     #completewith next
-    .goto Burning Steppes,84.333,68.328
+    .goto 1428/0,-2736.92,-8365.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Borgus Stoutarm|r
     .fly Redridge >> Fly to Redridge Mountains
     .target Borgus Stoutarm
 step
     .isQuestTurnedIn 4182
-    .goto Redridge Mountains,29.98,44.45
+    .goto 1433/0,-2221.65,-9218.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Solomon|r
     .turnin 4183 >> Turn in The True Masters
     .accept 4184 >> Accept The True Masters
@@ -74,21 +74,21 @@ step
     .zoneskip Redridge Mountains,1
 step
     .isQuestTurnedIn 4182
-    .goto Stormwind City,78.213,17.980
+    .goto 1453/0,329.58,-8440.010
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Bolvar Fordragon|r
     .turnin 4184 >> Turn in The True Masters
     .accept 4185 >> Accept The True Masters
     .target Highlord Bolvar Fordragon
 step
     .isQuestTurnedIn 4182
-    .goto Stormwind City,78.102,17.750
+    .goto 1453/0,331.07,-8437.950
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Katrana Prestor|r
     .complete 4185,1 -- Advice from Lady Prestor
     .skipgossip
     .target Lady Katrana Prestor
 step
     .isQuestTurnedIn 4182
-    .goto Stormwind City,78.213,17.980
+    .goto 1453/0,329.58,-8440.010
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Bolvar Fordragon|r
     .turnin 4185 >> Turn in The True Masters
     .accept 4186 >> Accept The True Masters
@@ -96,13 +96,13 @@ step
 step
     .isQuestTurnedIn 4182
     #completewith next
-    .goto Stormwind City,66.277,62.137
+    .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .fly Redridge>> Fly to Redridge Mountains
     .target Dungar Longdrink
 step
     .isQuestTurnedIn 4182
-    .goto Redridge Mountains,29.98,44.45
+    .goto 1433/0,-2221.65,-9218.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Solomon|r
     .turnin 4186 >> Turn in The True Masters
     .accept 4223 >> Accept The True Masters
@@ -116,7 +116,7 @@ step
     .target Ariena Stormfeather
 step
     .isQuestTurnedIn 4182
-    .goto Burning Steppes,84.744,69.015
+    .goto 1428/0,-2748.96,-8378.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Maxwell|r
     .turnin 4223 >> Turn in The True Masters
     .accept 4224 >> Accept The True Masters
@@ -124,11 +124,11 @@ step
 step
     .isQuestTurnedIn 4182
     #completewith WindsorPickup
-    .goto Burning Steppes,65.236,24.007
+    .goto 1428/0,-2177.54,-7499.89
     .subzone 251 >> Travel to Flame Crest
 step
     .isQuestTurnedIn 4182
-    .goto Burning Steppes,65.012,23.757
+    .goto 1428/0,-2170.98,-7495.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragged John|r
     .complete 4224,1 -- Ragged John's Story (1)
     .skipgossip
@@ -136,7 +136,7 @@ step
 step
     #label WindsorPickup
     .isQuestTurnedIn 4182
-    .goto Burning Steppes,84.744,69.015
+    .goto 1428/0,-2748.96,-8378.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Maxwell|r
     .turnin 4224 >> Turn in The True Masters
     .accept 4241 >> Accept Marshal Windsor
@@ -147,7 +147,7 @@ step
 step
     .isQuestTurnedIn 4182
     #completewith next
-    .goto Eastern Kingdoms,48.07,62.42
+    .goto 1415/0,-920.59,-7181.25
     .subzone 1584,2 >>Enter Blackrock Depths
     >>|cRXP_WARN_Make sure you have a group ready|r
 step
@@ -162,7 +162,7 @@ step
     .subzone 2418 >>Travel to Morgan's Vigil in |cFFfa9602Burning Steppes|r
 step
     .isQuestTurnedIn 4182
-    .goto Burning Steppes,84.744,69.015
+    .goto 1428/0,-2748.96,-8378.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Maxwell|r
     >>|cRXP_WARN_The quest chain will stop here until you find|r |T134331:0|t[A Crumpled Up Note] |cRXP_WARN_at BRD|r
     .turnin 4242 >> Turn in Abandoned Hope
@@ -172,7 +172,7 @@ step
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
     .isQuestTurnedIn 4242
-    .goto Eastern Kingdoms,48.07,62.42
+    .goto 1415/0,-920.59,-7181.25
     #completewith next
     .subzone 1584,2 >>Enter Blackrock Depths
 step
@@ -213,7 +213,7 @@ step
     .subzone 2418 >>Travel to Morgan's Vigil in |cFFfa9602Burning Steppes|r
 step
     .isQuestComplete 4322
-    .goto Burning Steppes,84.744,69.015
+    .goto 1428/0,-2748.96,-8378.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Maxwell|r
     .turnin 4322 >> Turn in Jail Break!
     .accept 6402 >> Accept Stormwind Rendezvous
@@ -221,7 +221,7 @@ step
 step
     .isQuestTurnedIn 4322
     #label Rendezvoes
-    .goto Burning Steppes,84.744,69.015
+    .goto 1428/0,-2748.96,-8378.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Maxwell|r
     .accept 6402 >> Accept Stormwind Rendezvous
     .target Marshal Maxwell
@@ -267,13 +267,13 @@ step
     #completewith next
     .goto Winterspring,56.60,52.78,0
     .goto Winterspring,56.60,52.78,50,0
-    .goto Winterspring,56.36,53.60,30,0
-    .goto Winterspring,55.31,53.84,20,0
-    .goto Winterspring,54.78,53.30,20,0
-    .goto Winterspring,54.51,53.44,20,0
-    .goto Winterspring,54.14,52.84,10,0
-    .goto Winterspring,53.73,52.04,10,0
-    .goto Winterspring,54.54,51.21,30 >>Perform the mountain skip to reach |cRXP_FRIENDLY_Haleh|r
+    .goto 1452/1,-4318.23,5996.270,30,0
+    .goto 1452/1,-4243.68,5984.91,20,0
+    .goto 1452/1,-4206.05,6010.470,20,0
+    .goto 1452/1,-4186.88,6003.84,20,0
+    .goto 1452/1,-4160.61,6032.24,10,0
+    .goto 1452/1,-4131.50,6070.11,10,0
+    .goto 1452/1,-4189.01,6109.39,30 >>Perform the mountain skip to reach |cRXP_FRIENDLY_Haleh|r
     >>The starting location is marked on your map. Follow the waypoint arrow carefully
     >>|cRXP_WARN_If you have|r |T134863:0|t[Noggenfogger Elixirs]|cRXP_WARN_, you can use them to gain|r |T135992:0|t[Slow Fall] |cRXP_WARN_to make the jump easier|r << !Priest !Mage
     >>|cRXP_WARN_If you have|r |T134863:0|t[Noggenfogger Elixirs] |cRXP_WARN_or|r |T132917:0|t[Light Feathers]|cRXP_WARN_, you can use them to gain|r |T135992:0|t[Slow Fall] |cRXP_WARN_to make the jump easier|r << Mage
@@ -281,7 +281,7 @@ step
     .link https://www.youtube.com/watch?v=qjmkIzbfBbQ&ab_channel=RestedXP >> |cRXP_WARN_Click here for video reference|r
 step
     .isQuestTurnedIn 6403
-    .goto Winterspring,54.54,51.21
+    .goto 1452/1,-4189.01,6109.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Haleh|r
     .turnin 6501 >>Turn in The Dragon's Eye
     .accept 6502 >>Accept Drakefire Amulet
@@ -291,7 +291,7 @@ step
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
     #completewith next
-    .goto Eastern Kingdoms,48.95,63.89
+    .goto 1415/0,-1230.35,-7526.21
     .subzone 1583 >>Enter Blackrock Spire
     >>|cRXP_WARN_This is a 10-man dungeon. You or somebody in your party must have the|r |T133343:0|t[|cRXP_LOOT_Seal of Ascension|r] |cRXP_WARN_to be able to enter Upper Blackrock Spire|r
 step
@@ -306,13 +306,13 @@ step
     #completewith next
     .goto Winterspring,56.60,52.78,0
     .goto Winterspring,56.60,52.78,50,0
-    .goto Winterspring,56.36,53.60,30,0
-    .goto Winterspring,55.31,53.84,20,0
-    .goto Winterspring,54.78,53.30,20,0
-    .goto Winterspring,54.51,53.44,20,0
-    .goto Winterspring,54.14,52.84,10,0
-    .goto Winterspring,53.73,52.04,10,0
-    .goto Winterspring,54.54,51.21,30 >>Perform the mountain skip to reach |cRXP_FRIENDLY_Haleh|r
+    .goto 1452/1,-4318.23,5996.270,30,0
+    .goto 1452/1,-4243.68,5984.91,20,0
+    .goto 1452/1,-4206.05,6010.470,20,0
+    .goto 1452/1,-4186.88,6003.84,20,0
+    .goto 1452/1,-4160.61,6032.24,10,0
+    .goto 1452/1,-4131.50,6070.11,10,0
+    .goto 1452/1,-4189.01,6109.39,30 >>Perform the mountain skip to reach |cRXP_FRIENDLY_Haleh|r
     >>The starting location is marked on your map. Follow the waypoint arrow carefully
     >>|cRXP_WARN_If you have|r |T134863:0|t[Noggenfogger Elixirs]|cRXP_WARN_, you can use them to gain|r |T135992:0|t[Slow Fall] |cRXP_WARN_to make the jump easier|r << !Priest !Mage
     >>|cRXP_WARN_If you have|r |T134863:0|t[Noggenfogger Elixirs] |cRXP_WARN_or|r |T132917:0|t[Light Feathers]|cRXP_WARN_, you can use them to gain|r |T135992:0|t[Slow Fall] |cRXP_WARN_to make the jump easier|r << Mage
@@ -321,7 +321,7 @@ step
 step
     #softcore
     .isQuestTurnedIn 6403
-    .goto Winterspring,54.54,51.21
+    .goto 1452/1,-4189.01,6109.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Haleh|r
     >>|cRXP_WARN_Be careful of the blue circle in front of |cRXP_FRIENDLY_Haleh|r. Stepping on it will teleport you into the cave|r
     .turnin 6502 >>Turn in Drakefire Amulet
@@ -329,7 +329,7 @@ step
 step
     #hardcore
     .isQuestTurnedIn 6403
-    .goto Winterspring,54.54,51.21
+    .goto 1452/1,-4189.01,6109.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Haleh|r
     >>|cRXP_WARN_Be careful! DO NOT step on the blue circle in front of |cRXP_FRIENDLY_Haleh|r. This will teleport you into the cave with an elite dragon and you could DIE|r
     .turnin 6502 >>Turn in Drakefire Amulet
@@ -349,7 +349,7 @@ step
     #completewith next
     .subzone 340 >>Travel to Kargath in |cFFfa9602Badlands|r
 step
-    .goto Badlands,5.81,47.52
+    .goto 1418/0,-2223.69,-6677.62
 	>>Talk to |cRXP_FRIENDLY_Warlord Goretooth|r to receive |T133473:0|t[|cRXP_LOOT_Warlord Goretooth's Command|r]. Use it to accept the quest
     .collect 12563,1,4903 --Warlord Goretooth's Command 1/1
     .accept 4903 >>Accept Warlord's Command
@@ -360,7 +360,7 @@ step
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
     #completewith next
-    .goto Eastern Kingdoms,48.95,63.89
+    .goto 1415/0,-1230.35,-7526.21
     .subzone 1583 >>Enter Blackrock Spire
     >>|cRXP_WARN_This is a 5-10 man dungeon|r
 step
@@ -387,7 +387,7 @@ step
     .subzone 340 >>Travel to Kargath in |cFFfa9602Badlands|r
 step
     #requires ImportantDocuments
-    .goto Badlands,5.81,47.52
+    .goto 1418/0,-2223.69,-6677.62
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warlord Goretooth|r
     .turnin 4903 >>Turn in Warlord's Command
     .accept 4941 >>Accept Eitrigg's Wisdom
@@ -396,8 +396,8 @@ step
     #completewith next
     .zone Orgrimmar >>Travel to |cFFfa9602Orgrimmar|r
 step
-    .goto Orgrimmar,34.27,39.35,10,0
-    .goto Orgrimmar,31.74,37.82
+    .goto 1454/1,-4161.27,1905.79,10,0
+    .goto 1454/1,-4125.79,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eitrigg|r and go through the dialogue, then talk to |cRXP_FRIENDLY_Thrall|r
     .turnin 4941 >>Turn in Eitrigg's Wisdom
     .accept 4974 >>Accept For The Horde!
@@ -419,19 +419,19 @@ step
     #completewith next
     .zone Orgrimmar >>Travel to |cFFfa9602Orgrimmar|r
 step
-    .goto Orgrimmar,31.74,37.82
+    .goto 1454/1,-4125.79,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 4974 >>Turn in For The Horde!
     .accept 6566 >>Accept What the Wind Carries
     .target Thrall
 step
-    .goto Orgrimmar,31.74,37.82
+    .goto 1454/1,-4125.79,1920.10
     >>Listen to |cRXP_FRIENDLY_Thrall's|r tale
     .complete 6566,1 --Thrall's Tale
     .target Thrall
     .skipgossip
 step
-    .goto Orgrimmar,31.74,37.82
+    .goto 1454/1,-4125.79,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 6566 >>Turn in What the Wind Carries
     .accept 6567 >>Accept The Champion of the Horde
@@ -450,40 +450,40 @@ step
     .line Desolace,55.50,0.50,53.37,5.77,54.61,10.71,56.20,13.14,60.42,16.17,62.27,19.48,63.38,26.21,62.14,32.17,60.49,37.07,57.27,38.21,53.34,37.51,50.46,42.48,49.55,48.56,49.10,54.18,52.25,59.36,54.52,63.72,55.63,67.41,52.04,71.54,50.53,75.40,47.03,75.15,39.99,78.28,39.79,81.92,41.79,85.27,40.68,89.43,41.44,93.66,41.95,96.04
     .line Feralas,45.47,2.89,45.91,4.75,44.95,7.04,45.03,8.93,45.75,10.64,45.94,12.52,46.43,15.18,46.34,20.94,48.19,23.23
     .goto Desolace,55.50,0.50,60,0
-    .goto Desolace,53.37,5.77,60,0
-    .goto Desolace,54.61,10.71,60,0
+    .goto 1443/1,1833.91,279.10,60,0
+    .goto 1443/1,1778.16,131.01,60,0
     .goto Desolace,56.20,13.14,60,0
-    .goto Desolace,60.42,16.17,60,0
-    .goto Desolace,62.27,19.48,60,0
-    .goto Desolace,63.38,26.21,60,0
-    .goto Desolace,62.14,32.17,60,0
-    .goto Desolace,60.49,37.07,60,0
-    .goto Desolace,57.27,38.21,60,0
-    .goto Desolace,53.34,37.51,60,0
-    .goto Desolace,50.46,42.48,60,0
-    .goto Desolace,49.55,48.56,60,0
+    .goto 1443/1,1516.95,-32.68,60,0
+    .goto 1443/1,1433.78,-131.91,60,0
+    .goto 1443/1,1383.87,-333.67,60,0
+    .goto 1443/1,1439.62,-512.35,60,0
+    .goto 1443/1,1513.80,-659.24,60,0
+    .goto 1443/1,1658.57,-693.42,60,0
+    .goto 1443/1,1835.26,-672.44,60,0
+    .goto 1443/1,1964.74,-821.43,60,0
+    .goto 1443/1,2005.65,-1003.71,60,0
     .goto Desolace,49.10,54.18,60,0
-    .goto Desolace,52.25,59.36,60,0
-    .goto Desolace,54.52,63.72,60,0
-    .goto Desolace,55.63,67.41,60,0
-    .goto Desolace,52.04,71.54,60,0
-    .goto Desolace,50.53,75.40,60,0
-    .goto Desolace,47.03,75.15,60,0
-    .goto Desolace,39.99,78.28,60,0
-    .goto Desolace,39.79,81.92,60,0
-    .goto Desolace,41.79,85.27,60,0
-    .goto Desolace,40.68,89.43,60,0
-    .goto Desolace,41.44,93.66,60,0
-    .goto Desolace,41.95,96.04,60,0
-    .goto Feralas,45.47,2.89,60,0
-    .goto Feralas,45.91,4.75,60,0
-    .goto Feralas,44.95,7.04,60,0
-    .goto Feralas,45.03,8.93,60,0
-    .goto Feralas,45.75,10.64,60,0
-    .goto Feralas,45.94,12.52,60,0
-    .goto Feralas,46.43,15.18,60,0
-    .goto Feralas,46.34,20.94,60,0
-    .goto Feralas,48.19,23.23,60,0
+    .goto 1443/1,1884.26,-1327.48,60,0
+    .goto 1443/1,1782.20,-1458.19,60,0
+    .goto 1443/1,1732.30,-1568.81,60,0
+    .goto 1443/1,1893.70,-1692.63,60,0
+    .goto 1443/1,1961.59,-1808.350,60,0
+    .goto 1443/1,2118.94,-1800.85,60,0
+    .goto 1443/1,2435.45,-1894.69,60,0
+    .goto 1443/1,2444.44,-2003.81,60,0
+    .goto 1443/1,2354.52,-2104.24,60,0
+    .goto 1443/1,2404.43,-2228.95,60,0
+    .goto 1443/1,2370.26,-2355.77,60,0
+    .goto 1443/1,2347.33,-2427.12,60,0
+    .goto 1444/1,2281.50,-2500.57,60,0
+    .goto 1444/1,2250.92,-2586.75,60,0
+    .goto 1444/1,2317.64,-2692.85,60,0
+    .goto 1444/1,2312.08,-2780.42,60,0
+    .goto 1444/1,2262.04,-2859.65,60,0
+    .goto 1444/1,2248.84,-2946.76,60,0
+    .goto 1444/1,2214.78,-3070.01,60,0
+    .goto 1444/1,2221.04,-3336.89,60,0
+    .goto 1444/1,2092.46,-3442.99,60,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rexxar|r
     >>|cRXP_FRIENDLY_Rexxar|r |cRXP_WARN_patrols North to South through |cFFfa9602Desolace|r. His patrol path is marked on the map. Follow the waypoint arrow to ensure you cover his entire patrol path|r
     >>|cRXP_WARN_He despawns once he reaches The Twin Colossals in |cFFfa9602Feralas|r. After a 5 minute timer he respawns at the |cFFfa9602Stonetalon/Desolace border|r
@@ -494,7 +494,7 @@ step
     #completewith next
     .zone Western Plaguelands >>Travel to |cFFfa9602Western Plaguelands|r
 step
-    .goto Western Plaguelands,50.79,77.85
+    .goto 1422/0,-1767.30,1134.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myranda the Hag|r
     .turnin 6568 >>Turn in The Testament of Rexxar
     .accept 6569 >>Accept Oculus Illusions
@@ -504,7 +504,7 @@ step
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
     #completewith next
-    .goto Eastern Kingdoms,48.95,63.89
+    .goto 1415/0,-1230.35,-7526.21
     .subzone 1583 >>Enter Blackrock Spire
     >>|cRXP_WARN_This is a 10-man dungeon. You or somebody in your party must have the|r |T133343:0|t[|cRXP_LOOT_Seal of Ascension|r] |cRXP_WARN_to be able to enter Upper Blackrock Spire|r
 step
@@ -515,7 +515,7 @@ step
     #completewith next
     .zone Western Plaguelands >>Travel to |cFFfa9602Western Plaguelands|r
 step
-    .goto Western Plaguelands,50.79,77.85
+    .goto 1422/0,-1767.30,1134.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myranda the Hag|r
     .turnin 6569 >>Turn in Oculus Illusions
     .accept 6570 >>Accept Emberstrife
@@ -525,7 +525,7 @@ step
     .zone Dustwallow Marsh >>Travel to |cFFfa9602Dustwallow Marsh|r
 step
     #completewith Emberstrife1
-    .goto Dustwallow Marsh,54.37,84.22
+    .goto 1445/1,-3829.43,-4981.03
     .subzone 2158 >>Enter Emberstrife's Den
 step
     #hardcore
@@ -534,7 +534,7 @@ step
     .use 16787
 step
     #label Emberstrife1
-    .goto Dustwallow Marsh,56.67,87.64
+    .goto 1445/1,-3950.18,-5100.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emberstrife|r
     .use 16787 >>|cRXP_WARN_Use the|r |T133608:0|t[Amulet of Draconic Subversion] |cRXP_WARN_to disguise yourself|r
     .turnin 6570 >>Turn in Emberstrife
@@ -551,12 +551,12 @@ step
     >>Loot them for their |cRXP_LOOT_Skulls|r
     >>|cRXP_WARN_Their locations are marked on the map. It is recommended to do this with at least 5 players|r
     .complete 6582,1 --The Skull of Scryer 1/1
-    .goto Winterspring,52.91,55.77,0
+    .goto 1452/1,-4073.28,5893.55,0
     .complete 6583,1 --The Skull of Somnus 1/1
-    .goto Swamp of Sorrows,85.85,52.28,0
+    .goto 1435/0,-4192.10,-10420.28,0
     .line Swamp of Sorrows,85.85,52.28,84.66,48.44,80.35,45.41,78.44,50.46,79.44,57.58,77.47,62.39,76.08,66.50,76.25,70.23,82.55,72.08,85.42,63.68,86.68,55.89,85.85,52.28
     .complete 6584,1 --The Skull of Chronalis 1/1
-    .goto Tanaris,64.85,50.52
+    .goto 1446/1,-4693.40,-8198.92
     .unitscan Scryer
     .unitscan Somnus
     .unitscan Chronalis
@@ -565,10 +565,10 @@ step
     .zone Winterspring >>Travel to |cFFfa9602Winterspring|r
 step
     #completewith next
-    .goto Winterspring,57.07,49.97
+    .goto 1452/1,-4368.64,6168.09
     .subzone 2245 >>Enter the Mazthoril cave
 step
-    .goto Winterspring,52.91,55.77
+    .goto 1452/1,-4073.28,5893.55
     >>Kill |cRXP_ENEMY_Scryer|r in the back of the cave. Loot him for his |cRXP_LOOT_Skull|r
     >>|cRXP_WARN_Be careful of his|r |T135848:0|t[Frost Breath] |cRXP_WARN_ability (AOE spray in front of him)|r
     .complete 6582,1 --The Skull of Scryer 1/1
@@ -578,19 +578,19 @@ step
     .zone Swamp of Sorrows >>Travel to |cFFfa9602Swamp of Sorrows|r
 step
     #loop
-    .goto Swamp of Sorrows,85.85,52.28,0
+    .goto 1435/0,-4192.10,-10420.28,0
     .line Swamp of Sorrows,85.85,52.28,84.66,48.44,80.35,45.41,78.44,50.46,79.44,57.58,77.47,62.39,76.08,66.50,76.25,70.23,82.55,72.08,85.42,63.68,86.68,55.89,85.85,52.28
-    .goto Swamp of Sorrows,85.85,52.28,50,0
-    .goto Swamp of Sorrows,84.66,48.44,50,0
-    .goto Swamp of Sorrows,80.35,45.41,50,0
-    .goto Swamp of Sorrows,78.44,50.46,50,0
-    .goto Swamp of Sorrows,79.44,57.58,50,0
-    .goto Swamp of Sorrows,77.47,62.39,50,0
-    .goto Swamp of Sorrows,76.08,66.50,50,0
-    .goto Swamp of Sorrows,76.25,70.23,50,0
-    .goto Swamp of Sorrows,82.55,72.08,50,0
-    .goto Swamp of Sorrows,85.42,63.68,50,0
-    .goto Swamp of Sorrows,86.68,55.89,50,0
+    .goto 1435/0,-4192.10,-10420.28,50,0
+    .goto 1435/0,-4164.81,-10361.56,50,0
+    .goto 1435/0,-4065.94,-10315.23,50,0
+    .goto 1435/0,-4022.13,-10392.45,50,0
+    .goto 1435/0,-4045.07,-10501.33,50,0
+    .goto 1435/0,-3999.88,-10574.88,50,0
+    .goto 1435/0,-3968.00,-10637.730,50,0
+    .goto 1435/0,-3971.90,-10694.77,50,0
+    .goto 1435/0,-4116.41,-10723.06,50,0
+    .goto 1435/0,-4182.24,-10594.61,50,0
+    .goto 1435/0,-4211.14,-10475.48,50,0
     >>Kill |cRXP_ENEMY_Somnus|r. Loot him for his |cRXP_LOOT_Skull|r
     >>|cRXP_WARN_Be careful of his|r |T136007:0|t[Corrosive Acid Breath] |cRXP_WARN_ability (AOE spray in front of him)|r
     >>|cRXP_WARN_He patrols in a small circle south/east of the lake|r
@@ -601,10 +601,10 @@ step
     .zone Tanaris >>Travel to |cFFfa9602Tanaris|r
 step
     #completewith next
-    .goto Tanaris,61.55,50.54
+    .goto 1446/1,-4465.70,-8199.84
     .subzone 1941 >>Travel to the Caverns of Time
 step
-    .goto Tanaris,64.85,50.52
+    .goto 1446/1,-4693.40,-8198.92
     >>Kill |cRXP_ENEMY_Chronalis|r. Loot him for his |cRXP_LOOT_Skull|r
     >>|cRXP_WARN_Be careful of his|r |T135831:0|t[Sand Breath] |cRXP_WARN_ability (AOE spray in front of him)|r
     .complete 6584,1 --The Skull of Chronalis 1/1
@@ -616,7 +616,7 @@ step
 step
     #requires SkullofDragons
     #completewith Emberstrife2
-    .goto Dustwallow Marsh,54.37,84.22
+    .goto 1445/1,-3829.43,-4981.03
     .subzone 2158 >>Enter Emberstrife's Den
 step
     #requires SkullofDragons
@@ -627,7 +627,7 @@ step
 step
     #label Emberstrife2
     #requires SkullofDragons
-    .goto Dustwallow Marsh,56.67,87.64
+    .goto 1445/1,-3950.18,-5100.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emberstrife|r
     .use 16787 >>|cRXP_WARN_Use the|r |T133608:0|t[Amulet of Draconic Subversion] |cRXP_WARN_to disguise yourself|r
     .turnin 6582 >>Turn in The Test of Skulls, Scryer
@@ -640,15 +640,15 @@ step
     .zone Wetlands >>Travel to |cFFfa9602Wetlands|r
 step
     #completewith next
-    .goto Wetlands,75.44,46.76
+    .goto 1437/0,-3509.34,-3436.74
     .subzone 1038 >>Travel to the Dragonmaw Gates
 step
     #loop
-    .goto Wetlands,83.47,48.78,0
+    .goto 1437/0,-3841.42,-3492.42,0
     .line Wetlands,81.41,48.41,83.47,48.78,85.61,50.89
-    .goto Wetlands,81.41,48.41,30,0
-    .goto Wetlands,83.47,48.78,30,0
-    .goto Wetlands,85.61,50.89,30,0
+    .goto 1437/0,-3756.23,-3482.22,30,0
+    .goto 1437/0,-3841.42,-3492.42,30,0
+    .goto 1437/0,-3929.91,-3550.57,30,0
     >>Kill |cRXP_ENEMY_Axtroz|r. Loot him for his |cRXP_LOOT_Skull|r
     >>|cRXP_WARN_Be careful of his|r |T135831:0|t[Flame Breath] |cRXP_WARN_ability (AOE spray in front of him)|r
     .complete 6585,1 --The Skull of Axtroz 1/1
@@ -658,7 +658,7 @@ step
     .zone Dustwallow Marsh >>Travel to |cFFfa9602Dustwallow Marsh|r
 step
     #completewith Emberstrife3
-    .goto Dustwallow Marsh,54.37,84.22
+    .goto 1445/1,-3829.43,-4981.03
     .subzone 2158 >>Enter Emberstrife's Den
 step
     #hardcore
@@ -667,7 +667,7 @@ step
     .use 16787
 step
     #label Emberstrife3
-    .goto Dustwallow Marsh,56.67,87.64
+    .goto 1445/1,-3950.18,-5100.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Emberstrife|r
     .use 16787 >>|cRXP_WARN_Use the|r |T133608:0|t[Amulet of Draconic Subversion] |cRXP_WARN_to disguise yourself|r
     .turnin 6585 >>Turn in The Test of Skulls, Axtroz
@@ -681,40 +681,40 @@ step
     .line Desolace,55.50,0.50,53.37,5.77,54.61,10.71,56.20,13.14,60.42,16.17,62.27,19.48,63.38,26.21,62.14,32.17,60.49,37.07,57.27,38.21,53.34,37.51,50.46,42.48,49.55,48.56,49.10,54.18,52.25,59.36,54.52,63.72,55.63,67.41,52.04,71.54,50.53,75.40,47.03,75.15,39.99,78.28,39.79,81.92,41.79,85.27,40.68,89.43,41.44,93.66,41.95,96.04
     .line Feralas,45.47,2.89,45.91,4.75,44.95,7.04,45.03,8.93,45.75,10.64,45.94,12.52,46.43,15.18,46.34,20.94,48.19,23.23
     .goto Desolace,55.50,0.50,60,0
-    .goto Desolace,53.37,5.77,60,0
-    .goto Desolace,54.61,10.71,60,0
+    .goto 1443/1,1833.91,279.10,60,0
+    .goto 1443/1,1778.16,131.01,60,0
     .goto Desolace,56.20,13.14,60,0
-    .goto Desolace,60.42,16.17,60,0
-    .goto Desolace,62.27,19.48,60,0
-    .goto Desolace,63.38,26.21,60,0
-    .goto Desolace,62.14,32.17,60,0
-    .goto Desolace,60.49,37.07,60,0
-    .goto Desolace,57.27,38.21,60,0
-    .goto Desolace,53.34,37.51,60,0
-    .goto Desolace,50.46,42.48,60,0
-    .goto Desolace,49.55,48.56,60,0
+    .goto 1443/1,1516.95,-32.68,60,0
+    .goto 1443/1,1433.78,-131.91,60,0
+    .goto 1443/1,1383.87,-333.67,60,0
+    .goto 1443/1,1439.62,-512.35,60,0
+    .goto 1443/1,1513.80,-659.24,60,0
+    .goto 1443/1,1658.57,-693.42,60,0
+    .goto 1443/1,1835.26,-672.44,60,0
+    .goto 1443/1,1964.74,-821.43,60,0
+    .goto 1443/1,2005.65,-1003.71,60,0
     .goto Desolace,49.10,54.18,60,0
-    .goto Desolace,52.25,59.36,60,0
-    .goto Desolace,54.52,63.72,60,0
-    .goto Desolace,55.63,67.41,60,0
-    .goto Desolace,52.04,71.54,60,0
-    .goto Desolace,50.53,75.40,60,0
-    .goto Desolace,47.03,75.15,60,0
-    .goto Desolace,39.99,78.28,60,0
-    .goto Desolace,39.79,81.92,60,0
-    .goto Desolace,41.79,85.27,60,0
-    .goto Desolace,40.68,89.43,60,0
-    .goto Desolace,41.44,93.66,60,0
-    .goto Desolace,41.95,96.04,60,0
-    .goto Feralas,45.47,2.89,60,0
-    .goto Feralas,45.91,4.75,60,0
-    .goto Feralas,44.95,7.04,60,0
-    .goto Feralas,45.03,8.93,60,0
-    .goto Feralas,45.75,10.64,60,0
-    .goto Feralas,45.94,12.52,60,0
-    .goto Feralas,46.43,15.18,60,0
-    .goto Feralas,46.34,20.94,60,0
-    .goto Feralas,48.19,23.23,60,0
+    .goto 1443/1,1884.26,-1327.48,60,0
+    .goto 1443/1,1782.20,-1458.19,60,0
+    .goto 1443/1,1732.30,-1568.81,60,0
+    .goto 1443/1,1893.70,-1692.63,60,0
+    .goto 1443/1,1961.59,-1808.350,60,0
+    .goto 1443/1,2118.94,-1800.85,60,0
+    .goto 1443/1,2435.45,-1894.69,60,0
+    .goto 1443/1,2444.44,-2003.81,60,0
+    .goto 1443/1,2354.52,-2104.24,60,0
+    .goto 1443/1,2404.43,-2228.95,60,0
+    .goto 1443/1,2370.26,-2355.77,60,0
+    .goto 1443/1,2347.33,-2427.12,60,0
+    .goto 1444/1,2281.50,-2500.57,60,0
+    .goto 1444/1,2250.92,-2586.75,60,0
+    .goto 1444/1,2317.64,-2692.85,60,0
+    .goto 1444/1,2312.08,-2780.42,60,0
+    .goto 1444/1,2262.04,-2859.65,60,0
+    .goto 1444/1,2248.84,-2946.76,60,0
+    .goto 1444/1,2214.78,-3070.01,60,0
+    .goto 1444/1,2221.04,-3336.89,60,0
+    .goto 1444/1,2092.46,-3442.99,60,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rexxar|r
     >>|cRXP_FRIENDLY_Rexxar|r |cRXP_WARN_patrols North to South through |cFFfa9602Desolace|r. His patrol path is marked on the map. Follow the waypoint arrow to ensure you cover his entire patrol path|r
     >>|cRXP_WARN_He despawns once he reaches The Twin Colossals in |cFFfa9602Feralas|r. After a 5 minute timer he respawns at the |cFFfa9602Stonetalon/Desolace border|r
@@ -726,7 +726,7 @@ step
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
     #completewith next
-    .goto Eastern Kingdoms,48.95,63.89
+    .goto 1415/0,-1230.35,-7526.21
     .subzone 1583 >>Enter Blackrock Spire
     >>|cRXP_WARN_This is a 10-man dungeon. You or somebody in your party must have the|r |T133343:0|t[|cRXP_LOOT_Seal of Ascension|r] |cRXP_WARN_to be able to enter Upper Blackrock Spire|r
 step
@@ -743,40 +743,40 @@ step
     .line Desolace,55.50,0.50,53.37,5.77,54.61,10.71,56.20,13.14,60.42,16.17,62.27,19.48,63.38,26.21,62.14,32.17,60.49,37.07,57.27,38.21,53.34,37.51,50.46,42.48,49.55,48.56,49.10,54.18,52.25,59.36,54.52,63.72,55.63,67.41,52.04,71.54,50.53,75.40,47.03,75.15,39.99,78.28,39.79,81.92,41.79,85.27,40.68,89.43,41.44,93.66,41.95,96.04
     .line Feralas,45.47,2.89,45.91,4.75,44.95,7.04,45.03,8.93,45.75,10.64,45.94,12.52,46.43,15.18,46.34,20.94,48.19,23.23
     .goto Desolace,55.50,0.50,60,0
-    .goto Desolace,53.37,5.77,60,0
-    .goto Desolace,54.61,10.71,60,0
+    .goto 1443/1,1833.91,279.10,60,0
+    .goto 1443/1,1778.16,131.01,60,0
     .goto Desolace,56.20,13.14,60,0
-    .goto Desolace,60.42,16.17,60,0
-    .goto Desolace,62.27,19.48,60,0
-    .goto Desolace,63.38,26.21,60,0
-    .goto Desolace,62.14,32.17,60,0
-    .goto Desolace,60.49,37.07,60,0
-    .goto Desolace,57.27,38.21,60,0
-    .goto Desolace,53.34,37.51,60,0
-    .goto Desolace,50.46,42.48,60,0
-    .goto Desolace,49.55,48.56,60,0
+    .goto 1443/1,1516.95,-32.68,60,0
+    .goto 1443/1,1433.78,-131.91,60,0
+    .goto 1443/1,1383.87,-333.67,60,0
+    .goto 1443/1,1439.62,-512.35,60,0
+    .goto 1443/1,1513.80,-659.24,60,0
+    .goto 1443/1,1658.57,-693.42,60,0
+    .goto 1443/1,1835.26,-672.44,60,0
+    .goto 1443/1,1964.74,-821.43,60,0
+    .goto 1443/1,2005.65,-1003.71,60,0
     .goto Desolace,49.10,54.18,60,0
-    .goto Desolace,52.25,59.36,60,0
-    .goto Desolace,54.52,63.72,60,0
-    .goto Desolace,55.63,67.41,60,0
-    .goto Desolace,52.04,71.54,60,0
-    .goto Desolace,50.53,75.40,60,0
-    .goto Desolace,47.03,75.15,60,0
-    .goto Desolace,39.99,78.28,60,0
-    .goto Desolace,39.79,81.92,60,0
-    .goto Desolace,41.79,85.27,60,0
-    .goto Desolace,40.68,89.43,60,0
-    .goto Desolace,41.44,93.66,60,0
-    .goto Desolace,41.95,96.04,60,0
-    .goto Feralas,45.47,2.89,60,0
-    .goto Feralas,45.91,4.75,60,0
-    .goto Feralas,44.95,7.04,60,0
-    .goto Feralas,45.03,8.93,60,0
-    .goto Feralas,45.75,10.64,60,0
-    .goto Feralas,45.94,12.52,60,0
-    .goto Feralas,46.43,15.18,60,0
-    .goto Feralas,46.34,20.94,60,0
-    .goto Feralas,48.19,23.23,60,0
+    .goto 1443/1,1884.26,-1327.48,60,0
+    .goto 1443/1,1782.20,-1458.19,60,0
+    .goto 1443/1,1732.30,-1568.81,60,0
+    .goto 1443/1,1893.70,-1692.63,60,0
+    .goto 1443/1,1961.59,-1808.350,60,0
+    .goto 1443/1,2118.94,-1800.85,60,0
+    .goto 1443/1,2435.45,-1894.69,60,0
+    .goto 1443/1,2444.44,-2003.81,60,0
+    .goto 1443/1,2354.52,-2104.24,60,0
+    .goto 1443/1,2404.43,-2228.95,60,0
+    .goto 1443/1,2370.26,-2355.77,60,0
+    .goto 1443/1,2347.33,-2427.12,60,0
+    .goto 1444/1,2281.50,-2500.57,60,0
+    .goto 1444/1,2250.92,-2586.75,60,0
+    .goto 1444/1,2317.64,-2692.85,60,0
+    .goto 1444/1,2312.08,-2780.42,60,0
+    .goto 1444/1,2262.04,-2859.65,60,0
+    .goto 1444/1,2248.84,-2946.76,60,0
+    .goto 1444/1,2214.78,-3070.01,60,0
+    .goto 1444/1,2221.04,-3336.89,60,0
+    .goto 1444/1,2092.46,-3442.99,60,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rexxar|r
     >>|cRXP_FRIENDLY_Rexxar|r |cRXP_WARN_patrols North to South through |cFFfa9602Desolace|r. His patrol path is marked on the map. Follow the waypoint arrow to ensure you cover his entire patrol path|r
     >>|cRXP_WARN_He despawns once he reaches The Twin Colossals in |cFFfa9602Feralas|r. After a 5 minute timer he respawns at the |cFFfa9602Stonetalon/Desolace border|r
@@ -799,13 +799,13 @@ step
     #completewith next
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
-    .goto Eastern Kingdoms,48.41,63.82
+    .goto 1415/0,-1040.27,-7509.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lothos Riftwaker|r
     .accept 7848 >>Accept Attunement to the Core
     .target Lothos Riftwaker
 step
     #completewith next
-    .goto Eastern Kingdoms,48.07,62.42
+    .goto 1415/0,-920.59,-7181.25
     .subzone 1584,2 >>Enter Blackrock Depths
     >>|cRXP_WARN_Make sure you have a group ready|r
 step
@@ -823,7 +823,7 @@ step
     #completewith next
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
-    .goto Eastern Kingdoms,48.41,63.82
+    .goto 1415/0,-1040.27,-7509.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lothos Riftwaker|r
     .turnin 7848 >>Turn in Attunement to the Core
     .target Lothos Riftwaker
@@ -846,9 +846,9 @@ step
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
     #hardcore
-    .goto Eastern Kingdoms,48.94,63.92,10,0
-    .goto Eastern Kingdoms,49.01,64.12,10,0
-    .goto Eastern Kingdoms,49.12,64.09
+    .goto 1415/0,-1226.83,-7533.25,10,0
+    .goto 1415/0,-1251.47,-7580.18,10,0
+    .goto 1415/0,-1290.19,-7573.14
     .use 18987 >>Kill the |cRXP_ENEMY_Scarshield Quartermaster|r. Loot him for |T133473:0|t[|cRXP_LOOT_Blackhand's Command|r]. Use it to accept the quest
     >>|cRXP_WARN_This is a strong level 55 elite. Do this with a group for safety|r
     >>|cRXP_WARN_He is located in the hallway to the right of the Blackrock Spire instance portal|r
@@ -857,9 +857,9 @@ step
     .unitscan Scarshield Quartermaster
 step
     #softcore
-    .goto Eastern Kingdoms,48.94,63.92,10,0
-    .goto Eastern Kingdoms,49.01,64.12,10,0
-    .goto Eastern Kingdoms,49.12,64.09
+    .goto 1415/0,-1226.83,-7533.25,10,0
+    .goto 1415/0,-1251.47,-7580.18,10,0
+    .goto 1415/0,-1290.19,-7573.14
     .use 18987 >>Kill the |cRXP_ENEMY_Scarshield Quartermaster|r. Loot him for |T133473:0|t[|cRXP_LOOT_Blackhand's Command|r]. Use it to accept the quest
     >>|cRXP_WARN_He is located in the hallway to the right of the Blackrock Spire instance portal|r
     .collect 18987,1,7761 --Blackhand's Command 1/1
@@ -867,7 +867,7 @@ step
     .unitscan Scarshield Quartermaster
 step
     #completewith next
-    .goto Eastern Kingdoms,48.95,63.89
+    .goto 1415/0,-1230.35,-7526.21
     .subzone 1583 >>Enter Blackrock Spire
     >>|cRXP_WARN_This is a 10-man dungeon. You or somebody in your party must have the|r |T133343:0|t[|cRXP_LOOT_Seal of Ascension|r] |cRXP_WARN_to be able to enter Upper Blackrock Spire|r
 step
@@ -891,7 +891,7 @@ step
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
     #completewith next
-    .goto Eastern Kingdoms,48.07,62.42
+    .goto 1415/0,-920.59,-7181.25
     .subzone 1583 >>Enter Blackrock Spire
     >>|cRXP_WARN_Make sure you have a group ready|r
 step
@@ -931,12 +931,12 @@ step
     .zone Dustwallow Marsh >>Travel to |cFFfa9602Dustwallow Marsh|r
 step
     #softcore
-    .goto Dustwallow Marsh,54.37,84.22
+    .goto 1445/1,-3829.43,-4981.03
     .subzone 2158 >>Enter Emberstrife's Den
     >>|cRXP_WARN_You will need a group of at least 3 players to complete this next section|r
 step
     #hardcore
-    .goto Dustwallow Marsh,54.37,84.22
+    .goto 1445/1,-3829.43,-4981.03
     .subzone 2158 >>Enter Emberstrife's Den
     >>|cRXP_WARN_You will need a group of at least 3 players to complete this next section, including a tank and healer for safety!|r
 step
@@ -945,7 +945,7 @@ step
     .use 12323
 step
     #label ForgedSeal
-    .goto Dustwallow Marsh,56.67,87.64
+    .goto 1445/1,-3950.18,-5100.73
     .use 12300 >>|cRXP_WARN_Attack|r |cRXP_ENEMY_Emberstrife|r. |cRXP_WARN_Once he is below 10% health, use the|r |T134334:0|t[|cRXP_LOOT_Orb of Draconic Energy|r] |cRXP_WARN_to gain control of|r |cRXP_ENEMY_Emberstrife|r
     >>|cRXP_WARN_Cast|r |T135824:0|t[Flames of the Black Flight] |cRXP_WARN_to forge the|r |T133276:0|t[|cRXP_LOOT_Unforged Seal of Ascension|r] |cRXP_WARN_that you placed on the ground|r
     >>Once complete, loot the |cRXP_PICK_Forged Seal of Ascension|r on the ground
@@ -956,7 +956,7 @@ step
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
     #completewith next
-    .goto Eastern Kingdoms,48.07,62.42
+    .goto 1415/0,-920.59,-7181.25
     .subzone 1583 >>Enter Blackrock Spire
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scarshield Infiltrator|r
@@ -988,17 +988,17 @@ step
 	.zone Ironforge >> Travel to |cFFfa9602Ironforge|r
 step
     #loop
-    .goto Ironforge,33.4,20.0,0
-    .goto Ironforge,33.4,20.0,70,0
-    .goto Ironforge,25.6,61.6,70,0
-    .goto Ironforge,64.8,77.8,70,0
-    .goto Ironforge,70.6,48.0,70,0
+    .goto 1455/0,-977.66,-4674.76,0
+    .goto 1455/0,-977.66,-4674.76,70,0
+    .goto 1455/0,-915.99,-4894.25,70,0
+    .goto 1455/0,-1225.92,-4979.72,70,0
+    .goto 1455/0,-1271.77,-4822.49,70,0
     .goto Ironforge,65.0,22.6,70,0
-    .goto Ironforge,50.4,10.4,70,0
-    .goto Ironforge,32.6,21.0,70,0
-    .goto Ironforge,40.8,39.4,70,0
-    .goto Ironforge,51.2,56.6,70,0
-    .goto Ironforge,55.8,35.2,70,0
+    .goto 1455/0,-1112.07,-4624.11,70,0
+    .goto 1455/0,-971.34,-4680.04,70,0
+    .goto 1455/0,-1036.17,-4777.12,70,0
+    .goto 1455/0,-1118.39,-4867.87,70,0
+    .goto 1455/0,-1154.76,-4754.96,70,0
     .goto Ironforge,33.0,22.4,70,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Courier Hammerfall|r
     >>|cRXP_FRIENDLY_Courier Hammerfall|r |cRXP_WARN_patrols through all of Ironforge|r
@@ -1016,7 +1016,7 @@ step
     #requires ThoriumBars
     #optional
     .isOnQuest 5066
-    .goto Western Plaguelands,42.702,84.031
+    .goto 1422/0,-1419.52,957.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
     .turnin 5066 >> Turn in A Call to Arms: The Plaguelands!
     .accept 5092 >> Accept Clear the Way
@@ -1025,7 +1025,7 @@ step
     #requires ThoriumBars
     #optional
     .isQuestTurnedIn 5066
-    .goto Western Plaguelands,42.702,84.031
+    .goto 1422/0,-1419.52,957.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
     .accept 5092 >> Accept Clear the Way
     .target Commander Ashlam Valorfist
@@ -1033,7 +1033,7 @@ step
     #requires ThoriumBars
     #optional
     .isOnQuest 5091
-    .goto Western Plaguelands,42.702,84.031
+    .goto 1422/0,-1419.52,957.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
     .turnin 5091 >> Turn in A Call to Arms: The Plaguelands!
     .accept 5092 >> Accept Clear the Way
@@ -1042,14 +1042,14 @@ step
     #requires ThoriumBars
     #optional
     .isQuestTurnedIn 5091
-    .goto Western Plaguelands,42.702,84.031
+    .goto 1422/0,-1419.52,957.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
     .accept 5092 >> Accept Clear the Way
     .target Commander Ashlam Valorfist
 step
     #requires ThoriumBars
     .isOnQuest 5090
-    .goto Western Plaguelands,42.702,84.031
+    .goto 1422/0,-1419.52,957.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
     .turnin 5090 >> Turn in A Call to Arms: The Plaguelands!
     .accept 5092 >> Accept Clear the Way
@@ -1058,7 +1058,7 @@ step
     #requires ThoriumBars
     #label ClearTheWayPU
     .isQuestTurnedIn 5090
-    .goto Western Plaguelands,42.702,84.031
+    .goto 1422/0,-1419.52,957.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
     .accept 5092 >> Accept Clear the Way
     .target Commander Ashlam Valorfist
@@ -1067,40 +1067,40 @@ step
     .goto Western Plaguelands,49.90,76.54,0
     .goto Western Plaguelands,48.70,80.37,60,0
     .goto Western Plaguelands,49.90,76.54,60,0
-    .goto Western Plaguelands,50.88,76.14,60,0
-    .goto Western Plaguelands,50.05,80.74,60,0
+    .goto 1422/0,-1771.17,1183.99,60,0
+    .goto 1422/0,-1735.48,1052.12,60,0
     >>Kill |cRXP_ENEMY_Skeletal Flayers|r and |cRXP_ENEMY_Slavering Ghouls|r
     .complete 5092,1 -- Skeletal Flayer slain (10)
     .mob +Skeletal Flayer
     .complete 5092,2 -- Slavering Ghoul slain (10)
     .mob +Slavering Ghoul
 step
-    .goto Western Plaguelands,42.702,84.031
+    .goto 1422/0,-1419.52,957.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
     .accept 5098 >> Accept All Along the Watchtowers
     .target Commander Ashlam Valorfist
 step
-    .goto Western Plaguelands,46.681,71.135,-1
-    .goto Western Plaguelands,46.558,71.156,-1
+    .goto 1422/0,-1590.62,1327.46,-1
+    .goto 1422/0,-1585.33,1326.86,-1
     .use 12815 >> |cRXP_WARN_Use the|r |T135432:0|t[Beacon Torch] |cRXP_WARN_next to the Tower entrance. You can do this without aggroing the Elite |cRXP_ENEMY_Skeletal Warlord|r inside|r
     .complete 5098,4 --Tower Four marked
 step
-    .goto Western Plaguelands,44.217,63.319,-1
-    .goto Western Plaguelands,44.247,63.131,-1
+    .goto 1422/0,-1484.66,1551.52,-1
+    .goto 1422/0,-1485.95,1556.91,-1
     .use 12815 >> |cRXP_WARN_Use the|r |T135432:0|t[Beacon Torch] |cRXP_WARN_next to the Tower entrance. You can do this without aggroing the Elite |cRXP_ENEMY_Skeletal Warlord|r inside|r
     .complete 5098,3 --Tower Three marked
 step
-    .goto Western Plaguelands,42.326,66.105,-1
-    .goto Western Plaguelands,42.422,66.222,-1
+    .goto 1422/0,-1403.35,1471.66,-1
+    .goto 1422/0,-1407.48,1468.30,-1
     .use 12815 >> |cRXP_WARN_Use the|r |T135432:0|t[Beacon Torch] |cRXP_WARN_next to the Tower entrance. You can do this without aggroing the Elite |cRXP_ENEMY_Skeletal Warlord|r inside|r
     .complete 5098,2 --Tower Two marked
 step
-    .goto Western Plaguelands,40.116,71.561,-1
-    .goto Western Plaguelands,40.038,71.713,-1
+    .goto 1422/0,-1308.32,1315.25,-1
+    .goto 1422/0,-1304.97,1310.89,-1
     .use 12815 >> |cRXP_WARN_Use the|r |T135432:0|t[Beacon Torch] |cRXP_WARN_next to the Tower entrance. You can do this without aggroing the Elite |cRXP_ENEMY_Skeletal Warlord|r inside|r
     .complete 5098,1 --Tower One marked
 step
-    .goto Western Plaguelands,42.702,84.031
+    .goto 1422/0,-1419.52,957.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Ashlam Valorfist|r
     .turnin 5098 >> Turn in All Along the Watchtowers
     .accept 5533 >> Accept Scholomance
@@ -1110,7 +1110,7 @@ step
     .isQuestTurnedIn 5098
     .destroy 12815 >> Delete the |T135432:0|t[Beacon Torch]
 step
-    .goto Western Plaguelands,42.665,83.774
+    .goto 1422/0,-1417.93,965.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
     .turnin 5533 >>Turn in Scholomance
     .accept 5537 >>Accept Skeletal Fragments
@@ -1135,7 +1135,7 @@ step
     .mob Skeletal Executioner
     .mob Skeletal Acolyte
 step
-    .goto Western Plaguelands,42.665,83.774
+    .goto 1422/0,-1417.93,965.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
     .turnin 5537 >>Turn in Skeletal Fragments
     .accept 5538 >>Accept Mold Rhymes With...
@@ -1144,7 +1144,7 @@ step
     #completewith next
     .subzone 976 >>Travel to Gadgetzan in |cFFfa9602Tanaris|r
 step
-    .goto Tanaris,51.46,28.81
+    .goto 1446/1,-3769.49,-7200.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krinkle Goodsteel|r
     >>|cRXP_WARN_Turning in this quest requires you to pay 15 Gold|r
     .turnin 5538 >>Turn in Mold Rhymes With...
@@ -1155,23 +1155,23 @@ step
     .collect 12359,2,5801,1 --Thorium Bar x2
 step
     #completewith next
-    .goto Tanaris,51.006,29.345
+    .goto 1446/1,-3738.16,-7224.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bera Stonehammer|r
     .fly Un'Goro >> Fly to Un'Goro Crater
     .target Bera Stonehammer
     .zoneskip Un'Goro Crater
 step
     #completewith next
-    .goto Un'Goro Crater,49.62,47.56,100 >>Travel to the top of the mountain at Fire Plume Ridge
+    .goto 1449/1,-1302.61,-7139.81,100 >>Travel to the top of the mountain at Fire Plume Ridge
 step
-    .goto Un'Goro Crater,49.28,47.04
+    .goto 1449/1,-1290.03,-7126.99
     .use 14644 >>|cRXP_WARN_Use the|r |T134457:0|t[Skeleton Key Mold] |cRXP_WARN_at the pool of lava to create the|r |cRXP_LOOT_Unfinished Skeleton Key|r
     .complete 5801,1 --Unfinished Skeleton Key (1)
 step
     #completewith next
     .subzone 3197 >>Travel to Chillwind Camp in |cFFfa9602Western Plaguelands|r
 step
-    .goto Western Plaguelands,42.665,83.774
+    .goto 1422/0,-1417.93,965.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
     .turnin 5801 >>Turn in Fire Plume Forged
     .accept 5803 >>Accept Araj's Scarab
@@ -1214,12 +1214,12 @@ step
     .complete 5803,1 --Araj's Scarab (1x)
     .mob Araj the Summoner
 step
-    .goto Western Plaguelands,42.665,83.774
+    .goto 1422/0,-1417.93,965.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
     .turnin 5803 >>Turn in Araj's Scarab
     .target Alchemist Arbington
 step
-    .goto Western Plaguelands,42.665,83.774
+    .goto 1422/0,-1417.93,965.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alchemist Arbington|r
     .turnin 5505 >>Turn in The Key to Scholomance
     .target Alchemist Arbington
@@ -1248,17 +1248,17 @@ step
     .zone Undercity >>Travel to |cFFfa9602Undercity|r
 step
     #loop
-    .goto Undercity,67.43,46.15,0
-    .goto Undercity,67.43,46.15,50,0
-    .goto Undercity,71.23,51.64,50,0
-    .goto Undercity,72.99,44.19,50,0
-    .goto Undercity,70.91,36.25,50,0
-    .goto Undercity,65.84,33.54,50,0
+    .goto 1458/0,226.29,1582.54,0
+    .goto 1458/0,226.29,1582.54,50,0
+    .goto 1458/0,189.83,1547.40,50,0
+    .goto 1458/0,172.94,1595.08,50,0
+    .goto 1458/0,192.90,1645.91,50,0
+    .goto 1458/0,241.54,1663.25,50,0
     .goto Undercity,60.90,36.56,50,0
-    .goto Undercity,58.89,44.30,50,0
-    .goto Undercity,60.98,51.69,50,0
-    .goto Undercity,66.07,54.64,50,0
-    .goto Undercity,70.81,51.49,50,0
+    .goto 1458/0,308.22,1594.380,50,0
+    .goto 1458/0,288.17,1547.08,50,0
+    .goto 1458/0,239.33,1528.19,50,0
+    .goto 1458/0,193.86,1548.36,50,0
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harbinger Balthazad|r
     .acceptmultiple 5093,5094,5095 >>Accept A Call to Arms: The Plaguelands!
     >>|cRXP_WARN_This quest can be also be accepted in|r |cFFfa9602Orgrimmar|r |cRXP_WARN_or|r |cFFfa9602Thunder Bluff|r
@@ -1274,7 +1274,7 @@ step
 step
     #optional
     #requires ThoriumBars
-    .goto Tirisfal Glades,83.15,68.92
+    .goto 1420/0,-724.01,1761.28
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Derrington|r
     .turnin 5093 >>Turn in A Call to Arms: The Plaguelands!
     .accept 5096 >>Accept Scarlet Diversions
@@ -1283,7 +1283,7 @@ step
 step
     #optional
     #requires ThoriumBars
-    .goto Tirisfal Glades,83.15,68.92
+    .goto 1420/0,-724.01,1761.28
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Derrington|r
     .accept 5096 >>Accept Scarlet Diversions
 	.target High Executor Derrington
@@ -1291,7 +1291,7 @@ step
 step
     #optional
     #requires ThoriumBars
-    .goto Tirisfal Glades,83.15,68.92
+    .goto 1420/0,-724.01,1761.28
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Derrington|r
     .turnin 5094 >>Turn in A Call to Arms: The Plaguelands!
     .accept 5096 >>Accept Scarlet Diversions
@@ -1300,65 +1300,65 @@ step
 step
     #optional
     #requires ThoriumBars
-    .goto Tirisfal Glades,83.15,68.92
+    .goto 1420/0,-724.01,1761.28
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Derrington|r
     .accept 5096 >>Accept Scarlet Diversions
 	.target High Executor Derrington
     .isQuestTurnedIn 5094
 step
     #requires ThoriumBars
-    .goto Tirisfal Glades,83.15,68.92
+    .goto 1420/0,-724.01,1761.28
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Derrington|r
     .turnin 5095 >>Turn in A Call to Arms: The Plaguelands!
     .accept 5096 >>Accept Scarlet Diversions
 	.target High Executor Derrington
     .isOnQuest 5095
 step
-	.goto Western Plaguelands,26.55,56.18
+	.goto 1422/0,-724.98,1756.17
 	>>Click the |cRXP_PICK_Box of Incendiaries|r by the fire
 	.collect 12814,1,5095,1 --Flame in a Bottle (1)
     .isOnQuest 5095
 step
     #label ScarletDiversionsPU
     #requires ThoriumBars
-    .goto Tirisfal Glades,83.15,68.92
+    .goto 1420/0,-724.01,1761.28
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Derrington|r
     .accept 5096 >>Accept Scarlet Diversions
 	.target High Executor Derrington
     .isQuestTurnedIn 5095
 step
-    .goto Western Plaguelands,40.5,51.8
+    .goto 1422/0,-1324.83,1881.73
     .use 12807 >>Click the |cRXP_PICK_Command Tent|r, then use your |T132484:0|t[Scourge Banner]
 	>>|cRXP_WARN_These mobs are relatively difficult and can chain-pull each other, so be careful|r
     .complete 5096,1 --Destroy the command tent and plant the Scourge banner in the camp (1)
 step
-    .goto Tirisfal Glades,83.15,68.92
+    .goto 1420/0,-724.01,1761.28
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Derrington|r
     .turnin 5096 >>Turn in Scarlet Diversions
     .accept 5098 >>Accept All Along the Watchtowers
 	.target High Executor Derrington
 step
-    .goto Western Plaguelands,46.681,71.135,-1
-    .goto Western Plaguelands,46.558,71.156,-1
+    .goto 1422/0,-1590.62,1327.46,-1
+    .goto 1422/0,-1585.33,1326.86,-1
     .use 12815 >> |cRXP_WARN_Use the|r |T135432:0|t[Beacon Torch] |cRXP_WARN_next to the Tower entrance. You can do this without aggroing the Elite |cRXP_ENEMY_Skeletal Warlord|r inside|r
     .complete 5098,4 --Tower Four marked
 step
-    .goto Western Plaguelands,44.217,63.319,-1
-    .goto Western Plaguelands,44.247,63.131,-1
+    .goto 1422/0,-1484.66,1551.52,-1
+    .goto 1422/0,-1485.95,1556.91,-1
     .use 12815 >> |cRXP_WARN_Use the|r |T135432:0|t[Beacon Torch] |cRXP_WARN_next to the Tower entrance. You can do this without aggroing the Elite |cRXP_ENEMY_Skeletal Warlord|r inside|r
     .complete 5098,3 --Tower Three marked
 step
-    .goto Western Plaguelands,42.326,66.105,-1
-    .goto Western Plaguelands,42.422,66.222,-1
+    .goto 1422/0,-1403.35,1471.66,-1
+    .goto 1422/0,-1407.48,1468.30,-1
     .use 12815 >> |cRXP_WARN_Use the|r |T135432:0|t[Beacon Torch] |cRXP_WARN_next to the Tower entrance. You can do this without aggroing the Elite |cRXP_ENEMY_Skeletal Warlord|r inside|r
     .complete 5098,2 --Tower Two marked
 step
-    .goto Western Plaguelands,40.116,71.561,-1
-    .goto Western Plaguelands,40.038,71.713,-1
+    .goto 1422/0,-1308.32,1315.25,-1
+    .goto 1422/0,-1304.97,1310.89,-1
     .use 12815 >> |cRXP_WARN_Use the|r |T135432:0|t[Beacon Torch] |cRXP_WARN_next to the Tower entrance. You can do this without aggroing the Elite |cRXP_ENEMY_Skeletal Warlord|r inside|r
     .complete 5098,1 --Tower One marked
 step
-    .goto Tirisfal Glades,83.15,68.92
+    .goto 1420/0,-724.01,1761.28
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Derrington|r
     .turnin 5098 >>Turn in All Along the Watchtowers
     .accept 838 >>Accept Scholomance
@@ -1369,7 +1369,7 @@ step
     .destroy 12815 >> Delete the |T135432:0|t[Beacon Torch]
 step
  	#era/som
-    .goto Tirisfal Glades,83.28,69.23
+    .goto 1420/0,-729.88,1751.95
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dithers|r
     .turnin 838 >>Turn in Scholomance
     .accept 964 >>Accept Skeletal Fragments
@@ -1394,7 +1394,7 @@ step
     .mob Skeletal Executioner
     .mob Skeletal Acolyte
 step
-    .goto Tirisfal Glades,83.28,69.23
+    .goto 1420/0,-729.88,1751.95
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dithers|r
     .turnin 964 >>Turn in Skeletal Fragments
     .accept 5514 >>Accept Mold Rhymes With...
@@ -1403,7 +1403,7 @@ step
     #completewith next
     .subzone 976 >>Travel to Gadgetzan in |cFFfa9602Tanaris|r
 step
-    .goto Tanaris,51.46,28.81
+    .goto 1446/1,-3769.49,-7200.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krinkle Goodsteel|r
     >>|cRXP_WARN_Turning in this quest requires you to pay 15 Gold|r
     .turnin 5514 >>Turn in Mold Rhymes With...
@@ -1414,23 +1414,23 @@ step
     .collect 12359,2,5802,1 --Thorium Bar x2
 step
     #completewith next
-    .goto Silithus,48.69,36.67
+    .goto 1451/1,841.46,-6810.15
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Runk|r
     .fly Un'Goro >>Fly to Un'Goro Crater
 	.target Runk Windtamer
 	.zoneskip Un'Goro Crater
 step
     #completewith next
-    .goto Un'Goro Crater,49.62,47.56,100 >>Travel to the top of the mountain at Fire Plume Ridge
+    .goto 1449/1,-1302.61,-7139.81,100 >>Travel to the top of the mountain at Fire Plume Ridge
 step
-    .goto Un'Goro Crater,49.28,47.04
+    .goto 1449/1,-1290.03,-7126.99
     .use 14644 >>|cRXP_WARN_Use the|r |T134457:0|t[Skeleton Key Mold] |cRXP_WARN_at the pool of lava to create the|r |cRXP_LOOT_Unfinished Skeleton Key|r
     .complete 5802,1 --Unfinished Skeleton Key (1)
 step
     #completewith next
 	.subzone 152 >> Travel toward the Bulwark in |cFFfa9602Tirisfal Glades|r
 step
-    .goto Tirisfal Glades,83.28,69.23
+    .goto 1420/0,-729.88,1751.95
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dithers|r
     .turnin 5802 >>Turn in Fire Plume Forged
     .accept 5804 >>Accept Araj's Scarab
@@ -1473,12 +1473,12 @@ step
     .complete 5804,1 --Araj's Scarab (1x)
     .mob Araj the Summoner
 step
-    .goto Tirisfal Glades,83.28,69.23
+    .goto 1420/0,-729.88,1751.95
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dithers|r
     .turnin 5804 >>Turn in Araj's Scarab
 	.target Apothecary Dithers
 step
-    .goto Tirisfal Glades,83.28,69.23
+    .goto 1420/0,-729.88,1751.95
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dithers|r
     .turnin 5511 >>Turn in The Key to Scholomance
 	.target Apothecary Dithers
@@ -1525,13 +1525,13 @@ step
 step
     #softcore
     #completewith next
-    .goto Eastern Kingdoms,48.07,62.42
+    .goto 1415/0,-920.59,-7181.25
     .subzone 1584,2 >>Ressurect at your corpse and enter Blackrock Depths
     >>|cRXP_WARN_Make sure you have a group ready|r
 step
     #hardcoreserver
     #completewith next
-    .goto Eastern Kingdoms,48.07,62.42
+    .goto 1415/0,-920.59,-7181.25
     .subzone 1584,2 >>Enter Blackrock Depths
     >>|cRXP_WARN_Make sure you have a group ready|r
 step
@@ -1563,7 +1563,7 @@ step
     .subzoneskip 2557
 step
     #completewith next
-    .goto Kalimdor,43.84,67.41,20 >>Enter the Eastern entrance of Dire Maul
+    .goto 1414/1,933.56,-3737.93,20 >>Enter the Eastern entrance of Dire Maul
     >>|cRXP_WARN_Make sure you have a group ready|r
 step
     #completewith next
@@ -1617,7 +1617,7 @@ step
     .reputation 529,honored >>Get an honored reputation with the Argent Dawn
     >>|cRXP_WARN_Grind |cRXP_ENEMY_Undead|r mobs in EPL/WPL or do dungeons with your|r |T133440:0|t[Argent Dawn Commission] |cRXP_WARN_equipped for to collect and turn in|r |T133447:0|t[Scourgestones]
 step
-    .goto Eastern Plaguelands,81.523,58.269
+    .goto 1423/0,-5341.04,2295.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Angela Dosantos|r
     >>|cRXP_WARN_Your reputation must be Honored to accept this quest|r
     >>|cRXP_WARN_You will also need to pay|r |cRXP_WARN_60 gold|r |cRXP_WARN_to turn in the quest|r
@@ -1627,7 +1627,7 @@ step
     .reputation 529,revered,>0,1 --Below Revered AD
     .isQuestAvailable 9121 --The Dread Citadel - Naxxramas
 step
-    .goto Eastern Plaguelands,81.523,58.269
+    .goto 1423/0,-5341.04,2295.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Angela Dosantos|r
     >>|cRXP_WARN_Your reputation must be Revered to accept this quest|r
     >>|cRXP_WARN_You will also need to pay|r |cRXP_WARN_30 gold|r |cRXP_WARN_to turn in the quest|r
@@ -1639,7 +1639,7 @@ step
     .isQuestAvailable 9122 --The Dread Citadel - Naxxramas
 step
     #label AttuneComplete
-    .goto Eastern Plaguelands,81.523,58.269
+    .goto 1423/0,-5341.04,2295.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Angela Dosantos|r
     >>|cRXP_WARN_Your reputation must be Exalted to accept this quest|r
     .accept 9123 >>Accept The Dread Citadel - Naxxramas
@@ -1665,7 +1665,7 @@ step
     .subzone 2479 >>Travel to Emerald Sanctuary in |cFFfa9602Felwood|r
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
-    .goto Felwood,51.4,82.0
+    .goto 1448/1,-1313.83,3990.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Shadowtooth Emissary|r
     .accept 84384 >> Accept Demonic Deceptions
     .target Shadowtooth Emissary
@@ -1693,7 +1693,7 @@ step
     .subzone 2479 >>Travel to Emerald Sanctuary in |cFFfa9602Felwood|r
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
-    .goto Felwood,51.4,82.0
+    .goto 1448/1,-1313.83,3990.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Shadowtooth Emissary|r
     .turnin 84384 >> Turn in Demonic Deceptions
     .target Shadowtooth Emissary
