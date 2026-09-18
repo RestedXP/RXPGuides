@@ -9,7 +9,7 @@
     <Script file="Guides/forever/Horde-01-14_Undead.lua"/>
     <Script file="Guides/forever/Horde-1-12_Mulgore.lua"/>
     <Script file="Guides/forever/Horde-12-22_Barrens.lua"/>
- <!-- 
+
     <Script file="Guides/forever/Alliance-Mage-1-12.lua"/>
     <Script file="Guides/forever/Alliance-Mage-12-21.lua"/>
     <Script file="Guides/forever/Horde-Mage-12-21.lua"/>
@@ -29,8 +29,4 @@
 	<Script file="Guides/SurvivalGuide/H-Classic-Horde-1-13_Mulgore.lua"/>
 	<Script file="Guides/SurvivalGuide/H-Classic-Horde-13-15_Silverpine.lua"/>
 	<Script file="Guides/SurvivalGuide/H-Classic-Horde-15-23_Barrens.lua"/>
--->
-
-
-	
 </Ui>
