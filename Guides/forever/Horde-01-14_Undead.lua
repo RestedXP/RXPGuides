@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #xprate <1.99
 << Horde
 #version 11
-#group RXP Forever (H)
+#group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
@@ -789,7 +789,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-11 Tirisfal Glades
 #version 11
-#group RXP Forever (H)
+#group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
@@ -4092,7 +4092,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#group RXP Forever (H)
+#group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
 --#groupid RXP-SRGCE-H1
 #xprate <1.99
@@ -5451,7 +5451,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #xprate >1.99
 #version 1
-#group RXP Forever (H)
+#group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
@@ -6520,7 +6520,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 7-13 Tirisfal Glades
 #version 1
-#group RXP Forever (H)
+#group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead

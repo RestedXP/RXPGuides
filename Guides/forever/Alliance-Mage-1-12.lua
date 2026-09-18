@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 << Human Mage
 #name 1-10 Elwynn Forest Mage AoE
 #version 1
-#group RXP Forever (A)
+#group RestedXP Forever Guide (A)
 #subgroup Speedrun Guide Mage
 #defaultfor Human
 #next 10-12 Loch Modan Mage AoE
@@ -816,7 +816,7 @@ RXPGuides.RegisterGuide([[
 << Gnome Mage
 #name 1-10 Dun Morogh Mage AoE
 #version 1
-#group RXP Forever (A)
+#group RestedXP Forever Guide (A)
 #subgroup Speedrun Guide Mage
 #defaultfor Dwarf/Gnome
 #next 10-12 Loch Modan Mage AoE
@@ -1467,7 +1467,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 10-12 Loch Modan Mage AoE
 #version 1
-#group RXP Forever (A)
+#group RestedXP Forever Guide (A)
 #subgroup Speedrun Guide Mage
 #defaultfor Human Mage/Gnome Mage
 #next 12-18 Darkshore Mage AoE

@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RXP Forever (A)
+#group RestedXP Forever Guide (A)
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 1-6 Coldridge Valley
@@ -1331,7 +1331,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance --!Hunter
-#group RXP Forever (A)
+#group RestedXP Forever Guide (A)
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 6-11 Dun Morogh
@@ -4840,7 +4840,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Gnome Warlock
-#group RXP Forever (A)
+#group RestedXP Forever Guide (A)
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-12 Voidwalker Quest
@@ -5110,7 +5110,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #season 0,1
 << Alliance !Hunter
-#group RXP Forever (A)
+#group RestedXP Forever Guide (A)
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-12 Elwynn (Dwarf/Gnome)
@@ -5822,7 +5822,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance !Hunter
-#group RXP Forever (A)
+#group RestedXP Forever Guide (A)
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 12-14 Loch Modan (Dwarf/Gnome)
@@ -7578,7 +7578,7 @@ RXPGuides.RegisterGuide([[
 #era/som--h
 #version 1
 << Alliance Hunter
-#group RXP Forever (A)
+#group RestedXP Forever Guide (A)
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 6-11 Dun Morogh (Hunter)
@@ -8279,7 +8279,7 @@ RXPGuides.RegisterGuide([[
 #era/som--h
 #version 1
 << Alliance Hunter
-#group RXP Forever (A)
+#group RestedXP Forever Guide (A)
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-13 Loch Modan (Hunter)

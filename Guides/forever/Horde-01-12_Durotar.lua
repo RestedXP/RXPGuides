@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6 Durotar
 #version 11
-#group RXP Forever (H)
+#group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
@@ -1562,7 +1562,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-10 Durotar
 #version 11
-#group RXP Forever (H)
+#group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
@@ -3879,7 +3879,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 10-12 Durotar
 #version 11
-#group RXP Forever (H)
+#group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
@@ -5291,7 +5291,7 @@ RXPGuides.RegisterGuide([[
 #xprate <1.99
 #name 10-12 Tirisfal
 #version 11
-#group RXP Forever (H)
+#group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
@@ -7137,7 +7137,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-7 Durotar
 #version 1
-#group RXP Forever (H)
+#group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc
@@ -8608,7 +8608,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 7-13 Durotar
 #version 1
-#group RXP Forever (H)
+#group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Troll/Orc

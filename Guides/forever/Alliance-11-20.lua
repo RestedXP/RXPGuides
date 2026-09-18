@@ -14,7 +14,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 13-15 Westfall
 #displayname 14-15 Westfall << Dwarf/Gnome
-#group RXP Forever (A)
+#group RestedXP Forever Guide (A)
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #next 14-16 Darkshore
@@ -735,7 +735,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RXP Forever (A)
+#group RestedXP Forever Guide (A)
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 14-16 Darkshore
@@ -3101,7 +3101,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance
-#group RXP Forever (A)
+#group RestedXP Forever Guide (A)
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 16-19 Darkshore
@@ -8348,7 +8348,7 @@ RXPGuides.RegisterGuide([[
 #season 0,1
 #version 1
 << Alliance !Hunter
-#group RXP Forever (A)
+#group RestedXP Forever Guide (A)
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 19-20 Redridge
@@ -10001,7 +10001,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #season 0
 << Alliance Hunter
-#group RXP Forever (A)
+#group RestedXP Forever Guide (A)
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 19-21 Darkshore/Ashenvale
@@ -10795,7 +10795,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance !Hunter
 #season 0
-#group RXP Forever (A)
+#group RestedXP Forever Guide (A)
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 20-21 Darkshore/Ashenvale

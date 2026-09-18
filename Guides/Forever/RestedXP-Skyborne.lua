@@ -4,8 +4,8 @@ RXPGuides.RegisterGuide([[
 #name 1-14 Zephras Isle
 #displayname 1-14 Skyborne << Alliance
 #displayname 1-14 Skyborne << Horde
-#group RXP Forever (A) << Alliance
-#group RXP Forever (H) << Horde
+#group RestedXP Forever Guide (A) << Alliance
+#group RestedXP Forever Guide (H) << Horde
 #subgroup Speedrun Guide 1-20 << Alliance
 #subgroup Speedrun Guide 1-22 << Horde
 
@@ -357,7 +357,7 @@ step
     .target Aetheen of the Gales
 step << Shaman
     .goto 2521,42.788,23.566
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r
     .turnin 92466 >>Turn in Call of Earth
     .accept 92467 >>Accept Call of Earth
     .target Windshaper Boro::251374
@@ -600,8 +600,8 @@ step << Mage
 step
     .goto 2521,43.02,43.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_the Innkeeper|r.
-    .complete 93461,2 << Alliance --1/1 Speak with the Innkeeper 
-    .complete 92514,2 << Horde --1/1 Speak with the Innkeeper 
+    .complete 93461,2 << Alliance --1/1 Speak with the Innkeeper
+    .complete 92514,2 << Horde --1/1 Speak with the Innkeeper
     .target the Innkeeper
 step
     .goto 2521,43.02,43.24
@@ -786,7 +786,7 @@ step
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
 step
     .goto 2521,42.32,62.03
-    
+
     .complete 93926,1 --1/1 Check in on the Western Watchtower in the Shen'dar Highlands
 step
     .goto 2521,42.33,62.01
@@ -905,7 +905,7 @@ step
 
 step
     .goto 2521,64.17,79.43
-    
+
     .complete 92709,1 --1/1 Listen to Elaadrin
 step
     .goto 2521,66.63,79.94
@@ -929,7 +929,7 @@ step
 
 step
     .goto 2521,59.65,74.68
-    
+
     .complete 93949,1 --8/8 Enchanted Skyhopper Exterminated
 step
     .goto 2521,60.64,72.66
@@ -957,17 +957,17 @@ step
     .accept 92849 >>Accept The Missing Scholar
 step
     .goto 2521,50.67,65.38
-    
+
     .complete 92849,1 --1/1 Find Fillion Flamebreeze
 
 
-    .skipgossipid 136430 
+    .skipgossipid 136430
 
 
 
 step
     .goto 2521,52.05,69.40
-    
+
     .complete 92849,2 --1/1 Carry Fillion Flamebreeze to safety while avoiding enemies
 step
     .goto 2521,52.07,69.40
@@ -981,7 +981,7 @@ step
     .complete 92850,1 --1/1 Shriekling Matriarch's Head
 step
     .goto 2521,46.71,81.95
-    
+
     .complete 92679,1 --1/1 Find Aamelia Windfield
 step
     .goto 2521,46.71,81.94
@@ -1057,7 +1057,7 @@ step
 
 step
     .goto 2521,47.51,78.44
-    
+
     .complete 92693,2 --1/1 Follow Aamelia and make your final stand
 step
     .goto 2521,47.51,78.49
@@ -1098,7 +1098,7 @@ step
     .target Elaadrin Evengale
 step
     .goto 2521,47.93,69.05
-    
+
     .complete 92840,1 --1/1 Protect the Index
 step << Magic
     .goto 2521,48.49,67.81
@@ -1210,7 +1210,7 @@ step
     .target Fendaal Windstone
 step
     .goto 2521,56.06,60.85
-    
+
     .complete 92643,1 --1/1 Find the secluded house in Shen'dar Highlands
 step
     .goto 2521,55.66,59.87
@@ -1224,7 +1224,7 @@ step
     .target Fendaal Windstone
 step
     .goto 2521,56.49,60.86
-    
+
     .complete 92643,2 --1/1 Find the Al'Aketh Turncoat
 step
     .goto 2521,56.03,58.80
@@ -1246,7 +1246,7 @@ step
     .skipgossipid 140111
 
 
-    
+
     .complete 94568,1 --1/1 Learn what you can from the crystal
 step
     .goto 2521,66.17,76.51
@@ -1265,17 +1265,17 @@ step
     .skipgossipid 137095
 step
     .goto 2521,59.15,79.79
-    
+
     .complete 92640,2 --1/1 Recruit the Windshapers
-    .skipgossipid 136542 
+    .skipgossipid 136542
     .skipgossipid 136541
 
 step
     .goto 2521,66.54,79.89
-    
+
     .complete 92640,3 --1/1 Recruit the High Order
-    .skipgossipid 136547 
-    .skipgossipid 136546 
+    .skipgossipid 136547
+    .skipgossipid 136546
 
 step
     .goto 2521,66.18,76.65
@@ -1289,7 +1289,7 @@ step
 
 step
     .goto 2521,61.15,70.91
-    
+
     .complete 93065,1 --1/1 Find Valennia on the Road
 step
     .goto 2521,61.15,70.93
@@ -1316,7 +1316,7 @@ step
     .mob Al'Aketh Guardian
 step
     .goto 2521,63.79,50.55
-    
+
     .complete 92947,4 --1/1 Report to Hyusaa Quickbreeze
 step
     .goto 2521,63.79,50.55
@@ -1335,7 +1335,7 @@ step
 step
 
     .goto 2521,75.34,53.32
-    
+
     .complete 93835,1 --1/1 Confront Lorthuna
     .skipgossipid 137230
 
@@ -1376,7 +1376,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strange Hermit|r.
     .accept 93159 >>Accept The Strange Hermit
     .target Strange Hermit
-    
+
     .complete 93159,1 --1/1 Learn more about the Strange Hermit
     .skipgossipid 135787
     .skipgossipid 135786
@@ -1514,14 +1514,14 @@ step
     .target Vayn Moongaze
 step
     .goto 2521,64.49,34.74
-    
+
     .complete 94489,2 --1/1 Find Jorel Windsinger
     .skipgossipid 137859
 
 
 step
     .goto 2521,65.91,33.54
-    
+
     .complete 94489,1 --7/7 Injured Druids healed
 step
     .goto 2521,61.77,39.14
@@ -1532,7 +1532,7 @@ step
     .goto 2521,63.80,35.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vayn Moongaze|r.
     .turnin 93459 >>Turn in More Al'Aketh Ears
-    .target Vayn Moongaze 
+    .target Vayn Moongaze
 
 
 step
@@ -1540,7 +1540,7 @@ step
     .complete 94896,1 --8/8 Abandoned Belongings
 step
     .goto 2521,58.59,31.08
-    
+
     .complete 93172,1 --10/10 Wind Hollow freed
 step
     .goto 2521,57.04,29.36
@@ -1594,7 +1594,7 @@ step
     .accept 93963 >>Accept Exploring the Alliance
 step
     .goto 1453/0,319.27,-8682.03
-    
+
     .complete 93963,1 --1/1 Recieve Instructions from Randal Emerson
     .skipgossipid 142485
 ]])

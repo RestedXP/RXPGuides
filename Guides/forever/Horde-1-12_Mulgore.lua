@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 1-6 Mulgore
 #version 11
-#group RXP Forever (H)
+#group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
@@ -586,7 +586,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #name 6-12 Mulgore
 #version 11
-#group RXP Forever (H)
+#group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
@@ -2950,7 +2950,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #xprate >1.99
 #version 1
-#group RXP Forever (H)
+#group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
 --#groupid RXP-SRGCE-H1
 #name 1-7 Mulgore
@@ -3649,7 +3649,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #xprate >1.99
 #version 1
-#group RXP Forever (H)
+#group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
 --#groupid RXP-SRGCE-H1
 #name 7-13 Mulgore

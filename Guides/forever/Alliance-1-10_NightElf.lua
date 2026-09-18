@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #name 1-6 Shadowglen
 #displayname 1-7 Shadowglen << sod
 #version 1
-#group RXP Forever (A)
+#group RestedXP Forever Guide (A)
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
@@ -421,7 +421,7 @@ RXPGuides.RegisterGuide([[
 #name 6-11 Teldrassil
 #displayname 7-13 Teldrassil << SoD
 #version 1
-#group RXP Forever (A)
+#group RestedXP Forever Guide (A)
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #defaultfor NightElf
