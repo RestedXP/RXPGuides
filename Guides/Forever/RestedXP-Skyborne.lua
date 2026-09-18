@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Forever Guide (H) << Horde
 #subgroup Speedrun Guide 1-20 << Alliance
 #subgroup Speedrun Guide 1-22 << Horde
-
+#defaultfor Skyborne
 
 step
     .goto 2521,42.82,23.41
