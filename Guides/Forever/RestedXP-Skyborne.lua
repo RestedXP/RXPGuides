@@ -118,6 +118,7 @@ step
     #completewith Harmony in Balance
     .goto 2521,42.06,23.48
     >>While falling from the tower, use |T132845:0|t[Walk on Air] and aim for the quest giver.
+    *You can also just jump and spam the button on the ground.
     .complete 92474,1 --Use Walk on Air
     .macro Walk on Air, 132845 >>/use Walk on Air
 step
@@ -131,7 +132,18 @@ step
     .accept 92481 >>Accept A Student of the Arcane << Mage
     .accept 92483 >>Accept At Home in the Shadows << Rogue
     .accept 92482 >>Accept The Way of the Hunter << Hunter
+    .accept 92484 >>Accept Embracing the Elements << Shaman
     .accept 92532 >>Accept The Warrior's Path << Warrior
+step << Shaman
+    .goto 2521,42.79,23.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro|r.
+    .turnin 92484 >>Turn in Embracing the Elements
+    .target Windshaper Boro
+step << Shaman
+    .goto 2521,42.79,23.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro|r.
+    .train 8017 >>Train |T136086:0|t[Rockbiter]
+    .target Windshaper Boro
 step << Hunter
     .goto 2521,42.47,23.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'ree Farsight|r.
@@ -153,6 +165,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
     .accept 93552 >>Accept Harvesting Windstones
     .target Dalia the Collector
+step << Horde
+    .goto 2521,42.60,24.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ventaari Brightwish|r.
+    .accept 92598 >>Accept The Gift of Skysight
+    .target Ventaari Brightwish
 step << Alliance
     .goto 2521,43.33,24.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
@@ -210,10 +227,10 @@ step << Alliance
     .macro Read Ley Line,236219 >>/use Read Ley Line
 step << Horde
     #label UseRacialAbility
-    .goto 2521,46.34,17.91
+    .goto 2521,48.4,20.4
     >>Use |T1029587:0|t[Skysight] near the |cRXP_PICK_Elemental Convergence|r.
     *|cRXP_WARN_Found throughout the zone. Use |T1029587:0|t[Skysight] near one to gain 10% movement speed for 15 min instead of 15 sec.|r
-    .complete 92597,1 --Use your Skysight ability near the Elemental Convergence
+    .complete 92598,1 --Use your Skysight ability near the Elemental Convergence
     .macro Skysight,1029587 >>/use spell:1259686
 step
     #hidewindow
@@ -268,7 +285,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
     *|cRXP_WARN_Choose between mining,herbing or skinning profession|r
     .turnin 93552 >>Turn in Harvesting Windstones
-    .target Dalia the Collector
+    .target Dalia the Collector    
 step << Alliance
     .goto 2521,43.33,24.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
@@ -315,6 +332,11 @@ step
     .turnin 92471 >>Turn in Aetheen of the Gales
     .accept 92470 >>Accept Foul Matriarch
     .target Aetheen of the Gales
+step << Shaman
+    .goto 2521,42.79,23.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro|r.
+    .train 8042 >>Train |T136026:0|t[Earth Shock]
+    .target Windshaper Boro
 step
     #completewith next
     #label Aggressive Encroachment
