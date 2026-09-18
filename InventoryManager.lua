@@ -728,6 +728,7 @@ if _G['ContainerFrame_UpdateAll'] then
             local bag = self:GetID()
             for _,v in pairs(bagframe.Items) do
                 local slot = v:GetID()
+                if slot < 0 then return end
                 local id = GetContainerItemID(bag, slot)
                 local isJunk = IsJunk(id,bag,slot)
                 if isJunk then
