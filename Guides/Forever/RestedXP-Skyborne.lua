@@ -135,10 +135,11 @@ step
     .accept 92484 >>Accept Embracing the Elements << Shaman
     .accept 92532 >>Accept The Warrior's Path << Warrior
 step << Shaman
-    .goto 2521,42.79,23.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro|r.
+    .goto 2521,42.790,23.566
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r
+    .target Windshaper Boro::251374
     .turnin 92484 >>Turn in Embracing the Elements
-    .target Windshaper Boro
+    .accept 92466 >>Accept Call of Earth
 step << Shaman
     .goto 2521,42.79,23.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro|r.
@@ -250,10 +251,12 @@ step
 step
     #label Al'Aketh Convert
     >>Kill |cRXP_ENEMY_Al'Aketh Convert|r and |cRXP_ENEMY_Roiling Winds|r.
+    *Loot them for the |T1020384:0|t[Signet of Air] << Shaman
     *|cRXP_WARN_Priotize |cRXP_ENEMY_Roiling Winds|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
     .complete 92465,2 --6/6 Roiling Winds destroyed
-    .mob Al'Aketh Convert
+    .complete 92466,1 << Shaman --|1/1 Signet of Akir
+    .mob Al'Aketh Convert::251160
     .mob Roiling Winds
 step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
@@ -285,7 +288,22 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
     *|cRXP_WARN_Choose between mining,herbing or skinning profession|r
     .turnin 93552 >>Turn in Harvesting Windstones
-    .target Dalia the Collector    
+    .target Dalia the Collector
+step
+    .goto 2521,43.37,23.98
+    .itemcount 247840,1
+    .train 2575 >>Use |T4625105:0|t[Mining for Dummies].
+    .use 247840
+step
+    .goto 2521,43.37,23.98
+    .itemcount 247841,1
+    .train 2366 >>Use |T4624731:0|t[Wild Harvest].
+    .use 247841
+step
+    .goto 2521,43.37,23.98
+    .itemcount 247846,1
+    .train 8613 >>Use |T4624731:0|t[Pelt Collecting for Beginners].
+    .use 247846
 step << Alliance
     .goto 2521,43.33,24.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
@@ -313,6 +331,11 @@ step << Warrior
     .target Blademaster Ren
     .trainer >> Train your class spells
     .skipgossipid 136813,1
+step << Horde
+    .goto 2521,42.607,24.393
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ventaari Brightwish::251487|r
+    .target Ventaari Brightwish::251487
+    .turnin 92598 >>Turn in The Gift of Skysight
 step
     .goto 2521,42.07,23.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker|r.
@@ -333,17 +356,61 @@ step
     .accept 92470 >>Accept Foul Matriarch
     .target Aetheen of the Gales
 step << Shaman
-    .goto 2521,42.79,23.57
+    .goto 2521,42.788,23.566
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r 
+    .turnin 92466 >>Turn in Call of Earth
+    .accept 92467 >>Accept Call of Earth
+    .target Windshaper Boro::251374
+step << Shaman
+    .goto 2521,42.788,23.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro|r.
     .train 8042 >>Train |T136026:0|t[Earth Shock]
     .target Windshaper Boro
+step << Shaman
+    .goto 2521,48.802,25.869,25,0
+    .goto 2521,49.677,23.806
+    >>Use the |T134743:0|t[Earth Sapta].
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Minor Manifestation of Earth::251166|r
+    .turnin 92467 >>Turn in Call of Earth
+    .accept 92468 >>Accept Call of Earth
+    .target Minor Manifestation of Earth::251166
+    .use 6635
+step << Shaman
+    .goto 2521,42.787,23.564
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r
+    .target Windshaper Boro::251374
+    .turnin 92468 >>Turn in Call of Earth
 step
-    #completewith next
+    #completewith AggressiveVendor
     #label Aggressive Encroachment
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valreaa Valewind|r.
     .accept 92473 >>Accept Aggressive Encroachment
     .target Valreaa Valewind
 step
+    #completewith Aggressive Encroachment
+    .train 2366,3
+    .goto 2521,42.76,24.5
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
+    .collect 277113,1 >>Buy an |T133637:0|t[Apprentice's Herb Pouch]
+    .target Uualia Suncrest::251537
+step
+    #completewith Aggressive Encroachment
+    .train 2575,3
+    .goto 2521,42.76,24.5
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
+    .collect 2901,1 >>Buy a |T134708:0|t[Mining Pick]
+    .collect 277115,1 >>Buy an |T133635:0|t[Apprentice's Mining Pack]
+    .target Uualia Suncrest::251537
+step
+    #completewith Aggressive Encroachment
+    .train 8613,3
+    .goto 2521,42.76,24.5
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
+    .collect 7005,1 >>Buy a |T135637:0|t[Skinning Knife]
+    .collect 277114,1 >>Buy an |T133634:0|t[Apprentice's Skinning Satchel]
+    .target Uualia Suncrest::251537
+step
+    #label AggressiveVendor
     #completewith Aggressive Encroachment
     .goto 2521,42.76,24.5
     .vendor >>|cRXP_WARN_Optional: Buy Reagent Bag, Profession tools and Vendor trash|r
