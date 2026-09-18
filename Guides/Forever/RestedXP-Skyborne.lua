@@ -288,7 +288,7 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorii Brightwhisper|r.
     .turnin 92481 >>Turn in A Student of the Arcane
     .trainer >> Train your class spells
-    .skipgossipid 136813,1
+    .skipgossipid 136807,1
     .target Dorii Brightwhisper
 step
     .goto 2521,42.76,23.65
