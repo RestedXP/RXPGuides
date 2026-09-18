@@ -54,6 +54,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r
     .turnin 4641 >>Turn in Your Place In The World
     .accept 788 >>Accept Cutting Teeth
+    .accept 97279 >>Accept Wayward Weapons
     .target Gornek
 step << Warrior/Shaman
     .goto Durotar,42.28,68.48,10,0
@@ -134,6 +135,10 @@ step << Warlock
     .collect 159,5,6394,1 --Refreshing Spring Water (5)
     .target Duokna
     .money <0.0025
+step
+    #completewith Boars
+    >>Loot |cRXP_PICK_Abandoned Training Weapons|r on the ground
+    .complete 97279,1 --|6/6 Abandoned Training Weapon
 step << Warlock
     #completewith next
     .goto Durotar,43.57,67.28,25,0
@@ -282,6 +287,13 @@ step << Warlock
     .goto Durotar,41.99,64.03,40,0
     .xp 3+685 >> Grind to 685+/1400xp
     .mob Mottled Boar
+step
+    #optional
+    #label Boars
+step
+    .goto 1411/1,-4260.000,-404.200
+    >>Loot |cRXP_PICK_Abandoned Training Weapons|r on the ground
+    .complete 97279,1 --|6/6 Abandoned Training Weapon
 step << Warlock
     #xprate <1.5
     #completewith Ruzan2
@@ -368,20 +380,19 @@ step << Rogue
     .turnin 3083 >>Turn in Encrypted Tablet << Troll Rogue
     .turnin 3088 >>Turn in Encrypted Parchment << Orc Rogue
     .target Rwag
-step << Warlock
-    #completewith Nartok2
-    .goto Durotar,41.52,68.36,12,0
-    .goto Durotar,41.24,68.16,12,0
-    .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.65,68.52,12 >>Travel toward |cRXP_FRIENDLY_Nartok|r
-    .money <0.01
-step << Warlock
-    #completewith next
-    .goto Durotar,41.52,68.36,12,0
-    .goto Durotar,41.24,68.16,12,0
-    .goto Durotar,40.82,68.03,12,0
-    .goto Durotar,40.56,68.44,12 >>Travel toward |cRXP_FRIENDLY_Hraug|r
-    .money >0.01
+step
+    .goto 1411/1,-4102.400,-588.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kzan Thornslash|r in the back of the cave
+    .turnin 97279 >>Turn in Wayward Weapons
+    .target Kzan Thornslash
+step << Rogue/Warrior
+    .goto 1411/1,-4106.000,-593.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norzsh|r
+    >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick] |cRXP_BUY_from|r |cRXP_BUY_him|r
+    .train 2575 >> Train |T136248:0|t[Mining]
+    .collect 2901,1,792,1 --Mining Pick (1)
+    >>|cRXP_WARN_This will allow you to find|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_from nodes in order to craft|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Weapon Damage for 30 minutes)|r
+    .target Norzsh
 step << Warlock
     .goto Durotar,40.56,68.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hraug|r
@@ -1277,7 +1288,6 @@ step
     .goto Durotar,44.70,52.47
     .deathskip >> |cRXP_WARN_Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r near the arrow|r
     .target Spirit Healer
-    .subzoneskip 362
 step
     #softcore
     #label Betrayers
@@ -1286,6 +1296,11 @@ step
     >>|cRXP_WARN_You can talk to him from outside or on top of the bunker|r
     .accept 784 >>Accept Vanquish the Betrayers
     .target Gar'thok
+step
+    .goto 1411/1,-4665.400,311.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Torka|r 
+    .accept 96825 >>Accept This Fruit Could Bite Back
+    .target Cook Torka
 step
     #softcore
     #completewith next
@@ -1331,6 +1346,11 @@ step << Warrior/Rogue
     .train 2018 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
     .skill blacksmithing,1,1
+step -- (Barracks)
+    .goto 1411/1,-4815.200,306.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turroc|r 
+    .accept 96822 >>Accept For Honor
+    .target Turroc
 step
     #completewith next
     .hs >>Hearth to the Valley of Trials
@@ -1567,12 +1587,19 @@ step
     .accept 786 >>Accept Thwarting Kolkar Aggression
     .target Lar Prowltusk
 step
+    .goto 1411/1,-4885.200,-852.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xar'Ti|r 
+    .accept 97223 >>Accept Bloodtalon Matriarch
+    .target Xar'Ti
+step
     #label SenjinPickups
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vel'rin|r, |cRXP_FRIENDLY_Vornal|r and |cRXP_FRIENDLY_Gadrin|r
     .accept 817 >>Accept Practical Prey
+    .accept 96821 >>Accept Legging It
     .target +Vel'rin Fang
     .goto Durotar,55.95,73.93
     .accept 818 >>Accept A Solvent Spirit
+    .accept 97225 >>Accept Forgotten Loa Idols
     .target +Master Vornal
     .goto Durotar,55.94,74.40
     .turnin 805 >>Turn in Report to Sen'jin Village
@@ -1588,7 +1615,7 @@ step
 step << Rogue
     .goto Durotar,56.29,73.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r|cRXP_BUY_. Buy |r |T132414:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
-    .collect 3131,200,786,1 --Weighted Throwing Axe (200)
+    .collect 3131,1,786,1 --Weighted Throwing Axe (200)
     .target K'waii
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
@@ -2137,19 +2164,44 @@ step << Warrior/Rogue
     .skill blacksmithing,<1,1
     .train 2575,3 --Mining Trained
 step
+    .goto 1411/1,-4710.400,-209.400
+    >>Kill |cRXP_ENEMY_Ridgeshade Lurkers|r and |cRXP_ENEMY_Ridgeshade Creepers|r
+    .complete 96821,2 --|6/6 Ridgeshade Lurker slain
+    .mob +Ridgeshade Lurker
+    .complete 96821,1 --|6/6 Ridgeshade Creeper slain
+    .mob +Ridgeshade Creeper
+step
     #softcore
     #label TravelToTiragarde
     .goto Durotar,54.42,62.64,60,0
     .subzone 372 >> Travel to Tiragarde Keep
-    >>|cRXP_WARN_Grind mobs on the way|r
+    -->>|cRXP_WARN_Grind mobs on the way|r
     .isOnQuest 784
 step
     #hardcore
     #label TravelToTiragarde
     .goto Durotar,57.26,54.69,60,0
     .subzone 372 >> Travel to Tiragarde Keep
-    >>|cRXP_WARN_Grind mobs on the way|r
+    -->>|cRXP_WARN_Grind mobs on the way|r
     .isOnQuest 784
+step
+    #completewith AgedEnvelope
+    >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for their |cRXP_LOOT_Canvas Scraps|r
+    .complete 784,1 --Kul Tiras Sailor (10)
+    .mob +Kul Tiras Sailor
+    .complete 784,2 --Kul Tiras Marine (8)
+    .mob +Kul Tiras Marine
+    .complete 791,1 --Canvas Scraps (8)
+    .mob +Kul Tiras Marine
+    .mob +Kul Tiras Sailor
+step --south/west of keep
+    .goto 1411/1,-4992.700,-234.400
+    >>Loot the |cRXP_PICK_Raider's Bow|r on the ground
+    .complete 96822,1 --|1/1 Raider's Bow
+step --center in keep
+    .goto 1411/1,-4994.900,-182.300
+    >>Loot the |cRXP_PICK_Raider's Battleaxe|r on the ground
+    .complete 96822,2 --|1/1 Raider's Battleaxe
 step
     #sticky
     #completewith AgedEnvelope
@@ -2168,16 +2220,6 @@ step << Priest
     >>Kill |cRXP_ENEMY_Sailors|r and |cRXP_ENEMY_Marines|r. Loot them for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r]
     .collect 205940,1 --Memory of a Dark Purpose (1)
     .train 425216,1
-step
-    #completewith AgedEnvelope
-    >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for their |cRXP_LOOT_Canvas Scraps|r
-    .complete 784,1 --Kul Tiras Sailor (10)
-    .mob +Kul Tiras Sailor
-    .complete 784,2 --Kul Tiras Marine (8)
-    .mob +Kul Tiras Marine
-    .complete 791,1 --Canvas Scraps (8)
-    .mob +Kul Tiras Marine
-    .mob +Kul Tiras Sailor
 step
     #label Benedict
     .goto Durotar,59.75,58.27
@@ -2250,6 +2292,10 @@ step
     .complete 791,1 --Canvas Scraps (8)
     .mob Kul Tiras Sailor
     .mob Kul Tiras Marine
+step  --northern tower
+    .goto 1411/1,-4951.500,-59.600
+    >>Loot the |cRXP_PICK_Raider's Shield|r on the ground
+    .complete 96822,3 --|1/1 Raider's Shield
 step << Priest
     #season 2
     #loop
@@ -2376,13 +2422,30 @@ step << Priest
     .goto Durotar,55.50,48.97,50,0
     .xp 7+375 >> Grind to 375+/4500xp
     .isOnQuest 823
-step
+step << skip
     #softcore
     #completewith RazorTurnins1
     .goto Durotar,57.3,53.5,120,0
     .deathskip >> Die at the northern tower outside of Tiragarde Keep and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+step --camp quest
+    .goto 1411/1,-4713.000,140.600
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brakk|r 
+    .accept 96604 >>Accept The Great Outdoors
+    .target Brakk
 step
-    #hardcore
+    .goto 1411/1,-4715.200,140.100
+    >>|cRXP_WARN_Type /sit at the campfire and wait for one minute until you get the "Camp Benefits" buff|r
+    .complete 96604,1 --|1/1 Use the /sit emote near the campfire
+    .complete 96604,2 --|Gain the Boosted Rest buff
+step
+    .goto 1411/1,-4713.000,140.600
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brakk|r
+    .turnin 96604 >>Turn in The Great Outdoors
+    --.accept 97900 >>Accept Camping 101: Blacksmithing
+    --.accept 96655 >>Accept Camping 101: Cooking
+    --.accept 97907 >>Accept Camping 101: Mining
+    .target Brakk
+step
     #completewith next
     .subzone 362 >>Travel to Razor Hill
 step
@@ -2395,6 +2458,7 @@ step
     .goto Durotar,52.24,43.15
     .turnin 784 >>Turn in Vanquish the Betrayers
     .turnin 830 >>Turn in The Admiral's Orders
+    .turnin 96821 >>Turn in Legging It
     .accept 825 >>Accept From The Wreckage....
     .accept 831 >>Accept The Admiral's Orders
     .accept 837 >>Accept Encroachment
@@ -2609,6 +2673,11 @@ step << !Mage !Hunter !Druid
     .train 8044,3 << Shaman
     .train 284,3 << Warrior
     .bindlocation 362
+step
+    .goto 1411/1,-4815.400,306.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turroc|r
+    .turnin 96822 >>Turn in For Honor
+    .target Turroc
 step << Warrior
     .goto Durotar,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
@@ -2701,6 +2770,12 @@ step
     #completewith TaillasherEggs
     .goto Durotar,67.10,69.29,100 >> Swim to the Island
 step
+    #completewith MartEgg
+    >>Loot the |cRXP_PICK_Taillasher Eggs|r on the ground
+    >>|cRXP_WARN_They're usually guarded by a|r |cRXP_ENEMY_Bloodtalon Taillasher|r
+    .complete 815,1 --Taillasher Egg (3)
+    .mob Bloodtalon Taillasher
+step
     #completewith MinshinasSkull
     >>Kill |cRXP_ENEMY_Durotar Tigers|r. Loot them for their |cRXP_LOOT_Fur|r
     -->>This does not need to be finished now
@@ -2717,6 +2792,12 @@ step
     .complete 818,1 --Intact Makrura Eye (4)
     .mob +Makrura Shellhide
     .mob +Makrura Clacker
+step --center of first small island
+    #label MartEgg
+    .goto 1411/1,-5599.500,-716.700
+    >>Kill the |cRXP_ENEMY_Bloodtalon Martriarch|r. Loot it for the |cRXP_LOOT_Bloodtalon Martriarch Eggs|r
+    .complete 97223,1 --|1/1 Bloodtalon Martriarch Eggs
+    .mob Bloodtalon Martriarch
 step
     #label TaillasherEggs
     #loop
@@ -2751,10 +2832,12 @@ step
 step
     #completewith MinshinasSkull
     >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r
+    >>Loot the |cRXP_PICK_Loa Idols|r on the ground
     .complete 826,1 --Hexed Troll (8)
     .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
     .mob +Voodoo Troll
+    .complete 97225,1 --Forgotten Loa Idols (x8)
 step << Priest
     #season 2
     #completewith Fur
@@ -2821,10 +2904,12 @@ step
     .goto Durotar,68.47,86.77,40,0
     .goto Durotar,67.23,88.00,40,0
     >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r
+    >>Loot the |cRXP_PICK_Loa Idols|r on the ground
     .complete 826,1 --Hexed Troll (8)
     .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
     .mob +Voodoo Troll
+    .complete 97225,1 --Forgotten Loa Idols (x8)
 step << Priest
     #season 2
     #loop
@@ -2920,6 +3005,7 @@ step
     .turnin 808 >>Turn in Minshina's Skull
     .turnin 826,2 >>Turn in Zalazane << Shaman
     .turnin 826 >>Turn in Zalazane << !Shaman
+    .turnin 97225 >>Turn in Forgotten Loa Idols
     .target +Master Gadrin
     .goto Durotar,55.95,74.73
     .turnin 818 >>Turn in A Solvent Spirit
@@ -2928,6 +3014,11 @@ step
     .turnin 817 >>Turn in Practical Prey
     .target +Vel'rin Fang
     .goto Durotar,55.95,73.93
+step
+    .goto 1411/1,-4885.400,-852.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xar'Ti|r
+    .turnin 97223 >>Turn in Bloodtalon Matriarch
+    .target Xar'Ti
 step << Priest
     #season 2
     .emote KNEEL,208309
@@ -2945,6 +3036,10 @@ step << Priest
 step
     #completewith QuilboarsScouts
     +|cRXP_WARN_Bind your|r |T133728:0|t[Faintly Glowing Skull] |cRXP_WARN_and|r |T134712:0|t[Really Sticky Glue]|cRXP_WARN_. Save them for emergency situations|r
+step --at low lvl razormanes
+    #completewith QuilboarsScouts
+    >>Loot the |cRXP_PICK_Prickly Pear Fruit|r on the ground
+    .complete 96825,1 --|8/8 Prickly Pear Fruit
 step << Warrior
     #season 2
     #loop
@@ -2985,6 +3080,10 @@ step
     .mob +Razormane Quilboar
     .complete 837,2 --Razormane Scout (4)
     .mob +Razormane Scout
+step --at low lvl razormanes
+    .goto 1411/1,-4543.300,82.500
+    >>Loot the |cRXP_PICK_Prickly Pear Fruit|r on the ground
+    .complete 96825,1 --|8/8 Prickly Pear Fruit
 step
     #xprate <1.5
     #loop
@@ -3028,6 +3127,7 @@ step
     #softcore
     #completewith RazorTurnins015
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r, or run to Razor Hill
+    .xp >10,1
 step
     #xprate >1.49 << !Hunter
     #hardcore
@@ -3046,6 +3146,7 @@ step << Hunter
     #xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Torka|r and |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 815 >>Turn in Break a Few Eggs
+    .turnin 96825 >>Turn in This Fruit Could Bite Back
     .target +Cook Torka
     .goto Durotar,51.12,42.46
     .turnin 825 >>Turn in From The Wreckage....
@@ -3491,6 +3592,13 @@ step << Warrior/Shaman/Hunter
     .goto Durotar,47.04,17.58
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isQuestComplete 806
+    .xp >10,1
+step << Warrior/Shaman/Hunter
+    #xprate <1.5 << Shaman/Warrior
+    #softcore
+    .goto Durotar,39.20,32.02,60 >> Fight your way out of Thunder Ridge
+    .isQuestComplete 806
+    .xp <10,1
 step << Warrior/Shaman/Hunter
     #xprate <1.5 << Shaman/Warrior
     #hardcore
@@ -3686,6 +3794,7 @@ step << !Hunter
     #xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Torka|r, |cRXP_FRIENDLY_Orgnil|r and |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 815 >>Turn in Break a Few Eggs
+    .turnin 96825 >>Turn in This Fruit Could Bite Back
     .target +Cook Torka
     .goto Durotar,51.12,42.46
     .turnin 806 >>Turn in Dark Storms
@@ -3819,7 +3928,7 @@ step << Warrior/Shaman
     #completewith PoolsPickup
     .goto The Barrens,52.34,29.27,150,0
     .subzone 380 >> Travel to The Crossroads
-step << Warrior/Shaman
+step << skip --Warrior/Shaman
     #softcore
     #completewith next
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
@@ -3896,11 +4005,11 @@ step << Warrior/Shaman
     >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_Cauldron Stirrer|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step << Warrior/Shaman
-    #hardcore
+    --#hardcore
     #completewith FungalSporesComplete
     .goto The Barrens,52.34,29.27,150,0
     .subzone 380 >> Travel to The Crossroads
-step << Warrior/Shaman
+step << skip --Warrior/Shaman
     #softcore
     #completewith next
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
@@ -4860,7 +4969,7 @@ step
     .mob +Dustwind Savage
     .complete 835,2 --Dustwind Storm Witch (8)
     .mob +Dustwind Storm Witch
-step
+step << skip
     #xprate <1.5
     #softcore
     #completewith SecuringLinesTurnIn
@@ -4868,7 +4977,7 @@ step
     .isQuestComplete 813 << Warrior/Shaman/Hunter
 step
     #xprate <1.5
-    #hardcore
+    --#hardcore
     #completewith next
     .goto Durotar,53.75,27.74,60,0
     .goto Durotar,51.75,27.40,60,0
@@ -4930,7 +5039,7 @@ step << Shaman
 step << Rogue
     .goto Orgrimmar,48.12,80.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135419:0|t[Sharp Throwing Axe] |cRXP_BUY_from him|r
-    .collect 3135,200,354,1 --Sharp Throwing Axe (200)
+    .collect 3135,1,354,1 --Sharp Throwing Axe (200)
     .vendor >> Vendor your trash
     .target Trak'gen
     .itemStat 18,QUALITY,<7
@@ -5042,28 +5151,28 @@ step << Rogue
     .train 400081 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r] |cRXP_WARN_to train|r |T135610:0|t[Between the Eyes]
     .use 204174
     .itemcount 204174,1
-step << !Warrior !Shaman !Hunter
+step << skip --!Warrior !Shaman !Hunter
     #softcore
     #completewith ZeptoUC1
     .goto Orgrimmar,53.03,48.78
     .subzone 2437 >> Enter Ragefire Chasm
-step << !Warrior !Shaman !Hunter
+step << skip --!Warrior !Shaman !Hunter
     #softcore
     #completewith ZeptoUC1
     .goto Durotar,47.05,17.58
     .deathskip >> Die and Respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step << !Warrior !Shaman !Hunter
-    #hardcore
+    --#hardcore
     #completewith ZeptoUC1
     .zone Durotar >> Leave Orgrimmar
     .zoneskip Durotar
-step << Warrior/Shaman/Hunter
+step << skip --Warrior/Shaman/Hunter
     #xprate <1.5 << !Hunter
     #softcore
     #completewith FoundtheCure
     .goto Orgrimmar,53.03,48.78
     .subzone 2437 >> Enter Ragefire Chasm
-step << Warrior/Shaman/Hunter
+step << skip --Warrior/Shaman/Hunter
     #xprate <1.5 << !Hunter
     #softcore
     #completewith FoundtheCure
@@ -5071,7 +5180,7 @@ step << Warrior/Shaman/Hunter
     .deathskip >> Die and Respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step << Warrior/Shaman/Hunter
     #xprate <1.5 << !Hunter
-    #hardcore
+    --#hardcore
     #completewith FoundtheCure
     .zone Durotar >> Leave Orgrimmar
     .zoneskip Durotar
@@ -5551,6 +5660,14 @@ step
     #completewith ProofofDemiseTurnin
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isQuestComplete 427
+    .xp >10,1
+step
+    #optional
+    #softcore
+    #completewith ProofofDemiseTurnin
+    .goto Tirisfal Glades,58.20,51.43,120 >> Travel back to Brill
+    .isQuestComplete 427
+    .xp <10,1
 step
     #optional
     #hardcore
@@ -6078,6 +6195,13 @@ step
     #softcore
     #completewith MillsTurnin
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .xp >10,1
+step
+    #optional
+    #softcore
+    #completewith MillsTurnin
+    .subzone 159 >> Travel to Brill
+    .xp <10,1
 step
     #optional
     #hardcore
@@ -6642,12 +6766,12 @@ step << skip --Warrior
     .goto Tirisfal Glades,56.24,49.42,30 >>|cRXP_WARN_Jump onto one of the weapon racks. Perform a Logout Skip by logging out and back in|r
     .link https://www.youtube.com/watch?v=bH_NYmWf8Lc&ab >> |cRXP_WARN_CLICK HERE for an example|r
     .isQuestComplete 408
-step << Warrior
+step << skip --Warrior
     #softcore
     #completewith next
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step << Warrior
-    #hardcore
+    --#hardcore
     #completewith next
     .subzone 159 >>Travel to Brill
 step << Warrior
@@ -8209,7 +8333,6 @@ step
     .goto Durotar,44.70,52.47
     .deathskip >> |cRXP_WARN_Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r near the arrow|r
     .target Spirit Healer
-    .subzoneskip 362
 step
     #softcore
     #label Betrayers
@@ -8531,7 +8654,7 @@ step
 step << Rogue
     .goto Durotar,56.29,73.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r|cRXP_BUY_. Buy |r |T132414:0|t[Weighted Throwing Axe] |cRXP_BUY_from her|r
-    .collect 3131,200,786,1 --Weighted Throwing Axe (200)
+    .collect 3131,1,786,1 --Weighted Throwing Axe (200)
     .target K'waii
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
@@ -9919,7 +10042,7 @@ step
 step << Rogue
     .goto Orgrimmar,48.12,80.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135419:0|t[Sharp Throwing Axe] |cRXP_BUY_from him|r
-    .collect 3135,200 --Sharp Throwing Axe (200)
+    .collect 3135,1 --Sharp Throwing Axe (200)
     .vendor >> Vendor your trash
     .target Trak'gen
     .itemStat 18,QUALITY,<7
