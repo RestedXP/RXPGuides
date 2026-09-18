@@ -100,6 +100,7 @@ step
     #title Move to cancel the channel
     .goto 2521,43.80,24.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye|r.
+    *Move or press ESC to cancel.
     .turnin 94414 >>Turn in The Anchors of Zephras
     .target Halaan Hawk-Eye
 step
@@ -129,7 +130,13 @@ step
     .accept 92464 >>Accept Elemental Unrest
     .accept 92481 >>Accept A Student of the Arcane << Mage
     .accept 92483 >>Accept At Home in the Shadows << Rogue
-    .accept 92532 >>Accept The Warrior's Path << Rogue
+    .accept 92482 >>Accept The Way of the Hunter << Hunter
+    .accept 92532 >>Accept The Warrior's Path << Warrior
+step << Hunter
+    .goto 2521,42.47,23.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'ree Farsight|r.
+    .turnin 92482 >>Turn in The Way of the Hunter
+    .target Tai'ree Farsight
 step
     #completewith next
     #label Harvesting Windstones
@@ -151,6 +158,9 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
     .accept 92597 >>Accept Reading the Ley Lines
     .target Falorne Fallwind
+step << Hunter
+    >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from her|r << Hunter
+
 step
     #completewith next
     .goto 2521,43.82,25.41,10,0
@@ -180,24 +190,31 @@ step
     .accept 92465 >>Accept Agitators
     .target Yala Windwatcher
 step
-    #completewith Read Ley Line
+    #completewith UseRacialAbility
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     .complete 93552,1 --15/15 Windstone Cluster
 step
-    #completewith Read Ley Line
+    #completewith UseRacialAbility
     >>Kill |cRXP_ENEMY_Al'Aketh Convert|r and |cRXP_ENEMY_Roiling Winds|r.
     *|cRXP_WARN_Priotize |cRXP_ENEMY_Roiling Winds|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
     .complete 92465,2 --6/6 Roiling Winds destroyed
     .mob Al'Aketh Convert
     .mob Roiling Winds
-step
-    #label Read Ley Line
+step << Alliance
+    #label UseRacialAbility
     .goto 2521,46.34,17.91
     >>Use |T236219:0|t[Read Ley Line] near the Thendal Grove Ley Line
     *|cRXP_WARN_Found throughout the zone|r |cRXP_WARN_Use|r |T236219:0|t[Read Ley Line] |cRXP_WARN_near one to gain 100% Mana and Food Regen for 15 min instead of 15 sec|r.
     .complete 92597,1 --Use your Read Ley Line ability near the Thendal Grove Ley Line
     .macro Read Ley Line,236219 >>/use Read Ley Line
+step << Horde
+    #label UseRacialAbility
+    .goto 2521,46.34,17.91
+    >>Use |T1029587:0|t[Skysight] near the |cRXP_PICK_Elemental Convergence|r.
+    *|cRXP_WARN_Found throughout the zone. Use |T1029587:0|t[Skysight] near one to gain 10% movement speed for 15 min instead of 15 sec.|r
+    .complete 92597,1 --Use your Skysight ability near the Elemental Convergence
+    .macro Skysight,1029587 >>/use spell:1259686
 step
     #hidewindow
     #completewith Windstone Cluster
@@ -428,69 +445,78 @@ step
     .turnin 96101 >>Turn in The Great Outdoors
     .target Raan Wildwind
 step
+    .train 2575,3
     .goto 2521,41.67,44.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind|r.
     .accept 97970 >>Accept Camping 101: Mining
+    .target Raan Wildwind
 step
     .goto 2521,41.67,44.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind|r.
     .accept 96646 >>Accept Camping 101: Cooking
+    .target Raan Wildwind
 step
     .goto 2521,45.67,45.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
     .turnin 92472 >>Turn in The Next Step
+    .accept 93461 >>Accept Welcome to Shen'dar Village << Alliance
+    .accept 92514 >>Accept Welcome to Shen'dar Village << Horde
     .target Constable Aonda
-step
-    .goto 2521,45.67,45.51
-    .accept 93461 >>Accept Welcome to Shen'dar Village
-step
+step << Alliance
     .goto 2521,45.04,46.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rathiril Sunlance|r.
     .complete 93461,1 --1/1 Speak with Rathiril Sunlance
-    .target Rathiril Sunlance
-    
-step << Mage
-    --mage training
-step
-    .complete 92596,1 --1/1 Listen to Rathiril Sunlance
-step
-    .goto 2521,45.04,46.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rathiril Sunlance|r.
     .accept 92596 >>Accept The High Order
     .target Rathiril Sunlance
-
-step
+step << Alliance
+    .complete 92596,1 --1/1 Listen to Rathiril Sunlance
+step << Alliance
     .goto 2521,44.98,46.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rathiril Sunlance|r.
     .turnin 92596 >>Turn in The High Order
-    .target Rathiril Sunlance
-step
-    .goto 2521,44.98,46.35
     .accept 94413 >>Accept A Magical Affront
-
+    .target Rathiril Sunlance
+step << Horde
+    .goto 2521,43.52,44.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illaya Amberwind|r.
+    .complete 92514,1 --1/1 Speak with Illaya Amberwind
+    .accept 92595 >>Accept The Windshapers
+    .target Illaya Amberwind
+step << Horde
+    .goto 2521,43.52,44.78
+    .complete 92595,1 --1/1 Listen to Illaya
+step << Horde
+    .goto 2521,43.52,44.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illaya Amberwind|r.
+    .turnin 92595 >>Turn in The Windshapers
+    .accept 94411 >>Accept Meddlesome Mages
+    .target Illaya Amberwind
+step << Mage
+    --mage training
 step
     .goto 2521,43.02,43.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_the Innkeeper|r.
-    .complete 93461,2 --1/1 Speak with the Innkeeper
+    .complete 93461,2 << Alliance --1/1 Speak with the Innkeeper 
+    .complete 92514,2 << Horde --1/1 Speak with the Innkeeper 
     .target the Innkeeper
 step
     .goto 2521,43.02,43.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_the Innkeeper|r.
     .home >>Set your Hearthstone to Shen'dar Village
-
+    .target the Innkeeper
 step
     .goto 2521,45.67,45.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
-    .turnin 93461 >>Turn in Welcome to Shen'dar Village
-    .target Constable Aonda
-step
-    .goto 2521,45.67,45.50
+    .turnin 93461 >>Turn in Welcome to Shen'dar Village << Alliance
+    .turnin 92514 >>Turn in Welcome to Shen'dar Village << Horde
     .accept 92517 >>Accept The Criminal Element
+    .target Constable Aonda
 step
     .goto 2521,44.47,44.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teeri Wellwind|r.
     .accept 93319 >>Accept Pilfered Windstones
-    .target Teeri Wellwind
-step
-    .goto 2521,44.46,44.93
     .accept 92516 >>Accept Hippogryph Harrassment
+    .target Teeri Wellwind
 step
     .goto 2521,44.68,44.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Indari Sunseam|r.
