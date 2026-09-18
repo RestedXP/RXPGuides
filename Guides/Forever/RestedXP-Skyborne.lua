@@ -432,21 +432,34 @@ step
     .target Valreaa Valewind
 
 
-    -- step
---     .goto 2521,38.31,30.17
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanaa Nightwind|r.
---     .accept 92544 >>Accept Al'Aketh Thugs
---     .target Hanaa Nightwind
 step
-    .goto 2521,36.49,33.30
+    .goto 2521,38.31,30.17
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanaa Nightwind|r.
+    .accept 92544 >>Accept Al'Aketh Thugs
+    .target Hanaa Nightwind
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Al'Aketh Brute|r and |cRXP_ENEMY_Al'Aketh Neophyte|r.
+    .complete 92544,1 --|6/6 Al'Aketh Brute slain
+    .complete 92544,2 --|4/4 Al'Aketh Neophyte slain
+    .mob Al'Aketh Brute::251145
+    .mob Al'Aketh Neophyte::251448
+step
+    .goto 2521,36.032,33.545
     >>Kill |cRXP_ENEMY_Malduko Cloudcrush|r.
-    .complete 92544,3 --1/1 Malduko Cloudcrush slain
-    .mob Malduko Cloudcrush
+    .complete 92544,3 --|1/1 Malduko Cloudcrush slain
+    .mob Malduko Cloudcrush::256935
 step
-    .goto 2521,37.42,33.95
-    >>Kill |cRXP_ENEMY_Al'Aketh Neophyte|r.
-    .complete 92544,2 --4/4 Al'Aketh Neophyte slain
-    .mob Al'Aketh Neophyte
+    #loop
+    .goto 2521,35.75,31.93,40,0
+    .goto 2521,37.3,32.89,40,0
+    .goto 2521,37.16,34.72,40,0
+    .goto 2521,38.08,35.01,40,0
+    >>Kill |cRXP_ENEMY_Al'Aketh Brute|r and |cRXP_ENEMY_Al'Aketh Neophyte|r.
+    .complete 92544,1 --|6/6 Al'Aketh Brute slain
+    .complete 92544,2 --|4/4 Al'Aketh Neophyte slain
+    .mob Al'Aketh Brute::251145
+    .mob Al'Aketh Neophyte::251448
 step
     .goto 2521,38.32,30.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanaa Nightwind|r.
