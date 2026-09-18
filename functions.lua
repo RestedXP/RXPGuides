@@ -14,6 +14,7 @@ local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
 local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo and addon.GetSpellInfo or _G.GetSpellInfo
 local GetMerchantItemInfo = C_MerchantFrame and C_MerchantFrame.GetItemInfo or _G.GetMerchantItemInfo
 local UnitName = addon.GetUnitName
+local BANK_CONTAINER = _G.BANK_CONTAINER or Enum.BagIndex.Bank
 
 -- start, duration, enabled, modRate = GetSpellCooldown(spell)
 local GetSpellCooldown = _G.GetSpellCooldown or function(spellIdentifier)
@@ -5157,9 +5158,9 @@ function addon.functions.questitemcount(self,text,itemId,qty,...)
 end
 
 function addon.PutItemInBank(bagContents)
-    local _, isBankOpened = GetContainerNumFreeSlots(_G.BANK_CONTAINER);
+    local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if CursorHasItem() and isBankOpened then
-        local bank = {_G.BANK_CONTAINER}
+        local bank = {BANK_CONTAINER}
         for i = _G.NUM_BAG_SLOTS + 1, _G.NUM_BAG_SLOTS + _G.NUM_BANKBAGSLOTS do
             tinsert(bank, i)
         end
@@ -5245,7 +5246,7 @@ function addon.GoThroughBags(itemList, func)
 end
 
 function addon.DepositItems(itemList)
-    local _, isBankOpened = GetContainerNumFreeSlots(_G.BANK_CONTAINER);
+    local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if itemList and isBankOpened then
         if type(itemList) ~= "table" then itemList = {itemList} end
     else
@@ -5273,7 +5274,7 @@ function addon.DepositItems(itemList)
 end
 
 function addon.IsItemInBags(itemList, reverseLogic)
-    local _, isBankOpened = GetContainerNumFreeSlots(_G.BANK_CONTAINER);
+    local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if itemList and isBankOpened then
         if type(itemList) ~= "table" then itemList = {itemList} end
     else
@@ -5297,7 +5298,7 @@ end
 
 function addon.GoThroughBank(itemList, func)
 
-    local bank = {_G.BANK_CONTAINER}
+    local bank = {BANK_CONTAINER}
     for i = _G.NUM_BAG_SLOTS + 1, _G.NUM_BAG_SLOTS + _G.NUM_BANKBAGSLOTS do
         tinsert(bank, i)
     end
@@ -5321,7 +5322,7 @@ function addon.GoThroughBank(itemList, func)
 end
 
 function addon.WithdrawItems(itemList)
-    local _, isBankOpened = GetContainerNumFreeSlots(_G.BANK_CONTAINER);
+    local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if itemList and isBankOpened then
         if type(itemList) ~= "table" then itemList = {itemList} end
     else
@@ -5349,7 +5350,7 @@ function addon.WithdrawItems(itemList)
 end
 
 function addon.IsItemInBank(itemList, reverseLogic)
-    local _, isBankOpened = GetContainerNumFreeSlots(_G.BANK_CONTAINER);
+    local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if itemList and isBankOpened then
         if type(itemList) ~= "table" then itemList = {itemList} end
     else
