@@ -1885,6 +1885,10 @@ addon.functions["goto"] = function(self, ...)
             end
             x = tonumber(x)
             y = tonumber(y)
+            if not (x and y) then
+                return addon.PrettyDebug("Error parsing guide " .. (addon.currentGuideName or _G.NONE) ..
+                           ": Invalid coordinates or map name\n" .. self, zone)
+            end
             local zx,zy = HBD:GetZoneCoordinatesFromWorld(x, y, zone)
             if zx and zy then
                 element.wx = x
@@ -1898,7 +1902,7 @@ addon.functions["goto"] = function(self, ...)
             element.zone, element.x , element.y = addon.GetMapInfo(zone,x,y)
         end
         if not (element.x and element.y and element.zone) then
-            return addon.error(
+            return addon.PrettyDebug(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
                            ": Invalid coordinates or map name\n" .. self, element.zone or zone)
         end
@@ -2441,6 +2445,10 @@ function addon.functions.line(self, text, zone, ...)
                 local y = x+1
                 local wx,wy = segments[x],segments[y]
                 local xc,yc = HBD:GetZoneCoordinatesFromWorld(wx, wy, tonumber(zone))
+                if not (xc and yc) then
+                    return addon.PrettyDebug("Error parsing guide " .. (addon.currentGuideName or _G.NONE) ..
+                           ": Invalid coordinates or map name\n" .. self, zone)
+                end
                 segments[x] = xc*100
                 segments[y] = yc*100
                 --print('v',x,xc,y,wx,wy)
