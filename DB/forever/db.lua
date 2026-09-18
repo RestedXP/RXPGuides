@@ -90,6 +90,7 @@ addon.mapId = {
     ["Alterac Valley"] = 1459,
     ["Kalimdor"] = 1414,
     ["Eastern Kingdoms"] = 1415,
+    ["Zephras Isle"] = 2521,
 }
 
 addon.ignoredMaps = {
