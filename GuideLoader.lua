@@ -1347,6 +1347,7 @@ function addon.guideImporter:AbortImport()
     self.importReady = false
     self.importCache.bufferString = ""
     self.importCache.bufferData = {}
+    self.importCache.lastBuffer = 0
     self.guideContent = nil
     self.guideLength = nil
     self.guideId = nil
@@ -1386,6 +1387,7 @@ function addon.guideImporter:AbortImport()
     local importBox = self.widgets.importBox
     if importBox then
         local editBox = importBox:GetEditBox()
+        editBox:SetScript("OnUpdate", nil)
         editBox:SetMaxBytes(0)
         editBox:Enable()
     end

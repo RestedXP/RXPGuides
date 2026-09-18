@@ -327,6 +327,7 @@ function addon.ui.v2:RegisterRXPV2GuideImporterEditBox()
         ["OnAcquire"] = function(this)
             this:SetText("")
             this:SetDisabled(false)
+            this.editBox:SetScript("OnUpdate", nil)
             this:SetWidth(200)
             this:SetLabel()
             this:SetNumLines()
@@ -407,6 +408,8 @@ function addon.ui.v2:RegisterRXPV2GuideImporterEditBox()
 
     local function Constructor()
         local widgetNum = AceGUI:GetNextWidgetNum(Type)
+        local guideImporter = addon.guideImporter
+        local importCache = guideImporter.importCache
         local frame = CreateFrame("Frame", nil, UIParent)
         frame:Hide()
 
@@ -445,9 +448,6 @@ function addon.ui.v2:RegisterRXPV2GuideImporterEditBox()
             widget:Fire("OnEditFocusLost")
         end)
         editBox:SetScript("OnEscapePressed", function() editBox:ClearFocus() end)
-        editBox:SetScript("OnTextChanged", function(_, userInput)
-            if userInput then widget:Fire("OnTextChanged", editBox:GetText()) end
-        end)
         editBox:SetScript("OnTextSet", function()
             editBox:HighlightText(0, 0)
             editBox:SetCursorPosition(editBox:GetNumLetters())
@@ -457,21 +457,22 @@ function addon.ui.v2:RegisterRXPV2GuideImporterEditBox()
             AceGUI:SetFocus(widget)
             editBox:SetText("")
             editBox:SetMaxBytes(1)
+            importCache.bufferString = ""
+            importCache.bufferData = {}
+            importCache.lastBuffer = 0
+            guideImporter.importReady = false
             widget:Fire("OnEditFocusGained")
         end)
         editBox:SetScript("OnChar", function(_, char)
-            local guideImporter = addon.guideImporter
-            local importCache = guideImporter.importCache
-
-            local time = GetTime()
-            editBox:Disable()
-            if importCache.lastBuffer ~= time then
-                importCache.lastBuffer = time
+            if importCache.lastBuffer == 0 then
                 editBox:SetScript("OnUpdate", function(this)
-                    guideImporter:ProcessBuffer(this)
+                    if GetTime() - importCache.lastBuffer >= 0.1 then
+                        guideImporter:ProcessBuffer(this)
+                    end
                 end)
             end
-            tinsert(importCache.bufferData, char)
+            importCache.lastBuffer = GetTime()
+            importCache.bufferData[#importCache.bufferData + 1] = char
         end)
 
         return AceGUI:RegisterAsWidget(widget)
@@ -765,8 +766,10 @@ _G.StaticPopupDialogs["RXP_Import"] = {
 function addon.guideImporter:ProcessBuffer(editBox)
     local importCache = self.importCache
     if editBox then editBox:SetScript("OnUpdate", nil) end
+    importCache.lastBuffer = 0
 
     importCache.bufferString = table.concat(importCache.bufferData)
+    self.importReady = #importCache.bufferString > 0
     local shownLength = math.min(#importCache.bufferString, 150)
     if #importCache.bufferString > shownLength then
         self:UpdateImportStatusHistory(addon.locale.Get("Loaded %d characters into import buffer, %d shown"), false,
@@ -908,7 +911,6 @@ function addon.ui.v2:CreateGuideImporter()
 
     widgets.importBox = importBox
     importBox:SetCallback("OnEditFocusGained", function()
-        guideImporter.importReady = true
         guideImporter:UpdateImportUI()
     end)
 
