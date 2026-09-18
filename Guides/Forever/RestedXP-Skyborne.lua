@@ -5,8 +5,13 @@ RXPGuides.RegisterGuide([[
 #displayname 1-10 Skyborne
 #group RXP Forever (A)
 #subgroup Speedrun Guide 1-20
-#internal
 
+
+step
+    .goto Zephras Isle,42.82,23.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ailee Farheart|r.
+    .accept 92460 >>Accept Coming of Age
+    .target Ailee Farheart
 step
     .goto Zephras Isle,42.07,23.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker|r.
@@ -20,29 +25,71 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
     .accept 92462 >>Accept Infestation Investigation
     .target Elatrell Featherlight
+
 step
-    .goto Zephras Isle,44.64,22.11
+    #hidewindow
+    #completewith Juvenile Vuldren
+    #loop
+    .goto 2521,44.23,26,35,0
+    .goto 2521,45.24,25.9,35,0
+    .goto 2521,46.06,25.33,35,0
+    .goto 2521,46.77,27.83,35,0
+    .goto 2521,45.27,28.36,35,0
+    .goto 2521,43.84,28.39,35,0
+    .goto 2521,42.88,27.52,35,0
+    +1
+
+step
+    #completewith next
     >>Kill |cRXP_ENEMY_Juvenile Vuldren|r.
     .complete 92461,1 --8/8 Juvenile Vuldren slain
     .mob Juvenile Vuldren
 step
-    .goto Zephras Isle,46.87,29.14
     >>Kill |cRXP_ENEMY_Pesky Cirrusfly|r.
     .complete 92462,1 --8/8 Pesky Cirrusfly slain
     .mob Pesky Cirrusfly
 step
-    .goto Zephras Isle,43.44,24.79
+    #label Juvenile Vuldren
+    >>Kill |cRXP_ENEMY_Juvenile Vuldren|r.
+    .complete 92461,1 --8/8 Juvenile Vuldren slain
+    .mob Juvenile Vuldren
+step
+    .goto Zephras Isle,43.44,24.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
     .turnin 92462 >>Turn in Infestation Investigation
-step
-    .goto Zephras Isle,43.44,24.79
     .accept 92463 >>Accept The Cirrusfly Queen
+    .target Elatrell Featherlight
 step
-    .goto Zephras Isle,43.78,24.04
+    #completewith next
+    #label Anchors of Zephras
+    .goto 2521,43.53,24.34,10,0
+    .goto 2521,43.83,24.13,5,0
+    .goto 2521,43.78,24.38,5,0
+    .goto 2521,43.66,24.25,5,0
+    .goto 2521,43.75,24.09,5,0
+    .goto 2521,43.84,24.3,5,0
+    .goto 2521,43.66,24.23,5,0
+    .goto 2521,43.83,24.18,5,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye|r.
     .accept 94414 >>Accept The Anchors of Zephras
+    .target Halaan Hawk-Eye
 step
+    #completewith Anchors of Zephras
+    .goto 2521,43.76,24.38,8 >>Enter the building and climb the spiral staircase.
+step
+    #requires Anchors of Zephras
+    .goto Zephras Isle,43.80,24.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye|r.
+    .accept 94414 >>Accept The Anchors of Zephras
+    .target Halaan Hawk-Eye
+step
+    .goto Zephras Isle,43.80,24.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye|r.
     .complete 94414,1 --View the Anchor Pylon
-    .skipgossipid 13720,1
+    .skipgossipid 137720,1
+    .target Halaan Hawk-Eye
 step
+    #title Move to cancel the channel
     .goto Zephras Isle,43.80,24.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye|r.
     .turnin 94414 >>Turn in The Anchors of Zephras
@@ -53,28 +100,44 @@ step
     .accept 92474 >>Accept Falling With Style
     .target Myriaal Mistwake
 step
-    .goto Zephras Isle,43.52,24.09
-    .complete 92474,1 --Use Walk on Air
-step
-    .goto Zephras Isle,42.06,23.48
+    #completewith next
+    #label Harmony in Balance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker|r.
     .turnin 92461 >>Turn in Harmony in Balance
     .target Rorian the Dayseeker
 step
+    #completewith Harmony in Balance
     .goto Zephras Isle,42.06,23.48
-    .turnin 92474 >>Turn in Falling With Style
+    >>While falling from the tower, use |T132845:0|t[Walk on Air] and aim for the quest giver.
+    .complete 92474,1 --Use Walk on Air
+    .macro Walk on Air, 132845 >>/use Walk on Air
 step
+    #requires Harmony in Balance
     .goto Zephras Isle,42.06,23.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker|r.
+    .turnin 92461 >>Turn in Harmony in Balance
+    .target Rorian the Dayseeker
+    .turnin 92474 >>Turn in Falling With Style
     .accept 92464 >>Accept Elemental Unrest
+    .accept 92481 >>Accept A Student of the Arcane << Mage
+    .accept 92483 >>Accept At Home in the Shadows << Rogue
 step << Mage
-    .goto Zephras Isle,42.06,23.48
-    .accept 92481 >>Accept A Student of the Arcane
-step >> Mage
     .goto Zephras Isle,41.55,23.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorii Brightwhisper|r.
     .turnin 92481 >>Turn in A Student of the Arcane
     .target Dorii Brightwhisper
 step
+    #completewith next
+    #label Harvesting Windstones
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
+    .accept 93552 >>Accept Harvesting Windstones
+    .target Dalia the Collector
+step
+    #completewith Harvesting Windstones
+    .goto 2521,43.41,23.51
+    .vendor >>|cRXP_WARN_Vendor trash|r
+step
+    #requires Harvesting Windstones
     .goto Zephras Isle,43.37,23.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
     .accept 93552 >>Accept Harvesting Windstones
@@ -85,88 +148,211 @@ step
     .accept 92597 >>Accept Reading the Ley Lines
     .target Falorne Fallwind
 step
-    .goto Zephras Isle,48.00,28.23
+    #completewith next
+    .goto 2521,43.82,25.41,10,0
+    .goto 2521,44.23,24.96,10,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
+    .complete 93552,1 --15/15 Windstone Cluster
+step
+    .goto Zephras Isle,48.41,28.37
     >>Kill |cRXP_ENEMY_Cirrusfly Queen|r.
     .complete 92463,1 --1/1 Cirrusfly Queen slain
     .mob Cirrusfly Queen
 step
-    .goto Zephras Isle,41.95,23.79
+    #completewith next
+    .goto 2521,47.41,26.44,20,0
+    .goto 2521,46.62,24.59,30,0
+    .goto 2521,47.17,23.53,30,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     .complete 93552,1 --15/15 Windstone Cluster
-
 step
-    .goto Zephras Isle,47.29,21.89
+    .goto Zephras Isle,47.29,21.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yala Windwatcher|r.
     .turnin 92464 >>Turn in Elemental Unrest
-step
-    .goto Zephras Isle,47.29,21.89
     .accept 92465 >>Accept Agitators
-        .accept 92465 >>Accept Agitators
+    .target Yala Windwatcher
 step
-    .goto Zephras Isle,46.34,17.91
-    .complete 92597,1 --Use your Read Ley Line ability near the Thendal Grove Ley Line
-    step
-    .goto Zephras Isle,46.94,19.13
-    >>Kill |cRXP_ENEMY_Al'Aketh Convert|r.
+    #completewith Read Ley Line
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
+    .complete 93552,1 --15/15 Windstone Cluster
+step
+    #completewith Read Ley Line
+    >>Kill |cRXP_ENEMY_Al'Aketh Convert| and |cRXP_ENEMY_Roiling Winds|r.
     .complete 92465,1 --7/7 Al'Aketh Convert slain
-    .mob Al'Aketh Convert
-step
-    .goto Zephras Isle,47.59,20.44
-    
     .complete 92465,2 --6/6 Roiling Winds destroyed
-    step
+    .mob Al'Aketh Convert
+    .mob Roiling Winds
+step
+    #label Read Ley Line
+    .goto Zephras Isle,46.34,17.91
+    >>Use |T135975:0|t[Read Ley Line] near the Thendal Grove Ley Line
+    *|cRXP_WARN_Found throughout the zone. Use |T135975:0|t[Read Ley Line] near one to gain 100% Mana and Food Regen for 15 min instead of 15 sec.|r
+    .complete 92597,1 --Use your Read Ley Line ability near the Thendal Grove Ley Line
+    .macro Read Ley Line, 132844 >>/use Read Ley Line
+step
+    #hidewindow
+    #completewith Al'Aketh Convert
+    #loop
+    .goto 2521,46.85,17.68,30,0
+    .goto 2521,47.22,19,30,0
+    .goto 2521,48.97,20.86,40,0
+    .goto 2521,47.41,21.14,30,0
+    .goto 2521,45.82,19.09,40,0
+    +1
+step
+    #completewith next
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
+    .complete 93552,1 --15/15 Windstone Cluster
+step
+    #label Al'Aketh Convert
+    >>Kill |cRXP_ENEMY_Al'Aketh Convert| and |cRXP_ENEMY_Roiling Winds|r.
+    .complete 92465,1 --7/7 Al'Aketh Convert slain
+    .complete 92465,2 --6/6 Roiling Winds destroyed
+    .mob Al'Aketh Convert
+    .mob Roiling Winds
+step
     .goto Zephras Isle,47.29,21.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yala Windwatcher|r.
     .turnin 92465 >>Turn in Agitators
+    .accept 92469 >>Accept Return to Rorian
     .target Yala Windwatcher
 step
-    .goto Zephras Isle,47.29,21.90
-    .accept 92469 >>Accept Return to Rorian
-step
-    .goto Zephras Isle,43.37,23.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
-    .turnin 93552 >>Turn in Harvesting Windstones
-    .target Dalia the Collector
-step
-    .goto Zephras Isle,43.44,24.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
-    .turnin 92463 >>Turn in The Cirrusfly Queen
-    .target Elatrell Featherlight
+    #completewith next
+    .goto 2521,44.17,22.28,30,0
+    .goto 2521,42.83,22.27,30,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
+    .complete 93552,1 --15/15 Windstone Cluster
+    --deathskip possible launch def not
 step
     .goto Zephras Isle,43.33,24.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
     .turnin 92597 >>Turn in Reading the Ley Lines
     .target Falorne Fallwind
-step
-    .goto Zephras Isle,42.07,23.48
     .turnin 92469 >>Turn in Return to Rorian
-step
-    .goto Zephras Isle,42.07,23.48
     .accept 92471 >>Accept Aetheen of the Gales
+step
+    #completewith next
+    .goto 2521,41.93,23.74,10,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
+    .complete 93552,1 --15/15 Windstone Cluster
+    --deathskip possible launch def not
 step
     .goto Zephras Isle,42.76,23.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aetheen of the Gales|r.
     .turnin 92471 >>Turn in Aetheen of the Gales
     .target Aetheen of the Gales
 step
-    .goto Zephras Isle,42.76,23.65
+    #completewith next
+    .goto 2521,41.93,23.74,10,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
+    .complete 93552,1 --15/15 Windstone Cluster
+    --deathskip possible launch def not
+step
+    .goto Zephras Isle,43.37,23.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
+    *|cRXP_WARN_Choose between mining,herbing or skinning|r
+    .turnin 93552 >>Turn in Harvesting Windstones
+    .target Dalia the Collector
+step << Rogue
+    .goto Zephras Isle,43.74,24.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Akeri Duskblade|r.
+    .turnin 92483 >>Turn in At Home in the Shadows
+    .target Akeri Duskblade
+step << Rogue
+    .trainer >> Train your class spells
+    .skipgossipid 136810,1
+step
+    .goto Zephras Isle,43.44,24.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
+    .turnin 92463 >>Turn in The Cirrusfly Queen
+    .target Elatrell Featherlight
     .accept 92470 >>Accept Foul Matriarch
 step
-    .goto Zephras Isle,42.41,25.15
+    #completewith next
+    #label Aggressive Encroachment
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valreaa Valewind|r.
     .accept 92473 >>Accept Aggressive Encroachment
-
+    .target Valreaa Valewind
 step
+    #completewith Aggressive Encroachment
+    .goto 2521,43.41,23.51
+    .vendor >>|cRXP_WARN_Optional: Buy Reagent Bag, Profession tools and Vendor trash|r
+step
+    #requires Aggressive Encroachment
     .goto Zephras Isle,42.41,25.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valreaa Valewind|r.
     .accept 92473 >>Accept Aggressive Encroachment
+    .target Valreaa Valewind
 step
-    .goto Zephras Isle,38.33,28.15
+    #completewith next
+    #label Scrawny Ursera Claw
+    .goto 2521,41.05,25.7,30,0
+    .goto 2521,40.4,26.9,30,0
+    .goto 2521,39.7,27.03,30,0
+    .goto 2521,39.04,27.54,30
+    >>Kill |cRXP_ENEMY_Bears|r. Loot them for |T463856:0|t[|cRXP_LOOT_Scrawny Ursera Claw|r].
     .complete 92473,1 --6/6 Scrawny Ursera Claw
+    .mob Scrawny Ursera
 step
-    .goto Zephras Isle,35.82,25.57
-    .complete 92470,2 --1/1 Head of Urs'anah
+    #completewith Scrawny Ursera Claw
+    .goto Zephras Isle,35.82,25.57,100 >>Enter the cave
 step
-    .goto Zephras Isle,36.53,24.09
+    #requires Scrawny Ursera Claw
+    #completewith Head of Urs'anah
+    >>Kill |cRXP_ENEMY_Bears|r. Loot them for |T463856:0|t[|cRXP_LOOT_Scrawny Ursera Claw|r].
+    .complete 92473,1 --6/6 Scrawny Ursera Claw
+    .mob Scrawny Ursera
+step
+    #requires Scrawny Ursera Claw
+    #completewith Head of Urs'anah
     >>Kill |cRXP_ENEMY_Ursera Scavenger|r.
     .complete 92470,1 --8/8 Ursera Scavenger slain
     .mob Ursera Scavenger
+step
+    #requires Scrawny Ursera Claw
+    #label Head of Urs'anah
+    .goto 2521,37.52,25.6,30,0
+    .goto 2521,37.36,24.63,30,0
+    .goto 2521,35.88,23.31,30,0
+    .goto Zephras Isle,35.82,25.57
+    >>Kill |cRXP_ENEMY_Urs'anah|r. Loot him for |T5840609:0|t[|cRXP_LOOT_Head of Urs'anah|r].
+    .complete 92470,2 --1/1 Head of Urs'anah
+    .mob Urs'anah
+step
+    #hidewindow
+    #completewith Scrawny Ursera Claw
+    #loop
+    .goto 2521,36.2,25,30,0
+    .goto 2521,36.39,23.79,30,0
+    .goto 2521,37.33,24.26,30,0
+    .goto 2521,36.9,24.54,30,0
+    .goto 2521,37.34,25.13,30,0
+    .goto 2521,38.12,27.71,30,0
+    .goto 2521,37.7,29.46,30,0
+    .goto 2521,40.79,26.64,30,0
+    +1
+step    
+    #completewith next
+    >>Kill |cRXP_ENEMY_Bears|r. Loot them for |T463856:0|t[|cRXP_LOOT_Scrawny Ursera Claw|r].
+    .complete 92473,1 --6/6 Scrawny Ursera Claw
+    .mob Scrawny Ursera
+step
+    >>Kill |cRXP_ENEMY_Ursera Scavenger|r.
+    .complete 92470,1 --8/8 Ursera Scavenger slain
+    .mob Ursera Scavenger
+step    
+    #label Scrawny Ursera Claw
+    >>Kill |cRXP_ENEMY_Bears|r. Loot them for |T463856:0|t[|cRXP_LOOT_Scrawny Ursera Claw|r].
+    .complete 92473,1 --6/6 Scrawny Ursera Claw
+    .mob Scrawny Ursera
+step
+    .isOnQuest 92473
+    .subzoneskip Thendal Grove
+    #loop
+    .goto 2521,36.53,23.81,30,0
+    .goto 2521,35.88,23.79,30,0
+    .goto 2521,35.71,25.7,30,0
+    .deathskip >>Die to mobs or run uphill and jump down repeatedly 
 step
     .goto Zephras Isle,38.31,30.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanaa Nightwind|r.
@@ -180,13 +366,20 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aetheen of the Gales|r.
     .turnin 92470 >>Turn in Foul Matriarch
     .target Aetheen of the Gales
-step
-    .goto Zephras Isle,42.76,23.65
     .accept 92472 >>Accept The Next Step
-step
-    .goto Zephras Isle,42.76,23.65
     .accept 96638 >>Accept The Adventurer
-    step
+step
+    #completewith next
+    #label Aggressive Encroachment2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valreaa Valewind|r.
+    .turnin 92473 >>Turn in Aggressive Encroachment
+    .target Valreaa Valewind
+step
+    #completewith Aggressive Encroachment2
+    .goto 2521,43.41,23.51
+    .vendor >>|cRXP_WARN_Optional: Buy Reagent Bag, Profession tools and Vendor trash|r
+step
+    #requires Aggressive Encroachment2
     .goto Zephras Isle,42.41,25.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valreaa Valewind|r.
     .turnin 92473 >>Turn in Aggressive Encroachment
@@ -303,7 +496,7 @@ step
     .accept 92553 >>Accept Restocking the Larders
     .target Zerril Softbreeze
 step
---cooking
+    --cooking
 
 
 step
@@ -434,7 +627,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Messana Crestwind|r.
     .turnin 97970 >>Turn in Camping 101: Mining
     .target Messana Crestwind
-    step
+step
     .goto Zephras Isle,48.12,56.27
     >>Kill |cRXP_ENEMY_Al'Aketh Stormcaller|r.
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
@@ -450,7 +643,7 @@ step
 step
     .goto Zephras Isle,49.55,54.23
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
-    step
+step
     .goto Zephras Isle,42.32,62.03
     
     .complete 93926,1 --1/1 Check in on the Western Watchtower in the Shen'dar Highlands
@@ -532,16 +725,16 @@ step
     .accept 97967 >>Accept Camping 101: Fishing
     .target Raan Wildwind
 
-    step
+step
     .goto Zephras Isle,66.18,76.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist|r.
     .turnin 92701 >>Turn in To Valanaar
     .target Valennia Stormfist
-    step
-        .goto Zephras Isle,66.17,76.66
-        >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist|r.
-        .accept 93949 >>Accept Bugged
-        .target Valennia Stormfist
+step
+    .goto Zephras Isle,66.17,76.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist|r.
+    .accept 93949 >>Accept Bugged
+    .target Valennia Stormfist
 step
     .goto Zephras Isle,66.18,76.65
     .accept 92699 >>Accept The Supreme Magister
@@ -550,7 +743,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talaanis Shadowsong|r.
     .turnin 93948 >>Turn in Deliver the Signet
     .target Talaanis Shadowsong
-    step
+step
     .goto Zephras Isle,66.63,79.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale|r.
     .turnin 92699 >>Turn in The Supreme Magister
@@ -613,7 +806,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist|r.
     .turnin 93949 >>Turn in Bugged
     .target Valennia Stormfist
-    step
+step
     .goto Zephras Isle,53.33,72.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bloodstained Satchel|r.
     .turnin 92727 >>Turn in The Missing Scholar
@@ -1003,7 +1196,7 @@ step
     .goto Zephras Isle,75.34,53.32
     
     .complete 93835,1 --1/1 Confront Lorthuna
-.skipgossipid 137230
+    .skipgossipid 137230
 
 
 step
@@ -1072,6 +1265,197 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strange Hermit|r.
     .turnin 98285 >>Turn in Camping 101: Engineering
     .target Strange Hermit
+
+
+step
+    .goto Zephras Isle,56.84,38.03
+    .complete 93160,1 --8/8 Zephyrseed
+step
+    .goto Zephras Isle,61.76,39.14
+    .turnin 94484 >>Turn in Unnerving Silence
+
+step
+    .goto Zephras Isle,61.76,39.14
+    .accept 94485 >>Accept Tears of the Lady
+step
+    .goto Zephras Isle,61.76,39.14
+    .accept 94486 >>Accept Feathers for Binding
+step
+    .goto Zephras Isle,61.76,39.14
+    .accept 94487 >>Accept Unwanted and Unworthy
+
+step
+    .goto Zephras Isle,56.84,38.03
+    .complete 93160,1 --8/8 Zephyrseed
+step
+    .goto Zephras Isle,61.76,39.14
+    .turnin 94484 >>Turn in Unnerving Silence
+
+step
+    .goto Zephras Isle,61.76,39.14
+    .accept 94485 >>Accept Tears of the Lady
+step
+    .goto Zephras Isle,61.76,39.14
+    .accept 94486 >>Accept Feathers for Binding
+step
+    .goto Zephras Isle,61.76,39.14
+    .accept 94487 >>Accept Unwanted and Unworthy
+step
+    .goto Zephras Isle,63.80,36.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vayn Moongaze|r.
+    .accept 93165 >>Accept Mercy Falls on Deaf Ears
+    .target Vayn Moongaze
+step
+    .goto Zephras Isle,59.36,40.07
+    .complete 92741,1 --8/8 Shriekling Talons
+step
+    .goto Zephras Isle,59.80,40.38
+    .complete 94485,1 --8/8 Lady's Tear Moss
+step
+    .goto Zephras Isle,55.93,38.96
+    .complete 94486,1 --20/20 Pristine Shriekling Feathers
+step
+    .goto Zephras Isle,53.97,38.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strange Hermit|r.
+    .turnin 93160 >>Turn in The Forest's Bounty
+    .target Strange Hermit
+
+step
+    .goto Zephras Isle,62.69,36.46
+    .complete 94487,1 --10/10 Bloody Heirloom
+step
+    .goto Zephras Isle,63.85,37.16
+    .complete 93165,1 --10/10 Al'Alketh Cultist's Ear
+
+step
+    .goto Zephras Isle,61.76,39.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elegael Thornpaw|r.
+    .turnin 94485 >>Turn in Tears of the Lady
+    .target Elegael Thornpaw
+step
+    .goto Zephras Isle,61.76,39.13
+    .turnin 94487 >>Turn in Unwanted and Unworthy
+
+step
+    .goto Zephras Isle,61.76,39.13
+    .turnin 94486 >>Turn in Feathers for Binding
+
+step
+    .goto Zephras Isle,61.76,39.13
+    .accept 94488 >>Accept The Ties That Bind
+step
+    .goto Zephras Isle,61.76,39.13
+    .accept 94489 >>Accept The Wounds of Betrayal
+step
+    .goto Zephras Isle,65.05,36.66
+    .complete 94488,1 --1/1 Commander Haalien's Severed Head
+step
+    .goto Zephras Isle,64.77,37.11
+    .accept 94490 >>Accept Ripped Missive
+
+step
+    .goto Zephras Isle,61.76,39.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elegael Thornpaw|r.
+    .turnin 94490 >>Turn in Ripped Missive
+    .target Elegael Thornpaw
+step
+    .goto Zephras Isle,61.76,39.13
+    .turnin 94488 >>Turn in The Ties That Bind
+
+step
+    .goto Zephras Isle,61.76,39.13
+    .accept 94491 >>Accept The Fate of the Den
+
+step
+    .goto Zephras Isle,63.80,36.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vayn Moongaze|r.
+    .turnin 93165 >>Turn in Mercy Falls on Deaf Ears
+    .target Vayn Moongaze
+step
+    .goto Zephras Isle,64.49,34.74
+    
+    .complete 94489,2 --1/1 Find Jorel Windsinger
+    .skipgossipid 137859
+
+
+step
+    .goto Zephras Isle,65.91,33.54
+    
+    .complete 94489,1 --7/7 Injured Druids healed
+step
+    .goto Zephras Isle,61.77,39.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elegael Thornpaw|r.
+    .turnin 94489 >>Turn in The Wounds of Betrayal
+    .target Elegael Thornpaw
+step
+    .goto Zephras Isle,63.80,35.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vayn Moongaze|r.
+    .turnin 93459 >>Turn in More Al'Aketh Ears
+    .target Vayn Moongaze 
+
+
+step
+    .goto Zephras Isle,56.65,29.37
+    .complete 94896,1 --8/8 Abandoned Belongings
+step
+    .goto Zephras Isle,58.59,31.08
+    
+    .complete 93172,1 --10/10 Wind Hollow freed
+step
+    .goto Zephras Isle,57.04,29.36
+    .complete 94897,1 --1/1 Resaan's Heirloom
+    .skipgossipid 138670
+
+step
+    .goto Zephras Isle,53.97,38.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strange Hermit|r.
+    .turnin 93172 >>Turn in Free the Hollows
+    .target Strange Hermit
+
+
+step
+    .goto Zephras Isle,63.98,75.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze|r.
+    .turnin 94491 >>Turn in The Fate of the Den
+    .target Lotheluum Starbreeze
+step
+    .goto Zephras Isle,65.95,74.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ealaane Nimbuswalker|r.
+    .turnin 94896 >>Turn in Aid For The Refugees
+    .target Ealaane Nimbuswalker
+step
+    .goto Zephras Isle,65.95,74.31
+    .turnin 94897 >>Turn in The Fate of a Loved One
+
+step
+    .goto Zephras Isle,66.34,79.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iaadaria Bitterwind|r.
+    .turnin 92741 >>Turn in Unwelcome Visitors
+    .target Iaadaria Bitterwind
+
+
+step
+    .goto Alterac Mountains,12.30,56.31
+    .turnin 94946 >>Turn in The Magical City of Dalaran
+
+step
+    .goto Alterac Mountains,12.30,56.31
+    .accept 94947 >>Accept Welcome to Azeroth
+step
+    .goto Alterac Mountains,12.05,56.25
+    .complete 94947,1 --Take the Skyborne Portal to Stormwind
+step
+    .goto Stormwind City,80.19,38.36
+    .turnin 94947 >>Turn in Welcome to Azeroth
+
+step
+    .goto Stormwind City,80.19,38.36
+    .accept 93963 >>Accept Exploring the Alliance
+step
+    .goto Stormwind City,78.98,44.98
+    
+    .complete 93963,1 --1/1 Recieve Instructions from Randal Emerson
+    .skipgossipid 142485
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1086,6 +1470,7 @@ RXPGuides.RegisterGuide([[
     .goto 2521,63.99,46.19
 
     .goto 2521,63.91,74.17
+    .goto 2521,58.84,33.55
 ]])
 RXPGuides.RegisterGuide([[
 #classic
@@ -1097,6 +1482,10 @@ RXPGuides.RegisterGuide([[
 
 --Windstone
     .goto 2521,62.99,45.74
+    .goto 2521,65.91,36.1
+    .goto 2521,63.95,38.05
+    .goto 2521,64.64,39.92
+    .goto 2521,58.97,35.35
 ]])
 RXPGuides.RegisterGuide([[
 #classic
@@ -1119,4 +1508,15 @@ RXPGuides.RegisterGuide([[
 
 --Trainers
         .goto 2521,53.97,38.9 -- engineering
+]])
+RXPGuides.RegisterGuide([[
+#classic
+#version 1
+#name 1-10 Zephras Isle
+#displayname 1-10 Skyborne22223423
+#group RestedXP Alliance 1-20
+#internal
+
+--Treasure
+ .goto 2521,48.53,20.6
 ]])
