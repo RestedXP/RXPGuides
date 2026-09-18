@@ -25,6 +25,7 @@ step
     .goto 2521,43.44,24.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
     .accept 92462 >>Accept Infestation Investigation
+    .useitem 264908
     .target Elatrell Featherlight
 step
     #hidewindow
@@ -60,10 +61,15 @@ step
     .accept 92463 >>Accept The Cirrusfly Queen
     .target Elatrell Featherlight
     .macro Cancel Walk on Air,132745 >>/cancelaura Walk on Air
+step << Warrior
+    .goto 2521,43.66,24.13
+    .trainer >> Train your class spells
+    .skipgossipid 136813,1
+    .target Blademaster Ren
 step
     #completewith next
     #label Anchors of Zephras
-    .goto 2521,43.53,24.34,10,0
+    .goto 2521,43.53,24.34,20,0
     .goto 2521,43.83,24.13,10,0
     .goto 2521,43.78,24.38,5,0
     .goto 2521,43.66,24.25,5,0
@@ -123,11 +129,7 @@ step
     .accept 92464 >>Accept Elemental Unrest
     .accept 92481 >>Accept A Student of the Arcane << Mage
     .accept 92483 >>Accept At Home in the Shadows << Rogue
-step << Mage
-    .goto 2521,41.55,23.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorii Brightwhisper|r.
-    .turnin 92481 >>Turn in A Student of the Arcane
-    .target Dorii Brightwhisper
+    .accept 92532 >>Accept The Warrior's Path << Rogue
 step
     #completewith next
     #label Harvesting Windstones
@@ -159,6 +161,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     .complete 93552,1 --15/15 Windstone Cluster
 step
+    #arrowtext Don't use |T236219:0|t[Read Ley Line] we need it soon
     .goto 2521,48.41,28.37
     >>Kill |cRXP_ENEMY_Cirrusfly Queen|r.
     .complete 92463,1 --1/1 Cirrusfly Queen slain
@@ -192,7 +195,7 @@ step
     #label Read Ley Line
     .goto 2521,46.34,17.91
     >>Use |T236219:0|t[Read Ley Line] near the Thendal Grove Ley Line
-    *|cRXP_WARN_Found throughout the zone. Use |T236219:0|t[Read Ley Line] near one to gain 100% Mana and Food Regen for 15 min instead of 15 sec.|r
+    *|cRXP_WARN_Found throughout the zone|r |cRXP_WARN_Use|r |T236219:0|t[Read Ley Line] |cRXP_WARN_near one to gain 100% Mana and Food Regen for 15 min instead of 15 sec|r.
     .complete 92597,1 --Use your Read Ley Line ability near the Thendal Grove Ley Line
     .macro Read Ley Line,236219 >>/use Read Ley Line
 step
@@ -233,7 +236,7 @@ step
     #label Harvesting Windstones2
     .goto 2521,43.89,22.27,40,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
-    *|cRXP_WARN_Choose between mining,herbing or skinning|r
+    *|cRXP_WARN_Choose between mining,herbing or skinning profession|r
     .turnin 93552 >>Turn in Harvesting Windstones
     .target Dalia the Collector
 step
@@ -244,7 +247,7 @@ step
     #requires Harvesting Windstones2
     .goto 2521,43.37,23.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
-    *|cRXP_WARN_Choose between mining,herbing or skinning|r
+    *|cRXP_WARN_Choose between mining,herbing or skinning profession|r
     .turnin 93552 >>Turn in Harvesting Windstones
     .target Dalia the Collector
 step << Alliance
@@ -252,34 +255,41 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
     .turnin 92597 >>Turn in Reading the Ley Lines
     .target Falorne Fallwind
+    .useitem 247840
+    .useitem 247846
+    .useitem 247841
 step
     .goto 2521,43.44,24.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
     .turnin 92463 >>Turn in The Cirrusfly Queen
     .target Elatrell Featherlight
-    .useitem 247840
 step << Rogue
     .goto 2521,43.74,24.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Akeri Duskblade|r.
     .turnin 92483 >>Turn in At Home in the Shadows
     .target Akeri Duskblade
-step << Rogue
     .trainer >> Train your class spells
     .skipgossipid 136810,1
 step << Warrior
     .goto 2521,43.66,24.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blademaster Ren|r.
-    .turnin 92483 >>Turn in At Home in the Shadows
+    .turnin 92532 >>Turn in The Warrior's Path
     .target Blademaster Ren
-step << Warrior
     .trainer >> Train your class spells
-    .skipgossipid 136810,1
+    .skipgossipid 136813,1
 step
     .goto 2521,42.07,23.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker|r.
     .turnin 92469 >>Turn in Return to Rorian
     .accept 92471 >>Accept Aetheen of the Gales -- Unlocks at 4
     .target Rorian the Dayseeker
+step << Mage
+    .goto 2521,41.55,23.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorii Brightwhisper|r.
+    .turnin 92481 >>Turn in A Student of the Arcane
+    .trainer >> Train your class spells
+    .skipgossipid 136813,1
+    .target Dorii Brightwhisper
 step
     .goto 2521,42.76,23.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aetheen of the Gales|r.
@@ -302,34 +312,20 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valreaa Valewind|r.
     .accept 92473 >>Accept Aggressive Encroachment
     .target Valreaa Valewind
-
-
-
-
-
 step
-    #completewith next
-    #label Scrawny Ursera Claw2
+    #loop
     .goto 2521,41.05,25.7,30,0
     .goto 2521,40.4,26.9,30,0
     .goto 2521,39.7,27.03,30,0
-    .goto 2521,39.04,27.54,30,0
-    .goto 2521,37.94,26.82,25,0
+    .goto 2521,37.25,29.72,40,0
+    .goto 2521,38.17,27.84,30,0
+    .goto 2521,37.67,26.31,30,0
+    .goto 2521,38.44,27.35,30,0
     >>Kill |cRXP_ENEMY_Bears|r. Loot them for |T132136:0|t[|cRXP_LOOT_Scrawny Ursera Claw|r].
     .complete 92473,1 --6/6 Scrawny Ursera Claw
     .mob Scrawny Ursera
 step
-    #completewith Scrawny Ursera Claw2
-    .goto 2521,35.82,25.57,150 >>Enter the cave
-step
-    #requires Scrawny Ursera Claw2
-    #completewith Head of Urs'anah
-    >>Kill |cRXP_ENEMY_Bears|r. Loot them for |T132136:0|t[|cRXP_LOOT_Scrawny Ursera Claw|r].
-    .complete 92473,1 --6/6 Scrawny Ursera Claw
-    .mob Scrawny Ursera
-step
-    #requires Scrawny Ursera Claw2
-    #completewith Head of Urs'anah
+    #completewith next
     >>Kill |cRXP_ENEMY_Ursera Scavenger|r.
     .complete 92470,1 --8/8 Ursera Scavenger slain
     .mob Ursera Scavenger
@@ -344,8 +340,6 @@ step
     .complete 92470,2 --1/1 Head of Urs'anah
     .mob Urs'anah
 step
-    #hidewindow
-    #completewith Scrawny Ursera Claw
     #loop
     .goto 2521,36.2,25,30,0
     .goto 2521,36.39,23.79,30,0
@@ -355,39 +349,24 @@ step
     .goto 2521,38.12,27.71,30,0
     .goto 2521,37.7,29.46,30,0
     .goto 2521,40.79,26.64,30,0
-    +1
-step
-    #completewith next
-    >>Kill |cRXP_ENEMY_Bears|r. Loot them for |T132136:0|t[|cRXP_LOOT_Scrawny Ursera Claw|r].
-    .complete 92473,1 --6/6 Scrawny Ursera Claw
-    .mob Scrawny Ursera
-step
-    #requires Scrawny Ursera Claw
     >>Kill |cRXP_ENEMY_Ursera Scavenger|r.
     .complete 92470,1 --8/8 Ursera Scavenger slain
     .mob Ursera Scavenger
-step    
-    #label Scrawny Ursera Claw
-    >>Kill |cRXP_ENEMY_Bears|r. Loot them for |T132136:0|t[|cRXP_LOOT_Scrawny Ursera Claw|r].
-    .complete 92473,1 --6/6 Scrawny Ursera Claw
-    .mob Scrawny Ursera
 step
-    .isOnQuest 92473
+    #completewith next
+    #label Turn in Foul Matriarch
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aetheen of the Gales|r.
+    .turnin 92470 >>Turn in Foul Matriarch
+step
+    #completewith Turn in Foul Matriarch
     #loop
-    .goto 2521,36.53,23.81,30,0
+    .goto 2521,36.47,23.67,30,0
     .goto 2521,35.88,23.79,30,0
     .goto 2521,35.71,25.7,30,0
-    .deathskip >>Die to mobs or run uphill and jump down repeatedly 
+    .deathskip >>Die to mobs and ressurect at the graveyard
     .subzoneskip Thendal Grove
 step
-    .goto 2521,38.31,30.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanaa Nightwind|r.
-    .accept 92544 >>Accept Al'Aketh Thugs
-    .target Hanaa Nightwind
-
-
-
-step
+    #requires Turn in Foul Matriarch
     .goto 2521,42.76,23.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aetheen of the Gales|r.
     .turnin 92470 >>Turn in Foul Matriarch
@@ -402,7 +381,7 @@ step
     .target Valreaa Valewind
 step
     #completewith Aggressive Encroachment2
-    .goto 2521,43.41,23.51
+    .goto 2521,42.76,24.52
     .vendor >>|cRXP_WARN_Optional: Buy Reagent Bag, Profession tools and Vendor trash|r
 step
     #requires Aggressive Encroachment2
@@ -411,6 +390,12 @@ step
     .turnin 92473 >>Turn in Aggressive Encroachment
     .target Valreaa Valewind
 
+
+    -- step
+--     .goto 2521,38.31,30.17
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanaa Nightwind|r.
+--     .accept 92544 >>Accept Al'Aketh Thugs
+--     .target Hanaa Nightwind
 step
     .goto 2521,36.49,33.30
     >>Kill |cRXP_ENEMY_Malduko Cloudcrush|r.
