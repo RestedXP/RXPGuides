@@ -290,7 +290,7 @@ if not oldversion or oldversion < 27 then
         fixupZones()
 
         -- try to fill in holes in the map list
-        for i = 1, 2500 do
+        for i = 1, 2530 do
             if not mapData[i] then
                 local mapInfo = C_Map.GetMapInfo(i)
                 if mapInfo and mapInfo.name then
