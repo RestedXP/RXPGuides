@@ -20,15 +20,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker|r.
     .turnin 92460 >>Turn in Coming of Age
     .target Rorian the Dayseeker
-step
-    .goto 2521,42.07,23.49
     .accept 92461 >>Accept Harmony in Balance
 step
     .goto 2521,43.44,24.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
     .accept 92462 >>Accept Infestation Investigation
     .target Elatrell Featherlight
-
 step
     #hidewindow
     #completewith Juvenile Vuldren
@@ -41,7 +38,6 @@ step
     .goto 2521,43.84,28.39,35,0
     .goto 2521,42.88,27.52,35,0
     +1
-
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Juvenile Vuldren|r.
@@ -59,30 +55,33 @@ step
 step
     .goto 2521,43.44,24.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
+    *|cRXP_WARN_Don't use as we |T132845:0|t[Walk on Air] need it soon|r.
     .turnin 92462 >>Turn in Infestation Investigation
     .accept 92463 >>Accept The Cirrusfly Queen
     .target Elatrell Featherlight
+    .macro Cancel Walk on Air,132745 >>/cancelaura Walk on Air
 step
     #completewith next
     #label Anchors of Zephras
     .goto 2521,43.53,24.34,10,0
-    .goto 2521,43.83,24.13,5,0
+    .goto 2521,43.83,24.13,10,0
     .goto 2521,43.78,24.38,5,0
     .goto 2521,43.66,24.25,5,0
     .goto 2521,43.75,24.09,5,0
     .goto 2521,43.84,24.3,5,0
     .goto 2521,43.66,24.23,5,0
     .goto 2521,43.83,24.18,5,0
+    .goto 2521,43.83,24.32,8,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye|r.
     .accept 94414 >>Accept The Anchors of Zephras
     .target Halaan Hawk-Eye
 step
     #completewith Anchors of Zephras
-    .goto 2521,43.76,24.38,8 >>Enter the building and climb the spiral staircase.
+    .goto 2521,43.83,23.66,15 >>Enter the building and climb the spiral staircase.
 step
     #requires Anchors of Zephras
     .goto 2521,43.80,24.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye|r at the top of the tower.
     .accept 94414 >>Accept The Anchors of Zephras
     .target Halaan Hawk-Eye
 step
@@ -145,7 +144,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
     .accept 93552 >>Accept Harvesting Windstones
     .target Dalia the Collector
-step
+step << Alliance
     .goto 2521,43.33,24.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
     .accept 92597 >>Accept Reading the Ley Lines
@@ -154,6 +153,9 @@ step
     #completewith next
     .goto 2521,43.82,25.41,10,0
     .goto 2521,44.23,24.96,10,0
+    .goto 2521,44.28,27.32,25,0
+    .goto 2521,45.33,29.15,30,0
+    .goto 2521,46.77,27.96,30,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     .complete 93552,1 --15/15 Windstone Cluster
 step
@@ -180,7 +182,8 @@ step
     .complete 93552,1 --15/15 Windstone Cluster
 step
     #completewith Read Ley Line
-    >>Kill |cRXP_ENEMY_Al'Aketh Convert| and |cRXP_ENEMY_Roiling Winds|r.
+    >>Kill |cRXP_ENEMY_Al'Aketh Convert|r and |cRXP_ENEMY_Roiling Winds|r.
+    *|cRXP_WARN_Priotize |cRXP_ENEMY_Roiling Winds|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
     .complete 92465,2 --6/6 Roiling Winds destroyed
     .mob Al'Aketh Convert
@@ -188,13 +191,13 @@ step
 step
     #label Read Ley Line
     .goto 2521,46.34,17.91
-    >>Use |T135975:0|t[Read Ley Line] near the Thendal Grove Ley Line
-    *|cRXP_WARN_Found throughout the zone. Use |T135975:0|t[Read Ley Line] near one to gain 100% Mana and Food Regen for 15 min instead of 15 sec.|r
+    >>Use |T236219:0|t[Read Ley Line] near the Thendal Grove Ley Line
+    *|cRXP_WARN_Found throughout the zone. Use |T236219:0|t[Read Ley Line] near one to gain 100% Mana and Food Regen for 15 min instead of 15 sec.|r
     .complete 92597,1 --Use your Read Ley Line ability near the Thendal Grove Ley Line
-    .macro Read Ley Line, 132844 >>/use Read Ley Line
+    .macro Read Ley Line,236219 >>/use Read Ley Line
 step
     #hidewindow
-    #completewith Al'Aketh Convert
+    #completewith Windstone Cluster
     #loop
     .goto 2521,46.85,17.68,30,0
     .goto 2521,47.22,19,30,0
@@ -208,11 +211,16 @@ step
     .complete 93552,1 --15/15 Windstone Cluster
 step
     #label Al'Aketh Convert
-    >>Kill |cRXP_ENEMY_Al'Aketh Convert| and |cRXP_ENEMY_Roiling Winds|r.
+    >>Kill |cRXP_ENEMY_Al'Aketh Convert|r and |cRXP_ENEMY_Roiling Winds|r.
+    *|cRXP_WARN_Priotize |cRXP_ENEMY_Roiling Winds|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
     .complete 92465,2 --6/6 Roiling Winds destroyed
     .mob Al'Aketh Convert
     .mob Roiling Winds
+step
+    #label Windstone Cluster
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
+    .complete 93552,1 --15/15 Windstone Cluster
 step
     .goto 2521,47.29,21.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yala Windwatcher|r.
@@ -221,41 +229,34 @@ step
     .target Yala Windwatcher
 step
     #completewith next
-    .goto 2521,44.17,22.28,30,0
-    .goto 2521,42.83,22.27,30,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
-    .complete 93552,1 --15/15 Windstone Cluster
-    --deathskip possible launch def not
+    #label Harvesting Windstones2
+    .goto 2521,43.89,22.27,40,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
+    *|cRXP_WARN_Choose between mining,herbing or skinning|r
+    .turnin 93552 >>Turn in Harvesting Windstones
+    .target Dalia the Collector
 step
-    .goto 2521,43.33,24.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
-    .turnin 92597 >>Turn in Reading the Ley Lines
-    .target Falorne Fallwind
-    .turnin 92469 >>Turn in Return to Rorian
-    .accept 92471 >>Accept Aetheen of the Gales
+    #completewith Harvesting Windstones2
+    #hidewindow
+    .goto 2521,43.37,23.98,80 >>1
 step
-    #completewith next
-    .goto 2521,41.93,23.74,10,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
-    .complete 93552,1 --15/15 Windstone Cluster
-    --deathskip possible launch def not
-step
-    .goto 2521,42.76,23.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aetheen of the Gales|r.
-    .turnin 92471 >>Turn in Aetheen of the Gales
-    .target Aetheen of the Gales
-step
-    #completewith next
-    .goto 2521,41.93,23.74,10,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
-    .complete 93552,1 --15/15 Windstone Cluster
-    --deathskip possible launch def not
-step
+    #requires Harvesting Windstones2
     .goto 2521,43.37,23.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
     *|cRXP_WARN_Choose between mining,herbing or skinning|r
     .turnin 93552 >>Turn in Harvesting Windstones
     .target Dalia the Collector
+step
+    .goto 2521,43.44,24.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
+    .turnin 92463 >>Turn in The Cirrusfly Queen
+    .target Elatrell Featherlight
+    .accept 92470 >>Accept Foul Matriarch
+step << Alliance
+    .goto 2521,43.33,24.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
+    .turnin 92597 >>Turn in Reading the Ley Lines
+    .target Falorne Fallwind
 step << Rogue
     .goto 2521,43.74,24.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Akeri Duskblade|r.
@@ -264,12 +265,25 @@ step << Rogue
 step << Rogue
     .trainer >> Train your class spells
     .skipgossipid 136810,1
+step << Warrior
+    .goto 2521,43.66,24.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blademaster Ren|r.
+    .turnin 92483 >>Turn in At Home in the Shadows
+    .target Blademaster Ren
+step << Warrior
+    .trainer >> Train your class spells
+    .skipgossipid 136810,1
 step
-    .goto 2521,43.44,24.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
-    .turnin 92463 >>Turn in The Cirrusfly Queen
-    .target Elatrell Featherlight
-    .accept 92470 >>Accept Foul Matriarch
+    .goto 2521,42.07,23.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker|r.
+    .turnin 92469 >>Turn in Return to Rorian
+    .accept 92471 >>Accept Aetheen of the Gales -- Unlocks at 4
+    .target Rorian the Dayseeker
+step
+    .goto 2521,42.76,23.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aetheen of the Gales|r.
+    .turnin 92471 >>Turn in Aetheen of the Gales
+    .target Aetheen of the Gales
 step
     #completewith next
     #label Aggressive Encroachment
@@ -286,6 +300,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valreaa Valewind|r.
     .accept 92473 >>Accept Aggressive Encroachment
     .target Valreaa Valewind
+
+
+
+
+
 step
     #completewith next
     #label Scrawny Ursera Claw
