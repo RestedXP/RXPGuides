@@ -199,8 +199,9 @@ step
     #hidewindow
     #completewith Windstone Cluster
     #loop
-    .goto 2521,46.85,17.68,30,0
+    .goto 2521,46.85,17.68,15,0
     .goto 2521,47.22,19,30,0
+    .goto 2521,48.3,19.06,30,0
     .goto 2521,48.97,20.86,40,0
     .goto 2521,47.41,21.14,30,0
     .goto 2521,45.82,19.09,40,0
@@ -238,7 +239,7 @@ step
 step
     #completewith Harvesting Windstones2
     #hidewindow
-    .goto 2521,43.37,23.98,80 >>1
+    .goto 2521,43.37,23.98,60 >>1
 step
     #requires Harvesting Windstones2
     .goto 2521,43.37,23.98
@@ -246,17 +247,17 @@ step
     *|cRXP_WARN_Choose between mining,herbing or skinning|r
     .turnin 93552 >>Turn in Harvesting Windstones
     .target Dalia the Collector
-step
-    .goto 2521,43.44,24.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
-    .turnin 92463 >>Turn in The Cirrusfly Queen
-    .target Elatrell Featherlight
-    .accept 92470 >>Accept Foul Matriarch
 step << Alliance
     .goto 2521,43.33,24.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
     .turnin 92597 >>Turn in Reading the Ley Lines
     .target Falorne Fallwind
+step
+    .goto 2521,43.44,24.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
+    .turnin 92463 >>Turn in The Cirrusfly Queen
+    .target Elatrell Featherlight
+    .useitem 247840
 step << Rogue
     .goto 2521,43.74,24.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Akeri Duskblade|r.
@@ -283,6 +284,7 @@ step
     .goto 2521,42.76,23.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aetheen of the Gales|r.
     .turnin 92471 >>Turn in Aetheen of the Gales
+    .accept 92470 >>Accept Foul Matriarch
     .target Aetheen of the Gales
 step
     #completewith next
@@ -292,7 +294,7 @@ step
     .target Valreaa Valewind
 step
     #completewith Aggressive Encroachment
-    .goto 2521,43.41,23.51
+    .goto 2521,42.76,24.5
     .vendor >>|cRXP_WARN_Optional: Buy Reagent Bag, Profession tools and Vendor trash|r
 step
     #requires Aggressive Encroachment
