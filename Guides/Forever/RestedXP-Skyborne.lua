@@ -239,9 +239,11 @@ step
     .mob Al'Aketh Convert
     .mob Roiling Winds
 step
-    #label Windstone Cluster
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     .complete 93552,1 --15/15 Windstone Cluster
+step
+    #label Windstone Cluster
+    .xp 3+300 >>Grind to 300+/1400xp
 step
     .goto 2521,47.29,21.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yala Windwatcher|r.
