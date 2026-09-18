@@ -532,6 +532,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanaa Nightwind|r.
     .turnin 92544 >>Turn in Al'Aketh Thugs
     .target Hanaa Nightwind
+
+
 step
     .goto 2521,41.67,44.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind|r.
@@ -550,15 +552,26 @@ step
     .target Raan Wildwind
 step
     .train 2575,3
-    .goto 2521,41.67,44.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind|r.
+    .goto 2521,41.658,44.784
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind::263664|r
     .accept 97970 >>Accept Camping 101: Mining
-    .target Raan Wildwind
+    .target Raan Wildwind::263664
 step
-    .goto 2521,41.67,44.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind|r.
+    .train 8613,3
+    .goto 2521,41.658,44.784
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind::263664|r
+    .accept 97971 >>Accept Camping 101: Skinning
+    .target Raan Wildwind::263664
+step
+    .goto 2521,41.658,44.784
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind::263664|r
     .accept 96646 >>Accept Camping 101: Cooking
-    .target Raan Wildwind
+    .target Raan Wildwind::263664
+step << Shaman
+    .goto 2521,43.454,44.872
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aarnor Galestrike::254082|r
+    .trainer >> Train your class spells
+    .target Aarnor Galestrike::254082
 step
     .goto 2521,45.67,45.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
@@ -588,6 +601,7 @@ step << Horde
     .target Illaya Amberwind
 step << Horde
     .goto 2521,43.52,44.78
+    >>Wait for the roleplay.
     .complete 92595,1 --1/1 Listen to Illaya
 step << Horde
     .goto 2521,43.52,44.78
@@ -608,6 +622,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_the Innkeeper|r.
     .home >>Set your Hearthstone to Shen'dar Village
     .target the Innkeeper
+step
+    .train 8613,3
+    .isOnQuest 97971
+    .isQuestComplete 97971
+    .goto 2521,43.289,43.369
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mendalass Tattermend::257024|r
+    .turnin 97971 >>Turn in Camping 101: Skinning
+    .target Mendalass Tattermend::257024
 step
     .goto 2521,45.67,45.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
@@ -632,6 +654,17 @@ step
     .accept 93951 >>Accept A Little Beauty
     .target Taleen Shimmerthread
 step
+    .isOnQuest 96646
+    .goto 2521,43.850,43.840
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
+    .complete 96646,1 --|Learn cooking from Zerril Softbreeze in Shen'dar Village
+    .target Zerril Softbreeze
+step
+    .goto 2521,43.850,43.840
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
+    .turnin 96646 >>Turn in Camping 101: Cooking
+    .target Zerril Softbreeze::251905
+step
     .goto 2521,43.85,43.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze|r.
     .accept 92553 >>Accept Restocking the Larders
@@ -646,89 +679,148 @@ step
     .accept 93318 >>Accept WANTED: Vulgara the Insatiable
     .target Bounty Available: Vulgara the Insatiable!
 step
-    .goto 2521,44.45,39.44
+    .goto 2521,43.073,46.306
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleeia Tattermend::257018|r.
+    .train 3273 >> Train First Aid
+    .target Naleeia Tattermend::257018
+step
+    >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
+    .mob Prideclaw::251245
 step
-    .goto 2521,38.20,44.47
+    >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
     .complete 92553,2 --8/8 Strider Meat
-step
+    .complete 92553,1 --3/3 Small Egg
+    .mob Galestrider::251661
+step << Horde
+    .goto 2521,46.411,38.562
+    >>Kill the |cRXP_ENEMY_High Order Apprentices::257521|r.
+    .complete 94411,1 --|6/6 High Order Apprentice defeated
+    .mob High Order Apprentice::257521
+step << Alliance
     .goto 2521,39.15,47.74
     .complete 94413,1 --6/6 Windshaper Novice Seer defeated
+    .mob Windshaper Novice Seer
 step
-    .goto 2521,38.36,57.04
-    >>Kill |cRXP_ENEMY_Hippogryph Youth|r.
-    .complete 92516,1 --8/8 Hippogryph Youth slain
-    .mob Hippogryph Youth
+    #completewith BadwindBennicB
+    >>Kill |cRXP_ENEMY_Highlands Bandits|r. Loot them for the |T5172975:0|t[|cRXP_LOOT_Pilfered Windstone|r].
+    .complete 92517,1 --|10/10 Highlands Bandit slain
+    .complete 93319,1 --|10/10 Pilfered Windstone
+    .mob Highlands Bandit::251918
 step
-    .goto 2521,33.95,55.34
-    .complete 92553,1 --3/3 Small Egg
-
-
-step
-    .goto 2521,50.76,33.98
-    >>Kill |cRXP_ENEMY_Highlands Bandit|r.
-    .complete 92517,1 --10/10 Highlands Bandit slain
-    .mob Highlands Bandit
-step
-    .goto 2521,50.64,34.26
+    #completewith next
+    #label BadwindBennicA
     >>Kill |cRXP_ENEMY_"Badwind" Bennic|r.
-    .complete 92517,2 --1/1 "Badwind" Bennic slain
-    .mob "Badwind" Bennic
+    .complete 92517,2 --|1/1 "Badwind" Bennic slain
+    .mob "Badwind" Bennic::255534
 step
-    .goto 2521,49.16,38.24
-    .complete 93319,1 --10/10 Pilfered Windstone
+    #completewith BadwindBennicA
+    .goto 2521,48.813,36.434,10,0
+    .goto 2521,49.355,35.793,10,0
+    .goto 2521,49.720,36.030,10,0
+    .goto 2521,49.982,35.679,10,0
+    .goto 2521,49.537,34.325,10 >>Enter the cave
+step
+    #requires BadwindBennicA
+    #label BadwindBennicB
+    .goto 2521,50.680,34.214
+    >>Kill |cRXP_ENEMY_"Badwind" Bennic|r.
+    .complete 92517,2 --|1/1 "Badwind" Bennic slain
+    .mob "Badwind" Bennic::255534
+step
+    #loop
+    .goto 2521,49.537,34.325,35,0 -- Cave Entrance
+    .goto 2521,47.645,36.289,35,0
+    .goto 2521,49.751,38.962,35,0
+    .goto 2521,49.537,34.325,35,0 -- Cave Entrance
+    .goto 2521,50.680,34.214,35,0 -- Badwind Bennic Location
+    >>Kill |cRXP_ENEMY_Highlands Bandits|r. Loot them for the |T5172975:0|t[|cRXP_LOOT_Pilfered Windstone|r].
+    .complete 92517,1 --|10/10 Highlands Bandit slain
+    .complete 93319,1 --|10/10 Pilfered Windstone
+    .mob Highlands Bandit::251918
+step
+    #completewith HippogryphHarrassmentA
+    #hidewindow
+    #loop
+    .goto 2521,33.852,55.527,35,0
+    .goto 2521,34.208,58.154,35,0
+    .goto 2521,37.619,58.316,35,0
+    .goto 2521,38.605,56.936,35,0
+    .goto 2521,38.264,55.126,35,0
+    .goto 2521,37.749,53.055,35,0
+    .goto 2521,36.449,50.724,35,0
+    .goto 2521,34.211,51.432,35,0
+    .goto 2521,36.641,52.578,35,0
+    .goto 2521,33.179,54.345,35,0
+    +1
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Hippogryph Youth|r, |cRXP_ENEMY_Hippogryph Protector|r and the |cRXP_ENEMY_Hippogryph Matriarch|r.
+    .complete 92516,1 --|8/8 Hippogryph Youth slain
+    .complete 92516,2 --|6/6 Hippogryph Protector slain
+    .complete 92516,3 --|1/1 Hippogryph Matriarch slain
+    .mob Hippogryph Matriarch::251261
+    .mob Hippogryph Protector::251284
+    .mob Hippogryph Youth::251291
+step
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Hippogryph Downs|r.
+    .complete 93951,1 --|8/8 Hippogryph Down
+step
+    #label HippogryphHarrassmentA
+    >>Kill |cRXP_ENEMY_Hippogryph Youth|r, |cRXP_ENEMY_Hippogryph Protector|r and the |cRXP_ENEMY_Hippogryph Matriarch|r.
+    .complete 92516,1 --|8/8 Hippogryph Youth slain
+    .complete 92516,2 --|6/6 Hippogryph Protector slain
+    .complete 92516,3 --|1/1 Hippogryph Matriarch slain
+    .mob Hippogryph Matriarch::251261
+    .mob Hippogryph Protector::251284
+    .mob Hippogryph Youth::251291
 step
     .goto 2521,42.75,52.68
+    >>Kill |cRXP_ENEMY_Vulgara|r. Loot it for |T1:0|t[|cRXP_LOOT_Vulgar's Head|r].
     .complete 93318,1 --1/1 Vulgara's Head
-
-
+    .mob Vulgara
 step
-    .goto 2521,43.85,43.86
-    .complete 96646,1 --Learn cooking from Zerril Softbreeze in Shen'dar Village
+    .goto 2521,43.513,44.782
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illaya Amberwind::251902|r
+    .target Illaya Amberwind::251902
+    .turnin 94411 >>Turn in Meddlesome Mages
 step
-    .goto 2521,43.85,43.85
-    .turnin 96646 >>Turn in Camping 101: Cooking
-
-step
-    .goto 2521,43.85,43.85
+    .goto 2521,43.851,43.848
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
+    .target Zerril Softbreeze::251905
     .turnin 92553 >>Turn in Restocking the Larders
-
 step
-    .goto 2521,44.87,44.19
+    .goto 2521,44.873,44.187
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taleen Shimmerthread::251991|r
+    .target Taleen Shimmerthread::251991
     .turnin 93951 >>Turn in A Little Beauty
-
 step
-    .goto 2521,44.68,44.51
+    .goto 2521,44.686,44.518
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Indari Sunseam::251993|r
+    .target Indari Sunseam::251993
     .turnin 92515 >>Turn in The Problem With Prideclaws
-
 step
-    .goto 2521,44.46,44.97
+    .goto 2521,44.465,44.966
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teeri Wellwind::251906|r
+    .target Teeri Wellwind::251906
     .turnin 92516 >>Turn in Hippogryph Harrassment
-step
-    .goto 2521,44.46,44.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teeri Wellwind|r.
     .turnin 93319 >>Turn in Pilfered Windstones
-    .target Teeri Wellwind
 step
-    .goto 2521,45.24,45.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danarii Bellowveil|r.
+    .goto 2521,45.234,45.186
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danarii Bellowveil::252172|r
+    .target Danarii Bellowveil::252172
     .turnin 93318 >>Turn in WANTED: Vulgara the Insatiable
-    .target Danarii Bellowveil
 step
-    .goto 2521,45.67,45.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
+    .goto 2521,45.667,45.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda::251523|r
+    .target Constable Aonda::251523
     .turnin 92517 >>Turn in The Criminal Element
-    .target Constable Aonda
-step
-    .goto 2521,45.67,45.50
     .accept 93036 >>Accept Infiltrating the Cult
 step
-    .goto 2521,44.82,45.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sania Silverstream|r.
+    .goto 2521,44.831,45.515
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sania Silverstream::251904|r
+    .target Sania Silverstream::251904
     .turnin 93036 >>Turn in Infiltrating the Cult
-    .target Sania Silverstream
-step
-    .goto 2521,44.82,45.50
     .accept 92529 >>Accept Falaath Village
 step
     .goto 2521,46.89,56.24
