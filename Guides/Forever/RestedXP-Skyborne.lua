@@ -1,9 +1,9 @@
 RXPGuides.RegisterGuide([[
 #classic
 #version 1
-#name 1-10 Zephras Isle
-#displayname 1-10 Skyborne << Alliance
-#displayname 1-12 Skyborne << Horde
+#name 1-14 Zephras Isle
+#displayname 1-14 Skyborne << Alliance
+#displayname 1-14 Skyborne << Horde
 #group RXP Forever (A) << Alliance
 #group RXP Forever (H) << Horde
 #subgroup Speedrun Guide 1-20 << Alliance
@@ -309,31 +309,32 @@ step
 
 step
     #completewith next
-    #label Scrawny Ursera Claw
+    #label Scrawny Ursera Claw2
     .goto 2521,41.05,25.7,30,0
     .goto 2521,40.4,26.9,30,0
     .goto 2521,39.7,27.03,30,0
-    .goto 2521,39.04,27.54,30
-    >>Kill |cRXP_ENEMY_Bears|r. Loot them for |T463856:0|t[|cRXP_LOOT_Scrawny Ursera Claw|r].
+    .goto 2521,39.04,27.54,30,0
+    .goto 2521,37.94,26.82,25,0
+    >>Kill |cRXP_ENEMY_Bears|r. Loot them for |T132136:0|t[|cRXP_LOOT_Scrawny Ursera Claw|r].
     .complete 92473,1 --6/6 Scrawny Ursera Claw
     .mob Scrawny Ursera
 step
-    #completewith Scrawny Ursera Claw
-    .goto 2521,35.82,25.57,100 >>Enter the cave
+    #completewith Scrawny Ursera Claw2
+    .goto 2521,35.82,25.57,150 >>Enter the cave
 step
-    #requires Scrawny Ursera Claw
+    #requires Scrawny Ursera Claw2
     #completewith Head of Urs'anah
-    >>Kill |cRXP_ENEMY_Bears|r. Loot them for |T463856:0|t[|cRXP_LOOT_Scrawny Ursera Claw|r].
+    >>Kill |cRXP_ENEMY_Bears|r. Loot them for |T132136:0|t[|cRXP_LOOT_Scrawny Ursera Claw|r].
     .complete 92473,1 --6/6 Scrawny Ursera Claw
     .mob Scrawny Ursera
 step
-    #requires Scrawny Ursera Claw
+    #requires Scrawny Ursera Claw2
     #completewith Head of Urs'anah
     >>Kill |cRXP_ENEMY_Ursera Scavenger|r.
     .complete 92470,1 --8/8 Ursera Scavenger slain
     .mob Ursera Scavenger
 step
-    #requires Scrawny Ursera Claw
+    #requires Scrawny Ursera Claw2
     #label Head of Urs'anah
     .goto 2521,37.52,25.6,30,0
     .goto 2521,37.36,24.63,30,0
@@ -355,28 +356,29 @@ step
     .goto 2521,37.7,29.46,30,0
     .goto 2521,40.79,26.64,30,0
     +1
-step    
+step
     #completewith next
-    >>Kill |cRXP_ENEMY_Bears|r. Loot them for |T463856:0|t[|cRXP_LOOT_Scrawny Ursera Claw|r].
+    >>Kill |cRXP_ENEMY_Bears|r. Loot them for |T132136:0|t[|cRXP_LOOT_Scrawny Ursera Claw|r].
     .complete 92473,1 --6/6 Scrawny Ursera Claw
     .mob Scrawny Ursera
 step
+    #requires Scrawny Ursera Claw
     >>Kill |cRXP_ENEMY_Ursera Scavenger|r.
     .complete 92470,1 --8/8 Ursera Scavenger slain
     .mob Ursera Scavenger
 step    
     #label Scrawny Ursera Claw
-    >>Kill |cRXP_ENEMY_Bears|r. Loot them for |T463856:0|t[|cRXP_LOOT_Scrawny Ursera Claw|r].
+    >>Kill |cRXP_ENEMY_Bears|r. Loot them for |T132136:0|t[|cRXP_LOOT_Scrawny Ursera Claw|r].
     .complete 92473,1 --6/6 Scrawny Ursera Claw
     .mob Scrawny Ursera
 step
     .isOnQuest 92473
-    .subzoneskip Thendal Grove
     #loop
     .goto 2521,36.53,23.81,30,0
     .goto 2521,35.88,23.79,30,0
     .goto 2521,35.71,25.7,30,0
     .deathskip >>Die to mobs or run uphill and jump down repeatedly 
+    .subzoneskip Thendal Grove
 step
     .goto 2521,38.31,30.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanaa Nightwind|r.
