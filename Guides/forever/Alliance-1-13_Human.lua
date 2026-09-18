@@ -842,7 +842,7 @@ step << Rogue
     .goto Elwynn Forest,43.96,65.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brog Hamfist|r
     .vendor 151 >>|cRXP_BUY_Buy the|r |T135641:0|t[Balanced Throwing Daggers] |cRXP_BUY_from him if you can afford it|r
-    .collect 2946,200 --Collect Balanced Throwing Dagger (200)
+    .collect 2946,1 --Collect Balanced Throwing Dagger (1)
     .disablecheckbox
     .target Brog Hamfist
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
@@ -859,7 +859,7 @@ step << Rogue
     #sticky
     #requires BalancedDaggers1
     #label DeleteOldDaggers
-    .destroy 2947 >> Delete the |T135426:0|t[Small Throwing Knives] from your bags, as they're no longer needed
+    .destroy 2947 >> Delete the |T135426:0|t[Small Throwing Knife] from your bags, as it is no longer needed
 step << Warlock
     #optional
     #completewith next
@@ -2628,7 +2628,7 @@ step << Rogue
     .goto 1453,58.380,61.683
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Mullby|r
     >>|cRXP_BUY_Buy the|r |T135425:0|t[Keen Throwing Knives] |cRXP_BUY_from him|r
-    .collect 3107,200 --Collect Keen Throwing Knife (200)
+    .collect 3107,1 --Collect Keen Throwing Knife (1)
     .target Thurman Mullby
     .xp <10+5890,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
@@ -2638,7 +2638,7 @@ step << Rogue
     .goto 1453,58.380,61.683
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Mullby|r
     >>|cRXP_BUY_Buy the|r |T135641:0|t[Balanced Throwing Daggers] |cRXP_BUY_from him|r
-    .collect 2946,200 --Collect Balanced Throwing Dagger (200)
+    .collect 2946,1 --Collect Balanced Throwing Dagger (1)
     .target Thurman Mullby
     .xp >10+5890,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
@@ -3269,7 +3269,7 @@ step << Warrior
     .goto Ironforge,62.375,88.679
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
     >>|cRXP_BUY_Buy the|r |T135425:0|t[Keen Throwing Knives] |cRXP_BUY_from her|r
-    .collect 3107,200 --Collect Keen Throwing Knife (200)
+    .collect 3107,1 --Collect Keen Throwing Knife (1)
     .target Brenwyn Wintersteel
     .xp <10+7405,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
@@ -3280,7 +3280,7 @@ step << Warrior
     .goto Ironforge,62.375,88.679
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
     >>|cRXP_BUY_Buy the|r |T135641:0|t[Balanced Throwing Daggers] |cRXP_BUY_from her|r
-    .collect 2946,200 --Collect Balanced Throwing Dagger (200)
+    .collect 2946,1 --Collect Balanced Throwing Dagger (1)
     .target Brenwyn Wintersteel
     .xp >10+7405,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
