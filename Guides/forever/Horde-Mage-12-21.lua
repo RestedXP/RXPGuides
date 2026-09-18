@@ -23,7 +23,7 @@ step << Mage
     #completewith next
 	+Note that you have selected the AoE guide. AoE is typically a lot harder than single target mage, and is also slower due to the recent 100% Quest xp changes in SoM
 step
-    .goto 1413/1,-2666.68,-481.94.8
+    .goto 1413/1,-2666.68,-481.94--??
 .target Tonga Runetotem
 >>Talk to |cRXP_FRIENDLY_Tonga Runetotem|r
     .accept 870 >>Accept The Forgotten Pools
@@ -612,7 +612,7 @@ step
 .target Sergra Darkthorn
     .accept 3261 >>Accept Jorn Skyseer
 step
-    .goto 1413/1,-2666.68,-481.94.9
+    .goto 1413/1,-2666.68,-481.94--??
 >>Talk to |cRXP_FRIENDLY_Tonga Runetotem|r
     .turnin 877 >>Turn in The Stagnant Oasis
 .target Tonga Runetotem
@@ -906,7 +906,7 @@ step
     .goto The Barrens,63.1,37.1
     .fly Crossroads >>Fly to Crossroads
 step
-    .goto 1413/1,-2666.68,-481.94.9
+    .goto 1413/1,-2666.68,-481.94--??
 >>Talk to |cRXP_FRIENDLY_Tonga Runetotem|r
     .turnin 880 >>Turn in Altered Beings
 .target Tonga Runetotem

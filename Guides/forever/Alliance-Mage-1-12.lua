@@ -338,7 +338,7 @@ step
     .complete 62,1 --Scout Through the Fargodeep Mine
 step
     >>Kill Goldtooth for Bernice's Necklace
-    .goto 1429/0,88.08,-9744.96.1
+    .goto 1429/0,88.08,-9744.96--??
     .complete 87,1 --Collect Bernice's Necklace  (x1)
 step
     .xp 7+1600 >>Grind until 1600+/4500xp
