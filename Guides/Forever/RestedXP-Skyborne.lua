@@ -1297,7 +1297,7 @@ step
     .turnin 97971 >>Turn in Camping 101: Skinning
     .target Mendalass Tattermend::257024
 step
-    -- .isOnQuest
+    .isOnQuest 93036
     #arrowtext Talk to\n|cRXP_FRIENDLY_Zerril Softbreeze|r\n Don't sell Strider meat &eggs
     .goto 2521,43.851,43.848
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r and buy 5 |T134059:0|t[Mild Spices]
@@ -1484,20 +1484,58 @@ step
 --     .money <0.03
 --     .xp <8,1
 step
+    #completewith
+    >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    .complete 92553,2 --8/8 Strider Meat
+    .complete 92553,1 --3/3 Small Egg
+    .mob Galestrider::251661
+step
+    #completewith
+    >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
+    .complete 92515,1 --10/10 Prideclaw Pelt
+    .mob Prideclaw::251245
+step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Missionary Jasaan|r
     .goto 2521,46.880,56.242
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Missionary Jasaan::257065|r
     .target Missionary Jasaan::257065
     .turnin 92529 >>Turn in Falaath Village
-    .accept 92528 >>Accept Among the Faithful
+    .accept 92528 >>Accept Among the Faithfu
 step
-    #arrowtext Click on the |cRXP_PICK_Wardrobe|r
-    .goto 2521,48.87,53.88
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Wardrobe|r.
+    .subzoneskip 16636,1
+    .goto 2521,46.89,56.24
+    .target Missionary Jasaan::257065
+    .aura 1254832 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sania Silverstream::257065|r
+    .skipgossipid 137586 -- I seem to have lost my mark of Akir. Would you please bestow it upon me once more?
+step
+    #completewith next
+    #label plans
+    .goto 2521,48.8,53.89,10,0
+    .goto 2521,48.93,53.55,10,0
+    >>After clicking on the Wardrobe, return to the city.
     .complete 92528,1 --1/1 Learn about the cultists' plans
+step
+    #completewith plans
+    .goto 2521,48.85,53.91
+    .vehicle >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Wardrobe|r on the second floor.
+    .timer 14,RP
     .skipgossipid 136768
 step
+    #requires plans
+    #arrowtext Click on the |cRXP_PICK_Wardrobe|r
+    .goto 2521,48.6,54.69,30,0
+    .goto 2521,46.44,51.34,30,0
+    >>Return to the city and wait for the roleplay.
+    .complete 92528,1 --1/1 Learn about the cultists' plans
+    .macro Leave Vehicle,6656430 >>/leavevehicle
+step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Constable Aonda|r
+    .goto 2521,46.44,51.34,30,0
+    .goto 2521,44.37,46.69,30,0
+    .goto 2521,44.49,45.95,30,0
+    .goto 2521,44.93,46.85,30,0
+    .goto 2521,45.21,46.63,30,0
+    .goto 2521,45.04,46.23,15,0
     .goto 2521,45.67,45.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
     .turnin 92528 >>Turn in Among the Faithful
