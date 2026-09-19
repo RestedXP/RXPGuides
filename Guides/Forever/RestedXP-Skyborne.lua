@@ -535,15 +535,23 @@ step
 
 
 step
+    #completewith
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Windstones|r for an item that restores health and mana on use 
+step
     .goto 2521,41.67,44.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind|r.
     .turnin 96638 >>Turn in The Adventurer
     .target Raan Wildwind
+    .accept 96101 >>Accept The Great Outdoors
 step
     .goto 2521,41.67,44.79
-    .accept 96101 >>Accept The Great Outdoors
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind|r.
     .complete 96101,1 --1/1 Use the /sit emote near the campfire
-
+    .emote SIT,263664
+    .timer 60, RP 
+    .target Raan Wildwind
+step
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 96101,2 --Gain the Boosted Rest buff
 step
     .goto 2521,41.67,44.79
