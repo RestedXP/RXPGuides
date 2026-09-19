@@ -27,14 +27,14 @@ step << Tauren Shaman
     .goto Durotar,52.8,28.7,20 >> Go into Dustwind Cave
 step << Tauren Shaman
     #loop
-    .goto Durotar,51.90,25.70,0
+    .goto Durotar,51.9,25.7,0
     .goto 1411/1,-4774.39,780.80,20,0
-    .goto Durotar,52.70,27.97,12,0
+    .goto 1411/1,-4749.01,822.39,12,0
     .goto 1411/1,-4767.52,825.92,12,0
     .goto 1411/1,-4772.28,848.12,12,0
     .goto 1411/1,-4756.41,863.630,12,0
     .goto 1411/1,-4715.70,861.87,12,0
-    .goto Durotar,51.90,25.70,12,0
+    .goto Durotar,51.9,25.7,12,0
     >>Kill |cRXP_ENEMY_Cultists|r. Loot them for a |cRXP_LOOT_Reagent Pouch|r
     .complete 1525,2 --Reagent Pouch (1)
     .mob Burning Blade Cultist
@@ -114,14 +114,14 @@ step << !Shaman !Warrior/Undead
     .accept 870 >>Accept The Forgotten Pools
     .target Tonga Runetotem
 step << !Shaman !Warrior/Undead
-    .goto The Barrens,51.50,30.87
+    .goto 1413/1,-2595.75,-473.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
     .accept 871 >>Accept Disrupt the Attacks
     .accept 5041 >>Accept Supplies for the Crossroads
     .target Thork
 step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #hardcore
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     >>|cRXP_WARN_Do NOT fly to Orgrimmar!|r
     .fp The Crossroads >> Get the The Crossroads flight path
@@ -129,7 +129,7 @@ step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .accept 6384 >>Accept Ride to Orgrimmar
     .target Devrak
 step << Undead
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fp The Crossroads >> Get the The Crossroads flight path
     .target Devrak
@@ -243,7 +243,7 @@ step << Shaman
     #sticky
     #label FireTar2
     .goto The Barrens,54.97,25.23,50,0
-    .goto The Barrens,54.2,24.60,50,0
+    .goto The Barrens,54.2,24.6,50,0
     .goto The Barrens,53.57,25.51
     >>Kill a |cRXP_ENEMY_Razormane Water Seeker|r or |cRXP_ENEMY_Razormane Thornweaver|r. Loot them for a |cRXP_LOOT_Fire Tar|r
     .complete 1525,1 --Fire Tar (1)
@@ -260,7 +260,7 @@ step
     .complete 871,3 --Razormane Hunter (3)
     .mob +Razormane Hunter
 step
-    .goto The Barrens,55.70,27.30
+    .goto 1413/1,-3021.35,-231.960
     .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
@@ -272,11 +272,11 @@ step
 	.goto 1413/1,-2811.59,-42.780,50,0
 	.goto 1413/1,-2875.43,-52.24,50,0
 	.goto 1413/1,-2931.16,-89.40,50,0
-	.goto The Barrens,55.50,25.61,50,0
+	.goto 1413/1,-3001.08,-117.78,50,0
 	.goto 1413/1,-3037.56,-164.390,50,0
 	.goto 1413/1,-3034.52,-221.82,50,0
 	.goto 1413/1,-2991.96,-239.39,50,0
-	.goto The Barrens,54.50,26.97,50,0
+	.goto 1413/1,-2899.75,-209.66,50,0
 	.goto 1413/1,-2854.15,-151.56,50,0
 	.goto 1413/1,-2799.43,-92.78,50,0
     >>Kill |cRXP_ENEMY_Water Seekers|r, |cRXP_ENEMY_Thornweavers|r and |cRXP_ENEMY_Hunters|r
@@ -335,7 +335,7 @@ step
     .goto 1413/1,-2805.51,-386.00,80,0
     .goto 1413/1,-2738.63,-610.310,80,0
     .goto 1413/1,-2576.50,-610.98,80,0
-    .goto The Barrens,50.50,31.05,80,0
+    .goto 1413/1,-2494.42,-485.32,80,0
     .goto 1413/1,-2448.82,-398.84,80,0
     .goto 1413/1,-2537.99,-260.33,80,0
     .goto 1413/1,-2730.52,-273.17,80,0
@@ -360,7 +360,7 @@ step
     .turnin 871 >>Turn in Disrupt the Attacks
     .accept 872 >>Accept The Disruption Ends
     .target +Thork
-    .goto The Barrens,51.50,30.87
+    .goto 1413/1,-2595.75,-473.15
 step
     .goto 1413/1,-2607.91,-475.180
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
@@ -369,7 +369,7 @@ step
     .target Darsok Swiftdagger
 step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #softcore
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .turnin 6365 >>Turn in Meats to Orgrimmar
     .accept 6384 >>Accept Ride to Orgrimmar
@@ -410,14 +410,14 @@ step << Orc Warrior/Troll Warrior/Tauren Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step << !Undead !Tauren
     #completewith HiddenEnemiesPickup
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Orgrimmar >> Fly to Orgrimmar
     .zoneskip Orgrimmar
     .target Devrak
     .dungeon RFC
 step << Tauren
-    .goto The Barrens,55.70,27.30,20,0
+    .goto 1413/1,-3021.35,-231.96,20,0
     .goto 1413/1,-3029.46,261.25
     .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
     .collect 4926,1,819 --Collect Chen's Empty Keg
@@ -468,7 +468,7 @@ step << Tauren
     .dungeon RFC
 step << Tauren
     #loop
-	.goto The Barrens,58.90,25.37,0
+	.goto 1413/1,-3345.62,-101.56,0
 	.goto 1413/1,-3393.24,-102.24,50,0
 	.goto 1413/1,-3419.59,-40.08,50,0
 	.goto 1413/1,-3419.59,-0.89,50,0
@@ -481,7 +481,7 @@ step << Tauren
 	.goto 1413/1,-3205.78,-119.13,50,0
 	.goto 1413/1,-3218.95,-81.97,50,0
 	.goto 1413/1,-3278.74,-75.21,50,0
-	.goto The Barrens,58.90,25.37,50,0
+	.goto 1413/1,-3345.62,-101.56,50,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
     .mob +Razormane Geomancer
@@ -506,7 +506,7 @@ step << Tauren Shaman
     .goto Durotar,37.86,58.18,8,0
     .goto Durotar,38.05,57.79,8,0
     .goto Durotar,38.93,57.54,8,0
-    .goto Durotar,39.19,57.90,8,0
+    .goto Durotar,39.19,57.9,8,0
     .goto Durotar,39.16,58.56,10 >> Travel the path up the mountain toward |cRXP_FRIENDLY_Telf|r
     .dungeon RFC
 step << Tauren Shaman
@@ -741,7 +741,7 @@ step << !Tauren
     .dungeon RFC
 step << Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
     #completewith RFCTurninsTB1
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Thunder Bluff >>Fly to Thunder Bluff
     .target Devrak
@@ -799,7 +799,7 @@ step << Tauren/Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
     .isQuestComplete 5723
     .dungeon RFC
 step << skip
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Thunder Bluff >> Get the Thunder Bluff flight path
     .target Tal
@@ -814,7 +814,7 @@ step
     .dungeon RFC
 step
     #completewith KreenigSnarlsnout
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Crossroads >>Fly to Crossroads
     .target Tal
@@ -822,7 +822,7 @@ step
     .cooldown item,6948,<0
     .dungeon RFC
 step
-    .goto The Barrens,55.70,27.30,20,0
+    .goto 1413/1,-3021.35,-231.96,20,0
     .goto 1413/1,-3029.46,261.25
     .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest
     >>|cRXP_WARN_Wait for the respawn if it's not up|r
@@ -885,7 +885,7 @@ step
     .complete 5041,1 --Crossroads' Supply Crates (1)
 step
     #loop
-	.goto The Barrens,58.90,25.37,0
+	.goto 1413/1,-3345.62,-101.56,0
 	.goto 1413/1,-3393.24,-102.24,50,0
 	.goto 1413/1,-3419.59,-40.08,50,0
 	.goto 1413/1,-3419.59,-0.89,50,0
@@ -898,7 +898,7 @@ step
 	.goto 1413/1,-3205.78,-119.13,50,0
 	.goto 1413/1,-3218.95,-81.97,50,0
 	.goto 1413/1,-3278.74,-75.21,50,0
-	.goto The Barrens,58.90,25.37,50,0
+	.goto 1413/1,-3345.62,-101.56,50,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
     .mob +Razormane Geomancer
@@ -949,7 +949,7 @@ step << Shaman
     .goto Durotar,37.86,58.18,8,0
     .goto Durotar,38.05,57.79,8,0
     .goto Durotar,38.93,57.54,8,0
-    .goto Durotar,39.19,57.90,8,0
+    .goto Durotar,39.19,57.9,8,0
     .goto Durotar,39.16,58.56,10 >> Travel the path up the mountain toward |cRXP_FRIENDLY_Telf|r
 step << Shaman
     #label CallofFire3
@@ -1239,7 +1239,7 @@ step
     #label SouthSea
     #loop
     .goto 1413/1,-3885.72,-1569.690,0
-    .goto The Barrens,64.40,44.09,50,0
+    .goto 1413/1,-3902.95,-1366.33,50,0
     .goto 1413/1,-3823.91,-1512.94,50,0
     .goto 1413/1,-3885.72,-1569.690,50,0
     >>Kill |cRXP_ENEMY_Southsea Brigands|r and |cRXP_ENEMY_Southsea Cannoneers|r
@@ -1248,8 +1248,8 @@ step
     .complete 887,2 --Southsea Cannoneer (6)
     .mob +Southsea Cannoneer
 step << Orc Rogue/Troll Rogue
-    .goto The Barrens,63.70,44.32,50,0
-    .goto The Barrens,62.70,44.07,50,0
+    .goto The Barrens,63.7,44.32,50,0
+    .goto The Barrens,62.7,44.07,50,0
     .goto The Barrens,62.18,44.47
 	>>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r
     >>|cRXP_WARN_He patrols up and down the hill|r
@@ -1450,7 +1450,7 @@ step
     .goto The Barrens,55.27,37.82,80,0
     .goto The Barrens,53.84,38.52,80,0
     .goto The Barrens,52.63,38.07,80,0
-    .goto The Barrens,49.49,37.20,80,0
+    .goto The Barrens,49.49,37.2,80,0
     .goto The Barrens,48.33,36.75,80,0
     >>Finish killing |cRXP_ENEMY_Zhevras|r. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
@@ -1461,7 +1461,7 @@ step
     .turnin 5041 >>Turn in Supplies for the Crossroads
     .turnin 872 >>Turn in The Disruption Ends
     .target +Thork
-    .goto The Barrens,51.50,30.87
+    .goto 1413/1,-2595.75,-473.15
     .turnin 845 >>Turn in The Zhevra
     .accept 903 >>Accept Prowlers of the Barrens
     .target +Sergra Darkthorn
@@ -1597,9 +1597,9 @@ step
     #loop
     .goto 1413/1,-1594.58,30.19,0
     .goto 1413/1,-1594.58,30.19,50,0
-    .goto The Barrens,41.30,24.31,50,0
+    .goto 1413/1,-1562.15,-29.94,50,0
     .goto 1413/1,-1483.11,66.67,50,0
-    .goto The Barrens,41.00,21.19,50,0
+    .goto 1413/1,-1531.75,180.85,50,0
     .goto 1413/1,-1462.84,214.63,50,0
     >>Kill |cRXP_ENEMY_Savannah Prowlers|r. Loot them for their |cRXP_LOOT_Claws|r and |cRXP_LOOT_Tusks|r
     .complete 903,1 --Prowler Claws (7)
@@ -1632,7 +1632,7 @@ step << skip --!Tauren
     #optional
     #completewith next
     .goto Stonetalon Mountains,82.57,98.63,60,0
-    .goto Stonetalon Mountains,80.10,98.20,40,0
+    .goto Stonetalon Mountains,80.1,98.2,40,0
     .goto Stonetalon Mountains,77.17,98.61,40 >> Follow the path on the left upward
     .dungeon RFC
     .isOnQuest 5724
@@ -1687,7 +1687,7 @@ step << skip --!Tauren
     .dungeon RFC
 step << skip --!Tauren
     #completewith Samophlange
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Crossroads >>Fly to The Crossroads
     .target Tal
@@ -1747,7 +1747,7 @@ step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .target Sergra Darkthorn
     .dungeon RFC
 step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .goto The Barrens,55.80,17.03
+    .goto 1413/1,-3031.48,461.91
     >>Use the |T134227:0|t[Horn of Echeyakee] to summon |cRXP_ENEMY_Echeyakee|r
     >>Kill |cRXP_ENEMY_Echeyakee|r. Loot him for |cRXP_LOOT_Echeyakee's Hide|r
     >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r doesn't spawn after using the|r |T134227:0|t[Horn of Echeyakee]|cRXP_WARN_ or you didn't get the tag when it did spawn, skip this step|r
@@ -1768,7 +1768,7 @@ step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .itemcount 5100,<1 --Echeyakee's Hide (0)
     .dungeon RFC
 step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .goto The Barrens,55.80,17.03
+    .goto 1413/1,-3031.48,461.91
     >>Use the |T134227:0|t[Horn of Echeyakee] to summon |cRXP_ENEMY_Echeyakee|r
     >>Kill |cRXP_ENEMY_Echeyakee|r. Loot him for |cRXP_LOOT_Echeyakee's Hide|r
     .complete 881,1 --Echeyakee's Hide (1)
@@ -1803,7 +1803,7 @@ step
     .mob Ornery Plainstrider
     --.dungeon !RFC
 step
-    .goto The Barrens,43.80,12.22
+    .goto The Barrens,43.8,12.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vrang|r
     >>|cRXP_FRIENDLY_Vrang|r |cRXP_WARN_sells|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r << Orc Warrior/Troll Warrior/Tauren Warrior
 	.vendor	>> Vendor trash and repair
@@ -1811,7 +1811,7 @@ step
     --.dungeon !RFC
 step
 	#label Samophlange
-    .goto The Barrens,52.40,11.65
+    .goto 1413/1,-2686.95,825.40
     >>Click on the |cRXP_PICK_Control Console|r
     .turnin 894 >>Turn in Samophlange
     .accept 900 >>Accept Samophlange
@@ -1826,11 +1826,11 @@ step
     >>|cRXP_WARN_One mob will spawn after you shut off the Valve|r
     .complete 900,3 --Shut off Regulator Valve (1)
 step
-    .goto The Barrens,52.40,11.40
+    .goto 1413/1,-2686.95,842.290
     >>Click the |cRXP_PICK_Valve|r
     .complete 900,1 --Shut off Main Control Valve (1)
 step
-    .goto The Barrens,52.40,11.65
+    .goto 1413/1,-2686.95,825.40
     >>Click the |cRXP_PICK_Control Console|r
     .turnin 900 >>Turn in Samophlange
     .accept 901 >>Accept Samophlange
@@ -1840,7 +1840,7 @@ step
     .complete 901,1 --Console Key (1)
     .mob Tinkerer Sniggles
 step
-    .goto The Barrens,52.40,11.65
+    .goto 1413/1,-2686.95,825.40
     >>Click the |cRXP_PICK_Control Console|r
     .turnin 901 >>Turn in Samophlange
     .accept 902 >>Accept Samophlange
@@ -1912,7 +1912,7 @@ step
     .isQuestTurnedIn 858
 step
     #label Slugs
-    .goto The Barrens,55.80,7.76,30,0
+    .goto 1413/1,-3031.48,1088.21,30,0
     .goto 1413/1,-3002.10,1130.78
     >>|cRXP_WARN_Two|r |cRXP_ENEMY_Venture Co. Mercenaries|r |cRXP_WARN_will spawn when the shredder moves onto the higher ground. Kill them then wait for his RP event at the end|r
     .complete 863,1 --Escort Wizzlecrank out of the Venture Co. drill site (1)
@@ -1932,7 +1932,7 @@ step
     #label CatsEye
     #loop
     .goto The Barrens,61.51,4.43,0
-    .goto The Barrens,61.46,4.50,40,0
+    .goto The Barrens,61.46,4.5,40,0
     .goto The Barrens,61.06,3.63,40,0
     .goto The Barrens,61.63,3.37,40,0
     .goto The Barrens,62.14,3.52,40,0
@@ -1949,7 +1949,7 @@ step
 step
     #ssf
     .goto The Barrens,61.51,4.43,0
-    .goto The Barrens,61.46,4.50,40,0
+    .goto The Barrens,61.46,4.5,40,0
     .goto The Barrens,61.06,3.63,40,0
     .goto The Barrens,61.63,3.37,40,0
     .goto The Barrens,62.14,3.52,40,0
@@ -1964,7 +1964,7 @@ step
 step
     #ah
     .goto The Barrens,61.51,4.43,0
-    .goto The Barrens,61.46,4.50,40,0
+    .goto The Barrens,61.46,4.5,40,0
     .goto The Barrens,61.06,3.63,40,0
     .goto The Barrens,61.63,3.37,40,0
     .goto The Barrens,62.14,3.52,40,0
@@ -2140,7 +2140,7 @@ step << Rogue
 step << Orc Rogue/Troll Rogue
     #optional
     #completewith next
-    .goto Orgrimmar,42.10,49.51
+    .goto Orgrimmar,42.1,49.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Rekkul|r|cRXP_BUY_. Buy a|r |T134065:0|t[Thieves' Tools] |cRXP_BUY_from him|r
     .collect 5060,1,1858,1 --Collect Thieves' Tools (1)
     .target Rekkul
@@ -2372,7 +2372,7 @@ step << !Tauren !Undead !Warrior !Shaman
     .target Zargh
     .isOnQuest 6386
 step
-    .goto The Barrens,55.80,17.03
+    .goto 1413/1,-3031.48,461.91
     >>Use the |T134227:0|t[Horn of Echeyakee] to summon |cRXP_ENEMY_Echeyakee|r
     >>Kill |cRXP_ENEMY_Echeyakee|r. Loot him for |cRXP_LOOT_Echeyakee's Hide|r
     >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r doesn't spawn after using the|r |T134227:0|t[Horn of Echeyakee]|cRXP_WARN_ or you didn't get the tag when it did spawn, skip this step|r
@@ -2391,7 +2391,7 @@ step
     .target Sergra Darkthorn
     .itemcount 5100,<1 --Echeyakee's Hide (0)
 step
-    .goto The Barrens,55.80,17.03
+    .goto 1413/1,-3031.48,461.91
     >>Use the |T134227:0|t[Horn of Echeyakee] to summon |cRXP_ENEMY_Echeyakee|r
     >>Kill |cRXP_ENEMY_Echeyakee|r. Loot him for |cRXP_LOOT_Echeyakee's Hide|r
     .complete 881,1 --Echeyakee's Hide (1)
@@ -2425,7 +2425,7 @@ step << Hunter
     .target Barg
 step
     #completewith RapHornsPickup
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Ratchet >>Fly to Ratchet
     .target Devrak
@@ -2609,7 +2609,7 @@ step
     #xprate <1.5
     #completewith next
     #loop
-    .goto The Barrens,55.80,45.78,50,0
+    .goto The Barrens,55.8,45.78,50,0
     .goto The Barrens,56.75,43.41,50,0
     .goto The Barrens,57.01,41.22,50,0
     .goto The Barrens,55.45,41.37,50,0
@@ -2636,8 +2636,8 @@ step
 step << Druid/Mage
     #season 2
     #loop
-    .goto The Barrens,55.80,45.78,0
-    .goto The Barrens,55.80,45.78,50,0
+    .goto The Barrens,55.8,45.78,0
+    .goto The Barrens,55.8,45.78,50,0
     .goto The Barrens,56.75,43.41,50,0
     .goto The Barrens,57.01,41.22,50,0
     .goto The Barrens,55.45,41.37,50,0
@@ -2704,7 +2704,7 @@ step
     .mob Fleeting Plainstrider
     .mob Ornery Plainstrider
 step
-    .goto The Barrens,52.60,46.10
+    .goto 1413/1,-2707.22,-1502.130
     >>Click the |cRXP_PICK_Blue Raptor Nest|r. Kill more |cRXP_ENEMY_Sunscale Scytheclaws|r if you don't have a |T132914:0|t[Sunscale Feather]
     >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
     .complete 905,1 --Visit Blue Raptor Nest (1)
@@ -2751,7 +2751,7 @@ step
     .goto 1413/1,-1951.27,-1956.15,0
     .goto 1413/1,-2031.32,-1703.47,0
     .goto 1413/1,-2183.32,-1858.19,0
-    .goto The Barrens,50.10,53.34,0
+    .goto 1413/1,-2453.88,-1991.28,0
 	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_Hoof of Lakota'mani|r]
     >>|cRXP_WARN_Use the |T132318:0|t[|cRXP_LOOT_Hoof of Lakota'mani|r] to start the quest|r
     >>|cRXP_WARN_He has 4 spawnpoints (marked on the map)|r
@@ -2774,7 +2774,7 @@ step << Hunter
     #season 2
     #loop
     .goto 1413/1,-1746.58,-2263.56,0
-    .goto The Barrens,44.60,55.51,40,0
+    .goto 1413/1,-1896.55,-2137.89,40,0
     .goto 1413/1,-1840.82,-2184.510,40,0
     .goto 1413/1,-1746.58,-2263.56,40,0
     .line The Barrens,44.60,55.51,44.60,55.51,43.12,57.37
@@ -2870,7 +2870,7 @@ step
     .dungeon RFC
 step
     #optional
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Crossroads >>Fly to The Crossroads
     .target Tal
@@ -2981,9 +2981,9 @@ step
     .goto 1413/1,-2114.42,-981.22,50,0
     .goto 1413/1,-2167.11,-1021.09,50,0
     .goto 1413/1,-2187.38,-1040.68,50,0
-    .goto The Barrens,48.20,39.57,50,0
-    .goto The Barrens,48.40,39.58,50,0
-    .goto The Barrens,48.60,39.51,50,0
+    .goto 1413/1,-2261.35,-1060.95,50,0
+    .goto 1413/1,-2281.62,-1061.62,50,0
+    .goto 1413/1,-2301.88,-1056.89,50,0
     .goto 1413/1,-2295.80,-1087.30,50,0
     .goto 1413/1,-2299.86,-1125.13,50,0
     .goto 1413/1,-2268.44,-1145.40,50,0
@@ -3023,9 +3023,9 @@ step
     .goto 1413/1,-2114.42,-981.22,50,0
     .goto 1413/1,-2167.11,-1021.09,50,0
     .goto 1413/1,-2187.38,-1040.68,50,0
-    .goto The Barrens,48.20,39.57,50,0
-    .goto The Barrens,48.40,39.58,50,0
-    .goto The Barrens,48.60,39.51,50,0
+    .goto 1413/1,-2261.35,-1060.95,50,0
+    .goto 1413/1,-2281.62,-1061.62,50,0
+    .goto 1413/1,-2301.88,-1056.89,50,0
     .goto 1413/1,-2295.80,-1087.30,50,0
     .goto 1413/1,-2299.86,-1125.13,50,0
     .goto 1413/1,-2268.44,-1145.40,50,0
@@ -3158,9 +3158,9 @@ step
     #loop
     .goto The Barrens,40.28,15.49,0
     .goto The Barrens,40.28,15.49,40,0
-    .goto The Barrens,39.50,14.68,40,0
+    .goto The Barrens,39.5,14.68,40,0
     .goto The Barrens,39.47,13.24,40,0
-    .goto The Barrens,38.94,12.80,40,0
+    .goto The Barrens,38.94,12.8,40,0
     .goto The Barrens,38.18,12.56,40,0
     .goto The Barrens,37.96,13.52,40,0
     .goto The Barrens,38.62,13.95,40,0
@@ -3235,12 +3235,12 @@ step
     .goto 1442/1,-691.11,-13.63,40,0
     .goto 1442/1,-650.58,26.74,40,0
     .goto 1442/1,-718.94,65.49,40,0
-    .goto Stonetalon Mountains,81.70,86.44,40,0
+    .goto 1442/1,-743.85,101.96,40,0
     .goto 1442/1,-771.20,113.040,40,0
     .goto 1442/1,-785.36,141.69,40,0
     .goto 1442/1,-838.59,148.20,40,0
-    .goto Stonetalon Mountains,84.20,85.20,40,0
-    .goto Stonetalon Mountains,83.80,86.38,40,0
+    .goto 1442/1,-865.93,142.34,40,0
+    .goto 1442/1,-846.4,103.92,40,0
     .goto 1442/1,-819.54,76.24,40,0
     .goto 1442/1,-774.61,-5.17,40,0
     .goto 1442/1,-774.61,-27.96,40,0
@@ -3258,12 +3258,12 @@ step << Druid
     .goto 1442/1,-691.11,-13.63,40,0
     .goto 1442/1,-650.58,26.74,40,0
     .goto 1442/1,-718.94,65.49,40,0
-    .goto Stonetalon Mountains,81.70,86.44,40,0
+    .goto 1442/1,-743.85,101.96,40,0
     .goto 1442/1,-771.20,113.040,40,0
     .goto 1442/1,-785.36,141.69,40,0
     .goto 1442/1,-838.59,148.20,40,0
-    .goto Stonetalon Mountains,84.20,85.20,40,0
-    .goto Stonetalon Mountains,83.80,86.38,40,0
+    .goto 1442/1,-865.93,142.34,40,0
+    .goto 1442/1,-846.4,103.92,40,0
     .goto 1442/1,-819.54,76.24,40,0
     .goto 1442/1,-774.61,-5.17,40,0
     .goto 1442/1,-774.61,-27.96,40,0
@@ -3369,10 +3369,10 @@ step << Warlock/Priest/Mage
 step << Warlock/Priest/Mage
     #label Besseleth1
     #loop
-    .goto Stonetalon Mountains,54.80,71.95,0
+    .goto 1442/1,569.77,573.79,0
     .goto 1442/1,711.87,513.23,50,0
     .goto 1442/1,684.04,582.91,50,0
-    .goto Stonetalon Mountains,54.80,71.95,50,0
+    .goto 1442/1,569.77,573.79,50,0
     >>Kill |cRXP_ENEMY_Besseleth|r. Loot her for for her |cRXP_LOOT_Fang|r
     >>|cRXP_WARN_Clear the area around|r |cRXP_ENEMY_Besseleth|r|cRXP_WARN_. Be careful as she webs you. Keep her permanently feared with dots|r << Warlock
     >>|cRXP_WARN_This quest is optional. If you can't do it, skip this quest. You can try it again later|r << Warlock
@@ -3388,7 +3388,7 @@ step << Warlock/Priest/Mage
 step << !Warlock
     .goto Stonetalon Mountains,67.38,86.99,80,0
     .goto Stonetalon Mountains,61.44,81.74,80,0
-    .goto Stonetalon Mountains,58.44,75.90,40,0
+    .goto Stonetalon Mountains,58.44,75.9,40,0
     .goto Stonetalon Mountains,54.99,76.03
     >>Kill |cRXP_ENEMY_Deepmoss Creepers|r
     >>|cRXP_WARN_Save any|r |T134339:0|t[Small Venom Sacs] |cRXP_WARN_you loot|r << Rogue
@@ -3396,7 +3396,7 @@ step << !Warlock
     .mob Deepmoss Creeper
 step
     #completewith next
-    .goto Stonetalon Mountains,51.40,61.14,50,0
+    .goto Stonetalon Mountains,51.4,61.14,50,0
     .goto Stonetalon Mountains,49.96,61.04
     .subzone 460 >>Travel to Sun Rock Retreat
 step
@@ -3414,7 +3414,7 @@ step
     .target Jeeda
     .isQuestAvailable 1093
 step
-    .goto Stonetalon Mountains,47.20,61.16
+    .goto 1442/1,940.9,925.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maggran|r
 	.turnin 6284 >> Turn in Arachnophobia
     .target Maggran Earthbinder
@@ -3452,7 +3452,7 @@ step
     .goto 1442/1,163.47,962.27,50,0
     .goto 1442/1,86.81,961.94,50,0
     .goto 1442/1,181.05,907.89,50,0
-    .goto Stonetalon Mountains,62.50,62.92,50,0
+    .goto 1442/1,193.75,867.83,50,0
     .goto 1442/1,194.73,827.78,50,0
     .goto 1442/1,225.49,765.26,50,0
     .goto 1442/1,281.16,763.63,50,0
@@ -3584,12 +3584,12 @@ step
     .mob Venture Co. Operator
 step
     #loop
-    .goto Stonetalon Mountains,61.50,55.12,0
-    .goto Stonetalon Mountains,61.50,55.12,50,0
+    .goto 1442/1,242.58,1121.82,0
+    .goto 1442/1,242.58,1121.82,50,0
     .goto 1442/1,292.39,1122.470,50,0
-    .goto Stonetalon Mountains,59.80,53.69,50,0
+    .goto 1442/1,325.6,1168.39,50,0
     .goto 1442/1,338.79,1206.48,50,0
-    .goto Stonetalon Mountains,60.80,51.23,50,0
+    .goto 1442/1,276.77,1248.49,50,0
     .goto 1442/1,215.24,1145.59,50,0
     .goto 1442/1,187.40,1114.33,50,0
     .goto 1442/1,138.57,1144.62,50,0
@@ -3598,7 +3598,7 @@ step
     .goto 1442/1,-106.09,1157.31,50,0
     .goto 1442/1,-165.66,1173.60,50,0
     .goto 1442/1,-189.10,1079.82,50,0
-    .goto Stonetalon Mountains,67.90,56.96,50,0
+    .goto 1442/1,-69.95,1061.91,50,0
     .goto 1442/1,10.63,1072.33,50,0
     .goto 1442/1,57.51,1056.05,50,0
     .goto 1442/1,107.32,1040.09,50,0
@@ -3617,7 +3617,7 @@ step
     .goto 1442/1,163.47,962.27,30,0
     .goto 1442/1,86.81,961.94,30,0
     .goto 1442/1,181.05,907.89,30,0
-    .goto Stonetalon Mountains,62.50,62.92,30,0
+    .goto 1442/1,193.75,867.83,30,0
     .goto 1442/1,194.73,827.78,30,0
     .goto 1442/1,225.49,765.26,30,0
     .goto 1442/1,281.16,763.63,30,0
@@ -3712,11 +3712,11 @@ step
     .goto 1413/1,-1951.27,-1956.15,0
     .goto 1413/1,-2031.32,-1703.47,0
     .goto 1413/1,-2183.32,-1858.19,0
-    .goto The Barrens,50.10,53.34,0
+    .goto 1413/1,-2453.88,-1991.28,0
     .goto 1413/1,-1951.27,-1956.15,80,0
     .goto 1413/1,-2031.32,-1703.47,80,0
     .goto 1413/1,-2183.32,-1858.19,80,0
-    .goto The Barrens,50.10,53.34,80,0
+    .goto 1413/1,-2453.88,-1991.28,80,0
 	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_Hoof of Lakota'mani|r]
     >>|cRXP_WARN_Use the |T132318:0|t[|cRXP_LOOT_Hoof of Lakota'mani|r] to start the quest|r
     >>|cRXP_WARN_He has 4 spawnpoints (marked on the map)|r
@@ -3732,21 +3732,21 @@ step
     .mob Stormsnout
 step
     #loop
-    .goto The Barrens,50.71,54.60,0
-    .goto The Barrens,50.71,54.60,60,0
+    .goto The Barrens,50.71,54.6,0
+    .goto The Barrens,50.71,54.6,60,0
     .goto The Barrens,50.74,55.33,60,0
     .goto The Barrens,50.73,56.78,60,0
     .goto The Barrens,50.42,57.23,60,0
-    .goto The Barrens,50.50,57.65,60,0
-    .goto The Barrens,50.87,57.50,60,0
+    .goto The Barrens,50.5,57.65,60,0
+    .goto The Barrens,50.87,57.5,60,0
     .goto The Barrens,51.26,57.84,60,0
     .goto The Barrens,51.74,57.69,60,0
-    .goto The Barrens,51.79,57.10,60,0
+    .goto The Barrens,51.79,57.1,60,0
     .goto The Barrens,53.08,54.69,60,0
     .goto The Barrens,53.65,54.27,60,0
     .goto The Barrens,53.63,53.53,60,0
     .goto The Barrens,53.35,52.72,60,0
-    .goto The Barrens,53.00,51.83,60,0
+    .goto The Barrens,53.0,51.83,60,0
     .goto The Barrens,52.62,52.19,60,0
     .goto The Barrens,52.59,52.71,60,0
     .goto The Barrens,52.41,53.07,60,0
@@ -3765,20 +3765,20 @@ step
     .mob +Bristleback Geomancer
 step << Warlock/Shaman
     #loop
-	.goto The Barrens,50.71,54.60,60,0
+	.goto The Barrens,50.71,54.6,60,0
 	.goto The Barrens,50.74,55.33,60,0
 	.goto The Barrens,50.73,56.78,60,0
 	.goto The Barrens,50.42,57.23,60,0
-	.goto The Barrens,50.50,57.65,60,0
-	.goto The Barrens,50.87,57.50,60,0
+	.goto The Barrens,50.5,57.65,60,0
+	.goto The Barrens,50.87,57.5,60,0
 	.goto The Barrens,51.26,57.84,60,0
 	.goto The Barrens,51.74,57.69,60,0
-	.goto The Barrens,51.79,57.10,60,0
+	.goto The Barrens,51.79,57.1,60,0
 	.goto The Barrens,53.08,54.69,60,0
 	.goto The Barrens,53.65,54.27,60,0
 	.goto The Barrens,53.63,53.53,60,0
 	.goto The Barrens,53.35,52.72,60,0
-	.goto The Barrens,53.00,51.83,60,0
+	.goto The Barrens,53.0,51.83,60,0
 	.goto The Barrens,52.62,52.19,60,0
 	.goto The Barrens,52.59,52.71,60,0
 	.goto The Barrens,52.41,53.07,60,0
@@ -3808,10 +3808,10 @@ step
     #loop
     .goto The Barrens,53.98,51.68,0
     .goto The Barrens,53.98,51.68,50,0
-    .goto The Barrens,54.10,50.58,50,0
+    .goto The Barrens,54.1,50.58,50,0
     .goto The Barrens,53.85,49.76,50,0
     .goto The Barrens,54.32,49.38,50,0
-    .goto The Barrens,54.82,49.00,50,0
+    .goto The Barrens,54.82,49.0,50,0
     .goto The Barrens,55.23,47.96,50,0
     >>Finish killing |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
     .complete 821,2 --Plainstrider Kidney (5)
@@ -3960,7 +3960,7 @@ step
     .target +Brewmaster Drohn
     .goto 1413/1,-3687.11,-981.22
 step << Warrior
-    .goto The Barrens,62.20,38.41
+    .goto The Barrens,62.2,38.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grazlix|r
     .vendor >>Buy |T134583:0|t[|cRXP_FRIENDLY_Mighty Chain Pants|r] from him if it's up
     .target Grazlix
@@ -4019,7 +4019,7 @@ step
     .target Bragok
     .subzoneskip 380
 step << Hunter
-    .goto The Barrens,51.50,30.87
+    .goto 1413/1,-2595.75,-473.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
     .accept 6541 >>Accept Report to Kadrak
     .target Thork
@@ -4064,13 +4064,13 @@ step
     .dungeon !WC
     .dungeon DM
 step
-    .goto The Barrens,51.10,29.60
+    .goto 1413/1,-2555.22,-387.350
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korran|r
     .accept 868 >> Accept Egg Hunt
     .target Korran
 step << Shaman
     #completewith next
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Orgrimmar >> Fly to Orgrimmar
     .zoneskip Orgrimmar
@@ -4087,7 +4087,7 @@ step << Shaman
     .target Kardris Dreamseeker
 step << Warlock
     #completewith next
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Orgrimmar >> Fly to Orgrimmar
     .zoneskip Orgrimmar
@@ -4190,7 +4190,7 @@ step << Warrior
     .xp <20,1
     .dungeon DM
 step << Rogue
-    .goto Orgrimmar,43.90,54.65
+    .goto 1454/1,-4296.34,1762.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormok|r
     .train 1943 >> Train your class spells
     .target Ormok
@@ -4264,14 +4264,14 @@ step
     .zoneskip Stranglethorn Vale
     .dungeon DM
 step
-    .goto Stranglethorn Vale,30.51,29.10,40,0
+    .goto Stranglethorn Vale,30.51,29.1,40,0
     .goto Stranglethorn Vale,27.09,31.27,40,0
-    .goto Stranglethorn Vale,22.90,31.17,60,0
-    .goto Stranglethorn Vale,19.06,27.00,60,0
+    .goto Stranglethorn Vale,22.9,31.17,60,0
+    .goto Stranglethorn Vale,19.06,27.0,60,0
     .goto Stranglethorn Vale,16.33,23.46,60,0
     .goto Stranglethorn Vale,13.49,19.04,60,0
     .goto Westfall,41.08,98.55,60,0
-    .goto Westfall,37.10,89.16,40,0
+    .goto Westfall,37.1,89.16,40,0
     .goto 1436/0,1966.32,-11407.13,200 >> Swim directly to the west from Grom'Gol into the Vile Reef and then swim north toward Westfall
     >>|cRXP_WARN_Steer clear from the island. Follow the waypoint for safety!|r
     .dungeon DM
@@ -4322,13 +4322,13 @@ step
     .goto Eastern Kingdoms,40.92,81.97,8,0
     .goto Eastern Kingdoms,40.92,82.02,8,0
     .goto Eastern Kingdoms,40.89,82.09,8,0
-    .goto Eastern Kingdoms,40.96,82.10,8,0
+    .goto Eastern Kingdoms,40.96,82.1,8,0
     .goto Eastern Kingdoms,40.92,82.16,15,0
-    .goto Eastern Kingdoms,40.82,82.30,15,0
+    .goto Eastern Kingdoms,40.82,82.3,15,0
     .goto Eastern Kingdoms,40.77,82.52,15,0
     .goto Eastern Kingdoms,40.74,82.61,15,0
     .goto Eastern Kingdoms,40.63,82.49,15,0
-    .goto Eastern Kingdoms,40.50,82.45
+    .goto Eastern Kingdoms,40.5,82.45
     .zone 291 >> Enter the Deadmines Instance portal. Zone in
     .dungeon DM
 step
@@ -4435,7 +4435,7 @@ step << Shaman
     .subzoneskip 380
 step
     #completewith TribesTurnin
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Camp Taurajo >> Fly to Camp Taurajo
     .target Devrak
@@ -4817,11 +4817,11 @@ step << Druid
     .target Dendrite Starblaze
 step << Druid
     #completewith next
-    .goto Moonglade,54.30,55.68
+    .goto Moonglade,54.3,55.68
     .collect 15877,1,28,1 >>Loot the |cRXP_PICK_Bauble Container|r at the bottom of the lake for a|T134125:0|t[Shrine Bauble]
     >>|cRXP_WARN_Do not go underwater until you arive right above the Bauble|r
 step << Druid
-    .goto Moonglade,36.40,42.01
+    .goto Moonglade,36.4,42.01
     .cast 19719 >> |cRXP_WARN_Use the|r |T134125:0|t[Shrine Bauble] |cRXP_WARN_at the Shrine of Remulos|r
     .complete 28,1 -- Complete the Trial of the Lake
     .use 15877
@@ -4888,7 +4888,7 @@ step << Warrior
     .accept 1823 >>Accept Speak with Ruga
     .target Torm Ragetotem
 step << Rogue
-    .goto Thunder Bluff,53.00,56.63
+    .goto 1456/1,-36.52,-1244.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from him.|r
     .collect 923,1,493,1 --Collect Longsword (1)
     .money <0.8743
@@ -4992,7 +4992,7 @@ step << Hunter
 
 step
     #completewith next
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Crossroads >>Fly to Crossroads
     .target Tal
@@ -5111,7 +5111,7 @@ step
     .goto 1414/1,-2028.82,-636.93,20,0
     .goto 1414/1,-2050.90,-585.41,20,0
     .goto 1414/1,-2168.66,-607.49,30,0
-    .goto Kalimdor,52.40,55.20,30 >> Enter the WC Instance portal. Zone in
+    .goto 1414/1,-2216.5,-742.43,30 >> Enter the WC Instance portal. Zone in
     .dungeon WC
 step
     #optional
@@ -5431,7 +5431,7 @@ step
     .dungeon WC
 step
     #completewith WCEnd
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Thunder Bluff >>Fly to Thunder Bluff
     .target Devrak
@@ -5467,7 +5467,7 @@ step
     .isQuestComplete 962
     .dungeon WC
 step
-    .goto Thunder Bluff,23.0,21.0
+    .goto 1456/1,276.6,-996.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Zamah|r
     .turnin 962 >>Turn in Serpentbloom
     .target Apothecary Zamah
@@ -5503,7 +5503,7 @@ step
 step
     #xprate <1.5
     #completewith Serena
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Crossroads >>Fly to The Crossroads
     .target Tal
@@ -5512,7 +5512,7 @@ step
 step
     #xprate >1.49
     #completewith CounterattackTurnin2
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Crossroads >>Fly to The Crossroads
     .subzoneskip 380
@@ -5657,7 +5657,7 @@ step
     .target Darsok Swiftdagger
     .isQuestTurnedIn 876
 step
-    .goto The Barrens,51.10,29.60
+    .goto 1413/1,-2555.22,-387.350
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korran|r
     .accept 868 >> Accept Egg Hunt
     .target Korran
@@ -5725,7 +5725,7 @@ step
 step
     #completewith BloodFeedersTI
     .goto Stonetalon Mountains,82.57,98.63,60,0
-    .goto Stonetalon Mountains,80.10,98.20,40,0
+    .goto Stonetalon Mountains,80.1,98.2,40,0
     .goto Stonetalon Mountains,77.17,98.61,40 >> Follow the path on the left upward
 step
     .goto 1442/1,-394.20,-272.50
@@ -5765,10 +5765,10 @@ step << Hunter
     .accept 6284 >>Accept Arachnophobia
 step << Hunter
     #loop
-    .goto Stonetalon Mountains,54.80,71.95,0
+    .goto 1442/1,569.77,573.79,0
     .goto 1442/1,711.87,513.23,50,0
     .goto 1442/1,684.04,582.91,50,0
-    .goto Stonetalon Mountains,54.80,71.95,50,0
+    .goto 1442/1,569.77,573.79,50,0
     >>Kill |cRXP_ENEMY_Besseleth|r. Loot her for for her |cRXP_LOOT_Fang|r
     >>|cRXP_WARN_Clear the area around|r |cRXP_ENEMY_Besseleth|r|cRXP_WARN_. Be careful as she webs you|r
     >>|cRXP_WARN_This quest is optional. If you can't do it, skip this quest|r
@@ -5778,7 +5778,7 @@ step
     #completewith Tsunaman1
     .subzone 460 >>Travel to Sun Rock Retreat
 step
-    .goto Stonetalon Mountains,47.20,61.16
+    .goto 1442/1,940.9,925.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maggran|r
 	.turnin 6284 >> Turn in Arachnophobia
     .target Maggran Earthbinder
@@ -5836,7 +5836,7 @@ step
     .goto 1442/1,332.44,1218.86,50,0
     .goto 1442/1,325.11,1174.25,50,0
     .goto 1442/1,267.98,1156.34,50,0
-    .goto Stonetalon Mountains,61.10,54.68,50,0
+    .goto 1442/1,262.12,1136.15,50,0
     .goto 1442/1,238.68,1122.470,50,0
     .goto 1442/1,202.54,1089.58,50,0
     .goto 1442/1,169.82,1085.03,50,0
@@ -5940,7 +5940,7 @@ step
     .goto 1442/1,332.44,1218.86,50,0
     .goto 1442/1,325.11,1174.25,50,0
     .goto 1442/1,267.98,1156.34,50,0
-    .goto Stonetalon Mountains,61.10,54.68,50,0
+    .goto 1442/1,262.12,1136.15,50,0
     .goto 1442/1,238.68,1122.470,50,0
     .goto 1442/1,202.54,1089.58,50,0
     .goto 1442/1,169.82,1085.03,50,0
@@ -6001,7 +6001,7 @@ step
 step << skip
     #xprate <1.5
     .goto Stonetalon Mountains,78.89,41.24
-    .goto Ashenvale,40.40,53.06,30 >>|cRXP_WARN_Jump onto the white stone on your right. Perform a Logout Skip by logging out and back in|r
+    .goto Ashenvale,40.4,53.06,30 >>|cRXP_WARN_Jump onto the white stone on your right. Perform a Logout Skip by logging out and back in|r
     .link https://www.youtube.com/watch?v=h2s4ZjFBLtg&ab_channel=RestedXP >> |cRXP_WARN_CLICK HERE for an example|r
     .zoneskip Ashenvale
 step
@@ -6024,23 +6024,23 @@ step
 	.goto Ashenvale,14.85,23.08,50,0
 	.goto Ashenvale,14.13,20.77,50,0
 	.goto Ashenvale,14.73,19.56,50,0
-	.goto Ashenvale,14.59,17.90,50,0
+	.goto Ashenvale,14.59,17.9,50,0
 	.goto Ashenvale,13.38,16.39,50,0
 	.goto Ashenvale,13.62,14.48,50,0
 	.goto Ashenvale,14.15,15.31,50,0
 	.goto Ashenvale,15.88,15.42,50,0
-	.goto Ashenvale,15.40,16.96,50,0
+	.goto Ashenvale,15.4,16.96,50,0
 	.goto Ashenvale,15.22,18.81,50,0
 	.goto Ashenvale,15.33,20.78,50,0
 	.goto Ashenvale,15.33,22.51,50,0
-	.goto Ashenvale,15.32,24.90,50,0
+	.goto Ashenvale,15.32,24.9,50,0
 	.goto Ashenvale,14.76,25.52,50,0
 	.goto Ashenvale,14.62,26.49,50,0
 	.goto Ashenvale,14.52,28.25,50,0
 	.goto Ashenvale,13.55,29.36,50,0
 	.goto Ashenvale,12.41,29.15,50,0
 	.goto Ashenvale,11.22,31.04,50,0
-	.goto Ashenvale,10.38,29.60,50,0
+	.goto Ashenvale,10.38,29.6,50,0
 	.goto Ashenvale,11.01,28.57,50,0
     .xp 21 >> Grind to level 21
 step
@@ -6059,7 +6059,7 @@ step
    .goto 1440/1,1033.37,3354.89
    .accept 216 >> Accept Between a Rock and a Thistlefur
    .target +Karang Amakkar
-   .goto Ashenvale,11.90,34.53
+   .goto 1440/1,1013.77,3345.67
    .accept 6462 >> Accept Troll Charm
    .target +Mitsuwa
    .goto 1440/1,1028.18,3333.37
@@ -6112,23 +6112,23 @@ step
 	.goto Ashenvale,14.85,23.08,50,0
 	.goto Ashenvale,14.13,20.77,50,0
 	.goto Ashenvale,14.73,19.56,50,0
-	.goto Ashenvale,14.59,17.90,50,0
+	.goto Ashenvale,14.59,17.9,50,0
 	.goto Ashenvale,13.38,16.39,50,0
 	.goto Ashenvale,13.62,14.48,50,0
 	.goto Ashenvale,14.15,15.31,50,0
 	.goto Ashenvale,15.88,15.42,50,0
-	.goto Ashenvale,15.40,16.96,50,0
+	.goto Ashenvale,15.4,16.96,50,0
 	.goto Ashenvale,15.22,18.81,50,0
 	.goto Ashenvale,15.33,20.78,50,0
 	.goto Ashenvale,15.33,22.51,50,0
-	.goto Ashenvale,15.32,24.90,50,0
+	.goto Ashenvale,15.32,24.9,50,0
 	.goto Ashenvale,14.76,25.52,50,0
 	.goto Ashenvale,14.62,26.49,50,0
 	.goto Ashenvale,14.52,28.25,50,0
 	.goto Ashenvale,13.55,29.36,50,0
 	.goto Ashenvale,12.41,29.15,50,0
 	.goto Ashenvale,11.22,31.04,50,0
-	.goto Ashenvale,10.38,29.60,50,0
+	.goto Ashenvale,10.38,29.6,50,0
 	.goto Ashenvale,11.01,28.57,50,0
    >>Kill |cRXP_ENEMY_Wrathtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
    .complete 6442,1 --Wrathtail Head (20)
@@ -6150,23 +6150,23 @@ step
 	.goto Ashenvale,14.85,23.08,50,0
 	.goto Ashenvale,14.13,20.77,50,0
 	.goto Ashenvale,14.73,19.56,50,0
-	.goto Ashenvale,14.59,17.90,50,0
+	.goto Ashenvale,14.59,17.9,50,0
 	.goto Ashenvale,13.38,16.39,50,0
 	.goto Ashenvale,13.62,14.48,50,0
 	.goto Ashenvale,14.15,15.31,50,0
 	.goto Ashenvale,15.88,15.42,50,0
-	.goto Ashenvale,15.40,16.96,50,0
+	.goto Ashenvale,15.4,16.96,50,0
 	.goto Ashenvale,15.22,18.81,50,0
 	.goto Ashenvale,15.33,20.78,50,0
 	.goto Ashenvale,15.33,22.51,50,0
-	.goto Ashenvale,15.32,24.90,50,0
+	.goto Ashenvale,15.32,24.9,50,0
 	.goto Ashenvale,14.76,25.52,50,0
 	.goto Ashenvale,14.62,26.49,50,0
 	.goto Ashenvale,14.52,28.25,50,0
 	.goto Ashenvale,13.55,29.36,50,0
 	.goto Ashenvale,12.41,29.15,50,0
 	.goto Ashenvale,11.22,31.04,50,0
-	.goto Ashenvale,10.38,29.60,50,0
+	.goto Ashenvale,10.38,29.6,50,0
 	.goto Ashenvale,11.01,28.57,50,0
     .xp 21+21450 >> Grind to 21450+/25200 xp
     .dungeon !BFD << Priest
@@ -6219,8 +6219,8 @@ step << Priest
     .goto 1414/1,896.76,4247.63,0
     .goto 1414/1,944.60,4174.03,20,0
     .goto 1414/1,896.76,4247.63,20,0
-    .goto Kalimdor,43.90,34.59,20,0
-    .goto Kalimdor,44.00,34.57,20,0
+    .goto 1414/1,911.48,4313.87,20,0
+    .goto 1414/1,874.68,4318.77,20,0
     .goto 1414/1,815.80,4250.08,20,0
     .goto 1414/1,745.88,4220.64,20,0
     .goto 1414/1,679.64,4247.63,20,0
@@ -6239,8 +6239,8 @@ step << Priest
     .goto 1414/1,679.64,4247.63,20,0
     .goto 1414/1,745.88,4220.64,20,0
     .goto 1414/1,815.80,4250.08,20,0
-    .goto Kalimdor,44.00,34.57,20,0
-    .goto Kalimdor,43.90,34.59,20,0
+    .goto 1414/1,874.68,4318.77,20,0
+    .goto 1414/1,911.48,4313.87,20,0
     .goto 1414/1,896.76,4247.63,20,0
     .goto 1414/1,944.60,4174.03,20,0
     .goto 1414/1,749.56,4186.29,20,0
@@ -6324,7 +6324,7 @@ step << Priest
 step << Priest
     #xprate <1.5
     #season 0,1
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Zoram'gar >> Fly to Zoram'gar Outpost
     .target Tal
@@ -6377,7 +6377,7 @@ step << Priest
     .isQuestComplete 6922
 step
     #xprate <1.5
-    .goto Ashenvale,11.90,34.53
+    .goto 1440/1,1013.77,3345.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karang|r
     .accept 216 >> Accept Between a Rock and a Thistlefur
     .target Karang Amakkar
@@ -6425,13 +6425,13 @@ step
     .accept 1065 >> Accept Journey to Tarren Mill
     .target Apothecary Zamah
 step << Warlock
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Camp Taurajo >>Fly to Camp Taurajo
     .target Tal
     .zoneskip Thunder Bluff,1
 step << !Warlock
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Orgrimmar >>Fly to Orgrimmar
     .target Tal
@@ -6532,7 +6532,7 @@ step << Rogue
     .accept 2458 >>Accept Deep Cover
     .target Shenthul
 step << Rogue
-    .goto Orgrimmar,42.10,49.49
+    .goto 1454/1,-4271.1,1810.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Rekkul|r|cRXP_BUY_. Buy |r |T134387:0|t[Flash Powder] |cRXP_BUY_from him|r
     .collect 2928,40,2479,1 --Collect Dust of Decay (40)
     .collect 3371,40,2479,1 --Collect Empty Vial (40)
@@ -6600,7 +6600,7 @@ step << Druid
     .collect 15883,1,31,1 --Half Pendant of Aquatic Agility (1)
 step << Rogue
     #completewith next
-    .goto The Barrens,55.70,5.89
+    .goto The Barrens,55.7,5.89
 	+Target |cRXP_FRIENDLY_Taskmaster Fizzule|r, then use your |T134536:0|t[Flare Gun] TWICE and type /Salute
     >>|cRXP_WARN_Be careful! Do NOT approach him until he becomes friendly or he will attack you!|r
     .use 8051
@@ -6615,7 +6615,7 @@ step << Rogue/Druid
     #optional
     #label MissionProbable
 step << Rogue
-    .goto The Barrens,54.80,5.97
+    .goto The Barrens,54.8,5.97
     >>Use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Foreman Silixiz|r for his |cRXP_LOOT_Tower Key|r
     .complete 2478,5 --Silixiz's Tower Key (1)
     .mob Foreman Silixiz
@@ -6663,7 +6663,7 @@ step << Rogue/Druid
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step << Rogue/Druid
     #softcore
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Orgrimmar >> Fly to Orgrimmar
     .zoneskip Orgrimmar
@@ -6680,7 +6680,7 @@ step << Rogue
     .accept 2479 >>Accept Hinott's Assistance
     .target Shenthul
 step << Rogue
-    .goto Orgrimmar,42.10,49.49
+    .goto 1454/1,-4271.1,1810.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Rekkul|r|cRXP_BUY_. Buy |r |T133849:0|t[Dust of Decay] |cRXP_BUY_and|r |T132793:0|t[Empty Vials] |cRXP_BUY_from him|r
     .collect 2928,20,2479,1 --Collect Dust of Decay (20)
     .collect 3371,20,2479,1 --Collect Empty Vial (20)
@@ -6833,7 +6833,7 @@ step << !Tauren
     .accept 870 >>Accept The Forgotten Pools
     .target Tonga Runetotem
 step << !Tauren
-    .goto The Barrens,51.50,30.87
+    .goto 1413/1,-2595.75,-473.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
     .accept 871 >>Accept Disrupt the Attacks
     .accept 5041 >>Accept Supplies for the Crossroads
@@ -6842,7 +6842,7 @@ step << !Tauren
 step << !Undead !Tauren
     #xprate <2.1
     #hardcore
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     >>|cRXP_WARN_Do NOT fly to Orgrimmar!|r
     .fp The Crossroads >> Get the The Crossroads flight path
@@ -6850,7 +6850,7 @@ step << !Undead !Tauren
     .accept 6384 >>Accept Ride to Orgrimmar
     .target Devrak
 step << Undead
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fp The Crossroads >> Get the The Crossroads flight path
     .target Devrak
@@ -7084,7 +7084,7 @@ step << Shaman
     #sticky
     #label FireTar1
     .goto The Barrens,54.97,25.23,50,0
-    .goto The Barrens,54.2,24.60,50,0
+    .goto The Barrens,54.2,24.6,50,0
     .goto The Barrens,53.57,25.51
     >>Kill a |cRXP_ENEMY_Razormane Water Seeker|r or |cRXP_ENEMY_Razormane Thornweaver|r. Loot them for a |cRXP_LOOT_Fire Tar|r
     .complete 1525,1 --Fire Tar (1)
@@ -7102,7 +7102,7 @@ step
     .mob +Razormane Hunter
     .maxlevel 15
 step
-    .goto The Barrens,55.70,27.30
+    .goto 1413/1,-3021.35,-231.960
     .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest
     >>|cRXP_WARN_If it's not up you'll get it later|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
@@ -7115,11 +7115,11 @@ step
 	.goto 1413/1,-2811.59,-42.780,25,0
 	.goto 1413/1,-2875.43,-52.24,25,0
 	.goto 1413/1,-2931.16,-89.40,25,0
-	.goto The Barrens,55.50,25.61,25,0
+	.goto 1413/1,-3001.08,-117.78,25,0
 	.goto 1413/1,-3037.56,-164.390,25,0
 	.goto 1413/1,-3034.52,-221.82,25,0
 	.goto 1413/1,-2991.96,-239.39,25,0
-	.goto The Barrens,54.50,26.97,25,0
+	.goto 1413/1,-2899.75,-209.66,25,0
 	.goto 1413/1,-2854.15,-151.56,25,0
 	.goto 1413/1,-2799.43,-92.78,25,0
 	.goto 1413/1,-2811.59,-42.780,25,0
@@ -7177,7 +7177,7 @@ step
     .goto 1413/1,-2805.51,-386.00,80,0
     .goto 1413/1,-2738.63,-610.310,80,0
     .goto 1413/1,-2576.50,-610.98,80,0
-    .goto The Barrens,50.50,31.05,80,0
+    .goto 1413/1,-2494.42,-485.32,80,0
     .goto 1413/1,-2448.82,-398.84,80,0
     .goto 1413/1,-2537.99,-260.33,80,0
     .goto 1413/1,-2730.52,-273.17,80,0
@@ -7203,7 +7203,7 @@ step
     .accept 845 >>Accept The Zhevra
     .target Sergra Darkthorn
 step
-    .goto The Barrens,51.50,30.87
+    .goto 1413/1,-2595.75,-473.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
     .turnin 871 >>Turn in Disrupt the Attacks
     .accept 872 >>Accept The Disruption Ends
@@ -7211,7 +7211,7 @@ step
     .isQuestComplete 871
 step
     #optional
-    .goto The Barrens,51.50,30.87
+    .goto 1413/1,-2595.75,-473.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
     .accept 872 >>Accept The Disruption Ends
     .target Thork
@@ -7226,7 +7226,7 @@ step
 step << !Tauren !Undead
     #softcore
     #xprate <2.1
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .turnin 6365 >>Turn in Meats to Orgrimmar
     .accept 6384 >>Accept Ride to Orgrimmar
@@ -7351,14 +7351,14 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.2
 step << !Undead !Tauren
     #completewith HiddenEnemiesPickup
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Orgrimmar >> Fly to Orgrimmar
     .zoneskip Orgrimmar
     .target Devrak
     .dungeon RFC
 step << Tauren
-    .goto The Barrens,55.70,27.30,20,0
+    .goto 1413/1,-3021.35,-231.96,20,0
     .goto 1413/1,-3029.46,261.25
     .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
     .collect 4926,1,819 --Collect Chen's Empty Keg
@@ -7412,7 +7412,7 @@ step << Tauren
     .isOnQuest 872
 step << Tauren
    #loop
-	.goto The Barrens,58.90,25.37,0
+	.goto 1413/1,-3345.62,-101.56,0
 	.goto 1413/1,-3393.24,-102.24,50,0
 	.goto 1413/1,-3419.59,-40.08,50,0
 	.goto 1413/1,-3419.59,-0.89,50,0
@@ -7425,7 +7425,7 @@ step << Tauren
 	.goto 1413/1,-3205.78,-119.13,50,0
 	.goto 1413/1,-3218.95,-81.97,50,0
 	.goto 1413/1,-3278.74,-75.21,50,0
-	.goto The Barrens,58.90,25.37,50,0
+	.goto 1413/1,-3345.62,-101.56,50,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
     .mob +Razormane Geomancer
@@ -7451,7 +7451,7 @@ step << Tauren Shaman
     .goto Durotar,37.86,58.18,8,0
     .goto Durotar,38.05,57.79,8,0
     .goto Durotar,38.93,57.54,8,0
-    .goto Durotar,39.19,57.90,8,0
+    .goto Durotar,39.19,57.9,8,0
     .goto Durotar,39.16,58.56,10 >> Travel the path up the mountain toward |cRXP_FRIENDLY_Telf|r
     .dungeon RFC
 step << Tauren Shaman
@@ -7684,7 +7684,7 @@ step << !Tauren
     .dungeon RFC
 step << Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
     #completewith RFCTurninsTB1
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Thunder Bluff >>Fly to Thunder Bluff
     .target Devrak
@@ -7744,7 +7744,7 @@ step << Tauren/Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
     .zoneskip Thunder Bluff,1
     .dungeon RFC
 step << skip
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Thunder Bluff >> Get the Thunder Bluff flight path
     .target Tal
@@ -7761,7 +7761,7 @@ step
 step
     #optional
     #completewith KreenigSnarlsnout
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Crossroads >>Fly to Crossroads
     .target Tal
@@ -7769,7 +7769,7 @@ step
     .cooldown item,6948,<0
     .dungeon RFC
 step
-    .goto The Barrens,55.70,27.30,20,0
+    .goto 1413/1,-3021.35,-231.96,20,0
     .goto 1413/1,-3029.46,261.25
     .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest
     >>|cRXP_WARN_Wait for the respawn if it's not up|r
@@ -7834,7 +7834,7 @@ step
     .isOnQuest 872
 step
     #loop
-	.goto The Barrens,58.90,25.37,0
+	.goto 1413/1,-3345.62,-101.56,0
 	.goto 1413/1,-3393.24,-102.24,50,0
 	.goto 1413/1,-3419.59,-40.08,50,0
 	.goto 1413/1,-3419.59,-0.89,50,0
@@ -7847,7 +7847,7 @@ step
 	.goto 1413/1,-3205.78,-119.13,50,0
 	.goto 1413/1,-3218.95,-81.97,50,0
 	.goto 1413/1,-3278.74,-75.21,50,0
-	.goto The Barrens,58.90,25.37,50,0
+	.goto 1413/1,-3345.62,-101.56,50,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
     .mob +Razormane Geomancer
@@ -7896,7 +7896,7 @@ step << Shaman
     .goto Durotar,37.86,58.18,8,0
     .goto Durotar,38.05,57.79,8,0
     .goto Durotar,38.93,57.54,8,0
-    .goto Durotar,39.19,57.90,8,0
+    .goto Durotar,39.19,57.9,8,0
     .goto Durotar,39.16,58.56,10 >> Travel the path up the mountain toward |cRXP_FRIENDLY_Telf|r
 step << Shaman
     #label CallofFire3
@@ -8209,7 +8209,7 @@ step
     #label Southsea
     #loop
     .goto 1413/1,-3885.72,-1569.690,0
-    .goto The Barrens,64.40,44.09,50,0
+    .goto 1413/1,-3902.95,-1366.33,50,0
     .goto 1413/1,-3823.91,-1512.94,50,0
     .goto 1413/1,-3885.72,-1569.690,50,0
     >>Kill |cRXP_ENEMY_Southsea Brigands|r and |cRXP_ENEMY_Southsea Cannoneers|r
@@ -8219,8 +8219,8 @@ step
     .mob +Southsea Cannoneer
     .isOnQuest 887
 step << Orc Rogue/Troll Rogue
-    .goto The Barrens,63.70,44.32,50,0
-    .goto The Barrens,62.70,44.07,50,0
+    .goto The Barrens,63.7,44.32,50,0
+    .goto The Barrens,62.7,44.07,50,0
     .goto The Barrens,62.18,44.47
 	>>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r
     >>|cRXP_WARN_He patrols up and down the hill|r
@@ -8461,13 +8461,13 @@ step
     .goto The Barrens,55.27,37.82,80,0
     .goto The Barrens,53.84,38.52,80,0
     .goto The Barrens,52.63,38.07,80,0
-    .goto The Barrens,49.49,37.20,80,0
+    .goto The Barrens,49.49,37.2,80,0
     .goto The Barrens,48.33,36.75,80,0
     >>Finish killing |cRXP_ENEMY_Zhevras|r. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
 step
-    .goto The Barrens,51.50,30.87
+    .goto 1413/1,-2595.75,-473.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r and |cRXP_FRIENDLY_Sergra|r
     .turnin 5041 >>Turn in Supplies for the Crossroads
     .turnin 872 >>Turn in The Disruption Ends
@@ -8476,14 +8476,14 @@ step
     .isQuestComplete 872
 step
     #optional
-    .goto The Barrens,51.50,30.87
+    .goto 1413/1,-2595.75,-473.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r and |cRXP_FRIENDLY_Sergra|r
     .turnin 872 >>Turn in The Disruption Ends
     .target Thork
     .isQuestComplete 5041
 step
     #optional
-    .goto The Barrens,51.50,30.87
+    .goto 1413/1,-2595.75,-473.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r and |cRXP_FRIENDLY_Sergra|r
     .turnin 5041 >>Turn in Supplies for the Crossroads
     .target Thork
@@ -8597,9 +8597,9 @@ step
     #loop
     .goto 1413/1,-1594.58,30.19,0
     .goto 1413/1,-1594.58,30.19,50,0
-    .goto The Barrens,41.30,24.31,50,0
+    .goto 1413/1,-1562.15,-29.94,50,0
     .goto 1413/1,-1483.11,66.67,50,0
-    .goto The Barrens,41.00,21.19,50,0
+    .goto 1413/1,-1531.75,180.85,50,0
     .goto 1413/1,-1462.84,214.63,50,0
     >>Kill |cRXP_ENEMY_Savannah Prowlers|r. Loot them for their |cRXP_LOOT_Claws|r and |cRXP_LOOT_Tusks|r
     .complete 903,1 --Prowler Claws (7)
@@ -8657,9 +8657,9 @@ step
     #loop
     .goto 1413/1,-1594.58,30.19,0
     .goto 1413/1,-1594.58,30.19,50,0
-    .goto The Barrens,41.30,24.31,50,0
+    .goto 1413/1,-1562.15,-29.94,50,0
     .goto 1413/1,-1483.11,66.67,50,0
-    .goto The Barrens,41.00,21.19,50,0
+    .goto 1413/1,-1531.75,180.85,50,0
     .goto 1413/1,-1462.84,214.63,50,0
     >>Kill |cRXP_ENEMY_Savannah Prowlers|r. Loot them for their |cRXP_LOOT_Claws|r and |cRXP_LOOT_Tusks|r
     .complete 903,1 --Prowler Claws (7)
@@ -8689,7 +8689,7 @@ step << skip --!Tauren
 step << skip --!Tauren
     #completewith next
     .goto Stonetalon Mountains,82.57,98.63,60,0
-    .goto Stonetalon Mountains,80.10,98.20,40,0
+    .goto Stonetalon Mountains,80.1,98.2,40,0
     .goto Stonetalon Mountains,77.17,98.61,40 >> Follow the path on the left upward
     .dungeon RFC
     .isOnQuest 5724
@@ -8744,7 +8744,7 @@ step << skip --!Tauren
     .dungeon RFC
 step << skip --!Tauren
     #completewith Samophlange
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Crossroads >>Fly to The Crossroads
     .target Tal
@@ -8801,7 +8801,7 @@ step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .dungeon RFC
 step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #xprate <2.1
-    .goto The Barrens,55.80,17.03
+    .goto 1413/1,-3031.48,461.91
     >>Use the |T134227:0|t[Horn of Echeyakee] to summon |cRXP_ENEMY_Echeyakee|r
     >>Kill |cRXP_ENEMY_Echeyakee|r. Loot him for |cRXP_LOOT_Echeyakee's Hide|r
     >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r doesn't spawn after using the|r |T134227:0|t[Horn of Echeyakee]|cRXP_WARN_ or you didn't get the tag when it did spawn, skip this step|r
@@ -8825,7 +8825,7 @@ step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .dungeon RFC
 step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #xprate <2.1
-    .goto The Barrens,55.80,17.03
+    .goto 1413/1,-3031.48,461.91
     >>Use the |T134227:0|t[Horn of Echeyakee] to summon |cRXP_ENEMY_Echeyakee|r
     >>Kill |cRXP_ENEMY_Echeyakee|r. Loot him for |cRXP_LOOT_Echeyakee's Hide|r
     .complete 881,1 --Echeyakee's Hide (1)
@@ -8876,7 +8876,7 @@ step
     .target Sergra Darkthorn
 step
     #xprate >2.09
-    .goto The Barrens,55.80,17.03
+    .goto 1413/1,-3031.48,461.91
     >>Use the |T134227:0|t[Horn of Echeyakee] to summon |cRXP_ENEMY_Echeyakee|r
     >>Kill |cRXP_ENEMY_Echeyakee|r. Loot him for |cRXP_LOOT_Echeyakee's Hide|r
     >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r doesn't spawn after using the|r |T134227:0|t[Horn of Echeyakee]|cRXP_WARN_ or you didn't get the tag when it did spawn, skip this step|r
@@ -8906,7 +8906,7 @@ step
     .xp <20,1
 step
     #optional
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Orgrimmar >> Fly to Orgrimmar
     .zoneskip Orgrimmar
@@ -8934,7 +8934,7 @@ step
     .mob Ornery Plainstrider
 step
     #xprate <2.1
-    .goto The Barrens,43.80,12.22
+    .goto The Barrens,43.8,12.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vrang|r
     >>|cRXP_FRIENDLY_Vrang|r |cRXP_WARN_sells|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r << Orc Warrior/Troll Warrior/Tauren Warrior
 	.vendor	>> Vendor trash and repair
@@ -8949,7 +8949,7 @@ step
     .mob Sunscale Screecher
 step
 	#label Samophlange
-    .goto The Barrens,52.40,11.65
+    .goto 1413/1,-2686.95,825.40
     >>Click on the |cRXP_PICK_Control Console|r
     .turnin 894 >>Turn in Samophlange
     .accept 900 >>Accept Samophlange
@@ -8966,19 +8966,19 @@ step
     .complete 900,3 --Shut off Regulator Valve (1)
     .isOnQuest 900
 step
-    .goto The Barrens,52.40,11.40
+    .goto 1413/1,-2686.95,842.290
     >>Click the |cRXP_PICK_Valve|r
     .complete 900,1 --Shut off Main Control Valve (1)
     .isOnQuest 900
 step
-    .goto The Barrens,52.40,11.65
+    .goto 1413/1,-2686.95,825.40
     >>Click the |cRXP_PICK_Control Console|r
     .turnin 900 >>Turn in Samophlange
     .accept 901 >>Accept Samophlange
     .isQuestComplete 900
 step
     #optional
-    .goto The Barrens,52.40,11.65
+    .goto 1413/1,-2686.95,825.40
     >>Click the |cRXP_PICK_Control Console|r
     .accept 901 >>Accept Samophlange
     .isQuestTurnedIn 900
@@ -8989,7 +8989,7 @@ step
     .mob Tinkerer Sniggles
     .isQuestTurnedIn 900
 step
-    .goto The Barrens,52.40,11.65
+    .goto 1413/1,-2686.95,825.40
     >>Click the |cRXP_PICK_Control Console|r
     .turnin 901 >>Turn in Samophlange
     .accept 902 >>Accept Samophlange
@@ -9060,7 +9060,7 @@ step
     .isQuestTurnedIn 858
 step
     #label Slugs
-    .goto The Barrens,55.80,7.76,30,0
+    .goto 1413/1,-3031.48,1088.21,30,0
     .goto 1413/1,-3002.10,1130.78
     >>|cRXP_WARN_Two|r |cRXP_ENEMY_Venture Co. Mercenaries|r |cRXP_WARN_will spawn when the shredder moves onto the higher ground. Kill them then wait for his RP event at the end|r
     .complete 863,1 --Escort Wizzlecrank out of the Venture Co. drill site (1)
@@ -9079,7 +9079,7 @@ step
     #label CatsEye
     #loop
     .goto The Barrens,61.51,4.43,0
-    .goto The Barrens,61.46,4.50,40,0
+    .goto The Barrens,61.46,4.5,40,0
     .goto The Barrens,61.06,3.63,40,0
     .goto The Barrens,61.63,3.37,40,0
     .goto The Barrens,62.14,3.52,40,0
@@ -9097,7 +9097,7 @@ step
     #ssf
     #loop
     .goto The Barrens,61.51,4.43,0
-    .goto The Barrens,61.46,4.50,40,0
+    .goto The Barrens,61.46,4.5,40,0
     .goto The Barrens,61.06,3.63,40,0
     .goto The Barrens,61.63,3.37,40,0
     .goto The Barrens,62.14,3.52,40,0
@@ -9113,7 +9113,7 @@ step
     #ah
     #loop
     .goto The Barrens,61.51,4.43,0
-    .goto The Barrens,61.46,4.50,40,0
+    .goto The Barrens,61.46,4.5,40,0
     .goto The Barrens,61.06,3.63,40,0
     .goto The Barrens,61.63,3.37,40,0
     .goto The Barrens,62.14,3.52,40,0
@@ -9308,7 +9308,7 @@ step << Rogue
     .target Zando'zan
 step << Orc Rogue/Troll Rogue
     #completewith next
-    .goto Orgrimmar,42.10,49.51
+    .goto Orgrimmar,42.1,49.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Rekkul|r|cRXP_BUY_. Buy a|r |T134065:0|t[Thieves' Tools] |cRXP_BUY_from him|r
     .collect 5060,1,1858,1 --Collect Thieves' Tools (1)
     .target Rekkul
@@ -9561,7 +9561,7 @@ step << !Tauren !Undead
     .target Zargh
     .isOnQuest 6386
 step
-    .goto The Barrens,55.80,17.03
+    .goto 1413/1,-3031.48,461.91
     >>Use the |T134227:0|t[Horn of Echeyakee] to summon |cRXP_ENEMY_Echeyakee|r
     >>Kill |cRXP_ENEMY_Echeyakee|r. Loot him for |cRXP_LOOT_Echeyakee's Hide|r
     >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r doesn't spawn after using the|r |T134227:0|t[Horn of Echeyakee]|cRXP_WARN_ or you didn't get the tag when it did spawn, skip this step|r
@@ -9580,7 +9580,7 @@ step
     .target Sergra Darkthorn
     .itemcount 5100,<1 --Echeyakee's Hide (0)
 step
-    .goto The Barrens,55.80,17.03
+    .goto 1413/1,-3031.48,461.91
     >>Use the |T134227:0|t[Horn of Echeyakee] to summon |cRXP_ENEMY_Echeyakee|r
     >>Kill |cRXP_ENEMY_Echeyakee|r. Loot him for |cRXP_LOOT_Echeyakee's Hide|r
     .complete 881,1 --Echeyakee's Hide (1)
@@ -9614,7 +9614,7 @@ step << Hunter
     .target Barg
 step
     #completewith RapHornsPickup
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Ratchet >>Fly to Ratchet
     .target Devrak
@@ -9858,7 +9858,7 @@ step
     #xprate <2.1
     #completewith next
     #loop
-    .goto The Barrens,55.80,45.78,50,0
+    .goto The Barrens,55.8,45.78,50,0
     .goto The Barrens,56.75,43.41,50,0
     .goto The Barrens,57.01,41.22,50,0
     .goto The Barrens,55.45,41.37,50,0
@@ -9866,7 +9866,7 @@ step
     .goto The Barrens,53.41,40.26,50,0
     .goto The Barrens,52.99,44.73,50,0
     .goto The Barrens,54.31,46.81,50,0
-    .goto The Barrens,55.80,45.78,50,0
+    .goto The Barrens,55.8,45.78,50,0
     >>Kill |cRXP_ENEMY_Kolkar|r around the oasis. Loot them for their |cRXP_LOOT_Bracers|r
     .complete 855,1 --Centaur Bracers (15)
     .mob Kolkar Bloodcharger
@@ -9888,8 +9888,8 @@ step
 step << Druid
     #season 2
     #loop
-    .goto The Barrens,55.80,45.78,0
-    .goto The Barrens,55.80,45.78,50,0
+    .goto The Barrens,55.8,45.78,0
+    .goto The Barrens,55.8,45.78,50,0
     .goto The Barrens,56.75,43.41,50,0
     .goto The Barrens,57.01,41.22,50,0
     .goto The Barrens,55.45,41.37,50,0
@@ -9946,7 +9946,7 @@ step
     .mob Fleeting Plainstrider
     .mob Ornery Plainstrider
 step
-    .goto The Barrens,52.60,46.10
+    .goto 1413/1,-2707.22,-1502.130
     >>Click the |cRXP_PICK_Blue Raptor Nest|r. Kill more |cRXP_ENEMY_Sunscale Scytheclaws|r if you don't have a |T132914:0|t[Sunscale Feather]
     >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
     .complete 905,1 --Visit Blue Raptor Nest (1)
@@ -9991,7 +9991,7 @@ step
     .goto 1413/1,-1951.27,-1956.15,0
     .goto 1413/1,-2031.32,-1703.47,0
     .goto 1413/1,-2183.32,-1858.19,0
-    .goto The Barrens,50.10,53.34,0
+    .goto 1413/1,-2453.88,-1991.28,0
 	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_Hoof of Lakota'mani|r]
     >>|cRXP_WARN_Use the |T132318:0|t[|cRXP_LOOT_Hoof of Lakota'mani|r] to start the quest|r
     >>|cRXP_WARN_He has 4 spawnpoints (marked on the map)|r
@@ -10013,7 +10013,7 @@ step << Hunter
     #season 2
     #loop
     .goto 1413/1,-1746.58,-2263.56,0
-    .goto The Barrens,44.60,55.51,40,0
+    .goto 1413/1,-1896.55,-2137.89,40,0
     .goto 1413/1,-1840.82,-2184.510,40,0
     .goto 1413/1,-1746.58,-2263.56,40,0
     .line The Barrens,44.60,55.51,44.60,55.51,43.12,57.37
@@ -10160,9 +10160,9 @@ step
     .goto 1413/1,-2114.42,-981.22,50,0
     .goto 1413/1,-2167.11,-1021.09,50,0
     .goto 1413/1,-2187.38,-1040.68,50,0
-    .goto The Barrens,48.20,39.57,50,0
-    .goto The Barrens,48.40,39.58,50,0
-    .goto The Barrens,48.60,39.51,50,0
+    .goto 1413/1,-2261.35,-1060.95,50,0
+    .goto 1413/1,-2281.62,-1061.62,50,0
+    .goto 1413/1,-2301.88,-1056.89,50,0
     .goto 1413/1,-2295.80,-1087.30,50,0
     .goto 1413/1,-2299.86,-1125.13,50,0
     .goto 1413/1,-2268.44,-1145.40,50,0
@@ -10201,9 +10201,9 @@ step
     .goto 1413/1,-2114.42,-981.22,50,0
     .goto 1413/1,-2167.11,-1021.09,50,0
     .goto 1413/1,-2187.38,-1040.68,50,0
-    .goto The Barrens,48.20,39.57,50,0
-    .goto The Barrens,48.40,39.58,50,0
-    .goto The Barrens,48.60,39.51,50,0
+    .goto 1413/1,-2261.35,-1060.95,50,0
+    .goto 1413/1,-2281.62,-1061.62,50,0
+    .goto 1413/1,-2301.88,-1056.89,50,0
     .goto 1413/1,-2295.80,-1087.30,50,0
     .goto 1413/1,-2299.86,-1125.13,50,0
     .goto 1413/1,-2268.44,-1145.40,50,0
@@ -10334,9 +10334,9 @@ step
     #loop
     .goto The Barrens,40.28,15.49,0
     .goto The Barrens,40.28,15.49,40,0
-    .goto The Barrens,39.50,14.68,40,0
+    .goto The Barrens,39.5,14.68,40,0
     .goto The Barrens,39.47,13.24,40,0
-    .goto The Barrens,38.94,12.80,40,0
+    .goto The Barrens,38.94,12.8,40,0
     .goto The Barrens,38.18,12.56,40,0
     .goto The Barrens,37.96,13.52,40,0
     .goto The Barrens,38.62,13.95,40,0
@@ -10416,12 +10416,12 @@ step
     .goto 1442/1,-691.11,-13.63,40,0
     .goto 1442/1,-650.58,26.74,40,0
     .goto 1442/1,-718.94,65.49,40,0
-    .goto Stonetalon Mountains,81.70,86.44,40,0
+    .goto 1442/1,-743.85,101.96,40,0
     .goto 1442/1,-771.20,113.040,40,0
     .goto 1442/1,-785.36,141.69,40,0
     .goto 1442/1,-838.59,148.20,40,0
-    .goto Stonetalon Mountains,84.20,85.20,40,0
-    .goto Stonetalon Mountains,83.80,86.38,40,0
+    .goto 1442/1,-865.93,142.34,40,0
+    .goto 1442/1,-846.4,103.92,40,0
     .goto 1442/1,-819.54,76.24,40,0
     .goto 1442/1,-774.61,-5.17,40,0
     .goto 1442/1,-774.61,-27.96,40,0
@@ -10440,12 +10440,12 @@ step << Druid
     .goto 1442/1,-691.11,-13.63,40,0
     .goto 1442/1,-650.58,26.74,40,0
     .goto 1442/1,-718.94,65.49,40,0
-    .goto Stonetalon Mountains,81.70,86.44,40,0
+    .goto 1442/1,-743.85,101.96,40,0
     .goto 1442/1,-771.20,113.040,40,0
     .goto 1442/1,-785.36,141.69,40,0
     .goto 1442/1,-838.59,148.20,40,0
-    .goto Stonetalon Mountains,84.20,85.20,40,0
-    .goto Stonetalon Mountains,83.80,86.38,40,0
+    .goto 1442/1,-865.93,142.34,40,0
+    .goto 1442/1,-846.4,103.92,40,0
     .goto 1442/1,-819.54,76.24,40,0
     .goto 1442/1,-774.61,-5.17,40,0
     .goto 1442/1,-774.61,-27.96,40,0
@@ -10572,7 +10572,7 @@ step
     #xprate <2.1
     #completewith next
     .goto Stonetalon Mountains,82.57,98.63,60,0
-    .goto Stonetalon Mountains,80.10,98.20,40,0
+    .goto Stonetalon Mountains,80.1,98.2,40,0
     .goto Stonetalon Mountains,77.17,98.61,40 >> Follow the path on the left upward
 step
     #xprate <2.1
@@ -10614,10 +10614,10 @@ step
     #xprate <2.1
     #label Besseleth1
     #loop
-    .goto Stonetalon Mountains,54.80,71.95,0
+    .goto 1442/1,569.77,573.79,0
     .goto 1442/1,711.87,513.23,50,0
     .goto 1442/1,684.04,582.91,50,0
-    .goto Stonetalon Mountains,54.80,71.95,50,0
+    .goto 1442/1,569.77,573.79,50,0
     >>Kill |cRXP_ENEMY_Besseleth|r. Loot her for for her |cRXP_LOOT_Fang|r
     >>|cRXP_WARN_Clear the area around|r |cRXP_ENEMY_Besseleth|r|cRXP_WARN_. Be careful as she webs you. Keep her permanently feared with dots|r << Warlock
     >>|cRXP_WARN_This quest is hard. Skip it needed|r
@@ -10627,7 +10627,7 @@ step
     #xprate <2.1
     .goto Stonetalon Mountains,67.38,86.99,80,0
     .goto Stonetalon Mountains,61.44,81.74,80,0
-    .goto Stonetalon Mountains,58.44,75.90,40,0
+    .goto Stonetalon Mountains,58.44,75.9,40,0
     .goto Stonetalon Mountains,54.99,76.03
     >>Kill |cRXP_ENEMY_Deepmoss Creepers|r
     >>|cRXP_WARN_Save any|r |T134339:0|t[Small Venom Sacs] |cRXP_WARN_you loot|r << Rogue
@@ -10636,7 +10636,7 @@ step
 step
     #xprate <2.1
     #completewith next
-    .goto Stonetalon Mountains,51.40,61.14,50,0
+    .goto Stonetalon Mountains,51.4,61.14,50,0
     .goto Stonetalon Mountains,49.96,61.04
     .subzone 460 >>Travel to Sun Rock Retreat
 step
@@ -10665,7 +10665,7 @@ step
     .isQuestTurnedIn 6523
 step
     #xprate <2.1
-    .goto Stonetalon Mountains,47.20,61.16
+    .goto 1442/1,940.9,925.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maggran|r
 	.turnin 6284 >> Turn in Arachnophobia
     .target Maggran Earthbinder
@@ -10708,7 +10708,7 @@ step
     .goto 1442/1,163.47,962.27,50,0
     .goto 1442/1,86.81,961.94,50,0
     .goto 1442/1,181.05,907.89,50,0
-    .goto Stonetalon Mountains,62.50,62.92,50,0
+    .goto 1442/1,193.75,867.83,50,0
     .goto 1442/1,194.73,827.78,50,0
     .goto 1442/1,225.49,765.26,50,0
     .goto 1442/1,281.16,763.63,50,0
@@ -10877,12 +10877,12 @@ step
 step
     #xprate <2.1
     #loop
-    .goto Stonetalon Mountains,61.50,55.12,0
-    .goto Stonetalon Mountains,61.50,55.12,50,0
+    .goto 1442/1,242.58,1121.82,0
+    .goto 1442/1,242.58,1121.82,50,0
     .goto 1442/1,292.39,1122.470,50,0
-    .goto Stonetalon Mountains,59.80,53.69,50,0
+    .goto 1442/1,325.6,1168.39,50,0
     .goto 1442/1,338.79,1206.48,50,0
-    .goto Stonetalon Mountains,60.80,51.23,50,0
+    .goto 1442/1,276.77,1248.49,50,0
     .goto 1442/1,215.24,1145.59,50,0
     .goto 1442/1,187.40,1114.33,50,0
     .goto 1442/1,138.57,1144.62,50,0
@@ -10891,7 +10891,7 @@ step
     .goto 1442/1,-106.09,1157.31,50,0
     .goto 1442/1,-165.66,1173.60,50,0
     .goto 1442/1,-189.10,1079.82,50,0
-    .goto Stonetalon Mountains,67.90,56.96,50,0
+    .goto 1442/1,-69.95,1061.91,50,0
     .goto 1442/1,10.63,1072.33,50,0
     .goto 1442/1,57.51,1056.05,50,0
     .goto 1442/1,107.32,1040.09,50,0
@@ -10911,7 +10911,7 @@ step
     .goto 1442/1,163.47,962.27,30,0
     .goto 1442/1,86.81,961.94,30,0
     .goto 1442/1,181.05,907.89,30,0
-    .goto Stonetalon Mountains,62.50,62.92,30,0
+    .goto 1442/1,193.75,867.83,30,0
     .goto 1442/1,194.73,827.78,30,0
     .goto 1442/1,225.49,765.26,30,0
     .goto 1442/1,281.16,763.63,30,0
@@ -10982,7 +10982,7 @@ step
     .subzoneskip 378
 step
     #completewith next
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Camp Taurajo >> Fly to Camp Taurajo
     .target Devrak
@@ -11059,11 +11059,11 @@ step
     .goto 1413/1,-1951.27,-1956.15,0
     .goto 1413/1,-2031.32,-1703.47,0
     .goto 1413/1,-2183.32,-1858.19,0
-    .goto The Barrens,50.10,53.34,0
+    .goto 1413/1,-2453.88,-1991.28,0
     .goto 1413/1,-1951.27,-1956.15,80,0
     .goto 1413/1,-2031.32,-1703.47,80,0
     .goto 1413/1,-2183.32,-1858.19,80,0
-    .goto The Barrens,50.10,53.34,80,0
+    .goto 1413/1,-2453.88,-1991.28,80,0
 	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_Hoof of Lakota'mani|r]
     >>|cRXP_WARN_Use the |T132318:0|t[|cRXP_LOOT_Hoof of Lakota'mani|r] to start the quest|r
     >>|cRXP_WARN_He has 4 spawnpoints (marked on the map)|r
@@ -11079,21 +11079,21 @@ step
     .mob Stormsnout
 step
     #loop
-    .goto The Barrens,50.71,54.60,0
-    .goto The Barrens,50.71,54.60,60,0
+    .goto The Barrens,50.71,54.6,0
+    .goto The Barrens,50.71,54.6,60,0
     .goto The Barrens,50.74,55.33,60,0
     .goto The Barrens,50.73,56.78,60,0
     .goto The Barrens,50.42,57.23,60,0
-    .goto The Barrens,50.50,57.65,60,0
-    .goto The Barrens,50.87,57.50,60,0
+    .goto The Barrens,50.5,57.65,60,0
+    .goto The Barrens,50.87,57.5,60,0
     .goto The Barrens,51.26,57.84,60,0
     .goto The Barrens,51.74,57.69,60,0
-    .goto The Barrens,51.79,57.10,60,0
+    .goto The Barrens,51.79,57.1,60,0
     .goto The Barrens,53.08,54.69,60,0
     .goto The Barrens,53.65,54.27,60,0
     .goto The Barrens,53.63,53.53,60,0
     .goto The Barrens,53.35,52.72,60,0
-    .goto The Barrens,53.00,51.83,60,0
+    .goto The Barrens,53.0,51.83,60,0
     .goto The Barrens,52.62,52.19,60,0
     .goto The Barrens,52.59,52.71,60,0
     .goto The Barrens,52.41,53.07,60,0
@@ -11110,20 +11110,20 @@ step
 step << Warlock/Shaman
     #optional
     #loop
-	.goto The Barrens,50.71,54.60,60,0
+	.goto The Barrens,50.71,54.6,60,0
 	.goto The Barrens,50.74,55.33,60,0
 	.goto The Barrens,50.73,56.78,60,0
 	.goto The Barrens,50.42,57.23,60,0
-	.goto The Barrens,50.50,57.65,60,0
-	.goto The Barrens,50.87,57.50,60,0
+	.goto The Barrens,50.5,57.65,60,0
+	.goto The Barrens,50.87,57.5,60,0
 	.goto The Barrens,51.26,57.84,60,0
 	.goto The Barrens,51.74,57.69,60,0
-	.goto The Barrens,51.79,57.10,60,0
+	.goto The Barrens,51.79,57.1,60,0
 	.goto The Barrens,53.08,54.69,60,0
 	.goto The Barrens,53.65,54.27,60,0
 	.goto The Barrens,53.63,53.53,60,0
 	.goto The Barrens,53.35,52.72,60,0
-	.goto The Barrens,53.00,51.83,60,0
+	.goto The Barrens,53.0,51.83,60,0
 	.goto The Barrens,52.62,52.19,60,0
 	.goto The Barrens,52.59,52.71,60,0
 	.goto The Barrens,52.41,53.07,60,0
@@ -11152,10 +11152,10 @@ step
     #loop
     .goto The Barrens,53.98,51.68,0
     .goto The Barrens,53.98,51.68,50,0
-    .goto The Barrens,54.10,50.58,50,0
+    .goto The Barrens,54.1,50.58,50,0
     .goto The Barrens,53.85,49.76,50,0
     .goto The Barrens,54.32,49.38,50,0
-    .goto The Barrens,54.82,49.00,50,0
+    .goto The Barrens,54.82,49.0,50,0
     .goto The Barrens,55.23,47.96,50,0
     >>Finish killing |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
     .complete 821,2 --Plainstrider Kidney (5)
@@ -11329,7 +11329,7 @@ step
     .target +Brewmaster Drohn
     .goto 1413/1,-3687.11,-981.22
 step << Warrior
-    .goto The Barrens,62.20,38.41
+    .goto The Barrens,62.2,38.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grazlix|r
     .vendor >>Buy |T134583:0|t[|cRXP_FRIENDLY_Mighty Chain Pants|r] from him if it's up
     .target Grazlix
@@ -11388,7 +11388,7 @@ step
     .subzoneskip 380
 step << Hunter
     #xprate <2.1
-    .goto The Barrens,51.50,30.87
+    .goto 1413/1,-2595.75,-473.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
     .accept 6541 >>Accept Report to Kadrak
     .target Thork
@@ -11421,7 +11421,7 @@ step
     .target +Mankrik
     .goto 1413/1,-2672.76,-544.77
 step
-    .goto The Barrens,51.10,29.60
+    .goto 1413/1,-2555.22,-387.350
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korran|r
     .accept 868 >> Accept Egg Hunt
     .target Korran
@@ -11430,7 +11430,7 @@ step
     .itemcount 5085,1
 step << Shaman
     #completewith next
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Orgrimmar >> Fly to Orgrimmar
     .zoneskip Orgrimmar
@@ -11447,7 +11447,7 @@ step << Shaman
     .target Kardris Dreamseeker
 step << Warlock
     #completewith next
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Orgrimmar >> Fly to Orgrimmar
     .zoneskip Orgrimmar
@@ -11550,7 +11550,7 @@ step << Warrior
     .xp <20,1
     .dungeon DM
 step << Rogue
-    .goto Orgrimmar,43.90,54.65
+    .goto 1454/1,-4296.34,1762.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormok|r
     .train 1943 >> Train your class spells
     .target Ormok
@@ -11625,14 +11625,14 @@ step
     .zoneskip Stranglethorn Vale
     .dungeon DM
 step
-    .goto Stranglethorn Vale,30.51,29.10,40,0
+    .goto Stranglethorn Vale,30.51,29.1,40,0
     .goto Stranglethorn Vale,27.09,31.27,40,0
-    .goto Stranglethorn Vale,22.90,31.17,60,0
-    .goto Stranglethorn Vale,19.06,27.00,60,0
+    .goto Stranglethorn Vale,22.9,31.17,60,0
+    .goto Stranglethorn Vale,19.06,27.0,60,0
     .goto Stranglethorn Vale,16.33,23.46,60,0
     .goto Stranglethorn Vale,13.49,19.04,60,0
     .goto Westfall,41.08,98.55,60,0
-    .goto Westfall,37.10,89.16,40,0
+    .goto Westfall,37.1,89.16,40,0
     .goto 1436/0,1966.32,-11407.13,200 >> Swim directly to the west from Grom'Gol into the Vile Reef and then swim north toward Westfall
     >>|cRXP_WARN_Steer clear from the island. Follow the waypoint for safety!|r
     .dungeon DM
@@ -11677,13 +11677,13 @@ step
     .goto Eastern Kingdoms,40.92,81.97,8,0
     .goto Eastern Kingdoms,40.92,82.02,8,0
     .goto Eastern Kingdoms,40.89,82.04,8,0
-    .goto Eastern Kingdoms,40.96,82.10,8,0
+    .goto Eastern Kingdoms,40.96,82.1,8,0
     .goto Eastern Kingdoms,40.92,82.16,15,0
-    .goto Eastern Kingdoms,40.82,82.30,15,0
+    .goto Eastern Kingdoms,40.82,82.3,15,0
     .goto Eastern Kingdoms,40.77,82.52,15,0
     .goto Eastern Kingdoms,40.74,82.61,15,0
     .goto Eastern Kingdoms,40.63,82.49,15,0
-    .goto Eastern Kingdoms,40.50,82.45
+    .goto Eastern Kingdoms,40.5,82.45
     .zone 291 >> Enter the Deadmines Instance portal. Zone in
     .dungeon DM
 step
@@ -11791,7 +11791,7 @@ step << Shaman
 step
     #xprate <2.1 << Warlock
     #completewith TribesTurnin
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Camp Taurajo >> Fly to Camp Taurajo
     .target Devrak
@@ -11809,7 +11809,7 @@ step << Warlock
     #xprate >2.09
     #completewith next
     .goto Stonetalon Mountains,82.57,98.63,60,0
-    .goto Stonetalon Mountains,80.10,98.20,40,0
+    .goto Stonetalon Mountains,80.1,98.2,40,0
     .goto Stonetalon Mountains,77.17,98.61,40 >> Follow the path on the left upward
 step << Warlock
     #xprate >2.09
@@ -12269,7 +12269,7 @@ step << Warrior
     .target Torm Ragetotem
 step << Rogue
     #season 0
-    .goto Thunder Bluff,53.00,56.63
+    .goto 1456/1,-36.52,-1244.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from him.|r
     .collect 923,1,493,1 --Collect Longsword (1)
     .money <0.8743
@@ -12288,7 +12288,7 @@ step << Rogue
     .xp <21,1
 step << Rogue
     #season 2
-    .goto Thunder Bluff,53.00,56.63
+    .goto 1456/1,-36.52,-1244.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Buy one or two|r |T135342:0|t[Kris] |cRXP_BUY_from him|rr
     .collect 2209,1,493,1 --Collect Kris (1)
     .money <0.7115
@@ -12389,7 +12389,7 @@ step << Hunter
     .target Kuna Thunderhorn
 step
     #completewith next
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Crossroads >>Fly to Crossroads
     .target Tal
@@ -12508,7 +12508,7 @@ step
     .goto 1414/1,-2028.82,-636.93,20,0
     .goto 1414/1,-2050.90,-585.41,20,0
     .goto 1414/1,-2168.66,-607.49,30,0
-    .goto Kalimdor,52.40,55.20,30 >> Enter the WC Instance portal. Zone in
+    .goto 1414/1,-2216.5,-742.43,30 >> Enter the WC Instance portal. Zone in
     .dungeon WC
 step
     #optional
@@ -12827,7 +12827,7 @@ step
     .dungeon WC
 step
     #completewith WCEnd
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Thunder Bluff >>Fly to Thunder Bluff
     .target Devrak
@@ -12864,7 +12864,7 @@ step
     .isQuestComplete 962
     .dungeon WC
 step
-    .goto Thunder Bluff,23.0,21.0
+    .goto 1456/1,276.6,-996.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Zamah|r
     .turnin 962 >>Turn in Serpentbloom
     .target Apothecary Zamah
@@ -12891,7 +12891,7 @@ step
 step
     #xprate <2.1
     #completewith Serena
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Crossroads >>Fly to The Crossroads
     .target Tal
@@ -13048,7 +13048,7 @@ step
     .target Darsok Swiftdagger
     .isQuestTurnedIn 876
 step
-    .goto The Barrens,51.10,29.60
+    .goto 1413/1,-2555.22,-387.350
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korran|r
     .accept 868 >> Accept Egg Hunt
     .target Korran
@@ -13103,7 +13103,7 @@ step
     #xprate <2.1
     #completewith next
     .goto Stonetalon Mountains,82.57,98.63,60,0
-    .goto Stonetalon Mountains,80.10,98.20,40,0
+    .goto Stonetalon Mountains,80.1,98.2,40,0
     .goto Stonetalon Mountains,77.17,98.61,40 >> Follow the path on the left upward
 step
     #xprate <2.1
@@ -13164,7 +13164,7 @@ step
     .accept 1065 >> Accept Journey to Tarren Mill << Rogue/Shaman
     .target Apothecary Zamah
 step << !Shaman !Rogue
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Camp Taurajo >>Fly to Camp Taurajo
     .target Tal
@@ -13185,7 +13185,7 @@ step << Warlock
     .target Grunt Dogran
 step << Shaman/Rogue
     #label FlyOrgSR
-    .goto Thunder Bluff,47.00,49.82
+    .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Orgrimmar >>Fly to Orgrimmar
     .target Tal
@@ -13239,7 +13239,7 @@ step << Rogue
     .accept 2458 >>Accept Deep Cover
     .target Shenthul
 step << Rogue
-    .goto Orgrimmar,42.10,49.49
+    .goto 1454/1,-4271.1,1810.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Rekkul|r|cRXP_BUY_. Buy |r |T134387:0|t[Flash Powder] |cRXP_BUY_from him|r
     .collect 2928,40,2479,1 --Collect Dust of Decay (40)
     .collect 3371,40,2479,1 --Collect Empty Vial (40)
@@ -13256,7 +13256,7 @@ step << Rogue
     .goto The Barrens,57.63,7.48,120 >> Travel toward the Sludge Ven
 step << Rogue
     #completewith next
-    .goto The Barrens,55.70,5.89
+    .goto The Barrens,55.7,5.89
 	+Target |cRXP_FRIENDLY_Taskmaster Fizzule|r, then use your |T134536:0|t[Flare Gun] TWICE and type /Salute
     >>|cRXP_WARN_Be careful! Do NOT approach him until he becomes friendly or he will attack you!|r
     .use 8051
@@ -13269,7 +13269,7 @@ step << Rogue
     .accept 2478 >>Accept Mission: Possible But Not Probable
     .target Taskmaster Fizzule
 step << Rogue
-    .goto The Barrens,54.80,5.97
+    .goto The Barrens,54.8,5.97
     >>Use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Foreman Silixiz|r for his |cRXP_LOOT_Tower Key|r
     .complete 2478,5 --Silixiz's Tower Key (1)
     .mob Foreman Silixiz
@@ -13317,7 +13317,7 @@ step << Rogue
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step << Rogue
     #softcore
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Orgrimmar >> Fly to Orgrimmar
     .zoneskip Orgrimmar
@@ -13334,7 +13334,7 @@ step << Rogue
     .accept 2479 >>Accept Hinott's Assistance
     .target Shenthul
 step << Rogue
-    .goto Orgrimmar,42.10,49.49
+    .goto 1454/1,-4271.1,1810.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Rekkul|r|cRXP_BUY_. Buy |r |T133849:0|t[Dust of Decay] |cRXP_BUY_and|r |T132793:0|t[Empty Vials] |cRXP_BUY_from him|r
     .collect 2928,20,2479,1 --Collect Dust of Decay (20)
     .collect 3371,20,2479,1 --Collect Empty Vial (20)

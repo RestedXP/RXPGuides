@@ -1709,13 +1709,13 @@ step << Hunter
 step
     #xprate >1.59 << Paladin/Warrior/Rogue
     #loop
-    .goto Dun Morogh,52.0,50.1,0
+    .goto 1426/0,-758.92,-5522.03,0
     .goto 1426/0,-340.29,-5600.83,0
-    .goto Dun Morogh,52.0,50.1,75,0
+    .goto 1426/0,-758.92,-5522.03,75,0
     .goto 1426/0,-734.29,-5646.80,75,0
     .goto 1426/0,-665.34,-5646.80,75,0
     .goto 1426/0,-655.49,-5548.30,75,0
-    .goto Dun Morogh,48.0,49.5,75,0
+    .goto 1426/0,-561.92,-5502.33,75,0
     .goto 1426/0,-571.77,-5416.97,75,0
     .goto 1426/0,-340.29,-5600.83,75,0
     >>Kill |cRXP_ENEMY_Young Black Bears|r. Loot them for their |cRXP_LOOT_Thick Bear Fur|r
@@ -3362,7 +3362,7 @@ step << Warrior
 step << Warrior
     .goto 1426/0,-541.23,-5242.29,40,0
     .goto 1426/0,-669.77,-5216.35,20,0
-    .goto Ironforge,14.90,87.10,40 >> Travel to Ironforge
+    .goto 1455/0,-831.39,-5028.78,40 >> Travel to Ironforge
 step << Warrior
     .goto 1455/0,-1205.65,-5042.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bixi Wobblebonk|r or |cRXP_FRIENDLY_Buliwyf Stonehand|r
@@ -4419,7 +4419,7 @@ step << Paladin
 --XX 110791 "Sounds like you need someone to bounce him for you."
 step << Paladin
     #season 2
-    .goto Ironforge,72.40,73.63
+    .goto 1455/0,-1286.0,-4957.72
     .gossipoption 109084 >>Talk to |cRXP_FRIENDLY_Bruart|r to start a fight
     >>Defeat |cRXP_ENEMY_Bruart|r
     >>|cRXP_WARN_Be careful as he casts|r |T132939:0|t[Backhand] |cRXP_WARN_(stuns you for 2 seconds)|r
@@ -4433,7 +4433,7 @@ step << Paladin
 --XX Check if another player can skip the "how's business" dialogue for you (paladin, warrior)
 step << Paladin
     #season 2
-    .goto Ironforge,72.40,73.63,-1
+    .goto 1455/0,-1286.0,-4957.72,-1
     .goto 1455/0,-1287.03,-4975.18,-1
     >>Defeat |cRXP_ENEMY_Bruart|r
     >>|cRXP_WARN_Be careful as he casts|r |T132939:0|t[Backhand] |cRXP_WARN_(stuns you for 2 seconds)|r
@@ -4519,7 +4519,7 @@ step << Warrior
 --XX 110791 "Sounds like you need someone to bounce him for you."
 step << Warrior
     #season 2
-    .goto Ironforge,72.40,73.63
+    .goto 1455/0,-1286.0,-4957.72
     .gossipoption 109084 >>Talk to |cRXP_FRIENDLY_Bruart|r to start a fight
     >>Defeat |cRXP_ENEMY_Bruart|r
     >>|cRXP_WARN_Be careful as he casts|r |T132939:0|t[Backhand] |cRXP_WARN_(stuns you for 2 seconds)|r
@@ -4532,7 +4532,7 @@ step << Warrior
 step << Warrior
     #season 2
     #optional
-    .goto Ironforge,72.40,73.63,-1
+    .goto 1455/0,-1286.0,-4957.72,-1
     .goto 1455/0,-1287.03,-4975.18,-1
     >>Defeat |cRXP_ENEMY_Bruart|r
     >>|cRXP_WARN_Be careful as he casts|r |T132939:0|t[Backhand] |cRXP_WARN_(stuns you for 2 seconds)|r
@@ -4581,7 +4581,7 @@ step << skip --logout skip << Hunter
 step
     #label DRT
     #completewith TramEnd
-    .goto Ironforge,78.00,51.40
+    .goto 1455/0,-1330.28,-4840.430
     .subzone 2257 >>Enter the Deeprun Tram
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monty|r on the middle platform in the Deeprun Tram
@@ -4718,7 +4718,7 @@ step << Paladin
     .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
 step << Paladin
     #season 2
-    .goto StormwindClassic,38.10,28.10
+    .goto StormwindClassic,38.1,28.10
     .gossipoption 109653 >>Talk to |cRXP_FRIENDLY_Brother Romulus|r
     .target Brother Romulus
     --.skipgossip
@@ -4727,7 +4727,7 @@ step << Paladin
     #season 2
     #completewith next
     .goto StormwindClassic,37.39,29.76,5,0
-    .goto StormwindClassic,37.87,29.10,5,0
+    .goto StormwindClassic,37.87,29.1,5,0
     .goto StormwindClassic,36.52,32.67,8,0
     .goto StormwindClassic,36.55,33.45,8,0
     .goto StormwindClassic,35.95,34.05,8,0
@@ -4872,18 +4872,18 @@ step
     .goto 1429/0,683.40,-9667.93
     .target Deputy Rainer
 step
-    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto 1429/0,598.29,-9946.33,70,0
     .goto 1429/0,629.53,-10020.39,70,0
     .goto 1429/0,660.77,-10085.20,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
+    .goto 1429/0,598.29,-9946.33,70,0
     .goto 1429/0,629.53,-10020.39,70,0
     .goto 1429/0,660.77,-10085.20,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
+    .goto 1429/0,598.29,-9946.33,70,0
     .goto 1429/0,629.53,-10020.39,70,0
     .goto 1429/0,660.77,-10085.20,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
     .goto 1429/0,636.47,-10112.98
     >>Kill |cRXP_ENEMY_Hogger|r. Loot him for his |cRXP_LOOT_Claw|r
     >>|cRXP_ENEMY_Hogger|r |cRXP_WARN_can spawn in multiple locations|r
@@ -4933,7 +4933,7 @@ step << Warlock
     .subzoneskip 62 --Brackwell Pumpkin Patch
 step << Warlock
     #label SChoker
-    .goto Elwynn Forest,71.10,80.66
+    .goto 1429/0,-932.35,-9806.53
     >>Kill |cRXP_ENEMY_Surena Caledon|r. Loot her for her |cRXP_LOOT_Choker|r
     >>|cRXP_WARN_Focus on killing |cRXP_ENEMY_Surena Caledon|r very quickly|r
     >>|cRXP_WARN_Cast|r |T136183:0|t[Fear] |cRXP_WARN_on |cRXP_ENEMY_Morgan the Collector|r continously|r
@@ -4988,7 +4988,7 @@ step
 step
     #xprate >1.49
     .goto 1433/0,-2250.09,-9360.78,90,0
-    .goto Redridge Mountains,27.80,56.05,90,0
+    .goto 1433/0,-2174.32,-9386.56,90,0
     .goto 1433/0,-2147.41,-9308.08,90,0
     .goto 1433/0,-2090.96,-9373.82,90,0
     .goto 1433/0,-1986.76,-9324.30,90,0
@@ -5190,18 +5190,18 @@ step << Warlock
     .accept 123 >> Accept The Collector
     .unitscan Gruff Swiftbite
 step << Warlock
-    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto 1429/0,598.29,-9946.33,70,0
     .goto 1429/0,629.53,-10020.39,70,0
     .goto 1429/0,660.77,-10085.20,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
+    .goto 1429/0,598.29,-9946.33,70,0
     .goto 1429/0,629.53,-10020.39,70,0
     .goto 1429/0,660.77,-10085.20,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
+    .goto 1429/0,598.29,-9946.33,70,0
     .goto 1429/0,629.53,-10020.39,70,0
     .goto 1429/0,660.77,-10085.20,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
     .goto 1429/0,636.47,-10112.98
     >>Kill |cRXP_ENEMY_Hogger|r. Loot him for his |cRXP_LOOT_Claw|r
     >>|cRXP_ENEMY_Hogger|r |cRXP_WARN_can spawn in multiple locations|r
@@ -5220,18 +5220,18 @@ step << Paladin
     .unitscan Gruff Swiftbite
 step << Paladin
     #season 2
-    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto 1429/0,598.29,-9946.33,70,0
     .goto 1429/0,629.53,-10020.39,70,0
     .goto 1429/0,660.77,-10085.20,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
+    .goto 1429/0,598.29,-9946.33,70,0
     .goto 1429/0,629.53,-10020.39,70,0
     .goto 1429/0,660.77,-10085.20,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
+    .goto 1429/0,598.29,-9946.33,70,0
     .goto 1429/0,629.53,-10020.39,70,0
     .goto 1429/0,660.77,-10085.20,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
     .goto 1429/0,636.47,-10112.98
     >>Kill |cRXP_ENEMY_Hogger|r. Loot him for his |cRXP_LOOT_Claw|r
     >>|cRXP_ENEMY_Hogger|r |cRXP_WARN_can spawn in multiple locations|r
@@ -5439,7 +5439,7 @@ step
 step
     #era
     #label Prowlers
-    .goto Elwynn Forest,79.80,55.50
+    .goto 1429/0,-1234.31,-9224.180
     >>Click |cRXP_PICK_Rolf's corpse|r on the ground
     >>|cRXP_WARN_Be careful as nearby |cRXP_ENEMY_Murlocs|r may aggro once you click|r |cRXP_PICK_Rolf's corpse|r
     >>|cRXP_ENEMY_Murloc Foragers|r |cRXP_WARN_will cast|r |T135915:0|t[Drink Minor Potion] |cRXP_WARN_which heals themselves for 61-68|r
@@ -5450,10 +5450,10 @@ step
     #label Bundles
     .goto 1429/0,-1126.71,-9689.41,60,0
     .goto 1429/0,-1230.84,-9876.89,60,0
-    .goto Elwynn Forest,82.0,76.8,60,0
+    .goto 1429/0,-1310.67,-9717.18,60,0
     .goto 1429/0,-1126.71,-9689.41,60,0
     .goto 1429/0,-1230.84,-9876.89,60,0
-    .goto Elwynn Forest,82.0,76.8,60,0
+    .goto 1429/0,-1310.67,-9717.18,60,0
     .goto 1429/0,-1483.86,-9440.13
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
     .complete 52,1 --Kill Prowler (x8)
@@ -5501,7 +5501,7 @@ step
     .accept 184 >> Accept Furlbrow's Deed
 step << Warlock
     .isOnQuest 147
-    .goto Elwynn Forest,71.10,80.66
+    .goto 1429/0,-932.35,-9806.53
     >>Kill |cRXP_ENEMY_Surena Caledon|r. Loot her for her |cRXP_LOOT_Choker|r
     >>Kill |cRXP_ENEMY_Morgan the Collector|r. Loot him for |cRXP_LOOT_The Collector's Ring|r
     >>|cRXP_WARN_Focus on killing |cRXP_ENEMY_Surena Caledon|r very quickly|r
@@ -5511,7 +5511,7 @@ step << Warlock
     .complete 147,1 -- The Collector's Ring (1)
     .mob +Morgan the Collector
 step << Warlock
-    .goto Elwynn Forest,71.10,80.66
+    .goto 1429/0,-932.35,-9806.53
     >>Kill |cRXP_ENEMY_Surena Caledon|r. Loot her for her |cRXP_LOOT_Choker|r
     >>|cRXP_WARN_Focus on killing |cRXP_ENEMY_Surena Caledon|r very quickly|r
     >>|cRXP_WARN_Cast|r |T136183:0|t[Fear] |cRXP_WARN_on |cRXP_ENEMY_Morgan the Collector|r continously|r
@@ -5768,7 +5768,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Salma Saldean|r
     .target Salma Saldean
-    .goto Westfall,56.40,30.50
+    .goto 1436/0,1042.67,-10111.670
     .turnin 36 >> Turn in Westfall Stew
     .accept 38 >> Accept Westfall Stew
     .accept 22 >> Accept Goretusk Liver Pie
@@ -5799,7 +5799,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Galiaan|r
     .target Scout Galiaan
-    .goto Westfall,54.00,53.00
+    .goto 1436/0,1126.67,-10636.670
     .accept 153 >> Accept Red Leather Bandanas
 step
     .goto 1436/0,1037.42,-10628.27
@@ -6208,7 +6208,7 @@ step
     #optional
     #label SilverMine
     #completewith next
-    .goto Loch Modan,35.50,18.97,20 >> Enter the Silver Stream Mine
+    .goto 1432/0,-2972.96,-4835.187,20 >> Enter the Silver Stream Mine
 step << Paladin/Warrior/Priest/Mage
     #xprate >1.49 << Mage
     #season 2 << Priest/Mage
@@ -6425,29 +6425,29 @@ step
     .goto 1432/0,-2735.74,-4684.34
     .collect 3172,3,418,1 --Boar Intestines (3)
     .mob +Mountain Boar
-    .goto Loch Modan,38.0,34.9,90,0
+    .goto 1432/0,-3041.92,-5129.51,90,0
     .goto 1432/0,-3017.09,-5219.65,90,0
     .goto 1432/0,-2815.73,-5147.91,90,0
     .goto 1432/0,-2757.81,-4952.91,90,0
     .goto 1432/0,-2782.63,-4903.25,90,0
-    .goto Loch Modan,38.0,34.9,90,0
+    .goto 1432/0,-3041.92,-5129.51,90,0
     .goto 1432/0,-3017.09,-5219.65,90,0
     .goto 1432/0,-2815.73,-5147.91,90,0
     .goto 1432/0,-2757.81,-4952.91,90,0
     .goto 1432/0,-2782.63,-4903.25,90,0
-    .goto Loch Modan,38.0,34.9
+    .goto 1432/0,-3041.92,-5129.51
     .collect 3174,3,418,1 --Spider Ichor (3)
     .mob +Forest Lurker
     .goto 1432/0,-2873.66,-4789.19,90,0
-    .goto Loch Modan,28.0,20.6,90,0
+    .goto 1432/0,-2766.08,-4866.45,90,0
     .goto 1432/0,-2926.07,-5232.53,90,0
     .goto 1432/0,-2992.27,-5055.93,90,0
-    .goto Loch Modan,39.0,32.1,90,0
+    .goto 1432/0,-3069.5,-5078.01,90,0
     .goto 1432/0,-2873.66,-4789.19,90,0
-    .goto Loch Modan,28.0,20.6,90,0
+    .goto 1432/0,-2766.08,-4866.45,90,0
     .goto 1432/0,-2926.07,-5232.53,90,0
     .goto 1432/0,-2992.27,-5055.93,90,0
-    .goto Loch Modan,39.0,32.1,90,0
+    .goto 1432/0,-3069.5,-5078.01,90,0
     .goto 1432/0,-2873.66,-4789.19
 step
     #xprate <1.59
@@ -6731,7 +6731,7 @@ step << !Paladin
     #optional
     #requires Salvation << Dwarf Rogue/Gnome Rogue
     #label Deeprun
-    .goto Ironforge,78.00,51.40
+    .goto 1455/0,-1330.28,-4840.430
     .subzone 2257 >>Enter the Deeprun Tram
     .zoneskip Stormwind City
 step << !Paladin
@@ -7072,7 +7072,7 @@ step
 step << skip --logout skip << Dwarf Paladin
     #xprate >1.49
     .goto 1426/0,-1677.92,-5738.730,40,0
-    .goto Dun Morogh,70.60,54.87
+    .goto 1426/0,-1674.97,-5678.65
     .zone Ironforge >>Perform a logout skip in the Mine to teleport back to Ironforge
     .link https://www.youtube.com/watch?v=kbUSo62CfAM >> CLICK HERE for reference
 step << Dwarf Rogue/Gnome Rogue
@@ -7189,7 +7189,7 @@ step << Warrior
 step << Warrior
     #xprate >1.49
     #optional
-    .goto Ironforge,62.0,89.6
+    .goto 1455/0,-1203.78,-5041.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bixi Wobblebonk|r
     .train 2567 >>Train Thrown
     .target Bixi Wobblebonk
@@ -7371,7 +7371,7 @@ step
     .goto 1426/0,-1207.09,-5325.03,40,0
     .goto 1426/0,-1212.02,-5265.93,40,0
     .goto 1426/0,-1192.32,-5219.97,40,0
-    .goto Dun Morogh,59.0,39.5,40,0
+    .goto 1426/0,-1103.67,-5174.0,40,0
     .goto 1426/0,-1167.69,-5144.45,40,0
     .goto 1426/0,-1236.64,-5147.73,40,0
     .goto 1426/0,-1433.64,-4586.28,40,0
@@ -7466,7 +7466,7 @@ step
     #optional
     #label DockTravel
     #completewith next
-    .goto Wetlands,7.10,57.96,30,0
+    .goto 1437/0,-683.2,-3745.44,30,0
     .goto 1437/0,-580.23,-3726.15,15 >> Travel to the dock of the Auberdine boat
     .zoneskip Darkshore
 step
@@ -7647,32 +7647,32 @@ step
     .goto 1426/0,-664.55,-5499.710
     .accept 5541 >> Accept Ammo for Rumbleshot
 step << !Paladin !Warrior !Rogue
-    .goto Dun Morogh,52.0,50.1,75,0
+    .goto 1426/0,-758.92,-5522.03,75,0
     .goto 1426/0,-734.29,-5646.80,75,0
     .goto 1426/0,-665.34,-5646.80,75,0
     .goto 1426/0,-655.49,-5548.30,75,0
-    .goto Dun Morogh,48.0,49.5,75,0
+    .goto 1426/0,-561.92,-5502.33,75,0
     .goto 1426/0,-571.77,-5416.97,75,0
     .goto 1426/0,-340.29,-5600.83,75,0
-    .goto Dun Morogh,52.0,50.1,75,0
+    .goto 1426/0,-758.92,-5522.03,75,0
     .goto 1426/0,-734.29,-5646.80,75,0
     .goto 1426/0,-665.34,-5646.80,75,0
     .goto 1426/0,-655.49,-5548.30,75,0
-    .goto Dun Morogh,48.0,49.5,75,0
+    .goto 1426/0,-561.92,-5502.33,75,0
     .goto 1426/0,-571.77,-5416.97,75,0
     .goto 1426/0,-340.29,-5600.83,75,0
-    .goto Dun Morogh,52.0,50.1,75,0
+    .goto 1426/0,-758.92,-5522.03,75,0
     .goto 1426/0,-734.29,-5646.80,75,0
     .goto 1426/0,-665.34,-5646.80,75,0
     .goto 1426/0,-655.49,-5548.30,75,0
-    .goto Dun Morogh,48.0,49.5,75,0
+    .goto 1426/0,-561.92,-5502.33,75,0
     .goto 1426/0,-571.77,-5416.97,75,0
     .goto 1426/0,-340.29,-5600.83,75,0
-    .goto Dun Morogh,52.0,50.1,0
+    .goto 1426/0,-758.92,-5522.03,0
     .goto 1426/0,-734.29,-5646.80,0
     .goto 1426/0,-665.34,-5646.80,0
     .goto 1426/0,-655.49,-5548.30,0
-    .goto Dun Morogh,48.0,49.5,0
+    .goto 1426/0,-561.92,-5502.33,0
     .goto 1426/0,-571.77,-5416.97,0
     .goto 1426/0,-340.29,-5600.83
     >>Kill |cRXP_ENEMY_Young Black Bears|r. Loot them for their |cRXP_LOOT_Fur|r
@@ -7743,7 +7743,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tundra MacGrann|r
     .target Tundra MacGrann
-    .goto Dun Morogh,43.0,47.4,60,0
+    .goto 1426/0,-315.67,-5433.38,60,0
     .goto 1426/0,-148.22,-5482.63,60,0
     .goto 1426/0,99.17,-5572.99
     .accept 312 >> Accept Tundra MacGrann's Stolen Stash
@@ -7784,13 +7784,13 @@ step
     .goto 1426/0,388.61,-5311.90,60,0
     .goto 1426/0,531.43,-5426.82,60,0
     .goto 1426/0,531.43,-5426.82,60,0
-    .goto Dun Morogh,30.0,51.8,60,0
+    .goto 1426/0,324.58,-5577.85,60,0
     .goto 1426/0,250.71,-5154.30,60,0
     .goto 1426/0,408.31,-5187.13,60,0
     .goto 1426/0,388.61,-5311.90,60,0
     .goto 1426/0,531.43,-5426.82,60,0
     .goto 1426/0,531.43,-5426.82,60,0
-    .goto Dun Morogh,30.0,51.8,60,0
+    .goto 1426/0,324.58,-5577.85,60,0
     .goto 1426/0,388.61,-5311.90
     >>Kill |cRXP_ENEMY_Ice Claw Bears|r, |cRXP_ENEMY_Elder Crag Boars|r and |cRXP_ENEMY_Snow Leopards|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
@@ -7822,8 +7822,8 @@ step
     .goto 1426/0,206.38,-4832.53,15 >>Follow it up to here
 step
     #softcore
-    .goto Dun Morogh,33.0,27.2,15,0
-    .goto Dun Morogh,33.0,25.2,15,0
+    .goto 1426/0,176.83,-4770.15,15,0
+    .goto 1426/0,176.83,-4704.48,15,0
     .goto 1437/0,-869.29,-3344.13,60,0
     .goto 1437/0,-869.29,-3344.13,0
     .deathskip >>Keep running straight north, jump down and die once the General Chat changes to Wetlands, then respawn at Menethil Harbor
@@ -8081,13 +8081,13 @@ step
     .goto 1426/0,388.61,-5311.90,60,0
     .goto 1426/0,531.43,-5426.82,60,0
     .goto 1426/0,531.43,-5426.82,60,0
-    .goto Dun Morogh,30.0,51.8,60,0
+    .goto 1426/0,324.58,-5577.85,60,0
     .goto 1426/0,250.71,-5154.30,60,0
     .goto 1426/0,408.31,-5187.13,60,0
     .goto 1426/0,388.61,-5311.90,60,0
     .goto 1426/0,531.43,-5426.82,60,0
     .goto 1426/0,531.43,-5426.82,60,0
-    .goto Dun Morogh,30.0,51.8,60,0
+    .goto 1426/0,324.58,-5577.85,60,0
     .goto 1426/0,388.61,-5311.90
     >>Kill |cRXP_ENEMY_Ice Claw Bears|r, |cRXP_ENEMY_Elder Crag Boars|r and |cRXP_ENEMY_Snow Leopards|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
@@ -8154,7 +8154,7 @@ step
     .goto 1426/0,541.28,-5302.05,60,0
     .goto 1426/0,605.31,-5321.75,60,0
     .goto 1426/0,551.13,-5367.72,60,0
-    .goto Dun Morogh,25.00,43.50
+    .goto 1426/0,570.83,-5305.330
     >>Kill |cRXP_ENEMY_Leper Gnomes|r. Loot them for their |cRXP_LOOT_Gears|r and |cRXP_LOOT_Cogs|r
     .complete 412,2 --Collect Gyromechanic Gear (x8)
     .complete 412,1 --Collect Restabilization Cog (x8)
@@ -8437,7 +8437,7 @@ step << Human
 step
     #label BraveSoul
     #completewith next
-    .goto Loch Modan,35.50,18.97,20 >> Enter the Silver Stream Mine
+    .goto 1432/0,-2972.96,-4835.187,20 >> Enter the Silver Stream Mine
 step
     .goto 1432/0,-2984.82,-4902.33
     >>Open the |cRXP_PICK_Miners' League Crates|r. Loot them for the |cRXP_LOOT_Miners' Gear|r
@@ -8501,29 +8501,29 @@ step
     .goto 1432/0,-2735.74,-4684.34
     .collect 3172,3,418,1 --Boar Intestines (3)
     .mob +Mountain Boar
-    .goto Loch Modan,38.0,34.9,90,0
+    .goto 1432/0,-3041.92,-5129.51,90,0
     .goto 1432/0,-3017.09,-5219.65,90,0
     .goto 1432/0,-2815.73,-5147.91,90,0
     .goto 1432/0,-2757.81,-4952.91,90,0
     .goto 1432/0,-2782.63,-4903.25,90,0
-    .goto Loch Modan,38.0,34.9,90,0
+    .goto 1432/0,-3041.92,-5129.51,90,0
     .goto 1432/0,-3017.09,-5219.65,90,0
     .goto 1432/0,-2815.73,-5147.91,90,0
     .goto 1432/0,-2757.81,-4952.91,90,0
     .goto 1432/0,-2782.63,-4903.25,90,0
-    .goto Loch Modan,38.0,34.9
+    .goto 1432/0,-3041.92,-5129.51
     .collect 3174,3,418,1 --Spider Ichor (3)
     .mob +Forest Lurker
     .goto 1432/0,-2873.66,-4789.19,90,0
-    .goto Loch Modan,28.0,20.6,90,0
+    .goto 1432/0,-2766.08,-4866.45,90,0
     .goto 1432/0,-2926.07,-5232.53,90,0
     .goto 1432/0,-2992.27,-5055.93,90,0
-    .goto Loch Modan,39.0,32.1,90,0
+    .goto 1432/0,-3069.5,-5078.01,90,0
     .goto 1432/0,-2873.66,-4789.19,90,0
-    .goto Loch Modan,28.0,20.6,90,0
+    .goto 1432/0,-2766.08,-4866.45,90,0
     .goto 1432/0,-2926.07,-5232.53,90,0
     .goto 1432/0,-2992.27,-5055.93,90,0
-    .goto Loch Modan,39.0,32.1,90,0
+    .goto 1432/0,-3069.5,-5078.01,90,0
     .goto 1432/0,-2873.66,-4789.19
 step
     #sticky
@@ -8662,8 +8662,8 @@ step
     .turnin 301 >> Turn in Report to Ironforge
     .target Prospector Stormpike
 step
-    .goto Ironforge,74.40,51.10,30,0
-    .goto Ironforge,74.40,51.10,0
+    .goto 1455/0,-1301.82,-4838.85,30,0
+    .goto 1455/0,-1301.82,-4838.85,0
     >>|cRXP_WARN_Enter the Deeprun Tram|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monty|r on the middle platform
     .target Monty
@@ -8785,7 +8785,7 @@ step
     .goto 1426/0,-1207.09,-5325.03,40,0
     .goto 1426/0,-1212.02,-5265.93,40,0
     .goto 1426/0,-1192.32,-5219.97,40,0
-    .goto Dun Morogh,59.0,39.5,40,0
+    .goto 1426/0,-1103.67,-5174.0,40,0
     .goto 1426/0,-1167.69,-5144.45,40,0
     .goto 1426/0,-1236.64,-5147.73,40,0
     .goto 1426/0,-1433.64,-4586.28,40,0
@@ -8840,7 +8840,7 @@ step
     #optional
     #label DockTravel
     #completewith next
-    .goto Wetlands,7.10,57.96,30,0
+    .goto 1437/0,-683.2,-3745.44,30,0
     .goto 1437/0,-580.23,-3726.15,15 >> Travel to the dock of the Auberdine boat
     .zoneskip Darkshore
 step

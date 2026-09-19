@@ -68,7 +68,7 @@ step
     .target Deputy Willem
 step
     #completewith next
-    .goto Elwynn Forest,46.10,42.57,70,0
+    .goto 1429/0,-64.64,-8924.9,70,0
     .goto 1429/0,-81.64,-8850.37
     +|cRXP_WARN_Kill |cRXP_ENEMY_Young Wolves|r. Loot them until you have 50 copper worth of vendor items (including your armor)|r
     .mob Young Wolf
@@ -96,7 +96,7 @@ step
 #loop
 	.line Elwynn Forest,47.01,35.68,47.70,35.04,49.81,35.14,49.82,36.23,49.18,37.16,47.01,35.68
 	.goto 1429/0,-96.22,-8765.43,35,0
-	.goto Elwynn Forest,47.70,35.04,35,0
+	.goto 1429/0,-120.17,-8750.61,35,0
 	.goto 1429/0,-193.41,-8752.93,35,0
 	.goto 1429/0,-193.75,-8778.16,35,0
 	.goto 1429/0,-171.54,-8799.68,35,0
@@ -312,7 +312,7 @@ step
     .complete 21,1 --Kill Kobold Laborer (x12)
 	.mob Kobold Laborer
 step
-    .goto Elwynn Forest,50.70,39.35
+    .goto 1429/0,-224.3,-8850.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly|r
     .turnin 3903 >> Turn in Milly Osworth
     .accept 3904 >> Accept Milly's Harvest
@@ -380,7 +380,7 @@ step
     .xp 5+1175 >> Grind to 1175+/2800xp
     .mob Defias Thug
 step
-    .goto Elwynn Forest,50.70,39.35
+    .goto 1429/0,-224.3,-8850.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly|r
     .turnin 3904 >>Turn in Milly's Harvest
     .accept 3905 >>Accept Grape Manifest
@@ -402,7 +402,7 @@ step
     .goto 1429/0,-184.38,-8901.52,10,0
     .goto 1429/0,-178.83,-8888.10,10,0
     .goto 1429/0,-164.60,-8892.50,10,0
-    .goto Elwynn Forest,49.20,41.81,10,0
+    .goto 1429/0,-172.23,-8907.31,10,0
     .goto 1429/0,-185.08,-8899.21,10,0
     .goto 1429/0,-176.75,-8886.94,10,0
     >>Go upstairs
@@ -561,7 +561,7 @@ step
     .itemcount 1179,<8
 step
     #completewith Mine
-    .goto Elwynn Forest,39.00,82.27,15 >>Enter the Fargodeep Mine
+    .goto 1429/0,181.79,-9843.79,15 >>Enter the Fargodeep Mine
 step
     #completewith Goldtooth
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for |cRXP_LOOT_Gold Dust|r and |cRXP_LOOT_Kobold Candles|r
@@ -606,10 +606,10 @@ step << skip
     .goto 1429/0,86.34,-9756.30,-1
     .goto 1429/0,80.79,-9740.56,-1
     .goto 1429/0,141.88,-9794.03,-1
-    .goto Elwynn Forest,39.90,81.46,-1
+    .goto 1429/0,150.55,-9825.04,-1
     .goto 1429/0,117.23,-9819.95,-1
     .goto 1429/0,135.98,-9775.28,-1
-    .goto Elwynn Forest,39.30,60.48,30 >>|cRXP_WARN_Perform a Logout Skip inside the cave by jumping on top of a shredder, the floating logs, the crates, or the minecart light inside the cave, then log out and back in|r
+    .goto 1429/0,171.38,-9339.44,30 >>|cRXP_WARN_Perform a Logout Skip inside the cave by jumping on top of a shredder, the floating logs, the crates, or the minecart light inside the cave, then log out and back in|r
     >>|cRXP_WARN_Alternatively, run back to Goldshire|r
     >>|cRXP_WARN_NOTE: Itemrack currently can cause problems after logout skipping where your ingame UI freezes. Make sure to disable the addon or make a /reload macro you can click when/if that happens|r
     .link https://www.youtube.com/watch?v=SWBtPqm5M0Q >>|cRXP_WARN_CLICK HERE to learn how to logout skip|r
@@ -659,7 +659,7 @@ step
     .goto 1429/0,-215.62,-9390.60,50,0
     .goto 1429/0,-237.83,-9438.28,50,0
     .goto 1429/0,-292.32,-9442.91,50,0
-    .goto Elwynn Forest,54.10,62.74,50,0
+    .goto 1429/0,-342.3,-9391.75,50,0
     .goto 1429/0,-459.62,-9402.63,50,0
     .goto 1429/0,-421.09,-9478.780
     >>Kill |cRXP_ENEMY_Murloc Streamrunners|r and |cRXP_ENEMY_Murlocs|r. Loot them for |cRXP_LOOT_Crystal Kelp Frond|r
@@ -673,7 +673,7 @@ step
 step
     .goto 1429/0,-588.39,-9130.90,12,0
     .goto 1429/0,-570.68,-9116.32,12,0
-    .goto Elwynn Forest,60.40,50.16
+    .goto 1429/0,-560.97,-9100.58
     >>Follow the middle path of the cave
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Kobold Geomancers|r cast|r |T135812:0|t[Fireball] |cRXP_WARN_(Ranged Cast: Deals about 30 damage)|r
     .complete 76,1 --Scout through the Jasperlode Mine
@@ -808,7 +808,7 @@ step
 	.goto 1429/0,-909.79,-9720.42,40,0
 	.goto 1429/0,-848.35,-9714.64,40,0
 	.goto 1429/0,-832.73,-9739.87,40,0
-	.goto Elwynn Forest,67.80,80.76,40,0
+	.goto 1429/0,-817.81,-9808.84,40,0
 	.goto 1429/0,-841.76,-9853.28,40,0
 	.goto 1429/0,-918.81,-9825.51,40,0
 	.goto 1429/0,-916.03,-9806.53,40,0
@@ -980,13 +980,13 @@ step
 	.target Thor
 step
     #completewith next
-    .goto StormwindClassic,63.10,65.18,20,0
-    .goto StormwindClassic,58.13,59.40,20,0
+    .goto StormwindClassic,63.1,65.18,20,0
+    .goto StormwindClassic,58.13,59.4,20,0
     .goto StormwindClassic,57.06,61.83,20,0
     .goto StormwindClassic,56.55,64.79,12,0
-    .goto StormwindClassic,56.20,64.60,12 >>Travel toward |cRXP_FRIENDLY_Morgan|r
+    .goto StormwindClassic,56.2,64.6,12 >>Travel toward |cRXP_FRIENDLY_Morgan|r
 step
-    .goto StormwindClassic,56.20,64.60
+    .goto StormwindClassic,56.2,64.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan|r
     .turnin 61,1 >> Turn in Shipment to Stormwind
     .target Morgan Pestle
@@ -1013,13 +1013,13 @@ step << skip
     .target Jennea Cannon
 step << skip
     #completewith next
-    .goto Stormwind City,36.30,82.90,6 >>Go through the green portal
+    .goto 1453/0,893.0,-9021.93,6 >>Go through the green portal
 step
     #completewith next
     .goto StormwindClassic,57.32,59.15,10,0
-    .goto StormwindClassic,58.17,57.90,12,0
+    .goto StormwindClassic,58.17,57.9,12,0
     .goto StormwindClassic,57.81,54.73,12,0
-    .goto StormwindClassic,60.05,51.60,12,0
+    .goto StormwindClassic,60.05,51.6,12,0
     .goto StormwindClassic,67.54,46.88,12,0
     .goto StormwindClassic,71.01,48.62,12,0
     .goto StormwindClassic,74.31,47.22,12 >>Travel toward |cRXP_FRIENDLY_Osric|r
@@ -1031,7 +1031,7 @@ step
     .target Osric Strang
 step
     #completewith next
-    .goto StormwindClassic,69.20,40.75,15,0
+    .goto StormwindClassic,69.2,40.75,15,0
     .goto StormwindClassic,67.03,40.27,15,0
     .goto StormwindClassic,64.49,36.75,15,0
     .goto StormwindClassic,64.97,29.32,15,0
@@ -1090,7 +1090,7 @@ step
     .goto 1455/0,-1170.41,-4754.48,30,0
     .goto 1455/0,-1152.31,-4821.12,10 >>Travel toward |cRXP_FRIENDLY_Gryth|r
 step
-    .goto Ironforge,55.50,47.74
+    .goto 1455/0,-1152.39,-4820.914
     >>Talk to |cRXP_FRIENDLY_Gryth|r
     .fp Ironforge >> Get the Ironforge flight path
     .target Gryth Thurden
@@ -1099,8 +1099,8 @@ step
     .goto 1455/0,-1101.87,-4864.81,30,0
     .goto 1455/0,-1062.10,-4815.100,20,0
     .goto 1455/0,-1036.48,-4804.50,20,0
-    .goto Ironforge,35.30,32.76,20,0
-    .goto Ironforge,27.60,11.06,20,0
+    .goto 1455/0,-992.68,-4742.08,20,0
+    .goto 1455/0,-931.8,-4627.59,20,0
     .goto 1455/0,-928.40,-4614.51,10 >>Travel toward |cRXP_FRIENDLY_Dink|r
 step
     .goto 1455/0,-928.40,-4614.51
@@ -1113,7 +1113,7 @@ step
     #completewith next
     .goto 1455/0,-929.04,-4636.72,20,0
     .goto 1455/0,-892.19,-4770.42,20,0
-    .goto Ironforge,20.40,53.19,20,0
+    .goto 1455/0,-874.88,-4849.87,20,0
     >>Go inside the building
     .goto 1455/0,-857.01,-4840.69,10 >>Travel toward |cRXP_FRIENDLY_Firebrew|r
 step
@@ -1198,7 +1198,7 @@ step
 step
     #sticky
     #label Ghilm
-    .goto Dun Morogh,68.40,54.45,0,0
+    .goto 1426/0,-1566.62,-5664.86,0,0
     >>Talk to |cRXP_FRIENDLY_Ghilm|r
     .train 2550 >> Train |T133971:0|t[Cooking]
     .target Cook Ghilm
@@ -1301,7 +1301,7 @@ step
     #requires Shortcut1
     #label Shortcut2
     .goto 1426/0,-1693.19,-5541.730,50,0
-    .goto Dun Morogh,72.90,49.79,50,0
+    .goto 1426/0,-1788.24,-5511.85,50,0
     .goto 1426/0,-1995.58,-5480.01,50 >>|cRXP_WARN_Kite the nearby |cRXP_ENEMY_Rockjaw Ambushers|r to the |cRXP_FRIENDLY_Ironforge Mountaineers|r that can patrol on the road (make sure to deal 51%+ damage to get credit)|r
     .mob Rockjaw Ambusher
     .unitscan Ironforge Mountaineer
@@ -1348,8 +1348,8 @@ step
     #requires Tunnel1
     #completewith Barleybrew
     .goto 1426/0,-2118.71,-5516.78,20,0
-    .goto Dun Morogh,81.10,49.76,20,0
-    .goto Dun Morogh,81.60,50.01,20,0
+    .goto 1426/0,-2192.09,-5510.87,20,0
+    .goto 1426/0,-2216.72,-5519.08,20,0
     .goto 1426/0,-2314.72,-5491.83,20,0
     >>Kite a |cRXP_ENEMY_Scarred Crag Boar|r en route
     .goto 1426/0,-2347.72,-5483.62,20 >>Do the Mountain Skip. Remember to drop down carefully
@@ -1394,7 +1394,7 @@ step << skip
     #completewith next
     .goto 1432/0,-2586.52,-5740.99,20,0
     .goto 1432/0,-2569.14,-5673.30,20,0
-    .goto Loch Modan,19.50,62.56,30 >>Go back into the Tunnel
+    .goto 1432/0,-2531.62,-5638.34,30 >>Go back into the Tunnel
 step << skip
     .goto 1432/0,-2513.42,-5618.48
     .link https://www.youtube.com/watch?v=AOAlX9B5aO0 >>|cRXP_WARN_CLICK HERE If you're struggling|r
@@ -1428,9 +1428,9 @@ step << skip
     #completewith next
     .goto 1455/0,-1060.12,-4883.59,20,0
     .goto 1455/0,-1016.16,-4946.11,20,0
-    .goto Ironforge,33.70,76.24,10 >>|cRXP_WARN_Travel toward the Logout Skip spot|r
+    .goto 1455/0,-980.03,-4971.49,10 >>|cRXP_WARN_Travel toward the Logout Skip spot|r
 step << skip
-    .goto Ironforge,33.70,76.24
+    .goto 1455/0,-980.03,-4971.49
     .zone Dun Morogh >>|cRXP_WARN_Position your character until it looks like they're floating on the edge of the metal railing. Logout skip to Dun Morogh|r
     .isOnQuest 416
 ]])
@@ -1650,15 +1650,15 @@ step
     .goto 1426/0,485.63,-6494.56,30 >>Enter the cave
     .isOnQuest 182
 step
-    .goto Dun Morogh,27.30,80.85,20,0
+    .goto 1426/0,457.56,-6531.66,20,0
     .goto 1426/0,408.80,-6498.83,20,0
     .goto 1426/0,357.09,-6473.87,30,0
     .goto 1426/0,408.80,-6498.83,20,0
-    .goto Dun Morogh,27.30,80.85,20,0
+    .goto 1426/0,457.56,-6531.66,20,0
     .goto 1426/0,408.80,-6498.83,20,0
     .goto 1426/0,357.09,-6473.87,30,0
     .goto 1426/0,408.80,-6498.83,20,0
-    .goto Dun Morogh,27.30,80.85,20,0
+    .goto 1426/0,457.56,-6531.66,20,0
     .goto 1426/0,408.80,-6498.83,20,0
     .goto 1426/0,357.09,-6473.87,30,0
     .goto 1426/0,408.80,-6498.83
@@ -1668,7 +1668,7 @@ step
     .mob Frostmane Troll Whelp
 step
     .goto 1426/0,408.80,-6498.83,50,0
-    .goto Dun Morogh,27.30,80.85,40,0
+    .goto 1426/0,457.56,-6531.66,40,0
     .goto 1426/0,532.42,-6448.26,40,0
     .goto 1426/0,466.42,-6460.41,40,0
     .goto 1426/0,524.05,-6516.56,40,0
@@ -1904,7 +1904,7 @@ step
 step
 #loop
 	.line Dun Morogh,51.70,49.66,51.08,52.42,51.43,53.21,50.06,51.66,49.56,50.82,48.12,49.10,48.21,46.93,45.48,50.04,44.07,52.50,43.69,55.59,42.78,56.86,44.45,59.33,46.31,61.85,46.26,59.49,48.08,59.05,49.40,58.97,48.30,56.86,49.09,54.74,49.61,54.32,51.43,53.21
-	.goto Dun Morogh,51.70,49.66,40,0
+	.goto 1426/0,-744.14,-5507.59,40,0
 	.goto 1426/0,-713.61,-5598.21,40,0
 	.goto 1426/0,-730.84,-5624.15,40,0
 	.goto 1426/0,-663.37,-5573.25,40,0
@@ -1919,8 +1919,8 @@ step
 	.goto 1426/0,-478.68,-5907.83,40,0
 	.goto 1426/0,-476.22,-5830.34,40,0
 	.goto 1426/0,-565.86,-5815.89,40,0
-	.goto Dun Morogh,49.40,58.97,40,0
-	.goto Dun Morogh,48.30,56.86,40,0
+	.goto 1426/0,-630.87,-5813.27,40,0
+	.goto 1426/0,-576.69,-5743.99,40,0
 	.goto 1426/0,-615.60,-5674.38,40,0
 	.goto 1426/0,-641.21,-5660.59,40,0
 	.goto 1426/0,-730.84,-5624.15,40,0
@@ -1940,7 +1940,7 @@ step
 step
 #loop
 	.line Dun Morogh,51.70,49.66,51.08,52.42,51.43,53.21,50.06,51.66,49.56,50.82,48.12,49.10,48.21,46.93,45.48,50.04,44.07,52.50,43.69,55.59,42.78,56.86,44.45,59.33,46.31,61.85,46.26,59.49,48.08,59.05,49.40,58.97,48.30,56.86,49.09,54.74,49.61,54.32,51.43,53.21
-	.goto Dun Morogh,51.70,49.66,40,0
+	.goto 1426/0,-744.14,-5507.59,40,0
 	.goto 1426/0,-713.61,-5598.21,40,0
 	.goto 1426/0,-730.84,-5624.15,40,0
 	.goto 1426/0,-663.37,-5573.25,40,0
@@ -1955,8 +1955,8 @@ step
 	.goto 1426/0,-478.68,-5907.83,40,0
 	.goto 1426/0,-476.22,-5830.34,40,0
 	.goto 1426/0,-565.86,-5815.89,40,0
-	.goto Dun Morogh,49.40,58.97,40,0
-	.goto Dun Morogh,48.30,56.86,40,0
+	.goto 1426/0,-630.87,-5813.27,40,0
+	.goto 1426/0,-576.69,-5743.99,40,0
 	.goto 1426/0,-615.60,-5674.38,40,0
 	.goto 1426/0,-641.21,-5660.59,40,0
 	.goto 1426/0,-730.84,-5624.15,40,0
@@ -1980,7 +1980,7 @@ step
 step
     #completewith next
     .goto 1426/0,-511.19,-5584.09,10,0
-    .goto Dun Morogh,47.50,52.08,12 >>Go inside
+    .goto 1426/0,-537.29,-5587.04,12 >>Go inside
 step
     .goto 1426/0,-523.35,-5590.82
     >>Talk to |cRXP_FRIENDLY_Tannok|r
@@ -1990,7 +1990,7 @@ step
 step
     #completewith next
     .goto 1426/0,-511.19,-5584.09,10,0
-    .goto Dun Morogh,47.50,52.08,12 >>Go inside
+    .goto 1426/0,-537.29,-5587.04,12 >>Go inside
 step
     #sticky
     #label Tannok
@@ -1999,7 +1999,7 @@ step
     .turnin 2160,2 >> Turn in Supplies to Tannok
     .target Tannok Frosthammer
 step
-    .goto Dun Morogh,47.50,52.08
+    .goto 1426/0,-537.29,-5587.04
     >>Talk to |cRXP_FRIENDLY_Magis|r upstairs
     .trainer >> Train your class spells (Fireball R2, Fire Blast)
     .target Magis Sparkmantle
@@ -2146,7 +2146,7 @@ step
     .complete 5541,1 --Collect Rumbleshot's Ammo (x1)
 step
     #completewith Ammo
-    .goto Dun Morogh,40.60,62.24,45,0
+    .goto 1426/0,-197.47,-5920.63,45,0
     >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Juvenile Snow Leopards|r en route
     >>Loot the |cRXP_ENEMY_Crag Boars|r for their |cRXP_LOOT_Crag Boar Ribs|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Crag Boars|r cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
@@ -2159,7 +2159,7 @@ step
     .isQuestAvailable 384
 step
     #completewith Ammo
-    .goto Dun Morogh,40.60,62.24,45,0
+    .goto 1426/0,-197.47,-5920.63,45,0
     >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Juvenile Snow Leopards|r en route
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Crag Boars|r cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
     .goto 1426/0,-201.51,-6015.520,20 >>Travel toward |cRXP_FRIENDLY_Hegnar|r
@@ -2169,7 +2169,7 @@ step
     .isQuestTurnedIn 384
 step
     #completewith next
-    .goto Dun Morogh,40.60,62.24,45,0
+    .goto 1426/0,-197.47,-5920.63,45,0
     .goto 1426/0,-201.51,-6015.520,20 >>Travel toward |cRXP_FRIENDLY_Hegnar|r
     .xp <7-1000,1
 step
@@ -2285,7 +2285,7 @@ step
     .isQuestTurnedIn 384
 step << skip
     #completewith next
-    .goto Dun Morogh,38.00,42.77,30 >> Go inside the Cave
+    .goto 1426/0,-69.42,-5281.36,30 >> Go inside the Cave
     .isOnQuest 319
 step << skip
     #label CaveLS
@@ -2320,7 +2320,7 @@ step
     .itemcount 2886,<6
 step
     #completewith next
-    .goto Dun Morogh,47.50,52.40,8,0
+    .goto 1426/0,-537.29,-5597.55,8,0
     .goto 1426/0,-548.13,-5598.54,8 >>Go Downstairs
 step
     #completewith next
@@ -2439,13 +2439,13 @@ step
     .goto 1426/0,378.27,-5520.39,40,0
     .goto 1426/0,402.40,-5359.18,40,0
     .goto 1426/0,381.22,-5247.87,40,0
-    .goto Dun Morogh,31.30,39.17,40,0
+    .goto 1426/0,260.56,-5163.16,40,0
     .goto 1426/0,220.67,-5509.56,40,0
     .goto 1426/0,355.12,-5644.50,40,0
     .goto 1426/0,378.27,-5520.39,40,0
     .goto 1426/0,402.40,-5359.18,40,0
     .goto 1426/0,381.22,-5247.87,40,0
-    .goto Dun Morogh,31.30,39.17
+    .goto 1426/0,260.56,-5163.16
     >>Kill |cRXP_ENEMY_Ice Claw Bears|r, |cRXP_ENEMY_Elder Crag Boars|r, and |cRXP_ENEMY_Snow Leopards|r. Loot the |cRXP_ENEMY_Elder Crag Boars|r for |cRXP_LOOT_Crag Boar Ribs|r
     >>|cRXP_WARN_Remember to kite an |cRXP_ENEMY_Ice Claw Bear|r or |cRXP_ENEMY_Snow Leopards|r back to the questgiver if possible|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Ice Claw Bears|r cast|r |T135853:0|t[Ice Claw] |cRXP_WARN_(Melee Instant: Deals an additional 4 melee damage), and |cRXP_ENEMY_Elder Crag Boars|r cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 35-85 melee damage on hit. Only castable at range)|r
@@ -2465,13 +2465,13 @@ step
     .goto 1426/0,378.27,-5520.39,40,0
     .goto 1426/0,402.40,-5359.18,40,0
     .goto 1426/0,381.22,-5247.87,40,0
-    .goto Dun Morogh,31.30,39.17,40,0
+    .goto 1426/0,260.56,-5163.16,40,0
     .goto 1426/0,220.67,-5509.56,40,0
     .goto 1426/0,355.12,-5644.50,40,0
     .goto 1426/0,378.27,-5520.39,40,0
     .goto 1426/0,402.40,-5359.18,40,0
     .goto 1426/0,381.22,-5247.87,40,0
-    .goto Dun Morogh,31.30,39.17
+    .goto 1426/0,260.56,-5163.16
     >>Kill |cRXP_ENEMY_Ice Claw Bears|r, |cRXP_ENEMY_Elder Crag Boars|r, and |cRXP_ENEMY_Snow Leopards|r
     >>|cRXP_WARN_Remember to kite an |cRXP_ENEMY_Ice Claw Bear|r or |cRXP_ENEMY_Snow Leopards|r back to the questgiver if possible|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Ice Claw Bears|r cast|r |T135853:0|t[Ice Claw] |cRXP_WARN_(Melee Instant: Deals an additional 4 melee damage), and |cRXP_ENEMY_Elder Crag Boars|r cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 35-85 melee damage on hit. Only castable at range)|r
@@ -2512,13 +2512,13 @@ step
     .goto 1426/0,378.27,-5520.39,40,0
     .goto 1426/0,402.40,-5359.18,40,0
     .goto 1426/0,381.22,-5247.87,40,0
-    .goto Dun Morogh,31.30,39.17,40,0
+    .goto 1426/0,260.56,-5163.16,40,0
     .goto 1426/0,220.67,-5509.56,40,0
     .goto 1426/0,355.12,-5644.50,40,0
     .goto 1426/0,378.27,-5520.39,40,0
     .goto 1426/0,402.40,-5359.18,40,0
     .goto 1426/0,381.22,-5247.87,40,0
-    .goto Dun Morogh,31.30,39.17
+    .goto 1426/0,260.56,-5163.16
     >>Kill |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |cRXP_LOOT_Crag Boar Ribs|r
     >>|cRXP_WARN_Be careful as they cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 35-85 melee damage on hit. Only castable at range)|r
     .complete 384,1 --Crag Boar Rib (6)
@@ -2538,7 +2538,7 @@ step
 step
     #label Explore
     .goto 1426/0,668.84,-5585.73,8,0
-    .goto Dun Morogh,22.90,52.09
+    .goto 1426/0,674.26,-5587.37
     >>|cRXP_WARN_Carefully WALK down onto the nook below (do NOT fall down). Walk carefully down the nook until you get credit|r
     >>|cRXP_WARN_Be careful of the |cRXP_ENEMY_Frostmane Hideskinner|r below, as he may be able to attack you on the nook if he's close to it|r
     >>|cRXP_WARN_Get ready to cast|r |T134414:0|t[Hearthstone]
@@ -2557,7 +2557,7 @@ step
     .complete 384,2 --Collect Rhapsody Malt (x1)
     .target Innkeeper Belm
 step
-    .goto Dun Morogh,47.50,52.08
+    .goto 1426/0,-537.29,-5587.04
     >>Talk to |cRXP_FRIENDLY_Magis|r upstairs
     .trainer >> Train your class spells (Frostbolt r2, Polymorph)
     .target Magis Sparkmantle
@@ -2641,7 +2641,7 @@ step
 step
     #sticky
     #label Ghilm
-    .goto Dun Morogh,68.40,54.45,0,0
+    .goto 1426/0,-1566.62,-5664.86,0,0
     >>Talk to |cRXP_FRIENDLY_Ghilm|r
     .train 2550 >> Train |T133971:0|t[Cooking]
     .target Cook Ghilm
@@ -2743,7 +2743,7 @@ step
     #requires Shortcut1
     #label Shortcut2
     .goto 1426/0,-1693.19,-5541.730,50,0
-    .goto Dun Morogh,72.90,49.79,50,0
+    .goto 1426/0,-1788.24,-5511.85,50,0
     .goto 1426/0,-1995.58,-5480.01,50 >>|cRXP_WARN_Kite the nearby |cRXP_ENEMY_Rockjaw Ambushers|r to the |cRXP_FRIENDLY_Ironforge Mountaineers|r that can patrol on the road (make sure to deal 51%+ damage to get credit)|r
     .mob Rockjaw Ambusher
     .unitscan Ironforge Mountaineer
@@ -2799,8 +2799,8 @@ step
     #label Tunnel2
     #completewith Barleybrew
     .goto 1426/0,-2118.71,-5516.78,20,0
-    .goto Dun Morogh,81.10,49.76,20,0
-    .goto Dun Morogh,81.60,50.01,20,0
+    .goto 1426/0,-2192.09,-5510.87,20,0
+    .goto 1426/0,-2216.72,-5519.08,20,0
     .goto 1426/0,-2314.72,-5491.83,20,0
     >>Kite a |cRXP_ENEMY_Scarred Crag Boar|r en route
     >>|cRXP_WARN_Be careful as they cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 40-100 melee damage on hit. Only castable at range)|r
@@ -2876,7 +2876,7 @@ step << skip
     #completewith next
     .goto 1432/0,-2586.52,-5740.99,20,0
     .goto 1432/0,-2569.14,-5673.30,20,0
-    .goto Loch Modan,19.50,62.56,30 >>Go back into the Tunnel
+    .goto 1432/0,-2531.62,-5638.34,30 >>Go back into the Tunnel
 step << skip
     .goto 1432/0,-2513.42,-5618.48
     .link https://www.youtube.com/watch?v=AOAlX9B5aO0 >>|cRXP_WARN_CLICK HERE If you're struggling|r
@@ -2940,7 +2940,7 @@ step
     >>Exit the building
     .goto 1455/0,-1152.31,-4821.12,10 >>Travel toward |cRXP_FRIENDLY_Gryth|r
 step
-    .goto Ironforge,55.50,47.74
+    .goto 1455/0,-1152.39,-4820.914
     >>Talk to |cRXP_FRIENDLY_Gryth|r
     .turnin 6388 >>Turn in Gryth Thurden
 --   .accept 6392 >>Accept Return to Brock
@@ -2963,8 +2963,8 @@ step
     .goto 1455/0,-1064.87,-4828.19,20,0
     .goto 1455/0,-1062.10,-4815.100,20,0
     .goto 1455/0,-1036.48,-4804.50,20,0
-    .goto Ironforge,35.30,32.76,20,0
-    .goto Ironforge,27.60,11.06,20,0
+    .goto 1455/0,-992.68,-4742.08,20,0
+    .goto 1455/0,-931.8,-4627.59,20,0
     .goto 1455/0,-928.40,-4614.51,10 >>Travel toward |cRXP_FRIENDLY_Dink|r
 step
     .goto 1455/0,-928.40,-4614.51
@@ -3035,7 +3035,7 @@ step
     .goto 1426/0,-1189.36,-4374.84,15,0
     .goto 1426/0,-1173.11,-4348.24,8,0
     .goto 1426/0,-1184.44,-4333.14,6,0
-    .goto Dun Morogh,61.40,13.27,10,0
+    .goto 1426/0,-1221.87,-4312.78,10,0
     .goto 1426/0,-1227.78,-4290.13,8,0
     >>|cRXP_WARN_Do the Deathless Dun Morogh -> Wetlands skip|r
     >>|cRXP_WARN_Eat to full after each fall if you don't feel confident|r
@@ -3043,17 +3043,17 @@ step
     .goto 1426/0,-1184.93,-4250.73,20 >>Carefully drop down the mountain side
     .isQuestAvailable 983
 step
-    .goto Dun Morogh,60.80,10.33,10,0
+    .goto 1426/0,-1192.32,-4216.25,10,0
     .goto 1426/0,-1182.96,-4196.55,8,0
     .goto 1437/0,-1166.63,-4147.02,12,0
-    .goto Wetlands,18.70,70.97,12,0
-    .goto Wetlands,18.50,69.39,12,0
+    .goto 1437/0,-1162.91,-4104.03,12,0
+    .goto 1437/0,-1154.64,-4060.48,12,0
     .goto 1437/0,-1118.24,-4031.81,15,0
-    .goto Wetlands,17.00,67.68,12,0
+    .goto 1437/0,-1092.6,-4013.35,12,0
     .goto 1437/0,-1049.60,-3998.74,12,0
     .goto 1437/0,-1012.79,-3978.34,20,0
     .goto 1437/0,-1022.72,-3952.43,20,0
-    .goto Wetlands,15.10,63.72,12,0
+    .goto 1437/0,-1014.03,-3904.2,12,0
     >>|cRXP_WARN_Do the Deathless Dun Morogh -> Wetlands skip|r
     >>|cRXP_WARN_Be careful of |cRXP_ENEMY_Sludginn|r (rare) before you drop down toward the coast (if he's up)|r
     >>|cRXP_WARN_Be careful of the |cRXP_ENEMY_Bluegill Raiders|r to the west when you reach the sea|r
@@ -3066,10 +3066,10 @@ step
     .isQuestAvailable 983
 step
     #completewith next
-    .goto Wetlands,10.80,59.80,10,0
+    .goto 1437/0,-836.21,-3796.15,10,0
     .goto 1437/0,-829.18,-3804.420,10 >>Go inside the Inn
 step
-    .goto Wetlands,10.50,60.20
+    .goto 1437/0,-823.8,-3807.180
     >>Jump onto the Chandelier downstairs
     >>Talk to |cRXP_FRIENDLY_Samor|r through the wall
     >>|cRXP_WARN_NOTE: To do this, bind "Interact with Target" under Gameplay -> Controls in the Options menu|r
@@ -3099,7 +3099,7 @@ step
     #completewith Darkshore
     #label DarkshoreBoat
     .goto 1437/0,-641.43,-3758.94,20,0
-    .goto Wetlands,4.50,57.02,20 >>Travel toward the Darkshore Boat
+    .goto 1437/0,-575.68,-3719.53,20 >>Travel toward the Darkshore Boat
 step
     #completewith next
     #requires DarkshoreBoat
@@ -3219,13 +3219,13 @@ step
     .use 7586
     .unitscan Rabid Thistle Bear
 step
-    .goto Darkshore,38.90,53.59
+    .goto 1439/1,393.72,5993.24
     >>Run toward the Furbolg Camp
     >>|cRXP_WARN_Do not attempt to fight the|r |cRXP_ENEMY_Blackwood Windtalker|r
     .complete 984,1 --Find a corrupt furbolg camp (1)
 step
     .goto 1439/1,411.40,5873.15,60,0
-    .goto Darkshore,38.80,58.29,60,0
+    .goto 1439/1,400.27,5788.0,60,0
     .goto 1439/1,427.78,5680.58,60,0
     .goto 1439/1,415.33,5434.30
     >>|cRXP_WARN_Use|r |T134335:0|t[Tharnariun's Hope] |cRXP_WARN_on a |cRXP_ENEMY_Rabid Thistle Bear|r. It has a 50-yard range|r
@@ -3234,7 +3234,7 @@ step
     .use 7586
     .unitscan Rabid Thistle Bear
 step
-    .goto Darkshore,40.30,59.73
+    .goto 1439/1,302.02,5726.433
     >>Talk to |cRXP_FRIENDLY_Tysha|r
     .accept 953 >>Accept The Fall of Ameth'Aran
     .target Sentinel Tysha Moonblade
@@ -3255,13 +3255,13 @@ step
     >>|cRXP_WARN_This has a 5 second cast time|r
     .complete 953,2 --Read the Fall of Ameth'Aran (1)
 step
-    .goto Darkshore,43.30,58.70
+    .goto 1439/1,105.52,5770.100
     >>Click |cRXP_PICK_The Lay of Ameth'Aran|r on the ground
     >>|cRXP_WARN_This has a 5 second cast time|r
     .complete 953,1 --Read the Lay of Ameth'Aran (1)
 step
     #label Fall
-    .goto Darkshore,40.30,59.73
+    .goto 1439/1,302.02,5726.433
     >>Talk to |cRXP_FRIENDLY_Tysha|r
     .turnin 953 >>Turn in The Fall of Ameth'Aran
     .target Sentinel Tysha Moonblade
@@ -3320,7 +3320,7 @@ step
     .accept 956 >> Accept Bashal'Aran
     .target Asterion
 step
-    .goto Darkshore,45.50,36.50,45,0
+    .goto 1439/1,-38.58,6739.5,45,0
     .goto 1439/1,-66.75,6683.61,45,0
     .goto 1439/1,-67.40,6672.25,45,0
     .goto 1439/1,-34.00,6601.51,45,0
@@ -3328,7 +3328,7 @@ step
     .goto 1439/1,-160.41,6690.16,45,0
     .goto 1439/1,-187.27,6708.930,45,0
     .goto 1439/1,-165.65,6728.15,45,0
-    .goto Darkshore,45.50,36.50,45,0
+    .goto 1439/1,-38.58,6739.5,45,0
     .goto 1439/1,-66.75,6683.61,45,0
     .goto 1439/1,-67.40,6672.25,45,0
     .goto 1439/1,-34.00,6601.51,45,0
@@ -3374,7 +3374,7 @@ step
     .target Dalmond
     .isQuestAvailable 3524
 step
-    .goto Darkshore,37.40,40.13
+    .goto 1439/1,491.97,6582.303
     >>Talk to |cRXP_FRIENDLY_Thundris|r
     .turnin 958 >>Turn in Tools of the Highborne
     .target Thundris Windweaver
@@ -3483,21 +3483,21 @@ step
     .complete 4681,1 --Sea Turtle Remains (1)
 step
     .goto 1439/1,575.81,6381.430,50,0
-    .goto Darkshore,35.80,45.88,50,0
+    .goto 1439/1,596.77,6329.91,50,0
     .goto 1439/1,581.05,6209.82,50,0
     .goto 1439/1,575.15,6144.32,50,0
     .goto 1439/1,545.68,6010.270,50,0
     .goto 1439/1,634.10,5983.63,50,0
     .goto 1439/1,634.76,5915.51,50,0
-    .goto Darkshore,36.70,57.09,50,0
+    .goto 1439/1,537.82,5840.4,50,0
     .goto 1439/1,575.81,6381.430,50,0
-    .goto Darkshore,35.80,45.88,50,0
+    .goto 1439/1,596.77,6329.91,50,0
     .goto 1439/1,581.05,6209.82,50,0
     .goto 1439/1,575.15,6144.32,50,0
     .goto 1439/1,545.68,6010.270,50,0
     .goto 1439/1,634.10,5983.63,50,0
     .goto 1439/1,634.76,5915.51,50,0
-    .goto Darkshore,36.70,57.09
+    .goto 1439/1,537.82,5840.40
     .xp 11+7825 >> Grind to 7825+/8800xp
     .mob Pygmy Tide Crawler
     .mob Young Reef Crawler
@@ -3541,12 +3541,12 @@ step
     #completewith next
     +|cRXP_WARN_Start spam casting|r |T132794:0|t[Conjure Water r2] |cRXP_WARN_to conjure as much water as possible before taking the flight|r
 step << Gnome
-    .goto Ironforge,55.50,47.74
+    .goto 1455/0,-1152.39,-4820.914
     >>Talk to |cRXP_FRIENDLY_Gryth|r
     .accept 6392 >>Accept Return to Brock
     .target Gryth Thurden
 step
-    .goto Ironforge,55.50,47.74
+    .goto 1455/0,-1152.39,-4820.914
     >>Talk to |cRXP_FRIENDLY_Gryth|r
     .fly Thelsamar >> Fly to Thelsamar
     .target Gryth Thurden
@@ -3590,7 +3590,7 @@ step
     .goto 1426/0,-1189.36,-4374.84,15,0
     .goto 1426/0,-1173.11,-4348.24,8,0
     .goto 1426/0,-1184.44,-4333.14,6,0
-    .goto Dun Morogh,61.40,13.27,10,0
+    .goto 1426/0,-1221.87,-4312.78,10,0
     .goto 1426/0,-1227.78,-4290.13,8,0
     >>|cRXP_WARN_Do the Deathless Dun Morogh -> Wetlands skip|r
     >>|cRXP_WARN_Eat to full after each fall if you don't feel confident|r
@@ -3598,17 +3598,17 @@ step
     .goto 1426/0,-1184.93,-4250.73,20 >>Carefully drop down the mountain side
     .isQuestAvailable 983
 step
-    .goto Dun Morogh,60.80,10.33,10,0
+    .goto 1426/0,-1192.32,-4216.25,10,0
     .goto 1426/0,-1182.96,-4196.55,8,0
     .goto 1437/0,-1166.63,-4147.02,12,0
-    .goto Wetlands,18.70,70.97,12,0
-    .goto Wetlands,18.50,69.39,12,0
+    .goto 1437/0,-1162.91,-4104.03,12,0
+    .goto 1437/0,-1154.64,-4060.48,12,0
     .goto 1437/0,-1118.24,-4031.81,15,0
-    .goto Wetlands,17.00,67.68,12,0
+    .goto 1437/0,-1092.6,-4013.35,12,0
     .goto 1437/0,-1049.60,-3998.74,12,0
     .goto 1437/0,-1012.79,-3978.34,20,0
     .goto 1437/0,-1022.72,-3952.43,20,0
-    .goto Wetlands,15.10,63.72,12,0
+    .goto 1437/0,-1014.03,-3904.2,12,0
     >>|cRXP_WARN_Do the Deathless Dun Morogh -> Wetlands skip|r
     >>|cRXP_WARN_Be careful of |cRXP_ENEMY_Sludginn|r (rare) before you drop down toward the coast (if he's up)|r
     >>|cRXP_WARN_Be careful of the |cRXP_ENEMY_Bluegill Raiders|r to the west when you reach the sea|r
@@ -3622,10 +3622,10 @@ step
 --VV Custom Video
 step
     #completewith next
-    .goto Wetlands,10.80,59.80,10,0
+    .goto 1437/0,-836.21,-3796.15,10,0
     .goto 1437/0,-829.18,-3804.420,10 >>Go inside the Inn
 step
-    .goto Wetlands,10.50,60.20
+    .goto 1437/0,-823.8,-3807.180
     >>Jump onto the Chandelier downstairs
     >>Talk to |cRXP_FRIENDLY_Samor|r through the wall
     >>|cRXP_WARN_NOTE: To do this, bind "Interact with Target" under Gameplay -> Controls in the Options menu|r
@@ -3655,7 +3655,7 @@ step
     #completewith Darkshore
     #label DarkshoreBoat
     .goto 1437/0,-641.43,-3758.94,20,0
-    .goto Wetlands,4.50,57.02,20 >>Travel toward the Darkshore Boat
+    .goto 1437/0,-575.68,-3719.53,20 >>Travel toward the Darkshore Boat
 step
     #completewith next
     #requires DarkshoreBoat
@@ -3803,7 +3803,7 @@ step
     .accept 956 >> Accept Bashal'Aran
     .target Asterion
 step
-    .goto Darkshore,45.50,36.50,45,0
+    .goto 1439/1,-38.58,6739.5,45,0
     .goto 1439/1,-66.75,6683.61,45,0
     .goto 1439/1,-67.40,6672.25,45,0
     .goto 1439/1,-34.00,6601.51,45,0
@@ -3811,7 +3811,7 @@ step
     .goto 1439/1,-160.41,6690.16,45,0
     .goto 1439/1,-187.27,6708.930,45,0
     .goto 1439/1,-165.65,6728.15,45,0
-    .goto Darkshore,45.50,36.50,45,0
+    .goto 1439/1,-38.58,6739.5,45,0
     .goto 1439/1,-66.75,6683.61,45,0
     .goto 1439/1,-67.40,6672.25,45,0
     .goto 1439/1,-34.00,6601.51,45,0
@@ -3897,12 +3897,12 @@ step
     .mob Young Reef Crawler
 step
     #requires Gwennyth
-    .goto Darkshore,38.90,53.59
+    .goto 1439/1,393.72,5993.24
     >>Run toward the Furbolg Camp
     >>|cRXP_WARN_Do not attempt to fight the|r |cRXP_ENEMY_Blackwood Windtalker|r
     .complete 984,1 --Find a corrupt furbolg camp (1)
 step
-    .goto Darkshore,40.30,59.73
+    .goto 1439/1,302.02,5726.433
     >>Talk to |cRXP_FRIENDLY_Tysha|r
     .accept 953 >>Accept The Fall of Ameth'Aran
     .target Sentinel Tysha Moonblade
@@ -3934,13 +3934,13 @@ step
     >>|cRXP_WARN_This has a 5 second cast time|r
     .complete 953,2 --Read the Fall of Ameth'Aran (1)
 step
-    .goto Darkshore,43.30,58.70
+    .goto 1439/1,105.52,5770.100
     >>Click |cRXP_PICK_The Lay of Ameth'Aran|r on the ground
     >>|cRXP_WARN_This has a 5 second cast time|r
     .complete 953,1 --Read the Lay of Ameth'Aran (1)
 step
     #label Fall
-    .goto Darkshore,40.30,59.73
+    .goto 1439/1,302.02,5726.433
     >>Talk to |cRXP_FRIENDLY_Tysha|r
     .turnin 953 >>Turn in The Fall of Ameth'Aran
     .target Sentinel Tysha Moonblade
@@ -3972,7 +3972,7 @@ step
     .isOnQuest 958
 step
     .goto 1439/1,-54.96,6015.51
-    .goto Darkshore,41.70,36.51,30 >>|cRXP_WARN_Kill the |cRXP_ENEMY_Moonkin Oracle|r inside the cave --, then drink Logout Skip by logging out on top of the Mushroom at the back of the cave|r
+    .goto 1439/1,210.32,6739.501,30 >>|cRXP_WARN_Kill the |cRXP_ENEMY_Moonkin Oracle|r inside the cave --, then drink Logout Skip by logging out on top of the Mushroom at the back of the cave|r
     >>|cRXP_WARN_Be careful as it casts|r |T136006:0|t[Wrath] |cRXP_WARN_(Ranged Cast: Deals 30-45 Nature damage),|r |T136096:0|t[Moonfire] |cRXP_WARN_(Ranged Instant: Deals 20-30 Nature damage, then 44 Nature damage over 12 seconds), and|r |T136085:0|t[Regrowth] |cRXP_WARN_(Self Cast: Heals for about 150 damage. Rare, but run if this happens)|r
     >>|cRXP_WARN_You can LoS his|r |T136006:0|t[Wrath] |cRXP_WARN_behind the rocks inside the mouth of the cave|r
     .mob Moonkin Oracle
@@ -3991,7 +3991,7 @@ step
     .target Dalmond
     .isQuestAvailable 3524
 step
-    .goto Darkshore,37.40,40.13
+    .goto 1439/1,491.97,6582.303
     >>Talk to |cRXP_FRIENDLY_Thundris|r
     .turnin 958 >>Turn in Tools of the Highborne
     .target Thundris Windweaver
@@ -4051,21 +4051,21 @@ step
     .complete 4681,1 --Sea Turtle Remains (1)
 step
     .goto 1439/1,575.81,6381.430,50,0
-    .goto Darkshore,35.80,45.88,50,0
+    .goto 1439/1,596.77,6329.91,50,0
     .goto 1439/1,581.05,6209.82,50,0
     .goto 1439/1,575.15,6144.32,50,0
     .goto 1439/1,545.68,6010.270,50,0
     .goto 1439/1,634.10,5983.63,50,0
     .goto 1439/1,634.76,5915.51,50,0
-    .goto Darkshore,36.70,57.09,50,0
+    .goto 1439/1,537.82,5840.4,50,0
     .goto 1439/1,575.81,6381.430,50,0
-    .goto Darkshore,35.80,45.88,50,0
+    .goto 1439/1,596.77,6329.91,50,0
     .goto 1439/1,581.05,6209.82,50,0
     .goto 1439/1,575.15,6144.32,50,0
     .goto 1439/1,545.68,6010.270,50,0
     .goto 1439/1,634.10,5983.63,50,0
     .goto 1439/1,634.76,5915.51,50,0
-    .goto Darkshore,36.70,57.09
+    .goto 1439/1,537.82,5840.40
     .xp 11+7825 >> Grind to 7825+/8800xp
     .mob Pygmy Tide Crawler
     .mob Young Reef Crawler
@@ -4109,12 +4109,12 @@ step
     #completewith next
     +|cRXP_WARN_Start spam casting|r |T132794:0|t[Conjure Water r2] |cRXP_WARN_to conjure as much water as possible before taking the flight|r
 step << Gnome
-    .goto Ironforge,55.50,47.74
+    .goto 1455/0,-1152.39,-4820.914
     >>Talk to |cRXP_FRIENDLY_Gryth|r
     .accept 6392 >>Accept Return to Brock
     .target Gryth Thurden
 step
-    .goto Ironforge,55.50,47.74
+    .goto 1455/0,-1152.39,-4820.914
     >>Talk to |cRXP_FRIENDLY_Gryth|r
     .fly Thelsamar >> Fly to Thelsamar
     .target Gryth Thurden
@@ -4195,7 +4195,7 @@ step << skip
     #completewith next
     .goto 1432/0,-2586.52,-5740.99,20,0
     .goto 1432/0,-2569.14,-5673.30,20,0
-    .goto Loch Modan,19.50,62.56,30 >>Go back into the Tunnel
+    .goto 1432/0,-2531.62,-5638.34,30 >>Go back into the Tunnel
 step << skip
     .goto 1432/0,-2513.42,-5618.48
     .goto 1432/0,-2881.66,-5351.18,30 >>Jumping Logout Skip from the Brazier inside the tunnel to Thelsamar
@@ -4263,17 +4263,17 @@ step
     .goto 1432/0,-2971.58,-4854.31,12,0
     .goto 1432/0,-2998.33,-4868.66,12,0
     .goto 1432/0,-2965.79,-4891.84,12,0
-    .goto Loch Modan,35.90,22.02,12,0
+    .goto 1432/0,-2983.99,-4892.58,12,0
     .goto 1432/0,-2955.86,-4919.99,12,0
-    .goto Loch Modan,36.10,22.97,12,0
+    .goto 1432/0,-2989.51,-4910.05,12,0
     .goto 1432/0,-2993.09,-4945.19,12,0
     .goto 1432/0,-2957.24,-4945.37,12,0
     .goto 1432/0,-2971.58,-4854.31,12,0
     .goto 1432/0,-2998.33,-4868.66,12,0
     .goto 1432/0,-2965.79,-4891.84,12,0
-    .goto Loch Modan,35.90,22.02,12,0
+    .goto 1432/0,-2983.99,-4892.58,12,0
     .goto 1432/0,-2955.86,-4919.99,12,0
-    .goto Loch Modan,36.10,22.97,12,0
+    .goto 1432/0,-2989.51,-4910.05,12,0
     .goto 1432/0,-2993.09,-4945.19,12,0
     .goto 1432/0,-2957.24,-4945.37
     >>Loot the |cRXP_LOOT_Miners' Gear|r on the ground. |cRXP_WARN_They share spawnpoints|r
@@ -4489,7 +4489,7 @@ step << Gnome
 #loop
 	.line Loch Modan,79.89,65.91,76.70,74.44,74.74,69.21,77.03,60.55,76.09,57.94,77.39,55.98,79.63,59.85,79.89,65.91
 	.goto 1432/0,-4197.38,-5699.97,45,0
-	.goto Loch Modan,76.70,74.44,45,0
+	.goto 1432/0,-4109.39,-5856.89,45,0
 	.goto 1432/0,-4055.33,-5760.68,45,0
 	.goto 1432/0,-4118.49,-5601.37,45,0
 	.goto 1432/0,-4092.57,-5553.35,45,0
@@ -4746,7 +4746,7 @@ step
     #completewith next
     .goto 1453/0,887.22,-9017.80,10,0
     .goto 1453/0,871.36,-9013.14,10,0
-    .goto Stormwind City,38.10,80.93,8,0
+    .goto 1453/0,868.8,-9004.27,8,0
     .goto 1453/0,877.00,-9008.03,6,0
     .goto 1453/0,863.96,-9001.40,8,0
     .goto 1453/0,928.62,-9010.10,15,0
@@ -4782,7 +4782,7 @@ step
 step << skip
     #completewith next
     .goto 1453/0,661.38,-8858.16,12,0
-    .goto Stormwind City,52.10,61.42,12,0
+    .goto 1453/0,680.61,-8829.39,12,0
     .goto 1453/0,717.44,-8847.32,12,0
     .goto 1453/0,693.24,-8891.51,12,0
     .goto 1453/0,681.28,-8888.01,10 >>Travel toward |cRXP_FRIENDLY_Roberto|r
@@ -4795,7 +4795,7 @@ step << skip
     .target Roberto Pupellyverbos
 step
     #completewith next
-    .goto Stormwind City,52.10,61.34,15,0
+    .goto 1453/0,680.61,-8828.67,15,0
     .goto 1453/0,635.44,-8863.81,8 >>Travel toward |cRXP_FRIENDLY_Keldric|r
     .money <0.01
 step
@@ -4806,7 +4806,7 @@ step
     .target Keldric Boucher
 step
     #completewith Bank
-    .goto Stormwind City,55.30,68.16,10 >>Enter the Stormwind Bank
+    .goto 1453/0,637.59,-8889.81,10 >>Enter the Stormwind Bank
 step
     .goto 1453/0,614.33,-8932.92
     >>Talk to |cRXP_FRIENDLY_Newton|r
@@ -5010,13 +5010,13 @@ step
     .mob Rabid Thistle Bear
 step
     #label SeaTurtle1
-    .goto Darkshore,44.20,20.60,80 >>Travel toward the |cRXP_LOOT_Beached Sea Turtle|r
+    .goto 1439/1,46.57,7433.8,80 >>Travel toward the |cRXP_LOOT_Beached Sea Turtle|r
     .isQuestAvailable 4725
 step
     #completewith next
     +Save the |T133884:0|t[Murloc Eyes] you loot from the |cRXP_ENEMY_Greymist Warriors|r and |cRXP_ENEMY_Greymist Netters|r
 step
-    .goto Darkshore,44.20,20.60
+    .goto 1439/1,46.57,7433.800
     >>Loot the |cRXP_LOOT_Beached Sea Turtle|r on the ground
     >>|cRXP_WARN_This has a 5 second cast time|r
     .accept 4725 >> Accept Beached Sea Turtle
@@ -5116,7 +5116,7 @@ step
     +Save the |T133884:0|t[Murloc Eyes] you loot from the |cRXP_ENEMY_Greymist Coastrunners|r and |cRXP_ENEMY_Greymist Seers|r
 step
     #label BeachedST
-    .goto Darkshore,37.10,62.17
+    .goto 1439/1,511.62,5618.58
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
     >>|cRXP_WARN_This has a 5 second cast time|r
     .accept 4722 >> Accept Beached Sea Turtle
@@ -5128,9 +5128,9 @@ step
 	.goto 1439/1,372.10,5556.130,45,0
 	.goto 1439/1,330.18,5437.80,45,0
 	.goto 1439/1,322.98,5252.65,45,0
-	.goto Darkshore,37.40,70.05,45,0
+	.goto 1439/1,491.97,5274.48,45,0
 	.goto 1439/1,411.40,5376.23,45,0
-	.goto Darkshore,38.50,63.73,45,0
+	.goto 1439/1,419.92,5550.46,45,0
 	.goto 1439/1,404.20,5796.300,45,0
     >>Kill |cRXP_ENEMY_Rabid Thistle Bears|r
     >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_(Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
@@ -5143,10 +5143,10 @@ step
 	.goto 1439/1,370.14,5856.56,50,0
 	.goto 1439/1,307.91,5877.96,50,0
 	.goto 1439/1,324.29,5922.06,50,0
-	.goto Darkshore,39.90,54.38,50,0
+	.goto 1439/1,328.22,5958.74,50,0
 	.goto 1439/1,305.95,5998.48,50,0
 	.goto 1439/1,373.41,6018.56,50,0
-	.goto Darkshore,39.90,54.38,50,0
+	.goto 1439/1,328.22,5958.74,50,0
     >>Kill |cRXP_ENEMY_Blackwood Pathfinders|r and |cRXP_ENEMY_Blackwood Windtalkers|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Blackwood Pathfinders|r cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds), and |cRXP_ENEMY_Blackwood Windtalkers|r cast|r |T136022:0|t[Gust of Wind] |cRXP_WARN_(melee-range aoe stun)|r
     .complete 985,1 --Blackwood Pathfinder (8)
@@ -5166,7 +5166,7 @@ step
 	.goto 1439/1,440.88,6218.99,50,0
 	.goto 1439/1,404.85,6253.93,50,0
 	.goto 1439/1,355.07,6252.62,50,0
-	.goto Darkshore,41.40,47.13,50,0
+	.goto 1439/1,229.97,6275.32,50,0
 	.goto 1439/1,212.28,6173.14,50,0
 	.goto 1439/1,226.69,6113.32,50,0
 	.goto 1439/1,411.40,6095.42,50,0
@@ -5364,7 +5364,7 @@ step
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker
 step
-    .goto Darkshore,51.80,33.51
+    .goto 1439/1,-451.23,6870.06
     >>Open the |cRXP_PICK_Blackwood Nut Stores|r. Loot it for the |cRXP_LOOT_Blackwood Nut Sample|r :3
     >>|cRXP_WARN_Aggro the Mobs protecting it, cast|r |T135848:0|t[Frost Nova]|cRXP_WARN_, loot the |cRXP_LOOT_Blackwood Nut Sample|r, then run north|r
     >>|cRXP_WARN_This has a 5 second cast time|r
@@ -5463,7 +5463,7 @@ step
 step
     #label CapCave
     #completewith CapCave1
-    .goto Darkshore,55.00,33.42,30 >>Go inside the Cave
+    .goto 1439/1,-660.83,6873.99,30 >>Go inside the Cave
 step << skip
     #requires CapCave
     #completewith CapCave1
@@ -5473,13 +5473,13 @@ step
     .goto 1439/1,-663.45,6877.49,8,0
     .goto 1439/1,-679.17,6848.67,8,0
     .goto 1439/1,-666.73,6819.41,8,0
-    .goto Darkshore,55.30,35.58,8,0
+    .goto 1439/1,-680.48,6779.67,8,0
     >>Loot the blue |cRXP_LOOT_Scaber Stalks|r on the ground
     >>|cRXP_WARN_This has a 5 second cast time|r
     .complete 947,1,4 --Scaber Stalk (5)
 step
     .goto 1439/1,-690.31,6751.29,12,0
-    .goto Darkshore,55.70,36.30,12,0
+    .goto 1439/1,-706.68,6748.23,12,0
     .goto 1439/1,-719.13,6787.530,12,0
     >>Stay on the upper level of the cave. Drop down if there's no |cRXP_LOOT_Death Cap|r on the upper level
     >>Loot the orange |cRXP_LOOT_Death Cap|r on the ground at the end of the top path of the cave
@@ -5490,13 +5490,13 @@ step
     .goto 1439/1,-663.45,6877.49,8,0
     .goto 1439/1,-679.17,6848.67,8,0
     .goto 1439/1,-666.73,6819.41,8,0
-    .goto Darkshore,55.30,35.58
+    .goto 1439/1,-680.48,6779.67
     >>Loot the first |cRXP_LOOT_Scaber Stalks|r at the mouth of the cave after looting the |cRXP_LOOT_Death Cap|r
     >>|cRXP_WARN_This has a 5 second cast time|r
     .complete 947,1 --Scaber Stalk (5)
 step << skip
     .goto 1439/1,-658.21,6825.96
-    .goto Darkshore,41.70,36.51,30 >> |cRXP_WARN_Perform a Logout Skip inside the cave|r
+    .goto 1439/1,210.32,6739.501,30 >> |cRXP_WARN_Perform a Logout Skip inside the cave|r
     .isOnQuest 4763
 step
     #completewith next
@@ -5566,7 +5566,7 @@ step
 step << skip
     #completewith next
     .goto 1453/0,661.38,-8858.16,12,0
-    .goto Stormwind City,52.10,61.42,12,0
+    .goto 1453/0,680.61,-8829.39,12,0
     .goto 1453/0,717.44,-8847.32,12,0
     .goto 1453/0,693.24,-8891.51,12,0
     .goto 1453/0,681.28,-8888.01,10 >>Travel toward |cRXP_FRIENDLY_Roberto|r
@@ -5659,7 +5659,7 @@ step << Gnome
     .goto 1453/0,504.24,-8956.31,40 >>Drop down to the ledge below |cRXP_FRIENDLY_Dungar|r
 step << Gnome
     #completewith next
-    .goto Elwynn Forest,32.10,50.32,40 >>Exit Stormwind
+    .goto 1429/0,421.28,-9104.28,40 >>Exit Stormwind
 step << skip
     #completewith next
     #requires Stormwind1
@@ -5673,7 +5673,7 @@ step << skip
     .trainer >> Train your class spells (Flamestrike)
     >>Total Cost: 15s
 step << skip
-    .goto Elwynn Forest,44.00,65.69
+    .goto 1429/0,8.25,-9460.03
     >>Talk to |cRXP_FRIENDLY_Dobbins|r
     >>|cRXP_BUY_Buy a|r |T132794:0|t[Skin of Sweet Rum] |cRXP_BUY_from him|r
     .collect 1939,1,116,1 --Skin of Sweet Rum
@@ -5878,11 +5878,11 @@ step
     +|cRXP_WARN_Keep an eye out for |cRXP_ENEMY_Old Murk-Eye|r. Try to stay close to the edge of the ridge as to not miss him|r
     .unitscan Old Murk-Eye
 step
-    .goto Westfall,30.40,57.93,60,0
+    .goto 1436/0,1952.67,-10751.7,60,0
     .goto 1436/0,1991.52,-10927.40,60,0
     .goto 1436/0,1874.97,-10996.000,60,0
     .goto 1436/0,1929.22,-11019.80,60,0
-    .goto Westfall,31.40,72.29,30 >> AoE the Gnoll Camps
+    .goto 1436/0,1917.67,-11086.77,30 >> AoE the Gnoll Camps
     >>AoE |cRXP_ENEMY_Riverpaw Herbalists|r, |cRXP_ENEMY_Riverpaw Mongrels|r, and |cRXP_ENEMY_Riverpaw Brutes|r. Loot them for their |cRXP_LOOT_Gnoll Paws|r
     >>If you find |cRXP_ENEMY_Old Murk-Eye|r, skip this step
     .complete 102,1 --Gnoll Paws (8)
@@ -5906,7 +5906,7 @@ step
     .goto 1436/0,1829.47,-11357.20,70,0
     .goto 1436/0,1900.52,-11319.87,70,0
     .goto 1436/0,1955.12,-11284.17,70,0
-    .goto Westfall,29.50,78.70,70,0
+    .goto 1436/0,1984.17,-11236.33,70,0
     .goto 1436/0,1999.57,-11160.50,70,0
     .goto 1436/0,2009.37,-11093.53,70,0
     .goto 1436/0,2042.27,-11064.37,70,0
@@ -5919,7 +5919,7 @@ step
     .goto 1436/0,1829.47,-11357.20,70,0
     .goto 1436/0,1900.52,-11319.87,70,0
     .goto 1436/0,1955.12,-11284.17,70,0
-    .goto Westfall,29.50,78.70,70,0
+    .goto 1436/0,1984.17,-11236.33,70,0
     .goto 1436/0,1999.57,-11160.50,70,0
     .goto 1436/0,2009.37,-11093.53,70,0
     .goto 1436/0,2042.27,-11064.37,70,0
@@ -6043,8 +6043,8 @@ step
     .complete 64,1 --Furlbrow's Pocket Watch (1)
 step
     #completewith Oats
-    .goto Westfall,50.50,21.38,60,0
-    .goto Westfall,51.70,23.16,60,0
+    .goto 1436/0,1249.17,-9898.87,60,0
+    .goto 1436/0,1207.17,-9940.4,60,0
     >>AoE |cRXP_ENEMY_Harvest Watchers|r
     .complete 9,1 --Harvest Watcher (20)
     .mob Harvest Watcher
@@ -6057,7 +6057,7 @@ step
     .mob Riverpaw Gnoll
 step
     .goto 1436/0,1184.07,-9623.77,60,0
-    .goto Westfall,53.80,10.69,60,0
+    .goto 1436/0,1133.67,-9649.43,60,0
     .goto 1436/0,1058.07,-9591.80
     >>AoE |cRXP_ENEMY_Murloc Coastrunners|r and |cRXP_ENEMY_Murloc Raiders|r. Loot them for their |cRXP_LOOT_Murloc Eyes|r
     .collect 730,3,38,1 --Murloc Eye (3)
@@ -6101,16 +6101,16 @@ step
     .mob +Young Fleshripper
 step
     .goto 1436/0,1167.27,-10110.73,60,0
-    .goto Westfall,51.70,23.16
+    .goto 1436/0,1207.17,-9940.40
     >>AoE |cRXP_ENEMY_Harvest Watchers|r
     .complete 9,1 --Harvest Watcher (20)
     .mob Harvest Watcher
 step
-    .goto Westfall,51.70,23.16
+    .goto 1436/0,1207.17,-9940.40
     .xp 17+11890 >> Grind to 11890+/17700xp
     .isQuestComplete 12
 step
-    .goto Westfall,51.70,23.16
+    .goto 1436/0,1207.17,-9940.40
     >>|cRXP_WARN_Skip this step if you've finished the objective of The People's Militia|r
     .xp 17+12800 >> Grind to 12800+/17700xp
 step
@@ -6174,7 +6174,7 @@ step
     #completewith next
     .goto 1453/0,887.22,-9017.80,10,0
     .goto 1453/0,871.36,-9013.14,10,0
-    .goto Stormwind City,38.10,80.93,8,0
+    .goto 1453/0,868.8,-9004.27,8,0
     .goto 1453/0,877.00,-9008.03,6,0
     .goto 1453/0,863.96,-9001.40,8,0
     .goto 1453/0,928.62,-9010.10,15,0
@@ -6214,7 +6214,7 @@ step
 step
     #completewith next
     .goto 1453/0,661.38,-8858.16,12,0
-    .goto Stormwind City,52.10,61.42,12,0
+    .goto 1453/0,680.61,-8829.39,12,0
     .goto 1453/0,717.44,-8847.32,12,0
     .goto 1453/0,693.24,-8891.51,12,0
     .goto 1453/0,681.28,-8888.01,10 >>Travel toward |cRXP_FRIENDLY_Roberto|r
@@ -6227,7 +6227,7 @@ step
     .target Roberto Pupellyverbos
 step
     #completewith next
-    .goto Stormwind City,52.10,61.34,15,0
+    .goto 1453/0,680.61,-8828.67,15,0
     .goto 1453/0,635.44,-8863.81,8 >>Travel toward |cRXP_FRIENDLY_Keldric|r
 step
     .goto 1453/0,635.44,-8863.81
@@ -6236,7 +6236,7 @@ step
     .target Keldric Boucher
 step
     #completewith Bank3
-    .goto Stormwind City,55.30,68.16,10 >>Enter the Stormwind Bank
+    .goto 1453/0,637.59,-8889.81,10 >>Enter the Stormwind Bank
 step
     #sticky
     #label Bank4
@@ -6376,7 +6376,7 @@ step
     .accept 944 >> Accept The Master's Glaive
     .target Onu
 step
-    .goto Darkshore,44.40,76.42
+    .goto 1439/1,33.47,4996.33
     >>Talk to |cRXP_FRIENDLY_Kerlonian|r
     >>|cRXP_WARN_If |cRXP_FRIENDLY_Kerlonian|r is not there, skip this step|r
     .accept 5321 >>Accept The Sleeper Has Awakened
@@ -6560,7 +6560,7 @@ step
    .mob Encrusted Tide Crawler
    .isOnQuest 950
 step
-    .goto Darkshore,31.70,83.72
+    .goto 1439/1,865.32,4678.432
     >>Loot the |cRXP_LOOT_Beached Sea Turtle|r on the ground
     >>|cRXP_WARN_The Turtle Shell has LoS|r
     >>|cRXP_WARN_This has a 5 second cast time|r
@@ -6568,7 +6568,7 @@ step
     .isOnQuest 950
 step
     #label SeaCreature
-    .goto Darkshore,32.70,80.73
+    .goto 1439/1,799.82,4808.12
     >>Loot the |cRXP_LOOT_Beached Sea Creature|r on the ground
     >>|cRXP_WARN_This has a 5 second cast time|r
     .accept 4730 >>Accept Beached Sea Creature
@@ -6667,18 +6667,18 @@ step
     .complete 1138,1 --Fine Crab Chunks (6)
     .mob Reef Crawler
 step
-    .goto Darkshore,32.70,80.73
+    .goto 1439/1,799.82,4808.12
     >>Loot the |cRXP_LOOT_Beached Sea Creature|r on the ground
     >>|cRXP_WARN_This has a 5 second cast time|r
     .accept 4730 >>Accept Beached Sea Creature
 step
-    .goto Darkshore,32.80,81.72,60,0
+    .goto 1439/1,793.27,4764.89,60,0
     .goto 1439/1,840.43,4696.77
     >>AoE |cRXP_ENEMY_Encrusted Tide Crawlers|r. Loot them for their |cRXP_LOOT_Fine Crab Chunks|r
     .complete 1138,1 --Fine Crab Chunks (6)
     .mob Encrusted Tide Crawler
 step
-    .goto Darkshore,31.70,83.72
+    .goto 1439/1,865.32,4678.432
     >>Loot the |cRXP_LOOT_Beached Sea Turtle|r on the ground
     >>|cRXP_WARN_The Turtle Shell has LoS|r
     >>|cRXP_WARN_This has a 5 second cast time|r
@@ -6816,7 +6816,7 @@ step
 step
     #requires Scalps2
     #completewith next
-    .goto Darkshore,41.40,80.56,-1
+    .goto 1439/1,229.97,4815.55,-1
     >>Click |cRXP_PICK_Buzzbox 525|r
     .turnin 1003 >> Turn in Buzzbox 525
 step
@@ -6826,7 +6826,7 @@ step
     .turnin 950 >> Turn in Return to Onu
     .target Onu
 step
-    .goto Darkshore,44.40,76.42
+    .goto 1439/1,33.47,4996.33
     >>Talk to |cRXP_FRIENDLY_Kerlonian|r
     >>|cRXP_WARN_If |cRXP_FRIENDLY_Kerlonian|r is not there, skip this step|r
     .accept 5321 >>Accept The Sleeper Has Awakened
@@ -6848,14 +6848,14 @@ step
     .goto 1439/1,119.27,4764.89,60,0
     .goto 1439/1,217.52,4686.29,60,0
     .goto 1439/1,311.84,4708.13,60,0
-    .goto Darkshore,38.70,82.44,60,0
+    .goto 1439/1,406.82,4733.45,60,0
     .goto 1439/1,444.15,4850.92,60,0
     .goto 1439/1,287.61,4815.11,60,0
     .goto 1439/1,63.60,4833.89,60,0
     .goto 1439/1,119.27,4764.89,60,0
     .goto 1439/1,217.52,4686.29,60,0
     .goto 1439/1,311.84,4708.13,60,0
-    .goto Darkshore,38.70,82.44,60,0
+    .goto 1439/1,406.82,4733.45,60,0
     .goto 1439/1,444.15,4850.92,60,0
     .goto 1439/1,287.61,4815.11
     >>AoE |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Grizzled Scalps|r
@@ -6865,22 +6865,22 @@ step
     .use 13536
 step
     #label 525
-    .goto Darkshore,41.40,80.56
+    .goto 1439/1,229.97,4815.55
     >>Click |cRXP_PICK_Buzzbox 525|r
     .turnin 1003 >> Turn in Buzzbox 525
     .use 13536
 step
-    .goto Darkshore,41.10,84.17,70,0
+    .goto 1439/1,249.62,4657.91,70,0
     .goto 1439/1,296.78,4381.94,70,0
     .goto 1439/1,545.68,4379.32,70,0
-    .goto Darkshore,36.70,94.60,70,0
+    .goto 1439/1,537.82,4202.47,70,0
     .goto 1439/1,140.89,4372.770,70,0
     .goto 1439/1,205.73,4495.91,70,0
     .goto 1439/1,22.33,4271.02,70,0
-    .goto Darkshore,41.10,84.17,70,0
+    .goto 1439/1,249.62,4657.91,70,0
     .goto 1439/1,296.78,4381.94,70,0
     .goto 1439/1,545.68,4379.32,70,0
-    .goto Darkshore,36.70,94.60,70,0
+    .goto 1439/1,537.82,4202.47,70,0
     .goto 1439/1,140.89,4372.770,70,0
     .goto 1439/1,205.73,4495.91,70,0
     .goto 1439/1,22.33,4271.02
@@ -7033,11 +7033,11 @@ step
 step
     #completewith next
     .goto 1438/1,987.69,8651.99,60,0
-    .goto Teldrassil,56.80,92.90,40,0
+    .goto 1438/1,922.52,8678.46,40,0
     .goto 1438/1,888.40,8676.08,20,0
-    .goto Teldrassil,58.40,94.01,20 >>Travel toward |cRXP_FRIENDLY_Vesprystus|r
+    .goto 1438/1,841.05,8641.121,20 >>Travel toward |cRXP_FRIENDLY_Vesprystus|r
 step
-    .goto Teldrassil,58.40,94.01
+    .goto 1438/1,841.05,8641.121
     >>Talk to |cRXP_FRIENDLY_Vesprystus|r
     .fp Rut'theran >> Get the Rut'theran Village flight path
     .target Vesprystus
@@ -7048,7 +7048,7 @@ step
 step
     #completewith next
     .goto 1457/1,2536.83,9898.58,30,0
-    .goto Darnassus,38.20,65.96,30,0
+    .goto 1457/1,2534.08,9772.82,30,0
     .goto 1457/1,2549.00,9727.09,30,0
     .goto 1457/1,2607.74,9642.04,20 >>Travel toward |cRXP_FRIENDLY_Greywhisker|r
 step
@@ -7081,7 +7081,7 @@ step
     .target Keldric Boucher
 step
     #completewith Bank
-    .goto Stormwind City,55.30,68.16,10 >>Enter the Stormwind Bank
+    .goto 1453/0,637.59,-8889.81,10 >>Enter the Stormwind Bank
 step
     #sticky
     #label Bank1
@@ -7148,7 +7148,7 @@ step
     #completewith Charys
     .goto 1453/0,887.22,-9017.80,10,0
     .goto 1453/0,871.36,-9013.14,10,0
-    .goto Stormwind City,38.10,80.93,8,0
+    .goto 1453/0,868.8,-9004.27,8,0
     .goto 1453/0,877.00,-9008.03,6,0
     .goto 1453/0,863.96,-9001.40,8,0
     .goto 1453/0,928.62,-9010.10,15,0
@@ -7207,7 +7207,7 @@ step
     .goto 1453/0,872.30,-8803.220,5,0
     .goto 1453/0,872.70,-8682.39,20 >>Run up the edge of the wall instead of going around
 step
-    .goto Stormwind City,45.70,38.42
+    .goto 1453/0,766.64,-8623.23
     >>Talk to |cRXP_FRIENDLY_Kristoff|r
     .accept 343 >> Accept Speaking of Fortitude
     .target Brother Kristoff
@@ -7231,7 +7231,7 @@ step
 step
     #completewith next
     .goto 1453/0,453.16,-8533.33,30,0
-    .goto Stormwind City,72.60,23.21,20,0
+    .goto 1453/0,405.03,-8486.89,20,0
     .goto 1453/0,442.94,-8427.47,20,0
     .goto 1453/0,435.41,-8381.66,20,0
     .goto 1453/0,383.66,-8345.63,12 >>Travel toward |cRXP_FRIENDLY_Milton|r
@@ -7245,10 +7245,10 @@ step
     #completewith next
     .goto 1453/0,435.41,-8381.66,20,0
     .goto 1453/0,442.94,-8427.47,20,0
-    .goto Stormwind City,72.60,23.21,20,0
-    .goto Stormwind City,69.20,29.08,30,0
+    .goto 1453/0,405.03,-8486.89,20,0
+    .goto 1453/0,450.74,-8539.51,30,0
     .goto 1453/0,551.02,-8658.37,20,0
-    .goto Stormwind City,64.80,60.34,12,0
+    .goto 1453/0,509.88,-8819.71,12,0
     .goto 1453/0,518.35,-8822.040,12 >>Travel toward |cRXP_FRIENDLY_Felicia|r
 step
     .goto 1453/0,518.35,-8822.040
@@ -7280,7 +7280,7 @@ step << skip
     >>Take the Mountain Path toward |cRXP_FRIENDLY_Paxton|r
     .goto 1429/0,-186.46,-8874.91,10 >>Travel toward |cRXP_FRIENDLY_Paxton|r
 step
-    .goto Elwynn Forest,44.00,65.69
+    .goto 1429/0,8.25,-9460.03
     >>Talk to |cRXP_FRIENDLY_Dobbins|r
     >>|cRXP_BUY_Buy a|r |T132794:0|t[Skin of Sweet Rum] |cRXP_BUY_from him|r
     .collect 1939,1,116,1 --Skin of Sweet Rum
@@ -7368,7 +7368,7 @@ step
     .accept 165 >>Accept The Hermit
     .target Elaine Carevin
 step
-    .goto Duskwood,78.00,48.33
+    .goto 1431/0,-1272.67,-10586.073
     >>Talk to |cRXP_FRIENDLY_Herble|r
     .vendor 3133 >>|cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him if its up|r
     .target Herble Baubbletump
@@ -7547,7 +7547,7 @@ step
     .target Shawn
 step
     .goto 1433/0,-2250.09,-9360.78,90,0
-    .goto Redridge Mountains,27.80,56.05,90,0
+    .goto 1433/0,-2174.32,-9386.56,90,0
     .goto 1433/0,-2147.41,-9308.08,90,0
     .goto 1433/0,-2090.96,-9373.82,90,0
     .goto 1433/0,-1986.76,-9324.30,90,0
@@ -7613,15 +7613,15 @@ step
     .target Guard Parker
 step
     #label Gnolls3
-    .goto Redridge Mountains,29.40,83.93,60,0
+    .goto 1433/0,-2209.06,-9790.24,60,0
     .goto 1433/0,-2242.71,-9792.700,60,0
     .goto 1433/0,-2271.14,-9774.31,60,0
-    .goto Redridge Mountains,34.60,82.99,60,0
+    .goto 1433/0,-2321.94,-9776.63,60,0
     .goto 1433/0,-2512.32,-9603.17,60,0
-    .goto Redridge Mountains,29.40,83.93,60,0
+    .goto 1433/0,-2209.06,-9790.24,60,0
     .goto 1433/0,-2242.71,-9792.700,60,0
     .goto 1433/0,-2271.14,-9774.31,60,0
-    .goto Redridge Mountains,34.60,82.99,60,0
+    .goto 1433/0,-2321.94,-9776.63,60,0
     .goto 1433/0,-2512.32,-9603.17
     >>AoE the |cRXP_ENEMY_Redridge Mongrels|r, |cRXP_ENEMY_Redridge Thrashers|r, and |cRXP_ENEMY_Redridge Poachers|r
     >>|cRXP_WARN_Remember to deadzone the|r |cRXP_ENEMY_Redridge Poachers|r
@@ -7642,7 +7642,7 @@ step
     .complete 125,1 --Oslow's Toolbox (1)
 step
     #completewith next
-    .goto Redridge Mountains,40.30,45.98,60,0
+    .goto 1433/0,-2445.68,-9240.75,60,0
     >>AoE |cRXP_ENEMY_Murloc Flesheaters|r and |cRXP_ENEMY_Murloc Scouts|r. Loot them for some of the |cRXP_LOOT_Spotted Sunfish|r and |cRXP_LOOT_Murloc Fins|r
     .complete 127,1 --Spotted Sunfish (10)
     .collect 1468,8,150,1 --Murloc Fin (8)
@@ -7711,9 +7711,9 @@ step
 	.goto 1433/0,-2599.16,-9078.44,30,0
 	.goto 1433/0,-2599.16,-9078.44,30,0
 	.goto 1433/0,-2655.60,-9061.500,30,0
-	.goto Redridge Mountains,51.90,39.75,30,0
+	.goto 1433/0,-2697.5,-9150.55,30,0
 	.goto 1433/0,-2760.67,-9163.72,30,0
-	.goto Redridge Mountains,54.70,44.93,30,0
+	.goto 1433/0,-2758.28,-9225.55,30,0
 	.goto 1433/0,-2821.88,-9247.99,30,0
     .collect 1081,5,92,1 --Crisp Spider Meat (5)
 #loop
@@ -7725,7 +7725,7 @@ step
 	.goto 1433/0,-2813.85,-9264.210,30,0
 	.goto 1433/0,-2759.58,-9234.96,30,0
 	.goto 1433/0,-2714.21,-9193.69,30,0
-	.goto Redridge Mountains,50.50,41.55,30,0
+	.goto 1433/0,-2667.1,-9176.61,30,0
 	.goto 1433/0,-2705.31,-9104.36,30,0
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
     .disablecheckbox
@@ -7812,7 +7812,7 @@ step
     .mob Redridge Mystic
     .mob Redridge Brute
 step
-    .goto Redridge Mountains,19.50,31.91,60,0
+    .goto 1433/0,-1994.15,-9037.03,60,0
     .goto 1433/0,-2017.59,-8984.62,40 >>Travel to the Rethban Caverns
     .isOnQuest 347
 step
@@ -7868,7 +7868,7 @@ step << skip
     #completewith next
     .goto 1433/0,-1978.73,-8775.39,-1
     .goto 1433/0,-2049.28,-8823.17,-1
-    .goto Redridge Mountains,18.40,24.13,-1
+    .goto 1433/0,-1970.27,-8924.38,-1
     .goto 1433/0,-2033.00,-8923.37,-1
     .goto 1433/0,-1930.76,-8878.63,-1
     .goto 1433/0,-2305.01,-9271.01,30 >>Logout Skip out of the cave (on the EAST side) back to Lakeshire
@@ -7960,7 +7960,7 @@ step
     #completewith CharysEnd
     .goto 1453/0,887.22,-9017.80,10,0
     .goto 1453/0,871.36,-9013.14,10,0
-    .goto Stormwind City,38.10,80.93,8,0
+    .goto 1453/0,868.8,-9004.27,8,0
     .goto 1453/0,877.00,-9008.03,6,0
     .goto 1453/0,863.96,-9001.40,8,0
     .goto 1453/0,928.62,-9010.10,15,0
@@ -8025,7 +8025,7 @@ step
     .goto 1453/0,872.30,-8803.220,5,0
     .goto 1453/0,872.70,-8682.39,20 >>Run up the edge of the wall instead of going around
 step
-    .goto Stormwind City,45.70,38.42
+    .goto 1453/0,766.64,-8623.23
     >>Talk to |cRXP_FRIENDLY_Kristoff|r
     .turnin 346 >> Turn in Return to Kristoff
     .target Brother Kristoff
@@ -8074,7 +8074,7 @@ step
     >>|T134431:0|t[Mysterious Fossil]
     .target Bailey Stonemantle
 step
-    .goto Ironforge,25.50,7.04
+    .goto 1455/0,-915.2,-4606.38
     >>Talk to |cRXP_FRIENDLY_Milstaff|r
     .train 3562 >> Train |T135757:0|t[Teleport: Ironforge]
     .target Milstaff Stormeye
@@ -8093,7 +8093,7 @@ step
 step
     #completewith next
     #label FlyMene
-    .goto Ironforge,55.50,47.74
+    .goto 1455/0,-1152.39,-4820.914
     >>Talk to |cRXP_FRIENDLY_Gryth|r
     .fly Menethil >> Fly to Menethil Harbor
     .target Gryth Thurden

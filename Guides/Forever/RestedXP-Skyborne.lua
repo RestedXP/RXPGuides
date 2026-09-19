@@ -1668,11 +1668,11 @@ step
 
 
 step
-    .goto Alterac Mountains,12.30,56.31
+    .goto 1416/0,438.93,448.88
     .turnin 94946 >>Turn in The Magical City of Dalaran
 
 step
-    .goto Alterac Mountains,12.30,56.31
+    .goto 1416/0,438.93,448.88
     .accept 94947 >>Accept Welcome to Azeroth
 step
     .goto 1416/0,445.93,450.00

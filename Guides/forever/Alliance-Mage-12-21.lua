@@ -79,7 +79,7 @@ step
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
 step
     .goto 1439/1,543.71,5962.67,150,0
-    .goto Darkshore,36.10,44.42
+    .goto 1439/1,577.12,6393.66
     >> Kill Crawlers along the coast
     .complete 983,1 --Crawler Leg (6)
 step
@@ -111,7 +111,7 @@ step
     .complete 1001,1 --Thresher Eye (3)
 step
     #completewith next
-    .goto Darkshore,33.70,42.45,60 >> Run up to the docks then jump in the water at the intersection
+    .goto 1439/1,734.32,6479.68,60 >> Run up to the docks then jump in the water at the intersection
 step
     .goto 1439/1,854.84,6310.26
     >>Click on the sea turtle head underwater
@@ -179,7 +179,7 @@ step
     .complete 982,1 --Silver Dawning's Lockbox (1)
 step
     #requires Threshers
-    .goto Darkshore,40.30,27.69,40,0
+    .goto 1439/1,302.02,7124.2,40,0
     .goto 1439/1,345.90,7134.68
      >> Enter the 2nd ship by the hole on the hull, then go to the back of the lowest floor of the ship
     .complete 982,2 --Mist Veil's Lockbox (1)
@@ -191,7 +191,7 @@ step
     .goto 1439/1,194.60,6959.14
     .accept 4723 >> Accept Beached Sea Creature
 step
-    .goto Felwood,27.70,10.03
+    .goto 1448/1,48.92,6748.85
 >>Talk to |cRXP_FRIENDLY_Asterion|r
     .turnin 954 >> Turn in Bashal'Aran
 .target Asterion
@@ -201,17 +201,17 @@ step
      >> Kill Grellkins. Loot them for their Earrings
     .complete 955,1 --Grell Earring (8)
 step
-    .goto Felwood,27.70,10.03
+    .goto 1448/1,48.92,6748.85
 >>Talk to |cRXP_FRIENDLY_Asterion|r
     .turnin 955 >> Turn in Bashal'Aran
 .target Asterion
     .accept 956 >> Accept Bashal'Aran
 step
-    .goto Felwood,29.60,12.52
+    .goto 1448/1,-60.33,6653.40
      >> Kill satyrs. Loot them for the Seal
     .complete 956,1 --Ancient Moonstone Seal (1)
 step
-    .goto Felwood,27.70,10.03
+    .goto 1448/1,48.92,6748.85
 >>Talk to |cRXP_FRIENDLY_Asterion|r
     .turnin 956 >> Turn in Bashal'Aran
 .target Asterion
@@ -241,7 +241,7 @@ step
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range (1)
 step
     #label ReadAndy
-    .goto Darkshore,40.30,59.73
+    .goto 1439/1,302.02,5726.433
 .target Sentinel Tysha Moonblade
 >>Talk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .accept 953 >>Accept The Fall of Ameth'Aran
@@ -275,7 +275,7 @@ step
     #requires ghosts
 step
     #requires anaya
-    .goto Darkshore,40.30,59.73
+    .goto 1439/1,302.02,5726.433
 .target Sentinel Tysha Moonblade
 >>Talk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .turnin 953 >> Turn in The Fall of Ameth'Aran
@@ -314,7 +314,7 @@ step
     .accept 2178 >>Accept Easy Strider Living
     .turnin 2178 >>Turn in Easy Strider Living
 step
-    .goto Darkshore,37.40,40.13
+    .goto 1439/1,491.97,6582.303
 >>Talk to |cRXP_FRIENDLY_Thundris Windweaver|r
     .turnin 958 >>Turn in Tools of the Highborne
     .turnin 4762 >>Turn in The Cliffspring River
@@ -343,7 +343,7 @@ step
     .vendor >> Buy level 15 drink from Taldan
 step
     >>Go back to the dock
-    .goto Felwood,18.10,18.48
+    .goto 1448/1,600.92,6424.93
 .target Cerellean Whiteclaw
 >>Talk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
     .turnin 963 >> Turn in For Love Eternal
@@ -381,14 +381,14 @@ step
     >>Loot the Blackwood Grain Sample from the Barrel, then run south-east toward Den Mother (don't fight the mobs)
     .collect 12342,1 --Blackwood Grain Sample (1)
 step
-    .goto Darkshore,52.60,36.65,45,0
+    .goto 1439/1,-503.63,6732.95,45,0
     >>Kill Den Mother. Be careful as her cubs can knock you down for 2 seconds
     >>Grind to 16 and try again if you're struggling
     .goto 1439/1,-430.27,6662.65
     .complete 2139,1 --Den Mother (1)
 step
     >>Loot the Blackwood Nut Sample from the Barrel
-    .goto Darkshore,51.80,33.51
+    .goto 1439/1,-451.23,6870.06
     .collect 12343,1 --Blackwood Nut Sample (1)
 step
     >>Loot the Blackwood Fruit Sample from the Barrel. A mob will spawn in front of you, and in between the huts of the west - you may have to run
@@ -453,7 +453,7 @@ step
     #softcore
     .deathskip >> Die and respawn in Auberdine
 step
-    .goto Darkshore,37.40,40.13
+    .goto 1439/1,491.97,6582.303
     >>Equip your new wand
 .target Thundris Windweaver
 >>Talk to |cRXP_FRIENDLY_Thundris Windweaver|r
@@ -487,7 +487,7 @@ step
 step
     #label end
     #requires bowl
-    .goto Felwood,19.10,20.63
+    .goto 1448/1,543.42,6342.52
 .target Gwennyth Bly'Leggonde
 >>Talk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4727 >> Turn in Beached Sea Creature
@@ -499,7 +499,7 @@ step
     .unitscan Moonstalker Sire;Moonstalker Matriarch
 step
      #completewith Murkdeep
-    .goto Darkshore,38.60,80.50,0
+    .goto 1439/1,413.37,4818.17,0
      >> Kill Grizzled Thistle Bears. Loot them for Scalps
     .complete 1003,1 --Grizzled Scalp (4)
 step
@@ -528,13 +528,13 @@ step
     .complete 1138,1 --Fine Crab Chunks (6)
 step
     >>Loot the remains
-    .goto Darkshore,32.70,80.73
+    .goto 1439/1,799.82,4808.12
     .accept 4730 >>Accept Beached Sea Creature
 step
     >>Loot the remains. Be careful as the Oracles do 90 damage lightning bolts, and can healing wave to full when they're at <55% hp. The turtle head here has LoS
     >>Always leave yourself an escape route. Tidehunter's aren't so bad, but be aware of their low-damage poison ability
     >>Try to save your heal potions for later, especially your big ones
-    .goto Darkshore,31.70,83.72
+    .goto 1439/1,865.32,4678.432
     .accept 4731 >>Accept Beached Sea Turtle
 step
     >>The turtle shell on the island has LoS
@@ -573,7 +573,7 @@ step
     .collect 17056,1 --Light Feather (1)
 step
      #completewith next
-    .goto Darkshore,38.60,80.50,0
+    .goto 1439/1,413.37,4818.17,0
      >> Kill Grizzled Thistle Bears. Loot them for Scalps
     .complete 1003,1 --Grizzled Scalp (4)
 step
@@ -584,7 +584,7 @@ step
     .accept 968 >> Accept The Powers Below
 step
     #label Glaive
-    .goto Darkshore,38.30,87.12
+    .goto 1439/1,433.02,4529.09
      >> Enter The Master's Glaive and clear mobs around the altar in the center
     .complete 944,1
 step
@@ -622,11 +622,11 @@ step
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .unitscan Moonstalker Sire;Moonstalker Matriarch
 step
-    .goto Darkshore,38.60,80.50
+    .goto 1439/1,413.37,4818.170
      >> Kill Grizzled Thistle Bears all around southern Darkshore. Loot them for Scalps
     .complete 1003,1 --Grizzled Scalp (4)
 step
-    .goto Darkshore,41.40,80.56
+    .goto 1439/1,229.97,4815.55
     .turnin 1003 >> Turn in Buzzbox 525
 step
     #requires MoonstalkerP
@@ -640,14 +640,14 @@ step
     .vendor >> Buy food/drink from Tiyani if needed
 step
     >>Accept the Kerlonian escort quest. If he's not there, skip this step
-    .goto Darkshore,44.40,76.42
+    .goto 1439/1,33.47,4996.33
 .target Kerlonian Evershade
 >>Talk to |cRXP_FRIENDLY_Kerlonian Evershade|r
     .accept 5321 >>Accept The Sleeper Has Awakened
 step
     .isOnQuest 5321
     >>Loot the small gray chest next to Kerlonian
-    .goto Darkshore,44.40,76.42
+    .goto 1439/1,33.47,4996.33
     .complete 5321,2 --Horn of Awakening (1)
 step
     .isOnQuest 5321
@@ -740,7 +740,7 @@ step
 .target Chief Archaeologist Greywhisker
     .accept 942 >>Accept The Absent Minded Prospector
 step
-    .goto Teldrassil,58.40,94.02
+    .goto 1438/1,841.05,8641.122
     .fp Teldrassil >> Get the Teldrassil Flight Path
     .fly Auberdine >> Fly to Auberdine
 step
@@ -884,7 +884,7 @@ step
     .accept 3741 >>Accept Hilary's Necklace
 step
     >>Look for Hilary's Necklace underwater. It's in a brown patch of dirt
-    .goto Redridge Mountains,27.80,56.05,90,0
+    .goto 1433/0,-2174.32,-9386.56,90,0
     .goto 1433/0,-2147.41,-9308.08,90,0
     .goto 1433/0,-2090.96,-9373.82,90,0
     .goto 1433/0,-1986.76,-9324.30,90,0
@@ -998,10 +998,10 @@ step
     >>AoE the gnolls in the area. Refer to the AoE video if needed
     >>Deadzone the Poachers during the AoE pull so you don't get shot
     .goto 1433/0,-2211.45,-9793.71,50,0
-    .goto Redridge Mountains,34.60,82.99,50,0
+    .goto 1433/0,-2321.94,-9776.63,50,0
     .goto 1433/0,-2513.84,-9604.61,50,0
     .goto 1433/0,-2211.45,-9793.71,50,0
-    .goto Redridge Mountains,34.60,82.99,50,0
+    .goto 1433/0,-2321.94,-9776.63,50,0
     .goto 1433/0,-2513.84,-9604.61,50,0
     .complete 246,1 --Redridge Mongrel (10)
     .complete 246,2 --Redridge Poacher (6)
@@ -1050,7 +1050,7 @@ step
     .turnin 246 >>Turn in Assessing the Threat
 step
     .isQuestComplete 20
-    .goto Redridge Mountains,33.50,48.96
+    .goto 1433/0,-2298.06,-9283.90
 .target Marshal Marris
 >>Talk to |cRXP_FRIENDLY_Marshal Marris|r
     .turnin 20 >>Turn in Blackrock Menace
@@ -1100,11 +1100,11 @@ step
     .turnin 34 >>Turn in An Unwelcome Guest
 step
     .goto 1433/0,-2031.70,-9098.71,60,0
-    .goto Redridge Mountains,34.20,39.70,60,0
+    .goto 1433/0,-2313.26,-9149.82,60,0
     .goto 1433/0,-2430.70,-9030.51,60,0
-    .goto Redridge Mountains,34.20,39.70,60,0
+    .goto 1433/0,-2313.26,-9149.82,60,0
     .goto 1433/0,-2031.70,-9098.71,60,0
-    .goto Redridge Mountains,34.20,39.70,60,0
+    .goto 1433/0,-2313.26,-9149.82,60,0
     .goto 1433/0,-2430.70,-9030.51,60,0
     >>Kill Gnolls. Loot them for Pikes and Rivets
     .complete 89,1 --Iron Pike (5)
@@ -1135,7 +1135,7 @@ step
     .goto 1433/0,-2911.11,-9195.00
     .complete 20,1 --Blackrock Axe (10)
 step
-    .goto Redridge Mountains,33.50,48.96
+    .goto 1433/0,-2298.06,-9283.90
 .target Marshal Marris
 >>Talk to |cRXP_FRIENDLY_Marshal Marris|r
     .turnin 20 >>Turn in Blackrock Menace
@@ -1160,7 +1160,7 @@ step
     .vendor >> Buy level 15 drink
 step
     #era/som
-    .goto Redridge Mountains,22.70,44.00
+    .goto 1433/0,-2063.61,-9212.080
     >>Exit the Inn. Go west then into the building
 .target Chef Breanna
 >>Talk to |cRXP_FRIENDLY_Chef Breanna|r
@@ -1173,6 +1173,6 @@ step
     +Cook all of the boar meat up until 50 cooking skill
     >>If you don't have enough meat, grind some boars en route to Darkshire
 step
-    .goto Redridge Mountains,6.50,91.18,90,0
+    .goto 1433/0,-1711.94,-9895.21,90,0
     .zone Duskwood >> Travel to Duskwood
 ]])

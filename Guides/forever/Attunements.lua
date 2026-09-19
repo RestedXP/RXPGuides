@@ -265,8 +265,8 @@ step
 step
     .isQuestTurnedIn 6403
     #completewith next
-    .goto Winterspring,56.60,52.78,0
-    .goto Winterspring,56.60,52.78,50,0
+    .goto 1452/1,-4335.27,6035.08,0
+    .goto 1452/1,-4335.27,6035.08,50,0
     .goto 1452/1,-4318.23,5996.270,30,0
     .goto 1452/1,-4243.68,5984.91,20,0
     .goto 1452/1,-4206.05,6010.470,20,0
@@ -304,8 +304,8 @@ step
     .zone Winterspring >>Travel to |cFFfa9602Winterspring|r
 step
     #completewith next
-    .goto Winterspring,56.60,52.78,0
-    .goto Winterspring,56.60,52.78,50,0
+    .goto 1452/1,-4335.27,6035.08,0
+    .goto 1452/1,-4335.27,6035.08,50,0
     .goto 1452/1,-4318.23,5996.270,30,0
     .goto 1452/1,-4243.68,5984.91,20,0
     .goto 1452/1,-4206.05,6010.470,20,0
@@ -449,10 +449,10 @@ step
     #loop
     .line Desolace,55.50,0.50,53.37,5.77,54.61,10.71,56.20,13.14,60.42,16.17,62.27,19.48,63.38,26.21,62.14,32.17,60.49,37.07,57.27,38.21,53.34,37.51,50.46,42.48,49.55,48.56,49.10,54.18,52.25,59.36,54.52,63.72,55.63,67.41,52.04,71.54,50.53,75.40,47.03,75.15,39.99,78.28,39.79,81.92,41.79,85.27,40.68,89.43,41.44,93.66,41.95,96.04
     .line Feralas,45.47,2.89,45.91,4.75,44.95,7.04,45.03,8.93,45.75,10.64,45.94,12.52,46.43,15.18,46.34,20.94,48.19,23.23
-    .goto Desolace,55.50,0.50,60,0
+    .goto 1443/1,1738.15,437.09,60,0
     .goto 1443/1,1833.91,279.10,60,0
     .goto 1443/1,1778.16,131.01,60,0
-    .goto Desolace,56.20,13.14,60,0
+    .goto 1443/1,1706.67,58.16,60,0
     .goto 1443/1,1516.95,-32.68,60,0
     .goto 1443/1,1433.78,-131.91,60,0
     .goto 1443/1,1383.87,-333.67,60,0
@@ -462,7 +462,7 @@ step
     .goto 1443/1,1835.26,-672.44,60,0
     .goto 1443/1,1964.74,-821.43,60,0
     .goto 1443/1,2005.65,-1003.71,60,0
-    .goto Desolace,49.10,54.18,60,0
+    .goto 1443/1,2025.88,-1172.19,60,0
     .goto 1443/1,1884.26,-1327.48,60,0
     .goto 1443/1,1782.20,-1458.19,60,0
     .goto 1443/1,1732.30,-1568.81,60,0
@@ -680,10 +680,10 @@ step
     #loop
     .line Desolace,55.50,0.50,53.37,5.77,54.61,10.71,56.20,13.14,60.42,16.17,62.27,19.48,63.38,26.21,62.14,32.17,60.49,37.07,57.27,38.21,53.34,37.51,50.46,42.48,49.55,48.56,49.10,54.18,52.25,59.36,54.52,63.72,55.63,67.41,52.04,71.54,50.53,75.40,47.03,75.15,39.99,78.28,39.79,81.92,41.79,85.27,40.68,89.43,41.44,93.66,41.95,96.04
     .line Feralas,45.47,2.89,45.91,4.75,44.95,7.04,45.03,8.93,45.75,10.64,45.94,12.52,46.43,15.18,46.34,20.94,48.19,23.23
-    .goto Desolace,55.50,0.50,60,0
+    .goto 1443/1,1738.15,437.09,60,0
     .goto 1443/1,1833.91,279.10,60,0
     .goto 1443/1,1778.16,131.01,60,0
-    .goto Desolace,56.20,13.14,60,0
+    .goto 1443/1,1706.67,58.16,60,0
     .goto 1443/1,1516.95,-32.68,60,0
     .goto 1443/1,1433.78,-131.91,60,0
     .goto 1443/1,1383.87,-333.67,60,0
@@ -693,7 +693,7 @@ step
     .goto 1443/1,1835.26,-672.44,60,0
     .goto 1443/1,1964.74,-821.43,60,0
     .goto 1443/1,2005.65,-1003.71,60,0
-    .goto Desolace,49.10,54.18,60,0
+    .goto 1443/1,2025.88,-1172.19,60,0
     .goto 1443/1,1884.26,-1327.48,60,0
     .goto 1443/1,1782.20,-1458.19,60,0
     .goto 1443/1,1732.30,-1568.81,60,0
@@ -742,10 +742,10 @@ step
     #loop
     .line Desolace,55.50,0.50,53.37,5.77,54.61,10.71,56.20,13.14,60.42,16.17,62.27,19.48,63.38,26.21,62.14,32.17,60.49,37.07,57.27,38.21,53.34,37.51,50.46,42.48,49.55,48.56,49.10,54.18,52.25,59.36,54.52,63.72,55.63,67.41,52.04,71.54,50.53,75.40,47.03,75.15,39.99,78.28,39.79,81.92,41.79,85.27,40.68,89.43,41.44,93.66,41.95,96.04
     .line Feralas,45.47,2.89,45.91,4.75,44.95,7.04,45.03,8.93,45.75,10.64,45.94,12.52,46.43,15.18,46.34,20.94,48.19,23.23
-    .goto Desolace,55.50,0.50,60,0
+    .goto 1443/1,1738.15,437.09,60,0
     .goto 1443/1,1833.91,279.10,60,0
     .goto 1443/1,1778.16,131.01,60,0
-    .goto Desolace,56.20,13.14,60,0
+    .goto 1443/1,1706.67,58.16,60,0
     .goto 1443/1,1516.95,-32.68,60,0
     .goto 1443/1,1433.78,-131.91,60,0
     .goto 1443/1,1383.87,-333.67,60,0
@@ -755,7 +755,7 @@ step
     .goto 1443/1,1835.26,-672.44,60,0
     .goto 1443/1,1964.74,-821.43,60,0
     .goto 1443/1,2005.65,-1003.71,60,0
-    .goto Desolace,49.10,54.18,60,0
+    .goto 1443/1,2025.88,-1172.19,60,0
     .goto 1443/1,1884.26,-1327.48,60,0
     .goto 1443/1,1782.20,-1458.19,60,0
     .goto 1443/1,1732.30,-1568.81,60,0
@@ -993,13 +993,13 @@ step
     .goto 1455/0,-915.99,-4894.25,70,0
     .goto 1455/0,-1225.92,-4979.72,70,0
     .goto 1455/0,-1271.77,-4822.49,70,0
-    .goto Ironforge,65.0,22.6,70,0
+    .goto 1455/0,-1227.5,-4688.48,70,0
     .goto 1455/0,-1112.07,-4624.11,70,0
     .goto 1455/0,-971.34,-4680.04,70,0
     .goto 1455/0,-1036.17,-4777.12,70,0
     .goto 1455/0,-1118.39,-4867.87,70,0
     .goto 1455/0,-1154.76,-4754.96,70,0
-    .goto Ironforge,33.0,22.4,70,0
+    .goto 1455/0,-974.5,-4687.42,70,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Courier Hammerfall|r
     >>|cRXP_FRIENDLY_Courier Hammerfall|r |cRXP_WARN_patrols through all of Ironforge|r
     >>|cRXP_WARN_This quest can also be accepted in|r |cFFfa9602Stormwind City|r |cRXP_WARN_or|r |cFFfa9602Darnassus|r
@@ -1064,9 +1064,9 @@ step
     .target Commander Ashlam Valorfist
 step
     #loop
-    .goto Western Plaguelands,49.90,76.54,0
-    .goto Western Plaguelands,48.70,80.37,60,0
-    .goto Western Plaguelands,49.90,76.54,60,0
+    .goto 1422/0,-1729.03,1172.52,0
+    .goto 1422/0,-1677.43,1062.73,60,0
+    .goto 1422/0,-1729.03,1172.52,60,0
     .goto 1422/0,-1771.17,1183.99,60,0
     .goto 1422/0,-1735.48,1052.12,60,0
     >>Kill |cRXP_ENEMY_Skeletal Flayers|r and |cRXP_ENEMY_Slavering Ghouls|r
@@ -1119,17 +1119,17 @@ step
     #label SkeletalFragments
     #loop
 	.line Western Plaguelands,46.4,70.0,45.6,72.2,42.6,71.4,41.6,73.2,38.8,71.0,38.8,68.2,40.4,66.4,42.6,70.0,43.4,64.4,45.8,65.8,46.4,70.0
-	.goto Western Plaguelands,46.40,70.00,60,0
-	.goto Western Plaguelands,45.60,72.20,60,0
-	.goto Western Plaguelands,42.60,71.40,60,0
-	.goto Western Plaguelands,41.60,73.20,60,0
-	.goto Western Plaguelands,38.80,71.00,60,0
-	.goto Western Plaguelands,38.80,68.20,60,0
-	.goto Western Plaguelands,40.40,66.40,60,0
-	.goto Western Plaguelands,42.60,70.00,60,0
-	.goto Western Plaguelands,43.40,64.40,60,0
-	.goto Western Plaguelands,45.80,65.80,60,0
-	.goto Western Plaguelands,46.40,70.00,60,0
+	.goto 1422/0,-1578.53,1360.0,60,0
+	.goto 1422/0,-1544.13,1296.93,60,0
+	.goto 1422/0,-1415.13,1319.87,60,0
+	.goto 1422/0,-1372.13,1268.27,60,0
+	.goto 1422/0,-1251.73,1331.33,60,0
+	.goto 1422/0,-1251.73,1411.6,60,0
+	.goto 1422/0,-1320.53,1463.2,60,0
+	.goto 1422/0,-1415.13,1360.0,60,0
+	.goto 1422/0,-1449.53,1520.53,60,0
+	.goto 1422/0,-1552.73,1480.4,60,0
+	.goto 1422/0,-1578.53,1360.0,60,0
     >>Kill |cRXP_ENEMY_Skeletal Executioners|r and |cRXP_ENEMY_Skeletal Acolytes|r. Loot them for their |cRXP_LOOT_Skeletal Fragments|r
     .complete 5537,1 -- Collect Skeletal Fragments (x15)
     .mob Skeletal Executioner
@@ -1178,10 +1178,10 @@ step
     .target Alchemist Arbington
 step
     #completewith ArajTheSummoner
-    .goto Western Plaguelands,45.60,69.28,100 >>Travel to the center of the Ruins of Andorhal
+    .goto 1422/0,-1544.13,1380.64,100 >>Travel to the center of the Ruins of Andorhal
 step
     #softcore
-    .goto Western Plaguelands,45.60,69.28
+    .goto 1422/0,-1544.13,1380.64
     >>Kill |cRXP_ENEMY_Araj the Summoner|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite. It is recommended to kill him in a group of at least 3 players|r
     .use 12650 >>|cRXP_WARN_Use an|r |T134961:0|t[Attuned Dampener] |cRXP_WARN_on him if you have one|r
@@ -1191,14 +1191,14 @@ step
 step
     #softcore
     #label ArajTheSummoner
-    .goto Western Plaguelands,45.60,69.28
+    .goto 1422/0,-1544.13,1380.64
     >>Kill |cRXP_ENEMY_Araj the Summoner|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite. It is recommended to kill him in a group of at least 3 players|r
     .complete 5803,1 --Araj's Scarab (1x)
     .mob Araj the Summoner
 step
     #hardcore
-    .goto Western Plaguelands,45.60,69.28
+    .goto 1422/0,-1544.13,1380.64
     >>Kill |cRXP_ENEMY_Araj the Summoner|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite and is surrunded by many mobs, clear them carefully. It is recommended to kill him in a group of at least 4 players|r
     .use 12650 >>|cRXP_WARN_Use an|r |T134961:0|t[Attuned Dampener] |cRXP_WARN_on him if you have one|r
@@ -1208,7 +1208,7 @@ step
 step
     #hardcore
     #label ArajTheSummoner
-    .goto Western Plaguelands,45.60,69.28
+    .goto 1422/0,-1544.13,1380.64
     >>Kill |cRXP_ENEMY_Araj the Summoner|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite and is surrunded by many mobs, clear them carefully. It is recommended to kill him in a group of at least 4 players|r
     .complete 5803,1 --Araj's Scarab (1x)
@@ -1254,7 +1254,7 @@ step
     .goto 1458/0,172.94,1595.08,50,0
     .goto 1458/0,192.90,1645.91,50,0
     .goto 1458/0,241.54,1663.25,50,0
-    .goto Undercity,60.90,36.56,50,0
+    .goto 1458/0,288.93,1643.92,50,0
     .goto 1458/0,308.22,1594.380,50,0
     .goto 1458/0,288.17,1547.08,50,0
     .goto 1458/0,239.33,1528.19,50,0
@@ -1378,17 +1378,17 @@ step
     #label SkeletalFragments
     #loop
 	.line Western Plaguelands,46.4,70.0,45.6,72.2,42.6,71.4,41.6,73.2,38.8,71.0,38.8,68.2,40.4,66.4,42.6,70.0,43.4,64.4,45.8,65.8,46.4,70.0
-	.goto Western Plaguelands,46.40,70.00,60,0
-	.goto Western Plaguelands,45.60,72.20,60,0
-	.goto Western Plaguelands,42.60,71.40,60,0
-	.goto Western Plaguelands,41.60,73.20,60,0
-	.goto Western Plaguelands,38.80,71.00,60,0
-	.goto Western Plaguelands,38.80,68.20,60,0
-	.goto Western Plaguelands,40.40,66.40,60,0
-	.goto Western Plaguelands,42.60,70.00,60,0
-	.goto Western Plaguelands,43.40,64.40,60,0
-	.goto Western Plaguelands,45.80,65.80,60,0
-	.goto Western Plaguelands,46.40,70.00,60,0
+	.goto 1422/0,-1578.53,1360.0,60,0
+	.goto 1422/0,-1544.13,1296.93,60,0
+	.goto 1422/0,-1415.13,1319.87,60,0
+	.goto 1422/0,-1372.13,1268.27,60,0
+	.goto 1422/0,-1251.73,1331.33,60,0
+	.goto 1422/0,-1251.73,1411.6,60,0
+	.goto 1422/0,-1320.53,1463.2,60,0
+	.goto 1422/0,-1415.13,1360.0,60,0
+	.goto 1422/0,-1449.53,1520.53,60,0
+	.goto 1422/0,-1552.73,1480.4,60,0
+	.goto 1422/0,-1578.53,1360.0,60,0
     >>Kill |cRXP_ENEMY_Skeletal Executioners|r and |cRXP_ENEMY_Skeletal Acolytes|r. Loot them for their |cRXP_LOOT_Skeletal Fragments|r
     .complete 964,1 -- Collect Skeletal Fragments (x15)
     .mob Skeletal Executioner
@@ -1437,10 +1437,10 @@ step
 	.target Apothecary Dithers
 step
     #completewith ArajTheSummoner
-    .goto Western Plaguelands,45.60,69.28,100 >>Travel to the center of the Ruins of Andorhal
+    .goto 1422/0,-1544.13,1380.64,100 >>Travel to the center of the Ruins of Andorhal
 step
     #softcore
-    .goto Western Plaguelands,45.60,69.28
+    .goto 1422/0,-1544.13,1380.64
     >>Kill |cRXP_ENEMY_Araj the Summoner|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite. It is recommended to kill him in a group of at least 3 players|r
     .use 12650 >>|cRXP_WARN_Use an|r |T134961:0|t[Attuned Dampener] |cRXP_WARN_on him if you have one|r
@@ -1450,14 +1450,14 @@ step
 step
     #softcore
     #label ArajTheSummoner
-    .goto Western Plaguelands,45.60,69.28
+    .goto 1422/0,-1544.13,1380.64
     >>Kill |cRXP_ENEMY_Araj the Summoner|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite. It is recommended to kill him in a group of at least 3 players|r
     .complete 5804,1 --Araj's Scarab (1x)
     .mob Araj the Summoner
 step
     #hardcore
-    .goto Western Plaguelands,45.60,69.28
+    .goto 1422/0,-1544.13,1380.64
     >>Kill |cRXP_ENEMY_Araj the Summoner|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite and is surrunded by many mobs, clear them carefully. It is recommended to kill him in a group of at least 4 players|r
     .use 12650 >>|cRXP_WARN_Use an|r |T134961:0|t[Attuned Dampener] |cRXP_WARN_on him if you have one|r
@@ -1467,7 +1467,7 @@ step
 step
     #hardcore
     #label ArajTheSummoner
-    .goto Western Plaguelands,45.60,69.28
+    .goto 1422/0,-1544.13,1380.64
     >>Kill |cRXP_ENEMY_Araj the Summoner|r. Loot |cRXP_PICK_Araj's Phylactery|r on the ground for |cRXP_LOOT_Araj's Scarab|r
     >>|cRXP_ENEMY_Araj|r |cRXP_WARN_is a strong elite and is surrunded by many mobs, clear them carefully. It is recommended to kill him in a group of at least 4 players|r
     .complete 5804,1 --Araj's Scarab (1x)
@@ -1676,14 +1676,14 @@ step
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
 	.line Winterspring,64.0,22.6,65.6,23.2,67.6,22.6,65.6,19.6,63.6,16.2,65.6,19.6,64.0,20.8,64.0,22.6
-	.goto Winterspring,64.00,22.60,25,0
-	.goto Winterspring,65.60,23.20,25,0
-	.goto Winterspring,67.60,22.60,25,0
-	.goto Winterspring,65.60,19.60,25,0
-	.goto Winterspring,63.60,16.20,25,0
-	.goto Winterspring,65.60,19.60,25,0
-	.goto Winterspring,64.00,20.80,25,0
-	.goto Winterspring,64.00,22.60,25,0
+	.goto 1452/1,-4860.67,7463.6,25,0
+	.goto 1452/1,-4974.27,7435.2,25,0
+	.goto 1452/1,-5116.27,7463.6,25,0
+	.goto 1452/1,-4974.27,7605.6,25,0
+	.goto 1452/1,-4832.27,7766.53,25,0
+	.goto 1452/1,-4974.27,7605.6,25,0
+	.goto 1452/1,-4860.67,7548.8,25,0
+	.goto 1452/1,-4860.67,7463.6,25,0
     >>Kill |cRXP_ENEMY_Berserk Owlbeasts|r. Loot them for their |T237413:0|t[|cRXP_LOOT_Owlbeast Pineal Glands|r]
     .complete 84384,1
     .mob Berserk Owlbeast

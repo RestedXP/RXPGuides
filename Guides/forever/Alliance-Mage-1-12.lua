@@ -388,7 +388,7 @@ step
     .xp 8 >> Grind to 8
 step
     .money <0.1250
-    .goto Elwynn Forest,44.0,65.9
+    .goto 1429/0,8.25,-9464.89
     .vendor >>Buy a 6 slot bag from Brog
 step
     .goto 1429/0,18.66,-9476.47,12,0
@@ -480,10 +480,10 @@ step
 step
     .goto 1429/0,-1126.71,-9689.41,40,0
     .goto 1429/0,-1230.84,-9876.89,40,0
-    .goto Elwynn Forest,82.0,76.8,40,0
+    .goto 1429/0,-1310.67,-9717.18,40,0
     .goto 1429/0,-1126.71,-9689.41,40,0
     .goto 1429/0,-1230.84,-9876.89,40,0
-    .goto Elwynn Forest,82.0,76.8,40,0
+    .goto 1429/0,-1310.67,-9717.18,40,0
     >>Kill the last mobs for Protect the Frontier
     .complete 52,1 --Kill Prowler (x8)
     .complete 52,2 --Kill Young Forest Bear (x5)
@@ -616,7 +616,7 @@ step
     .turnin 239 >> Turn in Westbrook Garrison Needs Help!
 step
     .isOnQuest 184
-    .goto Westfall,60.0,19.4
+    .goto 1436/0,916.67,-9852.67
 .target Farmer Furlbrow
 >>Talk to |cRXP_FRIENDLY_Farmer Furlbrow|r
     .turnin 184 >> Turn in Furlbrow's Deed
@@ -702,7 +702,7 @@ step
 >>Talk to |cRXP_FRIENDLY_Monty|r
     .turnin 6661 >> Turn in Deeprun Rat Roundup
 step
-    .goto Ironforge,77.0,51.0,30 >>Enter Ironforge
+    .goto 1455/0,-1322.37,-4838.32,30 >>Enter Ironforge
 step
     .goto 1455/0,-1152.40,-4821.13
     .fp Ironforge >> Get the Ironforge flight path
@@ -799,7 +799,7 @@ step
     .accept 417 >> Accept A Pilot's Revenge
 step
     >>Kill Mangeclaw. Loot him for his Claw
-    .goto Dun Morogh,80.0,36.4
+    .goto 1426/0,-2137.92,-5072.22
     .complete 417,1 --Collect Mangy Claw (x1)
 step
     .goto 1426/0,-2329.60,-5163.76
@@ -847,7 +847,7 @@ step
 step
     .xp 2 >> Grind to 2
 step
-    .goto Dun Morogh,30.0,71.5
+    .goto 1426/0,324.58,-6224.67
     >>vendor trash. Buy 15 Water. Grind extra wolves if you don't have enough money
     .collect 159,15 --Collect Refreshing Spring Water (x15)
 step
@@ -899,10 +899,10 @@ step
     .turnin 183 >> Turn in The Boar Hunter
 step
     .xp 3+860 >> Grind to 860+/1400xp
-    .goto Dun Morogh,23.0,75.0,40,0
+    .goto 1426/0,669.33,-6339.58,40,0
     .goto 1426/0,610.23,-6257.50,40,0
     .goto 1426/0,437.86,-6382.27,40,0
-    .goto Dun Morogh,23.0,75.0,40,0
+    .goto 1426/0,669.33,-6339.58,40,0
     .goto 1426/0,610.23,-6257.50,40,0
     .goto 1426/0,437.86,-6382.27,40,0
 step
@@ -913,7 +913,7 @@ step
 .target Grelin Whitebeard
     .accept 182 >> Accept The Troll Cave
 step
-    .goto Dun Morogh,25.0,76.0
+    .goto 1426/0,570.83,-6372.42
 .target Nori Pridedrift
 >>Talk to |cRXP_FRIENDLY_Nori Pridedrift|r
     .accept 3364 >> Accept Scalding Mornbrew Delivery
@@ -926,7 +926,7 @@ step
     #sticky
     #completewith Scalding1
     >>If you were too slow and failed the timed quest, go and pick it up again
-    .goto Dun Morogh,25.0,76.0,0
+    .goto 1426/0,570.83,-6372.42,0
 .target Nori Pridedrift
 >>Talk to |cRXP_FRIENDLY_Nori Pridedrift|r
     .accept 3364 >> Accept Scalding Mornbrew Delivery
@@ -955,7 +955,7 @@ step
 >>Talk to |cRXP_FRIENDLY_Balir Frosthammer|r
     .turnin 170 >> Turn in A New Threat
 step
-    .goto Dun Morogh,30.0,71.5
+    .goto 1426/0,324.58,-6224.67
     .vendor >>Vendor, buy 10 water
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step
@@ -971,7 +971,7 @@ step
 step
     #sticky
     #label Mug
-    .goto Dun Morogh,25.0,76.0
+    .goto 1426/0,570.83,-6372.42
 .target Nori Pridedrift
 >>Talk to |cRXP_FRIENDLY_Nori Pridedrift|r
     .turnin 3365 >> Turn in Bring Back the Mug
@@ -984,7 +984,7 @@ step
 step
     #requires Mug
     .goto 1426/0,482.18,-6500.47,30,0
-    .goto Dun Morogh,29.0,79.0,15,0
+    .goto 1426/0,373.83,-6470.92,15,0
     .goto 1426/0,295.03,-6513.60
     >>Enter the Troll cave. Kill Grik'nir, then loot him for Grelin's journal
     .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
@@ -1028,7 +1028,7 @@ step
     .xp 5+2415 >> Grind to 2415/+2800xp
 step
     #softcore
-    .goto Dun Morogh,47.0,55.1,120 >> Die and respawn at the Spirit Healer, or run to Kharanos. Make sure your subzone is NOT Coldridge Pass
+    .goto 1426/0,-512.67,-5686.2,120 >> Die and respawn at the Spirit Healer, or run to Kharanos. Make sure your subzone is NOT Coldridge Pass
 step
     .goto 1426/0,-499.17,-5644.37
 .target Senir Whitebeard
@@ -1087,32 +1087,32 @@ step
 >>Talk to |cRXP_FRIENDLY_Loslor Rudge|r
     .accept 5541 >> Accept Ammo for Rumbleshot
 step
-    .goto Dun Morogh,52.0,50.1,40,0
+    .goto 1426/0,-758.92,-5522.03,40,0
     .goto 1426/0,-734.29,-5646.80,40,0
     .goto 1426/0,-665.34,-5646.80,40,0
     .goto 1426/0,-655.49,-5548.30,40,0
-    .goto Dun Morogh,48.0,49.5,40,0
+    .goto 1426/0,-561.92,-5502.33,40,0
     .goto 1426/0,-571.77,-5416.97,40,0
     .goto 1426/0,-340.29,-5600.83,40,0
-    .goto Dun Morogh,52.0,50.1,40,0
+    .goto 1426/0,-758.92,-5522.03,40,0
     .goto 1426/0,-734.29,-5646.80,40,0
     .goto 1426/0,-665.34,-5646.80,40,0
     .goto 1426/0,-655.49,-5548.30,40,0
-    .goto Dun Morogh,48.0,49.5,40,0
+    .goto 1426/0,-561.92,-5502.33,40,0
     .goto 1426/0,-571.77,-5416.97,40,0
     .goto 1426/0,-340.29,-5600.83,40,0
-    .goto Dun Morogh,52.0,50.1,40,0
+    .goto 1426/0,-758.92,-5522.03,40,0
     .goto 1426/0,-734.29,-5646.80,40,0
     .goto 1426/0,-665.34,-5646.80,40,0
     .goto 1426/0,-655.49,-5548.30,40,0
-    .goto Dun Morogh,48.0,49.5,40,0
+    .goto 1426/0,-561.92,-5502.33,40,0
     .goto 1426/0,-571.77,-5416.97,40,0
     .goto 1426/0,-340.29,-5600.83,40,0
-    .goto Dun Morogh,52.0,50.1,40,0
+    .goto 1426/0,-758.92,-5522.03,40,0
     .goto 1426/0,-734.29,-5646.80,40,0
     .goto 1426/0,-665.34,-5646.80,40,0
     .goto 1426/0,-655.49,-5548.30,40,0
-    .goto Dun Morogh,48.0,49.5,40,0
+    .goto 1426/0,-561.92,-5502.33,40,0
     .goto 1426/0,-571.77,-5416.97,40,0
     .goto 1426/0,-340.29,-5600.83,40,0
     >>Get the items for Stocking Jetsteam
@@ -1133,16 +1133,16 @@ step
 step
     .goto 1426/0,-291.04,-5676.35,40,0
     .goto 1426/0,-286.12,-5590.98,40,0
-    .goto Dun Morogh,41.0,49.4,40,0
+    .goto 1426/0,-217.17,-5499.05,40,0
     .goto 1426/0,-291.04,-5676.35,40,0
     .goto 1426/0,-286.12,-5590.98,40,0
-    .goto Dun Morogh,41.0,49.4,40,0
+    .goto 1426/0,-217.17,-5499.05,40,0
     .goto 1426/0,-291.04,-5676.35,40,0
     .goto 1426/0,-286.12,-5590.98,40,0
-    .goto Dun Morogh,41.0,49.4,40,0
+    .goto 1426/0,-217.17,-5499.05,40,0
     .goto 1426/0,-291.04,-5676.35,40,0
     .goto 1426/0,-286.12,-5590.98,40,0
-    .goto Dun Morogh,41.0,49.4,40,0
+    .goto 1426/0,-217.17,-5499.05,40,0
     >> Go into the cave. Kill Wendigos. Loot them for their Manes
     .complete 313,1 --Collect Wendigo Mane (x8)
 step
@@ -1162,7 +1162,7 @@ step
 step
     >>Grind some mobs en route
     .goto 1426/0,68.48,-5728.88,50,0
-    .goto Dun Morogh,36.0,52.0,50,0
+    .goto 1426/0,29.08,-5584.42,50,0
     .goto 1426/0,98.03,-5574.57
 .target Tundra MacGrann
 >>Talk to |cRXP_FRIENDLY_Tundra MacGrann|r
@@ -1192,13 +1192,13 @@ step
     .goto 1426/0,388.61,-5311.90,60,0
     .goto 1426/0,531.43,-5426.82,60,0
     .goto 1426/0,531.43,-5426.82,60,0
-    .goto Dun Morogh,30.0,51.8,60,0
+    .goto 1426/0,324.58,-5577.85,60,0
     .goto 1426/0,250.71,-5154.30,60,0
     .goto 1426/0,408.31,-5187.13,60,0
     .goto 1426/0,388.61,-5311.90,60,0
     .goto 1426/0,531.43,-5426.82,60,0
     .goto 1426/0,531.43,-5426.82,60,0
-    .goto Dun Morogh,30.0,51.8,60,0
+    .goto 1426/0,324.58,-5577.85,60,0
     >> Kill Bears, Boars and Leopards. Go from north->west->south
     .complete 319,1 --Kill Ice Claw Bear (x6)
     .complete 319,2 --Kill Elder Crag Boar (x8)
@@ -1327,7 +1327,7 @@ step
 step
     #hardcore
     >>Carefully grind down into this nook in the cave
-    .goto Dun Morogh,23.0,52.2
+    .goto 1426/0,669.33,-5590.98
     .complete 287,2 --Fully explore Frostmane Hold
 step
     #softcore
@@ -1335,7 +1335,7 @@ step
 step
     #softcore
     >>Jump down, you die after
-    .goto Dun Morogh,23.0,52.2
+    .goto 1426/0,669.33,-5590.98
     .complete 287,2 --Fully explore Frostmane Hold
 step
     #softcore
@@ -1425,7 +1425,7 @@ step
 step
     .goto 1426/0,-1502.59,-5837.23,40,0
     .goto 1426/0,-1679.89,-5787.98,40,0
-    .goto Dun Morogh,71.0,53.9,40,0
+    .goto 1426/0,-1694.67,-5646.8,40,0
     .xp 10 >> Grind to 10 at the troggs
 step
     .goto 1426/0,-1576.47,-5673.07
@@ -1443,7 +1443,7 @@ step
     .accept 417 >> Accept A Pilot's Revenge
 step
     >>Kill Mangeclaw. Loot him for his Claw
-    .goto Dun Morogh,80.0,36.4
+    .goto 1426/0,-2137.92,-5072.22
     .complete 417,1 --Collect Mangy Claw (x1)
 step
     .goto 1426/0,-2329.60,-5163.76
@@ -1489,10 +1489,10 @@ step << Gnome
 step << Gnome
     .goto 1432/0,-2818.49,-5742.10,45 >> Run to the Troggs Entrance
 step << Gnome
-    .goto Loch Modan,30.0,72.4,50,0
+    .goto 1432/0,-2821.25,-5819.36,50,0
     .goto 1432/0,-2950.89,-5804.64,50,0
     .goto 1432/0,-2846.07,-5979.40,50,0
-    .goto Loch Modan,30.0,72.4,50,0
+    .goto 1432/0,-2821.25,-5819.36,50,0
     .goto 1432/0,-2950.89,-5804.64,50,0
     .goto 1432/0,-2846.07,-5979.40,50,0
     >>Kill Stonesplinter Troggs. Loot them for their Teeth
@@ -1666,30 +1666,30 @@ step
     #sticky
     #label Ichor9
     .goto 1432/0,-2873.66,-4789.19,40,0
-    .goto Loch Modan,28.0,20.6,40,0
+    .goto 1432/0,-2766.08,-4866.45,40,0
     .goto 1432/0,-2926.07,-5232.53,40,0
     .goto 1432/0,-2992.27,-5055.93,40,0
-    .goto Loch Modan,39.0,32.1,40,0
+    .goto 1432/0,-3069.5,-5078.01,40,0
     .goto 1432/0,-2873.66,-4789.19,40,0
-    .goto Loch Modan,28.0,20.6,40,0
+    .goto 1432/0,-2766.08,-4866.45,40,0
     .goto 1432/0,-2926.07,-5232.53,40,0
     .goto 1432/0,-2992.27,-5055.93,40,0
-    .goto Loch Modan,39.0,32.1,40,0
+    .goto 1432/0,-3069.5,-5078.01,40,0
     .goto 1432/0,-2873.66,-4789.19
     >>Kill Spiders. Loot them for Ichor
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
 step
-    .goto Loch Modan,38.0,34.9,40,0
+    .goto 1432/0,-3041.92,-5129.51,40,0
     .goto 1432/0,-3017.09,-5219.65,40,0
     .goto 1432/0,-2815.73,-5147.91,40,0
     .goto 1432/0,-2757.81,-4952.91,40,0
     .goto 1432/0,-2782.63,-4903.25,40,0
-    .goto Loch Modan,38.0,34.9,40,0
+    .goto 1432/0,-3041.92,-5129.51,40,0
     .goto 1432/0,-3017.09,-5219.65,40,0
     .goto 1432/0,-2815.73,-5147.91,40,0
     .goto 1432/0,-2757.81,-4952.91,40,0
     .goto 1432/0,-2782.63,-4903.25,40,0
-    .goto Loch Modan,38.0,34.9
+    .goto 1432/0,-3041.92,-5129.51
     >>Kill Boars. Loot them for Intestines
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step
@@ -1798,7 +1798,7 @@ step << Gnome
 >>Talk to |cRXP_FRIENDLY_Senator Barin Redstone|r
     .turnin 291 >>Turn in The Reports
 step << Gnome
-    .goto Ironforge,55.50,47.74
+    .goto 1455/0,-1152.39,-4820.914
 >>Talk to |cRXP_FRIENDLY_Gryth Thurden|r
     .turnin 6388 >>Turn in Gryth Thurden
 .target Gryth Thurden
@@ -1817,7 +1817,7 @@ step << Gnome
 step << Gnome
     .hs >> Hearth to Kharanos
 step << Gnome
-    .goto Dun Morogh,47.50,52.08
+    .goto 1426/0,-537.29,-5587.04
     .trainer >> Train your class spells
 step
     #hardcore
@@ -1830,7 +1830,7 @@ step
     .goto 1426/0,-1207.09,-5325.03,40,0
     .goto 1426/0,-1212.02,-5265.93,40,0
     .goto 1426/0,-1192.32,-5219.97,40,0
-    .goto Dun Morogh,59.0,39.5,40,0
+    .goto 1426/0,-1103.67,-5174.0,40,0
     .goto 1426/0,-1167.69,-5144.45,40,0
     .goto 1426/0,-1236.64,-5147.73,40,0
     .goto 1426/0,-1433.64,-4586.28,40,0
@@ -1859,8 +1859,8 @@ step
     .goto 1426/0,206.38,-4832.53,15 >>Follow it up to here
 step
     #softcore
-    .goto Dun Morogh,33.0,27.2,15,0
-    .goto Dun Morogh,33.0,25.2,15,0
+    .goto 1426/0,176.83,-4770.15,15,0
+    .goto 1426/0,176.83,-4704.48,15,0
     .goto 1437/0,-869.29,-3344.13,60,0
     .deathskip >>Keep running straight north, drop down and die, then respawn
 step

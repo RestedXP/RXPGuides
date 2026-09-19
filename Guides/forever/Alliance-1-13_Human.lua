@@ -179,7 +179,7 @@ step
 step
     #optional
     .isOnQuest 91741
-    .goto Elwynn Forest,49.60,40.41
+    .goto 1429/0,-186.12,-8874.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
     .turnin 91741 >> Turn in Nibbled-On Book
     .accept 92124 >> Accept Book Inventory
@@ -187,7 +187,7 @@ step
 step
     #optional
     .isQuestTurnedIn 91741
-    .goto Elwynn Forest,49.60,40.41
+    .goto 1429/0,-186.12,-8874.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
     .accept 92124 >> Accept Book Inventory
     .target Brother Paxton
@@ -201,7 +201,7 @@ step
 step
     #optional
     .isQuestTurnedIn 92124
-    .goto Elwynn Forest,49.60,40.41
+    .goto 1429/0,-186.12,-8874.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
     .accept 91743 >> Accept Rascally Rodents
     .target Brother Paxton
@@ -341,7 +341,7 @@ step
 step
     #optional
     .isOnQuest 91741
-    .goto Elwynn Forest,49.60,40.41
+    .goto 1429/0,-186.12,-8874.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
     .turnin 91741 >> Turn in Nibbled-On Book
     .accept 92124 >> Accept Book Inventory
@@ -349,7 +349,7 @@ step
 step
     #optional
     .isQuestTurnedIn 91741
-    .goto Elwynn Forest,49.60,40.41
+    .goto 1429/0,-186.12,-8874.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
     .accept 92124 >> Accept Book Inventory
     .target Brother Paxton
@@ -363,7 +363,7 @@ step
 step
     #optional
     .isQuestTurnedIn 92124
-    .goto Elwynn Forest,49.60,40.41
+    .goto 1429/0,-186.12,-8874.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
     .accept 91743 >> Accept Rascally Rodents
     .target Brother Paxton
@@ -625,7 +625,7 @@ step
 step
     #optional
     .isQuestComplete 91743
-    .goto Elwynn Forest,49.60,40.41
+    .goto 1429/0,-186.12,-8874.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
     .turnin 91743 >> Turn in Rascally Rodents
     .target Brother Paxton
@@ -1628,7 +1628,7 @@ step
     .goto 1429/0,-604.49,-9180.39,15 >> Enter the Jasperlode Mine
 step
     #label JasperlodeExplore
-    .goto Elwynn Forest,61.20,51.46,15,0
+    .goto 1429/0,-588.73,-9130.67,15,0
     .goto 1429/0,-572.07,-9116.55,15,0
     .goto 1429/0,-560.62,-9100.58
     >>Follow the path through middle to explore Jasperlode Mine
@@ -1854,7 +1854,7 @@ step
 step << Paladin
     #softcore
     #label Prowlers
-    .goto Elwynn Forest,79.80,55.50
+    .goto 1429/0,-1234.31,-9224.180
     >>|cRXP_WARN_Run on top of |cRXP_PICK_Rolf's corpse|r, then cast|r |T135954:0|t[Divine Protection] |cRXP_WARN_and then immediately click|r |cRXP_PICK_Rolf's corpse|r
     >>|cRXP_WARN_Run away and reset the |cRXP_ENEMY_Murlocs|r after completing the quest|r
     .turnin 45 >> Turn in Discover Rolf's Fate
@@ -1862,7 +1862,7 @@ step << Paladin
 step << Paladin
     #hardcore
     #label Prowlers
-    .goto Elwynn Forest,79.80,55.50
+    .goto 1429/0,-1234.31,-9224.180
     >>Click |cRXP_PICK_Rolf's corpse|r on the ground
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Murloc Foragers|r will cast|r |T135915:0|t[Drink Minor Potion] |cRXP_WARN_which heals themselves for 61-68 health|r
     >>|cRXP_WARN_Pull the 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_in front of the huts, move away and nuke one of them down fast. Use|r |T135954:0|t[Divine Protection] |cRXP_WARN_and your Heals as required. This is a good opportunity to use|r |T133581:0|t[Bag of Marbles]|cRXP_WARN_. Run away and reset once you've killed one|r << Paladin
@@ -1871,7 +1871,7 @@ step << Paladin
     .accept 71 >> Accept Report to Thomas
 step << !Paladin
     #label Prowlers
-    .goto Elwynn Forest,79.80,55.50
+    .goto 1429/0,-1234.31,-9224.180
     >>Click |cRXP_PICK_Rolf's corpse|r on the ground
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Murloc Foragers|r will cast|r |T135915:0|t[Drink Minor Potion] |cRXP_WARN_which heals themselves for 61-68 health|r
     >>|cRXP_WARN_Cast|r |T135953:0|t[Renew] |cRXP_WARN_and|r |T135940:0|t[Power Word: Shield] |cRXP_WARN_then get full mana. Pull the 2 |cRXP_ENEMY_Murlocs|r in front of the huts, move away, then nuke one. Run away when you kill one, then kill the other|r << Priest
@@ -2438,18 +2438,18 @@ step << Warlock
     .mob Riverpaw Runt
     .mob Riverpaw Outrunner
 step << Warlock
-    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto 1429/0,598.29,-9946.33,70,0
     .goto 1429/0,629.53,-10020.39,70,0
     .goto 1429/0,660.77,-10085.20,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
+    .goto 1429/0,598.29,-9946.33,70,0
     .goto 1429/0,629.53,-10020.39,70,0
     .goto 1429/0,660.77,-10085.20,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
+    .goto 1429/0,598.29,-9946.33,70,0
     .goto 1429/0,629.53,-10020.39,70,0
     .goto 1429/0,660.77,-10085.20,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
     .goto 1429/0,636.47,-10112.98
     >>Kill |cRXP_ENEMY_Hogger|r. Loot him for his |cRXP_LOOT_Claw|r
     >>|cRXP_ENEMY_Hogger|r |cRXP_WARN_can spawn in multiple locations|r
@@ -2459,18 +2459,18 @@ step << Warlock
     .unitscan Hogger
 step << Warlock
     #label GnollEnd
-    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto 1429/0,598.29,-9946.33,70,0
     .goto 1429/0,629.53,-10020.39,70,0
     .goto 1429/0,660.77,-10085.20,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
+    .goto 1429/0,598.29,-9946.33,70,0
     .goto 1429/0,629.53,-10020.39,70,0
     .goto 1429/0,660.77,-10085.20,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
+    .goto 1429/0,598.29,-9946.33,70,0
     .goto 1429/0,629.53,-10020.39,70,0
     .goto 1429/0,660.77,-10085.20,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
     .goto 1429/0,636.47,-10112.98
     >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |cRXP_LOOT_Armbands|r
     .complete 11,1 -- Painted Gnoll Armband (8)
@@ -2857,7 +2857,7 @@ step << Warlock
     .isOnQuest 83
 step << Warlock
     #label SChoker
-    .goto Elwynn Forest,71.10,80.66
+    .goto 1429/0,-932.35,-9806.53
     >>Kill |cRXP_ENEMY_Surena Caledon|r. Loot her for her |cRXP_LOOT_Choker|r
     >>|cRXP_WARN_Focus on killing |cRXP_ENEMY_Surena Caledon|r very quickly|r
     >>|cRXP_WARN_Cast|r |T136183:0|t[Fear] |cRXP_WARN_on |cRXP_ENEMY_Morgan the Collector|r continously|r
@@ -3307,9 +3307,9 @@ step << Mage/Paladin
     .goto 1455/0,-1101.87,-4864.81,30,0
     .goto 1455/0,-1062.10,-4815.100,20,0
     .goto 1455/0,-1036.48,-4804.50,20,0
-    .goto Ironforge,35.30,32.76,20,0
+    .goto 1455/0,-992.68,-4742.08,20,0
     .goto 1455/0,-928.40,-4635.61,20,0 << Paladin
-    .goto Ironforge,27.60,11.06,20,0 << Mage
+    .goto 1455/0,-931.8,-4627.59,20,0 << Mage
     .goto 1455/0,-928.40,-4614.51,12 >>Travel toward |cRXP_FRIENDLY_Dink|r << Mage
     .goto 1455/0,-896.47,-4601.65,12 >>Travel toward |cRXP_FRIENDLY_Brandur Ironhammer|r << Paladin
 step << Mage
@@ -3323,7 +3323,7 @@ step << Paladin
     .train 633 >> Train your class spells
     .target Brandur Ironhammer
 step << skip -- for dungeon route only
-    .goto Ironforge,18.10,51.60
+    .goto 1455/0,-856.69,-4841.490
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Firebrew|r
     .home >> Set your Hearthstone to Ironforge
     .target Innkeeper Firebrew
@@ -3910,7 +3910,7 @@ step
     #optional
     #label SilverStream
     #completewith MinerGear
-    .goto Loch Modan,35.50,18.97,20 >> Travel to the Silver Stream Mine, kill |cRXP_ENEMY_Kobolds|r for |T133854:0|t[|cRXP_LOOT_Ears|r] on the way
+    .goto 1432/0,-2972.96,-4835.187,20 >> Travel to the Silver Stream Mine, kill |cRXP_ENEMY_Kobolds|r for |T133854:0|t[|cRXP_LOOT_Ears|r] on the way
 step
     #requires SilverStream
     #label MinerGear
@@ -4048,10 +4048,10 @@ step
     .waypoint 1432/0,-3080.53,-5100.08,90,0
     .mob +Elder Black Bear
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
-    .goto Loch Modan,38.0,34.9,0
+    .goto 1432/0,-3041.92,-5129.51,0
     .goto 1432/0,-2815.73,-5147.91,0
     .goto 1432/0,-2782.63,-4903.25,0
-    .waypoint Loch Modan,38.0,34.9,90,0
+    .waypoint 1432/0,-3041.92,-5129.51,90,0
     .waypoint 1432/0,-3017.09,-5219.65,90,0
     .waypoint 1432/0,-2815.73,-5147.91,90,0
     .waypoint 1432/0,-2757.81,-4952.91,90,0
@@ -4060,12 +4060,12 @@ step
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
     .goto 1432/0,-2873.66,-4789.19,0
     .goto 1432/0,-2926.07,-5232.53,0
-    .goto Loch Modan,39.0,32.1,0
+    .goto 1432/0,-3069.5,-5078.01,0
     .waypoint 1432/0,-2873.66,-4789.19,90,0
-    .waypoint Loch Modan,28.0,20.6,90,0
+    .waypoint 1432/0,-2766.08,-4866.45,90,0
     .waypoint 1432/0,-2926.07,-5232.53,90,0
     .waypoint 1432/0,-2992.27,-5055.93,90,0
-    .waypoint Loch Modan,39.0,32.1,90,0
+    .waypoint 1432/0,-3069.5,-5078.01,90,0
     .mob +Forest Lurker
 step
     #completewith FlintTinder
@@ -4163,7 +4163,7 @@ step << Human Warrior -- flying IF to train thrown before going westfall/darksho
     .target Thorgrum Borrelson
     .zoneskip Ironforge
 step << Human Warrior
-    .goto Ironforge,62.0,89.6
+    .goto 1455/0,-1203.78,-5041.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bixi Wobblebonk|r
     .train 2567 >>Train Thrown
     .target Bixi Wobblebonk
@@ -4264,18 +4264,18 @@ step << Priest/Paladin
     #completewith next
     .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
 step << Human Paladin
-    .goto StormwindClassic,39.80,29.77
+    .goto StormwindClassic,39.8,29.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
     .accept 1641 >> Accept The Tome of Divinity
     .turnin 1641 >> Turn in The Tome of Divinity
     .target Duthorian Rall
 step << Human Paladin
-    .goto StormwindClassic,39.80,29.77
+    .goto StormwindClassic,39.8,29.77
     >>|cRXP_WARN_Use the |T133739:0|t[|cRXP_LOOT_The Tome of Divinity|r] to start the quest|r
     .accept 1642 >>Accept The Tome of Divinity
     .use 6775
 step << Human Paladin
-    .goto StormwindClassic,39.80,29.77
+    .goto StormwindClassic,39.8,29.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
     .turnin 1642 >>Turn in The Tome of Divinity
     .accept 1643 >>Accept The Tome of Divinity

@@ -29,7 +29,7 @@ step
     #label balance1
     #completewith GoodProtector
     >>Kill |cRXP_ENEMY_Young Nightsabers|r and |cRXP_ENEMY_Young Thistle Boars|r
-    .goto Teldrassil,62.0,42.6,0,0
+    .goto 1438/1,657.75,10385.51,0,0
     .complete 456,1 --Kill Young Nightsaber (x7)
     .mob +Young Nightsaber
     .complete 456,2 --Kill Young Thistle Boar (x4)
@@ -48,7 +48,7 @@ step << !sod/Warrior
     .target +Melithar Staghelm
 step
     >>Kill |cRXP_ENEMY_Young Nightsabers|r and |cRXP_ENEMY_Young Thistle Boars|r
-    .goto Teldrassil,62.0,42.6,0,0
+    .goto 1438/1,657.75,10385.51,0,0
     .complete 456,1 --Kill Young Nightsaber (x7)
     .mob +Young Nightsaber
     .complete 456,2 --Kill Young Thistle Boar (x4)
@@ -196,7 +196,7 @@ step
 step << Hunter
     .xp 4-40
 step << Hunter
-    .goto Teldrassil,57.80,40.97,25,0
+    .goto 1438/1,871.6,10440.83,25,0
     .goto 1438/1,827.86,10458.51
     >>Ascend the Aldrassil Tree
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayanna Everstride|r
@@ -242,7 +242,7 @@ step << skip --logout skip Hunter
 	>>If you fall down, just run out the cave normally to the quest turn in
 	.link https://www.youtube.com/watch?v=TTZZT3jpv1s >> CLICK HERE for reference
 step
-    .goto Teldrassil,55.0,43.7
+    .goto 1438/1,1014.17,10348.18
     >>Kill |cRXP_ENEMY_Grell|r and |cRXP_ENEMY_Grellkin|r. Loot them for their |cRXP_LOOT_Mushrooms|r and |cRXP_LOOT_Fel Moss|r
     .complete 3521,1 --Collect Hyacinth Mushroom (x7)
     .complete 459,1 --Collect Fel Moss (x8)
@@ -310,7 +310,7 @@ step << Hunter/Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.05
 step << Druid
     #season 0,1
-    .goto Teldrassil,57.80,40.97,25,0
+    .goto 1438/1,871.6,10440.83,25,0
     .goto 1438/1,829.54,10464.01
     >>Ascend the Aldrassil Tree
     .target Mardant Strongoak
@@ -329,7 +329,7 @@ step
     #completewith next
     .goto 1438/1,926.08,10773.42,25 >> Enter the Shadowthread Cave
 step
-    .goto Teldrassil,57.0,26.4
+    .goto 1438/1,912.33,10935.30
     #season 0 << Warrior
     >>Loot a |cRXP_LOOT_Webwood Egg|r on the ground at the back of the Cave
     .complete 917,1 --Collect Webwood Egg (x1)
@@ -355,7 +355,7 @@ step
     .accept 920 >> Accept Tenaron's Summons
 step
 #xprate <1.99
-    .goto Teldrassil,57.80,40.97,25,0
+    .goto 1438/1,871.6,10440.83,25,0
     .goto 1438/1,807.34,10492.48
     >>Ascend the Aldrassil Tree
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tenaron Stormgrip|r
@@ -399,7 +399,7 @@ step << Priest
 step
 #xprate <1.99
     #requires vial1
-    .goto Teldrassil,57.80,40.97,25,0
+    .goto 1438/1,871.6,10440.83,25,0
     .goto 1438/1,807.34,10492.48
     >>Ascend the Aldrassil Tree
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tenaron Stormgrip|r
@@ -738,12 +738,12 @@ step
     >>|cRXP_WARN_Save any|r |T132832:0|t[Small Eggs] |cRXP_WARN_and|r |T134321:0|t[Small Spider Legs] |cRXP_WARN_to use for leveling|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
     .complete 488,1 --Collect Nightsaber Fang (x3)
     .mob +Nightsaber
-    .goto Teldrassil,66.10,52.43,60,0
+    .goto 1438/1,448.99,10051.91,60,0
     .goto 1438/1,660.30,9758.69,50,0
     .goto 1438/1,803.37,9764.12
     .complete 488,2 --Collect Strigid Owl Feather (x3)
     .mob +Strigid Owl
-    .goto Teldrassil,66.10,52.43,60,0
+    .goto 1438/1,448.99,10051.91,60,0
     .goto 1438/1,586.98,9651.78,50,0
     .goto 1438/1,803.37,9764.12
     .complete 488,3 --Collect Webwood Spider Silk (x3)
@@ -951,9 +951,9 @@ step
     .target Brannol Eaglemoon
     .isQuestTurnedIn 489
 step
-    .goto Teldrassil,59.0,56.1,50,0
+    .goto 1438/1,810.5,9927.36,50,0
     .goto 1438/1,937.79,9608.34,50,0
-    .goto Teldrassil,53.0,59.5,50,0
+    .goto 1438/1,1116.0,9811.97,50,0
     .goto 1438/1,576.28,9716.94,50,0
     .goto 1438/1,825.78,9940.93
     >>Loot the |cRXP_LOOT_Fel Cones|r on the ground
@@ -1045,7 +1045,7 @@ step
 	#xprate <1.5
     #softcore
 	#completewith next
-    .goto Teldrassil,43.50,68.42
+    .goto 1438/1,1599.71,9509.25
     .deathskip >> Die and respawn at the Dolanaar graveyard, make sure to die east of the moonwell, otherwise you might end up in Darnassus
 step
 	#xprate <1.5
@@ -1605,7 +1605,7 @@ step << Rogue
 #xprate <1.99
     #softcore
     #completewith next
-    .goto Teldrassil,44.0,54.6
+    .goto 1438/1,1574.25,9978.26
     .deathskip >>Once you get past the furbolg area, die on purpose and respawn at the Darnassus graveyard
     .target Spirit Healer
 step << Rogue
@@ -1664,7 +1664,7 @@ step
     #sticky
     #completewith Spinnerets
     .goto 1438/1,1691.36,10412.66,0
-    .goto Teldrassil,43.80,26.03,0
+    .goto 1438/1,1584.43,10947.86,0
 	>>Kill |cRXP_ENEMY_Timberling Tramplers|r, |cRXP_ENEMY_Timberling Mire Beasts|r and |cRXP_ENEMY_Elder Timberlings|r. Loot them for their |cRXP_LOOT_Tumors|r
     .complete 923,1 --Collect Mossy Tumor (x5)
     .mob Elder Timberling
@@ -1674,8 +1674,8 @@ step
     #label Spinnerets
     #loop
     .goto 1438/1,1691.36,10412.66,0
-    .goto Teldrassil,48.0,25.2,0
-    .goto Teldrassil,42.0,25.6,0
+    .goto 1438/1,1370.58,10976.02,0
+    .goto 1438/1,1676.08,10962.45,0
     .goto 1438/1,1798.28,10962.45,0
     .line Teldrassil,41.70,41.82,41.97,39.03,42.20,35.71,43.33,33.27,43.79,30.65,44.18,27.80,46.09,26.55,47.72,25.57,46.25,25.62,44.42,26.09,42.83,26.15,42.0,25.6,39.6,25.6
     >>Kill |cRXP_ENEMY_Lady Sathrah|r. Loot her for her |cRXP_LOOT_Spinnerets|r
@@ -1697,7 +1697,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .accept 937 >> Accept The Enchanted Glade
 step << Rogue
-    .goto Teldrassil,38.0,25.2
+    .goto 1438/1,1879.75,10976.02
     >>|cRXP_WARN_Cast|r |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Sethir the Ancient|r
     >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
     >>|cRXP_ENEMY_Sethir the Ancient|r |cRXP_WARN_walks along the big tree branch|r

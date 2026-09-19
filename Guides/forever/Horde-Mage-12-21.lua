@@ -182,7 +182,7 @@ step
     .goto The Barrens,63.1,37.1
     .fp Ratchet >> Get the Ratchet flight path
 step
-    .goto The Barrens,63.0,37.2
+    .goto 1413/1,-3761.08,-900.83
 .target Sputtervalve
 >>Talk to |cRXP_FRIENDLY_Sputtervalve|r
     .accept 894 >>Accept Samophlange
@@ -467,13 +467,13 @@ step
 .target Sergra Darkthorn
     .accept 905 >>Accept The Angry Scytheclaws
 step
-    .goto The Barrens,52.20,31.90
+    .goto The Barrens,52.2,31.90
 >>Talk to |cRXP_FRIENDLY_Tonga Runetotem|r
     .turnin 870 >> Turn in The Forgotten Pools
 .target Tonga Runetotem
     .accept 877 >> Accept The Stagnant Oasis
 step
-    .goto The Barrens,52.00,31.60
+    .goto 1413/1,-2646.42,-522.480
 .target Mankrik
 >>Talk to |cRXP_FRIENDLY_Mankrik|r
     .accept 899 >> Accept Consumed by Hatred
@@ -486,7 +486,7 @@ step
 .target Darsok Swiftdagger
     .accept 875 >>Accept Harpy Lieutenants
 step
-    .goto The Barrens,51.50,30.20
+    .goto The Barrens,51.5,30.20
 .target Apothecary Helbrim
 >>Talk to |cRXP_FRIENDLY_Apothecary Helbrim|r
     .turnin 848 >> Turn in Fungal Spores
@@ -494,19 +494,19 @@ step
     .goto The Barrens,51.5,30.3
     .fly Ratchet >>Fly to Ratchet
 step
-    .goto The Barrens,63.0,37.2
+    .goto 1413/1,-3761.08,-900.83
 >>Talk to |cRXP_FRIENDLY_Sputtervalve|r
     .turnin 902 >>Turn in Samophlange
     .turnin 863 >> Turn in The Escape
 .target Sputtervalve
     .accept 1483 >> Accept Ziz Fizziks
 step
-    .goto The Barrens,63.30,38.40
+    .goto The Barrens,63.3,38.40
 .target Wharfmaster Dizzywig
 >>Talk to |cRXP_FRIENDLY_Wharfmaster Dizzywig|r
     .turnin 896 >> Turn in Miner's Fortune
 step
-    .goto The Barrens,62.40,37.70
+    .goto The Barrens,62.4,37.70
 .target Mebok Mizzyrix
 >>Talk to |cRXP_FRIENDLY_Mebok Mizzyrix|r
     .accept 1069 >> Accept Deepmoss Spider Eggs
@@ -618,7 +618,7 @@ step
 .target Tonga Runetotem
     .accept 880 >>Accept Altered Beings
 step
-    .goto The Barrens,52.0,31.6
+    .goto 1413/1,-2646.42,-522.48
 .target Mankrik
 >>Talk to |cRXP_FRIENDLY_Mankrik|r
     .turnin 4921 >>Turn in Lost in Battle
@@ -886,7 +886,7 @@ step
 >>Talk to |cRXP_FRIENDLY_Gazlowe|r
     .turnin 888 >>Turn in Stolen Booty
 step
-    .goto The Barrens,63.0,37.2
+    .goto 1413/1,-3761.08,-900.83
 >>Talk to |cRXP_FRIENDLY_Sputtervalve|r
     .turnin 1094 >>Turn in Further Instructions
 .target Sputtervalve
@@ -913,13 +913,13 @@ step
     .accept 1489 >>Accept Hamuul Runetotem
     .accept 3301 >>Accept Mura Runetotem
 step
-    .goto The Barrens,52.0,31.6
+    .goto 1413/1,-2646.42,-522.48
 .target Mankrik
 >>Talk to |cRXP_FRIENDLY_Mankrik|r
     .turnin 899 >>Turn in Consumed by Hatred
 step
     >>Top of the tower
-    .goto The Barrens,51.60,30.90
+    .goto The Barrens,51.6,30.90
 >>Talk to |cRXP_FRIENDLY_Darsok Swiftdagger|r
     .turnin 875 >> Turn in Harpy Lieutenants
 .target Darsok Swiftdagger
@@ -1036,7 +1036,7 @@ step
 step
  	>>Go into The Pools of Vision
 	.goto Thunder Bluff,30.1,30.0,30,0
-	.goto Thunder Bluff,23.00,21.00
+	.goto 1456/1,276.6,-996.120
 .target Apothecary Zamah
 >>Talk to |cRXP_FRIENDLY_Apothecary Zamah|r
     .turnin 853 >> Turn in Apothecary Zamah
@@ -1091,7 +1091,7 @@ step
     #completewith next
     .hs >> Hearth to Thunder Bluff
 step
-    .goto Thunder Bluff,70.00,30.90
+    .goto Thunder Bluff,70.0,30.90
 >>Talk to |cRXP_FRIENDLY_Magatha Grimtotem|r
     .turnin 1063 >> Turn in The Elder Crone
 .target Magatha Grimtotem
@@ -1108,7 +1108,7 @@ step
 >>Talk to |cRXP_FRIENDLY_Nara Wildmane|r
     .turnin 1490 >> Turn in Nara Wildmane
 step
-    .goto Thunder Bluff,23.00,21.0
+    .goto 1456/1,276.6,-996.12
 >>Talk to |cRXP_FRIENDLY_Apothecary Zamah|r
     .turnin 1064 >> Turn in Forsaken Aid
 .target Apothecary Zamah
@@ -1121,12 +1121,12 @@ step
     .goto Thunder Bluff,46.8,50.0
     .fly The Crossroads >>Fly to The Crossroads
 step
-    .goto The Barrens,51.60,30.90
+    .goto The Barrens,51.6,30.90
 	>>Go upstairs
 .target Darsok Swiftdagger
 >>Talk to |cRXP_FRIENDLY_Darsok Swiftdagger|r
     .turnin 876 >> Turn in Serena Bloodfeather
 step
-    .goto The Barrens,51.50,30.34
+    .goto 1413/1,-2595.75,-437.35
     .fly Orgrimmar >> Fly to Orgrimmar
 ]])

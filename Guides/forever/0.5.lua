@@ -156,15 +156,15 @@ step << Horde
     .goto 1451/1,1376.16,-6777.63,0
     .goto 1451/1,1260.86,-7415.50,0
     .goto 1451/1,1544.05,-7763.94,0
-    .goto Silithus,45.40,80.20,0
-    .goto Silithus,58.80,61.99,0
+    .goto 1451/1,956.07,-7821.31,0
+    .goto 1451/1,489.3,-7398.31,0
     .goto 1451/1,279.60,-6921.65,90,0
     .goto 1451/1,503.93,-6448.470,90,0
     .goto 1451/1,1376.16,-6777.63,90,0
     .goto 1451/1,1260.86,-7415.50,90,0
     .goto 1451/1,1544.05,-7763.94,90,0
-    .goto Silithus,45.40,80.20,90,0
-    .goto Silithus,58.80,61.99,90,0
+    .goto 1451/1,956.07,-7821.31,90,0
+    .goto 1451/1,489.3,-7398.31,90,0
     >>Kill all types of |cRXP_ENEMY_Spiders|r and |cRXP_ENEMY_Scorpids|r. Loot them for their |cRXP_LOOT_Silithus Venom Samples|r
     .complete 8913,1 << Druid --Silithus Venom Sample (x15)
     .complete 8914,1 << Hunter --Silithus Venom Sample (x15)
@@ -373,7 +373,7 @@ step
     .goto 1428/0,-1792.18,-7862.45,0
     .goto 1428/0,-1457.67,-7885.87,0
     .goto 1428/0,-1290.41,-7960.64,0
-    .goto Burning Steppes,23.40,46.28,0
+    .goto 1428/0,-952.09,-7934.67,0
     .goto 1428/0,-1271.96,-8178.68,0
     .goto 1428/0,-1885.32,-7966.300,0
     .goto 1428/0,-2371.86,-7608.48,60,0
@@ -382,7 +382,7 @@ step
     .goto 1428/0,-1792.18,-7862.45,60,0
     .goto 1428/0,-1457.67,-7885.87,60,0
     .goto 1428/0,-1290.41,-7960.64,60,0
-    .goto Burning Steppes,23.40,46.28,60,0
+    .goto 1428/0,-952.09,-7934.67,60,0
     .goto 1428/0,-1271.96,-8178.68,60,0
     .goto 1428/0,-1885.32,-7966.300,60,0
     >>Loot |cRXP_LOOT_Volcanic Ash|r on the ground
@@ -423,14 +423,14 @@ step
     .use 21946 >>|cRXP_WARN_One|r |T132621:0|t[Goblin Rocket Fuel] |cRXP_WARN_is needed each time you use the|r |T133882:0|t[Ectoplasmic Distiller]
 step
     #loop
-	.goto Silithus,61.60,48.60,0
-	.goto Silithus,61.60,48.60,60,0
-	.goto Silithus,63.80,48.60,60,0
-	.goto Silithus,63.60,51.60,60,0
-	.goto Silithus,62.60,55.60,60,0
-	.goto Silithus,62.60,58.60,60,0
-	.goto Silithus,60.00,55.80,60,0
-	.goto Silithus,60.60,52.80,60,0
+	.goto 1451/1,391.77,-7087.27,0
+	.goto 1451/1,391.77,-7087.27,60,0
+	.goto 1451/1,315.13,-7087.27,60,0
+	.goto 1451/1,322.1,-7156.96,60,0
+	.goto 1451/1,356.93,-7249.88,60,0
+	.goto 1451/1,356.93,-7319.56,60,0
+	.goto 1451/1,447.5,-7254.52,60,0
+	.goto 1451/1,426.6,-7184.83,60,0
     >>Kill |cRXP_ENEMY_Tortured Druids|r and |cRXP_ENEMY_Tortured Sentinels|r. Loot them for their |cRXP_LOOT_Scorched Ectoplasms|r
     >>|cRXP_WARN_Pull them to the|r |T133882:0|t[Ectoplasmic Distiller] |cRXP_WARN_as you kill them|r
     .complete 8924,1 --Scorched Ectoplasm (x12)
@@ -447,10 +447,10 @@ step
     #loop
     .goto 1452/1,-4251.49,6478.59,0
     .goto 1452/1,-4100.26,6459.19,0
-    .goto Winterspring,52.60,40.59,0
+    .goto 1452/1,-4051.27,6612.07,0
     .goto 1452/1,-4251.49,6478.59,50,0
     .goto 1452/1,-4100.26,6459.19,50,0
-    .goto Winterspring,52.60,40.59,50,0
+    .goto 1452/1,-4051.27,6612.07,50,0
     >>Kill |cRXP_ENEMY_Suffering Highborne|r and |cRXP_ENEMY_Anguished Highborne|r. Loot them for their |cRXP_LOOT_Frozen Ectoplasms|r
     >>|cRXP_WARN_Pull them to the|r |T133882:0|t[Ectoplasmic Distiller] |cRXP_WARN_as you kill them|r
     .complete 8924,2 --Frozen Ectoplasm (x12)
@@ -1297,7 +1297,7 @@ step
     #completewith next
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8960 >>Turn in Bodley's Unfortunate Fate
@@ -1405,7 +1405,7 @@ step
     #completewith next
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8961 >>Turn in Three Kings of Flame
@@ -1451,10 +1451,10 @@ step
     .goto 1452/1,-4590.16,5458.56,60,0
     .goto 1452/1,-4864.93,5371.470,60,0
     .goto 1452/1,-4989.18,5260.23,60,0
-    .goto Winterspring,65.10,72.07,60,0
-    .goto Winterspring,61.50,72.64,60,0
-    .goto Winterspring,59.60,69.74,60,0
-    .goto Winterspring,58.20,67.59,60,0
+    .goto 1452/1,-4938.77,5122.02,60,0
+    .goto 1452/1,-4683.17,5095.04,60,0
+    .goto 1452/1,-4548.27,5232.31,60,0
+    .goto 1452/1,-4448.87,5334.07,60,0
     >>Kill |cRXP_ENEMY_Frostmaul Giants|r and |cRXP_ENEMY_Frostmaul Preservers|r (elite). Loot them for the |cRXP_LOOT_Starbreeze Village Relic|r
     >>|cRXP_WARN_This has a very low droprate and can take quite some time. It is recommended to grind them in a 5-man group|r
     .complete 8963,1 --Starbreeze Village Relic (x1)
@@ -1489,7 +1489,7 @@ step
     #loop
     .goto 1424/0,563.63,-1336.75,0
     .goto 1424/0,437.23,-1240.96,30,0
-    .goto Hillsbrad Foothills,15.50,77.64,30,0
+    .goto 1424/0,570.67,-1256.32,30,0
     .goto 1424/0,645.55,-1339.31,30,0
     .goto 1424/0,601.71,-1399.04,30,0
     .goto 1424/0,550.19,-1394.77,30,0
@@ -1509,7 +1509,7 @@ step
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8962 >>Turn in Components of Importance
@@ -1517,7 +1517,7 @@ step
     .isQuestComplete 8962
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8963 >>Turn in Components of Importance
@@ -1525,14 +1525,14 @@ step
     .isQuestComplete 8963
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8964 >>Turn in Components of Importance
     .target Bodley
     .isQuestComplete 8964
 step
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8965 >>Turn in Components of Importance
@@ -1540,7 +1540,7 @@ step
     .isQuestComplete 8965
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .acceptmultiple 8966,8967,8968,8969 >>Accept The Left Piece of Lord Valthalak's Amulet
@@ -1548,7 +1548,7 @@ step
     .isQuestTurnedIn 8962
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .acceptmultiple 8966,8967,8968,8969 >>Accept The Left Piece of Lord Valthalak's Amulet
@@ -1556,7 +1556,7 @@ step
     .isQuestTurnedIn 8963
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .acceptmultiple 8966,8967,8968,8969 >>Accept The Left Piece of Lord Valthalak's Amulet
@@ -1564,7 +1564,7 @@ step
     .isQuestTurnedIn 8964
 step
     #label LeftPiecePU
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .acceptmultiple 8966,8967,8968,8969 >>Accept The Left Piece of Lord Valthalak's Amulet
@@ -1647,7 +1647,7 @@ step
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8966 >>Turn in The Left Piece of Lord Valthalak's Amulet
@@ -1656,7 +1656,7 @@ step
     .isQuestComplete 8966
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8967 >>Turn in The Left Piece of Lord Valthalak's Amulet
@@ -1665,7 +1665,7 @@ step
     .isQuestComplete 8967
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8968 >>Turn in The Left Piece of Lord Valthalak's Amulet
@@ -1673,7 +1673,7 @@ step
     .target Bodley
     .isQuestComplete 8968
 step
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8969 >>Turn in The Left Piece of Lord Valthalak's Amulet
@@ -1682,7 +1682,7 @@ step
     .isQuestComplete 8969
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .accept 8970 >>Accept I See Alcaz Island In Your Future...
@@ -1690,7 +1690,7 @@ step
     .isQuestTurnedIn 8966
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .accept 8970 >>Accept I See Alcaz Island In Your Future...
@@ -1698,7 +1698,7 @@ step
     .isQuestTurnedIn 8967
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .accept 8970 >>Accept I See Alcaz Island In Your Future...
@@ -1706,7 +1706,7 @@ step
     .isQuestTurnedIn 8968
 step
     #label AlcazIslandPU
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .accept 8970 >>Accept I See Alcaz Island In Your Future...
@@ -1737,13 +1737,13 @@ step
     #completewith next
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8970 >>Turn in I See Alcaz Island In Your Future...
     .target Bodley
 step
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .acceptmultiple 8985,8986,8987,8988 >>Accept More Components of Importance
@@ -1789,10 +1789,10 @@ step
     .goto 1452/1,-4590.16,5458.56,60,0
     .goto 1452/1,-4864.93,5371.470,60,0
     .goto 1452/1,-4989.18,5260.23,60,0
-    .goto Winterspring,65.10,72.07,60,0
-    .goto Winterspring,61.50,72.64,60,0
-    .goto Winterspring,59.60,69.74,60,0
-    .goto Winterspring,58.20,67.59,60,0
+    .goto 1452/1,-4938.77,5122.02,60,0
+    .goto 1452/1,-4683.17,5095.04,60,0
+    .goto 1452/1,-4548.27,5232.31,60,0
+    .goto 1452/1,-4448.87,5334.07,60,0
     >>Kill |cRXP_ENEMY_Frostmaul Giants|r and |cRXP_ENEMY_Frostmaul Preservers|r (elite). Loot them for the |cRXP_LOOT_Starbreeze Village Relic|r
     >>|cRXP_WARN_This has a very low droprate and can take quite some time. It is recommended to grind them in a 5-man group|r
     .complete 8985,1 --Starbreeze Village Relic (x1)
@@ -1827,7 +1827,7 @@ step
     #loop
     .goto 1424/0,563.63,-1336.75,0
     .goto 1424/0,437.23,-1240.96,30,0
-    .goto Hillsbrad Foothills,15.50,77.64,30,0
+    .goto 1424/0,570.67,-1256.32,30,0
     .goto 1424/0,645.55,-1339.31,30,0
     .goto 1424/0,601.71,-1399.04,30,0
     .goto 1424/0,550.19,-1394.77,30,0
@@ -1847,7 +1847,7 @@ step
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8985 >>Turn in More Components of Importance
@@ -1855,7 +1855,7 @@ step
     .isQuestComplete 8985
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8986 >>Turn in More Components of Importance
@@ -1863,14 +1863,14 @@ step
     .isQuestComplete 8986
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8987 >>Turn in More Components of Importance
     .target Bodley
     .isQuestComplete 8987
 step
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8988 >>Turn in More Components of Importance
@@ -1878,7 +1878,7 @@ step
     .isQuestComplete 8988
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .acceptmultiple 8989,8990,8991,8992 >>Accept The Right Piece of Lord Valthalak's Amulet
@@ -1886,7 +1886,7 @@ step
     .isQuestTurnedIn 8985
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .acceptmultiple 8989,8990,8991,8992 >>Accept The Right Piece of Lord Valthalak's Amulet
@@ -1894,7 +1894,7 @@ step
     .isQuestTurnedIn 8986
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .acceptmultiple 8989,8990,8991,8992 >>Accept The Right Piece of Lord Valthalak's Amulet
@@ -1902,7 +1902,7 @@ step
     .isQuestTurnedIn 8987
 step
     #label RightPiecePU
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .acceptmultiple 8989,8990,8991,8992 >>Accept The Right Piece of Lord Valthalak's Amulet
@@ -2049,7 +2049,7 @@ step
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8989 >>Turn in The Right Piece of Lord Valthalak's Amulet
@@ -2058,7 +2058,7 @@ step
     .isQuestComplete 8989
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8990 >>Turn in The Right Piece of Lord Valthalak's Amulet
@@ -2067,7 +2067,7 @@ step
     .isQuestComplete 8990
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8991 >>Turn in The Right Piece of Lord Valthalak's Amulet
@@ -2075,7 +2075,7 @@ step
     .target Bodley
     .isQuestComplete 8991
 step
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8992 >>Turn in The Right Piece of Lord Valthalak's Amulet
@@ -2084,7 +2084,7 @@ step
     .isQuestComplete 8992
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .accept 8994 >>Accept Final Preparations
@@ -2092,7 +2092,7 @@ step
     .isQuestTurnedIn 8989
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .accept 8994 >>Accept Final Preparations
@@ -2100,7 +2100,7 @@ step
     .isQuestTurnedIn 8990
 step
     #optional
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .accept 8994 >>Accept Final Preparations
@@ -2108,7 +2108,7 @@ step
     .isQuestTurnedIn 8991
 step
     #label FinalPrepPU
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .accept 8994 >>Accept Final Preparations
@@ -2131,7 +2131,7 @@ step
     #completewith next
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8994 >>Turn in Final Preparations
@@ -2158,7 +2158,7 @@ step
     #completewith next
     .subzone 254 >>Travel to |cFFfa9602Blackrock Mountain|r
 step
-    .goto Eastern Kingdoms,48.90,63.93
+    .goto 1415/0,-1212.75,-7535.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use the|r |T133878:0|t[Extra-Dimensional Ghost Revealer] |cRXP_WARN_to reveal|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8996 >>Turn in Accept Return to Bodley
