@@ -706,18 +706,26 @@ step << Mage
     --mage training
 step << Mage
     --mage training
-step
+
+step << Horde
+    .train 8613,3
+    .isOnQuest 97971
+    .isQuestComplete 97968
+    .goto 2521,42.97,43.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r
+    .turnin 97968 >>Turn in Camping 101: Herbalism
+    .target Halassa Fernbreeze::257021
+step << Horde
     .goto 2521,43.02,43.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
-    .complete 93461,2 << Alliance --1/1 Speak with the Innkeeper
     .complete 92514,2 << Horde --1/1 Speak with the Innkeeper
     .target the Innkeeper
-step
+step << Horde
     .goto 2521,43.02,43.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
     .home >>Set your Hearthstone to Shen'dar Village
     .target the Innkeeper
-step << Rogue
+step << Horde Rogue
     .goto 2521,43.16,43.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
     .train 1757 >> Train |T136189:0|t[Sinister Strike]
@@ -726,16 +734,45 @@ step << Rogue
     .target Miriaan Mistblade
     .money <0.02
     .xp <6,1
-step << Rogue
+step << Horde Rogue
     .goto 2521,43.16,43.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
     .train 1757 >> Train |T136189:0|t[Sinister Strike]
     .skipgossipid 136810
     .target Miriaan Mistblade
     .xp <6,1
-step << Mage/Druid
-    --Enchanting Wand
-step
+step << Horde Mage/Druid
+    #completewith next
+    #label immediate wand
+    #hidewindow
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
+    .train 7411 >>Train |T136189:0|t[Enchanting] |cRXP_WARN_for immediate wand|r
+    .target Nasalanna Windsinger
+step << Horde Mage/Druid
+    #completewith immediate wand
+    .goto 2521,43.24,43.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r and buy |T133942:0|t[Copper Rod], |T132841:0|t[Mote of Magic] and |T135435:0|t[Simple Wood].
+    .collect 6217,1
+    .collect 247786,1
+    .collect 4470,1
+    .skipgossipid 137558
+    .target Nasalanna Windsinger
+step << Horde Mage/Druid
+    #requires immediate wand
+    .goto 2521,43.24,43.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
+    .train 7411 >>Train |T136189:0|t[Enchanting] |cRXP_WARN_for immediate wand|r
+    .skipgossipid 137559
+    .target Nasalanna Windsinger
+step << Horde Mage/Druid
+    .isOnQuest 93461 << Alliance
+    .isOnQuest 92514 << Horde 
+    .train 7411,3
+    >>Craft |T135225:0|t[Runed Copper Rod] and |T135975:0|t[Novice's Practice Wand]
+    .collect 6218,3
+    .collect 247789,1
+    -- craft macro
+step << Horde
     .train 8613,3
     .isOnQuest 97971
     .isQuestComplete 97971
@@ -743,6 +780,84 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mendalass Tattermend::257024|r
     .turnin 97971 >>Turn in Camping 101: Skinning
     .target Mendalass Tattermend::257024
+
+
+
+
+step << Alliance
+    .train 8613,3
+    .isOnQuest 97971
+    .isQuestComplete 97971
+    .goto 2521,43.289,43.369
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mendalass Tattermend::257024|r
+    .turnin 97971 >>Turn in Camping 101: Skinning
+    .target Mendalass Tattermend::257024
+step << Alliance Rogue
+    .goto 2521,43.16,43.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
+    .train 1757 >> Train |T136189:0|t[Sinister Strike]
+    .train 1776 >> Train |T132155:0|t[Gouge]
+    .skipgossipid 136810
+    .target Miriaan Mistblade
+    .money <0.02
+    .xp <6,1
+step << Alliance Rogue
+    .goto 2521,43.16,43.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
+    .train 1757 >> Train |T136189:0|t[Sinister Strike]
+    .skipgossipid 136810
+    .target Miriaan Mistblade
+    .xp <6,1
+step << Alliance Mage/Druid
+    #completewith next
+    #label immediate wand
+    #hidewindow
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
+    .train 7411 >>Train |T136189:0|t[Enchanting] |cRXP_WARN_for immediate wand|r
+    .target Nasalanna Windsinger
+step << Alliance Mage/Druid
+    #completewith immediate wand
+    .goto 2521,43.24,43.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r and buy |T133942:0|t[Copper Rod], |T132841:0|t[Mote of Magic] and |T135435:0|t[Simple Wood].
+    .collect 6217,1
+    .collect 247786,1
+    .collect 4470,1
+    .skipgossipid 137558
+    .target Nasalanna Windsinger
+step << Alliance Mage/Druid
+    #requires immediate wand
+    .goto 2521,43.24,43.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
+    .train 7411 >>Train |T136189:0|t[Enchanting] |cRXP_WARN_for immediate wand|r
+    .skipgossipid 137559
+    .target Nasalanna Windsinger
+step << Alliance Mage/Druid
+    .isOnQuest 93461 << Alliance
+    .isOnQuest 92514 << Horde 
+    .train 7411,3
+    >>Craft |T135225:0|t[Runed Copper Rod] and |T135975:0|t[Novice's Practice Wand]
+    .collect 6218,3
+    .collect 247789,1
+    -- craft macro
+step << Alliance
+    .goto 2521,43.02,43.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
+    .complete 93461,2 << Alliance --1/1 Speak with the Innkeeper
+    .target the Innkeeper
+step << Alliance
+    .goto 2521,43.02,43.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
+    .home >>Set your Hearthstone to Shen'dar Village
+    .target the Innkeeper
+step << Alliance
+    .train 8613,3
+    .isOnQuest 97971
+    .isQuestComplete 97968
+    .goto 2521,42.97,43.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r
+    .turnin 97968 >>Turn in Camping 101: Herbalism
+    .target Halassa Fernbreeze::257021
+
 step
     .goto 2521,45.67,45.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
