@@ -1363,6 +1363,11 @@ function addon:OnInitialize()
     if RXPCData and not RXPData then
         saveLocally = true
     end
+    if not RXPCData and GetCVar("questPOI") then
+        --Make sure to initialize the in-game quest helper on first login
+        --This option gets turned off when selecting the Classic option before character creation
+        SetCVar("questPOI", "1")
+    end
     local importGuidesDefault = {
         profile = {guides = {}, reports = {splits = {}}}
     }
