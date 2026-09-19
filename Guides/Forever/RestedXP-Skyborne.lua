@@ -389,7 +389,6 @@ step
 --     .train
 --     .skipgossipid 136810,1
 --     .target Akeri Duskblade
-
 step << Warrior
     #arrowtext Talk to\n|cRXP_FRIENDLY_Blademaster Ren|r
     .goto 2521,43.66,24.14
@@ -771,16 +770,7 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aarnor Galestrike::254082|r
     .trainer >> Train your class spells
     .target Aarnor Galestrike::254082
-step << Mage
-    --mage training
-step << Mage
-    --mage training
-step << Mage
-    --mage training
-step << Mage
-    --mage training
-step << Mage
-    --mage training
+
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Innkeeper|r
     .goto 2521,43.02,43.24
@@ -1252,6 +1242,20 @@ step
     .mob Hippogryph Protector::251284
     .mob Hippogryph Youth::251291
 step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    .complete 92553,2 --8/8 Strider Meat
+    .complete 92553,1 --3/3 Small Egg
+    .mob Galestrider::251661
+step
+    #loop
+    .goto 2521,43.07,48.51,40,0
+    .goto 2521,37.56,43.24,40,0
+    .goto 2521,40.04,41.38,40,0
+    >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
+    .complete 92515,1 --10/10 Prideclaw Pelt
+    .mob Prideclaw::251245
+step
     #label VulgarasHeadA
     #arrowtext Kill\n|cRXP_ENEMY_Vulgara|r
     .goto 2521,43.079,51.028,15,0
@@ -1262,38 +1266,43 @@ step
     .complete 93318,1 --1/1 Vulgara's Head
     .mob Vulgara
 step
-    #completewith PrideclawPeltsA
-    #hidewindow
-    #loop
-    .goto 2521,42.821,36.736,55,0
-    .goto 2521,45.759,40.301,45,0
-    .goto 2521,40.305,38.285,45,0
-    .goto 2521,36.462,45.895,55,0
-    +1
+    .isQuestComplete 97965
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Naleeia Tattermend|r
+    .goto 2521,43.08,46.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleeia Tattermend::257018|r
+    .turnin 97965 >>Turn in Camping 101: First Aid
+    .target Naleeia Tattermend::257018
 step
-    #completewith next
-    .goto 2521,45.759,40.301,0
-    .goto 2521,42.821,36.736,0
-    .goto 2521,36.462,45.895,0
-    >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
-    .complete 92515,1 --10/10 Prideclaw Pelt
-    .mob Prideclaw::251245
+    .train 2366,3
+    .isQuestComplete 97968
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Halassa Fernbreeze|r
+    .goto 2521,42.97,43.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r
+    .turnin 97968 >>Turn in Camping 101: Herbalism
+    .target Halassa Fernbreeze::257021
 step
-    >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
-    .complete 92553,2 --8/8 Strider Meat
-    .complete 92553,1 --3/3 Small Egg
-    .mob Galestrider::251661
+    .train 7411,3
+    .isQuestComplete 98286
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nasalanna Windsinger|r
+    .goto 2521,43.25,43.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r
+    .turnin 98286 >>Turn in Camping 101: Enchanting
+    .target Nasalanna Windsinger::257020
 step
-    #label PrideclawPeltsA
-    >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
-    .complete 92515,1 --10/10 Prideclaw Pelt
-    .mob Prideclaw::251245
+    .train 8613,3
+    .isQuestComplete 97971
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mendalass Tattermend|r
+    .goto 2521,43.3,43.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mendalass Tattermend::263664|r
+    .turnin 97971 >>Turn in Camping 101: Skinning
+    .target Mendalass Tattermend::257024
 step
     -- .isOnQuest
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Zerril Softbreeze|r\nDon't sell meat&eggs
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zerril Softbreeze|r\n Don't sell Strider meat &eggs
     .goto 2521,43.851,43.848
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r and buy 5 |T134059:0|t[Mild Spices]
     .vendor >>Vendor Trash
+    .collect 2678,5
     .skipgossipid 137550
     .target Zerril Softbreeze::251905
 step
@@ -1303,6 +1312,36 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
     .turnin 92553 >>Turn in Restocking the Larders
     .target Zerril Softbreeze::251905
+step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zerril Softbreeze|r
+    .goto 2521,43.851,43.848
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
+    .turnin 96646 >>Turn in Camping 101: Cooking
+    .target Zerril Softbreeze::251905
+step
+    .isOnQuest 92553
+    .itemcount 1971,<3
+    #arrowtext Craft Herb Baked Egg \ Keep 3 Small Eggs 
+    .goto 2521,43.86,43.85
+    >>Craft |T132834:0|t[Herb Baked Egg] |cRXP_WARN_but keep at least 3 for the quest, you'll need them later|r
+    *|cRXP_WARN_Any buff food grants 5% increased experience from kills for 15 minutes|r.
+    .collect 6888,1
+    --here insert macro
+step
+    .isQuestTurnedIn 92553
+    .itemcount 1971,<1
+    .goto 2521,43.86,43.85
+    >>Craft as many |T132834:0|t[Herb Baked Eggs] as you can.
+    *|cRXP_WARN_Any buff food grants 5% increased experience from kills for 15 minutes|r.
+    .collect 6888,1
+    --here insert macro
+step
+    .isQuestComplete 97963
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nyassa Swiftdraught|r
+    .goto 2521,43.7,43.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyassa Swiftdraught::257019|r
+    .turnin 97963 >>Turn in Camping 101: Alchemy
+    .target Nyassa Swiftdraught::257019
 step << Hunter
     .goto 2521,44.790,44.168
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Tinderforged::257421|r
@@ -1319,11 +1358,39 @@ step
     .target Taleen Shimmerthread::251991
     .turnin 93951 >>Turn in A Little Beauty
 step
+    .isQuestComplete 97973
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Taleen Shimmerthread|r
+    .goto 2521,44.88,44.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taleen Shimmerthread::251991|r
+    .turnin 97973 >>Turn in Camping 101: Tailoring
+    .target Taleen Shimmerthread::251991
+step
+    .isQuestComplete 97964
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Aedi Thriceforged|r
+    .goto 2521,44.89,44.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aedi Thriceforged::251913|r
+    .turnin 97964 >>Turn in Camping 101: Blacksmithing
+    .target Aedi Thriceforged::251913
+step
+    .isQuestComplete 97970
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Messana Crestwind|r
+    .goto 2521,44.77,44.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Messana Crestwind::257022|r
+    .turnin 97970 >>Turn in Camping 101: Mining
+    .target Messana Crestwind::257022
+step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Indari Sunseam|r
     .goto 2521,44.686,44.518
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Indari Sunseam::251993|r
     .target Indari Sunseam::251993
     .turnin 92515 >>Turn in The Problem With Prideclaws
+step
+    .isQuestComplete 97969
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Indari Sunseam|r
+    .goto 2521,44.69,44.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Indari Sunseam::251993|r
+    .turnin 97969 >>Turn in Camping 101: Leatherworking
+    .target Indari Sunseam::251993
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Teeri Wellwind|r
     .goto 2521,44.465,44.966
@@ -1331,6 +1398,14 @@ step
     .target Teeri Wellwind::251906
     .turnin 92516 >>Turn in Hippogryph Harrassment
     .turnin 93319 >>Turn in Pilfered Windstones
+-- step << Warrior
+--     .goto 2521,44.95,45.1
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corsan Earthrazer|r
+--     .train 3127 >> Train |T132269:0|t[Parry]
+--     .skipgossipid 136813
+--     .target Corsan Earthrazer
+--     .money <0.01
+--     .xp <6,1
 step
     .isOnQuest 93318
     .isQuestComplete 93318
@@ -1366,11 +1441,20 @@ step
     .target Sania Silverstream::251904
     .turnin 93036 >>Turn in Infiltrating the Cult
     .accept 92529 >>Accept Falaath Village
-
-    --todo 101 turnins
-    --class trainers
-    --to buy
-    --cooking quest update
+step
+    .goto 2521,44.831,45.515
+    .target Sania Silverstream::251904
+    .aura 1254832 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sania Silverstream::251904|r
+    .skipgossipid 135874
+step << Rogue
+    .goto 2521,43.15,43.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
+    .train 5277 >> Train |T136205:0|t[Evasion]
+    .train 6760 >> Train |T132292:0|t[Eviscerate]
+    .skipgossipid 136810
+    .target Miriaan Mistblade
+    .money <0.04
+    .xp <6,1
 step << Shaman
     #arrowtext Talk to\n|cRXP_FRIENDLY_Aarnor Galestrike|r
     .goto 2521,43.454,44.872
@@ -1382,6 +1466,23 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rathiril Sunlance::251903|r.
     .target Rathiril Sunlance::251903
     .turnin 94413 >>Turn in A Magical Affront
+step
+    .isQuestComplete 97967
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Fenn Fairweather|r
+    .goto 2521,45.03,48.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fenn Fairweather::251992|r
+    .turnin 97967 >>Turn in Camping 101: Fishing
+    .target Fenn Fairweather::251992
+-- step << Mage
+--     .goto 2521,45.1,45.87
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorii Brightwhisper|r.
+--     .train 143 >>Train |T135812:0|t[Fireball]
+--     .train 2136 >>Train |T135807:0|t[Fire Blast]
+--     .train 1296917 >>Train |T8188276:0|t[Comprehend Scroll]
+--     .skipgossipid 136807,1
+--     .target Dorii Brightwhisper
+--     .money <0.03
+--     .xp <8,1
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Missionary Jasaan|r
     .goto 2521,46.880,56.242
