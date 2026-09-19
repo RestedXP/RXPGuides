@@ -1359,6 +1359,10 @@ end
 
 
 function addon:OnInitialize()
+    local saveLocally = false
+    if RXPCData and not RXPData then
+        saveLocally = true
+    end
     local importGuidesDefault = {
         profile = {guides = {}, reports = {splits = {}}}
     }
@@ -1397,6 +1401,11 @@ function addon:OnInitialize()
     RXPCData.guideProgress = RXPCData.guideProgress or {}
     addon.CreateMetaDataTable()
     addon.settings:InitializeSettings()
+
+    if saveLocally then
+        local db = addon.settings.GetSettingsDB()
+        RXPCData.localDB = db
+    end
 
     -- Retail has enough helpers and massive UI differences
     if addon.gameVersion < 40000 then

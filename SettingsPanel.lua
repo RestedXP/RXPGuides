@@ -234,7 +234,7 @@ function addon.settings:InitializeDatabase()
         RXPData.defaultProfile = false
     end
 
-    settingsDB = LibStub("AceDB-3.0"):New("RXPSettings", RXPData.defaultProfile or settingsDBDefaults)
+    settingsDB = LibStub("AceDB-3.0"):New("RXPSettings", RXPData.defaultProfile or RXPCData.localDB or settingsDBDefaults)
 
     settingsDB.RegisterCallback(self, "OnProfileChanged", "RefreshProfile")
     settingsDB.RegisterCallback(self, "OnProfileCopied", "CopyProfile")
@@ -244,6 +244,10 @@ function addon.settings:InitializeDatabase()
     if addon.GetQuestDBDefaults then
         addon.GetQuestDBDefaults()
     end
+end
+
+addon.settings.GetSettingsDB = function()
+    return settingsDB:GetCurrentProfile()
 end
 
 function addon.settings:InitializeSettings()

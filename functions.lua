@@ -4488,7 +4488,7 @@ end
 function addon.GetSubZoneId(zone,x,y,ignoreOutput)
     local subzonemax = 1e6
     if gameVersion < 50000 then
-        subzonemax = 15325
+        subzonemax = 35325
     end
     local subzone = ""
     local zoneText = ""
