@@ -1681,7 +1681,7 @@ step
     .accept 93949 >>Accept Bugged
     .target Valennia Stormfist
 step
-    #completewith TheBrokenConstructA
+    #completewith LeavingValanaarA
     >>Kill |cRXP_ENEMY_Skyhopper|r.
     .complete 93949,1 --8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper
@@ -1788,13 +1788,14 @@ step
 step
     #arrowtext Follow the arrow
     .goto 2521,46.71,81.95
+    >>Follow the arrow.
     .complete 92679,1 --1/1 Find Aamelia Windfield
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Aamelia Windfield|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
     #loop
     .goto 2521,46.71,81.94,10,0
     .goto 2521,47.511,78.490,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
     .turnin 92679 >>Turn in Blood Tithe
     .turnin 92698 >>Turn in What Is My Purpose?
     .accept 92682 >>Accept Make Yourself Useful
@@ -1802,62 +1803,176 @@ step
     .accept 92683 >>Accept Flutterfly Dust
     .target Aamelia Windfield:252800
 step
-    #arrowtext Kill |cRXP_ENEMY_Bandits|r\nClick on |cRXP_LOOT_Ripe Stormapples|r
-    .goto 2521,46.31,79.63
+    #completewith RipBanditsA
+    >>Use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies|r
+    >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Flutterfly Dust|r.
+    .complete 92683,1 --5/5 Flutterfly Dust
+    .mob Flutterfly::251622
+step
+    #completewith RipBanditsA
+    >>Kill |cRXP_ENEMY_Ornery Galestrider|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
+    .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
+    .mob Ornery Galestrider::251707
+step
+    #label RipBanditsA
+    #arrowtext Kill |cRXP_ENEMY_Bandits|r|cRXP_WARN_(invisible)|r\nClick on |cRXP_LOOT_Ripe Stormapples|r
+    #loop
+    .goto 2521,46.164,78.043,30,0
+    .goto 2521,48.920,84.441,30,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_LOOT_Ripe Stormapples|r
     >>Kill |cRXP_ENEMY_Hungry Bandits|r.
     .complete 92682,1 --10/10 Ripe Stormapple
     .complete 92682,2 --5/5 Hungry Bandit slain
     .mob Hungry Bandit::252802
 step
-    .goto 2521,48.56,78.74
-    .accept 92698 >>Accept What Is My Purpose?
-step
-    #arrowtext Collect\n|cRXP_LOOT_Flutterfly Dust|r
-    .goto 2521,51.74,82.68
-    .complete 92683,1 --5/5 Flutterfly Dust
-step
-    #arrowtext Collect\n|cRXP_LOOT_Lowlands Galestrider Tenderloin|r
-    .goto 2521,50.31,83.18
+    #completewith next
+    --#arrowtext Kill |cRXP_ENEMY_Ornery Galestrider|r\nLoot for |T2066012:0|t[|cRXP_LOOT_Tenderloins|r]
+    >>Kill |cRXP_ENEMY_Ornery Galestrider|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
+    .mob Ornery Galestrider::251707
+step
+    #loop
+    .goto 2521,51.686,83.417,45,0
+    .goto 2521,50.017,77.659,35,0
+    .goto 2521,46.692,76.947,35,0
+    #arrowtext Use |T537768:0|t[Swatter]\non |cRXP_ENEMY_Flutterflies|r
+    >>Use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies|r
+    >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Flutterfly Dust|r.
+    .complete 92683,1 --5/5 Flutterfly Dust
+    .mob Flutterfly::251622
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Aamelia Windfield|r
-    .goto 2521,46.71,81.94
+    #loop
+    .goto 2521,47.511,78.490,10,0
+    .goto 2521,46.71,81.94,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
     .turnin 92682 >>Turn in Make Yourself Useful
     .turnin 92684 >>Turn in Ornery Ornery Galestriders
     .turnin 92698 >>Turn in What Is My Purpose?
     .turnin 92683 >>Turn in Flutterfly Dust
     .accept 92685 >>Accept The Hills Have Eyes
-    .target Aamelia Windfield
+    .target Aamelia Windfield:252800
+step << Horde
+    #completewith next
+    >>Kill |cRXP_ENEMY_Bandit Highwaymen|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
+    .complete 92685,1 --7/7 Blood-Stained Bandit Mask
+    .mob Bandit Highwayman::252820
+step << Horde
+    #loop
+    .goto 2521,44.970,73.377,35,0
+    .goto 2521,44.921,73.382,35,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Contruct Parts|r.
+    .complete 93737,4 --|1/1 Air Construct Core
 step
-    #arrowtext Collect\n|cRXP_LOOT_Blood-Stained Bandit Mask|r
-    .goto 2521,44.84,75.09
+    #loop
+    .goto 2521,45.615,72.361,35,0
+    .goto 2521,43.551,74.999,35,0
+    .goto 2521,45.760,78.419,35,0
+    #arrowtext Kill |cRXP_ENEMY_Bandit Highwaymen|r\nLoot for |T133693:0|t[|cRXP_LOOT_Bandit Masks|r].
+    >>Kill |cRXP_ENEMY_Bandit Highwaymen|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Aamelia Windfield|r
-    .goto 2521,46.70,81.94
+    #loop
+    .goto 2521,47.511,78.490,10,0
+    .goto 2521,46.71,81.94,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
     .turnin 92685 >>Turn in The Hills Have Eyes
     .accept 92693 >>Accept Standing Our Ground
+    .target Aamelia Windfield:252800
 step
+    .goto 2521,46.71,81.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield|r.
     .complete 92693,1 --1/1 Speak with Aamelia Windfield
+    .timer 75,Roleplay Duration
     .target Aamelia Windfield
     .skipgossipid 136302
 step
-    #arrowtext Follow |cRXP_FRIENDLY_Aamelia Windfield|r
+    #arrowtext Follow |cRXP_FRIENDLY_Aamelia Windfield|r\nWait for the roleplay
     .goto 2521,47.51,78.44
+    >>Follow |cRXP_FRIENDLY_Aamelia Windfield|r. Wait for the roleplay.
     .complete 92693,2 --1/1 Follow Aamelia and make your final stand
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Aamelia Windfield|r
-    .goto 2521,47.51,78.49
+    #loop
+    .goto 2521,47.511,78.490,10,0
+    .goto 2521,46.71,81.94,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
     .turnin 92693 >>Turn in Standing Our Ground
     .accept 92703 >>Accept Deliver the News
+    .target Aamelia Windfield:252800
+step
+    #completewith next
+    .hs >>Hearth to Valanaar
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Alvarion Windfield|r
     .goto 2521,62.11,73.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alvarion Windfield|r.
     .turnin 92703 >>Turn in Deliver the News
     .target Alvarion Windfield
+step
+    #loop
+    .goto 2521,65.577,76.650,25,0
+    .goto 2521,64.174,78.274,25,0
+    .goto 2521,62.345,76.662,25,0
+    .goto 2521,60.762,73.034,25,0
+    .goto 2521,58.001,75.831,25,0
+    >>Kill |cRXP_ENEMY_Skyhopper|r.
+    .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
+    .mob Skyhopper
+step << Hunter
+    .goto 2521,59.571,72.639
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
+    .train 13165 >>Train |T136076:0|t[Aspect of the Hawk]
+    .train 13549 >>Train |T132204:0|t[Serpent Sting (Rank 2)]
+    .target Quel'ana Quickgale::252389
+step << Hunter
+    .goto 2521,59.572,72.639
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
+    .target Quel'ana Quickgale::252389
+    .accept 94978 >>Accept Taming the Beast
+step << Hunter
+    .goto 2521,59.571,72.639
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
+    .turnin 94978 >>Turn in Taming the Beast
+    .accept 94979 >>Accept Taming the Beast
+    .target Quel'ana Quickgale::252389
+step << Hunter
+    #loop
+    .goto 2521,60.905,69.414,35,0
+    .goto 2521,58.339,68.476,35,0
+    .goto 2521,53.799,72.161,35,0
+    >>Use the |T132164:0|t[Taming Rod] on an |cRXP_ENEMY_Ornery Galestrider|r.
+    .complete 94979,1 --Tame a Ornery Galestrider
+    .mob Ornery Galestrider
+step << Hunter
+    .goto 2521,59.571,72.639
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
+    .turnin 94979 >>Turn in Taming the Beast
+    .accept 94013 >>Accept Taming the Beast
+    .target Quel'ana Quickgale::252389
+step << Hunter
+    #loop
+    .goto 2521,61.944,68.828,35,0
+    .goto 2521,59.516,64.846,35,0
+    .goto 2521,57.041,67.729,35,0
+    .goto 2521,54.322,75.080,35,0
+    .goto 2521,51.925,80.458,35,0
+    .goto 2521,52.920,81.509,35,0
+    >>Use the |T132164:0|t[Taming Rod] on a |cRXP_ENEMY_Vuldren|r.
+    .complete 94013,1 --Tame a Vuldren
+    .mob Vuldren::250874
+step << Hunter
+    .goto 2521,59.571,72.639
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
+    .turnin 94013 >>Turn in Taming the Beast
+    .accept 94050 >>Accept Training the Beast
+    .target Quel'ana Quickgale::252389
+step << Hunter
+    .goto 2521,59.605,72.527
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'dora Quickgale::254411|r.
+    .turnin 94050 >>Turn in Training the Beast
+    .target Quel'dora Quickgale::254411
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Belann Windwood|r
     .goto 2521,62.90,77.45
