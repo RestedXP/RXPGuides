@@ -574,7 +574,7 @@ step
     .goto 2521,35.88,23.79,30,0
     .goto 2521,35.71,25.7,30,0
     .deathskip >>Die to mobs and ressurect at the graveyard
-    .subzoneskip Thendal Grove
+    .subzoneskip 16673,1
 step
     #requires Turn in Foul Matriarch
     #arrowtext Talk to\n|cRXP_FRIENDLY_Aetheen of the Gales|r
@@ -1442,6 +1442,7 @@ step
     .turnin 93036 >>Turn in Infiltrating the Cult
     .accept 92529 >>Accept Falaath Village
 step
+    .subzoneskip 16624,1
     .goto 2521,44.831,45.515
     .target Sania Silverstream::251904
     .aura 1254832 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sania Silverstream::251904|r
