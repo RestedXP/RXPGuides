@@ -582,9 +582,9 @@ step
     .goto 2521,42.76,23.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aetheen of the Gales|r.
     .turnin 92470 >>Turn in Foul Matriarch
-    .target Aetheen of the Gales
     .accept 92472 >>Accept The Next Step
     .accept 96638 >>Accept The Adventurer
+    .target Aetheen of the Gales
 step
     #completewith next
     #label Aggressive Encroachment2
@@ -1161,11 +1161,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind::263664|r
     .accept 97969 >>Accept Camping 101: Leatherworking
     .target Raan Wildwind::263664
-
-
-
-
-
 step << Horde
     .goto 2521,43.518,44.788
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illaya Amberwind::251902|r
@@ -1414,30 +1409,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danarii Bellowveil|r.
     .accept 92551 >>Accept Stolen Supplies
     .target Danarii Bellowveil
--- step
---     #arrowtext Raise your mining skill to 20
---     .goto 2521,44.79,44.46
---     .complete 97970,1 --Raise your mining skill to 20
-step
-    #arrowtext Kill\n|cRXP_ENEMY_Al'Aketh Stormcaller|r
-    .goto 2521,48.12,56.27
-    >>Kill |cRXP_ENEMY_Al'Aketh Stormcaller|r.
-    .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
-    .mob Al'Aketh Stormcaller
-step
-    #arrowtext Kill\n|cRXP_ENEMY_Living Lightning|r
-    .goto 2521,49.24,57.58
-    >>Kill |cRXP_ENEMY_Living Lightning|r.
-    .complete 92550,2 --4/4 Living Lightning slain
-    .mob Living Lightning
-step
-    #arrowtext Kill and loot\n|cRXP_ENEMY_Commander Cyclas|r
-    .goto 2521,50.29,56.95
-    .complete 92550,3 --1/1 Commander Cyclas's Head
-step
-    #arrowtext Collect\n|cRXP_LOOT_Stolen Shen'dar Supplies|r
-    .goto 2521,49.55,54.23
-    .complete 92551,1 --10/10 Stolen Shen'dar Supplies
 step
     #arrowtext Talk to |cRXP_FRIENDLY_Piecekeeper Vaniel|r
     .goto 2521,42.32,62.03
@@ -1449,11 +1420,8 @@ step
     .goto 2521,42.33,62.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piecekeeper Vaniel::252155|r.
     .turnin 93926 >>Turn in The Western Watch
-    .target Piecekeeper Vaniel::252155
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Peacekeeper Vaaniel|r
-    .goto 2521,42.33,62.01
     .accept 93927 >>Accept A Last Request
+    .target Piecekeeper Vaniel::252155
 step
     #arrowtext Click on the |cRXP_PICK_Note|r
     .goto 2521,42.38,62.07
@@ -1476,6 +1444,64 @@ step
     .complete 93927,2 --1/1 Skypriest Aanders slain
     .mob Skypriest Aanders
 step
+    #completewith CommanderCyclasHeadA
+    >>Kill |cRXP_ENEMY_Living Lightning|r. 
+    .complete 92550,2 --4/4 Living Lightning slain
+    .mob Living Lightning
+step
+    #completewith CommanderCyclasHeadA
+    >>Kill |cRXP_ENEMY_Al'Aketh Stormcaller|r. Loot them for the |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Supplies|r].
+    >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Supply Caches|r.
+    .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
+    .complete 92551,1 --10/10 Stolen Shen'dar Supplies
+    .mob Al'Aketh Stormcaller
+step
+    #label CommanderCyclasHeadA
+    #arrowtext Kill |cRXP_ENEMY_Commander Cyclas|r\nLoot |T134161:0|t[|cRXP_LOOT_Commander Cyclas's Head|r]
+    .goto 2521,50.29,56.95
+    >>Kill |cRXP_ENEMY_Commander Cyclas|r. Loot him for |T134161:0|t[|cRXP_LOOT_Commander Cyclas's Head|r]. 
+    .complete 92550,3 --1/1 Commander Cyclas's Head
+
+-- Maybe run between the two houses because of the supply caches? Drop chance seems to be pretty low sometimes
+step
+    #completewith LivingLightningA
+    #hidewindow
+    #loop
+    .goto 2521,49.765,57.237,15,0
+    .goto 2521,49.877,56.539,25,0
+    .goto 2521,49.629,54.728,25,0
+    .goto 2521,48.823,54.315,15,0
+    .goto 2521,49.058,53.545,15,0
+    .goto 2521,47.641,54.140,30,0
+    +1
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Living Lightning|r. 
+    .complete 92550,2 --4/4 Living Lightning slain
+    .mob Living Lightning
+step
+    >>Kill |cRXP_ENEMY_Al'Aketh Stormcaller|r. Loot them for the |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Supplies|r].
+    >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Supply Caches|r.
+    .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
+    .complete 92551,1 --10/10 Stolen Shen'dar Supplies
+    .mob Al'Aketh Stormcaller
+step
+    #label LivingLightningA
+    >>Kill |cRXP_ENEMY_Living Lightning|r. 
+    .complete 92550,2 --4/4 Living Lightning slain
+    .mob Living Lightning
+step
+    #completewith next
+    #label StolenSuppliesA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danarii Bellowveil|r.
+    .turnin 92551 >>Turn in Stolen Supplies
+    .target Danarii Bellowveil
+step
+    #arrowtext Follow the way\nup the mountain
+    #completewith StolenSuppliesA
+    .goto 2521,44.111,45.843,10 >>Follow the way up the mountain.
+step
+    #requires StolenSuppliesA
     #arrowtext Talk to\n|cRXP_FRIENDLY_Danarii Bellowveil|r
     .goto 2521,45.24,45.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danarii Bellowveil|r.
@@ -1487,135 +1513,201 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
     .turnin 92550 >>Turn in Havoc in the Highlands
     .turnin 93927 >>Turn in A Last Request
-    .accept 92701 >>Accept To Valanaar
+    .accept 92701 >>Accept To Valanaar << Alliance
+    .accept 92579 >>Accept To Valanaar << Horde
     .accept 93948 >>Accept Deliver the Signet
     .target Constable Aonda
 step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Valennia Stormfist|r
-    .goto 2521,66.18,76.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist|r.
-    .turnin 92701 >>Turn in To Valanaar
-    .accept 93949 >>Accept Bugged
-    .accept 92699 >>Accept The Supreme Magister
-    .target Valennia Stormfist
+    .goto 2521,60.640,72.664
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyalah Brightfire::257006|r.
+    .target Nyalah Brightfire::257006
+    .accept 93317 >>Accept Crab Season
 step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
+    .target Donaal Downbreeze::255940
+    .bindlocation 16638
+    .goto 2521,62.180,72.616
+    .home >>Set your Hearthstone to Valanaar
+step
+    .goto 2521,62.096,73.339
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alvarion Windfield::252448|r.
+    .target Alvarion Windfield::252448
+    .accept 92679 >>Accept Blood Tithe
+step
+    .goto 2521,63.973,75.095
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
+    .target Lotheluum Starbreeze::252359
+    .accept 94484 >>Accept Unnerving Silence
+step
+    .goto 2521,65.956,74.309
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ealaane Nimbuswalker::259012|r.
+    .target Ealaane Nimbuswalker::259012
+    .accept 94896 >>Accept Aid For The Refugees
+    .accept 94897 >>Accept The Fate of a Loved One
+step
+    #completewith next
+    #label DeliverTheSignetA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talaanis Shadowsong|r.
+    .turnin 93948 >>Turn in Deliver the Signet
+    .target Talaanis Shadowsong
+step
+    #completewith DeliverTheSignetA
+    #arrowtext Climb the tower
+    .goto 2521,65.749,76.287,10,0
+    .goto 2521,66.479,76.715,8,0
+    .goto 2521,66.488,76.458,8,0
+    .goto 2521,66.389,77.095,8,0
+    .goto 2521,65.962,76.525,8,0
+    .goto 2521,66.285,76.160,8,0
+    .goto 2521,66.423,76.660,8 >>Climb the tower
+step
+    #requires DeliverTheSignetA
     #arrowtext Talk to\n|cRXP_FRIENDLY_Talaanis Shadowsong|r
     .goto 2521,66.17,76.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talaanis Shadowsong|r.
     .turnin 93948 >>Turn in Deliver the Signet
     .target Talaanis Shadowsong
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Valennia Stormfist|r
+    .goto 2521,66.18,76.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist|r.
+    .turnin 92701 >>Turn in To Valanaar << Alliance
+    .turnin 92579 >>Turn in To Valanaar << Horde
+
+    .accept 92699 >>Accept The Supreme Magister << Alliance
+    .accept 92700 >>Accept The Grand Skyseer << Horde
+
+    .accept 93949 >>Accept Bugged
+    .target Valennia Stormfist
+step
+    #completewith TheBrokenConstructA
+    >>Kill |cRXP_ENEMY_Skyhopper|r.
+    .complete 93949,1 --8/8 Enchanted Skyhopper Exterminated
+    .mob Skyhopper
+step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Elaadrin Evengale|r
     .goto 2521,66.63,79.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale|r.
     .turnin 92699 >>Turn in The Supreme Magister
     .accept 92709 >>Accept A Grand Adventure
     .target Elaadrin Evengale
-step
+    tep << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Dondallion Whisperwind|r
     .goto 2521,66.26,79.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dondallion Whisperwind|r.
     .accept 92727 >>Accept The Missing Scholar
     .target Dondallion Whisperwind
-step
+step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Iaadaria Bitterwind|r
     .goto 2521,66.35,79.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iaadaria Bitterwind|r.
     .accept 92741 >>Accept Unwelcome Visitors
     .target Iaadaria Bitterwind
-step
+step << Alliance
     #arrowtext Listen to\n|cRXP_FRIENDLY_Elaadrin Evengale|r
     .goto 2521,64.17,79.43
     .complete 92709,1 --1/1 Listen to Elaadrin
-step
+step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Elaadrin Evengale|r
     .goto 2521,66.63,79.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale|r.
     .turnin 92709 >>Turn in A Grand Adventure
     .target Elaadrin Evengale
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Ealaane Nimbuswalker|r
-    .goto 2521,65.96,74.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ealaane Nimbuswalker|r.
-    .accept 94896 >>Accept Aid For The Refugees
-    .accept 94897 >>Accept The Fate of a Loved One
-    .target Ealaane Nimbuswalker
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Lotheluum Starbreeze|r
-    .goto 2521,63.98,75.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze|r.
-    .accept 94484 >>Accept Unnerving Silence
-    .target Lotheluum Starbreeze
-step
-    #arrowtext Exterminate\n|cRXP_ENEMY_Enchanted Skyhopper|r
-    .goto 2521,59.65,74.68
-    .complete 93949,1 --8/8 Enchanted Skyhopper Exterminated
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Nyalah Brightfire|r
-    .goto 2521,60.64,72.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyalah Brightfire|r.
-    .accept 93317 >>Accept Crab Season
-    .target Nyalah Brightfire
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Alvarion Windfield|r
-    .goto 2521,62.10,73.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alvarion Windfield|r.
-    .accept 92679 >>Accept Blood Tithe
-    .target Alvarion Windfield
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Valennia Stormfist|r
-    .goto 2521,66.18,76.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist|r.
-    .turnin 93949 >>Turn in Bugged
-    .target Valennia Stormfist
-step
+step << Hunter
+    .goto 2521,63.027,77.807
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Antelariaa Cloudgaze::252390|r.
+    >>|cRXP_BUY_Buy|r 600 |T132382:0|t[Rough Arrows]
+    .collect 2512,600,6394,1 << Hunter --Rough Arrow (600)
+    .target Antelariaa Cloudgaze::252390
+step << Horde
+    .goto 2521,61.491,76.893,15,0
+    .goto 2521,59.349,77.930,25,0
+    .goto 2521,59.154,79.783
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayessa Dawnsinger::251968|r.
+    .turnin 92700 >>Turn in The Grand Skyseer
+    .accept 92708 >>Accept A Grand Adventure
+    .accept 93735 >>Accept The Broken Construct
+    .target Ayessa Dawnsinger::251968
+step << Horde
+    .goto 2521,58.128,78.307
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Endaria Mistgaze::254344|r.
+    .accept 93736 >>Accept Unwelcome Spirits
+    .target Endaria Mistgaze::254344
+step << Horde
+    .goto 2521,59.265,79.977
+    >>Wait for the roleplay. -- Probably skipping this quest.
+    .complete 92708,1 --|1/1 Listen to Ayessa
+step << Horde
+    .goto 2521,59.150,79.790
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayessa Dawnsinger::251968|r.
+    .target Ayessa Dawnsinger::251968
+    .turnin 92708 >>Turn in A Grand Adventure
+step << Horde
+    #label LeavingValanaarA
+    .goto 2521,59.064,72.989
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Riaani Nightwind::256083|r.
+    .target Riaani Nightwind::256083
+    .turnin 93735 >>Turn in The Broken Construct
+    .accept 93737 >>Accept The Broken Construct
+    .complete 93737,1 --|1/1 Listen to what Riaani Nightwind has to say
+step << Alliance
     #arrowtext Click on\n|cRXP_FRIENDLY_Bloodstained Satchel|r
     .goto 2521,53.33,72.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bloodstained Satchel|r.
     .turnin 92727 >>Turn in The Missing Scholar
     .accept 92849 >>Accept The Missing Scholar
     .target Bloodstained Satchel
-step
-    #arrowtext Find\n|cRXP_FRIENDLY_Fillion Flamebreeze|r
+step << Alliance
+    #label LeavingValanaarA
+    #arrowtext Follow the arrow
     .goto 2521,50.67,65.38
     .complete 92849,1 --1/1 Find Fillion Flamebreeze
     .skipgossipid 136430
-step
+step << Alliance
     #arrowtext Carry |cRXP_FRIENDLY_Fillion Flamebreeze|r\nto safety
     .goto 2521,52.05,69.40
     .complete 92849,2 --1/1 Carry Fillion Flamebreeze to safety while avoiding enemies
-step
+step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Fillion Flamebreeze|r
     .goto 2521,52.07,69.40
     .turnin 92849 >>Turn in The Missing Scholar
     .accept 92850 >>Accept The Missing Scholar
     .target Fillion Flamebreeze
-step
-    #arrowtext Kill and loot\n|cRXP_ENEMY_Shriekling Matriarch|r
+step << Alliance
+    #arrowtext Kill |cRXP_ENEMY_Shriekling Matriarch|r\nLoot for |cRXP_LOOT_Shriekling Matriarch's Head|r
     .goto 2521,52.02,65.51
     .complete 92850,1 --1/1 Shriekling Matriarch's Head
 step
-    #arrowtext Find\n|cRXP_FRIENDLY_Aamelia Windfield|r
+    #loop
+    .goto 2521,49.085,78.358,12,0
+    .goto 2521,48.621,78.385,12,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfunctioning Cyclone Construct::250929|r.
+    .accept 92698 >>Accept What Is My Purpose?
+    .target Malfunctioning Cyclone Construct::250929
+step
+    #arrowtext Follow the arrow
     .goto 2521,46.71,81.95
     .complete 92679,1 --1/1 Find Aamelia Windfield
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Aamelia Windfield|r
-    .goto 2521,46.71,81.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
+    #loop
+    .goto 2521,46.71,81.94,10,0
+    .goto 2521,47.511,78.490,10,0
     .turnin 92679 >>Turn in Blood Tithe
+    .turnin 92698 >>Turn in What Is My Purpose?
     .accept 92682 >>Accept Make Yourself Useful
     .accept 92684 >>Accept Ornery Ornery Galestriders
     .accept 92683 >>Accept Flutterfly Dust
-    .target Aamelia Windfield
+    .target Aamelia Windfield:252800
 step
-    #arrowtext Kill\n|cRXP_ENEMY_Hungry Bandit|r
-    .goto 2521,46.71,78.42
-    >>Kill |cRXP_ENEMY_Hungry Bandit|r.
-    .complete 92682,2 --5/5 Hungry Bandit slain
-    .mob Hungry Bandit
-step
-    #arrowtext Collect\n|cRXP_LOOT_Ripe Stormapple|r
+    #arrowtext Kill |cRXP_ENEMY_Bandits|r\nClick on |cRXP_LOOT_Ripe Stormapples|r
     .goto 2521,46.31,79.63
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_LOOT_Ripe Stormapples|r
+    >>Kill |cRXP_ENEMY_Hungry Bandits|r.
     .complete 92682,1 --10/10 Ripe Stormapple
+    .complete 92682,2 --5/5 Hungry Bandit slain
+    .mob Hungry Bandit::252802
 step
     .goto 2521,48.56,78.74
     .accept 92698 >>Accept What Is My Purpose?
