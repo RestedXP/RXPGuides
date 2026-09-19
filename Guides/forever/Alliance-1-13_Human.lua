@@ -367,7 +367,21 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
     .accept 91743 >> Accept Rascally Rodents
     .target Brother Paxton
-
+step
+    #optional
+    .isQuestComplete 91743
+    .goto 1429/0,-186.12,-8874.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
+    .turnin 91743 >> Turn in Rascally Rodents
+    .accept 91745 >>Accept Mining Consultant
+    .target Brother Paxton
+step
+    #optional
+    .isQuestTurnedIn 91743
+    .goto 1429/0,-186.12,-8874.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
+    .accept 91745 >>Accept Mining Consultant
+    .target Brother Paxton
 step << Mage
     #optional
     #completewith next
@@ -401,7 +415,6 @@ step << Priest
 step << Warrior/Paladin
     #optional
     #completewith next
-    .goto 1429/0,-160.09,-8906.15,15,0
     .goto 1429/0,-186.12,-8907.08,15 >> Travel toward |cRXP_FRIENDLY_Llane Beshere|r inside downstairs << Warrior
     .goto 1429/0,-186.12,-8907.08,15 >> Travel toward |cRXP_FRIENDLY_Brother Sammuel|r inside downstairs << Paladin
 step << Warrior
@@ -496,10 +509,32 @@ step << Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.0
 step
     #optional
+    .isOnQuest 91745
+    .goto 1429/0,-102.300,-8684.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kelsey Fargo::247226|r
+    .target Kelsey Fargo::247226
+    .turnin 91745 >>Turn in Mining Consultant
+    .accept 91752 >>Accept The Big Picture
+step
+    #optional
+    .isQuestTurnedIn 91745
+    .goto 1429/0,-102.300,-8684.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kelsey Fargo::247226|r
+    .target Kelsey Fargo::247226
+    .accept 91752 >>Accept The Big Picture
+step
+    #optional
     #completewith KoboldLaborers
     .goto 1429/0,-117.74,-8681.87,20 >> Enter the Echo Ridge Mine
 step
-    #completewith next
+    #completewith KoboldLaborers
+    .isOnQuest 91752
+    .goto 1429/0,-172.700,-8587.601
+    >>Kill |cRXP_ENEMY_Shinyfinder Narf|r. Loot him for the |cRXP_LOOT_Sack of "Picture" Books|r
+    .complete 91752,1 --|1/1 Sack of "Picture" Books
+    .target Shinyfinder Narf
+step
+    #completewith KoboldLaborers
     .isOnQuest 91743
     >>Kill |cRXP_ENEMY_Kobold Laborers|r and |cRXP_ENEMY_Kobold Workers|r. Loot them for their |cRXP_LOOT_Stolen Books|r
     .complete 91743,1 -- Stolen Book (8)
@@ -544,6 +579,12 @@ step
     .complete 91743,1 -- Stolen Book (8)
     .mob Kobold Laborer
     .mob Kobold Worker
+step
+    .isOnQuest 91752
+    .goto 1429/0,-172.700,-8587.601
+    >>Kill |cRXP_ENEMY_Shinyfinder Narf|r. Loot him for the |cRXP_LOOT_Sack of "Picture" Books|r
+    .complete 91752,1 --|1/1 Sack of "Picture" Books
+    .target Shinyfinder Narf
 
 step
     .goto 1429/0,-224.02,-8850.30
@@ -612,6 +653,21 @@ step
     .turnin 6,1 >> Turn in Bounty on Garrick Padfoot << !Warrior !Rogue !Paladin
     .target Deputy Willem
 step
+    #optional
+    .goto 1429/0,-162.62,-8902.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r inside
+    .turnin 91752 >>Turn in The Big Picture
+    .accept 91758 >>Accept Follow That Kobold!
+    .target Marshal McBride
+    .isOnQuest 91752
+step
+    #optional
+    .goto 1429/0,-162.62,-8902.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r inside
+    .accept 91758 >>Accept Follow That Kobold!
+    .target Marshal McBride
+    .isQuestTurnedIn 91752
+step
     #label RestandR
     .goto 1429/0,-162.62,-8902.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r inside
@@ -621,15 +677,21 @@ step
     .accept 54 >> Accept Report to Goldshire
     .accept 96627 >> Accept The Adventurer
     .target Marshal McBride
-
 step
     #optional
     .isQuestComplete 91743
     .goto 1429/0,-186.12,-8874.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
     .turnin 91743 >> Turn in Rascally Rodents
+    .accept 91745 >>Accept Mining Consultant
     .target Brother Paxton
-
+step
+    #optional
+    .isQuestTurnedIn 91743
+    .goto 1429/0,-186.12,-8874.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
+    .accept 91745 >>Accept Mining Consultant
+    .target Brother Paxton
 step << Priest/Mage
     #optional
     #completewith next
@@ -646,6 +708,66 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r inside
     .accept 5623 >> Accept In Favor of the Light
     .target Priestess Anetta
+step
+    #optional
+    .isOnQuest 91745
+    .goto 1429/0,-102.300,-8684.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kelsey Fargo::247226|r
+    .target Kelsey Fargo::247226
+    .turnin 91745 >>Turn in Mining Consultant
+    .accept 91752 >>Accept The Big Picture
+step
+    #optional
+    .isQuestTurnedIn 91745
+    .goto 1429/0,-102.300,-8684.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kelsey Fargo::247226|r
+    .target Kelsey Fargo::247226
+    .accept 91752 >>Accept The Big Picture
+step
+    #optional
+    #completewith KoboldLaborers
+    .goto 1429/0,-117.74,-8681.87,20 >> Enter the Echo Ridge Mine
+step
+    .isOnQuest 91752
+    .goto 1429/0,-172.700,-8587.601
+    >>Kill |cRXP_ENEMY_Shinyfinder Narf|r. Loot him for the |cRXP_LOOT_Sack of "Picture" Books|r
+    .complete 91752,1 --|1/1 Sack of "Picture" Books
+    .target Shinyfinder Narf
+step
+    #optional
+    .goto 1429/0,-162.62,-8902.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r inside
+    .turnin 91752 >>Turn in The Big Picture
+    .accept 91758 >>Accept Follow That Kobold!
+    .target Marshal McBride
+    .isOnQuest 91752
+step
+    #optional
+    .goto 1429/0,-162.62,-8902.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r inside
+    .accept 91758 >>Accept Follow That Kobold!
+    .target Marshal McBride
+    .isQuestTurnedIn 91752
+step
+    .isOnQuest 91758
+    .goto 1429/0,-242.000,-8884.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tordrin Sternblade::248415|r
+    .target Tordrin Sternblade::248415
+    .turnin 91758 >>Turn in Follow That Kobold!
+    .accept 91772 >>Accept Shhh! We're Hunting Kobolds
+step
+    .isQuestTurnedIn 91758
+    .goto 1429/0,-242.000,-8884.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tordrin Sternblade::248415|r
+    .target Tordrin Sternblade::248415
+    .accept 91772 >>Accept Shhh! We're Hunting Kobolds
+step
+    #completewith RnR
+    .isOnQuest 91772
+    .goto 1429/0,-46.00,-9044.61,5 >>Click the green |cRXP_PICK_Kobold Tracks|r on the ground as you travel toward Goldshire
+    .use 247970 >> |cRXP_WARN_Use the|r |T132995:0|t[Kobold Tracking Kit] |cRXP_WARN_to track them on your minimap|r
+    .complete 91772,1 -- Followed Kobold Tracks 6/6
+    .disablecheckbox
 step
     #label RnR
     .goto 1429/0,-46.00,-9044.61
@@ -677,6 +799,12 @@ step << skip -- removing for now for camp fire buff/questline
     .target Spirit Healer
     .subzoneskip 87
 
+step
+    #completewith CampQuest
+    .isOnQuest 91772
+    >>Click the green |cRXP_PICK_Kobold Tracks|r on the ground as you travel toward Goldshire
+    .use 247970 >> |cRXP_WARN_Use the|r |T132995:0|t[Kobold Tracking Kit] |cRXP_WARN_to track them on your minimap|r
+    .complete 91772,1 -- Followed Kobold Tracks 6/6
 step
     --#optional
     #completewith CampQuest
@@ -744,7 +872,16 @@ step
     .target Sam Sarsaparilla
 
 
-
+step
+    .isOnQuest 91772
+    #loop
+    .goto 1429/0,-77.600,-9140.900,55,0
+    .goto 1429/0,-44.100,-9246.500,55,0
+    .goto 1429/0,8.800,-9327.900,55,0
+    .goto 1429/0,66.000,-9374.000,55,0
+    >>Click the green |cRXP_PICK_Kobold Tracks|r on the ground
+    .use 247970 >> |cRXP_WARN_Use the|r |T132995:0|t[Kobold Tracking Kit] |cRXP_WARN_to track them on your minimap|r
+    .complete 91772,1 -- Followed Kobold Tracks 6/6
 
 step << Warrior/Rogue/Paladin
     .goto 1429/0,87.87,-9456.65
@@ -807,6 +944,23 @@ step << Mage/Priest/Warlock
     .vendor >> Vendor Trash
     .target Andrew Krighton
 --  .money >1.0
+step
+    .isOnQuest 91772
+    .goto 1429/0,74.02,-9465.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .turnin 54 >> Turn in Report to Goldshire
+    .turnin 91772 >>Turn in Shhh! We're Hunting Kobolds
+    .accept 62 >> Accept The Fargodeep Mine
+    .accept 91775 >>Accept Book Return
+    .target Marshal Dughan
+step
+    .isQuestTurnedIn 91772
+    .goto 1429/0,74.02,-9465.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .turnin 54 >> Turn in Report to Goldshire
+    .accept 62 >> Accept The Fargodeep Mine
+    .accept 91775 >>Accept Book Return
+    .target Marshal Dughan
 step
     #label Goldshire
     .goto 1429/0,74.02,-9465.52
@@ -1033,12 +1187,24 @@ step << Warrior/Paladin/Rogue
     .aura 3112 << Paladin
     .train 2018,3
 step
+    .isNotOnQuest 91775
     #optional
     #completewith NecklaceStart
     .goto 1429/0,223.09,-9916.240,0
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Kobold Candles|r and |cRXP_LOOT_Gold Dust|r
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
+    .mob Kobold Tunneler
+    .mob Kobold Miner
+step
+    .isOnQuest 91775
+    #optional
+    #completewith NecklaceStart
+    .goto 1429/0,223.09,-9916.240,0
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Kobold Candles|r, |cRXP_LOOT_Gold Dust|r and |cRXP_LOOT_Lost Books|r
+    .complete 60,1 --Kobold Candle (8)
+    .complete 47,1 --Gold Dust (10)
+    .complete 91775,2 -- Lost Book (6)
     .mob Kobold Tunneler
     .mob Kobold Miner
 step
@@ -1106,12 +1272,24 @@ step << Warrior/Paladin/Rogue
     .aura 3112 << Paladin
     .train 2018,3
 step
+    .isNotOnQuest 91775
     #optional
     #completewith Lovers
     .goto 1429/0,223.09,-9916.240,0
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Kobold Candles|r and |cRXP_LOOT_Gold Dust|r
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
+    .mob Kobold Tunneler
+    .mob Kobold Miner
+step
+    .isOnQuest 91775
+    #optional
+    #completewith Lovers
+    .goto 1429/0,223.09,-9916.240,0
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Kobold Candles|r, |cRXP_LOOT_Gold Dust|r and |cRXP_LOOT_Lost Books|r
+    .complete 60,1 --Kobold Candle (8)
+    .complete 47,1 --Gold Dust (10)
+    .complete 91775,2 -- Lost Book (6)
     .mob Kobold Tunneler
     .mob Kobold Miner
 step
@@ -1182,8 +1360,9 @@ step << Warrior/Paladin/Rogue
     .train 2018,3
     .subzoneskip 87 --Goldshire
 step
+    .isNotOnQuest 91775
     #sticky
-    #label KoboldEnd
+    #label KoboldEnd1
     #loop
     .goto 1429/0,223.09,-9916.240,0
     .waypoint 1429/0,176.93,-9857.68,35,0
@@ -1194,6 +1373,23 @@ step
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Kobold Candles|r and |cRXP_LOOT_Gold Dust|r
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
+    .mob Kobold Tunneler
+    .mob Kobold Miner
+step
+    .isOnQuest 91775
+    #sticky
+    #label KoboldEnd2
+    #loop
+    .goto 1429/0,223.09,-9916.240,0
+    .waypoint 1429/0,176.93,-9857.68,35,0
+    .waypoint 1429/0,176.24,-9902.12,35,0
+    .waypoint 1429/0,223.09,-9916.240,35,0
+    .waypoint 1429/0,259.54,-9865.09,35,0
+    .waypoint 1429/0,215.81,-9830.600,35,0
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Kobold Candles|r, |cRXP_LOOT_Gold Dust|r and |cRXP_LOOT_Lost Books|r
+    .complete 60,1 --Kobold Candle (8)
+    .complete 47,1 --Gold Dust (10)
+    .complete 91775,2 -- Lost Book (6)
     .mob Kobold Tunneler
     .mob Kobold Miner
 step
@@ -1214,13 +1410,23 @@ step
     >>|cRXP_WARN_Be careful as he usually pulls with the |cRXP_ENEMY_Kobold Miner|r next to him|r
     .complete 87,1 --Bernice's Necklace (1)
     .mob Goldtooth
+step
+    .isOnQuest 91775
+    .goto 1429/0,91.200,-9788.500
+    >>Kill |cRXP_ENEMY_Nimsy|r inside Fargodeep Mine. Loot him for the |cRXP_LOOT_Picture Book: Fun with Elementals|r
+    >>|cRXP_WARN_He will also summon a |cRXP_ENEMY_Rumbler|r add. Be careful if you're attempting to solo this. Skip this step if you are unable to kill him|r
+    .complete 91775,1 --|1/1 Picture Book: Fun with Elementals
+    .mob Nimsy
 step << Warrior
     #optional
     #completewith Exchange
     +|cRXP_WARN_Try to save a single|r |T134829:0|t[Minor Healing Potion] |cRXP_WARN_from now on as you will need it for Rolf's Corpse later|r
     .subzoneskip 87 --Goldshire
 step
-    #requires KoboldEnd
+    #requires KoboldEnd1
+step
+    #requires KoboldEnd2
+step
     #loop
     .goto 1429/0,223.09,-9916.240,0
     .goto 1429/0,176.93,-9857.68,35,0
@@ -1289,6 +1495,23 @@ step
     .turnin 47 >> Turn in Gold Dust Exchange
     .accept 40 >> Accept A Fishy Peril
     .target Remy "Two Times"
+step
+    .isQuestComplete 91775
+    .goto 1429/0,74.02,-9465.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .turnin 62 >> Turn in The Fargodeep Mine
+    .accept 76 >> Accept The Jasperlode Mine
+    .turnin 40 >> Turn in A Fishy Peril
+    .accept 35 >> Accept Further Concerns
+    .turnin 91775 >>Turn in Book Return
+    .accept 91777 >>Accept Rare Books
+    .target Marshal Dughan
+step
+    .isQuestTurnedIn 91775
+    .goto 1429/0,74.02,-9465.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .accept 91777 >>Accept Rare Books
+    .target Marshal Dughan
 step
     .goto 1429/0,74.02,-9465.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
@@ -1633,6 +1856,38 @@ step
     .goto 1429/0,-560.62,-9100.58
     >>Follow the path through middle to explore Jasperlode Mine
     .complete 76,1 --Scout through the Jasperlode Mine
+step
+    .isOnQuest 91777
+    .goto 1429/0,-595.100,-9072.200
+    >>Kill |cRXP_ENEMY_Geosculptor Yip|r. Loot him for the |cRXP_LOOT_Geomancy for Curious Young Wizards|r
+    >>|cRXP_WARN_He will summon three |cRXP_ENEMY_Rumblers|r. Skip this step if you are unable to kill him|r
+    .complete 91777,1 --|1/1 Geomancy for Curious Young Wizards
+    .mob Geosculptor Yip
+step
+    .isOnQuest 91777
+    .goto 1429/0,-620.200,-9050.800
+    >>Kill |cRXP_ENEMY_Mother Fang|r. Loot her for the |cRXP_LOOT_Arcane Explainer: Magical Stuff in Simple Words|r
+    >>|cRXP_WARN_She Nets and Poisons. Skip this step if you are unable to kill her|r
+    .complete 91777,2 --|1/1 Arcane Explainer: Magical Stuff in Simple Words
+    .mob Mother Fang
+step
+    #completewith next
+    .goto 1429/0,-590.300,-9208.101,10,0
+    .goto 1429/0,-508.400,-9249.101,10,0
+    .goto 1429/0,-493.900,-9208.000,10,0
+    .goto 1429/0,-493.000,-9157.400,18 >> |cRXP_WARN_Follow the arrow closely to return to Northshire to turn in the quest you just completed for a weapon reward|r
+step
+    .goto 1429/0,-135.800,-8913.700,10,0
+    .goto 1429/0,-186.200,-8874.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton::951|r
+    .target Brother Paxton::951
+    .turnin 91777 >>Turn in Rare Books
+step
+    .isQuestTurnedIn 91777
+    #completewith Find
+    .goto 1429/0,-439.500,-9118.500,25,0
+    .goto 1429/0,-468.400,-9147.200,10,0
+    .goto 1429/0,-497.100,-9173.000,20 >>|cRXP_WARN_Travel back to the hills you just ran over for a shortcut to eastern Elwynn Forest|r
 step << Warrior/Paladin/Rogue
     #optional
     #label RoughStone5
