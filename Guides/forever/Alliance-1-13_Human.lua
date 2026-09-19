@@ -899,13 +899,6 @@ step << Rogue
     .target Keryn Sylvius
     .goto 1429/0,12.69,-9465.75
     .trainer >> Train your class spells
-step << Rogue/Warrior
-    .money <0.01
-    .goto 1429/0,12.52,-9479.85,9,0 << Warrior
-    .goto 1429/0,29.35,-9456.790
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michelle Belle|r upstairs
-    .target Michelle Belle
-    .train 3273 >> Train |T135966:0|t[First Aid]
 step << Warrior/Rogue
     .goto 1429/0,16.20,-9462.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r
@@ -3329,7 +3322,7 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brandur Ironhammer|r inside
     .train 633 >> Train your class spells
     .target Brandur Ironhammer
-step
+step << skip -- for dungeon route only
     .goto Ironforge,18.10,51.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Firebrew|r
     .home >> Set your Hearthstone to Ironforge
@@ -4124,23 +4117,6 @@ step
     .collect 2589,10,1644,1,1 << Human Paladin -- Linen Cloth (10)
     .mob +Stonesplinter Trogg
     .mob +Stonesplinter Scout
-step << Warlock
-    #optional
-    #completewith TroggT
-    .goto 1432/0,-2747.60,-5530.540,0
-    +Grind |cRXP_ENEMY_Troggs|r until you have 75s 79c worth of vendor trash/money
-    .money >0.7579
-step << Warlock
-    #optional
-    .goto 1432/0,-2747.60,-5530.540
-    .xp 13+9600 >>Grind until 9600+/11400xp
-    >>|cRXP_WARN_Skip this step if you're planning on running the Hall of Thanes dungeon|r
-    >>|cRXP_WARN_It is HIGHLY RECOMMENDED to complete all dungeons as you level up as they reward very high amounts of XP and a lot of great gear from the quest rewards|r
-step
-    #optional
-    .goto 1432/0,-2747.60,-5530.540
-    +Continue grinding |cRXP_ENEMY_Troggs|r until you have <1 minute on your |T134414:0|t[Hearthstone]
-    .cooldown item,6948,<60
 step
     #optional
     #completewith next
@@ -4153,43 +4129,77 @@ step
     .target Captain Rugelfuss
     .isQuestComplete 267
 step
-    #label TroggT
     .goto 1432/0,-2602.54,-5832.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
     .turnin 224 >> Turn in In Defense of the King's Lands
     .target Mountaineer Cobbleflint
     .isQuestComplete 224
-step
+
+step << Warlock
+    #optional
+    #completewith next
+    .goto 1432/0,-2747.60,-5530.540,0
+    +Grind |cRXP_ENEMY_Troggs|r until you have 75s 79c worth of vendor trash/money
+    .money >0.7579
+step << Warlock
+    #optional
+    .goto 1432/0,-2747.60,-5530.540
+    .xp 14 >>Grind to 14
+    >>|cRXP_WARN_Fly to Ironforge and skip this step if you're planning on running the Hall of Thanes dungeon in Ironforge|r
+
+step << !Warrior
+    #optional
+    .goto 1432/0,-2747.60,-5530.540
+    +Continue grinding |cRXP_ENEMY_Troggs|r until your |T134414:0|t[Hearthstone] is ready
+    .cooldown item,6948,<1
+    .mob Stonesplinter Trogg
+    .mob Stonesplinter Scout
+
+step << Human Warrior -- flying IF to train thrown before going westfall/darkshore
+    #completewith next
+    .goto 1432/0,-2929.87,-5424.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
+    .fly Ironforge >> Fly to Ironforge
+    .target Thorgrum Borrelson
+    .zoneskip Ironforge
+step << Human Warrior
+    .goto Ironforge,62.0,89.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bixi Wobblebonk|r
+    .train 2567 >>Train Thrown
+    .target Bixi Wobblebonk
+step << Human Warrior
+    --add hall of thanes quest turn in in IF
+
+
+
+step << skip -- dungeon route
     .hs >> Hearth to Ironforge
     .bindlocation 1537,1
     .zoneskip Ironforge
-step
+step << skip -- dungeon route
     #optional
     .goto 1432/0,-2929.87,-5424.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .fly Ironforge >> Fly to Ironforge
     .target Thorgrum Borrelson
     .zoneskip Ironforge
-
-
-
-
-step
+step << skip
     +Train in Ironforge
     >>Run Halls of Thane with the quests
+    --cook stuff at ironforge / get quests for halls of thane etc
+    --if doing HoT needs HS IF, if solo keep HS at SW
 
-
-
---cook stuff at ironforge / get quests for halls of thane etc
-
-
-
---if doing HoT needs HS IF, if solo keep HS at SW
-
-step -- skip this. do halls of thane
-    #completewith HumbleBeginnings
+step
     .hs >> Hearth to Stormwind City
     .zoneskip Stormwind City
+    .zoneskip Darkshore
+    .zoneskip Westfall
+step
+    .goto StormwindClassic,66.28,62.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    .turnin 6261 >> Turn in Dungar Longdrink
+    .target Dungar Longdrink
+    .xp <15,1
 step << Warlock/Priest
     #ssf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ardwyn Cailen|r
@@ -4287,12 +4297,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
     .accept 399 >> Accept Humble Beginnings
     .target Baros Alexston
+    .xp >15,1 -- shows to 14 and under
 step
     .goto StormwindClassic,58.091,16.552
     .target Furen Longbeard
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furen Longbeard|r
     .turnin 1338 >> Turn in Stormpike's Order
-    .dungeon !DM
 step << Rogue
     .goto StormwindClassic,74.65,52.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
@@ -4372,6 +4382,7 @@ step
     .disablecheckbox
     .target Auctioneer Jaxon
     .skill cooking,50,1 --XX Shows if cooking skill is <50
+    .xp >15,1 -- shows to 14 and under
 step
     #ah
     #optional
@@ -4395,15 +4406,19 @@ step
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Jaxon
     .skill cooking,<50,1 --XX Shows if cooking skill is 50+
+    .xp >15,1 -- shows to 14 and under
 step
     .goto StormwindClassic,66.28,62.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .turnin 6261 >> Turn in Dungar Longdrink
     .accept 6285 >> Accept Return to Lewis
     .target Dungar Longdrink
+    .xp >15,1 -- shows to 14 and under
 step
     .goto StormwindClassic,66.277,62.137
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    >>|cRXP_WARN_Skip this step if you are level 15|r
     .fly Westfall >> Fly to Westfall
     .target Dungar Longdrink
+    .xp >15,1 -- shows to 14 and under
 ]])

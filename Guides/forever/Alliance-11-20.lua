@@ -21,7 +21,11 @@ RXPGuides.RegisterGuide([[
 #defaultfor !NightElf !Hunter
 
 step
-    #sticky
+    #optional
+    .maxlevel 14,endOfTheGuide
+
+step
+    #completewith SaldeanVendor
     #optional
     .goto Elwynn Forest,19.00,81.00
     .zone Westfall >> Travel to Westfall
@@ -389,28 +393,31 @@ step
     .goto 1436/0,1041.97,-10511.13
     .turnin 102 >> Turn in Patrolling Westfall
 step
-    .goto 1436/0,1021.60,-10500.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quartermaster Lewis|r
-    >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from him|r
-    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
-    .collect 4470,1 --Simple Wood (1)
-    .collect 4471,1 --Flint and Tinder (1)
-    .target Quartermaster Lewis
-    .skill cooking,50,1 --XX Shows if cooking skill is <50
-step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Galiaan|r
 	.target Scout Galiaan
     .goto Westfall,54.00,53.00
     .turnin 153 >> Turn in Red Leather Bandanas
-step << Gnome Rogue/Dwarf Rogue
-    #completewith next
+
+step
+    .hs >> Hearth to Stormwind
+    .bindlocation 1519,1
+    .cooldown item,6948,>2,1
+    .zoneskip Stormwind City
+    .zoneskip Darkshore
+step
+    #completewith DarkshoreBoat
     .goto 1436/0,1037.42,-10628.27
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
     .fly Stormwind >> Fly to Stormwind
     .target Thor
-    .money <0.3815
-step << Gnome Rogue/Dwarf Rogue
+    .zoneskip Stormwind City
+    .zoneskip Darkshore
+
+step
+    #optional
+    #label endOfTheGuide
+
+step << Rogue
     #ah
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
@@ -418,7 +425,7 @@ step << Gnome Rogue/Dwarf Rogue
     .money <0.3815
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
     .target Marda Weller
-step << Gnome Rogue/Dwarf Rogue
+step << Rogue
     #ssf
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
@@ -426,223 +433,122 @@ step << Gnome Rogue/Dwarf Rogue
     .money <0.3815
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
     .target Marda Weller
-step << Gnome Rogue/Dwarf Rogue
+step
+    .goto 1453/0,596.400,-8831.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Mullby|r
+    >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    .collect 4470,1 --Simple Wood (1)
+    .collect 4471,1 --Flint and Tinder (1)
+    .target Thurman Mullby
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step
     #ah
     .goto 1453/0,660.28,-8814.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>Buy the following items for faster turn ins at Darkshore shortly
-    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
-    >>|T133972:0|t[Stringy Vulture Meat]
-    >>|T133884:0|t[Murloc Eye]
-    >>|T135997:0|t[Goretusk Snout]
-    >>|T134185:0|t[Okra]
-    >>|T134341:0|t[Goretusk Liver]
+    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[Cooking] |cRXP_BUY_with later|r
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall and Darkshore shortly:|r
+    >>|T133972:0|t[Strider Meat]
+    >>|T133912:0|t[Darkshore Grouper]
+    >>|T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    >>|T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
+    .collect 5469,5,2178,1 -- Strider Meat (5)
+    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
+    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (1-50)
+    .disablecheckbox
+    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (1-50)
+    .disablecheckbox
+    .target Auctioneer Jaxon
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step
+    #ah
+    #optional
+    .goto 1453/0,660.28,-8814.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall and Darkshore shortly:|r
     >>|T133972:0|t[Strider Meat]
     >>|T133912:0|t[Darkshore Grouper]
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Jaxon
-    .isQuestComplete 399
-step << Gnome Rogue/Dwarf Rogue
+    .skill cooking,<50,1 --XX Shows if cooking skill is 50+
+step << Rogue
+    .goto StormwindClassic,74.65,52.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
+    .train 1758,1
+    .trainer >> Train your class spells
+    .target Osborne the Night Man
+step << Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r
+    .goto StormwindClassic,76.08,50.14,15,0
+    .goto StormwindClassic,80.22,45.37,15,0
+	.goto StormwindClassic,78.68,45.79
+    .train 1160,1
+    .trainer >> Train your class spells
+    .target Wu Shen
+    .target Ilsa Corbin
+step << Hunter
+    .goto StormwindClassic,61.609,15.269
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r inside
+    >>|cRXP_WARN_If you just trained earlier, skip this step|r
+    .trainer >> Train your class spells
+    .target Einris Brightspear
+step
     .goto StormwindClassic,49.194,30.284
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
     .turnin 399 >> Turn in Humble Beginnings
     .target Baros Alexston
-    .zoneskip Stormwind City,1
     .isQuestComplete 399
-step << Dwarf !Paladin/Gnome
-    #label end
-    #completewith DarkshoreBoat
-    .hs >> Hearth to Thelsamar
-step << Dwarf !Paladin/Gnome
-    #softcore
-    #completewith DarkshoreBoat
-    .goto 1432/0,-2929.93,-5424.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
-    .fly Wetlands >> Fly to Wetlands
-    .target Thorgrum Borrelson
-step << Dwarf !Paladin/Gnome
-    #hardcore
-    #completewith next
-    .goto 1432/0,-2929.93,-5424.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
-    .fly Ironforge >> Fly to Ironforge
-    .target Thorgrum Borrelson
-step << Human/Dwarf Paladin
-    #label end
-    .goto 1436/0,1037.42,-10628.27
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
-    .fly Ironforge >> Fly to Ironforge
-    .target Thor
-step << Human Mage/Human Rogue/Human Warrior/Human Warlock/Human Paladin/Human Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bilban Tosslespanner|r << Human Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fenthwick|r << Human Rogue
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Toldren Deepiron|r << Human Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r << Human Mage
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brandur Ironhammer|r << Human Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Briarthorn|r << Human Warlock
-    .goto 1455/0,-1117.60,-4615.14,15,0 << Human Warlock
-    .goto 1455/0,-1111.62,-4599.09 << Human Warlock
-    .goto 1455/0,-1234.65,-5035.67 << Human Warrior
-    .goto 1455/0,-1120.72,-4650.120 << Human Rogue
-    .goto 1455/0,-912.88,-4625.99 << Human Priest
-    .goto 1455/0,-928.48,-4614.620 << Human Mage
-    .goto 1455/0,-896.55,-4601.68 << Human Paladin
-    .trainer >> Train your class spells
-    .target Bilban Tosslespanner << Human Warrior
-    .target Fenthwick << Human Rogue
-    .target Toldren Deepiron << Human Priest
-    .target Dink << Human Mage
-    .target Brandur Ironhammer << Human Paladin
-    .target Briarthorn << Human Warlock
-step << Human Warrior
-    .goto Ironforge,62.0,89.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bixi Wobblebonk|r
-    .train 2567 >>Train Thrown
-    .target Bixi Wobblebonk
-step << Human Rogue
-    #ah
-    .goto 1455/0,-1206.74,-5037.12
-    .vendor >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
-    +|cRXP_BUY_Buy a|r |T135343:0|t[Scimitar] |cRXP_BUY_from her or check the Auction House for something better/cheaper|r
-    .target Brenwyn Wintersteel
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
-step << Human Rogue
-    #ssf
-    .goto 1455/0,-1206.74,-5037.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
-    +|cRXP_BUY_Buy and equip a|r |T135343:0|t[Scimitar] |cRXP_BUY_from her if you can afford it|r
-    .money <0.3815
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
-    .target Brenwyn Wintersteel
-step << Human Rogue
-    .goto 1455/0,-1206.74,-5037.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
-    >>|cRXP_BUY_Buy a|r |T135425:0|t[Keen Throwing Knife]
-    .collect 3107,100 -- Keen Throwing Knife
-    .target Brenwyn Wintersteel
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.30
-step << Human Rogue
-    #completewith next
-    +|cRXP_WARN_Equip the|r |T135425:0|t[Keen Throwing Knife]
-    .use 3107
-    .itemcount 3107,1
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.29
-step << Dwarf Paladin
-    .goto 1455/0,-907.69,-4592.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldruk Doombrow|r
-    .trainer >> Train your class spells
-    .target Beldruk Doombrow
-step << Dwarf Paladin
-    #completewith next
-    .goto 1455/0,-913.38,-4577.31,6,0
-    .goto 1455/0,-906.11,-4632.030,10 >> Travel toward |cRXP_FRIENDLY_Muiredon|r upstairs
-step << Dwarf Paladin
-    .goto 1455/0,-899.70,-4613.0300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muiredon Battleforge|r
-    .turnin 1784 >>Turn in The Tome of Divinity
-    .accept 1785 >>Accept The Tome of Divinity
-    .target Muiredon Battleforge
-step << Dwarf Paladin
-    .goto 1455/0,-932.04,-4633.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tiza Battleforge|r
-    .turnin 1785 >>Turn in The Tome of Divinity
-    .target Tiza Battleforge
-step << Dwarf Paladin
-    #softcore
-    #completewith DarkshoreBoat
-    .goto 1455/0,-1152.40,-4821.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
-    .fly Wetlands>> Fly to Wetlands
-    .target Gryth Thurden
-step
-    #hardcore << !Human
-    .goto 1426/0,-832.79,-5022.97
-    .zone Dun Morogh>>Exit Ironforge
-step
-    #hardcore
-    #completewith next
-    .goto 1426/0,-1124.84,-5283.99,150 >> Travel to the Dun Morogh -> Wetlands skip spot
-step
-    #hardcore
-    .goto 1426/0,-1128.29,-5282.35,40,0
-    .goto 1426/0,-1172.62,-5325.03,40,0
-    .goto 1426/0,-1207.09,-5325.03,20,0
-    .goto 1426/0,-1212.02,-5265.93,40,0
-    .goto 1426/0,-1192.32,-5219.97,40,0
-    .goto Dun Morogh,59.0,39.5,40,0
-    .goto 1426/0,-1167.69,-5144.45,40,0
-    .goto 1426/0,-1236.64,-5147.73,40,0
-    .goto 1426/0,-1433.64,-4586.28,40,0
-    .goto 1426/0,-1438.57,-4287.50,40,0
-    .goto 1426/0,-1428.72,-4231.68,40,0
-    .goto 1426/0,-1473.04,-4205.42,40,0
-    .goto 1426/0,-1492.74,-4156.17,40,0
-    .goto 1437/0,-1241.48,-4000.12,50,0
-    .goto 1437/0,-1121.55,-4013.90,40,0
-    .goto 1437/0,-1084.33,-3947.75,40,0
-    .goto 1437/0,-1014.03,-3911.92,40,0
-    .goto 1437/0,-889.97,-3809.94,40,0
-    >>|cRXP_WARN_Watch the video guide for a reference on how to do the skip first!|r
-    >>|cRXP_WARN_Do the Deathless Dun Morogh -> Wetlands skip|r
-    >>|cRXP_WARN_Avoid the |cRXP_ENEMY_Wetlands Crocolisks|r and |cRXP_ENEMY_Murlocs|r when crossing the water|r
-    .link https://www.youtube.com/watch?v=9afQTimaiZQ >> |cRXP_WARN_Click here for a video guide|r
-    .goto 1437/0,-889.97,-3809.94,80 >> Travel to Menethil Harbor
-    .mob Wetlands Crocolisk
-    .mob Young Wetlands Crocolisk
-    .mob Bluegill Raider
-step << Human
-    #softcore
-    #completewith next
-    .goto 1426/0,280.26,-4963.87,20 >> Travel to the Dun Morogh -> Wetlands deathskip spot
-step << Human
-    #softcore
-    .goto 1426/0,206.38,-4832.53,20 >> Continue following through the mountain to the deathskip location
-step << Human
-    #softcore
-    .goto Dun Morogh,33.0,27.2,20,0
-    .goto Dun Morogh,33.0,25.2,20,0
-    .goto 1437/0,-874.54,-3341.54
-    .deathskip >> Run straight off the edge to the north and drop down. Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-step << Human
-    #softcore
-    .goto 1437/0,-914.78,-3435.09,80 >> Swim to Menethil Harbor
-step
-    .money <0.08
-    .goto 1437/0,-819.67,-3691.42,15,0
-    .goto 1437/0,-807.26,-3716.22,15,0
-    .goto 1437/0,-827.94,-3724.49,15,0
-    .goto 1437,10.760,56.721
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neal Allen|r
-    .vendor 1448 >> |cRXP_WARN_Buy a|r |T133024:0|t[Bronze Tube]
-    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Neal Allen|r doesn't have one|r
-	.target Neal Allen
-    .bronzetube
-step << Human/Dwarf Paladin
-    .goto 1437/0,-782.03,-3793.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei|r
-    .fp Wetlands>> Get the Wetlands flight path
-    .target Shellei Brondir
-step
-    .goto 1437/0,-718.35,-3701.89
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dewin Shimmerdawn|r
-    .vendor 1453 >> |cRXP_WARN_Buy as many|r |T134831:0|t[Healing Potions] |cRXP_WARN_that are available|r
-    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Dewin Shimmerdawn|r doesn't have any|r
-    .target Dewin Shimmerdawn
-step
+step << Warlock
     #optional
-    #label DockTravel
     #completewith next
-    .goto Wetlands,7.10,57.96,30,0
-    .goto 1437/0,-580.23,-3726.15,15 >> Travel to the dock of the Auberdine boat
-    .zoneskip Darkshore
+    .goto StormwindClassic,29.2,74.0,20,0
+    .goto StormwindClassic,27.2,78.1,15 >> Travel to The Slaughtered Lamb and go downstairs
+step << Warlock
+    .goto StormwindClassic,26.117,77.225
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r
+    .trainer >> Train your class spells
+    .train 6222,1
+    .target Ursula Deline
+step << Mage
+    #optional
+    #completewith next
+    .goto StormwindClassic,37.69,82.09,10 >> Travel to the Mage Tower
+step << Mage
+    .goto StormwindClassic,36.87,81.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elsharin|r
+    .train 2137,1
+    .trainer >> Train your class spells
+    .target Elsharin
+step << Priest/Paladin
+    #optional
+    #completewith next
+    .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
+step << Paladin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
+    .goto StormwindClassic,38.82,31.27,10,0
+    .goto StormwindClassic,38.67,32.82
+    .trainer >> Train your class spells
+    .train 19742,1
+    .target Arthur the Faithful
+step << Priest
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r
+    .goto StormwindClassic,38.54,26.86
+    .trainer >> Train your class spells
+    .train 8122,1
+    .target Brother Joshua
+
 step
     #optional
     #requires DockTravel
     #label DarkshoreCook1
     #completewith DarkshoreBoat
     >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
-    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(in your Profession Book)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -656,7 +562,7 @@ step
     #label DarkshoreCook2
     #completewith DarkshoreBoat
     >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
-    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(in your Profession Book)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -670,7 +576,7 @@ step
     #label DarkshoreCook3
     #completewith DarkshoreBoat
     >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
-    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(in your Profession Book)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -721,7 +627,7 @@ step
     .skill cooking,50,1
 step
     #label DarkshoreBoat
-    .goto 1437,4.370,56.762
+    .goto 1453/0,1330.100,-8645.400
     >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat to Darkshore if needed|r
     .zone Darkshore >> Take the boat to Darkshore
 ]])
