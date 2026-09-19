@@ -1157,7 +1157,7 @@ step
     .train 2108,3
     .goto 2521,41.658,44.784
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind::263664|r
-    .accept 97966 >>Accept Camping 101: Leatherworking
+    .accept 97969 >>Accept Camping 101: Leatherworking
     .target Raan Wildwind::263664
 
 
