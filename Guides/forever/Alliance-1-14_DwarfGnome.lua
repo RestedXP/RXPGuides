@@ -4701,13 +4701,13 @@ step
     .zone Stormwind City >> Enter Stormwind
     .isOnQuest 1338
 step
-    .goto StormwindClassic,51.757,12.091
+    .goto 1453/0,685.22,-8387.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimand Elmore|r
     .accept 353 >> Accept Stormpike's Delivery
     .target Grimand Elmore
 step
     #label Order
-    .goto StormwindClassic,58.091,16.552
+    .goto 1453/0,600.07,-8427.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furen Longbeard|r
     .turnin 1338 >> Turn in Stormpike's Order
     .target Furen Longbeard
@@ -4715,10 +4715,10 @@ step << Paladin
     #season 2
     #optional
     #completewith next
-    .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
+    .goto 1453/0,809.52,-8579.22,20 >> Travel to the Stormwind Cathedral
 step << Paladin
     #season 2
-    .goto StormwindClassic,38.1,28.10
+    .goto 1453/0,868.8,-8530.730
     .gossipoption 109653 >>Talk to |cRXP_FRIENDLY_Brother Romulus|r
     .target Brother Romulus
     --.skipgossip
@@ -4726,45 +4726,45 @@ step << Paladin
 step << Paladin
     #season 2
     #completewith next
-    .goto StormwindClassic,37.39,29.76,5,0
-    .goto StormwindClassic,37.87,29.1,5,0
-    .goto StormwindClassic,36.52,32.67,8,0
-    .goto StormwindClassic,36.55,33.45,8,0
-    .goto StormwindClassic,35.95,34.05,8,0
-    .goto StormwindClassic,35.46,33.03,8,0
-    .goto StormwindClassic,35.95,31.54,8,0
-    .goto StormwindClassic,34.79,29.31,8,0
-    .goto StormwindClassic,33.69,29.69,8,0
-    .goto StormwindClassic,32.57,27.49,8,0
-    .goto StormwindClassic,33.41,25.61,8,0
+    .goto 1453/0,878.35,-8545.61,5,0
+    .goto 1453/0,871.9,-8539.69,5,0
+    .goto 1453/0,890.04,-8571.69,8,0
+    .goto 1453/0,889.64,-8578.68,8,0
+    .goto 1453/0,897.71,-8584.06,8,0
+    .goto 1453/0,904.29,-8574.92,8,0
+    .goto 1453/0,897.71,-8561.56,8,0
+    .goto 1453/0,913.3,-8541.57,8,0
+    .goto 1453/0,928.09,-8544.98,8,0
+    .goto 1453/0,943.14,-8525.26,8,0
+    .goto 1453/0,931.85,-8508.41,8,0
     >>Go downstairs into the western side of the Cathedral's Crypt
-    .goto StormwindClassic,32.86,24.77,8 >>Travel toward the |cRXP_LOOT_Charred Note|r in the crypt
+    .goto 1453/0,939.24,-8500.88,8 >>Travel toward the |cRXP_LOOT_Charred Note|r in the crypt
     .train 410015,1
 step << Paladin
     #season 2
-    .goto StormwindClassic,32.86,24.87
+    .goto 1453/0,939.24,-8501.77
     >>Loot the |cRXP_LOOT_Charred Note|r next to the candles
     .collect 205864,1 --Charred Note (1)
     .train 410015,1
 step << Priest
     #optional
     #completewith next
-    .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
+    .goto 1453/0,809.52,-8579.22,20 >> Travel to the Stormwind Cathedral
 step << Priest
-    .goto StormwindClassic,38.54,26.86
+    .goto 1453/0,862.89,-8519.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
     .trainer >> Train your class spells
     .turnin 5634 >> Turn in Desperate Prayer
     .target High Priestess Laurena
 step << Priest
-    .goto StormwindClassic,38.62,26.10
+    .goto 1453/0,861.81,-8512.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
     .train 13908 >> Train Desperate Prayer
     .target High Priestess Laurena
 step << Warrior
-    .goto StormwindClassic,76.08,50.14,15,0
-    .goto StormwindClassic,80.22,45.37,15,0
-	.goto StormwindClassic,78.503,45.712
+    .goto 1453/0,358.25,-8728.28,15,0
+    .goto 1453/0,302.6,-8685.53,15,0
+	.goto 1453/0,325.68,-8688.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilsa Corbin|r
     .trainer >> Train your class spells
     .accept 1638 >> Accept A Warrior's Training
@@ -4772,53 +4772,53 @@ step << Warrior
 step << Warrior
     #optional
     #completewith next
-    .goto StormwindClassic,72.878,51.582,17,0
-    .goto StormwindClassic,71.7,39.9,12 >> Enter the Tavern
+    .goto 1453/0,401.29,-8741.21,17,0
+    .goto 1453/0,417.13,-8636.5,12 >> Enter the Tavern
 step << Warrior
-    .goto StormwindClassic,74.249,37.244
+    .goto 1453/0,382.86,-8612.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harry Burlguard|r
     .turnin 1638 >> Turn in A Warrior's Training
     .accept 1639 >> Accept Bartleby the Drunk
     .target Harry Burlguard
 step << Warrior
-    .goto StormwindClassic,73.787,36.323
+    .goto 1453/0,389.07,-8604.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartleby|r
     .turnin 1639 >> Turn in Bartleby the Drunk
     .accept 1640 >> Accept Beat Bartleby
     .target Bartleby
 step << Warrior
-    .goto StormwindClassic,73.787,36.323
+    .goto 1453/0,389.07,-8604.43
     >>Defeat |cRXP_ENEMY_Bartleby|r
     .complete 1640,1 --Beat Bartleby
     .mob Bartleby
 step << Warrior
-    .goto StormwindClassic,73.787,36.323
+    .goto 1453/0,389.07,-8604.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartleby|r
     .turnin 1640 >> Turn in Beat Bartleby
     .accept 1665 >> Accept Bartleby's Mug
     .target Bartleby
 step << Warrior
-    .goto StormwindClassic,74.249,37.244
+    .goto 1453/0,382.86,-8612.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harry Burlguard|r
     .turnin 1665 >> Turn in Bartleby's Mug
     .target Harry Burlguard
 step << Warlock
     #optional
     #completewith next
-    .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >> Travel to The Slaughtered Lamb and go downstairs
+    .goto 1453/0,988.44,-8942.15,20,0
+    .goto 1453/0,1015.33,-8978.9,15 >> Travel to The Slaughtered Lamb and go downstairs
 step << Warlock
-    .goto StormwindClassic,26.117,77.225
+    .goto 1453/0,1029.89,-8971.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r
     .trainer >> Train your class spells
     .target Ursula Deline
 step << Warlock
-    .goto StormwindClassic,25.25,78.59
+    .goto 1453/0,1041.54,-8983.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r
     .accept 1688 >> Accept Surena Caledon
     .target Gakin the Darkbinder
 step
-    .goto StormwindClassic,57.129,57.698
+    .goto 1453/0,613.0,-8796.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
     .trainer >>Train 1h Swords << Rogue/Mage
     .trainer >>Train Staves << Priest/Hunter
@@ -4827,7 +4827,7 @@ step
     .target Woo Ping
 step << Dwarf Paladin
     #xprate <1.5
-    .goto StormwindClassic,52.623,65.701
+    .goto 1453/0,673.58,-8867.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Allison|r
     .home >> Set your Hearthstone to Stormwind
     .target Innkeeper Allison
@@ -4849,22 +4849,22 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >> Travel to The Slaughtered Lamb and go downstairs
+    .goto 1453/0,988.44,-8942.15,20,0
+    .goto 1453/0,1015.33,-8978.9,15 >> Travel to The Slaughtered Lamb and go downstairs
 step
-    .goto StormwindClassic,25.25,78.59
+    .goto 1453/0,1041.54,-8983.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r
     .accept 1688 >> Accept Surena Caledon
     .target Gakin the Darkbinder
 step
-    .goto StormwindClassic,66.277,62.137
+    .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .fp Stormwind >> Get the Stormwind City flight path
     .target Dungar Longdrink
 step
     #optional
     #completewith next
-    .goto StormwindClassic,73.2,92.1
+    .goto 1453/0,396.97,-9104.39
     .zone Elwynn Forest >> Exit Stormwind
 step
     >>Click the |cRXP_PICK_Wanted Poster|r
@@ -5068,15 +5068,15 @@ step
 step
     #optional
     #completewith next
-    .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >> Travel to The Slaughtered Lamb and go downstairs
+    .goto 1453/0,988.44,-8942.15,20,0
+    .goto 1453/0,1015.33,-8978.9,15 >> Travel to The Slaughtered Lamb and go downstairs
 step
-    .goto StormwindClassic,26.117,77.225
+    .goto 1453/0,1029.89,-8971.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r
     .trainer >> Train your class spells
     .target Ursula Deline
 step
-    .goto StormwindClassic,25.25,78.59
+    .goto 1453/0,1041.54,-8983.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r
     .turnin 1688 >> Turn in Surena Caledon
     .accept 1689 >> Accept The Binding
@@ -5084,21 +5084,21 @@ step
 step
     #optional
     #completewith next
-    .goto StormwindClassic,25.2,80.7,18,0
-    .goto StormwindClassic,23.2,79.5,18,0
-    .goto StormwindClassic,26.3,79.5,18,0
-    .goto StormwindClassic,25.154,77.406
+    .goto 1453/0,1042.22,-9002.21,18,0
+    .goto 1453/0,1069.1,-8991.45,18,0
+    .goto 1453/0,1027.43,-8991.45,18,0
+    .goto 1453/0,1042.83,-8972.68
     >>|cRXP_WARN_Travel to the bottom of The Slaughtered Lamb|r
     .cast 7728 >> |cRXP_WARN_Use the|r |T133292:0|t[Bloodstone Choker] |cRXP_WARN_to call forth a|r |cRXP_ENEMY_Summoned Voidwalker|r
     .use 6928
 step
-    .goto StormwindClassic,25.154,77.406
+    .goto 1453/0,1042.83,-8972.68
     >>Kill the |cRXP_ENEMY_Summoned Voidwalker|r
     .complete 1689,1 --Kill Summoned Voidwalker (x1)
     .use 6928
     .mob Summoned Voidwalker
 step
-    .goto StormwindClassic,25.25,78.59
+    .goto 1453/0,1041.54,-8983.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r
     .turnin 1689 >> Turn in The Binding
     .target Gakin the Darkbinder
@@ -5125,7 +5125,7 @@ step << Warlock
     #completewith next
     +Cast |T136126:0|t[Life Tap] repeatedly until you have <10% health while on the way to |cRXP_FRIENDLY_Dungar Longdrink|r
 step
-    .goto StormwindClassic,66.277,62.137
+    .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .fp Stormwind >> Get the Stormwind City flight path
     .target Dungar Longdrink
@@ -5586,7 +5586,7 @@ step
     .fly Stormwind >> Fly to Stormwind
     .target Ariena Stormfeather
 step
-    .goto StormwindClassic,56.201,64.585
+    .goto 1453/0,625.48,-8857.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan Pestle|r
     .turnin 61,1 >> Turn in Shipment to Stormwind
     >>|cRXP_WARN_We choose the|r |T132383:0|t[Explosive Rockets] |cRXP_WARN_as the reward. It deals decent damage, and can be used for "Split pulling" which is incredibly useful|r
@@ -5633,30 +5633,30 @@ step
     .skill cooking,<50,1 --XX Shows if cooking skill is 50+
 step << Warlock
     #completewith next
-    .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >> Travel to The Slaughtered Lamb and go downstairs
+    .goto 1453/0,988.44,-8942.15,20,0
+    .goto 1453/0,1015.33,-8978.9,15 >> Travel to The Slaughtered Lamb and go downstairs
 step << Warlock
-    .goto StormwindClassic,26.117,77.225
+    .goto 1453/0,1029.89,-8971.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r
     .trainer >> Train your class spells
     .target Ursula Deline
 step << Warlock
-    .goto StormwindClassic,25.25,78.59
+    .goto 1453/0,1041.54,-8983.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r
     .turnin 1688 >> Turn in Surena Caledon
     .accept 1689 >> Accept The Binding
     .target Gakin the Darkbinder
 step << Warlock
     #completewith next
-    .goto StormwindClassic,25.2,80.7,18,0
-    .goto StormwindClassic,23.2,79.5,18,0
-    .goto StormwindClassic,26.3,79.5,18,0
-    .goto StormwindClassic,25.154,77.406
+    .goto 1453/0,1042.22,-9002.21,18,0
+    .goto 1453/0,1069.1,-8991.45,18,0
+    .goto 1453/0,1027.43,-8991.45,18,0
+    .goto 1453/0,1042.83,-8972.68
     >>|cRXP_WARN_Travel to the bottom of The Slaughtered Lamb|r
     .cast 7728 >> |cRXP_WARN_Use the|r |T133292:0|t[Bloodstone Choker] |cRXP_WARN_to call forth a|r |cRXP_ENEMY_Summoned Voidwalker|r
     .use 6928
 step << Warlock
-    .goto StormwindClassic,25.154,77.406
+    .goto 1453/0,1042.83,-8972.68
     .use 6928 >> Kill the |cRXP_ENEMY_Summoned Voidwalker|r
     .complete 1689,1 --Kill Summoned Voidwalker (x1)
     .mob Summoned Voidwalker
@@ -5667,7 +5667,7 @@ step << Warlock
 step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r
     .target Gakin the Darkbinder
-    .goto StormwindClassic,25.25,78.59
+    .goto 1453/0,1041.54,-8983.29
     .turnin 1689 >> Turn in The Binding
 step << Warlock
     #softcore
@@ -5810,8 +5810,8 @@ step
 step << !Paladin
     .hs >> Hearth to Loch Modan
 step << Dwarf Paladin
-    .goto StormwindClassic,61.149,11.568,25,0
-    .goto StormwindClassic,64.0,8.10
+    .goto 1453/0,558.96,-8382.54,25,0
+    .goto 1453/0,520.64,-8351.460
     .zone Ironforge >> Enter the Deeprun Tram. Take the Tram to Ironforge
 ]])
 
@@ -5835,7 +5835,7 @@ RXPGuides.RegisterGuide([[
 step << Rogue
     #xprate >1.49
     #ah
-    .goto StormwindClassic,57.38,56.77
+    .goto 1453/0,609.63,-8787.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
     >>|cRXP_BUY_Buy up to 2|r |T135343:0|t[Scimitars] |cRXP_BUY_if you can afford it, or buy something cheaper/better from the Auction House|r
     .collect 2027,1 --Scimitar
@@ -5844,7 +5844,7 @@ step << Rogue
 step << Rogue
     #xprate >1.49
     #ssf
-    .goto StormwindClassic,57.38,56.77
+    .goto 1453/0,609.63,-8787.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
     >>|cRXP_BUY_Buy up to 2|r |T135343:0|t[Scimitars] |cRXP_BUY_if you can afford it|r
     .collect 2027,1 --Scimitar
@@ -5874,7 +5874,7 @@ step << Rogue
 step << Rogue
     #optional
     #ah
-    .goto StormwindClassic,57.547,57.076
+    .goto 1453/0,607.38,-8790.45
     .goto 1453,53.615,59.767,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
     >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
@@ -5885,7 +5885,7 @@ step << Rogue
 step << Rogue
     #optional
     #ssf
-    .goto StormwindClassic,57.547,57.076
+    .goto 1453/0,607.38,-8790.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
     >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
     .collect 851,1 -- Cutlass (1)
@@ -5946,13 +5946,13 @@ step << Rogue
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step
     #xprate 1.49-1.59
-    .goto StormwindClassic,66.277,62.137
+    .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .fp Stormwind >> Get the Stormwind City flight path
     .target Dungar Longdrink
 step
     #xprate >1.59
-    .goto StormwindClassic,66.277,62.137
+    .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .fp Stormwind >> Get the Stormwind City flight path
     .target Dungar Longdrink
@@ -5968,8 +5968,8 @@ step
     #season 0,1 << Paladin
     #xprate >1.49
     #optional
-    .goto StormwindClassic,61.149,11.568,25,0
-    .goto StormwindClassic,64.0,8.10
+    .goto 1453/0,558.96,-8382.54,25,0
+    .goto 1453/0,520.64,-8351.460
     .zone Ironforge >> Enter the Deeprun Tram. Take the Tram to Ironforge
     .zoneskip Loch Modan
     .zoneskip Dun Morogh
@@ -6892,25 +6892,25 @@ step << Paladin
     #xprate <1.5
     #optional
     #completewith next
-    .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
+    .goto 1453/0,809.52,-8579.22,20 >> Travel to the Stormwind Cathedral
 step << Paladin
     #xprate <1.5
     #label PaladinTrainSW
-    .goto StormwindClassic,38.82,31.27,10,0
-    .goto StormwindClassic,38.67,32.82
+    .goto 1453/0,859.13,-8559.14,10,0
+    .goto 1453/0,861.14,-8573.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
     .trainer >> Train your class spells
     .target Arthur the Faithful
 step << Paladin
     #xprate <1.5
-    .goto StormwindClassic,49.194,30.284
+    .goto 1453/0,719.67,-8550.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
     .accept 399 >> Accept Humble Beginnings
     .target Baros Alexston
 step
     #xprate <1.5
     #completewith Fly2WF
-    .goto StormwindClassic,55.21,7.04
+    .goto 1453/0,638.8,-8341.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Billibub Cogspinner|r
     .vendor 5519 >> |cRXP_WARN_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him (if it's up)|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
@@ -6918,14 +6918,14 @@ step
     .target Billibub Cogspinner
 step << !Paladin
     #xprate <1.5
-    .goto StormwindClassic,49.194,30.284
+    .goto 1453/0,719.67,-8550.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
     .accept 399 >> Accept Humble Beginnings
     .target Baros Alexston
 step << Rogue
     #xprate <1.5
     #ah
-    .goto StormwindClassic,57.38,56.77
+    .goto 1453/0,609.63,-8787.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
     >>|cRXP_BUY_Buy up to 2|r |T135343:0|t[Scimitars] |cRXP_BUY_from her if you can afford it or something better from the Auction House|r
     .collect 2027,1 --Scimitar
@@ -6935,7 +6935,7 @@ step << Rogue
 step << Rogue
     #xprate <1.5
     #ssf
-    .goto StormwindClassic,57.38,56.77
+    .goto 1453/0,609.63,-8787.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
     >>|cRXP_BUY_Buy up to 2|r |T135343:0|t[Scimitars] |cRXP_BUY_from her if you can afford it|r
     .collect 2027,1 --Scimitar
@@ -7040,8 +7040,8 @@ step << Mage/Priest/Warlock
     #xprate <1.5
     #ah
     #optional
-    .goto StormwindClassic,42.65,67.16,14,0
-    .goto StormwindClassic,42.88,65.11
+    .goto 1453/0,807.64,-8880.84,14,0
+    .goto 1453/0,804.55,-8862.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ardwyn Cailen|r
     >>|cRXP_WARN_Buy a|r |T135468:0|t[Smoldering Wand] |cRXP_WARN_from her|r
     .collect 5208,1 --Smoldering Wand (1)
@@ -7061,7 +7061,7 @@ step << Mage/Priest/Warlock
 step
     #xprate <1.5
     #label Fly2WF
-    .goto StormwindClassic,66.277,62.137
+    .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .fly Westfall >> Fly to Westfall
     .target Dungar Longdrink
@@ -8694,22 +8694,22 @@ step
     #softcore
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimand Elmore|r
     .target Grimand Elmore
-    .goto StormwindClassic,51.757,12.091
+    .goto 1453/0,685.22,-8387.23
     .accept 353 >> Accept Stormpike's Delivery
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furen Longbeard|r
     .target Furen Longbeard
-    .goto StormwindClassic,58.091,16.552
+    .goto 1453/0,600.07,-8427.22
     .turnin 1338 >> Turn in Stormpike's Order
 step << Hunter
-    .goto StormwindClassic,61.609,15.269
+    .goto 1453/0,552.78,-8415.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r
     .trainer >> Train your class spells
     .target Einris Brightspear
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
     .target Woo Ping
-    .goto StormwindClassic,57.129,57.698
+    .goto 1453/0,613.0,-8796.03
     .trainer >>Train Staves
 step
     #ah
@@ -8766,8 +8766,8 @@ step
     .target Thorgrum Borrelson
 step << skip --logout skip
     #hardcore
-    .goto StormwindClassic,61.149,11.568,25,0
-    .goto StormwindClassic,64.0,8.10
+    .goto 1453/0,558.96,-8382.54,25,0
+    .goto 1453/0,520.64,-8351.460
     .zone Ironforge >> Enter the Deeprun Tram. Take the Tram to Ironforge
     .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> |cRXP_WARN_Do a logout skip inside the Tram. Click here for video reference|r
 step

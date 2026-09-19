@@ -228,8 +228,8 @@ step
 step
     .isQuestTurnedIn 4322
     #completewith next
-    .goto StormwindClassic,70.424,85.171,5,0
-    .goto StormwindClassic,69.709,86.083
+    .goto 1453/0,434.28,-9042.28,5,0
+    .goto 1453/0,443.89,-9050.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Rowe|r and |cRXP_FRIENDLY_Reginald Windsor|r
     >>|cRXP_FRIENDLY_Squire Rowe|r will call for |cRXP_FRIENDLY_Reginald Windsor's|r arrival after you talk to him at the Gates of Stormwind
     >>|cRXP_WARN_IF YOU ARE IN A PARTY ENSURE NO ONE AUTO ACCEPTS The Great Masquerade. AUTO ACCEPT HAS BEEN TURNED OFF FOR THIS STEP|r
@@ -240,22 +240,22 @@ step
     .target Reginald Windsor
 step
     .isQuestTurnedIn 4322
-    .goto StormwindClassic,75.955,19.114,-1
-    .goto StormwindClassic,76.865,20.830,-1
+    .goto 1453/0,359.93,-8450.18,-1
+    .goto 1453/0,347.7,-8465.560,-1
     >>Escort |cRXP_FRIENDLY_Reginald Windsor|r into Stormwind Keep
     >>Do not assist |cRXP_FRIENDLY_Reginald Windsor|r in combat while inside the Keep. If you do so there is a high chance you may die. Stay back at the arrow location and let the event finish on its own. It will take a few minutes
     .complete 6403,1 -- Reginald's March (1)
     .target Reginald Windsor
 step
     .isQuestComplete 6403
-    .goto StormwindClassic,77.569,18.864
+    .goto 1453/0,338.23,-8447.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Bolvar Fordragon|r
     .turnin 6403 >> Turn in The Great Masquerade
     .accept 6501 >> Accept The Dragon's Eye
     .target Highlord Bolvar Fordragon
 step
     .isQuestTurnedIn 6403
-    .goto StormwindClassic,77.569,18.864
+    .goto 1453/0,338.23,-8447.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Bolvar Fordragon|r
     .accept 6501 >> Accept The Dragon's Eye
     .target Highlord Bolvar Fordragon

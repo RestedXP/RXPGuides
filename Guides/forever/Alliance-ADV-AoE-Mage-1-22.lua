@@ -980,13 +980,13 @@ step
 	.target Thor
 step
     #completewith next
-    .goto StormwindClassic,63.1,65.18,20,0
-    .goto StormwindClassic,58.13,59.4,20,0
-    .goto StormwindClassic,57.06,61.83,20,0
-    .goto StormwindClassic,56.55,64.79,12,0
-    .goto StormwindClassic,56.2,64.6,12 >>Travel toward |cRXP_FRIENDLY_Morgan|r
+    .goto 1453/0,532.74,-8863.09,20,0
+    .goto 1453/0,599.55,-8811.28,20,0
+    .goto 1453/0,613.93,-8833.07,20,0
+    .goto 1453/0,620.79,-8859.6,12,0
+    .goto 1453/0,625.49,-8857.89,12 >>Travel toward |cRXP_FRIENDLY_Morgan|r
 step
-    .goto StormwindClassic,56.2,64.60
+    .goto 1453/0,625.49,-8857.890
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan|r
     .turnin 61,1 >> Turn in Shipment to Stormwind
     .target Morgan Pestle
@@ -1016,29 +1016,29 @@ step << skip
     .goto 1453/0,893.0,-9021.93,6 >>Go through the green portal
 step
     #completewith next
-    .goto StormwindClassic,57.32,59.15,10,0
-    .goto StormwindClassic,58.17,57.9,12,0
-    .goto StormwindClassic,57.81,54.73,12,0
-    .goto StormwindClassic,60.05,51.6,12,0
-    .goto StormwindClassic,67.54,46.88,12,0
-    .goto StormwindClassic,71.01,48.62,12,0
-    .goto StormwindClassic,74.31,47.22,12 >>Travel toward |cRXP_FRIENDLY_Osric|r
+    .goto 1453/0,610.44,-8809.04,10,0
+    .goto 1453/0,599.01,-8797.84,12,0
+    .goto 1453/0,603.85,-8769.42,12,0
+    .goto 1453/0,573.74,-8741.37,12,0
+    .goto 1453/0,473.05,-8699.06,12,0
+    .goto 1453/0,426.4,-8714.66,12,0
+    .goto 1453/0,382.04,-8702.11,12 >>Travel toward |cRXP_FRIENDLY_Osric|r
 step
-    .goto StormwindClassic,74.31,47.22
+    .goto 1453/0,382.04,-8702.11
     >>Talk to |cRXP_FRIENDLY_Osric|r
     .turnin 6281 >> Turn in Continue to Stormwind
     .accept 6261 >> Accept Dungar Longdrink
     .target Osric Strang
 step
     #completewith next
-    .goto StormwindClassic,69.2,40.75,15,0
-    .goto StormwindClassic,67.03,40.27,15,0
-    .goto StormwindClassic,64.49,36.75,15,0
-    .goto StormwindClassic,64.97,29.32,15,0
-    .goto StormwindClassic,51.89,13.19,12,0
-    .goto StormwindClassic,51.76,12.08,12 >>Travel toward |cRXP_FRIENDLY_Grimand|r
+    .goto 1453/0,450.74,-8644.11,15,0
+    .goto 1453/0,479.91,-8639.81,15,0
+    .goto 1453/0,514.05,-8608.26,15,0
+    .goto 1453/0,507.6,-8541.66,15,0
+    .goto 1453/0,683.43,-8397.08,12,0
+    .goto 1453/0,685.18,-8387.13,12 >>Travel toward |cRXP_FRIENDLY_Grimand|r
 step
-    .goto StormwindClassic,51.76,12.08
+    .goto 1453/0,685.18,-8387.13
     >>Talk to |cRXP_FRIENDLY_Grimand|r
     .turnin 1097 >> Turn in Elmore's Task
     .accept 353 >> Accept Stormpike's Delivery

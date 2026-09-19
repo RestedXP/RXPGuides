@@ -659,36 +659,36 @@ step
     .accept 6281 >> Accept Continue To Stormwind
     .fly Stormwind >> Fly to Stormwind
 step
-    .goto StormwindClassic,56.2,64.6
+    .goto 1453/0,625.49,-8857.89
     >>Choose rockets. These have very good damage, and can be used for splitpulling
 .target Morgan Pestle
 >>Talk to |cRXP_FRIENDLY_Morgan Pestle|r
     .turnin 61 >> Turn in Shipment to Stormwind
 step
     #era/som
-    .goto StormwindClassic,57.1,57.7
+    .goto 1453/0,613.39,-8796.05
     .trainer >> Train 1h Swords
 step
-    .goto StormwindClassic,74.3,47.2
+    .goto 1453/0,382.18,-8701.93
 .target Osric Strang
 >>Talk to |cRXP_FRIENDLY_Osric Strang|r
     .turnin 6281 >> Turn in Continue to Stormwind
     >>Vendor and Repair
 step
     #completewith next
-    .goto StormwindClassic,51.8,12.1
+    .goto 1453/0,684.64,-8387.31
 .target Grimand Elmore
 >>Talk to |cRXP_FRIENDLY_Grimand Elmore|r
     .turnin 1097 >> Turn in Elmore's Task
 step
-    .goto StormwindClassic,51.8,12.1
+    .goto 1453/0,684.64,-8387.31
 .target Grimand Elmore
 >>Talk to |cRXP_FRIENDLY_Grimand Elmore|r
     .accept 353 >> Accept Stormpike's Delivery
 step
     #sticky
     #completewith next
-    .goto StormwindClassic,63.9,8.3,20 >>Enter the Deeprun Tram
+    .goto 1453/0,521.98,-8353.25,20 >>Enter the Deeprun Tram
 step
     >>Take the tram when it arrives, then get off when it arrives on the other side
 .target Monty
