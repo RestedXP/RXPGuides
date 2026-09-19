@@ -386,7 +386,7 @@ step
 -- step << Rogue
 --     .goto 2521,43.74,24.34
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Akeri Duskblade|r.
---     .train 
+--     .train
 --     .skipgossipid 136810,1
 --     .target Akeri Duskblade
 
@@ -698,7 +698,7 @@ step
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Constable Aonda|r
     .goto 2521,45.67,45.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r. 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
     .accept 93461 >>Accept Welcome to Shen'dar Village << Alliance
     .accept 92514 >>Accept Welcome to Shen'dar Village << Horde
     .target Constable Aonda
@@ -836,7 +836,7 @@ step << Horde Mage
     .target Nasalanna Windsinger
 step << Horde Mage
     .isOnQuest 93461 << Alliance
-    .isOnQuest 92514 << Horde 
+    .isOnQuest 92514 << Horde
     .train 7411,3
     >>Craft |T135225:0|t[Runed Copper Rod] and |T135975:0|t[Novice's Practice Wand]
     .collect 6218,3
@@ -883,7 +883,7 @@ step << Alliance Mage
     .target Nasalanna Windsinger
 step << Alliance Mage
     .isOnQuest 93461 << Alliance
-    .isOnQuest 92514 << Horde 
+    .isOnQuest 92514 << Horde
     .train 7411,3
     >>Craft |T135225:0|t[Runed Copper Rod] and |T135975:0|t[Novice's Practice Wand]
     .collect 6218,1
@@ -1074,7 +1074,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind|r.
     .complete 96101,1 --1/1 Use the /sit emote near the campfire
     .emote SIT,263664
-    .timer 60, RP 
+    .timer 60, RP
     .target Raan Wildwind
 step
     >>|cRXP_WARN_Wait for the Roleplay|r.
@@ -1445,7 +1445,7 @@ step
     .mob Skypriest Aanders
 step
     #completewith CommanderCyclasHeadA
-    >>Kill |cRXP_ENEMY_Living Lightning|r. 
+    >>Kill |cRXP_ENEMY_Living Lightning|r.
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning
 step
@@ -1459,7 +1459,7 @@ step
     #label CommanderCyclasHeadA
     #arrowtext Kill |cRXP_ENEMY_Commander Cyclas|r\nLoot |T134161:0|t[|cRXP_LOOT_Commander Cyclas's Head|r]
     .goto 2521,50.29,56.95
-    >>Kill |cRXP_ENEMY_Commander Cyclas|r. Loot him for |T134161:0|t[|cRXP_LOOT_Commander Cyclas's Head|r]. 
+    >>Kill |cRXP_ENEMY_Commander Cyclas|r. Loot him for |T134161:0|t[|cRXP_LOOT_Commander Cyclas's Head|r].
     .complete 92550,3 --1/1 Commander Cyclas's Head
 
 -- Maybe run between the two houses because of the supply caches? Drop chance seems to be pretty low sometimes
@@ -1476,7 +1476,7 @@ step
     +1
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Living Lightning|r. 
+    >>Kill |cRXP_ENEMY_Living Lightning|r.
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning
 step
@@ -1487,7 +1487,7 @@ step
     .mob Al'Aketh Stormcaller
 step
     #label LivingLightningA
-    >>Kill |cRXP_ENEMY_Living Lightning|r. 
+    >>Kill |cRXP_ENEMY_Living Lightning|r.
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning
 step
@@ -2291,3 +2291,38 @@ RXPGuides.RegisterGuide([[
  .goto 2521,48.53,20.6
 
 ]])
+
+-- DRUID BEAR FORM QUEST
+--Breadcrumb missing: (94006) The Great Ursera Spirit
+--Might be needed? you get it from the druid trainer in Valanaar
+--[[
+step
+    .goto 2521,69.761,61.454
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urs'endris::255853|r
+    .target Urs'endris::255853
+    .turnin 94006 >>Turn in The Great Ursera Spirit
+    .accept 94638 >>Accept Strength and Mercy
+step
+    .goto 2521,56.785,61.061
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fendaal Windstone::273017|r
+    .target Fendaal Windstone::273017
+    .accept 98512 >>Accept Al'Aketh Assassins
+step
+    .goto 2521,56.003,60.816
+    .complete 98512,1 --|10/10 Al'Aketh Assassin slain
+    .mob Al'Aketh Assassin::254626
+step
+    .goto 2521,56.785,61.061
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fendaal Windstone::273017|r
+    .target Fendaal Windstone::273017
+    .turnin 98512 >>Turn in Al'Aketh Assassins
+step
+    .goto 2521,54.058,65.527
+    .complete 94638,1 --|1/1 Ur'endra slain
+    .mob Ur'endra::258443
+step
+    .goto 2521,69.740,61.570
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urs'endris::255853|r
+    .target Urs'endris::255853
+    .turnin 94638 >>Turn in Strength and Mercy
+]]
