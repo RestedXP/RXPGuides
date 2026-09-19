@@ -26,7 +26,7 @@
 
 libs\embeds_Mainline.xml [AllowLoadGameType standard]
 libs\embeds.xml [AllowLoadGameType classic]
-libs\embeds.xml [AllowLoadGameType camelot]
+libs\embeds_Mainline.xml [AllowLoadGameType camelot]
 locale\locales.xml
 UI\includes.xml
 
