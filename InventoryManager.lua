@@ -744,7 +744,6 @@ if _G['ContainerFrame_UpdateAll'] then
                             if bag and slot then
                                 local id = GetContainerItemID(bag,slot)
                                 ToggleJunk(id,bag,slot)
-                                print(id,bag,slot)
                                 self.JunkIcon:SetShown(inventoryManager.IsJunkIconEnabled() and id and IsJunk(id) and frame:IsShown())
                             end
                         end)
