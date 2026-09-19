@@ -898,6 +898,14 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
     .home >>Set your Hearthstone to Shen'dar Village
     .target the Innkeeper
+step << Warrior
+    .goto 2521,44.95,45.1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corsan Earthrazer|r
+    .train 3127 >> Train |T132269:0|t[Parry]
+    .skipgossipid 136813
+    .target Corsan Earthrazer
+    .money <0.01
+    .xp <6,1
 step
     .goto 2521,45.67,45.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
