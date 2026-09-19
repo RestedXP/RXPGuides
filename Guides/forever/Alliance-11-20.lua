@@ -6272,7 +6272,7 @@ step
 step
     #xprate >1.59 << !Hunter
     #label ShoniAccept
-    .goto StormwindClassic,55.510,12.504
+    .goto 1453/0,634.700,-8390.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
     .accept 2040 >> Accept Underground Assault
     .target Shoni the Shilent
@@ -7603,7 +7603,7 @@ step
     #label ShoniEnd
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
     .turnin 2040 >> Turn in Underground Assault
-    .goto StormwindClassic,55.510,12.504
+    .goto 1453/0,634.700,-8390.800
     .target Shoni the Shilent
     .dungeon DM
 step
@@ -8115,7 +8115,7 @@ step
     .bronzetube
     .target Billibub Cogspinner
 step
-    .goto StormwindClassic,55.510,12.504
+    .goto 1453/0,634.700,-8390.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
     .accept 2040 >> Accept Underground Assault
     .target Shoni the Shilent
@@ -8691,7 +8691,7 @@ step
     .goto 1453/0,501.31,-8468.65
     .turnin 2040 >> Turn in Underground Assault
     .target +Shoni the Shilent
-    .goto StormwindClassic,55.510,12.504
+    .goto 1453/0,634.700,-8390.800
 step << Rogue
 .dungeon DM
     .goto 1453/0,377.61,-8752.30
