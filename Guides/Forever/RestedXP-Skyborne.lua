@@ -661,7 +661,7 @@ step
     .goto 2521,37.16,34.72,40,0
     .goto 2521,38.08,35.01,40,0
     >>Kill |cRXP_ENEMY_Al'Aketh Brute|r and |cRXP_ENEMY_Al'Aketh Neophyte|r.
-    *|cRXP_WARN_Refresh |T236219:0|t[Read Ley Line| near the Leyline|r
+    *|cRXP_WARN_Refresh|r |T236219:0|t[Read Ley Line] |cRXP_WARN_near the Leyline|r << Alliance
     .complete 92544,1 --|6/6 Al'Aketh Brute slain
     .complete 92544,2 --|4/4 Al'Aketh Neophyte slain
     .mob Al'Aketh Brute::251145
@@ -967,6 +967,99 @@ step
     .skipgossipid 137555
     .target Naleeia Tattermend::257018
 step
+    #completewith BadwindBennicA
+    >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
+    .complete 92515,1 --10/10 Prideclaw Pelt
+    .mob Prideclaw::251245
+step
+    #completewith BadwindBennicA
+    >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    .complete 92553,2 --8/8 Strider Meat
+    .complete 92553,1 --3/3 Small Egg
+    .mob Galestrider::251661
+step << Horde
+    #arrowtext Kill\n|cRXP_ENEMY_High Order Apprentices|r
+    .goto 2521,46.411,38.562
+    >>Kill the |cRXP_ENEMY_High Order Apprentices::257521|r.
+    .complete 94411,1 --|6/6 High Order Apprentice defeated
+    .mob High Order Apprentice::257521
+step
+    #completewith BadwindBennicB
+    >>Kill |cRXP_ENEMY_Highlands Bandits|r. Loot them for the |T5172975:0|t[|cRXP_LOOT_Pilfered Windstone|r].
+    .complete 92517,1 --|10/10 Highlands Bandit slain
+    .complete 93319,1 --|10/10 Pilfered Windstone
+    .mob Highlands Bandit::251918
+step
+    #completewith next
+    #label BadwindBennicA
+    >>Kill |cRXP_ENEMY_"Badwind" Bennic|r.
+    .complete 92517,2 --|1/1 "Badwind" Bennic slain
+    .mob "Badwind" Bennic::255534
+step
+    #completewith BadwindBennicA
+    #arrowtext Enter the cave\nto reach |cRXP_ENEMY_"Badwind" Bennic|r
+    .goto 2521,48.813,36.434,10,0
+    .goto 2521,49.355,35.793,10,0
+    .goto 2521,49.720,36.030,10,0
+    .goto 2521,49.982,35.679,10,0
+    .goto 2521,49.537,34.325,10 >>Enter the cave
+step
+    #requires BadwindBennicA
+    #label BadwindBennicB
+    #arrowtext Kill\n|cRXP_ENEMY_"Badwind" Bennic|r
+    .goto 2521,50.680,34.214
+    >>Kill |cRXP_ENEMY_"Badwind" Bennic|r.
+    *|cRXP_WARN_Refresh|r |T236219:0|t[Read Ley Line] |cRXP_WARN_near the Leyline|r << Alliance
+    .complete 92517,2 --|1/1 "Badwind" Bennic slain
+    .mob "Badwind" Bennic::255534
+step
+    #loop
+    #arrowtext Kill\n|cRXP_ENEMY_Highlands Bandits|r
+    .goto 2521,49.537,34.325,35,0 -- Cave Entrance
+    .goto 2521,47.645,36.289,35,0
+    .goto 2521,49.751,38.962,35,0
+    .goto 2521,49.537,34.325,35,0 -- Cave Entrance
+    .goto 2521,50.680,34.214,35,0 -- Badwind Bennic Location
+    >>Kill |cRXP_ENEMY_Highlands Bandits|r. Loot them for the |T5172975:0|t[|cRXP_LOOT_Pilfered Windstone|r].
+    .complete 92517,1 --|10/10 Highlands Bandit slain
+    .complete 93319,1 --|10/10 Pilfered Windstone
+    .mob Highlands Bandit::251918
+-- step
+--     .isOnQuest 92517
+--     .hs >>Hearth to Shen'dar Village
+step
+    #completewith To Shendalar
+    >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    .complete 92553,2 --8/8 Strider Meat
+    .complete 92553,1 --3/3 Small Egg
+    .mob Galestrider::251661
+step
+    #completewith To Shendalar
+    >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
+    .complete 92515,1 --10/10 Prideclaw Pelt
+    .mob Prideclaw::251245
+step
+    #completewith next
+    #hidewindow
+    #label To Shendalar
+    .train 2550 >>Train |T133971:0|t[Apprentice Cook]
+    .skipgossipid 137551
+step
+    #completewith To Shendalar
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zerril Softbreeze|r
+    .goto 2521,43.86,43.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Zerril Softbreeze|r.
+    .vendor >>Vendor Trash
+    .target Zerril Softbreeze::251905
+step
+    #requires To Shendalar
+    .goto 2521,43.850,43.840
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
+    -- .complete 96646,1 --|Learn cooking from Zerril Softbreeze in Shen'dar Village
+    .train 2550 >>Train |T133971:0|t[Apprentice Cook]
+    .skipgossipid 137551
+    .target Zerril Softbreeze::251905
+step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Raan Wildwind|r
     .goto 2521,41.67,44.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind|r.
@@ -1025,96 +1118,52 @@ step
     .accept 97965 >>Accept Camping 101: First Aid
     .target Raan Wildwind::263664
 step
-    #completewith BadwindBennicA
-    >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
-    .complete 92515,1 --10/10 Prideclaw Pelt
-    .mob Prideclaw::251245
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Raan Wildwind|r
+    .train 7620,3
+    .goto 2521,41.658,44.784
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind::263664|r
+    .accept 97967 >>Accept Camping 101: Fishing
+    .target Raan Wildwind::263664
 step
-    #completewith BadwindBennicA
-    >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
-    .complete 92553,2 --8/8 Strider Meat
-    .complete 92553,1 --3/3 Small Egg
-    .mob Galestrider::251661
-step << Horde
-    #arrowtext Kill\n|cRXP_ENEMY_High Order Apprentices|r
-    .goto 2521,46.411,38.562
-    >>Kill the |cRXP_ENEMY_High Order Apprentices::257521|r.
-    .complete 94411,1 --|6/6 High Order Apprentice defeated
-    .mob High Order Apprentice::257521
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Raan Wildwind|r
+    .train 2259,3
+    .goto 2521,41.658,44.784
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind::263664|r
+    .accept 97963 >>Accept Camping 101: Alchemy
+    .target Raan Wildwind::263664
 step
-    #completewith BadwindBennicB
-    >>Kill |cRXP_ENEMY_Highlands Bandits|r. Loot them for the |T5172975:0|t[|cRXP_LOOT_Pilfered Windstone|r].
-    .complete 92517,1 --|10/10 Highlands Bandit slain
-    .complete 93319,1 --|10/10 Pilfered Windstone
-    .mob Highlands Bandit::251918
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Raan Wildwind|r
+    .train 2018,3
+    .goto 2521,41.658,44.784
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind::263664|r
+    .accept 97964 >>Accept Camping 101: Blacksmithing
+    .target Raan Wildwind::263664
 step
-    #completewith next
-    #label BadwindBennicA
-    >>Kill |cRXP_ENEMY_"Badwind" Bennic|r.
-    .complete 92517,2 --|1/1 "Badwind" Bennic slain
-    .mob "Badwind" Bennic::255534
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Raan Wildwind|r
+    .train 3908,3
+    .goto 2521,41.658,44.784
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind::263664|r
+    .accept 97973 >>Accept Camping 101: Tailoring
+    .target Raan Wildwind::263664
 step
-    #completewith BadwindBennicA
-    #arrowtext Enter the cave\nto reach |cRXP_ENEMY_"Badwind" Bennic|r
-    .goto 2521,48.813,36.434,10,0
-    .goto 2521,49.355,35.793,10,0
-    .goto 2521,49.720,36.030,10,0
-    .goto 2521,49.982,35.679,10,0
-    .goto 2521,49.537,34.325,10 >>Enter the cave
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Raan Wildwind|r
+    .train 7411,3
+    .goto 2521,41.658,44.784
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind::263664|r
+    .accept 98286 >>Accept Camping 101: Enchanting
+    .target Raan Wildwind::263664
 step
-    #requires BadwindBennicA
-    #label BadwindBennicB
-    #arrowtext Kill\n|cRXP_ENEMY_"Badwind" Bennic|r
-    .goto 2521,50.680,34.214
-    >>Kill |cRXP_ENEMY_"Badwind" Bennic|r.
-    .complete 92517,2 --|1/1 "Badwind" Bennic slain
-    .mob "Badwind" Bennic::255534
-step
-    #loop
-    #arrowtext Kill\n|cRXP_ENEMY_Highlands Bandits|r
-    .goto 2521,49.537,34.325,35,0 -- Cave Entrance
-    .goto 2521,47.645,36.289,35,0
-    .goto 2521,49.751,38.962,35,0
-    .goto 2521,49.537,34.325,35,0 -- Cave Entrance
-    .goto 2521,50.680,34.214,35,0 -- Badwind Bennic Location
-    >>Kill |cRXP_ENEMY_Highlands Bandits|r. Loot them for the |T5172975:0|t[|cRXP_LOOT_Pilfered Windstone|r].
-    .complete 92517,1 --|10/10 Highlands Bandit slain
-    .complete 93319,1 --|10/10 Pilfered Windstone
-    .mob Highlands Bandit::251918
-step
-    .isOnQuest 92517
-    .hs >>Hearth to Shen'dar Village
-step
-    .isOnQuest 92517
-    #arrowtext Vendor Trash
-    .goto 2521,43.02,43.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
-    .vendor >>Vendor Trash
-    .target Coriella Calmbreeze::254089
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Mendalass Tattermend|r
-    .train 8613,3
-    .isOnQuest 97971
-    .isQuestComplete 97971
-    .goto 2521,43.289,43.369
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mendalass Tattermend::257024|r
-    .turnin 97971 >>Turn in Camping 101: Skinning
-    .target Mendalass Tattermend::257024
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Zerril Softbreeze|r
-    .isOnQuest 96646
-    .goto 2521,43.850,43.840
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
-    .complete 96646,1 --|Learn cooking from Zerril Softbreeze in Shen'dar Village
-    .skipgossipid 137551
-    .target Zerril Softbreeze::251905
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Zerril Softbreeze|r
-    .isOnQuest 96646
-    .goto 2521,43.850,43.840
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
-    .turnin 96646 >>Turn in Camping 101: Cooking
-    .target Zerril Softbreeze::251905
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Raan Wildwind|r
+    .train 2108,3
+    .goto 2521,41.658,44.784
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind::263664|r
+    .accept 97966 >>Accept Camping 101: Leatherworking
+    .target Raan Wildwind::263664
+
+
+
+
+
 step << Horde
     .goto 2521,43.518,44.788
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illaya Amberwind::251902|r
@@ -1138,7 +1187,7 @@ step
     +1
 step
     #completewith VulgarasHeadA
-    >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
+    >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r]. 2
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step
@@ -1872,12 +1921,6 @@ step
     .goto 2521,53.96,38.90
     .complete 98285,1 --Raise your engineering skill to 20
 step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Strange Hermit|r
-    .goto 2521,53.97,38.90
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strange Hermit|r.
-    .turnin 98285 >>Turn in Camping 101: Engineering
-    .target Strange Hermit
-step
     #arrowtext Collect\n|cRXP_LOOT_Zephyrseed|r
     .goto 2521,56.84,38.03
     .complete 93160,1 --8/8 Zephyrseed
@@ -2045,7 +2088,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #version 1
-#name 1-10 2521
+#name Leylines
 #displayname 1-10 Skyborne222223
 #group RestedXP Alliance 1-20
 #internal
@@ -2059,8 +2102,7 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #classic
 #version 1
-#name 1-10 2521
-#displayname 1-10 Skyborne22222
+#name Windstones
 #group RestedXP Alliance 1-20
 #internal
 
@@ -2074,8 +2116,7 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #classic
 #version 1
-#name 1-10 2521
-#displayname 1-10 Skyborne2224334
+#name Tronadoes
 #group RestedXP Alliance 1-20
 #internal
 
@@ -2085,7 +2126,7 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #classic
 #version 1
-#name 1-10 2521
+#name Trainers
 #displayname 1-10 Skyborne22223423
 #group RestedXP Alliance 1-20
 #internal
@@ -2096,7 +2137,7 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #classic
 #version 1
-#name 1-10 2521
+#name Treasures
 #displayname 1-10 Skyborne22223423
 #group RestedXP Alliance 1-20
 #internal
@@ -2105,46 +2146,16 @@ RXPGuides.RegisterGuide([[
  .goto 2521,48.53,20.6
 
 
- step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Raan Wildwind|r
-    .goto 2521,41.66,44.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind|r.
-    .accept 97971 >>Accept Camping 101: Skinning
-    .target Raan Wildwind
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Raan Wildwind|r
-    .goto 2521,41.67,44.79
-    .accept 98286 >>Accept Camping 101: Enchanting
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Raan Wildwind|r
-    .goto 2521,41.67,44.79
-    .accept 97968 >>Accept Camping 101: Herbalism
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Raan Wildwind|r
-    .goto 2521,41.67,44.79
-    .accept 97963 >>Accept Camping 101: Alchemy
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Raan Wildwind|r
-    .goto 2521,41.67,44.80
-    .accept 97973 >>Accept Camping 101: Tailoring
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Raan Wildwind|r
-    .goto 2521,41.69,44.82
-    .accept 97964 >>Accept Camping 101: Blacksmithing
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Raan Wildwind|r
-    .goto 2521,41.67,44.80
-    .accept 97965 >>Accept Camping 101: First Aid
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Naleeia Tattermend|r
-    .goto 2521,43.07,46.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleeia Tattermend|r.
-    .turnin 97965 >>Turn in Camping 101: First Aid
-    .target Naleeia Tattermend
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Raan Wildwind|r
-    .goto 2521,41.66,44.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind|r.
-    .accept 97967 >>Accept Camping 101: Fishing
-    .target Raan Wildwind
+]])
+RXPGuides.RegisterGuide([[
+#classic
+#version 1
+#name 101
+#displayname 1-10 Skyborne22223423
+#group RestedXP Alliance 1-20
+#internal
+
+--Treasure
+ .goto 2521,48.53,20.6
+
 ]])
