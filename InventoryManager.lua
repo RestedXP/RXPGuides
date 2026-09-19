@@ -729,36 +729,32 @@ if _G['ContainerFrame_UpdateAll'] then
         end
         if bagframe and bagframe.UpdateItems then
             hooksecurefunc(bagframe,'UpdateItems', function(self)
-            local bag = self:GetID()
-            for _,v in pairs(bagframe.Items) do
-                local slot = v:GetID()
-                if slot < 0 then return end
-                local id = GetContainerItemID(bag, slot)
-                local isJunk = IsJunk(id,bag,slot)
-                if isJunk then
-                    v.JunkIcon:Show()
-                else
-                    v.JunkIcon:Hide()
-                end
 
-            end
             local frames = {bagframe:GetChildren()}
             for _,frame in pairs(frames) do
-                if not hookedFrames[frame] and frame.GetID and frame.OnClick then
-                    frame:HookScript("OnClick", function(self,button,...)
-                        local bag = self:GetBagID()
-                        local slot = self:GetID()
-                        local mod = inventoryManager.GetModKey()
-                        if not inventoryManager.IsRightClickEnabled() or not mod or button ~= inventoryManager.GetMouseButton() then
-                            return
-                        end
-                        if bag and slot then
-                            local id = GetContainerItemID(bag,slot)
-                            ToggleJunk(id,bag,slot)
-                            self.JunkIcon:SetShown(IsJunk(id))
-                        end
-                    end)
-                    hookedFrames[frame] = true
+                if frame.GetID and frame.OnClick then
+                    if not hookedFrames[frame] then
+                        frame:HookScript("OnClick", function(self,button,...)
+                            local bag = self:GetBagID()
+                            local slot = self:GetID()
+                            local mod = inventoryManager.GetModKey()
+                            if not inventoryManager.IsRightClickEnabled() or not mod or button ~= inventoryManager.GetMouseButton() then
+                                return
+                            end
+                            if bag and slot then
+                                local id = GetContainerItemID(bag,slot)
+                                ToggleJunk(id,bag,slot)
+                                print(id,bag,slot)
+                                self.JunkIcon:SetShown(inventoryManager.IsJunkIconEnabled() and id and IsJunk(id) and frame:IsShown())
+                            end
+                        end)
+                        hookedFrames[frame] = true
+                    end
+                    local bag = frame:GetBagID()
+                    local slot = frame:GetID()
+                    if slot < 0 then return end
+                    local id = GetContainerItemID(bag, slot)
+                    frame.JunkIcon:SetShown(inventoryManager.IsJunkIconEnabled() and id and IsJunk(id))
                 end
             end
 
