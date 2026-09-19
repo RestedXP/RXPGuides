@@ -63,9 +63,11 @@ step
     .macro Cancel Walk on Air,132745 >>/cancelaura Walk on Air
 step << Warrior
     .goto 2521,43.66,24.13
-    .trainer >> Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blademaster Ren|r.
+    .train 6673 >>Train |T132333:0|t[Battle Shout]
     .skipgossipid 136813,1
     .target Blademaster Ren
+    .money <0.0010
 step
     #completewith next
     #label Anchors of Zephras
@@ -97,7 +99,7 @@ step
     .skipgossipid 137720,1
     .target Halaan Hawk-Eye
 step
-    #title Move to cancel the channel
+    #rrowtext Move to cancel the channel
     .goto 2521,43.80,24.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye|r.
     *Move or press ESC to cancel.
@@ -134,6 +136,13 @@ step
     .accept 92482 >>Accept The Way of the Hunter << Hunter
     .accept 92484 >>Accept Embracing the Elements << Shaman
     .accept 92532 >>Accept The Warrior's Path << Warrior
+step << Mage
+    .goto 2521,41.55,23.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorii Brightwhisper|r.
+    .train 1459 >>Train |T135932:0|t[Arcane Intellect]
+    .skipgossipid 136807,1
+    .target Dorii Brightwhisper
+    .money <0.0010
 step << Shaman
     .goto 2521,42.790,23.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r
@@ -309,33 +318,48 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
     .turnin 92597 >>Turn in Reading the Ley Lines
     .target Falorne Fallwind
-    .useitem 247840
-    .useitem 247846
-    .useitem 247841
-step
-    .goto 2521,43.44,24.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
-    .turnin 92463 >>Turn in The Cirrusfly Queen
-    .target Elatrell Featherlight
 step << Rogue
     .goto 2521,43.74,24.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Akeri Duskblade|r.
     .turnin 92483 >>Turn in At Home in the Shadows
     .target Akeri Duskblade
-    .trainer >> Train your class spells
-    .skipgossipid 136810,1
+step << Warrior
+    .goto 2521,43.66,24.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blademaster Ren|r.
+    .train 100,1 >>Train |T132333:0|t[Charge]
+    .skipgossipid 136813,1
+    .target Blademaster Ren
+    .money <0.01
+    .xp <4,1
+step
+    .goto 2521,43.44,24.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
+    .turnin 92463 >>Turn in The Cirrusfly Queen
+    .target Elatrell Featherlight
+-- step << Rogue
+--     .goto 2521,43.74,24.34
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Akeri Duskblade|r.
+--     .train 
+--     .skipgossipid 136810,1
+--     .target Akeri Duskblade
+
+step << Warrior
+    .goto 2521,43.66,24.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blademaster Ren|r.
+    .train 100,1 >>Train |T132333:0|t[Charge]
+    .skipgossipid 136813,1
+    .target Blademaster Ren
+    .money <0.01
 step << Warrior
     .goto 2521,43.66,24.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blademaster Ren|r.
     .turnin 92532 >>Turn in The Warrior's Path
     .target Blademaster Ren
-    .trainer >> Train your class spells
-    .skipgossipid 136813,1
 step << Horde
     .goto 2521,42.607,24.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ventaari Brightwish::251487|r
-    .target Ventaari Brightwish::251487
     .turnin 92598 >>Turn in The Gift of Skysight
+    .target Ventaari Brightwish::251487
 step
     .goto 2521,42.07,23.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker|r.
@@ -345,9 +369,14 @@ step
 step << Mage
     .goto 2521,41.55,23.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorii Brightwhisper|r.
-    .turnin 92481 >>Turn in A Student of the Arcane
-    .trainer >> Train your class spells
+    .train 116 >>Train |T135932:0|t[Frostbolt]
     .skipgossipid 136807,1
+    .target Dorii Brightwhisper
+    .money <0.01
+step << Mage
+    .goto 2521,41.55,23.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorii Brightwhisper|r.
+    .turnin 92481 >>Turn in A Student of the Arcane
     .target Dorii Brightwhisper
 step
     .goto 2521,42.76,23.65
@@ -497,9 +526,17 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valreaa Valewind|r.
     .turnin 92473 >>Turn in Aggressive Encroachment
     .target Valreaa Valewind
-
-
 step
+    #completewith next
+    #label Al'Aketh Thugs
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanaa Nightwind|r.
+    .accept 92544 >>Accept Al'Aketh Thugs
+    .target Hanaa Nightwind
+step
+    #completewith Al'Aketh Thugs
+    .goto 2521,38.31,30.17,100 >>Kill mobs along the way if you can do so without losing time.
+step
+    #requires Al'Aketh Thugs
     .goto 2521,38.31,30.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanaa Nightwind|r.
     .accept 92544 >>Accept Al'Aketh Thugs
@@ -512,17 +549,31 @@ step
     .mob Al'Aketh Brute::251145
     .mob Al'Aketh Neophyte::251448
 step
-    .goto 2521,36.032,33.545
+    #completewith next
+    #label Malduko Cloudcrush
+    .goto 2521,37.04,32.93,20,0
     >>Kill |cRXP_ENEMY_Malduko Cloudcrush|r.
+    .complete 92544,3 --|1/1 Malduko Cloudcrush slain
+    .mob Malduko Cloudcrush::256935
+step
+    #completewith Malduko Cloudcrush
+    .goto 2521,36.032,33.545,50 >>Head to the upper level of the temple
+step
+    #requires Malduko Cloudcrush
+    .goto 2521,36.032,33.545
+    >>Kill |cRXP_ENEMY_Malduko Cloudcrush|r atop the temple.
     .complete 92544,3 --|1/1 Malduko Cloudcrush slain
     .mob Malduko Cloudcrush::256935
 step
     #loop
     .goto 2521,35.75,31.93,40,0
+    .goto 2521,35.33,34.19,30,0
+    .goto 2521,36.34,31.56,40,0
     .goto 2521,37.3,32.89,40,0
     .goto 2521,37.16,34.72,40,0
     .goto 2521,38.08,35.01,40,0
     >>Kill |cRXP_ENEMY_Al'Aketh Brute|r and |cRXP_ENEMY_Al'Aketh Neophyte|r.
+    *|cRXP_WARN_Refresh |T236219:0|t[Read Ley Line| near the Leyline|r
     .complete 92544,1 --|6/6 Al'Aketh Brute slain
     .complete 92544,2 --|4/4 Al'Aketh Neophyte slain
     .mob Al'Aketh Brute::251145
@@ -532,12 +583,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanaa Nightwind|r.
     .turnin 92544 >>Turn in Al'Aketh Thugs
     .target Hanaa Nightwind
-
-
 step
-    #completewith
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Windstones|r for an item that restores health and mana on use 
+    #completewith next
+    +|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Windstones|r throughout the zone to obtain an item that restores health and mana
 step
+    #requires The Adventurer
     .goto 2521,41.67,44.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind|r.
     .turnin 96638 >>Turn in The Adventurer
@@ -575,15 +625,35 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind::263664|r
     .accept 96646 >>Accept Camping 101: Cooking
     .target Raan Wildwind::263664
+step
+    .train 2366,3
+    .goto 2521,41.658,44.784
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind::263664|r
+    .accept 97968 >>Accept Camping 101: Herbalism
+    .target Raan Wildwind::263664
 step << Shaman
     .goto 2521,43.454,44.872
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aarnor Galestrike::254082|r
     .trainer >> Train your class spells
     .target Aarnor Galestrike::254082
 step
+    #completewith next
+    #label The Next Step
+    #hidewindow
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
+    .turnin 92472 >>Turn in The Next Step
+step
+    #completewith The Next Step
+    .goto 2521,44.72,45.47
+    .vendor >>|cRXP_WARN_Vendor trash|r
+step
+    #requires The Next Step
     .goto 2521,45.67,45.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
     .turnin 92472 >>Turn in The Next Step
+step
+    .goto 2521,45.67,45.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r. 
     .accept 93461 >>Accept Welcome to Shen'dar Village << Alliance
     .accept 92514 >>Accept Welcome to Shen'dar Village << Horde
     .target Constable Aonda
@@ -594,7 +664,16 @@ step << Alliance
     .accept 92596 >>Accept The High Order
     .target Rathiril Sunlance
 step << Alliance
+    .goto 2521,45.04,46.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rathiril Sunlance|r.
     .complete 92596,1 --1/1 Listen to Rathiril Sunlance
+    .skipgossipid 136139 -- Can you tell me what is happening on Zephras Isle?
+    .skipgossipid 136138 -- Do we know why..?
+    .skipgossipid 136137 -- How do we solve this?
+    .skipgossipid 136136 -- What about the Al'Aketh? Can they help?
+    .skipgossipid 136135 -- What of this "Windlord"? Is Al'Akir real, or a creation of the cult?
+    .skipgossipid 136134 -- How can you be so sure? If we've never dealt with the windlord directly, surely it's worth a try?
+    .skipgossipid 136133 -- <Remain Silent>
 step << Alliance
     .goto 2521,44.98,46.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rathiril Sunlance|r.
@@ -619,17 +698,43 @@ step << Horde
     .target Illaya Amberwind
 step << Mage
     --mage training
+step << Mage
+    --mage training
+step << Mage
+    --mage training
+step << Mage
+    --mage training
+step << Mage
+    --mage training
 step
     .goto 2521,43.02,43.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_the Innkeeper|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
     .complete 93461,2 << Alliance --1/1 Speak with the Innkeeper
     .complete 92514,2 << Horde --1/1 Speak with the Innkeeper
     .target the Innkeeper
 step
     .goto 2521,43.02,43.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_the Innkeeper|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
     .home >>Set your Hearthstone to Shen'dar Village
     .target the Innkeeper
+step << Rogue
+    .goto 2521,43.16,43.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
+    .train 1757 >> Train |T136189:0|t[Sinister Strike]
+    .train 1776 >> Train |T132155:0|t[Gouge]
+    .skipgossipid 136810
+    .target Miriaan Mistblade
+    .money <0.02
+    .xp <6,1
+step << Rogue
+    .goto 2521,43.16,43.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
+    .train 1757 >> Train |T136189:0|t[Sinister Strike]
+    .skipgossipid 136810
+    .target Miriaan Mistblade
+    .xp <6,1
+step << Mage/Druid
+    --Enchanting Wand
 step
     .train 8613,3
     .isOnQuest 97971
@@ -657,40 +762,51 @@ step
     .accept 92515 >>Accept The Problem With Prideclaws
     .target Indari Sunseam
 step
+    .train 2575,3
+    .goto 2521,41.658,44.784
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind::263664|r
+    .tupnin 97970 >>Turnin Camping 101: Mining
+    .target Raan Wildwind::263664
+step
     .goto 2521,44.88,44.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taleen Shimmerthread|r.
     .accept 93951 >>Accept A Little Beauty
     .target Taleen Shimmerthread
+
+
 step
     .isOnQuest 96646
     .goto 2521,43.850,43.840
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
     .complete 96646,1 --|Learn cooking from Zerril Softbreeze in Shen'dar Village
-    .target Zerril Softbreeze
+    .skipgossipid 137551
+    .target Zerril Softbreeze::251905
 step
+--here
+step
+    .isOnQuest 96646
     .goto 2521,43.850,43.840
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
     .turnin 96646 >>Turn in Camping 101: Cooking
     .target Zerril Softbreeze::251905
 step
-    .goto 2521,43.85,43.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze|r.
+    .goto 2521,43.850,43.840
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
     .accept 92553 >>Accept Restocking the Larders
-    .target Zerril Softbreeze
-step
-    --cooking
-
-
+    .target Zerril Softbreeze::251905
 step
     .goto 2521,43.37,45.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bounty Available: Vulgara the Insatiable!|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bounty Available: Vulgara the Insatiable!|r
     .accept 93318 >>Accept WANTED: Vulgara the Insatiable
     .target Bounty Available: Vulgara the Insatiable!
 step
     .goto 2521,43.073,46.306
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleeia Tattermend::257018|r.
-    .train 3273 >> Train First Aid
+    .train 3273 >>Train First Aid
+    .skipgossipid 137555
     .target Naleeia Tattermend::257018
+
+
 step
     >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
@@ -932,39 +1048,7 @@ step
 step
     .goto 2521,45.67,45.50
     .accept 93948 >>Accept Deliver the Signet
-step
-    .goto 2521,41.66,44.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind|r.
-    .accept 97971 >>Accept Camping 101: Skinning
-    .target Raan Wildwind
-step
-    .goto 2521,41.67,44.79
-    .accept 98286 >>Accept Camping 101: Enchanting
-step
-    .goto 2521,41.67,44.79
-    .accept 97968 >>Accept Camping 101: Herbalism
-step
-    .goto 2521,41.67,44.79
-    .accept 97963 >>Accept Camping 101: Alchemy
-step
-    .goto 2521,41.67,44.80
-    .accept 97973 >>Accept Camping 101: Tailoring
-step
-    .goto 2521,41.69,44.82
-    .accept 97964 >>Accept Camping 101: Blacksmithing
-step
-    .goto 2521,41.67,44.80
-    .accept 97965 >>Accept Camping 101: First Aid
-step
-    .goto 2521,43.07,46.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleeia Tattermend|r.
-    .turnin 97965 >>Turn in Camping 101: First Aid
-    .target Naleeia Tattermend
-step
-    .goto 2521,41.66,44.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind|r.
-    .accept 97967 >>Accept Camping 101: Fishing
-    .target Raan Wildwind
+
 
 step
     .goto 2521,66.18,76.65
@@ -1760,4 +1844,39 @@ RXPGuides.RegisterGuide([[
 
 --Treasure
  .goto 2521,48.53,20.6
+
+
+ step
+    .goto 2521,41.66,44.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind|r.
+    .accept 97971 >>Accept Camping 101: Skinning
+    .target Raan Wildwind
+step
+    .goto 2521,41.67,44.79
+    .accept 98286 >>Accept Camping 101: Enchanting
+step
+    .goto 2521,41.67,44.79
+    .accept 97968 >>Accept Camping 101: Herbalism
+step
+    .goto 2521,41.67,44.79
+    .accept 97963 >>Accept Camping 101: Alchemy
+step
+    .goto 2521,41.67,44.80
+    .accept 97973 >>Accept Camping 101: Tailoring
+step
+    .goto 2521,41.69,44.82
+    .accept 97964 >>Accept Camping 101: Blacksmithing
+step
+    .goto 2521,41.67,44.80
+    .accept 97965 >>Accept Camping 101: First Aid
+step
+    .goto 2521,43.07,46.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleeia Tattermend|r.
+    .turnin 97965 >>Turn in Camping 101: First Aid
+    .target Naleeia Tattermend
+step
+    .goto 2521,41.66,44.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind|r.
+    .accept 97967 >>Accept Camping 101: Fishing
+    .target Raan Wildwind
 ]])
