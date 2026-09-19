@@ -674,7 +674,8 @@ step
     .target Hanaa Nightwind
 step
     #completewith next
-    +|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Windstones|r throughout the zone to obtain an item that restores health and mana
+    +|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Windstones|r throughout the zone to obtain an item that restores health and mana.
+    *If you spot a Tornado, approach it to gain 40% increased movement speed for 5 minutes. The effect ends if you take damage
 step
     .isOnQuest 92472
     #completewith next
@@ -786,12 +787,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
     .complete 92514,2 << Horde --1/1 Speak with the Innkeeper
     .target the Innkeeper
-step << Horde
-    #arrowtext Set your Hearthstone\nto Shen'dar Village
-    .goto 2521,43.02,43.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
-    .home >>Set your Hearthstone to Shen'dar Village
-    .target the Innkeeper
+-- step << Horde
+--     #arrowtext Set your Hearthstone\nto Shen'dar Village
+--     .goto 2521,43.02,43.24
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
+--     .home >>Set your Hearthstone to Shen'dar Village
+--     .target the Innkeeper
 step << Horde Rogue
     #arrowtext Talk to\n|cRXP_FRIENDLY_Miriaan Mistblade|r
     .goto 2521,43.16,43.26
@@ -893,11 +894,11 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
     .complete 93461,2 << Alliance --1/1 Speak with the Innkeeper
     .target the Innkeeper
-step << Alliance
-    .goto 2521,43.02,43.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
-    .home >>Set your Hearthstone to Shen'dar Village
-    .target the Innkeeper
+-- step << Alliance
+--     .goto 2521,43.02,43.24
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
+--     .home >>Set your Hearthstone to Shen'dar Village
+--     .target the Innkeeper
 step << Warrior
     .goto 2521,44.95,45.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corsan Earthrazer|r
@@ -980,6 +981,7 @@ step
 step << Horde
     #arrowtext Kill\n|cRXP_ENEMY_High Order Apprentices|r
     .goto 2521,46.411,38.562
+    --loop maybe
     >>Kill the |cRXP_ENEMY_High Order Apprentices::257521|r.
     .complete 94411,1 --|6/6 High Order Apprentice defeated
     .mob High Order Apprentice::257521
@@ -1169,25 +1171,30 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illaya Amberwind::251902|r
     .turnin 94411 >>Turn in Meddlesome Mages
     .target Illaya Amberwind::251902
-step
+step << Horde
     #completewith HippogryphHarrassmentA
     #hidewindow
     #arrowtext Kill |cRXP_ENEMY_Hippogryphs|r\nClick on |cRXP_PICK_Hippogryph Downs|r
     #loop
-    .goto 2521,33.852,55.527,45,0
-    .goto 2521,34.208,58.154,45,0
-    .goto 2521,37.619,58.316,45,0
-    .goto 2521,38.605,56.936,45,0
-    .goto 2521,38.264,55.126,45,0
-    .goto 2521,37.749,53.055,45,0
-    .goto 2521,36.449,50.724,45,0
-    .goto 2521,34.211,51.432,45,0
-    .goto 2521,36.641,52.578,45,0
-    .goto 2521,33.179,54.345,45,0
+    -- .goto 2521,39.66,49.62,40,0
+    -- .goto 2521,38.69,50.31,40,0
+    .goto 2521,36.44,50.93,40,0
+    .goto 2521,35.16,51.07,40,0
+    .goto 2521,34.12,51.6,40,0
+    .goto 2521,34.52,52.76,40,0
+    .goto 2521,35.12,54.08,40,0
+    .goto 2521,35.58,53.08,40,0
+    .goto 2521,36.02,54.28,40,0
+    .goto 2521,35.72,55.36,40,0
+    .goto 2521,35.63,57.34,40,0
+    .goto 2521,37.13,56.6,40,0
+    .goto 2521,36.61,58.64,40,0
+    .goto 2521,38.61,56.89,40,0
+    .goto 2521,40.22,56.94,40,0
     +1
 step
     #completewith VulgarasHeadA
-    >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r]. 2
+    >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step
@@ -1198,10 +1205,36 @@ step
     .mob Galestrider::251661
 step << Alliance
     #arrowtext Defeat\n|cRXP_ENEMY_Windshaper Novice Seer|r
-    .goto 2521,39.15,47.74
+    #loop
+    .goto 2521,39.56,47.18,35,0
+    .goto 2521,38.73,47.62,35,0
+    .goto 2521,37.56,47.25,35,0
+    .goto 2521,38.67,46.55,35,0
     >>Kill the |cRXP_ENEMY_Windshaper Novice Seer|r.
+    *|cRXP_WARN_Refresh|r |T236219:0|t[Read Ley Line] |cRXP_WARN_near the Leyline|r << Alliance
     .complete 94413,1 --6/6 Windshaper Novice Seer defeated
     .mob Windshaper Novice Seer
+step << Alliance
+    #completewith HippogryphHarrassmentA
+    #hidewindow
+    #arrowtext Kill |cRXP_ENEMY_Hippogryphs|r\nClick on |cRXP_PICK_Hippogryph Downs|r
+    #loop
+    .goto 2521,36.44,50.93,40,0
+    .goto 2521,35.16,51.07,40,0
+    .goto 2521,34.12,51.6,40,0
+    .goto 2521,34.52,52.76,40,0
+    .goto 2521,35.12,54.08,40,0
+    .goto 2521,35.58,53.08,40,0
+    .goto 2521,36.02,54.28,40,0
+    .goto 2521,35.72,55.36,40,0
+    .goto 2521,35.63,57.34,40,0
+    .goto 2521,37.13,56.6,40,0
+    .goto 2521,36.61,58.64,40,0
+    .goto 2521,38.61,56.89,40,0
+    .goto 2521,40.22,56.94,40,0
+    .goto 2521,35.22,54.05,40,0
+    .goto 2521,33.1,54.67,40,0
+    +1
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Hippogryph Youth|r, |cRXP_ENEMY_Hippogryph Protector|r and the |cRXP_ENEMY_Hippogryph Matriarch|r.
@@ -1229,8 +1262,8 @@ step
     .goto 2521,43.079,51.028,15,0
     .goto 2521,42.978,51.803,15,0
     .goto 2521,42.75,52.68
-    >>Kill |cRXP_ENEMY_Vulgara|r |cRXP_WARN_(level 8 elite)|r. Loot it for |T4218759:0|t[|cRXP_LOOT_Vulgar's Head|r].
-    *Look for a group to kill it or skip the quest.
+    >>Kill |cRXP_ENEMY_Vulgara|r|cRXP_WARN_(level 8 elite)|r on the mountain. Loot it for |T4218759:0|t[|cRXP_LOOT_Vulgar's Head|r].
+    *|cRXP_WARN_Look for a group to kill it or skip the quest; respawns are lengthy|r.
     .complete 93318,1 --1/1 Vulgara's Head
     .mob Vulgara
 step
@@ -1261,23 +1294,20 @@ step
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Zerril Softbreeze|r
+    -- .isOnQuest
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zerril Softbreeze|r\nDon't sell meat&eggs
     .goto 2521,43.851,43.848
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
     .vendor >>Vendor Trash
+    .skipgossipid 137550
     .target Zerril Softbreeze::251905
 step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Illaya Amberwind|r
-    .goto 2521,43.513,44.782
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illaya Amberwind::251902|r
-    .target Illaya Amberwind::251902
-    .turnin 94411 >>Turn in Meddlesome Mages
-step
+    .isQuestComplete 92553
     #arrowtext Talk to\n|cRXP_FRIENDLY_Zerril Softbreeze|r
     .goto 2521,43.851,43.848
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
-    .target Zerril Softbreeze::251905
     .turnin 92553 >>Turn in Restocking the Larders
+    .target Zerril Softbreeze::251905
 step << Hunter
     .goto 2521,44.790,44.168
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Tinderforged::257421|r
@@ -1341,12 +1371,22 @@ step
     .target Sania Silverstream::251904
     .turnin 93036 >>Turn in Infiltrating the Cult
     .accept 92529 >>Accept Falaath Village
+
+    --todo 101 turnins
+    --class trainers
+    --to buy
+    --cooking quest update
 step << Shaman
     #arrowtext Talk to\n|cRXP_FRIENDLY_Aarnor Galestrike|r
     .goto 2521,43.454,44.872
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aarnor Galestrike::254082|r
     .trainer >> Train your class spells
     .target Aarnor Galestrike::254082
+step << Alliance
+    .goto 2521,44.979,46.365
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rathiril Sunlance::251903|r.
+    .target Rathiril Sunlance::251903
+    .turnin 94413 >>Turn in A Magical Affront
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Missionary Jasaan|r
     .goto 2521,46.880,56.242
