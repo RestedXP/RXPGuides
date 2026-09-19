@@ -25,7 +25,7 @@ step
     .goto 2521,43.44,24.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
     .accept 92462 >>Accept Infestation Investigation
-    .useitem 264908
+    -- .useitem 264908
     .target Elatrell Featherlight
 step
     #hidewindow
@@ -637,6 +637,7 @@ step << Shaman
     .trainer >> Train your class spells
     .target Aarnor Galestrike::254082
 step
+    .isOnQuest 92472
     #completewith next
     #label The Next Step
     #hidewindow
@@ -648,6 +649,7 @@ step
     .vendor >>|cRXP_WARN_Vendor trash|r
 step
     #requires The Next Step
+    .isOnQuest 92472
     .goto 2521,45.67,45.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
     .turnin 92472 >>Turn in The Next Step
@@ -657,6 +659,16 @@ step
     .accept 93461 >>Accept Welcome to Shen'dar Village << Alliance
     .accept 92514 >>Accept Welcome to Shen'dar Village << Horde
     .target Constable Aonda
+step << Mage
+    .goto 2521,45.1,45.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorii Brightwhisper|r.
+    .train 143 >>Train |T135812:0|t[Fireball]
+    .train 2136 >>Train |T135807:0|t[Fire Blast]
+    .train 1296917 >>Train |T8188276:0|t[Comprehend Scroll]
+    .skipgossipid 136807,1
+    .target Dorii Brightwhisper
+    .money <0.03
+    .xp <6,1
 step << Alliance
     .goto 2521,45.04,46.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rathiril Sunlance|r.
@@ -696,17 +708,6 @@ step << Horde
     .turnin 92595 >>Turn in The Windshapers
     .accept 94411 >>Accept Meddlesome Mages
     .target Illaya Amberwind
-step << Mage
-    --mage training
-step << Mage
-    --mage training
-step << Mage
-    --mage training
-step << Mage
-    --mage training
-step << Mage
-    --mage training
-
 step << Horde
     .train 8613,3
     .isOnQuest 97971
@@ -741,14 +742,14 @@ step << Horde Rogue
     .skipgossipid 136810
     .target Miriaan Mistblade
     .xp <6,1
-step << Horde Mage/Druid
+step << Horde Mage
     #completewith next
     #label immediate wand
     #hidewindow
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
     .train 7411 >>Train |T136189:0|t[Enchanting] |cRXP_WARN_for immediate wand|r
     .target Nasalanna Windsinger
-step << Horde Mage/Druid
+step << Horde Mage
     #completewith immediate wand
     .goto 2521,43.24,43.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r and buy |T133942:0|t[Copper Rod], |T132841:0|t[Mote of Magic] and |T135435:0|t[Simple Wood].
@@ -757,14 +758,14 @@ step << Horde Mage/Druid
     .collect 4470,1
     .skipgossipid 137558
     .target Nasalanna Windsinger
-step << Horde Mage/Druid
+step << Horde Mage
     #requires immediate wand
     .goto 2521,43.24,43.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
     .train 7411 >>Train |T136189:0|t[Enchanting] |cRXP_WARN_for immediate wand|r
     .skipgossipid 137559
     .target Nasalanna Windsinger
-step << Horde Mage/Druid
+step << Horde Mage
     .isOnQuest 93461 << Alliance
     .isOnQuest 92514 << Horde 
     .train 7411,3
@@ -808,35 +809,35 @@ step << Alliance Rogue
     .skipgossipid 136810
     .target Miriaan Mistblade
     .xp <6,1
-step << Alliance Mage/Druid
+step << Alliance Mage
     #completewith next
     #label immediate wand
     #hidewindow
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
     .train 7411 >>Train |T136189:0|t[Enchanting] |cRXP_WARN_for immediate wand|r
     .target Nasalanna Windsinger
-step << Alliance Mage/Druid
+step << Alliance Mage
     #completewith immediate wand
     .goto 2521,43.24,43.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r and buy |T133942:0|t[Copper Rod], |T132841:0|t[Mote of Magic] and |T135435:0|t[Simple Wood].
     .collect 6217,1
-    .collect 247786,1
+    .collect 247786,3
     .collect 4470,1
     .skipgossipid 137558
     .target Nasalanna Windsinger
-step << Alliance Mage/Druid
+step << Alliance Mage
     #requires immediate wand
     .goto 2521,43.24,43.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
     .train 7411 >>Train |T136189:0|t[Enchanting] |cRXP_WARN_for immediate wand|r
     .skipgossipid 137559
     .target Nasalanna Windsinger
-step << Alliance Mage/Druid
+step << Alliance Mage
     .isOnQuest 93461 << Alliance
     .isOnQuest 92514 << Horde 
     .train 7411,3
     >>Craft |T135225:0|t[Runed Copper Rod] and |T135975:0|t[Novice's Practice Wand]
-    .collect 6218,3
+    .collect 6218,1
     .collect 247789,1
     -- craft macro
 step << Alliance
@@ -857,7 +858,6 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r
     .turnin 97968 >>Turn in Camping 101: Herbalism
     .target Halassa Fernbreeze::257021
-
 step
     .goto 2521,45.67,45.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
@@ -880,7 +880,7 @@ step
     .train 2575,3
     .goto 2521,41.658,44.784
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind::263664|r
-    .tupnin 97970 >>Turnin Camping 101: Mining
+    .turnin 97970 >>Turnin Camping 101: Mining
     .target Raan Wildwind::263664
 step
     .goto 2521,44.88,44.19
