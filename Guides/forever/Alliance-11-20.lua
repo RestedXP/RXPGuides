@@ -75,7 +75,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .accept 12 >> Accept The People's Militia
 step
-    #xprate <1.2
     .goto 1436/0,1041.97,-10511.13
     .target Captain Danuvin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Danuvin|r
@@ -174,7 +173,6 @@ step
 	>>|cRXP_WARN_Be aware of |cRXP_ENEMY_Benny Blanco|r. He hits hard|r
     .complete 64,1 --Furlbrow's Pocket Watch
 step
-    #xprate <1.2
     #completewith next
     >>Kill |cRXP_ENEMY_Riverpaw Gnolls|r and |cRXP_ENEMY_Riverpaw Scouts|r. Loot them for their |T134297:0|t|cRXP_LOOT_Gnoll Paws|r
     .complete 102,1 --Gnoll Paw (8)
@@ -193,7 +191,6 @@ step
     .mob Murloc Raider
     .mob Murloc Coastrunner
 step
-    #xprate <1.2
     #label GnollPaws
     .goto 1436/0,1042.67,-9715.0,60,0
     .goto 1436/0,1517.97,-9743.000,60,0
@@ -221,7 +218,6 @@ step
 	>>|cRXP_WARN_You can usually find them near Farm Fences or Buildings|r
 	.complete 151,1 --Handful of Oats (8)
 step << Human Warlock
-    #xprate <1.2
     #label FurlbrowFarm
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
     .turnin 64 >> Turn in The Forgotten Heirloom
@@ -232,19 +228,7 @@ step << Human Warlock
     .goto 1436/0,919.47,-9853.13
 	.target +Verna Furlbrow
     .isOnQuest 184
-step << Human Warlock
-    #xprate >1.1
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
-    .turnin 64 >> Turn in The Forgotten Heirloom
-    .turnin 184 >> Turn in Furlbrow's Deed
-    .target +Farmer Furlbrow
-    .goto 1436/0,918.42,-9851.50
-    .turnin 151 >> Turn in Poor Old Blanchy
-    .target +Verna Furlbrow
-    .goto 1436/0,919.47,-9853.13
-    .isOnQuest 184
 step
-    #xprate <1.2
     #optional << Human Warlock
     #label FurlbrowFarm << !Human/!Warlock
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
@@ -254,16 +238,6 @@ step
     .turnin 151 >> Turn in Poor Old Blanchy
     .target +Verna Furlbrow
     .goto 1436/0,919.47,-9853.13
-step
-    #xprate >1.1
-    #optional << Human Warlock
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
-    .turnin 64 >> Turn in The Forgotten Heirloom
-    .target +Farmer Furlbrow
-    .goto 1436/0,918.42,-9851.50
-    .turnin 151 >> Turn in Poor Old Blanchy
-    .goto 1436/0,919.47,-9853.13
-	.target +Verna Furlbrow
 step
     #completewith SaldeanVendor
 	.goto 1436/0,1055.27,-10128.70
@@ -387,7 +361,6 @@ step
     .goto 1436/0,1045.12,-10508.80
     .accept 65 >> Accept The Defias Brotherhood
 step
-    #xprate <1.2
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Danuvin|r
 	.target Captain Danuvin
     .goto 1436/0,1041.97,-10511.13
@@ -661,12 +634,61 @@ step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .accept 3524 >> Accept Washed Ashore
     .target Gwennyth Bly'Leggonde
+step << NightElf
+    .goto 1439,36.767,44.285
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
+    .turnin 6342 >> Turn in Flight to Auberdine
+    .target Laird
+step << NightElf
+    #optional
+    #completewith next
+    .goto 1439,36.826,44.150,5,0
+    .goto 1439,36.688,43.952,8 >> Travel up the ramps toward |cRXP_FRIENDLY_Wizbang Cranktoggle|r
+step << !NightElf
+    .goto 1439,35.743,43.710
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
+    .accept 963 >> Accept For Love Eternal
+    .target Cerellean Whiteclaw
+    .xp <11,1
 step << !NightElf
     #optional
-    #completewith BigThreat
-    .goto 1439/1,515.55,6406.32,0
-    >>Jump off the boat when it's closest to Auberdine's shore
-    .subzone 442 >> Swim toward Auberdine
+    #completewith next
+    .goto 1439/1,525.800,6414.800,8 >> Travel up the ramp toward |cRXP_FRIENDLY_Wizbang Cranktoggle|r
+step
+    .goto 1439,36.976,44.135
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizbang Cranktoggle|r upstairs
+    .accept 983 >> Accept Buzzbox 827
+    .target Wizbang Cranktoggle
+step
+    .goto 1439/1,515.55,6406.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaussiy|r downstairs
+    .home >> Set your Hearthstone to Auberdine
+    .target Innkeeper Shaussiy
+    .bindlocation 442
+step
+    #optional << NightElf
+    .goto 1439,37.322,43.640
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
+    .accept 947 >> Accept Cave Mushrooms
+    .target Barithras Moonshade
+    .xp <12,1
+step
+    #optional << NightElf
+    .goto 1439,37.703,43.393
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    .accept 4811 >> Accept The Red Crystal
+    .target Sentinel Glynda Nal'Shea
+    .xp <12,1
+step
+    .goto 1439,38.843,43.416
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
+    .accept 2118 >> Accept Plagued Lands
+    .target Tharnariun Treetender
+step
+    .goto 1439,39.373,43.483
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
+    .accept 984 >> Accept How Big a Threat?
+    .target Terenthis
 step
     #ah
     #optional
@@ -694,94 +716,6 @@ step
     .accept 1138 >> Accept Fruit of the Sea
     .target Gubber Blump
     .xp <15,1
-step << NightElf
-    #optional
-    .goto 1439,36.767,44.285
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
-    >>|cRXP_WARN_Buy up to 40|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_WARN_from him. Sell all your other level 5 or below food|r
-    .collect 4592,40 --Longjaw Mud Snapper (40)
-    .turnin 6342 >> Turn in Flight to Auberdine
-    .accept 6343 >> Accept Return to Nessa << Druid sod
-    .target Laird
-    .xp >15,1 << Warrior/Rogue/Paladin
-    .isQuestAvailable 2118
-step << NightElf
-    .goto 1439,36.767,44.285
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
-    .turnin 6342 >> Turn in Flight to Auberdine
-    .target Laird
-step << !NightElf
-    #optional
-    .goto 1439,36.767,44.285
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
-    >>|cRXP_WARN_Buy up to 40|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_WARN_from him. Sell all your other level 5 or below food|r
-    .collect 4592,40 --Longjaw Mud Snapper (40)
-    .xp >15,1 << Warrior/Rogue
-    .target Laird
-    .isQuestAvailable 2118
-step
-    #completewith BigThreat
-    .goto 1439/1,515.55,6406.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaussiy|r downstairs
-    .home >> Set your Hearthstone to Auberdine
-    .target Innkeeper Shaussiy
-step
-    #optional
-    #completewith next
-    .goto 1439,36.826,44.150
-    .goto 1439,36.688,43.952,8 >> Travel up stairs toward |cRXP_FRIENDLY_Wizbang Cranktoggle|r
-step
-    #xprate <1.5
-    .goto 1439,36.976,44.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizbang Cranktoggle|r upstairs
-    .accept 983 >> Accept Buzzbox 827
-    .target Wizbang Cranktoggle
-step
-    #xprate >1.49
-    .goto 1439,36.976,44.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizbang Cranktoggle|r upstairs
-    .accept 983 >> Accept Buzzbox 827
-    .target Wizbang Cranktoggle
-    .xp >15,1 --XX Skip if 15+
-step
-    #xprate <1.5
-    #optional << NightElf
-    .goto 1439,37.322,43.640
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
-    .accept 947 >> Accept Cave Mushrooms
-    .target Barithras Moonshade
-    .xp <12,1
-step
-    #xprate <1.5
-    #optional << NightElf
-    .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
-    .accept 4811 >> Accept The Red Crystal
-    .target Sentinel Glynda Nal'Shea
-    .xp <12,1
-step
-    #xprate >1.49
-    .goto 1439,37.322,43.640
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
-    .accept 947 >> Accept Cave Mushrooms
-    .target Barithras Moonshade
-step
-    #xprate >1.49
-    .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
-    .accept 4811 >> Accept The Red Crystal
-    .target Sentinel Glynda Nal'Shea
-step
-    .goto 1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
-    .accept 2118 >> Accept Plagued Lands
-    .target Tharnariun Treetender
-step
-    #label BigThreat
-    .goto 1439,39.373,43.483
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
-    .accept 984 >> Accept How Big a Threat?
-    .target Terenthis
 step << !NightElf
     #label WashedA
     .goto 1439,36.701,45.122,8,0
@@ -794,6 +728,9 @@ step << !NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r
     .fp Auberdine >> Get the Auberdine flight path
     .target Caylais Moonfeather
+
+
+
 step << Dwarf Hunter
     #optional
     #completewith RabidThistle
@@ -839,6 +776,7 @@ step
     .waypoint 1439,36.051,44.757,60,0
     >>Kill |cRXP_ENEMY_Pygmy Tide Crawlers|r and |cRXP_ENEMY_Young Reef Crawlers|r. Loot them for their |cRXP_LOOT_Crawler Legs|r
     >>|cRXP_WARN_You may need to go in the water for them|r
+    >>|cRXP_WARN_Even if some of these are gray, still complete the quest as it is part of a chain|r << !NightElf
     .complete 983,1 --Crawler Leg (6)
     .mob Pygmy Tide Crawler
     .mob Young Reef Crawler
@@ -875,6 +813,19 @@ step << Druid
     .collect 2449,5,6123,1 --Earthroot (5)
     .skill herbalism,<15,1
 step
+    #completewith next
+    >>|cRXP_WARN_Use|r |T134335:0|t[Tharnariun's Hope] |cRXP_WARN_on a|r |cRXP_ENEMY_Rabid Thistle Bear|r|cRXP_WARN_. It can be used from any range as long as you're targeting the|r |cRXP_ENEMY_Bear|r
+    >>|cRXP_WARN_==DO NOT USE THE QUEST ITEM IF THERES NO |cRXP_ENEMY_BEAR|r NEARBY==|r
+    >>|cRXP_WARN_You can waste the trap and make the quest impossible to complete! If it happens to you you need to return to the questgiver and ask for another trap|r
+    .complete 2118,1 --Rabid Thistle Bear Captured (1)
+    .unitscan Rabid Thistle Bear
+    .use 7586
+step
+    #label FurlbogCamp
+    .goto 1439/1,393.72,5993.24
+    >>Run toward the edge of the Furbolg Camp
+    .complete 984,1 -- Find a corrupt furbolg camp
+step
     #sticky
     #label RabidThistle
     #loop
@@ -892,13 +843,7 @@ step
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
     .unitscan Rabid Thistle Bear
     .use 7586
-step
-    #label FurlbogCamp
-    .goto 1439/1,393.72,5993.24
-    >>Run toward the edge of the Furbolg Camp
-    .complete 984,1 -- Find a corrupt furbolg camp
 step << NightElf
-    #xprate <1.5
     #loop
     .goto 1439,36.051,44.757,0
     .goto 1439,36.280,50.071,0
@@ -924,31 +869,11 @@ step
     #requires RabidThistle
 --XXREQ Placeholder invis step until multiple requires per step
 step
-    #xprate <1.5
     #requires BuzzBox1
     .goto 1439,36.634,46.250
     >>Click the |cRXP_PICK_Buzzbox 827|r on the ground
     .turnin 983 >> Turn in Buzzbox 827
     .accept 1001 >> Accept Buzzbox 411
-step
-    #xprate >1.49
-    #optional << !NightElf/Hunter
-    #requires BuzzBox1
-    .goto 1439,36.634,46.250
-    >>Click the |cRXP_PICK_Buzzbox 827|r on the ground
-    .turnin 983 >> Turn in Buzzbox 827
-    .accept 1001 >> Accept Buzzbox 411 << !sod
-    .isQuestComplete 983
-step << NightElf !Hunter
-    #xprate >1.49
-    #optional
-    #requires BuzzBox1
-    .goto 1439,36.634,46.250
-    >>Click the |cRXP_PICK_Buzzbox 827|r on the ground
-    .accept 1001 >> Accept Buzzbox 411
-    .isQuestTurnedIn 983
---XX so NEs can catch up on xp from those that came via menethil
---XX Hunters skip this as they will get better xp/hr grinding furbolgs
 step
     #label FirstWashed
     .goto 1439,36.701,45.122,8,0
@@ -973,7 +898,6 @@ step
     #completewith SeaT1
     .goto 1439,32.432,43.744,15 >> Travel to the end of the dock, then jump into the water
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith washed1
     .goto 1439/1,741.52,6570.95,0
@@ -1004,13 +928,11 @@ step
     .turnin 4681 >> Turn in Washed Ashore
     .target Gwennyth Bly'Leggonde
 step
-    #xprate <1.5
     .goto 1439,37.322,43.640
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
     .accept 947 >> Accept Cave Mushrooms
     .target Barithras Moonshade
 step
-    #xprate <1.5
     .goto 1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .accept 4811 >> Accept The Red Crystal
@@ -1062,7 +984,6 @@ step << NightElf Warrior/NightElf Rogue
     .usespell 2580
     .train 2575,3 --Mining Trained
 step << !NightElf/!Warrior !Rogue
-    #xprate <1.5 --<< !NightElf/Hunter --XX Night Elves do it on 2x to catch up on xp EXCEPT Dwarf/NE Hunters (1x only)
     .goto 1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
     .accept 982 >> Accept Deep Ocean, Vast Sea
@@ -1126,7 +1047,6 @@ step
 
 
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     #completewith MistVeil
     .goto 1439/1,620.35,6768.76,0
     .goto 1439/1,602.66,6924.21,0
@@ -1141,13 +1061,11 @@ step
     .isOnQuest 1001
     .isOnQuest 982
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith next
     +|cRXP_WARN_Press Escape, then go into -> Options -> Controls|r
     >>|cRXP_WARN_Check "Enable Interact Key" and bind the "Interact with Target" option to a key|r
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,38.213,28.754
 --  .goto 1439,38.234,28.796
     >>|cRXP_WARN_==BE AWARE OF YOUR BREATH METER==|r
@@ -1157,7 +1075,6 @@ step
     .complete 982,1 --Silver Dawning's Lockbox (1)
     .isOnQuest 982
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     #label MistVeil
     .goto 1439,39.581,27.487
 --  .goto 1439,39.629,27.462
@@ -1168,7 +1085,6 @@ step
     .complete 982,2 --Mist Veil Lockbox (1)
     .isOnQuest 982
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     #loop
     .goto 1439/1,310.53,7077.48,0
     .goto 1439/1,404.85,7099.75,0
@@ -1185,35 +1101,30 @@ step
     .mob Darkshore Thresher
     .isOnQuest 1001
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     .goto 1439,41.901,31.339
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4723 >> Accept Beached Sea Creature
     .isOnQuest 1001
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     .goto 1439,41.901,31.339
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4723 >> Accept Beached Sea Creature
     .isOnQuest 982
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,41.960,28.616
     >>Click the |cRXP_PICK_Buzzbox 411|r on the ground
     .turnin 1001 >> Turn in Buzzbox 411
     .accept 1002 >> Accept Buzzbox 323
     .isQuestComplete 1001
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     .goto 1439,41.960,28.616
     >>Click the |cRXP_PICK_Buzzbox 411|r on the ground
     .accept 1002 >> Accept Buzzbox 323
     .isQuestTurnedIn 1001
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith AsterionTravel
     .goto 1439,44.190,33.697,0
@@ -1235,18 +1146,10 @@ step
     .collect 5469,5,2178,1 --Strider Meat (5)
     .mob Foreststrider Fledgling
 step
-    #xprate <1.5
     #optional
     #label AsterionTravel
     #completewith Bashal1
     .goto 1439,44.629,36.316,20,0
-    .goto 1439,44.168,36.289,15 >> Travel toward |cRXP_FRIENDLY_Asterion|r
-step
-    #xprate >1.49
-    #optional
-    #label AsterionTravelSoD
-    #completewith Bashal1
-    .goto 1439,44.376,36.754,20,0
     .goto 1439,44.168,36.289,15 >> Travel toward |cRXP_FRIENDLY_Asterion|r
 step
     .goto 1439,44.168,36.289
@@ -1260,6 +1163,7 @@ step
 --XX skip Bashal Aran qline if 16+
 step
     #optional
+    #label Bashal1
     .goto 1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
     >>|cRXP_WARN_Avoid killing |cRXP_ENEMY_Wild Grells|r and |cRXP_ENEMY_Vile Sprites|r en-route|r
@@ -1267,16 +1171,6 @@ step
     .target Asterion
     .isOnQuest 954
 --XX Turn in Breadcrumb if you picked it up earlier before 18
-step
-    #label Bashal1
-    #optional
-    .goto 1439,44.168,36.289
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
-    .accept 955 >> Accept Bashal'Aran
-    .target Asterion
-    .isQuestTurnedIn 954
-    .xp >16,1
---XX if you ding 16 from turnin, skip Bashal Aran qline
 step
     #loop
     .goto 1439,44.528,36.587,0
@@ -1324,26 +1218,6 @@ step
     .abandon 955 >> Abandon Bashal'Aran
     .isQuestAvailable 955
 step
-    #xprate >1.59
-    #loop
-    .goto 1439,45.393,36.472,0
-    .goto 1439,45.429,39.773,0
-    .goto 1439,47.368,36.774,0
-    .goto 1439,45.393,36.472,45,0
-    .goto 1439,45.938,37.800,45,0
-    .goto 1439,45.938,38.040,45,0
-    .goto 1439,46.531,39.134,45,0
-    .goto 1439,45.429,39.773,45,0
-    .goto 1439,47.262,37.674,45,0
-    .goto 1439,47.920,37.228,45,0
-    .goto 1439,47.368,36.774,45,0
-    >>Kill |cRXP_ENEMY_Deth'ryll Satyrs|r. Loot them for the |cRXP_LOOT_Ancient Moonstone Seal|r
-    >>|cRXP_WARN_They do not have dynamic respawns. Skip this step if you can't find any|r |cRXP_ENEMY_Deth'ryll Satyrs|r
-    .complete 956,1 --Ancient Moonstone Seal (1)
-    .mob Deth'ryll Satyr
-    .isQuestTurnedIn 955
-step
-    #xprate <1.59
     #loop
     .goto 1439,45.393,36.472,0
     .goto 1439,45.429,39.773,0
@@ -1376,7 +1250,6 @@ step
     .isQuestTurnedIn 956
 step << NightElf/Dwarf Hunter
     #optional
-    #xprate <1.5
     .goto 1439,44.528,36.587,0
     .goto 1439,45.334,39.393,0
     .goto 1439,46.096,36.541,0
@@ -1411,27 +1284,25 @@ step
     .mob Foreststrider Fledgling
     .subzoneskip 442
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith AuberdineTurnin2 << NightElf/Hunter/Druid/Warrior
-    #completewith AmethStart << !NightElf !Hunter !Druid !Warrior
+    #completewith EndFirstMoonstalker << !NightElf !Hunter !Druid !Warrior
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob Moonstalker Runt
     .isQuestTurnedIn 1001
 step
-    #xprate <1.5
     #completewith RedCrystal
     >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
     >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_to 10 later|r
-    .collect 6889,10,2178,1,0x20,cooking --Small Egg (1-9)
+    .collect 6889,10,2178,1 --,0x20,cooking --Small Egg (1-9)
     .mob Young Moonkin
     .mob Raging Moonkin
     .mob Moonkin Oracle
     .mob Moonkin
-    .skill cooking,10,1 --XX Shows if cooking skill is <10
+    .skill cooking,10,1 -- shows if cooking is <10
+    .skill cooking,<1,1 -- shows if cooking is >1
 step
-    #xprate <1.5
     #completewith AuberdineTurnin2 << NightElf/Hunter/Druid/Warrior
     >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
     >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 later|r
@@ -1572,7 +1443,7 @@ step << NightElf Hunter
     .isQuestTurnedIn 4811 --show step if you turned in red crystal
 step << NightElf/Hunter/Druid/Warrior
     #optional
-    #completewith MysteriousCrystalHuntDruidEnd
+    #completewith EndFirstMoonstalker
     >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
     >>|cRXP_WARN_Be careful as they|r |T132307:0|t[Flee] |cRXP_WARN_at <30% health|r
     .collect 5469,5,2178,1 --Strider Meat (5)
@@ -1588,7 +1459,8 @@ step << NightElf/Hunter/Druid/Warrior
     .mob Raging Moonkin
     .mob Moonkin Oracle
     .mob Moonkin
-    .skill cooking,10,1 --XX Shows if cooking skill is <10
+    .skill cooking,10,1 -- shows if cooking is <10
+    .skill cooking,<1,1 -- shows if cooking is >1
     .isQuestTurnedIn 4811
 step << NightElf/Hunter/Druid/Warrior
     #optional
@@ -1606,9 +1478,8 @@ step << NightElf/Hunter/Druid/Warrior
     .skill cooking,50,1
     .isQuestTurnedIn 4811
 step << NightElf/Hunter/Druid/Warrior
-    #xprate <1.5 --<< !NightElf/Hunter
     #optional
-    #completewith MysteriousCrystalHuntDruidEnd
+    #completewith EndFirstMoonstalker
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob Moonstalker Runt
@@ -1656,11 +1527,12 @@ step << NightElf/Hunter/Druid/Warrior
     .mob Raging Moonkin
     .mob Moonkin Oracle
     .mob Moonkin
-    .skill cooking,10,1 --XX Shows if cooking skill is <10
+    .skill cooking,10,1 -- shows if cooking is <10
+    .skill cooking,<1,1 -- shows if cooking is >1
     .isQuestTurnedIn 4811
 step << NightElf/Hunter/Warrior/Druid
     #optional
-    #completewith MysteriousCrystalHuntDruidEnd
+    #completewith EndFirstMoonstalker
     .hs >> Hearth to Auberdine
     .cooldown item,6948,>0,1
     .subzoneskip 442
@@ -1668,7 +1540,7 @@ step << NightElf/Hunter/Warrior/Druid
     .isQuestTurnedIn 4811
 step << NightElf/Hunter/Druid/Warrior
     #optional
-    #completewith MysteriousCrystalHuntDruidEnd
+    #completewith EndFirstMoonstalker
     .goto 1439,37.703,43.393
     .subzone 442 >> Return to Auberdine
     .cooldown item,6948,<0,1 << !Druid
@@ -1700,7 +1572,6 @@ step << Druid
     .target Laird
 step << Druid
     #optional
-    #xprate <1.5
     #loop
     .goto 1439,36.051,44.757,0
     .goto 1439,36.280,50.071,0
@@ -1795,7 +1666,6 @@ step << Druid
 
 
 step << NightElf/Hunter/Druid/Warrior
-    #xprate <1.5 --<< !NightElf/Hunter
     #completewith EarlyBlackwood
     #optional
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -1829,7 +1699,6 @@ step
     #optional
     #label HCHunterStart --hidden step for #include
 step << NightElf/Hunter/Druid/Warrior
-    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #requires EarlyTreats3 << Druid --Season 2
     #completewith EarlyTurtleStart
@@ -1870,12 +1739,15 @@ step
     .isQuestTurnedIn 4811
     .xp >17,1
 
+
+step
+    #label EndFirstMoonstalker
+
 ----End of alternate section if early Red Crystal turnin----
 
 ----Start of small south loop for ERA and SoD Warrior/Rogue/Priest----
 
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith AmethStart
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -1915,7 +1787,8 @@ step
     .mob Raging Moonkin
     .mob Moonkin Oracle
     .mob Moonkin
-    .skill cooking,10,1 --XX Shows if cooking skill is <10
+    .skill cooking,10,1 -- shows if cooking is <10
+    .skill cooking,<1,1 -- shows if cooking is >1
 step
     #sticky
     #optional
@@ -1935,8 +1808,9 @@ step
     .waypoint 1439,42.794,62.166,50,0
     .waypoint 1439,42.489,60.677,50,0 --Middle spawn
     >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for her |cRXP_LOOT_Pendant|r
-    >>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
-    >>|cRXP_WARN_If you can't find her and want to try again later at the cost of potentially grinding more mobs soon, skip this step|r
+    -->>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
+    -->>|cRXP_WARN_If you can't find her and want to try again later at the cost of potentially grinding more mobs soon, skip this step|r
+    --much faster spawn time now on forever
     .complete 963,1 --Anaya's Pendant (1)
     .unitscan Anaya Dawnrunner
     .solo
@@ -1959,9 +1833,10 @@ step
     .waypoint 1439,42.794,62.166,50,0
     .waypoint 1439,42.489,60.677,50,0 --Middle spawn
     >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for her |cRXP_LOOT_Pendant|r
-    >>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
-    >>|cRXP_WARN_You may want to group with others nearby if you can't find her. Ask in General Chat (/1) to group with anyone else that is also looking for her|r
-    >>|cRXP_WARN_If you can't find her and want to try again later at the cost of potentially grinding more mobs soon, skip this step|r
+    -->>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
+    -->>|cRXP_WARN_You may want to group with others nearby if you can't find her. Ask in General Chat (/1) to group with anyone else that is also looking for her|r
+    -->>|cRXP_WARN_If you can't find her and want to try again later at the cost of potentially grinding more mobs soon, skip this step|r
+    --much faster spawn time now on forever
     .complete 963,1 --Anaya's Pendant (1)
     .unitscan Anaya Dawnrunner
     .group
@@ -2025,7 +1900,6 @@ step
     #requires Anaya
 --XXREQ Placeholder invis step until multiple requires per step
 step
-    #xprate <1.59
     .goto 1439,40.302,59.731
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .turnin 953 >> Turn in The Fall of Ameth'Aran
@@ -2041,7 +1915,6 @@ step << !sod/Warrior/Rogue
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .mob Foreststrider Fledgling
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith FurbolgGrind
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -2082,7 +1955,6 @@ step
     .complete 985,2 -- Blackwood Windtalker (5)
     .mob +Blackwood Windtalker
 step
-    #xprate <1.5
     #optional
     #loop
     .goto 1439,39.899,54.745,0
@@ -2105,7 +1977,6 @@ step
     .mob Blackwood Windtalker
     .itemcount 5382,<1 --Anaya's Pendant (<1)
 step
-    #xprate <1.5
     #optional
     #loop
     .goto 1439,39.899,54.745,0
@@ -2124,52 +1995,6 @@ step
     >>Be careful as the |cRXP_ENEMY_Blackwood Pathfinders|r |T132152:0|t[Thrash] and can hit you up to 3 times at once
     >>|cRXP_ENEMY_Blackwood Windtalkers|r cast |T136022:0|t[Gust of Wind] a melee range stun, |cRXP_WARN_move out of melee range when they are casting it|r to avoid getting stunned
     .xp 15+11000 >> Grind to 11000+/14400xp
-    .mob Blackwood Pathfinder
-    .mob Blackwood Windtalker
-    .itemcount 5382,1 --Anaya's Pendant (1)
-step
-    #xprate 1.49-1.59
-    #optional
-    #loop
-    .goto 1439,39.899,54.745,0
-    .goto 1439,40.181,56.229,0
-    .goto 1439,39.267,53.092,50,0
-    .goto 1439,39.754,53.444,50,0
-    .goto 1439,40.234,54.325,50,0
-    .goto 1439,39.899,54.745,50,0
-    .goto 1439,40.181,56.229,50,0
-    .goto 1439,39.388,56.671,50,0
-    .goto 1439,39.191,56.382,50,0
-    .goto 1439,39.957,55.300,50,0
-    .goto 1439,39.332,54.079,50,0
-    >>Grind |cRXP_ENEMY_Furlbogs|r in the camp. |cRXP_WARN_This is a hyperspawn area|r meaning that the game will force respawns if enough mobs are dead. This makes it an |cRXP_WARN_EXTREMELY efficient grinding spot|r for the level (xp/hr is comparable to questing)
-    >>|cRXP_WARN_Completing this grind will allow you to quest through the entirety of Darkshore later without having to struggle with higher level mobs|r
-    >>Be careful as the |cRXP_ENEMY_Blackwood Pathfinders|r |T132152:0|t[Thrash] and can hit you up to 3 times at once
-    >>|cRXP_ENEMY_Blackwood Windtalkers|r cast |T136022:0|t[Gust of Wind] a melee range stun, |cRXP_WARN_move out of melee range when they are casting it|r to avoid getting stunned
-    .xp 15+600 >> Grind to 600+/14400xp
-    .mob Blackwood Pathfinder
-    .mob Blackwood Windtalker
-    .itemcount 5382,<1 --Anaya's Pendant (<1)
-step
-    #xprate 1.49-1.59
-    #optional
-    #loop
-    .goto 1439,39.899,54.745,0
-    .goto 1439,40.181,56.229,0
-    .goto 1439,39.267,53.092,50,0
-    .goto 1439,39.754,53.444,50,0
-    .goto 1439,40.234,54.325,50,0
-    .goto 1439,39.899,54.745,50,0
-    .goto 1439,40.181,56.229,50,0
-    .goto 1439,39.388,56.671,50,0
-    .goto 1439,39.191,56.382,50,0
-    .goto 1439,39.957,55.300,50,0
-    .goto 1439,39.332,54.079,50,0
-    >>Grind |cRXP_ENEMY_Furlbogs|r in the camp. |cRXP_WARN_This is a hyperspawn area|r meaning that the game will force respawns if enough mobs are dead. This makes it an |cRXP_WARN_EXTREMELY efficient grinding spot|r for the level (xp/hr is comparable to questing)
-    >>|cRXP_WARN_Completing this grind will allow you to quest through the entirety of Darkshore later without having to struggle with higher level mobs|r
-    >>Be careful as the |cRXP_ENEMY_Blackwood Pathfinders|r |T132152:0|t[Thrash] and can hit you up to 3 times at once
-    >>|cRXP_ENEMY_Blackwood Windtalkers|r cast |T136022:0|t[Gust of Wind] a melee range stun, |cRXP_WARN_move out of melee range when they are casting it|r to avoid getting stunned
-    .xp 14+12210 >> Grind to 12210+/12900xp
     .mob Blackwood Pathfinder
     .mob Blackwood Windtalker
     .itemcount 5382,1 --Anaya's Pendant (1)
@@ -2196,7 +2021,6 @@ step
     .subzone 442 >> Return to Auberdine
     .isOnQuest 4722
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,36.701,45.122,8,0
     .goto 1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
@@ -2204,15 +2028,6 @@ step
     .turnin 4723 >> Turn in Beached Sea Creature
     .target Gwennyth Bly'Leggonde
     .isOnQuest 4723
-step
-    #xprate >1.49
-    #optional << NightElf !Hunter
-    .goto 1439,36.701,45.122,8,0
-    .goto 1439,36.621,45.596
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
-    .turnin 4722 >> Turn in Beached Sea Turtle
-    .turnin 4723 >> Turn in Beached Sea Creature << Warrior sod
-    .target Gwennyth Bly'Leggonde
 step
     #season 0
     .goto 1439/1,577.38,6371.35
@@ -2297,13 +2112,11 @@ step << !Hunter
     .skill cooking,50,1 --XX Shows if cooking skill is <50
     .itemcount 6889,1 -- Small Egg (1+)
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
     .accept 982 >> Accept Deep Ocean, Vast Sea
     .target Gorbold Steelhand
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     .goto 1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
@@ -2345,13 +2158,11 @@ step << !sod/Rogue
 
 
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith next
     +|cRXP_WARN_Press Escape, then go into -> Options -> Controls|r
     >>|cRXP_WARN_Check "Enable Interact Key" and bind the "Interact with Target" option to a key|r
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,38.213,28.754
 --  .goto 1439,38.234,28.796
     >>|cRXP_WARN_==BE AWARE OF YOUR BREATH METER==|r
@@ -2361,7 +2172,6 @@ step
     .complete 982,1 --Silver Dawning's Lockbox (1)
     .isOnQuest 982
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     #label MistVeil
     .goto 1439,39.581,27.487
 --  .goto 1439,39.629,27.462
@@ -2372,7 +2182,6 @@ step
     .complete 982,2 --Mist Veil Lockbox (1)
     .isOnQuest 982
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     .goto 1439,41.901,31.339
     >>Click the |cRXP_PICK_Beached Sea Creature|r
@@ -2384,7 +2193,6 @@ step
 
 
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith BoatSeaCreature
     .goto 1439,44.190,33.697,0
@@ -2456,7 +2264,6 @@ step
     .mob Foreststrider Fledgling
     .mob Foreststrider
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith CrabTurtle
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -2496,7 +2303,6 @@ step
     .complete 4762,1 --Cliffspring River Sample (1)
     .use 12350
 step
-	#xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith next
     .goto 1439,51.118,23.670,20,0
@@ -2504,14 +2310,12 @@ step
     .isQuestComplete 1002
 step
     #optional
-	#xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,51.288,24.554
     >>Click the |cRXP_PICK_Buzzbox 323|r on the ground
     .turnin 1002 >> Turn in Buzzbox 323
     .accept 1003 >> Accept Buzzbox 525
     .isQuestComplete 1002
 step
-	#xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,51.288,24.554
     >>Click the |cRXP_PICK_Buzzbox 323|r on the ground
     .accept 1003 >> Accept Buzzbox 525
@@ -2522,7 +2326,6 @@ step
 
 
 step << Hunter/Druid
-	#xprate <1.5 << Hunter/Druid
     #optional
     #completewith Tower1
     >>Kill |cRXP_ENEMY_Rabid Thistle Bears|r
@@ -2530,14 +2333,12 @@ step << Hunter/Druid
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
 step << Hunter/Druid
-	#xprate <1.5 << Hunter/Druid
     #optional
     #completewith Tower1
     >>Kill |cRXP_ENEMY_Foreststriders|r. Loot them for their |cRXP_LOOT_Strider Meat|r
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .mob Foreststrider
 step << Hunter/Druid
-#xprate <1.5 << Hunter/Druid
     #optional
     #completewith Tower1
     >>Kill |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -2545,7 +2346,6 @@ step << Hunter/Druid
     .mob Moonstalker
     .isOnQuest 1002
 step << Hunter/Druid
-#xprate <1.5 << Hunter/Druid
     #optional
     #completewith Tower1
     .goto 1439,51.118,23.670,20,0
@@ -2553,7 +2353,6 @@ step << Hunter/Druid
     .goto 1439,54.973,24.885,15 >>Travel toward |cRXP_FRIENDLY_Balthule Shadowstrike|r
     .isQuestAvailable 1002 << !NightElf/Hunter
 step << Hunter/Druid
-#xprate <1.5 << Hunter/Druid
     #label Tower1
     .goto 1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
@@ -2561,7 +2360,6 @@ step << Hunter/Druid
     .accept 966 >> Accept The Tower of Althalaxx
     .target Balthule Shadowstrike
 step << Hunter/Druid
-#xprate <1.5 << Hunter/Druid
     #loop
     .goto 1439,55.231,26.508,0
     .goto 1439,56.194,27.071,0
@@ -2581,14 +2379,12 @@ step << Hunter/Druid
     .complete 966,1 --Worn Parchment (4)
     .mob Dark Strand Fanatic
 step << Hunter/Druid
-#xprate <1.5 << Hunter/Druid
     .goto 1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
     .turnin 966 >> Turn in The Tower of Althalaxx
     .accept 967 >> Accept The Tower of Althalaxx
     .target Balthule Shadowstrike
 step << Hunter/Druid
-#xprate <1.5 << Hunter/Druid
     #loop
     .goto 1439,53.629,26.054,0
     .goto 1439,54.204,30.475,0
@@ -2623,7 +2419,6 @@ step
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith CliffCave
     >>Kill |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -2683,7 +2478,6 @@ step
     .mob Foreststrider
 step
     #optional
-	#xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,51.288,24.554
     >>Click the |cRXP_PICK_Buzzbox 323|r on the ground
     .turnin 1002 >> Turn in Buzzbox 323
@@ -2748,7 +2542,6 @@ step
     .isQuestAvailable 2178
 step
     #hardcore << NightElf !Druid
-    #xprate <1.5 --<< !NightElf/Hunter
     #requires MushroomLS
     #completewith CavetoAuber
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -2788,7 +2581,6 @@ step << Druid
     .accept 6123 >> Accept Gathering the Cure
     .target Alanndarian Nightsong
 step << !NightElf
-    #xprate <1.5
     #optional
     .goto 1439,37.439,41.839
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
@@ -2796,7 +2588,6 @@ step << !NightElf
     .target Archaeologist Hollee
     .isQuestComplete 2138
 step
-    #xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
     .turnin 982 >> Turn in Deep Ocean, Vast Sea
@@ -3163,7 +2954,8 @@ step
     .waypoint 1439,42.794,62.166,50,0
     .waypoint 1439,42.489,60.677,50,0 --Middle spawn
     >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for her |cRXP_LOOT_Pendant|r
-    >>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
+    -->>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
+    --much faster spawn time now on forever
     .complete 963,1 --Anaya's Pendant (1)
     .unitscan Anaya Dawnrunner
     .solo
@@ -3184,8 +2976,9 @@ step
     .waypoint 1439,42.794,62.166,50,0
     .waypoint 1439,42.489,60.677,50,0 --Middle spawn
     >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for her |cRXP_LOOT_Pendant|r
-    >>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
-    >>|cRXP_WARN_You may want to group with others nearby if you can't find her. Ask in General Chat (/1) to group with anyone else that is also looking for her|r
+    -->>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
+    -->>|cRXP_WARN_You may want to group with others nearby if you can't find her. Ask in General Chat (/1) to group with anyone else that is also looking for her|r
+    --much faster spawn time now on forever
     .complete 963,1 --Anaya's Pendant (1)
     .unitscan Anaya Dawnrunner
     .group
@@ -8792,11 +8585,6 @@ step
     .dungeon DM
 step << Druid
 .dungeon DM
-    #season 2
-    #completewith next
-    +|cRXP_WARN_You should be preparing to switch to|r |T132276:0|t[Feral] |cRXP_WARN_instead of using|r |T136096:0|t[Balance] |cRXP_WARN_abilities once you acquire the runes for|r |T132135:0|t[Mangle] |cRXP_WARN_and|r |T236167:0|t[Savage Roar]
-step << Druid
-.dungeon DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r
     .goto StormwindClassic,20.89,55.50
     .trainer >> Train your class spells
@@ -9461,11 +9249,6 @@ step
     .accept 3765 >> Accept The Corruption Abroad
     .target Argos Nightwhisper
     .dungeon !DM
-step << Druid
-.dungeon !DM
-    #season 2
-    #completewith next
-    +|cRXP_WARN_You should be preparing to switch to|r |T132276:0|t[Feral] |cRXP_WARN_instead of using|r |T136096:0|t[Balance] |cRXP_WARN_abilities once you acquire the runes for|r |T132135:0|t[Mangle] |cRXP_WARN_and|r |T236167:0|t[Savage Roar]
 step << Druid
 .dungeon !DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r
@@ -11138,29 +10921,6 @@ step
     .goto 1440/1,128.01,3305.31
     .turnin 5321 >> Turn in The Sleeper Has Awakened
     .isQuestComplete 5321
-step << Paladin
-    #season 2
-    .goto 1440/1,189.71,3185.77
-    >>Talk to |cRXP_FRIENDLY_Delgren the Purifier|r
-    .turnin 967 >> Turn in The Tower of Althalaxx
-    --.accept 970 >> Accept The Tower of Althalaxx
-    .turnin 78088 >> Turn in A Strange Artifact
-    .accept 78089 >> Accept Advice From Stormwind
-    .target Delgren the Purifier
-    .train 410014,1
-    .itemcount 209836,1 --Athalaxx Orb (1)
-step << Paladin
-    #season 2
-    #label tower
-    #optional
-    .goto 1440/1,189.71,3185.77
-    >>Talk to |cRXP_FRIENDLY_Delgren the Purifier|r
-    .turnin 967 >> Turn in The Tower of Althalaxx
-    --.accept 970 >> Accept The Tower of Althalaxx
-    .accept 78089 >> Accept Advice From Stormwind
-    .target Delgren the Purifier
-    .train 410014,1
-    .isQuestTurnedIn 78088
 step << !Warlock
     #season 0,1 << Paladin
 	#xprate >1.49
