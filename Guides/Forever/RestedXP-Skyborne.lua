@@ -1125,16 +1125,16 @@ step
     #hidewindow
     #arrowtext Kill |cRXP_ENEMY_Hippogryphs|r\nClick on |cRXP_PICK_Hippogryph Downs|r
     #loop
-    .goto 2521,33.852,55.527,35,0
-    .goto 2521,34.208,58.154,35,0
-    .goto 2521,37.619,58.316,35,0
-    .goto 2521,38.605,56.936,35,0
-    .goto 2521,38.264,55.126,35,0
-    .goto 2521,37.749,53.055,35,0
-    .goto 2521,36.449,50.724,35,0
-    .goto 2521,34.211,51.432,35,0
-    .goto 2521,36.641,52.578,35,0
-    .goto 2521,33.179,54.345,35,0
+    .goto 2521,33.852,55.527,45,0
+    .goto 2521,34.208,58.154,45,0
+    .goto 2521,37.619,58.316,45,0
+    .goto 2521,38.605,56.936,45,0
+    .goto 2521,38.264,55.126,45,0
+    .goto 2521,37.749,53.055,45,0
+    .goto 2521,36.449,50.724,45,0
+    .goto 2521,34.211,51.432,45,0
+    .goto 2521,36.641,52.578,45,0
+    .goto 2521,33.179,54.345,45,0
     +1
 step
     #completewith VulgarasHeadA
@@ -1177,20 +1177,27 @@ step
 step
     #label VulgarasHeadA
     #arrowtext Kill\n|cRXP_ENEMY_Vulgara|r
+    .goto 2521,43.079,51.028,15,0
+    .goto 2521,42.978,51.803,15,0
     .goto 2521,42.75,52.68
-    >>Kill |cRXP_ENEMY_Vulgara|r. Loot it for |T4218759:0|t[|cRXP_LOOT_Vulgar's Head|r].
+    >>Kill |cRXP_ENEMY_Vulgara|r |cRXP_WARN_(level 8 elite)|r. Loot it for |T4218759:0|t[|cRXP_LOOT_Vulgar's Head|r].
+    *Look for a group to kill it or skip the quest.
     .complete 93318,1 --1/1 Vulgara's Head
     .mob Vulgara
 step
     #completewith PrideclawPeltsA
     #hidewindow
     #loop
-    .goto 2521,36.462,45.895,35,0
-    .goto 2521,42.821,36.736,35,0
-    .goto 2521,45.759,40.301,35,0
+    .goto 2521,42.821,36.736,55,0
+    .goto 2521,45.759,40.301,45,0
+    .goto 2521,40.305,38.285,45,0
+    .goto 2521,36.462,45.895,55,0
     +1
 step
     #completewith next
+    .goto 2521,45.759,40.301,0
+    .goto 2521,42.821,36.736,0
+    .goto 2521,36.462,45.895,0
     >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
@@ -1205,6 +1212,12 @@ step
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zerril Softbreeze|r
+    .goto 2521,43.851,43.848
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
+    .vendor >>Vendor Trash
+    .target Zerril Softbreeze::251905
+step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Illaya Amberwind|r
     .goto 2521,43.513,44.782
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illaya Amberwind::251902|r
@@ -1216,6 +1229,15 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
     .target Zerril Softbreeze::251905
     .turnin 92553 >>Turn in Restocking the Larders
+step << Hunter
+    .goto 2521,44.790,44.168
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Tinderforged::257421|r
+    >>|cRXP_BUY_Buy and equip a|r |T135499:0|t[Hornwood Recurve Bow]
+    >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_until your Quiver is full|r
+    .collect 2506,1 --Collect Hornwood Recurve Bow
+    .target Tephri Tinderforged::257421
+    .money <0.0285
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.38
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Taleen Shimmerthread|r
     .goto 2521,44.873,44.187
@@ -1236,11 +1258,15 @@ step
     .turnin 92516 >>Turn in Hippogryph Harrassment
     .turnin 93319 >>Turn in Pilfered Windstones
 step
+    .isOnQuest 93318
+    .isQuestComplete 93318
     #arrowtext Talk to\n|cRXP_FRIENDLY_Danarii Bellowveil|r
     .goto 2521,45.234,45.186
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danarii Bellowveil::252172|r
     .target Danarii Bellowveil::252172
     .turnin 93318 >>Turn in WANTED: Vulgara the Insatiable
+step
+    .abandon 93318 >>Abandon WANTED: Vulgara the Insatiable
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Constable Aonda|r
     .goto 2521,45.667,45.500
@@ -1248,6 +1274,17 @@ step
     .target Constable Aonda::251523
     .turnin 92517 >>Turn in The Criminal Element
     .accept 93036 >>Accept Infiltrating the Cult
+step << Hunter
+    .goto 2521,45.263,44.236
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elayaa Easewind::254084|r.
+    .train 5116 >>Train |T135860:0|t[Concussive Shot]
+    .train 3127 >>Train |T132269:0|t[Parry]
+    .target Elayaa Easewind::254084
+step << Druid
+    .goto 2521,45.153,44.225
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naeluna Swiftmend::254081|r.
+    .trainer >>Train your spells
+    .target Naeluna Swiftmend::254081
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Sania Silverstream|r
     .goto 2521,44.831,45.515
@@ -1255,6 +1292,12 @@ step
     .target Sania Silverstream::251904
     .turnin 93036 >>Turn in Infiltrating the Cult
     .accept 92529 >>Accept Falaath Village
+step << Shaman
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Aarnor Galestrike|r
+    .goto 2521,43.454,44.872
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aarnor Galestrike::254082|r
+    .trainer >> Train your class spells
+    .target Aarnor Galestrike::254082
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Missionary Jasaan|r
     .goto 2521,46.880,56.242
@@ -1263,55 +1306,29 @@ step
     .turnin 92529 >>Turn in Falaath Village
     .accept 92528 >>Accept Among the Faithful
 step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Raan Wildwind|r
-    .train 2575,3
-    .goto 2521,41.658,44.784
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind::263664|r
-    .tupnin 97970 >>Turnin Camping 101: Mining
-    .target Raan Wildwind::263664
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Missionary Jasaan|r
-    .goto 2521,46.89,56.24
-    .accept 92528 >>Accept Among the Faithful
-step
-    #arrowtext Learn about\nthe cultists' plans
+    #arrowtext Click on the |cRXP_PICK_Wardrobe|r
     .goto 2521,48.87,53.88
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Wardrobe|r.
     .complete 92528,1 --1/1 Learn about the cultists' plans
     .skipgossipid 136768
-
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Constable Aonda|r
     .goto 2521,45.67,45.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
     .turnin 92528 >>Turn in Among the Faithful
-    .target Constable Aonda
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Constable Aonda|r
-    .goto 2521,45.67,45.50
     .accept 92550 >>Accept Havoc in the Highlands
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Constable Aonda|r
-    .goto 2521,45.67,45.50
     .accept 93926 >>Accept The Western Watch
-
+    .target Constable Aonda
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Danarii Bellowveil|r
     .goto 2521,45.25,45.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danarii Bellowveil|r.
     .accept 92551 >>Accept Stolen Supplies
     .target Danarii Bellowveil
-
-
-step
-    #arrowtext Raise your mining skill to 20
-    .goto 2521,44.79,44.46
-    .complete 97970,1 --Raise your mining skill to 20
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Messana Crestwind|r
-    .goto 2521,44.77,44.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Messana Crestwind|r.
-    .turnin 97970 >>Turn in Camping 101: Mining
-    .target Messana Crestwind
+-- step
+--     #arrowtext Raise your mining skill to 20
+--     .goto 2521,44.79,44.46
+--     .complete 97970,1 --Raise your mining skill to 20
 step
     #arrowtext Kill\n|cRXP_ENEMY_Al'Aketh Stormcaller|r
     .goto 2521,48.12,56.27
