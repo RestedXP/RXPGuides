@@ -93,9 +93,14 @@ step << !Human
 step
     .goto 1436/0,1166.57,-10653.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Heather|r
-    >>|cRXP_BUY_Buy food/water if needed|r
-    .vendor >>|T133918:0|t[Longjaw Mud Snapper] |cRXP_WARN_is very cheap|r
+    .vendor >>|cRXP_BUY_Buy food/water if needed|r
 	.target Innkeeper Heather
+step
+    .goto 1436/0,1179.800,-10635.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon::253092|r 
+    .target Alba Fairmoon::253092
+    .accept 92742 >>Accept Testing the Wells
+    .accept 92744 >>Accept Murloc Gills
 step
 	#completewith GnollPaws
     >>Open the |cRXP_PICK_Sacks of Oats|r on the ground. Loot them for the |cRXP_LOOT_Handful of Oats|r
@@ -126,7 +131,13 @@ step
 step
     #label TravelCompass
     .isOnQuest 399
-    .goto 1436/0,1602.67,-10629.67,75 >> Travel to the Alexston's Farmstead, |cRXP_WARN_work on the other quest objectives as you move there|r
+    .goto 1436/0,1602.67,-10629.67,75 >> Travel to the Alexston's Farmstead
+    >>|cRXP_WARN_Work on completing the other quest objectives as you move there|r
+step << skip -- quests drop rate is beyond dreadful. over 50 kills to complete
+    .goto 1436/0,1213.400,-10153.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket::253395|r in the barn
+    .target Ozwin Ironsprocket::253395
+    .accept 92909 >>Accept Harvesting the Harvesters
 step
     #sticky
     #completewith bennytime
@@ -179,15 +190,19 @@ step
     .mob Riverpaw Gnoll
     .mob Riverpaw Scout
 step
+    .goto 1436/0,1035.300,-9835.101
+    .use 254545 >>|cRXP_WARN_Use the|r |T236996:0|t[Well Water Sample Kit] |cRXP_WARN_at the Jansen Stead well|r
+    .complete 92742,1 --|1/1 Jansen Stead Water Sample
+step
     .goto 1436/0,1192.12,-9641.73,60,0
     .goto 1436/0,1042.67,-9619.33,60,0
     .goto 1436/0,1192.12,-9641.73,60,0
     .goto 1436/0,1042.67,-9619.33,60,0
     .goto 1436/0,1192.12,-9641.73
     .goto 1436/0,1042.67,-9619.33,0
-    >>|cRXP_WARN_Travel to the coast, kill Gnolls on the way|r for |T134297:0|t[|cRXP_LOOT_Gnoll Paws|r] if needed
-    >>Kill |cRXP_ENEMY_Murloc Raiders|r and |cRXP_ENEMY_Murloc Coastrunners|r. Loot them for their |cRXP_LOOT_Eyes|r
+    >>Kill |cRXP_ENEMY_Murloc Raiders|r and |cRXP_ENEMY_Murloc Coastrunners|r. Loot them for their |cRXP_LOOT_Eyes|r and |cRXP_LOOT_Gills|r
     .collect 730,3,38,1 --Murloc Eye (3)
+    .complete 92744,1 -- Longshore Murloc Gills 7/7
     .mob Murloc Raider
     .mob Murloc Coastrunner
 step
@@ -275,7 +290,7 @@ step
     .turnin 38 >> Turn in Westfall Stew
     .isQuestComplete 38
     .target Salma Saldean
-  step
+step
     .isQuestAvailable 38
     .goto 1436/0,1132.27,-10146.67,60,0
     .goto 1436/0,1238.67,-9907.73,80,0
@@ -290,7 +305,6 @@ step
     .complete 9,1 --Harvest Watcher (20)
     .collect 732,3,38,1 --Okra (3)
     .collect 814,5,103,1 --Flask of Oil (5)
-    .mob Harvest Watcher
 step
     .isQuestTurnedIn 38
     #label HarvestW
@@ -306,7 +320,20 @@ step
     >>Kill |cRXP_ENEMY_Harvest Watchers|r. Loot them for their |cRXP_LOOT_Flasks of Oil|r
     .complete 9,1 --Harvest Watcher (20)
     .collect 814,5,103,1 --Flask of Oil (5)
-    .mob Harvest Watcher
+step
+    #optional
+    .isQuestComplete 9
+    .subzoneskip 107,1 -- forces early turnin if already at same farm
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
+	.target Farmer Saldean
+    .goto 1436/0,1055.27,-10128.70
+    .turnin 9 >> Turn in The Killing Fields
+step << skip
+    .goto 1436/0,1213.400,-10153.800
+    .isQuestComplete 92909
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket::253395|r in the barn
+    .target Ozwin Ironsprocket::253395
+    .turnin 92909 >>Turn in Harvesting the Harvesters
 step
     .goto 1436/0,1179.52,-10382.57,75,0
     .goto 1436/0,1138.22,-10474.97,75,0
@@ -339,9 +366,24 @@ step
     .turnin 38 >> Turn in Westfall Stew
     .turnin 22 >> Turn in Goretusk Liver Pie
 step
-    .goto 1436/0,1266.67,-10459.33
-    >>Finish off the |cRXP_ENEMY_Defias|r quests in the area marked on your map. |cRXP_WARN_It is a dynamic respawn area meaning if you kill enough mobs they will keep respawning|r
+    #completewith next
     >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r
+    >>|cRXP_WARN_It is a dynamic respawn area meaning if you kill enough they will keep respawning|r
+    .complete 12,1 -- Defias Trapper slain (15)
+    .mob +Defias Trapper
+    .complete 12,2 -- Defias Smuggler slain (15)
+    .mob +Defias Smuggler
+    .complete 153,1 -- Red Leather Bandana (15)
+    .mob +Defias Trapper
+    .mob +Defias Smuggler
+step
+    .goto 1436/0,1404.200,-10290.900
+    .use 254545 >>|cRXP_WARN_Use the|r |T236996:0|t[Well Water Sample Kit] |cRXP_WARN_at the Molsen Farm well|r
+    .complete 92742,2 --|1/1 Molsen Farm Water Sample
+step
+    .goto 1436/0,1324.200,-10490.400
+    >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r
+    >>|cRXP_WARN_It is a dynamic respawn area meaning if you kill enough they will keep respawning|r
     .complete 12,1 -- Defias Trapper slain (15)
     .mob +Defias Trapper
     .complete 12,2 -- Defias Smuggler slain (15)
@@ -370,7 +412,12 @@ step
 	.target Scout Galiaan
     .goto 1436/0,1126.67,-10636.670
     .turnin 153 >> Turn in Red Leather Bandanas
-
+step
+    .goto 1436/0,1179.800,-10635.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon::253092|r
+    .target Alba Fairmoon::253092
+    .turnin 92742 >>Turn in Testing the Wells
+    .turnin 92744 >>Turn in Murloc Gills
 step
     .hs >> Hearth to Stormwind
     .bindlocation 1519,1
@@ -1407,17 +1454,6 @@ step << NightElf/Hunter/Druid/Warrior
     .accept 4812 >> Accept As Water Cascades
     .target Sentinel Glynda Nal'Shea
     .isQuestTurnedIn 4811 --show step if Red Crystal turned in
-step << NightElf/Hunter/Druid/Warrior
-    #optional
-    #season 0
-    .goto 1439,36.767,44.285
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
-    >>|cRXP_WARN_Buy up to 40|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_WARN_from him. Sell all your other level 5 or below food|r
-    .collect 4592,40 --Longjaw Mud Snapper (40)
-    .target Laird
-    .subzoneskip 442,1 --skip if you leave Auber
-    .xp >15,1 << Warrior/Rogue
-    .isQuestTurnedIn 4811 --show step if you turned in red crystal
 step << NightElf/Hunter/Druid
     #optional
     #season 0
