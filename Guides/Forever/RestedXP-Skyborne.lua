@@ -1062,8 +1062,11 @@ step
     .turnin 93036 >>Turn in Infiltrating the Cult
     .accept 92529 >>Accept Falaath Village
 step
-    .goto 2521,46.89,56.24
+    .goto 2521,46.880,56.242
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Missionary Jasaan::257065|r
+    .target Missionary Jasaan::257065
     .turnin 92529 >>Turn in Falaath Village
+    .accept 92528 >>Accept Among the Faithful
 step
     .goto 2521,46.89,56.24
     .accept 92528 >>Accept Among the Faithful
