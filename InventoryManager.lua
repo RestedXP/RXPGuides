@@ -720,9 +720,13 @@ end
 
 if _G['ContainerFrame_UpdateAll'] then
     local hookedFrames = {}
-    for n = 1, NUM_CONTAINER_FRAMES do
-        local bagframe = _G['ContainerFrame'..n]
-
+    for n = 0, NUM_CONTAINER_FRAMES do
+        local bagframe
+        if n == 0 then
+            bagframe = _G.ContainerFrameCombinedBags
+        else
+            bagframe = _G['ContainerFrame'..n]
+        end
         if bagframe and bagframe.UpdateItems then
             hooksecurefunc(bagframe,'UpdateItems', function(self)
             local bag = self:GetID()
