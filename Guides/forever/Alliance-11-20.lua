@@ -666,6 +666,10 @@ step
     .target Innkeeper Shaussiy
     .bindlocation 442
 step
+    .goto 1439/1,503.100,6402.100
+    >>Click the |cRXP_PICK_WANTED|r poster
+    .accept 98025 >>Accept WANTED: Jai'vhanel
+step
     #optional << NightElf
     .goto 1439,37.322,43.640
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
@@ -1865,6 +1869,12 @@ step
     .mob Wailing Highborne
     .isOnQuest 958
 step
+    .isOnQuest 98025
+    .waypoint 1439/1,-12.800,5791.300
+    >>Kill |cRXP_ENEMY_Jai'vhanel|r. Loot for it for the |cRXP_LOOT_Feather of Jai'vhanel|r
+    .complete 98025,1 --|1/1 Feather of Jai'vhanel
+    .mob Jai'vhanel
+step
     #season 0
     #label AmethStart
     .goto 1439,40.302,59.731
@@ -2047,6 +2057,12 @@ step
     .turnin 963 >> Turn in For Love Eternal
     .target Cerellean Whiteclaw
     .isQuestComplete 963
+step
+    .isOnQuest 98025
+    .goto 1439/1,472.900,6439.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea::2930|r
+    .target Sentinel Glynda Nal'Shea::2930
+    .turnin 98025 >>Turn in WANTED: Jai'vhanel
 step
     #season 0
     .goto 1439,37.703,43.393
