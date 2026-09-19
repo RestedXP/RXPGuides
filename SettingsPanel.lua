@@ -3172,10 +3172,17 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Get Completed Quests"),
                         type = 'execute',
                         func = function()
-                            local tbl = _G.GetQuestsCompleted()
                             local out = ""
-                            for quest in pairs(tbl) do
-                                out = out .. tostring(quest) .. ","
+                            if C_QuestLog and C_QuestLog.GetAllCompletedQuestIDs then
+                                for _, quest in ipairs(C_QuestLog.GetAllCompletedQuestIDs() or {}) do
+                                    out = out .. tostring(quest) .. ","
+                                end
+                            elseif _G.GetQuestsCompleted then
+                                for quest in pairs(_G.GetQuestsCompleted() or {}) do
+                                    out = out .. tostring(quest) .. ","
+                                end
+                            else
+                                return
                             end
                             addon.url = out:sub(1,-2)
                             _G.StaticPopup_Show("RXP_Link")
