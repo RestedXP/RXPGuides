@@ -118,14 +118,56 @@ step
     .goto 1429,49.823,35.161,45,0
     .goto 1429,48.845,35.066,45,0
     .goto 1429,47.569,34.967,45,0
-    >>Kill |cRXP_ENEMY_Kobold Vermins|r
+    >>Kill |cRXP_ENEMY_Kobold Vermins|r. Loot them for the |T133736:0|t[|cRXP_LOOT_Nibbled-On Book|r]
+    .use 247834 >> |cRXP_WARN_Use the|r |T133736:0|t[|cRXP_LOOT_Nibbled-On Book|r] |cRXP_WARN_to start the quest|r
+    >>|cRXP_WARN_It is important to turn in this quest as soon as you get the|r |T133736:0|t[|cRXP_LOOT_Nibbled-On Book|r] |cRXP_WARN_drop|r
+    .collect 247834,1,91741,1 -- Nibbled-On Book (1)
+    .accept 91741 >> Accept Nibbled-On Book
     .complete 7,1 --Kill Kobold Vermin (x10)
+    .disablecheckbox
     .mob Kobold Vermin
 step
-    #optional
-    .use 247834 >> |cRXP_WARN_Use the|r |T133736:0|t[Nibbled-On Book] |cRXP_WARN_to start the quest|r
-    .accept 91741 >> Accept Nibbled-On Book
-    .itemcount 247834,1
+    #completewith next
+    .goto 1429/0,-136.900,-8913.800,10,0
+    .goto 1429/0,-176.000,-8880.900,10 >> |cRXP_WARN_Travel toward |cRXP_FRIENDLY_Brother Paxton|r in Northshire Abbey. Don't worry about completing |cRXP_ENEMY_Vermins|r or |cRXP_ENEMY_Wolves|r straight away|r
+step
+    .goto 1429/0,-186.12,-8874.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
+    .turnin 91741 >> Turn in Nibbled-On Book
+    .accept 92124 >> Accept Book Inventory
+    .target Brother Paxton
+step
+    .goto 1429/0,-182.65,-8881.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daniel|r
+    .turnin 92124 >> Turn in Book Inventory
+    .target Daniel
+step
+    .goto 1429/0,-186.12,-8874.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
+    .accept 91743 >> Accept Rascally Rodents
+    .target Brother Paxton
+step
+    #loop
+    .goto 1429,47.601,36.720,0
+    .goto 1429,49.215,37.010,0
+    .goto 1429,47.569,34.967,0
+    .goto 1429,47.601,36.720,45,0
+    .goto 1429,47.381,36.314,45,0
+    .goto 1429,47.611,35.863,45,0
+    .goto 1429,48.314,36.487,45,0
+    .goto 1429,49.070,36.438,45,0
+    .goto 1429,49.215,37.010,45,0
+    .goto 1429,49.838,36.413,45,0
+    .goto 1429,50.105,35.668,45,0
+    .goto 1429,49.823,35.161,45,0
+    .goto 1429,48.845,35.066,45,0
+    .goto 1429,47.569,34.967,45,0
+    >>Kill |cRXP_ENEMY_Kobold Vermins|r. Loot them for their |cRXP_LOOT_Stolen Books|r
+    >>|cRXP_WARN_Don't go out of your way to loot all |cRXP_LOOT_Stolen Books|r yet|r
+    .complete 7,1 --Kill Kobold Vermin (x10)
+    .complete 91743,1 -- Stolen Book (8)
+    .disablecheckbox
+    .mob Kobold Vermin
 step
     #requires WolfMeatEnd
     .goto 1429/0,-163.24,-8869.26
@@ -174,37 +216,9 @@ step
     .accept 3103 >> Accept Hallowed Letter << Priest
     .accept 3104 >> Accept Glyphic Letter << Mage
     .accept 3105 >> Accept Tainted Letter << Warlock
+    .accept 92479 >>Accept A Scribbled Letter << Hunter
     .target Marshal McBride
 
-step
-    #optional
-    .isOnQuest 91741
-    .goto 1429/0,-186.12,-8874.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
-    .turnin 91741 >> Turn in Nibbled-On Book
-    .accept 92124 >> Accept Book Inventory
-    .target Brother Paxton
-step
-    #optional
-    .isQuestTurnedIn 91741
-    .goto 1429/0,-186.12,-8874.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
-    .accept 92124 >> Accept Book Inventory
-    .target Brother Paxton
-step
-    #optional
-    .isOnQuest 92124
-    .goto 1429/0,-182.65,-8881.62
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daniel|r
-    .turnin 92124 >> Turn in Book Inventory
-    .target Daniel
-step
-    #optional
-    .isQuestTurnedIn 92124
-    .goto 1429/0,-186.12,-8874.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
-    .accept 91743 >> Accept Rascally Rodents
-    .target Brother Paxton
 step << Warlock
     .goto 1429/0,-136.52,-8933.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r outside
@@ -250,19 +264,10 @@ step << Warlock
     .cast 688 >> |cRXP_WARN_Cast|r |T136218:0|t[Summon Imp]
     .usespell 688
 
-
-
-
-
-
-
 step
     #completewith next
-    .isOnQuest 91743
     >>Kill |cRXP_ENEMY_Kobolds|r. Loot them for their |cRXP_LOOT_Stolen Books|r
-    >>|cRXP_WARN_Don't go out of your way to complete this yet|r
     .complete 91743,1 -- Stolen Book (8)
-
 step
     #season 0,1 << Priest/Warrior
     #loop
@@ -287,12 +292,6 @@ step
     >>Kill |cRXP_ENEMY_Kobold Workers|r
     .complete 15,1 --Kill Kobold Worker (x10)
     .mob Kobold Worker
-step
-    #optional
-    .use 247834 >> |cRXP_WARN_Use the|r |T133736:0|t[Nibbled-On Book] |cRXP_WARN_to start the quest|r
-    .accept 91741 >> Accept Nibbled-On Book
-    .itemcount 247834,1
-
 
 ----Start of 1x train section----
 
@@ -300,35 +299,43 @@ step
 
 
 step
-    #requires Memory << Priest --Season 2
-    #sticky
     #label xp3
-    .goto 1429,49.052,38.270,0
-    .goto 1429,45.708,38.720,0
-    .goto 1429,47.976,39.422,0
-    .goto 1429,46.465,38.272,45,0
-    .goto 1429,45.896,38.013,45,0
-    .goto 1429,45.708,38.720,45,0
-    .goto 1429,46.302,39.994,45,0
-    .goto 1429,45.718,40.733,45,0
-    .goto 1429,46.399,41.838,45,0
-    .goto 1429,46.741,40.987,45,0
-    .goto 1429,47.703,40.299,45,0
-    .goto 1429,47.976,39.422,45,0
-    .goto 1429,49.052,38.270,45,0
-    .goto 1429,48.362,37.582,45,0
-    .goto 1429,47.136,37.636,45,0
-    .goto 1429,46.870,36.906,45,0
-    .goto 1429,46.476,37.034,45,0
-    .xp 3+1110 >>Grind to 1110+/1400xp
-step
+    #loop
+    .goto 1429,47.468,36.298,0
+    .goto 1429,50.224,34.125,0
+    .goto 1429,50.835,38.046,0
+    .goto 1429,47.468,36.298,45,0
+    .goto 1429,47.247,35.164,45,0
+    .goto 1429,47.012,33.828,45,0
+    .goto 1429,46.774,33.271,45,0
+    .goto 1429,46.271,32.489,45,0
+    .goto 1429,47.663,32.058,45,0
+    .goto 1429,48.038,33.075,45,0
+    .goto 1429,48.795,33.815,45,0
+    .goto 1429,49.278,34.610,45,0
+    .goto 1429,50.224,34.125,45,0
+    .goto 1429,50.245,34.884,45,0
+    .goto 1429,51.058,35.582,45,0
+    .goto 1429,52.062,35.801,45,0
+    .goto 1429,51.505,38.064,45,0
+    .goto 1429,50.835,38.046,45,0
+    .xp 3+1110 >>|cRXP_WARN_Grind to 1110+/1400xp|r
+    >>Kill |cRXP_ENEMY_Kobold Workers|r for |cRXP_LOOT_Stolen Books|r if you still need them
+    .complete 91743,1 -- Stolen Book (8)
+    .disablecheckbox
+    .mob Kobold Worker
+step << !Hunter
     #season 0,1 << Warrior
     #completewith next
     .goto 1429/0,-119.86,-8898.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Godric Rothgar|r
     .vendor >> |cRXP_WARN_Vendor trash|r
     .target Godric Rothgar
---N need SoM xp note
+step << Hunter
+    .goto 1429/0,-112.800,-8901.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Danil|r
+    .vendor >> |cRXP_BUY_Buy 2 stacks of|r |T132382:0|t[Rough Arrows]
+    .target Brother Danil
 step
     #requires xp3
     #label Investigate
@@ -339,36 +346,6 @@ step
     .target Marshal McBride
 
 step
-    #optional
-    .isOnQuest 91741
-    .goto 1429/0,-186.12,-8874.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
-    .turnin 91741 >> Turn in Nibbled-On Book
-    .accept 92124 >> Accept Book Inventory
-    .target Brother Paxton
-step
-    #optional
-    .isQuestTurnedIn 91741
-    .goto 1429/0,-186.12,-8874.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
-    .accept 92124 >> Accept Book Inventory
-    .target Brother Paxton
-step
-    #optional
-    .isOnQuest 92124
-    .goto 1429/0,-182.65,-8881.62
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daniel|r
-    .turnin 92124 >> Turn in Book Inventory
-    .target Daniel
-step
-    #optional
-    .isQuestTurnedIn 92124
-    .goto 1429/0,-186.12,-8874.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
-    .accept 91743 >> Accept Rascally Rodents
-    .target Brother Paxton
-step
-    #optional
     .isQuestComplete 91743
     .goto 1429/0,-186.12,-8874.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
@@ -376,12 +353,12 @@ step
     .accept 91745 >>Accept Mining Consultant
     .target Brother Paxton
 step
-    #optional
     .isQuestTurnedIn 91743
     .goto 1429/0,-186.12,-8874.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
     .accept 91745 >>Accept Mining Consultant
     .target Brother Paxton
+
 step << Mage
     #optional
     #completewith next
@@ -437,6 +414,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r outside
     .accept 18 >> Accept Brotherhood of Thieves
     .target Deputy Willem
+step << Hunter
+    .goto 1429/0,-242.100,-8884.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tordrin Sternblade::248415|r
+    .target Tordrin Sternblade::248415
+    .turnin 92479 >>Turn in A Scribbled Letter
+    .trainer >> Train your class spells
 step << Warlock
     .goto 1429/0,-195.59,-8926.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
@@ -628,11 +611,9 @@ step
     .goto 1429/0,-376.67,-9073.73,30,0
     .goto 1429/0,-388.47,-9001.28,30,0
     .goto 1429/0,-333.97,-9028.59,30,0
-    .xp 5+1735 >> Grind to 1735+/2800xp << Paladin/Warrior
-    .xp 5+1625 >> Grind to 1625+/2800xp << !Paladin !Warrior !Priest !Mage
-    .xp 5+1085 >> Grind to 1085+/2800xp << Mage
-    .xp 5+975 >> Grind to 975+/2800xp << Priest
+    .xp 5 >> Grind to level 5
     .mob Defias Thug
+    --no need for extra grinding. being level 5 and doing the kobold quest chain will get you 6 once you arrive in goldshire
 step
     #optional
     #softcore
@@ -734,6 +715,10 @@ step
     .complete 91752,1 --|1/1 Sack of "Picture" Books
     .target Shinyfinder Narf
 step
+    #completewith next
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .target Spirit Healer
+step
     #optional
     .goto 1429/0,-162.62,-8902.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r inside
@@ -751,14 +736,14 @@ step
 step
     .isOnQuest 91758
     .goto 1429/0,-242.000,-8884.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tordrin Sternblade::248415|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tordrin Sternblade::248415|r outside the Abbey
     .target Tordrin Sternblade::248415
     .turnin 91758 >>Turn in Follow That Kobold!
     .accept 91772 >>Accept Shhh! We're Hunting Kobolds
 step
     .isQuestTurnedIn 91758
     .goto 1429/0,-242.000,-8884.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tordrin Sternblade::248415|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tordrin Sternblade::248415|r outside the Abbey
     .target Tordrin Sternblade::248415
     .accept 91772 >>Accept Shhh! We're Hunting Kobolds
 step
@@ -1078,6 +1063,30 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     .accept 47 >> Accept Gold Dust Exchange
     .target Remy "Two Times"
+step << Hunter
+    .goto 1429/0,75.400,-9480.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nordun Steadysight|r
+    >>|cRXP_BUY_Buy and equip a|r |T135499:0|t[Hornwood Recurve Bow]
+    >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_until your Quiver is full|r
+    .collect 2506,1 --Collect Hornwood Recurve Bow
+    .target Nordun Steadysight
+    .money <0.0281
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.38
+step << Hunter
+    .goto Teldrassil,55.890,59.205
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
+    .vendor >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_until your Quiver is full|r
+    .target Jeena Featherbow
+step << Hunter
+    #completewith next
+    .equip 18,2506 >> |cRXP_WARN_Equip the|r |T135499:0|t[Hornwood Recurve Bow]
+    .use 2506
+    .itemcount 2506,1 --Tempest Icon (1)
+step << Hunter
+    .goto 1429/0,107.200,-9472.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson|r
+    .trainer >> Train your class spells
+    .target Josephine Carson
 step << Priest
     .goto 1429/0,-135.72,-9514.56
     >>|cRXP_WARN_Cast|r |T135929:0|t[Lesser Heal (Rank 2)] |cRXP_WARN_and|r |T135987:0|t[Power Word: Fortitude] |cRXP_WARN_on|r |cRXP_FRIENDLY_Guard Roberts|r
@@ -1588,6 +1597,11 @@ step
 step
     #optional
     .xp 8 >> Grind to 8
+step << Hunter
+    .goto 1429/0,107.200,-9472.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson|r
+    .trainer >> Train your class spells
+    .target Josephine Carson
 step << Warrior
     .goto 1429/0,109.36,-9461.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
