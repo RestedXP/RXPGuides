@@ -8,6 +8,7 @@ RXPGuides.RegisterGuide([[
 #season 2
 << Alliance
 #group RestedXP 联盟 1-20 级
+#groupid RXP-SRGCE-A1
 #name 1-7级 寒脊山谷
 #next 6-11级 丹莫罗 探索赛季
 #displayname 1-7级 寒脊山谷
@@ -755,7 +756,7 @@ step << !Paladin !Warlock !Hunter
     #requires Grelin << Rogue
     #completewith next
     >|cRXP_WARN_>Make sure you will have two silver after vendoring to be able to train level 4 spells|r << Warrior
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     #hardcore << !Paladin !Warlock !Hunter
@@ -1112,6 +1113,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance --!Hunter
 #group RestedXP 联盟 1-20 级
+#groupid RXP-SRGCE-A1
 #name 6-11级 丹莫罗 探索赛季
 #displayname 7-12级 丹莫罗
 #next 12-13级 丹莫罗 探索赛季
@@ -1486,7 +1488,7 @@ step << Mage
 step << Warrior/Paladin/Rogue
     #optional
     .goto Dun Morogh,50.084,49.420
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_罗斯洛·鲁治|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗斯洛·鲁治|r 对话
     >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买一把|r |T134708:0|t[矿工锄]
     .collect 2901,1 --Mining Pick (1)
     .target 罗斯洛·鲁治
@@ -1694,7 +1696,7 @@ step << Mage
 step
     #label EvershineEnd
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷杰德·麦酒|r 对话
-    .turnin 318 >>交任务《 前往熔光镇》 艾沃沙酒
+    .turnin 318 >>交任务 艾沃沙酒
     .goto Dun Morogh,30.190,45.726
     .target 雷杰德·麦酒
 step << Hunter

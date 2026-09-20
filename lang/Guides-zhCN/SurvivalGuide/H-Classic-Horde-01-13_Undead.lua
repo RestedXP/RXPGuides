@@ -913,7 +913,7 @@ step
     .hs >>炉石返回布瑞尔，提瑞斯法林地
     .use 6948
     .subzoneskip 159
-    .bindlocation 159,1
+    .bindlocation 2119,1
     .cooldown item,6948,>0
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
@@ -2524,7 +2524,7 @@ step << Warlock/Mage/Priest
     .zoneskip Undercity,1
 step << Warlock
     .goto Undercity,85.07,25.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_卡伦丁|r交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_凯伦丁|r 对话
     .turnin 1478 >>交任务 哈加尔的召唤
     .accept 1473 >>接受任务 虚空中的生物
 step << Mage
@@ -2579,7 +2579,7 @@ step << Rogue
     #optional
     #label Swordtraining1
     .goto Undercity,57.29,32.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与战争军需区的|r|cRXP_FRIENDLY_阿基巴德|r交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与战争军需区的|r|cRXP_FRIENDLY_阿基巴德|r交谈
     .train 201 >>学习单手剑
     .target 阿基巴德
     .money <0.3023
@@ -2672,9 +2672,9 @@ step << Warlock
     .zone Undercity >>从下水道返回幽暗城
 step << Warlock
     .goto Undercity,85.07,25.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_卡伦丁|r交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_凯伦丁|r 对话
     .turnin 1473 >>交任务 虚空中的生物
-    .accept 1471 >>接受任务誓缚
+    .accept 1471 >>接受任务 誓缚
     .target 凯伦丁·哈加尔
 step << Warlock
     #completewith next
@@ -2689,7 +2689,7 @@ step << Warlock
 step << Warlock
     .goto Undercity,85.04,25.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯伦丁|r 对话
-    .turnin 1471 >>交任务誓缚
+    .turnin 1471 >>交任务 誓缚
     .target 凯伦丁·哈加尔
 step << skip --Warlock
     .goto Undercity,84.86,20.34
@@ -2703,7 +2703,7 @@ step << Warlock
     .zoneskip Tirisfal Glades
 step
     #completewith next
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -2813,7 +2813,7 @@ step
     .mob Vile Fin Muckdweller
 step
     #completewith RotHideGnolls
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -3106,7 +3106,7 @@ step
     .target Deathguard Linnea
 step
     #completewith HorrorsandSpirits
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -3206,7 +3206,7 @@ step << Priest/Warlock
     .mob Scarlet Zealot
 step
     #completewith next
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat

@@ -6,6 +6,7 @@ RXPGuides.RegisterGuide([[
 #season 2
 << Alliance
 #group RestedXP 联盟 1-20 级
+#groupid RXP-SRGCE-A1
 #name 16-17级 西部荒野 探索赛季
 #displayname 16-17级 西部荒野
 #next 17-22级 赤脊山 探索赛季
@@ -31,14 +32,14 @@ step << Priest !NightElf
 step << Human Paladin
     #optional
     .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
     .turnin -2998 >>交任务圣洁之书
     .accept 1641 >>接受任务圣洁之书
     .turnin 1641 >>交任务圣洁之书
     .target 达索瑞恩·拉尔
 step << Human Paladin
     .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
     .accept 1641 >>接受任务圣洁之书
     .turnin 1641 >>交任务圣洁之书
     .target 达索瑞恩·拉尔
@@ -49,13 +50,13 @@ step << Human Paladin
     .use 6775
 step << Human Paladin
     .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
     .turnin 1642 >>交任务圣洁之书
     .accept 1643 >>接受任务圣洁之书
     .target 达索瑞恩·拉尔
 step << Paladin
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .trainer >>训练你的职业技能
     .target 虔诚的亚瑟
 step << Human Paladin
@@ -102,9 +103,9 @@ step << Warlock
     .train 20387,1
 step << Warlock
     .goto StormwindClassic,25.25,78.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .turnin 1688 >>交任务 苏伦娜·凯尔东
-    .accept 1689 >>接受任务誓缚
+    .accept 1689 >>接受任务 誓缚
     .target 黑暗缚灵者加科因
 step << Warlock
     #completewith next
@@ -121,10 +122,10 @@ step << Warlock
     .complete 1689,1 --Kill Summoned Voidwalker (x1)
     .mob 虚空行者
 step << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .target 黑暗缚灵者加科因
     .goto StormwindClassic,25.25,78.59
-    .turnin 1689 >>交任务誓缚
+    .turnin 1689 >>交任务 誓缚
 step << Priest/Mage/Warlock
     .goto StormwindClassic,42.65,67.16,14,0
     .goto StormwindClassic,42.88,65.11
@@ -150,7 +151,7 @@ step << Rogue
     .goto StormwindClassic,78.67,60.13,5 >>进入军情7处总部。上楼去找 |cRXP_FRIENDLY_"剃刀"雷吉克|r
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"剃刀"雷吉克|r对话
-    .accept 2281 >>接受任务 赤脊山的联络员
+    .accept 2281 >>接受任务赤脊山的联络员
     .goto StormwindClassic,75.76,60.35
     .target Renzik "The Shiv"
 step << Warrior
@@ -197,7 +198,7 @@ step << Warrior/Paladin
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
     >>购买1个 |T135353:0|t[普通长剑]（12.6 DPS）或在拍卖行寻找更好的升级
-    .target Marda Weller
+    .target 玛尔达·维勒
     .collect 2024,1 --Collect Espadon (1)
     .money <0.6397
     .itemStat 16,QUALITY,<7
@@ -205,7 +206,7 @@ step << Warrior/Paladin
 step
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买|T134437:0|t[抗毒药剂] 用于你稍后的 |T132290:0|t[毒药] 职业任务，其余的留着稍后在赤脊山快速交任务 << !Dwarf Rogue
     >>购买以下物品，以便稍后在赤脊山更快地完成任务 << !Rogue/Dwarf Rogue
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
@@ -225,10 +226,10 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_凯德雷克·布舍尔|r 对话
     >>检查他是否有|T134830:0|t|T134830:0|t[|cRXP_LOOT_次级治疗药水|r]，如果有货的话就买一些
     .collect 211779,3 >>从他那里购买几个 |T135933:0|t[|cRXP_LOOT_理解魔符|r]
-    .target Keldric Boucher
+    .target 凯德雷克·布舍尔
 step << Human
     .goto StormwindClassic,66.28,62.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .turnin 6261 >>交任务 杜加尔·朗德瑞克
     .accept 6285 >>接受任务 返回西部荒野
     .target 杜加尔·朗德瑞克
@@ -297,13 +298,13 @@ step
     .target 卫兵帕克
 step
     .goto Redridge Mountains,30.73,59.99
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
     .turnin 244 >>交任务豺狼人的入侵
     .accept 246 >>接受任务 审时度势
     .target 菲尔顿副队长
 step << !Warlock
     .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
     .fp Redridge Mountains >>获取赤脊山的飞行路径
     .target 艾蕾娜·斯托姆法瑟
 step << !Human
@@ -313,12 +314,12 @@ step << !Human
     .accept 118 >>接受任务 马掌
 step << Human/Dwarf Paladin
     .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
     .fly Westfall >>飞往西部荒野
     .target 艾蕾娜·斯托姆法瑟
 step << Gnome Warlock
     .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
     .fly Stormwind >>飞往暴风城
     .target 艾蕾娜·斯托姆法瑟
 step << Gnome Warlock
@@ -465,6 +466,7 @@ RXPGuides.RegisterGuide([[
 #season 2
 << Alliance
 #group RestedXP 联盟 1-20 级
+#groupid RXP-SRGCE-A1
 #name 17-22级 赤脊山 探索赛季
 #displayname 17-22级 赤脊山
 #next RestedXP 联盟 20-30级\22-24级 湿地 探索赛季
@@ -475,7 +477,7 @@ step
     #label BMenace
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
     .goto Redridge Mountains,33.50,48.97
-    .accept 20 >>接受任务黑石氏族的威胁
+    .accept 20 >>接受任务 黑石氏族的威胁
     .target 治安官马瑞斯
     .xp <18,1
 step
@@ -514,7 +516,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_码头管理员巴伦|r 对话
 	.target 码头管理员巴伦
     .goto Redridge Mountains,27.70,47.40
-    .accept 127 >>接受任务卖鱼
+    .accept 127 >>接受任务 卖鱼
 step
     .goto Redridge Mountains,26.80,44.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达希|r 对话
@@ -591,7 +593,7 @@ step
     #label BMenace
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
     .goto Redridge Mountains,33.50,48.97
-    .accept 20 >>接受任务黑石氏族的威胁
+    .accept 20 >>接受任务 黑石氏族的威胁
     .target 治安官马瑞斯
     .xp <18,1
 step
@@ -644,14 +646,14 @@ step
 	.mob Redridge Poacher
 step
 #label threat1
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
 	.target 菲尔顿副队长
     .goto Redridge Mountains,30.73,59.99
     .turnin 246 >>交任务 审时度势
 step
     #completewith db1
     .goto Redridge Mountains,30.59,59.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
     .fly Stormwind >>飞往暴风城
     .target 艾蕾娜·斯托姆法瑟
     .dungeon DM << !Human
@@ -700,7 +702,7 @@ step << Hunter
 step << Rogue
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
-    .target Marda Weller
+    .target 玛尔达·维勒
     >>|cRXP_WARN_购买1把|r |T135342:0|t[波刃短剑]
     >>|cRXP_WARN_如果拍卖行有更便宜或更好的装备就购买它|r
     .collect 2209,1
@@ -752,7 +754,7 @@ step << Human
 #optional
 .dungeon !DM
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Redridge >>飞往 Redridge
     .target 杜加尔·朗德瑞克
     .zoneskip Redridge Mountains
@@ -760,7 +762,7 @@ step
     #label BMenace
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
     .goto Redridge Mountains,33.50,48.97
-    .accept 20 >>接受任务黑石氏族的威胁
+    .accept 20 >>接受任务 黑石氏族的威胁
     .target 治安官马瑞斯
     .xp <18,1
 step
@@ -896,7 +898,7 @@ step << Rogue
 
 step << Rogue
     .goto Redridge Mountains,30.6,59.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
     .fly Stormwind >>飞往暴风城
     .target 艾蕾娜·斯托姆法瑟
     .zoneskip Westfall
@@ -919,13 +921,13 @@ step << Rogue
 step << !Rogue
 .dungeon DM
     .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
     .fly Westfall >>飞往西部荒野
     .target 艾蕾娜·斯托姆法瑟
 step << Rogue
 #completewith next
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Westfall >>飞往西部荒野
     .target 杜加尔·朗德瑞克
     .zoneskip Westfall
@@ -1000,7 +1002,7 @@ step << Rogue
     .goto Westfall,68.50,70.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_密探吉尔妮|r 对话
     >>|cRXP_WARN_你必须完成这个任务来获取你的|r|T132290:0|t[毒药]
-    .turnin 2360 >>交任务马迪亚斯和迪菲亚盗贼
+    .turnin 2360 >>交任务 马迪亚斯和迪菲亚盗贼
     .accept 2359 >>接受任务 克拉文之塔
     .target Agent Kearnen
 step << Rogue
@@ -1017,7 +1019,7 @@ step << Rogue
     >>|cRXP_WARN_|cRXP_ENEMY_丑陋的迪菲亚懒汉|r出现在塔楼入口处，随后会在塔楼外侧巡逻|r
     >>|cRXP_WARN_小心，他伤害很高。如果你的|r |T132320:0|t[潜行] |cRXP_WARN_被打破，立刻使用|r |T132307:0|t[疾跑] |cRXP_WARN_并逃离|r
     .complete 2359,2 --Collect Defias Tower Key (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
     .mob Malformed Defias Drone
 step << Rogue
     #optional
@@ -1035,7 +1037,7 @@ step << Rogue
     >>|cRXP_WARN_如果你的背包中或已装备|r |T135641:0|t[匕首] |cRXP_WARN_，你可以施放|r |T132282:0|t[伏击] |cRXP_WARN_对付里面的 |cRXP_ENEMY_迪菲亚巡塔员|r 和 |cRXP_ENEMY_迪菲亚哨兵|r，从而瞬间击杀他们。击杀第一个 |cRXP_ENEMY_迪菲亚哨兵|r 后请做好逃跑准备，并记住你可能会从上方被攻击。这种方法更慢，但安全性高得多|r
     >>|cRXP_WARN_注意，如果你需要跑出塔楼，|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 和 |cRXP_ENEMY_迪菲亚苦工|r 可能会在塔楼入口处|r
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
     .mob Defias Tower Patroller
     .mob Defias Tower Sentry
 step << !Dwarf Rogue
@@ -1126,7 +1128,7 @@ step << Rogue
 #completewith next
 .dungeon DM
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Westfall >>飞往西部荒野
     .target 杜加尔·朗德瑞克
     .zoneskip Westfall
@@ -1241,7 +1243,7 @@ step
 step
     .dungeon DM
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Redridge >>飞往 Redridge
     .target 杜加尔·朗德瑞克
     .zoneskip Redridge Mountains
@@ -1349,7 +1351,7 @@ step
     .goto Redridge Mountains,27.72,47.38
     .turnin 127 >>交任务卖鱼
     .accept 150 >>接受任务 鱼人偷猎者
-    .turnin 150 >>交任务鱼人偷猎者
+    .turnin 150 >>交任务 鱼人偷猎者
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
 	.target Verner Osgood
@@ -1359,10 +1361,10 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
 	.target 治安官马瑞斯
     .goto Redridge Mountains,33.50,48.97
-    .turnin 20 >>交任务黑石氏族的威胁
+    .turnin 20 >>交任务 黑石氏族的威胁
 step
     .goto Redridge Mountains,30.59,59.42
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
 	.target 艾蕾娜·斯托姆法瑟
     .fly Stormwind >>飞往暴风城
 step << !Mage/Paladin/Warlock
@@ -1398,7 +1400,7 @@ step << Rogue
     .target 夜行者奥斯伯
 step << Paladin
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .trainer >>训练你的职业技能
     .target 虔诚的亚瑟
 step << Priest
@@ -1427,7 +1429,7 @@ step << Warlock
     .vendor 6382 >>|cRXP_BUY_购买|r |T133738:0|t[魔典：折磨（等级 2）]
     .collect 16346,1
     .disablecheckbox
-    .target Jubahl Corpseseeker
+    .target 寻尸者祖贝尔
     .train 427733,1 --skips if you have a felguard
 step << Mage
     .goto Ironforge,25.50,7.04

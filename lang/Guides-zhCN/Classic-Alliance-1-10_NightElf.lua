@@ -11,6 +11,7 @@ RXPGuides.RegisterGuide([[
 #displayname 1-7级 幽影谷 << sod
 #version 1
 #group RestedXP 联盟 1-20 级
+#groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 6-11 泰达希尔
 step << !NightElf
@@ -98,7 +99,7 @@ step << Druid
     .goto Teldrassil,59.602,40.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德林拉尔|r 对话
     .vendor >>|cRXP_WARN_出售垃圾物品|r
-    >>|cRXP_BUY_Buy 15|r |T132794:0|t[清凉的泉水]
+    >>|cRXP_BUY_购买15瓶|r |T132794:0|t[清凉的泉水]
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target 德林拉尔
 step
@@ -420,6 +421,7 @@ RXPGuides.RegisterGuide([[
 #displayname 7-13级 泰达希尔 << SoD
 #version 1
 #group RestedXP 联盟 1-20 级
+#groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 14-16级 黑海岸
 
@@ -895,7 +897,7 @@ step
     .goto 1438/1,854.400,9952.500,6 >>在一棵小树旁边
     .goto 1438/1,822.200,9948.500,6 >>在小山丘上
     .goto 1438/1,809.800,9926.400,6 >>在那棵巨大的树旁边
-    >>拾取地图上标记位置的 3 只猎鹰。
+    >>从你的地图标记的位置收集3个战利品 |cRXP_LOOT_魔锥果|r。
     >>|cRXP_WARN_如果其中任何一个不在场且你无法完成目标，请跳过此步骤|r
     .complete 489,1 --Fel Cone 3/3
     .isOnQuest 489
@@ -1022,7 +1024,7 @@ step
 	#xprate <1.5
 	#label spiderLegs
 	.goto Teldrassil,42.41,67.07
-    .use 5621 >>|cRXP_WARN_在阿里斯瑞恩之池的月亮井|r|cRXP_WARN_使用|r |T134765:0|t[红玉瓶]
+    .use 5621 >>|cRXP_WARN_在阿里斯瑞恩之池的月亮井使用|r |T134765:0|t[红玉瓶] |cRXP_WARN_|r
 	.complete 933,1
 step
 	#xprate <1.5
@@ -1353,7 +1355,7 @@ step << Hunter
 #xprate >1.99
     .goto Darnassus,40.377,8.545
     .target 祖卡斯特
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_祖卡斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖卡斯特|r 对话
     .turnin 6103 >>交任务 训练野兽
 step << !Rogue
     .goto Darnassus,39.72,92.68,10,0
@@ -1368,7 +1370,7 @@ step << Druid
 	.zoneskip Moonglade
 step << Druid
     .goto Moonglade,56.21,30.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
     .turnin 5921 >>交任务 月光林地
     .target 德迪利特·星焰
     .accept 5929 >>接受任务 巨熊之灵
@@ -1385,8 +1387,8 @@ step << Druid
     >>|cRXP_WARN_这样可以让你更快返回|r
 step << Druid
     .goto Moonglade,56.21,30.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
-    .turnin 5929 >>交任务  巨熊之灵
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
+    .turnin 5929 >>交任务 巨熊之灵
     .target 德迪利特·星焰
     .accept 5931 >>接受任务 返回达纳苏斯
 step
@@ -1654,7 +1656,7 @@ step << Hunter
 	.goto Teldrassil,37.6,28.8,0
     >>|cRXP_WARN_施放|r |T132164:0|t[驯服野兽] |cRXP_WARN_在|cRXP_ENEMY_巨翼猎枭|r 以驯服它|r -- .tame 1997
     .train 2981 >>|cRXP_WARN_用它攻击怪物以学习|r |T132140:0|t [爪击(等级 2)]
-    .link https://www.wow-petopia.com/classic/training.php >>https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击这里了解更多关于宠物训练的信息|r
+    .link https://www.wow-petopia.com/classic/training.php >>https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击此处了解更多关于宠物训练的信息|r
 	.unitscan 巨翼猎枭
 step
     #sticky
@@ -1822,7 +1824,7 @@ step << Hunter
 #xprate <1.99
     .goto Darnassus,40.377,8.545
     .target 祖卡斯特
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_祖卡斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖卡斯特|r 对话
     .turnin 6103 >>交任务 训练野兽
 step << Hunter
     >>|cRXP_WARN_从 |r祖卡斯特|cRXP_FRIENDLY_ 右侧的坡道上去|r
@@ -1864,7 +1866,7 @@ step << Druid
 #ssf
     #season 0
     .goto Darnassus,47.95,68.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲罗迪恩·唤月|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_菲罗迪恩·唤月|r 对话
     .train 2366 >>学习 |T136065:0|t[草药学]
     >>|T136065:0|t[草药学] |cRXP_WARN_将用于采集 5 个 |r|T134187:0|t[地根草]|cRXP_WARN_，以完成即将到来的重要职业任务。完成后你可以将其忘却|r
     .target Firodren Mooncaller
@@ -1894,6 +1896,7 @@ step << Hunter
 step << Hunter/Warrior/Priest/Sod Rogue
     .goto Darnassus,57.56,46.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊琳尼雅·月火|r 对话
+    .skipgossip 11866,1
     .train 227 >>学习法杖 << Hunter/Warrior/Priest
     .train 265 >>学习 弩 << Sod Rogue
     >>如果你的背包里有一个法杖，请装备它 << Hunter

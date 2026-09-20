@@ -1621,7 +1621,7 @@ RXPGuides.RegisterGuide[[
 
 step
     #completewith next
-    .zone Orgrimmar >>前往 |cFFfa9602奥格瑞玛|r
+    .zone Orgrimmar >>前往|cFFfa9602奥格瑞玛|r
     .cast 3567 >>|cRXP_WARN_如果你有|r |T134419:0|t[传送符文] 使用 [传送：奥格瑞玛]
     .disablecheckbox
     .isQuestAvailable 79094
@@ -1737,7 +1737,7 @@ step
     .isQuestAvailable 81952
 step
     #completewith next
-    .zone Darkshore >>如果你没有飞行路径|cFFfa9602 步行前往 |r黑海岸|r
+    .zone Darkshore >>步行前往|cFFfa9602黑海岸|r |cRXP_WARN_如果你没有开飞行路径|r
     .disablecheckbox
     .isQuestAvailable 78124
 step
@@ -2659,7 +2659,7 @@ step
     .train 2121,1 -- flamestrike r2
     .train 8422,1 -- flamestrike r3
     .train 8423,1 -- flamestrike r4
-    .train 2120 >>|cRXP_WARN_你必须已学习|r |T135826:0|t[烈焰风暴] |cRXP_WARN_以获得|r |T236218:0|t[炽热连击] |cRXP_WARN_符文|r
+    .train 2120 >>|cRXP_WARN_你必须先学会|r |T135826:0|t[烈焰风暴] |cRXP_WARN_才能获得|r |T236218:0|t[炽热连击] |cRXP_WARN_符文|r
 step
     .train 401749,1
     .goto Alterac Mountains,60.510,46.286

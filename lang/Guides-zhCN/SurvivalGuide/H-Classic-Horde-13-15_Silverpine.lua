@@ -81,7 +81,7 @@ step
 step << !Mage !Priest
     .goto Silverpine Forest,44.05,39.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格乌恩|r 对话
-    .vendor >>|cRXP_BUY_购买|r |T134830:0|t|T134830:0|t[次级治疗药水] |cRXP_BUY_从他那里（如果有货的话）|r
+    .vendor >>|cRXP_BUY_从他那里购买|r |T134532:0|t[红斑蘑菇] |cRXP_BUY_|r
     .collect 4605,20,421,1 --Red-speckled Mushroom (20)
     .target Gwyn Farrow
     .money <0.05
@@ -754,14 +754,14 @@ step
     .dungeon RFC
 step << Undead
     .goto Undercity,63.27,48.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .turnin 6322 >>交任务 迈克尔·加勒特
     .accept 6324 >>接受任务 向博迪瑞格回报
     .target 迈克尔·加勒特
 step
     #completewith GrimsonthePale
     .goto Undercity,63.27,48.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .fly The Supulcher >>飞往瑟伯切尔
     .target 迈克尔·加勒特
     .zoneskip Silverpine Forest
@@ -769,7 +769,7 @@ step
 step << Undead
     #completewith next
     .goto Undercity,63.27,48.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .fly The Supulcher >>飞往瑟伯切尔
     .target 迈克尔·加勒特
     .zoneskip Silverpine Forest

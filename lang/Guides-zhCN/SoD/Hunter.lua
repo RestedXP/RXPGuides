@@ -88,7 +88,7 @@ step
     .mob Githyiss the Vile
     .train 410121,1
 step
-    .train 410121 >>|cRXP_WARN_使用|r |T134419:0|t|cRXP_LOOT_[奇美拉符文]|r |cRXP_WARN_来学习|r |T133816:0|t[铭刻手套 - 奇美拉射击]
+    .train 410121 >>|cRXP_WARN_使用|r |T134419:0|t|T133816:0|t|cRXP_LOOT_[奇美拉符文]|r |cRXP_WARN_学习|r |T133816:0|t|T133816:0|t[铭刻手套 - 奇美拉射击]
     .use 206168
     .itemcount 206168,1
 ]])
@@ -756,7 +756,7 @@ step
     .goto Silverpine Forest,44.67,24.84,50,0
     .goto Silverpine Forest,46.08,26.62,50,0
     .goto Silverpine Forest,41.60,21.65
-    >>击杀 |cRXP_ENEMY_凶猛的灰斑熊|r 直到 |cRXP_ENEMY_老练的保护者|r （16级精英怪）出现
+    >>Kill |cRXP_ENEMY_Ferocious Grizzled Bears|r until a |cRXP_ENEMY_Grizzled Protector|r (16 elite) spawns
     >>击杀他并拾取|T134419:0|t[|cRXP_FRIENDLY_野兽控制符文|r]
     .collect 208701,1 --Rune of Beast Mastery (1)
     .mob Ferocious Grizzled Bear
@@ -1194,7 +1194,7 @@ step
     .goto 1446/1,-3290.200,-7330.700,0
     >>击杀 |cRXP_ENEMY_佐匹洛特|r。拾取|T134419:0|t[|cRXP_FRIENDLY_猛禽符文|r]
     >>|cRXP_ENEMY_佐皮洛特|r |cRXP_WARN_是一只食腐鸟，它在从落沙哨所南部到加基森的广阔区域内自东向西进行巡逻|r
-    >>提示：与其到处乱跑，你可以使用|T132172:0|t[|cRXP_FRIENDLY_鹰眼术|r]来侦察他的位置。如果你找不到他，他可能已经死了，应该会在你地图上标记有“2+”的地点附近重新刷新
+    >>提示：与其到处乱跑，你可以使用|T132172:0|t[|cRXP_FRIENDLY_鹰眼术|r]来侦察他的位置。如果你找不到他，他可能已经死了，应该会在你地图上标记有"2+"的地点附近重新刷新
     .collect 220687,1
     .unitscan Zopilote
     .train 416093,1
@@ -1359,7 +1359,7 @@ step
     .mob Rotting Sludge
 step
     .goto Eastern Plaguelands,17.8,30.2
-    >>前往恐惧谷并击杀 |cRXP_ENEMY_瘟疫野猪|r 直到你拾取到|T134046:0|t[|cRXP_LOOT_被污染的野猪肉|r]
+    >>前往恐惧谷，击杀|cRXP_ENEMY_瘟疫野猪|r直到拾取到|T134046:0|t[|cRXP_LOOT_被污染的野猪肉|r]
     .collect 225942,1 --Tainted Boar Meat (1)
     .mob Plagued Swine
 step

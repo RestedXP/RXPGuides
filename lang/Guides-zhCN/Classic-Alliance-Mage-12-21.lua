@@ -835,7 +835,7 @@ step
     .goto Redridge Mountains,33.51,48.96
 .target 治安官马瑞斯
 >>与|cRXP_FRIENDLY_治安官马瑞斯|r 对话
-    .accept 20 >>接受任务黑石氏族的威胁
+    .accept 20 >>接受任务 黑石氏族的威胁
 step
     .goto Redridge Mountains,32.14,48.64
 .target Foreman Oslow
@@ -862,7 +862,7 @@ step
     .goto Redridge Mountains,27.72,47.38
 .target 码头管理员巴伦
 >>与|cRXP_FRIENDLY_码头管理员巴伦|r 对话
-    .accept 127 >>接受任务卖鱼
+    .accept 127 >>接受任务 卖鱼
 step
     .goto Redridge Mountains,26.75,46.42
     .accept 180 >>接受任务 通缉：范高雷中尉
@@ -1051,7 +1051,7 @@ step
     .goto Redridge Mountains,33.50,48.96
 .target 治安官马瑞斯
 >>与|cRXP_FRIENDLY_治安官马瑞斯|r 对话
-    .turnin 20 >>交任务黑石氏族的威胁
+    .turnin 20 >>交任务 黑石氏族的威胁
 step
     .goto Redridge Mountains,32.14,48.63
 >>与|cRXP_FRIENDLY_工头奥斯洛|r交谈
@@ -1070,7 +1070,7 @@ step
     .turnin 127 >>交任务卖鱼
 .target 码头管理员巴伦
     .accept 150 >>接受任务 鱼人偷猎者
-    .turnin 150 >>交任务鱼人偷猎者
+    .turnin 150 >>交任务 鱼人偷猎者
 step
     .goto Redridge Mountains,27.72,47.38
 .target 码头管理员巴伦
@@ -1136,7 +1136,7 @@ step
     .goto Redridge Mountains,33.50,48.96
 .target 治安官马瑞斯
 >>与|cRXP_FRIENDLY_治安官马瑞斯|r 对话
-    .turnin 20 >>交任务黑石氏族的威胁
+    .turnin 20 >>交任务 黑石氏族的威胁
 step
     .goto Redridge Mountains,32.15,48.64
 .target Foreman Oslow
@@ -1152,9 +1152,7 @@ step
     .goto Redridge Mountains,27.09,45.65
 .target Darcy
 >>与 |cRXP_FRIENDLY_达希|r 对话
-    .turnin 131 >>交任务 水仙诉衷情
-step
-    .goto Redridge Mountains,27.01,44.81
+    .turnin 131 >>交任务 水仙诉衷情dridge Mountains,27.01,44.81
     .vendor >>购买15级饮料
 step
     #era/som

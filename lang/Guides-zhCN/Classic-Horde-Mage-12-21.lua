@@ -51,7 +51,7 @@ step
     .goto The Barrens,51.5,30.8
 .target 索克
 >>与 |cRXP_FRIENDLY_索克|r 对话
-    .accept 871 >>接受任务 保卫前沿哨所
+    .accept 871 >>接受任务 野猪人的袭击
     .accept 5041 >>接受任务 十字路口的补给品
 step
     .goto The Barrens,51.5,30.4
@@ -67,8 +67,8 @@ step
     .goto The Barrens,51.5,30.1
 .target 药剂师赫布瑞姆
 >>与 |cRXP_FRIENDLY_药剂师赫布瑞姆|r 对话
-    .accept 848 >>接受任务菌类孢子
-    .accept 1492 >>接受任务码头管理员迪兹维格
+    .accept 848 >>接受任务 菌类孢子
+    .accept 1492 >>接受任务 码头主管迪兹维格
 step
     #sticky
     #completewith next
@@ -78,7 +78,7 @@ step
     .accept 819 >>接受任务 老陈的空酒桶
 step
     .goto The Barrens,55.6,26.6
-    >>杀死该区域中的野猪人
+    >>击杀该区域内的野猪人
     .complete 871,2 --Razormane Thornweaver (8)
     .complete 871,1 --Razormane Water Seeker (8)
     .complete 871,3 --Razormane Hunter (3)
@@ -242,7 +242,7 @@ step
     .accept 888 >>接受任务 被窃的货物
 step
     .goto The Barrens,63.08,37.16
-    .fly Crossroads >>飞往十字路口
+    .fly Crossroads >>飞往十字路口，北贫瘠之地
 step
     .goto The Barrens,51.5,30.8
 .target 索克
@@ -263,8 +263,8 @@ step
 step
     #label RegtharDeathgate1
     .goto The Barrens,45.35,28.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷格萨 |r 对话
-    .accept 850 >>接受任务科卡尔首领
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷戈萨|r 对话
+    .accept 850 >>接受任务 科卡尔首领
     .accept 855 >>接受任务 半人马护腕
     .target 雷戈萨·死门
 step
@@ -292,7 +292,7 @@ step
     .mob 巴拉克·科多班恩
 step
     .goto The Barrens,45.35,28.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷格萨 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷戈萨|r 对话
     .turnin 850 >>交任务  科卡尔首领
     .accept 851 >>接受任务 狂热的维罗戈
     .turnin 855 >>交任务  半人马护腕
@@ -301,7 +301,7 @@ step
 step
     #label KodobaneTurnin
     .goto The Barrens,45.35,28.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷格萨 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷戈萨|r 对话
     .turnin 850 >>交任务  科卡尔首领
     .accept 851 >>接受任务 狂热的维罗戈
     .target 雷戈萨·死门
@@ -468,9 +468,9 @@ step
 step
     .goto The Barrens,52.20,31.90
 >>与 |cRXP_FRIENDLY_图加·符文图腾|r 对话
-    .turnin 870 >>交任务  遗忘之池
+    .turnin 870 >>交任务 遗忘之池
 .target 图加·符文图腾
-    .accept 877 >>接受任务死水绿洲
+    .accept 877 >>接受任务 死水绿洲
 step
     .goto The Barrens,52.00,31.60
 .target 曼科里克
@@ -488,7 +488,7 @@ step
     .goto The Barrens,51.50,30.20
 .target 药剂师赫布瑞姆
 >>与 |cRXP_FRIENDLY_药剂师赫布瑞姆|r 对话
-    .turnin 848 >>交任务菌类孢子
+    .turnin 848 >>交任务 菌类孢子
 step
     .goto The Barrens,51.5,30.3
     .fly Ratchet >>飞往棘齿城
@@ -613,7 +613,7 @@ step
 step
     .goto The Barrens,52.2,31.9
 >>与 |cRXP_FRIENDLY_图加·符文图腾|r 对话
-    .turnin 877 >>交任务  死水绿洲
+    .turnin 877 >>交任务 死水绿洲
 .target 图加·符文图腾
     .accept 880 >>接受任务 变异的生物
 step
@@ -809,7 +809,7 @@ step
 step
     .goto Stonetalon Mountains,58.989,62.599
 >>与 |cRXP_FRIENDLY_菲兹克斯|r 对话
-    .turnin 1093 >>交任务超级收割机6000
+    .turnin 1093 >>交任务  超级收割机6000
 .target 菲兹克斯
     .accept 1094 >>接受任务 新的指示
 step
@@ -835,7 +835,7 @@ step
     .goto The Barrens,45.0,51.8,0
 	>>找到并击杀拉克塔曼尼（灰色科多兽）。拾取它们的蹄子。如果找不到就跳过这个任务。
 	.collect 5099,1,883 --Collect Hoof of Lakota'Mani
-	.accept 883 >>接受任务拉克塔曼尼
+	.accept 883 >>接受任务 拉克塔曼尼
 step
     >>击杀大量野猪人。拾取它们的獠牙。留着你拿到的血岩碎片
 	.goto The Barrens,44.3,52.3,50,0
@@ -926,9 +926,9 @@ step
     >>这会开启一个限时任务
     .goto The Barrens,51.4,30.2
 >>与 |cRXP_FRIENDLY_药剂师赫布瑞姆|r 对话
-    .turnin 848 >>交任务菌类孢子
+    .turnin 848 >>交任务 菌类孢子
 .target 药剂师赫布瑞姆
-    .accept 853 >>接受任务 药剂师扎玛
+    .accept 853 >>接受任务药剂师扎玛
 step
     .goto The Barrens,51.5,30.3
     .fly Camp Taurajo >>飞往陶拉祖营地
@@ -1117,7 +1117,7 @@ step
 	>>如果你还没有洗天赋，请洗成冰法AOE天赋
 step
     .goto Thunder Bluff,46.8,50.0
-    .fly The Crossroads >>飞往十字路口
+    .fly The Crossroads >>飞往十字路口，北贫瘠之地
 step
     .goto The Barrens,51.60,30.90
 	>>上楼

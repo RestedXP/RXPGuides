@@ -184,7 +184,7 @@ step
     .xp <8,1
 step
     .goto Ironforge,23.131,6.143
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
     .train 853 >>训练 |T135963:0|t[正义之锤号]
     .target 布兰度尔·铁锤
     .train 410001,1
@@ -360,7 +360,7 @@ step
     .xp <8,1
 step
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .train 853 >>训练 |T135963:0|t[制裁之锤]
     .target 虔诚的亚瑟
     .train 410001,1
@@ -476,7 +476,7 @@ step
     .xp <4,1
 step
     .goto Ironforge,23.131,6.143
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
     .train 19740 >>学习 |T135906:0|t[力量祝福]
     .target 布兰度尔·铁锤
     .train 425618,1
@@ -571,7 +571,7 @@ step
     .xp <4,1
 step
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .train 20271 >>学习 |T135959:0|t[审判]
     .train 19740 >>学习 |T135906:0|t[力量祝福]
     .target 虔诚的亚瑟
@@ -668,7 +668,7 @@ step
     .xp <8,1
 step
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .train 1152 >>训练 |T135949:0|t[纯净术]
     .target 虔诚的亚瑟
     .train 425619,1
@@ -746,7 +746,7 @@ step
     .xp <8,1
 step
     .goto Ironforge,23.131,6.143
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
     .train 1152 >>训练 |T135949:0|t[纯净术]
     .target 布兰度尔·铁锤
     .train 425619,1
@@ -974,7 +974,7 @@ step
 step
     #completewith theairissalt
     .goto StormwindClassic,66.28,62.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Redridge >>飞往赤脊山
     .zoneskip Redridge Mountains
     .target 杜加尔·朗德瑞克
@@ -1364,7 +1364,7 @@ step
     .xp <24,1
 step
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .train 2878 >>训练 |T135983:0|t[超度亡灵]
     .target 虔诚的亚瑟
     .train 416037,1
@@ -1609,7 +1609,7 @@ step
     .collect 213447,1
 step
     .train 426175,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与激流堡内的|cRXP_FRIENDLY_阿提库斯修士|r对话，以获得|T134419:0|t[|cRXP_FRIENDLY_虔敬符文|r]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Atticus|r inside Stromgrade Keep to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r]
     .goto Arathi Highlands,26.06,55.75,20,0
     .goto Arathi Highlands,25.71,59.92,20,0
     .goto Arathi Highlands,23.69,60.52,20,0
@@ -1965,7 +1965,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
-    .train 5599 >>|cRXP_WARN_你必须已经学习了|r |T135964:0|t[保护祝福] |cRXP_WARN_才能获得|r |T135931:0|t[光之优雅] |cRXP_WARN_符文|r
+    .train 5599 >>|cRXP_WARN_你必须先学会|r |T135964:0|t[保护祝福] |cRXP_WARN_才能获得|r |T135931:0|t[光之优雅] |cRXP_WARN_符文|r
 step
     #optional
     #completewith TeleporterTaken
@@ -2026,7 +2026,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
-    .train 5502 >>|cRXP_WARN_你必须学会了|r |T135974:0|t[感知亡灵] |cRXP_WARN_才能获得|r |T236260:0|t[愤怒] |cRXP_WARN_符文|r
+    .train 5502 >>|cRXP_WARN_你必须先学会|r |T135974:0|t[感知亡灵] |cRXP_WARN_才能获得|r |T236260:0|t[愤怒] |cRXP_WARN_符文|r
     .train 429249,1
 step
     #completewith RuneLearned
@@ -2332,7 +2332,7 @@ step
     .use 226122
 step
     .goto Eastern Plaguelands,78.6,47.6
-    >>|cRXP_WARN_使用|r|T237377:0|t[|cFF0070FF达尔顿的号角|r]|cRXP_WARN_来召唤|r侍从卡斯伯特|cRXP_FRIENDLY_，并不断击杀怪物直到他再次升级。一旦他升级，他会给你另一个免费的交付任务，以及另一个去寻找名为|r|cRXP_WARN_承诅者阿寇诺斯|r|cRXP_ENEMY_的巫妖的任务|r
+    >>|cRXP_WARN_使用|r |T237377:0|t[|cFF0070FFDalton's 角力|r] |cRXP_WARN_来召唤|r |cRXP_FRIENDLY_侍从库斯伯特|r |cRXP_WARN_并继续击杀怪物直到他再次升级。他再次升级后，会给你另一个免费的交任务，以及寻找名为|r |cRXP_ENEMY_承诅者阿寇诺斯|r 的任务
     .accept 84008 >>接受任务 优雅一课
     .turnin 84008 >>交任务 优雅一课
     .accept 84017 >>接受任务 杀戮时刻

@@ -1685,7 +1685,7 @@ step
     .mob Witherbark Venomblood
     .train 427084,1
 step
-    .equip 16,220912 >>装备|T133054:0|t|cRXP_LOOT_晶体之锤|r 作为主手武器。继续击杀怪物，直到锤子碎裂并变为|T133054:0|t|cRXP_LOOT_破损的晶体之锤|r
+    .equip 16,220912 >>将 |T133054:0|t|cRXP_LOOT_晶体之锤|r 装备为主手武器。继续与小怪战斗，直到锤子破碎并变为 |T133054:0|t|cRXP_LOOT_破损的晶体之锤|r
     .collect 220914,1 --Broken Geode Hammer
     .train 427084,1
 step

@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 
 << Alliance
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 开门任务
 #name 奥妮克希亚开门任务（联盟）
 
@@ -68,7 +68,7 @@ step
 step
     .isQuestTurnedIn 4182
     .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
     .fly Stormwind >>飞往暴风城
     .target 艾蕾娜·斯托姆法瑟
     .zoneskip Redridge Mountains,1
@@ -97,7 +97,7 @@ step
     .isQuestTurnedIn 4182
     #completewith next
     .goto Stormwind City,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Redridge>>飞往赤脊山
     .target 杜加尔·朗德瑞克
 step
@@ -111,7 +111,7 @@ step
     .isQuestTurnedIn 4182
     #completewith next
     .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
     .fly Burning Steppes >>飞往燃烧平原
     .target 艾蕾娜·斯托姆法瑟
 step
@@ -341,7 +341,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 
 << Horde
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 开门任务
 #name 奥妮克希亚开门任务（部落）
 
@@ -792,7 +792,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 
 #subgroup 开门任务
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #name 熔火之心开门任务
 
 step
@@ -824,7 +824,7 @@ step
     .subzone 254 >>前往 |cFFfa9602黑石山|r
 step
     .goto Eastern Kingdoms,48.41,63.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洛索斯·天痕|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_洛索斯·天痕|r 对话
     .turnin 7848 >>交任务 熔火之心的传送门
     .target Lothos Riftwaker
     .isQuestComplete 7848
@@ -837,7 +837,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 开门任务
 #name 黑翼之巢开门任务
 
@@ -882,7 +882,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 钥匙
 #name 黑石塔上层钥匙
 
@@ -974,7 +974,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 
 << Alliance
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 钥匙
 #name 通灵学院钥匙（联盟）
 
@@ -1233,7 +1233,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 
 << Horde
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 钥匙
 #name 通灵学院钥匙（部落）
 
@@ -1259,7 +1259,7 @@ step
     .goto Undercity,60.98,51.69,50,0
     .goto Undercity,66.07,54.64,50,0
     .goto Undercity,70.81,51.49,50,0
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_预言者巴萨扎德|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_预言者巴萨扎德|r 对话
     .acceptmultiple 5093,5094,5095 >>接受任务战斗的号角：瘟疫之地！
     >>|cRXP_WARN_此任务也可在|r |cFFfa9602奥格瑞玛|r |cRXP_WARN_或者|r |cFFfa9602雷霆崖|r 接取
     .unitscan 公告员高拉克 --ORG
@@ -1489,7 +1489,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 钥匙
 #name 黑石深渊钥匙
 
@@ -1553,7 +1553,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 钥匙
 #name 厄运之槌 钥匙
 
@@ -1582,7 +1582,80 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 
-#group RestedXP 终局指南
+#group RestedXP 满级指南
+#name 纳克萨玛斯开门任务
+#subgroup 开门任务
+
+step
+    >>|cRXP_BUY_收集以下物品|r：
+    >>五个|T134135:0|t[|cRXP_FRIENDLY_奥术水晶|r]
+    >>两个 |T132880:0|t[|cRXP_PICK_连结水晶|r]
+    >>一个 |T134122:0|t[|cRXP_FRIENDLY_正义宝珠|r]
+    >>|cRXP_WARN_如果可能的话，从拍卖行购买它们|r
+    >>|cRXP_WARN_你需要它们来完成使你认证纳克萨玛斯的任务。提高与银色黎明的声望等级会减少所需的材料和金币数量！|r
+    .collect 12363,5 --Arcane Crystal (x5)
+    .collect 20725,2 --Nexus Crystal (x2)
+    .collect 12811,1 --Righteous Orb (x1)
+    .reputation 529,revered,>0,1 --Below Revered AD
+    .isQuestAvailable 9121 --The Dread Citadel - Naxxramas
+step
+    >>|cRXP_BUY_收集以下物品|r：
+    >>2个|T134135:0|t[|cRXP_FRIENDLY_奥术水晶|r]
+    >>1个 |T132880:0|t[|cRXP_PICK_连结水晶|r]
+    >>|cRXP_WARN_如果可能的话，从拍卖行购买它们|r
+    >>|cRXP_WARN_你需要它们来完成使你认证纳克萨玛斯的任务。提高与银色黎明的声望等级会减少所需的材料和金币数量！|r
+    .collect 12363,2 --Arcane Crystal (x2)
+    .collect 20725,1 --Nexus Crystal (x1)
+    .reputation 529,exalted,>0,1 --Below Exalted AD
+    .reputation 529,revered,<0,1 --Revered AD
+    .isQuestAvailable 9122 --The Dread Citadel - Naxxramas
+step
+    #completewith AttuneComplete
+    .zone Eastern Plaguelands >>前往 |cFFfa9602东瘟疫之地|r
+step
+    #optional
+    .reputation 529,honored >>与银色黎明的声望达到尊敬
+    >>|cRXP_WARN_在瘟疫之地刷|cRXP_ENEMY_ 亡灵|r 小怪或下副本，装备|r |T133440:0|t[银色黎明委任徽章] |cRXP_WARN_来收集并上交|r |T133447:0|t[天灾石]
+step
+    .goto Eastern Plaguelands,81.523,58.269
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大法师安吉拉·杜萨图斯|r 对话
+    >>|cRXP_WARN_你的声望必须达到尊敬等级才能接受该任务|r
+    >>|cRXP_WARN_你还需要支付|r |cRXP_WARN_60金币|r |cRXP_WARN_来交任务|r
+    .accept 9121 >>接受任务 恐怖之城，纳克萨玛斯
+    .turnin 9121 >>交任务 恐怖之城，纳克萨玛斯
+    .target Archmage Angela Dosantos
+    .reputation 529,revered,>0,1 --Below Revered AD
+    .isQuestAvailable 9121 --The Dread Citadel - Naxxramas
+step
+    .goto Eastern Plaguelands,81.523,58.269
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大法师安吉拉·杜萨图斯|r 对话
+    >>|cRXP_WARN_你的声望必须达到崇敬等级才能接受该任务|r
+    >>|cRXP_WARN_你还需要支付|r |cRXP_WARN_30金币|r |cRXP_WARN_来交任务|r
+    .accept 9122 >>接受任务 恐怖之城，纳克萨玛斯
+    .turnin 9122 >>交任务 恐怖之城，纳克萨玛斯
+    .target Archmage Angela Dosantos
+    .reputation 529,exalted,>0,1 --Below Exalted AD
+    .reputation 529,revered,<0,1 --Revered AD
+    .isQuestAvailable 9122 --The Dread Citadel - Naxxramas
+step
+    #label AttuneComplete
+    .goto Eastern Plaguelands,81.523,58.269
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大法师安吉拉·杜萨图斯|r 对话
+    >>|cRXP_WARN_你的声望必须达到崇拜等级才能接受该任务|r
+    .accept 9123 >>接受任务 恐怖之城，纳克萨玛斯
+    .turnin 9123 >>交任务 恐怖之城，纳克萨玛斯
+    .target Archmage Angela Dosantos
+    .reputation 529,exalted,<0,1 --Exalted AD
+    .isQuestAvailable 9123 --The Dread Citadel - Naxxramas
+
+]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+#tbc
+
+#group RestedXP 满级指南
 #name 屠魔峡谷开门任务
 #subgroup 开门任务
 <<sod

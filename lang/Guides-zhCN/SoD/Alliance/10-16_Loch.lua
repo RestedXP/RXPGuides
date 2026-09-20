@@ -6,6 +6,7 @@ RXPGuides.RegisterGuide([[
 #season 2
 << Alliance
 #group RestedXP 联盟 1-20 级
+#groupid RXP-SRGCE-A1
 #name 12-13 丹莫罗 探索赛季
 #displayname 12-13 丹莫罗
 #next 13-16 洛克莫丹 探索赛季
@@ -187,7 +188,7 @@ step << !Human Rogue
     #softcore
     #optional
     #completewith next
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
     .train 398196,1
 step <<< !Human Rogue
@@ -285,7 +286,7 @@ step << Mage
     .goto 1426,69.369,58.311
     >>|cRXP_WARN_在|cRXP_ENEMY_冰冻石腭怪|r附近或综合频道（在聊天框输入/1）寻找其他法师或术士。如果没人的话，你也可以单刷这个任务|r
     >>|cRXP_WARN_施放|r |T135812:0|t|T135805:0|t[火球术] |cRXP_WARN_在|cRXP_ENEMY_冰冻的石腭怪|r上，以叠加一层|r |T134939:0|t|T135805:0|t[加热]|cRXP_WARN_。一次性叠加5层以击杀|cRXP_ENEMY_冰冻的石腭怪|r。拾取它获得|r |T134939:0|t|T134939:0|t|cRXP_FRIENDLY_[法术笔记：燃尽]|r
-    >>|cRXP_WARN_如果没人帮你，就走进石腭怪的近战范围，对他使用|r |T135820:0|t|T135820:0|t[活体烈焰] |cRXP_WARN_。保持在近战范围内让自己进入战斗，并在冷却时持续使用|r |T135820:0|t|T135820:0|t[活体烈焰] |cRXP_WARN_。大约5-6次施法就能杀死石腭怪。|r
+    >>|cRXP_WARN_如果没人帮你，就走进石腭怪的近战范围，对他使用|r|T135820:0|t[活体烈焰] |cRXP_WARN_。保持在近战范围内让自己进入战斗，并在冷却时持续使用|r|T135820:0|t[活体烈焰] |cRXP_WARN_。大约5-6次施法就能杀死石腭怪。|r
     .collect 203748,1 --Spell Notes: Burnout (1)
     .train 401759,1
     .mob Frozen Trogg
@@ -525,7 +526,7 @@ step << Priest Dwarf
     #completewith end
     .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_遭渎城堡的预言|r]
     >>|cRXP_WARN_你必须在暴风城大教堂、洛克莫丹或铁炉堡的神秘之地的光明祭坛旁输入/pray，获得2层|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_增益效果|r
-    >>|cRXP_WARN_|T136057:0|t|T136057:0|t|cRXP_PICK_艾露恩的冥想|r增益效果需要由另一位牧师玩家提供，方法是当你使用/kneel跪下时，对方对你使用/pray表情。如果你看到其他牧师带有不同的冥想BUFF，可以请他们为你施加|r
+    >>|cRXP_WARN_|T136057:0|t|cRXP_PICK_艾露恩的冥想|r增益效果需要由另一位牧师玩家提供，方法是当你使用/kneel跪下时，对方对你使用/pray表情。如果你看到其他牧师带有不同的冥想BUFF，可以请他们为你施加|r
     --.use 205947
     .target Altar of Light
     .itemcount 205947,1
@@ -575,7 +576,7 @@ step << !Human Rogue
     .goto Ironforge,62.375,88.679
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼下与 |cRXP_FRIENDLY_布雷文·寒钢|r 对话
     >>|cRXP_BUY_从她那里购买一个|r |135640:0|t[双刃弯刀] |cRXP_BUY_|r
-    .collect 2207,1 --Jambyia
+    .collect 2207,1 --Jambiya
     .target 布雷文·寒钢
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.0
 step << Dwarf/Gnome
@@ -601,7 +602,7 @@ step << Dwarf Paladin
     .goto Ironforge,24.2,6.8,12 >>前往 |cRXP_FRIENDLY_布兰度尔·铁锤|r
 step << Dwarf Paladin
     .goto Ironforge,23.131,6.143
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
     .accept 2999 >>接受任务圣洁之书
     .trainer >>训练你的职业技能
     .target 布兰度尔·铁锤
@@ -675,7 +676,7 @@ step << Dwarf/Gnome
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 交谈
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|cRXP_BUY_购买以下物品，以便在洛克莫丹更快交任务：|r
     >>|T134342:0|t[猪大肠]
@@ -694,7 +695,7 @@ step << Warrior
     >>如果你之前没有练过，就训练投掷和双手锤
     .train 2567 >>训练 投掷武器
     .goto Ironforge,62.237,89.628
-    .train 199 >>训练双手锤
+    .train 199 >>学习双手锤
     .goto Ironforge,61.177,89.508
     .target 比克斯
     .target 布里维夫·石拳
@@ -775,7 +776,7 @@ step << Hunter
     .goto Ironforge,70.86,85.83,15 >>前往 |cRXP_FRIENDLY_贝莉亚·雷岩|r
 step << Hunter
     .goto Ironforge,70.86,85.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_贝莉亚·雷岩|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝莉亚·雷岩|r 对话
     .turnin 6086 >>交任务 训练野兽
     .target 贝莉亚·雷岩
 step << Paladin Dwarf
@@ -814,7 +815,7 @@ step << Paladin Dwarf
     >>击败|cRXP_ENEMY_布鲁阿特|r
     >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r
-    >>|cRXP_WARN_千万不要失误对他施放|r |T135906:0|t[力量祝福] |cRXP_WARN_|r
+    >>|cRXP_WARN_不要意外对他施放|r |T135906:0|t|T135906:0|t[力量祝福] |cRXP_WARN_ |r
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r
     >>|cRXP_WARN_击败|cRXP_ENEMY_布鲁阿尔特|r后：|r
     >>再次与|cRXP_FRIENDLY_布鲁克·麦须|r对话，领取|T134419:0|t|T134419:0|t[责难符文]
@@ -952,7 +953,7 @@ step << Warlock !Human
     .target 厄苏拉·德林
 step << Warlock !Human
     .goto StormwindClassic,25.25,78.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .accept 1688 >>接受任务 苏伦娜·凯尔东
     .target 黑暗缚灵者加科因
 step << Warlock !Human
@@ -985,13 +986,13 @@ step << Warlock !Human
     .target 卫兵帕克
 step << Warlock !Human
     .goto Redridge Mountains,30.733,59.996
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
     >>|cRXP_WARN_小心前进，途中有高等级怪物|r
     .turnin 244 >>交任务豺狼人的入侵
     .target 菲尔顿副队长
 step << Warlock !Human
     .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
     .fp Redridge Mountains >>获取赤脊山的飞行路径
     .target 艾蕾娜·斯托姆法瑟
 step << !Human
@@ -1035,6 +1036,7 @@ RXPGuides.RegisterGuide([[
 #season 2
 << Alliance
 #group RestedXP 联盟 1-20 级
+#groupid RXP-SRGCE-A1
 #name 13-16 洛克莫丹 探索赛季
 #displayname 13-16 洛克莫丹
 #next 16-17 西部荒野 探索赛季
@@ -1324,7 +1326,7 @@ step << Paladin/Warrior
     >>|cRXP_WARN_动作要快，否则其他玩家可能会在你之前买下它|r
     >>|cRXP_WARN_如果你不想这样做，请跳过此步骤|r
     .collect 4778,1,307,1 --Heavy Spiked Mace (1)
-    .target Nillen Andemar
+    .target 尼尔伦·安德玛
     .itemcount 4778,<1 --Heavy Spiked Mace (<1)
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step

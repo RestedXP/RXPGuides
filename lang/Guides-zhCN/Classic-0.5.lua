@@ -2,7 +2,7 @@ if GetLocale() ~= "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 凶蛮之心套装指南 << Druid
 #subgroup 兽王套装指南 << Hunter
 #subgroup 巫师套装指南 << Mage
@@ -133,7 +133,7 @@ step << Alliance
     .target Deliana
 step << Horde
     #completewith next
-    .zone Orgrimmar >>前往 |cFFfa9602奥格瑞玛|r
+    .zone Orgrimmar >>前往|cFFfa9602奥格瑞玛|r
 step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫克瓦尔|r 对话
@@ -181,7 +181,7 @@ step << Horde
     .mob Rock Stalker
 step << Horde
     #completewith next
-    .zone Orgrimmar >>前往 |cFFfa9602奥格瑞玛|r
+    .zone Orgrimmar >>前往|cFFfa9602奥格瑞玛|r
 step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫克瓦尔|r 对话
@@ -218,7 +218,7 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 凶蛮之心套装指南 << Druid
 #subgroup 兽王套装指南 << Hunter
 #subgroup 巫师套装指南 << Mage
@@ -346,7 +346,7 @@ step << Alliance
     .target Deliana
 step << Horde
     #completewith next
-    .zone Orgrimmar >>前往 |cFFfa9602奥格瑞玛|r
+    .zone Orgrimmar >>前往|cFFfa9602奥格瑞玛|r
 step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫克瓦尔|r 对话
@@ -604,7 +604,7 @@ step << Alliance
     .target Deliana
 step << Horde
     #completewith next
-    .zone Orgrimmar >>前往 |cFFfa9602奥格瑞玛|r
+    .zone Orgrimmar >>前往|cFFfa9602奥格瑞玛|r
 step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫克瓦尔|r 对话
@@ -662,7 +662,7 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 凶蛮之心套装指南 << Druid
 #subgroup 兽王套装指南 << Hunter
 #subgroup 巫师套装指南 << Mage
@@ -827,7 +827,7 @@ step << Alliance
     .target Deliana
 step << Horde
     #completewith next
-    .zone Orgrimmar >>前往 |cFFfa9602奥格瑞玛|r
+    .zone Orgrimmar >>前往|cFFfa9602奥格瑞玛|r
 step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫克瓦尔|r 对话
@@ -845,7 +845,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安泰恩·哈尔蒙|r 对话
     .use 22115 >>|cRXP_WARN_使用|r |T133878:0|t[超维度幽灵显形器] |cRXP_WARN_来显露|r |cRXP_FRIENDLY_安泰恩·哈尔蒙|r
     .turnin 8929 >>交任务 寻找安泰恩 << Alliance
-    .turnin 8930 >>交任务 安西翁的搜索 << Horde
+    .turnin 8930 >>交任务 寻找安泰恩 << Horde
     .accept 8945 >>接受任务 死人的请求
     .target Anthion Harmon
 step
@@ -1144,7 +1144,7 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 凶蛮之心套装指南 << Druid
 #subgroup 兽王套装指南 << Hunter
 #subgroup 巫师套装指南 << Mage
@@ -1258,7 +1258,7 @@ step << Alliance
     .target Deliana
 step << Horde
     #completewith next
-    .zone Orgrimmar >>前往 |cFFfa9602奥格瑞玛|r
+    .zone Orgrimmar >>前往|cFFfa9602奥格瑞玛|r
 step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫克瓦尔|r 对话
@@ -2219,7 +2219,7 @@ step << Alliance
     .target Deliana
 step << Horde
     #completewith next
-    .zone Orgrimmar >>前往 |cFFfa9602奥格瑞玛|r
+    .zone Orgrimmar >>前往|cFFfa9602奥格瑞玛|r
 step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫克瓦尔|r 对话

@@ -499,7 +499,7 @@ step << Warrior
     >>|cRXP_WARN_你可能需要跑尸几次才能到他那里|r
     >>|cRXP_BUY_购买一根|r |T135130:0|t|T135130:0|t[屠龙者之矛] |cRXP_BUY_花费75银币|r
     .collect 209874,1,78134,1 -- Dragonslayer's Lance (1)
-    .target Dark Iron Entrepreneur
+    .target 黑铁企业家
     .train 425444,1
 step << Warrior
     #completewith next
@@ -697,7 +697,7 @@ step
     .goto Hillsbrad Foothills,51.1,46.4,40,0
     >>寻找|cRXP_FRIENDLY_齐克希尔|r。他在塔伦米尔和南海镇之间巡逻。从他那里购买|T134041:0|t|T134041:0|t[淡水钳嘴龟诱饵]
     .collect 210410,1 --Freshwater Snapper Bait (1)
-    .target Zixil
+    .target 吉克希尔
     .train 425759,1
 step
     #season 2
@@ -1902,7 +1902,7 @@ step
     .collect 221261,1 --Wildwhisper Draught
 step
     .goto The Barrens,45.5,92.4
-    >>寻找一个队伍前往剃刀高地。你需要清除螺旋式通道到最终Boss |cRXP_ENEMY_寒冰之王亚门纳尔|r 并击杀他。之后，队伍中的一个人必须使用他们的 |T134799:0|t|cRXP_LOOT_Wildwhisper Draught|r 来召唤一个幽灵 |cRXP_FRIENDLY_阿迦玛甘灵魂|r。与他对话来交任务并接收后续任务
+    >>寻找一个队伍前往剃刀高地。你需要清除螺旋式通道到最终Boss |cRXP_ENEMY_寒冰之王亚门纳尔|r 并击杀他。之后，队伍中的一个人必须使用他们的 |T134799:0|t|cRXP_LOOT_Wildwshiper Draught|r 来召唤一个幽灵 |cRXP_FRIENDLY_阿迦玛甘灵魂|r。与他对话来交任务并接收后续任务
     .turnin 82043 >>交任务 荒野之神
     .accept 82044 >>接受任务 荒野之神
     .target Spirit of Agamaggan
@@ -2200,7 +2200,7 @@ step
     #completewith next
     .zone 25 >>前往黑石山，你可以选择穿过灼热峡谷或燃烧平原
 step
-    .goto 1415/0,-1232.500,-7612.600,20 >>前往熔铁桥环路的东侧，直到你找到一个通往黑石塔下层通道的入口
+    .goto 1415/0,-1232.500,-7612.600,20 >>前往熔火跨度圆形区域的东侧，直到找到通往黑石塔下层的道路入口
 step
     .goto 1415/0,-1294.200,-7574.700,5 >>沿着通道向上走，并进入你右侧的第一个侧房。|cRXP_WARN_你可能需要击杀挡在路上的精英怪，因为你在战斗状态下无法拾取书籍|r
 step

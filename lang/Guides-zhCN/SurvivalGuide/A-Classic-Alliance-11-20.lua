@@ -84,7 +84,7 @@ step << !Human
 step
     .goto Westfall,52.86,53.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_与旅店老板对话|r
-	>>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
+	>>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
     .vendor >>|T133918:0|t[长嘴泥鳅] |cRXP_WARN_非常便宜|r
 	.target 旅店老板希瑟尔
@@ -334,7 +334,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 交谈
     >>购买以下物品，以便稍后在黑海岸快速交任务，如果你不想购买任何东西，请跳过此步骤
     >>|T133972:0|t[陆行鸟肉]
     >>|T133912:0|t[黑海岸石斑鱼]
@@ -374,7 +374,7 @@ step << !NightElf
     .goto Wetlands,12.1,60.3,40,0
     >>|cRXP_WARN_首先观看视频指南作为参考，了解如何跳过！|r
     >>|cRXP_WARN_走无伤翻山路线，从丹莫罗翻山前往湿地|r
-    >>|cRXP_WARN_Avoid the |cRXP_ENEMY_湿地鳄鱼|r 和 |cRXP_ENEMY_鱼人|r when crossing the water|r
+    >>|cRXP_WARN_穿越水域时，避开|cRXP_ENEMY_湿地鳄鱼|r和|cRXP_ENEMY_鱼人|r|r
     .link https://www.youtube.com/watch?v=9afQTimaiZQ >>https://www.youtube.com/watch?v=9afQTimaiZQ >> |cRXP_WARN_点击此处查看视频指南|r
     .goto Wetlands,12.1,60.3,80 >>前往米奈希尔港，湿地
     .mob 湿地鳄鱼
@@ -397,10 +397,10 @@ step << !NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_萨莫尔·菲斯蒂沃斯|r 对话
     .vendor >>|cRXP_BUY_尽可能多地购买|r |T134831:0|t[治疗药水] |cRXP_BUY_（如果有售）|r
     >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_萨莫尔·菲斯蒂沃斯|r 没有库存，请跳过此步骤|r
-    .target Samor Festivus
+    .target 萨莫尔·菲斯蒂沃斯
 step << !NightElf
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
     .fp Wetlands>>获取湿地的飞行路径
     .target 谢尔雷·布隆迪尔
 step << Hunter !NightElf
@@ -412,9 +412,9 @@ step << Hunter !NightElf
     .target Murndan Derth
 step << !NightElf
     .goto Wetlands,7.95,56.38
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_德温·晨光|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_德温·晨光|r对话
     .vendor >>|cRXP_BUY_尽可能多地购买|r |T134831:0|t[治疗药水] |cRXP_BUY_（如果有售）|r
-    >>|cRXP_WARN_这是限量供应物品，如果 |cRXP_FRIENDLY_德温·晨光|r 没有库存，请跳过此步骤|r
+    >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_德温·晨光|r 没有库存，请跳过此步骤|r
     .target 德温·晨光
 step << !NightElf
     #completewith next
@@ -448,7 +448,7 @@ step << Druid
     .goto Darnassus,35.375,8.405
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛斯雷·驭熊者|r 对话
     .accept 6121 >>接受任务 新的课程
-    .accept 26 >>必修的课程
+    .accept 26 >>接受任务必修的课程
     .trainer >>训练你的职业技能
     .target 玛斯雷·驭熊者
 step << Druid
@@ -457,11 +457,11 @@ step << Druid
 	.zoneskip Moonglade
 step << Druid
     .goto Moonglade,56.21,30.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
     .turnin 6121 >>交任务 新的课程
     .accept 6122 >>接受任务 毒水之源
-    .turnin 26 >>交任务必修的课程
-    .accept 29 >>接受任务湖中试炼
+    .turnin 26 >>交任务 必修的课程
+    .accept 29 >>接受任务 湖中试炼
     .target 德迪利特·星焰
 step << Druid
     .goto Moonglade,52.6,51.6
@@ -480,9 +480,9 @@ step << Druid
 step << Druid
     .goto Moonglade,36.517,40.104
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔加里|r 对话
-    .turnin 29 >>交任务湖中试炼
+    .turnin 29 >>交任务 湖中试炼
     .target 塔加里
-    .accept 272 >>接受任务海狮试炼
+    .accept 272 >>接受任务 海狮试炼
 step << NightElf Priest
     .goto StormwindClassic,38.550,26.853
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔舒修士|r 对话
@@ -509,7 +509,7 @@ step << NightElf Hunter
     >>|cRXP_BUY_购买|r |T135490:0|t[强化弓]
     >>|cRXP_BUY_补充 |T132382:0|t[锋利的箭] 库存|r
     .collect 3026,1
-    .target Frederick Stover
+    .target 弗德瑞克·斯图瓦
 step << NightElf
     .goto StormwindClassic,43.065,26.156
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
@@ -591,10 +591,10 @@ step
     .target 特伦希斯
 step
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r 对话
     .goto Darkshore,36.096,44.931
     .accept 1141 >>接受任务 钓鱼世家
-    .turnin 1141 >>交任务《钓鱼世家》
+    .turnin 1141 >>交任务 钓鱼世家
     .itemcount 12238,6 -- Darkshore Grouper (6)
     .target 古博·布拉普
 step
@@ -1045,7 +1045,7 @@ step
     .goto Felwood,18.50,19.87,100 >>前往奥伯丁
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r 对话
 	.target 古博·布拉普
     .goto Felwood,18.50,19.87
     .accept 1138 >>接受任务 海中的水果
@@ -1082,7 +1082,7 @@ step << !NightElf !Mage !Paladin !Warlock
     .zone Darnassus >>进入通往达纳苏斯的紫色传送门
 step << !NightElf Hunter
     .goto Darnassus,40.377,8.545
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_祖卡斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖卡斯特|r 对话
     .trainer >>训练你的职业技能
     .target 祖卡斯特
 step << !NightElf Priest
@@ -1104,6 +1104,7 @@ step << !NightElf Rogue
 step << !NightElf Hunter/!NightElf Warrior
     #sticky
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊琳尼雅·月火|r 对话
+    .skipgossip 11866,1
     .goto Darnassus,57.56,46.72
     .train 264 >>学习 弩
     .train 227 >>学习法杖
@@ -1492,7 +1493,7 @@ step
     .turnin 4727 >>交任务 搁浅的海龟
 step
 #map Darkshore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r 对话
 	.target 古博·布拉普
     .goto Felwood,18.50,19.87
     .turnin 1138 >>交任务 海中的水果
@@ -1599,7 +1600,7 @@ step << Druid
     .goto Moonglade,56.2,30.4
     >>前往月光林地
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
-    .turnin 6124 >>消除疾病
+    .turnin 6124 >>交任务 消除疾病
     .accept 6125 >>接受任务 解毒之术
     .target 德迪利特·星焰
 step << Druid
@@ -1882,13 +1883,13 @@ step
     >>这将开始一个护送
     .accept 731,1 >>接受任务 健忘的勘察员
     >>|cRXP_WARN_这个任务非常困难。如果你无法找到队伍或单独完成，请跳过此步骤|r
-    .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_点击此处观看视频指南|r
+    .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_点击此处查看视频指南|r
     .target 勘察员雷塔维
 step
     #requires prospector
     >>|cRXP_WARN_护送 |cRXP_FRIENDLY_勘察员雷塔维|r 穿过挖掘场|r
     >>|cRXP_WARN_这个任务非常困难。如果你无法找到队伍或单独完成，请跳过此步骤|r
-    .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_点击此处观看视频指南|r
+    .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_点击此处查看视频指南|r
     .complete 731,1
     .isOnQuest 731
 step
@@ -1958,7 +1959,7 @@ step
 step
 .group
     .goto Darkshore,44.44,84.69
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 995,1
     .isQuestTurnedIn 986
 step
@@ -1998,7 +1999,7 @@ step
     .complete 5321,2
     .isOnQuest 5321
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利拉迪斯·月河|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_利拉迪斯·月河|r 对话
 	.target Liladris Moonriver
     .goto Ashenvale,27.26,35.58
     .turnin 5321 >>交任务 苏醒者已醒

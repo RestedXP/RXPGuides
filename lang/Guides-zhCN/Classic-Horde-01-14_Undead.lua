@@ -9,6 +9,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 11
 #group RestedXP 部落 1-22级
+#groupid RXP-SRGCE-H1
 #defaultfor Undead
 #name 1-6 提瑞斯法林地
 #next 6-11级 提瑞斯法林地
@@ -592,13 +593,13 @@ step
     #xprate <1.5
     #softcore
     #completewith Scavenging
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     #xprate >1.49
     #softcore
     #completewith NightWebH
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step << Warlock
     #softcore
@@ -688,7 +689,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     .goto Tirisfal Glades,31.17,65.08
@@ -788,6 +789,7 @@ RXPGuides.RegisterGuide([[
 #name 6-11级 提瑞斯法林地
 #version 11
 #group RestedXP 部落 1-22级
+#groupid RXP-SRGCE-H1
 #defaultfor Undead
 #next 12-14 银松森林；12-17 贫瘠之地
 
@@ -1509,7 +1511,7 @@ step
     #xprate <1.5
     #softcore
     #completewith NewPlague1
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #label NewPlague1
     .goto Tirisfal Glades,59.45,52.40
@@ -1800,7 +1802,7 @@ step << Rogue
 step << Rogue
     #season 2
     #completewith RuneofPrecision
-    >>施放|T133644:0|t|T134327:0|t[搜索]并击杀|cRXP_ENEMY_邪恶藤蔓鱼人|r。从它们身上拾取|T134327:0|t|T134327:0|t[|cRXP_LOOT_右下角地图碎片|r]
+    >>施放 |T133644:0|t[搜索]并击杀|cRXP_ENEMY_邪恶藤蔓鱼人|r。从它们身上拾取 |T134327:0|t[|cRXP_LOOT_右下角地图碎片|r]
     .collect 208037,1 --Bottom-Right Map Piece (1)
     .train 400095,1
 step
@@ -1862,7 +1864,7 @@ step << Rogue
     .goto Tirisfal Glades,65.68,30.22,50,0
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
-    >>施放|T133644:0|t|T134327:0|t[搜索]并击杀|cRXP_ENEMY_邪恶藤蔓鱼人|r。从它们身上拾取|T134327:0|t|T134327:0|t[|cRXP_LOOT_右下角地图碎片|r]
+    >>施放 |T133644:0|t[搜索]并击杀|cRXP_ENEMY_邪恶藤蔓鱼人|r。从它们身上拾取 |T134327:0|t[|cRXP_LOOT_右下角地图碎片|r]
     .collect 208037,1 --Bottom-Right Map Piece (1)
     .mob Vile Fin Puddlejumper
     .mob Vile Fin Minor Oracle
@@ -1882,7 +1884,7 @@ step
     #softcore
     #completewith Brill3
     .goto Tirisfal Glades,64.50,29.41
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     >>|cRXP_WARN_确保你在箭头位置（或箭头西侧）死亡|r
 step << skip
     #label DoomedWeed
@@ -2365,7 +2367,7 @@ step
 step
     #softcore
     #completewith FoodandWater2
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     .goto Tirisfal Glades,58.20,51.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Dillinger|r
@@ -2646,7 +2648,7 @@ step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_凯伦丁|r 对话
     .turnin 1473 >>交任务 虚空中的生物
-    .accept 1471 >>接受任务誓缚
+    .accept 1471 >>接受任务 誓缚
     .target 凯伦丁·哈加尔
 step << Warlock
     #completewith next
@@ -2661,13 +2663,13 @@ step << Warlock
 step << Warlock
     .goto Undercity,85.04,25.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯伦丁|r 对话
-    .turnin 1471 >>交任务誓缚
+    .turnin 1471 >>交任务 誓缚
     .target 凯伦丁·哈加尔
 step << Warrior
     #ssf
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在潜行者区与 |cRXP_FRIENDLY_查尔斯·希顿|r 对话
-    >>|cRXP_BUY_Buy a|r |T135350:0|t[优质重剑] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_购买1把|r |T135350:0|t[优质重剑] |cRXP_BUY_从他那里|r
     .collect 1198,1,371,1 --Collect Claymore (1)
     .money <0.2676
     .itemStat 16,QUALITY,<7
@@ -2677,7 +2679,7 @@ step << Warrior
     #ah
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在潜行者区与 |cRXP_FRIENDLY_查尔斯·希顿|r 对话
-    >>|cRXP_BUY_Buy a|r |T135350:0|t[优质重剑] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_购买1把|r |T135350:0|t[优质重剑] |cRXP_BUY_从他那里|r
     >>|cRXP_WARN_或者你也可以稍后去拍卖行看看是否有更好或更便宜的替代品|r
     .collect 1198,1,371,1 --Collect Claymore (1)
     .itemStat 16,QUALITY,<7
@@ -3160,7 +3162,7 @@ step
     #completewith ANewPlagueFinal
     .hs >>炉石返回布瑞尔，提瑞斯法林地
     .subzoneskip 159
-    .bindlocation 159,1
+    .bindlocation 2119,1
     .cooldown item,6948,>0,1
 step
     #xprate >1.49
@@ -3396,7 +3398,7 @@ step << Warrior
     #xprate <1.5
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在潜行者区与 |cRXP_FRIENDLY_查尔斯·希顿|r 对话
-    >>|cRXP_BUY_Buy a|r |T135350:0|t[优质重剑] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_购买1把|r |T135350:0|t[优质重剑] |cRXP_BUY_从他那里|r
     .collect 1198,1,372,1 --Collect Claymore (1)
     .money <0.2950
     .itemStat 16,QUALITY,<7
@@ -3407,7 +3409,7 @@ step << Warrior
     #xprate <1.5
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在潜行者区与 |cRXP_FRIENDLY_查尔斯·希顿|r 对话
-    >>|cRXP_BUY_Buy a|r |T135350:0|t[优质重剑] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_购买1把|r |T135350:0|t[优质重剑] |cRXP_BUY_从他那里|r
     >>|cRXP_WARN_或者你也可以稍后去拍卖行看看是否有更好或更便宜的替代品|r
     .collect 1198,1,372,1 --Collect Claymore (1)
     .money <0.2950
@@ -3806,7 +3808,7 @@ step << Warrior
     #label WarriorClaymore
     .goto Undercity,61.15,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与贸易区的 |cRXP_FRIENDLY_刘易斯·瓦伦|r 对话
-    >>|cRXP_BUY_Buy a|r |T135350:0|t[优质重剑] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_购买1把|r |T135350:0|t[优质重剑] |cRXP_BUY_从他那里|r
     .collect 1198,1,435,1 --Collect Claymore (1)
     .money <0.2950
     .itemStat 16,QUALITY,<7
@@ -3818,7 +3820,7 @@ step << Warrior
     #label WarriorClaymore
     .goto Undercity,61.15,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与贸易区的 |cRXP_FRIENDLY_刘易斯·瓦伦|r 对话
-    >>|cRXP_BUY_Buy a|r |T135350:0|t[优质重剑] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_购买1把|r |T135350:0|t[优质重剑] |cRXP_BUY_从他那里|r
     >>|cRXP_WARN_或者你也可以稍后去拍卖行看看是否有更好或更便宜的替代品|r
     .collect 1198,1,435,1 --Collect Claymore (1)
     .money <0.2950
@@ -4089,6 +4091,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #group RestedXP 部落 1-22级
+#groupid RXP-SRGCE-H1
 #xprate <1.99
 << Horde
 #version 11
@@ -4110,7 +4113,7 @@ step << Undead Warrior
     .train 403475,1
 step << Undead Rogue
     #sticky
-    #completewith RotHideCluesTurnIn
+    #completewith Rot HideCluesTurnIn
     >>|cRXP_WARN_如果你看到|r |cRXP_FRIENDLY_阿斯托|r|cRXP_WARN_，就与他对话并将其击杀。从他身上拾取信件。他在布瑞尔和瑟伯切尔之间的道路上巡逻。|r
     .complete 1886,1 --Astor's Letter of Introduction (1)
     .unitscan Astor Hadren
@@ -4167,7 +4170,7 @@ step
 step
     #softcore
     #completewith ProveyourWorth
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #hardcore
     #completewith next
@@ -4185,7 +4188,7 @@ step
 step << !Mage !Priest
     .goto Silverpine Forest,44.05,39.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格乌恩|r 对话
-    .vendor >>|cRXP_BUY_购买|r |T134830:0|t|T134830:0|t[次级治疗药水] |cRXP_BUY_从他那里（如果有货的话）|r
+    .vendor >>|cRXP_BUY_从他那里购买|r |T134532:0|t[红斑蘑菇] |cRXP_BUY_|r
     .collect 4605,20,421,1 --Red-speckled Mushroom (20)
     .target Gwyn Farrow
     .money <0.05
@@ -4378,7 +4381,7 @@ step
 step
     #softcore
     #completewith ArugalTurnin
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #hardcore
     #completewith next
@@ -4537,7 +4540,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 和 |cRXP_FRIENDLY_达拉尔|r 对话
@@ -4573,7 +4576,7 @@ step
     .goto Silverpine Forest,42.76,40.90,8,0
     .goto Silverpine Forest,43.43,40.87,2 >>进入地穴
 step
-    #label RotHideCluesTurnIn
+    #label Rot HideCluesTurnIn
     .goto Silverpine Forest,43.43,40.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与地穴中的|cRXP_FRIENDLY_高级执行官哈德瑞克|r交谈
     .turnin 439 >>交任务 烂皮线索
@@ -4651,7 +4654,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
 step << Undead
     .goto Undercity,63.27,48.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .turnin 6322 >>交任务 迈克尔·加勒特
     .target 迈克尔·加勒特
 step << Undead Warrior
@@ -5064,7 +5067,7 @@ step << Undead
     #completewith ZeptoDurotar
     .hs >>炉石返回布瑞尔，提瑞斯法林地
     .zoneskip Undercity,1
-    .bindlocation 159,1
+    .bindlocation 2119,1
 step << Undead Rogue
     #xprate >1.49
     .goto Tirisfal Glades,61.75,52.01
@@ -5446,6 +5449,7 @@ RXPGuides.RegisterGuide([[
 #xprate >1.99
 #version 1
 #group RestedXP 部落 1-22级
+#groupid RXP-SRGCE-H1
 #defaultfor Undead
 #name 1-7 提瑞斯法林地
 #next 7-13 提瑞斯法林地
@@ -5627,8 +5631,8 @@ step << Priest/Mage
 step << Priest
     .goto Tirisfal Glades,31.11,66.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜斯滕|r 对话
-    .accept 77670 >>接受任务 对亡灵的冥思
-    .turnin 77670 >>交任务 对亡灵的冥思
+    .accept 77670 >>接受任务 亡灵之思
+    .turnin 77670 >>交任务 亡灵之思
     .target 黑暗牧师杜斯滕
 step
     #optional
@@ -6334,13 +6338,13 @@ step
     #xprate <1.5
     #softcore
     #completewith Scavenging
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     #xprate >1.49
     #softcore
     #completewith NightWebH
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step << Warlock
     #softcore
@@ -6418,7 +6422,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     .goto Tirisfal Glades,31.17,65.08
@@ -6513,6 +6517,7 @@ RXPGuides.RegisterGuide([[
 #name 7-13 提瑞斯法林地
 #version 1
 #group RestedXP 部落 1-22级
+#groupid RXP-SRGCE-H1
 #defaultfor Undead
 #next 13-20级 贫瘠之地
 
@@ -6939,7 +6944,7 @@ step
     .hs >>炉石返回布瑞尔，提瑞斯法林地
     .subzoneskip 159
     .cooldown item,6948,>0,1
-    .bindlocation 159,1
+    .bindlocation 2119,1
 step
     #hardcore
     #completewith BrillTurnin1
@@ -7248,7 +7253,7 @@ step
     #xprate <1.5
     #softcore
     #completewith NewPlague1
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #label NewPlague1
     #optional
@@ -7574,7 +7579,7 @@ step << Rogue
 step << Rogue
     #season 2
     #completewith RuneofPrecision
-    >>施放|T133644:0|t|T134327:0|t[搜索]并击杀|cRXP_ENEMY_邪恶藤蔓鱼人|r。从它们身上拾取|T134327:0|t|T134327:0|t[|cRXP_LOOT_右下角地图碎片|r]
+    >>施放 |T133644:0|t[搜索]并击杀|cRXP_ENEMY_邪恶藤蔓鱼人|r。从它们身上拾取 |T134327:0|t[|cRXP_LOOT_右下角地图碎片|r]
     .collect 208037,1 --Bottom-Right Map Piece (1)
     .train 400095,1
 step
@@ -7636,7 +7641,7 @@ step << Rogue
     .goto Tirisfal Glades,65.68,30.22,50,0
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
-    >>施放|T133644:0|t|T134327:0|t[搜索]并击杀|cRXP_ENEMY_邪恶藤蔓鱼人|r。从它们身上拾取|T134327:0|t|T134327:0|t[|cRXP_LOOT_右下角地图碎片|r]
+    >>施放 |T133644:0|t[搜索]并击杀|cRXP_ENEMY_邪恶藤蔓鱼人|r。从它们身上拾取 |T134327:0|t[|cRXP_LOOT_右下角地图碎片|r]
     .collect 208037,1 --Bottom-Right Map Piece (1)
     .mob Vile Fin Puddlejumper
     .mob Vile Fin Minor Oracle
@@ -7656,7 +7661,7 @@ step
     #softcore
     #completewith DoomedWeed
     .goto Tirisfal Glades,64.50,29.41
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     >>|cRXP_WARN_确保你在（或位于）前往箭头的西侧死亡|r
 step << skip
     #label DoomedWeed
@@ -7760,7 +7765,7 @@ step << Mage
     #optional
     .goto Tirisfal Glades,61.96,52.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯恩|r 对话
-    --.accept 1881 >> Accept Speak with Anatasia
+    --.accept 1881 >> Accept Speak with Anastasia
     .train 122 >>训练你的职业技能
     .target 凯恩·火歌
     .xp <10,1
@@ -8215,7 +8220,7 @@ step << skip
     .hs >>炉石返回布瑞尔，提瑞斯法林地
     .subzoneskip 159
     .cooldown item,6948,>0,1
-    .bindlocation 159,1
+    .bindlocation 2119,1
 step << skip
     #xprate <1.5
     #hardcore
@@ -8233,7 +8238,7 @@ step
     #xprate <2.1
     #softcore
     #completewith FoodandWater2
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #xprate <2.1
     .goto Tirisfal Glades,58.20,51.44
@@ -8604,7 +8609,7 @@ step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_凯伦丁|r 对话
     .turnin 1473 >>交任务 虚空中的生物
-    .accept 1471 >>接受任务誓缚
+    .accept 1471 >>接受任务 誓缚
     .target 凯伦丁·哈加尔
 step << Warlock
     #completewith next
@@ -8619,13 +8624,13 @@ step << Warlock
 step << Warlock
     .goto Undercity,85.04,25.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯伦丁|r 对话
-    .turnin 1471 >>交任务誓缚
+    .turnin 1471 >>交任务 誓缚
     .target 凯伦丁·哈加尔
 step << Warrior
     #ssf
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在潜行者区与 |cRXP_FRIENDLY_查尔斯·希顿|r 对话
-    >>|cRXP_BUY_Buy a|r |T135350:0|t[优质重剑] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_购买1把|r |T135350:0|t[优质重剑] |cRXP_BUY_从他那里|r
     .collect 1198,1,371,1 --Collect Claymore (1)
     .money <0.2676
     .itemStat 16,QUALITY,<7
@@ -8635,7 +8640,7 @@ step << Warrior
     #ah
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在潜行者区与 |cRXP_FRIENDLY_查尔斯·希顿|r 对话
-    >>|cRXP_BUY_Buy a|r |T135350:0|t[优质重剑] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_购买1把|r |T135350:0|t[优质重剑] |cRXP_BUY_从他那里|r
     >>|cRXP_WARN_或者你也可以稍后去拍卖行看看是否有更好或更便宜的替代品|r
     .collect 1198,1,371,1 --Collect Claymore (1)
     .itemStat 16,QUALITY,<7
@@ -8814,12 +8819,12 @@ step << Mage
     #label AtWarS
     #softcore
     #completewith AtWarS
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #completewith AgamandStart
     #xprate >2.09
     .hs >>炉石返回布瑞尔，提瑞斯法林地
-    .bindlocation 159,1
+    .bindlocation 2119,1
 step
     #optional
     .goto Tirisfal Glades,60.93,52.01
@@ -8972,7 +8977,7 @@ step
     #xprate >2.09
     #softcore
     #completewith FoodandWater2
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #xprate >2.09
     .goto Tirisfal Glades,58.20,51.44
@@ -9362,7 +9367,7 @@ step
     #completewith ANewPlagueFinal
     .hs >>炉石返回布瑞尔，提瑞斯法林地
     .subzoneskip 159
-    .bindlocation 159,1
+    .bindlocation 2119,1
     .cooldown item,6948,>0,1
 step
     #xprate <2.1

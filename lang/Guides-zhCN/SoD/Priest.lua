@@ -472,7 +472,7 @@ step << Priest
     .train 425215,1
 step << Priest
     .goto Loch Modan,36.689,20.964
-    .use 208823 >>|cRXP_WARN_在银溪矿洞内的水井处使用|r |T237281:0|t|T136222:0|t[|cRXP_LOOT_供品硬币|r] |cRXP_WARN_|r |cRXP_WARN_，以获得|r |T136222:0|t|T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r]
+    .use 208823 >>|cRXP_WARN_在银溪矿洞内的水井处使用|r |T237281:0|t[|cRXP_LOOT_供品硬币|r] |cRXP_WARN_|r |cRXP_WARN_，以获得|r |T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r]
     .collect 205905,1 -- Memory of a Devout Champion (1)
     .train 425215,1
 step << Priest
@@ -595,7 +595,7 @@ step << Priest
     .mob 霜鬃先知
     .train 402852,1
 step << Priest
-    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|cRXP_FRIENDLY_遭渎城堡的预言|r |cRXP_WARN_来训练|r |T237570:0|t[裂魂魔]
+    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|T237570:0|t|cRXP_FRIENDLY_遭渎城堡的预言|r |cRXP_WARN_来训练|r |T237570:0|t|T237570:0|t裂魂魔
     >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光明祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel，以获得2层|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_增益效果|r
     .use 205947
     .itemcount 205947,1
@@ -644,7 +644,7 @@ step << Priest
     .mob Shadow Sprite
     .train 402852,1
 step << Priest
-    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|cRXP_FRIENDLY_遭渎城堡的预言|r |cRXP_WARN_来训练|r |T237570:0|t[裂魂魔]
+    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|T237570:0|t|cRXP_FRIENDLY_遭渎城堡的预言|r |cRXP_WARN_来训练|r |T237570:0|t|T237570:0|t裂魂魔
     >>|cRXP_WARN_你必须在圣洁区域（如一座月亮井、北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/下跪以获得2层|r |T135934:0|t|T136057:0|t[冥想] |cRXP_WARN_buff|r
     .use 205947
     .itemcount 205947,1
@@ -864,7 +864,7 @@ step
     .collect 205905,1
     .mob Wailing Spirit
 step
-    .train 425215 >>|cRXP_WARN_使用|r |T136222:0|t|T237566:0|t[|cRXP_FRIENDLY_虔诚勇士的记忆] |cRXP_WARN_来训练|r |T237566:0|t|T237566:0|t[扭曲命运]
+    .train 425215 >>|cRXP_WARN_使用|r|T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆] |cRXP_WARN_来训练|r |T237566:0|t[扭曲信仰]
     >>|cRXP_WARN_你必须拥有一个|r |T237569:0|t|T136077:0|t|T136077:0|t|T136077:0|t[冥想] |cRXP_WARN_增益效果，通过在|rLoa Shrine|cRXP_WARN_（位于杜隆塔尔或贫瘠之地）前输入|cRXP_PICK_ /kneel |r来获得，或者当其他拥有该增益的牧师对你使用/pray时，在他们面前跪下也可获得|r << Troll
     >>|cRXP_WARN_你必须拥有一个|r |T237569:0|t|T136077:0|t|T136077:0|t|T136077:0|t[冥想] |cRXP_WARN_增益效果，通过在墓地输入|r /kneel |cRXP_WARN_或跪在另一位拥有该增益的牧师面前，当他们对你使用/pray时获得|r << Undead
     .goto Durotar,55.32,72.66,0
@@ -896,10 +896,10 @@ step
     .mob Razormane Defender
 step
     .train 425215,1
-    >>|cRXP_WARN_找到一个可以复活的死亡玩家或宠物（使用|T135955:0|t|T136222:0|t[复活术]），以获得|r |T136222:0|t|T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的记忆]
+    >>|cRXP_WARN_找到一个可以复活的死亡玩家或宠物（使用|T135955:0|t[复活术]），以获得|r |T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的记忆]
     .collect 205905,1
 step
-    .train 425215 >>|cRXP_WARN_使用|r |T136222:0|t|T237566:0|t[|cRXP_FRIENDLY_虔诚勇士的记忆] |cRXP_WARN_来训练|r |T237566:0|t|T237566:0|t[扭曲命运]
+    .train 425215 >>|cRXP_WARN_使用|r|T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆] |cRXP_WARN_来训练|r |T237566:0|t[扭曲信仰]
     >>|cRXP_WARN_你必须拥有一个|r |T237569:0|t|T136077:0|t|T136077:0|t|T136077:0|t[冥想] |cRXP_WARN_增益效果，通过在|rLoa Shrine|cRXP_WARN_（位于杜隆塔尔或贫瘠之地）前输入|cRXP_PICK_ /kneel |r来获得，或者当其他拥有该增益的牧师对你使用/pray时，在他们面前跪下也可获得|r << Troll
     >>|cRXP_WARN_你必须拥有一个|r |T237569:0|t|T136077:0|t|T136077:0|t|T136077:0|t[冥想] |cRXP_WARN_增益效果，通过在墓地输入|r /kneel |cRXP_WARN_或跪在另一位拥有该增益的牧师面前，当他们对你使用/pray时获得|r << Undead
     .goto Durotar,55.32,72.66,0
@@ -1038,7 +1038,7 @@ RXPGuides.RegisterGuide([[
 step
     #optional
     .train 425310,1
-    .train 605 >>|cRXP_WARN_你必须已经学会|r |T136206:0|t|T135923:0|t[精神控制] |cRXP_WARN_才能获得|r |T135923:0|t|T135923:0|t[新生希望] |cRXP_WARN_符文|r
+    .train 605 >>|cRXP_WARN_你必须先学会|r |T136206:0|t[精神控制] |cRXP_WARN_才能获得|r |T135923:0|t[新生希望] |cRXP_WARN_符文|r
 step
     #optional
     .train 425310,1
@@ -1164,7 +1164,7 @@ step
     .goto 1415,47.73,19.39,5 >>进入血色修道院地下城：墓地
 step
     >>点击无头骑士刷新点附近的|cRXP_PICK_墓碑|r，收集|cRXP_LOOT_|T136222:0|t|T136222:0|t[墓地的回响]|r |cRXP_WARN_强烈建议组满5人队伍来完成此步骤。|r
-    .link https://imgur.com/a/lqRc0i6 >>https://imgur.com/a/lqRc0i6 >> |cRXP_WARN_点击此处查看图片参考。|r
+    .link https://imgur.com/a/lqRc0i6 >>https://media.restedxp.com/u/jiiUja.png >> |cRXP_WARN_点击此处查看图片参考。|r
     .collect 215426,1
 step
     #optional
@@ -1686,7 +1686,7 @@ step << Alliance
     .zone Stormwind City >>前往暴风城
 step << Alliance
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>从拍卖行购买6 |T133682:0|t|T134834:0|t[|cRXP_LOOT_厚符文布绷带|r]、4 |T132834:0|t|T134855:0|t[|cRXP_LOOT_特效治疗药水|r]和8 |T132834:0|t|T132834:0|t[|cRXP_LOOT_巨蛋|r]。这些物品将与你已收集的|T134855:0|t|T134855:0|t[|cRXP_LOOT_斯坦索姆圣水|r]一起，用于该任务链的第一个任务
     .collect 14530,6 --Heavy runecloth bandage (6)
     .collect 13446,4 --Major Healing Potion (4)
@@ -1735,7 +1735,7 @@ step << Alliance
     .zone Stormwind City >>返回暴风城
 step << Alliance
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>从拍卖行购买2个|T134459:0|t|T134086:0|t[|cRXP_LOOT_奥金锭|r]、2个|T134132:0|t|T134086:0|t[|cRXP_LOOT_山脉之血|r]和3个|T134132:0|t|T134132:0|t[|cRXP_LOOT_蓝宝石|r]。你很快需要这些物品来交任务，它们可能价格不菲
     .collect 12360,2 --Arcanite Bar(2)
     .collect 11382,2 --Blood of the Mountain(2)

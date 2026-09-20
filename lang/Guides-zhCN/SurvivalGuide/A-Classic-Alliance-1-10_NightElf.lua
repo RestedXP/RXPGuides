@@ -231,7 +231,7 @@ step
 step
 	#softcore
 	#completewith next
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << skip --logout skip
 	#hardcore
 	#completewith next
@@ -268,7 +268,7 @@ step << Hunter
 step
     #requires vial1
     #completewith next
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << Hunter
     #requires vial1
     .goto Teldrassil,58.6,44.3
@@ -658,7 +658,7 @@ step << !Hunter
 step
     #softcore
     #completewith next
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << !Druid
     .goto Teldrassil,56.142,61.714
     .target 科瑞萨斯·月怒
@@ -685,7 +685,7 @@ step
 	#era/som
 	#label spiderLegs
 	.goto Teldrassil,42.41,67.07
-    .use 5621 >>|cRXP_WARN_在阿里斯瑞恩之池的月亮井|r|cRXP_WARN_使用|r |T134765:0|t[红玉瓶]
+    .use 5621 >>|cRXP_WARN_在阿里斯瑞恩之池的月亮井使用|r |T134765:0|t[红玉瓶] |cRXP_WARN_|r
 	.complete 933,1
 step
 	#era/som
@@ -905,7 +905,7 @@ step << Druid
 	.zoneskip Moonglade
 step << Druid
     .goto Moonglade,56.21,30.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
     .turnin 5921 >>交任务 月光林地
     .target 德迪利特·星焰
     .accept 5929 >>接受任务 巨熊之灵
@@ -922,8 +922,8 @@ step << Druid
     >>|cRXP_WARN_这样可以让你更快返回|r
 step << Druid
     .goto Moonglade,56.21,30.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
-    .turnin 5929 >>交任务  巨熊之灵
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
+    .turnin 5929 >>交任务 巨熊之灵
     .target 德迪利特·星焰
     .accept 5931 >>接受任务 返回达纳苏斯
 step
@@ -1140,7 +1140,7 @@ step << Hunter
 	.goto Teldrassil,37.6,28.8,0
     >>|cRXP_WARN_施放|r |T132164:0|t[驯服野兽] |cRXP_WARN_在|cRXP_ENEMY_巨翼猎枭|r 以驯服它|r -- .tame 1997
     .train 2981 >>|cRXP_WARN_用它攻击怪物以学习|r |T132140:0|t [爪击(等级 2)]
-    .link https://www.wow-petopia.com/classic/training.php >>https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击这里了解更多关于宠物训练的信息|r
+    .link https://www.wow-petopia.com/classic/training.php >>https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击此处了解更多关于宠物训练的信息|r
 	.unitscan 巨翼猎枭
 step
     .goto Teldrassil,43.2,42.8,55,0
@@ -1280,7 +1280,7 @@ step
 step << Hunter
     .goto Darnassus,40.377,8.545
     .target 祖卡斯特
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_祖卡斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖卡斯特|r 对话
     .turnin 6103 >>交任务 训练野兽
 step << Rogue
     .goto Darnassus,31.21,17.72,8,0
@@ -1322,13 +1322,14 @@ step
     .turnin 2520 >>交任务  萨丝拉的祭品
 step << Druid
     .goto Darnassus,47.95,68.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲罗迪恩·唤月|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_菲罗迪恩·唤月|r 对话
     .train 2366 >>学习 |T136065:0|t[草药学]
     >>|T136065:0|t[草药学] |cRXP_WARN_是必需的，以便为稍后的15级任务收集5个|r |T134187:0|t[地根草]|cRXP_WARN_。你可以在完成之后遗忘该专业|r
     .target Firodren Mooncaller
 step << Hunter/Warrior/Priest
     .goto Darnassus,57.56,46.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊琳尼雅·月火|r 对话
+    .skipgossip 11866,1
     .train 227 >>学习法杖
     >>如果你的背包里有一个法杖，请装备它 << Hunter
     .target 伊琳尼雅·月火

@@ -45,7 +45,7 @@ step
     .target Injured Adventurer
 step
     .goto Deadwind Pass,65.0,78.0
-    >>击杀任意 |cRXP_ENEMY_食人魔|r 并拾取它们，直到你找到一把 |cRXP_LOOT_逆风囚笼“钥匙”|r。在笼子上使用它来完成任务
+    >>击杀任意 |cRXP_ENEMY_食人魔|r 并拾取它们，直到你找到一把 |cRXP_LOOT_逆风囚笼"钥匙"|r。在笼子上使用它来完成任务
     >>|cRXP_WARN_如果其他人在你附近完成了这个目标，即使你没有与他们组队，你也会获得任务进度|r
     .complete 86967,1
     .collect 235785,1 --Deadwind Cage "Key"
@@ -58,7 +58,7 @@ step
     .goto Deadwind Pass,51.28,39.91,20,0
     .goto Deadwind Pass,52.32,34.09
     >>回到北方的达拉然特工营地
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈里森·琼斯|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_哈里森·琼斯|r对话
     .turnin 86967 >>交任务 实施营救
     .accept 86968 >>接受任务 你怕黑吗？
     .target 哈里森·琼斯
@@ -257,7 +257,7 @@ step
    >>向北前往血色营地 << Alliance
    >>向东前往血色营地 << Horde
    >>点击小帐篷外的 |cRXP_PICK_锁链|r。它会生成一个会攻击你的 |cRXP_WARN_精英|r |cRXP_ENEMY_血色渗透者|r
-   >>击杀并 |cRXP_LOOT_拾取|r 他以获得 |T133471:0|t[高级指挥官的命令]
+   >>击杀并 |cRXP_LOOT_拾取|r 他以获得 |T133471:0|t[指挥官的军令]
    .complete 87459,1 --Orders from the Commander
    .mob Scarlet Infiltrator
    .isOnQuest 87459
@@ -289,13 +289,13 @@ step
    >>返回圣光之愿礼拜堂
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_莱尼德·巴萨罗梅|r 对话
     .turnin 87497 >>交任务 分裂
-    .accept 87498 >>接受任务 血色救赎
+    .accept 87498 >>接受任务 血色光复军
     .target Leonid Barthalomew the Revered
 step
     .goto Eastern Plaguelands,67.8,83.2
     >>返回血色十字军营地
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官碧阿崔克丝|r 对话
-    .turnin 87498 >>交任务 血色救赎
+    .turnin 87498 >>交任务 血色光复军
     .target Commander Beatrix
 step
     .goto Eastern Plaguelands,68.25,82.70

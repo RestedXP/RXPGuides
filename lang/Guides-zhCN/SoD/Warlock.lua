@@ -223,7 +223,7 @@ step
     .collect 205183,1
 step
     .train 416009,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与幽暗城的 |cRXP_FRIENDLY_凯伦丁·哈加尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin Halgar|r in Undercity
     .goto Undercity,85.0,25.6
     .collect 205215,1
     .skipgossip 5675,1
@@ -407,7 +407,7 @@ step
     .goto Hillsbrad Foothills,51.1,46.4,40,0
     >>寻找 |cRXP_FRIENDLY_吉克希尔|r。他在塔伦米尔和南海镇之间巡逻。从他那里 |cRXP_WARN_花1金币|r 购买 |T133709:0|t[爆破炸药]
     .collect 211487,1
-    .target Zixil
+    .target 吉克希尔
 step
     .train 403937,1
     >>使用 |T133709:0|t[爆破炸药s] 破坏 |cRXP_PICK_碎石|r。拾取地上 |cRXP_PICK_储物箱|r 里的|T134419:0|t[|cRXP_FRIENDLY_唤火之痕符文|r]
@@ -762,7 +762,7 @@ step
     #completewith next
     .train 426445,1
     .isOnQuest 78994
-    .hs >>使用炉石返回棘齿城 << Alliance
+    .hs >>炉石返回棘齿城 << Alliance
     .hs >>使用炉石返回陶拉祖营地 << Horde
     .zoneskip The Barrens
 step

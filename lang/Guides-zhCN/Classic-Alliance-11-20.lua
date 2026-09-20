@@ -15,6 +15,7 @@ RXPGuides.RegisterGuide([[
 #name 13-15级 西部荒野
 #displayname 14-15级 西部荒野 << Dwarf/Gnome
 #group RestedXP 联盟 1-20 级
+#groupid RXP-SRGCE-A1
 #next 14-16级 黑海岸
 #defaultfor !NightElf !Hunter
 
@@ -88,7 +89,7 @@ step << !Human
 step
     .goto Westfall,52.86,53.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_与旅店老板对话|r
-    >>|cRXP_BUY_按需购买食物/水|r
+    >>|cRXP_BUY_如有需要，购买食物/水|r
     .vendor >>|T133918:0|t[长嘴泥鳅] |cRXP_WARN_非常便宜|r
 	.target 旅店老板希瑟尔
 step
@@ -391,7 +392,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_军需官刘易斯|r 对话
     >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买一捆|r |T135435:0|t[普通木柴] |cRXP_BUY_和一块|r |T135237:0|t[燧石和火绒]
     >>|cRXP_WARN_这个可用于|r在船上或地铁上制作 |cRXP_WARN_|T135805:0|t[烹饪用火]，以便在不浪费时间的情况下提升你的 |r|T133971:0|t[烹饪] |cRXP_WARN_技能|r
-    >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
+    >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪] |cRXP_WARN_来完成后续暮色森林的一个任务|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
     .target 军需官刘易斯
@@ -415,7 +416,7 @@ step << Gnome Rogue/Dwarf Rogue
     .vendor 1287 >>|cRXP_BUY_从她那里购买一把|r |T135343:0|t[战士阔剑] |cRXP_BUY_或者从拍卖行购买更好的装备，然后装备到你的副手|r
     .money <0.3815
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
-    .target Marda Weller
+    .target 玛尔达·维勒
 step << Gnome Rogue/Dwarf Rogue
     #ssf
     .goto StormwindClassic,57.38,56.77
@@ -423,11 +424,11 @@ step << Gnome Rogue/Dwarf Rogue
     .vendor 1287 >>|cRXP_BUY_从她那里购买一把|r |T135343:0|t[战士阔剑] |cRXP_BUY_|r
     .money <0.3815
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
-    .target Marda Weller
+    .target 玛尔达·维勒
 step << Gnome Rogue/Dwarf Rogue
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买以下物品以便更快地在黑海岸交任务
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>|T133972:0|t[秃鹫肉条]
@@ -475,9 +476,9 @@ step << Human/Dwarf Paladin
 step << Human Mage/Human Rogue/Human Warrior/Human Warlock/Human Paladin/Human Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话 << Human Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_芬斯维克|r 对话 << Human Rogue
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话 << Human Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丁克|r 对话 << Human Mage
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话 << Human Paladin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话 << Human Priest
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丁克|r 对话 << Human Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话 << Human Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布瑞尔索恩|r 对话 << Human Warlock
     .goto Ironforge,51.1,8.7,15,0 << Human Warlock
     .goto Ironforge,50.343,5.657 << Human Warlock
@@ -517,7 +518,7 @@ step << Human Rogue
     .goto Ironforge,62.375,88.679
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼下与 |cRXP_FRIENDLY_布雷文·寒钢|r 对话
     >>|cRXP_BUY_购买一把|r |T135425:0|t[锋利的飞刀]
-    .collect 3107,100 -- Keen Throwing Dagger
+    .collect 3107,100 -- Keen Throwing Knife
     .target 布雷文·寒钢
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.30
 step << Human Rogue
@@ -583,7 +584,7 @@ step
     .goto Wetlands,12.1,60.3,40,0
     >>|cRXP_WARN_首先观看视频指南作为参考，了解如何跳过！|r
     >>|cRXP_WARN_走无伤翻山路线，从丹莫罗翻山前往湿地|r
-    >>|cRXP_WARN_Avoid the |cRXP_ENEMY_湿地鳄鱼|r 和 |cRXP_ENEMY_鱼人|r when crossing the water|r
+    >>|cRXP_WARN_穿越水域时，避开|cRXP_ENEMY_湿地鳄鱼|r和|cRXP_ENEMY_鱼人|r|r
     .link https://www.youtube.com/watch?v=9afQTimaiZQ >>https://www.youtube.com/watch?v=9afQTimaiZQ >> |cRXP_WARN_点击此处查看视频指南|r
     .goto Wetlands,12.1,60.3,80 >>前往米奈希尔港，湿地
     .mob 湿地鳄鱼
@@ -595,7 +596,7 @@ step << Human
     .goto Dun Morogh,30.9,33.1,20 >>前往丹莫罗到湿地的死亡跳跃位置
 step << Human
     #softcore
-    .goto Dun Morogh,32.4,29.1,20 >>继续沿着山脉前往死亡跳跃所在地区
+    .goto Dun Morogh,32.4,29.1,20 >>继续沿着山路前进，前往死亡跳过位置
 step << Human
     #softcore
     .goto Dun Morogh,33.0,27.2,20,0
@@ -618,14 +619,14 @@ step
     .bronzetube
 step << Human/Dwarf Paladin
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
     .fp Wetlands>>获取湿地的飞行路径
     .target 谢尔雷·布隆迪尔
 step
     .goto Wetlands,7.95,56.38
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_德温·晨光|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_德温·晨光|r对话
     .vendor 1453 >>|cRXP_WARN_尽可能多地购买|r |T134831:0|t [治疗药水] |cRXP_WARN_|r
-    >>|cRXP_WARN_这是限量供应物品，如果 |cRXP_FRIENDLY_德温·晨光|r 没有库存，请跳过此步骤|r
+    >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_德温·晨光|r 没有库存，请跳过此步骤|r
     .target 德温·晨光
 step
     #optional
@@ -640,7 +641,7 @@ step
     #label DarkshoreCook1
     #completewith DarkshoreBoat
     >>如果船只刚到就登船，如果船只刚走就在码头等：
-    .cast 818 >>|cRXP_WARN_在你的法术书，通用选项卡中|r |cRXP_WARN_创建一个|r |T135805:0|t[基础篝火]
+    .cast 818 >>|cRXP_WARN_在你的法术书常规标签下创建一个|r |T135805:0|t[基础篝火] |cRXP_WARN_|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -654,7 +655,7 @@ step
     #label DarkshoreCook2
     #completewith DarkshoreBoat
     >>如果船只刚到就登船，如果船只刚走就在码头等：
-    .cast 818 >>|cRXP_WARN_在你的法术书，通用选项卡中|r |cRXP_WARN_创建一个|r |T135805:0|t[基础篝火]
+    .cast 818 >>|cRXP_WARN_在你的法术书常规标签下创建一个|r |T135805:0|t[基础篝火] |cRXP_WARN_|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -668,7 +669,7 @@ step
     #label DarkshoreCook3
     #completewith DarkshoreBoat
     >>如果船只刚到就登船，如果船只刚走就在码头等：
-    .cast 818 >>|cRXP_WARN_在你的法术书，通用选项卡中|r |cRXP_WARN_创建一个|r |T135805:0|t[基础篝火]
+    .cast 818 >>|cRXP_WARN_在你的法术书常规标签下创建一个|r |T135805:0|t[基础篝火] |cRXP_WARN_|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -681,10 +682,10 @@ step
     #requires DarkshoreCook3
     #label DarkshoreCook4
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
+    >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪] |cRXP_WARN_来完成后续暮色森林的一个任务|r
     >>|T133971:0|t[烹饪] 以下物品：
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -696,8 +697,8 @@ step
     #requires DarkshoreCook4
     #label DarkshoreCook5
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
+    >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪] |cRXP_WARN_来完成后续暮色森林的一个任务|r
+    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -709,8 +710,8 @@ step
     #requires DarkshoreCook5
     #label DarkshoreCook6
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
-    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_|r |T133974:0|t[烤野猪肉]
+    >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪] |cRXP_WARN_来完成后续暮色森林的一个任务|r
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1)
@@ -734,6 +735,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group RestedXP 联盟 1-20 级
+#groupid RXP-SRGCE-A1
 #name 14-16级 黑海岸
 #displayname 11-16级 黑海岸 << NightElf
 #displayname 13-16级 黑海岸 << Dwarf Hunter
@@ -761,26 +763,26 @@ step
     #ah
     #optional
     .goto Darkshore,36.096,44.931
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r 对话
     .accept 1138 >>接受任务 海中的水果 << !sod/Hunter/Druid
     .accept 1141 >>接受任务 钓鱼世家
-    .turnin 1141 >>交任务《钓鱼世家》
+    .turnin 1141 >>交任务 钓鱼世家
     .itemcount 12238,6 -- Darkshore Grouper (6)
     .target 古博·布拉普
     .xp <15,1
 step
     #ah
     .goto Darkshore,36.096,44.931
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r 对话
     .accept 1141 >>接受任务 钓鱼世家
-    .turnin 1141 >>交任务《钓鱼世家》
+    .turnin 1141 >>交任务 钓鱼世家
     .itemcount 12238,6 -- Darkshore Grouper (6)
     .target 古博·布拉普
 step
     #optional
     #season 0
     .goto Darkshore,36.096,44.931
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r 对话
     .accept 1138 >>接受任务 海中的水果
     .target 古博·布拉普
     .xp <15,1
@@ -977,8 +979,8 @@ step
     .goto 1439,38.696,57.874,50,0
     .goto 1439,39.129,59.176,50,0
     >>|cRXP_WARN_使用|r |T134335:0|t[萨纳瑞恩的希望] |cRXP_WARN_对|r |cRXP_ENEMY_狂暴蓟熊|r |cRXP_WARN_。只要你的目标是熊，就可以在任何距离使用|r
-    >>|cRXP_WARN_==如果附近没有熊，请不要使用该任务物品==|r
-    >>|cRXP_WARN_你可能会浪费陷阱，导致该任务无法完成！如果发生这种情况，你需要返回任务给予者那里再领取一个新的陷阱|r
+    >>==如果附近没有熊，请不要使用该任务物品==
+    >>你可能会浪费陷阱，导致该任务无法完成！如果发生这种情况，你需要返回任务给予者那里再领取一个新的陷阱
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
     .unitscan 狂暴蓟熊
     .use 7586
@@ -1082,7 +1084,7 @@ step
     #optional
     #season 0
     .goto Darkshore,36.096,44.931
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r 对话
     .accept 1138 >>接受任务 海中的水果
     .target 古博·布拉普
     .xp <15,1
@@ -1654,7 +1656,7 @@ step << NightElf Hunter
     #optional
     #season 0
     .goto Darkshore,37.4,40.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达蒙德|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达蒙德|r 对话
     >>|cRXP_WARN_从他那里购买最多2000个|r |T132382:0|t[锋利的箭] |cRXP_WARN_。你很快会在刷怪阶段用到它们|r
     .collect 2515,2000 --Sharp Arrow (2000)
     .target Dalmond
@@ -1855,7 +1857,7 @@ step << Druid
 step << Druid
     #season 0
     .goto Moonglade,56.21,30.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
     .turnin 6121 >>交任务 新的课程
     .accept 6122 >>接受任务 毒水之源
     .target 德迪利特·星焰
@@ -2306,7 +2308,7 @@ step
 step
     #season 0
     .goto Darkshore,36.096,44.931
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r 对话
     .accept 1138 >>接受任务 海中的水果
     .target 古博·布拉普
 step
@@ -2818,7 +2820,7 @@ step << NightElf !Druid
     #optional
     #completewith CavetoAuber
     #season 0
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step << skip --logout skip
     #hardcore << NightElf !Druid
@@ -2950,7 +2952,7 @@ step
     #optional
     .goto Darkshore,36.096,44.931
     #season 0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r 对话
     .turnin 1138 >>交任务 海中的水果
     .target 古博·布拉普
     .isQuestComplete 1138
@@ -3021,7 +3023,7 @@ step << Druid
     .goto Darnassus,35.375,8.405
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛斯雷·驭熊者|r 对话
-    .accept 26 >>接受任务 必修的课程
+    .accept 26 >>接受任务必修的课程
     .trainer >>训练你的职业技能
     .target 玛斯雷·驭熊者
 step << Druid
@@ -3045,8 +3047,8 @@ step << Druid
     #season 0
     .goto Moonglade,56.1,30.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
-    .turnin 26 >>交任务必修的课程
-    .accept 29 >>接受任务湖中试炼
+    .turnin 26 >>交任务 必修的课程
+    .accept 29 >>接受任务 湖中试炼
     .target 德迪利特·星焰
 step << Druid
     #season 0
@@ -3072,8 +3074,8 @@ step << Druid
     #season 0
     .goto Moonglade,36.517,40.104
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔加里|r 对话
-    .turnin 29 >>交任务湖中试炼
-    .accept 272 >>接受任务海狮试炼
+    .turnin 29 >>交任务 湖中试炼
+    .accept 272 >>接受任务 海狮试炼
     .target 塔加里
 step << Druid
     #optional
@@ -3098,6 +3100,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group RestedXP 联盟 1-20 级
+#groupid RXP-SRGCE-A1
 #name 16-19级 黑海岸
 #next 19-20级 赤脊山；20-21级 黑海岸/灰谷 << !Hunter
 #next 19-21级 黑海岸/灰谷 << Hunter
@@ -3133,13 +3136,14 @@ step << NightElf Warrior
     .goto Darnassus,57.56,46.72
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊琳尼雅·月火|r 对话
+    .skipgossip 11866,1
     .train 2567 >>训练 投掷武器
     .target 伊琳尼雅·月火
 step << NightElf Hunter
     #completewith start
     #season 0
     .goto Darnassus,40.38,8.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_祖卡斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖卡斯特|r 对话
     .trainer >>训练你的职业技能
     .target 祖卡斯特
 step << NightElf Hunter
@@ -3479,14 +3483,14 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勘察员雷姆塔维尔|r 对话。这将开始一个护送任务
     .accept 731,1 >>接受任务 健忘的勘察员
     >>|cRXP_WARN_这个任务非常困难。你可以线跳过这一步，等19级的时候再回来做。|r
-    .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_点击此处观看视频指南|r
+    .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_点击此处查看视频指南|r
     .target 勘察员雷塔维
 step << Hunter
     #requires prospector
     #season 0
     >>|cRXP_WARN_护送 |cRXP_FRIENDLY_勘察员雷塔维|r 穿过挖掘场|r
     >>|cRXP_WARN_这个任务非常困难。你可以线跳过这一步，等19级的时候再回来做。|r
-    .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_点击此处观看视频指南|r
+    .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_点击此处查看视频指南|r
     .complete 731,1
     .isOnQuest 731
 step << Hunter
@@ -3641,7 +3645,7 @@ step
     #optional
     #season 0
     .goto Darkshore,36.096,44.931
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r 对话
     .turnin 1138 >>交任务 海中的水果
     .isQuestComplete 1138
     .target 古博·布拉普
@@ -3685,7 +3689,7 @@ step << Hunter
     #optional
     #season 0
     .goto Darkshore,37.4,40.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达蒙德|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达蒙德|r 对话
     .vendor >>|cRXP_BUY_补充弹药|r
     .target Dalmond
 step << Druid
@@ -4133,10 +4137,10 @@ step
     #xprate >1.59
     #optional
     .goto Darkshore,37.45,40.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达蒙德|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达蒙德|r 对话
     >>|cRXP_BUY_从他那里购买一个|r |T135237:0|t[燧石和火绒] |cRXP_BUY_和一个|r |T135435:0|t[普通木柴] |cRXP_BUY_|r
     >>这是为了稍后在船上时，顺便提升你的 |T133971:0|t[|cRXP_WARN_烹饪|r] |cRXP_WARN_技能等级|r
-    >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
+    >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪] |cRXP_WARN_来完成后续暮色森林的一个任务|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
     .itemcount 6889,1 -- Small Egg (1+)
@@ -4183,7 +4187,7 @@ step
     #xprate >1.59
     #requires DeleteGyromast
     .goto Darkshore,36.096,44.931
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r 对话
     .turnin 1138 >>交任务 海中的水果
     .target 古博·布拉普
     .isQuestComplete 1138
@@ -4219,7 +4223,7 @@ step << Warrior/Paladin/Mage/Warlock/Rogue
     #requires TravelMenethilNoDMBoat
     #completewith MenethilNoDMBoat
     >>如果船只刚到就登船，如果船只刚走就在码头等：
-    .cast 818 >>|cRXP_WARN_在你的法术书，通用选项卡中|r |cRXP_WARN_创建一个|r |T135805:0|t[基础篝火]
+    .cast 818 >>|cRXP_WARN_在你的法术书常规标签下创建一个|r |T135805:0|t[基础篝火] |cRXP_WARN_|r
     .usespell 818
     .zoneskip Wetlands
     .zoneskip Elwynn Forest
@@ -4236,7 +4240,7 @@ step << Warrior/Paladin/Mage/Warlock/Rogue
     #optional
     #requires DarkshoreNoDMCook1
     #completewith MenethilNoDMBoat
-    >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
+    >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪] |cRXP_WARN_来完成后续暮色森林的一个任务|r
     >>|T133971:0|t[烹饪]|cRXP_WARN_将|r|T132832:0|t|cRXP_LOOT_[小蛋]|r|cRXP_WARN_和|r|T134059:0|t[甜香料]|cRXP_WARN_制作成|r|T132834:0|t[草药烘蛋]
     .usespell 2550
     .zoneskip Wetlands
@@ -4328,7 +4332,7 @@ step << !NightElf Warrior/Paladin
 step << !NightElf Warrior/Paladin/Mage/Warlock/!NightElf Rogue
     #xprate >1.59
     .goto Wetlands,9.490,59.694
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
     .fly Ironforge >>飞往铁炉堡
     .target 谢尔雷·布隆迪尔
     .zoneskip Darkshore << Warrior/Paladin
@@ -4339,7 +4343,7 @@ step << !NightElf Warrior/Paladin/Mage/Warlock/!NightElf Rogue
 step << NightElf Rogue
     #xprate >1.59
     .goto Wetlands,9.490,59.694
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
     .fp Menethil Harbor >>获取米奈希尔港的飞行路径
     .target 谢尔雷·布隆迪尔
     .dungeon !DM
@@ -4482,7 +4486,7 @@ step << NightElf Warrior
     .goto Ironforge,61.177,89.508
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在里面与 |cRXP_FRIENDLY_布里维夫·石手|r 对话
     .train 197 >>学习双手斧技能
-    .train 199 >>训练双手锤
+    .train 199 >>学习双手锤
     .target 布里维夫·石拳
     .zoneskip Wetlands
     .zoneskip Elwynn Forest
@@ -4633,14 +4637,14 @@ step << Mage
 step << Mage
     #xprate >1.59
     .goto Ironforge,27.18,8.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丁克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丁克|r 对话
     .trainer >>训练你的职业技能
     .target 丁克
     .dungeon !DM
 step << Paladin
     #xprate >1.59
     .goto Ironforge,23.131,6.143
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
     .trainer >>训练你的职业技能
     .target 布兰度尔·铁锤
     .zoneskip Darkshore
@@ -4697,7 +4701,7 @@ step << Mage/Warlock/Rogue
     #xprate >1.59
     #requires MilstaffNoDM << Mage
     .goto 1455,67.842,42.456
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考格斯宾|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_考格斯宾|r 对话
     .vendor 5175 >>|cRXP_BUY_如果有货的话，从他那里购买1个|r |T133024:0|t[青铜管] |cRXP_BUY_|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .target 考格斯宾
@@ -4778,7 +4782,7 @@ step << Rogue
     #optional
     #completewith RogueTrainNoDMEnd
     .goto StormwindClassic,74.65,52.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     >>|cRXP_WARN_如果你有闲钱，并且装备或背包里有|r|T132282:0|t[匕首]|cRXP_WARN_，可以学习|r|T135641:0|t[伏击]|cRXP_WARN_。这在以后会为你节省时间|r
     .train 8676 >>学习 |T132282:0|t[伏击]
     .target 夜行者奥斯伯
@@ -4787,7 +4791,7 @@ step << Rogue
     #xprate >1.59
     #optional
     .goto StormwindClassic,74.65,52.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     >>|cRXP_WARN_确保你学习了|r |T132320:0|t[潜行]|cRXP_WARN_，|r |T133644:0|t[搜索]|cRXP_WARN_和|r |T136058:0|t[开锁]|cRXP_WARN_，因为你之后会需要它们|r
     .train 1784 >>学习 |T132320:0|t[潜行]
     .train 921 >>学习 |T133644:0|t[偷窃技能]
@@ -4801,7 +4805,7 @@ step << Rogue
     #xprate >1.59
     #optional
     .goto StormwindClassic,74.65,52.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     >>|cRXP_WARN_确保你学习了|r |T133644:0|t[搜索]|cRXP_WARN_和|r |T136058:0|t[开锁]|cRXP_WARN_，因为你之后会需要它们|r
     >>|cRXP_WARN_在接下来的步骤中，请务必精打细算。只买必要的法术，因为很快就需要花钱学[消失]，而且在回到湿地后还得准备75银币用于获取符文。|r
     .train 921 >>学习 |T133644:0|t[偷窃技能]
@@ -4814,7 +4818,7 @@ step << Rogue
     #xprate >1.59
     #label RogueTrainNoDMEnd
     .goto StormwindClassic,74.65,52.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     >>|cRXP_WARN_务必学习|r |T136058:0|t[开锁] |cRXP_WARN_，因为之后会用到|r
     >>|cRXP_WARN_在接下来的步骤中，请务必精打细算。只买必要的法术，因为很快就需要花钱学[消失]，而且在回到湿地后还得准备75银币用于获取符文。|r
     .train 1804 >>学习 |T136058:0|t[开锁]
@@ -4834,7 +4838,7 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_"剃刀"雷吉克|r 和 |cRXP_FRIENDLY_马迪亚斯·肖尔大师|r 对话
-    .accept 2281 >>接受任务 赤脊山的联络员
+    .accept 2281 >>接受任务赤脊山的联络员
     .goto StormwindClassic,75.76,60.35
     .target +Renzik "The Shiv"
     .accept 2360 >>接受任务 马迪亚斯和迪菲亚盗贼
@@ -4872,7 +4876,7 @@ step << NightElf Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与里面的 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
     >>|cRXP_BUY_从她那里购买一把|r |T135280:0|t[微光重剑] |cRXP_BUY_或者从拍卖行查看更好/更便宜的装备|r
     .collect 922,1,2040,1 --Collect Dacian Falx (1)
-    .target Marda Weller
+    .target 玛尔达·维勒
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.0 --Arbitrary number lower than Falx/Exe
     .zoneskip Stormwind City,1
@@ -4895,7 +4899,7 @@ step << Rogue
     >>|cRXP_BUY_从她那里购买一把|r |T135342:0|t[波刃短剑] |cRXP_BUY_或在拍卖行寻找更好的/更便宜的|r
     >>|cRXP_WARN_在接下来的步骤中，请务必精打细算。如果钱不够就只购买一把匕首，因为很快就需要花钱学[消失]，而且在回到湿地后还得准备75银币用于获取符文。|r
     .collect 2209,2 --Kris (2)
-    .target Marda Weller
+    .target 玛尔达·维勒
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.93
     .dungeon !DM
 step << Rogue
@@ -4906,7 +4910,7 @@ step << Rogue
     >>|cRXP_WARN_如果钱够的话|r|cRXP_BUY_购买一把|r |T135342:0|t[波刃短剑]
     >>|cRXP_WARN_在接下来的步骤中，请务必精打细算。如果钱不够就只购买一把匕首，因为很快就需要花钱学[消失]，而且在回到湿地后还得准备75银币用于获取符文。|r
     .collect 2209,1 --Kris (2)
-    .target Marda Weller
+    .target 玛尔达·维勒
     .money <0.8743
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.93
     .dungeon !DM
@@ -4931,9 +4935,9 @@ step << Rogue
     #xprate >1.59
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买|T134437:0|t[抗毒药剂] 用于你稍后的 |T132290:0|t[毒药] 职业任务，其余的留着稍后在赤脊山快速交任务 << !Dwarf
-    >>购买以下物品以便在赤脊山更快地完成任务 << Dwarf
+    >>购买以下物品，以便稍后在赤脊山更快地完成任务 << Dwarf
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>|T134437:0|t[抗毒药剂] << !Dwarf
     >>|T134172:0|t[巨型血牙野猪头]
@@ -4953,7 +4957,7 @@ step << Rogue
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >>获取暴风城的飞行路径 << !Human
     .fly Westfall >>飞往西部荒野 << Human
     .target 杜加尔·朗德瑞克
@@ -4989,7 +4993,7 @@ step << Human Rogue
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Redridge >>飞往赤脊山
     .target 杜加尔·朗德瑞克
     .zoneskip Stormwind City,1
@@ -5069,7 +5073,7 @@ step << Rogue
     .mob Redridge Basher
 step << Rogue
     #xprate >1.59
-    .goto 1433,51.846,45.116,100 >>前往奥瑟尔伐木场
+    .goto 1433,51.846,45.116,100 >>前往奥瑟尔磨坊
 step << Rogue
     #xprate >1.59
     .goto 1433,51.846,45.116
@@ -5128,7 +5132,7 @@ step << Rogue
     #xprate >1.59
     #completewith next
     .goto Redridge Mountains,30.59,59.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
     .fp Redridge Mountains >>获取赤脊山的飞行路径 << !Human
     .fly Westfall >>飞往西部荒野
     .target 艾蕾娜·斯托姆法瑟
@@ -5183,7 +5187,7 @@ step << Rogue
     .goto Westfall,68.50,70.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_密探吉尔妮|r 对话
     >>|cRXP_WARN_你必须完成这个任务来获取你的|r|T132290:0|t[毒药]
-    .turnin 2360 >>交任务马迪亚斯和迪菲亚盗贼
+    .turnin 2360 >>交任务 马迪亚斯和迪菲亚盗贼
     .accept 2359 >>接受任务 克拉文之塔
     .target Agent Kearnen
     .dungeon !DM
@@ -5202,7 +5206,7 @@ step << Rogue
     >>|cRXP_WARN_|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 出现在塔楼入口处，随后会在塔楼外侧巡逻|r
     >>|cRXP_WARN_小心，他伤害很高。如果你的|r |T132320:0|t[潜行] |cRXP_WARN_被打破，立刻使用|r |T132307:0|t[疾跑] |cRXP_WARN_逃离|r
     .complete 2359,2 --Collect Defias Tower Key (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
     .mob Malformed Defias Drone
     .dungeon !DM
 step << Rogue
@@ -5224,7 +5228,7 @@ step << Rogue
     >>|cRXP_WARN_如果你的背包中或已装备|r |T135641:0|t[匕首] |cRXP_WARN_，你可以施放|r |T132282:0|t[伏击] |cRXP_WARN_对付里面的 |cRXP_ENEMY_迪菲亚巡塔员|r 和 |cRXP_ENEMY_迪菲亚哨兵|r，从而瞬间击杀他们。击杀第一个 |cRXP_ENEMY_迪菲亚哨兵|r 后请做好逃跑准备，并记住你可能会从上方被攻击。这种方法更慢，但安全性高得多|r
     >>|cRXP_WARN_注意，如果你需要跑出塔楼，|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 和 |cRXP_ENEMY_迪菲亚苦工|r 可能会在塔楼入口处|r
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
     .mob Defias Tower Patroller
     .mob Defias Tower Sentry
     .dungeon !DM
@@ -5349,7 +5353,7 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     .goto StormwindClassic,74.65,52.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     >>|cRXP_WARN_在接下来请务必非常小心地管理你的资金。只购买必不可少的技能。在完成湿地的几个任务后，你将需要75银币来获取一枚符文|r
     >>训练|cRXP_WARN_ |T132331:0|t[消失] 和 |T132320:0|t[潜行]（等级2）。你需要它来解锁 |T236270:0|t[致命阴谋]|r
     .train 1856 >>学习 |T132331:0|t[消失]
@@ -5434,8 +5438,8 @@ step << Warlock
 step << Warlock
     #xprate >1.59
     .goto StormwindClassic,25.25,78.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
-    .accept 1716 >>接受任务噬魂者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
+    .accept 1716 >>接受任务 噬魂者
     .target 黑暗缚灵者加科因
     .dungeon !DM
 step << Warlock
@@ -5469,7 +5473,7 @@ step << Mage
 step << Mage
     #xprate >1.59
     .goto Stormwind City,39.681,79.538
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉瑞麦尼·普尔度|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拉瑞麦尼·普尔度|r 对话
     .train 3561 >>学习 |T135763:0|t[传送：暴风城]
     .target 拉瑞麦尼·普尔度
     .dungeon !DM
@@ -5534,7 +5538,7 @@ step << NightElf Rogue
     #label NEWarRogNoDMNoFP2
     #completewith NEWarRogNoDMIFPP
     .goto 1455,67.842,42.456
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考格斯宾|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_考格斯宾|r 对话
     .vendor 5175 >>|cRXP_BUY_如果有货的话，从他那里购买1个|r |T133024:0|t[青铜管] |cRXP_BUY_|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .target 考格斯宾
@@ -5553,7 +5557,7 @@ step << NightElf Warrior
     .goto Ironforge,61.177,89.508
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在里面与 |cRXP_FRIENDLY_布里维夫·石手|r 对话
     .train 197 >>学习双手斧技能
-    .train 199 >>训练双手锤
+    .train 199 >>学习双手锤
     .target 布里维夫·石拳
     .zoneskip Darkshore
     .zoneskip Teldrassil
@@ -5568,7 +5572,7 @@ step << NightElf Warrior
     #completewith NEWarRogNoDMIFPP
     .goto 1455,62.378,88.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布雷文·寒钢|r 在楼下对话
-    >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一把|r |T135427:0|t[重型飞刀]
+    >>|cRXP_BUY_从她那里购买|r |T135427:0|t[重型飞刀]
     .collect 3108,200 --Collect Heavy Throwing Knife (200)
     .target 布雷文·寒钢
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.7
@@ -5730,7 +5734,7 @@ step << !NightElf !Hunter
     #softcore
     #optional
     #completewith next
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step << !NightElf
     #xprate <1.59
@@ -5788,7 +5792,7 @@ step << Dwarf Hunter
     #requires TravelDarnDwarfHBoat
     #completewith DarnDwarfHBoat
     >>如果船只刚到就登船，如果船只刚走就在码头等：
-    .cast 818 >>|cRXP_WARN_在你的法术书，通用选项卡中|r |cRXP_WARN_创建一个|r |T135805:0|t[基础篝火]
+    .cast 818 >>|cRXP_WARN_在你的法术书常规标签下创建一个|r |T135805:0|t[基础篝火] |cRXP_WARN_|r
     .usespell 818
     .zoneskip Teldrassil
     .zoneskip Darnassus
@@ -5801,7 +5805,7 @@ step << Dwarf Hunter
     #optional
     #requires DarnDwarfHCook1
     #completewith DarnDwarfHBoat
-    >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
+    >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪] |cRXP_WARN_来完成后续暮色森林的一个任务|r
     >>|T133971:0|t[烹饪]|cRXP_WARN_将|r|T132832:0|t|cRXP_LOOT_[小蛋]|r|cRXP_WARN_和|r|T134059:0|t[甜香料]|cRXP_WARN_制作成|r|T132834:0|t[草药烘蛋]
     .usespell 2550
     .zoneskip Teldrassil
@@ -5831,13 +5835,14 @@ step << Dwarf Hunter
     #xprate <1.59
     #completewith next
     .goto Darnassus,40.38,8.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_祖卡斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖卡斯特|r 对话
     .trainer >>训练你的职业技能
     .target 祖卡斯特
     .dungeon !DM
 step << Dwarf Hunter
     #xprate <1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊琳尼雅·月火|r 对话
+    .skipgossip 11866,1
     .goto Darnassus,57.56,46.72
     .train 264 >>学习 弩
     .train 227 >>学习法杖
@@ -5921,7 +5926,7 @@ step
     #xprate <1.59
     #requires DeleteGyromast
     .goto Darkshore,36.096,44.931
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r 对话
     .turnin 1138 >>交任务 海中的水果
     .target 古博·布拉普
     .isQuestComplete 1138
@@ -5949,7 +5954,7 @@ step << NightElf
 step << NightElf Hunter
     #xprate <1.59
     .goto Darkshore,37.45,40.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达蒙德|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达蒙德|r 对话
     .vendor >>补充 |T132382:0|t[锋利的箭] 库存
     .target Dalmond
 step << NightElf
@@ -5999,7 +6004,7 @@ step
     #requires TravelMenethilDMBoat
     #completewith MenethilDMBoat
     >>如果船只刚到就登船，如果船只刚走就在码头等：
-    .cast 818 >>|cRXP_WARN_在你的法术书，通用选项卡中|r |cRXP_WARN_创建一个|r |T135805:0|t[基础篝火]
+    .cast 818 >>|cRXP_WARN_在你的法术书常规标签下创建一个|r |T135805:0|t[基础篝火] |cRXP_WARN_|r
     .usespell 818
     .itemcount 6889,1 --Small Egg (1+)
     .itemcount 4470,1 --Simple Wood (1+)
@@ -6014,7 +6019,7 @@ step
     #optional
     #requires DarkshoreDMCook1
     #completewith DarnDMBoat
-    >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
+    >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪] |cRXP_WARN_来完成后续暮色森林的一个任务|r
     >>|T133971:0|t[烹饪]|cRXP_WARN_将|r|T132832:0|t|cRXP_LOOT_[小蛋]|r|cRXP_WARN_和|r|T134059:0|t[甜香料]|cRXP_WARN_制作成|r|T132834:0|t[草药烘蛋]
     .usespell 2550
     .itemcount 6889,1 --Small Egg (1+)
@@ -6094,7 +6099,7 @@ step << !NightElf
     #optional
     #completewith next
     .goto Wetlands,9.490,59.694
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
     .fly Ironforge >>飞往铁炉堡
     .target 谢尔雷·布隆迪尔
     .zoneskip Elwynn Forest
@@ -6104,7 +6109,7 @@ step << !NightElf
 step << NightElf
     #xprate >1.59 << !Hunter
     .goto Wetlands,9.490,59.694
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
     .fp Menethil Harbor >>获取米奈希尔港的飞行路径
     .target 谢尔雷·布隆迪尔
     .dungeon DM
@@ -6250,7 +6255,7 @@ step << NightElf Warrior/NightElf Hunter
     .goto Ironforge,61.177,89.508
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在里面与 |cRXP_FRIENDLY_布里维夫·石手|r 对话
     .train 197 >>学习双手斧技能 << Warrior
-    .train 199 >>训练双手锤 << Warrior
+    .train 199 >>学习双手锤 << Warrior
     .train 266 >>学习枪械 << Hunter
     .target 布里维夫·石拳
     .zoneskip Wetlands
@@ -6350,7 +6355,7 @@ step << Mage
 step << Mage
     #xprate >1.59
     .goto Ironforge,27.18,8.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丁克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丁克|r 对话
     .trainer >>训练你的职业技能
     .target 丁克
     .dungeon DM
@@ -6358,7 +6363,7 @@ step << Priest
     #xprate >1.59
     #optional << NightElf
     .goto Ironforge,25.207,10.756
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话
     .trainer >>训练你的职业技能
     .target 托德雷·铁矿
     .zoneskip Wetlands << NightElf
@@ -6401,7 +6406,7 @@ step << skip --Warlock
     .goto Ironforge,52.701,6.070
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_寻尸者祖贝尔|r 对话
     .vendor 6382 >>|cRXP_BUY_如果愿意，可为你的宠物购买|r |T133738:0|t[魔典]|cRXP_BUY_|r
-    .target Jubahl Corpseseeker
+    .target 寻尸者祖贝尔
     .zoneskip Elwynn Forest
     .zoneskip Stormwind City
     .zoneskip Westfall
@@ -6467,7 +6472,7 @@ step
     #optional
     #requires MilstaffDM << Mage
     .goto 1455,67.842,42.456
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考格斯宾|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_考格斯宾|r 对话
     .vendor 5175 >>|cRXP_BUY_如果有货的话，从他那里购买1个|r |T133024:0|t[青铜管] |cRXP_BUY_|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .target 考格斯宾
@@ -6564,7 +6569,7 @@ step << Rogue
     #optional
     #completewith RogueTrainDMEnd
     .goto StormwindClassic,74.65,52.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     >>|cRXP_WARN_如果你有闲钱，并且装备或背包里有|r|T132282:0|t[匕首]|cRXP_WARN_，可以学习|r|T135641:0|t[伏击]|cRXP_WARN_。这在以后会为你节省时间|r
     .train 8676 >>学习 |T132282:0|t[伏击]
     .target 夜行者奥斯伯
@@ -6573,7 +6578,7 @@ step << Rogue
     #xprate >1.59
     #optional
     .goto StormwindClassic,74.65,52.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     >>|cRXP_WARN_确保你学习了|r |T132320:0|t[潜行]|cRXP_WARN_，|r |T133644:0|t[搜索]|cRXP_WARN_和|r |T136058:0|t[开锁]|cRXP_WARN_，因为你之后会需要它们|r
     .train 1784 >>学习 |T132320:0|t[潜行]
     .train 921 >>学习 |T133644:0|t[偷窃技能]
@@ -6587,7 +6592,7 @@ step << Rogue
     #xprate >1.59
     #optional
     .goto StormwindClassic,74.65,52.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     >>|cRXP_WARN_确保你学习了|r |T133644:0|t[搜索]|cRXP_WARN_和|r |T136058:0|t[开锁]|cRXP_WARN_，因为你之后会需要它们|r
     .train 921 >>学习 |T133644:0|t[偷窃技能]
     .train 1804 >>学习 |T136058:0|t[开锁]
@@ -6599,7 +6604,7 @@ step << Rogue
     #xprate >1.59
     #label RogueTrainDMEnd
     .goto StormwindClassic,74.65,52.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     >>|cRXP_WARN_务必学习|r |T136058:0|t[开锁] |cRXP_WARN_，因为之后会用到|r
     .train 1804 >>学习 |T136058:0|t[开锁]
     .trainer >>训练你的职业技能
@@ -6618,7 +6623,7 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_"剃刀"雷吉克|r 和 |cRXP_FRIENDLY_马迪亚斯·肖尔|r 对话
-    .accept 2281 >>接受任务 赤脊山的联络员
+    .accept 2281 >>接受任务赤脊山的联络员
     .goto StormwindClassic,75.76,60.35
     .target +Renzik "The Shiv"
     .accept 2360 >>接受任务 马迪亚斯和迪菲亚盗贼
@@ -6665,7 +6670,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与里面的 |cRXP_FRIENDLY_伊瓦夫人|r 对话
     >>|cRXP_BUY_向她购买|r |T135324:0|t[长剑]|cRXP_BUY_，或者去拍卖行看看是否有更好或更便宜的选择|r
     .collect 923,1 --Longsword (1)
-    .target Marda Weller
+    .target 玛尔达·维勒
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
     .dungeon DM
 step << Rogue
@@ -6675,7 +6680,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
     >>|cRXP_WARN_如果你钱够的话|r|cRXP_BUY_购买|r |T135324:0|t[长剑]
     .collect 923,1 --Longsword (1)
-    .target Marda Weller
+    .target 玛尔达·维勒
     .money <0.8743
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
     .dungeon DM
@@ -6704,22 +6709,22 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话。他会给你 |T133739:0|t[|cRXP_LOOT_勇气之书|r]
     .use 6776 >>|cRXP_WARN_使用 |T133739:0|t[|cRXP_LOOT_勇气之书|r] 来激发任务|r
     .collect 6776,1,1649 --Tome of Valor (1)
-    .accept 1649 >>接受任务 勇气之书
+    .accept 1649 >>接受任务勇气之书
     .target 达索瑞恩·拉尔
     .dungeon DM
 step << Paladin
     #xprate >1.59
     .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
     .turnin 1649 >>交任务 勇气之书
-    .accept 1650 >>接受任务 勇气之书
+    .accept 1650 >>接受任务勇气之书
     .target 达索瑞恩·拉尔
     .dungeon DM
 step << Paladin
     #xprate >1.59
     .goto StormwindClassic,38.58,32.00,12,0
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .trainer >>训练你的职业技能
     .target 虔诚的亚瑟
     .dungeon DM
@@ -6738,7 +6743,7 @@ step << Paladin/Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与里面的 |cRXP_FRIENDLY_伊瓦夫人|r 对话
     >>|cRXP_BUY_从她那里购买一把|r |T135280:0|t[微光重剑] |cRXP_BUY_或者从拍卖行查看更好/更便宜的装备|r
     .collect 922,1,2040,1 --Collect Dacian Falx (1)
-    .target Marda Weller
+    .target 玛尔达·维勒
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.0 --Arbitrary number lower than Falx/Exe
     .dungeon DM
@@ -6824,8 +6829,8 @@ step << Warlock
 step << Warlock
     #xprate >1.59
     .goto StormwindClassic,25.25,78.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
-    .accept 1716 >>接受任务噬魂者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
+    .accept 1716 >>接受任务 噬魂者
     .target 黑暗缚灵者加科因
     .dungeon DM
 step << Warlock
@@ -6859,7 +6864,7 @@ step << Mage
 step << Mage
     #xprate >1.59
     .goto Stormwind City,39.681,79.538
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉瑞麦尼·普尔度|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拉瑞麦尼·普尔度|r 对话
     .train 3561 >>学习 |T135763:0|t[传送：暴风城]
     .target 拉瑞麦尼·普尔度
     .dungeon DM
@@ -6912,10 +6917,10 @@ step
     #ah
     #softcore
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买|T134437:0|t[抗毒药剂] 用于你稍后的 |T132290:0|t[毒药] 职业任务，其余的留着稍后在赤脊山快速交任务 << !Dwarf Rogue
     >>购买以下物品以加快即将在赤脊山和西部荒野完成任务 << Paladin
-    >>购买以下物品以便在赤脊山更快地完成任务 << !Paladin !Rogue/Dwarf Rogue
+    >>购买以下物品，以便稍后在赤脊山更快地完成任务 << !Paladin !Rogue/Dwarf Rogue
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>|T134437:0|t[抗毒药剂] << !Dwarf Rogue
     >>|T132794:0|t|T132794:0|t[灯油] << Paladin
@@ -6934,7 +6939,7 @@ step
     #ah
     #hardcore
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买|T134437:0|t[抗毒药剂] 用于你稍后的 |T132290:0|t[毒药] 职业任务，其余的留着稍后在赤脊山和西部荒野快速交任务 << !Dwarf Rogue
     >>购买以下物品以加快即将在赤脊山和西部荒野完成任务 << !Rogue/Dwarf Rogue
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
@@ -6958,7 +6963,7 @@ step
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >>获取暴风城的飞行路径 << !Human
     .fly Westfall >>飞往西部荒野 << Human
     .target 杜加尔·朗德瑞克
@@ -6997,7 +7002,7 @@ step << Human
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Redridge >>飞往赤脊山
     .target 杜加尔·朗德瑞克
     .zoneskip Stormwind City,1
@@ -7079,7 +7084,7 @@ step
     #optional << Human/Warlock
     #completewith next
     .goto Redridge Mountains,30.59,59.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
     .fp Redridge Mountains >>获取赤脊山的飞行路径 << !Human !Warlock
     .fly Westfall >>飞往西部荒野
     .target 艾蕾娜·斯托姆法瑟
@@ -7134,7 +7139,7 @@ step << Rogue
     .goto Westfall,68.50,70.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_密探吉尔妮|r 对话
     >>|cRXP_WARN_你必须完成这个任务来获取你的|r|T132290:0|t[毒药]
-    .turnin 2360 >>交任务马迪亚斯和迪菲亚盗贼
+    .turnin 2360 >>交任务 马迪亚斯和迪菲亚盗贼
     .accept 2359 >>接受任务 克拉文之塔
     .target Agent Kearnen
     .dungeon DM
@@ -7153,7 +7158,7 @@ step << Rogue
     >>|cRXP_WARN_|cRXP_ENEMY_丑陋的迪菲亚懒汉|r出现在塔楼入口处，随后会在塔楼外侧巡逻|r
     >>|cRXP_WARN_小心，他伤害很高。如果你的|r |T132320:0|t[潜行] |cRXP_WARN_被打破，立刻使用|r |T132307:0|t[疾跑] |cRXP_WARN_逃离|r
     .complete 2359,2 --Collect Defias Tower Key (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
     .mob Malformed Defias Drone
     .dungeon DM
 step << Rogue
@@ -7175,7 +7180,7 @@ step << Rogue
     >>|cRXP_WARN_如果你的背包中或已装备|r |T135641:0|t[匕首] |cRXP_WARN_，你可以施放|r |T132282:0|t[伏击] |cRXP_WARN_对付里面的 |cRXP_ENEMY_迪菲亚巡塔员|r 和 |cRXP_ENEMY_迪菲亚哨兵|r，从而瞬间击杀他们。击杀第一个 |cRXP_ENEMY_迪菲亚哨兵|r 后请做好逃跑准备，并记住你可能会从上方被攻击。这种方法更慢，但安全性高得多|r
     >>|cRXP_WARN_注意，如果你需要跑出塔楼，|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 和 |cRXP_ENEMY_迪菲亚苦工|r 可能会在塔楼入口处|r
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
     .mob Defias Tower Patroller
     .mob Defias Tower Sentry
     .dungeon DM
@@ -7295,7 +7300,7 @@ step
     #optional
     #completewith next
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Westfall >>飞往西部荒野
     .target 杜加尔·朗德瑞克
     .dungeon DM
@@ -7544,7 +7549,7 @@ step << Paladin
     >>|cRXP_WARN_她在田地里来回巡逻|r
     >>|cRXP_WARN_小心，这会有点困难。你将面对3波各3个，然后4个，然后5个17-18级 |cRXP_ENEMY_迪菲亚袭击者|r
     .turnin 1650 >>交任务 勇气之书
-    .accept 1651,1 >>接受任务 勇气之书
+    .accept 1651,1 >>接受任务勇气之书
     .link https://youtu.be/1-nnLcqIIlQ?si=kZi41eXT8ZQmSBY2&t=10 >>https://youtu.be/1-nnLcqIIlQ?si=kZi41eXT8ZQmSBY2&t=10 >> 点击此处查看视频指南
     .target 达芙妮·斯迪威尔
     .dungeon DM
@@ -7568,7 +7573,7 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达芙妮·斯迪威尔|r 对话
     >>|cRXP_WARN_她在田地里来回巡逻|r
     .turnin 1651 >>交任务 勇气之书
-    .accept 1652 >>接受任务 勇气之书
+    .accept 1652 >>接受任务勇气之书
     .target 达芙妮·斯迪威尔
     .dungeon DM
 step
@@ -7763,7 +7768,7 @@ step << Paladin
     #xprate >1.59
     #optional
     .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
     .turnin 1652 >>交任务 勇气之书
     .accept 1653 >>接受任务 正义试炼
     .target 达索瑞恩·拉尔
@@ -7774,7 +7779,7 @@ step << Paladin
     #optional
     .goto StormwindClassic,38.58,32.00,12,0
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .train 19835 >>训练你的职业技能
     .target 虔诚的亚瑟
     .xp <22,1
@@ -7800,7 +7805,7 @@ step << Rogue
     #xprate >1.59
     #optional
     .goto StormwindClassic,74.65,52.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     .train 1856 >>训练你的职业技能
     .target 夜行者奥斯伯
     .xp <22,1
@@ -7868,7 +7873,7 @@ step << Paladin
 step << Paladin
     #xprate >1.59
     .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
     .turnin 1652 >>交任务 勇气之书
     .accept 1653 >>接受任务 正义试炼
     .target 达索瑞恩·拉尔
@@ -7877,7 +7882,7 @@ step << Paladin
     #xprate >1.59
     .goto StormwindClassic,38.58,32.00,12,0
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .train 19835 >>训练你的职业技能
     .target 虔诚的亚瑟
     .xp <22,1
@@ -7901,7 +7906,7 @@ step << Priest
 step << Rogue
     #xprate >1.59
     .goto StormwindClassic,74.65,52.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     .train 1856 >>训练你的职业技能
     .target 夜行者奥斯伯
     .xp <22,1
@@ -7980,7 +7985,7 @@ step << NightElf
     #label DeeprunDMNoFP2
     #completewith NEIFFP
     .goto 1455,67.842,42.456
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考格斯宾|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_考格斯宾|r 对话
     .vendor 5175 >>|cRXP_BUY_从他这里|r|T133024:0|t|cRXP_BUY_买一个|r [青铜管] (如果有)
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .target 考格斯宾
@@ -7994,7 +7999,7 @@ step << NightElf Warrior/NightElf Hunter
     .goto Ironforge,61.177,89.508
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在里面与 |cRXP_FRIENDLY_布里维夫·石手|r 对话
     .train 197 >>学习双手斧技能 << Warrior
-    .train 199 >>训练双手锤 << Warrior
+    .train 199 >>学习双手锤 << Warrior
     .train 266 >>学习枪械 << Hunter
     .target 布里维夫·石拳
     .dungeon DM
@@ -8005,7 +8010,7 @@ step << NightElf Warrior
     #completewith NEIFFP
     .goto 1455,62.378,88.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布雷文·寒钢|r 在楼下对话
-    >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一把|r |T135427:0|t[重型飞刀]
+    >>|cRXP_BUY_从她那里购买|r |T135427:0|t[重型飞刀]
     .collect 3108,200 --Collect Heavy Throwing Knife (200)
     .target 布雷文·寒钢
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.7
@@ -8070,10 +8075,10 @@ step << !Hunter
 --XX NightElf
     #xprate <1.59
     .goto Darkshore,37.45,40.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达蒙德|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达蒙德|r 对话
     >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买一个|r |T135237:0|t[燧石和火绒] |cRXP_BUY_和一个|r |T135435:0|t[普通木柴]
     >>这是为了稍后在船上时，顺便提升你的 |T133971:0|t[|cRXP_WARN_烹饪|r] |cRXP_WARN_技能等级|r
-    >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
+    >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪] |cRXP_WARN_来完成后续暮色森林的一个任务|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
     .itemcount 6889,1 -- Small Egg (1+)
@@ -8110,7 +8115,7 @@ step << !Hunter
     #requires TravelMenethilRRBoat
     #completewith MenethilRRBoat
     >>如果船只刚到就登船，如果船只刚走就在码头等：
-    .cast 818 >>|cRXP_WARN_在你的法术书，通用选项卡中|r |cRXP_WARN_创建一个|r |T135805:0|t[基础篝火]
+    .cast 818 >>|cRXP_WARN_在你的法术书常规标签下创建一个|r |T135805:0|t[基础篝火] |cRXP_WARN_|r
     .usespell 818
     .zoneskip Loch Modan
     .zoneskip Dun Morogh
@@ -8125,7 +8130,7 @@ step << !Hunter
     #optional
     #requires DarkshoreRRCook1
     #completewith MenethilRRBoat
-    >>|cRXP_WARN_你需要 50 点|r |T133971:0|t[烹饪] |cRXP_WARN_技能，以便之后在暮色森林完成一个任务|r
+    >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪] |cRXP_WARN_来完成后续暮色森林的一个任务|r
     >>|T133971:0|t[烹饪]|cRXP_WARN_将|r|T132832:0|t|cRXP_LOOT_[小蛋]|r|cRXP_WARN_和|r|T134059:0|t[甜香料]|cRXP_WARN_制作成|r|T132834:0|t[草药烘蛋]
     .usespell 2550
     .zoneskip Loch Modan
@@ -8159,7 +8164,7 @@ step << !NightElf !Hunter
 step << !NightElf !Hunter
     #xprate <1.59
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
     .fly Ironforge >>飞往铁炉堡
     .target 谢尔雷·布隆迪尔
 
@@ -8178,7 +8183,7 @@ step << !Hunter NightElf
 step << !Hunter NightElf
     #xprate <1.59
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
     .fp Wetlands>>获取湿地的飞行路径
     .target 谢尔雷·布隆迪尔
 step << !Hunter NightElf
@@ -8259,7 +8264,7 @@ step << !Hunter NightElf
     #xprate <1.5
     #softcore
     #completewith next
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << !Hunter NightElf
     #xprate <1.59
     .goto Loch Modan,33.938,50.954
@@ -8307,7 +8312,7 @@ step << !Hunter
     #xprate <1.59
     #completewith next
     .goto Ironforge,67.84,42.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考格斯宾|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_考格斯宾|r 对话
     .vendor >>|cRXP_WARN_购买一个|r |T133024:0|t[青铜管]
     >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_考格斯宾|r 没有库存，请跳过此步骤|r
 --  >>You will need 2 bronze tubes for a quest later << Rogue
@@ -8341,6 +8346,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance !Hunter
 #group RestedXP 联盟 1-20 级
+#groupid RXP-SRGCE-A1
 #name 19-20级 赤脊山
 #next 20-21级 黑海岸/灰谷
 
@@ -8349,7 +8355,7 @@ step
     .goto StormwindClassic,55.21,7.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
     .vendor >>|cRXP_WARN_购买一个|r |T133024:0|t[青铜管]
-    >>|cRXP_WARN_这是限量供应物品，如果 |cRXP_FRIENDLY_比利巴布·旋轮|r 没有库存，请跳过此步骤|r
+    >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_比利巴布·旋轮|r 没有库存，请跳过此步骤|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
     .target 比利巴布·旋轮
@@ -8395,7 +8401,7 @@ step << Paladin
     #label PalTrainer
     .goto StormwindClassic,38.82,31.27,10,0
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .trainer >>训练你的职业技能
     .target 虔诚的亚瑟
 step << Priest !NightElf
@@ -8434,7 +8440,7 @@ step << Rogue
     .goto StormwindClassic,78.67,60.13,5 >>进入军情7处总部。上楼去找 |cRXP_FRIENDLY_"剃刀"雷吉克|r
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"剃刀"雷吉克|r对话
-    .accept 2281 >>接受任务 赤脊山的联络员
+    .accept 2281 >>接受任务赤脊山的联络员
     .goto StormwindClassic,75.76,60.35
     .target Renzik "The Shiv"
 step << Warrior !NightElf
@@ -8468,7 +8474,7 @@ step << Rogue
     >>|cRXP_BUY_购买一个|r |T135342:0|t[波刃短剑] |cRXP_BUY_或从拍卖行购买更好的装备|r
     >>|cRXP_WARN_当你达到19级时装备它|r
     .collect 2209,1 --Kris
-    .target Marda Weller
+    .target 玛尔达·维勒
     .money <0.7115
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.9
 step << Rogue
@@ -8480,7 +8486,7 @@ step << Rogue
     .collect 2209,1 --Kris
     .money <0.7115
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.9
-    .target Marda Weller
+    .target 玛尔达·维勒
 step << Rogue
     #optional
     #completewith next
@@ -8492,9 +8498,9 @@ step << Rogue
 step
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买|T134437:0|t[抗毒药剂] 用于你稍后的 |T132290:0|t[毒药] 职业任务，其余的留着稍后在赤脊山快速交任务 << !Dwarf Rogue
-    >>购买以下物品以便在赤脊山更快地完成任务 << !Rogue/Dwarf Rogue
+    >>购买以下物品，以便稍后在赤脊山更快地完成任务 << !Rogue/Dwarf Rogue
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>|T134437:0|t[抗毒药剂] << !Dwarf Rogue
     >>|T134172:0|t[巨型血牙野猪头]
@@ -8508,7 +8514,7 @@ step
     .dungeon !DM
 step << !Human !Warlock
     #completewith start
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .goto StormwindClassic,66.27,62.12
     .fp Stormwind >>开启暴风城的飞行点
     .target 杜加尔·朗德瑞克
@@ -8520,7 +8526,7 @@ step << !NightElf
 .dungeon DM
     #completewith next
     .goto StormwindClassic,66.27,62.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Westfall >>飞往西部荒野
     .target 杜加尔·朗德瑞克
     .zoneskip Westfall
@@ -8597,7 +8603,7 @@ step << !NightElf
     #xprate <1.5 << !Human
     #completewith next
     .goto StormwindClassic,66.27,62.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Redridge >>飞往赤脊山
     .target 杜加尔·朗德瑞克
 step << !Human !Warlock
@@ -8615,13 +8621,13 @@ step << !Human !Warlock
 step << !Human !Warlock
     #xprate >1.49 << Gnome/Dwarf
     .goto Redridge Mountains,30.73,59.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
     .turnin 244 >>交任务豺狼人的入侵
     .target 菲尔顿副队长
 step << NightElf
     #xprate <1.5
     .goto Redridge Mountains,30.73,59.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
     .target 菲尔顿副队长
     .accept 246 >>接受任务 审时度势
 step
@@ -8649,7 +8655,7 @@ step
 .dungeon DM
     #completewith next
     .goto Redridge Mountains,30.59,59.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
     .fly Westfall >>飞往西部荒野
     .target 艾蕾娜·斯托姆法瑟
 step
@@ -8676,7 +8682,7 @@ step
 step
 .dungeon DM
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Westfall >>飞往西部荒野
     .target 杜加尔·朗德瑞克
 step
@@ -8864,8 +8870,8 @@ step << Warlock
 step << Warlock
 .dungeon DM
     .goto StormwindClassic,25.25,78.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
-    .accept 1716 >>接受任务噬魂者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
+    .accept 1716 >>接受任务 噬魂者
     .target 黑暗缚灵者加科因
     .xp <20,1
 step
@@ -8896,20 +8902,20 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话。他会给你 |T133739:0|t[|cRXP_LOOT_勇气之书|r]
     use 6776 >>|cRXP_WARN_Use the |T133739:0|t[|cRXP_LOOT_Tome of Valor|r] to start the quest|r
     .collect 6776,1,1649 --Tome of Valor (1)
-    .accept 1649 >>接受任务 勇气之书
+    .accept 1649 >>接受任务勇气之书
     .target 达索瑞恩·拉尔
 step << Paladin
 .dungeon DM
     .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
     .turnin 1649 >>交任务 勇气之书
-    .accept 1650 >>接受任务 勇气之书
+    .accept 1650 >>接受任务勇气之书
     .target 达索瑞恩·拉尔
 step << Paladin
 .dungeon DM
     .goto StormwindClassic,38.82,31.27,10,0
     .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .trainer >>训练你的职业技能
     .target 虔诚的亚瑟
 step << Priest
@@ -8971,7 +8977,7 @@ step << Rogue
     >>|cRXP_WARN_购买一把|r |T135324:0|t[长剑] |cRXP_WARN_，21级时装备上|r
     >>|cRXP_WARN_如果拍卖行有更便宜或更好的装备就购买它|r
     .collect 923,1 --Longsword (1)
-    .target Marda Weller
+    .target 玛尔达·维勒
     .money <0.8743
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
 step << Rogue
@@ -8981,7 +8987,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
     >>|cRXP_WARN_购买一把|r |T135324:0|t[长剑] |cRXP_WARN_，21级时装备上|r
     .collect 923,1 --Longsword (1)
-    .target Marda Weller
+    .target 玛尔达·维勒
     .money <0.8743
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
 step << Rogue
@@ -9034,9 +9040,9 @@ step
 step
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买|T134437:0|t[抗毒药剂] 用于你稍后的 |T132290:0|t[毒药] 职业任务，其余的留着稍后在赤脊山快速交任务 << !Dwarf Rogue
-    >>购买以下物品以便在赤脊山更快地完成任务 << !Rogue/Dwarf Rogue
+    >>购买以下物品，以便稍后在赤脊山更快地完成任务 << !Rogue/Dwarf Rogue
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>|T134437:0|t[抗毒药剂] << !Dwarf Rogue
     >>|T134172:0|t[巨型血牙野猪头]
@@ -9109,7 +9115,7 @@ step
 .dungeon DM
     #xprate <1.5
     .goto Redridge Mountains,30.73,59.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
     .turnin 244 >>交任务豺狼人的入侵
     .target 菲尔顿副队长
 
@@ -9118,7 +9124,7 @@ step
     #label BMenace
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
     .goto Redridge Mountains,33.50,48.97
-    .accept 20 >>接受任务黑石氏族的威胁
+    .accept 20 >>接受任务 黑石氏族的威胁
     .target 治安官马瑞斯
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_工头奥斯洛|r 对话
@@ -9165,7 +9171,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_码头管理员巴伦|r 对话
 	.target 码头管理员巴伦
     .goto Redridge Mountains,27.70,47.40
-    .accept 127 >>接受任务卖鱼
+    .accept 127 >>接受任务 卖鱼
 step
 #xprate <1.5
     .goto Redridge Mountains,26.80,44.40
@@ -9273,7 +9279,7 @@ step
     .accept 130 >>接受任务 寻访草药师
 step
     #xprate <1.5
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
 	.target 菲尔顿副队长
     .goto Redridge Mountains,30.70,60.00
     .turnin 244 >>交任务豺狼人的入侵
@@ -9362,7 +9368,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
 	.target 治安官马瑞斯
     .goto Redridge Mountains,33.50,48.97
-    .turnin 20 >>交任务黑石氏族的威胁
+    .turnin 20 >>交任务 黑石氏族的威胁
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_工头奥斯洛|r 对话
 	.target Foreman Oslow
@@ -9375,7 +9381,7 @@ step
     .goto Redridge Mountains,27.72,47.38
     .turnin 127 >>交任务卖鱼
     .accept 150 >>接受任务 鱼人偷猎者
-    .turnin 150 >>交任务鱼人偷猎者
+    .turnin 150 >>交任务 鱼人偷猎者
     .xp <20,1
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_码头管理员巴伦|r 对话
@@ -9422,7 +9428,7 @@ step << Rogue
 	.destroy 7907 >>摧毁 |T134328:0|t[偷窃技能认证书]。你不需要它了
 step
     #xprate <1.5
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
 	.target 菲尔顿副队长
     .goto Redridge Mountains,30.73,59.99
     .turnin 246 >>交任务 审时度势
@@ -9434,7 +9440,7 @@ step << Rogue
     #softcore
     .isOnQuest 2360
     .goto Redridge Mountains,30.59,59.42
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
     .fp Redridge Mountains >>获取赤脊山的飞行路径 << !Human
     .fly Westfall >>飞往西部荒野
     .target 艾蕾娜·斯托姆法瑟
@@ -9442,7 +9448,7 @@ step
 .dungeon !DM << Rogue
     #completewith InRR
     .goto Redridge Mountains,30.59,59.42
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
 	.target 艾蕾娜·斯托姆法瑟
     .fp Redridge Mountains >>获取赤脊山的飞行路径 << !Human !Warlock
     .fly Stormwind >>飞往暴风城
@@ -9454,7 +9460,7 @@ step << Rogue
     >>|cRXP_WARN_购买一把|r |T135324:0|t[长剑] |cRXP_WARN_，21级时装备上|r
     >>|cRXP_WARN_如果拍卖行有更便宜或更好的装备就购买它|r
     .collect 923,1 --Longsword (1)
-    .target Marda Weller
+    .target 玛尔达·维勒
     .money <0.8743
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
 step << Rogue
@@ -9464,7 +9470,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
     >>|cRXP_WARN_购买一把|r |T135324:0|t[长剑] |cRXP_WARN_，21级时装备上|r
     .collect 923,1 --Longsword (1)
-    .target Marda Weller
+    .target 玛尔达·维勒
     .money <0.8743
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
 step << Rogue
@@ -9519,8 +9525,8 @@ step << Warlock
     .target 厄苏拉·德林
 step << Warlock
     .goto StormwindClassic,25.25,78.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
-    .accept 1716 >>接受任务噬魂者
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
+    .accept 1716 >>接受任务 噬魂者
     .target 黑暗缚灵者加科因
 step << Mage
 .dungeon !DM
@@ -9567,18 +9573,18 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话。他会给你 |T133739:0|t[|cRXP_LOOT_勇气之书|r]
     use 6776 >>|cRXP_WARN_Use the |T133739:0|t[|cRXP_LOOT_Tome of Valor|r] to start the quest|r
     .collect 6776,1,1649 --Tome of Valor (1)
-    .accept 1649 >>接受任务 勇气之书
+    .accept 1649 >>接受任务勇气之书
     .target 达索瑞恩·拉尔
 step << Paladin
 .dungeon !DM
     .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
     .turnin 1649 >>交任务 勇气之书
-    .accept 1650 >>接受任务 勇气之书
+    .accept 1650 >>接受任务勇气之书
     .target 达索瑞恩·拉尔
 step << Paladin
 .dungeon !DM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .goto StormwindClassic,38.82,31.27,10,0
     .goto StormwindClassic,38.67,32.82
     .trainer >>训练你的职业技能
@@ -9636,7 +9642,7 @@ step << NightElf Rogue
     .isOnQuest 2360
 step << !NightElf Rogue
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Westfall >>飞往西部荒野
     .target 杜加尔·朗德瑞克
 step << !Dwarf Rogue
@@ -9664,7 +9670,7 @@ step << Rogue
     .goto Westfall,68.50,70.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_密探吉尔妮|r 对话
     >>|cRXP_WARN_你必须完成这个任务来获取你的|r|T132290:0|t[毒药]
-    .turnin 2360 >>交任务马迪亚斯和迪菲亚盗贼
+    .turnin 2360 >>交任务 马迪亚斯和迪菲亚盗贼
     .accept 2359 >>接受任务 克拉文之塔
     .target Agent Kearnen
 step << Rogue
@@ -9681,7 +9687,7 @@ step << Rogue
     >>|cRXP_WARN_|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 出现在塔楼入口处，随后会在塔楼外侧巡逻|r
     >>|cRXP_WARN_小心，他伤害很高。如果你的|r |T132320:0|t[潜行] |cRXP_WARN_被打破，立刻使用|r |T132307:0|t[疾跑] |cRXP_WARN_逃离|r
     .complete 2359,2 --Collect Defias Tower Key (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
     .mob Malformed Defias Drone
 step << Rogue
     #optional
@@ -9699,7 +9705,7 @@ step << Rogue
     >>|cRXP_WARN_如果你的背包中或已装备|r |T135641:0|t[匕首] |cRXP_WARN_，你可以施放|r |T132282:0|t[伏击] |cRXP_WARN_对付里面的 |cRXP_ENEMY_迪菲亚巡塔员|r 和 |cRXP_ENEMY_迪菲亚哨兵|r，从而瞬间击杀他们。击杀第一个 |cRXP_ENEMY_迪菲亚哨兵|r 后请做好逃跑准备，并记住你可能会从上方被攻击。这种方法更慢，但安全性高得多|r
     >>|cRXP_WARN_注意，如果你需要跑出塔楼，|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 和 |cRXP_ENEMY_迪菲亚苦工|r 可能会在塔楼入口处|r
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
     .mob Defias Tower Patroller
     .mob Defias Tower Sentry
 step << !Dwarf Rogue
@@ -9856,7 +9862,7 @@ step
     .goto Redridge Mountains,27.72,47.38
     .turnin 127 >>交任务卖鱼
     .accept 150 >>接受任务 鱼人偷猎者
-    .turnin 150 >>交任务鱼人偷猎者
+    .turnin 150 >>交任务 鱼人偷猎者
 step
 #optional
 #xprate >1.49
@@ -9992,6 +9998,7 @@ RXPGuides.RegisterGuide([[
 #season 0
 << Alliance Hunter
 #group RestedXP 联盟 1-20 级
+#groupid RXP-SRGCE-A1
 #name 19-21级 黑海岸/灰谷
 #next RestedXP 联盟 20-30\21-23 灰谷/石爪山脉
 
@@ -10097,14 +10104,14 @@ step
     >>这将开始一个护送
     .accept 731,1 >>接受任务 健忘的勘察员
     >>|cRXP_WARN_这个任务非常困难。如果你无法找到队伍或单独完成，请跳过此步骤|r
-    .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_点击此处观看视频指南|r
+    .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_点击此处查看视频指南|r
     .target 勘察员雷塔维
     .isQuestAvailable 731
 step
     #requires prospector
     >>|cRXP_WARN_护送 |cRXP_FRIENDLY_勘察员雷塔维|r 穿过挖掘场|r
     >>|cRXP_WARN_这个任务非常困难。如果你无法找到队伍或单独完成，请跳过此步骤|r
-    .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_点击此处观看视频指南|r
+    .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_点击此处查看视频指南|r
     .complete 731,1
     .isOnQuest 731
 step
@@ -10233,7 +10240,7 @@ step
 step
 	#xprate >1.49
     .goto Darkshore,44.44,84.69
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 995,1 --Help Volcor escape the cave (1)
     .isQuestTurnedIn 993
 step
@@ -10283,7 +10290,7 @@ step
     .complete 5321,2
     .isOnQuest 5321
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利拉迪斯·月河|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_利拉迪斯·月河|r 对话
 	.target Liladris Moonriver
     .goto Ashenvale,27.26,35.58
     .turnin 5321 >>交任务 苏醒者已醒
@@ -10545,7 +10552,7 @@ step
 step
     #xprate <1.59
     .goto Ashenvale,14.20,20.64
-    >>拾取地上的 |cRXP_LOOT_古代雕像|r
+    >>拾取地上的 |cRXP_LOOT_古代小雕像|r
     .complete 1007,1
 step
     #xprate <1.59
@@ -10713,7 +10720,7 @@ step
 step << Hunter
     .goto Darnassus,40.377,8.545
     .target 祖卡斯特
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_祖卡斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖卡斯特|r 对话
     .trainer >>训练你的职业技能
     .xp <22,1
 step
@@ -10730,6 +10737,7 @@ step << Dwarf Hunter
     #xprate <1.59
 -- #xprate >1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊琳尼雅·月火|r 对话
+    .skipgossip 11866,1
     .goto Darnassus,57.56,46.72
     .train 264 >>学习 弩
     .train 227 >>学习法杖
@@ -10783,6 +10791,7 @@ RXPGuides.RegisterGuide([[
 << Alliance !Hunter
 #season 0
 #group RestedXP 联盟 1-20 级
+#groupid RXP-SRGCE-A1
 #name 20-21级 黑海岸/灰谷
 #next RestedXP 联盟 20-30\21-23 石爪山脉/灰谷;RestedXP 联盟 20-30\21-22 灰谷 探索赛季
 
@@ -10806,7 +10815,7 @@ step
     .hs >>炉石回到奥伯丁
 step
     .goto Darkshore,37.21,44.22
-    >>点击 |cRXP_PICK_通缉布告|r
+    >>点击 |cRXP_PICK_通缉告示|r
     .accept 4740 >>接受任务 通缉：莫克迪普！
 step
     .goto 1439,37.322,43.640
@@ -10898,7 +10907,7 @@ step
 step
     #xprate >1.49
     .goto Darkshore,44.44,84.69
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 995,1 --Help Volcor escape the cave (1)
     .isOnQuest 995
 step
@@ -10994,14 +11003,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勘察员雷姆塔维尔|r 对话。这将开始一个护送任务
     .accept 731,1 >>接受任务 健忘的勘察员
     >>|cRXP_WARN_这个任务非常困难。如果你无法找到队伍或单独完成，请跳过此步骤|r
-    .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_点击此处观看视频指南|r
+    .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_点击此处查看视频指南|r
     .target 勘察员雷塔维
     .isQuestAvailable 731
 step
     #requires prospector
     >>|cRXP_WARN_护送 |cRXP_FRIENDLY_勘察员雷塔维|r 穿过挖掘场|r
     >>|cRXP_WARN_这个任务非常困难。如果你无法找到队伍或单独完成，请跳过此步骤|r
-    .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_点击此处观看视频指南|r
+    .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_点击此处查看视频指南|r
     .complete 731,1
     .isOnQuest 731
 step
@@ -11189,7 +11198,7 @@ step
 #xprate <1.5
     #label volcorEnd
     .goto Darkshore,44.44,84.69
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 995,1
     .isOnQuest 995
 step -- adjusted to heading there straight from southern most beached sea creature
@@ -11212,7 +11221,7 @@ step
     .isOnQuest 5321
 step
 #xprate <1.5
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利拉迪斯·月河|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_利拉迪斯·月河|r 对话
 	.target Liladris Moonriver
     .goto Ashenvale,27.26,35.58
     .turnin 5321 >>交任务 苏醒者已醒
@@ -11287,7 +11296,7 @@ step
     .goto Ashenvale,31.89,22.53
     >>打开地上的 |cRXP_PICK_植物捆|r，拾取其中的 |cRXP_LOOT_巴斯兰的毛发|r
     >>|cRXP_WARN_它们看起来像小型的棕色袋子，可能会半埋在地面中，因此不太容易发现|r
-    >>|cRXP_WARN_请确保已启用|r |T134916:0|t[寻找草药] |cRXP_WARN_，这样才能在小地图上看到它们|r
+    >>|cRXP_WARN_确保你的|r |T134916:0|t[寻找草药] |cRXP_WARN_已启用，以便在小地图上看到它们|r
     .complete 1010,1 --Bathran's Hair (5)
     .isOnQuest 1010
     .skill herbalism,<1,1
@@ -11342,7 +11351,7 @@ step
     .goto Ashenvale,31.89,22.53
     >>打开地上的 |cRXP_PICK_植物捆|r，拾取其中的 |cRXP_LOOT_巴斯兰的毛发|r
     >>|cRXP_WARN_它们看起来像小型的棕色袋子，可能会半埋在地面中，因此不太容易发现|r
-    >>|cRXP_WARN_请确保已启用|r |T134916:0|t[寻找草药] |cRXP_WARN_，这样才能在小地图上看到它们|r
+    >>|cRXP_WARN_确保你的|r |T134916:0|t[寻找草药] |cRXP_WARN_已启用，以便在小地图上看到它们|r
     .complete 1010,1 --Bathran's Hair (5)
     .skill herbalism,<1,1
 step

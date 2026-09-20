@@ -50,7 +50,7 @@ step << Warrior
 step << Shaman
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米拉|r 对话
-    .train 8017 >>学习 |T136086:0|t[石化武器]
+    .train 8017 >>影袭 |T136086:0|t[石化武器]
     .target 米拉·晨行者
 step
     #completewith next
@@ -105,7 +105,7 @@ step
     .goto Mulgore,44.18,76.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鹰风酋长|r 对话
     .turnin 753 >>交任务 一件琐事
-    .accept 755 >>接受任务 大地之母仪祭
+    .accept 755 >>接受任务 大地母亲的仪式
     .target 鹰风酋长
 step << Shaman
     .goto Mulgore,44.07,77.47
@@ -236,7 +236,7 @@ step << Shaman
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米拉|r 对话
     .turnin 3093 >>交任务 符文便笺
-    .train 8042 >>学习 |T136026:0|t[大地震击]
+    .train 8042 >>影袭 |T136026:0|t[大地震击]
     .target 米拉·晨行者
 step
     #loop
@@ -352,7 +352,7 @@ step
     .goto Mulgore,44.73,76.18 << Shaman
     .turnin 781 >>交任务 纳拉其营地的危机
     .turnin 757 >>交任务 力量仪祭
-    .accept 763 >>接受任务 大地之母仪祭
+    .accept 763 >>接受任务 大地母亲的仪式
     .target 鹰风酋长
     .goto Mulgore,44.18,76.07
 step << Shaman
@@ -658,7 +658,7 @@ step
     .unitscan 断矛
 step
     .goto Mulgore,47.63,61.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加纳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhawna|r
     >>|cRXP_BUY_购买|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_从她那里|r << Shaman/Druid
     >>|cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_从她那里r|r << Warrior
     .vendor >>把垃圾物品卖给商人
@@ -899,7 +899,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Hunter
     .goto Mulgore,45.86,57.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r 洛拉特|cRXP_FRIENDLY_ 对话|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Moorat|r
     .collect 2516,1000,743,1 << Hunter --Light Shot (1000)
     .target 姆拉特·远行
     .itemcount 2512,<800 << Hunter
@@ -1294,7 +1294,7 @@ step << !Tauren
     .goto Mulgore,48.71,59.32
     .isQuestComplete 761
 step << !Tauren
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Baine|r 和 |cRXP_FRIENDLY_卢尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝恩|r 和 |cRXP_FRIENDLY_卢尔|r对话
     .turnin 746 >>交任务 矮人的挖掘场
     .target 贝恩·血蹄
     .goto Mulgore,47.51,60.16
@@ -1394,7 +1394,7 @@ step << Hunter
     .target 雅文·刺鬃
 step
     .goto Mulgore,47.63,61.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加纳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhawna|r
     >>|cRXP_BUY_购买|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_从她那里|r << Shaman/Druid
     >>|cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_从她那里r|r << Warrior
     .collect 1179,20,818,1 << Shaman/Druid --Ice Cold Milk (20)
@@ -1415,8 +1415,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_摩林|r 对话
     >>|cRXP_WARN_他沿着东侧道路巡逻|r
     .turnin 751 >>交任务 被破坏的货车
-    .accept 764 >>风险投资公司
-    .accept 765 >>菲兹普罗克主管
+    .accept 764 >>接受任务 风险投资公司
+    .accept 765 >>接受任务 菲兹普罗克主管
 	.unitscan 摩林·云行者
     .group
 step
@@ -1498,7 +1498,7 @@ step << Hunter
     .goto Mulgore,67.62,59.06,50,0
     .goto Mulgore,66.34,67.01,50,0
     .cast 1515 >>驯服1只|cRXP_ENEMY_草原狼前锋|r
-    >>|cRXP_WARN_这将使你能够学习|r |T132140:0|t[爪击（等级 2）]
+    >>|cRXP_WARN_这将允许你学会|r |T132278:0|t[撕咬等级 2]
     .mob 草原狼前锋
 step
     #completewith next
@@ -1531,7 +1531,7 @@ step
     .target 加兹罗格
     .goto The Barrens,51.93,30.32
     .turnin 854 >>交任务 十字路口之旅 << Tauren
-    .accept 871 >>接受任务 保卫前沿哨所
+    .accept 871 >>接受任务 野猪人的袭击
     .accept 5041 >>接受任务 十字路口的补给品
     .target 索克
     .goto The Barrens,51.50,30.87
@@ -1618,7 +1618,7 @@ step << Druid
 step << Druid
     .goto Moonglade,56.21,30.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特|r 对话
-    .turnin 5930 >>交任务  巨熊之灵
+    .turnin 5930 >>交任务 巨熊之灵
     .accept 5932 >>接受任务 返回雷霆崖
     .target 德迪利特·星焰
 step << Druid
@@ -1769,7 +1769,7 @@ step << Tauren Hunter
 step << Shaman
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡纳尔|r 对话
-    .turnin 2984 >>交任务 火焰的召唤
+    .turnin 2984 >>交任务  火焰的召唤
     .accept 1524 >>接受任务 火焰的召唤
     .target 卡纳尔·菲斯
 step << Shaman
@@ -1794,7 +1794,7 @@ step << Shaman
     #label CallofFire2
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰尔夫|r 对话
-    .turnin 1524 >>交任务 火焰的召唤
+    .turnin 1524 >>交任务  火焰的召唤
     .accept 1525 >>接受任务 火焰的召唤
     .target 泰尔夫·祖拉姆
 step << Shaman
@@ -2610,7 +2610,7 @@ step << Hunter
     .target 哈纳什
 step << Hunter
     .goto Orgrimmar,81.17,18.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|T135499:0|t|cRXP_BUY_与|r |cRXP_FRIENDLY_森度吉安|r|cRXP_BUY_交谈。从他那里购买一把|r |T135499:0|t|T135499:0|t[多层弯弓] |cRXP_BUY_|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_森度吉安|r|cRXP_BUY_交谈。从他那里购买一把|r |T135499:0|t[多层弯弓] |cRXP_BUY_|r
     .collect 2507,1,813,1 --Collect Laminated Recurve Bow (1)
     .money <0.1751
     .itemStat 18,QUALITY,<7
@@ -2724,7 +2724,7 @@ step << Shaman
     #label CallofFire3
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰尔夫|r 对话
-    .turnin 1525 >>交任务 火焰的召唤
+    .turnin 1525 >>交任务  火焰的召唤
     .accept 1526 >>接受任务 火焰的召唤
     .target 泰尔夫·祖拉姆
 step << Shaman
@@ -2740,7 +2740,7 @@ step << Shaman
 step << Shaman
     .goto Durotar,38.96,58.22
     >>点击地上的 |cRXP_PICK_火盆|r
-    .turnin 1526 >>交任务 火焰的召唤
+    .turnin 1526 >>交任务  火焰的召唤
     .accept 1527 >>接受任务 火焰的召唤
 step << Shaman
     #completewith next
@@ -2797,7 +2797,7 @@ step
 step << Shaman
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡纳尔|r 对话
-    .turnin 1527 >>交任务 火焰的召唤
+    .turnin 1527 >>交任务  火焰的召唤
     .target 卡纳尔·菲斯
 step << Shaman
     .goto The Barrens,55.78,20.00
@@ -2902,7 +2902,7 @@ step << Tauren
     .target 瑟格拉·黑棘
     .goto The Barrens,52.23,31.00
     .turnin 871 >>交任务  前沿哨所的进攻
-    .accept 872 >>接受任务 保卫前沿哨所
+    .accept 872 >>接受任务 野猪人的袭击
     .target 索克
     .goto The Barrens,51.50,30.87
 step
@@ -2967,7 +2967,7 @@ step << Shaman/Warrior
     #completewith ReturntoJahan2
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔尔|r 对话
-    .fly Crossroads >>飞往十字路口
+    .fly Crossroads >>飞往十字路口，北贫瘠之地
     .target 塔尔
     .cooldown item,6948,<0
     .zoneskip The Barrens
@@ -3008,7 +3008,7 @@ step
     .isQuestAvailable 812
 step << Hunter
     .goto Orgrimmar,81.17,18.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|T135499:0|t|cRXP_BUY_与|r |cRXP_FRIENDLY_森度吉安|r|cRXP_BUY_交谈。从他那里购买一把|r |T135499:0|t|T135499:0|t[多层弯弓] |cRXP_BUY_|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_森度吉安|r|cRXP_BUY_交谈。从他那里购买一把|r |T135499:0|t[多层弯弓] |cRXP_BUY_|r
     .collect 2507,1,398,1 --Collect Laminated Recurve Bow (1)
     .money <0.1751
     .itemStat 18,QUALITY,<7
@@ -3084,7 +3084,7 @@ step << Warrior
 step
     #label SlumberSandPickup
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
     .accept 367 >>接受任务 新的瘟疫
     .accept 445 >>接受任务 给银松森林送信
     .target 药剂师乔汉
@@ -3128,14 +3128,14 @@ step
     >>|TInterface/GossipFrame/HealerGossipIcon:0|t点击 |cRXP_PICK_通缉布告|r
     .accept 398 >>接受任务 悬赏：蛆眼
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
     .turnin 367 >>交任务 新的瘟疫
     .accept 368 >>接受任务 新的瘟疫
     .goto Tirisfal Glades,59.45,52.40
     .target 药剂师乔汉
     .isQuestComplete 367
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
     .accept 368 >>接受任务 新的瘟疫
     .goto Tirisfal Glades,59.45,52.40
     .target 药剂师乔汉
@@ -3176,7 +3176,7 @@ step
     .subzoneskip 159
 step
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
     .turnin 368 >>交任务 新的瘟疫
     .target 药剂师乔汉
     .isQuestComplete 368
@@ -3217,7 +3217,7 @@ step
 step
     #label UCflightpath2
     .goto Undercity,63.25,48.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     >>|cRXP_WARN_若已解锁飞行点，请跳过此步骤！|r
     .fp Undercity >>获得幽暗城的飞行路径
     .target 迈克尔·加勒特

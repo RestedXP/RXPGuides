@@ -120,10 +120,10 @@ step
     .target 特伦希斯
 step
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古博·布拉普|r 对话
     .goto Darkshore,36.096,44.931
     .accept 1141 >>接受任务 钓鱼世家
-    .turnin 1141 >>交任务《钓鱼世家》
+    .turnin 1141 >>交任务 钓鱼世家
     .itemcount 12238,6 -- Darkshore Grouper (6)
     .target 古博·布拉普
 step
@@ -209,7 +209,7 @@ step
 step << !Warrior !Rogue
     #completewith next
     .goto Darkshore,37.45,40.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达蒙德|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达蒙德|r 对话
     .vendor >>|cRXP_WARN_购买尽可能多的|r |T133634:0|t|T133634:0|t[棕色小包] |cRXP_WARN_根据需要|r
     >>|cRXP_WARN_购买|r |T132382:0|t|T132384:0|t[锋利的箭矢] |cRXP_WARN_或|r |T132384:0|t|T132384:0|t[重型弹丸] << Hunter
     .target Dalmond
@@ -272,6 +272,7 @@ step << NightElf Warrior
     .target 阿雷亚斯塔·刃歌
 step << NightElf Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊琳尼雅·月火|r 对话
+    .skipgossip 11866,1
     .goto Darnassus,57.56,46.72
     .train 2567 >>训练 投掷武器
     .target 伊琳尼雅·月火
@@ -297,7 +298,7 @@ step << NightElf Rogue
 step << NightElf Hunter
     #completewith start
     .goto Darnassus,40.377,8.545
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_祖卡斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖卡斯特|r 对话
     .trainer >>训练你的职业技能
     .target 祖卡斯特
 step
@@ -511,7 +512,7 @@ step
     >>|cRXP_WARN_在等待米奈希尔港的船只时，提升你的|r|T135966:0|t[急救]|cRXP_WARN_等级|r
 step
     .goto Wetlands,9.490,59.694
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
     .fp Menethil Harbor >>获取米奈希尔港的飞行路径
     .target 谢尔雷·布隆迪尔
 step
@@ -595,7 +596,7 @@ step
     .goto StormwindClassic,55.724,65.401
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_凯德雷克·布舍尔|r 对话
     .vendor >>|cRXP_BUY_如果有货，|r|cRXP_BUY_就购买|r |T134830:0|t[次级治疗药水]
-    .target Keldric Boucher
+    .target 凯德雷克·布舍尔
     .zoneskip Ironforge
     .subzoneskip 809
     .subzoneskip 2257
@@ -604,7 +605,7 @@ step
     .goto StormwindClassic,63.301,62.103,30,0
     .goto StormwindClassic,63.047,65.744,15,0
     .goto StormwindClassic,66.276,62.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >>获取暴风城的飞行路径
     .target 杜加尔·朗德瑞克
     .zoneskip Ironforge
@@ -666,7 +667,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 交谈
     >>购买以下物品，以便在洛克莫丹稍后更快地交任务
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>|T134342:0|t[猪大肠]
@@ -906,7 +907,7 @@ step << Paladin/Warrior
     .vendor >>|cRXP_FRIENDLY_尼尔伦·安德玛|r |cRXP_WARN_出售|r |T133476:0|t[|cRXP_FRIENDLY_重型尖刺钉锤|r] |cRXP_WARN_该物品为限量供应|r
     >>|cRXP_WARN_检查是否有货并在能买的情况下购买。如果你买不起，可以在附近的|cRXP_ENEMY_隧道老鼠|r身上刷钱，直到攒够为止|r
     >>|cRXP_WARN_动作要快，否则其他玩家可能会在你之前买下它|r
-    .target Nillen Andemar
+    .target 尼尔伦·安德玛
 step
     .goto Loch Modan,25.05,30.19,0
     .goto Loch Modan,26.06,43.44,0
@@ -1085,7 +1086,7 @@ step << Priest
     .collect 5208,1 --Smoldering Wand (1)
     .target Ardwyn Cailen
 step << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话
     .goto Ironforge,25.204,10.749
     .trainer >>训练你的职业技能
     .target 托德雷·铁矿
@@ -1112,7 +1113,7 @@ step << Warrior
 step << Warrior
     .goto Ironforge,61.170,89.539
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布里维夫·石拳|r 对话
-    .train 199 >>训练双手锤
+    .train 199 >>学习双手锤
     .target 布里维夫·石拳
 step << Warrior
     .goto Ironforge,62.551,88.699
@@ -1166,7 +1167,7 @@ step << Druid
 step << Druid
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>如果你不打算选择|T136065:0|t[草药学]作为主要专业，就购买5个|T134187:0|t[地根草]用于后续任务
     >>购买以下物品，以便稍后在西部荒野更快地交任务
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
@@ -1187,7 +1188,7 @@ step << Druid
 step << !Druid
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买以下物品，以便稍后在西部荒野更快地交任务
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>|T133972:0|t[秃鹫肉条]
@@ -1207,10 +1208,10 @@ step
     .goto StormwindClassic,55.724,65.401
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_凯德雷克·布舍尔|r 对话
     .vendor >>|cRXP_BUY_如果有货，|r|cRXP_BUY_就购买|r |T134830:0|t[次级治疗药水]
-    .target Keldric Boucher
+    .target 凯德雷克·布舍尔
 step
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fp Stormwind >>获取暴风城的飞行路径
     .target 杜加尔·朗德瑞克
 ]])

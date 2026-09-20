@@ -521,7 +521,7 @@ step
     .goto Thunder Bluff,45.23,59.40,0
     .goto Thunder Bluff,40.41,51.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
-    >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t|T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
+    >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
     .target Auctioneer Stampi
     .train 410104,1
@@ -580,7 +580,7 @@ step
     #label Fish
     #requires Kah
     .goto Thunder Bluff,40.42,58.55
-    >>在池塘里钓鱼，直到获得一条|T133894:0|t[|cRXP_LOOT_新鲜的美味小鱼|r]
+    >>在池塘里钓鱼，直到获得一条|T133894:0|t|T133894:0|t[|cRXP_LOOT_新鲜的美味小鱼|r]
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
     .train 410104,1
     .xp <4,1
@@ -2389,10 +2389,10 @@ step
     .collect 213553,1
 step
     #completewith next
-    .zone Orgrimmar >>前往 |cFFfa9602奥格瑞玛|r
+    .zone Orgrimmar >>前往|cFFfa9602奥格瑞玛|r
 step
     .goto Orgrimmar,38.94,38.39
-    .gossip 4047 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_佐尔·孤树|r 对话并选择对话选项
+    .gossip 4047 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_佐尔·孤树|r 对话并选择对话选项
     -- .gossipoption --x insert id
     .target 佐尔·孤树
 step
@@ -2470,7 +2470,7 @@ step
 step
     .train 410100,1
     .goto Alterac Mountains,80.499,66.923
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_捕风者巴斯拉 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_捕风者巴斯拉|r 对话
     .turnin 79360 >>交任务 元素援助
     .accept 79361 >>接受任务 风之力量
     .accept 79362 >>接受任务 地之力量
@@ -2547,7 +2547,7 @@ step
 step
     .train 410100,1
     .goto Alterac Mountains,80.499,66.923
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_捕风者巴斯拉 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_捕风者巴斯拉|r 对话
     .turnin 79361 >>交任务 风之力量
     .turnin 79362 >>交任务 地之力量
     .turnin 79363 >>交任务 水之力量
@@ -2596,7 +2596,7 @@ step
 step
     .train 410100,1
     .goto Alterac Mountains,80.499,66.923
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_捕风者巴斯拉 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_捕风者巴斯拉|r 对话
     .turnin 79442 --Catching up
     .target 捕风者巴斯拉
 step

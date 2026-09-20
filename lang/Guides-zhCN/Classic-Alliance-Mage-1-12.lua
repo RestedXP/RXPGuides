@@ -797,7 +797,7 @@ step
     .turnin 419 >>交任务 失踪的驾驶员
     .accept 417 >>接受任务 驾驶员的复仇
 step
-    >>击杀癞爪，拾取它的爪子
+    >>击杀癞爪。拾取它的爪子
     .goto Dun Morogh,80.0,36.4
     .complete 417,1 --Collect Mangy Claw (x1)
 step
@@ -1173,7 +1173,7 @@ step
     #label Evershine
     .goto Dun Morogh,30.2,45.8
 >>与|cRXP_FRIENDLY_雷杰德·麦酒|r 对话
-    .turnin 318 >>交任务《 前往熔光镇》 艾沃沙酒
+    .turnin 318 >>交任务 艾沃沙酒
 .target 雷杰德·麦酒
     .accept 319 >>接受任务 艾沃沙酒
     .accept 315 >>接受任务 完美烈酒

@@ -994,7 +994,7 @@ step
     .goto Stormwind City,55.46,65.26
     >>与 |cRXP_FRIENDLY_凯德雷克·布舍尔|r 对话
     .vendor 1257 >>|cRXP_BUY_购买|r |T134830:0|t|T134830:0|t[次级治疗药水] |cRXP_BUY_从他那里（如果有货的话）|r
-    .target Keldric Boucher
+    .target 凯德雷克·布舍尔
 step << skip
     #completewith next
     .goto Stormwind City,51.68,59.86,8,0
@@ -1091,7 +1091,7 @@ step
     .goto Ironforge,55.49,47.74,10 >>前去找 |cRXP_FRIENDLY_格莱斯|r
 step
     .goto Ironforge,55.50,47.74
-    >>与|cRXP_FRIENDLY_格莱斯|r 对话
+    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
     .fp Ironforge >>获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
 step
@@ -1294,7 +1294,7 @@ step
     #label Shortcut1
     #completewith Pilot
     .goto Dun Morogh,70.35,55.28,5,0
-    .link https://youtu.be/G2IscpFZVeQ?t=4034 >>https://youtu.be/G2IscpFZVeQ?t=4034 >>|cRXP_WARN_遇到困难请点击这里|r
+    .link https://youtu.be/G2IscpFZVeQ?t=4034 >>https://youtu.be/G2IscpFZVeQ?t=4034 >>|cRXP_WARN_遇到困难，请点击这里|r
     .goto Dun Morogh,70.52,54.75,12 >>走 |cRXP_FRIENDLY_丹克|r 身后的捷径
 step
     #completewith Pilot
@@ -1960,7 +1960,7 @@ step
 	.goto Dun Morogh,49.09,54.74,40,0
 	.goto Dun Morogh,49.61,54.32,40,0
 	.goto Dun Morogh,51.43,53.21,40,0
-    .xp 5+2690 >>刷怪达到2690+/2800经验
+    .xp 5+2690 >>刷怪达到 2690+/2800 经验
     .mob 黑熊幼崽
     .mob 峭壁野猪
 step
@@ -2225,7 +2225,7 @@ step
     .mob 冰爪熊
 step
     >>与 |cRXP_FRIENDLY_雷杰德|r 和 |cRXP_FRIENDLY_马莱斯|r 对话
-    .turnin 318 >>交任务《 前往熔光镇》 艾沃沙酒
+    .turnin 318 >>交任务 艾沃沙酒
     .accept 319 >>接受任务 艾沃沙酒
     .accept 315 >>接受任务 完美烈酒
     .target 雷杰德·麦酒
@@ -3075,7 +3075,7 @@ step
     >>|cRXP_WARN_注意：要实现此操作，请在选项菜单的“游戏功能 -> 控制”中绑定“与目标互动”按键|r
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
     .vendor 1457 >>|cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
-    .target Samor Festivus
+    .target 萨莫尔·菲斯蒂沃斯
     .money <0.03
 step
     .goto Wetlands,9.49,59.69
@@ -3631,7 +3631,7 @@ step
     >>|cRXP_WARN_注意：要实现此操作，请在选项菜单的“游戏功能 -> 控制”中绑定“与目标互动”按键|r
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
     .vendor 1457 >>|cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
-    .target Samor Festivus
+    .target 萨莫尔·菲斯蒂沃斯
     .money <0.03
 step
     .goto Wetlands,9.49,59.69
@@ -4672,7 +4672,7 @@ step << Gnome
     .use 17117
 step
     >>与|cRXP_FRIENDLY_蒙提|r 对话
-    >>|cRXP_WARN_等剧情结束|r << Gnome
+    >>|cRXP_WARN_等待剧情演出完成|r << Gnome
     .turnin 6661 >>交任务 捕捉矿道老鼠 << Gnome
     .timer 13,捕捉矿道老鼠剧情表演 << Gnome
     .accept 6662 >>接受任务 我的兄弟，尼普希
@@ -4761,7 +4761,7 @@ step
     >>与 |cRXP_FRIENDLY_查瑞斯|r 对话
     .vendor 1307 >>|cRXP_BUY_向她购买|r |T134851:0|t|T134831:0|t[次级法力药水] |cRXP_BUY_和|r |T134831:0|t|T134831:0|t[治疗药水] |cRXP_BUY_（如果有货的话）|r
     .money <0.0120
-    .target Charys Yserian
+    .target 查瑞斯·伊瑟里安
 step
     #completewith next
     .goto Stormwind City,39.32,71.54,20,0
@@ -4778,7 +4778,7 @@ step
     >>与|cRXP_FRIENDLY_艾代尔|r 对话
     .vendor 1316 >>|cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
     .money <0.0090
-    .target Adair Gilroy
+    .target 艾代尔·吉尔罗
 step << skip
     #completewith next
     .goto Stormwind City,53.53,64.63,12,0
@@ -4803,7 +4803,7 @@ step
     >>透过墙与 |cRXP_FRIENDLY_凯德雷克|r 对话
     .vendor 1257 >>|cRXP_BUY_购买|r |T134830:0|t|T134830:0|t[次级治疗药水] |cRXP_BUY_从他那里（如果有货的话）|r
     .money <0.01
-    .target Keldric Boucher
+    .target 凯德雷克·布舍尔
 step
     #completewith Bank
     .goto Stormwind City,55.30,68.16,10 >>进入 暴风城银行
@@ -5385,7 +5385,7 @@ step
 step
     #label Talisman
     .goto Darkshore,52.24,33.08
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     >>击杀|cRXP_ENEMY_萨巴克希斯|r
     >>拾取掉落地上的|cRXP_PICK_萨布拉克斯的恶魔之袋|r，从中获得|cRXP_LOOT_堕落护符|r
     >>|cRXP_WARN_该操作有 5 秒施法时间|r
@@ -5620,7 +5620,7 @@ step
     .goto Stormwind City,55.46,65.26
     >>透过墙与 |cRXP_FRIENDLY_凯德雷克|r 对话
     .vendor 1257 >>|cRXP_BUY_购买|r |T134830:0|t|T134830:0|t[次级治疗药水] |cRXP_BUY_从他那里（如果有货的话）|r
-    .target Keldric Boucher
+    .target 凯德雷克·布舍尔
     .money <0.14
 step
     #completewith next
@@ -6188,7 +6188,7 @@ step
     >>进入建筑
     >>与 |cRXP_FRIENDLY_查瑞斯|r 对话
     .vendor 1307 >>|cRXP_BUY_向她购买|r |T134851:0|t|T134831:0|t[次级法力药水] |cRXP_BUY_和|r |T134831:0|t|T134831:0|t[治疗药水] |cRXP_BUY_（如果有货的话）|r
-    .target Charys Yserian
+    .target 查瑞斯·伊瑟里安
 step
     #completewith next
     .goto Stormwind City,31.41,79.10,20,0
@@ -6210,7 +6210,7 @@ step
     >>进入建筑
     >>与|cRXP_FRIENDLY_艾代尔|r 对话
     .vendor 1316 >>|cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
-    .target Adair Gilroy
+    .target 艾代尔·吉尔罗
 step
     #completewith next
     .goto Stormwind City,53.53,64.63,12,0
@@ -6233,7 +6233,7 @@ step
     .goto Stormwind City,55.46,65.26
     >>透过墙与 |cRXP_FRIENDLY_凯德雷克|r 对话
     .vendor 1257 >>|cRXP_BUY_购买|r |T134830:0|t|T134830:0|t[次级治疗药水] |cRXP_BUY_从他那里（如果有货的话）|r
-    .target Keldric Boucher
+    .target 凯德雷克·布舍尔
 step
     #completewith Bank3
     .goto Stormwind City,55.30,68.16,10 >>进入 暴风城银行
@@ -7078,7 +7078,7 @@ step
     .goto Stormwind City,55.46,65.26
     >>透过墙与 |cRXP_FRIENDLY_凯德雷克|r 对话
     .vendor 1257 >>向商人出售垃圾。从他那里|cRXP_BUY_购买|r|T134830:0|t|T134830:0|t[次级治疗药水]|cRXP_BUY_（如果有货的话）|r
-    .target Keldric Boucher
+    .target 凯德雷克·布舍尔
 step
     #completewith Bank
     .goto Stormwind City,55.30,68.16,10 >>进入 暴风城银行
@@ -7164,7 +7164,7 @@ step
     >>|cRXP_BUY_购买2个|r |T134419:0|t|T134851:0|t[传送符文]|cRXP_BUY_，|r |T134831:0|t|T132515:0|t[次级法力药水]|cRXP_BUY_，|r |T134831:0|t|T134831:0|t[治疗药水]|cRXP_BUY_，以及一个|r |T132515:0|t|T132515:0|t[布甲腰带] |cRXP_BUY_从她那里（如果有货的话）|r
     >>|cRXP_WARN_不要让你的钱低于18银31铜|r
     .collect 17031,2,344,1 --Rune of Teleportation (2)
-    .target Charys Yserian
+    .target 查瑞斯·伊瑟里安
     .itemcount 4371,1
 step
     #label Charys
@@ -7174,7 +7174,7 @@ step
     >>|cRXP_BUY_购买2个|r |T134419:0|t|T134851:0|t[传送符文]|cRXP_BUY_，|r |T134831:0|t|T132515:0|t[次级法力药水]|cRXP_BUY_，|r |T134831:0|t|T134831:0|t[治疗药水]|cRXP_BUY_，以及一个|r |T132515:0|t|T132515:0|t[布甲腰带] |cRXP_BUY_从她那里（如果有货的话）|r
     >>|cRXP_WARN_不要让你的钱低于 26银31铜|r
     .collect 17031,2,344,1 --Rune of Teleportation (2)
-    .target Charys Yserian
+    .target 查瑞斯·伊瑟里安
     .itemcount 4371,<1
 step
     #completewith Adair
@@ -7192,7 +7192,7 @@ step
     .vendor 1316 >>|cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
     >>|cRXP_WARN_不要让你的钱低于18银31铜|r
     .money <0.1831
-    .target Adair Gilroy
+    .target 艾代尔·吉尔罗
 step
     #label Adair
     .goto Stormwind City,41.57,65.46
@@ -7201,7 +7201,7 @@ step
     .vendor 1316 >>|cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
     >>|cRXP_WARN_不要让你的钱低于 26银31铜|r
     .money <0.2631
-    .target Adair Gilroy
+    .target 艾代尔·吉尔罗
 step
     #completewith next
     .goto Stormwind City,37.84,58.50,5,0
@@ -7345,7 +7345,7 @@ step
     #completewith next
     #requires Dawn2
     .goto Duskwood,73.79,45.98,20,0
-    .goto Duskwood,74.01,45.36,10 >>进入旅店
+    .goto Duskwood,74.01,45.36,10 >>进入旅馆
 step
     #requires Dawn2
     .goto Duskwood,73.81,44.02
@@ -7376,23 +7376,23 @@ step
 step
     .goto Duskwood,79.78,48.06
     >>与 |cRXP_FRIENDLY_维克托|r 对话
-    .accept 174 >>接受任务 眺望群星
+    .accept 174 >>接受任务眺望群星
     .turnin 174 >>交任务 眺望群星
-    .accept 175 >>接受任务 眺望群星
+    .accept 175 >>接受任务眺望群星
     .target 维克托·安特拉斯
     .itemcount 4371,1
 step
     #label Viktori
     .goto Duskwood,79.78,48.06
     >>与 |cRXP_FRIENDLY_维克托|r 对话
-    .accept 175 >>接受任务 眺望群星
+    .accept 175 >>接受任务眺望群星
     .target 维克托·安特拉斯
     .isQuestTurnedIn 174
 step
     .goto Duskwood,81.46,59.02
     >>与|cRXP_FRIENDLY_玛丽|r 对话
     .turnin 175 >>交任务 眺望群星
-    .accept 177 >>接受任务 眺望群星
+    .accept 177 >>接受任务眺望群星
     .target 盲眼玛丽
     .isQuestTurnedIn 174
 step
@@ -7409,19 +7409,19 @@ step
     >>与 |cRXP_FRIENDLY_卡兹克斯|r 对话
     .vendor 3134 >>|cRXP_BUY_向他购买|r |T134851:0|t|T134831:0|t[次级法力药水] |cRXP_BUY_和|r  |T134831:0|t|T134831:0|t[治疗药水] |cRXP_BUY_（如果有货的话）|r
     .itemcount 4827,1
-    .target Kzixx
+    .target 卡兹克斯
 step
     .goto Duskwood,81.82,19.76
     >>与 |cRXP_FRIENDLY_卡兹克斯|r 对话
     .vendor 3134 >>|cRXP_BUY_向他购买|r |T134851:0|t|T134831:0|t[次级法力药水] |cRXP_BUY_和|r  |T134831:0|t|T134831:0|t[治疗药水] |cRXP_BUY_（如果有货的话）|r
     .itemcount 4828,1
-    .target Kzixx
+    .target 卡兹克斯
 step
     .goto Duskwood,81.82,19.76
     >>与 |cRXP_FRIENDLY_卡兹克斯|r 对话
     .vendor 3134 >>|cRXP_BUY_向他购买|r |T134851:0|t|T134831:0|t[次级法力药水] |cRXP_BUY_和|r  |T134831:0|t|T134831:0|t[治疗药水] |cRXP_BUY_（如果有货的话）|r
     .itemcount 4829,1
-    .target Kzixx
+    .target 卡兹克斯
 step
     #label Kzixx
     .goto Duskwood,81.82,19.76
@@ -7430,7 +7430,7 @@ step
     .itemcount 4827,<1
     .itemcount 4828,<1
     .itemcount 4829,<1
-    .target Kzixx
+    .target 卡兹克斯
 step
     #completewith Gnolls
     >>AOE击杀|cRXP_ENEMY_狼蛛|r。拾取 |cRXP_LOOT_香脆蜘蛛肉|r
@@ -7488,7 +7488,7 @@ step
     .fp Redridge Mountains >>获取赤脊山的飞行路径
 step
     >>与 |cRXP_FRIENDLY_玛蒂|r 和 |cRXP_FRIENDLY_工头奥斯洛|r 对话
-    .accept 20 >>接受任务黑石氏族的威胁
+    .accept 20 >>接受任务 黑石氏族的威胁
     .target +Marshal Marris
     .goto Redridge Mountains,33.51,48.96
     .accept 125 >>接受任务 丢失的工具
@@ -7513,7 +7513,7 @@ step
     .target 拜里弗·科纳彻尔
 step
     >>与 |cRXP_FRIENDLY_码头管理员巴伦|r 对话并点击 |cRXP_PICK_通缉告示|r
-    .accept 127 >>接受任务卖鱼
+    .accept 127 >>接受任务 卖鱼
     .goto Redridge Mountains,27.72,47.38
     .accept 180 >>接受任务 通缉：范高雷中尉
     .goto Redridge Mountains,26.75,46.42
@@ -7877,7 +7877,7 @@ step
     .subzone 69 >>返回湖畔镇
 step
     >>与 |cRXP_FRIENDLY_玛蒂|r 和 |cRXP_FRIENDLY_工头奥斯洛|r 对话
-    .turnin 20 >>交任务黑石氏族的威胁
+    .turnin 20 >>交任务 黑石氏族的威胁
     .accept 19 >>接受任务 萨瑞尔祖恩
     .target +Marshal Marris
     .goto Redridge Mountains,33.51,48.96
@@ -7894,7 +7894,7 @@ step
     >>与 |cRXP_FRIENDLY_码头管理员巴伦|r 对话
     .turnin 127 >>交任务卖鱼
     .accept 150 >>接受任务 鱼人偷猎者
-    .turnin 150 >>交任务鱼人偷猎者
+    .turnin 150 >>交任务 鱼人偷猎者
     .goto Redridge Mountains,27.72,47.38
     .target 码头管理员巴伦
 step
@@ -7979,21 +7979,21 @@ step
     >>与 |cRXP_FRIENDLY_查瑞斯|r 对话
     .vendor 1307 >>|cRXP_BUY_向他购买|r |T134851:0|t|T134831:0|t[次级法力药水] |cRXP_BUY_和|r  |T134831:0|t|T134831:0|t[治疗药水] |cRXP_BUY_（如果有货的话）|r
     .itemcount 4827,1
-    .target Charys Yserian
+    .target 查瑞斯·伊瑟里安
 step
     .goto Stormwind City,32.16,79.84
     >>进入建筑
     >>与 |cRXP_FRIENDLY_查瑞斯|r 对话
     .vendor 1307 >>|cRXP_BUY_向他购买|r |T134851:0|t|T134831:0|t[次级法力药水] |cRXP_BUY_和|r  |T134831:0|t|T134831:0|t[治疗药水] |cRXP_BUY_（如果有货的话）|r
     .itemcount 4828,1
-    .target Charys Yserian
+    .target 查瑞斯·伊瑟里安
 step
     .goto Stormwind City,32.16,79.84
     >>进入建筑
     >>与 |cRXP_FRIENDLY_查瑞斯|r 对话
     .vendor 1307 >>|cRXP_BUY_向他购买|r |T134851:0|t|T134831:0|t[次级法力药水] |cRXP_BUY_和|r  |T134831:0|t|T134831:0|t[治疗药水] |cRXP_BUY_（如果有货的话）|r
     .itemcount 4829,1
-    .target Charys Yserian
+    .target 查瑞斯·伊瑟里安
 step
     #label CharysEnd
     .goto Stormwind City,32.16,79.84
@@ -8003,7 +8003,7 @@ step
     .itemcount 4827,<1
     .itemcount 4828,<1
     .itemcount 4829,<1
-    .target Charys Yserian
+    .target 查瑞斯·伊瑟里安
 step
     #completewith next
     .goto Stormwind City,39.32,71.54,20,0
@@ -8019,7 +8019,7 @@ step
     >>进入建筑
     >>与|cRXP_FRIENDLY_艾代尔|r 对话
     .vendor 1316 >>|cRXP_BUY_从他那里购买非智力|r |T134943:0|t|T134943:0|t[卷轴] |cRXP_BUY_（如果有货）|r
-    .target Adair Gilroy
+    .target 艾代尔·吉尔罗
 step
     #completewith next
     .goto Stormwind City,37.84,58.50,5,0

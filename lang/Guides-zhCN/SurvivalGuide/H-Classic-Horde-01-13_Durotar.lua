@@ -32,7 +32,7 @@ step << Warrior/Shaman/Warlock
     .money >0.01
 step << Warlock
     .goto Durotar,42.59,69.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
     .accept 1485 >>接受任务 邪灵劣魔
     .target Ruzan
 step << Warrior/Shaman
@@ -56,7 +56,7 @@ step << Warrior/Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r 对话 << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r 对话 << Shaman
     .train 6673 >>学习 |T132333:0|t[战斗怒吼] << Warrior
-    .train 8017 >>学习 |T136086:0|t[石化武器] << Shaman
+    .train 8017 >>影袭 |T136086:0|t[石化武器] << Shaman
     .target 弗朗恩 << Warrior
     .target 史克里克 << Shaman
 step << Warlock
@@ -80,7 +80,7 @@ step << !Warrior !Rogue
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水] << !Hunter
-    >>|cRXP_BUY_购买|r |T132382:0|t[劣质箭]|cRXP_BUY_从她那里|r << Hunter
+    >>|cRXP_BUY_购买|r |T132382:0|t[粗糙的箭矢] |cRXP_BUY_向她购买|r << Hunter
     .collect 159,30,6394,1 << !Hunter !Shaman --Refreshing Spring Water (30)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .target 多克纳
@@ -347,7 +347,7 @@ step << !Rogue
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水] << !Warrior !Hunter
-    >>|cRXP_BUY_购买|r |T132382:0|t[劣质箭]|cRXP_BUY_从她那里|r << Hunter
+    >>|cRXP_BUY_购买|r |T132382:0|t[粗糙的箭矢] |cRXP_BUY_向她购买|r << Hunter
     .collect 159,15,6394,1 << !Rogue !Warrior !Hunter --Refreshing Spring Water (15)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >>把垃圾物品卖给商人
@@ -359,7 +359,7 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r 和 |cRXP_FRIENDLY_坎纳甘·地鸣|r 对话
     .turnin 3084 >>交任务 符文石板 << Troll
     .turnin 3089 >>交任务 符文羊皮纸 << Orc
-    .train 8042 >>学习 |T136026:0|t[大地震击]
+    .train 8042 >>影袭 |T136026:0|t[大地震击]
     .goto Durotar,42.39,69.00
     .accept 1516 >>接受任务 大地的召唤
     .goto Durotar,42.40,69.17
@@ -580,7 +580,7 @@ step
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多克纳|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买|r |T132794:0|t[清凉的泉水] << !Rogue !Warrior !Hunter
-    >>|cRXP_BUY_购买|r |T132382:0|t[劣质箭]|cRXP_BUY_从她那里|r << Hunter
+    >>|cRXP_BUY_购买|r |T132382:0|t[粗糙的箭矢] |cRXP_BUY_向她购买|r << Hunter
     .collect 159,5,6394,1 << !Rogue !Warrior !Hunter --Refreshing Spring Water (5)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >>把垃圾物品卖给商人
@@ -598,7 +598,7 @@ step
     .target 高内克
 step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r 和 |cRXP_FRIENDLY_坎纳甘·地鸣|r 对话
-    .train 8042 >>学习 |T136026:0|t[大地震击]
+    .train 8042 >>影袭 |T136026:0|t[大地震击]
     .goto Durotar,42.39,69.00
     .accept 1516 >>接受任务 大地的召唤
     .goto Durotar,42.40,69.17
@@ -2349,7 +2349,7 @@ step << Shaman
 step << Shaman
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡纳尔|r 对话
-    .turnin 2983 >>交任务 火焰的召唤
+    .turnin 2983 >>交任务  火焰的召唤
     .accept 1524 >>接受任务 火焰的召唤
     .target 卡纳尔·菲斯
 step << Shaman
@@ -2374,7 +2374,7 @@ step << Shaman
     #label CallofFire2
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰尔夫|r 对话
-    .turnin 1524 >>交任务 火焰的召唤
+    .turnin 1524 >>交任务  火焰的召唤
     .accept 1525 >>接受任务 火焰的召唤
     .target 泰尔夫·祖拉姆
 step << Shaman
@@ -2413,7 +2413,7 @@ step << Shaman
     .accept 844 >>接受任务 平原陆行鸟的威胁
     .target 瑟格拉·黑棘
     .goto The Barrens,52.23,31.00
-    .accept 871 >>接受任务 保卫前沿哨所
+    .accept 871 >>接受任务 野猪人的袭击
     .accept 5041 >>接受任务 十字路口的补给品
     .target 索克
     .goto The Barrens,51.50,30.87
@@ -3190,7 +3190,7 @@ step << Shaman
     #label CallofFire3
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰尔夫|r 对话
-    .turnin 1525 >>交任务 火焰的召唤
+    .turnin 1525 >>交任务  火焰的召唤
     .accept 1526 >>接受任务 火焰的召唤
     .target 泰尔夫·祖拉姆
 step << Shaman
@@ -3206,7 +3206,7 @@ step << Shaman
 step << Shaman
     .goto Durotar,38.96,58.22
     >>点击地上的 |cRXP_PICK_火盆|r
-    .turnin 1526 >>交任务 火焰的召唤
+    .turnin 1526 >>交任务  火焰的召唤
     .accept 1527 >>接受任务 火焰的召唤
 step << Shaman
     #completewith next
@@ -3261,7 +3261,7 @@ step << Shaman/Hunter
 step << Shaman
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡纳尔|r 对话
-    .turnin 1527 >>交任务 火焰的召唤
+    .turnin 1527 >>交任务  火焰的召唤
     .target 卡纳尔·菲斯
 step << Hunter
     #completewith next
@@ -3276,7 +3276,7 @@ step << Hunter
     .accept 844 >>接受任务 平原陆行鸟的威胁
     .target 瑟格拉·黑棘
     .goto The Barrens,52.23,31.00
-    .accept 871 >>接受任务 保卫前沿哨所
+    .accept 871 >>接受任务 野猪人的袭击
     .accept 5041 >>接受任务 十字路口的补给品
     .target 索克
     .goto The Barrens,51.50,30.87
@@ -3417,7 +3417,7 @@ step << Shaman/Hunter
     .target 瑟格拉·黑棘
     .goto The Barrens,52.23,31.00
     .turnin 871 >>交任务  前沿哨所的进攻
-    .accept 872 >>接受任务 保卫前沿哨所
+    .accept 872 >>接受任务 野猪人的袭击
     .target 索克
     .goto The Barrens,51.50,30.87
     .isOnQuest 6386
@@ -3428,7 +3428,7 @@ step << Shaman/Hunter
     .target 瑟格拉·黑棘
     .goto The Barrens,52.23,31.00
     .turnin 871 >>交任务  前沿哨所的进攻
-    .accept 872 >>接受任务 保卫前沿哨所
+    .accept 872 >>接受任务 野猪人的袭击
     .target 索克
     .goto The Barrens,51.50,30.87
 step << Shaman/Hunter
@@ -3582,7 +3582,7 @@ step << Orc Rogue/Troll Rogue
 step << Orc Rogue/Troll Rogue
     #optional
     .goto Undercity,63.25,48.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .fp Undercity >>获得幽暗城的飞行路径
     .target 迈克尔·加勒特
     .money <0.3023
@@ -3993,7 +3993,7 @@ step << Warlock/Mage
 step << Warlock/Mage
     #label UCflightpath1
     .goto Undercity,63.25,48.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .fp Undercity >>获得幽暗城的飞行路径
     .target 迈克尔·加勒特
 step << Warlock/Mage
@@ -4231,7 +4231,7 @@ step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_凯伦丁|r 对话
     .turnin 1473 >>交任务 虚空中的生物
-    .accept 1471 >>接受任务誓缚
+    .accept 1471 >>接受任务 誓缚
     .target 凯伦丁·哈加尔
     .isQuestAvailable 1504
 step << Warlock
@@ -4249,7 +4249,7 @@ step << Warlock
 step << Warlock
     .goto Undercity,85.04,25.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯伦丁|r 对话
-    .turnin 1471 >>交任务誓缚
+    .turnin 1471 >>交任务 誓缚
     .target 凯伦丁·哈加尔
     .isQuestAvailable 1504
 step << skip --Warlock
@@ -5197,7 +5197,7 @@ step << !Undead
 step << !Undead
     #label UCflightpath3
     .goto Undercity,63.25,48.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
     .fp Undercity >>获得幽暗城的飞行路径
     >>|cRXP_WARN_若已解锁飞行点，请跳过此步骤！|r
     .target 迈克尔·加勒特

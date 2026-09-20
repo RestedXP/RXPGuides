@@ -156,7 +156,7 @@ step
     .accept 15 >>接受任务 回音山调查行动
     .accept 3100 >>接受任务 简要的信件 << Warrior
     .accept 3101 >>接受任务 圣洁信件 << Paladin
-    .accept 3102 >>接受任务密文信件 << Rogue
+    .accept 3102 >>接受任务 密文信件 << Rogue
     .accept 3103 >>接受任务 神圣信件 << Priest
     .accept 3104 >>接受任务 雕文信件 << Mage
     .accept 3105 >>接受任务 被污染的信件 << Warlock
@@ -298,7 +298,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔里克·克里丹|r 对话
     .target 乔里克·克里丹
     .goto Elwynn Forest,50.314,39.916
-    .turnin 3102 >>交任务密文信件
+    .turnin 3102 >>交任务 密文信件
     >>|cRXP_WARN_你不需要训练任何法术|r
 step << Priest/Mage
     >>拾取地上的 |cRXP_PICK_米莉的葡萄|r
@@ -903,7 +903,7 @@ step
     .goto Elwynn Forest,76.8,62.4,90,0
     .goto Elwynn Forest,83.7,59.4,90,0
     .goto Elwynn Forest,76.8,62.4
-    .xp 9 >>刷怪到9级
+    .xp 9 >>刷怪升到9级
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨拉·迪博雷恩|r 对话
     .target 萨拉·迪博雷恩
@@ -992,7 +992,7 @@ step << !Warlock
     .goto Redridge Mountains,29.565,67.930,25,0
     .goto Redridge Mountains,30.590,59.410
     >>|cRXP_WARN_沿主路行进，避开沿途的近距离怪物|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
     .fp Redridge Mountains >>获取赤脊山的飞行路径
     .target 艾蕾娜·斯托姆法瑟
 step
@@ -1117,7 +1117,7 @@ step << Warlock
     .turnin 239 >>交任务 西泉要塞
     .accept 11 >>接受任务 悬赏河爪豺狼人
     .goto Elwynn Forest,24.234,74.450
-    >>点击 |cRXP_PICK_通缉布告|r
+    >>点击 |cRXP_PICK_通缉告示|r
     .accept 176 >>接受任务 通缉：霍格
     .goto Elwynn Forest,24.548,74.672
     .target 瑞尼尔副队长
@@ -1127,7 +1127,7 @@ step
     .turnin 239 >>交任务 西泉要塞
     .accept 11 >>接受任务 悬赏河爪豺狼人
     .goto Elwynn Forest,24.234,74.450
-    >>点击 |cRXP_PICK_通缉布告|r
+    >>点击 |cRXP_PICK_通缉告示|r
     .accept 176 >>接受任务 通缉：霍格
     .goto Elwynn Forest,24.548,74.672
     .target 瑞尼尔副队长
@@ -1289,7 +1289,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     .goto Westfall,56.327,47.520
@@ -1374,7 +1374,7 @@ step << Warlock
     .goto StormwindClassic,27.2,78.1,15 >>前往屠宰场，进入地下室
 step << Warlock
     .goto StormwindClassic,25.25,78.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .turnin 1685 >>交任务 加科因的召唤
     .target 黑暗缚灵者加科因
     .accept 1688 >>接受任务 苏伦娜·凯尔东
@@ -1451,13 +1451,13 @@ step << Warlock
     .goto Redridge Mountains,23.325,71.373,25,0
     .goto Redridge Mountains,29.565,67.930,25,0
     .goto Redridge Mountains,30.733,59.996
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
     >>|cRXP_WARN_沿主路行进，避开沿途的近距离怪物|r
     .turnin 244 >>交任务豺狼人的入侵
     .target 菲尔顿副队长
 step << Warlock
     .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
     .fp Redridge Mountains >>获取赤脊山的飞行路径
     .fly Stormwind >>飞往暴风城
     .target 艾蕾娜·斯托姆法瑟
@@ -1488,9 +1488,9 @@ step << Warlock
     .target 厄苏拉·德林
 step << Warlock
     .goto StormwindClassic,25.25,78.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .turnin 1688 >>交任务 苏伦娜·凯尔东
-    .accept 1689 >>接受任务誓缚
+    .accept 1689 >>接受任务 誓缚
     .target 黑暗缚灵者加科因
 step << Warlock
     #completewith next
@@ -1507,10 +1507,10 @@ step << Warlock
     .complete 1689,1 --Kill Summoned Voidwalker (x1)
     .mob 虚空行者
 step << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .target 黑暗缚灵者加科因
     .goto StormwindClassic,25.25,78.59
-    .turnin 1689 >>交任务誓缚
+    .turnin 1689 >>交任务 誓缚
 step << Human
     .goto StormwindClassic,74.312,47.240
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_奥斯瑞克·斯图恩|r 对话
@@ -1610,7 +1610,7 @@ step << Warrior
     .train 2567 >>训练 投掷武器
     .target 比克斯
     .goto Ironforge,62.237,89.628
-    .train 199 >>训练双手锤
+    .train 199 >>学习双手锤
     .goto Ironforge,61.177,89.508
     .target 布里维夫·石拳
 step << Warrior
@@ -1623,7 +1623,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 交谈
     >>购买以下物品，以便在洛克莫丹稍后更快地交任务
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>|T134342:0|t[猪大肠]
@@ -2000,7 +2000,7 @@ step << Paladin/Warrior
     .vendor >>|cRXP_FRIENDLY_尼尔伦·安德玛|r |cRXP_WARN_出售|r |T133476:0|t[|cRXP_FRIENDLY_重型尖刺钉锤|r] |cRXP_WARN_该物品为限量供应|r
     >>|cRXP_WARN_检查是否有货并在能买的情况下购买。如果你买不起，可以在附近的|cRXP_ENEMY_隧道老鼠|r身上刷钱，直到攒够为止|r
     >>|cRXP_WARN_动作要快，否则其他玩家可能会在你之前买下它|r
-    .target Nillen Andemar
+    .target 尼尔伦·安德玛
 step
     .goto Loch Modan,25.05,30.19,0
     .goto Loch Modan,26.06,43.44,0
@@ -2218,7 +2218,7 @@ step << Priest/Paladin
     .goto StormwindClassic,42.51,33.51,20 >>前往暴风城大教堂
 step << Human Paladin
     .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
     .accept 1641 >>接受任务圣洁之书
     .turnin 1641 >>交任务圣洁之书
     .target 达索瑞恩·拉尔
@@ -2228,12 +2228,12 @@ step << Human Paladin
     .accept 1642 >>接受任务圣洁之书
 step << Human Paladin
     .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
     .turnin 1642 >>交任务圣洁之书
     .accept 1643 >>接受任务圣洁之书
     .target 达索瑞恩·拉尔
 step << Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
     .goto StormwindClassic,38.82,31.27,10,0
     .goto StormwindClassic,38.67,32.82
     .trainer >>训练你的职业技能
@@ -2271,14 +2271,14 @@ step << Human Paladin
     --.accept 1780 >> Accept The Tome of Divinity
 step
     .goto StormwindClassic,66.28,62.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .turnin 6261 >>交任务 杜加尔·朗德瑞克
     .target 杜加尔·朗德瑞克
     .accept 6285 >>接受任务 返回西部荒野
 step
     #ah
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>购买以下物品，以便稍后在西部荒野更快地交任务
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>|T133972:0|t[秃鹫肉条]
@@ -2296,7 +2296,7 @@ step
     .target 拍卖师亚克森
 step
     .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Westfall >>飞往西部荒野
     .target 杜加尔·朗德瑞克
 ]])

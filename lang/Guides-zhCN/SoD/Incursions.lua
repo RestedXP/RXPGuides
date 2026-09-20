@@ -511,7 +511,7 @@ step
     #completewith IncursionsComplete
     .goto Ashenvale,93.94,38.21,25,0
     .goto Ashenvale,94.27,35.13,20 >>进入 |cRXP_PICK_翡翠梦境传送门|r
-    >>|cRXP_WARN_径直穿过|cRXP_ENEMY_萨特|r，|cRXP_ENEMY_地狱巨犬|r和|cRXP_ENEMY_小鬼|r。在你进入传送门后，它们的仇恨会自动重置。|r
+    >>|cRXP_WARN_径直穿过|cRXP_ENEMY_萨特|r、|cRXP_ENEMY_地狱巨犬|r和|cRXP_ENEMY_小鬼|r。进入传送门后，它们的仇恨会自动重置。|r
     .aura 444759
     .maxlevel 53
 step
@@ -895,7 +895,7 @@ step
 step
     #optional
     .group 3
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长考利安|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长帕考利安|r 对话
     >>|cRXP_WARN_如果你在队伍中，可以考虑把击杀精英的任务也接了。这些任务需要击杀的首领拥有极高的生命值，根据你队伍的配置，挑战起来可能会有一定难度。|r
     .accept 81837 >>接受任务 辛特兰使命XIII：击败弗洛里斯
     .accept 81838 >>接受任务 辛特兰使命XIV：击败末日枭兽
@@ -962,10 +962,10 @@ step
     #requires Moonkin
     #requires groupSkulk
     .goto The Hinterlands,53.58,39.10
-    .gossipoption 122141 >>与躺在地上的 |cRXP_FRIENDLY_伊利阿纳尔·啜影者|r 对话。他应该会开始跟随你
+    .gossipoption 122141 >>与躺在地上的 |cRXP_FRIENDLY_伊利阿纳尔·啜影者|r 对话，他应该会开始跟着你
     >>|cRXP_WARN_你可以从木栅栏背面与他对话，无需进入里面|r
     >>|cRXP_WARN_如果他不在那里，说明有其他人正在护送他，找不到他的话就跳过这一步|r
-    .target Ealianar Shadowdrinker
+    .target Elianar Shadowdrinker
     .maxlevel 53
 step
     #sticky
@@ -1272,7 +1272,7 @@ step
     #completewith IncursionsComplete3
     .goto Feralas,50.95,11.67,30,0
     .goto Feralas,51.28,10.64,20 >>进入 |cRXP_PICK_翡翠梦境传送门|r
-    >>|cRXP_WARN_径直穿过|cRXP_ENEMY_萨特|r，|cRXP_ENEMY_地狱巨犬|r和|cRXP_ENEMY_小鬼|r。在你进入传送门后，它们的仇恨会自动重置。|r
+    >>|cRXP_WARN_径直穿过|cRXP_ENEMY_萨特|r、|cRXP_ENEMY_地狱巨犬|r和|cRXP_ENEMY_小鬼|r。进入传送门后，它们的仇恨会自动重置。|r
     .aura 444762
     .maxlevel 53
 step
