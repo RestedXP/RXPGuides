@@ -1267,6 +1267,7 @@ step
     .mob Vulgara
 step
     .isQuestComplete 97965
+    .isQuestAvailable 92517
     #arrowtext Talk to\n|cRXP_FRIENDLY_Naleeia Tattermend|r
     .goto 2521,43.08,46.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleeia Tattermend::257018|r
@@ -1275,6 +1276,7 @@ step
 step
     .train 2366,3
     .isQuestComplete 97968
+    .isQuestAvailable 92517
     #arrowtext Talk to\n|cRXP_FRIENDLY_Halassa Fernbreeze|r
     .goto 2521,42.97,43.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r
@@ -1283,6 +1285,7 @@ step
 step
     .train 7411,3
     .isQuestComplete 98286
+    .isQuestAvailable 92517
     #arrowtext Talk to\n|cRXP_FRIENDLY_Nasalanna Windsinger|r
     .goto 2521,43.25,43.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r
@@ -1291,6 +1294,7 @@ step
 step
     .train 8613,3
     .isQuestComplete 97971
+    .isQuestAvailable 92517
     #arrowtext Talk to\n|cRXP_FRIENDLY_Mendalass Tattermend|r
     .goto 2521,43.3,43.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mendalass Tattermend::263664|r
@@ -1298,6 +1302,7 @@ step
     .target Mendalass Tattermend::257024
 step
     .isOnQuest 93036
+    .isQuestAvailable 92517
     #arrowtext Talk to\n|cRXP_FRIENDLY_Zerril Softbreeze|r\n Don't sell Strider meat &eggs
     .goto 2521,43.851,43.848
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r and buy 5 |T134059:0|t[Mild Spices]
@@ -1307,12 +1312,15 @@ step
     .target Zerril Softbreeze::251905
 step
     .isQuestComplete 92553
+    .isQuestAvailable 92517
     #arrowtext Talk to\n|cRXP_FRIENDLY_Zerril Softbreeze|r
     .goto 2521,43.851,43.848
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
     .turnin 92553 >>Turn in Restocking the Larders
     .target Zerril Softbreeze::251905
 step
+    .isQuestComplete 96646
+    .isQuestAvailable 92517
     #arrowtext Talk to\n|cRXP_FRIENDLY_Zerril Softbreeze|r
     .goto 2521,43.851,43.848
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
@@ -1320,6 +1328,7 @@ step
     .target Zerril Softbreeze::251905
 step
     .isOnQuest 92553
+    .isQuestAvailable 92517
     .itemcount 1971,<3
     #arrowtext Craft Herb Baked Egg \ Keep 3 Small Eggs
     .goto 2521,43.86,43.85
@@ -1329,6 +1338,7 @@ step
     --here insert macro
 step
     .isQuestTurnedIn 92553
+    .isQuestAvailable 92517
     .itemcount 1971,<1
     .goto 2521,43.86,43.85
     >>Craft as many |T132834:0|t[Herb Baked Eggs] as you can.
@@ -1337,6 +1347,7 @@ step
     --here insert macro
 step
     .isQuestComplete 97963
+    .isQuestAvailable 92517
     #arrowtext Talk to\n|cRXP_FRIENDLY_Nyassa Swiftdraught|r
     .goto 2521,43.7,43.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyassa Swiftdraught::257019|r
@@ -1358,6 +1369,7 @@ step
     .target Taleen Shimmerthread::251991
     .turnin 93951 >>Turn in A Little Beauty
 step
+    .isQuestAvailable 92517
     .isQuestComplete 97973
     #arrowtext Talk to\n|cRXP_FRIENDLY_Taleen Shimmerthread|r
     .goto 2521,44.88,44.19
@@ -1365,6 +1377,7 @@ step
     .turnin 97973 >>Turn in Camping 101: Tailoring
     .target Taleen Shimmerthread::251991
 step
+    .isQuestAvailable 92517
     .isQuestComplete 97964
     #arrowtext Talk to\n|cRXP_FRIENDLY_Aedi Thriceforged|r
     .goto 2521,44.89,44.36
@@ -1372,6 +1385,7 @@ step
     .turnin 97964 >>Turn in Camping 101: Blacksmithing
     .target Aedi Thriceforged::251913
 step
+    .isQuestAvailable 92517
     .isQuestComplete 97970
     #arrowtext Talk to\n|cRXP_FRIENDLY_Messana Crestwind|r
     .goto 2521,44.77,44.57
@@ -1379,12 +1393,15 @@ step
     .turnin 97970 >>Turn in Camping 101: Mining
     .target Messana Crestwind::257022
 step
+    .isQuestAvailable 92517
+    .isQuestComplete 92515
     #arrowtext Talk to\n|cRXP_FRIENDLY_Indari Sunseam|r
     .goto 2521,44.686,44.518
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Indari Sunseam::251993|r
     .target Indari Sunseam::251993
     .turnin 92515 >>Turn in The Problem With Prideclaws
 step
+    .isQuestAvailable 92517
     .isQuestComplete 97969
     #arrowtext Talk to\n|cRXP_FRIENDLY_Indari Sunseam|r
     .goto 2521,44.69,44.53
@@ -1442,6 +1459,7 @@ step
     .turnin 93036 >>Turn in Infiltrating the Cult
     .accept 92529 >>Accept Falaath Village
 step
+    .isOnQuest 92529
     .subzoneskip 16624,1
     .goto 2521,44.831,45.515
     .target Sania Silverstream::251904
@@ -1503,6 +1521,7 @@ step
     .turnin 92529 >>Turn in Falaath Village
     .accept 92528 >>Accept Among the Faithfu
 step
+    .isOnQuest 92528
     .subzoneskip 16636,1
     .goto 2521,46.89,56.24
     .target Missionary Jasaan::257065
@@ -1550,6 +1569,20 @@ step
     .accept 92551 >>Accept Stolen Supplies
     .target Danarii Bellowveil
 step
+    #completewith next
+    #label Western Watchtower
+    .complete 93926,1 --1/1 Check in on the Western Watchtower in the Shen'dar Highlands
+step
+	#completewith Western W2tchtower
+    .goto 2521,45.35,46.79,20,0
+    .goto 2521,44.05,49.98,30,0
+    .goto 2521,43.02,49.86
+    --unsure if ds to tower then storm arrea or storm area into tower to keep buffs(tornado could work out)
+    .deathskip >> Die and respawn at the Spirit Healer
+    -- *manually skip if no mobs are around you can die a little further ahead aswell
+    .target Spirit Healer
+step
+    #requires Western Watchtower
     #arrowtext Talk to |cRXP_FRIENDLY_Piecekeeper Vaniel|r
     .goto 2521,42.32,62.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piecekeeper Vaniel::252155|r.
@@ -1558,29 +1591,29 @@ step
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Peacekeeper Vaaniel|r
     .goto 2521,42.33,62.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piecekeeper Vaniel::252155|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Piecekeeper Vaniel::252155|r
     .turnin 93926 >>Turn in The Western Watch
     .accept 93927 >>Accept A Last Request
     .target Piecekeeper Vaniel::252155
 step
     #arrowtext Click on the |cRXP_PICK_Note|r
     .goto 2521,42.38,62.07
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bloody Note|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bloody Note|r |cRXP_WARN_;needs space in bag|r.
     .complete 93927,1 --1/1 Collect and read the note
 step
-    #arrowtext Click on |cRXP_PICK_Raani Windgazer|r
-    .goto 2521,41.12,64.09
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Raani Windgazer|r.
-    .complete 93927,3 --1/1 Raani's Favorite Feather
-step
-    #arrowtext Click on |cRXP_PICK_Arvensus Shadowsong|r
+    #arrowtext Click on |cRXP_PICK_Arvensus Shadowsong|r\n from afar
     .goto 2521,40.988,64.088
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Arvensus Shadowsong|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Arvensus Shadowsong|r\n from afar.
     .complete 93927,4 --1/1 Shadowsong Family Signet
 step
+    #arrowtext Click on |cRXP_PICK_Raani Windgazer|r\n from afar
+    .goto 2521,41.12,64.09
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Raani Windgazer|r\n from afar.
+    .complete 93927,3 --1/1 Raani's Favorite Feather
+step
     #arrowtext Kill\n|cRXP_ENEMY_Skypriest Aanders|r
-    .goto 2521,40.99,64.09
-    >>Kill |cRXP_ENEMY_Skypriest Aanders|r.
+    .goto 2521,41.09,64.38
+    >>Ascend the spiral staircase, then kill |cRXP_ENEMY_Skypriest Aanders|r atop the tower.
     .complete 93927,2 --1/1 Skypriest Aanders slain
     .mob Skypriest Aanders
 step
@@ -1631,6 +1664,113 @@ step
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning
 step
+    .isQuestComplete 97967
+    .isQuestAvailable 92550
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Fenn Fairweather|r
+    .goto 2521,45.03,48.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fenn Fairweather::251992|r
+    .turnin 97967 >>Turn in Camping 101: Fishing
+    .target Fenn Fairweather::251992
+step
+    .isQuestComplete 97965
+    .isQuestAvailable 92550
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Naleeia Tattermend|r
+    .goto 2521,43.08,46.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleeia Tattermend::257018|r
+    .turnin 97965 >>Turn in Camping 101: First Aid
+    .target Naleeia Tattermend::257018
+step
+    .train 2366,3
+    .isQuestComplete 97968
+    .isQuestAvailable 92550
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Halassa Fernbreeze|r
+    .goto 2521,42.97,43.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r
+    .turnin 97968 >>Turn in Camping 101: Herbalism
+    .target Halassa Fernbreeze::257021
+step
+    .train 7411,3
+    .isQuestComplete 98286
+    .isQuestAvailable 92550
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nasalanna Windsinger|r
+    .goto 2521,43.25,43.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r
+    .turnin 98286 >>Turn in Camping 101: Enchanting
+    .target Nasalanna Windsinger::257020
+step
+    .train 8613,3
+    .isQuestComplete 97971
+    .isQuestAvailable 92550
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Mendalass Tattermend|r
+    .goto 2521,43.3,43.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mendalass Tattermend::263664|r
+    .turnin 97971 >>Turn in Camping 101: Skinning
+    .target Mendalass Tattermend::257024
+step
+    .isQuestComplete 92553
+    .isQuestAvailable 92550
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zerril Softbreeze|r
+    .goto 2521,43.851,43.848
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
+    .turnin 92553 >>Turn in Restocking the Larders
+    .target Zerril Softbreeze::251905
+step
+    .isQuestComplete 96646
+    .isQuestAvailable 92550
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Zerril Softbreeze|r
+    .goto 2521,43.851,43.848
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
+    .turnin 96646 >>Turn in Camping 101: Cooking
+    .target Zerril Softbreeze::251905
+step
+    .isQuestComplete 97963
+    .isQuestAvailable 92550
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Nyassa Swiftdraught|r
+    .goto 2521,43.7,43.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyassa Swiftdraught::257019|r
+    .turnin 97963 >>Turn in Camping 101: Alchemy
+    .target Nyassa Swiftdraught::257019
+step
+    .isQuestComplete 97973
+    .isQuestAvailable 92550
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Taleen Shimmerthread|r
+    .goto 2521,44.88,44.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taleen Shimmerthread::251991|r
+    .turnin 97973 >>Turn in Camping 101: Tailoring
+    .target Taleen Shimmerthread::251991
+step
+    .isQuestComplete 97964
+    .isQuestAvailable 92550
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Aedi Thriceforged|r
+    .goto 2521,44.89,44.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aedi Thriceforged::251913|r
+    .turnin 97964 >>Turn in Camping 101: Blacksmithing
+    .target Aedi Thriceforged::251913
+step
+    .isQuestComplete 97970
+    .isQuestAvailable 92550
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Messana Crestwind|r
+    .goto 2521,44.77,44.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Messana Crestwind::257022|r
+    .turnin 97970 >>Turn in Camping 101: Mining
+    .target Messana Crestwind::257022
+step
+    .isQuestComplete 92515
+    .isQuestAvailable 92550
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Indari Sunseam|r
+    .goto 2521,44.686,44.518
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Indari Sunseam::251993|r
+    .target Indari Sunseam::251993
+    .turnin 92515 >>Turn in The Problem With Prideclaws
+step
+    .isQuestComplete 97969
+    .isQuestAvailable 92550
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Indari Sunseam|r
+    .goto 2521,44.69,44.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Indari Sunseam::251993|r
+    .turnin 97969 >>Turn in Camping 101: Leatherworking
+    .target Indari Sunseam::251993
+step
     #completewith next
     #label StolenSuppliesA
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danarii Bellowveil|r.
@@ -1639,6 +1779,16 @@ step
 step
     #arrowtext Follow the way\nup the mountain
     #completewith StolenSuppliesA
+    .isQuestNotComplete 97967
+    .isQuestNotComplete 97965
+    .isQuestNotComplete 97968
+    .isQuestNotComplete 98286
+    .isQuestNotComplete 97971
+    .isQuestNotComplete 97963
+    .isQuestNotComplete 97973
+    .isQuestNotComplete 97964
+    .isQuestNotComplete 97970
+    .isQuestNotComplete 97969
     .goto 2521,44.111,45.843,10 >>Follow the way up the mountain.
 step
     #requires StolenSuppliesA
@@ -1731,7 +1881,7 @@ step << Alliance
     .turnin 92699 >>Turn in The Supreme Magister
     .accept 92709 >>Accept A Grand Adventure
     .target Elaadrin Evengale
-    tep << Alliance
+step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Dondallion Whisperwind|r
     .goto 2521,66.26,79.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dondallion Whisperwind|r.
