@@ -5875,7 +5875,6 @@ step << Rogue
     #optional
     #ah
     .goto 1453/0,607.38,-8790.45
-    .goto 1453,53.615,59.767,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
     >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
     >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
@@ -5910,12 +5909,8 @@ step << Rogue
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
 step << Rogue
     #optional
-    #completewith next
-    .goto 1453,57.764,61.412,6 >> Enter the Everyday Merchandise building
-step << Rogue
-    #optional
     #label KeenT
-    .goto 1453,58.380,61.683
+    .goto 1453/0,596.43,-8831.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Mullby|r
     >>|cRXP_BUY_Buy the|r |T135425:0|t[Keen Throwing Knives] |cRXP_BUY_from him|r
     .collect 3107,200 --Collect Keen Throwing Knife (200)
@@ -5924,7 +5919,7 @@ step << Rogue
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
 step << Rogue
     #optional
-    .goto 1453,58.380,61.683
+    .goto 1453/0,596.43,-8831.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Mullby|r
     >>|cRXP_BUY_Buy the|r |T135641:0|t[Balanced Throwing Daggers] |cRXP_BUY_from him|r
     .collect 2946,200 --Collect Balanced Throwing Dagger (200)
