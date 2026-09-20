@@ -30,9 +30,22 @@ step
     .accept 92462 >>Accept Infestation Investigation
     -- .useitem 264908
     .target Elatrell Featherlight
-step
+step << !Shaman
     #hidewindow
     #completewith Juvenile Vuldren
+    #loop
+    #arrowtext Kill\n|cRXP_ENEMY_Juvenile Vuldren|r and\n|cRXP_ENEMY_Pesky Cirrusfly|r
+    .goto 2521,44.23,26,35,0
+    .goto 2521,45.24,25.9,35,0
+    .goto 2521,46.06,25.33,35,0
+    .goto 2521,46.77,27.83,35,0
+    .goto 2521,45.27,28.36,35,0
+    .goto 2521,43.84,28.39,35,0
+    .goto 2521,42.88,27.52,35,0
+    +1
+step << Shaman
+    #hidewindow
+    #completewith Juvenile Vuldren Grind
     #loop
     #arrowtext Kill\n|cRXP_ENEMY_Juvenile Vuldren|r and\n|cRXP_ENEMY_Pesky Cirrusfly|r
     .goto 2521,44.23,26,35,0
@@ -57,15 +70,17 @@ step
     >>Kill |cRXP_ENEMY_Juvenile Vuldren|r.
     .complete 92461,1 --8/8 Juvenile Vuldren slain
     .mob Juvenile Vuldren
+step << Shaman
+    #label Juvenile Vuldren Grind
+    .xp 2+480 >>Grind to 480+/900xp to reach level 3 after turn ins for the totem quest.
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Elatrell Featherlight|r
     .goto 2521,43.44,24.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
-    *|cRXP_WARN_Don't use as we |T132845:0|t[Walk on Air] need it soon|r.
+    *|cRXP_WARN_Don't use |T132845:0|t[Walk on Air] as we need it soon|r.
     .turnin 92462 >>Turn in Infestation Investigation
     .accept 92463 >>Accept The Cirrusfly Queen
     .target Elatrell Featherlight
-    .macro Cancel Walk on Air,132745 >>/cancelaura Walk on Air
 step << Warrior
     #arrowtext Talk to\n|cRXP_FRIENDLY_Blademaster Ren|r
     .goto 2521,43.66,24.13
@@ -135,6 +150,7 @@ step
     *You can also just jump and spam the button on the ground.
     .complete 92474,1 --Use Walk on Air
     .macro Walk on Air, 132845 >>/use Walk on Air
+    -- .macro Cancel Walk on Air,132745 >>/cancelaura Walk on Air
 step
     #requires Harmony in Balance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Rorian the Dayseeker|r
@@ -149,6 +165,17 @@ step
     .accept 92482 >>Accept The Way of the Hunter << Hunter
     .accept 92484 >>Accept Embracing the Elements << Shaman
     .accept 92532 >>Accept The Warrior's Path << Warrior
+    .accept 92485 >>Accept A Student of Nature << Druid
+step << Druid
+    .goto 2521,41.653,23.337
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xyton Silverwind::251373|r.
+    .turnin 92485 >>Turn in A Student of Nature
+    .target Xyton Silverwind::251373
+step << Druid
+    .goto 2521,41.653,23.337
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xyton Silverwind::251373|r.
+    .train 1126 >>Train |T136078:0|t[Mark of the Wild]
+    .target Xyton Silverwind::251373
 step << Mage
     #arrowtext Talk to\n|cRXP_FRIENDLY_Dorii Brightwhisper|r
     .goto 2521,41.55,23.67
@@ -176,13 +203,37 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'ree Farsight|r.
     .turnin 92482 >>Turn in The Way of the Hunter
     .target Tai'ree Farsight
-step
+step << Horde
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ventaari Brightwish|r
+    .goto 2521,42.60,24.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ventaari Brightwish|r.
+    .accept 92598 >>Accept The Gift of Skysight
+    .target Ventaari Brightwish
+step << !Warrior !Rogue
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Uualia Suncrest|r
+    .goto 2521,42.749,24.496
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
+    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Hunter !Shaman
+    >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from her|r << Hunter
+    .collect 159,20,6394,1 << !Hunter !Shaman --Refreshing Spring Water (20)
+    .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
+    .target Uualia Suncrest::251537
+    .money <0.01 << !Hunter
+    .money <0.0040 << Hunter
+step << Horde
+    .isNotOnQuest 93552
+    .isQuestAvailable 93552
+    .goto 2521,42.749,24.496
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
+    .vendor >>|cRXP_WARN_Vendor trash|r
+    .target Uualia Suncrest::251537
+step << Alliance
     #completewith next
     #label Harvesting Windstones
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
     .accept 93552 >>Accept Harvesting Windstones
     .target Dalia the Collector
-step
+step << Alliance
     #completewith Harvesting Windstones
     #arrowtext Vendor trash
     .goto 2521,43.41,23.51
@@ -194,23 +245,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
     .accept 93552 >>Accept Harvesting Windstones
     .target Dalia the Collector
-step << !Warrior !Rogue
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Uualia Suncrest|r
-    .goto 2521,42.749,24.496
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Hunter !Shaman
-    >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from her|r << Hunter
-    .collect 159,10,6394,1 << !Hunter !Shaman --Refreshing Spring Water (10)
-    .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
-    .target Uualia Suncrest::251537
-    .money <0.0050 << !Hunter
-    .money <0.0040 << Hunter
-step << Horde
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Ventaari Brightwish|r
-    .goto 2521,42.60,24.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ventaari Brightwish|r.
-    .accept 92598 >>Accept The Gift of Skysight
-    .target Ventaari Brightwish
 step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Falorne Fallwind|r
     .goto 2521,43.33,24.92
@@ -228,8 +262,8 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     .complete 93552,1 --15/15 Windstone Cluster
 step
-    #arrowtext Don't use |T236219:0|t[Read Ley Line] we need it soon << Alliance
-    #arrowtext Don't use |T1029587:0|t[Skysight] we need it soon << Horde
+    #arrowtext Don't use |T236219:0|t[Read Ley Line]\nwe need it soon << Alliance
+    #arrowtext Don't use |T1029587:0|t[Skysight]\nwe need it soon << Horde
     .goto 2521,48.41,28.37
     >>Kill |cRXP_ENEMY_Cirrusfly Queen|r.
     .complete 92463,1 --1/1 Cirrusfly Queen slain
@@ -404,6 +438,44 @@ step << Warrior
     .turnin 92532 >>Turn in The Warrior's Path
     .target Blademaster Ren
 step << Horde
+    #completewith next
+    #label TurnInGiftOfSkysightA
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Ventaari Brightwish|r
+    .turnin 92598 >>Turn in The Gift of Skysight
+    .target Ventaari Brightwish::251487
+step << Horde
+    #completewith TurnInGiftOfSkysightA
+    #arrowtext Buy\n|T133637:0|t[Apprentice's Herb Pouch]
+    .train 2366,3
+    .goto 2521,42.76,24.5
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
+    .collect 277113,1 >>Buy an |T133637:0|t[Apprentice's Herb Pouch]
+    .target Uualia Suncrest::251537
+step << Horde
+    #completewith TurnInGiftOfSkysightA
+    #arrowtext Buy |T134708:0|t[Mining Pick]\nand |T133635:0|t[Apprentice's Mining Pack]
+    .train 2575,3
+    .goto 2521,42.76,24.5
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
+    .collect 2901,1 >>Buy a |T134708:0|t[Mining Pick]
+    .collect 277115,1 >>Buy an |T133635:0|t[Apprentice's Mining Pack]
+    .target Uualia Suncrest::251537
+step << Horde
+    #completewith TurnInGiftOfSkysightA
+    #arrowtext Buy |T135637:0|t[Skinning Knife]\nand |T133634:0|t[Apprentice's Skinning Satchel]
+    .train 8613,3
+    .goto 2521,42.76,24.5
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
+    .collect 7005,1 >>Buy a |T135637:0|t[Skinning Knife]
+    .collect 277114,1 >>Buy an |T133634:0|t[Apprentice's Skinning Satchel]
+    .target Uualia Suncrest::251537
+step << Horde
+    #completewith TurnInGiftOfSkysightA
+    #arrowtext Vendor trash
+    .goto 2521,42.76,24.49
+    .vendor >>|cRXP_WARN_Vendor trash|r
+step << Horde
+    #requires TurnInGiftOfSkysightA
     #arrowtext Talk to\n|cRXP_FRIENDLY_Ventaari Brightwish|r
     .goto 2521,42.607,24.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ventaari Brightwish::251487|r
@@ -423,6 +495,12 @@ step
     .turnin 92469 >>Turn in Return to Rorian
     .accept 92471 >>Accept Aetheen of the Gales -- Unlocks at 4
     .target Rorian the Dayseeker
+step << Druid
+    .goto 2521,41.653,23.337
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xyton Silverwind::251373|r.
+    .train 8921 >>Train |T136096:0|t[Moonfire]
+    .train 774 >>Train |T136081:0|t[Rejuvenation]
+    .target Xyton Silverwind::251373
 step << Mage
     #arrowtext Talk to\n|cRXP_FRIENDLY_Dorii Brightwhisper|r
     .goto 2521,41.55,23.67
@@ -473,13 +551,13 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r
     .target Windshaper Boro::251374
     .turnin 92468 >>Turn in Call of Earth
-step
+step << Alliance
     #completewith AggressiveVendor
     #label Aggressive Encroachment
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valreaa Valewind|r.
     .accept 92473 >>Accept Aggressive Encroachment
     .target Valreaa Valewind
-step
+step << Alliance
     #completewith Aggressive Encroachment
     #arrowtext Buy\n|T133637:0|t[Apprentice's Herb Pouch]
     .train 2366,3
@@ -487,7 +565,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
     .collect 277113,1 >>Buy an |T133637:0|t[Apprentice's Herb Pouch]
     .target Uualia Suncrest::251537
-step
+step << Alliance
     #completewith Aggressive Encroachment
     #arrowtext Buy |T134708:0|t[Mining Pick]\nand |T133635:0|t[Apprentice's Mining Pack]
     .train 2575,3
@@ -496,7 +574,7 @@ step
     .collect 2901,1 >>Buy a |T134708:0|t[Mining Pick]
     .collect 277115,1 >>Buy an |T133635:0|t[Apprentice's Mining Pack]
     .target Uualia Suncrest::251537
-step
+step << Alliance
     #completewith Aggressive Encroachment
     #arrowtext Buy |T135637:0|t[Skinning Knife]\nand |T133634:0|t[Apprentice's Skinning Satchel]
     .train 8613,3
@@ -505,7 +583,7 @@ step
     .collect 7005,1 >>Buy a |T135637:0|t[Skinning Knife]
     .collect 277114,1 >>Buy an |T133634:0|t[Apprentice's Skinning Satchel]
     .target Uualia Suncrest::251537
-step
+step << Alliance
     #label AggressiveVendor
     #completewith Aggressive Encroachment
     #arrowtext Vendor trash\nBuy bags and profession tools if needed
@@ -520,7 +598,7 @@ step
     .target Valreaa Valewind
 step
     #loop
-    #arrowtext Kill\n|cRXP_ENEMY_Bears|r
+    #arrowtext Kill |cRXP_ENEMY_Scrawny Usera|r\nLoot for |T132136:0|t[|cRXP_LOOT_Scrawny Ursera Claw|r]
     .goto 2521,41.05,25.7,30,0
     .goto 2521,40.4,26.9,30,0
     .goto 2521,39.7,27.03,30,0
@@ -539,7 +617,7 @@ step
 step
     #requires Scrawny Ursera Claw2
     #label Head of Urs'anah
-    #arrowtext Kill\n|cRXP_ENEMY_Urs'anah|r
+    #arrowtext Kill|cRXP_ENEMY_Ursera Scavenger|r\nand |cRXP_ENEMY_Urs'anah|r
     .goto 2521,37.52,25.6,30,0
     .goto 2521,37.36,24.63,30,0
     .goto 2521,35.88,23.31,10,0
