@@ -6,6 +6,7 @@ local fmt, tinsert = string.format,tinsert
 local LoadAddOn = C_AddOns and C_AddOns.LoadAddOn or _G.LoadAddOn
 local IsAddOnLoaded = C_AddOns and C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
 local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
+local GetItemStats = C_Item and C_Item.GetItemStats or _G.GetItemStats
 local GetSpellTexture = C_Spell and C_Spell.GetSpellTexture or _G.GetSpellTexture
 local GetSpellSubtext = C_Spell and C_Spell.GetSpellSubtext or _G.GetSpellSubtext
 local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
@@ -7321,7 +7322,8 @@ function addon.functions.itemStat(self, ...)
         local step = element.step
         if step.active then
             local completed
-            local stats = GetItemStats(GetInventoryItemLink("player", element.slot) or "") or {}
+            local stats = GetItemStats and
+                          GetItemStats(GetInventoryItemLink("player", element.slot) or "") or {}
             local stat
             if element.stat == "QUALITY" then
                 stat = GetInventoryItemQuality("player", element.slot)
