@@ -2459,15 +2459,15 @@ step
     .complete 94947,1 --Take the Skyborne Portal to Stormwind
 step
     #arrowtext Talk to the quest giver\nin Stormwind
-    .goto 1453/0,303.00,-8622.69
+    .goto 1453/0,332.000,-8443.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Bolvar Fordragon::1748|r
+    .target Highlord Bolvar Fordragon::1748
     .turnin 94947 >>Turn in Welcome to Azeroth
-step
-    #arrowtext Talk to the quest giver\nin Stormwind
-    .goto 1453/0,303.00,-8622.69
     .accept 93963 >>Accept Exploring the Alliance
+    .accept 98021 >>Accept Journey to Sentinel Hill
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Randal Emerson|r
-    .goto 1453/0,319.27,-8682.03
+    .goto 1453/0,350.200,-8516.200
     .complete 93963,1 --1/1 Recieve Instructions from Randal Emerson
     .skipgossipid 142485
 ]])
@@ -2580,10 +2580,18 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urs'endris::255853|r
     .target Urs'endris::255853
     .turnin 94638 >>Turn in Strength and Mercy
---Moonglade breadcrumb (800xp)
+
+
+-- Moonglade breadcrumb (800xp)
 step << Alliance
     .goto 1416/0,385.700,385.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Ansirem Runeweaver::2543|r
     .target Archmage Ansirem Runeweaver::2543
     .accept 94912 >>Accept Child of Nature
+step
+    .goto 1453/0,1099.900,-8776.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree::5504|r
+    .target Sheldras Moontree::5504
+    .turnin 94912 >>Turn in Child of Nature
+    .accept 94914 >>Accept Moonglade
 ]]
