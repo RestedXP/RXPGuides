@@ -1006,7 +1006,7 @@ step
     #loop
     .goto 1412/1,-784.9,-2350.18,0
     .goto 1412/1,-597.9,-2301.54,50,0
-    .goto Mulgore,53.0,60.24,50,0
+    .goto 1412/1,-674.96,-2336.14,50,0
     .goto 1412/1,-784.9,-2350.18,50,0
     .goto 1412/1,-904.6,-2371.07,50,0
     .goto 1412/1,-1016.6,-2410.12,50,0
@@ -1443,12 +1443,12 @@ step
     .complete 766,4 --Swoop Gizzard (1)
 step
     #loop
-	.goto Mulgore,51.0,18.4,0
+	.goto 1412/1,-572.21,-903.12,0
 	.goto 1412/1,-1009.92,-1073.0,60,0
 	.goto 1412/1,-906.66,-926.41,60,0
 	.goto 1412/1,-788.5,-912.36,60,0
 	.goto 1412/1,-674.44,-866.81,60,0
-	.goto Mulgore,51.0,18.4,60,0
+	.goto 1412/1,-572.21,-903.12,60,0
 	.goto 1412/1,-512.61,-983.26,60,0
 	.goto 1412/1,-511.59,-1084.3,60,0
 	.goto 1412/1,-496.17,-1166.84,60,0
@@ -1498,7 +1498,7 @@ step
 	.goto 1412/1,-906.66,-926.41,60,0
 	.goto 1412/1,-788.5,-912.36,60,0
 	.goto 1412/1,-674.44,-866.81,60,0
-	.goto Mulgore,51.0,18.4,60,0
+	.goto 1412/1,-572.21,-903.12,60,0
 	.goto 1412/1,-512.61,-983.26,60,0
 	.goto 1412/1,-511.59,-1084.3,60,0
 	.goto 1412/1,-496.17,-1166.84,60,0
@@ -1522,7 +1522,7 @@ step
 	.goto 1412/1,-906.66,-926.41,60,0
 	.goto 1412/1,-788.5,-912.36,60,0
 	.goto 1412/1,-674.44,-866.81,60,0
-	.goto Mulgore,51.0,18.4,60,0
+	.goto 1412/1,-572.21,-903.12,60,0
 	.goto 1412/1,-512.61,-983.26,60,0
 	.goto 1412/1,-511.59,-1084.3,60,0
 	.goto 1412/1,-496.17,-1166.84,60,0
@@ -1545,7 +1545,7 @@ step
 	.goto 1412/1,-906.66,-926.41,60,0
 	.goto 1412/1,-788.5,-912.36,60,0
 	.goto 1412/1,-674.44,-866.81,60,0
-	.goto Mulgore,51.0,18.4,60,0
+	.goto 1412/1,-572.21,-903.12,60,0
 	.goto 1412/1,-512.61,-983.26,60,0
 	.goto 1412/1,-511.59,-1084.3,60,0
 	.goto 1412/1,-496.17,-1166.84,60,0
@@ -1568,7 +1568,7 @@ step
 	.goto 1412/1,-906.66,-926.41,60,0
 	.goto 1412/1,-788.5,-912.36,60,0
 	.goto 1412/1,-674.44,-866.81,60,0
-	.goto Mulgore,51.0,18.4,60,0
+	.goto 1412/1,-572.21,-903.12,60,0
 	.goto 1412/1,-512.61,-983.26,60,0
 	.goto 1412/1,-511.59,-1084.3,60,0
 	.goto 1412/1,-496.17,-1166.84,60,0
@@ -1590,7 +1590,7 @@ step
 	.goto 1412/1,-906.66,-926.41,60,0
 	.goto 1412/1,-788.5,-912.36,60,0
 	.goto 1412/1,-674.44,-866.81,60,0
-	.goto Mulgore,51.0,18.4,60,0
+	.goto 1412/1,-572.21,-903.12,60,0
 	.goto 1412/1,-512.61,-983.26,60,0
 	.goto 1412/1,-511.59,-1084.3,60,0
 	.goto 1412/1,-496.17,-1166.84,60,0
@@ -1614,7 +1614,7 @@ step
 	.goto 1412/1,-906.66,-926.41,60,0
 	.goto 1412/1,-788.5,-912.36,60,0
 	.goto 1412/1,-674.44,-866.81,60,0
-	.goto Mulgore,51.0,18.4,60,0
+	.goto 1412/1,-572.21,-903.12,60,0
 	.goto 1412/1,-512.61,-983.26,60,0
 	.goto 1412/1,-511.59,-1084.3,60,0
 	.goto 1412/1,-496.17,-1166.84,60,0
@@ -1637,7 +1637,7 @@ step
 	.goto 1412/1,-906.66,-926.41,60,0
 	.goto 1412/1,-788.5,-912.36,60,0
 	.goto 1412/1,-674.44,-866.81,60,0
-	.goto Mulgore,51.0,18.4,60,0
+	.goto 1412/1,-572.21,-903.12,60,0
 	.goto 1412/1,-512.61,-983.26,60,0
 	.goto 1412/1,-511.59,-1084.3,60,0
 	.goto 1412/1,-496.17,-1166.84,60,0
@@ -1660,7 +1660,7 @@ step
 	.goto 1412/1,-906.66,-926.41,60,0
 	.goto 1412/1,-788.5,-912.36,60,0
 	.goto 1412/1,-674.44,-866.81,60,0
-	.goto Mulgore,51.0,18.4,60,0
+	.goto 1412/1,-572.21,-903.12,60,0
 	.goto 1412/1,-512.61,-983.26,60,0
 	.goto 1412/1,-511.59,-1084.3,60,0
 	.goto 1412/1,-496.17,-1166.84,60,0
@@ -1886,7 +1886,7 @@ step
     #loop
     .goto 1412/1,-784.9,-2350.18,0
     .goto 1412/1,-597.9,-2301.54,50,0
-    .goto Mulgore,53.0,60.24,50,0
+    .goto 1412/1,-674.96,-2336.14,50,0
     .goto 1412/1,-784.9,-2350.18,50,0
     .goto 1412/1,-904.6,-2371.07,50,0
     .goto 1412/1,-1016.6,-2410.12,50,0
@@ -2043,7 +2043,7 @@ step << Druid
     .target Tal
     .zoneskip The Barrens
 step << Druid
-    .goto The Barrens,42.0,60.86
+    .goto 1413/1,-1633.08,-2499.35
     .use 15710 >>|cRXP_WARN_Use|r |T132857:0|t[Cenarion Lunardust] |cRXP_WARN_at the|r |cRXP_PICK_Moonkin Stone|r
     >>Kill |cRXP_ENEMY_Lunaclaw|r as he spawns. Talk to the |cRXP_FRIENDLY_Lunaclaw Spirit|r afterwards
     >>|cRXP_WARN_Be careful! |cRXP_ENEMY_Lunaclaw|r casts|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
@@ -2283,7 +2283,7 @@ step
     .accept 6364 >>Accept Return to Jahan
     .target Tal
 step
-    .goto Thunder Bluff,60.0,51.7
+    .goto 1456/1,-109.58,-1209.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cairne|r
     .turnin 775 >>Turn in Journey into Thunder Bluff
     .accept 776 >>Accept Rites of the Earthmother
@@ -2574,7 +2574,7 @@ step
     .target Rahauro
     .dungeon RFC
 step
-    .goto Thunder Bluff,60.0,51.7
+    .goto 1456/1,-109.58,-1209.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cairne|r
     .turnin 776 >>Turn in Rites of the Earthmother
     .target Cairne Bloodhoof
@@ -2791,7 +2791,7 @@ step
     #loop
     .goto 1412/1,-784.9,-2350.18,0
     .goto 1412/1,-597.9,-2301.54,50,0
-    .goto Mulgore,53.0,60.24,50,0
+    .goto 1412/1,-674.96,-2336.14,50,0
     .goto 1412/1,-784.9,-2350.18,50,0
     .goto 1412/1,-904.6,-2371.07,50,0
     .goto 1412/1,-1016.6,-2410.12,50,0
@@ -2924,7 +2924,7 @@ step << Warrior
     .goto 1411/1,-4042.6,812.52,40,0
     .goto 1411/1,-4030.44,875.62,40,0
     .goto 1411/1,-4045.25,925.32,40,0
-    .goto Durotar,40.0,24.06,40,0
+    .goto 1411/1,-4077.5,960.22,40,0
     .goto 1411/1,-4210.22,952.11,40,0
     .goto 1411/1,-4042.6,812.52,40,0
     >>Kill |cRXP_ENEMY_Lightning Hides|r. Loot them for their |cRXP_ENEMY_Scales|r
@@ -4098,7 +4098,7 @@ step
     #loop
     .goto 1412/1,-784.9,-2350.18,0
     .goto 1412/1,-597.9,-2301.54,50,0
-    .goto Mulgore,53.0,60.24,50,0
+    .goto 1412/1,-674.96,-2336.14,50,0
     .goto 1412/1,-784.9,-2350.18,50,0
     .goto 1412/1,-904.6,-2371.07,50,0
     .goto 1412/1,-1016.6,-2410.12,50,0
@@ -4566,7 +4566,7 @@ step
     .destroy 4823 >> |cRXP_WARN_You can delete|r |T134712:0|t[Water of the Seers] |cRXP_WARN_from your bags, as it's no longer needed|r
 step << Druid/Hunter/Shaman
     #completewith next
-    .goto Thunder Bluff,32.0,66.69
+    .goto 1456/1,182.67,-1314.05
     .zone Thunder Bluff >>Travel to Thunder Bluff
     .isOnQuest 6089 << Hunter
     .xp <10,1 << Druid
@@ -4803,12 +4803,12 @@ step
 step
     #xprate <2.1
     #loop
-	.goto Mulgore,51.0,18.4,0
+	.goto 1412/1,-572.21,-903.12,0
 	.goto 1412/1,-1009.92,-1073.0,60,0
 	.goto 1412/1,-906.66,-926.41,60,0
 	.goto 1412/1,-788.5,-912.36,60,0
 	.goto 1412/1,-674.44,-866.81,60,0
-	.goto Mulgore,51.0,18.4,60,0
+	.goto 1412/1,-572.21,-903.12,60,0
 	.goto 1412/1,-512.61,-983.26,60,0
 	.goto 1412/1,-511.59,-1084.3,60,0
 	.goto 1412/1,-496.17,-1166.84,60,0
@@ -5118,7 +5118,7 @@ step
     #loop
     .goto 1412/1,-784.9,-2350.18,0
     .goto 1412/1,-597.9,-2301.54,50,0
-    .goto Mulgore,53.0,60.24,50,0
+    .goto 1412/1,-674.96,-2336.14,50,0
     .goto 1412/1,-784.9,-2350.18,50,0
     .goto 1412/1,-904.6,-2371.07,50,0
     .goto 1412/1,-1016.6,-2410.12,50,0
@@ -5154,7 +5154,7 @@ step
     #loop
     .goto 1412/1,-784.9,-2350.18,0
     .goto 1412/1,-597.9,-2301.54,50,0
-    .goto Mulgore,53.0,60.24,50,0
+    .goto 1412/1,-674.96,-2336.14,50,0
     .goto 1412/1,-784.9,-2350.18,50,0
     .goto 1412/1,-904.6,-2371.07,50,0
     .goto 1412/1,-1016.6,-2410.12,50,0
@@ -5228,7 +5228,7 @@ step
     #loop
     .goto 1412/1,-784.9,-2350.18,0
     .goto 1412/1,-597.9,-2301.54,50,0
-    .goto Mulgore,53.0,60.24,50,0
+    .goto 1412/1,-674.96,-2336.14,50,0
     .goto 1412/1,-784.9,-2350.18,50,0
     .goto 1412/1,-904.6,-2371.07,50,0
     .goto 1412/1,-1016.6,-2410.12,50,0
@@ -5393,7 +5393,7 @@ step << Druid
     .target Tal
     .zoneskip Thunder Bluff,1
 step << Druid
-    .goto The Barrens,42.0,60.86
+    .goto 1413/1,-1633.08,-2499.35
     .use 15710 >>Run to the Moonkin Stone and use the |T132857:0|t[Cenarion Lunardust]. Kill |cRXP_ENEMY_Lunaclaw|r
     >>|cRXP_WARN_Steer clear of the|r |cRXP_ENEMY_Thunderheads|r |cRXP_WARN_in the area|r
     .complete 6002,1 --Face Lunaclaw and earn the strength of body and heart it possesses. (1)
@@ -5666,7 +5666,7 @@ step
     .target Tal
 step
     #xprate <2.1
-    .goto Thunder Bluff,60.0,51.7
+    .goto 1456/1,-109.58,-1209.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cairne|r
     .turnin 775 >>Turn in Journey into Thunder Bluff
     --.accept 776 >>Accept Rites of the Earthmother
@@ -6021,7 +6021,7 @@ step << Warrior
     .goto 1411/1,-4042.6,812.52,40,0
     .goto 1411/1,-4030.44,875.62,40,0
     .goto 1411/1,-4045.25,925.32,40,0
-    .goto Durotar,40.0,24.06,40,0
+    .goto 1411/1,-4077.5,960.22,40,0
     .goto 1411/1,-4210.22,952.11,40,0
     .goto 1411/1,-4042.6,812.52,40,0
     >>Kill |cRXP_ENEMY_Lightning Hides|r. Loot them for their |cRXP_ENEMY_Scales|r

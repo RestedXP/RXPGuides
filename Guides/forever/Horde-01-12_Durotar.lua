@@ -3109,7 +3109,7 @@ step << Hunter
 	.goto 1411/1,-4401.09,205.52,50,0
 	.goto 1411/1,-4270.49,260.51,50,0
 	.goto 1411/1,-4166.33,233.01,50,0
-	.goto Durotar,41.0,46.13,50,0
+	.goto 1411/1,-4130.37,182.25,50,0
 	.goto 1411/1,-4208.1,98.71,50,0
 	.goto 1411/1,-4300.1,57.11,50,0
 	.goto 1411/1,-4456.61,65.57,50,0
@@ -4055,7 +4055,7 @@ step << Warrior/Shaman
     .goto 1412/1,-1016.6,-2410.12,50,0
     .goto 1412/1,-904.6,-2371.07,50,0
     .goto 1412/1,-784.9,-2350.18,50,0
-    .goto Mulgore,53.0,60.24,50,0
+    .goto 1412/1,-674.96,-2336.14,50,0
     .goto 1412/1,-597.9,-2301.54,50,0
     .goto 1412/1,-784.9,-2350.18,50,0
     .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
@@ -4087,7 +4087,7 @@ step << Warrior/Shaman
     .accept 771 >>Accept Rite of Vision
     .target Zarlman Two-Moons
 step << Warrior/Shaman
-    .goto Mulgore,47.0,57.0
+    .goto 1412/1,-366.71,-2225.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
     .accept 766 >>Accept Mazzranache
     .target Maur Raincaller
@@ -4144,7 +4144,7 @@ step << Warrior/Shaman
 step << Warrior/Shaman
     #label EnterTB
     #completewith ZamahTurnin2
-    .goto Thunder Bluff,32.0,66.9,60,0
+    .goto 1456/1,182.67,-1315.51,60,0
     .zone Thunder Bluff >> Travel to Thunder Bluff
 step << Warrior
     .goto 1456/1,89.46,-1286.50
@@ -4424,7 +4424,7 @@ step << Warrior/Shaman
     .goto 1412/1,-1016.6,-2410.12,50,0
     .goto 1412/1,-904.6,-2371.07,50,0
     .goto 1412/1,-784.9,-2350.18,50,0
-    .goto Mulgore,53.0,60.24,50,0
+    .goto 1412/1,-674.96,-2336.14,50,0
     .goto 1412/1,-597.9,-2301.54,50,0
     .goto 1412/1,-784.9,-2350.18,50,0
     .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
@@ -4523,7 +4523,7 @@ step << Warrior/Shaman
     .goto 1412/1,-1016.6,-2410.12,50,0
     .goto 1412/1,-904.6,-2371.07,50,0
     .goto 1412/1,-784.9,-2350.18,50,0
-    .goto Mulgore,53.0,60.24,50,0
+    .goto 1412/1,-674.96,-2336.14,50,0
     .goto 1412/1,-597.9,-2301.54,50,0
     .goto 1412/1,-784.9,-2350.18,50,0
     .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40

@@ -100,7 +100,7 @@ step << !Undead
     .goto 1413/1,-2200.55,315.3,20 >>Go to the cave surrounded by Burning Blade orcs
 step << !Undead
     >>Right click the Altar
-    .goto The Barrens,48.0,19.1
+    .goto 1413/1,-2241.08,322.06
     .collect 4986,1,924 --Collect Flawed Power Stone
     .complete 924,1 --Destroy the Demon Seed (1)
 step
@@ -526,7 +526,7 @@ step
     >>Loot the chest for Stolen Silver
     >>Save any Sunscale feathers you get for later
     .goto 1413/1,-3193.62,-1927.77,90,0
-    .goto The Barrens,58.0,53.9
+    .goto 1413/1,-3254.42,-2029.12
     .complete 3281,1 --Stolen Silver (1)
 step
     #completewith Verog
@@ -571,17 +571,17 @@ step
 step
     #label Nest
     >>Click the egg. You need the sunscale feathers from the raptors
-    .goto The Barrens,52.0,46.5
+    .goto 1413/1,-2646.42,-1529.16
     .complete 905,2 --Visit Yellow Raptor Nest (1)
 step
     .goto 1413/1,-3183.48,-2015.61,40,0
-    .goto The Barrens,52.0,46.5,40,0
+    .goto 1413/1,-2646.42,-1529.16,40,0
     .goto 1413/1,-3183.48,-2015.61,40,0
-    .goto The Barrens,52.0,46.5,40,0
+    .goto 1413/1,-2646.42,-1529.16,40,0
     .goto 1413/1,-3183.48,-2015.61,40,0
-    .goto The Barrens,52.0,46.5,40,0
+    .goto 1413/1,-2646.42,-1529.16,40,0
     .goto 1413/1,-3183.48,-2015.61,40,0
-    .goto The Barrens,52.0,46.5,40,0
+    .goto 1413/1,-2646.42,-1529.16,40,0
     >>Finish killing Raptors. Loot them for their Horns
     .complete 865,1 --Intact Raptor Horn (5)
 step
@@ -719,11 +719,11 @@ RXPGuides.RegisterGuide([[
 
 step
     .goto 1442/1,-695.02,12.09,50,0
-    .goto Stonetalon Mountains,82.0,86.0,50,0
+    .goto 1442/1,-758.5,116.29,50,0
     .goto 1442/1,-890.35,171.65,50,0
     .goto 1442/1,-773.15,-13.96.0,50,0
     .goto 1442/1,-695.02,12.09,50,0
-    .goto Stonetalon Mountains,82.0,86.0,50,0
+    .goto 1442/1,-758.5,116.29,50,0
     .goto 1442/1,-890.35,171.65,50,0
     .goto 1442/1,-773.15,-13.96.0,50,0
     >>Kill Grimtotems in the area
@@ -738,7 +738,7 @@ step
 step
     >>Enter the village through the Western path. Make sure you kill all 6 brutes before starting the quest inside. Kill Grundig in front of the main tent
     .goto 1442/1,-255.52,93.5,60,0
-    .goto Stonetalon Mountains,74.0,86.2
+    .goto 1442/1,-367.83,109.78
     .complete 6629,1 --Kill Grundig Darkcloud (x1)
     .complete 6629,2 --Kill Grimtotem Brute (x6)
 step
@@ -831,10 +831,10 @@ step
 	#sticky
 	#label Lakota1
 	#completewith next
-	.goto The Barrens,50.0,53.1,0
-    .goto The Barrens,46.0,49.2,0
+	.goto 1413/1,-2443.75,-1975.07,0
+    .goto 1413/1,-2038.42,-1711.58,0
     .goto 1413/1,-1967.48,-1934.53,0
-    .goto The Barrens,45.0,51.8,0
+    .goto 1413/1,-1937.08,-1887.24,0
 	>>Find & kill Lakota'mani (Gray Kodo) around the area. Loot his Hoof. If you can't find him, skip this quest.
 	.collect 5099,1,883 --Collect Hoof of Lakota'Mani
 	.accept 883 >>Accept Lakota'Mani
@@ -869,7 +869,7 @@ step
 step
    #completewith next
 	>>Kill a Zhevra in the area. Loot it for a Carcass
-	.goto The Barrens,61.0,32.2
+	.goto 1413/1,-3558.42,-563.01
 	.collect 10338,1 --Collect Fresh Zhevra Carcass
 step
 	#label Ishamuhale
@@ -935,7 +935,7 @@ step
     .goto 1413/1,-2595.75,-434.64
     .fly Camp Taurajo >>Fly to Camp Taurajo
 step
-    .goto The Barrens,53.0,52.1
+    .goto 1413/1,-2747.75,-1907.51
     >>Kill Quilboars for a Blood Shard
     .collect 5075 --Blood Shard (1)
 step
@@ -979,7 +979,7 @@ step
 step
     .goto 1413/1,-1683.75,-2461.52,30,0
     .goto 1413/1,-2149.88,-2691.23,30,0
-    .goto The Barrens,50.0,61.1,30,0
+    .goto 1413/1,-2443.75,-2515.57,30,0
     >>Kill Thunder Lizards. Loot them for their blood
     .complete 907,1 --Thunder Lizard Blood (3)
 step
@@ -1002,11 +1002,11 @@ step
     .accept 913 >>Accept Cry of the Thunderhawk
 step
     .goto 1413/1,-1916.82,-2657.45,30,0
-    .goto The Barrens,47.0,61.6,30,0
+    .goto 1413/1,-2139.75,-2549.35,30,0
     .goto 1413/1,-1916.82,-2657.45,30,0
-    .goto The Barrens,47.0,61.6,30,0
+    .goto 1413/1,-2139.75,-2549.35,30,0
     .goto 1413/1,-1916.82,-2657.45,30,0
-    .goto The Barrens,47.0,61.6,30,0
+    .goto 1413/1,-2139.75,-2549.35,30,0
     >>Kill a Thunderhawk. Loot it for its Wings
     .complete 913,1 --Thunderhawk Wings (1)
 step
@@ -1023,7 +1023,7 @@ step
 >>Talk to |cRXP_FRIENDLY_Mangletooth|r
     .turnin 889 >> Turn in Spirit of the Wind
 step
-    .goto Thunder Bluff,32.0,66.9,60 >>Run to the lift and take it into Thunder Bluff
+    .goto 1456/1,182.67,-1315.51,60 >>Run to the lift and take it into Thunder Bluff
 step
     .goto 1456/1,38.48,-1300.28
     .home >>Set your Hearthstone to Thunder Bluff
@@ -1091,7 +1091,7 @@ step
     #completewith next
     .hs >> Hearth to Thunder Bluff
 step
-    .goto Thunder Bluff,70.0,30.90
+    .goto 1456/1,-213.96,-1065.010
 >>Talk to |cRXP_FRIENDLY_Magatha Grimtotem|r
     .turnin 1063 >> Turn in The Elder Crone
 .target Magatha Grimtotem

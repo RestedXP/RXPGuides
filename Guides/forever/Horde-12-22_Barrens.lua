@@ -3746,7 +3746,7 @@ step
     .goto 1413/1,-2813.62,-2054.12,60,0
     .goto 1413/1,-2811.59,-2004.12,60,0
     .goto 1413/1,-2783.22,-1949.39,60,0
-    .goto The Barrens,53.0,51.83,60,0
+    .goto 1413/1,-2747.75,-1889.26,60,0
     .goto 1413/1,-2709.24,-1913.59,60,0
     .goto 1413/1,-2706.2,-1948.72,60,0
     .goto 1413/1,-2687.96,-1973.04,60,0
@@ -3778,7 +3778,7 @@ step << Warlock/Shaman
 	.goto 1413/1,-2813.62,-2054.12,60,0
 	.goto 1413/1,-2811.59,-2004.12,60,0
 	.goto 1413/1,-2783.22,-1949.39,60,0
-	.goto The Barrens,53.0,51.83,60,0
+	.goto 1413/1,-2747.75,-1889.26,60,0
 	.goto 1413/1,-2709.24,-1913.59,60,0
 	.goto 1413/1,-2706.2,-1948.72,60,0
 	.goto 1413/1,-2687.96,-1973.04,60,0
@@ -3819,9 +3819,9 @@ step
 step
     #loop
     .goto 1413/1,-3183.48,-2015.61,0
-    .goto The Barrens,52.0,46.5,0
+    .goto 1413/1,-2646.42,-1529.16,0
     .goto 1413/1,-3183.48,-2015.61,90,0
-    .goto The Barrens,52.0,46.5,90,0
+    .goto 1413/1,-2646.42,-1529.16,90,0
     >>Finish killing |cRXP_ENEMY_Sunscale Scytheclaws|r. Loot them for their |cRXP_LOOT_Horns|r
     >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
     .complete 865,1 --Intact Raptor Horn (5)
@@ -11093,7 +11093,7 @@ step
     .goto 1413/1,-2813.62,-2054.12,60,0
     .goto 1413/1,-2811.59,-2004.12,60,0
     .goto 1413/1,-2783.22,-1949.39,60,0
-    .goto The Barrens,53.0,51.83,60,0
+    .goto 1413/1,-2747.75,-1889.26,60,0
     .goto 1413/1,-2709.24,-1913.59,60,0
     .goto 1413/1,-2706.2,-1948.72,60,0
     .goto 1413/1,-2687.96,-1973.04,60,0
@@ -11123,7 +11123,7 @@ step << Warlock/Shaman
 	.goto 1413/1,-2813.62,-2054.12,60,0
 	.goto 1413/1,-2811.59,-2004.12,60,0
 	.goto 1413/1,-2783.22,-1949.39,60,0
-	.goto The Barrens,53.0,51.83,60,0
+	.goto 1413/1,-2747.75,-1889.26,60,0
 	.goto 1413/1,-2709.24,-1913.59,60,0
 	.goto 1413/1,-2706.2,-1948.72,60,0
 	.goto 1413/1,-2687.96,-1973.04,60,0
@@ -11163,9 +11163,9 @@ step
 step
     #loop
     .goto 1413/1,-3183.48,-2015.61,0
-    .goto The Barrens,52.0,46.5,0
+    .goto 1413/1,-2646.42,-1529.16,0
     .goto 1413/1,-3183.48,-2015.61,90,0
-    .goto The Barrens,52.0,46.5,90,0
+    .goto 1413/1,-2646.42,-1529.16,90,0
     >>Finish killing |cRXP_ENEMY_Sunscale Scytheclaws|r. Loot them for their |cRXP_LOOT_Horns|r
     >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
     .complete 865,1 --Intact Raptor Horn (5)
