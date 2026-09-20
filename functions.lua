@@ -1904,7 +1904,7 @@ addon.functions["goto"] = function(self, ...)
             element.zone, element.x , element.y = addon.GetMapInfo(zone,x,y)
         end
         if not (element.x and element.y and element.zone) then
-            return addon.PrettyDebug(
+            return addon.comms.PrettyDebug(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
                            ": Invalid coordinates or map name\n" .. self, element.zone or zone)
         end
