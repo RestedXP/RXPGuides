@@ -215,10 +215,10 @@ step << !Warrior !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
     >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Hunter !Shaman
     >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from her|r << Hunter
-    .collect 159,20,6394,1 << !Hunter !Shaman --Refreshing Spring Water (20)
+    .collect 159,10,6394,1 << !Hunter !Shaman --Refreshing Spring Water (10)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .target Uualia Suncrest::251537
-    .money <0.01 << !Hunter
+    .money <0.0050 << !Hunter
     .money <0.0040 << Hunter
 step << Horde
     .isNotOnQuest 93552
@@ -725,13 +725,20 @@ step
     .mob Malduko Cloudcrush::256935
 step << Horde
     .isOnQuest 92544
+    #arrowtext Use |T1029587:0|t[Skysight]\nnear the |cRXP_PICK_Elemental Convergence|r
     .goto 2521,35.910,33.605
     .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
     .cooldown spell,1259686,>0,1
+step << Alliance
+    .isOnQuest 92544
+    #arrowtext Use |T236219:0|t[Read Ley Line]\nnear the Thendal Grove Ley Line
+    .goto 2521,35.910,33.605
+    .cast 1259686 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
+    .cooldown spell,1259686,>0,1
 step
-    #loop
     #arrowtext Kill\n|cRXP_ENEMY_Al'Aketh Brute|r and |cRXP_ENEMY_Al'Aketh Neophyte|r
-    .goto 2521,35.75,31.93,40,0
+    #loop
+    -- .goto 2521,35.75,31.93,40,0 -- Feels weird because the arrow jumps around
     .goto 2521,35.33,34.19,30,0
     .goto 2521,36.34,31.56,40,0
     .goto 2521,37.3,32.89,40,0
@@ -750,6 +757,15 @@ step
     .turnin 92544 >>Turn in Al'Aketh Thugs
     .target Hanaa Nightwind
 step
+    #loop
+    -- .goto 2521,35.75,31.93,40,0 -- Feels weird because the arrow jumps around
+    .goto 2521,35.33,34.19,30,0
+    .goto 2521,36.34,31.56,40,0
+    .goto 2521,37.3,32.89,40,0
+    .goto 2521,37.16,34.72,40,0
+    .goto 2521,38.08,35.01,40,0
+    .xp 5+2290 >>Grind to level 5 2290+/2800xp to reach level 6 after turn ins in the next village to be able to train new spells.
+step
     #completewith next
     +|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Windstones|r throughout the zone to obtain an item that restores health and mana.
     *If you spot a Tornado, approach it to gain 40% increased movement speed for 5 minutes. The effect ends if you take damage
@@ -764,6 +780,8 @@ step
     #completewith The Next Step
     #arrowtext Vendor trash
     .goto 2521,44.72,45.47
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Shaman/Druid
+    >>|cRXP_WARN_Save 2 silver for your class spells!|r << Shaman/Druid
     .vendor >>|cRXP_WARN_Vendor trash|r
 step
     #requires The Next Step
@@ -823,7 +841,7 @@ step << Horde
     .accept 92595 >>Accept The Windshapers
     .target Illaya Amberwind
 step << Horde
-    #arrowtext Listen to\n|cRXP_FRIENDLY_Illaya Amberwind|r
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Illaya Amberwind|r
     .goto 2521,43.52,44.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illaya Amberwind::251902|r.
     .complete 92595,1 --1/1 Listen to Illaya
@@ -848,7 +866,6 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aarnor Galestrike::254082|r
     .trainer >> Train your class spells
     .target Aarnor Galestrike::254082
-
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Innkeeper|r
     .goto 2521,43.02,43.24
@@ -988,15 +1005,12 @@ step << Hunter
     .train 3044 >>Train |T132218:0|t[Arcane Shot]
     .train 1130 >>Train |T132212:0|t[Hunter's Mark]
     .target Elayaa Easewind::254084
-step << Hunter
-    .goto 2521,44.790,44.168
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Tinderforged::257421|r
-    >>|cRXP_BUY_Buy and equip a|r |T135499:0|t[Hornwood Recurve Bow]
-    >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_until your Quiver is full|r
-    .collect 2506,1 --Collect Hornwood Recurve Bow
-    .target Tephri Tinderforged::257421
-    .money <0.0285
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.38
+step << Druid
+    .goto 2521,45.154,44.217
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naeluna Swiftmend::254081|r
+    .train 467 >>Train |T136104:0|t[Thorns]
+    .train 5177 >>Train |T136006:0|t[Wrath (Rank 2)]
+    .target Naeluna Swiftmend::254081
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Teeri Wellwind|r
     .goto 2521,44.47,44.98
@@ -1016,19 +1030,28 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taleen Shimmerthread|r.
     .accept 93951 >>Accept A Little Beauty
     .target Taleen Shimmerthread
+step << Hunter
+    .goto 2521,44.790,44.168
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Tinderforged::257421|r
+    >>|cRXP_BUY_Buy and equip a|r |T135499:0|t[Hornwood Recurve Bow]
+    >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_until your Quiver is full|r
+    .collect 2506,1 --Collect Hornwood Recurve Bow
+    .target Tephri Tinderforged::257421
+    .money <0.0285
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.38
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Zerril Softbreeze|r
     .goto 2521,43.850,43.840
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
     .accept 92553 >>Accept Restocking the Larders
     .target Zerril Softbreeze::251905
-step
+step << Warrior/Rogue
     #arrowtext Click on\n|cRXP_PICK_Bounty Available: Vulgara the Insatiable!|r
     .goto 2521,43.37,45.86
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bounty Available: Vulgara the Insatiable!|r
     .accept 93318 >>Accept WANTED: Vulgara the Insatiable
     .target Bounty Available: Vulgara the Insatiable!
-step
+step << Warrior/Rogue
     #arrowtext Talk to\n|cRXP_FRIENDLY_Naleeia Tattermend|r
     .goto 2521,43.073,46.306
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleeia Tattermend::257018|r.
@@ -1129,6 +1152,18 @@ step
     .train 2550 >>Train |T133971:0|t[Apprentice Cook]
     .skipgossipid 137551
     .target Zerril Softbreeze::251905
+--TODO: Maybe add more ice cold buy steps?
+step << Horde
+    .goto 2521,43.518,44.783
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illaya Amberwind::251902|r.
+    .turnin 94411 >>Turn in Meddlesome Mages
+    .target Illaya Amberwind::251902
+step
+    #arrowtext Click on\n|cRXP_PICK_Bounty Available: Vulgara the Insatiable!|r
+    .goto 2521,43.37,45.86
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bounty Available: Vulgara the Insatiable!|r
+    .accept 93318 >>Accept WANTED: Vulgara the Insatiable
+    .target Bounty Available: Vulgara the Insatiable!
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Raan Wildwind|r
     .goto 2521,41.67,44.79
@@ -1145,7 +1180,9 @@ step
     .timer 60, RP
     .target Raan Wildwind
 step
-    >>|cRXP_WARN_Wait for the Roleplay|r.
+    --Maybe skipping this when it doesn't work the first time?
+    >>|cRXP_WARN_Wait until you get the Boosted Rest buff|r.
+    *If you don't get it on the first try try reloging.
     .complete 96101,2 --Gain the Boosted Rest buff
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Raan Wildwind|r
@@ -1256,12 +1293,12 @@ step << Horde
     .goto 2521,40.22,56.94,40,0
     +1
 step
-    #completewith VulgarasHeadA
+    #completewith HippogryphHarrassmentA
     >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step
-    #completewith VulgarasHeadA
+    #completewith HippogryphHarrassmentA
     >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
@@ -1339,7 +1376,7 @@ step
     .goto 2521,43.079,51.028,15,0
     .goto 2521,42.978,51.803,15,0
     .goto 2521,42.75,52.68
-    >>Kill |cRXP_ENEMY_Vulgara|r|cRXP_WARN_(level 8 elite)|r on the mountain. Loot it for |T4218759:0|t[|cRXP_LOOT_Vulgar's Head|r].
+    >>Kill |cRXP_ENEMY_Vulgara|r |cRXP_WARN_(level 8 elite)|r on the mountain. Loot it for |T4218759:0|t[|cRXP_LOOT_Vulgar's Head|r].
     *|cRXP_WARN_Look for a group to kill it or skip the quest; respawns are lengthy|r.
     .complete 93318,1 --1/1 Vulgara's Head
     .mob Vulgara
@@ -1431,15 +1468,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyassa Swiftdraught::257019|r
     .turnin 97963 >>Turn in Camping 101: Alchemy
     .target Nyassa Swiftdraught::257019
-step << Hunter
-    .goto 2521,44.790,44.168
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Tinderforged::257421|r
-    >>|cRXP_BUY_Buy and equip a|r |T135499:0|t[Hornwood Recurve Bow]
-    >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_until your Quiver is full|r
-    .collect 2506,1 --Collect Hornwood Recurve Bow
-    .target Tephri Tinderforged::257421
-    .money <0.0285
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.38
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Taleen Shimmerthread|r
     .goto 2521,44.873,44.187
@@ -1581,7 +1609,7 @@ step
 --     .money <0.03
 --     .xp <8,1
 step
-    #completewith
+    #completewith 
     >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
@@ -1593,6 +1621,7 @@ step
     .mob Prideclaw::251245
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Missionary Jasaan|r
+    .goto 2521,45.374,53.512,25,0
     .goto 2521,46.880,56.242
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Missionary Jasaan::257065|r
     .target Missionary Jasaan::257065
@@ -1849,27 +1878,6 @@ step
     .turnin 97969 >>Turn in Camping 101: Leatherworking
     .target Indari Sunseam::251993
 step
-    #completewith next
-    #label StolenSuppliesA
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danarii Bellowveil|r.
-    .turnin 92551 >>Turn in Stolen Supplies
-    .target Danarii Bellowveil
-step
-    #arrowtext Follow the way\nup the mountain
-    #completewith StolenSuppliesA
-    .isQuestNotComplete 97967
-    .isQuestNotComplete 97965
-    .isQuestNotComplete 97968
-    .isQuestNotComplete 98286
-    .isQuestNotComplete 97971
-    .isQuestNotComplete 97963
-    .isQuestNotComplete 97973
-    .isQuestNotComplete 97964
-    .isQuestNotComplete 97970
-    .isQuestNotComplete 97969
-    .goto 2521,44.111,45.843,10 >>Follow the way up the mountain.
-step
-    #requires StolenSuppliesA
     #arrowtext Talk to\n|cRXP_FRIENDLY_Danarii Bellowveil|r
     .goto 2521,45.24,45.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danarii Bellowveil|r.
@@ -1885,6 +1893,11 @@ step
     .accept 92579 >>Accept To Valanaar << Horde
     .accept 93948 >>Accept Deliver the Signet
     .target Constable Aonda
+step
+    .goto 2521,44.72,45.47
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Shaman/Druid
+    >>|cRXP_WARN_Save 2 silver for your class spells!|r << Shaman/Druid
+    .vendor >>|cRXP_WARN_Vendor trash|r
 step
     .goto 2521,60.640,72.664
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyalah Brightfire::257006|r.
