@@ -1423,6 +1423,7 @@ step
     .isOnQuest 91775
     .goto 1429/0,91.200,-9788.500
     >>Kill |cRXP_ENEMY_Nimsy|r inside Fargodeep Mine. Loot him for the |cRXP_LOOT_Picture Book: Fun with Elementals|r
+    >>|cRXP_WARN_Try to find a group for this step. The |cRXP_ENEMY_Kobolds|r respawn very fast in the cave|r
     >>|cRXP_WARN_He will also summon a |cRXP_ENEMY_Rumbler|r add. Be careful if you're attempting to solo this. Skip this step if you are unable to kill him|r
     .complete 91775,1 --|1/1 Picture Book: Fun with Elementals
     .mob Nimsy
@@ -1443,10 +1444,22 @@ step
     .goto 1429/0,223.09,-9916.240,35,0
     .goto 1429/0,259.54,-9865.09,35,0
     .goto 1429/0,215.81,-9830.600,35,0
-    .xp 7+1800 >>Grind to 1800+/4500xp << !Priest
-    .xp 7+1460 >>Grind to 1460+/4500xp << Priest
+    .xp 7+1140 >>Grind to 1140+/4500xp
     .mob Kobold Tunneler
     .mob Kobold Miner
+    .isQuestComplete 91775 -- elite quest
+step
+    #loop
+    .goto 1429/0,223.09,-9916.240,0
+    .goto 1429/0,176.93,-9857.68,35,0
+    .goto 1429/0,176.24,-9902.12,35,0
+    .goto 1429/0,223.09,-9916.240,35,0
+    .goto 1429/0,259.54,-9865.09,35,0
+    .goto 1429/0,215.81,-9830.600,35,0
+    .xp 7+1815 >>Grind to 1815+/4500xp
+    .mob Kobold Tunneler
+    .mob Kobold Miner
+    .isQuestNotComplete 91775 -- elite quest
 step
     #label Goldtooth
     .goto 1429/0,338.47,-9889.69
@@ -1667,9 +1680,9 @@ step
     #completewith next
     .goto 1429/0,16.20,-9462.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r
-    .vendor >> |cRXP_BUY_Buy up to 20|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him if you can afford it|r << !Warrior !Rogue !Paladin
+    .vendor >> |cRXP_BUY_Buy up to 20|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him if you can afford it|r << !Warrior !Rogue !Paladin !Hunter
     .vendor >> |cRXP_BUY_Buy up to 20|r |T133995:0|t[Dalaran Sharp] |cRXP_BUY_from him if you can afford it|r << Warrior/Rogue
-    .vendor >> |cRXP_BUY_Buy up to 10|r |T133995:0|t[Dalaran Sharp] |cRXP_BUY_and 10|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him if you can afford it|r << Paladin
+    .vendor >> |cRXP_BUY_Buy up to 10|r |T133995:0|t[Dalaran Sharp] |cRXP_BUY_and 10|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him if you can afford it|r << Paladin/Hunter
     .target Innkeeper Farley
 step
     #optional
@@ -1885,12 +1898,14 @@ step
     .complete 91777,2 --|1/1 Arcane Explainer: Magical Stuff in Simple Words
     .mob Mother Fang
 step
+    .isQuestComplete 91777
     #completewith next
     .goto 1429/0,-590.300,-9208.101,10,0
     .goto 1429/0,-508.400,-9249.101,10,0
     .goto 1429/0,-493.900,-9208.000,10,0
     .goto 1429/0,-493.000,-9157.400,18 >> |cRXP_WARN_Follow the arrow closely to return to Northshire to turn in the quest you just completed for a weapon reward|r
 step
+    .isQuestComplete 91777
     .goto 1429/0,-135.800,-8913.700,10,0
     .goto 1429/0,-186.200,-8874.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton::951|r
@@ -2244,17 +2259,7 @@ step
 --  .skill cooking,<10,1
     .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
 step
-    #loop
-    .goto 1429,77.499,74.518,0
-    .goto 1429,80.496,78.223,0
-    .goto 1429,87.342,63.763,0
-    .goto 1429,77.499,74.518,55,0
-    .goto 1429,77.222,77.499,55,0
-    .goto 1429,78.483,79.323,55,0
-    .goto 1429,80.496,78.223,55,0
-    .goto 1429,81.434,76.695,55,0
-    .goto 1429,87.145,69.922,55,0
-    .goto 1429,87.342,63.763,55,0
+    #completewith WaterloggedToolbox
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
     .complete 52,1 --Kill Prowler (x8)
     .mob +Prowler
@@ -2275,9 +2280,27 @@ step
     .complete 91733,1 -- Waterlogged Axe 1/1
     .goto 1429,76.7,82.5
 step
+    #label WaterloggedToolbox
     >>Loot the |cRXP_PICK_Waterlogged Toolbox|r on the ground
     .complete 91733,3 -- Waterlogged Toolbox 1/1
     .goto 1429,77.3,86.8
+step
+    #loop
+    .goto 1429,77.499,74.518,0
+    .goto 1429,80.496,78.223,0
+    .goto 1429,87.342,63.763,0
+    .goto 1429,77.499,74.518,55,0
+    .goto 1429,77.222,77.499,55,0
+    .goto 1429,78.483,79.323,55,0
+    .goto 1429,80.496,78.223,55,0
+    .goto 1429,81.434,76.695,55,0
+    .goto 1429,87.145,69.922,55,0
+    .goto 1429,87.342,63.763,55,0
+    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
+    .complete 52,1 --Kill Prowler (x8)
+    .mob +Prowler
+    .complete 52,2 --Kill Young Forest Bear (x5)
+    .mob +Young Forest Bear
 
 step
     #completewith Level9Grind << Warlock/Warrior/Rogue
@@ -2347,10 +2370,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormin Pelford|r
     .turnin 91733 >> Turn in Downstream
     .target Ormin Pelford
-step << Warlock/Warrior/Rogue
+step << Warlock/Warrior/Rogue/Hunter
     #label Level9Grind
 	.goto 1429/0,-877.85,-9778.98
-    .xp 9+3510 >> Grind to 3510+/6500xp << Warlock
+    .xp 9+3510 >> Grind to 3510+/6500xp << Warlock/Hunter
     .xp 9+3420 >> Grind to 3420+/6500xp << Warrior/Rogue
 step << !Warlock
     #season 0,1 << Rogue
@@ -2420,8 +2443,7 @@ step << !Warlock
     #completewith RRFP
     .goto 1433/0,-1974.20,-9577.07,15,0
     .goto 1433/0,-2077.18,-9608.42,25,0
-    .goto 1433/0,-2212.64,-9558.570,25,0
-    .goto Redridge Mountains,30.590,59.410,15 >>|cRXP_WARN_BE CAREFUL: Stick to the main road and avoid any close mobs en-route|r
+    .goto 1433/0,-2212.64,-9558.570,25 >>|cRXP_WARN_BE CAREFUL: Stick to the main road and avoid any close mobs en-route|r
 step << !Warlock
     #optional
     .goto 1433/0,-2237.93,-9443.60
@@ -2433,7 +2455,7 @@ step << !Warlock
 step << !Warlock
     #season 0,1 << Paladin
     #label RRFP
-    .goto Redridge Mountains,30.590,59.410
+    .goto 1433/0,-2234.900,-9435.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
     .target Ariena Stormfeather
@@ -2502,10 +2524,64 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
     .accept 1097 >> Accept Elmore's Task
     .target Smith Argus
-step << Warlock/Warrior
+step << Warlock/Warrior/Hunter
     #requires GoldshireVendor
     #optional
     .xp 10 >> Grind to 10
+step << Hunter
+    .goto 1429/0,107.200,-9472.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r 
+    .target Josephine Carson::251507
+    .accept 94792 >>Accept Taming the Beast
+    .trainer >> Train your class spells
+step << Hunter
+    #loop
+    .goto 1429/0,28.100,-9768.101,40,0
+    .goto 1429/0,-36.100,-9814.500,40,0
+    .use 266158 >> |cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Rockhide Boar|r
+    .complete 94792,1 -- Tame a Rockhide Boar (1)
+    .mob Rockhide Boar
+step << Hunter
+    .goto 1429/0,107.200,-9472.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r 
+    .target Josephine Carson::251507
+    .turnin 94792 >>Turn in Taming the Beast
+    .accept 94863 >>Accept Taming the Beast
+step << Hunter
+    #loop
+    .goto 1429/0,-556.600,-9524.300,40,0
+    .goto 1429/0,-626.200,-9430.800,40,0
+    .use 266253 >> |cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Gray Forest Wolf|r
+    >>|cRXP_WARN_Ensure you have dismissed your previous|r |cRXP_ENEMY_Rockhide Boar|r
+    .complete 94863,1 -- Tame a Gray Forest Wolf (1)
+    .mob Gray Forest Wolf
+step << Hunter
+    .goto 1429/0,107.200,-9472.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r 
+    .target Josephine Carson::251507
+    .turnin 94863 >>Turn in Taming the Beast
+    .accept 94864 >>Accept Taming the Beast
+step << Hunter
+    #loop
+    .goto 1429/0,-14.600,-9797.800,40,0
+    .goto 1429/0,-146.800,-9784.500,40,0
+    .goto 1429/0,-325.300,-9844.300,40,0
+    .use 266254 >> |cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Young Forest Bear|r
+    >>|cRXP_WARN_Ensure you have dismissed your previous|r |cRXP_ENEMY_Gray Forest Wolf|r
+    .complete 94864,1 -- Tame a Young Forest Bear (1)
+    .mob Young Forest Bear
+step << Hunter
+    .goto 1429/0,107.200,-9472.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r 
+    .target Josephine Carson::251507
+    .turnin 94864 >>Turn in Taming the Beast
+    .accept 94793 >>Accept Training the Beast
+step << Hunter
+    .goto 1429/0,85.000,-9475.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Isaac Chan::258930|r
+    .target Isaac Chan::258930
+    .turnin 94793 >>Turn in Training the Beast
+    .trainer >> Train your pet spells
 step << Warrior
     .goto 1429/0,109.36,-9461.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
@@ -2767,6 +2843,11 @@ step << !Warlock
     #optional
     #completewith WestEntry
     .abandon 123 >> Abandon The Collector
+step << Hunter
+    #completewith FlySW
+    >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Young Fleshripper|r to tame it as you run through Westfall|r
+    .train 14916 >> |cRXP_WARN_Remember to use|r |T132162:0|t[Beast Training] |cRXP_WARN_to teach your pet skills|r
+    .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Click here for more info about pet training|r
 step
     #completewith WestEntry
     .goto 1436/0,918.42,-9851.50
@@ -2856,12 +2937,6 @@ step
     .accept 6181 >> Accept A Swift Message << Human
     .target Quartermaster Lewis
     .isQuestAvailable 6181 << Human
-step
-    .goto 1436/0,1166.57,-10653.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Heather|r
-    >>|cRXP_BUY_Buy up to 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_from her. They are very cheap level 5 food|r
-    .collect 4592,20,314,1 --Longjaw Mud Snapper (20)
-	.target Innkeeper Heather
 step << Human
     .goto 1436/0,1037.42,-10628.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
@@ -2883,11 +2958,7 @@ step
     .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_Click here for video reference on "Split pulling". It is a short video and invaluable to learn|r
     .target Morgan Pestle
 step << Rogue
-    #optional
-    #completewith next
-    .goto 1453,57.764,61.412,6 >> Enter the Everyday Merchandise building
-step << Rogue
-    .goto 1453,58.380,61.683
+    .goto 1453/0,596.43,-8831.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Mullby|r
     >>|cRXP_BUY_Buy the|r |T135425:0|t[Keen Throwing Knives] |cRXP_BUY_from him|r
     .collect 3107,1 --Collect Keen Throwing Knife (1)
@@ -2897,7 +2968,7 @@ step << Rogue
 --XX 420 6281, 110 1097, 900 6661, 85 IF, 65 Gate IF, 65 refuge, 65 Amberstill
 --XX (WARR ONLY): 90 1638, 90 1639, 210 1640, 420 1665
 step << Rogue
-    .goto 1453,58.380,61.683
+    .goto 1453/0,596.43,-8831.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Mullby|r
     >>|cRXP_BUY_Buy the|r |T135641:0|t[Balanced Throwing Daggers] |cRXP_BUY_from him|r
     .collect 2946,1 --Collect Balanced Throwing Dagger (1)
@@ -2961,7 +3032,6 @@ step << Rogue
     #optional
     #ah
     .goto 1453/0,607.38,-8790.45
-    .goto 1453,53.615,59.767,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
     >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
     >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
@@ -2976,7 +3046,6 @@ step << Rogue
     #optional
     #ah
     .goto 1453/0,607.38,-8790.45
-    .goto 1453,53.615,59.767,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
     >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
     >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
@@ -3204,7 +3273,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
     .turnin 244 >> Turn in Encroaching Gnolls
 step << Warlock
-    .goto Redridge Mountains,30.590,59.410
+    .goto 1433/0,-2234.900,-9435.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
     .fly Stormwind >> Fly to Stormwind
@@ -3252,7 +3321,7 @@ step << Warlock
 
 step << Rogue
     #xprate <1.59
-    .goto 1453,74.645,52.818
+    .goto 1453/0,377.47,-8752.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne the Night Man|r
     >>|cRXP_WARN_Only train|r |T132147:0|t[Dual Wield] |cRXP_WARN_and|r |T132307:0|t[Sprint]
     .train 674 >> Train |T132147:0|t[Dual Wield]
@@ -3260,7 +3329,7 @@ step << Rogue
     .target Osborne the Night Man
 step << Rogue
     #xprate >1.59
-    .goto 1453,74.645,52.818
+    .goto 1453/0,377.47,-8752.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne the Night Man|r
     .train 674 >> Train |T132147:0|t[Dual Wield]
     .train 2983 >> Train |T132307:0|t[Sprint]
@@ -3269,7 +3338,7 @@ step << Rogue
     .xp >12,1
 step << Rogue
     #xprate >1.59
-    .goto 1453,74.645,52.818
+    .goto 1453/0,377.47,-8752.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne the Night Man|r
     .train 1766 >> Train your class spells
     .target Osborne the Night Man
@@ -3278,7 +3347,7 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     #optional
-    .goto 1453,74.645,52.818
+    .goto 1453/0,377.47,-8752.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne the Night Man|r
     .trainer >> Train your class spells
     .target Osborne the Night Man
@@ -3382,8 +3451,8 @@ step << Warrior/Paladin/Rogue
 --XX 81c, 1s 75c from 6281
 step
     #label DeeprunEnter
-    .goto 1453,60.972,11.690,30,0
-    .goto 1453,65.933,5.771
+    .goto 1453/0,562.300,-8385.300,20,0
+    .goto 1453/0,522.000,-8352.101
     .subzone 2257 >>Enter the Deeprun Tram
     .zoneskip Ironforge
 step
