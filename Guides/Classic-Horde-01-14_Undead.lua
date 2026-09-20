@@ -1008,6 +1008,13 @@ step
     >>Loot the |cRXP_LOOT_Gloom Weed|r on the ground
     .complete 5481,1 --Gloom Weed (3)
 step
+    #xprate <1.5
+    #completewith Pumkpins
+    >>Kill any |cRXP_ENEMY_Decrepit Darkhound|r you see. Loot them for their |cRXP_LOOT_Blood|r
+    .complete 367,1 --Darkhound Blood (5)
+    .mob Decrepit Darkhound
+step
+    #xprate >1.49
     #completewith GloomWeed
     >>Kill any |cRXP_ENEMY_Decrepit Darkhound|r you see. Loot them for their |cRXP_LOOT_Blood|r
     .complete 367,1 --Darkhound Blood (5)
@@ -1098,6 +1105,7 @@ step << Rogue
     .mob Tirisfal Farmhand
     .train 400095,1
 step
+    #label Pumkpins
     #loop
     .goto Tirisfal Glades,36.63,50.09,0
     .goto Tirisfal Glades,37.20,52.17,50,0
@@ -1107,7 +1115,7 @@ step
     .goto Tirisfal Glades,35.30,50.91,50,0
     .goto Tirisfal Glades,34.57,51.58,50,0
     .goto Tirisfal Glades,36.63,50.09,50,0
-    >>Loot the |cRXP_LOOT_Pumpkins|r found in the field.
+    >>Loot the |cRXP_LOOT_Pumpkins|r found in the field
     .complete 365,1 --Tirisfal Pumpkin (10)
 step << Rogue
     #season 2
@@ -1886,7 +1894,7 @@ step
     .goto Tirisfal Glades,64.50,29.41
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     >>|cRXP_WARN_Make sure you die on (or to the west of) the arrow|r
-step << skip
+step
     #label DoomedWeed
     #loop
     .goto Tirisfal Glades,57.71,48.96,0
@@ -1896,6 +1904,7 @@ step << skip
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holland|r, he patrols around the graveyard.
     .turnin 5482 >>Turn in Doom Weed
     .target Junior Apothecary Holland
+    .isQuestComplete 5482
 step << Rogue
     #season 2
     .goto Tirisfal Glades,52.89,54.03
@@ -2046,6 +2055,7 @@ step << Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
 step
+    #label Brill3
     .goto Tirisfal Glades,61.71,52.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Renee|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Mage/Priest
@@ -2074,12 +2084,7 @@ step << Warrior
     .mob Vampiric Duskbat
     .train 403475,1
 step
-    #loop
-    .goto Tirisfal Glades,41.09,47.59,0
-    .goto Tirisfal Glades,51.31,50.01,60,0
-    .goto Tirisfal Glades,46.01,51.59,60,0
-    .goto Tirisfal Glades,41.09,47.59,60,0
-    .goto Tirisfal Glades,41.45,41.62,60,0
+    #completewith next
     >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
@@ -2494,13 +2499,6 @@ step << Warlock
     .goto Undercity,64.22,39.77,10,0
     .goto Undercity,65.53,43.62,15 >> Take the lift down to the Undercity
 step << Warlock
-    #xprate <1.5
-    .goto Undercity,67.74,37.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norman|r
-    .home >> Set your Hearthstone to Undercity
-    .target Innkeeper Norman
-    .bindlocation 1497
-step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin|r in the Magic Quarter
     .turnin 1478 >> Turn in Halgar's Summons
@@ -2636,14 +2634,6 @@ step << !Priest
     >>|cRXP_WARN_Skip this if you want, it's only a small time saver|r
     .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .target Auctioneer Rhyker
-step << !Warlock
-    #xprate <1.5
-    #label UCHome
-    .goto Undercity,67.74,37.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norman|r
-    .home >> Set your Hearthstone to Undercity
-    .target Innkeeper Norman
-    .bindlocation 1497
 step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin|r in the Magic Quarter
@@ -2776,6 +2766,14 @@ step << Mage/Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bethor|r in the Magic Quarter
     .turnin 405 >>Turn in The Prodigal Lich
     .target Bethor Iceshard
+step
+    #xprate <1.5
+    #label UCHome
+    .goto Undercity,67.74,37.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norman|r
+    .home >> Set your Hearthstone to Undercity
+    .target Innkeeper Norman
+    .bindlocation 1497
 step
     #optional
     #label LogoutSkip1

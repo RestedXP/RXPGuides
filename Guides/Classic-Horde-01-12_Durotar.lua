@@ -1276,7 +1276,6 @@ step
     .goto Durotar,44.70,52.47
     .deathskip >> |cRXP_WARN_Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r near the arrow|r
     .target Spirit Healer
-    .subzoneskip 362
 step
     #softcore
     #label Betrayers
@@ -8204,7 +8203,6 @@ step
     .goto Durotar,44.70,52.47
     .deathskip >> |cRXP_WARN_Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r near the arrow|r
     .target Spirit Healer
-    .subzoneskip 362
 step
     #softcore
     #label Betrayers

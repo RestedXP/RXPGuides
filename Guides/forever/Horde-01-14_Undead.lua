@@ -1010,7 +1010,7 @@ step
     >>Loot the |cRXP_LOOT_Gloom Weed|r on the ground
     .complete 5481,1 --Gloom Weed (3)
 step
-    #completewith GloomWeed
+    #completewith Pumkpins
     >>Kill any |cRXP_ENEMY_Decrepit Darkhound|r you see. Loot them for their |cRXP_LOOT_Blood|r
     .complete 367,1 --Darkhound Blood (5)
     .mob Decrepit Darkhound
@@ -1100,6 +1100,7 @@ step << Rogue
     .mob Tirisfal Farmhand
     .train 400095,1
 step
+    #label Pumkpins
     #loop
     .goto 1420/0,1378.12,2328.54,0
     .goto 1420/0,1352.36,2265.88,50,0
@@ -1888,7 +1889,7 @@ step
     .goto Tirisfal Glades,64.5,29.41
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     >>|cRXP_WARN_Make sure you die on (or to the west of) the arrow|r
-step << skip
+step
     #label DoomedWeed
     #loop
     .goto 1420/0,425.56,2362.58,0
@@ -2048,13 +2049,14 @@ step << Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
 step
+    #label Brill3
     .goto 1420/0,244.81,2269.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Renee|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Mage/Priest
     >>|cRXP_BUY_Buy|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r <<Warrior/Rogue
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_and|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r << Warlock
     .vendor >> Vendor Trash
-    .collect 1179,20,426,1 << Mage/Priest --Ice Cold Milk (20)
+    .collect 1179,20,426,1 << Mage/Priest/Paladin --Ice Cold Milk (20)
     .collect 4605,20,426,1 << Rogue/Warrior --Red-speckled Mushroom (20)
     .collect 1179,10,426,1 << Warlock --Ice Cold Milk (10)
     .collect 4605,10,426,1 << Warlock --Red-speckled Mushroom (10)
@@ -2076,12 +2078,7 @@ step << Warrior
     .mob Vampiric Duskbat
     .train 403475,1
 step
-    #loop
-    .goto Tirisfal Glades,41.09,47.59,0
-    .goto Tirisfal Glades,51.31,50.01,60,0
-    .goto Tirisfal Glades,46.01,51.59,60,0
-    .goto Tirisfal Glades,41.09,47.59,60,0
-    .goto Tirisfal Glades,41.45,41.62,60,0
+    #completewith next
     >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
@@ -2496,13 +2493,6 @@ step << Warlock
     .goto 1458/0,257.08,1623.38,10,0
     .goto 1458/0,244.51,1598.73,15 >> Take the lift down to the Undercity
 step << Warlock
-    #xprate <1.5
-    .goto 1458/0,223.31,1634.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norman|r
-    .home >> Set your Hearthstone to Undercity
-    .target Innkeeper Norman
-    .bindlocation 1497
-step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin|r in the Magic Quarter
     .turnin 1478 >> Turn in Halgar's Summons
@@ -2638,14 +2628,6 @@ step << !Priest
     >>|cRXP_WARN_Skip this if you want, it's only a small time saver|r
     .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .target Auctioneer Rhyker
-step << !Warlock
-    #xprate <1.5
-    #label UCHome
-    .goto 1458/0,223.31,1634.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norman|r
-    .home >> Set your Hearthstone to Undercity
-    .target Innkeeper Norman
-    .bindlocation 1497
 step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin|r in the Magic Quarter
@@ -2778,6 +2760,14 @@ step << Mage/Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bethor|r in the Magic Quarter
     .turnin 405 >>Turn in The Prodigal Lich
     .target Bethor Iceshard
+step << !Warlock
+    #xprate <1.5
+    #label UCHome
+    .goto 1458/0,223.31,1634.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norman|r
+    .home >> Set your Hearthstone to Undercity
+    .target Innkeeper Norman
+    .bindlocation 1497
 step
     #optional
     #label LogoutSkip1
