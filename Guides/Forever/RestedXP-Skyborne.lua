@@ -1321,7 +1321,7 @@ step
 step
     .isOnQuest 92553
     .itemcount 1971,<3
-    #arrowtext Craft Herb Baked Egg \ Keep 3 Small Eggs 
+    #arrowtext Craft Herb Baked Egg \ Keep 3 Small Eggs
     .goto 2521,43.86,43.85
     >>Craft |T132834:0|t[Herb Baked Egg] |cRXP_WARN_but keep at least 3 for the quest, you'll need them later|r
     *|cRXP_WARN_Any buff food grants 5% increased experience from kills for 15 minutes|r.
@@ -2580,4 +2580,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urs'endris::255853|r
     .target Urs'endris::255853
     .turnin 94638 >>Turn in Strength and Mercy
+--Moonglade breadcrumb (800xp)
+step << Alliance
+    .goto 1416/0,385.700,385.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Ansirem Runeweaver::2543|r
+    .target Archmage Ansirem Runeweaver::2543
+    .accept 94912 >>Accept Child of Nature
 ]]
