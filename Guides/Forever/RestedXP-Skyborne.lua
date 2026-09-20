@@ -1667,13 +1667,13 @@ step
 --     .money <0.03
 --     .xp <8,1
 step
-    #completewith 
+    #completewith LivingLightningA
     >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob Galestrider::251661
 step
-    #completewith
+    #completewith LivingLightningA
     >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
@@ -1827,6 +1827,30 @@ step
     >>Kill |cRXP_ENEMY_Living Lightning|r.
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning
+step
+    #completewith RestockingTheLaddersA
+    #hidewindow
+    #loop
+    .goto 2521,42.885,63.422,35,0
+    .goto 2521,38.283,42.288,35,0
+    .goto 2521,42.055,40.938,35,0
+    +1
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    .complete 92553,2 --8/8 Strider Meat
+    .complete 92553,1 --3/3 Small Egg
+    .mob Galestrider::251661
+step
+    >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
+    .complete 92515,1 --10/10 Prideclaw Pelt
+    .mob Prideclaw::251245
+step
+    #label RestockingTheLaddersA
+    >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    .complete 92553,2 --8/8 Strider Meat
+    .complete 92553,1 --3/3 Small Egg
+    .mob Galestrider::251661
 step
     .isQuestComplete 97967
     .isQuestAvailable 92550
@@ -2005,7 +2029,6 @@ step
 step
     .goto 2521,44.72,45.47
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Shaman/Druid
-    >>|cRXP_WARN_Save 2 silver for your class spells!|r << Shaman/Druid
     .vendor >>|cRXP_WARN_Vendor trash|r
 step
     #completewith next
