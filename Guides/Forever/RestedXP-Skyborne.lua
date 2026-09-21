@@ -2688,23 +2688,19 @@ step
 step
     #arrowtext Follow the arrow
     .goto 2521,56.06,60.85
+    >>Follow the Arrow
     .complete 92643,1 --1/1 Find the secluded house in Shen'dar Highlands
 step
-    #arrowtext Kill\n|cRXP_ENEMY_Al'Aketh Assassin|r
-    .goto 2521,55.66,59.87
+    #completewith Fendaal Windstone
     >>Kill |cRXP_ENEMY_Al'Aketh Assassin|r.
     .complete 98512,1 --10/10 Al'Aketh Assassin slain
     .mob Al'Aketh Assassin
 step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Fendaal Windstone|r
-    .goto 2521,56.80,61.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fendaal Windstone|r.
-    .turnin 98512 >>Turn in Al'Aketh Assassins
-    .target Fendaal Windstone
-step
     #arrowtext Follow the arrow
     .goto 2521,56.49,60.86
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Dead Cultist|r.
     .complete 92643,2 --1/1 Find the Al'Aketh Turncoat
+    .target Dead Cultist
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Dead Cultist|r
     .goto 2521,56.03,58.80
@@ -2713,6 +2709,33 @@ step
     .accept 92644 >>Accept Unfortunate News
     .target Dead Cultist
 step
+    #label Fendaal Windstone
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Fendaal Windstone|r
+    .goto 2521,56.80,61.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fendaal Windstone|r.
+    .turnin 98512 >>Turn in Al'Aketh Assassins
+    .target Fendaal Windstone
+step
+    #completewith next
+    #label Unfortunate News
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talaanis Shadowsong|r.
+    .turnin 92644 >>Turn in Unfortunate News
+    .accept 94568 >>Accept The Cult's True Plans
+    .disablecheckbox
+    .target Talaanis Shadowsong
+step
+    #completewith Unfortunate News
+    #arrowtext Climb the tower
+    .goto 2521,65.93,76.37,5,0
+    .goto 2521,66.46,76.8,5,0
+    .goto 2521,66.43,76.58,5,0
+    .goto 2521,66.43,76.83,5,0
+    .goto 2521,66.31,77.08,5,0
+    .goto 2521,66,76.57,8,0
+    .goto 2521,66.19,76.22,8,0
+    .goto 2521,66.44,76.4,5 >>Climb the tower
+step
+    #requires Unfortunate News
     #arrowtext Talk to\n|cRXP_FRIENDLY_Talaanis Shadowsong|r
     .goto 2521,66.17,76.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talaanis Shadowsong|r.
@@ -2720,8 +2743,22 @@ step
     .accept 94568 >>Accept The Cult's True Plans
     .target Talaanis Shadowsong
 step
-    .skipgossipid 140111
+    #completewith next
+    #label Talaanis Shadowsong
+    >>|cRXP_WARN_Wait for the Roleplay|r.
     .complete 94568,1 --1/1 Learn what you can from the crystal
+    .target Talaanis Shadowsong
+step
+    #completewith Talaanis Shadowsong
+    .goto 2521,66.18,76.51
+    .gossipoption 140111 >>Talk to |cRXP_FRIENDLY_Talaanis Shadowsong|r.
+    .timer 50,RP
+step
+    #requires Talaanis Shadowsong
+    .goto 2521,66.17,76.52
+    >>|cRXP_WARN_Wait for the Roleplay|r.
+    .complete 94568,1 --1/1 Learn what you can from the crystal
+    .target Talaanis Shadowsong
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Talaanis Shadowsong|r
     .goto 2521,66.17,76.51
@@ -2739,17 +2776,52 @@ step
     .skipgossipid 137095
 step
     #arrowtext Recruit the Windshapers
+    .goto 2521,63.33,78.16,30,0
+    .goto 2521,63.04,77.53,30,0
+    .goto 2521,62.31,78.27,30,0
+    .goto 2521,62.13,79.02,30,0
+    .goto 2521,60.68,80.11,30,0
     .goto 2521,59.15,79.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayessa Dawnsinger|r.
     .complete 92640,2 --1/1 Recruit the Windshapers
     .skipgossipid 136542
     .skipgossipid 136541
+    .mob Ayessa Dawnsinger
 step
     #arrowtext Recruit the High Order
+    .goto 2521,59.94,77.92,30,0
+    .goto 2521,61.45,77.15,30,0
+    .goto 2521,62.13,76.85,30,0
+    .goto 2521,63.35,78.58,30,0
     .goto 2521,66.54,79.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale|r.
     .complete 92640,3 --1/1 Recruit the High Order
     .skipgossipid 136547
     .skipgossipid 136546
+    .target Elaadrin Evengale
 step
+    #completewith next
+    #label Prepare for Battle
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist|r.
+    .turnin 92640 >>Turn in Desperate Times
+    .accept 93065 >>Accept Prepare for Battle
+    .disablecheckbox
+    .target Valennia Stormfist
+step
+    #completewith Prepare for Battle
+    #arrowtext Climb the tower
+    .goto 2521,65.65,79.27,30,0
+    .goto 2521,64.98,77.12,30,0
+    .goto 2521,65.93,76.37,5,0
+    .goto 2521,66.46,76.8,5,0
+    .goto 2521,66.43,76.58,5,0
+    .goto 2521,66.43,76.83,5,0
+    .goto 2521,66.31,77.08,5,0
+    .goto 2521,66,76.57,8,0
+    .goto 2521,66.19,76.22,8,0
+    .goto 2521,66.44,76.4,5 >>Climb the tower
+step
+    #requires Prepare for Battle
     #arrowtext Talk to\n|cRXP_FRIENDLY_Valennia Stormfist|r
     .goto 2521,66.18,76.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist|r.
@@ -2758,6 +2830,8 @@ step
     .target Valennia Stormfist
 step
     #arrowtext Follow the arrow
+    .goto 2521,65.03,74.35,30,0
+    .goto 2521,63.99,74.1,30,0
     .goto 2521,61.15,70.91
     .complete 93065,1 --1/1 Find Valennia on the Road
 step
@@ -2768,17 +2842,54 @@ step
     .accept 92947 >>Accept Making Our Move
     .target Valennia Stormfist
 step
-    #arrowtext Kill |cRXP_ENEMY_Al'Aketh Guardian|r,\n|cRXP_ENEMY_Al'Aketh Spiritcaller|r and\n|cRXP_ENEMY_Al'Aketh Blademaster|r
-    .goto 2521,61.29,49.50
+    #completewith next
+    #label Al'Aketh Guardian
+    .goto 2521,59.58,66.41,30,0
+    .goto 2521,58.98,60.8,30,0
     >>Kill |cRXP_ENEMY_Al'Aketh Guardian|r.
     .complete 92947,1 --8/8 Al'Aketh Guardian slain
     .complete 92947,2 --8/8 Al'Aketh Spiritcaller slain
     .complete 92947,3 --8/8 Al'Aketh Blademaster slain
     .mob Al'Aketh Guardian
 step
+    #completewith Al'Aketh Guardian
+    .goto 2521,59.1,52.83,80 >>Cross the bridge
+step
+    #requires Al'Aketh Guardian
+    #arrowtext Kill |cRXP_ENEMY_Al'Aketh Guardian|r,\n|cRXP_ENEMY_Al'Aketh Spiritcaller|r and\n|cRXP_ENEMY_Al'Aketh Blademaster|r
+    #loop
+    .goto 2521,59.78,52.23,40,0
+    .goto 2521,60.08,51.67,40,0
+    .goto 2521,61.05,52.26,40,0
+    .goto 2521,62.75,52.56,40,0
+    .goto 2521,62.25,49.01,40,0
+    .goto 2521,63.14,48.55,40,0
+    .goto 2521,64.03,46.25,40,0
+    .goto 2521,59.91,49.6,40,0
+    >>Kill |cRXP_ENEMY_Al'Akeths|r.
+    .complete 92947,1 --8/8 Al'Aketh Guardian slain
+    .complete 92947,2 --8/8 Al'Aketh Spiritcaller slain
+    .complete 92947,3 --8/8 Al'Aketh Blademaster slain
+    .mob Al'Aketh Guardian
+    .mob Al'Aketh Blademaster
+    .mob Al'Aketh Spiritcaller
+step
+    #completewith next
+    #label Hyusaa Quickbreeze
+    .goto 2521,61.98,50.42,30,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hyusaa Quickbreeze|r.
+    .complete 92947,4 --1/1 Report to Hyusaa Quickbreeze
+    .target Hyusaa Quickbreeze
+step
+    #completewith Hyusaa Quickbreeze
+    .goto 2521,63.79,50.55,80 >>Take the stairs to |cRXP_FRIENDLY_Hyusaa Quickbreeze|r
+step
+    #requires Hyusaa Quickbreeze
     #arrowtext Talk to\n|cRXP_FRIENDLY_Hyusaa Quickbreeze|r
     .goto 2521,63.79,50.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hyusaa Quickbreeze|r.
     .complete 92947,4 --1/1 Report to Hyusaa Quickbreeze
+    .target Hyusaa Quickbreeze
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Hyusaa Quickbreeze|r
     .goto 2521,63.79,50.55
@@ -2786,16 +2897,32 @@ step
     .accept 93958 >>Accept The Inner Sanctum
     .target Hyusaa Quickbreeze
 step
-    .goto 2521,65.19,50.37
+    .goto 2521,65.86,50.76,30,0
+    .goto 2521,66.94,50.22,20,0
+    .goto 2521,66.63,50.44,15,0
+    .goto 2521,66.43,49.2,25,0
+    .goto 2521,65.59,49.45,25,0
+    .goto 2521,65.191,50.352
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist::253590|r.
+    .target Valennia Stormfist::253590
     .turnin 93958 >>Turn in The Inner Sanctum
-step
-    .goto 2521,65.19,50.37
     .accept 93835 >>Accept Confront Lorthuna
 step
+    .subzoneskip 16679,1
+    .goto 2521,65.55,50.35
+    .subzone 16630 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+step
     #arrowtext Confront Lorthuna
-    .goto 2521,75.34,53.32
+    .goto 2521,70.14,51.48,30,0
+    .goto 2521,71.29,50.77,30,0
+    .goto 2521,75.34,53.32,30,0
+    .goto 2521,74.71,54.03,30,0
+    .goto 2521,75.03,53.19
+    >>Follow the Arrow and check if the wind bridge is up otherwise wait until it spawns then move forward to 
     .complete 93835,1 --1/1 Confront Lorthuna
     .skipgossipid 137230
+    .mob Baron Anvillaxx
+    .mob Malevolent Storm
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Elaadrin Evengale|r
     .goto 2521,66.63,79.93
@@ -2804,12 +2931,30 @@ step
     .accept 94369 >>Accept The Fate of Zephras
     .target Elaadrin Evengale
 step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Talaanis Shadowsong|r
-    .goto 2521,66.17,76.50
+    .goto 2521,75.08,53.26
+    .subzoneskip 16630,1
+    .subzone 16638 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
+step
+    #completewith next
+    #label Fate of Zephras
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talaanis Shadowsong|r.
     .complete 94369,1 --1/1 Speak with Talaanis Shadowsong
     .target Talaanis Shadowsong
 step
+    #completewith Fate of Zephras
+    #arrowtext Climb the tower
+    .goto 2521,65.65,79.27,30,0
+    .goto 2521,64.98,77.12,30,0
+    .goto 2521,65.93,76.37,5,0
+    .goto 2521,66.46,76.8,5,0
+    .goto 2521,66.43,76.58,5,0
+    .goto 2521,66.43,76.83,5,0
+    .goto 2521,66.31,77.08,5,0
+    .goto 2521,66,76.57,8,0
+    .goto 2521,66.19,76.22,8,0
+    .goto 2521,66.44,76.4,5 >>Climb the tower
+step
+    #requires Fate of Zephras
     #arrowtext Talk to\n|cRXP_FRIENDLY_Talaanis Shadowsong|r
     .goto 2521,66.18,76.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talaanis Shadowsong|r.
@@ -2823,6 +2968,12 @@ step
     .turnin 93089 >>Turn in What Comes Next
     .accept 94946 >>Accept The Magical City of Dalaran
     .target Elaadrin Evengale
+step
+    #completewith Unnerving Silence
+    #arrowtext Kill and loot\n|cRXP_ENEMY_Shadowgale Shrieklings|r
+    >>Kill |cRXP_ENEMY_Shadowgale Shrieklings|r. Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r].
+    .complete 92741,1 --8/8 Shriekling Talons
+    .mob Shadowgale Shriekling::256092
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Strange Hermit|r
     .goto 2521,53.95,38.90
@@ -2847,28 +2998,33 @@ step
     .accept 93172 >>Accept Free the Hollows
     .target Strange Hermit
 step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Strange Hermit|r
-    .goto 2521,53.96,38.90
-    .accept 98285 >>Accept Camping 101: Engineering
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Strange Hermit|r
-    .goto 2521,53.96,38.90
-    .complete 98285,1 --Raise your engineering skill to 20
-step
+    #completewith Unnerving Silence
     #arrowtext Collect\n|cRXP_LOOT_Zephyrseed|r
-    .goto 2521,56.84,38.03
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Seeds|r
     .complete 93160,1 --8/8 Zephyrseed
 step
+    #label Unnerving Silence
     #arrowtext Talk to\n|cRXP_FRIENDLY_Elegael Thornpaw|r
     .goto 2521,61.76,39.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elegael Thornpaw::257944|r.
+    .target Elegael Thornpaw::257944
     .turnin 94484 >>Turn in Unnerving Silence
     .accept 94485 >>Accept Tears of the Lady
     .accept 94486 >>Accept Feathers for Binding
     .accept 94487 >>Accept Unwanted and Unworthy
 step
-    #arrowtext Collect\n|cRXP_LOOT_Zephyrseed|r
-    .goto 2521,56.84,38.03
+    #completewith Mercy
+    #arrowtext Collect\n|cRXP_LOOT_Tear Moss & Seeds|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tear Moss & Seeds|r
     .complete 93160,1 --8/8 Zephyrseed
+    .complete 94485,1 --8/8 Lady's Tear Moss
+step
+    #completewith next
+    #arrowtext Kill and loot\n|cRXP_ENEMY_Al'Aketh Cultists|r
+    >>Kill |cRXP_ENEMY_Al'Aketh Footsoldiers|r and |cRXP_ENEMY_Al'Aketh Stormcallers|r. Loot them for |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r] and 10 |T133856:0|t[|cRXP_LOOT_Al'Alketh Cultist's Ears|r].
+    .complete 94487,1 --10/10 Bloody Heirloom
+    .mob Al'Aketh Footsoldier::252665
+    .mob Al'Aketh Stormcaller::252068
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Vayn Moongaze|r
     .goto 2521,63.80,36.03
@@ -2876,31 +3032,59 @@ step
     .accept 93165 >>Accept Mercy Falls on Deaf Ears
     .target Vayn Moongaze
 step
-    #arrowtext Collect\n|cRXP_LOOT_Shriekling Talons|r
-    .goto 2521,59.36,40.07
-    .complete 92741,1 --8/8 Shriekling Talons
+    #arrowtext Kill and loot\n|cRXP_ENEMY_Al'Aketh Cultists|r
+    #loop
+    .goto 2521,62.36,35.89,40,0
+    .goto 2521,62.78,37.75,40,0
+    .goto 2521,63.98,37.75,40,0
+    .goto 2521,65.01,38.9,40,0
+    .goto 2521,65.66,36.13,40,0
+    >>Kill |cRXP_ENEMY_Al'Aketh Footsoldiers|r and |cRXP_ENEMY_Al'Aketh Stormcallers|r. Loot them for |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r] and |T133856:0|t[|cRXP_LOOT_Al'Alketh Cultist's Ears|r].
+    .complete 94487,1 --10/10 Bloody Heirloom
+    .complete 93165,1 --10/10 Al'Alketh Cultist's Ear
+    .mob Al'Aketh Footsoldier::252665
+    .mob Al'Aketh Stormcaller::252068
 step
-    #arrowtext Collect\n|cRXP_LOOT_Lady's Tear Moss|r
-    .goto 2521,59.80,40.38
+    #label Mercy
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Vayn Moongaze|r
+    .goto 2521,63.80,36.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vayn Moongaze|r.
+    .turnin 93165 >>Turn in Mercy Falls on Deaf Ears
+    .target Vayn Moongaze
+step
+    #hidewindow
+    #completewith Pristine Shriekling Feathers
+    #loop
+    .goto 2521,62.27,36.64,40,0
+    .goto 2521,60.87,37.53,40,0
+    .goto 2521,60.87,38.97,40,0
+    .goto 2521,59.89,39.46,40,0
+    .goto 2521,59.95,40.33,40,0
+    .goto 2521,58.66,40.04,40,0
+    .goto 2521,56.78,40.89,40,0
+    .goto 2521,55.56,40.9,40,0
+    .goto 2521,55.4,37.33,40,0
+    .goto 2521,57.64,37.9,40,0
+    +1
+step
+    #completewith next
+    #arrowtext Kill and loot\n|cRXP_ENEMY_Shadowgale Shrieklings|r
+    >>Kill |cRXP_ENEMY_Shadowgale Shrieklings|r. Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers].
+    .complete 92741,1 --8/8 Shriekling Talons
+    .complete 94486,1 --20/20 Pristine Shriekling Feathers
+    .mob Shadowgale Shriekling::256092
+step
+    #arrowtext Collect\n|cRXP_LOOT_Tear Moss & Seeds|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tear Moss & Seeds|r
+    .complete 93160,1 --8/8 Zephyrseed
     .complete 94485,1 --8/8 Lady's Tear Moss
 step
-    #arrowtext Collect\n|cRXP_LOOT_Pristine Shriekling Feathers|r
-    .goto 2521,55.93,38.96
+    #label Pristine Shriekling Feathers
+    #arrowtext Kill and loot\n|cRXP_ENEMY_Shadowgale Shrieklings|r
+    >>Kill |cRXP_ENEMY_Shadowgale Shrieklings|r. Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers].
+    .complete 92741,1 --8/8 Shriekling Talons
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
-step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Strange Hermit|r
-    .goto 2521,53.97,38.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strange Hermit|r.
-    .turnin 93160 >>Turn in The Forest's Bounty
-    .target Strange Hermit
-step
-    #arrowtext Collect\n|cRXP_LOOT_Bloody Heirloom|r
-    .goto 2521,62.69,36.46
-    .complete 94487,1 --10/10 Bloody Heirloom
-step
-    #arrowtext Collect\n|cRXP_LOOT_Al'Alketh Cultist's Ear|r
-    .goto 2521,63.85,37.16
-    .complete 93165,1 --10/10 Al'Alketh Cultist's Ear
+    .mob Shadowgale Shriekling::256092
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Elegael Thornpaw|r
     .goto 2521,61.76,39.13
@@ -2912,13 +3096,18 @@ step
     .accept 94489 >>Accept The Wounds of Betrayal
     .target Elegael Thornpaw
 step
+    .isQuestComplete 94488
     #arrowtext Kill and loot\n|cRXP_ENEMY_Commander Haalien|r
     .goto 2521,65.05,36.66
+    >>Kill |cRXP_ENEMY_Commander Haalien|r. Loot him for |T134161:0|t[|cRXP_LOOT_Severed Head|r] and |T135332:0|t[Ripped Missive].
     .complete 94488,1 --1/1 Commander Haalien's Severed Head
+    .collect 265476,1
+    .mob Commander Haalien
 step
-    #arrowtext Find the\n|cRXP_PICK_Ripped Missive|r
-    .goto 2521,64.77,37.11
+    #completewith next
+    >>Start the quest Ripped Missive in your bags
     .accept 94490 >>Accept Ripped Missive
+    .use 265476
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Elegael Thornpaw|r
     .goto 2521,61.76,39.13
@@ -2928,54 +3117,143 @@ step
     .accept 94491 >>Accept The Fate of the Den
     .target Elegael Thornpaw
 step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Vayn Moongaze|r
-    .goto 2521,63.80,36.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vayn Moongaze|r.
-    .turnin 93165 >>Turn in Mercy Falls on Deaf Ears
-    .target Vayn Moongaze
-step
     #arrowtext Find\n|cRXP_FRIENDLY_Jorel Windsinger|r
     .goto 2521,64.49,34.74
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Jorel Windsinger|r
     .complete 94489,2 --1/1 Find Jorel Windsinger
     .skipgossipid 137859
+    .target Jorel Windsinger
 step
     #arrowtext Heal\n|cRXP_FRIENDLY_Injured Druids|r
-    .goto 2521,65.91,33.54
-    .complete 94489,1 --7/7 Injured Druids healed
+    #loop
+    .goto 2521,64.51,34.89,10,0
+    .goto 2521,64.98,34.96,10,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Druids|r, do not move while clicking them or it can bug.
+    .complete 94489,1,3 --7/7 Injured Druids healed
+    .target Nayeela Snarlfang
+    .target Telenos Leafwhisper
+    .target Naaleos Leafwhisper
 step
+    #arrowtext Heal\n|cRXP_FRIENDLY_Injured Druids|r
+    #loop
+    .goto 2521,63.93,33.76,20,0
+    .goto 2521,63.69,32.49,20,0
+    .goto 2521,64,31.97,25,0
+    .goto 2521,64.52,31.88,25,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Druids|r, do not move while clicking them or it can bug.
+    .complete 94489,1,5 --7/7 Injured Druids healed
+    .target Neyasteel Mossmender
+    .target Bryaes Galechaser
+step
+    #arrowtext Heal\n|cRXP_FRIENDLY_Injured Druids|r
+    #loop
+    .goto 2521,65.55,31.9,,25,0
+    .goto 2521,66.13,32.18,,25,0
+    .goto 2521,65.79,33,,25,0
+    .goto 2521,65.93,33.55,,25,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Druids|r, do not move while clicking them or it can bug.
+    .complete 94489,1,7 --7/7 Injured Druids healed
+    .target Mithraless Sterngale
+    .target Baeo Sharpstrike
+step
+    #completewith next
+    #label Wounds of Betrayal
+    .goto 2521,65.23,34.53,30,0
+    .goto 2521,64.2,34.32,30,0
+    .goto 2521,63.57,36.3,30,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elegael Thornpaw|r.
+    .turnin 94489 >>Turn in The Wounds of Betrayal
+    .target Elegael Thornpaw
+step
+    #completewith Wounds of Betrayal
+    .goto 2521,61.77,39.14,150 >>Leave the cave
+step
+    #requires Wounds of Betrayal
     #arrowtext Talk to\n|cRXP_FRIENDLY_Elegael Thornpaw|r
     .goto 2521,61.77,39.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elegael Thornpaw|r.
     .turnin 94489 >>Turn in The Wounds of Betrayal
     .target Elegael Thornpaw
+-- step -- repeatable 
+--     #arrowtext Talk to\n|cRXP_FRIENDLY_Vayn Moongaze|r
+--     .goto 2521,63.80,35.99
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vayn Moongaze|r.
+--     .turnin 93459 >>Turn in More Al'Aketh Ears
+--     .target Vayn Moongaze
 step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Vayn Moongaze|r
-    .goto 2521,63.80,35.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vayn Moongaze|r.
-    .turnin 93459 >>Turn in More Al'Aketh Ears
-    .target Vayn Moongaze
+    #completewith Resaan's Heirloom
+    #arrowtext Kill\n|cRXP_ENEMY_Wind Hollows|r
+    >>Kill |cRXP_ENEMY_Wind Hollows|r.
+    .complete 93172,1 --10/10 Wind Hollow freed
+    .mob Wind Hollow::251676
 step
+    #completewith Resaan's Heirloom
     #arrowtext Collect\n|cRXP_LOOT_Abandoned Belongings|r
-    .goto 2521,56.65,29.37
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crates|r
     .complete 94896,1 --8/8 Abandoned Belongings
 step
-    #arrowtext Free\n|cRXP_FRIENDLY_Wind Hollow|r
-    .goto 2521,58.59,31.08
-    .complete 93172,1 --10/10 Wind Hollow freed
-step
+    #label Resaan's Heirloom
     #arrowtext Recover\n|cRXP_LOOT_Resaan's Heirloom|r
+    .goto 2521,57.45,33.8,40,0
+    .goto 2521,56.69,33.71,40,0
     .goto 2521,57.04,29.36
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Resaan Nimbuswalker|r
     .complete 94897,1 --1/1 Resaan's Heirloom
     .skipgossipid 138670
+    .target Resaan Nimbuswalker
+step
+    #hidewindow
+    #completewith Wind Hollow
+    #loop
+    .goto 2521,58.06,28.2,30,0
+    .goto 2521,57.91,26.83,30,0
+    .goto 2521,58.69,31.17,30,0
+    .goto 2521,58.13,30.74,30,0
+    .goto 2521,57.6,31.05,30,0
+    .goto 2521,58.32,31.69,30,0
+    .goto 2521,58.44,32.84,30,0
+    .goto 2521,59.09,31.85,30,0
+    .goto 2521,59.11,33.86,30,0
+    .goto 2521,59.02,34.84,30,0
+    +1
+step
+    #completewith next
+    #arrowtext Kill\n|cRXP_ENEMY_Wind Hollows|r
+    >>Kill |cRXP_ENEMY_Wind Hollows|r.
+    .complete 93172,1 --10/10 Wind Hollow freed
+    .mob Wind Hollow::251676
+step
+    #arrowtext Collect\n|cRXP_LOOT_Abandoned Belongings|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crates|r
+    .complete 94896,1 --8/8 Abandoned Belongings
+step
+    #label Wind Hollow
+    #arrowtext Kill\n|cRXP_ENEMY_Wind Hollows|r
+    >>Kill |cRXP_ENEMY_Wind Hollows|r.
+    .complete 93172,1 --10/10 Wind Hollow freed
+    .mob Wind Hollow::251676
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Strange Hermit|r
     .goto 2521,53.97,38.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strange Hermit|r.
+    .turnin 93160 >>Turn in The Forest's Bounty
     .turnin 93172 >>Turn in Free the Hollows
     .target Strange Hermit
 step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Lotheluum Starbreeze|r
-    .goto 2521,63.98,75.08
+    #completewith next
+    #label The Fate of the Den
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze|r.
+    .turnin 94491 >>Turn in The Fate of the Den
+    .target Lotheluum Starbreeze
+step
+    #completewith The Fate of the Den
+    .isOnQuest 94491
+    .hs >>Hearth to Shen'dar Village
+    .use 6948
+step
+    #requires The Fate of the Den
+    .goto 2521,63.55,73.45,25,0
+    .goto 2521,63.99,75.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze|r.
     .turnin 94491 >>Turn in The Fate of the Den
     .target Lotheluum Starbreeze
@@ -2992,31 +3270,56 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iaadaria Bitterwind|r.
     .turnin 92741 >>Turn in Unwelcome Visitors
     .target Iaadaria Bitterwind
-step
-    #arrowtext Talk to the quest giver\nin Dalaran
-    .goto 1416/0,438.93,448.88
+step  << Alliance
+    #completewith next
+    #label Magical City of Dalaran
+    .goto 2521,66.09,80.96,25,0
+    .goto 2521,65.42,81.01,25,0
+    .goto 2521,65.1,81.52,25,0
+    >>Wait for the Zepplinn to arrive.
+    *|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denaaris Stargale::259084|r.
     .turnin 94946 >>Turn in The Magical City of Dalaran
-step
+step << Alliance
+    #completewith Magical City of Dalaran
+    .goto 2521,65.81,83.44
+    .zone 1056 >> Take the Zepplin to Dalaran
+step  << Alliance
+    #requires Magical City of Dalaran
     #arrowtext Talk to the quest giver\nin Dalaran
     .goto 1416/0,438.93,448.88
+    >>Wait for the Zepplinn to arrive
+    *|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denaaris Stargale::259084|r.
+    .target Denaaris Stargale::259084
+    .turnin 94946 >>Turn in The Magical City of Dalaran
     .accept 94947 >>Accept Welcome to Azeroth
-step
+step << Alliance
     #arrowtext Take the\n|cRXP_PICK_Skyborne Portal to Stormwind|r
     .goto 1416/0,445.93,450.00
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 94947,1 --Take the Skyborne Portal to Stormwind
-step
+step << Alliance
     #arrowtext Talk to the quest giver\nin Stormwind
+    .goto 1453,48.1,88.35,10,0
+    .goto 1453,49.36,87.37,10,0
+    .goto 1453,48.85,86.94,10,0
+    .goto 1453,48.76,87.71,10,0
+    .goto 1453,54.8,83.65,25,0
+    .goto 1453,53.78,78.72,25,0
+    .goto 1453,55.67,75.99,25,0
+    .goto 1453,59.9,71.41,25,0
     .goto 1453/0,332.000,-8443.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Bolvar Fordragon::1748|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Bolvar Fordragon::1748|r inside the castle.
     .target Highlord Bolvar Fordragon::1748
     .turnin 94947 >>Turn in Welcome to Azeroth
     .accept 93963 >>Accept Exploring the Alliance
     .accept 98021 >>Accept Journey to Sentinel Hill
-step
+step  << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Randal Emerson|r
     .goto 1453/0,350.200,-8516.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Randal Emerson::1748|r inside the castle.
     .complete 93963,1 --1/1 Recieve Instructions from Randal Emerson
     .skipgossipid 142485
+    .target Randal Emerson
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -3141,6 +3444,25 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Akeri Duskblade|r.
     .turnin 92483 >>Turn in At Home in the Shadows
     .target Akeri Duskblade
+]])
+RXPGuides.RegisterGuide([[
+#classic
+#version 1
+#name Skyborne Rogue Class Quests222
+#displayname Skyborne Rogue Class Quests
+#group RestedXP Forever Guide (A) << Alliance
+#group RestedXP Forever Guide (H) << Horde
+#defaultfor Skyborne Rogue
+#internal
+
+-- step
+--     #arrowtext Talk to\n|cRXP_FRIENDLY_Strange Hermit|r
+--     .goto 2521,53.96,38.90
+--     .accept 98285 >>Accept Camping 101: Engineering
+-- step
+--     #arrowtext Talk to\n|cRXP_FRIENDLY_Strange Hermit|r
+--     .goto 2521,53.96,38.90
+--     .complete 98285,1 --Raise your engineering skill to 20
 ]])
 RXPGuides.RegisterGuide([[
 #classic
