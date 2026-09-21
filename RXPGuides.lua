@@ -2140,7 +2140,7 @@ function addon.LegacyUpdateLoop()
             end
 
             updateTimer = time
-            if skip > 512 then
+            if skip > 512 and addon.settings then
                 skip = skip % 512
                 if addon.saveSettingsLocally then
                     addon.settings:SaveFramePositions()
