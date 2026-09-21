@@ -171,6 +171,10 @@ elseif gameVersion > 20000 then
     addon.game = "TBC"
     maxLevel = 70
     addon.enabledLocale["zhCN"] = true
+elseif gameVersion >= 16000 and gameVersion < 20000 then
+    addon.game = "FOREVER"
+    maxLevel = 60
+    addon.enabledLocale["zhCN"] = true
 else
     addon.game = "CLASSIC"
     maxLevel = 60
