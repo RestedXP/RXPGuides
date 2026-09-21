@@ -421,6 +421,8 @@ end
 
 addon.currrentSkillLevel = currrentSkillLevel
 function addon.GetProfessionLevel()
+    local GetSkillLineInfo = C_SkillInfo and C_SkillInfo.GetSkillLineInfo or _G.SkillLineInfo
+    local GetNumSkillLines = C_SkillInfo and C_SkillInfo.GetNumSkillLines or _G.GetNumSkillLines
     local names
     if not (professionNames and professionNames.riding) then
         addon.GetProfessionNames()
@@ -441,11 +443,17 @@ function addon.GetProfessionLevel()
 
     if addon.IsPlayerSpell(54197) then currrentSkillLevel["coldweatherflying"] = 1 end
 
-    if not _G.GetSkillLineInfo then return end
+    if not GetSkillLineInfo then return end
     if not names.riding then names.riding = GetSpellInfo(33388) end
-    for i = 1, _G.GetNumSkillLines() do
+    for i = 1, GetNumSkillLines() do
         local skillName, _, _, skillRank, _, _, skillMaxRank =
-            _G.GetSkillLineInfo(i)
+            GetSkillLineInfo(i)
+        if type(skillName) == "table" then
+            local t = skillName
+            skillName = t.name
+            skillRank = t.rank
+            skillMaxRank = t.maxRank
+        end
         if skillRank then
             for profession, name in pairs(names) do
                 -- print(name,skillName,name == skillName)
@@ -456,6 +464,7 @@ function addon.GetProfessionLevel()
             end
         end
     end
+    return currrentSkillLevel, maxSkillLevel
 --[[
 --Enum.Profession is just wrong, can't use that
     if _G.GetProfessionInfo then
