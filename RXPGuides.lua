@@ -1370,8 +1370,12 @@ end
 
 function addon:OnInitialize()
     local saveLocally = false
-    if RXPCData and not RXPData then
-        saveLocally = true
+    if RXPCData then
+        if RXPData then
+            RXPCData.localDB = nil
+        else
+            saveLocally = true
+        end
     end
     if not RXPCData and GetCVar("questPOI") then
         --Make sure to initialize the in-game quest helper on first login
