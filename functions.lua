@@ -2559,7 +2559,7 @@ function addon.functions.hs(self, ...)
     if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" then
         if (id == 8690 or id == 556 or id == 348699 or id == 184871) then
             addon.SetElementComplete(self)
-        elseif WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
+        elseif WOW_PROJECT_ID == WOW_PROJECT_MAINLINE and addon.hearthstoneSpellIds then
             for _,v in pairs(addon.hearthstoneSpellIds) do
                 if v == id then
                     addon.SetElementComplete(self)
