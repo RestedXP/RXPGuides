@@ -4043,7 +4043,8 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 11-13 Loch Modan
 #displayname 13-15 Loch Modan << SoD
-#next 13-15 Westfall; 14-16 Darkshore
+#next 13-15 Westfall << !Hunter
+#next 14-16 Darkshore << Hunter
 #defaultfor Human
 
 step
@@ -4114,6 +4115,7 @@ step
     #completewith next
     #label Thelsamar
     .subzone 144 >> Travel to Thelsamar
+    .isQuestAvailable 1339
 step
     #requires Thelsamar
     #completewith next
@@ -4701,11 +4703,6 @@ step << !Hunter
     .accept 399 >> Accept Humble Beginnings
     .target Baros Alexston
     .xp >15,1 -- shows to 14 and under
-step
-    .goto 1453/0,690.900,-8392.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Borgus Steelhand::7232|r 
-    .target Borgus Steelhand::7232
-    .accept 97894 >>Accept Business in Auberdine
 step
     .goto 1453/0,600.07,-8427.22
     .target Furen Longbeard
