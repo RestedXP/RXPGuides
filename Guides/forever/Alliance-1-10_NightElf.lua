@@ -88,6 +88,7 @@ step << Hunter
     .turnin 458 >> Turn in The Woodland Protector
     .target Tarindrella
     .accept 459 >> Accept The Woodland Protector
+    .accept 97977 >>Accept Nature's Call
 step << Hunter
 #xprate >1.99
     #requires balance1
@@ -160,6 +161,7 @@ step << !Hunter
     .turnin 458 >> Turn in The Woodland Protector
     .target Tarindrella
     .accept 459 >> Accept The Woodland Protector
+    .accept 97977 >>Accept Nature's Call
 step << !Hunter
     #season 0 << Druid
     .goto 1438/1,826.03,10328.97
@@ -211,14 +213,6 @@ step
     .goto 1438/1,863.96,10534.840
     >>Loot the |cRXP_LOOT_Moonpetal Lilies|r on the ground
     .complete 3521,2 --Collect Moonpetal Lily (x4)
-step << Hunter
-#optional
-#season 2
-#completewith next
-    >>Kill |cRXP_ENEMY_Webwood Spiders|r. Loot them for their |cRXP_LOOT_Ichor|r and |cRXP_LOOT_Venom Sacs|r
-    .complete 3521,3 --Collect Webwood Ichor (x1)
-    .complete 916,1 --Collect Webwood Venom Sac (x10)
-    .mob Webwood Spider
 step
     #season 0 << Warrior
     #label IchorVenomSac
@@ -244,24 +238,19 @@ step << skip --logout skip Hunter
 step
     .goto 1438/1,1014.17,10348.18
     >>Kill |cRXP_ENEMY_Grell|r and |cRXP_ENEMY_Grellkin|r. Loot them for their |cRXP_LOOT_Mushrooms|r and |cRXP_LOOT_Fel Moss|r
+    >>Loot |T134460:0|t[|cRXP_LOOT_Gnarlpine Totems|r] from the Grell Camps
     .complete 3521,1 --Collect Hyacinth Mushroom (x7)
     .complete 459,1 --Collect Fel Moss (x8)
+    .complete 97977,1 --Gnarlpine Totem (x4)
     .mob Grell
     .mob Grellkin
-step << Warrior
-    #season 2
-    .goto 1438/1,871.24,10417.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilshalan Windwalker|r
-    >>TIP: |cRXP_WARN_Take the Tunic as a reward from this quest and equip it. You will use it to engrave a rune on later|r << sod Hunter/sod Rogue/sod Druid/sod Warrior
-    >>TIP: |cRXP_WARN_Take the Robes as a reward from this quest and equip it. You will use it to engrave a rune on later|r << sod Priest
-    .turnin 917 >> Turn in Webwood Egg
-    .target Gilshalan Windwalker
 step
     .goto 1438/1,871.60,10300.67
     .target Tarindrella
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r
     >>TIP: |cRXP_WARN_Take the leggings as the reward and keep them. You will use them to engrave a rune on later on|r << sod Hunter/sod Rogue/sod Warrior/sod Druid
     .turnin 459 >> Turn in The Woodland Protector
+    .turnin 97977 >>Turn in Nature's Call
 step
     .goto 1438/1,713.81,10407.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirania Silvershine|r
@@ -331,8 +320,11 @@ step
 step
     .goto 1438/1,912.33,10935.30
     #season 0 << Warrior
+    >>Kill |cRXP_ENEMY_Githyiss the Vile|r loot it for it's |T134298:0|t[|cRXP_LOOT_Fang|r]
     >>Loot a |cRXP_LOOT_Webwood Egg|r on the ground at the back of the Cave
+    .collect 277190,1 --Fang of Githyiss (x1)
     .complete 917,1 --Collect Webwood Egg (x1)
+    .mob Githyiss the Vile
 step
 	#softcore
 	#completewith next
@@ -349,10 +341,14 @@ step << skip --logout skip
 step
 #xprate <1.99
 	.goto 1438/1,871.24,10417.65
+    >>Use the |T134298:0|t[|cRXP_LOOT_Fang of Githyiss|r] to accept the quest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilshalan Windwalker|r
+    .accept 97236 >> Accept Fang of Githyiss
+    .turnin 97236 >> Turn in Fang of Githyiss
     .turnin 917 >> Turn in Webwood Egg
     .target Gilshalan Windwalker
     .accept 920 >> Accept Tenaron's Summons
+    .use 277190
 step
 #xprate <1.99
     .goto 1438/1,871.6,10440.83,25,0
@@ -407,6 +403,10 @@ step
     .target Tenaron Stormgrip
     .accept 928 >> Accept Crown of the Earth
 step
+    .goto 1438/1,805.500,10491.800
+    >>Click on the [|cRXP_PICK_Book|r] to the left of |cRXP_FRIENDLY_Tenaron|r
+    .accept 96630 >>Accept The Adventurer
+step
     .goto 1438/1,700.57,10214.33
     .target Porthannius
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Porthannius|r
@@ -433,8 +433,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zenn Foulhoof|r
     .accept 488 >> Accept Zenn's Bidding
 step
-    #label HCHunterStart --hidden step for #include
-step
     #sticky
     #completewith DenlansEarth
     >>Kill |cRXP_ENEMY_Nightsabers|r. Loot them for their |cRXP_LOOT_Fangs|r
@@ -455,6 +453,22 @@ step
     .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
     .mob Webwood Lurker
     .mob Webwood Venomfang
+step
+   .goto 1438/1,879.700,9907.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyreena Duskblade|r
+    .turnin 96630 >> Turn in The Adventurer
+    .accept 96606 >> Accept The Great Outdoors
+    .target Lyreena Duskblade
+step
+    .goto 1438/1,882.300,9909.101
+    >>Use the |cRXP_WARN_/sit|r emote next to the campfire and |cRXP_WARN_sit still for 1 minute|r to complete the objective
+    .complete 96606,2 --Gain the Boosted Rest buff
+step
+    .goto 1438/1,879.700,9907.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyreena Duskblade|r
+    .turnin 96606 >> Turn in The Great Outdoors
+    .accept 96634 >> Accept Camping 101: Cooking
+    .target Lyreena Duskblade
 step
     #label DenlansEarth
     .goto 1438/1,959.18,9872.38
@@ -477,7 +491,13 @@ step << Priest
 step << Rogue
     .goto 1438/1,988.30,9891.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aldia|r up stairs
+    .accept 87288 >> Accept Soft Saber Pelts
     .vendor >> |cRXP_BUY_Buy and equip a|r |T135426:0|t[Small Throwing Knife]
+    .target Aldia
+step << !Rogue
+    .goto 1438/1,988.30,9891.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aldia|r up stairs
+    .accept 87288 >> Accept Soft Saber Pelts
     .target Aldia
 step
 #xprate <1.99 << Hunter/Warrior/Druid
@@ -513,6 +533,11 @@ step << Hunter
     .use 2506
     .itemcount 2506,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.37
+step
+    .goto 1438/1,963.000,9811.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Kyra Starsong::2081|r 
+    .target Sentinel Kyra Starsong::2081
+    .accept 99046 >>Accept The Lost Runner
 step << Warrior
     .goto 1438/1,947.57,9812.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shalomon|r
@@ -592,13 +617,33 @@ step
     .target Corithras Moonrage
     .accept 929 >> Accept Crown of the Earth
 step
+    .goto 1438/1,906.17,9751.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zarrin|r
+    .train 2550 >>Train Cooking
+    .accept 4161 >> Accept Recipe of the Kaldorei
+    .turnin 96634 >> Turn in Camping 101: Cooking
+    .target Zarrin
+step
+--@Todo ADD coords for this npc
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyoma|r
+    +Buy 5 |T134059:0|t[Mild Spices] from her, use |T133971:0|t[|cRXP_FRIENDLY_Cooking|r] to cook |T132834:0|t[|cRXP_LOOT_Herb Baked Eggs|r] until you run out of |T132832:0|t[|cRXP_LOOT_Small Eggs|r]
+    .collect 2678,5 --Mild Spices
+    .disablecheckbox
+    .itemcount 6889,1 --Small Egg
+    .target Nyoma
+step
+    #completewith DenlanStart
+    +Eat the |T132834:0|t[|cRXP_LOOT_Herb Baked Eggs|r] for 10 seconds to receive a |cRXP_WARN_5% mob kill experience buff for 15 minutes|r.
+    >>|cRXP_WARN_Remember to reapply this food buff when it expires|r
+step
     #sticky
     #completewith DenlanStart
-    >>Kill |cRXP_ENEMY_Nightsabers|r. Loot them for their |cRXP_LOOT_Fangs|r
+    >>Kill |cRXP_ENEMY_Nightsabers|r. Loot them for their |cRXP_LOOT_Fangs|r and |cRXP_LOOT_Pelts|r
     >>Kill |cRXP_ENEMY_Strigid Owls|r. Loot them for their |cRXP_LOOT_Feathers|r
     >>Kill |cRXP_ENEMY_Webwood Lurkers|r. Loot them for their |cRXP_LOOT_Silk|r
     >>|cRXP_WARN_Be careful as the|r |cRXP_ENEMY_Nightsabers|r |cRXP_WARN_and|r |cRXP_ENEMY_Strigid Owls|r |cRXP_WARN_move very fast!|r |cRXP_ENEMY_Strigid Owls|r |cRXP_WARN_will also social aggro other|r |cRXP_ENEMY_Owls|r |cRXP_WARN_if you run past them while in combat with one|r
     .complete 488,1 --Collect Nightsaber Fang (x3)
+    .complete 87288,1 --Soft Nightsaber Pelt (x6)
     .mob +Nightsaber
     .complete 488,2 --Collect Strigid Owl Feather (x3)
     .mob +Strigid Owl
