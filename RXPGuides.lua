@@ -122,7 +122,7 @@ end
 local GetAddOnMetadata = C_AddOns and C_AddOns.GetAddOnMetadata or _G.GetAddOnMetadata
 addon.release = GetAddOnMetadata(addonName, "Version")
 addon.title = GetAddOnMetadata(addonName, "Title")
-local cacheVersion = 29
+local cacheVersion = 30
 local L = addon.locale.Get
 local locale = GetLocale()
 
@@ -1251,6 +1251,7 @@ function addon:CreateMetaDataTable(wipe)
     if wipe or addon.release ~= RXPData.release or RXPData.cacheVersion ~= cacheVersion or not cacheVersion or addon.IsNewCharacter() or addon.settings.profile.preLoadData then
         RXPCData.guideMetaData = {}
         RXPCData.guideDisabled = {}
+        RXPCData.localDB = nil
         local deleteIndexes = {}
         local insertItems = {}
         local guides = addon.db.profile.guides
