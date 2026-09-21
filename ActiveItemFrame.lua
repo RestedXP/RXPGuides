@@ -190,7 +190,7 @@ local function UpdateCooldowns()
                 start,duration = GetItemCooldown(id)
             end
             --local remaining, cd
-            if start and duration then
+            if not (addon.IsSecretValue(start) or addon.IsSecretValue(duration)) and start and duration then
                 --remaining = start + duration - GetTime()
                 --cd = FormatCooldown(start,remaining,enable)
                 btn.cooldown:SetCooldown(start,duration)

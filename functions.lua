@@ -6301,13 +6301,18 @@ function addon.functions.cooldown(self, text, cooldownType, id, remaining,
     elseif cooldownType == "inventory" then
         start, duration = GetInventoryItemCooldown("player", id)
     end
+
+    if addon.IsSecretValue(start) or addon.IsSecretValue(duration) then return end
+
     local endTime = start + duration
 
     -- Astral recall:
     if class == "SHAMAN" and IsPlayerSpell(556) and id == 6948 and cooldownType ==
         "item" then
         local arStart, arDuration = GetSpellCooldown(556)
-        endTime = math.min(endTime, arStart + arDuration)
+        if not addon.IsSecretValue(arStart) and not addon.IsSecretValue(arDuration) then
+            endTime = math.min(endTime, arStart + arDuration)
+        end
     end
 
     local target = endTime - remaining
