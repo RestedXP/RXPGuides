@@ -242,7 +242,7 @@ addon.icons = {
     clicknext = "|TInterface/Tooltips/ReforgeGreenArrow:0|t",
 }
 
-if addon.gameVersion > 50000 then
+if addon.gameVersion > 50000 or WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
     addon.icons["goto"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:63:72:0:4|t"
     addon.icons["home"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:45:54:0:4|t"
     addon.icons["deathskip"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:72:81:0:4|t"
