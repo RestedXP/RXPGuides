@@ -717,9 +717,62 @@ if _G['ContainerFrame_Update'] then
         UpdateBag(self,nil,"%sItem%d")
     end)
 end
+local hookedFrames = {}
 
 if _G['ContainerFrame_UpdateAll'] then
-    local hookedFrames = {}
+    local OnClickHook = function(self,button,...)
+        local bag = self:GetBagID()
+        local slot = self:GetID()
+        local mod = inventoryManager.GetModKey()
+        AA = self
+        if not inventoryManager.IsRightClickEnabled() or not mod or button ~= inventoryManager.GetMouseButton() then
+            return
+        end
+        if bag and slot then
+            local id = GetContainerItemID(bag,slot)
+            ToggleJunk(id,bag,slot)
+            if self.JunkIcon then
+                self.JunkIcon:SetShown(inventoryManager.IsJunkIconEnabled() and id and IsJunk(id) and self:IsShown())
+            end
+        end
+    end
+
+    if Baganator and Baganator.API then
+        Baganator.API.RegisterJunkPlugin(addonName, "RXPGuides", function(bagID, slotID, id)
+            return id and IsJunk(id, bagID, slotID)
+        end)
+        local function LoadBaganator()
+            local frames = {
+                "Baganator_SingleViewBackpackViewFrameblizzard_black",
+                --"Baganator_SingleViewGuildViewFrameblizzard_black",
+                --"Baganator_SingleViewGuildViewFramedark",
+                "Baganator_CategoryViewBackpackViewFramedark",
+                --"Baganator_SingleViewGuildViewFrameblizzard",
+                "Baganator_SingleViewBackpackViewFrameblizzard",
+                "Baganator_SingleViewBackpackViewFramedark",
+                "Baganator_CategoryViewBackpackViewFrameblizzard",
+                "Baganator_CategoryViewBackpackViewFrameblizzard_black"
+            }
+            for _,frameName in pairs(frames) do
+                local mframe = _G[frameName]
+                if mframe then
+                    for _,container in pairs(mframe.Container.Layouts) do
+                        for i,button in pairs(container.buttons) do
+                            if button.BGR and not hookedFrames[button] then
+                                button:HookScript("OnClick", OnClickHook)
+                                hookedFrames[button] = true
+                            end
+                        end
+                    end
+                end
+            end
+        end
+        C_Timer.After(1,LoadBaganator)
+        Baganator.CallbackRegistry:RegisterCallback("SettingChanged", LoadBaganator)
+        --Baganator.API.RequestItemButtonsRefresh()
+    end
+
+
     for n = 0, NUM_CONTAINER_FRAMES do
         local bagframe
         if n == 0 then
@@ -729,24 +782,11 @@ if _G['ContainerFrame_UpdateAll'] then
         end
         if bagframe and bagframe.UpdateItems then
             hooksecurefunc(bagframe,'UpdateItems', function(self)
-
             local frames = {bagframe:GetChildren()}
             for _,frame in pairs(frames) do
                 if frame.GetID and frame.OnClick then
                     if not hookedFrames[frame] then
-                        frame:HookScript("OnClick", function(self,button,...)
-                            local bag = self:GetBagID()
-                            local slot = self:GetID()
-                            local mod = inventoryManager.GetModKey()
-                            if not inventoryManager.IsRightClickEnabled() or not mod or button ~= inventoryManager.GetMouseButton() then
-                                return
-                            end
-                            if bag and slot then
-                                local id = GetContainerItemID(bag,slot)
-                                ToggleJunk(id,bag,slot)
-                                self.JunkIcon:SetShown(inventoryManager.IsJunkIconEnabled() and id and IsJunk(id) and frame:IsShown())
-                            end
-                        end)
+                        frame:HookScript("OnClick", OnClickHook)
                         hookedFrames[frame] = true
                     end
                     local bag = frame:GetBagID()
