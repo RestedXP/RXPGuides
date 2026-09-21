@@ -1,5 +1,5 @@
-if not _G.GetNumTalentTabs then return end
 local _, addon = ...
+if not addon.isForever and not _G.GetNumTalentTabs then return end
 local L = addon.locale.Get
 local AceGUI = LibStub("AceGUI-3.0")
 
@@ -485,11 +485,12 @@ local function enableTotalEPLines(itemData, lines)
 end
 
 local function TooltipSetItem(tooltip, ...)
+    if tooltip:IsForbidden() then return end
     if not addon.settings.profile.enableItemUpgrades or not addon.settings.profile.enableTips or
         addon.settings.profile.disableUpgradeTooltip then return end
 
-    local _, itemLink = tooltip:GetItem()
-    if not itemLink then return end
+    local _, itemLink = addon.GetTooltipItem(tooltip)
+    if addon.IsSecretValue(itemLink) or not itemLink then return end
     -- print("TooltipSetItem", tooltip:GetName(), itemLink)
 
     local itemData = addon.itemUpgrades:GetItemData(itemLink, tooltip)
@@ -648,15 +649,18 @@ function addon.itemUpgrades:Setup()
     -- Add out-of-band (aka hackery) stat parsing
     for key, regex in pairs(OUT_OF_BAND_KEYS) do session.statsRegexes[key] = regex end
 
-    -- Inventory
-    GameTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
-
-    -- Vendor?
-    ItemRefTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
-
-    -- Enable AH
-    ShoppingTooltip1:HookScript("OnTooltipSetItem", TooltipSetItem)
-    -- ShoppingTooltip2:HookScript("OnTooltipSetItem", TooltipSetItem)
+    if TooltipDataProcessor and Enum.TooltipDataType then
+        TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(tooltip)
+            -- Exclude our hidden comparison tooltip to avoid recursive scans.
+            if tooltip == GameTooltip or tooltip == ItemRefTooltip or tooltip == ShoppingTooltip1 then
+                TooltipSetItem(tooltip)
+            end
+        end)
+    else
+        GameTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
+        ItemRefTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
+        ShoppingTooltip1:HookScript("OnTooltipSetItem", TooltipSetItem)
+    end
 
     session.isInitialized = true
 
@@ -723,6 +727,17 @@ end
 local function getSpec()
     -- Classes with className as spec only have one (Rogue, Warrior), use that
     if session.specWeights[addon.player.class] then return addon.player.class end
+
+    if addon.isForever then
+        -- Classic tab numbers cannot identify a Forever trait build. Preserve
+        -- the explicit weight selection; otherwise use a stable default.
+        local selected = addon.settings.profile.itemUpgradeSpec
+        if selected and session.specWeights[selected] then return selected end
+        local names = {}
+        for name in pairs(session.specWeights) do tinsert(names, name) end
+        table.sort(names)
+        return names[1]
+    end
 
     -- if addon.settings.profile.enableTalentGuides then
     --     -- Difficult/impossible to map talent guide
@@ -827,6 +842,7 @@ local function GetTooltipLines(tooltip, baseItemData)
 
         if r:IsObjectType("FontString") and r:GetText() then
             rText = r:GetText()
+            if addon.IsSecretValue(rText) then return end
             -- print("GetTooltipLines, regions", rText)
 
             -- Set bonus, so stop gathering lines past set bonus
@@ -1394,8 +1410,18 @@ local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo = _G.GetNumAuct
 local time = _G.time
 
 local AuctionFilterButtons = {["Weapons"] = 1, ["Armor"] = 2}
-local AHCacheVersion = 1
+local AHCacheVersion = 2
 local AHCacheTTL = 1200
+
+local function hasModernAuctionHouse()
+    return C_AuctionHouse and C_AuctionHouse.ReplicateItems
+        and C_AuctionHouse.GetNumReplicateItems and C_AuctionHouse.GetReplicateItemInfo
+        and C_AuctionHouse.GetReplicateItemLink
+end
+
+local function getAuctionHouseFrame()
+    return hasModernAuctionHouse() and _G.AuctionHouseFrame or _G.AuctionFrame
+end
 
 local ahSession = {
     isInitialized = false,
@@ -1480,6 +1506,7 @@ end
 
 local function resetAHScanProgress()
     ahSession.sentQuery = false
+    ahSession.modernWaiting = false
     ahSession.scanPage = 0
     ahSession.scanResults = 0
     ahSession.scanType = AuctionFilterButtons["Armor"]
@@ -1531,6 +1558,8 @@ end
 addon.itemUpgrades.AH = addon:NewModule("ItemUpgradesAH", "AceEvent-3.0")
 
 function addon.itemUpgrades.AH:Setup()
+    if not hasModernAuctionHouse() and
+        not (CanSendAuctionQuery and QueryAuctionItems and GetNumAuctionItems and GetAuctionItemInfo) then return end
     if not addon.settings.profile.enableItemUpgradesAH or addon.game == "CATA" then return end
 
     if ahSession.isInitialized then return end
@@ -1539,7 +1568,11 @@ function addon.itemUpgrades.AH:Setup()
     self:RegisterEvent("AUCTION_HOUSE_CLOSED")
 
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
-    self:RegisterEvent("AUCTION_ITEM_LIST_UPDATE")
+    if hasModernAuctionHouse() then
+        self:RegisterEvent("REPLICATE_ITEM_LIST_UPDATE")
+    else
+        self:RegisterEvent("AUCTION_ITEM_LIST_UPDATE")
+    end
 
     ahSession.isInitialized = true
 end
@@ -1597,6 +1630,18 @@ end
 
 function addon.itemUpgrades.AH:SearchForBuyoutItem(itemData)
     if not (itemData and itemData.Name) then return end
+
+    if hasModernAuctionHouse() then
+        local frame = getAuctionHouseFrame()
+        if not frame or not frame:IsShown() then return end
+        ahSession.displayFrame:Hide()
+        frame:SetDisplayMode(AuctionHouseFrameDisplayMode.Buy)
+        frame:GetCategoriesList():SetSelectedCategory(nil)
+        frame.SearchBar.FilterButton:Reset()
+        frame:SetSearchText(itemData.Name)
+        frame.SearchBar:StartSearch()
+        return
+    end
 
     if not _G.AuctionFrame:IsShown() then return end
 
@@ -1757,6 +1802,94 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
     end
 end
 
+-- Replication supplies exact links (including random suffixes) and buyouts in a
+-- single snapshot. Process it in bounded batches rather than sending one search
+-- request per item; Blizzard limits those requests to 100 per minute.
+function addon.itemUpgrades.AH:ReadModernAuctionSnapshot(scanGeneration, cursor, pending, attempt)
+    if scanGeneration ~= ahSession.scanGeneration or not ahSession.isScanning then return end
+    local frame = getAuctionHouseFrame()
+    if ahSession.cancelRequested or not frame or not frame:IsShown() then
+        finishAHScan(true)
+        return
+    end
+
+    cursor, pending, attempt = cursor or 0, pending or {}, attempt or 0
+    local count = C_AuctionHouse.GetNumReplicateItems()
+    local stop = math.min(cursor + 200, count)
+    local function read(index)
+        local name, texture, quantity, quality, usable, level, _, _, _, price,
+            _, _, _, _, _, _, itemID = C_AuctionHouse.GetReplicateItemInfo(index)
+        if not price or price <= 0 or quantity ~= 1 or not quality or quality < Enum.ItemQuality.Uncommon then return end
+        if not level or level < math.max(1, addon.player.level - 5) or level > addon.player.level then return end
+        if usable == false then return end
+        local link = C_AuctionHouse.GetReplicateItemLink(index)
+        if not link or not name or usable == nil then
+            if itemID and C_Item.RequestLoadItemDataByID then C_Item.RequestLoadItemDataByID(itemID) end
+            return true
+        end
+        local _, _, _, equipLoc, _, classID = GetItemInfoInstant(link)
+        if not classID then return true end
+        if classID ~= Enum.ItemClass.Weapon and classID ~= Enum.ItemClass.Armor then return end
+        if not session.equippableSlots[equipLoc] then return end
+        local current = ahSession.scanData[link]
+        if not current or price < current.lowestPrice then
+            ahSession.scanData[link] = {
+                name = name, itemIcon = texture, itemID = itemID, level = level,
+                lowestPrice = price,
+            }
+        end
+    end
+
+    for index = cursor, stop - 1 do
+        if read(index) then pending[#pending + 1] = index end
+    end
+    if stop < count then
+        C_Timer.After(0, function() self:ReadModernAuctionSnapshot(scanGeneration, stop, pending, attempt) end)
+        return
+    end
+    local remaining = {}
+    for _, index in ipairs(pending) do
+        if read(index) then remaining[#remaining + 1] = index end
+    end
+    if #remaining > 0 and attempt < 10 then
+        C_Timer.After(1, function() self:ReadModernAuctionSnapshot(scanGeneration, count, remaining, attempt + 1) end)
+        return
+    end
+    finishAHScan(#remaining > 0)
+end
+
+function addon.itemUpgrades.AH:REPLICATE_ITEM_LIST_UPDATE()
+    -- The snapshot remains useful after cancellation; reopening Search can
+    -- reuse it without issuing another bulk request during the cache lifetime.
+    ahSession.modernSnapshotAt = time()
+    ahSession.modernRequestAt = nil
+    if ahSession.isScanning and ahSession.modernWaiting then
+        ahSession.modernWaiting = false
+        self:ReadModernAuctionSnapshot(ahSession.scanGeneration)
+    end
+end
+
+function addon.itemUpgrades.AH:ScanModernAuctions(scanGeneration)
+    ahSession.sentQuery = true
+    if ahSession.modernSnapshotAt and time() - ahSession.modernSnapshotAt < AHCacheTTL then
+        self:ReadModernAuctionSnapshot(scanGeneration)
+        return
+    end
+    ahSession.modernWaiting = true
+    -- Cancelling the UI cannot cancel the server request. A new scan can wait
+    -- for that same response instead of submitting another bulk request.
+    local now = time()
+    if not ahSession.modernRequestAt or now - ahSession.modernRequestAt >= 60 then
+        ahSession.modernRequestAt = now
+        C_AuctionHouse.ReplicateItems()
+    end
+    C_Timer.After(60, function()
+        if scanGeneration == ahSession.scanGeneration and ahSession.isScanning and ahSession.modernWaiting then
+            finishAHScan(true)
+        end
+    end)
+end
+
 function addon.itemUpgrades.AH:Scan(retries, maxRetries, scanGeneration)
     scanGeneration = scanGeneration or ahSession.scanGeneration
     if scanGeneration ~= ahSession.scanGeneration or not ahSession.isScanning then return end
@@ -1770,6 +1903,11 @@ function addon.itemUpgrades.AH:Scan(retries, maxRetries, scanGeneration)
 
     -- Prevent double calls
     if ahSession.sentQuery then return end
+
+    if hasModernAuctionHouse() then
+        self:ScanModernAuctions(scanGeneration)
+        return
+    end
 
     if not AuctionCategories or not CanSendAuctionQuery() then
         -- print("addon.itemUpgrades.AH:Scan() - queued", ahSession.scanPage, ahSession.scanType)
@@ -1788,7 +1926,7 @@ end
 
 local function calculate(itemLink, scanData)
     if scanData.lowestPrice <= 0 then return end
-    local itemData = addon.itemUpgrades:GetItemData("item:" .. scanData.itemID)
+    local itemData = addon.itemUpgrades:GetItemData(itemLink)
 
     -- Should only have queried usable items, so not intentionally nil
     if not itemData then
@@ -1796,6 +1934,8 @@ local function calculate(itemLink, scanData)
         -- print("itemData nil", itemLink)
         return
     end
+
+    if itemData.unusable or not itemData.totalWeight then return end
 
     ahSession.pendingItemInfo[scanData.itemID] = nil
     scanData.totalWeight = itemData.totalWeight
@@ -2146,7 +2286,7 @@ end
 function addon.itemUpgrades.AH:CreateEmbeddedGui()
     if ahSession.displayFrame then return end
 
-    local attachment = _G.AuctionFrame
+    local attachment = getAuctionHouseFrame()
     if not attachment then return end
 
     if not addon.ui.v2 then return end
@@ -2170,6 +2310,11 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
             ahSession.cancelRequested = true
             setAHScanButton(_G.CANCEL, false)
 
+            if hasModernAuctionHouse() then
+                invalidateAHCallbacks()
+                finishAHScan(true)
+            end
+
             return
         end
 
@@ -2188,6 +2333,33 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     end)
 
     ahSession.displayFrame.buyButton:Disable()
+
+    if hasModernAuctionHouse() then
+        -- Keep Blizzard's tab controller intact. The upgrade panel is an overlay
+        -- opened by its own button and returns to native search for purchases.
+        local panel = ahSession.displayFrame
+        panel.buyButton:SetText(L("View auctions"))
+        panel:SetFrameLevel(attachment:GetFrameLevel() + 20)
+        panel:EnableMouse(true)
+        local background = panel:CreateTexture(nil, "BACKGROUND")
+        background:SetAllPoints()
+        background:SetColorTexture(0.06, 0.06, 0.06, 1)
+        local button = CreateFrame("Button", nil, attachment, "UIPanelButtonTemplate")
+        button:SetSize(130, 22)
+        button:SetPoint("TOPRIGHT", attachment, "TOPRIGHT", -40, -5)
+        button:SetText(addon.name)
+        button:SetFrameLevel(panel:GetFrameLevel() + 2)
+        button:SetScript("OnClick", function()
+            if panel:IsShown() then
+                panel:Hide()
+            else
+                panel:Show()
+                self:DisplayEmbeddedResults()
+            end
+        end)
+        panel:Hide()
+        return
+    end
 
     local index = attachment.numTabs + 1
     local tabButton = CreateFrame("Button", "AuctionFrameTab" .. index, attachment, "AuctionTabTemplate")
@@ -2255,7 +2427,8 @@ StaticPopupDialogs["RXPNoUpgradesFound"] = {
 
 function addon.itemUpgrades.AH:DisplayEmbeddedResults(showEmptyResults)
     self:CreateEmbeddedGui()
-    if not _G.AuctionFrame:IsShown() then return end
+    local attachment = getAuctionHouseFrame()
+    if not attachment or not attachment:IsShown() or not ahSession.displayFrame then return end
 
     if not ahSession.bestAnalysis then
         local cache = getAHCache()

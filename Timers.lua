@@ -200,7 +200,7 @@ function addon:TAXIMAP_OPENED()
             --print(id)
             if id and v.state ~= Enum.FlightPathState.Unreachable then
                 local hash = addon.GetFlightHash(v.slotIndex)
-                flightInfo.nodeHash[hash] = id
+                if hash then flightInfo.nodeHash[hash] = id end
                 RXPCData.flightPaths[id] = v.name
                 flightInfo[v.slotIndex] = v.nodeID
                 --print(v.nodeID,v.name,hash)
@@ -240,22 +240,33 @@ end
 function addon.GetFlightHash(index,level)
     local x,y
     if level then
-        x,y = TaxiGetDestX(index,level), TaxiGetDestY(index,level)
+        if TaxiGetNodeSlot and TaxiNodePosition then
+            local slot = TaxiGetNodeSlot(index, level, false)
+            if not slot or slot < 1 then return end
+            x,y = TaxiNodePosition(slot)
+        elseif TaxiGetDestX and TaxiGetDestY then
+            x,y = TaxiGetDestX(index,level), TaxiGetDestY(index,level)
+        else
+            return
+        end
     else
+        if not TaxiNodePosition then return end
         x,y = TaxiNodePosition(index)
     end
+    if not x or not y or addon.IsSecretValue(x) or addon.IsSecretValue(y) then return end
     --print('h:',x,y)
     return math.floor(x*4096)+math.floor(y*4096)*4096
 end
 
 local function GetFlightTime(index)
     local faction = addon.player.faction
-    local dest = flightInfo.nodeHash[addon.GetFlightHash(index)]
+    local hash = addon.GetFlightHash(index)
+    local dest = hash and flightInfo.nodeHash[hash]
     local src = flightInfo.currentFP
     flightInfo.dest = dest
     flightInfo.activeIndex = index
     local FPDB = addon.FPDB and addon.FPDB[faction]
-    if not FPDB then
+    if not FPDB or not src or not dest then
         flightInfo.timer = nil
         return
     end
@@ -267,8 +278,9 @@ local function GetFlightTime(index)
     else
         local totalTime = 0
         --Sums the flight time for each leg if the direct timer is not found
-        for i = 1,GetNumRoutes(index) do
+        for i = 1,(GetNumRoutes and GetNumRoutes(index) or 0) do
             local hash = addon.GetFlightHash(index,i)
+            if not hash then totalTime = 0; break end
             dest = flightInfo.nodeHash[hash]
             time = FPDB[src] and FPDB[src][dest] or FPDB[dest] and FPDB[dest][src]
             if time then

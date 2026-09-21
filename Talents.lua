@@ -1,6 +1,7 @@
 local _, addon = ...
 
-if addon.gameVersion > 50000 then return end
+-- Forever uses the trait-tree UI; Classic talent indices and guides do not apply.
+if addon.gameVersion > 50000 or addon.isForever or not GetNumTalentTabs then return end
 
 local GameTooltip = _G.GameTooltip
 local EasyMenu = function(...) addon:ShowMenu(...) end

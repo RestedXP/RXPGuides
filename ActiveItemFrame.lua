@@ -14,20 +14,16 @@ local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo and addon.GetSpellInfo or 
 local GetSpellTexture = C_Spell and C_Spell.GetSpellTexture or _G.GetSpellTexture
 local GetSpellSubtext = C_Spell and C_Spell.GetSpellSubtext or _G.GetSpellSubtext
 local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
-local IsSpellKnown = C_Spell and C_Spell.IsSpellKnown or _G.IsSpellKnown
-local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
+local IsSpellKnown = addon.IsSpellKnown
+local IsPlayerSpell = addon.IsPlayerSpellKnown
 local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
 --local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
 
 -- start, duration, enabled, modRate = GetSpellCooldown(spell)
-local GetSpellCooldown = _G.GetSpellCooldown or function(spellIdentifier)
-    if C_Spell and C_Spell.GetSpellCooldown then
-        local info = C_Spell.GetSpellCooldown(spellIdentifier)
-        return info.startTime, info.start, info.duration, info.enabled, info.modRate
-    end
-end
+local GetSpellCooldown = addon.GetSpellCooldown
 
-local GetItemCooldown = (C_Container and C_Container.GetItemCooldown or _G.GetItemCooldown) or function(searchItemID)
+local GetItemCooldown = (C_Item and C_Item.GetItemCooldown) or
+    (C_Container and C_Container.GetItemCooldown or _G.GetItemCooldown) or function(searchItemID)
 	local searchItemName = GetItemInfo(searchItemID);
 	if not searchItemName then return end
     local n = _G.KEYRING_CONTAINER or _G.BACKPACK_CONTAINER
@@ -184,13 +180,22 @@ local function UpdateCooldowns()
         local id = btn.itemId
         if id and btn:IsShown() then
             local start,duration
-            if btn.spell then
+            local durationObject
+            if btn.spell and C_Spell and C_Spell.GetSpellCooldownDuration and btn.cooldown.SetCooldownFromDurationObject then
+                durationObject = C_Spell.GetSpellCooldownDuration(id)
+            end
+            if durationObject then
+                -- The client can display a secret cooldown without addon arithmetic.
+                btn.cooldown:SetCooldownFromDurationObject(durationObject)
+            elseif btn.spell then
                 start,duration = GetSpellCooldown(id)
             else
                 start,duration = GetItemCooldown(id)
             end
             --local remaining, cd
-            if start and duration then
+            if durationObject then
+                -- Already updated through the duration object above.
+            elseif not addon.IsSecretValue(start) and not addon.IsSecretValue(duration) and start and duration then
                 --remaining = start + duration - GetTime()
                 --cd = FormatCooldown(start,remaining,enable)
                 btn.cooldown:SetCooldown(start,duration)

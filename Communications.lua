@@ -188,6 +188,7 @@ end
 
 local questXPPrefix = _G.COMBATLOG_XPGAIN_FIRSTPERSON_UNNAMED:sub(0, 5)
 function addon.comms:CHAT_MSG_COMBAT_XP_GAIN(_, text, ...)
+    if addon.IsSecretValue(text) or type(text) ~= "string" then return end
     if questXPPrefix == text:sub(0, #questXPPrefix) then return end
 
     local xpGained = tonumber(smatch(text, "%d+"))
@@ -198,6 +199,7 @@ function addon.comms:CHAT_MSG_COMBAT_XP_GAIN(_, text, ...)
 end
 
 function addon.comms:QUEST_TURNED_IN(_, _, xpReward)
+    if addon.IsSecretValue(xpReward) then return end
     xpReward = tonumber(xpReward)
 
     if not xpReward or xpReward <= 0 then return end

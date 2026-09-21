@@ -10,25 +10,23 @@ local GetItemStats = C_Item and C_Item.GetItemStats or _G.GetItemStats
 local GetSpellTexture = C_Spell and C_Spell.GetSpellTexture or _G.GetSpellTexture
 local GetSpellSubtext = C_Spell and C_Spell.GetSpellSubtext or _G.GetSpellSubtext
 local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
-local IsSpellKnown = C_SpellBook and C_SpellBook.IsSpellKnown or _G.IsSpellKnown
-local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
+local IsSpellKnown = addon.IsSpellKnown
+local IsPlayerSpell = addon.IsPlayerSpellKnown
 local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo and addon.GetSpellInfo or _G.GetSpellInfo
-local GetMerchantItemInfo = C_MerchantFrame and C_MerchantFrame.GetItemInfo or _G.GetMerchantItemInfo
+local GetMerchantItemInfo = addon.GetMerchantItemInfo
 local UnitName = addon.GetUnitName
-local BANK_CONTAINER = _G.BANK_CONTAINER or Enum.BagIndex.Bank
+local UnitGUID = addon.GetUnitGUID
+local UnitPosition = addon.GetUnitPosition
+local GetActionCooldown = addon.GetActionCooldown
 
 -- start, duration, enabled, modRate = GetSpellCooldown(spell)
-local GetSpellCooldown = _G.GetSpellCooldown or function(spellIdentifier)
-    if C_Spell and C_Spell.GetSpellCooldown then
-        local info = C_Spell.GetSpellCooldown(spellIdentifier)
-        return info.startTime, info.start, info.duration, info.enabled, info.modRate
-    end
-end
+local GetSpellCooldown = addon.GetSpellCooldown
 
 addon.GetFactionInfoByID = _G.GetFactionInfoByID or function(factionID)
     local name, description, standingID, barMin, barMax, barValue
 
     local factionData = C_Reputation.GetFactionDataByID(factionID);
+    if not factionData then return end
     name = factionData.name
     standingID = factionData.reaction
     barValue = factionData.currentStanding
@@ -40,7 +38,7 @@ end
 
 if not (UnitAura and UnitBuff and UnitDebuff) then
     addon.UnitAura = function(unitToken, index, filter)
-        if C_Secrets and C_Secrets.ShouldAurasBeSecret() then
+        if not addon.AreAurasReadable() then
             return
         end
         local auraData = C_UnitAuras.GetAuraDataByIndex(unitToken, index, filter);
@@ -48,10 +46,10 @@ if not (UnitAura and UnitBuff and UnitDebuff) then
             return nil;
         end
 
-        return AuraUtil.UnpackAuraData(auraData);
+        return addon.UnpackPublicAuraData(auraData);
     end
     addon.UnitBuff = function(unitToken, index, filter)
-        if C_Secrets and C_Secrets.ShouldAurasBeSecret() then
+        if not addon.AreAurasReadable() then
             return
         end
         local auraData = C_UnitAuras.GetBuffDataByIndex(unitToken, index, filter);
@@ -59,10 +57,10 @@ if not (UnitAura and UnitBuff and UnitDebuff) then
             return nil;
         end
 
-        return AuraUtil.UnpackAuraData(auraData);
+        return addon.UnpackPublicAuraData(auraData);
     end
     addon.UnitDebuff = function(unitToken, index, filter)
-        if C_Secrets and C_Secrets.ShouldAurasBeSecret() then
+        if not addon.AreAurasReadable() then
             return
         end
         local auraData = C_UnitAuras.GetDebuffDataByIndex(unitToken, index, filter);
@@ -70,7 +68,7 @@ if not (UnitAura and UnitBuff and UnitDebuff) then
             return nil;
         end
 
-        return AuraUtil.UnpackAuraData(auraData);
+        return addon.UnpackPublicAuraData(auraData);
     end
 end
 
@@ -151,7 +149,7 @@ if C_EventUtils then
     if C_EventUtils.IsEventValid("GOSSIP_CONFIRM") then
         gossipConfirm = "GOSSIP_CONFIRM"
     end
-    if C_EventUtils.IsEventValid("GOSSIP_CONFIRM") then
+    if C_EventUtils.IsEventValid("PLAYER_INTERACTION_MANAGER_FRAME_HIDE") then
         PI_Hide = "PLAYER_INTERACTION_MANAGER_FRAME_HIDE"
     end
 
@@ -1004,6 +1002,7 @@ function addon.UpdateStepText(self)
 end
 
 function addon.GetNpcId(unit, isGuid)
+    if addon.IsSecretValue(unit) then return end
     if not unit then
         if isGuid then
             return
@@ -2544,6 +2543,7 @@ function addon.functions.hs(self, ...)
         return {text = text}
     end
     local event, unit, _, id = ...
+    if addon.IsSecretValue(unit) or addon.IsSecretValue(id) then return end
     local element = self.element
     local step = element.step
     if not element.disableItemWindow then
@@ -2699,6 +2699,7 @@ function addon.GetNearestFp()
         factionid = 2
     end
     local x,y,_,map = UnitPosition('player')
+    if not x or not y or not map or not addon.taxiPos[map] then return end
     local mindist = math.huge
     local closestFP
     for node,t in pairs(addon.taxiPos[map]) do
@@ -2832,7 +2833,7 @@ function addon.functions.fly(self, ...)
         for i = 1, NumTaxiNodes() do
             local id = addon.flightInfo[i]
             local name = id and addon.FPDB[addon.player.faction] and addon.FPDB[addon.player.faction][id] and addon.FPDB[addon.player.faction][id].name
-            if not name and addon.taxiPos then
+            if not name and addon.taxiPos and addon.taxiPos[map] then
                 local data = addon.taxiPos[map][id]
                 name = data and data.name
             end
@@ -3757,6 +3758,7 @@ function addon.functions.tame(self, ...)
     end
 
     local event, unit, guid, spellId = ...
+    if addon.IsSecretValue(unit) or addon.IsSecretValue(spellId) then return end
     local id = self.element.id
 
     if spellId == 1515 and unit == "player" then
@@ -4837,6 +4839,7 @@ function addon.functions.cast(self, text, ...)
     end
     local event = text
     local unit, _, id = ...
+    if addon.IsSecretValue(unit) or addon.IsSecretValue(id) then return end
     local element = self.element
     local failed = element.failcheck and event == "UNIT_SPELLCAST_FAILED_QUIET"
     if (event == "UNIT_SPELLCAST_SUCCEEDED" or failed) and unit == element.unit then
@@ -5160,12 +5163,9 @@ function addon.functions.questitemcount(self,text,itemId,qty,...)
 end
 
 function addon.PutItemInBank(bagContents)
-    local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
+    local isBankOpened = addon.IsCharacterBankOpen()
     if CursorHasItem() and isBankOpened then
-        local bank = {BANK_CONTAINER}
-        for i = _G.NUM_BAG_SLOTS + 1, _G.NUM_BAG_SLOTS + _G.NUM_BANKBAGSLOTS do
-            tinsert(bank, i)
-        end
+        local bank = addon.GetCharacterBankBags()
 
         if not bagContents then bagContents = {} end
         for _, bag in ipairs(bank) do
@@ -5248,7 +5248,7 @@ function addon.GoThroughBags(itemList, func)
 end
 
 function addon.DepositItems(itemList)
-    local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
+    local isBankOpened = addon.IsCharacterBankOpen()
     if itemList and isBankOpened then
         if type(itemList) ~= "table" then itemList = {itemList} end
     else
@@ -5276,7 +5276,7 @@ function addon.DepositItems(itemList)
 end
 
 function addon.IsItemInBags(itemList, reverseLogic)
-    local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
+    local isBankOpened = addon.IsCharacterBankOpen()
     if itemList and isBankOpened then
         if type(itemList) ~= "table" then itemList = {itemList} end
     else
@@ -5300,10 +5300,7 @@ end
 
 function addon.GoThroughBank(itemList, func)
 
-    local bank = {BANK_CONTAINER}
-    for i = _G.NUM_BAG_SLOTS + 1, _G.NUM_BAG_SLOTS + _G.NUM_BANKBAGSLOTS do
-        tinsert(bank, i)
-    end
+    local bank = addon.GetCharacterBankBags()
 
     local bagContents = {}
 
@@ -5324,7 +5321,7 @@ function addon.GoThroughBank(itemList, func)
 end
 
 function addon.WithdrawItems(itemList)
-    local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
+    local isBankOpened = addon.IsCharacterBankOpen()
     if itemList and isBankOpened then
         if type(itemList) ~= "table" then itemList = {itemList} end
     else
@@ -5352,7 +5349,7 @@ function addon.WithdrawItems(itemList)
 end
 
 function addon.IsItemInBank(itemList, reverseLogic)
-    local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
+    local isBankOpened = addon.IsCharacterBankOpen()
     if itemList and isBankOpened then
         if type(itemList) ~= "table" then itemList = {itemList} end
     else
@@ -6301,13 +6298,16 @@ function addon.functions.cooldown(self, text, cooldownType, id, remaining,
     elseif cooldownType == "inventory" then
         start, duration = GetInventoryItemCooldown("player", id)
     end
+    if not start or not duration or addon.IsSecretValue(start) or addon.IsSecretValue(duration) then return end
     local endTime = start + duration
 
     -- Astral recall:
     if class == "SHAMAN" and IsPlayerSpell(556) and id == 6948 and cooldownType ==
         "item" then
         local arStart, arDuration = GetSpellCooldown(556)
-        endTime = math.min(endTime, arStart + arDuration)
+        if arStart and arDuration then
+            endTime = math.min(endTime, arStart + arDuration)
+        end
     end
 
     local target = endTime - remaining
@@ -6405,7 +6405,7 @@ function addon.functions.countdown(self, text, duration)
     end
 end
 
-if addon.gameVersion >= 110000 then
+if C_ScenarioInfo and C_ScenarioInfo.GetCriteriaInfoByStep then
     events.scenario = {"CRITERIA_UPDATE", "SCENARIO_CRITERIA_UPDATE"}
     addon.icons.scenario = addon.icons.complete
 
@@ -6608,17 +6608,6 @@ end
 
 function addon.functions.ironchain()
     local id
-    local UnitAura = _G.UnitAura
-    if not UnitAura then
-        UnitAura = function(unitToken, index, filter)
-            local auraData = C_UnitAuras.GetAuraDataByIndex(unitToken, index, filter);
-            if not auraData then
-                return nil;
-            end
-
-            return AuraUtil.UnpackAuraData(auraData);
-	    end
-    end
     for i = 1, 5 do
         _, id = UnitAura("vehicle", i)
         if id == 133273 then return true end
@@ -7764,14 +7753,14 @@ function addon.functions.aura(self, ...)
     local element = self.element
     local step = element.step
     local event, target = ...
-    if C_Secrets and C_Secrets.ShouldAurasBeSecret() then
+    if not addon.AreAurasReadable() then
         return
     end
     if (target == "player" or event ~= "UNIT_AURA") and step.active then
         local buffFound = false
         local partialMatch = false
         local function CheckBuffs(func)
-            if addon.gameVersion >= 120000 and InCombatLockdown() then
+            if addon.hasSecretValues and InCombatLockdown() then
                 return
             end
 

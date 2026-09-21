@@ -7,13 +7,14 @@ local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo and addon.GetSpellInfo or 
 local GetSpellTexture = C_Spell and C_Spell.GetSpellTexture or _G.GetSpellTexture
 local GetSpellSubtext = C_Spell and C_Spell.GetSpellSubtext or _G.GetSpellSubtext
 local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
-local IsSpellKnown = C_Spell and C_Spell.IsSpellKnown or _G.IsSpellKnown
-local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
+local IsSpellKnown = addon.IsSpellKnown
+local IsPlayerSpell = addon.IsPlayerSpellKnown
 local GetTime, GetMirrorTimerProgress = _G.GetTime, _G.GetMirrorTimerProgress
 local UnitHealth, UnitHealthMax, UnitIsDead = _G.UnitHealth, _G.UnitHealthMax, _G.UnitIsDead
 local GetInventoryItemID, IsPlayerSpell = GetInventoryItemID, IsPlayerSpell
-local HasAction, GetActionInfo, GetMacroSpell = HasAction, GetActionInfo, GetMacroSpell
-local IsOnBarOrSpecialBar = C_ActionBar.IsOnBarOrSpecialBar
+local HasAction = C_ActionBar and C_ActionBar.HasAction or HasAction
+local GetActionInfo, GetMacroSpell = GetActionInfo, GetMacroSpell
+local IsOnBarOrSpecialBar = C_ActionBar and C_ActionBar.IsOnBarOrSpecialBar
 local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or _G.GetContainerNumSlots
 local GetContainerItemID = C_Container and C_Container.GetContainerItemID or _G.GetContainerItemID
 local tinsert, fmt = tinsert, string.format
@@ -127,14 +128,14 @@ end
 
 function addon.tips:CheckEmergencyActions()
     if not addon.settings.profile.enableEmergencyActions then return end
-    if UnitIsDead('player') then
+    local dead = UnitIsDead('player')
+    local maxHP, currentHP = UnitHealthMax("player"), UnitHealth("player")
+    if issecretvalue(dead) or issecretvalue(maxHP) or issecretvalue(currentHP) or dead then
         for _, border in pairs(session.highlights) do if border:IsShown() then border:Hide() end end
 
         return
     end
 
-    local maxHP = not issecretvalue(UnitHealthMax("player")) and UnitHealthMax("player") or 0
-    local currentHP = not issecretvalue(UnitHealth("player")) and UnitHealth("player") or 0
     if maxHP > 0 and currentHP > 0 and currentHP / maxHP < addon.settings.profile.emergencyThreshold then
 
         addon.tips:HighlightEmergencyItem()
@@ -186,7 +187,7 @@ function addon.tips:CatalogInventory()
 end
 
 function addon.tips:UpdateEmergencySpells()
-    if not addon.emergencySpells or not addon.settings.profile.enableEmergencyActions then return end
+    if not IsOnBarOrSpecialBar or not addon.emergencySpells or not addon.settings.profile.enableEmergencyActions then return end
 
     local spellList = {}
 
@@ -325,21 +326,25 @@ local ActionBars = {'Action', 'MultiBarBottomLeft', 'MultiBarBottomRight', 'Mult
 function addon.tips:CatalogActionBars()
     session.actionBarMap = {}
 
-    if not _G.ActionButton_GetPagedID or _G.ActionButton_CalculateAction then return end
+    -- Action buttons on modern clients expose their resolved action directly.
 
     local button, slot, actionType, id, key
 
     for _, barName in pairs(ActionBars) do
         for i = 1, 12 do
             button = _G[barName .. 'Button' .. i]
-            slot = _G.ActionButton_GetPagedID(button) or _G.ActionButton_CalculateAction(button) or
-                       button:GetAttribute('action')
+            slot = button and (button.action or
+                (_G.ActionButton_GetPagedID and _G.ActionButton_GetPagedID(button)) or
+                (_G.ActionButton_CalculateAction and _G.ActionButton_CalculateAction(button)) or
+                button:GetAttribute('action'))
 
-            if button and slot and HasAction(slot) then
+            if button and not issecretvalue(slot) and slot and HasAction(slot) then
                 actionType, id = GetActionInfo(slot)
-
-                if actionType == 'macro' then
-                    _, _, id = GetMacroSpell(id)
+                key = nil
+                if issecretvalue(actionType) or issecretvalue(id) then
+                    id = nil
+                elseif actionType == 'macro' then
+                    id = GetMacroSpell(id)
                     if id then key = 'spell:' .. id end
                 elseif actionType == 'item' and id then
                     key = 'item:' .. id

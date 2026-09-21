@@ -30,7 +30,7 @@ if C_Container and C_Container.GetContainerItemInfo then
     GetContainerItemInfo = function(...)
         local itemTable = C_Container.GetContainerItemInfo(...)
         if itemTable then
-            return itemTable.texture,
+            return itemTable.iconFileID,
                     itemTable.stackCount,
                     itemTable.isLocked,
                     itemTable.quality,
@@ -719,16 +719,39 @@ if _G['ContainerFrame_Update'] then
 end
 local hookedFrames = {}
 
+local function UpdateModernBagItems(bagframe, clickHook)
+    local iterator, state, index
+    if bagframe.EnumerateValidItems then
+        iterator, state, index = bagframe:EnumerateValidItems()
+    else
+        iterator, state, index = ipairs({bagframe:GetChildren()})
+    end
+    for _, frame in iterator, state, index do
+        if frame and frame.GetBagID and frame.GetID and frame.OnClick then
+            local bag, slot = frame:GetBagID(), frame:GetID()
+            if bag and slot and slot > 0 then
+                if not hookedFrames[frame] then
+                    frame:HookScript("OnClick", clickHook)
+                    hookedFrames[frame] = true
+                end
+                local id = GetContainerItemID(bag, slot)
+                if frame.JunkIcon then
+                    frame.JunkIcon:SetShown(inventoryManager.IsJunkIconEnabled() and id and IsJunk(id, bag, slot) or false)
+                end
+            end
+        end
+    end
+end
+
 if _G['ContainerFrame_UpdateAll'] then
     local OnClickHook = function(self,button,...)
         local bag = self:GetBagID()
         local slot = self:GetID()
         local mod = inventoryManager.GetModKey()
-        AA = self
         if not inventoryManager.IsRightClickEnabled() or not mod or button ~= inventoryManager.GetMouseButton() then
             return
         end
-        if bag and slot then
+        if bag and slot and slot > 0 then
             local id = GetContainerItemID(bag,slot)
             ToggleJunk(id,bag,slot)
             if self.JunkIcon then
@@ -782,21 +805,7 @@ if _G['ContainerFrame_UpdateAll'] then
         end
         if bagframe and bagframe.UpdateItems then
             hooksecurefunc(bagframe,'UpdateItems', function(self)
-            local frames = {bagframe:GetChildren()}
-            for _,frame in pairs(frames) do
-                if frame.GetID and frame.OnClick then
-                    if not hookedFrames[frame] then
-                        frame:HookScript("OnClick", OnClickHook)
-                        hookedFrames[frame] = true
-                    end
-                    local bag = frame:GetBagID()
-                    local slot = frame:GetID()
-                    if slot < 0 then return end
-                    local id = GetContainerItemID(bag, slot)
-                    frame.JunkIcon:SetShown(inventoryManager.IsJunkIconEnabled() and id and IsJunk(id))
-                end
-            end
-
+                UpdateModernBagItems(self, OnClickHook)
             end)
         end
     end
@@ -816,10 +825,10 @@ local function ProcessJunk(sellWares,override)
             local id = GetContainerItemID(bag,slot)
             local _,stack,locked,quality = GetContainerItemInfo(bag, slot)
             local junk = IsJunk(id)
-            if junk then
+            if junk and stack then
                 local price = select(11,GetItemInfo(id))
-                local value = price * stack
-                if isMerchant and value > 0 then
+                local value = (price or 0) * stack
+                if isMerchant and value > 0 and not locked and quality then
                     table.insert(itemsToSell,{bag = bag, slot = slot, value = value, quality = quality})
                 end
                 totalCost = totalCost + value

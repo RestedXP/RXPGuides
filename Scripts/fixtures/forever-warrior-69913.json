@@ -1,0 +1,1292 @@
+{
+  "formatVersion": 1,
+  "version": "1.60.1",
+  "build": "69913",
+  "interface": 16001,
+  "locale": "enUS",
+  "class": "WARRIOR",
+  "complete": true,
+  "nodeCount": 53,
+  "trees": [
+    {
+      "treeID": 1117,
+      "groups": [
+        {
+          "name": "Arms",
+          "skillLineID": 26,
+          "groupID": 11650,
+          "orderIndex": 0
+        },
+        {
+          "name": "Fury",
+          "skillLineID": 256,
+          "groupID": 11657,
+          "orderIndex": 1
+        },
+        {
+          "name": "Protection",
+          "skillLineID": 257,
+          "groupID": 11670,
+          "orderIndex": 2
+        }
+      ],
+      "nodes": [
+        {
+          "nodeID": 105926,
+          "x": 6820,
+          "y": 4530,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 2,
+          "groups": [
+            11653,
+            11660,
+            11657,
+            12826
+          ],
+          "entries": [
+            {
+              "entryID": 130656,
+              "name": "Improved Intercept",
+              "definitionID": 135457,
+              "maxRanks": 2,
+              "spellID": 20504
+            }
+          ]
+        },
+        {
+          "nodeID": 105927,
+          "x": 5620,
+          "y": 4530,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 1,
+          "groups": [
+            11653,
+            11660,
+            11657,
+            12826
+          ],
+          "entries": [
+            {
+              "entryID": 130657,
+              "name": "Death Wish",
+              "definitionID": 135458,
+              "maxRanks": 1,
+              "spellID": 12328
+            }
+          ]
+        },
+        {
+          "nodeID": 105928,
+          "x": 6220,
+          "y": 5130,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 5,
+          "groups": [
+            11652,
+            11659,
+            11657
+          ],
+          "entries": [
+            {
+              "entryID": 130658,
+              "name": "Flurry",
+              "definitionID": 135459,
+              "maxRanks": 5,
+              "spellID": 12319
+            }
+          ]
+        },
+        {
+          "nodeID": 105929,
+          "x": 5020,
+          "y": 4530,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 3,
+          "groups": [
+            11653,
+            11660,
+            11657,
+            12826
+          ],
+          "entries": [
+            {
+              "entryID": 130659,
+              "name": "Precision",
+              "definitionID": 135460,
+              "maxRanks": 3,
+              "spellID": 1225295
+            }
+          ]
+        },
+        {
+          "nodeID": 105930,
+          "x": 5620,
+          "y": 5730,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 1,
+          "groups": [
+            11658,
+            11654,
+            11657
+          ],
+          "entries": [
+            {
+              "entryID": 130660,
+              "name": "Bloodthirst",
+              "definitionID": 135461,
+              "maxRanks": 1,
+              "spellID": 23881
+            }
+          ]
+        },
+        {
+          "nodeID": 105931,
+          "x": 6220,
+          "y": 3930,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 5,
+          "groups": [
+            11654,
+            11661,
+            11657,
+            12826,
+            12827
+          ],
+          "entries": [
+            {
+              "entryID": 130661,
+              "name": "Enrage",
+              "definitionID": 135462,
+              "maxRanks": 5,
+              "spellID": 12317
+            }
+          ]
+        },
+        {
+          "nodeID": 105932,
+          "x": 6820,
+          "y": 3930,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 2,
+          "groups": [
+            11654,
+            11661,
+            11657,
+            12826,
+            12827
+          ],
+          "entries": [
+            {
+              "entryID": 130662,
+              "name": "Improved Execute",
+              "definitionID": 135463,
+              "maxRanks": 2,
+              "spellID": 20502
+            }
+          ]
+        },
+        {
+          "nodeID": 105933,
+          "x": 5020,
+          "y": 3930,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 5,
+          "groups": [
+            11654,
+            11661,
+            11657,
+            12826,
+            12827
+          ],
+          "entries": [
+            {
+              "entryID": 130663,
+              "name": "Dual Wield Specialization",
+              "definitionID": 135464,
+              "maxRanks": 5,
+              "spellID": 23584
+            }
+          ]
+        },
+        {
+          "nodeID": 105934,
+          "x": 6220,
+          "y": 3330,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 3,
+          "groups": [
+            11655,
+            11662,
+            11657,
+            12826,
+            12827,
+            12828
+          ],
+          "entries": [
+            {
+              "entryID": 130664,
+              "name": "Blood Craze",
+              "definitionID": 135465,
+              "maxRanks": 3,
+              "spellID": 16487
+            }
+          ]
+        },
+        {
+          "nodeID": 105935,
+          "x": 5620,
+          "y": 3330,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 1,
+          "groups": [
+            11655,
+            11662,
+            11657,
+            12826,
+            12827,
+            12828
+          ],
+          "entries": [
+            {
+              "entryID": 130665,
+              "name": "Piercing Howl",
+              "definitionID": 135466,
+              "maxRanks": 1,
+              "spellID": 12323
+            }
+          ]
+        },
+        {
+          "nodeID": 105936,
+          "x": 5020,
+          "y": 3330,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 3,
+          "groups": [
+            11655,
+            11662,
+            11657,
+            12826,
+            12827,
+            12828
+          ],
+          "entries": [
+            {
+              "entryID": 130666,
+              "name": "Improved Cleave",
+              "definitionID": 135467,
+              "maxRanks": 3,
+              "spellID": 12329
+            }
+          ]
+        },
+        {
+          "nodeID": 105937,
+          "x": 6220,
+          "y": 2730,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 5,
+          "groups": [
+            11663,
+            11657,
+            12826,
+            12827,
+            12828,
+            12829
+          ],
+          "entries": [
+            {
+              "entryID": 130667,
+              "name": "Unbridled Wrath",
+              "definitionID": 135468,
+              "maxRanks": 5,
+              "spellID": 12322
+            }
+          ]
+        },
+        {
+          "nodeID": 105938,
+          "x": 5620,
+          "y": 2130,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 5,
+          "groups": [
+            11656,
+            12826,
+            12827,
+            12828,
+            12829,
+            12830,
+            11657
+          ],
+          "entries": [
+            {
+              "entryID": 130668,
+              "name": "Booming Voice",
+              "definitionID": 135469,
+              "maxRanks": 5,
+              "spellID": 12321
+            }
+          ]
+        },
+        {
+          "nodeID": 105939,
+          "x": 6220,
+          "y": 2130,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 5,
+          "groups": [
+            11657,
+            12826,
+            12827,
+            12828,
+            12829,
+            12830
+          ],
+          "entries": [
+            {
+              "entryID": 130669,
+              "name": "Cruelty",
+              "definitionID": 135470,
+              "maxRanks": 5,
+              "spellID": 12320
+            }
+          ]
+        },
+        {
+          "nodeID": 105941,
+          "x": 1620,
+          "y": 5730,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 1,
+          "groups": [
+            11644,
+            11650
+          ],
+          "entries": [
+            {
+              "entryID": 130671,
+              "name": "Mortal Strike",
+              "definitionID": 135472,
+              "maxRanks": 1,
+              "spellID": 12294
+            }
+          ]
+        },
+        {
+          "nodeID": 105942,
+          "x": 2220,
+          "y": 5130,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 3,
+          "groups": [
+            11645,
+            11650
+          ],
+          "entries": [
+            {
+              "entryID": 130672,
+              "name": "Improved Hamstring",
+              "definitionID": 135473,
+              "maxRanks": 3,
+              "spellID": 12289
+            }
+          ]
+        },
+        {
+          "nodeID": 105944,
+          "x": 2220,
+          "y": 4530,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 5,
+          "groups": [
+            11646,
+            12820,
+            11650
+          ],
+          "entries": [
+            {
+              "entryID": 130674,
+              "name": "Weaponmaster",
+              "definitionID": 135475,
+              "maxRanks": 5,
+              "spellID": 1290261
+            }
+          ]
+        },
+        {
+          "nodeID": 105945,
+          "x": 1620,
+          "y": 4530,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 1,
+          "groups": [
+            11646,
+            12820,
+            11650
+          ],
+          "entries": [
+            {
+              "entryID": 130675,
+              "name": "Sweeping Strikes",
+              "definitionID": 135476,
+              "maxRanks": 1,
+              "spellID": 12292
+            }
+          ]
+        },
+        {
+          "nodeID": 105947,
+          "x": 2220,
+          "y": 3930,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 2,
+          "groups": [
+            11647,
+            12820,
+            12821,
+            11650
+          ],
+          "entries": [
+            {
+              "entryID": 130677,
+              "name": "Impale",
+              "definitionID": 135478,
+              "maxRanks": 2,
+              "spellID": 16493
+            }
+          ]
+        },
+        {
+          "nodeID": 105948,
+          "x": 1620,
+          "y": 3930,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 3,
+          "groups": [
+            11647,
+            12820,
+            12821,
+            11650
+          ],
+          "entries": [
+            {
+              "entryID": 130678,
+              "name": "Two-Handed Weapon Specialization",
+              "definitionID": 135479,
+              "maxRanks": 3,
+              "spellID": 12163
+            }
+          ]
+        },
+        {
+          "nodeID": 105949,
+          "x": 1020,
+          "y": 3930,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 1,
+          "groups": [
+            11647,
+            12820,
+            12821,
+            11650
+          ],
+          "entries": [
+            {
+              "entryID": 130679,
+              "name": "Spearing Strike",
+              "definitionID": 135480,
+              "maxRanks": 1,
+              "spellID": 1310222
+            }
+          ]
+        },
+        {
+          "nodeID": 105950,
+          "x": 2220,
+          "y": 3330,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 3,
+          "groups": [
+            11648,
+            12820,
+            12821,
+            12822,
+            12823,
+            11650
+          ],
+          "entries": [
+            {
+              "entryID": 130680,
+              "name": "Deep Wounds",
+              "definitionID": 135481,
+              "maxRanks": 3,
+              "spellID": 12834
+            }
+          ]
+        },
+        {
+          "nodeID": 105951,
+          "x": 1620,
+          "y": 3330,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 1,
+          "groups": [
+            11648,
+            12820,
+            12821,
+            12822,
+            12823,
+            11650
+          ],
+          "entries": [
+            {
+              "entryID": 130681,
+              "name": "Anger Management",
+              "definitionID": 135482,
+              "maxRanks": 1,
+              "spellID": 12296
+            }
+          ]
+        },
+        {
+          "nodeID": 105952,
+          "x": 2820,
+          "y": 2730,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 2,
+          "groups": [
+            11649,
+            12820,
+            12821,
+            12822,
+            12823,
+            12824,
+            11650
+          ],
+          "entries": [
+            {
+              "entryID": 130682,
+              "name": "Improved Overpower",
+              "definitionID": 135483,
+              "maxRanks": 2,
+              "spellID": 12290
+            }
+          ]
+        },
+        {
+          "nodeID": 105953,
+          "x": 6820,
+          "y": 3330,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 3,
+          "groups": [
+            11662,
+            12826,
+            12827,
+            12828,
+            11657
+          ],
+          "entries": [
+            {
+              "entryID": 130683,
+              "name": "Boundless Rage",
+              "definitionID": 135484,
+              "maxRanks": 3,
+              "spellID": 1310236
+            }
+          ]
+        },
+        {
+          "nodeID": 105954,
+          "x": 1620,
+          "y": 2730,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 5,
+          "groups": [
+            11649,
+            11650,
+            12820,
+            12821,
+            12822,
+            12823,
+            12824
+          ],
+          "entries": [
+            {
+              "entryID": 130684,
+              "name": "Improved Tactical Mastery",
+              "definitionID": 135485,
+              "maxRanks": 5,
+              "spellID": 12295
+            }
+          ]
+        },
+        {
+          "nodeID": 105955,
+          "x": 1020,
+          "y": 2730,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 2,
+          "groups": [
+            11649,
+            11650,
+            12820,
+            12821,
+            12822,
+            12823,
+            12824
+          ],
+          "entries": [
+            {
+              "entryID": 130685,
+              "name": "Improved Charge",
+              "definitionID": 135486,
+              "maxRanks": 2,
+              "spellID": 12285
+            }
+          ]
+        },
+        {
+          "nodeID": 105956,
+          "x": 2220,
+          "y": 2130,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 3,
+          "groups": [
+            11650,
+            12820,
+            12821,
+            12822,
+            12823,
+            12824,
+            12825
+          ],
+          "entries": [
+            {
+              "entryID": 130686,
+              "name": "Improved Rend",
+              "definitionID": 135487,
+              "maxRanks": 3,
+              "spellID": 12286
+            }
+          ]
+        },
+        {
+          "nodeID": 105957,
+          "x": 1620,
+          "y": 2130,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 5,
+          "groups": [
+            11650,
+            12820,
+            12821,
+            12822,
+            12823,
+            12824,
+            12825
+          ],
+          "entries": [
+            {
+              "entryID": 130687,
+              "name": "Deflection",
+              "definitionID": 135488,
+              "maxRanks": 5,
+              "spellID": 16462
+            }
+          ]
+        },
+        {
+          "nodeID": 105958,
+          "x": 1020,
+          "y": 2130,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 3,
+          "groups": [
+            11650,
+            12820,
+            12821,
+            12822,
+            12823,
+            12824,
+            12825
+          ],
+          "entries": [
+            {
+              "entryID": 130688,
+              "name": "Improved Heroic Strike",
+              "definitionID": 135489,
+              "maxRanks": 3,
+              "spellID": 12282
+            }
+          ]
+        },
+        {
+          "nodeID": 105959,
+          "x": 9680,
+          "y": 5730,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 1,
+          "groups": [
+            11664,
+            11670
+          ],
+          "entries": [
+            {
+              "entryID": 130689,
+              "name": "Shield Slam",
+              "definitionID": 135490,
+              "maxRanks": 1,
+              "spellID": 23922
+            }
+          ]
+        },
+        {
+          "nodeID": 105961,
+          "x": 10280,
+          "y": 5130,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 3,
+          "groups": [
+            11665,
+            11670
+          ],
+          "entries": [
+            {
+              "entryID": 130691,
+              "name": "Focused Rage",
+              "definitionID": 135492,
+              "maxRanks": 3,
+              "spellID": 29787
+            }
+          ]
+        },
+        {
+          "nodeID": 105962,
+          "x": 10880,
+          "y": 4530,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 5,
+          "groups": [
+            11666,
+            11670,
+            12831
+          ],
+          "entries": [
+            {
+              "entryID": 130692,
+              "name": "Bastion",
+              "definitionID": 135493,
+              "maxRanks": 5,
+              "spellID": 16538
+            }
+          ]
+        },
+        {
+          "nodeID": 105963,
+          "x": 10280,
+          "y": 4530,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 2,
+          "groups": [
+            11666,
+            11670,
+            12831
+          ],
+          "entries": [
+            {
+              "entryID": 130693,
+              "name": "Improved Shield Bash",
+              "definitionID": 135494,
+              "maxRanks": 2,
+              "spellID": 12311
+            }
+          ]
+        },
+        {
+          "nodeID": 105964,
+          "x": 9080,
+          "y": 4530,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 2,
+          "groups": [
+            11666,
+            11670,
+            12831
+          ],
+          "entries": [
+            {
+              "entryID": 130694,
+              "name": "Improved Shield Wall",
+              "definitionID": 135495,
+              "maxRanks": 2,
+              "spellID": 12312
+            }
+          ]
+        },
+        {
+          "nodeID": 105965,
+          "x": 9680,
+          "y": 4530,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 1,
+          "groups": [
+            11666,
+            11670,
+            12831
+          ],
+          "entries": [
+            {
+              "entryID": 130695,
+              "name": "Concussion Blow",
+              "definitionID": 135496,
+              "maxRanks": 1,
+              "spellID": 12809
+            }
+          ]
+        },
+        {
+          "nodeID": 105966,
+          "x": 10280,
+          "y": 3930,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 1,
+          "groups": [
+            11667,
+            11670,
+            12831,
+            12832
+          ],
+          "entries": [
+            {
+              "entryID": 130696,
+              "name": "Vanguard",
+              "definitionID": 135497,
+              "maxRanks": 1,
+              "spellID": 1310317
+            }
+          ]
+        },
+        {
+          "nodeID": 105967,
+          "x": 9680,
+          "y": 3930,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 3,
+          "groups": [
+            11667,
+            11670,
+            12831,
+            12832
+          ],
+          "entries": [
+            {
+              "entryID": 130697,
+              "name": "Improved Disarm",
+              "definitionID": 135498,
+              "maxRanks": 3,
+              "spellID": 12313
+            }
+          ]
+        },
+        {
+          "nodeID": 105968,
+          "x": 9080,
+          "y": 3930,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 3,
+          "groups": [
+            11667,
+            11670,
+            12831,
+            12832
+          ],
+          "entries": [
+            {
+              "entryID": 130698,
+              "name": "Improved Sunder Armor",
+              "definitionID": 135499,
+              "maxRanks": 3,
+              "spellID": 12308
+            }
+          ]
+        },
+        {
+          "nodeID": 105969,
+          "x": 10280,
+          "y": 3330,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 3,
+          "groups": [
+            11668,
+            11670,
+            12831,
+            12832,
+            12833
+          ],
+          "entries": [
+            {
+              "entryID": 130699,
+              "name": "Improved Revenge",
+              "definitionID": 135500,
+              "maxRanks": 3,
+              "spellID": 12797
+            }
+          ]
+        },
+        {
+          "nodeID": 105970,
+          "x": 9080,
+          "y": 3330,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 1,
+          "groups": [
+            11668,
+            11670,
+            12831,
+            12832,
+            12833
+          ],
+          "entries": [
+            {
+              "entryID": 130700,
+              "name": "Last Stand",
+              "definitionID": 135501,
+              "maxRanks": 1,
+              "spellID": 12975
+            }
+          ]
+        },
+        {
+          "nodeID": 105971,
+          "x": 9680,
+          "y": 3330,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 2,
+          "groups": [
+            11668,
+            11670,
+            12831,
+            12832,
+            12833
+          ],
+          "entries": [
+            {
+              "entryID": 130701,
+              "name": "Master of Defense",
+              "definitionID": 135502,
+              "maxRanks": 2,
+              "spellID": 1310316
+            }
+          ]
+        },
+        {
+          "nodeID": 105972,
+          "x": 10880,
+          "y": 2730,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 3,
+          "groups": [
+            11669,
+            11670,
+            12831,
+            12832,
+            12833,
+            12834
+          ],
+          "entries": [
+            {
+              "entryID": 130702,
+              "name": "Improved Thunder Clap",
+              "definitionID": 135503,
+              "maxRanks": 3,
+              "spellID": 12287
+            }
+          ]
+        },
+        {
+          "nodeID": 105973,
+          "x": 10280,
+          "y": 2730,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 5,
+          "groups": [
+            11669,
+            11670,
+            12831,
+            12832,
+            12833,
+            12834
+          ],
+          "entries": [
+            {
+              "entryID": 130703,
+              "name": "Toughness",
+              "definitionID": 135504,
+              "maxRanks": 5,
+              "spellID": 12299
+            }
+          ]
+        },
+        {
+          "nodeID": 105974,
+          "x": 9080,
+          "y": 2730,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 2,
+          "groups": [
+            11669,
+            11670,
+            12831,
+            12832,
+            12833,
+            12834
+          ],
+          "entries": [
+            {
+              "entryID": 130704,
+              "name": "Improved Bloodrage",
+              "definitionID": 135505,
+              "maxRanks": 2,
+              "spellID": 12301
+            }
+          ]
+        },
+        {
+          "nodeID": 105975,
+          "x": 10280,
+          "y": 2130,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 5,
+          "groups": [
+            11670,
+            12831,
+            12832,
+            12833,
+            12834,
+            12835
+          ],
+          "entries": [
+            {
+              "entryID": 130705,
+              "name": "Anticipation",
+              "definitionID": 135506,
+              "maxRanks": 5,
+              "spellID": 12297
+            }
+          ]
+        },
+        {
+          "nodeID": 105976,
+          "x": 9680,
+          "y": 2130,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 5,
+          "groups": [
+            11670,
+            12831,
+            12832,
+            12833,
+            12834,
+            12835
+          ],
+          "entries": [
+            {
+              "entryID": 130706,
+              "name": "Shield Specialization",
+              "definitionID": 135507,
+              "maxRanks": 5,
+              "spellID": 12298
+            }
+          ]
+        },
+        {
+          "nodeID": 105977,
+          "x": 5620,
+          "y": 3930,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 1,
+          "groups": [
+            11651,
+            11661,
+            12826,
+            12827,
+            11657
+          ],
+          "entries": [
+            {
+              "entryID": 130707,
+              "name": "Raging Blows",
+              "definitionID": 135508,
+              "maxRanks": 1,
+              "spellID": 1310315
+            }
+          ]
+        },
+        {
+          "nodeID": 105978,
+          "x": 5020,
+          "y": 5130,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 2,
+          "groups": [
+            11652,
+            11659,
+            11657
+          ],
+          "entries": [
+            {
+              "entryID": 130708,
+              "name": "Improved Berserker Rage",
+              "definitionID": 135509,
+              "maxRanks": 2,
+              "spellID": 20500
+            }
+          ]
+        },
+        {
+          "nodeID": 110524,
+          "x": 1020,
+          "y": 4530,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 5,
+          "groups": [
+            11646,
+            12820,
+            11650
+          ],
+          "entries": [
+            {
+              "entryID": 137214,
+              "name": "Bloodthrill",
+              "definitionID": 141974,
+              "maxRanks": 5,
+              "spellID": 1289682
+            }
+          ]
+        },
+        {
+          "nodeID": 110856,
+          "x": 10880,
+          "y": 3330,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 3,
+          "groups": [
+            11668,
+            12831,
+            12832,
+            12833,
+            11670
+          ],
+          "entries": [
+            {
+              "entryID": 137848,
+              "name": "Defiance",
+              "definitionID": 142602,
+              "maxRanks": 3,
+              "spellID": 12792
+            }
+          ]
+        },
+        {
+          "nodeID": 110857,
+          "x": 5620,
+          "y": 2730,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 5,
+          "groups": [
+            11663,
+            12826,
+            12827,
+            12828,
+            12829,
+            11657
+          ],
+          "entries": [
+            {
+              "entryID": 137849,
+              "name": "Iron Will",
+              "definitionID": 142603,
+              "maxRanks": 5,
+              "spellID": 12962
+            }
+          ]
+        },
+        {
+          "nodeID": 110858,
+          "x": 1020,
+          "y": 5130,
+          "type": 0,
+          "visible": true,
+          "maxRanks": 2,
+          "groups": [
+            11645,
+            11650
+          ],
+          "entries": [
+            {
+              "entryID": 137850,
+              "name": "Improved Slam",
+              "definitionID": 142604,
+              "maxRanks": 2,
+              "spellID": 12862
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

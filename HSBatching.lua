@@ -71,6 +71,7 @@ end
 HSframe:SetScript("OnEvent", function(self, event, ...)
     if event == "UNIT_SPELLCAST_INTERRUPTED" then
         local unitTarget, _, spellID = ...
+        if addon.IsSecretValue(unitTarget) or addon.IsSecretValue(spellID) then return end
         -- Player interrupted Hearthstone cast
         if unitTarget == "player" and spellID == 8690 then
             if HSstart > 0 then StopHSTimer() end

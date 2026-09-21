@@ -273,7 +273,7 @@ function addon.BindActiveStepElement(frame, step, element, index)
     local hasEvents, hasOnUpdate
     if type(events) == "string" then
         hasOnUpdate = events == "OnUpdate"
-        hasEvents = not hasOnUpdate
+        hasEvents = not hasOnUpdate and addon.IsEventValid(events)
         if hasEvents then frame:RegisterEvent(events) end
     elseif type(events) == "table" then
         local event
@@ -281,7 +281,7 @@ function addon.BindActiveStepElement(frame, step, element, index)
             event = events[eventIndex]
             if event == "OnUpdate" then
                 hasOnUpdate = true
-            else
+            elseif addon.IsEventValid(event) then
                 frame:RegisterEvent(event)
                 hasEvents = true
             end
@@ -507,7 +507,7 @@ function addon.RegisterGeneratedSteps()
                     if type(events) == "string" then
                         if events == "OnUpdate" then
                             container:SetScript("OnUpdate", container.callback)
-                        else
+                        elseif addon.IsEventValid(events) then
                             container:RegisterEvent(events)
                             container:SetScript("OnEvent", CurrentStepFrame.EventHandler)
                         end
@@ -515,7 +515,7 @@ function addon.RegisterGeneratedSteps()
                         for _, event in ipairs(events) do
                             if event == "OnUpdate" then
                                 container:SetScript("OnUpdate", container.callback)
-                            else
+                            elseif addon.IsEventValid(event) then
                                 container:RegisterEvent(event)
                                 container:SetScript("OnEvent", CurrentStepFrame.EventHandler)
                             end

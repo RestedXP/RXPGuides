@@ -1,4 +1,4 @@
-## Interface: 11509, 50504, 120100, 120005, 120007
+## Interface: 11509, 50504, 120100, 120005, 120007, 16001
 ## Interface-Mists: 50504
 ## Interface-TBC: 20506
 ## Interface-Classic: 11509
@@ -24,7 +24,8 @@
 ## X-Curse-Project-ID: 486246
 ## X-Wago-ID: ZKbebq61
 
-libs\embeds.xml
+libs\embeds.xml [AllowLoadGameType classic]
+libs\embeds_Mainline.xml [AllowLoadGameType mainline]
 locale\locales.xml
 UI\includes.xml
 
@@ -37,7 +38,8 @@ Help.lua
 SettingsPanel.lua
 
 
-DB/classic.xml
+DB/classic.xml [AllowLoadGameType classic]
+DB/forever.xml [AllowLoadGameType camelot]
 
 HSBatching.lua
 QuestLog.lua
@@ -53,7 +55,8 @@ map.lua
 functions.lua
 GuideLoader.lua
 
-Guides/GuideList-classic.xml
+Guides/GuideList-classic.xml [AllowLoadGameType classic]
+Guides/GuideList-forever.xml [AllowLoadGameType camelot]
 
 lang/Guides-zhCN/GuideList-classic.xml
 
@@ -61,6 +64,9 @@ lang/Guides-zhCN/GuideList-classic.xml
 #Guides/Talents/cata.xml
 #Guides/Talents/tbc.xml
 #Guides/Talents/classic.xml
+
+TalentsForever.lua [AllowLoadGameType camelot]
+Guides/Talents/classic.xml [AllowLoadGameType camelot]
 
 ItemUpgrades.lua
 

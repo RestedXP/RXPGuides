@@ -3,6 +3,7 @@ addon.startTime = debugprofilestop()
 
 local _G = _G
 local UnitInRaid = UnitInRaid
+local HasAction = C_ActionBar and C_ActionBar.HasAction or HasAction
 local fmt = string.format
 
 function addon.safeCall(callback, ...)
@@ -43,8 +44,8 @@ end
 local GetSpellTexture = C_Spell and C_Spell.GetSpellTexture or _G.GetSpellTexture
 local GetSpellSubtext = C_Spell and C_Spell.GetSpellSubtext or _G.GetSpellSubtext
 local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
-local IsSpellKnown = C_Spell and C_Spell.IsSpellKnown or _G.IsSpellKnown
-local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
+local IsSpellKnown = addon.IsSpellKnown
+local IsPlayerSpell = addon.IsPlayerSpellKnown
 local NewTicker = C_Timer.NewTicker
 local messageList = {}
 
@@ -340,11 +341,11 @@ function addon.IsPlayerSpell(id)
     end
     if ExtraActionButton1 then
         local action = ExtraActionButton1.action
-        if action and HasAction(action) then
+        if not addon.IsSecretValue(action) and action and HasAction(action) then
             local _,eabId = GetActionInfo(action)
-            local eabName = GetSpellInfo(eabId)
+            local eabName = not addon.IsSecretValue(eabId) and GetSpellInfo(eabId)
             local name = GetSpellInfo(id)
-            if name == eabName then
+            if name and eabName and name == eabName then
                 return true
             end
         end
@@ -355,7 +356,8 @@ function addon.IsPlayerSpell(id)
         local activeAbilities = C_ZoneAbility.GetActiveAbilities()
         if activeAbilities and spellName then
             for _,ability in pairs(activeAbilities) do
-                local name = C_Spell.GetSpellInfo(ability.spellID).name
+                local info = C_Spell.GetSpellInfo(ability.spellID)
+                local name = info and info.name
                 if name == spellName then
                     return true
                 end
@@ -421,7 +423,7 @@ end
 
 addon.currrentSkillLevel = currrentSkillLevel
 function addon.GetProfessionLevel()
-    local GetSkillLineInfo = C_SkillInfo and C_SkillInfo.GetSkillLineInfo or _G.SkillLineInfo
+    local GetSkillLineInfo = C_SkillInfo and C_SkillInfo.GetSkillLineInfo or _G.GetSkillLineInfo
     local GetNumSkillLines = C_SkillInfo and C_SkillInfo.GetNumSkillLines or _G.GetNumSkillLines
     local names
     if not (professionNames and professionNames.riding) then
@@ -429,16 +431,16 @@ function addon.GetProfessionLevel()
     end
     names = professionNames
 
-    if IsPlayerSpell(33388) then
-        currrentSkillLevel["riding"] = 75
-    elseif IsPlayerSpell(33391) then
-        currrentSkillLevel["riding"] = 150
-    elseif IsPlayerSpell(34090) then
-        currrentSkillLevel["riding"] = 225
+    if IsPlayerSpell(90265) then
+        currrentSkillLevel["riding"] = 375
     elseif IsPlayerSpell(34091) then
         currrentSkillLevel["riding"] = 300
-    elseif IsPlayerSpell(90265) then
-        currrentSkillLevel["riding"] = 375
+    elseif IsPlayerSpell(34090) then
+        currrentSkillLevel["riding"] = 225
+    elseif IsPlayerSpell(33391) then
+        currrentSkillLevel["riding"] = 150
+    elseif IsPlayerSpell(33388) then
+        currrentSkillLevel["riding"] = 75
     end
 
     if addon.IsPlayerSpell(54197) then currrentSkillLevel["coldweatherflying"] = 1 end
@@ -844,7 +846,7 @@ local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
 local GetQuestLogSelection, GetNumQuestLogChoices = _G.GetQuestLogSelection,
                                                     _G.GetNumQuestLogChoices
 local GetQuestLogChoiceInfo, GetQuestLogItemLink, GetQuestLogTitle =
-    _G.GetQuestLogChoiceInfo, _G.GetQuestLogItemLink, _G.GetQuestLogTitle
+    _G.GetQuestLogChoiceInfo, _G.GetQuestLogItemLink, addon.GetQuestLogTitle
 
 -- bestSellOption, bestRatioOption, options
 local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQuestItemLink, GetQuestLogChoiceInfo)
@@ -1345,7 +1347,9 @@ local function LoadCache(guide)
         return
     end
     updateFrame:SetScript("OnUpdate",function(self)
-        if busy == GetTime() then
+        -- Startup restoration must not starve when the regular ticker runs on
+        -- every rendered frame. Defer background parsing only after a guide is active.
+        if busy == GetTime() and addon.currentGuide and not addon.currentGuide.empty then
             return
         end
         local start = debugprofilestop()
@@ -1367,6 +1371,19 @@ local function LoadCache(guide)
     end)
 end
 
+
+function addon.GetGuideLoadStatus()
+    local group = RXPCData and RXPCData.currentGuideGroup
+    local name = RXPCData and RXPCData.currentGuideName
+    return {
+        enabled = addon.addonLoaded,
+        running = updateFrame:GetScript("OnUpdate") ~= nil,
+        queued = #addon.embeddedGuides,
+        pending = currentGuideName,
+        saved = name,
+        found = group and name and addon.GetGuideTable(group, name) ~= nil or false,
+    }
+end
 
 function addon:OnInitialize()
     local saveLocally = false
@@ -1646,7 +1663,7 @@ end
 -- Tracks if a player is on a loading screen and pauses the main update loop
 -- Some information is not available during zone transitions
 function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
-    if WOW_PROJECT_ID == WOW_PROJECT_MAINLINE and RXPCData then
+    if not addon.isForever and WOW_PROJECT_ID == WOW_PROJECT_MAINLINE and RXPCData then
         RXPCData.GA = false
     end
     addon.hideArrow = false

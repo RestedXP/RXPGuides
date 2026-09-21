@@ -12,4 +12,5 @@
     <Script file="DB/classic/SpiritHealerDB.lua"/>
     <Script file="DB/questDB.lua"/>
 
+    <Script file="TalentCompatibility.lua"/>
 </Ui>

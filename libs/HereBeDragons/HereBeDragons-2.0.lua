@@ -31,7 +31,12 @@ local atan2 = math.atan2
 local pairs, ipairs = pairs, ipairs
 
 -- WoW API upvalues
-local UnitPosition = UnitPosition
+local isSecret = issecretvalue or function() return false end
+local function UnitPosition(unit)
+    local x, y, z, instance = _G.UnitPosition(unit)
+    if isSecret(x) or isSecret(y) or isSecret(z) or isSecret(instance) then return end
+    return x, y, z, instance
+end
 local C_Map = C_Map
 
 -- data table upvalues

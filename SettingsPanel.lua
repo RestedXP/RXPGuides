@@ -42,11 +42,14 @@ addon.settings.enabledBetaFeatures = {
     ["Guide Window v2"] = "Allow the Guide Window and Active Steps v2", --GuideWindow/addon.v2
 }
 
-local copy = function(t)
+local function copy(t, seen)
+    seen = seen or {}
+    if seen[t] then return seen[t] end
     local out = {}
+    seen[t] = out
     for i,v in pairs(t) do
         if type(v) == "table" then
-            out[i] = copy(v)
+            out[i] = copy(v, seen)
         else
             out[i] = v
         end
@@ -72,18 +75,105 @@ function addon.settings.OpenSettings(panelName)
         local frame = AceConfigDialog.OpenFrames and
                           AceConfigDialog.OpenFrames[optionsName]
         if frame and frame:IsShown() then return end
-    elseif not _G.C_SettingsUtil then
+    elseif not (_G.Settings and _G.Settings.OpenToCategory) then
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
         return
     end
 
     local category = _G.Settings.GetCategory(addon.RXPOptions.name)
-
-    if category:HasSubcategories() then category.expanded = true end
-
-    _G.Settings.OpenToCategory(category.ID)
+    if not category then return end
+    if category.HasSubcategories and category:HasSubcategories() then category.expanded = true end
+    _G.Settings.OpenToCategory(category.GetID and category:GetID() or category.ID)
 end
+
+-- BEGIN FOREVER TALENT SNAPSHOT
+if addon.isForever then
+
+-- Read-only inventory of the live tree. Guide conversion must use observed
+-- node/entry/spell identities rather than infer them from Classic coordinates.
+addon.foreverTalents = {}
+
+function addon.foreverTalents:Snapshot()
+    if not (C_SpecializationInfo and C_SpecializationInfo.GetActiveSpecGroup
+        and C_SpecializationInfo.GetCombatConfigIDForSpecGroup and C_Traits) then
+        return nil, "Forever talent APIs are unavailable."
+    end
+    local group = C_SpecializationInfo.GetActiveSpecGroup()
+    local configID = group and C_SpecializationInfo.GetCombatConfigIDForSpecGroup(group)
+    local config = configID and C_Traits.GetConfigInfo(configID)
+    if not config or not config.treeIDs or #config.treeIDs == 0 then
+        return nil, "Open your talent window, then run /rxp talentdump again."
+    end
+    local version, build, _, interface = GetBuildInfo()
+    local snapshot = {
+        formatVersion = 1, version = version, build = build, interface = interface,
+        locale = GetLocale(), class = addon.player.class, configID = configID,
+        specGroup = group, trees = {}, complete = true, nodeCount = 0,
+    }
+    for _, treeID in ipairs(config.treeIDs) do
+        local tree = {treeID = treeID, groups = {}, nodes = {}}
+        snapshot.trees[#snapshot.trees + 1] = tree
+        for _, info in ipairs(C_Traits.GetGroupDisplayInfoByTreeID(treeID) or {}) do
+            tree.groups[#tree.groups + 1] = {
+                groupID = info.groupID, orderIndex = info.orderIndex,
+                name = info.displayName, skillLineID = info.skillLineID,
+            }
+        end
+        local nodeIDs = C_Traits.GetTreeNodes(treeID)
+        if not nodeIDs or #nodeIDs == 0 then snapshot.complete = false end
+        for _, nodeID in ipairs(nodeIDs or {}) do
+            local info = C_Traits.GetNodeInfo(configID, nodeID)
+            if info then
+                local node = {
+                    nodeID = nodeID, x = info.posX, y = info.posY, type = info.type,
+                    visible = info.isVisible, maxRanks = info.maxRanks,
+                    currentRank = info.currentRank, groups = {}, entries = {},
+                }
+                for _, groupID in ipairs(info.groupIDs or {}) do
+                    node.groups[#node.groups + 1] = groupID
+                end
+                tree.nodes[#tree.nodes + 1] = node
+                snapshot.nodeCount = snapshot.nodeCount + 1
+                for _, entryID in ipairs(info.entryIDs or {}) do
+                    local entryInfo = C_Traits.GetEntryInfo(configID, entryID)
+                    local definitionID = entryInfo and entryInfo.definitionID
+                    local definition = definitionID and C_Traits.GetDefinitionInfo(definitionID)
+                    local entry = {entryID = entryID, definitionID = definitionID,
+                        maxRanks = entryInfo and entryInfo.maxRanks}
+                    node.entries[#node.entries + 1] = entry
+                    if definition then
+                        entry.spellID = definition.spellID
+                        entry.overriddenSpellID = definition.overriddenSpellID
+                        entry.name = definition.overrideName
+                            or (definition.spellID and C_Spell.GetSpellName(definition.spellID))
+                        if not entry.name then snapshot.complete = false end
+                    elseif not entryInfo or definitionID then
+                        snapshot.complete = false
+                    end
+                end
+            else
+                snapshot.complete = false
+            end
+        end
+    end
+    return snapshot
+end
+
+function addon.foreverTalents:SaveSnapshot()
+    local snapshot, reason = self:Snapshot()
+    if not snapshot then
+        addon.comms.PrettyPrint(reason)
+        return
+    end
+    RXPCData = RXPCData or {}
+    RXPCData.foreverTalentSnapshot = snapshot
+    addon.comms.PrettyPrint("Saved %d talent nodes (%s). Run /reload to write the snapshot to disk.",
+        snapshot.nodeCount, snapshot.complete and "complete" or "some data unavailable")
+end
+
+end
+-- END FOREVER TALENT SNAPSHOT
 
 function addon.settings.ChatCommand(input)
     if not input then addon.settings.OpenSettings() end
@@ -91,6 +181,14 @@ function addon.settings.ChatCommand(input)
     input = input:trim()
     if input == "import" then
         addon.guideImporter:Open()
+    elseif input == "targetdebug" then
+        if addon.targeting then addon.targeting:PrintDiagnostics() end
+    elseif input == "talentdump" then
+        if addon.foreverTalents then
+            addon.foreverTalents:SaveSnapshot()
+        else
+            addon.comms.PrettyPrint("Talent export is available on the Forever client only.")
+        end
     elseif input == "debug" then
         addon.settings.profile.debug = not addon.settings.profile.debug
     elseif input == "splits" then
@@ -495,7 +593,12 @@ end
 local function GetProfileOption(info) return addon.settings.profile[info[#info]] end
 
 local function SetProfileOption(info, value)
-    addon.settings.profile[info[#info]] = value
+    local option = info[#info]
+    addon.settings.profile[option] = value
+    if addon.isForever and addon.talents and addon.talents.QueueRefresh and
+        (option == "hightlightTalentPlan" or option == "upcomingTalentCount") then
+        addon.talents:QueueRefresh()
+    end
 end
 
 
@@ -3580,7 +3683,7 @@ local tooltipTimer = 0
 local playerLevelCheck = 0
 
 function addon.GetXPBonuses(ignoreBuffs,playerLevel)
-    if C_Secrets and C_Secrets.ShouldAurasBeSecret() then
+    if not addon.AreAurasReadable() then
         return
     end
     local calculatedRate = not ignoreBuffs and CheckBuff(377749) and 1.5 or 1.0 -- Joyous Journeys
@@ -3717,7 +3820,7 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
 end
 
 function addon.settings:DetectXPRate(softUpdate)
-    if C_Secrets and C_Secrets.ShouldAurasBeSecret() then
+    if not addon.AreAurasReadable() then
         C_Timer.After(5, function()
             addon.settings:DetectXPRate(softUpdate)
         end)
@@ -3751,6 +3854,7 @@ function addon.settings:DetectXPRate(softUpdate)
     end
 
     local calculatedRate = addon.GetXPBonuses()
+    if not calculatedRate then return end
     addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
 
     -- Bypass floating point comparison issues

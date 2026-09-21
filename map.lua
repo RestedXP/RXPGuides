@@ -23,7 +23,7 @@ function addon.arrowFrame:UpdateVisuals()
 end
 
 local function IsInInstance()
-    if _G.IsInInstance() and not select(2, GetInstanceInfo()) == "scenario" then
+    if _G.IsInInstance() and select(2, GetInstanceInfo()) ~= "scenario" then
         return true
     end
 end
@@ -98,7 +98,7 @@ function addon.DrawArrow(self)
                                             element.wy)
     local facing = GetPlayerFacing()
 
-    if not (dist and facing) then
+    if addon.IsSecretValue(facing) or not (dist and facing) then
         if af.alpha ~= 0 then
             af.alpha = 0
             af:SetAlpha(0)

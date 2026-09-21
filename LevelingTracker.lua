@@ -117,14 +117,16 @@ function addon.tracker:SetupInspections()
         self:RegisterEvent("INSPECT_READY")
         self:RegisterComm(self._commPrefix)
 
-        local UnitGUID, UnitIsEnemy = UnitGUID, UnitIsEnemy
+        local UnitGUID, UnitIsEnemy = addon.GetUnitGUID, UnitIsEnemy
         hooksecurefunc("NotifyInspect", function(unit)
             if not addon.settings.profile.enableLevelingReportInspections then return end
 
             -- Gearscore addons inspect on mouseover/nameplate/etc, RXP only inspects via target
-            if unit ~= "target" or UnitIsEnemy("player", unit) then return end
-
-            addon.tracker.state.inspectionRequests[UnitGUID(unit)] = true
+            if unit ~= "target" then return end
+            local enemy = UnitIsEnemy("player", unit)
+            if addon.IsSecretValue(enemy) or enemy then return end
+            local guid = UnitGUID(unit)
+            if guid then addon.tracker.state.inspectionRequests[guid] = true end
         end)
     else
         self:UnregisterEvent("INSPECT_READY")
@@ -1444,10 +1446,12 @@ end
 
 function addon.tracker:INSPECT_READY(_, inspecteeGUID)
     if not addon.settings.profile.enableLevelingReportInspections then return end
+    if addon.IsSecretValue(inspecteeGUID) or not inspecteeGUID then return end
 
     if UnitInBattleground("player") ~= nil or not self.state.inspectionRequests[inspecteeGUID] then return end
 
     local inspectedName = select(6, GetPlayerInfoByGUID(inspecteeGUID))
+    if addon.IsSecretValue(inspectedName) or not inspectedName then return end
     if self.state.otherReports[inspectedName] and self.state.otherReports[inspectedName].compileTime and GetServerTime() -
         self.state.otherReports[inspectedName].compileTime < 30 then
 
@@ -1455,7 +1459,7 @@ function addon.tracker:INSPECT_READY(_, inspecteeGUID)
                                 GetServerTime() - self.state.otherReports[inspectedName].compileTime)
 
         self:CreateGui(_G.InspectFrame, inspectedName)
-        self:UpdateReport(UnitLevel(inspectedName), inspectedName, _G.InspectFrame)
+        self:UpdateReport(self.state.otherReports[inspectedName].playerLevel, inspectedName, _G.InspectFrame)
         self:ShowReport(_G.InspectFrame)
         return
     end

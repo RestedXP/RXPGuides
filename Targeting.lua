@@ -52,6 +52,55 @@ local pendingLeaderUpdate
 
 UnitName = addon.GetUnitName
 
+local function canUpdateRaidMarker()
+    -- Forever rejects addon-driven SetRaidTarget even outside combat.
+    if addon.isForever then return false, "Forever requires manual raid marking" end
+    if InCombatLockdown() then return false, "combat lockdown" end
+    local restrictions = Enum and Enum.AddOnRestrictionType
+    if C_RestrictedActions and C_RestrictedActions.IsAddOnRestrictionActive and restrictions then
+        for _, name in ipairs({"Combat", "Encounter", "ChallengeMode", "PvPMatch", "Map"}) do
+            local restriction = restrictions[name]
+            if restriction and C_RestrictedActions.IsAddOnRestrictionActive(restriction) then return false, name end
+        end
+    end
+    return true, "allowed"
+end
+
+local function configureTargetButton(button, targetName, kind, index)
+    -- NPC names are not unit tokens. A unit attribute makes SecureTemplates
+    -- reject the click at UnitExists before it can execute the action.
+    button:SetAttribute("unit", nil)
+    button:SetAttribute("type", "macro")
+    button:SetAttribute("macrotext", "/cleartarget\n/targetexact " .. targetName)
+    local profile = addon.settings.profile
+    local marking = kind == "friendly" and profile.enableTargetMarking or
+        kind == "mob" and profile.enableMobMarking or
+        (kind == "unitscan" or kind == "rare") and profile.enableEnemyMarking
+    if addon.isForever and marking then
+        -- Mark the selected target only from an explicit right click, using
+        -- Blizzard's secure raidtarget action rather than an addon API call.
+        button:SetAttribute("type2", "raidtarget")
+        button:SetAttribute("unit2", "target")
+        button:SetAttribute("marker2", addon.targeting:GetMarkerIndex(kind, index))
+        button:SetAttribute("action2", "set-unmarked")
+    else
+        button:SetAttribute("type2", nil)
+        button:SetAttribute("unit2", nil)
+        button:SetAttribute("marker2", nil)
+        button:SetAttribute("action2", nil)
+    end
+    if button.HookScript and not button.rxpClickTraceHooked then
+        button.rxpClickTraceHooked = true
+        button:HookScript("PostClick", function(self, mouseButton, down)
+            if not addon.targeting.debugClicks then return end
+            addon.comms.PrettyPrint("Target click: %s %s %s; secure handler=%s; selected=%s",
+                self.targetData and self.targetData.name or "?", mouseButton or "?",
+                down and "down" or "up", tostring(self:GetScript("OnClick") == SecureActionButton_OnClick),
+                UnitName("target") or "<none or restricted>")
+        end)
+    end
+end
+
 function addon.targeting:Setup()
     if not addon.settings.profile.enableTargetMacro then DeleteMacro(self.macroName) end
 
@@ -68,6 +117,12 @@ function addon.targeting:Setup()
 
     self:RegisterEvent("PLAYER_TARGET_CHANGED")
     self:RegisterEvent("UPDATE_MOUSEOVER_UNIT")
+    if addon.isForever then
+        for _, event in ipairs({"MACRO_ACTION_BLOCKED", "MACRO_ACTION_FORBIDDEN", "ADDON_ACTION_BLOCKED"}) do
+            if addon.IsEventValid(event) then self:RegisterEvent(event, "TraceBlockedAction") end
+        end
+        self:RegisterEvent("ADDON_ACTION_FORBIDDEN")
+    end
 
     if addon.settings.profile.createFollowMacro then
         self:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -99,12 +154,10 @@ function addon.targeting:Setup()
             proxmityPolling.frequency = addon.settings.profile.updateFrequency / 2000
         end
 
-        self.ticker = C_Timer.NewTicker(proxmityPolling.frequency, self.CheckTargetProximity)
-        if StaticPopupDialogs["ADDON_ACTION_FORBIDDEN"] then
+        if not self.ticker then self.ticker = C_Timer.NewTicker(proxmityPolling.frequency, self.CheckTargetProximity) end
+        if not addon.isForever and StaticPopupDialogs["ADDON_ACTION_FORBIDDEN"] then
             self:RegisterEvent("ADDON_ACTION_FORBIDDEN")
         end
-        -- Prevent default forbidden UI popup
-        UIParent:UnregisterEvent("ADDON_ACTION_FORBIDDEN")
     end
 
     if addon.rares then
@@ -114,6 +167,58 @@ function addon.targeting:Setup()
 end
 
 function addon.targeting.GetCurrentTargets() return targetList, mobList, unitscanList, rareTargets end
+
+function addon.targeting:PrintDiagnostics()
+    self.debugClicks = true
+    local function public(value)
+        if issecretvalue(value) then return "<restricted>" end
+        return value == nil and "<nil>" or tostring(value)
+    end
+    local print = addon.comms.PrettyPrint
+    local profile = addon.settings.profile
+    local _, reason = canUpdateRaidMarker()
+    print("Targeting diagnostic 1: marker gate=%s, combat=%s, raid=%s", reason,
+        public(InCombatLockdown()), public(IsInRaid()))
+    print("Enabled: automation=%s enemy=%s friendly=%s; markers enemy=%s mob=%s friendly=%s",
+        public(profile.enableTargetAutomation), public(profile.enableEnemyTargeting),
+        public(profile.enableFriendlyTargeting), public(profile.enableEnemyMarking),
+        public(profile.enableMobMarking), public(profile.enableTargetMarking))
+    local targetName = UnitName("target")
+    print("Target: name=%s marker=%s player=%s dead=%s; grouped=%s leader=%s nonleader=%s",
+        public(_G.UnitName("target")), public(GetRaidTargetIndex("target")),
+        public(UnitIsPlayer("target")), public(UnitIsDead("target")),
+        public(IsInGroup()), public(UnitIsGroupLeader("player")), public(profile.enableNonLeadMarking))
+    for _, entry in ipairs({{"friendly", targetList}, {"mob", mobList}, {"enemy", unitscanList}}) do
+        local match = false
+        for _, name in ipairs(entry[2]) do if targetName and name == targetName then match = true end end
+        print("Guide targets %s: count=%d matches target=%s first=%s", entry[1], #entry[2],
+            public(match), public(entry[2][1]))
+    end
+    local frame = self.activeTargetFrame
+    for _, kind in ipairs({"enemy", "friendly"}) do
+        local buttons = frame and frame[kind .. "TargetButtons"] or {}
+        local button = buttons[1]
+        print("%s buttons=%d first shown=%s type=%s unit=%s", kind, #buttons,
+            public(button and button:IsShown()), public(button and button:GetAttribute("type")),
+            public(button and button:GetAttribute("unit")))
+    end
+    print("Nameplates=%d proximity=%s guide=%s", #(GetNamePlates() or {}),
+        public(profile.showTargetingOnProximity), public(addon.currentGuide and addon.currentGuide.name))
+    if addon.GetGuideLoadStatus then
+        local status = addon.GetGuideLoadStatus()
+        print("Guide restore: enabled=%s loader=%s queued=%d pending=%s saved=%s found=%s",
+            public(status.enabled), public(status.running), status.queued, public(status.pending),
+            public(status.saved), public(status.found))
+    end
+    print("Click tracing enabled until reload. Click an Active Targets portrait/button now.")
+end
+
+function addon.targeting:TraceBlockedAction(event, first, second)
+    if not self.debugClicks then return end
+    if issecretvalue(first) or issecretvalue(second) then return end
+    if event == "ADDON_ACTION_BLOCKED" and first ~= addonName then return end
+    addon.comms.PrettyPrint("Target click restriction: %s %s", event, second or first or "?")
+end
 
 local function shouldTargetCheck()
     return not IsInRaid() and not UnitOnTaxi("player") and not addon.isCastingHS and
@@ -271,6 +376,26 @@ function addon.targeting:CheckNameplate(nameplateID)
     unitName = UnitName(nameplateID)
 
     if not unitName then return end
+
+    if addon.isForever and addon.settings.profile.showTargetingOnProximity then
+        local profile = addon.settings.profile
+        for _, entry in ipairs({
+            {"friendly", targetList, profile.enableFriendlyTargeting},
+            {"mob", mobList, profile.enableEnemyTargeting},
+            {"unitscan", unitscanList, profile.enableEnemyTargeting},
+            {"rare", rareTargets, profile.scanForRares},
+        }) do
+            if entry[3] then
+                for _, name in ipairs(entry[2]) do
+                    if name == unitName then
+                        local now = GetTime()
+                        proxmityPolling.scannedTargets[name] = {kind = entry[1], lastMatch = now}
+                        proxmityPolling.match, proxmityPolling.lastMatch = true, now
+                    end
+                end
+            end
+        end
+    end
 
     if addon.settings.profile.enableFriendlyTargeting then
         for i, name in ipairs(targetList) do
@@ -475,8 +600,9 @@ function addon.targeting:GOSSIP_SHOW()
             self:UpdateTargetFrame("target")
             self:UpdateMacro()
 
-            if addon.gameVersion < 120000 and not issecretvalue(UnitHealth("player")) and GetRaidTargetIndex("target") ~= nil then
-                SetRaidTarget("target", 0)
+            if canUpdateRaidMarker() then
+                local marker = GetRaidTargetIndex("target")
+                if not issecretvalue(marker) and marker ~= nil then SetRaidTarget("target", 0) end
             end
             return
         end
@@ -491,6 +617,12 @@ addon.targeting.QUEST_COMPLETE = addon.targeting.GOSSIP_SHOW
 function addon.targeting.CheckTargetProximity()
     if not shouldTargetCheck() or not addon.settings.profile.showTargetingOnProximity then return end
 
+    if addon.isForever then
+        -- Observe public units instead of probing protected TargetUnit calls.
+        addon.targeting:CheckNameplates()
+        addon.targeting:CheckNameplate("target")
+        addon.targeting:CheckNameplate("mouseover")
+    else
     if addon.settings.profile.enableEnemyTargeting then
         for _, name in pairs(unitscanList) do
             proxmityPolling.scanData = {name = name, kind = 'unitscan'}
@@ -515,6 +647,7 @@ function addon.targeting.CheckTargetProximity()
             proxmityPolling.scanData = {name = name, kind = 'rare'}
             TargetUnit(name, true)
         end
+    end
     end
 
     local now = GetTime()
@@ -543,29 +676,11 @@ function addon.targeting.CheckTargetProximity()
     end
 end
 
-if StaticPopupDialogs["ADDON_ACTION_FORBIDDEN"] then
--- Disables and mutes the annoying dialog that shows up
-local actionForbiddenText = fmt(ADDON_ACTION_FORBIDDEN, addonName)
-
-local TextBoxHook = function(self)
-    local text = self.text or self.Text
-    if text and text:GetText() == actionForbiddenText then
-        if self:IsShown() then self:Hide() end
-        local _, channel = PlaySound(SOUNDKIT.IG_MAINMENU_CLOSE)
-        if channel then
-            StopSound(channel)
-            StopSound(channel - 1)
-        end
-        StaticPopupDialogs["ADDON_ACTION_FORBIDDEN"] = nil
-    end
-end
-
-_G.StaticPopup1:HookScript("OnShow", TextBoxHook)
-_G.StaticPopup1:HookScript("OnHide", TextBoxHook)
-_G.StaticPopup2:HookScript("OnShow", TextBoxHook)
-_G.StaticPopup2:HookScript("OnHide", TextBoxHook)
-
 function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
+    if self.debugClicks and not issecretvalue(forbiddenAddon) and not issecretvalue(func) and forbiddenAddon == addonName then
+        addon.comms.PrettyPrint("Target click restriction: ADDON_ACTION_FORBIDDEN %s", func or "?")
+    end
+    if addon.isForever then return end
     if func ~= "TargetUnit()" or forbiddenAddon ~= addonName then return end
 
     -- Unexpected call from (mistakenly) RXP
@@ -594,8 +709,6 @@ function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
         (proxmityPolling.scanData.kind == 'rare' or proxmityPolling.scanData.kind == 'unitscan') then
         PlaySound(addon.settings.profile.soundOnFind, addon.settings.profile.soundOnFindChannel)
     end
-end
-
 end
 
 function addon.targeting:UpdateUnitList()
@@ -905,6 +1018,11 @@ local fOnEnter = function(self)
         GameTooltip:AddLine(self.targetData.name, 1, 0, 0)
     end
 
+    if addon.isForever and self:GetAttribute("type2") == "raidtarget" then
+        GameTooltip:AddLine("Left-click: target this NPC", 1, 1, 1)
+        GameTooltip:AddLine("Right-click: mark your current target", 1, 1, 1)
+    end
+
     GameTooltip:Show()
 end
 
@@ -948,15 +1066,18 @@ function addon.targeting:GetMarkerIndex(kind, kindIndex)
 end
 
 function addon.targeting:UpdateMarker(kind, unitId, index)
-    if (UnitIsDead(unitId) and kind ~= 'friendly') or UnitIsPlayer(unitId) or UnitIsUnit(unitId, "pet") then return end
+    if not canUpdateRaidMarker() or not unitId or issecretvalue(unitId) then return end
+    local dead, player, pet = UnitIsDead(unitId), UnitIsPlayer(unitId), UnitIsUnit(unitId, "pet")
+    if issecretvalue(dead) or issecretvalue(player) or issecretvalue(pet) then return end
+    if (dead and kind ~= 'friendly') or player or pet then return end
 
     if IsInGroup() and not UnitIsGroupLeader('player') then
         if not addon.settings.profile.enableNonLeadMarking then return end
     end
-    if addon.gameVersion >= 120000 or issecretvalue(UnitHealth("player")) then return end
     local markerId = self:GetMarkerIndex(kind, index)
 
-    if GetRaidTargetIndex(unitId) == nil and GetRaidTargetIndex(unitId) ~= markerId then
+    local currentMarker = GetRaidTargetIndex(unitId)
+    if not issecretvalue(currentMarker) and currentMarker == nil and markerId then
         SetRaidTarget(unitId, markerId)
     end
 end
@@ -1174,7 +1295,7 @@ function addon.targeting:UpdateTargetFrame(selector)
             ht:SetBlendMode("ADD")
         end
 
-        btn:SetAttribute('macrotext', '/cleartarget\n/targetexact ' .. targetName)
+        configureTargetButton(btn, targetName, enemyKind, enemyTargetButtonIndex)
 
         if btn.targetData and btn.targetData.name ~= targetName then
             btn.placeholder:SetTexture(mobPlaceholder)
@@ -1241,7 +1362,7 @@ function addon.targeting:UpdateTargetFrame(selector)
             ht:SetBlendMode("ADD")
         end
 
-        btn:SetAttribute('macrotext', '/cleartarget\n/targetexact ' .. targetName)
+        configureTargetButton(btn, targetName, "friendly", friendlyTargetButtonIndex)
 
         if btn.targetData and btn.targetData.name ~= targetName then
             btn.placeholder:SetTexture(targetPlaceholder)

@@ -1,0 +1,8926 @@
+[
+  {
+    "class": "druid",
+    "name": "Feral (Survival) 10-60",
+    "issues": [
+      {
+        "level": 15,
+        "spellID": 16858,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,1,3"
+      },
+      {
+        "level": 16,
+        "spellID": 16858,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "2,1,3"
+      },
+      {
+        "level": 17,
+        "spellID": 16858,
+        "rank": 3,
+        "issue": "removed",
+        "classicSlot": "2,1,3"
+      },
+      {
+        "level": 18,
+        "spellID": 16858,
+        "rank": 4,
+        "issue": "removed",
+        "classicSlot": "2,1,3"
+      },
+      {
+        "level": 19,
+        "spellID": 16858,
+        "rank": 5,
+        "issue": "removed",
+        "classicSlot": "2,1,3"
+      },
+      {
+        "level": 22,
+        "spellID": 16979,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,3,2"
+      },
+      {
+        "level": 25,
+        "spellID": 16942,
+        "rank": 3,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 29,
+        "spellID": 16952,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,4,3"
+      },
+      {
+        "level": 30,
+        "spellID": 16857,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,5,3"
+      },
+      {
+        "level": 33,
+        "spellID": 16952,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "2,4,3"
+      },
+      {
+        "level": 46,
+        "spellID": 16689,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,1,2"
+      },
+      {
+        "level": 49,
+        "spellID": 17245,
+        "rank": 3,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 50,
+        "spellID": 17245,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 51,
+        "spellID": 16902,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,2,3"
+      },
+      {
+        "level": 52,
+        "spellID": 16902,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "1,2,3"
+      },
+      {
+        "level": 53,
+        "spellID": 16902,
+        "rank": 3,
+        "issue": "removed",
+        "classicSlot": "1,2,3"
+      },
+      {
+        "level": 54,
+        "spellID": 16902,
+        "rank": 4,
+        "issue": "removed",
+        "classicSlot": "1,2,3"
+      },
+      {
+        "level": 55,
+        "spellID": 16902,
+        "rank": 5,
+        "issue": "removed",
+        "classicSlot": "1,2,3"
+      },
+      {
+        "level": 56,
+        "spellID": 16864,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,3,3"
+      },
+      {
+        "level": 60,
+        "spellID": 17079,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "3,2,3"
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 16934,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 16934,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 16934,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 16934,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 16934,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 16858,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 16858,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 16858,
+        "rank": 3
+      },
+      {
+        "level": 18,
+        "spellID": 16858,
+        "rank": 4
+      },
+      {
+        "level": 19,
+        "spellID": 16858,
+        "rank": 5
+      },
+      {
+        "level": 20,
+        "spellID": 17002,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 17002,
+        "rank": 2
+      },
+      {
+        "level": 22,
+        "spellID": 16979,
+        "rank": 1
+      },
+      {
+        "level": 23,
+        "spellID": 16942,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 16942,
+        "rank": 2
+      },
+      {
+        "level": 25,
+        "spellID": 16942,
+        "rank": 3
+      },
+      {
+        "level": 26,
+        "spellID": 16972,
+        "rank": 1
+      },
+      {
+        "level": 27,
+        "spellID": 16972,
+        "rank": 2
+      },
+      {
+        "level": 28,
+        "spellID": 16972,
+        "rank": 3
+      },
+      {
+        "level": 29,
+        "spellID": 16952,
+        "rank": 1
+      },
+      {
+        "level": 30,
+        "spellID": 16857,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 16998,
+        "rank": 1
+      },
+      {
+        "level": 32,
+        "spellID": 16998,
+        "rank": 2
+      },
+      {
+        "level": 33,
+        "spellID": 16952,
+        "rank": 2
+      },
+      {
+        "level": 34,
+        "spellID": 16947,
+        "rank": 1
+      },
+      {
+        "level": 35,
+        "spellID": 17003,
+        "rank": 1
+      },
+      {
+        "level": 36,
+        "spellID": 17003,
+        "rank": 2
+      },
+      {
+        "level": 37,
+        "spellID": 17003,
+        "rank": 3
+      },
+      {
+        "level": 38,
+        "spellID": 17003,
+        "rank": 4
+      },
+      {
+        "level": 39,
+        "spellID": 17003,
+        "rank": 5
+      },
+      {
+        "level": 40,
+        "spellID": 17007,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 17056,
+        "rank": 1
+      },
+      {
+        "level": 42,
+        "spellID": 17056,
+        "rank": 2
+      },
+      {
+        "level": 43,
+        "spellID": 17056,
+        "rank": 3
+      },
+      {
+        "level": 44,
+        "spellID": 17056,
+        "rank": 4
+      },
+      {
+        "level": 45,
+        "spellID": 17056,
+        "rank": 5
+      },
+      {
+        "level": 46,
+        "spellID": 16689,
+        "rank": 1
+      },
+      {
+        "level": 47,
+        "spellID": 17245,
+        "rank": 1
+      },
+      {
+        "level": 48,
+        "spellID": 17245,
+        "rank": 2
+      },
+      {
+        "level": 49,
+        "spellID": 17245,
+        "rank": 3
+      },
+      {
+        "level": 50,
+        "spellID": 17245,
+        "rank": 4
+      },
+      {
+        "level": 51,
+        "spellID": 16902,
+        "rank": 1
+      },
+      {
+        "level": 52,
+        "spellID": 16902,
+        "rank": 2
+      },
+      {
+        "level": 53,
+        "spellID": 16902,
+        "rank": 3
+      },
+      {
+        "level": 54,
+        "spellID": 16902,
+        "rank": 4
+      },
+      {
+        "level": 55,
+        "spellID": 16902,
+        "rank": 5
+      },
+      {
+        "level": 56,
+        "spellID": 16864,
+        "rank": 1
+      },
+      {
+        "level": 57,
+        "spellID": 16833,
+        "rank": 1
+      },
+      {
+        "level": 58,
+        "spellID": 16833,
+        "rank": 2
+      },
+      {
+        "level": 59,
+        "spellID": 16833,
+        "rank": 3
+      },
+      {
+        "level": 60,
+        "spellID": 17079,
+        "rank": 1
+      }
+    ]
+  },
+  {
+    "class": "druid",
+    "name": "Feral 10-60",
+    "issues": [
+      {
+        "level": 15,
+        "spellID": 16858,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,1,3"
+      },
+      {
+        "level": 16,
+        "spellID": 16858,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "2,1,3"
+      },
+      {
+        "level": 17,
+        "spellID": 16858,
+        "rank": 3,
+        "issue": "removed",
+        "classicSlot": "2,1,3"
+      },
+      {
+        "level": 18,
+        "spellID": 16858,
+        "rank": 4,
+        "issue": "removed",
+        "classicSlot": "2,1,3"
+      },
+      {
+        "level": 19,
+        "spellID": 16858,
+        "rank": 5,
+        "issue": "removed",
+        "classicSlot": "2,1,3"
+      },
+      {
+        "level": 22,
+        "spellID": 16979,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,3,2"
+      },
+      {
+        "level": 25,
+        "spellID": 16942,
+        "rank": 3,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 29,
+        "spellID": 16952,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,4,3"
+      },
+      {
+        "level": 30,
+        "spellID": 16857,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,5,3"
+      },
+      {
+        "level": 33,
+        "spellID": 16952,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "2,4,3"
+      },
+      {
+        "level": 46,
+        "spellID": 16689,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,1,2"
+      },
+      {
+        "level": 49,
+        "spellID": 17245,
+        "rank": 3,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 50,
+        "spellID": 17245,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 51,
+        "spellID": 16902,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,2,3"
+      },
+      {
+        "level": 52,
+        "spellID": 16902,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "1,2,3"
+      },
+      {
+        "level": 53,
+        "spellID": 16902,
+        "rank": 3,
+        "issue": "removed",
+        "classicSlot": "1,2,3"
+      },
+      {
+        "level": 54,
+        "spellID": 16902,
+        "rank": 4,
+        "issue": "removed",
+        "classicSlot": "1,2,3"
+      },
+      {
+        "level": 55,
+        "spellID": 16902,
+        "rank": 5,
+        "issue": "removed",
+        "classicSlot": "1,2,3"
+      },
+      {
+        "level": 56,
+        "spellID": 16864,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,3,3"
+      },
+      {
+        "level": 60,
+        "spellID": 17079,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "3,2,3"
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 16934,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 16934,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 16934,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 16934,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 16934,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 16858,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 16858,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 16858,
+        "rank": 3
+      },
+      {
+        "level": 18,
+        "spellID": 16858,
+        "rank": 4
+      },
+      {
+        "level": 19,
+        "spellID": 16858,
+        "rank": 5
+      },
+      {
+        "level": 20,
+        "spellID": 17002,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 17002,
+        "rank": 2
+      },
+      {
+        "level": 22,
+        "spellID": 16979,
+        "rank": 1
+      },
+      {
+        "level": 23,
+        "spellID": 16942,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 16942,
+        "rank": 2
+      },
+      {
+        "level": 25,
+        "spellID": 16942,
+        "rank": 3
+      },
+      {
+        "level": 26,
+        "spellID": 16972,
+        "rank": 1
+      },
+      {
+        "level": 27,
+        "spellID": 16972,
+        "rank": 2
+      },
+      {
+        "level": 28,
+        "spellID": 16972,
+        "rank": 3
+      },
+      {
+        "level": 29,
+        "spellID": 16952,
+        "rank": 1
+      },
+      {
+        "level": 30,
+        "spellID": 16857,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 16998,
+        "rank": 1
+      },
+      {
+        "level": 32,
+        "spellID": 16998,
+        "rank": 2
+      },
+      {
+        "level": 33,
+        "spellID": 16952,
+        "rank": 2
+      },
+      {
+        "level": 34,
+        "spellID": 16947,
+        "rank": 1
+      },
+      {
+        "level": 35,
+        "spellID": 17003,
+        "rank": 1
+      },
+      {
+        "level": 36,
+        "spellID": 17003,
+        "rank": 2
+      },
+      {
+        "level": 37,
+        "spellID": 17003,
+        "rank": 3
+      },
+      {
+        "level": 38,
+        "spellID": 17003,
+        "rank": 4
+      },
+      {
+        "level": 39,
+        "spellID": 17003,
+        "rank": 5
+      },
+      {
+        "level": 40,
+        "spellID": 17007,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 17056,
+        "rank": 1
+      },
+      {
+        "level": 42,
+        "spellID": 17056,
+        "rank": 2
+      },
+      {
+        "level": 43,
+        "spellID": 17056,
+        "rank": 3
+      },
+      {
+        "level": 44,
+        "spellID": 17056,
+        "rank": 4
+      },
+      {
+        "level": 45,
+        "spellID": 17056,
+        "rank": 5
+      },
+      {
+        "level": 46,
+        "spellID": 16689,
+        "rank": 1
+      },
+      {
+        "level": 47,
+        "spellID": 17245,
+        "rank": 1
+      },
+      {
+        "level": 48,
+        "spellID": 17245,
+        "rank": 2
+      },
+      {
+        "level": 49,
+        "spellID": 17245,
+        "rank": 3
+      },
+      {
+        "level": 50,
+        "spellID": 17245,
+        "rank": 4
+      },
+      {
+        "level": 51,
+        "spellID": 16902,
+        "rank": 1
+      },
+      {
+        "level": 52,
+        "spellID": 16902,
+        "rank": 2
+      },
+      {
+        "level": 53,
+        "spellID": 16902,
+        "rank": 3
+      },
+      {
+        "level": 54,
+        "spellID": 16902,
+        "rank": 4
+      },
+      {
+        "level": 55,
+        "spellID": 16902,
+        "rank": 5
+      },
+      {
+        "level": 56,
+        "spellID": 16864,
+        "rank": 1
+      },
+      {
+        "level": 57,
+        "spellID": 16833,
+        "rank": 1
+      },
+      {
+        "level": 58,
+        "spellID": 16833,
+        "rank": 2
+      },
+      {
+        "level": 59,
+        "spellID": 16833,
+        "rank": 3
+      },
+      {
+        "level": 60,
+        "spellID": 17079,
+        "rank": 1
+      }
+    ]
+  },
+  {
+    "class": "hunter",
+    "name": "Beast Mastery (Survival) 10-60",
+    "issues": [
+      {
+        "level": 17,
+        "spellID": 19609,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,2,3"
+      },
+      {
+        "level": 18,
+        "spellID": 19609,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "1,2,3"
+      },
+      {
+        "level": 19,
+        "spellID": 19609,
+        "rank": 3,
+        "issue": "removed",
+        "classicSlot": "1,2,3"
+      },
+      {
+        "level": 51,
+        "spellID": 19434,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,3,1"
+      },
+      {
+        "level": 55,
+        "spellID": 19421,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,2,2"
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 19552,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 19552,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 19552,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 19552,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 19552,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 24443,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 24443,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 19609,
+        "rank": 1
+      },
+      {
+        "level": 18,
+        "spellID": 19609,
+        "rank": 2
+      },
+      {
+        "level": 19,
+        "spellID": 19609,
+        "rank": 3
+      },
+      {
+        "level": 20,
+        "spellID": 19596,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 19559,
+        "rank": 1
+      },
+      {
+        "level": 22,
+        "spellID": 19559,
+        "rank": 2
+      },
+      {
+        "level": 23,
+        "spellID": 19616,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 19616,
+        "rank": 2
+      },
+      {
+        "level": 25,
+        "spellID": 19616,
+        "rank": 3
+      },
+      {
+        "level": 26,
+        "spellID": 19616,
+        "rank": 4
+      },
+      {
+        "level": 27,
+        "spellID": 19616,
+        "rank": 5
+      },
+      {
+        "level": 28,
+        "spellID": 19598,
+        "rank": 1
+      },
+      {
+        "level": 29,
+        "spellID": 19598,
+        "rank": 2
+      },
+      {
+        "level": 30,
+        "spellID": 19577,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 19598,
+        "rank": 3
+      },
+      {
+        "level": 32,
+        "spellID": 19598,
+        "rank": 4
+      },
+      {
+        "level": 33,
+        "spellID": 19598,
+        "rank": 5
+      },
+      {
+        "level": 34,
+        "spellID": 19578,
+        "rank": 1
+      },
+      {
+        "level": 35,
+        "spellID": 19621,
+        "rank": 1
+      },
+      {
+        "level": 36,
+        "spellID": 19621,
+        "rank": 2
+      },
+      {
+        "level": 37,
+        "spellID": 19621,
+        "rank": 3
+      },
+      {
+        "level": 38,
+        "spellID": 19621,
+        "rank": 4
+      },
+      {
+        "level": 39,
+        "spellID": 19578,
+        "rank": 2
+      },
+      {
+        "level": 40,
+        "spellID": 19574,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 19416,
+        "rank": 1
+      },
+      {
+        "level": 42,
+        "spellID": 19416,
+        "rank": 2
+      },
+      {
+        "level": 43,
+        "spellID": 19416,
+        "rank": 3
+      },
+      {
+        "level": 44,
+        "spellID": 19416,
+        "rank": 4
+      },
+      {
+        "level": 45,
+        "spellID": 19416,
+        "rank": 5
+      },
+      {
+        "level": 46,
+        "spellID": 19426,
+        "rank": 1
+      },
+      {
+        "level": 47,
+        "spellID": 19426,
+        "rank": 2
+      },
+      {
+        "level": 48,
+        "spellID": 19426,
+        "rank": 3
+      },
+      {
+        "level": 49,
+        "spellID": 19426,
+        "rank": 4
+      },
+      {
+        "level": 50,
+        "spellID": 19426,
+        "rank": 5
+      },
+      {
+        "level": 51,
+        "spellID": 19434,
+        "rank": 1
+      },
+      {
+        "level": 52,
+        "spellID": 19498,
+        "rank": 1
+      },
+      {
+        "level": 53,
+        "spellID": 19498,
+        "rank": 2
+      },
+      {
+        "level": 54,
+        "spellID": 19498,
+        "rank": 3
+      },
+      {
+        "level": 55,
+        "spellID": 19421,
+        "rank": 1
+      },
+      {
+        "level": 56,
+        "spellID": 19485,
+        "rank": 1
+      },
+      {
+        "level": 57,
+        "spellID": 19485,
+        "rank": 2
+      },
+      {
+        "level": 58,
+        "spellID": 19485,
+        "rank": 3
+      },
+      {
+        "level": 59,
+        "spellID": 19485,
+        "rank": 4
+      },
+      {
+        "level": 60,
+        "spellID": 19485,
+        "rank": 5
+      }
+    ]
+  },
+  {
+    "class": "hunter",
+    "name": "Beast Mastery 10-60",
+    "issues": [
+      {
+        "level": 17,
+        "spellID": 19609,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,2,3"
+      },
+      {
+        "level": 18,
+        "spellID": 19609,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "1,2,3"
+      },
+      {
+        "level": 19,
+        "spellID": 19609,
+        "rank": 3,
+        "issue": "removed",
+        "classicSlot": "1,2,3"
+      },
+      {
+        "level": 51,
+        "spellID": 19434,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,3,1"
+      },
+      {
+        "level": 55,
+        "spellID": 19421,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,2,2"
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 19552,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 19552,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 19552,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 19552,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 19552,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 24443,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 24443,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 19609,
+        "rank": 1
+      },
+      {
+        "level": 18,
+        "spellID": 19609,
+        "rank": 2
+      },
+      {
+        "level": 19,
+        "spellID": 19609,
+        "rank": 3
+      },
+      {
+        "level": 20,
+        "spellID": 19596,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 19559,
+        "rank": 1
+      },
+      {
+        "level": 22,
+        "spellID": 19559,
+        "rank": 2
+      },
+      {
+        "level": 23,
+        "spellID": 19616,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 19616,
+        "rank": 2
+      },
+      {
+        "level": 25,
+        "spellID": 19616,
+        "rank": 3
+      },
+      {
+        "level": 26,
+        "spellID": 19616,
+        "rank": 4
+      },
+      {
+        "level": 27,
+        "spellID": 19616,
+        "rank": 5
+      },
+      {
+        "level": 28,
+        "spellID": 19598,
+        "rank": 1
+      },
+      {
+        "level": 29,
+        "spellID": 19598,
+        "rank": 2
+      },
+      {
+        "level": 30,
+        "spellID": 19577,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 19598,
+        "rank": 3
+      },
+      {
+        "level": 32,
+        "spellID": 19598,
+        "rank": 4
+      },
+      {
+        "level": 33,
+        "spellID": 19598,
+        "rank": 5
+      },
+      {
+        "level": 34,
+        "spellID": 19578,
+        "rank": 1
+      },
+      {
+        "level": 35,
+        "spellID": 19621,
+        "rank": 1
+      },
+      {
+        "level": 36,
+        "spellID": 19621,
+        "rank": 2
+      },
+      {
+        "level": 37,
+        "spellID": 19621,
+        "rank": 3
+      },
+      {
+        "level": 38,
+        "spellID": 19621,
+        "rank": 4
+      },
+      {
+        "level": 39,
+        "spellID": 19578,
+        "rank": 2
+      },
+      {
+        "level": 40,
+        "spellID": 19574,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 19416,
+        "rank": 1
+      },
+      {
+        "level": 42,
+        "spellID": 19416,
+        "rank": 2
+      },
+      {
+        "level": 43,
+        "spellID": 19416,
+        "rank": 3
+      },
+      {
+        "level": 44,
+        "spellID": 19416,
+        "rank": 4
+      },
+      {
+        "level": 45,
+        "spellID": 19416,
+        "rank": 5
+      },
+      {
+        "level": 46,
+        "spellID": 19426,
+        "rank": 1
+      },
+      {
+        "level": 47,
+        "spellID": 19426,
+        "rank": 2
+      },
+      {
+        "level": 48,
+        "spellID": 19426,
+        "rank": 3
+      },
+      {
+        "level": 49,
+        "spellID": 19426,
+        "rank": 4
+      },
+      {
+        "level": 50,
+        "spellID": 19426,
+        "rank": 5
+      },
+      {
+        "level": 51,
+        "spellID": 19434,
+        "rank": 1
+      },
+      {
+        "level": 52,
+        "spellID": 19498,
+        "rank": 1
+      },
+      {
+        "level": 53,
+        "spellID": 19498,
+        "rank": 2
+      },
+      {
+        "level": 54,
+        "spellID": 19498,
+        "rank": 3
+      },
+      {
+        "level": 55,
+        "spellID": 19421,
+        "rank": 1
+      },
+      {
+        "level": 56,
+        "spellID": 19485,
+        "rank": 1
+      },
+      {
+        "level": 57,
+        "spellID": 19485,
+        "rank": 2
+      },
+      {
+        "level": 58,
+        "spellID": 19485,
+        "rank": 3
+      },
+      {
+        "level": 59,
+        "spellID": 19485,
+        "rank": 4
+      },
+      {
+        "level": 60,
+        "spellID": 19485,
+        "rank": 5
+      }
+    ]
+  },
+  {
+    "class": "mage",
+    "name": "Frost (Survival) 10-60",
+    "issues": [
+      {
+        "level": 28,
+        "spellID": 11170,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 29,
+        "spellID": 11170,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 11070,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 11070,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 11070,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 11070,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 11070,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 29438,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 29438,
+        "rank": 1
+      },
+      {
+        "level": 17,
+        "spellID": 11071,
+        "rank": 1
+      },
+      {
+        "level": 18,
+        "spellID": 11071,
+        "rank": 2
+      },
+      {
+        "level": 19,
+        "spellID": 11071,
+        "rank": 3
+      },
+      {
+        "level": 20,
+        "spellID": 12472,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 11207,
+        "rank": 1
+      },
+      {
+        "level": 22,
+        "spellID": 11207,
+        "rank": 2
+      },
+      {
+        "level": 23,
+        "spellID": 11165,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 11165,
+        "rank": 2
+      },
+      {
+        "level": 25,
+        "spellID": 11170,
+        "rank": 1
+      },
+      {
+        "level": 26,
+        "spellID": 11170,
+        "rank": 2
+      },
+      {
+        "level": 27,
+        "spellID": 11170,
+        "rank": 3
+      },
+      {
+        "level": 28,
+        "spellID": 11170,
+        "rank": 4
+      },
+      {
+        "level": 29,
+        "spellID": 11170,
+        "rank": 5
+      },
+      {
+        "level": 30,
+        "spellID": 11958,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 11207,
+        "rank": 3
+      },
+      {
+        "level": 32,
+        "spellID": 11207,
+        "rank": 4
+      },
+      {
+        "level": 33,
+        "spellID": 11207,
+        "rank": 5
+      },
+      {
+        "level": 34,
+        "spellID": 11190,
+        "rank": 1
+      },
+      {
+        "level": 35,
+        "spellID": 11190,
+        "rank": 2
+      },
+      {
+        "level": 36,
+        "spellID": 11190,
+        "rank": 3
+      },
+      {
+        "level": 37,
+        "spellID": 16757,
+        "rank": 1
+      },
+      {
+        "level": 38,
+        "spellID": 16757,
+        "rank": 2
+      },
+      {
+        "level": 39,
+        "spellID": 11151,
+        "rank": 1
+      },
+      {
+        "level": 40,
+        "spellID": 11426,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 11151,
+        "rank": 2
+      },
+      {
+        "level": 42,
+        "spellID": 11151,
+        "rank": 3
+      },
+      {
+        "level": 43,
+        "spellID": 11175,
+        "rank": 1
+      },
+      {
+        "level": 44,
+        "spellID": 11175,
+        "rank": 2
+      },
+      {
+        "level": 45,
+        "spellID": 11175,
+        "rank": 3
+      },
+      {
+        "level": 46,
+        "spellID": 11160,
+        "rank": 1
+      },
+      {
+        "level": 47,
+        "spellID": 11160,
+        "rank": 2
+      },
+      {
+        "level": 48,
+        "spellID": 11160,
+        "rank": 3
+      },
+      {
+        "level": 49,
+        "spellID": 11222,
+        "rank": 1
+      },
+      {
+        "level": 50,
+        "spellID": 11222,
+        "rank": 2
+      },
+      {
+        "level": 51,
+        "spellID": 11222,
+        "rank": 3
+      },
+      {
+        "level": 52,
+        "spellID": 11210,
+        "rank": 1
+      },
+      {
+        "level": 53,
+        "spellID": 11210,
+        "rank": 2
+      },
+      {
+        "level": 54,
+        "spellID": 11213,
+        "rank": 1
+      },
+      {
+        "level": 55,
+        "spellID": 11213,
+        "rank": 2
+      },
+      {
+        "level": 56,
+        "spellID": 11213,
+        "rank": 3
+      },
+      {
+        "level": 57,
+        "spellID": 11213,
+        "rank": 4
+      },
+      {
+        "level": 58,
+        "spellID": 11213,
+        "rank": 5
+      },
+      {
+        "level": 59,
+        "spellID": 28574,
+        "rank": 1
+      },
+      {
+        "level": 60,
+        "spellID": 11242,
+        "rank": 1
+      }
+    ]
+  },
+  {
+    "class": "mage",
+    "name": "Alternative (Survival) 10-60",
+    "issues": [
+      {
+        "level": 38,
+        "spellID": 11170,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 39,
+        "spellID": 11170,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 54,
+        "spellID": 29441,
+        "rank": 3,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 55,
+        "spellID": 29441,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 59,
+        "spellID": 29441,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 11070,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 11070,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 11070,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 29438,
+        "rank": 1
+      },
+      {
+        "level": 14,
+        "spellID": 29438,
+        "rank": 1
+      },
+      {
+        "level": 15,
+        "spellID": 11165,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 11165,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 11175,
+        "rank": 1
+      },
+      {
+        "level": 18,
+        "spellID": 11175,
+        "rank": 2
+      },
+      {
+        "level": 19,
+        "spellID": 11175,
+        "rank": 3
+      },
+      {
+        "level": 20,
+        "spellID": 12472,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 11070,
+        "rank": 4
+      },
+      {
+        "level": 22,
+        "spellID": 11070,
+        "rank": 5
+      },
+      {
+        "level": 23,
+        "spellID": 11071,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 11071,
+        "rank": 2
+      },
+      {
+        "level": 25,
+        "spellID": 16757,
+        "rank": 1
+      },
+      {
+        "level": 26,
+        "spellID": 16757,
+        "rank": 2
+      },
+      {
+        "level": 27,
+        "spellID": 11160,
+        "rank": 1
+      },
+      {
+        "level": 28,
+        "spellID": 11160,
+        "rank": 2
+      },
+      {
+        "level": 29,
+        "spellID": 11160,
+        "rank": 3
+      },
+      {
+        "level": 30,
+        "spellID": 11958,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 11071,
+        "rank": 3
+      },
+      {
+        "level": 32,
+        "spellID": 11190,
+        "rank": 1
+      },
+      {
+        "level": 33,
+        "spellID": 11190,
+        "rank": 2
+      },
+      {
+        "level": 34,
+        "spellID": 11190,
+        "rank": 3
+      },
+      {
+        "level": 35,
+        "spellID": 11170,
+        "rank": 1
+      },
+      {
+        "level": 36,
+        "spellID": 11170,
+        "rank": 2
+      },
+      {
+        "level": 37,
+        "spellID": 11170,
+        "rank": 3
+      },
+      {
+        "level": 38,
+        "spellID": 11170,
+        "rank": 4
+      },
+      {
+        "level": 39,
+        "spellID": 11170,
+        "rank": 5
+      },
+      {
+        "level": 40,
+        "spellID": 11426,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 11210,
+        "rank": 1
+      },
+      {
+        "level": 42,
+        "spellID": 11210,
+        "rank": 2
+      },
+      {
+        "level": 43,
+        "spellID": 11222,
+        "rank": 1
+      },
+      {
+        "level": 44,
+        "spellID": 11222,
+        "rank": 2
+      },
+      {
+        "level": 45,
+        "spellID": 11222,
+        "rank": 3
+      },
+      {
+        "level": 46,
+        "spellID": 11213,
+        "rank": 1
+      },
+      {
+        "level": 47,
+        "spellID": 11213,
+        "rank": 2
+      },
+      {
+        "level": 48,
+        "spellID": 11213,
+        "rank": 3
+      },
+      {
+        "level": 49,
+        "spellID": 11213,
+        "rank": 4
+      },
+      {
+        "level": 50,
+        "spellID": 11213,
+        "rank": 5
+      },
+      {
+        "level": 51,
+        "spellID": 28574,
+        "rank": 1
+      },
+      {
+        "level": 52,
+        "spellID": 29441,
+        "rank": 1
+      },
+      {
+        "level": 53,
+        "spellID": 29441,
+        "rank": 2
+      },
+      {
+        "level": 54,
+        "spellID": 29441,
+        "rank": 3
+      },
+      {
+        "level": 55,
+        "spellID": 29441,
+        "rank": 4
+      },
+      {
+        "level": 56,
+        "spellID": 18462,
+        "rank": 1
+      },
+      {
+        "level": 57,
+        "spellID": 18462,
+        "rank": 2
+      },
+      {
+        "level": 58,
+        "spellID": 18462,
+        "rank": 3
+      },
+      {
+        "level": 59,
+        "spellID": 29441,
+        "rank": 5
+      },
+      {
+        "level": 60,
+        "spellID": 11207,
+        "rank": 1
+      }
+    ]
+  },
+  {
+    "class": "mage",
+    "name": "AoE (Survival) 10-22",
+    "issues": [],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 11069,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 11069,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 11069,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 11069,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 11069,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 29438,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 29438,
+        "rank": 1
+      },
+      {
+        "level": 17,
+        "spellID": 11100,
+        "rank": 1
+      },
+      {
+        "level": 18,
+        "spellID": 11119,
+        "rank": 1
+      },
+      {
+        "level": 19,
+        "spellID": 11119,
+        "rank": 2
+      },
+      {
+        "level": 20,
+        "spellID": 11119,
+        "rank": 3
+      },
+      {
+        "level": 21,
+        "spellID": 11119,
+        "rank": 4
+      },
+      {
+        "level": 22,
+        "spellID": 11119,
+        "rank": 5
+      }
+    ]
+  },
+  {
+    "class": "mage",
+    "name": "AoE (Survival) 22-60",
+    "issues": [
+      {
+        "level": 38,
+        "spellID": 11170,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 39,
+        "spellID": 11170,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 29438,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 29438,
+        "rank": 1
+      },
+      {
+        "level": 12,
+        "spellID": 29438,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 11189,
+        "rank": 1
+      },
+      {
+        "level": 14,
+        "spellID": 11189,
+        "rank": 2
+      },
+      {
+        "level": 15,
+        "spellID": 11165,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 11165,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 11175,
+        "rank": 1
+      },
+      {
+        "level": 18,
+        "spellID": 11175,
+        "rank": 2
+      },
+      {
+        "level": 19,
+        "spellID": 11175,
+        "rank": 3
+      },
+      {
+        "level": 20,
+        "spellID": 11185,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 11185,
+        "rank": 2
+      },
+      {
+        "level": 22,
+        "spellID": 11185,
+        "rank": 3
+      },
+      {
+        "level": 23,
+        "spellID": 12472,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 11151,
+        "rank": 1
+      },
+      {
+        "level": 25,
+        "spellID": 11160,
+        "rank": 1
+      },
+      {
+        "level": 26,
+        "spellID": 11160,
+        "rank": 2
+      },
+      {
+        "level": 27,
+        "spellID": 11160,
+        "rank": 3
+      },
+      {
+        "level": 28,
+        "spellID": 16757,
+        "rank": 1
+      },
+      {
+        "level": 29,
+        "spellID": 16757,
+        "rank": 2
+      },
+      {
+        "level": 30,
+        "spellID": 11958,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 11190,
+        "rank": 1
+      },
+      {
+        "level": 32,
+        "spellID": 11190,
+        "rank": 2
+      },
+      {
+        "level": 33,
+        "spellID": 11190,
+        "rank": 3
+      },
+      {
+        "level": 34,
+        "spellID": 11170,
+        "rank": 1
+      },
+      {
+        "level": 35,
+        "spellID": 11170,
+        "rank": 2
+      },
+      {
+        "level": 36,
+        "spellID": 11151,
+        "rank": 2
+      },
+      {
+        "level": 37,
+        "spellID": 11170,
+        "rank": 3
+      },
+      {
+        "level": 38,
+        "spellID": 11170,
+        "rank": 4
+      },
+      {
+        "level": 39,
+        "spellID": 11170,
+        "rank": 5
+      },
+      {
+        "level": 40,
+        "spellID": 11426,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 11222,
+        "rank": 1
+      },
+      {
+        "level": 42,
+        "spellID": 11222,
+        "rank": 2
+      },
+      {
+        "level": 43,
+        "spellID": 11222,
+        "rank": 3
+      },
+      {
+        "level": 44,
+        "spellID": 11210,
+        "rank": 1
+      },
+      {
+        "level": 45,
+        "spellID": 11210,
+        "rank": 2
+      },
+      {
+        "level": 46,
+        "spellID": 11213,
+        "rank": 1
+      },
+      {
+        "level": 47,
+        "spellID": 11213,
+        "rank": 2
+      },
+      {
+        "level": 48,
+        "spellID": 11213,
+        "rank": 3
+      },
+      {
+        "level": 49,
+        "spellID": 11213,
+        "rank": 4
+      },
+      {
+        "level": 50,
+        "spellID": 11213,
+        "rank": 5
+      },
+      {
+        "level": 51,
+        "spellID": 28574,
+        "rank": 1
+      },
+      {
+        "level": 52,
+        "spellID": 11242,
+        "rank": 1
+      },
+      {
+        "level": 53,
+        "spellID": 11242,
+        "rank": 2
+      },
+      {
+        "level": 54,
+        "spellID": 11242,
+        "rank": 3
+      },
+      {
+        "level": 55,
+        "spellID": 29441,
+        "rank": 1
+      },
+      {
+        "level": 56,
+        "spellID": 18462,
+        "rank": 1
+      },
+      {
+        "level": 57,
+        "spellID": 18462,
+        "rank": 2
+      },
+      {
+        "level": 58,
+        "spellID": 18462,
+        "rank": 3
+      },
+      {
+        "level": 59,
+        "spellID": 11151,
+        "rank": 3
+      },
+      {
+        "level": 60,
+        "spellID": 11207,
+        "rank": 1
+      }
+    ]
+  },
+  {
+    "class": "mage",
+    "name": "Frost 10-60",
+    "issues": [
+      {
+        "level": 28,
+        "spellID": 11170,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 29,
+        "spellID": 11170,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 11070,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 11070,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 11070,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 11070,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 11070,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 29438,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 29438,
+        "rank": 1
+      },
+      {
+        "level": 17,
+        "spellID": 11071,
+        "rank": 1
+      },
+      {
+        "level": 18,
+        "spellID": 11071,
+        "rank": 2
+      },
+      {
+        "level": 19,
+        "spellID": 11071,
+        "rank": 3
+      },
+      {
+        "level": 20,
+        "spellID": 12472,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 11207,
+        "rank": 1
+      },
+      {
+        "level": 22,
+        "spellID": 11207,
+        "rank": 2
+      },
+      {
+        "level": 23,
+        "spellID": 11165,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 11165,
+        "rank": 2
+      },
+      {
+        "level": 25,
+        "spellID": 11170,
+        "rank": 1
+      },
+      {
+        "level": 26,
+        "spellID": 11170,
+        "rank": 2
+      },
+      {
+        "level": 27,
+        "spellID": 11170,
+        "rank": 3
+      },
+      {
+        "level": 28,
+        "spellID": 11170,
+        "rank": 4
+      },
+      {
+        "level": 29,
+        "spellID": 11170,
+        "rank": 5
+      },
+      {
+        "level": 30,
+        "spellID": 11958,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 11207,
+        "rank": 3
+      },
+      {
+        "level": 32,
+        "spellID": 11207,
+        "rank": 4
+      },
+      {
+        "level": 33,
+        "spellID": 11207,
+        "rank": 5
+      },
+      {
+        "level": 34,
+        "spellID": 11190,
+        "rank": 1
+      },
+      {
+        "level": 35,
+        "spellID": 11190,
+        "rank": 2
+      },
+      {
+        "level": 36,
+        "spellID": 11190,
+        "rank": 3
+      },
+      {
+        "level": 37,
+        "spellID": 16757,
+        "rank": 1
+      },
+      {
+        "level": 38,
+        "spellID": 16757,
+        "rank": 2
+      },
+      {
+        "level": 39,
+        "spellID": 11151,
+        "rank": 1
+      },
+      {
+        "level": 40,
+        "spellID": 11426,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 11151,
+        "rank": 2
+      },
+      {
+        "level": 42,
+        "spellID": 11151,
+        "rank": 3
+      },
+      {
+        "level": 43,
+        "spellID": 11175,
+        "rank": 1
+      },
+      {
+        "level": 44,
+        "spellID": 11175,
+        "rank": 2
+      },
+      {
+        "level": 45,
+        "spellID": 11175,
+        "rank": 3
+      },
+      {
+        "level": 46,
+        "spellID": 11160,
+        "rank": 1
+      },
+      {
+        "level": 47,
+        "spellID": 11160,
+        "rank": 2
+      },
+      {
+        "level": 48,
+        "spellID": 11160,
+        "rank": 3
+      },
+      {
+        "level": 49,
+        "spellID": 11222,
+        "rank": 1
+      },
+      {
+        "level": 50,
+        "spellID": 11222,
+        "rank": 2
+      },
+      {
+        "level": 51,
+        "spellID": 11222,
+        "rank": 3
+      },
+      {
+        "level": 52,
+        "spellID": 11210,
+        "rank": 1
+      },
+      {
+        "level": 53,
+        "spellID": 11210,
+        "rank": 2
+      },
+      {
+        "level": 54,
+        "spellID": 11213,
+        "rank": 1
+      },
+      {
+        "level": 55,
+        "spellID": 11213,
+        "rank": 2
+      },
+      {
+        "level": 56,
+        "spellID": 11213,
+        "rank": 3
+      },
+      {
+        "level": 57,
+        "spellID": 11213,
+        "rank": 4
+      },
+      {
+        "level": 58,
+        "spellID": 11213,
+        "rank": 5
+      },
+      {
+        "level": 59,
+        "spellID": 28574,
+        "rank": 1
+      },
+      {
+        "level": 60,
+        "spellID": 11242,
+        "rank": 1
+      }
+    ]
+  },
+  {
+    "class": "mage",
+    "name": "Alternative 10-60",
+    "issues": [
+      {
+        "level": 38,
+        "spellID": 11170,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 39,
+        "spellID": 11170,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 54,
+        "spellID": 29441,
+        "rank": 3,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 55,
+        "spellID": 29441,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 59,
+        "spellID": 29441,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 11070,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 11070,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 11070,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 29438,
+        "rank": 1
+      },
+      {
+        "level": 14,
+        "spellID": 29438,
+        "rank": 1
+      },
+      {
+        "level": 15,
+        "spellID": 11165,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 11165,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 11175,
+        "rank": 1
+      },
+      {
+        "level": 18,
+        "spellID": 11175,
+        "rank": 2
+      },
+      {
+        "level": 19,
+        "spellID": 11175,
+        "rank": 3
+      },
+      {
+        "level": 20,
+        "spellID": 12472,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 11070,
+        "rank": 4
+      },
+      {
+        "level": 22,
+        "spellID": 11070,
+        "rank": 5
+      },
+      {
+        "level": 23,
+        "spellID": 11071,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 11071,
+        "rank": 2
+      },
+      {
+        "level": 25,
+        "spellID": 16757,
+        "rank": 1
+      },
+      {
+        "level": 26,
+        "spellID": 16757,
+        "rank": 2
+      },
+      {
+        "level": 27,
+        "spellID": 11160,
+        "rank": 1
+      },
+      {
+        "level": 28,
+        "spellID": 11160,
+        "rank": 2
+      },
+      {
+        "level": 29,
+        "spellID": 11160,
+        "rank": 3
+      },
+      {
+        "level": 30,
+        "spellID": 11958,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 11071,
+        "rank": 3
+      },
+      {
+        "level": 32,
+        "spellID": 11190,
+        "rank": 1
+      },
+      {
+        "level": 33,
+        "spellID": 11190,
+        "rank": 2
+      },
+      {
+        "level": 34,
+        "spellID": 11190,
+        "rank": 3
+      },
+      {
+        "level": 35,
+        "spellID": 11170,
+        "rank": 1
+      },
+      {
+        "level": 36,
+        "spellID": 11170,
+        "rank": 2
+      },
+      {
+        "level": 37,
+        "spellID": 11170,
+        "rank": 3
+      },
+      {
+        "level": 38,
+        "spellID": 11170,
+        "rank": 4
+      },
+      {
+        "level": 39,
+        "spellID": 11170,
+        "rank": 5
+      },
+      {
+        "level": 40,
+        "spellID": 11426,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 11210,
+        "rank": 1
+      },
+      {
+        "level": 42,
+        "spellID": 11210,
+        "rank": 2
+      },
+      {
+        "level": 43,
+        "spellID": 11222,
+        "rank": 1
+      },
+      {
+        "level": 44,
+        "spellID": 11222,
+        "rank": 2
+      },
+      {
+        "level": 45,
+        "spellID": 11222,
+        "rank": 3
+      },
+      {
+        "level": 46,
+        "spellID": 11213,
+        "rank": 1
+      },
+      {
+        "level": 47,
+        "spellID": 11213,
+        "rank": 2
+      },
+      {
+        "level": 48,
+        "spellID": 11213,
+        "rank": 3
+      },
+      {
+        "level": 49,
+        "spellID": 11213,
+        "rank": 4
+      },
+      {
+        "level": 50,
+        "spellID": 11213,
+        "rank": 5
+      },
+      {
+        "level": 51,
+        "spellID": 28574,
+        "rank": 1
+      },
+      {
+        "level": 52,
+        "spellID": 29441,
+        "rank": 1
+      },
+      {
+        "level": 53,
+        "spellID": 29441,
+        "rank": 2
+      },
+      {
+        "level": 54,
+        "spellID": 29441,
+        "rank": 3
+      },
+      {
+        "level": 55,
+        "spellID": 29441,
+        "rank": 4
+      },
+      {
+        "level": 56,
+        "spellID": 18462,
+        "rank": 1
+      },
+      {
+        "level": 57,
+        "spellID": 18462,
+        "rank": 2
+      },
+      {
+        "level": 58,
+        "spellID": 18462,
+        "rank": 3
+      },
+      {
+        "level": 59,
+        "spellID": 29441,
+        "rank": 5
+      },
+      {
+        "level": 60,
+        "spellID": 11207,
+        "rank": 1
+      }
+    ]
+  },
+  {
+    "class": "mage",
+    "name": "AoE 10-22",
+    "issues": [],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 11069,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 11069,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 11069,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 11069,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 11069,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 29438,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 29438,
+        "rank": 1
+      },
+      {
+        "level": 17,
+        "spellID": 11100,
+        "rank": 1
+      },
+      {
+        "level": 18,
+        "spellID": 11119,
+        "rank": 1
+      },
+      {
+        "level": 19,
+        "spellID": 11119,
+        "rank": 2
+      },
+      {
+        "level": 20,
+        "spellID": 11119,
+        "rank": 3
+      },
+      {
+        "level": 21,
+        "spellID": 11119,
+        "rank": 4
+      },
+      {
+        "level": 22,
+        "spellID": 11119,
+        "rank": 5
+      }
+    ]
+  },
+  {
+    "class": "mage",
+    "name": "AoE 22-60",
+    "issues": [
+      {
+        "level": 38,
+        "spellID": 11170,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 39,
+        "spellID": 11170,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 29438,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 29438,
+        "rank": 1
+      },
+      {
+        "level": 12,
+        "spellID": 29438,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 11189,
+        "rank": 1
+      },
+      {
+        "level": 14,
+        "spellID": 11189,
+        "rank": 2
+      },
+      {
+        "level": 15,
+        "spellID": 11165,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 11165,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 11175,
+        "rank": 1
+      },
+      {
+        "level": 18,
+        "spellID": 11175,
+        "rank": 2
+      },
+      {
+        "level": 19,
+        "spellID": 11175,
+        "rank": 3
+      },
+      {
+        "level": 20,
+        "spellID": 11185,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 11185,
+        "rank": 2
+      },
+      {
+        "level": 22,
+        "spellID": 11185,
+        "rank": 3
+      },
+      {
+        "level": 23,
+        "spellID": 12472,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 11151,
+        "rank": 1
+      },
+      {
+        "level": 25,
+        "spellID": 11160,
+        "rank": 1
+      },
+      {
+        "level": 26,
+        "spellID": 11160,
+        "rank": 2
+      },
+      {
+        "level": 27,
+        "spellID": 11160,
+        "rank": 3
+      },
+      {
+        "level": 28,
+        "spellID": 16757,
+        "rank": 1
+      },
+      {
+        "level": 29,
+        "spellID": 16757,
+        "rank": 2
+      },
+      {
+        "level": 30,
+        "spellID": 11958,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 11190,
+        "rank": 1
+      },
+      {
+        "level": 32,
+        "spellID": 11190,
+        "rank": 2
+      },
+      {
+        "level": 33,
+        "spellID": 11190,
+        "rank": 3
+      },
+      {
+        "level": 34,
+        "spellID": 11170,
+        "rank": 1
+      },
+      {
+        "level": 35,
+        "spellID": 11170,
+        "rank": 2
+      },
+      {
+        "level": 36,
+        "spellID": 11151,
+        "rank": 2
+      },
+      {
+        "level": 37,
+        "spellID": 11170,
+        "rank": 3
+      },
+      {
+        "level": 38,
+        "spellID": 11170,
+        "rank": 4
+      },
+      {
+        "level": 39,
+        "spellID": 11170,
+        "rank": 5
+      },
+      {
+        "level": 40,
+        "spellID": 11426,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 11222,
+        "rank": 1
+      },
+      {
+        "level": 42,
+        "spellID": 11222,
+        "rank": 2
+      },
+      {
+        "level": 43,
+        "spellID": 11222,
+        "rank": 3
+      },
+      {
+        "level": 44,
+        "spellID": 11210,
+        "rank": 1
+      },
+      {
+        "level": 45,
+        "spellID": 11210,
+        "rank": 2
+      },
+      {
+        "level": 46,
+        "spellID": 11213,
+        "rank": 1
+      },
+      {
+        "level": 47,
+        "spellID": 11213,
+        "rank": 2
+      },
+      {
+        "level": 48,
+        "spellID": 11213,
+        "rank": 3
+      },
+      {
+        "level": 49,
+        "spellID": 11213,
+        "rank": 4
+      },
+      {
+        "level": 50,
+        "spellID": 11213,
+        "rank": 5
+      },
+      {
+        "level": 51,
+        "spellID": 28574,
+        "rank": 1
+      },
+      {
+        "level": 52,
+        "spellID": 11242,
+        "rank": 1
+      },
+      {
+        "level": 53,
+        "spellID": 11242,
+        "rank": 2
+      },
+      {
+        "level": 54,
+        "spellID": 11242,
+        "rank": 3
+      },
+      {
+        "level": 55,
+        "spellID": 29441,
+        "rank": 1
+      },
+      {
+        "level": 56,
+        "spellID": 18462,
+        "rank": 1
+      },
+      {
+        "level": 57,
+        "spellID": 18462,
+        "rank": 2
+      },
+      {
+        "level": 58,
+        "spellID": 18462,
+        "rank": 3
+      },
+      {
+        "level": 59,
+        "spellID": 11151,
+        "rank": 3
+      },
+      {
+        "level": 60,
+        "spellID": 11207,
+        "rank": 1
+      }
+    ]
+  },
+  {
+    "class": "paladin",
+    "name": "Retribution (Survival) 10-60",
+    "issues": [
+      {
+        "level": 17,
+        "spellID": 20205,
+        "rank": 3,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 18,
+        "spellID": 20205,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 19,
+        "spellID": 20205,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 35,
+        "spellID": 20091,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "3,4,3"
+      },
+      {
+        "level": 36,
+        "spellID": 20091,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "3,4,3"
+      },
+      {
+        "level": 48,
+        "spellID": 20049,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 49,
+        "spellID": 20049,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 20257,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 20257,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 20257,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 20257,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 20257,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 20205,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 20205,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 20205,
+        "rank": 3
+      },
+      {
+        "level": 18,
+        "spellID": 20205,
+        "rank": 4
+      },
+      {
+        "level": 19,
+        "spellID": 20205,
+        "rank": 5
+      },
+      {
+        "level": 20,
+        "spellID": 20101,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 20101,
+        "rank": 2
+      },
+      {
+        "level": 22,
+        "spellID": 20101,
+        "rank": 3
+      },
+      {
+        "level": 23,
+        "spellID": 20101,
+        "rank": 4
+      },
+      {
+        "level": 24,
+        "spellID": 20101,
+        "rank": 5
+      },
+      {
+        "level": 25,
+        "spellID": 20060,
+        "rank": 1
+      },
+      {
+        "level": 26,
+        "spellID": 20060,
+        "rank": 2
+      },
+      {
+        "level": 27,
+        "spellID": 20060,
+        "rank": 3
+      },
+      {
+        "level": 28,
+        "spellID": 20060,
+        "rank": 4
+      },
+      {
+        "level": 29,
+        "spellID": 20060,
+        "rank": 5
+      },
+      {
+        "level": 30,
+        "spellID": 20375,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 26022,
+        "rank": 1
+      },
+      {
+        "level": 32,
+        "spellID": 26022,
+        "rank": 2
+      },
+      {
+        "level": 33,
+        "spellID": 20117,
+        "rank": 1
+      },
+      {
+        "level": 34,
+        "spellID": 20117,
+        "rank": 2
+      },
+      {
+        "level": 35,
+        "spellID": 20091,
+        "rank": 1
+      },
+      {
+        "level": 36,
+        "spellID": 20091,
+        "rank": 2
+      },
+      {
+        "level": 37,
+        "spellID": 20117,
+        "rank": 3
+      },
+      {
+        "level": 38,
+        "spellID": 20117,
+        "rank": 4
+      },
+      {
+        "level": 39,
+        "spellID": 20117,
+        "rank": 5
+      },
+      {
+        "level": 40,
+        "spellID": 20111,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 20111,
+        "rank": 2
+      },
+      {
+        "level": 42,
+        "spellID": 20111,
+        "rank": 3
+      },
+      {
+        "level": 43,
+        "spellID": 25956,
+        "rank": 1
+      },
+      {
+        "level": 44,
+        "spellID": 25956,
+        "rank": 2
+      },
+      {
+        "level": 45,
+        "spellID": 20049,
+        "rank": 1
+      },
+      {
+        "level": 46,
+        "spellID": 20049,
+        "rank": 2
+      },
+      {
+        "level": 47,
+        "spellID": 20049,
+        "rank": 3
+      },
+      {
+        "level": 48,
+        "spellID": 20049,
+        "rank": 4
+      },
+      {
+        "level": 49,
+        "spellID": 20049,
+        "rank": 5
+      },
+      {
+        "level": 50,
+        "spellID": 20066,
+        "rank": 1
+      },
+      {
+        "level": 51,
+        "spellID": 20127,
+        "rank": 1
+      },
+      {
+        "level": 52,
+        "spellID": 20127,
+        "rank": 2
+      },
+      {
+        "level": 53,
+        "spellID": 20127,
+        "rank": 3
+      },
+      {
+        "level": 54,
+        "spellID": 20127,
+        "rank": 4
+      },
+      {
+        "level": 55,
+        "spellID": 20127,
+        "rank": 5
+      },
+      {
+        "level": 56,
+        "spellID": 20189,
+        "rank": 1
+      },
+      {
+        "level": 57,
+        "spellID": 20189,
+        "rank": 2
+      },
+      {
+        "level": 58,
+        "spellID": 20189,
+        "rank": 3
+      },
+      {
+        "level": 59,
+        "spellID": 20174,
+        "rank": 1
+      },
+      {
+        "level": 60,
+        "spellID": 20174,
+        "rank": 2
+      }
+    ]
+  },
+  {
+    "class": "paladin",
+    "name": "Retribution 10-60",
+    "issues": [
+      {
+        "level": 25,
+        "spellID": 20091,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "3,4,3"
+      },
+      {
+        "level": 26,
+        "spellID": 20091,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "3,4,3"
+      },
+      {
+        "level": 46,
+        "spellID": 20049,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 47,
+        "spellID": 20049,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 56,
+        "spellID": 20205,
+        "rank": 3,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 57,
+        "spellID": 20205,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 58,
+        "spellID": 20205,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 59,
+        "spellID": 26573,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,3,2"
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 20101,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 20101,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 20101,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 20101,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 20101,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 20060,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 20060,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 20060,
+        "rank": 3
+      },
+      {
+        "level": 18,
+        "spellID": 20060,
+        "rank": 4
+      },
+      {
+        "level": 19,
+        "spellID": 20060,
+        "rank": 5
+      },
+      {
+        "level": 20,
+        "spellID": 20375,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 26022,
+        "rank": 1
+      },
+      {
+        "level": 22,
+        "spellID": 26022,
+        "rank": 2
+      },
+      {
+        "level": 23,
+        "spellID": 20117,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 20117,
+        "rank": 2
+      },
+      {
+        "level": 25,
+        "spellID": 20091,
+        "rank": 1
+      },
+      {
+        "level": 26,
+        "spellID": 20091,
+        "rank": 2
+      },
+      {
+        "level": 27,
+        "spellID": 20117,
+        "rank": 3
+      },
+      {
+        "level": 28,
+        "spellID": 20117,
+        "rank": 4
+      },
+      {
+        "level": 29,
+        "spellID": 20117,
+        "rank": 5
+      },
+      {
+        "level": 30,
+        "spellID": 20111,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 20111,
+        "rank": 2
+      },
+      {
+        "level": 32,
+        "spellID": 20111,
+        "rank": 3
+      },
+      {
+        "level": 33,
+        "spellID": 20127,
+        "rank": 1
+      },
+      {
+        "level": 34,
+        "spellID": 20127,
+        "rank": 2
+      },
+      {
+        "level": 35,
+        "spellID": 20127,
+        "rank": 3
+      },
+      {
+        "level": 36,
+        "spellID": 20127,
+        "rank": 4
+      },
+      {
+        "level": 37,
+        "spellID": 20127,
+        "rank": 5
+      },
+      {
+        "level": 38,
+        "spellID": 20189,
+        "rank": 1
+      },
+      {
+        "level": 39,
+        "spellID": 20189,
+        "rank": 2
+      },
+      {
+        "level": 40,
+        "spellID": 20189,
+        "rank": 3
+      },
+      {
+        "level": 41,
+        "spellID": 25956,
+        "rank": 1
+      },
+      {
+        "level": 42,
+        "spellID": 25956,
+        "rank": 2
+      },
+      {
+        "level": 43,
+        "spellID": 20049,
+        "rank": 1
+      },
+      {
+        "level": 44,
+        "spellID": 20049,
+        "rank": 2
+      },
+      {
+        "level": 45,
+        "spellID": 20049,
+        "rank": 3
+      },
+      {
+        "level": 46,
+        "spellID": 20049,
+        "rank": 4
+      },
+      {
+        "level": 47,
+        "spellID": 20049,
+        "rank": 5
+      },
+      {
+        "level": 48,
+        "spellID": 20066,
+        "rank": 1
+      },
+      {
+        "level": 49,
+        "spellID": 20257,
+        "rank": 1
+      },
+      {
+        "level": 50,
+        "spellID": 20257,
+        "rank": 2
+      },
+      {
+        "level": 51,
+        "spellID": 20257,
+        "rank": 3
+      },
+      {
+        "level": 52,
+        "spellID": 20257,
+        "rank": 4
+      },
+      {
+        "level": 53,
+        "spellID": 20257,
+        "rank": 5
+      },
+      {
+        "level": 54,
+        "spellID": 20205,
+        "rank": 1
+      },
+      {
+        "level": 55,
+        "spellID": 20205,
+        "rank": 2
+      },
+      {
+        "level": 56,
+        "spellID": 20205,
+        "rank": 3
+      },
+      {
+        "level": 57,
+        "spellID": 20205,
+        "rank": 4
+      },
+      {
+        "level": 58,
+        "spellID": 20205,
+        "rank": 5
+      },
+      {
+        "level": 59,
+        "spellID": 26573,
+        "rank": 1
+      }
+    ]
+  },
+  {
+    "class": "priest",
+    "name": "Shadow (Survival) 10-60",
+    "issues": [
+      {
+        "level": 12,
+        "spellID": 14524,
+        "rank": 3,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 13,
+        "spellID": 14524,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 14,
+        "spellID": 14524,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 29,
+        "spellID": 14749,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,2,2"
+      },
+      {
+        "level": 30,
+        "spellID": 14749,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "1,2,2"
+      },
+      {
+        "level": 45,
+        "spellID": 14522,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,1,2"
+      },
+      {
+        "level": 49,
+        "spellID": 14520,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 50,
+        "spellID": 14520,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 51,
+        "spellID": 14752,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,5,3"
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 14524,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 14524,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 14524,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 14524,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 14524,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 14748,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 14748,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 14748,
+        "rank": 3
+      },
+      {
+        "level": 18,
+        "spellID": 15270,
+        "rank": 1
+      },
+      {
+        "level": 19,
+        "spellID": 15270,
+        "rank": 2
+      },
+      {
+        "level": 20,
+        "spellID": 15270,
+        "rank": 3
+      },
+      {
+        "level": 21,
+        "spellID": 15270,
+        "rank": 4
+      },
+      {
+        "level": 22,
+        "spellID": 15270,
+        "rank": 5
+      },
+      {
+        "level": 23,
+        "spellID": 15260,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 15260,
+        "rank": 2
+      },
+      {
+        "level": 25,
+        "spellID": 15260,
+        "rank": 3
+      },
+      {
+        "level": 26,
+        "spellID": 15260,
+        "rank": 4
+      },
+      {
+        "level": 27,
+        "spellID": 15260,
+        "rank": 5
+      },
+      {
+        "level": 28,
+        "spellID": 15407,
+        "rank": 1
+      },
+      {
+        "level": 29,
+        "spellID": 14749,
+        "rank": 1
+      },
+      {
+        "level": 30,
+        "spellID": 14749,
+        "rank": 2
+      },
+      {
+        "level": 31,
+        "spellID": 14521,
+        "rank": 1
+      },
+      {
+        "level": 32,
+        "spellID": 14521,
+        "rank": 2
+      },
+      {
+        "level": 33,
+        "spellID": 14521,
+        "rank": 3
+      },
+      {
+        "level": 34,
+        "spellID": 14908,
+        "rank": 1
+      },
+      {
+        "level": 35,
+        "spellID": 14908,
+        "rank": 2
+      },
+      {
+        "level": 36,
+        "spellID": 14908,
+        "rank": 3
+      },
+      {
+        "level": 37,
+        "spellID": 14889,
+        "rank": 1
+      },
+      {
+        "level": 38,
+        "spellID": 14889,
+        "rank": 2
+      },
+      {
+        "level": 39,
+        "spellID": 18530,
+        "rank": 1
+      },
+      {
+        "level": 40,
+        "spellID": 18530,
+        "rank": 2
+      },
+      {
+        "level": 41,
+        "spellID": 18530,
+        "rank": 3
+      },
+      {
+        "level": 42,
+        "spellID": 18530,
+        "rank": 4
+      },
+      {
+        "level": 43,
+        "spellID": 18530,
+        "rank": 5
+      },
+      {
+        "level": 44,
+        "spellID": 14751,
+        "rank": 1
+      },
+      {
+        "level": 45,
+        "spellID": 14522,
+        "rank": 1
+      },
+      {
+        "level": 46,
+        "spellID": 14520,
+        "rank": 1
+      },
+      {
+        "level": 47,
+        "spellID": 14520,
+        "rank": 2
+      },
+      {
+        "level": 48,
+        "spellID": 14520,
+        "rank": 3
+      },
+      {
+        "level": 49,
+        "spellID": 14520,
+        "rank": 4
+      },
+      {
+        "level": 50,
+        "spellID": 14520,
+        "rank": 5
+      },
+      {
+        "level": 51,
+        "spellID": 14752,
+        "rank": 1
+      },
+      {
+        "level": 52,
+        "spellID": 15273,
+        "rank": 1
+      },
+      {
+        "level": 53,
+        "spellID": 15273,
+        "rank": 2
+      },
+      {
+        "level": 54,
+        "spellID": 18551,
+        "rank": 1
+      },
+      {
+        "level": 55,
+        "spellID": 18551,
+        "rank": 2
+      },
+      {
+        "level": 56,
+        "spellID": 18551,
+        "rank": 3
+      },
+      {
+        "level": 57,
+        "spellID": 18551,
+        "rank": 4
+      },
+      {
+        "level": 58,
+        "spellID": 18551,
+        "rank": 5
+      },
+      {
+        "level": 59,
+        "spellID": 27900,
+        "rank": 1
+      }
+    ]
+  },
+  {
+    "class": "priest",
+    "name": "Shadow (Wands) 10-39",
+    "issues": [
+      {
+        "level": 12,
+        "spellID": 14524,
+        "rank": 3,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 13,
+        "spellID": 14524,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 14,
+        "spellID": 14524,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 18,
+        "spellID": 14749,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,2,2"
+      },
+      {
+        "level": 19,
+        "spellID": 14749,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "1,2,2"
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 14524,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 14524,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 14524,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 14524,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 14524,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 14748,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 14748,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 14748,
+        "rank": 3
+      },
+      {
+        "level": 18,
+        "spellID": 14749,
+        "rank": 1
+      },
+      {
+        "level": 19,
+        "spellID": 14749,
+        "rank": 2
+      },
+      {
+        "level": 20,
+        "spellID": 14521,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 14521,
+        "rank": 2
+      },
+      {
+        "level": 22,
+        "spellID": 14521,
+        "rank": 3
+      },
+      {
+        "level": 23,
+        "spellID": 15270,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 15270,
+        "rank": 2
+      },
+      {
+        "level": 25,
+        "spellID": 15270,
+        "rank": 3
+      },
+      {
+        "level": 26,
+        "spellID": 15270,
+        "rank": 4
+      },
+      {
+        "level": 27,
+        "spellID": 15270,
+        "rank": 5
+      },
+      {
+        "level": 28,
+        "spellID": 15260,
+        "rank": 1
+      },
+      {
+        "level": 29,
+        "spellID": 15260,
+        "rank": 2
+      },
+      {
+        "level": 30,
+        "spellID": 15260,
+        "rank": 3
+      },
+      {
+        "level": 31,
+        "spellID": 15260,
+        "rank": 4
+      },
+      {
+        "level": 32,
+        "spellID": 15260,
+        "rank": 5
+      },
+      {
+        "level": 33,
+        "spellID": 15407,
+        "rank": 1
+      },
+      {
+        "level": 34,
+        "spellID": 15273,
+        "rank": 1
+      },
+      {
+        "level": 35,
+        "spellID": 15273,
+        "rank": 2
+      },
+      {
+        "level": 36,
+        "spellID": 15392,
+        "rank": 1
+      },
+      {
+        "level": 37,
+        "spellID": 15392,
+        "rank": 2
+      },
+      {
+        "level": 38,
+        "spellID": 17322,
+        "rank": 1
+      },
+      {
+        "level": 39,
+        "spellID": 17322,
+        "rank": 2
+      }
+    ]
+  },
+  {
+    "class": "priest",
+    "name": "Shadow 40-60",
+    "issues": [
+      {
+        "level": 27,
+        "spellID": 17322,
+        "rank": 3,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 41,
+        "spellID": 15257,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 42,
+        "spellID": 15257,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 45,
+        "spellID": 14524,
+        "rank": 3,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 46,
+        "spellID": 14524,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 47,
+        "spellID": 14524,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 2
+      },
+      {
+        "level": 48,
+        "spellID": 14749,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,2,2"
+      },
+      {
+        "level": 49,
+        "spellID": 14749,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "1,2,2"
+      },
+      {
+        "level": 57,
+        "spellID": 14522,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,1,2"
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 15270,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 15270,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 15270,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 15270,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 15270,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 15260,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 15260,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 15260,
+        "rank": 3
+      },
+      {
+        "level": 18,
+        "spellID": 15260,
+        "rank": 4
+      },
+      {
+        "level": 19,
+        "spellID": 15260,
+        "rank": 5
+      },
+      {
+        "level": 20,
+        "spellID": 15407,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 15273,
+        "rank": 1
+      },
+      {
+        "level": 22,
+        "spellID": 15273,
+        "rank": 2
+      },
+      {
+        "level": 23,
+        "spellID": 15392,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 15392,
+        "rank": 2
+      },
+      {
+        "level": 25,
+        "spellID": 17322,
+        "rank": 1
+      },
+      {
+        "level": 26,
+        "spellID": 17322,
+        "rank": 2
+      },
+      {
+        "level": 27,
+        "spellID": 17322,
+        "rank": 3
+      },
+      {
+        "level": 28,
+        "spellID": 15273,
+        "rank": 3
+      },
+      {
+        "level": 29,
+        "spellID": 15273,
+        "rank": 4
+      },
+      {
+        "level": 30,
+        "spellID": 15286,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 15487,
+        "rank": 1
+      },
+      {
+        "level": 32,
+        "spellID": 15257,
+        "rank": 1
+      },
+      {
+        "level": 33,
+        "spellID": 15257,
+        "rank": 2
+      },
+      {
+        "level": 34,
+        "spellID": 15257,
+        "rank": 3
+      },
+      {
+        "level": 35,
+        "spellID": 15259,
+        "rank": 1
+      },
+      {
+        "level": 36,
+        "spellID": 15259,
+        "rank": 2
+      },
+      {
+        "level": 37,
+        "spellID": 15259,
+        "rank": 3
+      },
+      {
+        "level": 38,
+        "spellID": 15259,
+        "rank": 4
+      },
+      {
+        "level": 39,
+        "spellID": 15259,
+        "rank": 5
+      },
+      {
+        "level": 40,
+        "spellID": 15473,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 15257,
+        "rank": 4
+      },
+      {
+        "level": 42,
+        "spellID": 15257,
+        "rank": 5
+      },
+      {
+        "level": 43,
+        "spellID": 14524,
+        "rank": 1
+      },
+      {
+        "level": 44,
+        "spellID": 14524,
+        "rank": 2
+      },
+      {
+        "level": 45,
+        "spellID": 14524,
+        "rank": 3
+      },
+      {
+        "level": 46,
+        "spellID": 14524,
+        "rank": 4
+      },
+      {
+        "level": 47,
+        "spellID": 14524,
+        "rank": 5
+      },
+      {
+        "level": 48,
+        "spellID": 14749,
+        "rank": 1
+      },
+      {
+        "level": 49,
+        "spellID": 14749,
+        "rank": 2
+      },
+      {
+        "level": 50,
+        "spellID": 14748,
+        "rank": 1
+      },
+      {
+        "level": 51,
+        "spellID": 14748,
+        "rank": 2
+      },
+      {
+        "level": 52,
+        "spellID": 14748,
+        "rank": 3
+      },
+      {
+        "level": 53,
+        "spellID": 14521,
+        "rank": 1
+      },
+      {
+        "level": 54,
+        "spellID": 14521,
+        "rank": 2
+      },
+      {
+        "level": 55,
+        "spellID": 14521,
+        "rank": 3
+      },
+      {
+        "level": 56,
+        "spellID": 14751,
+        "rank": 1
+      },
+      {
+        "level": 57,
+        "spellID": 14522,
+        "rank": 1
+      },
+      {
+        "level": 58,
+        "spellID": 14520,
+        "rank": 1
+      },
+      {
+        "level": 59,
+        "spellID": 14520,
+        "rank": 2
+      }
+    ]
+  },
+  {
+    "class": "rogue",
+    "name": "Combat (Survival) 10-60",
+    "issues": [
+      {
+        "level": 20,
+        "spellID": 13713,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 21,
+        "spellID": 13713,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 26,
+        "spellID": 13705,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 27,
+        "spellID": 13705,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 14144,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 14144,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 13741,
+        "rank": 1
+      },
+      {
+        "level": 13,
+        "spellID": 13741,
+        "rank": 2
+      },
+      {
+        "level": 14,
+        "spellID": 13741,
+        "rank": 3
+      },
+      {
+        "level": 15,
+        "spellID": 13732,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 13732,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 13713,
+        "rank": 1
+      },
+      {
+        "level": 18,
+        "spellID": 13713,
+        "rank": 2
+      },
+      {
+        "level": 19,
+        "spellID": 13713,
+        "rank": 3
+      },
+      {
+        "level": 20,
+        "spellID": 13713,
+        "rank": 4
+      },
+      {
+        "level": 21,
+        "spellID": 13713,
+        "rank": 5
+      },
+      {
+        "level": 22,
+        "spellID": 14251,
+        "rank": 1
+      },
+      {
+        "level": 23,
+        "spellID": 13705,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 13705,
+        "rank": 2
+      },
+      {
+        "level": 25,
+        "spellID": 13705,
+        "rank": 3
+      },
+      {
+        "level": 26,
+        "spellID": 13705,
+        "rank": 4
+      },
+      {
+        "level": 27,
+        "spellID": 13705,
+        "rank": 5
+      },
+      {
+        "level": 28,
+        "spellID": 13743,
+        "rank": 1
+      },
+      {
+        "level": 29,
+        "spellID": 13743,
+        "rank": 2
+      },
+      {
+        "level": 30,
+        "spellID": 13715,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 13715,
+        "rank": 2
+      },
+      {
+        "level": 32,
+        "spellID": 13715,
+        "rank": 3
+      },
+      {
+        "level": 33,
+        "spellID": 13715,
+        "rank": 4
+      },
+      {
+        "level": 34,
+        "spellID": 13715,
+        "rank": 5
+      },
+      {
+        "level": 35,
+        "spellID": 13877,
+        "rank": 1
+      },
+      {
+        "level": 36,
+        "spellID": 13742,
+        "rank": 1
+      },
+      {
+        "level": 37,
+        "spellID": 30919,
+        "rank": 1
+      },
+      {
+        "level": 38,
+        "spellID": 30919,
+        "rank": 2
+      },
+      {
+        "level": 39,
+        "spellID": 13742,
+        "rank": 2
+      },
+      {
+        "level": 40,
+        "spellID": 18427,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 18427,
+        "rank": 2
+      },
+      {
+        "level": 42,
+        "spellID": 14138,
+        "rank": 1
+      },
+      {
+        "level": 43,
+        "spellID": 14138,
+        "rank": 2
+      },
+      {
+        "level": 44,
+        "spellID": 14138,
+        "rank": 3
+      },
+      {
+        "level": 45,
+        "spellID": 14165,
+        "rank": 1
+      },
+      {
+        "level": 46,
+        "spellID": 14165,
+        "rank": 2
+      },
+      {
+        "level": 47,
+        "spellID": 14165,
+        "rank": 3
+      },
+      {
+        "level": 48,
+        "spellID": 14138,
+        "rank": 4
+      },
+      {
+        "level": 49,
+        "spellID": 14138,
+        "rank": 5
+      },
+      {
+        "level": 50,
+        "spellID": 14179,
+        "rank": 1
+      },
+      {
+        "level": 51,
+        "spellID": 14158,
+        "rank": 1
+      },
+      {
+        "level": 52,
+        "spellID": 14158,
+        "rank": 2
+      },
+      {
+        "level": 53,
+        "spellID": 14128,
+        "rank": 1
+      },
+      {
+        "level": 54,
+        "spellID": 14128,
+        "rank": 2
+      },
+      {
+        "level": 55,
+        "spellID": 14128,
+        "rank": 3
+      },
+      {
+        "level": 56,
+        "spellID": 14113,
+        "rank": 1
+      },
+      {
+        "level": 57,
+        "spellID": 14113,
+        "rank": 2
+      },
+      {
+        "level": 58,
+        "spellID": 14113,
+        "rank": 3
+      },
+      {
+        "level": 59,
+        "spellID": 14113,
+        "rank": 4
+      }
+    ]
+  },
+  {
+    "class": "rogue",
+    "name": "Combat 10-60",
+    "issues": [
+      {
+        "level": 20,
+        "spellID": 13713,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 21,
+        "spellID": 13713,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 26,
+        "spellID": 13705,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 27,
+        "spellID": 13705,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 14144,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 14144,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 13732,
+        "rank": 1
+      },
+      {
+        "level": 13,
+        "spellID": 13732,
+        "rank": 2
+      },
+      {
+        "level": 14,
+        "spellID": 13741,
+        "rank": 1
+      },
+      {
+        "level": 15,
+        "spellID": 13741,
+        "rank": 2
+      },
+      {
+        "level": 16,
+        "spellID": 13741,
+        "rank": 3
+      },
+      {
+        "level": 17,
+        "spellID": 13713,
+        "rank": 1
+      },
+      {
+        "level": 18,
+        "spellID": 13713,
+        "rank": 2
+      },
+      {
+        "level": 19,
+        "spellID": 13713,
+        "rank": 3
+      },
+      {
+        "level": 20,
+        "spellID": 13713,
+        "rank": 4
+      },
+      {
+        "level": 21,
+        "spellID": 13713,
+        "rank": 5
+      },
+      {
+        "level": 22,
+        "spellID": 14251,
+        "rank": 1
+      },
+      {
+        "level": 23,
+        "spellID": 13705,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 13705,
+        "rank": 2
+      },
+      {
+        "level": 25,
+        "spellID": 13705,
+        "rank": 3
+      },
+      {
+        "level": 26,
+        "spellID": 13705,
+        "rank": 4
+      },
+      {
+        "level": 27,
+        "spellID": 13705,
+        "rank": 5
+      },
+      {
+        "level": 28,
+        "spellID": 13715,
+        "rank": 1
+      },
+      {
+        "level": 29,
+        "spellID": 13715,
+        "rank": 2
+      },
+      {
+        "level": 30,
+        "spellID": 13715,
+        "rank": 3
+      },
+      {
+        "level": 31,
+        "spellID": 13715,
+        "rank": 4
+      },
+      {
+        "level": 32,
+        "spellID": 13715,
+        "rank": 5
+      },
+      {
+        "level": 33,
+        "spellID": 13877,
+        "rank": 1
+      },
+      {
+        "level": 34,
+        "spellID": 13960,
+        "rank": 1
+      },
+      {
+        "level": 35,
+        "spellID": 13960,
+        "rank": 2
+      },
+      {
+        "level": 36,
+        "spellID": 13960,
+        "rank": 3
+      },
+      {
+        "level": 37,
+        "spellID": 30919,
+        "rank": 1
+      },
+      {
+        "level": 38,
+        "spellID": 30919,
+        "rank": 2
+      },
+      {
+        "level": 39,
+        "spellID": 18427,
+        "rank": 1
+      },
+      {
+        "level": 40,
+        "spellID": 18427,
+        "rank": 2
+      },
+      {
+        "level": 41,
+        "spellID": 18427,
+        "rank": 3
+      },
+      {
+        "level": 42,
+        "spellID": 13750,
+        "rank": 1
+      },
+      {
+        "level": 43,
+        "spellID": 14138,
+        "rank": 1
+      },
+      {
+        "level": 44,
+        "spellID": 14138,
+        "rank": 2
+      },
+      {
+        "level": 45,
+        "spellID": 14138,
+        "rank": 3
+      },
+      {
+        "level": 46,
+        "spellID": 14165,
+        "rank": 1
+      },
+      {
+        "level": 47,
+        "spellID": 14165,
+        "rank": 2
+      },
+      {
+        "level": 48,
+        "spellID": 14165,
+        "rank": 3
+      },
+      {
+        "level": 49,
+        "spellID": 14138,
+        "rank": 4
+      },
+      {
+        "level": 50,
+        "spellID": 14138,
+        "rank": 5
+      },
+      {
+        "level": 51,
+        "spellID": 14179,
+        "rank": 1
+      },
+      {
+        "level": 52,
+        "spellID": 14158,
+        "rank": 1
+      },
+      {
+        "level": 53,
+        "spellID": 14158,
+        "rank": 2
+      },
+      {
+        "level": 54,
+        "spellID": 14128,
+        "rank": 1
+      },
+      {
+        "level": 55,
+        "spellID": 14128,
+        "rank": 2
+      },
+      {
+        "level": 56,
+        "spellID": 14128,
+        "rank": 3
+      },
+      {
+        "level": 57,
+        "spellID": 14128,
+        "rank": 4
+      },
+      {
+        "level": 58,
+        "spellID": 14128,
+        "rank": 5
+      },
+      {
+        "level": 59,
+        "spellID": 14113,
+        "rank": 1
+      },
+      {
+        "level": 60,
+        "spellID": 14113,
+        "rank": 2
+      }
+    ]
+  },
+  {
+    "class": "shaman",
+    "name": "Enhancement (Survival) 10-40",
+    "issues": [
+      {
+        "level": 20,
+        "spellID": 16269,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,3,3"
+      },
+      {
+        "level": 34,
+        "spellID": 29192,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,5,1"
+      },
+      {
+        "level": 35,
+        "spellID": 29082,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,6,3"
+      },
+      {
+        "level": 36,
+        "spellID": 29082,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "2,6,3"
+      },
+      {
+        "level": 37,
+        "spellID": 29082,
+        "rank": 3,
+        "issue": "removed",
+        "classicSlot": "2,6,3"
+      },
+      {
+        "level": 38,
+        "spellID": 29082,
+        "rank": 4,
+        "issue": "removed",
+        "classicSlot": "2,6,3"
+      },
+      {
+        "level": 39,
+        "spellID": 29082,
+        "rank": 5,
+        "issue": "removed",
+        "classicSlot": "2,6,3"
+      },
+      {
+        "level": 41,
+        "spellID": 29192,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "2,5,1"
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 17485,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 17485,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 17485,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 17485,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 17485,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 16255,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 16255,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 16255,
+        "rank": 3
+      },
+      {
+        "level": 18,
+        "spellID": 16262,
+        "rank": 1
+      },
+      {
+        "level": 19,
+        "spellID": 16262,
+        "rank": 2
+      },
+      {
+        "level": 20,
+        "spellID": 16269,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 16255,
+        "rank": 4
+      },
+      {
+        "level": 22,
+        "spellID": 16255,
+        "rank": 5
+      },
+      {
+        "level": 23,
+        "spellID": 16254,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 16254,
+        "rank": 2
+      },
+      {
+        "level": 25,
+        "spellID": 16256,
+        "rank": 1
+      },
+      {
+        "level": 26,
+        "spellID": 16256,
+        "rank": 2
+      },
+      {
+        "level": 27,
+        "spellID": 16256,
+        "rank": 3
+      },
+      {
+        "level": 28,
+        "spellID": 16256,
+        "rank": 4
+      },
+      {
+        "level": 29,
+        "spellID": 16256,
+        "rank": 5
+      },
+      {
+        "level": 30,
+        "spellID": 16268,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 16266,
+        "rank": 1
+      },
+      {
+        "level": 32,
+        "spellID": 16266,
+        "rank": 2
+      },
+      {
+        "level": 33,
+        "spellID": 16266,
+        "rank": 3
+      },
+      {
+        "level": 34,
+        "spellID": 29192,
+        "rank": 1
+      },
+      {
+        "level": 35,
+        "spellID": 29082,
+        "rank": 1
+      },
+      {
+        "level": 36,
+        "spellID": 29082,
+        "rank": 2
+      },
+      {
+        "level": 37,
+        "spellID": 29082,
+        "rank": 3
+      },
+      {
+        "level": 38,
+        "spellID": 29082,
+        "rank": 4
+      },
+      {
+        "level": 39,
+        "spellID": 29082,
+        "rank": 5
+      },
+      {
+        "level": 40,
+        "spellID": 17364,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 29192,
+        "rank": 2
+      },
+      {
+        "level": 42,
+        "spellID": 16035,
+        "rank": 1
+      },
+      {
+        "level": 43,
+        "spellID": 16035,
+        "rank": 2
+      },
+      {
+        "level": 44,
+        "spellID": 16035,
+        "rank": 3
+      },
+      {
+        "level": 45,
+        "spellID": 16035,
+        "rank": 4
+      },
+      {
+        "level": 46,
+        "spellID": 16035,
+        "rank": 5
+      },
+      {
+        "level": 47,
+        "spellID": 16039,
+        "rank": 1
+      },
+      {
+        "level": 48,
+        "spellID": 16039,
+        "rank": 2
+      },
+      {
+        "level": 49,
+        "spellID": 16039,
+        "rank": 3
+      },
+      {
+        "level": 50,
+        "spellID": 16039,
+        "rank": 4
+      },
+      {
+        "level": 51,
+        "spellID": 16039,
+        "rank": 5
+      },
+      {
+        "level": 52,
+        "spellID": 16164,
+        "rank": 1
+      },
+      {
+        "level": 53,
+        "spellID": 16040,
+        "rank": 1
+      },
+      {
+        "level": 54,
+        "spellID": 16040,
+        "rank": 2
+      },
+      {
+        "level": 55,
+        "spellID": 16040,
+        "rank": 3
+      },
+      {
+        "level": 56,
+        "spellID": 16040,
+        "rank": 4
+      },
+      {
+        "level": 57,
+        "spellID": 30160,
+        "rank": 1
+      },
+      {
+        "level": 58,
+        "spellID": 30160,
+        "rank": 2
+      },
+      {
+        "level": 59,
+        "spellID": 30160,
+        "rank": 3
+      }
+    ]
+  },
+  {
+    "class": "shaman",
+    "name": "Elemental (Survival) 40-60",
+    "issues": [
+      {
+        "level": 21,
+        "spellID": 16041,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,3,3"
+      },
+      {
+        "level": 22,
+        "spellID": 16041,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "1,3,3"
+      },
+      {
+        "level": 23,
+        "spellID": 16041,
+        "rank": 3,
+        "issue": "removed",
+        "classicSlot": "1,3,3"
+      },
+      {
+        "level": 24,
+        "spellID": 16041,
+        "rank": 4,
+        "issue": "removed",
+        "classicSlot": "1,3,3"
+      },
+      {
+        "level": 25,
+        "spellID": 16041,
+        "rank": 5,
+        "issue": "removed",
+        "classicSlot": "1,3,3"
+      },
+      {
+        "level": 38,
+        "spellID": 16578,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 39,
+        "spellID": 16578,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 40,
+        "spellID": 16166,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,7,2"
+      },
+      {
+        "level": 53,
+        "spellID": 16180,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "3,3,1"
+      },
+      {
+        "level": 54,
+        "spellID": 16180,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "3,3,1"
+      },
+      {
+        "level": 55,
+        "spellID": 16180,
+        "rank": 3,
+        "issue": "removed",
+        "classicSlot": "3,3,1"
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 16035,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 16035,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 16035,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 16035,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 16035,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 16039,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 16039,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 16039,
+        "rank": 3
+      },
+      {
+        "level": 18,
+        "spellID": 16039,
+        "rank": 4
+      },
+      {
+        "level": 19,
+        "spellID": 16039,
+        "rank": 5
+      },
+      {
+        "level": 20,
+        "spellID": 16164,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 16041,
+        "rank": 1
+      },
+      {
+        "level": 22,
+        "spellID": 16041,
+        "rank": 2
+      },
+      {
+        "level": 23,
+        "spellID": 16041,
+        "rank": 3
+      },
+      {
+        "level": 24,
+        "spellID": 16041,
+        "rank": 4
+      },
+      {
+        "level": 25,
+        "spellID": 16041,
+        "rank": 5
+      },
+      {
+        "level": 26,
+        "spellID": 16040,
+        "rank": 1
+      },
+      {
+        "level": 27,
+        "spellID": 16040,
+        "rank": 2
+      },
+      {
+        "level": 28,
+        "spellID": 16040,
+        "rank": 3
+      },
+      {
+        "level": 29,
+        "spellID": 16040,
+        "rank": 4
+      },
+      {
+        "level": 30,
+        "spellID": 16089,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 28999,
+        "rank": 1
+      },
+      {
+        "level": 32,
+        "spellID": 28999,
+        "rank": 2
+      },
+      {
+        "level": 33,
+        "spellID": 16040,
+        "rank": 5
+      },
+      {
+        "level": 34,
+        "spellID": 16038,
+        "rank": 1
+      },
+      {
+        "level": 35,
+        "spellID": 16578,
+        "rank": 1
+      },
+      {
+        "level": 36,
+        "spellID": 16578,
+        "rank": 2
+      },
+      {
+        "level": 37,
+        "spellID": 16578,
+        "rank": 3
+      },
+      {
+        "level": 38,
+        "spellID": 16578,
+        "rank": 4
+      },
+      {
+        "level": 39,
+        "spellID": 16578,
+        "rank": 5
+      },
+      {
+        "level": 40,
+        "spellID": 16166,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 16038,
+        "rank": 2
+      },
+      {
+        "level": 42,
+        "spellID": 16038,
+        "rank": 3
+      },
+      {
+        "level": 43,
+        "spellID": 16182,
+        "rank": 1
+      },
+      {
+        "level": 44,
+        "spellID": 16182,
+        "rank": 2
+      },
+      {
+        "level": 45,
+        "spellID": 16182,
+        "rank": 3
+      },
+      {
+        "level": 46,
+        "spellID": 16182,
+        "rank": 4
+      },
+      {
+        "level": 47,
+        "spellID": 16182,
+        "rank": 5
+      },
+      {
+        "level": 48,
+        "spellID": 16173,
+        "rank": 1
+      },
+      {
+        "level": 49,
+        "spellID": 16173,
+        "rank": 2
+      },
+      {
+        "level": 50,
+        "spellID": 16173,
+        "rank": 3
+      },
+      {
+        "level": 51,
+        "spellID": 16173,
+        "rank": 4
+      },
+      {
+        "level": 52,
+        "spellID": 16173,
+        "rank": 5
+      },
+      {
+        "level": 53,
+        "spellID": 16180,
+        "rank": 1
+      },
+      {
+        "level": 54,
+        "spellID": 16180,
+        "rank": 2
+      },
+      {
+        "level": 55,
+        "spellID": 16180,
+        "rank": 3
+      },
+      {
+        "level": 56,
+        "spellID": 17485,
+        "rank": 1
+      },
+      {
+        "level": 57,
+        "spellID": 17485,
+        "rank": 2
+      },
+      {
+        "level": 58,
+        "spellID": 17485,
+        "rank": 3
+      },
+      {
+        "level": 59,
+        "spellID": 17485,
+        "rank": 4
+      }
+    ]
+  },
+  {
+    "class": "shaman",
+    "name": "Enhancement 10-40",
+    "issues": [
+      {
+        "level": 20,
+        "spellID": 16269,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,3,3"
+      },
+      {
+        "level": 34,
+        "spellID": 29192,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,5,1"
+      },
+      {
+        "level": 35,
+        "spellID": 29082,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,6,3"
+      },
+      {
+        "level": 36,
+        "spellID": 29082,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "2,6,3"
+      },
+      {
+        "level": 37,
+        "spellID": 29082,
+        "rank": 3,
+        "issue": "removed",
+        "classicSlot": "2,6,3"
+      },
+      {
+        "level": 38,
+        "spellID": 29082,
+        "rank": 4,
+        "issue": "removed",
+        "classicSlot": "2,6,3"
+      },
+      {
+        "level": 39,
+        "spellID": 29082,
+        "rank": 5,
+        "issue": "removed",
+        "classicSlot": "2,6,3"
+      },
+      {
+        "level": 41,
+        "spellID": 29192,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "2,5,1"
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 17485,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 17485,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 17485,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 17485,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 17485,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 16255,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 16255,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 16255,
+        "rank": 3
+      },
+      {
+        "level": 18,
+        "spellID": 16262,
+        "rank": 1
+      },
+      {
+        "level": 19,
+        "spellID": 16262,
+        "rank": 2
+      },
+      {
+        "level": 20,
+        "spellID": 16269,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 16255,
+        "rank": 4
+      },
+      {
+        "level": 22,
+        "spellID": 16255,
+        "rank": 5
+      },
+      {
+        "level": 23,
+        "spellID": 16254,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 16254,
+        "rank": 2
+      },
+      {
+        "level": 25,
+        "spellID": 16256,
+        "rank": 1
+      },
+      {
+        "level": 26,
+        "spellID": 16256,
+        "rank": 2
+      },
+      {
+        "level": 27,
+        "spellID": 16256,
+        "rank": 3
+      },
+      {
+        "level": 28,
+        "spellID": 16256,
+        "rank": 4
+      },
+      {
+        "level": 29,
+        "spellID": 16256,
+        "rank": 5
+      },
+      {
+        "level": 30,
+        "spellID": 16268,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 16266,
+        "rank": 1
+      },
+      {
+        "level": 32,
+        "spellID": 16266,
+        "rank": 2
+      },
+      {
+        "level": 33,
+        "spellID": 16266,
+        "rank": 3
+      },
+      {
+        "level": 34,
+        "spellID": 29192,
+        "rank": 1
+      },
+      {
+        "level": 35,
+        "spellID": 29082,
+        "rank": 1
+      },
+      {
+        "level": 36,
+        "spellID": 29082,
+        "rank": 2
+      },
+      {
+        "level": 37,
+        "spellID": 29082,
+        "rank": 3
+      },
+      {
+        "level": 38,
+        "spellID": 29082,
+        "rank": 4
+      },
+      {
+        "level": 39,
+        "spellID": 29082,
+        "rank": 5
+      },
+      {
+        "level": 40,
+        "spellID": 17364,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 29192,
+        "rank": 2
+      },
+      {
+        "level": 42,
+        "spellID": 16035,
+        "rank": 1
+      },
+      {
+        "level": 43,
+        "spellID": 16035,
+        "rank": 2
+      },
+      {
+        "level": 44,
+        "spellID": 16035,
+        "rank": 3
+      },
+      {
+        "level": 45,
+        "spellID": 16035,
+        "rank": 4
+      },
+      {
+        "level": 46,
+        "spellID": 16035,
+        "rank": 5
+      },
+      {
+        "level": 47,
+        "spellID": 16039,
+        "rank": 1
+      },
+      {
+        "level": 48,
+        "spellID": 16039,
+        "rank": 2
+      },
+      {
+        "level": 49,
+        "spellID": 16039,
+        "rank": 3
+      },
+      {
+        "level": 50,
+        "spellID": 16039,
+        "rank": 4
+      },
+      {
+        "level": 51,
+        "spellID": 16039,
+        "rank": 5
+      },
+      {
+        "level": 52,
+        "spellID": 16164,
+        "rank": 1
+      },
+      {
+        "level": 53,
+        "spellID": 16040,
+        "rank": 1
+      },
+      {
+        "level": 54,
+        "spellID": 16040,
+        "rank": 2
+      },
+      {
+        "level": 55,
+        "spellID": 16040,
+        "rank": 3
+      },
+      {
+        "level": 56,
+        "spellID": 16040,
+        "rank": 4
+      },
+      {
+        "level": 57,
+        "spellID": 30160,
+        "rank": 1
+      },
+      {
+        "level": 58,
+        "spellID": 30160,
+        "rank": 2
+      },
+      {
+        "level": 59,
+        "spellID": 30160,
+        "rank": 3
+      }
+    ]
+  },
+  {
+    "class": "shaman",
+    "name": "Elemental 40-60",
+    "issues": [
+      {
+        "level": 21,
+        "spellID": 16041,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,3,3"
+      },
+      {
+        "level": 22,
+        "spellID": 16041,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "1,3,3"
+      },
+      {
+        "level": 23,
+        "spellID": 16041,
+        "rank": 3,
+        "issue": "removed",
+        "classicSlot": "1,3,3"
+      },
+      {
+        "level": 24,
+        "spellID": 16041,
+        "rank": 4,
+        "issue": "removed",
+        "classicSlot": "1,3,3"
+      },
+      {
+        "level": 25,
+        "spellID": 16041,
+        "rank": 5,
+        "issue": "removed",
+        "classicSlot": "1,3,3"
+      },
+      {
+        "level": 38,
+        "spellID": 16578,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 39,
+        "spellID": 16578,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 40,
+        "spellID": 16166,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,7,2"
+      },
+      {
+        "level": 53,
+        "spellID": 16180,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "3,3,1"
+      },
+      {
+        "level": 54,
+        "spellID": 16180,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "3,3,1"
+      },
+      {
+        "level": 55,
+        "spellID": 16180,
+        "rank": 3,
+        "issue": "removed",
+        "classicSlot": "3,3,1"
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 16035,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 16035,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 16035,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 16035,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 16035,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 16039,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 16039,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 16039,
+        "rank": 3
+      },
+      {
+        "level": 18,
+        "spellID": 16039,
+        "rank": 4
+      },
+      {
+        "level": 19,
+        "spellID": 16039,
+        "rank": 5
+      },
+      {
+        "level": 20,
+        "spellID": 16164,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 16041,
+        "rank": 1
+      },
+      {
+        "level": 22,
+        "spellID": 16041,
+        "rank": 2
+      },
+      {
+        "level": 23,
+        "spellID": 16041,
+        "rank": 3
+      },
+      {
+        "level": 24,
+        "spellID": 16041,
+        "rank": 4
+      },
+      {
+        "level": 25,
+        "spellID": 16041,
+        "rank": 5
+      },
+      {
+        "level": 26,
+        "spellID": 16040,
+        "rank": 1
+      },
+      {
+        "level": 27,
+        "spellID": 16040,
+        "rank": 2
+      },
+      {
+        "level": 28,
+        "spellID": 16040,
+        "rank": 3
+      },
+      {
+        "level": 29,
+        "spellID": 16040,
+        "rank": 4
+      },
+      {
+        "level": 30,
+        "spellID": 16089,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 28999,
+        "rank": 1
+      },
+      {
+        "level": 32,
+        "spellID": 28999,
+        "rank": 2
+      },
+      {
+        "level": 33,
+        "spellID": 16040,
+        "rank": 5
+      },
+      {
+        "level": 34,
+        "spellID": 16038,
+        "rank": 1
+      },
+      {
+        "level": 35,
+        "spellID": 16578,
+        "rank": 1
+      },
+      {
+        "level": 36,
+        "spellID": 16578,
+        "rank": 2
+      },
+      {
+        "level": 37,
+        "spellID": 16578,
+        "rank": 3
+      },
+      {
+        "level": 38,
+        "spellID": 16578,
+        "rank": 4
+      },
+      {
+        "level": 39,
+        "spellID": 16578,
+        "rank": 5
+      },
+      {
+        "level": 40,
+        "spellID": 16166,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 16038,
+        "rank": 2
+      },
+      {
+        "level": 42,
+        "spellID": 16038,
+        "rank": 3
+      },
+      {
+        "level": 43,
+        "spellID": 16182,
+        "rank": 1
+      },
+      {
+        "level": 44,
+        "spellID": 16182,
+        "rank": 2
+      },
+      {
+        "level": 45,
+        "spellID": 16182,
+        "rank": 3
+      },
+      {
+        "level": 46,
+        "spellID": 16182,
+        "rank": 4
+      },
+      {
+        "level": 47,
+        "spellID": 16182,
+        "rank": 5
+      },
+      {
+        "level": 48,
+        "spellID": 16173,
+        "rank": 1
+      },
+      {
+        "level": 49,
+        "spellID": 16173,
+        "rank": 2
+      },
+      {
+        "level": 50,
+        "spellID": 16173,
+        "rank": 3
+      },
+      {
+        "level": 51,
+        "spellID": 16173,
+        "rank": 4
+      },
+      {
+        "level": 52,
+        "spellID": 16173,
+        "rank": 5
+      },
+      {
+        "level": 53,
+        "spellID": 16180,
+        "rank": 1
+      },
+      {
+        "level": 54,
+        "spellID": 16180,
+        "rank": 2
+      },
+      {
+        "level": 55,
+        "spellID": 16180,
+        "rank": 3
+      },
+      {
+        "level": 56,
+        "spellID": 17485,
+        "rank": 1
+      },
+      {
+        "level": 57,
+        "spellID": 17485,
+        "rank": 2
+      },
+      {
+        "level": 58,
+        "spellID": 17485,
+        "rank": 3
+      },
+      {
+        "level": 59,
+        "spellID": 17485,
+        "rank": 4
+      }
+    ]
+  },
+  {
+    "class": "warlock",
+    "name": "Affliction (Survival) 10-60",
+    "issues": [
+      {
+        "level": 24,
+        "spellID": 17783,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 25,
+        "spellID": 17783,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 26,
+        "spellID": 18218,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,4,1"
+      },
+      {
+        "level": 27,
+        "spellID": 18218,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "1,4,1"
+      },
+      {
+        "level": 29,
+        "spellID": 17804,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 31,
+        "spellID": 17804,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 40,
+        "spellID": 18220,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,7,2"
+      },
+      {
+        "level": 41,
+        "spellID": 18692,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,1,1"
+      },
+      {
+        "level": 42,
+        "spellID": 18692,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "2,1,1"
+      },
+      {
+        "level": 52,
+        "spellID": 17778,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 53,
+        "spellID": 17778,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 60,
+        "spellID": 18130,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "3,3,3"
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 17810,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 17810,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 17810,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 17810,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 17810,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 18182,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 18182,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 18174,
+        "rank": 1
+      },
+      {
+        "level": 18,
+        "spellID": 18174,
+        "rank": 2
+      },
+      {
+        "level": 19,
+        "spellID": 17804,
+        "rank": 1
+      },
+      {
+        "level": 20,
+        "spellID": 17804,
+        "rank": 2
+      },
+      {
+        "level": 21,
+        "spellID": 17783,
+        "rank": 1
+      },
+      {
+        "level": 22,
+        "spellID": 17783,
+        "rank": 2
+      },
+      {
+        "level": 23,
+        "spellID": 17783,
+        "rank": 3
+      },
+      {
+        "level": 24,
+        "spellID": 17783,
+        "rank": 4
+      },
+      {
+        "level": 25,
+        "spellID": 17783,
+        "rank": 5
+      },
+      {
+        "level": 26,
+        "spellID": 18218,
+        "rank": 1
+      },
+      {
+        "level": 27,
+        "spellID": 18218,
+        "rank": 2
+      },
+      {
+        "level": 28,
+        "spellID": 17804,
+        "rank": 3
+      },
+      {
+        "level": 29,
+        "spellID": 17804,
+        "rank": 4
+      },
+      {
+        "level": 30,
+        "spellID": 18265,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 17804,
+        "rank": 5
+      },
+      {
+        "level": 32,
+        "spellID": 18094,
+        "rank": 1
+      },
+      {
+        "level": 33,
+        "spellID": 18094,
+        "rank": 2
+      },
+      {
+        "level": 34,
+        "spellID": 18827,
+        "rank": 1
+      },
+      {
+        "level": 35,
+        "spellID": 18271,
+        "rank": 1
+      },
+      {
+        "level": 36,
+        "spellID": 18271,
+        "rank": 2
+      },
+      {
+        "level": 37,
+        "spellID": 18271,
+        "rank": 3
+      },
+      {
+        "level": 38,
+        "spellID": 18271,
+        "rank": 4
+      },
+      {
+        "level": 39,
+        "spellID": 18271,
+        "rank": 5
+      },
+      {
+        "level": 40,
+        "spellID": 18220,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 18692,
+        "rank": 1
+      },
+      {
+        "level": 42,
+        "spellID": 18692,
+        "rank": 2
+      },
+      {
+        "level": 43,
+        "spellID": 18697,
+        "rank": 1
+      },
+      {
+        "level": 44,
+        "spellID": 18697,
+        "rank": 2
+      },
+      {
+        "level": 45,
+        "spellID": 18697,
+        "rank": 3
+      },
+      {
+        "level": 46,
+        "spellID": 18705,
+        "rank": 3
+      },
+      {
+        "level": 47,
+        "spellID": 18705,
+        "rank": 3
+      },
+      {
+        "level": 48,
+        "spellID": 18705,
+        "rank": 3
+      },
+      {
+        "level": 49,
+        "spellID": 17778,
+        "rank": 1
+      },
+      {
+        "level": 50,
+        "spellID": 17778,
+        "rank": 2
+      },
+      {
+        "level": 51,
+        "spellID": 17778,
+        "rank": 3
+      },
+      {
+        "level": 52,
+        "spellID": 17778,
+        "rank": 4
+      },
+      {
+        "level": 53,
+        "spellID": 17778,
+        "rank": 5
+      },
+      {
+        "level": 54,
+        "spellID": 17788,
+        "rank": 1
+      },
+      {
+        "level": 55,
+        "spellID": 17788,
+        "rank": 2
+      },
+      {
+        "level": 56,
+        "spellID": 17788,
+        "rank": 3
+      },
+      {
+        "level": 57,
+        "spellID": 17788,
+        "rank": 4
+      },
+      {
+        "level": 58,
+        "spellID": 17788,
+        "rank": 5
+      },
+      {
+        "level": 59,
+        "spellID": 17877,
+        "rank": 1
+      },
+      {
+        "level": 60,
+        "spellID": 18130,
+        "rank": 1
+      }
+    ]
+  },
+  {
+    "class": "warlock",
+    "name": "Affliction 10-60",
+    "issues": [
+      {
+        "level": 24,
+        "spellID": 17783,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 25,
+        "spellID": 17783,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 26,
+        "spellID": 18218,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,4,1"
+      },
+      {
+        "level": 27,
+        "spellID": 18218,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "1,4,1"
+      },
+      {
+        "level": 29,
+        "spellID": 17804,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 31,
+        "spellID": 17804,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 40,
+        "spellID": 18220,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,7,2"
+      },
+      {
+        "level": 41,
+        "spellID": 18692,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,1,1"
+      },
+      {
+        "level": 42,
+        "spellID": 18692,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "2,1,1"
+      },
+      {
+        "level": 52,
+        "spellID": 17778,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 53,
+        "spellID": 17778,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 60,
+        "spellID": 18130,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "3,3,3"
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 17810,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 17810,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 17810,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 17810,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 17810,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 18182,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 18182,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 18174,
+        "rank": 1
+      },
+      {
+        "level": 18,
+        "spellID": 18174,
+        "rank": 2
+      },
+      {
+        "level": 19,
+        "spellID": 17804,
+        "rank": 1
+      },
+      {
+        "level": 20,
+        "spellID": 17804,
+        "rank": 2
+      },
+      {
+        "level": 21,
+        "spellID": 17783,
+        "rank": 1
+      },
+      {
+        "level": 22,
+        "spellID": 17783,
+        "rank": 2
+      },
+      {
+        "level": 23,
+        "spellID": 17783,
+        "rank": 3
+      },
+      {
+        "level": 24,
+        "spellID": 17783,
+        "rank": 4
+      },
+      {
+        "level": 25,
+        "spellID": 17783,
+        "rank": 5
+      },
+      {
+        "level": 26,
+        "spellID": 18218,
+        "rank": 1
+      },
+      {
+        "level": 27,
+        "spellID": 18218,
+        "rank": 2
+      },
+      {
+        "level": 28,
+        "spellID": 17804,
+        "rank": 3
+      },
+      {
+        "level": 29,
+        "spellID": 17804,
+        "rank": 4
+      },
+      {
+        "level": 30,
+        "spellID": 18265,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 17804,
+        "rank": 5
+      },
+      {
+        "level": 32,
+        "spellID": 18094,
+        "rank": 1
+      },
+      {
+        "level": 33,
+        "spellID": 18094,
+        "rank": 2
+      },
+      {
+        "level": 34,
+        "spellID": 18827,
+        "rank": 1
+      },
+      {
+        "level": 35,
+        "spellID": 18271,
+        "rank": 1
+      },
+      {
+        "level": 36,
+        "spellID": 18271,
+        "rank": 2
+      },
+      {
+        "level": 37,
+        "spellID": 18271,
+        "rank": 3
+      },
+      {
+        "level": 38,
+        "spellID": 18271,
+        "rank": 4
+      },
+      {
+        "level": 39,
+        "spellID": 18271,
+        "rank": 5
+      },
+      {
+        "level": 40,
+        "spellID": 18220,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 18692,
+        "rank": 1
+      },
+      {
+        "level": 42,
+        "spellID": 18692,
+        "rank": 2
+      },
+      {
+        "level": 43,
+        "spellID": 18697,
+        "rank": 1
+      },
+      {
+        "level": 44,
+        "spellID": 18697,
+        "rank": 2
+      },
+      {
+        "level": 45,
+        "spellID": 18697,
+        "rank": 3
+      },
+      {
+        "level": 46,
+        "spellID": 18705,
+        "rank": 3
+      },
+      {
+        "level": 47,
+        "spellID": 18705,
+        "rank": 3
+      },
+      {
+        "level": 48,
+        "spellID": 18705,
+        "rank": 3
+      },
+      {
+        "level": 49,
+        "spellID": 17778,
+        "rank": 1
+      },
+      {
+        "level": 50,
+        "spellID": 17778,
+        "rank": 2
+      },
+      {
+        "level": 51,
+        "spellID": 17778,
+        "rank": 3
+      },
+      {
+        "level": 52,
+        "spellID": 17778,
+        "rank": 4
+      },
+      {
+        "level": 53,
+        "spellID": 17778,
+        "rank": 5
+      },
+      {
+        "level": 54,
+        "spellID": 17788,
+        "rank": 1
+      },
+      {
+        "level": 55,
+        "spellID": 17788,
+        "rank": 2
+      },
+      {
+        "level": 56,
+        "spellID": 17788,
+        "rank": 3
+      },
+      {
+        "level": 57,
+        "spellID": 17788,
+        "rank": 4
+      },
+      {
+        "level": 58,
+        "spellID": 17788,
+        "rank": 5
+      },
+      {
+        "level": 59,
+        "spellID": 17877,
+        "rank": 1
+      },
+      {
+        "level": 60,
+        "spellID": 18130,
+        "rank": 1
+      }
+    ]
+  },
+  {
+    "class": "warrior",
+    "name": "Arms (Survival) 10-30",
+    "issues": [],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 12320,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 12320,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 12320,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 12320,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 12320,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 16462,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 16462,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 16462,
+        "rank": 3
+      },
+      {
+        "level": 18,
+        "spellID": 16462,
+        "rank": 4
+      },
+      {
+        "level": 19,
+        "spellID": 16462,
+        "rank": 5
+      },
+      {
+        "level": 20,
+        "spellID": 12295,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 12295,
+        "rank": 2
+      },
+      {
+        "level": 22,
+        "spellID": 12295,
+        "rank": 3
+      },
+      {
+        "level": 23,
+        "spellID": 12295,
+        "rank": 4
+      },
+      {
+        "level": 24,
+        "spellID": 12295,
+        "rank": 5
+      },
+      {
+        "level": 25,
+        "spellID": 12296,
+        "rank": 1
+      },
+      {
+        "level": 26,
+        "spellID": 12290,
+        "rank": 1
+      },
+      {
+        "level": 27,
+        "spellID": 12290,
+        "rank": 2
+      },
+      {
+        "level": 28,
+        "spellID": 12285,
+        "rank": 1
+      },
+      {
+        "level": 29,
+        "spellID": 12285,
+        "rank": 2
+      },
+      {
+        "level": 30,
+        "spellID": 12163,
+        "rank": 1
+      }
+    ]
+  },
+  {
+    "class": "warrior",
+    "name": "Arms (Survival) 30-55",
+    "issues": [
+      {
+        "level": 28,
+        "spellID": 12163,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 29,
+        "spellID": 12163,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 32,
+        "spellID": 12700,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,5,1"
+      },
+      {
+        "level": 32,
+        "spellID": 12284,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,5,3"
+      },
+      {
+        "level": 32,
+        "spellID": 12281,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,5,4"
+      },
+      {
+        "level": 33,
+        "spellID": 12700,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "1,5,1"
+      },
+      {
+        "level": 33,
+        "spellID": 12284,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "1,5,3"
+      },
+      {
+        "level": 33,
+        "spellID": 12281,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,5,4"
+      },
+      {
+        "level": 34,
+        "spellID": 12700,
+        "rank": 3,
+        "issue": "removed",
+        "classicSlot": "1,5,1"
+      },
+      {
+        "level": 34,
+        "spellID": 12284,
+        "rank": 3,
+        "issue": "removed",
+        "classicSlot": "1,5,3"
+      },
+      {
+        "level": 34,
+        "spellID": 12281,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,5,4"
+      },
+      {
+        "level": 35,
+        "spellID": 12700,
+        "rank": 4,
+        "issue": "removed",
+        "classicSlot": "1,5,1"
+      },
+      {
+        "level": 35,
+        "spellID": 12284,
+        "rank": 4,
+        "issue": "removed",
+        "classicSlot": "1,5,3"
+      },
+      {
+        "level": 35,
+        "spellID": 12281,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,5,4"
+      },
+      {
+        "level": 36,
+        "spellID": 12700,
+        "rank": 5,
+        "issue": "removed",
+        "classicSlot": "1,5,1"
+      },
+      {
+        "level": 36,
+        "spellID": 12284,
+        "rank": 5,
+        "issue": "removed",
+        "classicSlot": "1,5,3"
+      },
+      {
+        "level": 36,
+        "spellID": 12281,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,5,4"
+      }
+    ],
+    "hasOptionalSteps": true,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 12286,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 12286,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 12286,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 16462,
+        "rank": 1
+      },
+      {
+        "level": 14,
+        "spellID": 16462,
+        "rank": 2
+      },
+      {
+        "level": 15,
+        "spellID": 12295,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 12295,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 12295,
+        "rank": 3
+      },
+      {
+        "level": 18,
+        "spellID": 12295,
+        "rank": 4
+      },
+      {
+        "level": 19,
+        "spellID": 12295,
+        "rank": 5
+      },
+      {
+        "level": 20,
+        "spellID": 12296,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 12290,
+        "rank": 1
+      },
+      {
+        "level": 22,
+        "spellID": 12290,
+        "rank": 2
+      },
+      {
+        "level": 23,
+        "spellID": 12834,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 12834,
+        "rank": 2
+      },
+      {
+        "level": 25,
+        "spellID": 12163,
+        "rank": 1
+      },
+      {
+        "level": 26,
+        "spellID": 12163,
+        "rank": 2
+      },
+      {
+        "level": 27,
+        "spellID": 12163,
+        "rank": 3
+      },
+      {
+        "level": 28,
+        "spellID": 12163,
+        "rank": 4
+      },
+      {
+        "level": 29,
+        "spellID": 12163,
+        "rank": 5
+      },
+      {
+        "level": 30,
+        "spellID": 12292,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 12834,
+        "rank": 3
+      },
+      {
+        "level": 32,
+        "spellID": 12700,
+        "rank": 1
+      },
+      {
+        "level": 32,
+        "spellID": 12284,
+        "rank": 1
+      },
+      {
+        "level": 32,
+        "spellID": 12281,
+        "rank": 1
+      },
+      {
+        "level": 33,
+        "spellID": 12700,
+        "rank": 2
+      },
+      {
+        "level": 33,
+        "spellID": 12284,
+        "rank": 2
+      },
+      {
+        "level": 33,
+        "spellID": 12281,
+        "rank": 1
+      },
+      {
+        "level": 34,
+        "spellID": 12700,
+        "rank": 3
+      },
+      {
+        "level": 34,
+        "spellID": 12284,
+        "rank": 3
+      },
+      {
+        "level": 34,
+        "spellID": 12281,
+        "rank": 1
+      },
+      {
+        "level": 35,
+        "spellID": 12700,
+        "rank": 4
+      },
+      {
+        "level": 35,
+        "spellID": 12284,
+        "rank": 4
+      },
+      {
+        "level": 35,
+        "spellID": 12281,
+        "rank": 1
+      },
+      {
+        "level": 36,
+        "spellID": 12700,
+        "rank": 5
+      },
+      {
+        "level": 36,
+        "spellID": 12284,
+        "rank": 5
+      },
+      {
+        "level": 36,
+        "spellID": 12281,
+        "rank": 1
+      },
+      {
+        "level": 37,
+        "spellID": 16493,
+        "rank": 1
+      },
+      {
+        "level": 38,
+        "spellID": 16493,
+        "rank": 2
+      },
+      {
+        "level": 39,
+        "spellID": 16462,
+        "rank": 3
+      },
+      {
+        "level": 40,
+        "spellID": 12294,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 12320,
+        "rank": 1
+      },
+      {
+        "level": 42,
+        "spellID": 12320,
+        "rank": 2
+      },
+      {
+        "level": 43,
+        "spellID": 12320,
+        "rank": 3
+      },
+      {
+        "level": 44,
+        "spellID": 12320,
+        "rank": 4
+      },
+      {
+        "level": 45,
+        "spellID": 12320,
+        "rank": 5
+      },
+      {
+        "level": 46,
+        "spellID": 16462,
+        "rank": 4
+      },
+      {
+        "level": 47,
+        "spellID": 16462,
+        "rank": 5
+      },
+      {
+        "level": 48,
+        "spellID": 12322,
+        "rank": 1
+      },
+      {
+        "level": 49,
+        "spellID": 12322,
+        "rank": 2
+      },
+      {
+        "level": 50,
+        "spellID": 12322,
+        "rank": 3
+      },
+      {
+        "level": 51,
+        "spellID": 12322,
+        "rank": 4
+      },
+      {
+        "level": 52,
+        "spellID": 12322,
+        "rank": 5
+      },
+      {
+        "level": 53,
+        "spellID": 12323,
+        "rank": 1
+      },
+      {
+        "level": 54,
+        "spellID": 16487,
+        "rank": 1
+      },
+      {
+        "level": 55,
+        "spellID": 16487,
+        "rank": 2
+      }
+    ]
+  },
+  {
+    "class": "warrior",
+    "name": "Fury (Survival) 55-60",
+    "issues": [
+      {
+        "level": 24,
+        "spellID": 12318,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,3,4"
+      },
+      {
+        "level": 55,
+        "spellID": 12318,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "2,3,4"
+      },
+      {
+        "level": 56,
+        "spellID": 12318,
+        "rank": 3,
+        "issue": "removed",
+        "classicSlot": "2,3,4"
+      },
+      {
+        "level": 57,
+        "spellID": 12318,
+        "rank": 4,
+        "issue": "removed",
+        "classicSlot": "2,3,4"
+      },
+      {
+        "level": 58,
+        "spellID": 12318,
+        "rank": 5,
+        "issue": "removed",
+        "classicSlot": "2,3,4"
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 12320,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 12320,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 12320,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 12320,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 12320,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 12322,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 12322,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 12322,
+        "rank": 3
+      },
+      {
+        "level": 18,
+        "spellID": 12322,
+        "rank": 4
+      },
+      {
+        "level": 19,
+        "spellID": 12322,
+        "rank": 5
+      },
+      {
+        "level": 20,
+        "spellID": 12323,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 16487,
+        "rank": 1
+      },
+      {
+        "level": 22,
+        "spellID": 16487,
+        "rank": 2
+      },
+      {
+        "level": 23,
+        "spellID": 16487,
+        "rank": 3
+      },
+      {
+        "level": 24,
+        "spellID": 12318,
+        "rank": 1
+      },
+      {
+        "level": 25,
+        "spellID": 23584,
+        "rank": 1
+      },
+      {
+        "level": 26,
+        "spellID": 23584,
+        "rank": 2
+      },
+      {
+        "level": 27,
+        "spellID": 23584,
+        "rank": 3
+      },
+      {
+        "level": 28,
+        "spellID": 23584,
+        "rank": 4
+      },
+      {
+        "level": 29,
+        "spellID": 23584,
+        "rank": 5
+      },
+      {
+        "level": 30,
+        "spellID": 12328,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 12317,
+        "rank": 1
+      },
+      {
+        "level": 32,
+        "spellID": 12317,
+        "rank": 2
+      },
+      {
+        "level": 33,
+        "spellID": 12317,
+        "rank": 3
+      },
+      {
+        "level": 34,
+        "spellID": 12317,
+        "rank": 4
+      },
+      {
+        "level": 35,
+        "spellID": 12317,
+        "rank": 5
+      },
+      {
+        "level": 36,
+        "spellID": 12319,
+        "rank": 1
+      },
+      {
+        "level": 37,
+        "spellID": 12319,
+        "rank": 2
+      },
+      {
+        "level": 38,
+        "spellID": 12319,
+        "rank": 3
+      },
+      {
+        "level": 39,
+        "spellID": 12319,
+        "rank": 4
+      },
+      {
+        "level": 40,
+        "spellID": 23881,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 12319,
+        "rank": 5
+      },
+      {
+        "level": 42,
+        "spellID": 16462,
+        "rank": 1
+      },
+      {
+        "level": 43,
+        "spellID": 16462,
+        "rank": 2
+      },
+      {
+        "level": 44,
+        "spellID": 16462,
+        "rank": 3
+      },
+      {
+        "level": 45,
+        "spellID": 16462,
+        "rank": 4
+      },
+      {
+        "level": 46,
+        "spellID": 16462,
+        "rank": 5
+      },
+      {
+        "level": 47,
+        "spellID": 12295,
+        "rank": 1
+      },
+      {
+        "level": 48,
+        "spellID": 12295,
+        "rank": 2
+      },
+      {
+        "level": 49,
+        "spellID": 12295,
+        "rank": 3
+      },
+      {
+        "level": 50,
+        "spellID": 12295,
+        "rank": 4
+      },
+      {
+        "level": 51,
+        "spellID": 12295,
+        "rank": 5
+      },
+      {
+        "level": 52,
+        "spellID": 12296,
+        "rank": 1
+      },
+      {
+        "level": 53,
+        "spellID": 20500,
+        "rank": 1
+      },
+      {
+        "level": 54,
+        "spellID": 20500,
+        "rank": 2
+      },
+      {
+        "level": 55,
+        "spellID": 12318,
+        "rank": 2
+      },
+      {
+        "level": 56,
+        "spellID": 12318,
+        "rank": 3
+      },
+      {
+        "level": 57,
+        "spellID": 12318,
+        "rank": 4
+      },
+      {
+        "level": 58,
+        "spellID": 12318,
+        "rank": 5
+      },
+      {
+        "level": 59,
+        "spellID": 20504,
+        "rank": 1
+      },
+      {
+        "level": 60,
+        "spellID": 20504,
+        "rank": 2
+      }
+    ]
+  },
+  {
+    "class": "warrior",
+    "name": "Arms 10-30",
+    "issues": [],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 12320,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 12320,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 12320,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 12320,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 12320,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 12286,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 12286,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 12286,
+        "rank": 3
+      },
+      {
+        "level": 18,
+        "spellID": 16462,
+        "rank": 1
+      },
+      {
+        "level": 19,
+        "spellID": 16462,
+        "rank": 2
+      },
+      {
+        "level": 20,
+        "spellID": 12295,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 12295,
+        "rank": 2
+      },
+      {
+        "level": 22,
+        "spellID": 12295,
+        "rank": 3
+      },
+      {
+        "level": 23,
+        "spellID": 12295,
+        "rank": 4
+      },
+      {
+        "level": 24,
+        "spellID": 12295,
+        "rank": 5
+      },
+      {
+        "level": 25,
+        "spellID": 12296,
+        "rank": 1
+      },
+      {
+        "level": 26,
+        "spellID": 12290,
+        "rank": 1
+      },
+      {
+        "level": 27,
+        "spellID": 12290,
+        "rank": 2
+      },
+      {
+        "level": 28,
+        "spellID": 12834,
+        "rank": 1
+      },
+      {
+        "level": 29,
+        "spellID": 12834,
+        "rank": 2
+      },
+      {
+        "level": 30,
+        "spellID": 12163,
+        "rank": 1
+      }
+    ]
+  },
+  {
+    "class": "warrior",
+    "name": "Arms 30-55",
+    "issues": [
+      {
+        "level": 28,
+        "spellID": 12163,
+        "rank": 4,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 29,
+        "spellID": 12163,
+        "rank": 5,
+        "issue": "reducedRanks",
+        "maxRanks": 3
+      },
+      {
+        "level": 32,
+        "spellID": 12700,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,5,1"
+      },
+      {
+        "level": 32,
+        "spellID": 12284,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,5,3"
+      },
+      {
+        "level": 32,
+        "spellID": 12281,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,5,4"
+      },
+      {
+        "level": 33,
+        "spellID": 12700,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "1,5,1"
+      },
+      {
+        "level": 33,
+        "spellID": 12284,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "1,5,3"
+      },
+      {
+        "level": 33,
+        "spellID": 12281,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,5,4"
+      },
+      {
+        "level": 34,
+        "spellID": 12700,
+        "rank": 3,
+        "issue": "removed",
+        "classicSlot": "1,5,1"
+      },
+      {
+        "level": 34,
+        "spellID": 12284,
+        "rank": 3,
+        "issue": "removed",
+        "classicSlot": "1,5,3"
+      },
+      {
+        "level": 34,
+        "spellID": 12281,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,5,4"
+      },
+      {
+        "level": 35,
+        "spellID": 12700,
+        "rank": 4,
+        "issue": "removed",
+        "classicSlot": "1,5,1"
+      },
+      {
+        "level": 35,
+        "spellID": 12284,
+        "rank": 4,
+        "issue": "removed",
+        "classicSlot": "1,5,3"
+      },
+      {
+        "level": 35,
+        "spellID": 12281,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,5,4"
+      },
+      {
+        "level": 36,
+        "spellID": 12700,
+        "rank": 5,
+        "issue": "removed",
+        "classicSlot": "1,5,1"
+      },
+      {
+        "level": 36,
+        "spellID": 12284,
+        "rank": 5,
+        "issue": "removed",
+        "classicSlot": "1,5,3"
+      },
+      {
+        "level": 36,
+        "spellID": 12281,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "1,5,4"
+      }
+    ],
+    "hasOptionalSteps": true,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 12286,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 12286,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 12286,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 16462,
+        "rank": 1
+      },
+      {
+        "level": 14,
+        "spellID": 16462,
+        "rank": 2
+      },
+      {
+        "level": 15,
+        "spellID": 12295,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 12295,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 12295,
+        "rank": 3
+      },
+      {
+        "level": 18,
+        "spellID": 12295,
+        "rank": 4
+      },
+      {
+        "level": 19,
+        "spellID": 12295,
+        "rank": 5
+      },
+      {
+        "level": 20,
+        "spellID": 12296,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 12290,
+        "rank": 1
+      },
+      {
+        "level": 22,
+        "spellID": 12290,
+        "rank": 2
+      },
+      {
+        "level": 23,
+        "spellID": 12834,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 12834,
+        "rank": 2
+      },
+      {
+        "level": 25,
+        "spellID": 12163,
+        "rank": 1
+      },
+      {
+        "level": 26,
+        "spellID": 12163,
+        "rank": 2
+      },
+      {
+        "level": 27,
+        "spellID": 12163,
+        "rank": 3
+      },
+      {
+        "level": 28,
+        "spellID": 12163,
+        "rank": 4
+      },
+      {
+        "level": 29,
+        "spellID": 12163,
+        "rank": 5
+      },
+      {
+        "level": 30,
+        "spellID": 12292,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 12834,
+        "rank": 3
+      },
+      {
+        "level": 32,
+        "spellID": 12700,
+        "rank": 1
+      },
+      {
+        "level": 32,
+        "spellID": 12284,
+        "rank": 1
+      },
+      {
+        "level": 32,
+        "spellID": 12281,
+        "rank": 1
+      },
+      {
+        "level": 33,
+        "spellID": 12700,
+        "rank": 2
+      },
+      {
+        "level": 33,
+        "spellID": 12284,
+        "rank": 2
+      },
+      {
+        "level": 33,
+        "spellID": 12281,
+        "rank": 1
+      },
+      {
+        "level": 34,
+        "spellID": 12700,
+        "rank": 3
+      },
+      {
+        "level": 34,
+        "spellID": 12284,
+        "rank": 3
+      },
+      {
+        "level": 34,
+        "spellID": 12281,
+        "rank": 1
+      },
+      {
+        "level": 35,
+        "spellID": 12700,
+        "rank": 4
+      },
+      {
+        "level": 35,
+        "spellID": 12284,
+        "rank": 4
+      },
+      {
+        "level": 35,
+        "spellID": 12281,
+        "rank": 1
+      },
+      {
+        "level": 36,
+        "spellID": 12700,
+        "rank": 5
+      },
+      {
+        "level": 36,
+        "spellID": 12284,
+        "rank": 5
+      },
+      {
+        "level": 36,
+        "spellID": 12281,
+        "rank": 1
+      },
+      {
+        "level": 37,
+        "spellID": 16493,
+        "rank": 1
+      },
+      {
+        "level": 38,
+        "spellID": 16493,
+        "rank": 2
+      },
+      {
+        "level": 39,
+        "spellID": 16462,
+        "rank": 3
+      },
+      {
+        "level": 40,
+        "spellID": 12294,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 12320,
+        "rank": 1
+      },
+      {
+        "level": 42,
+        "spellID": 12320,
+        "rank": 2
+      },
+      {
+        "level": 43,
+        "spellID": 12320,
+        "rank": 3
+      },
+      {
+        "level": 44,
+        "spellID": 12320,
+        "rank": 4
+      },
+      {
+        "level": 45,
+        "spellID": 12320,
+        "rank": 5
+      },
+      {
+        "level": 46,
+        "spellID": 16462,
+        "rank": 4
+      },
+      {
+        "level": 47,
+        "spellID": 16462,
+        "rank": 5
+      },
+      {
+        "level": 48,
+        "spellID": 12322,
+        "rank": 1
+      },
+      {
+        "level": 49,
+        "spellID": 12322,
+        "rank": 2
+      },
+      {
+        "level": 50,
+        "spellID": 12322,
+        "rank": 3
+      },
+      {
+        "level": 51,
+        "spellID": 12322,
+        "rank": 4
+      },
+      {
+        "level": 52,
+        "spellID": 12322,
+        "rank": 5
+      },
+      {
+        "level": 53,
+        "spellID": 16487,
+        "rank": 1
+      },
+      {
+        "level": 54,
+        "spellID": 16487,
+        "rank": 2
+      },
+      {
+        "level": 55,
+        "spellID": 16487,
+        "rank": 3
+      }
+    ]
+  },
+  {
+    "class": "warrior",
+    "name": "Fury 55-60",
+    "issues": [
+      {
+        "level": 23,
+        "spellID": 12318,
+        "rank": 1,
+        "issue": "removed",
+        "classicSlot": "2,3,4"
+      },
+      {
+        "level": 24,
+        "spellID": 12318,
+        "rank": 2,
+        "issue": "removed",
+        "classicSlot": "2,3,4"
+      }
+    ],
+    "hasOptionalSteps": false,
+    "steps": [
+      {
+        "level": 10,
+        "spellID": 12320,
+        "rank": 1
+      },
+      {
+        "level": 11,
+        "spellID": 12320,
+        "rank": 2
+      },
+      {
+        "level": 12,
+        "spellID": 12320,
+        "rank": 3
+      },
+      {
+        "level": 13,
+        "spellID": 12320,
+        "rank": 4
+      },
+      {
+        "level": 14,
+        "spellID": 12320,
+        "rank": 5
+      },
+      {
+        "level": 15,
+        "spellID": 12322,
+        "rank": 1
+      },
+      {
+        "level": 16,
+        "spellID": 12322,
+        "rank": 2
+      },
+      {
+        "level": 17,
+        "spellID": 12322,
+        "rank": 3
+      },
+      {
+        "level": 18,
+        "spellID": 12322,
+        "rank": 4
+      },
+      {
+        "level": 19,
+        "spellID": 12322,
+        "rank": 5
+      },
+      {
+        "level": 20,
+        "spellID": 16487,
+        "rank": 1
+      },
+      {
+        "level": 21,
+        "spellID": 16487,
+        "rank": 2
+      },
+      {
+        "level": 22,
+        "spellID": 16487,
+        "rank": 3
+      },
+      {
+        "level": 23,
+        "spellID": 12318,
+        "rank": 1
+      },
+      {
+        "level": 24,
+        "spellID": 12318,
+        "rank": 2
+      },
+      {
+        "level": 25,
+        "spellID": 23584,
+        "rank": 1
+      },
+      {
+        "level": 26,
+        "spellID": 23584,
+        "rank": 2
+      },
+      {
+        "level": 27,
+        "spellID": 23584,
+        "rank": 3
+      },
+      {
+        "level": 28,
+        "spellID": 23584,
+        "rank": 4
+      },
+      {
+        "level": 29,
+        "spellID": 23584,
+        "rank": 5
+      },
+      {
+        "level": 30,
+        "spellID": 12328,
+        "rank": 1
+      },
+      {
+        "level": 31,
+        "spellID": 12317,
+        "rank": 1
+      },
+      {
+        "level": 32,
+        "spellID": 12317,
+        "rank": 2
+      },
+      {
+        "level": 33,
+        "spellID": 12317,
+        "rank": 3
+      },
+      {
+        "level": 34,
+        "spellID": 12317,
+        "rank": 4
+      },
+      {
+        "level": 35,
+        "spellID": 12317,
+        "rank": 5
+      },
+      {
+        "level": 36,
+        "spellID": 12319,
+        "rank": 1
+      },
+      {
+        "level": 37,
+        "spellID": 12319,
+        "rank": 2
+      },
+      {
+        "level": 38,
+        "spellID": 12319,
+        "rank": 3
+      },
+      {
+        "level": 39,
+        "spellID": 12319,
+        "rank": 4
+      },
+      {
+        "level": 40,
+        "spellID": 23881,
+        "rank": 1
+      },
+      {
+        "level": 41,
+        "spellID": 12319,
+        "rank": 5
+      },
+      {
+        "level": 42,
+        "spellID": 12286,
+        "rank": 1
+      },
+      {
+        "level": 43,
+        "spellID": 12286,
+        "rank": 2
+      },
+      {
+        "level": 44,
+        "spellID": 12286,
+        "rank": 3
+      },
+      {
+        "level": 45,
+        "spellID": 16462,
+        "rank": 1
+      },
+      {
+        "level": 46,
+        "spellID": 16462,
+        "rank": 2
+      },
+      {
+        "level": 47,
+        "spellID": 12295,
+        "rank": 1
+      },
+      {
+        "level": 48,
+        "spellID": 12295,
+        "rank": 2
+      },
+      {
+        "level": 49,
+        "spellID": 12295,
+        "rank": 3
+      },
+      {
+        "level": 50,
+        "spellID": 12295,
+        "rank": 4
+      },
+      {
+        "level": 51,
+        "spellID": 12295,
+        "rank": 5
+      },
+      {
+        "level": 52,
+        "spellID": 12296,
+        "rank": 1
+      },
+      {
+        "level": 53,
+        "spellID": 12834,
+        "rank": 1
+      },
+      {
+        "level": 54,
+        "spellID": 12834,
+        "rank": 2
+      },
+      {
+        "level": 55,
+        "spellID": 12834,
+        "rank": 3
+      },
+      {
+        "level": 56,
+        "spellID": 16462,
+        "rank": 3
+      },
+      {
+        "level": 57,
+        "spellID": 16493,
+        "rank": 1
+      },
+      {
+        "level": 58,
+        "spellID": 16493,
+        "rank": 2
+      },
+      {
+        "level": 59,
+        "spellID": 20500,
+        "rank": 1
+      },
+      {
+        "level": 60,
+        "spellID": 20500,
+        "rank": 2
+      }
+    ]
+  }
+]

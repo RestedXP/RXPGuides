@@ -43,7 +43,7 @@ DB/mop.xml [AllowLoadGameType mists]
 DB/cata.xml [AllowLoadGameType cata]
 DB/wotlk.xml [AllowLoadGameType wrath]
 DB/tbc.xml [AllowLoadGameType tbc]
-DB/classic.xml [AllowLoadGameType vanilla,camelot]
+DB/classic.xml [AllowLoadGameType vanilla]
 DB/forever.xml [AllowLoadGameType camelot]
 
 HSBatching.lua
@@ -71,10 +71,13 @@ Guides/GuideList-tbc.xml [AllowLoadGameType tbc]
 lang/Guides-zhCN/GuideList-tbc.xml [AllowLoadGameType tbc]
 lang/Guides-zhCN/GuideList-classic.xml [AllowLoadGameType vanilla,camelot]
 
-Talents.lua [AllowLoadGameType cata,vanilla,camelot,tbc]
+Talents.lua [AllowLoadGameType cata,vanilla,tbc]
 Guides/Talents/cata.xml [AllowLoadGameType cata]
 Guides/Talents/tbc.xml [AllowLoadGameType tbc]
-Guides/Talents/classic.xml [AllowLoadGameType vanilla,camelot]
+Guides/Talents/classic.xml [AllowLoadGameType vanilla]
+
+TalentsForever.lua [AllowLoadGameType camelot]
+Guides/Talents/classic.xml [AllowLoadGameType camelot]
 
 ItemUpgrades.lua [AllowLoadGameType tbc,vanilla,camelot,cata]
 
