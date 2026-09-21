@@ -77,7 +77,7 @@ step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Elatrell Featherlight|r
     .goto 2521,43.44,24.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
-    *|cRXP_WARN_Don't use |T132845:0|t[Walk on Air] as we need it soon|r.
+    *|cRXP_WARN_Don't use |r|T132845:0|t[Walk on Air] |cRXP_WARN_as we need it soon|r.
     .turnin 92462 >>Turn in Infestation Investigation
     .accept 92463 >>Accept The Cirrusfly Queen
     .target Elatrell Featherlight
@@ -176,6 +176,12 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xyton Silverwind::251373|r.
     .train 1126 >>Train |T136078:0|t[Mark of the Wild]
     .target Xyton Silverwind::251373
+step << Mage
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Dorii Brightwhisper|r
+    .goto 2521,41.55,23.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorii Brightwhisper|r.
+    .turnin 92481 >>Turn in A Student of the Arcane
+    .target Dorii Brightwhisper
 step << Mage
     #arrowtext Talk to\n|cRXP_FRIENDLY_Dorii Brightwhisper|r
     .goto 2521,41.55,23.67
@@ -318,7 +324,9 @@ step
     #arrowtext Kill |cRXP_ENEMY_Al'Aketh Convert|r and\n|cRXP_ENEMY_Roiling Winds|r\nClick on |cRXP_PICK_Crystals|r
     .goto 2521,46.85,17.68,15,0
     .goto 2521,47.22,19,30,0
-    .goto 2521,48.3,19.06,30,0
+    .goto 2521,48.3,19.06,50,0
+    .goto 2521,47.55,21.06,35,0
+    .goto 2521,46.74,20.49,35,0
     .goto 2521,48.97,20.86,40,0
     .goto 2521,47.41,21.14,30,0
     .goto 2521,45.82,19.09,40,0
@@ -509,12 +517,6 @@ step << Mage
     .skipgossipid 136807,1
     .target Dorii Brightwhisper
     .money <0.01
-step << Mage
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Dorii Brightwhisper|r
-    .goto 2521,41.55,23.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorii Brightwhisper|r.
-    .turnin 92481 >>Turn in A Student of the Arcane
-    .target Dorii Brightwhisper
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Aetheen of the Gales|r
     .goto 2521,42.76,23.65
@@ -586,9 +588,10 @@ step << Alliance
 step << Alliance
     #label AggressiveVendor
     #completewith Aggressive Encroachment
-    #arrowtext Vendor trash\nBuy bags and profession tools if needed
+    #arrowtext Vendor trash
     .goto 2521,42.76,24.5
-    .vendor >>|cRXP_WARN_Optional: Buy Reagent Bag, Profession tools and Vendor trash|r
+    .vendor >>|cRXP_WARN_Vendor trash|r
+    .collect 159,10 >>Buy |T132794:0|t[Refreshing Spring Water] << Mage
 step
     #requires Aggressive Encroachment
     #arrowtext Talk to\n|cRXP_FRIENDLY_Valreaa Valewind|r
@@ -597,6 +600,24 @@ step
     .accept 92473 >>Accept Aggressive Encroachment
     .target Valreaa Valewind
 step
+    #completewith Scrawny Usera
+    +Manually drag the reagent bag into the reagent bag slot. Right-clicking it will place it in an empty general bag slot instead
+step
+    #completewith Scrawny Usera
+    .train 2366,3
+    .cast 2383 >>Cast |T133939:0|t[Find Herbs] to track nearby herbs
+    *|cRXP_WARN_You can gather herbs along the way to start working toward 20 Herbalism for a later quest. This is optional, especially at launch, so do it at your own risk|r
+step
+    #completewith Scrawny Usera
+    .train 2575,3
+    .cast 2580 >>Cast |T136025:0|t[Find Minerals] to track nearby ore deposits
+    *|cRXP_WARN_You can mine ore along the way to start working toward 20 Mining for a later quest. This is optional, especially at launch, so do it at your own risk|r
+step
+    #completewith Scrawny Usera
+    .train 8613,3
+    *|cRXP_WARN_You can skin along the way to start working toward 20 Skinning for a later quest. This is optional, especially at launch, so do it at your own risk|r
+step
+    #label Scrawny Usera
     #loop
     #arrowtext Kill |cRXP_ENEMY_Scrawny Usera|r\nLoot for |T132136:0|t[|cRXP_LOOT_Scrawny Ursera Claw|r]
     .goto 2521,41.05,25.7,30,0
@@ -652,6 +673,7 @@ step
     .goto 2521,35.88,23.79,30,0
     .goto 2521,35.71,25.7,30,0
     .deathskip >>Die to mobs and ressurect at the graveyard
+    .macro Sit,134400 >>/sit
     .subzoneskip 16673,1
     .target Spirit Healer
 step
@@ -663,6 +685,7 @@ step
     .accept 92472 >>Accept The Next Step
     .accept 96638 >>Accept The Adventurer
     .target Aetheen of the Gales
+    .skipgossipid 96031 --Return me to life.
 step
     #completewith next
     #label Aggressive Encroachment2
@@ -732,14 +755,23 @@ step << Horde
     .cooldown spell,1259686,>0,1
 step << Alliance
     .isOnQuest 92544
-    #arrowtext Use |T236219:0|t[Read Ley Line]\nnear the Thendal Grove Ley Line
+    #arrowtext Use |T236219:0|t[Read Ley Line]\nnear the Ley Line
     .goto 2521,35.910,33.605
-    .cast 1259686 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
-    .cooldown spell,1259686,>0,1
+    .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
+    .cooldown spell,1259705,>0,1
+step
+    #hidewindow
+    #completewith Grind6
+    #loop
+    .goto 2521,35.33,34.19,30,0
+    .goto 2521,36.34,31.56,40,0
+    .goto 2521,37.3,32.89,40,0
+    .goto 2521,37.16,34.72,40,0
+    .goto 2521,38.08,35.01,40,0
+    +1
 step
     #arrowtext Kill\n|cRXP_ENEMY_Al'Aketh Brute|r and |cRXP_ENEMY_Al'Aketh Neophyte|r
     #loop
-    -- .goto 2521,35.75,31.93,40,0 -- Feels weird because the arrow jumps around
     .goto 2521,35.33,34.19,30,0
     .goto 2521,36.34,31.56,40,0
     .goto 2521,37.3,32.89,40,0
@@ -751,6 +783,10 @@ step
     .complete 92544,2 --|4/4 Al'Aketh Neophyte slain
     .mob Al'Aketh Brute::251145
     .mob Al'Aketh Neophyte::251448
+    .mob Al'Aketh Ambusher::251451
+step
+    #label Grind6
+    .xp 5+1740 >>Grind to level 5 1740+/2800xp to reach level 6 after turn ins in the next village to be able to train new spells.
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Hanaa Nightwind|r
     .goto 2521,38.32,30.18
@@ -758,32 +794,42 @@ step
     .turnin 92544 >>Turn in Al'Aketh Thugs
     .target Hanaa Nightwind
 step
-    #loop
-    -- .goto 2521,35.75,31.93,40,0 -- Feels weird because the arrow jumps around
-    .goto 2521,35.33,34.19,30,0
-    .goto 2521,36.34,31.56,40,0
-    .goto 2521,37.3,32.89,40,0
-    .goto 2521,37.16,34.72,40,0
-    .goto 2521,38.08,35.01,40,0
-    .xp 5+2290 >>Grind to level 5 2290+/2800xp to reach level 6 after turn ins in the next village to be able to train new spells.
-step
     #completewith next
     +|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Windstones|r throughout the zone to obtain an item that restores health and mana.
     *If you spot a Tornado, approach it to gain 40% increased movement speed for 5 minutes. The effect ends if you deal damage.
 step
     .isOnQuest 92472
-    #completewith next
+    #completewith VendorStep
     #label The Next Step
     #hidewindow
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
     .turnin 92472 >>Turn in The Next Step
 step
     #completewith The Next Step
+    >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    *|cRXP_WARN_Do not grind here; just kill them a long the way|r
+    .collect 5469,8
+    .collect 6889,3
+    -- .complete 92553,2 --8/8 Strider Meat
+    -- .complete 92553,1 --3/3 Small Egg
+    .mob Galestrider::251661
+step << !Rogue !Warrior
+    #completewith The Next Step
+    #label VendorStep
     #arrowtext Vendor trash
     .goto 2521,44.72,45.47
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Shaman/Druid
     >>|cRXP_WARN_Save 2 silver for your class spells!|r << Shaman/Druid
-    .vendor >>|cRXP_WARN_Vendor trash|r
+    .vendor >>|cRXP_WARN_Vendor trash(don't sell strider meat & eggs|r
+    .collect 1179,5 >>Buy |T142815:0|t[Ice Cold Milk] << Mage
+step << Rogue/Warrior
+    #completewith The Next Step
+    #label VendorStep
+    #arrowtext Vendor trash
+    .goto 2521,44.67,45.19,10,0
+    .goto 2521,44.78,45.05
+    .vendor >>|cRXP_WARN_Vendor trash(don't sell strider meat & eggs|r
+    .target Belandiel Farflight
 step
     #requires The Next Step
     .isOnQuest 92472
@@ -803,7 +849,7 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorii Brightwhisper|r.
     .train 143 >>Train |T135812:0|t[Fireball]
     .train 2136 >>Train |T135807:0|t[Fire Blast]
-    .train 1296917 >>Train |T8188276:0|t[Comprehend Scroll]
+    .train 1296017 >>Train |T8188276:0|t[Comprehend Scroll]
     .skipgossipid 136807,1
     .target Dorii Brightwhisper
     .money <0.03
@@ -902,7 +948,7 @@ step << Horde Mage
     #label immediate wand
     #hidewindow
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
-    .train 7411 >>Train |T136189:0|t[Enchanting] |cRXP_WARN_for immediate wand|r
+    .train 7411 >>Train |T136189:0|t[Enchanting] |cRXP_WARN_for an immediate wand|r
     .target Nasalanna Windsinger
 step << Horde Mage
     #completewith immediate wand
@@ -917,17 +963,19 @@ step << Horde Mage
     #requires immediate wand
     .goto 2521,43.24,43.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
-    .train 7411 >>Train |T136189:0|t[Enchanting] |cRXP_WARN_for immediate wand|r
+    .train 7411 >>Train |T136189:0|t[Enchanting] |cRXP_WARN_for an immediate wand|r
     .skipgossipid 137559
     .target Nasalanna Windsinger
 step << Horde Mage
     .isOnQuest 93461 << Alliance
     .isOnQuest 92514 << Horde
     .train 7411,3
-    >>Craft |T135225:0|t[Runed Copper Rod] and |T135975:0|t[Novice's Practice Wand]
-    .collect 6218,3
+    >>Use the |T135225:0|t[Runed Copper Rod] macro below, then use the |T135645:0|t[Novice's Practice Wand] macro
+    *Afterward, enchant your bracers with Stamina if you have a pair equipped
+    .collect 6218,1
     .collect 247789,1
-    -- craft macro
+    .macro Runed Copper Rod,135225 >>/cast Enchanting\n/run C_TradeSkillUI.CraftRecipe(7421,1)
+    .macro Novice's Practice Wand,135645 >>/run C_TradeSkillUI.CraftRecipe(1245321,1)
 step << Alliance Rogue
     .goto 2521,43.16,43.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
@@ -971,10 +1019,12 @@ step << Alliance Mage
     .isOnQuest 93461 << Alliance
     .isOnQuest 92514 << Horde
     .train 7411,3
-    >>Craft |T135225:0|t[Runed Copper Rod] and |T135975:0|t[Novice's Practice Wand]
+    >>Use the |T135225:0|t[Runed Copper Rod] macro below, then use the |T135645:0|t[Novice's Practice Wand] macro
+    *Afterward, enchant your bracers with Stamina if you have a pair equipped
     .collect 6218,1
     .collect 247789,1
-    -- craft macro
+    .macro Runed Copper Rod,135225 >>/cast Enchanting\n/run C_TradeSkillUI.CraftRecipe(7421,1)
+    .macro Novice's Practice Wand,135645 >>/run C_TradeSkillUI.CraftRecipe(1245321,1)
 step << Alliance
     .goto 2521,43.02,43.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
@@ -1118,6 +1168,12 @@ step
     .complete 92517,1 --|10/10 Highlands Bandit slain
     .complete 93319,1 --|10/10 Pilfered Windstone
     .mob Highlands Bandit::251918
+step << Alliance
+    .isOnQuest 92517
+    #arrowtext Use |T236219:0|t[Read Ley Line]\nnear the Ley Line
+    .goto 2521,50.59,33.51
+    .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
+    .cooldown spell,1259705,>0,1
 -- step
 --     .isOnQuest 92517
 --     .hs >>Hearth to Shen'dar Village
@@ -1181,9 +1237,8 @@ step
     .timer 60, RP
     .target Raan Wildwind
 step
-    --Maybe skipping this when it doesn't work the first time?
     >>|cRXP_WARN_Wait until you get the Boosted Rest buff|r.
-    *If you don't get it on the first try try reloging.
+    *If you don't receive the buff on the first try, log out and back in.
     .complete 96101,2 --Gain the Boosted Rest buff
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Raan Wildwind|r
@@ -1268,11 +1323,6 @@ step
     .accept 97969 >>Accept Camping 101: Leatherworking
     .target Raan Wildwind::263664
 step << Horde
-    .goto 2521,43.518,44.788
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illaya Amberwind::251902|r
-    .turnin 94411 >>Turn in Meddlesome Mages
-    .target Illaya Amberwind::251902
-step << Horde
     #completewith HippogryphHarrassmentA
     #hidewindow
     #arrowtext Kill |cRXP_ENEMY_Hippogryphs|r\nClick on |cRXP_PICK_Hippogryph Downs|r
@@ -1305,12 +1355,18 @@ step
     .complete 92553,1 --3/3 Small Egg
     .mob Galestrider::251661
 step << Alliance
+    .isOnQuest 94413
+    .isQuestNotComplete 94413
+    #arrowtext Use |T236219:0|t[Read Ley Line]\nnear the Ley Line
+    .goto 2521,39,47.37
+    .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
+    .cooldown spell,1259705,>0,1
+step << Alliance
     #arrowtext Defeat\n|cRXP_ENEMY_Windshaper Novice Seer|r
     #loop
-    .goto 2521,39.56,47.18,35,0
-    .goto 2521,38.73,47.62,35,0
-    .goto 2521,37.56,47.25,35,0
-    .goto 2521,38.67,46.55,35,0
+    .goto 2521,37.96,46.86,40,0
+    .goto 2521,38.75,48.72,40,0
+    .goto 2521,38.99,47.24,40,0
     >>Kill the |cRXP_ENEMY_Windshaper Novice Seer|r.
     *|cRXP_WARN_Refresh|r |T236219:0|t[Read Ley Line] |cRXP_WARN_near the Leyline|r << Alliance
     .complete 94413,1 --6/6 Windshaper Novice Seer defeated
@@ -1339,6 +1395,7 @@ step << Alliance
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Hippogryph Youth|r, |cRXP_ENEMY_Hippogryph Protector|r and the |cRXP_ENEMY_Hippogryph Matriarch|r.
+    *|cRXP_WARN_Keep an eye out for Windstones to recover and Tornadoes for a movement speed boost|r
     .complete 92516,1 --|8/8 Hippogryph Youth slain
     .complete 92516,2 --|6/6 Hippogryph Protector slain
     .complete 92516,3 --|1/1 Hippogryph Matriarch slain
@@ -1686,6 +1743,7 @@ step
     .goto 2521,44.05,49.98,30,0
     .goto 2521,43.02,49.86
     .deathskip >> Die and respawn at the Spirit Healer
+    .macro Sit,134400 >>/sit
     .target Spirit Healer
 step
     #requires Western Watchtower
@@ -1959,6 +2017,7 @@ step
     #completewith Crab Season
     .goto 2521,49.4,58.76
     .deathskip >>Die and respawn at the Spirit Healer
+    .macro Sit,134400 >>/sit
     .skipgossipid 96031
     .target Spirit Healer
 step
@@ -2109,6 +2168,7 @@ step
     #arrowtext Jump of the cliff\nand resurrect at the graveyard
     .goto 2521,67.41,80.46
     .deathskip >>Jump of the cliff
+    .macro Sit,134400 >>/sit
     .subzoneskip 16638,1
     .target Spirit Healer
 step << Hunter
@@ -2484,6 +2544,7 @@ step
     #arrowtext Jump of the cliff\nand resurrect at the graveyard
     .goto 2521,67.41,80.46
     .deathskip >>Jump of the cliff
+    .macro Sit,134400 >>/sit
     .subzoneskip 16638,1
     .target Spirit Healer
 step
@@ -2528,6 +2589,7 @@ step
     .isOnQuest 92840
     .goto 2521,49.4,58.76
     .deathskip >>Die and respawn at the Spirit Healer
+    .macro Sit,134400 >>/sit
     .skipgossipid 96031
     .target Spirit Healer
 step
@@ -3611,4 +3673,19 @@ step << Alliance
     .turnin 94912 >>Turn in Child of Nature
     .accept 94914 >>Accept Moonglade
     .target Sheldras Moontree::5504
+]])
+
+
+
+RXPGuides.RegisterGuide([[
+#classic
+#version 1
+#name Skyborne Warrior Class Quests22
+#displayname Skyborne Warrior Class Quests
+#group RestedXP Forever Guide (A) << Alliance
+#group RestedXP Forever Guide (H) << Horde
+#defaultfor Skyborne Warrior
+#internal
+
+    .goto 2521,41.07,22.33 -- spirit healer thendal village
 ]])
