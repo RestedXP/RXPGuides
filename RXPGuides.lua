@@ -1676,7 +1676,7 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
         end)
     end
 
-    if addon.ui.v2.LaunchConfigurator then
+    if addon.ui and addon.ui.v2 and addon.ui.v2.LaunchConfigurator then
         addon.ui.v2.LaunchConfigurator(true)
     end
 
