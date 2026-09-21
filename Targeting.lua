@@ -12,8 +12,6 @@ local GetTime, FlashClientIcon, PlaySound = GetTime, FlashClientIcon, PlaySound
 local wipe = wipe
 local GetRealZoneText = GetRealZoneText
 local GetNamePlates = C_NamePlate.GetNamePlates
-local issecretvalue = issecretvalue or function() return false end
-
 local HBD = LibStub("HereBeDragons-2.0")
 
 local GameTooltip = _G.GameTooltip
@@ -475,7 +473,7 @@ function addon.targeting:GOSSIP_SHOW()
             self:UpdateTargetFrame("target")
             self:UpdateMacro()
 
-            if addon.gameVersion < 120000 and not issecretvalue(UnitHealth("player")) and GetRaidTargetIndex("target") ~= nil then
+            if addon.gameVersion < 120000 and not addon.IsSecretValue(UnitHealth("player")) and GetRaidTargetIndex("target") ~= nil then
                 SetRaidTarget("target", 0)
             end
             return
@@ -953,7 +951,7 @@ function addon.targeting:UpdateMarker(kind, unitId, index)
     if IsInGroup() and not UnitIsGroupLeader('player') then
         if not addon.settings.profile.enableNonLeadMarking then return end
     end
-    if addon.gameVersion >= 120000 or issecretvalue(UnitHealth("player")) then return end
+    if addon.gameVersion >= 120000 or addon.IsSecretValue(UnitHealth("player")) then return end
     local markerId = self:GetMarkerIndex(kind, index)
 
     if GetRaidTargetIndex(unitId) == nil and GetRaidTargetIndex(unitId) ~= markerId then

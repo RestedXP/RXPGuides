@@ -1,8 +1,12 @@
 local addonName, addon = ...
 
+addon.IsSecretValue = function(value)
+    return _G.issecretvalue and _G.issecretvalue(value) or false
+end
+
 addon.GetUnitName = function(unit)
     local n = _G.UnitName(unit)
-    if issecretvalue and issecretvalue(n) then
+    if addon.IsSecretValue(n) then
         return
     end
     return n

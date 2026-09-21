@@ -20,8 +20,6 @@ local tinsert, fmt = tinsert, string.format
 local GetRealZoneText = GetRealZoneText
 local UIErrorsFrame = _G.UIErrorsFrame
 local STRING_ENVIRONMENTAL_DAMAGE_DROWNING = _G.STRING_ENVIRONMENTAL_DAMAGE_DROWNING
-local issecretvalue = issecretvalue or function() return false end
-
 local L = addon.locale.Get
 
 addon.tips = addon:NewModule("Tips", "AceEvent-3.0")
@@ -133,8 +131,8 @@ function addon.tips:CheckEmergencyActions()
         return
     end
 
-    local maxHP = not issecretvalue(UnitHealthMax("player")) and UnitHealthMax("player") or 0
-    local currentHP = not issecretvalue(UnitHealth("player")) and UnitHealth("player") or 0
+    local maxHP = not addon.IsSecretValue(UnitHealthMax("player")) and UnitHealthMax("player") or 0
+    local currentHP = not addon.IsSecretValue(UnitHealth("player")) and UnitHealth("player") or 0
     if maxHP > 0 and currentHP > 0 and currentHP / maxHP < addon.settings.profile.emergencyThreshold then
 
         addon.tips:HighlightEmergencyItem()
