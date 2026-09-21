@@ -1431,7 +1431,7 @@ step
     #completewith AuberdineTurnin2 << NightElf/Hunter/Druid/Warrior
     >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
     >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 later|r
-    >>|cRXP_WARN_Don't go out of your way to farm this now. Just remember to hold onto the eggs and start thinking how many skillups u still need to reach 50 cooking|r
+    >>|cRXP_WARN_Don't go out of your way to farm this now. Just remember to hold onto the eggs and start thinking how many skillups you still need to reach 50 cooking|r
     .collect 6889,50,90,1,0x20,cooking --Small Egg (10-49)
     .mob Young Moonkin
     .mob Raging Moonkin
@@ -1444,7 +1444,7 @@ step
     #completewith LateTurtleStart
     >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
     >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 later|r
-    >>|cRXP_WARN_Don't go out of your way to farm this now. Just remember to hold onto the eggs and start thinking how many skillups u still need to reach 50 cooking|r
+    >>|cRXP_WARN_Don't go out of your way to farm this now. Just remember to hold onto the eggs and start thinking how many skillups you still need to reach 50 cooking|r
     .collect 6889,50,90,1,0x20,cooking --Small Egg (10-49)
     .mob Young Moonkin
     .mob Raging Moonkin
@@ -1582,7 +1582,7 @@ step << NightElf/Hunter/Druid/Warrior
     #season 0
     >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
     >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 later|r
-    >>|cRXP_WARN_Don't go out of your way to farm this now. Just remember to hold onto the eggs and start thinking how many skillups u still need to reach 50 cooking|r
+    >>|cRXP_WARN_Don't go out of your way to farm this now. Just remember to hold onto the eggs and start thinking how many skillups you still need to reach 50 cooking|r
     .collect 6889,50,90,1,0x20,cooking --Small Egg (10-49)
     .mob Young Moonkin
     .mob Raging Moonkin
@@ -2206,7 +2206,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Elissa Starbreeze|r upstairs
     .accept 965 >> Accept The Tower of Althalaxx
     .target Sentinel Elissa Starbreeze
-step << !Hunter
+step
     #optional
     #completewith Level10CookEnd
     .goto 1439,38.107,41.165
@@ -2238,6 +2238,7 @@ step
     +|cRXP_WARN_Start|r |T133971:0|t[Cooking] |T132834:0|t[Herb Baked Eggs]|cRXP_WARN_. Do this until your|r |T133971:0|t[Cooking] |cRXP_WARN_has reached at least level 10|r
     >>|cRXP_WARN_Continue leveling your|r |T133971:0|t[Cooking] |cRXP_WARN_until you run out of|r |T132832:0|t[Small Eggs] << !sod
     >>|cRXP_WARN_There is a quest in Duskwood later requiring your|r |T133971:0|t[Cooking] |cRXP_WARN_to be 50 or higher. You can also cook this when you get on the boat soon|r << !sod
+    >>|cRXP_WARN_Skip this step once you've made all|r |T132834:0|t[Herb Baked Eggs]
     .skill cooking,50,1
     .itemcount 6889,1 -- Small Egg (1+)
 step
@@ -2323,7 +2324,7 @@ step
     #completewith BoatSeaCreature
     >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
     >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 later|r
-    >>|cRXP_WARN_Don't go out of your way to farm this now. Just remember to hold onto the eggs and start thinking how many skillups u still need to reach 50 cooking|r
+    >>|cRXP_WARN_Don't go out of your way to farm this now. Just remember to hold onto the eggs and start thinking how many skillups you still need to reach 50 cooking|r
     .collect 6889,50,90,1,0x20,cooking --Small Egg (10-49)
     .mob Young Moonkin
     .mob Raging Moonkin
