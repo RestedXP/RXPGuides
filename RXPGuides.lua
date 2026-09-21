@@ -1408,8 +1408,7 @@ function addon:OnInitialize()
     addon.settings:InitializeSettings()
 
     if saveLocally then
-        local db = addon.settings.GetSettingsDB()
-        RXPCData.localDB = db
+        RXPCData.localDB = addon.settings.profile
     end
 
     -- Retail has enough helpers and massive UI differences
