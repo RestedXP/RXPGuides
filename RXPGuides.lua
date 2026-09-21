@@ -1416,9 +1416,6 @@ function addon:OnInitialize()
     addon.CreateMetaDataTable()
     addon.settings:InitializeSettings()
 
-    if saveLocally then
-        RXPCData.localDB = {profile = addon.settings.profile}
-    end
 
     -- Retail has enough helpers and massive UI differences
     if addon.gameVersion < 40000 then
@@ -1485,6 +1482,10 @@ function addon:OnInitialize()
     LoadCache()
     ProcessSpells()
     addon.GetProfessionLevel()
+
+    if saveLocally then
+        addon.saveSettingsLocally = true
+    end
 
     if addon.settings.profile.preLoadData then
         addon.LoadAllGuides()
@@ -2138,7 +2139,16 @@ function addon.LegacyUpdateLoop()
             end
 
             updateTimer = time
-            skip = skip % 4096
+            if skip > 512 then
+                skip = skip % 512
+                if addon.saveSettingsLocally then
+                    addon.settings:SaveFramePositions()
+                    C_Timer.After(0,function()
+                       RXPCData.localDB =
+                          {profile = addon.settings.copy(addon.settings.profile)}
+                    end)
+                end
+            end
         end
     end
 

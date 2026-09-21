@@ -42,6 +42,19 @@ addon.settings.enabledBetaFeatures = {
     ["Guide Window v2"] = "Allow the Guide Window and Active Steps v2", --GuideWindow/addon.v2
 }
 
+local copy = function(t)
+    local out = {}
+    for i,v in pairs(t) do
+        if type(v) == "table" then
+            out[i] = copy(v)
+        else
+            out[i] = v
+        end
+    end
+    return out
+end
+addon.settings.copy = copy
+
 function addon.settings.OpenSettings(panelName)
 
     if _G.InCombatLockdown() then
@@ -3450,18 +3463,8 @@ function addon.settings:CreateAceOptionsPanel()
         type = 'execute',
         width = 1.5,
         func = function()
+            addon.settings:SaveFramePositions()
             addon.settings.defaultProfileKey = settingsDB:GetCurrentProfile()
-            local function copy(t)
-                local out = {}
-                for i,v in pairs(t) do
-                    if type(v) == "table" then
-                        out[i] = copy(v)
-                    else
-                        out[i] = v
-                    end
-                end
-                return out
-            end
             RXPData.defaultProfile = {profile = copy(addon.settings.profile)}
         end,
         disabled = function()
