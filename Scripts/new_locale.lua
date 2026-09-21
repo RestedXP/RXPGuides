@@ -193,29 +193,32 @@ L["Do NOT attempt this quest unless you are in a group of at least %d"] = ""
 L["This step is meant to be completed as a group, be careful"] = ""
 L["Step skipped: Wrong scenario"] = ""
 L["Step skipped: Quest is not being offered"] = ""
+L["Learn dual spec"] = ""
 
 -- GuideLoader.lua file
 
 L["Failed to ReadCacheData"] = ""
+L["Failed integrity check"] = ""
 L["Account mismatch, import string does not apply to current account"] = ""
 L["Error: Guide has no contents"] = ""
-L["Incomplete or invalid encoded string"] = ""
-L["Incompatible guide game %d version vs %d"] = ""
-L["Incompatible guide, for %d version vs %d"] = ""
-L["Failed integrity check"] = ""
-L["Total guides loaded: %d/%s"] = ""
-L["Loading Guides"] = ""
-L["Guides Loaded Successfully"] = ""
 L["Unable to decode cached guide (%s), removed"] = ""
 L["Error parsing "] = ""
 L["Guide has no name"] = ""
 L["Classic"] = ""
 L["RestedXP Speedrun Guide (A)"] = ""
 L["RestedXP Speedrun Guide (H)"] = ""
+L["Incomplete or invalid encoded string"] = ""
+L["Total guides loaded: %d/%s"] = ""
+L["Incompatible guide game %d version vs %d"] = ""
+L["Incompatible guide, for %d version vs %d"] = ""
+L["Loading Guides"] = ""
+L["Guide import failed due to a Lua error."] = ""
+L["Guides Loaded Successfully"] = ""
 
 -- GuideWindow.lua file
 
 L["Welcome to RestedXP Guides\nRight click to pick a guide"] = ""
+L["Skip step"] = ""
 L["Hide tips"] = ""
 L["Step %d"] = ""
 L["Go to step"] = ""
@@ -362,39 +365,12 @@ L["Development"] = ""
 
 -- SettingsPanel.lua file
 
-L[" (Beta)"] = ""
-L["Display Quest Link"] = ""
-L["Display quest tooltips on steps"] = ""
-L["Enable V2 Interface"] = ""
-L["Replace the legacy guide window with the V2 interface"] = ""
-L["Brand Menus"] = ""
-L["Apply the V2 style to RestedXP menus"] = ""
-L["Share your Active Step with party members"] = ""
 L["Migrating %s = %s"] = ""
 L["Character profile (%s) already migrated"] = ""
-L["Please restart your game client and try again"] = ""
-L["Failed to Import Guides: Invalid Import String"] = ""
-L["none"] = ""
-L["Press Ctrl+V to paste a piece of the string (%d)\nPress ESC to cancel\n\nThis process is slow and should only be used if your operating system have clipboard length restrictions"] = ""
-L["Import Error - Invalid String Header"] = ""
-L["Guide Import"] = ""
-L["Paste encoded strings"] = ""
-L["Guides to import"] = ""
-L["Currently loaded imported guides"] = ""
-L["Delete imported guide"] = ""
-L["Remove"] = ""
-L["Purge All Data"] = ""
-L["This action will remove ALL guides from the database\nAre you sure?"] = ""
-L["Reload guides and UI"] = ""
-L["Import Spliced String"] = ""
-L["Guide import is temporarily disabled on Hardcore servers, please switch to a normal server to import a guide"] = ""
-L["On patch 1.15.9, the allowed execution time for lua code was severely reduced on Hardcore servers only, addon processing time is a very scarce resource, so in order to be able to import a guide without any errors or crashes, this process has to be done on a non Hardcore server"] = ""
-L["Battle.net unreachable, please exit your client, restart Battle.net, and try again"] = ""
-L["Loaded %d characters into import buffer, %d shown"] = ""
-L["Loaded %d characters into import buffer"] = ""
 L[" (Beta)"] = ""
 L["This requires a reload to take effect, continue?"] = ""
 L["Join Discord"] = ""
+L["Import Guides"] = ""
 L["Run Guide Configurator"] = ""
 L["Show all Enabled Frames"] = ""
 L["Toggles all addon frames on or off"] = ""
@@ -428,9 +404,12 @@ L["Allows the guide to automatically set your home at an Innkeeper"] = ""
 L["Skip Gossip"] = ""
 L["Allows the guide to automatically skip gossip for NPCs"] = ""
 L["Interface Version 2 (Beta)"] = ""
-L["Enable Active Step v2"] = ""
+L["Enable V2 Interface"] = ""
+L["Replace the legacy guide window with the V2 interface"] = ""
 L["Display Quest Link"] = ""
 L["Display quest tooltips on steps"] = ""
+L["Brand Menus"] = ""
+L["Apply the V2 style to RestedXP menus"] = ""
 L["Show junk item indicator"] = ""
 L["Any items marked as junk will display a gold coin icon on the top left corner of the item icon within your bags"] = ""
 L["Discard junk items if bag is full"] = ""
@@ -541,6 +520,7 @@ L["Flashes the game icon on taskbar when enemy target found"] = ""
 L["Flashes the screen corners when enemy target found"] = ""
 L["Play Sound"] = ""
 L["Sends sound on enemy target found"] = ""
+L["none"] = ""
 L["Map Ping"] = ""
 L["War Drums"] = ""
 L["Raid Warning"] = ""
@@ -650,7 +630,6 @@ L["Pick Up"] = ""
 L["Buy"] = ""
 L["Disable Colors"] = ""
 L["Guide Window"] = ""
-L["Window Scale"] = ""
 L["Scale of the Main Window, use alt+left click on the main window to resize it"] = ""
 L["Guide Font Size"] = ""
 L["Change font size of the Guide Window"] = ""
@@ -704,6 +683,7 @@ L["Check loaded addons for known compatibility issues with RXP"] = ""
 L["Low Quality Settings"] = ""
 L["Skip quests with missing pre-requisites"] = ""
 L["Automatically skip tasks in which you don't have the required quest pre-requisites\n(Requires Questie)"] = ""
+L["Reload guides and UI"] = ""
 L["Set current profile as default"] = ""
 L["|cff909090Left Click: |cffffcc00Toggle Guide|r"] = ""
 L["|cff909090Right Click: |cffffcc00Show Menu|r"] = ""
@@ -726,7 +706,6 @@ L["Targeting macro updated with:%s"] = ""
 L["current step has no configured targets"] = ""
 L["A macro has been automatically built to aid in leveling. Please move %s to your action bars."] = ""
 L["Rare Found! %s is nearby."] = ""
-L["Active Targets"] = ""
 
 -- Themes.lua file
 
@@ -735,8 +714,6 @@ L["RXP Red"] = ""
 L["RXP Gold"] = ""
 L["DarkMode"] = ""
 L["RXP Green"] = ""
-L["Theme missing name or author"] = ""
-L["%s does not apply to current mode, importing anyway"] = ""
 
 -- Timers.lua file
 
@@ -852,6 +829,27 @@ L["Excellent"] = ""
 -- DB\classic\StatWeights.lua file
 
 
+-- DB\forever\dangerousMobs.lua file
+
+
+-- DB\forever\db.lua file
+
+
+-- DB\forever\flightData.lua file
+
+
+-- DB\forever\quest.lua file
+
+
+-- DB\forever\spells.lua file
+
+
+-- DB\forever\SpiritHealerDB.lua file
+
+
+-- DB\forever\StatWeights.lua file
+
+
 -- DB\mainline\db.lua file
 
 
@@ -920,6 +918,25 @@ L["Active Item Button %d"] = ""
 L["Active Friendly Target Button %d"] = ""
 L["Active Enemy Target Button %d"] = ""
 
+-- UI\V2\AuctionHouse.lua file
+
+
 -- UI\V2\Core.lua file
 
-L["Skip step"] = ""
+L["Welcome to RestedXP"] = ""
+L["Select a guide:"] = ""
+L["Open Settings"] = ""
+L["Browse Guides"] = ""
+
+-- UI\V2\GuideImporter.lua file
+
+L["Purge"] = ""
+L["This action will remove ALL guides from the database\nAre you sure?"] = ""
+L["Paste your guide string into the text field and click \"Import\"."] = ""
+L["Import Spliced String"] = ""
+L["Show imported guides"] = ""
+L["Reload"] = ""
+L["Delete"] = ""
+L["Remove"] = ""
+L["Progress"] = ""
+L["Battle.net unreachable, please exit your client, restart Battle.net, and try again"] = ""
