@@ -92,7 +92,7 @@ step << Warrior
 step
     #completewith next
     #label Anchors of Zephras
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Halaan Hawk-Eye|r
+    #arrowtext Enter the building\nand climb the spiral staircase
     .goto 2521,43.53,24.34,20,0
     .goto 2521,43.83,24.13,10,0
     .goto 2521,43.78,24.38,5,0
@@ -107,7 +107,6 @@ step
     .target Halaan Hawk-Eye
 step
     #completewith Anchors of Zephras
-    #arrowtext Enter the building\nand climb the spiral staircase
     .goto 2521,43.83,23.66,15 >>Enter the building and climb the spiral staircase.
 step
     #requires Anchors of Zephras
@@ -446,9 +445,9 @@ step << Warrior
     .turnin 92532 >>Turn in The Warrior's Path
     .target Blademaster Ren
 step << Horde
-    #completewith next
+    #completewith GiftOfSkysightVendorA
     #label TurnInGiftOfSkysightA
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Ventaari Brightwish|r
+    #hidewindow
     .turnin 92598 >>Turn in The Gift of Skysight
     .target Ventaari Brightwish::251487
 step << Horde
@@ -479,6 +478,7 @@ step << Horde
     .target Uualia Suncrest::251537
 step << Horde
     #completewith TurnInGiftOfSkysightA
+    #label GiftOfSkysightVendorA
     #arrowtext Vendor trash
     .goto 2521,42.76,24.49
     .vendor >>|cRXP_WARN_Vendor trash|r
@@ -548,11 +548,23 @@ step << Shaman
     .target Minor Manifestation of Earth::251166
     .use 6635
 step << Shaman
+    #completewith next
+    #label TurnInCallOfEarthA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r
+    .turnin 92468 >>Turn in Call of Earth
+    .target Windshaper Boro::251374
+step << Shaman
+    #completewith TurnInCallOfEarthA
+    .goto 2521,48.911,20.902
+    .deathskip >> Die and respawn at the Spirit Healer
+    .target Spirit Healer
+step << Shaman
+    #requires TurnInCallOfEarthA
     #arrowtext Talk to\n|cRXP_FRIENDLY_Windshaper Boro|r
     .goto 2521,42.787,23.564
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r
-    .target Windshaper Boro::251374
     .turnin 92468 >>Turn in Call of Earth
+    .target Windshaper Boro::251374
 step << Alliance
     #completewith AggressiveVendor
     #label Aggressive Encroachment
@@ -919,12 +931,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
     .complete 92514,2 << Horde --1/1 Speak with the Innkeeper
     .target the Innkeeper
--- step << Horde
---     #arrowtext Set your Hearthstone\nto Shen'dar Village
---     .goto 2521,43.02,43.24
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
---     .home >>Set your Hearthstone to Shen'dar Village
---     .target the Innkeeper
+step << Horde
+    #arrowtext Set your Hearthstone\nto Shen'dar Village
+    .goto 2521,43.02,43.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
+    .home >>Set your Hearthstone to Shen'dar Village
+    .target the Innkeeper
 step << Horde Rogue
     #arrowtext Talk to\n|cRXP_FRIENDLY_Miriaan Mistblade|r
     .goto 2521,43.16,43.26
@@ -1081,6 +1093,15 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taleen Shimmerthread|r.
     .accept 93951 >>Accept A Little Beauty
     .target Taleen Shimmerthread
+step << Shaman/Druid
+    .goto 2521,44.790,44.168
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Tinderforged::257421|r
+    >>Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
+    .collect 2495,1,761,1 --Collect Walking Stick (1)
+    .target Tephri Tinderforged::257421
+    .money <0.0504
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Hunter
     .goto 2521,44.790,44.168
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Tinderforged::257421|r
@@ -1096,19 +1117,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
     .accept 92553 >>Accept Restocking the Larders
     .target Zerril Softbreeze::251905
-step << Warrior/Rogue
-    #arrowtext Click on\n|cRXP_PICK_Bounty Available: Vulgara the Insatiable!|r
-    .goto 2521,43.37,45.86
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bounty Available: Vulgara the Insatiable!|r
-    .accept 93318 >>Accept WANTED: Vulgara the Insatiable
-    .target Bounty Available: Vulgara the Insatiable!
-step << Warrior/Rogue
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Naleeia Tattermend|r
-    .goto 2521,43.073,46.306
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleeia Tattermend::257018|r.
-    .train 3273 >>Train First Aid
-    .skipgossipid 137555
-    .target Naleeia Tattermend::257018
 step
     #completewith BadwindBennicA
     >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
@@ -1193,7 +1201,6 @@ step
     #hidewindow
     #label To Shendalar
     .train 2550 >>Train |T133971:0|t[Apprentice Cook]
-    .skipgossipid 137551
 step
     #completewith To Shendalar
     #arrowtext Talk to\n|cRXP_FRIENDLY_Zerril Softbreeze|r
@@ -1215,12 +1222,28 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illaya Amberwind::251902|r.
     .turnin 94411 >>Turn in Meddlesome Mages
     .target Illaya Amberwind::251902
+step << Shaman/Druid
+    .goto 2521,44.790,44.168
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Tinderforged::257421|r
+    >>Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
+    .collect 2495,1,761,1 --Collect Walking Stick (1)
+    .target Tephri Tinderforged::257421
+    .money <0.0504
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step
     #arrowtext Click on\n|cRXP_PICK_Bounty Available: Vulgara the Insatiable!|r
     .goto 2521,43.37,45.86
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bounty Available: Vulgara the Insatiable!|r
     .accept 93318 >>Accept WANTED: Vulgara the Insatiable
     .target Bounty Available: Vulgara the Insatiable!
+step << Warrior/Rogue
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Naleeia Tattermend|r
+    .goto 2521,43.073,46.306
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleeia Tattermend::257018|r.
+    .train 3273 >>Train First Aid
+    .skipgossipid 137555
+    .target Naleeia Tattermend::257018
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Raan Wildwind|r
     .goto 2521,41.67,44.79
@@ -1474,8 +1497,6 @@ step
     .turnin 97971 >>Turn in Camping 101: Skinning
     .target Mendalass Tattermend::257024
 step
-    .isOnQuest 93036
-    .isQuestAvailable 92517
     #arrowtext Talk to\n|cRXP_FRIENDLY_Zerril Softbreeze|r\n Don't sell Strider meat &eggs
     .goto 2521,43.851,43.848
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r and buy 5 |T134059:0|t[Mild Spices]
@@ -1622,6 +1643,15 @@ step
     .target Sania Silverstream::251904
     .turnin 93036 >>Turn in Infiltrating the Cult
     .accept 92529 >>Accept Falaath Village
+step << Shaman/Druid
+    .goto 2521,44.790,44.168
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Tinderforged::257421|r
+    >>Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
+    .collect 2495,1,761,1 --Collect Walking Stick (1)
+    .target Tephri Tinderforged::257421
+    .money <0.0504
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step
     .isOnQuest 92529
     .subzoneskip 16624,1
@@ -1692,6 +1722,12 @@ step
     .target Missionary Jasaan::257065
     .aura 1254832 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sania Silverstream::257065|r
     .skipgossipid 137586 -- I seem to have lost my mark of Akir. Would you please bestow it upon me once more?
+step << Horde
+    .isOnQuest 92528
+    #arrowtext Use |T1029587:0|t[Skysight]\nnear the |cRXP_PICK_Elemental Convergence|r
+    .goto 2521,48.497,55.827
+    .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
+    .cooldown spell,1259686,>0,1
 step
     #completewith next
     #label plans
@@ -1742,7 +1778,7 @@ step
     .goto 2521,45.35,46.79,20,0
     .goto 2521,44.05,49.98,30,0
     .goto 2521,43.02,49.86
-    .deathskip >> Die and respawn at the Spirit Healer
+    .deathskip >> Die to the south west of Shen'dar Village and respawn at the Spirit Healer
     .macro Sit,134400 >>/sit
     .target Spirit Healer
 step
@@ -1775,7 +1811,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Raani Windgazer|r\n from afar.
     .complete 93927,3 --1/1 Raani's Favorite Feather
 step
-    #arrowtext Kill\n|cRXP_ENEMY_Skypriest Aanders|r
+    #arrowtext Kill |cRXP_ENEMY_Skypriest Aanders|r\natop the tower
     .goto 2521,41.09,64.38
     >>Ascend the spiral staircase, then kill |cRXP_ENEMY_Skypriest Aanders|r atop the tower.
     .complete 93927,2 --1/1 Skypriest Aanders slain
@@ -1804,12 +1840,12 @@ step
     #completewith LivingLightningA
     #hidewindow
     #loop
-    .goto 2521,49.765,57.237,15,0
     .goto 2521,49.877,56.539,25,0
     .goto 2521,49.629,54.728,25,0
-    .goto 2521,48.823,54.315,15,0
+    --.goto 2521,48.823,54.315,15,0
     .goto 2521,49.058,53.545,15,0
     .goto 2521,47.641,54.140,30,0
+    .goto 2521,49.765,57.237,25,0
     +1
 step
     #completewith next
@@ -1989,26 +2025,28 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Indari Sunseam::251993|r
     .turnin 97969 >>Turn in Camping 101: Leatherworking
     .target Indari Sunseam::251993
-step
-    .isQuestAvailable 92551
-    #arrowtext Follow the way\nup the mountain
-    #completewith StolenSuppliesA
-    .isQuestNotComplete 97967
-    .isQuestNotComplete 97965
-    .isQuestNotComplete 97968
-    .isQuestNotComplete 98286
-    .isQuestNotComplete 97971
-    .isQuestNotComplete 97963
-    .isQuestNotComplete 97973
-    .isQuestNotComplete 97964
-    .isQuestNotComplete 97970
-    .isQuestNotComplete 97969
-    .goto 2521,44.111,45.843,10 >>Follow the way up the mountain.
+-- TODO: You are at the cooking vendor and then you get this step. Need to put it before somewhere
+-- step
+--     .isQuestAvailable 92551
+--     #arrowtext Follow the way\nup the mountain
+--     #completewith StolenSuppliesA
+--     .isQuestNotComplete 97967
+--     .isQuestNotComplete 97965
+--     .isQuestNotComplete 97968
+--     .isQuestNotComplete 98286
+--     .isQuestNotComplete 97971
+--     .isQuestNotComplete 97963
+--     .isQuestNotComplete 97973
+--     .isQuestNotComplete 97964
+--     .isQuestNotComplete 97970
+--     .isQuestNotComplete 97969
+--     .goto 2521,44.111,45.843,10 >>Follow the way up the mountain.
 step
     .isQuestAvailable 92551
     .goto 2521,44.71,45.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veena Vericloud::254358|r
-    .vendor 254358 >>|cRXP_BUY_Buy up to four|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_as needed. These are 6-slot bags|r
+    .vendor 254358 >>|cRXP_BUY_Buy up to three|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_as needed. These are 6-slot bags|r
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Druid
     .target Veena Vericloud::254358
 step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Danarii Bellowveil|r
@@ -2027,10 +2065,6 @@ step
     .accept 93948 >>Accept Deliver the Signet
     .target Constable Aonda
 step
-    .goto 2521,44.72,45.47
-    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Shaman/Druid
-    .vendor >>|cRXP_WARN_Vendor trash|r
-step
     #completewith next
     #label Crab Season
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyalah Brightfire::257006|r.
@@ -2039,8 +2073,9 @@ step
 step
     #completewith Crab Season
     .goto 2521,49.4,58.76
-    .deathskip >>Die and respawn at the Spirit Healer
+    .deathskip >>Die at the exact waypoint location and respawn at the Spirit Healer
     .macro Sit,134400 >>/sit
+    *|cRXP_WARN_The location is important as there are three possible spiritwalkers on that island.|r
     .skipgossipid 96031
     .target Spirit Healer
 step
@@ -2102,9 +2137,9 @@ step
 step
     .goto 2521,65.956,74.309
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ealaane Nimbuswalker::259012|r.
-    .target Ealaane Nimbuswalker::259012
     .accept 94896 >>Accept Aid For The Refugees
     .accept 94897 >>Accept The Fate of a Loved One
+    .target Ealaane Nimbuswalker::259012
 step
     #completewith next
     #label DeliverTheSignetA
@@ -2202,11 +2237,12 @@ step << Hunter
     .target Antelariaa Cloudgaze::252390
 step << Horde
     .goto 2521,61.491,76.893,15,0
-    .goto 2521,59.349,77.930,25,0
+    .goto 2521,59.349,77.930,35,0
     .goto 2521,59.154,79.783
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayessa Dawnsinger::251968|r.
     .turnin 92700 >>Turn in The Grand Skyseer
     .accept 92708 >>Accept A Grand Adventure
+    .timer 75,Roleplay Duration
     .accept 93735 >>Accept The Broken Construct
     .target Ayessa Dawnsinger::251968
 step << Horde
@@ -2219,18 +2255,24 @@ step << Horde
     >>Wait for the roleplay. -- Probably skipping this quest.
     .complete 92708,1 --|1/1 Listen to Ayessa
 step << Horde
+    .isOnQuest 92708
+    #arrowtext Use |T1029587:0|t[Skysight]\nnear the |cRXP_PICK_Elemental Convergence|r
+    .goto 2521,59.154,79.783
+    .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
+    .cooldown spell,1259686,>0,1
+step << Horde
+    #label LeavingValanaarA
     .goto 2521,59.150,79.790
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayessa Dawnsinger::251968|r.
     .target Ayessa Dawnsinger::251968
     .turnin 92708 >>Turn in A Grand Adventure
-step << Horde
-    #label LeavingValanaarA
-    .goto 2521,59.064,72.989
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Riaani Nightwind::256083|r.
-    .target Riaani Nightwind::256083
-    .turnin 93735 >>Turn in The Broken Construct
-    .accept 93737 >>Accept The Broken Construct
-    .complete 93737,1 --|1/1 Listen to what Riaani Nightwind has to say
+-- step << Horde
+--     .goto 2521,59.064,72.989
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Riaani Nightwind::256083|r.
+--     .target Riaani Nightwind::256083
+--     .turnin 93735 >>Turn in The Broken Construct
+--     .accept 93737 >>Accept The Broken Construct
+--     .complete 93737,1 --|1/1 Listen to what Riaani Nightwind has to say
 step << Alliance
     #arrowtext Click on\n|cRXP_FRIENDLY_Bloodstained Satchel|r
     .goto 2521,53.33,72.15
@@ -2238,7 +2280,7 @@ step << Alliance
     .turnin 92727 >>Turn in The Missing Scholar
     .accept 92849 >>Accept The Missing Scholar
     .target Bloodstained Satchel
-step
+step << Alliance
     #completewith next
     #arrowtext Kill and loot\n|cRXP_ENEMY_Windsong Crawlers|r
     .goto 2521,51.65,71.22,40,0
@@ -2393,6 +2435,7 @@ step << Horde
     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
     .mob Bandit Highwayman::252820
 step << Horde
+    .isOnQuest 93737
     #loop
     .goto 2521,44.970,73.377,35,0
     .goto 2521,44.921,73.382,35,0
@@ -2550,19 +2593,29 @@ step
 --     #arrowtext Talk to\n|cRXP_FRIENDLY_Belann Windwood|r
 --     .goto 2521,62.90,77.45
 --     .accept 93797 >>Accept Boughs in the Wind
+step << Shaman
+    .goto 2521,58.313,78.499
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sessaria Skystride::252382|r.
+    .accept 97243 >>Accept Call of Fire
+    .target Sessaria Skystride::252382
+step << Shaman
+    .goto 2521,58.313,78.499
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sessaria Skystride::252382|r.
+    .trainer >>Train your class spells
+    .target Sessaria Skystride::252382
 step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Dondallion Whisperwind|r
     .goto 2521,66.26,79.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dondallion Whisperwind|r.
     .turnin 92850 >>Turn in The Missing Scholar
     .target Dondallion Whisperwind
-step
+step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Elaadrin Evengale|r
     .goto 2521,66.63,79.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale|r.
     .accept 92840 >>Accept Catching Wind
     .target Elaadrin Evengale
-step
+step << Alliance
     .isOnQuest 92840
     #arrowtext Jump of the cliff\nand resurrect at the graveyard
     .goto 2521,67.41,80.46
@@ -3647,6 +3700,11 @@ RXPGuides.RegisterGuide([[
 
 -- The Great Ursera Spirit (94006) is accepted from the Druid trainer in Valanaar.
 step
+    .goto 2521,63.983,75.093
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
+    .accept 94006 >>Accept The Great Ursera Spirit
+    .target Lotheluum Starbreeze::252359
+step
     #arrowtext Talk to\n|cRXP_FRIENDLY_Urs'endris|r
     .goto 2521,69.761,61.454
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urs'endris::255853|r.
@@ -3698,8 +3756,6 @@ step << Alliance
     .target Sheldras Moontree::5504
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #classic
 #version 1
@@ -3711,4 +3767,38 @@ RXPGuides.RegisterGuide([[
 #internal
 
     .goto 2521,41.07,22.33 -- spirit healer thendal village
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+#version 1
+#name Skyborne Horde Bad
+#internal
+
+step
+    .goto 2521,59.151,79.778
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayessa Dawnsinger::251968|r.
+    .target Ayessa Dawnsinger::251968
+    .turnin 93738 >>Turn in The Broken Construct
+    .accept 93746 >>Accept A Firm Response
+step
+    .goto 2521,59.953,57.182
+    .complete 93746,1 --|1/1 Confront Belathaan Brightwish
+step
+    .goto 2521,59.942,56.938
+    >>137326
+step
+    .goto 2521,59.155,79.787
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayessa Dawnsinger::251968|r.
+    .target Ayessa Dawnsinger::251968
+    .turnin 93746 >>Turn in A Firm Response
+    .accept 92871 >>Accept In Service of Zephras
+    .accept 93740 >>Accept Blood for Blood
+
+step
+    .goto 2521,63.983,75.093
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
+    .train 5232 >>Train |T1:0|t[Mark of the Wild (Rank 2)]
+    .train 8924 >>Train |T1:0|t[Moonfire (Rank 2)]
+    .target Lotheluum Starbreeze::252359
 ]])
