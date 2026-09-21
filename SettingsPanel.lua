@@ -42,7 +42,7 @@ addon.settings.enabledBetaFeatures = {
     ["Guide Window v2"] = "Allow the Guide Window and Active Steps v2", --GuideWindow/addon.v2
 }
 
-local copy = function(t)
+local function copy(t)
     local out = {}
     for i,v in pairs(t) do
         if type(v) == "table" then
