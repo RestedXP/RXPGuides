@@ -1499,14 +1499,14 @@ function addon.GetMapInfo(zone,x,y)
     if not (x and y and zone) then
         return
     elseif zone == "StormwindClassic" then
-        if addon.gameVersion > 30000 then
+        if addon.gameVersion > 30000 or WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
             local c = addon.classicToWrathSW
             x = x*c[1]+c[2]
             y = y*c[3]+c[4]
         end
         return addon.GetMapId("Stormwind City"),x,y
     elseif zone == "EPLClassic" then
-        if addon.gameVersion > 30000 then
+        if addon.gameVersion > 30000 or WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
             local c = addon.classicToWrathEPL
             x = x*c[1]+c[2]
             y = y*c[3]+c[4]
