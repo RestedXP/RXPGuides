@@ -1035,6 +1035,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
     local skipGuide
     local linenumber = 0
     local game = strlower(addon.game)
+    local hasGameTag, isGameCompatible, hasGuideMetadata
 
     for line in string.gmatch(text, "[^\n\r]+") do
         linenumber = linenumber + 1
@@ -1047,9 +1048,12 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
             end
             if currentStep == 0 then
                 if guide.df then guide.retail = true end
-                if ((not guide[game] and
-                    not (addon.game == "FOREVER" and guide.classic) and
-                    (guide.classic or guide.tbc or guide.wotlk or guide.df or guide.retail or guide.cata)) or not guide.name or not guide.group) then
+
+                hasGameTag = guide.classic or guide.tbc or guide.wotlk or guide.df or guide.retail or guide.cata
+                isGameCompatible = guide[game] or (addon.game == "FOREVER" and guide.classic)
+                hasGuideMetadata = guide.name and guide.group
+
+                if (hasGameTag and not isGameCompatible) or not hasGuideMetadata then
                     -- print(game,guide[game],guide.name)
                     skipGuide = "#0"
                 end
