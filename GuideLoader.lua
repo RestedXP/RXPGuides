@@ -1048,6 +1048,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
             if currentStep == 0 then
                 if guide.df then guide.retail = true end
                 if ((not guide[game] and
+                    not (addon.game == "FOREVER" and guide.classic) and
                     (guide.classic or guide.tbc or guide.wotlk or guide.df or guide.retail or guide.cata)) or not guide.name or not guide.group) then
                     -- print(game,guide[game],guide.name)
                     skipGuide = "#0"
