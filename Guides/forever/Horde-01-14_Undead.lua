@@ -241,9 +241,14 @@ step << Paladin
     .goto 1420/0,1628.400,1837.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aramis Hammerhand|r
     .turnin 98601 >>Turn in A Difficult Path
-    --.accept 90902 >>Accept Rediscovering the Light
+    .accept 90902 >>Accept Rediscovering the Light
     .target Aramis Hammerhand
     --90902 only 85xp, not worth doing
+step << Paladin
+    #completewith XPcheck
+    >>|cRXP_WARN_Cast|r |T135920:0|t[Holy Light] |cRXP_WARN_on|r |cRXP_FRIENDLY_Injured Deathguards|r
+    .complete 90902,1 --|5/5 Injured Deathguard healed
+    .target Injured Deathguard
 step << Mage/Warlock/Priest
     .goto 1420/0,1576.94,1861.6,8,0
     .goto 1420/0,1574.23,1866.12
@@ -290,6 +295,7 @@ step
     .complete 3901,1 --Kill Rattlecage Skeleton (12)
     .mob Rattlecage Skeleton
 step
+    #label XPcheck
     #optional
     #loop
     .goto 1420/0,1595.47,1985.41,30,0
@@ -301,10 +307,16 @@ step
     .goto 1420/0,1499.67,1975.47,30,0
     .goto 1420/0,1487.47,1938.12,30,0
     .goto 1420/0,1541.69,1939.32,30,0
+    .xp 3+895 >>Grind to 895+/1400xp << Paladin
     .xp 3+940 >>Grind to 940+/1400xp << Warrior/Rogue
-    .xp 3+980 >>Grind to 980+/1400xp << !Warrior !Rogue
+    .xp 3+980 >>Grind to 980+/1400xp << !Warrior !Rogue !Paladin
     .mob Mindless Zombie
     .mob Wretched Zombie
+step << Paladin
+    .goto 1420/0,1593.500,1876.400
+    >>|cRXP_WARN_Cast|r |T135920:0|t[Holy Light] |cRXP_WARN_on|r |cRXP_FRIENDLY_Injured Deathguards|r
+    .complete 90902,1 --|5/5 Injured Deathguard healed
+    .target Injured Deathguard
 step << Mage/Warlock/Priest/Paladin
     .goto 1420/0,1576.04,1861.60,8,0
     .goto 1420/0,1574.23,1866.12
@@ -329,6 +341,7 @@ step
 step
     .goto 1420/0,1628.300,1837.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aramis Hammerhand|r
+    .turnin 90902 >>Turn in Rediscovering the Light << Paladin
     .accept 91208 >>Accept Coming to Terms << Paladin
     .accept 91209 >>Accept Continue Your Training << Paladin
     .accept 98389 >>Accept A Light in the Darkness
