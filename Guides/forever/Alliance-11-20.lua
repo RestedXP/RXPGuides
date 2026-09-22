@@ -1988,7 +1988,7 @@ step
 step
     .isOnQuest 98025
     .waypoint 1439/1,-18.100,5779.800
-    >>Kill |cRXP_ENEMY_Jai'vhanel|r. Loot for it for the |cRXP_LOOT_Feather of Jai'vhanel|r
+    >>Kill |cRXP_ENEMY_Jai'vhanel|r. Loot it for the |cRXP_LOOT_Feather of Jai'vhanel|r
     .complete 98025,1 --|1/1 Feather of Jai'vhanel
     .mob Jai'vhanel
 step
