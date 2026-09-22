@@ -3,8 +3,7 @@ if faction == "Horde" then return end
 
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #season 0,1
 << Alliance
 #name 1-6 Shadowglen
@@ -414,8 +413,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #season 0,1
 << Alliance
 #name 6-11 Teldrassil
@@ -535,7 +533,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.37
 step
     .goto 1438/1,963.000,9811.601
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Kyra Starsong::2081|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Kyra Starsong::2081|r
     .target Sentinel Kyra Starsong::2081
     .accept 99046 >>Accept The Lost Runner
 step << Warrior

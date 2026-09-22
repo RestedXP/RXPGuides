@@ -1,5 +1,5 @@
 RXPGuides.RegisterGuide([[
-#classic
+#forever
 #version 1
 #name 1-14 Zephras Isle
 #displayname 1-14 Skyborne << Alliance
@@ -3056,7 +3056,7 @@ step
     .goto 2521,75.34,53.32,30,0
     .goto 2521,74.71,54.03,30,0
     .goto 2521,75.03,53.19
-    >>Follow the Arrow and check if the wind bridge is up otherwise wait until it spawns then move forward to 
+    >>Follow the Arrow and check if the wind bridge is up otherwise wait until it spawns then move forward to
     .complete 93835,1 --1/1 Confront Lorthuna
     .skipgossipid 137230
     .mob Baron Anvillaxx
@@ -3312,7 +3312,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elegael Thornpaw|r.
     .turnin 94489 >>Turn in The Wounds of Betrayal
     .target Elegael Thornpaw
--- step -- repeatable 
+-- step -- repeatable
 --     #arrowtext Talk to\n|cRXP_FRIENDLY_Vayn Moongaze|r
 --     .goto 2521,63.80,35.99
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vayn Moongaze|r.
@@ -3461,7 +3461,7 @@ step  << Alliance
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
+#forever
 #version 1
 #name Skyborne Warrior Class Quests
 #displayname Skyborne Warrior Class Quests
@@ -3484,7 +3484,7 @@ step
     .target Blademaster Ren
 ]])
 RXPGuides.RegisterGuide([[
-#classic
+#forever
 #version 1
 #name Skyborne Hunter Class Quests
 #displayname Skyborne Hunter Class Quests
@@ -3561,7 +3561,7 @@ step
     .target Quel'dora Quickgale::254411
 ]])
 RXPGuides.RegisterGuide([[
-#classic
+#forever
 #version 1
 #name Skyborne Rogue Class Quests
 #displayname Skyborne Rogue Class Quests
@@ -3584,7 +3584,7 @@ step
     .target Akeri Duskblade
 ]])
 RXPGuides.RegisterGuide([[
-#classic
+#forever
 #version 1
 #name Skyborne Rogue Class Quests222
 #displayname Skyborne Rogue Class Quests
@@ -3603,7 +3603,7 @@ RXPGuides.RegisterGuide([[
 --     .complete 98285,1 --Raise your engineering skill to 20
 ]])
 RXPGuides.RegisterGuide([[
-#classic
+#forever
 #version 1
 #name Skyborne Mage Class Quests
 #displayname Skyborne Mage Class Quests
@@ -3642,7 +3642,7 @@ step
     .target Belann Windwood
 ]])
 RXPGuides.RegisterGuide([[
-#classic
+#forever
 #version 1
 #name Skyborne Shaman Class Quests
 #displayname Skyborne Shaman Class Quests
@@ -3689,7 +3689,7 @@ step
     .target Windshaper Boro::251374
 ]])
 RXPGuides.RegisterGuide([[
-#classic
+#forever
 #version 1
 #name Skyborne Druid Class Quests
 #displayname Skyborne Druid Class Quests
@@ -3757,7 +3757,7 @@ step << Alliance
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
+#forever
 #version 1
 #name Skyborne Warrior Class Quests22
 #displayname Skyborne Warrior Class Quests
@@ -3770,7 +3770,7 @@ RXPGuides.RegisterGuide([[
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
+#forever
 #version 1
 #name Skyborne Horde Bad
 #internal

@@ -3,8 +3,7 @@ if faction == "Horde" then return end
 
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 << Human Mage
 #name 1-10 ADV Elwynn Forest Human Mage AoE
 #version 2
@@ -1144,8 +1143,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 << Human Mage
 #name 10-11 ADV Dun Morogh Human Mage AoE
 #version 2
@@ -1436,8 +1434,7 @@ step << skip
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 << Gnome Mage
 #name 1-10 ADV Dun Morogh Gnome Mage AoE
 #version 2
@@ -2996,8 +2993,7 @@ step << skip
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 << Alliance Mage
 #name 10-12 ADV Darkshore 1 Mage AoE
 #version 2
@@ -3553,8 +3549,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 << Alliance Mage
 #name 10-12 LAUNCH ADV Darkshore 1 Mage AoE
 #version 2
@@ -4121,8 +4116,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 << Alliance Mage
 #name 12-14 ADV Loch Modan Mage AoE
 #version 2
@@ -4902,8 +4896,7 @@ step
 
 ]])
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 << Alliance Mage
 #name 14-16 ADV Darkshore 2 Mage AoE
 #version 2
@@ -5551,8 +5544,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 << Alliance Mage
 #name 16-18 ADV Westfall Mage AoE
 #version 2
@@ -6282,8 +6274,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 << Alliance Mage
 #name 18-20 ADV Darkshore 3 Mage AoE
 #version 2
@@ -7061,8 +7052,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 << Alliance Mage
 #name 20-22 ADV Redridge 1 Mage AoE
 #version 2

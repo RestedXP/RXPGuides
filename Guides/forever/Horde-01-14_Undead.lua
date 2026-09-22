@@ -3,8 +3,7 @@ if faction == "Alliance" then return end
 
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 << Horde
 #version 11
 #group RestedXP Forever Guide (H)
@@ -329,14 +328,14 @@ step
     .goto 1420/0,1638.85,1847.74
 step
     .goto 1420/0,1628.300,1837.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aramis Hammerhand|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aramis Hammerhand|r
     .accept 91208 >>Accept Coming to Terms << Paladin
     .accept 91209 >>Accept Continue Your Training << Paladin
     .accept 98389 >>Accept A Light in the Darkness
     .target Aramis Hammerhand
 step << Paladin
     .goto 1420/0,1628.300,1837.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aramis Hammerhand|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aramis Hammerhand|r
     .train 20271 >>Train |T135959:0|t[Judgement]
     .train 19740 >>Train |T135906:0|t[Blessing of Might]
     .target Aramis Hammerhand
@@ -344,7 +343,7 @@ step << Paladin
 step << Paladin
     #optional
     .goto 1420/0,1628.300,1837.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aramis Hammerhand|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aramis Hammerhand|r
     .train 20271 >>Train |T135959:0|t[Judgement]
     .target Aramis Hammerhand
     .money <0.01
@@ -670,7 +669,7 @@ step
 	.goto 1420/0,1364.56,1784.18,50,0
 	.goto 1420/0,1400.71,1766.71,50,0
     .xp 5+1940 >>Grind to 1940+/2800xp << !Paladin
-    .xp 5+1850 >>Grind to 1850+/2800xp << Paladin 
+    .xp 5+1850 >>Grind to 1850+/2800xp << Paladin
 step
     .goto 1420/0,1305.36,2127.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calvin|r
@@ -680,8 +679,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 << Horde
 #name 6-12 Tirisfal Glades
 #displayname 6-13 Tirisfal Glades << Paladin
@@ -726,7 +724,7 @@ step
     .target Spirit Healer
 step
     .goto 1420/0,391.400,2289.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Bartholomew|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Bartholomew|r
     .accept 86784 >>Accept Sticks and Bones
     .target Deathguard Bartholomew
 step
@@ -1184,7 +1182,7 @@ step
     .target +Apothecary Johaan
 step
     .goto 1420/0,347.600,2265.100
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolai Anise|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolai Anise|r
     .accept 95314 >>Accept That Shadowvale Green Elixir
     .target Carolai Anise
     .xp <7,1
@@ -1224,7 +1222,7 @@ step
     .accept 358 >>Accept Graverobbers
     .target +Magistrate Sevren
     .goto 1420/0,265.15,2305.94
-step << Paladin 
+step << Paladin
     .goto 1420/0,311.600,2251.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shari Stilwell|r
     .turnin 99144 >>Turn in Seeking Refuge
@@ -1683,7 +1681,7 @@ step << Rogue/Warrior
     >>|cRXP_WARN_Try to make them during points at which you're waiting for things, such as Zeppelins|r
     .train 3273 >>Train |T135966:0|t[First Aid]
     .target Nurse Neela
-step << Paladin 
+step << Paladin
     .goto 1420/0,311.600,2251.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shari Stilwell|r
     .train 853 >>Train your class spells
@@ -1985,12 +1983,12 @@ step << Warrior
     .target Deathguard Dillinger
 step
     .goto 1420/0,254.600,2225.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Terrence|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Terrence|r
     .accept 96895 >>Accept The Argent Emissary
     .target Deathguard Terrence
-step << Paladin 
+step << Paladin
     .goto 1420/0,311.600,2251.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shari Stilwell|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shari Stilwell|r
     .accept 91282 >>Accept A Second Home
     .trainer >>Train your class spells
     .target Shari Stilwell
@@ -2501,7 +2499,7 @@ step
     .goto 1420/0,2049.900,2463.200,50 >>Travel to Bandarion Keep
 step << Paladin
     .goto 1420/0,2045.900,2475.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Breton Samuels|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Breton Samuels|r
     .turnin 91282 >>Turn in A Second Home
     .accept 91285 >>Accept Murlocs at the Gates
     .target Breton Samuels
@@ -2570,7 +2568,7 @@ step << Paladin
     .target Danitha Morr
 step << Paladin
     .goto 1420/0,2007.800,2491.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorin Croge|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorin Croge|r
     .accept 91316 >>Accept Making Repairs
     .target Jorin Croge
 step << Paladin
@@ -2659,7 +2657,7 @@ step << Paladin
     .target Danitha Morr
 step << Paladin
     .goto 1420/0,2035.000,2492.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danitha Morr|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danitha Morr|r
     .accept 94427 >>Accept A Lesson in Divinity
     .target Danitha Morr
 step
@@ -3158,8 +3156,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 #version 11
 #defaultfor Undead/Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
-#classic
-#tbc
+#forever
 #era/som--h
 #name 12-14 Silverpine Forest
 #displayname 13-15 Silverpine Forest << Paladin

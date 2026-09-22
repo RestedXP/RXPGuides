@@ -3,8 +3,7 @@ if faction == "Alliance" then return end
 
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #xprate <1.99
 << Horde
 #name 1-6 Durotar
@@ -1556,8 +1555,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #xprate <1.99
 << Horde
 #name 6-10 Durotar
@@ -3873,8 +3871,7 @@ step << Rogue
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #xprate <1.99
 << Horde
 #name 10-12 Durotar
@@ -5285,8 +5282,7 @@ step
 
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 << Horde
 #xprate <1.99
 #name 10-12 Tirisfal
@@ -7131,8 +7127,7 @@ local faction = UnitFactionGroup("player")
 if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #xprate >1.99
 << Horde
 #name 1-7 Durotar
@@ -8602,8 +8597,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #xprate >1.99
 << Horde
 #name 7-13 Durotar

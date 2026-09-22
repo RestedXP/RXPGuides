@@ -7,8 +7,7 @@ if faction == "Horde" then return end
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #xprate <1.5
-#classic
-#tbc
+#forever
 #season 0,1
 #version 1
 << Alliance
@@ -163,7 +162,7 @@ step
 	.target Innkeeper Heather
 step
     .goto 1436/0,1179.800,-10635.601
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon::253092|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon::253092|r
     .target Alba Fairmoon::253092
     .accept 92742 >>Accept Testing the Wells
     .accept 92744 >>Accept Murloc Gills
@@ -727,8 +726,7 @@ step
 ----Start of Darkshore Part 1----
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #season 0,1
 #version 1
 << Alliance
@@ -2902,8 +2900,7 @@ step << Druid
 ----Hunters stay in Darkshore/Ashenvale and Grind, 2x skips Redridge----
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #season 0,1
 #version 1
 << Alliance
@@ -8151,8 +8148,7 @@ step << !Hunter
 
 RXPGuides.RegisterGuide([[
 #xprate <1.59
-#classic
-#tbc
+#forever
 #season 0,1
 #version 1
 << Alliance !Hunter
@@ -9793,8 +9789,7 @@ step
 ----Start of Hunter-only Darkshore/Ashen (Needs to be merged)----
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #season 0,1
 #version 1
 #season 0
@@ -10587,8 +10582,7 @@ step << Dwarf Hunter
 
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #season 0
 #version 1
 << Alliance !Hunter

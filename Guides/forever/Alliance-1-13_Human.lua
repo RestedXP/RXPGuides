@@ -3,8 +3,7 @@ if faction == "Horde" then return end
 
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #season 0,1
 << Alliance
 #name 1-6 Northshire
@@ -763,8 +762,7 @@ step
 
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #season 0,1
 #version 1
 << Alliance
@@ -2530,7 +2528,7 @@ step << Warlock/Warrior/Hunter
     .xp 10 >> Grind to 10
 step << Hunter
     .goto 1429/0,107.200,-9472.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r
     .target Josephine Carson::251507
     .accept 94792 >>Accept Taming the Beast
     .trainer >> Train your class spells
@@ -2543,7 +2541,7 @@ step << Hunter
     .mob Rockhide Boar
 step << Hunter
     .goto 1429/0,107.200,-9472.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r
     .target Josephine Carson::251507
     .turnin 94792 >>Turn in Taming the Beast
     .accept 94863 >>Accept Taming the Beast
@@ -2557,7 +2555,7 @@ step << Hunter
     .mob Gray Forest Wolf
 step << Hunter
     .goto 1429/0,107.200,-9472.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r
     .target Josephine Carson::251507
     .turnin 94863 >>Turn in Taming the Beast
     .accept 94864 >>Accept Taming the Beast
@@ -2572,7 +2570,7 @@ step << Hunter
     .mob Young Forest Bear
 step << Hunter
     .goto 1429/0,107.200,-9472.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r
     .target Josephine Carson::251507
     .turnin 94864 >>Turn in Taming the Beast
     .accept 94793 >>Accept Training the Beast
@@ -3071,7 +3069,7 @@ step << Hunter
     .target Lina Stover
     .money <0.1664
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.77
-step << Hunter 
+step << Hunter
     .goto 1453/0,702.700,-8791.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lina Stover|r
 	.vendor >>|cRXP_BUY_Buy 6 stacks of|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_and destroy any remaining|r |T132382:0|t[Rough Arrows]
@@ -4033,8 +4031,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #season 0,1
 #version 1
 << Alliance

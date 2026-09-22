@@ -4,8 +4,7 @@ if faction == "Alliance" then return end
 
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #xprate <1.99
 #era/som--h
 << Horde
@@ -580,8 +579,7 @@ step
 
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #xprate <1.99
 << Horde
 #name 6-12 Mulgore
@@ -2945,8 +2943,7 @@ if faction == "Alliance" then return end
 
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 << Horde
 #xprate >1.99
 #version 1
@@ -3644,8 +3641,7 @@ step
 
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 << Horde
 #xprate >1.99
 #version 1

@@ -3,8 +3,7 @@ if faction == "Horde" then return end
 
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #season 0,1
 #version 1
 << Alliance
@@ -349,7 +348,7 @@ step << Shaman
     .train 8042 >> Train |T136026:0|t[Earth Shock]
 step << Paladin/Warlock/Hunter/Shaman
     .goto 1426/0,390.000,-6093.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda::2756|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda::2756|r
     .target Grund Drokda::2756
     .accept 97277 >>Accept Grund and Gozwin
 step << Paladin
@@ -554,7 +553,7 @@ step << Warrior
 
 step << !Paladin !Warlock !Hunter !Shaman
     .goto 1426/0,390.000,-6093.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda::2756|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda::2756|r
     .target Grund Drokda::2756
     .accept 97277 >>Accept Grund and Gozwin
 step << !Paladin !Warlock !Hunter !Shaman
@@ -592,7 +591,7 @@ step << Dwarf Priest/Gnome Priest
     .xp 4+1690 >> Grind to 1690+/2100xp
 step
     .goto 1426/0,390.000,-6093.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda::2756|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda::2756|r
     .target Grund Drokda::2756
     .turnin 97277 >>Turn in Grund and Gozwin
 step << Shaman
@@ -646,9 +645,9 @@ step
     .accept 96628 >>Accept The Adventurer
 step
     .goto 1426/0,135.100,-6248.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hands Springsprocket::6782|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hands Springsprocket::6782|r
     .target Hands Springsprocket::6782
-    .accept 2160 >>Accept Supplies to Tannok  
+    .accept 2160 >>Accept Supplies to Tannok
 step
     .goto 1426/0,111.82,-6206.61,15,0
     .goto 1426/0,46.32,-6037.19,15 >> Travel through Coldridge Pass
@@ -658,9 +657,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #xprate >1.49 << Hunter
-#era/som--h
-#classic
-#tbc
+#forever
 #season 0,1
 #version 1
 << Alliance --!Hunter
@@ -2896,8 +2893,7 @@ step << Dwarf Paladin
 
 RXPGuides.RegisterGuide([[
 #xprate <1.5
-#classic
-#tbc
+#forever
 #season 0,1
 << Alliance !Hunter
 #group RestedXP Forever Guide (A)
@@ -3511,9 +3507,7 @@ step << Dwarf Paladin
 ]])
 
 RXPGuides.RegisterGuide([[
-#era/som--h
-#classic
-#tbc
+#forever
 #season 0,1
 #version 1
 << Alliance !Hunter
@@ -4552,8 +4546,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #xprate <1.5
-#classic
-#tbc
+#forever
 #season 0,1
 #era/som--h
 #version 1
@@ -5148,8 +5141,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #season 0,1
 #era/som--h
 #version 1

@@ -3,8 +3,7 @@ if faction == "Alliance" then return end
 
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #xprate <1.99
 << Horde
 #name 12-17 The Barrens
@@ -3210,8 +3209,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #xprate <1.99
 << Horde
 #name 17-22 Stonetalon/Barrens/Ashenvale
@@ -6776,8 +6774,7 @@ step
 
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 << Horde
 #xprate >1.99
 #name 13-20 The Barrens
@@ -10388,8 +10385,7 @@ step
     ]])
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #xprate >1.99
 << Horde
 #name 20-24 Stonetalon/Barrens
