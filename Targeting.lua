@@ -56,15 +56,11 @@ function addon.targeting:ConfigureTargetButton(button, targetName, kind, index, 
     button:SetAttribute("macrotext", "/cleartarget\n/targetexact " .. targetName)
 
     if addon.game == "FOREVER" and marking then
-        button:SetAttribute("type2", "raidtarget")
-        button:SetAttribute("unit2", "target")
-        button:SetAttribute("marker2", addon.targeting:GetMarkerIndex(kind, index))
-        button:SetAttribute("action2", "set-unmarked")
+        button:SetAttribute("type2", "macro")
+        button:SetAttribute("macrotext2", "/tm " .. addon.targeting:GetMarkerIndex(kind, index))
     else
         button:SetAttribute("type2", nil)
-        button:SetAttribute("unit2", nil)
-        button:SetAttribute("marker2", nil)
-        button:SetAttribute("action2", nil)
+        button:SetAttribute("macrotext2", nil)
     end
 end
 
