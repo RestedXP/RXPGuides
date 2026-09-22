@@ -2265,7 +2265,7 @@ step
     .mob +Young Forest Bear
 
 step
-    .goto 1429,76.5,71.9
+    .goto 1429/0,-1119.7708,-9603.7687
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormin Pelford|r
     .accept 91733 >> Accept Downstream
     .target Ormin Pelford
@@ -2383,7 +2383,7 @@ step
     .accept 39 >> Accept Deliver Thomas' Report
     .target Guard Thomas
 step
-    .goto 1429,76.5,71.9
+    .goto 1429/0,-1119.7708,-9603.7687
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormin Pelford|r
     .turnin 91733 >> Turn in Downstream
     .target Ormin Pelford
@@ -2456,7 +2456,7 @@ step << !Warlock
     .zone Redridge Mountains >> Travel to Redridge Mountains
 step << !Warlock
     #optional
-    .goto 1433/0,-1948.56,-9582.75
+    .goto 1433/0,-1906.400,-9606.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
     .accept 244 >> Accept Encroaching Gnolls
     .target Guard Parker
@@ -3325,7 +3325,7 @@ step << Warlock
 step << Warlock
     #label Gnolls
     #requires SoulShards
-    .goto 1433/0,-1948.56,-9582.75
+    .goto 1433/0,-1906.400,-9606.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
     .accept 244 >> Accept Encroaching Gnolls
     .target Guard Parker

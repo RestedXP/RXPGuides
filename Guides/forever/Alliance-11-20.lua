@@ -8422,7 +8422,7 @@ step << !Human !Warlock
     .zone Redridge Mountains >> Travel to Redridge Mountains
 step << !Human !Warlock
     #xprate >1.49 << Gnome/Dwarf
-    .goto 1433/0,-1902.32,-9609.54
+    .goto 1433/0,-1906.400,-9606.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
     .accept 244 >> Accept Encroaching Gnolls
     .target Guard Parker
@@ -8910,7 +8910,7 @@ step
 .dungeon DM
     #xprate <1.5
     #label GParker
-    .goto 1433/0,-1902.32,-9609.54
+    .goto 1433/0,-1906.400,-9606.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
     .accept 244 >> Accept Encroaching Gnolls
     .target Guard Parker
@@ -9071,13 +9071,13 @@ step
     #xprate <1.5
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
 	.target Guard Parker
-    .goto 1433/0,-1902.97,-9610.260
+    .goto 1433/0,-1906.400,-9606.800
     .accept 244 >> Accept Encroaching Gnolls
 step
     #xprate <1.5
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
 	.target Guard Parker
-    .goto 1433/0,-1902.32,-9609.54
+    .goto 1433/0,-1906.400,-9606.800
     .turnin 129 >> Turn in A Free Lunch
     .accept 130 >> Accept Visit the Herbalist
 step

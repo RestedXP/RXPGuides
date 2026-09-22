@@ -2421,6 +2421,12 @@ step
     .zoneskip Dun Morogh
     .isQuestAvailable 418
     .skill cooking,<50,1 --XX Shows if cooking skill is 50+
+step << Dwarf Paladin
+    .goto 1455/0,-856.69,-4841.490
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Firebrew|r
+    .home >> Set your Hearthstone to Ironforge
+    .target Innkeeper Firebrew
+    .bindlocation 1537
 step << Hunter
     .hs >> Hearth to Thelsamar
     >>|cRXP_BUY_Buy food/water if needed|r << !Warrior !Rogue
@@ -2645,14 +2651,35 @@ step << !Hunter
     .trainer >>Train 1h Swords and Staves << Warlock
     .trainer >>Train 2h Swords << Warrior/Paladin
     .target Woo Ping
-
---
---xx all hs currently in thelsamar
-step << skip --Dwarf Paladin
-    .goto 1453/0,673.58,-8867.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Allison|r
-    .home >> Set your Hearthstone to Stormwind
-    .target Innkeeper Allison
+step << Rogue
+    #ssf
+    #optional
+    .goto 1453/0,607.38,-8790.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
+    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_Make sure you save 10s for training later|r
+    .collect 851,1 -- Cutlass (1)
+    .target Gunther Weller
+    .money <0.1922
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
+step << Rogue
+    #optional
+    #ah
+    .goto 1453/0,607.38,-8790.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
+    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    >>|cRXP_WARN_Make sure you save 10s for training later|r
+    .collect 851,1 -- Cutlass (1)
+    .target Gunther Weller
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
+    .money <0.1922
+step << Rogue
+    #optional
+    +|cRXP_WARN_Equip the|r |T135346:0|t[Cutlass]
+    .use 851
+    .itemcount 851,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2673,7 +2700,7 @@ step << Warlock
     #softcore
     #optional
     #completewith next
-    +Cast |T136126:0|t[Life Tap] repeatedly until you have <10% health while on the way to |cRXP_FRIENDLY_Dungar Longdrink|r
+    +|cRXP_WARN_Cast|r |T136126:0|t[Life Tap] |cRXP_WARN_repeatedly until you have <10% health while on the way to|r |cRXP_FRIENDLY_Dungar Longdrink|r
 step
     .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
@@ -2683,19 +2710,19 @@ step << Warlock
     #softcore
     #optional
     #completewith next
-    >>Cast |T136126:0|t[Life Tap] repeatedly until you have <10% health then jump down the ledge (NOT into the water) next to the flight master and die intentionally
+    >>|cRXP_WARN_Cast|r |T136126:0|t[Life Tap] |cRXP_WARN_repeatedly until you have <10% health then jump down the ledge (NOT into the water) next to the flight master and die intentionally|r
     .deathskip >> Respawn at the Spirit Healer
     .target Spirit Healer
 step
     #optional
     #completewith next
     .subzone 87 >> Travel to Goldshire
-step
+step << skip
     .goto 1429/0,73.95,-9465.590
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .target Marshal Dughan
     .accept 62 >> Accept The Fargodeep Mine
-step
+step << skip
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .target William Pestle
     .goto 1429/0,31.92,-9460.38
@@ -2719,7 +2746,18 @@ step
     .target Remy "Two Times"
     .goto Elwynn Forest,42.140,67.254
     .accept 40 >> Accept A Fishy Peril
-    .accept 47 >> Accept Gold Dust Exchange
+    --.accept 47 >> Accept Gold Dust Exchange
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .target Marshal Dughan
+    .goto 1429/0,73.92,-9465.54
+    .turnin 40 >> Turn in A Fishy Peril
+    .accept 35 >> Accept Further Concerns
+step << Paladin
+    .goto 1429/0,109.04,-9468.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Wilhelm|r
+    .trainer >> Train your class spells
+    .target Brother Wilhelm
 step << Warlock
     >>Click the |cRXP_PICK_Wanted Poster|r
     .accept 176 >> Accept Wanted: "Hogger"
@@ -2754,20 +2792,27 @@ step << Warlock
     .complete 176,1 --Huge Gnoll Claw (1)
     .unitscan Hogger
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r and |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r
     .accept 88 >> Accept Princess Must Die!
     .target +Ma Stonefield
     .goto Elwynn Forest,34.660,84.483
+
+--
+step << skip
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r and |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
     .accept 85 >> Accept Lost Necklace
     .target +"Auntie" Bernice Stonefield
     .goto 1429/0,338.47,-9889.67
-step
+    .accept 88 >> Accept Princess Must Die!
+    .target +Ma Stonefield
+    .goto Elwynn Forest,34.660,84.483
+step << skip
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Billy Maclure|r
     .target Billy Maclure
     .goto 1429/0,38.41,-9923.69
     .turnin 85 >> Turn in Lost Necklace
     .accept 86 >> Accept Pie for Billy
-step
+step << skip
     #completewith next
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
     >>|cRXP_WARN_The level 5 mobs may turn gray during this quest. Still finish it as you need to complete this quest to unlock the follow up's|r
@@ -2775,12 +2820,12 @@ step
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
     .mob Kobold Miner
-step
+step << skip
     .goto 1429/0,193.00,-9832.40,50,0
     .goto 1429/0,129.73,-9844.49
     >>|cRXP_WARN_Enter and explore Fargodeep Mine|r
     .complete 62,1 --Scout Through the Fargodeep Mine
-step
+step << skip
     .goto 1429/0,129.73,-9844.49,25,0
     .goto 1429/0,226.57,-9878.28,25,0
     .goto 1429/0,129.73,-9844.49,25,0
@@ -2792,23 +2837,23 @@ step
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
     .mob Kobold Miner
-step
+step << skip
     #softcore
     #completewith GoldshireTurnins
     .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
-step
+step << skip
     #hardcore
     #completewith GoldshireTurnins
     .subzone 87 >> Travel to Goldshire
-step
+step << skip
     #hardcore
     .goto Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     >>|cRXP_WARN_Do NOT vendor the|r |T133581:0|t[Bag of Marbles] |cRXP_WARN_reward. This is an incredibly valuable item all the way through to level 60|r
     .turnin 47 >> Turn in Gold Dust Exchange
     .target Remy "Two Times"
-step << Warlock
+step << skip --Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .target Marshal Dughan
     .goto 1429/0,73.92,-9465.54
@@ -2817,57 +2862,54 @@ step << Warlock
     .accept 35 >> Accept Further Concerns
     .turnin 176,3 >> Turn in Wanted: "Hogger"
     .isQuestComplete 176
-step
+step << skip
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .target Marshal Dughan
     .goto 1429/0,73.92,-9465.54
     .turnin 62 >> Turn in The Fargodeep Mine
     .turnin 40 >> Turn in A Fishy Peril
     .accept 35 >> Accept Further Concerns
-step
+step << skip
     #label GoldshireTurnins
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .target Marshal Dughan
     .goto 1429/0,74.02,-9465.52
     .turnin 123 >> Turn in The Collector
     .isOnQuest 123
-step << Warlock
+step << skip --Warlock
     .isQuestTurnedIn 123
     .goto 1429/0,74.02,-9465.52
     .target Marshal Dughan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .accept 147 >> Accept Manhunt
-step
+step << skip
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .target William Pestle
     .goto 1429/0,31.92,-9460.38
     .turnin 60 >> Turn in Kobold Candles
     .accept 61 >> Accept Shipment to Stormwind
-step
+step << skip
     #softcore
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     >>|cRXP_WARN_Do NOT vendor the|r |T133581:0|t[Bag of Marbles] |cRXP_WARN_reward. This is an incredibly valuable item all the way through to level 60|r
     .target Remy "Two Times"
     .goto Elwynn Forest,42.140,67.254
     .turnin 47 >> Turn in Gold Dust Exchange
+--
+
 step
     #completewith next
     .goto 1429/0,-1032.06,-9610.23,30 >> Travel east to |cRXP_FRIENDLY_Guard Thomas|r
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
-    .goto 1429/0,-1032.06,-9610.23
-    .turnin 35 >> Turn in Further Concerns
-    .target Guard Thomas
-step
     #era
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
     .target Guard Thomas
     .goto 1429/0,-1032.06,-9610.23
+    .turnin 35 >> Turn in Further Concerns
     .accept 37 >> Accept Find the Lost Guards
     .accept 52 >> Accept Protect the Frontier
 step
-    #era
-    #completewith Prowlers
+    #completewith BundleOT
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
     >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_Young Forest Bears|r you see|r
     .complete 52,1 --Kill Prowler (x8)
@@ -2888,7 +2930,7 @@ step
     .accept 5545 >> Accept A Bundle of Trouble
 step
     #era
-    #completewith Bundles
+    #completewith next
     >>Loot the |cRXP_LOOT_Bundle of Wood|r on the ground. |cRXP_WARN_They are found beneath the trees|r
     .complete 5545,1 -- Bundle of Wood (8)
 step
@@ -2901,59 +2943,86 @@ step
     .turnin 45 >> Turn in Discover Rolf's Fate
     .accept 71 >> Accept Report to Thomas
 step
-    #era
-    #label Bundles
-    .goto 1429/0,-1126.71,-9689.41,60,0
-    .goto 1429/0,-1230.84,-9876.89,60,0
-    .goto 1429/0,-1310.67,-9717.18,60,0
-    .goto 1429/0,-1126.71,-9689.41,60,0
-    .goto 1429/0,-1230.84,-9876.89,60,0
-    .goto 1429/0,-1310.67,-9717.18,60,0
-    .goto 1429/0,-1483.86,-9440.13
+    #loop
+    .goto 1429/0,-1257.91,-9216.77,0
+    .goto 1429/0,-1246.46,-9329.03,0
+    .goto 1429/0,-1362.03,-9309.59,0
+    .goto 1429/0,-1257.91,-9216.77,40,0
+    .goto 1429/0,-1271.79,-9186.68,40,0
+    .goto 1429/0,-1230.14,-9150.34,40,0
+    .goto 1429/0,-1271.10,-9147.10,40,0
+    .goto 1429/0,-1271.79,-9186.68,40,0
+    .goto 1429/0,-1257.91,-9216.77,40,0
+    .goto 1429/0,-1232.92,-9251.950,40,0
+    .goto 1429/0,-1246.46,-9329.03,40,0
+    .goto 1429/0,-1249.58,-9362.13,40,0
+    .goto 1429/0,-1285.33,-9365.14,40,0
+    .goto 1429/0,-1296.09,-9389.44,40,0
+    .goto 1429/0,-1338.09,-9331.11,40,0
+    .goto 1429/0,-1354.05,-9354.26,40,0
+    .goto 1429/0,-1362.03,-9309.59,40,0
+    .goto 1429/0,-1302.68,-9309.12,40,0
+    .goto 1429/0,-1257.91,-9216.77,40,0
+    .goto 1429/0,-1354.05,-9354.26,40,0
+    .goto 1429/0,-1362.03,-9309.59,40,0
+    >>Loot the |cRXP_LOOT_Bundles of Wood|r on the ground at the base of the trees
+    .complete 5545,1 -- Bundle of Wood (8)
+step
+    #label BundleOT
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Supervisor Raelen|r
+    .target Supervisor Raelen
+    .goto 1429/0,-1289.22,-9469.80
+    .turnin 5545 >> Turn in A Bundle of Trouble
+step
+    #completewith WaterloggedToolbox
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
     .complete 52,1 --Kill Prowler (x8)
     .mob +Prowler
     .complete 52,2 --Kill Young Forest Bear (x5)
     .mob +Young Forest Bear
 step
-    #era
-    .goto 1429/0,-1130.18,-9383.88,40,0
-    .goto 1429/0,-1369.67,-9314.45,40,0
-    .goto 1429/0,-1130.18,-9383.88,40,0
-    .goto 1429/0,-1369.67,-9314.45,40,0
-    .goto 1429/0,-1130.18,-9383.88,40,0
-    .goto 1429/0,-1369.67,-9314.45
-    >>Loot the |cRXP_LOOT_Bundle of Wood|r on the ground. |cRXP_WARN_They are found beneath the trees|r
-    .complete 5545,1 -- Bundle of Wood (8)
+    .goto 1429/0,-1119.7708,-9603.7687
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormin Pelford|r
+    .accept 91733 >> Accept Downstream
+    .target Ormin Pelford
 step
-    #era
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Supervisor Raelen|r
-    .target Supervisor Raelen
-    .goto 1429/0,-1289.22,-9469.80
-    .turnin 5545 >> Turn in A Bundle of Trouble
+    >>Loot the |cRXP_PICK_Waterlogged Saw|r on the ground
+    .complete 91733,2 -- Waterlogged Saw 1/1
+    .goto 1429,74.3,76.4
 step
-    #era
-    #label Bears
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
-    .target Sara Timberlain
-    .goto 1429/0,-1222.40,-9531.76
-    .accept 83 >> Accept Red Linen Goods
+    >>Loot the |cRXP_PICK_Waterlogged Axe|r on the ground
+    .complete 91733,1 -- Waterlogged Axe 1/1
+    .goto 1429,76.7,82.5
 step
-    #era
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
-    .target Guard Thomas
-    .goto 1429/0,-1032.06,-9610.23
-    .turnin 52 >> Turn in Protect the Frontier
-    .turnin 71 >> Turn in Report to Thomas
-    .accept 39 >> Accept Deliver Thomas' Report
-    .accept 109 >> Accept Report to Gryan Stoutmantle
+    #label WaterloggedToolbox
+    >>Loot the |cRXP_PICK_Waterlogged Toolbox|r on the ground
+    .complete 91733,3 -- Waterlogged Toolbox 1/1
+    .goto 1429,77.3,86.8
 step
-    #completewith Deed
-    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r]
-    .use 1972>>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] to start the quest|r
-    >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] |cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
-    .collect 1972,1,184 --Collect Westfall Deed (x1)
-    .accept 184 >> Accept Furlbrow's Deed
+    .goto 1429/0,-1119.800,-9931.300
+    >>Kill |cRXP_ENEMY_Croaky|r. Loot him for |T134169:0|t[|cRXP_LOOT_Croaky's Head|r]
+    .use 247826 >> |cRXP_WARN_Use|r |T134169:0|t[|cRXP_LOOT_Croaky's Head|r] |cRXP_WARN_to start the quest|r
+    >>|cRXP_WARN_He is a level 11 elite. Skip this step if you are unable to kill him|r
+    .collect 247826,1,91740,1 -- Croaky's Head (1)
+    .accept 91740 >>Accept Croaky's Head
+    .mob Croaky
+step
+    #loop
+    .goto 1429,77.499,74.518,0
+    .goto 1429,80.496,78.223,0
+    .goto 1429,87.342,63.763,0
+    .goto 1429,77.499,74.518,55,0
+    .goto 1429,77.222,77.499,55,0
+    .goto 1429,78.483,79.323,55,0
+    .goto 1429,80.496,78.223,55,0
+    .goto 1429,81.434,76.695,55,0
+    .goto 1429,87.145,69.922,55,0
+    .goto 1429,87.342,63.763,55,0
+    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
+    .complete 52,1 --Kill Prowler (x8)
+    .mob +Prowler
+    .complete 52,2 --Kill Young Forest Bear (x5)
+    .mob +Young Forest Bear
 step << Warlock
     .isOnQuest 147
     .goto 1429/0,-932.35,-9806.53
@@ -2973,52 +3042,39 @@ step << Warlock
     .complete 1688,1 --Surena's Choker (1)
     .mob Surena Caledon
 step
-    #era
-    #completewith next
-    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for their |cRXP_LOOT_Bandanas|r
-    .complete 83,1 --Collect Red Linen Bandana (x6)
-    .mob Defias Bandit
-    .isOnQuest 83
-step
     .goto 1429/0,-869.87,-9768.10
     >>Kill |cRXP_ENEMY_Princess|r. Loot her for her |cRXP_LOOT_Collar|r
     >>|cRXP_ENEMY_Princess|r |cRXP_WARN_will aggro with both of her|r |cRXP_ENEMY_Porcine Entourage|r
     >>|cRXP_ENEMY_Princess|r |cRXP_WARN_will also cast|r |T132368:0|t[Rushing Charge] |cRXP_WARN_which deals heavy damage|r
-    .complete 88,1
+    >>|cRXP_WARN_Pool 100 Rage before you engage|r |cRXP_ENEMY_Princess|r << Warrior
+    >>|cRXP_WARN_Be sure |T136205:0|t[Evasion] |cRXP_WARN_is ready. If you're struggling, you can use the Fence with Throwing Weapons to abuse pathing and buy time|r << Rogue
+    >>|cRXP_WARN_Be ready to use a|r |T134830:0|t[Lesser Healing Potion]
+    .link https://www.youtube.com/watch?v=GRrXOV-UvD4 >> |cRXP_WARN_Click here for video reference|r << !Warrior
+    .complete 88,1 --Collect Brass Collar (x1)
     .mob Princess
 step
-    #era
-    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for their |cRXP_LOOT_Bandanas|r
-    .goto 1429/0,-911.52,-9735.70,60,0
-    .goto 1429/0,-828.22,-9733.39,60,0
-    .goto 1429/0,-831.69,-9823.65,60,0
-    .goto 1429/0,-921.93,-9812.08,60,0
-    .goto 1429/0,-911.52,-9735.70,60,0
-    .goto 1429/0,-828.22,-9733.39,60,0
-    .goto 1429/0,-831.69,-9823.65,60,0
-    .goto 1429/0,-921.93,-9812.08,60,0
-    .goto 1429/0,-911.52,-9735.70,60,0
-    .goto 1429/0,-828.22,-9733.39,60,0
-    .goto 1429/0,-831.69,-9823.65,60,0
-    .goto 1429/0,-921.93,-9812.08,60,0
-    .goto 1429/0,-869.87,-9768.10
-    .complete 83,1 --Collect Red Linen Bandana (x6)
-    .mob Defias Bandit
-    .isOnQuest 83
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
+    .target Guard Thomas
+    .goto 1429/0,-1032.06,-9610.23
+    .turnin 52 >> Turn in Protect the Frontier
+    .turnin 71 >> Turn in Report to Thomas
+    .accept 39 >> Accept Deliver Thomas' Report
+    .accept 109 >> Accept Report to Gryan Stoutmantle
+    .xp <9,1
 step
-    #era
-    #softcore
-    #sticky
+    .goto 1429/0,-1119.7708,-9603.7687
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormin Pelford|r
+    .turnin 91733 >> Turn in Downstream
+    .target Ormin Pelford
+step
     #completewith next
-    .deathskip >>Die and respawn at the Spirit Healer if you're low health, otherwise just run back and handin
-    .target Spirit Healer
+    .subzone 798 >> Travel to Ridgepoint Tower
 step
-    #label Deed
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
-    .target Sara Timberlain
-    .goto 1429/0,-1222.40,-9531.76
-    .turnin 83 >> Turn in Red Linen Goods
-    .isQuestComplete 83
+    .isOnQuest 91740
+    .goto 1429/0,-1406.200,-9775.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merell Ross::248277|r
+    .target Merell Ross::248277
+    .turnin 91740 >>Turn in Croaky's Head
 step
     #completewith next
     .goto 1433/0,-1948.56,-9582.75
@@ -3026,7 +3082,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
     .target Guard Parker
-    .goto 1433/0,-1948.56,-9582.75
+    .goto 1433/0,-1906.400,-9606.800
     .accept 244 >> Accept Encroaching Gnolls
 step
     .goto 1433/0,-2238.00,-9443.69
@@ -3035,12 +3091,12 @@ step
     .turnin 244 >> Turn in Encroaching Gnolls
     .target Deputy Feldon
 step
-    .goto Redridge Mountains,30.590,59.410
+    .goto 1433/0,-2234.900,-9435.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
     .fly Stormwind >> Fly to Stormwind
     .target Ariena Stormfeather
-step
+step << skip
     .goto 1453/0,625.48,-8857.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan Pestle|r
     .turnin 61,1 >> Turn in Shipment to Stormwind
@@ -3049,43 +3105,21 @@ step
     .target Morgan Pestle
 step
     #ah
-    .goto 1453/0,660.28,-8814.55
+    .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[Cooking] |cRXP_BUY_with later|r
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall:|r
     >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
-    >>|cRXP_BUY_Buy the following items for a faster turn in at Loch Modan shortly and to level your|r |T133971:0|t[Cooking] |cRXP_BUY_skill with:|r
-    >>|T134342:0|t[Boar Intestines]
-    >>|T134027:0|t[Bear Meat]
-    >>|T134437:0|t[Spider Ichor]
-    >>|T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    >>|T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
-    .collect 3172,3,418,1 -- Boar Intestines (3)
-    .collect 3173,3,418,1 -- Bear Meat (3)
-    .collect 3174,3,418,1 -- Spider Ichor (3)
-    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (1-50)
-    .disablecheckbox
-    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (1-50)
-    .disablecheckbox
+    >>|T133972:0|t[Stringy Vulture Meat]
+    >>|T133884:0|t[Murloc Eye]
+    >>|T135997:0|t[Goretusk Snout]
+    >>|T134185:0|t[Okra]
+    >>|T134341:0|t[Goretusk Liver]
+    .collect 729,3,38,1 -- Stringy Vulture Meat (3)
+    .collect 730,3,38,1 -- Murloc Eye (3)
+    .collect 731,3,38,1 -- Goretusk Snout (3)
+    .collect 732,3,38,1 -- Okra (3)
+    .collect 723,8,22,1 -- Goretusk Liver (8)
     .target Auctioneer Jaxon
-    .isQuestAvailable 418
-    .skill cooking,50,1 --XX Shows if cooking skill is <50
-step
-    #ah
-    #optional
-    .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
-    >>|cRXP_BUY_Buy the following items for a faster turn in at Loch Modan shortly:|r
-    >>|T134342:0|t[Boar Intestines]
-    >>|T134027:0|t[Bear Meat]
-    >>|T134437:0|t[Spider Ichor]
-    .collect 3172,3,418,1 -- Boar Intestines (3)
-    .collect 3173,3,418,1 -- Bear Meat (3)
-    .collect 3174,3,418,1 -- Spider Ichor (3)
-    .target Auctioneer Jaxon
-    .isQuestAvailable 418
-    .skill cooking,<50,1 --XX Shows if cooking skill is 50+
 step << Warlock
     #completewith next
     .goto 1453/0,988.44,-8942.15,20,0
@@ -3118,7 +3152,7 @@ step << Warlock
 step << Warlock
     #softcore
     #completewith next
-    +Start casting |T136126:0|t[Life Tap] on your way back up to |cRXP_FRIENDLY_Gakin the Darkbinder|r as you will do a deathskip momentarily
+    +|cRXP_WARN_Start casting|r |T136126:0|t[Life Tap] |cRXP_WARN_on your way back up to |cRXP_FRIENDLY_Gakin the Darkbinder|r as you will do a deathskip momentarily|r
 step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r
     .target Gakin the Darkbinder
@@ -3126,7 +3160,7 @@ step << Warlock
     .turnin 1689 >> Turn in The Binding
 step << Warlock
     #softcore
-    .deathskip >> Die and respawn at the Spirit Healer by using |T136126:0|t[Life Tap] and standing on the Bonfire next to you
+    .deathskip >> |cRXP_WARN_Die and respawn at the Spirit Healer by using|r |T136126:0|t[Life Tap] |cRXP_WARN_and standing on the Bonfire next to you|r
     .target Spirit Healer
 step
     .goto 1429/0,74.02,-9465.52
@@ -3139,56 +3173,57 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 147 >> Turn in Manhunt
     .turnin 39 >> Turn in Deliver Thomas' Report
-step << Warlock
-    .isOnQuest 147
-    .goto 1429/0,74.02,-9465.52
-    .target Marshal Dughan
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
-    .turnin 147 >> Turn in Manhunt
 step
     #era
     .goto 1429/0,74.02,-9465.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 39 >> Turn in Deliver Thomas' Report
     .target Marshal Dughan
-step << Warrior
-    .goto 1429/0,109.25,-9461.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
-    .target Lyria Du Lac
+step << Hunter
+    .goto 1429/0,107.200,-9472.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson|r
     .trainer >> Train your class spells
-step << Mage/Rogue/Priest
+    .target Josephine Carson
+    .xp <12,1
+step << Warrior
+    .goto 1429/0,109.36,-9461.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
+    .trainer >> Train your class spells
+    .target Lyria Du Lac
+    .xp <12,1
+step << Paladin
+    .goto 1429/0,109.04,-9468.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Wilhelm|r
+    .trainer >> Train your class spells
+    .target Brother Wilhelm
+    .xp <12,1
+step << Mage/Priest/Rogue
+    #optional
     #completewith next
     .goto 1429/0,12.52,-9479.85,9 >> Travel upstairs in the Inn
 step << Mage
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r
-    .target Zaldimar Wefhellt
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r
+	.target Zaldimar Wefhellt
     .goto 1429/0,34.28,-9471.61
     .trainer >> Train your class spells
+    .xp <12,1
+step << Priest
+    .goto 1429/0,33.14,-9460.75
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
+	.target Priestess Josetta
+    .trainer >> Train your class spells
+    .xp <12,1
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keryn Sylvius|r
     .target Keryn Sylvius
     .goto 1429/0,12.69,-9465.75
     .trainer >> Train your class spells
-step << Priest
-    .goto 1429/0,33.14,-9460.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
-    .target Priestess Josetta
-    .trainer >> Train your class spells
+    .xp <12,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r
     .target Ma Stonefield
     .turnin 88 >> Turn in Princess Must Die!
     .goto Elwynn Forest,34.660,84.483
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
-    >>|cRXP_WARN_Skip the turn in for now if you don't have enough [Chunks of Boar Meat]|r
-    .target "Auntie" Bernice Stonefield
-    .turnin 86 >> Turn in Pie for Billy
-    .goto 1429/0,338.47,-9889.67
-    .isQuestComplete 86
-step
-    #sticky
-    .abandon 86 >> Abandon Pie for Billy
 step << Dwarf Paladin
     >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for |T132889:0|t[Linen Cloth]
     >>|cRXP_WARN_Ensure you have 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your upcoming Paladin class quest|r
@@ -3228,6 +3263,20 @@ step
     .accept 38 >> Accept Westfall Stew
     .accept 22 >> Accept Goretusk Liver Pie
 step
+    #optional
+    .isQuestComplete 38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Salma Saldean|r
+    .target Salma Saldean
+    .goto 1436/0,1042.67,-10111.670
+    .turnin 38 >> Turn in Westfall Stew
+step
+    #optional
+    .isQuestComplete 22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Salma Saldean|r
+    .target Salma Saldean
+    .goto 1436/0,1042.67,-10111.670
+    .turnin 22 >> Turn in Goretusk Liver Pie
+step
     #softcore
     #sticky
     #completewith next
@@ -3260,14 +3309,35 @@ step
     .goto 1436/0,1037.42,-10628.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
     .fp Sentinel Hill >> Get the Sentinel Hill flight path
-    .fly Stormwind >> Fly to Stormwind << Dwarf Paladin
     .target Thor
-step << !Paladin
-    .hs >> Hearth to Loch Modan
 step << Dwarf Paladin
-    .goto 1453/0,558.96,-8382.54,25,0
-    .goto 1453/0,520.64,-8351.460
-    .zone Ironforge >> Enter the Deeprun Tram. Take the Tram to Ironforge
+    .hs >> Hearth to Ironforge
+    >>|cRXP_BUY_Buy food/water if needed|r << !Warrior !Rogue
+	>>|cRXP_BUY_Buy food if needed|r << Warrior/Rogue
+    .cooldown item,6948,>2,1
+    .bindlocation 1537,1
+step << Dwarf Paladin
+    #optional
+    .goto 1436/0,1037.42,-10628.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .fly Ironforge >> Fly to Ironforge
+    .target Thor
+    .zoneskip Ironforge
+    .zoneskip Loch Modan
+step << !Paladin
+    .hs >> Hearth to Thelsamar
+    >>|cRXP_BUY_Buy food/water if needed|r << !Warrior !Rogue
+	>>|cRXP_BUY_Buy food if needed|r << Warrior/Rogue
+    .cooldown item,6948,>2,1
+    .zoneskip Loch Modan
+step << !Paladin
+    #optional
+    .goto 1436/0,1037.42,-10628.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .fly Loch Modan >> Fly to Loch Modan
+    .target Thor
+    .zoneskip Ironforge
+    .zoneskip Loch Modan
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -3279,80 +3349,9 @@ RXPGuides.RegisterGuide([[
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 12-14 Loch Modan (Dwarf/Gnome)
-#displayname 12-15 Loch Modan << SoD !Warlock
-#displayname 13-15 Loch Modan << SoD Warlock
 #next 13-15 Westfall;14-16 Darkshore
 #defaultfor Gnome/Dwarf
 
-
-step << Rogue
-    #optional
-    #ah
-    .goto 1453/0,607.38,-8790.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
-    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
-    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
-    .collect 851,1 -- Cutlass (1)
-    .target Gunther Weller
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
-step << Rogue
-    #optional
-    #ssf
-    .goto 1453/0,607.38,-8790.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
-    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
-    .collect 851,1 -- Cutlass (1)
-    .target Gunther Weller
-    .money <0.2023
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
-step << Rogue
-    #optional
-    #label CutlassE
-    #completewith KeenT
-    +|cRXP_WARN_Equip the|r |T135346:0|t[Cutlass] |cRXP_WARN_in your mainhand|r
-    .use 851
-    .itemcount 851,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
-step << Rogue
-    #optional
-    #requires CutlassE
-    #completewith KeenT
-    +|cRXP_WARN_Equip the|r |T135346:0|t[Craftsman's Dagger] |cRXP_WARN_in your offhand|r
-    .use 2218
-    .itemcount 2218,1
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
-step << Rogue
-    #optional
-    #label KeenT
-    .goto 1453/0,596.43,-8831.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Mullby|r
-    >>|cRXP_BUY_Buy the|r |T135425:0|t[Keen Throwing Knives] |cRXP_BUY_from him|r
-    .collect 3107,1 --Collect Keen Throwing Knife (1)
-    .target Thurman Mullby
-    .xp <11,1
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
-step << Rogue
-    #optional
-    .goto 1453/0,596.43,-8831.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Mullby|r
-    >>|cRXP_BUY_Buy the|r |T135641:0|t[Balanced Throwing Daggers] |cRXP_BUY_from him|r
-    .collect 2946,1 --Collect Balanced Throwing Dagger (1)
-    .target Thurman Mullby
-    .xp >11,1
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
-step << Rogue
-    #optional
-    +|cRXP_WARN_Equip the|r |T135425:0|t[Keen Throwing Knives]
-    .use 3107
-    .itemcount 3107,1
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
-    .xp <11,1
-step << Rogue
-    #optional
-    +|cRXP_WARN_Equip the|r |T135641:0|t[Balanced Throwing Daggers]
-    .use 2946
-    .itemcount 2946,1
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Dwarf Paladin
     #optional
     #completewith next
@@ -4752,116 +4751,16 @@ step
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Jaxon
     .skill cooking,<50,1 --XX Shows if cooking skill is 50+
-step
-    #softcore
-    .hs >> Hearth to Loch Modan
-step
-    #softcore
-    #completewith next
-    .goto 1432/0,-2651.61,-4817.15,100 >> Travel north to the Algaz Station
-step
-    #softcore
-    .goto 1432/0,-2676.99,-4825.980
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
-    .turnin 353 >> Turn in Stormpike's Delivery
-    .target Mountaineer Stormpike
-step
-    #softcore
-    #completewith next
-    .deathskip >> Die and respawn at the Spirit Healer
-    .target Spirit Healer
-step
-    #softcore
-    .goto 1432/0,-2929.87,-5424.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum|r
-    .fly Wetlands >> Fly to Wetlands
-    .target Thorgrum Borrelson
-step << skip --logout skip
-    #hardcore
-    .goto 1453/0,558.96,-8382.54,25,0
-    .goto 1453/0,520.64,-8351.460
-    .zone Ironforge >> Enter the Deeprun Tram. Take the Tram to Ironforge
-    .link https://www.youtube.com/watch?v=M_tXROi9nMQ >> |cRXP_WARN_Do a logout skip inside the Tram. Click here for video reference|r
-step
-    #hardcore
-    .goto 1426/0,-832.79,-5022.97
-    .zone Dun Morogh>>Exit Ironforge
-step
-    #hardcore
-    #completewith next
-    .goto 1426/0,-1124.84,-5283.99,150 >> Travel to the Dun Morogh -> Wetlands skip spot
-step
-    #hardcore
-    .goto 1426/0,-1128.29,-5282.35,40,0
-    .goto 1426/0,-1172.62,-5325.03,40,0
-    .goto 1426/0,-1207.09,-5325.03,40,0
-    .goto 1426/0,-1212.02,-5265.93,40,0
-    .goto 1426/0,-1192.32,-5219.97,40,0
-    .goto 1426/0,-1103.67,-5174.0,40,0
-    .goto 1426/0,-1167.69,-5144.45,40,0
-    .goto 1426/0,-1236.64,-5147.73,40,0
-    .goto 1426/0,-1433.64,-4586.28,40,0
-    .goto 1426/0,-1438.57,-4287.50,40,0
-    .goto 1426/0,-1428.72,-4231.68,40,0
-    .goto 1426/0,-1473.04,-4205.42,40,0
-    .goto 1426/0,-1492.74,-4156.17,40,0
-    .goto 1437/0,-1241.48,-4000.12,50,0
-    .goto 1437/0,-1121.55,-4013.90,40,0
-    .goto 1437/0,-1084.33,-3947.75,40,0
-    .goto 1437/0,-1014.03,-3911.92,40,0
-    .goto 1437/0,-889.97,-3809.94,40,0
-    >>|cRXP_WARN_Watch the video guide for a reference on how to do the skip first!|r
-    >>|cRXP_WARN_Do the Deathless Dun Morogh -> Wetlands skip|r
-    >>|cRXP_WARN_Avoid the |cRXP_ENEMY_Wetlands Crocolisks|r and |cRXP_ENEMY_Murlocs|r when crossing the water|r
-    .link https://www.youtube.com/watch?v=9afQTimaiZQ >> |cRXP_WARN_Click here for a video guide|r
-    .goto 1437/0,-889.97,-3809.94,80 >> Travel to Menethil Harbor
-    .mob Wetlands Crocolisk
-    .mob Young Wetlands Crocolisk
-    .mob Bluegill Raider
-step
-    .money <0.08
-    .goto 1437/0,-819.67,-3691.42,15,0
-    .goto 1437/0,-807.26,-3716.22,15,0
-    .goto 1437/0,-827.94,-3724.49,15,0
-    .goto 1437/0,-834.60,-3711.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neal Allen|r
-    .vendor >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube]
-    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Neal Allen|r doesn't have one|r
-	.target Neal Allen
-    .bronzetube
-step
-    .goto 1437/0,-820.91,-3829.50,10,0
-    .goto 1437/0,-823.64,-3807.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Samor Festivus|r upstairs
-    .vendor >> |cRXP_BUY_Buy as many|r |T134831:0|t[Healing Potions] |cRXP_BUY_that are available|r
-    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Samor Festivus|r doesn't have any|r
-    .target Samor Festivus
-step
-    #hardcore
-    .goto 1437/0,-782.03,-3793.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei|r
-    .fp Wetlands>> Get the Wetlands flight path
-    .target Shellei Brondir
-step
-    .goto 1437/0,-718.35,-3701.89
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dewin Shimmerdawn|r
-    .vendor >> |cRXP_BUY_Buy as many|r |T134831:0|t[Healing Potions] |cRXP_BUY_that are available|r
-    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Dewin Shimmerdawn|r doesn't have any|r
-    .target Dewin Shimmerdawn
-step
-    #optional
-    #label DockTravel
-    #completewith next
-    .goto 1437/0,-683.2,-3745.44,30,0
-    .goto 1437/0,-580.23,-3726.15,15 >> Travel to the dock of the Auberdine boat
-    .zoneskip Darkshore
-step
+
+
+--Hunter going Darkshore, rest Westfall
+step << Hunter
     #optional
     #requires DockTravel
     #label DarkshoreCook1
     #completewith DarkshoreBoat
     >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
-    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(in your Profession Book)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -4869,13 +4768,13 @@ step
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step
+step << Hunter
     #optional
     #requires DarkshoreCook1
     #label DarkshoreCook2
     #completewith DarkshoreBoat
     >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
-    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(in your Profession Book)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -4883,13 +4782,13 @@ step
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step
+step << Hunter
     #optional
     #requires DarkshoreCook2
     #label DarkshoreCook3
     #completewith DarkshoreBoat
     >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
-    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(in your Profession Book)|r
     .usespell 818
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -4897,7 +4796,7 @@ step
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step
+step << Hunter
     #optional
     #requires DarkshoreCook3
     #label DarkshoreCook4
@@ -4912,7 +4811,7 @@ step
     .itemcount 2672,1 --Stringy Wolf Meat (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step
+step << Hunter
     #optional
     #requires DarkshoreCook4
     #label DarkshoreCook5
@@ -4925,7 +4824,7 @@ step
     .itemcount 2672,1 --Stringy Wolf Meat (1)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step
+step << Hunter
     #optional
     #requires DarkshoreCook5
     #label DarkshoreCook6
@@ -4938,9 +4837,14 @@ step
     .itemcount 2672,<1 --Stringy Wolf Meat (<1)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step
-    #label DarkshoreBoat
-    .goto 1437,4.370,56.762
+step << Hunter
+    #optional
+    .goto 1453/0,1330.100,-8645.400
     >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat to Darkshore if needed|r
+    .zone Darkshore >> Take the boat to Darkshore
+    .skill firstaid,<1,1 -- shows if firstaid is >1
+step << Hunter
+    #label DarkshoreBoat
+    .goto 1453/0,1330.100,-8645.400
     .zone Darkshore >> Take the boat to Darkshore
 ]])
