@@ -598,7 +598,7 @@ local spellRequest = {}
 
 local trainerUpdate = 0
 
-local function ProcessSpells(names, rank)
+local function ProcessSpells(names, rank, ids)
     if gameVersion > 90000 or not addon.defaultSpellList then return end
     local _, race = UnitRace("player")
     local level = UnitLevel("player")
@@ -620,7 +620,7 @@ local function ProcessSpells(names, rank)
                             local sName = GetSpellInfo(spellId)
                             local sRank = GetSpellSubtext(spellId)
                             for id, name in pairs(names) do
-                                if sName == name and sRank == rank[id] then
+                                if sName == name and sRank == rank[id] or ids[id] == spellId then
                                     BuyTrainerService(id)
                                 end
                             end
@@ -641,16 +641,24 @@ local function OnTrainer()
 
     local names = {}
     local rank = {}
+    local ids = {}
 
     for id = 1, i do
-        local n, r, cat = GetTrainerServiceInfo(id)
+        local n, cat, spellId,_,r = GetTrainerServiceInfo(id)
+        if type(spellId) ~= "number" then
+            --n, r, cat = GetTrainerServiceInfo(id)
+            r = cat
+            cat = spellId
+            spellId = nil
+        end
         if cat == "available" then
             names[id] = n
             rank[id] = r
+            ids[id] = spellId
         end
     end
 
-    ProcessSpells(names, rank)
+    ProcessSpells(names, rank, ids)
 
     for spellName, spellRank in pairs(addon.skillList) do
         for id, name in pairs(names) do
