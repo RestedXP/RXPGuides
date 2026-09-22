@@ -1,6 +1,6 @@
 local _, addon = ...
 
-if addon.game ~= "CLASSIC" and addon.game ~= "TBC" then return end
+if addon.game ~= "FOREVER" then return end
 local dangerousMobs = {
   ["Alliance"] = {
     ["Elwynn Forest"] = {
@@ -3089,7 +3089,7 @@ local dangerousMobs = {
         Notes = "Cripple, rain of fire, summons wrath hounds. Hits hard",
         Location = ".pin Blade's Edge Mountains,63.62,59.11;.mob Baelmon the Hound-Master"
         },
-      }, 
+      },
       ["Galvanoth"] = {
         {
         MinLevel = 68,
@@ -3099,7 +3099,7 @@ local dangerousMobs = {
         Notes = "Mortal Strike. Hits extremely hard",
         Location = ".pin Blade's Edge Mountains,36.0,39.6;.pin Blade's Edge Mountains,30.2,77.6;.mob Galvanoth"
         },
-      }, 
+      },
       ["Bladespire Battlemage"] = {
         {
         MinLevel = 67,
@@ -3109,7 +3109,7 @@ local dangerousMobs = {
         Notes = "Bloodlust, flamestrike. Hits hard",
         Location = ".pin Blade's Edge Mountains,65.6,23.2;.mob Bladespire Battlemage"
         },
-      }, 
+      },
       ["Bladespire Chef"] = {
         {
         MinLevel = 67,
@@ -3119,7 +3119,7 @@ local dangerousMobs = {
         Notes = "Knockback, mortal strike. Hits hard",
         Location = ".pin Blade's Edge Mountains,65.6,23.2;.mob Bladespire Chef"
         },
-      }, 
+      },
       ["Bladespire Enforcer"] = {
         {
         MinLevel = 67,
@@ -3129,7 +3129,7 @@ local dangerousMobs = {
         Notes = "Enrage, thunderclap. Hits hard",
         Location = ".pin Blade's Edge Mountains,59.8,22.6;.mob Bladespire Enforcer"
         },
-      }, 
+      },
       ["Bladespire Ravager"] = {
         {
         MinLevel = 67,
@@ -3139,7 +3139,7 @@ local dangerousMobs = {
         Notes = "Charge, infected bite (disease). Hits hard",
         Location = ".pin Blade's Edge Mountains,63.4,21.8;.mob Bladespire Ravager"
         },
-      }, 
+      },
       ["Obsidia"] = {
         {
         MinLevel = 72,
@@ -3149,7 +3149,7 @@ local dangerousMobs = {
         Notes = "Fear, cleave, hellfire, fiery breath. CAN DISMOUNT IF ON FLYING MOUNT",
         Location = ".pin Blade's Edge Mountains,30.8,58.8;.mob Obsidia"
         },
-      }, 
+      },
       ["Furywing"] = {
         {
         MinLevel = 72,
@@ -3159,7 +3159,7 @@ local dangerousMobs = {
         Notes = "Fear, cleave, hellfire, fiery breath. CAN DISMOUNT IF ON FLYING MOUNT",
         Location = ".pin Blade's Edge Mountains,59.4,11.4;.mob Furywing"
         },
-      }, 
+      },
       ["Insidion"] = {
         {
         MinLevel = 72,
@@ -3169,7 +3169,7 @@ local dangerousMobs = {
         Notes = "Fear, cleave, hellfire, fiery breath. CAN DISMOUNT IF ON FLYING MOUNT",
         Location = ".pin Blade's Edge Mountains,50.6,17.0;.mob Insidion"
         },
-      }, 
+      },
       ["Rivendark"] = {
         {
         MinLevel = 72,
@@ -3179,7 +3179,7 @@ local dangerousMobs = {
         Notes = "Fear, cleave, hellfire, fiery breath. CAN DISMOUNT IF ON FLYING MOUNT",
         Location = ".pin Blade's Edge Mountains,29.0,65.2;.mob Rivendark"
         },
-      }, 
+      },
     },
     ["Netherstorm"] = {
       ["Netherock"] = {
@@ -3261,7 +3261,7 @@ local dangerousMobs = {
         Notes = "Sleep, knockback, chain felfire. Hits hard",
         Location = ".pin Netherstorm,53.50,21.53;.mob Culuthas"
         },
-      },      
+      },
       ["Farahlon Breaker"] = {
         {
         MinLevel = 69,
@@ -3271,7 +3271,7 @@ local dangerousMobs = {
         Notes = "Spawns adds. Hits hard",
         Location = ".line Netherstorm,47.57,20.27,44.88,18.75,45.10,16.70,50.08,17.24,47.57,20.27;.mob Farahlon Breaker"
         },
-      },    
+      },
       ["Farahlon Giant"] = {
         {
         MinLevel = 67,
@@ -3281,7 +3281,7 @@ local dangerousMobs = {
         Notes = "Spawns adds. Hits hard",
         Location = ".pin Netherstorm,40.6,67.4;.mob Farahlon Giant"
         },
-      },    
+      },
       ["Forgemaster Morug"] = {
         {
         MinLevel = 68,
@@ -6829,7 +6829,7 @@ local dangerousMobs = {
         Notes = "Cripple, rain of fire, summons wrath hounds. Hits hard",
         Location = ".pin Blade's Edge Mountains,63.62,59.11;.mob Baelmon the Hound-Master"
         },
-      }, 
+      },
       ["Galvanoth"] = {
         {
         MinLevel = 68,
@@ -6839,7 +6839,7 @@ local dangerousMobs = {
         Notes = "Mortal Strike. Hits extremely hard",
         Location = ".pin Blade's Edge Mountains,36.0,39.6;.pin Blade's Edge Mountains,30.2,77.6;.mob Galvanoth"
         },
-      }, 
+      },
       ["Bladespire Battlemage"] = {
         {
         MinLevel = 67,
@@ -6849,7 +6849,7 @@ local dangerousMobs = {
         Notes = "Bloodlust, flamestrike. Hits hard",
         Location = ".pin Blade's Edge Mountains,65.6,23.2;.mob Bladespire Battlemage"
         },
-      }, 
+      },
       ["Bladespire Chef"] = {
         {
         MinLevel = 67,
@@ -6859,7 +6859,7 @@ local dangerousMobs = {
         Notes = "Knockback, mortal strike. Hits hard",
         Location = ".pin Blade's Edge Mountains,65.6,23.2;.mob Bladespire Chef"
         },
-      }, 
+      },
       ["Bladespire Enforcer"] = {
         {
         MinLevel = 67,
@@ -6869,7 +6869,7 @@ local dangerousMobs = {
         Notes = "Enrage, thunderclap. Hits hard",
         Location = ".pin Blade's Edge Mountains,59.8,22.6;.mob Bladespire Enforcer"
         },
-      }, 
+      },
       ["Bladespire Ravager"] = {
         {
         MinLevel = 67,
@@ -6879,7 +6879,7 @@ local dangerousMobs = {
         Notes = "Charge, infected bite (disease). Hits hard",
         Location = ".pin Blade's Edge Mountains,63.4,21.8;.mob Bladespire Ravager"
         },
-      }, 
+      },
       ["Obsidia"] = {
         {
         MinLevel = 72,
@@ -6889,7 +6889,7 @@ local dangerousMobs = {
         Notes = "Fear, cleave, hellfire, fiery breath. CAN DISMOUNT PLAYERS IF ON FLYING MOUNT",
         Location = ".pin Blade's Edge Mountains,30.8,58.8;.mob Obsidia"
         },
-      }, 
+      },
       ["Furywing"] = {
         {
         MinLevel = 72,
@@ -6899,7 +6899,7 @@ local dangerousMobs = {
         Notes = "Fear, cleave, hellfire, fiery breath. CAN DISMOUNT PLAYERS IF ON FLYING MOUNT",
         Location = ".pin Blade's Edge Mountains,59.4,11.4;.mob Furywing"
         },
-      }, 
+      },
       ["Insidion"] = {
         {
         MinLevel = 72,
@@ -6909,7 +6909,7 @@ local dangerousMobs = {
         Notes = "Fear, cleave, hellfire, fiery breath. CAN DISMOUNT PLAYERS IF ON FLYING MOUNT",
         Location = ".pin Blade's Edge Mountains,50.6,17.0;.mob Insidion"
         },
-      }, 
+      },
       ["Rivendark"] = {
         {
         MinLevel = 72,
@@ -6919,7 +6919,7 @@ local dangerousMobs = {
         Notes = "Fear, cleave, hellfire, fiery breath. CAN DISMOUNT PLAYERS IF ON FLYING MOUNT",
         Location = ".pin Blade's Edge Mountains,29.0,65.2;.mob Rivendark"
         },
-      }, 
+      },
     },
     ["Netherstorm"] = {
       ["Netherock"] = {
@@ -7001,7 +7001,7 @@ local dangerousMobs = {
         Notes = "Sleep, knockback, chain felfire. Hits hard",
         Location = ".pin Netherstorm,53.50,21.53;.mob Culuthas"
         },
-      },      
+      },
       ["Farahlon Breaker"] = {
         {
         MinLevel = 69,
@@ -7011,7 +7011,7 @@ local dangerousMobs = {
         Notes = "Spawns adds. Hits hard",
         Location = ".line Netherstorm,47.57,20.27,44.88,18.75,45.10,16.70,50.08,17.24,47.57,20.27;.mob Farahlon Breaker"
         },
-      },    
+      },
       ["Farahlon Giant"] = {
         {
         MinLevel = 67,
@@ -7021,7 +7021,7 @@ local dangerousMobs = {
         Notes = "Spawns adds. Hits hard",
         Location = ".pin Netherstorm,40.6,67.4;.mob Farahlon Giant"
         },
-      },    
+      },
       ["Forgemaster Morug"] = {
         {
         MinLevel = 68,

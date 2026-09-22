@@ -1,6 +1,8 @@
 local addonName, addon = ...
+
+if addon.game ~= "FOREVER" then return end
+
 local faction = UnitFactionGroup("player")
-if addon.game ~= "CLASSIC" then return end
 
 addon.skipPreReq = {
     [9573] = 1,

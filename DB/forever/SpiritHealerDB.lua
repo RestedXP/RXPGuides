@@ -1,5 +1,7 @@
 local addonName, addon = ...
 
+if addon.game ~= "FOREVER" then return end
+
 -- Spirit Healer Locations     continent, id, posx, posy, locname
 -- list name is to be changed.
 addon.SpiritHealerWorld = {

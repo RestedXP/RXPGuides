@@ -1,6 +1,6 @@
 local _, addon = ...
 
-if addon.game ~= "CLASSIC" then return end
+if addon.game ~= "FOREVER" then return end
 
 addon.statWeights = {
     ['Druid Speedrun 1-9 - Feral Combat'] = {
@@ -7264,4 +7264,3 @@ addon.statWeights = {
         ['STAT_SPELLDAMAGE_SHADOW'] = 0.00,
     },
 }
-
