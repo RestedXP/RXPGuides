@@ -2343,7 +2343,7 @@ end
 addon.stepLogic = {}
 
 function addon.stepLogic.AldorScryerCheck(faction)
-    if addon.game == "CLASSIC" then return true end
+    if addon.game == "CLASSIC" or addon.game == "FOREVER" then return true end
     local _, _, _, _, _, aldorRep = addon.GetFactionInfoByID(932)
     local _, _, _, _, _, scryerRep = addon.GetFactionInfoByID(934)
 
