@@ -598,7 +598,7 @@ local spellRequest = {}
 
 local trainerUpdate = 0
 
-local function ProcessSpells(names, rank, ids)
+local function ProcessSpells(names, rank)
     if gameVersion > 90000 or not addon.defaultSpellList then return end
     local _, race = UnitRace("player")
     local level = UnitLevel("player")
@@ -620,7 +620,7 @@ local function ProcessSpells(names, rank, ids)
                             local sName = GetSpellInfo(spellId)
                             local sRank = GetSpellSubtext(spellId)
                             for id, name in pairs(names) do
-                                if sName == name and sRank == rank[id] or ids[id] == spellId then
+                                if sName == name and sRank == rank[id] then
                                     BuyTrainerService(id)
                                 end
                             end
@@ -641,28 +641,27 @@ local function OnTrainer()
 
     local names = {}
     local rank = {}
-    local ids = {}
 
     for id = 1, i do
-        local n, cat, spellId,_,r = GetTrainerServiceInfo(id)
-        if type(spellId) ~= "number" then
+        local n, cat, iconId,_,r = GetTrainerServiceInfo(id)
+        if type(iconId) ~= "number" then
             --n, r, cat = GetTrainerServiceInfo(id)
             r = cat
-            cat = spellId
-            spellId = nil
+            cat = iconId
+            iconId = nil
         end
         if cat == "available" then
             names[id] = n
             rank[id] = r
-            ids[id] = spellId
         end
     end
 
-    ProcessSpells(names, rank, ids)
-
+    ProcessSpells(names, rank)
     for spellName, spellRank in pairs(addon.skillList) do
         for id, name in pairs(names) do
-            if name == spellName then
+            --Handles a specific corner case with professions where the text shown is not equal to the spell name
+            local category = _G.GetTrainerServiceSkillLine(id)
+            if name == spellName or spellName == category then
                 local r = rank[id]
                 r = r and tonumber(r:match("(%d+)")) or 0
                 if (r <= spellRank or spellRank == 0) then
