@@ -2770,6 +2770,13 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sessaria Skystride::252382|r.
     .trainer >>Train your class spells
     .target Sessaria Skystride::252382
+
+
+step << Shaman
+    .goto 2521,64.380,63.586
+    >>Kill the |cRXP_ENEMY_Skypriest Faladiel::268602|r. Loot him for |T1:0|t[|cRXP_LOOT_Faladiel's Heart|r].
+    .complete 97244,1 --|1/1 Faladiel's Heart
+    .mob Skypriest Faladiel::268602
 step << Mage
     .goto 2521,62.887,77.324
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belann Windwood::256507|r.
@@ -4306,7 +4313,7 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#name Skyborne Horde Bad2
+#name Random Stuff
 #internal
 
 step
@@ -4335,4 +4342,31 @@ step
     .train 5232 >>Train |T1:0|t[Mark of the Wild (Rank 2)]
     .train 8924 >>Train |T1:0|t[Moonfire (Rank 2)]
     .target Lotheluum Starbreeze::252359
+
+    step
+    .goto 2521,51.241,86.193
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Olariaan Swiftburn::268592|r.
+    .target Olariaan Swiftburn::268592
+    .turnin 97244 >>Turn in Call of Fire
+    .accept 97245 >>Accept Call of Fire
+step
+    .goto 2521,42.418,69.117
+    .complete 97245,1 --|1/1 Kuramaa's Mask
+step
+    .goto 2521,51.240,86.187
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Olariaan Swiftburn::268592|r.
+    .target Olariaan Swiftburn::268592
+    .turnin 97245 >>Turn in Call of Fire
+    .accept 97257 >>Accept Call of Fire
+step
+    .goto 2521,51.265,85.927
+    .complete 97257,1 --|1/1 Complete the Ritual with Olariaan
+step
+    .goto 2521,58.312,78.827
+    .complete 97257,2 --|1/1 Light the Brazier of Eternal Flame
+step
+    .goto 2521,58.315,78.512
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sessaria Skystride::252382|r.
+    .target Sessaria Skystride::252382
+    .turnin 97257 >>Turn in Call of Fire
 ]])
