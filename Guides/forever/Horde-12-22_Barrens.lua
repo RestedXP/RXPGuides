@@ -606,6 +606,7 @@ step << !Undead
 step << !Undead
     #completewith EnterRFC
     .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
+    .dungeon RFC
 step << !Undead
     #label EnterRFC
     .goto 1454/1,-4420.76,1815.80
@@ -7548,6 +7549,7 @@ step << !Undead
 step << !Undead
     #completewith EnterRFC
     .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
+    .dungeon RFC
 step << !Undead
     #label EnterRFC
     .goto 1454/1,-4420.76,1815.80
