@@ -503,7 +503,7 @@ addon.targeting.QUEST_GREETING = addon.targeting.GOSSIP_SHOW
 addon.targeting.QUEST_COMPLETE = addon.targeting.GOSSIP_SHOW
 
 function addon.targeting.CheckTargetProximity()
-    if not shouldTargetCheck() or not addon.settings.profile.showTargetingOnProximity then return end
+    if not shouldTargetCheck() or not addon.settings.profile.showTargetingOnProximity or not addon.unitscanEnabled then return end
 
     if addon.settings.profile.enableEnemyTargeting then
         for _, name in pairs(unitscanList) do

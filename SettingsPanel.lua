@@ -29,6 +29,8 @@ elseif (tonumber(select(3,_G.GetBuildInfo()):match("%d+$")) or 0) < 2025 then
     unitscanEnabled = true
 end
 
+addon.unitscanEnabled = unitscanEnabled
+
 local incompatibleAddons = {}
 local settingsDB
 local loadedProfileKey
