@@ -3959,6 +3959,7 @@ step << Shaman
 step
     .goto 1432/0,-3319.800,-5217.600
     >>Click the |cRXP_PICK_Discarded Fishing Toolbox|r on the lake floor
+    >>|cRXP_WARN_Be careful of high level|r |cRXP_ENEMY_Young Threshadon|r
     .accept 86614 >>Accept Silver of the Waves
     .xp <13,1
 step
@@ -4392,6 +4393,7 @@ step
     .turnin 6387 >> Turn in Honor Students
     .accept 6391 >> Accept Ride to Ironforge
 step
+    #completewith RTB
     .goto 1432/0,-2929.87,-5424.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .fly Ironforge >> Fly to Ironforge
@@ -4415,6 +4417,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belia Thundergranite|r
     .turnin 6086 >> Turn in Training the Beast
 step << Hunter
+    #label RTB
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
     .target Gryth Thurden
     .goto 1455/0,-1152.40,-4821.13
@@ -4425,6 +4428,7 @@ step
     .goto 1455/0,-1152.40,-4821.13
     .fly Loch Modan >> Fly to Loch Modan
     .target Gryth Thurden
+    .zoneskip Loch Modan
 step
     .goto 1432/0,-3019.02,-5369.40,8,0
     .goto 1432/0,-3014.86,-5366.93
@@ -4615,6 +4619,36 @@ step
     .turnin 267 >> Turn in The Trogg Threat
 step
     #completewith next
+    .goto 1432/0,-2534.38,-5648.28,5 >>Travel to the snowy patch on the ground just outside the South Gate Pass tunnel
+step
+    .goto 1432/0,-2534.38,-5648.28
+    .use 279380 >> |cRXP_WARN_Use the|r |T1387609:0|t[Ceramic Jar] |cRXP_WARN_while standing on the snowy patch to collect the|r |T1387609:0|t[Jar of Snow]
+    >>|cRXP_WARN_NOTE: The|r |T1387609:0|t[Jar of Snow] |cRXP_WARN_will only last for 10 minutes. You must turn the quest in before it expires!|r
+    .complete 86667,1 -- Jar of Snow 1/1
+step
+    .goto 1432/0,-3146.73,-4837.02
+    #arrowtext |cRXP_WARN_10 minute timer to turn in quest!|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norric Lochthane|r
+    >>|cRXP_WARN_Ensure to turn this in before the 10 minute expiry on the|r |T1387609:0|t[Jar of Snow]
+    .turnin 86667 >> Turn in Snowbound
+    .target Norric Lochthane
+step
+    #optional
+    .goto 1432/0,-3319.800,-5217.600
+    >>Click the |cRXP_PICK_Discarded Fishing Toolbox|r on the lake floor
+    >>|cRXP_WARN_Be careful of high level|r |cRXP_ENEMY_Young Threshadon|r
+    .accept 86614 >>Accept Silver of the Waves
+    .xp <13,1
+step
+    #optional
+    .goto 1432/0,-3104.900,-5210.100,5,0
+    .goto 1432/0,-3086.600,-5216.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khara Deepwater::1684|r
+    .target Khara Deepwater::1684
+    .turnin 86614 >>Turn in Silver of the Waves
+    .xp <13,1
+step
+    #completewith next
     .goto 1432/0,-3783.63,-5713.77,80 >> Travel to Ironband's Excavation Site
 step
     .goto 1432/0,-3812.43,-5694.67
@@ -4667,7 +4701,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> Die and respawn at the Spirit Healer
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
 step
     .goto 1432/0,-3019.02,-5369.40,8,0
@@ -4682,6 +4716,7 @@ step
     .fly Ironforge >> Fly to Ironforge
     .target Thorgrum Borrelson
 step
+    #optional
     .goto 1455/0,-1188.54,-4761.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl Riknussun|r
     .target Daryl Riknussun
@@ -4692,9 +4727,11 @@ step
     .turnin 301 >> Turn in Report to Ironforge
     .target Prospector Stormpike
 step
-    .goto 1455/0,-1301.82,-4838.85,30,0
-    .goto 1455/0,-1301.82,-4838.85,0
-    >>|cRXP_WARN_Enter the Deeprun Tram|r
+    #completewith EnterSW
+    .goto 1455/0,-1330.28,-4840.430
+    .subzone 2257 >>Enter the Deeprun Tram
+    .zoneskip Stormwind City
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monty|r on the middle platform
     .target Monty
     .accept 6661 >> Accept Deeprun Rat Roundup
@@ -4709,16 +4746,12 @@ step
     .timer 11,Deeprun Rat Roundup RP
     .accept 6662 >> Accept Me Brother, Nipsy
 step
-    #completewith next
-    .zone Stormwind City >> Take the Tram to Stormwind
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_if needed while waiting for the Tram|r
-    >>|cRXP_WARN_You will need your|r |T135966:0|t[First Aid] |cRXP_WARN_to be 80 for a quest at level 24|r << Rogue !Dwarf
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nipsy|r when you get off the Tram
-    >>|cRXP_FRIENDLY_Nipsy|r |cRXP_WARN_is on the center platform|r
+    >>|cRXP_WARN_Take the Deeprun Tram to the Stormwind side|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nipsy|r on the middle platform on the Stormwind side of the Deeprun Tram
     .turnin 6662 >> Turn in Me Brother, Nipsy
     .target Nipsy
 step
+    #label EnterSW
     .zone Stormwind City >> Enter Stormwind
 step
     #softcore
@@ -4770,8 +4803,19 @@ step
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Jaxon
     .skill cooking,<50,1 --XX Shows if cooking skill is 50+
-
-
+step
+    .goto 1453/0,765.700,-8804.000
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catherine Leland|r
+    >>|cRXP_BUY_Buy one|r |T134335:0|t[Shiny Bauble] |cRXP_BUY_and three|r |T134324:0|t[Nightcrawlers] |cRXP_BUY_from her. This is for a 900xp quest|r
+    .collect 6529,1,95065,1 --|1/1 Shiny Bauble
+    .collect 6530,3,95065,1 --|3/3 Nightcrawlers
+    .target Catherine Leland
+step
+    .goto 1453/0,1269.100,-8540.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilbert Gray::267118|r 
+    .target Gilbert Gray::267118
+    .accept 95065 >>Accept Fishin' Time
+    .turnin 95065 >>Turn in Fishin' Time
 --Hunter going Darkshore, rest Westfall
 step << Hunter
     #optional
@@ -4820,7 +4864,7 @@ step << Hunter
     #requires DarkshoreCook3
     #label DarkshoreCook4
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    +|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     >>|T133971:0|t[Cook] |cRXP_WARN_the following items:|r
     >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
     >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
@@ -4835,7 +4879,7 @@ step << Hunter
     #requires DarkshoreCook4
     #label DarkshoreCook5
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    +|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Darkshore
@@ -4848,7 +4892,7 @@ step << Hunter
     #requires DarkshoreCook5
     #label DarkshoreCook6
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    +|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
     .usespell 2550
     .zoneskip Darkshore
