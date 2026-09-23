@@ -338,6 +338,13 @@ step
     .accept 6395 >> Accept Marla's Last Wish
     .target +Novice Elreth
     .goto 1420/0,1638.85,1847.74
+step << Paladin
+    .goto 1420/0,1568.35,1859.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archibald|r
+    .vendor >> Vendor Trash
+    .target Archibald Kava
+    .money >0.1
+    .isOnQuest 90902
 step
     .goto 1420/0,1628.300,1837.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aramis Hammerhand|r
@@ -406,7 +413,7 @@ step
     .accept 380 >> Accept Night Web's Hollow
     .goto 1420/0,1580.56,1848.95
     .target +Executor Arren
-step << Rogue/Warrior
+step << Rogue/Warrior/Paladin
     .goto 1420/0,1568.35,1859.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archibald|r
     .vendor >> Vendor Trash
@@ -560,7 +567,7 @@ step
     .turnin 91208 >>Turn in Coming to Terms << Paladin
     .turnin 98389 >>Turn in A Light in the Darkness
     .target Aramis Hammerhand
-step << Rogue/Warrior
+step << Rogue/Warrior/Paladin
     .goto 1420/0,1568.35,1859.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archibald|r
     .vendor >> Vendor Trash
@@ -721,7 +728,7 @@ step
     .goto 1420/0,660.09,2196.29,40,0
     .goto 1420/0,571.07,2251.42,40,0
     .goto 1420/0,496.96,2256.54,40,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gordo|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gordo|r
     >>|cRXP_WARN_He's an abomination that patrols along the road to Brill|r
     .accept 5481 >>Accept Gordo's Task
     .unitscan Gordo
@@ -741,7 +748,7 @@ step
     .accept 86784 >>Accept Sticks and Bones
     .target Deathguard Bartholomew
 step
-    #completewith Claws
+    #completewith next
     >>Loot |cRXP_PICK_Dry Branches|r on the ground underneath trees near Brill
     .complete 86784,1 --|6/6 Dry Branch
 step
@@ -750,27 +757,31 @@ step
     .accept 404 >>Accept A Putrid Task
     .target Deathguard Dillinger
 step
-    #optional
+    #loop
+    .goto 1420/0,603.600,2268.300,40,0
+    .goto 1420/0,539.700,2220.400,40,0
+    .goto 1420/0,305.600,2180.100,40,0
+    .goto 1420/0,375.600,2246.400,40,0
+    .goto 1420/0,442.800,2259.400,40,0
+    >>Loot |cRXP_PICK_Dry Branches|r on the ground underneath trees near Brill
+    .complete 86784,1 --|6/6 Dry Branch
+step
     .goto 1420/0,445.500,2165.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eleanor Shackleton|r
     .turnin 86784 >>Turn in Sticks and Bones
     .turnin 96656 >>Turn in The Adventurer
     .accept 96607 >>Accept The Great Outdoors
     .target Eleanor Shackleton
-    .xp >6,1 --no need to turn in right now if already lvl 6
 step
-    #optional
     .goto 1411/1,-4715.200,140.100
     >>|cRXP_WARN_Type /sit at the campfire and wait for one minute until you get the "Camp Benefits" buff|r
     .complete 96607,1 --|1/1 Use the /sit emote near the campfire
     .complete 96607,2 --|Gain the Boosted Rest buff
-    .isOnQuest 96607
 step
-    #optional
     .goto 1420/0,445.400,2166.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eleanor Shackleton|r
-    .target Eleanor Shackleton
     .turnin 96607 >>Turn in The Great Outdoors
+    .target Eleanor Shackleton
     .isQuestComplete 96607
     --.accept 96658 >>Accept Camping 101: Cooking
     --.accept 97959 >>Accept Camping 101: Mining
@@ -866,6 +877,13 @@ step << Paladin
     .xp <6,1
 step << Paladin
     .goto 1420/0,316.66,2227.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oliver|r
+    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T133053:0|t[Wooden Mallet] (6s 66c). You'll come back later if you don't have enough yet
+    .target Oliver Dwor
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
+step << Paladin
+    .goto 1420/0,316.66,2227.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Oliver|r|cRXP_BUY_. Buy a|r |T133053:0|t[Wooden Mallet] |cRXP_BUY_from him|r
     .collect 2493,1,404,1 --Collect Wooden Mallet (1)
     .money <0.0666
@@ -886,6 +904,13 @@ step
     .home >> Set your Hearthstone to Brill
     .target Innkeeper Renee
     .bindlocation 2119
+step
+    #optional
+    .goto 1420/0,244.81,2269.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Renee|r
+    .turnin 8 >>Turn in A Rogue's Deal
+    .target Innkeeper Renee
+    .isOnQuest 8
 step
     .goto 1420/0,236.68,2249.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretchen|r
@@ -962,7 +987,7 @@ step
 step
     .goto 1420/0,84.900,2023.500
     >>Talk to |cRXP_FRIENDLY_Deathguard Kristof|r
-    >>|cRXP_WARN_Select "I need a report for Executor Zygand|r
+    >>|cRXP_WARN_Select "I need a report for Executor Zygand"|r
     .complete 99141,2 --|1/1 Kristof's Report
     .target Deathguard Kristof
 step
@@ -1008,36 +1033,6 @@ step
     .complete 404,1 --Putrid Claw (7)
     .mob Rotting Dead
     .mob Ravaged Corpse
-step
-    #loop
-    .goto 1420/0,603.600,2268.300,40,0
-    .goto 1420/0,539.700,2220.400,40,0
-    .goto 1420/0,305.600,2180.100,40,0
-    .goto 1420/0,375.600,2246.400,40,0
-    .goto 1420/0,442.800,2259.400,40,0
-    >>Loot |cRXP_PICK_Dry Branches|r on the ground underneath trees near Brill
-    .complete 86784,1 --|6/6 Dry Branch
-step
-    .goto 1420/0,445.500,2165.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eleanor Shackleton|r
-    .turnin 86784 >>Turn in Sticks and Bones
-    .turnin 96656 >>Turn in The Adventurer
-    .accept 96607 >>Accept The Great Outdoors
-    .target Eleanor Shackleton
-step
-    #completewith next
-    .goto 1420/0,447.100,2165.200
-    +|cRXP_WARN_Type /sit at the campfire and wait for one minute until you get the "Camp Benefits" buff|r
-    --.complete 96607,1 --|1/1 Use the /sit emote near the campfire
-    --.complete 96607,2 --|Gain the Boosted Rest buff
-    --TODO: .complete for this bugged on beta
-step
-    .goto 1420/0,445.400,2166.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eleanor Shackleton|r
-    .target Eleanor Shackleton
-    .turnin 96607 >>Turn in The Great Outdoors
-    --.accept 96658 >>Accept Camping 101: Cooking
-    --.accept 97959 >>Accept Camping 101: Mining
 step
     #label Gordo2
     #loop
@@ -1104,7 +1099,7 @@ step
 step
     .goto 1420/0,1587.700,2439.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bareth Dawnstone|r at the top of the tower
-    >>|cRXP_WARN_This starts and escort quest|r
+    >>|cRXP_WARN_This starts an escort quest|r
     >>|cRXP_WARN_Be careful!. At the top of the tower you can easily agro 3 |cRXP_ENEMY_Scarlet Warriors|r at the same time|r
     .accept 99144,1 >>Accept Seeking Refuge
     .target Bareth Dawnstone
@@ -1199,11 +1194,10 @@ step
     .accept 95314 >>Accept That Shadowvale Green Elixir
     .target Carolai Anise
     .xp <7,1
-step
+step << Mage
     #label MetaBook
     >>Loot the |cRXP_PICK_Book|r in the shelf
     .collect 208185,1 --The Apothecary's Metaphysical Primer (x1
-    --TODO: Add turnin in UC later, wowhead says Mage class q but I completed it on Paladin too
 step
     #optional
     #loop
@@ -1349,6 +1343,13 @@ step << Paladin
     .xp <6,1
 step << Paladin
     .goto 1420/0,316.66,2227.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oliver|r
+    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T133053:0|t[Wooden Mallet] (6s 66c). You'll come back later if you don't have enough yet
+    .target Oliver Dwor
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
+step << Paladin
+    .goto 1420/0,316.66,2227.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Oliver|r|cRXP_BUY_. Buy a|r |T133053:0|t[Wooden Mallet] |cRXP_BUY_from him|r
     .collect 2493,1,367,1 --Collect Wooden Mallet (1)
     .money <0.0666
@@ -1362,6 +1363,13 @@ step << Paladin
     .itemcount 2493,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
+step
+    .goto Tirisfal Glades,61.15,52.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Mrs. Winters|r
+    >>|cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_BUY_from|r |cRXP_FRIENDLY_her|r
+    .collect 4496,1,5482,1 --Small Brown Pouch (1)
+    .target Mrs. Winters
+    .money <0.05
 step
     #hardcore
     #loop
@@ -1603,40 +1611,26 @@ step
     .mob Greater Duskbat
     .mob Vampiric Duskbat
 step
-    #hardcore
+    #completewith Brill3
+    .hs >> Hearth to Brill
+    .subzoneskip 159
+    .bindlocation 1497,1
+    .cooldown item,6948,>0,1
+step
     #completewith Brill3
     .subzone 159 >> Travel back to Brill
     .subzoneskip 159
-step
+    .cooldown item,6948,<0
+step << skip
     #softcore
     #completewith Brill3
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
-    #label DoomedWeed
-    #loop
-    .goto 1420/0,425.56,2362.58,0
-    .goto 1420/0,399.35,2337.270,30,0
-    .goto 1420/0,425.56,2362.58,30,0
-    .goto 1420/0,355.52,2429.76,30,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holland|r
-    >>|cRXP_WARN_He patrols around the graveyard|r
-    .turnin 5482 >>Turn in Doom Weed
-    .accept 99142 >>Accept Tomb Weed
-    .target Junior Apothecary Holland
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Sevren|r
-    .turnin 368 >>Turn in A New Plague
-    .accept 369 >>Accept A New Plague
-    .target +Apothecary Johaan
-    .goto 1420/0,346.94,2258.950
-    .turnin 398 >>Turn in Wanted: Maggot Eye
-    .target +Executor Zygand
-    .goto 1420/0,295.87,2277.93
-    .turnin 358 >>Turn in Graverobbers
-    .accept 405 >>Accept The Prodigal Lich
-    .accept 359 >>Accept Forsaken Duties
-    .target +Magistrate Sevren
-    .goto 1420/0,265.15,2305.94
+    .goto 1420/0,244.36,2262.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r
+    .accept 354 >>Accept Deaths in the Family
+    .accept 362 >>Accept The Haunted Mills
+    .target Coleman Farthing
 step
     .goto 1420/0,275.54,2260.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abigail|r
@@ -1646,11 +1640,17 @@ step
     .itemcount 2876,5 --Duskbat Pelt (5)
     .isQuestAvailable 375
 step
-    .goto 1420/0,244.36,2262.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r
-    .accept 354 >>Accept Deaths in the Family
-    .accept 362 >>Accept The Haunted Mills
-    .target Coleman Farthing
+    .goto 1420/0,295.87,2277.93+
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zygand|r
+    .turnin 398 >>Turn in Wanted: Maggot Eye
+    .target Executor Zygand
+step
+    .goto 1420/0,265.15,2305.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sevren|r
+    .turnin 358 >>Turn in Graverobbers
+    .accept 405 >>Accept The Prodigal Lich << Mage/Warlock
+    .accept 359 >>Accept Forsaken Duties
+    .target Magistrate Sevren
 step
     #optional
     .goto 1420/0,236.68,2249.01
@@ -1694,6 +1694,20 @@ step << Rogue/Warrior
     >>|cRXP_WARN_Try to make them during points at which you're waiting for things, such as Zeppelins|r
     .train 3273 >>Train |T135966:0|t[First Aid]
     .target Nurse Neela
+step
+    #label Brill3
+    .goto 1420/0,244.81,2269.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Renee|r
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Mage/Priest/Paladin
+    >>|cRXP_BUY_Buy|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r << Warrior/Rogue
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_and|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r << Warlock
+    .collect 1179,20,426,1 << Mage/Priest/Paladin --Ice Cold Milk (20)
+    .collect 4605,20,426,1 << Rogue/Warrior --Red-speckled Mushroom (20)
+    .collect 1179,10,426,1 << Warlock --Ice Cold Milk (10)
+    .collect 4605,10,426,1 << Warlock --Red-speckled Mushroom (10)
+    .money <0.025 << Warrior/Rogue
+    .money <0.0375 << Mage/Priest/Warlock/Paladin
+    .target Innkeeper Renee
 step << Paladin
     .goto 1420/0,311.600,2251.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shari Stilwell|r
@@ -1752,6 +1766,13 @@ step << Paladin
     .xp <6,1
 step << Paladin
     .goto 1420/0,316.66,2227.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oliver|r
+    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T133053:0|t[Wooden Mallet] (6s 66c). You'll come back later if you don't have enough yet
+    .target Oliver Dwor
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
+step << Paladin
+    .goto 1420/0,316.66,2227.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Oliver|r|cRXP_BUY_. Buy a|r |T133053:0|t[Wooden Mallet] |cRXP_BUY_from him|r
     .collect 2493,1,354,1 --Collect Wooden Mallet (1)
     .money <0.0666
@@ -1765,21 +1786,7 @@ step << Paladin
     .itemcount 2493,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
-step
-    #label Brill3
-    .goto 1420/0,244.81,2269.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Renee|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Mage/Priest/Paladin
-    >>|cRXP_BUY_Buy|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r << Warrior/Rogue
-    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_and|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r << Warlock
-    .collect 1179,20,426,1 << Mage/Priest/Paladin --Ice Cold Milk (20)
-    .collect 4605,20,426,1 << Rogue/Warrior --Red-speckled Mushroom (20)
-    .collect 1179,10,426,1 << Warlock --Ice Cold Milk (10)
-    .collect 4605,10,426,1 << Warlock --Red-speckled Mushroom (10)
-    .money <0.025 << Warrior/Rogue
-    .money <0.0375 << Mage/Priest/Warlock/Paladin
-    .target Innkeeper Renee
-step << Rogue/Warrior
+step << skip --Rogue/Warrior
     #softcore
     .goto 1420/0,308.08,2246.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eliza Callen|r
@@ -1797,6 +1804,24 @@ step
     .accept 360 >>Accept Return to the Magistrate
     .accept 356 >>Accept Rear Guard Patrol
     .target Deathguard Linnea
+step
+    .goto 1420/0,346.94,2258.950
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
+    .turnin 368 >>Turn in A New Plague
+    .accept 369 >>Accept A New Plague
+    .target Apothecary Johaan
+step
+    #label DoomedWeed
+    #loop
+    .goto 1420/0,425.56,2362.58,0
+    .goto 1420/0,399.35,2337.270,30,0
+    .goto 1420/0,425.56,2362.58,30,0
+    .goto 1420/0,355.52,2429.76,30,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holland|r
+    >>|cRXP_WARN_He patrols around the graveyard|r
+    .turnin 5482 >>Turn in Doom Weed
+    .accept 99142 >>Accept Tomb Weed
+    .target Junior Apothecary Holland
 step
     #label AgamandStart
     .goto 1420/0,882.41,2511.1,100,0
@@ -2215,7 +2240,7 @@ step << Rogue
     .turnin 1885 >>Turn in Mennet Carkad
     .accept 1886 >>Accept The Deathstalkers
     .target Mennet Carkad
-step
+step << Mage
     .goto 1458/0,168.600,1662.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Owen Thadd|r
     .turnin 79095 >>Turn in The Apothecary's Metaphysical Primer
@@ -2359,7 +2384,7 @@ step
 step << Paladin
     #completewith ViciousVenom
     >>|cRXP_WARN_Save 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for a quest later. Make sure you do not sell it|r
-    .collect 2589,60 --Linen Cloth (60)
+    .collect 2589,10 --Linen Cloth (10)
 step
     #sticky
     #label Friars
@@ -2567,7 +2592,11 @@ step
     .accept 99153 >>Accept The One That Got Away
     .target Ephram Barbaro
 step << Paladin
-    .goto 1420/0,2259.200,2086.600
+    #loop
+    .goto 1420/0,2424.200,2151.900,0
+    .goto 1420/0,2212.000,2022.600,0
+    .goto 1420/0,2424.200,2151.900,50,0
+    .goto 1420/0,2212.000,2022.600,50,0
     >>Kill |cRXP_ENEMY_Vile Fin Seers|r and |cRXP_ENEMY_Vile Fin Attackers|r
     .complete 91285,2 --|8/8 Vile Fin Seer slain
     .mob +Vile Fin Seer
@@ -2588,6 +2617,7 @@ step << Paladin -- paladin trainer outside
 step << Paladin --patrols the road
     .goto 1420/0,1961.100,2334.600
     >>Talk to |cRXP_FRIENDLY_Ander Solliden|r
+    >>|cRXP_WARN_He patrols the road|r
     .complete 91294,3 --|1/1 Speak with Ander Solliden
     .target Ander Solliden
     --TODO: Patrol path
@@ -2646,12 +2676,12 @@ step
     #requires ShadowValeCrypt
     #completewith GlowingBones
     >>Loot the |cRXP_PICK_Lumber Piles|r on the ground << Paladin
-    >>Loot the |cRXP_PICK_Bottles of Whispering Elixir|r on the ground
+    >>Loot the |cRXP_PICK_Bottles of Whispering Elixir|r on the ground and on the walls
     .complete 91316,1 << Paladin--|12/12 Sturdy Lumber
     .complete 95314,1 --|8/8 Bottle of Whispering Elixir
 step
     .goto 1420/0,2648.100,2027.200
-    >>Kill the |cRXP_ENEMY_Whispering Horror|r (elite). Loot him for |T134438:0|t[|cRXP_LOOT_Whispering Horror Residue|r]
+    .use 268812 >>Kill the |cRXP_ENEMY_Whispering Horror|r (elite). Loot him for |T134438:0|t[|cRXP_LOOT_Whispering Horror Residue|r]
     >>|cRXP_WARN_This is hard! Group up if possible. It has 700 health but his damage is manageable. Skip this step if you can't kill it|r
     .collect 268812,1,95328 --Whispering Horror Residue (x1)
     .accept 95328 >>Accept Whispering Horror Residue
@@ -2674,7 +2704,7 @@ step
     #requires ShadowValeCrypt
     .goto 1420/0,2647.800,1815.500
     >>Loot the |cRXP_PICK_Lumber Piles|r on the ground << Paladin
-    >>Loot the |cRXP_PICK_Bottles of Whispering Elixir|r on the ground
+    >>Loot the |cRXP_PICK_Bottles of Whispering Elixir|r on the ground and on the walls
     .complete 91316,1 << Paladin--|12/12 Sturdy Lumber
     .complete 95314,1 --|8/8 Bottle of Whispering Elixir
 step
@@ -3017,6 +3047,19 @@ step << Priest
     .itemcount 11287,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
+step << Paladin
+    #completewith next
+    .goto Undercity,51.99,64.54,10,0
+    .goto Undercity,46.25,73.22,10,0
+    .goto Undercity,45.32,78.32,10,0
+    .goto Undercity,46.26,83.91,10,0
+    .goto Undercity,49.03,87.92,10,0
+    .goto Undercity,52.94,89.60,10 >>Enter the Royal Quarter
+step << Paladin
+    .goto 1458/0,316.200,1290.600
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Sylvanas Windrunner|r
+    .turnin 95803 >>Turn in A Token of Good Faith
+    .target Lady Sylvanas Windrunner
 
     --Paladin Ressurrect chain route
 
@@ -3146,7 +3189,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-H1
 << Horde
 #version 11
-#defaultfor Undead/Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
+#defaultfor !Hunter !Shaman !Tauren !Skyborne
 #forever
 #era/som--h
 #name 12-14 Silverpine Forest
@@ -3529,23 +3572,24 @@ step
 step
     #label Shackles
     #loop
-	.goto Silverpine Forest,43.83,31.00,0
-	.goto Silverpine Forest,44.22,31.55,50,0
-	.goto Silverpine Forest,43.51,32.38,50,0
-	.goto Silverpine Forest,42.61,31.12,50,0
-	.goto Silverpine Forest,41.28,30.25,50,0
-	.goto Silverpine Forest,39.70,30.24,50,0
-	.goto Silverpine Forest,38.96,29.15,50,0
-	.goto Silverpine Forest,38.28,27.10,50,0
-	.goto Silverpine Forest,37.60,24.16,50,0
-	.goto Silverpine Forest,38.07,23.13,50,0
-	.goto Silverpine Forest,38.56,21.93,50,0
-	.goto Silverpine Forest,39.73,23.26,50,0
-	.goto Silverpine Forest,41.49,23.51,50,0
-	.goto Silverpine Forest,41.14,25.50,50,0
-	.goto Silverpine Forest,41.17,28.26,50,0
-	.goto Silverpine Forest,42.01,29.27,50,0
-	.goto Silverpine Forest,43.83,31.00,50,0
+    .goto 1421/0,1609.1399,798.6667,50,0,0
+    .goto 1421/0,1609.1399,798.6667,50,0
+    .goto 1421/0,1592.7599,783.2667,50,0
+    .goto 1421/0,1622.5799,760.0267,50,0
+    .goto 1421/0,1660.3799,795.3067,50,0
+    .goto 1421/0,1716.2399,819.6667,50,0
+    .goto 1421/0,1782.5999,819.9467,50,0
+    .goto 1421/0,1813.6799,850.4667,50,0
+    .goto 1421/0,1842.2399,907.8667,50,0
+    .goto 1421/0,1870.7999,990.1867,50,0
+    .goto 1421/0,1851.0599,1019.0267,50,0
+    .goto 1421/0,1830.4799,1052.6267,50,0
+    .goto 1421/0,1781.3399,1015.3867,50,0
+    .goto 1421/0,1707.4199,1008.3867,50,0
+    .goto 1421/0,1722.1199,952.6667,50,0
+    .goto 1421/0,1720.8599,875.3867,50,0
+    .goto 1421/0,1685.5799,847.1067,50,0
+    .goto 1421/0,1609.1399,798.6667,50,0
     >>Kill |cRXP_ENEMY_Moonrage Gluttons|r and |cRXP_ENEMY_Moonrage Darksouls|r. Loot them for their |cRXP_LOOT_Shackles|r
     >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_Moonrage Darksouls|r |cRXP_WARN_enrage when they are below 25% health. Kill them quickly when they are low|r
     .complete 423,1 --Glutton Shackle (6)
