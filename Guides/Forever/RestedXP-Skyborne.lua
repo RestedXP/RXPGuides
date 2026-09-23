@@ -378,7 +378,6 @@ step
     .target Elatrell Featherlight
 step << Warrior
     .train 6546,1
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Blademaster Ren|r
     .goto 2521,43.66,24.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blademaster Ren|r.
     .train 100 >>Train |T132333:0|t[Charge]
@@ -1021,7 +1020,6 @@ step << Warrior
     .isQuestNotComplete 92517
     --subzone
     .goto 2521,44.8,44.18
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Tephri Thriceforged|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r
     .collect 2493,1
     .target Tephri Thriceforged    
@@ -1143,7 +1141,6 @@ step
 --     .isOnQuest 92553
 --     .isQuestAvailable 92517
 --     .itemcount 1971,<3
---     #arrowtext Use the macro to craft\nKeep 3 Small Eggs
 --     .goto 2521,43.86,43.85
 --     >>Use the |T132834:0|t[Herb Baked Egg] macro below to craft.
 --     *|cRXP_WARN_Keep at least 3 Small Eggs for a later quest|r
@@ -1937,7 +1934,6 @@ step
 step
     .isQuestComplete 92553
     .isOnQuest 92550
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Zerril Softbreeze|r
     .goto 2521,43.86,43.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r and buy 5 |T135435:0|t[Simple Wood].
     .collect 4470,5
@@ -2095,7 +2091,6 @@ step
 step
     .isQuestAvailable 93948
     #completewith next
-    #arrowtext Use |T236219:0|t[Read Ley Line]\nnear the Ley Line
     .goto 2521,63.33,73.65,15,0
     .goto 2521,63.76,74.45
     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
@@ -2260,7 +2255,6 @@ step << Horde
     .target Ayessa Dawnsinger::251968
     .turnin 92708 >>Turn in A Grand Adventure
 step << Alliance
-    #arrowtext Click on\n|cRXP_FRIENDLY_Bloodstained Satchel|r
     .goto 2521,53.33,72.15
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bloodstained Satchel|r
     .turnin 92727 >>Turn in The Missing Scholar
@@ -2268,7 +2262,6 @@ step << Alliance
     .target Bloodstained Satchel
 step << Alliance
     #label LeavingValanaarA
-    #arrowtext Find\n|cRXP_FRIENDLY_Fillion Flamebreeze|r
     .goto 2521,51.11,67.06,30,0
     .goto 2521,51.24,66.63,30,0
     .goto 2521,49.9,66.42,30,0
@@ -2277,7 +2270,6 @@ step << Alliance
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Fillion Flamebreeze|r.
     .complete 92849,1 --1/1 Find Fillion Flamebreeze
 step << Alliance
-    #arrowtext Carry\n|cRXP_FRIENDLY_Fillion Flamebreeze|r to safety
     .goto 2521,50.73,66.26,35,0
     .goto 2521,51.9,66.51,35,0
     .goto 2521,51.02,66.83,35,0
@@ -2289,7 +2281,6 @@ step << Alliance
     .skipgossipid 136430
     .target Fillion Flamebreeze
 step << Alliance
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Fillion Flamebreeze|r
     .goto 2521,52.064,69.396
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fillion Flamebreeze::253284|r.
     .target Fillion Flamebreeze::253284
@@ -2307,7 +2298,6 @@ step << Alliance
     .goto 2521,52.02,65.51,130 >>Enter the cave
 step << Alliance
     #requires Shriekling Matriarch
-    #arrowtext Kill |cRXP_ENEMY_Shriekling Matriarch|r\nLoot for |cRXP_LOOT_Shriekling Matriarch's Head|r
     .goto 2521,52.02,65.51
     >>Kill |cRXP_ENEMY_Shriekling Matriarch|r. Loot it for |cRXP_LOOT_Shriekling Matriarch's Head|r.
     .complete 92850,1 --1/1 Shriekling Matriarch's Head
@@ -2504,7 +2494,6 @@ step
     >>Wait for the roleplay. Use the |T135432:0|t[Torch of Eternal Flame] on the burning |cRXP_PICK_Brazier of Offering|r.
     .complete 97257,1 --|1/1 Complete the Ritual with Olariaan
 step
-    #arrowtext |cRXP_WARN_You have to avoid enemies|r
     .goto 2521,58.312,78.827
     >>You have roughly 5 minutes to run back.
     .complete 97257,2 --|1/1 Light the Brazier of Eternal Flame
@@ -2608,7 +2597,6 @@ step << Mage
     .target Anathamaas Aetherwind
 step << Alliance
     #label Turn in The Missing Scholar
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Dondallion Whisperwind|r
     .goto 2521,66.26,79.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dondallion Whisperwind|r.
     .turnin 92850 >>Turn in The Missing Scholar
@@ -2687,7 +2675,6 @@ step << Mage
     .mob Windshaper Shaman
 step << Mage
     #requires Protect the Index Mage
-    #arrowtext Collect\n|cRXP_LOOT_Wind-Infused Bough|r
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Branch|r.
     *|cRXP_WARN_You can do this in between Shamans spawning|r
     .complete 93797,1 --1/1 Wind-Infused Bough
@@ -2731,7 +2718,6 @@ step << Mage
 step << Alliance
     .isOnQuest 92840
     .subzoneskip 16638
-    #arrowtext Jump of the mountain\n Use |T132845:0|t[Walk on Air]
     .goto 2521,49.46,70.12,30,0
     .goto 2521,65.577,76.650
     .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
@@ -2989,7 +2975,6 @@ step
     .target Fendaal Windstone
 step
     .isQuestAvailable 93317
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Nyalah Brightfire|r
     .goto 2521,60.64,72.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyalah Brightfire|r.
     .vendor >>Sell Trash
@@ -3121,7 +3106,6 @@ step
     .target Valennia Stormfist
 -- step 
 --     .subzoneskip 16638,1
---     #arrowtext Use |T236219:0|t[Read Ley Line]\nnear the Ley Line
 --     .goto 2521,63.9,74.16
 --     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
 --     .cooldown spell,1259705,>0,1
@@ -3157,7 +3141,6 @@ step << Warrior
     .complete 94003,1 --|1/1 Skybreaker Bulwark
     .mob Zaal Stormshield::257196
 step << Warrior
-    #arrowtext Kill |cRXP_ENEMY_Al'Aketh Guardian|r,\n|cRXP_ENEMY_Al'Aketh Spiritcaller|r and\n|cRXP_ENEMY_Al'Aketh Blademaster|r
     #loop
     .goto 2521,60.4,49.44
     .goto 2521,61.56,49.4
@@ -3322,7 +3305,6 @@ step
     .target Talaanis Shadowsong
 step
     .isOnQuest 93089
-    #arrowtext Jump of the mountain\n Use |T132845:0|t[Walk on Air]
     .goto 2521,66.47,76.66,8,0
     .goto 2521,66.63,79.95
     .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
@@ -3361,7 +3343,6 @@ step << Warrior
     .turnin 94003 >>Turn in The Skybreaker Bulwark
 step
     #completewith The Strange Hermit 2
-    #arrowtext Kill and loot\n|cRXP_ENEMY_Shadowgale Shrieklings|r
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings|r.
     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r].
     .complete 92741,1 --8/8 Shriekling Talons
@@ -3379,7 +3360,6 @@ step
 step
     #requires The Strange Hermit
     #label The Strange Hermit 2
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Strange Hermit|r
     .goto 2521,53.95,38.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strange Hermit|r.
     .accept 93159 >>Accept The Strange Hermit
@@ -3394,12 +3374,10 @@ step
     .skipgossipid 135784 -- no
 step
     #completewith Abandoned Belongings1
-    #arrowtext Collect\n|cRXP_LOOT_Zephyrseed|r
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Seeds|r
     .complete 93160,1 --8/8 Zephyrseed
 step
     #completewith Abandoned Belongings1
-    #arrowtext Kill and loot\n|cRXP_ENEMY_Shadowgale Shrieklings|r
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings|r. 
     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r].
     .complete 92741,1 --8/8 Shriekling Talons
@@ -3411,18 +3389,15 @@ step
     .complete 94896,1,1 --8/8 Abandoned Belongings
 step
     #completewith Resaan's Heirloom
-    #arrowtext Kill\n|cRXP_ENEMY_Wind Hollows|r
     >>Kill |cRXP_ENEMY_Wind Hollows|r.
     .complete 93172,1 --10/10 Wind Hollow freed
     .mob Wind Hollow::251676
 step
     #completewith Resaan's Heirloom
-    #arrowtext Collect\n|cRXP_LOOT_Abandoned Belongings|r
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crates|r
     .complete 94896,1 --8/8 Abandoned Belongings
 step
     #label Resaan's Heirloom
-    #arrowtext Recover\n|cRXP_LOOT_Resaan's Heirloom|r
     .goto 2521,57.45,33.8,40,0
     .goto 2521,56.69,33.71,40,0
     .goto 2521,57.04,29.36
@@ -3447,23 +3422,19 @@ step
     +1
 step
     #completewith next
-    #arrowtext Kill\n|cRXP_ENEMY_Wind Hollows|r
     >>Kill |cRXP_ENEMY_Wind Hollows|r.
     .complete 93172,1 --10/10 Wind Hollow freed
     .mob Wind Hollow::251676
 step
-    #arrowtext Collect\n|cRXP_LOOT_Abandoned Belongings|r
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crates|r
     .complete 94896,1 --8/8 Abandoned Belongings
 step
     #label Wind Hollow
-    #arrowtext Kill\n|cRXP_ENEMY_Wind Hollows|r
     >>Kill |cRXP_ENEMY_Wind Hollows|r.
     .complete 93172,1 --10/10 Wind Hollow freed
     .mob Wind Hollow::251676
 step
     #completewith Unnerving Silence
-    #arrowtext Kill and loot\n|cRXP_ENEMY_Shadowgale Shrieklings|r
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings|r. 
     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r].
     .complete 92741,1 --8/8 Shriekling Talons
@@ -3473,7 +3444,6 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Seeds|r
     .complete 93160,1 --8/8 Zephyrseed
 step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Elegael Thornpaw|r
     .goto 2521,61.76,39.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elegael Thornpaw::257944|r.
     .target Elegael Thornpaw::257944
@@ -3483,7 +3453,6 @@ step
     .accept 94487 >>Accept Unwanted and Unworthy
 step
     #completewith next
-    #arrowtext Kill and loot\n|cRXP_ENEMY_Al'Aketh Cultists|r
     >>Kill |cRXP_ENEMY_Al'Aketh Footsoldiers|r and |cRXP_ENEMY_Al'Aketh Stormcallers|r. 
     *Loot them for |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r] and |T133856:0|t[|cRXP_LOOT_Al'Alketh Cultist's Ears|r].
     .complete 94487,1 --10/10 Bloody Heirloom
@@ -3510,7 +3479,6 @@ step
     .mob Al'Aketh Stormcaller::252068
 step
     #completewith next
-    #arrowtext Kill and loot\n|cRXP_ENEMY_Shadowgale Shrieklings|r
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings|r. Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers].
     .complete 92741,1 --8/8 Shriekling Talons
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
@@ -3529,13 +3497,11 @@ step
     .goto 2521,57.94,39.99,35,0
     .goto 2521,57.36,40.86,35,0
     .goto 2521,55.59,39.23,35,0
-    #arrowtext Collect\n|cRXP_LOOT_Tear Moss & Seeds|r
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tear Moss & Seeds|r
     .complete 93160,1 --8/8 Zephyrseed
     .complete 94485,1 --8/8 Lady's Tear Moss
 step
     #label Unnerving Silence
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Strange Hermit|r
     .goto 2521,53.97,38.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strange Hermit|r.
     .turnin 93160 >>Turn in The Forest's Bounty
@@ -3561,7 +3527,6 @@ step
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob Shadowgale Shriekling::256092
 step
-    #arrowtext Collect\n|cRXP_LOOT_Tear Moss|r
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tear Moss|r
     .complete 94485,1 --8/8 Lady's Tear Moss
 step
@@ -3581,7 +3546,6 @@ step
     .target Elegael Thornpaw
 step
     .isQuestAvailable 94490
-    #arrowtext Kill and loot\n|cRXP_ENEMY_Commander Haalien|r
     .goto 2521,65.54,36.3
     >>Kill |cRXP_ENEMY_Commander Haalien|r. Loot him for |T134161:0|t[|cRXP_LOOT_Severed Head|r] and |T135332:0|t[Ripped Missive].
     .complete 94488,1 --1/1 Commander Haalien's Severed Head
@@ -3593,13 +3557,11 @@ step
     .accept 94490 >>Accept Ripped Missive
     .use 265476
 step
-    #arrowtext Talk to\n|cRXP_FRIENDLY_Vayn Moongaze|r
     .goto 2521,63.80,36.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vayn Moongaze|r.
     .turnin 93165 >>Turn in Mercy Falls on Deaf Ears
     .target Vayn Moongaze
 step
-    #arrowtext Find\n|cRXP_FRIENDLY_Jorel Windsinger|r
     .goto 2521,64.29,34.23,30,0
     .goto 2521,64.49,34.74
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Jorel Windsinger|r
