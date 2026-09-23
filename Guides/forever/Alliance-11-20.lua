@@ -1551,7 +1551,7 @@ step << NightElf/Hunter/Druid/Warrior
     .accept 4812 >> Accept As Water Cascades
     .target Sentinel Glynda Nal'Shea
     .isQuestTurnedIn 4811 --show step if Red Crystal turned in
-step << NightElf/Hunter/Druid
+step << NightElf !Warrior !Rogue/Hunter/Druid
     #optional
     #season 0
     .goto 1439/1,518.17,6429.47
