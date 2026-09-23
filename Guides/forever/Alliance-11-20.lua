@@ -23,7 +23,12 @@ RXPGuides.RegisterGuide([[
 step
     #optional
     .maxlevel 14,endOfTheGuide
-
+step
+    .goto 1453/0,673.58,-8867.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Allison|r
+    .home >> Set your Hearthstone to Stormwind City
+    .target Innkeeper Allison
+    .bindlocation 16509
 step
     #ah
     .goto 1453/0,660.28,-8814.55
@@ -493,7 +498,7 @@ step
     .turnin 92744 >>Turn in Murloc Gills
 step
     .hs >> Hearth to Stormwind
-    .bindlocation 1519,1
+    .bindlocation 16509,1
     .cooldown item,6948,>2,1
     .zoneskip Stormwind City
     .zoneskip Darkshore
@@ -634,7 +639,19 @@ step << Priest
     .trainer >> Train your class spells
     .train 8122,1
     .target Brother Joshua
-
+step
+    .goto 1453/0,765.700,-8804.000
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catherine Leland|r
+    >>|cRXP_BUY_Buy one|r |T134335:0|t[Shiny Bauble] |cRXP_BUY_and three|r |T134324:0|t[Nightcrawlers] |cRXP_BUY_from her. This is for a 900xp quest|r
+    .collect 6529,1,95065,1 --|1/1 Shiny Bauble
+    .collect 6530,3,95065,1 --|3/3 Nightcrawlers
+    .target Catherine Leland
+step
+    .goto 1453/0,1269.100,-8540.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilbert Gray::267118|r 
+    .target Gilbert Gray::267118
+    .accept 95065 >>Accept Fishin' Time
+    .turnin 95065 >>Turn in Fishin' Time
 step
     #optional
     #requires DockTravel
@@ -682,7 +699,7 @@ step
     #requires DarkshoreCook3
     #label DarkshoreCook4
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    +|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     >>|T133971:0|t[Cook] |cRXP_WARN_the following items:|r
     >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
     >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
@@ -697,7 +714,7 @@ step
     #requires DarkshoreCook4
     #label DarkshoreCook5
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    +|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Darkshore
@@ -710,7 +727,7 @@ step
     #requires DarkshoreCook5
     #label DarkshoreCook6
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    +|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
     .usespell 2550
     .zoneskip Darkshore
