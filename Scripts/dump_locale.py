@@ -42,7 +42,7 @@ def locale_dump(input_text):
 seen = set() # Check for duplicates
 
 
-with open ("new_locale.lua", 'wt') as f:
+with open ("new_locale.lua", 'wt', encoding='utf-8') as f:
     f.write('--')
 
 
@@ -50,14 +50,14 @@ for file in files_list:
     file_path = file
     if check_exceptions(file):
         continue
-    with open (file_path, 'rt') as lua_file:
+    with open (file_path, 'rt', encoding='utf-8') as lua_file:
         file_name = os.path.basename(file_path)
         print(file_path)
         try:
             content = lua_file.read()
             locales = locale_dump(content)
 
-            with open('new_locale.lua', 'a') as f:
+            with open('new_locale.lua', 'a', encoding='utf-8') as f:
                 f.write('\n')
                 p = os.path.relpath(file_path, start=dir_path)
                 f.write(f"-- {p} file") # Write each filename
