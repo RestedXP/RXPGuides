@@ -731,14 +731,17 @@ s["WARRIOR"] = {
     },
     [4] = {
         100, -- charge
-        772, -- rend
-        3128 -- parry
+        772 -- rend
+    },
+    [6] = {
+        3127 -- parry
     },
     [8] = {
         1715, -- hamstring
         284 -- heroic strike r2
     },
     [10] = {
+        2687, -- bloodrage
         6546 -- rend 2
     },
     [12] = {
@@ -746,34 +749,35 @@ s["WARRIOR"] = {
         7384 -- overpower
     },
     [14] = {
-        1160 -- demoralizing shout r1
+        1160, -- demoralizing shout r1
+        1310185 -- tactical mastery
     },
     [16] = {
         285 -- heroic strike r3
     },
     [20] = {
         845, -- cleave
-        20230 -- retaliation
+        20230, -- retaliation
+        402927 -- victory rush
     },
     [22] = {
         6192, -- battle shout r3
         5246, -- intimidating shout
-        7405 -- sunder armor
+        7405 -- sunder armor r2
     },
     [24] = {
-        6190, -- demoralizing shout
-        5309, -- execute
+        6190, -- demoralizing shout r2
+        5308, -- execute
         1608 -- heroic strike r4
     },
     [26] = {
-        6178 -- charge
+        6178 -- charge r2
     },
     [28] = {
         7887 -- overpower r2
     },
     [30] = {
-        7368, -- cleave r2
-        20252 -- intercept
+        7368 -- cleave r2
     },
     [32] = {
         11549, -- battle shout
@@ -791,7 +795,8 @@ s["WARRIOR"] = {
         6552 -- pummel
     },
     [40] = {
-        20660 -- execute r3
+        20660, -- execute r3
+        750 -- plate
     },
     [42] = {
         11550 -- battle shout r5
@@ -806,7 +811,9 @@ s["WARRIOR"] = {
     },
     [48] = {
         21551, -- mortal strike r2
-        20661 -- execute r4
+        20661, -- execute r4
+        23892, -- bloodthirst r2
+        23923 -- shield slam r2
     },
     [50] = {
         1719 -- recklessness
@@ -817,7 +824,8 @@ s["WARRIOR"] = {
     [54] = {
         21552, -- mortal strike r3
         11556, -- demoralizing shout r5
-        7373 -- hamstring
+        23893, -- bloodthirst r3
+        23924 -- shield slam r3
     },
     [56] = {
         20662 -- execute r5
@@ -828,7 +836,9 @@ s["WARRIOR"] = {
     [60] = {
         21553, -- mortal strike r4
         25289, -- battle shout r7
-        11585 -- overpower r4
+        11585, -- overpower r4
+        23894, -- bloodthirst r4
+        23925 -- shield slam r3
     }
 }
 
