@@ -39,6 +39,13 @@ else
     GetSpellInfo = _G.GetSpellInfo
 end
 
+local GetSpellCooldown = _G.GetSpellCooldown or function(spellIdentifier)
+    if C_Spell and C_Spell.GetSpellCooldown then
+        local info = C_Spell.GetSpellCooldown(spellIdentifier)
+        return info.startTime, info.start, info.duration, info.enabled, info.modRate
+    end
+end
+addon.GetSpellCooldown = GetSpellCooldown
 
 local GetSpellTexture = C_Spell and C_Spell.GetSpellTexture or _G.GetSpellTexture
 local GetSpellSubtext = C_Spell and C_Spell.GetSpellSubtext or _G.GetSpellSubtext
