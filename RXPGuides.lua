@@ -42,7 +42,17 @@ end
 local GetSpellCooldown = _G.GetSpellCooldown or function(spellIdentifier)
     if C_Spell and C_Spell.GetSpellCooldown then
         local info = C_Spell.GetSpellCooldown(spellIdentifier)
-        return info.startTime, info.start, info.duration, info.enabled, info.modRate
+        local enabled = info.isEnabled
+        local isActive = info.isActive
+        local startTime,duration = info.startTime, info.duration
+        if not isActive then
+            startTime = 0
+            duration = 0
+        elseif not enabled then
+            startTime = GetTime()
+            duration = 1e6
+        end
+        return startTime, duration, enabled, isActive
     end
 end
 addon.GetSpellCooldown = GetSpellCooldown
