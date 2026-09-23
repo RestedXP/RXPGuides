@@ -7,7 +7,8 @@ RXPGuides.RegisterGuide([[
 #xprate <1.99
 << Horde
 #name 12-17 The Barrens
-#displayname 14-18 The Barrens << Undead/Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
+#displayname 14-18 The Barrens << !Shaman !Hunter !Tauren !Skyborne
+#displayname 15-18 The Barrens << Paladin
 #version 11
 #group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
@@ -3214,7 +3215,7 @@ RXPGuides.RegisterGuide([[
 #xprate <1.99
 << Horde
 #name 17-22 Stonetalon/Barrens/Ashenvale
-#displayname 18-22 Stonetalon/Barrens/Ashenvale << Undead/Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
+#displayname 18-22 Stonetalon/Barrens/Ashenvale << !Shaman !Hunter !Tauren !Skyborne
 #version 11
 #group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
