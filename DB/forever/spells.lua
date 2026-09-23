@@ -1019,7 +1019,7 @@ s["WARLOCK"] = {
         695 -- shadow bolt r2
     },
     [8] = {
-        980, -- curse of agony
+        980, -- bane of agony
         5782 -- fear
     },
     [10] = {
@@ -1042,22 +1042,24 @@ s["WARLOCK"] = {
     },
     [18] = {
         693, -- soulstone
-        1014 -- curse of agony r2
+        1014, -- bane of agony r2
+        5676 -- searing pain r1 for Fangore/shadow res mobs
     },
     [20] = {
         706, -- demon armor
         3698, -- health funnel r2
         1094, -- immolate r3
         1088, -- shadowbolt r4
-        5740 -- rain of fire r1 for split pulling
+        5740, -- rain of fire r1 for split pulling
+        440892 -- curse of the elements
     },
     [22] = {
         6202, -- create healthstone r2
-        699, -- drain life r2
-        5676 -- searing pain r1 for Fangore/shadow res mobs
+        699 -- drain life r2
     },
     [24] = {
-        6223 -- corruption r3
+        6223, -- corruption r3
+        18867 -- shadowburn r2
     },
     [26] = {
         1714, -- curse of tongues
@@ -1067,7 +1069,7 @@ s["WARLOCK"] = {
     },
     [28] = {
         710, -- banish
-        6217, -- curse of agony r3
+        6217, -- bane of agony r3
         3699, -- health funnel r3
         1106 -- shadow bolt r5
     },
@@ -1077,11 +1079,14 @@ s["WARLOCK"] = {
         1086, -- demon armor r2
         709, -- drain life r3
         2941, -- immolate r4
-        704 -- curse of recklessness
+        704, -- curse of recklessness
+        1311676 -- curse of the elements r2
     },
     [32] = {
         6229, -- shadow ward
-        6213 -- fear r2
+        6213, -- fear r2
+        1293818, -- conflagrate r2
+        18868 -- shadowburn r2
     },
     [34] = {
         7684, -- corruption r4
@@ -1090,14 +1095,14 @@ s["WARLOCK"] = {
     },
     [36] = {
         2362, -- create spellstone
-        3700, -- health funnel
+        3700, -- health funnel r4
         11687, -- life tap r4
         7641 -- shadow bolt r6
     },
     [38] = {
-        2970, -- detect invisibility
+        2970, -- detect invisibility r2
         18879, -- siphon life r2
-        11711, -- curse of agony r4
+        11711, -- bane of agony r4
         7651 -- drain life r4
     },
     [40] = {
@@ -1105,7 +1110,10 @@ s["WARLOCK"] = {
         20755, -- create soulstone r3
         11733, -- demon armor r3
         5484, -- howl of terror
-        11655 -- immolate r5
+        11655, -- immolate r5
+        17962, -- conflagrate r3
+        1311677, -- curse of the elements r3
+        18869 -- shadowburn r4
     },
     [42] = {
         11739, -- shadow ward r2
@@ -1127,7 +1135,10 @@ s["WARLOCK"] = {
         6353, -- soul fire
         18880, -- siphon life r3
         18647, -- banish r2
-        11712 -- curse of agony r5
+        11712, -- bane of agony r5
+        18930, -- conflagrate r4
+        17727, -- spellstone r2
+        18870 -- shadowburn r5
     },
     [50] = {
         11719, -- curse of tongues r2
@@ -1137,7 +1148,9 @@ s["WARLOCK"] = {
         11734, -- demon armor r4
         11667, -- immolate r6
         11743, -- detect greater invisibility
-        17922 -- searing pain r5
+        17922, -- searing pain r5
+        1311680, -- curse of the elements r4
+        1293812 -- incinerate r2
     },
     [52] = {
         11740, -- shadow ward r3
@@ -1148,19 +1161,21 @@ s["WARLOCK"] = {
         11684, -- hellfire r3
         11672, -- corruption r6
         11700, -- drain life r6
-        17928 -- howl of terror r2
+        17928, -- howl of terror r2
+        18931 -- conflagrate r5
     },
     [56] = {
         17924, -- soul fire r2
         6215, -- fear r3
         11689, -- life tap r6
-        18881, -- siphon life r4
-        11730 -- create healthstone r5
+        11730, -- create healthstone r5
+        18871 -- shadowburn r6
     },
     [58] = {
-        11713, -- curse of agony r6
+        11713, -- bane of agony r6
         17926, -- death coil r3
-        17923 -- searing pain r6
+        17923, -- searing pain r6
+        18881 -- siphon life r4
     },
     [60] = {
         30404, -- unstable affliction r2
@@ -1173,7 +1188,11 @@ s["WARLOCK"] = {
         11661, -- shadow bolt r9
         25307, -- shadow bolt r10
         18938, -- dark pact r3
-        25311 -- corruption r7
+        25311, -- corruption r7
+        603, -- bane of doom
+        18932, -- conflagrate r6
+        17728, -- spellstone r3
+        1293813 -- incinerate r3
     }
 }
 
