@@ -77,12 +77,20 @@ step
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Jaxon
     .skill cooking,<50,1 --XX Shows if cooking skill is 50+
-step
+step << Human
     .goto 1453/0,489.99,-8835.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .turnin 6261 >> Turn in Dungar Longdrink
     .accept 6285 >> Accept Return to Lewis
     .target Dungar Longdrink
+
+
+
+
+
+
+
+
 step
     .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
@@ -502,7 +510,7 @@ step
     #optional
     #label endOfTheGuide
 
-step << Rogue
+step << Human Rogue
     #ah
     .goto 1453/0,609.63,-8787.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
@@ -510,7 +518,7 @@ step << Rogue
     .money <0.3815
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
     .target Marda Weller
-step << Rogue
+step << Human Rogue
     #ssf
     .goto 1453/0,609.63,-8787.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
@@ -522,7 +530,7 @@ step
     .goto 1453/0,596.400,-8831.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Mullby|r
     >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from him|r
-    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
+    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
@@ -1844,9 +1852,10 @@ step
 step
     #optional
     #completewith AmethStart
-    >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
+    >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob Moonstalker Runt
+    .mob Moonstalker
     .isQuestTurnedIn 1001
     .isQuestAvailable 4811
 step
@@ -4536,7 +4545,7 @@ step << Mage/Warlock/Rogue
 step << Mage/Warlock/Rogue
     #xprate >1.59
     #completewith WepTrainNoDM << !Warrior
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_if needed while on the Tram|r
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_if needed while on the Tram|r
     >>|cRXP_WARN_You will need your|r |T135966:0|t[First Aid] |cRXP_WARN_to be 80+ for a quest later|r << Rogue !Dwarf
     .zone Stormwind City >> Take the Deeprun Tram to Stormwind
     .zoneskip Darkshore << Warrior
@@ -5332,7 +5341,7 @@ step << NightElf Rogue
     #optional
     #label NEWarRogNoDMNoFP1
     #completewith NEWarRogNoDMIFPP
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_if needed while on the Tram|r
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_if needed while on the Tram|r
     .zone Ironforge >> Take the Deeprun Tram to Ironforge
     .zoneskip Darkshore
     .zoneskip Teldrassil
@@ -6307,7 +6316,7 @@ step
     #xprate >1.59 << !Hunter
     #optional << NightElf
     #completewith ShoniAccept
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_if needed while on the Tram|r
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_if needed while on the Tram|r
     >>|cRXP_WARN_You will need your|r |T135966:0|t[First Aid] |cRXP_WARN_to be 80+ for a quest later|r << Rogue !Dwarf
     .zone Stormwind City >> Take the Deeprun Tram to Stormwind
     .zoneskip Wetlands << NightElf
@@ -7782,7 +7791,7 @@ step << NightElf
     #optional
     #label DeeprunDMNoFP1
     #completewith NEIFFP
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_if needed while on the Tram|r
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_if needed while on the Tram|r
     .zone Ironforge >> Take the Deeprun Tram to Ironforge
     .zoneskip Ironforge
     .dungeon DM
@@ -8130,7 +8139,7 @@ step << !Hunter
     #xprate <1.59
     .goto 1455/0,-1330.28,-4843.6,5,0
     .zone Stormwind City >> Enter the Deeprun Tram. Take the tram to Stormwind
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_if needed while waiting for the tram|r
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_if needed while waiting for the tram|r
     >>|cRXP_WARN_You will need your|r |T135966:0|t[First Aid] |cRXP_WARN_to be 80 for a quest at level 24 << Rogue !Dwarf
 
 

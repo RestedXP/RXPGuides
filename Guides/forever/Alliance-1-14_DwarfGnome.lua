@@ -2085,7 +2085,7 @@ step << !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yanni Stoutheart|r
     >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from her|r
     >>|cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_BUY_too from her if needed|r << !Rogue
-    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
+    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
@@ -2101,7 +2101,7 @@ step
     #optional
     #completewith next
     .goto 1432,35.273,47.750,10 >> Exit the Stoutlager Inn
-step
+step << Hunter
     .goto 1432/0,-3003.30,-5376.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grenhild Darktalon|r
     .accept 86667 >> Accept Snowbound
@@ -2461,7 +2461,7 @@ step << !Hunter
     .timer 11,Deeprun Rat Roundup RP
     .accept 6662 >> Accept Me Brother, Nipsy
     .target Monty
-step << !Hunter
+step << !Hunter skip
     #optional
     #label TramCook1
     #completewith TramEnd
@@ -2474,7 +2474,7 @@ step << !Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << !Hunter
+step << !Hunter skip
     #optional
     #requires TramCook1
     #label TramCook2
@@ -2488,7 +2488,7 @@ step << !Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << !Hunter
+step << !Hunter skip
     #optional
     #requires TramCook2
     #label TramCook3
@@ -2502,7 +2502,7 @@ step << !Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << !Hunter
+step << !Hunter skip
     #optional
     #requires TramCook3
     #label TramCook4
@@ -2517,7 +2517,7 @@ step << !Hunter
     .itemcount 2672,1 --Stringy Wolf Meat (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << !Hunter
+step << !Hunter skip
     #optional
     #requires TramCook4
     #label TramCook5
@@ -2530,7 +2530,7 @@ step << !Hunter
     .itemcount 2672,1 --Stringy Wolf Meat (1)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << !Hunter
+step << !Hunter skip
     #optional
     #requires TramCook5
     #label TramCook6
@@ -3474,6 +3474,52 @@ step << Dwarf/Gnome
     .turnin 6392 >> Turn in Return to Brock
     .target Brock Stoneseeker
 step
+    .goto 1432/0,-3003.30,-5376.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grenhild Darktalon|r
+    .accept 86667 >> Accept Snowbound
+    .target Grenhild Darktalon
+step
+    #completewith next
+    .goto 1432/0,-2619.200,-5783.300,20,0
+    .goto 1432/0,-2534.38,-5648.28,5 >>Travel to the snowy patch on the ground just outside the South Gate Pass tunnel
+step
+    .goto 1432/0,-2534.38,-5648.28
+    .use 279380 >> |cRXP_WARN_Use the|r |T1387609:0|t[Ceramic Jar] |cRXP_WARN_while standing on the snowy patch to collect the|r |T1387609:0|t[Jar of Snow]
+    >>|cRXP_WARN_NOTE: The|r |T1387609:0|t[Jar of Snow] |cRXP_WARN_will only last for 10 minutes. You must turn the quest in before it expires!|r
+    .complete 86667,1 -- Jar of Snow 1/1
+step << Shaman
+    #completewith shamfire
+    #label southgate
+    .goto 1432/0,-2521.900,-5631.000,20,0
+    .goto 1426/0,-2437.600,-5549.700,20 >> Travel through the South Gate Pass
+step << Shaman
+    #completewith shamfire
+    #requires southgate
+    .goto 1426/0,-2473.100,-5418.600,25,0
+    .goto 1426/0,-2542.400,-5401.400,25 >> Travel toward |cRXP_FRIENDLY_Bruegs Kindleborn|r in the cave atop the mountain
+step << Shaman
+    #label shamfire
+    .goto 1426/0,-2510.100,-5310.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bruegs Kindleborn::257597|r
+    .target Bruegs Kindleborn::257597
+    .turnin 94449 >>Turn in Call of Fire
+    .accept 94465 >>Accept Call of Fire
+step << Shaman
+    .isOnQuest 94465
+    .goto 1426/0,-2594.100,-5335.900,20,0
+    .goto 1432/0,-2641.000,-5375.700,20 >> Carefully drop down the mountain into Loch Modan
+step << Shaman
+    #completewith next
+    .goto 1432/0,-2915.500,-5576.500,20,0
+    .goto 1432/0,-2874.500,-5608.600,20,0
+    .goto 1432/0,-2846.100,-5657.600,15 >> Travel up the mountain trail toward |cRXP_FRIENDLY_Braldir Ashmantle::257808|r
+step << Shaman
+    .goto 1432/0,-2880.900,-5701.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Braldir Ashmantle::257808|r
+    .target Braldir Ashmantle::257808
+    .turnin 94465 >>Turn in Call of Fire
+    .accept 94466 >>Accept Call of Fire
+step
     #optional
     #label BoarMeatLoch3
     #completewith SilverMine
@@ -3522,6 +3568,21 @@ step
     .subzoneskip 146 --Stonewrought Dam
     .subzoneskip 149 --Silver Stream Mine
 step
+    .goto 1432/0,-3146.73,-4837.02
+    #arrowtext |cRXP_WARN_10 minute timer to turn in quest!|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norric Lochthane|r
+    >>|cRXP_WARN_Ensure to turn this in before the 10 minute expiry on the|r |T1387609:0|t[Jar of Snow]
+    .turnin 86667 >> Turn in Snowbound
+    .target Norric Lochthane
+step << Shaman
+    #loop
+    .goto 1432/0,-3287.400,-4868.000,45,0
+    .goto 1432/0,-3397.500,-4870.800,45,0
+    .goto 1432/0,-3337.300,-4998.400,45,0
+    >>Kill |cRXP_ENEMY_Stonesplinter Seers|r. Loot them for their |cRXP_LOOT_Reagent Pouch|r
+    .complete 94466,2 --|1/1 Reagent Pouch
+    .mob Stonesplinter Seer
+step
     #completewith Gear
     #optional
     #loop
@@ -3533,13 +3594,17 @@ step
     .waypoint 1432/0,-2684.71,-5042.87,50,0
     .waypoint 1432/0,-2712.57,-5286.61,50,0
     >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for their |cRXP_LOOT_Ears|r
+    >>Kill |cRXP_ENEMY_Tunnel Rat Geomancers|r. Loot them for their |cRXP_LOOT_Fire Tar|r << Shaman 
+    >>|cRXP_ENEMY_Tunnel Rat Geomancers|r |cRXP_WARN_are only found inside the mine|r << Shaman
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
-    .mob Tunnel Rat Scout
-    .mob Tunnel Rat Vermin
-    .mob Tunnel Rat Forager
-    .mob Tunnel Rat Geomancer
-    .mob Tunnel Rat Digger
-    .mob Tunnel Rat Surveyor
+    .mob +Tunnel Rat Scout
+    .mob +Tunnel Rat Vermin
+    .mob +Tunnel Rat Forager
+    .mob +Tunnel Rat Geomancer
+    .mob +Tunnel Rat Digger
+    .mob +Tunnel Rat Surveyor
+    .complete 94466,1 -- Fire Tar (1)
+    .mob +Tunnel Rat Geomancer
 step
     #optional
     #label SilverMine
@@ -3615,13 +3680,17 @@ step
     .goto 1432/0,-3033.92,-4797.29,50,0
     .goto 1432/0,-2972.41,-4796.92
     >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for their |cRXP_LOOT_Ears|r
+    >>Kill |cRXP_ENEMY_Tunnel Rat Geomancers|r. Loot them for their |cRXP_LOOT_Fire Tar|r << Shaman
+    >>|cRXP_ENEMY_Tunnel Rat Geomancers|r |cRXP_WARN_are only found inside the mine|r << Shaman
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
-    .mob Tunnel Rat Scout
-    .mob Tunnel Rat Vermin
-    .mob Tunnel Rat Forager
-    .mob Tunnel Rat Geomancer
-    .mob Tunnel Rat Digger
-    .mob Tunnel Rat Surveyor
+    .mob +Tunnel Rat Scout
+    .mob +Tunnel Rat Vermin
+    .mob +Tunnel Rat Forager
+    .mob +Tunnel Rat Geomancer
+    .mob +Tunnel Rat Digger
+    .mob +Tunnel Rat Surveyor
+    .complete 94466,1 << Shaman  -- Fire Tar (1)
+    .mob +Tunnel Rat Geomancer << Shaman
 step
     #optional
     #label BoarMeatLoch4
@@ -3671,7 +3740,7 @@ step
     #optional
     #completewith next
     .goto 1432,23.490,18.008,15,0
-    .goto 1432,24.279,17.959,12 >> Enter the Bunker
+    .goto 1432,24.279,17.959,15 >> Enter the Bunker
 step
     #optional
     #completewith next
@@ -3766,14 +3835,7 @@ step
     .goto 1432/0,-3069.5,-5078.01,90,0
     .goto 1432/0,-2873.66,-4789.19
 step
-    .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
-    .goto 1432/0,-3006.61,-5259.57,15,0
-    .goto 1432/0,-3020.95,-5282.02,15,0
-    .goto 1432/0,-3023.44,-5326.90,15,0
-    .goto 1432/0,-3007.99,-5337.390,15,0
-    .goto 1432/0,-2964.41,-5349.90,15,0
-    .goto 1432/0,-2894.90,-5401.96,20,0
-    .goto 1432/0,-3007.99,-5337.390
+    #completewith FlintTinder
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
     >>|cRXP_FRIENDLY_Mountaineer Kadrell|r |cRXP_WARN_patrols the road through Thelsamar|r
     .target Mountaineer Kadrell
@@ -3788,41 +3850,31 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r
     .turnin 418 >> Turn in Thelsamar Blood Sausages
     .target Vidra Hearthstove
-step << !Dwarf/!Paladin --XX Dwarf palas need to do class q
-    #season 0,1 << Warrior/Mage --SoD warriors and mages need to do rune (Quick Strike, Living Bomb)
-    #optional
-    #sticky
-    #label DefenseAbandon
-    .abandon 224 >> Abandon In Defense of the King's Lands
-    .xp <14,1
-step << !Dwarf/!Paladin
-    #season 0,1 << Warrior/Mage
-    #optional
-    #sticky
-    #label TroggAbandon
-    .abandon 267 >> Abandon The Trogg Threat
-    .xp <14,1
 step
     #label FlintTinder
     .goto 1432/0,-2952.46,-5381.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yanni Stoutheart|r
     >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from her|r
-    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
+    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
     .target Yanni Stoutheart
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << !Dwarf/!Paladin
-    #optional
-    #requires DefenseAbandon
---XXREQ Placeholder invis step until multiple requires per step
-step << !Dwarf/!Paladin
-    #optional
-    #requires TroggAbandon
---XXREQ Placeholder invis step until multiple requires per step
 step
-    #season 0,1 << Warrior/Mage
+    .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
+    .goto 1432/0,-3006.61,-5259.57,15,0
+    .goto 1432/0,-3020.95,-5282.02,15,0
+    .goto 1432/0,-3023.44,-5326.90,15,0
+    .goto 1432/0,-3007.99,-5337.390,15,0
+    .goto 1432/0,-2964.41,-5349.90,15,0
+    .goto 1432/0,-2894.90,-5401.96,20,0
+    .goto 1432/0,-3007.99,-5337.390
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
+    >>|cRXP_FRIENDLY_Mountaineer Kadrell|r |cRXP_WARN_patrols the road through Thelsamar|r
+    .target Mountaineer Kadrell
+    .turnin 416 >> Turn in Rat Catching
+step
     .goto 1432/0,-2729.40,-5534.96
     >>Kill |cRXP_ENEMY_Stonesplinter Troggs|r and |cRXP_ENEMY_Stonesplinter Scouts|r. Loot them for their |cRXP_LOOT_Trogg Stone Teeth|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Stonesplinter Scouts|r cast|r |T132222:0|t[Shoot] |cRXP_WARN_(Ranged Cast: Deals 14-20 damage)|r
@@ -3837,33 +3889,91 @@ step
     .isOnQuest 224
     .isOnQuest 267
 step
-    #season 0,1 << Warrior/Mage
+    #label RatAbandon
     #optional
     .goto 1432/0,-2729.40,-5534.96
     .xp 13+9600 >> Grind to 9600+/11400xp
+    >>|cRXP_WARN_If you're planning on running the Hall of Thanes dungeon in Ironforge later, skip this step|r
+step << Shaman
+    #completewith next
+    .goto 1432/0,-2915.500,-5576.500,20,0
+    .goto 1432/0,-2874.500,-5608.600,20,0
+    .goto 1432/0,-2846.100,-5657.600,15 >> Travel up the mountain trail toward |cRXP_FRIENDLY_Braldir Ashmantle::257808|r again
+step << Shaman
+    .goto 1432/0,-2880.900,-5701.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Braldir Ashmantle::257808|r
+    .target Braldir Ashmantle::257808
+    .turnin 94466 >>Turn in Call of Fire
+    .accept 94467 >>Accept Call of Fire
+step << Shaman
+    #completewith next
+    .goto 1432/0,-2873.800,-5672.500
+    .cast 8898 >> |cRXP_WARN_Continue up the trail|r
+    .use 6636 >>|cRXP_WARN_Use the|r |T134732:0|t[Fire Sapta] |cRXP_WARN_next to the rock statue to summon the|r |cRXP_ENEMY_Minor Manifestation of Fire|r
+step << Shaman
+    .goto 1432/0,-2873.800,-5672.500
+    >>Kill the |cRXP_ENEMY_Minor Manifestation of Fire|r. Loot it for the |cRXP_LOOT_Glowing Ember|r
+    .complete 94467,1 -- Glowing Ember (1)
+step << Shaman
+    .goto 1432/0,-2870.700,-5674.600
+    >>Click the |cRXP_PICK_Brazier of the Dormant Flame|r
+    .turnin 94467 >>Turn in Call of Fire
+    .accept 94468 >>Accept Call of Fire
 step
     #optional
     #completewith next
     .goto 1432/0,-2677.26,-5778.34,10,0
     .goto 1432/0,-2648.30,-5876.75,15 >> Run up the dirt path then drop down into the bunker
 step
-    #label TroggEnd
     .goto 1432/0,-2634.59,-5842.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r inside the bunker
     .turnin 267 >> Turn in The Trogg Threat
     .target Captain Rugelfuss
-    .isQuestComplete 267 << !Dwarf/!Paladin
+    .isQuestComplete 267
 step
     .goto 1432/0,-2602.54,-5832.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
     .turnin 224 >> Turn in In Defense of the King's Lands
     .target Mountaineer Cobbleflint
-    .isQuestComplete 224 << !Dwarf/!Paladin
+    .isQuestComplete 224
+step << Shaman
+    #completewith shamfire2
+    #label southgate
+    .goto 1432/0,-2521.900,-5631.000,20,0
+    .goto 1426/0,-2437.600,-5549.700,20 >> Travel through the South Gate Pass
+step << Shaman
+    #completewith shamfire2
+    #requires southgate
+    .goto 1426/0,-2473.100,-5418.600,25,0
+    .goto 1426/0,-2542.400,-5401.400,25 >> Travel toward |cRXP_FRIENDLY_Bruegs Kindleborn|r in the cave atop the mountain again
+step << Shaman
+    #label shamfire2
+    .goto 1426/0,-2510.100,-5310.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bruegs Kindleborn::257597|r
+    .target Bruegs Kindleborn::257597
+    .turnin 94468 >>Turn in Call of Fire
+step << Shaman
+    .isQuestTurnedIn 94468
+    .goto 1426/0,-2594.100,-5335.900,20,0
+    .goto 1432/0,-2641.000,-5375.700,20 >> Carefully drop down the mountain into Loch Modan
+step
+    .goto 1432/0,-3319.800,-5217.600
+    >>Click the |cRXP_PICK_Discarded Fishing Toolbox|r on the lake floor
+    .accept 86614 >>Accept Silver of the Waves
+    .xp <13,1
+step
+    .goto 1432/0,-3104.900,-5210.100,5,0
+    .goto 1432/0,-3086.600,-5216.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khara Deepwater::1684|r
+    .target Khara Deepwater::1684
+    .turnin 86614 >>Turn in Silver of the Waves
+    .xp <13,1
 step << !Dwarf/!Paladin
     .goto 1432/0,-2929.87,-5424.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .fly Ironforge>> Fly to Ironforge
     .target Thorgrum Borrelson
+    .zoneskip Ironforge
 step << Dwarf Paladin
     #optional
     #completewith next
@@ -3894,9 +4004,47 @@ step << Dwarf Paladin
     >>Kill |cRXP_ENEMY_Dark Iron Spies|r. Loot them for the |cRXP_LOOT_Dark Iron Script|r
     .complete 1784,1 --Dark Iron Script (1)
     .mob Dark Iron Spy
+step << Dwarf Paladin
+    .isQuestComplete 1784
+    .hs >> Hearth to Ironforge
+    .bindlocation 1537,1
+    .cooldown item,6948,>2,1
+    .zoneskip Ironforge
+step << Dwarf Paladin
+    #optional
+    .isQuestComplete 1784
+    .goto Dun Morogh,47.58,41.58,40,0
+    .goto Dun Morogh,50.19,40.79,20,0
+    .goto Ironforge,14.90,87.10,40,0
+    .zone Ironforge >> Return to Ironforge
 
 ----Start of <1.5x IF->Westfall Section----
 
+step << Paladin
+    .goto 1455/0,-907.69,-4592.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldruk Doombrow|r
+    .trainer >> Train your class spells
+    .target Beldruk Doombrow
+step << Dwarf Paladin
+    #completewith next
+    .goto 1455/0,-913.38,-4577.31,6,0
+    .goto 1455/0,-906.11,-4632.030,10 >> Travel toward |cRXP_FRIENDLY_Muiredon|r upstairs
+step << Dwarf Paladin
+    .goto 1455/0,-899.70,-4613.0300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muiredon Battleforge|r
+    .turnin 1784 >>Turn in The Tome of Divinity
+    .accept 1785 >>Accept The Tome of Divinity
+    .target Muiredon Battleforge
+step << Dwarf Paladin
+    .goto 1455/0,-932.04,-4633.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tiza Battleforge|r
+    .turnin 1785 >>Turn in The Tome of Divinity
+    .target Tiza Battleforge
+step << Shaman
+    .goto 1455/0,-1086.500,-4642.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldrun Stormbreaker::258098|r 
+    .target Eldrun Stormbreaker::258098
+    .trainer >> Train your class spells
 step << Mage/Priest/Warlock
     #ssf
     .goto 1455/0,-894.15,-4659.43,8,0
@@ -3944,10 +4092,9 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Briarthorn|r
     .trainer >> Train your class spells
     .target Briarthorn
-step << Warlock/Rogue
+step << Warlock
     #optional
     #label Jubahl
-    #requires Salvation << Dwarf Rogue/Gnome Rogue
     #completewith Deeprun
     .goto 1455,53.164,7.037,10 >> Enter |cRXP_FRIENDLY_Jubahl Corpseseeker|r's house
 step << Warlock
@@ -3982,24 +4129,25 @@ step << skip --logout skip << Warrior
 --   .goto 1455,56.207,46.844
 --   .goto 1455,76.414,51.226,20 >>|cRXP_WARN_Jump on top of the Gryphon's Head. Perform a Logout Skip by logging out and back in|r
 --  .zoneskip Ironforge,1
-step << !Paladin
+step
     #requires Salvation << Dwarf Rogue/Gnome Rogue
     #completewith Fly2WF
     .goto 1455,67.842,42.456
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gearcutter Cogspinner|r
-    .vendor 5175 >> |cRXP_WARN_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him (if it's up)|r
+    .vendor 5175 >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him if it's available|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
     .target Gearcutter Cogspinner
     .subzoneskip 2257
-step << !Paladin
+step
     #optional
     #requires Salvation << Dwarf Rogue/Gnome Rogue
+    #completewith WestfallTramEnd
     #label Deeprun
     .goto 1455/0,-1330.28,-4840.430
     .subzone 2257 >>Enter the Deeprun Tram
     .zoneskip Stormwind City
-step << !Paladin
+step << skip
     #optional
     #label WestfallTramCook1
     #completewith WestfallTramEnd
@@ -4012,7 +4160,7 @@ step << !Paladin
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << !Paladin
+step << skip
     #optional
     #requires WestfallTramCook1
     #label WestfallTramCook2
@@ -4026,7 +4174,7 @@ step << !Paladin
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << !Paladin
+step << skip
     #optional
     #requires WestfallTramCook2
     #label WestfallTramCook3
@@ -4040,12 +4188,12 @@ step << !Paladin
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << !Paladin
+step << skip
     #optional
     #requires WestfallTramCook3
     #label WestfallTramCook4
     #completewith WestfallTramEnd
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    +|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     >>|T133971:0|t[Cook] |cRXP_WARN_the following items:|r
     >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
     >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
@@ -4055,12 +4203,12 @@ step << !Paladin
     .itemcount 2672,1 --Stringy Wolf Meat (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << !Paladin
+step << skip
     #optional
     #requires WestfallTramCook4
     #label WestfallTramCook5
     #completewith WestfallTramEnd
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    +|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Stormwind City
@@ -4068,12 +4216,12 @@ step << !Paladin
     .itemcount 2672,1 --Stringy Wolf Meat (1)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << !Paladin
+step << skip
     #optional
     #requires WestfallTramCook5
     #label WestfallTramCook6
     #completewith WestfallTramEnd
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    +|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
     .usespell 2550
     .zoneskip Stormwind City
@@ -4081,97 +4229,26 @@ step << !Paladin
     .itemcount 2672,<1 --Stringy Wolf Meat (<1)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << !Paladin
+step
     #optional
     #label WestfallTramEnd
     >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the Tram to Stormwind City if needed|r << Rogue/Warrior/Paladin
     >>|cRXP_WARN_You will need your|r |T135966:0|t[First Aid] |cRXP_WARN_to be 80 for a quest at level 24|r << Rogue !Dwarf
     .zone Stormwind City >> Take the Deeprun Tram to Stormwind City
-step << Dwarf Paladin
-	#completewith PaladinTrainSW
-    .hs >> Hearth to Stormwind
-step << Paladin
-    #ah
-    .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[Cooking] |cRXP_BUY_with later|r
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
-    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
-    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall and Darkshore shortly:|r
-    >>|T133972:0|t[Stringy Vulture Meat]
-    >>|T133884:0|t[Murloc Eye]
-    >>|T135997:0|t[Goretusk Snout]
-    >>|T134185:0|t[Okra]
-    >>|T134341:0|t[Goretusk Liver]
-    >>|T133972:0|t[Strider Meat]
-    >>|T133912:0|t[Darkshore Grouper]
-    >>|T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    >>|T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
-    .collect 729,3,38,1 -- Stringy Vulture Meat (3)
-    .collect 730,3,38,1 -- Murloc Eye (3)
-    .collect 731,3,38,1 -- Goretusk Snout (3)
-    .collect 732,3,38,1 -- Okra (3)
-    .collect 723,8,22,1 -- Goretusk Liver (8)
-    .collect 5469,5,2178,1 -- Strider Meat (5)
-    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
-    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (1-50)
-    .disablecheckbox
-    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (1-50)
-    .disablecheckbox
-    .target Auctioneer Jaxon
-    .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Paladin
-    #ah
-    #optional
-    .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
-    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall and Darkshore shortly:|r
-    >>|T133972:0|t[Stringy Vulture Meat]
-    >>|T133884:0|t[Murloc Eye]
-    >>|T135997:0|t[Goretusk Snout]
-    >>|T134185:0|t[Okra]
-    >>|T134341:0|t[Goretusk Liver]
-    >>|T133972:0|t[Strider Meat]
-    >>|T133912:0|t[Darkshore Grouper]
-    .collect 729,3,38,1 -- Stringy Vulture Meat (3)
-    .collect 730,3,38,1 -- Murloc Eye (3)
-    .collect 731,3,38,1 -- Goretusk Snout (3)
-    .collect 732,3,38,1 -- Okra (3)
-    .collect 723,8,22,1 -- Goretusk Liver (8)
-    .collect 5469,5,2178,1 -- Strider Meat (5)
-    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
-    .target Auctioneer Jaxon
-    .skill cooking,<50,1 --XX Shows if cooking skill is 50+
-step << Paladin
-    #optional
-    #completewith next
-    .goto 1453/0,809.52,-8579.22,20 >> Travel to the Stormwind Cathedral
-step << Paladin
-    #label PaladinTrainSW
-    .goto 1453/0,859.13,-8559.14,10,0
-    .goto 1453/0,861.14,-8573.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
-    .trainer >> Train your class spells
-    .target Arthur the Faithful
-step << Paladin
-    .goto 1453/0,719.67,-8550.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
-    .accept 399 >> Accept Humble Beginnings
-    .target Baros Alexston
 step
     #completewith Fly2WF
     .goto 1453/0,638.8,-8341.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Billibub Cogspinner|r
-    .vendor 5519 >> |cRXP_WARN_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him (if it's up)|r
+    .vendor 5519 >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him if it's available|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
     .target Billibub Cogspinner
-step << !Paladin
+step
     .goto 1453/0,719.67,-8550.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
     .accept 399 >> Accept Humble Beginnings
     .target Baros Alexston
+    .xp <15,1
 step << Rogue
     #ah
     .goto 1453/0,609.63,-8787.71
@@ -4209,60 +4286,6 @@ step << Mage/Priest/Warlock
     .collect 11288,1 --Greater Magic Wand (1)
     .target Auctioneer Jaxon
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.5
-step << !Paladin
-    #ah
-    .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[Cooking] |cRXP_BUY_with later|r
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
-    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
-    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall and Darkshore shortly:|r
-    >>|T133972:0|t[Stringy Vulture Meat]
-    >>|T133884:0|t[Murloc Eye]
-    >>|T135997:0|t[Goretusk Snout]
-    >>|T134185:0|t[Okra]
-    >>|T134341:0|t[Goretusk Liver]
-    >>|T133972:0|t[Strider Meat]
-    >>|T133912:0|t[Darkshore Grouper]
-    >>|T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    >>|T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
-    .collect 729,3,38,1 -- Stringy Vulture Meat (3)
-    .collect 730,3,38,1 -- Murloc Eye (3)
-    .collect 731,3,38,1 -- Goretusk Snout (3)
-    .collect 732,3,38,1 -- Okra (3)
-    .collect 723,8,22,1 -- Goretusk Liver (8)
-    .collect 5469,5,2178,1 -- Strider Meat (5)
-    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
-    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (1-50)
-    .disablecheckbox
-    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (1-50)
-    .disablecheckbox
-    .target Auctioneer Jaxon
-    .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << !Paladin
-    #ah
-    #optional
-    .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
-    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall and Darkshore shortly:|r
-    >>|T133972:0|t[Stringy Vulture Meat]
-    >>|T133884:0|t[Murloc Eye]
-    >>|T135997:0|t[Goretusk Snout]
-    >>|T134185:0|t[Okra]
-    >>|T134341:0|t[Goretusk Liver]
-    >>|T133972:0|t[Strider Meat]
-    >>|T133912:0|t[Darkshore Grouper]
-    .collect 729,3,38,1 -- Stringy Vulture Meat (3)
-    .collect 730,3,38,1 -- Murloc Eye (3)
-    .collect 731,3,38,1 -- Goretusk Snout (3)
-    .collect 732,3,38,1 -- Okra (3)
-    .collect 723,8,22,1 -- Goretusk Liver (8)
-    .collect 5469,5,2178,1 -- Strider Meat (5)
-    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
-    .target Auctioneer Jaxon
-    .skill cooking,<50,1 --XX Shows if cooking skill is 50+
-    --XX on <1.5 Gnomes/dwarves dont go back to capital cities to train (can't buy groupers/strider meat some other time)
 step << Mage/Priest/Warlock
     #ah
     #requires Wand1
@@ -4300,10 +4323,6 @@ step << Mage/Priest/Warlock
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.4
 step
     #label Fly2WF
-    .goto 1453/0,490.03,-8835.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
-    .fly Westfall >> Fly to Westfall
-    .target Dungar Longdrink
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -4636,7 +4655,7 @@ step
     .goto 1432/0,-4269.26,-5653.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xandar Goodbeard|r
     >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from him|r
-    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
+    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
@@ -4692,7 +4711,7 @@ step
 step
     #completewith next
     .zone Stormwind City >> Take the Tram to Stormwind
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_if needed while waiting for the Tram|r
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_if needed while waiting for the Tram|r
     >>|cRXP_WARN_You will need your|r |T135966:0|t[First Aid] |cRXP_WARN_to be 80 for a quest at level 24|r << Rogue !Dwarf
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nipsy|r when you get off the Tram

@@ -3523,7 +3523,7 @@ step
     .goto 1453/0,522.000,-8352.101
     .subzone 2257 >>Enter the Deeprun Tram
     .zoneskip Ironforge
-step
+step << skip
     #optional
     #label TramCook1
     #completewith TramEnd
@@ -3536,7 +3536,7 @@ step
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step
+step << skip
     #optional
     #requires TramCook1
     #label TramCook2
@@ -3550,7 +3550,7 @@ step
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step
+step << skip
     #optional
     #requires TramCook2
     #label TramCook3
@@ -3564,7 +3564,7 @@ step
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step
+step << skip
     #optional
     #requires TramCook3
     #label TramCook4
@@ -3579,7 +3579,7 @@ step
     .itemcount 2672,1 --Stringy Wolf Meat (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step
+step << skip
     #optional
     #requires TramCook4
     #label TramCook5
@@ -3592,7 +3592,7 @@ step
     .itemcount 2672,1 --Stringy Wolf Meat (1)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step
+step << skip
     #optional
     #requires TramCook5
     #label TramCook6
@@ -4258,7 +4258,7 @@ step
 step
     .goto 1432/0,-2534.38,-5648.28
     .use 279380 >> |cRXP_WARN_Use the|r |T1387609:0|t[Ceramic Jar] |cRXP_WARN_while standing on the snowy patch to collect the|r |T1387609:0|t[Jar of Snow]
-    >>|cRXP_WARN_NOTE: The |T1387609:0|t[Jar of Snow] will only last for 10 minutes. You must turn the quest in before it expires!|r
+    >>|cRXP_WARN_NOTE: The|r |T1387609:0|t[Jar of Snow] |cRXP_WARN_will only last for 10 minutes. You must turn the quest in before it expires!|r
     .complete 86667,1 -- Jar of Snow 1/1
 step
     #optional
@@ -4321,6 +4321,7 @@ step
     .mob Tunnel Rat Surveyor
 step
     .goto 1432/0,-3146.73,-4837.02
+    #arrowtext |cRXP_WARN_10 minute timer to turn in quest!|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norric Lochthane|r
     >>|cRXP_WARN_Ensure to turn this in before the 10 minute expiry on the|r |T1387609:0|t[Jar of Snow]
     .turnin 86667 >> Turn in Snowbound
@@ -4524,6 +4525,8 @@ step
 step
     .goto 1432/0,-2747.60,-5530.540
     >>Kill |cRXP_ENEMY_Stonesplinter Troggs|r and |cRXP_ENEMY_Stonesplinter Scouts|r. Loot them for their |cRXP_LOOT_Teeth|r
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Stonesplinter Scouts|r cast|r |T132222:0|t[Shoot] |cRXP_WARN_(Ranged Cast: Deals 14-20 damage)|r
+    >>|cRXP_WARN_This is a hyperspawn area. You should not need to move from here|r
     >>|cRXP_WARN_Ensure you have 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your upcoming Paladin class quest|r << Paladin
     .complete 224,1 --Kill Stonesplinter Trogg (x10)
     .mob +Stonesplinter Trogg
@@ -4617,7 +4620,7 @@ step << Hunter
     .goto 1453/0,596.400,-8831.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Mullby|r
     >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from him|r
-    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
+    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
