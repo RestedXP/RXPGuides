@@ -83,6 +83,7 @@ step << Warrior
     .skipgossipid 136813,1
     .target Blademaster Ren
     .money <0.0010
+    .xp <1,1
     .train 5242,1
 step
     #completewith next
@@ -164,6 +165,8 @@ step << Druid
     .train 1126 >>Train |T136078:0|t[Mark of the Wild]
     .skipgossipid 136805
     .target Xyton Silverwind::251373
+    .money <0.0010
+    .xp <1,1
 step << Mage
     .goto 2521,41.55,23.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorii Brightwhisper|r.
@@ -176,6 +179,7 @@ step << Mage
     .skipgossipid 136807,1
     .target Dorii Brightwhisper
     .money <0.0010
+    .xp <1,1
 step << Shaman
     .goto 2521,42.790,23.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r
@@ -187,6 +191,8 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro|r.
     .train 8017 >>Train |T136086:0|t[Rockbiter]
     .target Windshaper Boro
+    .money <0.0010
+    .xp <1,1
 step << Hunter
     .goto 2521,42.47,23.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'ree Farsight|r.
@@ -198,13 +204,17 @@ step << Horde
     .accept 92598 >>Accept The Gift of Skysight
     .target Ventaari Brightwish
 step << !Warrior !Rogue !Mage
+    --still loads in places it shouldn't no idea why
+    .isNotOnQuest 93552
+    .isQuestAvailable 93552
     .goto 2521,42.749,24.496
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
     >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Hunter !Shaman
     >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from her|r << Hunter
-    .collect 159,10,6394,1 << !Hunter !Shaman --Refreshing Spring Water (10)
-    .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
+    .collect 159,10 << !Hunter !Shaman --Refreshing Spring Water (10)
+    .collect 2512,1000 << Hunter --Rough Arrow (1000)
     .target Uualia Suncrest::251537
+    .subzoneskip 16635,1
     .money <0.0050 << !Hunter
     .money <0.0040 << Hunter
 step << Horde
@@ -400,6 +410,7 @@ step << Warrior
     .goto 2521,43.66,24.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blademaster Ren|r.
     .train 100 >>Train |T132333:0|t[Charge]
+    .train 6178,1
     .train 772 >>Train |T132155:0|t[Rend]
     .skipgossipid 136813,1
     .target Blademaster Ren
@@ -457,7 +468,7 @@ step << Hunter
     .train 13163 >>Train |T132159:0|t[Aspect of the Monkey]
     .train 1978 >>Train |T132204:0|t[Serpent Sting]
     .skipgossipid 136808
-    .xp 4,1
+    .xp <4,1
     .money <0.02
     .target Tai'ree Farsight::251376
 step
@@ -472,7 +483,7 @@ step << Druid
     .train 8921 >>Train |T136096:0|t[Moonfire]
     .train 774 >>Train |T136081:0|t[Rejuvenation]
     .skipgossipid 136805
-    .xp 4,1
+    .xp <4,1
     .money <0.02
     .target Xyton Silverwind::251373
 step << Mage
@@ -482,6 +493,7 @@ step << Mage
     .skipgossipid 136807,1
     .target Dorii Brightwhisper
     .money <0.01
+    .xp <4,1
 step
     .goto 2521,42.76,23.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aetheen of the Gales|r.
@@ -499,6 +511,8 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro|r.
     .train 8042 >>Train |T136026:0|t[Earth Shock]
     .target Windshaper Boro
+    .money <0.01
+    .xp <4,1
 step << Shaman
     .goto 2521,48.802,25.869,25,0
     .goto 2521,49.677,23.806
@@ -858,8 +872,10 @@ step << Horde
 step << Shaman
     .goto 2521,43.454,44.872
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aarnor Galestrike::254082|r
-    .trainer >> Train your class spells
+    .trainer >>Train your class spells
     .target Aarnor Galestrike::254082
+    .money <0.01
+    .xp <6,1
 step
     .goto 2521,43.02,43.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
@@ -875,6 +891,7 @@ step << Horde Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
     .train 1757 >> Train |T136189:0|t[Sinister Strike (Rank 2)]
     .train 1776 >> Train |T132155:0|t[Gouge]
+    .train 1777,1
     .skipgossipid 136810
     .target Miriaan Mistblade
     .money <0.02
@@ -885,6 +902,7 @@ step << Horde Rogue
     .train 1757 >> Train |T136189:0|t[Sinister Strike (Rank 2)]
     .skipgossipid 136810
     .target Miriaan Mistblade
+    .money <0.01
     .xp <6,1
 step << Horde Mage
     #completewith next
@@ -927,6 +945,7 @@ step << Alliance Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
     .train 1757 >> Train |T136189:0|t[Sinister Strike (Rank 2)]
     .train 1776 >> Train |T132155:0|t[Gouge]
+    .train 1777,1
     .skipgossipid 136810
     .target Miriaan Mistblade
     .money <0.02
@@ -937,6 +956,7 @@ step << Alliance Rogue
     .train 1757 >> Train |T136189:0|t[Sinister Strike (Rank 2)]
     .skipgossipid 136810
     .target Miriaan Mistblade
+    .money <0.01
     .xp <6,1
 step << Alliance Mage
     #completewith next
@@ -1005,13 +1025,15 @@ step << Hunter
     .train 3044 >>Train |T132218:0|t[Arcane Shot]
     .train 1130 >>Train |T132212:0|t[Hunter's Mark]
     .target Elayaa Easewind::254084
+    .money <0.02
+    .xp <6,1
 step << Druid
     .goto 2521,45.154,44.217
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naeluna Swiftmend::254081|r
     .train 467 >>Train |T136104:0|t[Thorns]
     .train 5177 >>Train |T136006:0|t[Wrath (Rank 2)]
     .skipgossipid 136805
-    .xp 6,1
+    .xp <6,1
     .money <0.02
     .target Naeluna Swiftmend::254081
 step
@@ -1133,14 +1155,30 @@ step << Alliance
     .cooldown spell,1259705,>0,1
     .usespell 1259705 << Alliance
 step
+    #completewith OutCave
+    >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    .complete 92553,2 --8/8 Strider Meat
+    .complete 92553,1 --3/3 Small Egg
+    .mob Galestrider::251661
+step
+    #completewith OutCave
+    >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
+    .complete 92515,1 --10/10 Prideclaw Pelt
+    .mob Prideclaw::251245
+step
+    #label OutCave
     #loop
-    .goto 2521,49.723,34.806,20,0
-    .goto 2521,49.940,35.921,20,0
-    .goto 2521,49.537,34.325,35,0 -- Cave Entrance
-    .goto 2521,47.645,36.289,35,0
-    .goto 2521,49.751,38.962,35,0
-    .goto 2521,49.537,34.325,35,0 -- Cave Entrance
-    .goto 2521,50.680,34.214,35,0 -- Badwind Bennic Location
+    .goto 2521,50.27,33.41,25,0
+    .goto 2521,49.69,34.05,25,0
+    .goto 2521,49.64,34.66,25,0
+    .goto 2521,49.93,35.22,25,0
+    .goto 2521,49.79,35.97,25,0
+    .goto 2521,49.26,35.91,25,0
+    .goto 2521,48.82,36.47,25,0
+    .goto 2521,49.43,38.66,40,0
+    .goto 2521,48.02,38.41,40,0
+    .goto 2521,47.75,36.19,40,0
+    .goto 2521,48.93,36.38,40,0
     >>Kill |cRXP_ENEMY_Highlands Bandits|r. Loot them for the |T5172975:0|t[|cRXP_LOOT_Pilfered Windstone|r].
     .complete 92517,1 --|10/10 Highlands Bandit slain
     .complete 93319,1 --|10/10 Pilfered Windstone
@@ -1327,6 +1365,7 @@ step << Horde
     .goto 2521,34.52,52.76,40,0
     .goto 2521,35.12,54.08,40,0
     .goto 2521,35.58,53.08,40,0
+    .goto 2521,34.48,52.83,40,0
     .goto 2521,36.02,54.28,40,0
     .goto 2521,35.72,55.36,40,0
     .goto 2521,35.63,57.34,40,0
@@ -1578,11 +1617,14 @@ step
     .turnin 92516 >>Turn in Hippogryph Harrassment
     .turnin 93319 >>Turn in Pilfered Windstones
 step << Warrior
+    .subzoneskip 16624,1
     .goto 2521,44.95,45.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corsan Earthrazer|r
     .train 284 >> Train |T136105:0|t[Heroic Strike (Rank 2)]
     .train 1715 >> Train |T132316:0|t[Hamstring]
+    .train 7372,1
     .train 6343 >> Train |T136105:0|t[Thunder Clap]
+    .train 8198,1
     .skipgossipid 136813
     .target Corsan Earthrazer
     .money <0.05
@@ -1596,6 +1638,24 @@ step
     .turnin 93318 >>Turn in WANTED: Vulgara the Insatiable
 step
     .abandon 93318 >>Abandon WANTED: Vulgara the Insatiable
+step << Alliance Druid
+    .subzoneskip 16624,1
+    .goto 2521,45.153,44.225
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naeluna Swiftmend::254081|r.
+    .train 339 >>Train |T136100:0|t[Entangling Roots]
+    .train 5186 >>Train |T136041:0|t[Healing Touch (Rank 2)]
+    .skipgossipid 136805
+    .xp <8,1
+    .money <0.04
+    .target Naeluna Swiftmend::254081
+step << Alliance Hunter
+    .goto 2521,45.263,44.236
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elayaa Easewind::254084|r.
+    .train 5116 >>Train |T135860:0|t[Concussive Shot]
+    .train 3127 >>Train |T132269:0|t[Parry]
+    .target Elayaa Easewind::254084
+    .money <0.04
+    .xp <8,1
 step
     .goto 2521,45.667,45.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda::251523|r
@@ -1603,16 +1663,22 @@ step
     .turnin 92517 >>Turn in The Criminal Element
     .accept 93036 >>Accept Infiltrating the Cult
 step << Hunter
+    .subzoneskip 16624,1
     .goto 2521,45.263,44.236
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elayaa Easewind::254084|r.
     .train 5116 >>Train |T135860:0|t[Concussive Shot]
     .train 3127 >>Train |T132269:0|t[Parry]
     .target Elayaa Easewind::254084
-step << Druid
+    .money <0.04
+    .xp <8,1
+step << Horde Druid
+    .subzoneskip 16624,1
     .goto 2521,45.153,44.225
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naeluna Swiftmend::254081|r.
     .trainer >>Train your spells
     .target Naeluna Swiftmend::254081
+    .money <0.04
+    .xp <8,1
 step
     .goto 2521,44.831,45.515
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sania Silverstream::251904|r
@@ -1647,8 +1713,10 @@ step
 step << Shaman
     .goto 2521,43.454,44.872
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aarnor Galestrike::254082|r
-    .trainer >> Train your class spells
+    .trainer >>Train your class spells
     .target Aarnor Galestrike::254082
+    .money <0.10
+    .xp <8,1
 step << Mage
     .goto 2521,45.1,45.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shenaan Spellwind|r
@@ -1701,6 +1769,7 @@ step
     .target Missionary Jasaan::257065
     .turnin 92529 >>Turn in Falaath Village
     .accept 92528 >>Accept Among the Faithful
+    .use 2454 << Warrior/Rogue
 step
     .isOnQuest 92528
     .subzoneskip 16636,1
@@ -1736,7 +1805,7 @@ step
     .macro Leave Vehicle,6656430 >>/leavevehicle
 step
     .isOnQuest 92528
-    .subzoneskip 16623,1
+    .subzoneskip 16624
     .goto 2521,46.86,51.54,25,0
     .goto 2521,44.37,46.69
     .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
@@ -1833,6 +1902,13 @@ step
     .cast 1259416 >>Jump of the tower and use |T132845:0|t[Walk on Air] to fly towards the waypoint location.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
+step  << Alliance
+    #completewith NearCommander
+    >>Kill |cRXP_ENEMY_Al'Aketh Stormcaller|r. Loot them for the |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Supplies|r].
+    >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Supply Caches|r.
+    .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
+    .complete 92551,1 --10/10 Stolen Shen'dar Supplies
+    .mob Al'Aketh Stormcaller
 step << Alliance
     #completewith NearCommander
     >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
@@ -2076,12 +2152,15 @@ step
     .turnin 97969 >>Turn in Camping 101: Leatherworking
     .target Indari Sunseam::251993
 step
+    .subzoneskip 16624,1
     .isQuestAvailable 92551
     .goto 2521,44.71,45.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veena Vericloud::254358|r
     .vendor 254358 >>Vendor Trash. If you need bags, |cRXP_BUY_buy up to three|r |T133634:0|t[Small Brown Pouches]
     *|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Druid/Mage
-    *|cRXP_BUY_Buy|r |T132382:0|t[200 Sharp Arrow] |cRXP_BUY_from him|r << Rogue
+    *|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] << Rogue/Hunter
+    .collect 2512,600 << Hunter --Rough Arrow (600)
+    .collect 2515,200 << Hunter --Sharp Arrow (200)
     .target Veena Vericloud::254358
 step
     .goto 2521,45.24,45.19
@@ -2163,15 +2242,21 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alvarion Windfield::252448|r on the second floor.
     .target Alvarion Windfield::252448
     .accept 92679 >>Accept Blood Tithe
-step
+step << Alliance
     .isQuestAvailable 93948
     #completewith next
     .goto 2521,63.33,73.65,15,0
-    .goto 2521,63.76,74.45
     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
     .cooldown spell,1259705,>0,1
     .usespell 1259705 << Alliance
-step
+step << Alliance
+    .subzoneskip 16638,1
+    .isQuestAvailable 93948
+    #completewith next
+    .goto 2521,63.33,73.65,15,0
+    .goto 2521,63.973,75.095,25 >>Go over the mountain
+    .cooldown spell,1259705,<0,1
+step << Horde
     .subzoneskip 16638,1
     .isQuestAvailable 93948
     #completewith next
@@ -2183,14 +2268,11 @@ step
     .accept 94484 >>Accept Unnerving Silence
     .target Lotheluum Starbreeze::252359
 step
---druid trainer
-step
     .goto 2521,65.956,74.309
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ealaane Nimbuswalker::259012|r.
     .accept 94896 >>Accept Aid For The Refugees
     .accept 94897 >>Accept The Fate of a Loved One
     .target Ealaane Nimbuswalker::259012
---cooking possible
 step
     #completewith next
     #label DeliverTheSignetA
@@ -2288,11 +2370,11 @@ step << Alliance
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer
-step << Hunter
+step << Horde Hunter
     .goto 2521,63.027,77.807
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Antelariaa Cloudgaze::252390|r.
     >>|cRXP_BUY_Buy|r 600 |T132382:0|t[Rough Arrows]
-    .collect 2512,600,6394,1 << Hunter --Rough Arrow (600)
+    .collect 2512,600 << Hunter --Rough Arrow (600)
     .target Antelariaa Cloudgaze::252390
 step << Horde
     .goto 2521,61.491,76.893,15,0
@@ -2344,18 +2426,27 @@ step << Alliance
     .goto 2521,49.9,66.42,30,0
     .goto 2521,49.75,65.9,30,0
     .goto 2521,50.7,65.36
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Fillion Flamebreeze|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Fillion Flamebreeze|r inside the cave.
     .complete 92849,1 --1/1 Find Fillion Flamebreeze
 step << Alliance
-    .goto 2521,50.73,66.26,35,0
-    .goto 2521,51.9,66.51,35,0
-    .goto 2521,51.02,66.83,35,0
-    .goto 2521,51.55,69.08,35,0
-    .goto 2521,52.05,69.40,35,0
-    .goto 2521,52.07,69.4
+    .subzoneskip 16672,1
+    .isOnQuest 92849
+    .isQuestNotComplete 92849
+    .goto 2521,50.7,65.36
+    .aura 1258429 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Fillion Flamebreeze|r inside the cave.
+    .skipgossipid 136430
+    .target Fillion Flamebreeze
+step << Alliance
+    .goto 2521,50.71,66.38,20,0
+    .goto 2521,52.04,66.66,15,0
+    .goto 2521,51.44,66.25,15,0
+    .goto 2521,51.03,67.15,15,0
+    .goto 2521,51.55,69.2,35,0
+    .goto 2521,52.08,69.41
     >>Carry |cRXP_FRIENDLY_Fillion Flamebreeze|r to safety. Avoid enemies along the way.
     .complete 92849,2 --1/1 Carry Fillion Flamebreeze to safety while avoiding enemies
     .skipgossipid 136430
+.mob Shriekling Fledgling
     .target Fillion Flamebreeze
 step << Alliance
     .goto 2521,52.064,69.396
@@ -2485,6 +2576,8 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sessaria Skystride::252382|r.
     .trainer >>Train your class spells
     .target Sessaria Skystride::252382
+    .money <0.12
+    .xp <10,1
 step << Shaman
     .goto 2521,51.240,86.187
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Olariaan Swiftburn::268592|r.
@@ -2627,13 +2720,18 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
     .trainer >>Train your spells.
     .target Lotheluum Starbreeze::252359
+    .money <0.16
+    .xp <10,1
 step << Rogue
     .goto 2521,59.9,72.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eltheen Nightbreeze|r.
     .train 674 >>Train |T132147:0|t[Dual Wield]
     .train 6770 >>Train |T132310:0|t[Sap]
+    .train 2070,1
     .train 5171 >>Train |T132306:0|t[Slice and Dice]
+    .train 6774,1
     .train 2983 >>Train |T132307:0|t[Sprint]
+    .train 8696,1
     .skipgossipid 136810
     .target Eltheen Nightbreeze
     .money <0.09
@@ -2650,6 +2748,8 @@ step << Hunter
     .train 13165 >>Train |T136076:0|t[Aspect of the Hawk]
     .train 13549 >>Train |T132204:0|t[Serpent Sting (Rank 2)]
     .target Quel'ana Quickgale::252389
+    .money <0.08
+    .xp <10,1
 step << Hunter
     #include Skyborne Hunter Class Quests
 step << Mage
@@ -3411,7 +3511,9 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seena Skybreaker|r.
     .train 5242 >>Train |T132333:0|t[Battle Shout (Rank 2)]
     .train 7384 >>Train |T132223:0|t[Overpower]
+    .train 7887,1
     .train 72 >>Train |T132357:0|t[Shield Bash]
+    .train 1671,1
     .skipgossipid 136813
     .target Seena Skybreaker
     .money <0.3
@@ -3714,7 +3816,9 @@ step << Warrior
     .goto 2521,59.89,72.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seena Skybreaker|r.
     .train 1160 >>Train |Tinterface/icons/ability_warrior_warcry.blp:0|t[Demoralizing Shout]
+    .train 6190,1
     .train 6572 >>Train |Tinterface/icons/ability_warrior_revenge.blp:0|t[Revenge]
+    .train 6574,1
     .train 1310185 >>Train |T136031:0|t[Tactical Mastery]
     .skipgossipid 136813
     .target Seena Skybreaker
