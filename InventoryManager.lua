@@ -722,7 +722,11 @@ local hookedFrames = {}
 
 if _G['ContainerFrame_UpdateAll'] then
     local OnClickHook = function(self,button,...)
-        local bag = self:GetBagID()
+        local bag = self.GetBagID and self:GetBagID()
+        if not bag then
+            local parent = self:GetParent()
+            bag = parent and parent:GetID()
+        end
         local slot = self:GetID()
         local mod = inventoryManager.GetModKey()
         AA = self
