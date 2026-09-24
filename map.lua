@@ -23,7 +23,7 @@ function addon.arrowFrame:UpdateVisuals()
 end
 
 local function IsInInstance()
-    if _G.IsInInstance() and not select(2, GetInstanceInfo()) == "scenario" then
+    if _G.IsInInstance() and select(2, GetInstanceInfo()) ~= "scenario" then
         return true
     end
 end
