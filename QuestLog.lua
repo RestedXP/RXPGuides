@@ -4,7 +4,20 @@ local _G = _G
 
 local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or
                          _G.GetNumQuestLogEntries
-local GetQuestLogTitle = C_QuestLog.GetInfo or _G.GetQuestLogTitle
+local GetQuestLogTitle
+if C_QuestLog.GetInfo then
+    GetQuestLogTitle = function(index)
+        local questInfo = C_QuestLog.GetInfo(index)
+        if not questInfo then return end
+
+        local questID = questInfo.questID
+        return questInfo.title, questInfo.level, questInfo.suggestedGroup,
+            questInfo.isHeader, questInfo.isCollapsed, nil,
+            questInfo.frequency, questID
+    end
+else
+    GetQuestLogTitle = _G.GetQuestLogTitle
+end
 
 local L = addon.locale.Get
 local maxQuests = 25
@@ -53,7 +66,7 @@ function addon.UpdateQuestButton(index)
 
     end
     local questLogTitleText, level, questTag, isHeader, isCollapsed, isComplete,
-          frequency, questID = _G.GetQuestLogTitle(index);
+          frequency, questID = GetQuestLogTitle(index)
     local showButton
     local function GetGuideList(list,qid,mode)
         -- local guides = {}
@@ -396,38 +409,38 @@ else
 end
 
 local function getQuestData(questLogIndex)
-    local data
-    local questInfo, questLogTitleText, level, isHeader, isComplete, frequency,
-          questID
-
     if C_QuestLog.GetInfo then
-        questInfo = C_QuestLog.GetInfo(questLogIndex) or {}
+        local questInfo = C_QuestLog.GetInfo(questLogIndex)
+        if not questInfo then return {} end
 
-        data = {
+        local questID = questInfo.questID
+        local isComplete
+        if C_QuestLog.IsComplete and not questInfo.isHeader and questID and
+            questID > 0 then
+            isComplete = C_QuestLog.IsComplete(questID)
+        end
+
+        return {
             ["questLogTitleText"] = questInfo.title,
             ["level"] = questInfo.level,
             ["isHeader"] = questInfo.isHeader,
-            ["questID"] = questInfo.questID,
-            ["frequency"] = questInfo.frequency,
-
-            ["isComplete"] = questID and C_QuestLog.IsComplete(questID)
-        }
-    else
-        questLogTitleText, level, _, isHeader, _, isComplete, frequency, questID =
-            GetQuestLogTitle(questLogIndex)
-
-        data = {
-            ["questLogTitleText"] = questLogTitleText,
-            ["level"] = level,
-            ["isHeader"] = isHeader,
             ["questID"] = questID,
-            ["frequency"] = frequency,
-
-            ["isComplete"] = questID and isComplete
+            ["frequency"] = questInfo.frequency,
+            ["isComplete"] = isComplete
         }
     end
 
-    return data
+    local questLogTitleText, level, _, isHeader, _, isComplete, frequency, questID =
+        GetQuestLogTitle(questLogIndex)
+
+    return {
+        ["questLogTitleText"] = questLogTitleText,
+        ["level"] = level,
+        ["isHeader"] = isHeader,
+        ["questID"] = questID,
+        ["frequency"] = frequency,
+        ["isComplete"] = questID and isComplete
+    }
 end
 
 -- Set when orphaned quests are explicitly inventoried.
@@ -450,7 +463,7 @@ function addon.GetOrphanedQuests()
     for i = 1, GetNumQuests() do
         questData = getQuestData(i)
 
-        if not questData.isHeader and questData.questID > 0 then
+        if not questData.isHeader and questData.questID and questData.questID > 0 then
             orphanData = {
                 ["questLogTitleText"] = questData.questLogTitleText,
                 ["level"] = questData.level,
