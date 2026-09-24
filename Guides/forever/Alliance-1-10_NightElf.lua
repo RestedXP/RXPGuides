@@ -2086,7 +2086,6 @@ step
     >>Go to the Darnassus Inn and use the |T133298:0|t[|cRXP_LOOT_Lunar Pendant|r]
     .complete 98067,3
     .use 279378
-step << Druid
 step << Druid NightElf
     #season 0
     .goto 1457/1,2563.92,10179.040
