@@ -1850,7 +1850,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elanaria|r
     .turnin 1683 >> Turn in Vorlus Vilehoof
 --	.accept 1686 >> Accept The Shade of Elura
-step << Druid
+step << Druid NightElf
     #season 0
     .goto 1457/1,2563.92,10179.040
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r on the middle level

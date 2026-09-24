@@ -648,7 +648,7 @@ step
     .target Catherine Leland
 step
     .goto 1453/0,1269.100,-8540.601
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilbert Gray::267118|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilbert Gray::267118|r
     .target Gilbert Gray::267118
     .accept 95065 >>Accept Fishin' Time
     .turnin 95065 >>Turn in Fishin' Time
@@ -775,10 +775,17 @@ step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .accept 3524 >> Accept Washed Ashore
     .target Gwennyth Bly'Leggonde
-step << NightElf
+step << NightElf !Druid
     .goto 1439,36.767,44.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
     .turnin 6342 >> Turn in Flight to Auberdine
+    .target Laird
+step << Druid NightElf
+    #season 0
+    .goto 1439,36.767,44.285
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
+    .turnin 6342 >> Turn in Flight to Auberdine
+    .accept 6343 >> Accept Return to Nessa
     .target Laird
 step << NightElf
     #optional
@@ -1029,6 +1036,92 @@ step
     .turnin 3524 >> Turn in Washed Ashore
     .accept 4681 >> Accept Washed Ashore
     .target Gwennyth Bly'Leggonde
+
+step << Druid NightElf
+    #optional
+    #completewith Lunaclaw
+    .goto 1439,43.126,45.593,15 >> Enter the |cRXP_PICK_Moonkin Stone|r cave
+step << Druid NightElf
+    #optional
+    #completewith Lunaclaw
+    .goto 1439/1,92.42,6325.98
+    .cast 18974 >>|cRXP_WARN_Use the|r |T132857:0|t[Cenarion Moondust] |cRXP_WARN_at the |cRXP_PICK_Moonkin Stone|r inside the cave to summon |cRXP_ENEMY_Lunaclaw|r at the entrance of the cave|r
+    .timer 4,Body and Heart RP
+    .use 15208
+    .isOnQuest 6001
+step << Druid NightElf
+    #label Lunaclaw
+    .goto 1439/1,119.27,6344.32
+    >>Kill |cRXP_ENEMY_Lunaclaw|r
+    .complete 6001,1 --Defeat Lunaclaw (x1)
+    .use 15208
+    .mob Lunaclaw
+step << Druid NightElf
+    #season 0
+    #label RedCrystal
+    .goto 1439,47.314,48.676
+    >>Travel up to the |cRXP_PICK_Mysterious Red Crystal|r
+    >>|cRXP_WARN_Be careful of the two group of 2 |cRXP_ENEMY_Raging Moonkins|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
+    .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
+step << Druid NightElf
+    #optional
+	#completewith next
+	.cast 18960 >> Cast Teleport: Moonglade
+	.zoneskip Moonglade
+step << Druid NightElf
+    #completewith next
+    .goto Moonglade,44.148,45.229
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
+    .fly Teldrassil >> Fly to Darnassus
+    .skipgossip
+    .timer 153,Darnassus
+    .target Silva Fil'naveth
+    .zoneskip Darnassus
+    .zoneskip Teldrassil
+step << NightElf Druid
+    .goto 1438/1,950.52,8694.07
+    #season 0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nessa Shadowsong|r
+    .turnin 6343 >> Turn in Return to Nessa
+    .target Nessa Shadowsong
+step << NightElf !Druid
+    #optional
+    #completewith next
+    .goto 1438/1,965.80,8780.95
+    .zone Darnassus >> Take the purple portal into Darnassus
+step << Druid NightElf
+    .goto 1457/1,2563.98,10179.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
+    .turnin 6001 >> Turn in Body and Heart << NightElf
+    .trainer >> Train your class spells
+    .target Mathrengyl Bearwalker
+    .isOnQuest 6001
+step << Druid NightElf
+    #completewith next
+    .goto 1457/1,2636.53,9956.80
+    .zone Teldrassil >> Travel through the purple portal to Rut'theran Village
+    .zoneskip Darkshore
+    .subzoneskip 702
+step << Druid NightElf
+    .goto 1438/1,841.10,8640.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
+    .fly Darkshore >> Fly to Darkshore
+    .target Vesprystus
+    .zoneskip Darkshore
+step << Druid NightElf
+    #season 0
+    .goto 1439,37.703,43.393
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    .turnin 4811 >> Turn in The Red Crystal
+    .accept 4812 >> Accept As Water Cascades
+    .target Sentinel Glynda Nal'Shea
+    .isOnQuest 4811
+step << Druid NightElf
+    #season 0
+    .goto 1439,37.767,44.001
+    >>|cRXP_WARN_Use the|r |T134865:0|t[Empty Water Tube] |cRXP_WARN_at the Auberdine moonwell|r
+    .complete 4812,1 --Moonwell Water Tube (1)
+    .use 14338
 step
     #optional
     #completewith next
@@ -1484,28 +1577,6 @@ step
     >>Travel up to the |cRXP_PICK_Mysterious Red Crystal|r
     >>|cRXP_WARN_Be careful of the two group of 2 |cRXP_ENEMY_Raging Moonkins|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
-step << Druid
-    #optional
-    #season 0
-    #completewith Lunaclaw
-    .goto 1439,43.126,45.593,15 >> Enter the |cRXP_PICK_Moonkin Stone|r cave
-step << Druid
-    #optional
-    #season 0
-    #completewith Lunaclaw
-    .goto 1439/1,92.42,6325.98
-    .cast 18974 >>|cRXP_WARN_Use the|r |T132857:0|t[Cenarion Moondust] |cRXP_WARN_at the |cRXP_PICK_Moonkin Stone|r inside the cave to summon |cRXP_ENEMY_Lunaclaw|r at the entrance of the cave|r
-    .timer 4,Body and Heart RP
-    .use 15208
-    .isOnQuest 6001
-step << Druid
-    #label Lunaclaw
-    #season 0
-    .goto 1439/1,119.27,6344.32
-    >>Kill |cRXP_ENEMY_Lunaclaw|r
-    .complete 6001,1 --Defeat Lunaclaw (x1)
-    .use 15208
-    .mob Lunaclaw
 
 ----Start of Early Red Crystal turnin Section (NE below 14 for xp, Hunters/Druids for staff wep upgrade)/Druid bear q final if not done earlier----
 
@@ -1700,90 +1771,7 @@ step << Hunter/Druid/Warrior
     --reduced DPS now on staff due to it becoming a caster weapon
 
 ----Start of forced Level 14 Druid Turnin/train----
-
-
-step << Druid
-    #season 0
-    .goto 1439,36.767,44.285
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
-    .accept 6343 >> Accept Return to Nessa
-    .target Laird
-step << Druid
-    #optional
-    #loop
-    .goto 1439,36.051,44.757,0
-    .goto 1439,36.280,50.071,0
-    .goto 1439,35.275,53.464,0
-    .goto 1439,36.051,44.757,60,0
-    .goto 1439,35.759,45.455,60,0
-    .goto 1439,35.902,47.145,60,0
-    .goto 1439,35.977,48.408,60,0
-    .goto 1439,36.523,48.554,60,0
-    .goto 1439,36.280,50.071,60,0
-    .goto 1439,36.091,51.501,60,0
-    .goto 1439,37.115,52.368,60,0
-    .goto 1439,37.130,53.663,60,0
-    .goto 1439,36.740,55.221,60,0
-    .goto 1439,35.655,55.872,60,0
-    .goto 1439,35.088,55.085,60,0
-    .goto 1439,35.275,53.464,60,0
-    .goto 1439,36.091,51.501,60,0
-    .xp 13+9500 >> Grind to 9500+/11400xp
-step << Druid
-    #season 0
-    .goto 1439/1,561.66,6343.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r
-    .fly Teldrassil >> Fly to Teldrassil
-    .target Caylais Moonfeather
-step << Druid
-    .goto 1438/1,950.52,8694.07
-    #season 0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nessa Shadowsong|r
-    .turnin 6343 >> Turn in Return to Nessa
-    .target Nessa Shadowsong
-step << Druid
-    #optional
-    #completewith next
-    #season 0
-    .goto 1438/1,965.80,8780.95
-    .zone Darnassus >> Take the purple portal into Darnassus
-step << Druid
-    .goto 1457/1,2563.98,10179.00
-    #season 0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
-    .turnin 6001 >> Turn in Body and Heart
-    .accept 6121 >> Accept Lessons Anew
-    .trainer >> Train your class spells
-    .target Mathrengyl Bearwalker
-step << Druid
-    #optional
-    #season 0
-    .goto 1457/1,2563.98,10179.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
-    .accept 6121 >> Accept Lessons Anew
-    .trainer >> Train your class spells
-    .target Mathrengyl Bearwalker
-    .isQuestTurnedIn 6001
-    .zoneskip Darnassus,1
-step << Druid
-    #optional
-    #season 0
-	#completewith next
-	.cast 18960 >> Cast Teleport: Moonglade
-	.zoneskip Moonglade
-step << Druid
-    #season 0
-    .goto 1450/1,-2678.76,8020.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze|r up stairs
-    .turnin 6121 >> Turn in Lessons Anew
-    .accept 6122 >> Accept The Principal Source
-    .target Dendrite Starblaze
-step << Druid
-    #season 0
-    #optional
-    #completewith AmethStart
-    .hs >> Hearth to Darkshore
-    .zoneskip Darkshore
+--Removed in wowF
 
 ----End of forced Level 14 Druid Turnin/train----
 ----End of Early Red Crystal turnin Section (NE for xp, Hunters/Druids for staff)/Druid bear q final if not done earlier----
@@ -1831,7 +1819,7 @@ step << NightElf/Hunter/Druid/Warrior
     #optional
     #season 0
     #completewith Anaya
-    #requires EarlyTreats3 << Druid --Season 2
+    --#requires EarlyTreats3 << Druid --Season 2
     >>Kill |cRXP_ENEMY_Rabid Thistle Bears|r
     >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
@@ -1842,7 +1830,7 @@ step << NightElf/Hunter/Druid/Warrior
     #optional
     #season 0
     #label EarlyTurtleStart
-    #requires EarlyTreats3 << Druid --Season 2
+    --#requires EarlyTreats3 << Druid --Season 2
     .goto 1439,37.105,62.167
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4722 >> Accept Beached Sea Turtle
@@ -2629,6 +2617,7 @@ step << Druid
     #season 0
     >>|cRXP_WARN_Use the|r |T134776:0|t[Empty Cliffspring Falls Sampler] |cRXP_WARN_in the water at the entrance of the Cliffspring River Cave|r
     .complete 6122,1 --Filled Cliffspring Falls Sampler (1)
+    .isOnQuest 6122
 step
     #label CaveMushrooms
     .goto 1439/1,-690.31,6751.29,12,0
@@ -3532,51 +3521,51 @@ step << Druid
     .goto 1439/1,472.32,6556.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
     .turnin 6123 >> Turn in Gathering the Cure
-    .accept 6124 >> Accept Curing the Sick
     .isQuestComplete 6123
-step << Druid
-    #xprate <1.5
-    #optional
-    #season 0
-    .goto 1439/1,472.32,6556.100
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
-    .accept 6124 >> Accept Curing the Sick
-    .target Alanndarian Nightsong
-    .isQuestTurnedIn 6123
+--     .accept 6124 >> Accept Curing the Sick
+-- step << Druid
+--     #xprate <1.5
+--     #optional
+--     #season 0
+--     .goto 1439/1,472.32,6556.100
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
+--     .accept 6124 >> Accept Curing the Sick
+--     .target Alanndarian Nightsong
+--     .isQuestTurnedIn 6123
 step << Druid
     #optional
     #season 0
     #completewith Buzzbox323End
     .abandon 6123 >> Abandon Gathering the Cure
-step << Druid
-    #xprate <1.5
-    #optional
-    #season 0
-    #completewith Buzzbox323End
-    .goto 1439/1,-313.68,6883.60,0
-    .goto 1439/1,98.97,7237.30,0
-    .goto 1439/1,347.87,6813.73,0
-    >>|cRXP_WARN_Use the|r |T132801:0|t[Curative Animal Salve] |cRXP_WARN_on|r |cRXP_ENEMY_Sickly Deer|r
-    .complete 6124,1 -- Sickly Deer cured (10)
-    .mob Sickly Deer
-    .isQuestAvailable 1138
-step << Druid
-    #xprate <1.5
-    #season 0
-    #sticky
-    #label SicklyDeers
-    #loop
-    .goto 1439/1,-313.68,6883.60,0
-    .goto 1439/1,98.97,7237.30,0
-    .goto 1439/1,347.87,6813.73,0
-    .waypoint 1439/1,-313.68,6883.60,40,0
-    .waypoint 1439/1,98.97,7237.30,40,0
-    .waypoint 1439/1,347.87,6813.73,40,0
-    >>|cRXP_WARN_Use the|r |T132801:0|t[Curative Animal Salve] |cRXP_WARN_on|r |cRXP_ENEMY_Sickly Deer|r
-    .complete 6124,1 -- Sickly Deer cured (10)
-    .mob Sickly Deer
-    .use 15826
-    .isQuestTurnedIn 1138
+-- step << Druid
+--     #xprate <1.5
+--     #optional
+--     #season 0
+--     #completewith Buzzbox323End
+--     .goto 1439/1,-313.68,6883.60,0
+--     .goto 1439/1,98.97,7237.30,0
+--     .goto 1439/1,347.87,6813.73,0
+--     >>|cRXP_WARN_Use the|r |T132801:0|t[Curative Animal Salve] |cRXP_WARN_on|r |cRXP_ENEMY_Sickly Deer|r
+--     .complete 6124,1 -- Sickly Deer cured (10)
+--     .mob Sickly Deer
+--     .isQuestAvailable 1138
+-- step << Druid
+--     #xprate <1.5
+--     #season 0
+--     #sticky
+--     #label SicklyDeers
+--     #loop
+--     .goto 1439/1,-313.68,6883.60,0
+--     .goto 1439/1,98.97,7237.30,0
+--     .goto 1439/1,347.87,6813.73,0
+--     .waypoint 1439/1,-313.68,6883.60,40,0
+--     .waypoint 1439/1,98.97,7237.30,40,0
+--     .waypoint 1439/1,347.87,6813.73,40,0
+--     >>|cRXP_WARN_Use the|r |T132801:0|t[Curative Animal Salve] |cRXP_WARN_on|r |cRXP_ENEMY_Sickly Deer|r
+--     .complete 6124,1 -- Sickly Deer cured (10)
+--     .mob Sickly Deer
+--     .use 15826
+--     .isQuestTurnedIn 1138
 step
     #sticky
     #label Blackwood1
@@ -3896,20 +3885,20 @@ step << Druid
     .goto 1439,53.113,18.099
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4727 >> Accept Beached Sea Turtle
-step << Druid
-    #xprate <1.5
-    #label DeerComplete
-    #loop
-    .goto 1439/1,-313.68,6883.60,0
-    .goto 1439/1,98.97,7237.30,0
-    .goto 1439/1,347.87,6813.73,0
-    .goto 1439/1,-313.68,6883.60,40,0
-    .goto 1439/1,98.97,7237.30,40,0
-    .goto 1439/1,347.87,6813.73,40,0
-    >>|cRXP_WARN_Use the|r |T132801:0|t[Curative Animal Salve] |cRXP_WARN_on|r |cRXP_ENEMY_Sickly Deer|r
-    .complete 6124,1 -- Sickly Deer cured (10)
-    .mob Sickly Deer
-    .use 15826
+-- step << Druid
+--     #xprate <1.5
+--     #label DeerComplete
+--     #loop
+--     .goto 1439/1,-313.68,6883.60,0
+--     .goto 1439/1,98.97,7237.30,0
+--     .goto 1439/1,347.87,6813.73,0
+--     .goto 1439/1,-313.68,6883.60,40,0
+--     .goto 1439/1,98.97,7237.30,40,0
+--     .goto 1439/1,347.87,6813.73,40,0
+--     >>|cRXP_WARN_Use the|r |T132801:0|t[Curative Animal Salve] |cRXP_WARN_on|r |cRXP_ENEMY_Sickly Deer|r
+--     .complete 6124,1 -- Sickly Deer cured (10)
+--     .mob Sickly Deer
+--     .use 15826
 step << Druid
     .goto 1439/1,-259.32,7839.03
     >>|cRXP_WARN_Swim out in the water|r
@@ -5721,15 +5710,15 @@ step << Druid
 	#completewith MoongladeTrain
 	.cast 18960 >> Cast Teleport: Moonglade
 	.zoneskip Moonglade
-step << Druid
-    #xprate <1.5
-    .goto 1450/1,-2678.53,8023.63
-    >>Go to Moonglade
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze|r
-    .turnin 6124 >> Turn in Curing the Sick
-    .accept 6125 >> Accept Power over Poison
-    .target Dendrite Starblaze
-    .isQuestTurnedIn 6123
+-- step << Druid
+--     #xprate <1.5
+--     .goto 1450/1,-2678.53,8023.63
+--     >>Go to Moonglade
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze|r
+--     .turnin 6124 >> Turn in Curing the Sick
+--     .accept 6125 >> Accept Power over Poison
+--     .target Dendrite Starblaze
+--     .isQuestTurnedIn 6123
 step << Druid
     #xprate <1.59
     #label MoongladeTrain
@@ -9217,6 +9206,11 @@ step
 	.target Dockmaster Baren
     .goto 1433/0,-2172.59,-9261.02
     .turnin 127 >> Turn in Selling Fish
+step << Druid
+    .goto Redridge Mountains,26.8,44.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Brianna|r
+    .home Lakeshire >> Set your hearthstone to Lakeshire
+    .target Innkeeper Brianna
 step
 #optional
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
@@ -9264,6 +9258,130 @@ step
 step
     .goto 1433/0,-2634.54,-9588.54
     .xp 20 >> Grind until you are level 20
+
+-- Druid Cat form quest --
+
+step << Druid
+    #completewith catspirit1
+	.cast 18960 >> Cast Teleport: Moonglade
+step << Druid
+    #completewith next
+    .goto Moonglade,44.148,45.229
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
+    .fly Teldrassil >> Fly to Darnassus
+    .skipgossip
+    .timer 153,Darnassus
+    .target Silva Fil'naveth
+    .zoneskip Darnassus
+    .zoneskip Teldrassil
+step << NightElf !Druid
+    #hidewindow
+    #optional
+    #completewith next
+    .goto 1438/1,965.80,8780.95
+    .zone Darnassus >> Take the purple portal into Darnassus
+step << Druid
+    #label catspirit1
+    .goto 1457/1,2564.600,10179.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker::4217|r
+    .target Mathrengyl Bearwalker::4217
+    .accept 98393 >>Accept The Great Cat Spirit
+
+step << Druid
+    .goto 1450/1,-2678.900,8020.000
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze::11802|r
+    .target Dendrite Starblaze::11802
+    .turnin 98393 >>Turn in The Great Cat Spirit
+    .accept 98341 >>Accept The Great Windborne Cat Spirit << Skyborne
+    .accept 98341 >>Accept The Great Cat Spirit << !Skyborne
+step << Druid !Skyborne
+    .goto 1450/1,-2640.000,7338.900
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Great Cat Spirit|r
+    .turnin 98394 >>Turn in The Great Cat Spirit
+    .accept 98396 >>Accept The Great Cat Spirit
+    .target Great Cat Spirit
+step << Druid Skyborne
+    .goto 1450/1,-2352.700,7375.600,10,0
+    .goto 1450/1,-2394.300,7361.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
+    .target Avatar of Saeyleenan::272054
+    .turnin 98341 >>Turn in The Great Windborne Cat Spirit
+    .accept 98404 >>Accept The Great Windborne Cat Spirit
+step << Druid
+    #completewith next
+    .goto 1450/1,-3046.700,7534.400
+    --aura 1309054?
+    .subzone 2363 >> Head to the Stormrage Barrow Dens
+step << Druid
+    >>Go deep into the cave, travel across the bridge, look for a cat statue inside an alcove and click on the small orb next to the statue
+    >>Loot |cRXP_LOOT_Relic of the Claw|r
+    .goto 1450/1,-3117.400,7455.300
+    .complete 98404,2 << Skyborne --|1/1 Relic of the Claw
+    .complete 98396,2 << !Skyborne --|1/1 Relic of the Claw
+step << Druid
+    >>Click on the small orb next to the cat statue
+    >>Loot |cRXP_LOOT_Relic of the Silent Shadow|r
+    .goto 1450/1,-3099.200,7485.700
+    .complete 98404,3  << Skyborne --|1/1 Relic of the Silent Shadow
+    .complete 98396,3  << !Skyborne --|1/1 Relic of the Silent Shadow
+step << Druid
+    >>Click on the small orb next to the cat statue
+    >>Loot |cRXP_LOOT_Relic of the Fang|r
+    .goto 1450/1,-3054.100,7476.800
+    .complete 98404,1  << Skyborne --|1/1 Relic of the Fang
+    .complete 98396,1  << !Skyborne --|1/1 Relic of the Fang
+step << Druid !Skyborne
+    .goto 1450/1,-2640.000,7338.900
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Great Cat Spirit|r
+    .turnin 98396 >>Turn in The Great Cat Spirit
+    .accept 98731 >>Accept Blessings of the Great Cat Spirit
+    .target Great Cat Spirit
+step << Druid Skyborne
+    .goto 1450/1,-2395.400,7361.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
+    .target Avatar of Saeyleenan::272054
+    .turnin 98404 >>Turn in The Great Windborne Cat Spirit
+    .accept 98738 >>Accept Blessings of the Great Windborne Cat Spirit
+step << Druid
+    .goto 1450/1,-2678.200,8021.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTeleport to Moonglade and talk to |cRXP_FRIENDLY_Dendrite Starblaze::11802|r
+    .target Dendrite Starblaze::11802
+    .usespell 18960
+    .turnin 98738 >>Turn in Blessings of the Great Windborne Cat Spirit << Skyborne
+    .accept 98397 >>Accept To Darnassus --<< Alliance
+    --.accept 98362 >>Accept To Thunder Bluff << Horde
+step << Druid
+    #completewith catspirit2
+    .goto Moonglade,44.148,45.229
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
+    .fly Teldrassil >> Fly to Darnassus
+    .skipgossip
+    .timer 153,Darnassus
+    .target Silva Fil'naveth
+    .zoneskip Darnassus
+    .zoneskip Teldrassil
+step << Druid
+    #completewith next
+    .goto Moonglade,44.148,45.229
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
+    .fly Teldrassil >> Fly to Darnassus
+    .skipgossip
+    .timer 153,Darnassus
+    .target Silva Fil'naveth
+    .zoneskip Darnassus
+    .zoneskip Teldrassil
+step << Druid
+    #label catspirit2
+    .goto 1457/1,2564.400,10179.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker::4217|r
+    .target Mathrengyl Bearwalker::4217
+    .turnin 98397 >>Turn in To Darnassus
+step << Druid
+    #completewith next
+    .hs >> Hearth to Lakeshire
+
+-- Druid cat form quest end --
+
 step << Rogue
 .dungeon DM
     #softcore
@@ -9380,13 +9498,13 @@ step
     .accept 3765 >> Accept The Corruption Abroad
     .target Argos Nightwhisper
     .dungeon !DM
-step << Druid
-.dungeon !DM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r
-    .goto 1453/0,1100.15,-8776.330
-    .trainer >> Train your class spells
-    .train 768 >> Train |T132115:0|t[Cat Form]
-    .target Sheldras Moontree
+-- step << Druid
+-- .dungeon !DM
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r
+--     .goto 1453/0,1100.15,-8776.330
+--     .trainer >> Train your class spells
+--     .train 768 >> Train |T132115:0|t[Cat Form]
+--     .target Sheldras Moontree
 step << Paladin/Priest
 .dungeon !DM
     #completewith next
