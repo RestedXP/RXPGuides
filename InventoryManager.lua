@@ -298,10 +298,11 @@ local function FindJunk(deleteItem)
                     if type(t) == "table" and not count then
                         count = t.stackCount
                     end
+                    count = count or stackMax
                     if stackMax and count and IsJunk(id,bag,slot) then
                         --local item_count = select(2, GetContainerItemInfo(bag, slot))
                         price = price or 0
-                        local value = (stackMax + count) * price/2
+                        local value = count * price
                         if value < bestValue then
                             bestBag = bag
                             bestSlot = slot
