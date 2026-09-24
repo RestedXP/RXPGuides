@@ -1,6 +1,7 @@
 local _, addon = ...
 
-if addon.game ~= "CLASSIC" then return end
+if addon.game ~= "FOREVER" then return end
+
 addon.skipPreReq = {
     [9573] = 1,
     [533] = 1,

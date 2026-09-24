@@ -14,16 +14,10 @@ local IsSpellKnown = C_SpellBook and C_SpellBook.IsSpellKnown or _G.IsSpellKnown
 local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
 local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo and addon.GetSpellInfo or _G.GetSpellInfo
 local GetMerchantItemInfo = C_MerchantFrame and C_MerchantFrame.GetItemInfo or _G.GetMerchantItemInfo
+local GetSpellCooldown = addon.GetSpellCooldown
 local UnitName = addon.GetUnitName
 local BANK_CONTAINER = _G.BANK_CONTAINER or Enum.BagIndex.Bank
 
--- start, duration, enabled, modRate = GetSpellCooldown(spell)
-local GetSpellCooldown = _G.GetSpellCooldown or function(spellIdentifier)
-    if C_Spell and C_Spell.GetSpellCooldown then
-        local info = C_Spell.GetSpellCooldown(spellIdentifier)
-        return info.startTime, info.start, info.duration, info.enabled, info.modRate
-    end
-end
 
 addon.GetFactionInfoByID = _G.GetFactionInfoByID or function(factionID)
     local name, description, standingID, barMin, barMax, barValue
@@ -173,7 +167,7 @@ events.collecttoy = "TOYS_UPDATED"
 events.collectcurrency = "CURRENCY_DISPLAY_UPDATE"
 events.collectpet = {"COMPANION_LEARNED", "COMPANION_UNLEARNED", "COMPANION_UPDATE", "NEW_PET_ADDED"}
 events.tradeskill = events.train
-events.cooldown = "SPELL_UPDATE_COOLDOWN"
+events.cooldown = {"SPELL_UPDATE_COOLDOWN","PLAYER_REGEN_ENABLED"}
 events.mob = {"UNIT_TARGET","QUEST_TURNED_IN","QUEST_ACCEPTED"}
 events.unitscan = events.mob
 events.target = events.mob
@@ -6302,7 +6296,10 @@ function addon.functions.cooldown(self, text, cooldownType, id, remaining,
         start, duration = GetInventoryItemCooldown("player", id)
     end
 
-    if addon.IsSecretValue(start) or addon.IsSecretValue(duration) then return end
+    if addon.IsSecretValue(start) or addon.IsSecretValue(duration)
+      or not (start and duration) then
+        return
+    end
 
     local endTime = start + duration
 

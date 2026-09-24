@@ -2,14 +2,14 @@
 
     <Script file="DB/shared.lua"/>
 
-    <Script file="DB/classic/flightData.lua"/>
-    <Script file="DB/classic/quest.lua"/>
-    <Script file="DB/classic/spells.lua"/>
-    <Script file="DB/classic/rares.lua"/>
-    <Script file="DB/classic/db.lua"/>
-    <Script file="DB/classic/dangerousMobs.lua"/>
-    <Script file="DB/classic/statWeights.lua"/>
-    <Script file="DB/classic/SpiritHealerDB.lua"/>
+    <Script file="DB/forever/flightData.lua"/>
+    <Script file="DB/forever/quest.lua"/>
+    <Script file="DB/forever/spells.lua"/>
+    <Script file="DB/forever/rares.lua"/>
+    <Script file="DB/forever/db.lua"/>
+    <Script file="DB/forever/dangerousMobs.lua"/>
+    <Script file="DB/forever/StatWeights.lua"/>
+    <Script file="DB/forever/SpiritHealerDB.lua"/>
     <Script file="DB/questDB.lua"/>
 
 </Ui>

@@ -24,9 +24,8 @@
 ## X-Curse-Project-ID: 486246
 ## X-Wago-ID: ZKbebq61
 
-libs\embeds_Mainline.xml [AllowLoadGameType standard]
-libs\embeds.xml [AllowLoadGameType classic]
-libs\embeds_Mainline.xml [AllowLoadGameType camelot]
+libs\embeds_Mainline.xml [AllowLoadGameType standard,camelot]
+libs\embeds.xml [AllowLoadGameType vanilla,tbc,wrath,cata,mists]
 locale\locales.xml
 UI\includes.xml
 
@@ -43,7 +42,7 @@ DB/mop.xml [AllowLoadGameType mists]
 DB/cata.xml [AllowLoadGameType cata]
 DB/wotlk.xml [AllowLoadGameType wrath]
 DB/tbc.xml [AllowLoadGameType tbc]
-DB/classic.xml [AllowLoadGameType vanilla,camelot]
+DB/classic.xml [AllowLoadGameType vanilla]
 DB/forever.xml [AllowLoadGameType camelot]
 
 HSBatching.lua

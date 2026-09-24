@@ -29,6 +29,8 @@ elseif (tonumber(select(3,_G.GetBuildInfo()):match("%d+$")) or 0) < 2025 then
     unitscanEnabled = true
 end
 
+addon.unitscanEnabled = unitscanEnabled
+
 local incompatibleAddons = {}
 local settingsDB
 local loadedProfileKey
@@ -42,7 +44,7 @@ addon.settings.enabledBetaFeatures = {
     ["Guide Window v2"] = "Allow the Guide Window and Active Steps v2", --GuideWindow/addon.v2
 }
 
-local copy = function(t)
+local function copy(t)
     local out = {}
     for i,v in pairs(t) do
         if type(v) == "table" then
@@ -591,9 +593,12 @@ function addon.settings:CreateAceOptionsPanel()
                 type = "execute",
                 width = 1.2,
                 func = function ()
-                    addon.ui.v2.LaunchConfigurator()
+                    if addon.ui and addon.ui.v2 and addon.ui.v2.LaunchConfigurator then
+                        addon.ui.v2.LaunchConfigurator()
+                    end
                 end,
-                hidden = not (addon.ui and addon.ui.v2 and (addon.gameVersion < 30000))
+                hidden = not (addon.ui and addon.ui.v2 and
+                    addon.ui.v2.LaunchConfigurator)
             },
             generalSettings = {
                 type = "group",

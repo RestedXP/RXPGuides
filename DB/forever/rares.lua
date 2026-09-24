@@ -1,7 +1,8 @@
 local _, addon = ...
-local locale = GetLocale()
 
-if addon.game ~= "CLASSIC" then return end
+if addon.game ~= "FOREVER" then return end
+
+local locale = GetLocale()
 
 -- As of 1.15.8 TargetUnit now fires ADDON_ACTION_FORBIDDEN at execution, rather than target matches
 if addon.gameVersion >= 11508 then

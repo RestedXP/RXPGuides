@@ -3,8 +3,7 @@ if faction == "Horde" then return end
 
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #season 0,1
 << Alliance
 #name 1-6 Northshire
@@ -763,8 +762,7 @@ step
 
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #season 0,1
 #version 1
 << Alliance
@@ -2267,7 +2265,7 @@ step
     .mob +Young Forest Bear
 
 step
-    .goto 1429,76.5,71.9
+    .goto 1429/0,-1119.7708,-9603.7687
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormin Pelford|r
     .accept 91733 >> Accept Downstream
     .target Ormin Pelford
@@ -2284,6 +2282,25 @@ step
     >>Loot the |cRXP_PICK_Waterlogged Toolbox|r on the ground
     .complete 91733,3 -- Waterlogged Toolbox 1/1
     .goto 1429,77.3,86.8
+--
+step << skip
+    .goto 1429/0,-1119.800,-9931.300
+    >>Kill |cRXP_ENEMY_Croaky|r. Loot him for |T134169:0|t[|cRXP_LOOT_Croaky's Head|r]
+    .use 247826 >> |cRXP_WARN_Use|r |T134169:0|t[|cRXP_LOOT_Croaky's Head|r] |cRXP_WARN_to start the quest|r
+    >>|cRXP_WARN_He is a level 11 elite. Skip this step if you are unable to kill him|r
+    .collect 247826,1,91740,1 -- Croaky's Head (1)
+    .accept 91740 >>Accept Croaky's Head
+    .mob Croaky
+step << skip
+    #completewith next
+    .subzone 798 >> Travel to Ridgepoint Tower
+step << skip
+    .isOnQuest 91740
+    .goto 1429/0,-1406.200,-9775.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merell Ross::248277|r
+    .target Merell Ross::248277
+    .turnin 91740 >>Turn in Croaky's Head
+--
 step
     #loop
     .goto 1429,77.499,74.518,0
@@ -2366,15 +2383,21 @@ step
     .accept 39 >> Accept Deliver Thomas' Report
     .target Guard Thomas
 step
-    .goto 1429,76.5,71.9
+    .goto 1429/0,-1119.7708,-9603.7687
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormin Pelford|r
     .turnin 91733 >> Turn in Downstream
     .target Ormin Pelford
 step << Warlock/Warrior/Rogue/Hunter
-    #label Level9Grind
+    .isQuestNotComplete 91740
 	.goto 1429/0,-877.85,-9778.98
     .xp 9+3510 >> Grind to 3510+/6500xp << Warlock/Hunter
     .xp 9+3420 >> Grind to 3420+/6500xp << Warrior/Rogue
+step << Warlock/Warrior/Rogue/Hunter
+    .isQuestComplete 91740
+    #label Level9Grind
+	.goto 1429/0,-877.85,-9778.98
+    .xp 9+2670 >> Grind to 2670+/6500xp << Warlock/Hunter
+    .xp 9+2580 >> Grind to 2580+/6500xp << Warrior/Rogue
 step << !Warlock
     #season 0,1 << Rogue
     #softcore
@@ -2393,6 +2416,13 @@ step
     .turnin 83 >> Turn in Red Linen Goods
     .target Sara Timberlain
     .isQuestComplete 83
+step
+    #optional
+    .isQuestComplete 91740
+    .goto 1429/0,-1406.200,-9775.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merell Ross::248277|r
+    .target Merell Ross::248277
+    .turnin 91740 >>Turn in Croaky's Head
 step << !Warlock
     #optional
     #label WolfMeatCooking8
@@ -2426,7 +2456,7 @@ step << !Warlock
     .zone Redridge Mountains >> Travel to Redridge Mountains
 step << !Warlock
     #optional
-    .goto 1433/0,-1948.56,-9582.75
+    .goto 1433/0,-1906.400,-9606.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
     .accept 244 >> Accept Encroaching Gnolls
     .target Guard Parker
@@ -2524,13 +2554,39 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
     .accept 1097 >> Accept Elmore's Task
     .target Smith Argus
+step
+    #optional
+    #completewith RoughWolfPelts
+    .goto 1429/0,-81.900,-9381.800,5 >> Travel toward |cRXP_FRIENDLY_Helene Peltskinner|r in the house
+step
+    #optional
+    .goto 1429/0,-69.500,-9380.200
+    .isQuestComplete 91746
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helene Peltskinner|r
+    .turnin 91746 >> Turn in Elmpaw's Head
+    .target Helene Peltskinner
+step
+    #optional
+    .goto 1429/0,-69.500,-9380.200
+    .isQuestComplete 97924
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helene Peltskinner|r
+    .turnin 97924 >> Turn in Camping 101: Skinning
+    .target Helene Peltskinner
+step
+    #label RoughWolfPelts
+    #optional
+    .goto 1429/0,-69.500,-9380.200
+    .isQuestComplete 91751
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helene Peltskinner|r
+    .turnin 91751 >> Turn in Rough Wolf Pelts
+    .target Helene Peltskinner
 step << Warlock/Warrior/Hunter
     #requires GoldshireVendor
     #optional
     .xp 10 >> Grind to 10
 step << Hunter
     .goto 1429/0,107.200,-9472.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r
     .target Josephine Carson::251507
     .accept 94792 >>Accept Taming the Beast
     .trainer >> Train your class spells
@@ -2543,7 +2599,7 @@ step << Hunter
     .mob Rockhide Boar
 step << Hunter
     .goto 1429/0,107.200,-9472.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r
     .target Josephine Carson::251507
     .turnin 94792 >>Turn in Taming the Beast
     .accept 94863 >>Accept Taming the Beast
@@ -2557,7 +2613,7 @@ step << Hunter
     .mob Gray Forest Wolf
 step << Hunter
     .goto 1429/0,107.200,-9472.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r
     .target Josephine Carson::251507
     .turnin 94863 >>Turn in Taming the Beast
     .accept 94864 >>Accept Taming the Beast
@@ -2572,7 +2628,7 @@ step << Hunter
     .mob Young Forest Bear
 step << Hunter
     .goto 1429/0,107.200,-9472.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josephine Carson::251507|r
     .target Josephine Carson::251507
     .turnin 94864 >>Turn in Taming the Beast
     .accept 94793 >>Accept Training the Beast
@@ -3071,7 +3127,7 @@ step << Hunter
     .target Lina Stover
     .money <0.1664
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.77
-step << Hunter 
+step << Hunter
     .goto 1453/0,702.700,-8791.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lina Stover|r
 	.vendor >>|cRXP_BUY_Buy 6 stacks of|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_and destroy any remaining|r |T132382:0|t[Rough Arrows]
@@ -3269,7 +3325,7 @@ step << Warlock
 step << Warlock
     #label Gnolls
     #requires SoulShards
-    .goto 1433/0,-1948.56,-9582.75
+    .goto 1433/0,-1906.400,-9606.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
     .accept 244 >> Accept Encroaching Gnolls
     .target Guard Parker
@@ -3467,7 +3523,7 @@ step
     .goto 1453/0,522.000,-8352.101
     .subzone 2257 >>Enter the Deeprun Tram
     .zoneskip Ironforge
-step
+step << skip
     #optional
     #label TramCook1
     #completewith TramEnd
@@ -3480,7 +3536,7 @@ step
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step
+step << skip
     #optional
     #requires TramCook1
     #label TramCook2
@@ -3494,7 +3550,7 @@ step
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step
+step << skip
     #optional
     #requires TramCook2
     #label TramCook3
@@ -3508,7 +3564,7 @@ step
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step
+step << skip
     #optional
     #requires TramCook3
     #label TramCook4
@@ -3523,7 +3579,7 @@ step
     .itemcount 2672,1 --Stringy Wolf Meat (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step
+step << skip
     #optional
     #requires TramCook4
     #label TramCook5
@@ -3536,7 +3592,7 @@ step
     .itemcount 2672,1 --Stringy Wolf Meat (1)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step
+step << skip
     #optional
     #requires TramCook5
     #label TramCook6
@@ -3575,7 +3631,7 @@ step
     .isQuestAvailable 314
 step << Warrior
     #optional
-    #completewith WarriorTrain
+    #completewith next
     .goto 1455,67.400,84.909,15,0
     .goto 1455/0,-1234.65,-5035.67,12 >> Travel toward |cRXP_FRIENDLY_Bilban Tosslespanner|r
 step << Warrior
@@ -3586,15 +3642,6 @@ step << Warrior
     .target Bilban Tosslespanner
     .xp <10,1
     .xp >12,1
-step << Warrior
-    #xprate >1.59
-    #optional
-    .goto 1455/0,-1234.65,-5035.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bilban Tosslespanner|r
-    >>|cRXP_WARN_Ensure you save 20s 70c for later|r
-    .train 5242 >> Train your class spells
-    .target Bilban Tosslespanner
-    .xp <12,1
 step << Warrior
     #optional
     #completewith next
@@ -3733,6 +3780,11 @@ step
     .zone Dun Morogh >> Travel to Dun Morogh
 --logout skip - remove if logout skips re-added
 step
+    .goto 1426/0,-682.300,-5489.000
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldin Steelgrill::1376|r 
+    .target Beldin Steelgrill::1376
+    .accept 96408 >>Accept A Visitor to Dun Morogh
+step
     #optional
     #label BoarMeatDunMorogh1
     #completewith Dirt
@@ -3831,6 +3883,7 @@ step
     #label QuarryStart
     .goto 1426/0,-1394.24,-5797.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
+    .turnin -96408 >> Turn in A Visitor to Dun Morogh
     .accept 96392 >> Accept Farsen's Watch
     .target Earthseer Farsen
 step
@@ -3946,6 +3999,14 @@ step << !Warrior !Rogue !Paladin !Hunter
     .target Kazan Mogosh
     .xp >15,1
 step
+    #completewith OII
+    >>Kill |cRXP_ENEMY_Rockjaw Ambushers|r. Loot them for the |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r]
+    .use 268548 >> |cRXP_WARN_Use the|r |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] |cRXP_WARN_to start the quest|r
+    >>|cRXP_WARN_NOTE: This item has a low drop rate. Skip this step if you do not find it by the time you are done with the|r |cRXP_ENEMY_Dark Iron Spies|r
+    .collect 268548,1,95213,1 -- Empty Powder Keg (1)
+    .accept 95213 >> Accept Stolen Blasting Powder
+    .mob Rockjaw Ambusher
+step
     .goto 1426/0,-2009.87,-5860.22,40,0
     .goto 1426/0,-2034.49,-5922.60
     >>Kill |cRXP_ENEMY_Dark Iron Spies|r. Loot them for the |T237385:0|t[|cRXP_LOOT_Dark Iron Map|r]
@@ -3955,25 +4016,28 @@ step
     .accept 96391 >> Accept Underground Map
     .mob Dark Iron Spy
 step
-    #loop
-    .goto 1426/0,-1881.82,-5735.45,50,0
-    .goto 1426/0,-1832.57,-5571.28,50,0
-    .goto 1426/0,-1724.22,-5636.95,50,0
-    .goto 1426/0,-1881.82,-5735.45,0
-    .goto 1426/0,-1832.57,-5571.28,0
-    .goto 1426/0,-1724.22,-5636.95,0
-    >>Kill |cRXP_ENEMY_Rockjaw Ambushers|r. Loot them for the |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r]
-    .use 268548 >> |cRXP_WARN_Use the|r |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] |cRXP_WARN_to start the quest|r
-    .collect 268548,1,95213,1 -- Empty Powder Keg (1)
-    .accept 95213 >> Accept Stolen Blasting Powder
-    .mob Rockjaw Ambusher
+    #label OII
+    .goto 1426/0,-1394.24,-5797.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
+    .turnin 96390 >> Turn in Nip 'Em in the Bud
+    .turnin 96391 >> Turn in Underground Map
+    .accept 96393 >> Accept Old Ironforge Incursion
+    .target Earthseer Farsen
 step
+    .isOnQuest 95213
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r
     .turnin 95213 >> Turn in Stolen Blasting Powder
     .accept 95214 >> Accept Stolen Blasting Powder
     .target Quarrymaster Thesten
 step
+    .isQuestTurnedIn 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r
+    .accept 95214 >> Accept Stolen Blasting Powder
+    .target Quarrymaster Thesten
+step
+    .isOnQuest 95214
     #loop
     .goto 1426/0,-1881.82,-5735.45,50,0
     .goto 1426/0,-1832.57,-5571.28,50,0
@@ -3985,17 +4049,11 @@ step
     .complete 95214,1 -- Stolen Blasting Powder (16)
     .mob Rockjaw Ambusher
 step
+    .isQuestComplete 95214
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r
     .turnin 95214 >> Turn in Stolen Blasting Powder
     .target Quarrymaster Thesten
-step
-    .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
-    .turnin 96390 >> Turn in Nip 'Em in the Bud
-    .turnin 96391 >> Turn in Underground Map
-    .accept 96393 >> Accept Old Ironforge Incursion
-    .target Earthseer Farsen
 step
     .goto 1426/0,-2197.02,-5279.07,45,0
     .goto 1426/0,-2329.60,-5163.76
@@ -4033,8 +4091,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #season 0,1
 #version 1
 << Alliance
@@ -4201,7 +4258,7 @@ step
 step
     .goto 1432/0,-2534.38,-5648.28
     .use 279380 >> |cRXP_WARN_Use the|r |T1387609:0|t[Ceramic Jar] |cRXP_WARN_while standing on the snowy patch to collect the|r |T1387609:0|t[Jar of Snow]
-    >>|cRXP_WARN_NOTE: The |T1387609:0|t[Jar of Snow] will only last for 10 minutes. You must turn the quest in before it expires!|r
+    >>|cRXP_WARN_NOTE: The|r |T1387609:0|t[Jar of Snow] |cRXP_WARN_will only last for 10 minutes. You must turn the quest in before it expires!|r
     .complete 86667,1 -- Jar of Snow 1/1
 step
     #optional
@@ -4264,6 +4321,7 @@ step
     .mob Tunnel Rat Surveyor
 step
     .goto 1432/0,-3146.73,-4837.02
+    #arrowtext |cRXP_WARN_10 minute timer to turn in quest!|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norric Lochthane|r
     >>|cRXP_WARN_Ensure to turn this in before the 10 minute expiry on the|r |T1387609:0|t[Jar of Snow]
     .turnin 86667 >> Turn in Snowbound
@@ -4467,6 +4525,8 @@ step
 step
     .goto 1432/0,-2747.60,-5530.540
     >>Kill |cRXP_ENEMY_Stonesplinter Troggs|r and |cRXP_ENEMY_Stonesplinter Scouts|r. Loot them for their |cRXP_LOOT_Teeth|r
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Stonesplinter Scouts|r cast|r |T132222:0|t[Shoot] |cRXP_WARN_(Ranged Cast: Deals 14-20 damage)|r
+    >>|cRXP_WARN_This is a hyperspawn area. You should not need to move from here|r
     >>|cRXP_WARN_Ensure you have 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your upcoming Paladin class quest|r << Paladin
     .complete 224,1 --Kill Stonesplinter Trogg (x10)
     .mob +Stonesplinter Trogg
@@ -4560,7 +4620,7 @@ step << Hunter
     .goto 1453/0,596.400,-8831.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Mullby|r
     >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from him|r
-    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
+    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)

@@ -39,6 +39,23 @@ else
     GetSpellInfo = _G.GetSpellInfo
 end
 
+local GetSpellCooldown = _G.GetSpellCooldown or function(spellIdentifier)
+    if C_Spell and C_Spell.GetSpellCooldown then
+        local info = C_Spell.GetSpellCooldown(spellIdentifier)
+        local enabled = info.isEnabled
+        local isActive = info.isActive
+        local startTime,duration = info.startTime, info.duration
+        if not isActive then
+            startTime = 0
+            duration = 0
+        elseif not enabled then
+            startTime = GetTime()
+            duration = 1e6
+        end
+        return startTime, duration, enabled, isActive
+    end
+end
+addon.GetSpellCooldown = GetSpellCooldown
 
 local GetSpellTexture = C_Spell and C_Spell.GetSpellTexture or _G.GetSpellTexture
 local GetSpellSubtext = C_Spell and C_Spell.GetSpellSubtext or _G.GetSpellSubtext
@@ -170,6 +187,10 @@ elseif gameVersion > 30000 then
 elseif gameVersion > 20000 then
     addon.game = "TBC"
     maxLevel = 70
+    addon.enabledLocale["zhCN"] = true
+elseif gameVersion >= 16000 and gameVersion < 20000 then
+    addon.game = "FOREVER"
+    maxLevel = 60
     addon.enabledLocale["zhCN"] = true
 else
     addon.game = "CLASSIC"
@@ -639,7 +660,13 @@ local function OnTrainer()
     local rank = {}
 
     for id = 1, i do
-        local n, r, cat = GetTrainerServiceInfo(id)
+        local n, cat, iconId,_,r = GetTrainerServiceInfo(id)
+        if type(iconId) ~= "number" then
+            --n, r, cat = GetTrainerServiceInfo(id)
+            r = cat
+            cat = iconId
+            iconId = nil
+        end
         if cat == "available" then
             names[id] = n
             rank[id] = r
@@ -647,10 +674,11 @@ local function OnTrainer()
     end
 
     ProcessSpells(names, rank)
-
     for spellName, spellRank in pairs(addon.skillList) do
         for id, name in pairs(names) do
-            if name == spellName then
+            --Handles a specific corner case with professions where the text shown is not equal to the spell name
+            local category = _G.GetTrainerServiceSkillLine(id)
+            if name == spellName or spellName == category then
                 local r = rank[id]
                 r = r and tonumber(r:match("(%d+)")) or 0
                 if (r <= spellRank or spellRank == 0) then
@@ -1676,7 +1704,7 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
         end)
     end
 
-    if addon.ui.v2.LaunchConfigurator then
+    if addon.ui and addon.ui.v2 and addon.ui.v2.LaunchConfigurator then
         addon.ui.v2.LaunchConfigurator(true)
     end
 
@@ -2339,7 +2367,7 @@ end
 addon.stepLogic = {}
 
 function addon.stepLogic.AldorScryerCheck(faction)
-    if addon.game == "CLASSIC" then return true end
+    if addon.game == "CLASSIC" or addon.game == "FOREVER" then return true end
     local _, _, _, _, _, aldorRep = addon.GetFactionInfoByID(932)
     local _, _, _, _, _, scryerRep = addon.GetFactionInfoByID(934)
 

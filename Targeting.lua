@@ -50,6 +50,20 @@ local pendingLeaderUpdate
 
 UnitName = addon.GetUnitName
 
+function addon.targeting:ConfigureTargetButton(button, targetName, kind, index, marking)
+    button:SetAttribute("unit", nil)
+    button:SetAttribute("type", "macro")
+    button:SetAttribute("macrotext", "/cleartarget\n/targetexact " .. targetName)
+
+    if addon.game == "FOREVER" and marking then
+        button:SetAttribute("type2", "macro")
+        button:SetAttribute("macrotext2", "/tm " .. addon.targeting:GetMarkerIndex(kind, index))
+    else
+        button:SetAttribute("type2", nil)
+        button:SetAttribute("macrotext2", nil)
+    end
+end
+
 function addon.targeting:Setup()
     if not addon.settings.profile.enableTargetMacro then DeleteMacro(self.macroName) end
 
@@ -459,26 +473,28 @@ function addon.targeting:PLAYER_TARGET_CHANGED()
 end
 
 function addon.targeting:GOSSIP_SHOW()
+    if not addon.settings.profile.enableFriendlyTargeting then return end
     local targetUnit = UnitName("target")
-
     if not targetUnit then return end
 
-    if not addon.settings.profile.enableFriendlyTargeting then return end
-
-    -- Return after first match, won't be an enemy and friendly target as the same step
+    local targetIndex
     for i, name in ipairs(targetList) do
         if name == targetUnit then
-            tremove(targetList, i)
-
-            self:UpdateTargetFrame("target")
-            self:UpdateMacro()
-
-            if addon.gameVersion < 120000 and not addon.IsSecretValue(UnitHealth("player")) and GetRaidTargetIndex("target") ~= nil then
-                SetRaidTarget("target", 0)
-            end
-            return
+            targetIndex = i
+            break
         end
     end
+
+    if not targetIndex then return end
+
+    tremove(targetList, targetIndex)
+    self:UpdateTargetFrame("target")
+    self:UpdateMacro()
+
+    if addon.game == "FOREVER" or addon.gameVersion >= 120000 then return end
+    local marker = GetRaidTargetIndex("target")
+    if not marker or addon.IsSecretValue(marker) then return end
+    SetRaidTarget("target", 0)
 end
 
 addon.targeting.MERCHANT_SHOW = addon.targeting.GOSSIP_SHOW
@@ -487,7 +503,7 @@ addon.targeting.QUEST_GREETING = addon.targeting.GOSSIP_SHOW
 addon.targeting.QUEST_COMPLETE = addon.targeting.GOSSIP_SHOW
 
 function addon.targeting.CheckTargetProximity()
-    if not shouldTargetCheck() or not addon.settings.profile.showTargetingOnProximity then return end
+    if not shouldTargetCheck() or not addon.settings.profile.showTargetingOnProximity or not addon.unitscanEnabled then return end
 
     if addon.settings.profile.enableEnemyTargeting then
         for _, name in pairs(unitscanList) do
@@ -951,10 +967,11 @@ function addon.targeting:UpdateMarker(kind, unitId, index)
     if IsInGroup() and not UnitIsGroupLeader('player') then
         if not addon.settings.profile.enableNonLeadMarking then return end
     end
-    if addon.gameVersion >= 120000 or addon.IsSecretValue(UnitHealth("player")) then return end
+    if addon.game == "FOREVER" or addon.gameVersion >= 120000 then return end
     local markerId = self:GetMarkerIndex(kind, index)
 
-    if GetRaidTargetIndex(unitId) == nil and GetRaidTargetIndex(unitId) ~= markerId then
+    local currentMarker = GetRaidTargetIndex(unitId)
+    if not addon.IsSecretValue(currentMarker) and currentMarker == nil and markerId then
         SetRaidTarget(unitId, markerId)
     end
 end
@@ -1172,7 +1189,8 @@ function addon.targeting:UpdateTargetFrame(selector)
             ht:SetBlendMode("ADD")
         end
 
-        btn:SetAttribute('macrotext', '/cleartarget\n/targetexact ' .. targetName)
+        self:ConfigureTargetButton(btn, targetName, enemyKind, enemyTargetButtonIndex,
+            addon.settings.profile.enableEnemyMarking)
 
         if btn.targetData and btn.targetData.name ~= targetName then
             btn.placeholder:SetTexture(mobPlaceholder)
@@ -1239,7 +1257,8 @@ function addon.targeting:UpdateTargetFrame(selector)
             ht:SetBlendMode("ADD")
         end
 
-        btn:SetAttribute('macrotext', '/cleartarget\n/targetexact ' .. targetName)
+        self:ConfigureTargetButton(btn, targetName, "friendly", friendlyTargetButtonIndex,
+            addon.settings.profile.enableTargetMarking)
 
         if btn.targetData and btn.targetData.name ~= targetName then
             btn.placeholder:SetTexture(targetPlaceholder)

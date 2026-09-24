@@ -3,12 +3,12 @@ if faction == "Alliance" then return end
 
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #xprate <1.99
 << Horde
 #name 12-17 The Barrens
-#displayname 14-18 The Barrens << Undead/Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
+#displayname 14-18 The Barrens << !Shaman !Hunter !Tauren !Skyborne
+#displayname 15-18 The Barrens << Paladin
 #version 11
 #group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
@@ -607,6 +607,7 @@ step << !Undead
 step << !Undead
     #completewith EnterRFC
     .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
+    .dungeon RFC
 step << !Undead
     #label EnterRFC
     .goto 1454/1,-4420.76,1815.80
@@ -3210,12 +3211,11 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #xprate <1.99
 << Horde
 #name 17-22 Stonetalon/Barrens/Ashenvale
-#displayname 18-22 Stonetalon/Barrens/Ashenvale << Undead/Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
+#displayname 18-22 Stonetalon/Barrens/Ashenvale << !Shaman !Hunter !Tauren !Skyborne
 #version 11
 #group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
@@ -6776,8 +6776,7 @@ step
 
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 << Horde
 #xprate >1.99
 #name 13-20 The Barrens
@@ -7551,6 +7550,7 @@ step << !Undead
 step << !Undead
     #completewith EnterRFC
     .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
+    .dungeon RFC
 step << !Undead
     #label EnterRFC
     .goto 1454/1,-4420.76,1815.80
@@ -10388,8 +10388,7 @@ step
     ]])
 
 RXPGuides.RegisterGuide([[
-#classic
-#tbc
+#forever
 #xprate >1.99
 << Horde
 #name 20-24 Stonetalon/Barrens
