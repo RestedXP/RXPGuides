@@ -240,7 +240,12 @@ end
 function addon.GetFlightHash(index,level)
     local x,y
     if level then
-        x,y = TaxiGetDestX(index,level), TaxiGetDestY(index,level)
+        local slot = TaxiGetNodeSlot and TaxiGetNodeSlot(index,level,false)
+        if slot and slot > 0 then
+            x,y = TaxiNodePosition(slot)
+        else
+            x,y = TaxiGetDestX(index,level), TaxiGetDestY(index,level)
+        end
     else
         x,y = TaxiNodePosition(index)
     end
