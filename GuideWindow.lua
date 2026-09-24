@@ -459,7 +459,7 @@ end
 RXPFrame:SetWidth(addon.width)
 RXPFrame:SetHeight(addon.height)
 RXPFrame:SetPoint("LEFT", 0, 35)
-RXPFrame:SetFrameStrata("BACKGROUND")
+RXPFrame:SetFrameStrata("LOW")   -- forever: was BACKGROUND, the lowest strata; anything overlapping it ate the click
 
 -- RXPFrame.CurrentStepFrame:SetBackdrop(backdrop)
 -- RXPFrame.CurrentStepFrame:SetBackdropColor(0.3,0.01,0.01)
@@ -1458,6 +1458,7 @@ Footer.cog:SetPoint("LEFT", Footer, "LEFT", 1, 1)
 Footer.cog:SetHighlightTexture(
     "Interface/MINIMAP/UI-Minimap-ZoomButton-Highlight", "ADD")
 Footer.cog:Show()
+Footer.cog:RegisterForClicks("LeftButtonUp")   -- forever: Midnight fires no OnClick without this (left only, as the close button)
 Footer.cog:SetScript("OnClick", function(self) RXPFrame.DropDownMenu() end)
 -- local buttonToggle = 0
 -- Footer.cog:HookScript("OnEnter", function(self) buttonToggle = GetTime() end)

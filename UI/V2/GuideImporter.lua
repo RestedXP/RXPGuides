@@ -296,6 +296,7 @@ function addon.ui.v2:RegisterRXPV2GuideImporter()
             type = Type
         }
         for method, func in pairs(methods) do widget[method] = func end
+        closebutton:RegisterForClicks("LeftButtonUp")   -- forever: Midnight fires no OnClick without this (left only, as the close button)
         closebutton:SetScript("OnClick", function() widget:Hide() end)
 
         return AceGUI:RegisterAsContainer(widget)
@@ -533,6 +534,7 @@ function addon.ui.v2:RegisterRXPV2GuideImporterButton()
         local frame = CreateFrame("Button", nil, UIParent, BackdropTemplateMixin and "BackdropTemplate")
         frame:Hide()
         frame:EnableMouse(true)
+        frame:RegisterForClicks("LeftButtonUp")   -- forever: Midnight fires no OnClick without this (left only, as the close button)
         frame:SetScript("OnClick", Button_OnClick)
         frame:SetScript("OnEnter", Control_OnEnter)
         frame:SetScript("OnLeave", Control_OnLeave)

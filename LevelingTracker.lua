@@ -1056,6 +1056,7 @@ function addon.tracker:CreateLevelSplits()
     f.title.cog:SetHighlightTexture("Interface/MINIMAP/UI-Minimap-ZoomButton-Highlight", "ADD")
     f.title.cog:Show()
 
+    f.title.cog:RegisterForClicks("LeftButtonUp")   -- forever: Midnight fires no OnClick without this (left only, as the close button)
     f.title.cog:SetScript("OnClick", function() addon.tracker:UpdateSplitsMenu(f.title.splitsMenuFrame, f.title.cog) end)
 
     f.title.text = f.title:CreateFontString(nil, "OVERLAY")

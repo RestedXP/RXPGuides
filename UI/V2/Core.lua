@@ -247,6 +247,7 @@ function addon.ui.v2:RegisterRXPV2Popup()
         for method, func in pairs(methods) do widget[method] = func end
 
         for _, button in ipairs(buttons) do
+            button:RegisterForClicks("LeftButtonUp")   -- forever: Midnight fires no OnClick without this (left only, as the close button)
             button:SetScript("OnClick", function(this)
                 local callback = widget.buttonCallbacks[this.index]
                 if callback then callback() end
@@ -1260,7 +1261,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         frame:SetMovable(true)
         frame:SetResizable(true)
         frame:EnableMouse(true)
-        frame:SetFrameStrata("BACKGROUND")
+        frame:SetFrameStrata("LOW")   -- forever: was BACKGROUND, the lowest strata; anything overlapping it ate the click
         frame:SetFrameLevel(100)
 
         local theme = addon.v2:GetTheme()
@@ -1314,6 +1315,8 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         local settingsButton = CreateFrame("Button", nil, guideNameFrame)
         settingsButton:SetPoint("RIGHT", guideNameFrame, "RIGHT", -16, 0)
         settingsButton:SetSize(21, 21)
+        settingsButton:SetFrameStrata("LOW")
+        settingsButton:SetFrameLevel(120)
 
         iconLogo:SetTexture(theme.guideWindow.logo)
         settingsButton:SetNormalTexture(theme.guideWindow.settingsIcon)
@@ -1323,11 +1326,14 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         settingsButton.rxpTooltipText = L("Open Settings")
         settingsButton:SetScript("OnEnter", GuideWindowButton_OnEnter)
         settingsButton:SetScript("OnLeave", GuideWindowButton_OnLeave)
+        settingsButton:RegisterForClicks("LeftButtonUp")   -- forever: Midnight fires no OnClick without this (left only, as the close button)
         settingsButton:SetScript("OnClick", function() addon.v2:ShowSettingsMenu() end)
 
         local guideSelectButton = CreateFrame("Button", nil, guideNameFrame)
         guideSelectButton:SetPoint("RIGHT", settingsButton, "LEFT", -7, 0)
         guideSelectButton:SetSize(21, 21)
+        guideSelectButton:SetFrameStrata("LOW")
+        guideSelectButton:SetFrameLevel(120)
         guideSelectButton:SetFrameLevel(guideNameFrame:GetFrameLevel() + 2)
         guideSelectButton:SetNormalTexture(theme.guideWindow.guideSelectIcon)
         guideSelectButton:SetPushedTexture(theme.guideWindow.guideSelectIcon)
@@ -1335,6 +1341,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         guideSelectButton.rxpTooltipText = L("Browse Guides")
         guideSelectButton:SetScript("OnEnter", GuideWindowButton_OnEnter)
         guideSelectButton:SetScript("OnLeave", GuideWindowButton_OnLeave)
+        guideSelectButton:RegisterForClicks("LeftButtonUp")   -- forever: Midnight fires no OnClick without this (left only, as the close button)
         guideSelectButton:SetScript("OnClick", function() addon.v2:ShowGuideSelectionMenu() end)
 
         local title = guideNameFrame:CreateFontString(nil, "OVERLAY")
@@ -2379,7 +2386,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
         frame:EnableMouse(true)
         frame:SetMovable(true)
         frame:SetResizable(true)
-        frame:SetFrameStrata("BACKGROUND")
+        frame:SetFrameStrata("LOW")   -- forever: was BACKGROUND, the lowest strata; anything overlapping it ate the click
         frame:SetFrameLevel(100)
 
         local theme = addon.v2:GetTheme()
@@ -2748,6 +2755,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         rowHoverFrame:EnableMouse(true)
         rowHoverFrame:SetScript("OnEnter", elementRowOnEnter)
         rowHoverFrame:SetScript("OnLeave", elementRowOnLeave)
+        rowHoverFrame:RegisterForClicks("LeftButtonUp")   -- forever: Midnight fires no OnClick without this (left only, as the close button)
         rowHoverFrame:SetScript("OnClick", elementRowOnClick)
         rowHoverFrame:Hide()
         row.hoverFrame = rowHoverFrame

@@ -4070,6 +4070,7 @@ function addon.settings:SetupMapButton()
     self.worldMapButton.menuFrame = CreateFrame("Frame", "$parent_MenuFrame",
                                                 self.worldMapButton,
                                                 "UIDropDownMenuTemplate")
+    self.worldMapButton:RegisterForClicks("LeftButtonUp")   -- forever: Midnight fires no OnClick without this (left only, as the close button)
     self.worldMapButton:SetScript("OnClick", function()
         EasyMenu(buildWorldMapMenu(), self.worldMapButton.menuFrame,
                  self.worldMapButton, 0, 0, "MENU")
