@@ -162,6 +162,7 @@ step << Druid
     .goto 2521,41.653,23.337
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xyton Silverwind::251373|r.
     .train 1126 >>Train |T136078:0|t[Mark of the Wild]
+    .skipgossipid 136805
     .target Xyton Silverwind::251373
 step << Mage
     .goto 2521,41.55,23.67
@@ -279,7 +280,6 @@ step << Alliance
     >>Use |T236219:0|t[Read Ley Line] near the Thendal Grove Ley Line
     *|cRXP_WARN_Found throughout the zone|r |cRXP_WARN_Use|r |T236219:0|t[Read Ley Line] |cRXP_WARN_near one to gain 100% Mana and Food Regen for 15 min instead of 15 sec|r.
     .complete 92597,1 --Use your Read Ley Line ability near the Thendal Grove Ley Line
-    .macro Read Ley Line,236219 >>/use Read Ley Line
     .usespell 1259705 << Alliance
 step << Horde
     #label UseRacialAbility
@@ -361,21 +361,40 @@ step
     .itemcount 247846,1
     .train 8613 >>Use |T4624731:0|t[Pelt Collecting for Beginners].
     .use 247846
-step << Alliance
-    .goto 2521,43.33,24.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
-    .turnin 92597 >>Turn in Reading the Ley Lines
-    .target Falorne Fallwind
 step << Rogue
     .goto 2521,43.74,24.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Akeri Duskblade|r.
     .turnin 92483 >>Turn in At Home in the Shadows
     .target Akeri Duskblade
+step << Alliance
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Falorne Fallwind|r
+    .goto 2521,43.33,24.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
+    .turnin 92597 >>Turn in Reading the Ley Lines
+    .target Falorne Fallwind
 step
     .goto 2521,43.44,24.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
     .turnin 92463 >>Turn in The Cirrusfly Queen
     .target Elatrell Featherlight
+step
+    #arrowtext Use\n|T4625105:0|t[Mining for Dummies]
+    .goto 2521,43.37,23.98
+    .itemcount 247840,1
+    .train 2575 >>Use |T4625105:0|t[Mining for Dummies].
+    .use 247840
+step
+    #arrowtext Use\n|T4624731:0|t[Wild Harvest]
+    .goto 2521,43.37,23.98
+    .itemcount 247841,1
+    .train 2366 >>Use |T4624731:0|t[Wild Harvest].
+    .use 247841
+step
+    #arrowtext Use\n|T4624731:0|t[Pelt Collecting for Beginners]
+    .goto 2521,43.37,23.98
+    .itemcount 247846,1
+    .train 8613 >>Use |T4624731:0|t[Pelt Collecting for Beginners].
+    .use 247846
 step << Warrior
     .train 6546,1
     .goto 2521,43.66,24.14
@@ -437,6 +456,9 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'ree Farsight::251376|r
     .train 13163 >>Train |T132159:0|t[Aspect of the Monkey]
     .train 1978 >>Train |T132204:0|t[Serpent Sting]
+    .skipgossipid 136808
+    .xp 4,1
+    .money <0.02
     .target Tai'ree Farsight::251376
 step
     .goto 2521,42.07,23.49
@@ -449,6 +471,9 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xyton Silverwind::251373|r.
     .train 8921 >>Train |T136096:0|t[Moonfire]
     .train 774 >>Train |T136081:0|t[Rejuvenation]
+    .skipgossipid 136805
+    .xp 4,1
+    .money <0.02
     .target Xyton Silverwind::251373
 step << Mage
     .goto 2521,41.55,23.67
@@ -549,11 +574,13 @@ step
     .train 2366,3
     .cast 2383 >>Cast |T133939:0|t[Find Herbs] to track nearby herbs
     *|cRXP_WARN_You can gather herbs along the way to start working toward 20 Herbalism for a later quest. This is optional, especially at launch, so do it at your own risk|r
+    .usespell 2383
 step
     #completewith Scrawny Usera
-    .train 2575,3
+    .train 2656,3
     .cast 2580 >>Cast |T136025:0|t[Find Minerals] to track nearby ore deposits
     *|cRXP_WARN_You can mine ore along the way to start working toward 20 Mining for a later quest. This is optional, especially at launch, so do it at your own risk|r
+    .usespell 2383
 step
     #completewith Scrawny Usera
     .train 8613,3
@@ -611,8 +638,11 @@ step
     .goto 2521,35.88,23.79,30,0
     .goto 2521,35.71,25.7,30,0
     .deathskip >>Die to mobs and resurrect at the graveyard
+    *|cRXP_WARN_If everything is dead, consider running out|r.
     .macro Sit,134400 >>/sit
     .subzoneskip 16673,1
+    .skipgossipid 96031
+    .skipgossipid 98031
     .target Spirit Healer
 step
     #requires Turn in Foul Matriarch
@@ -980,6 +1010,9 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naeluna Swiftmend::254081|r
     .train 467 >>Train |T136104:0|t[Thorns]
     .train 5177 >>Train |T136006:0|t[Wrath (Rank 2)]
+    .skipgossipid 136805
+    .xp 6,1
+    .money <0.02
     .target Naeluna Swiftmend::254081
 step
     .goto 2521,44.47,44.98
@@ -1018,11 +1051,20 @@ step << Hunter
 step << Warrior
     .isOnQuest 92517
     .isQuestNotComplete 92517
-    --subzone
+    .subzoneskip 16624,1
     .goto 2521,44.8,44.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r
-    .collect 2493,1
-    .target Tephri Thriceforged    
+    #arrowtext Talk to\n|cRXP_FRIENDLY_Tephri Thriceforged|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r and buy |T133053:0|t[Wooden Mallet].
+    .collect 2493,1 -- Wooden Mallet
+    .target Tephri Thriceforged
+step << Rogue
+    .isOnQuest 92517
+    .isQuestNotComplete 92517
+    .subzoneskip 16624,1
+    .goto 2521,44.8,44.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r and buy |T135321:0|t[Gladius].
+    .collect 2488,1 -- Gladius
+    .target Tephri Thriceforged
 step
     .goto 2521,43.850,43.840
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
@@ -1045,7 +1087,7 @@ step
 step
     #completewith BadwindBennicA
     >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
-    *|cRXP_WARN_Priotize these dropchance is bad|r
+    *|cRXP_WARN_Priotize them|r
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob Galestrider::251661
@@ -1083,6 +1125,13 @@ step
     .usespell 1259705 << Alliance
     .complete 92517,2 --|1/1 "Badwind" Bennic slain
     .mob "Badwind" Bennic::255534
+step << Alliance
+    .isOnQuest 92517
+    #arrowtext Use |T236219:0|t[Read Ley Line]\nnear the Ley Line
+    .goto 2521,50.59,33.51
+    .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
+    .cooldown spell,1259705,>0,1
+    .usespell 1259705 << Alliance
 step
     #loop
     .goto 2521,49.723,34.806,20,0
@@ -1096,12 +1145,6 @@ step
     .complete 92517,1 --|10/10 Highlands Bandit slain
     .complete 93319,1 --|10/10 Pilfered Windstone
     .mob Highlands Bandit::251918
-step << Alliance
-    .isOnQuest 92517
-    .goto 2521,50.59,33.51
-    .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
-    .cooldown spell,1259705,>0,1
-    .usespell 1259705 << Alliance
 -- step
 --     .isOnQuest 92517
 --     .hs >>Hearth to Shen'dar Village
@@ -1320,6 +1363,15 @@ step << Alliance
     .usespell 1259705 << Alliance
     .complete 94413,1 --6/6 Windshaper Novice Seer defeated
     .mob Windshaper Novice Seer
+step
+    .isOnQuest 92516
+    .isQuestNotComplete 92516
+    .subzoneskip 16623,1
+    #arrowtext Jump of the mountain\n Use |T132845:0|t[Walk on Air]
+    .goto 2521,36.44,50.93
+    .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] to fly towards the waypoint.
+    .cooldown spell,1259416,>0,1
+    .usespell 1259416
 step << Alliance
     #completewith HippogryphHarrassmentA
     #hidewindow
@@ -1330,6 +1382,7 @@ step << Alliance
     .goto 2521,34.52,52.76,40,0
     .goto 2521,35.12,54.08,40,0
     .goto 2521,35.58,53.08,40,0
+    .goto 2521,33.22,54.53,40,0
     .goto 2521,36.02,54.28,40,0
     .goto 2521,35.72,55.36,40,0
     .goto 2521,35.63,57.34,40,0
@@ -1571,7 +1624,7 @@ step
     .isQuestAvailable 92529
     .goto 2521,44.71,45.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veena Vericloud::254358|r
-    .vendor 254358 >>|cRXP_BUY_Buy up to three|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_as needed. These are 6-slot bags|r
+    .vendor 254358 >>|cRXP_BUY_Buy up to three|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_as needed.
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Druid
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage
     .target Veena Vericloud::254358
@@ -1591,15 +1644,6 @@ step
     .target Sania Silverstream::251904
     .aura 1254832 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sania Silverstream::251904|r
     .skipgossipid 135874
-step << Rogue
-    .goto 2521,43.15,43.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
-    .train 5277 >> Train |T136205:0|t[Evasion]
-    .train 6760 >> Train |T132292:0|t[Eviscerate (Rank 2)]
-    .skipgossipid 136810
-    .target Miriaan Mistblade
-    .money <0.04
-    .xp <6,1
 step << Shaman
     .goto 2521,43.454,44.872
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aarnor Galestrike::254082|r
@@ -1632,13 +1676,19 @@ step
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob Galestrider::251661
-step
+step << Horde
     #completewith LivingLightningA
+    >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
+    .complete 92515,1 --10/10 Prideclaw Pelt
+    .mob Prideclaw::251245
+step << Alliance
+    #completewith Skypriest Aanders
     >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step
     .isOnQuest 92529
+    .subzoneskip 16624,1
     .goto 2521,45.374,53.512,25,0
     .goto 2521,46.880,56.242
     .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
@@ -1650,7 +1700,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Missionary Jasaan::257065|r
     .target Missionary Jasaan::257065
     .turnin 92529 >>Turn in Falaath Village
-    .accept 92528 >>Accept Among the Faithfu
+    .accept 92528 >>Accept Among the Faithful
 step
     .isOnQuest 92528
     .subzoneskip 16636,1
@@ -1686,18 +1736,29 @@ step
     .macro Leave Vehicle,6656430 >>/leavevehicle
 step
     .isOnQuest 92528
+    .subzoneskip 16623,1
     .goto 2521,46.86,51.54,25,0
-    .goto 2521,46.44,51.34
+    .goto 2521,44.37,46.69
     .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
-step
-    .goto 2521,46.44,51.34,30,0
+step << Rogue
+    .isQuestAvailable 92528
     .goto 2521,44.37,46.69,30,0
-    .goto 2521,44.49,45.95,30,0
-    .goto 2521,44.93,46.85,30,0
-    .goto 2521,45.21,46.63,30,0
-    .goto 2521,45.04,46.23,15,0
+    .goto 2521,43.15,43.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
+    .train 5277 >>Train |T136205:0|t[Evasion]
+    .train 6760 >>Train |T132292:0|t[Eviscerate (Rank 2)]
+    .skipgossipid 136810
+    .target Miriaan Mistblade
+    .money <0.04
+    .xp <8,1
+step
+    .goto 2521,44.37,46.69,30,0 << !Rogue
+    .goto 2521,44.49,45.95,30,0 << !Rogue
+    .goto 2521,44.93,46.85,30,0 << !Rogue
+    .goto 2521,45.21,46.63,30,0 << !Rogue
+    .goto 2521,45.04,46.23,15,0 << !Rogue
     .goto 2521,45.67,45.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
     .turnin 92528 >>Turn in Among the Faithful
@@ -1722,6 +1783,8 @@ step
     .deathskip >>Die to the south west of Shen'dar Village and respawn at the Spirit Healer
     .macro Sit,134400 >>/sit
     .target Spirit Healer
+    .skipgossipid 96031
+    .skipgossipid 98031
 step
     #requires Western Watchtower
     .goto 2521,42.32,62.03
@@ -1750,13 +1813,14 @@ step
     *|cRXP_WARN_Make sure you have an empty bag slot|r.
     .complete 93927,3 --1/1 Raani's Favorite Feather
 step
-    .goto 2521,40.94,64.15,7,0
-    .goto 2521,41.11,64.03,7,0
-    .goto 2521,41.09,64.29,7,0
-    .goto 2521,40.95,64.25,7,0
-    .goto 2521,41.05,64.02,7,0
-    .goto 2521,41.08,64.27,7,0
-    .goto 2521,40.94,64.2,7,0
+    #label Skypriest Aanders
+    .goto 2521,40.94,64.15,4,0
+    .goto 2521,41.11,64.03,4,0
+    .goto 2521,41.09,64.29,4,0
+    .goto 2521,40.95,64.25,4,0
+    .goto 2521,41.05,64.02,4,0
+    .goto 2521,41.08,64.27,4,0
+    .goto 2521,40.94,64.2,4,0
     .goto 2521,41.08,64.39
     >>Ascend the spiral staircase, then kill |cRXP_ENEMY_Skypriest Aanders|r atop the tower.
     .complete 93927,2 --1/1 Skypriest Aanders slain
@@ -1814,7 +1878,11 @@ step
     .mob Al'Aketh Stormcaller
 step
     #label CommanderCyclasHeadA
-    .goto 2521,50.29,56.95
+    .goto 2521,49.44,57.12,20,0
+    .goto 2521,49.52,56.28,20,0
+    .goto 2521,49.87,55.95,20,0
+    .goto 2521,49.97,56.59,20,0
+    .goto 2521,50.38,56.93
     >>Kill |cRXP_ENEMY_Commander Cyclas|r. Loot him for |T134161:0|t[|cRXP_LOOT_Commander Cyclas's Head|r].
     .complete 92550,3 --1/1 Commander Cyclas's Head
 step
@@ -1852,6 +1920,8 @@ step
     #hidewindow
     #loop
     .goto 2521,42.885,63.422,35,0
+    .goto 2521,42.97,49.81,35,0
+    .goto 2521,44.12,50.46,35,0
     .goto 2521,38.283,42.288,35,0
     .goto 2521,42.055,40.938,35,0
     +1
@@ -1879,6 +1949,7 @@ step
     .turnin 97967 >>Turn in Camping 101: Fishing
     .target Fenn Fairweather::251992
 step
+    --might cause issues when really unlucky with the pelt or strider quest
     .isQuestAvailable 92551
     .isQuestNotComplete 97967
     .isQuestNotComplete 97965
@@ -2008,8 +2079,9 @@ step
     .isQuestAvailable 92551
     .goto 2521,44.71,45.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veena Vericloud::254358|r
-    .vendor 254358 >>Vendor Trash. If you need bags, |cRXP_BUY_buy up to three|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_as needed. These are 6-slot bags|r
+    .vendor 254358 >>Vendor Trash. If you need bags, |cRXP_BUY_buy up to three|r |T133634:0|t[Small Brown Pouches]
     *|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Druid/Mage
+    *|cRXP_BUY_Buy|r |T132382:0|t[200 Sharp Arrow] |cRXP_BUY_from him|r << Rogue
     .target Veena Vericloud::254358
 step
     .goto 2521,45.24,45.19
@@ -2039,6 +2111,7 @@ step
     .macro Sit,134400 >>/sit
     *|cRXP_WARN_The location is important as there are three possible spiritwalkers on that island.|r
     .skipgossipid 96031
+    .skipgossipid 98031
     .target Spirit Healer
 step
     .goto 2521,60.6,73.16,10,0
@@ -2047,6 +2120,8 @@ step
     *|cRXP_WARN_If you spot a Tornado, approach it to gain 40% increased movement speed for 5 minutes. The effect ends if you deal damage|r.
     .target Nyalah Brightfire::257006
     .accept 93317 >>Accept Crab Season
+    .skipgossipid 96031
+    .skipgossipid 98031
 step
     .isOnQuest 93317
     .itemcount 1971,<1
@@ -2210,6 +2285,8 @@ step << Alliance
     .deathskip >>Jump of the cliff
     .macro Sit,134400 >>/sit
     .subzoneskip 16638,1
+    .skipgossipid 96031
+    .skipgossipid 98031
     .target Spirit Healer
 step << Hunter
     .goto 2521,63.027,77.807
@@ -2611,6 +2688,7 @@ step << Alliance
     .isQuestNotComplete 92840
     .goto 2521,67.41,80.46
     .deathskip >>Jump of the cliff
+    .skipgossipid 96031
     .skipgossipid 98031
     .macro Sit,134400 >>/sit
     .subzoneskip 16638,1
@@ -2619,6 +2697,8 @@ step << Alliance
     #completewith next
     >>Kill |cRXP_ENEMY_Windsong Crawlers|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
+    .skipgossipid 98031
+    .skipgossipid 96031
     .mob Windsong Crawler
 -- step
 --     #completewith next
