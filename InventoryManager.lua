@@ -30,7 +30,7 @@ if C_Container and C_Container.GetContainerItemInfo then
     GetContainerItemInfo = function(...)
         local itemTable = C_Container.GetContainerItemInfo(...)
         if itemTable then
-            return itemTable.texture,
+            return itemTable.texture or itemTable.iconFileID,
                     itemTable.stackCount,
                     itemTable.isLocked,
                     itemTable.quality,
