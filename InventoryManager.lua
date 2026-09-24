@@ -817,12 +817,14 @@ local function ProcessJunk(sellWares,override)
             local _,stack,locked,quality = GetContainerItemInfo(bag, slot)
             local junk = IsJunk(id)
             if junk then
-                local price = select(11,GetItemInfo(id))
-                local value = price * stack
-                if isMerchant and value > 0 then
-                    table.insert(itemsToSell,{bag = bag, slot = slot, value = value, quality = quality})
+                local _, _, _, _, _, _, _, _, _, _, price = GetItemInfo(id)
+                if type(price) == "number" and type(stack) == "number" then
+                    local value = price * stack
+                    if isMerchant and value > 0 then
+                        table.insert(itemsToSell,{bag = bag, slot = slot, value = value, quality = quality})
+                    end
+                    totalCost = totalCost + value
                 end
-                totalCost = totalCost + value
             end
         end
     end
