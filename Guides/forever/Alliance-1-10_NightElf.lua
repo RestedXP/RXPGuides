@@ -2081,17 +2081,14 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elanaria|r
     .turnin 1683 >> Turn in Vorlus Vilehoof
 --	.accept 1686 >> Accept The Shade of Elura
-<<<<<<< HEAD
 step
     .goto 1457/1,2240.100,10121.000
     >>Go to the Darnassus Inn and use the |T133298:0|t[|cRXP_LOOT_Lunar Pendant|r]
     .complete 98067,3
     .use 279378
 step << Druid
-=======
 step << Druid NightElf
     #season 0
->>>>>>> e934d8aa516952781078b6a67b0b176222451289
     .goto 1457/1,2563.92,10179.040
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r on the middle level
     .turnin -5923 >> Turn in Heeding the Call
