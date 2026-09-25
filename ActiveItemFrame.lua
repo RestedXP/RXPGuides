@@ -279,9 +279,11 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
 
     f.onMouseDown = function()
         if addon.settings.profile.lockFrames and not IsAltKeyDown() then return end
+        if InCombatLockdown() and f:IsProtected() then return end
         f:StartMoving()
     end
     function f.onMouseUp()
+        if InCombatLockdown() and f:IsProtected() then return end
         f:StopMovingOrSizing()
         addon.settings:SaveFramePositions()
     end

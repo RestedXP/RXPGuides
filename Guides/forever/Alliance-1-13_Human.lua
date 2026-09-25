@@ -2282,8 +2282,8 @@ step
     >>Loot the |cRXP_PICK_Waterlogged Toolbox|r on the ground
     .complete 91733,3 -- Waterlogged Toolbox 1/1
     .goto 1429,77.3,86.8
---
-step << skip
+step
+    .group 3
     .goto 1429/0,-1119.800,-9931.300
     >>Kill |cRXP_ENEMY_Croaky|r. Loot him for |T134169:0|t[|cRXP_LOOT_Croaky's Head|r]
     .use 247826 >> |cRXP_WARN_Use|r |T134169:0|t[|cRXP_LOOT_Croaky's Head|r] |cRXP_WARN_to start the quest|r
@@ -2291,16 +2291,6 @@ step << skip
     .collect 247826,1,91740,1 -- Croaky's Head (1)
     .accept 91740 >>Accept Croaky's Head
     .mob Croaky
-step << skip
-    #completewith next
-    .subzone 798 >> Travel to Ridgepoint Tower
-step << skip
-    .isOnQuest 91740
-    .goto 1429/0,-1406.200,-9775.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merell Ross::248277|r
-    .target Merell Ross::248277
-    .turnin 91740 >>Turn in Croaky's Head
---
 step
     #loop
     .goto 1429,77.499,74.518,0
@@ -2416,6 +2406,10 @@ step
     .turnin 83 >> Turn in Red Linen Goods
     .target Sara Timberlain
     .isQuestComplete 83
+step
+    #optional
+    #completewith next
+    .subzone 798 >> Travel to Ridgepoint Tower
 step
     #optional
     .isQuestComplete 91740

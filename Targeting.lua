@@ -4,8 +4,8 @@ local fmt, tinsert, tremove, mmax, mmin, mrand = string.format, table.insert, ta
                                                  math.random
 local GetMacroInfo, CreateMacro, EditMacro, InCombatLockdown, GetNumMacros = GetMacroInfo, CreateMacro, EditMacro,
                                                                              InCombatLockdown, GetNumMacros
-local TargetUnit, UnitName, next, IsInRaid, UnitIsDead, UnitIsGroupLeader, IsInGroup, UnitOnTaxi, UnitIsPlayer,
-      UnitIsUnit = TargetUnit, UnitName, next, IsInRaid, UnitIsDead, UnitIsGroupLeader, IsInGroup, UnitOnTaxi,
+local TargetUnit, next, IsInRaid, UnitIsDead, UnitIsGroupLeader, IsInGroup, UnitOnTaxi, UnitIsPlayer,
+      UnitIsUnit = TargetUnit, next, IsInRaid, UnitIsDead, UnitIsGroupLeader, IsInGroup, UnitOnTaxi,
                    UnitIsPlayer, UnitIsUnit
 local GetRaidTargetIndex, SetRaidTarget = GetRaidTargetIndex, SetRaidTarget
 local GetTime, FlashClientIcon, PlaySound = GetTime, FlashClientIcon, PlaySound
@@ -48,20 +48,26 @@ local rareTargets = {}
 
 local pendingLeaderUpdate
 
-UnitName = addon.GetUnitName
+local UnitName = addon.GetUnitName
 
 function addon.targeting:ConfigureTargetButton(button, targetName, kind, index, marking)
-    button:SetAttribute("unit", nil)
-    button:SetAttribute("type", "macro")
-    button:SetAttribute("macrotext", "/cleartarget\n/targetexact " .. targetName)
+    local macrotext = "/cleartarget\n/targetexact " .. targetName
 
-    if addon.game == "FOREVER" and marking then
-        button:SetAttribute("type2", "macro")
-        button:SetAttribute("macrotext2", "/tm " .. addon.targeting:GetMarkerIndex(kind, index))
-    else
-        button:SetAttribute("type2", nil)
-        button:SetAttribute("macrotext2", nil)
+    -- Retail/Forever cannot SetRaidTarget automatically, leverage button
+    if (addon.game == "FOREVER" or addon.gameVersion >= 120000) and marking then
+        local markerIndex = self:GetMarkerIndex(kind, index)
+        if markerIndex then
+            -- Toggle Friendly markers
+            -- Keep Mob/Unitscan markers
+            -- >= 120000 requires ~N to prevent toggling
+            -- Forever requires ~N to prevent toggling
+            local markerPrefix = kind == "friendly" and "" or (addon.game == "FOREVER" and "!" or "~")
+            macrotext = macrotext .. "\n/tm " .. markerPrefix .. markerIndex
+        end
     end
+
+    button:SetAttribute("type", "macro")
+    button:SetAttribute("macrotext", macrotext)
 end
 
 function addon.targeting:Setup()
@@ -278,9 +284,7 @@ end
 function addon.targeting:CheckNameplate(nameplateID)
     if not nameplateID then return end
 
-    local unitName
-
-    unitName = UnitName(nameplateID)
+    local unitName = UnitName(nameplateID)
 
     if not unitName then return end
 
