@@ -689,7 +689,7 @@ step << !Undead
     .dungeon RFC
 step << Tauren
     #completewith RFCTurninsTB1
-    .goto Orgrimmar,45.120,63.889
+    .goto 1454/1,-4313.46,1676.25--c:Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Doras|r
     .fly Thunder Bluff >>Fly to Thunder Bluff
     .target Doras
@@ -2026,14 +2026,14 @@ step << !Tauren !Undead !Shaman !Warrior
     .target Innkeeper Gryshka
     .isOnQuest 6384
 step << !Tauren !Undead !Shaman !Warrior
-    .goto Orgrimmar,45.120,63.889
+    .goto 1454/1,-4313.46,1676.25--c:Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Doras|r
     .turnin 6385 >> Turn in Doras the Wind Rider Master
     .accept 6386 >> Accept Return to the Crossroads
     .target Doras
     .isOnQuest 6385
 step << !Tauren !Undead !Shaman !Warrior
-    .goto Orgrimmar,45.120,63.889
+    .goto 1454/1,-4313.46,1676.25--c:Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Doras|r
     .accept 6386 >> Accept Return to the Crossroads
     .target Doras
@@ -2279,7 +2279,7 @@ step
     .subzoneskip 380
 step
     #completewith FoodandWater2
-    .goto Orgrimmar,45.120,63.889
+    .goto 1454/1,-4313.46,1676.25--c:Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Doras|r
     .fly Crossroads >>Fly to The Crossroads
     .target Doras
@@ -7633,7 +7633,7 @@ step << !Undead
     .dungeon RFC
 step << Tauren
     #completewith RFCTurninsTB1
-    .goto Orgrimmar,45.120,63.889
+    .goto 1454/1,-4313.46,1676.25--c:Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Doras|r
     .fly Thunder Bluff >>Fly to Thunder Bluff
     .target Doras
@@ -9173,7 +9173,7 @@ step << !Tauren !Undead
     .isOnQuest 6384
 step << !Tauren !Undead
     #xprate <2.1
-    .goto Orgrimmar,45.120,63.889
+    .goto 1454/1,-4313.46,1676.25--c:Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Doras|r
     .turnin 6385 >> Turn in Doras the Wind Rider Master
     .accept 6386 >> Accept Return to the Crossroads
@@ -9181,7 +9181,7 @@ step << !Tauren !Undead
     .isOnQuest 6385
 step << !Tauren !Undead
     #xprate <2.1
-    .goto Orgrimmar,45.120,63.889
+    .goto 1454/1,-4313.46,1676.25--c:Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Doras|r
     .accept 6386 >> Accept Return to the Crossroads
     .target Doras
@@ -9473,7 +9473,7 @@ step
     .subzoneskip 380
 step
     #completewith FoodandWater2
-    .goto Orgrimmar,45.120,63.889
+    .goto 1454/1,-4313.46,1676.25--c:Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Doras|r
     .fly Crossroads >>Fly to The Crossroads
     .target Doras

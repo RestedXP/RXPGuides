@@ -107,7 +107,7 @@ step << Hunter
     .target Conservator Ilthalaine
 	.accept 3117 >> Accept Etched Sigil
 step << Druid
-	.goto Teldrassil,58.8,39.6
+	.goto 1438/1,820.68,10487.33--c:Teldrassil,58.8,39.6
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khardan|r
     >>|cRXP_WARN_Vendor all your gear and your staff|r! Buy a |T135139:0|t[|cRXP_LOOT_Short Staff|r] from him
 	.collect 2132 --Short Staff (1)
@@ -557,7 +557,7 @@ step << Hunter/Warrior/Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
     .accept 2438 >> Accept The Emerald Dreamcatcher
 step << Hunter
-    .goto Teldrassil,55.890,59.205
+    .goto 1438/1,968.85,9821.98--c:Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
     >>|cRXP_BUY_Buy and equip a|r |T135499:0|t[Hornwood Recurve Bow]
     >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_until your Quiver is full|r
@@ -567,7 +567,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.38
 step << Hunter
     #season 0
-    .goto Teldrassil,55.890,59.205
+    .goto 1438/1,968.85,9821.98--c:Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
     .vendor >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_until your Quiver is full|r
     .target Jeena Featherbow
@@ -669,7 +669,7 @@ step
     .target Zarrin
     .money <0.0094
 step
-    .goto Teldrassil,57.2,61.2
+    .goto 1438/1,902.15,9754.27--c:Teldrassil,57.2,61.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyoma|r
     +Buy 5 |T134059:0|t[Mild Spices] from her, use |T133971:0|t[|cRXP_FRIENDLY_Cooking|r] to cook |T132834:0|t[|cRXP_LOOT_Herb Baked Eggs|r] until you run out of |T132832:0|t[|cRXP_LOOT_Small Eggs|r]
     .collect 2678,5 --Mild Spices
@@ -729,7 +729,7 @@ step << Priest
     .target Sentinel Shaya
 step
     #label DenlanStart
-    .goto Teldrassil,60.900,68.489
+    .goto 1438/1,713.76,9506.90--c:Teldrassil,60.900,68.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
     .turnin 997 >> Turn in Denalan's Earth
     .target Denalan
@@ -749,7 +749,7 @@ step
     .complete 919,1 --Collect Timberling Sprout (x12)
     .mob Timberling
 step
-    .goto Teldrassil,60.900,68.489
+    .goto 1438/1,713.76,9506.90--c:Teldrassil,60.900,68.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
     .turnin 918 >> Turn in Timberling Seeds
     .target Denalan
@@ -877,7 +877,7 @@ step
     .target Tallonkai Swiftroot
     .accept 2459 >> Accept Ferocitas the Dream Eater
 step << Hunter
-    .goto Teldrassil,55.890,59.205
+    .goto 1438/1,968.85,9821.98--c:Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
     >>|cRXP_BUY_Buy and equip a|r |T135499:0|t[Hornwood Recurve Bow] |cRXP_BUY_if you can afford it (2s 85c), if not skip this step|r
     .collect 2506,1 --Collect Hornwood Recurve Bow
@@ -886,7 +886,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.38
 step << Hunter
     #season 0
-    .goto Teldrassil,55.890,59.205
+    .goto 1438/1,968.85,9821.98--c:Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
 	.vendor >>|cRXP_BUY_Buy up to 800|r |T132382:0|t[Rough Arrows]
     .target Jeena Featherbow
@@ -1518,7 +1518,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
     .turnin 6103 >> Turn in Training the Beast
 step << !Rogue
-    .goto Darnassus,40.6,89.6
+    .goto 1457/1,2508.68,9605.98--c:Darnassus,40.6,89.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Dalia Sunblade|r
     .accept 98067 >>Accept Eyes of the Sentinels
     .target Sentinel Dalia Sunblade
@@ -1564,7 +1564,7 @@ step
     .isQuestComplete 87288
 step << Hunter
 #xprate <1.99
-    .goto Teldrassil,55.890,59.205
+    .goto 1438/1,968.85,9821.98--c:Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
 	.vendor >> |cRXP_BUY_Buy 4 stacks of|r |T132382:0|t[Sharp Arrows]|cRXP_BUY_. Equip them as soon as you reach level 10|r
     .target Jeena Featherbow
@@ -1632,14 +1632,14 @@ step
     .mob Lasher Sproutling
 step
 	#xprate <1.5
-	.goto Teldrassil,60.900,68.489
+	.goto 1438/1,713.76,9506.90--c:Teldrassil,60.900,68.489
     .target Denalan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
     .turnin 931 >> Turn in The Shimmering Frond
     .turnin 930 >> Turn in The Glowing Fruit
 step
 	#xprate <1.5
-	.goto Teldrassil,60.900,68.489
+	.goto 1438/1,713.76,9506.90--c:Teldrassil,60.900,68.489
     .target Denalan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
 	.turnin 927 >> Turn in The Moss-twined Heart
@@ -1694,7 +1694,7 @@ step
     .accept 99073 >>Accept Easing Suffering
     .xp >10,1
 step << Druid
-    .goto Teldrassil,55.945,61.566
+    .goto 1438/1,966.05,9741.85--c:Teldrassil,55.945,61.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kal|r
 	.trainer >> Train your class spells
     .accept 5925 >> Accept Heeding the Call
@@ -1859,7 +1859,7 @@ step << Rogue
     .target Syurna
     .accept 2242 >> Accept Destiny Calls
 step << Rogue
-    .goto Darnassus,40.6,89.6
+    .goto 1457/1,2508.68,9605.98--c:Darnassus,40.6,89.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Dalia Sunblade|r
     .accept 98067 >>Accept Eyes of the Sentinels
     .target Sentinel Dalia Sunblade
@@ -1982,19 +1982,19 @@ step
     .turnin 99073 >>Turn in Easing Suffering
 step
     --@TODO check if coords are fine
-    .goto Teldrassil,35.0,39.2
+    .goto 1438/1,2032.50,10500.90--c:Teldrassil,35.0,39.2
     >>Kill |cRXP_ENEMY_Hatescreech|r. Loot her for her |T133288:0|t[|cRXP_LOOT_Amulet|r]
     .complete 98392,1
     .mob Hatescreech
 step
     --@TODO check if coords are fine
-    .goto Teldrassil,33.6,35.6
+    .goto 1438/1,2103.78,10623.08--c:Teldrassil,33.6,35.6
     >>Kill |cRXP_ENEMY_Windmistress Gaedress|r. Loot her for her |T133333:0|t[|cRXP_LOOT_Amulet|r]
     .complete 98392,2
     .mob Windmistress Gaedress
 step
     --@TODO check if coords are fine
-    .goto Teldrassil,34.8,28.6
+    .goto 1438/1,2042.68,10860.64--c:Teldrassil,34.8,28.6
     >>Kill |cRXP_ENEMY_Witchmother Arysa|r. Loot her for her |T133324:0|t[|cRXP_LOOT_Amulet|r]
     .complete 98392,3
     .mob Witchmother Arysa
@@ -2141,7 +2141,7 @@ step
     .complete 98067,2
     .use 279378
 step
-    .goto Darnassus,40.6,89.6
+    .goto 1457/1,2508.68,9605.98--c:Darnassus,40.6,89.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Dalia Sunblade|r
     .turnin 98067 >>Turn in Eyes of the Sentinels
     .target Sentinel Dalia Sunblade
@@ -2215,13 +2215,13 @@ step << Druid
     .target Dendrite Starblaze
     .accept 5931 >> Accept Back to Darnassus
 step << Druid
-	.goto Moonglade,44.2,45.2
+	.goto 1450/1,-2401.53,7795.77--c:Moonglade,44.2,45.2
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva|r
 	.fly Teldrassil >>Fly to Rutheran Village
 	.target Silva
 step
     #completewith next
-    .goto Teldrassil,55.95,89.88
+    .goto 1438/1,965.80,8780.95--c:Teldrassil,55.95,89.88
     .zone Darnassus >> Take the purple portal into Darnassus
 step << Druid
     #season 0

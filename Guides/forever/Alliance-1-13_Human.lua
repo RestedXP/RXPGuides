@@ -189,7 +189,7 @@ step << !Priest !Mage !Warlock !Rogue
     .target Godric Rothgar
 step << Rogue
     #season 0,1
-    .goto Elwynn Forest,47.240,41.900
+    .goto 1429/0,-104.21,-8909.39--c:Elwynn Forest,47.240,41.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Janos Hammerknuckle|r
     .vendor 78 >>|cRXP_BUY_Buy a|r |T135650:0|t[Dirk] |cRXP_BUY_from him if you can afford it|r
     .collect 2139,1 -- Dirk (1)
@@ -1057,7 +1057,7 @@ step << Paladin
     .target Brother Wilhelm
 step
     #requires DeleteOldDaggers << Rogue
-    .goto Elwynn Forest,42.140,67.254
+    .goto 1429/0,72.81,-9496.23--c:Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     .accept 47 >> Accept Gold Dust Exchange
     .target Remy "Two Times"
@@ -1071,7 +1071,7 @@ step << Hunter
     .money <0.0281
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.38
 step << Hunter
-    .goto Teldrassil,55.890,59.205
+    .goto 1438/1,968.85,9821.98--c:Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
     .vendor >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_until your Quiver is full|r
     .target Jeena Featherbow
@@ -1148,7 +1148,7 @@ step
     .goto 1429/0,338.47,-9889.69
     .target +"Auntie" Bernice Stonefield
     .accept 88 >> Accept Princess Must Die!
-	.goto Elwynn Forest,34.660,84.482
+	.goto 1429/0,332.43,-9894.99--c:Elwynn Forest,34.660,84.482
     .target +Ma Stonefield
 step << Warrior/Paladin/Rogue
     #optional
@@ -1301,7 +1301,7 @@ step
     .mob Kobold Miner
 step
     #label Lovers
-    .goto Elwynn Forest,29.840,85.997
+    .goto 1429/0,499.72,-9930.05--c:Elwynn Forest,29.840,85.997
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tommy Joe Stonefield|r
     .turnin 106 >> Turn in Young Lovers
     .accept 111 >> Accept Speak with Gramma
@@ -1500,7 +1500,7 @@ step
     #hardcore
     #optional
     #completewith Exchange
-    .goto Elwynn Forest,42.140,67.254,125 >> Return to Goldshire
+    .goto 1429/0,72.81,-9496.23,125 >> Return to Goldshire--c:Elwynn Forest,42.140,67.254
     .subzoneskip 87 --Goldshire
 step
     #softcore
@@ -1509,7 +1509,7 @@ step
     .target Spirit Healer
 step
     #label Exchange
-    .goto Elwynn Forest,42.140,67.254
+    .goto 1429/0,72.81,-9496.23--c:Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     >>|cRXP_WARN_Do NOT vendor the|r |T133581:0|t[Bag of Marbles] |cRXP_WARN_reward. This is an incredibly valuable item all the way through to level 60|r
     .turnin 47 >> Turn in Gold Dust Exchange
@@ -2715,7 +2715,7 @@ step << !Warlock
     .abandon 59 >> Abandon Cloth and Leather Armor
 
 step
-    .goto Elwynn Forest,42.140,67.254
+    .goto 1429/0,72.81,-9496.23--c:Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     .turnin 99129 >> Turn in A Man About a Murloc
     --.accept 99130 >> Accept An Enticing Offer
@@ -2729,7 +2729,7 @@ step << skip
     .complete 99130,2 -- Vial of Animal Blood 6/6
     .mob +Stonetusk Boar
 step << skip
-    .goto Elwynn Forest,42.140,67.254
+    .goto 1429/0,72.81,-9496.23--c:Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     .turnin 99130 >> Turn in An Enticing Offer
     .accept 99131 >> Accept Baited for Success
@@ -2786,7 +2786,7 @@ step
     .target Maybell Maclure
 step
     #label PrincessFinish
-    .goto Elwynn Forest,34.660,84.482
+    .goto 1429/0,332.43,-9894.99--c:Elwynn Forest,34.660,84.482
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r
     .turnin 88,1 >> Turn in Princess Must Die! << Rogue/Hunter
     .turnin 88,2 >> Turn in Princess Must Die! << Warrior/Paladin
@@ -3721,9 +3721,9 @@ step << skip -- for dungeon route only
     .bindlocation 1537
 step
     #ah
-    .goto Ironforge,25.800,75.500,-1
-    .goto Ironforge,24.200,74.600,-1
-    .goto Ironforge,23.800,71.800,-1
+    .goto 1455/0,-917.57,-4967.58,-1--c:Ironforge,25.800,75.500
+    .goto 1455/0,-904.92,-4962.83,-1--c:Ironforge,24.200,74.600
+    .goto 1455/0,-901.76,-4948.06,-1--c:Ironforge,23.800,71.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to an |cRXP_FRIENDLY_Ironforge Auctioneer|r
     >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[Cooking] |cRXP_BUY_with later|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
@@ -3750,9 +3750,9 @@ step
 step
     #ah
     #optional
-    .goto Ironforge,25.800,75.500,-1
-    .goto Ironforge,24.200,74.600,-1
-    .goto Ironforge,23.800,71.800,-1
+    .goto 1455/0,-917.57,-4967.58,-1--c:Ironforge,25.800,75.500
+    .goto 1455/0,-904.92,-4962.83,-1--c:Ironforge,24.200,74.600
+    .goto 1455/0,-901.76,-4948.06,-1--c:Ironforge,23.800,71.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to an |cRXP_FRIENDLY_Ironforge Auctioneer|r
     >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
     >>|cRXP_BUY_Buy the following items for a faster turn in at Loch Modan shortly:|r
