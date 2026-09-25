@@ -1486,6 +1486,7 @@ function addon:OnInitialize()
     addon.SetupArrow()
     addon:CreateActiveItemFrame()
     addon.comms:Setup()
+    if addon.inventoryManager then addon.inventoryManager:Setup() end
     addon.targeting:Setup()
     if addon.talents then addon.talents:Setup() end
     if addon.settings.profile.enableTracker then

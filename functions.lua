@@ -3795,7 +3795,7 @@ function addon.functions.money(self, ...)
     if not self.element.step.active then return end
     local money
     if self.element.useNetWorth and addon.inventoryManager then
-        money = addon.inventoryManager.GetNetWorth()
+        money = addon.inventoryManager:GetNetWorth()
     else
         money = GetMoney()
     end
@@ -7920,7 +7920,7 @@ function addon.functions.openitem(self,text,id)
     end
     local element = self.element
     if element.step.active then
-        addon.inventoryManager.itemsToOpen[element.id] = true
+        addon.inventoryManager:QueueItemToOpen(element.id)
     end
 end
 

@@ -183,6 +183,7 @@ local settingsDBDefaults = {
 
         enableAddonIncompatibilityCheck = true,
         enableVendorTreasure = true,
+        enableInventoryManager = true,
 
         -- Themes
         activeTheme = 'RXP Blue',
@@ -725,6 +726,17 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.5,
                         hidden = not addon.VendorTreasures
                     },
+                    enableInventoryManager = {
+                        name = fmt('%s %s', _G.ENABLE, _G.INVENTORY_TOOLTIP),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.51,
+                        hidden = not (addon.inventoryManager and addon.inventoryManager:IsBagManagerAvailable()),
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.inventoryManager:Setup()
+                        end
+                    },
                     showFlightTimers = {
                         name = L("Show Flight Timers"),
                         type = "toggle",
@@ -885,7 +897,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "header",
                         width = "full",
                         order = 6.1,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager:IsBagManagerAvailable()),
                     },
                     showJunkIcon = {
                         name = L("Show junk item indicator"), -- TODO locale
@@ -893,7 +905,10 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 6.11,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager:IsBagManagerAvailable()),
+                        disabled = function()
+                            return not self.profile.enableInventoryManager
+                        end,
                     },
                     autoDiscardItems = {
                         name = L("Discard junk items if bag is full"), -- TODO locale
@@ -901,7 +916,10 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 6.12,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager:IsBagManagerAvailable()),
+                        disabled = function()
+                            return not self.profile.enableInventoryManager
+                        end,
                     },
                     rightClickJunk = {
                         name = L("Toggle junk with modified right click"), -- TODO locale
@@ -909,7 +927,10 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 6.13,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager:IsBagManagerAvailable()),
+                        disabled = function()
+                            return not self.profile.enableInventoryManager
+                        end,
                     },
                     rightClickMod = {
                         name = L("Right Click Modifier"), -- TODO locale
@@ -921,14 +942,15 @@ function addon.settings:CreateAceOptionsPanel()
                                 self.profile.rightClickMod or 1
                         end,
                         disabled = function ()
-                            return not self.profile.rightClickJunk
+                            return not self.profile.enableInventoryManager or
+                                       not self.profile.rightClickJunk
                         end,
                         values = {
                             [1] = "CTRL",
                             [2] = "ALT",
                             [3] = "CTRL+ALT",
                         },
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager:IsBagManagerAvailable()),
                     },
                     autoSellJunk = {
                         name = L("Auto Sell Junk"), -- TODO locale
@@ -936,7 +958,10 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 6.15,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager:IsBagManagerAvailable()),
+                        disabled = function()
+                            return not self.profile.enableInventoryManager
+                        end,
                     },
                     maxSoulShards = {
                         name = L("Soul Shard Maximum"), -- TODO locale
@@ -950,7 +975,10 @@ function addon.settings:CreateAceOptionsPanel()
                         usage = L"You must input an integer number",
                         width = optionsWidth * 0.7,
                         order = 6.16,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook and addon.player.class == "WARLOCK" and addon.gameVersion < 40000),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager:IsBagManagerAvailable() and addon.player.class == "WARLOCK" and addon.gameVersion < 40000),
+                        disabled = function()
+                            return not self.profile.enableInventoryManager
+                        end,
                     },
                     sellKeybind = {
                         name = L("Delete Cheapest Junk Item Keybind"), -- TODO locale
@@ -958,31 +986,15 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "keybinding",
                         width = optionsWidth * 1.25,
                         order = 6.17,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
-                        get = function()
-                            local commandName = "CLICK RXPInventory_DeleteJunk:LeftButton"
-                            local i = addon.inventoryManager.bindingIndex
-                            local c,_,key = GetBinding(i or 1)
-                            if c == commandName then
-                                return key
-                            else
-                                for index = 1, GetNumBindings() do
-                                    local command,_,key1 = GetBinding(index)
-                                    if command == commandName then
-                                        addon.inventoryManager.bindingIndex = index
-                                        return key1
-                                    end
-                                end
-                            end
+                        hidden = not (addon.inventoryManager and addon.inventoryManager:IsBagManagerAvailable()),
+                        disabled = function()
+                            return not self.profile.enableInventoryManager
                         end,
-                        set = function(info, key)
-                            local i = addon.inventoryManager.bindingIndex
-                            local c = "CLICK RXPInventory_DeleteJunk:LeftButton"
-                            local command,_,key1 = GetBinding(i or 1)
-                            if command == c and key1 then
-                                SetBinding(key1)
-                            end
-                            SetBinding(key,c)
+                        get = function()
+                            return addon.inventoryManager:GetSellKeybind()
+                        end,
+                        set = function(_, key)
+                            addon.inventoryManager:SetSellKeybind(key)
                         end
                     },
                     resetDiscardItems = {
@@ -992,12 +1004,15 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "execute",
                         width = optionsWidth,
                         func = function()
-                            addon.inventoryManager.ResetJunk()
+                            addon.inventoryManager:ResetJunk()
                         end,
                         confirm = function()
                             return L("This action will unmark all junk items.\nAre you sure?")
                         end,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager:IsBagManagerAvailable()),
+                        disabled = function()
+                            return not self.profile.enableInventoryManager
+                        end,
                     },
                     talentsHeader = {
                         name = function()
