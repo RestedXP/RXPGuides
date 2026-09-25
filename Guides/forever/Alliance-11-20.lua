@@ -8140,17 +8140,16 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elsharin|r
     .trainer >> Train your class spells
     .target Elsharin
-step << Paladin/Priest !NightElf
+step << Paladin/Priest
     #completewith next
     .goto 1453/0,809.52,-8579.22,20 >> Travel to the Stormwind Cathedral
 step << Paladin
-    #label PalTrainer
     .goto 1453/0,859.13,-8559.14,10,0
     .goto 1453/0,861.14,-8573.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
     .trainer >> Train your class spells
     .target Arthur the Faithful
-step << Priest !NightElf
+step << Priest
     .goto 1453/0,862.89,-8519.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r
     .trainer >> Train your class spells
@@ -8189,7 +8188,7 @@ step << Rogue
     .accept 2281 >> Accept Redridge Rendezvous
     .goto 1453/0,362.55,-8819.80
     .target Renzik "The Shiv"
-step << Warrior !NightElf
+step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r
     .goto 1453/0,358.25,-8728.28,15,0
     .goto 1453/0,302.6,-8685.53,15,0
@@ -8370,12 +8369,13 @@ step << !Human !Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
     .turnin 244 >> Turn in Encroaching Gnolls
     .target Deputy Feldon
-step << NightElf
+step
     #xprate <1.5
     .goto 1433/0,-2237.93,-9443.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
     .target Deputy Feldon
     .accept 246 >> Accept Assessing the Threat
+    .accept 98407 >>Accept Show of Force
 step
 .dungeon DM
     .goto 1433/0,-2164.56,-9213.10,8,0
@@ -8866,6 +8866,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
     .goto 1433/0,-2298.06,-9284.04
     .accept 20 >> Accept Blackrock Menace
+    .accept 98387 >>Accept Blackrock Blockade
     .target Marshal Marris
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
@@ -9027,6 +9028,17 @@ step
     .accept 246 >> Accept Assessing the Threat
 step
     #xprate <1.5
+    #completewith next
+	>>Kill |cRXP_ENEMY_Redridge Mongrels|r and |cRXP_ENEMY_Redridge Poachers|r
+    >>Kill |cRXP_ENEMY_Redridge Thrashers|r. Loot them for their |cRXP_LOOT_Spiked Collars|r
+    .complete 246,1 --Redridge Mongrel (10)
+    .mob +Redridge Mongrel
+    .complete 246,2 --Redridge Poacher (6)
+	.mob +Redridge Poacher
+    .complete 98407,1 --Spiked Collar (5)
+	.mob +Redridge Thrasher
+step
+    #xprate <1.5
     .goto 1433/0,-2031.48,-9556.25,45,0
     .goto 1433/0,-1955.07,-9637.63,45,0
     .goto 1433/0,-1813.97,-9679.9,45,0
@@ -9037,15 +9049,20 @@ step
     .mob Tarantula
 step
     #xprate <1.5
+    #loop
+    .goto 1433/0,-1913.800,-9490.601,50,0
     .goto 1433/0,-2211.01,-9773.870,45,0
     .goto 1433/0,-2276.79,-9759.11,45,0
     .goto 1433/0,-2508.20,-9620.68,45,0
-    .goto 1433/0,-2246.61,-9764.90
+    .goto 1433/0,-2246.61,-9764.90,45,0
 	>>Kill |cRXP_ENEMY_Redridge Mongrels|r and |cRXP_ENEMY_Redridge Poachers|r
+    >>Kill |cRXP_ENEMY_Redridge Thrashers|r. Loot them for their |cRXP_LOOT_Spiked Collars|r
     .complete 246,1 --Redridge Mongrel (10)
     .mob +Redridge Mongrel
     .complete 246,2 --Redridge Poacher (6)
 	.mob +Redridge Poacher
+    .complete 98407,1 --Spiked Collar (5)
+	.mob +Redridge Thrasher
 step
     .goto 1433/0,-2634.54,-9588.54
     >>Kill |cRXP_ENEMY_Murloc Shorestrikers|r and |cRXP_ENEMY_Murloc Minor Tidecallers|r. Loot them for their |cRXP_LOOT_Fins|r and |cRXP_LOOT_Sunfish|r
@@ -9062,17 +9079,35 @@ step
     .collect 1080,5,92,1
     .mob Dire Condor
 step
+    #completewith next
+    >>Loot the |cRXP_PICK_Grain Sacks|r on the ground for |cRXP_LOOT_Stolen Supplies|r
+    >>Loot the |cRXP_PICK_Weapon Racks|r and |cRXP_PICK_Stolen Weapons|r the ground
+    .complete 98387,1 -- Stolen Supplies (10)
+    .complete 98387,2 -- Stolen Weapon (8)
+step
     #label orcs
+    #loop
     >>Kill |cRXP_ENEMY_Blackrock Grunts|r and |cRXP_ENEMY_Blackrock Outrunners|r. Loot them for their |cRXP_LOOT_Axes|r
 	>>|cRXP_WARN_Be aware the |cRXP_ENEMY_Blackrock Outrunners|r will cast |T132149:0|t[Net] on you|r
     .goto 1433/0,-3177.25,-9718.85,60,0
     .goto 1433/0,-3224.57,-9782.42,60,0
     .goto 1433/0,-3259.74,-9566.82,60,0
     .goto 1433/0,-3092.80,-9694.82,60,0
-    .goto 1433/0,-3177.25,-9718.850
+    .goto 1433/0,-3177.25,-9718.85,60,0
     .complete 20,1 --Battleworn Axe (10)
     .mob Blackrock Grunt
 	.mob Blackrock Outrunner
+step
+    #loop
+    .goto 1433/0,-3177.25,-9718.85,60,0
+    .goto 1433/0,-3224.57,-9782.42,60,0
+    .goto 1433/0,-3259.74,-9566.82,60,0
+    .goto 1433/0,-3092.80,-9694.82,60,0
+    .goto 1433/0,-3177.25,-9718.85,60,0
+    >>Loot the |cRXP_PICK_Grain Sacks|r on the ground for |cRXP_LOOT_Stolen Supplies|r
+    >>Loot the |cRXP_PICK_Weapon Racks|r and |cRXP_PICK_Stolen Weapons|r the ground
+    .complete 98387,1 -- Stolen Supplies (10)
+    .complete 98387,2 -- Stolen Weapon (8)
 step
     #xprate <1.5
     .goto 1433/0,-2903.07,-9691.340
@@ -9110,6 +9145,7 @@ step
 	.target Marshal Marris
     .goto 1433/0,-2298.06,-9284.04
     .turnin 20 >> Turn in Blackrock Menace
+    .turnin 98387 >>Turn in Blackrock Blockade
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
 	.target Foreman Oslow
@@ -9178,6 +9214,7 @@ step
 	.target Deputy Feldon
     .goto 1433/0,-2237.93,-9443.60
     .turnin 246 >> Turn in Assessing the Threat
+    .turnin 98407 >>Turn in Show of Force
 step
     .goto 1433/0,-2634.54,-9588.54
     .xp 20 >> Grind until you are level 20
