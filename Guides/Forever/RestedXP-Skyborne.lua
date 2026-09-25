@@ -2228,7 +2228,7 @@ step
     .subzoneskip 16638,1
     .isQuestAvailable 93948
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
-    .vendor
+    .vendor >>Vendor trash
     .target Donaal Downbreeze::255940
     .goto 2521,62.180,72.616
     .skipgossipid 137078
@@ -2255,7 +2255,7 @@ step << Alliance
     .goto 2521,63.33,73.65,15,0
     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
     .cooldown spell,1259705,>0,1
-    .usespell 1259705 << Alliance
+    .usespell 1259705
 step << Alliance
     .subzoneskip 16638,1
     .isQuestAvailable 93948
@@ -2358,6 +2358,8 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iaadaria Bitterwind|r.
     .accept 92741 >>Accept Unwelcome Visitors
     .target Iaadaria Bitterwind
+
+--discovery block 1 start
 step << Alliance
     #completewith next
     >>Kill |cRXP_ENEMY_Skyhopper|r and/or vendor along the route.
@@ -2378,6 +2380,8 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale|r.
     .turnin 92709 >>Turn in A Grand Adventure
     .target Elaadrin Evengale
+--discovery block 1 end 
+
 step << Alliance
     .isOnQuest 92727
     .goto 2521,67.41,80.46
@@ -2463,7 +2467,7 @@ step << Alliance
     >>Carry |cRXP_FRIENDLY_Fillion Flamebreeze|r to safety. Avoid enemies along the way.
     .complete 92849,2 --1/1 Carry Fillion Flamebreeze to safety while avoiding enemies
     .skipgossipid 136430
-.mob Shriekling Fledgling
+    .mob Shriekling Fledgling
     .target Fillion Flamebreeze
 step << Alliance
     .goto 2521,52.064,69.396
@@ -2617,7 +2621,7 @@ step << Shaman
     .isOnQuest 97244
     .isQuestNotComplete 97244
     .goto 2521,50.8,89.6
-    .deathskip >>|cRXP_WARN(BETA: Ressurection Sickness is still bugged. Skip this step for now).|r Jump down to die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
+    .deathskip >>|cRXP_WARN(BETA: Ressurection Sickness is bugged. Skip this step for now).|r Jump down to die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
 step << Shaman
     .goto 2521,64.380,63.586
     >>Kill the |cRXP_ENEMY_Skypriest Faladiel::268602|r. Loot him for |T1:0|t[|cRXP_LOOT_Faladiel's Heart|r].
@@ -2626,7 +2630,7 @@ step << Shaman
 step << Shaman
     .isOnQuest 97244
     .goto 2521,62.384,64.393
-    .deathskip >>|cRXP_WARN(BETA: Ressurection Sickness is still bugged. Skip this step for now).|r Jump down to die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
+    .deathskip >>|cRXP_WARN(BETA: Ressurection Sickness is bugged. Skip this step for now).|r Jump down to die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
 step << Shaman
     .goto 2521,51.241,86.193
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Olariaan Swiftburn::268592|r.
@@ -2712,6 +2716,18 @@ step
     .turnin 92693 >>Turn in Standing Our Ground
     .accept 92703 >>Accept Deliver the News
     .target Aamelia Windfield:252800
+step << !Shaman
+    .isQuestAvailable 92703
+    .subzoneskip 16638
+    .hs >>Hearth to Valanaar
+step << Alliance
+    .isQuestAvailable 92703
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
+    .vendor >>Vendor trash
+    .target Donaal Downbreeze::255940
+    .goto 2521,62.180,72.616
+    .skipgossipid 137078
+    .collect 1179,15 >>Buy |T132815:0|t[Ice Cold Milk] << Mage/Druid
 step << Shaman
     .goto 2521,51.240,86.187
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Olariaan Swiftburn::268592|r.
@@ -2735,18 +2751,6 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sessaria Skystride::252382|r.
     .target Sessaria Skystride::252382
     .turnin 97257 >>Turn in Call of Fire
-step << !Shaman
-    .isQuestAvailable 92703
-    .subzoneskip 16638
-    .hs >>Hearth to Valanaar
-step << Alliance !Hunter
-    .subzoneskip 16638,1
-    .isQuestAvailable 92703
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
-    .target Donaal Downbreeze::255940
-    .goto 2521,62.180,72.616
-    .vendor >>Sell trash
-    .collect 1179,15 >>Buy |T132815:0|t[Ice Cold Milk] << Mage/Druid/Shaman
 step << Hunter
     .subzoneskip 16638,1
     .isQuestAvailable 92703
@@ -2781,6 +2785,26 @@ step << Warrior
     .target Seena Skybreaker
     .money <0.12
     .xp <10,1
+step << Alliance Druid
+    .isQuestAvailable 92850
+    #completewith next
+    .goto 2521,63.33,73.65,15,0
+    .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
+    .cooldown spell,1259705,>0,1
+    .usespell 1259705
+step << Alliance Druid
+    .subzoneskip 16638,1
+    .isQuestAvailable 92850
+    #completewith next
+    .goto 2521,63.33,73.65,15,0
+    .goto 2521,63.973,75.095,25 >>Go over the mountain
+    .cooldown spell,1259705,<0,1
+step << Horde Druid
+    .subzoneskip 16638,1
+    .isQuestAvailable
+    #completewith next
+    .goto 2521,63.33,73.65,15,0
+    .goto 2521,63.973,75.095,25 >>Go over the mountain
 step << Druid
     .goto 2521,63.983,75.093
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
@@ -2789,9 +2813,13 @@ step << Druid
 step << Druid
     .goto 2521,63.983,75.093
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
-    .trainer >>Train your spells.
+    .train 16689 >>Train |T136063:0|t[Nature's Grasp]
+    .train 1058 >>Train |T136081:0|t[Rejuvenation (Rank 2)]
+    .train 5232 >>Train |T136078:0|t[Mark of the Wild (Rank 2)]
+    .train 8924 >>Train |T136096:0|t[Moonfire (Rank 2)]
+    .skipgossipid 140781
     .target Lotheluum Starbreeze::252359
-    .money <0.16
+    .money <0.12
     .xp <10,1
 step << Rogue
     .goto 2521,59.9,72.48
@@ -2811,7 +2839,7 @@ step << Hunter
     .goto 2521,63.023,77.803
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anteleriaa Cloudgaze::252390|r.
     >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrow] |cRXP_BUY_until your Quiver is full|r
-    .vendor >>Sell trash
+    .vendor >>Vendor trash
     .target Anteleriaa Cloudgaze::252390
 step << Hunter
     .goto 2521,59.571,72.639
@@ -2848,17 +2876,20 @@ step << Alliance
     .goto 2521,66.26,79.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dondallion Whisperwind|r.
     .turnin 92850 >>Turn in The Missing Scholar
+    .accept 99260 >>Accept Fillion's Mission
     .target Dondallion Whisperwind
 step << Alliance
-    .goto 2521,66.63,79.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale|r.
+    .goto 2521,66.627,79.942
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
+    .target Elaadrin Evengale::252475
+    .turnin 99260 >>Turn in Fillion's Mission
     .accept 92840 >>Accept Catching Wind
-    .target Elaadrin Evengale
 step << Alliance
     .isOnQuest 92840
     .isQuestNotComplete 92840
     .goto 2521,67.41,80.46
     .deathskip >>Jump of the cliff
+    *|cRXP_WARN_|cRXP_WARN(BETA: Ressurection Sickness is bugged. Skip this step for now).|r
     .skipgossipid 96031
     .skipgossipid 98031
     .macro Sit,134400 >>/sit
@@ -2871,72 +2902,70 @@ step << Alliance
     .skipgossipid 98031
     .skipgossipid 96031
     .mob Windsong Crawler
-step << !Mage Alliance
+step << Alliance
+    #completewith next
+    #label Protect the Index
     .goto 2521,50.06,72.96,30,0
     .goto 2521,48.83,73.54,30,0
     .goto 2521,47.16,72.34,30,0
     .goto 2521,46.55,71.7,30,0
-    .goto 2521,46.52,70.33,30,0
-    .goto 2521,47.99,69.09
-    >>Use |T4094821:0|t[Index Esoteria] if another player has not already done so, then kill the incoming |cRXP_ENEMY_Windshaper Shamans|r.
-    *If another player completes within 100 yard radius you still get completion
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     .complete 92840,1 --1/1 Protect the Index
     .use 254584
-    .mob Windshaper Shaman
-step << Mage
-    #completewith next
-    #label Protect the Index Mage
-    .goto 2521,50.06,72.96,30,0
-    .goto 2521,48.83,73.54,30,0
-    .goto 2521,47.16,72.34,30,0
-    .goto 2521,46.55,71.7,30,0
-    .goto 2521,46.52,70.33,30,0
-    >>Use |T4094821:0|t[Index Esoteria] if another player has not already done so, then kill the incoming |cRXP_ENEMY_Windshaper Shamans|r.
-    .complete 92840,1 --1/1 Protect the Index
-    .mob Windshaper Shaman
-step << Mage
-    #completewith Protect the Index Mage
-    .goto 2521,47.99,69.09,40 >>Go Around the mountain
-step << Mage
-    #requires Protect the Index Mage
-    #hidewindow
-    #completewith Protect the Index Mage 2
+    .mob Windshaper Elementalist
+    .mob Windshaper Guardian
+step << Alliance
+    #completewith Protect the Index
+    .goto 2521,46.52,70.33,30 >>Go around the Mountain.
+step << Alliance
+    #requires Protect the Index
     #loop
-    .goto 2521,47.99,69.09,30,0
-    .goto 2521,48.5,68.2,30,0
-    +1
-step << Mage
-    #requires Protect the Index Mage
-    #completewith next
-    >>Use |T4094821:0|t[Index Esoteria] if another player has not already done so, then kill the incoming |cRXP_ENEMY_Windshaper Shamans|r.
-    *If another player completes within 100 yard radius you still get completion
+    .goto 2521,47.77,70.04,20,0
+    .goto 2521,47.32,68.68,30,0
+    .goto 2521,48.25,69,20,0
+    .goto 2521,48.68,69.06,20,0
+    .goto 2521,48.13,70.15,20,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     .complete 92840,1 --1/1 Protect the Index
-    .mob Windshaper Shaman
-step << Mage
-    #requires Protect the Index Mage
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Branch|r.
-    *|cRXP_WARN_You can do this in between Shamans spawning|r
-    .complete 93797,1 --1/1 Wind-Infused Bough
-step << Mage
-    #label Protect the Index Mage 2
-    >>Use |T4094821:0|t[Index Esoteria] if another player has not already done so, then kill the incoming |cRXP_ENEMY_Windshaper Shamans|r.
-    *If another player completes within 100 yard radius you still get completion
-    .complete 92840,1 --1/1 Protect the Index
-    .mob Windshaper Shaman
-step << Mage
-    .goto 2521,62.89,77.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belann Windwood|r.
-    .turnin 93797 >>Turn in Boughs in the Wind
-    .target Belann Windwood
+    .use 254584
+    .mob Windshaper Elementalist
+    .mob Windshaper Guardian
 step << Alliance
     .isOnQuest 92840
+    .isQuestComplete 92840
     .subzoneskip 16638
     .goto 2521,49.46,70.12,30,0
     .goto 2521,65.577,76.650
     .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
-step  << Alliance
+step << Alliance
+    .subzoneskip 16638
+    .isOnQuest 92840
+    .isQuestComplete 92840
+    .goto 2521,48.37,70.01
+    .deathskip >>Die to the monsters or jump of the cliff
+    *|cRXP_WARN_|cRXP_WARN(BETA: Ressurection Sickness is bugged. Skip this step for now).|r
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .macro Sit,134400 >>/sit
+    .subzoneskip 16638,1
+    .target Spirit Healer
+step << Mage
+    .goto 2521,48.59,67.77
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Branch|r.
+    .complete 93797,1 --1/1 Wind-Infused Bough
+step << Mage
+    #completewith next
+    >>Kill |cRXP_ENEMY_Skyhopper|r.
+    .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
+    .mob Skyhopper
+step << Mage
+    .goto 2521,62.89,77.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belann Windwood|r.
+    .turnin 93797 >>Turn in Boughs in the Wind
+    .target Belann Windwood
+step << Alliance
     #loop
     .goto 2521,61.4,74.76,40,0
     .goto 2521,62.61,76.14,40,0
@@ -3134,7 +3163,7 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daeann Steelwind::252479|r.
     .target Daeann Steelwind::252479
     .goto 2521,65.45,80.15
-    .vendor >>Sell trash
+    .vendor >>Vendor trash
     .skipgossipid 137531
 step
     .goto 2521,56.81,61.11
@@ -3195,14 +3224,14 @@ step << Alliance
     .isQuestAvailable 93317
     .goto 2521,60.64,72.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyalah Brightfire|r.
-    .vendor >>Sell Trash
+    .vendor >>Vendor trash
     .skipgossipid 137535
     .target Nyalah Brightfire
 step << Alliance
     .isQuestAvailable 93317
     .goto 2521,60.64,72.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyalah Brightfire|r.
-    .vendor >>Sell Trash
+    .vendor >>Vendor trash
     .skipgossipid 137535
     .target Nyalah Brightfire
 step << Alliance
@@ -3540,7 +3569,7 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daeann Steelwind::252479|r.
     .target Daeann Steelwind::252479
     .goto 2521,65.45,80.15
-    .vendor >>Sell trash
+    .vendor >>Vendor trash
     .skipgossipid 137531
 step << Warrior Alliance
     .isQuestAvailable 94003
