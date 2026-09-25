@@ -782,8 +782,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eleanor Shackleton|r
     .turnin 96607 >>Turn in The Great Outdoors
     .target Eleanor Shackleton
-    .isQuestComplete 96607
-    --.accept 96658 >>Accept Camping 101: Cooking
+    .accept 96658 >>Accept Camping 101: Cooking
     --.accept 97959 >>Accept Camping 101: Mining
 step
     .goto 1420/0,346.94,2258.950
@@ -911,6 +910,13 @@ step
     .turnin 8 >>Turn in A Rogue's Deal
     .target Innkeeper Renee
     .isOnQuest 8
+step
+    .goto 1420/0,243.200,2288.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William|r
+    .train 2550 >>Train Cooking
+    .turnin 96658 >>Turn in Camping 101: Cooking
+    .target William Pickman
+    .money <0.001
 step
     .goto 1420/0,236.68,2249.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretchen|r
@@ -1285,6 +1291,12 @@ step << Warlock
     .train 980 >> Train your class spells
     .target Rupert Boch
     .xp <8,1
+step
+    .goto 1420/0,243.200,2288.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William|r
+    .train 2550 >>Train Cooking
+    .turnin 96658 >>Turn in Camping 101: Cooking
+    .target William Pickman
 step << Rogue/Warrior
     .goto 1420/0,240.29,2246.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neela|r

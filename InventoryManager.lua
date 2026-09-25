@@ -332,11 +332,10 @@ function addon.inventoryManager:FindJunk(deleteItem)
                     if type(itemInfo) == "table" and not count then
                         count = itemInfo.stackCount
                     end
-                    count = count or stackMax
                     if stackMax and count and self:IsJunk(id,bag,slot) then
                         --local item_count = select(2, self.bagManager:GetContainerItemInfo(bag, slot))
                         price = price or 0
-                        value = count * price
+                        value = (stackMax + count) * price/2
                         if value < bestValue then
                             bestBag = bag
                             bestSlot = slot
