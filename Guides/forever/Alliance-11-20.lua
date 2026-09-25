@@ -3175,7 +3175,7 @@ step
     #optional
     .goto 1439/1,413.37,4818.17,0
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
-    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Ravage] |cRXP_WARN_an instant attack dealing 20-40 damage and knocking you down for 2 seconds|r
     .complete 1003,1 -- Grizzled Scalp (4)
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
@@ -3293,7 +3293,7 @@ step
     .goto 1439/1,338.70,4821.22,50,0
     .goto 1439/1,452.67,4684.98
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
-    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Ravage] |cRXP_WARN_an instant attack dealing 20-40 damage and knocking you down for 2 seconds|r
     .complete 1003,1 -- Grizzled Scalp (4)
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
@@ -8910,6 +8910,11 @@ step
 	.target Magistrate Solomon
     .accept 120 >> Accept Messenger to Stormwind
 step
+    .group
+    .goto 1433/0,-2208.600,-9243.500
+    >>Click the |cRXP_PICK_Wanted Poster|r
+    .accept 95999 >>Accept WANTED: Incinerator Gar'im
+step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dockmaster Baren|r
 	.target Dockmaster Baren
     .goto 1433/0,-2172.15,-9261.310
@@ -9079,8 +9084,18 @@ step
     .collect 1080,5,92,1
     .mob Dire Condor
 step
+    .group 4
+    .isOnQuest 95999
+    #sticky
+    #label IncineratorGarim
+    .waypoint 1433/0,-3261.400,-9824.700
+    >>Kill |cRXP_ENEMY_Incinerator Gar'im|r inside the cave. Loot him for the |cRXP_LOOT_Broken Staff of Incinerator Gar'im|r
+    >>|cRXP_WARN_Skip this step if you are unable to find a group for him|r
+    .complete 95999,1 -- Broken Staff of Incinerator Gar'im (1)
+    .mob Incinerator Gar'im
+step
     #completewith next
-    >>Loot the |cRXP_PICK_Grain Sacks|r on the ground for |cRXP_LOOT_Stolen Supplies|r
+    >>Loot the |cRXP_PICK_Grain Sacks|r and |cRXP_PICK_Meat Haunches|r on the ground for |cRXP_LOOT_Stolen Supplies|r
     >>Loot the |cRXP_PICK_Weapon Racks|r and |cRXP_PICK_Stolen Weapons|r the ground
     .complete 98387,1 -- Stolen Supplies (10)
     .complete 98387,2 -- Stolen Weapon (8)
@@ -9104,10 +9119,12 @@ step
     .goto 1433/0,-3259.74,-9566.82,60,0
     .goto 1433/0,-3092.80,-9694.82,60,0
     .goto 1433/0,-3177.25,-9718.85,60,0
-    >>Loot the |cRXP_PICK_Grain Sacks|r on the ground for |cRXP_LOOT_Stolen Supplies|r
+    >>Loot the |cRXP_PICK_Grain Sacks|r and |cRXP_PICK_Meat Haunches|r on the ground for |cRXP_LOOT_Stolen Supplies|r
     >>Loot the |cRXP_PICK_Weapon Racks|r and |cRXP_PICK_Stolen Weapons|r the ground
     .complete 98387,1 -- Stolen Supplies (10)
     .complete 98387,2 -- Stolen Weapon (8)
+step
+    #requires IncineratorGarim
 step
     #xprate <1.5
     .goto 1433/0,-2903.07,-9691.340
@@ -9152,6 +9169,14 @@ step
     .goto 1433/0,-2268.32,-9279.12
     .turnin 125 >> Turn in The Lost Tools
     .accept 89 >> Accept The Everstill Bridge
+step
+    #optional
+    .isQuestComplete 95999
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Solomon|r
+	.target Magistrate Solomon
+    .goto 1433/0,-2207.10,-9231.34,15,0
+    .goto 1433/0,-2221.65,-9218.60
+    .turnin 95999 >>Turn in WANTED: Incinerator Gar'im
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dockmaster Baren|r
 	.target Dockmaster Baren
@@ -10074,7 +10099,7 @@ step
     .goto 1439/1,338.70,4821.22,50,0
     .goto 1439/1,452.67,4684.98
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
-    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Ravage] |cRXP_WARN_an instant attack dealing 20-40 damage and knocking you down for 2 seconds|r
     .complete 1003,1 -- Grizzled Scalp (4)
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
@@ -10713,7 +10738,7 @@ step << Druid
 step
     #xprate <1.59
     #optional
-    #completewith TheryluneE
+    #completewith AshenvaleEnd
     .hs >> Hearth to Auberdine
 step
     .goto 1439/1,504.41,6402.39
@@ -10764,7 +10789,7 @@ step
     #optional
     .goto 1439/1,306.60,4784.11,0
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
-    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Ravage] |cRXP_WARN_an instant attack dealing 20-40 damage and knocking you down for 2 seconds|r
     .complete 1003,1
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
@@ -10917,7 +10942,7 @@ step
     #optional
     .goto 1439/1,306.60,4784.11,0
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
-    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Ravage] |cRXP_WARN_an instant attack dealing 20-40 damage and knocking you down for 2 seconds|r
     .complete 1003,1
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
@@ -11069,7 +11094,7 @@ step
     .goto 1439/1,338.70,4821.22,50,0
     .goto 1439/1,452.67,4684.98
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
-    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Ravage] |cRXP_WARN_an instant attack dealing 20-40 damage and knocking you down for 2 seconds|r
     .complete 1003,1 -- Grizzled Scalp (4)
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
