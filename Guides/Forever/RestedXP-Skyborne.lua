@@ -2831,18 +2831,6 @@ step << Alliance
     .skipgossipid 98031
     .skipgossipid 96031
     .mob Windsong Crawler
--- step
---     #completewith next
---     .goto 2521,50.92,69.35,30,0
---     .goto 2521,51.44,71.09,30,0
---     .goto 2521,49.59,73.49,30,0
---     .goto 2521,48.99,73.6,30,0
---     .goto 2521,46.78,72.07,30,0
---     .goto 2521,46.57,71.16,30,0
---     .goto 2521,46.55,69.98,30,0
---     >>Kill |cRXP_ENEMY_Windsong Crawlers|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
---     .complete 93317,1 --6/6 Windsong Crawler Meat
---     .mob Windsong Crawler
 step << !Mage Alliance
     .goto 2521,50.06,72.96,30,0
     .goto 2521,48.83,73.54,30,0
@@ -2895,32 +2883,6 @@ step << Mage
     *If another player completes within 100 yard radius you still get completion
     .complete 92840,1 --1/1 Protect the Index
     .mob Windshaper Shaman
--- step
---     #loop
---     .goto 2521,49.8,66.94,35,0
---     .goto 2521,49.41,65.09,35,0
---     .goto 2521,48.94,64.4,35,0
---     .goto 2521,50.4,61.61,35,0
---     .goto 2521,51.84,60.75,35,0
---     .goto 2521,54.44,57.58,35,0
---     .goto 2521,53.27,55.62,35,0
---     .goto 2521,51.94,59.23,35,0
---     .goto 2521,51.06,59.23,30,0
---     >>Kill |cRXP_ENEMY_Windsong Crawlers|r. Loot them for 6 |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
---     .complete 93317,1 --6/6 Windsong Crawler Meat
---     .mob Windsong Crawler
--- step
---     .isOnQuest 92840
---     .goto 2521,49.4,58.76
---     .deathskip >>Die and respawn at the Spirit Healer
---     .macro Sit,134400 >>/sit
---     .skipgossipid 96031
---     .target Spirit Healer
--- step
---     .goto 2521,60.64,72.66
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyalah Brightfire|r.
---     .turnin 93317 >>Turn in Crab Season
---     .target Nyalah Brightfire
 step << Mage
     .goto 2521,62.89,77.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belann Windwood|r.
