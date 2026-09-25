@@ -2606,7 +2606,7 @@ step << Shaman
     .isOnQuest 97244
     .isQuestNotComplete 97244
     .goto 2521,50.8,89.6
-    .deathskip >>Jump down to die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
+    .deathskip >>|cRXP_WARN(BETA: Ressurection Sickness is still bugged. Skip this step for now).|r Jump down to die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
 step << Shaman
     .goto 2521,64.380,63.586
     >>Kill the |cRXP_ENEMY_Skypriest Faladiel::268602|r. Loot him for |T1:0|t[|cRXP_LOOT_Faladiel's Heart|r].
@@ -2615,7 +2615,7 @@ step << Shaman
 step << Shaman
     .isOnQuest 97244
     .goto 2521,62.384,64.393
-    .deathskip >>Jump down to die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
+    .deathskip >>|cRXP_WARN(BETA: Ressurection Sickness is still bugged. Skip this step for now).|r Jump down to die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
 step << Shaman
     .goto 2521,51.241,86.193
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Olariaan Swiftburn::268592|r.
