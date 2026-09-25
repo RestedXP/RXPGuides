@@ -2475,7 +2475,7 @@ step << Alliance
     #completewith next
     #label Shriekling Matriarch
     .goto 2521,51.39,68.2,20,0
-    >>Kill |cRXP_ENEMY_Shriekling Matriarch|r. Loot it for |cRXP_LOOT_Shriekling Matriarch's Head|r.
+    >>Kill |cRXP_ENEMY_Shriekling Matriarch|r. Loot it for |T6119035:0|t[|cRXP_LOOT_Shriekling Matriarch's Head|r].
     .complete 92850,1 --1/1 Shriekling Matriarch's Head
     .mob Shriekling Matriarch
 step << Alliance
@@ -2484,15 +2484,24 @@ step << Alliance
 step << Alliance
     #requires Shriekling Matriarch
     .goto 2521,52.02,65.51
-    >>Kill |cRXP_ENEMY_Shriekling Matriarch|r. Loot it for |cRXP_LOOT_Shriekling Matriarch's Head|r.
+    >>Kill |cRXP_ENEMY_Shriekling Matriarch|r. Loot it for |T6119035:0|t[|cRXP_LOOT_Shriekling Matriarch's Head|r].
     .complete 92850,1 --1/1 Shriekling Matriarch's Head
     .mob Shriekling Matriarch
 step << Alliance
     .subzoneskip 16672,1
-    .goto 2521,52.35,66.57,30,0
-    .goto 2521,51.49,66.29,30,0
-    .goto 2521,51.04,66.65,30,0
+    .goto 2521,52.37,66.5,15,0
+    .goto 2521,51.75,66.33,15,0
+    .goto 2521,51.05,66.66,15,0
+    .goto 2521,51.16,67.53,15,0
+    .goto 2521,51.49,69.08,20,0
     .goto 2521,51.5,69.11,25 >>Leave the Cave
+step << Alliance
+    #completewith next
+    >>Kill |cRXP_ENEMY_Windsong Crawlers|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
+    .complete 93317,1 --6/6 Windsong Crawler Meat
+    .skipgossipid 98031
+    .skipgossipid 96031
+    .mob Windsong Crawler
 step
     .goto 2521,46.71,81.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
@@ -2512,8 +2521,9 @@ step
     .target Aamelia Windfield:252800
 step
     #completewith RipBanditsA
-    >>Use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies|r
+    >>Spam use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies|r
     >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Flutterfly Dust|r.
+    *|cRXP_WARN_If a Flutterfly doesn't fly away, use the swatter on it again|r
     .complete 92683,1 --5/5 Flutterfly Dust
     .mob Flutterfly::251622
     .use 253666
@@ -2545,6 +2555,7 @@ step
     .goto 2521,46.692,76.947,35,0
     >>Spam use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies|r
     >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Flutterfly Dust|r.
+    *|cRXP_WARN_If a Flutterfly doesn't fly away, use the swatter on it again|r
     .complete 92683,1 --5/5 Flutterfly Dust
     .mob Flutterfly::251622
     .use 253666
@@ -2622,11 +2633,29 @@ step << Shaman
     .target Olariaan Swiftburn::268592
     .turnin 97244 >>Turn in Call of Fire
     .accept 97245 >>Accept Call of Fire
+-- step -- version 1
+--     #loop
+--     .goto 2521,45.28,77.49,30,0
+--     .goto 2521,44.89,75.51,30,0
+--     .goto 2521,45.615,72.361,35,0
+--     .goto 2521,43.551,74.999,35,0
+--     .goto 2521,45.760,78.419,35,0
+--     >>Kill |cRXP_ENEMY_Bandit Highwaymen|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
+--     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
+step -- version 2
+    #completewith next
+    #label Bandit Highwaymen
+    >>Kill |cRXP_ENEMY_Bandit Highwaymen|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
+    .complete 92685,1 --7/7 Blood-Stained Bandit Mask
 step
-    #loop
-    .goto 2521,45.615,72.361,35,0
-    .goto 2521,43.551,74.999,35,0
-    .goto 2521,45.760,78.419,35,0
+    #completewith Bandit Highwaymen
+    .goto 2521,44.81,74.4,30 >>Make your way up the mountain
+step 
+    #requires Bandit Highwaymen
+    .goto 2521,45.32,73.11,30,0
+    .goto 2521,45.93,73.15,30,0
+    .goto 2521,45.05,72.35,30,0
+    .goto 2521,43.84,75.53,30,0
     >>Kill |cRXP_ENEMY_Bandit Highwaymen|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
 step << Shaman
@@ -2636,18 +2665,27 @@ step << Shaman
     *|cRXP_WARN_He knocks you back and receives additional fire damage.|r
     .complete 97245,1 --|1/1 Kuramaa's Mask
     .mob Kuramaa::268605
--- step
---     .isOnQuest 92685
--- --     .goto 2521,44.08,76.21,30,0
---     .goto 2521,47.511,78.490
---     .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] to fly towards the waypoint location.
---     *|cRXP_WARN_Make sure you are at 100% health before jumping|r
---     .cooldown spell,1259416,>0,1
---     .usespell 1259416
+step
+    #completewith next
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
+    *|cRXP_WARN_She may be moving between locations during a roleplay sequence. Check both spots|r.
+    .turnin 92685 >>Turn in The Hills Have Eyes
+    .accept 92693 >>Accept Standing Our Ground
+    .target Aamelia Windfield:252800
+step
+    .isOnQuest 92685
+    -- .subzoneskip 16626,1
+    .goto 2521,43.84,75.53,30,0
+    .goto 2521,44.06,76.19,15,0
+    .goto 2521,47.511,78.490
+    .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] |cRXP_WARN_in midair|r to fly towards the waypoint location. <<!Shaman
+    .cast 1259416 >>Return to the |cRXP_ENEMY_Highlands Bandit|r mountain, then jump and use |T132845:0|t[Walk on Air] |cRXP_WARN_while in midair|r to fly toward the waypoint. << Shaman
+    .cooldown spell,1259416,>0,1
+    .usespell 1259416
 step
     #loop
-    .goto 2521,47.511,78.490,10,0
-    .goto 2521,46.71,81.94,10,0
+    .goto 2521,47.511,78.490,30,0
+    .goto 2521,46.71,81.94,30,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
     *|cRXP_WARN_She may be moving between locations during a roleplay sequence. Check both spots|r.
     .turnin 92685 >>Turn in The Hills Have Eyes
@@ -2663,7 +2701,9 @@ step
 step
     .goto 2521,47.51,78.44
     >>Follow |cRXP_FRIENDLY_Aamelia Windfield|r. Wait for the roleplay.
+    *Get your Campfire buff during this
     .complete 92693,2 --1/1 Follow Aamelia and make your final stand
+    .use 279981
 step
     #loop
     .goto 2521,47.511,78.490,10,0
