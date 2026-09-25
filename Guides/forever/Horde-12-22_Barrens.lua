@@ -44,82 +44,82 @@ step << Tauren Shaman
     .turnin 840 >>Turn in Conscript of the Horde
     .accept 842 >>Accept Crossroads Conscription
     .target Kargal Battlescar
-step << Warrior !Undead
+step << Tauren Warrior
     #xprate <1.5
     #completewith next
     .goto 1413/1,-2902.79,-276.55,30,0
     .goto 1413/1,-3004.12,-298.17,30,0
     .goto 1413/1,-3110.52,-320.46,30 >>Travel to the top of the mountain
-step << Warrior !Undead
+step << Tauren Warrior
     #xprate <1.5
     .goto 1413/1,-3176.39,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thun'grim|r
     .turnin 1502 >>Turn in Thun'grim Firegaze
     .accept 1503 >>Accept Forged Steel
     .target Thun'grim Firegaze
-step << Warrior !Undead
+step << Tauren Warrior
     #xprate <1.5
     .goto 1413/1,-2955.48,-188.04
     >>Loot the |cRXP_PICK_Stolen Iron Chest|r for its |cRXP_LOOT_Forged Steel Bars|r
     .complete 1503,1 --Forged Steel Bars (1)
-step << Warrior !Undead
+step << Tauren Warrior
     #xprate <1.5
     #completewith next
     .goto 1413/1,-2902.79,-276.55,30,0
     .goto 1413/1,-3004.12,-298.17,30,0
     .goto 1413/1,-3110.52,-320.46,30 >>Travel to the top of the mountain
-step << Warrior !Undead
+step << Tauren Warrior
     #xprate <1.5
     .goto 1413/1,-3176.39,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thun'grim|r
     .turnin 1503 >>Turn in Forged Steel
     .target Thun'grim Firegaze
-step << !Shaman !Warrior/Undead
+step << !Tauren
     #softcore
     #completewith ThievesPickup
     .goto 1413/1,-2516.71,-590.71
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-step << !Shaman !Warrior/Undead
+step << !Tauren
     #hardcore
     #completewith ThievesPickup
     .subzone 380 >> Travel to The Crossroads
-step << !Shaman !Warrior/Undead
+step << !Tauren
     #softcore
     .goto 1413/1,-2672.76,-544.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
     .accept 870 >>Accept The Forgotten Pools
     .target Tonga Runetotem
-step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << Orc/Troll
     #hardcore
     .goto 1413/1,-2709.24,-403.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
     .accept 6365 >>Accept Meats to Orgrimmar
     .target Zargh
-step << !Shaman !Warrior/Undead
+step << !Tauren
     .goto 1413/1,-2670.74,-482.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
     .turnin 842 >>Turn in Crossroads Conscription << !Druid
     .accept 844 >>Accept Plainstrider Menace
     .target Sergra Darkthorn
     .isOnQuest 842
-step << !Shaman !Warrior/Undead
+step << !Tauren
     .goto 1413/1,-2670.74,-482.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
     .accept 844 >>Accept Plainstrider Menace
     .target Sergra Darkthorn
-step << !Shaman !Warrior/Undead
+step << !Tauren
     #hardcore
     .goto 1413/1,-2672.76,-544.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
     .accept 870 >>Accept The Forgotten Pools
     .target Tonga Runetotem
-step << !Shaman !Warrior/Undead
+step << !Tauren
     .goto 1413/1,-2595.75,-473.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
     .accept 871 >>Accept Disrupt the Attacks
     .accept 5041 >>Accept Supplies for the Crossroads
     .target Thork
-step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << Orc/Troll
     #hardcore
     .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
@@ -128,7 +128,7 @@ step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .turnin 6365 >>Turn in Meats to Orgrimmar
     .accept 6384 >>Accept Ride to Orgrimmar
     .target Devrak
-step << Undead
+step << Undead/Skyborne
     .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fp The Crossroads >> Get the The Crossroads flight path
@@ -139,14 +139,15 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
     .accept 1492 >>Accept Wharfmaster Dizzywig
     .accept 848 >>Accept Fungal Spores
-    .turnin 1358 >>Turn in Sample for Helbrim << Undead/Rogue/Mage/Priest/Warlock
+    .turnin 1358 >>Turn in Sample for Helbrim << !Tauren !Skyborne !Shaman !Hunter 
     .target Apothecary Helbrim
-    .isQuestAvailable 848
+    .isOnQuest 1358
 step
+    #optional << !Tauren !Skyborne !Shaman !Hunter 
     .goto 1413/1,-2589.67,-424.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
     .accept 1492 >>Accept Wharfmaster Dizzywig
-    .turnin 1358 >>Turn in Sample for Helbrim << Undead/Rogue/Mage/Priest/Warlock
+    .accept 848 >>Accept Fungal Spores
     .target Apothecary Helbrim
 step << Orc Hunter/Troll Hunter
     .goto 1413/1,-2556.23,-351.54
@@ -180,20 +181,20 @@ step << Tauren Hunter
     .itemcount 2511,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
-step << !Shaman !Warrior/Undead
+step << !Tauren
     #label ThievesPickup
     .goto 1413/1,-2639.32,-436.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazrog|r
     .accept 869 >>Accept Raptor Thieves
     .target Gazrog
-step << !Tauren !Shaman !Warrior/Undead
+step << !Tauren
     .goto 1413/1,-2645.40,-406.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >> Set your Hearthstone to Crossroads
     .target Innkeeper Boorand Plainswind
     .bindlocation 380
     .isQuestAvailable 1492
-step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << Orc/Troll
     #softcore
     .goto 1413/1,-2709.24,-403.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
@@ -206,7 +207,7 @@ step
     .complete 844,1 --Plainstrider Beak (7)
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
-step << !Tauren !Undead
+step << !Tauren !Undead !Skyborne
     #xprate <1.5 << !Hunter
     #completewith next
     #label DemonMountain
@@ -215,13 +216,13 @@ step << !Tauren !Undead
     .goto 1413/1,-2363.7,232.87,40,0
     .goto 1413/1,-2205.62,314.62,100 >> Travel to the top of the mountain
     .isOnQuest 924
-step << !Tauren !Undead
+step << !Tauren !Undead !Skyborne
     #xprate <1.5 << !Hunter
     #completewith next
     #requires DemonMountain
     .goto 1413/1,-2205.62,314.62,15 >> Go inside Dreadmist Den
     .isOnQuest 924
-step << !Tauren !Undead
+step << !Tauren !Undead !Skyborne
     #xprate <1.5 << !Hunter
     #label DemonSeed
     .goto 1413/1,-2238.04,324.08
@@ -230,15 +231,6 @@ step << !Tauren !Undead
     .collect 4986,1,924 --Collect Flawed Power Stone
     .complete 924,1 --Destroy the Demon Seed (1)
     .isOnQuest 924
-step << skip
-    #xprate <1.5 << !Hunter
-    #completewith DisruptTheAttacks
-    .goto 1413/1,-2198.52,303.14,40,0
-    .goto 1413/1,-2363.7,232.87,40,0
-    .goto 1413/1,-2477.19,136.26,40,0
-    .goto 1413/1,-2554.2,80.18,100 >> Travel down the mountain where you came from
-    .isQuestComplete 924
---XX !Tauren !Undead
 step << Shaman
     #sticky
     #label FireTar2
@@ -261,7 +253,8 @@ step
     .mob +Razormane Hunter
 step
     .goto 1413/1,-3021.35,-231.960
-    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
+    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest
+    >>|cRXP_WARN_You can get it later if it's not there|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step
@@ -286,36 +279,6 @@ step
     .mob +Razormane Thornweaver
     .complete 871,3 --Razormane Hunter (3)
     .mob +Razormane Hunter
-step << Warrior !Undead
-    #xprate >1.49
-    #completewith next
-    .goto 1413/1,-2902.79,-276.55,30,0
-    .goto 1413/1,-3004.12,-298.17,30,0
-    .goto 1413/1,-3110.52,-320.46,30 >>Travel to the top of the mountain
-step << Warrior !Undead
-    #xprate >1.49
-    .goto 1413/1,-3176.39,-437.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thun'grim|r
-    .turnin 1502 >>Turn in Thun'grim Firegaze
-    .accept 1503 >>Accept Forged Steel
-    .target Thun'grim Firegaze
-step << Warrior !Undead
-    #xprate >1.49
-    .goto 1413/1,-2955.48,-188.04
-    >>Loot the |cRXP_PICK_Stolen Iron Chest|r for its |cRXP_LOOT_Forged Steel Bars|r
-    .complete 1503,1 --Forged Steel Bars (1)
-step << Warrior !Undead
-    #xprate >1.49
-    #completewith next
-    .goto 1413/1,-2902.79,-276.55,30,0
-    .goto 1413/1,-3004.12,-298.17,30,0
-    .goto 1413/1,-3110.52,-320.46,30 >>Travel to the top of the mountain
-step << Warrior !Undead
-    #xprate >1.49
-    .goto 1413/1,-3176.39,-437.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thun'grim|r
-    .turnin 1503 >>Turn in Forged Steel
-    .target Thun'grim Firegaze
 step << !Undead !Tauren
     #sticky
     #completewith EnterRFC
@@ -344,15 +307,21 @@ step
     .complete 844,1 --Plainstrider Beak (7)
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
-step << Shaman Troll/Shaman Orc/Warrior Orc/Warrior Troll
-    .goto 1413/1,-2709.24,-404.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
-    .turnin 6386 >> Turn in Return to the Crossroads
-    .target Zargh
-    .isOnQuest 6386
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r and |cRXP_FRIENDLY_Thork|r
     .turnin 842 >>Turn in Crossroads Conscription << Tauren Shaman
+    .turnin 844 >>Turn in Plainstrider Menace
+    .accept 845 >>Accept The Zhevra
+    .target +Sergra Darkthorn
+    .goto 1413/1,-2670.74,-482.61
+    .turnin 871 >>Turn in Disrupt the Attacks
+    .accept 872 >>Accept The Disruption Ends
+    .target +Thork
+    .goto 1413/1,-2595.75,-473.15
+    .isOnQuest 842 << Tauren Shaman
+step << Tauren Shaman
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r and |cRXP_FRIENDLY_Thork|r
     .turnin 844 >>Turn in Plainstrider Menace
     .accept 845 >>Accept The Zhevra
     .target +Sergra Darkthorn
@@ -367,10 +336,12 @@ step
     >>|cRXP_WARN_He is at the top of the tower|r
     .accept 867 >>Accept Harpy Raiders
     .target Darsok Swiftdagger
-step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << Orc/Troll
     #softcore
     .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    >>|cRXP_WARN_Do NOT fly to Orgrimmar!|r
+    .fp The Crossroads >> Get the The Crossroads flight path
     .turnin 6365 >>Turn in Meats to Orgrimmar
     .accept 6384 >>Accept Ride to Orgrimmar
     .target Devrak
@@ -392,13 +363,6 @@ step << Tauren Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
     .target Uthrok
-step << Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
-    .goto 1413/1,-2645.40,-406.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
-    .home >> Set your Hearthstone to Crossroads
-    .target Innkeeper Boorand Plainswind
-    .bindlocation 380
-    .isQuestAvailable 1492
 step << Orc Warrior/Troll Warrior/Tauren Warrior
     #sticky
     #completewith KreenigSnarlsnout
@@ -419,7 +383,8 @@ step << !Undead !Tauren
 step << Tauren
     .goto 1413/1,-3021.35,-231.96,20,0
     .goto 1413/1,-3029.46,261.25
-    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
+    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest
+    >>|cRXP_WARN_You can get it later if it's not there|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
     .dungeon RFC
@@ -7359,7 +7324,8 @@ step << !Undead !Tauren
 step << Tauren
     .goto 1413/1,-3021.35,-231.96,20,0
     .goto 1413/1,-3029.46,261.25
-    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
+    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest
+    >>|cRXP_WARN_You can get it later if it's not there|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
     .dungeon RFC
