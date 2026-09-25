@@ -36,7 +36,7 @@ local Footer = CreateFrame("Frame", "$parentGuideName", RXPFrame,
                            BackdropTemplate)
 local ScrollFrame = CreateFrame("ScrollFrame", "$parentScrollFrame",
                                 BottomFrame, "UIPanelScrollFrameTemplate")
-local CurrentStepFrame = CreateFrame("Frame", nil, RXPFrame)
+local CurrentStepFrame = CreateFrame("Frame", "RXPCurrentStepFrame", UIParent)
 local ScrollChild = CreateFrame("Frame", "$parent_steps", BottomFrame,
                                 BackdropTemplate)
 local MenuFrame = CreateFrame("Frame", "RXPG_MenuFrame", UIParent,
@@ -45,6 +45,32 @@ RXPFrame.BottomFrame = BottomFrame
 RXPFrame.GuideName = GuideName
 RXPFrame.Footer = Footer
 RXPFrame.CurrentStepFrame = CurrentStepFrame
+addon.enabledFrames["RXPCurrentStepFrame"] = CurrentStepFrame
+CurrentStepFrame:SetMovable(true)
+CurrentStepFrame:SetClampedToScreen(true)
+function CurrentStepFrame:IsFeatureEnabled()
+    if addon.v2 and addon.v2:IsGuideWindowEnabled() then return false, false end
+
+    return not addon.settings.profile.hideGuideWindow, false
+end
+
+function addon.ReanchorFrameToScreen(frame, point)
+    local left, bottom, top = frame:GetLeft(), frame:GetBottom(), frame:GetTop()
+    if not left or not bottom or not top then return false end
+
+    local width = frame:GetWidth()
+
+    frame:ClearAllPoints()
+    if point == "TOPLEFT" then
+        frame:SetPoint("TOPLEFT", UIParent, "BOTTOMLEFT", left, top)
+    else
+        frame:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMLEFT", left, bottom)
+    end
+
+    if width and width > 1 then frame:SetWidth(width) end
+
+    return true
+end
 RXPFrame.ScrollFrame = ScrollFrame
 RXPFrame.ScrollChild = ScrollChild
 RXPFrame.MenuFrame = MenuFrame
@@ -343,38 +369,107 @@ function addon.v2:UpdateActiveStepEventWatchers(steps)
     watcher:SetElements(watcherStep, true)
 end
 
-local function SetStepFrameAnchor()
+local function CurrentStepGrowPoint()
+    if addon.settings.profile.anchorOrientation == "bottom" then return "TOPLEFT" end
+
+    return "BOTTOMLEFT"
+end
+
+local function SyncCurrentStepFrameWidth()
+    if CurrentStepFrame.isMoving or not CurrentStepFrame.independent then return end
+
+    local width = GuideName:GetWidth()
+    if width and width > 20 then CurrentStepFrame:SetWidth(width) end
+end
+
+local function CurrentStepFrameIsPlaced()
+    if CurrentStepFrame.independent or CurrentStepFrame.isMoving then return true end
+
+    local _, relativeTo = CurrentStepFrame:GetPoint(1)
+    if relativeTo == UIParent then
+        CurrentStepFrame.independent = true
+        return true
+    end
+end
+
+local function DetachCurrentStepFrame(retries)
+    retries = (retries or 0) + 1
+    CurrentStepFrame.rxpDetachPending = nil
+    if addon.v2:IsGuideWindowEnabled() or CurrentStepFrame.isMoving then return end
+
+    if not CurrentStepFrame:GetLeft() then
+        if retries < 10 then
+            CurrentStepFrame.rxpDetachPending = true
+            C_Timer.After(0, function() DetachCurrentStepFrame(retries) end)
+        end
+        return
+    end
+
+    if addon.ReanchorFrameToScreen(CurrentStepFrame, CurrentStepGrowPoint()) then
+        CurrentStepFrame.independent = true
+        SyncCurrentStepFrameWidth()
+        if addon.settings and addon.settings.SaveFramePositions then
+            addon.settings:SaveFramePositions()
+        end
+    end
+end
+
+local function CurrentStepMouseDown(_, button)
+    if button ~= "LeftButton" or addon.v2:IsGuideWindowEnabled() then return end
+    if addon.settings.profile.lockFrames then return end
+
+    local frame = CurrentStepFrame
+    addon.ReanchorFrameToScreen(frame, CurrentStepGrowPoint())
+    frame.independent = true
+    frame.isMoving = true
+    frame:StartMoving()
+end
+
+local function CurrentStepMouseUp(_, button)
+    if button and button ~= "LeftButton" then return end
+
+    local frame = CurrentStepFrame
+    if not frame.isMoving then return end
+
+    frame:StopMovingOrSizing()
+    frame.isMoving = false
+    if addon.ReanchorFrameToScreen(frame, CurrentStepGrowPoint()) then
+        frame.independent = true
+    end
+    SyncCurrentStepFrameWidth()
+    addon.settings:SaveFramePositions()
+end
+
+local function SetStepFrameAnchor(forceDock)
     if addon.v2:IsGuideWindowEnabled() then
-        addon.v2:SetActiveStepsFrameAnchor()
+        addon.v2:SetActiveStepsFrameAnchor(nil, forceDock)
         return
     end
 
     local frame = CurrentStepFrame
+    frame.anchor = addon.settings.profile.anchorOrientation == "bottom" and "BOTTOM" or "TOP"
+
+    if not forceDock and CurrentStepFrameIsPlaced() then
+        SyncCurrentStepFrameWidth()
+        addon:SortTimers()
+        return
+    end
+
     local scale = RXPFrame:GetScale()
-    -- local bars = RXPFrame.BarContainer
     local function SetTop()
         frame:ClearAllPoints()
         frame:SetPoint("BOTTOMLEFT", GuideName, "TOPLEFT", 0, 2)
         frame:SetPoint("BOTTOMRIGHT", GuideName, "TOPRIGHT", 0, 2)
-        --[[if bars then
-            bars:ClearAllPoints()
-            bars:SetPoint("TOPLEFT",RXPFrame,"BOTTOMLEFT",7,-5)
-            bars:SetPoint("TOPRIGHT",RXPFrame,"BOTTOMRIGHT",-7,-5)
-        end]]
         frame.anchor = "TOP"
     end
     local function SetBottom()
         frame:ClearAllPoints()
         frame:SetPoint("TOPLEFT", RXPFrame, "BOTTOMLEFT", 3, 0)
         frame:SetPoint("TOPRIGHT", RXPFrame, "BOTTOMRIGHT", -3, 0)
-        --[[if bars then
-            bars:ClearAllPoints()
-            bars:SetPoint("TOPLEFT",CurrentStepFrame,"BOTTOMLEFT",3,0)
-            bars:SetPoint("TOPRIGHT",CurrentStepFrame,"BOTTOMRIGHT",-3,0)
-        end]]
         frame.anchor = "BOTTOM"
     end
 
+    frame.independent = false
     if addon.settings.profile.anchorOrientation == "top" then
         SetTop()
         if (frame:GetTop() * scale > GetScreenHeight()) then SetBottom() end
@@ -386,6 +481,10 @@ local function SetStepFrameAnchor()
     end
     addon:SortTimers()
 
+    if frame.rxpDetachPending then return end
+
+    frame.rxpDetachPending = true
+    C_Timer.After(0, DetachCurrentStepFrame)
 end
 
 RXPFrame.SetStepFrameAnchor = SetStepFrameAnchor
@@ -460,6 +559,8 @@ RXPFrame:SetWidth(addon.width)
 RXPFrame:SetHeight(addon.height)
 RXPFrame:SetPoint("LEFT", 0, 35)
 RXPFrame:SetFrameStrata("BACKGROUND")
+CurrentStepFrame:SetFrameStrata("BACKGROUND")
+CurrentStepFrame:SetFrameLevel(RXPFrame:GetFrameLevel() + 20)
 
 -- RXPFrame.CurrentStepFrame:SetBackdrop(backdrop)
 -- RXPFrame.CurrentStepFrame:SetBackdropColor(0.3,0.01,0.01)
@@ -467,9 +568,16 @@ CurrentStepFrame:SetPoint("BOTTOMLEFT", GuideName, "TOPLEFT", 0, 2)
 CurrentStepFrame:SetPoint("BOTTOMRIGHT", GuideName, "TOPRIGHT", 0, 2)
 
 CurrentStepFrame:SetHeight(25)
-CurrentStepFrame:SetScript("OnMouseDown", RXPFrame.OnMouseDown)
-CurrentStepFrame:SetScript("OnMouseUp", RXPFrame.OnMouseUp)
+CurrentStepFrame:SetScript("OnMouseDown", CurrentStepMouseDown)
+CurrentStepFrame:SetScript("OnMouseUp", CurrentStepMouseUp)
 CurrentStepFrame:EnableMouse(1)
+CurrentStepFrame:SetScale(1)
+RXPFrame:HookScript("OnSizeChanged", SyncCurrentStepFrameWidth)
+RXPFrame:HookScript("OnShow", function()
+    if addon.v2:IsGuideWindowEnabled() then return end
+    CurrentStepFrame:Show()
+end)
+RXPFrame:HookScript("OnHide", function() CurrentStepFrame:Hide() end)
 
 local CheckStepCompletion = function(self,initialCheck)
     local stepCompleted = true
@@ -959,7 +1067,7 @@ function addon.SetStep(n, n2, loopback)
     end
 
     --local totalHeight = 0
-    CurrentStepFrame:Show()
+    if RXPFrame:IsShown() then CurrentStepFrame:Show() end
     local c = 0
     local anchor = 0
     --local heightDiff = RXPFrame:GetHeight() - CurrentStepFrame:GetHeight()
@@ -1005,8 +1113,8 @@ function addon.SetStep(n, n2, loopback)
         else
             stepframe:SetFrameStrata(RXPFrame:GetFrameStrata())
             stepframe:ClearAllPoints()
-            stepframe:SetScript("OnMouseDown",nil)
-            stepframe:SetScript("OnMouseUp",nil)
+            stepframe:SetScript("OnMouseDown", CurrentStepMouseDown)
+            stepframe:SetScript("OnMouseUp", CurrentStepMouseUp)
             if anchor < 1 then
                 stepframe:SetPoint("TOPLEFT", CurrentStepFrame, 0, 0)
                 stepframe:SetPoint("TOPRIGHT", CurrentStepFrame, 0, 0)
@@ -1126,6 +1234,11 @@ function addon.SetStep(n, n2, loopback)
             end
             addon.BindActiveStepElement(elementFrame, step, element, index)
 
+            if not step.tip then
+                elementFrame:SetScript("OnMouseDown", CurrentStepMouseDown)
+                elementFrame:SetScript("OnMouseUp", CurrentStepMouseUp)
+            end
+
             if element.unitscan then
                 for _, t in ipairs(element.unitscan) do
                     if not activeTargets[t] then
@@ -1223,7 +1336,7 @@ function CurrentStepFrame.UpdateText()
         return
     end
 
-    CurrentStepFrame:Show()
+    if RXPFrame:IsShown() then CurrentStepFrame:Show() end
 
     -- StepScroll(n)
     local totalHeight, frameHeight = 0, 0
@@ -2999,11 +3112,20 @@ function addon.v2:GetActiveStepsFrame(player)
 
     if player == addon.player.name then
         local frameName = "RXPActiveStepsFrame" .. player
+        local frame = stepFrame.frame
         _G[frameName] = stepFrame
-        addon.enabledFrames[frameName] = stepFrame
+        frame.rxpActiveStepsDrag = true
+        frame.IsFeatureEnabled = stepFrame.IsFeatureEnabled
+        addon.enabledFrames[frameName] = frame
 
-        self:SetActiveStepsFrameAnchor(stepFrame)
-        addon.settings:LoadFramePosition(frameName, stepFrame)
+        local positions = addon.settings.profile.framePositions
+        local saved = positions and positions[frameName]
+        if saved and saved[1] and type(saved[1]) == "table" then
+            addon.settings:LoadFramePosition(frameName, frame)
+            frame.independent = true
+        else
+            self:SetActiveStepsFrameAnchor(stepFrame, true)
+        end
     end
 
     self.state.player[player].childContainer = childContainer
@@ -3028,11 +3150,99 @@ function addon.v2:GetActiveStepsFrame(player)
     return stepFrame
 end
 
-function addon.v2:SetActiveStepsFrameAnchor(stepFrame)
+function addon.v2:ActiveStepsGrowPoint()
+    if addon.settings.profile.anchorOrientation == "bottom" then return "TOPLEFT" end
+
+    return "BOTTOMLEFT"
+end
+
+function addon.v2:SyncActiveStepsFrameWidth(stepFrame)
+    stepFrame = stepFrame or (self.state.player[addon.player.name] or {}).activeStepFrame
+    if not stepFrame then return end
+
+    local frame = stepFrame.frame or stepFrame
+    if frame.isMoving then return end
+
+    local guideWindow = self:GetGuideWindowAnchorFrame() or addon.RXPFrame
+    if not guideWindow or not guideWindow.GetWidth then return end
+
+    local theme = self:GetTheme()
+    local frameInset = theme.layout and theme.layout.activeStepFrameInset or {}
+    local width = guideWindow:GetWidth() - (frameInset.left or 0) - (frameInset.right or 0)
+    if addon.settings.profile.anchorOrientation == "bottom" then width = width - 6 end
+
+    if width > 20 then frame:SetWidth(width) end
+end
+
+function addon.v2:DetachActiveStepsFrame(stepFrame, retries)
+    retries = (retries or 0) + 1
+    local frame = stepFrame.frame or stepFrame
+    frame.rxpDetachPending = nil
+    if frame.isMoving then return end
+
+    if not frame:GetLeft() then
+        if retries < 10 then
+            frame.rxpDetachPending = true
+            C_Timer.After(0, function() addon.v2:DetachActiveStepsFrame(stepFrame, retries) end)
+        end
+        return
+    end
+
+    if addon.ReanchorFrameToScreen(frame, self:ActiveStepsGrowPoint()) then
+        frame.independent = true
+        self:SyncActiveStepsFrameWidth(stepFrame)
+        if addon.settings and addon.settings.SaveFramePositions then
+            addon.settings:SaveFramePositions()
+        end
+    end
+end
+
+function addon.v2:StartActiveStepsFrameDrag(origin, button)
+    if button ~= "LeftButton" or addon.settings.profile.lockFrames then return end
+
+    local frame = origin
+    while frame and not frame.rxpActiveStepsDrag do
+        frame = frame:GetParent()
+    end
+    if not frame or frame.isMoving then return end
+
+    addon.ReanchorFrameToScreen(frame, self:ActiveStepsGrowPoint())
+    frame.independent = true
+    frame.isMoving = true
+    frame:StartMoving()
+end
+
+function addon.v2:StopActiveStepsFrameDrag(origin)
+    local frame = origin
+    while frame and not frame.rxpActiveStepsDrag do
+        frame = frame:GetParent()
+    end
+    if not frame or not frame.isMoving then return end
+
+    frame:StopMovingOrSizing()
+    frame.isMoving = false
+    if addon.ReanchorFrameToScreen(frame, self:ActiveStepsGrowPoint()) then
+        frame.independent = true
+    end
+    if addon.settings and addon.settings.SaveFramePositions then
+        addon.settings:SaveFramePositions()
+    end
+end
+
+function addon.v2:SetActiveStepsFrameAnchor(stepFrame, forceDock)
     stepFrame = stepFrame or (self.state.player[addon.player.name] or {}).activeStepFrame
 
     if not stepFrame then return end
 
+    local frame = stepFrame.frame or stepFrame
+    if frame.isMoving then return end
+
+    if not forceDock and frame.independent then
+        self:SyncActiveStepsFrameWidth(stepFrame)
+        return
+    end
+
+    frame.independent = false
     stepFrame:ClearAllPoints()
     local theme = self:GetTheme()
     local frameInset = theme.layout and theme.layout.activeStepFrameInset or {}
@@ -3055,6 +3265,11 @@ function addon.v2:SetActiveStepsFrameAnchor(stepFrame)
             stepFrame:SetPoint("BOTTOMRIGHT", addon.RXPFrame.GuideName, "TOPRIGHT", -rightInset, 0)
         end
     end
+
+    if frame.rxpDetachPending then return end
+
+    frame.rxpDetachPending = true
+    C_Timer.After(0, function() addon.v2:DetachActiveStepsFrame(stepFrame) end)
 end
 
 function addon.v2:UpdateActiveStepTheme()
