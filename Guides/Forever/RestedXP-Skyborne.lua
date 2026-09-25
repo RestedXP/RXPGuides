@@ -2690,11 +2690,11 @@ step << Alliance
     .goto 2521,45.615,72.361,35,0
     .goto 2521,43.551,74.999,35,0
     .goto 2521,45.760,78.419,35,0
-    
     >>Kill |cRXP_ENEMY_Bandit Highwaymen|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
     .mob Bandit Highwaymen
 step << Horde
+    #requires Bandit Highwaymen
     #completewith BrokenConstructC
     #hidewindow
     #loop
@@ -2703,10 +2703,12 @@ step << Horde
     .goto 2521,45.760,78.419,35,0
     +1
 step << Horde
+    #requires Bandit Highwaymen
     #completewith next
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
     .complete 93737,4 --|1/1 Obtain Air Construct Core from the Bandit Camp
 step << Horde
+    #requires Bandit Highwaymen
     >>Kill |cRXP_ENEMY_Bandit Highwaymen|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
     .mob Bandit Highwaymen
@@ -2714,14 +2716,6 @@ step << Horde
     #label BrokenConstructC
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
     .complete 93737,4 --|1/1 Obtain Air Construct Core from the Bandit Camp
-step << Alliance
-    #loop
-    .goto 2521,45.615,72.361,35,0
-    .goto 2521,43.551,74.999,35,0
-    .goto 2521,45.760,78.419,35,0
-    >>Kill |cRXP_ENEMY_Bandit Highwaymen|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
-    .complete 92685,1 --7/7 Blood-Stained Bandit Mask
-    .mob Bandit Highwaymen
 step << Shaman
     .goto 2521,42.393,68.887
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Kuramaa's Stump|r.
