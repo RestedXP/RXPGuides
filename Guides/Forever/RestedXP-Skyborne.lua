@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #name 1-14 Zephras Isle
 #displayname 1-14 Skyborne << Alliance
-#displayname 1-14 Skyborne << Horde
+#displayname 1-12 Skyborne << Horde
 #group RestedXP Forever Guide (A) << Alliance
 #group RestedXP Forever Guide (H) << Horde
 #subgroup Speedrun Guide 1-20 << Alliance
@@ -594,7 +594,7 @@ step
     .train 2656,3
     .cast 2580 >>Cast |T136025:0|t[Find Minerals] to track nearby ore deposits
     *|cRXP_WARN_You can mine ore along the way to start working toward 20 Mining for a later quest. This is optional, especially at launch, so do it at your own risk|r
-    .usespell 2383
+    .usespell 2580
 step
     #completewith Scrawny Usera
     .train 8613,3
@@ -779,7 +779,7 @@ step
 step
     #completewith The Next Step
     >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
-    *|cRXP_WARN_Do not grind here; just kill them a long the way|r
+    *|cRXP_WARN_Do not grind here; just kill them along the way|r
     .collect 5469,8
     .collect 6889,3
     -- .complete 92553,2 --8/8 Strider Meat
@@ -791,14 +791,14 @@ step << !Rogue !Warrior
     .goto 2521,44.72,45.47
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Shaman/Druid
     >>|cRXP_WARN_Save 2 silver for your class spells!|r << Shaman/Druid
-    .vendor >>|cRXP_WARN_Vendor trash(don't sell strider meat & eggs|r
+    .vendor >>|cRXP_WARN_Vendor trash (don't sell strider meat & eggs|r.
     .collect 1179,5 >>Buy |T142815:0|t[Ice Cold Milk] << Mage
 step << Rogue/Warrior
     #completewith The Next Step
     #label VendorStep
     .goto 2521,44.67,45.19,10,0
     .goto 2521,44.78,45.05
-    .vendor >>|cRXP_WARN_Vendor trash(don't sell strider meat & eggs|r
+    .vendor >>|cRXP_WARN_Vendor trash (don't sell strider meat & eggs|r.
     .target Belandiel Farflight
 step
     #requires The Next Step
@@ -1424,10 +1424,10 @@ step << Alliance
     .goto 2521,36.02,54.28,40,0
     .goto 2521,35.72,55.36,40,0
     .goto 2521,35.63,57.34,40,0
-    .goto 2521,37.13,56.6,40,0
     .goto 2521,36.61,58.64,40,0
+    .goto 2521,37.13,56.6,40,0
     .goto 2521,38.61,56.89,40,0
-    .goto 2521,40.22,56.94,40,0
+    --.goto 2521,40.22,56.94,40,0
     .goto 2521,35.22,54.05,40,0
     .goto 2521,33.1,54.67,40,0
     +1
@@ -2422,18 +2422,36 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Riaani Nightwind::256083|r.
     .target Riaani Nightwind::256083
     .turnin 93735 >>Turn in The Broken Construct
---    .accept 93737 >>Accept The Broken Construct
---    .complete 93737,1 --|1/1 Listen to what Riaani Nightwind has to say
+    .accept 93737 >>Accept The Broken Construct
+    .complete 93737,1 --|1/1 Listen to what Riaani Nightwind has to say
+-- step << Horde
+--     .goto 2521,59.265,79.977
+--     >>Wait for the roleplay. -- Probably skipping this quest.
+--     .complete 92708,1 --|1/1 Listen to Ayessa
+-- step << Horde
+--     #label LeavingValanaarA
+--     .goto 2521,59.150,79.790
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayessa Dawnsinger::251968|r.
+--     .target Ayessa Dawnsinger::251968
+--     .turnin 92708 >>Turn in A Grand Adventure
 step << Horde
-    .goto 2521,59.265,79.977
-    >>Wait for the roleplay. -- Probably skipping this quest.
-    .complete 92708,1 --|1/1 Listen to Ayessa
+    #completewith next
+    #label BrokenConstructA
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
+    .complete 93737,2 --|1/1 Obtain Crystallized lightning from the Shriekling Cave
 step << Horde
-    #label LeavingValanaarA
-    .goto 2521,59.150,79.790
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayessa Dawnsinger::251968|r.
-    .target Ayessa Dawnsinger::251968
-    .turnin 92708 >>Turn in A Grand Adventure
+    #completewith BrokenConstructA
+    .goto 2521,51.397,68.644,15 >>Enter the cave
+step << Horde
+    #requires BrokenConstructA
+    #loop
+    .goto 2521,51.434,67.603,15,0
+    .goto 2521,51.874,67.221,15,0
+    .goto 2521,52.933,66.084,15,0
+    .goto 2521,53.201,65.424,15,0
+    .goto 2521,52.752,64.732,15,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
+    .complete 93737,2 --|1/1 Obtain Crystallized lightning from the Shriekling Cave
 step << Alliance
     .goto 2521,53.33,72.15
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bloodstained Satchel|r
@@ -2499,14 +2517,26 @@ step << Alliance
     .goto 2521,51.16,67.53,15,0
     .goto 2521,51.49,69.08,20,0
     .goto 2521,51.5,69.11,25 >>Leave the Cave
-step << Alliance
-    #completewith next
+step
+    #completewith FindAameliaWindfieldA
     >>Kill |cRXP_ENEMY_Windsong Crawlers|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
     .skipgossipid 98031
     .skipgossipid 96031
     .mob Windsong Crawler
+step << Horde
+    #completewith next
+    #label BrokenConstructB
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
+    *|cRXP_WARN_She may be moving between locations during a roleplay sequence. Wait at the waypoint location.|r
+    .complete 92679,1 --1/1 Find Aamelia Windfield
+    .target Aamelia Windfield:252800
+step << Horde
+    #completewith BrokenConstructB
+    .goto 2521,51.397,68.644,15 >>Leave the cave
 step
+    #requires BrokenConstructB << Horde
+    #label FindAameliaWindfieldA
     .goto 2521,46.71,81.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
     *|cRXP_WARN_She may be moving between locations during a roleplay sequence. Wait at the waypoint location.|r
@@ -2654,15 +2684,44 @@ step -- version 2
 step
     #completewith Bandit Highwaymen
     .goto 2521,44.81,74.4,30 >>Make your way up the mountain
-step 
+step << Alliance
     #requires Bandit Highwaymen
     #loop
-    .goto 2521,45.32,73.11,30,0
-    .goto 2521,45.93,73.15,30,0
-    .goto 2521,45.05,72.35,30,0
-    .goto 2521,43.84,75.53,30,0
+    .goto 2521,45.615,72.361,35,0
+    .goto 2521,43.551,74.999,35,0
+    .goto 2521,45.760,78.419,35,0
+    
     >>Kill |cRXP_ENEMY_Bandit Highwaymen|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
+    .mob Bandit Highwaymen
+step << Horde
+    #completewith BrokenConstructC
+    #hidewindow
+    #loop
+    .goto 2521,45.615,72.361,35,0
+    .goto 2521,43.551,74.999,35,0
+    .goto 2521,45.760,78.419,35,0
+    +1
+step << Horde
+    #completewith next
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
+    .complete 93737,4 --|1/1 Obtain Air Construct Core from the Bandit Camp
+step << Horde
+    >>Kill |cRXP_ENEMY_Bandit Highwaymen|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
+    .complete 92685,1 --7/7 Blood-Stained Bandit Mask
+    .mob Bandit Highwaymen
+step << Horde
+    #label BrokenConstructC
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
+    .complete 93737,4 --|1/1 Obtain Air Construct Core from the Bandit Camp
+step << Alliance
+    #loop
+    .goto 2521,45.615,72.361,35,0
+    .goto 2521,43.551,74.999,35,0
+    .goto 2521,45.760,78.419,35,0
+    >>Kill |cRXP_ENEMY_Bandit Highwaymen|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
+    .complete 92685,1 --7/7 Blood-Stained Bandit Mask
+    .mob Bandit Highwaymen
 step << Shaman
     .goto 2521,42.393,68.887
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Kuramaa's Stump|r.
@@ -3323,6 +3382,19 @@ step
     >>Kill |cRXP_ENEMY_Windsong Crawlers|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
     .mob Windsong Crawler
+step << Horde
+    #loop
+    .goto 2521,53.029,51.423,35,0
+    .goto 2521,53.621,50.493,35,0
+    .goto 2521,52.878,49.641,35,0
+    .goto 2521,53.129,47.738,35,0
+    .goto 2521,52.528,45.922,35,0
+    .goto 2521,51.574,46.567,35,0
+    .goto 2521,49.511,45.931,35,0
+    .goto 2521,49.917,44.806,35,0
+    .goto 2521,50.642,44.296,35,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
+    .complete 93737,3 --|1/1 Obtain Enchanted Gyrozephyr from Windsong Lake
 
 
 
@@ -3483,8 +3555,6 @@ step
 --     .turnin 93065 >>Turn in Prepare for Battle
 --     .accept 92947 >>Accept Making Our Move
 --     .target Valennia Stormfist
-
---*Discovery Route(DO NOT DELETE) Route(DO NOT DELETE)
 -- step << Warrior
 --     #completewith next
 --     #label Al'Aketh Guardian
@@ -3493,16 +3563,20 @@ step
 --     >>Kill |cRXP_ENEMY_Zaal Stormshield|r. Loot him for the |T134959:0|t[|cRXP_LOOT_Skybreaker Bulwark|r].
 --     .complete 94003,1 --|1/1 Skybreaker Bulwark
 --     .mob Zaal Stormshield::257196
--- step << Warrior
---     #completewith Al'Aketh Guardian
---     .goto 2521,58.69,52.86,80 >>Cross the bridge
--- step << Warrior
---     .goto 2521,56.56,50.36
---     >>Kill |cRXP_ENEMY_Zaal Stormshield|r. Loot him for the |T134959:0|t[|cRXP_LOOT_Skybreaker Bulwark|r].
---     .complete 94003,1 --|1/1 Skybreaker Bulwark
---     .mob Zaal Stormshield::257196
-
---*Leveling
+step << Warrior Horde
+    #completewith next
+    #label Al'Aketh Guardian
+    .goto 2521,59.58,66.41,30,0 << Alliance
+    .goto 2521,58.98,60.8,30,0 << Alliance
+    .goto 2521,57.811,48.866,30,0 << Horde
+    .goto 2521,57.310,50.378,30,0 << Horde
+    >>Kill |cRXP_ENEMY_Zaal Stormshield|r. Loot him for the |T134959:0|t[|cRXP_LOOT_Skybreaker Bulwark|r].
+    .complete 94003,1 --|1/1 Skybreaker Bulwark
+    .mob Zaal Stormshield::257196
+step << Warrior Horde
+    #completewith Al'Aketh Guardian
+    .goto 2521,58.69,52.86,80 >>Cross the bridge << Alliance
+    .goto 2521,58.69,52.86,30 >>Go up << Horde
 step << Warrior
     .goto 2521,56.56,50.36
     >>Kill |cRXP_ENEMY_Zaal Stormshield|r. Loot him for the |T134959:0|t[|cRXP_LOOT_Skybreaker Bulwark|r].
@@ -3718,17 +3792,17 @@ step << Alliance
     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r].
     .complete 92741,1 --8/8 Shriekling Talons
     .mob Shadowgale Shriekling::256092
-step << Alliance
+step
     #completewith next
     #label The Strange Hermit
     .goto 2521,58.73,44.12,30,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strange Hermit|r.
     .accept 93159 >>Accept The Strange Hermit
     .target Strange Hermit
-step << Alliance
+step
     #completewith The Strange Hermit
     .goto 2521,53.95,38.90,328 >>Cross the bridge
-step << Alliance
+step
     #requires The Strange Hermit
     #label The Strange Hermit 2
     .goto 2521,53.95,38.90
@@ -3743,7 +3817,7 @@ step << Alliance
     .skipgossipid 135786
     .skipgossipid 135785 -- engineering
     .skipgossipid 135784 -- no
-step << Alliance
+step
     #completewith Abandoned Belongings1
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Seeds|r
     .complete 93160,1 --8/8 Zephyrseed
@@ -3753,21 +3827,23 @@ step << Alliance
     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r].
     .complete 92741,1 --8/8 Shriekling Talons
     .mob Shadowgale Shriekling::256092
-step << Alliance
+step
     #completewith next
     #hidewindow
     #label Abandoned Belongings1
     .complete 94896,1,1 --8/8 Abandoned Belongings
-step << Alliance
+step
     #completewith Resaan's Heirloom
-    >>Kill |cRXP_ENEMY_Wind Hollows|r.
+    >>Kill |cRXP_ENEMY_Wind Hollows|r. Loot them for |T1:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
+    >>Kill |cRXP_ENEMY_Wind Hollows|r. << Alliance
     .complete 93172,1 --10/10 Wind Hollow freed
+    .complete 93736,1 --10/10 Wind Hollow Essence
     .mob Wind Hollow::251676
-step << Alliance
+step
     #completewith Resaan's Heirloom
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crates|r
     .complete 94896,1 --8/8 Abandoned Belongings
-step << Alliance
+step
     #label Resaan's Heirloom
     .goto 2521,57.45,33.8,40,0
     .goto 2521,56.69,33.71,40,0
@@ -3776,7 +3852,7 @@ step << Alliance
     .complete 94897,1 --1/1 Resaan's Heirloom
     .skipgossipid 138670
     .target Resaan Nimbuswalker
-step << Alliance
+step
     #hidewindow
     #completewith Wind Hollow
     #loop
@@ -3791,17 +3867,21 @@ step << Alliance
     .goto 2521,59.11,33.86,30,0
     .goto 2521,59.02,34.84,30,0
     +1
-step << Alliance
+step
     #completewith next
-    >>Kill |cRXP_ENEMY_Wind Hollows|r.
+    >>Kill |cRXP_ENEMY_Wind Hollows|r. Loot them for |T1:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
+    >>Kill |cRXP_ENEMY_Wind Hollows|r. << Alliance
+    .complete 93736,1 --10/10 Wind Hollow Essence
     .complete 93172,1 --10/10 Wind Hollow freed
     .mob Wind Hollow::251676
-step << Alliance
+step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crates|r
     .complete 94896,1 --8/8 Abandoned Belongings
-step << Alliance
+step
     #label Wind Hollow
-    >>Kill |cRXP_ENEMY_Wind Hollows|r.
+    >>Kill |cRXP_ENEMY_Wind Hollows|r. Loot them for |T1:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
+    >>Kill |cRXP_ENEMY_Wind Hollows|r. << Alliance
+    .complete 93736,1 --10/10 Wind Hollow Essence
     .complete 93172,1 --10/10 Wind Hollow freed
     .mob Wind Hollow::251676
 step << Alliance
@@ -3810,7 +3890,7 @@ step << Alliance
     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r].
     .complete 92741,1 --8/8 Shriekling Talons
     .mob Shadowgale Shriekling::256092
-step << Alliance
+step
     #completewith Unnerving Silence
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Seeds|r
     .complete 93160,1 --8/8 Zephyrseed
@@ -3874,7 +3954,7 @@ step
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings|r. Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers].
-    .complete 92741,1 --8/8 Shriekling Talons
+    .complete 92741,1 --8/8 Shriekling Talons << Alliance
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob Shadowgale Shriekling::256092
 step
@@ -3917,7 +3997,7 @@ step
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings|r. Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers].
-    .complete 92741,1 --8/8 Shriekling Talons
+    .complete 92741,1 --8/8 Shriekling Talons << Alliance
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob Shadowgale Shriekling::256092
 step
@@ -3926,7 +4006,7 @@ step
 step
     #label Pristine Shriekling Feathers
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings|r. Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers].
-    .complete 92741,1 --8/8 Shriekling Talons
+    .complete 92741,1 --8/8 Shriekling Talons << Alliance
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob Shadowgale Shriekling::256092
 step
@@ -4013,57 +4093,6 @@ step
     .turnin 94488 >>Turn in The Ties That Bind
     .accept 94491 >>Accept The Fate of the Den
     .target Elegael Thornpaw
-step << Horde
-    #completewith next
-    #hidewindow
-    #label Abandoned Belongings1
-    .complete 94896,1,1 --8/8 Abandoned Belongings
-step << Horde
-    #completewith Resaan's Heirloom
-    >>Kill |cRXP_ENEMY_Wind Hollows|r.
-    .complete 93172,1 --10/10 Wind Hollow freed
-    .mob Wind Hollow::251676
-step << Horde
-    #completewith Resaan's Heirloom
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crates|r
-    .complete 94896,1 --8/8 Abandoned Belongings
-step << Horde
-    #label Resaan's Heirloom
-    .goto 2521,57.45,33.8,40,0
-    .goto 2521,56.69,33.71,40,0
-    .goto 2521,57.04,29.36
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Resaan Nimbuswalker|r
-    .complete 94897,1 --1/1 Resaan's Heirloom
-    .skipgossipid 138670
-    .target Resaan Nimbuswalker
-step << Horde
-    #hidewindow
-    #completewith Wind Hollow
-    #loop
-    .goto 2521,58.06,28.2,30,0
-    .goto 2521,57.91,26.83,30,0
-    .goto 2521,58.69,31.17,30,0
-    .goto 2521,58.13,30.74,30,0
-    .goto 2521,57.6,31.05,30,0
-    .goto 2521,58.32,31.69,30,0
-    .goto 2521,58.44,32.84,30,0
-    .goto 2521,59.09,31.85,30,0
-    .goto 2521,59.11,33.86,30,0
-    .goto 2521,59.02,34.84,30,0
-    +1
-step << Horde
-    #completewith next
-    >>Kill |cRXP_ENEMY_Wind Hollows|r. Loot them for |T1:0|t[|cRXP_LOOT_Wind Hollow Essence|r].
-    .complete 93736,1 --10/10 Wind Hollow Essence
-    .mob Wind Hollow::251676
-step << Horde
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crates|r
-    .complete 94896,1 --8/8 Abandoned Belongings
-step << Horde
-    #label Wind Hollow
-    >>Kill |cRXP_ENEMY_Wind Hollows|r. Loot them for |T1:0|t[|cRXP_LOOT_Wind Hollow Essence|r].
-    .complete 93736,1 --10/10 Wind Hollow Essence
-    .mob Wind Hollow::251676
 step
     .isOnQuest 94491 << Alliance
     .isOnQuest 93736 << Horde
@@ -4308,6 +4337,11 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Endaria Mistgaze::254344|r.
     .turnin 93736 >>Turn in Unwelcome Spirits
     .target Endaria Mistgaze::254344
+step << Horde
+    .zoneskip 2521,1
+    .isQuestAvailable 95350
+    .goto 2521,57.921,80.781
+    .zone 1412 >>Take the zeppelin to |cRXP_PICK_Mulgore|r.
 step << Horde
     .goto 1412/1,426.100,-658.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alaana Stormwalker::259119|r.
