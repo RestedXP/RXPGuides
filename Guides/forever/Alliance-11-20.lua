@@ -1760,6 +1760,13 @@ step << NightElf/Hunter/Druid/Warrior
     .turnin 4813,3 >> Turn in The Fragments Within
     .target Sentinel Glynda Nal'Shea
     .isQuestTurnedIn 4811
+step << NightElf/Hunter/Druid/Warrior
+    #season 0
+    .goto 1439/1,472.32,6438.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    .turnin 4813,3 >> Turn in The Fragments Within
+    .target Sentinel Glynda Nal'Shea
+    .isQuestTurnedIn 4811
 step << Hunter/Druid/Warrior
     #optional
     #completewith AmethStart
@@ -1769,7 +1776,13 @@ step << Hunter/Druid/Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
     .isQuestTurnedIn 4811
     --reduced DPS now on staff due to it becoming a caster weapon
-
+step << NightElf/Hunter/Druid/Warrior
+    #optional
+    .goto 1439,38.107,41.165
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
+    .turnin 982 >> Turn in Deep Ocean, Vast Sea
+    .target Gorbold Steelhand
+    .isQuestComplete 982
 ----Start of forced Level 14 Druid Turnin/train----
 --Removed in wowF
 
