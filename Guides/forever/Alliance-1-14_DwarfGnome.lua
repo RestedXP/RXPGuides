@@ -2456,7 +2456,6 @@ step << Hunter
     #optional
     .goto 1455/0,-1152.40,-4821.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
-    >>|cRXP_WARN_Do NOT fly anywhere|r
     .fly Loch Modan >> Fly to Loch Modan
     .target Gryth Thurden
     .zoneskip Loch Modan
