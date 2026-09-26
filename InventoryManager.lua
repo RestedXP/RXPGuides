@@ -1,10 +1,5 @@
-local addonName,addon = ...
+local addonName, addon = ...
 local L = addon.locale.Get
-
-addon.inventoryManager = addon:NewModule("InventoryManager", "AceEvent-3.0")
-addon.inventoryManager.bagManager = {}
-
-local gameVersion = select(4, GetBuildInfo())
 
 local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
 local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
@@ -20,85 +15,254 @@ local ReturnsContainerItemTable = C_Container and C_Container.GetContainerItemIn
 local IsEventValid = C_EventUtils and C_EventUtils.IsEventValid
 local ContainerFrame_Update = _G.ContainerFrame_Update
 local ContainerFrame_UpdateAll = _G.ContainerFrame_UpdateAll
+
 local DELETE_JUNK_BINDING = "CLICK RXPInventory_DeleteJunk:LeftButton"
 
-addon.inventoryManager.bagManager.api = {}
-addon.inventoryManager.bagManager.api.GetContainerNumFreeSlots = GetContainerNumFreeSlots
-addon.inventoryManager.bagManager.api.GetContainerNumSlots = GetContainerNumSlots
-addon.inventoryManager.bagManager.api.GetContainerItemID = GetContainerItemID
-addon.inventoryManager.bagManager.api.PickupContainerItem = PickupContainerItem
-addon.inventoryManager.bagManager.api.UseContainerItem = UseContainerItem
-addon.inventoryManager.bagManager.api.GetContainerItemInfo = GetContainerItemInfo
-addon.inventoryManager.bagManager.returnsItemTable = ReturnsContainerItemTable
-addon.inventoryManager.bagManager.bagHook = ContainerFrame_Update or ContainerFrame_UpdateAll
-addon.inventoryManager.emergencyItems = {}
-addon.inventoryManager.highlights = {}
+addon.inventoryManager = addon:NewModule("InventoryManager", "AceEvent-3.0")
+
+local session = {
+    deleteBag = nil,
+    deleteSlot = nil,
+    manualDelete = false,
+    sellGoods = false,
+    bindingIndex = nil,
+    itemsToOpen = {},
+    projectileType = 0,
+    quiverFreeSlots = 0,
+    quiverSlot = nil,
+    organizeQuiver = false,
+    closestSlot = {},
+    sortTimer = 0,
+    updateTimer = 0,
+    merchantOpened = false,
+    updateBags = false
+}
 
 local SSHARD = 6265
 
-function addon.inventoryManager.bagManager:IsAvailable()
-    return self.bagHook or Baganator and Baganator.API or
-           _G.ElvUI_ContainerFrame or _G.BagnonContainerItem1 or
-           _G.AdiBagsItemButton1 or _G.BetterBagsItemButton1 or
-           _G.BagginsPooledItemButton0 or _G.ARKINV_Frame1ScrollContainer or
-           _G.BaudBagSubBag0 or _G.ContainerFrameCombinedBags
-end
+-- Core InventoryManager
+function addon.inventoryManager:Setup()
+    if not self:IsFeatureEnabled() then
+        self:UnregisterAllEvents()
 
-function addon.inventoryManager.bagManager:GetContainerNumFreeSlots(bag)
-    return self.api.GetContainerNumFreeSlots(bag)
-end
+        if self.DeleteJunkFrame then self.DeleteJunkFrame:SetScript("OnUpdate", nil) end
+        if self.clickFrame then self.clickFrame:Hide() end
 
-function addon.inventoryManager.bagManager:GetContainerNumSlots(bag)
-    return self.api.GetContainerNumSlots(bag)
-end
+        for _, icon in pairs(self.junkIcons or {}) do icon:Hide() end
+        for frame in pairs(self.hookedFrames or {}) do if frame.JunkIcon then frame.JunkIcon:Hide() end end
 
-function addon.inventoryManager.bagManager:GetContainerItemID(bag,slot)
-    return self.api.GetContainerItemID(bag,slot)
-end
+        session.deleteBag = nil
+        session.deleteSlot = nil
+        session.manualDelete = false
+        session.sellGoods = false
+        session.updateTimer = 0
+        session.organizeQuiver = false
+        session.merchantOpened = false
+        session.updateBags = false
 
-function addon.inventoryManager.bagManager:PickupContainerItem(bag,slot)
-    return self.api.PickupContainerItem(bag,slot)
-end
-
-function addon.inventoryManager.bagManager:UseContainerItem(bag,slot)
-    return self.api.UseContainerItem(bag,slot)
-end
-
-function addon.inventoryManager.bagManager:GetContainerItemInfo(bag,slot)
-    if self.returnsItemTable then
-        local itemTable = self.api.GetContainerItemInfo(bag,slot)
-        if itemTable then
-            return itemTable.texture or itemTable.iconFileID,
-                    itemTable.stackCount,
-                    itemTable.isLocked,
-                    itemTable.quality,
-                    itemTable.isReadable,
-                    itemTable.hasLoot,
-                    itemTable.hyperlink,
-                    itemTable.isFiltered,
-                    itemTable.hasNoValue,
-                    itemTable.itemID,
-                    itemTable.isBound
-        end
         return
     end
-    return self.api.GetContainerItemInfo(bag,slot)
+
+    local wasInitialized = self.initialized
+    if not wasInitialized then
+        self.deleteJunkButton = CreateFrame("BUTTON", "RXPInventory_DeleteJunk")
+        self.deleteJunkButton:SetScript("OnClick", function() self:DeleteCheapestItem() end)
+
+        BINDING_HEADER_RXPInventory = addon.title
+        _G["BINDING_NAME_" .. DELETE_JUNK_BINDING] = L("Delete Cheapest Junk Item")
+
+        self.DeleteJunkFrame = self.DeleteJunkFrame or CreateFrame("Frame", "RXPDeleteJunk", UIParent)
+        self.bagUpdateScript = function(this, elapsed) self:OnBagUpdate(elapsed) end
+        self.initialized = true
+    end
+
+    if not self.uiInitialized then
+        local adapter = self.bagManager:SelectAdapter()
+        self.containerPattern = adapter.containerPattern
+        self.containerName = adapter.containerName
+        self.containerIndex = adapter.containerIndex
+        self.alignment = adapter.alignment
+        self.junkIcons = {}
+        self.hookedFrames = {}
+
+        local bagFrame = {}
+        for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do bagFrame[bag] = {} end
+        self.bagFrame = bagFrame
+        self.uiInitialized = true
+    end
+
+    self.bagManager:Setup()
+
+    if IsLoggedIn() then
+        self:UnregisterEvent("PLAYER_ENTERING_WORLD")
+        self:RegisterEvent("ITEM_LOCKED")
+        self:RegisterEvent("ITEM_UNLOCKED")
+        if IsEventValid and IsEventValid("BAG_CONTAINER_UPDATE") then self:RegisterEvent("BAG_CONTAINER_UPDATE") end
+        self:RegisterEvent("BAG_UPDATE_DELAYED")
+        self:RegisterEvent("MERCHANT_SHOW")
+        self:RegisterEvent("PLAYER_MONEY")
+        self:RegisterEvent("LOOT_READY")
+        self:RegisterEvent("UI_ERROR_MESSAGE")
+
+        RXPCData.discardPile = RXPCData.discardPile or {}
+
+        if not self.inputHooksInitialized then
+            -- You can only delete items on a hardware input, so hook every keyboard
+            -- input and mouse click to our item deletion function.
+            if self.DeleteJunkFrame.SetPassThroughButtons then
+                -- Post patch 1.15.7 workaround.
+                self.clickFrame = CreateFrame("Frame", "RXPJunkHandler", UIParent)
+                self.clickFrame:SetAllPoints(UIParent)
+                self.clickFrame:SetScript("OnMouseDown", function()
+                    if self:IsFeatureEnabled() then
+                        self:WorldFrameHook()
+                        if GetCVarBool("autoLootDefault") ~= IsModifiedClick("AUTOLOOTTOGGLE") then
+                            for i = GetNumLootItems(), 1, -1 do LootSlot(i) end
+                        end
+                    end
+                    self.clickFrame:Hide()
+                end)
+
+                local button = "LootButton"
+                local current = _G["LootButton1"]
+                local i = 1
+                while current and i < 10 do
+                    current:HookScript("OnClick", function() self:WorldFrameHook() end)
+                    i = i + 1
+                    current = _G[button .. i]
+                end
+
+                self.clickFrame:EnableMouse(false)
+                self.clickFrame:SetMouseClickEnabled(true)
+                self.clickFrame:EnableMouseMotion(false)
+                self.clickFrame:EnableMouseWheel(false)
+                self.clickFrame:SetFrameStrata("BACKGROUND")
+                self.clickFrame:SetFrameLevel(0)
+                self.clickFrame:Hide()
+            end
+
+            WorldFrame:HookScript("OnMouseDown", function() self:WorldFrameHook() end)
+            WorldFrame:HookScript("OnMouseUp", function() self:WorldFrameHook() end)
+
+            self.DeleteJunkFrame:SetPropagateKeyboardInput(true)
+            self.DeleteJunkFrame:SetScript("OnKeyDown", function() self:WorldFrameHook() end)
+            self.DeleteJunkFrame:SetScript("OnKeyUp", function() self:WorldFrameHook() end)
+
+            if _G["ContainerFrameItemButton_OnModifiedClick"] then
+                hooksecurefunc("ContainerFrameItemButton_OnModifiedClick", function(button, mouseButton)
+                    local mod = self:GetModKey()
+                    if not self:IsFeatureEnabled() or not addon.settings.profile.rightClickJunk or not mod or
+                        mouseButton ~= "RightButton" then return end
+                    local parent = button:GetParent()
+                    local bag = parent and parent:GetID()
+                    local slot = button:GetID()
+                    if bag and slot then
+                        local id = self.bagManager:GetContainerItemID(bag, slot)
+                        self:ToggleJunk(id, bag, slot)
+                    end
+                end)
+            end
+
+            hooksecurefunc("ToggleAllBags", function() self:InitializeBags() end)
+            hooksecurefunc("ToggleBag", function() self:InitializeBags() end)
+
+            if _G.MainMenuBarBackpackButton then
+                _G.MainMenuBarBackpackButton:HookScript("OnClick", function() self:InitializeBags() end)
+            end
+
+            self.inputHooksInitialized = true
+        end
+    else
+        self:RegisterEvent("PLAYER_ENTERING_WORLD")
+    end
+
+    if wasInitialized then self.bagManager:UpdateAllBags() end
 end
 
+function addon.inventoryManager:PLAYER_ENTERING_WORLD() self:Setup() end
 
---TODO: Handle UI options:
+function addon.inventoryManager:BAG_CONTAINER_UPDATE()
+    if not self:IsFeatureEnabled() then return end
+
+    session.updateTimer = 0
+    session.updateBags = true
+
+    self:ScheduleBagUpdate()
+end
+
+function addon.inventoryManager:BAG_UPDATE_DELAYED()
+    if not self:IsFeatureEnabled() then return end
+
+    session.updateTimer = 0
+    session.updateBags = true
+
+    self:ScheduleBagUpdate()
+end
+
+function addon.inventoryManager:MERCHANT_SHOW()
+    if not self:IsFeatureEnabled() then return end
+
+    session.merchantOpened = true
+    session.updateTimer = 0
+
+    self:ScheduleBagUpdate()
+end
+
+function addon.inventoryManager:PLAYER_MONEY()
+    if not self:IsFeatureEnabled() or not session.sellGoods then return end
+
+    session.merchantOpened = true
+    session.updateTimer = 0.125
+
+    self:ScheduleBagUpdate()
+end
+
+function addon.inventoryManager:ITEM_LOCKED(_, bag, slot)
+    if not self:IsFeatureEnabled() then return end
+
+    if self.containerPattern ~= "%s" then
+        local frame = self.bagFrame[bag] and self.bagFrame[bag][slot]
+
+        if frame then self:HideJunkIcon(frame) end
+    end
+
+    self:UpdateBagsIfNeeded()
+end
+
+function addon.inventoryManager:ITEM_UNLOCKED(_, bag, slot)
+    if not self:IsFeatureEnabled() then return end
+
+    if self.containerPattern ~= "%s" then
+        local frame = self.bagFrame[bag] and self.bagFrame[bag][slot]
+
+        if frame then self:UpdateBagButton(frame, bag, slot) end
+    end
+
+    self:UpdateBagsIfNeeded()
+end
+
+function addon.inventoryManager:LOOT_READY() self:HandleBagAutomation() end
+
+function addon.inventoryManager:UI_ERROR_MESSAGE(_, flag, msg)
+    if not self:IsFeatureEnabled() then return end
+
+    if self.clickFrame and addon.settings.profile.autoDiscardItems and flag == 3 and msg == INVENTORY_FULL and
+        LootFrame:IsShown() then self.clickFrame:Show() end
+
+    self:HandleBagAutomation()
+end
+
 function addon.inventoryManager:IsFeatureEnabled()
     return self.bagManager:IsAvailable() and addon.settings.profile.enableInventoryManager
 end
 
-function addon.inventoryManager:IsBagManagerAvailable()
-    return self.bagManager and self.bagManager:IsAvailable()
-end
+function addon.inventoryManager:IsBagManagerAvailable() return self.bagManager and self.bagManager:IsAvailable() end
 
 function addon.inventoryManager:GetModKey()
-    --IsAltKeyDown or IsControlKeyDown, shift is used for splitting stacks
-    --Ctrl + Left click is used for dressing room
+    -- IsAltKeyDown or IsControlKeyDown, shift is used for splitting stacks
+    -- Ctrl + Left click is used for dressing room
     local mod = addon.settings.profile.rightClickMod
+
     if mod == 3 then
         return IsControlKeyDown() and IsAltKeyDown()
     elseif mod == 2 then
@@ -108,87 +272,82 @@ function addon.inventoryManager:GetModKey()
     end
 end
 
-local projectileType = 0
-local quiverFreeSlots = 0
-local quiverSlot
-local organizeQuiver
-local closestSlot = {}
-local sortTimer = 0
-
 function addon.inventoryManager:FindQuiverSlot()
     local free, bagType
+
     for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
         free, bagType = self.bagManager:GetContainerNumFreeSlots(bag)
-        if bit.band(bagType,3) > 0 then
-            quiverSlot = bag
-            projectileType,quiverFreeSlots = bagType,free
+
+        if bit.band(bagType, 3) > 0 then
+            session.quiverSlot = bag
+            session.projectileType, session.quiverFreeSlots = bagType, free
         end
     end
 end
 
 function addon.inventoryManager:SortQuiver()
---Makes sure you only have 1 partial stack at the left most quiver slot for each ammo type
-    if not self:IsFeatureEnabled() or gameVersion > 30000 or UnitIsDead('player') then
-        return
-    end
-    organizeQuiver = false
+    -- Makes sure you only have 1 partial stack at the left most quiver slot for each ammo type
+    if not self:IsFeatureEnabled() or addon.gameVersion > 30000 or UnitIsDead('player') then return end
+    session.organizeQuiver = false
 
-    if not quiverSlot then
+    if not session.quiverSlot then
         self:FindQuiverSlot()
     else
-        local _,quiverType = self.bagManager:GetContainerNumFreeSlots(quiverSlot)
-        if bit.band(quiverType,3) == 0 then
-            self:FindQuiverSlot()
-        end
+        local _, quiverType = self.bagManager:GetContainerNumFreeSlots(session.quiverSlot)
+        if bit.band(quiverType, 3) == 0 then self:FindQuiverSlot() end
     end
+
     local id
-    table.wipe(closestSlot)
-    local numQuiverSlots = self.bagManager:GetContainerNumSlots(quiverSlot)
+
+    table.wipe(session.closestSlot)
+
+    local numQuiverSlots = self.bagManager:GetContainerNumSlots(session.quiverSlot)
     local t = GetTime()
     local colour = addon.guideTextColors["RXP_WARN_"]
     local maxStack
     local itemTable, stack, locked
     local itemExists, itemState, destLocked
-    if self.manualDelete then
-        self.manualDelete = false
+
+    if session.manualDelete then
+        session.manualDelete = false
         addon.comms.PrettyPrint(L("|c%sSorting arrows/bullets|r"), colour)
-    elseif t - sortTimer > 3 then
+    elseif t - session.sortTimer > 3 then
         addon.comms.PrettyPrint(L("|c%sInventory is full, sorting arrows/bullets|r"), colour)
     end
-    sortTimer = t
+    session.sortTimer = t
 
     for slot = 1, numQuiverSlots do
-        id = self.bagManager:GetContainerItemID(quiverSlot, slot)
+        id = self.bagManager:GetContainerItemID(session.quiverSlot, slot)
 
         if id then
-            if not closestSlot[id] then
-                closestSlot[id] = numQuiverSlots
-            end
-            --local t = GetItemInfo(id)
+            if not session.closestSlot[id] then session.closestSlot[id] = numQuiverSlots end
+            -- local t = GetItemInfo(id)
             maxStack = select(8, GetItemInfo(id))
-            --print(maxStack)
-            itemTable,stack,locked = self.bagManager:GetContainerItemInfo(quiverSlot, slot)
-            if type(itemTable) == "table" then
-                stack,locked = itemTable.stackCount,itemTable.isLocked
-            end
-            --print('sl',stack,locked)
-            if slot < closestSlot[id] then
-                closestSlot[id] = slot
+            -- print(maxStack)
+            itemTable, stack, locked = self.bagManager:GetContainerItemInfo(session.quiverSlot, slot)
+
+            if type(itemTable) == "table" then stack, locked = itemTable.stackCount, itemTable.isLocked end
+
+            -- print('sl',stack,locked)
+            if slot < session.closestSlot[id] then
+                session.closestSlot[id] = slot
             elseif stack < maxStack then
-                itemExists,itemState,destLocked = self.bagManager:GetContainerItemInfo(quiverSlot,closestSlot[id])
-                if type(itemExists) == "table" then
-                    destLocked = itemExists.isLocked
-                end
-                organizeQuiver = true
+                itemExists, itemState, destLocked = self.bagManager:GetContainerItemInfo(session.quiverSlot,
+                                                                                         session.closestSlot[id])
+                if type(itemExists) == "table" then destLocked = itemExists.isLocked end
+                session.organizeQuiver = true
+
                 if not (GetCursorInfo() or locked or itemExists and destLocked) then
-                    C_Timer.After(0.01,function()
+                    C_Timer.After(0.01, function()
                         if self:IsFeatureEnabled() and not GetCursorInfo() then
-                            self.bagManager:PickupContainerItem(quiverSlot, slot)
-                            self.bagManager:PickupContainerItem(quiverSlot, closestSlot[id])
+                            self.bagManager:PickupContainerItem(session.quiverSlot, slot)
+                            self.bagManager:PickupContainerItem(session.quiverSlot, session.closestSlot[id])
+
                             ClearCursor()
-                            --print(quiverSlot, slot)
+                            -- print(session.quiverSlot, slot)
                         end
                     end)
+
                     break
                 end
             end
@@ -198,102 +357,105 @@ function addon.inventoryManager:SortQuiver()
 
 end
 
-local exceptions = {
-    [6196] = true,
-}
+local exceptions = {[6196] = true}
 
 local exclusions = {
     [6948] = true,
     [184871] = true,
-    [260221] = true,
-    --[6265] = true, --Soul Shard
+    [260221] = true
+    -- [6265] = true, --Soul Shard
 }
 
+local shardCount = 0
 function addon.inventoryManager:GetShardCount()
     local max = tonumber(addon.settings.profile.maxSoulShards) or 100
-    return GetItemCount(SSHARD) > max,max
+
+    return GetItemCount(SSHARD) > max, max
 end
 
-local shardCount = 0
 local countStart = GetTime()
 
-function addon.inventoryManager:IsJunk(id,bag)
+function addon.inventoryManager:IsJunk(id, bag)
     if id == 6265 then
         local bagType = 0
-        if bag then
-            _,bagType = self.bagManager:GetContainerNumFreeSlots(bag)
-        end
-        if bit.band(bagType) == 0x4 then
-            return false
-        end
-        local pass,count = self:GetShardCount()
+
+        if bag then _, bagType = self.bagManager:GetContainerNumFreeSlots(bag) end
+        if bit.band(bagType) == 0x4 then return false end
+
+        local pass, count = self:GetShardCount()
         local gt = GetTime()
+
         if countStart ~= gt then
             countStart = gt
             shardCount = 0
         end
-        if pass then
-            shardCount = shardCount + 1
-        end
+
+        if pass then shardCount = shardCount + 1 end
+
         return pass and shardCount > count
     elseif not id or exclusions[id] then
         return false
     end
+
     local discard = RXPCData.discardPile[id]
     if discard == nil then
         local _, _, quality = GetItemInfo(id)
+
         if quality == Enum.ItemQuality.Poor and not exceptions[id] then
             return true
-            --TODO: add an option that ignores auto selling grays if item is an upgrade
+            -- TODO: add an option that ignores auto selling grays if item is an upgrade
         end
-        --TODO: Integrate with item upgrade system to auto sell soulbound greens, check if C_Item.IsBound exists, otherwise parse tooltips, check if character has enchanting or not
+        -- TODO: Integrate with item upgrade system to auto sell soulbound greens, check if C_Item.IsBound exists, otherwise parse tooltips, check if character has enchanting or not
     else
         return discard
     end
 end
 
-function addon.inventoryManager:ToggleJunk(id,bag,slot)
+function addon.inventoryManager:ToggleJunk(id, bag, slot)
     if not self:IsFeatureEnabled() or not id or exclusions[id] then return end
+
     local junk = self:IsJunk(id)
-    local _,link = GetItemInfo(id)
+    local _, link = GetItemInfo(id)
     local colour = addon.guideTextColors["RXP_WARN_"]
+
     RXPCData.discardPile[id] = not junk
+
     if junk then
         addon.comms.PrettyPrint(L("|c%sSet %s as useful|r"), colour, link)
     else
         addon.comms.PrettyPrint(L("|c%sSet %s as junk|r"), colour, link)
     end
+
     self.bagManager:UpdateAllBags()
+
     addon:SendEvent("RXP_JUNK", id, bag, slot)
 end
 
 function addon.inventoryManager:FindJunk(deleteItem)
     if not self:IsFeatureEnabled() then return end
 
-    self.deleteBag = nil
-    self.deleteSlot = nil
+    session.deleteBag = nil
+    session.deleteSlot = nil
 
-    if organizeQuiver then
-        self:SortQuiver()
-    end
-    quiverFreeSlots = 0
+    if session.organizeQuiver then self:SortQuiver() end
+    session.quiverFreeSlots = 0
 
     local freeSlots, bagType
     local ammoFlags
     for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
         freeSlots, bagType = self.bagManager:GetContainerNumFreeSlots(bag)
-        --print(bagType,freeSlots,deleteItem)
+        -- print(bagType,freeSlots,deleteItem)
         if bagType and bagType == 0 and freeSlots and freeSlots > 0 and not deleteItem and not self:GetShardCount() then
             return
         end
 
-        ammoFlags = bit.band(bagType or 0,3) + 1
-        --bit flag 1 for arrows, 2 for guns, according to ItemBagFamily.db2
-        --add 1 to compare with Enum.ItemWeaponSubclass (2 for arrows, 3 for bullets)
-        if  ammoFlags > 1 then
-            quiverSlot = bag
-            projectileType = ammoFlags
-            quiverFreeSlots = freeSlots
+        ammoFlags = bit.band(bagType or 0, 3) + 1
+        -- bit flag 1 for arrows, 2 for guns, according to ItemBagFamily.db2
+        -- add 1 to compare with Enum.ItemWeaponSubclass (2 for arrows, 3 for bullets)
+        if ammoFlags > 1 then
+            session.quiverSlot = bag
+            session.projectileType = ammoFlags
+            session.quiverFreeSlots = freeSlots
         end
     end
 
@@ -316,43 +478,45 @@ function addon.inventoryManager:FindJunk(deleteItem)
         else
             numSlots = self.bagManager:GetContainerNumSlots(bag)
         end
+
         for slot = 1, numSlots do
             isProjectile = nil
             id = self.bagManager:GetContainerItemID(bag, slot)
+
             if id then
-                itemName, itemLink, itemQuality, itemLevel, itemMinLevel,
-                    itemType, itemSubType, stackMax, itemEquipLoc, itemTexture,
-                    price, class, subclass = GetItemInfo(id)
-                if bagType == 0 and class == Enum.ItemClass.Projectile and subclass == projectileType then
+                itemName, itemLink, itemQuality, itemLevel, itemMinLevel, itemType, itemSubType, stackMax, itemEquipLoc, itemTexture, price, class, subclass =
+                    GetItemInfo(id)
+                if bagType == 0 and class == Enum.ItemClass.Projectile and subclass == session.projectileType then
                     isProjectile = true
                 end
 
                 if not (isProjectile or movingAmmo) then
-                    itemInfo,count = self.bagManager:GetContainerItemInfo(bag,slot)
-                    if type(itemInfo) == "table" and not count then
-                        count = itemInfo.stackCount
-                    end
-                    if stackMax and count and self:IsJunk(id,bag,slot) then
-                        --local item_count = select(2, self.bagManager:GetContainerItemInfo(bag, slot))
+                    itemInfo, count = self.bagManager:GetContainerItemInfo(bag, slot)
+
+                    if type(itemInfo) == "table" and not count then count = itemInfo.stackCount end
+
+                    if stackMax and count and self:IsJunk(id, bag, slot) then
+                        -- local item_count = select(2, self.bagManager:GetContainerItemInfo(bag, slot))
                         price = price or 0
-                        value = (stackMax + count) * price/2
+                        value = (stackMax + count) * price / 2
                         if value < bestValue then
                             bestBag = bag
                             bestSlot = slot
                             bestValue = value
-                            --print(bestBag,bestSlot)
+                            -- print(bestBag,bestSlot)
                         end
                     end
-                elseif isProjectile and quiverFreeSlots > 0 then
+                elseif isProjectile and session.quiverFreeSlots > 0 then
                     movingAmmo = true
-                    bestBag,bestSlot,bestValue = nil,nil,nil
+                    bestBag, bestSlot, bestValue = nil, nil, nil
                     self.bagManager:PickupContainerItem(bag, slot)
-                    PutItemInBag(quiverSlot + CharacterBag0Slot:GetID() - 1)
 
-                    --CharacterBag0Slot:BagSlotButton_OnClick()
-                    --/run local bagframe = _G["CharacterBag".. tostring(1 - 1) .."Slot"] local f = bagframe:GetScript("OnClick") print(f) f(bagframe,"LeftButton")
+                    PutItemInBag(session.quiverSlot + CharacterBag0Slot:GetID() - 1)
 
-                    quiverFreeSlots = quiverFreeSlots -1
+                    -- CharacterBag0Slot:BagSlotButton_OnClick()
+                    -- /run local bagframe = _G["CharacterBag".. tostring(1 - 1) .."Slot"] local f = bagframe:GetScript("OnClick") print(f) f(bagframe,"LeftButton")
+
+                    session.quiverFreeSlots = session.quiverFreeSlots - 1
                 end
             end
         end
@@ -361,113 +525,112 @@ function addon.inventoryManager:FindJunk(deleteItem)
     if movingAmmo then
         self:SortQuiver()
     elseif bestBag and bestSlot then
-        self.deleteBag = bestBag
-        self.deleteSlot = bestSlot
+        session.deleteBag = bestBag
+        session.deleteSlot = bestSlot
     elseif self.clickFrame then
         self.clickFrame:Hide()
     end
-    --print(bestBag,bestSlot)
+    -- print(bestBag,bestSlot)
 end
 
 function addon.inventoryManager:DeleteItems()
     if not self:IsFeatureEnabled() then return end
 
-    if self.sellGoods and MerchantFrame:IsShown() and MerchantFrame.selectedTab == 1 then
+    if session.sellGoods and MerchantFrame:IsShown() and MerchantFrame.selectedTab == 1 then
         self:ProcessJunk(true)
+
         return
     elseif UnitIsDead('player') or GetCursorInfo() then
         return
-    elseif self.deleteBag then
-        self.bagManager:PickupContainerItem(self.deleteBag,self.deleteSlot)
+    elseif session.deleteBag then
+        self.bagManager:PickupContainerItem(session.deleteBag, session.deleteSlot)
+
         DeleteCursorItem()
+
         local colour = addon.guideTextColors["RXP_WARN_"]
-        local _,stack,_,_,_,_,link = self.bagManager:GetContainerItemInfo(self.deleteBag,self.deleteSlot)
-        local id = self.bagManager:GetContainerItemID(self.deleteBag,self.deleteSlot)
+        local _, stack, _, _, _, _, link = self.bagManager:GetContainerItemInfo(session.deleteBag, session.deleteSlot)
+        local id = self.bagManager:GetContainerItemID(session.deleteBag, session.deleteSlot)
+
         if link then
-            if self.manualDelete or id == SSHARD then
-               addon.comms.PrettyPrint(L("|c%sDeleting %sx%s|r"),colour,link,stack)
+            if session.manualDelete or id == SSHARD then
+                addon.comms.PrettyPrint(L("|c%sDeleting %sx%s|r"), colour, link, stack)
             else
-                addon.comms.PrettyPrint(L("|c%sInventory is full, deleting %sx%s|r"),colour,link,stack)
+                addon.comms.PrettyPrint(L("|c%sInventory is full, deleting %sx%s|r"), colour, link, stack)
             end
         end
-        self.deleteBag = nil
-        self.deleteSlot = nil
-    elseif organizeQuiver and not InCombatLockdown() then
+
+        session.deleteBag = nil
+        session.deleteSlot = nil
+    elseif session.organizeQuiver and not InCombatLockdown() then
         self:SortQuiver()
     end
 end
 
 function addon.inventoryManager:DeleteCheapestItem(deleteIfFull)
-    if not self:IsFeatureEnabled() then return end
+    if not self:IsFeatureEnabled() or not IsLoggedIn() then return end
 
-    if not self.bagUpdated then
-        return
-    end
-    self.manualDelete = true
+    session.manualDelete = true
+
     self:FindJunk(not deleteIfFull)
     self:DeleteItems(true)
-    self.manualDelete = false
+
+    session.manualDelete = false
 end
 
-addon.DeleteCheapestItem = function(deleteIfFull)
-    return addon.inventoryManager:DeleteCheapestItem(deleteIfFull)
-end
+function addon.inventoryManager:OpenItems(itemID, clear)
+    if clear then
+        table.wipe(session.itemsToOpen)
 
-addon.inventoryManager.itemsToOpen = {}
-function addon.inventoryManager:QueueItemToOpen(itemID)
-    self.itemsToOpen[itemID] = true
-end
+        return
+    elseif itemID then
+        session.itemsToOpen[itemID] = true
 
-function addon.inventoryManager:ClearItemsToOpen()
-    table.wipe(self.itemsToOpen)
-end
+        return
+    end
 
-function addon.inventoryManager:OpenItems()
-    if not self:IsFeatureEnabled() or not next(self.itemsToOpen) then return end
+    if not self:IsFeatureEnabled() or not next(session.itemsToOpen) then return end
+
     local locked, id
+
     for bag = _G.BACKPACK_CONTAINER, _G.NUM_BAG_FRAMES do
         for slot = 1, self.bagManager:GetContainerNumSlots(bag) do
             _, _, locked, _, _, _, _, _, _, id = self.bagManager:GetContainerItemInfo(bag, slot)
-            if not locked and self.itemsToOpen[id] then
-                self.bagManager:UseContainerItem(bag, slot)
-            end
+
+            if not locked and session.itemsToOpen[id] then self.bagManager:UseContainerItem(bag, slot) end
         end
     end
 end
 
 function addon.inventoryManager:GetSellKeybind()
-    local index = self.bindingIndex
+    local index = session.bindingIndex
     local command, binding, key = GetBinding(index or 1)
-    if command == DELETE_JUNK_BINDING then
-        return key
-    end
+
+    if command == DELETE_JUNK_BINDING then return key end
 
     for index = 1, GetNumBindings() do
         command, binding, key = GetBinding(index)
         if command == DELETE_JUNK_BINDING then
-            self.bindingIndex = index
+            session.bindingIndex = index
+
             return key
         end
     end
 end
 
 function addon.inventoryManager:SetSellKeybind(key)
-    local index = self.bindingIndex
+    local index = session.bindingIndex
     local command, _, currentKey = GetBinding(index or 1)
-    if command == DELETE_JUNK_BINDING and currentKey then
-        SetBinding(currentKey)
-    end
+
+    if command == DELETE_JUNK_BINDING and currentKey then SetBinding(currentKey) end
+
     SetBinding(key, DELETE_JUNK_BINDING)
 end
 
---A3 =DeleteCheapestItem
-
 function addon.inventoryManager:WorldFrameHook()
-    --local n = self and self:GetName()
-    --print(n,...)
-    if self:IsFeatureEnabled() and addon.settings.profile.autoDiscardItems then
-        self:DeleteItems()
-    end
+    -- local n = self and self:GetName()
+    -- print(n,...)
+    if self:IsFeatureEnabled() and addon.settings.profile.autoDiscardItems then self:DeleteItems() end
+
     if self:IsFeatureEnabled() then self:OpenItems() end
 end
 
@@ -476,8 +639,9 @@ function addon.inventoryManager:ShowJunkIcon(frame)
 
     if not frame.RXPJunkIcon then
         local texture = frame:CreateTexture(nil, "OVERLAY")
-        table.insert(self.junkIcons,texture)
-        texture:SetSize(16,16)
+
+        table.insert(self.junkIcons, texture)
+        texture:SetSize(16, 16)
         texture:SetPoint(self.alignment, 1, -1)
         frame.RXPJunkIcon = texture
     end
@@ -487,21 +651,15 @@ function addon.inventoryManager:ShowJunkIcon(frame)
 
 end
 
-function addon.inventoryManager:HideJunkIcon(frame)
+function addon.inventoryManager:HideJunkIcon(frame) if frame.RXPJunkIcon then frame.RXPJunkIcon:Hide() end end
 
-    if frame.RXPJunkIcon then
-        frame.RXPJunkIcon:Hide()
-    end
-
-end
-
-function addon.inventoryManager:UpdateBagButton(button,bag,slot)
+function addon.inventoryManager:UpdateBagButton(button, bag, slot)
     if not self:IsFeatureEnabled() then return end
 
     local id = self.bagManager:GetContainerItemID(bag, slot)
 
-    local isJunk = self:IsJunk(id,bag,slot)
-    --print(bag,slot,isJunk)
+    local isJunk = self:IsJunk(id, bag, slot)
+    -- print(bag,slot,isJunk)
     if isJunk then
         self:ShowJunkIcon(button)
     else
@@ -510,17 +668,13 @@ function addon.inventoryManager:UpdateBagButton(button,bag,slot)
 end
 
 function addon.inventoryManager:CatalogInventory()
-    if not addon.emergencyItems or not addon.settings.profile.enableEmergencyActions then
-        self.emergencyItems = {}
-        return
-    end
-
     local itemList = {}
     local itemName, itemTexture, id, bagSlots
 
     for i = 1, _G.INVSLOT_LAST_EQUIPPED do
         id = GetInventoryItemID("player", i)
-        if id and addon.emergencyItems[id] then
+
+        if id then
             itemName = GetItemInfo(id)
             itemTexture = select(10, GetItemInfo(id))
             table.insert(itemList, {name = itemName, texture = itemTexture, invSlot = i, id = id})
@@ -529,554 +683,103 @@ function addon.inventoryManager:CatalogInventory()
 
     for bag = _G.BACKPACK_CONTAINER, _G.NUM_BAG_FRAMES do
         bagSlots = self.bagManager:GetContainerNumSlots(bag)
+
         for slot = 1, bagSlots do
             id = self.bagManager:GetContainerItemID(bag, slot)
-            if id and addon.emergencyItems[id] then
+
+            if id then
                 itemName = GetItemInfo(id)
                 itemTexture = select(10, GetItemInfo(id))
 
-                table.insert(itemList, {
-                    name = itemName,
-                    texture = itemTexture,
-                    bag = bag,
-                    slot = slot,
-                    id = id
-                })
+                table.insert(itemList, {name = itemName, texture = itemTexture, bag = bag, slot = slot, id = id})
             end
         end
     end
 
-    self.emergencyItems = itemList
     self.bagManager:UpdateAllBags()
+
+    return itemList
 end
 
-function addon.inventoryManager:GetHighlight(name)
-    if not name then return end
-
-    local parent = type(name) == "string" and _G[name] or name
-    if not parent then return end
-
-    local key = type(name) == "string" and name or parent:GetName() or parent
-    if self.highlights[key] then return self.highlights[key] end
-
-    local textureName = type(key) == "string" and key .. "Emergency" or nil
-    local border = parent:CreateTexture(textureName, "ARTWORK")
-
-    border.animation = border:CreateAnimationGroup()
-    local animOut = border.animation:CreateAnimation("Alpha")
-    animOut:SetOrder(1)
-    animOut:SetDuration(0.2)
-    animOut:SetFromAlpha(1)
-    animOut:SetToAlpha(1)
-    animOut:SetStartDelay(0.2)
-
-    border:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-hover")
-    border:SetBlendMode("ADD")
-    local theme = addon.v2:GetTheme()
-    local borderColor = theme.borderColors and theme.borderColors.activeStepCheckboxChecked or
-                        addon.v2.themes["RXP Blue V2"].borderColors.activeStepCheckboxChecked
-    border:SetVertexColor(unpack(borderColor))
-    border:SetAlpha(0.5)
-    border:SetSize(68, 68)
-    border:SetPoint("CENTER", parent, "CENTER", 0, 1)
-    border:Hide()
-
-    self.highlights[key] = border
-
-    return border
+function addon.inventoryManager:GetBagItemFrame(bag, slot)
+    return self.bagFrame and self.bagFrame[bag] and self.bagFrame[bag][slot]
 end
 
-function addon.inventoryManager:HideHighlights()
-    for _, border in pairs(self.highlights) do
-        if border:IsShown() then border:Hide() end
-    end
-end
-
-function addon.inventoryManager:HighlightEmergencyItem(actionBarMap)
-    local bagFrame, bagBorder, actionBarLookup, actionBarBorder
-
-    for _, item in ipairs(self.emergencyItems) do
-        bagFrame = item.bag and item.slot and
-                   self.bagFrame[item.bag] and self.bagFrame[item.bag][item.slot]
-        bagBorder = bagFrame and self:GetHighlight(bagFrame)
-
-        if bagBorder then
-            if bagFrame:IsShown() then
-                bagBorder:Show()
-                if addon.settings.profile.enableEmergencyIconAnimations and not bagBorder.animation:IsPlaying() then
-                    bagBorder.animation:Play()
-                end
-            else
-                bagBorder:Hide()
-            end
-        end
-
-        actionBarLookup = item.id and actionBarMap and actionBarMap["item:" .. item.id]
-        if actionBarLookup then
-            actionBarBorder = self:GetHighlight(actionBarLookup.button)
-
-            if actionBarBorder then
-                actionBarBorder:Show()
-                if addon.settings.profile.enableEmergencyIconAnimations and not actionBarBorder.animation:IsPlaying() then
-                    actionBarBorder.animation:Play()
-                end
-            end
-        end
-    end
-end
-
--- Junk icons have to hook into existing UI elements, different bag UI mods have
--- different frame names and update paths.
-addon.inventoryManager.bagManager.adapters = {
-    Blizzard = {
-        containerPattern = "%sItem%d",
-        containerName = "ContainerFrame%d",
-        containerIndex = -1,
-        alignment = "TOPLEFT",
-    },
-    Bagnon = {
-        containerPattern = "%s",
-        containerName = "BagnonContainerItem%d",
-        containerIndex = -1,
-        alignment = "TOPLEFT",
-        clickHook = true,
-    },
-    ElvUI = {
-        containerPattern = "%sSlot%d",
-        containerName = "ElvUI_ContainerFrameBag%d",
-        containerIndex = -1,
-        alignment = "TOPLEFT",
-        clickHook = true,
-    },
-    AdiBags = {
-        containerPattern = "%s",
-        containerName = "AdiBagsItemButton%d",
-        containerIndex = -1,
-        alignment = "TOPLEFT",
-        clickHook = true,
-    },
-    BetterBags = {
-        containerPattern = "%s",
-        containerName = "BetterBagsItemButton%d",
-        containerIndex = -1,
-        alignment = "TOPLEFT",
-        clickHook = true,
-    },
-    Baggins = {
-        containerPattern = "%s",
-        containerName = "BagginsPooledItemButton%d",
-        containerIndex = -1,
-        alignment = "TOPLEFT",
-        clickHook = true,
-    },
-    ArkInventory = {
-        containerPattern = "%sItem%d",
-        containerName = "ARKINV_Frame1ScrollContainerBag%d",
-        containerIndex = -1,
-        alignment = "TOPLEFT",
-        clickHook = true,
-    },
-    BaudBag = {
-        containerPattern = "%sItem%d",
-        containerName = "BaudBagSubBag%d",
-        containerIndex = -1,
-        alignment = "TOPLEFT",
-        clickHook = true,
-    },
-    Baganator = {
-        containerPattern = "%s",
-        containerName = "BGRLiveItemButton%d",
-        containerIndex = -1,
-        alignment = "TOPRIGHT",
-        clickHook = true,
-    },
-    Consolidated = {
-        containerPattern = "%sItem%d",
-        containerName = "ContainerFrame%d",
-        containerIndex = -1,
-        alignment = "TOPLEFT",
-        consolidated = true,
-    },
-    Forever = {
-        containerPattern = "%sItem%d",
-        containerName = "ContainerFrame%d",
-        containerIndex = -1,
-        alignment = "TOPLEFT",
-        consolidated = true,
-    },
-}
-
-function addon.inventoryManager.bagManager:SelectAdapter()
-    local adapter = self.adapters.Blizzard
-    if _G["BagnonContainerItem1"] then
-        adapter = self.adapters.Bagnon
-    elseif _G["ElvUI_ContainerFrame"] then
-        adapter = self.adapters.ElvUI
-    elseif _G["AdiBagsItemButton1"] then
-        adapter = self.adapters.AdiBags
-    elseif _G["BetterBagsItemButton1"] then
-        adapter = self.adapters.BetterBags
-    elseif _G["BagginsPooledItemButton0"] then
-        adapter = self.adapters.Baggins
-    elseif _G["ARKINV_Frame1ScrollContainer"] then
-        adapter = self.adapters.ArkInventory
-    elseif _G["BaudBagSubBag0"] then
-        adapter = self.adapters.BaudBag
-    elseif Baganator and Baganator.API then
-        adapter = self.adapters.Baganator
-    elseif addon.game == "FOREVER" and ContainerFrame_UpdateAll then
-        adapter = self.adapters.Forever
-    elseif ContainerFrame_UpdateAll and not ContainerFrame_Update then
-        adapter = self.adapters.Consolidated
-    end
-
-    self.activeAdapter = adapter
-    return adapter
-end
-
-function addon.inventoryManager:SetupBagFrames()
-    local bagFrame = {}
-    for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
-        bagFrame[bag] = {}
-    end
-    self.bagFrame = bagFrame
-end
-
-function addon.inventoryManager:SetupUI()
-    if self.uiInitialized then return end
-
-    local adapter = self.bagManager:SelectAdapter()
-    self.containerPattern = adapter.containerPattern
-    self.containerName = adapter.containerName
-    self.containerIndex = adapter.containerIndex
-    self.alignment = adapter.alignment
-    self.junkIcons = {}
-    self.hookedFrames = {}
-    self:SetupBagFrames()
-
-    self.uiInitialized = true
-end
-
-function addon.inventoryManager.bagManager:UpdateBag(frame,name,pattern)
-    if not addon.inventoryManager:IsFeatureEnabled() then return end
-
-    pattern = pattern or addon.inventoryManager.containerPattern
-    name = name or frame:GetName()
-    local i = 1
-    local ref = format(pattern,name,i)
-    local lastFrame, button
-    local parent, bag, slot
-    button = _G[ref]
-
-    while button and lastFrame ~= ref do
-        parent = button:GetParent()
-        bag = parent and parent:GetID()
-        if bag and bag >= BACKPACK_CONTAINER and bag <= NUM_BAG_FRAMES then
-            slot = button:GetID()
-            addon.inventoryManager.bagFrame[bag][slot] = button
-            if self.activeAdapter.clickHook and button.OnClick then
-                self:HookButton(button)
-            end
-            if addon.settings.profile.showJunkIcon then
-                addon.inventoryManager:UpdateBagButton(button,bag,slot)
-            end
-        end
-        i = i + 1
-        lastFrame = ref
-        ref = format(pattern,name,i)
-        button = _G[ref]
-    end
-end
-
-function addon.inventoryManager.bagManager:UpdateAllBags(name,i)
-    if not addon.inventoryManager:IsFeatureEnabled() then
-        for _,icon in pairs(addon.inventoryManager.junkIcons or {}) do
-            icon:Hide()
-        end
-        return
-    end
-
-    if not addon.settings.profile.showJunkIcon then
-        for _,icon in pairs(addon.inventoryManager.junkIcons or {}) do
-            icon:Hide()
-        end
-    end
-
-    local adapter = self:SelectAdapter()
-    if adapter.consolidated then
-        if ContainerFrame_UpdateAll then
-            ContainerFrame_UpdateAll()
-        end
-        return
-    end
-
-    i = i or addon.inventoryManager.containerIndex
-    name = name or addon.inventoryManager.containerName
-    local ref = format(name,i)
-    local frame = _G[ref]
-    while frame or i <= 0 do
-        if frame then
-            self:UpdateBag(frame,ref)
-        end
-        i = i + 1
-        ref = format(name,i)
-        frame = _G[ref]
-    end
-end
-
-function addon.inventoryManager.bagManager:HookButton(button)
-    if not button or addon.inventoryManager.hookedFrames[button] then return end
-    button:HookScript("OnClick", self.onClickHook)
-    addon.inventoryManager.hookedFrames[button] = true
-end
-
-function addon.inventoryManager.bagManager:LoadBaganator()
-    if not addon.inventoryManager:IsFeatureEnabled() then return end
-
-    local frames = {
-        "Baganator_SingleViewBackpackViewFrameblizzard_black",
-        --"Baganator_SingleViewGuildViewFrameblizzard_black",
-        --"Baganator_SingleViewGuildViewFramedark",
-        "Baganator_CategoryViewBackpackViewFramedark",
-        --"Baganator_SingleViewGuildViewFrameblizzard",
-        "Baganator_SingleViewBackpackViewFrameblizzard",
-        "Baganator_SingleViewBackpackViewFramedark",
-        "Baganator_CategoryViewBackpackViewFrameblizzard",
-        "Baganator_CategoryViewBackpackViewFrameblizzard_black",
-    }
-    local frame
-    for _, frameName in pairs(frames) do
-        frame = _G[frameName]
-        if frame and frame.Container and frame.Container.Layouts then
-            for _, container in pairs(frame.Container.Layouts) do
-                for _, button in pairs(container.buttons or {}) do
-                    if button.BGR then
-                        self:HookButton(button)
-                    end
-                end
-            end
-        end
-    end
-end
-
-function addon.inventoryManager.bagManager:HookContainerFrame(containerFrame)
-    local this = self
-    local frames, bag, slot, id
-
-    hooksecurefunc(containerFrame, "UpdateItems", function()
-        if not addon.inventoryManager:IsFeatureEnabled() then return end
-
-        frames = {containerFrame:GetChildren()}
-        for _, frame in pairs(frames) do
-            if frame.GetID and frame.OnClick then
-                this:HookButton(frame)
-                bag = frame.GetBagID and frame:GetBagID()
-                slot = frame:GetID()
-                if bag and slot and slot >= 0 then
-                    addon.inventoryManager.bagFrame[bag][slot] = frame
-                    id = this:GetContainerItemID(bag, slot)
-                    if frame.JunkIcon then
-                        frame.JunkIcon:SetShown(
-                            addon.settings.profile.showJunkIcon and id and
-                            addon.inventoryManager:IsJunk(id))
-                    end
-                end
-            end
-        end
-    end)
-end
-
-function addon.inventoryManager.bagManager:HookBags()
-    local this = self
-    local bagframe
-
-    if ContainerFrame_Update then
-        hooksecurefunc("ContainerFrame_Update", function(frame)
-            this:UpdateBag(frame, nil, "%sItem%d")
-        end)
-    end
-
-    if Baganator and Baganator.API then
-        Baganator.API.RegisterJunkPlugin(addonName, "RXPGuides", function(bagID, slotID, id)
-            return addon.inventoryManager:IsFeatureEnabled() and id and
-                   addon.inventoryManager:IsJunk(id, bagID, slotID)
-        end)
-        C_Timer.After(1, function()
-            this:LoadBaganator()
-        end)
-        if Baganator.CallbackRegistry then
-            Baganator.CallbackRegistry:RegisterCallback("SettingChanged", function()
-                this:LoadBaganator()
-            end)
-        end
-    end
-
-    if ContainerFrame_UpdateAll then
-        for n = 0, NUM_CONTAINER_FRAMES do
-            if n == 0 then
-                bagframe = _G.ContainerFrameCombinedBags
-            else
-                bagframe = _G["ContainerFrame" .. n]
-            end
-            if bagframe and bagframe.UpdateItems then
-                self:HookContainerFrame(bagframe)
-            end
-        end
-    end
-end
-
-function addon.inventoryManager.bagManager:Setup()
-    if not addon.inventoryManager:IsFeatureEnabled() or self.initialized then return end
-
-    self.onClickHook = function(button, mouseButton, ...)
-        addon.inventoryManager:OnClickHook(button, mouseButton, ...)
-    end
-
-    self:HookBags()
-
-    self.initialized = true
-end
-
-local updateTimer = 0
-local merchantOpened
-local updateBags
 function addon.inventoryManager:ScheduleBagUpdate()
-    if self.DeleteJunkFrame then
-        self.DeleteJunkFrame:SetScript("OnUpdate", self.bagUpdateScript)
-    end
+    if self.DeleteJunkFrame then self.DeleteJunkFrame:SetScript("OnUpdate", self.bagUpdateScript) end
 end
 
 function addon.inventoryManager:OnBagUpdate(elapsed)
     local frame = self.DeleteJunkFrame
+
     if not frame then return end
 
     if not self:IsFeatureEnabled() then
         frame:SetScript("OnUpdate", nil)
-        updateTimer = 0
-        merchantOpened = false
-        updateBags = false
+        session.updateTimer = 0
+        session.merchantOpened = false
+        session.updateBags = false
+
         return
     end
 
-    updateTimer = updateTimer + elapsed
-    if updateTimer > 0.33 then
-        if merchantOpened then
-            merchantOpened = false
+    session.updateTimer = session.updateTimer + elapsed
+    if session.updateTimer > 0.33 then
+        if session.merchantOpened then
+            session.merchantOpened = false
             self:ProcessJunk(true)
         end
-        if updateBags then
-            updateBags = false
+
+        if session.updateBags then
+            session.updateBags = false
             self.bagManager:UpdateAllBags()
         end
-        updateTimer = 0
-        frame:SetScript("OnUpdate",nil)
+
+        session.updateTimer = 0
+        frame:SetScript("OnUpdate", nil)
     end
 end
 
 function addon.inventoryManager:UpdateBagsIfNeeded()
     if not next(self.junkIcons) then
-        updateBags = true
+        session.updateBags = true
         self:ScheduleBagUpdate()
     end
 end
 
-function addon.inventoryManager:PLAYER_STARTED_MOVING()
-    self:RegisterEvent("UNIT_INVENTORY_CHANGED")
-    self:UnregisterEvent("PLAYER_STARTED_MOVING")
-end
-
-function addon.inventoryManager:UNIT_INVENTORY_CHANGED(_, target)
-    if target ~= "player" then return end
-
-    self:CatalogInventory()
-end
-
-function addon.inventoryManager:BAG_CONTAINER_UPDATE()
-    if not self:IsFeatureEnabled() then return end
-
-    updateTimer = 0
-    updateBags = true
-    self:ScheduleBagUpdate()
-end
-
-function addon.inventoryManager:BAG_UPDATE_DELAYED()
-    if not self:IsFeatureEnabled() then return end
-
-    self:CatalogInventory()
-    updateTimer = 0
-    updateBags = true
-    self:ScheduleBagUpdate()
-end
-
-function addon.inventoryManager:MERCHANT_SHOW()
-    if not self:IsFeatureEnabled() then return end
-
-    merchantOpened = true
-    updateTimer = 0
-    self:ScheduleBagUpdate()
-end
-
-function addon.inventoryManager:PLAYER_MONEY()
-    if not self:IsFeatureEnabled() or not self.sellGoods then return end
-
-    merchantOpened = true
-    updateTimer = 0.125
-    self:ScheduleBagUpdate()
-end
-
-function addon.inventoryManager:ITEM_LOCKED(_,bag,slot)
-    if not self:IsFeatureEnabled() then return end
-
-    if self.containerPattern ~= "%s" then
-        local frame = self.bagFrame[bag] and self.bagFrame[bag][slot]
-        if frame then
-            self:HideJunkIcon(frame)
-        end
-    end
-    self:UpdateBagsIfNeeded()
-end
-
-function addon.inventoryManager:ITEM_UNLOCKED(_,bag,slot)
-    if not self:IsFeatureEnabled() then return end
-
-    if self.containerPattern ~= "%s" then
-        local frame = self.bagFrame[bag] and self.bagFrame[bag][slot]
-        if frame then
-            self:UpdateBagButton(frame,bag,slot)
-        end
-    end
-    self:UpdateBagsIfNeeded()
-end
-
 function addon.inventoryManager:InitializeBags()
     if not self:IsFeatureEnabled() then return end
-    if self.bagsInitialized and next(self.junkIcons) then return end
-    self.bagsInitialized = true
-    updateBags = true
+    if next(self.junkIcons) then return end
+
+    session.updateBags = true
     self:ScheduleBagUpdate()
-    --UpdateAllBags()
+    -- UpdateAllBags()
 end
 
-function addon.inventoryManager:ProcessJunk(sellWares,override)
+function addon.inventoryManager:ProcessJunk(sellWares, override)
     if not self:IsFeatureEnabled() then return 0 end
 
     local isMerchant = sellWares and MerchantFrame:IsShown() and MerchantFrame.selectedTab == 1 and
-                       (addon.settings.profile.autoSellJunk or override)
+                           (addon.settings.profile.autoSellJunk or override)
+
     local totalCost = 0
     local itemsToSell = {}
     local id, stack, locked, quality, junk, price, itemValue
+
     for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
         for slot = 1, self.bagManager:GetContainerNumSlots(bag) do
-            id = self.bagManager:GetContainerItemID(bag,slot)
-            stack,locked,quality = select(2, self.bagManager:GetContainerItemInfo(bag, slot))
+            id = self.bagManager:GetContainerItemID(bag, slot)
+            stack, locked, quality = select(2, self.bagManager:GetContainerItemInfo(bag, slot))
             junk = self:IsJunk(id)
+
             if junk then
                 price = select(11, GetItemInfo(id))
                 if type(price) == "number" and type(stack) == "number" then
                     itemValue = price * stack
                     if isMerchant and itemValue > 0 then
-                        table.insert(itemsToSell,{bag = bag, slot = slot, value = itemValue, quality = quality})
+                        table.insert(itemsToSell, {bag = bag, slot = slot, value = itemValue, quality = quality})
                     end
+
                     totalCost = totalCost + itemValue
                 end
             end
@@ -1084,18 +787,20 @@ function addon.inventoryManager:ProcessJunk(sellWares,override)
     end
 
     if totalCost == 0 then
-        if self.sellGoods then
-            local value = GetMoney() - self.sellGoods
+        if session.sellGoods then
+            local value = GetMoney() - session.sellGoods
             local colour = addon.guideTextColors["RXP_WARN_"]
+
             if value > 0 then
                 addon.comms.PrettyPrint(L("|c%sSold junk items for|r %s"), colour, GetCoinTextureString(value))
             end
-            self.sellGoods = false
+
+            session.sellGoods = false
         end
     elseif isMerchant then
-        self.sellGoods = self.sellGoods or GetMoney()
-        --Sorts the item list to sell low quality/cheap items first, in case of needing to buy stuff back
-        table.sort(itemsToSell,function(i1,i2)
+        session.sellGoods = session.sellGoods or GetMoney()
+        -- Sorts the item list to sell low quality/cheap items first, in case of needing to buy stuff back
+        table.sort(itemsToSell, function(i1, i2)
             if i1.quality == i2.quality then
                 return i1.value < i2.value
             else
@@ -1103,8 +808,8 @@ function addon.inventoryManager:ProcessJunk(sellWares,override)
             end
         end)
 
-        for _,item in ipairs(itemsToSell) do
-            self.bagManager:PickupContainerItem(item.bag,item.slot)
+        for _, item in ipairs(itemsToSell) do
+            self.bagManager:PickupContainerItem(item.bag, item.slot)
             PickupMerchantItem()
         end
 
@@ -1136,18 +841,16 @@ function addon.inventoryManager:OnClickHook(button, mouseButton, ...)
         local parent = button:GetParent()
         bag = parent and parent:GetID()
     end
+
     local slot = button:GetID()
     local mod = self:GetModKey()
-    AA = button
-    if not mod or mouseButton ~= "RightButton" then
-        return
-    end
+
+    if not mod or mouseButton ~= "RightButton" then return end
     if bag and slot then
         local id = self.bagManager:GetContainerItemID(bag, slot)
         self:ToggleJunk(id, bag, slot)
         if button.JunkIcon then
-            button.JunkIcon:SetShown(addon.settings.profile.showJunkIcon and id and
-                                     self:IsJunk(id) and button:IsShown())
+            button.JunkIcon:SetShown(addon.settings.profile.showJunkIcon and id and self:IsJunk(id) and button:IsShown())
         end
     end
 end
@@ -1155,184 +858,325 @@ end
 function addon.inventoryManager:HandleBagAutomation()
     if not self:IsFeatureEnabled() then return end
 
-    if self.clickFrame and not addon.settings.profile.autoDiscardItems then
-        self.clickFrame:Hide()
-    end
-    if addon.settings.profile.autoDiscardItems then
-        self:FindJunk()
-    end
+    if self.clickFrame and not addon.settings.profile.autoDiscardItems then self.clickFrame:Hide() end
+    if addon.settings.profile.autoDiscardItems then self:FindJunk() end
 end
 
-function addon.inventoryManager:LOOT_READY()
-    self:HandleBagAutomation()
-end
+-- Junk icons have to hook into existing UI elements, different bag UI mods have
+-- different frame names and update paths.
+addon.inventoryManager.bagManager = {}
+addon.inventoryManager.bagManager.returnsItemTable = ReturnsContainerItemTable
+addon.inventoryManager.bagManager.bagHook = ContainerFrame_Update or ContainerFrame_UpdateAll
 
-function addon.inventoryManager:UI_ERROR_MESSAGE(_,flag,msg)
-    if not self:IsFeatureEnabled() then return end
+function addon.inventoryManager.bagManager:Setup()
+    if not addon.inventoryManager:IsFeatureEnabled() or self.initialized then return end
 
-    if self.clickFrame and addon.settings.profile.autoDiscardItems and flag == 3 and
-        msg == INVENTORY_FULL and LootFrame:IsShown() then
-        self.clickFrame:Show()
+    self.onClickHook = function(button, mouseButton, ...)
+        addon.inventoryManager:OnClickHook(button, mouseButton, ...)
     end
-    self:HandleBagAutomation()
+
+    self:HookBags()
+
+    self.initialized = true
 end
 
-function addon.inventoryManager:SetupInputHooks()
-    if self.inputHooksInitialized then return end
+addon.inventoryManager.bagManager.adapters = {
+    Blizzard = {
+        containerPattern = "%sItem%d",
+        containerName = "ContainerFrame%d",
+        containerIndex = -1,
+        alignment = "TOPLEFT"
+    },
+    Bagnon = {
+        containerPattern = "%s",
+        containerName = "BagnonContainerItem%d",
+        containerIndex = -1,
+        alignment = "TOPLEFT",
+        clickHook = true
+    },
+    ElvUI = {
+        containerPattern = "%sSlot%d",
+        containerName = "ElvUI_ContainerFrameBag%d",
+        containerIndex = -1,
+        alignment = "TOPLEFT",
+        clickHook = true
+    },
+    AdiBags = {
+        containerPattern = "%s",
+        containerName = "AdiBagsItemButton%d",
+        containerIndex = -1,
+        alignment = "TOPLEFT",
+        clickHook = true
+    },
+    BetterBags = {
+        containerPattern = "%s",
+        containerName = "BetterBagsItemButton%d",
+        containerIndex = -1,
+        alignment = "TOPLEFT",
+        clickHook = true
+    },
+    Baggins = {
+        containerPattern = "%s",
+        containerName = "BagginsPooledItemButton%d",
+        containerIndex = -1,
+        alignment = "TOPLEFT",
+        clickHook = true
+    },
+    ArkInventory = {
+        containerPattern = "%sItem%d",
+        containerName = "ARKINV_Frame1ScrollContainerBag%d",
+        containerIndex = -1,
+        alignment = "TOPLEFT",
+        clickHook = true
+    },
+    BaudBag = {
+        containerPattern = "%sItem%d",
+        containerName = "BaudBagSubBag%d",
+        containerIndex = -1,
+        alignment = "TOPLEFT",
+        clickHook = true
+    },
+    Baganator = {
+        containerPattern = "%s",
+        containerName = "BGRLiveItemButton%d",
+        containerIndex = -1,
+        alignment = "TOPRIGHT",
+        clickHook = true
+    },
+    Consolidated = {
+        containerPattern = "%sItem%d",
+        containerName = "ContainerFrame%d",
+        containerIndex = -1,
+        alignment = "TOPLEFT",
+        consolidated = true
+    },
+    Forever = {
+        containerPattern = "%sItem%d",
+        containerName = "ContainerFrame%d",
+        containerIndex = -1,
+        alignment = "TOPLEFT",
+        consolidated = true
+    }
+}
 
-    -- You can only delete items on a hardware input, so hook every keyboard
-    -- input and mouse click to our item deletion function.
-    if self.DeleteJunkFrame.SetPassThroughButtons then
-        -- Post patch 1.15.7 workaround.
-        self.clickFrame = CreateFrame("Frame", "RXPJunkHandler", UIParent)
-        self.clickFrame:SetAllPoints(UIParent)
-        self.clickFrame:SetScript("OnMouseDown", function()
-            if self:IsFeatureEnabled() then
-                self:WorldFrameHook()
-                if GetCVarBool("autoLootDefault") ~= IsModifiedClick("AUTOLOOTTOGGLE") then
-                    for i = GetNumLootItems(), 1, -1 do
-                        LootSlot(i)
-                    end
-                end
+function addon.inventoryManager.bagManager:SelectAdapter()
+    local adapter = self.adapters.Blizzard
+
+    if _G["BagnonContainerItem1"] then
+        adapter = self.adapters.Bagnon
+    elseif _G["ElvUI_ContainerFrame"] then
+        adapter = self.adapters.ElvUI
+    elseif _G["AdiBagsItemButton1"] then
+        adapter = self.adapters.AdiBags
+    elseif _G["BetterBagsItemButton1"] then
+        adapter = self.adapters.BetterBags
+    elseif _G["BagginsPooledItemButton0"] then
+        adapter = self.adapters.Baggins
+    elseif _G["ARKINV_Frame1ScrollContainer"] then
+        adapter = self.adapters.ArkInventory
+    elseif _G["BaudBagSubBag0"] then
+        adapter = self.adapters.BaudBag
+    elseif Baganator and Baganator.API then
+        adapter = self.adapters.Baganator
+    elseif addon.game == "FOREVER" and ContainerFrame_UpdateAll then
+        adapter = self.adapters.Forever
+    elseif ContainerFrame_UpdateAll and not ContainerFrame_Update then
+        adapter = self.adapters.Consolidated
+    end
+
+    self.activeAdapter = adapter
+    return adapter
+end
+
+function addon.inventoryManager.bagManager:UpdateBag(frame, name, pattern)
+    if not addon.inventoryManager:IsFeatureEnabled() then return end
+
+    pattern = pattern or addon.inventoryManager.containerPattern
+    name = name or frame:GetName()
+
+    local i = 1
+    local ref = format(pattern, name, i)
+    local lastFrame, button
+    local parent, bag, slot
+    button = _G[ref]
+
+    while button and lastFrame ~= ref do
+        parent = button:GetParent()
+        bag = parent and parent:GetID()
+
+        if bag and bag >= BACKPACK_CONTAINER and bag <= NUM_BAG_FRAMES then
+            slot = button:GetID()
+            addon.inventoryManager.bagFrame[bag][slot] = button
+
+            if self.activeAdapter.clickHook and button.OnClick then self:HookButton(button) end
+            if addon.settings.profile.showJunkIcon then
+                addon.inventoryManager:UpdateBagButton(button, bag, slot)
             end
-            self.clickFrame:Hide()
-        end)
-
-        local button = "LootButton"
-        local current = _G["LootButton1"]
-        local i = 1
-        while current and i < 10 do
-            current:HookScript("OnClick", function() self:WorldFrameHook() end)
-            i = i + 1
-            current = _G[button .. i]
         end
 
-        self.clickFrame:EnableMouse(false)
-        self.clickFrame:SetMouseClickEnabled(true)
-        self.clickFrame:EnableMouseMotion(false)
-        self.clickFrame:EnableMouseWheel(false)
-        self.clickFrame:SetFrameStrata("BACKGROUND")
-        self.clickFrame:SetFrameLevel(0)
-        self.clickFrame:Hide()
+        i = i + 1
+        lastFrame = ref
+        ref = format(pattern, name, i)
+        button = _G[ref]
     end
-
-    WorldFrame:HookScript("OnMouseDown", function() self:WorldFrameHook() end)
-    WorldFrame:HookScript("OnMouseUp", function() self:WorldFrameHook() end)
-
-    self.DeleteJunkFrame:SetPropagateKeyboardInput(true)
-    self.DeleteJunkFrame:SetScript("OnKeyDown", function() self:WorldFrameHook() end)
-    self.DeleteJunkFrame:SetScript("OnKeyUp", function() self:WorldFrameHook() end)
-
-    if _G["ContainerFrameItemButton_OnModifiedClick"] then
-        hooksecurefunc("ContainerFrameItemButton_OnModifiedClick", function(button, mouseButton)
-            local mod = self:GetModKey()
-            if not self:IsFeatureEnabled() or not addon.settings.profile.rightClickJunk or
-                not mod or mouseButton ~= "RightButton" then
-                return
-            end
-            local parent = button:GetParent()
-            local bag = parent and parent:GetID()
-            local slot = button:GetID()
-            if bag and slot then
-                local id = self.bagManager:GetContainerItemID(bag, slot)
-                self:ToggleJunk(id, bag, slot)
-            end
-        end)
-    end
-
-    hooksecurefunc("ToggleAllBags", function() self:InitializeBags() end)
-    hooksecurefunc("ToggleBag", function() self:InitializeBags() end)
-    if _G.MainMenuBarBackpackButton then
-        _G.MainMenuBarBackpackButton:HookScript("OnClick", function()
-            self:InitializeBags()
-        end)
-    end
-
-    self.inputHooksInitialized = true
 end
 
-function addon.inventoryManager:PLAYER_ENTERING_WORLD()
-    self:InitializeEvents()
-end
+function addon.inventoryManager.bagManager:UpdateAllBags(name, i)
+    if not addon.inventoryManager:IsFeatureEnabled() then
+        for _, icon in pairs(addon.inventoryManager.junkIcons or {}) do icon:Hide() end
 
-function addon.inventoryManager:InitializeEvents()
-    if not self:IsFeatureEnabled() then return end
-
-    self:UnregisterEvent("PLAYER_ENTERING_WORLD")
-    self:RegisterEvent("ITEM_LOCKED")
-    self:RegisterEvent("ITEM_UNLOCKED")
-    self:RegisterEvent("PLAYER_STARTED_MOVING")
-    if IsEventValid and IsEventValid("BAG_CONTAINER_UPDATE") then
-        self:RegisterEvent("BAG_CONTAINER_UPDATE")
-    end
-    self:RegisterEvent("BAG_UPDATE_DELAYED")
-    self:RegisterEvent("MERCHANT_SHOW")
-    self:RegisterEvent("PLAYER_MONEY")
-    self:RegisterEvent("LOOT_READY")
-    self:RegisterEvent("UI_ERROR_MESSAGE")
-
-    self.bagUpdated = true
-    RXPCData.discardPile = RXPCData.discardPile or {}
-    self:SetupInputHooks()
-end
-
-function addon.inventoryManager:Setup()
-    if not self:IsFeatureEnabled() then
-        self:UnregisterAllEvents()
-        if self.DeleteJunkFrame then
-            self.DeleteJunkFrame:SetScript("OnUpdate", nil)
-        end
-        if self.clickFrame then
-            self.clickFrame:Hide()
-        end
-        for _, icon in pairs(self.junkIcons or {}) do
-            icon:Hide()
-        end
-        for frame in pairs(self.hookedFrames or {}) do
-            if frame.JunkIcon then
-                frame.JunkIcon:Hide()
-            end
-        end
-        self.deleteBag = nil
-        self.deleteSlot = nil
-        self.manualDelete = false
-        self.sellGoods = false
-        updateTimer = 0
-        organizeQuiver = false
-        merchantOpened = false
-        updateBags = false
         return
     end
 
-    local wasInitialized = self.initialized
-    if not wasInitialized then
-        self.deleteJunkButton = CreateFrame("BUTTON", "RXPInventory_DeleteJunk")
-        self.deleteJunkButton:SetScript("OnClick", function()
-            self:DeleteCheapestItem()
+    if not addon.settings.profile.showJunkIcon then
+        for _, icon in pairs(addon.inventoryManager.junkIcons or {}) do icon:Hide() end
+    end
+
+    local adapter = self:SelectAdapter()
+
+    if adapter.consolidated then
+        if ContainerFrame_UpdateAll then ContainerFrame_UpdateAll() end
+
+        return
+    end
+
+    i = i or addon.inventoryManager.containerIndex
+    name = name or addon.inventoryManager.containerName
+
+    local ref = format(name, i)
+    local frame = _G[ref]
+    while frame or i <= 0 do
+        if frame then self:UpdateBag(frame, ref) end
+
+        i = i + 1
+        ref = format(name, i)
+        frame = _G[ref]
+    end
+end
+
+function addon.inventoryManager.bagManager:HookButton(button)
+    if not button or addon.inventoryManager.hookedFrames[button] then return end
+
+    button:HookScript("OnClick", self.onClickHook)
+
+    addon.inventoryManager.hookedFrames[button] = true
+end
+
+function addon.inventoryManager.bagManager:LoadBaganator()
+    if not addon.inventoryManager:IsFeatureEnabled() then return end
+
+    local frames = {
+        "Baganator_SingleViewBackpackViewFrameblizzard_black", -- "Baganator_SingleViewGuildViewFrameblizzard_black",
+        -- "Baganator_SingleViewGuildViewFramedark",
+        "Baganator_CategoryViewBackpackViewFramedark", -- "Baganator_SingleViewGuildViewFrameblizzard",
+        "Baganator_SingleViewBackpackViewFrameblizzard", "Baganator_SingleViewBackpackViewFramedark",
+        "Baganator_CategoryViewBackpackViewFrameblizzard", "Baganator_CategoryViewBackpackViewFrameblizzard_black"
+    }
+
+    local frame
+
+    for _, frameName in pairs(frames) do
+        frame = _G[frameName]
+
+        if frame and frame.Container and frame.Container.Layouts then
+            for _, container in pairs(frame.Container.Layouts) do
+                for _, button in pairs(container.buttons or {}) do
+                    if button.BGR then self:HookButton(button) end
+                end
+            end
+        end
+    end
+end
+
+function addon.inventoryManager.bagManager:HookContainerFrame(containerFrame)
+    local this = self
+    local frames, bag, slot, id
+
+    hooksecurefunc(containerFrame, "UpdateItems", function()
+        if not addon.inventoryManager:IsFeatureEnabled() then return end
+
+        frames = {containerFrame:GetChildren()}
+        for _, frame in pairs(frames) do
+            if frame.GetID and frame.OnClick then
+                this:HookButton(frame)
+
+                bag = frame.GetBagID and frame:GetBagID()
+                slot = frame:GetID()
+
+                if bag and slot and slot >= 0 then
+                    addon.inventoryManager.bagFrame[bag][slot] = frame
+                    id = this:GetContainerItemID(bag, slot)
+
+                    if frame.JunkIcon then
+                        frame.JunkIcon:SetShown(addon.settings.profile.showJunkIcon and id and
+                                                    addon.inventoryManager:IsJunk(id))
+                    end
+                end
+            end
+        end
+    end)
+end
+
+function addon.inventoryManager.bagManager:HookBags()
+    local this = self
+    local bagframe
+
+    if ContainerFrame_Update then
+        hooksecurefunc("ContainerFrame_Update", function(frame) this:UpdateBag(frame, nil, "%sItem%d") end)
+    end
+
+    if _G.Baganator and _G.Baganator.API then
+        _G.Baganator.API.RegisterJunkPlugin(addonName, "RXPGuides", function(bagID, slotID, id)
+            return addon.inventoryManager:IsFeatureEnabled() and id and addon.inventoryManager:IsJunk(id, bagID, slotID)
         end)
 
-        BINDING_HEADER_RXPInventory = addon.title
-        _G["BINDING_NAME_" .. DELETE_JUNK_BINDING] =
-            L("Delete Cheapest Junk Item")
+        C_Timer.After(1, function() this:LoadBaganator() end)
 
-        self.DeleteJunkFrame = self.DeleteJunkFrame or
-            CreateFrame("Frame", "RXPDeleteJunk", UIParent)
-        self.bagUpdateScript = function(this, elapsed)
-            self:OnBagUpdate(elapsed)
+        if _G.Baganator.CallbackRegistry then
+            _G.Baganator.CallbackRegistry:RegisterCallback("SettingChanged", function() this:LoadBaganator() end)
         end
-        self.initialized = true
     end
 
-    self:SetupUI()
-    self.bagManager:Setup()
+    if ContainerFrame_UpdateAll then
+        for n = 0, NUM_CONTAINER_FRAMES do
+            if n == 0 then
+                bagframe = _G.ContainerFrameCombinedBags
+            else
+                bagframe = _G["ContainerFrame" .. n]
+            end
 
-    if IsLoggedIn() then
-        self:InitializeEvents()
-    else
-        self:RegisterEvent("PLAYER_ENTERING_WORLD")
+            if bagframe and bagframe.UpdateItems then self:HookContainerFrame(bagframe) end
+        end
+    end
+end
+
+function addon.inventoryManager.bagManager:IsAvailable()
+    return self.bagHook or _G.Baganator and _G.Baganator.API or _G.ElvUI_ContainerFrame or _G.BagnonContainerItem1 or
+               _G.AdiBagsItemButton1 or _G.BetterBagsItemButton1 or _G.BagginsPooledItemButton0 or
+               _G.ARKINV_Frame1ScrollContainer or _G.BaudBagSubBag0 or _G.ContainerFrameCombinedBags
+end
+
+function addon.inventoryManager.bagManager:GetContainerNumFreeSlots(bag) return GetContainerNumFreeSlots(bag) end
+
+function addon.inventoryManager.bagManager:GetContainerNumSlots(bag) return GetContainerNumSlots(bag) end
+
+function addon.inventoryManager.bagManager:GetContainerItemID(bag, slot) return GetContainerItemID(bag, slot) end
+
+function addon.inventoryManager.bagManager:PickupContainerItem(bag, slot) return PickupContainerItem(bag, slot) end
+
+function addon.inventoryManager.bagManager:UseContainerItem(bag, slot) return UseContainerItem(bag, slot) end
+
+function addon.inventoryManager.bagManager:GetContainerItemInfo(bag, slot)
+    if self.returnsItemTable then
+        local itemTable = GetContainerItemInfo(bag, slot)
+
+        if itemTable then
+            return itemTable.texture or itemTable.iconFileID, itemTable.stackCount, itemTable.isLocked,
+                   itemTable.quality, itemTable.isReadable, itemTable.hasLoot, itemTable.hyperlink,
+                   itemTable.isFiltered, itemTable.hasNoValue, itemTable.itemID, itemTable.isBound
+        end
+        return
     end
 
-    if wasInitialized then
-        self.bagManager:UpdateAllBags()
-    end
+    return GetContainerItemInfo(bag, slot)
 end
