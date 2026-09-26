@@ -499,6 +499,10 @@ f:SetScript("OnEvent",function(self)
     hooksecurefunc('ToggleBag', inventoryManager.InitializeBags)
     _G.MainMenuBarBackpackButton:HookScript("OnClick",inventoryManager.InitializeBags)
 
+    if inventoryManager.HookElvUIBags then
+        inventoryManager.HookElvUIBags()
+    end
+
 end)
 
 local junkIcons = {}
@@ -728,14 +732,13 @@ if _G['ContainerFrame_UpdateAll'] then
         end
         local slot = self:GetID()
         local mod = inventoryManager.GetModKey()
-        AA = self
         if not inventoryManager.IsRightClickEnabled() or not mod or button ~= inventoryManager.GetMouseButton() then
             return
         end
         if bag and slot then
             local id = GetContainerItemID(bag,slot)
             ToggleJunk(id,bag,slot)
-            if self.JunkIcon then
+            if self.JunkIcon and hookedFrames[self] ~= "ElvUI" then
                 self.JunkIcon:SetShown(inventoryManager.IsJunkIconEnabled() and id and IsJunk(id) and self:IsShown())
             end
         end
@@ -776,6 +779,26 @@ if _G['ContainerFrame_UpdateAll'] then
         --Baganator.API.RequestItemButtonsRefresh()
     end
 
+
+    function inventoryManager.HookElvUIBags()
+        local frame = _G.ElvUI_ContainerFrame
+        if not (frame and frame.Bags) or hookedFrames[frame] then return end
+
+        local function HookSlots()
+            for _, bag in pairs(frame.Bags) do
+                for _, slot in ipairs(bag) do
+                    if not hookedFrames[slot] then
+                        slot:HookScript("OnClick", OnClickHook)
+                        hookedFrames[slot] = "ElvUI"
+                    end
+                end
+            end
+        end
+        hookedFrames[frame] = true
+
+        frame:HookScript("OnShow", HookSlots)
+        HookSlots()
+    end
 
     for n = 0, NUM_CONTAINER_FRAMES do
         local bagframe
