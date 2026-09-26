@@ -2,14 +2,15 @@
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#name 1-14 Zephras Isle
-#displayname 1-14 Skyborne << Alliance
+#name Zephras Isle
+#displayname 1-13 Skyborne << Alliance
 #displayname 1-12 Skyborne << Horde
 #group RestedXP Forever Guide (A) << Alliance
 #group RestedXP Forever Guide (H) << Horde
 #subgroup Speedrun Guide 1-20 << Alliance
 #subgroup Speedrun Guide 1-22 << Horde
 #defaultfor Skyborne
+#next "correct westfall guide" << Alliance
 
 step
     .goto 2521,42.82,23.41
@@ -3352,10 +3353,10 @@ step << Alliance
     .subzoneskip 16638,1
     .isQuestAvailable 98512
     .isNotOnQuest 98512
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halavuul Cragwind::252388|r outside the house.
-    .vendor >>Vendor trash
-    .target Halavuul Cragwind::252388
-    .goto 2521,65.45,80.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daeann Steelwind|r outside the house.
+    .vendor >>Vendor trash and repair if needed
+    .target Daeann Steelwind
+    .goto 2521,65.4,80.22
     .skipgossipid 137530
 step << Alliance
     .subzoneskip 16638,1
@@ -4253,12 +4254,49 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyalah Brightfire|r inside the house.
     .turnin 93317 >>Turn in Crab Season
     .target Nyalah Brightfire
+
+step << Alliance Rogue
+    .goto 2521,59.9,72.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eltheen Nightbreeze|r.
+    .train 1766 >>Train |T132219:0|t[Kick]
+    .skipgossipid 136810
+    .target Eltheen Nightbreeze
+    .money <0.08
+    .xp <12,1
+step << Alliance Hunter
+    .goto 2521,59.571,72.639
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
+    .train 14281 >>Train |T132218:0|t[Arcane Shot (Rank 2)]
+    .target Quel'ana Quickgale::252389
+    .money <0.08
+    .xp <12,1
+step << Alliance Warrior
+    .goto 2521,59.89,72.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seena Skybreaker::252377|r.
+    .train 5242 >>Train |T132333:0|t[Battle Shout (Rank 2)]
+    .train 7384 >>Train |T132223:0|t[Overpower]
+    .train 7887,1
+    .train 72 >>Train |T132357:0|t[Shield Bash]
+    .train 1671,1
+    .skipgossipid 136813
+    .target Seena Skybreaker::252377
+    .money <0.3
+    .xp <12,1
 step << Alliance
     .goto 2521,63.55,73.45,25,0
     .goto 2521,63.99,75.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze|r.
     .turnin 94491 >>Turn in The Fate of the Den
     .target Lotheluum Starbreeze
+step << Alliance Druid
+    .subzoneskip 16638,1
+    .goto 2521,45.153,44.225
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naeluna Swiftmend::254081|r.
+    .train 5229 >>Train |T132126:0|t[Enrage]
+    .train 8936 >>Train |T136085:0|t[Regrowth]
+    .target Naeluna Swiftmend::254081
+    .money <0.16
+    .xp <12,1 
 step
     .goto 2521,65.95,74.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ealaane Nimbuswalker|r.
@@ -4391,6 +4429,20 @@ step << Alliance
     .turnin 93065 >>Turn in Prepare for Battle
 --*Discovery Route(DO NOT DELETE)
     -- .accept 92947 >>Accept Making Our Move
+
+step << Alliance Mage
+    .goto 2521,65.4,80.22,10,0
+    .goto 2521,65.91,80.58
+    >>Enter the large stone hall beside the blacksmith, continue into the upper chamber, then turn right.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anathamaas Aetherwind|r.
+    .train 145 >>Train |T135812:0|t[Fireball (Rank 3)]
+    .train 604 >>Train |T136006:0|t[Dampen Magic]
+    .train 597 >>Train |T133952:0|t[Conjure Food (Rank 2)]
+    .train 130 >>Train |T135992:0|t[Slow Fall]
+    .skipgossipid 136807
+    .target Anathamaas Aetherwind
+    .money <0.24
+    .xp <12,1
 step << Alliance
     .goto 2521,66.34,79.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iaadaria Bitterwind|r.
