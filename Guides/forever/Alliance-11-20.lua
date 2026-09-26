@@ -1876,7 +1876,7 @@ step
     .mob Moonstalker
     .isQuestTurnedIn 1001
     .isQuestAvailable 4811
-step
+step << !NightElf !Hunter !Druid !Warrior
     #season 0
     #loop
     .goto 1439,46.918,48.630,0
@@ -1912,32 +1912,6 @@ step
     .skill cooking,<1,1 -- shows if cooking is >1
 step
     #sticky
-    #optional
-    #label Anaya
-    .goto 1439,42.017,58.866,0 --NE spawn
-    .goto 1439,43.222,59.693,0 --NE spawn
-    .goto 1439,43.069,62.448,0 --SE spawn
-    .goto 1439,42.489,60.677,0 --Middle spawn
-    .waypoint 1439,42.017,58.866,50,0 --NE spawn
-    .waypoint 1439,42.311,58.645,50,0
-    .waypoint 1439,42.448,58.236,50,0
-    .waypoint 1439,43.222,59.693,50,0 --NE spawn
-    .waypoint 1439,43.447,60.131,50,0
-    .waypoint 1439,43.780,60.275,50,0
-    .waypoint 1439,43.069,62.448,50,0 --SE spawn
-    .waypoint 1439,43.104,62.563,50,0
-    .waypoint 1439,42.794,62.166,50,0
-    .waypoint 1439,42.489,60.677,50,0 --Middle spawn
-    >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for her |cRXP_LOOT_Pendant|r
-    -->>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
-    -->>|cRXP_WARN_If you can't find her and want to try again later at the cost of potentially grinding more mobs soon, skip this step|r
-    --much faster spawn time now on forever
-    .complete 963,1 --Anaya's Pendant (1)
-    .unitscan Anaya Dawnrunner
-    .solo
-step
-    #sticky
-    #optional
     #label Anaya
     .goto 1439,42.017,58.866,0 --NE spawn
     .goto 1439,43.222,59.693,0 --NE spawn
@@ -1960,7 +1934,6 @@ step
     --much faster spawn time now on forever
     .complete 963,1 --Anaya's Pendant (1)
     .unitscan Anaya Dawnrunner
-    .group
 step
     #season 0
     #sticky
