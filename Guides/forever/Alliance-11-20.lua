@@ -1070,7 +1070,7 @@ step << Druid NightElf
 	.zoneskip Moonglade
 step << Druid NightElf
     #completewith next
-    .goto Moonglade,44.148,45.229
+    .goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
     .fly Teldrassil >> Fly to Darnassus
     .skipgossip
@@ -3175,7 +3175,7 @@ step
     #optional
     .goto 1439/1,413.37,4818.17,0
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
-    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Ravage] |cRXP_WARN_an instant attack dealing 20-40 damage and knocking you down for 2 seconds|r
     .complete 1003,1 -- Grizzled Scalp (4)
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
@@ -3293,7 +3293,7 @@ step
     .goto 1439/1,338.70,4821.22,50,0
     .goto 1439/1,452.67,4684.98
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
-    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Ravage] |cRXP_WARN_an instant attack dealing 20-40 damage and knocking you down for 2 seconds|r
     .complete 1003,1 -- Grizzled Scalp (4)
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
@@ -4192,7 +4192,7 @@ step << !NightElf Warrior/Paladin
     .dungeon !DM
 step << !NightElf Warrior/Paladin/Mage/Warlock/!NightElf Rogue
     #xprate >1.59
-    .goto Wetlands,9.490,59.694
+    .goto 1437/0,-782.03,-3793.23--c:Wetlands,9.490,59.694
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
     .fly Ironforge >> Fly to Ironforge
     .target Shellei Brondir
@@ -4203,7 +4203,7 @@ step << !NightElf Warrior/Paladin/Mage/Warlock/!NightElf Rogue
     .dungeon !DM
 step << NightElf Rogue
     #xprate >1.59
-    .goto Wetlands,9.490,59.694
+    .goto 1437/0,-782.03,-3793.23--c:Wetlands,9.490,59.694
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
     .fp Menethil Harbor >> Get the Menethil Harbor flight path
     .target Shellei Brondir
@@ -4265,8 +4265,8 @@ step << NightElf Rogue
     .goto 1415,41.625,67.689,30,0
     .goto 1453/0,1320.57,-8540.2,20,0
     .goto 1453/0,1242.03,-8638.88,10,0
-    .goto StormwindClassic,7,45.471,10,0
-    .goto StormwindClassic,5.560,50.125,10,0
+    .goto 1453/0,1286.87,-8686.43,10,0--c:StormwindClassic,7,45.471
+    .goto 1453/0,1306.23,-8728.15,10,0--c:StormwindClassic,5.560,50.125
     .goto 1453/0,1197.22,-8946.62,20,0
     .goto 1436/0,1545.83,-11056.200
     .zone Westfall >> If the website unstuck is not available, swim to Westfall
@@ -5959,7 +5959,7 @@ step << !NightElf
     #xprate >1.59 << !Hunter
     #optional
     #completewith next
-    .goto Wetlands,9.490,59.694
+    .goto 1437/0,-782.03,-3793.23--c:Wetlands,9.490,59.694
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
     .fly Ironforge >> Fly to Ironforge
     .target Shellei Brondir
@@ -5969,7 +5969,7 @@ step << !NightElf
     .dungeon DM
 step << NightElf
     #xprate >1.59 << !Hunter
-    .goto Wetlands,9.490,59.694
+    .goto 1437/0,-782.03,-3793.23--c:Wetlands,9.490,59.694
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
     .fp Menethil Harbor >> Get the Menethil Harbor flight path
     .target Shellei Brondir
@@ -6031,8 +6031,8 @@ step << NightElf
     .goto 1415,41.625,67.689,30,0
     .goto 1453/0,1320.57,-8540.2,20,0
     .goto 1453/0,1242.03,-8638.88,10,0
-    .goto StormwindClassic,7,45.471,10,0
-    .goto StormwindClassic,5.560,50.125,10,0
+    .goto 1453/0,1286.87,-8686.43,10,0--c:StormwindClassic,7,45.471
+    .goto 1453/0,1306.23,-8728.15,10,0--c:StormwindClassic,5.560,50.125
     .goto 1453/0,1197.22,-8946.62,20,0
     .goto 1436/0,1545.83,-11056.200
     .zone Westfall >> If the website unstuck is not available, swim to Westfall
@@ -8048,7 +8048,7 @@ step << Shaman
     .trainer >> Train your class spells
 step << Shaman
     #optional
-    .goto Ironforge,50.826,5.613
+    .goto 1455/0,-1115.43,-4598.86--c:Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerrig Bonegrip|r
     .turnin 968 >> Turn in The Powers Below
     .target Gerrig Bonegrip
@@ -8140,17 +8140,16 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elsharin|r
     .trainer >> Train your class spells
     .target Elsharin
-step << Paladin/Priest !NightElf
+step << Paladin/Priest
     #completewith next
     .goto 1453/0,809.52,-8579.22,20 >> Travel to the Stormwind Cathedral
 step << Paladin
-    #label PalTrainer
     .goto 1453/0,859.13,-8559.14,10,0
     .goto 1453/0,861.14,-8573.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
     .trainer >> Train your class spells
     .target Arthur the Faithful
-step << Priest !NightElf
+step << Priest
     .goto 1453/0,862.89,-8519.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r
     .trainer >> Train your class spells
@@ -8189,7 +8188,7 @@ step << Rogue
     .accept 2281 >> Accept Redridge Rendezvous
     .goto 1453/0,362.55,-8819.80
     .target Renzik "The Shiv"
-step << Warrior !NightElf
+step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r
     .goto 1453/0,358.25,-8728.28,15,0
     .goto 1453/0,302.6,-8685.53,15,0
@@ -8370,12 +8369,13 @@ step << !Human !Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
     .turnin 244 >> Turn in Encroaching Gnolls
     .target Deputy Feldon
-step << NightElf
+step
     #xprate <1.5
     .goto 1433/0,-2237.93,-9443.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
     .target Deputy Feldon
     .accept 246 >> Accept Assessing the Threat
+    .accept 98407 >>Accept Show of Force
 step
 .dungeon DM
     .goto 1433/0,-2164.56,-9213.10,8,0
@@ -8798,7 +8798,7 @@ step
 step
 .dungeon DM
     #completewith next
-    .goto Elwynn Forest,32.240,49.723,60 >> Exit Stormwind. Travel to Goldshire
+    .goto 1429/0,416.42,-9090.46,60 >> Exit Stormwind. Travel to Goldshire--c:Elwynn Forest,32.240,49.723
     .isOnQuest 118
     .xp <20,1
 step
@@ -8832,7 +8832,7 @@ step
     .xp <20,1
 step
 .dungeon DM
-    .goto Elwynn Forest,64.880,69.192
+    .goto 1429/0,-716.46,-9541.09--c:Elwynn Forest,64.880,69.192
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawn Brightstar|r
     .vendor >> |cRXP_FRIENDLY_Dawn Brightstar|r |cRXP_BUY_has has limited supply items such as|r |T134938:0|t|T134937:0|t|T134943:0|t[Scrolls] |cRXP_BUY_and|r |T134850:0|t|T134830:0|t[Potions] |cRXP_BUY_as well, which you should buy if available|r << !Warrior !Rogue
     .vendor >> |cRXP_FRIENDLY_Dawn Brightstar|r |cRXP_BUY_has has limited supply items such as|r |T134938:0|t|T134937:0|t|T134943:0|t[Scrolls] |cRXP_BUY_and|r |T134830:0|t[Potions] |cRXP_BUY_as well, which you should buy if available|r << Warrior/Rogue
@@ -8866,6 +8866,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
     .goto 1433/0,-2298.06,-9284.04
     .accept 20 >> Accept Blackrock Menace
+    .accept 98387 >>Accept Blackrock Blockade
     .target Marshal Marris
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
@@ -8908,6 +8909,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Solomon|r
 	.target Magistrate Solomon
     .accept 120 >> Accept Messenger to Stormwind
+step
+    .group
+    .goto 1433/0,-2208.600,-9243.500
+    >>Click the |cRXP_PICK_Wanted Poster|r
+    .accept 95999 >>Accept WANTED: Incinerator Gar'im
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dockmaster Baren|r
 	.target Dockmaster Baren
@@ -9027,6 +9033,17 @@ step
     .accept 246 >> Accept Assessing the Threat
 step
     #xprate <1.5
+    #completewith next
+	>>Kill |cRXP_ENEMY_Redridge Mongrels|r and |cRXP_ENEMY_Redridge Poachers|r
+    >>Kill |cRXP_ENEMY_Redridge Thrashers|r. Loot them for their |cRXP_LOOT_Spiked Collars|r
+    .complete 246,1 --Redridge Mongrel (10)
+    .mob +Redridge Mongrel
+    .complete 246,2 --Redridge Poacher (6)
+	.mob +Redridge Poacher
+    .complete 98407,1 --Spiked Collar (5)
+	.mob +Redridge Thrasher
+step
+    #xprate <1.5
     .goto 1433/0,-2031.48,-9556.25,45,0
     .goto 1433/0,-1955.07,-9637.63,45,0
     .goto 1433/0,-1813.97,-9679.9,45,0
@@ -9037,15 +9054,20 @@ step
     .mob Tarantula
 step
     #xprate <1.5
+    #loop
+    .goto 1433/0,-1913.800,-9490.601,50,0
     .goto 1433/0,-2211.01,-9773.870,45,0
     .goto 1433/0,-2276.79,-9759.11,45,0
     .goto 1433/0,-2508.20,-9620.68,45,0
-    .goto 1433/0,-2246.61,-9764.90
+    .goto 1433/0,-2246.61,-9764.90,45,0
 	>>Kill |cRXP_ENEMY_Redridge Mongrels|r and |cRXP_ENEMY_Redridge Poachers|r
+    >>Kill |cRXP_ENEMY_Redridge Thrashers|r. Loot them for their |cRXP_LOOT_Spiked Collars|r
     .complete 246,1 --Redridge Mongrel (10)
     .mob +Redridge Mongrel
     .complete 246,2 --Redridge Poacher (6)
 	.mob +Redridge Poacher
+    .complete 98407,1 --Spiked Collar (5)
+	.mob +Redridge Thrasher
 step
     .goto 1433/0,-2634.54,-9588.54
     >>Kill |cRXP_ENEMY_Murloc Shorestrikers|r and |cRXP_ENEMY_Murloc Minor Tidecallers|r. Loot them for their |cRXP_LOOT_Fins|r and |cRXP_LOOT_Sunfish|r
@@ -9062,17 +9084,47 @@ step
     .collect 1080,5,92,1
     .mob Dire Condor
 step
+    .group 4
+    .isOnQuest 95999
+    #sticky
+    #label IncineratorGarim
+    .waypoint 1433/0,-3261.400,-9824.700
+    >>Kill |cRXP_ENEMY_Incinerator Gar'im|r inside the cave. Loot him for the |cRXP_LOOT_Broken Staff of Incinerator Gar'im|r
+    >>|cRXP_WARN_Skip this step if you are unable to find a group for him|r
+    .complete 95999,1 -- Broken Staff of Incinerator Gar'im (1)
+    .mob Incinerator Gar'im
+step
+    #completewith next
+    >>Loot the |cRXP_PICK_Grain Sacks|r and |cRXP_PICK_Meat Haunches|r on the ground for |cRXP_LOOT_Stolen Supplies|r
+    >>Loot the |cRXP_PICK_Weapon Racks|r and |cRXP_PICK_Stolen Weapons|r the ground
+    .complete 98387,1 -- Stolen Supplies (10)
+    .complete 98387,2 -- Stolen Weapon (8)
+step
     #label orcs
+    #loop
     >>Kill |cRXP_ENEMY_Blackrock Grunts|r and |cRXP_ENEMY_Blackrock Outrunners|r. Loot them for their |cRXP_LOOT_Axes|r
 	>>|cRXP_WARN_Be aware the |cRXP_ENEMY_Blackrock Outrunners|r will cast |T132149:0|t[Net] on you|r
     .goto 1433/0,-3177.25,-9718.85,60,0
     .goto 1433/0,-3224.57,-9782.42,60,0
     .goto 1433/0,-3259.74,-9566.82,60,0
     .goto 1433/0,-3092.80,-9694.82,60,0
-    .goto 1433/0,-3177.25,-9718.850
+    .goto 1433/0,-3177.25,-9718.85,60,0
     .complete 20,1 --Battleworn Axe (10)
     .mob Blackrock Grunt
 	.mob Blackrock Outrunner
+step
+    #loop
+    .goto 1433/0,-3177.25,-9718.85,60,0
+    .goto 1433/0,-3224.57,-9782.42,60,0
+    .goto 1433/0,-3259.74,-9566.82,60,0
+    .goto 1433/0,-3092.80,-9694.82,60,0
+    .goto 1433/0,-3177.25,-9718.85,60,0
+    >>Loot the |cRXP_PICK_Grain Sacks|r and |cRXP_PICK_Meat Haunches|r on the ground for |cRXP_LOOT_Stolen Supplies|r
+    >>Loot the |cRXP_PICK_Weapon Racks|r and |cRXP_PICK_Stolen Weapons|r the ground
+    .complete 98387,1 -- Stolen Supplies (10)
+    .complete 98387,2 -- Stolen Weapon (8)
+step
+    #requires IncineratorGarim
 step
     #xprate <1.5
     .goto 1433/0,-2903.07,-9691.340
@@ -9110,12 +9162,21 @@ step
 	.target Marshal Marris
     .goto 1433/0,-2298.06,-9284.04
     .turnin 20 >> Turn in Blackrock Menace
+    .turnin 98387 >>Turn in Blackrock Blockade
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
 	.target Foreman Oslow
     .goto 1433/0,-2268.32,-9279.12
     .turnin 125 >> Turn in The Lost Tools
     .accept 89 >> Accept The Everstill Bridge
+step
+    #optional
+    .isQuestComplete 95999
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Solomon|r
+	.target Magistrate Solomon
+    .goto 1433/0,-2207.10,-9231.34,15,0
+    .goto 1433/0,-2221.65,-9218.60
+    .turnin 95999 >>Turn in WANTED: Incinerator Gar'im
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dockmaster Baren|r
 	.target Dockmaster Baren
@@ -9130,7 +9191,7 @@ step
     .goto 1433/0,-2172.59,-9261.02
     .turnin 127 >> Turn in Selling Fish
 step << Druid
-    .goto Redridge Mountains,26.8,44.8
+    .goto 1433/0,-2152.62,-9223.67--c:Redridge Mountains,26.8,44.8
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Brianna|r
     .home Lakeshire >> Set your hearthstone to Lakeshire
     .target Innkeeper Brianna
@@ -9178,6 +9239,7 @@ step
 	.target Deputy Feldon
     .goto 1433/0,-2237.93,-9443.60
     .turnin 246 >> Turn in Assessing the Threat
+    .turnin 98407 >>Turn in Show of Force
 step
     .goto 1433/0,-2634.54,-9588.54
     .xp 20 >> Grind until you are level 20
@@ -9189,7 +9251,7 @@ step << Druid
 	.cast 18960 >> Cast Teleport: Moonglade
 step << Druid
     #completewith next
-    .goto Moonglade,44.148,45.229
+    .goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
     .fly Teldrassil >> Fly to Darnassus
     .skipgossip
@@ -9275,7 +9337,7 @@ step << Druid
     --.accept 98362 >>Accept To Thunder Bluff << Horde
 step << Druid
     #completewith catspirit2
-    .goto Moonglade,44.148,45.229
+    .goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
     .fly Teldrassil >> Fly to Darnassus
     .skipgossip
@@ -9285,7 +9347,7 @@ step << Druid
     .zoneskip Teldrassil
 step << Druid
     #completewith next
-    .goto Moonglade,44.148,45.229
+    .goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
     .fly Teldrassil >> Fly to Darnassus
     .skipgossip
@@ -10037,7 +10099,7 @@ step
     .goto 1439/1,338.70,4821.22,50,0
     .goto 1439/1,452.67,4684.98
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
-    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Ravage] |cRXP_WARN_an instant attack dealing 20-40 damage and knocking you down for 2 seconds|r
     .complete 1003,1 -- Grizzled Scalp (4)
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
@@ -10268,7 +10330,7 @@ step << Hunter
 --XX Train in darn at 20 on 2x
 step << Hunter
     #xprate <1.59
-    .goto Ashenvale,18.010,59.832
+    .goto 1440/1,661.42,2373.12--c:Ashenvale,18.010,59.832
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alenndaar Lapidaar|r
     .trainer >> Train your class skills
     .train 5118 >> Train |T132242:0|t[Aspect of the Cheetah]
@@ -10676,7 +10738,7 @@ step << Druid
 step
     #xprate <1.59
     #optional
-    #completewith TheryluneE
+    #completewith AshenvaleEnd
     .hs >> Hearth to Auberdine
 step
     .goto 1439/1,504.41,6402.39
@@ -10727,7 +10789,7 @@ step
     #optional
     .goto 1439/1,306.60,4784.11,0
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
-    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Ravage] |cRXP_WARN_an instant attack dealing 20-40 damage and knocking you down for 2 seconds|r
     .complete 1003,1
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
@@ -10880,7 +10942,7 @@ step
     #optional
     .goto 1439/1,306.60,4784.11,0
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
-    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Ravage] |cRXP_WARN_an instant attack dealing 20-40 damage and knocking you down for 2 seconds|r
     .complete 1003,1
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
@@ -11032,7 +11094,7 @@ step
     .goto 1439/1,338.70,4821.22,50,0
     .goto 1439/1,452.67,4684.98
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
-    >>Be careful as they cast |T132152:0|t[Ravage] an instant attack dealing 20-40 damage and |cRXP_WARN_knocking you down for 2s|r
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Ravage] |cRXP_WARN_an instant attack dealing 20-40 damage and knocking you down for 2 seconds|r
     .complete 1003,1 -- Grizzled Scalp (4)
     .isOnQuest 1003
     .mob Grizzled Thistle Bear

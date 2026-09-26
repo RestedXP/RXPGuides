@@ -248,7 +248,7 @@ function addon.settings:InitializeDatabase()
     if type(RXPData.defaultProfile) ~= "table" or not RXPData.defaultProfile.profile then
         RXPData.defaultProfile = false
     end
-    if not addon.player.beta then
+    if not addon.player.beta and addon.game ~= "FOREVER" then
         RXPCData.localDB = nil
     end
     settingsDB = LibStub("AceDB-3.0"):New("RXPSettings", RXPData.defaultProfile or RXPCData.localDB or settingsDBDefaults)
@@ -265,6 +265,13 @@ end
 
 addon.settings.GetSettingsDB = function()
     return settingsDB:GetCurrentProfile()
+end
+
+function addon.settings:SaveLocalProfile()
+    if not addon.saveSettingsLocally then return end
+
+    self:SaveFramePositions()
+    RXPCData.localDB = {profile = self.copy(self.profile)}
 end
 
 function addon.settings:InitializeSettings()
@@ -3176,6 +3183,7 @@ function addon.settings:CreateAceOptionsPanel()
                         confirm = requiresReload,
                         set = function(info, value)
                             SetProfileOption(info, value)
+                            addon.settings:SaveLocalProfile()
                             _G.ReloadUI()
                         end
                     },

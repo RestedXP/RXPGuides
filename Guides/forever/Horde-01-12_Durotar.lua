@@ -22,11 +22,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaltunk|r
     .accept 4641 >>Accept Your Place In The World
     .target Kaltunk
-step << Warrior/Shaman/Warlock
+step << Warrior/Shaman/Warlock/Mage/Priest
     #completewith next
     +|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 35 copper worth of vendor items (including your armor)|r << Warlock
+    +|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 60 copper worth of vendor items (including your armor)|r << Maget
+    +|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 50 copper worth of vendor items (including your armor)|r << Priest
     +|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 10 copper worth of vendor items (including your armor)|r << Warrior/Shaman
-    .goto 1411/1,-4281.07,-720.15,30,0 << Warlock
+    .goto 1411/1,-4281.07,-720.15,30,0 << Warlock/Mage/Priest
     .goto 1411/1,-4299.05,-494.9,30,0 << Warrior/Shaman
     .mob Mottled Boar
     .money >0.01
@@ -103,16 +105,15 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .train 348 >>Train |T135817:0|t[Immolate]
     .target Nartok
-step << !Warrior !Rogue
-    #softcore
+step << Hunter/Mage/Priest
     .goto 1411/1,-4214.45,-565.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Hunter !Shaman
+    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Hunter
     >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from her|r << Hunter
-    .collect 159,30,6394,1 << !Hunter !Shaman --Refreshing Spring Water (30)
+    .collect 159,10,6394,1 << !Hunter --Refreshing Spring Water (10)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .target Duokna
-    .money <0.015 << !Hunter
+    .money <0.005 << !Hunter
     .money <0.0040 << Hunter
 step << Warlock
     .goto 1411/1,-4214.45,-565.40
@@ -927,7 +928,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
     .vendor >> Vendor Trash
     .target Duokna
-    .money >0.03
+    .isOnQuest 794
 step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r and |cRXP_FRIENDLY_Canaga|r
     .train 332 >>Train |T136052:0|t[Healing Wave]
@@ -1538,28 +1539,19 @@ step
     .turnin 818 >>Turn in A Solvent Spirit
     .target Master Vornal
     .isQuestComplete 818
-step << Warrior/Rogue/Shaman
-    .goto 1411/1,-4903.41,-786.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hai'zan|r
-    >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r
-    .vendor >> Vendor trash
-    .collect 2287,10,823,1 --Haunch of Meat (10)
-    .money <0.025
-    .target Hai'zan
 step << Warlock/Mage/Priest
     .goto 1411/1,-4938.83,-779.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r
     >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r --Refreshing Spring Water (20)
+    .vendor >> Vendor trash
     .collect 159,20,784,1
     .target K'waii
-    .money <0.010
-step << Warlock/Mage/Priest
-    .goto 1411/1,-4938.83,-779.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_K'waii|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r --Refreshing Spring Water (10)
-    .collect 159,10,784,1
-    .target K'waii
-    .money <0.0050
+step << !Warlock !Mage !Priest
+    .goto 1411/1,-4903.41,-786.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hai'zan|r
+    >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him if you can afford it|r << Warrior/Rogue
+    .vendor >> Vendor trash
+    .target Hai'zan
 step
     #softcore
     #loop
@@ -1574,7 +1566,6 @@ step
     .target Lar Prowltusk
 step
     #completewith next
-    .goto 1411/1,-4710.400,-209.400
     >>Kill |cRXP_ENEMY_Ridgeshade Lurkers|r and |cRXP_ENEMY_Ridgeshade Creepers|r
     .complete 96821,2 --|6/6 Ridgeshade Lurker slain
     .mob +Ridgeshade Lurker
@@ -1594,6 +1585,36 @@ step
     .mob +Ridgeshade Lurker
     .complete 96821,1 --|6/6 Ridgeshade Creeper slain
     .mob +Ridgeshade Creeper
+step --camp quest
+    #hardcore
+    .goto 1411/1,-4713.000,140.600
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brakk|r
+    .turnin 96652 >>Turn in The Adventurer
+    .accept 96604 >>Accept The Great Outdoors
+    .target Brakk
+    .isOnQuest 96652
+step --camp quest
+    #hardcore
+    #optional
+    .goto 1411/1,-4713.000,140.600
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brakk|r
+    .accept 96604 >>Accept The Great Outdoors
+    .target Brakk
+step
+    #hardcore
+    .goto 1411/1,-4715.200,140.100
+    >>|cRXP_WARN_Type /sit at the campfire and wait for one minute until you get the "Camp Benefits" buff|r
+    .complete 96604,1 --|1/1 Use the /sit emote near the campfire
+    .complete 96604,2 --|Gain the Boosted Rest buff
+step
+    #hardcore
+    .goto 1411/1,-4713.000,140.600
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brakk|r
+    .turnin 96604 >>Turn in The Great Outdoors
+    --.accept 97900 >>Accept Camping 101: Blacksmithing
+    .accept 96655 >>Accept Camping 101: Cooking
+    --.accept 97907 >>Accept Camping 101: Mining
+    .target Brakk
 step
     #hardcore
     #completewith next
@@ -1613,6 +1634,13 @@ step
     .accept 815 >>Accept Break a Few Eggs
     .target +Cook Torka
     .goto 1411/1,-4663.88,310.56
+step
+    #hardcore
+    .goto 1411/1,-4663.88,310.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Torka|r
+    .train 2550 >>Train Cooking
+    .turnin 96655 >>Turn in Camping 101: Cooking
+    .target Cook Torka
 step
     #hardcore
     #completewith next
@@ -1835,6 +1863,7 @@ step << skip
     .goto 1411/1,-4992.24,-77.54,120,0
     .deathskip >> Die at the northern tower outside of Tiragarde Keep and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step --camp quest
+    #softcore
     .goto 1411/1,-4713.000,140.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brakk|r
     .turnin 96652 >>Turn in The Adventurer
@@ -1842,22 +1871,25 @@ step --camp quest
     .target Brakk
     .isOnQuest 96652
 step --camp quest
+    #softcore
     #optional
     .goto 1411/1,-4713.000,140.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brakk|r
     .accept 96604 >>Accept The Great Outdoors
     .target Brakk
 step
+    #softcore
     .goto 1411/1,-4715.200,140.100
     >>|cRXP_WARN_Type /sit at the campfire and wait for one minute until you get the "Camp Benefits" buff|r
     .complete 96604,1 --|1/1 Use the /sit emote near the campfire
     .complete 96604,2 --|Gain the Boosted Rest buff
 step
+    #softcore
     .goto 1411/1,-4713.000,140.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brakk|r
     .turnin 96604 >>Turn in The Great Outdoors
     --.accept 97900 >>Accept Camping 101: Blacksmithing
-    --.accept 96655 >>Accept Camping 101: Cooking
+    .accept 96655 >>Accept Camping 101: Cooking
     --.accept 97907 >>Accept Camping 101: Mining
     .target Brakk
 step
@@ -1892,6 +1924,13 @@ step
     .accept 825 >>Accept From The Wreckage....
     .accept 831 >>Accept The Admiral's Orders
     .target +Gar'Thok
+step
+    #softcore
+    .goto 1411/1,-4663.88,310.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Torka|r
+    .train 2550 >>Train Cooking
+    .turnin 96655 >>Turn in Camping 101: Cooking
+    .target Cook Torka
 step
     #completewith next
     .goto 1411/1,-4617.88,290.47,12,0
@@ -2058,12 +2097,17 @@ step << Hunter
 step
     .goto 1411/1,-4686.09,340.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
+    .home >> Set your Hearthstone to Razor Hill
+    .bindlocation 362
+    .target Innkeeper Grosk
+step
+    .goto 1411/1,-4686.09,340.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid
     >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r << Rogue/Warrior
     >>|cRXP_WARN_Save 4 silver for your class spells!|r << Rogue/Warrior/Shaman/Warlock
     >>|cRXP_WARN_Save 2 silver for your class spells!|r << Priest
     .vendor >> Vendor Trash
-    .home >> Set your Hearthstone to Razor Hill
     .turnin 2161 >>Turn in A Peon's Burden
     .target Innkeeper Grosk
     .train 6760,1 << Rogue
@@ -2071,7 +2115,6 @@ step
     .train 980,1 << Warlock
     .train 8044,1 << Shaman
     .train 284,1 << Warrior
-    .bindlocation 362
 step << !Mage !Hunter !Druid
     #optional
     .goto 1411/1,-4686.09,340.52
@@ -2079,7 +2122,6 @@ step << !Mage !Hunter !Druid
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid
     >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r << Rogue/Warrior
     .vendor >> Vendor Trash
-    .home >> Set your Hearthstone to Razor Hill
     .turnin 2161 >>Turn in A Peon's Burden
     .target Innkeeper Grosk
     .train 6760,3 << Rogue
@@ -2087,7 +2129,6 @@ step << !Mage !Hunter !Druid
     .train 980,3 << Warlock
     .train 8044,3 << Shaman
     .train 284,3 << Warrior
-    .bindlocation 362
 step
     .goto 1411/1,-4815.400,306.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turroc|r
@@ -2533,6 +2574,11 @@ step << Hunter
     .trainer >> Train your class spells
     .target Thotar
 step << Hunter
+    .goto 1411/1,-4724.900,287.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
+    .accept 99048 >>Accept A Missing Hand
+    .target Orgnil Soulscar
+step << Hunter
     .goto 1411/1,-4763.29,361.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_Ghrawt|r. Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_and a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_from him|r
     .collect 2515,1200,6082,1 --Sharp Arrow (1200)
@@ -2586,6 +2632,30 @@ step << Hunter
     .complete 6083,1 --Tame a Surf Crawler
     .mob Surf Crawler
     .isQuestTurnedIn 6062
+step << Hunter
+    .goto 1411/1,-5061.700,201.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Heglan Shadeeye|r
+    .turnin 99048 >>Turn in A Missing Hand
+    .accept 99049 >>Accept Threat from Below
+    .target Heglan Shadeeye
+step << Hunter
+    .goto 1411/1,-5073.900,244.700
+    >>Loot the |cRXP_PICK_Abandoned Dagger|r on the ground
+    .complete 99049,1 --|1/1 Orcish Dagger
+step << Hunter
+    .goto 1411/1,-5140.800,229.100
+    >>Loot the |cRXP_PICK_Weapon Piece|r on the ground
+    .complete 99049,3 --|1/1 Broken Bone Trident
+step << Hunter
+    .goto 1411/1,-5138.000,314.100
+    >>Loot the |cRXP_PICK_Strange Debris|r on the ground
+    .complete 99049,2 --|1/1 Banner Scrap
+step << Hunter
+    .goto 1411/1,-4725.000,287.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
+    .turnin 99049 >>Turn in Threat from Below
+    --.accept 99051 >>Accept Threat from Below
+    .target Orgnil Soulscar
 step << Hunter
     .goto 1411/1,-4704.07,275.31
     >>Go inside the bunker
@@ -2740,18 +2810,18 @@ step << Hunter/Shaman
 step << Shaman
     #optional
     #loop
-    .goto Durotar,43.56,15.08,0
-    .goto Durotar,44.16,19.19,60,0
-    .goto Durotar,44.13,17.02,60,0
-    .goto Durotar,43.56,15.08,60,0
+    .goto 1411/1,-4265.73,1276.76,0--c:Durotar,43.56,15.08
+    .goto 1411/1,-4297.46,1131.89,60,0--c:Durotar,44.16,19.19
+    .goto 1411/1,-4295.87,1208.38,60,0--c:Durotar,44.13,17.02
+    .goto 1411/1,-4265.73,1276.76,60,0--c:Durotar,43.56,15.08
     .xp 9+2520 >>Grind to 2520+/6500 into level 9
 step << Shaman
     #optional
     #loop
-    .goto Durotar,43.56,15.08,0
-    .goto Durotar,44.16,19.19,60,0
-    .goto Durotar,44.13,17.02,60,0
-    .goto Durotar,43.56,15.08,60,0
+    .goto 1411/1,-4265.73,1276.76,0--c:Durotar,43.56,15.08
+    .goto 1411/1,-4297.46,1131.89,60,0--c:Durotar,44.16,19.19
+    .goto 1411/1,-4295.87,1208.38,60,0--c:Durotar,44.13,17.02
+    .goto 1411/1,-4265.73,1276.76,60,0--c:Durotar,43.56,15.08
     +Grind until your hearthstone cooldown is <5 minutes
     .cooldown item,6948,<0
 step << Hunter/Shaman
@@ -2871,6 +2941,7 @@ step << Hunter/Shaman
     >>Loot the orange |cRXP_PICK_Rocks|r on the ground
     >>|cRXP_WARN_Skip this quest if there is a lot of competition! There aren't that many |cRXP_PICK_Rocks|r and they do not respawn quickly|r
     .complete 97326,1 --|8/8 Smooth Boulder
+    .isOnQuest 97326
 step << Hunter/Shaman
     .goto 1454/1,-4205.900,2007.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thra|r
@@ -2903,10 +2974,10 @@ step << Hunter/Shaman
 step << Priest
     #optional
     #loop
-    .goto Durotar,41.61,24.54,40,0
-    .goto Durotar,39.93,24.24,40,0
-    .goto Durotar,39.03,26.73,40,0
-    .goto Durotar,39.20,31.80
+    .goto 1411/1,-4162.63,943.30,40,0--c:Durotar,41.61,24.54
+    .goto 1411/1,-4073.80,953.87,40,0--c:Durotar,39.93,24.24
+    .goto 1411/1,-4026.21,866.10,40,0--c:Durotar,39.03,26.73
+    .goto 1411/1,-4035.20,687.38--c:Durotar,39.20,31.80
     .xp 9+3150 >>Grind to 3150+/6500 into level 9
 step
     #completewith RazorTurnins2
@@ -2928,8 +2999,8 @@ step
     .vendor >> Vendor Trash
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman
     >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r << Rogue/Warrior
-    .collect 1179,15,818,1 << Mage/Warlock/Priest/Shaman --Ice Cold Milk (15)
-    .collect 2287,15,818,1 << Rogue/Warrior --Haunch of Meat (15)
+    .collect 1179,15,828,1 << Mage/Warlock/Priest/Shaman --Ice Cold Milk (15)
+    .collect 2287,15,828,1 << Rogue/Warrior --Haunch of Meat (15)
     .target Innkeeper Grosk
     .money <0.0375
 step << Hunter
@@ -2946,6 +3017,7 @@ step << !Hunter
     .goto 1411/1,-4665.47,311.62
     .turnin 806 >>Turn in Dark Storms
     .accept 828 >>Accept Margoz
+    .accept 99048 >>Accept A Missing Hand << Shaman
     .target +Orgnil Soulscar
     .goto 1411/1,-4724.69,287.30
     .turnin 825 >>Turn in From The Wreckage....
@@ -3067,6 +3139,30 @@ step << skip --Shaman
     #completewith MargozTurnIn
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     --TODO: Re-add deathskip after ress timer fix
+step << Shaman
+    .goto 1411/1,-5061.700,201.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Heglan Shadeeye|r
+    .turnin 99048 >>Turn in A Missing Hand
+    .accept 99049 >>Accept Threat from Below
+    .target Heglan Shadeeye
+step << Shaman
+    .goto 1411/1,-5073.900,244.700
+    >>Loot the |cRXP_PICK_Abandoned Dagger|r on the ground
+    .complete 99049,1 --|1/1 Orcish Dagger
+step << Shaman
+    .goto 1411/1,-5140.800,229.100
+    >>Loot the |cRXP_PICK_Weapon Piece|r on the ground
+    .complete 99049,3 --|1/1 Broken Bone Trident
+step << Shaman
+    .goto 1411/1,-5138.000,314.100
+    >>Loot the |cRXP_PICK_Strange Debris|r on the ground
+    .complete 99049,2 --|1/1 Banner Scrap
+step << Shaman
+    .goto 1411/1,-4725.000,287.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
+    .turnin 99049 >>Turn in Threat from Below
+    --.accept 99051 >>Accept Threat from Below
+    .target Orgnil Soulscar
 step << Hunter
     #completewith MargozTurnIn
     +Tame a |cRXP_ENEMY_Venomtail Scorpid|r
@@ -3294,6 +3390,12 @@ step
     #completewith NeeruFireblade << Warrior/Shaman/Hunter
     .goto 1454/1,-4367.46,1405.44,50,0
     .zone Orgrimmar >> Enter Orgrimmar
+step << !Rogue
+    .goto 1454/1,-4355.53,1520.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trak'gen|r
+    .vendor >> Vendor your trash
+    .target Trak'gen
+    .isQuestAvailable 97246
 step << Rogue
     .goto 1454/1,-4355.53,1520.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135419:0|t[Sharp Throwing Axe] |cRXP_BUY_from him|r
@@ -3422,11 +3524,13 @@ step
     >>Loot the orange |cRXP_PICK_Rocks|r on the ground
     >>|cRXP_WARN_Skip this quest if there is a lot of competition! There aren't that many |cRXP_PICK_Rocks|r and they do not respawn quickly|r
     .complete 97326,1 --|8/8 Smooth Boulder
+    .isOnQuest 97326
 step
     .goto 1454/1,-4205.900,2007.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thra|r
     .turnin 97326 >>Turn in Rocks to Rests
     .target Thra
+    .isQuestComplete 97326
 step << !Shaman !Hunter
     #label Admiralorders1
     .goto 1454/1,-4133.36,1939.000
@@ -3843,7 +3947,7 @@ step << Troll Warrior/Undead Warrior/Tauren Shaman/Troll Shaman/Orc Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
 step
     #ah
-    .goto Undercity,64.20,49.60
+    .goto 1458/0,257.27,1560.45--c:Undercity,64.20,49.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Rhyker|r
     >>|cRXP_BUY_Buy Three|r |T133884:0|t[Murloc Eyes] |cRXP_BUY_from the Auction House|r
     >>|cRXP_WARN_Skip this if you want, it's only a small time saver|r
