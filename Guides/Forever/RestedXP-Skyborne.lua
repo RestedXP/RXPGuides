@@ -2918,8 +2918,6 @@ step << Hunter
     .xp <10,1
 step << Hunter
     #include Skyborne Hunter Class Quests
-
-    --here shiek
 step << Mage
     .goto 2521,62.887,77.324
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belann Windwood::256507|r.
@@ -4584,6 +4582,9 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 #name Skyborne Hunter Class Quests
+#group RestedXP Forever Guide (A) << Alliance
+#group RestedXP Forever Guide (H) << Horde
+#internal 
 
 step
     .goto 2521,59.572,72.639
@@ -4695,6 +4696,8 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 #name Random Stuff
+#group RestedXP Forever Guide (A) << Alliance
+#group RestedXP Forever Guide (H) << Horde
 #internal
 
     .goto 2521,41.07,22.33 -- spirit healer thendal village
