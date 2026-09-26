@@ -2599,9 +2599,9 @@ step << Priest
     .goto 1453/0,862.89,-8519.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
     .trainer >> Train your class spells
-    .turnin 5634 >> Turn in Desperate Prayer
+    .turnin 5634 >> Turn in Desperate Prayer << Dwarf
     .target High Priestess Laurena
-step << Priest
+step << Dwarf Priest
     .goto 1453/0,861.81,-8512.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
     .train 13908 >> Train Desperate Prayer
