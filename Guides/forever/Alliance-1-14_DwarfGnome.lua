@@ -2372,6 +2372,22 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belia Thundergranite|r
     .trainer >> Train your class spells
     .target Regnus Thundergranite
+step << Priest/Mage/Warlock
+    #ah
+    #label OilWandFood
+    #completewith AHCheck
+    .goto 1455/0,-917.57,-4967.58,-1--c:Ironforge,25.800,75.500
+    .goto 1455/0,-904.92,-4962.83,-1--c:Ironforge,24.200,74.600
+    .goto 1455/0,-901.76,-4948.06,-1--c:Ironforge,23.800,71.800
+    >>|cRXP_WARN_Buy the following if you can afford it:|r
+    >>|T134711:0|t[Minor Wizard Oil] |cRXP_WARN_and|r |T133906:0|t[Smoked Sagefish]
+    >>|cRXP_WARN_Also check for any high DPS|r |T132317:0|t[Wand] |cRXP_WARN_upgrades that you can use now/soon|r
+    >>|cRXP_WARN_These will provide a high DPS increase in early levels. If you don't want to or can't do this, skip this step|r
+    .collect 20744,1 -- Minor Wizard Oil (1)
+    .collect 21072,20 -- Smoked Sagefish (20)
+    .target Auctioneer Lympkin
+    .target Auctioneer Redmuse
+    .target Auctioneer Buckler
 step
     #ah
     .goto 1455/0,-917.57,-4967.58,-1--c:Ironforge,25.800,75.500
@@ -2401,6 +2417,7 @@ step
     .isQuestAvailable 418
     .skill cooking,50,1 --XX Shows if cooking skill is <50
 step
+    #label AHCheck
     #ah
     #optional
     .goto 1455/0,-917.57,-4967.58,-1--c:Ironforge,25.800,75.500
@@ -2421,6 +2438,8 @@ step
     .zoneskip Dun Morogh
     .isQuestAvailable 418
     .skill cooking,<50,1 --XX Shows if cooking skill is 50+
+step
+    #requires OilWandFood
 step << Dwarf Paladin
     .goto 1455/0,-856.69,-4841.490
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Firebrew|r

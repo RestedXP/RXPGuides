@@ -2180,10 +2180,16 @@ step
     >>|T134187:0|t[Earthroot] << Druid era
     >>|T133912:0|t[Darkshore Grouper]
     >>|T133972:0|t[Strider Meat]
-    *Skip this step if you wish to not buy any
+    >>|T134711:0|t[Minor Wizard Oil] << Priest/Druid
+    >>|T133906:0|t[Smoked Sagefish] << Priest/Druid
+    >>|T134711:0|t[Minor Wizard Oil] |cRXP_WARN_and|r |T133906:0|t[Smoked Sagefish] |cRXP_WARN_will provide a high DPS increase in early levels|r << Priest/Druid
+    >>|cRXP_WARN_Also check for any high DPS|r |T132317:0|t[Wand] |cRXP_WARN_upgrades that you can use now/soon|r << Priest
+    *|cRXP_WARN_Skip this step if you wish to not buy any|r
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .collect 2449,5,6123,1 << Druid
+    .collect 20744,1 << Priest/Druid -- Minor Wizard Oil (1)
+    .collect 21072,20 << Priest/Druid -- Smoked Sagefish (20)
     .target Auctioneer Tolon
     .target Auctioneer Golothas
 step << Druid

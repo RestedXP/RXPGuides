@@ -3052,6 +3052,17 @@ step << Warlock/Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
     .trainer >>Train Staves
     .target Woo Ping
+step << Priest/Mage/Warlock
+    #ah
+    .goto 1453/0,660.28,-8814.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>|cRXP_WARN_Buy the following if you can afford it:|r
+    >>|T134711:0|t[Minor Wizard Oil] |cRXP_WARN_and|r |T133906:0|t[Smoked Sagefish]
+    >>|cRXP_WARN_Also check for any high DPS|r |T132317:0|t[Wand] |cRXP_WARN_upgrades that you can use now/soon|r
+    >>|cRXP_WARN_These will provide a high DPS increase in early levels. If you don't want to or can't do this, skip this step|r
+    .collect 20744,1 -- Minor Wizard Oil (1)
+    .collect 21072,20 -- Smoked Sagefish (20)
+    .target Auctioneer Jaxon
 step << Rogue
     #ssf
     #optional
