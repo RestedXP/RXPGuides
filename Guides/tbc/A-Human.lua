@@ -2390,7 +2390,7 @@ step
     .isQuestAvailable 314
 step
 #xprate <1.5
-    #completewith next
+    #completewith VagashEnd
     #requires Dirt
     .goto 1426,62.778,54.591,0
     .goto 1426,62.538,46.195,0

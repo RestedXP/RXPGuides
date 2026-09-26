@@ -3810,7 +3810,7 @@ step
     .goto 1426/0,-1219.90,-5422.55,40 >>Go up the dirt path
     .isQuestAvailable 314
 step
-    #completewith next
+    #completewith VagashEnd
     #requires Dirt
     .goto 1426,62.778,54.591,0
     .goto 1426,62.538,46.195,0
