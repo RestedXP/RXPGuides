@@ -6,12 +6,13 @@ C_Spell.RequestLoadSpellData(2368) -- herbalism
 
 -- Spells not used in hardcore:
 addon.HCSpellList = {
-    20752, -- create soulstone r2
-    20755, -- create soulstone r3
-    20756, -- create soulstone r4
-    20757, -- create soulstone r5
-    1949, -- hellfire r1
-    20608 -- reincarnation
+    [693] = true, -- soulstone r1
+    [20752] = true, -- create soulstone r2
+    [20755] = true, -- create soulstone r3
+    [20756] = true, -- create soulstone r4
+    [20757] = true, -- create soulstone r5
+    [1949] = true, -- hellfire r1
+    [20608] = true -- reincarnation
 }
 
 local s = {}
