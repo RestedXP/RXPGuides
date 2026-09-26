@@ -3,13 +3,14 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 #name 1-14 Zephras Isle
-#displayname 1-14 Skyborne << Alliance
+#displayname 1-13 Skyborne << Alliance
 #displayname 1-12 Skyborne << Horde
 #group RestedXP Forever Guide (A) << Alliance
 #group RestedXP Forever Guide (H) << Horde
 #subgroup Speedrun Guide 1-20 << Alliance
 #subgroup Speedrun Guide 1-22 << Horde
 #defaultfor Skyborne
+#next "correct westfall guide" << Alliance
 
 step
     .goto 2521,42.82,23.41
@@ -203,20 +204,6 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ventaari Brightwish|r.
     .accept 92598 >>Accept The Gift of Skysight
     .target Ventaari Brightwish
-step << !Warrior !Rogue !Mage
-    --still loads in places it shouldn't no idea why
-    .isNotOnQuest 93552
-    .isQuestAvailable 93552
-    .goto 2521,42.749,24.496
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Hunter !Shaman
-    >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from her|r << Hunter
-    .collect 159,10 << !Hunter !Shaman --Refreshing Spring Water (10)
-    .collect 2512,1000 << Hunter --Rough Arrow (1000)
-    .target Uualia Suncrest::251537
-    .subzoneskip 16635,1
-    .money <0.0050 << !Hunter
-    .money <0.0040 << Hunter
 step << Horde
     .isNotOnQuest 93552
     .isQuestAvailable 93552
@@ -234,12 +221,26 @@ step << Alliance
     #completewith Harvesting Windstones
     .goto 2521,43.41,23.51
     .vendor >>|cRXP_WARN_Vendor trash|r
-step
+step << Alliance
     #requires Harvesting Windstones
-    .goto 2521,43.37,23.99
+    .goto 2521,43.37,23.99s
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
     .accept 93552 >>Accept Harvesting Windstones
     .target Dalia the Collector
+step << !Warrior !Rogue !Mage
+    --still loads in places it shouldn't no idea why
+    .isNotOnQuest 93552
+    .isQuestAvailable 93552
+    .goto 2521,42.749,24.496
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
+    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Hunter !Shaman
+    >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from her|r << Hunter
+    .collect 159,10 << !Hunter !Shaman --Refreshing Spring Water (10)
+    .collect 2512,1000 << Hunter --Rough Arrow (1000)
+    .target Uualia Suncrest::251537
+    .subzoneskip 16635,1
+    .money <0.0050 << !Hunter
+    .money <0.0040 << Hunter
 step << Alliance
     .goto 2521,43.33,24.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
@@ -247,8 +248,8 @@ step << Alliance
     .target Falorne Fallwind
 step
     #completewith next
-    .goto 2521,43.82,25.41,10,0
-    .goto 2521,44.23,24.96,10,0
+    .goto 2521,43.82,25.41,20,0
+    .goto 2521,44.23,24.96,20,0
     .goto 2521,44.28,27.32,25,0
     .goto 2521,45.33,29.15,30,0
     .goto 2521,46.77,27.96,30,0
@@ -286,6 +287,7 @@ step
     .mob Roiling Winds
 step << Alliance
     #label UseRacialAbility
+    .goto 2521,47.8,21.02,30,0
     .goto 2521,46.34,17.91
     >>Use |T236219:0|t[Read Ley Line] near the Thendal Grove Ley Line
     *|cRXP_WARN_Found throughout the zone|r |cRXP_WARN_Use|r |T236219:0|t[Read Ley Line] |cRXP_WARN_near one to gain 100% Mana and Food Regen for 15 min instead of 15 sec|r.
@@ -1619,7 +1621,7 @@ step << Warrior
     .subzoneskip 16624,1
     .goto 2521,44.95,45.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corsan Earthrazer|r
-    .train 284 >> Train |T136105:0|t[Heroic Strike (Rank 2)]
+    .train 284 >> Train |T132282:0|t[Heroic Strike (Rank 2)]
     .train 1715 >> Train |T132316:0|t[Hamstring]
     .train 7372,1
     .train 6343 >> Train |T136105:0|t[Thunder Clap]
@@ -1928,13 +1930,13 @@ step << Alliance
     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
     .cooldown spell,1259705,>0,1
     .usespell 1259705 << Alliance
-step
+step << Alliance
     #completewith CommanderCyclasHeadA
     >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob Galestrider::251661
-step
+step << Alliance
     #completewith CommanderCyclasHeadA
     >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
@@ -2340,7 +2342,6 @@ step << Alliance
     >>Kill |cRXP_ENEMY_Skyhopper|r.
     .complete 93949,1 --8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper
-
 step << Alliance
     .goto 2521,66.63,79.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale|r.
@@ -2428,6 +2429,7 @@ step << Horde
     .accept 93736 >>Accept Unwelcome Spirits
     .target Endaria Mistgaze::254344
 step << Horde
+    #label LeavingValanaarA
     .goto 2521,59.064,72.989
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Riaani Nightwind::256083|r.
     .target Riaani Nightwind::256083
@@ -2740,7 +2742,7 @@ step
     .turnin 92685 >>Turn in The Hills Have Eyes
     .accept 92693 >>Accept Standing Our Ground
     .target Aamelia Windfield:252800
-step
+step << Alliance
     .isOnQuest 92685
     -- .subzoneskip 16626,1
     .goto 2521,43.84,75.53,30,0
@@ -2784,7 +2786,7 @@ step << !Shaman
     .isQuestAvailable 92703
     .subzoneskip 16638
     .hs >>Hearth to Valanaar
-step << Alliance
+step
     .isQuestAvailable 92703
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
     .vendor >>Vendor trash
@@ -2916,8 +2918,6 @@ step << Hunter
     .xp <10,1
 step << Hunter
     #include Skyborne Hunter Class Quests
-
-    --here shiek
 step << Mage
     .goto 2521,62.887,77.324
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belann Windwood::256507|r.
@@ -3352,10 +3352,10 @@ step << Alliance
     .subzoneskip 16638,1
     .isQuestAvailable 98512
     .isNotOnQuest 98512
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halavuul Cragwind::252388|r outside the house.
-    .vendor >>Vendor trash
-    .target Halavuul Cragwind::252388
-    .goto 2521,65.45,80.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daeann Steelwind|r outside the house.
+    .vendor >>Vendor trash and repair if needed
+    .target Daeann Steelwind
+    .goto 2521,65.4,80.22
     .skipgossipid 137530
 step << Alliance
     .subzoneskip 16638,1
@@ -3637,19 +3637,16 @@ step << Horde
 --     .mob Zaal Stormshield::257196
 step << Warrior Horde
     #completewith next
-    #label Al'Aketh Guardian
-    .goto 2521,59.58,66.41,30,0 << Alliance
-    .goto 2521,58.98,60.8,30,0 << Alliance
-    .goto 2521,57.811,48.866,30,0 << Horde
-    .goto 2521,57.310,50.378,30,0 << Horde
+    #label Skybreaker Bulwark
+    .goto 2521,57.811,48.866,30,0
+    .goto 2521,57.310,50.378,30,0
     >>Kill |cRXP_ENEMY_Zaal Stormshield|r. Loot him for the |T134959:0|t[|cRXP_LOOT_Skybreaker Bulwark|r].
     .complete 94003,1 --|1/1 Skybreaker Bulwark
     .mob Zaal Stormshield::257196
 step << Warrior Horde
-    #completewith Al'Aketh Guardian
-    .goto 2521,58.69,52.86,80 >>Cross the bridge << Alliance
-    .goto 2521,58.69,52.86,30 >>Go up << Horde
-step << Warrior
+    #completewith Skybreaker Bulwark
+    .goto 2521,56.56,50.36,50 >>Go up
+step << Warrior Alliance
     #completewith next
     #label Skybreaker Bulwark
     .goto 2521,57.09,48.8,30,0
@@ -3657,7 +3654,7 @@ step << Warrior
     >>Kill |cRXP_ENEMY_Zaal Stormshield|r. Loot him for the |T134959:0|t[|cRXP_LOOT_Skybreaker Bulwark|r].
     .complete 94003,1 --|1/1 Skybreaker Bulwark
     .mob Zaal Stormshield::257196
-step << Warrior
+step << Warrior Alliance
     #completewith Skybreaker Bulwark
     .goto 2521,57.44,50.15,30 >>Go around the mountain
 step << Warrior
@@ -3940,7 +3937,7 @@ step
     .complete 94896,1,1 --8/8 Abandoned Belongings
 step
     #completewith Resaan's Heirloom
-    >>Kill |cRXP_ENEMY_Wind Hollows|r. Loot them for |T1:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
+    >>Kill |cRXP_ENEMY_Wind Hollows|r. Loot them for |T2576094:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
     >>Kill |cRXP_ENEMY_Wind Hollows|r. << Alliance
     .complete 93172,1 --10/10 Wind Hollow freed
     .complete 93736,1 --10/10 Wind Hollow Essence
@@ -3996,7 +3993,7 @@ step
     +1
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Wind Hollows|r. Loot them for |T1:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
+    >>Kill |cRXP_ENEMY_Wind Hollows|r. Loot them for |T2576094:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
     >>Kill |cRXP_ENEMY_Wind Hollows|r. << Alliance
     .complete 93736,1 --10/10 Wind Hollow Essence
     .complete 93172,1 --10/10 Wind Hollow freed
@@ -4006,7 +4003,7 @@ step
     .complete 94896,1 --8/8 Abandoned Belongings
 step
     #label Wind Hollow
-    >>Kill |cRXP_ENEMY_Wind Hollows|r. Loot them for |T1:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
+    >>Kill |cRXP_ENEMY_Wind Hollows|r. Loot them for |T2576094:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
     >>Kill |cRXP_ENEMY_Wind Hollows|r. << Alliance
     .complete 93736,1 --10/10 Wind Hollow Essence
     .complete 93172,1 --10/10 Wind Hollow freed
@@ -4093,7 +4090,7 @@ step
     #completewith next
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings|r. 
     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers].
-    .complete 92741,1 --8/8 Shriekling Talons
+    .complete 92741,1 --8/8 Shriekling Talons << Alliance
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob Shadowgale Shriekling::256092
 step
@@ -4104,7 +4101,7 @@ step
     #label Shadowgale Shrieklings
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings|r. 
     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers].
-    .complete 92741,1 --8/8 Shriekling Talons
+    .complete 92741,1 --8/8 Shriekling Talons << Alliance
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob Shadowgale Shriekling::256092
 step
@@ -4231,9 +4228,8 @@ step
     .subzoneskip 16631,1
     .hs >>Hearth to Shen'dar Village
     .use 6948
-step << Warrior
-    .isQuestAvailable 94491 << Alliance
-    .isQuestAvailable 93736 << Horde
+step << Warrior Alliance
+    .isQuestAvailable 94491
     .subzoneskip 16638,1
     .goto 2521,59.89,72.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seena Skybreaker|r.
@@ -4253,12 +4249,49 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyalah Brightfire|r inside the house.
     .turnin 93317 >>Turn in Crab Season
     .target Nyalah Brightfire
+
+step << Alliance Rogue
+    .goto 2521,59.9,72.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eltheen Nightbreeze|r.
+    .train 1766 >>Train |T132219:0|t[Kick]
+    .skipgossipid 136810
+    .target Eltheen Nightbreeze
+    .money <0.08
+    .xp <12,1
+step << Alliance Hunter
+    .goto 2521,59.571,72.639
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
+    .train 14281 >>Train |T132218:0|t[Arcane Shot (Rank 2)]
+    .target Quel'ana Quickgale::252389
+    .money <0.08
+    .xp <12,1
+step << Alliance Warrior
+    .goto 2521,59.89,72.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seena Skybreaker::252377|r.
+    .train 5242 >>Train |T132333:0|t[Battle Shout (Rank 2)]
+    .train 7384 >>Train |T132223:0|t[Overpower]
+    .train 7887,1
+    .train 72 >>Train |T132357:0|t[Shield Bash]
+    .train 1671,1
+    .skipgossipid 136813
+    .target Seena Skybreaker::252377
+    .money <0.3
+    .xp <12,1
 step << Alliance
     .goto 2521,63.55,73.45,25,0
     .goto 2521,63.99,75.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze|r.
     .turnin 94491 >>Turn in The Fate of the Den
     .target Lotheluum Starbreeze
+step << Alliance Druid
+    .subzoneskip 16638,1
+    .goto 2521,45.153,44.225
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naeluna Swiftmend::254081|r.
+    .train 5229 >>Train |T132126:0|t[Enrage]
+    .train 8936 >>Train |T136085:0|t[Regrowth]
+    .target Naeluna Swiftmend::254081
+    .money <0.16
+    .xp <12,1 
 step
     .goto 2521,65.95,74.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ealaane Nimbuswalker|r.
@@ -4377,7 +4410,7 @@ step << Alliance
     .turnin 92640 >>Turn in Desperate Times
     .accept 93065 >>Accept Prepare for Battle
     .target Valennia Stormfist
-step 
+step << Alliance
     .subzoneskip 16638,1
     .goto 2521,63.9,74.16
     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
@@ -4391,6 +4424,20 @@ step << Alliance
     .turnin 93065 >>Turn in Prepare for Battle
 --*Discovery Route(DO NOT DELETE)
     -- .accept 92947 >>Accept Making Our Move
+
+step << Alliance Mage
+    .goto 2521,65.4,80.22,10,0
+    .goto 2521,65.91,80.58
+    >>Enter the large stone hall beside the blacksmith, continue into the upper chamber, then turn right.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anathamaas Aetherwind|r.
+    .train 145 >>Train |T135812:0|t[Fireball (Rank 3)]
+    .train 604 >>Train |T136006:0|t[Dampen Magic]
+    .train 597 >>Train |T133952:0|t[Conjure Food (Rank 2)]
+    .train 130 >>Train |T135992:0|t[Slow Fall]
+    .skipgossipid 136807
+    .target Anathamaas Aetherwind
+    .money <0.24
+    .xp <12,1
 step << Alliance
     .goto 2521,66.34,79.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iaadaria Bitterwind|r.
@@ -4443,10 +4490,70 @@ step  << Alliance
     .skipgossipid 142485
     .target Randal Emerson
 step << Horde
+    .goto 2521,63.989,75.090
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
+    .target Lotheluum Starbreeze::252359
+    .turnin 94491 >>Turn in The Fate of the Den
+step << Horde 
+    .goto 2521,60.64,72.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyalah Brightfire|r inside the house.
+    .turnin 93317 >>Turn in Crab Season
+    .target Nyalah Brightfire
+step << Warrior Horde
+    .goto 2521,59.886,72.863
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seena Skybreaker::252377|r.
+    .turnin 94003 >>Turn in The Skybreaker Bulwark
+    .target Seena Skybreaker::252377
+step << Warrior Horde
+    .isQuestAvailable 93736
+    .subzoneskip 16638,1
+    .goto 2521,59.89,72.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seena Skybreaker|r.
+    .train 5242 >>Train |T132333:0|t[Battle Shout (Rank 2)]
+    .train 7384 >>Train |T132223:0|t[Overpower]
+    .train 7887,1
+    .train 72 >>Train |T132357:0|t[Shield Bash]
+    .train 1671,1
+    .skipgossipid 136813
+    .target Seena Skybreaker
+    .money <0.3
+    .xp <12,1
+step << Warrior Horde
+    .isQuestAvailable 93736
+    .subzoneskip 16638,1
+    .goto 2521,59.89,72.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seena Skybreaker|r.
+    .train 1160 >>Train |Tinterface/icons/ability_warrior_warcry.blp:0|t[Demoralizing Shout]
+    .train 6190,1
+    .train 6572 >>Train |Tinterface/icons/ability_warrior_revenge.blp:0|t[Revenge]
+    .train 6574,1
+    .train 1310185 >>Train |T136031:0|t[Tactical Mastery]
+    .skipgossipid 136813
+    .target Seena Skybreaker
+    .money <0.45
+    .xp <14,1
+step << Horde
+    .goto 2521,59.066,72.987
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Riaani Nightwind::256083|r.
+    .turnin 93737 >>Turn in The Broken Construct
+    .target Riaani Nightwind::256083
+step << Horde
+    .goto 2521,58.986,75.460
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ailee Thriceforged::257422|r.
+    .vendor >>Vendor trash.
+    .target Railee Thriceforged::257422
+step << Horde
     .goto 2521,58.128,78.307
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Endaria Mistgaze::254344|r.
     .turnin 93736 >>Turn in Unwelcome Spirits
     .target Endaria Mistgaze::254344
+step << Horde
+    .isOnQuest 92708
+    .isQuestComplete 92708
+    .goto 2521,59.154,79.789
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayessa Dawnsinger::251968|r.
+    .turnin 92708 >>Turn in A Grand Adventure
+    .target Ayessa Dawnsinger::251968
 step << Horde
     .zoneskip 2521,1
     .isQuestAvailable 95350
@@ -4475,6 +4582,9 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 #name Skyborne Hunter Class Quests
+#group RestedXP Forever Guide (A) << Alliance
+#group RestedXP Forever Guide (H) << Horde
+#internal 
 
 step
     .goto 2521,59.572,72.639
@@ -4586,6 +4696,8 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 #name Random Stuff
+#group RestedXP Forever Guide (A) << Alliance
+#group RestedXP Forever Guide (H) << Horde
 #internal
 
     .goto 2521,41.07,22.33 -- spirit healer thendal village
