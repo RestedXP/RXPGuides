@@ -786,6 +786,7 @@ local function CreateCleanupButton()
     addon.cleanupBtn = cleanupBtn
     AnchorCleanupButton()
 
+    cleanupBtn:RegisterForClicks("LeftButtonUp")   -- forever: Midnight fires no OnClick without this (left only, as the close button)
     cleanupBtn:SetScript("OnClick", function()
         if InCombatLockdown and InCombatLockdown() then
             addon.comms.PrettyPrint(L"You can't do that in combat.")

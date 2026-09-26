@@ -2615,7 +2615,55 @@ function addon:CloseMenu()
     if LibDD then LibDD:CloseDropDownMenus() end
 end
 
+-- forever: Patch 11.0 removed UIDropDownMenu and everything built on it (EasyMenu included) and replaced it
+-- with Blizzard_Menu, explicitly without shims - callers have to be rewritten. This client is built on that
+-- API, so the legacy path below can never work here. RestedXP's menu TABLES are translated into MenuUtil
+-- element descriptions instead; the old body is kept for any client that still has EasyMenu.
+local RXP_MENU_STUB = { Hide = function() end, Show = function() end }   -- menu entries call this:Hide()
+
+local function RXP_BuildModernMenu(root, list)
+	for _, item in ipairs(list or {}) do
+		if type(item) == "table" then
+			local label = tostring(item.text or "")
+			local entry = item
+			if item.isTitle then
+				if label == "" then root:CreateDivider() else root:CreateTitle(label) end
+			elseif item.menuList or item.hasArrow then
+				RXP_BuildModernMenu(root:CreateButton(label), item.menuList)
+			elseif item.checked ~= nil and not item.notCheckable then
+				root:CreateCheckbox(label,
+					function()
+						local state = entry.checked
+						if type(state) == "function" then
+							local ok, value = pcall(state, entry)
+							return (ok and value) and true or false
+						end
+						return state and true or false
+					end,
+					function()
+						if type(entry.func) == "function" then pcall(entry.func, RXP_MENU_STUB, entry.arg1, entry.arg2, true) end
+					end)
+			else
+				local button = root:CreateButton(label, function()
+					if type(entry.func) == "function" then pcall(entry.func, RXP_MENU_STUB, entry.arg1, entry.arg2, false) end
+				end)
+				if entry.disabled and button and type(button.SetEnabled) == "function" then
+					pcall(button.SetEnabled, button, false)
+				end
+			end
+		end
+	end
+end
+
 function addon:ShowMenu(menu, menuFrame, anchor, x, y, displayMode, autoHideDelay)
+	-- forever: the current API first; the legacy body below runs only where EasyMenu still exists
+	if _G.MenuUtil and _G.MenuUtil.CreateContextMenu and type(menu) == "table" and #menu > 0 then
+		local owner = (type(anchor) == "table" and anchor) or (type(menuFrame) == "table" and menuFrame) or _G.UIParent
+		local ok = pcall(_G.MenuUtil.CreateContextMenu, owner, function(_, rootDescription)
+			RXP_BuildModernMenu(rootDescription, menu)
+		end)
+		if ok then return end
+	end
     menuFrame = menuFrame or addon.RXPFrame.MenuFrame
     anchor = anchor or "cursor"
     x = x or 0

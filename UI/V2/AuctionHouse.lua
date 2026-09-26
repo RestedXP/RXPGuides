@@ -77,6 +77,7 @@ local function createAuctionHouseItemRow(parent, moneyFrameName)
     row:EnableMouse(true)
     row:SetScript("OnEnter", function(this) if this.OnEnter then this.OnEnter(this) end end)
     row:SetScript("OnLeave", function(this) if this.OnLeave then this.OnLeave(this) end end)
+    row:RegisterForClicks("LeftButtonUp")   -- forever: Midnight fires no OnClick without this (left only, as the close button)
     row:SetScript("OnClick", function(this) if this.OnClick then this.OnClick(this) end end)
 
     row:SetHighlightTexture(rowHighlightTexture, "ADD")
@@ -113,6 +114,7 @@ local function createAuctionHouseItemRow(parent, moneyFrameName)
         if itemRow.OnLeave then itemRow.OnLeave(itemRow, this) end
     end)
 
+    row.ItemIcon:RegisterForClicks("LeftButtonUp")   -- forever: Midnight fires no OnClick without this (left only, as the close button)
     row.ItemIcon:SetScript("OnClick", function(this)
         local itemRow = this:GetParent()
 
