@@ -1454,6 +1454,7 @@ step << Hunter
 	#xprate <1.5
     #sticky
     #label xp10
+    --@TODO change the XP req here
     .xp 10-2670 >> Grind until you are 2670 xp off level 10 (3830/6500)
     >>|cRXP_WARN_Once you reach this xp breakpoint, skip the harpy/escort quest and go straight to Darnassus. You will have another opportunity to finish those quests later|r
 step << Hunter
@@ -1504,20 +1505,18 @@ step << !Rogue
     #requires xp10
     #completewith next
     .goto 1457/1,2070.42,9979.310,100 >> Travel to Darnassus
-step << Warrior
-#xprate >1.99
-    .goto 1457/1,2331.89,9994.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elanaria|r
-    .turnin 1684 >> Turn in Elanaria
-    .target Elanaria
-    .accept 1683 >> Accept Vorlus Vilehoof
-step << !Rogue !Hunter !Warrior
-#xprate >1.99
-    .goto 1457/1,2224.76,10127.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Saelienne|r
-    .home >> Set your Hearthstone to Darnassus << !Warrior
-    .vendor >>|cRXP_BUY_Buy some more|r |T132815:0|t|cRXP_LOOT_Ice Cold Milk|r << Priest
-    .target Innkeeper Saelienne
+step << Hunter
+    .goto Darnassus,58.76,44.48
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
+    .vendor >>|cRXP_BUY_Sell your vendor trash|r
+    .target Ariyell Skyshadow
+step << Hunter
+    .goto Darnassus,57.56,46.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
+    .skipgossip 11866,2
+    .train 227 >>Train Staves
+    >>If you have a Staff in your bags, equip it
+    .target Ilyenia Moonfire
 step << !Rogue
     #requires xp10
     .goto 1457/1,2534.29,10085.60
@@ -1637,6 +1636,14 @@ step
     .turnin 489 >> Turn in Seek Redemption!
     .itemcount 3418,3
     .isOnQuest 489
+step << Hunter
+    .goto Teldrassil,56.308,59.488
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shalomon|r
+    >>|cRXP_BUY_Buy and equip a|r |T135145:0|t[Walking Stick] |cRXP_BUY_if you can afford it (5s 4c), if not skip this step|r
+    .collect 2495,1 --Walking Stick (1)
+    .target Shalomon
+    .money <0.0504
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
 step << Hunter
 #xprate <1.99
     .goto 1438/1,968.85,9821.98--c:Teldrassil,55.890,59.205
@@ -1987,10 +1994,7 @@ step << Hunter
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Click here for more info about pet training|r
 	.unitscan Strigid Hunter
 step
-    #sticky
-    #completewith Spinnerets
-    .goto 1438/1,1691.36,10412.66,0
-    .goto 1438/1,1584.43,10947.86,0
+    .goto 1438/1,1691.36,10412.66
 	>>Kill |cRXP_ENEMY_Timberling Tramplers|r, |cRXP_ENEMY_Timberling Mire Beasts|r and |cRXP_ENEMY_Elder Timberlings|r. Loot them for their |cRXP_LOOT_Tumors|r
     .complete 923,1 --Collect Mossy Tumor (x5)
     .mob Elder Timberling
@@ -1999,24 +2003,13 @@ step
 step
     #label Spinnerets
     #loop
-    .goto 1438/1,1691.36,10412.66,0
-    .goto 1438/1,1370.58,10976.02,0
-    .goto 1438/1,1676.08,10962.45,0
-    .goto 1438/1,1798.28,10962.45,0
-    .line Teldrassil,41.70,41.82,41.97,39.03,42.20,35.71,43.33,33.27,43.79,30.65,44.18,27.80,46.09,26.55,47.72,25.57,46.25,25.62,44.42,26.09,42.83,26.15,42.0,25.6,39.6,25.6
+    .goto 1438/1,1828.600,10964.800
     >>Kill |cRXP_ENEMY_Lady Sathrah|r. Loot her for her |cRXP_LOOT_Spinnerets|r
     >>|cRXP_ENEMY_Lady Sathrah|r |cRXP_WARN_can spawn in 3 different locations, check your map for a recomended path to take|r
     >>|cRXP_WARN_Head north along the river and check the easternmost spawn point first. Work on the|r |T134339:0|t[Tumors] |cRXP_WARN_quest as you go|r
     >>|cRXP_WARN_If she's not east of the river complete the|r |T134339:0|t[Tumors] |cRXP_WARN_quest before heading west|r
     .complete 2518,1 --Collect Silvery Spinnerets (x1)
     .mob Lady Sathrah
-step
-    .goto 1438/1,1691.36,10412.66
-	>>Kill |cRXP_ENEMY_Timberling Tramplers|r, |cRXP_ENEMY_Timberling Mire Beasts|r and |cRXP_ENEMY_Elder Timberlings|r. Loot them for their |cRXP_LOOT_Tumors|r
-    .complete 923,1 --Collect Mossy Tumor (x5)
-    .mob Elder Timberling
-    .mob Timberling Trampler
-    .mob Timberling Mire Beast
 step
     .goto 1438/1,1864.47,10667.19
     .target Sentinel Arynia Cloudsbreak
@@ -2116,6 +2109,7 @@ step
     .goto 1457/1,2070.42,9979.310
     .zone Darnassus >> Travel to Darnassus
 step << !Warrior
+    --@TODO add note that u need to wait for the other player owl to despawn
     .goto 1457/1,2009.100,9986.601
     >>Go to the Gates of Darnassus and use the |T133298:0|t[|cRXP_LOOT_Lunar Pendant|r]
     .complete 98067,4
