@@ -7920,7 +7920,7 @@ function addon.functions.openitem(self,text,id)
     end
     local element = self.element
     if element.step.active then
-        addon.inventoryManager:QueueItemToOpen(element.id)
+        addon.inventoryManager:OpenItems(element.id)
     end
 end
 
