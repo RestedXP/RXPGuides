@@ -1855,7 +1855,7 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
     --[[-----------------------------------------------------------------------------
     Frame Container
     -------------------------------------------------------------------------------]]
-    local Type, Version = "RXPV2ActiveStepsFrame", 4
+    local Type, Version = "RXPV2ActiveStepsFrame", 5
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     --[[-----------------------------------------------------------------------------
@@ -1908,9 +1908,15 @@ function addon.ui.v2:RegisterRXPV2ActiveStepsFrame()
         frame:Hide()
 
         frame:EnableMouse(true)
-        frame:SetMovable(false)
+        frame:SetMovable(true)
+        frame:SetClampedToScreen(true)
         frame:SetResizable(false)
         frame:SetToplevel(true)
+        frame.rxpActiveStepsDrag = true
+        frame:SetScript("OnMouseDown", function(self, button)
+            addon.v2:StartActiveStepsFrameDrag(self, button)
+        end)
+        frame:SetScript("OnMouseUp", function(self) addon.v2:StopActiveStepsFrameDrag(self) end)
 
         -- Keep Active Steps above every guide-header decoration, even after the
         -- movable guide window receives focus and raises within BACKGROUND.
@@ -2463,7 +2469,7 @@ function addon.ui.v2:RegisterRXPV2ActivePartyStepsFrame()
 end
 
 function addon.ui.v2:RegisterRXPV2ActiveStepItem()
-    local Type, Version = "RXPV2ActiveStepItem", 7
+    local Type, Version = "RXPV2ActiveStepItem", 8
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     local transparent = {0, 0, 0, 0}
@@ -2971,10 +2977,20 @@ function addon.ui.v2:RegisterRXPV2ActiveStepItem()
         card:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, 8)
         addon.ui.v2:ApplyFrameBackdrop(card, theme.edge, theme.backgroundColors.common, theme.borderColors.commonEdge)
         addon.ui.v2:AddFrameShadow(card)
+        card:EnableMouse(true)
+        card:SetScript("OnMouseDown", function(self, button)
+            addon.v2:StartActiveStepsFrameDrag(self, button)
+        end)
+        card:SetScript("OnMouseUp", function(self) addon.v2:StopActiveStepsFrameDrag(self) end)
 
         local title = CreateFrame("Frame", nil, card, BackdropTemplateMixin and "BackdropTemplate")
         title:SetFrameLevel(card:GetFrameLevel() + 2)
         title:SetPoint("TOPLEFT", card, "TOPLEFT", 6, 9)
+        title:EnableMouse(true)
+        title:SetScript("OnMouseDown", function(self, button)
+            addon.v2:StartActiveStepsFrameDrag(self, button)
+        end)
+        title:SetScript("OnMouseUp", function(self) addon.v2:StopActiveStepsFrameDrag(self) end)
         title:ClearBackdrop()
         addon.ui.v2:ApplyFrameBackdrop(title, theme.edge, theme.backgroundColors.common, theme.borderColors.commonEdge)
 
