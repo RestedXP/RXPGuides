@@ -2,7 +2,7 @@
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#name Zephras Isle
+#name 1-14 Zephras Isle
 #displayname 1-13 Skyborne << Alliance
 #displayname 1-12 Skyborne << Horde
 #group RestedXP Forever Guide (A) << Alliance
