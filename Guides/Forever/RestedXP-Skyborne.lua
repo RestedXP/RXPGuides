@@ -3877,7 +3877,7 @@ step
 --     .skipgossipid 135786
 --     .skipgossipid 135785 -- engineering
 --     .skipgossipid 135784 -- no
-step << Alliance
+step
     #completewith Abandoned Belongings1
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Seeds|r
     .complete 93160,1 --8/8 Zephyrseed
@@ -3936,9 +3936,9 @@ step << Alliance
     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
     .cooldown spell,1259705,>0,1
     .usespell 1259705 << Alliance
-step << Alliance
-    #hidewindow
+step
     #completewith Wind Hollow
+    #hidewindow
     #loop
     .goto 2521,59.08,34.75,30,0
     .goto 2521,57.26,33.48,30,0
