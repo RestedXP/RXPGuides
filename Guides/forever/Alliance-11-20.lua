@@ -1070,7 +1070,7 @@ step << Druid NightElf
 	.zoneskip Moonglade
 step << Druid NightElf
     #completewith next
-    .goto Moonglade,44.148,45.229
+    .goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
     .fly Teldrassil >> Fly to Darnassus
     .skipgossip
@@ -1760,6 +1760,13 @@ step << NightElf/Hunter/Druid/Warrior
     .turnin 4813,3 >> Turn in The Fragments Within
     .target Sentinel Glynda Nal'Shea
     .isQuestTurnedIn 4811
+step << NightElf/Hunter/Druid/Warrior
+    #season 0
+    .goto 1439/1,472.32,6438.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    .turnin 4813,3 >> Turn in The Fragments Within
+    .target Sentinel Glynda Nal'Shea
+    .isQuestTurnedIn 4811
 step << Hunter/Druid/Warrior
     #optional
     #completewith AmethStart
@@ -1769,7 +1776,13 @@ step << Hunter/Druid/Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
     .isQuestTurnedIn 4811
     --reduced DPS now on staff due to it becoming a caster weapon
-
+step << NightElf/Hunter/Druid/Warrior
+    #optional
+    .goto 1439,38.107,41.165
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
+    .turnin 982 >> Turn in Deep Ocean, Vast Sea
+    .target Gorbold Steelhand
+    .isQuestComplete 982
 ----Start of forced Level 14 Druid Turnin/train----
 --Removed in wowF
 
@@ -1863,7 +1876,7 @@ step
     .mob Moonstalker
     .isQuestTurnedIn 1001
     .isQuestAvailable 4811
-step
+step << !NightElf !Hunter !Druid !Warrior
     #season 0
     #loop
     .goto 1439,46.918,48.630,0
@@ -1899,32 +1912,6 @@ step
     .skill cooking,<1,1 -- shows if cooking is >1
 step
     #sticky
-    #optional
-    #label Anaya
-    .goto 1439,42.017,58.866,0 --NE spawn
-    .goto 1439,43.222,59.693,0 --NE spawn
-    .goto 1439,43.069,62.448,0 --SE spawn
-    .goto 1439,42.489,60.677,0 --Middle spawn
-    .waypoint 1439,42.017,58.866,50,0 --NE spawn
-    .waypoint 1439,42.311,58.645,50,0
-    .waypoint 1439,42.448,58.236,50,0
-    .waypoint 1439,43.222,59.693,50,0 --NE spawn
-    .waypoint 1439,43.447,60.131,50,0
-    .waypoint 1439,43.780,60.275,50,0
-    .waypoint 1439,43.069,62.448,50,0 --SE spawn
-    .waypoint 1439,43.104,62.563,50,0
-    .waypoint 1439,42.794,62.166,50,0
-    .waypoint 1439,42.489,60.677,50,0 --Middle spawn
-    >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for her |cRXP_LOOT_Pendant|r
-    -->>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
-    -->>|cRXP_WARN_If you can't find her and want to try again later at the cost of potentially grinding more mobs soon, skip this step|r
-    --much faster spawn time now on forever
-    .complete 963,1 --Anaya's Pendant (1)
-    .unitscan Anaya Dawnrunner
-    .solo
-step
-    #sticky
-    #optional
     #label Anaya
     .goto 1439,42.017,58.866,0 --NE spawn
     .goto 1439,43.222,59.693,0 --NE spawn
@@ -1947,7 +1934,6 @@ step
     --much faster spawn time now on forever
     .complete 963,1 --Anaya's Pendant (1)
     .unitscan Anaya Dawnrunner
-    .group
 step
     #season 0
     #sticky
@@ -4192,7 +4178,7 @@ step << !NightElf Warrior/Paladin
     .dungeon !DM
 step << !NightElf Warrior/Paladin/Mage/Warlock/!NightElf Rogue
     #xprate >1.59
-    .goto Wetlands,9.490,59.694
+    .goto 1437/0,-782.03,-3793.23--c:Wetlands,9.490,59.694
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
     .fly Ironforge >> Fly to Ironforge
     .target Shellei Brondir
@@ -4203,7 +4189,7 @@ step << !NightElf Warrior/Paladin/Mage/Warlock/!NightElf Rogue
     .dungeon !DM
 step << NightElf Rogue
     #xprate >1.59
-    .goto Wetlands,9.490,59.694
+    .goto 1437/0,-782.03,-3793.23--c:Wetlands,9.490,59.694
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
     .fp Menethil Harbor >> Get the Menethil Harbor flight path
     .target Shellei Brondir
@@ -4265,8 +4251,8 @@ step << NightElf Rogue
     .goto 1415,41.625,67.689,30,0
     .goto 1453/0,1320.57,-8540.2,20,0
     .goto 1453/0,1242.03,-8638.88,10,0
-    .goto StormwindClassic,7,45.471,10,0
-    .goto StormwindClassic,5.560,50.125,10,0
+    .goto 1453/0,1286.87,-8686.43,10,0--c:StormwindClassic,7,45.471
+    .goto 1453/0,1306.23,-8728.15,10,0--c:StormwindClassic,5.560,50.125
     .goto 1453/0,1197.22,-8946.62,20,0
     .goto 1436/0,1545.83,-11056.200
     .zone Westfall >> If the website unstuck is not available, swim to Westfall
@@ -5959,7 +5945,7 @@ step << !NightElf
     #xprate >1.59 << !Hunter
     #optional
     #completewith next
-    .goto Wetlands,9.490,59.694
+    .goto 1437/0,-782.03,-3793.23--c:Wetlands,9.490,59.694
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
     .fly Ironforge >> Fly to Ironforge
     .target Shellei Brondir
@@ -5969,7 +5955,7 @@ step << !NightElf
     .dungeon DM
 step << NightElf
     #xprate >1.59 << !Hunter
-    .goto Wetlands,9.490,59.694
+    .goto 1437/0,-782.03,-3793.23--c:Wetlands,9.490,59.694
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
     .fp Menethil Harbor >> Get the Menethil Harbor flight path
     .target Shellei Brondir
@@ -6031,8 +6017,8 @@ step << NightElf
     .goto 1415,41.625,67.689,30,0
     .goto 1453/0,1320.57,-8540.2,20,0
     .goto 1453/0,1242.03,-8638.88,10,0
-    .goto StormwindClassic,7,45.471,10,0
-    .goto StormwindClassic,5.560,50.125,10,0
+    .goto 1453/0,1286.87,-8686.43,10,0--c:StormwindClassic,7,45.471
+    .goto 1453/0,1306.23,-8728.15,10,0--c:StormwindClassic,5.560,50.125
     .goto 1453/0,1197.22,-8946.62,20,0
     .goto 1436/0,1545.83,-11056.200
     .zone Westfall >> If the website unstuck is not available, swim to Westfall
@@ -8048,7 +8034,7 @@ step << Shaman
     .trainer >> Train your class spells
 step << Shaman
     #optional
-    .goto Ironforge,50.826,5.613
+    .goto 1455/0,-1115.43,-4598.86--c:Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerrig Bonegrip|r
     .turnin 968 >> Turn in The Powers Below
     .target Gerrig Bonegrip
@@ -8798,7 +8784,7 @@ step
 step
 .dungeon DM
     #completewith next
-    .goto Elwynn Forest,32.240,49.723,60 >> Exit Stormwind. Travel to Goldshire
+    .goto 1429/0,416.42,-9090.46,60 >> Exit Stormwind. Travel to Goldshire--c:Elwynn Forest,32.240,49.723
     .isOnQuest 118
     .xp <20,1
 step
@@ -8832,7 +8818,7 @@ step
     .xp <20,1
 step
 .dungeon DM
-    .goto Elwynn Forest,64.880,69.192
+    .goto 1429/0,-716.46,-9541.09--c:Elwynn Forest,64.880,69.192
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawn Brightstar|r
     .vendor >> |cRXP_FRIENDLY_Dawn Brightstar|r |cRXP_BUY_has has limited supply items such as|r |T134938:0|t|T134937:0|t|T134943:0|t[Scrolls] |cRXP_BUY_and|r |T134850:0|t|T134830:0|t[Potions] |cRXP_BUY_as well, which you should buy if available|r << !Warrior !Rogue
     .vendor >> |cRXP_FRIENDLY_Dawn Brightstar|r |cRXP_BUY_has has limited supply items such as|r |T134938:0|t|T134937:0|t|T134943:0|t[Scrolls] |cRXP_BUY_and|r |T134830:0|t[Potions] |cRXP_BUY_as well, which you should buy if available|r << Warrior/Rogue
@@ -9191,7 +9177,7 @@ step
     .goto 1433/0,-2172.59,-9261.02
     .turnin 127 >> Turn in Selling Fish
 step << Druid
-    .goto Redridge Mountains,26.8,44.8
+    .goto 1433/0,-2152.62,-9223.67--c:Redridge Mountains,26.8,44.8
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Brianna|r
     .home Lakeshire >> Set your hearthstone to Lakeshire
     .target Innkeeper Brianna
@@ -9251,7 +9237,7 @@ step << Druid
 	.cast 18960 >> Cast Teleport: Moonglade
 step << Druid
     #completewith next
-    .goto Moonglade,44.148,45.229
+    .goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
     .fly Teldrassil >> Fly to Darnassus
     .skipgossip
@@ -9337,7 +9323,7 @@ step << Druid
     --.accept 98362 >>Accept To Thunder Bluff << Horde
 step << Druid
     #completewith catspirit2
-    .goto Moonglade,44.148,45.229
+    .goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
     .fly Teldrassil >> Fly to Darnassus
     .skipgossip
@@ -9347,7 +9333,7 @@ step << Druid
     .zoneskip Teldrassil
 step << Druid
     #completewith next
-    .goto Moonglade,44.148,45.229
+    .goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
     .fly Teldrassil >> Fly to Darnassus
     .skipgossip
@@ -10330,7 +10316,7 @@ step << Hunter
 --XX Train in darn at 20 on 2x
 step << Hunter
     #xprate <1.59
-    .goto Ashenvale,18.010,59.832
+    .goto 1440/1,661.42,2373.12--c:Ashenvale,18.010,59.832
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alenndaar Lapidaar|r
     .trainer >> Train your class skills
     .train 5118 >> Train |T132242:0|t[Aspect of the Cheetah]

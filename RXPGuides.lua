@@ -2175,11 +2175,7 @@ function addon.LegacyUpdateLoop()
             if skip > 512 and addon.settings then
                 skip = skip % 512
                 if addon.saveSettingsLocally then
-                    addon.settings:SaveFramePositions()
-                    C_Timer.After(0,function()
-                       RXPCData.localDB =
-                          {profile = addon.settings.copy(addon.settings.profile)}
-                    end)
+                    addon.settings:SaveLocalProfile()
                 end
             end
         end
