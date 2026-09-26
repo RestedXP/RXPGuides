@@ -1,4 +1,4 @@
-local _, addon = ...
+local addonName, addon = ...
 
 if addon.gameVersion > 60000 then return end
 
@@ -25,7 +25,9 @@ local session = {
     checkLast = GetTime(),
     lastAlert = 0,
     alertFrequency = 1,
+    emergencyItems = {},
     emergencySpells = {},
+    highlights = {},
     actionBarMap = {},
     dangerousMobs = {}
 }
@@ -39,8 +41,9 @@ function addon.tips:Setup()
     self:RegisterEvent("MIRROR_TIMER_START")
     self:RegisterEvent("MIRROR_TIMER_STOP")
 
-    addon.inventoryManager:CatalogInventory()
+    self:CatalogInventory()
 
+    self:RegisterEvent("PLAYER_STARTED_MOVING")
     self:UpdateEmergencySpells()
 
     self:CatalogActionBars()
@@ -52,6 +55,13 @@ function addon.tips:Setup()
         self:LoadDangerousMobs()
         self:RegisterEvent("ZONE_CHANGED_NEW_AREA")
     end
+end
+
+function addon.tips:PLAYER_STARTED_MOVING()
+    -- Spams at login, so delay until after player moves
+    self:RegisterEvent("UNIT_INVENTORY_CHANGED")
+
+    self:UnregisterEvent("PLAYER_STARTED_MOVING")
 end
 
 function addon.tips:CreateTipsFrame()
@@ -112,7 +122,7 @@ end
 function addon.tips:CheckEmergencyActions()
     if not addon.settings.profile.enableEmergencyActions then return end
     if UnitIsDead('player') then
-        addon.inventoryManager:HideHighlights()
+        for _, border in pairs(session.highlights) do if border:IsShown() then border:Hide() end end
 
         return
     end
@@ -121,15 +131,30 @@ function addon.tips:CheckEmergencyActions()
     local currentHP = not addon.IsSecretValue(UnitHealth("player")) and UnitHealth("player") or 0
     if maxHP > 0 and currentHP > 0 and currentHP / maxHP < addon.settings.profile.emergencyThreshold then
 
-        addon.inventoryManager:HighlightEmergencyItem(session.actionBarMap)
+        addon.tips:HighlightEmergencyItem()
         addon.tips:HighlightEmergencySpell()
 
         if addon.settings.profile.enableEmergencyScreenFlash then addon.tips:EnableDangerWarning(1) end
         return
     end
 
-    addon.inventoryManager:HideHighlights()
+    for _, border in pairs(session.highlights) do if border:IsShown() then border:Hide() end end
 
+end
+
+function addon.tips:CatalogInventory()
+    if not addon.emergencyItems or not addon.settings.profile.enableEmergencyActions then return end
+
+    local itemList = {}
+    local inventory = addon.inventoryManager:CatalogInventory()
+
+    for _, item in ipairs(inventory) do
+        if addon.emergencyItems[item.id] then
+            tinsert(itemList, item)
+        end
+    end
+
+    session.emergencyItems = itemList
 end
 
 function addon.tips:UpdateEmergencySpells()
@@ -170,14 +195,64 @@ function addon.tips:UpdateEmergencySpells()
     session.emergencySpells = spellList
 end
 
-function addon.tips:HighlightEmergencySpell()
-    local actionBarLookup, actionBarBorder
+function addon.tips:GetHighlight(name)
+    if not name then return end
 
-    for _, item in ipairs(session.emergencySpells) do
+    local parent = type(name) == "string" and _G[name] or name
+    if not parent then return end
 
-        actionBarLookup = session.actionBarMap['spell:' .. item.id]
+    local key = type(name) == "string" and name or parent:GetName() or parent
+    if session.highlights[key] then return session.highlights[key] end
+
+    local textureName = type(key) == "string" and key .. "Emergency" or nil
+    local border = parent:CreateTexture(textureName, "ARTWORK")
+
+    border.animation = border:CreateAnimationGroup()
+    local animOut = border.animation:CreateAnimation("Alpha")
+    animOut:SetOrder(1)
+    animOut:SetDuration(0.2)
+    animOut:SetFromAlpha(1)
+    animOut:SetToAlpha(1)
+    animOut:SetStartDelay(0.2)
+
+    border:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-hover")
+    border:SetBlendMode("ADD")
+    local theme = addon.v2:GetTheme()
+    local borderColor = theme.borderColors and theme.borderColors.activeStepCheckboxChecked or
+                        addon.v2.themes["RXP Blue V2"].borderColors.activeStepCheckboxChecked
+    border:SetVertexColor(unpack(borderColor))
+    border:SetAlpha(0.5)
+    border:SetSize(68, 68)
+    border:SetPoint("CENTER", parent, "CENTER", 0, 1)
+    border:Hide()
+
+    session.highlights[key] = border
+
+    return border
+end
+
+function addon.tips:HighlightEmergencyItem()
+    local bagFrame, bagBorder, actionBarLookup, actionBarBorder
+
+    for _, item in ipairs(session.emergencyItems) do
+        bagFrame = item.bag and item.slot and
+                   addon.inventoryManager:GetBagItemFrame(item.bag, item.slot)
+        bagBorder = bagFrame and addon.tips:GetHighlight(bagFrame)
+
+        if bagBorder then
+            if bagFrame:IsShown() then
+                bagBorder:Show()
+                if addon.settings.profile.enableEmergencyIconAnimations and not bagBorder.animation:IsPlaying() then
+                    bagBorder.animation:Play()
+                end
+            else
+                bagBorder:Hide()
+            end
+        end
+
+        actionBarLookup = item.id and session.actionBarMap['item:' .. item.id]
         if actionBarLookup then
-            actionBarBorder = addon.inventoryManager:GetHighlight(actionBarLookup.button)
+            actionBarBorder = addon.tips:GetHighlight(actionBarLookup.button)
 
             if actionBarBorder then
                 actionBarBorder:Show()
@@ -190,6 +265,35 @@ function addon.tips:HighlightEmergencySpell()
     end
 
 end
+
+function addon.tips:HighlightEmergencySpell()
+    local actionBarLookup, actionBarBorder
+
+    for _, item in ipairs(session.emergencySpells) do
+
+        actionBarLookup = session.actionBarMap['spell:' .. item.id]
+        if actionBarLookup then
+            actionBarBorder = addon.tips:GetHighlight(actionBarLookup.button)
+
+            if actionBarBorder then
+                actionBarBorder:Show()
+                if addon.settings.profile.enableEmergencyIconAnimations and not actionBarBorder.animation:IsPlaying() then
+                    actionBarBorder.animation:Play()
+                end
+            end
+
+        end
+    end
+
+end
+
+function addon.tips:UNIT_INVENTORY_CHANGED(_, target)
+    if target ~= "player" then return end
+
+    self:CatalogInventory()
+end
+
+function addon.tips:BAG_NEW_ITEMS_UPDATED() self:CatalogInventory() end
 
 -- Can be overriden by ElvUI, Bartender, Domino, etc
 local ActionBars = {'Action', 'MultiBarBottomLeft', 'MultiBarBottomRight', 'MultiBarRight', 'MultiBarLeft'}
