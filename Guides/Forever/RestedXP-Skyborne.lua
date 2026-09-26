@@ -204,20 +204,6 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ventaari Brightwish|r.
     .accept 92598 >>Accept The Gift of Skysight
     .target Ventaari Brightwish
-step << !Warrior !Rogue !Mage
-    --still loads in places it shouldn't no idea why
-    .isNotOnQuest 93552
-    .isQuestAvailable 93552
-    .goto 2521,42.749,24.496
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Hunter !Shaman
-    >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from her|r << Hunter
-    .collect 159,10 << !Hunter !Shaman --Refreshing Spring Water (10)
-    .collect 2512,1000 << Hunter --Rough Arrow (1000)
-    .target Uualia Suncrest::251537
-    .subzoneskip 16635,1
-    .money <0.0050 << !Hunter
-    .money <0.0040 << Hunter
 step << Horde
     .isNotOnQuest 93552
     .isQuestAvailable 93552
@@ -235,12 +221,26 @@ step << Alliance
     #completewith Harvesting Windstones
     .goto 2521,43.41,23.51
     .vendor >>|cRXP_WARN_Vendor trash|r
-step
+step << Alliance
     #requires Harvesting Windstones
-    .goto 2521,43.37,23.99
+    .goto 2521,43.37,23.99s
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
     .accept 93552 >>Accept Harvesting Windstones
     .target Dalia the Collector
+step << !Warrior !Rogue !Mage
+    --still loads in places it shouldn't no idea why
+    .isNotOnQuest 93552
+    .isQuestAvailable 93552
+    .goto 2521,42.749,24.496
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
+    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Hunter !Shaman
+    >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from her|r << Hunter
+    .collect 159,10 << !Hunter !Shaman --Refreshing Spring Water (10)
+    .collect 2512,1000 << Hunter --Rough Arrow (1000)
+    .target Uualia Suncrest::251537
+    .subzoneskip 16635,1
+    .money <0.0050 << !Hunter
+    .money <0.0040 << Hunter
 step << Alliance
     .goto 2521,43.33,24.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
@@ -248,8 +248,8 @@ step << Alliance
     .target Falorne Fallwind
 step
     #completewith next
-    .goto 2521,43.82,25.41,10,0
-    .goto 2521,44.23,24.96,10,0
+    .goto 2521,43.82,25.41,20,0
+    .goto 2521,44.23,24.96,20,0
     .goto 2521,44.28,27.32,25,0
     .goto 2521,45.33,29.15,30,0
     .goto 2521,46.77,27.96,30,0
@@ -287,6 +287,7 @@ step
     .mob Roiling Winds
 step << Alliance
     #label UseRacialAbility
+    .goto 2521,47.8,21.02,30,0
     .goto 2521,46.34,17.91
     >>Use |T236219:0|t[Read Ley Line] near the Thendal Grove Ley Line
     *|cRXP_WARN_Found throughout the zone|r |cRXP_WARN_Use|r |T236219:0|t[Read Ley Line] |cRXP_WARN_near one to gain 100% Mana and Food Regen for 15 min instead of 15 sec|r.
