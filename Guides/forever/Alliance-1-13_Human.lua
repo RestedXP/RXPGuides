@@ -747,9 +747,13 @@ step
     .accept 91772 >>Accept Shhh! We're Hunting Kobolds
 step
     #completewith RnR
+    .cast 1246031 >> |cRXP_WARN_Use the|r |T132995:0|t[Kobold Tracking Kit] |cRXP_WARN_to see the |cRXP_PICK_Kobold Tracks|r on your minimap|r
+    .use 247970
+step
+    #completewith RnR
     .isOnQuest 91772
     .goto 1429/0,-46.00,-9044.61,5 >>Click the green |cRXP_PICK_Kobold Tracks|r on the ground as you travel toward Goldshire
-    .use 247970 >> |cRXP_WARN_Use the|r |T132995:0|t[Kobold Tracking Kit] |cRXP_WARN_to track them on your minimap|r
+    .use 247970 
     .complete 91772,1 -- Followed Kobold Tracks 6/6
     .disablecheckbox
 step
@@ -881,7 +885,7 @@ step << Warrior
     .collect 2488,1 --Collect Gladius (1)
     .disablecheckbox
     .target Corina Steele
---  .money <0.0536
+    .money <0.0536
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Warrior
     #completewith next
@@ -896,7 +900,7 @@ step << Rogue
     .collect 2494,1 --Collect Stiletto (1)
     .disablecheckbox
     .target Corina Steele
---  .money <0.0400
+    .money <0.0400
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #completewith GSHS
@@ -968,10 +972,11 @@ step
 step
     .goto 1429/0,-5.63,-9467.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tomas|r
+    >>|cRXP_WARN_Skip this step if you don't have 1 silver, or if you wish to do it later|r
     .train 2550 >> Train |T133971:0|t[Cooking]
     .turnin 96626 >> Turn in Camping 101: Cooking
     .target Tomas
-
+    .money <0.0100
 step
     #optional
     .xp 6 >> Grind to 6

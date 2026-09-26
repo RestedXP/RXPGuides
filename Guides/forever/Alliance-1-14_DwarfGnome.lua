@@ -787,9 +787,11 @@ step << Shaman
 step
     .goto 1426/0,-545.800,-5594.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor::1699|r
+    >>|cRXP_WARN_Skip this step if you don't have 1 silver, or if you wish to do it later|r
     .target Gremlock Pilsnor::1699
     .train 2550 >> Train |T133971:0|t[Cooking]
     .turnin 96629 >>Turn in Camping 101: Cooking
+    .money <0.0100
 step << Rogue
     .goto 1426/0,-540.39,-5604.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r inside in the backroom
