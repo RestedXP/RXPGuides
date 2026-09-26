@@ -3310,13 +3310,13 @@ step << Alliance
 --     .turnin 92834 >>Turn in Avenged Tenfold
 --     .target Elaadrin Evengale
 
-step << Alliance
-    .subzoneskip 16638,1
-    .isQuestAvailable 98512
-    .goto 2521,63.9,74.16
-    .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
-    .cooldown spell,1259705,>0,1
-    .usespell 1259705 << Alliance
+-- step << Alliance
+--     .subzoneskip 16638,1
+--     .isQuestAvailable 98512
+--     .goto 2521,63.9,74.16
+--     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
+--     .cooldown spell,1259705,>0,1
+--     .usespell 1259705 << Alliance
 
 --*Discovery Route(DO NOT DELETE)
 -- step << Alliance
@@ -3336,17 +3336,36 @@ step << Alliance
 --     .target Naeluna Swiftmend::254081
 --     .money <0.16
 --     .xp <12,1
+-- step << Alliance
+--     .subzoneskip 16638,1
+--     .isQuestAvailable 98512
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r inside the inn.
+--     .vendor >>Vendor trash
+--     .target Donaal Downbreeze::255940
+--     .goto 2521,62.180,72.616
+--     .skipgossipid 137078
+--     .collect 1179,20 << Mage 
+
+--deathskip  
+
 step << Alliance
     .subzoneskip 16638,1
     .isQuestAvailable 98512
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r inside the inn.
+    .isNotOnQuest 98512
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halavuul Cragwind::252388|r outside the house.
     .vendor >>Vendor trash
-    .target Donaal Downbreeze::255940
-    .goto 2521,62.180,72.616
-    .skipgossipid 137078
-    .collect 1179,20 << Mage 
-
---deathskip    
+    .target Halavuul Cragwind::252388
+    .goto 2521,65.45,80.48
+    .skipgossipid 137530
+step << Alliance
+    .subzoneskip 16638,1
+    .isQuestAvailable 98512
+    .isNotOnQuest 98512
+    .goto 2521,66.42,83.48
+    .deathskip >>Jump of the cliff
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer
 step
     .goto 2521,56.81,61.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fendaal Windstone|r.
@@ -3394,11 +3413,37 @@ step << Druid
     >>Kill |cRXP_ENEMY_Ur'endra|r.
     .complete 94638,1 --|1/1 Ur'endra slain
     .mob Ur'endra::258443
-    --here 
+step << Alliance Druid
+    .goto 2521,69.803,61.660
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urs'endris::255853|r.
+    .target Urs'endris::255853
+    .turnin 94638 >>Turn in Strength and Mercy
 
 
 
-step
+step << Alliance Druid
+    #completewith next
+    #label Windsong Crawler Meat Druid
+    .goto 2521,59.59,66.7,30,0
+    >>Kill |cRXP_ENEMY_Windsong Crawlers|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
+    .complete 93317,1 --6/6 Windsong Crawler Meat
+    .mob Windsong Crawler
+step << Alliance Druid
+    #completewith Windsong Crawler Meat Druid
+    .goto 2521,57.25,60.92,50 >>Go around the mountains 
+step << Alliance Druid
+    #requires Windsong Crawler Meat Druid
+    #loop
+    .goto 2521,53.56,59.17,35,0
+    .goto 2521,52.91,58.56,35,0
+    .goto 2521,52.08,59.23,35,0
+    .goto 2521,52.49,57.3,35,0
+    .goto 2521,53.55,55.55,35,0
+    .goto 2521,54.3,57.94,35,0
+    >>Kill |cRXP_ENEMY_Windsong Crawlers|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
+    .complete 93317,1 --6/6 Windsong Crawler Meat
+    .mob Windsong Crawler
+step << !Alliance Druid
     #loop
     .goto 2521,53.56,59.17,35,0
     .goto 2521,52.91,58.56,35,0
@@ -3844,6 +3889,7 @@ step
     .skipgossipid 135786
     .skipgossipid 135785 -- engineering
     .skipgossipid 135784 -- no
+
 --*Discovery Route(DO NOT DELETE)
 -- step << Alliance
 --     #completewith The Strange Hermit 2
