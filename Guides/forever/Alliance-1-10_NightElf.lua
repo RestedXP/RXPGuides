@@ -1513,7 +1513,7 @@ step << Hunter
 step << Hunter
     .goto Darnassus,57.56,46.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
-    .skipgossip 11866,2
+    .skipgossipid 96881
     .train 227 >>Train Staves
     >>If you have a Staff in your bags, equip it
     .target Ilyenia Moonfire
@@ -1753,13 +1753,13 @@ step
     .complete 99050,1
     .isOnQuest 6101 << Hunter --Hunter only finishes here if already on the cat quest
     .mob Lasher Sproutling
-step 
+step
 #xprate <1.99
     #label L10
     .xp 10-850 << !Hunter
     .xp 10 << Hunter
     .itemcount 280087,<6
-step 
+step
 #xprate <1.99
 #optional
     #label L10
@@ -2339,7 +2339,7 @@ step << Hunter
 step << Hunter/Warrior/Priest/Sod Rogue
     .goto 1457/1,2329.19,9908.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
-    .skipgossip 11866,1
+    .skipgossipid 96881
     .train 227 >>Train Staves << Hunter/Warrior/Priest
     .train 265 >>Train Bows << Sod Rogue
     >>If you have a Staff in your bags, equip it << Hunter

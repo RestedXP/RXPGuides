@@ -2257,7 +2257,7 @@ step << NightElf
     .target Gilbert Gray
 step << NightElf
     .goto 1453/0,1194.500,-8332.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r
     .target Manifest Clerk Philmor::268511
     .accept 97220 >>Accept Philmor's Favor
 step << NightElf
@@ -3023,7 +3023,7 @@ step << NightElf Warrior
     .goto 1457/1,2329.19,9908.60
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
-    .skipgossip 11866,1
+    .skipgossipid 96881
     .train 2567 >> Train Thrown
     .target Ilyenia Moonfire
 step << NightElf Hunter
@@ -5767,7 +5767,7 @@ step << Dwarf Hunter
 step << Dwarf Hunter
     #xprate <1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
-    .skipgossip 11866,1
+    .skipgossipid 96881
     .goto 1457/1,2329.19,9908.60
     .train 264 >> Train Bows
     .train 227 >> Train Staves
@@ -8107,7 +8107,7 @@ step << Shaman
     .target Shellei Brondir
 step << Shaman
     .goto 1455/0,-1086.500,-4642.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldrun Stormbreaker::258098|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldrun Stormbreaker::258098|r
     .target Eldrun Stormbreaker::258098
     .trainer >> Train your class spells
 step << Shaman
@@ -10728,7 +10728,7 @@ step << Dwarf Hunter
     #xprate <1.59
 -- #xprate >1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
-    .skipgossip 11866,1
+    .skipgossipid 96881
     .goto 1457/1,2329.19,9908.60
     .train 264 >> Train Bows
     .train 227 >> Train Staves
