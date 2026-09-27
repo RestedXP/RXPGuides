@@ -20,6 +20,9 @@ RXPGuides.RegisterGuide([[
 #defaultfor !NightElf !Hunter
 
 --Going to Darkshore if already 15
+--@TODO Add hunter bow lvl 20 buy
+--@TODO move the moonwell/gnolls/murloc steps around
+
 step
     #optional
     .maxlevel 14,endOfTheGuide
@@ -29,6 +32,8 @@ step
     .home >> Set your Hearthstone to Stormwind City
     .target Innkeeper Allison
     .bindlocation 16509
+step
+    #label NEWestfallStart --hidden step for #include
 step
     #ah
     .goto 1453/0,660.28,-8814.55
@@ -99,9 +104,9 @@ step << Human
 step
     .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
-    .fly Westfall >> Fly to Westfall
+    .fly Westfall >> Fly to Westfall << !NightElf
+    .fp Stormwind >> Get the Stormwind Flight Path << NightElf
     .target Dungar Longdrink
-
 step
     #completewith SaldeanVendor
     #optional
@@ -126,6 +131,7 @@ step
     .target Farmer Saldean
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
     .accept 9 >> Accept The Killing Fields
+    .accept 109 >>Accept Report to Gryan Stoutmantle << NightElf
 step
     #label SalmaS
     .goto 1436/0,1042.67,-10111.670
@@ -140,7 +146,7 @@ step << Human
     .target Quartermaster Lewis
     .goto 1436/0,1021.67,-10500.63
     .turnin 6285 >> Turn in Return to Lewis
-step << Gnome/Dwarf
+step << Gnome/Dwarf/NightElf
     #completewith next
     .goto 1436/0,1045.12,-10508.80
     .target Gryan Stoutmantle
@@ -531,7 +537,7 @@ step << Human Rogue
     .money <0.3815
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
     .target Marda Weller
-step
+step << !NightElf
     .goto 1453/0,596.400,-8831.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Mullby|r
     >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from him|r
@@ -541,7 +547,7 @@ step
     .collect 4471,1 --Flint and Tinder (1)
     .target Thurman Mullby
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step
+step << !NightElf
     #ah
     .goto 1453/0,660.28,-8814.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
@@ -561,7 +567,7 @@ step
     .disablecheckbox
     .target Auctioneer Jaxon
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step
+step << !NightElf
     #ah
     #optional
     .goto 1453/0,660.28,-8814.55
@@ -601,6 +607,11 @@ step
     .turnin 399 >> Turn in Humble Beginnings
     .target Baros Alexston
     .isQuestComplete 399
+step << NightElf Druid
+    .goto Stormwind City,21.6,51.4
+    >>Talk to |cRXP_FRIENDLY_Theridran|r
+    .trainer >>Train your class spells
+	.target Theridran
 step << Warlock
     #optional
     #completewith next
@@ -639,6 +650,8 @@ step << Priest
     .trainer >> Train your class spells
     .train 8122,1
     .target Brother Joshua
+step
+    #label NEWestfallEnd --hidden step for #include
 step
     .goto 1453/0,765.700,-8804.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catherine Leland|r
@@ -759,7 +772,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 14-16 Darkshore
-#displayname 11-16 Darkshore << NightElf
+#displayname 11-16 Darkshore/Westfall << NightElf
 #displayname 13-16 Darkshore << Dwarf Hunter/Human Hunter
 #displayname 15-16 Darkshore << !NightElf/!Dwarf/!Human Hunter
 #next 16-19 Darkshore
@@ -1070,7 +1083,7 @@ step << Druid NightElf
 	.zoneskip Moonglade
 step << Druid NightElf
     #completewith next
-    .goto Moonglade,44.148,45.229
+    .goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
     .fly Teldrassil >> Fly to Darnassus
     .skipgossip
@@ -1084,7 +1097,7 @@ step << NightElf Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nessa Shadowsong|r
     .turnin 6343 >> Turn in Return to Nessa
     .target Nessa Shadowsong
-step << NightElf !Druid
+step << NightElf Druid
     #optional
     #completewith next
     .goto 1438/1,965.80,8780.95
@@ -1513,9 +1526,6 @@ step << NightElf/Dwarf/Human Hunter
     .xp 13 >> Grind to level 13
 step
     #optional
-    #label HCHunterEnd --hidden step for #include
-step
-    #optional
     #completewith AuberdineTurnin2 << NightElf/Hunter/Druid/Warrior
     #completewith AmethStart << !NightElf !Hunter !Druid !Warrior
     .goto 1439,43.509,33.207,0
@@ -1614,7 +1624,7 @@ step << Hunter/Druid/Warrior
     .target Sentinel Glynda Nal'Shea
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.5 << Hunter/Druid
 --XX If Hunters and Druids (in Era) have a worse weapon than the Oakthrush Staff, do the quest even if 14+
-step << NightElf/Hunter/Druid/Warrior
+step << NightElf/Hunter/Druid/Warrior !Hunter
     #optional
     #label Cascade
     .goto 1439,37.703,43.393
@@ -1622,16 +1632,6 @@ step << NightElf/Hunter/Druid/Warrior
     .accept 4812 >> Accept As Water Cascades
     .target Sentinel Glynda Nal'Shea
     .isQuestTurnedIn 4811 --show step if Red Crystal turned in
-step << NightElf !Warrior !Rogue/Hunter/Druid
-    #optional
-    #season 0
-    .goto 1439/1,518.17,6429.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allyndia|r
-    >>|cRXP_WARN_Buy up to 40|r |T132815:0|t[Ice Cold Milk] |cRXP_WARN_from her. Sell all your other level 5 or below water|r
-    .collect 1179,35 --Ice Cold Milk (35)
-    .target Allyndia
-    .subzoneskip 442,1 --skip if you leave Auber
-    .isQuestTurnedIn 4811 --show step if you turned in red crystal
 step << NightElf/Hunter/Druid/Warrior
     #optional
     .goto 1439,37.767,44.001
@@ -1639,16 +1639,6 @@ step << NightElf/Hunter/Druid/Warrior
     .complete 4812,1 --Moonwell Water Tube (1)
     .use 14338
     .isQuestTurnedIn 4811
-step << NightElf Hunter
-    #optional
-    #season 0
-    .goto 1439/1,491.97,6560.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalmond|r
-    >>|cRXP_WARN_Buy up to 2000|r |T132382:0|t[Sharp Arrows] |cRXP_WARN_from him. You will need them for a grinding section soon|r
-    .collect 2515,2000 --Sharp Arrow (2000)
-    .target Dalmond
-    .subzoneskip 442,1 --skip if you leave Auber
-    .isQuestTurnedIn 4811 --show step if you turned in red crystal
 step << NightElf/Hunter/Druid/Warrior
     #optional
     #completewith EndFirstMoonstalker
@@ -1738,7 +1728,7 @@ step << NightElf/Hunter/Druid/Warrior
     .skill cooking,10,1 -- shows if cooking is <10
     .skill cooking,<1,1 -- shows if cooking is >1
     .isQuestTurnedIn 4811
-step << NightElf/Hunter/Warrior/Druid
+step << NightElf !Hunter/Warrior/Druid
     #optional
     #completewith EndFirstMoonstalker
     .hs >> Hearth to Auberdine
@@ -1746,21 +1736,28 @@ step << NightElf/Hunter/Warrior/Druid
     .subzoneskip 442
     .isQuestTurnedIn 6001 << Druid
     .isQuestTurnedIn 4811
-step << NightElf/Hunter/Druid/Warrior
+step << NightElf !Hunter/Druid/Warrior
     #optional
     #completewith next
     .goto 1439,37.703,43.393
     .subzone 442 >> Return to Auberdine
     .cooldown item,6948,<0,1 << !Druid
     .isQuestTurnedIn 4811
-step << NightElf/Hunter/Druid/Warrior
+step << NightElf !Hunter/Druid/Warrior
     #season 0
     .goto 1439/1,472.32,6438.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4813,3 >> Turn in The Fragments Within
     .target Sentinel Glynda Nal'Shea
     .isQuestTurnedIn 4811
-step << Hunter/Druid/Warrior
+step << NightElf !Hunter/Druid/Warrior
+    #season 0
+    .goto 1439/1,472.32,6438.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    .turnin 4813,3 >> Turn in The Fragments Within
+    .target Sentinel Glynda Nal'Shea
+    .isQuestTurnedIn 4811
+step << Druid/Warrior
     #optional
     #completewith AmethStart
     +|cRXP_WARN_Equip the|r |T135145:0|t[Oakthrush Staff]
@@ -1769,7 +1766,13 @@ step << Hunter/Druid/Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
     .isQuestTurnedIn 4811
     --reduced DPS now on staff due to it becoming a caster weapon
-
+step << NightElf !Hunter/Druid/Warrior
+    #optional
+    .goto 1439,38.107,41.165
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
+    .turnin 982 >> Turn in Deep Ocean, Vast Sea
+    .target Gorbold Steelhand
+    .isQuestComplete 982
 ----Start of forced Level 14 Druid Turnin/train----
 --Removed in wowF
 
@@ -1790,7 +1793,7 @@ step << Druid
 
 ----Start of alternate section if early Red Crystal turnin----
 
-step << NightElf/Hunter/Druid/Warrior
+step << NightElf !Hunter/Druid/Warrior
     #optional
     #loop
     #season 0
@@ -1812,10 +1815,7 @@ step << NightElf/Hunter/Druid/Warrior
     .complete 985,2 -- Blackwood Windtalker (5)
     .mob +Blackwood Windtalker
     .isQuestTurnedIn 4811
-step
-    #optional
-    #label HCHunterStart --hidden step for #include
-step << NightElf/Hunter/Druid/Warrior
+step << NightElf !Hunter/Druid/Warrior
     #optional
     #season 0
     #completewith Anaya
@@ -1826,7 +1826,7 @@ step << NightElf/Hunter/Druid/Warrior
     .mob Rabid Thistle Bear
     .isQuestTurnedIn 4811
     .subzoneskip 447
-step << NightElf/Hunter/Druid/Warrior
+step << NightElf !Hunter/Druid/Warrior
     #optional
     #season 0
     #label EarlyTurtleStart
@@ -1863,7 +1863,7 @@ step
     .mob Moonstalker
     .isQuestTurnedIn 1001
     .isQuestAvailable 4811
-step
+step << !NightElf !Druid !Warrior
     #season 0
     #loop
     .goto 1439,46.918,48.630,0
@@ -1899,32 +1899,6 @@ step
     .skill cooking,<1,1 -- shows if cooking is >1
 step
     #sticky
-    #optional
-    #label Anaya
-    .goto 1439,42.017,58.866,0 --NE spawn
-    .goto 1439,43.222,59.693,0 --NE spawn
-    .goto 1439,43.069,62.448,0 --SE spawn
-    .goto 1439,42.489,60.677,0 --Middle spawn
-    .waypoint 1439,42.017,58.866,50,0 --NE spawn
-    .waypoint 1439,42.311,58.645,50,0
-    .waypoint 1439,42.448,58.236,50,0
-    .waypoint 1439,43.222,59.693,50,0 --NE spawn
-    .waypoint 1439,43.447,60.131,50,0
-    .waypoint 1439,43.780,60.275,50,0
-    .waypoint 1439,43.069,62.448,50,0 --SE spawn
-    .waypoint 1439,43.104,62.563,50,0
-    .waypoint 1439,42.794,62.166,50,0
-    .waypoint 1439,42.489,60.677,50,0 --Middle spawn
-    >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for her |cRXP_LOOT_Pendant|r
-    -->>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
-    -->>|cRXP_WARN_If you can't find her and want to try again later at the cost of potentially grinding more mobs soon, skip this step|r
-    --much faster spawn time now on forever
-    .complete 963,1 --Anaya's Pendant (1)
-    .unitscan Anaya Dawnrunner
-    .solo
-step
-    #sticky
-    #optional
     #label Anaya
     .goto 1439,42.017,58.866,0 --NE spawn
     .goto 1439,43.222,59.693,0 --NE spawn
@@ -1947,7 +1921,6 @@ step
     --much faster spawn time now on forever
     .complete 963,1 --Anaya's Pendant (1)
     .unitscan Anaya Dawnrunner
-    .group
 step
     #season 0
     #sticky
@@ -2014,13 +1987,11 @@ step
     #requires Anaya
 --XXREQ Placeholder invis step until multiple requires per step
 step
+    .isQuestComplete 953
     .goto 1439,40.302,59.731
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .turnin 953 >> Turn in The Fall of Ameth'Aran
     .target Sentinel Tysha Moonblade
-step
-    #optional
-    #label HCHunterEndTwo --hidden step for #include
 step << !sod/Warrior/Rogue
     #optional
     #completewith FurbolgGrind
@@ -2070,50 +2041,6 @@ step
     .mob +Blackwood Windtalker
 step
     #optional
-    #loop
-    .goto 1439,39.899,54.745,0
-    .goto 1439,40.181,56.229,0
-    .goto 1439,39.267,53.092,50,0
-    .goto 1439,39.754,53.444,50,0
-    .goto 1439,40.234,54.325,50,0
-    .goto 1439,39.899,54.745,50,0
-    .goto 1439,40.181,56.229,50,0
-    .goto 1439,39.388,56.671,50,0
-    .goto 1439,39.191,56.382,50,0
-    .goto 1439,39.957,55.300,50,0
-    .goto 1439,39.332,54.079,50,0
-    >>Grind |cRXP_ENEMY_Furlbogs|r in the camp. |cRXP_WARN_This is a hyperspawn area|r meaning that the game will force respawns if enough mobs are dead. This makes it an |cRXP_WARN_EXTREMELY efficient grinding spot|r for the level (xp/hr is comparable to questing)
-    >>|cRXP_WARN_Completing this grind will allow you to quest through the entirety of Darkshore later without having to struggle with higher level mobs|r
-    >>Be careful as the |cRXP_ENEMY_Blackwood Pathfinders|r |T132152:0|t[Thrash] and can hit you up to 3 times at once
-    >>|cRXP_ENEMY_Blackwood Windtalkers|r cast |T136022:0|t[Gust of Wind] a melee range stun, |cRXP_WARN_move out of melee range when they are casting it|r to avoid getting stunned
-    .xp 15+10725 >> Grind to 10725+/14400xp
-    .mob Blackwood Pathfinder
-    .mob Blackwood Windtalker
-    .itemcount 5382,<1 --Anaya's Pendant (<1)
-step
-    #optional
-    #loop
-    .goto 1439,39.899,54.745,0
-    .goto 1439,40.181,56.229,0
-    .goto 1439,39.267,53.092,50,0
-    .goto 1439,39.754,53.444,50,0
-    .goto 1439,40.234,54.325,50,0
-    .goto 1439,39.899,54.745,50,0
-    .goto 1439,40.181,56.229,50,0
-    .goto 1439,39.388,56.671,50,0
-    .goto 1439,39.191,56.382,50,0
-    .goto 1439,39.957,55.300,50,0
-    .goto 1439,39.332,54.079,50,0
-    >>Grind |cRXP_ENEMY_Furlbogs|r in the camp. |cRXP_WARN_This is a hyperspawn area|r meaning that the game will force respawns if enough mobs are dead. This makes it an |cRXP_WARN_EXTREMELY efficient grinding spot|r for the level (xp/hr is comparable to questing)
-    >>|cRXP_WARN_Completing this grind will allow you to quest through the entirety of Darkshore later without having to struggle with higher level mobs|r
-    >>Be careful as the |cRXP_ENEMY_Blackwood Pathfinders|r |T132152:0|t[Thrash] and can hit you up to 3 times at once
-    >>|cRXP_ENEMY_Blackwood Windtalkers|r cast |T136022:0|t[Gust of Wind] a melee range stun, |cRXP_WARN_move out of melee range when they are casting it|r to avoid getting stunned
-    .xp 15+9850 >> Grind to 9850+/14400xp
-    .mob Blackwood Pathfinder
-    .mob Blackwood Windtalker
-    .itemcount 5382,1 --Anaya's Pendant (1)
-step
-    #optional
     #completewith FurbolgGrindEnd
     >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
     >>|cRXP_WARN_Be careful as they|r |T132307:0|t[Flee] |cRXP_WARN_at <30% health|r
@@ -2148,12 +2075,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
     .accept 1138 >> Accept Fruit of the Sea
     .target Gubber Blump
-step
+    .xp <15,1
+step << !NightElf
     #optional
     #completewith next
     .goto 1439,36.806,44.137,8,0
     .goto 1439,35.743,43.710,12 >> Return to |cRXP_FRIENDLY_Cerellean Whiteclaw|r on the dock
-step
+step << !NightElf
     #optional
     .goto 1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
@@ -2167,6 +2095,22 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea::2930|r
     .target Sentinel Glynda Nal'Shea::2930
     .turnin 98025 >>Turn in WANTED: Jai'vhanel
+    .turnin 4813,3 >> Turn in The Fragments Within << NightElf Hunter
+step << NightElf Hunter
+    #optional
+    .goto 1439/1,472.900,6439.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea::2930|r
+    .target Sentinel Glynda Nal'Shea::2930
+    .turnin 4813,3 >> Turn in The Fragments Within
+step << NightElf Hunter
+    #optional
+    #completewith AmethStart
+    +|cRXP_WARN_Equip the|r |T135145:0|t[Oakthrush Staff]
+    .use 15397
+    .itemcount 15397,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
+    .isQuestTurnedIn 4811
+    --reduced DPS now on staff due to it becoming a caster weapon
 step
     #season 0
     .goto 1439,37.703,43.393
@@ -2231,6 +2175,13 @@ step
     .target Gorbold Steelhand
     .skill cooking,50,1 --XX Shows if cooking skill is <50
     .itemcount 6889,1 -- Small Egg (1+)
+step << NightElf
+    .goto 1439,38.107,41.165
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
+    .vendor >>|cRXP_BUY_Buy a|r [Shiny Bauble] |cRXP_BUY_and three|r |T134324:0|t[Nightcrawlers] |cRXP_BUY_from him. You will need them for a quest in Stormwind soon|r
+    .collect 6529,1 --Shiny Bauble (1)
+    .collect 6530,3 --Nightcrawlers (3)
+    .target Gorbold Steelhand
 step
     .goto 1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
@@ -2262,22 +2213,136 @@ step
     .target Alanndarian Nightsong
     .itemcount 5469,5 -- Strider Meat (5)
     .skill cooking,<10,1 -- step only displays if skill is 10 or higher
-step << !sod/Rogue
+step
     #label TOTH
     .goto 1439,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
-    .turnin 958 >> Turn in Tools of the Highborne << !sod
-    .turnin 4762 >> Turn in The Cliffspring River << sod
-    .accept 4763 >> Accept The Blackwood Corrupted << sod
+    .turnin 958 >> Turn in Tools of the Highborne
+    .accept 97914 >>Accept Expanding Horizons << NightElf
     .target Thundris Windweaver
     .isQuestComplete 958
 
 ----End of small south loop for ERA and SoD Warrior/Rogue/Priest----
 
 
-----Start of NE >1.49x catchup (everyone 1x) Final boat section----
-
-
+---Start of Night Elf Westfall section----
+step << NightElf
+    #optional
+    #completewith next
+    .goto 1439,36.806,44.137,8,0
+    .goto 1439,35.743,43.710,12 >> Return to |cRXP_FRIENDLY_Cerellean Whiteclaw|r on the dock
+step << NightElf
+    #optional
+    .goto 1439,35.743,43.710
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
+    >>|cRXP_WARN_You may need to wait out his RP if someone else just turned in|r
+    .turnin 963 >> Turn in For Love Eternal
+    .target Cerellean Whiteclaw
+    .isQuestComplete 963
+step << NightElf
+    #label SWBoat
+    .goto 1439/1,929.100,6543.600
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat|r << Rogue/Warrior
+    .zone Stormwind City >> Take the boat to Stormwind City
+    .zoneskip Loch Modan
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+    .zoneskip Wetlands
+    .zoneskip Stormwind City
+    .zoneskip Redridge Mountains
+step << NightElf
+    .goto 1453/0,1268.800,-8540.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilbert Gray|r
+    .accept 95065 >>Accept Fishin' Time
+    .turnin 95065 >>Turn in Fishin' Time
+    .target Gilbert Gray
+step << NightElf
+    .goto 1453/0,1194.500,-8332.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r
+    .target Manifest Clerk Philmor::268511
+    .accept 97220 >>Accept Philmor's Favor
+step << NightElf
+    --@TODO add coords for exiting the harbor
+    #completewith next
+    .goto 1453/0,1194.200,-8360.900,10,0
+    .goto 1453/0,1076.300,-8408.500,15,0
+    .goto 1453/0,1001.400,-8499.700,10,0
+    .goto 1453/0,985.500,-8471.300,15,0
+    .goto 1453/0,960.100,-8501.800,15,0
+    .goto 1453/0,981.200,-8581.800,15,0
+    .goto 1453/0,875.500,-8680.900,10 >> Exit the Stormwind Harbor
+step << NightElf
+    .goto 1453/0,719.67,-8550.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
+    .turnin 97914 >> Turn in Expanding Horizons
+    .accept 97926 >> Accept Making Do
+    .accept 399 >> Accept Humble Beginnings
+    .target Baros Alexston
+step << NightElf Druid
+    .goto Stormwind City,21.6,51.4
+    >>Talk to |cRXP_FRIENDLY_Theridran|r
+    .trainer >>Train your class spells
+	.target Theridran
+step << NightElf Hunter
+    .goto 1453/0,552.78,-8415.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r
+    .trainer >> Train your class spells
+    .target Einris Brightspear
+step << NightElf Hunter
+    .goto 1453/0,553.22,-8422.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karrina Mekenda|r
+    .trainer >> Train your pet spells
+    .target Karrina Mekenda
+step << NightElf Priest
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r
+    .goto 1453/0,862.89,-8519.61
+    .trainer >> Train your class spells
+    .target Brother Joshua
+step << NightElf Rogue
+    .goto 1453/0,377.47,-8752.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
+    .trainer >> Train your class spells
+    .target Osborne the Night Man
+step << NightElf Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r
+    .goto 1453/0,358.25,-8728.28,15,0
+    .goto 1453/0,302.6,-8685.53,15,0
+	.goto 1453/0,323.3,-8689.29
+    .trainer >> Train your class spells
+    .target Wu Shen
+    .target Ilsa Corbin
+step << NightElf
+    .goto 1453/0,613.12,-8795.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
+    .train 201 >> Train 1h Swords << Rogue
+    .train 202 >> Train 2h Swords << Warrior
+    .target Woo Ping
+step << NightElf
+    .goto 1453/0,568.700,-8848.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias::483|r
+    .target Elaine Trias::483
+    .turnin 97220 >>Turn in Philmor's Favor
+    .accept 97222 >>Accept Gatehouse Goods
+step << NightElf
+    .goto 1453/0,569.400,-8860.300
+    >>Go |cRXP_WARN_UPSTAIRS|r and use the |T132762:0|t[|cRXP_LOOT_Shipment|r] in front of the |cRXP_PICK_Gatehouse Door|r
+    .use 277198 --Gatehouse Shipment
+    .complete 97222,1 --|1/1 Gatehouse Shipment delivered
+step << NightElf
+    .goto 1453/0,566.900,-8847.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias::483|r
+    .target Elaine Trias::483
+    .turnin 97222 >>Turn in Gatehouse Goods
+step
+    #include 13-15 Westfall@NEWestfallStart-NEWestfallEnd
+step << NightElf
+    .hs >>Hearthstone to Auberdine
+step << NightElf
+    .goto 1439/1,577.38,6371.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
+    .accept 1138 >> Accept Fruit of the Sea
+    .target Gubber Blump
+----End of Night Elf Westfall section
 step
     #optional
     #completewith next
@@ -2959,7 +3024,7 @@ step << NightElf Warrior
     .goto 1457/1,2329.19,9908.60
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
-    .skipgossip 11866,1
+    .skipgossipid 96881
     .train 2567 >> Train Thrown
     .target Ilyenia Moonfire
 step << NightElf Hunter
@@ -4192,7 +4257,7 @@ step << !NightElf Warrior/Paladin
     .dungeon !DM
 step << !NightElf Warrior/Paladin/Mage/Warlock/!NightElf Rogue
     #xprate >1.59
-    .goto Wetlands,9.490,59.694
+    .goto 1437/0,-782.03,-3793.23--c:Wetlands,9.490,59.694
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
     .fly Ironforge >> Fly to Ironforge
     .target Shellei Brondir
@@ -4203,7 +4268,7 @@ step << !NightElf Warrior/Paladin/Mage/Warlock/!NightElf Rogue
     .dungeon !DM
 step << NightElf Rogue
     #xprate >1.59
-    .goto Wetlands,9.490,59.694
+    .goto 1437/0,-782.03,-3793.23--c:Wetlands,9.490,59.694
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
     .fp Menethil Harbor >> Get the Menethil Harbor flight path
     .target Shellei Brondir
@@ -4265,8 +4330,8 @@ step << NightElf Rogue
     .goto 1415,41.625,67.689,30,0
     .goto 1453/0,1320.57,-8540.2,20,0
     .goto 1453/0,1242.03,-8638.88,10,0
-    .goto StormwindClassic,7,45.471,10,0
-    .goto StormwindClassic,5.560,50.125,10,0
+    .goto 1453/0,1286.87,-8686.43,10,0--c:StormwindClassic,7,45.471
+    .goto 1453/0,1306.23,-8728.15,10,0--c:StormwindClassic,5.560,50.125
     .goto 1453/0,1197.22,-8946.62,20,0
     .goto 1436/0,1545.83,-11056.200
     .zone Westfall >> If the website unstuck is not available, swim to Westfall
@@ -5703,7 +5768,7 @@ step << Dwarf Hunter
 step << Dwarf Hunter
     #xprate <1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
-    .skipgossip 11866,1
+    .skipgossipid 96881
     .goto 1457/1,2329.19,9908.60
     .train 264 >> Train Bows
     .train 227 >> Train Staves
@@ -5959,7 +6024,7 @@ step << !NightElf
     #xprate >1.59 << !Hunter
     #optional
     #completewith next
-    .goto Wetlands,9.490,59.694
+    .goto 1437/0,-782.03,-3793.23--c:Wetlands,9.490,59.694
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
     .fly Ironforge >> Fly to Ironforge
     .target Shellei Brondir
@@ -5969,7 +6034,7 @@ step << !NightElf
     .dungeon DM
 step << NightElf
     #xprate >1.59 << !Hunter
-    .goto Wetlands,9.490,59.694
+    .goto 1437/0,-782.03,-3793.23--c:Wetlands,9.490,59.694
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
     .fp Menethil Harbor >> Get the Menethil Harbor flight path
     .target Shellei Brondir
@@ -6031,8 +6096,8 @@ step << NightElf
     .goto 1415,41.625,67.689,30,0
     .goto 1453/0,1320.57,-8540.2,20,0
     .goto 1453/0,1242.03,-8638.88,10,0
-    .goto StormwindClassic,7,45.471,10,0
-    .goto StormwindClassic,5.560,50.125,10,0
+    .goto 1453/0,1286.87,-8686.43,10,0--c:StormwindClassic,7,45.471
+    .goto 1453/0,1306.23,-8728.15,10,0--c:StormwindClassic,5.560,50.125
     .goto 1453/0,1197.22,-8946.62,20,0
     .goto 1436/0,1545.83,-11056.200
     .zone Westfall >> If the website unstuck is not available, swim to Westfall
@@ -8043,12 +8108,12 @@ step << Shaman
     .target Shellei Brondir
 step << Shaman
     .goto 1455/0,-1086.500,-4642.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldrun Stormbreaker::258098|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldrun Stormbreaker::258098|r
     .target Eldrun Stormbreaker::258098
     .trainer >> Train your class spells
 step << Shaman
     #optional
-    .goto Ironforge,50.826,5.613
+    .goto 1455/0,-1115.43,-4598.86--c:Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerrig Bonegrip|r
     .turnin 968 >> Turn in The Powers Below
     .target Gerrig Bonegrip
@@ -8798,7 +8863,7 @@ step
 step
 .dungeon DM
     #completewith next
-    .goto Elwynn Forest,32.240,49.723,60 >> Exit Stormwind. Travel to Goldshire
+    .goto 1429/0,416.42,-9090.46,60 >> Exit Stormwind. Travel to Goldshire--c:Elwynn Forest,32.240,49.723
     .isOnQuest 118
     .xp <20,1
 step
@@ -8832,7 +8897,7 @@ step
     .xp <20,1
 step
 .dungeon DM
-    .goto Elwynn Forest,64.880,69.192
+    .goto 1429/0,-716.46,-9541.09--c:Elwynn Forest,64.880,69.192
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawn Brightstar|r
     .vendor >> |cRXP_FRIENDLY_Dawn Brightstar|r |cRXP_BUY_has has limited supply items such as|r |T134938:0|t|T134937:0|t|T134943:0|t[Scrolls] |cRXP_BUY_and|r |T134850:0|t|T134830:0|t[Potions] |cRXP_BUY_as well, which you should buy if available|r << !Warrior !Rogue
     .vendor >> |cRXP_FRIENDLY_Dawn Brightstar|r |cRXP_BUY_has has limited supply items such as|r |T134938:0|t|T134937:0|t|T134943:0|t[Scrolls] |cRXP_BUY_and|r |T134830:0|t[Potions] |cRXP_BUY_as well, which you should buy if available|r << Warrior/Rogue
@@ -9191,7 +9256,7 @@ step
     .goto 1433/0,-2172.59,-9261.02
     .turnin 127 >> Turn in Selling Fish
 step << Druid
-    .goto Redridge Mountains,26.8,44.8
+    .goto 1433/0,-2152.62,-9223.67--c:Redridge Mountains,26.8,44.8
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Brianna|r
     .home Lakeshire >> Set your hearthstone to Lakeshire
     .target Innkeeper Brianna
@@ -9251,7 +9316,7 @@ step << Druid
 	.cast 18960 >> Cast Teleport: Moonglade
 step << Druid
     #completewith next
-    .goto Moonglade,44.148,45.229
+    .goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
     .fly Teldrassil >> Fly to Darnassus
     .skipgossip
@@ -9337,7 +9402,7 @@ step << Druid
     --.accept 98362 >>Accept To Thunder Bluff << Horde
 step << Druid
     #completewith catspirit2
-    .goto Moonglade,44.148,45.229
+    .goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
     .fly Teldrassil >> Fly to Darnassus
     .skipgossip
@@ -9347,7 +9412,7 @@ step << Druid
     .zoneskip Teldrassil
 step << Druid
     #completewith next
-    .goto Moonglade,44.148,45.229
+    .goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
     .fly Teldrassil >> Fly to Darnassus
     .skipgossip
@@ -10330,7 +10395,7 @@ step << Hunter
 --XX Train in darn at 20 on 2x
 step << Hunter
     #xprate <1.59
-    .goto Ashenvale,18.010,59.832
+    .goto 1440/1,661.42,2373.12--c:Ashenvale,18.010,59.832
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alenndaar Lapidaar|r
     .trainer >> Train your class skills
     .train 5118 >> Train |T132242:0|t[Aspect of the Cheetah]
@@ -10664,7 +10729,7 @@ step << Dwarf Hunter
     #xprate <1.59
 -- #xprate >1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
-    .skipgossip 11866,1
+    .skipgossipid 96881
     .goto 1457/1,2329.19,9908.60
     .train 264 >> Train Bows
     .train 227 >> Train Staves

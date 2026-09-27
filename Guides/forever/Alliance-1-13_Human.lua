@@ -189,7 +189,7 @@ step << !Priest !Mage !Warlock !Rogue
     .target Godric Rothgar
 step << Rogue
     #season 0,1
-    .goto Elwynn Forest,47.240,41.900
+    .goto 1429/0,-104.21,-8909.39--c:Elwynn Forest,47.240,41.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Janos Hammerknuckle|r
     .vendor 78 >>|cRXP_BUY_Buy a|r |T135650:0|t[Dirk] |cRXP_BUY_from him if you can afford it|r
     .collect 2139,1 -- Dirk (1)
@@ -747,9 +747,13 @@ step
     .accept 91772 >>Accept Shhh! We're Hunting Kobolds
 step
     #completewith RnR
+    .cast 1246031 >> |cRXP_WARN_Use the|r |T132995:0|t[Kobold Tracking Kit] |cRXP_WARN_to see the |cRXP_PICK_Kobold Tracks|r on your minimap|r
+    .use 247970
+step
+    #completewith RnR
     .isOnQuest 91772
     .goto 1429/0,-46.00,-9044.61,5 >>Click the green |cRXP_PICK_Kobold Tracks|r on the ground as you travel toward Goldshire
-    .use 247970 >> |cRXP_WARN_Use the|r |T132995:0|t[Kobold Tracking Kit] |cRXP_WARN_to track them on your minimap|r
+    .use 247970
     .complete 91772,1 -- Followed Kobold Tracks 6/6
     .disablecheckbox
 step
@@ -881,7 +885,7 @@ step << Warrior
     .collect 2488,1 --Collect Gladius (1)
     .disablecheckbox
     .target Corina Steele
---  .money <0.0536
+    .money <0.0536
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Warrior
     #completewith next
@@ -896,7 +900,7 @@ step << Rogue
     .collect 2494,1 --Collect Stiletto (1)
     .disablecheckbox
     .target Corina Steele
---  .money <0.0400
+    .money <0.0400
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #completewith GSHS
@@ -968,10 +972,11 @@ step
 step
     .goto 1429/0,-5.63,-9467.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tomas|r
+    >>|cRXP_WARN_Skip this step if you don't have 1 silver, or if you wish to do it later|r
     .train 2550 >> Train |T133971:0|t[Cooking]
     .turnin 96626 >> Turn in Camping 101: Cooking
     .target Tomas
-
+    .money <0.0100
 step
     #optional
     .xp 6 >> Grind to 6
@@ -1057,7 +1062,7 @@ step << Paladin
     .target Brother Wilhelm
 step
     #requires DeleteOldDaggers << Rogue
-    .goto Elwynn Forest,42.140,67.254
+    .goto 1429/0,72.81,-9496.23--c:Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     .accept 47 >> Accept Gold Dust Exchange
     .target Remy "Two Times"
@@ -1071,7 +1076,7 @@ step << Hunter
     .money <0.0281
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.38
 step << Hunter
-    .goto Teldrassil,55.890,59.205
+    .goto 1438/1,968.85,9821.98--c:Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
     .vendor >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_until your Quiver is full|r
     .target Jeena Featherbow
@@ -1148,7 +1153,7 @@ step
     .goto 1429/0,338.47,-9889.69
     .target +"Auntie" Bernice Stonefield
     .accept 88 >> Accept Princess Must Die!
-	.goto Elwynn Forest,34.660,84.482
+	.goto 1429/0,332.43,-9894.99--c:Elwynn Forest,34.660,84.482
     .target +Ma Stonefield
 step << Warrior/Paladin/Rogue
     #optional
@@ -1301,7 +1306,7 @@ step
     .mob Kobold Miner
 step
     #label Lovers
-    .goto Elwynn Forest,29.840,85.997
+    .goto 1429/0,499.72,-9930.05--c:Elwynn Forest,29.840,85.997
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tommy Joe Stonefield|r
     .turnin 106 >> Turn in Young Lovers
     .accept 111 >> Accept Speak with Gramma
@@ -1500,7 +1505,7 @@ step
     #hardcore
     #optional
     #completewith Exchange
-    .goto Elwynn Forest,42.140,67.254,125 >> Return to Goldshire
+    .goto 1429/0,72.81,-9496.23,125 >> Return to Goldshire--c:Elwynn Forest,42.140,67.254
     .subzoneskip 87 --Goldshire
 step
     #softcore
@@ -1509,7 +1514,7 @@ step
     .target Spirit Healer
 step
     #label Exchange
-    .goto Elwynn Forest,42.140,67.254
+    .goto 1429/0,72.81,-9496.23--c:Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     >>|cRXP_WARN_Do NOT vendor the|r |T133581:0|t[Bag of Marbles] |cRXP_WARN_reward. This is an incredibly valuable item all the way through to level 60|r
     .turnin 47 >> Turn in Gold Dust Exchange
@@ -2715,7 +2720,7 @@ step << !Warlock
     .abandon 59 >> Abandon Cloth and Leather Armor
 
 step
-    .goto Elwynn Forest,42.140,67.254
+    .goto 1429/0,72.81,-9496.23--c:Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     .turnin 99129 >> Turn in A Man About a Murloc
     --.accept 99130 >> Accept An Enticing Offer
@@ -2729,7 +2734,7 @@ step << skip
     .complete 99130,2 -- Vial of Animal Blood 6/6
     .mob +Stonetusk Boar
 step << skip
-    .goto Elwynn Forest,42.140,67.254
+    .goto 1429/0,72.81,-9496.23--c:Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     .turnin 99130 >> Turn in An Enticing Offer
     .accept 99131 >> Accept Baited for Success
@@ -2786,7 +2791,7 @@ step
     .target Maybell Maclure
 step
     #label PrincessFinish
-    .goto Elwynn Forest,34.660,84.482
+    .goto 1429/0,332.43,-9894.99--c:Elwynn Forest,34.660,84.482
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r
     .turnin 88,1 >> Turn in Princess Must Die! << Rogue/Hunter
     .turnin 88,2 >> Turn in Princess Must Die! << Warrior/Paladin
@@ -3052,6 +3057,17 @@ step << Warlock/Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
     .trainer >>Train Staves
     .target Woo Ping
+step << Priest/Mage/Warlock
+    #ah
+    .goto 1453/0,660.28,-8814.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>|cRXP_WARN_Buy the following if you can afford it:|r
+    >>|T134711:0|t[Minor Wizard Oil] |cRXP_WARN_and|r |T133906:0|t[Smoked Sagefish]
+    >>|cRXP_WARN_Also check for any high DPS|r |T132317:0|t[Wand] |cRXP_WARN_upgrades that you can use now/soon|r
+    >>|cRXP_WARN_These will provide a high DPS increase in early levels. If you don't want to or can't do this, skip this step|r
+    .collect 20744,1 -- Minor Wizard Oil (1)
+    .collect 21072,20 -- Smoked Sagefish (20)
+    .target Auctioneer Jaxon
 step << Rogue
     #ssf
     #optional
@@ -3721,9 +3737,9 @@ step << skip -- for dungeon route only
     .bindlocation 1537
 step
     #ah
-    .goto Ironforge,25.800,75.500,-1
-    .goto Ironforge,24.200,74.600,-1
-    .goto Ironforge,23.800,71.800,-1
+    .goto 1455/0,-917.57,-4967.58,-1--c:Ironforge,25.800,75.500
+    .goto 1455/0,-904.92,-4962.83,-1--c:Ironforge,24.200,74.600
+    .goto 1455/0,-901.76,-4948.06,-1--c:Ironforge,23.800,71.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to an |cRXP_FRIENDLY_Ironforge Auctioneer|r
     >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[Cooking] |cRXP_BUY_with later|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
@@ -3750,9 +3766,9 @@ step
 step
     #ah
     #optional
-    .goto Ironforge,25.800,75.500,-1
-    .goto Ironforge,24.200,74.600,-1
-    .goto Ironforge,23.800,71.800,-1
+    .goto 1455/0,-917.57,-4967.58,-1--c:Ironforge,25.800,75.500
+    .goto 1455/0,-904.92,-4962.83,-1--c:Ironforge,24.200,74.600
+    .goto 1455/0,-901.76,-4948.06,-1--c:Ironforge,23.800,71.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to an |cRXP_FRIENDLY_Ironforge Auctioneer|r
     >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
     >>|cRXP_BUY_Buy the following items for a faster turn in at Loch Modan shortly:|r
@@ -3775,7 +3791,7 @@ step
 --logout skip - remove if logout skips re-added
 step
     .goto 1426/0,-682.300,-5489.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldin Steelgrill::1376|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldin Steelgrill::1376|r
     .target Beldin Steelgrill::1376
     .accept 96408 >>Accept A Visitor to Dun Morogh
 step
@@ -3810,7 +3826,7 @@ step
     .goto 1426/0,-1219.90,-5422.55,40 >>Go up the dirt path
     .isQuestAvailable 314
 step
-    #completewith next
+    #completewith VagashEnd
     #requires Dirt
     .goto 1426,62.778,54.591,0
     .goto 1426,62.538,46.195,0

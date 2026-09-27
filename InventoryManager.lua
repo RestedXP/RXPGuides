@@ -849,8 +849,12 @@ function addon.inventoryManager:OnClickHook(button, mouseButton, ...)
     if bag and slot then
         local id = self.bagManager:GetContainerItemID(bag, slot)
         self:ToggleJunk(id, bag, slot)
-        if button.JunkIcon then
+        if button.JunkIcon and self.hookedFrames[button] ~= "ElvUI" then
             button.JunkIcon:SetShown(addon.settings.profile.showJunkIcon and id and self:IsJunk(id) and button:IsShown())
+        end
+
+        if _G.Baganator and _G.Baganator.API and _G.Baganator.API.RequestItemButtonsRefresh then
+            _G.Baganator.API.RequestItemButtonsRefresh()
         end
     end
 end
@@ -976,7 +980,7 @@ function addon.inventoryManager.bagManager:SelectAdapter()
         adapter = self.adapters.ArkInventory
     elseif _G["BaudBagSubBag0"] then
         adapter = self.adapters.BaudBag
-    elseif Baganator and Baganator.API then
+    elseif _G.Baganator and _G.Baganator.API then
         adapter = self.adapters.Baganator
     elseif addon.game == "FOREVER" and ContainerFrame_UpdateAll then
         adapter = self.adapters.Forever
@@ -1054,12 +1058,17 @@ function addon.inventoryManager.bagManager:UpdateAllBags(name, i)
     end
 end
 
-function addon.inventoryManager.bagManager:HookButton(button)
-    if not button or addon.inventoryManager.hookedFrames[button] then return end
+function addon.inventoryManager.bagManager:HookButton(button, source)
+    if not button then return end
+
+    if addon.inventoryManager.hookedFrames[button] then
+        if source then addon.inventoryManager.hookedFrames[button] = source end
+        return
+    end
 
     button:HookScript("OnClick", self.onClickHook)
 
-    addon.inventoryManager.hookedFrames[button] = true
+    addon.inventoryManager.hookedFrames[button] = source or true
 end
 
 function addon.inventoryManager.bagManager:LoadBaganator()
@@ -1081,7 +1090,7 @@ function addon.inventoryManager.bagManager:LoadBaganator()
         if frame and frame.Container and frame.Container.Layouts then
             for _, container in pairs(frame.Container.Layouts) do
                 for _, button in pairs(container.buttons or {}) do
-                    if button.BGR then self:HookButton(button) end
+                    if button.BGR then self:HookButton(button, "Baganator") end
                 end
             end
         end
@@ -1125,6 +1134,20 @@ function addon.inventoryManager.bagManager:HookBags()
         hooksecurefunc("ContainerFrame_Update", function(frame) this:UpdateBag(frame, nil, "%sItem%d") end)
     end
 
+    local elvUIFrame = _G.ElvUI_ContainerFrame
+    if elvUIFrame and elvUIFrame.Bags then
+        local hookElvUISlots = function(frame)
+            for _, bag in pairs(frame.Bags) do
+                for _, slot in ipairs(bag) do
+                    this:HookButton(slot, "ElvUI")
+                end
+            end
+        end
+
+        elvUIFrame:HookScript("OnShow", hookElvUISlots)
+        hookElvUISlots(elvUIFrame)
+    end
+
     if _G.Baganator and _G.Baganator.API then
         _G.Baganator.API.RegisterJunkPlugin(addonName, "RXPGuides", function(bagID, slotID, id)
             return addon.inventoryManager:IsFeatureEnabled() and id and addon.inventoryManager:IsJunk(id, bagID, slotID)
@@ -1133,7 +1156,9 @@ function addon.inventoryManager.bagManager:HookBags()
         C_Timer.After(1, function() this:LoadBaganator() end)
 
         if _G.Baganator.CallbackRegistry then
-            _G.Baganator.CallbackRegistry:RegisterCallback("SettingChanged", function() this:LoadBaganator() end)
+            _G.Baganator.CallbackRegistry:RegisterCallback("SettingChanged", function()
+                C_Timer.After(0.1, function() this:LoadBaganator() end)
+            end)
         end
     end
 

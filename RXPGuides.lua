@@ -617,6 +617,11 @@ local trainerUpdate = 0
 
 local function ProcessSpells(names, rank)
     if gameVersion > 90000 or not addon.defaultSpellList then return end
+
+    if addon.game == "FOREVER" and ClassTrainerFrame and ClassTrainerFrame.TitleContainer and ClassTrainerFrame.TitleContainer.TitleText:GetText() == UnitName("pet") then
+        return
+    end
+
     local _, race = UnitRace("player")
     local level = UnitLevel("player")
     local entries = {race, addon.player.class}
@@ -1794,7 +1799,11 @@ function addon:TRAINER_SHOW(...)
     addon.trainerFrame:SetScript("OnUpdate", trainerFrameUpdate)
 end
 
-function addon:TRAINER_CLOSED(...) addon.trainerFrame:SetScript("OnUpdate", nil) end
+function addon:TRAINER_CLOSED(...)
+    if addon.trainerFrame then
+        addon.trainerFrame:SetScript("OnUpdate", nil)
+    end
+end
 
 function addon:PLAYER_LEVEL_UP(_, level)
     if not addon.currentGuide then return end

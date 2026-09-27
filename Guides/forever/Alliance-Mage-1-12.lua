@@ -255,7 +255,7 @@ step
 .target "Auntie" Bernice Stonefield
 >>Talk to |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
     .accept 85 >> Accept Lost Necklace
-    .goto Elwynn Forest,34.660,84.482
+    .goto 1429/0,332.43,-9894.99--c:Elwynn Forest,34.660,84.482
 .target Ma Stonefield
 >>Talk to |cRXP_FRIENDLY_Ma Stonefield|r
     .accept 88 >> Accept Princess Must Die!
@@ -293,7 +293,7 @@ step
     >>Kill boars you see for Boar Meat
     .collect 769,4 --Collect Chunk of Boar Meat (x4)
 step
-    .goto Elwynn Forest,29.840,85.997
+    .goto 1429/0,499.72,-9930.05--c:Elwynn Forest,29.840,85.997
 >>Talk to |cRXP_FRIENDLY_Tommy Joe Stonefield|r
     .turnin 106 >> Turn in Young Lovers
 .target Tommy Joe Stonefield
@@ -604,7 +604,7 @@ step
 >>Talk to |cRXP_FRIENDLY_Maybell Maclure|r
     .turnin 114 >> Turn in The Escape
 step
-    .goto Elwynn Forest,34.660,84.482
+    .goto 1429/0,332.43,-9894.99--c:Elwynn Forest,34.660,84.482
 .target Ma Stonefield
 >>Talk to |cRXP_FRIENDLY_Ma Stonefield|r
     .turnin 88 >> Turn in Princess Must Die!

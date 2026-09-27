@@ -2810,18 +2810,18 @@ step << Hunter/Shaman
 step << Shaman
     #optional
     #loop
-    .goto Durotar,43.56,15.08,0
-    .goto Durotar,44.16,19.19,60,0
-    .goto Durotar,44.13,17.02,60,0
-    .goto Durotar,43.56,15.08,60,0
+    .goto 1411/1,-4265.73,1276.76,0--c:Durotar,43.56,15.08
+    .goto 1411/1,-4297.46,1131.89,60,0--c:Durotar,44.16,19.19
+    .goto 1411/1,-4295.87,1208.38,60,0--c:Durotar,44.13,17.02
+    .goto 1411/1,-4265.73,1276.76,60,0--c:Durotar,43.56,15.08
     .xp 9+2520 >>Grind to 2520+/6500 into level 9
 step << Shaman
     #optional
     #loop
-    .goto Durotar,43.56,15.08,0
-    .goto Durotar,44.16,19.19,60,0
-    .goto Durotar,44.13,17.02,60,0
-    .goto Durotar,43.56,15.08,60,0
+    .goto 1411/1,-4265.73,1276.76,0--c:Durotar,43.56,15.08
+    .goto 1411/1,-4297.46,1131.89,60,0--c:Durotar,44.16,19.19
+    .goto 1411/1,-4295.87,1208.38,60,0--c:Durotar,44.13,17.02
+    .goto 1411/1,-4265.73,1276.76,60,0--c:Durotar,43.56,15.08
     +Grind until your hearthstone cooldown is <5 minutes
     .cooldown item,6948,<0
 step << Hunter/Shaman
@@ -2974,10 +2974,10 @@ step << Hunter/Shaman
 step << Priest
     #optional
     #loop
-    .goto Durotar,41.61,24.54,40,0
-    .goto Durotar,39.93,24.24,40,0
-    .goto Durotar,39.03,26.73,40,0
-    .goto Durotar,39.20,31.80
+    .goto 1411/1,-4162.63,943.30,40,0--c:Durotar,41.61,24.54
+    .goto 1411/1,-4073.80,953.87,40,0--c:Durotar,39.93,24.24
+    .goto 1411/1,-4026.21,866.10,40,0--c:Durotar,39.03,26.73
+    .goto 1411/1,-4035.20,687.38--c:Durotar,39.20,31.80
     .xp 9+3150 >>Grind to 3150+/6500 into level 9
 step
     #completewith RazorTurnins2
@@ -3947,7 +3947,7 @@ step << Troll Warrior/Undead Warrior/Tauren Shaman/Troll Shaman/Orc Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
 step
     #ah
-    .goto Undercity,64.20,49.60
+    .goto 1458/0,257.27,1560.45--c:Undercity,64.20,49.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Rhyker|r
     >>|cRXP_BUY_Buy Three|r |T133884:0|t[Murloc Eyes] |cRXP_BUY_from the Auction House|r
     >>|cRXP_WARN_Skip this if you want, it's only a small time saver|r
