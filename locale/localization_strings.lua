@@ -227,6 +227,7 @@ L["Sets maximum number of talents to layout"] = "Sets maximum number of talents 
 L["Guide Routing"] = "Guide Routing"
 L["Guide progress was saved by another character. Reset it?"] = "Guide progress was saved by another character. Reset it?"
 L["Reset Guide Progress"] = "Reset Guide Progress"
+L["Clear guide progress for current character"] = "Clear guide progress for current character"
 L["Detect Rate"] = "Detect Rate"
 L["Checks for heirlooms and experience buffs"] = "Checks for heirlooms and experience buffs"
 L["Experience rates"] = "Experience rates"
