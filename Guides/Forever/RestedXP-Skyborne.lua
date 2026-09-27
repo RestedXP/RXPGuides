@@ -204,30 +204,7 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ventaari Brightwish|r.
     .accept 92598 >>Accept The Gift of Skysight
     .target Ventaari Brightwish
-step << Horde
-    .isNotOnQuest 93552
-    .isQuestAvailable 93552
-    .goto 2521,42.749,24.496
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
-    .vendor >>|cRXP_WARN_Vendor trash|r
-    .target Uualia Suncrest::251537
-step << Alliance
-    #completewith next
-    #label Harvesting Windstones
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
-    .accept 93552 >>Accept Harvesting Windstones
-    .target Dalia the Collector
-step << Alliance
-    #completewith Harvesting Windstones
-    .goto 2521,43.41,23.51
-    .vendor >>|cRXP_WARN_Vendor trash|r
-step << Alliance
-    #requires Harvesting Windstones
-    .goto 2521,43.37,23.99s
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
-    .accept 93552 >>Accept Harvesting Windstones
-    .target Dalia the Collector
-step << !Warrior !Rogue !Mage
+step << !Warrior !Rogue 
     --still loads in places it shouldn't no idea why
     .isNotOnQuest 93552
     .isQuestAvailable 93552
@@ -235,12 +212,34 @@ step << !Warrior !Rogue !Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
     >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Hunter !Shaman
     >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from her|r << Hunter
+    .vendor >>|cRXP_WARN_Vendor trash|r
     .collect 159,10 << !Hunter !Shaman --Refreshing Spring Water (10)
     .collect 2512,1000 << Hunter --Rough Arrow (1000)
     .target Uualia Suncrest::251537
     .subzoneskip 16635,1
     .money <0.0050 << !Hunter
     .money <0.0040 << Hunter
+step << Alliance !Hunter
+    #completewith next
+    #label Harvesting Windstones
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
+    .accept 93552 >>Accept Harvesting Windstones
+    .target Dalia the Collector
+step << Alliance !Hunter
+    #completewith Harvesting Windstones
+    .goto 2521,43.41,23.51
+    .vendor >>|cRXP_WARN_Vendor trash|r
+step << Alliance !Hunter
+    #requires Harvesting Windstones
+    .goto 2521,43.37,23.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
+    .accept 93552 >>Accept Harvesting Windstones
+    .target Dalia the Collector
+step << Alliance Hunter/Alliance Mage/Alliance Druid
+    .goto 2521,43.37,23.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
+    .accept 93552 >>Accept Harvesting Windstones
+    .target Dalia the Collector
 step << Alliance
     .goto 2521,43.33,24.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
@@ -304,7 +303,7 @@ step
     #hidewindow
     #completewith Windstone Cluster
     #loop
-    .goto 2521,46.85,17.68,15,0
+    .goto 2521,46.85,17.68,30,0
     .goto 2521,47.22,19,30,0
     .goto 2521,48.3,19.06,50,0
     .goto 2521,47.55,21.06,35,0
@@ -312,6 +311,8 @@ step
     .goto 2521,48.97,20.86,40,0
     .goto 2521,47.41,21.14,30,0
     .goto 2521,45.82,19.09,40,0
+    .goto 2521,47.19,23.55,30,0
+    .goto 2521,46.6,24.62,30,0
     +1
 step
     #completewith next
@@ -940,8 +941,11 @@ step << Horde Mage
     .collect 247789,1
     .macro Runed Copper Rod,135225 >>/cast Enchanting\n/run C_TradeSkillUI.CraftRecipe(7421,1)
     .macro Novice's Practice Wand,135645 >>/run C_TradeSkillUI.CraftRecipe(1245321,1)
-step
---abandon enchanting
+step << Horde Mage
+    #completewith next
+    .train 7411,3
+    +Abandon Enchanting or continue with it.
+    -- .macro Abandon Profession Enchanting >>/run AbandonSkill(C_TradeSkillUI.GetProfessionSkillLineID(Enum.Profession.Enchanting))
 step << Alliance Rogue
     .goto 2521,43.16,43.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
@@ -994,18 +998,21 @@ step << Alliance Mage
     .collect 247789,1
     .macro Runed Copper Rod,135225 >>/cast Enchanting\n/run C_TradeSkillUI.CraftRecipe(7421,1)
     .macro Novice's Practice Wand,135645 >>/run C_TradeSkillUI.CraftRecipe(1245321,1)
-step
---abandon enchanting
+step << Alliance Mage
+    #completewith next
+    .train 7411,3
+    +Abandon Enchanting or continue with it.
+    -- .macro Abandon Profession Enchanting >>/run AbandonSkill(C_TradeSkillUI.GetProfessionSkillLineID(Enum.Profession.Enchanting))
 step << Alliance
     .goto 2521,43.02,43.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
     .complete 93461,2 << Alliance --1/1 Speak with the Innkeeper
     .target the Innkeeper
--- step << Alliance
---     .goto 2521,43.02,43.24
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
---     .home >>Set your Hearthstone to Shen'dar Village
---     .target the Innkeeper
+step << Alliance
+    .goto 2521,43.02,43.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
+    .home >>Set your Hearthstone to Shen'dar Village
+    .target the Innkeeper
 step << Warrior
     .goto 2521,44.95,45.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corsan Earthrazer|r
@@ -1014,6 +1021,24 @@ step << Warrior
     .target Corsan Earthrazer
     .money <0.01
     .xp <6,1
+step << Hunter
+    .goto 2521,45.263,44.236
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elayaa Easewind::254084|r.
+    .train 3044 >>Train |T132218:0|t[Arcane Shot]
+    .train 1130 >>Train |T132212:0|t[Hunter's Mark]
+    .skipgossipid 136808
+    .target Elayaa Easewind::254084
+    .money <0.02
+    .xp <6,1
+step << Druid
+    .goto 2521,45.154,44.217
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naeluna Swiftmend::254081|r
+    .train 467 >>Train |T136104:0|t[Thorns]
+    .train 5177 >>Train |T136006:0|t[Wrath (Rank 2)]
+    .skipgossipid 136805
+    .xp <6,1
+    .money <0.02
+    .target Naeluna Swiftmend::254081
 step
     .goto 2521,45.67,45.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
@@ -1026,6 +1051,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elayaa Easewind::254084|r.
     .train 3044 >>Train |T132218:0|t[Arcane Shot]
     .train 1130 >>Train |T132212:0|t[Hunter's Mark]
+    .skipgossipid 136808
     .target Elayaa Easewind::254084
     .money <0.02
     .xp <6,1
@@ -1094,6 +1120,42 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
     .accept 92553 >>Accept Restocking the Larders
     .target Zerril Softbreeze::251905
+step << Horde Rogue
+    .goto 2521,43.16,43.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
+    .train 1757 >> Train |T136189:0|t[Sinister Strike (Rank 2)]
+    .train 1776 >> Train |T132155:0|t[Gouge]
+    .train 1777,1
+    .skipgossipid 136810
+    .target Miriaan Mistblade
+    .money <0.02
+    .xp <6,1
+step << Horde Rogue
+    .goto 2521,43.16,43.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
+    .train 1757 >> Train |T136189:0|t[Sinister Strike (Rank 2)]
+    .skipgossipid 136810
+    .target Miriaan Mistblade
+    .money <0.01
+    .xp <6,1
+step << Alliance Rogue
+    .goto 2521,43.16,43.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
+    .train 1757 >> Train |T136189:0|t[Sinister Strike (Rank 2)]
+    .train 1776 >> Train |T132155:0|t[Gouge]
+    .train 1777,1
+    .skipgossipid 136810
+    .target Miriaan Mistblade
+    .money <0.02
+    .xp <6,1
+step << Alliance Rogue
+    .goto 2521,43.16,43.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
+    .train 1757 >> Train |T136189:0|t[Sinister Strike (Rank 2)]
+    .skipgossipid 136810
+    .target Miriaan Mistblade
+    .money <0.01
+    .xp <6,1
 -- step
 --     .isQuestTurnedIn 92553
 --     .isQuestAvailable 92517
@@ -1116,8 +1178,11 @@ step
     .complete 92553,1 --3/3 Small Egg
     .mob Galestrider::251661
 step << Horde
-    .goto 2521,46.411,38.562
-    --loop maybe
+    #loop
+    .goto 2521,46.13,39.79,25,0
+    .goto 2521,46.9,38.84,25,0
+    .goto 2521,46.37,37.85,25,0
+    .goto 2521,45.76,39.31,25,0
     >>Kill the |cRXP_ENEMY_High Order Apprentices::257521|r.
     .complete 94411,1 --|6/6 High Order Apprentice defeated
     .mob High Order Apprentice::257521
@@ -1145,7 +1210,6 @@ step
     #label BadwindBennicB
     .goto 2521,50.680,34.214
     >>Kill |cRXP_ENEMY_"Badwind" Bennic|r.
-    *|cRXP_WARN_Refresh|r |T236219:0|t[Read Ley Line] |cRXP_WARN_near the Leyline|r << Alliance
     .usespell 1259705 << Alliance
     .complete 92517,2 --|1/1 "Badwind" Bennic slain
     .mob "Badwind" Bennic::255534
