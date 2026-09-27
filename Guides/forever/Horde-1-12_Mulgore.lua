@@ -468,14 +468,39 @@ RXPGuides.RegisterGuide([[
 
 
 step
-	#completewith BloodhoofHome
 	#softcore
+	#completewith BloodhoofHome
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
 	#hardcore
 	#completewith BloodhoofHome
-    .goto 1412/1,-384.69,-2351.89,120 >> Run to Bloodhoof Village--c:Mulgore,47.35,60.70
-    .subzoneskip 222
+    .subzone 222 >>Travel to Bloodhoof Village
+step
+    #hardcore
+    .goto 1412/1,-363.000,-2490.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaga Wildhoof|r
+    .turnin 96659 >>Turn in The Adventurer
+    .accept 96605 >>Accept The Great Outdoors
+    .target Kaga Wildhoof
+step
+    #hardcore
+    .goto 1412/1,-363.000,-2490.700
+    >>|cRXP_WARN_Type /sit at the campfire and wait for one minute until you get the "Camp Benefits" buff|r
+    .complete 96605,1 --|1/1 Use the /sit emote near the campfire
+    .complete 96605,2 --|Gain the Boosted Rest buff
+step
+    #hardcore
+    .goto 1412/1,-363.000,-2490.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaga Wildhoof|r
+    .turnin 96605 >>Turn in The Great Outdoors
+    .accept 96661 >>Accept Camping 101: Cooking
+    .target Kaga Wildhoof
+step
+    #softcore
+    .goto 1412/1,-408.900,-2179.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw Sharpmane|r 
+    .accept 96130 >>Accept Chakuyak
+    .target Yaw Sharpmane
 step
     #softcore
     .goto 1412/1,-365.17,-2227.56--c:Mulgore,46.97,57.07
@@ -483,25 +508,11 @@ step
     .accept 766 >>Accept Mazzranache
     .target Maur Raincaller
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruul|r and |cRXP_FRIENDLY_Baine|r
-    .accept 743 >>Accept Dangers of the Windfury
-    .target +Ruul Eagletalon
+    #hardcore
     .goto 1412/1,-385.20,-2396.76--c:Mulgore,47.36,62.01
-    .turnin 763 >>Turn in Rites of the Earthmother
-    .accept 745 >>Accept Sharing the Land
-    .accept 767 >>Accept Rite of Vision
-    .accept 746 >>Accept Dwarven Digging
-    .target +Baine Bloodhoof
-    .goto 1412/1,-392.91,-2333.40--c:Mulgore,47.51,60.16
-step
-    #label BloodhoofHome
-    .goto 1412/1,-347.70,-2365.25--c:Mulgore,46.63,61.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kauth|r
-    .turnin 1656 >>Turn in A Task Unfinished
-    .home >>Set your Hearthstone to Bloodhoof Village
-    .target Innkeeper Kauth
-    .bindlocation 222
-    .subzoneskip 222,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruul|r
+    .accept 743 >>Accept Dangers of the Windfury
+    .target Ruul Eagletalon
 step << Shaman/Druid
     .goto 1412/1,-297.87,-2279.97--c:Mulgore,45.66,58.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mahnott|r
@@ -574,33 +585,103 @@ step << Hunter
     .itemcount 2509,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
+step
+    .goto 1412/1,-347.70,-2365.25--c:Mulgore,46.63,61.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kauth|r
+    .turnin 1656 >>Turn in A Task Unfinished
+    .target Innkeeper Kauth
+step
+    #label BloodhoofHome
+    .goto 1412/1,-347.70,-2365.25--c:Mulgore,46.63,61.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kauth|r
+    .turnin 1656 >>Turn in A Task Unfinished
+    .home >>Set your Hearthstone to Bloodhoof Village
+    .target Innkeeper Kauth
+    .bindlocation 222
+step
+    .goto 1412/1,-392.91,-2333.40--c:Mulgore,47.51,60.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine|r
+    .turnin 763 >>Turn in Rites of the Earthmother
+    .accept 745 >>Accept Sharing the Land
+    .accept 767 >>Accept Rite of Vision
+    .accept 746 >>Accept Dwarven Digging
+    .target Baine Bloodhoof
+step
+    .goto 1412/1,-405.75,-2243.32--c:Mulgore,47.76,57.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zarlman|r
+    .turnin 767 >>Turn in Rite of Vision
+    .accept 771 >>Accept Rite of Vision
+    .target Zarlman Two-Moons
+step
+    #hardcore
+    .goto 1412/1,-365.17,-2227.56--c:Mulgore,46.97,57.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
+    .accept 766 >>Accept Mazzranache
+    .target Maur Raincaller
+step
+    #hardcore
+    .goto 1412/1,-408.900,-2179.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw Sharpmane|r 
+    .accept 96130 >>Accept Chakuyak
+    .target Yaw Sharpmane
+step
+    .goto 1412/1,-454.56,-2304.63--c:Mulgore,48.71,59.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harken|r
+    .accept 761 >>Accept Swoop Hunting
+    .target Harken Windtotem
+step
+    .goto 1412/1,-496.200,-2347.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krang Stonehoof|r 
+    .accept 99108 >>Accept Sparring Match
+    .target Krang Stonehoof
+step
+    .goto 1412/1,-521.600,-2345.400
+    >>Talk to a |cRXP_FRIENDLY_Novice Warrior|r, then defeat it in combat
+    .complete 99108,1 --|3/3 Player Duels won or Novice Warriors defeated
+    .target Novice Warrior
+    .skipgossip
+step
+    .goto 1412/1,-496.100,-2348.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krang Stonehoof|r
+    .turnin 99108 >>Turn in Sparring Match
+    .target Krang Stonehoof
 step << Tauren
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r, |cRXP_FRIENDLY_Zarlman|r, |cRXP_FRIENDLY_Harken|r and |cRXP_FRIENDLY_Mull|r
-    .accept 766 >>Accept Mazzranache
-    .target +Maur Raincaller
-    .goto 1412/1,-365.17,-2227.56--c:Mulgore,46.97,57.07
-    .turnin 767 >>Turn in Rite of Vision
-    .accept 771 >>Accept Rite of Vision
-    .target +Zarlman Two-Moons
-    .goto 1412/1,-405.75,-2243.32--c:Mulgore,47.76,57.53
-    .accept 761 >>Accept Swoop Hunting
-    .target +Harken Windtotem
-    .goto 1412/1,-454.56,-2304.63--c:Mulgore,48.71,59.32
-    .accept 748 >>Accept Poison Water
-    .target +Mull Thunderhorn
     .goto 1412/1,-445.31,-2341.62--c:Mulgore,48.53,60.40
-step << !Tauren
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r, |cRXP_FRIENDLY_Zarlman|r and |cRXP_FRIENDLY_Harken|r
-    .accept 766 >>Accept Mazzranache
-    .target +Maur Raincaller
-    .goto 1412/1,-365.17,-2227.56--c:Mulgore,46.97,57.07
-    .turnin 767 >>Turn in Rite of Vision
-    .accept 771 >>Accept Rite of Vision
-    .target +Zarlman Two-Moons
-    .goto 1412/1,-405.75,-2243.32--c:Mulgore,47.76,57.53
-    .accept 761 >>Accept Swoop Hunting
-    .target +Harken Windtotem
-    .goto 1412/1,-454.56,-2304.63--c:Mulgore,48.71,59.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull|r
+    .accept 748 >>Accept Poison Water
+    .target Mull Thunderhorn
+step
+    .goto 1412/1,-426.800,-2373.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brave Wildrunner|r
+    >>|cRXP_WARN_He patrols around a bit|r
+    .accept 99079 >>Accept Longwalker Malah
+    .target Brave Wildrunner
+step
+    #softcore
+    .goto 1412/1,-385.20,-2396.76--c:Mulgore,47.36,62.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruul|r
+    .accept 743 >>Accept Dangers of the Windfury
+    .target Ruul Eagletalon
+step
+    #softcore
+    .goto 1412/1,-363.000,-2490.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaga Wildhoof|r
+    .turnin 96659 >>Turn in The Adventurer
+    .accept 96605 >>Accept The Great Outdoors
+    .target Kaga Wildhoof
+step
+    #softcore
+    .goto 1412/1,-363.000,-2490.700
+    >>|cRXP_WARN_Type /sit at the campfire and wait for one minute until you get the "Camp Benefits" buff|r
+    .complete 96605,1 --|1/1 Use the /sit emote near the campfire
+    .complete 96605,2 --|Gain the Boosted Rest buff
+step
+    #softcore
+    .goto 1412/1,-363.000,-2490.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaga Wildhoof|r
+    .turnin 96605 >>Turn in The Great Outdoors
+    .accept 96661 >>Accept Camping 101: Cooking
+    .target Kaga Wildhoof
 step
     #sticky
     #completewith Well
@@ -617,7 +698,6 @@ step << Tauren
     .complete 748,2 --Plainstrider Talon (4)
     .mob +Adult Plainstrider
 step
-    #label Ambercorns
     #loop
     .goto 1412/1,-539.33,-2550.20,0--c:Mulgore,50.36,66.49
     .goto 1412/1,-454.56,-2479.99,15,0--c:Mulgore,48.71,64.44
@@ -625,7 +705,8 @@ step
     .goto 1412/1,-619.47,-2459.78,15,0--c:Mulgore,51.92,63.85
     .goto 1412/1,-578.89,-2706.72,15,0--c:Mulgore,51.13,71.06
     .goto 1412/1,-539.33,-2550.20,15,0--c:Mulgore,50.36,66.49
-    >>Collect the |cRXP_PICK_Ambercorns|r. They can be found under the trees on the ground
+    >>Collect the |cRXP_PICK_Ambercorns|r
+    >>|cRXP_WARN_They can be found under the trees on the ground|r
     .complete 771,2 --Ambercorn (2)
 step
 	#completewith next
@@ -633,6 +714,12 @@ step
     .complete 761,1 --Trophy Swoop Quill (8)
     .mob Wiry Swoop
     .mob Swoop
+step
+    #label Ambercorns
+    .goto 1412/1,54.800,-2442.200
+    >>Loot |cRXP_ENEMY_Chakuyak|r. Loot it for its |cRXP_LOOT_Pelt|r
+    .complete 96130,1 --|1/1 Chakuyak's Pelt
+    .mob Chakuyak
 step << Tauren
     #loop
 	.goto 1412/1,-562.96,-2556.02,0--c:Mulgore,50.82,66.66
@@ -687,23 +774,6 @@ step
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
-step << Warrior
-    #loop
-    .goto 1412/1,-700.65,-2773.17,0--c:Mulgore,53.5,73.0
-    .goto 1412/1,-433.50,-2738.92,0--c:Mulgore,48.3,72.0
-    .goto 1412/1,-700.65,-2773.17,90,0--c:Mulgore,53.5,73.0
-    .goto 1412/1,-433.50,-2738.92,90,0--c:Mulgore,48.3,72.0
-    >>Go back and forth between the two camps. Kill |cRXP_ENEMY_Palemane Tanners|r, |cRXP_ENEMY_Palemane Skinners|r and |cRXP_ENEMY_Palemane Poachers|r. Loot them for a |cRXP_LOOT_Severed Gnoll Head|r
-    >>|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Snagglespear|r |cRXP_WARN_(Level 9 rare). He's too difficult to kill.|r
-    .complete 745,1 --Palemane Tanner (10)
-    .mob +Palemane Tanner
-    .complete 745,2 --Palemane Skinner (8)
-    .mob +Palemane Skinner
-    .complete 745,3 --Palemane Poacher (5)
-    .mob +Palemane Poacher
-    .collect 204478,1 --Severed Gnoll Head (1)
-    .unitscan Snagglespear
-    .train 403475,1
 step
     #label Gnolls
     #loop
@@ -712,7 +782,7 @@ step
     .goto 1412/1,-700.65,-2773.17,90,0--c:Mulgore,53.5,73.0
     .goto 1412/1,-433.50,-2738.92,90,0--c:Mulgore,48.3,72.0
     >>Go back and forth between the two camps. Kill |cRXP_ENEMY_Palemane Tanners|r, |cRXP_ENEMY_Palemane Skinners|r and |cRXP_ENEMY_Palemane Poachers|r
-    >>|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Snagglespear|r |cRXP_WARN_(Level 9 rare). He's too difficult to kill.|r
+    >>|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Snagglespear|r |cRXP_WARN_(Level 9 rare). He's too difficult to kill|r
     .complete 745,1 --Palemane Tanner (10)
     .mob +Palemane Tanner
     .complete 745,2 --Palemane Skinner (8)
@@ -817,6 +887,12 @@ step << Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step
+    .goto 1412/1,-285.000,-2263.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pyall|r
+    .train 2550 >>Train Cooking
+    .turnin 96661 >>Turn in Camping 101: Cooking
+    .target Pyall Silentstride
+step
     #label Vision
     .goto 1412/1,-405.75,-2243.32--c:Mulgore,47.76,57.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zarlman|r
@@ -824,6 +900,11 @@ step
     .turnin 771 >>Turn in Rite of Vision
     .accept 772 >>Accept Rite of Vision
     .target Zarlman Two-Moons
+step
+    .goto 1412/1,-408.700,-2180.000
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw Sharpmane|r
+    .turnin 96130 >>Turn in Chakuyak
+    .target Yaw Sharpmane
 step << Hunter
     .goto 1412/1,-408.32,-2180.30--c:Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw|r
@@ -862,6 +943,12 @@ step
     >>|cRXP_WARN_He patrols along the eastern road|r
     .accept 749 >>Accept The Ravaged Caravan
 	.unitscan Morin Cloudstalker
+step
+    .goto 1412/1,-1066.400,-2325.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malah Longwind|r
+    .turnin 99079 >>Turn in Longwalker Malah
+    .accept 99081 >>Accept Grim Tidings
+    .target Malah Longwind
 step
     #completewith Clawsx
     >>|cRXP_WARN_Get the items for Mazzranache as you quest throughout the zone|r
@@ -1002,6 +1089,19 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harant|r
     .vendor >> Vendor trash and repair
     .target Harant Ironbrace
+step
+    .goto 1412/1,-392.500,-2318.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brave Wildrunner|r
+    >>|cRXP_WARN_He patrols around a bit|r
+    .turnin 99081 >>Turn in Grim Tidings
+    .accept 99101 >>Accept Our Ancient Enemy
+    .target Brave Wildrunner
+step
+    .goto 1412/1,-392.900,-2333.600
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine Bloodhoof|r
+    .turnin 99101 >>Turn in Our Ancient Enemy
+    .accept 99080 >>Accept Drive Them Out
+    .target Baine Bloodhoof
 step
     .goto 1412/1,-454.56,-2304.63--c:Mulgore,48.71,59.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harken|r
@@ -1342,6 +1442,13 @@ step
     .turnin 770 >>Turn in The Demon Scarred Cloak
     .target Skorn Whitecloud
     .isOnQuest 770
+step
+    #optional
+    .goto 1412/1,-353.86,-2336.14--c:Mulgore,46.75,60.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skorn|r
+    .accept 861 >>Accept The Hunter's Way
+    .target Skorn Whitecloud
+    .xp <10,1
 step << Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine|r, |cRXP_FRIENDLY_Ruul|r, |cRXP_FRIENDLY_Mull|r and |cRXP_FRIENDLY_Harken|r
     .turnin 746 >>Turn in Dwarven Digging
@@ -1433,7 +1540,7 @@ step << Druid
     .goto 1412/1,-442.74,-2315.59--c:Mulgore,48.48,59.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gennia|r
     .trainer >> Train your class spells
-    .accept 5928 >> Accept Heeding the Call
+    .accept 5928 >> Accept Heeding the Call << Tauren
     .target Gennia Runetotem
     .isQuestAvailable 5928
 step << Druid
@@ -1525,10 +1632,48 @@ step
     .complete 861,1 --Flatland Prowler Claw (4)
     .mob Flatland Prowler
 step << Hunter
-    #completewith next
+    #loop
+    .goto 1412/1,-1360.30,-2568.01,0--c:Mulgore,66.34,67.01
+    .goto 1412/1,-1403.97,-2457.38,50,0--c:Mulgore,67.19,63.78
+    .goto 1412/1,-1360.30,-2568.01,50,0--c:Mulgore,66.34,67.01
+    .goto 1412/1,-1232.89,-2544.03,50,0--c:Mulgore,63.86,66.31
+    .goto 1412/1,-1127.57,-2516.98,50,0--c:Mulgore,61.81,65.52
+    .goto 1412/1,-1117.30,-2373.13,50,0--c:Mulgore,61.61,61.32
+    .goto 1412/1,-1218.51,-2345.38,50,0--c:Mulgore,63.58,60.51
+    .goto 1412/1,-1320.23,-2306.34,50,0--c:Mulgore,65.56,59.37
+    .goto 1412/1,-1426.06,-2295.72,50,0--c:Mulgore,67.62,59.06
     .cast 1515 >>Tame a |cRXP_ENEMY_Prairie Wolf Alpha|r
     >>|cRXP_WARN_This will allow you to train|r |T132278:0|t[Bite Rank 2]
     .mob Prairie Wolf Alpha
+step << Tauren
+    #completewith Centaurs
+    >>Kill |cRXP_ENEMY_Prairie Wolf Alphas|r in the area. Loot them for their |cRXP_LOOT_Teeth|r
+    .complete 759,1 --Prairie Alpha Tooth (8)
+    .mob Prairie Wolf Alpha
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Galak Outrunners|r and |cRXP_ENEMY_Galak Centaurs|r
+    .complete 99080,2 --|4/4 Galak Outrunner slain
+    .mob +Galak Outrunner
+    .complete 99080,1 --|6/6 Galak Centaur slain
+    .mob +Galak Centaur
+step
+    .goto 1412/1,-1246.100,-2181.700
+    >>Kill |cRXP_ENEMY_Herak the Pillager|r. Loot him for his |cRXP_LOOT_Head|r
+    .complete 99080,3 --|1/1 Herak's Head
+    .mob Herak the Pillager
+step
+    #label Centaurs
+    #loop
+    .goto 1412/1,-1248.700,-2265.300,0
+    .goto 1412/1,-1248.700,-2265.300,50,0
+    .goto 1412/1,-1394.500,-2316.500,50,0
+    .goto 1412/1,-1188.000,-2216.400,50,0
+    >>Kill |cRXP_ENEMY_Galak Outrunners|r and |cRXP_ENEMY_Galak Centaurs|r
+    .complete 99080,2 --|4/4 Galak Outrunner slain
+    .mob +Galak Outrunner
+    .complete 99080,1 --|6/6 Galak Centaur slain
+    .mob +Galak Centaur
 step << Tauren
     #label AlphaTeeth
     #loop
@@ -1551,8 +1696,13 @@ step << Tauren
 step << Tauren
     #hardcore
     #completewith Thunderhorn2
-    .goto 1412/1,-341.02,-2173.79,150 >> Travel back to Bloodhoof Village--c:Mulgore,46.5,55.5
-    .subzoneskip 222
+    .subzone 222 >>Travel to Bloodhoof Village
+step
+    .goto 1412/1,-393.100,-2333.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine Bloodhoof|r
+    .turnin 99080 >>Turn in Drive Them Out
+    .accept 99082 >>Accept The High Chieftain
+    .target Baine Bloodhoof
 step << Tauren
     #label Thunderhorn2
     .goto 1412/1,-445.31,-2341.62--c:Mulgore,48.53,60.40
@@ -1574,28 +1724,28 @@ step << Druid
     .goto 1413/1,-1881.35,-2383.82--c:The Barrens,44.45,59.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
     .fp Camp Taurajo >> Get the Camp Taurajo flight path
-    .fly Thunder Bluff >>Fly to Thunder Bluff
+    .fly Thunder Bluff >>Fly to Thunder Bluff << Tauren
     .target Omusa Thunderhorn
     .isQuestAvailable 848
 step
     #optional
     #label CampTFP
-step << Druid
+step << Tauren Druid
     .goto 1456/1,38.32,-1300.48--c:Thunder Bluff,45.83,64.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Pala|r
     .home >>Set your Hearthstone to Thunder Bluff
     .target Innkeeper Pala
     .bindlocation 1638
     .isQuestAvailable 5932
-step << Druid
+step << Tauren Druid
     .goto 1456/1,-298.50,-1049.01--c:Thunder Bluff,78.1,28.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamuul Runetotem|r
     .accept 886 >>Accept The Barrens Oases
     .target Arch Druid Hamuul Runetotem
-step << Druid
+step << Tauren Druid
     #completewith next
     .goto 1456/1,-230.66,-1059.79,80 >>Travel to the Elder Rise--c:Thunder Bluff,71.60,30.15
-step << Druid
+step << Tauren Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak|r
     .goto 1456/1,-283.89,-1039.96--c:Thunder Bluff,76.7,27.3
     .turnin 5928 >>Turn in Heeding the Call
@@ -1603,45 +1753,45 @@ step << Druid
     .target Arch Druid Hamuul Runetotem
     .target Turak Runetotem
     .isOnQuest 5928
-step << Druid
+step << Tauren Druid
     .goto 1456/1,-283.89,-1039.96--c:Thunder Bluff,76.7,27.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak|r
     .accept 5922 >>Accept Moonglade
     .target Arch Druid Hamuul Runetotem
     .target Turak Runetotem
-step << Druid
+step << Tauren Druid
     #completewith next
     .cast 18960 >>|cRXP_WARN_Cast |r|T135758:0|t[Teleport: Moonglade]
     .zoneskip Moonglade
-step << Druid
+step << Tauren Druid
     .goto 1450/1,-2678.76,8019.94--c:Moonglade,56.21,30.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite|r
     .turnin 5922 >>Turn in Moonglade
     .accept 5930 >>Accept Great Bear Spirit
     .target Dendrite Starblaze
-step << Druid
+step << Tauren Druid
     .goto 1450/1,-2286.12,8068.28--c:Moonglade,39.2,27.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Great Bear Spirit|r
     .complete 5930,1 --Seek out the Great Bear Spirit and learn what it has to share with you about the nature of the bear. (1)
     .target Great Bear Spirit
     .skipgossip
-step << Druid
+step << Tauren Druid
     #completewith next
     .cast 18960 >>|cRXP_WARN_Cast|r |T135758:0|t[Teleport: Moonglade]
-step << Druid
+step << Tauren Druid
     .goto 1450/1,-2678.76,8019.94--c:Moonglade,56.21,30.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite|r
     .turnin 5930 >>Turn in Great Bear Spirit
     .accept 5932 >>Accept Back to Thunder Bluff
     .target Dendrite Starblaze
-step << Druid
+step << Tauren Druid
     #completewith DruidBearForm
     .hs >> Hearth to Thunder Bluff
     .bindlocation 1638,1
     .zoneskip Thunder Bluff
     .cooldown item,6948,>0
     .use 6948
-step << Druid
+step << Tauren Druid
     #completewith next
     .goto 1450/1,-2403.61,7785.46--c:Moonglade,44.29,45.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bunthen|r
@@ -1649,21 +1799,21 @@ step << Druid
     .target Bunthen Plainswind
     .zoneskip Thunder Bluff
     .cooldown item,6948,<0
-step << Druid
+step << Tauren Druid
     #label DruidBearForm
     .goto 1456/1,-283.89,-1039.96--c:Thunder Bluff,76.7,27.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak|r
     .turnin 5932 >>Turn in Back to Thunder Bluff
     .accept 6002 >>Accept Body and Heart
     .target Turak Runetotem
-step << Druid
+step << Tauren Druid
     #completewith next
     .goto 1456/1,26.10,-1196.66--c:Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Camp Taurajo >>Fly to Camp Taurajo
     .target Tal
     .zoneskip The Barrens
-step << Druid
+step << Tauren Druid
     .goto 1413/1,-1633.08,-2499.35--c:The Barrens,42.00,60.86
     .use 15710 >>|cRXP_WARN_Use|r |T132857:0|t[Cenarion Lunardust] |cRXP_WARN_at the|r |cRXP_PICK_Moonkin Stone|r
     >>Kill |cRXP_ENEMY_Lunaclaw|r as he spawns. Talk to the |cRXP_FRIENDLY_Lunaclaw Spirit|r afterwards
@@ -1684,7 +1834,7 @@ step
 step
     .goto 1413/1,-2672.76,-544.77--c:The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
-    .turnin 886 >>Turn in The Barrens Oases << Druid
+    .turnin 886 >>Turn in The Barrens Oases << Tauren Druid
     .accept 870 >>Accept The Forgotten Pools
     .target Tonga Runetotem
 step << Tauren
@@ -1698,27 +1848,21 @@ step
     .accept 848 >>Accept Fungal Spores
     .target Apothecary Helbrim
 step
-    .goto 1413/1,-2595.75,-437.35--c:The Barrens,51.50,30.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
-    .fp The Crossroads >> Get the The Crossroads flight path
-    .target Devrak
-    .isQuestAvailable 848
-step
     .goto 1413/1,-2566.36,-350.19--c:The Barrens,51.21,29.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jahan|r
     .accept 6361 >>Accept A Bundle of Hides
     .target Jahan Hawkwing
-step
+step << skip
     #completewith next
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
     >>|cRXP_WARN_Keep maximum distance from |cRXP_ENEMY_Kolkar|r |cRXP_WARN_as you loot the mushrooms. They are level 12-14|r
     >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_Cauldron Stirrer|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
     .complete 848,1 --Collect Fungal Spores (x4)
-step
+step << skip
     .goto 1413/1,-1943.16,89.64--c:The Barrens,45.06,22.54
     >>Dive underwater to the |cRXP_PICK_Bubbling Fissure|r
     .complete 870,1 --Explore the waters of the Forgotten Pools
-step
+step << skip
     #loop
     .goto 1413/1,-1957.35,38.29,0--c:The Barrens,45.2,23.3
     .goto 1413/1,-1957.35,38.29,40,0--c:The Barrens,45.2,23.3
@@ -1729,22 +1873,22 @@ step
     >>|cRXP_WARN_Keep maximum distance from |cRXP_ENEMY_Kolkar|r |cRXP_WARN_in the area. They are level 12-14|r
     >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_Cauldron Stirrer|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
     .complete 848,1 --Collect Fungal Spores (x4)
-step
+step << skip
     #softcore
 	#completewith ZamahPickup
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-step
+step << skip
     #hardcore
     #completewith ZamahPickup
     .subzone 380 >> Travel back to the Crossroads
-step
+step << skip
     .goto 1413/1,-2672.76,-544.77--c:The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
     .turnin 870 >>Turn in The Forgotten Pools
     .accept 877 >>Accept The Stagnant Oasis
     .target Tonga Runetotem
     .isQuestComplete 870
-step
+step << skip
     #optional
     .goto 1413/1,-2672.76,-544.77--c:The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
@@ -1752,13 +1896,18 @@ step
     .target Tonga Runetotem
     .isQuestTurnedIn 877
 step
+    .goto 1413/1,-2639.32,-436.00--c:The Barrens,51.93,30.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazrog|r
+    .accept 869 >>Accept Raptor Thieves
+    .target Gazrog
+step
     .goto 1413/1,-2645.40,-406.94--c:The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >>Set your Hearthstone to Crossroads
     .target Innkeeper Boorand Plainswind
     .bindlocation 380
     .isQuestAvailable 853
-step
+step << skip
     .goto 1413/1,-2589.67,-424.51--c:The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
     >>|cRXP_WARN_Wait for the RP to finish|r
@@ -1768,7 +1917,7 @@ step
     .accept 853 >>Accept Apothecary Zamah
     .target Apothecary Helbrim
     .isQuestComplete 848
-step
+step << skip
     #optional
     #label ZamahPickup
     .goto 1413/1,-2589.67,-424.51--c:The Barrens,51.44,30.15
@@ -1787,10 +1936,11 @@ step
     #completewith RideToTB
     .goto 1413/1,-2595.75,-437.35--c:The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    .fp The Crossroads >> Get the The Crossroads flight path
     .fly Thunder Bluff >>Fly to Thunder Bluff
     .target Devrak
     .zoneskip Thunder Bluff
-step
+step << skip
     #sticky
     #completewith CauldronStirrer
     +|cRXP_WARN_You are on a timed quest, don't go afk. It will get turned in around 5-10 minutes after pick-up|r
@@ -1826,7 +1976,7 @@ step << Hunter
     .train 24547 >>Train your pet spells
     .target Hesuwa Thunderhorn
 step << Hunter
-    #completewith CauldronStirrer
+    #completewith ReturntoJahan
     +|cRXP_WARN_Drag|r |T132162:0|t[Beast Training] |cRXP_WARN_onto your Action Bars. Teach skills to your pet|r
 step << Druid
     .goto 1456/1,89.46,-1286.50--c:Thunder Bluff,40.93,62.73
@@ -1834,11 +1984,12 @@ step << Druid
     .train 199 >>Train Two-Handed Maces
     .target Ansekhwa
     .money <0.1154
-step << Warrior/Hunter
+step << Hunter
     .goto 1456/1,89.46,-1286.50--c:Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 227 >>Train Staves
     .target Ansekhwa
+    .money <0.100
 step
     .goto 1456/1,122.13,-1263.32--c:Thunder Bluff,37.8,59.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eyahn|r
@@ -1848,14 +1999,14 @@ step
     #completewith next
     .goto 1456/1,222.96,-1079.42,40,0--c:Thunder Bluff,28.14,32.97
     .goto 1456/1,219.09,-1051.44,10 >> Travel to the Spirit Rise and enter the pools of vision--c:Thunder Bluff,28.51,28.95
-step
+step << skip
     #label CauldronStirrer
     .goto 1456/1,278.48,-995.29--c:Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .turnin 853 >>Turn in Apothecary Zamah
     .target Apothecary Zamah
     .isOnQuest 853
-step
+step << skip
     #optional
     #completewith ReturntoJahan
     +|cRXP_WARN_Equip the|r |T135145:0|t[Cauldron Stirrer]
@@ -1870,15 +2021,26 @@ step
     .accept 6364 >>Accept Return to Jahan
     .target Tal
 step
+    #optional
     .goto 1456/1,-109.58,-1209.75--c:Thunder Bluff,60.0,51.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cairne|r
     .turnin 775 >>Turn in Journey into Thunder Bluff
     .accept 776 >>Accept Rites of the Earthmother
+    .turnin 99082 >>Turn in The High Chieftain
+    .turnin 98430 >>Turn in The Longwalkers
     .target Cairne Bloodhoof
-step << Druid
+    .isQuestComplete 99082
+step
+    .goto 1456/1,-109.58,-1209.75--c:Thunder Bluff,60.0,51.7
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cairne|r
+    .turnin 775 >>Turn in Journey into Thunder Bluff
+    .accept 776 >>Accept Rites of the Earthmother
+    .turnin 98430 >>Turn in The Longwalkers
+    .target Cairne Bloodhoof
+step << Tauren Druid
     #completewith next
     .goto 1456/1,-230.66,-1059.79,80 >>Travel to the Elder Rise--c:Thunder Bluff,71.60,30.15
-step << Druid
+step << Tauren Druid
     .goto 1456/1,-281.56,-1039.41--c:Thunder Bluff,76.477,27.221
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak|r
     .turnin 6002 >>Turn in Body and Heart
@@ -1919,6 +2081,16 @@ step << Hunter
     .collect 117,5,744,1 --Tough Jerky (5)
     .target Kaga Mistrunner
 step
+    .goto 1456/1,104.500,-1308.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r 
+    .accept 76156 >>Accept Stalk With The Earthmother
+    .target Boarton Shadetotem
+step << skip
+    #completewith Harpies
+    .goto 1456/1,-15.100,-1072.700,30,0
+    .goto 1456/1,-42.800,-1021.800,40,0
+    .zone Mulgore >>Exit Thunder Bluff at the northern elevators
+step
     #sticky
     #completewith ThunderBluff
     >>Keep an eye out for |cRXP_ENEMY_Ghost Howl|r. Loot him for his |T134358:0|t[|cRXP_LOOT_Demon Scarred Cloak|r]. Use it to start the quest
@@ -1933,6 +2105,7 @@ step
     .complete 861,1 --Flatland Prowler Claw (4)
     .mob Flatland Prowler
 step
+    #label Harpies
     #loop
     .goto 1412/1,419.33,-1238.77,0--c:Mulgore,31.7,28.2
     .goto 1412/1,496.39,-940.79,0--c:Mulgore,30.2,19.5
@@ -2169,11 +2342,6 @@ step
     .turnin 860 >>Turn in Sergra Darkthorn
     .accept 844 >>Accept Plainstrider Menace
     .target Sergra Darkthorn
-step
-    .goto 1413/1,-2639.32,-436.00--c:The Barrens,51.93,30.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazrog|r
-    .accept 869 >>Accept Raptor Thieves
-    .target Gazrog
 step << Shaman
     #completewith next
     >>Check for |cRXP_PICK_Chen's Empty Keg|r next to |cRXP_FRIENDLY_Kranal|r. Loot it and start the quest
