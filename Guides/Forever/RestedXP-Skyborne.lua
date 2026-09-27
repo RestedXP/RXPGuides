@@ -1730,6 +1730,7 @@ step
     .target Constable Aonda::251523
     .turnin 92517 >>Turn in The Criminal Element
     .accept 93036 >>Accept Infiltrating the Cult
+
 step << Hunter
     .subzoneskip 16624,1
     .goto 2521,45.263,44.236
@@ -2233,7 +2234,7 @@ step
     *|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Druid/Mage
     *|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] << Rogue/Hunter
     .collect 2512,600 << Hunter --Rough Arrow (600)
-    .collect 2515,200 << Hunter --Sharp Arrow (200)
+    .collect 2515,1000 << Hunter --Sharp Arrow (1000)
     .target Veena Vericloud::254358
 step
     .goto 2521,45.24,45.19
@@ -2329,23 +2330,27 @@ step
     .target Alvarion Windfield::252448
     .accept 92679 >>Accept Blood Tithe
 step << Alliance
-    .isQuestAvailable 93948
-    #completewith next
-    .goto 2521,63.33,73.65,15,0
-    .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
-    .cooldown spell,1259705,>0,1
-    .usespell 1259705
-step << Alliance
     .subzoneskip 16638,1
     .isQuestAvailable 93948
-    #completewith next
     .goto 2521,63.33,73.65,15,0
     .goto 2521,63.973,75.095,25 >>Go over the mountain
     .cooldown spell,1259705,<0,1
+step << Alliance
+    #completewith next
+    .subzoneskip 16638,1
+    .isQuestAvailable 93948
+    .goto 2521,63.33,73.65,15,0
+    .goto 2521,63.973,75.095,30 >>Go over the mountain
+    .cooldown spell,1259705,>0,1
+step << Alliance
+    .isQuestAvailable 93948
+    .goto 2521,63.81,74.32
+    .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
+    .cooldown spell,1259705,>0,1
+    .usespell 1259705
 step << Horde
     .subzoneskip 16638,1
     .isQuestAvailable 93948
-    #completewith next
     .goto 2521,63.33,73.65,15,0
     .goto 2521,63.973,75.095,25 >>Go over the mountain
 step
@@ -2556,6 +2561,7 @@ step << Alliance
     .goto 2521,49.75,65.9,30,0
     .goto 2521,50.7,65.36
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Fillion Flamebreeze|r inside the cave.
+    *|cRXP_WARN_The birds have less aggro range than usual mobs|r
     .complete 92849,1 --1/1 Find Fillion Flamebreeze
 step << Alliance
     .subzoneskip 16672,1
@@ -2563,6 +2569,7 @@ step << Alliance
     .isQuestNotComplete 92849
     .goto 2521,50.7,65.36
     .aura 1258429 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Fillion Flamebreeze|r inside the cave.
+    *|cRXP_WARN_The birds have less aggro range than usual mobs|r
     .skipgossipid 136430
     .target Fillion Flamebreeze
 step << Alliance
@@ -2573,6 +2580,7 @@ step << Alliance
     .goto 2521,51.55,69.2,35,0
     .goto 2521,52.08,69.41
     >>Carry |cRXP_FRIENDLY_Fillion Flamebreeze|r to safety. Avoid enemies along the way.
+    *|cRXP_WARN_The birds have less aggro range than usual mobs|r
     .complete 92849,2 --1/1 Carry Fillion Flamebreeze to safety while avoiding enemies
     .skipgossipid 136430
     .mob Shriekling Fledgling
@@ -2843,7 +2851,7 @@ step
     .target Aamelia Windfield:252800
 step
     .goto 2521,46.71,81.94
-    >>Return to |cRXP_FRIENDLY_Aamelia Windfield|r's main location and talk to her.
+    >>Return to |cRXP_FRIENDLY_Aamelia Windfields|r main location and talk to her.
     .complete 92693,1 --1/1 Speak with Aamelia Windfield
     .timer 75,Roleplay Duration
     .target Aamelia Windfield
@@ -2983,21 +2991,115 @@ step << Rogue
     .money <0.09
     .xp <10,1
 step << Hunter
-    .goto 2521,63.023,77.803
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anteleriaa Cloudgaze::252390|r.
-    >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrow] |cRXP_BUY_until your Quiver is full|r
-    .vendor >>Vendor trash
-    .target Anteleriaa Cloudgaze::252390
-step << Hunter
     .goto 2521,59.571,72.639
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
     .train 13165 >>Train |T136076:0|t[Aspect of the Hawk]
     .train 13549 >>Train |T132204:0|t[Serpent Sting (Rank 2)]
+    .skipgossipid 136808
     .target Quel'ana Quickgale::252389
     .money <0.08
     .xp <10,1
 step << Hunter
-    #include Skyborne Hunter Class Quests
+    .goto 2521,59.572,72.639
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
+    .accept 94978 >>Accept Taming the Beast
+    .target Quel'ana Quickgale::252389
+step << Hunter Alliance
+    .goto 2521,63.023,77.803
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anteleriaa Cloudgaze::252390|r.
+    >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrow]
+    .vendor >>Vendor trash
+    .collect 2515,1000
+    .target Anteleriaa Cloudgaze::252390
+step << Alliance
+    #label Turn in The Missing Scholar
+    .goto 2521,66.26,79.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dondallion Whisperwind|r.
+    .turnin 92850 >>Turn in The Missing Scholar
+    .accept 99260 >>Accept Fillion's Mission
+    .target Dondallion Whisperwind
+step << Alliance
+    .goto 2521,66.627,79.942
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
+    .target Elaadrin Evengale::252475
+    .turnin 99260 >>Turn in Fillion's Mission
+    .accept 92840 >>Accept Catching Wind
+step << Alliance
+    .isOnQuest 92840
+    .isQuestNotComplete 92840
+    .goto 2521,67.41,80.46
+-- #ignorecorpse
+    .deathskip >>Jump of the cliff|cRXP_WARN_|r
+    *|cRXP_WARN_(BETA: Ressurection Sickness is bugged. Skip this step for now).|r
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .macro Sit,134400 >>/sit
+    .subzoneskip 16638,1
+    .target Spirit Healer
+step << Alliance
+    #completewith next
+    >>Kill |cRXP_ENEMY_Windsong Crawlers|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
+    .complete 93317,1 --6/6 Windsong Crawler Meat
+    .skipgossipid 98031
+    .skipgossipid 96031
+    .mob Windsong Crawler
+step << Horde Hunter
+    #loop
+    .goto 2521,54.460,78.811,48,0
+    .goto 2521,51.968,73.084,35,0
+    .goto 2521,53.126,73.502,20,0
+    .goto 2521,51.268,69.758,35,0
+    .use 267272 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Windsong Crawler|r |cRXP_WARN_at max range|r.
+    .complete 94978,1 --Tame a Windsong Crawler
+    .mob Windsong Crawler
+step << Horde Hunter
+    .goto 2521,59.571,72.639
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
+    .turnin 94978 >>Turn in Taming the Beast
+    .accept 94979 >>Accept Taming the Beast
+    .target Quel'ana Quickgale::252389
+step << Horde Hunter
+    #completewith next
+    +|cRXP_WARN_Dismiss your |cRXP_ENEMY_Windsong Crawler|r by right clicking its unit frame and clicking dismiss, otherwise you'll be unable to tame an|r |cRXP_ENEMY_Armored Scorpid|r
+step << Horde Hunter
+    #loop
+    .goto 2521,60.905,69.414,35,0
+    .goto 2521,58.339,68.476,35,0
+    .goto 2521,53.799,72.161,35,0
+    .use 267298 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on an|r |cRXP_ENEMY_Ornery Galestrider|r |cRXP_WARN_at max range|r.
+    .complete 94979,1 --Tame an Ornery Galestrider
+    .mob Ornery Galestrider
+step << Horde Hunter
+    .goto 2521,59.571,72.639
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
+    .turnin 94979 >>Turn in Taming the Beast
+    .accept 94013 >>Accept Taming the Beast
+    .target Quel'ana Quickgale::252389
+step << Horde Hunter
+    #loop
+    .goto 2521,54.23,75,40,0
+    .goto 2521,53.45,80.93,40,0
+    .goto 2521,52.56,77.82,40,0
+    .goto 2521,61.944,68.828,35,0
+    .goto 2521,59.516,64.846,35,0
+    .goto 2521,57.041,67.729,35,0
+    .goto 2521,54.322,75.080,35,0
+    .goto 2521,51.925,80.458,35,0
+    .goto 2521,52.920,81.509,35,0
+    .use 264163 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Vuldren|r |cRXP_WARN_at max range|r.
+    .complete 94013,1 --Tame a Vuldren
+    .mob Vuldren::250874
+step << Horde Hunter
+    .goto 2521,59.571,72.639
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
+    .turnin 94013 >>Turn in Taming the Beast
+    .accept 94050 >>Accept Training the Beast
+    .target Quel'ana Quickgale::252389
+step << Horde Hunter
+    .goto 2521,59.605,72.527
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'dora Quickgale::254411|r.
+    .turnin 94050 >>Turn in Training the Beast
+    .target Quel'dora Quickgale::254411
 step << Mage
     .goto 2521,62.887,77.324
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belann Windwood::256507|r.
@@ -3037,13 +3139,20 @@ step << Alliance
     .goto 2521,67.41,80.46
 -- #ignorecorpse
     .deathskip >>Jump of the cliff
-    *|cRXP_WARN_|cRXP_WARN(BETA: Ressurection Sickness is bugged. Skip this step for now).|r
+    *|cRXP_WARN_(BETA: Ressurection Sickness is bugged. Skip this step for now).|r
     .skipgossipid 96031
     .skipgossipid 98031
     .macro Sit,134400 >>/sit
     .subzoneskip 16638,1
     .target Spirit Healer
-step << Alliance
+step << Alliance Hunter
+    #completewith next
+    .goto 2521,51.56,71.28,40,0
+    .goto 2521,50.94,69.46,40,0
+    .use 267272 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Windsong Crawler|r |cRXP_WARN_at max range|r.
+    .complete 94978,1 --Tame a Windsong Crawler
+    .mob Windsong Crawler
+step << Alliance !Hunter
     #completewith next
     >>Kill |cRXP_ENEMY_Windsong Crawlers|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
@@ -3058,7 +3167,7 @@ step << Alliance
     .goto 2521,47.16,72.34,30,0
     .goto 2521,46.55,71.7,30,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
-    .complete 92840,1 --1/1 Protect the Index
+    .complete 92840,1 --|6/6 Gather Data on Elemental Currents
     .use 254584
     .mob Windshaper Elementalist
     .mob Windshaper Guardian
@@ -3074,11 +3183,35 @@ step << Alliance
     .goto 2521,48.68,69.06,20,0
     .goto 2521,48.13,70.15,20,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
-    .complete 92840,1 --1/1 Protect the Index
+    .complete 92840,1 --|6/6 Gather Data on Elemental Currents
     .use 254584
     .mob Windshaper Elementalist
     .mob Windshaper Guardian
-step << Alliance
+step << Alliance Hunter
+    .isOnQuest 94013
+    .isQuestNotComplete 94013
+    .goto 2521,49.47,65.13,40,0
+    .goto 2521,50.07,67.39,40,0
+    .goto 2521,50.98,69.45,40,0
+    .goto 2521,52.05,71.71,40,0
+    .goto 2521,51.82,72.95,40,0
+    .goto 2521,52.81,75.82,40,0
+    .use 267272 >>|cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Windsong Crawler|r |cRXP_WARN_at max range|r.
+    .complete 94978,1 --Tame a Windsong Crawler
+    .mob Windsong Crawler
+step << Alliance Hunter
+    .subzone 16626,1
+    .isOnQuest 94013
+    .isQuestComplete 94013
+    .isOnQuest 92840
+    .isQuestComplete 92840
+    .subzoneskip 16638
+    .goto 2521,50.57,68.18,30,0
+    .goto 2521,52.73,71.12
+    .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+    .cooldown spell,1259416,>0,1
+    .usespell 1259416
+step << Alliance !Hunter
     .isOnQuest 92840
     .isQuestComplete 92840
     .subzoneskip 16638
@@ -3094,12 +3227,25 @@ step << Alliance
 --     .goto 2521,48.37,70.01
 -- -- #ignorecorpse
 --     .deathskip >>Die to the monsters or jump of the cliff
---     *|cRXP_WARN_|cRXP_WARN(BETA: Ressurection Sickness is bugged. Skip this step for now).|r
+--     *|cRXP_WARN_(BETA: Ressurection Sickness is bugged. Skip this step for now).|r
 --     .skipgossipid 96031
 --     .skipgossipid 98031
 --     .macro Sit,134400 >>/sit
 --     .subzoneskip 16638,1
 --     .target Spirit Healer
+
+step
+    .train 2366,3
+    #completewith next
+    >>Kill |cRXP_ENEMY_Skyhopper|r.
+    .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
+    .mob Skyhopper
+step
+    .train 2366,3
+    .goto 2521,42.97,43.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r
+    .turnin 97968 >>Turn in Camping 101: Herbalism
+    .target Halassa Fernbreeze::257021
 step << Mage
     .goto 2521,48.59,67.77
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Branch|r.
@@ -3114,6 +3260,65 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belann Windwood|r.
     .turnin 93797 >>Turn in Boughs in the Wind
     .target Belann Windwood
+step << Alliance Hunter
+    #completewith next
+    >>Kill |cRXP_ENEMY_Skyhopper|r.
+    .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
+    .mob Skyhopper
+step << Alliance Hunter
+    .goto 2521,59.571,72.639
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
+    .turnin 94978 >>Turn in Taming the Beast
+    .accept 94979 >>Accept Taming the Beast
+    .target Quel'ana Quickgale::252389
+step << Alliance Hunter
+    #completewith next
+    +|cRXP_WARN_Dismiss your |cRXP_ENEMY_Windsong Crawler|r by right clicking its unit frame and clicking dismiss, otherwise you'll be unable to tame an|r |cRXP_ENEMY_Armored Scorpid|r
+step << Alliance Hunter
+    #loop
+    .goto 2521,60.905,69.414,35,0
+    .goto 2521,58.339,68.476,35,0
+    .goto 2521,53.799,72.161,35,0
+    .use 267298 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on an|r |cRXP_ENEMY_Ornery Galestrider|r |cRXP_WARN_at max range|r.
+    .complete 94979,1 --Tame an Ornery Galestrider
+    .mob Ornery Galestrider
+step << Alliance Hunter
+    .goto 2521,59.571,72.639
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
+    .turnin 94979 >>Turn in Taming the Beast
+    .accept 94013 >>Accept Taming the Beast
+    .target Quel'ana Quickgale::252389
+step << Alliance Hunter
+    #completewith next
+    >>Kill |cRXP_ENEMY_Skyhopper|r.
+    .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
+    .mob Skyhopper
+step << Alliance Hunter
+    #loop
+    .goto 2521,54.23,75,40,0
+    .goto 2521,53.45,80.93,40,0
+    .goto 2521,52.56,77.82,40,0
+    .goto 2521,61.944,68.828,35,0
+    .goto 2521,59.516,64.846,35,0
+    .goto 2521,57.041,67.729,35,0
+    .goto 2521,54.322,75.080,35,0
+    .goto 2521,51.925,80.458,35,0
+    .goto 2521,52.920,81.509,35,0
+    .use 264163 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Vuldren|r |cRXP_WARN_at max range|r.
+    .complete 94013,1 --Tame a Vuldren
+    .mob Vuldren::250874
+    .mob Vuldren Alpha
+step << Alliance Hunter
+    .goto 2521,59.571,72.639
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
+    .turnin 94013 >>Turn in Taming the Beast
+    .accept 94050 >>Accept Training the Beast
+    .target Quel'ana Quickgale::252389
+step << Alliance Hunter
+    .goto 2521,59.605,72.527
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'dora Quickgale::254411|r.
+    .turnin 94050 >>Turn in Training the Beast
+    .target Quel'dora Quickgale::254411
 step << Alliance
     #loop
     .goto 2521,58.85,75.49,30,0
@@ -4660,75 +4865,7 @@ step << Horde
 ]])
 
 
---Hunter class quest chain
-RXPGuides.RegisterGuide([[
-#forever
-#version 1
-#name Skyborne Hunter Class Quests
-#group RestedXP Forever Guide (A) << Alliance
-#group RestedXP Forever Guide (H) << Horde
-#internal 
 
-step
-    .goto 2521,59.572,72.639
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
-    .accept 94978 >>Accept Taming the Beast
-    .target Quel'ana Quickgale::252389
-step
-    #loop
-    .goto 2521,54.460,78.811,48,0
-    .goto 2521,51.968,73.084,35,0
-    .goto 2521,53.126,73.502,20,0
-    .goto 2521,51.268,69.758,35,0
-    .use 267272 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Windsong Crawler|r |cRXP_WARN_at max range|r.
-    .complete 94978,1 --Tame a Windsong Crawler
-    .mob Windsong Crawler
-step
-    .goto 2521,59.571,72.639
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
-    .turnin 94978 >>Turn in Taming the Beast
-    .accept 94979 >>Accept Taming the Beast
-    .target Quel'ana Quickgale::252389
-step
-    #completewith next
-    +|cRXP_WARN_Dismiss your |cRXP_ENEMY_Windsong Crawler|r by right clicking its unit frame and clicking dismiss, otherwise you'll be unable to tame an|r |cRXP_ENEMY_Armored Scorpid|r
-step
-    #loop
-    .goto 2521,60.905,69.414,35,0
-    .goto 2521,58.339,68.476,35,0
-    .goto 2521,53.799,72.161,35,0
-    .use 267298 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on an|r |cRXP_ENEMY_Ornery Galestrider|r |cRXP_WARN_at max range|r.
-    .complete 94979,1 --Tame an Ornery Galestrider
-    .mob Ornery Galestrider
-step
-    .goto 2521,59.571,72.639
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
-    .turnin 94979 >>Turn in Taming the Beast
-    .accept 94013 >>Accept Taming the Beast
-    .target Quel'ana Quickgale::252389
-step
-    #loop
-    .goto 2521,61.944,68.828,35,0
-    .goto 2521,59.516,64.846,35,0
-    .goto 2521,57.041,67.729,35,0
-    .goto 2521,54.322,75.080,35,0
-    .goto 2521,51.925,80.458,35,0
-    .goto 2521,52.920,81.509,35,0
-    .use 264163 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Vuldren|r |cRXP_WARN_at max range|r.
-    .complete 94013,1 --Tame a Vuldren
-    .mob Vuldren::250874
-step
-    .goto 2521,59.571,72.639
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
-    .turnin 94013 >>Turn in Taming the Beast
-    .accept 94050 >>Accept Training the Beast
-    .target Quel'ana Quickgale::252389
-step
-    .goto 2521,59.605,72.527
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'dora Quickgale::254411|r.
-    .turnin 94050 >>Turn in Training the Beast
-    .target Quel'dora Quickgale::254411
-]])
 --Druid class quest chain
 RXPGuides.RegisterGuide([[
 #forever
@@ -4741,27 +4878,6 @@ RXPGuides.RegisterGuide([[
 #internal
 
 -- The Great Ursera Spirit (94006) is accepted from the Druid trainer in Valanaar.
-step
-    .goto 2521,63.983,75.093
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
-    .accept 94006 >>Accept The Great Ursera Spirit
-    .target Lotheluum Starbreeze::252359
-step
-    .goto 2521,69.761,61.454
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urs'endris::255853|r.
-    .turnin 94006 >>Turn in The Great Ursera Spirit
-    .accept 94638 >>Accept Strength and Mercy
-    .target Urs'endris::255853
-step
-    .goto 2521,54.284,65.803
-    >>Kill |cRXP_ENEMY_Ur'endra|r.
-    .complete 94638,1 --|1/1 Ur'endra slain
-    .mob Ur'endra::258443
-step
-    .goto 2521,69.740,61.570
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urs'endris::255853|r.
-    .turnin 94638 >>Turn in Strength and Mercy
-    .target Urs'endris::255853
 step << Alliance
     .goto 1416/0,385.700,385.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Ansirem Runeweaver::2543|r.
