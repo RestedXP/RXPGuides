@@ -742,6 +742,9 @@ if _G['ContainerFrame_UpdateAll'] then
                 self.JunkIcon:SetShown(inventoryManager.IsJunkIconEnabled() and id and IsJunk(id) and self:IsShown())
             end
         end
+        if Baganator then
+            Baganator.API.RequestItemButtonsRefresh()
+        end
     end
 
     if Baganator and Baganator.API then
@@ -767,7 +770,7 @@ if _G['ContainerFrame_UpdateAll'] then
                         for i,button in pairs(container.buttons) do
                             if button.BGR and not hookedFrames[button] then
                                 button:HookScript("OnClick", OnClickHook)
-                                hookedFrames[button] = true
+                                hookedFrames[button] = "Baganator"
                             end
                         end
                     end
@@ -775,7 +778,7 @@ if _G['ContainerFrame_UpdateAll'] then
             end
         end
         C_Timer.After(1,LoadBaganator)
-        Baganator.CallbackRegistry:RegisterCallback("SettingChanged", LoadBaganator)
+        Baganator.CallbackRegistry:RegisterCallback("SettingChanged", function() C_Timer.After(0.1,LoadBaganator) end)
         --Baganator.API.RequestItemButtonsRefresh()
     end
 
