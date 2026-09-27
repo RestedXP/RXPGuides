@@ -609,12 +609,13 @@ function addon.settings:CreateAceOptionsPanel()
             },
             resetGuideProgressTop = {
                 name = L("Reset Guide Progress"),
+                desc = L("Clear guide progress for current character"),
                 type = "execute",
                 width = optionsWidth,
                 order = 1.3,
                 func = addon.ResetGuideProgress,
                 confirm = function()
-                    return L("Reset Guide Progress")
+                    return L("Clear guide progress for current character")
                 end,
                 hidden = addon.player.level > 1,
             },
@@ -3476,11 +3477,12 @@ function addon.settings:CreateAceOptionsPanel()
     optionsTable.args.profiles.args["resetGuideProgress"] = {
         order = 0.1,
         name = L("Reset Guide Progress"),
+        desc = L("Clear guide progress for current character"),
         type = "execute",
         width = optionsWidth,
         func = addon.ResetGuideProgress,
         confirm = function()
-            return L("Reset Guide Progress")
+            return L("Clear guide progress for current character")
         end
     }
 
