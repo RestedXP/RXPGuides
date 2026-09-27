@@ -2390,7 +2390,7 @@ local function IsGuideActive(guide,includeInternal)
     if guide and addon.stepLogic.SeasonCheck(guide) and addon.stepLogic.PhaseCheck(guide) and
         addon.stepLogic.XpRateCheck(guide) and addon.stepLogic.FreshAccountCheck(guide) and
         addon.stepLogic.LevelCheck(guide) and (not guide.internal or includeInternal) and
-        addon.stepLogic.LoremasterCheck(guide) then
+        addon.stepLogic.LoremasterCheck(guide) and addon.stepLogic.BetaVersionCheck(guide) then
         if (not addon.player.neutral or not guide.enabledFor) then
             return true
         else

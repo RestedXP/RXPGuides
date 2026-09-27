@@ -2658,6 +2658,13 @@ function addon.stepLogic.ProfessionCheck(step)
     end
 end
 
+function addon.stepLogic.BetaVersionCheck(step)
+    if not addon.settings.profile.enableBetaFeatures and step.beta then
+        return false
+    end
+    return true
+end
+
 RXP = addon -- debug purposes
 
 local LibDD = LibStub:GetLibrary("LibUIDropDownMenu-4.0", true)
