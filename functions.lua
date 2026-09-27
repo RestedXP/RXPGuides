@@ -115,7 +115,14 @@ events.hs = "UNIT_SPELLCAST_SUCCEEDED"
 events.home = {"HEARTHSTONE_BOUND","CONFIRM_BINDER","GOSSIP_SHOW"}
 events.bindlocation = events.home
 events.fly = {"PLAYER_CONTROL_LOST", "TAXIMAP_OPENED", "ZONE_CHANGED", "GOSSIP_SHOW"}
-events.deathskip = {"CONFIRM_XP_LOSS","GOSSIP_SHOW"}
+
+if C_EventUtils and C_EventUtils.IsEventValid("PLAYER_INTERACTION_MANAGER_FRAME_SHOW") then
+    events.deathskip = "PLAYER_INTERACTION_MANAGER_FRAME_SHOW"
+else
+    events.deathskip = {"CONFIRM_XP_LOSS","GOSSIP_SHOW"}
+end
+
+
 events.xp = {"PLAYER_XP_UPDATE", "PLAYER_LEVEL_UP"}
 events.reputation = "UPDATE_FACTION"
 events.vendor = {"MERCHANT_SHOW", "MERCHANT_CLOSED"}
@@ -2872,12 +2879,13 @@ function addon.functions.deathskip(self, ...)
         end
         element.tooltipText = addon.icons.deathskip .. element.text
         addon.step.softcore = true
-        element.targets = {L"Spirit Healer","Alithea","Anara","Koiter"}
+        element.targets = {L"Spirit Healer"}
         return element
     end
     if not self.element.step.active then return end
-    local event = ...
-    if event == "CONFIRM_XP_LOSS" then
+    local event,arg1 = ...
+    -- spell=418460 (chill of the grave) is cast every time a player resurrect (forever) through the UNIT_SPELLCAST_FAILED_QUIET event
+    if event == "CONFIRM_XP_LOSS" or event == "PLAYER_INTERACTION_MANAGER_FRAME_SHOW" and arg1 == Enum.PlayerInteractionType.SpiritHealer then
         addon.SetElementComplete(self)
         if C_PlayerInteractionManager then
             self:SetScript("OnUpdate", function()
@@ -2890,7 +2898,7 @@ function addon.functions.deathskip(self, ...)
             _G.StaticPopup1:Hide()
             _G.StaticPopup2:Hide()
         end
-    elseif event == "GOSSIP_SHOW" then
+    elseif event == "GOSSIP_SHOW" or event == "PLAYER_INTERACTION_MANAGER_FRAME_SHOW" and arg1 == Enum.PlayerInteractionType.Gossip then
         addon.SelectGossipType("healer")
     end
 end
