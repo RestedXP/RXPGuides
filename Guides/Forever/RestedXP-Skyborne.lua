@@ -650,6 +650,7 @@ step
     .turnin 92470 >>Turn in Foul Matriarch
 step
     #completewith Turn in Foul Matriarch
+-- #ignorecorpse
     #loop
     .goto 2521,36.47,23.67,30,0
     .goto 2521,35.88,23.79,30,0
@@ -1106,6 +1107,7 @@ step << Warrior
     #arrowtext Talk to\n|cRXP_FRIENDLY_Tephri Thriceforged|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r and buy |T133053:0|t[Wooden Mallet].
     .collect 2493,1 -- Wooden Mallet
+    .money <0.0701
     .target Tephri Thriceforged
 step << Rogue
     .isOnQuest 92517
@@ -1115,6 +1117,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r and buy |T135321:0|t[Gladius].
     .collect 2488,1 -- Gladius
     .target Tephri Thriceforged
+    .money <0.0536
 step
     .goto 2521,43.850,43.840
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
@@ -1249,9 +1252,6 @@ step
     .complete 92517,1 --|10/10 Highlands Bandit slain
     .complete 93319,1 --|10/10 Pilfered Windstone
     .mob Highlands Bandit::251918
--- step
---     .isOnQuest 92517
---     .hs >>Hearth to Shen'dar Village
 step
     #completewith To Shendalar
     >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
@@ -1331,10 +1331,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind|r.
     .complete 96101,1 --1/1 Use the /sit emote near the campfire
     .emote SIT,263664
-    .timer 60, RP
+    .timer 59, RP
     .target Raan Wildwind
 step
     >>|cRXP_WARN_Wait until you get the Boosted Rest buff|r.
+    *|cRXP_WARN_You can craft here while sitting|r
     *If you don't receive the buff on the first try, log out and back in.
     .complete 96101,2 --Gain the Boosted Rest buff
 step
@@ -1562,14 +1563,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleeia Tattermend::257018|r
     .turnin 97965 >>Turn in Camping 101: First Aid
     .target Naleeia Tattermend::257018
-step
-    .train 2366,3
-    .isQuestComplete 97968
-    .isQuestAvailable 92517
-    .goto 2521,42.97,43.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r
-    .turnin 97968 >>Turn in Camping 101: Herbalism
-    .target Halassa Fernbreeze::257021
+-- step
+--     .train 2366,3
+--     .isQuestComplete 97968
+--     .isQuestAvailable 92517
+--     .goto 2521,42.97,43.54
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r
+--     .turnin 97968 >>Turn in Camping 101: Herbalism
+--     .target Halassa Fernbreeze::257021
 step
     .train 7411,3
     .isQuestComplete 98286
@@ -1718,6 +1719,8 @@ step << Alliance Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elayaa Easewind::254084|r.
     .train 5116 >>Train |T135860:0|t[Concussive Shot]
     .train 3127 >>Train |T132269:0|t[Parry]
+    .train 14260 >>Train |T132223:0|t[Raptor Strike (Rank 2)]
+    .skipgossipid 136808
     .target Elayaa Easewind::254084
     .money <0.04
     .xp <8,1
@@ -1733,8 +1736,10 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elayaa Easewind::254084|r.
     .train 5116 >>Train |T135860:0|t[Concussive Shot]
     .train 3127 >>Train |T132269:0|t[Parry]
+    .train 14260 >>Train |T132223:0|t[Raptor Strike (Rank 2)]
+    .skipgossipid 136808
     .target Elayaa Easewind::254084
-    .money <0.04
+    .money <0.06
     .xp <8,1
 step << Horde Druid
     .subzoneskip 16624,1
@@ -1895,7 +1900,8 @@ step
     .goto 2521,45.04,46.23,15,0 << !Rogue
     .goto 2521,45.67,45.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
-    .turnin 92528 >>Turn in Among the Faithful
+    .turnin 92528,3 >>Turn in Among the Faithful << Hunter
+    .turnin 92528 >>Turn in Among the Faithful << !Hunter
     .accept 92550 >>Accept Havoc in the Highlands
     .accept 93926 >>Accept The Western Watch
     .target Constable Aonda
@@ -1911,10 +1917,12 @@ step
     .complete 93926,1 --1/1 Check in on the Western Watchtower in the Shen'dar Highlands
 step
 	#completewith Western Watchtower
+-- #ignorecorpse
     .goto 2521,45.35,46.79,20,0
     .goto 2521,44.05,49.98,30,0
     .goto 2521,43.02,49.86
     .deathskip >>Die to the south west of Shen'dar Village and respawn at the Spirit Healer
+-- #ignorecorpse
     .macro Sit,134400 >>/sit
     .target Spirit Healer
     .skipgossipid 96031
@@ -2110,14 +2118,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleeia Tattermend::257018|r
     .turnin 97965 >>Turn in Camping 101: First Aid
     .target Naleeia Tattermend::257018
-step
-    .train 2366,3
-    .isQuestComplete 97968
-    .isQuestAvailable 92550
-    .goto 2521,42.97,43.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r
-    .turnin 97968 >>Turn in Camping 101: Herbalism
-    .target Halassa Fernbreeze::257021
+-- step
+--     .train 2366,3
+--     .isQuestComplete 97968
+--     .isQuestAvailable 92550
+--     .goto 2521,42.97,43.54
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r
+--     .turnin 97968 >>Turn in Camping 101: Herbalism
+--     .target Halassa Fernbreeze::257021
 step
     .train 7411,3
     .isQuestComplete 98286
@@ -2250,18 +2258,23 @@ step
 step
     .isQuestAvailable 93948
     .subzoneskip 16638
+-- #ignorecorpse
     .goto 2521,49.4,58.76
     .deathskip >>Die at the exact waypoint location and respawn at the Spirit Healer
     .macro Sit,134400 >>/sit
-    *|cRXP_WARN_The location is important as there are three possible spiritwalkers on that island.|r
+    *|cRXP_WARN_Otherwise, you may be sent to a different graveyard|r
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer
 step << Hunter
+    .isNotOnQuest 93317
+    .isQuestAvailable 92679
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
     >>|cRXP_BUY_Buy and equip a|r |T7810733:0|t[Zephrali Bow]
     .collect 277110,1 --Collect Zephrali Bow
+    .vendor >>Vendor trash and repair if you need
+    .skipgossipid 141556
     .target Falfaan Halfwind::271465
     .money <0.1345
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.82
@@ -2460,6 +2473,7 @@ step << Alliance
 step << Alliance
     .isOnQuest 92727
     .goto 2521,67.41,80.46
+-- #ignorecorpse
     .deathskip >>Jump of the cliff
     .macro Sit,134400 >>/sit
     .subzoneskip 16638,1
@@ -2727,6 +2741,7 @@ step << Shaman
     .isOnQuest 97244
     .isQuestNotComplete 97244
     .goto 2521,50.8,89.6
+-- #ignorecorpse
     .deathskip >>|cRXP_WARN(BETA: Ressurection Sickness is bugged. Skip this step for now).|r Jump down to die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
 step << Shaman
     .goto 2521,64.380,63.586
@@ -2736,6 +2751,7 @@ step << Shaman
 step << Shaman
     .isOnQuest 97244
     .goto 2521,62.384,64.393
+-- #ignorecorpse
     .deathskip >>|cRXP_WARN(BETA: Ressurection Sickness is bugged. Skip this step for now).|r Jump down to die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
 step << Shaman
     .goto 2521,51.241,86.193
@@ -3019,6 +3035,7 @@ step << Alliance
     .isOnQuest 92840
     .isQuestNotComplete 92840
     .goto 2521,67.41,80.46
+-- #ignorecorpse
     .deathskip >>Jump of the cliff
     *|cRXP_WARN_|cRXP_WARN(BETA: Ressurection Sickness is bugged. Skip this step for now).|r
     .skipgossipid 96031
@@ -3075,6 +3092,7 @@ step << Alliance
 --     .isOnQuest 92840
 --     .isQuestComplete 92840
 --     .goto 2521,48.37,70.01
+-- -- #ignorecorpse
 --     .deathskip >>Die to the monsters or jump of the cliff
 --     *|cRXP_WARN_|cRXP_WARN(BETA: Ressurection Sickness is bugged. Skip this step for now).|r
 --     .skipgossipid 96031
@@ -3426,6 +3444,7 @@ step << Alliance
     .isQuestAvailable 98512
     .isNotOnQuest 98512
     .goto 2521,66.42,83.48
+-- #ignorecorpse
     .deathskip >>Jump of the cliff
     .skipgossipid 96031
     .skipgossipid 98031
