@@ -3245,6 +3245,11 @@ step
     .turnin 88 >> Turn in Princess Must Die!
     .goto 1429/0,332.43,-9895.01--c:Elwynn Forest,34.660,84.483
 step << Dwarf Paladin
+    #loop
+    .goto 1429/0,598.29,-9946.33,70,0
+    .goto 1429/0,629.53,-10020.39,70,0
+    .goto 1429/0,660.77,-10085.20,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
     >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for |T132889:0|t[Linen Cloth]
     >>|cRXP_WARN_Ensure you have 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your upcoming Paladin class quest|r
     .collect 2589,10,1648,1 -- Linen Cloth (10)
@@ -3977,8 +3982,17 @@ step << Shaman
     .goto 1426/0,-2594.100,-5335.900,20,0
     .goto 1432/0,-2641.000,-5375.700,20 >> Carefully drop down the mountain into Loch Modan
 step
-    .goto 1432/0,-3319.800,-5217.600
+    #loop
+    .goto 1432/0,-3319.800,-5217.600,20,0
+    .goto 1432/0,-3251.5499,-5285.8790,20,0
+    .goto 1432/0,-3342.5748,-5484.5540,20,0
+    .goto 1432/0,-3386.7082,-5462.4790,20,0
+    .goto 1432/0,-3319.800,-5217.600,0
+    .goto 1432/0,-3251.5499,-5285.8790,0
+    .goto 1432/0,-3342.5748,-5484.5540,0
+    .goto 1432/0,-3386.7082,-5462.4790,0
     >>Click the |cRXP_PICK_Discarded Fishing Toolbox|r on the lake floor
+    >>|cRXP_WARN_NOTE: This can spawn in one of many different locations. Swim around until you see the exclamation point on your minimap|r
     >>|cRXP_WARN_Be careful of high level|r |cRXP_ENEMY_Young Threshadon|r
     .accept 86614 >>Accept Silver of the Waves
     .xp <13,1
@@ -4654,8 +4668,16 @@ step
     .target Norric Lochthane
 step
     #optional
-    .goto 1432/0,-3319.800,-5217.600
+    .goto 1432/0,-3319.800,-5217.600,20,0
+    .goto 1432/0,-3251.5499,-5285.8790,20,0
+    .goto 1432/0,-3342.5748,-5484.5540,20,0
+    .goto 1432/0,-3386.7082,-5462.4790,20,0
+    .goto 1432/0,-3319.800,-5217.600,0
+    .goto 1432/0,-3251.5499,-5285.8790,0
+    .goto 1432/0,-3342.5748,-5484.5540,0
+    .goto 1432/0,-3386.7082,-5462.4790,0
     >>Click the |cRXP_PICK_Discarded Fishing Toolbox|r on the lake floor
+    >>|cRXP_WARN_NOTE: This can spawn in one of many different locations. Swim around until you see the exclamation point on your minimap|r
     >>|cRXP_WARN_Be careful of high level|r |cRXP_ENEMY_Young Threshadon|r
     .accept 86614 >>Accept Silver of the Waves
     .xp <13,1

@@ -1987,6 +1987,7 @@ step
     #requires Anaya
 --XXREQ Placeholder invis step until multiple requires per step
 step
+    .isQuestComplete 953
     .goto 1439,40.302,59.731
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .turnin 953 >> Turn in The Fall of Ameth'Aran
