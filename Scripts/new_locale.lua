@@ -441,6 +441,7 @@ L["You can't do that in combat."] = ""
 -- RXPGuides.lua file
 
 L["Development"] = ""
+L["Guide progress was saved by another character. Reset it?"] = ""
 
 -- SettingsPanel.lua file
 
@@ -451,6 +452,8 @@ L["This requires a reload to take effect, continue?"] = ""
 L["Join Discord"] = ""
 L["Import Guides"] = ""
 L["Run Guide Configurator"] = ""
+L["Reset Guide Progress"] = ""
+L["Clear guide progress for current character"] = ""
 L["Show all Enabled Frames"] = ""
 L["Toggles all addon frames on or off"] = ""
 L["Lock Frames"] = ""
