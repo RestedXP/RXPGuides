@@ -5021,7 +5021,12 @@ step << Horde
     .zoneskip 2521,1
     .isQuestAvailable 95350
     .goto 2521,57.921,80.781
-    .zone 1412 >>Take the zeppelin to |cRXP_PICK_Mulgore|r.
+    .zone 1412 >>Take the airship to |cRXP_PICK_Mulgore|r.
+step << Horde Druid Skyborne
+    .goto 1412/1,423.400,-659.000
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muln Earthfury::259118|r.
+    .target Muln Earthfury::259118
+    .accept 94911 >>Accept Child of Nature
 step << Horde
     .goto 1412/1,426.100,-658.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alaana Stormwalker::259119|r.
@@ -5032,11 +5037,38 @@ step << Horde
     .subzoneskip 17045,1
     .goto 1412/1,323.300,-731.200
     .deathskip >>Jump to die and ress at the |cRXP_PICK_Spirit Healer|r.
-    .macro Sit,134400 >>/sit
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer
-step << Horde
+step << Horde Druid Skyborne
+    #completewith next
+    #label ChildOfNatureA
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak Runetotem::3033|r.
+    .turnin 94911 >>Turn in Child of Nature
+    .accept 94913 >>Accept Moonglade
+    .target Turak Runetotem::3033
+step << Horde Druid Skyborne
+    #completewith ChildOfNatureA
+    #label ChildOfNatureB
+    .goto 1456/1,-110.500,-970.700,15,0
+    .goto 1456/1,-76.900,-1026.000,15,0
+    .goto 1456/1,-48.800,-1037.300,8,0
+    .goto 1456/1,-7.300,-1089.600,25 >>Enter Thunder Bluff
+step << Horde Druid Skyborne
+    #requires ChildOfNatureB
+    #completewith ChildOfNatureA
+    .goto 1456/1,-13.300,-1108.300,12,0
+    .goto 1456/1,-46.900,-1092.900,12,0
+    .goto 1456/1,-61.200,-1097.400,8,0
+    .goto 1456/1,-198.000,-1046.500,12 >>Cross the bridge.
+step << Horde Druid Skyborne
+    #requires ChildOfNatureA
+    .goto 1456/1,-281.500,-1039.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak Runetotem::3033|r.
+    .turnin 94911 >>Turn in Child of Nature
+    .accept 94913 >>Accept Moonglade
+    .target Turak Runetotem::3033
+step << Horde !Druid
     #completewith next
     #label WelcomeToAzerothA
     #hidewindow
@@ -5045,14 +5077,14 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal::2995|r.
     .fly Orgrimmar >>Fly to Orgrimmar
     .target Tal::2995
-step << Horde
+step << Horde !Druid
     #completewith WelcomeToAzerothA
     .goto 1456/1,-110.500,-970.700,15,0
     .goto 1456/1,-76.900,-1026.000,15,0
     .goto 1456/1,-48.800,-1037.300,8,0
     .goto 1456/1,-7.300,-1089.600,25 >>Enter Thunder Bluff
 step << Horde
-    #requires WelcomeToAzerothA
+    #requires WelcomeToAzerothA << !Druid
     .isOnQuest 95350
     .zoneskip 1454
     .goto 1456/1,26.500,-1196.700
@@ -5081,6 +5113,16 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vol'jin::10540|r.
     .complete 93739,2 --|1/1 Speak with Vol'jin
     .target Vol'jin::10540
+-- step << Druid Horde Skyborne
+-- 	#completewith next
+-- 	.cast 18960 >> Cast Teleport: Moonglade
+--     >>|cRXP_WARN_It will be in your spellbook|r
+-- 	.zoneskip Moonglade
+-- step << Druid Horde Skyborne
+--     .goto 1450/1,-2678.800,8020.100
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze::11802|r.
+--     .target Dendrite Starblaze::11802
+--     .turnin 94913 >>Turn in Moonglade
 ]])
 
 --Druid class quest chain
