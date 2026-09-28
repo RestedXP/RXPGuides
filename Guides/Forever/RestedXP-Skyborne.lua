@@ -228,6 +228,11 @@ step << Alliance !Hunter
     #completewith Harvesting Windstones
     .goto 2521,43.41,23.51
     .vendor >>|cRXP_WARN_Vendor trash|r
+step << Alliance Rogue
+    .goto 2521,43.41,23.51
+    #completewith Harvesting Windstones
+    .collect 2131,1 >>Buy a |T135274:0|t[Shortsword]
+    .money <0.0054
 step << Alliance !Hunter
     #requires Harvesting Windstones
     .goto 2521,43.37,23.99
@@ -343,7 +348,7 @@ step
     #label Harvesting Windstones2
     .goto 2521,43.89,22.27,40,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
-    *|cRXP_WARN_Choose between mining,herbing or skinning profession|r
+    *|cRXP_WARN_Choose between Mining, Herbalism, or Skinning.|r
     .turnin 93552 >>Turn in Harvesting Windstones
     .target Dalia the Collector
 step
@@ -354,7 +359,7 @@ step
     #requires Harvesting Windstones2
     .goto 2521,43.37,23.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
-    *|cRXP_WARN_Choose between mining,herbing or skinning profession|r
+    *|cRXP_WARN_Choose between Mining, Herbalism, or Skinning.|r
     .turnin 93552 >>Turn in Harvesting Windstones
     .target Dalia the Collector
 step
@@ -377,17 +382,35 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Akeri Duskblade|r.
     .turnin 92483 >>Turn in At Home in the Shadows
     .target Akeri Duskblade
+step << Warrior
+    .train 6546,1
+    .goto 2521,43.66,24.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blademaster Ren|r.
+    .train 100 >>Train |T132337:0|t[Charge]
+    .train 6178,1
+    .train 772 >>Train |T132155:0|t[Rend]
+    .skipgossipid 136813,1
+    .target Blademaster Ren
+    .money <0.02
+    .xp <4,1
+    .isOnQuest 92469
+step << Warrior
+    .goto 2521,43.66,24.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blademaster Ren|r.
+    .turnin 92532 >>Turn in The Warrior's Path
+    .xp <4,1
+    .target Blademaster Ren
+step
+    .goto 2521,43.44,24.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
+    .turnin 92463 >>Turn in The Cirrusfly Queen
+    .target Elatrell Featherlight
 step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Falorne Fallwind|r
     .goto 2521,43.33,24.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
     .turnin 92597 >>Turn in Reading the Ley Lines
     .target Falorne Fallwind
-step
-    .goto 2521,43.44,24.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
-    .turnin 92463 >>Turn in The Cirrusfly Queen
-    .target Elatrell Featherlight
 step
     #arrowtext Use\n|T4625105:0|t[Mining for Dummies]
     .goto 2521,43.37,23.98
@@ -410,7 +433,7 @@ step << Warrior
     .train 6546,1
     .goto 2521,43.66,24.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blademaster Ren|r.
-    .train 100 >>Train |T132333:0|t[Charge]
+    .train 100 >>Train |T132337:0|t[Charge]
     .train 6178,1
     .train 772 >>Train |T132155:0|t[Rend]
     .skipgossipid 136813,1
@@ -490,7 +513,7 @@ step << Druid
 step << Mage
     .goto 2521,41.55,23.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorii Brightwhisper|r.
-    .train 116 >>Train |T135932:0|t[Frostbolt]
+    .train 116 >>Train |T135846:0|t[Frostbolt]
     .skipgossipid 136807,1
     .target Dorii Brightwhisper
     .money <0.01
@@ -533,6 +556,9 @@ step << Shaman
     #completewith TurnInCallOfEarthA
     .goto 2521,48.911,20.902
     .deathskip >> Die and respawn at the Spirit Healer
+    .macro Sit,134400 >>/sit
+    .skipgossipid 96031
+    .skipgossipid 98031
     .target Spirit Healer
 step << Shaman
     #requires TurnInCallOfEarthA
@@ -760,6 +786,7 @@ step
 step
     #label Grind6
     .xp 5+1740 >>Grind to level 5 1740+/2800xp to reach level 6 after turn ins in the next village to be able to train new spells.
+    -- Maybe only grind here if little XP is needed; otherwise, train abilities after the cave.
 step
     .goto 2521,38.32,30.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanaa Nightwind|r.
@@ -1079,20 +1106,20 @@ step
     .target Taleen Shimmerthread
 step << Shaman/Druid
     .goto 2521,44.790,44.168
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Tinderforged::257421|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r
     >>|cRXP_BUY_Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
     .collect 2495,1,761,1 --Collect Walking Stick (1)
-    .target Tephri Tinderforged::257421
+    .target Tephri Thriceforged::257421
     .money <0.0504
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Hunter
     .goto 2521,44.790,44.168
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Tinderforged::257421|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r
     >>|cRXP_BUY_Buy and equip a|r |T135499:0|t[Hornwood Recurve Bow]
     >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_until your Quiver is full|r
     .collect 2506,1 --Collect Hornwood Recurve Bow
-    .target Tephri Tinderforged::257421
+    .target Tephri Thriceforged::257421
     .money <0.0285
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.38
 step << Warrior
@@ -1155,15 +1182,15 @@ step << Alliance Rogue
     .target Miriaan Mistblade
     .money <0.01
     .xp <6,1
--- step
---     .isQuestTurnedIn 92553
---     .isQuestAvailable 92517
---     .itemcount 1971,<1
---     .goto 2521,43.86,43.85
---     >>Use the |T132834:0|t[Herb Baked Egg] macro below to craft.
---     *|cRXP_WARN_Any buff food grants 5% increased experience from kills for 15 minutes|r.
---     .collect 6888,1
---     .macro Herb Baked Egg,132834 >>/cast cooking\n/run C_TradeSkillUI.CraftRecipe(8604,1)
+step
+    .isQuestTurnedIn 92553
+    .isQuestAvailable 92517
+    .itemcount 1971,<1
+    .goto 2521,43.86,43.85
+    >>Use the |T132834:0|t[Herb Baked Egg] macro below to craft.
+    *|cRXP_WARN_Any buff food grants 5% increased experience from kills for 15 minutes|r.
+    .collect 6888,1
+    .macro Herb Baked Egg,132834 >>/cast Cooking\n/run local count=C_Item.GetItemCount(6889);if count then C_TradeSkillUI.CraftRecipe(8604, count) end
 step
     #completewith BadwindBennicA
     >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
@@ -1279,24 +1306,82 @@ step
     .train 2550 >>Train |T133971:0|t[Apprentice Cook]
     .skipgossipid 137551
     .target Zerril Softbreeze::251905
--- step
---     --improvement possible?
---     .isOnQuest 92553
---     .isQuestAvailable 92517
---     .itemcount 1971,<3
---     .goto 2521,43.86,43.85
---     >>Use the |T132834:0|t[Herb Baked Egg] macro below to craft.
---     *|cRXP_WARN_Keep at least 3 Small Eggs for a later quest|r
---     *|cRXP_WARN_Any buff food grants 5% increased experience from kills for 15 minutes|r.
---     .collect 6888,1
---     .macro Herb Baked Egg,132834 >>/cast Cooking\n/run C_TradeSkillUI.CraftRecipe(8604,1)
---TODO: Maybe add more ice cold buy steps?
+step
+    .isOnQuest 92553
+    .isQuestAvailable 92517
+    .itemcount 1971,<1
+    .goto 2521,43.86,43.85
+    >>Use the |T132834:0|t[Herb Baked Egg] macro below to craft.
+    *|cRXP_WARN_Any buff food grants 5% increased experience from kills for 15 minutes|r.
+    .collect 6888,1
+    .macro Herb Baked Egg,132834 >>/cast Cooking\n/run local count=C_Item.GetItemCount(6889);if count then C_TradeSkillUI.CraftRecipe(8604, count) end
+step << Mage
+    .goto 2521,45.1,45.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorii Brightwhisper|r.
+    .train 143 >>Train |T135812:0|t[Fireball (Rank 2)]
+    .train 2136 >>Train |T135807:0|t[Fire Blast]
+    .train 1296017 >>Train |T8188276:0|t[Comprehend Scroll]
+    .skipgossipid 136807,1
+    .target Dorii Brightwhisper
+    .money <0.03
+    .xp <6,1
+step << Shaman
+    .goto 2521,43.454,44.872
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aarnor Galestrike::254082|r
+    .trainer >>Train your class spells
+    .target Aarnor Galestrike::254082
+    .money <0.01
+    .xp <6,1
+step << Rogue
+    .goto 2521,43.16,43.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
+    .train 1757 >> Train |T136189:0|t[Sinister Strike (Rank 2)]
+    .train 1776 >> Train |T132155:0|t[Gouge]
+    .train 1777,1
+    .skipgossipid 136810
+    .target Miriaan Mistblade
+    .money <0.02
+    .xp <6,1
+step << Rogue
+    .goto 2521,43.16,43.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
+    .train 1757 >> Train |T136189:0|t[Sinister Strike (Rank 2)]
+    .skipgossipid 136810
+    .target Miriaan Mistblade
+    .money <0.01
+    .xp <6,1
+step << Warrior
+    .goto 2521,44.95,45.1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corsan Earthrazer|r
+    .train 3127 >> Train |T132269:0|t[Parry]
+    .skipgossipid 136813
+    .target Corsan Earthrazer
+    .money <0.01
+    .xp <6,1
+step << Hunter
+    .goto 2521,45.263,44.236
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elayaa Easewind::254084|r.
+    .train 3044 >>Train |T132218:0|t[Arcane Shot]
+    .train 1130 >>Train |T132212:0|t[Hunter's Mark]
+    .skipgossipid 136808
+    .target Elayaa Easewind::254084
+    .money <0.02
+    .xp <6,1
+step << Druid
+    .goto 2521,45.154,44.217
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naeluna Swiftmend::254081|r
+    .train 467 >>Train |T136104:0|t[Thorns]
+    .train 5177 >>Train |T136006:0|t[Wrath (Rank 2)]
+    .skipgossipid 136805
+    .xp <6,1
+    .money <0.02
+    .target Naeluna Swiftmend::254081
 step << Shaman/Druid
     .goto 2521,44.790,44.168
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Tinderforged::257421|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r
     >>|cRXP_BUY_Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
     .collect 2495,1,761,1 --Collect Walking Stick (1)
-    .target Tephri Tinderforged::257421
+    .target Tephri Thriceforged::257421
     .money <0.0504
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -1327,6 +1412,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind|r.
     .complete 96101,1 --1/1 Use the /sit emote near the campfire
     -- .emote SIT,263664 -- Feels like this is breaking the quest completion 50% of the time
+    .macro Sit,134400 >>/sit
     .timer 59, RP
     .target Raan Wildwind
 step
@@ -1448,6 +1534,12 @@ step
     .complete 92553,1 --3/3 Small Egg
     .mob Galestrider::251661
 step << Alliance
+    #completewith next
+    >>Kill the |cRXP_ENEMY_Windshaper Novice Seer|r.
+    .usespell 1259705 << Alliance
+    .complete 94413,1 --6/6 Windshaper Novice Seer defeated
+    .mob Windshaper Novice Seer
+step << Alliance
     .isOnQuest 94413
     .isQuestNotComplete 94413
     .goto 2521,39,47.37
@@ -1534,7 +1626,7 @@ step
     .goto 2521,43.079,51.028,15,0
     .goto 2521,42.978,51.803,15,0
     .goto 2521,42.75,52.68
-    >>Kill |cRXP_ENEMY_Vulgara|r |cRXP_WARN_(level 8 elite)|r on the mountain. Loot it for |T4218759:0|t[|cRXP_LOOT_Vulgar's Head|r].
+    >>Kill |cRXP_ENEMY_Vulgara|r |cRXP_WARN_(level 8 elite)|r on the mountain. Loot it for |T4218759:0|t[|cRXP_LOOT_Vulgara's Head|r].
     *|cRXP_WARN_Look for a group to kill it or skip the quest; respawns are lengthy|r.
     .complete 93318,1 --1/1 Vulgara's Head
     .mob Vulgara
@@ -1754,10 +1846,10 @@ step
     .target Veena Vericloud::254358
 step << Shaman/Druid
     .goto 2521,44.790,44.168
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Tinderforged::257421|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r
     >>|cRXP_BUY_Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
     .collect 2495,1,761,1 --Collect Walking Stick (1)
-    .target Tephri Tinderforged::257421
+    .target Tephri Thriceforged::257421
     .money <0.0504
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -2153,8 +2245,8 @@ step
     .goto 2521,43.86,43.85
     >>Craft as many |T132834:0|t[Herb Baked Eggs] as you can.
     *|cRXP_WARN_Any buff food grants 5% increased experience from kills for 15 minutes|r.
-    --.collect 6888,1
-    .macro Herb Baked Egg,132834 >>/cast cooking\n/run C_TradeSkillUI.CraftRecipe(8604,1)
+    .collect 6888,1
+    .macro Herb Baked Egg,132834 >>/cast Cooking\n/run local count=C_Item.GetItemCount(6889);if count then C_TradeSkillUI.CraftRecipe(8604, count) end
 step
     .isQuestComplete 96646
     .isQuestAvailable 92550
@@ -2274,7 +2366,6 @@ step
     >>Craft as many |T132834:0|t[Herb Baked Eggs] as you can.
     *|cRXP_WARN_Any buff food grants 5% increased experience from kills for 15 minutes|r.
     .macro Herb Baked Egg,132834 >>/cast cooking\n/run C_TradeSkillUI.CraftRecipe(8604,1)
-    --maybe recipes buy
 step
     .subzoneskip 16638,1
     .isQuestAvailable 93948
@@ -2631,7 +2722,7 @@ step
     .goto 2521,46.71,81.94,10,0
     .goto 2521,47.511,78.490,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
-    *|cRXP_WARN_She may be moving between locations during a roleplay sequence. You have to wait at the |r.
+    *|cRXP_WARN_She may be moving between locations during a roleplay sequence. Wait at the waypoint location.|r
     .turnin 92679 >>Turn in Blood Tithe
     .accept 92682 >>Accept Make Yourself Useful
     .accept 92684 >>Accept Ornery Ornery Galestriders
@@ -2686,7 +2777,6 @@ step
     #completewith GalestriderTenderloinA
     #hidewindow
     #loop
-    .goto 2521,46.692,76.947,40,0
     .goto 2521,50.017,77.659,40,0
     .goto 2521,51.3,80.59,40,0
     .goto 2521,50.868,83.289,40,0
@@ -2748,9 +2838,13 @@ step << Shaman
     .goto 2521,50.8,89.6
 -- #ignorecorpse
     .deathskip >>|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r Jump down to die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
+    .macro Sit,134400 >>/sit
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer
 step << Shaman
     .goto 2521,64.380,63.586
-    >>Kill the |cRXP_ENEMY_Skypriest Faladiel::268602|r. Loot him for |T1:0|t[|cRXP_LOOT_Faladiel's Heart|r].
+    >>Kill the |cRXP_ENEMY_Skypriest Faladiel::268602|r. Loot him for |T839910:0|t[|cRXP_LOOT_Faladiel's Heart|r].
     .complete 97244,1 --|1/1 Faladiel's Heart
     .mob Skypriest Faladiel::268602
 step << Shaman
@@ -2758,6 +2852,10 @@ step << Shaman
     .goto 2521,62.384,64.393
 -- #ignorecorpse
     .deathskip >>|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r Jump down to die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
+    .macro Sit,134400 >>/sit
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer
 step << Shaman
     .goto 2521,51.241,86.193
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Olariaan Swiftburn::268592|r.
@@ -3468,7 +3566,7 @@ step << Alliance Druid
     .goto 2521,64.46,66.11,40,0
     .goto 2521,64.71,67.65,40,0
     .goto 2521,66.59,67.5,40,0
-    >>Kill |cRXP_ENEMY_Aketh Brawler|r and |cRXP_ENEMY_Al'Aketh Healer|r.
+    >>Kill |cRXP_ENEMY_Al'Aketh Brawler|r and |cRXP_ENEMY_Al'Aketh Healer|r.
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
     .mob Al'Aketh Healer
@@ -3529,7 +3627,7 @@ step << Alliance !Druid
     .goto 2521,64.46,66.11,40,0
     .goto 2521,64.71,67.65,40,0
     .goto 2521,66.59,67.5,40,0
-    >>Kill |cRXP_ENEMY_Aketh Brawler|r and |cRXP_ENEMY_Al'Aketh Healer|r.
+    >>Kill |cRXP_ENEMY_Al'Aketh Brawler|r and |cRXP_ENEMY_Al'Aketh Healer|r.
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
     .mob Al'Aketh Healer
@@ -3665,6 +3763,7 @@ step << Alliance
     .goto 2521,66.42,83.48
 -- #ignorecorpse
     .deathskip >>Jump off the cliff
+    .macro Sit,134400 >>/sit
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer
@@ -4446,7 +4545,8 @@ step
     .turnin 93172 >>Turn in Free the Hollows
     .target Strange Hermit
 step
-    .train 
+    .train 4036,3
+    .isQuestComplete 98285
     .goto 2521,53.97,38.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strange Hermit|r.
     .turnin 93160 >>Turn in The Forest's Bounty
@@ -4454,7 +4554,7 @@ step
     .turnin 98285 >>Turn in Camping 101: Engineering
     .target Strange Hermit
 
-    -- step
+-- step
 --     .goto 2521,53.96,38.90
 --     .accept 98285 >>Accept Camping 101: Engineering
 step
@@ -4932,6 +5032,10 @@ step << Horde
     .subzoneskip 17045,1
     .goto 1412/1,323.300,-731.200
     .deathskip >>Jump to die and ress at the |cRXP_PICK_Spirit Healer|r.
+    .macro Sit,134400 >>/sit
+    .skipgossipid 96031
+    .skipgossipid 98031
+    .target Spirit Healer
 step << Horde
     #completewith next
     #label WelcomeToAzerothA
