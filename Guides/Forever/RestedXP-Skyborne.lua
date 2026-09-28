@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Speedrun Guide 1-20 << Alliance
 #subgroup Speedrun Guide 1-22 << Horde
 #defaultfor Skyborne
-#next "correct westfall guide" << Alliance
+#next 13-15 Westfall << Alliance
 
 step
     .goto 2521,42.82,23.41
@@ -205,9 +205,6 @@ step << Horde
     .accept 92598 >>Accept The Gift of Skysight
     .target Ventaari Brightwish
 step << !Warrior !Rogue 
-    --still loads in places it shouldn't no idea why
-    .isNotOnQuest 93552
-    .isQuestAvailable 93552
     .goto 2521,42.749,24.496
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
     >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Hunter !Shaman
@@ -216,9 +213,11 @@ step << !Warrior !Rogue
     .collect 159,10 << !Hunter !Shaman --Refreshing Spring Water (10)
     .collect 2512,1000 << Hunter --Rough Arrow (1000)
     .target Uualia Suncrest::251537
-    .subzoneskip 16635,1
     .money <0.0050 << !Hunter
     .money <0.0040 << Hunter
+    .subzoneskip 16635,1
+    .isNotOnQuest 93552
+    .isQuestAvailable 93552
 step << Alliance !Hunter
     #completewith next
     #label Harvesting Windstones
@@ -319,7 +318,6 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     .complete 93552,1 --15/15 Windstone Cluster
 step
-    #label Al'Aketh Convert
     >>Kill |cRXP_ENEMY_Al'Aketh Convert|r and |cRXP_ENEMY_Roiling Winds|r.
     *Loot them for the |T1020384:0|t[Signet of Air] << Shaman
     *|cRXP_WARN_Prioritize |cRXP_ENEMY_Roiling Winds|r|r
@@ -794,7 +792,7 @@ step << !Rogue !Warrior
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Shaman/Druid
     >>|cRXP_WARN_Save 2 silver for your class spells!|r << Shaman/Druid
     .vendor >>|cRXP_WARN_Vendor trash (don't sell strider meat or eggs)|r.
-    .collect 1179,5 >>Buy |T142815:0|t[Ice Cold Milk] << Mage
+    .collect 1179,5 >>Buy |T132815:0|t[Ice Cold Milk] << Mage
 step << Rogue/Warrior
     #completewith The Next Step
     #label VendorStep
@@ -1082,7 +1080,7 @@ step
 step << Shaman/Druid
     .goto 2521,44.790,44.168
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Tinderforged::257421|r
-    >>Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
     .collect 2495,1,761,1 --Collect Walking Stick (1)
     .target Tephri Tinderforged::257421
     .money <0.0504
@@ -1296,7 +1294,7 @@ step
 step << Shaman/Druid
     .goto 2521,44.790,44.168
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Tinderforged::257421|r
-    >>Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
     .collect 2495,1,761,1 --Collect Walking Stick (1)
     .target Tephri Tinderforged::257421
     .money <0.0504
@@ -1608,7 +1606,6 @@ step
     .turnin 96646 >>Turn in Camping 101: Cooking
     .target Zerril Softbreeze::251905
 step
-    --improvement possible?
     .isOnQuest 92553
     .isQuestAvailable 92517
     .itemcount 1971,<3
@@ -1759,14 +1756,14 @@ step
     .isQuestAvailable 92529
     .goto 2521,44.71,45.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veena Vericloud::254358|r
-    .vendor 254358 >>|cRXP_BUY_Buy up to three|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_as needed.
+    .vendor 254358 >>|cRXP_BUY_Buy up to three|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_as needed|r.
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Druid
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage
     .target Veena Vericloud::254358
 step << Shaman/Druid
     .goto 2521,44.790,44.168
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Tinderforged::257421|r
-    >>Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
     .collect 2495,1,761,1 --Collect Walking Stick (1)
     .target Tephri Tinderforged::257421
     .money <0.0504
@@ -2626,7 +2623,7 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
     *|cRXP_WARN_She may be moving between locations during a roleplay sequence. Wait at the waypoint location.|r
     .complete 92679,1 --1/1 Find Aamelia Windfield
-    .target Aamelia Windfield:252800
+    .target Aamelia Windfield::252800
 step << Horde
     #completewith BrokenConstructB
     .goto 2521,51.397,68.644,15 >>Leave the cave
@@ -2637,7 +2634,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
     *|cRXP_WARN_She may be moving between locations during a roleplay sequence. Wait at the waypoint location.|r
     .complete 92679,1 --1/1 Find Aamelia Windfield
-    .target Aamelia Windfield:252800
+    .target Aamelia Windfield::252800
 step
     #loop
     .goto 2521,46.71,81.94,10,0
@@ -2648,7 +2645,7 @@ step
     .accept 92682 >>Accept Make Yourself Useful
     .accept 92684 >>Accept Ornery Ornery Galestriders
     .accept 92683 >>Accept Flutterfly Dust
-    .target Aamelia Windfield:252800
+    .target Aamelia Windfield::252800
 step
     #completewith RipBanditsA
     >>Spam use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies|r
@@ -2720,7 +2717,7 @@ step
     .turnin 92698 >>Turn in What Is My Purpose?
     .turnin 92683 >>Turn in Flutterfly Dust
     .accept 92685 >>Accept The Hills Have Eyes
-    .target Aamelia Windfield:252800
+    .target Aamelia Windfield::252800
 step << Shaman
     #completewith next
     .hs >>Hearth to Valanaar
@@ -2827,7 +2824,7 @@ step
     *|cRXP_WARN_She may be moving between locations during a roleplay sequence. Check both spots|r.
     .turnin 92685 >>Turn in The Hills Have Eyes
     .accept 92693 >>Accept Standing Our Ground
-    .target Aamelia Windfield:252800
+    .target Aamelia Windfield::252800
 step << Alliance
     .isOnQuest 92685
     -- .subzoneskip 16626,1
@@ -2846,7 +2843,7 @@ step
     *|cRXP_WARN_She may be moving between locations during a roleplay sequence. Check both spots|r.
     .turnin 92685 >>Turn in The Hills Have Eyes
     .accept 92693 >>Accept Standing Our Ground
-    .target Aamelia Windfield:252800
+    .target Aamelia Windfield::252800
 step
     .goto 2521,46.71,81.94
     >>Return to |cRXP_FRIENDLY_Aamelia Windfield's|r main location and talk to her.
@@ -2867,7 +2864,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
     .turnin 92693 >>Turn in Standing Our Ground
     .accept 92703 >>Accept Deliver the News
-    .target Aamelia Windfield:252800
+    .target Aamelia Windfield::252800
 step << !Shaman
     .isQuestAvailable 92703
     .subzoneskip 16638
@@ -3400,6 +3397,8 @@ step << Alliance Druid
     .target Urs'endris::255853
     .turnin 94006 >>Turn in The Great Ursera Spirit
     .accept 94638 >>Accept Strength and Mercy
+step << Alliance Druid
+--deathskip
 step << Alliance Druid
     #completewith next
     >>Kill |cRXP_ENEMY_Al'Akeths|r.
@@ -4155,7 +4154,7 @@ step
     .skipgossipid 135786
     .skipgossipid 135785 -- engineering
     .skipgossipid 135784 -- no
-
+-- .accept 98285 >>Accept Camping 101: Engineering
 --*Discovery Route(DO NOT DELETE)
 -- step << Alliance
 --     #completewith The Strange Hermit 2
@@ -4379,6 +4378,18 @@ step
     .turnin 93160 >>Turn in The Forest's Bounty
     .turnin 93172 >>Turn in Free the Hollows
     .target Strange Hermit
+step
+    .train 
+    .goto 2521,53.97,38.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strange Hermit|r.
+    .turnin 93160 >>Turn in The Forest's Bounty
+    .turnin 93172 >>Turn in Free the Hollows
+    .turnin 98285 >>Turn in Camping 101: Engineering
+    .target Strange Hermit
+
+    -- step
+--     .goto 2521,53.96,38.90
+--     .accept 98285 >>Accept Camping 101: Engineering
 step
     #hidewindow
     #completewith Pristine Shriekling Feathers
