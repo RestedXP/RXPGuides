@@ -2569,6 +2569,9 @@ step
 
     --Bandarion Keep section
 
+step << !Paladin
+    #optional
+    .maxlevel 11,BandarionKeepSkip
 step
     #completewith next
     .goto 1420/0,1732.500,2437.900,50,0
@@ -2792,6 +2795,9 @@ step << Mage
     .train 145 >> Train your class spells
     .target Cain Firesong
     .xp <12,1
+step
+    #optional
+    #label BandarionKeepSkip
 step << Rogue
     #completewith EnterUC2
     >>|cRXP_WARN_If you see|r |cRXP_FRIENDLY_Astor|r|cRXP_WARN_, talk to him and kill him. Loot him for the letter. He patrols the road between Brill and The Sepulcher|r
@@ -2904,12 +2910,12 @@ step << Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
 step
     #ah
-    .goto 1458/0,257.27,1560.45--c:Undercity,64.20,49.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Rhyker|r
+    .goto 1458/0,224.300,1648.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Cain|r
     >>|cRXP_BUY_Buy Three|r |T133884:0|t[Murloc Eyes] |cRXP_BUY_from the Auction House|r
     >>|cRXP_WARN_Skip this if you want, it's only a small time saver|r
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
-    .target Auctioneer Rhyker
+    .target Auctioneer Cain
 step << Mage
     .goto 1458/0,56.57,1813.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anastasia|r in the Magic Quarter
@@ -3177,6 +3183,14 @@ step << Paladin
     .turnin 94441 >>Turn in A Lesson in Divinity
     .target Danitha Morr
     .isQuestTurnedIn 94436
+step << !Paladin
+    #completewith Entersilverpine
+    #optional
+    .abandon 96899 >>Abandon Bandarion Keep
+step << !Paladin
+    #completewith Entersilverpine
+    #optional
+    .abandon 95314 >>Abandon That Shadowvale Green Elixir
 step << !Paladin
     #completewith next
     .goto 1458/0,419.89,1627.54,50,0
