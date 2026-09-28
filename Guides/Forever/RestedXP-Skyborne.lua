@@ -279,7 +279,7 @@ step
 step
     #completewith UseRacialAbility
     >>Kill |cRXP_ENEMY_Al'Aketh Convert|r and |cRXP_ENEMY_Roiling Winds|r.
-    *|cRXP_WARN_Priotize |cRXP_ENEMY_Roiling Winds|r|r
+    *|cRXP_WARN_Prioritize |cRXP_ENEMY_Roiling Winds|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
     .complete 92465,2 --6/6 Roiling Winds destroyed
     .mob Al'Aketh Convert
@@ -322,7 +322,7 @@ step
     #label Al'Aketh Convert
     >>Kill |cRXP_ENEMY_Al'Aketh Convert|r and |cRXP_ENEMY_Roiling Winds|r.
     *Loot them for the |T1020384:0|t[Signet of Air] << Shaman
-    *|cRXP_WARN_Priotize |cRXP_ENEMY_Roiling Winds|r|r
+    *|cRXP_WARN_Prioritize |cRXP_ENEMY_Roiling Winds|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
     .complete 92465,2 --6/6 Roiling Winds destroyed
     .complete 92466,1 << Shaman --|1/1 Signet of Akir
@@ -621,8 +621,6 @@ step
     .complete 92470,1 --8/8 Ursera Scavenger slain
     .mob Ursera Scavenger
 step
-    #requires Scrawny Ursera Claw2
-    #label Head of Urs'anah
     .goto 2521,37.52,25.6,30,0
     .goto 2521,37.36,24.63,30,0
     .goto 2521,35.88,23.31,10,0
@@ -795,14 +793,14 @@ step << !Rogue !Warrior
     .goto 2521,44.72,45.47
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Shaman/Druid
     >>|cRXP_WARN_Save 2 silver for your class spells!|r << Shaman/Druid
-    .vendor >>|cRXP_WARN_Vendor trash (don't sell strider meat & eggs|r.
+    .vendor >>|cRXP_WARN_Vendor trash (don't sell strider meat or eggs)|r.
     .collect 1179,5 >>Buy |T142815:0|t[Ice Cold Milk] << Mage
 step << Rogue/Warrior
     #completewith The Next Step
     #label VendorStep
     .goto 2521,44.67,45.19,10,0
     .goto 2521,44.78,45.05
-    .vendor >>|cRXP_WARN_Vendor trash (don't sell strider meat & eggs|r.
+    .vendor >>|cRXP_WARN_Vendor trash (don't sell strider meat or eggs)|r.
     .target Belandiel Farflight
 step
     #requires The Next Step
@@ -913,26 +911,26 @@ step << Horde Mage
     #label immediate wand
     #hidewindow
     .isOnQuest 92514
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r
     .train 7411 >>Train |T136189:0|t[Enchanting] |cRXP_WARN_for an immediate wand|r
-    .target Nasalanna Windsinger
+    .target Nasalanna Windsinger::257020
 step << Horde Mage
     #completewith immediate wand
     .goto 2521,43.24,43.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r and buy |T133942:0|t[Copper Rod], |T132841:0|t[Mote of Magic] and |T135435:0|t[Simple Wood].
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r and buy |T133942:0|t[Copper Rod], |T132841:0|t[Mote of Magic] and |T135435:0|t[Simple Wood].
     .collect 6217,1
     .collect 247786,1
     .collect 4470,1
     .skipgossipid 137558
-    .target Nasalanna Windsinger
+    .target Nasalanna Windsinger::257020
 step << Horde Mage
     #requires immediate wand
     .isOnQuest 92514
     .goto 2521,43.24,43.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r
     .train 7411 >>Train |T136189:0|t[Enchanting] |cRXP_WARN_for an immediate wand|r
     .skipgossipid 137559
-    .target Nasalanna Windsinger
+    .target Nasalanna Windsinger::257020
 step << Horde Mage
     .isOnQuest 92514
     .train 7411,3
@@ -969,27 +967,27 @@ step << Alliance Mage
     #completewith next
     #label immediate wand
     #hidewindow
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r
     .train 7411 >>Train |T136189:0|t[Enchanting] |cRXP_WARN_for immediate wand|r
-    .target Nasalanna Windsinger
+    .target Nasalanna Windsinger::257020
 step << Alliance Mage
     #completewith immediate wand
     .isOnQuest 93461
     .goto 2521,43.24,43.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r and buy |T133942:0|t[Copper Rod], |T132841:0|t[Mote of Magic] and |T135435:0|t[Simple Wood].
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r and buy |T133942:0|t[Copper Rod], |T132841:0|t[Mote of Magic] and |T135435:0|t[Simple Wood].
     .collect 6217,1
     .collect 247786,3
     .collect 4470,1
     .skipgossipid 137558
-    .target Nasalanna Windsinger
+    .target Nasalanna Windsinger::257020
 step << Alliance Mage
     #requires immediate wand
     .isOnQuest 93461
     .goto 2521,43.24,43.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r
     .train 7411 >>Train |T136189:0|t[Enchanting] |cRXP_WARN_for immediate wand|r
     .skipgossipid 137559
-    .target Nasalanna Windsinger
+    .target Nasalanna Windsinger::257020
 step << Alliance Mage
     .isOnQuest 93461
     .train 7411,3
@@ -1069,7 +1067,7 @@ step
     .goto 2521,44.47,44.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teeri Wellwind|r.
     .accept 93319 >>Accept Pilfered Windstones
-    .accept 92516 >>Accept Hippogryph Harrassment
+    .accept 92516 >>Accept Hippogryph Harassment
     .target Teeri Wellwind
 step
     .goto 2521,44.68,44.53
@@ -1176,7 +1174,7 @@ step
 step
     #completewith BadwindBennicA
     >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
-    *|cRXP_WARN_Priotize them|r
+    *|cRXP_WARN_Prioritize them|r
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob Galestrider::251661
@@ -1420,7 +1418,7 @@ step
     .accept 97969 >>Accept Camping 101: Leatherworking
     .target Raan Wildwind::263664
 step << Horde
-    #completewith HippogryphHarrassmentA
+    #completewith HippogryphHarassmentA
     #hidewindow
     #loop
     -- .goto 2521,39.66,49.62,40,0
@@ -1441,12 +1439,12 @@ step << Horde
     .goto 2521,40.22,56.94,40,0
     +1
 step
-    #completewith HippogryphHarrassmentA
+    #completewith HippogryphHarassmentA
     >>Kill |cRXP_ENEMY_Prideclaws|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step
-    #completewith HippogryphHarrassmentA
+    #completewith HippogryphHarassmentA
     >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
@@ -1472,13 +1470,13 @@ step
     .isOnQuest 92516
     .isQuestNotComplete 92516
     .subzoneskip 16623,1
-    #arrowtext Jump of the mountain\n Use |T132845:0|t[Walk on Air]
+    #arrowtext Jump off the mountain\nUse |T132845:0|t[Walk on Air]
     .goto 2521,36.44,50.93
-    .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] to fly towards the waypoint.
+    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the waypoint.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 step << Alliance
-    #completewith HippogryphHarrassmentA
+    #completewith HippogryphHarassmentA
     #hidewindow
     #loop
     .goto 2521,36.44,50.93,40,0
@@ -1502,7 +1500,7 @@ step
     #completewith next
     >>Kill |cRXP_ENEMY_Hippogryph Youth|r, |cRXP_ENEMY_Hippogryph Protector|r and the |cRXP_ENEMY_Hippogryph Matriarch|r.
     *|cRXP_WARN_Keep an eye out for Windstones to recover and Tornadoes for a movement speed boost|r
-    *|cRXP_WARN_Priotize |cRXP_ENEMY_Matriarch|r|r
+    *|cRXP_WARN_Prioritize the |cRXP_ENEMY_Matriarch|r|r
     .complete 92516,1 --|8/8 Hippogryph Youth slain
     .complete 92516,2 --|6/6 Hippogryph Protector slain
     .complete 92516,3 --|1/1 Hippogryph Matriarch slain
@@ -1513,9 +1511,9 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Hippogryph Downs|r.
     .complete 93951,1 --|8/8 Hippogryph Down
 step
-    #label HippogryphHarrassmentA
+    #label HippogryphHarassmentA
     >>Kill |cRXP_ENEMY_Hippogryph Youth|r, |cRXP_ENEMY_Hippogryph Protector|r and the |cRXP_ENEMY_Hippogryph Matriarch|r.
-    *|cRXP_WARN_Priotize |cRXP_ENEMY_Matriarch|r|r
+    *|cRXP_WARN_Prioritize the |cRXP_ENEMY_Matriarch|r|r
     .complete 92516,1 --|8/8 Hippogryph Youth slain
     .complete 92516,2 --|6/6 Hippogryph Protector slain
     .complete 92516,3 --|1/1 Hippogryph Matriarch slain
@@ -1584,7 +1582,7 @@ step
     .isQuestComplete 97971
     .isQuestAvailable 92517
     .goto 2521,43.3,43.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mendalass Tattermend::263664|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mendalass Tattermend::257024|r
     .turnin 97971 >>Turn in Camping 101: Skinning
     .target Mendalass Tattermend::257024
 step
@@ -1680,7 +1678,7 @@ step
     .goto 2521,44.465,44.966
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teeri Wellwind::251906|r
     .target Teeri Wellwind::251906
-    .turnin 92516 >>Turn in Hippogryph Harrassment
+    .turnin 92516 >>Turn in Hippogryph Harassment
     .turnin 93319 >>Turn in Pilfered Windstones
 step << Warrior
     .subzoneskip 16624,1
@@ -1830,7 +1828,7 @@ step
     .subzoneskip 16624,1
     .goto 2521,45.374,53.512,25,0
     .goto 2521,46.880,56.242
-    .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 step
@@ -1845,8 +1843,8 @@ step
     .isOnQuest 92528
     .subzoneskip 16636,1
     .goto 2521,46.89,56.24
-    .target Missionary Jasaan::257065
-    .aura 1254832 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sania Silverstream::257065|r
+    .target Sania Silverstream::251904
+    .aura 1254832 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sania Silverstream::251904|r
     .skipgossipid 137586 -- I seem to have lost my mark of Akir. Would you please bestow it upon me once more?
 step << Horde
     .isOnQuest 92528
@@ -1879,7 +1877,7 @@ step
     .subzoneskip 16624
     .goto 2521,46.86,51.54,25,0
     .goto 2521,44.37,46.69
-    .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 step << Rogue
@@ -1922,7 +1920,7 @@ step
     .goto 2521,45.35,46.79,20,0
     .goto 2521,44.05,49.98,30,0
     .goto 2521,43.02,49.86
-    .deathskip >>Die to the south west of Shen'dar Village and respawn at the Spirit Healer
+    .deathskip >>Die southwest of Shen'dar Village and respawn at the Spirit Healer
 -- #ignorecorpse
     .macro Sit,134400 >>/sit
     .target Spirit Healer
@@ -1973,7 +1971,7 @@ step
     .isOnQuest 92551
     .isQuestNotComplete 92551
     .goto 2521,50.29,56.95
-    .cast 1259416 >>Jump of the tower and use |T132845:0|t[Walk on Air] to fly towards the waypoint location.
+    .cast 1259416 >>Jump off the tower and use |T132845:0|t[Walk on Air] to fly towards the waypoint location.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 step  << Alliance
@@ -2140,7 +2138,7 @@ step
     .isQuestComplete 97971
     .isQuestAvailable 92550
     .goto 2521,43.3,43.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mendalass Tattermend::263664|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mendalass Tattermend::257024|r
     .turnin 97971 >>Turn in Camping 101: Skinning
     .target Mendalass Tattermend::257024
 step
@@ -2253,7 +2251,7 @@ step
 step
     .subzoneskip 16624,1
     .goto 2521,49.4,58.76
-    .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] to fly towards the waypoint location.
+    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the waypoint location.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 step
@@ -2405,8 +2403,8 @@ step << Horde
     .goto 2521,66.488,76.498,6,0
     .goto 2521,63.027,77.807 << Hunter
     .goto 2521,61.491,76.893 << !Hunter
-    .cast 1259416 >>Walk of the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
-    *|cRXP_WARN_If you time it correctly you can canel it midair to land in the building|r
+    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+    *|cRXP_WARN_If you time it correctly, you can cancel it midair to land in the building|r
     .cooldown spell,1259416,>0,1
     .usespell 1259416
     .macro Cancel Walk on Air,132845 >>/cancelaura Walk on Air
@@ -2414,8 +2412,8 @@ step << Alliance
     .isOnQuest 92699 
     .goto 2521,66.47,76.68,10,0
     .goto 2521,66.63,79.94
-    .cast 1259416 >>Walk of the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
-    *|cRXP_WARN_If you time it correctly you can canel it midair to land in the building|r
+    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+    *|cRXP_WARN_If you time it correctly, you can cancel it midair to land in the building|r
     .cooldown spell,1259416,>0,1
     .usespell 1259416
     .macro Cancel Walk on Air,132845 >>/cancelaura Walk on Air
@@ -2479,7 +2477,7 @@ step << Alliance
     .isOnQuest 92727
     .goto 2521,67.41,80.46
 -- #ignorecorpse
-    .deathskip >>Jump of the cliff
+    .deathskip >>Jump off the cliff
     .macro Sit,134400 >>/sit
     .subzoneskip 16638,1
     .skipgossipid 96031
@@ -2750,7 +2748,7 @@ step << Shaman
     .isQuestNotComplete 97244
     .goto 2521,50.8,89.6
 -- #ignorecorpse
-    .deathskip >>|cRXP_WARN(BETA: Ressurection Sickness is bugged. Skip this step for now).|r Jump down to die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
+    .deathskip >>|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r Jump down to die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
 step << Shaman
     .goto 2521,64.380,63.586
     >>Kill the |cRXP_ENEMY_Skypriest Faladiel::268602|r. Loot him for |T1:0|t[|cRXP_LOOT_Faladiel's Heart|r].
@@ -2760,7 +2758,7 @@ step << Shaman
     .isOnQuest 97244
     .goto 2521,62.384,64.393
 -- #ignorecorpse
-    .deathskip >>|cRXP_WARN(BETA: Ressurection Sickness is bugged. Skip this step for now).|r Jump down to die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
+    .deathskip >>|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r Jump down to die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
 step << Shaman
     .goto 2521,51.241,86.193
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Olariaan Swiftburn::268592|r.
@@ -2836,7 +2834,7 @@ step << Alliance
     .goto 2521,43.84,75.53,30,0
     .goto 2521,44.06,76.19,15,0
     .goto 2521,47.511,78.490
-    .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] |cRXP_WARN_in midair|r to fly towards the waypoint location. <<!Shaman
+    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] |cRXP_WARN_in midair|r to fly towards the waypoint location. << !Shaman
     .cast 1259416 >>Return to the |cRXP_ENEMY_Highlands Bandit|r mountain, then jump and use |T132845:0|t[Walk on Air] |cRXP_WARN_while in midair|r to fly toward the waypoint. << Shaman
     .cooldown spell,1259416,>0,1
     .usespell 1259416
@@ -2851,7 +2849,7 @@ step
     .target Aamelia Windfield:252800
 step
     .goto 2521,46.71,81.94
-    >>Return to |cRXP_FRIENDLY_Aamelia Windfields|r main location and talk to her.
+    >>Return to |cRXP_FRIENDLY_Aamelia Windfield's|r main location and talk to her.
     .complete 92693,1 --1/1 Speak with Aamelia Windfield
     .timer 75,Roleplay Duration
     .target Aamelia Windfield
@@ -2955,7 +2953,7 @@ step << Alliance Druid
     .cooldown spell,1259705,<0,1
 step << Horde Druid
     .subzoneskip 16638,1
-    .isQuestAvailable
+    .isQuestAvailable 98512
     #completewith next
     .goto 2521,63.33,73.65,15,0
     .goto 2521,63.973,75.095,25 >>Go over the mountain
@@ -3029,20 +3027,13 @@ step << Alliance
     .isQuestNotComplete 92840
     .goto 2521,67.41,80.46
 -- #ignorecorpse
-    .deathskip >>Jump of the cliff|cRXP_WARN_|r
-    *|cRXP_WARN_(BETA: Ressurection Sickness is bugged. Skip this step for now).|r
+    .deathskip >>Jump off the cliff
+    *|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r
     .skipgossipid 96031
     .skipgossipid 98031
     .macro Sit,134400 >>/sit
     .subzoneskip 16638,1
     .target Spirit Healer
-step << Alliance
-    #completewith next
-    >>Kill |cRXP_ENEMY_Windsong Crawlers|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
-    .complete 93317,1 --6/6 Windsong Crawler Meat
-    .skipgossipid 98031
-    .skipgossipid 96031
-    .mob Windsong Crawler
 step << Horde Hunter
     #loop
     .goto 2521,54.460,78.811,48,0
@@ -3100,6 +3091,14 @@ step << Horde Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'dora Quickgale::254411|r.
     .turnin 94050 >>Turn in Training the Beast
     .target Quel'dora Quickgale::254411
+step << Horde Hunter
+    .goto 2521,59.605,72.527
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'dora Quickgale::254411|r.
+    .train 4195 >>Train |T136112:0|t[Great Stamina]
+    .train 24547 >>Train |T136094:0|t[Natural Armor]
+    .skipgossipid 97876
+    .target Quel'dora Quickgale::254411
+    .xp <10,1
 step << Mage
     .goto 2521,62.887,77.324
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belann Windwood::256507|r.
@@ -3116,35 +3115,9 @@ step << Mage
     .train 587 >>Train |T133952:0|t[Conjure Food]
     .train 5505 >>Train |T132794:0|t[Conjure Water (Rank 2)]
     .skipgossipid 136807
-    .target Shenaan Spellwind
     .money <0.08
     .xp <10,1
     .target Anathamaas Aetherwind
-step << Alliance
-    #label Turn in The Missing Scholar
-    .goto 2521,66.26,79.90
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dondallion Whisperwind|r.
-    .turnin 92850 >>Turn in The Missing Scholar
-    .accept 99260 >>Accept Fillion's Mission
-    .target Dondallion Whisperwind
-step << Alliance
-    .goto 2521,66.627,79.942
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
-    .target Elaadrin Evengale::252475
-    .turnin 99260 >>Turn in Fillion's Mission
-    .accept 92840 >>Accept Catching Wind
-step << Alliance
-    .isOnQuest 92840
-    .isQuestNotComplete 92840
-    .goto 2521,67.41,80.46
--- #ignorecorpse
-    .deathskip >>Jump of the cliff
-    *|cRXP_WARN_(BETA: Ressurection Sickness is bugged. Skip this step for now).|r
-    .skipgossipid 96031
-    .skipgossipid 98031
-    .macro Sit,134400 >>/sit
-    .subzoneskip 16638,1
-    .target Spirit Healer
 step << Alliance Hunter
     #completewith next
     .goto 2521,51.56,71.28,40,0
@@ -3208,7 +3181,7 @@ step << Alliance Hunter
     .subzoneskip 16638
     .goto 2521,50.57,68.18,30,0
     .goto 2521,52.73,71.12
-    .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 step << Alliance !Hunter
@@ -3217,17 +3190,17 @@ step << Alliance !Hunter
     .subzoneskip 16638
     .goto 2521,49.46,70.12,30,0
     .goto 2521,65.577,76.650
-    .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
--- step << Alliance --the actual right step(beta just needs to be fixed)
+-- step << Alliance --The correct step; the beta issue still needs to be fixed.
 --     .subzoneskip 16638
 --     .isOnQuest 92840
 --     .isQuestComplete 92840
 --     .goto 2521,48.37,70.01
 -- -- #ignorecorpse
---     .deathskip >>Die to the monsters or jump of the cliff
---     *|cRXP_WARN_(BETA: Ressurection Sickness is bugged. Skip this step for now).|r
+--     .deathskip >>Die to the monsters or jump off the cliff
+--     *|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r
 --     .skipgossipid 96031
 --     .skipgossipid 98031
 --     .macro Sit,134400 >>/sit
@@ -3319,6 +3292,14 @@ step << Alliance Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'dora Quickgale::254411|r.
     .turnin 94050 >>Turn in Training the Beast
     .target Quel'dora Quickgale::254411
+step << Alliance Hunter
+    .goto 2521,59.605,72.527
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'dora Quickgale::254411|r.
+    .train 4195 >>Train |T136112:0|t[Great Stamina]
+    .train 24547 >>Train |T136094:0|t[Natural Armor]
+    .skipgossipid 97876
+    .target Quel'dora Quickgale::254411
+    .xp <10,1
 step << Alliance
     #loop
     .goto 2521,58.85,75.49,30,0
@@ -3377,7 +3358,7 @@ step << Alliance
     #completewith next
     .isOnQuest 93320
     .goto 2521,66.47,76.64,10,0
-    .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 step << Alliance
@@ -3410,7 +3391,7 @@ step << Alliance Druid
     -- .subzone 16593
     .goto 2521,69.01,65.86,20,0
     .goto 2521,69.84,61.73
-    .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 step << Alliance Druid
@@ -3585,8 +3566,8 @@ step << Alliance
 --     .isOnQuest 92834
 --     .goto 2521,66.46,76.67,8,0
 --     .goto 2521,66.63,79.94
---     .cast 1259416 >>Walk of the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
---     *|cRXP_WARN_If you time it correctly you can canel it midair to land in the building|r
+--     .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+--     *|cRXP_WARN_If you time it correctly, you can cancel it midair to land in the building|r
 --     .cooldown spell,1259416,>0,1
 --     .usespell 1259416
 
@@ -3650,7 +3631,7 @@ step << Alliance
     .isNotOnQuest 98512
     .goto 2521,66.42,83.48
 -- #ignorecorpse
-    .deathskip >>Jump of the cliff
+    .deathskip >>Jump off the cliff
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer
@@ -3842,7 +3823,7 @@ step << Horde
 --     .isOnQuest 92640
 --     .goto 2521,66.49,76.64,8,0
 --     .goto 2521,63.33,78.16
---     .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+--     .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
 --     .cooldown spell,1259416,>0,1
 --     .usespell 1259416
 -- step << Alliance
@@ -3970,7 +3951,7 @@ step << Warrior
 --     .goto 2521,63.05,52.57
 --     .goto 2521,61.33,53.02
 --     >>Kill |cRXP_ENEMY_Al'Akeths|r.
---     *|cRXP_WARN_Priotize |cRXP_ENEMY_Guardians|r|r
+--     *|cRXP_WARN_Prioritize the |cRXP_ENEMY_Guardians|r|r
 --     .complete 92947,1 --8/8 Al'Aketh Guardian slain
 --     .complete 92947,2 --8/8 Al'Aketh Spiritcaller slain
 --     .complete 92947,3 --8/8 Al'Aketh Blademaster slain
@@ -4002,7 +3983,7 @@ step << Warrior
 --     .goto 2521,64.03,46.25,40,0
 --     .goto 2521,59.91,49.6,40,0
 --     >>Kill |cRXP_ENEMY_Al'Akeths|r.
---     *|cRXP_WARN_Priotize |cRXP_ENEMY_Guardians|r|r
+--     *|cRXP_WARN_Prioritize the |cRXP_ENEMY_Guardians|r|r
 --     .complete 92947,1 --8/8 Al'Aketh Guardian slain
 --     .complete 92947,2 --8/8 Al'Aketh Spiritcaller slain
 --     .complete 92947,3 --8/8 Al'Aketh Blademaster slain
@@ -4119,7 +4100,7 @@ step << Warrior
 --     .isOnQuest 93089
 --     .goto 2521,66.47,76.66,8,0
 --     .goto 2521,66.63,79.95
---     .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+--     .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
 --     .cooldown spell,1259416,>0,1
 --     .usespell 1259416
 -- step << Alliance
@@ -4645,7 +4626,7 @@ step << Alliance
     .isOnQuest 92640
     .goto 2521,66.49,76.64,8,0
     .goto 2521,63.33,78.16
-    .cast 1259416 >>Jump of the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 step << Alliance
@@ -4737,17 +4718,17 @@ step  << Alliance
     .goto 2521,66.09,80.96,25,0
     .goto 2521,65.42,81.01,25,0
     .goto 2521,65.1,81.52,25,0
-    >>Wait for the Zepplinn to arrive.
+    >>Wait for the Zeppelin to arrive.
     *|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denaaris Stargale::259084|r.
     .turnin 94946 >>Turn in The Magical City of Dalaran
 step << Alliance
     #completewith Magical City of Dalaran
     .goto 2521,65.81,83.44
-    .zone 1056 >> Take the Zepplin to Dalaran
+    .zone 1056 >>Take the Zeppelin to Dalaran
 step  << Alliance
     #requires Magical City of Dalaran
     .goto 1416/0,438.93,448.88
-    >>Wait for the Zepplinn to arrive
+    >>Wait for the Zeppelin to arrive
     *|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denaaris Stargale::259084|r.
     .target Denaaris Stargale::259084
     .turnin 94946 >>Turn in The Magical City of Dalaran
@@ -4773,10 +4754,10 @@ step << Alliance
     .accept 98021 >>Accept Journey to Sentinel Hill
 step  << Alliance
     .goto 1453/0,350.200,-8516.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Randal Emerson::1748|r inside the castle.
-    .complete 93963,1 --1/1 Recieve Instructions from Randal Emerson
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Randal Emerson::275491|r inside the castle.
+    .complete 93963,1 --1/1 Receive Instructions from Randal Emerson
     .skipgossipid 142485
-    .target Randal Emerson
+    .target Randal Emerson::275491
 step << Horde
     .goto 2521,63.989,75.090
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
@@ -4827,7 +4808,7 @@ step << Horde
     .target Riaani Nightwind::256083
 step << Horde
     .goto 2521,58.986,75.460
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ailee Thriceforged::257422|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Railee Thriceforged::257422|r.
     .vendor >>Vendor trash.
     .target Railee Thriceforged::257422
 step << Horde
