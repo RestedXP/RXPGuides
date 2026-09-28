@@ -1072,6 +1072,7 @@ step << Druid NightElf
 step << Druid NightElf
     #season 0
     #label RedCrystal
+    .isOnQuest 4811
     .goto 1439,47.314,48.676
     >>Travel up to the |cRXP_PICK_Mysterious Red Crystal|r
     >>|cRXP_WARN_Be careful of the two group of 2 |cRXP_ENEMY_Raging Moonkins|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
@@ -1129,6 +1130,13 @@ step << Druid NightElf
     .accept 4812 >> Accept As Water Cascades
     .target Sentinel Glynda Nal'Shea
     .isOnQuest 4811
+step << Druid NightElf
+    #season 0
+    .goto 1439,37.703,43.393
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    .accept 4812 >> Accept As Water Cascades
+    .target Sentinel Glynda Nal'Shea
+    .isQuestTurnedIn 4811
 step << Druid NightElf
     #season 0
     .goto 1439,37.767,44.001
