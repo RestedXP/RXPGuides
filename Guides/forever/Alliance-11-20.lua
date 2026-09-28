@@ -2341,7 +2341,7 @@ step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias::483|r
     .target Elaine Trias::483
     .turnin 97222 >>Turn in Gatehouse Goods
-step
+step << NightElf
     #include 13-15 Westfall@NEWestfallStart-NEWestfallEnd
 step << NightElf
     .hs >>Hearthstone to Auberdine
