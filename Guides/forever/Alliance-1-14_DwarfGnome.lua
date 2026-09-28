@@ -2381,6 +2381,12 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belia Thundergranite|r
     .trainer >> Train your class spells
     .target Regnus Thundergranite
+step << Dawrf Priest
+    .goto 1455/0,-897.200,-4607.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priest Rohan|r  
+    .turnin 5639 >> Turn in Desperate Prayer
+    .trainer >> Train your class spells
+    .target High Priest Rohan
 step << Priest/Mage/Warlock
     #ah
     #label OilWandFood
@@ -2599,21 +2605,6 @@ step << !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furen Longbeard|r
     .turnin 1338 >> Turn in Stormpike's Order
     .target Furen Longbeard
-step << Priest
-    #optional
-    #completewith next
-    .goto 1453/0,809.52,-8579.22,20 >> Travel to the Stormwind Cathedral
-step << Priest
-    .goto 1453/0,862.89,-8519.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
-    .trainer >> Train your class spells
-    .turnin 5634 >> Turn in Desperate Prayer << Dwarf
-    .target High Priestess Laurena
-step << Dwarf Priest
-    .goto 1453/0,861.81,-8512.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
-    .train 13908 >> Train Desperate Prayer
-    .target High Priestess Laurena
 step << Warrior
     .goto 1453/0,358.25,-8728.28,15,0
     .goto 1453/0,302.6,-8685.53,15,0
