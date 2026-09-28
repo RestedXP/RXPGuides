@@ -2974,6 +2974,12 @@ step << Druid
     .target Lotheluum Starbreeze::252359
     .money <0.12
     .xp <10,1
+step << Horde Druid
+    .goto 2521,69.782,61.609
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urs'endris::255853|r.
+    .turnin 94006 >>Turn in The Great Ursera Spirit
+    .accept 94638 >>Accept Strength and Mercy
+    .target Urs'endris::255853
 step << Rogue
     .goto 2521,59.9,72.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eltheen Nightbreeze|r.
@@ -3068,15 +3074,22 @@ step << Horde Hunter
     .target Quel'ana Quickgale::252389
 step << Horde Hunter
     #loop
-    .goto 2521,54.23,75,40,0
-    .goto 2521,53.45,80.93,40,0
-    .goto 2521,52.56,77.82,40,0
-    .goto 2521,61.944,68.828,35,0
-    .goto 2521,59.516,64.846,35,0
-    .goto 2521,57.041,67.729,35,0
-    .goto 2521,54.322,75.080,35,0
-    .goto 2521,51.925,80.458,35,0
-    .goto 2521,52.920,81.509,35,0
+    .goto 2521,56.946,67.887,35,0
+    .goto 2521,54.080,74.719,35,0
+    .goto 2521,52.625,77.864,25,0
+    .goto 2521,53.021,81.568,25,0
+    .goto 2521,51.647,80.140,25,0
+    .goto 2521,48.981,82.669,35,0
+
+    -- .goto 2521,54.23,75,40,0
+    -- .goto 2521,53.45,80.93,40,0
+    -- .goto 2521,52.56,77.82,40,0
+    -- .goto 2521,61.944,68.828,35,0
+    -- .goto 2521,59.516,64.846,35,0
+    -- .goto 2521,57.041,67.729,35,0
+    -- .goto 2521,54.322,75.080,35,0
+    -- .goto 2521,51.925,80.458,35,0
+    -- .goto 2521,52.920,81.509,35,0
     .use 264163 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Vuldren|r |cRXP_WARN_at max range|r.
     .complete 94013,1 --Tame a Vuldren
     .mob Vuldren::250874
@@ -3315,6 +3328,24 @@ step << Alliance
     .goto 2521,63.16,78.97,30,0
     .goto 2521,65.37,78.53,40,0
     >>Kill |cRXP_ENEMY_Skyhopper|r.
+    .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
+    .mob Skyhopper
+step << Horde
+    #loop
+    .goto 2521,58.85,75.49,30,0
+    .goto 2521,59.05,76.35,30,0
+    .goto 2521,59.8,75.68,30,0
+    .goto 2521,61.4,74.76,40,0
+    .goto 2521,62.61,76.14,40,0
+    .goto 2521,63.1,77.59,20,0
+    .goto 2521,62.67,77.77,15,0
+    .goto 2521,63.13,77.32,15,0
+    .goto 2521,62.97,76.91,15,0
+    .goto 2521,63.8,78.01,30,0
+    .goto 2521,63.16,78.97,30,0
+    .goto 2521,65.37,78.53,40,0
+    >>Kill |cRXP_ENEMY_Skyhopper|r.
+    *|cRXP_WARN_This quest is optional. You can skip it if there are too many other players doing it at the same time.|r
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper
 step << Alliance
@@ -3666,6 +3697,37 @@ step << Alliance
 --     .turnin 92643 >>Turn in The Turncoat
 --     .accept 92644 >>Accept Unfortunate News
 --     .target Dead Cultist
+step << Horde
+    #completewith next
+    #label BuggedHordeA
+    #optional
+    .isOnQuest 93949
+    .isQuestComplete 93949
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist::252383|r.
+    .turnin 93949 >>Turn in Bugged
+    .target Valennia Stormfist::252383
+step << Horde
+    #optional
+    #completewith BuggedHordeA
+    .goto 2521,65.93,76.37,8,0
+    .goto 2521,66.46,76.8,5,0
+    .goto 2521,66.43,76.58,5,0
+    .goto 2521,66.43,76.83,5,0
+    .goto 2521,66.31,77.08,5,0
+    .goto 2521,66,76.57,8,0
+    .goto 2521,66.19,76.22,8,0
+    .goto 2521,66.44,76.4,5 >>Climb the tower
+step << Horde
+    #requires BuggedHordeA
+    #optional
+    .isOnQuest 93949
+    .isQuestComplete 93949
+    .goto 2521,66.18,76.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist::252383|r.
+    .turnin 93949 >>Turn in Bugged
+    .target Valennia Stormfist::252383
+step << Horde
+    .abandon 93949 >>Abandon Bugged
 step
     #loop
     .goto 2521,55.73,59.73,30,0
@@ -4917,73 +4979,6 @@ step << Horde
     .target Vol'jin::10540
 ]])
 
-
---Hunter class quest chain
-RXPGuides.RegisterGuide([[
-#forever
-#version 1
-#name Skyborne Hunter Class Quests
-
-step
-    .goto 2521,59.572,72.639
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
-    .accept 94978 >>Accept Taming the Beast
-    .target Quel'ana Quickgale::252389
-step
-    #loop
-    .goto 2521,54.460,78.811,48,0
-    .goto 2521,51.968,73.084,35,0
-    .goto 2521,53.126,73.502,20,0
-    .goto 2521,51.268,69.758,35,0
-    .use 267272 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Windsong Crawler|r |cRXP_WARN_at max range|r.
-    .complete 94978,1 --Tame a Windsong Crawler
-    .mob Windsong Crawler
-step
-    .goto 2521,59.571,72.639
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
-    .turnin 94978 >>Turn in Taming the Beast
-    .accept 94979 >>Accept Taming the Beast
-    .target Quel'ana Quickgale::252389
-step
-    #completewith next
-    +|cRXP_WARN_Dismiss your |cRXP_ENEMY_Windsong Crawler|r by right clicking its unit frame and clicking dismiss, otherwise you'll be unable to tame an|r |cRXP_ENEMY_Armored Scorpid|r
-step
-    #loop
-    .goto 2521,60.905,69.414,35,0
-    .goto 2521,58.339,68.476,35,0
-    .goto 2521,53.799,72.161,35,0
-    .use 267298 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on an|r |cRXP_ENEMY_Ornery Galestrider|r |cRXP_WARN_at max range|r.
-    .complete 94979,1 --Tame an Ornery Galestrider
-    .mob Ornery Galestrider
-step
-    .goto 2521,59.571,72.639
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
-    .turnin 94979 >>Turn in Taming the Beast
-    .accept 94013 >>Accept Taming the Beast
-    .target Quel'ana Quickgale::252389
-step
-    #loop
-    .goto 2521,61.944,68.828,35,0
-    .goto 2521,59.516,64.846,35,0
-    .goto 2521,57.041,67.729,35,0
-    .goto 2521,54.322,75.080,35,0
-    .goto 2521,51.925,80.458,35,0
-    .goto 2521,52.920,81.509,35,0
-    .use 264163 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Vuldren|r |cRXP_WARN_at max range|r.
-    .complete 94013,1 --Tame a Vuldren
-    .mob Vuldren::250874
-step
-    .goto 2521,59.571,72.639
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
-    .turnin 94013 >>Turn in Taming the Beast
-    .accept 94050 >>Accept Training the Beast
-    .target Quel'ana Quickgale::252389
-step
-    .goto 2521,59.605,72.527
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quel'dora Quickgale::254411|r.
-    .turnin 94050 >>Turn in Training the Beast
-    .target Quel'dora Quickgale::254411
-]])
 --Druid class quest chain
 RXPGuides.RegisterGuide([[
 #forever
