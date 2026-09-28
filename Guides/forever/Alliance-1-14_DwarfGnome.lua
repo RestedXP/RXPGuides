@@ -792,6 +792,13 @@ step
     .train 2550 >> Train |T133971:0|t[Cooking]
     .turnin 96629 >>Turn in Camping 101: Cooking
     .money <0.0100
+step
+    #optional
+    .isQuestComplete 96629
+    .goto 1426/0,-545.800,-5594.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor::1699|r
+    .target Gremlock Pilsnor::1699
+    .turnin 96629 >>Turn in Camping 101: Cooking
 step << Rogue
     .goto 1426/0,-540.39,-5604.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r inside in the backroom
@@ -4055,6 +4062,11 @@ step << Dwarf Paladin
 
 ----Start of <1.5x IF->Westfall Section----
 
+step << Rogue
+    .goto 1455/0,-1197.27,-5041.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Buliwyf Stonehand|r inside
+    .train 196 >> Train 1h Axes
+    .target Buliwyf Stonehand
 step << Paladin
     .goto 1455/0,-907.69,-4592.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldruk Doombrow|r
