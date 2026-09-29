@@ -21,21 +21,35 @@ local DELETE_JUNK_BINDING = "CLICK RXPInventory_DeleteJunk:LeftButton"
 addon.inventoryManager = addon:NewModule("InventoryManager", "AceEvent-3.0")
 
 local session = {
-    deleteBag = nil,
-    deleteSlot = nil,
-    manualDelete = false,
-    sellGoods = false,
-    bindingIndex = nil,
-    itemsToOpen = {},
-    projectileType = 0,
-    quiverFreeSlots = 0,
-    quiverSlot = nil,
-    organizeQuiver = false,
-    closestSlot = {},
-    sortTimer = 0,
-    updateTimer = 0,
-    merchantOpened = false,
-    updateBags = false
+    deletion = {
+        bag = nil,
+        slot = nil,
+        manual = false
+    },
+    merchant = {
+        sellGoods = false,
+        opened = false
+    },
+    binding = {
+        index = nil
+    },
+    items = {
+        toOpen = {}
+    },
+    quiver = {
+        projectileType = 0,
+        freeSlots = 0,
+        slot = nil,
+        organize = false,
+        closestSlot = {}
+    },
+    timers = {
+        sort = 0,
+        update = 0
+    },
+    bags = {
+        update = false
+    }
 }
 
 local SSHARD = 6265
@@ -51,14 +65,14 @@ function addon.inventoryManager:Setup()
         for _, icon in pairs(self.junkIcons or {}) do icon:Hide() end
         for frame in pairs(self.hookedFrames or {}) do if frame.JunkIcon then frame.JunkIcon:Hide() end end
 
-        session.deleteBag = nil
-        session.deleteSlot = nil
-        session.manualDelete = false
-        session.sellGoods = false
-        session.updateTimer = 0
-        session.organizeQuiver = false
-        session.merchantOpened = false
-        session.updateBags = false
+        session.deletion.bag = nil
+        session.deletion.slot = nil
+        session.deletion.manual = false
+        session.merchant.sellGoods = false
+        session.timers.update = 0
+        session.quiver.organize = false
+        session.merchant.opened = false
+        session.bags.update = false
 
         return
     end
@@ -184,8 +198,8 @@ function addon.inventoryManager:PLAYER_ENTERING_WORLD() self:Setup() end
 function addon.inventoryManager:BAG_CONTAINER_UPDATE()
     if not self:IsFeatureEnabled() then return end
 
-    session.updateTimer = 0
-    session.updateBags = true
+    session.timers.update = 0
+    session.bags.update = true
 
     self:ScheduleBagUpdate()
 end
@@ -193,8 +207,8 @@ end
 function addon.inventoryManager:BAG_UPDATE_DELAYED()
     if not self:IsFeatureEnabled() then return end
 
-    session.updateTimer = 0
-    session.updateBags = true
+    session.timers.update = 0
+    session.bags.update = true
 
     self:ScheduleBagUpdate()
 end
@@ -202,17 +216,17 @@ end
 function addon.inventoryManager:MERCHANT_SHOW()
     if not self:IsFeatureEnabled() then return end
 
-    session.merchantOpened = true
-    session.updateTimer = 0
+    session.merchant.opened = true
+    session.timers.update = 0
 
     self:ScheduleBagUpdate()
 end
 
 function addon.inventoryManager:PLAYER_MONEY()
-    if not self:IsFeatureEnabled() or not session.sellGoods then return end
+    if not self:IsFeatureEnabled() or not session.merchant.sellGoods then return end
 
-    session.merchantOpened = true
-    session.updateTimer = 0.125
+    session.merchant.opened = true
+    session.timers.update = 0.125
 
     self:ScheduleBagUpdate()
 end
@@ -279,8 +293,8 @@ function addon.inventoryManager:FindQuiverSlot()
         free, bagType = self.bagManager:GetContainerNumFreeSlots(bag)
 
         if bit.band(bagType, 3) > 0 then
-            session.quiverSlot = bag
-            session.projectileType, session.quiverFreeSlots = bagType, free
+            session.quiver.slot = bag
+            session.quiver.projectileType, session.quiver.freeSlots = bagType, free
         end
     end
 end
@@ -288,63 +302,63 @@ end
 function addon.inventoryManager:SortQuiver()
     -- Makes sure you only have 1 partial stack at the left most quiver slot for each ammo type
     if not self:IsFeatureEnabled() or addon.gameVersion > 30000 or UnitIsDead('player') then return end
-    session.organizeQuiver = false
+    session.quiver.organize = false
 
-    if not session.quiverSlot then
+    if not session.quiver.slot then
         self:FindQuiverSlot()
     else
-        local _, quiverType = self.bagManager:GetContainerNumFreeSlots(session.quiverSlot)
+        local _, quiverType = self.bagManager:GetContainerNumFreeSlots(session.quiver.slot)
         if bit.band(quiverType, 3) == 0 then self:FindQuiverSlot() end
     end
 
     local id
 
-    table.wipe(session.closestSlot)
+    table.wipe(session.quiver.closestSlot)
 
-    local numQuiverSlots = self.bagManager:GetContainerNumSlots(session.quiverSlot)
+    local numQuiverSlots = self.bagManager:GetContainerNumSlots(session.quiver.slot)
     local t = GetTime()
     local colour = addon.guideTextColors["RXP_WARN_"]
     local maxStack
     local itemTable, stack, locked
     local itemExists, itemState, destLocked
 
-    if session.manualDelete then
-        session.manualDelete = false
+    if session.deletion.manual then
+        session.deletion.manual = false
         addon.comms.PrettyPrint(L("|c%sSorting arrows/bullets|r"), colour)
-    elseif t - session.sortTimer > 3 then
+    elseif t - session.timers.sort > 3 then
         addon.comms.PrettyPrint(L("|c%sInventory is full, sorting arrows/bullets|r"), colour)
     end
-    session.sortTimer = t
+    session.timers.sort = t
 
     for slot = 1, numQuiverSlots do
-        id = self.bagManager:GetContainerItemID(session.quiverSlot, slot)
+        id = self.bagManager:GetContainerItemID(session.quiver.slot, slot)
 
         if id then
-            if not session.closestSlot[id] then session.closestSlot[id] = numQuiverSlots end
+            if not session.quiver.closestSlot[id] then session.quiver.closestSlot[id] = numQuiverSlots end
             -- local t = GetItemInfo(id)
             maxStack = select(8, GetItemInfo(id))
             -- print(maxStack)
-            itemTable, stack, locked = self.bagManager:GetContainerItemInfo(session.quiverSlot, slot)
+            itemTable, stack, locked = self.bagManager:GetContainerItemInfo(session.quiver.slot, slot)
 
             if type(itemTable) == "table" then stack, locked = itemTable.stackCount, itemTable.isLocked end
 
             -- print('sl',stack,locked)
-            if slot < session.closestSlot[id] then
-                session.closestSlot[id] = slot
+            if slot < session.quiver.closestSlot[id] then
+                session.quiver.closestSlot[id] = slot
             elseif stack < maxStack then
-                itemExists, itemState, destLocked = self.bagManager:GetContainerItemInfo(session.quiverSlot,
-                                                                                         session.closestSlot[id])
+                itemExists, itemState, destLocked = self.bagManager:GetContainerItemInfo(session.quiver.slot,
+                                                                                         session.quiver.closestSlot[id])
                 if type(itemExists) == "table" then destLocked = itemExists.isLocked end
-                session.organizeQuiver = true
+                session.quiver.organize = true
 
                 if not (GetCursorInfo() or locked or itemExists and destLocked) then
                     C_Timer.After(0.01, function()
                         if self:IsFeatureEnabled() and not GetCursorInfo() then
-                            self.bagManager:PickupContainerItem(session.quiverSlot, slot)
-                            self.bagManager:PickupContainerItem(session.quiverSlot, session.closestSlot[id])
+                            self.bagManager:PickupContainerItem(session.quiver.slot, slot)
+                            self.bagManager:PickupContainerItem(session.quiver.slot, session.quiver.closestSlot[id])
 
                             ClearCursor()
-                            -- print(session.quiverSlot, slot)
+                            -- print(session.quiver.slot, slot)
                         end
                     end)
 
@@ -434,11 +448,11 @@ end
 function addon.inventoryManager:FindJunk(deleteItem)
     if not self:IsFeatureEnabled() then return end
 
-    session.deleteBag = nil
-    session.deleteSlot = nil
+    session.deletion.bag = nil
+    session.deletion.slot = nil
 
-    if session.organizeQuiver then self:SortQuiver() end
-    session.quiverFreeSlots = 0
+    if session.quiver.organize then self:SortQuiver() end
+    session.quiver.freeSlots = 0
 
     local freeSlots, bagType
     local ammoFlags
@@ -453,9 +467,9 @@ function addon.inventoryManager:FindJunk(deleteItem)
         -- bit flag 1 for arrows, 2 for guns, according to ItemBagFamily.db2
         -- add 1 to compare with Enum.ItemWeaponSubclass (2 for arrows, 3 for bullets)
         if ammoFlags > 1 then
-            session.quiverSlot = bag
-            session.projectileType = ammoFlags
-            session.quiverFreeSlots = freeSlots
+            session.quiver.slot = bag
+            session.quiver.projectileType = ammoFlags
+            session.quiver.freeSlots = freeSlots
         end
     end
 
@@ -486,7 +500,7 @@ function addon.inventoryManager:FindJunk(deleteItem)
             if id then
                 itemName, itemLink, itemQuality, itemLevel, itemMinLevel, itemType, itemSubType, stackMax, itemEquipLoc, itemTexture, price, class, subclass =
                     GetItemInfo(id)
-                if bagType == 0 and class == Enum.ItemClass.Projectile and subclass == session.projectileType then
+                if bagType == 0 and class == Enum.ItemClass.Projectile and subclass == session.quiver.projectileType then
                     isProjectile = true
                 end
 
@@ -506,17 +520,17 @@ function addon.inventoryManager:FindJunk(deleteItem)
                             -- print(bestBag,bestSlot)
                         end
                     end
-                elseif isProjectile and session.quiverFreeSlots > 0 then
+                elseif isProjectile and session.quiver.freeSlots > 0 then
                     movingAmmo = true
                     bestBag, bestSlot, bestValue = nil, nil, nil
                     self.bagManager:PickupContainerItem(bag, slot)
 
-                    PutItemInBag(session.quiverSlot + CharacterBag0Slot:GetID() - 1)
+                    PutItemInBag(session.quiver.slot + CharacterBag0Slot:GetID() - 1)
 
                     -- CharacterBag0Slot:BagSlotButton_OnClick()
                     -- /run local bagframe = _G["CharacterBag".. tostring(1 - 1) .."Slot"] local f = bagframe:GetScript("OnClick") print(f) f(bagframe,"LeftButton")
 
-                    session.quiverFreeSlots = session.quiverFreeSlots - 1
+                    session.quiver.freeSlots = session.quiver.freeSlots - 1
                 end
             end
         end
@@ -525,8 +539,8 @@ function addon.inventoryManager:FindJunk(deleteItem)
     if movingAmmo then
         self:SortQuiver()
     elseif bestBag and bestSlot then
-        session.deleteBag = bestBag
-        session.deleteSlot = bestSlot
+        session.deletion.bag = bestBag
+        session.deletion.slot = bestSlot
     elseif self.clickFrame then
         self.clickFrame:Hide()
     end
@@ -536,32 +550,32 @@ end
 function addon.inventoryManager:DeleteItems()
     if not self:IsFeatureEnabled() then return end
 
-    if session.sellGoods and MerchantFrame:IsShown() and MerchantFrame.selectedTab == 1 then
+    if session.merchant.sellGoods and MerchantFrame:IsShown() and MerchantFrame.selectedTab == 1 then
         self:ProcessJunk(true)
 
         return
     elseif UnitIsDead('player') or GetCursorInfo() then
         return
-    elseif session.deleteBag then
-        self.bagManager:PickupContainerItem(session.deleteBag, session.deleteSlot)
+    elseif session.deletion.bag then
+        self.bagManager:PickupContainerItem(session.deletion.bag, session.deletion.slot)
 
         DeleteCursorItem()
 
         local colour = addon.guideTextColors["RXP_WARN_"]
-        local _, stack, _, _, _, _, link = self.bagManager:GetContainerItemInfo(session.deleteBag, session.deleteSlot)
-        local id = self.bagManager:GetContainerItemID(session.deleteBag, session.deleteSlot)
+        local _, stack, _, _, _, _, link = self.bagManager:GetContainerItemInfo(session.deletion.bag, session.deletion.slot)
+        local id = self.bagManager:GetContainerItemID(session.deletion.bag, session.deletion.slot)
 
         if link then
-            if session.manualDelete or id == SSHARD then
+            if session.deletion.manual or id == SSHARD then
                 addon.comms.PrettyPrint(L("|c%sDeleting %sx%s|r"), colour, link, stack)
             else
                 addon.comms.PrettyPrint(L("|c%sInventory is full, deleting %sx%s|r"), colour, link, stack)
             end
         end
 
-        session.deleteBag = nil
-        session.deleteSlot = nil
-    elseif session.organizeQuiver and not InCombatLockdown() then
+        session.deletion.bag = nil
+        session.deletion.slot = nil
+    elseif session.quiver.organize and not InCombatLockdown() then
         self:SortQuiver()
     end
 end
@@ -569,26 +583,26 @@ end
 function addon.inventoryManager:DeleteCheapestItem(deleteIfFull)
     if not self:IsFeatureEnabled() or not IsLoggedIn() then return end
 
-    session.manualDelete = true
+    session.deletion.manual = true
 
     self:FindJunk(not deleteIfFull)
     self:DeleteItems(true)
 
-    session.manualDelete = false
+    session.deletion.manual = false
 end
 
 function addon.inventoryManager:OpenItems(itemID, clear)
     if clear then
-        table.wipe(session.itemsToOpen)
+        table.wipe(session.items.toOpen)
 
         return
     elseif itemID then
-        session.itemsToOpen[itemID] = true
+        session.items.toOpen[itemID] = true
 
         return
     end
 
-    if not self:IsFeatureEnabled() or not next(session.itemsToOpen) then return end
+    if not self:IsFeatureEnabled() or not next(session.items.toOpen) then return end
 
     local locked, id
 
@@ -596,13 +610,13 @@ function addon.inventoryManager:OpenItems(itemID, clear)
         for slot = 1, self.bagManager:GetContainerNumSlots(bag) do
             _, _, locked, _, _, _, _, _, _, id = self.bagManager:GetContainerItemInfo(bag, slot)
 
-            if not locked and session.itemsToOpen[id] then self.bagManager:UseContainerItem(bag, slot) end
+            if not locked and session.items.toOpen[id] then self.bagManager:UseContainerItem(bag, slot) end
         end
     end
 end
 
 function addon.inventoryManager:GetSellKeybind()
-    local index = session.bindingIndex
+    local index = session.binding.index
     local command, binding, key = GetBinding(index or 1)
 
     if command == DELETE_JUNK_BINDING then return key end
@@ -610,7 +624,7 @@ function addon.inventoryManager:GetSellKeybind()
     for index = 1, GetNumBindings() do
         command, binding, key = GetBinding(index)
         if command == DELETE_JUNK_BINDING then
-            session.bindingIndex = index
+            session.binding.index = index
 
             return key
         end
@@ -618,7 +632,7 @@ function addon.inventoryManager:GetSellKeybind()
 end
 
 function addon.inventoryManager:SetSellKeybind(key)
-    local index = session.bindingIndex
+    local index = session.binding.index
     local command, _, currentKey = GetBinding(index or 1)
 
     if command == DELETE_JUNK_BINDING and currentKey then SetBinding(currentKey) end
@@ -716,33 +730,33 @@ function addon.inventoryManager:OnBagUpdate(elapsed)
 
     if not self:IsFeatureEnabled() then
         frame:SetScript("OnUpdate", nil)
-        session.updateTimer = 0
-        session.merchantOpened = false
-        session.updateBags = false
+        session.timers.update = 0
+        session.merchant.opened = false
+        session.bags.update = false
 
         return
     end
 
-    session.updateTimer = session.updateTimer + elapsed
-    if session.updateTimer > 0.33 then
-        if session.merchantOpened then
-            session.merchantOpened = false
+    session.timers.update = session.timers.update + elapsed
+    if session.timers.update > 0.33 then
+        if session.merchant.opened then
+            session.merchant.opened = false
             self:ProcessJunk(true)
         end
 
-        if session.updateBags then
-            session.updateBags = false
+        if session.bags.update then
+            session.bags.update = false
             self.bagManager:UpdateAllBags()
         end
 
-        session.updateTimer = 0
+        session.timers.update = 0
         frame:SetScript("OnUpdate", nil)
     end
 end
 
 function addon.inventoryManager:UpdateBagsIfNeeded()
     if not next(self.junkIcons) then
-        session.updateBags = true
+        session.bags.update = true
         self:ScheduleBagUpdate()
     end
 end
@@ -751,7 +765,7 @@ function addon.inventoryManager:InitializeBags()
     if not self:IsFeatureEnabled() then return end
     if next(self.junkIcons) then return end
 
-    session.updateBags = true
+    session.bags.update = true
     self:ScheduleBagUpdate()
     -- UpdateAllBags()
 end
@@ -787,18 +801,18 @@ function addon.inventoryManager:ProcessJunk(sellWares, override)
     end
 
     if totalCost == 0 then
-        if session.sellGoods then
-            local value = GetMoney() - session.sellGoods
+        if session.merchant.sellGoods then
+            local value = GetMoney() - session.merchant.sellGoods
             local colour = addon.guideTextColors["RXP_WARN_"]
 
             if value > 0 then
                 addon.comms.PrettyPrint(L("|c%sSold junk items for|r %s"), colour, GetCoinTextureString(value))
             end
 
-            session.sellGoods = false
+            session.merchant.sellGoods = false
         end
     elseif isMerchant then
-        session.sellGoods = session.sellGoods or GetMoney()
+        session.merchant.sellGoods = session.merchant.sellGoods or GetMoney()
         -- Sorts the item list to sell low quality/cheap items first, in case of needing to buy stuff back
         table.sort(itemsToSell, function(i1, i2)
             if i1.quality == i2.quality then
