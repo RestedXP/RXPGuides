@@ -1152,7 +1152,7 @@ function addon.inventoryManager.bagManager:HookContainerFrame(containerFrame)
                 bag = frame.GetBagID and frame:GetBagID()
                 slot = frame:GetID()
 
-                if bag and slot and slot >= 0 then
+                if bag and bag >= BACKPACK_CONTAINER and bag <= NUM_BAG_FRAMES and slot and slot >= 0 then
                     addon.inventoryManager.bagFrame[bag][slot] = frame
                     id = this:GetContainerItemID(bag, slot)
 
