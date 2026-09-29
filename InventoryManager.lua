@@ -92,19 +92,13 @@ function addon.inventoryManager:Setup()
         self.initialized = true
     end
 
-    if not self.uiInitialized then
-        local adapter = self.bagManager:SelectAdapter()
-        self.containerPattern = adapter.containerPattern
-        self.containerName = adapter.containerName
-        self.containerIndex = adapter.containerIndex
-        self.alignment = adapter.alignment
+    if not wasInitialized then
         self.junkIcons = {}
         self.hookedFrames = {}
 
         local bagFrame = {}
         for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do bagFrame[bag] = {} end
         self.bagFrame = bagFrame
-        self.uiInitialized = true
     end
 
     self.bagManager:Setup()
@@ -907,12 +901,15 @@ addon.inventoryManager.bagManager.returnsItemTable = ReturnsContainerItemTable
 addon.inventoryManager.bagManager.bagHook = ContainerFrame_Update or ContainerFrame_UpdateAll
 
 function addon.inventoryManager.bagManager:Setup()
-    if not addon.inventoryManager:IsFeatureEnabled() or self.initialized then return end
+    if not addon.inventoryManager:IsFeatureEnabled() then return end
 
-    self.onClickHook = function(button, mouseButton, ...)
-        addon.inventoryManager:OnClickHook(button, mouseButton, ...)
+    if not self.onClickHook then
+        self.onClickHook = function(button, mouseButton, ...)
+            addon.inventoryManager:OnClickHook(button, mouseButton, ...)
+        end
     end
 
+    self:SelectAdapter()
     self:HookBags()
 
     self.initialized = true
@@ -1022,6 +1019,11 @@ function addon.inventoryManager.bagManager:SelectAdapter()
         adapter = self.adapters.Consolidated
     end
 
+    local inventoryManager = addon.inventoryManager
+    inventoryManager.containerPattern = adapter.containerPattern
+    inventoryManager.containerName = adapter.containerName
+    inventoryManager.containerIndex = adapter.containerIndex
+    inventoryManager.alignment = adapter.alignment
     self.activeAdapter = adapter
     return adapter
 end
@@ -1132,6 +1134,10 @@ function addon.inventoryManager.bagManager:LoadBaganator()
 end
 
 function addon.inventoryManager.bagManager:HookContainerFrame(containerFrame)
+    self.hookedContainerFrames = self.hookedContainerFrames or {}
+    if self.hookedContainerFrames[containerFrame] then return end
+    self.hookedContainerFrames[containerFrame] = true
+
     local this = self
     local frames, bag, slot, id
 
@@ -1164,12 +1170,13 @@ function addon.inventoryManager.bagManager:HookBags()
     local this = self
     local bagframe
 
-    if ContainerFrame_Update then
+    if ContainerFrame_Update and not self.containerFrameHooked then
         hooksecurefunc("ContainerFrame_Update", function(frame) this:UpdateBag(frame, nil, "%sItem%d") end)
+        self.containerFrameHooked = true
     end
 
     local elvUIFrame = _G.ElvUI_ContainerFrame
-    if elvUIFrame and elvUIFrame.Bags then
+    if elvUIFrame and elvUIFrame.Bags and self.elvUIHooked ~= elvUIFrame then
         local hookElvUISlots = function(frame)
             for _, bag in pairs(frame.Bags) do
                 for _, slot in ipairs(bag) do
@@ -1180,19 +1187,24 @@ function addon.inventoryManager.bagManager:HookBags()
 
         elvUIFrame:HookScript("OnShow", hookElvUISlots)
         hookElvUISlots(elvUIFrame)
+        self.elvUIHooked = elvUIFrame
     end
 
     if _G.Baganator and _G.Baganator.API then
-        _G.Baganator.API.RegisterJunkPlugin(addonName, "RXPGuides", function(bagID, slotID, id)
-            return addon.inventoryManager:IsFeatureEnabled() and id and addon.inventoryManager:IsJunk(id, bagID, slotID)
-        end)
+        if not self.baganatorPluginHooked then
+            _G.Baganator.API.RegisterJunkPlugin(addonName, "RXPGuides", function(bagID, slotID, id)
+                return addon.inventoryManager:IsFeatureEnabled() and id and addon.inventoryManager:IsJunk(id, bagID, slotID)
+            end)
+            self.baganatorPluginHooked = true
+        end
 
         C_Timer.After(1, function() this:LoadBaganator() end)
 
-        if _G.Baganator.CallbackRegistry then
+        if _G.Baganator.CallbackRegistry and not self.baganatorCallbackHooked then
             _G.Baganator.CallbackRegistry:RegisterCallback("SettingChanged", function()
                 C_Timer.After(0.1, function() this:LoadBaganator() end)
             end)
+            self.baganatorCallbackHooked = true
         end
     end
 
