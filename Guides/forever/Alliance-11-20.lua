@@ -32,74 +32,36 @@ step
     .home >> Set your Hearthstone to Stormwind City
     .target Innkeeper Allison
     .bindlocation 16509
+
 step
     #label NEWestfallStart --hidden step for #include
+
 step
     #ah
     .goto 1453/0,660.28,-8814.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[Cooking] |cRXP_BUY_with later|r
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall shortly:|r
     >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
-    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall and Darkshore shortly:|r
     >>|T133972:0|t[Stringy Vulture Meat]
     >>|T133884:0|t[Murloc Eye]
     >>|T135997:0|t[Goretusk Snout]
     >>|T134185:0|t[Okra]
     >>|T134341:0|t[Goretusk Liver]
-    >>|T133972:0|t[Strider Meat]
-    >>|T133912:0|t[Darkshore Grouper]
-    >>|T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    >>|T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
+    >>|T4548890:0|t[Golem Isospring]
+    >>|T132995:0|t[Harvester Gyrostabilizer]
     .collect 729,3,38,1 -- Stringy Vulture Meat (3)
     .collect 730,3,38,1 -- Murloc Eye (3)
     .collect 731,3,38,1 -- Goretusk Snout (3)
     .collect 732,3,38,1 -- Okra (3)
     .collect 723,8,22,1 -- Goretusk Liver (8)
-    .collect 5469,5,2178,1 -- Strider Meat (5)
-    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
-    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (1-50)
-    .disablecheckbox
-    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (1-50)
-    .disablecheckbox
-    .target Auctioneer Jaxon
-    .skill cooking,50,1 --XX Shows if cooking skill is <50
-step
-    #ah
-    #optional
-    .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
-    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall and Darkshore shortly:|r
-    >>|T133972:0|t[Stringy Vulture Meat]
-    >>|T133884:0|t[Murloc Eye]
-    >>|T135997:0|t[Goretusk Snout]
-    >>|T134185:0|t[Okra]
-    >>|T134341:0|t[Goretusk Liver]
-    >>|T133972:0|t[Strider Meat]
-    >>|T133912:0|t[Darkshore Grouper]
-    .collect 729,3,38,1 -- Stringy Vulture Meat (3)
-    .collect 730,3,38,1 -- Murloc Eye (3)
-    .collect 731,3,38,1 -- Goretusk Snout (3)
-    .collect 732,3,38,1 -- Okra (3)
-    .collect 723,8,22,1 -- Goretusk Liver (8)
-    .collect 5469,5,2178,1 -- Strider Meat (5)
-    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
-    .target Auctioneer Jaxon
-    .skill cooking,<50,1 --XX Shows if cooking skill is 50+
+    .collect 255007,14,92909,1 -- Golem Isospring (14)
+    .collect 255010,5,92909,1 -- Harvester Gyrostabilizer (5)
 step << Human
     .goto 1453/0,489.99,-8835.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .turnin 6261 >> Turn in Dungar Longdrink
     .accept 6285 >> Accept Return to Lewis
     .target Dungar Longdrink
-
-
-
-
-
-
-
 
 step
     .goto 1453/0,490.03,-8835.82
@@ -375,6 +337,15 @@ step
     .isQuestComplete 38
     .target Salma Saldean
 step
+    #optional
+    .goto 1436/0,1213.400,-10153.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket::253395|r
+    .target Ozwin Ironsprocket::253395
+    .accept 92909 >>Accept Harvesting the Harvesters
+    .turnin 92909 >>Turn in Harvesting the Harvesters
+    .itemcount 255007,14 -- Golem Isospring (14)
+    .itemcount 255010,5 -- Harvester Gyrostabilizer (5)
+step
     .isQuestAvailable 38
     .goto 1436/0,1132.27,-10146.67,60,0
     .goto 1436/0,1238.67,-9907.73,80,0
@@ -412,12 +383,15 @@ step
 	.target Farmer Saldean
     .goto 1436/0,1055.27,-10128.70
     .turnin 9 >> Turn in The Killing Fields
-step << skip
+step
+    #optional
     .goto 1436/0,1213.400,-10153.800
-    .isQuestComplete 92909
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket::253395|r in the barn
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket::253395|r
     .target Ozwin Ironsprocket::253395
+    .accept 92909 >>Accept Harvesting the Harvesters
     .turnin 92909 >>Turn in Harvesting the Harvesters
+    .itemcount 255007,14 -- Golem Isospring (14)
+    .itemcount 255010,5 -- Harvester Gyrostabilizer (5)
 step
     .goto 1436/0,1179.52,-10382.57,75,0
     .goto 1436/0,1138.22,-10474.97,75,0
@@ -449,6 +423,15 @@ step
     .goto 1436/0,1042.67,-10111.670
     .turnin 38 >> Turn in Westfall Stew
     .turnin 22 >> Turn in Goretusk Liver Pie
+step
+    #optional
+    .goto 1436/0,1213.400,-10153.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket::253395|r
+    .target Ozwin Ironsprocket::253395
+    .accept 92909 >>Accept Harvesting the Harvesters
+    .turnin 92909 >>Turn in Harvesting the Harvesters
+    .itemcount 255007,14 -- Golem Isospring (14)
+    .itemcount 255010,5 -- Harvester Gyrostabilizer (5)
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r
