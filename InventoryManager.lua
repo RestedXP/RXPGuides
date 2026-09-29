@@ -92,14 +92,7 @@ function addon.inventoryManager:Setup()
         self.initialized = true
     end
 
-    if not wasInitialized then
-        self.junkIcons = {}
-        self.hookedFrames = {}
-
-        local bagFrame = {}
-        for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do bagFrame[bag] = {} end
-        self.bagFrame = bagFrame
-    end
+    self:SetupUI()
 
     self.bagManager:Setup()
 
@@ -185,6 +178,17 @@ function addon.inventoryManager:Setup()
     end
 
     if wasInitialized then self.bagManager:UpdateAllBags() end
+end
+
+function addon.inventoryManager:SetupUI()
+    if self.bagFrame then return end
+
+    self.junkIcons = {}
+    self.hookedFrames = {}
+
+    local bagFrame = {}
+    for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do bagFrame[bag] = {} end
+    self.bagFrame = bagFrame
 end
 
 function addon.inventoryManager:PLAYER_ENTERING_WORLD() self:Setup() end
@@ -730,7 +734,13 @@ function addon.inventoryManager:CatalogInventory()
 end
 
 function addon.inventoryManager:GetBagItemFrame(bag, slot)
-    return self.bagFrame and self.bagFrame[bag] and self.bagFrame[bag][slot]
+    local frame = self.bagFrame and self.bagFrame[bag] and self.bagFrame[bag][slot]
+    if not frame then
+        self.bagManager:UpdateAllBags()
+        frame = self.bagFrame and self.bagFrame[bag] and self.bagFrame[bag][slot]
+    end
+
+    return frame
 end
 
 function addon.inventoryManager:ScheduleBagUpdate()
@@ -1029,11 +1039,10 @@ function addon.inventoryManager.bagManager:SelectAdapter()
 end
 
 function addon.inventoryManager.bagManager:UpdateBag(frame, name, pattern)
-    if not addon.inventoryManager:IsFeatureEnabled() then return end
-
     pattern = pattern or addon.inventoryManager.containerPattern
     name = name or frame:GetName()
 
+    local featureEnabled = addon.inventoryManager:IsFeatureEnabled()
     local i = 1
     local ref = format(pattern, name, i)
     local lastFrame, button
@@ -1048,8 +1057,8 @@ function addon.inventoryManager.bagManager:UpdateBag(frame, name, pattern)
             slot = button:GetID()
             addon.inventoryManager.bagFrame[bag][slot] = button
 
-            if self.activeAdapter.clickHook and button.OnClick then self:HookButton(button) end
-            if addon.settings.profile.showJunkIcon then
+            if featureEnabled and self.activeAdapter.clickHook and button.OnClick then self:HookButton(button) end
+            if featureEnabled and addon.settings.profile.showJunkIcon then
                 addon.inventoryManager:UpdateBagButton(button, bag, slot)
             end
         end
@@ -1062,13 +1071,14 @@ function addon.inventoryManager.bagManager:UpdateBag(frame, name, pattern)
 end
 
 function addon.inventoryManager.bagManager:UpdateAllBags(name, i)
-    if not addon.inventoryManager:IsFeatureEnabled() then
-        for _, icon in pairs(addon.inventoryManager.junkIcons or {}) do icon:Hide() end
+    addon.inventoryManager:SetupUI()
 
-        return
+    local featureEnabled = addon.inventoryManager:IsFeatureEnabled()
+    if not featureEnabled then
+        for _, icon in pairs(addon.inventoryManager.junkIcons or {}) do icon:Hide() end
     end
 
-    if not addon.settings.profile.showJunkIcon then
+    if featureEnabled and not addon.settings.profile.showJunkIcon then
         for _, icon in pairs(addon.inventoryManager.junkIcons or {}) do icon:Hide() end
     end
 
@@ -1076,6 +1086,17 @@ function addon.inventoryManager.bagManager:UpdateAllBags(name, i)
 
     if adapter.consolidated then
         if ContainerFrame_UpdateAll then ContainerFrame_UpdateAll() end
+
+        local containerFrame
+        for n = 0, NUM_CONTAINER_FRAMES do
+            if n == 0 then
+                containerFrame = _G.ContainerFrameCombinedBags
+            else
+                containerFrame = _G["ContainerFrame" .. n]
+            end
+
+            if containerFrame and containerFrame.UpdateItems then self:UpdateContainerFrame(containerFrame) end
+        end
 
         return
     end
@@ -1133,37 +1154,40 @@ function addon.inventoryManager.bagManager:LoadBaganator()
     end
 end
 
+function addon.inventoryManager.bagManager:UpdateContainerFrame(containerFrame)
+    local featureEnabled = addon.inventoryManager:IsFeatureEnabled()
+    local frames = {containerFrame:GetChildren()}
+    local frame, bag, slot, id
+
+    for index = 1, #frames do
+        frame = frames[index]
+        if frame.GetID and frame.OnClick then
+            if featureEnabled then self:HookButton(frame) end
+
+            bag = frame.GetBagID and frame:GetBagID()
+            slot = frame:GetID()
+
+            if bag and bag >= BACKPACK_CONTAINER and bag <= NUM_BAG_FRAMES and slot and slot >= 0 then
+                addon.inventoryManager.bagFrame[bag][slot] = frame
+                id = self:GetContainerItemID(bag, slot)
+
+                if featureEnabled and frame.JunkIcon then
+                    frame.JunkIcon:SetShown(addon.settings.profile.showJunkIcon and id and
+                                                addon.inventoryManager:IsJunk(id, bag, slot))
+                end
+            end
+        end
+    end
+end
+
 function addon.inventoryManager.bagManager:HookContainerFrame(containerFrame)
     self.hookedContainerFrames = self.hookedContainerFrames or {}
     if self.hookedContainerFrames[containerFrame] then return end
     self.hookedContainerFrames[containerFrame] = true
 
     local this = self
-    local frames, bag, slot, id
-
-    hooksecurefunc(containerFrame, "UpdateItems", function()
-        if not addon.inventoryManager:IsFeatureEnabled() then return end
-
-        frames = {containerFrame:GetChildren()}
-        for _, frame in pairs(frames) do
-            if frame.GetID and frame.OnClick then
-                this:HookButton(frame)
-
-                bag = frame.GetBagID and frame:GetBagID()
-                slot = frame:GetID()
-
-                if bag and bag >= BACKPACK_CONTAINER and bag <= NUM_BAG_FRAMES and slot and slot >= 0 then
-                    addon.inventoryManager.bagFrame[bag][slot] = frame
-                    id = this:GetContainerItemID(bag, slot)
-
-                    if frame.JunkIcon then
-                        frame.JunkIcon:SetShown(addon.settings.profile.showJunkIcon and id and
-                                                    addon.inventoryManager:IsJunk(id))
-                    end
-                end
-            end
-        end
-    end)
+    hooksecurefunc(containerFrame, "UpdateItems", function() this:UpdateContainerFrame(containerFrame) end)
+    self:UpdateContainerFrame(containerFrame)
 end
 
 function addon.inventoryManager.bagManager:HookBags()
