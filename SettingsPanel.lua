@@ -252,7 +252,13 @@ function addon.settings:InitializeDatabase()
     if not addon.player.beta and addon.game ~= "FOREVER" then
         RXPCData.localDB = nil
     end
-    settingsDB = LibStub("AceDB-3.0"):New("RXPSettings", RXPData.defaultProfile or RXPCData.localDB or settingsDBDefaults)
+
+    local savedDefaults = RXPData.defaultProfile or RXPCData.localDB
+    if savedDefaults and savedDefaults.profile and savedDefaults.profile.enableInventoryManager == nil then
+        savedDefaults.profile.enableInventoryManager = settingsDBDefaults.profile.enableInventoryManager
+    end
+
+    settingsDB = LibStub("AceDB-3.0"):New("RXPSettings", savedDefaults or settingsDBDefaults)
 
     settingsDB.RegisterCallback(self, "OnProfileChanged", "RefreshProfile")
     settingsDB.RegisterCallback(self, "OnProfileCopied", "CopyProfile")
