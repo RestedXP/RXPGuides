@@ -3252,7 +3252,7 @@ function addon.functions.destroy(self, ...)
     local element = self.element
     local step = element and element.step
     if step and step.active then
-        RXPCData.discardPile[element.id] = true
+        addon.inventoryManager:SetDiscardedItem(element.id, true)
         local name = addon.GetItemName(element.id)
 
         if name then
@@ -3277,9 +3277,9 @@ function addon.functions.destroy(self, ...)
 
         if count == 0 then
             addon.SetElementComplete(self)
-            RXPCData.discardPile[element.id] = nil
+            addon.inventoryManager:SetDiscardedItem(element.id, false)
         else
-            RXPCData.discardPile[element.id] = true
+            addon.inventoryManager:SetDiscardedItem(element.id, true)
             addon.SetElementIncomplete(self)
         end
     end

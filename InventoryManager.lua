@@ -56,6 +56,8 @@ local SSHARD = 6265
 
 -- Core InventoryManager
 function addon.inventoryManager:Setup()
+    RXPCData.discardPile = RXPCData.discardPile or {}
+
     if not self:IsFeatureEnabled() then
         self:UnregisterAllEvents()
 
@@ -117,8 +119,6 @@ function addon.inventoryManager:Setup()
         self:RegisterEvent("PLAYER_MONEY")
         self:RegisterEvent("LOOT_READY")
         self:RegisterEvent("UI_ERROR_MESSAGE")
-
-        RXPCData.discardPile = RXPCData.discardPile or {}
 
         if not self.inputHooksInitialized then
             -- You can only delete items on a hardware input, so hook every keyboard
@@ -417,7 +417,7 @@ function addon.inventoryManager:IsJunk(id, bag)
         return false
     end
 
-    local discard = RXPCData.discardPile[id]
+    local discard = RXPCData.discardPile and RXPCData.discardPile[id]
     if discard == nil then
         local _, _, quality = GetItemInfo(id)
 
@@ -431,6 +431,11 @@ function addon.inventoryManager:IsJunk(id, bag)
     end
 end
 
+function addon.inventoryManager:SetDiscardedItem(id, discarded)
+    RXPCData.discardPile = RXPCData.discardPile or {}
+    RXPCData.discardPile[id] = discarded and true or nil
+end
+
 function addon.inventoryManager:ToggleJunk(id, bag, slot)
     if not self:IsFeatureEnabled() or not id or exclusions[id] then return end
 
@@ -438,7 +443,7 @@ function addon.inventoryManager:ToggleJunk(id, bag, slot)
     local _, link = GetItemInfo(id)
     local colour = addon.guideTextColors["RXP_WARN_"]
 
-    RXPCData.discardPile[id] = not junk
+    self:SetDiscardedItem(id, not junk)
 
     if junk then
         addon.comms.PrettyPrint(L("|c%sSet %s as useful|r"), colour, link)
