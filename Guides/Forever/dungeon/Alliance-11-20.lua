@@ -830,7 +830,7 @@ step
     .target Gryth Thurden
     .zoneskip Ironforge,1
 
-stoe
+step
     .goto 1426/0,-826.400,-5027.100,30,0
     .goto 1426/0,-721.900,-5078.900,30,0
     .goto 1426/0,-426.500,-5181.000,70,0
@@ -850,13 +850,13 @@ step
     .goto 1426,32.645,27.740,15,0
     .goto 1415,44.910,52.022,15,0
     .goto 1415,44.910,52.030
-    .zone Wetlands >>|cRXP_WARN_Climb the mountain, then walk down past the jagged pattern until your zone changes to the Wetlands|r
+    .subzone 207 >>|cRXP_WARN_Climb the mountain, then walk down past the jagged pattern until your zone changes to the Wetlands|r
     .zoneskip Hillsbrad Foothills
     .subzoneskip 150 -- menethil
     .subzoneskip 16611 -- ruins of lordaeron
 step
-    .goto 1415,44.733,51.882,-1
-    .goto 1437,11.730,43.304,-1
+    .goto 1415/0,254.0285,-4708.3416,-1
+    .goto 1437/0,-874.700,-3341.400,-1
     >>|cRXP_WARN_Jump off the mountain toward the north or north-west|r
     .deathskip >> Die and respawn at the Baradin Bay |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
@@ -953,13 +953,42 @@ step
     .turnin 95250 >> Turn in Abominable Creatures
     .target Captain Truman
 
-
-
 step
     .hs >> Hearth to Stormwind
     >>|cRXP_WARN_If your Hearthstone was not set at Stormwind, make your way there|r
-
-
+    .zoneskip Stormwind City
+step
+    .isOnQuest 92415
+    .goto 1453/0,744.400,-8621.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orphan Matron Nightingale|r
+    .turnin 92415 >> Turn in Remember That I Love You
+    .accept 95161 >> Accept Remember That I Love You
+    .target Orphan Matron Nightingale
+step
+    #optional
+    .isQuestTurnedIn 92415
+    .goto 1453/0,744.400,-8621.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orphan Matron Nightingale|r
+    .accept 95161 >> Accept Remember That I Love You
+    .target Orphan Matron Nightingale
+step
+    #completewith next
+    .goto 1453/0,437.600,-8524.5000,20,0
+    .goto 1453/0,408.100,-8478.500,15,0
+    .goto 1453/0,502.900,-8358.800,15 >> Travel to the Stormwind Library
+step
+    .isOnQuest 95189
+    .goto 1453/0,531.000,-8322.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Dena Kennedy|r
+    >>|cRXP_WARN_She walks around slightly in the Royal Gallery|r
+    .turnin 95189 >> Turn in Crest of Lordaeron
+    .target Lady Dena Kennedy
+step
+    .isOnQuest 95195
+    .goto 1453/0,521.000,-8954.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Marcus Jonathan|r
+    .turnin 95195 >> Turn in Bloodied Insignia
+    .target General Marcus Jonathan
 ]])
 
 RXPGuides.RegisterGuide([[
