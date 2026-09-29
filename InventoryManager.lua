@@ -244,7 +244,7 @@ function addon.inventoryManager:ITEM_LOCKED(_, bag, slot)
         if frame then self:HideJunkIcon(frame) end
     end
 
-    self:UpdateBagsIfNeeded()
+    self:InitializeBags()
 end
 
 function addon.inventoryManager:ITEM_UNLOCKED(_, bag, slot)
@@ -256,7 +256,7 @@ function addon.inventoryManager:ITEM_UNLOCKED(_, bag, slot)
         if frame then self:UpdateBagButton(frame, bag, slot) end
     end
 
-    self:UpdateBagsIfNeeded()
+    self:InitializeBags()
 end
 
 function addon.inventoryManager:LOOT_READY() self:HandleBagAutomation() end
@@ -772,13 +772,6 @@ function addon.inventoryManager:OnBagUpdate(elapsed)
 
         session.timers.update = 0
         frame:SetScript("OnUpdate", nil)
-    end
-end
-
-function addon.inventoryManager:UpdateBagsIfNeeded()
-    if not next(self.junkIcons) then
-        session.bags.update = true
-        self:ScheduleBagUpdate()
     end
 end
 
