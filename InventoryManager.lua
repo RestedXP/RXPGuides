@@ -384,33 +384,37 @@ local exclusions = {
     -- [6265] = true, --Soul Shard
 }
 
-local shardCount = 0
-function addon.inventoryManager:GetShardCount()
+function addon.inventoryManager:GetShardCount(bag, slot)
     local max = tonumber(addon.settings.profile.maxSoulShards) or 100
+    local storedShards = 0
+    local currentBag, currentSlot, numSlots, itemID
 
-    return GetItemCount(SSHARD) > max, max
+    if bag and slot then
+        for currentBag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+            numSlots = self.bagManager:GetContainerNumSlots(currentBag)
+            if currentBag == bag then numSlots = slot - 1 end
+
+            for currentSlot = 1, numSlots do
+                itemID = self.bagManager:GetContainerItemID(currentBag, currentSlot)
+                if itemID == SSHARD then storedShards = storedShards + 1 end
+            end
+
+            if currentBag == bag then break end
+        end
+    end
+
+    return GetItemCount(SSHARD) > max, max, storedShards
 end
 
-local countStart = GetTime()
-
-function addon.inventoryManager:IsJunk(id, bag)
+function addon.inventoryManager:IsJunk(id, bag, slot)
     if id == 6265 then
         local bagType = 0
 
         if bag then _, bagType = self.bagManager:GetContainerNumFreeSlots(bag) end
         if bit.band(bagType) == 0x4 then return false end
 
-        local pass, count = self:GetShardCount()
-        local gt = GetTime()
-
-        if countStart ~= gt then
-            countStart = gt
-            shardCount = 0
-        end
-
-        if pass then shardCount = shardCount + 1 end
-
-        return pass and shardCount > count
+        local pass, count, storedShards = self:GetShardCount(bag, slot)
+        return bag and slot and pass and storedShards >= count
     elseif not id or exclusions[id] then
         return false
     end
@@ -437,7 +441,7 @@ end
 function addon.inventoryManager:ToggleJunk(id, bag, slot)
     if not self:IsFeatureEnabled() or not id or exclusions[id] then return end
 
-    local junk = self:IsJunk(id)
+    local junk = self:IsJunk(id, bag, slot)
     local _, link = GetItemInfo(id)
     local colour = addon.guideTextColors["RXP_WARN_"]
 
@@ -570,7 +574,7 @@ function addon.inventoryManager:DeleteItems()
         local itemID = self.bagManager:GetContainerItemID(bag, slot)
         local _, stack, _, _, _, _, link = self.bagManager:GetContainerItemInfo(bag, slot)
 
-        if not itemID or not self:IsJunk(itemID, bag) then
+        if not itemID or not self:IsJunk(itemID, bag, slot) then
             session.deletion.bag = nil
             session.deletion.slot = nil
             if addon.settings.profile.autoDiscardItems then self:FindJunk() end
@@ -808,7 +812,7 @@ function addon.inventoryManager:ProcessJunk(sellWares, override)
         for slot = 1, self.bagManager:GetContainerNumSlots(bag) do
             id = self.bagManager:GetContainerItemID(bag, slot)
             stack, locked, quality = select(2, self.bagManager:GetContainerItemInfo(bag, slot))
-            junk = self:IsJunk(id)
+            junk = self:IsJunk(id, bag, slot)
 
             if junk then
                 price = select(11, GetItemInfo(id))
@@ -888,7 +892,8 @@ function addon.inventoryManager:OnClickHook(button, mouseButton, ...)
         local id = self.bagManager:GetContainerItemID(bag, slot)
         self:ToggleJunk(id, bag, slot)
         if button.JunkIcon and self.hookedFrames[button] ~= "ElvUI" then
-            button.JunkIcon:SetShown(addon.settings.profile.showJunkIcon and id and self:IsJunk(id) and button:IsShown())
+            button.JunkIcon:SetShown(addon.settings.profile.showJunkIcon and id and self:IsJunk(id, bag, slot) and
+                                         button:IsShown())
         end
 
         if _G.Baganator and _G.Baganator.API and _G.Baganator.API.RequestItemButtonsRefresh then
