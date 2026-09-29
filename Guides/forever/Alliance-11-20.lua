@@ -8430,25 +8430,18 @@ step << !Human !Warlock
     #label start
     .goto 1433/0,-1902.32,-9609.54
     .zone Redridge Mountains >> Travel to Redridge Mountains
-step << !Human !Warlock
-    #xprate >1.49 << Gnome/Dwarf
+step
     .goto 1433/0,-1906.400,-9606.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
     .accept 244 >> Accept Encroaching Gnolls
     .target Guard Parker
-step << !Human !Warlock
-    #xprate >1.49 << Gnome/Dwarf
+step
     .goto 1433/0,-2237.93,-9443.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
     .turnin 244 >> Turn in Encroaching Gnolls
-    .target Deputy Feldon
-step
-    #xprate <1.5
-    .goto 1433/0,-2237.93,-9443.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
-    .target Deputy Feldon
     .accept 246 >> Accept Assessing the Threat
     .accept 98407 >>Accept Show of Force
+    .target Deputy Feldon
 step
 .dungeon DM
     .goto 1433/0,-2164.56,-9213.10,8,0
