@@ -596,7 +596,7 @@ function addon.inventoryManager:DeleteItems()
 end
 
 function addon.inventoryManager:DeleteCheapestItem(deleteIfFull)
-    if not self:IsFeatureEnabled() or not IsLoggedIn() then return end
+    if not self:IsFeatureEnabled() then return end
 
     session.deletion.manual = true
 
