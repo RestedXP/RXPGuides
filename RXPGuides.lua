@@ -108,8 +108,9 @@ addon.HookMessage = function(self,message,callback,...)
 end
 
 function addon.SendEvent(self,...)
-    if _G.WeakAuras and _G.WeakAuras.ScanEvents then
-        _G.WeakAuras.ScanEvents(...)
+    local WeakAuras = _G.WeakAuras or _G.ForeverAuras
+    if WeakAuras and WeakAuras.ScanEvents then
+        WeakAuras.ScanEvents(...)
     end
     return addon.SendMessage(self,...)
 end

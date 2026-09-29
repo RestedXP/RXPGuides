@@ -3239,7 +3239,6 @@ function addon.functions.destroy(self, ...)
         element.id = id
 
         element.itemName = addon.GetItemName(id)
-
         if text and text ~= "" then
             element.rawtext = text
             element.tooltipText = addon.icons.collect .. element.rawtext
@@ -3253,6 +3252,7 @@ function addon.functions.destroy(self, ...)
     local element = self.element
     local step = element and element.step
     if step and step.active then
+        RXPCData.discardPile[element.id] = true
         local name = addon.GetItemName(element.id)
 
         if name then
