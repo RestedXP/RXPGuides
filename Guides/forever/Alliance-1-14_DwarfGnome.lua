@@ -365,11 +365,11 @@ step << Warlock
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Adlin Pridedrift
     .xp >6,1
-step << Paladin/Warlock/Hunter/Shaman
+step << Paladin/Warlock/Hunter
     #completewith next
     .goto 1426/0,497.300,-6118.500,20,0
     .goto 1426/0,467.700,-6012.800,20 >> Travel up to the hills in northern Coldridge Valley
-step << Paladin/Warlock/Hunter/Shaman
+step << Paladin/Warlock/Hunter
     >>Kill the |cRXP_ENEMY_Snow Leopard Prowler|r
     >>Loot |cRXP_PICK_Gozwin's Mechanic's Log|r on the ground
     .complete 97277,2 --|1/1 Snow Leopard Prowler slain
@@ -547,22 +547,32 @@ step << Warrior
     .train 100 >> Train |T132337:0|t[Charge]
     .train 772 >> Train |T132155:0|t[Rend]
     .target Thran Khorman
-
+step << Shaman
+    #optional
+    #completewith next
+    .goto 1426/0,383.800,-6133.700,10 >> Return to |cRXP_FRIENDLY_Teo Hammerstorm|r in Anvilmar
+    .subzoneskip 77,1
+step << Shaman
+    .goto 1426/0,384.000,-6050.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teo Hammerstorm::257446|r
+    .target Teo Hammerstorm::257446
+    .turnin 94373 >>Turn in Call of Earth
+    .accept 94374 >>Accept Call of Earth
 step << !Paladin !Warlock !Hunter !Shaman
     .goto 1426/0,390.000,-6093.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda::2756|r
     .target Grund Drokda::2756
     .accept 97277 >>Accept Grund and Gozwin
-step << !Paladin !Warlock !Hunter !Shaman
+step << !Paladin !Warlock !Hunter
     #optional
     #completewith Stolen
     .goto 1426,28.831,68.698,12 >> Exit Anvilmar
     .subzoneskip 77,1
-step << !Paladin !Warlock !Hunter !Shaman
+step << !Paladin !Warlock !Hunter
     #completewith next
     .goto 1426/0,497.300,-6118.500,20,0
     .goto 1426/0,467.700,-6012.800,20 >> Travel up to the hills in northern Coldridge Valley
-step << !Paladin !Warlock !Hunter !Shaman
+step << !Paladin !Warlock !Hunter
     >>Kill the |cRXP_ENEMY_Snow Leopard Prowler|r
     >>Loot |cRXP_PICK_Gozwin's Mechanic's Log|r on the ground
     .complete 97277,2 --|1/1 Snow Leopard Prowler slain
@@ -570,6 +580,27 @@ step << !Paladin !Warlock !Hunter !Shaman
     .goto 1426/0,447.800,-5942.000
     .complete 97277,1 --|1/1 Gozwin's Mechanic's Log
     .goto 1426/0,458.700,-5940.600
+step << Shaman
+    .isOnQuest 94374
+    .goto 1426/0,582.100,-5907.800
+    .cast 8202 >> |cRXP_WARN_Use the|r |T134743:0|t[Earth Sapta] |cRXP_WARN_at the |cRXP_PICK_Spirit Stone|r to summon the|r |cRXP_FRIENDLY_Minor Manifestation of Earth|r
+    .use 6635
+step << Shaman
+    .goto 1426/0,576.500,-5908.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Minor Manifestation of Earth::5891|r
+    .target Minor Manifestation of Earth::5891
+    .turnin 94374 >>Turn in Call of Earth
+    .accept 94375 >>Accept Call of Earth
+step << Shaman
+    #optional
+    #completewith next
+    .goto 1426/0,383.800,-6133.700,10 >> Return to |cRXP_FRIENDLY_Teo Hammerstorm|r in Anvilmar
+    .subzoneskip 77,1
+step << Shaman
+    .goto 1426/0,383.900,-6050.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teo Hammerstorm::257446|r
+    .target Teo Hammerstorm::257446
+    .turnin 94375 >>Turn in Call of Earth
 step << !Paladin !Warlock !Hunter !Shaman
     #softcore
     #label Stolen
@@ -591,43 +622,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda::2756|r
     .target Grund Drokda::2756
     .turnin 97277 >>Turn in Grund and Gozwin
-step << Shaman
-    .goto 1426/0,384.000,-6050.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teo Hammerstorm::257446|r
-    .target Teo Hammerstorm::257446
-    .turnin 94373 >>Turn in Call of Earth
-    .accept 94374 >>Accept Call of Earth
-step << Shaman
-    #completewith next
-    .goto 1426/0,497.300,-6118.500,20,0
-    .goto 1426/0,467.700,-6012.800,20,0
-    .goto 1426/0,468.000,-5972.100,20 >> Travel up to the hills in northern Coldridge Valley once again
-step << Shaman
-    .isOnQuest 94374
-    .goto 1426/0,582.100,-5907.800
-    .cast 8202 >> |cRXP_WARN_Use the|r |T134743:0|t[Earth Sapta] |cRXP_WARN_at the |cRXP_PICK_Spirit Stone|r to summon the|r |cRXP_FRIENDLY_Minor Manifestation of Earth|r
-    .use 6635
-step << Shaman
-    .goto 1426/0,576.500,-5908.100
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Minor Manifestation of Earth::5891|r
-    .target Minor Manifestation of Earth::5891
-    .turnin 94374 >>Turn in Call of Earth
-    .accept 94375 >>Accept Call of Earth
-step << Warrior/Warlock/Shaman
-    .isOnQuest 94375
-    .hs >> Hearth to Coldridge Valley
-    .subzoneskip 77,1
-    .cooldown item,6948,>2,1
-step << Shaman
-    #optional
-    #completewith next
-    .goto 1426/0,383.800,-6133.700,10 >> Return to |cRXP_FRIENDLY_Teo Hammerstorm|r in Anvilmar
-    .subzoneskip 77,1
-step << Shaman
-    .goto 1426/0,383.900,-6050.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teo Hammerstorm::257446|r
-    .target Teo Hammerstorm::257446
-    .turnin 94375 >>Turn in Call of Earth
 step << Dwarf Priest/Gnome Priest
     .goto 1426/0,393.53,-6056.72--c:Dun Morogh,28.600,66.385
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
