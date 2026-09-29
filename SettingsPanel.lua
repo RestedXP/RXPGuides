@@ -608,6 +608,18 @@ function addon.settings:CreateAceOptionsPanel()
                 hidden = not (addon.ui and addon.ui.v2 and
                     addon.ui.v2.LaunchConfigurator)
             },
+            resetGuideProgressTop = {
+                name = L("Reset Guide Progress"),
+                desc = L("Clear guide progress for current character"),
+                type = "execute",
+                width = optionsWidth,
+                order = 1.3,
+                func = addon.ResetGuideProgress,
+                confirm = function()
+                    return L("Clear guide progress for current character")
+                end,
+                hidden = addon.player.level > 1,
+            },
             generalSettings = {
                 type = "group",
                 name = _G.GENERAL,
@@ -3475,6 +3487,17 @@ function addon.settings:CreateAceOptionsPanel()
         func = function() _G.ReloadUI() end,
         disabled = function()
             return loadedProfileKey == settingsDB.keys.profile and not settingsDB.isResetting
+        end
+    }
+    optionsTable.args.profiles.args["resetGuideProgress"] = {
+        order = 0.1,
+        name = L("Reset Guide Progress"),
+        desc = L("Clear guide progress for current character"),
+        type = "execute",
+        width = optionsWidth,
+        func = addon.ResetGuideProgress,
+        confirm = function()
+            return L("Clear guide progress for current character")
         end
     }
 

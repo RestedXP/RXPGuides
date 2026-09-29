@@ -32,74 +32,36 @@ step
     .home >> Set your Hearthstone to Stormwind City
     .target Innkeeper Allison
     .bindlocation 16509
+
 step
     #label NEWestfallStart --hidden step for #include
+
 step
     #ah
     .goto 1453/0,660.28,-8814.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[Cooking] |cRXP_BUY_with later|r
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall shortly:|r
     >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
-    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall and Darkshore shortly:|r
     >>|T133972:0|t[Stringy Vulture Meat]
     >>|T133884:0|t[Murloc Eye]
     >>|T135997:0|t[Goretusk Snout]
     >>|T134185:0|t[Okra]
     >>|T134341:0|t[Goretusk Liver]
-    >>|T133972:0|t[Strider Meat]
-    >>|T133912:0|t[Darkshore Grouper]
-    >>|T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    >>|T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
+    >>|T4548890:0|t[Golem Isospring]
+    >>|T132995:0|t[Harvester Gyrostabilizer]
     .collect 729,3,38,1 -- Stringy Vulture Meat (3)
     .collect 730,3,38,1 -- Murloc Eye (3)
     .collect 731,3,38,1 -- Goretusk Snout (3)
     .collect 732,3,38,1 -- Okra (3)
     .collect 723,8,22,1 -- Goretusk Liver (8)
-    .collect 5469,5,2178,1 -- Strider Meat (5)
-    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
-    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (1-50)
-    .disablecheckbox
-    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (1-50)
-    .disablecheckbox
-    .target Auctioneer Jaxon
-    .skill cooking,50,1 --XX Shows if cooking skill is <50
-step
-    #ah
-    #optional
-    .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
-    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall and Darkshore shortly:|r
-    >>|T133972:0|t[Stringy Vulture Meat]
-    >>|T133884:0|t[Murloc Eye]
-    >>|T135997:0|t[Goretusk Snout]
-    >>|T134185:0|t[Okra]
-    >>|T134341:0|t[Goretusk Liver]
-    >>|T133972:0|t[Strider Meat]
-    >>|T133912:0|t[Darkshore Grouper]
-    .collect 729,3,38,1 -- Stringy Vulture Meat (3)
-    .collect 730,3,38,1 -- Murloc Eye (3)
-    .collect 731,3,38,1 -- Goretusk Snout (3)
-    .collect 732,3,38,1 -- Okra (3)
-    .collect 723,8,22,1 -- Goretusk Liver (8)
-    .collect 5469,5,2178,1 -- Strider Meat (5)
-    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
-    .target Auctioneer Jaxon
-    .skill cooking,<50,1 --XX Shows if cooking skill is 50+
+    .collect 255007,14,92909,1 -- Golem Isospring (14)
+    .collect 255010,5,92909,1 -- Harvester Gyrostabilizer (5)
 step << Human
     .goto 1453/0,489.99,-8835.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .turnin 6261 >> Turn in Dungar Longdrink
     .accept 6285 >> Accept Return to Lewis
     .target Dungar Longdrink
-
-
-
-
-
-
-
 
 step
     .goto 1453/0,490.03,-8835.82
@@ -375,6 +337,15 @@ step
     .isQuestComplete 38
     .target Salma Saldean
 step
+    #optional
+    .goto 1436/0,1213.400,-10153.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket::253395|r
+    .target Ozwin Ironsprocket::253395
+    .accept 92909 >>Accept Harvesting the Harvesters
+    .turnin 92909 >>Turn in Harvesting the Harvesters
+    .itemcount 255007,14 -- Golem Isospring (14)
+    .itemcount 255010,5 -- Harvester Gyrostabilizer (5)
+step
     .isQuestAvailable 38
     .goto 1436/0,1132.27,-10146.67,60,0
     .goto 1436/0,1238.67,-9907.73,80,0
@@ -412,12 +383,15 @@ step
 	.target Farmer Saldean
     .goto 1436/0,1055.27,-10128.70
     .turnin 9 >> Turn in The Killing Fields
-step << skip
+step
+    #optional
     .goto 1436/0,1213.400,-10153.800
-    .isQuestComplete 92909
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket::253395|r in the barn
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket::253395|r
     .target Ozwin Ironsprocket::253395
+    .accept 92909 >>Accept Harvesting the Harvesters
     .turnin 92909 >>Turn in Harvesting the Harvesters
+    .itemcount 255007,14 -- Golem Isospring (14)
+    .itemcount 255010,5 -- Harvester Gyrostabilizer (5)
 step
     .goto 1436/0,1179.52,-10382.57,75,0
     .goto 1436/0,1138.22,-10474.97,75,0
@@ -449,6 +423,15 @@ step
     .goto 1436/0,1042.67,-10111.670
     .turnin 38 >> Turn in Westfall Stew
     .turnin 22 >> Turn in Goretusk Liver Pie
+step
+    #optional
+    .goto 1436/0,1213.400,-10153.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket::253395|r
+    .target Ozwin Ironsprocket::253395
+    .accept 92909 >>Accept Harvesting the Harvesters
+    .turnin 92909 >>Turn in Harvesting the Harvesters
+    .itemcount 255007,14 -- Golem Isospring (14)
+    .itemcount 255010,5 -- Harvester Gyrostabilizer (5)
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r
@@ -580,6 +563,18 @@ step << !NightElf
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Jaxon
     .skill cooking,<50,1 --XX Shows if cooking skill is 50+
+step << NightElf Hunter
+    .goto 1453,49.962,57.638
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frederick Stover|r
+    >>|cRXP_BUY_Buy a|r |T135489:0|t[Heavy Recurve Bow] |cRXP_BUY_from him|r. |cRXP_BUY_If you can afford to, buy a|r |T135490:0|t[Reinforced Bow] |cRXP_BUY_and a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_as well|r 
+    .collect 3027,1 -- Heavy Recurve Bow (1)
+    .collect 11362,1 -- Medium Quiver (1)
+    .collect 3026,1 --Reinforced Bow (1)
+    .disablecheckbox
+    .target Landria
+    .money <0.7349
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.20
+    .dungeon DM
 step << Rogue
     .goto 1453/0,377.47,-8752.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
@@ -608,8 +603,8 @@ step
     .target Baros Alexston
     .isQuestComplete 399
 step << NightElf Druid
-    .goto Stormwind City,21.6,51.4
-    >>Talk to |cRXP_FRIENDLY_Theridran|r
+    .goto 1453/0,1347.6192,-8591.2168
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theridran|r
     .trainer >>Train your class spells
 	.target Theridran
 step << Warlock
@@ -1072,6 +1067,7 @@ step << Druid NightElf
 step << Druid NightElf
     #season 0
     #label RedCrystal
+    .isOnQuest 4811
     .goto 1439,47.314,48.676
     >>Travel up to the |cRXP_PICK_Mysterious Red Crystal|r
     >>|cRXP_WARN_Be careful of the two group of 2 |cRXP_ENEMY_Raging Moonkins|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
@@ -1129,6 +1125,13 @@ step << Druid NightElf
     .accept 4812 >> Accept As Water Cascades
     .target Sentinel Glynda Nal'Shea
     .isOnQuest 4811
+step << Druid NightElf
+    #season 0
+    .goto 1439,37.703,43.393
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    .accept 4812 >> Accept As Water Cascades
+    .target Sentinel Glynda Nal'Shea
+    .isQuestTurnedIn 4811
 step << Druid NightElf
     #season 0
     .goto 1439,37.767,44.001
@@ -2333,10 +2336,11 @@ step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias::483|r
     .target Elaine Trias::483
     .turnin 97222 >>Turn in Gatehouse Goods
-step
+step << NightElf
     #include 13-15 Westfall@NEWestfallStart-NEWestfallEnd
 step << NightElf
     .hs >>Hearthstone to Auberdine
+    .zoneskip Darkshore
 step << NightElf
     .goto 1439/1,577.38,6371.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
@@ -2705,15 +2709,14 @@ step
     .goto 1439/1,-663.45,6877.49
     .complete 947,2 --Death Cap (1)
     .goto 1439/1,-685.72,6746.49
-step << NightElf !Druid
-    #softcore
-    #optional
-    #completewith CavetoAuber
-    #season 0
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .target Spirit Healer
+-- step << NightElf !Druid
+--     #softcore
+--     #optional
+--     #completewith CavetoAuber
+--     #season 0
+--     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+--     .target Spirit Healer
 step << skip --logout skip
-    #hardcore << NightElf !Druid
     #optional
     #label MushroomLS
     #completewith CavetoAuber
@@ -2721,7 +2724,6 @@ step << skip --logout skip
     .goto 1439,54.964,34.536
     .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Jump on top of the rock on the top floor inside the cave. Position your character until it looks like they're floating, then perform a Logout Skip by logging out and back in|r
 step
-    #hardcore << NightElf !Druid
     #completewith CavetoAuber
     >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
     >>|cRXP_WARN_Be careful as they|r |T132307:0|t[Flee] |cRXP_WARN_at <30% health|r
@@ -2729,7 +2731,6 @@ step
     .mob Foreststrider Fledgling
     .isQuestAvailable 2178
 step
-    #hardcore << NightElf !Druid
     #requires MushroomLS
     #completewith CavetoAuber
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -2828,14 +2829,14 @@ step
     #season 0
     >>Click the |cRXP_PICK_Wanted Poster|r
     .accept 4740 >> Accept WANTED: Murkdeep!
-step << NightElf !Druid
-    .goto 1439,36.767,44.285
-    #season 0
-    #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
-    .accept 6343 >> Accept Return to Nessa
-    .isQuestAvailable 6343
-    .target Laird
+-- step << NightElf !Druid
+--     .goto 1439,36.767,44.285
+--     #season 0
+--     #optional
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
+--     .accept 6343 >> Accept Return to Nessa
+--     .isQuestAvailable 6343
+--     .target Laird
 step
     #optional
     .goto 1439/1,577.38,6371.35
@@ -2993,105 +2994,105 @@ RXPGuides.RegisterGuide([[
 #next 19-20 Redridge;20-21 Darkshore/Ashenvale << !Hunter
 #next 19-21 Darkshore/Ashenvale << Hunter
 
-step << NightElf !Druid
-    #optional
-    #completewith PortalDarn
-    #season 0
-    .goto 1439/1,561.66,6343.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r
-    .fly Teldrassil >> Fly to Teldrassil
-    .target Caylais Moonfeather
-    .zoneskip Teldrassil
-step << NightElf !Druid
-    .goto 1438/1,950.52,8694.07
-    #season 0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nessa Shadowsong|r
-    .turnin 6343 >> Turn in Return to Nessa
-    .target Nessa Shadowsong
-step << NightElf !Druid
-    #completewith next
-    #season 0
-    #label PortalDarn
-    .goto 1438/1,965.80,8780.95
-    .zone Darnassus >> Take the purple portal into Darnassus
-step << NightElf Warrior
-    .goto 1457/1,2316.91,9991.88
-    #season 0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arias'ta Bladesinger|r
-    .trainer >> Train your class spells
-    .target Arias'ta Bladesinger
-step << NightElf Warrior
-    .goto 1457/1,2329.19,9908.60
-    #season 0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
-    .skipgossipid 96881
-    .train 2567 >> Train Thrown
-    .target Ilyenia Moonfire
-step << NightElf Hunter
-    #completewith start
-    #season 0
-    .goto 1457/1,2511.01,10178.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
-    .trainer >> Train your class spells
-    .target Jocaste
-step << NightElf Hunter
-    #completewith start
-    #season 0
-    #label RecruveReinforced
-    .goto 1457/1,2268.76,9770.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Landria|r
-    >>|cRXP_WARN_Buy a|r |T135489:0|t[Heavy Recurve Bow] |cRXP_WARN_if you can afford it. If not then buy a|r |T135490:0|t[Reinforced Bow]
-    >>|cRXP_WARN_Stock up on|r |T132382:0|t[Sharp Arrows]
-    .collect 3027,1
-    .target Landria
-    .money <0.3812
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.50
-step << Hunter
-    #requires RecruveReinforced
-    #season 0
-    #completewith next
-    +|cRXP_WARN_Equip the|r |T135489:0|t[Heavy Recurve Bow]
-    .use 3027
-    .itemcount 3027,1
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.19
-    .xp <20,1
-step << Hunter
-    #requires RecruveReinforced
-    #season 0
-    #completewith next
-    +|cRXP_WARN_Equip the|r |T135490:0|t[Reinforced Bow]
-    .use 3026
-    .itemcount 3026,1
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.49
-step << NightElf Rogue
-    >>Enter the Cenarion Enclave
-    #season 0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syurna|r
-    .goto 1457/1,2601.39,10120.53,15,0
-    .goto 1457/1,2546.78,10083.62
-    .trainer >> Train your class spells
-    .target Syurna
-step << NightElf !Druid
-    #optional
-    #season 0
-    #completewith next
-    .abandon 729 >> Abandon The Absent Minded Prospector to accept the quest Trouble In Darkshore?
-step << NightElf !Druid
-    .goto 1438/1,2607.86,9641.94
-    #season 0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
-    .accept 730 >> Accept Trouble In Darkshore?
-    .target Chief Archaeologist Greywhisker
-step << NightElf Priest
-    .goto 1457/1,2537.25,9654.40
-    #season 0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandria|r
-    .trainer >> Train your class spells
-    .target Jandria
-step << NightElf !Druid
-    #label start
-    #season 0
-    .hs >> Hearth to Auberdine
+-- step << NightElf !Druid
+--     #optional
+--     #completewith PortalDarn
+--     #season 0
+--     .goto 1439/1,561.66,6343.27
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r
+--     .fly Teldrassil >> Fly to Teldrassil
+--     .target Caylais Moonfeather
+--     .zoneskip Teldrassil
+-- step << NightElf !Druid
+--     .goto 1438/1,950.52,8694.07
+--     #season 0
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nessa Shadowsong|r
+--     .turnin 6343 >> Turn in Return to Nessa
+--     .target Nessa Shadowsong
+-- step << NightElf !Druid
+--     #completewith next
+--     #season 0
+--     #label PortalDarn
+--     .goto 1438/1,965.80,8780.95
+--     .zone Darnassus >> Take the purple portal into Darnassus
+-- step << NightElf Warrior
+--     .goto 1457/1,2316.91,9991.88
+--     #season 0
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arias'ta Bladesinger|r
+--     .trainer >> Train your class spells
+--     .target Arias'ta Bladesinger
+-- step << NightElf Warrior
+--     .goto 1457/1,2329.19,9908.60
+--     #season 0
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
+--     .skipgossipid 96881
+--     .train 2567 >> Train Thrown
+--     .target Ilyenia Moonfire
+-- step << NightElf Hunter
+--     #completewith start
+--     #season 0
+--     .goto 1457/1,2511.01,10178.05
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
+--     .trainer >> Train your class spells
+--     .target Jocaste
+-- step << NightElf Hunter
+--     #completewith start
+--     #season 0
+--     #label RecruveReinforced
+--     .goto 1457/1,2268.76,9770.63
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Landria|r
+--     >>|cRXP_WARN_Buy a|r |T135489:0|t[Heavy Recurve Bow] |cRXP_WARN_if you can afford it. If not then buy a|r |T135490:0|t[Reinforced Bow]
+--     >>|cRXP_WARN_Stock up on|r |T132382:0|t[Sharp Arrows]
+--     .collect 3027,1
+--     .target Landria
+--     .money <0.3812
+--     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.50
+-- step << Hunter
+--     #requires RecruveReinforced
+--     #season 0
+--     #completewith next
+--     +|cRXP_WARN_Equip the|r |T135489:0|t[Heavy Recurve Bow]
+--     .use 3027
+--     .itemcount 3027,1
+--     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.19
+--     .xp <20,1
+-- step << Hunter
+--     #requires RecruveReinforced
+--     #season 0
+--     #completewith next
+--     +|cRXP_WARN_Equip the|r |T135490:0|t[Reinforced Bow]
+--     .use 3026
+--     .itemcount 3026,1
+--     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.49
+-- step << NightElf Rogue
+--     >>Enter the Cenarion Enclave
+--     #season 0
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syurna|r
+--     .goto 1457/1,2601.39,10120.53,15,0
+--     .goto 1457/1,2546.78,10083.62
+--     .trainer >> Train your class spells
+--     .target Syurna
+-- step << NightElf !Druid
+--     #optional
+--     #season 0
+--     #completewith next
+--     .abandon 729 >> Abandon The Absent Minded Prospector to accept the quest Trouble In Darkshore?
+-- step << NightElf !Druid
+--     .goto 1438/1,2607.86,9641.94
+--     #season 0
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
+--     .accept 730 >> Accept Trouble In Darkshore?
+--     .target Chief Archaeologist Greywhisker
+-- step << NightElf Priest
+--     .goto 1457/1,2537.25,9654.40
+--     #season 0
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandria|r
+--     .trainer >> Train your class spells
+--     .target Jandria
+-- step << NightElf !Druid
+--     #label start
+--     #season 0
+--     .hs >> Hearth to Auberdine
 step
     .goto 1439/1,504.41,6402.39
     #season 0
@@ -8422,25 +8423,18 @@ step << !Human !Warlock
     #label start
     .goto 1433/0,-1902.32,-9609.54
     .zone Redridge Mountains >> Travel to Redridge Mountains
-step << !Human !Warlock
-    #xprate >1.49 << Gnome/Dwarf
+step
     .goto 1433/0,-1906.400,-9606.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
     .accept 244 >> Accept Encroaching Gnolls
     .target Guard Parker
-step << !Human !Warlock
-    #xprate >1.49 << Gnome/Dwarf
+step
     .goto 1433/0,-2237.93,-9443.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
     .turnin 244 >> Turn in Encroaching Gnolls
-    .target Deputy Feldon
-step
-    #xprate <1.5
-    .goto 1433/0,-2237.93,-9443.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
-    .target Deputy Feldon
     .accept 246 >> Accept Assessing the Threat
     .accept 98407 >>Accept Show of Force
+    .target Deputy Feldon
 step
 .dungeon DM
     .goto 1433/0,-2164.56,-9213.10,8,0

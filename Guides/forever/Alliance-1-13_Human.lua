@@ -191,18 +191,25 @@ step << Rogue
     #season 0,1
     .goto 1429/0,-104.21,-8909.39--c:Elwynn Forest,47.240,41.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Janos Hammerknuckle|r
-    .vendor 78 >>|cRXP_BUY_Buy a|r |T135650:0|t[Dirk] |cRXP_BUY_from him if you can afford it|r
-    .collect 2139,1 -- Dirk (1)
-    .disablecheckbox
+    .vendor 78 >>|cRXP_BUY_Buy a|r |T135650:0|t[Dirk] |cRXP_BUY_or|r |T132410:0|t[Hand Axe] |cRXP_BUY_from him if you can afford it|r
+    --.collect 2139,1 -- Dirk (1)
+    --.disablecheckbox
     .target Janos Hammerknuckle
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.2
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.5
 step << Rogue
     #season 0,1
-    #completewith next
+    #completewith CleanupEnd
     +|cRXP_WARN_Equip the|r |T135650:0|t[Dirk]
     .use 2139
     .itemcount 2139,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.2
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.5
+step << Rogue
+    #season 0,1
+    #completewith CleanupEnd
+    +|cRXP_WARN_Equip the|r |T132410:0|t[Hand Axe]
+    .use 2134
+    .itemcount 2134,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.5
 step
     #label CleanupEnd
     .goto 1429/0,-162.62,-8902.59
@@ -753,7 +760,7 @@ step
     #completewith RnR
     .isOnQuest 91772
     .goto 1429/0,-46.00,-9044.61,5 >>Click the green |cRXP_PICK_Kobold Tracks|r on the ground as you travel toward Goldshire
-    .use 247970
+    .use 247970 
     .complete 91772,1 -- Followed Kobold Tracks 6/6
     .disablecheckbox
 step
@@ -896,12 +903,17 @@ step << Warrior
 step << Rogue
     .goto 1429/0,94.01,-9464.8900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
-    .vendor 54 >>|cRXP_BUY_Buy a|r |T135641:0|t[Stiletto] |cRXP_BUY_from her if you can afford it|r
-    .collect 2494,1 --Collect Stiletto (1)
-    .disablecheckbox
+    .vendor 54 >>|cRXP_BUY_Buy a|r |T135421:0|t[Tomahawk] |cRXP_BUY_or|r |T135641:0|t[Stiletto] |cRXP_BUY_from her if you can afford it|r
     .target Corina Steele
-    .money <0.0400
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
+--  .money <0.0540
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
+step << Rogue
+    #label RogueTomahawk
+    #completewith GSHS
+    +|cRXP_WARN_Equip the|r |T135421:0|t[Tomahawk]
+    .use 2490
+    .itemcount 2490,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Rogue
     #completewith GSHS
     +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
@@ -979,6 +991,13 @@ step
     .money <0.0100
 step
     #optional
+    .isQuestComplete 96626
+    .goto 1429/0,-5.63,-9467.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tomas|r
+    .turnin 96626 >> Turn in Camping 101: Cooking
+    .target Tomas
+step
+    #optional
     .xp 6 >> Grind to 6
 step << Rogue
     .goto 1429/0,9.64,-9465.36
@@ -1001,7 +1020,8 @@ step << Rogue
     #sticky
     #requires BalancedDaggers1
     #label DeleteOldDaggers
-    .destroy 2947 >> Delete the |T135426:0|t[Small Throwing Knife] from your bags, as it is no longer needed
+    .destroy 2947 >> |cRXP_WARN_Delete the|r |T135426:0|t[Small Throwing Knife] |cRXP_WARN_from your bags, as it is no longer needed|r
+    .itemcount 2946,1
 step << Warlock
     #optional
     #completewith next
@@ -1045,7 +1065,7 @@ step << Warrior/Rogue
     .goto 1429/0,16.20,-9462.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r
     .vendor 295 >> |cRXP_BUY_Buy|r |T133995:0|t[Dalaran Sharp] |cRXP_BUY_from him until you're down to 1 Silver|r << Warrior
-    .vendor 295 >> |cRXP_BUY_Buy up to 20|r |T133995:0|t[Dalaran Sharp] |cRXP_BUY_from him|r << Rogue
+    .vendor 295 >> |cRXP_BUY_Buy up to 20|r |T133995:0|t[Dalaran Sharp] |cRXP_BUY_from him if you can afford it|r << Rogue
     .collect 414,20 --Dalaran Sharp (20)
     .disablecheckbox
     .target Innkeeper Farley
@@ -1573,11 +1593,27 @@ step << Warrior
 step << Rogue
     .goto 1429/0,94.01,-9464.8900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
+    .vendor 54 >>|cRXP_BUY_Buy a|r |T135421:0|t[Tomahawk] |cRXP_BUY_from her if you can afford it|r
+    .collect 2490,1 --Collect Tomahawk (1)
+    .disablecheckbox
+    .target Corina Steele
+--  .money <0.0540
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
+step << Rogue
+    #label RogueTomahawk2
+    +|cRXP_WARN_Equip the|r |T135421:0|t[Tomahawk]
+    .use 2490
+    .itemcount 2490,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
+step << Rogue
+    #requires RogueTomahawk2
+    .goto 1429/0,94.01,-9464.8900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
     .vendor 54 >>|cRXP_BUY_Buy a|r |T135641:0|t[Stiletto] |cRXP_BUY_from her if you can afford it|r
     .collect 2494,1 --Collect Stiletto (1)
     .disablecheckbox
     .target Corina Steele
---   .money <0.0400
+--  .money <0.0400
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #completewith CandlesEnd
@@ -3042,7 +3078,7 @@ step << Rogue
     .itemcount 2946,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step
-    #optional << Warlock/Mage/Warrior
+    #optional << Warlock/Mage/Warrior/Rogue
     .goto 1453/0,613.0,-8796.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
     .trainer >>Train 1h Swords and Staves << Warlock/Mage
@@ -3052,6 +3088,7 @@ step
     .target Woo Ping
     .money <0.2 << Warlock/Mage
     .money <0.3 << Warrior
+    .money <0.55 << Rogue
 step << Warlock/Mage
     .goto 1453/0,613.0,-8796.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
@@ -3073,56 +3110,55 @@ step << Rogue
     #optional
     .goto 1453/0,607.38,-8790.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
-    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
-    .collect 851,1 -- Cutlass (1)
+    >>|cRXP_BUY_Buy a|r |T132402:0|t[Hatchet] |cRXP_BUY_from him. Equip it later when you're level 11|r
+    .collect 853,1 -- Hatchet (1)
     .target Gunther Weller
-    .money <0.2623
+    .money <0.2490
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
-    .train 2983,1 --Sprint not Trained
+    .xp >11,1
 step << Rogue
     #ssf
     #optional
     .goto 1453/0,607.38,-8790.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
-    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
-    .collect 851,1 -- Cutlass (1)
+    >>|cRXP_BUY_Buy a|r |T132402:0|t[Hatchet] |cRXP_BUY_from him|r
+    .collect 853,1 -- Hatchet (1)
     .target Gunther Weller
-    .money <0.2023
+    .money <0.2490
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
-    .train 2983,3 --Sprint Trained
+    .xp <11,1
 step << Rogue
     #optional
     #ah
     .goto 1453/0,607.38,-8790.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
-    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy a|r |T132402:0|t[Hatchet] |cRXP_BUY_from him. Equip it later when you're level 11|r
     >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
     >>|cRXP_WARN_Make sure you save 6s for training later|r
-    .collect 851,1 -- Cutlass (1)
+    .collect 853,1 -- Hatchet (1)
     .target Gunther Weller
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
-    .train 2983,1 --Sprint not Trained
-    .money <0.06
---XX No money gate factoring cutlass in case something cheaper on AH
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.2
+    .xp >11,1
 step << Rogue
     #optional
     #ah
     .goto 1453/0,607.38,-8790.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
-    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy a|r |T132402:0|t[Hatchet] |cRXP_BUY_from him|r
     >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
-    .collect 851,1 -- Cutlass (1)
+    >>|cRXP_WARN_Make sure you save 6s for training later|r
+    .collect 853,1 -- Hatchet (1)
     .target Gunther Weller
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
-    .train 2983,3 --Sprint Trained
---XX No money gate factoring cutlass in case something cheaper on AH
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.2
+    .xp <11,1
 step << Rogue
     #optional
     #completewith Continue
-    +|cRXP_WARN_Equip the|r |T135346:0|t[Cutlass]
-    .use 851
-    .itemcount 851,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
+    +|cRXP_WARN_Equip the|r |T132402:0|t[Hatchet]
+    .use 853
+    .itemcount 853,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.2
+    .xp <11,1
 step
     .goto 1453/0,673.58,-8867.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Allison|r
@@ -3791,7 +3827,7 @@ step
 --logout skip - remove if logout skips re-added
 step
     .goto 1426/0,-682.300,-5489.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldin Steelgrill::1376|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldin Steelgrill::1376|r 
     .target Beldin Steelgrill::1376
     .accept 96408 >>Accept A Visitor to Dun Morogh
 step
@@ -3932,35 +3968,6 @@ step << !Human
     .vendor >> |cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_and|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_if needed|r << !Warrior !Rogue
     .target Kazan Mogosh
     .xp >15,1
-step << Rogue
-    #completewith QuarryEnd
-    #label RogueWep
-    .goto 1426,68.866,55.958,8,0
-    .goto 1426,69.002,55.896
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frast Dokner|r
-    >>|cRXP_WARN_Buy a|r |T135321:0|t[Gladius] |cRXP_WARN_from him|r
-    .collect 2488,1 --Collect Gladius (1)
-    .target Frast Dokner
-    .money <0.0482
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.4
---XX Shows if you didn't get a cutlass or better wep earlier
-step << Rogue
-    #optional
-    #completewith QuarryEnd
-    #requires RogueWep
-    #label Gladius
-    .equip 16,2488 >> |cRXP_WARN_Equip the|r |T135321:0|t[Gladius] |cRXP_WARN_in your mainhand|r
-    .use 2488
-    .itemcount 2488,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.4
-step << Rogue
-    #optional
-    #completewith QuarryEnd
-    #requires Gladius
-    .equip 17,2494 >> |cRXP_WARN_Equip the|r |T135641:0|t[Stiletto] |cRXP_WARN_in your offhand|r
-    .use 2494
-    .itemcount 2494,1
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r and |cRXP_FRIENDLY_Foreman Stonebrow|r
     .accept 433 >> Accept The Public Servant
@@ -4114,6 +4121,8 @@ RXPGuides.RegisterGuide([[
 #next 14-16 Darkshore << Hunter
 #defaultfor Human
 
+step -- dont delete
+    #label NormalRouteStart
 step
     #optional
     #completewith next
@@ -4268,7 +4277,6 @@ step
 step
     .goto 1432/0,-2534.38,-5648.28
     .use 279380 >> |cRXP_WARN_Use the|r |T1387609:0|t[Ceramic Jar] |cRXP_WARN_while standing on the snowy patch to collect the|r |T1387609:0|t[Jar of Snow]
-    >>|cRXP_WARN_NOTE: The|r |T1387609:0|t[Jar of Snow] |cRXP_WARN_will only last for 10 minutes. You must turn the quest in before it expires!|r
     .complete 86667,1 -- Jar of Snow 1/1
 step
     #optional
@@ -4331,9 +4339,7 @@ step
     .mob Tunnel Rat Surveyor
 step
     .goto 1432/0,-3146.73,-4837.02
-    #arrowtext |cRXP_WARN_10 minute timer to turn in quest!|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norric Lochthane|r
-    >>|cRXP_WARN_Ensure to turn this in before the 10 minute expiry on the|r |T1387609:0|t[Jar of Snow]
     .turnin 86667 >> Turn in Snowbound
     .target Norric Lochthane
 step
@@ -4588,37 +4594,28 @@ step << !Warrior
 
 step << Human Warrior -- flying IF to train thrown before going westfall/darkshore
     #completewith next
-    .goto 1432/0,-2929.87,-5424.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
-    .fly Ironforge >> Fly to Ironforge
-    .target Thorgrum Borrelson
-    .zoneskip Ironforge
-step << Human Warrior
-    .goto 1455/0,-1203.78,-5041.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bixi Wobblebonk|r
-    .train 2567 >>Train Thrown
-    .target Bixi Wobblebonk
-step << Human Warrior
-    --add hall of thanes quest turn in in IF
-
-
-
-step << skip -- dungeon route
-    .hs >> Hearth to Ironforge
-    .bindlocation 1537,1
-    .zoneskip Ironforge
-step << skip -- dungeon route
     #optional
     .goto 1432/0,-2929.87,-5424.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .fly Ironforge >> Fly to Ironforge
     .target Thorgrum Borrelson
     .zoneskip Ironforge
-step << skip
-    +Train in Ironforge
-    >>Run Halls of Thane with the quests
-    --cook stuff at ironforge / get quests for halls of thane etc
-    --if doing HoT needs HS IF, if solo keep HS at SW
+step << Human Warrior
+    #optional
+    .goto 1455/0,-1203.78,-5041.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bixi Wobblebonk|r
+    .train 2567 >>Train Thrown
+    .target Bixi Wobblebonk
+step << Human Warrior
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bilban Tosslespanner|r
+    .goto 1455/0,-1234.65,-5035.67
+    .trainer >> Train your class spells
+    .target Bilban Tosslespanner
+    .zoneskip Ironforge,1
+
+step
+    #label NormalRouteEnd
 
 step
     .hs >> Hearth to Stormwind City
@@ -4670,6 +4667,15 @@ step << Hunter
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Jaxon
     .skill cooking,<50,1 --XX Shows if cooking skill is 50+
+step
+    #optional
+    .goto 1453/0,613.0,-8796.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
+    .trainer >>Train 1h Swords and Staves << Warlock/Mage
+    .trainer >>Train 1h Swords << Rogue
+    .trainer >>Train Staves << Priest
+    .trainer >>Train 2h Swords << Warrior/Paladin
+    .target Woo Ping
 step
     .isOnQuest 6261
     .goto 1453/0,489.99,-8835.76

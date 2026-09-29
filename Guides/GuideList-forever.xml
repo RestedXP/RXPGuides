@@ -14,6 +14,19 @@
     <Script file="Guides/forever/Alliance-Mage-12-21.lua"/>
     <Script file="Guides/forever/Horde-Mage-12-21.lua"/>
 	<Script file="Guides/forever/Alliance-ADV-AoE-Mage-1-22.lua"/>
+	
+	
+	<Script file="Guides/forever/dungeon/RestedXP-Skyborne.lua"/>
+    <Script file="Guides/forever/dungeon/Alliance-1-10_NightElf.lua"/>
+    <Script file="Guides/forever/dungeon/Alliance-1-13_Human.lua"/>
+    <Script file="Guides/forever/dungeon/Alliance-1-14_DwarfGnome.lua"/>
+    <Script file="Guides/forever/dungeon/Alliance-11-20.lua"/>
+    <Script file="Guides/forever/dungeon/Horde-01-12_Durotar.lua"/>
+    <Script file="Guides/forever/dungeon/Horde-01-14_Undead.lua"/>
+    <Script file="Guides/forever/dungeon/Horde-1-12_Mulgore.lua"/>
+    <Script file="Guides/forever/dungeon/Horde-12-22_Barrens.lua"/>
+	
+	
 	<Script file="Guides/SurvivalGuide/A-Classic-Alliance-1-10_NightElf.lua"/>
 	<Script file="Guides/SurvivalGuide/A-Classic-Alliance-1-13_Human.lua"/>
 	<Script file="Guides/SurvivalGuide/A-Classic-Alliance-1-14_DwarfGnome.lua"/>

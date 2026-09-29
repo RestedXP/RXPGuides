@@ -55,6 +55,13 @@ step << !sod/Warrior
     .accept 458 >> Accept The Woodland Protector
 	.goto 1438/1,763.45,10389.79
     .target +Melithar Staghelm
+step << Priest
+    .goto Teldrassil,59.602,40.696
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dellylah|r
+    .vendor >> |cRXP_WARN_Vendor trash|r
+    >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water]
+    .collect 159,15 --Collect Refreshing Spring Water (x15)
+    .target Dellylah
 step << !Druid
     >>Kill |cRXP_ENEMY_Young Nightsabers|r and |cRXP_ENEMY_Young Thistle Boars|r
     .goto 1438/1,657.75,10385.51,0,0
@@ -62,36 +69,17 @@ step << !Druid
     .mob +Young Nightsaber
     .complete 456,2 --Kill Young Thistle Boar (x4)
     .mob +Young Thistle Boar
-step << Hunter
-#xprate >1.99
-    #requires balance1
-	.goto 1438/1,826.03,10328.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
-    .turnin 456,1 >> Turn in The Balance of Nature << Hunter
-    .target Conservator Ilthalaine
-    .accept 457 >> Accept The Balance of Nature
-step << Hunter
-#xprate >1.99
-    .goto 1438/1,769.77,10673.98
-    >>Kill |cRXP_ENEMY_Mangy Nightsabers|r and |cRXP_ENEMY_Thistle Boars|r
-    .complete 457,1 --Kill Mangy Nightsaber (x7)
-    .mob +Mangy Nightsaber
-    .complete 457,2 --Kill Thistle Boar (x7)
-    .mob +Thistle Boar
 step << Warrior
-    #season 0
     .goto 1438/1,794.92,10436.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keina|r
 	.vendor >> |cRXP_WARN_Vendor trash|r
     .target Keina
 step << Warrior
-    #season 0
 	.goto 1438/1,778.07,10526.62
     .target Alyissia
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alyissia|r
     .trainer >> Train |T132333:0|t[Battle Shout]
 step << Hunter/Warrior
-    #season 0,1
     .goto 1438/1,769.77,10673.98
     .xp 4-610 >> Grind until you are 610xp away from level 4 (790/1400)
 step << Hunter/Warrior
@@ -110,14 +98,6 @@ step << Hunter/Warrior
     .target Tarindrella
     .accept 459 >> Accept The Woodland Protector
     .accept 97977 >>Accept Nature's Call
-step << Hunter
-#xprate >1.99
-    #requires balance1
-	.goto 1438/1,826.03,10328.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
-    .turnin 457 >> Turn in The Balance of Nature
-    .target Conservator Ilthalaine
-	.accept 3117 >> Accept Etched Sigil
 step << Druid
 	.goto 1438/1,820.68,10487.33--c:Teldrassil,58.8,39.6
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khardan|r
@@ -125,7 +105,7 @@ step << Druid
 	.collect 2132 --Short Staff (1)
 	.use 2132 >> equip the Short Staff
 	.target Khardan Proudblade
-step
+step << !Priest !Rogue
 #xprate <1.99 << Hunter/Warrior
     #requires balance1
 	.goto 1438/1,826.03,10328.97
@@ -140,11 +120,8 @@ step
 	.accept 3119 >> Accept Hallowed Sigil << Priest
 	.accept 3120 >> Accept Verdant Sigil << Druid
 step << !Hunter !Druid !Warrior
-    #season 0 << Druid
-    .goto 1438/1,769.77,10673.98
-    >>Kill |cRXP_ENEMY_Mangy Nightsabers|r and |cRXP_ENEMY_Thistle Boars|r
-    .complete 457,1 --Kill Mangy Nightsaber (x7)
-    .mob +Mangy Nightsaber
+    #completewith next
+    >>Kill |cRXP_ENEMY_Thistle Boars|r on the way to Iverron
     .complete 457,2 --Kill Thistle Boar (x7)
     .mob +Thistle Boar
 step << !Hunter !Druid !Warrior
@@ -166,6 +143,13 @@ step << !Hunter !Warrior
     .target Tarindrella
     .accept 459 >> Accept The Woodland Protector
     .accept 97977 >>Accept Nature's Call
+step << Priest/Rogue
+    #requires balance1
+	.goto 1438/1,826.03,10328.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
+    .turnin 456 >> Turn in The Balance of Nature
+    .target Conservator Ilthalaine
+	.accept 3119 >> Accept Hallowed Sigil << Priest
 step << Druid
     #completewith next
     +|cRXP_WARN_Cast|r |T136006:0|t[|cRXP_LOOT_Wrath|r] |cRXP_WARN_until out of mana then switch back to|r |T135158:0|t[|cRXP_LOOT_Melee|r] |cRXP_WARN_until you are back to full and repeat|r
@@ -200,11 +184,6 @@ step << Druid
     >>TIP: |cRXP_WARN_Take the leggings as the reward and keep them. You will use them to engrave a rune on later on|r << sod Hunter/sod Rogue/sod Warrior/sod Druid
     .turnin 459,1 >> Turn in The Woodland Protector
     .turnin 97977 >>Turn in Nature's Call
-step << !Hunter !Druid !Warrior
-    .goto 1438/1,826.03,10328.97
-    .target Conservator Ilthalaine
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
-    .turnin 457 >> Turn in The Balance of Nature
 step
     .goto 1438/1,713.81,10407.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirania Silvershine|r
@@ -228,6 +207,16 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alyissia|r
 	.turnin 3116 >> Turn in Simple Sigil
     .trainer >> Train your class spells
+step << Priest
+    .goto Teldrassil,59.602,40.696
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dellylah|r
+    .vendor >> |cRXP_WARN_Vendor trash|r
+    >>|cRXP_BUY_Buy up to 25|r |T132794:0|t[Refreshing Spring Water]
+    .collect 159,25 --Collect Refreshing Spring Water (x25)
+    .target Dellylah
+step
+    #optional
+    .xp 3
 step
     .goto 1438/1,871.24,10417.65
     .target Gilshalan Windwalker
@@ -323,6 +312,13 @@ step
     .turnin 3521 >> Turn in Iverron's Antidote
     .target Dirania Silvershine
     .accept 3522 >> Accept Iverron's Antidote
+step << Priest
+    .goto Teldrassil,59.602,40.696
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dellylah|r
+    .vendor >> |cRXP_WARN_Vendor trash|r
+    >>|cRXP_BUY_Buy up to 25|r |T132794:0|t[Refreshing Spring Water]
+    .collect 159,25 --Collect Refreshing Spring Water (x25)
+    .target Dellylah
 step << !Priest
     #season 0 << Hunter
     .goto 1438/1,794.92,10436.72
@@ -330,21 +326,6 @@ step << !Priest
 	.vendor >> |cRXP_WARN_Vendor trash|r << !Hunter
 	.vendor >> |cRXP_BUY_Buy 3 or 4 stacks of|r |T132382:0|t[Rough Arrows] << Hunter
     .target Keina
-
-step << Priest
-    #completewith next
-    .goto 1438/1,787.28,10438.120
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Janna Brightmoon|r up stairs
-	.vendor >> |cRXP_WARN_Vendor trash|r
-    .target Janna Brightmoon
-step << Priest
-    #season 0,1,2
-	.goto 1438/1,801.64,10458.75
-    .target Shanda
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shanda|r up stairs
-	.turnin 3119 >> Turn in Hallowed Sigil << !sod
-    .turnin 77574 >> Turn in Meditation of Elune << sod
-	.trainer >> Train your class spells
 step
     #season 0 << Warrior
     .goto 1438/1,871.24,10417.65
@@ -358,6 +339,11 @@ step << Hunter/Rogue
     .use 5392
     .itemcount 5392,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.05
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Thistle Boars|r on the way to Iverron
+    .complete 457,2 --Kill Thistle Boar (x7)
+    .mob +Thistle Boar
 step
     #season 0 << Warrior
     .goto 1438/1,1034.89,10711.58
@@ -417,7 +403,7 @@ step
     .goto 1438/1,764.68,10711.31
 	.use 5185 >> |cRXP_WARN_Use the|r |T134776:0|t[Crystal Phial] |cRXP_WARN_at the Moonwell|r
     .complete 921,1 --Collect Filled Crystal Phial (x1)
-step << Hunter/Druid/Warrior
+step << Hunter/Druid/Warrior/Priest
 #xprate <1.99
     .goto 1438/1,769.77,10673.98
     >>Kill |cRXP_ENEMY_Mangy Nightsabers|r and |cRXP_ENEMY_Thistle Boars|r
@@ -438,12 +424,6 @@ step << Hunter/Druid
     .target Conservator Ilthalaine
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
     .turnin 457,2 >> Turn in The Balance of Nature
-step << Priest
-    #requires vial1
-    .goto 1438/1,800.32,10456.78
-    .target Shanda
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shanda|r
-    .accept 5622 >> Accept In Favor of Elune
 step
 #xprate <1.99
     #requires vial1
@@ -458,13 +438,37 @@ step
     .goto 1438/1,805.500,10491.800
     >>Click on the [|cRXP_PICK_Book|r] to the left of |cRXP_FRIENDLY_Tenaron|r
     .accept 96630 >>Accept The Adventurer
-step << Warrior
-#xprate <1.99
+step << Priest
+    #completewith next
+    .goto 1438/1,787.28,10438.120
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Janna Brightmoon|r up stairs
+	.vendor >> |cRXP_WARN_Vendor trash|r
+    .target Janna Brightmoon
+step << Priest
+    #season 0,1,2
+	.goto 1438/1,801.64,10458.75
+    .target Shanda
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shanda|r up stairs
+	.turnin 3119 >> Turn in Hallowed Sigil
+    .accept 97979 >> Accept The Goddess Provides
+    .accept 5622 >> Accept In Favor of Elune
+	.trainer >> Train your class spells
+step << Priest
+    >>Cast |T132089:0|t[|cRXP_LOOT_Shadowmeld|r] and |T136057:0|t[|cRXP_LOOT_Elune's Light|r]
+    .complete 97979,1
+    .complete 97979,2
+step << Priest
+    .goto 1438/1,800.500,10454.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shanda::3595|r
+    .target Shanda::3595
+    .turnin 97979 >>Turn in The Goddess Provides
+step
     #requires vial1
     .goto 1438/1,826.03,10328.97
     .target Conservator Ilthalaine
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
     .turnin 457,2 >> Turn in The Balance of Nature
+    .isQuestComplete 457
 step
     .goto 1438/1,700.57,10214.33
     .target Porthannius
@@ -558,17 +562,10 @@ step << !Rogue
     .accept 87288 >> Accept Soft Saber Pelts
     .target Aldia
 step
-#xprate <1.99 << Hunter/Warrior/Druid
     .goto 1438/1,984.94,9898.58
     .target Tallonkai Swiftroot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
     .accept 932 >> Accept Twisted Hatred
-    .accept 2438 >> Accept The Emerald Dreamcatcher
-step << Hunter/Warrior/Druid
-#xprate >1.99
-    .goto 1438/1,984.94,9898.58
-    .target Tallonkai Swiftroot
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
     .accept 2438 >> Accept The Emerald Dreamcatcher
 step << Hunter
     .goto 1438/1,968.85,9821.98--c:Teldrassil,55.890,59.205
@@ -973,13 +970,6 @@ step << Druid
     .itemcount 2495,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.19
 step << Druid
-#xprate 1.49-1.99
-    .goto 1438/1,956.02,9736.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
-    .turnin 929 >> Turn in Crown of the Earth
-    .target Corithras Moonrage
-    .xp <8,1
-step << Druid
 #xprate <1.50
     .goto 1438/1,956.02,9736.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
@@ -994,6 +984,23 @@ step << Druid
 	.trainer >> Train your class spells
     .target Kal
     .xp <8,1
+step << Druid
+    #completewith next
+    >>Kill |cRXP_ENEMY_Nightsabers|r. Loot them for their |cRXP_LOOT_Fangs|r and |cRXP_LOOT_Pelts|r
+    .complete 87288,1 --Soft Nightsaber Pelt (x6)
+    .mob Nightsaber
+    .isOnQuest 87288
+step << Druid
+    #completewith next
+    .goto 1438/1,1030.46,10037.99,20,0
+    .goto 1438/1,1043.70,10093.99,15 >> Travel to Fel Rock
+step << Druid
+    #label Melenas
+    .goto 1438/1,1207.65,10114.01
+    >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for his |cRXP_LOOT_Head|r
+    >>|cRXP_ENEMY_Lord Melenas|r may be located in many different spawn locations throughout Fel Rock
+    .complete 932,1 --Collect Melenas' Head (x1)
+    .unitscan Lord Melenas
 step
     #completewith jewel
     +Eat the |T132834:0|t[|cRXP_LOOT_Herb Baked Eggs|r] for 10 seconds to receive a |cRXP_WARN_5% mob kill experience buff for 15 minutes|r.
@@ -1133,6 +1140,14 @@ step
 	.complete 933,1
 step
 	#xprate <1.5
+    .goto 1438/1,1539.12,9437.98,40,0
+    .goto 1438/1,1529.44,9325.64
+    >>Kill |cRXP_ENEMY_Webwood Lurkers|r and |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Small Spider Legs|r
+    .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
+    .mob Webwood Lurker
+    .mob Webwood Venomfang
+step
+	#xprate <1.5
     #completewith next
     .goto 1438/1,1645.02,9245.89,50 >> Travel to southwestern Teldrassil
 step
@@ -1141,14 +1156,6 @@ step
 	.goto 1438/1,1645.02,9245.89
 	>>Click the |cRXP_PICK_Strange Fruited Plant|r
 	.accept 930 >> Accept The Glowing Fruit
-step
-	#xprate <1.5
-    .goto 1438/1,1539.12,9437.98,40,0
-    .goto 1438/1,1529.44,9325.64
-    >>Kill |cRXP_ENEMY_Webwood Lurkers|r and |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Small Spider Legs|r
-    .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
-    .mob Webwood Lurker
-    .mob Webwood Venomfang
 step
 	#xprate <1.5
     #hardcore
@@ -1271,6 +1278,35 @@ step << Priest
     >>|cRXP_WARN_Skip this step if you already trained level 8 spells|r
 	.trainer >> Train your class spells
 step
+    #optional
+    #completewith next
+    >>Kill |cRXP_ENEMY_Nightsabers|r. Loot them for their |cRXP_LOOT_Fangs|r and |cRXP_LOOT_Pelts|r
+    .complete 87288,1 --Soft Nightsaber Pelt (x6)
+    .mob Nightsaber
+    .isOnQuest 87288
+step
+    #completewith next
+    .goto 1438/1,1030.46,10037.99,20,0
+    .goto 1438/1,1043.70,10093.99,15 >> Travel to Fel Rock
+step
+    #optional
+    #label Melenas
+    .goto 1438/1,1207.65,10114.01
+    >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for his |cRXP_LOOT_Head|r
+    >>You can use the |T134296:0|t[|cRXP_FRIENDLY_Severed Voodoo Claws|r] on him to severely reduce his damage!
+    >>|cRXP_ENEMY_Lord Melenas|r may be located in many different spawn locations throughout Fel Rock
+    .complete 932,1 --Collect Melenas' Head (x1)
+    .unitscan Lord Melenas
+    .itemcount 5457,1
+step
+    #label Melenas
+    .goto 1438/1,1207.65,10114.01
+    >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for his |cRXP_LOOT_Head|r
+    >>|cRXP_ENEMY_Lord Melenas|r may be located in many different spawn locations throughout Fel Rock
+    .complete 932,1 --Collect Melenas' Head (x1)
+    .unitscan Lord Melenas
+    .itemcount 5457,<1
+step
     #loop
     .goto 1438/1,854.400,9952.500,6 >>Next to a small tree
     .goto 1438/1,822.200,9948.500,6 >>On the small hill
@@ -1287,108 +1323,26 @@ step
     .turnin 489 >> Turn in Seek Redemption!
     .itemcount 3418,3
     .isOnQuest 489
+step << Priest/Druid
+    #optional
+    .goto 1438/1,988.30,9891.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aldia|r up stairs
+    .turnin 87288 >> Turn in Soft Saber Pelts
+    .target Aldia
+    .isQuestComplete 87288
+step << Priest/Druid
+    .goto 1438/1,984.94,9898.58
+    .target Tallonkai Swiftroot
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
+    .turnin 932 >> Turn in Twisted Hatred
+    .turnin 2459 >> Turn in Ferocitas the Dream Eater
 step
-    #completewith next
-    .goto 1438/1,1030.46,10037.99,20,0
-    .goto 1438/1,1043.70,10093.99,15 >> Travel to Fel Rock
-step
-    #label Melenas
-    .goto 1438/1,1207.65,10114.01
-    >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for his |cRXP_LOOT_Head|r
-    >>|cRXP_ENEMY_Lord Melenas|r may be located in many different spawn locations throughout Fel Rock
-    .complete 932,1 --Collect Melenas' Head (x1)
-    .unitscan Lord Melenas
-step
-#xprate >1.99
-    .xp 10
-   >>|cRXP_WARN_If you're not even close do the Lord Melenas quest|r
-step << Priest
-#xprate >1.99
-    .goto 1438/1,985.45,9905.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laurna Morninglight|r
-	.trainer >> Train your class spells
-    .accept 5629 >>Accept Returning Home << sod
-    .target Laurna Morninglight
-step << Warrior
-#xprate >1.99
-    .goto 1438/1,952.00,9822.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kyra Windblade|r
-	.trainer >> Train your class spells
-    .target Kyra Windblade
-step << Rogue
-#xprate >1.99
-    .goto 1438/1,943.85,9790.28
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
-	.trainer >> Train your class spells
-    .train 5171 >> Train |T132306:0|t[Slice and Dice] << !sod
-    .train 921 >> Train |T133644:0|t[Pick Pocket] as well which is needed for your level 10 Rogue quest
-    .target Jannok Breezesong
-step << Hunter
-#xprate >1.99
-    .goto 1438/1,928.83,9812.34
-    .target Dazalar
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
-    .accept 6063 >> Accept Taming the Beast
-	.trainer >> Train your class spells
-step << Hunter
-#xprate >1.99
-    .goto 1438/1,764.68,9835.73
-    .use 15921 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Webwood Lurker|r
-    .complete 6063,1 --Tame a Webwood Lurker
-    .mob Webwood Lurker
-step << Hunter
-#xprate >1.99
-    .goto 1438/1,928.83,9812.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
-    .turnin 6063 >> Turn in Taming the Beast
-    .target Dazalar
-    .accept 6101 >> Accept Taming the Beast
-step << Hunter
-#xprate >1.99
-    .goto 1438/1,627.20,9380.96
-    .use 15922 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Nightsaber Stalker|r
-    >>|cRXP_WARN_You must right click your Pet Frame and Dismiss your pet before you can tame another one|r
-    .complete 6101,1 --Tame a Nightsaber Stalker
-    .mob Nightsaber Stalker
-step << Hunter
-#xprate >1.99
-    .goto 1438/1,928.83,9812.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
-    .turnin 6101 >> Turn in Taming the Beast
-    .target Dazalar
-    .accept 6102 >> Accept Taming the Beast
-step << Hunter
-#xprate >1.99
-    .goto 1438/1,520.28,9567.62
-    .use 15923 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Strigid Screecher|r
-    >>|cRXP_WARN_You must right click your Pet Frame and Dismiss your pet before you can tame another one|r
-    .complete 6102,1 --Tame a Strigid Screecher
-    .mob Strigid Screecher
-step << Hunter
-#xprate >1.99
-    .goto 1438/1,928.83,9812.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
-    .turnin 6102 >> Turn in Taming the Beast
-    .target Dazalar
-    .accept 6103 >> Accept Training the Beast
-    .train 1130 >> |cRXP_WARN_Make sure you have trained Hunter's Mark. You will need it to get a rune soon|r
-step << Warrior
-#xprate >1.99
-    .goto 1438/1,971.91,9852.35,40,0
-    .goto 1438/1,1257.55,10004.39
-    .goto 1438/1,971.91,9852.35,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moon Priestess Amara|r
-    >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar. She can also be busy fighting a furlbog ambush in which case you will have to wait for her to finish|r
-    .line Teldrassil,50.4,54.2,50.4,55.4,50.4,55.6,50.6,56.2,51.2,56.6,52.2,56.4,52.4,56.6,52.8,57.0,53.4,57.6,54.4,58.4,55.2,58.6,55.4,58.4,55.6,58.4,55.8,58.6
-    .accept 1684 >> Accept Elanaria
-    .accept 487 >> Accept The Road to Darnassus
-    .target Moon Priestess Amara
-step << Rogue
-#xprate >1.99
-    .goto 1438/1,943.85,9790.28
-    .target Jannok Breezesong
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
-    .accept 2241 >> Accept The Apple Falls
+    #optional
+    #completewith Ambushers
+    >>Kill |cRXP_ENEMY_Nightsabers|r. Loot them for their |cRXP_LOOT_Fangs|r and |cRXP_LOOT_Pelts|r
+    .complete 87288,1 --Soft Nightsaber Pelt (x6)
+    .mob Nightsaber
+    .isOnQuest 87288
 step
     #season 0
     .goto 1438/1,971.91,9852.35,40,0
@@ -1401,11 +1355,12 @@ step
     .target Moon Priestess Amara
 step
     #season 0
+    #label Ambushers
     .goto 1438/1,1441.87,10032.56
     >>Kill |cRXP_ENEMY_Gnarlpine Ambushers|r
     .complete 487,1 --Kill Gnarlpine Ambusher (x6)
     .mob Gnarlpine Ambusher
-step << Druid
+step << Druid/Priest
     .goto 1438/1,1172.01,9917.17
     >>Find Moon Priestess Amara, she patrols the road west of Dolanaar
     .target Moon Priestess Amara
@@ -1434,10 +1389,9 @@ step
     .complete 7383,1 --Collect Filled Amethyst Phial (x1)
 
 --with the new quests, druids can go straight to 10, a 5 minute save later down the road
-step
-	#xprate < 1.5
-    #completewith xp10<<!Druid
-	#label harpies
+--@TODO add mist here
+step << Druid/Priest
+    #completewith next
     >>Kill |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for their |cRXP_LOOT_Belts|r
     >>|cRXP_ENEMY_Bloodfeather Matriarchs|r |cRXP_WARN_cast|r |T136052:0|t[Healing Wave] |cRXP_WARN_and|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_which does a lot of damage. Try to burst them fast|r
     >>|cRXP_WARN_Avoid fighting them as much as you can|r
@@ -1448,27 +1402,54 @@ step
     .mob Bloodfeather Fury
     .mob Bloodfeather Wind Witch
     .mob Bloodfeather Matriarch
-step << Druid
+step << Druid/Priest
+    .goto 1438/1,2208.67,10758.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mist|r
+    >>|cRXP_WARN_This will start an escort quest|r
+    .accept 938 >> Accept Mist
+    .target Mist
+step << Druid/Priest
+    .goto 1438/1,1863.46,10665.16
+    .target Sentinel Arynia Cloudsbreak
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
+    >>|cRXP_WARN_Keep in mind this is a timed quest, you need to turn it in within 10 minutes of accepting|r
+    .turnin 938 >> Turn in Mist
+step
+	#xprate < 1.5
+    #completewith xp10 <<!Druid !Priest
+	#label harpies
+    .goto 1438/1,2102.82,10819.27,0,0
+    >>Kill |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for their |cRXP_LOOT_Belts|r
+    >>|cRXP_ENEMY_Bloodfeather Matriarchs|r |cRXP_WARN_cast|r |T136052:0|t[Healing Wave] |cRXP_WARN_and|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_which does a lot of damage. Try to burst them fast|r
+    >>|cRXP_WARN_Avoid fighting them as much as you can|r
+    .complete 937,1 --Collect Bloodfeather Belt (x6)
+    .mob Bloodfeather Harpy
+    .mob Bloodfeather Rogue
+    .mob Bloodfeather Sorceress
+    .mob Bloodfeather Fury
+    .mob Bloodfeather Wind Witch
+    .mob Bloodfeather Matriarch
+step << Druid/Priest
     .goto 1438/1,1864.47,10663.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .turnin 937 >> Turn in The Enchanted Glade
     .accept 98392 >> Accept Darkness in the Glade
     .target Sentinel Arynia Cloudsbreak
-step << Druid
+step << Druid/Priest
     .goto 1438/1,2032.50,10500.90--c:Teldrassil,35.0,39.2
     >>Kill |cRXP_ENEMY_Hatescreech|r. Loot her for her |T133288:0|t[|cRXP_LOOT_Amulet|r]
     .complete 98392,1
     .mob Hatescreech
-step << Druid
+step << Druid/Priest
     .goto 1438/1,2103.78,10623.08--c:Teldrassil,33.6,35.6
     >>Kill |cRXP_ENEMY_Windmistress Gaedress|r. Loot her for her |T133333:0|t[|cRXP_LOOT_Amulet|r]
     .complete 98392,2
     .mob Windmistress Gaedress
-step << Druid
+step << Druid/Priest
     .goto 1438/1,2042.68,10860.64--c:Teldrassil,34.8,28.6
     >>Kill |cRXP_ENEMY_Witchmother Arysa|r. Loot her for her |T133324:0|t[|cRXP_LOOT_Amulet|r]
-    >>|cRXP_ENEMY_Bloodfeather Matriarchs|r |cRXP_WARN_cast|r |T136052:0|t[Healing Wave] |cRXP_WARN_and|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_which does a lot of damage. Try to burst them fast|r
-    >>|cRXP_WARN_Avoid fighting them as much as you can|r
+    >>|cRXP_ENEMY_Witchmother Arysa|r and |cRXP_ENEMY_Bloodfeather Matriarchs|r |cRXP_WARN_cast|r |T136052:0|t[Healing Wave] |cRXP_WARN_and|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_which does a lot of damage. Try to burst them fast|r
+    >>|cRXP_WARN_Avoid fighting the Matriarchs as much as you can|r
     .complete 98392,3
     .mob Witchmother Arysa
 step
@@ -1476,20 +1457,20 @@ step
     .goto 1438/1,2052.36,10854.19
     >>Click the |cRXP_PICK_Strange Fronded Plant|r
     .accept 931 >> Accept The Shimmering Frond
-step << Druid
+step << Druid/Priest
     .goto 1438/1,1864.47,10663.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .turnin 98392 >> Turn in Darkness in the Glade
     .accept 98398 >> Accept The Oracle Tree
     .target Sentinel Arynia Cloudsbreak
-step << Druid
+step << Druid/Priest
     .goto 1438/1,1932.400,10673.500
     >>Go to the |cRXP_FRIENDLY_Oracle Tree Bark|r
     .turnin 98398 >> Turn in The Oracle Tree
     .accept 940 >> Accept Teldrassil
-step << Druid
+step << Druid/Priest
     #label xp10
-    .xp 10-760 >> Grind until you are 760 xp off level 10 (5740/6500)
+    .xp 10-900 >> Grind until you are 900 xp off level 10 (5600/6500)
 step << Hunter
 	#xprate <1.5
     #completewith xp10
@@ -1504,7 +1485,7 @@ step << Hunter
     #sticky
     #label xp10
     --@TODO change the XP req here
-    .xp 10-2670 >> Grind until you are 2670 xp off level 10 (3830/6500)
+    .xp 9+2250 >> Grind until you are 2250 into level 9 (2250/6500)
     >>|cRXP_WARN_Once you reach this xp breakpoint, skip the harpy/escort quest and go straight to Darnassus. You will have another opportunity to finish those quests later|r
 step << Hunter
 	#xprate <1.5
@@ -1560,6 +1541,91 @@ step << Hunter
     .train 227 >>Train Staves
     >>If you have a Staff in your bags, equip it
     .target Ilyenia Moonfire
+step << Priest
+    #ah
+    #optional
+    .goto 1457/1,2318.400,10134.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vaean|r
+    >>|cRXP_WARN_Skip this step if you'd rather buy the|r |T135139:0|t[|cRXP_FRIENDLY_Lesser Magic Wand|r] |cRXP_WARN_from the Auction House|r
+    >>Check if he has the |T132867:0|t[|cRXP_FRIENDLY_Lesser Magic Essence|r] for sale. If he does buy it. You will need it to craft a |T135139:0|t[|cRXP_LOOT_Wand|r]
+    .collect 10938,1 --Lesser Magic Essence
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.12 --No Wand equipped
+    .itemcount 11287,<1 --No Wand in bags
+    .target Vaean
+step << Priest
+    #ssf
+    #optional
+    .goto 1457/1,2318.400,10134.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vaean|r
+    >>Check if he has a |T132867:0|t[|cRXP_FRIENDLY_Lesser Magic Essence|r] for sale. If he does buy it. You will need it to craft a |T135139:0|t[|cRXP_LOOT_Wand|r]
+    .collect 10938,1 --Lesser Magic Essence
+    .target Vaean
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.12 --No Wand equipped
+    .itemcount 11287,<1 --No Wand in bags
+step << Priest
+    .goto 1457/1,2315.900,10148.200
+    .itemcount 10938,1 --Lesser Magic Essence (1)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lalina Summermoon|r
+    .train 7411 >>Train |T136244:0|t[|cRXP_LOOT_Enchanting|r]. You will need it to craft a |T135139:0|t[|cRXP_LOOT_Wand|r]
+    .target Lalina Summermoon
+step << Priest
+    #optional
+    .itemcount 10938,1 --Lesser Magic Essence (1)
+    .goto 1457/1,2318.400,10134.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vaean|r
+    >>|cRXP_BUY_Buy the following materials from him:|r
+    .collect 6217,1 --Copper Rod (1)
+    .collect 247786,9 --Mote of Magic (9)
+    .collect 4470,9 --Simple Wood (9)
+    .target Vaean
+    .skill enchanting,10,1
+step << Priest
+    #optional
+    .itemcount 10938,1 --Lesser Magic Essence (1)
+    >>Use |T136244:0|t[|cRXP_LOOT_Enchanting|r] in your |cRXP_WARN_profession tab|r to create a |T135225:0|t[|cRXP_LOOT_Runed Copper Rod|r]
+    .collect 6218,1 --Runed Copper Rod
+    .skill enchanting,10,1
+step << Priest
+    #optional
+    .itemcount 10938,1 --Lesser Magic Essence (1)
+    +Use |T136244:0|t[|cRXP_LOOT_Enchanting|r] in your |cRXP_WARN_profession tab|r to craft |T135645:0|t[|cRXP_LOOT_Novice's Practice Wands|r] |cRXP_WARN_until you reach 10 enchanting|r
+    .skill enchanting,10,1
+step << Priest
+    #optional
+    .goto 1457/1,2315.900,10148.200
+    .itemcount 10938,1 --Lesser Magic Essence (1)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lalina Summermoon|r
+    .train 14293 >>Train |T135139:0|t[|cRXP_FRIENDLY_Lesser Magic Wand|r] from her
+    .target Lalina Summermoon
+    .skill enchanting,<10,1
+step << Priest
+    #optional
+    .itemcount 10938,1 --Lesser Magic Essence (1)
+    >>Use |T136244:0|t[|cRXP_LOOT_Enchanting|r] in your |cRXP_WARN_profession tab|r to craft a |T135139:0|t[|cRXP_FRIENDLY_Lesser Magic Wand|r]
+    .collect 11287,1 --Lesser Magic Wand
+    .skill enchanting,<10,1
+step << Priest
+    #optional
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135139:0|t[|cRXP_FRIENDLY_Lesser Magic Wand|r]
+    .use 11287
+    .itemcount 11287,1
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.12
+step << Priest
+    #ah
+    #optional
+    .goto 1457/1,2343.10,9856.95,-1
+    .goto 1457/1,2341.74,9872.610,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to a |cRXP_FRIENDLY_Darnassus Auctioneer|r
+    >>|T134711:0|t[Minor Wizard Oil] |cRXP_WARN_and|r |T133906:0|t[Smoked Sagefish] |cRXP_WARN_will provide a high DPS increase in early levels|r
+    >>|cRXP_WARN_Also check for any high DPS|r |T132317:0|t[Wand] |cRXP_WARN_upgrades that you can use now/soon|r
+    *|cRXP_WARN_Skip this step if you wish to not buy any|r
+    .collect 20744,1 -- Minor Wizard Oil (1)
+    .collect 21072,20 -- Smoked Sagefish (20)
+    .target Auctioneer Tolon
+    .target Auctioneer Golothas
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.12 --No Wand equipped
+    .itemcount 11287,<1 --No Wand in bags
 step << !Rogue
     #requires xp10
     .goto 1457/1,2534.29,10085.60
@@ -1567,7 +1633,7 @@ step << !Rogue
     .turnin 922 >> Turn in Rellian Greenspyre
     .target Rellian Greenspyre
     .accept 923 >> Accept Tumors
-step << Druid NightElf
+step << Druid NightElf/Priest NightElf
     #optional
     .goto 1457/1,2569.91,10173.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r
@@ -1589,12 +1655,6 @@ step << Druid NightElf
     .accept 5921 >> Accept Moonglade
 	.trainer >> Train your class spells
     .target Mathrengyl Bearwalker
-step << Hunter
-#xprate >1.99
-    .goto 1457/1,2511.04,10178.01
-    .target Jocaste
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
-    .turnin 6103 >> Turn in Training the Beast
 step << !Rogue
     .goto 1457/1,2508.68,9605.98--c:Darnassus,40.6,89.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Dalia Sunblade|r
@@ -1604,8 +1664,14 @@ step << !Rogue
     .goto 1457/1,2517.99,9584.25,10,0
     .goto 1457/1,2550.48,9631.88
     .target Priestess A'moora
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r upstairs
     .accept 2518 >> Accept Tears of the Moon
+step << Priest
+    .goto Darnassus,40.0,80.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Alathea|r upstairs
+    .accept 5627 >>Accept Stars of Elune
+    .turnin 5627 >>Turn in Stars of Elune
+    .target Priestess Alathea
 step << Druid NightElf
 	#completewith next
 	.cast 18960 >> Cast Teleport: Moonglade
@@ -1746,7 +1812,7 @@ step
     .turnin 96634 >> Turn in Camping 101: Cooking
     .accept 4161 >> Accept Recipe of the Kaldorei
     .turnin 4161 >> Turn in Recipe of the Kaldorei
-step << Hunter/Druid/Warrior/Rogue
+step << Hunter/Warrior/Rogue
     .goto 1438/1,1172.01,9917.17
     >>Find Moon Priestess Amara, she patrols the road west of Dolanaar
     .target Moon Priestess Amara
@@ -1819,6 +1885,12 @@ step
 	.turnin 941 >> Turn in Planting the Heart
 	.isQuestTurnedIn 927
 step
+    .goto 1438/1,719.400,9503.900
+    >>Wait for |cRXP_FRIENDLY_Denalan|r to complete the roleplay. Kill the |cRXP_ENEMY_Boglings|r for |T134187:0|t[|cRXP_LOOT_Bogling Roots|r] and loot the |cRXP_PICK_Sprouted Frond|r
+    >>|T134184:0|t[Sprouted Fronds] |cRXP_WARN_you get as a reward are an instant heal item that doesn't share cooldown with HP potions!|r
+    .accept 2399 >>Accept The Sprouted Fronds
+    .turnin 2399 >>Turn in The Sprouted Fronds
+step
     #label DenalanEnd
 step << Hunter
 	#xprate <1.5
@@ -1836,7 +1908,7 @@ step << !Druid
     .goto 1438/1,997.36,9549.97,55,0
     .goto 1438/1,867.02,9630.74,55,0
     .goto 1438/1,697.97,9581.87
-    >>Finish killing |cRXP_ENEMY_Lasher Sproutlings|r Loot them for |T237424:0|t[|cRXP_LOOT_Dewy Lasher Fronds|r]
+    >>Finish killing |cRXP_ENEMY_Lasher Sproutlings|r. Loot them for |T237424:0|t[|cRXP_LOOT_Dewy Lasher Fronds|r]
     .complete 99050,1
     .isOnQuest 6101 << Hunter --Hunter only finishes here if already on the cat quest
     .mob Lasher Sproutling
@@ -1933,7 +2005,7 @@ step << !Druid
     .goto 1438/1,997.36,9549.97,55,0
     .goto 1438/1,867.02,9630.74,55,0
     .goto 1438/1,697.97,9581.87
-    >>Finish killing |cRXP_ENEMY_Lasher Sproutlings|r Loot them for |T237424:0|t[|cRXP_LOOT_Dewy Lasher Fronds|r]
+    >>Finish killing |cRXP_ENEMY_Lasher Sproutlings|r. Loot them for |T237424:0|t[|cRXP_LOOT_Dewy Lasher Fronds|r]
     .complete 99050,1
     .mob Lasher Sproutling
 step << Hunter

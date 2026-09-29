@@ -365,11 +365,11 @@ step << Warlock
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Adlin Pridedrift
     .xp >6,1
-step << Paladin/Warlock/Hunter/Shaman
+step << Paladin/Warlock/Hunter
     #completewith next
     .goto 1426/0,497.300,-6118.500,20,0
     .goto 1426/0,467.700,-6012.800,20 >> Travel up to the hills in northern Coldridge Valley
-step << Paladin/Warlock/Hunter/Shaman
+step << Paladin/Warlock/Hunter
     >>Kill the |cRXP_ENEMY_Snow Leopard Prowler|r
     >>Loot |cRXP_PICK_Gozwin's Mechanic's Log|r on the ground
     .complete 97277,2 --|1/1 Snow Leopard Prowler slain
@@ -547,22 +547,32 @@ step << Warrior
     .train 100 >> Train |T132337:0|t[Charge]
     .train 772 >> Train |T132155:0|t[Rend]
     .target Thran Khorman
-
+step << Shaman
+    #optional
+    #completewith next
+    .goto 1426/0,383.800,-6133.700,10 >> Return to |cRXP_FRIENDLY_Teo Hammerstorm|r in Anvilmar
+    .subzoneskip 77,1
+step << Shaman
+    .goto 1426/0,384.000,-6050.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teo Hammerstorm::257446|r
+    .target Teo Hammerstorm::257446
+    .turnin 94373 >>Turn in Call of Earth
+    .accept 94374 >>Accept Call of Earth
 step << !Paladin !Warlock !Hunter !Shaman
     .goto 1426/0,390.000,-6093.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda::2756|r
     .target Grund Drokda::2756
     .accept 97277 >>Accept Grund and Gozwin
-step << !Paladin !Warlock !Hunter !Shaman
+step << !Paladin !Warlock !Hunter
     #optional
     #completewith Stolen
     .goto 1426,28.831,68.698,12 >> Exit Anvilmar
     .subzoneskip 77,1
-step << !Paladin !Warlock !Hunter !Shaman
+step << !Paladin !Warlock !Hunter
     #completewith next
     .goto 1426/0,497.300,-6118.500,20,0
     .goto 1426/0,467.700,-6012.800,20 >> Travel up to the hills in northern Coldridge Valley
-step << !Paladin !Warlock !Hunter !Shaman
+step << !Paladin !Warlock !Hunter
     >>Kill the |cRXP_ENEMY_Snow Leopard Prowler|r
     >>Loot |cRXP_PICK_Gozwin's Mechanic's Log|r on the ground
     .complete 97277,2 --|1/1 Snow Leopard Prowler slain
@@ -570,6 +580,27 @@ step << !Paladin !Warlock !Hunter !Shaman
     .goto 1426/0,447.800,-5942.000
     .complete 97277,1 --|1/1 Gozwin's Mechanic's Log
     .goto 1426/0,458.700,-5940.600
+step << Shaman
+    .isOnQuest 94374
+    .goto 1426/0,582.100,-5907.800
+    .cast 8202 >> |cRXP_WARN_Use the|r |T134743:0|t[Earth Sapta] |cRXP_WARN_at the |cRXP_PICK_Spirit Stone|r to summon the|r |cRXP_FRIENDLY_Minor Manifestation of Earth|r
+    .use 6635
+step << Shaman
+    .goto 1426/0,576.500,-5908.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Minor Manifestation of Earth::5891|r
+    .target Minor Manifestation of Earth::5891
+    .turnin 94374 >>Turn in Call of Earth
+    .accept 94375 >>Accept Call of Earth
+step << Shaman
+    #optional
+    #completewith next
+    .goto 1426/0,383.800,-6133.700,10 >> Return to |cRXP_FRIENDLY_Teo Hammerstorm|r in Anvilmar
+    .subzoneskip 77,1
+step << Shaman
+    .goto 1426/0,383.900,-6050.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teo Hammerstorm::257446|r
+    .target Teo Hammerstorm::257446
+    .turnin 94375 >>Turn in Call of Earth
 step << !Paladin !Warlock !Hunter !Shaman
     #softcore
     #label Stolen
@@ -591,43 +622,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda::2756|r
     .target Grund Drokda::2756
     .turnin 97277 >>Turn in Grund and Gozwin
-step << Shaman
-    .goto 1426/0,384.000,-6050.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teo Hammerstorm::257446|r
-    .target Teo Hammerstorm::257446
-    .turnin 94373 >>Turn in Call of Earth
-    .accept 94374 >>Accept Call of Earth
-step << Shaman
-    #completewith next
-    .goto 1426/0,497.300,-6118.500,20,0
-    .goto 1426/0,467.700,-6012.800,20,0
-    .goto 1426/0,468.000,-5972.100,20 >> Travel up to the hills in northern Coldridge Valley once again
-step << Shaman
-    .isOnQuest 94374
-    .goto 1426/0,582.100,-5907.800
-    .cast 8202 >> |cRXP_WARN_Use the|r |T134743:0|t[Earth Sapta] |cRXP_WARN_at the |cRXP_PICK_Spirit Stone|r to summon the|r |cRXP_FRIENDLY_Minor Manifestation of Earth|r
-    .use 6635
-step << Shaman
-    .goto 1426/0,576.500,-5908.100
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Minor Manifestation of Earth::5891|r
-    .target Minor Manifestation of Earth::5891
-    .turnin 94374 >>Turn in Call of Earth
-    .accept 94375 >>Accept Call of Earth
-step << Warrior/Warlock/Shaman
-    .isOnQuest 94375
-    .hs >> Hearth to Coldridge Valley
-    .subzoneskip 77,1
-    .cooldown item,6948,>2,1
-step << Shaman
-    #optional
-    #completewith next
-    .goto 1426/0,383.800,-6133.700,10 >> Return to |cRXP_FRIENDLY_Teo Hammerstorm|r in Anvilmar
-    .subzoneskip 77,1
-step << Shaman
-    .goto 1426/0,383.900,-6050.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teo Hammerstorm::257446|r
-    .target Teo Hammerstorm::257446
-    .turnin 94375 >>Turn in Call of Earth
 step << Dwarf Priest/Gnome Priest
     .goto 1426/0,393.53,-6056.72--c:Dun Morogh,28.600,66.385
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
@@ -792,6 +786,13 @@ step
     .train 2550 >> Train |T133971:0|t[Cooking]
     .turnin 96629 >>Turn in Camping 101: Cooking
     .money <0.0100
+step
+    #optional
+    .isQuestComplete 96629
+    .goto 1426/0,-545.800,-5594.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor::1699|r
+    .target Gremlock Pilsnor::1699
+    .turnin 96629 >>Turn in Camping 101: Cooking
 step << Rogue
     .goto 1426/0,-540.39,-5604.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r inside in the backroom
@@ -2374,6 +2375,12 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belia Thundergranite|r
     .trainer >> Train your class spells
     .target Regnus Thundergranite
+step << Dawrf Priest
+    .goto 1455/0,-897.200,-4607.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priest Rohan|r  
+    .turnin 5639 >> Turn in Desperate Prayer
+    .trainer >> Train your class spells
+    .target High Priest Rohan
 step << Priest/Mage/Warlock
     #ah
     #label OilWandFood
@@ -2592,21 +2599,6 @@ step << !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furen Longbeard|r
     .turnin 1338 >> Turn in Stormpike's Order
     .target Furen Longbeard
-step << Priest
-    #optional
-    #completewith next
-    .goto 1453/0,809.52,-8579.22,20 >> Travel to the Stormwind Cathedral
-step << Priest
-    .goto 1453/0,862.89,-8519.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
-    .trainer >> Train your class spells
-    .turnin 5634 >> Turn in Desperate Prayer << Dwarf
-    .target High Priestess Laurena
-step << Dwarf Priest
-    .goto 1453/0,861.81,-8512.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
-    .train 13908 >> Train Desperate Prayer
-    .target High Priestess Laurena
 step << Warrior
     .goto 1453/0,358.25,-8728.28,15,0
     .goto 1453/0,302.6,-8685.53,15,0
@@ -3377,6 +3369,8 @@ RXPGuides.RegisterGuide([[
 #next 13-15 Westfall;14-16 Darkshore
 #defaultfor Gnome/Dwarf
 
+step -- dont delete
+    #label LochStart
 step << Dwarf Paladin
     #optional
     #completewith next
@@ -3510,7 +3504,6 @@ step
 step
     .goto 1432/0,-2534.38,-5648.28
     .use 279380 >> |cRXP_WARN_Use the|r |T1387609:0|t[Ceramic Jar] |cRXP_WARN_while standing on the snowy patch to collect the|r |T1387609:0|t[Jar of Snow]
-    >>|cRXP_WARN_NOTE: The|r |T1387609:0|t[Jar of Snow] |cRXP_WARN_will only last for 10 minutes. You must turn the quest in before it expires!|r
     .complete 86667,1 -- Jar of Snow 1/1
 step << Shaman
     #completewith shamfire
@@ -4055,6 +4048,11 @@ step << Dwarf Paladin
 
 ----Start of <1.5x IF->Westfall Section----
 
+step << Rogue
+    .goto 1455/0,-1197.27,-5041.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Buliwyf Stonehand|r inside
+    .train 196 >> Train 1h Axes
+    .target Buliwyf Stonehand
 step << Paladin
     .goto 1455/0,-907.69,-4592.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldruk Doombrow|r
@@ -4153,6 +4151,10 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bilban Tosslespanner|r
     .trainer >> Train your class spells
     .target Bilban Tosslespanner
+
+step -- dont delete
+    #label LochEnd
+
 step << skip --logout skip << Warrior
     #optional
     #completewith Deeprun
@@ -4657,7 +4659,6 @@ step
 step
     .goto 1432/0,-2534.38,-5648.28
     .use 279380 >> |cRXP_WARN_Use the|r |T1387609:0|t[Ceramic Jar] |cRXP_WARN_while standing on the snowy patch to collect the|r |T1387609:0|t[Jar of Snow]
-    >>|cRXP_WARN_NOTE: The|r |T1387609:0|t[Jar of Snow] |cRXP_WARN_will only last for 10 minutes. You must turn the quest in before it expires!|r
     .complete 86667,1 -- Jar of Snow 1/1
 step
     .goto 1432/0,-3146.73,-4837.02

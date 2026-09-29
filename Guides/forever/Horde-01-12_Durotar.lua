@@ -3947,12 +3947,12 @@ step << Troll Warrior/Undead Warrior/Tauren Shaman/Troll Shaman/Orc Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
 step
     #ah
-    .goto 1458/0,257.27,1560.45--c:Undercity,64.20,49.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Rhyker|r
+    .goto 1458/0,224.300,1648.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Cain|r
     >>|cRXP_BUY_Buy Three|r |T133884:0|t[Murloc Eyes] |cRXP_BUY_from the Auction House|r
     >>|cRXP_WARN_Skip this if you want, it's only a small time saver|r
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
-    .target Auctioneer Rhyker
+    .target Auctioneer Cain
     .zoneskip Undercity,1
 step << Warlock
     .goto 1458/0,57.05,1711.77

@@ -789,7 +789,9 @@ function addon.SetStep(n, n2, loopback)
         if C_SuperTrack and trackId then
             C_SuperTrack.SetSuperTrackedQuestID(trackId)
         end
-        addon:SendEvent("RXP_STEP_ACTIVATED",step,guide)
+        C_Timer.After(0,function()
+            addon:SendEvent("RXP_STEP_ACTIVATED",step,guide)
+        end)
     end
 
     RXPCData.stepSkip[n + 1] = nil
@@ -2390,7 +2392,7 @@ local function IsGuideActive(guide,includeInternal)
     if guide and addon.stepLogic.SeasonCheck(guide) and addon.stepLogic.PhaseCheck(guide) and
         addon.stepLogic.XpRateCheck(guide) and addon.stepLogic.FreshAccountCheck(guide) and
         addon.stepLogic.LevelCheck(guide) and (not guide.internal or includeInternal) and
-        addon.stepLogic.LoremasterCheck(guide) then
+        addon.stepLogic.LoremasterCheck(guide) and addon.stepLogic.BetaVersionCheck(guide) then
         if (not addon.player.neutral or not guide.enabledFor) then
             return true
         else
