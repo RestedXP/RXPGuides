@@ -198,8 +198,11 @@ function addon.inventoryManager:PLAYER_ENTERING_WORLD() self:Setup() end
 function addon.inventoryManager:BAG_CONTAINER_UPDATE()
     if not self:IsFeatureEnabled() then return end
 
+    session.deletion.bag = nil
+    session.deletion.slot = nil
     session.timers.update = 0
     session.bags.update = true
+    if addon.settings.profile.autoDiscardItems then self:FindJunk() end
 
     self:ScheduleBagUpdate()
 end
@@ -207,8 +210,11 @@ end
 function addon.inventoryManager:BAG_UPDATE_DELAYED()
     if not self:IsFeatureEnabled() then return end
 
+    session.deletion.bag = nil
+    session.deletion.slot = nil
     session.timers.update = 0
     session.bags.update = true
+    if addon.settings.profile.autoDiscardItems then self:FindJunk() end
 
     self:ScheduleBagUpdate()
 end
@@ -557,16 +563,25 @@ function addon.inventoryManager:DeleteItems()
     elseif UnitIsDead('player') or GetCursorInfo() then
         return
     elseif session.deletion.bag then
-        self.bagManager:PickupContainerItem(session.deletion.bag, session.deletion.slot)
+        local bag, slot = session.deletion.bag, session.deletion.slot
+        local itemID = self.bagManager:GetContainerItemID(bag, slot)
+        local _, stack, _, _, _, _, link = self.bagManager:GetContainerItemInfo(bag, slot)
 
+        if not itemID or not self:IsJunk(itemID, bag) then
+            session.deletion.bag = nil
+            session.deletion.slot = nil
+            if addon.settings.profile.autoDiscardItems then self:FindJunk() end
+
+            return
+        end
+
+        self.bagManager:PickupContainerItem(bag, slot)
         DeleteCursorItem()
 
         local colour = addon.guideTextColors["RXP_WARN_"]
-        local _, stack, _, _, _, _, link = self.bagManager:GetContainerItemInfo(session.deletion.bag, session.deletion.slot)
-        local id = self.bagManager:GetContainerItemID(session.deletion.bag, session.deletion.slot)
 
         if link then
-            if session.deletion.manual or id == SSHARD then
+            if session.deletion.manual or itemID == SSHARD then
                 addon.comms.PrettyPrint(L("|c%sDeleting %sx%s|r"), colour, link, stack)
             else
                 addon.comms.PrettyPrint(L("|c%sInventory is full, deleting %sx%s|r"), colour, link, stack)
