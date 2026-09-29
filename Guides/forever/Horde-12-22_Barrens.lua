@@ -133,16 +133,15 @@ step << Undead/Skyborne
     .fp >> Get the The Crossroads flight path
     .target Devrak
     .isQuestAvailable 1492
-step
+step << !Tauren !Skyborne !Shaman !Hunter 
     .goto 1413/1,-2589.67,-424.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
     .accept 1492 >>Accept Wharfmaster Dizzywig
     .accept 848 >>Accept Fungal Spores
-    .turnin 1358 >>Turn in Sample for Helbrim << !Tauren !Skyborne !Shaman !Hunter 
+    .turnin 1358 >>Turn in Sample for Helbrim
     .target Apothecary Helbrim
     .isOnQuest 1358
-step
-    #optional << !Tauren !Skyborne !Shaman !Hunter 
+step << !Tauren
     .goto 1413/1,-2589.67,-424.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
     .accept 1492 >>Accept Wharfmaster Dizzywig
@@ -785,7 +784,7 @@ step
 step
     .goto 1413/1,-2645.40,-406.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
-    .vendor >>Stock up on food and water << !Rogue !Water
+    .vendor >>Stock up on food and water << !Rogue !Warrior
     .vendor >>Stock up on food << Rogue/Warrior
     .target Innkeeper Boorand Plainswind
     .isOnQuest 872,5041,845
@@ -1139,6 +1138,7 @@ step << Mage/Priest/Warlock/Shaman/Druid
     .isOnQuest 887
     .xp <15,1
 step
+    #optional
     #completewith BaronLongshore
     .destroy 5088 >> |cRXP_WARN_Delete the|r |T133735:0|t[Control Console Operating Manual] |cRXP_WARN_from your bags, as it's no longer needed|r
 step
@@ -1341,22 +1341,6 @@ step << skip
     .itemcount 2027,1
     .itemStat 17,QUALITY,<7
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
-    --Enter completewith label
-step
-    #label FlyToXroads1
-    #completewith XroadsTurnins3
-    .goto 1413/1,-3770.20,-898.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
-    .fly Crossroads >> Fly to The Crossroads
-    .target Bragok
-    .subzoneskip 380
-    .isQuestComplete 845
-step
-    #completewith next
-    >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
-    .complete 869,1 --Raptor Head (12)
-    .mob Sunscale Lashtail
-    .mob Sunscale Screecher
 step
     #loop
     .goto 1413/1,-2977.78,-942.71,0
@@ -1369,6 +1353,121 @@ step
     >>Finish killing |cRXP_ENEMY_Zhevras|r. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
+step << Tauren Druid
+    #completewith DruidTraining1
+    .cast 18960 >>|cRXP_WARN_Cast|r |T135758:0|t[Teleport: Moonglade]
+    .zoneskip Moonglade
+step << Tauren Druid
+    .goto 1450/1,-2593.82,7866.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
+    .train 782 >> Train your class spells
+    .target Loganaar
+    .bindlocation 1638,1
+    .cooldown item,6948,>0
+    .xp <14,1
+    .xp >16,1
+step << Tauren Druid
+    #label DruidTraining1
+    .goto 1450/1,-2593.82,7866.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
+    .train 8925 >> Train your class spells
+    .target Loganaar
+    .bindlocation 1638,1
+    .cooldown item,6948,>0
+    .xp <16,1
+step << Tauren
+    #completewith FlyXroads2
+    .hs >> Hearth to Thunder Bluff
+    .bindlocation 1638,1
+    .zoneskip Thunder Bluff
+    .cooldown item,6948,>0
+    .use 6948
+step << Tauren
+    .goto Thunder Bluff,45.6,55.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahanu|r
+    .turnin 6362 >>Turn in Ride to Thunder Bluff
+    .accept 6363 >>Accept Tal the Wind Rider Master
+    .target Ahanu
+step << Tauren Shaman
+    .goto 1456/1,269.92,-980.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r
+    .train 2645 >> Train your class spells
+    .target Tigor Skychaser
+    .xp <14,1
+    .xp >16,1
+step << Tauren Shaman
+    #optional
+    .goto 1456/1,269.92,-980.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r
+    .train 8498 >> Train your class spells
+    .target Tigor Skychaser
+    .xp <16,1
+step << Hunter/Warrior
+    #completewith HunterTraining1 << Tauren Hunter
+    #completewith WarriorTraining1 << Tauren Warrior
+    .goto 1456/1,-123.26,-1394.49,60 >> Travel to the Hunter Rise
+step << Tauren Hunter
+    #label HunterTraining1
+    .goto 1456/1,-100.50,-1454.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
+    .train 13795 >> Train your class spells
+    .target Urek Thunderhorn
+    .xp <16,1
+step << Tauren Hunter
+    .goto 1456/1,-47.69,-1434.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hesuwa|r
+    .train 24556 >> Train your pet spells
+    .target Hesuwa Thunderhorn
+step << Tauren Warrior
+    .goto 1456/1,-81.09,-1457.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torm|r
+    .train 1160 >>Train your class spells
+    .target Torm Ragetotem
+    .xp <14,1
+    .xp >16,1
+step << Tauren Warrior
+    #label WarriorTraining1
+    .goto 1456/1,-81.09,-1457.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torm|r
+    .train 285 >>Train your class spells
+    .target Torm Ragetotem
+    .xp <16,1
+step << Tauren
+    .goto Thunder Bluff,47.00,49.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
+    .turnin 6363 >>Turn in Tal the Wind Rider Master
+    .accept 6364 >>Accept Return to Jahan
+    .target Tal
+step << Tauren
+    #label FlyXroads2
+    #completewith HidesTurnIn
+    .goto 1456/1,26.1,-1196.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
+    .fly Crossroads >>Fly to Crossroads
+    .target Tal
+    .zoneskip The Barrens
+step << !Tauren
+    #label FlyToXroads1
+    #completewith XroadsTurnins3
+    .goto 1413/1,-3770.20,-898.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
+    .fly Crossroads >> Fly to The Crossroads
+    .target Bragok
+    .subzoneskip 380
+    .isQuestComplete 845
+step << Tauren
+    .goto 1413/1,-2645.40,-406.94--c:The Barrens,51.99,29.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
+    .home >>Set your Hearthstone to Crossroads
+    .target Innkeeper Boorand Plainswind
+    .bindlocation 380
+    .isQuestAvailable 903,850,867,901
+step
+    #completewith next
+    >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
+    .complete 869,1 --Raptor Head (12)
+    .mob Sunscale Lashtail
+    .mob Sunscale Screecher
 step
     #label XroadsTurnins3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r and |cRXP_FRIENDLY_Sergra|r
@@ -1380,6 +1479,13 @@ step
     .accept 903 >>Accept Prowlers of the Barrens
     .target +Sergra Darkthorn
     .goto 1413/1,-2669.72,-481.94
+step << Tauren
+    #label HidesTurnIn
+    .goto 1413/1,-2566.36,-350.19--c:The Barrens,51.21,29.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jahan|r
+    .turnin 6364 >>Turn in Return to Jahan
+    .target Jahan Hawkwing
+    .isOnQuest 6364
 step << Troll Hunter/Orc Hunter
     .goto 1413/1,-2612.98,-411.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Barg|r
@@ -6175,6 +6281,7 @@ step << Rogue
     .use 6452
     .aura -9991
 step << Rogue
+    #optional
     .destroy 8051 >> |cRXP_WARN_Delete the|r |T134536:0|t[Flare Gun] |cRXP_WARN_from your bags, as it's no longer needed|r
     .destroy 8066 >> |cRXP_WARN_Delete|r |T134374:0|t[Fizzule's Whistle] |cRXP_WARN_from your bags, as it's no longer needed|r
 step
