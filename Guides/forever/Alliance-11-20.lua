@@ -608,8 +608,8 @@ step
     .target Baros Alexston
     .isQuestComplete 399
 step << NightElf Druid
-    .goto Stormwind City,21.6,51.4
-    >>Talk to |cRXP_FRIENDLY_Theridran|r
+    .goto 1453/0,1347.6192,-8591.2168
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theridran|r
     .trainer >>Train your class spells
 	.target Theridran
 step << Warlock

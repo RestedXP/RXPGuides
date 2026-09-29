@@ -3369,6 +3369,8 @@ RXPGuides.RegisterGuide([[
 #next 13-15 Westfall;14-16 Darkshore
 #defaultfor Gnome/Dwarf
 
+step -- dont delete
+    #label LochStart
 step << Dwarf Paladin
     #optional
     #completewith next
@@ -4149,6 +4151,10 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bilban Tosslespanner|r
     .trainer >> Train your class spells
     .target Bilban Tosslespanner
+
+step -- dont delete
+    #label LochEnd
+
 step << skip --logout skip << Warrior
     #optional
     #completewith Deeprun
