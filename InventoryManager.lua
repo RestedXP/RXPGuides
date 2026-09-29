@@ -323,8 +323,7 @@ function addon.inventoryManager:SortQuiver()
     local t = GetTime()
     local colour = addon.guideTextColors["RXP_WARN_"]
     local maxStack
-    local itemTable, stack, locked
-    local itemExists, itemState, destLocked
+    local stack, locked, destLocked
 
     if session.deletion.manual then
         session.deletion.manual = false
@@ -342,20 +341,17 @@ function addon.inventoryManager:SortQuiver()
             -- local t = GetItemInfo(id)
             maxStack = select(8, GetItemInfo(id))
             -- print(maxStack)
-            itemTable, stack, locked = self.bagManager:GetContainerItemInfo(session.quiver.slot, slot)
-
-            if type(itemTable) == "table" then stack, locked = itemTable.stackCount, itemTable.isLocked end
+            stack, locked = select(2, self.bagManager:GetContainerItemInfo(session.quiver.slot, slot))
 
             -- print('sl',stack,locked)
             if slot < session.quiver.closestSlot[id] then
                 session.quiver.closestSlot[id] = slot
             elseif stack < maxStack then
-                itemExists, itemState, destLocked = self.bagManager:GetContainerItemInfo(session.quiver.slot,
-                                                                                         session.quiver.closestSlot[id])
-                if type(itemExists) == "table" then destLocked = itemExists.isLocked end
+                destLocked = select(3, self.bagManager:GetContainerItemInfo(session.quiver.slot,
+                                                                            session.quiver.closestSlot[id]))
                 session.quiver.organize = true
 
-                if not (GetCursorInfo() or locked or itemExists and destLocked) then
+                if not (GetCursorInfo() or locked or destLocked) then
                     C_Timer.After(0.01, function()
                         if self:IsFeatureEnabled() and not GetCursorInfo() then
                             self.bagManager:PickupContainerItem(session.quiver.slot, slot)
@@ -492,10 +488,10 @@ function addon.inventoryManager:FindJunk(deleteItem)
     local numSlots
     local isProjectile
     local id
-    local itemName, itemLink, itemQuality, itemLevel, itemMinLevel
-    local itemType, itemSubType, stackMax, itemEquipLoc, itemTexture
+    local stackMax
     local price, class, subclass
-    local itemInfo, count
+    local count
+    local _
     local value
 
     for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
@@ -511,16 +507,13 @@ function addon.inventoryManager:FindJunk(deleteItem)
             id = self.bagManager:GetContainerItemID(bag, slot)
 
             if id then
-                itemName, itemLink, itemQuality, itemLevel, itemMinLevel, itemType, itemSubType, stackMax, itemEquipLoc, itemTexture, price, class, subclass =
-                    GetItemInfo(id)
+                _, _, _, _, _, _, _, stackMax, _, _, price, class, subclass = GetItemInfo(id)
                 if bagType == 0 and class == Enum.ItemClass.Projectile and subclass == session.quiver.projectileType then
                     isProjectile = true
                 end
 
                 if not (isProjectile or movingAmmo) then
-                    itemInfo, count = self.bagManager:GetContainerItemInfo(bag, slot)
-
-                    if type(itemInfo) == "table" and not count then count = itemInfo.stackCount end
+                    count = select(2, self.bagManager:GetContainerItemInfo(bag, slot))
 
                     if stackMax and count and self:IsJunk(id, bag, slot) then
                         -- local item_count = select(2, self.bagManager:GetContainerItemInfo(bag, slot))
@@ -639,12 +632,12 @@ end
 
 function addon.inventoryManager:GetSellKeybind()
     local index = session.binding.index
-    local command, binding, key = GetBinding(index or 1)
+    local command, _, key = GetBinding(index or 1)
 
     if command == DELETE_JUNK_BINDING then return key end
 
     for index = 1, GetNumBindings() do
-        command, binding, key = GetBinding(index)
+        command, _, key = GetBinding(index)
         if command == DELETE_JUNK_BINDING then
             session.binding.index = index
 
