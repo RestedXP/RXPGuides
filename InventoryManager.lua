@@ -238,7 +238,7 @@ end
 function addon.inventoryManager:ITEM_LOCKED(_, bag, slot)
     if not self:IsFeatureEnabled() then return end
 
-    if self.containerPattern ~= "%s" then
+    if self.bagManager.activeAdapter.containerPattern ~= "%s" then
         local frame = self.bagFrame[bag] and self.bagFrame[bag][slot]
 
         if frame then self:HideJunkIcon(frame) end
@@ -250,7 +250,7 @@ end
 function addon.inventoryManager:ITEM_UNLOCKED(_, bag, slot)
     if not self:IsFeatureEnabled() then return end
 
-    if self.containerPattern ~= "%s" then
+    if self.bagManager.activeAdapter.containerPattern ~= "%s" then
         local frame = self.bagFrame[bag] and self.bagFrame[bag][slot]
 
         if frame then self:UpdateBagButton(frame, bag, slot) end
@@ -671,7 +671,7 @@ function addon.inventoryManager:ShowJunkIcon(frame)
 
         table.insert(self.junkIcons, texture)
         texture:SetSize(16, 16)
-        texture:SetPoint(self.alignment, 1, -1)
+        texture:SetPoint(self.bagManager.activeAdapter.alignment, 1, -1)
         frame.RXPJunkIcon = texture
     end
 
@@ -1020,17 +1020,12 @@ function addon.inventoryManager.bagManager:SelectAdapter()
         adapter = self.adapters.Consolidated
     end
 
-    local inventoryManager = addon.inventoryManager
-    inventoryManager.containerPattern = adapter.containerPattern
-    inventoryManager.containerName = adapter.containerName
-    inventoryManager.containerIndex = adapter.containerIndex
-    inventoryManager.alignment = adapter.alignment
     self.activeAdapter = adapter
     return adapter
 end
 
 function addon.inventoryManager.bagManager:UpdateBag(frame, name, pattern)
-    pattern = pattern or addon.inventoryManager.containerPattern
+    pattern = pattern or self.activeAdapter.containerPattern
     name = name or frame:GetName()
 
     local featureEnabled = addon.inventoryManager:IsFeatureEnabled()
@@ -1092,8 +1087,8 @@ function addon.inventoryManager.bagManager:UpdateAllBags(name, i)
         return
     end
 
-    i = i or addon.inventoryManager.containerIndex
-    name = name or addon.inventoryManager.containerName
+    i = i or adapter.containerIndex
+    name = name or adapter.containerName
 
     local ref = format(name, i)
     local frame = _G[ref]
