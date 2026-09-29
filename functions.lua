@@ -13,11 +13,20 @@ local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
 local IsSpellKnown = C_SpellBook and C_SpellBook.IsSpellKnown or _G.IsSpellKnown
 local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
 local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo and addon.GetSpellInfo or _G.GetSpellInfo
-local GetMerchantItemInfo = C_MerchantFrame and C_MerchantFrame.GetItemInfo or _G.GetMerchantItemInfo
 local GetSpellCooldown = addon.GetSpellCooldown
 local UnitName = addon.GetUnitName
 local BANK_CONTAINER = _G.BANK_CONTAINER or Enum.BagIndex.Bank
 
+local GetMerchantItemInfo = function(...)
+    local GMII = C_MerchantFrame and C_MerchantFrame.GetItemInfo or _G.GetMerchantItemInfo
+    local out = GMII(...)
+    if type(out) == "table" then
+        return out.name,out.texture,out.price,out.stackCount,out.numAvailable,out.isPurchasable,out.isUsable,out.hasExtendedCost
+    else
+        return out
+    end
+end
+addon.GetMerchantItemInfo = GetMerchantItemInfo
 
 addon.GetFactionInfoByID = _G.GetFactionInfoByID or function(factionID)
     local name, description, standingID, barMin, barMax, barValue
