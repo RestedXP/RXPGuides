@@ -108,8 +108,9 @@ addon.HookMessage = function(self,message,callback,...)
 end
 
 function addon.SendEvent(self,...)
-    if _G.WeakAuras and _G.WeakAuras.ScanEvents then
-        _G.WeakAuras.ScanEvents(...)
+    local WeakAuras = _G.WeakAuras or _G.ForeverAuras
+    if WeakAuras and WeakAuras.ScanEvents then
+        WeakAuras.ScanEvents(...)
     end
     return addon.SendMessage(self,...)
 end
@@ -295,7 +296,6 @@ function addon.GetStepQuestReward(titleOrId)
     -- addon.questTurnIn[747] == addon.questTurnIn["The Hunt Begins"]
 
     local element = addon.questTurnIn[titleOrId]
-
     if not element then return 0 end
     if not addon.settings.profile.enableQuestRewardAutomation then return 0,element end
 
@@ -826,6 +826,14 @@ local GetQuestLogSelection, GetNumQuestLogChoices = _G.GetQuestLogSelection,
 local GetQuestLogChoiceInfo, GetQuestLogItemLink, GetQuestLogTitle =
     _G.GetQuestLogChoiceInfo, _G.GetQuestLogItemLink, _G.GetQuestLogTitle
 
+-- GetQuestLogChoiceInfo = function(arg1,...)
+--     if C_QuestLog and C_QuestLog.GetInfo then
+--         return _G.GetQuestLogChoiceInfo(arg1)
+--     else
+--         return _G.GetQuestLogChoiceInfo(arg1,...)
+--     end
+-- end
+
 -- bestSellOption, bestRatioOption, options
 local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQuestItemLink, GetQuestLogChoiceInfo)
     local hardCodedReward = addon.GetStepQuestReward(questID)
@@ -849,7 +857,7 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
         if GetQuestItemInfo then
             isUsable = select(5, GetQuestItemInfo("choice", i))
         else
-            isUsable = select(5, GetQuestLogChoiceInfo(i))
+            isUsable = select(5, GetQuestLogChoiceInfo(i,questID))
         end
 
         itemLink = GetQuestItemLink("choice", i)
@@ -988,14 +996,22 @@ function addon.DisplayQuestLogRewards(questLogIndex)
         questLogIndex = GetQuestLogSelection()
     end
     if questLogIndex < 1 then return end
+    local questID = 0
+    local numChoices
 
-    local numChoices = GetNumQuestLogChoices()
+    if C_QuestLog and C_QuestLog.GetInfo then
+        local o = C_QuestLog.GetInfo(questLogIndex)
+        questID = o and o.questID
+        numChoices = GetNumQuestLogChoices(questID)
+    else
+        questID = select(8, GetQuestLogTitle(questLogIndex))
+        numChoices = GetNumQuestLogChoices()
+    end
 
     if numChoices <= 1 then
         return
     end
 
-    local questID = select(8, GetQuestLogTitle(questLogIndex))
 
     -- options third return only used for handleQuestComplete
     local bestSellOption, bestRatioOption, _ = evaluateQuestChoices(questID, numChoices, nil, GetQuestLogItemLink, GetQuestLogChoiceInfo)
@@ -1777,7 +1793,7 @@ function addon:UI_INFO_MESSAGE(_,arg1,arg2)
     if not (currentMap and arg1 == 408) then return end
     local subzoneExplored = arg2:match(addon.explorationText)
     if subzoneExplored then
-        print(currentMap,subzoneExplored)
+        --print(currentMap,subzoneExplored)
         RXPCData.exploredZones[currentMap] = RXPCData.exploredZones[currentMap] or {}
         RXPCData.exploredZones[currentMap][subzoneExplored] = true
     end

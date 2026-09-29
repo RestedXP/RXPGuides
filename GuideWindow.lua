@@ -789,7 +789,9 @@ function addon.SetStep(n, n2, loopback)
         if C_SuperTrack and trackId then
             C_SuperTrack.SetSuperTrackedQuestID(trackId)
         end
-        addon:SendEvent("RXP_STEP_ACTIVATED",step,guide)
+        C_Timer.After(0,function()
+            addon:SendEvent("RXP_STEP_ACTIVATED",step,guide)
+        end)
     end
 
     RXPCData.stepSkip[n + 1] = nil
