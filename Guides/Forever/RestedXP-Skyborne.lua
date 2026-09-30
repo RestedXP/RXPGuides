@@ -87,6 +87,7 @@ step << Warrior
     .money <0.0010
     .xp <1,1
     .train 5242,1
+-- old
 -- step
 --     #completewith next
 --     #label Anchors of Zephras
@@ -221,7 +222,7 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ventaari Brightwish|r.
     .accept 92598 >>Accept The Gift of Skysight
     .target Ventaari Brightwish
-step << !Warrior !Rogue 
+step 
     .itemcount 159,<20 << Mage/Shaman
     .itemcount 2512,<1000 << Hunter
     .goto 2521,42.749,24.496
@@ -237,78 +238,79 @@ step << !Warrior !Rogue
     .subzoneskip 16635,1
     .isNotOnQuest 93552
     .isQuestAvailable 93552
-step << Horde
+step
     .goto 2521,43.37,23.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
     .accept 93552 >>Accept Harvesting Windstones
     .target Dalia the Collector::251363
-
-
-step << Horde Rogue 
-    #completewith Wc
-    .subzoneskip 16635,1
-    .goto 2521,43.41,23.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
-    .collect 2131,1 >>Buy a |T135274:0|t[Shortsword]
-    .target Dalia the Collector::251363
-    -- .money <0.0054
-step << Horde Warrior 
-    #completewith Wc
-    .subzoneskip 16635,1
-    .goto 2521,43.41,23.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
-    .collect 1194,1 >>Buy a |T135276:0|t[Bastard Sword]
-    .target Dalia the Collector::251363
-    -- .money <0.0104
-step << Horde Warrior/Horde Rogue
-    #hidewindow
-    #completewith next
-    #label Wc
-    .complete 93552,1,6 --15/15 Windstone Cluster
-
-
-step << Alliance !Hunter !Mage
-    #completewith next
-    #label Harvesting Windstones
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
-    .accept 93552 >>Accept Harvesting Windstones
-    .target Dalia the Collector::251363
-step << Alliance Rogue 
-    .goto 2521,43.41,23.51
-    #completewith Harvesting Windstones
-    .collect 2131,1 >>Buy a |T135274:0|t[Shortsword]
-    -- .money <0.0054
-step << Alliance Warrior 
-    .goto 2521,43.41,23.51
-    #completewith Harvesting Windstones
-    .collect 1194,1 >>Buy a |T135276:0|t[Bastard Sword]
-    -- .money <0.0104
-step << Alliance !Hunter !Mage
-    #completewith Harvesting Windstones
-    .goto 2521,43.41,23.51
-    .vendor >>|cRXP_WARN_Vendor trash|r
-    .target Destin Thriceforged
-step << Alliance !Hunter !Mage
-    #requires Harvesting Windstones
-    .goto 2521,43.37,23.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
-    .accept 93552 >>Accept Harvesting Windstones
-    .target Dalia the Collector::251363
-step << Alliance Hunter/Alliance Mage/Alliance Druid
-    .goto 2521,43.37,23.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
-    .accept 93552 >>Accept Harvesting Windstones
-    .target Dalia the Collector::251363
-step << Alliance
+step
     #completewith next
     .goto 2521,43.53,23.83,7,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     .complete 93552,1 --15/15 Windstone Cluster
-step << Alliance
-    .goto 2521,43.33,24.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
-    .accept 92597 >>Accept Reading the Ley Lines
-    .target Falorne Fallwind
+step << Horde Rogue/Horde Warrior
+    .subzoneskip 16635,1
+    .isOnQuest 92463
+    .isQuestNotComplete 92463
+    .goto 2521,43.41,23.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
+    *|cRXP_WARN_Skip if you can't afford it|r
+    .collect 2131,1 >>Buy a |T135274:0|t[Shortsword]
+    .collect 1194,1 >>Buy a |T135276:0|t[Bastard Sword]
+    .target Dalia the Collector::251363
+    -- .money <0.0054 << Rogue
+    -- .money <0.0104 << Warrior
+step << Alliance Rogue/Alliance Warrior 
+    .subzoneskip 16635,1
+    .isOnQuest 92463
+    .isQuestNotComplete 92463
+    .goto 2521,43.41,23.51
+    .collect 2131,1 >>Buy a |T135274:0|t[Shortsword] << Rogue
+    .collect 1194,1 >>Buy a |T135276:0|t[Bastard Sword] << Warrior
+    -- .money <0.0054 << Rogue
+    -- .money <0.0104 << Warrior
+step
+
+
+-- step << Alliance !Hunter !Mage
+--     #completewith next
+--     #label Harvesting Windstones
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
+--     .accept 93552 >>Accept Harvesting Windstones
+--     .target Dalia the Collector::251363
+-- step << Alliance Rogue/Alliance Warrior 
+--     .goto 2521,43.41,23.51
+--     #completewith Harvesting Windstones
+--     .collect 2131,1 >>Buy a |T135274:0|t[Shortsword] << Rogue
+--     .collect 1194,1 >>Buy a |T135276:0|t[Bastard Sword] << Warrior
+--     -- .money <0.0054 << Rogue
+--     -- .money <0.0104 << Warrior
+-- step << Alliance !Hunter !Mage
+--     #completewith Harvesting Windstones
+--     .goto 2521,43.41,23.51
+--     .vendor >>|cRXP_WARN_Vendor trash|r
+--     .target Destin Thriceforged
+-- step << Alliance !Hunter !Mage
+--     #requires Harvesting Windstones
+--     .goto 2521,43.37,23.99
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
+--     .accept 93552 >>Accept Harvesting Windstones
+--     .target Dalia the Collector::251363
+-- step << Alliance Hunter/Alliance Mage/Alliance Druid
+--     .goto 2521,43.37,23.99
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
+--     .accept 93552 >>Accept Harvesting Windstones
+--     .target Dalia the Collector::251363
+-- step << Alliance
+--     #completewith next
+--     .goto 2521,43.53,23.83,7,0
+--     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
+--     .complete 93552,1 --15/15 Windstone Cluster
+-- step << Alliance
+--     .goto 2521,43.33,24.92
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
+--     .accept 92597 >>Accept Reading the Ley Lines
+--     .target Falorne Fallwind
 step << Shaman
     .goto 2521,47.29,21.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yala Windwatcher|r.
@@ -361,13 +363,40 @@ step << Shaman
     .turnin 92466 >>Turn in Call of Earth
     .accept 92467 >>Accept Call of Earth
     .target Windshaper Boro::251374
-step
+step << Alliance
     #completewith next
+    -- .goto 2521,43.82,25.41,20,0
+    -- .goto 2521,44.23,24.96,20,0
+    -- .goto 2521,44.28,27.32,25,0
+    -- .goto 2521,45.33,29.15,30,0
+    -- .goto 2521,46.77,27.96,30,0
+    .goto 2521,43.48,23.85,7,0
+    .goto 2521,44.14,22.29,30,0
+    .goto 2521,42.83,22.28,30,0
+    .goto 2521,42.23,23.7,30,0
+    .goto 2521,41.91,23.75,15,0
     .goto 2521,43.82,25.41,20,0
     .goto 2521,44.23,24.96,20,0
-    .goto 2521,44.28,27.32,25,0
-    .goto 2521,45.33,29.15,30,0
-    .goto 2521,46.77,27.96,30,0
+    .goto 2521,45.5,25.37,30,0
+    .goto 2521,47.41,26.47,30,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
+    .complete 93552,1 --15/15 Windstone Cluster
+step << Alliance
+    .goto 2521,43.33,24.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
+    .accept 92597 >>Accept Reading the Ley Lines
+    .target Falorne Fallwind
+step << Horde
+    #completewith next
+    .goto 2521,43.48,23.85,7,0
+    .goto 2521,44.14,22.29,30,0
+    .goto 2521,42.83,22.28,30,0
+    .goto 2521,42.23,23.7,30,0
+    .goto 2521,41.91,23.75,15,0
+    .goto 2521,43.82,25.41,20,0
+    .goto 2521,44.23,24.96,20,0
+    .goto 2521,45.5,25.37,30,0
+    .goto 2521,47.41,26.47,30,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     .complete 93552,1 --15/15 Windstone Cluster
 step
