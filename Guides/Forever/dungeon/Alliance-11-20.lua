@@ -8,8 +8,9 @@ RXPGuides.RegisterGuide([[
 #version 1
 #beta
 << Alliance
-#name 13-15 Westfall
-#displayname 14-15 Westfall << Dwarf/Gnome
+#name 13-15 Westfall 
+#displayname 14-15 Westfall << Gnome/Dwarf !Hunter
+#displayname 13-15 Westfall << Hunter
 #group RestedXP Forever Dungeon Guide (A)
 #subgroup (WIP) Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
@@ -55,7 +56,7 @@ step << Human
     .accept 6285 >> Accept Return to Lewis
     .target Dungar Longdrink
 
-step
+step << !Skyborne
     .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .fly Westfall >> Fly to Westfall << !NightElf
@@ -594,16 +595,41 @@ step
     .accept 95065 >>Accept Fishin' Time
     .turnin 95065 >>Turn in Fishin' Time
 step
+    .goto 1453/0,1193.100,-8328.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r 
+    .target Manifest Clerk Philmor::268511
+    .accept 97220 >>Accept Philmor's Favor
+step
+    .goto 1453/0,566.600,-8845.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias::483|r
+    .target Elaine Trias::483
+    .turnin 97220 >>Turn in Philmor's Favor
+    .accept 97222 >>Accept Gatehouse Goods
+step
+    .goto 1453/0,568.300,-8862.200
+    .use 277198 >> |cRXP_WARN_Use the|r |T132762:0|t[Gatehouse Shipment] |cRXP_WARN_in front of the |cRXP_PICK_Gatehouse Door|r upstairs|r
+    .complete 97222,1 --|1/1 Gatehouse Shipment delivered
+step
+    .goto 1453/0,566.600,-8845.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias::483|r
+    .target Elaine Trias::483
+    .turnin 97222 >>Turn in Gatehouse Goods
+step
+    #optional
+    #label endOfTheGuide
+step
     #label DeeprunEnter
+    #completewith next
     .goto 1453/0,562.300,-8385.300,20,0
     .goto 1453/0,522.000,-8352.101
     .subzone 2257 >>Enter the Deeprun Tram
     .zoneskip Ironforge
+    .zoneskip Loch Modan
+    .zoneskip Dun Morogh
 step
     .zone Ironforge >> Take the tram to Ironforge
-step
-    #optional
-    #label endOfTheGuide
+    .zoneskip Loch Modan
+    .zoneskip Dun Morogh
 ]])
 
 RXPGuides.RegisterGuide([[

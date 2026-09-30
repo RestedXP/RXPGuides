@@ -4,7 +4,6 @@ if faction == "Horde" then return end
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #forever
-#season 0,1
 << Alliance
 #name 1-6 Northshire
 #version 1
@@ -23,7 +22,6 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
-#season 0,1
 #version 1
 #beta
 << Alliance
@@ -40,7 +38,6 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
-#season 0,1
 #version 1
 #beta
 << Alliance
@@ -48,9 +45,7 @@ RXPGuides.RegisterGuide([[
 #subgroup (WIP) Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-13 Loch Modan
-#displayname 13-15 Loch Modan << SoD
-#next 13-15 Westfall
-#next 15-16 Hall of Thanes
+#next 13-15 Westfall;15-16 Hall of Thanes
 #defaultfor Human
 
 step

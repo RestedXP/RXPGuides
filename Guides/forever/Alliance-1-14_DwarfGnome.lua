@@ -4375,6 +4375,8 @@ RXPGuides.RegisterGuide([[
 #next 14-16 Darkshore
 #defaultfor Dwarf
 
+step -- dont delete
+    #label NormalRouteStart
 step
     #completewith next
     .goto 1426/0,-2443.41,-5560.120,15,0
@@ -4815,6 +4817,10 @@ step
     .target Woo Ping
     .goto 1453/0,613.0,-8796.03
     .trainer >>Train Staves
+
+step --dont delete
+    #label NormalRouteEnd
+
 step
     #ah
     .goto 1453/0,660.28,-8814.55

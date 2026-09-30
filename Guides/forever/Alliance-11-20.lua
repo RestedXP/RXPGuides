@@ -58,7 +58,7 @@ step << Human
     .accept 6285 >> Accept Return to Lewis
     .target Dungar Longdrink
 
-step
+step << !Skyborne
     .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .fly Westfall >> Fly to Westfall << !NightElf
