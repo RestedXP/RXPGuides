@@ -4107,11 +4107,6 @@ step << !Hunter
     .zoneskip Wetlands
     .zoneskip Stormwind City
     .zoneskip Redridge Mountains
-step << !Hunter !Shaman
-    .goto 1453/0,1193.100,-8328.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r 
-    .target Manifest Clerk Philmor::268511
-    .accept 97220 >>Accept Philmor's Favor
 step << Shaman
     .money <0.08
     .goto 1437/0,-819.67,-3691.42,25,0
@@ -4166,6 +4161,11 @@ RXPGuides.RegisterGuide([[
 #name 19-20 Redridge
 #next 20-21 Darkshore/Ashenvale
 
+step << !Shaman
+    .goto 1453/0,1193.100,-8328.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r 
+    .target Manifest Clerk Philmor::268511
+    .accept 97220 >>Accept Philmor's Favor
 step << Mage
     #completewith next
     .goto 1453/0,874.32,-9014.67,10 >> Travel to the Mage Tower
@@ -4323,18 +4323,19 @@ step
     .accept 97222 >>Accept Gatehouse Goods
 step
     .goto 1453/0,568.300,-8862.200
-    .use 277198 >> |cRXP_WARN_Use the|r |T132762:0|t[Gatehouse Shipment] |cRXP_WARN_infront of the |cRXP_PICK_Gatehouse Door|r upstairs|r
+    .use 277198 >> |cRXP_WARN_Use the|r |T132762:0|t[Gatehouse Shipment] |cRXP_WARN_in front of the |cRXP_PICK_Gatehouse Door|r upstairs|r
     .complete 97222,1 --|1/1 Gatehouse Shipment delivered
 step
     .goto 1453/0,566.600,-8845.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias::483|r
     .target Elaine Trias::483
     .turnin 97222 >>Turn in Gatehouse Goods
-step << !NightElf
+step
     #completewith orcs
     .goto 1453/0,490.12,-8835.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
-    .fly Redridge >> Fly to Redridge Mountains
+    .fly Redridge >> Fly to Redridge Mountains << !NightElf
+    .fp Stormwind >> Get the Stormwind Flight Path << NightElf
     .target Dungar Longdrink
     .zoneskip Redridge Mountains
 step << NightElf
