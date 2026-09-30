@@ -756,7 +756,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 2.51,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager:IsBagManagerAvailable()),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.inventoryManager:Setup()
@@ -922,7 +922,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "header",
                         width = "full",
                         order = 6.1,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager:IsBagManagerAvailable()),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                     },
                     showJunkIcon = {
                         name = L("Show junk item indicator"), -- TODO locale
@@ -930,7 +930,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 6.11,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager:IsBagManagerAvailable()),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         disabled = function()
                             return not self.profile.enableInventoryManager
                         end,
@@ -941,7 +941,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 6.12,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager:IsBagManagerAvailable()),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         disabled = function()
                             return not self.profile.enableInventoryManager
                         end,
@@ -952,7 +952,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 6.13,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager:IsBagManagerAvailable()),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         disabled = function()
                             return not self.profile.enableInventoryManager
                         end,
@@ -975,7 +975,7 @@ function addon.settings:CreateAceOptionsPanel()
                             [2] = "ALT",
                             [3] = "CTRL+ALT",
                         },
-                        hidden = not (addon.inventoryManager and addon.inventoryManager:IsBagManagerAvailable()),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                     },
                     autoSellJunk = {
                         name = L("Auto Sell Junk"), -- TODO locale
@@ -983,7 +983,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 6.15,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager:IsBagManagerAvailable()),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         disabled = function()
                             return not self.profile.enableInventoryManager
                         end,
@@ -1000,7 +1000,7 @@ function addon.settings:CreateAceOptionsPanel()
                         usage = L"You must input an integer number",
                         width = optionsWidth * 0.7,
                         order = 6.16,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager:IsBagManagerAvailable() and addon.player.class == "WARLOCK" and addon.gameVersion < 40000),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable() and addon.player.class == "WARLOCK" and addon.gameVersion < 40000),
                         disabled = function()
                             return not self.profile.enableInventoryManager
                         end,
@@ -1011,7 +1011,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "keybinding",
                         width = optionsWidth * 1.25,
                         order = 6.17,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager:IsBagManagerAvailable()),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         disabled = function()
                             return not self.profile.enableInventoryManager
                         end,
@@ -1034,7 +1034,7 @@ function addon.settings:CreateAceOptionsPanel()
                         confirm = function()
                             return L("This action will unmark all junk items.\nAre you sure?")
                         end,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager:IsBagManagerAvailable()),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         disabled = function()
                             return not self.profile.enableInventoryManager
                         end,

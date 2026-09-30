@@ -58,6 +58,11 @@ local SSHARD = 6265
 function addon.inventoryManager:Setup()
     RXPCData.discardPile = RXPCData.discardPile or {}
 
+    local wasInitialized = self.initialized
+
+    self:SetupUI()
+    self.bagManager:Setup()
+
     if not self:IsFeatureEnabled() then
         self:UnregisterAllEvents()
 
@@ -79,7 +84,6 @@ function addon.inventoryManager:Setup()
         return
     end
 
-    local wasInitialized = self.initialized
     if not wasInitialized then
         self.deleteJunkButton = CreateFrame("BUTTON", "RXPInventory_DeleteJunk")
         self.deleteJunkButton:SetScript("OnClick", function() self:DeleteCheapestItem() end)
@@ -91,10 +95,6 @@ function addon.inventoryManager:Setup()
         self.bagUpdateScript = function(this, elapsed) self:OnBagUpdate(elapsed) end
         self.initialized = true
     end
-
-    self:SetupUI()
-
-    self.bagManager:Setup()
 
     self:RegisterEvent("ITEM_LOCKED")
     self:RegisterEvent("ITEM_UNLOCKED")
@@ -264,10 +264,8 @@ function addon.inventoryManager:UI_ERROR_MESSAGE(_, flag, msg)
 end
 
 function addon.inventoryManager:IsFeatureEnabled()
-    return self.bagManager:IsAvailable() and addon.settings.profile.enableInventoryManager
+    return self.bagManager and self.bagManager:IsAvailable() and addon.settings.profile.enableInventoryManager
 end
-
-function addon.inventoryManager:IsBagManagerAvailable() return self.bagManager and self.bagManager:IsAvailable() end
 
 function addon.inventoryManager:GetModKey()
     -- IsAltKeyDown or IsControlKeyDown, shift is used for splitting stacks
@@ -284,6 +282,8 @@ function addon.inventoryManager:GetModKey()
 end
 
 function addon.inventoryManager:FindQuiverSlot()
+    if not self:IsFeatureEnabled() then return end
+
     local free, bagType
 
     for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
@@ -378,6 +378,8 @@ function addon.inventoryManager:GetShardCount(bag, slot)
     local storedShards = 0
     local currentBag, currentSlot, numSlots, itemID
 
+    if not self:IsFeatureEnabled() then return false, max, storedShards end
+
     if bag and slot then
         for currentBag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
             numSlots = self.bagManager:GetContainerNumSlots(currentBag)
@@ -396,6 +398,8 @@ function addon.inventoryManager:GetShardCount(bag, slot)
 end
 
 function addon.inventoryManager:IsJunk(id, bag, slot)
+    if not self:IsFeatureEnabled() then return false end
+
     if id == 6265 then
         local bagType = 0
 
@@ -693,6 +697,8 @@ function addon.inventoryManager:CatalogInventory()
     local itemList = {}
     local itemName, itemTexture, id, bagSlots
 
+    if not self:IsFeatureEnabled() then return itemList end
+
     for i = 1, _G.INVSLOT_LAST_EQUIPPED do
         id = GetInventoryItemID("player", i)
 
@@ -724,6 +730,8 @@ function addon.inventoryManager:CatalogInventory()
 end
 
 function addon.inventoryManager:GetBagItemFrame(bag, slot)
+    if not self:IsFeatureEnabled() then return end
+
     local frame = self.bagFrame and self.bagFrame[bag] and self.bagFrame[bag][slot]
     if not frame then
         self.bagManager:UpdateAllBags()
@@ -892,9 +900,9 @@ end
 -- different frame names and update paths.
 addon.inventoryManager.bagManager = {}
 addon.inventoryManager.bagManager.returnsItemTable = ReturnsContainerItemTable
-addon.inventoryManager.bagManager.bagHook = ContainerFrame_Update or ContainerFrame_UpdateAll
 
 function addon.inventoryManager.bagManager:Setup()
+    self:SelectAdapter()
     if not addon.inventoryManager:IsFeatureEnabled() then return end
 
     if not self.onClickHook then
@@ -903,7 +911,6 @@ function addon.inventoryManager.bagManager:Setup()
         end
     end
 
-    self:SelectAdapter()
     self:HookBags()
 
     self.initialized = true
@@ -989,7 +996,7 @@ addon.inventoryManager.bagManager.adapters = {
 }
 
 function addon.inventoryManager.bagManager:SelectAdapter()
-    local adapter = self.adapters.Blizzard
+    local adapter
 
     if _G["BagnonContainerItem1"] then
         adapter = self.adapters.Bagnon
@@ -1011,6 +1018,8 @@ function addon.inventoryManager.bagManager:SelectAdapter()
         adapter = self.adapters.Forever
     elseif ContainerFrame_UpdateAll and not ContainerFrame_Update then
         adapter = self.adapters.Consolidated
+    elseif ContainerFrame_Update then
+        adapter = self.adapters.Blizzard
     end
 
     self.activeAdapter = adapter
@@ -1018,10 +1027,11 @@ function addon.inventoryManager.bagManager:SelectAdapter()
 end
 
 function addon.inventoryManager.bagManager:UpdateBag(frame, name, pattern)
+    if not addon.inventoryManager:IsFeatureEnabled() then return end
+
     pattern = pattern or self.activeAdapter.containerPattern
     name = name or frame:GetName()
 
-    local featureEnabled = addon.inventoryManager:IsFeatureEnabled()
     local i = 1
     local ref = format(pattern, name, i)
     local lastFrame, button
@@ -1036,8 +1046,8 @@ function addon.inventoryManager.bagManager:UpdateBag(frame, name, pattern)
             slot = button:GetID()
             addon.inventoryManager.bagFrame[bag][slot] = button
 
-            if featureEnabled and self.activeAdapter.clickHook and button.OnClick then self:HookButton(button) end
-            if featureEnabled and addon.settings.profile.showJunkIcon then
+            if self.activeAdapter.clickHook and button.OnClick then self:HookButton(button) end
+            if addon.settings.profile.showJunkIcon then
                 addon.inventoryManager:UpdateBagButton(button, bag, slot)
             end
         end
@@ -1050,18 +1060,21 @@ function addon.inventoryManager.bagManager:UpdateBag(frame, name, pattern)
 end
 
 function addon.inventoryManager.bagManager:UpdateAllBags(name, i)
-    addon.inventoryManager:SetupUI()
-
     local featureEnabled = addon.inventoryManager:IsFeatureEnabled()
     if not featureEnabled then
         for _, icon in pairs(addon.inventoryManager.junkIcons or {}) do icon:Hide() end
+
+        return
     end
+
+    addon.inventoryManager:SetupUI()
 
     if featureEnabled and not addon.settings.profile.showJunkIcon then
         for _, icon in pairs(addon.inventoryManager.junkIcons or {}) do icon:Hide() end
     end
 
     local adapter = self:SelectAdapter()
+    if not adapter then return end
 
     if adapter.consolidated then
         if ContainerFrame_UpdateAll then ContainerFrame_UpdateAll() end
@@ -1095,6 +1108,7 @@ function addon.inventoryManager.bagManager:UpdateAllBags(name, i)
 end
 
 function addon.inventoryManager.bagManager:HookButton(button, source)
+    if not addon.inventoryManager:IsFeatureEnabled() then return end
     if not button then return end
 
     if addon.inventoryManager.hookedFrames[button] then
@@ -1134,14 +1148,15 @@ function addon.inventoryManager.bagManager:LoadBaganator()
 end
 
 function addon.inventoryManager.bagManager:UpdateContainerFrame(containerFrame)
-    local featureEnabled = addon.inventoryManager:IsFeatureEnabled()
+    if not addon.inventoryManager:IsFeatureEnabled() then return end
+
     local frames = {containerFrame:GetChildren()}
     local frame, bag, slot, id
 
     for index = 1, #frames do
         frame = frames[index]
         if frame.GetID and frame.OnClick then
-            if featureEnabled then self:HookButton(frame) end
+            self:HookButton(frame)
 
             bag = frame.GetBagID and frame:GetBagID()
             slot = frame:GetID()
@@ -1150,7 +1165,7 @@ function addon.inventoryManager.bagManager:UpdateContainerFrame(containerFrame)
                 addon.inventoryManager.bagFrame[bag][slot] = frame
                 id = self:GetContainerItemID(bag, slot)
 
-                if featureEnabled and frame.JunkIcon then
+                if frame.JunkIcon then
                     frame.JunkIcon:SetShown(addon.settings.profile.showJunkIcon and id and
                                                 addon.inventoryManager:IsJunk(id, bag, slot))
                 end
@@ -1160,6 +1175,8 @@ function addon.inventoryManager.bagManager:UpdateContainerFrame(containerFrame)
 end
 
 function addon.inventoryManager.bagManager:HookContainerFrame(containerFrame)
+    if not addon.inventoryManager:IsFeatureEnabled() then return end
+
     self.hookedContainerFrames = self.hookedContainerFrames or {}
     if self.hookedContainerFrames[containerFrame] then return end
     self.hookedContainerFrames[containerFrame] = true
@@ -1170,6 +1187,8 @@ function addon.inventoryManager.bagManager:HookContainerFrame(containerFrame)
 end
 
 function addon.inventoryManager.bagManager:HookBags()
+    if not addon.inventoryManager:IsFeatureEnabled() then return end
+
     local this = self
     local bagframe
 
@@ -1225,22 +1244,44 @@ function addon.inventoryManager.bagManager:HookBags()
 end
 
 function addon.inventoryManager.bagManager:IsAvailable()
-    return self.bagHook or _G.Baganator and _G.Baganator.API or _G.ElvUI_ContainerFrame or _G.BagnonContainerItem1 or
-               _G.AdiBagsItemButton1 or _G.BetterBagsItemButton1 or _G.BagginsPooledItemButton0 or
-               _G.ARKINV_Frame1ScrollContainer or _G.BaudBagSubBag0 or _G.ContainerFrameCombinedBags
+    if not self.activeAdapter then self:SelectAdapter() end
+
+    return self.activeAdapter ~= nil
 end
 
-function addon.inventoryManager.bagManager:GetContainerNumFreeSlots(bag) return GetContainerNumFreeSlots(bag) end
+function addon.inventoryManager.bagManager:GetContainerNumFreeSlots(bag)
+    if not addon.inventoryManager:IsFeatureEnabled() then return 0, 0 end
 
-function addon.inventoryManager.bagManager:GetContainerNumSlots(bag) return GetContainerNumSlots(bag) end
+    return GetContainerNumFreeSlots(bag)
+end
 
-function addon.inventoryManager.bagManager:GetContainerItemID(bag, slot) return GetContainerItemID(bag, slot) end
+function addon.inventoryManager.bagManager:GetContainerNumSlots(bag)
+    if not addon.inventoryManager:IsFeatureEnabled() then return 0 end
 
-function addon.inventoryManager.bagManager:PickupContainerItem(bag, slot) return PickupContainerItem(bag, slot) end
+    return GetContainerNumSlots(bag)
+end
 
-function addon.inventoryManager.bagManager:UseContainerItem(bag, slot) return UseContainerItem(bag, slot) end
+function addon.inventoryManager.bagManager:GetContainerItemID(bag, slot)
+    if not addon.inventoryManager:IsFeatureEnabled() then return end
+
+    return GetContainerItemID(bag, slot)
+end
+
+function addon.inventoryManager.bagManager:PickupContainerItem(bag, slot)
+    if not addon.inventoryManager:IsFeatureEnabled() then return end
+
+    return PickupContainerItem(bag, slot)
+end
+
+function addon.inventoryManager.bagManager:UseContainerItem(bag, slot)
+    if not addon.inventoryManager:IsFeatureEnabled() then return end
+
+    return UseContainerItem(bag, slot)
+end
 
 function addon.inventoryManager.bagManager:GetContainerItemInfo(bag, slot)
+    if not addon.inventoryManager:IsFeatureEnabled() then return end
+
     if self.returnsItemTable then
         local itemTable = GetContainerItemInfo(bag, slot)
 
