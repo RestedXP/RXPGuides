@@ -4431,7 +4431,6 @@ step << Human
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
     .accept 1338 >> Accept Stormpike's Order
     .target Mountaineer Stormpike
-    .dungeon !DM
 step
     #optional
     #label BoarMeatLoch3
@@ -4816,7 +4815,7 @@ step << Human Paladin
     .target Stephanie Turner
     .accept 1644 >> Accept The Tome of Divinity
     .turnin 1644 >> Turn in The Tome of Divinity
-    --.accept 1780 >> Accept The Tome of Divinity
+    .accept 1780 >> Accept The Tome of Divinity
 step << Rogue
     #ah
     .goto 1453/0,609.63,-8787.71
