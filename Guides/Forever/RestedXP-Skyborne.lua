@@ -4969,10 +4969,26 @@ step  << Alliance
     .target Denaaris Stargale::259084
     .turnin 94946 >>Turn in The Magical City of Dalaran
     .accept 94947 >>Accept Welcome to Azeroth
+step << Alliance Druid
+    .goto 1416/0,385.700,385.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Ansirem Runeweaver::2543|r.
+    .accept 94912 >>Accept Child of Nature
+    .target Archmage Ansirem Runeweaver::2543
 step << Alliance
     .goto 1416/0,445.93,450.00
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
     .complete 94947,1 --Take the Skyborne Portal to Stormwind
+-- step << Alliance Druid
+--     .goto 1453/0,1099.900,-8776.700
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree::5504|r.
+--     .turnin 94912 >>Turn in Child of Nature
+--     .accept 94914 >>Accept Moonglade
+--     .target Sheldras Moontree::5504
+-- step << Alliance Druid
+--     .goto 1450/1,-2678.600,8020.000
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze::11802|r.
+--     .target Dendrite Starblaze::11802
+--     .turnin 94914 >>Turn in Moonglade
 step << Alliance
     .goto 1453,48.1,88.35,10,0
     .goto 1453,49.36,87.37,10,0
@@ -5176,30 +5192,6 @@ step << Horde
 --     .turnin 94913 >>Turn in Moonglade
 ]])
 
---Druid class quest chain
-RXPGuides.RegisterGuide([[
-#forever
-#version 1
-#name Skyborne Druid Class Quests
-#displayname Skyborne Druid Class Quests
-#group RestedXP Forever Guide (A) << Alliance
-#group RestedXP Forever Guide (H) << Horde
-#defaultfor Skyborne Druid
-#internal
-
--- The Great Ursera Spirit (94006) is accepted from the Druid trainer in Valanaar.
-step << Alliance
-    .goto 1416/0,385.700,385.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Ansirem Runeweaver::2543|r.
-    .accept 94912 >>Accept Child of Nature
-    .target Archmage Ansirem Runeweaver::2543
-step << Alliance
-    .goto 1453/0,1099.900,-8776.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree::5504|r.
-    .turnin 94912 >>Turn in Child of Nature
-    .accept 94914 >>Accept Moonglade
-    .target Sheldras Moontree::5504
-]])
 --Random Stuff
 RXPGuides.RegisterGuide([[
 #forever
