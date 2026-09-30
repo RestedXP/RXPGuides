@@ -642,10 +642,13 @@ function addon.targeting:UpdateUnitList()
     local unitscanGenerated = {}
     local mobsGenerated = {}
     local targetsGenerated = {}
-    for _, context in pairs(addon.generatedSteps) do
-        for _, step in ipairs(context) do
-            for _, element in ipairs(step.elements or {}) do
-                AddUnits(element, unitscanGenerated, mobsGenerated, targetsGenerated)
+    for generatedKind, context in pairs(addon.generatedSteps) do
+        -- Only include dangerousMobs in targeting if showTargetingOnProximity
+        if generatedKind ~= "dangerousMobs" or addon.settings.profile.showTargetingOnProximity then
+            for _, step in ipairs(context) do
+                for _, element in ipairs(step.elements or {}) do
+                    AddUnits(element, unitscanGenerated, mobsGenerated, targetsGenerated)
+                end
             end
         end
     end
