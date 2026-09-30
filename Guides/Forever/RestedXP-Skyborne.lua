@@ -33,25 +33,25 @@ step << !Shaman
     #hidewindow
     #completewith Juvenile Vuldren
     #loop
-    .goto 2521,44.23,26,35,0
-    .goto 2521,45.24,25.9,35,0
-    .goto 2521,46.06,25.33,35,0
-    .goto 2521,46.77,27.83,35,0
-    .goto 2521,45.27,28.36,35,0
-    .goto 2521,43.84,28.39,35,0
-    .goto 2521,42.88,27.52,35,0
+    .goto 2521,44.23,26,40,0
+    .goto 2521,45.24,25.9,40,0
+    .goto 2521,46.06,25.33,40,0
+    .goto 2521,46.77,27.83,40,0
+    .goto 2521,45.27,28.36,40,0
+    .goto 2521,43.84,28.39,40,0
+    .goto 2521,42.88,27.52,40,0
     +1
 step << Shaman
     #hidewindow
     #completewith Juvenile Vuldren Grind
     #loop
-    .goto 2521,44.23,26,35,0
-    .goto 2521,45.24,25.9,35,0
-    .goto 2521,46.06,25.33,35,0
-    .goto 2521,46.77,27.83,35,0
-    .goto 2521,45.27,28.36,35,0
-    .goto 2521,43.84,28.39,35,0
-    .goto 2521,42.88,27.52,35,0
+    .goto 2521,44.23,26,40,0
+    .goto 2521,45.24,25.9,40,0
+    .goto 2521,46.06,25.33,40,0
+    .goto 2521,46.77,27.83,40,0
+    .goto 2521,45.27,28.36,40,0
+    .goto 2521,43.84,28.39,40,0
+    .goto 2521,42.88,27.52,40,0
     +1
 step
     #completewith next
@@ -60,6 +60,7 @@ step
     .mob Juvenile Vuldren
 step
     >>Kill |cRXP_ENEMY_Pesky Cirrusfly|r.
+    *|cRXP_WARN_Priotize them|r
     .complete 92462,1 --8/8 Pesky Cirrusfly slain
     .mob Pesky Cirrusfly
 step
@@ -86,9 +87,31 @@ step << Warrior
     .money <0.0010
     .xp <1,1
     .train 5242,1
+-- step
+--     #completewith next
+--     #label Anchors of Zephras
+--     .goto 2521,43.53,24.34,20,0
+--     .goto 2521,43.83,24.13,10,0
+--     .goto 2521,43.78,24.38,5,0
+--     .goto 2521,43.66,24.25,5,0
+--     .goto 2521,43.75,24.09,5,0
+--     .goto 2521,43.84,24.3,5,0
+--     .goto 2521,43.66,24.23,5,0
+--     .goto 2521,43.83,24.18,5,0
+--     .goto 2521,43.83,24.32,8,0
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye|r.
+--     .accept 94414 >>Accept The Anchors of Zephras
+--     .target Halaan Hawk-Eye
+-- step
+--     #completewith Anchors of Zephras
+--     .goto 2521,43.83,23.66,17 >>Enter the building and climb the spiral staircase.
+-- step
+--     #requires Anchors of Zephras
+--     .goto 2521,43.80,24.05
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye|r at the top of the tower.
+--     .accept 94414 >>Accept The Anchors of Zephras
+--     .target Halaan Hawk-Eye
 step
-    #completewith next
-    #label Anchors of Zephras
     .goto 2521,43.53,24.34,20,0
     .goto 2521,43.83,24.13,10,0
     .goto 2521,43.78,24.38,5,0
@@ -98,21 +121,14 @@ step
     .goto 2521,43.66,24.23,5,0
     .goto 2521,43.83,24.18,5,0
     .goto 2521,43.83,24.32,8,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye|r.
-    .accept 94414 >>Accept The Anchors of Zephras
-    .target Halaan Hawk-Eye
-step
-    #completewith Anchors of Zephras
-    .goto 2521,43.83,23.66,15 >>Enter the building and climb the spiral staircase.
-step
-    #requires Anchors of Zephras
     .goto 2521,43.80,24.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye|r at the top of the tower.
+    >>Climb the spiral staircase, then |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye|r at the top of the tower.
     .accept 94414 >>Accept The Anchors of Zephras
     .target Halaan Hawk-Eye
 step
     .goto 2521,43.80,24.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye|r.
+    *Move or press ESC to cancel.
     .complete 94414,1 --View the Anchor Pylon
     .skipgossipid 137720,1
     .target Halaan Hawk-Eye
@@ -206,16 +222,18 @@ step << Horde
     .accept 92598 >>Accept The Gift of Skysight
     .target Ventaari Brightwish
 step << !Warrior !Rogue 
+    .itemcount 159,<20 << Mage/Shaman
+    .itemcount 2512,<1000 << Hunter
     .goto 2521,42.749,24.496
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uualia Suncrest::251537|r
     >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Hunter !Shaman
     >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from her|r << Hunter
     .vendor >>|cRXP_WARN_Vendor trash|r
-    .collect 159,10 << !Hunter !Shaman --Refreshing Spring Water (10)
+    .collect 159,20 << !Hunter !Shaman --Refreshing Spring Water (10)
     .collect 2512,1000 << Hunter --Rough Arrow (1000)
     .target Uualia Suncrest::251537
-    .money <0.0050 << !Hunter !Shaman
-    .money <0.0040 << Hunter
+    -- .money <0.0050 << !Hunter !Shaman
+    -- .money <0.0040 << Hunter
     .subzoneskip 16635,1
     .isNotOnQuest 93552
     .isQuestAvailable 93552
@@ -224,22 +242,53 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
     .accept 93552 >>Accept Harvesting Windstones
     .target Dalia the Collector::251363
-step << Alliance !Hunter
+
+
+step << Horde Rogue 
+    #completewith Wc
+    .subzoneskip 16635,1
+    .goto 2521,43.41,23.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
+    .collect 2131,1 >>Buy a |T135274:0|t[Shortsword]
+    .target Dalia the Collector::251363
+    -- .money <0.0054
+step << Horde Warrior 
+    #completewith Wc
+    .subzoneskip 16635,1
+    .goto 2521,43.41,23.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
+    .collect 1194,1 >>Buy a |T135276:0|t[Bastard Sword]
+    .target Dalia the Collector::251363
+    -- .money <0.0104
+step << Horde Warrior/Horde Rogue
+    #hidewindow
+    #completewith next
+    #label Wc
+    .complete 93552,1,6 --15/15 Windstone Cluster
+
+
+step << Alliance !Hunter !Mage
     #completewith next
     #label Harvesting Windstones
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
     .accept 93552 >>Accept Harvesting Windstones
     .target Dalia the Collector::251363
-step << Alliance !Hunter
-    #completewith Harvesting Windstones
-    .goto 2521,43.41,23.51
-    .vendor >>|cRXP_WARN_Vendor trash|r
-step << Alliance Rogue
+step << Alliance Rogue 
     .goto 2521,43.41,23.51
     #completewith Harvesting Windstones
     .collect 2131,1 >>Buy a |T135274:0|t[Shortsword]
-    .money <0.0054
-step << Alliance !Hunter
+    -- .money <0.0054
+step << Alliance Warrior 
+    .goto 2521,43.41,23.51
+    #completewith Harvesting Windstones
+    .collect 1194,1 >>Buy a |T135276:0|t[Bastard Sword]
+    -- .money <0.0104
+step << Alliance !Hunter !Mage
+    #completewith Harvesting Windstones
+    .goto 2521,43.41,23.51
+    .vendor >>|cRXP_WARN_Vendor trash|r
+    .target Destin Thriceforged
+step << Alliance !Hunter !Mage
     #requires Harvesting Windstones
     .goto 2521,43.37,23.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
@@ -250,6 +299,11 @@ step << Alliance Hunter/Alliance Mage/Alliance Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
     .accept 93552 >>Accept Harvesting Windstones
     .target Dalia the Collector::251363
+step << Alliance
+    #completewith next
+    .goto 2521,43.53,23.83,7,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
+    .complete 93552,1 --15/15 Windstone Cluster
 step << Alliance
     .goto 2521,43.33,24.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
@@ -307,6 +361,15 @@ step << Shaman
     .turnin 92466 >>Turn in Call of Earth
     .accept 92467 >>Accept Call of Earth
     .target Windshaper Boro::251374
+step
+    #completewith next
+    .goto 2521,43.82,25.41,20,0
+    .goto 2521,44.23,24.96,20,0
+    .goto 2521,44.28,27.32,25,0
+    .goto 2521,45.33,29.15,30,0
+    .goto 2521,46.77,27.96,30,0
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
+    .complete 93552,1 --15/15 Windstone Cluster
 step
     .goto 2521,48.41,28.37
     >>Kill |cRXP_ENEMY_Cirrusfly Queen|r.
@@ -393,15 +456,17 @@ step << !Shaman
 step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     .complete 93552,1 --15/15 Windstone Cluster
-step
+step 
     #label Windstone Cluster
     .xp 3+300 >>Grind to 300+/1400xp
-step
+step << !Shaman
     .goto 2521,47.29,21.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yala Windwatcher|r.
     .turnin 92465 >>Turn in Agitators
     .accept 92469 >>Accept Return to Rorian
     .target Yala Windwatcher
+-- step
+-- A potential .hs step could save around 20 seconds, including the loading screen.
 step
     #completewith next
     #label Harvesting Windstones2
@@ -422,17 +487,17 @@ step
     .turnin 93552 >>Turn in Harvesting Windstones
     .target Dalia the Collector
 step
-    .goto 2521,43.37,23.98
+    .goto 2521,43.44,24.80
     .itemcount 247840,1
     .train 2575 >>Use |T4625105:0|t[Mining for Dummies].
     .use 247840
 step
-    .goto 2521,43.37,23.98
+    .goto 2521,43.44,24.80
     .itemcount 247841,1
     .train 2366 >>Use |T4624731:0|t[Wild Harvest].
     .use 247841
 step
-    .goto 2521,43.37,23.98
+    .goto 2521,43.44,24.80
     .itemcount 247846,1
     .train 8613 >>Use |T4624731:0|t[Pelt Collecting for Beginners].
     .use 247846
@@ -470,6 +535,7 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
     .turnin 92597 >>Turn in Reading the Ley Lines
     .target Falorne Fallwind
+-- These steps are duplicated because lag can prevent the first batch from appearing.
 step
     #arrowtext Use\n|T4625105:0|t[Mining for Dummies]
     .goto 2521,43.37,23.98
@@ -787,7 +853,7 @@ step << Alliance
     .goto 2521,35.57,33.84
     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
     .cooldown spell,1259705,>0,1
-    .usespell 1259705 << Alliance
+    .usespell 1259705
 step
     #hidewindow
     #completewith Grind6
@@ -807,7 +873,7 @@ step
     .goto 2521,38.08,35.01,40,0
     >>Kill |cRXP_ENEMY_Al'Aketh Brute|r and |cRXP_ENEMY_Al'Aketh Neophyte|r.
     *|cRXP_WARN_Refresh|r |T236219:0|t[Read Ley Line] |cRXP_WARN_near the Leyline|r << Alliance
-    .usespell 1259705 << Alliance
+    .usespell 1259705
     .complete 92544,1 --|6/6 Al'Aketh Brute slain
     .complete 92544,2 --|4/4 Al'Aketh Neophyte slain
     .mob Al'Aketh Brute::251145
@@ -1272,7 +1338,7 @@ step
     #label BadwindBennicB
     .goto 2521,50.680,34.214
     >>Kill |cRXP_ENEMY_"Badwind" Bennic|r.
-    .usespell 1259705 << Alliance
+    .usespell 1259705
     .complete 92517,2 --|1/1 "Badwind" Bennic slain
     .mob "Badwind" Bennic::255534
 step << Alliance
@@ -1281,7 +1347,7 @@ step << Alliance
     .goto 2521,50.59,33.51
     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
     .cooldown spell,1259705,>0,1
-    .usespell 1259705 << Alliance
+    .usespell 1259705
 step
     #completewith OutCave
     >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
@@ -1573,7 +1639,7 @@ step
 step << Alliance
     #completewith next
     >>Kill the |cRXP_ENEMY_Windshaper Novice Seer|r.
-    .usespell 1259705 << Alliance
+    .usespell 1259705
     .complete 94413,1 --6/6 Windshaper Novice Seer defeated
     .mob Windshaper Novice Seer
 step << Alliance
@@ -1582,7 +1648,7 @@ step << Alliance
     .goto 2521,39,47.37
     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
     .cooldown spell,1259705,>0,1
-    .usespell 1259705 << Alliance
+    .usespell 1259705
 step << Alliance
     #loop
     .goto 2521,37.96,46.86,40,0
@@ -1590,7 +1656,7 @@ step << Alliance
     .goto 2521,38.99,47.24,40,0
     >>Kill the |cRXP_ENEMY_Windshaper Novice Seer|r.
     *|cRXP_WARN_Refresh|r |T236219:0|t[Read Ley Line] |cRXP_WARN_near the Leyline|r << Alliance
-    .usespell 1259705 << Alliance
+    .usespell 1259705
     .complete 94413,1 --6/6 Windshaper Novice Seer defeated
     .mob Windshaper Novice Seer
 step
@@ -2118,7 +2184,7 @@ step << Alliance
     .goto 2521,48.36,58.49
     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
     .cooldown spell,1259705,>0,1
-    .usespell 1259705 << Alliance
+    .usespell 1259705
 step << Alliance
     #completewith CommanderCyclasHeadA
     >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
@@ -2151,6 +2217,7 @@ step
     .goto 2521,50.38,56.93
     >>Kill |cRXP_ENEMY_Commander Cyclas|r. Loot him for |T134161:0|t[|cRXP_LOOT_Commander Cyclas's Head|r].
     .complete 92550,3 --1/1 Commander Cyclas's Head
+    .mob Commander Cyclas
 step
     #completewith LivingLightningA
     #hidewindow
@@ -2915,6 +2982,7 @@ step -- version 2
     #label Bandit Highwaymen
     >>Kill |cRXP_ENEMY_Bandit Highwaymen|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
+    .mob Bandit Highwaymen
 step
     #completewith Bandit Highwaymen
     .goto 2521,44.81,74.4,30 >>Make your way up the mountain
@@ -3756,7 +3824,7 @@ step << Alliance
 --     .goto 2521,63.9,74.16
 --     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
 --     .cooldown spell,1259705,>0,1
---     .usespell 1259705 << Alliance
+--     .usespell 1259705
 
 --*Discovery Route(DO NOT DELETE)
 -- step << Alliance
@@ -4088,7 +4156,7 @@ step << Horde
 --     .goto 2521,63.9,74.16
 --     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
 --     .cooldown spell,1259705,>0,1
---     .usespell 1259705 << Alliance
+--     .usespell 1259705
 -- step << Alliance
 --     .goto 2521,65.03,74.35,45,0
 --     .goto 2521,63.99,74.1,40,0
@@ -4455,7 +4523,7 @@ step << Alliance
     .goto 2521,59.1,33.38
     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
     .cooldown spell,1259705,>0,1
-    .usespell 1259705 << Alliance
+    .usespell 1259705
 step
     #completewith Wind Hollow
     #hidewindow
@@ -4920,7 +4988,7 @@ step << Alliance
     .goto 2521,63.9,74.16
     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
     .cooldown spell,1259705,>0,1
-    .usespell 1259705 << Alliance
+    .usespell 1259705
 step << Alliance
     .goto 2521,63.99,74.1,40,0
     .goto 2521,61.15,70.91
