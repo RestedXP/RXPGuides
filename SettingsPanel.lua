@@ -2907,6 +2907,9 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame:SetScale(value)
+                            if addon.RXPFrame.CurrentStepFrame then
+                                addon.RXPFrame.CurrentStepFrame:SetScale(value)
+                            end
 
                             if addon.v2:IsGuideWindowEnabled() then
                                 local window = addon.v2:GetGuideWindowAnchorFrame()
@@ -2943,7 +2946,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 3.3,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.RXPFrame.SetStepFrameAnchor()
+                            addon.RXPFrame.SetStepFrameAnchor(true)
                         end
                     },
                     showStepList = { -- Not actually a direct setting, indirectly frameHeight
@@ -4193,7 +4196,7 @@ function addon.settings:SaveFramePositions()
           offsetYOrNil
 
     for frameName, frame in pairs(addon.enabledFrames) do
-        if frame.savePosition ~= false then
+        if frame.savePosition ~= false and frame.GetWidth and frame.GetPoint then
             addon.settings.profile.frameSizes[frameName] = {
                 frame:GetWidth(), frame:GetHeight()
             }
@@ -4251,6 +4254,9 @@ end
 
 function addon.settings:LoadScales()
     addon.RXPFrame:SetScale(self.profile.windowScale)
+    if addon.RXPFrame.CurrentStepFrame then
+        addon.RXPFrame.CurrentStepFrame:SetScale(self.profile.windowScale)
+    end
 
     if addon.arrowFrame then
         addon.arrowFrame:SetSize(32 * self.profile.arrowScale,
