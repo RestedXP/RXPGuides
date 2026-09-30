@@ -448,6 +448,7 @@ function addon.tips:LoadDangerousMobs(reloadData)
 
                                 if element.tag == "rare" then step.rare = true end
                                 if element.tag == "treasure" then step.treasure = true end
+                                step.dangerousMob = true
 
                                 element.step = step
                                 -- element.drawCenterPoint = true--Adds an icon at the center of the lines

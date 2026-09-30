@@ -675,7 +675,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                         })
                     end
                 end
-                if not isMiniMap then
+                if not isMiniMap and not step.dangerousMob then
                     table.insert(addon.activeWaypoints, element)
                 end
                 if not element.hidePin then
@@ -844,7 +844,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
                             nEdges = nEdges + 1
                             InsertLine(element, sX, sY, fX, fY, element.lineAlpha or 1)
                         end
-                        if element.showArrow and step.active then
+                        if element.showArrow and step.active and not step.dangerousMob then
                             AddPoint(sX,sY,element,flags,addon.linePoints,addon.activeWaypoints)
                         end
                     end

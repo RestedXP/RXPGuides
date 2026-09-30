@@ -4506,7 +4506,6 @@ step
     .accept 1338 >> Accept Stormpike's Order
     .accept 307 >> Accept Filthy Paws
     .target Mountaineer Stormpike
-    .dungeon DM << Human
 step << Human
     .goto 1432/0,-2676.99,-4825.980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r inside the bunker
@@ -4514,7 +4513,6 @@ step << Human
     .accept 1338 >> Accept Stormpike's Order
     .accept 307 >> Accept Filthy Paws
     .target Mountaineer Stormpike
-    .dungeon !DM
 step
     #label BraveSoul
     #completewith next
