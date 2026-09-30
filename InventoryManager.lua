@@ -96,85 +96,80 @@ function addon.inventoryManager:Setup()
 
     self.bagManager:Setup()
 
-    if IsLoggedIn() then
-        self:UnregisterEvent("PLAYER_ENTERING_WORLD")
-        self:RegisterEvent("ITEM_LOCKED")
-        self:RegisterEvent("ITEM_UNLOCKED")
-        if IsEventValid and IsEventValid("BAG_CONTAINER_UPDATE") then self:RegisterEvent("BAG_CONTAINER_UPDATE") end
-        self:RegisterEvent("BAG_UPDATE_DELAYED")
-        self:RegisterEvent("MERCHANT_SHOW")
-        self:RegisterEvent("PLAYER_MONEY")
-        self:RegisterEvent("LOOT_READY")
-        self:RegisterEvent("UI_ERROR_MESSAGE")
+    self:RegisterEvent("ITEM_LOCKED")
+    self:RegisterEvent("ITEM_UNLOCKED")
+    if IsEventValid and IsEventValid("BAG_CONTAINER_UPDATE") then self:RegisterEvent("BAG_CONTAINER_UPDATE") end
+    self:RegisterEvent("BAG_UPDATE_DELAYED")
+    self:RegisterEvent("MERCHANT_SHOW")
+    self:RegisterEvent("PLAYER_MONEY")
+    self:RegisterEvent("LOOT_READY")
+    self:RegisterEvent("UI_ERROR_MESSAGE")
 
-        if not self.inputHooksInitialized then
-            -- You can only delete items on a hardware input, so hook every keyboard
-            -- input and mouse click to our item deletion function.
-            if self.DeleteJunkFrame.SetPassThroughButtons then
-                -- Post patch 1.15.7 workaround.
-                self.clickFrame = CreateFrame("Frame", "RXPJunkHandler", UIParent)
-                self.clickFrame:SetAllPoints(UIParent)
-                self.clickFrame:SetScript("OnMouseDown", function()
-                    if self:IsFeatureEnabled() then
-                        self:WorldFrameHook()
-                        if GetCVarBool("autoLootDefault") ~= IsModifiedClick("AUTOLOOTTOGGLE") then
-                            for i = GetNumLootItems(), 1, -1 do LootSlot(i) end
-                        end
+    if not self.inputHooksInitialized then
+        -- You can only delete items on a hardware input, so hook every keyboard
+        -- input and mouse click to our item deletion function.
+        if self.DeleteJunkFrame.SetPassThroughButtons then
+            -- Post patch 1.15.7 workaround.
+            self.clickFrame = CreateFrame("Frame", "RXPJunkHandler", UIParent)
+            self.clickFrame:SetAllPoints(UIParent)
+            self.clickFrame:SetScript("OnMouseDown", function()
+                if self:IsFeatureEnabled() then
+                    self:WorldFrameHook()
+                    if GetCVarBool("autoLootDefault") ~= IsModifiedClick("AUTOLOOTTOGGLE") then
+                        for i = GetNumLootItems(), 1, -1 do LootSlot(i) end
                     end
-                    self.clickFrame:Hide()
-                end)
-
-                local button = "LootButton"
-                local current = _G["LootButton1"]
-                local i = 1
-                while current and i < 10 do
-                    current:HookScript("OnClick", function() self:WorldFrameHook() end)
-                    i = i + 1
-                    current = _G[button .. i]
                 end
-
-                self.clickFrame:EnableMouse(false)
-                self.clickFrame:SetMouseClickEnabled(true)
-                self.clickFrame:EnableMouseMotion(false)
-                self.clickFrame:EnableMouseWheel(false)
-                self.clickFrame:SetFrameStrata("BACKGROUND")
-                self.clickFrame:SetFrameLevel(0)
                 self.clickFrame:Hide()
+            end)
+
+            local button = "LootButton"
+            local current = _G["LootButton1"]
+            local i = 1
+            while current and i < 10 do
+                current:HookScript("OnClick", function() self:WorldFrameHook() end)
+                i = i + 1
+                current = _G[button .. i]
             end
 
-            WorldFrame:HookScript("OnMouseDown", function() self:WorldFrameHook() end)
-            WorldFrame:HookScript("OnMouseUp", function() self:WorldFrameHook() end)
-
-            self.DeleteJunkFrame:SetPropagateKeyboardInput(true)
-            self.DeleteJunkFrame:SetScript("OnKeyDown", function() self:WorldFrameHook() end)
-            self.DeleteJunkFrame:SetScript("OnKeyUp", function() self:WorldFrameHook() end)
-
-            if _G["ContainerFrameItemButton_OnModifiedClick"] then
-                hooksecurefunc("ContainerFrameItemButton_OnModifiedClick", function(button, mouseButton)
-                    local mod = self:GetModKey()
-                    if not self:IsFeatureEnabled() or not addon.settings.profile.rightClickJunk or not mod or
-                        mouseButton ~= "RightButton" then return end
-                    local parent = button:GetParent()
-                    local bag = parent and parent:GetID()
-                    local slot = button:GetID()
-                    if bag and slot then
-                        local id = self.bagManager:GetContainerItemID(bag, slot)
-                        self:ToggleJunk(id, bag, slot)
-                    end
-                end)
-            end
-
-            hooksecurefunc("ToggleAllBags", function() self:InitializeBags() end)
-            hooksecurefunc("ToggleBag", function() self:InitializeBags() end)
-
-            if _G.MainMenuBarBackpackButton then
-                _G.MainMenuBarBackpackButton:HookScript("OnClick", function() self:InitializeBags() end)
-            end
-
-            self.inputHooksInitialized = true
+            self.clickFrame:EnableMouse(false)
+            self.clickFrame:SetMouseClickEnabled(true)
+            self.clickFrame:EnableMouseMotion(false)
+            self.clickFrame:EnableMouseWheel(false)
+            self.clickFrame:SetFrameStrata("BACKGROUND")
+            self.clickFrame:SetFrameLevel(0)
+            self.clickFrame:Hide()
         end
-    else
-        self:RegisterEvent("PLAYER_ENTERING_WORLD")
+
+        WorldFrame:HookScript("OnMouseDown", function() self:WorldFrameHook() end)
+        WorldFrame:HookScript("OnMouseUp", function() self:WorldFrameHook() end)
+
+        self.DeleteJunkFrame:SetPropagateKeyboardInput(true)
+        self.DeleteJunkFrame:SetScript("OnKeyDown", function() self:WorldFrameHook() end)
+        self.DeleteJunkFrame:SetScript("OnKeyUp", function() self:WorldFrameHook() end)
+
+        if _G["ContainerFrameItemButton_OnModifiedClick"] then
+            hooksecurefunc("ContainerFrameItemButton_OnModifiedClick", function(button, mouseButton)
+                local mod = self:GetModKey()
+                if not self:IsFeatureEnabled() or not addon.settings.profile.rightClickJunk or not mod or
+                    mouseButton ~= "RightButton" then return end
+                local parent = button:GetParent()
+                local bag = parent and parent:GetID()
+                local slot = button:GetID()
+                if bag and slot then
+                    local id = self.bagManager:GetContainerItemID(bag, slot)
+                    self:ToggleJunk(id, bag, slot)
+                end
+            end)
+        end
+
+        hooksecurefunc("ToggleAllBags", function() self:InitializeBags() end)
+        hooksecurefunc("ToggleBag", function() self:InitializeBags() end)
+
+        if _G.MainMenuBarBackpackButton then
+            _G.MainMenuBarBackpackButton:HookScript("OnClick", function() self:InitializeBags() end)
+        end
+
+        self.inputHooksInitialized = true
     end
 
     if wasInitialized then self.bagManager:UpdateAllBags() end
@@ -190,8 +185,6 @@ function addon.inventoryManager:SetupUI()
     for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do bagFrame[bag] = {} end
     self.bagFrame = bagFrame
 end
-
-function addon.inventoryManager:PLAYER_ENTERING_WORLD() self:Setup() end
 
 function addon.inventoryManager:BAG_CONTAINER_UPDATE()
     if not self:IsFeatureEnabled() then return end
