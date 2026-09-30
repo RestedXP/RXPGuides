@@ -2313,7 +2313,7 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             -- addon.settings.profile.showDangerousMobsMap = value
                             SetProfileOption(info, value)
-                            addon.tips:LoadDangerousMobs(true)
+                            addon.UpdateMap()
                         end,
                         disabled = function()
                             return not self.profile.enableTips
@@ -2350,7 +2350,7 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             -- addon.settings.profile.showDangerousMobsMap = value
                             SetProfileOption(info, value)
-                            addon.tips:LoadDangerousMobs(true)
+                            addon.UpdateMap()
                         end,
                         disabled = function()
                             return not self.profile.enableTips
@@ -2387,7 +2387,7 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             -- addon.settings.profile.showDangerousMobsMap = value
                             SetProfileOption(info, value)
-                            addon.tips:LoadDangerousMobs(true)
+                            addon.UpdateMap()
                         end,
                         disabled = function()
                             return not self.profile.enableTips
