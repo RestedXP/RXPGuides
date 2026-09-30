@@ -193,6 +193,7 @@ step << Shaman
     .train 8017 >>Train |T136086:0|t[Rockbiter]
     .target Windshaper Boro
     .money <0.0010
+    .skipgossipid 136811
     .xp <1,1
 step << Hunter
     .goto 2521,42.47,23.73
@@ -213,17 +214,22 @@ step << !Warrior !Rogue
     .collect 159,10 << !Hunter !Shaman --Refreshing Spring Water (10)
     .collect 2512,1000 << Hunter --Rough Arrow (1000)
     .target Uualia Suncrest::251537
-    .money <0.0050 << !Hunter
+    .money <0.0050 << !Hunter !Shaman
     .money <0.0040 << Hunter
     .subzoneskip 16635,1
     .isNotOnQuest 93552
     .isQuestAvailable 93552
+step << Horde
+    .goto 2521,43.37,23.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
+    .accept 93552 >>Accept Harvesting Windstones
+    .target Dalia the Collector::251363
 step << Alliance !Hunter
     #completewith next
     #label Harvesting Windstones
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
     .accept 93552 >>Accept Harvesting Windstones
-    .target Dalia the Collector
+    .target Dalia the Collector::251363
 step << Alliance !Hunter
     #completewith Harvesting Windstones
     .goto 2521,43.41,23.51
@@ -236,51 +242,94 @@ step << Alliance Rogue
 step << Alliance !Hunter
     #requires Harvesting Windstones
     .goto 2521,43.37,23.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
     .accept 93552 >>Accept Harvesting Windstones
-    .target Dalia the Collector
+    .target Dalia the Collector::251363
 step << Alliance Hunter/Alliance Mage/Alliance Druid
     .goto 2521,43.37,23.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
     .accept 93552 >>Accept Harvesting Windstones
-    .target Dalia the Collector
+    .target Dalia the Collector::251363
 step << Alliance
     .goto 2521,43.33,24.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind|r.
     .accept 92597 >>Accept Reading the Ley Lines
     .target Falorne Fallwind
-step
+step << Shaman
+    .goto 2521,47.29,21.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yala Windwatcher|r.
+    .turnin 92464 >>Turn in Elemental Unrest
+    .accept 92465 >>Accept Agitators
+    .target Yala Windwatcher
+step << Shaman
+    #label UseRacialAbility
+    .goto 2521,48.4,20.4
+    >>Use |T1029587:0|t[Skysight] near the |cRXP_PICK_Elemental Convergence|r.
+    *|cRXP_WARN_Found throughout the zone. Use |T1029587:0|t[Skysight] near one to gain 10% movement speed for 15 min instead of 15 sec.|r
+    .complete 92598,1 --Use your Skysight ability near the Elemental Convergence
+    .macro Skysight,1029587 >>/use spell:1259686
+step << Shaman
     #completewith next
-    .goto 2521,43.82,25.41,20,0
-    .goto 2521,44.23,24.96,20,0
-    .goto 2521,44.28,27.32,25,0
-    .goto 2521,45.33,29.15,30,0
-    .goto 2521,46.77,27.96,30,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     .complete 93552,1 --15/15 Windstone Cluster
+step << Shaman
+    #loop
+    .goto 2521,46.85,17.68,30,0
+    .goto 2521,47.22,19,30,0
+    .goto 2521,48.3,19.06,50,0
+    .goto 2521,47.55,21.06,35,0
+    .goto 2521,46.74,20.49,35,0
+    .goto 2521,48.97,20.86,40,0
+    .goto 2521,47.41,21.14,30,0
+    .goto 2521,45.82,19.09,40,0
+    .goto 2521,47.19,23.55,30,0
+    .goto 2521,46.6,24.62,30,0
+    >>Kill |cRXP_ENEMY_Al'Aketh Convert|r and |cRXP_ENEMY_Roiling Winds|r.
+    *Loot them for the |T1020384:0|t[Signet of Air] << Shaman
+    *|cRXP_WARN_Prioritize |cRXP_ENEMY_Roiling Winds|r|r
+    .complete 92465,1 --7/7 Al'Aketh Convert slain
+    .complete 92465,2 --6/6 Roiling Winds destroyed
+    .complete 92466,1 --|1/1 Signet of Akir
+    .mob Al'Aketh Convert::251160
+    .mob Roiling Winds
+step << Shaman
+    .goto 2521,47.29,21.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yala Windwatcher|r.
+    .turnin 92465 >>Turn in Agitators
+    .accept 92469 >>Accept Return to Rorian
+    .target Yala Windwatcher
+step << Shaman
+    #completewith next
+    .hs >>Hearth to Thendal Village
+step << Shaman
+    .goto 2521,42.788,23.566
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r
+    .turnin 92466 >>Turn in Call of Earth
+    .accept 92467 >>Accept Call of Earth
+    .target Windshaper Boro::251374
 step
     .goto 2521,48.41,28.37
     >>Kill |cRXP_ENEMY_Cirrusfly Queen|r.
     .complete 92463,1 --1/1 Cirrusfly Queen slain
     .mob Cirrusfly Queen
-step
+step << !Shaman
     #completewith next
     .goto 2521,47.41,26.44,20,0
     .goto 2521,46.62,24.59,30,0
     .goto 2521,47.17,23.53,30,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     .complete 93552,1 --15/15 Windstone Cluster
-step
+step << !Shaman
     .goto 2521,47.29,21.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yala Windwatcher|r.
     .turnin 92464 >>Turn in Elemental Unrest
     .accept 92465 >>Accept Agitators
     .target Yala Windwatcher
-step
+step << !Shaman
     #completewith UseRacialAbility
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     .complete 93552,1 --15/15 Windstone Cluster
-step
+step << !Shaman
     #completewith UseRacialAbility
     >>Kill |cRXP_ENEMY_Al'Aketh Convert|r and |cRXP_ENEMY_Roiling Winds|r.
     *|cRXP_WARN_Prioritize |cRXP_ENEMY_Roiling Winds|r|r
@@ -296,13 +345,23 @@ step << Alliance
     *|cRXP_WARN_Found throughout the zone|r |cRXP_WARN_Use|r |T236219:0|t[Read Ley Line] |cRXP_WARN_near one to gain 100% Mana and Food Regen for 15 min instead of 15 sec|r.
     .complete 92597,1 --Use your Read Ley Line ability near the Thendal Grove Ley Line
     .usespell 1259705 << Alliance
-step << Horde
+step << Horde !Shaman
     #label UseRacialAbility
     .goto 2521,48.4,20.4
     >>Use |T1029587:0|t[Skysight] near the |cRXP_PICK_Elemental Convergence|r.
     *|cRXP_WARN_Found throughout the zone. Use |T1029587:0|t[Skysight] near one to gain 10% movement speed for 15 min instead of 15 sec.|r
     .complete 92598,1 --Use your Skysight ability near the Elemental Convergence
     .macro Skysight,1029587 >>/use spell:1259686
+step << Shaman
+    .goto 2521,47.241,25.244,25,0
+    .goto 2521,48.802,25.869,30,0
+    .goto 2521,49.677,23.806
+    >>Use the |T134743:0|t[Earth Sapta].
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Minor Manifestation of Earth::251166|r
+    .turnin 92467 >>Turn in Call of Earth
+    .accept 92468 >>Accept Call of Earth
+    .target Minor Manifestation of Earth::251166
+    .use 6635
 step
     #hidewindow
     #completewith Windstone Cluster
@@ -318,11 +377,11 @@ step
     .goto 2521,47.19,23.55,30,0
     .goto 2521,46.6,24.62,30,0
     +1
-step
+step << !Shaman
     #completewith next
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     .complete 93552,1 --15/15 Windstone Cluster
-step
+step << !Shaman
     >>Kill |cRXP_ENEMY_Al'Aketh Convert|r and |cRXP_ENEMY_Roiling Winds|r.
     *Loot them for the |T1020384:0|t[Signet of Air] << Shaman
     *|cRXP_WARN_Prioritize |cRXP_ENEMY_Roiling Winds|r|r
@@ -526,42 +585,13 @@ step
     .target Aetheen of the Gales
 step << Shaman
     .goto 2521,42.788,23.566
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r
-    .turnin 92466 >>Turn in Call of Earth
-    .accept 92467 >>Accept Call of Earth
-    .target Windshaper Boro::251374
-step << Shaman
-    .goto 2521,42.788,23.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro|r.
     .train 8042 >>Train |T136026:0|t[Earth Shock]
     .target Windshaper Boro
     .money <0.01
     .xp <4,1
+    .skipgossipid 136811
 step << Shaman
-    .goto 2521,48.802,25.869,25,0
-    .goto 2521,49.677,23.806
-    >>Use the |T134743:0|t[Earth Sapta].
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Minor Manifestation of Earth::251166|r
-    .turnin 92467 >>Turn in Call of Earth
-    .accept 92468 >>Accept Call of Earth
-    .target Minor Manifestation of Earth::251166
-    .use 6635
-step << Shaman
-    #completewith next
-    #label TurnInCallOfEarthA
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r
-    .turnin 92468 >>Turn in Call of Earth
-    .target Windshaper Boro::251374
-step << Shaman
-    #completewith TurnInCallOfEarthA
-    .goto 2521,48.911,20.902
-    .deathskip >> Die and respawn at the Spirit Healer
-    .macro Sit,134400 >>/sit
-    .skipgossipid 96031
-    .skipgossipid 98031
-    .target Spirit Healer
-step << Shaman
-    #requires TurnInCallOfEarthA
     .goto 2521,42.787,23.564
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r
     .turnin 92468 >>Turn in Call of Earth
@@ -903,6 +933,7 @@ step << Shaman
     .target Aarnor Galestrike::254082
     .money <0.01
     .xp <6,1
+    .skipgossipid 136811
 step
     .goto 2521,43.02,43.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
@@ -1212,6 +1243,11 @@ step << Horde
     >>Kill the |cRXP_ENEMY_High Order Apprentices::257521|r.
     .complete 94411,1 --|6/6 High Order Apprentice defeated
     .mob High Order Apprentice::257521
+step << Horde
+    .isOnQuest 92517
+    .goto 2521,48.497,55.827
+    .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
+    .cooldown spell,1259686,>0,1
 step
     #completewith BadwindBennicB
     >>Kill |cRXP_ENEMY_Highlands Bandits|r. Loot them for the |T5172975:0|t[|cRXP_LOOT_Pilfered Windstone|r].
@@ -1307,6 +1343,7 @@ step
     .skipgossipid 137551
     .target Zerril Softbreeze::251905
 step
+    --TODO: Add Mild Spices step?
     .isOnQuest 92553
     .isQuestAvailable 92517
     .itemcount 1971,<1
@@ -2607,6 +2644,7 @@ step << Horde
 --     .target Ayessa Dawnsinger::251968
 --     .turnin 92708 >>Turn in A Grand Adventure
 step << Horde
+    --@THIDDI: Not sure if worth it.
     #completewith next
     #label BrokenConstructA
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
@@ -2615,6 +2653,7 @@ step << Horde
     #completewith BrokenConstructA
     .goto 2521,51.397,68.644,15 >>Enter the cave
 step << Horde
+    --@THIDDI: Not sure if worth it.
     #requires BrokenConstructA
     #loop
     .goto 2521,51.434,67.603,15,0
@@ -2898,6 +2937,7 @@ step << Horde
     .goto 2521,45.760,78.419,35,0
     +1
 step << Horde
+    --@THIDDI: Not sure if worth it.
     #requires Bandit Highwaymen
     #completewith next
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
@@ -2908,6 +2948,7 @@ step << Horde
     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
     .mob Bandit Highwaymen
 step << Horde
+    --@THIDDI: Not sure if worth it.
     #label BrokenConstructC
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
     .complete 93737,4 --|1/1 Obtain Air Construct Core from the Bandit Camp
@@ -3827,6 +3868,8 @@ step << Horde
     .target Valennia Stormfist::252383
 step << Horde
     .abandon 93949 >>Abandon Bugged
+step << Horde
+    -- add death skip
 step
     #loop
     .goto 2521,55.73,59.73,30,0
@@ -3887,6 +3930,7 @@ step << Horde
     .complete 93317,1 --6/6 Windsong Crawler Meat
     .mob Windsong Crawler
 step << Horde
+    --@THIDDI: Not sure if worth it.
     #loop
     .goto 2521,53.029,51.423,35,0
     .goto 2521,53.621,50.493,35,0
@@ -4368,11 +4412,12 @@ step
     #label Abandoned Belongings1
     .complete 94896,1,1 --8/8 Abandoned Belongings
 step
+    --@THIDDI: Not sure if worth it (Wind Hollow Essence).
     #completewith Resaan's Heirloom
     >>Kill |cRXP_ENEMY_Wind Hollows|r. Loot them for |T2576094:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
     >>Kill |cRXP_ENEMY_Wind Hollows|r. << Alliance
     .complete 93172,1 --10/10 Wind Hollow freed
-    .complete 93736,1 --10/10 Wind Hollow Essence
+    .complete 93736,1 << Horde --10/10 Wind Hollow Essence
     .mob Wind Hollow::251676
 step
     #completewith Resaan's Heirloom
@@ -4424,21 +4469,23 @@ step
     .goto 2521,57.59,32.02,30,0
     +1
 step
+    --@THIDDI: Not sure if worth it (Wind Hollow Essence).
     #completewith next
     >>Kill |cRXP_ENEMY_Wind Hollows|r. Loot them for |T2576094:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
     >>Kill |cRXP_ENEMY_Wind Hollows|r. << Alliance
-    .complete 93736,1 --10/10 Wind Hollow Essence
     .complete 93172,1 --10/10 Wind Hollow freed
+    .complete 93736,1 << Horde--10/10 Wind Hollow Essence
     .mob Wind Hollow::251676
 step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crates|r
     .complete 94896,1 --8/8 Abandoned Belongings
 step
+    --@THIDDI: Not sure if worth it (Wind Hollow Essence).
     #label Wind Hollow
     >>Kill |cRXP_ENEMY_Wind Hollows|r. Loot them for |T2576094:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
     >>Kill |cRXP_ENEMY_Wind Hollows|r. << Alliance
-    .complete 93736,1 --10/10 Wind Hollow Essence
     .complete 93172,1 --10/10 Wind Hollow freed
+    .complete 93736,1 << Horde --10/10 Wind Hollow Essence
     .mob Wind Hollow::251676
 step << Alliance
     #completewith Unnerving Silence
@@ -4519,6 +4566,7 @@ step
     .goto 2521,55.59,39.23,35,0
     +1
 step
+    --@THIDDI: Not sure if worth it (Pristine Shriekling Feathers).
     #completewith next
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings|r. 
     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers]. << Alliance
@@ -4531,6 +4579,7 @@ step
     .complete 93160,1 --8/8 Zephyrseed
     .complete 94485,1 --8/8 Lady's Tear Moss
 step
+    --@THIDDI: Not sure if worth it (Pristine Shriekling Feathers).
     #label Shadowgale Shrieklings
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings|r. 
     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers]. << Alliance
@@ -4571,6 +4620,7 @@ step
     .goto 2521,59.67,40.26,40,0
     +1
 step
+    --@THIDDI: Not sure if worth it (Pristine Shriekling Feathers).
     #completewith next
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings|r. Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers]. << Alliance
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings|r. Loot them for the |T132927:0|t[Pristine Shriekling Feathers]. << Horde
@@ -4581,6 +4631,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tear Moss|r
     .complete 94485,1 --8/8 Lady's Tear Moss
 step
+    --@THIDDI: Not sure if worth it (Pristine Shriekling Feathers).
     #label Pristine Shriekling Feathers
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings|r. Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers]. << Alliance
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings|r. Loot them for the |T132927:0|t[Pristine Shriekling Feathers]. << Horde
