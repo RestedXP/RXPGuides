@@ -832,7 +832,7 @@ step
     #completewith Aggressive Encroachment2
     .goto 2521,42.76,24.52
     .vendor >>|cRXP_WARN_Vendor trash|r
-    *Save |T133970:0|t[Stringy Meat]
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. We need them for Cooking later.
 step
     #requires Aggressive Encroachment2
     .goto 2521,42.41,25.15
@@ -949,8 +949,8 @@ step << !Rogue !Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veena Vericloud|r.
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Shaman/Druid
     >>|cRXP_WARN_Save 2 silver for your class spells!|r << Shaman/Druid
-   .vendor >>|cRXP_WARN_Vendor trash|r.
-    *Save |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], and |T133972:0|t[Strider Meat].
+     .vendor >>|cRXP_WARN_Vendor trash|r.
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. We need them for Cooking later.
     -- .collect 1179,10 >>Buy |T132815:0|t[Ice Cold Milk] << Mage
 step << Rogue/Warrior
     #completewith The Next Step
@@ -958,7 +958,7 @@ step << Rogue/Warrior
     .goto 2521,44.67,45.19,10,0
     .goto 2521,44.78,45.05
     .vendor >>|cRXP_WARN_Vendor trash|r.
-    *Save |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], and |T133972:0|t[Strider Meat].
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. We need them for Cooking later.
     .target Belandiel Farflight::254360
 step
     #requires The Next Step
@@ -1284,6 +1284,8 @@ step
     .goto 2521,43.850,43.840
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
     .accept 92553 >>Accept Restocking the Larders
+    .addquestitem 6889,92553
+    .addquestitem 5469,92553
     .target Zerril Softbreeze::251905
 step << Horde Rogue
     .goto 2521,43.16,43.26
@@ -1439,7 +1441,7 @@ step
     .goto 2521,43.86,43.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Zerril Softbreeze::251905|r.
     .vendor >>Vendor Trash
-    *Save |T133970:0|t[Stringy Meat]
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. We need them for Cooking later.
     .target Zerril Softbreeze::251905
     .skipgossipid 137550
 step
@@ -1816,7 +1818,7 @@ step
     .goto 2521,43.851,43.848
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r and buy 5 |T134059:0|t[Mild Spices]
     .vendor >>Vendor Trash
-    *Save |T133970:0|t[Stringy Meat]
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. We need them for Cooking later.
     .collect 2678,5
     .skipgossipid 137550
     .target Zerril Softbreeze::251905
@@ -2496,7 +2498,7 @@ step << Hunter
     >>|cRXP_BUY_Buy and equip a|r |T7810733:0|t[Zephrali Bow]
     .collect 277110,1 --Collect Zephrali Bow
     .vendor >>Vendor trash and repair if you need
-    *Save |T133970:0|t[Stringy Meat]
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. We need them for Cooking later.
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
     .money <0.1345
@@ -2530,7 +2532,7 @@ step
     .isQuestAvailable 93948
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
     .vendor >>Vendor trash
-    *Save |T133970:0|t[Stringy Meat]
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. We need them for Cooking later.
     .target Donaal Downbreeze::255940
     .goto 2521,62.180,72.616
     .skipgossipid 137078
@@ -3200,7 +3202,7 @@ step << !Shaman
     .isQuestAvailable 92703
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
     .vendor >>Vendor trash
-    *Save |T133970:0|t[Stringy Meat]
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. We need them for Cooking later.
     .target Donaal Downbreeze::255940
     .goto 2521,62.180,72.616
     .skipgossipid 137078
@@ -3239,7 +3241,7 @@ step << Shaman
     .isQuestAvailable 92703
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
     .vendor >>Vendor trash
-    *Save |T133970:0|t[Stringy Meat]
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. We need them for Cooking later.
     .target Donaal Downbreeze::255940
     .goto 2521,62.180,72.616
     .skipgossipid 137078
@@ -3350,7 +3352,7 @@ step << Hunter Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anteleriaa Cloudgaze::252390|r.
     >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrow]
     .vendor >>Vendor trash
-    *Save |T133970:0|t[Stringy Meat]
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. We need them for Cooking later.
     .collect 2515,1000
     .target Anteleriaa Cloudgaze::252390
 step << Alliance
@@ -4007,7 +4009,7 @@ step << Alliance
     .isNotOnQuest 98512
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daeann Steelwind::252479|r outside the house.
     .vendor >>Vendor trash and repair if needed
-    *Save |T133970:0|t[Stringy Meat]
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. We need them for Cooking later.
     .target Daeann Steelwind::252479
     .goto 2521,65.4,80.22
     .skipgossipid 137530
@@ -5299,7 +5301,7 @@ step << Horde
     .goto 2521,58.986,75.460
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Railee Thriceforged::257422|r.
     .vendor >>Vendor trash.
-    *Save |T133970:0|t[Stringy Meat]
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. We need them for Cooking later.
     .target Railee Thriceforged::257422
 step << Horde
     .goto 2521,58.128,78.307
