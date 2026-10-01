@@ -1532,26 +1532,6 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bounty Available: Vulgara the Insatiable!|r
     .accept 93318 >>Accept WANTED: Vulgara the Insatiable
     .target Bounty Available: Vulgara the Insatiable!
-
-
---New  
-step 
-    .goto 2521,44.465,44.966
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teeri Wellwind::251906|r
-    .target Teeri Wellwind::251906
-    .turnin 93319 >>Turn in Pilfered Windstones
-step
-    .goto 2521,45.667,45.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda::251523|r
-    .target Constable Aonda::251523
-    .turnin 92517,3 >>Turn in The Criminal Element
-    .accept 93036 >>Accept Infiltrating the Cult
-step
-    .goto 2521,44.831,45.515
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sania Silverstream::251904|r
-    .target Sania Silverstream::251904
-    .turnin 93036 >>Turn in Infiltrating the Cult
-    .accept 92529 >>Accept Falaath Village
 step << Warrior/Rogue
     .goto 2521,43.073,46.306
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleeia Tattermend::257018|r.
