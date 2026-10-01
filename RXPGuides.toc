@@ -68,5 +68,8 @@ Professions\Professions.lua
 Professions\DB\ProfessionsDB.lua
 Professions\locale\ProfessionsLocale.lua
 Professions\AH\ProfessionsAH.lua
+Professions\DB\RecipeIds.lua
+Professions\Export\ProfessionsExport.lua
+Professions\GUI\ProfessionsDebugGUI.lua
 
 CptStadicsVendorTreasures.lua [AllowLoadGameType vanilla,tbc,wrath]
