@@ -148,7 +148,7 @@ step
     #completewith next
     #label Harmony in Balance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker|r.
-    .turnin 92461 >>Turn in Harmony in Balance
+    .turnin 92461,1 >>Turn in Harmony in Balance
     .target Rorian the Dayseeker
 step
     #completewith Harmony in Balance
@@ -162,7 +162,7 @@ step
     #requires Harmony in Balance
     .goto 2521,42.06,23.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker|r.
-    .turnin 92461 >>Turn in Harmony in Balance
+    .turnin 92461,1 >>Turn in Harmony in Balance
     .target Rorian the Dayseeker
     .turnin 92474 >>Turn in Falling With Style
     .accept 92464 >>Accept Elemental Unrest
@@ -327,7 +327,7 @@ step << Shaman
     #completewith next
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     *|cRXP_WARN_Expect to break about 10 stones, but you may need up to 15|r.
-    *|cRXP_WARN_If the area is crowded, camp one spawn point or rotate between nearby stones|r.
+    *|cRXP_WARN_If the area is abnormally crowded, camp one spawn point or rotate between nearby stones|r.
     .complete 93552,1 --15/15 Windstone Cluster
 step << Shaman
     #loop
@@ -357,6 +357,7 @@ step << Shaman
     .target Yala Windwatcher
 step << Shaman
     #completewith next
+    .subzoneskip 16622,1
     .hs >>Hearth to Thendal Village
 step << Shaman
     .goto 2521,42.788,23.566
@@ -374,7 +375,7 @@ step
     .goto 2521,48.14,29.31,30,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     *|cRXP_WARN_Expect to break about 10 stones, but you may need up to 15|r.
-    *|cRXP_WARN_If the area is crowded, camp one spawn point or rotate between nearby stones|r.
+    *|cRXP_WARN_If the area is abnormally crowded, camp one spawn point or rotate between nearby stones|r.
     .complete 93552,1 --15/15 Windstone Cluster
 step
     .goto 2521,48.41,28.37
@@ -383,14 +384,14 @@ step
     .mob Cirrusfly Queen
 step << !Shaman
     #completewith next
-    .goto 2521,47.4,26.45,30,0
-    .goto 2521,47.06,25.61,20,0
+    .goto 2521,47.41,26.43,30,0
+    .goto 2521,47.08,25.5,30,0
     .goto 2521,48.3,25.67,30,0
     .goto 2521,46.62,24.61,30,0
     .goto 2521,47.19,23.57,30,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     *|cRXP_WARN_Expect to break about 10 stones, but you may need up to 15|r.
-    *|cRXP_WARN_If the area is crowded, camp one spawn point or rotate between nearby stones|r.
+    *|cRXP_WARN_If the area is abnormally crowded, camp one spawn point or rotate between nearby stones|r.
     .complete 93552,1 --15/15 Windstone Cluster
 step << !Shaman
     .goto 2521,47.29,21.90
@@ -402,7 +403,7 @@ step << !Shaman
     #completewith UseRacialAbility
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     *|cRXP_WARN_Expect to break about 10 stones, but you may need up to 15|r.
-    *|cRXP_WARN_If the area is crowded, camp one spawn point or rotate between nearby stones|r.
+    *|cRXP_WARN_If the area is abnormally crowded, camp one spawn point or rotate between nearby stones|r.
     .complete 93552,1 --15/15 Windstone Cluster
 step << !Shaman
     #completewith UseRacialAbility
@@ -415,8 +416,9 @@ step << !Shaman
 step << Alliance
     #label UseRacialAbility
     .goto 2521,47.8,21.02,30,0
-    .goto 2521,46.34,17.91
-    >>Use |T236219:0|t[Read Ley Line] near the Thendal Grove Ley Line
+    .goto 2521,46.9,20.82,30,0
+    .goto 2521,46.41,18.21
+    >>Use |T236219:0|t[Read Ley Line] near the |cRXP_WARN_Blue Rift|r on the ground
     *|cRXP_WARN_Found throughout the zone|r |cRXP_WARN_Use|r |T236219:0|t[Read Ley Line] |cRXP_WARN_near one to gain 100% Mana and Food Regen for 15 min instead of 15 sec|r.
     .complete 92597,1 --Use your Read Ley Line ability near the Thendal Grove Ley Line
     .usespell 1259705 << Alliance
@@ -472,7 +474,7 @@ step << !Shaman
     #completewith next
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     *|cRXP_WARN_Expect to break about 10 stones, but you may need up to 15|r.
-    *|cRXP_WARN_If the area is crowded, camp one spawn point or rotate between nearby stones|r.
+    *|cRXP_WARN_If the area is abnormally crowded, camp one spawn point or rotate between nearby stones|r.
     .complete 93552,1 --15/15 Windstone Cluster
 step << !Shaman
     >>Kill |cRXP_ENEMY_Al'Aketh Convert|r and |cRXP_ENEMY_Roiling Winds|r.
@@ -486,7 +488,7 @@ step << !Shaman
 step << !Shaman
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     *|cRXP_WARN_Expect to break about 10 stones, but you may need up to 15|r.
-    *|cRXP_WARN_If the area is crowded, camp one spawn point or rotate between nearby stones|r.
+    *|cRXP_WARN_If the area is abnormally crowded, camp one spawn point or rotate between nearby stones|r.
     .complete 93552,1 --15/15 Windstone Cluster
 step << !Shaman
     #label Windstone Cluster
@@ -497,8 +499,10 @@ step << !Shaman
     .turnin 92465 >>Turn in Agitators
     .accept 92469 >>Accept Return to Rorian
     .target Yala Windwatcher
--- step
--- A potential .hs step could save around 20 seconds, including the loading screen.
+step << !Shaman
+    #completewith next
+    .hs >>Hearth to Thendal Village
+    .cooldown item,6948,>0
 step
     #completewith next
     #label Harvesting Windstones2
@@ -521,17 +525,17 @@ step
 step
     .goto 2521,43.44,24.80
     .itemcount 247840,1
-    .train 2575 >>Use |T4625105:0|t[Mining for Dummies].
+    .train 2575 >>Use |T4625105:0|t[Mining for Dummies] |cRXP_WARN_while walking towards the questgiver|r.
     .use 247840
 step
     .goto 2521,43.44,24.80
     .itemcount 247841,1
-    .train 2366 >>Use |T4624731:0|t[Wild Harvest].
+    .train 2366 >>Use |T4624731:0|t[Wild Harvest] |cRXP_WARN_while walking towards the questgiver|r.
     .use 247841
 step
     .goto 2521,43.44,24.80
     .itemcount 247846,1
-    .train 8613 >>Use |T4624731:0|t[Pelt Collecting for Beginners].
+    .train 8613 >>Use |T4624731:0|t[Pelt Collecting for Beginners] |cRXP_WARN_while walking towards the questgiver|r.
     .use 247846
 step << Rogue
     .goto 2521,43.74,24.34
@@ -559,7 +563,7 @@ step << Warrior
 step
     .goto 2521,43.44,24.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight|r.
-    .turnin 92463 >>Turn in The Cirrusfly Queen
+    .turnin 92463,3 >>Turn in The Cirrusfly Queen
     .target Elatrell Featherlight
 step << Alliance
     #arrowtext Talk to\n|cRXP_FRIENDLY_Falorne Fallwind|r
@@ -570,19 +574,16 @@ step << Alliance
 -- These steps are duplicated because lag can prevent the first batch from appearing.
 step
     #arrowtext Use\n|T4625105:0|t[Mining for Dummies]
-    .goto 2521,43.37,23.98
     .itemcount 247840,1
     .train 2575 >>Use |T4625105:0|t[Mining for Dummies].
     .use 247840
 step
     #arrowtext Use\n|T4624731:0|t[Wild Harvest]
-    .goto 2521,43.37,23.98
     .itemcount 247841,1
     .train 2366 >>Use |T4624731:0|t[Wild Harvest].
     .use 247841
 step
     #arrowtext Use\n|T4624731:0|t[Pelt Collecting for Beginners]
-    .goto 2521,43.37,23.98
     .itemcount 247846,1
     .train 8613 >>Use |T4624731:0|t[Pelt Collecting for Beginners].
     .use 247846
@@ -615,7 +616,7 @@ step << Hunter Horde
 step << Horde
     .goto 2521,42.07,23.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker|r.
-    .turnin 92469 >>Turn in Return to Rorian
+    .turnin 92469,1 >>Turn in Return to Rorian
     .accept 92471 >>Accept Aetheen of the Gales -- Unlocks at 4
     .target Rorian the Dayseeker
 step << Druid Horde
@@ -718,7 +719,7 @@ step
     #completewith Aggressive Encroachment
     .goto 2521,42.76,24.5
     .vendor >>|cRXP_WARN_Vendor trash|r
-    .collect 159,10 >>Buy |T132794:0|t[Refreshing Spring Water] << Mage
+    .collect 159,20 >>Buy |T132794:0|t[Refreshing Spring Water] << Mage
 step
     #requires Aggressive Encroachment
     .goto 2521,42.41,25.15
@@ -787,7 +788,11 @@ step
     #completewith next
     #label Turn in Foul Matriarch
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aetheen of the Gales|r.
-    .turnin 92470 >>Turn in Foul Matriarch
+    .turnin 92470,1 >>Turn in Foul Matriarch << Warrior
+    .turnin 92470,2 >>Turn in Foul Matriarch << Druid/Shaman
+    .turnin 92470,3 >>Turn in Foul Matriarch << Mage
+    .turnin 92470,4 >>Turn in Foul Matriarch << Rogue
+    .turnin 92470,5 >>Turn in Foul Matriarch << Hunter
 step
     #completewith Turn in Foul Matriarch
 -- #ignorecorpse
@@ -806,16 +811,22 @@ step
     #requires Turn in Foul Matriarch
     .goto 2521,42.76,23.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aetheen of the Gales|r.
-    .turnin 92470 >>Turn in Foul Matriarch
+    .turnin 92470,1 >>Turn in Foul Matriarch << Warrior
+    .turnin 92470,2 >>Turn in Foul Matriarch << Druid/Shaman
+    .turnin 92470,3 >>Turn in Foul Matriarch << Mage
+    .turnin 92470,4 >>Turn in Foul Matriarch << Rogue
+    .turnin 92470,5 >>Turn in Foul Matriarch << Hunter
     .accept 92472 >>Accept The Next Step
     .accept 96638 >>Accept The Adventurer
     .target Aetheen of the Gales
     .skipgossipid 96031 --Return me to life.
+-- step
+--     .equipslot 16,258882 >>Equip |T135335:0|t[Worn Greatsword]
 step
     #completewith next
     #label Aggressive Encroachment2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valreaa Valewind|r.
-    .turnin 92473 >>Turn in Aggressive Encroachment
+    .turnin 92473,1 >>Turn in Aggressive Encroachment
     .target Valreaa Valewind
 step
     #completewith Aggressive Encroachment2
@@ -825,7 +836,7 @@ step
     #requires Aggressive Encroachment2
     .goto 2521,42.41,25.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valreaa Valewind|r.
-    .turnin 92473 >>Turn in Aggressive Encroachment
+    .turnin 92473,1 >>Turn in Aggressive Encroachment
     .target Valreaa Valewind
 step
     #completewith next
@@ -910,10 +921,21 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanaa Nightwind|r.
     .turnin 92544 >>Turn in Al'Aketh Thugs
     .target Hanaa Nightwind
-step
+-- step << Mage
+--     #completewith The Next Step
+--     .subzoneskip 16624
+--     .goto 2521,40.09,34.34,25,0
+--     .goto 2521,41.15,34.63,25,0
+--     .goto 2521,40.43,37.15,25,0
+--     .goto 2521,39.81,39.2,25,0
+--     -- .goto 2521,47.44,35.97
+--     .collect 255663,20 >>Click |cRXP_PICK_Windstone crystals|r along the way. Collect 20 to craft a |T135139:0|t[Lesser Magic Wand]
+--     *|cRXP_WARN_Save them for the wand. Only use one if you would otherwise die|r
+--     *Touch Tornadoes for 40% movement speed. Dealing damage removes the effect
+step << !Mage
     #completewith next
-    +|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Windstones|r throughout the zone to obtain an item that restores health and mana.
-    *If you spot a Tornado, approach it to gain 40% increased movement speed for 5 minutes. The effect ends if you deal damage.
+    +|TInterface/cursor/crosshair/interact.blp:20|tClick |cRXP_PICK_Windstone crystals|r along the way for health and mana restoratives
+    *Touch Tornadoes for 40% movement speed. Dealing damage removes the effect
 step
     .isOnQuest 92472
     #completewith VendorStep
@@ -923,8 +945,7 @@ step
     .turnin 92472 >>Turn in The Next Step
 step
     #completewith The Next Step
-    >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
-    *|cRXP_WARN_Do not grind here; just kill them along the way|r
+    >>Kill |cRXP_ENEMY_Galestriders|r along the way. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r]
     .collect 5469,8
     .collect 6889,3
     -- .complete 92553,2 --8/8 Strider Meat
@@ -937,7 +958,7 @@ step << !Rogue !Warrior
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Shaman/Druid
     >>|cRXP_WARN_Save 2 silver for your class spells!|r << Shaman/Druid
     .vendor >>|cRXP_WARN_Vendor trash (don't sell strider meat or eggs)|r.
-    .collect 1179,5 >>Buy |T132815:0|t[Ice Cold Milk] << Mage
+    -- .collect 1179,10 >>Buy |T132815:0|t[Ice Cold Milk] << Mage
 step << Rogue/Warrior
     #completewith The Next Step
     #label VendorStep
@@ -1063,10 +1084,11 @@ step << Horde Mage
     .goto 2521,43.24,43.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r and buy |T133942:0|t[Copper Rod], |T132841:0|t[Mote of Magic] and |T135435:0|t[Simple Wood].
     .collect 6217,1
-    .collect 247786,1
+    .collect 247786,3
     .collect 4470,1
     .skipgossipid 137558
     .target Nasalanna Windsinger::257020
+    .money <0.0172
 step << Horde Mage
     #requires immediate wand
     .isOnQuest 92514
@@ -1088,6 +1110,7 @@ step << Horde Mage
     #completewith next
     .train 7411,3
     +Abandon Enchanting or continue with it.
+    -- +Keep Enchanting for now
     -- .macro Abandon Profession Enchanting >>/run AbandonSkill(C_TradeSkillUI.GetProfessionSkillLineID(Enum.Profession.Enchanting))
 step << Alliance Rogue
     .goto 2521,43.16,43.26
@@ -1124,6 +1147,7 @@ step << Alliance Mage
     .collect 4470,1
     .skipgossipid 137558
     .target Nasalanna Windsinger::257020
+    .money <0.0172
 step << Alliance Mage
     #requires immediate wand
     .isOnQuest 93461
@@ -1136,7 +1160,7 @@ step << Alliance Mage
     .isOnQuest 93461
     .train 7411,3
     >>Use the |T135225:0|t[Runed Copper Rod] macro below, then use the |T135645:0|t[Novice's Practice Wand] macro
-    *Afterward, enchant your bracers with Stamina if you have a pair equipped
+    *|cRXP_WARN_Afterward, enchant your bracers with Stamina if you have a pair equipped|r
     .collect 6218,1
     .collect 247789,1
     .macro Runed Copper Rod,135225 >>/cast Enchanting\n/run C_TradeSkillUI.CraftRecipe(7421,1)
@@ -1145,6 +1169,7 @@ step << Alliance Mage
     #completewith next
     .train 7411,3
     +Abandon Enchanting or continue with it.
+    -- +Keep Enchanting for now
     -- .macro Abandon Profession Enchanting >>/run AbandonSkill(C_TradeSkillUI.GetProfessionSkillLineID(Enum.Profession.Enchanting))
 step << Alliance
     .goto 2521,43.02,43.24
@@ -1336,6 +1361,11 @@ step << Horde
     .goto 2521,48.497,55.827
     .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
     .cooldown spell,1259686,>0,1
+-- step << Mage
+--     #completewith EnterCaveMage
+--     .subzoneskip 16674
+--     .collect 255663,20 >>Click |cRXP_PICK_Windstone crystals|r along the way. Collect 20 to craft a |T135139:0|t[Lesser Magic Wand]
+--     *|cRXP_WARN_the ones in the cave are fake|r
 step
     #completewith BadwindBennicB
     >>Kill |cRXP_ENEMY_Highlands Bandits|r. Loot them for the |T5172975:0|t[|cRXP_LOOT_Pilfered Windstone|r].
@@ -1350,6 +1380,8 @@ step
     .mob "Badwind" Bennic::255534
 step
     #completewith BadwindBennicA
+    #label EnterCaveMage
+    .goto 2521,47.44,35.98,30,0
     .goto 2521,48.813,36.434,10,0
     .goto 2521,49.355,35.793,10,0
     .goto 2521,49.720,36.030,10,0
@@ -1370,6 +1402,9 @@ step << Alliance
     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
     .cooldown spell,1259705,>0,1
     .usespell 1259705
+-- step << Mage
+--     #completewith OutCave
+--     .collect 255663,20 >>Click |cRXP_PICK_Windstone crystals|r along the way. Collect 20 to craft a |T135139:0|t[Lesser Magic Wand]
 step
     #completewith OutCave
     >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
@@ -1430,16 +1465,15 @@ step
     .train 2550 >>Train |T133971:0|t[Apprentice Cook]
     .skipgossipid 137551
     .target Zerril Softbreeze::251905
-step
-    --TODO: Add Mild Spices step?
-    .isOnQuest 92553
-    .isQuestAvailable 92517
-    .itemcount 1971,<1
-    .goto 2521,43.86,43.85
-    >>Use the |T132834:0|t[Herb Baked Egg] macro below to craft.
-    *|cRXP_WARN_Any buff food grants 5% increased experience from kills for 15 minutes|r.
-    .collect 6888,1
-    .macro Herb Baked Egg,132834 >>/cast Cooking\n/run local count=C_Item.GetItemCount(6889);if count then C_TradeSkillUI.CraftRecipe(8604, count) end
+-- step
+--     .isOnQuest 92553
+--     .isQuestAvailable 92517
+--     .itemcount 1971,<1
+--     .goto 2521,43.86,43.85
+--     >>Use the |T132834:0|t[Herb Baked Egg] macro below to craft.
+--     *|cRXP_WARN_Any buff food grants 5% increased experience from kills for 15 minutes|r.
+--     .collect 6888,1
+--     .macro Herb Baked Egg,132834 >>/cast Cooking\n/run local count=C_Item.GetItemCount(6889);if count then C_TradeSkillUI.CraftRecipe(8604, count) end
 step << Mage
     .goto 2521,45.1,45.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorii Brightwhisper|r.
@@ -1520,6 +1554,52 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bounty Available: Vulgara the Insatiable!|r
     .accept 93318 >>Accept WANTED: Vulgara the Insatiable
     .target Bounty Available: Vulgara the Insatiable!
+
+
+--New  
+step 
+    .goto 2521,44.465,44.966
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teeri Wellwind::251906|r
+    .target Teeri Wellwind::251906
+    .turnin 93319 >>Turn in Pilfered Windstones
+step
+    .goto 2521,45.667,45.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda::251523|r
+    .target Constable Aonda::251523
+    .turnin 92517,3 >>Turn in The Criminal Element
+    .accept 93036 >>Accept Infiltrating the Cult
+-- step << Mage
+--     .goto 2521,43.24,43.18
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r and buy |T133942:0|t[Copper Rod], |T132841:0|t[Mote of Magic] and |T135435:0|t[Simple Wood].
+--     .collect 247786,7
+--     .skipgossipid 137558
+--     .target Nasalanna Windsinger::257020
+--     .money <0.070
+step
+    .goto 2521,44.831,45.515
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sania Silverstream::251904|r
+    .target Sania Silverstream::251904
+    .turnin 93036 >>Turn in Infiltrating the Cult
+    .accept 92529 >>Accept Falaath Village
+-- step
+-- --walk on air
+-- step
+--     .goto 2521,53.85,44.17
+--     .goto 2521,54.86,44.61
+--     .goto 2521,57.65,51.33
+-- -windstone
+-- 141666: I haven't met too many cultists that haven't immediately tried to kill me. What's your story?
+-- 141665: What trade would that be?
+-- 141666: I haven't met too many cultists that haven't immediately tried to kill me. What's your story?
+-- 141665: What trade would that be?
+-- 141666: I haven't met too many cultists that haven't immediately tried to kill me. What's your story?
+-- 141672: Show me what you have available for trade.
+-- buy as many https://wowhead.com/forever/item=277077
+-- disenchant them
+-- step
+-- enchant bracers 7 times
+-- step
+-- learn recipe 50copper
 step << Warrior/Rogue
     .goto 2521,43.073,46.306
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleeia Tattermend::257018|r.
@@ -1905,7 +1985,7 @@ step
     .goto 2521,45.234,45.186
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danarii Bellowveil::252172|r
     .target Danarii Bellowveil::252172
-    .turnin 93318 >>Turn in WANTED: Vulgara the Insatiable
+    .turnin 93318,1 >>Turn in WANTED: Vulgara the Insatiable
 step
     .abandon 93318 >>Abandon WANTED: Vulgara the Insatiable
 step << Alliance Druid
@@ -1932,7 +2012,7 @@ step
     .goto 2521,45.667,45.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda::251523|r
     .target Constable Aonda::251523
-    .turnin 92517 >>Turn in The Criminal Element
+    .turnin 92517,3 >>Turn in The Criminal Element
     .accept 93036 >>Accept Infiltrating the Cult
 
 step << Hunter
@@ -2105,8 +2185,9 @@ step
     .goto 2521,45.04,46.23,15,0 << !Rogue
     .goto 2521,45.67,45.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
+    .turnin 92528,1 >>Turn in Among the Faithful << Mage/Druid/Shaman
+    .turnin 92528,2 >>Turn in Among the Faithful << Warrior/Rogue
     .turnin 92528,3 >>Turn in Among the Faithful << Hunter
-    .turnin 92528 >>Turn in Among the Faithful << !Hunter
     .accept 92550 >>Accept Havoc in the Highlands
     .accept 93926 >>Accept The Western Watch
     .target Constable Aonda
@@ -2444,7 +2525,7 @@ step
 step
     .goto 2521,45.67,45.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
-    .turnin 92550 >>Turn in Havoc in the Highlands
+    .turnin 92550,3 >>Turn in Havoc in the Highlands
     .turnin 93927 >>Turn in A Last Request
     .accept 92701 >>Accept To Valanaar << Alliance
     .accept 92579 >>Accept To Valanaar << Horde
@@ -2589,7 +2670,7 @@ step
     .goto 2521,66.18,76.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist|r.
     .turnin 92701 >>Turn in To Valanaar << Alliance
-    .turnin 92579 >>Turn in To Valanaar << Horde
+    .turnin 92579,3 >>Turn in To Valanaar << Horde
     .accept 92699 >>Accept The Supreme Magister << Alliance
     .accept 92700 >>Accept The Grand Skyseer << Horde
     .accept 93949 >>Accept Bugged
@@ -3053,7 +3134,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
     *|cRXP_WARN_She may be moving between locations during a roleplay sequence. Check both spots|r.
     .turnin 92682 >>Turn in Make Yourself Useful
-    .turnin 92684 >>Turn in Ornery Ornery Galestriders
+    .turnin 92684,3 >>Turn in Ornery Ornery Galestriders
     .turnin 92698 >>Turn in What Is My Purpose?
     .turnin 92683 >>Turn in Flutterfly Dust
     .accept 92685 >>Accept The Hills Have Eyes
@@ -3231,7 +3312,10 @@ step
     .goto 2521,62.05,73.09,8,0
     .goto 2521,62.11,73.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alvarion Windfield|r on the second floor.
-    .turnin 92703 >>Turn in Deliver the News
+    .turnin 92703,1 >>Turn in Deliver the News << Warrior/Shaman
+    .turnin 92703,2 >>Turn in Deliver the News << Druid
+    .turnin 92703,3 >>Turn in Deliver the News << Rogue
+    .turnin 92703 >>Turn in Deliver the News << Hunter/Mage
     .target Alvarion Windfield
 step << Alliance
     #completewith Turn in The Missing Scholar
@@ -3731,7 +3815,7 @@ step << Alliance
     .goto 2521,65.76,68.4,30,0
     .goto 2521,69.64,67.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yorana Windyreed|r.
-    .turnin 93320 >>Turn in Tower Defense
+    .turnin 93320,3 >>Turn in Tower Defense
     .accept 92642 >>Accept Disrupting Logistics
     .accept 92645 >>Accept Breaking the Breaker
     .target Yorana Windyreed
@@ -3876,7 +3960,7 @@ step << Alliance !Druid
 step << Alliance
     .goto 2521,69.61,67.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yorana Windyreed|r.
-    .turnin 92645 >>Turn in Breaking the Breaker
+    .turnin 92645,3 >>Turn in Breaking the Breaker
     .turnin 92642 >>Turn in Disrupting Logistics
     .accept 92880 >>Accept Return to Valanaar
     .target Yorana Windyreed
@@ -3884,7 +3968,9 @@ step << Alliance
     #completewith next
     #label Return to Valanaar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist|r.
-    .turnin 92880 >>Turn in Return to Valanaar
+    .turnin 92880,1 >>Turn in Return to Valanaar << Alliance Warrior
+    .turnin 92880,2 >>Turn in Return to Valanaar << Alliance Rogue
+    .turnin 92880,3 >>Turn in Return to Valanaar << Alliance Hunter/Alliance Mage/Alliance Druid
     .accept 92881 >>Accept The High Elder's Request
     .target Valennia Stormfist
 step << Alliance
@@ -3902,7 +3988,9 @@ step << Alliance
     #requires Return to Valanaar
     .goto 2521,66.20,76.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist|r.
-    .turnin 92880 >>Turn in Return to Valanaar
+    .turnin 92880,1 >>Turn in Return to Valanaar << Alliance Warrior
+    .turnin 92880,2 >>Turn in Return to Valanaar << Alliance Rogue
+    .turnin 92880,3 >>Turn in Return to Valanaar << Alliance Hunter/Alliance Mage/Alliance Druid
     .accept 92881 >>Accept The High Elder's Request
     .target Valennia Stormfist
 step << Alliance
@@ -4783,7 +4871,7 @@ step
     .goto 2521,53.97,38.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strange Hermit|r.
     .turnin 93160 >>Turn in The Forest's Bounty
-    .turnin 93172 >>Turn in Free the Hollows
+    .turnin 93172,1 >>Turn in Free the Hollows
     .target Strange Hermit
 step
     .train 4036,3
@@ -4791,7 +4879,7 @@ step
     .goto 2521,53.97,38.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strange Hermit|r.
     .turnin 93160 >>Turn in The Forest's Bounty
-    .turnin 93172 >>Turn in Free the Hollows
+    .turnin 93172,1 >>Turn in Free the Hollows
     .turnin 98285 >>Turn in Camping 101: Engineering
     .target Strange Hermit
 
@@ -4999,7 +5087,7 @@ step << Alliance
     #completewith next
     #label Unfortunate News
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talaanis Shadowsong|r.
-    .turnin 92644 >>Turn in Unfortunate News
+    .turnin 92644,3 >>Turn in Unfortunate News
     .accept 94568 >>Accept The Cult's True Plans
     .disablecheckbox
     .target Talaanis Shadowsong
@@ -5017,7 +5105,7 @@ step << Alliance
     #requires Unfortunate News
     .goto 2521,66.17,76.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talaanis Shadowsong|r.
-    .turnin 92644 >>Turn in Unfortunate News
+    .turnin 92644,3 >>Turn in Unfortunate News
     .accept 94568 >>Accept The Cult's True Plans
     .target Talaanis Shadowsong
 step << Alliance
@@ -5084,7 +5172,7 @@ step << Alliance
     #completewith next
     #label Prepare for Battle
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist|r.
-    .turnin 92640 >>Turn in Desperate Times
+    .turnin 92640,2 >>Turn in Desperate Times
     .accept 93065 >>Accept Prepare for Battle
     .disablecheckbox
     .target Valennia Stormfist
@@ -5104,7 +5192,7 @@ step << Alliance
     #requires Prepare for Battle
     .goto 2521,66.18,76.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist|r.
-    .turnin 92640 >>Turn in Desperate Times
+    .turnin 92640,2 >>Turn in Desperate Times
     .accept 93065 >>Accept Prepare for Battle
     .target Valennia Stormfist
 step << Alliance
