@@ -932,6 +932,7 @@ step
     #hidewindow
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
     .turnin 92472 >>Turn in The Next Step
+    .target Constable Aonda
 step
     #completewith The Next Step
     >>Kill |cRXP_ENEMY_Galestriders|r along the way. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r]
@@ -944,10 +945,12 @@ step << !Rogue !Warrior
     #completewith The Next Step
     #label VendorStep
     .goto 2521,44.72,45.47
-    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Shaman/Druid
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veena Vericloud|r.
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Shaman/Druid
     >>|cRXP_WARN_Save 2 silver for your class spells!|r << Shaman/Druid
     .vendor >>|cRXP_WARN_Vendor trash (don't sell strider meat or eggs)|r.
-    -- .collect 1179,10 >>Buy |T132815:0|t[Ice Cold Milk] << Mage
+    .collect 1179,5 >>Buy |T132815:0|t[Ice Cold Milk] << Mage
+    .target Veena Vericloud
 step << Rogue/Warrior
     #completewith The Next Step
     #label VendorStep
@@ -961,6 +964,7 @@ step
     .goto 2521,45.67,45.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
     .turnin 92472 >>Turn in The Next Step
+    .target Constable Aonda
 step
     .goto 2521,45.67,45.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Constable Aonda|r.
@@ -1742,11 +1746,11 @@ step
     >>Kill |cRXP_ENEMY_Hippogryph Youth|r, |cRXP_ENEMY_Hippogryph Protector|r and the |cRXP_ENEMY_Hippogryph Matriarch|r.
     *|cRXP_WARN_Prioritize the |cRXP_ENEMY_Matriarch|r|r
     .complete 92516,1 --|8/8 Hippogryph Youth slain
+    .mob +Hippogryph Youth::251291
     .complete 92516,2 --|6/6 Hippogryph Protector slain
+    .mob +Hippogryph Protector::251284
     .complete 92516,3 --|1/1 Hippogryph Matriarch slain
-    .mob Hippogryph Matriarch::251261
-    .mob Hippogryph Protector::251284
-    .mob Hippogryph Youth::251291
+    .mob +Hippogryph Matriarch::251261
 step
     #completewith VulgarasHeadA
     >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
@@ -4888,7 +4892,8 @@ step
     #loop
     .goto 2521,64.51,34.89,10,0
     .goto 2521,64.98,34.96,10,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Druids|r, do not move while clicking them or it can bug.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Druids|r
+    >>|cRXP_WARN_Do not move while clicking them or it can bug.|r
     .complete 94489,1,3 --7/7 Injured Druids healed
     .target Nayeela Snarlfang
     .target Telenos Leafwhisper
@@ -4899,7 +4904,8 @@ step
     .goto 2521,63.69,32.49,20,0
     .goto 2521,64,31.97,25,0
     .goto 2521,64.52,31.88,25,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Druids|r, do not move while clicking them or it can bug.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Druids|r
+    >>|cRXP_WARN_Do not move while clicking them or it can bug.|r
     .complete 94489,1,5 --7/7 Injured Druids healed
     .target Neyasteel Mossmender
     .target Bryaes Galechaser
