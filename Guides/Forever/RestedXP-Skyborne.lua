@@ -4025,10 +4025,11 @@ step << Horde Druid
     .turnin 94006 >>Turn in The Great Ursera Spirit
     .accept 94638 >>Accept Strength and Mercy
     .target Urs'endris::255853
-step << Horde !Druid
-    .isQuestAvailable 98512
-    .goto 2521,61.221,78.472
-    .deathskip >>|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
+-- step << Horde !Druid
+--      -- Not sure yet if I want to do this. This saves "only" ~15 seconds
+--     .isQuestAvailable 98512
+--     .goto 2521,61.221,78.472
+--     .deathskip >>|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
 step << Horde Druid
     .isOnQuest 94638
     .goto 2521,62.384,64.393
