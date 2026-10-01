@@ -1605,6 +1605,8 @@ step
     .goto 1411/1,-4715.200,140.100
     >>|cRXP_WARN_Type /sit at the campfire and wait for one minute until you get the "Camp Benefits" buff|r
     .complete 96604,1 --|1/1 Use the /sit emote near the campfire
+    .macro Sit,134400 >>/sit
+    .timer 59, RP
     .complete 96604,2 --|Gain the Boosted Rest buff
 step
     #hardcore
@@ -1882,6 +1884,8 @@ step
     .goto 1411/1,-4715.200,140.100
     >>|cRXP_WARN_Type /sit at the campfire and wait for one minute until you get the "Camp Benefits" buff|r
     .complete 96604,1 --|1/1 Use the /sit emote near the campfire
+    .macro Sit,134400 >>/sit
+    .timer 59, RP
     .complete 96604,2 --|Gain the Boosted Rest buff
 step
     #softcore
