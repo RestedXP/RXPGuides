@@ -921,17 +921,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanaa Nightwind|r.
     .turnin 92544 >>Turn in Al'Aketh Thugs
     .target Hanaa Nightwind
--- step << Mage
---     #completewith The Next Step
---     .subzoneskip 16624
---     .goto 2521,40.09,34.34,25,0
---     .goto 2521,41.15,34.63,25,0
---     .goto 2521,40.43,37.15,25,0
---     .goto 2521,39.81,39.2,25,0
---     -- .goto 2521,47.44,35.97
---     .collect 255663,20 >>Click |cRXP_PICK_Windstone crystals|r along the way. Collect 20 to craft a |T135139:0|t[Lesser Magic Wand]
---     *|cRXP_WARN_Save them for the wand. Only use one if you would otherwise die|r
---     *Touch Tornadoes for 40% movement speed. Dealing damage removes the effect
 step << !Mage
     #completewith next
     +|TInterface/cursor/crosshair/interact.blp:20|tClick |cRXP_PICK_Windstone crystals|r along the way for health and mana restoratives
@@ -1110,7 +1099,6 @@ step << Horde Mage
     #completewith next
     .train 7411,3
     +Abandon Enchanting or continue with it.
-    -- +Keep Enchanting for now
     -- .macro Abandon Profession Enchanting >>/run AbandonSkill(C_TradeSkillUI.GetProfessionSkillLineID(Enum.Profession.Enchanting))
 step << Alliance Rogue
     .goto 2521,43.16,43.26
@@ -1169,7 +1157,6 @@ step << Alliance Mage
     #completewith next
     .train 7411,3
     +Abandon Enchanting or continue with it.
-    -- +Keep Enchanting for now
     -- .macro Abandon Profession Enchanting >>/run AbandonSkill(C_TradeSkillUI.GetProfessionSkillLineID(Enum.Profession.Enchanting))
 step << Alliance
     .goto 2521,43.02,43.24
@@ -1361,11 +1348,6 @@ step << Horde
     .goto 2521,48.497,55.827
     .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
     .cooldown spell,1259686,>0,1
--- step << Mage
---     #completewith EnterCaveMage
---     .subzoneskip 16674
---     .collect 255663,20 >>Click |cRXP_PICK_Windstone crystals|r along the way. Collect 20 to craft a |T135139:0|t[Lesser Magic Wand]
---     *|cRXP_WARN_the ones in the cave are fake|r
 step
     #completewith BadwindBennicB
     >>Kill |cRXP_ENEMY_Highlands Bandits|r. Loot them for the |T5172975:0|t[|cRXP_LOOT_Pilfered Windstone|r].
@@ -1380,7 +1362,6 @@ step
     .mob "Badwind" Bennic::255534
 step
     #completewith BadwindBennicA
-    #label EnterCaveMage
     .goto 2521,47.44,35.98,30,0
     .goto 2521,48.813,36.434,10,0
     .goto 2521,49.355,35.793,10,0
@@ -1402,9 +1383,6 @@ step << Alliance
     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
     .cooldown spell,1259705,>0,1
     .usespell 1259705
--- step << Mage
---     #completewith OutCave
---     .collect 255663,20 >>Click |cRXP_PICK_Windstone crystals|r along the way. Collect 20 to craft a |T135139:0|t[Lesser Magic Wand]
 step
     #completewith OutCave
     >>Kill |cRXP_ENEMY_Galestrider|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
@@ -1568,38 +1546,12 @@ step
     .target Constable Aonda::251523
     .turnin 92517,3 >>Turn in The Criminal Element
     .accept 93036 >>Accept Infiltrating the Cult
--- step << Mage
---     .goto 2521,43.24,43.18
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r and buy |T133942:0|t[Copper Rod], |T132841:0|t[Mote of Magic] and |T135435:0|t[Simple Wood].
---     .collect 247786,7
---     .skipgossipid 137558
---     .target Nasalanna Windsinger::257020
---     .money <0.070
 step
     .goto 2521,44.831,45.515
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sania Silverstream::251904|r
     .target Sania Silverstream::251904
     .turnin 93036 >>Turn in Infiltrating the Cult
     .accept 92529 >>Accept Falaath Village
--- step
--- --walk on air
--- step
---     .goto 2521,53.85,44.17
---     .goto 2521,54.86,44.61
---     .goto 2521,57.65,51.33
--- -windstone
--- 141666: I haven't met too many cultists that haven't immediately tried to kill me. What's your story?
--- 141665: What trade would that be?
--- 141666: I haven't met too many cultists that haven't immediately tried to kill me. What's your story?
--- 141665: What trade would that be?
--- 141666: I haven't met too many cultists that haven't immediately tried to kill me. What's your story?
--- 141672: Show me what you have available for trade.
--- buy as many https://wowhead.com/forever/item=277077
--- disenchant them
--- step
--- enchant bracers 7 times
--- step
--- learn recipe 50copper
 step << Warrior/Rogue
     .goto 2521,43.073,46.306
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naleeia Tattermend::257018|r.
