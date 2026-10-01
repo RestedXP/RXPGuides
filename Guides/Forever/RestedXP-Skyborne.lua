@@ -949,8 +949,9 @@ step << !Rogue !Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veena Vericloud|r.
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Shaman/Druid
     >>|cRXP_WARN_Save 2 silver for your class spells!|r << Shaman/Druid
-     .vendor >>|cRXP_WARN_Vendor trash|r.
+    .vendor >>|cRXP_WARN_Vendor trash|r.
     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. We need them for Cooking later.
+    -- .collect 1179,5 >>Buy |T132815:0|t[Ice Cold Milk] << Mage
     -- .collect 1179,10 >>Buy |T132815:0|t[Ice Cold Milk] << Mage
 step << Rogue/Warrior
     #completewith The Next Step
