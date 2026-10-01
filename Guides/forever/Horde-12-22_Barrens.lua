@@ -3214,7 +3214,7 @@ step
     .goto 1442/1,-774.61,-5.17,40,0
     .goto 1442/1,-774.61,-27.96,40,0
     .goto 1442/1,-726.27,-39.36,40,0
-    >>Kill |cRXP_ENEMY_Grimtotem Ruffians|r and |cRXP_ENEMY_Grimtotem Mercenaries|r in the area
+    >>Kill |cRXP_ENEMY_Grimtotem Ruffians|r and |cRXP_ENEMY_Grimtotem Mercenaries|r
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
     .mob +Grimtotem Ruffian
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
@@ -3618,7 +3618,6 @@ step
     .mob +Bristleback Thornweaver
     .mob +Bristleback Geomancer
 step
-    #label LakotaMani2
     #loop
     .goto 1413/1,-1951.27,-1956.15,0
     .goto 1413/1,-2031.32,-1703.47,0
@@ -3637,6 +3636,18 @@ step
     .use 5099
     .unitscan Lakota'mani
 step
+    #label LakotaMani2
+    #loop
+    .goto 1413/1,-2241.200,-1988.500,0
+    .goto 1413/1,-2241.200,-1988.500,50,0
+    .goto 1413/1,-2346.200,-1788.600,50,0
+    .goto 1413/1,-2458.300,-1824.400,50,0
+    .goto 1413/1,-2381.000,-2061.000,50,0
+    >>Kill |cRXP_ENEMY_Razormane Raiders|r. Loot them for |cRXP_LOOT_Olgra's Adornments|r
+    .complete 95774,1 --|4/4 Olgra's Adornments
+    .mob Razormane Raider
+step
+    #optional
     #completewith next
     >>Kill |cRXP_ENEMY_Stormsnouts|r. Loot them for a |cRXP_LOOT_Horn|r
     .complete 821,3 --Thunder Lizard Horn (1)
@@ -3695,8 +3706,7 @@ step << Warlock/Shaman
 	.goto 1413/1,-2687.96,-1973.04,60,0
 	.goto 1413/1,-2678.84,-2016.28,60,0
 	.goto 1413/1,-2584.6,-2050.74,60,0
-    .xp 19+11000 >> Grind to 11000+/21300 xp
-    --VV 1.5x Add 1.5x grind step
+    .xp 19+9500 >> Grind to 9500+/21300 xp
 step
     #loop
     .goto 1413/1,-2532.92,-1965.61,0
@@ -3856,6 +3866,27 @@ step
     .bindlocation 392
     .isQuestTurnedIn 865
 step
+    .goto 1413/1,-3720.300,-920.000
+    >>Click the |cRXP_PICK_Wanted Poster|r
+    .accept 92706 >>Accept WANTED: Bruuz
+    .group
+step
+    #loop
+    .goto 1413/1,-3911.900,-1049.200
+    .goto 1413/1,-3951.600,-1093.500
+    .goto 1413/1,-4012.800,-1081.800
+    .goto 1413/1,-3973.000,-1028.700
+    >>Kill |cRXP_PICK_Bruuz|r (lvl 20 elite)
+    >>|cRXP_WARN_He swims around in the sea near Ratchet|r
+    .isOnQuest 92706
+    .group 3
+step
+    .goto 1413/1,-3720.300,-920.000
+    >>Click the |cRXP_PICK_Wanted Poster|r
+    .accept 92706 >>Accept WANTED: Bruuz
+    .isQuestComplete 92706
+    .group
+step
     .goto 1413/1,-3770.20,-928.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bigglefuzz|r
     .accept 959 >>Accept Trouble at the Docks
@@ -3894,6 +3925,7 @@ step
     #label XroadsHS2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mankrik|r and |cRXP_FRIENDLY_Tonga|r
     .turnin 899 >>Turn in Consumed by Hatred
+    .turnin 95774 >>Turn in Her Name Is Olgra
     .target +Mankrik
     .goto 1413/1,-2641.35,-521.12
     .turnin 880 >>Turn in Altered Beings
