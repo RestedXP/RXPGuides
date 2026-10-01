@@ -1388,7 +1388,7 @@ step << Horde
     .mob High Order Apprentice::257521
 step << Horde
     .isOnQuest 92517
-    .goto 2521,48.497,55.827
+    .goto 2521,46.597,38.121
     .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
     .cooldown spell,1259686,>0,1
 step
@@ -2371,7 +2371,7 @@ step
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning::251662
 step << Horde
-    .isOnQuest 92528
+    .isOnQuest 92550
     .goto 2521,48.497,55.827
     .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
     .cooldown spell,1259686,>0,1
@@ -2598,7 +2598,7 @@ step
     .skipgossipid 98031
     .target Spirit Healer::6491
 step << Hunter
-    .isNotOnQuest 93317
+    .isNotOnQuest 92679
     .isQuestAvailable 92679
     .goto 2521,59.395,75.730
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falfaan Halfwind::271465|r inside the house.
@@ -2612,7 +2612,7 @@ step << Hunter
     .target Falfaan Halfwind::271465
     .money <0.1345
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.82
-step
+step << Alliance
     .goto 2521,60.6,73.16,10,0
     .goto 2521,60.640,72.664
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyalah Brightfire::257006|r.
@@ -2622,7 +2622,7 @@ step
     .skipgossipid 96031
     .skipgossipid 98031
 step
-    .isOnQuest 93317
+    .isOnQuest 93948
     .itemcount 1971,<1
     .goto 2521,60.640,72.664
     >>Craft as many |T132834:0|t[Herb Baked Eggs] as you can.
@@ -2634,8 +2634,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
     .target Donaal Downbreeze::255940
     .bindlocation 16638
-    .goto 2521,62.180,72.616
     .home >>Set your Hearthstone to Valanaar
+    .goto 2521,62.180,72.616
 step
     .subzoneskip 16638,1
     .isQuestAvailable 93948
@@ -2728,13 +2728,13 @@ step
     .turnin 92579,3 >>Turn in To Valanaar << Horde
     .accept 92699 >>Accept The Supreme Magister << Alliance
     .accept 92700 >>Accept The Grand Skyseer << Horde
-    .accept 93949 >>Accept Bugged
+    .accept 93949 >>Accept Bugged << Alliance
     .target Valennia Stormfist::252383
-step << Horde
-    #completewith LeavingValanaarA
-    >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
-    .complete 93949,1 --8/8 Enchanted Skyhopper Exterminated
-    .mob Skyhopper::251314
+-- step << Horde
+--     #completewith LeavingValanaarA
+--     >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
+--     .complete 93949,1 --8/8 Enchanted Skyhopper Exterminated
+--     .mob Skyhopper::251314
 step << Horde
     .isOnQuest 92700 
     .goto 2521,66.488,76.498,6,0
@@ -2844,11 +2844,11 @@ step << Horde
     .goto 2521,59.154,79.783
     .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
     .cooldown spell,1259686,>0,1
-step << Horde
-    .goto 2521,58.128,78.307
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Endaria Mistgaze::254344|r.
-    .accept 93736 >>Accept Unwelcome Spirits
-    .target Endaria Mistgaze::254344
+-- step << Horde
+--     .goto 2521,58.128,78.307
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Endaria Mistgaze::254344|r.
+--     .accept 93736 >>Accept Unwelcome Spirits
+--     .target Endaria Mistgaze::254344
 step << Horde
     .train 2366,3
     .isOnQuest 97968
@@ -2863,8 +2863,8 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Riaani Nightwind::256083|r.
     .target Riaani Nightwind::256083
     .turnin 93735 >>Turn in The Broken Construct
-    .accept 93737 >>Accept The Broken Construct
-    .complete 93737,1 --|1/1 Listen to what Riaani Nightwind has to say
+--     .accept 93737 >>Accept The Broken Construct
+--     .complete 93737,1 --|1/1 Listen to what Riaani Nightwind has to say
 -- step << Horde
 --     .goto 2521,59.265,79.977
 --     >>Wait for the roleplay. -- Probably skipping this quest.
@@ -2875,27 +2875,27 @@ step << Horde
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayessa Dawnsinger::251968|r.
 --     .target Ayessa Dawnsinger::251968
 --     .turnin 92708 >>Turn in A Grand Adventure
-step << Horde
-    --@THIDDI: Not sure if worth it.
-    #completewith next
-    #label BrokenConstructA
-    #hidewindow
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r |cRXP_WARN_inside the cave on the bottom floor|r.
-    .complete 93737,2 --|1/1 Obtain Crystallized lightning from the Shriekling Cave
-step << Horde
-    #completewith BrokenConstructA
-    .goto 2521,51.397,68.644,15 >>Enter the cave
-step << Horde
-    --@THIDDI: Not sure if worth it.
-    #requires BrokenConstructA
-    #loop
-    .goto 2521,51.434,67.603,15,0
-    .goto 2521,51.874,67.221,15,0
-    .goto 2521,52.933,66.084,15,0
-    .goto 2521,53.201,65.424,15,0
-    .goto 2521,52.752,64.732,15,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r |cRXP_WARN_inside the cave on the bottom floor|r.
-    .complete 93737,2 --|1/1 Obtain Crystallized lightning from the Shriekling Cave
+-- step << Horde
+--     --@THIDDI: Not sure if worth it.
+--     #completewith next
+--     #label BrokenConstructA
+--     #hidewindow
+--     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r |cRXP_WARN_inside the cave on the bottom floor|r.
+--     .complete 93737,2 --|1/1 Obtain Crystallized lightning from the Shriekling Cave
+-- step << Horde
+--     #completewith BrokenConstructA
+--     .goto 2521,51.397,68.644,15 >>Enter the cave
+-- step << Horde
+--     --@THIDDI: Not sure if worth it.
+--     #requires BrokenConstructA
+--     #loop
+--     .goto 2521,51.434,67.603,15,0
+--     .goto 2521,51.874,67.221,15,0
+--     .goto 2521,52.933,66.084,15,0
+--     .goto 2521,53.201,65.424,15,0
+--     .goto 2521,52.752,64.732,15,0
+--     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r |cRXP_WARN_inside the cave on the bottom floor|r.
+--     .complete 93737,2 --|1/1 Obtain Crystallized lightning from the Shriekling Cave
 step << Alliance
     .goto 2521,53.33,72.15
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bloodstained Satchel|r
@@ -2964,23 +2964,23 @@ step << Alliance
     .goto 2521,51.16,67.53,15,0
     .goto 2521,51.49,69.08,20,0
     .goto 2521,51.5,69.11,25 >>Leave the Cave
-step
+step << Alliance
     #completewith FindAameliaWindfieldA
     >>Kill |cRXP_ENEMY_Windsong Crawlers::254588|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
     .mob Windsong Crawler::254588
     .skipgossipid 98031
     .skipgossipid 96031
-step << Horde
-    #completewith next
-    #label BrokenConstructB
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
-    *|cRXP_WARN_She may be moving between locations during a roleplay sequence. Wait at the waypoint location.|r
-    .complete 92679,1 --1/1 Find Aamelia Windfield
-    .target Aamelia Windfield::252800
-step << Horde
-    #completewith BrokenConstructB
-    .goto 2521,51.397,68.644,15 >>Leave the cave
+-- step << Horde
+--     #completewith next
+--     #label BrokenConstructB
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
+--     *|cRXP_WARN_She may be moving between locations during a roleplay sequence. Wait at the waypoint location.|r
+--     .complete 92679,1 --1/1 Find Aamelia Windfield
+--     .target Aamelia Windfield::252800
+-- step << Horde
+--     #completewith BrokenConstructB
+--     .goto 2521,51.397,68.644,15 >>Leave the cave
 step
     #requires BrokenConstructB << Horde
     #label FindAameliaWindfieldA
@@ -3026,7 +3026,7 @@ step
     .mob +Hungry Bandit::252802
 step << Horde
     .isOnQuest 92684
-    .goto 2521,48.497,55.827
+    .goto 2521,48.416,80.537
     .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
     .cooldown spell,1259686,>0,1
 step
@@ -3195,7 +3195,7 @@ step
     .turnin 92684,3 >>Turn in Ornery Ornery Galestriders
     .turnin 92698 >>Turn in What Is My Purpose?
     .turnin 92683 >>Turn in Flutterfly Dust
-    .accept 92685 >>Accept The Hills Have Eyes
+    .accept 92685 >>Accept The Hills Have Eyes << Alliance/Shaman
     .target Aamelia Windfield::252800
 -- step -- version 1
 --     #loop
@@ -3206,17 +3206,17 @@ step
 --     .goto 2521,45.760,78.419,35,0
 --     >>Kill |cRXP_ENEMY_Bandit Highwaymen|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
 --     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
-step -- version 2
+step << Alliance/Shaman -- version 2
     #completewith next
     #label Bandit Highwaymen
     >>Kill |cRXP_ENEMY_Bandit Highwaymen::252820|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
     *|cRXP_WARN_Watch for stealthed enemies in the apple orchard|r.
     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
     .mob Bandit Highwaymen::252820
-step
+step << Alliance/Shaman
     #completewith Bandit Highwaymen
     .goto 2521,44.81,74.4,30 >>Make your way up the mountain
-step << Alliance
+step << Alliance/Shaman
     #requires Bandit Highwaymen
     #loop
     .goto 2521,45.615,72.361,35,0
@@ -3225,31 +3225,31 @@ step << Alliance
     >>Kill |cRXP_ENEMY_Bandit Highwaymen::252820|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
     .mob Bandit Highwaymen::252820
-step << Horde
-    #requires Bandit Highwaymen
-    #completewith BrokenConstructC
-    #hidewindow
-    #loop
-    .goto 2521,45.615,72.361,35,0
-    .goto 2521,43.551,74.999,35,0
-    .goto 2521,45.760,78.419,35,0
-    +1
-step << Horde
-    --@THIDDI: Not sure if worth it.
-    #requires Bandit Highwaymen
-    #completewith next
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
-    .complete 93737,4 --|1/1 Obtain Air Construct Core from the Bandit Camp
-step << Horde
-    #requires Bandit Highwaymen
-    >>Kill |cRXP_ENEMY_Bandit Highwaymen::252820|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
-    .complete 92685,1 --7/7 Blood-Stained Bandit Mask
-    .mob Bandit Highwaymen::252820
-step << Horde
-    --@THIDDI: Not sure if worth it.
-    #label BrokenConstructC
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
-    .complete 93737,4 --|1/1 Obtain Air Construct Core from the Bandit Camp
+-- step << Horde
+--     #requires Bandit Highwaymen
+--     #completewith BrokenConstructC
+--     #hidewindow
+--     #loop
+--     .goto 2521,45.615,72.361,35,0
+--     .goto 2521,43.551,74.999,35,0
+--     .goto 2521,45.760,78.419,35,0
+--     +1
+-- step << Horde
+--     --@THIDDI: Not sure if worth it.
+--     #requires Bandit Highwaymen
+--     #completewith next
+--     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
+--     .complete 93737,4 --|1/1 Obtain Air Construct Core from the Bandit Camp
+-- step << Horde
+--     #requires Bandit Highwaymen
+--     >>Kill |cRXP_ENEMY_Bandit Highwaymen::252820|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
+--     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
+--     .mob Bandit Highwaymen::252820
+-- step << Horde
+--     --@THIDDI: Not sure if worth it.
+--     #label BrokenConstructC
+--     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
+--     .complete 93737,4 --|1/1 Obtain Air Construct Core from the Bandit Camp
 step << Shaman
     .goto 2521,42.393,68.887
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Kuramaa's Stump|r.
@@ -3275,7 +3275,7 @@ step << Alliance
     .cast 1259416 >>Return to the |cRXP_ENEMY_Highlands Bandit::251918|r mountain, then jump and use |T132845:0|t[Walk on Air] |cRXP_WARN_while in midair|r to fly toward the waypoint. << Shaman
     .cooldown spell,1259416,>0,1
     .usespell 1259416
-step
+step << Alliance/Shaman
     #loop
     .goto 2521,47.511,78.490,30,0
     .goto 2521,46.71,81.94,30,0
@@ -3285,20 +3285,20 @@ step
     .turnin 92685 >>Turn in The Hills Have Eyes
     .accept 92693 >>Accept Standing Our Ground
     .target Aamelia Windfield::252800
-step
+step << Alliance/Shaman
     .goto 2521,46.71,81.94
     >>Return to |cRXP_FRIENDLY_Aamelia Windfield's::252800|r main location and talk to her.
     .complete 92693,1 --1/1 Speak with Aamelia Windfield
     .timer 75,Roleplay Duration
     .target Aamelia Windfield::252800
     .skipgossipid 136302
-step
+step << Alliance/Shaman
     .goto 2521,47.51,78.44
     >>Follow |cRXP_FRIENDLY_Aamelia Windfield::252800|r. Wait for the roleplay.
     *When Aamelia stops, place a Campfire if you have one and none is nearby. Gain the buff and start cooking.
     .complete 92693,2 --1/1 Follow Aamelia and make your final stand
     .use 279981
-step
+step << Alliance/Shaman
     .goto 2521,47.51,78.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
     .turnin 92693 >>Turn in Standing Our Ground
@@ -3348,12 +3348,12 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sessaria Skystride::252382|r.
     .target Sessaria Skystride::252382
     .turnin 97257 >>Turn in Call of Fire
-step << Shaman
-    #completewith next
-    >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
-    *|cRXP_WARN_This quest is optional. You can skip it if there are too many other players doing it at the same time.|r
-    .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
-    .mob Skyhopper::251314
+-- step << Shaman
+--     #completewith next
+--     >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
+--     *|cRXP_WARN_This quest is optional. You can skip it if there are too many other players doing it at the same time.|r
+--     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
+--     .mob Skyhopper::251314
 step << Shaman
     .isQuestAvailable 92703
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
@@ -3372,7 +3372,10 @@ step << Hunter
     >>|cRXP_BUY_Buy|r |T134534:0|t[Forest Mushroom Cap] |cRXP_BUY_from him|r. |cRXP_BUY_You will use this to feed your pet later|r
     .collect 4604,5
     .target Donaal Downbreeze::255940
+    .goto 2521,62.180,72.616
 step
+    .isOnQuest 92703
+    .isQuestComplete 92703
     .goto 2521,61.94,72.8,10,0
     .goto 2521,62.05,73.09,8,0
     .goto 2521,62.11,73.33
@@ -3696,12 +3699,20 @@ step << Alliance !Hunter
 --     .subzoneskip 16638,1
 --     .target Spirit Healer
 
-step
+step << Alliance
     .train 2366,3
     #completewith next
     >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
+step << Alliance
+    .train 2366,3
+    .isOnQuest 97968
+    .isQuestComplete 97968
+    .goto 2521,57.890,75.514
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r
+    .turnin 97968 >>Turn in Camping 101: Herbalism
+    .target Halassa Fernbreeze::257021
 step << Mage
     #completewith next
     >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
@@ -3796,24 +3807,24 @@ step << Alliance
     >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
-step << Horde
-    #loop
-    .goto 2521,63.1,77.59,20,0
-    .goto 2521,62.67,77.77,15,0
-    .goto 2521,63.13,77.32,15,0
-    .goto 2521,62.97,76.91,15,0
-    .goto 2521,63.8,78.01,30,0
-    .goto 2521,63.16,78.97,30,0
-    .goto 2521,65.37,78.53,40,0
-    .goto 2521,58.85,75.49,30,0
-    .goto 2521,59.05,76.35,30,0
-    .goto 2521,59.8,75.68,30,0
-    .goto 2521,61.4,74.76,40,0
-    .goto 2521,62.61,76.14,40,0
-    >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
-    *|cRXP_WARN_This quest is optional. You can skip it if there are too many other players doing it at the same time.|r
-    .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
-    .mob Skyhopper::251314
+-- step << Horde
+--     #loop
+--     .goto 2521,63.1,77.59,20,0
+--     .goto 2521,62.67,77.77,15,0
+--     .goto 2521,63.13,77.32,15,0
+--     .goto 2521,62.97,76.91,15,0
+--     .goto 2521,63.8,78.01,30,0
+--     .goto 2521,63.16,78.97,30,0
+--     .goto 2521,65.37,78.53,40,0
+--     .goto 2521,58.85,75.49,30,0
+--     .goto 2521,59.05,76.35,30,0
+--     .goto 2521,59.8,75.68,30,0
+--     .goto 2521,61.4,74.76,40,0
+--     .goto 2521,62.61,76.14,40,0
+--     >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
+--     *|cRXP_WARN_This quest is optional. You can skip it if there are too many other players doing it at the same time.|r
+--     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
+--     .mob Skyhopper::251314
 step << Alliance
     .goto 2521,66.63,79.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
@@ -4141,37 +4152,50 @@ step << Alliance
 --     .skipgossipid 96031
 --     .skipgossipid 98031
 --     .target Spirit Healer::6491
-step << Horde
-    #completewith next
-    #label BuggedHordeA
-    #optional
-    .isOnQuest 93949
-    .isQuestComplete 93949
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist::252383|r.
-    .turnin 93949 >>Turn in Bugged
-    .target Valennia Stormfist::252383
-step << Horde
-    #optional
-    #completewith BuggedHordeA
-    .goto 2521,65.93,76.37,8,0
-    .goto 2521,66.46,76.8,5,0
-    .goto 2521,66.43,76.58,5,0
-    .goto 2521,66.43,76.83,5,0
-    .goto 2521,66.31,77.08,5,0
-    .goto 2521,66,76.57,8,0
-    .goto 2521,66.19,76.22,8,0
-    .goto 2521,66.44,76.4,5 >>Climb the tower
-step << Horde
-    #requires BuggedHordeA
-    #optional
-    .isOnQuest 93949
-    .isQuestComplete 93949
-    .goto 2521,66.18,76.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist::252383|r.
-    .turnin 93949 >>Turn in Bugged
-    .target Valennia Stormfist::252383
-step << Horde
-    .abandon 93949 >>Abandon Bugged
+-- step << Horde
+--     #completewith next
+--     #label BuggedHordeA
+--     #optional
+--     .isOnQuest 93949
+--     .isQuestComplete 93949
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist::252383|r.
+--     .turnin 93949 >>Turn in Bugged
+--     .target Valennia Stormfist::252383
+-- step << Horde
+--     #optional
+--     #completewith BuggedHordeA
+--     .goto 2521,65.93,76.37,8,0
+--     .goto 2521,66.46,76.8,5,0
+--     .goto 2521,66.43,76.58,5,0
+--     .goto 2521,66.43,76.83,5,0
+--     .goto 2521,66.31,77.08,5,0
+--     .goto 2521,66,76.57,8,0
+--     .goto 2521,66.19,76.22,8,0
+--     .goto 2521,66.44,76.4,5 >>Climb the tower
+-- step << Horde
+--     #requires BuggedHordeA
+--     #optional
+--     .isOnQuest 93949
+--     .isQuestComplete 93949
+--     .goto 2521,66.18,76.66
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist::252383|r.
+--     .turnin 93949 >>Turn in Bugged
+--     .target Valennia Stormfist::252383
+-- step << Horde
+--     .abandon 93949 >>Abandon Bugged
+step << Horde Druid
+    .isOnQuest 94006
+    .subzoneskip 16638,1
+    .goto 2521,65.424,71.472,35,0
+    .goto 2521,65.905,68.024
+    .subzone 16626 >>Follow the way out of Valanaar
+step << Horde Druid
+    .isOnQuest 94006
+    .goto 2521,69.01,65.86,20,0
+    .goto 2521,69.84,61.73
+    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+    .cooldown spell,1259416,>0,1
+    .usespell 1259416
 step << Horde Druid
     .goto 2521,69.782,61.609
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urs'endris::255853|r.
@@ -4187,7 +4211,8 @@ step << Horde Druid
 --     .isOnQuest 94638
 --     .goto 2521,62.384,64.393
 --     .deathskip >>|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r Die and respawn at the |cRXP_FRIENDLY_Spirit Healer::6491|r.
-step
+step << Alliance
+    .goto 2521,59.719,67.016,35,0 << Druid --Remove if we add deathskips again
     .goto 2521,56.81,61.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fendaal Windstone::273017|r.
     .accept 98512 >>Accept Al'Aketh Assassins
@@ -4215,7 +4240,7 @@ step << Alliance
 --     .turnin 92643 >>Turn in The Turncoat
 --     .accept 92644 >>Accept Unfortunate News
 --     .target Dead Cultist
-step
+step << Alliance
     #loop
     .goto 2521,55.73,59.73,30,0
     .goto 2521,56.07,61.19,30,0
@@ -4223,7 +4248,7 @@ step
     >>Kill |cRXP_ENEMY_Al'Aketh Assassin::254626|r.
     .complete 98512,1 --10/10 Al'Aketh Assassin slain
     .mob Al'Aketh Assassin::254626
-step
+step << Alliance
     .goto 2521,56.80,61.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fendaal Windstone::273017|r.
     .turnin 98512 >>Turn in Al'Aketh Assassins
@@ -4233,6 +4258,15 @@ step << Druid
     >>Kill |cRXP_ENEMY_Ur'endra::258443|r.
     .complete 94638,1 --|1/1 Ur'endra slain
     .mob Ur'endra::258443
+step << Horde Druid
+    .isOnQuest 94638
+    .goto 2521,56.830,63.121,15,0
+    .goto 2521,57.299,63.465,15,0
+    .goto 2521,60.250,62.742,20,0
+    .goto 2521,69.803,61.660
+    .cast 1259416 >>Jump off the |cRXP_WARN_lower (not the one you're on)|r mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+    .cooldown spell,1259416,>0,1
+    .usespell 1259416
 step << Druid
     .goto 2521,69.803,61.660
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urs'endris::255853|r.
@@ -4260,31 +4294,46 @@ step << Alliance Druid
     >>Kill |cRXP_ENEMY_Windsong Crawlers::254588|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
     .mob Windsong Crawler::254588
+-- step << Horde Druid
+--     #completewith next
+--     #label CrawlerMeatDruidA
+--     .goto 2521,59.59,66.7,30,0
+--     >>Kill |cRXP_ENEMY_Windsong Crawlers::254588|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
+--     .complete 93317,1 --6/6 Windsong Crawler Meat
+-- step << Horde Druid
+--     #completewith CrawlerMeatDruidA
+--     .goto 2521,57.25,60.92,50 >>Go around the mountains 
+-- step << Horde
+--     #requires CrawlerMeatDruidA << Druid
+--     #loop
+--     .goto 2521,53.56,59.17,35,0
+--     .goto 2521,52.91,58.56,35,0
+--     .goto 2521,52.08,59.23,35,0
+--     .goto 2521,52.49,57.3,35,0
+--     .goto 2521,53.55,55.55,35,0
+--     .goto 2521,54.3,57.94,35,0
+--     >>Kill |cRXP_ENEMY_Windsong Crawlers::254588|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
+--     .complete 93317,1 --6/6 Windsong Crawler Meat
+--     .mob Windsong Crawler::254588
 step << Horde
-    #loop
-    .goto 2521,53.56,59.17,35,0
-    .goto 2521,52.91,58.56,35,0
-    .goto 2521,52.08,59.23,35,0
-    .goto 2521,52.49,57.3,35,0
-    .goto 2521,53.55,55.55,35,0
-    .goto 2521,54.3,57.94,35,0
-    >>Kill |cRXP_ENEMY_Windsong Crawlers::254588|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
-    .complete 93317,1 --6/6 Windsong Crawler Meat
-    .mob Windsong Crawler::254588
-step << Horde
-    --@THIDDI: Not sure if worth it.
-    #loop
-    .goto 2521,53.029,51.423,35,0
-    .goto 2521,53.621,50.493,35,0
-    .goto 2521,52.878,49.641,35,0
-    .goto 2521,53.129,47.738,35,0
-    .goto 2521,52.528,45.922,35,0
-    .goto 2521,51.574,46.567,35,0
-    .goto 2521,49.511,45.931,35,0
-    .goto 2521,49.917,44.806,35,0
-    .goto 2521,50.642,44.296,35,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
-    .complete 93737,3 --|1/1 Obtain Enchanted Gyrozephyr from Windsong Lake
+    .isQuestAvailable 93159
+    .goto 2521,52.790,57.628
+    .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
+    .cooldown spell,1259686,>0,1
+-- step << Horde
+--     --@THIDDI: Not sure if worth it.
+--     #loop
+--     .goto 2521,53.029,51.423,35,0
+--     .goto 2521,53.621,50.493,35,0
+--     .goto 2521,52.878,49.641,35,0
+--     .goto 2521,53.129,47.738,35,0
+--     .goto 2521,52.528,45.922,35,0
+--     .goto 2521,51.574,46.567,35,0
+--     .goto 2521,49.511,45.931,35,0
+--     .goto 2521,49.917,44.806,35,0
+--     .goto 2521,50.642,44.296,35,0
+--     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
+--     .complete 93737,3 --|1/1 Obtain Enchanted Gyrozephyr from Windsong Lake
 
 
 
@@ -4425,7 +4474,7 @@ step << Horde
 --     .turnin 92640 >>Turn in Desperate Times
 --     .accept 93065 >>Accept Prepare for Battle
 --     .target Valennia Stormfist
--- step 
+-- step << Alliance
 --     .subzoneskip 16638,1
 --     .goto 2521,63.9,74.16
 --     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
@@ -4481,11 +4530,12 @@ step << Warrior
     >>Kill |cRXP_ENEMY_Zaal Stormshield::257196|r. Loot him for the |T134959:0|t[|cRXP_LOOT_Skybreaker Bulwark|r].
     .complete 94003,1 --|1/1 Skybreaker Bulwark
     .mob Zaal Stormshield::257196
-step << !Warrior
+step << !Warrior Alliance
     #completewith next
     .isQuestAvailable 93159
-    .goto 2521,57.44,50.15,30 >>Go around the mountain
-step
+    .goto 2521,57.44,50.15,30 >>Go around the mountain << Alliance
+    -- .goto 2521,57.405,48.275,35 >>Go around the mountain << Horde
+step << Alliance
     .subzoneskip 16631
     .goto 2521,57.77,52.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Zendraas::272045|r.
@@ -4493,6 +4543,7 @@ step
     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
     *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
     .skipgossip 272045,1,1,1,2
+    .skipgossipid 141672
     .target Brother Zendraas::272045
     --1: I haven't met too many cultists that haven't immediately tried to kill me. What's your story?
     --1: What trade would that be?
@@ -4708,6 +4759,13 @@ step << Alliance
     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r].
     .complete 92741,1 --8/8 Shriekling Talons
     .mob Shadowgale Shriekling::256092
+step << Horde !Druid
+    #completewith next
+    .goto 2521,58.81,43.57 >>Cross the bridges.
+step << Horde Druid
+    #completewith next
+    .goto 2521,59.444,67.060,45,0
+    .goto 2521,58.81,43.57,20 >>Go around the mountains and cross the bridges.
 step
     .goto 2521,53.95,38.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strange Hermit::251684|r.
@@ -4782,10 +4840,10 @@ step
 step
     --@THIDDI: Not sure if worth it (Wind Hollow Essence).
     #completewith Resaan's Heirloom
-    >>Kill |cRXP_ENEMY_Wind Hollows::251676|r. Loot them for |T2576094:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
-    >>Kill |cRXP_ENEMY_Wind Hollows::251676|r. << Alliance
+    -- >>Kill |cRXP_ENEMY_Wind Hollows::251676|r. Loot them for |T2576094:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
+    >>Kill |cRXP_ENEMY_Wind Hollows::251676|r.
     .complete 93172,1 --10/10 Wind Hollow freed
-    .complete 93736,1 << Horde --10/10 Wind Hollow Essence
+    -- .complete 93736,1 << Horde --10/10 Wind Hollow Essence
     .mob +Wind Hollow::251676
 step
     #completewith Resaan's Heirloom
@@ -4843,10 +4901,10 @@ step
 step
     --@THIDDI: Not sure if worth it (Wind Hollow Essence).
     #completewith next
-    >>Kill |cRXP_ENEMY_Wind Hollows::251676|r. Loot them for |T2576094:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
-    >>Kill |cRXP_ENEMY_Wind Hollows::251676|r. << Alliance
+    -- >>Kill |cRXP_ENEMY_Wind Hollows::251676|r. Loot them for |T2576094:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
+    >>Kill |cRXP_ENEMY_Wind Hollows::251676|r.
     .complete 93172,1 --10/10 Wind Hollow freed
-    .complete 93736,1 << Horde--10/10 Wind Hollow Essence
+    -- .complete 93736,1 << Horde--10/10 Wind Hollow Essence
     .mob +Wind Hollow::251676
 step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crates|r
@@ -4854,16 +4912,18 @@ step
 step
     --@THIDDI: Not sure if worth it (Wind Hollow Essence).
     #label Wind Hollow
-    >>Kill |cRXP_ENEMY_Wind Hollows::251676|r. Loot them for |T2576094:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
-    >>Kill |cRXP_ENEMY_Wind Hollows::251676|r. << Alliance
+    -- >>Kill |cRXP_ENEMY_Wind Hollows::251676|r. Loot them for |T2576094:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
+    >>Kill |cRXP_ENEMY_Wind Hollows::251676|r.
     .complete 93172,1 --10/10 Wind Hollow freed
-    .complete 93736,1 << Horde --10/10 Wind Hollow Essence
+    -- .complete 93736,1 << Horde --10/10 Wind Hollow Essence
     .mob +Wind Hollow::251676
-step << Alliance
+step
     #completewith Unnerving Silence
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. 
-    *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r].
-    .complete 92741,1 --8/8 Shriekling Talons
+    *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r]. << Alliance
+    *Loot them for the |T132927:0|t[Pristine Shriekling Feathers]. << Horde
+    .complete 92741,1 << Alliance --8/8 Shriekling Talons
+    .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob Shadowgale Shriekling::256092
 step
     #completewith Unnerving Silence
@@ -4875,14 +4935,14 @@ step
     .target Elegael Thornpaw::257944
     .turnin 94484 >>Turn in Unnerving Silence
     .accept 94485 >>Accept Tears of the Lady
-    .accept 94486 >>Accept Feathers for Binding
+    .accept 94486 >>Accept Feathers for Binding << Alliance
     .accept 94487 >>Accept Unwanted and Unworthy 
 step << Alliance
     #completewith next
     >>Kill |cRXP_ENEMY_Al'Aketh Footsoldiers::252665|r and |cRXP_ENEMY_Al'Aketh Stormchasers::252664|r. 
     *Loot them for |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r] and |T133856:0|t[|cRXP_LOOT_Al'Aketh Cultist's Ears|r].
     .complete 94487,1 --10/10 Bloody Heirloom
-    .complete 93165,1 --10/10 Al'Aketh Cultist's Ear
+    --.complete 93165,1 --10/10 Al'Aketh Cultist's Ear
     .mob Al'Aketh Footsoldier::252665
     .mob Al'Aketh Stormchaser::252664
 step << Alliance
@@ -4890,7 +4950,7 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vayn Moongaze|r.
     .accept 93165 >>Accept Mercy Falls on Deaf Ears
     .target Vayn Moongaze
-step << Alliance
+step
     #label Unnerving Silence
     #loop
     .goto 2521,62.36,35.89,40,0
@@ -4901,25 +4961,13 @@ step << Alliance
     >>Kill |cRXP_ENEMY_Al'Aketh Footsoldiers|r and |cRXP_ENEMY_Al'Aketh Stormchaser|r. 
     *Loot them for |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r] and |T133856:0|t[|cRXP_LOOT_Al'Alketh Cultist's Ears|r].
     .complete 94487,1 --10/10 Bloody Heirloom
-    .complete 93165,1 --10/10 Al'Alketh Cultist's Ear
-    .mob Al'Aketh Footsoldier::252665
-    .mob Al'Aketh Stormchaser::252664
-step << Horde
-    #label Unnerving Silence
-    #loop
-    .goto 2521,62.36,35.89,40,0
-    .goto 2521,62.78,37.75,30,0
-    .goto 2521,63.98,37.75,40,0
-    .goto 2521,65.01,38.9,40,0
-    .goto 2521,65.66,36.13,40,0
-    >>Kill |cRXP_ENEMY_Al'Aketh Footsoldiers::252665|r and |cRXP_ENEMY_Al'Aketh Stormchaser::252664|r. 
-    *Loot them for |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r].
-    .complete 94487,1 --10/10 Bloody Heirloom
+    .complete 93165,1 << Alliance --10/10 Al'Alketh Cultist's Ear
     .mob Al'Aketh Footsoldier::252665
     .mob Al'Aketh Stormchaser::252664
 step
     #hidewindow
-    #completewith ToHermit
+    #completewith ToHermit << Alliance
+    #completewith ForestHollowsA << Horde
     #loop
     .goto 2521,62.83,38.25,35,0
     .goto 2521,62.08,36.7,35,0
@@ -4936,31 +4984,46 @@ step
     +1
 step
     --@THIDDI: Not sure if worth it (Pristine Shriekling Feathers).
-    #completewith ToHermit
+    #completewith ToHermit << Alliance
+    #completewith ForestHollowsB << Horde
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. 
     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers]. << Alliance
     *Loot them for the |T132927:0|t[Pristine Shriekling Feathers]. << Horde
     .complete 92741,1 << Alliance --8/8 Shriekling Talons 
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob +Shadowgale Shriekling::256092
-step
+step << Alliance
     #completewith ToHermit
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Seeds|r
     .complete 93160,1 --8/8 Zephyrseed
-step
+step << Alliance
     #completewith ToHermit
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tear Moss|r
     .complete 94485,1 --8/8 Lady's Tear Moss
--- step
+step << Horde
+    #completewith ForestHollowsB
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tear Moss|r
+    .complete 94485,1 --8/8 Lady's Tear Moss
+step << Horde
+    #label ForestHollowsA
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Seeds|r
+    .complete 93160,1 --8/8 Zephyrseed
+step << Horde
+    #label ForestHollowsB
+    .goto 2521,53.97,38.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strange Hermit::251684|r.
+    .turnin 93160 >>Turn in The Forest's Bounty
+    .turnin 93172 >>Turn in Free the Hollows
+    .target Strange Hermit::251684
+-- step << Alliance
 --     --@THIDDI: Not sure if worth it (Pristine Shriekling Feathers).
 --     #label Shadowgale Shrieklings
 --     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. 
---     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers]. << Alliance
---     *Loot them for the |T132927:0|t[Pristine Shriekling Feathers]. << Horde
---     .complete 92741,1 << Alliance --8/8 Shriekling Talons 
+--     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers].
+--     .complete 92741,1 --8/8 Shriekling Talons 
 --     .complete 94486,1 --20/20 Pristine Shriekling Feathers
 --     .mob +Shadowgale Shriekling::256092
-step
+step << Alliance
     #label ToHermit
     .goto 2521,53.97,38.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Strange Hermit::251684|r.
@@ -5012,7 +5075,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elegael Thornpaw::257944|r.
     .turnin 94485 >>Turn in Tears of the Lady
     .turnin 94487 >>Turn in Unwanted and Unworthy
-    .turnin 94486 >>Turn in Feathers for Binding
+    .turnin 94486 >>Turn in Feathers for Binding << Alliance
     .accept 94488 >>Accept The Ties That Bind
     .accept 94489 >>Accept The Wounds of Betrayal
     .target Elegael Thornpaw::257944
@@ -5099,7 +5162,7 @@ step
     .target Elegael Thornpaw::257944
 step
     .isOnQuest 94491 << Alliance
-    .isOnQuest 93736 << Horde
+    .isOnQuest 94896 << Horde
     .subzoneskip 16631,1
     .hs >>Hearth to Shen'dar Village
     .use 6948
@@ -5324,6 +5387,20 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iaadaria Bitterwind::253004|r.
     .turnin 92741 >>Turn in Unwelcome Visitors
     .target Iaadaria Bitterwind::253004
+step
+    >>Abandon any remaining "Camping 101" quest.
+    .abandon 97970 >>Abandon Camping 101: Mining
+    .abandon 97971 >>Abandon Camping 101: Skinning
+    .abandon 96646 >>Abandon Camping 101: Cooking
+    .abandon 97968 >>Abandon Camping 101: Herbalism
+    .abandon 97965 >>Abandon Camping 101: First Aid
+    .abandon 97967 >>Abandon Camping 101: Fishing
+    .abandon 97963 >>Abandon Camping 101: Alchemy
+    .abandon 97964 >>Abandon Camping 101: Blacksmithing
+    .abandon 97973 >>Abandon Camping 101: Tailoring
+    .abandon 98286 >>Abandon Camping 101: Enchanting
+    .abandon 97969 >>Abandon Camping 101: Leatherworking
+    .abandon 98285 >>Abandon Camping 101: Engineering
 step << Alliance
     #completewith next
     +|cRXP_WARN_The zeppelin can arrive anytime within its 6-minute cycle|r. prioritize cooking and gaining campfire buffs for later.
@@ -5394,7 +5471,9 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
     .target Lotheluum Starbreeze::252359
     .turnin 94491 >>Turn in The Fate of the Den
-step << Horde 
+step << Horde
+    .isOnQuest 93317
+    .isQuestComplete 93317
     .goto 2521,60.64,72.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyalah Brightfire::257006|r inside the house.
     .turnin 93317 >>Turn in Crab Season
@@ -5442,6 +5521,8 @@ step << Horde Rogue
     .money <0.16
     .xp <12,1
 step << Horde
+    .isOnQuest 93737
+    .isQuestComplete 93737
     .goto 2521,59.066,72.987
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Riaani Nightwind::256083|r.
     .turnin 93737 >>Turn in The Broken Construct
@@ -5454,6 +5535,8 @@ step << Horde
     *|cRXP_WARN_ We need them for Cooking later.|r
     .target Railee Thriceforged::257422
 step << Horde
+    .isOnQuest 93736
+    .isQuestComplete 93736
     .goto 2521,58.128,78.307
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Endaria Mistgaze::254344|r.
     .turnin 93736 >>Turn in Unwelcome Spirits
@@ -5465,6 +5548,8 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayessa Dawnsinger::251968|r.
     .turnin 92708 >>Turn in A Grand Adventure
     .target Ayessa Dawnsinger::251968
+step << Horde
+    .abandon 92708 >>Abandon A Grand Adventure
 step << Horde
     .zoneskip 2521,1
     .isQuestAvailable 95350
@@ -5489,8 +5574,9 @@ step << Horde
 --     .skipgossipid 98031
 --     .target Spirit Healer::6491
 step << Horde Druid Skyborne
-    #completewith next
+    #completewith ChildOfNatureC
     #label ChildOfNatureA
+    #hidewindow
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak Runetotem::3033|r.
     .turnin 94911 >>Turn in Child of Nature
     .accept 94913 >>Accept Moonglade
@@ -5505,12 +5591,13 @@ step << Horde Druid Skyborne
 step << Horde Druid Skyborne
     #requires ChildOfNatureB
     #completewith ChildOfNatureA
+    #label ChildOfNatureC
     .goto 1456/1,-13.300,-1108.300,12,0
     .goto 1456/1,-46.900,-1092.900,12,0
     .goto 1456/1,-61.200,-1097.400,8,0
     .goto 1456/1,-198.000,-1046.500,12 >>Cross the bridge.
 step << Horde Druid Skyborne
-    #requires ChildOfNatureA
+    #requires ChildOfNatureC
     .goto 1456/1,-281.500,-1039.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak Runetotem::3033|r.
     .turnin 94911 >>Turn in Child of Nature
