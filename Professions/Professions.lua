@@ -157,16 +157,23 @@ function addon.professions:ITEM_PUSH(_, bagSlot, iconFileID)
     --TODO: get info by iconFileID
 end
 
-local tstFrame = {}
+--The debug window shows craftedItems; it only exists once GUI/ProfessionsDebugGUI.lua has loaded
+local function refreshDebugWindow()
+    if addon.professions.debugGUI then
+        addon.professions.debugGUI:Refresh()
+    end
+end
 
 function addon.professions:ITEM_LOCK_CHANGED(_, bagIndex, slotIndex)
 end
 
 --Updates craftedItems when an item is removed from inventory
 function addon.professions:ITEM_LOCKED(_, bagIndex, slotIndex)
-    if bagIndex < 0 or bagIndex > 4 then return end
+    if not bagIndex or not slotIndex or bagIndex < 0 or bagIndex > 4 then return end
 
     local containerInfo = GetContainerItemInfo(bagIndex, slotIndex)
+    if not containerInfo then return end
+    RXPCData.craftedItems = RXPCData.craftedItems or {}
     local itemID = containerInfo.itemID
     local stackCount = containerInfo.stackCount
     if RXPCData.craftedItems[itemID] then
@@ -176,33 +183,23 @@ function addon.professions:ITEM_LOCKED(_, bagIndex, slotIndex)
         end
     end
 
-    --TODO: debbuging screen -delete this when ready
-    local text = ""
-    for k, v in pairs(RXPCData.craftedItems) do
-        text = text .. tostring(k) .. " -> " .. tostring(v) .. "\n"
-    end
-    tstFrame.text:SetText(text)
+    refreshDebugWindow()
 end
 
 --Updates craftedItems when an item is stored to inventory
 function addon.professions:ITEM_UNLOCKED(_, bagIndex, slotIndex)
-    if bagIndex < 0 or bagIndex > 4 then return end
+    if not bagIndex or not slotIndex or bagIndex < 0 or bagIndex > 4 then return end
 
     local containerInfo = GetContainerItemInfo(bagIndex, slotIndex)
+    if not containerInfo then return end
+    RXPCData.craftedItems = RXPCData.craftedItems or {}
     local itemID = containerInfo.itemID
     local stackCount = containerInfo.stackCount
-    --Check if its a recipe
-    local debug = true
-    if debug or isRecipe(containerInfo.itemName) then --TODO: What to do now that we don't know whats a recipe and whats not
-        RXPCData.craftedItems[itemID] = (RXPCData.craftedItems[itemID] or 0) + stackCount
-    end
+    --TODO: What to do now that we don't know whats a recipe and whats not
+    --Until then every item counts, as before (the old isRecipe check was never defined)
+    RXPCData.craftedItems[itemID] = (RXPCData.craftedItems[itemID] or 0) + stackCount
 
-    --TODO: debbuging screen -delete this when ready
-    local text = ""
-    for k, v in pairs(RXPCData.craftedItems) do
-        text = text .. tostring(k) .. " -> " .. tostring(v) .. "\n"
-    end
-    tstFrame.text:SetText(text)
+    refreshDebugWindow()
 end
 
 function addon.professions:BAG_NEW_ITEMS_UPDATED(_)
@@ -232,10 +229,12 @@ function addon.professions:CHAT_MSG_LOOT(_, text)
     --TODO: change only to check prof1 and prof2
     --TODO: get crafted stack size and update accordingly
     local itemName = match(text, "%[(.*)%]")
+    if not itemName then return end
+    RXPCData.craftedItems = RXPCData.craftedItems or {}
     local foundRecipe = false
-    for k, recipes in pairs(PROFESSIONS) do --TODO: What to do now that we do not have that info?
-        if k ~= "VENDOR_ITEMS" and k ~= "testing" then
-            for recipeName, _ in pairs(recipes) do
+    for k, profession in pairs(addon.professions.PROFESSIONS or {}) do --TODO: What to do now that we do not have that info?
+        if k ~= "VENDOR_ITEMS" and k ~= "testing" and type(profession.RECIPES) == "table" then
+            for recipeName, _ in pairs(profession.RECIPES) do
                 if lower(itemName) == lower(recipeName) then
                     --Update crafted items
                     RXPCData.craftedItems[itemName] = (RXPCData.craftedItems[itemName] or 0) + 1
@@ -264,9 +263,8 @@ function addon.professions:CHAT_MSG_SKILL(_, text)
         RXPCData.professions.profession1.skillLevel = newSkillLevel
     elseif find(lower(text), prof2Name) then
         RXPCData.professions.profession2.skillLevel = newSkillLevel
-    else --TODO: check if we even have to send an error here
-        error("Profession leveled: " .. text .. "\nIs not among: {" .. prof1Name .. ", " .. prof2Name .. "}", 2)
     end
+    --Anything else (weapon skills, defense, gathering) is not tracked here, so it is ignored instead of raising an error
 end
 
 function addon.professions:PLAYER_MONEY(...)
