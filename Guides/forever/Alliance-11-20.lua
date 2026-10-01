@@ -2280,6 +2280,7 @@ step << NightElf
     .use 277198 --Gatehouse Shipment
     .complete 97222,1 --|1/1 Gatehouse Shipment delivered
 step << NightElf
+    #label Gatehouse
     .goto 1453/0,566.900,-8847.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias::483|r
     .target Elaine Trias::483
