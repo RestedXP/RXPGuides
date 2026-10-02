@@ -5532,7 +5532,7 @@ step << skip --Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vol'jin::10540|r.
     .complete 93739,2 --|1/1 Speak with Vol'jin
     .target Vol'jin::10540
-step
+step << Horde
     .goto 1454/1,-4226.78,1914.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zor|r
     .accept 1061 >>Accept The Spirits of Stonetalon
