@@ -113,6 +113,7 @@ step
     .target Gryan Stoutmantle
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .accept 12 >> Accept The People's Militia
+    .turnin 98021 >>Turn in Journey to Sentinel Hill << Skyborne
 step
     .goto 1436/0,1041.97,-10511.13
     .target Captain Danuvin
@@ -2831,7 +2832,7 @@ step << Druid
     #optional
     #completewith next
     .abandon 729 >> Abandon The Absent Minded Prospector to accept the quest Trouble In Darkshore?
-step << Druid
+step << NightElf Druid
     .goto 1438/1,2607.86,9641.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
     .accept 730 >> Accept Trouble In Darkshore?
