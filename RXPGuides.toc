@@ -2,7 +2,6 @@
 ## Interface-Mists: 50504
 ## Interface-TBC: 20506
 ## Interface-Classic: 11509
-## Interface-Wrath: 38002
 ## Title: RestedXP Guides
 ## Title-zhCN: RestedXP 指南
 ## Notes: In-game leveling guides
