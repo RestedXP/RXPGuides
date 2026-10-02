@@ -2810,7 +2810,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r
     .fly Teldrassil >> Fly to Teldrassil
     .target Caylais Moonfeather
-step << Druid
+step << NightElf Druid
     #optional
     .goto 1438/1,950.52,8694.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nessa Shadowsong|r
@@ -3586,11 +3586,18 @@ step
     .isOnQuest 1002
 --XX Can do later during Pelts but better if player gets more xp beforehand
 step
+    .isQuestComplete 1002
     #label Buzzbox323End
     #requires SicklyDeers << Druid
     .goto 1439,51.288,24.554
     >>Click the |cRXP_PICK_Buzzbox 323|r on the ground
     .turnin 1002 >> Turn in Buzzbox 323
+    .accept 1003 >> Accept Buzzbox 525
+step
+    #optional
+    .isQuestTurnedIn 1002
+    .goto 1439,51.288,24.554
+    >>Click the |cRXP_PICK_Buzzbox 323|r on the ground
     .accept 1003 >> Accept Buzzbox 525
 step << !Hunter !Druid
     .goto 1439,54.973,24.885
@@ -4292,7 +4299,7 @@ step << Rogue
     .itemcount 2209,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.89
     .xp <19,1
-step
+step -- must be on quest now to loot Great Goretusk Snout
     #ah
     .goto 1453/0,660.28,-8814.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
@@ -4300,11 +4307,11 @@ step
     >>Buy the following items for faster turn ins at Redridge Mountains shortly << !Rogue/Dwarf Rogue
     >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
     >>|T134437:0|t[Anti-Venom] << !Dwarf Rogue
-    >>|T134172:0|t[Great Goretusk Snout]
+    -->>|T134172:0|t[Great Goretusk Snout]
     >>|T134028:0|t[Tough Condor Meat]
     >>|T134321:0|t[Crisp Spider Meat]
     .collect 6452,1,2359,1 << !Dwarf Rogue --Anti-Venom (1)
-    .collect 2296,5,92,1 -- Great Goretusk Snout (5)
+    --.collect 2296,5,92,1 -- Great Goretusk Snout (5)
     .collect 1080,5,92,1 -- Tough Condor Meat (5)
     .collect 1081,5,92,1 -- Crisp Spider Meat (5)
     .target Auctioneer Jaxon
@@ -4403,7 +4410,7 @@ step
 	.target Wiley the Black
     .turnin 65 >> Turn in The Defias Brotherhood
     .isOnQuest 65
-step
+step << skip -- must on quest now to loot Great Goretusk Snout
 #optional
     .goto 1433/0,-2062.96,-9209.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
@@ -4412,6 +4419,11 @@ step
     .itemcount 2296,5 -- Great Goretusk Snout (5)
     .itemcount 1080,5 -- Tough Condor Meat (5)
     .itemcount 1081,5 -- Crisp Spider Meat (5)
+    .target Chef Breanna
+step
+    .goto 1433/0,-2062.96,-9209.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
+    .accept 92 >> Accept Redridge Goulash
     .target Chef Breanna
 step << Warlock
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
@@ -4661,7 +4673,6 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
 	.target Chef Breanna
     .goto 1433/0,-2062.96,-9209.62
-    .accept 92 >> Accept Redridge Goulash
     .turnin 92 >> Turn in Redridge Goulash
     .itemcount 2296,5 -- Great Goretusk Snout (5)
     .itemcount 1080,5 -- Tough Condor Meat (5)
@@ -5219,7 +5230,6 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
 	.target Chef Breanna
     .goto 1433/0,-2062.96,-9209.62
-    .accept 92 >> Accept Redridge Goulash
     .turnin 92 >> Turn in Redridge Goulash
     .itemcount 2296,5 -- Great Goretusk Snout (5)
     .itemcount 1080,5 -- Tough Condor Meat (5)
@@ -5236,6 +5246,7 @@ step
     .complete 122,1 --Underbelly Whelp Scale (6)
     .mob Black Dragon Whelp
 step
+    .isOnQuest 92
     >>Kill |cRXP_ENEMY_Great Goretusks|r. Loot them for their |cRXP_LOOT_Great Goretusk Snouts|r
     >>|cRXP_WARN_Save any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_you loot as well as you can use them to level|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 which is required for Duskwood later|r
     .goto 1433/0,-1912.31,-9339.93,60,0
