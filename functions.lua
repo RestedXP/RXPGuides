@@ -15,7 +15,9 @@ local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
 local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo and addon.GetSpellInfo or _G.GetSpellInfo
 local GetSpellCooldown = addon.GetSpellCooldown
 local UnitName = addon.GetUnitName
-local BANK_CONTAINER = _G.BANK_CONTAINER or Enum.BagIndex.Bank
+local BANK_CONTAINER = _G.BANK_CONTAINER
+if not BANK_CONTAINER and Enum and Enum.BagIndex then BANK_CONTAINER = Enum.BagIndex.Bank end
+if not BANK_CONTAINER and gameVersion < 60000 then BANK_CONTAINER = -1 end
 
 local GetMerchantItemInfo = function(...)
     local GMII = C_MerchantFrame and C_MerchantFrame.GetItemInfo or _G.GetMerchantItemInfo
@@ -5171,6 +5173,8 @@ function addon.functions.questitemcount(self,text,itemId,qty,...)
 end
 
 function addon.PutItemInBank(bagContents)
+    if not BANK_CONTAINER then return end
+
     local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if CursorHasItem() and isBankOpened then
         local bank = {BANK_CONTAINER}
@@ -5259,6 +5263,8 @@ function addon.GoThroughBags(itemList, func)
 end
 
 function addon.DepositItems(itemList)
+    if not BANK_CONTAINER then return end
+
     local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if itemList and isBankOpened then
         if type(itemList) ~= "table" then itemList = {itemList} end
@@ -5287,6 +5293,8 @@ function addon.DepositItems(itemList)
 end
 
 function addon.IsItemInBags(itemList, reverseLogic)
+    if not BANK_CONTAINER then return end
+
     local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if itemList and isBankOpened then
         if type(itemList) ~= "table" then itemList = {itemList} end
@@ -5310,6 +5318,7 @@ function addon.IsItemNotInBags(itemList)
 end
 
 function addon.GoThroughBank(itemList, func)
+    if not BANK_CONTAINER then return end
 
     local bank = {BANK_CONTAINER}
     for i = _G.NUM_BAG_SLOTS + 1, _G.NUM_BAG_SLOTS + _G.NUM_BANKBAGSLOTS do
@@ -5335,6 +5344,8 @@ function addon.GoThroughBank(itemList, func)
 end
 
 function addon.WithdrawItems(itemList)
+    if not BANK_CONTAINER then return end
+
     local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if itemList and isBankOpened then
         if type(itemList) ~= "table" then itemList = {itemList} end
@@ -5363,6 +5374,8 @@ function addon.WithdrawItems(itemList)
 end
 
 function addon.IsItemInBank(itemList, reverseLogic)
+    if not BANK_CONTAINER then return end
+
     local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if itemList and isBankOpened then
         if type(itemList) ~= "table" then itemList = {itemList} end
