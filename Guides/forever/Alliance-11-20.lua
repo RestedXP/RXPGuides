@@ -5843,6 +5843,7 @@ step << !Dwarf/!Hunter
     .fly Darkshore>> Fly to Darkshore
     .target Daelyshia
 step
+    #optional
     .goto 1439/1,489.35,6506.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
     .turnin 731 >> Turn in The Absent Minded Prospector
