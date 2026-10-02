@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #forever
 << Horde
 #name 12-17 The Barrens
-#displayname 14-18 The Barrens << !Shaman !Hunter !Tauren !Skyborne
+#displayname 14-18 The Barrens << !Shaman !Hunter !Tauren
 #displayname 15-18 The Barrens << Paladin
 #version 11
 #group RestedXP Forever Guide (H)
@@ -147,7 +147,7 @@ step << !Tauren
     .accept 1492 >>Accept Wharfmaster Dizzywig
     .accept 848 >>Accept Fungal Spores
     .target Apothecary Helbrim
-step << Orc Hunter/Troll Hunter
+step << Orc Hunter/Troll Hunter/Skyborne Hunter
     .goto 1413/1,-2556.23,-351.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy a|r |T135499:0|t[Laminated Recurve Bow] |cRXP_BUY_from him|r
     .collect 2507,1,871,1 --Collect Laminated Recurve Bow (1)
@@ -155,7 +155,7 @@ step << Orc Hunter/Troll Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
     .target Uthrok
-step << Orc Hunter/Troll Hunter
+step << Orc Hunter/Troll Hunter/Skyborne Hunter
     #optional
     #completewith DisruptTheAttacks
     +|cRXP_WARN_Equip the|r |T135499:0|t[Laminated Recurve Bow]
@@ -274,7 +274,7 @@ step
     .mob +Razormane Thornweaver
     .complete 871,3 --Razormane Hunter (3)
     .mob +Razormane Hunter
-step << !Undead !Tauren
+step << !Undead !Tauren !Skyborne
     #sticky
     #completewith EnterRFC
     .subzone 2437 >> Now you should be looking for a group to Ragefire Chasm
@@ -339,7 +339,7 @@ step << Orc/Troll
     .turnin 6365 >>Turn in Meats to Orgrimmar
     .accept 6384 >>Accept Ride to Orgrimmar
     .target Devrak
-step << Orc Hunter/Troll Hunter
+step << Orc Hunter/Troll Hunter/Skyborne Hunter
     #optional
     .goto 1413/1,-2556.23,-351.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy a|r |T135499:0|t[Laminated Recurve Bow] |cRXP_BUY_from him|r
@@ -357,7 +357,7 @@ step << Tauren Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
     .target Uthrok
-step << Orc Warrior/Troll Warrior/Tauren Warrior
+step << Orc Warrior/Troll Warrior/Tauren Warrior/Skyborne Warrior
     #sticky
     #completewith KreenigSnarlsnout
     .goto 1413/1,-2697.08,-461.67,0
@@ -366,7 +366,7 @@ step << Orc Warrior/Troll Warrior/Tauren Warrior
     .subzoneskip 380,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
-step << !Undead !Tauren
+step << !Undead !Tauren !Skyborne
     #completewith HiddenEnemiesPickup
     .goto 1413/1,-2595.75,-437.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
@@ -524,38 +524,38 @@ step << Tauren
     .target Doras
     .isQuestAvailable 5728
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     .goto 1454/1,-4125.79,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 5726 >>Accept Hidden Enemies
     .target Thrall
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     .goto 1411/1,-4769.10,1484.39,0
     >>Kill |cRXP_ENEMY_Burning Blade|r mobs in Skull Rock until |cRXP_LOOT_Lieutenant's Insignia|r drops
     .complete 5726,1 --Lieutenant's Insignia (1)
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     .goto 1454/1,-4125.79,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5726 >> Turn in Hidden Enemies
     .accept 5727 >> Accept Hidden Enemies
     .target Thrall
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     .goto 1454/1,-4376.29,1802.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .accept 5761 >>Accept Slaying the Beast
     .target Neeru Fireblade
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     .goto 1454/1,-4376.29,1802.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .complete 5727,1 --Gauge Neeru Fireblade's reaction to you being a member of the Burning Blade
     .skipgossip
     .target Neeru Fireblade
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     #label HiddenEnemiesPickup
     .goto 1454/1,-4125.79,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
@@ -563,21 +563,21 @@ step << !Undead
     .accept 5728 >> Accept Hidden Enemies
     .target Thrall
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     #completewith EnterRFC
     .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     #label EnterRFC
     .goto 1454/1,-4420.76,1815.80
     .subzone 2437 >> Enter the RFC Instance portal. Zone in
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     >>|cRXP_WARN_If possible, have party members share the following quests|r
     .accept 5722 >> Accept Searching for the Lost Satchel
     .accept 5723 >> Accept Testing an Enemy's Strength
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     #optional
     #completewith next
     >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
@@ -587,21 +587,21 @@ step << !Undead
     .mob +Ragefire Shaman
     .isOnQuest 5723
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
     .turnin 5722 >> Turn in Searching for the Lost Satchel
     .accept 5724 >> Accept Returning the Lost Satchel
     .target Maur Grimtotem
     .isOnQuest 5722
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
     .accept 5724 >> Accept Returning the Lost Satchel
     .target Maur Grimtotem
     .isQuestTurnedIn 5722
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     #label TroggsShamans
     >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
     .complete 5723,1 --Ragefire Trogg (8)
@@ -610,7 +610,7 @@ step << !Undead
     .mob +Ragefire Shaman
     .isOnQuest 5723
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     #optional
     #requires TroggsShamans
     #completewith BazzalanandJergosh
@@ -621,13 +621,13 @@ step << !Undead
     .mob Searing Blade Warlock
     .isOnQuest 5725
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     >>Kill |cRXP_ENEMY_Taragaman the Hungerer|r. Loot him for his |cRXP_LOOT_Heart|r
     .complete 5761,1 -- Taragaman the Hungerer's Heart
     .mob Taragaman the Hungerer
     .isOnQuest 5761
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     #label BazzalanandJergosh
     >>Kill |cRXP_ENEMY_Bazzalan|r and |cRXP_ENEMY_Jergosh the Invoker|r
     .complete 5728,1 --Bazzalan (1)
@@ -636,7 +636,7 @@ step << !Undead
     .mob +Jergosh the Invoker
     .isOnQuest 5728
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     >>Kill |cRXP_ENEMY_Searing Blade Cultists|r and |cRXP_ENEMY_Searing Blade Warlocks|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
     .complete 5725,1 --Spells of Shadow (1)
     .complete 5725,2 --	Incantations from the Nether (1)
@@ -644,14 +644,14 @@ step << !Undead
     .mob Searing Blade Warlock
     .isOnQuest 5725
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     .goto 1454/1,-4376.29,1802.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .turnin 5761 >>Turn in Slaying the Beast
     .target Neeru Fireblade
     .isQuestComplete 5761
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     .goto 1454/1,-4125.79,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5728 >> Turn in Hidden Enemies
@@ -659,14 +659,14 @@ step << !Undead
     .target Thrall
     .isQuestComplete 5728
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     .goto 1454/1,-4125.79,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 5729 >> Accept Hidden Enemies
     .target Thrall
     .isQuestTurnedIn 5728
     .dungeon RFC
-step << !Undead
+step << !Undead !Skyborne
     .goto 1454/1,-4376.29,1802.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .turnin 5729 >> Turn in Hidden Enemies
@@ -674,7 +674,7 @@ step << !Undead
     .target Neeru Fireblade
     .dungeon RFC
     .isQuestTurnedIn 5728
-step << !Undead
+step << !Undead !Skyborne
     .goto 1454/1,-4125.79,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5730 >> Turn in Hidden Enemies
@@ -691,24 +691,13 @@ step << Tauren
     .isOnQuest 5724
     .isQuestComplete 5723
     .dungeon RFC
-step << !Tauren
+step << !Tauren !Undead !Skyborne
     #completewith KreenigSnarlsnout
     .hs >> Hearth to The Crossroads
     .use 6948
     .zoneskip The Barrens
     .bindlocation 380,1
-    .subzoneskip 380
     .dungeon RFC
-step << Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
-    #completewith RFCTurninsTB1
-    .goto 1413/1,-2595.75,-437.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
-    .fly Thunder Bluff >>Fly to Thunder Bluff
-    .target Devrak
-    .isOnQuest 5724
-    .isQuestComplete 5723
-    .dungeon RFC
-    .zoneskip Thunder Bluff
 
     --not worth to turn in 5723/5724 w/o TB flight path
 
@@ -728,13 +717,13 @@ step << skip
     .dungeon RFC
     .isOnQuest 5724
     .isQuestComplete 5723
-step << Tauren/Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
+step << Tauren
     #completewith RFCTurninsTB1
     .goto 1456/1,-212.71,-1065.010,80 >> Travel to the Elder Rise
     .isOnQuest 5724
     .isQuestComplete 5723
     .dungeon RFC
-step << Tauren/Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
+step << Tauren
     .goto 1456/1,-218.13,-1055.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
     .turnin 5724 >> Turn in Returning the Lost Satchel
@@ -743,14 +732,14 @@ step << Tauren/Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
     .isOnQuest 5724
     .isQuestComplete 5723
     .dungeon RFC
-step << Tauren/Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
+step << Tauren
     .goto 1456/1,-218.13,-1055.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
     .turnin 5724 >> Turn in Returning the Lost Satchel
     .target Rahauro
     .isOnQuest 5724
     .dungeon RFC
-step << Tauren/Orc Warrior/Troll Warrior/Orc Shaman/Troll Shaman
+step << Tauren
     #label RFCTurninsTB1
     .goto 1456/1,-218.13,-1055.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
@@ -765,14 +754,14 @@ step << skip
     .target Tal
     .zoneskip Thunder Bluff,1
     .dungeon RFC
-step
+step << !Undead !Skyborne
     #completewith KreenigSnarlsnout
     .hs >> Hearth to The Crossroads
     .use 6948
     .zoneskip Thunder Bluff,1
     .cooldown item,6948,>0
     .dungeon RFC
-step
+step << !Undead !Skyborne
     #completewith KreenigSnarlsnout
     .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
@@ -857,39 +846,39 @@ step
     .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
     .mob +Razormane Defender
-step << !Tauren !Undead
+step << !Tauren !Undead !Skyborne
     #optional
     #completewith next
     >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
     .isQuestComplete 924
-step << !Tauren !Undead
+step << !Tauren !Undead !Skyborne
     .goto 1413/1,-3694.2,256.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ak'Zeloth|r
     .turnin 924 >>Turn in The Demon Seed
     .target Ak'Zeloth
     .isQuestComplete 924
-step << Shaman
+step << Orc Shaman/Troll Shaman/Tauren Shaman
     #optional
     #completewith ShamanDurotar
     >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
     .complete 869,1 --Raptor Head (12)
     .mob Sunscale Lashtail
     .mob Sunscale Screecher
-step << Shaman
+step << Orc Shaman/Troll Shaman/Tauren Shaman
     #optional
     #completewith ShamanDurotar
     >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
-step << Shaman
+step << Orc Shaman/Troll Shaman/Tauren Shaman
     #completewith CallofFire3
     #label ShamanDurotar
     .goto 1411/1,-3905.13,-228.41
     .zone Durotar >> Travel toward Durotar
     .isOnQuest 1525
-step << Shaman
+step << Orc Shaman/Troll Shaman/Tauren Shaman
     #requires ShamanDurotar
     #completewith next
     .goto 1411/1,-3905.13,-228.41,10,0
@@ -903,7 +892,7 @@ step << Shaman
     .goto 1411/1,-4020.92,-219.95,8,0
     .goto 1411/1,-4034.67,-232.64,8,0
     .goto 1411/1,-4033.08,-255.91,10 >> Travel the path up the mountain toward |cRXP_FRIENDLY_Telf|r
-step << Shaman
+step << Orc Shaman/Troll Shaman/Tauren Shaman
     #label CallofFire3
     #requires ShamanDurotar
     .goto 1411/1,-3999.24,-268.95
@@ -911,42 +900,42 @@ step << Shaman
     .turnin 1525 >>Turn in Call of Fire
     .accept 1526 >>Accept Call of Fire
     .target Telf Joolam
-step << Shaman
+step << Orc Shaman/Troll Shaman/Tauren Shaman
     #completewith next
     .goto 1411/1,-3981.27,-256.61
     .cast 8898 >>|cRXP_WARN_Use the|r |T134732:0|t[Fire Sapta]
     .use 6636
-step << Shaman
+step << Orc Shaman/Troll Shaman/Tauren Shaman
     .goto 1411/1,-4022.51,-243.92
     >>Kill the |cRXP_ENEMY_Minor Manifestation of Fire|r. Loot him for a |cRXP_LOOT_Glowing Ember|r
     .complete 1526,1 --Glowing Ember (1)
     .mob Minor Manifestation of Fire
-step << Shaman
+step << Orc Shaman/Troll Shaman/Tauren Shaman
     .goto 1411/1,-4022.51,-243.92
     >>Click the |cRXP_PICK_Brazier|r on the ground
     .turnin 1526 >>Turn in Call of Fire
     .accept 1527 >>Accept Call of Fire
-step << Shaman
+step << Orc Shaman/Troll Shaman/Tauren Shaman
     #optional
     #completewith FireEnd
     >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
     .complete 869,1 --Raptor Head (12)
     .mob Sunscale Lashtail
     .mob Sunscale Screecher
-step << Shaman
+step << Orc Shaman/Troll Shaman/Tauren Shaman
     #optional
     #completewith next
     >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
     .dungeon RFC
-step << Shaman
+step << Orc Shaman/Troll Shaman/Tauren Shaman
     #label FireEnd
     .goto 1413/1,-3037.56,264.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kranal|r
     .turnin 1527 >>Turn in Call of Fire
     .target Kranal Fiss
-step << Shaman
+step << Orc Shaman/Troll Shaman/Tauren Shaman
     .goto 1413/1,-3029.46,261.25
     .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest
     >>|cRXP_WARN_Wait for the respawn if it's not up|r
@@ -988,7 +977,7 @@ step
     .accept 895 >>Accept WANTED: Baron Longshore
     .goto 1413/1,-3719.54,-919.07
     .target Sputtervalve
-step << Undead Warrior
+step << Undead Warrior/Skyborne Warrior
     .goto 1413/1,-3684.07,-919.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T135353:0|t[Espadon] |cRXP_BUY_from him|r
     .collect 2024,1,895,1 --Collect Espadon (1)
@@ -996,7 +985,7 @@ step << Undead Warrior
     .target Ironzar
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
-step << Undead Warrior
+step << Undead Warrior/Skyborne Warrior
     #optional
     #completewith BaronLongshore
     +|cRXP_WARN_Equip the|r |T135353:0|t[Espadon] |cRXP_WARN_when you are level 16|r
@@ -1005,7 +994,7 @@ step << Undead Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
     .xp >16,1
-step << Undead Warrior
+step << Undead Warrior/Skyborne Warrior
     #optional
     #completewith BaronLongshore
     +|cRXP_WARN_Equip the|r |T135353:0|t[Espadon]
@@ -1210,7 +1199,7 @@ step
     .turnin 892 >>Turn in The Missing Shipment
     .accept 888 >>Accept Stolen Booty
     .target Gazlowe
-step << Undead Warrior
+step << Undead Warrior/Skyborne Warrior
     .goto 1413/1,-3684.07,-919.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T135353:0|t[Espadon] |cRXP_BUY_from him|r
     .collect 2024,1,850,1 --Collect Espadon (1)
@@ -1218,7 +1207,7 @@ step << Undead Warrior
     .target Ironzar
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
-step << Undead Warrior
+step << Undead Warrior/Skyborne Warrior
     #optional
     #completewith FlyToXroads1
     +|cRXP_WARN_Equip the|r |T135353:0|t[Espadon] |cRXP_WARN_when you are level 16|r
@@ -1227,7 +1216,7 @@ step << Undead Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
     .xp >16,1
-step << Undead Warrior
+step << Undead Warrior/Skyborne Warrior
     #optional
     #completewith FlyToXroads1
     +|cRXP_WARN_Equip the|r |T135353:0|t[Espadon]
@@ -1499,7 +1488,7 @@ step << Tauren Hunter
     >>|cRXP_BUY_Buy|r |T132384:0|t[Heavy Shots] |cRXP_BUY_from him|r
     .collect 2519,1000,850,1 << Hunter --Heavy Shot (1000)
     .target Barg
-step << Troll Hunter/Orc Hunter
+step << Troll Hunter/Orc Hunter/Skyborne Hunter
     .goto 1413/1,-2556.23,-351.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r
     .vendor >> |cRXP_BUY_Buy a|r |T135490:0|t[|cRXP_FRIENDLY_Fine Longbow|r] |cRXP_BUY_from him if it's available and stock up on arrows|r
@@ -1623,168 +1612,6 @@ step
     .complete 867,1 --Witchwing Talon (8)
     .mob Witchwing Harpy
     .mob Witchwing Roguefeather
-
-    --RFC turnin section below no longer possible due to TB logout skip no longer workng
-
-step << skip --!Tauren
-    #completewith next
-    .zone Stonetalon Mountains >> Travel to Stonetalon Mountains
-    .zoneskip Stonetalon Mountains
-    .dungeon RFC
-    .isOnQuest 5724
-    .isQuestComplete 5723
-step << skip --!Tauren
-    #optional
-    #completewith next
-    .goto 1442/1,-786.33,-294.97,60,0
-    .goto 1442/1,-665.72,-280.97,40,0
-    .goto 1442/1,-522.63,-294.32,40 >> Follow the path on the left upward
-    .dungeon RFC
-    .isOnQuest 5724
-    .isQuestComplete 5723
-step << skip --!Tauren
-    .goto 1442/1,-401.53,-277.710
-    .goto 1456/1,-74.62,-981.93,30 >>|cRXP_WARN_Jump onto one of the cages. Perform a Logout Skip by logging out and back in|r
-    .link https://www.youtube.com/watch?v=cp2YI86AO4Y&ab >> |cRXP_WARN_CLICK HERE for an example|r
-    .dungeon RFC
-    .isOnQuest 5724
-    .isQuestComplete 5723
-step << skip --!Tauren
-    #completewith RFCPickups
-    .goto 1456/1,-13.04,-1107.95,40 >> Take the lift up to Thunder Bluff
-    .isOnQuest 5724
-    .isQuestComplete 5723
-    .dungeon RFC
-step << skip --!Tauren
-    #completewith next
-    .goto 1456/1,-212.71,-1065.010,80 >> Travel to the Elder Rise
-    .isOnQuest 5724
-    .isQuestComplete 5723
-    .dungeon RFC
-step << skip --!Tauren
-    .goto 1456/1,-218.13,-1055.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
-    .turnin 5724 >> Turn in Returning the Lost Satchel
-    .turnin 5723 >> Turn in Testing an Enemy's Strength
-    .target Rahauro
-    .dungeon RFC
-    .isOnQuest 5724
-    .isQuestComplete 5723
-step << skip --!Tauren
-    .goto 1456/1,-218.13,-1055.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
-    .turnin 5724 >> Turn in Returning the Lost Satchel
-    .target Rahauro
-    .dungeon RFC
-    .isOnQuest 5724
-step << skip --!Tauren
-    .goto 1456/1,-218.13,-1055.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
-    .turnin 5723 >> Turn in Testing an Enemy's Strength
-    .target Rahauro
-    .dungeon RFC
-    .isQuestComplete 5723
-step << skip --!Tauren
-    #completewith Samophlange
-    .hs >> Hearth to The Crossroads
-    .cooldown item,6948,>0
-    .use 6948
-    .dungeon RFC
-step << skip --!Tauren
-    #completewith Samophlange
-    .goto 1456/1,26.1,-1196.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
-    .fly Crossroads >>Fly to The Crossroads
-    .target Tal
-    .cooldown item,6948,<0
-    .zoneskip The Barrens
-    .dungeon RFC
-step
-    #optional
-    .abandon 5723 >> Abandon Testing an Enemy's Strength
-    .dungeon RFC
-step
-    #optional
-    .abandon 5725 >> Abandon The Power to Destroy...
-    .dungeon RFC
-step
-    #optional
-    .abandon 5728 >> Abandon Hidden Enemies
-    .dungeon RFC
-step
-    #optional
-    .abandon 5761 >> Abandon Slaying the Beast
-    .dungeon RFC
-step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .goto 1413/1,-2589.67,-424.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
-    .turnin 848 >> Turn in Fungal Spores
-    .target Apothecary Helbrim
-    .isQuestComplete 848
-    .dungeon RFC
-step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .goto 1413/1,-2607.91,-475.180
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
-    .turnin 867 >>Turn in Harpy Raiders
-    .accept 875 >>Accept Harpy Lieutenants
-    .target Darsok Swiftdagger
-    .dungeon RFC
-step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .goto 1413/1,-2672.76,-544.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
-    .turnin 870 >> Turn in The Forgotten Pools
-    .accept 877 >> Accept The Stagnant Oasis
-    .target Tonga Runetotem
-    .dungeon RFC
-step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .goto 1413/1,-2670.74,-482.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
-    .turnin 903 >>Turn in Prowlers of the Barrens
-    .accept 881 >>Accept Echeyakee
-    .target Sergra Darkthorn
-    .dungeon RFC
-step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .goto 1413/1,-3031.48,461.91
-    >>Use the |T134227:0|t[Horn of Echeyakee] to summon |cRXP_ENEMY_Echeyakee|r
-    >>Kill |cRXP_ENEMY_Echeyakee|r. Loot him for |cRXP_LOOT_Echeyakee's Hide|r
-    >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r doesn't spawn after using the|r |T134227:0|t[Horn of Echeyakee]|cRXP_WARN_ or you didn't get the tag when it did spawn, skip this step|r
-    .complete 881,1 --Echeyakee's Hide (1)
-    .mob Echeyakee
-    .use 10327
-    .dungeon RFC
-step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .goto 1413/1,-2669.72,-481.94
-    .abandon 881 >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r didn't spawn after using the|r |T134227:0|t[Horn of Echeyakee]|cRXP_WARN_ or you didn't get the tag when it did spawn, abandon Echeyakee, then return to town and accept it again|r
-    .itemcount 5100,<1 --Echeyakee's Hide (0)
-    .dungeon RFC
-step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .goto 1413/1,-2670.74,-482.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
-    .accept 881 >>Accept Echeyakee
-    .target Sergra Darkthorn
-    .itemcount 5100,<1 --Echeyakee's Hide (0)
-    .dungeon RFC
-step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .goto 1413/1,-3031.48,461.91
-    >>Use the |T134227:0|t[Horn of Echeyakee] to summon |cRXP_ENEMY_Echeyakee|r
-    >>Kill |cRXP_ENEMY_Echeyakee|r. Loot him for |cRXP_LOOT_Echeyakee's Hide|r
-    .complete 881,1 --Echeyakee's Hide (1)
-    .mob Echeyakee
-    .use 10327
-    .dungeon RFC
-step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    #completewith Samophlange
-    +|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Sunscale Scytheclaws|r |cRXP_WARN_in the area. They are up to level 18 and can|r |T132152:0|t[Thrash]
-    .dungeon RFC
-    .xp >17,1
-step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    #completewith Samophlange
-    >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
-    .complete 821,2 --Plainstrider Kidney (5)
-    .mob Greater Plainstrider
-    .mob Fleeting Plainstrider
-    .mob Ornery Plainstrider
-    .dungeon RFC
 step
     #completewith Samophlange
     +|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Sunscale Scytheclaws|r |cRXP_WARN_in the area. They are up to level 18 and can|r |T132152:0|t[Thrash]
@@ -2246,7 +2073,7 @@ step << Tauren Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 264 >>Train Bows
     .target Hanashi
-step << Warrior
+step << Warrior !Skyborne
     .goto 1454/1,-4824.00,2090.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 197 >>Train Two-Handed Axes
@@ -2303,7 +2130,8 @@ step << !Orc !Troll
     .target Kor'geld
 step << !Orc !Troll
     .goto 1454/1,-4477.900,1964.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yelmak|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yelmak|r
+    >>|cRXP_WARN_You may have to wait about 10 seconds before you can accept this quest|r
     .accept 97275 >>Accept Whuut's the Rush
     .target Yelmak
 step << !Orc !Troll
@@ -2505,7 +2333,7 @@ step
     #completewith RapHornsPickup
     .goto 1413/1,-3262.600,-99.400,0
     +|cRXP_WARN_As you continue to quest through The Barrens, try to find a 5-man group for "Chol'aruk the Ravener" at some point|r
-    >>|cRXP_WARN_Completing this will give 6150xp. The entrance to the cave where he is located is marked on your map (|cRXP_ENEMY_Razormane|r area)|r
+    >>|cRXP_WARN_Completing this will give 4100xp. The entrance to the cave where he is located is marked on your map (|cRXP_ENEMY_Razormane|r area)|r
     .isOnQuest 97003
 step
     .goto 1413/1,-3031.48,461.91
@@ -2898,6 +2726,22 @@ step
     .zoneskip The Barrens,1
     .subzoneskip 380
 step
+    #optional
+    .abandon 5723 >> Abandon Testing an Enemy's Strength
+    .dungeon RFC
+step
+    #optional
+    .abandon 5725 >> Abandon The Power to Destroy...
+    .dungeon RFC
+step
+    #optional
+    .abandon 5728 >> Abandon Hidden Enemies
+    .dungeon RFC
+step
+    #optional
+    .abandon 5761 >> Abandon Slaying the Beast
+    .dungeon RFC
+step
     .goto 1413/1,-2589.67,-424.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
     .turnin 848 >> Turn in Fungal Spores
@@ -3190,12 +3034,12 @@ RXPGuides.RegisterGuide([[
 #forever
 << Horde
 #name 17-22 Stonetalon/Barrens/Ashenvale
-#displayname 18-22 Stonetalon/Barrens/Ashenvale << !Shaman !Hunter !Tauren !Skyborne
+#displayname 18-22 Stonetalon/Barrens/Ashenvale << !Shaman !Hunter !Tauren
 #version 11
 #group RestedXP Forever Guide (H)
 #subgroup Speedrun Guide 1-22
 --#groupid RXP-SRGCE-H1
-#next RestedXP Horde 22-30\22-24 Hillsbrad
+#next 22-24 Hillsbrad
 
 
 step
@@ -3411,7 +3255,7 @@ step << Troll Warrior/Orc Warrior/Tauren Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
     .xp <20,1
-step << Undead Warrior
+step << Undead Warrior/Skyborne Warrior
     .goto 1442/1,402.76,1231.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
     .vendor >>|cRXP_BUY_Buy an|r |T135329:0|t[Executioner's Sword] |cRXP_BUY_from him|r
@@ -3420,7 +3264,7 @@ step << Undead Warrior
     .target Veenix
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
-step << Undead Warrior
+step << Undead Warrior/Skyborne Warrior
     #optional
     #completewith BluePrints
     +|cRXP_WARN_Equip the|r |T135329:0|t[Executioner's Sword]
@@ -3429,7 +3273,7 @@ step << Undead Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
     .xp <19,1
-step << Undead Warrior
+step << Undead Warrior/Skyborne Warrior
     #optional
     #completewith BluePrints
     +|cRXP_WARN_Equip the|r |T135280:0|t[Dacian Falx]
@@ -4507,30 +4351,32 @@ step
     .accept 874 >>Accept Mahren Skyseer
     .accept 6382 >>Accept The Ashenvale Hunt << Hunter
     .target Jorn Skyseer
-step << !Tauren !Shaman !Warrior/Undead
+step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
     .aura 16618 >>|cRXP_WARN_If you have 10|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r |cRXP_WARN_left, use them to obtain|r |T136022:0|t[Spirit of the Wind] |cRXP_WARN_from|r |cRXP_FRIENDLY_Mangletooth|r
     >>|cRXP_WARN_Skip this step if you have the Thunder Bluff flight path|r
     .itemcount 5075,10
     .target Mangletooth
-step << !Tauren !Shaman !Warrior/Undead
+    .train 2645,1 << Shaman --skip if ghost wolf trained
+    .train 5118,1 << Hunter --skip if cheetah trained
+step << !Tauren !Skyborne
     #completewith next
     .goto 1412/1,-1480.52,-2339.56,120,0
     .zone Mulgore >>Travel into Mulgore
-step << !Tauren !Shaman !Warrior/Undead
+step << !Tauren !Skyborne
     #completewith DeathDUPpickup
     .goto 1456/1,184.96,-1308.69
     .zone Thunder Bluff >>Take the lift into Thunder Bluff
     >>|cRXP_WARN_If you have the Thunder Bluff flight path, fly there instead|r
-step << Tauren/Shaman/Orc Warrior/Troll Warrior
+step << Tauren/Skyborne
     #completewith DeathDUPpickup
     .goto 1413/1,-1881.35,-2384.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
     .fly Thunder Bluff >>Fly to Thunder Bluff
     .target Omusa Thunderhorn
     .zoneskip Thunder Bluff
-step << Undead Warrior/Orc Warrior/Troll Warrior
+step << Undead Warrior/Orc Warrior/Troll Warrior/Troll Shaman/Orc Shaman
     .goto 1456/1,89.46,-1286.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 199 >>Train Two-Handed Maces
@@ -4541,7 +4387,7 @@ step << Troll Hunter/Orc Hunter/Undead Warrior/Warlock/Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 227 >>Train Staves
     .target Ansekhwa
-step << Rogue
+step << Rogue !Skyborne
     .goto 1456/1,89.46,-1286.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 198 >>Train Maces

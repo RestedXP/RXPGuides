@@ -11,6 +11,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Speedrun Guide 1-22 << Horde
 #defaultfor Skyborne
 #next 13-15 Westfall << Alliance
+#next 12-14 Silverpine Forest << Horde !Hunter
+#next 12-17 The Barrens << Horde Hunter
 
 step
     .goto 2521,42.82,23.41
@@ -1041,14 +1043,14 @@ step << Shaman
     .skipgossipid 136811
 step
     .goto 2521,43.02,43.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Coriella Calmbreeze|r.
     .complete 92514,2 << Horde --1/1 Speak with the Innkeeper
-    .target the Innkeeper
+    .target the Coriella Calmbreeze
 step << Horde
     .goto 2521,43.02,43.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Coriella Calmbreeze|r.
     .home >>Set your Hearthstone to Shen'dar Village
-    .target the Innkeeper
+    .target Coriella Calmbreeze
 step << Horde Rogue
     .goto 2521,43.16,43.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade::254087|r
@@ -1167,14 +1169,14 @@ step << Alliance Mage
     -- .macro Abandon Profession Enchanting >>/run AbandonSkill(C_TradeSkillUI.GetProfessionSkillLineID(Enum.Profession.Enchanting))
 step << Alliance
     .goto 2521,43.02,43.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Coriella Calmbreeze|r.
     .complete 93461,2 << Alliance --1/1 Speak with the Innkeeper
-    .target the Innkeeper
+    .target Coriella Calmbreeze
 step << Alliance
     .goto 2521,43.02,43.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Innkeeper|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Coriella Calmbreeze|r.
     .home >>Set your Hearthstone to Shen'dar Village
-    .target the Innkeeper
+    .target Coriella Calmbreeze
 step << Warrior
     .goto 2521,44.95,45.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corsan Earthrazer::254088|r
@@ -5367,6 +5369,22 @@ step << Horde Druid Skyborne
     .turnin 94911 >>Turn in Child of Nature
     .accept 94913 >>Accept Moonglade
     .target Turak Runetotem::3033
+step << Horde Druid Skyborne
+    #optional
+    #requires ChildOfNatureA
+    .goto 1456/1,-281.500,-1039.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak Runetotem::3033|r.
+    .train 8936 >>Train your class spells
+    .target Turak Runetotem::3033
+    .xp <12,1
+    .xp >14,1
+step << Horde Druid Skyborne
+    #requires ChildOfNatureA
+    .goto 1456/1,-281.500,-1039.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak Runetotem::3033|r.
+    .train 5178 >>Train your class spells
+    .target Turak Runetotem::3033
+    .xp <14,1
 step << Horde !Druid
     #completewith next
     #label WelcomeToAzerothA
@@ -5391,40 +5409,276 @@ step << Horde
     .fly Orgrimmar >>Fly to Orgrimmar
     .target Tal::2995
 step << Horde
-    .goto 1454/1,-4293.400,1670.600,10,0
-    .goto 1454/1,-4252.300,1673.600,15,0
-    .goto 1454/1,-4273.700,1930.800,15,0
+    .goto Orgrimmar,54.10,68.42
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Gryshka|r
+    .home >> Set your Hearthstone to Orgrimmar
+	.target Innkeeper Gryshka
+    .bindlocation 1637
+step << Horde
+    .goto 1454/1,-4460.600,1584.300,10,0
+    .goto 1454/1,-4460.000,1598.600
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thatog|r
+    >>|cRXP_WARN_He is upstairs in the building|r
+    .accept 97246 >>Accept Meal Appeal
+    .target Thatog
+step << Horde
+    .goto 1454/1,-4482.600,1775.000
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Borstan|r
+    .turnin 97246 >>Turn in Meal Appeal
+    .accept 97249 >>Accept Favorite Food
+    .target Borstan
+step << Horde
+    .goto 1454/1,-4466.800,1954.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'geld|r 
+    .accept 97242 >>Accept Yelmak's Medley
+    .target Kor'geld
+step << Horde
+    #completewith next
+    .goto 1454/1,-4560.000,1908.500,15,0
+    .goto 1454/1,-4587.000,1918.300,15,0
+    .goto 1454/1,-4608.000,1897.400,15,0
+    .goto 1454/1,-4632.300,1911.600,15 >>Travel to the Valley of Honor
+step << Horde
+    #loop
+    .goto 1454/1,-4653.900,1950.300,0
+    .goto 1454/1,-4653.900,1950.300,20,0
+    .goto 1454/1,-4677.700,1971.600,20,0
+    .goto 1454/1,-4667.400,1997.000,20,0
+    .goto 1454/1,-4609.800,2013.500,20,0
+    .goto 1454/1,-4630.600,1968.100,20,0
+    >>Loot the |cRXP_PICK_Handful of Cattails|r and |cRXP_PICK_Speargrass Cuttings|r in the water
+    .complete 97242,1 --|2/2 Handful of Cattails
+    .complete 97242,2 --|4/4 Speargrass Cuttings
+step << Horde Hunter
+    .goto 1454/1,-4607.02,2100.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormak|r
+    .train 13795 >> Train your class spells
+    .target Ormak Grimshot
+    .xp <12,1
+step << Horde Hunter
+    .goto 1454/1,-4611.09,2135.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xao'tsu|r
+    .train 24556 >> Train your pet spells
+    .target Xao'tsu
+step << Horde Warrior
+    .goto 1454/1,-4801.42,1980.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grezz|r
+    .train 7384 >> Train your class spells
+    .target Grezz Ragefist
+    .xp <12,1
+    .xp >14,1
+step << Horde Warrior
+    #optional
+    .goto 1454/1,-4801.42,1980.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grezz|r
+    .train 1160 >> Train your class spells
+    .target Grezz Ragefist
+    .xp <14,1
+step << Horde
+    .goto 1454/1,-4466.900,1954.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'geld|r
+    .turnin 97242 >>Turn in Yelmak's Medley
+    .target Kor'geld
+step << Horde
+    .goto 1454/1,-4477.900,1964.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yelmak|r
+    >>|cRXP_WARN_You may have to wait about 10 seconds before you can accept this quest|r
+    .accept 97275 >>Accept Whuut's the Rush
+    .target Yelmak
+step << Horde
+    .goto 1454/1,-4463.000,1966.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Whuut|r
+    .turnin 97275 >>Turn in Whuut's the Rush
+    .target Whuut
+step << Horde
+    .goto 1454/1,-4193.400,2001.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Migi|r
+    .turnin 97249 >>Turn in Favorite Food
+    .target Migi
+step << Horde
+    .goto 1454/1,-4205.800,2007.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thra|r 
+    .accept 97326 >>Accept Rocks to Rests
+    .target Thra
+step << Horde
+    .goto 1454/1,-4293.600,1949.900
+    >>Loot the orange |cRXP_PICK_Rocks|r on the ground
+    >>|cRXP_WARN_Skip this quest if there is a lot of competition! There aren't that many |cRXP_PICK_Rocks|r and they do not respawn quickly|r
+    .complete 97326,1 --|8/8 Smooth Boulder
+    .isOnQuest 97326
+step << Horde
+    .goto 1454/1,-4205.900,2007.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thra|r
+    .turnin 97326 >>Turn in Rocks to Rests
+    .target Thra
+    .isQuestComplete 97326
+step << Horde
     .goto 1454/1,-4126.300,1920.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall::4949|r.
     .turnin 95350 >>Turn in Welcome to Azeroth
     .accept 98024 >>Accept Journey to the Crossroads
-    .accept 93739 >>Accept Exploring the Horde
-    .accept 5726 >>Accept Hidden Enemies
+    --.accept 93739 >>Accept Exploring the Horde
+    --.accept 5726 >>Accept Hidden Enemies
     .target Thrall::4949
-step << Horde
+    --93739 will take too long, won't be able to fully complete and turnin until lvl 22/23 and at that point you get no xp
+step << skip --Horde
     .goto 1454/1,-4133.400,1938.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nazgrel::3230|r.
     .complete 93739,1 --|1/1 Obtain Instructions from Nazgrel
     .target Nazgrel::3230
     .skipgossipid 142489
-step << Horde
+step << skip --Horde
     .goto 1454/1,-4162.200,1933.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vol'jin::10540|r.
     .complete 93739,2 --|1/1 Speak with Vol'jin
     .target Vol'jin::10540
--- step << Druid Horde Skyborne
--- 	#completewith next
--- 	.cast 18960 >> Cast Teleport: Moonglade
---     >>|cRXP_WARN_It will be in your spellbook|r
--- 	.zoneskip Moonglade
--- step << Druid Horde Skyborne
---     .goto 1450/1,-2678.800,8020.100
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze::11802|r.
---     .target Dendrite Starblaze::11802
---     .turnin 94913 >>Turn in Moonglade
+step
+    .goto 1454/1,-4226.78,1914.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zor|r
+    .accept 1061 >>Accept The Spirits of Stonetalon
+    .target Zor Lonetree
+    .xp <13,1
+step << Horde Shaman
+    .goto 1454/1,-4225.09,1933.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    .train 408341 >> Train your class spells
+    .target Kardris Dreamseeker
+    .xp <12,1
+    .xp >14,1
+step << Horde Shaman
+    #optional
+    .goto 1454/1,-4225.09,1933.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    .train 8045 >> Train your class spells
+    .target Kardris Dreamseeker
+    .xp <14,1
+step << Horde Rogue
+    .goto 1454/1,-4296.34,1762.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormok|r
+    .train 1766 >> Train your class spells
+    .target Ormok
+    .xp <12,1
+    .xp >14,1
+step << Horde Rogue
+    #optional
+    .goto 1454/1,-4296.34,1762.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormok|r
+    .train 1758 >> Train your class spells
+    .target Ormok
+    .xp <14,1
+step << Horde Mage
+    .goto 1454/1,-4218.64,1473.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
+    .train 145 >> Train your class spells
+    .target Pephredo
+    .xp <12,1
+    .xp >14,1
+step << Horde Mage
+    #optional
+    .goto 1454/1,-4218.64,1473.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
+    .train 1449 >> Train your class spells
+    .target Pephredo
+    .xp <14,1
+step << Horde
+    #completewith next
+    .zone Durotar >> Leave Orgrimmar
+    .zoneskip Durotar
+    .zoneskip Tirisfal Glades
+    .zoneskip Undercity
+    .zoneskip Silverpine Forest
+step << Horde
+    .goto 1411/1,-4648.55,1321.88,40 >>Go up the Zeppelin Tower
+    .zone Tirisfal Glades >>Take the Zeppelin to Tirisfal Glades
+    >>|cRXP_WARN_Conjure water while waiting|r << Mage
+    .zoneskip Tirisfal Glades
+step << Horde
+    #completewith DeliverytoSPF
+    .goto 1420/0,253.4,2234.85,80 >> Travel to Brill
+step << Horde
+    .goto 1420/0,254.600,2225.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Terrence|r
+    .accept 96895 >>Accept The Argent Emissary
+    .target Deathguard Terrence
+    .xp >13,1
+step << Horde
+    #label DeliverytoSPF
+    .goto 1420/0,346.94,2258.950
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
+    .accept 445 >>Accept Delivery to Silverpine Forest
+    .target Apothecary Johaan
+    .xp >13,1
+step << Horde
+    .goto 1420/0,54.600,1996.600
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadric Harlson|r
+    .turnin 96895 >>Turn in The Argent Emissary
+    .accept 96897 >>Accept The Cult of the Damned
+    .accept 96898 >>Accept Remnants of War
+    .target Hadric Harlson
+    .xp >13,1
+step << Horde
+    .goto 1420/0,-130.500,1907.800
+    >>Kill |cRXP_ENEMY_Dark Enforcers|r and |cRXP_ENEMY_Dark Neophytes|r. Loot them for |cRXP_LOOT_Necrotic Crystal Fragments|r
+    >>|cRXP_LOOT_Necrotic Crystal Fragments|r |cRXP_WARN_can also be looted on the ground|r
+    >>|cRXP_WARN_Be careful! These mobs hit hard. |cRXP_ENEMY_Dark Enforcers|r also have an instant cast 50-70 damage ability|r
+    .complete 96897,2 --|8/8 Dark Enforcer slain
+    .mob +Dark Enforcer
+    .complete 96897,1 --|8/8 Dark Neophyte slain
+    .mob +Dark Neophyte
+    .complete 96898,1 --|12/12 Necrotic Crystal Fragment
+    .isOnQuest 96897,96898
+step << Horde
+    .goto 1420/0,54.500,1996.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadric Harlson|r
+    .turnin 96897 >>Turn in The Cult of the Damned
+    .turnin 96898 >>Turn in Remnants of War
+    --.accept 96899 >>Accept Bandarion Keep
+    .target Hadric Harlson
+    .isQuestComplete 96897
+    .isQuestComplete 96898
+step << Horde
+    #completewith UCflightpath1
+    .goto 1458/0,239.14,1749.54,35,0
+    .goto 1458/0,255.64,1724.70,35,0
+    .goto 1458/0,240.68,1706.97,10,0
+    .goto 1458/0,241.06,1660.12,10,0
+    .goto 1458/0,257.08,1623.38,10,0
+    .goto 1458/0,244.51,1598.73,15 >> Take the lift down to the Undercity
+step << Horde
+    #label UCflightpath1
+    .goto 1458/0,266.39,1567.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael|r
+    .fp Undercity >> Get the Undercity flight path
+    .target Michael Garrett
+step << Horde
+    #ah
+    .goto 1458/0,224.300,1648.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Cain|r
+    >>|cRXP_BUY_Buy Three|r |T133884:0|t[Murloc Eyes] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_WARN_Skip this if you want, it's only a small time saver|r
+    .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
+    .target Auctioneer Cain
+    .zoneskip Undercity,1
+step << Horde
+    .goto 1458/0,419.89,1627.54,50,0
+    .goto 1458/0,428.52,1597.20,10,0
+    .goto 1458/0,439.17,1626.06,10,0
+    .goto 1458/0,476.78,1632.150,10,0
+    .goto 1458/0,482.34,1660.63,10,0
+    .goto 1458/0,539.33,1665.49,15,0
+    .goto 1458/0,610.42,1684.44,35,0
+    .goto 1458/0,663.19,1600.46,35,0
+    .goto 1420/0,724.25,1682.66,50,0
+    .zone Tirisfal Glades >> Leave Undercity through the Sewers
+    .zoneskip Silverpine Forest
+step << Horde
+    #label Entersilverpine
+    .goto 1420/0,629.36,1553.42
+    .zone Silverpine Forest >> Travel to Silverpine Forest
+    .zoneskip Silverpine Forest
+
 ]])
 
---Random Stuff
 RXPGuides.RegisterGuide([[
 #forever
 #version 1

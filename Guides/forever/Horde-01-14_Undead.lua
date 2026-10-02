@@ -3218,7 +3218,7 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-H1
 << Horde
 #version 11
-#defaultfor !Hunter !Shaman !Tauren !Skyborne
+#defaultfor !Hunter !Shaman !Tauren
 #forever
 #era/som--h
 #name 12-14 Silverpine Forest
@@ -3378,6 +3378,18 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renferrel|r
     .turnin 429 >>Turn in Wild Hearts
     .turnin 445 >>Turn in Delivery to Silverpine Forest
+    .turnin 3221 >>Turn in Speak with Renferrel
+    .accept 1359 >>Accept Zinge's Delivery
+    .accept 447 >>Accept A Recipe For Death
+    .accept 430 >>Accept Return to Quinn
+    .target Apothecary Renferrel
+    .addquestitem 3164,429
+    .isOnQuest 445
+step
+    #optional
+    .goto 1421/0,1652.82,522.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renferrel|r
+    .turnin 429 >>Turn in Wild Hearts
     .turnin 3221 >>Turn in Speak with Renferrel
     .accept 1359 >>Accept Zinge's Delivery
     .accept 447 >>Accept A Recipe For Death
@@ -3949,12 +3961,6 @@ step << Undead Rogue
 step << !Rogue !Warrior
     #optional
     .goto 1458/0,171.03,1524.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Mary|r in the Rogues' Quarter
-    .train 3273 >>Train |T135966:0|t[First Aid]
-    .target Mary Edras
-step << !Rogue !Warrior
-    #optional
-    .goto 1458/0,171.03,1524.80
     .skill firstaid,40 >> Create |T133685:0|t[Linen Bandages] until your skill is 40 or higher
     .itemcount 2589,1 --Linen Cloth (1+)
 step << !Rogue !Warrior
@@ -4102,7 +4108,7 @@ step << skip --Undead !Rogue !Warrior
     >>|cRXP_WARN_If you can't do this, just run out of Undercity normally|r
     .zoneskip Undercity,1
     .dungeon !RFC
-step << Undead
+step << Undead/Skyborne
     #sticky
     #completewith EnterRFC
     .subzone 2437 >> Now you should be looking for a group to Ragefire Chasm
@@ -4126,6 +4132,37 @@ step << Undead
     >>Make Sharpening Stones/Bandages while you wait << Warrior/Rogue
     >>Conjure Food/water while you wait << Mage
     .zoneskip Durotar
+step << Druid
+    #completewith DruidTraining1
+    .cast 18960 >>|cRXP_WARN_Cast|r |T135758:0|t[Teleport: Moonglade]
+    .zoneskip Moonglade
+step << Skyborne Druid
+    .goto 1450/1,-2678.76,8019.94--c:Moonglade,56.21,30.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite|r
+    .turnin 94913 >>Turn in Moonglade
+    .target Dendrite Starblaze
+step << Druid
+    .goto 1450/1,-2593.82,7866.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
+    .train 5178 >> Train your class spells
+    .target Loganaar
+    .xp <14,1
+    .xp >16,1
+step << Druid
+    #label DruidTraining1
+    .goto 1450/1,-2593.82,7866.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
+    .train 8925 >> Train your class spells
+    .target Loganaar
+    .xp <16,1
+step << Skyborne
+    .hs >> Hearth to Orgrimmar
+    .use 6948
+    .zoneskip Orgrimmar
+    .bindlocation 1637,1
+
+    --Start Undead/Skyborne RFC
+
 step << Undead
     #completewith HiddenEnemiesPickup
     .goto 1454/1,-4367.46,1405.44,50,0
@@ -4138,38 +4175,38 @@ step << Undead
     .fp Orgrimmar >> Get the Orgrimmar flight path
     .target Doras
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     .goto 1454/1,-4125.79,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 5726 >>Accept Hidden Enemies
     .target Thrall
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     .goto 1411/1,-4769.10,1484.39,0
     >>Kill |cRXP_ENEMY_Burning Blade|r mobs in Skull Rock until |cRXP_LOOT_Lieutenant's Insignia|r drops
     .complete 5726,1 --Lieutenant's Insignia (1)
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     .goto 1454/1,-4125.79,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5726 >> Turn in Hidden Enemies
     .accept 5727 >> Accept Hidden Enemies
     .target Thrall
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     .goto 1454/1,-4376.29,1802.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .accept 5761 >>Accept Slaying the Beast
     .target Neeru Fireblade
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     .goto 1454/1,-4376.29,1802.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .complete 5727,1 --Gauge Neeru Fireblade's reaction to you being a member of the Burning Blade
     .skipgossip
     .target Neeru Fireblade
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     #label HiddenEnemiesPickup
     .goto 1454/1,-4125.79,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
@@ -4177,22 +4214,22 @@ step << Undead
     .accept 5728 >> Accept Hidden Enemies
     .target Thrall
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     #completewith EnterRFC
     .destroy 14544 >>|cRXP_WARN_Destroy|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_as you no longer need it|r
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     #label EnterRFC
     .goto 1454/1,-4420.76,1815.80
     .subzone 2437 >> Enter the RFC Instance portal. Zone in
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     >>|cRXP_WARN_If possible, have party members share the following quests|r
     .accept 5722 >> Accept Searching for the Lost Satchel
     .accept 5723 >> Accept Testing an Enemy's Strength
     .disablecheckbox
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     #completewith next
     >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
     .complete 5723,1 --Ragefire Trogg (8)
@@ -4201,21 +4238,21 @@ step << Undead
     .mob +Ragefire Shaman
     .isOnQuest 5723
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
     .turnin 5722 >> Turn in Searching for the Lost Satchel
     .accept 5724 >> Accept Returning the Lost Satchel
     .target Maur Grimtotem
     .isOnQuest 5722
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
     .accept 5724 >> Accept Returning the Lost Satchel
     .target Maur Grimtotem
     .isQuestTurnedIn 5722
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     #label TroggsShamans
     >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
     .complete 5723,1 --Ragefire Trogg (8)
@@ -4224,7 +4261,7 @@ step << Undead
     .mob +Ragefire Shaman
     .isOnQuest 5723
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     #requires TroggsShamans
     #completewith BazzalanandJergosh
     >>Kill |cRXP_ENEMY_Searing Blade Cultists|r and |cRXP_ENEMY_Searing Blade Warlocks|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
@@ -4234,13 +4271,13 @@ step << Undead
     .mob Searing Blade Warlock
     .isOnQuest 5725
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     >>Kill |cRXP_ENEMY_Taragaman the Hungerer|r. Loot him for his |cRXP_LOOT_Heart|r
     .complete 5761,1 -- Taragaman the Hungerer's Heart
     .mob Taragaman the Hungerer
     .isOnQuest 5761
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     #label BazzalanandJergosh
     >>Kill |cRXP_ENEMY_Bazzalan|r and |cRXP_ENEMY_Jergosh the Invoker|r
     .complete 5728,1 --Bazzalan (1)
@@ -4249,7 +4286,7 @@ step << Undead
     .mob +Jergosh the Invoker
     .isOnQuest 5728
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     >>Kill |cRXP_ENEMY_Searing Blade Cultists|r and |cRXP_ENEMY_Searing Blade Warlocks|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
     .complete 5725,1 --Spells of Shadow (1)
     .complete 5725,2 --	Incantations from the Nether (1)
@@ -4257,14 +4294,14 @@ step << Undead
     .mob Searing Blade Warlock
     .isOnQuest 5725
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     .goto 1454/1,-4376.29,1802.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .turnin 5761 >>Turn in Slaying the Beast
     .target Neeru Fireblade
     .isQuestComplete 5761
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     .goto 1454/1,-4125.79,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5728 >> Turn in Hidden Enemies
@@ -4272,14 +4309,14 @@ step << Undead
     .target Thrall
     .isQuestComplete 5728
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     .goto 1454/1,-4125.79,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 5729 >> Accept Hidden Enemies
     .target Thrall
     .isQuestTurnedIn 5728
     .dungeon RFC
-step << Undead
+step << Undead/Skyborne
     .goto 1454/1,-4376.29,1802.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .turnin 5729 >> Turn in Hidden Enemies
@@ -4287,17 +4324,69 @@ step << Undead
     .target Neeru Fireblade
     .dungeon RFC
     .isQuestTurnedIn 5728
-step << Undead
+step << Undead/Skyborne
     .goto 1454/1,-4125.79,1920.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5730 >> Turn in Hidden Enemies
     .target Thrall
     .isQuestTurnedIn 5728
     .dungeon RFC
-step << Undead
+step << Skyborne
+    #completewith RFCTurninsTB1
+    .goto 1454/1,-4313.46,1676.25--c:Orgrimmar,45.120,63.889
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Doras|r
+    .fly Thunder Bluff >>Fly to Thunder Bluff
+    .target Doras
+    .zoneskip Orgrimmar,1
+    .isOnQuest 5724
+    .isQuestComplete 5723
+    .dungeon RFC
+step << Skyborne
+    #completewith RFCTurninsTB1
+    .goto 1456/1,-212.71,-1065.010,80 >> Travel to the Elder Rise
+    .isOnQuest 5724
+    .isQuestComplete 5723
+    .dungeon RFC
+step << Skyborne
+    .goto 1456/1,-218.13,-1055.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
+    .turnin 5724 >> Turn in Returning the Lost Satchel
+    .turnin 5723 >> Turn in Testing an Enemy's Strength
+    .target Rahauro
+    .isOnQuest 5724
+    .isQuestComplete 5723
+    .dungeon RFC
+step << Skyborne
+    .goto 1456/1,-218.13,-1055.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
+    .turnin 5724 >> Turn in Returning the Lost Satchel
+    .target Rahauro
+    .isOnQuest 5724
+    .dungeon RFC
+step << Skyborne
+    #completewith Conscript
+    .hs >> Hearth to Orgrimmar
+    .use 6948
+    .zoneskip Thunder Bluff,1
+    .bindlocation 1637,1
+    .cooldown item,6948,>0,1
+    .dungeon RFC
+step << Skyborne
+    #completewith Conscript
+    .goto Thunder Bluff,47.00,49.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
+    .fly Orgrimmar >>Fly to the Orgrimmar
+    .target Tal
+    .zoneskip Thunder Bluff,1
+    .cooldown item,6948,<0
+    .dungeon RFC
+
+    --End Undead/Skyborne RFC
+
+step << Undead/Skyborne
     #completewith Conscript
     .subzone 362 >> Travel to Razor Hill
-step << !Undead
+step << !Undead !Skyborne
     .hs >> Hearth to Razor Hill
     .use 6948
     .subzoneskip 362
@@ -4369,14 +4458,14 @@ step
     .turnin 840 >>Turn in Conscript of the Horde
     .accept 842 >>Accept Crossroads Conscription
     .target Kargal Battlescar
-step << !Undead
+step << !Undead !Skyborne
     .goto 1413/1,-3694.2,256.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ak'Zeloth|r
     .turnin 809 >>Turn in Ak'Zeloth
     .accept 924 >>Accept The Demon Seed
     .target Ak'Zeloth
     .isQuestTurnedIn 829
-step << !Undead
+step << !Undead !Skyborne
     .goto 1413/1,-3694.2,259.22
     >>|cRXP_WARN_Loot the|r |T134095:0|t[Flawed Power Stone] |cRXP_WARN_next to|r |cRXP_FRIENDLY_Ak'Zeloth|r|cRXP_WARN_. This item has a 30 minute timer, so be sure to be quick|r
     .turnin 926 >>Turn in Flawed Power Stone
