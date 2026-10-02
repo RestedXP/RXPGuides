@@ -5314,7 +5314,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 19-21 Darkshore/Ashenvale
-#next RestedXP Alliance 20-30\21-23 Ashenvale/Stonetalon
+#next RestedXP Forever Guide (A)\21-23 Ashenvale/Stonetalon
 
 step
     #optional
@@ -5932,7 +5932,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 20-21 Darkshore/Ashenvale
-#next RestedXP Alliance 20-30\21-23 Stonetalon/Ashenvale;RestedXP Alliance 20-30\21-22 Ashenvale SoD
+#next RestedXP Forever Guide (A)\21-23 Stonetalon/Ashenvale
 
 
 step << Druid
