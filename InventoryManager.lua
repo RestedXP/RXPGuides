@@ -17,6 +17,18 @@ local ContainerFrame_Update = _G.ContainerFrame_Update
 local ContainerFrame_UpdateAll = _G.ContainerFrame_UpdateAll
 
 local DELETE_JUNK_BINDING = "CLICK RXPInventory_DeleteJunk:LeftButton"
+local supportedBagAddons = {
+    AdiBags = true,
+    ArkInventory = true,
+    Baganator = true,
+    Bagnon = true,
+    Baggins = true,
+    BaudBag = true,
+    BetterBags = true,
+    ElvUI = true,
+    EllesmereUI = true,
+    EllesmereUIBags = true
+}
 
 addon.inventoryManager = addon:NewModule("InventoryManager", "AceEvent-3.0")
 
@@ -62,9 +74,11 @@ function addon.inventoryManager:Setup()
 
     self:SetupUI()
     self.bagManager:Setup()
+    self:RegisterEvent("ADDON_LOADED")
 
     if not self:IsFeatureEnabled() then
         self:UnregisterAllEvents()
+        self:RegisterEvent("ADDON_LOADED")
 
         if self.DeleteJunkFrame then self.DeleteJunkFrame:SetScript("OnUpdate", nil) end
         if self.clickFrame then self.clickFrame:Hide() end
@@ -261,6 +275,13 @@ function addon.inventoryManager:UI_ERROR_MESSAGE(_, flag, msg)
         LootFrame:IsShown() then self.clickFrame:Show() end
 
     self:HandleBagAutomation()
+end
+
+function addon.inventoryManager:ADDON_LOADED(_, loadedAddon)
+    if not supportedBagAddons[loadedAddon] then return end
+
+    self.bagManager.activeAdapter = nil
+    self:Setup()
 end
 
 function addon.inventoryManager:IsFeatureEnabled()
@@ -865,13 +886,7 @@ end
 function addon.inventoryManager:OnClickHook(button, mouseButton, ...)
     if not self:IsFeatureEnabled() or not addon.settings.profile.rightClickJunk then return end
 
-    local bag = button.GetBagID and button:GetBagID()
-    if not bag then
-        local parent = button:GetParent()
-        bag = parent and parent:GetID()
-    end
-
-    local slot = button:GetID()
+    local bag, slot = self.bagManager:GetButtonLocation(button)
     local mod = self:GetModKey()
 
     if not mod or mouseButton ~= "RightButton" then return end
@@ -928,6 +943,7 @@ addon.inventoryManager.bagManager.adapters = {
         containerName = "BagnonContainerItem%d",
         containerIndex = -1,
         alignment = "TOPLEFT",
+        custom = true,
         clickHook = true
     },
     ElvUI = {
@@ -977,6 +993,15 @@ addon.inventoryManager.bagManager.adapters = {
         containerName = "BGRLiveItemButton%d",
         containerIndex = -1,
         alignment = "TOPRIGHT",
+        custom = true,
+        clickHook = true
+    },
+    EllesmereUI = {
+        containerPattern = "%s",
+        containerName = "EUI_MainBagFrame",
+        containerIndex = -1,
+        alignment = "TOPLEFT",
+        custom = true,
         clickHook = true
     },
     Consolidated = {
@@ -1012,6 +1037,10 @@ function addon.inventoryManager.bagManager:SelectAdapter()
         adapter = self.adapters.ArkInventory
     elseif _G["BaudBagSubBag0"] then
         adapter = self.adapters.BaudBag
+    elseif _G.EUI_MainBagFrame then
+        adapter = self.adapters.EllesmereUI
+    elseif _G.Bagnon and _G.Bagnon.Item then
+        adapter = self.adapters.Bagnon
     elseif _G.Baganator and _G.Baganator.API then
         adapter = self.adapters.Baganator
     elseif addon.game == "FOREVER" and ContainerFrame_UpdateAll then
@@ -1076,6 +1105,17 @@ function addon.inventoryManager.bagManager:UpdateAllBags(name, i)
     local adapter = self:SelectAdapter()
     if not adapter then return end
 
+    if adapter == self.adapters.Bagnon then
+        self:HookBagnon()
+        return
+    elseif adapter == self.adapters.Baganator then
+        self:LoadBaganator()
+        return
+    elseif adapter == self.adapters.EllesmereUI then
+        self:HookEllesmereUI()
+        return
+    end
+
     if adapter.consolidated then
         if ContainerFrame_UpdateAll then ContainerFrame_UpdateAll() end
 
@@ -1107,9 +1147,79 @@ function addon.inventoryManager.bagManager:UpdateAllBags(name, i)
     end
 end
 
+function addon.inventoryManager.bagManager:GetButtonLocation(button)
+    if not button then return end
+
+    local bag = button.GetBag and button:GetBag()
+    local slot = button.GetID and button:GetID()
+
+    if not bag and button.GetBagID then bag = button:GetBagID() end
+    if not bag then
+        local parent = button:GetParent()
+        bag = parent and parent.GetID and parent:GetID()
+    end
+
+    return bag, slot
+end
+
+function addon.inventoryManager.bagManager:HookButtonsInFrame(frame, source, depth)
+    if not frame or not frame.GetChildren then return end
+
+    local children = {frame:GetChildren()}
+    local child, bag, slot
+    depth = depth or 5
+
+    for index = 1, #children do
+        child = children[index]
+        bag, slot = self:GetButtonLocation(child)
+
+        if type(bag) == "number" and type(slot) == "number" and bag >= BACKPACK_CONTAINER and
+            bag <= NUM_BAG_FRAMES and slot > 0 then
+            self:HookButton(child, source)
+        end
+
+        if depth > 1 then self:HookButtonsInFrame(child, source, depth - 1) end
+    end
+end
+
+function addon.inventoryManager.bagManager:HookBagnon()
+    if not addon.inventoryManager:IsFeatureEnabled() or not _G.Bagnon then return end
+
+    local bagnonItem = _G.Bagnon.Item
+    local this = self
+
+    if bagnonItem and bagnonItem.Update and self.bagnonItem ~= bagnonItem then
+        hooksecurefunc(bagnonItem, "Update", function(button) this:HookButton(button, "Bagnon") end)
+        self.bagnonItem = bagnonItem
+    end
+
+    self:HookButtonsInFrame(_G.BagnonFrameinventory, "Bagnon")
+    self:HookButtonsInFrame(_G.BagnonFramebank, "Bagnon")
+end
+
+function addon.inventoryManager.bagManager:HookEllesmereUI()
+    if not addon.inventoryManager:IsFeatureEnabled() then return end
+
+    local frame = _G.EUI_MainBagFrame
+    if not frame then return end
+
+    local this = self
+    if self.ellesmereUIFrame ~= frame then
+        frame:HookScript("OnShow", function() this:HookEllesmereUI() end)
+        self.ellesmereUIFrame = frame
+    end
+
+    self:HookButtonsInFrame(frame, "EllesmereUI")
+    self:HookButtonsInFrame(_G.EUI_ReagentBagFrame, "EllesmereUI")
+end
+
 function addon.inventoryManager.bagManager:HookButton(button, source)
     if not addon.inventoryManager:IsFeatureEnabled() then return end
     if not button then return end
+
+    local bag, slot = self:GetButtonLocation(button)
+    if type(bag) ~= "number" or type(slot) ~= "number" or bag < BACKPACK_CONTAINER or
+        bag > NUM_BAG_FRAMES or slot < 1 then return end
 
     if addon.inventoryManager.hookedFrames[button] then
         if source then addon.inventoryManager.hookedFrames[button] = source end
@@ -1144,6 +1254,8 @@ function addon.inventoryManager.bagManager:LoadBaganator()
                 end
             end
         end
+
+        self:HookButtonsInFrame(frame, "Baganator")
     end
 end
 
@@ -1191,31 +1303,15 @@ function addon.inventoryManager.bagManager:HookBags()
 
     local this = self
     local bagframe
+    local adapter = self.activeAdapter or self:SelectAdapter()
 
-    if ContainerFrame_Update and not self.containerFrameHooked then
-        hooksecurefunc("ContainerFrame_Update", function(frame) this:UpdateBag(frame, nil, "%sItem%d") end)
-        self.containerFrameHooked = true
-    end
-
-    local elvUIFrame = _G.ElvUI_ContainerFrame
-    if elvUIFrame and elvUIFrame.Bags and self.elvUIHooked ~= elvUIFrame then
-        local hookElvUISlots = function(frame)
-            for _, bag in pairs(frame.Bags) do
-                for _, slot in ipairs(bag) do
-                    this:HookButton(slot, "ElvUI")
-                end
-            end
-        end
-
-        elvUIFrame:HookScript("OnShow", hookElvUISlots)
-        hookElvUISlots(elvUIFrame)
-        self.elvUIHooked = elvUIFrame
-    end
-
-    if _G.Baganator and _G.Baganator.API then
-        if not self.baganatorPluginHooked then
+    if adapter == self.adapters.Bagnon then
+        self:HookBagnon()
+    elseif adapter == self.adapters.Baganator then
+        if not self.baganatorPluginHooked and _G.Baganator and _G.Baganator.API then
             _G.Baganator.API.RegisterJunkPlugin(addonName, "RXPGuides", function(bagID, slotID, id)
-                return addon.inventoryManager:IsFeatureEnabled() and id and addon.inventoryManager:IsJunk(id, bagID, slotID)
+                return addon.inventoryManager:IsFeatureEnabled() and id and
+                    addon.inventoryManager:IsJunk(id, bagID, slotID)
             end)
             self.baganatorPluginHooked = true
         end
@@ -1228,9 +1324,31 @@ function addon.inventoryManager.bagManager:HookBags()
             end)
             self.baganatorCallbackHooked = true
         end
+    elseif adapter == self.adapters.EllesmereUI then
+        self:HookEllesmereUI()
+    elseif adapter == self.adapters.ElvUI then
+        local elvUIFrame = _G.ElvUI_ContainerFrame
+        if elvUIFrame and elvUIFrame.Bags and self.elvUIHooked ~= elvUIFrame then
+            local hookElvUISlots = function(frame)
+                for _, bag in pairs(frame.Bags) do
+                    for _, slot in ipairs(bag) do
+                        this:HookButton(slot, "ElvUI")
+                    end
+                end
+            end
+
+            elvUIFrame:HookScript("OnShow", hookElvUISlots)
+            hookElvUISlots(elvUIFrame)
+            self.elvUIHooked = elvUIFrame
+        end
     end
 
-    if ContainerFrame_UpdateAll then
+    if not adapter.custom and ContainerFrame_Update and not self.containerFrameHooked then
+        hooksecurefunc("ContainerFrame_Update", function(frame) this:UpdateBag(frame, nil, "%sItem%d") end)
+        self.containerFrameHooked = true
+    end
+
+    if not adapter.custom and ContainerFrame_UpdateAll then
         for n = 0, NUM_CONTAINER_FRAMES do
             if n == 0 then
                 bagframe = _G.ContainerFrameCombinedBags
