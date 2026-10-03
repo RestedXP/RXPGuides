@@ -5995,7 +5995,7 @@ step
     .itemcount 5387,1
     .itemStat 15,QUALITY,<7
 step
-    #completewith MasterG
+    #completewith TheryluneEnd
     #optional
     .goto 1439/1,306.60,4784.11,0
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
@@ -6003,6 +6003,7 @@ step
     .complete 1003,1
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
+    .subzoneskip 449 -- Master's Glaive
 step
     #optional
     #completewith OnuGrove
