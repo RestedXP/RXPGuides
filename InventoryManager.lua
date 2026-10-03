@@ -917,6 +917,7 @@ addon.inventoryManager.bagManager = {}
 addon.inventoryManager.bagManager.returnsItemTable = ReturnsContainerItemTable
 
 function addon.inventoryManager.bagManager:Setup()
+    self:LoadAdapters()
     self:SelectAdapter()
     if not addon.inventoryManager:IsFeatureEnabled() then return end
 
@@ -932,7 +933,7 @@ function addon.inventoryManager.bagManager:Setup()
 end
 
 addon.inventoryManager.bagManager.adapters = {
-    Blizzard = {
+    Default = {
         containerPattern = "%sItem%d",
         containerName = "ContainerFrame%d",
         containerIndex = -1,
@@ -941,57 +942,42 @@ addon.inventoryManager.bagManager.adapters = {
     Bagnon = {
         containerPattern = "%s",
         containerName = "BagnonContainerItem%d",
-        containerIndex = -1,
-        alignment = "TOPLEFT",
         custom = true,
         clickHook = true
     },
     ElvUI = {
         containerPattern = "%sSlot%d",
         containerName = "ElvUI_ContainerFrameBag%d",
-        containerIndex = -1,
-        alignment = "TOPLEFT",
         clickHook = true
     },
     AdiBags = {
         containerPattern = "%s",
         containerName = "AdiBagsItemButton%d",
-        containerIndex = -1,
-        alignment = "TOPLEFT",
         clickHook = true
     },
     BetterBags = {
         containerPattern = "%s",
         containerName = "BetterBagsItemButton%d",
-        containerIndex = -1,
-        alignment = "TOPLEFT",
         clickHook = true
     },
     Baggins = {
         containerPattern = "%s",
         containerName = "BagginsPooledItemButton%d",
-        containerIndex = -1,
-        alignment = "TOPLEFT",
         clickHook = true
     },
     ArkInventory = {
         containerPattern = "%sItem%d",
         containerName = "ARKINV_Frame1ScrollContainerBag%d",
-        containerIndex = -1,
-        alignment = "TOPLEFT",
         clickHook = true
     },
     BaudBag = {
         containerPattern = "%sItem%d",
         containerName = "BaudBagSubBag%d",
-        containerIndex = -1,
-        alignment = "TOPLEFT",
         clickHook = true
     },
     Baganator = {
         containerPattern = "%s",
         containerName = "BGRLiveItemButton%d",
-        containerIndex = -1,
         alignment = "TOPRIGHT",
         custom = true,
         clickHook = true
@@ -999,28 +985,29 @@ addon.inventoryManager.bagManager.adapters = {
     EllesmereUI = {
         containerPattern = "%s",
         containerName = "EUI_MainBagFrame",
-        containerIndex = -1,
-        alignment = "TOPLEFT",
         custom = true,
         clickHook = true
     },
     Consolidated = {
-        containerPattern = "%sItem%d",
-        containerName = "ContainerFrame%d",
-        containerIndex = -1,
-        alignment = "TOPLEFT",
-        consolidated = true
-    },
-    Forever = {
-        containerPattern = "%sItem%d",
-        containerName = "ContainerFrame%d",
-        containerIndex = -1,
-        alignment = "TOPLEFT",
         consolidated = true
     }
 }
 
+function addon.inventoryManager.bagManager:LoadAdapters()
+    if self.adaptersLoaded then return end
+
+    local defaultAdapter = self.adapters.Default
+
+    for name, adapter in pairs(self.adapters) do
+        if name ~= "Default" then setmetatable(adapter, {__index = defaultAdapter}) end
+    end
+
+    self.adaptersLoaded = true
+end
+
 function addon.inventoryManager.bagManager:SelectAdapter()
+    self:LoadAdapters()
+
     local adapter
 
     if _G["BagnonContainerItem1"] then
@@ -1044,11 +1031,11 @@ function addon.inventoryManager.bagManager:SelectAdapter()
     elseif _G.Baganator and _G.Baganator.API then
         adapter = self.adapters.Baganator
     elseif addon.game == "FOREVER" and ContainerFrame_UpdateAll then
-        adapter = self.adapters.Forever
+        adapter = self.adapters.Default
     elseif ContainerFrame_UpdateAll and not ContainerFrame_Update then
         adapter = self.adapters.Consolidated
     elseif ContainerFrame_Update then
-        adapter = self.adapters.Blizzard
+        adapter = self.adapters.Default
     end
 
     self.activeAdapter = adapter
