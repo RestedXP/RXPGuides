@@ -5681,6 +5681,42 @@ step << skip
     .link https://www.youtube.com/watch?v=h2s4ZjFBLtg&ab_channel=RestedXP >> |cRXP_WARN_CLICK HERE for an example|r
     .zoneskip Ashenvale
 step
+    .goto 1440/1,-632.700,2311.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Va'xug Firefure|r 
+    .accept 98251 >>Accept Never Coming Back
+    .target Va'xug Firefure
+step
+    #loop
+    .goto 1440/1,-609.900,2140.100,0
+    .goto 1440/1,-609.900,2140.100,50,0
+    .goto 1440/1,-799.500,2222.000,50,0
+    .goto 1440/1,-878.400,2168.400,50,0
+    .goto 1440/1,-712.300,2023.900,50,0
+    .goto 1440/1,-534.500,2045.100,50,0
+    >>Kill |cRXP_ENEMY_Ashenvale Bears|r and |cRXP_ENEMY_Shadowhorn Stags|r
+    >>|cRXP_WARN_Be care of |cRXP_ENEMY_Ursangous|r (strong lvl 25) that patrols in the area|r
+    .complete 98251,2 --|6/6 Ashenvale Bear slain
+    .mob +Ashenvale Bear
+    .complete 98251,1 --|6/6 Shadowhorn Stag slain
+    .mob +Shadowhorn Stag
+step
+    .goto 1440/1,-632.900,2312.000
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Va'xug Firefure|r
+    .turnin 98251 >>Turn in Never Coming Back
+    .accept 98252 >>Accept A Void Path
+    .target Va'xug Firefure
+step
+    .goto 1440/1,-545.200,2446.600
+    >>|cRXP_WARN_Run to the main road as the |cRXP_FRIENDLY_Eye of Kilrogg|r follows you|r
+    .complete 98252,1 --|1/1 Eye of Kilrogg guided to the road
+    .target Eye of Kilrogg
+step
+    .goto 1440/1,-545.500,2445.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eye of Kilrogg|r
+    .turnin 98252 >>Turn in A Void Path
+    .target Eye of Kilrogg
+    .isQuestComplete 98252
+step
 	#completewith ZoramFP
     .goto 1440/1,-268.74,2612.28,50,0
     .goto 1440/1,637.2,3406.79,50,0
@@ -6028,6 +6064,9 @@ step
     .timer 6,The Elder Crone RP
     .accept 1064 >> Accept Forsaken Aid
     .target Magatha Grimtotem
+step
+    #completewith next
+    .goto 1456/1,219.09,-1051.44,10 >> Travel to the Spirit Rise and enter the pools of vision
 step
     #label JourneytoTM
     .goto 1456/1,278.48,-995.29
