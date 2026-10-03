@@ -51,7 +51,7 @@ local pendingLeaderUpdate
 local UnitName = addon.GetUnitName
 
 function addon.targeting:ConfigureTargetButton(button, targetName, kind, index, marking)
-    local macrotext = "/cleartarget\n/targetexact " .. targetName
+    local macrotext = "/cleartarget\n/targetexact " .. targetName .. "\n/cleartarget [dead]"
 
     -- Retail/Forever cannot SetRaidTarget automatically, leverage button
     if (addon.game == "FOREVER" or addon.gameVersion >= 120000) and marking then
