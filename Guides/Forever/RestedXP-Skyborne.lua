@@ -131,7 +131,7 @@ step
     .target Halaan Hawk-Eye::257554
 step
     .goto 2521,43.80,24.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye::257554|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk Eye::257554|r.
     *Move or press ESC to cancel.
     .complete 94414,1 --View the Anchor Pylon
     .skipgossipid 137720,1
@@ -5108,7 +5108,6 @@ step << Alliance
     .goto 2521,63.55,73.45,25,0
     .goto 2521,63.99,75.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
-    *|cRXP_WARN_Refresh|r |T236219:0|t[Read Ley Line]
     .turnin 94491 >>Turn in The Fate of the Den
     .target Lotheluum Starbreeze::252359
 step << Alliance Druid
@@ -5271,23 +5270,26 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iaadaria Bitterwind::253004|r.
     .turnin 92741 >>Turn in Unwelcome Visitors
     .target Iaadaria Bitterwind::253004
-step  << Alliance
+step << Alliance
+    #completewith next
+    +|cRXP_WARN_The zeppelin can arrive anytime within its 6-minute cycle|r. prioritize cooking and gaining campfire buffs for later.
+    *Equip upgrades and select talents. Vendor and repair only if you feel risky.
+step << Alliance
     #completewith next
     #label Magical City of Dalaran
     .goto 2521,66.09,80.96,25,0
     .goto 2521,65.42,81.01,25,0
     .goto 2521,65.1,81.52,25,0
-    >>Wait for the Zeppelin to arrive.
     *|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denaaris Stargale::259084|r.
     .turnin 94946 >>Turn in The Magical City of Dalaran
 step << Alliance
     #completewith Magical City of Dalaran
     .goto 2521,65.81,83.44
-    .zone 1056 >>Take the Zeppelin to Dalaran
+    .zone 1424 >>Take the Zeppelin to Dalaran City
 step  << Alliance
     #requires Magical City of Dalaran
     .goto 1416/0,438.93,448.88
-    >>Wait for the Zeppelin to arrive (|cRXP_WARN_DO NOT jump early there is a chance you'll be pushed of the platform|r)
+    >>|cRXP_WARN_Do not jump off the zeppelin early you may be pushed off the platform|r.
     *|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denaaris Stargale::259084|r.
     .target Denaaris Stargale::259084
     .turnin 94946 >>Turn in The Magical City of Dalaran
