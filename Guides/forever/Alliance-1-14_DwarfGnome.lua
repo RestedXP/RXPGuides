@@ -778,6 +778,11 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ingrid Dunwald|r inside upstairs
     .trainer >> Train your class spells
     .target Ingrid Dunwald
+step << Hunter
+    .goto 1426/0,-454.06,-5618.53--c:Dun Morogh,45.810,53.039
+    .target Grif Wildheart
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
+    .trainer >> Train your class spells
 step
     .goto 1426/0,-545.800,-5594.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor::1699|r
@@ -1385,6 +1390,16 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Granis Swiftaxe|r inside
     .trainer >> Train your class spells
     .target Granis Swiftaxe
+step << Warlock
+    .goto 1426/0,-528.87,-5640.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gimrizz Shadowcog|r
+    .trainer >> Train your class spells
+    .target Gimrizz Shadowcog
+step << Hunter
+    .goto 1426/0,-454.06,-5618.53--c:Dun Morogh,45.810,53.039
+    .target Grif Wildheart
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
+    .trainer >> Train your class spells
 step
     .goto 1426/0,-504.05,-5596.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragnar Thunderbrew|r outside
@@ -1634,6 +1649,7 @@ step << Hunter
     .target Grif Wildheart
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
     .accept 6064 >>Accept Taming the Beast
+    .trainer >> Train your class spells
 step << Hunter
     .goto 1426/0,-576.69,-5745.30--c:Dun Morogh,48.3,56.9
     .use 15911 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Large Crag Boar|r
@@ -4375,6 +4391,8 @@ RXPGuides.RegisterGuide([[
 #next 14-16 Darkshore
 #defaultfor Dwarf
 
+step -- dont delete
+    #label NormalRouteStart
 step
     #completewith next
     .goto 1426/0,-2443.41,-5560.120,15,0
@@ -4815,6 +4833,10 @@ step
     .target Woo Ping
     .goto 1453/0,613.0,-8796.03
     .trainer >>Train Staves
+
+step --dont delete
+    #label NormalRouteEnd
+
 step
     #ah
     .goto 1453/0,660.28,-8814.55

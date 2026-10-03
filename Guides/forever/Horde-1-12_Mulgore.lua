@@ -487,6 +487,8 @@ step
     .goto 1412/1,-363.000,-2490.700
     >>|cRXP_WARN_Type /sit at the campfire and wait for one minute until you get the "Camp Benefits" buff|r
     .complete 96605,1 --|1/1 Use the /sit emote near the campfire
+    .macro Sit,134400 >>/sit
+    .timer 59, RP
     .complete 96605,2 --|Gain the Boosted Rest buff
 step
     #hardcore
@@ -674,6 +676,8 @@ step
     .goto 1412/1,-363.000,-2490.700
     >>|cRXP_WARN_Type /sit at the campfire and wait for one minute until you get the "Camp Benefits" buff|r
     .complete 96605,1 --|1/1 Use the /sit emote near the campfire
+    .macro Sit,134400 >>/sit
+    .timer 59, RP
     .complete 96605,2 --|Gain the Boosted Rest buff
 step
     #softcore
@@ -1227,7 +1231,8 @@ step
     .goto 1456/1,147.900,-1290.600,30 >>Take the elevator into Thunder Bluff
 step
     .goto 1456/1,104.500,-1308.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|
+    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed] 
     .accept 76156 >>Accept Stalk With The Earthmother
     .target Boarton Shadetotem
 step
@@ -1829,7 +1834,8 @@ step << Druid
     .zone Thunder Bluff >>Travel to Thunder Bluff
 step
     .goto 1456/1,104.500,-1308.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
+    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed] 
     .turnin 76156 >>Turn in Stalk With The Earthmother
     .accept 76160 >>Accept Stalk With The Earthmother
     .target Boarton Shadetotem

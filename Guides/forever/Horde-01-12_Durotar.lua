@@ -1605,6 +1605,8 @@ step
     .goto 1411/1,-4715.200,140.100
     >>|cRXP_WARN_Type /sit at the campfire and wait for one minute until you get the "Camp Benefits" buff|r
     .complete 96604,1 --|1/1 Use the /sit emote near the campfire
+    .macro Sit,134400 >>/sit
+    .timer 59, RP
     .complete 96604,2 --|Gain the Boosted Rest buff
 step
     #hardcore
@@ -1882,6 +1884,8 @@ step
     .goto 1411/1,-4715.200,140.100
     >>|cRXP_WARN_Type /sit at the campfire and wait for one minute until you get the "Camp Benefits" buff|r
     .complete 96604,1 --|1/1 Use the /sit emote near the campfire
+    .macro Sit,134400 >>/sit
+    .timer 59, RP
     .complete 96604,2 --|Gain the Boosted Rest buff
 step
     #softcore
@@ -2918,7 +2922,8 @@ step << Hunter/Shaman
     .target Kor'geld
 step << Hunter/Shaman
     .goto 1454/1,-4477.900,1964.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yelmak|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yelmak|r
+    >>|cRXP_WARN_You may have to wait about 10 seconds before you can accept this quest|r
     .accept 97275 >>Accept Whuut's the Rush
     .target Yelmak
 step << Hunter/Shaman
@@ -3501,7 +3506,8 @@ step
     .target Kor'geld
 step
     .goto 1454/1,-4477.900,1964.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yelmak|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yelmak|r
+    >>|cRXP_WARN_You may have to wait about 10 seconds before you can accept this quest|r
     .accept 97275 >>Accept Whuut's the Rush
     .target Yelmak
 step
@@ -4150,7 +4156,7 @@ step
     .goto 1458/0,663.19,1600.46,35,0
     .goto 1420/0,724.25,1682.66,50,0
     .zone Tirisfal Glades >> Leave Undercity through the Sewers
-    .zoneskip Tirisfal Glades
+    .zoneskip Silverpine Forest
 step
     #label Entersilverpine
     .goto 1420/0,629.36,1553.42

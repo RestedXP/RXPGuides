@@ -4613,7 +4613,7 @@ step << Human Warrior
     .target Bilban Tosslespanner
     .zoneskip Ironforge,1
 
-step
+step -- dont delete
     #label NormalRouteEnd
 
 step

@@ -4,7 +4,6 @@ if faction == "Horde" then return end
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #forever
-#season 0,1
 #version 1
 #beta
 << Alliance
@@ -21,7 +20,6 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
-#season 0,1
 #version 1
 #beta
 << Alliance
@@ -37,9 +35,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#xprate <1.5
 #forever
-#season 0,1
 << Alliance !Hunter
 #group RestedXP Forever Dungeon Guide (A)
 #subgroup (WIP) Dungeon Guide 1-20
@@ -49,7 +45,6 @@ RXPGuides.RegisterGuide([[
 #beta
 #defaultfor Gnome/Dwarf
 #next 12-14 Loch Modan (Dwarf/Gnome)
---#era << !Warlock
 
 step
 #include RestedXP Forever Guide (A)\11-12 Elwynn (Dwarf/Gnome)
@@ -57,7 +52,6 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
-#season 0,1
 #version 1
 #beta
 << Alliance !Hunter
@@ -199,8 +193,6 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
-#season 0,1
-#era/som--h
 #version 1
 #beta
 << Alliance Hunter
@@ -208,9 +200,9 @@ RXPGuides.RegisterGuide([[
 #subgroup (WIP) Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 11-13 Loch Modan (Hunter)
-#next 14-16 Darkshore
+#next 13-15 Westfall
 #defaultfor Dwarf
 
 step
-#include RestedXP Forever Guide (A)\11-13 Loch Modan (Hunter)
+#include RestedXP Forever Guide (A)\11-13 Loch Modan (Hunter)@NormalRouteStart-NormalRouteEnd
 ]])

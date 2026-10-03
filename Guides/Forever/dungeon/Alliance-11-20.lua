@@ -2,14 +2,475 @@ local faction = UnitFactionGroup("player")
 if faction == "Horde" then return end
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
-#xprate <1.5
 #forever
-#season 0,1
 #version 1
 #beta
 << Alliance
-#name 13-15 Westfall
-#displayname 14-15 Westfall << Dwarf/Gnome
+<< NightElf
+#name 11-15 Darkshore/Westfall 
+#group RestedXP Forever Dungeon Guide (A)
+#subgroup (WIP) Dungeon Guide 1-20
+--#groupid RXP-SRGCE-A1
+#next 15-16 Hall of Thanes
+
+step
+    #include RestedXP Forever Guide (A)\14-16 Darkshore@WashedA-Gatehouse
+step
+    .goto 1453/0,673.58,-8867.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Allison|r
+    .home >> Set your Hearthstone to Stormwind City
+    .target Innkeeper Allison
+    .bindlocation 16509
+step
+    #ah
+    .goto 1453/0,660.28,-8814.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall shortly:|r
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|T133972:0|t[Stringy Vulture Meat]
+    >>|T133884:0|t[Murloc Eye]
+    >>|T135997:0|t[Goretusk Snout]
+    >>|T134185:0|t[Okra]
+    >>|T134341:0|t[Goretusk Liver]
+    >>|T4548890:0|t[Golem Isospring]
+    >>|T132995:0|t[Harvester Gyrostabilizer]
+    .collect 729,3,38,1 -- Stringy Vulture Meat (3)
+    .collect 730,3,38,1 -- Murloc Eye (3)
+    .collect 731,3,38,1 -- Goretusk Snout (3)
+    .collect 732,3,38,1 -- Okra (3)
+    .collect 723,8,22,1 -- Goretusk Liver (8)
+    .collect 255007,14,92909,1 -- Golem Isospring (14)
+    .collect 255010,5,92909,1 -- Harvester Gyrostabilizer (5)
+    .target Auctioneer Jaxon
+step
+    .goto 1453/0,490.03,-8835.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    .fp Stormwind >> Get the Stormwind Flight Path
+    .target Dungar Longdrink
+step
+    #completewith SaldeanVendor
+    #optional
+    .goto 1429/0,875.96,-9814.400
+    .zone Westfall >> Travel to Westfall
+step
+    .goto 1436/0,918.42,-9851.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r
+    .accept 64 >> Accept The Forgotten Heirloom
+    .target Farmer Furlbrow
+step
+    .goto 1436/0,919.47,-9853.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verna Furlbrow|r
+    .accept 36 >> Accept Westfall Stew
+    .accept 151 >> Accept Poor Old Blanchy
+    .target Verna Furlbrow
+step
+    #completewith SalmaS
+    .goto 1436/0,1055.27,-10128.70,65 >> Travel to Saldean's Farm
+step
+    .goto 1436/0,1055.27,-10128.70
+    .target Farmer Saldean
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
+    .accept 109 >>Accept Report to Gryan Stoutmantle
+step
+    #label SalmaS
+    .goto 1436/0,1042.67,-10111.670
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Salma Saldean|r
+    .turnin 36 >> Turn in Westfall Stew
+    .target Salma Saldean
+    .accept 38 >> Accept Westfall Stew
+step << Gnome/Dwarf/NightElf
+    #completewith next
+    .goto 1436/0,1045.12,-10508.80
+    .target Gryan Stoutmantle
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 109 >> Turn in Report to Gryan Stoutmantle
+    .isOnQuest 109
+step
+    .goto 1436/0,1045.12,-10508.80
+    .target Gryan Stoutmantle
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .accept 12 >> Accept The People's Militia
+step
+    .goto 1436/0,1041.97,-10511.13
+    .target Captain Danuvin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Danuvin|r
+    .accept 102 >> Accept Patrolling Westfall
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Galiaan|r
+    .target Scout Galiaan
+    .goto 1436/0,1126.67,-10636.670
+    .accept 153 >> Accept Red Leather Bandanas
+step
+    .goto 1436/0,1166.57,-10653.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Heather|r
+    .vendor >>|cRXP_BUY_Buy food/water if needed|r
+	.target Innkeeper Heather
+step
+    .goto 1436/0,1179.800,-10635.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon::253092|r
+    .target Alba Fairmoon::253092
+    .accept 92742 >>Accept Testing the Wells
+    .accept 92744 >>Accept Murloc Gills
+step
+	#completewith GnollPaws
+    >>Open the |cRXP_PICK_Sacks of Oats|r on the ground. Loot them for the |cRXP_LOOT_Handful of Oats|r
+    >>|cRXP_WARN_You can usually find them near Farm Fences or Buildings|r
+    .complete 151,1 --Handful of Oats (8)
+step
+    #completewith TravelCompass
+    >>Kill |cRXP_ENEMY_Young Goretusks|r and |cRXP_ENEMY_Young Fleshrippers|r. Loot them for their |cRXP_LOOT_Vulture Meat|r, |cRXP_LOOT_Snouts|r and |cRXP_LOOT_Livers|r
+    .collect 729,3,38,1 --Stringy Vulture Meat (3)
+    .mob +Young Fleshripper
+    .mob +Fleshripper
+    .collect 731,3,38,1 --Goretusk Snout (3)
+    .mob +Young Goretusk
+    .mob +Goretusk
+step
+    #completewith TravelCompass
+    >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r
+    .complete 12,1 -- Defias Trapper slain (15)
+    .mob +Defias Trapper
+    .complete 12,2 -- Defias Smuggler slain (15)
+    .mob +Defias Smuggler
+    .complete 153,1 -- Red Leather Bandana (15)
+    .mob +Defias Trapper
+    .mob +Defias Smuggler
+step
+    #label TravelCompass
+    .isOnQuest 399
+    .goto 1436/0,1602.67,-10629.67,75 >> Travel to the Alexston's Farmstead
+    >>|cRXP_WARN_Work on completing the other quest objectives as you move there|r
+step
+    #sticky
+    #completewith bennytime
+    >>Kill |cRXP_ENEMY_Harvest Watchers|r located on any of the fields as you run by them
+    >>Loot them for their |cRXP_LOOT_Okra|r and |cRXP_LOOT_Flasks of Oil|r
+    .mob Harvest Watcher
+    .collect 732,3,38,1 --Okra (3)
+    .collect 814,5,103,1 --Flask of Oil (5)
+step
+    .goto 1436/0,1748.27,-10672.13
+    >>Open |cRXP_PICK_Alexston's Chest|r. Loot it for |cRXP_LOOT_A Simple Compass|r
+    .complete 399,1 --A Simple Compass (1)
+    .isOnQuest 399
+step
+    .goto 1436/0,1404.200,-10290.900
+    .use 254545 >>|cRXP_WARN_Use the|r |T236996:0|t[Well Water Sample Kit] |cRXP_WARN_at the Molsen Farm well|r
+    .complete 92742,2 --|1/1 Molsen Farm Water Sample
+step
+    #completewith bennytime
+    >>Kill |cRXP_ENEMY_Young Goretusks|r and |cRXP_ENEMY_Young Fleshrippers|r. Loot them for their |cRXP_LOOT_Vulture Meat|r, |cRXP_LOOT_Snouts|r and |cRXP_LOOT_Livers|r
+    .collect 729,3,38,1 --Stringy Vulture Meat (3)
+    .mob +Young Fleshripper
+    .mob +Fleshripper
+    .collect 731,3,38,1 --Goretusk Snout (3)
+    .mob +Young Goretusk
+    .mob +Goretusk
+step
+    #completewith bennytime
+    >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r
+    .complete 12,1 -- Defias Trapper slain (15)
+    .mob +Defias Trapper
+    .complete 12,2 -- Defias Smuggler slain (15)
+    .mob +Defias Smuggler
+    .complete 153,1 -- Red Leather Bandana (15)
+    .mob +Defias Trapper
+    .mob +Defias Smuggler
+step
+    .goto 1436/0,1266.67,-9927.33,75 >> Travel to the Jansen Stead, |cRXP_WARN_work on the other quest objectives as you move there|r
+step
+	#label bennytime
+    .goto 1436/0,1289.77,-9849.63
+    >>Open |cRXP_PICK_Furlbrow's Wardrobe|r. Loot it for |cRXP_LOOT_Furlbrow's Pocket Watch|r
+    >>|cRXP_WARN_You can loot |cRXP_PICK_Furlbrow's Wardrobe|r from outside if you angle your camera correctly|r
+	>>|cRXP_WARN_Be aware of |cRXP_ENEMY_Benny Blanco|r. He hits hard|r
+    .complete 64,1 --Furlbrow's Pocket Watch
+step
+    .goto 1436/0,1192.12,-9641.73,60,0
+    .goto 1436/0,1042.67,-9619.33,60,0
+    .goto 1436/0,1192.12,-9641.73,60,0
+    .goto 1436/0,1042.67,-9619.33,60,0
+    .goto 1436/0,1192.12,-9641.73
+    .goto 1436/0,1042.67,-9619.33,0
+    >>Kill |cRXP_ENEMY_Murloc Raiders|r and |cRXP_ENEMY_Murloc Coastrunners|r. Loot them for their |cRXP_LOOT_Eyes|r and |cRXP_LOOT_Gills|r
+    .collect 730,3,38,1 --Murloc Eye (3)
+    .complete 92744,1 -- Longshore Murloc Gills 7/7
+    .mob Murloc Raider
+    .mob Murloc Coastrunner
+step
+    .goto 1436/0,1035.300,-9835.101
+    .use 254545 >>|cRXP_WARN_Use the|r |T236996:0|t[Well Water Sample Kit] |cRXP_WARN_at the Jansen Stead well|r
+    .complete 92742,1 --|1/1 Jansen Stead Water Sample
+step
+    .goto 1436/0,1004.87,-9716.87,60,0
+    .goto 1436/0,1013.62,-9861.53,60,0
+    .goto 1436/0,1192.12,-10175.13,60,0
+    .goto 1436/0,1019.57,-10204.30,60,0
+    .goto 1436/0,1013.62,-9861.53
+    >>Open the |cRXP_PICK_Sacks of Oats|r on the ground. Loot them for the |cRXP_LOOT_Handful of Oats|r
+	>>|cRXP_WARN_You can usually find them near Farm Fences or Buildings|r
+	.complete 151,1 --Handful of Oats (8)
+step
+    #label FurlbrowFarm
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
+    .turnin 64 >> Turn in The Forgotten Heirloom
+    .target +Farmer Furlbrow
+    .goto 1436/0,918.42,-9851.50
+    .turnin 151 >> Turn in Poor Old Blanchy
+    .target +Verna Furlbrow
+    .goto 1436/0,919.47,-9853.13
+step
+    #completewith SaldeanVendor
+	.goto 1436/0,1055.27,-10128.70
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
+    .vendor >> |cRXP_BUY_Vendor trash|r
+    >>|cRXP_WARN_Do NOT sell|r |T133884:0|t[Murloc Eyes], |T135997:0|t[Goretusk Snouts], |T134341:0|t[Goretusk Livers] |cRXP_WARN_or|r |T133972:0|t[Stringy Vulture Meat]
+	.target Farmer Saldean
+step
+    #optional
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Salma Saldean|r
+    .goto 1436/0,1042.67,-10111.670
+    .turnin 38 >> Turn in Westfall Stew
+    .isQuestComplete 38
+    .target Salma Saldean
+step
+    #optional
+    .goto 1436/0,1213.400,-10153.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket::253395|r
+    .target Ozwin Ironsprocket::253395
+    .accept 92909 >>Accept Harvesting the Harvesters
+    .turnin 92909 >>Turn in Harvesting the Harvesters
+    .itemcount 255007,14 -- Golem Isospring (14)
+    .itemcount 255010,5 -- Harvester Gyrostabilizer (5)
+step
+    #optional
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Salma Saldean|r
+    .goto 1436/0,1042.67,-10111.670
+    .turnin 38 >> Turn in Westfall Stew
+    .isQuestComplete 38
+    .target Salma Saldean
+step
+    .isQuestAvailable 38
+    .goto 1436/0,1132.27,-10146.67,60,0
+    .goto 1436/0,1238.67,-9907.73,80,0
+    .goto 1436/0,1460.22,-10224.83,80,0
+    .goto 1436/0,1132.27,-10146.67,80,0
+    .goto 1436/0,1238.67,-9907.73,80,0
+    .goto 1436/0,1460.22,-10224.83,80,0
+    .goto 1436/0,1132.27,-10146.67,60,0
+    .goto 1436/0,1460.22,-10224.83,60,0
+    .goto 1436/0,1238.67,-9907.73
+    >>Kill |cRXP_ENEMY_Harvest Watchers|r. Loot them for their |cRXP_LOOT_Okra|r and |cRXP_LOOT_Flasks of Oil|r
+    .collect 732,3,38,1 --Okra (3)
+    .collect 814,5,103,1 --Flask of Oil (5)
+step
+    .isQuestTurnedIn 38
+    #label HarvestW
+    .goto 1436/0,1132.27,-10146.67,60,0
+    .goto 1436/0,1238.67,-9907.73,80,0
+    .goto 1436/0,1460.22,-10224.83,80,0
+    .goto 1436/0,1132.27,-10146.67,80,0
+    .goto 1436/0,1238.67,-9907.73,80,0
+    .goto 1436/0,1460.22,-10224.83,80,0
+    .goto 1436/0,1132.27,-10146.67,60,0
+    .goto 1436/0,1460.22,-10224.83,60,0
+    .goto 1436/0,1238.67,-9907.73
+    >>Kill |cRXP_ENEMY_Harvest Watchers|r. Loot them for their |cRXP_LOOT_Flasks of Oil|r
+    .collect 814,5,103,1 --Flask of Oil (5)
+step
+    #optional
+    .goto 1436/0,1213.400,-10153.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket::253395|r
+    .target Ozwin Ironsprocket::253395
+    .accept 92909 >>Accept Harvesting the Harvesters
+    .turnin 92909 >>Turn in Harvesting the Harvesters
+    .itemcount 255007,14 -- Golem Isospring (14)
+    .itemcount 255010,5 -- Harvester Gyrostabilizer (5)
+step
+    .goto 1436/0,1179.52,-10382.57,75,0
+    .goto 1436/0,1138.22,-10474.97,75,0
+    .goto 1436/0,860.67,-10462.83,75,0
+    .goto 1436/0,904.07,-10038.87,75,0
+    .goto 1436/0,1104.62,-9848.000,75,0
+    .goto 1436/0,1298.52,-10028.13,75,0
+    .goto 1436/0,1340.52,-10401.93,75,0
+    .goto 1436/0,1111.97,-10342.20
+    >>Kill |cRXP_ENEMY_Young Goretusks|r and |cRXP_ENEMY_Young Fleshrippers|r. Loot them for their |cRXP_LOOT_Vulture Meat|r, |cRXP_LOOT_Snouts|r and |cRXP_LOOT_Livers|r
+    .collect 729,3,38,1 --Stringy Vulture Meat (3)
+    .mob +Young Fleshripper
+    .mob +Fleshripper
+    .collect 731,3,38,1 --Goretusk Snout (3)
+    .mob +Young Goretusk
+    .mob +Goretusk
+    .collect 723,8,22,1 --Goretusk Liver (8)
+    .mob +Young Goretusk
+    .mob +Goretusk
+step
+    #label SaldeanVendor
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Salma Saldean|r
+	.target Salma Saldean
+    .goto 1436/0,1042.67,-10111.670
+    .turnin 38 >> Turn in Westfall Stew
+step
+    #optional
+    .goto 1436/0,1213.400,-10153.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ozwin Ironsprocket::253395|r
+    .target Ozwin Ironsprocket::253395
+    .accept 92909 >>Accept Harvesting the Harvesters
+    .turnin 92909 >>Turn in Harvesting the Harvesters
+    .itemcount 255007,14 -- Golem Isospring (14)
+    .itemcount 255010,5 -- Harvester Gyrostabilizer (5)
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r
+    >>|cRXP_WARN_It is a dynamic respawn area meaning if you kill enough they will keep respawning|r
+    .complete 12,1 -- Defias Trapper slain (15)
+    .mob +Defias Trapper
+    .complete 12,2 -- Defias Smuggler slain (15)
+    .mob +Defias Smuggler
+    .complete 153,1 -- Red Leather Bandana (15)
+    .mob +Defias Trapper
+    .mob +Defias Smuggler
+step
+    .goto 1436/0,1324.200,-10490.400
+    >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r
+    >>|cRXP_WARN_It is a dynamic respawn area meaning if you kill enough they will keep respawning|r
+    .complete 12,1 -- Defias Trapper slain (15)
+    .mob +Defias Trapper
+    .complete 12,2 -- Defias Smuggler slain (15)
+    .mob +Defias Smuggler
+    .complete 153,1 -- Red Leather Bandana (15)
+    .mob +Defias Trapper
+    .mob +Defias Smuggler
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+	.target Gryan Stoutmantle
+    .goto 1436/0,1045.12,-10508.80
+    .turnin 12 >> Turn in The People's Militia
+step
+	.xp <14,1
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+	.target Gryan Stoutmantle
+    .goto 1436/0,1045.12,-10508.80
+    .accept 65 >> Accept The Defias Brotherhood
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Galiaan|r
+	.target Scout Galiaan
+    .goto 1436/0,1126.67,-10636.670
+    .turnin 153 >> Turn in Red Leather Bandanas
+step
+    .goto 1436/0,1179.800,-10635.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon::253092|r
+    .target Alba Fairmoon::253092
+    .turnin 92742 >>Turn in Testing the Wells
+    .turnin 92744 >>Turn in Murloc Gills
+step
+    .hs >> Hearth to Stormwind
+    .bindlocation 16509,1
+    .cooldown item,6948,>2,1
+    .zoneskip Stormwind City
+    .zoneskip Darkshore
+step
+    #completewith DeeprunEnter
+    .goto 1436/0,1037.42,-10628.27
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .fly Stormwind >> Fly to Stormwind
+    .target Thor
+    .zoneskip Stormwind City
+    .zoneskip Darkshore
+
+step << Rogue
+    #ah
+    .goto 1453/0,609.63,-8787.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
+    .vendor 1287 >>|cRXP_BUY_Buy a|r |T135343:0|t[Scimitar] |cRXP_BUY_from her or something better from the Auction House and equip it your off-hand|r
+    .money <0.3815
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .target Marda Weller
+step << Rogue
+    #ssf
+    .goto 1453/0,609.63,-8787.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
+    .vendor 1287 >>|cRXP_BUY_Buy a|r |T135343:0|t[Scimitar] |cRXP_BUY_from her|r
+    .money <0.3815
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .target Marda Weller
+step << Rogue
+    .goto 1453/0,377.47,-8752.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
+    .train 1758,1
+    .trainer >> Train your class spells
+    .target Osborne the Night Man
+    .xp <16,1
+step << Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r
+    .goto 1453/0,358.25,-8728.28,15,0
+    .goto 1453/0,302.6,-8685.53,15,0
+	.goto 1453/0,323.3,-8689.29
+    .train 1160,1
+    .trainer >> Train your class spells
+    .target Wu Shen
+    .target Ilsa Corbin
+    .xp <16,1
+step << Hunter
+    .goto 1453/0,552.78,-8415.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r inside
+    .trainer >> Train your class spells
+    .target Einris Brightspear
+    .xp <16,1
+step << Druid
+    .goto 1453/0,1347.6192,-8591.2168
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theridran|r
+    .trainer >>Train your class spells
+	.target Theridran
+    .xp <16,1
+step
+    .goto 1453/0,719.67,-8550.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
+    .turnin 399 >> Turn in Humble Beginnings
+    .target Baros Alexston
+    .isQuestComplete 399
+step << Priest
+    #optional
+    #completewith next
+    .goto 1453/0,809.52,-8579.22,20 >> Travel to the Stormwind Cathedral
+step << Priest
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r
+    .goto 1453/0,862.89,-8519.61
+    .trainer >> Train your class spells
+    .train 8122,1
+    .target Brother Joshua
+    .xp <16,1
+step
+    #optional
+    #label endOfTheGuide
+step
+    #label DeeprunEnter
+    #completewith next
+    .goto 1453/0,562.300,-8385.300,20,0
+    .goto 1453/0,522.000,-8352.101
+    .subzone 2257 >>Enter the Deeprun Tram
+    .zoneskip Ironforge
+    .zoneskip Loch Modan
+    .zoneskip Dun Morogh
+step
+    .zone Ironforge >> Take the tram to Ironforge
+    .zoneskip Loch Modan
+    .zoneskip Dun Morogh
+
+
+]])
+
+
+
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+#beta
+<< Alliance
+#name 13-15 Westfall 
+#displayname 14-15 Westfall << Gnome/Dwarf !Hunter
+#displayname 13-15 Westfall << Hunter
 #group RestedXP Forever Dungeon Guide (A)
 #subgroup (WIP) Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
@@ -47,6 +508,7 @@ step
     .collect 723,8,22,1 -- Goretusk Liver (8)
     .collect 255007,14,92909,1 -- Golem Isospring (14)
     .collect 255010,5,92909,1 -- Harvester Gyrostabilizer (5)
+    .target Auctioneer Jaxon
 
 step << Human
     .goto 1453/0,489.99,-8835.76
@@ -55,7 +517,7 @@ step << Human
     .accept 6285 >> Accept Return to Lewis
     .target Dungar Longdrink
 
-step
+step << !Skyborne
     .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .fly Westfall >> Fly to Westfall << !NightElf
@@ -594,21 +1056,45 @@ step
     .accept 95065 >>Accept Fishin' Time
     .turnin 95065 >>Turn in Fishin' Time
 step
+    .goto 1453/0,1193.100,-8328.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r 
+    .target Manifest Clerk Philmor::268511
+    .accept 97220 >>Accept Philmor's Favor
+step
+    .goto 1453/0,566.600,-8845.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias::483|r
+    .target Elaine Trias::483
+    .turnin 97220 >>Turn in Philmor's Favor
+    .accept 97222 >>Accept Gatehouse Goods
+step
+    .goto 1453/0,568.300,-8862.200
+    .use 277198 >> |cRXP_WARN_Use the|r |T132762:0|t[Gatehouse Shipment] |cRXP_WARN_in front of the |cRXP_PICK_Gatehouse Door|r upstairs|r
+    .complete 97222,1 --|1/1 Gatehouse Shipment delivered
+step
+    .goto 1453/0,566.600,-8845.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias::483|r
+    .target Elaine Trias::483
+    .turnin 97222 >>Turn in Gatehouse Goods
+step
+    #optional
+    #label endOfTheGuide
+step
     #label DeeprunEnter
+    #completewith next
     .goto 1453/0,562.300,-8385.300,20,0
     .goto 1453/0,522.000,-8352.101
     .subzone 2257 >>Enter the Deeprun Tram
     .zoneskip Ironforge
+    .zoneskip Loch Modan
+    .zoneskip Dun Morogh
 step
     .zone Ironforge >> Take the tram to Ironforge
-step
-    #optional
-    #label endOfTheGuide
+    .zoneskip Loch Modan
+    .zoneskip Dun Morogh
 ]])
 
 RXPGuides.RegisterGuide([[
 #forever
-#season 0,1
 #version 1
 #beta
 << Alliance
@@ -618,6 +1104,11 @@ RXPGuides.RegisterGuide([[
 #name 15-16 Hall of Thanes
 #next 16-18 Ruins of Lordaeron
 
+step << NightElf
+    .goto Ironforge,55.491,47.751
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
+    .fp Ironforge >> Get the Ironforge flight path
+    .target Gryth Thurden
 step
     #completewith OII
     +|cRXP_WARN_You will now complete a pre-quest for the Hall of Thanes, then run the dungeon|r
@@ -658,7 +1149,9 @@ step
     .goto 1426/0,-2034.49,-5922.60
     >>Kill |cRXP_ENEMY_Dark Iron Spies|r. Loot them for the |T237385:0|t[|cRXP_LOOT_Dark Iron Map|r]
     .use 274268 >>|cRXP_WARN_Use the|r |T237385:0|t[|cRXP_LOOT_Dark Iron Map|r] |cRXP_WARN_to start the quest|r
+    >>|cRXP_WARN_You can skip killing |cRXP_ENEMY_Dark Iron Spies|r for the other quest because they are low level once you find the|r |T237385:0|t[|cRXP_LOOT_Dark Iron Map|r]
     .complete 96390,1 -- Dark Iron Spy slain 10/10
+    .disablecheckbox
     .collect 274268,1,96391,1 -- Dark Iron Map (1)
     .accept 96391 >> Accept Underground Map
     .mob Dark Iron Spy
@@ -666,15 +1159,27 @@ step
     #label OII
     .goto 1426/0,-1394.24,-5797.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
-    .turnin 96390 >> Turn in Nip 'Em in the Bud
     .turnin 96391 >> Turn in Underground Map
     .accept 96393 >> Accept Old Ironforge Incursion
+    .target Earthseer Farsen
+step
+    #optional
+    .isQuestComplete 96390
+    .goto 1426/0,-1394.24,-5797.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
+    .turnin 96390 >> Turn in Nip 'Em in the Bud
     .target Earthseer Farsen
 
 step
     #completewith EnterHoT
     +|cRXP_WARN_Start looking for a group for the Hall of Thanes|r
 step
+    #optional
+    #label InIronforge
+    #completewith EnterHoT
+    .zone Ironforge >> Travel to Ironforge
+step
+    #requires InIronforge
     #completewith EnterHoT
     .goto 1455/0,-1054.300,-4843.200,10,0
     .goto 1455/0,-1081.900,-4850.100,10,0
@@ -997,6 +1502,17 @@ step
     .accept 95161 >> Accept Remember That I Love You
     .target Orphan Matron Nightingale
 step
+    .goto 1453/0,634.700,-8390.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
+    .accept 2040 >> Accept Underground Assault
+    .target Shoni the Shilent
+step
+    .goto 1453/0,501.200,-8468.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
+    .accept 167 >> Accept Oh Brother. . .
+    .accept 168 >> Accept Collecting Memories
+    .target Wilder Thistlenettle
+step
     #completewith next
     .goto 1453/0,437.600,-8524.5000,20,0
     .goto 1453/0,408.100,-8478.500,15,0
@@ -1014,12 +1530,67 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Marcus Jonathan|r
     .turnin 95195 >> Turn in Bloodied Insignia
     .target General Marcus Jonathan
+step << Rogue
+    .goto 1453/0,377.47,-8752.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
+    .trainer >> Train your class spells
+    .target Osborne the Night Man
+step << Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r
+    .goto 1453/0,358.25,-8728.28,15,0
+    .goto 1453/0,302.6,-8685.53,15,0
+	.goto 1453/0,323.3,-8689.29
+    .trainer >> Train your class spells
+    .target Wu Shen
+    .target Ilsa Corbin
+step << Hunter
+    .goto 1453/0,552.78,-8415.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r inside
+    .trainer >> Train your class spells
+    .target Einris Brightspear
+step << Druid
+    .goto 1453/0,1347.6192,-8591.2168
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theridran|r
+    .trainer >> Train your class spells
+	.target Theridran
+step << Warlock
+    #optional
+    #completewith next
+    .goto 1453/0,988.44,-8942.15,20,0
+    .goto 1453/0,1015.33,-8978.9,15 >> Travel to The Slaughtered Lamb and go downstairs
+step << Warlock
+    .goto 1453/0,1029.89,-8971.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r
+    .trainer >> Train your class spells
+    .target Ursula Deline
+step << Mage
+    #optional
+    #completewith next
+    .goto 1453/0,874.32,-9014.67,10 >> Travel to the Mage Tower
+step << Mage
+    .goto 1453/0,885.34,-9006.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elsharin|r
+    .trainer >> Train your class spells
+    .target Elsharin
+step << Priest/Paladin
+    #optional
+    #completewith next
+    .goto 1453/0,809.52,-8579.22,20 >> Travel to the Stormwind Cathedral
+step << Paladin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
+    .goto 1453/0,859.13,-8559.14,10,0
+    .goto 1453/0,861.14,-8573.03
+    .trainer >> Train your class spells
+    .target Arthur the Faithful
+step << Priest
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r
+    .goto 1453/0,862.89,-8519.61
+    .trainer >> Train your class spells
+    .target Brother Joshua
 ]])
 
 RXPGuides.RegisterGuide([[
-#xprate <1.59
 #forever
-#season 0,1
 #version 1
 #beta
 << Alliance
@@ -1029,5 +1600,359 @@ RXPGuides.RegisterGuide([[
 #name 18-20 Deadmines
 #next 20-20 Redridge
 
+step
+    #completewith next
+    .goto 1453/0,490.03,-8835.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    .fly Westfall >> Fly to Westfall
+    .target Dungar Longdrink
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+	.target Gryan Stoutmantle
+    .goto 1436/0,1045.12,-10508.80
+    .accept 65 >> Accept The Defias Brotherhood
+step
+    #completewith RRDB
+    .goto 1453/0,490.03,-8835.82,-1
+    .goto 1436/0,1037.42,-10628.27,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r or |cRXP_FRIENDLY_Thor|r
+    >>|cRXP_WARN_If you do not already have the Redridge Mountains flight path, skip this step|r
+    .fly Redridge >> Fly to Redridge Mountains
+    .target Dungar Longdrink
+    .zoneskip Redridge Mountains
+    .zoneskip Elwynn Forest
+step
+    #completewith RRDB
+    .zone Redridge Mountains >> Travel to Redridge Mountains
+step
+    #label RRDB
+    .goto 1433/0,-2164.56,-9213.10,8,0
+    .goto 1433/0,-2145.67,-9231.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wiley the Black|r inside upstairs
+    .turnin 65 >> Turn in The Defias Brotherhood
+    .accept 132 >> Accept The Defias Brotherhood
+	.target Wiley the Black
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shawn|r
+	.target Shawn
+    .goto 1433/0,-2207.10,-9351.52
+    .accept 3741 >> Accept Hilary's Necklace
+    .zoneskip 1433,1
+step
+    >>|cRXP_WARN_Jump into the Lake|r
+    >>Open the |cRXP_PICK_Glinting Mud|r. Loot it for |cRXP_LOOT_Hilary's Necklace|r
+    >>|cRXP_WARN_It has multiple spawn locations in the Lake|r
+    .goto 1433/0,-2174.32,-9386.56,0
+    .goto 1433/0,-2147.41,-9308.08,0
+    .goto 1433/0,-2090.96,-9373.82,0
+    .goto 1433/0,-1986.76,-9324.30,0
+    .goto 1433/0,-2246.40,-9359.92,0
+    .goto 1433/0,-2309.57,-9376.28,0
+    .goto 1433/0,-2397.70,-9363.97,0
+    .goto 1433/0,-1986.76,-9324.30,70,0
+    .goto 1433/0,-2397.70,-9363.97,70,0
+    .complete 3741,1 --Hilary's Necklace (1)
+    .zoneskip 1433,1
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hilary|r
+	.target Hilary
+    .goto 1433/0,-2205.58,-9351.52
+    .turnin 3741 >> Turn in Hilary's Necklace
+    .zoneskip 1433,1
+step
+    #completewith next
+    .goto 1433/0,-2234.900,-9435.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
+    .fly Westfall >> Fly to Westfall
+    .target Ariena Stormfeather
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+	.target Gryan Stoutmantle
+    .goto 1436/0,1045.12,-10508.80
+    .turnin 132 >> Turn in The Defias Brotherhood
+    .accept 135 >> Accept The Defias Brotherhood
+step
+    #completewith SWDB
+    .goto 1436/0,1037.42,-10628.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .fly Stormwind >> Fly to Stormwind
+    .target Thor
+step
+    #optional
+    #completewith next
+    .goto 1453/0,374.11,-8762.88,20,0
+    .goto 1453/0,326.66,-8818.01,20,0
+    .goto 1453/0,323.43,-8817.83,10 >> Enter the SI:7 Headquarters. Travel up stairs toward |cRXP_FRIENDLY_Master Mathias Shaw|r
+step
+    #label SWDB
+    .goto 1453/0,362.28,-8815.23
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
+    .turnin 135 >> Turn in The Defias Brotherhood
+    .accept 141 >> Accept The Defias Brotherhood
+    .target Master Mathias Shaw
+step
+    #ah
+    .goto 1453/0,660.28,-8814.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall shortly:|r
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|T132794:0|t[Flask of Oil]
+    .collect 814,5,103,1 -- Flask of Oil (5)
+    .target Auctioneer Jaxon
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    .goto 1453/0,490.03,-8835.82
+    .fly Westfall >> Fly to Westfall
+    .target Dungar Longdrink
+step
+    .goto 1436/0,1045.29,-10508.78
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 141 >> Turn in The Defias Brotherhood
+    .accept 142 >> Accept The Defias Brotherhood
+    .target Gryan Stoutmantle
+step
+    #optional
+    #completewith next
+    .goto 1436/0,1459.17,-11024.47,55 >> Travel to Moonbrook
+step
+    .goto 1436/0,1459.17,-11024.47
+    .line Westfall,44.50,69.62,44.50,69.62,45.08,69.40,45.21,69.35,45.63,68.69,45.85,67.73,45.62,66.99,45.52,65.71,45.61,64.95,44.28,63.88,44.26,62.80,43.60,59.89,43.37,58.42,43.26,57.01,43.12,54.24,42.15,52.74,41.74,51.42,41.48,49.89,40.91,48.71,38.93,46.05,38.51,45.46,37.85,45.54,36.60,44.21,36.06,43.86,35.12,43.49,33.92,43.21,32.56,43.05,31.34,44.54,32.56,43.05,33.92,43.21,35.12,43.49,36.06,43.86,36.26,43.77,36.87,42.87,36.95,40.85,37.04,39.79,37.91,36.98,39.06,35.58,40.48,34.31,41.27,32.87,41.76,31.27,42.26,30.26,43.20,28.99,44.29,28.19,44.64,26.85,44.57,24.94,44.64,26.85,44.29,28.19,43.20,28.99,42.26,30.26,41.76,31.27,41.27,32.87,40.48,34.31,39.06,35.58,37.91,36.98,37.04,39.79,36.95,40.85,36.87,42.87,36.26,43.77,36.06,43.86,35.12,43.49,33.92,43.21,32.56,43.05,31.34,44.54,32.56,43.05,33.92,43.21,35.12,43.49,36.06,43.86,36.60,44.21,37.85,45.54,38.51,45.46,38.93,46.05,40.91,48.71,41.48,49.89,41.74,51.42,42.15,52.74,43.12,54.24,43.26,57.01,43.37,58.42,43.60,59.89,44.26,62.80,44.28,63.88,45.61,64.95,45.52,65.71,45.62,66.99,45.85,67.73,45.63,68.69,45.21,69.35,45.08,69.40,44.50,69.62
+    >>Kill the |cRXP_ENEMY_Defias Messenger|r. Loot him for his |cRXP_LOOT_Mysterious Message|r
+    >>|cRXP_WARN_The |cRXP_ENEMY_Defias Messenger|r spawns in Moonbrook. He walks along the road north of Moonbrook, to the Gold Coast Quarry and Jangolode Mine. If you don't see him along the road, wait for him to spawn in Moonbrook|r
+    .complete 142,1 -- A Mysterious Message (1)
+    .unitscan Defias Messenger
+step
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 142 >> Turn in The Defias Brotherhood
+    .target Gryan Stoutmantle
+step
+    .goto 1436/0,1067.87,-10508.330
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Defias Traitor|r
+    >>|cRXP_WARN_You may need to wait for |cRXP_FRIENDLY_The Defias Traitor|r to spawn if he's not there|r
+    .accept 155 >> Accept The Defias Brotherhood
+    .target The Defias Traitor
+step
+    .goto 1436/0,1527.07,-11073.23
+    >>Escort the |cRXP_FRIENDLY_The Defias Traitor|r to the Deadmines
+    .complete 155,1 -- Escort The Defias Traitor to discover where VanCleef is hiding (1)
+    .target The Defias Traitor
+step
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 155 >> Turn in The Defias Brotherhood
+    .accept 166 >> Accept The Defias Brotherhood
+    .target Gryan Stoutmantle
+step
+    .goto 1436/0,1033.22,-10504.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Riell|r atop the Tower
+    .accept 214 >> Accept Red Silk Bandanas
+    .target Scout Riell
+step
+    .goto 1436,56.454,69.982,0
+    .goto 1436,56.434,74.339,0
+    .goto 1436,59.384,74.184,0
+    .goto 1436,60.871,74.362,0
+    .goto 1436,60.902,77.640,0
+    .goto 1436,63.442,77.339,0
+    .goto 1436,65.203,75.286,0
+    .goto 1436,63.594,72.862,0
+    .goto 1436,63.825,70.125,0
+    .goto 1436,42.649,71.376
+    >>|cRXP_WARN_Grind |cRXP_ENEMY_Gnolls|r south of Sentinel Hill whilst assembling a Deadmines group|r
+    .subzone 20 >>When your group has been assembled, travel to Moonbrook
+step
+    .goto 1436/0,1527.42,-11072.77
+    .subzone 1581 >> Enter the Defias Hideout with your group
+step
+    #completewith EnterDM
+    >>Kill the |cRXP_ENEMY_Defias|r. Loot them for their |cRXP_LOOT_Red Silk Bandanas|r
+    >>|cRXP_WARN_You can also complete this inside the Deadmines|r
+    .complete 214,1 -- Red Silk Bandana (10)
+    .isOnQuest 214
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Skeletal Miners|r, |cRXP_ENEMY_Undead Dynamiters|r and |cRXP_ENEMY_Undead Excavators|r. Loot them for their |cRXP_LOOT_Cards|r
+    >>|cRXP_WARN_NOTE: This quest does NOT give bonus XP similar to other dungeon quests, and takes significantly longer to complete. Consider skipping this quest if your group agrees|r
+    >>|cRXP_WARN_This is completed OUTSIDE of the Dungeon|r
+    .complete 168,1 -- Miners' Union Card (4)
+    .mob Skeletal Miner
+    .mob Undead Dynamiter
+    .mob Undead Excavator
+step
+    .goto 1415,41.18,79.80,25,0
+    .goto 1415,41.03,79.96,25,0
+    .goto 1415,40.92,80.05,25,0
+    .goto 1415,41.08,80.11
+    >>Kill |cRXP_ENEMY_Foreman Thistlenettle|r. Loot him for his |cRXP_LOOT_Badge|r
+    >>|cRXP_WARN_This is completed OUTSIDE of the Dungeon|r
+    .complete 167,1 -- Thistlenettle's Badge (1)
+    .unitscan Foreman Thistlenettle
+step
+    .goto 1415,41.18,79.80,25,0
+    .goto 1415,41.03,79.96,25,0
+    .goto 1415,40.92,80.05,25,0
+    .goto 1415,41.08,80.11
+    >>Kill |cRXP_ENEMY_Skeletal Miners|r, |cRXP_ENEMY_Undead Dynamiters|r and |cRXP_ENEMY_Undead Excavators|r. Loot them for their |cRXP_LOOT_Cards|r
+    >>|cRXP_WARN_NOTE: This quest does NOT give bonus XP similar to other dungeon quests, and takes significantly longer to complete. Consider skipping this quest if your group agrees|r
+    >>|cRXP_WARN_This is completed OUTSIDE of the Dungeon|r
+    .complete 168,1 -- Miners' Union Card (4)
+    .mob Skeletal Miner
+    .mob Undead Dynamiter
+    .mob Undead Excavator
+step
+    #label EnterDM
+    .goto 1415,40.94,79.76,25,0
+    .goto 1415,40.86,79.62,20,0
+    .goto 1415,40.678,79.578
+    .subzone 1581,2 >> Enter The Deadmines Dungeon
+step
+    #completewith DMend
+    >>Kill the |cRXP_ENEMY_Defias|r inside The Deadmines. Loot them for their |cRXP_LOOT_Bandanas|r
+    .complete 214,1 -- Red Silk Bandana (10)
+step
+    >>Kill |cRXP_ENEMY_Sneed|r. Loot him for the |cRXP_LOOT_Gnoam Sprecklesprocket|r
+    .complete 2040,1 -- Gnoam Sprecklesprocket (1)
+step
+    #label DMend
+    >>Kill |cRXP_ENEMY_Edwin VanCleef|r. Loot him for his |cRXP_LOOT_Head|r and |T133471:0|t[|cRXP_LOOT_An Unsent Letter|r]
+    >>|cRXP_WARN_Use |T133471:0|t[|cRXP_LOOT_An Unsent Letter|r] to start the quest|r
+    .collect 2874,1,373 -- An Unsent Letter (1)
+    .complete 166,1 -- Head of VanCleef (1)
+    .accept 373 >> Accept The Unsent Letter
+    .use 2874 -- An Unsent Letter
+step
+    #completewith next
+    .goto 1436/0,1966.32,-11407.13,40 >> Travel to the Westfall Lighthouse
+step
+    .goto 1436/0,1966.32,-11407.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
+    .accept 104 >> Accept The Coastal Menace
+    .accept 103 >> Accept Keeper of the Flame
+    .turnin 103 >> Turn in Keeper of the Flame
+    .target Captain Grayson
+    .itemcount 814,5 -- Flask of Oil (5)
+step
+    .goto 1436/0,1966.32,-11407.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
+    .accept 104 >> Accept The Coastal Menace
+    .target Captain Grayson
+step
+    .goto 1436/0,1811.62,-11358.37
+    .line Westfall,34.43,83.93,34.43,83.93,33.88,83.32,33.08,82.86,32.56,82.71,32.08,82.49,31.91,82.36,31.55,81.88,30.86,81.42,30.63,81.16,30.33,80.81,30.02,80.11,29.68,79.22,29.32,78.19,29.29,77.60,29.27,77.31,29.18,76.26,29.07,75.29,28.95,74.14,28.85,73.29,28.79,72.48,28.37,71.94,27.84,71.29,27.44,70.25,27.29,69.47,27.13,68.65,27.09,67.57,27.07,67.01,26.74,66.09,27.07,67.01,27.09,67.57,27.13,68.65,27.29,69.47,27.44,70.25,27.84,71.29,28.37,71.94,28.79,72.48,28.85,73.29,28.95,74.14,29.07,75.29,29.18,76.26,29.27,77.31,29.29,77.60,29.32,78.19,29.68,79.22,30.02,80.11,30.33,80.81,30.63,81.16,30.86,81.42,31.55,81.88,31.91,82.36,32.08,82.49,32.56,82.71,33.08,82.86,33.88,83.32,34.43,83.93
+    >>Kill |cRXP_ENEMY_Old Murk-Eye|r. Loot him for his |cRXP_LOOT_Scale|r
+    .complete 104,1 -- Scale of Old Murk-Eye (1)
+    .unitscan Old Murk-Eye
+step
+    .goto 1436/0,1966.32,-11407.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
+    .turnin 104 >> Turn in The Coastal Menace
+    .target Captain Grayson
+    .isQuestComplete 104
+step
+    .goto 1436/0,1707.2116,-10583.0227
+    >>Click the |cRXP_PICK_Burned-Out Remains|r on the ground
+    .accept 79008 >> Accept ...and that note you found
+step
+    #completewith next
+    .goto 1436/0,1045.12,-10508.80,100 >> Travel to Sentinel Hill
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r and |cRXP_FRIENDLY_Scout Riell|r atop the Tower
+    .turnin 166 >> Turn in The Defias Brotherhood
+    .target +Gryan Stoutmantle
+    .goto 1436/0,1045.12,-10508.80
+    .turnin 214 >> Turn in Red Silk Bandanas
+    .goto 1436/0,1033.22,-10504.83
+    .target +Scout Riell
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 166 >> Turn in The Defias Brotherhood
+    .target Gryan Stoutmantle
+    .goto 1436/0,1045.12,-10508.80
+step
+    .isQuestComplete 214
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Riell|r atop the tower
+    .turnin 214 >> Turn in Red Silk Bandanas
+    .goto 1436/0,1033.22,-10504.83
+    .target Scout Riell
+
+--Shaman water totem quest start
+step << Shaman
+    .goto 1436/0,1037.42,-10628.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .fly Ironforge >> Fly to Ironforge
+    .target Thor
+step << Shaman
+    .goto 1455/0,-1086.500,-4642.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldrun Stormbreaker::258098|r
+    .target Eldrun Stormbreaker::258098
+    .accept 94494 >>Accept Call of Water
+    .trainer >> Train your class spells
+step << Shaman
+    #completewith CallofWater
+    .goto 1455/0,-1152.400,-4821.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
+    .fly Loch Modan >> Fly to Loch Modan
+    .target Gryth Thurden
+step << Shaman
+	.isOnQuest 94494
+    .goto 1432/0,-3146.000,-4837.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norric Lochthane::258043|r
+    .target Norric Lochthane::258043
+    .turnin 94494 >>Turn in Call of Water
+	.accept 94495 >>Accept Call of Water
+step << Shaman
+	#label CallofWater
+    .goto 1432/0,-3146.000,-4837.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norric Lochthane::258043|r
+    .target Norric Lochthane::258043
+    .accept 94495 >>Accept Call of Water
+step << Shaman
+	#optional
+	.isOnQuest 468
+    .goto 1432/0,-2695.500,-4678.600
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Rockgar::1342|r
+    .target Mountaineer Rockgar::1342
+    .turnin 468 >>Turn in Report to Mountaineer Rockgar
+step << Shaman
+    #completewith WaterTotem1
+    #label DunAlgaz1
+    .goto 1432/0,-2697.700,-4645.500,15,0
+    .goto 1437/0,-2653.800,-4448.100,15,0
+    .goto 1437/0,-2480.200,-4421.800,15,0
+    .goto 1437/0,-2464.200,-4280.900,15,0
+    .goto 1437/0,-2419.800,-4092.100,15,0
+    .goto 1437/0,-2629.900,-4086.400,15 >> Travel through Dun Algaz to Wetlands
+step << Shaman
+    #completewith WaterTotem1
+    #requires DunAlgaz1
+    .goto 1437/0,-3085.500,-4196.100,10,0
+    .goto 1437/0,-3103.100,-4212.600,12,0
+    .goto 1437/0,-3098.200,-4242.600,7 >> Travel up the ramp toward |cRXP_FRIENDLY_Hervdana Saegrund::258203|r inside the cave
+step << Shaman
+    #label WaterTotem1
+    .goto 1437/0,-3109.300,-4257.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hervdana Saegrund::258203|r
+    .target Hervdana Saegrund::258203
+    .turnin 94495 >>Turn in Call of Water
+    .accept 94497 >>Accept Call of Water  
+step << Shaman
+    .goto 1437/0,-3069.100,-4210.100
+    .use 265732 >>|cRXP_WARN_Use the|r |T132825:0|t[Unfilled Brown Waterskin] |cRXP_WARN_at the base of the waterfall|r
+    .complete 94497,1 --|1/1 Full Brown Waterskin
+step << Shaman
+    #completewith next
+    .goto 1437/0,-3085.500,-4196.100,10,0
+    .goto 1437/0,-3103.100,-4212.600,12,0
+    .goto 1437/0,-3098.200,-4242.600,7 >> Travel back up the ramp toward |cRXP_FRIENDLY_Hervdana Saegrund::258203|r inside the cave
+step << Shaman
+    .goto 1437/0,-3109.300,-4257.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hervdana Saegrund::258203|r
+    .target Hervdana Saegrund::258203
+    .turnin 94497 >>Turn in Call of Water
+    .accept 94499 >>Accept Call of Water
+
+--sham can hs to sw
+--everyone else can fly sw turn in / train 20 spells
 
 ]])
