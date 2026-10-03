@@ -314,6 +314,38 @@ function addon.v2:ClearActiveStepEventWatchers()
     self.state.activeStepEventWatcherStep = nil
 end
 
+-- Step elements that fill addon.questAccept / addon.questTurnIn when their
+-- callback runs. SetStep wipes both tables, so these have to run again after
+-- every SetStep while their step is active.
+local questAutomationTags = {
+    accept = true,
+    turnin = true,
+    daily = true,
+    dailyturnin = true,
+    acceptmultiple = true,
+    turninmultiple = true
+}
+
+-- The legacy window releases and rebinds every element on SetStep, which runs
+-- the callbacks. The V2 window only rebinds rows whose step or element
+-- changed, so a step that stays on screen (e.g. when a sticky step next to it
+-- completes) never refills the tables and quest automation skips it until the
+-- next QUEST_LOG_UPDATE or QUEST_ACCEPTED.
+function addon.v2:RefreshQuestAutomation(steps)
+    local element, callback
+    for _, step in ipairs(steps) do
+        if step.active then
+            for elementIndex = 1, #(step.elements or {}) do
+                element = step.elements[elementIndex]
+                callback = questAutomationTags[element.tag] and addon.functions[element.tag]
+                if callback and element.frame and element.frame.element == element then
+                    addon.Call(element.tag, callback, element.frame)
+                end
+            end
+        end
+    end
+end
+
 function addon.v2:UpdateActiveStepEventWatchers(steps)
     local watcher = self.state.activeStepEventWatcher
     local watcherStep = self.state.activeStepEventWatcherStep
@@ -950,6 +982,7 @@ function addon.SetStep(n, n2, loopback)
         end
 
         addon.v2.events:Trigger("UpdateActiveSteps", activeSteps, addon.player.name)
+        addon.v2:RefreshQuestAutomation(activeSteps)
         addon.v2.events:Trigger("GuideStepsChanged")
         addon.UpdateItemFrame()
         addon.updateSteps = true
