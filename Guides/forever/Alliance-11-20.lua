@@ -552,14 +552,14 @@ step << !NightElf
     .target Auctioneer Jaxon
     .skill cooking,<50,1 --XX Shows if cooking skill is 50+
 step << NightElf Hunter
-    .goto 1453,49.962,57.638
+    .goto 1453/0,706.15,-8795.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frederick Stover|r
     >>|cRXP_BUY_Buy a|r |T135489:0|t[Heavy Recurve Bow] |cRXP_BUY_from him|r. |cRXP_BUY_If you can afford to, buy a|r |T135490:0|t[Reinforced Bow] |cRXP_BUY_and a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_as well|r 
     .collect 3027,1 -- Heavy Recurve Bow (1)
     .collect 11362,1 -- Medium Quiver (1)
     .collect 3026,1 --Reinforced Bow (1)
     .disablecheckbox
-    .target Landria
+    .target Frederick Stover
     .money <0.7349
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.20
 step << Rogue
