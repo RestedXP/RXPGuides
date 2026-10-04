@@ -5646,7 +5646,7 @@ step
     .accept 1054 >> Accept Culling the Threat
 step
     #label HCHunterNoHS --hidden step for #include
-step << !Dwarf/!Hunter
+step << NightElf Hunter
     .goto 1440/1,-433.09,2781.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kimlya|r
     .home >> Set your Hearthstone to Astranaar
@@ -5836,15 +5836,15 @@ step
     .complete 1023,1
 step << Dwarf Hunter/Human Hunter
     .hs >> Hearth to Auberdine
-step << !Dwarf/!Hunter
+step << NightElf Hunter
     #softcore
     #completewith next
     .deathskip >> Die on the eastern side of the lake and spirit res at Astranaar
-step << !Dwarf/!Hunter
+step << NightElf Hunter
     #hardcore
     #completewith next
     .goto 1440/1,-283.73,2827.92,200 >> Travel to Astranaar
-step << !Dwarf/!Hunter
+step << NightElf Hunter
     .goto 1440/1,-284.31,2828.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daelyshia|r
     .fly Darkshore>> Fly to Darkshore
@@ -5926,7 +5926,7 @@ step
     .goto 1438/1,2607.86,9641.94
     .accept 942 >> Accept The Absent Minded Prospector
     .isQuestTurnedIn 741
-step << !Dwarf/!Hunter
+step << NightElf Hunter
     #label end
     .hs >> Hearth to Astranaar
 step << Dwarf Hunter/Human Hunter
