@@ -5174,9 +5174,9 @@ function addon.PutItemInBank(bagContents)
     local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if CursorHasItem() and isBankOpened then
         local bank = {BANK_CONTAINER}
-        if Enum.BagIndex.CharacterBankTab_1 then
+        local tab = Enum.BagIndex["CharacterBankTab_1"]
+        if tab then
             local i = 1
-            local tab = Enum.BagIndex["CharacterBankTab_" .. i]
             while tab do
                 tinsert(bank, tab)
                 i = i + 1
