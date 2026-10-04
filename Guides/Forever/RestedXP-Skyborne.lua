@@ -3891,15 +3891,15 @@ step << Alliance !Druid
     .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
--- step << Alliance
---     #completewith next
---     >>Kill |cRXP_ENEMY_Al'Aketh Brawler::270201|r.
---     *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
---     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
---     .mob Al'Aketh Healer::254596
---     .mob Al'Aketh Brawler::270201
---     .mob Al'Aketh Preacher::253195
---     .mob Al'Aketh Pillager::253511
+step << Alliance
+    #completewith next
+    >>Kill |cRXP_ENEMY_Al'Aketh Brawler::270201|r.
+    *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
+    .complete 92834,1 --10/10 Al'Aketh Windstone Charm
+    .mob Al'Aketh Healer::254596
+    .mob Al'Aketh Brawler::270201
+    .mob Al'Aketh Preacher::253195
+    .mob Al'Aketh Pillager::253511
 step << Alliance
     .goto 2521,65.36,71.79,30,0
     .goto 2521,65.76,68.4,30,0
@@ -3911,14 +3911,11 @@ step << Alliance
     .target Yorana Windyreed::252378
 step << Alliance !Druid
     #completewith Commander Belguilos2
-    >>Kill |cRXP_ENEMY_Al'Aketh Healers|r, |cRXP_ENEMY_Al'Aketh Brawlers|r, |cRXP_ENEMY_Al'Aketh Preachers|r, and |cRXP_ENEMY_Al'Aketh Pillagers|r.
-    *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
+    >>Kill |cRXP_ENEMY_Al'Aketh Healers|r and |cRXP_ENEMY_Al'Aketh Brawlers|r.
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
     .mob +Al'Aketh Brawler::270201
-    .mob +Al'Aketh Preacher::253195
-    .mob +Al'Aketh Pillager::253511
 step << Alliance
     #completewith Commander Belguilos2
     >>Kill |cRXP_ENEMY_Al'Aketh Brawlers|r, |cRXP_ENEMY_Al'Aketh Pillagers|r and |cRXP_ENEMY_Al'Aketh Preacher|r.
