@@ -5250,28 +5250,46 @@ step << Horde
     .zoneskip Tirisfal Glades
     .zoneskip Undercity
     .zoneskip Silverpine Forest
-step << Horde
+step << Horde Hunter
+    #completewith next
+    .subzone 362 >> Travel to Razor Hill
+step << Horde Hunter
+    #label Conscript
+    .goto 1411/1,-4648.55,271.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Takrin|r
+    .accept 840 >>Accept Conscript of the Horde
+    .target Takrin Pathseeker
+step << Horde Hunter
+    #completewith next
+    .subzone 379 >> Travel to Far Watch Post
+step << Horde Hunter
+    .goto 1413/1,-3687.11,303.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kargal|r
+    .turnin 840 >>Turn in Conscript of the Horde
+    .accept 842 >>Accept Crossroads Conscription
+    .target Kargal Battlescar
+step << Horde !Hunter
     .goto 1411/1,-4648.55,1321.88,40 >>Go up the Zeppelin Tower
     .zone Tirisfal Glades >>Take the Zeppelin to Tirisfal Glades
     >>|cRXP_WARN_Conjure water while waiting|r << Mage
     .zoneskip Tirisfal Glades
-step << Horde
+step << Horde !Hunter
     #completewith DeliverytoSPF
     .goto 1420/0,253.4,2234.85,80 >> Travel to Brill
-step << Horde
+step << Horde !Hunter
     .goto 1420/0,254.600,2225.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Terrence::1738|r
     .accept 96895 >>Accept The Argent Emissary
     .target Deathguard Terrence::1738
     .xp >13,1
-step << Horde
+step << Horde !Hunter
     #label DeliverytoSPF
     .goto 1420/0,346.94,2258.950
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Johaan::1518|r
     .accept 445 >>Accept Delivery to Silverpine Forest
     .target Apothecary Johaan::1518
     .xp >13,1
-step << Horde
+step << Horde !Hunter
     .goto 1420/0,54.600,1996.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadric Harlson::267009|r
     .turnin 96895 >>Turn in The Argent Emissary
@@ -5279,7 +5297,7 @@ step << Horde
     .accept 96898 >>Accept Remnants of War
     .target Hadric Harlson::267009
     .xp >13,1
-step << Horde
+step << Horde !Hunter
     .goto 1420/0,-130.500,1907.800
     >>Kill |cRXP_ENEMY_Dark Enforcers|r and |cRXP_ENEMY_Dark Neophytes|r. Loot them for |cRXP_LOOT_Necrotic Crystal Fragments|r
     >>|cRXP_LOOT_Necrotic Crystal Fragments|r |cRXP_WARN_can also be looted on the ground|r
@@ -5290,7 +5308,7 @@ step << Horde
     .mob +Dark Neophyte
     .complete 96898,1 --|12/12 Necrotic Crystal Fragment
     .isOnQuest 96897,96898
-step << Horde
+step << Horde !Hunter
     .goto 1420/0,54.500,1996.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadric Harlson::267009|r
     .turnin 96897 >>Turn in The Cult of the Damned
@@ -5299,7 +5317,7 @@ step << Horde
     .target Hadric Harlson::267009
     .isQuestComplete 96897
     .isQuestComplete 96898
-step << Horde
+step << Horde !Hunter
     #completewith UCflightpath1
     .goto 1458/0,239.14,1749.54,35,0
     .goto 1458/0,255.64,1724.70,35,0
@@ -5307,13 +5325,13 @@ step << Horde
     .goto 1458/0,241.06,1660.12,10,0
     .goto 1458/0,257.08,1623.38,10,0
     .goto 1458/0,244.51,1598.73,15 >> Take the lift down to the Undercity
-step << Horde
+step << Horde !Hunter
     #label UCflightpath1
     .goto 1458/0,266.39,1567.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael Garrett::4551|r
     .fp Undercity >> Get the Undercity flight path
     .target Michael Garrett::4551
-step << Horde
+step << Horde !Hunter
     #ah
     .goto 1458/0,224.300,1648.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Cain::15682|r
@@ -5322,7 +5340,7 @@ step << Horde
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .target Auctioneer Cain::15682
     .zoneskip Undercity,1
-step << Horde
+step << Horde !Hunter
     .goto 1458/0,419.89,1627.54,50,0
     .goto 1458/0,428.52,1597.20,10,0
     .goto 1458/0,439.17,1626.06,10,0
@@ -5334,7 +5352,7 @@ step << Horde
     .goto 1420/0,724.25,1682.66,50,0
     .zone Tirisfal Glades >> Leave Undercity through the Sewers
     .zoneskip Silverpine Forest
-step << Horde
+step << Horde !Hunter
     #label Entersilverpine
     .goto 1420/0,629.36,1553.42
     .zone Silverpine Forest >> Travel to Silverpine Forest
