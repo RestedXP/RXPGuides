@@ -1329,6 +1329,7 @@ step << Horde
     .mob High Order Apprentice::257521
 step << Horde
     .isOnQuest 92517
+    .isQuestNotComplete 92517
     .goto 2521,46.597,38.121
     .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
     .cooldown spell,1259686,>0,1
@@ -1359,6 +1360,7 @@ step
     .mob "Badwind" Bennic::255534
 step << Alliance
     .isOnQuest 92517
+    .subzoneskip 16674,1
     #arrowtext Use |T236219:0|t[Read Ley Line]\nnear the Ley Line
     .goto 2521,50.59,33.51
     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
@@ -1389,28 +1391,27 @@ step
     .goto 2521,48.02,38.41,40,0
     .goto 2521,47.75,36.19,40,0
     .goto 2521,48.93,36.38,40,0
-    >>Kill |cRXP_ENEMY_Highlands Bandits::251918|r. Loot them for the |T5172975:0|t[|cRXP_LOOT_Pilfered Windstone|r].
+    >>Kill |cRXP_ENEMY_Highlands Bandits::251918|r. Loot them for |T5172975:0|t[|cRXP_LOOT_Pilfered Windstone|r].
     .complete 92517,1 --|10/10 Highlands Bandit slain
     .complete 93319,1 --|10/10 Pilfered Windstone
     .mob +Highlands Bandit::251918
+
+--here fix 
 step
     #completewith To Shendalar
-    >>Kill |cRXP_ENEMY_Galestrider::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Kill |cRXP_ENEMY_Galestrider::251661|r |cRXP_WARN_along the way|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
 step
     #completewith To Shendalar
-    >>Kill |cRXP_ENEMY_Prideclaws::251245|r. Loot them for the |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
+    >>Kill |cRXP_ENEMY_Prideclaws::251245|r |cRXP_WARN_along the way|r. Loot them for |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step
-    #completewith next
-    #hidewindow
     #label To Shendalar
-    .train 2550 >>Train |T133971:0|t[Apprentice Cook]
-step
-    #completewith To Shendalar
+    .isQuestAvailable 94411 << Horde
+    .isQuestNotComplete 94413 << Alliance
     .goto 2521,43.86,43.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Zerril Softbreeze::251905|r.
     .vendor 251905 >>Vendor Trash
@@ -1423,7 +1424,6 @@ step
     #requires To Shendalar
     .goto 2521,43.850,43.840
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
-    -- .complete 96646,1 --|Learn cooking from Zerril Softbreeze in Shen'dar Village
     .train 2550 >>Train |T133971:0|t[Apprentice Cook]
     .skipgossipid 137551
     .target Zerril Softbreeze::251905
@@ -1456,8 +1456,8 @@ step << Shaman
 step << Rogue
     .goto 2521,43.16,43.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade::254087|r
-    .train 1757 >> Train |T136189:0|t[Sinister Strike (Rank 2)]
-    .train 1776 >> Train |T132155:0|t[Gouge]
+    .train 1757 >>Train |T136189:0|t[Sinister Strike (Rank 2)]
+    .train 1776 >>Train |T132155:0|t[Gouge]
     .train 1777,1
     .skipgossipid 136810
     .target Miriaan Mistblade::254087
@@ -1497,7 +1497,7 @@ step << Druid
     .xp <6,1
     .money <0.02
     .target Naeluna Swiftmend::254081
-step
+step << Mage/Druid/Shaman
     .goto 2521,44.465,44.966
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teeri Wellwind::251906|r
     .target Teeri Wellwind::251906
@@ -1536,7 +1536,7 @@ step
     .accept 96101 >>Accept The Great Outdoors
 step
     .goto 2521,41.67,44.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raan Wildwind::263664|r.
+    >>Click the macro in the Active Items frame to sit.
     .complete 96101,1 --1/1 Use the /sit emote near the campfire
     -- .emote SIT,263664 -- Feels like this is breaking the quest completion 50% of the time
     .macro Sit,134400 >>/sit
