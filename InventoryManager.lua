@@ -449,7 +449,12 @@ end
 
 function addon.inventoryManager:SetDiscardedItem(id, discarded)
     RXPCData.discardPile = RXPCData.discardPile or {}
-    RXPCData.discardPile[id] = discarded and true or nil
+
+    if discarded == nil then
+        RXPCData.discardPile[id] = nil
+    else
+        RXPCData.discardPile[id] = discarded and true or false
+    end
 end
 
 function addon.inventoryManager:ToggleJunk(id, bag, slot)
