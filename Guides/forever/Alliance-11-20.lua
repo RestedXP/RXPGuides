@@ -1112,6 +1112,7 @@ step << Druid NightElf
     .target Sentinel Glynda Nal'Shea
     .isQuestTurnedIn 4811
 step << Druid NightElf
+    .isOnQuest 4812
     .goto 1439,37.767,44.001
     >>|cRXP_WARN_Use the|r |T134865:0|t[Empty Water Tube] |cRXP_WARN_at the Auberdine moonwell|r
     .complete 4812,1 --Moonwell Water Tube (1)
@@ -2687,16 +2688,22 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
     .accept 2178 >> Accept Easy Strider Living
     .turnin 2178 >> Turn in Easy Strider Living
-    .turnin 6122 >> Turn in The Principal Source << Druid
-    .accept 6123 >> Accept Gathering the Cure << Druid
     .target Alanndarian Nightsong
     .skill cooking,<10,1 -- step only displays if skill is 10 or higher
-    .isQuestAvailable 2178 << Druid
+    .itemcount 5469,5 -- strider meat (5)
 step << Druid
     #optional
+    .isOnQuest 6122
     .goto 1439/1,472.32,6556.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
     .turnin 6122 >> Turn in The Principal Source
+    .accept 6123 >> Accept Gathering the Cure
+    .target Alanndarian Nightsong
+step << Druid
+    #optional
+    .isQuestTurnedIn 6123
+    .goto 1439/1,472.32,6556.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
     .accept 6123 >> Accept Gathering the Cure
     .target Alanndarian Nightsong
 step << !NightElf
