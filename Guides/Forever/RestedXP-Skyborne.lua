@@ -269,8 +269,8 @@ step << Horde Rogue/Horde Warrior
     .goto 2521,43.41,23.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
     *|cRXP_WARN_Skip if you can't afford it|r
-    .collect 2131,1 >>Buy a |T135274:0|t[Shortsword]
-    .collect 1194,1 >>Buy a |T135276:0|t[Bastard Sword]
+    .collect 2131,1 >>Buy and equip a |T135274:0|t[Shortsword] << Rogue
+    .collect 1194,1 >>Buy and equip a |T135276:0|t[Bastard Sword] << Warrior
     .target Dalia the Collector::251363
     -- .money <0.0054 << Rogue
     -- .money <0.0104 << Warrior
@@ -283,8 +283,8 @@ step << Alliance !Hunter !Mage !Druid
 step << Alliance Rogue/Alliance Warrior 
     .goto 2521,43.41,23.51
     #completewith Harvesting Windstones
-    .collect 2131,1 >>Buy a |T135274:0|t[Shortsword] << Rogue
-    .collect 1194,1 >>Buy a |T135276:0|t[Bastard Sword] << Warrior
+    .collect 2131,1 >>Buy and equip a |T135274:0|t[Shortsword] << Rogue
+    .collect 1194,1 >>Buy and equip a |T135276:0|t[Bastard Sword] << Warrior
     -- .money <0.0054 << Rogue
     -- .money <0.0104 << Warrior
 step << Alliance !Hunter !Mage !Druid
@@ -828,7 +828,11 @@ step
     .isOnQuest 92470
     .isQuestComplete 92470
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aetheen of the Gales::251366|r.
-    .turnin 92470,1 >>Turn in Foul Matriarch
+    .turnin 92470,1 >>Turn in Foul Matriarch << Warrior
+    .turnin 92470,2 >>Turn in Foul Matriarch << Druid/Shaman
+    .turnin 92470,3 >>Turn in Foul Matriarch << Mage
+    .turnin 92470,4 >>Turn in Foul Matriarch << Rogue
+    .turnin 92470,5 >>Turn in Foul Matriarch << Hunter
 step
     #completewith Turn in Foul Matriarch
     #ignorecorpse
@@ -853,12 +857,6 @@ step
     .accept 92472 >>Accept The Next Step
     .accept 96638 >>Accept The Adventurer
     .target Aetheen of the Gales::251366
-
-
-
-
-
-
 -- step
 --     .equipslot 16,258882 >>Equip |T135335:0|t[Worn Greatsword]
 step
@@ -883,6 +881,11 @@ step
 step
     #completewith next
     #label Al'Aketh Thugs
+    *|cRXP_WARN_Equip the|r |T135335:0|t[Worn Greatsword] << Warrior
+    *|cRXP_WARN_Equip the|r |T135145:0|t[Novice's Quarterstaff] << Druid/Shaman
+    *|cRXP_WARN_Equip the|r |T135650:0|t[Scout Ranger's Dagger] << Mage
+    *|cRXP_WARN_Equip the|r |T133057:0|t[Peacekeeper's Pickhammer] << Rogue
+    *|cRXP_WARN_Equip the|r |T135503:0|t[Refined Shortbow] << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanaa Nightwind::252095|r.
     .accept 92544 >>Accept Al'Aketh Thugs
     .target Hanaa Nightwind::252095
@@ -1197,6 +1200,7 @@ step << Alliance Mage
     -- .macro Abandon Profession Enchanting >>/run AbandonSkill(C_TradeSkillUI.GetProfessionSkillLineID(Enum.Profession.Enchanting))
 step << Alliance
     .goto 2521,43.02,43.24
+    *|cRXP_WARN_Equip the|r |T135645:0|t[Novice's Practice Wand] << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coriella Calmbreeze::254089|r.
     .complete 93461,2 << Alliance --1/1 Speak with the Innkeeper
     .target Coriella Calmbreeze::254089
@@ -1278,7 +1282,7 @@ step
 step << Shaman
     .goto 2521,44.790,44.168
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r
-    >>|cRXP_BUY_Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy and equip a|r |T135145:0|t[Walking Stick]
     .collect 2495,1,761,1 --Collect Walking Stick (1)
     .target Tephri Thriceforged::257421
     .money <0.0504
@@ -1299,7 +1303,7 @@ step << Warrior
     .subzoneskip 16624,1
     .goto 2521,44.8,44.18
     #arrowtext Talk to\n|cRXP_FRIENDLY_Tephri Thriceforged::257421|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r and buy |T133053:0|t[Wooden Mallet].
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r and buy and equip a |T133053:0|t[Wooden Mallet].
     .collect 2493,1 -- Wooden Mallet
     .money <0.0701
     .target Tephri Thriceforged::257421
@@ -1308,7 +1312,7 @@ step << Rogue
     .isQuestNotComplete 92517
     .subzoneskip 16624,1
     .goto 2521,44.8,44.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r and buy |T135321:0|t[Gladius].
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r and buy and equip a |T135321:0|t[Gladius].
     .collect 2488,1 -- Gladius
     .target Tephri Thriceforged::257421
     .money <0.0536
@@ -1604,6 +1608,7 @@ step
 step
     >>|cRXP_WARN_Remain seated until you gain the Boosted Rest buff|r.
     *|cRXP_WARN_You can craft while you wait without interrupting the process|r.
+    *|cRXP_WARN_Craft|r |T133974:0|t[Charred Wolf Meat] |cRXP_WARN_to increase your Cooking skill. Don't use|r |T132832:0|t[Small Eggs] << Alliance
     *If you don't receive the buff, log out and back in, then try again.
     .complete 96101,2 --Gain the Boosted Rest buff
 step
@@ -1967,7 +1972,7 @@ step
 step << Shaman
     .goto 2521,44.790,44.168
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r
-    >>|cRXP_BUY_Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy and equip a|r |T135145:0|t[Walking Stick]
     .collect 2495,1,761,1 --Collect Walking Stick (1)
     .target Tephri Thriceforged::257421
     .money <0.0504
@@ -2060,7 +2065,7 @@ step
 step << Shaman/Druid
     .goto 2521,44.790,44.168
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tephri Thriceforged::257421|r
-    >>|cRXP_BUY_Buy a|r |T135145:0|t[Walking Stick] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy and equip a|r |T135145:0|t[Walking Stick]
     .collect 2495,1,761,1 --Collect Walking Stick (1)
     .target Tephri Thriceforged::257421
     .money <0.0504
@@ -2202,6 +2207,9 @@ step
     .target Constable Aonda::251523
 step
     .goto 2521,45.25,45.18
+    *|cRXP_WARN_Equip the|r |T454058:0|t[Stained Ritual Dagger] << Mage/Druid/Shaman
+    *|cRXP_WARN_Equip the|r |T7789512:0|t[Curved Scimitar] << Warrior/Rogue
+    *|cRXP_WARN_Equip the|r |T135493:0|t[Windswept Shortbow] << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Danarii Bellowveil::252172|r.
     .accept 92551 >>Accept Stolen Supplies
     .target Danarii Bellowveil::252172
@@ -2544,9 +2552,11 @@ step
     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
     *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
     *|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Druid/Mage
-    *|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] << Rogue/Hunter
+    *|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] and |T132382:0|t[Sharp Arrows] << Hunter
+    *|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows] << Rogue
     .collect 2512,600 << Hunter --Rough Arrow (600)
     .collect 2515,1000 << Hunter --Sharp Arrow (1000)
+    .collect 2515,600 << Rogue --Sharp Arrow (600)
     .target Veena Vericloud::254358
 step
     .goto 2521,45.24,45.19
@@ -2664,26 +2674,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alvarion Windfield::252448|r on the second floor.
     .target Alvarion Windfield::252448
     .accept 92679 >>Accept Blood Tithe
-step << Alliance
-    .subzoneskip 16638,1
-    .isQuestAvailable 93948
-    .goto 2521,63.33,73.65,15,0
-    .goto 2521,63.973,75.095,25 >>Go over the mountain
-    .cooldown spell,1259705,<0,1
-step << Alliance
-    #completewith next
-    .subzoneskip 16638,1
-    .isQuestAvailable 93948
-    .goto 2521,63.33,73.65,15,0
-    .goto 2521,63.973,75.095,30 >>Go over the mountain
-    .cooldown spell,1259705,>0,1
-step << Alliance
-    .isQuestAvailable 93948
-    .goto 2521,63.81,74.32
-    .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
-    .cooldown spell,1259705,>0,1
-    .usespell 1259705
-step << Horde
+step
     .subzoneskip 16638,1
     .isQuestAvailable 93948
     .goto 2521,63.33,73.65,15,0
@@ -3000,21 +2991,30 @@ step
     .accept 92684 >>Accept Ornery Ornery Galestriders
     .accept 92683 >>Accept Flutterfly Dust
     .target Aamelia Windfield::252800
+-- step
+--     #completewith RipBanditsA
+--     >>Spam use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies::251622|r
+--     >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Flutterfly Dust|r.
+--     *|cRXP_WARN_If a Flutterfly doesn't fly away, use the swatter on it again|r
+--     .complete 92683,1 --5/5 Flutterfly Dust
+--     .mob Flutterfly::251622
+--     .use 253666
+-- step
+--     #completewith RipBanditsA
+--     >>Kill |cRXP_ENEMY_Ornery Galestrider::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
+--     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
+--     .mob Ornery Galestrider::251707
+
+step << Alliance
+    .isOnQuest 92682
+    .isQuestNotComplete 92682
+    .subzoneskip 16663,1
+    .goto 2521,45.73,80.86
+    .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
+    .cooldown spell,1259705,>0,1
+    .usespell 1259705
 step
-    #completewith RipBanditsA
-    >>Spam use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies::251622|r
-    >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Flutterfly Dust|r.
-    *|cRXP_WARN_If a Flutterfly doesn't fly away, use the swatter on it again|r
-    .complete 92683,1 --5/5 Flutterfly Dust
-    .mob Flutterfly::251622
-    .use 253666
-step
-    #completewith RipBanditsA
-    >>Kill |cRXP_ENEMY_Ornery Galestrider::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
-    .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
-    .mob Ornery Galestrider::251707
-step
-    #label RipBanditsA
+    -- #label RipBanditsA
     #loop
     .goto 2521,46.164,78.043,30,0
     .goto 2521,48.920,84.441,30,0
@@ -3206,9 +3206,18 @@ step
 --     .goto 2521,45.760,78.419,35,0
 --     >>Kill |cRXP_ENEMY_Bandit Highwaymen|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
 --     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
+-- step << Alliance
+--     .isOnQuest 92682
+--     .isQuestNotComplete 92682
+--     .subzoneskip 16663,1
+--     .goto 2521,63.33,73.65,15,0
+--     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
+--     .cooldown spell,1259705,>0,1
+--     .usespell 1259705
 step << Alliance/Shaman -- version 2
     #completewith next
     #label Bandit Highwaymen
+    *|cRXP_WARN_Equip the|r |T7791298:0|t[Flutterfly Swatter] << Rogue
     >>Kill |cRXP_ENEMY_Bandit Highwaymen::252820|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
     *|cRXP_WARN_Watch for stealthed enemies in the apple orchard|r.
     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
@@ -3385,6 +3394,11 @@ step
     .turnin 92703,3 >>Turn in Deliver the News << Rogue
     .turnin 92703 >>Turn in Deliver the News << Hunter/Mage
     .target Alvarion Windfield::252448
+step
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T134435:0|t[Planting Shovel] << Warrior/Shaman
+    +|cRXP_WARN_Equip the|r |T133057:0|t[Roofing Hammer] << Druid
+    +|cRXP_WARN_Equip the|r |T134520:0|t[Trusty Wrench] << Rogue
 step << Alliance
     #completewith Turn in The Missing Scholar
     >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
@@ -3480,6 +3494,7 @@ step << Hunter Alliance
     .target Anteleriaa Cloudgaze::252390
 step << Alliance
     #label Turn in The Missing Scholar
+    *|cRXP_WARN_Dual Wield the|r |T134520:0|t[Trusty Wrench] |cRXP_WARN_and|r |T7791298:0|t[Flutterfly Swatter] << Rogue
     .goto 2521,66.26,79.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dondallion Whisperwind::253204|r.
     .turnin 92850 >>Turn in The Missing Scholar
@@ -3509,7 +3524,7 @@ step << Horde Hunter
     .goto 2521,51.968,73.084,35,0
     .goto 2521,53.126,73.502,20,0
     .goto 2521,51.268,69.758,35,0
-    .use 267272 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Windsong Crawler::254588|r |cRXP_WARN_at max range|r.
+    .use 267272 >>|cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Windsong Crawler::254588|r |cRXP_WARN_at max range|r.
     .complete 94978,1 --Tame a Windsong Crawler
     .mob Windsong Crawler::254588
 step << Horde Hunter
@@ -3710,9 +3725,9 @@ step << Alliance
     .isOnQuest 97968
     .isQuestComplete 97968
     .goto 2521,57.890,75.514
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halassa Fernbreeze::257021|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syriel Nightrain::254345|r.
     .turnin 97968 >>Turn in Camping 101: Herbalism
-    .target Halassa Fernbreeze::257021
+    .target Syriel Nightrain::254345
 step << Mage
     #completewith next
     >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
@@ -3767,7 +3782,7 @@ step << Alliance Hunter
     .goto 2521,54.322,75.080,35,0
     .goto 2521,51.925,80.458,35,0
     .goto 2521,52.920,81.509,35,0
-    .use 264163 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Vuldren::250874|r |cRXP_WARN_at max range|r.
+    .use 264163 >>|cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Vuldren::250874|r |cRXP_WARN_at max range|r.
     .complete 94013,1 --Tame a Vuldren
     .mob Vuldren::250874
     .mob Vuldren Alpha::250874
@@ -3829,13 +3844,13 @@ step << Alliance
     .goto 2521,66.63,79.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
     .turnin 92840 >>Turn in Catching Wind
-    --*Discovery Route(DO NOT DELETE)
     -- .accept 92834 >>Accept Avenged Tenfold
     .accept 92860 >>Accept In Service of Zephras
     .target Elaadrin Evengale::252475
 step << Alliance
     #completewith next
     #label Service of Zephras
+    *|cRXP_WARN_Equip the|r |T7810733:0|t[Bow of Hours] << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist::252383|r.
     .turnin 92860 >>Turn in In Service of Zephras << Alliance
     .turnin 93949 >>Turn in Bugged
@@ -3863,27 +3878,28 @@ step << Alliance
     .accept 93320 >>Accept Tower Defense << Alliance
     .target Valennia Stormfist::252383
 step << Alliance
-    #completewith next
-    .isOnQuest 93320
-    .goto 2521,66.47,76.64,10,0
-    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
-    .cooldown spell,1259416,>0,1
-    .usespell 1259416
-step << Alliance
     .goto 2521,65.956,74.309
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ealaane Nimbuswalker::259012|r.
     .accept 94896 >>Accept Aid For The Refugees
     .accept 94897 >>Accept The Fate of a Loved One
     .target Ealaane Nimbuswalker::259012
-step << Alliance
-    #completewith next
-    >>Kill |cRXP_ENEMY_Al'Aketh Brawler::270201|r.
-    *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
-    .complete 92834,1 --10/10 Al'Aketh Windstone Charm
-    .mob Al'Aketh Healer::254596
-    .mob Al'Aketh Brawler::270201
-    .mob Al'Aketh Preacher::253195
-    .mob Al'Aketh Pillager::253511
+step << Alliance !Druid
+    .isOnQuest 93320
+    .subzoneskip 16638,1
+    .goto 2521,66.47,76.64,10,0
+    .goto 2521,65.36,71.79
+    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+    .cooldown spell,1259416,>0,1
+    .usespell 1259416
+-- step << Alliance
+--     #completewith next
+--     >>Kill |cRXP_ENEMY_Al'Aketh Brawler::270201|r.
+--     *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
+--     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
+--     .mob Al'Aketh Healer::254596
+--     .mob Al'Aketh Brawler::270201
+--     .mob Al'Aketh Preacher::253195
+--     .mob Al'Aketh Pillager::253511
 step << Alliance
     .goto 2521,65.36,71.79,30,0
     .goto 2521,65.76,68.4,30,0
@@ -3893,6 +3909,64 @@ step << Alliance
     .accept 92642 >>Accept Disrupting Logistics
     .accept 92645 >>Accept Breaking the Breaker
     .target Yorana Windyreed::252378
+step << Alliance !Druid
+    #completewith Commander Belguilos2
+    >>Kill |cRXP_ENEMY_Al'Aketh Healers|r, |cRXP_ENEMY_Al'Aketh Brawlers|r, |cRXP_ENEMY_Al'Aketh Preachers|r, and |cRXP_ENEMY_Al'Aketh Pillagers|r.
+    *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
+    .complete 92642,1 --4/4 Al'Aketh Healer slain
+    .mob +Al'Aketh Healer::254596
+    .complete 92642,2 --8/8 Al'Aketh Brawler slain
+    .mob +Al'Aketh Brawler::270201
+    .mob +Al'Aketh Preacher::253195
+    .mob +Al'Aketh Pillager::253511
+step << Alliance
+    #completewith Commander Belguilos2
+    >>Kill |cRXP_ENEMY_Al'Aketh Brawlers|r, |cRXP_ENEMY_Al'Aketh Pillagers|r and |cRXP_ENEMY_Al'Aketh Preacher|r.
+    *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
+    .complete 92834,1 --10/10 Al'Aketh Windstone Charm
+step << Alliance !Druid
+    #label Commander Belguilos2
+    .goto 2521,65.71,65.59,30,0
+    .goto 2521,65.84,65.02,15,0
+    .goto 2521,65.58,65.63
+    >>Kill |cRXP_ENEMY_Commander Belguilos::252666|r on the second floor inside the house.
+    .complete 92645,1 --1/1 Commander Belguilos slain
+    .mob Commander Belguilos::252666
+step << Alliance !Druid
+    #loop
+    .goto 2521,65.34,65.79,40,0
+    .goto 2521,65.43,64.53,40,0
+    .goto 2521,64.46,66.11,40,0
+    .goto 2521,64.71,67.65,40,0
+    .goto 2521,66.59,67.5,40,0
+    >>Kill |cRXP_ENEMY_Al'Aketh Brawler::270201|r and |cRXP_ENEMY_Al'Aketh Healer::254596|r.
+    .complete 92642,1 --4/4 Al'Aketh Healer slain
+    .mob +Al'Aketh Healer::254596
+    .complete 92642,2 --8/8 Al'Aketh Brawler slain
+    .mob +Al'Aketh Brawler::270201
+    .mob +Al'Aketh Preacher::253195
+    .mob +Al'Aketh Pillager::253511
+
+-- step << Alliance !Druid
+--     #loop
+--     .goto 2521,64.15,64.09,45,0
+--     .goto 2521,63.43,62.4,45,0
+--     .goto 2521,62.04,65.1,45,0
+--     .goto 2521,63.4,66.78,45,0
+--     .goto 2521,64.66,65.84,45,0
+--     .goto 2521,65.22,67.8,45,0
+--     >>Kill |cRXP_ENEMY_Al'Aketh Brawlers|r, |cRXP_ENEMY_Al'Aketh Pillagers|r and |cRXP_ENEMY_Al'Aketh Preacher|r.
+--     *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
+--     *Do not kill |cRXP_ENEMY_Al'Aketh Healers|r
+--     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
+--     .mob Al'Aketh Brawler
+--     .mob Al'Aketh Pillager
+--     .mob Al'Aketh Preacher
+
+-- step << Alliance !Druid
+--     >>Kill |cRXP_ENEMY_Al'Aketh Brawlers|r, |cRXP_ENEMY_Al'Aketh Pillagers|r and |cRXP_ENEMY_Al'Aketh Preacher|r.
+--     *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
+--     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
 step << Alliance Druid
     .isOnQuest 92834
     .subzoneskip 17675,1
@@ -3908,14 +3982,11 @@ step << Alliance Druid
     .target Urs'endris::255853
     .turnin 94006 >>Turn in The Great Ursera Spirit
     .accept 94638 >>Accept Strength and Mercy
--- step << Alliance Druid
---deathskip
 step << Alliance Druid
     #completewith next
     >>Kill |cRXP_ENEMY_Al'Akeths|r.
-    --*Discovery Route(DO NOT DELETE)
-    -- *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
-    -- .complete 92834,1 --10/10 Al'Aketh Windstone Charm
+    *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
+    .complete 92834,1 --10/10 Al'Aketh Windstone Charm
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
@@ -3952,8 +4023,6 @@ step << Alliance Druid
     .mob +Al'Aketh Brawler::270201
     .mob +Al'Aketh Preacher::253195
     .mob +Al'Aketh Pillager::253511
-
---*Discovery Route(DO NOT DELETE)
 -- step << Alliance Druid
 --     #loop
 --     .goto 2521,64.15,64.09,45,0
@@ -3969,68 +4038,6 @@ step << Alliance Druid
 --     .mob Al'Aketh Brawler
 --     .mob Al'Aketh Pillager
 --     .mob Al'Aketh Preacher
-
-
-step << Alliance !Druid
-    #completewith next
-    >>Kill |cRXP_ENEMY_Al'Akeths|r.
-    --*Discovery Route(DO NOT DELETE)
-    -- *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
-    -- .complete 92834,1 --10/10 Al'Aketh Windstone Charm
-    .complete 92642,1 --4/4 Al'Aketh Healer slain
-    .mob +Al'Aketh Healer::254596
-    .complete 92642,2 --8/8 Al'Aketh Brawler slain
-    .mob +Al'Aketh Brawler::270201
-    .mob +Al'Aketh Preacher::253195
-    .mob +Al'Aketh Pillager::253511
-step << Alliance !Druid
-    .goto 2521,65.71,65.59,30,0
-    .goto 2521,65.84,65.02,15,0
-    .goto 2521,65.58,65.63
-    >>Kill |cRXP_ENEMY_Commander Belguilos::252666|r on the second floor inside the house.
-    .complete 92645,1 --1/1 Commander Belguilos slain
-    .mob Commander Belguilos::252666
-
---*Discovery Route(DO NOT DELETE)
--- step << Alliance
---     #completewith next
---     >>Kill |cRXP_ENEMY_Al'Aketh Brawlers|r, |cRXP_ENEMY_Al'Aketh Pillagers|r and |cRXP_ENEMY_Al'Aketh Preacher|r.
---     *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
---     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
-
-
-step << Alliance !Druid
-    #loop
-    .goto 2521,65.34,65.79,40,0
-    .goto 2521,65.43,64.53,40,0
-    .goto 2521,64.46,66.11,40,0
-    .goto 2521,64.71,67.65,40,0
-    .goto 2521,66.59,67.5,40,0
-    >>Kill |cRXP_ENEMY_Al'Aketh Brawler::270201|r and |cRXP_ENEMY_Al'Aketh Healer::254596|r.
-    .complete 92642,1 --4/4 Al'Aketh Healer slain
-    .mob +Al'Aketh Healer::254596
-    .complete 92642,2 --8/8 Al'Aketh Brawler slain
-    .mob +Al'Aketh Brawler::270201
-    .mob +Al'Aketh Preacher::253195
-    .mob +Al'Aketh Pillager::253511
-
---*Discovery Route(DO NOT DELETE)
--- step << Alliance !Druid
---     #loop
---     .goto 2521,64.15,64.09,45,0
---     .goto 2521,63.43,62.4,45,0
---     .goto 2521,62.04,65.1,45,0
---     .goto 2521,63.4,66.78,45,0
---     .goto 2521,64.66,65.84,45,0
---     .goto 2521,65.22,67.8,45,0
---     >>Kill |cRXP_ENEMY_Al'Aketh Brawlers|r, |cRXP_ENEMY_Al'Aketh Pillagers|r and |cRXP_ENEMY_Al'Aketh Preacher|r.
---     *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
---     *Do not kill |cRXP_ENEMY_Al'Aketh Healers|r
---     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
---     .mob Al'Aketh Brawler
---     .mob Al'Aketh Pillager
---     .mob Al'Aketh Preacher
-
 step << Alliance
     .goto 2521,69.61,67.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yorana Windyreed::252378|r.
@@ -4069,11 +4076,13 @@ step << Alliance
     .target Valennia Stormfist::252383
 step << Alliance
     .goto 2521,66.17,76.50
+    +|cRXP_WARN_Equip the|r |T7792097:0|t[Honed Greathammer] << Alliance Warrior
+    +|cRXP_WARN_Equip the|r |T7792229:0|t[Quickblade's Dagger] << Alliance Rogue
+    +|cRXP_WARN_Equip the|r |T7798447:0|t[Balanced Quarterstaff] << Alliance Hunter/Alliance Mage/Alliance Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talaanis Shadowsong::252476|r.
     .turnin 92881 >>Turn in The High Elder's Request
     .accept 92643 >>Accept The Turncoat
     .target Talaanis::252476
-
 
 --*Discovery Route(DO NOT DELETE)
 -- step << Alliance
