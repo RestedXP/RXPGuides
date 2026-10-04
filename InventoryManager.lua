@@ -1213,6 +1213,16 @@ function addon.inventoryManager.bagManager:HookButton(button, source)
     if type(bag) ~= "number" or type(slot) ~= "number" or bag < BACKPACK_CONTAINER or
         bag > NUM_BAG_FRAMES or slot < 1 then return end
 
+    if addon.inventoryManager.bagFrame and addon.inventoryManager.bagFrame[bag] then
+        addon.inventoryManager.bagFrame[bag][slot] = button
+    end
+
+    if addon.settings.profile.showJunkIcon then
+        addon.inventoryManager:UpdateBagButton(button, bag, slot)
+    else
+        addon.inventoryManager:HideJunkIcon(button)
+    end
+
     if addon.inventoryManager.hookedFrames[button] then
         if source then addon.inventoryManager.hookedFrames[button] = source end
         return
