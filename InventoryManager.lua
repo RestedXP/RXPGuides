@@ -750,8 +750,6 @@ function addon.inventoryManager:CatalogInventory()
         end
     end
 
-    self.bagManager:UpdateAllBags()
-
     return itemList
 end
 
