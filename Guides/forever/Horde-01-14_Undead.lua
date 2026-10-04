@@ -997,6 +997,7 @@ step
     >>Talk to |cRXP_FRIENDLY_Deathguard Kristof|r
     >>|cRXP_WARN_Select "I need a report for Executor Zygand"|r
     .complete 99141,2 --|1/1 Kristof's Report
+    .skipgossipid 142730
     .target Deathguard Kristof
 step
     .goto 1420/0,77.200,2026.700
@@ -1187,7 +1188,7 @@ step
     .accept 426 >>Accept The Mills Overrun
     .complete 99141,1 --|1/1 Dillinger's Report
     .target Deathguard Dillinger
-    --.gossipoption 142723
+    .skipgossipid 142723
 step
     .goto 1420/0,346.94,2258.950
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|cRXP_FRIENDLY_Johaan|r
@@ -3085,7 +3086,7 @@ step << Paladin
     --Paladin Ressurrect chain route
 
 step << Paladin
-    #completewith 
+    #completewith
     .goto 1420/0,235.32,1883.89
     .zone Tirisfal Glades >> Exit Undercity
     .zoneskip Tirisfal Glades
@@ -3145,7 +3146,7 @@ step << Paladin
 step << Paladin
     #completewith next
     .cast 8593 >>|cRXP_WARN_Use the|r |T133439:0|t[Symbol of Life] |cRXP_WARN_on|r |cRXP_FRIENDLY_Deathguard Falgan|r
-    .use 6866 
+    .use 6866
     .target Deathguard Falgan
 step << Paladin
     .goto 1420/0,-885.200,2399.800
@@ -3898,7 +3899,7 @@ step << Undead Rogue
     .isQuestTurnedIn 1886
 step
     .goto 1458/0,310.900,1528.100
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alessandro Luca|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alessandro Luca|r
     .accept 97891 >>Accept Prompt Potion Runner
     .target Alessandro Luca
 step
