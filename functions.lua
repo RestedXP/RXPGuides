@@ -8491,3 +8491,16 @@ function addon.functions.dualspec(self, text, skipstep)
         end
     end
 end
+
+events.showwhiledead = {"PLAYER_ALIVE", "PLAYER_UNGHOST"}
+function addon.functions.showwhiledead(self)
+    if type(self) == "string" then -- on parse
+        return {textOnly = true}
+    end
+
+    local step = self.element.step
+    if step.active and not addon.isHidden and not UnitIsDeadOrGhost("player") then
+        step.completed = true
+        addon.updateSteps = true
+    end
+end
