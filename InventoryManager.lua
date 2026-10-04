@@ -1156,14 +1156,16 @@ function addon.inventoryManager.bagManager:HookButtonsInFrame(frame, source, dep
     if not frame or not frame.GetChildren then return end
 
     local children = {frame:GetChildren()}
-    local child, bag, slot
+    local child, bag, slot, objectType
     depth = depth or 5
 
     for index = 1, #children do
         child = children[index]
         bag, slot = self:GetButtonLocation(child)
+        objectType = child.GetObjectType and child:GetObjectType()
 
-        if type(bag) == "number" and type(slot) == "number" and bag >= BACKPACK_CONTAINER and
+        if (objectType == "Button" or objectType == "CheckButton") and type(bag) == "number" and
+            type(slot) == "number" and bag >= BACKPACK_CONTAINER and
             bag <= NUM_BAG_FRAMES and slot > 0 then
             self:HookButton(child, source)
         end
