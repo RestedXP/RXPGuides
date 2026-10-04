@@ -931,8 +931,6 @@ function addon.inventoryManager.bagManager:Setup()
     end
 
     self:HookBags()
-
-    self.initialized = true
 end
 
 addon.inventoryManager.bagManager.adapters = {
