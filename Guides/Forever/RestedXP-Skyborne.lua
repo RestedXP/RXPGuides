@@ -29,7 +29,6 @@ step
     .goto 2521,43.44,24.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight::251368|r.
     .accept 92462 >>Accept Infestation Investigation
-    -- .useitem 264908
     .target Elatrell Featherlight::251368
 step << !Shaman
     #hidewindow
@@ -89,32 +88,6 @@ step << Warrior
     .money <0.0010
     .xp <1,1
     .train 5242,1
--- old
--- step
---     #completewith next
---     #label Anchors of Zephras
---     .goto 2521,43.53,24.34,20,0
---     .goto 2521,43.83,24.13,10,0
---     .goto 2521,43.78,24.38,5,0
---     .goto 2521,43.66,24.25,5,0
---     .goto 2521,43.75,24.09,5,0
---     .goto 2521,43.84,24.3,5,0
---     .goto 2521,43.66,24.23,5,0
---     .goto 2521,43.83,24.18,5,0
---     .goto 2521,43.83,24.32,8,0
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye|r.
---     .accept 94414 >>Accept The Anchors of Zephras
---     .target Halaan Hawk-Eye
--- step
---     #completewith Anchors of Zephras
---     .goto 2521,43.83,23.66,17 >>Enter the building and climb the spiral staircase.
--- step
---     #requires Anchors of Zephras
---     .goto 2521,43.80,24.05
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye|r at the top of the tower.
---     .accept 94414 >>Accept The Anchors of Zephras
---     .target Halaan Hawk-Eye
-
 --Quest Bugged readd next week
 -- step
 --     .goto 2521,43.53,24.34,20,0
@@ -857,8 +830,6 @@ step
     .accept 92472 >>Accept The Next Step
     .accept 96638 >>Accept The Adventurer
     .target Aetheen of the Gales::251366
--- step
---     .equipslot 16,258882 >>Equip |T135335:0|t[Worn Greatsword]
 step
     #completewith next
     #label Aggressive Encroachment2
@@ -1114,39 +1085,6 @@ step << Horde Rogue
     .target Miriaan Mistblade::254087
     .money <0.01
     .xp <6,1
--- step << Horde Mage
---     .isOnQuest 92514
---     .subzoneskip 16624,1
---     .goto 2521,43.24,43.18
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r and buy |T133942:0|t[Copper Rod], |T132841:0|t[Mote of Magic] and |T135435:0|t[Simple Wood].
---     .collect 6217,1
---     .collect 247786,3
---     .collect 4470,1
---     .skipgossipid 137558
---     .target Nasalanna Windsinger::257020
---     .money <0.0172
--- step << Horde Mage
---     .isOnQuest 92514
---     .subzoneskip 16624,1
---     .goto 2521,43.24,43.18
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r
---     .train 7411 >>Train |T136189:0|t[Enchanting] |cRXP_WARN_for an immediate wand|r
---     .skipgossipid 137559
---     .target Nasalanna Windsinger::257020
--- step << Horde Mage
---     .isOnQuest 92514
---     .train 7411,3
---     >>Use the |T135225:0|t[Runed Copper Rod] macro below, then use the |T135645:0|t[Novice's Practice Wand] macro
---     *Afterward, enchant your bracers with Stamina if you have a pair equipped
---     .collect 6218,1
---     .collect 247789,1
---     .macro Runed Copper Rod,135225 >>/cast Enchanting\n/run C_TradeSkillUI.CraftRecipe(7421,1)
---     .macro Novice's Practice Wand,135645 >>/run C_TradeSkillUI.CraftRecipe(1245321,1)
--- step << Horde Mage
---     #completewith next
---     .train 7411,3
---     +Abandon Enchanting or continue with it.
---     -- .macro Abandon Profession Enchanting >>/run AbandonSkill(C_TradeSkillUI.GetProfessionSkillLineID(Enum.Profession.Enchanting))
 step << Alliance Rogue
     .goto 2521,43.16,43.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miriaan Mistblade::254087|r
@@ -1197,7 +1135,6 @@ step << Alliance Mage
     #completewith next
     .train 7411,3
     +Abandon Enchanting or continue with it.
-    -- .macro Abandon Profession Enchanting >>/run AbandonSkill(C_TradeSkillUI.GetProfessionSkillLineID(Enum.Profession.Enchanting))
 step << Alliance
     .goto 2521,43.02,43.24
     *|cRXP_WARN_Equip the|r |T135645:0|t[Novice's Practice Wand] << Mage
@@ -3666,7 +3603,6 @@ step << Alliance !Hunter
     .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
-
 -- Deathskip past 10; might need later
 -- step << Alliance --The correct step; the beta issue still needs to be fixed.
 --     .subzoneskip 16638
@@ -3680,7 +3616,6 @@ step << Alliance !Hunter
 --     .skipgossipid 98031
 --     .subzoneskip 16638,1
 --     .target Spirit Healer
-
 step << Alliance
     .train 2366,3
     #completewith next
@@ -4192,9 +4127,6 @@ step << Horde
 --     .goto 2521,50.642,44.296,35,0
 --     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
 --     .complete 93737,3 --|1/1 Obtain Enchanted Gyrozephyr from Windsong Lake
-
-
-
 step << Warrior Horde
     #completewith next
     #label Skybreaker Bulwark
@@ -4641,14 +4573,11 @@ step << Warrior Alliance
     .target Seena Skybreaker::252377
     .money <0.45
     .xp <14,1
-
---*Leveling Route(DO NOT DELETE) 
 step << Alliance 
     .goto 2521,60.64,72.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyalah Brightfire::257006|r inside the house.
     .turnin 93317 >>Turn in Crab Season
     .target Nyalah Brightfire::257006
-
 step << Alliance Rogue
     .goto 2521,59.9,72.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eltheen Nightbreeze::252379|r.
