@@ -3746,6 +3746,7 @@ step << Alliance
     .goto 2521,66.63,79.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
     .turnin 92840 >>Turn in Catching Wind
+    .accept 92834 >>Accept Avenged Tenfold
     .accept 92860 >>Accept In Service of Zephras
     .target Elaadrin Evengale::252475
 step << Alliance
@@ -3789,9 +3790,18 @@ step << Alliance !Druid
     .subzoneskip 16638,1
     .goto 2521,66.47,76.64,10,0
     .goto 2521,65.36,71.79
-    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the waypoint location.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
+step << Alliance
+    #completewith next
+    >>Kill |cRXP_ENEMY_Al'Aketh Brawler::270201|r.
+    *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
+    .complete 92834,1 --10/10 Al'Aketh Windstone Charm
+    .mob Al'Aketh Healer::254596
+    .mob Al'Aketh Brawler::270201
+    .mob Al'Aketh Preacher::253195
+    .mob Al'Aketh Pillager::253511
 step << Alliance
     .goto 2521,65.36,71.79,30,0
     .goto 2521,65.76,68.4,30,0
@@ -3801,6 +3811,14 @@ step << Alliance
     .accept 92642 >>Accept Disrupting Logistics
     .accept 92645 >>Accept Breaking the Breaker
     .target Yorana Windyreed::252378
+step << Alliance !Druid
+    #completewith Commander Belguilos2
+    >>Kill |cRXP_ENEMY_Al'Aketh Brawlers::270201|r, |cRXP_ENEMY_Al'Aketh Preachers::253195|r, and |cRXP_ENEMY_Al'Aketh Pillagers::253511|r.
+    *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
+    .complete 92834,1 --10/10 Al'Aketh Windstone Charm
+    .mob Al'Aketh Brawler::270201
+    .mob Al'Aketh Preacher::253195
+    .mob Al'Aketh Pillager::253511
 step << Alliance !Druid
     #completewith Commander Belguilos2
     >>Kill |cRXP_ENEMY_Al'Aketh Healers|r and |cRXP_ENEMY_Al'Aketh Brawlers|r.
@@ -3816,6 +3834,14 @@ step << Alliance !Druid
     >>Kill |cRXP_ENEMY_Commander Belguilos::252666|r on the second floor inside the house.
     .complete 92645,1 --1/1 Commander Belguilos slain
     .mob Commander Belguilos::252666
+step << Alliance !Druid
+    #completewith next
+    >>Kill |cRXP_ENEMY_Al'Aketh Brawlers::270201|r, |cRXP_ENEMY_Al'Aketh Preachers::253195|r, and |cRXP_ENEMY_Al'Aketh Pillagers::253511|r.
+    *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
+    .complete 92834,1 --10/10 Al'Aketh Windstone Charm
+    .mob Al'Aketh Brawler::270201
+    .mob Al'Aketh Preacher::253195
+    .mob Al'Aketh Pillager::253511
 step << Alliance !Druid
     #loop
     .goto 2521,65.34,65.79,40,0
@@ -3846,10 +3872,16 @@ step << Alliance Druid
     .turnin 94006 >>Turn in The Great Ursera Spirit
     .accept 94638 >>Accept Strength and Mercy
 step << Alliance Druid
-    #completewith next
-    >>Kill |cRXP_ENEMY_Al'Akeths|r.
+    #completewith Commander Belguilos Druid
+    >>Kill |cRXP_ENEMY_Al'Aketh Brawlers::270201|r, |cRXP_ENEMY_Al'Aketh Preachers::253195|r, and |cRXP_ENEMY_Al'Aketh Pillagers::253511|r.
     *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
+    .mob Al'Aketh Brawler::270201
+    .mob Al'Aketh Preacher::253195
+    .mob Al'Aketh Pillager::253511
+step << Alliance Druid
+    #completewith Commander Belguilos Druid
+    >>Kill |cRXP_ENEMY_Al'Akeths|r.
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
@@ -3872,6 +3904,14 @@ step << Alliance Druid
     >>Kill |cRXP_ENEMY_Commander Belguilos::252666|r on the second floor inside the house.
     .complete 92645,1 --1/1 Commander Belguilos slain
     .mob Commander Belguilos::252666
+step << Alliance Druid
+    #completewith next
+    >>Kill |cRXP_ENEMY_Al'Aketh Brawlers::270201|r, |cRXP_ENEMY_Al'Aketh Preachers::253195|r, and |cRXP_ENEMY_Al'Aketh Pillagers::253511|r.
+    *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
+    .complete 92834,1 --10/10 Al'Aketh Windstone Charm
+    .mob Al'Aketh Brawler::270201
+    .mob Al'Aketh Preacher::253195
+    .mob Al'Aketh Pillager::253511
 step << Alliance Druid
     #loop
     .goto 2521,65.34,65.79,40,0
@@ -4362,7 +4402,7 @@ step
     .mob Shadowgale Shriekling::256092
 step
     #completewith Unnerving Silence
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Seeds|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Seeds|r |cRXP_WARN_especially around trees|r.
     .complete 93160,1 --8/8 Zephyrseed
 step
     .goto 2521,61.76,39.14
@@ -4373,11 +4413,15 @@ step
     .accept 94486 >>Accept Feathers for Binding << Alliance
     .accept 94487 >>Accept Unwanted and Unworthy 
 step << Alliance
+    #completewith Unnerving Silence
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tear Moss|r |cRXP_WARN_on trees|r.
+    .complete 94485,1 --8/8 Lady's Tear Moss
+step << Alliance
     #completewith next
     >>Kill |cRXP_ENEMY_Al'Aketh Footsoldiers::252665|r and |cRXP_ENEMY_Al'Aketh Stormchasers::252664|r. 
-    *Loot them for |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r] and |T133856:0|t[|cRXP_LOOT_Al'Aketh Cultist's Ears|r].
+    *Loot them for |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r] and |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
     .complete 94487,1 --10/10 Bloody Heirloom
-    --.complete 93165,1 --10/10 Al'Aketh Cultist's Ear
+    .complete 92834,1 --10/10 Al'Aketh Windstone Charm
     .mob Al'Aketh Footsoldier::252665
     .mob Al'Aketh Stormchaser::252664
 step << Alliance
@@ -4388,14 +4432,20 @@ step << Alliance
 step
     #label Unnerving Silence
     #loop
-    .goto 2521,62.36,35.89,40,0
-    .goto 2521,62.78,37.75,30,0
-    .goto 2521,63.98,37.75,40,0
-    .goto 2521,65.01,38.9,40,0
-    .goto 2521,65.66,36.13,40,0
+    .goto 2521,63.04,37.12,40,0
+    .goto 2521,61.99,35.62,30,0
+    .goto 2521,61.97,36.71,30,0
+    .goto 2521,62.47,37.3,40,0
+    .goto 2521,62.96,39.3,40,0
+    .goto 2521,63.33,38.01,35,0
+    .goto 2521,64.14,39.18,40,0
+    .goto 2521,65.7,36.82,40,0
+    .goto 2521,65.63,35.57,40,0
     >>Kill |cRXP_ENEMY_Al'Aketh Footsoldiers|r and |cRXP_ENEMY_Al'Aketh Stormchaser|r. 
-    *Loot them for |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r] and |T133856:0|t[|cRXP_LOOT_Al'Alketh Cultist's Ears|r].
+    *Loot them for |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r], |T133856:0|t[|cRXP_LOOT_Al'Alketh Cultist's Ears|r] and |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r]. << Alliance
+    *Loot them for |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r]. << Horde
     .complete 94487,1 --10/10 Bloody Heirloom
+    .complete 92834,1 << Alliance --10/10 Al'Aketh Windstone Charm
     .complete 93165,1 << Alliance --10/10 Al'Alketh Cultist's Ear
     .mob Al'Aketh Footsoldier::252665
     .mob Al'Aketh Stormchaser::252664
@@ -4403,7 +4453,6 @@ step
     #hidewindow
     #completewith ToHermit << Alliance
     #completewith ForestHollowsA << Horde
-    #loop
     .goto 2521,62.83,38.25,35,0
     .goto 2521,62.08,36.7,35,0
     .goto 2521,61.17,35.44,35,0
@@ -4415,6 +4464,9 @@ step
     .goto 2521,58.53,39.85,35,0
     .goto 2521,57.94,39.99,35,0
     .goto 2521,57.36,40.86,35,0
+    .goto 2521,57.24,42.8,35,0
+    .goto 2521,55.38,42.17,35,0
+    .goto 2521,54.55,42.17,35,0
     .goto 2521,55.59,39.23,35,0
     +1
 step
@@ -4429,19 +4481,19 @@ step
     .mob +Shadowgale Shriekling::256092
 step << Alliance
     #completewith ToHermit
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Seeds|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Seeds|r |cRXP_WARN_especially around trees|r.
     .complete 93160,1 --8/8 Zephyrseed
 step << Alliance
     #completewith ToHermit
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tear Moss|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tear Moss|r |cRXP_WARN_on trees|r.
     .complete 94485,1 --8/8 Lady's Tear Moss
 step << Horde
     #completewith ForestHollowsB
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tear Moss|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tear Moss|r |cRXP_WARN_on trees|r.
     .complete 94485,1 --8/8 Lady's Tear Moss
 step << Horde
     #label ForestHollowsA
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Seeds|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Seeds|r |cRXP_WARN_especially around trees|r.
     .complete 93160,1 --8/8 Zephyrseed
 step << Horde
     #label ForestHollowsB
@@ -4578,8 +4630,7 @@ step
     #completewith next
     #label Wounds of Betrayal
     .goto 2521,65.23,34.53,30,0
-    .goto 2521,64.2,34.32,30,0
-    .goto 2521,63.57,36.3,30,0
+    .goto 2521,63.93,34.5,15,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elegael Thornpaw::257944|r.
     .turnin 94489 >>Turn in The Wounds of Betrayal
     .target Elegael Thornpaw::257944
@@ -4625,8 +4676,19 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyalah Brightfire::257006|r inside the house.
     .turnin 93317 >>Turn in Crab Season
     .target Nyalah Brightfire::257006
+-- step << Alliance Rogue
+--     .goto 2521,59.9,72.48
+--     *|cRXP_WARN_Use the Interact Key through the Wall|r
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eltheen Nightbreeze::252379|r.
+--     .train 1766 >>Train |T132219:0|t[Kick]
+--     .train 3127 >>Train |T132269:0|t[Parry]
+--     .skipgossipid 136810
+--     .target Eltheen Nightbreeze::252379
+--     .money <0.16
+--     .xp <12,1
 step << Alliance Rogue
-    .goto 2521,59.9,72.48
+    .goto 2521,59.55,73.3,30,0
+    .goto 2521,59.91,72.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eltheen Nightbreeze::252379|r.
     .train 1766 >>Train |T132219:0|t[Kick]
     .train 3127 >>Train |T132269:0|t[Parry]
@@ -4714,11 +4776,13 @@ step << Alliance
     #requires Talaanis Shadowsong
     .goto 2521,66.17,76.52
     >>|cRXP_WARN_Wait for the Roleplay|r.
+    *Cook |T132834:0|t[Herb Baked Eggs] and |T133974:0|t[Charred Wolf Meat] if you have the required materials.
+    *Otherwise, craft any items you can using your other professions.
     .complete 94568,1 --1/1 Learn what you can from the crystal
     .target Talaanis Shadowsong::252476
 step << Alliance
     .goto 2521,66.17,76.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talaanis Shadowsong::252476|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talaanis Shadowsong::252476|r |cRXP_WARN_next to you|r.
     .turnin 94568 >>Turn in The Cult's True Plans
     .accept 92640 >>Accept Desperate Times
     .target Talaanis Shadowsong::252476
@@ -4731,9 +4795,10 @@ step << Alliance
     .skipgossipid 137095
 step << Alliance
     .isOnQuest 92640
+    .isQuestNotComplete 92640,1
     .goto 2521,66.49,76.64,8,0
     .goto 2521,63.33,78.16
-    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the waypoint location.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 step << Alliance
@@ -4759,6 +4824,16 @@ step << Alliance
     .skipgossipid 136547
     .skipgossipid 136546
     .target Elaadrin Evengale::252475
+step << Alliance
+    .goto 2521,66.628,79.936
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
+    .turnin 92834 >>Turn in Avenged Tenfold
+    .target Elaadrin Evengale::252475
+step << Alliance
+    .goto 2521,66.34,79.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iaadaria Bitterwind::253004|r.
+    .turnin 92741 >>Turn in Unwelcome Visitors
+    .target Iaadaria Bitterwind::253004
 step << Alliance
     #completewith next
     #label Prepare for Battle
@@ -4796,27 +4871,11 @@ step << Alliance
     .goto 2521,63.99,74.1,40,0
     .goto 2521,61.15,70.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valennia Stormfist::253844|r.
-    .target Valennia Stormfist::253844
+    .complete 93065,1 --|1/1 Find Valennia on the Road
     .turnin 93065 >>Turn in Prepare for Battle
-step << Alliance Mage
-    .goto 2521,65.4,80.22,10,0
-    .goto 2521,65.91,80.58
-    >>Enter the large stone hall beside the blacksmith, continue into the upper chamber, then turn right.
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anathamaas Aetherwind::252373|r.
-    .train 145 >>Train |T135812:0|t[Fireball (Rank 3)]
-    .train 604 >>Train |T136006:0|t[Dampen Magic]
-    .train 597 >>Train |T133952:0|t[Conjure Food (Rank 2)]
-    .train 130 >>Train |T135992:0|t[Slow Fall]
-    .skipgossipid 136807
-    .target Anathamaas Aetherwind::252373
-    .money <0.24
-    .xp <12,1
-step << Alliance
-    .goto 2521,66.34,79.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iaadaria Bitterwind::253004|r.
-    .turnin 92741 >>Turn in Unwelcome Visitors
-    .target Iaadaria Bitterwind::253004
+    .target Valennia Stormfist::253844
 step
+    #completewith next
     >>Abandon any remaining "Camping 101" quest.
     .abandon 97970 >>Abandon Camping 101: Mining
     .abandon 97971 >>Abandon Camping 101: Skinning
@@ -4830,6 +4889,19 @@ step
     .abandon 98286 >>Abandon Camping 101: Enchanting
     .abandon 97969 >>Abandon Camping 101: Leatherworking
     .abandon 98285 >>Abandon Camping 101: Engineering
+step << Alliance Mage
+    .goto 2521,65.4,80.22,10,0
+    .goto 2521,65.91,80.58
+    >>Enter the large stone hall beside the blacksmith, continue into the upper chamber, then turn right.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anathamaas Aetherwind::252373|r.
+    .train 145 >>Train |T135812:0|t[Fireball (Rank 3)]
+    .train 604 >>Train |T136006:0|t[Dampen Magic]
+    .train 597 >>Train |T133952:0|t[Conjure Food (Rank 2)]
+    .train 130 >>Train |T135992:0|t[Slow Fall]
+    .skipgossipid 136807
+    .target Anathamaas Aetherwind::252373
+    .money <0.24
+    .xp <12,1
 step << Alliance
     #completewith next
     +|cRXP_WARN_The zeppelin can arrive anytime within its 6-minute cycle|r. prioritize cooking and gaining campfire buffs for later.
