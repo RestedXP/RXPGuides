@@ -1065,7 +1065,9 @@ function addon.inventoryManager.bagManager:UpdateBag(frame, name, pattern)
             slot = button:GetID()
             addon.inventoryManager.bagFrame[bag][slot] = button
 
-            if self.activeAdapter.clickHook and button.OnClick then self:HookButton(button) end
+            if self.activeAdapter.clickHook and button.GetScript and button:GetScript("OnClick") then
+                self:HookButton(button)
+            end
             if addon.settings.profile.showJunkIcon then
                 addon.inventoryManager:UpdateBagButton(button, bag, slot)
             end
