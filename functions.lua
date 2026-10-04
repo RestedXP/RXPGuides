@@ -15,7 +15,7 @@ local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
 local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo and addon.GetSpellInfo or _G.GetSpellInfo
 local GetSpellCooldown = addon.GetSpellCooldown
 local UnitName = addon.GetUnitName
-local BANK_CONTAINER = _G.BANK_CONTAINER or Enum.BagIndex.Bank
+local BANK_CONTAINER = _G.BANK_CONTAINER or Enum.BagIndex.CharacterBankTab_1
 
 local GetMerchantItemInfo = function(...)
     local GMII = C_MerchantFrame and C_MerchantFrame.GetItemInfo or _G.GetMerchantItemInfo
@@ -5174,8 +5174,18 @@ function addon.PutItemInBank(bagContents)
     local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if CursorHasItem() and isBankOpened then
         local bank = {BANK_CONTAINER}
-        for i = _G.NUM_BAG_SLOTS + 1, _G.NUM_BAG_SLOTS + _G.NUM_BANKBAGSLOTS do
-            tinsert(bank, i)
+        if Enum.BagIndex.CharacterBankTab_1 then
+            local i = 1
+            local tab = Enum.BagIndex["CharacterBankTab_" .. i]
+            while tab do
+                tinsert(bank, tab)
+                i = i + 1
+                tab = Enum.BagIndex["CharacterBankTab_" .. i]
+            end
+        else
+            for i = _G.NUM_BAG_SLOTS + 1, _G.NUM_BAG_SLOTS + _G.NUM_BANKBAGSLOTS do
+                tinsert(bank, i)
+            end
         end
 
         if not bagContents then bagContents = {} end
@@ -5312,9 +5322,19 @@ end
 function addon.GoThroughBank(itemList, func)
 
     local bank = {BANK_CONTAINER}
-    for i = _G.NUM_BAG_SLOTS + 1, _G.NUM_BAG_SLOTS + _G.NUM_BANKBAGSLOTS do
-        tinsert(bank, i)
-    end
+        if Enum.BagIndex.CharacterBankTab_1 then
+            local i = 1
+            local tab = Enum.BagIndex["CharacterBankTab_" .. i]
+            while tab do
+                tinsert(bank, tab)
+                i = i + 1
+                tab = Enum.BagIndex["CharacterBankTab_" .. i]
+            end
+        else
+            for i = _G.NUM_BAG_SLOTS + 1, _G.NUM_BAG_SLOTS + _G.NUM_BANKBAGSLOTS do
+                tinsert(bank, i)
+            end
+        end
 
     local bagContents = {}
 
