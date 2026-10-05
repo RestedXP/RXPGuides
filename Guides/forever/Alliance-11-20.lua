@@ -3282,16 +3282,6 @@ step << Hunter
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_Click here for a video guide|r
 step
     #completewith CompleteThistleBears
---  .goto Darkshore,33.85,80.92,45,0
---  .goto Darkshore,32.17,82.92,45,0
---  .goto Darkshore,35.41,78.96,45,0
---  .goto Darkshore,35.68,75.23,45,0
---  .goto Darkshore,35.03,72.19,45,0
---  .goto Darkshore,35.68,75.23,45,0
---  .goto Darkshore,35.41,78.96,45,0
---  .goto Darkshore,32.17,82.92,45,0
---  .goto Darkshore,33.85,80.92,45,0
---  .goto Darkshore,35.03,72.19
     >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Fine Crab Chunks|r
     >>Be careful as |cRXP_ENEMY_Reef Crawlers|r can cast |T132155:0|t[Muscle Tear] an instant attack dealing 30-55 damage
     .complete 1138,1 -- Fine Crab Chunks (6)
