@@ -4,6 +4,7 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 << Human Mage
 #name 1-10 艾尔文森林 法师 AoE攻略
@@ -811,6 +812,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 << Gnome Mage
 #name 1-10 丹莫罗 法师 AoE
@@ -1461,6 +1463,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 << Alliance Mage
 #name 10-12 洛克莫丹 法师 AoE攻略

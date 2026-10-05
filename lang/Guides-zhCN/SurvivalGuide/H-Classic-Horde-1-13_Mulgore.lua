@@ -6,6 +6,7 @@ if faction == "Alliance" then return end
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#forever
 #tbc
 #era/som--h
 << Horde
@@ -428,6 +429,7 @@ step
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#forever
 #tbc
 #era/som--h
 << Horde

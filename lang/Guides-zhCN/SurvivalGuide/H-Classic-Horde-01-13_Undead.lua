@@ -5,6 +5,7 @@ if faction == "Alliance" then return end
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#forever
 #tbc
 << Horde
 #name 1-6级 亡灵
@@ -632,6 +633,7 @@ step
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#forever
 #tbc
 << Horde
 #name 6-13级 亡灵

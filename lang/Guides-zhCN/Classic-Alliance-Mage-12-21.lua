@@ -4,6 +4,7 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 << Alliance Mage
 #name 12-18 黑海岸 法师 AoE攻略
@@ -799,6 +800,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 << Alliance Mage
 #name 18-21 赤脊山 法师 AoE攻略

@@ -2,6 +2,7 @@ if GetLocale() ~= "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#forever
 #tbc
 << Alliance
 #name 18-19级 洛克莫丹

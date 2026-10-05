@@ -5,6 +5,7 @@ if faction == "Alliance" then return end
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#forever
 #tbc
 << Horde
 #name 15-19级 贫瘠之地
@@ -2112,6 +2113,7 @@ step
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#forever
 #tbc
 << Horde
 #name 19-23级 石爪山脉/贫瘠之地/灰谷

@@ -2,6 +2,7 @@ if GetLocale() ~= "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#forever
 #tbc
 << Alliance
 #name 11-13级 黑海岸（暗夜精灵）
@@ -535,6 +536,7 @@ step
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#forever
 #tbc
 << Alliance
 #name 13-13级 洛克莫丹（暗夜精灵）

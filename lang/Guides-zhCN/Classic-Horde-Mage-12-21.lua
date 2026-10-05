@@ -4,6 +4,7 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 << Horde Mage
 #name 12-17 贫瘠之地 AOE
@@ -707,6 +708,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 << Horde Mage
 #name 17-21级 石爪山脉/荒芜之地 AoE

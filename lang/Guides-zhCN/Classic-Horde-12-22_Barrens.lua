@@ -4,6 +4,7 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 #xprate <1.99
 << Horde
@@ -3210,6 +3211,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 #xprate <1.99
 << Horde
@@ -6775,6 +6777,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 << Horde
 #xprate >1.99
@@ -10386,6 +10389,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 #xprate >1.99
 << Horde

@@ -8,6 +8,7 @@ if faction == "Horde" then return end
 RXPGuides.RegisterGuide([[
 #xprate <1.5
 #classic
+#forever
 #tbc
 #season 0,1
 #version 1
@@ -730,6 +731,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 #season 0,1
 #version 1
@@ -3095,6 +3097,7 @@ step << Druid
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 #season 0,1
 #version 1
@@ -8341,6 +8344,7 @@ step << !Hunter
 RXPGuides.RegisterGuide([[
 #xprate <1.59
 #classic
+#forever
 #tbc
 #season 0,1
 #version 1
@@ -9992,6 +9996,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 #season 0,1
 #version 1
@@ -10785,6 +10790,7 @@ step << Dwarf Hunter
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 #season 0
 #version 1

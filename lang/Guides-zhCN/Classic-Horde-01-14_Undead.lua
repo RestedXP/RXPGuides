@@ -4,6 +4,7 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 #xprate <1.99
 << Horde
@@ -783,6 +784,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 #xprate <1.99
 << Horde
@@ -4097,6 +4099,7 @@ RXPGuides.RegisterGuide([[
 #version 11
 #defaultfor Undead/Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
 #classic
+#forever
 #tbc
 #era/som--h
 #name 12-14级 银松森林
@@ -5444,6 +5447,7 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 << Horde
 #xprate >1.99
@@ -6511,6 +6515,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 #xprate >1.99
 << Horde

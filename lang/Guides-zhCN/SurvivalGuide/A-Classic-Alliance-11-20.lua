@@ -6,6 +6,7 @@ if faction == "Horde" then return end
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#forever
 #tbc
 << Alliance
 #name 13-15级 西部荒野
@@ -541,6 +542,7 @@ step << NightElf
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#forever
 #tbc
 << Alliance
 #name 15-18级 黑海岸
@@ -1650,6 +1652,7 @@ step
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#forever
 #tbc
 << Alliance
 #name 20-21级 黑海岸/灰谷

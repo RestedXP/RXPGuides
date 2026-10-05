@@ -3,6 +3,7 @@ if GetLocale() ~= "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#forever
 #tbc
 << Alliance
 #name 19-20级 赤脊山

@@ -4,6 +4,7 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 << Human Mage
 #name 1-10级 艾尔文森林 人类法师 A怪进阶攻略
@@ -1145,6 +1146,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 << Human Mage
 #name 10-11级 丹莫罗 人类法师A怪高级指南
@@ -1437,6 +1439,7 @@ step << skip
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 << Gnome Mage
 #name 1-10 丹莫罗侏儒法师AOE进阶攻略
@@ -2997,6 +3000,7 @@ step << skip
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 << Alliance Mage
 #name 10-12 黑海岸 1 法师 AOE进阶攻略
@@ -3554,6 +3558,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 << Alliance Mage
 #name 10-12 黑海岸 1 法师 AoE进阶 起飞路线
@@ -4122,6 +4127,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 << Alliance Mage
 #name 12-14 洛克莫丹 法师 AoE进阶攻略
@@ -4903,6 +4909,7 @@ step
 ]])
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 << Alliance Mage
 #name 14-16 黑海岸 2 法师 AoE进阶攻略
@@ -5552,6 +5559,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 << Alliance Mage
 #name 16-18级 西部荒野 法师 AoE进阶攻略
@@ -6283,6 +6291,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 << Alliance Mage
 #name 18-20黑海岸 3 法师 AoE进阶攻略
@@ -7062,6 +7071,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 << Alliance Mage
 #name 20-22 赤脊山 1法师 AOE进阶攻略

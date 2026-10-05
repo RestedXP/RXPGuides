@@ -5,6 +5,7 @@ if faction == "Horde" then return end
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
+#forever
 #tbc
 #era/som--h
 << Alliance
@@ -412,6 +413,7 @@ RXPGuides.RegisterGuide([[
 #hardcore
 #era/som--h
 #classic
+#forever
 #tbc
 << Alliance
 #name 6-10级 丹莫罗
@@ -1699,6 +1701,7 @@ RXPGuides.RegisterGuide([[
 #hardcore
 #era/som--h
 #classic
+#forever
 #tbc
 << Alliance
 #name 10-11 艾尔文森林（矮人/侏儒）
@@ -2362,6 +2365,7 @@ RXPGuides.RegisterGuide([[
 #hardcore
 #era/som--h
 #classic
+#forever
 #tbc
 << Alliance
 #name 11-13 洛克莫丹 (矮人/侏儒)

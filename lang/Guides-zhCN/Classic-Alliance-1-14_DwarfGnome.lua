@@ -4,6 +4,7 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 #season 0,1
 #version 1
@@ -1326,6 +1327,7 @@ RXPGuides.RegisterGuide([[
 #xprate >1.49 << Hunter
 #era/som--h
 #classic
+#forever
 #tbc
 #season 0,1
 #version 1
@@ -4834,6 +4836,7 @@ step << Dwarf Paladin
 RXPGuides.RegisterGuide([[
 #xprate >1.49
 #classic
+#forever
 #tbc
 #season 0,1
 #version 1
@@ -5104,6 +5107,7 @@ step
 RXPGuides.RegisterGuide([[
 #xprate <1.5
 #classic
+#forever
 #tbc
 #season 0,1
 << Alliance !Hunter
@@ -5814,6 +5818,7 @@ step << Dwarf Paladin
 RXPGuides.RegisterGuide([[
 #era/som--h
 #classic
+#forever
 #tbc
 #season 0,1
 #version 1
@@ -7568,6 +7573,7 @@ step
 RXPGuides.RegisterGuide([[
 #xprate <1.5
 #classic
+#forever
 #tbc
 #season 0,1
 #era/som--h
@@ -8268,6 +8274,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#forever
 #tbc
 #season 0,1
 #era/som--h
