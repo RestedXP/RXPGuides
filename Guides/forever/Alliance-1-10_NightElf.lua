@@ -1572,18 +1572,31 @@ step << Druid NightElf/Priest NightElf
     .accept 952 >> Accept Grove of the Ancients
     .xp 10,1
 step << Druid NightElf
-    #completewith next
     .goto 1457/1,2572.300,10185.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denatharion::4218|r
     .target Denatharion::4218
     .accept 5923 >>Accept Heeding the Call
     .isNotOnQuest 5925
 step << Druid NightElf
+    .isOnQuest 5923
     .goto 1457/1,2563.92,10179.040
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r on the middle level
-    .turnin -5923 >> Turn in Heeding the Call
+    .turnin 5923 >> Turn in Heeding the Call
     .accept 5921 >> Accept Moonglade
 	.trainer >> Train your class spells
+    .target Mathrengyl Bearwalker
+step << Druid NightElf
+    .isOnQuest 5925
+    .goto 1457/1,2563.92,10179.040
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r on the middle level
+    .turnin 5925 >> Turn in Heeding the Call
+    .accept 5921 >> Accept Moonglade
+	.trainer >> Train your class spells
+    .target Mathrengyl Bearwalker
+step << Druid NightElf
+    .goto 1457/1,2563.92,10179.040
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r on the middle level
+    .accept 5921 >> Accept Moonglade
     .target Mathrengyl Bearwalker
 step << !Rogue
     .goto 1457/1,2508.68,9605.98--c:Darnassus,40.6,89.6
@@ -1846,7 +1859,7 @@ step
     .goto 1438/1,997.200,9903.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Byancie::6094|r
     .target Byancie::6094
-    .turnin 99050 >>Turn in the Great Tree Provides
+    .turnin 99050 >>Turn in The Great Tree Provides
     .accept 99073 >>Accept Easing Suffering
     .xp >10,1
 step
@@ -2093,6 +2106,7 @@ step
     .accept 98392 >> Accept Darkness in the Glade
     .target Sentinel Arynia Cloudsbreak
 step
+    .isOnQuest 99073
     .goto 1438/1,1899.700,10582.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Eralya Leafshadow::275683|r
     .target Sentinel Eralya Leafshadow::275683

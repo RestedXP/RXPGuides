@@ -3,7 +3,20 @@ local L = addon.locale.Get
 local _G = _G
 
 local HBD = LibStub("HereBeDragons-2.0")
-local HBDPins = LibStub("HereBeDragons-Pins-2.0")
+local HBDPins_Lib = LibStub("HereBeDragons-Pins-2.0")
+local HBDPins = {}
+setmetatable(HBDPins, {
+    __index = function(t, k)
+        if addon.settings.profile.disableMapPins then
+            return addon.functions.noop
+        else
+            return HBDPins_Lib[k]
+        end
+    end
+})
+
+
+
 addon.activeWaypoints = {}
 addon.linePoints = {}
 

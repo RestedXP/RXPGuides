@@ -16,7 +16,9 @@ local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo and addon.GetSpellInfo or 
 local GetSpellCooldown = addon.GetSpellCooldown
 local UnitName = addon.GetUnitName
 local BANK_CONTAINER = _G.BANK_CONTAINER
-if not BANK_CONTAINER and Enum and Enum.BagIndex then BANK_CONTAINER = Enum.BagIndex.Bank end
+if not BANK_CONTAINER and Enum and Enum.BagIndex then
+    BANK_CONTAINER = Enum.BagIndex.Bank or Enum.BagIndex.CharacterBankTab_1
+end
 if not BANK_CONTAINER and gameVersion < 60000 then BANK_CONTAINER = -1 end
 
 local GetMerchantItemInfo = function(...)
@@ -5178,8 +5180,19 @@ function addon.PutItemInBank(bagContents)
     local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if CursorHasItem() and isBankOpened then
         local bank = {BANK_CONTAINER}
-        for i = _G.NUM_BAG_SLOTS + 1, _G.NUM_BAG_SLOTS + _G.NUM_BANKBAGSLOTS do
-            tinsert(bank, i)
+        local firstBankTab = Enum and Enum.BagIndex and Enum.BagIndex.CharacterBankTab_1
+        if firstBankTab then
+            local i = 1
+            local tab = firstBankTab
+            while tab do
+                if tab ~= BANK_CONTAINER then tinsert(bank, tab) end
+                i = i + 1
+                tab = Enum.BagIndex["CharacterBankTab_" .. i]
+            end
+        else
+            for i = _G.NUM_BAG_SLOTS + 1, _G.NUM_BAG_SLOTS + _G.NUM_BANKBAGSLOTS do
+                tinsert(bank, i)
+            end
         end
 
         if not bagContents then bagContents = {} end
@@ -5321,8 +5334,20 @@ function addon.GoThroughBank(itemList, func)
     if not BANK_CONTAINER then return end
 
     local bank = {BANK_CONTAINER}
-    for i = _G.NUM_BAG_SLOTS + 1, _G.NUM_BAG_SLOTS + _G.NUM_BANKBAGSLOTS do
-        tinsert(bank, i)
+    local firstBankTab = Enum and Enum.BagIndex and Enum.BagIndex.CharacterBankTab_1
+
+    if firstBankTab then
+        local i = 1
+        local tab = Enum.BagIndex["CharacterBankTab_" .. i]
+        while tab do
+            if tab ~= BANK_CONTAINER then tinsert(bank, tab) end
+            i = i + 1
+            tab = Enum.BagIndex["CharacterBankTab_" .. i]
+        end
+    else
+        for i = _G.NUM_BAG_SLOTS + 1, _G.NUM_BAG_SLOTS + _G.NUM_BANKBAGSLOTS do
+            tinsert(bank, i)
+        end
     end
 
     local bagContents = {}
@@ -8502,5 +8527,18 @@ function addon.functions.dualspec(self, text, skipstep)
         else
             addon.SetElementComplete(self, true)
         end
+    end
+end
+
+events.showwhiledead = {"PLAYER_ALIVE", "PLAYER_UNGHOST"}
+function addon.functions.showwhiledead(self)
+    if type(self) == "string" then -- on parse
+        return {textOnly = true}
+    end
+
+    local step = self.element.step
+    if step.active and not addon.isHidden and not UnitIsDeadOrGhost("player") then
+        step.completed = true
+        addon.updateSteps = true
     end
 end

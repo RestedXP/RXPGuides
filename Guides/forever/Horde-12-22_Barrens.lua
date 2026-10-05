@@ -3449,6 +3449,12 @@ step
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
 step
+    #label LakotaMani2
+    #completewith LakotaMani2
+    >>Kill |cRXP_ENEMY_Razormane Raiders|r. Loot them for |cRXP_LOOT_Olgra's Adornments|r
+    .complete 95774,1 --|4/4 Olgra's Adornments
+    .mob Razormane Raider
+step
     #completewith next
     >>Kill |cRXP_ENEMY_Bristleback Quilboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cRXP_LOOT_Blood Shards|r] you get
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
@@ -3637,33 +3643,35 @@ step
     .turnin 888 >>Turn in Stolen Booty
     .target Gazlowe
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r, |cRXP_FRIENDLY_Mebok|r and |cRXP_FRIENDLY_Drohn|r
+    .goto 1413/1,-3759.06,-902.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
     .turnin 1094 >>Turn in Further Instructions
     .accept 1095 >>Accept Further Instructions
-    .target +Sputtervalve
-    .goto 1413/1,-3759.06,-902.18
+    .target Sputtervalve
+step
+    .goto 1413/1,-3720.300,-920.000
+    >>Click the |cRXP_PICK_Wanted Poster|r
+    .accept 92706 >>Accept WANTED: Bruuz
+    .group
+step
+    .goto 1413/1,-3697.24,-929.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok|r
     .turnin 865 >>Turn in Raptor Horns
     .turnin 1069 >>Turn in Deepmoss Spider Eggs
     .accept 1491 >>Accept Smart Drinks
-    .target +Mebok Mizzyrix
-    .goto 1413/1,-3697.24,-929.20
-    .turnin 821 >>Turn in Chen's Empty Keg
-    .target +Brewmaster Drohn
-    .goto 1413/1,-3687.11,-981.22
+    .target Mebok Mizzyrix
     .dungeon WC
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r, |cRXP_FRIENDLY_Mebok|r and |cRXP_FRIENDLY_Drohn|r
-    .turnin 1094 >>Turn in Further Instructions
-    .accept 1095 >>Accept Further Instructions
-    .target +Sputtervalve
-    .goto 1413/1,-3759.06,-902.18
+    .goto 1413/1,-3697.24,-929.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok|r
     .turnin 865 >>Turn in Raptor Horns
     .turnin 1069 >>Turn in Deepmoss Spider Eggs
-    .target +Mebok Mizzyrix
-    .goto 1413/1,-3697.24,-929.20
-    .turnin 821 >>Turn in Chen's Empty Keg
-    .target +Brewmaster Drohn
+    .target Mebok Mizzyrix
+step
     .goto 1413/1,-3687.11,-981.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drohn|r
+    .turnin 821 >>Turn in Chen's Empty Keg
+    .target Brewmaster Drohn
 step << Warrior
     .goto 1413/1,-3680.02,-982.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grazlix|r
@@ -3710,11 +3718,6 @@ step
     .bindlocation 392
     .isQuestTurnedIn 865
 step
-    .goto 1413/1,-3720.300,-920.000
-    >>Click the |cRXP_PICK_Wanted Poster|r
-    .accept 92706 >>Accept WANTED: Bruuz
-    .group
-step
     #loop
     .goto 1413/1,-3911.900,-1049.200
     .goto 1413/1,-3951.600,-1093.500
@@ -3722,6 +3725,7 @@ step
     .goto 1413/1,-3973.000,-1028.700
     >>Kill |cRXP_PICK_Bruuz|r (lvl 20 elite)
     >>|cRXP_WARN_He swims around in the sea near Ratchet|r
+    .complete 92706,1 --Kill Bruuz
     .isOnQuest 92706
     .group 3
 step
@@ -5468,18 +5472,24 @@ step
     #completewith Tsunaman1
     .subzone 460 >>Travel to Sun Rock Retreat
 step
+    #completewith next
+    .goto 1442/1,834.44,908.21,30,0
+    .goto 1442/1,856.91,874.67,30,0
+    .goto 1442/1,896.46,836.57,30,0
+    .goto 1442/1,940.41,831.04,30 >> Run up the path to the right
+step
+    #label Tsunaman1
+    .goto 1442/1,933.09,824.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tsunaman|r
+    .accept 6562 >>Accept Trouble in the Deeps
+    .accept 6393 >>Accept Elemental War
+    .target Tsunaman
+step
     .goto 1442/1,940.9,925.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maggran|r
 	.turnin 6284 >> Turn in Arachnophobia
     .target Maggran Earthbinder
     .isQuestComplete 6284
-step
-    #label KayaLives
-    .goto 1442/1,928.20,1015.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tammra|r
-    .turnin 6401 >>Turn in Kaya's Alive
-    .target Tammra Windfield
-    .isQuestTurnedIn 6523
 step
     .goto 1442/1,927.72,893.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Jayka|r
@@ -5498,46 +5508,43 @@ step
     .target Jeeda
     .isOnQuest 1095
 step
-    #completewith next
-    .goto 1442/1,834.44,908.21,30,0
-    .goto 1442/1,856.91,874.67,30,0
-    .goto 1442/1,896.46,836.57,30,0
-    .goto 1442/1,940.41,831.04,30 >> Run up the path to the right
-step
-    #label Tsunaman1
-    .goto 1442/1,933.09,824.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tsunaman|r
-    .accept 6562 >>Accept Trouble in the Deeps
-    .accept 6393 >>Accept Elemental War
-    .target Tsunaman
+    #label KayaLives
+    .goto 1442/1,928.20,1015.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tammra|r
+    .turnin 6401 >>Turn in Kaya's Alive
+    .accept 6301 >>Accept Cycle of Rebirth
+    .target Tammra Windfield
+    .isQuestTurnedIn 6523
 step
     .goto 1442/1,365.16,878.250
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz|r
     .turnin 1095 >>Turn in Further Instructions
+    .accept 1096 >>Accept Gerenzo Wrenchwhistle
     .target Ziz Fizziks
 step
     #loop
     .line Stonetalon Mountains,70.82,55.25,70.52,56.22,69.76,56.70,68.52,56.04,67.77,55.97,66.94,56.25,66.41,56.31,65.74,57.20,65.14,57.02,64.37,56.47,63.72,56.80,62.99,56.25,62.32,56.11,61.58,55.10,61.10,54.68,60.98,54.06,59.81,53.51,59.66,52.14,60.33,51.68
-    .goto 1442/1,265.54,1213.00,50,0
-    .goto 1442/1,299.72,1233.84,50,0
-    .goto 1442/1,332.44,1218.86,50,0
-    .goto 1442/1,325.11,1174.25,50,0
-    .goto 1442/1,267.98,1156.34,50,0
-    .goto 1442/1,262.12,1136.15,50,0
-    .goto 1442/1,238.68,1122.470,50,0
-    .goto 1442/1,202.54,1089.58,50,0
-    .goto 1442/1,169.82,1085.03,50,0
-    .goto 1442/1,134.17,1067.120,50,0
-    .goto 1442/1,102.43,1077.86,50,0
-    .goto 1442/1,64.83,1059.95,50,0
-    .goto 1442/1,35.53,1054.090,50,0
-    .goto 1442/1,2.81,1083.07,50,0
-    .goto 1442/1,-23.07,1085.03,50,0
-    .goto 1442/1,-63.60,1094.14,50,0
-    .goto 1442/1,-100.23,1091.86,50,0
-    .goto 1442/1,-160.78,1070.370,50,0
-    .goto 1442/1,-197.89,1086.00,50,0
-    .goto 1442/1,-212.54,1117.59,50,0
+    .goto 1442/1,265.54,1213.0,80,0
+    .goto 1442/1,299.72,1233.84,80,0
+    .goto 1442/1,332.44,1218.86,80,0
+    .goto 1442/1,325.11,1174.25,80,0
+    .goto 1442/1,267.98,1156.34,80,0
+    .goto 1442/1,262.12,1136.15,80,0
+    .goto 1442/1,238.68,1122.47,80,0
+    .goto 1442/1,202.54,1089.58,80,0
+    .goto 1442/1,169.82,1085.03,80,0
+    .goto 1442/1,134.17,1067.12,80,0
+    .goto 1442/1,102.43,1077.86,80,0
+    .goto 1442/1,64.83,1059.95,80,0
+    .goto 1442/1,35.53,1054.09,80,0
+    .goto 1442/1,2.81,1083.07,80,0
+    .goto 1442/1,-23.07,1085.03,80,0
+    .goto 1442/1,-63.6,1094.14,80,0
+    .goto 1442/1,-100.23,1091.86,80,0
+    .goto 1442/1,-160.78,1070.37,80,0
+    .goto 1442/1,-197.89,1086.0,80,0
+    .goto 1442/1,-212.54,1117.59,80,0
+    .goto 1442/1,332.44,1218.86,80,0
     .goto 1442/1,332.44,1218.86,0
     >>Kill |cRXP_ENEMY_XT:9|r. It patrols the southern side of the river
     >>|cRXP_WARN_Skip this step if you can't find it|r
@@ -5546,27 +5553,27 @@ step
 step
     #loop
     .line Stonetalon Mountains,67.18,46.87,66.53,46.95,65.72,45.09,63.73,45.02,63.72,45.92,63.43,46.57,64.43,46.13,64.72,46.63,64.82,47.72,65.11,48.31,65.98,48.67,66.24,49.65,66.65,49.58,66.88,48.95,68.41,49.58,69.45,46.56,70.22,48.62,70.95,48.49,71.41,45.54,71.25,43.45
-    .goto 1442/1,-34.79,1390.46,50,0
-    .goto 1442/1,-3.05,1387.86,50,0
-    .goto 1442/1,36.51,1448.42,50,0
-    .goto 1442/1,133.69,1450.70,50,0
-    .goto 1442/1,134.17,1421.40,50,0
-    .goto 1442/1,148.34,1400.23,50,0
-    .goto 1442/1,99.50,1414.56,50,0
-    .goto 1442/1,85.34,1398.28,50,0
-    .goto 1442/1,80.46,1362.78,50,0
-    .goto 1442/1,66.30,1343.57,50,0
-    .goto 1442/1,23.81,1331.85,50,0
-    .goto 1442/1,11.11,1299.94,50,0
-    .goto 1442/1,-8.91,1302.22,50,0
-    .goto 1442/1,-20.14,1322.73,50,0
-    .goto 1442/1,-94.85,1302.22,50,0
-    .goto 1442/1,-145.64,1400.56,50,0
-    .goto 1442/1,-183.24,1333.48,50,0
-    .goto 1442/1,-218.89,1337.71,50,0
-    .goto 1442/1,-241.35,1433.77,50,0
-    .goto 1442/1,-233.54,1501.83,50,0
-    .goto 1442/1,80.46,1378.74,50,0
+    .goto 1442/1,-34.79,1390.46,80,0
+    .goto 1442/1,-3.05,1387.86,80,0
+    .goto 1442/1,36.51,1448.42,80,0
+    .goto 1442/1,133.69,1450.7,80,0
+    .goto 1442/1,134.17,1421.4,80,0
+    .goto 1442/1,148.34,1400.23,80,0
+    .goto 1442/1,99.5,1414.56,80,0
+    .goto 1442/1,85.34,1398.28,80,0
+    .goto 1442/1,80.46,1362.78,80,0
+    .goto 1442/1,66.3,1343.57,80,0
+    .goto 1442/1,23.81,1331.85,80,0
+    .goto 1442/1,11.11,1299.94,80,0
+    .goto 1442/1,-8.91,1302.22,80,0
+    .goto 1442/1,-20.14,1322.73,80,0
+    .goto 1442/1,-94.85,1302.22,80,0
+    .goto 1442/1,-145.64,1400.56,80,0
+    .goto 1442/1,-183.24,1333.48,80,0
+    .goto 1442/1,-218.89,1337.71,80,0
+    .goto 1442/1,-241.35,1433.77,80,0
+    .goto 1442/1,-233.54,1501.83,80,0
+    .goto 1442/1,80.46,1378.74,80,0
     .goto 1442/1,80.46,1378.74,0
     >>Kill |cRXP_ENEMY_XT:4|r. It patrols the northern side of the river
     >>|cRXP_WARN_Skip this step if you can't find it|r
@@ -5614,26 +5621,27 @@ step
 step
     #loop
     .line Stonetalon Mountains,70.82,55.25,70.52,56.22,69.76,56.70,68.52,56.04,67.77,55.97,66.94,56.25,66.41,56.31,65.74,57.20,65.14,57.02,64.37,56.47,63.72,56.80,62.99,56.25,62.32,56.11,61.58,55.10,61.10,54.68,60.98,54.06,59.81,53.51,59.66,52.14,60.33,51.68
-    .goto 1442/1,265.54,1213.00,50,0
-    .goto 1442/1,299.72,1233.84,50,0
-    .goto 1442/1,332.44,1218.86,50,0
-    .goto 1442/1,325.11,1174.25,50,0
-    .goto 1442/1,267.98,1156.34,50,0
-    .goto 1442/1,262.12,1136.15,50,0
-    .goto 1442/1,238.68,1122.470,50,0
-    .goto 1442/1,202.54,1089.58,50,0
-    .goto 1442/1,169.82,1085.03,50,0
-    .goto 1442/1,134.17,1067.120,50,0
-    .goto 1442/1,102.43,1077.86,50,0
-    .goto 1442/1,64.83,1059.95,50,0
-    .goto 1442/1,35.53,1054.090,50,0
-    .goto 1442/1,2.81,1083.07,50,0
-    .goto 1442/1,-23.07,1085.03,50,0
-    .goto 1442/1,-63.60,1094.14,50,0
-    .goto 1442/1,-100.23,1091.86,50,0
-    .goto 1442/1,-160.78,1070.370,50,0
-    .goto 1442/1,-197.89,1086.00,50,0
-    .goto 1442/1,-212.54,1117.59,50,0
+    .goto 1442/1,265.54,1213.0,80,0
+    .goto 1442/1,299.72,1233.84,80,0
+    .goto 1442/1,332.44,1218.86,80,0
+    .goto 1442/1,325.11,1174.25,80,0
+    .goto 1442/1,267.98,1156.34,80,0
+    .goto 1442/1,262.12,1136.15,80,0
+    .goto 1442/1,238.68,1122.47,80,0
+    .goto 1442/1,202.54,1089.58,80,0
+    .goto 1442/1,169.82,1085.03,80,0
+    .goto 1442/1,134.17,1067.12,80,0
+    .goto 1442/1,102.43,1077.86,80,0
+    .goto 1442/1,64.83,1059.95,80,0
+    .goto 1442/1,35.53,1054.09,80,0
+    .goto 1442/1,2.81,1083.07,80,0
+    .goto 1442/1,-23.07,1085.03,80,0
+    .goto 1442/1,-63.6,1094.14,80,0
+    .goto 1442/1,-100.23,1091.86,80,0
+    .goto 1442/1,-160.78,1070.37,80,0
+    .goto 1442/1,-197.89,1086.0,80,0
+    .goto 1442/1,-212.54,1117.59,80,0
+    .goto 1442/1,332.44,1218.86,80,0
     .goto 1442/1,332.44,1218.86,0
     >>Kill |cRXP_ENEMY_XT:9|r. It patrols the southern side of the river
     >>|cRXP_WARN_Skip this step if you can't find it|r
@@ -5644,27 +5652,27 @@ step
 step
     #loop
     .line Stonetalon Mountains,67.18,46.87,66.53,46.95,65.72,45.09,63.73,45.02,63.72,45.92,63.43,46.57,64.43,46.13,64.72,46.63,64.82,47.72,65.11,48.31,65.98,48.67,66.24,49.65,66.65,49.58,66.88,48.95,68.41,49.58,69.45,46.56,70.22,48.62,70.95,48.49,71.41,45.54,71.25,43.45
-    .goto 1442/1,-34.79,1390.46,50,0
-    .goto 1442/1,-3.05,1387.86,50,0
-    .goto 1442/1,36.51,1448.42,50,0
-    .goto 1442/1,133.69,1450.70,50,0
-    .goto 1442/1,134.17,1421.40,50,0
-    .goto 1442/1,148.34,1400.23,50,0
-    .goto 1442/1,99.50,1414.56,50,0
-    .goto 1442/1,85.34,1398.28,50,0
-    .goto 1442/1,80.46,1362.78,50,0
-    .goto 1442/1,66.30,1343.57,50,0
-    .goto 1442/1,23.81,1331.85,50,0
-    .goto 1442/1,11.11,1299.94,50,0
-    .goto 1442/1,-8.91,1302.22,50,0
-    .goto 1442/1,-20.14,1322.73,50,0
-    .goto 1442/1,-94.85,1302.22,50,0
-    .goto 1442/1,-145.64,1400.56,50,0
-    .goto 1442/1,-183.24,1333.48,50,0
-    .goto 1442/1,-218.89,1337.71,50,0
-    .goto 1442/1,-241.35,1433.77,50,0
-    .goto 1442/1,-233.54,1501.83,50,0
-    .goto 1442/1,80.46,1378.74,50,0
+    .goto 1442/1,-34.79,1390.46,80,0
+    .goto 1442/1,-3.05,1387.86,80,0
+    .goto 1442/1,36.51,1448.42,80,0
+    .goto 1442/1,133.69,1450.7,80,0
+    .goto 1442/1,134.17,1421.4,80,0
+    .goto 1442/1,148.34,1400.23,80,0
+    .goto 1442/1,99.5,1414.56,80,0
+    .goto 1442/1,85.34,1398.28,80,0
+    .goto 1442/1,80.46,1362.78,80,0
+    .goto 1442/1,66.3,1343.57,80,0
+    .goto 1442/1,23.81,1331.85,80,0
+    .goto 1442/1,11.11,1299.94,80,0
+    .goto 1442/1,-8.91,1302.22,80,0
+    .goto 1442/1,-20.14,1322.73,80,0
+    .goto 1442/1,-94.85,1302.22,80,0
+    .goto 1442/1,-145.64,1400.56,80,0
+    .goto 1442/1,-183.24,1333.48,80,0
+    .goto 1442/1,-218.89,1337.71,80,0
+    .goto 1442/1,-241.35,1433.77,80,0
+    .goto 1442/1,-233.54,1501.83,80,0
+    .goto 1442/1,80.46,1378.74,80,0
     .goto 1442/1,80.46,1378.74,0
     >>Kill |cRXP_ENEMY_XT:4|r. It patrols the northern side of the river
     >>|cRXP_WARN_Skip this step if you can't find it|r

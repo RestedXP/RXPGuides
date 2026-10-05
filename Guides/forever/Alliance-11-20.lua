@@ -12,7 +12,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #next 14-16 Darkshore
-#defaultfor !NightElf !Hunter
+#defaultfor !NightElf !Hunter/!Dwarf !Hunter/!Human !Hunter/!Skyborne !Hunter
 
 --Going to Darkshore if already 15
 
@@ -756,8 +756,8 @@ RXPGuides.RegisterGuide([[
 --#groupid RXP-SRGCE-A1
 #name 14-16 Darkshore
 #displayname 11-16 Darkshore/Westfall << NightElf
-#displayname 13-16 Darkshore << Dwarf Hunter/Human Hunter
-#displayname 15-16 Darkshore << !NightElf/!Dwarf/!Human Hunter
+#displayname 13-16 Darkshore << Dwarf Hunter/Human Hunter/Skyborne Hunter
+#displayname 15-16 Darkshore << !NightElf/!Dwarf/!Human/!Skyborne Hunter
 #next 16-19 Darkshore
 
 
@@ -878,7 +878,7 @@ step << !NightElf
 
 
 
-step << Dwarf Hunter/Human Hunter
+step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     #optional
     #completewith RabidThistle
     #loop
@@ -1112,6 +1112,7 @@ step << Druid NightElf
     .target Sentinel Glynda Nal'Shea
     .isQuestTurnedIn 4811
 step << Druid NightElf
+    .isOnQuest 4812
     .goto 1439,37.767,44.001
     >>|cRXP_WARN_Use the|r |T134865:0|t[Empty Water Tube] |cRXP_WARN_at the Auberdine moonwell|r
     .complete 4812,1 --Moonwell Water Tube (1)
@@ -2687,16 +2688,22 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
     .accept 2178 >> Accept Easy Strider Living
     .turnin 2178 >> Turn in Easy Strider Living
-    .turnin 6122 >> Turn in The Principal Source << Druid
-    .accept 6123 >> Accept Gathering the Cure << Druid
     .target Alanndarian Nightsong
     .skill cooking,<10,1 -- step only displays if skill is 10 or higher
-    .isQuestAvailable 2178 << Druid
+    .itemcount 5469,5 -- strider meat (5)
 step << Druid
     #optional
+    .isOnQuest 6122
     .goto 1439/1,472.32,6556.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
     .turnin 6122 >> Turn in The Principal Source
+    .accept 6123 >> Accept Gathering the Cure
+    .target Alanndarian Nightsong
+step << Druid
+    #optional
+    .isQuestTurnedIn 6123
+    .goto 1439/1,472.32,6556.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
     .accept 6123 >> Accept Gathering the Cure
     .target Alanndarian Nightsong
 step << !NightElf
@@ -3359,7 +3366,7 @@ step << Druid
     .fly Auberdine >> Fly to Darkshore
     .target Sindrayl
     .zoneskip Darkshore
-step << NightElf !Druid/Dwarf Hunter/Human Hunter
+step << NightElf !Druid/Dwarf Hunter/Human Hunter/Skyborne Hunter
     #label Southcrabs
     #completewith CleansingTharnariun
     .subzone 442 >> Travel to Auberdine
@@ -3796,12 +3803,12 @@ step << Druid
     >>Open the |cRXP_PICK_Strange Lockbox|r. Loot it for the |cRXP_LOOT_Half Pendant of Aquatic Agility|r
     .collect 15883,1,272,1 --Collect Half Pendant of Aquatic Agility (x1)
 
-step << Dwarf Hunter/Human Hunter
+step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     #softcore
     #optional
     #completewith next
     .deathskip >> Grind until your HS cooldown is <6 minutes. Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-step << Dwarf Hunter/Human Hunter
+step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     #hardcore
     #optional
     #completewith next
@@ -3847,13 +3854,13 @@ step << !NightElf
     .equip 15,5387 >>|cRXP_WARN_Equip the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_If it's better than your current Cloak|r
     .itemcount 5387,1
     .itemStat 15,QUALITY,<7
-step << Dwarf Hunter/Human Hunter
+step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     #label TravelDarnDwarfHBoat
     #completewith DarnDwarfHBoat
     .goto 1439,33.169,40.179,15 >> Travel to the dock of the Darnassus boat
     .zoneskip Teldrassil
     .zoneskip Darnassus
-step << Dwarf Hunter/Human Hunter
+step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     #optional
     #label DarnDwarfHCook1
     #requires TravelDarnDwarfHBoat
@@ -3867,7 +3874,7 @@ step << Dwarf Hunter/Human Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Dwarf Hunter/Human Hunter
+step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     #optional
     #requires DarnDwarfHCook1
     #completewith DarnDwarfHBoat
@@ -3879,35 +3886,35 @@ step << Dwarf Hunter/Human Hunter
     .itemcount 6889,1 --Small Egg (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << Dwarf Hunter/Human Hunter
+step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     #label DarnDwarfHBoat
     .goto 1439,33.213,39.883
     .zone Teldrassil >> Take the boat to Darnassus
     .zoneskip Darnassus
-step << Dwarf Hunter/Human Hunter
+step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     .goto 1438/1,841.56,8640.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
     .fp Teldrassil >> Get the Teldrassil Flight Path
     .target Vesprystus
-step << Dwarf Hunter/Human Hunter
+step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     #optional
     #completewith next
     .goto 1438/1,965.80,8780.95
     .zone Darnassus >> Take the purple portal into Darnassus
-step << Dwarf Hunter/Human Hunter
+step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     #completewith next
     .goto 1457/1,2511.01,10178.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
     .trainer >> Train your class spells
     .target Jocaste
-step << Dwarf Hunter/Human Hunter
+step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossipid 96881
     .goto 1457/1,2329.19,9908.60
     .train 264 >> Train Bows
     .train 227 >> Train Staves
     .target Ilyenia Moonfire
-step << Dwarf Hunter/Human Hunter
+step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     .goto 1457/1,2268.76,9770.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Landria|r
     >>|cRXP_BUY_Buy a|r |T135489:0|t[Heavy Recurve Bow] |cRXP_BUY_and a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_from her|r
@@ -3923,14 +3930,14 @@ step << Hunter
     .itemcount 3027,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.19
     .xp <20,1
-step << Dwarf Hunter/Human Hunter
+step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     .goto 1438/1,2607.86,9641.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
     .turnin 741 >> Turn in The Absent Minded Prospector
     .accept 942 >> Accept The Absent Minded Prospector
     .target Chief Archaeologist Greywhisker
     .isOnQuest 741
-step << Dwarf Hunter/Human Hunter
+step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     #optional
     .goto 1438/1,2607.86,9641.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
@@ -3956,12 +3963,12 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Train your class spells
     .target Loganaar
-step << NightElf/Dwarf Hunter/Human Hunter
+step << NightElf/Dwarf Hunter/Human Hunter/Skyborne Hunter
     #completewith BeachedCloak
     #map Darkshore
     .goto 1448/1,577.92,6371.65,100 >> Travel to Auberdine
     .cooldown item,6948,<0
-step << NightElf/Dwarf Hunter/Human Hunter
+step << NightElf/Dwarf Hunter/Human Hunter/Skyborne Hunter
     #optional
     #completewith next
     .hs >> Hearth to Auberdine
@@ -5639,7 +5646,7 @@ step
     .accept 1054 >> Accept Culling the Threat
 step
     #label HCHunterNoHS --hidden step for #include
-step << !Dwarf/!Hunter
+step << NightElf Hunter
     .goto 1440/1,-433.09,2781.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kimlya|r
     .home >> Set your Hearthstone to Astranaar
@@ -5827,17 +5834,17 @@ step
 	.mob Saltspittle Oracle
 	.mob Saltspittle Puddlejumper
     .complete 1023,1
-step << Dwarf Hunter/Human Hunter
+step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     .hs >> Hearth to Auberdine
-step << !Dwarf/!Hunter
+step << NightElf Hunter
     #softcore
     #completewith next
     .deathskip >> Die on the eastern side of the lake and spirit res at Astranaar
-step << !Dwarf/!Hunter
+step << NightElf Hunter
     #hardcore
     #completewith next
     .goto 1440/1,-283.73,2827.92,200 >> Travel to Astranaar
-step << !Dwarf/!Hunter
+step << NightElf Hunter
     .goto 1440/1,-284.31,2828.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daelyshia|r
     .fly Darkshore>> Fly to Darkshore
@@ -5897,7 +5904,7 @@ step
     >>|T134304:0|t[Murloc Fins] --1468
     >>|T134321:0|t[Gooey Spider Legs] --2251
     >>|T133970:0|t[Lean Wolf Flanks] --1015
-step << Dwarf Hunter/Human Hunter
+step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .skipgossipid 96881
     .goto 1457/1,2329.19,9908.60
@@ -5919,15 +5926,15 @@ step
     .goto 1438/1,2607.86,9641.94
     .accept 942 >> Accept The Absent Minded Prospector
     .isQuestTurnedIn 741
-step << !Dwarf/!Hunter
+step << NightElf Hunter
     #label end
     .hs >> Hearth to Astranaar
-step << Dwarf Hunter/Human Hunter
+step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     .goto 1457/1,2626.51,9946.11
     .zone Teldrassil >> Travel through the purple portal to Rut'theran Village
     .zoneskip Ashenvale
     .zoneskip Darkshore
-step << Dwarf Hunter/Human Hunter
+step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     #label end
     .goto 1438/1,841.56,8640.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r

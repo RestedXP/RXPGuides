@@ -3278,6 +3278,18 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         order = 10.25,
                     },
+                    disableMapPins = {
+                        --Gamepad is causing weird taint issues on beta
+                        name = L("Disable Map Pins"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end,
+                        confirm = requiresReload,
+                        order = 10.26,
+                    },
                     debugQuestImport = {
                         order = 10.3,
                         name = L("Import Completed Quests"),

@@ -68,6 +68,11 @@ local SSHARD = 6265
 
 -- Core InventoryManager
 function addon.inventoryManager:Setup()
+    if InCombatLockdown() then
+        self:RegisterEvent("PLAYER_REGEN_ENABLED")
+        return
+    end
+
     RXPCData.discardPile = RXPCData.discardPile or {}
 
     local wasInitialized = self.initialized
@@ -281,6 +286,11 @@ function addon.inventoryManager:ADDON_LOADED(_, loadedAddon)
     if not supportedBagAddons[loadedAddon] then return end
 
     self.bagManager.activeAdapter = nil
+    self:Setup()
+end
+
+function addon.inventoryManager:PLAYER_REGEN_ENABLED()
+    self:UnregisterEvent("PLAYER_REGEN_ENABLED")
     self:Setup()
 end
 
