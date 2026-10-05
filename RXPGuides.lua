@@ -1491,6 +1491,7 @@ function addon:OnInitialize()
         RXPData.gameVersion = gameVersion
     end
     addon.settings:InitializeDatabase()
+    addon:SetupQuestLog()
     RXPCData.guideProgress = RXPCData.guideProgress or {}
     addon.CreateMetaDataTable()
     addon.settings:InitializeSettings()
@@ -1601,6 +1602,8 @@ function addon:OnEnable()
         RXPData.maxLoadTime = math.ceil(RXPData.maxLoadTime/1.5)
     end
     addon.addonLoaded = true
+
+    if addon.inventoryManager then addon.inventoryManager:Setup() end
 
     --addon.RXPFrame.GenerateMenuTable()
 

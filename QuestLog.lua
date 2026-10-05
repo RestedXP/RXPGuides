@@ -20,8 +20,12 @@ else
 end
 
 local L = addon.locale.Get
-local maxQuests = addon.settings.profile.questLogSize or
-(addon.game == "CLASSIC" and 20 or addon.game == "FOREVER" and 40 or 25)
+local maxQuests
+
+function addon:SetupQuestLog()
+    maxQuests = self.settings.profile.questLogSize or
+        (self.game == "CLASSIC" and 20 or self.game == "FOREVER" and 40 or 25)
+end
 
 local lastIndex
 
