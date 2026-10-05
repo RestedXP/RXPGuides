@@ -1103,7 +1103,7 @@ step << Alliance Rogue
     .target Miriaan Mistblade::254087
     .money <0.01
     .xp <6,1
-step << Alliance Mage
+step << Mage
     .isOnQuest 93461
     .subzoneskip 16624,1
     .goto 2521,43.24,43.18
@@ -1114,7 +1114,7 @@ step << Alliance Mage
     .skipgossipid 137558
     .target Nasalanna Windsinger::257020
     .money <0.0172
-step << Alliance Mage
+step << Mage
     .isOnQuest 93461
     .subzoneskip 16624,1
     .goto 2521,43.24,43.18
@@ -1122,7 +1122,7 @@ step << Alliance Mage
     .train 7411 >>Train |T136189:0|t[Enchanting] |cRXP_WARN_for immediate wand|r
     .skipgossipid 137559
     .target Nasalanna Windsinger::257020
-step << Alliance Mage
+step << Mage
     .isOnQuest 93461
     .train 7411,3
     >>Use the |T135225:0|t[Runed Copper Rod] macro below, then use the |T135645:0|t[Novice's Practice Wand] macro
@@ -1131,7 +1131,7 @@ step << Alliance Mage
     .collect 247789,1
     .macro Runed Copper Rod,135225 >>/cast Enchanting\n/run C_TradeSkillUI.CraftRecipe(7421,1)
     .macro Novice's Practice Wand,135645 >>/run C_TradeSkillUI.CraftRecipe(1245321,1)
-step << Alliance Mage
+step << Mage
     #completewith next
     .train 7411,3
     +Abandon Enchanting or continue with it.
@@ -4863,6 +4863,7 @@ step << Alliance
     .target Valennia Stormfist::252383
 step << Alliance
     .subzoneskip 16638,1
+    .isOnQuest 93065
     .goto 2521,63.9,74.16
     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
     .cooldown spell,1259705,>0,1
@@ -4874,9 +4875,9 @@ step << Alliance
     .complete 93065,1 --|1/1 Find Valennia on the Road
     .turnin 93065 >>Turn in Prepare for Battle
     .target Valennia Stormfist::253844
-step
-    #completewith next
+step << Horde
     >>Abandon any remaining "Camping 101" quest.
+    *Click the macro in the Active Items frame to abandon them all at once.
     .abandon 97970 >>Abandon Camping 101: Mining
     .abandon 97971 >>Abandon Camping 101: Skinning
     .abandon 96646 >>Abandon Camping 101: Cooking
@@ -4889,6 +4890,24 @@ step
     .abandon 98286 >>Abandon Camping 101: Enchanting
     .abandon 97969 >>Abandon Camping 101: Leatherworking
     .abandon 98285 >>Abandon Camping 101: Engineering
+    .macro Abandon 101,130722 >>/run for _,q in ipairs({97970,97971,96646,97968,97965,97967,97963,97964,97973,98286,97969,98285})do if C_QuestLog.IsOnQuest(q)then C_QuestLog.SetSelectedQuest(q) C_QuestLog.SetAbandonQuest() C_QuestLog.AbandonQuest() ConfirmAbandonQuest()end end
+step << Alliance
+    #completewith Magical City of Dalaran
+    >>Abandon any remaining "Camping 101" quest.
+    *Click the macro in the Active Items frame to abandon them all at once.
+    .abandon 97970 >>Abandon Camping 101: Mining
+    .abandon 97971 >>Abandon Camping 101: Skinning
+    .abandon 96646 >>Abandon Camping 101: Cooking
+    .abandon 97968 >>Abandon Camping 101: Herbalism
+    .abandon 97965 >>Abandon Camping 101: First Aid
+    .abandon 97967 >>Abandon Camping 101: Fishing
+    .abandon 97963 >>Abandon Camping 101: Alchemy
+    .abandon 97964 >>Abandon Camping 101: Blacksmithing
+    .abandon 97973 >>Abandon Camping 101: Tailoring
+    .abandon 98286 >>Abandon Camping 101: Enchanting
+    .abandon 97969 >>Abandon Camping 101: Leatherworking
+    .abandon 98285 >>Abandon Camping 101: Engineering
+    .macro Abandon 101,130722 >>/run for _,q in ipairs({97970,97971,96646,97968,97965,97967,97963,97964,97973,98286,97969,98285})do if C_QuestLog.IsOnQuest(q)then C_QuestLog.SetSelectedQuest(q) C_QuestLog.SetAbandonQuest() C_QuestLog.AbandonQuest() ConfirmAbandonQuest()end end
 step << Alliance Mage
     .goto 2521,65.4,80.22,10,0
     .goto 2521,65.91,80.58
@@ -4904,27 +4923,32 @@ step << Alliance Mage
     .xp <12,1
 step << Alliance
     #completewith next
-    +|cRXP_WARN_The zeppelin can arrive anytime within its 6-minute cycle|r. prioritize cooking and gaining campfire buffs for later.
-    *Equip upgrades and select talents. Vendor and repair only if you feel risky.
+    +|cRXP_WARN_The zeppelin can arrive at any time during its 6-minute cycle. While you wait, complete the following:|r
+    *Vendor trash and repair your gear.
+    *Cook food and gain campfire buffs for later.
+    *Equip upgrades and select talents.
 step << Alliance
     #completewith next
     #label Magical City of Dalaran
-    .goto 2521,66.09,80.96,25,0
-    .goto 2521,65.42,81.01,25,0
-    .goto 2521,65.1,81.52,25,0
+    .goto 2521,65.82,81.18,15,0
+    .goto 2521,65.44,80.46,15,0
+    .goto 2521,65.25,81.64,25,0
     *|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denaaris Stargale::259084|r.
-    .turnin 94946 >>Turn in The Magical City of Dalaran
+    -- .turnin 94946 >>Turn in The Magical City of Dalaran
+    .accept 94947 >>Accept Welcome to Azeroth
+    .skipgossipid 137530
+    .target Halavuul Cragwind::252388
 step << Alliance
     #completewith Magical City of Dalaran
     .goto 2521,65.81,83.44
     .zone 1424 >>Take the Zeppelin to Dalaran City
-step  << Alliance
+step << Alliance
     #requires Magical City of Dalaran
     .goto 1416/0,438.93,448.88
     >>|cRXP_WARN_Do not jump off the zeppelin early you may be pushed off the platform|r.
     *|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denaaris Stargale::259084|r.
     .target Denaaris Stargale::259084
-    .turnin 94946 >>Turn in The Magical City of Dalaran
+    -- .turnin 94946 >>Turn in The Magical City of Dalaran
     .accept 94947 >>Accept Welcome to Azeroth
 step << Alliance Druid
     .goto 1416/0,385.700,385.400
