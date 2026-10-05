@@ -155,6 +155,7 @@ local settingsDBDefaults = {
         xprate = 1,
         guideFontSize = 9,
         activeItemsScale = 1,
+        questLogSize = addon.game == "CLASSIC" and 20 or addon.game == "FOREVER" and 40 or 25,
 
         showEnabled = true,
 
@@ -3268,6 +3269,18 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         confirm = requiresReload,
                         order = 10.26,
+                    },
+                    questLogSize = {
+                        name = L("Quest Log Size"),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 7.4,
+                        min = 20,
+                        max = 40,
+                        step = 1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                        end
                     },
                     debugQuestImport = {
                         order = 10.3,
