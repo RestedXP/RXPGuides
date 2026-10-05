@@ -2204,7 +2204,7 @@ function BottomFrame.UpdateFrame(self, stepn, startFrom, skip)
             step.text = text
         end
 
-        if frame.text then
+        if frame.text and frame.text:GetText() ~= text then
             frame.text:SetText(text)
         end
 
@@ -2219,6 +2219,8 @@ function BottomFrame.UpdateFrame(self, stepn, startFrom, skip)
         end
 
         local hDiff = fheight - frame:GetHeight()
+        if hDiff == 0 then return end
+
         frame:SetHeight(fheight)
 
         for n = stepNumber + 1, #stepPos do
