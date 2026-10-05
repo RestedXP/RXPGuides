@@ -114,8 +114,8 @@ end
 local settingsDBDefaults = {
     profile = {
         enableTracker = true,
-        enableLevelUpAnnounceSolo = true,
-        enableLevelUpAnnounceGroup = true,
+        enableLevelUpAnnounceSolo = false,
+        enableLevelUpAnnounceGroup = false,
         enableFlyStepAnnouncements = true,
         alwaysSendBranded = true,
         checkVersions = true,
