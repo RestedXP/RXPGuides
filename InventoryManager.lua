@@ -462,13 +462,20 @@ local function HookBagToggle()
     end
 end
 
+local initialized
 f:SetScript("OnEvent",function(self)
+    if not initialized then
+        self:RegisterEvent(bagEvent)
+        self:RegisterEvent("LOOT_READY")
+        self:RegisterEvent("UI_ERROR_MESSAGE")
+        self:RegisterEvent("PLAYER_REGEN_ENABLED")
+        --self:RegisterEvent("ITEM_DATA_LOAD_RESULT")
+        initialized = true
+    end
+    if InCombatLockdown() then
+        return
+    end
     inventoryManager.bagUpdated = true
-    self:RegisterEvent(bagEvent)
-    self:RegisterEvent("LOOT_READY")
-    self:RegisterEvent("UI_ERROR_MESSAGE")
-    --self:RegisterEvent("ITEM_DATA_LOAD_RESULT")
-
     self:SetScript("OnEvent",function(self,event,flag,msg)
         --print(self,event,flag,msg)
         if clickFrame then
