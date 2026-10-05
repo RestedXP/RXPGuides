@@ -505,6 +505,12 @@ step
     .target Yaw Sharpmane
 step
     #softcore
+    .goto 1412/1,-430.600,-2097.600
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r 
+    .accept 99411 >>Accept Kyle's Gone Missing!
+    .target Ahab Wheathoof
+step
+    #softcore
     .goto 1412/1,-365.17,-2227.56--c:Mulgore,46.97,57.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
     .accept 766 >>Accept Mazzranache
@@ -627,6 +633,12 @@ step
     .accept 96130 >>Accept Chakuyak
     .target Yaw Sharpmane
 step
+    #hardcore
+    .goto 1412/1,-430.600,-2097.600
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r 
+    .accept 99411 >>Accept Kyle's Gone Missing!
+    .target Ahab Wheathoof
+step
     .goto 1412/1,-454.56,-2304.63--c:Mulgore,48.71,59.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harken|r
     .accept 761 >>Accept Swoop Hunting
@@ -696,11 +708,18 @@ step
     .complete 766,4 --Swoop Gizzard (1)
 step << Tauren
     #completewith Ambercorns
-    >>Kill |cRXP_ENEMY_Prairie Wolves|r and |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |cRXP_LOOT_Paws|r and |cRXP_LOOT_Talons|r
+    >>Kill |cRXP_ENEMY_Prairie Wolves|r. Loot them for their |cRXP_LOOT_Paws|r
+    >>Kill |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r] and |cRXP_LOOT_Talons|r
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob +Prairie Wolf
     .complete 748,2 --Plainstrider Talon (4)
+    .collect 287505,1,99411,1 --Collect Tender Strider Meat (1)
     .mob +Adult Plainstrider
+step << !Tauren
+    #completewith Ambercorns
+    >>Kill |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r]
+    .collect 287505,1,99411,1 --Collect Tender Strider Meat (1)
+    .mob Adult Plainstrider
 step
     #label Ambercorns
     #loop
@@ -735,11 +754,38 @@ step << Tauren
 	.goto 1412/1,-448.91,-2650.89,50,0--c:Mulgore,48.60,69.43
 	.goto 1412/1,-314.31,-2660.14,50,0--c:Mulgore,45.98,69.70
 	.goto 1412/1,-447.88,-2580.34,50,0--c:Mulgore,48.58,67.37
-    >>Kill |cRXP_ENEMY_Prairie Wolves|r and |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |cRXP_LOOT_Paws|r and |cRXP_LOOT_Talons|r
+    >>Kill |cRXP_ENEMY_Prairie Wolves|r. Loot them for their |cRXP_LOOT_Paws|r
+    >>Kill |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r] and |cRXP_LOOT_Talons|r
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob +Prairie Wolf
     .complete 748,2 --Plainstrider Talon (4)
+    .collect 287505,1,99411,1 --Collect Tender Strider Meat (1)
     .mob +Adult Plainstrider
+step << !Tauren
+    #loop
+	.goto 1412/1,-562.96,-2556.02,0--c:Mulgore,50.82,66.66
+	.goto 1412/1,-562.96,-2556.02,50,0--c:Mulgore,50.82,66.66
+	.goto 1412/1,-575.29,-2452.24,50,0--c:Mulgore,51.06,63.63
+	.goto 1412/1,-664.17,-2398.47,50,0--c:Mulgore,52.79,62.06
+	.goto 1412/1,-725.31,-2385.46,50,0--c:Mulgore,53.98,61.68
+	.goto 1412/1,-812.13,-2422.79,50,0--c:Mulgore,55.67,62.77
+	.goto 1412/1,-852.72,-2496.77,50,0--c:Mulgore,56.46,64.93
+	.goto 1412/1,-830.11,-2594.38,50,0--c:Mulgore,56.02,67.78
+	.goto 1412/1,-778.74,-2658.43,50,0--c:Mulgore,55.02,69.65
+	.goto 1412/1,-640.54,-2672.81,50,0--c:Mulgore,52.33,70.07
+	.goto 1412/1,-541.38,-2678.64,50,0--c:Mulgore,50.40,70.24
+	.goto 1412/1,-448.91,-2650.89,50,0--c:Mulgore,48.60,69.43
+	.goto 1412/1,-314.31,-2660.14,50,0--c:Mulgore,45.98,69.70
+	.goto 1412/1,-447.88,-2580.34,50,0--c:Mulgore,48.58,67.37
+    >>Kill |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r]
+    .collect 287505,1,99411,1 --Collect Tender Strider Meat (1)
+    .mob Adult Plainstrider
+step << Tauren
+    #completewith next
+    .use 33009>> Find |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r] to feed him
+    >>|cRXP_WARN_He runs clockwise in circles around Bloodhoof Village|r
+    .complete 99411,1 --1/1 Kyle fed
+    .unitscan Kyle the Frenzied
 step << Tauren
     .goto 1412/1,-445.31,-2341.62--c:Mulgore,48.53,60.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull|r
@@ -766,6 +812,12 @@ step
     .goto 1412/1,-729.42,-2547.12,10,0--c:Mulgore,54.06,66.40
     >>Collect the |cRXP_PICK_Well Stones|r around the Well
     .complete 771,1 --Well Stone (2)
+step
+    #completewith KyleFed
+    .use 33009>> Find |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r] to feed him
+    >>|cRXP_WARN_He runs clockwise in circles around Bloodhoof Village|r
+    .complete 99411,1 --1/1 Kyle fed
+    .unitscan Kyle the Frenzied
 step
     .goto 1412/1,-399.07,-2378.95--c:Mulgore,47.63,61.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhawna|r
@@ -868,6 +920,12 @@ step
     .turnin 771 >>Turn in Rite of Vision
     .accept 772 >>Accept Rite of Vision
     .target Zarlman Two-Moons
+step
+    .goto 1412/1,-430.600,-2097.600
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r 
+    .turnin 99411 >>Turn in Kyle's Gone Missing!
+    .target Ahab Wheathoof
+    .isQuestComplete 99411
 step << Hunter
     .goto 1412/1,-408.32,-2180.30--c:Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw|r
@@ -892,6 +950,9 @@ step << Shaman
     .train 8044 >> Train your class spells
     .target Narm Skychaser
     .xp <8,1
+step
+    #optional
+    #label KyleFed
 step
     #loop
     .goto 1412/1,-784.90,-2350.18,0--c:Mulgore,55.14,60.65
@@ -950,7 +1011,7 @@ step << Tauren
     .mob +Flatland Cougar
 step
     .goto 1412/1,54.800,-2442.200
-    >>Loot |cRXP_ENEMY_Chakuyak|r. Loot it for its |cRXP_LOOT_Pelt|r
+    >>Kill |cRXP_ENEMY_Chakuyak|r. Loot it for its |cRXP_LOOT_Pelt|r
     .complete 96130,1 --|1/1 Chakuyak's Pelt
     .mob Chakuyak
 step
@@ -1008,6 +1069,12 @@ step
     #hardcore
     #completewith Thunderhorn
     .subzone 222 >> Travel back to Bloodhoof Village
+step
+    #completewith KyleFed2
+    .use 33009>> Find |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r] to feed him
+    >>|cRXP_WARN_He runs clockwise in circles around Bloodhoof Village|r
+    .complete 99411,1 --1/1 Kyle fed
+    .unitscan Kyle the Frenzied
 step
     .goto 1412/1,-408.700,-2180.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw Sharpmane|r
@@ -1159,6 +1226,7 @@ step << Hunter
     .target Yaw Sharpmane
     .xp <8,1
 step
+    #label KyleFed2
     .goto 1412/1,-347.70,-2364.91--c:Mulgore,46.63,61.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kauth|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Shaman/Druid
@@ -1168,6 +1236,24 @@ step
     .collect 4541,10,746,1 << Warrior --Freshly Baked Bread (10)
     .target Innkeeper Kauth
     .money <0.025
+step
+    #loop
+    .goto 1412/1,-422.300,-2250.300,0
+    .goto 1412/1,-422.300,-2250.300,30,0
+    .goto 1412/1,-374.900,-2263.800,30,0
+    .goto 1412/1,-361.900,-2328.100,30,0
+    .goto 1412/1,-438.600,-2387.500,30,0
+    .goto 1412/1,-491.400,-2326.900,30,0
+    .goto 1412/1,-469.300,-2256.000,30,0
+    .use 33009>> Find |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r] to feed him
+    >>|cRXP_WARN_He runs clockwise in circles around Bloodhoof Village|r
+    .complete 99411,1 --1/1 Kyle fed
+    .unitscan Kyle the Frenzied
+step
+    .goto 1412/1,-430.600,-2097.600
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r 
+    .turnin 99411 >>Turn in Kyle's Gone Missing!
+    .target Ahab Wheathoof
 step
     #completewith Burial
     >>|cRXP_WARN_Finish getting the items for Mazzranache|r

@@ -319,14 +319,14 @@ step << skip
     .turnin 97279 >>Turn in Wayward Weapons
     .target Kzan Thornslash
 step << Shaman
-    .goto 1411/1,-4948.35,-769.15
+    .goto 1411/1,-4102.600,-588.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kzan|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135139:0|t[Short Staff] (97c)
     .target Kzan Thornslash
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
 step << Shaman
-    .goto 1411/1,-4102.35,-588.67.00
+    .goto 1411/1,-4102.600,-588.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kzan|r
     >>|cRXP_BUY_Buy a|r |T135139:0|t[Short Staff] |cRXP_BUY_from him|r
     .collect 2132,1,5441,1 --Collect Short Staff (1)

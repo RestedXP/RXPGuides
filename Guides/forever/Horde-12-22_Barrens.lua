@@ -68,14 +68,14 @@ step << Tauren Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thun'grim|r
     .turnin 1503 >>Turn in Forged Steel
     .target Thun'grim Firegaze
-step << !Tauren
+step << skip --!Tauren
     #softcore
     #completewith ThievesPickup
     .goto 1413/1,-2516.71,-590.71
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .xp >15,1
 step << !Tauren
-    #softcore
+    --#softcore
     #completewith ThievesPickup
     .subzone 380 >> Travel to The Crossroads
     .xp <15,1
@@ -133,7 +133,7 @@ step << Undead/Skyborne
     .fp >> Get the The Crossroads flight path
     .target Devrak
     .isQuestAvailable 1492
-step << !Tauren !Skyborne !Shaman !Hunter 
+step << !Tauren
     .goto 1413/1,-2589.67,-424.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
     .accept 1492 >>Accept Wharfmaster Dizzywig
@@ -1407,7 +1407,7 @@ step << Tauren Shaman
     .train 8498 >> Train your class spells
     .target Tigor Skychaser
     .xp <16,1
-step << Hunter/Warrior
+step << Tauren Hunter/Tauren Warrior
     #completewith HunterTraining1 << Tauren Hunter
     #completewith WarriorTraining1 << Tauren Warrior
     .goto 1456/1,-123.26,-1394.49,60 >> Travel to the Hunter Rise
@@ -1688,7 +1688,9 @@ step
     .accept 95621 >>Accept Trouble in the Valley
     .target Walton
 step
+    .goto 1413/1,-1611.500,549.000
     >>Kill |cRXP_ENEMY_Corporal Adamore|r
+    >>|cRXP_WARN_Be careful! You may agro 2-3 mobs at the same time|r
     .complete 95621,1 --|1/1 Learn why the Kul Tirans are here
     .mob Corporal Adamore
 step
@@ -2079,6 +2081,20 @@ step << Warrior !Skyborne
     .train 197 >>Train Two-Handed Axes
     .train 227 >>Train Staves
     .target Hanashi
+    .money <0.020
+step << Warrior !Skyborne
+    #optional
+    .goto 1454/1,-4824.00,2090.540
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
+    .train 197 >>Train Two-Handed Axes
+    .target Hanashi
+    .money <0.010
+step << Shaman !Skyborne
+    .goto 1454/1,-4824.00,2090.540
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
+    .train 197 >>Train Two-Handed Axes
+    .target Hanashi
+    .money <0.010
 step << Hunter
     .goto 1454/1,-4819.1,2099.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Zendo'jian|r|cRXP_BUY_. Buy a|r |T135490:0|t[Reinforced Bow] |cRXP_BUY_from him|r
@@ -2707,6 +2723,22 @@ step
     .turnin 5723 >> Turn in Testing an Enemy's Strength
     .target Rahauro
     .isQuestComplete 5723
+    .dungeon RFC
+step << Paladin
+    .goto 1456/1,253.900,-950.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alodan|r
+    .train 1044 >>Train your class spells
+    .target Alodan the Hopeful 
+    .xp <18,1
+    .xp >20,1
+    .dungeon RFC
+step << Paladin
+    #optional
+    .goto 1456/1,253.900,-950.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alodan|r
+    .train 1866 >>Train your class spells
+    .target Alodan the Hopeful 
+    .xp <20,1
     .dungeon RFC
 step
     #optional
@@ -3636,6 +3668,13 @@ step
     .turnin 2381 >>Turn in Plundering the Plunderers << Rogue
     .turnin 97253 >>Turn in Parts and Pieces
     .target Wrenix the Wretched
+    .isQuestComplete 97253
+step << Rogue
+    #optional
+    .goto 1413/1,-3767.800,-842.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrenix|r
+    .turnin 2381 >>Turn in Plundering the Plunderers
+    .target Wrenix the Wretched
 step
     #label BootyTurnin
     .goto 1413/1,-3728.66,-835.29
@@ -3652,7 +3691,6 @@ step
     .goto 1413/1,-3720.300,-920.000
     >>Click the |cRXP_PICK_Wanted Poster|r
     .accept 92706 >>Accept WANTED: Bruuz
-    .group
 step
     .goto 1413/1,-3697.24,-929.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok|r
@@ -3723,17 +3761,16 @@ step
     .goto 1413/1,-3951.600,-1093.500
     .goto 1413/1,-4012.800,-1081.800
     .goto 1413/1,-3973.000,-1028.700
-    >>Kill |cRXP_PICK_Bruuz|r (lvl 20 elite)
-    >>|cRXP_WARN_He swims around in the sea near Ratchet|r
+    >>Kill |cRXP_PICK_Bruuz|r (lvl 20 elite) in the sea near Ratchet
+    >>|cRXP_WARN_This is hard! Group up if possible|r
+    >>|cRXP_WARN_It can be solo'd by kiting him to the Ratchet guards who will help, but make sure to deal at least 50% damage!|r
     .complete 92706,1 --Kill Bruuz
     .isOnQuest 92706
-    .group 3
 step
     .goto 1413/1,-3720.300,-920.000
     >>Click the |cRXP_PICK_Wanted Poster|r
-    .accept 92706 >>Accept WANTED: Bruuz
+    .turnin 92706 >>Turn in WANTED: Bruuz
     .isQuestComplete 92706
-    .group
 step
     .goto 1413/1,-3770.20,-928.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bigglefuzz|r
@@ -4172,7 +4209,7 @@ step
     .target Devrak
     .subzoneskip 380,1
 step
-    .goto 1413/1,-1891.48,-2391.93
+    .goto 1413/1,-2515.7,-2076.41
     >>Kill |cRXP_ENEMY_Bristleback Quilboars|r. Loot them for a |T134128:0|t[|cRXP_LOOT_Blood Shard|r
     .collect 5075,1,5052,1 --Blood Shard (1)
     .mob Bristleback Water Seeker
@@ -4476,6 +4513,20 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shymm|r
     .train 2138 >> Train your class spells
     .target Archmage Shymm
+    .xp <22,1
+step << Paladin
+    .goto 1456/1,253.900,-950.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alodan|r
+    .train 1866 >>Train your class spells
+    .target Alodan the Hopeful 
+    .xp <20,1
+    .xp >22,1
+step << Paladin
+    #optional
+    .goto 1456/1,253.900,-950.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alodan|r
+    .train 1026 >>Train your class spells
+    .target Alodan the Hopeful 
     .xp <22,1
 step
     #optional
@@ -5522,7 +5573,6 @@ step
     .accept 1096 >>Accept Gerenzo Wrenchwhistle
     .target Ziz Fizziks
 step
-    #loop
     .line Stonetalon Mountains,70.82,55.25,70.52,56.22,69.76,56.70,68.52,56.04,67.77,55.97,66.94,56.25,66.41,56.31,65.74,57.20,65.14,57.02,64.37,56.47,63.72,56.80,62.99,56.25,62.32,56.11,61.58,55.10,61.10,54.68,60.98,54.06,59.81,53.51,59.66,52.14,60.33,51.68
     .goto 1442/1,265.54,1213.0,80,0
     .goto 1442/1,299.72,1233.84,80,0
@@ -5545,12 +5595,14 @@ step
     .goto 1442/1,-197.89,1086.0,80,0
     .goto 1442/1,-212.54,1117.59,80,0
     .goto 1442/1,332.44,1218.86,80,0
-    .goto 1442/1,332.44,1218.86,0
-    >>Kill |cRXP_ENEMY_XT:9|r. It patrols the southern side of the river
-    >>|cRXP_WARN_Skip this step if you can't find it|r
+    .goto 1442/1,-202.900,1088.600
+    >>Kill |cRXP_ENEMY_XT:9|r
+    >>|cRXP_WARN_It patrols the southern side of the river|r
+    >>|cRXP_WARN_His spawn point is marked on your map|r
     .complete 1068,2 --XT:9 (1)
     .unitscan XT:9
-step
+    .isQuestTurnedIn 1062
+step << skip --better to do in stonetalon part 2
     #loop
     .line Stonetalon Mountains,67.18,46.87,66.53,46.95,65.72,45.09,63.73,45.02,63.72,45.92,63.43,46.57,64.43,46.13,64.72,46.63,64.82,47.72,65.11,48.31,65.98,48.67,66.24,49.65,66.65,49.58,66.88,48.95,68.41,49.58,69.45,46.56,70.22,48.62,70.95,48.49,71.41,45.54,71.25,43.45
     .goto 1442/1,-34.79,1390.46,80,0
@@ -5575,10 +5627,12 @@ step
     .goto 1442/1,-233.54,1501.83,80,0
     .goto 1442/1,80.46,1378.74,80,0
     .goto 1442/1,80.46,1378.74,0
-    >>Kill |cRXP_ENEMY_XT:4|r. It patrols the northern side of the river
+    >>Kill |cRXP_ENEMY_XT:4|r
+    >>|cRXP_WARN_It patrols the northern side of the river|r
     >>|cRXP_WARN_Skip this step if you can't find it|r
     .complete 1068,1 --XT:4 (1)
     .unitscan XT:4
+    .isQuestTurnedIn 1062
 step
     #completewith next
     .goto 1442/1,-357.09,978.55
@@ -5611,75 +5665,6 @@ step << skip
     .goto 1442/1,434.5,898.12,30 >>|cRXP_WARN_Jump onto the wooden wheel. Perform a Logout Skip by logging out and back in|r
     .link https://www.youtube.com/watch?v=8s1SRza7qFg&ab_channel=RestedXP >> |cRXP_WARN_CLICK HERE for an example|r
     .group
-step
-    .goto 1442/1,365.16,878.250
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz|r
-    .turnin 1092 >> Turn in Gerenzo's Orders
-    .target Ziz Fizziks
-    .isQuestTurnedIn 1090
-    .group
-step
-    #loop
-    .line Stonetalon Mountains,70.82,55.25,70.52,56.22,69.76,56.70,68.52,56.04,67.77,55.97,66.94,56.25,66.41,56.31,65.74,57.20,65.14,57.02,64.37,56.47,63.72,56.80,62.99,56.25,62.32,56.11,61.58,55.10,61.10,54.68,60.98,54.06,59.81,53.51,59.66,52.14,60.33,51.68
-    .goto 1442/1,265.54,1213.0,80,0
-    .goto 1442/1,299.72,1233.84,80,0
-    .goto 1442/1,332.44,1218.86,80,0
-    .goto 1442/1,325.11,1174.25,80,0
-    .goto 1442/1,267.98,1156.34,80,0
-    .goto 1442/1,262.12,1136.15,80,0
-    .goto 1442/1,238.68,1122.47,80,0
-    .goto 1442/1,202.54,1089.58,80,0
-    .goto 1442/1,169.82,1085.03,80,0
-    .goto 1442/1,134.17,1067.12,80,0
-    .goto 1442/1,102.43,1077.86,80,0
-    .goto 1442/1,64.83,1059.95,80,0
-    .goto 1442/1,35.53,1054.09,80,0
-    .goto 1442/1,2.81,1083.07,80,0
-    .goto 1442/1,-23.07,1085.03,80,0
-    .goto 1442/1,-63.6,1094.14,80,0
-    .goto 1442/1,-100.23,1091.86,80,0
-    .goto 1442/1,-160.78,1070.37,80,0
-    .goto 1442/1,-197.89,1086.0,80,0
-    .goto 1442/1,-212.54,1117.59,80,0
-    .goto 1442/1,332.44,1218.86,80,0
-    .goto 1442/1,332.44,1218.86,0
-    >>Kill |cRXP_ENEMY_XT:9|r. It patrols the southern side of the river
-    >>|cRXP_WARN_Skip this step if you can't find it|r
-    .complete 1068,2 --XT:9 (1)
-    .unitscan XT:9
-    .isQuestTurnedIn 1092
-    .group 0
-step
-    #loop
-    .line Stonetalon Mountains,67.18,46.87,66.53,46.95,65.72,45.09,63.73,45.02,63.72,45.92,63.43,46.57,64.43,46.13,64.72,46.63,64.82,47.72,65.11,48.31,65.98,48.67,66.24,49.65,66.65,49.58,66.88,48.95,68.41,49.58,69.45,46.56,70.22,48.62,70.95,48.49,71.41,45.54,71.25,43.45
-    .goto 1442/1,-34.79,1390.46,80,0
-    .goto 1442/1,-3.05,1387.86,80,0
-    .goto 1442/1,36.51,1448.42,80,0
-    .goto 1442/1,133.69,1450.7,80,0
-    .goto 1442/1,134.17,1421.4,80,0
-    .goto 1442/1,148.34,1400.23,80,0
-    .goto 1442/1,99.5,1414.56,80,0
-    .goto 1442/1,85.34,1398.28,80,0
-    .goto 1442/1,80.46,1362.78,80,0
-    .goto 1442/1,66.3,1343.57,80,0
-    .goto 1442/1,23.81,1331.85,80,0
-    .goto 1442/1,11.11,1299.94,80,0
-    .goto 1442/1,-8.91,1302.22,80,0
-    .goto 1442/1,-20.14,1322.73,80,0
-    .goto 1442/1,-94.85,1302.22,80,0
-    .goto 1442/1,-145.64,1400.56,80,0
-    .goto 1442/1,-183.24,1333.48,80,0
-    .goto 1442/1,-218.89,1337.71,80,0
-    .goto 1442/1,-241.35,1433.77,80,0
-    .goto 1442/1,-233.54,1501.83,80,0
-    .goto 1442/1,80.46,1378.74,80,0
-    .goto 1442/1,80.46,1378.74,0
-    >>Kill |cRXP_ENEMY_XT:4|r. It patrols the northern side of the river
-    >>|cRXP_WARN_Skip this step if you can't find it|r
-    .complete 1068,1 --XT:4 (1)
-    .unitscan XT:4
-    .isQuestTurnedIn 1092
-    .group 0
 step
     #completewith next
     .goto 1442/1,-577.33,1532.43,30 >> Enter the Talondeep Path
@@ -6082,6 +6067,20 @@ step
     .turnin 1064 >> Turn in Forsaken Aid
     .accept 1065 >> Accept Journey to Tarren Mill
     .target Apothecary Zamah
+step << Paladin
+    .goto 1456/1,253.900,-950.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alodan|r
+    .train 1866 >>Train your class spells
+    .target Alodan the Hopeful 
+    .xp <20,1
+    .xp >22,1
+step << Paladin
+    #optional
+    .goto 1456/1,253.900,-950.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alodan|r
+    .train 1026 >>Train your class spells
+    .target Alodan the Hopeful 
+    .xp <22,1
 step << Warlock
     .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r

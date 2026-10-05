@@ -470,6 +470,7 @@ step
     >>Open the |cRXP_PICK_Equipment Boxes|r on the ground. Loot them for the |cRXP_LOOT_Scavenged Goods|r
     .complete 3902,1 --Collect Scavenged Goods (x6)
 step << Paladin
+    .goto 1420/0,1782.400,1914.700
     >>Talk to the |cRXP_FRIENDLY_Frightened Paladin|r, kill her as she becomes hostile
     .complete 91208,1 --|1/1 Offer aid to the Frightened Paladin
     .skipgossip
@@ -745,6 +746,7 @@ step
 step
     .goto 1420/0,391.400,2289.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Bartholomew|r
+    >>|cRXP_WARN_He may be patrolling around the graveyard|r
     .accept 86784 >>Accept Sticks and Bones
     .target Deathguard Bartholomew
 step
@@ -1655,7 +1657,7 @@ step
     .itemcount 2876,5 --Duskbat Pelt (5)
     .isQuestAvailable 375
 step
-    .goto 1420/0,295.87,2277.93+
+    .goto 1420/0,295.87,2277.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zygand|r
     .turnin 398 >>Turn in Wanted: Maggot Eye
     .target Executor Zygand
@@ -3226,7 +3228,9 @@ RXPGuides.RegisterGuide([[
 #displayname 13-15 Silverpine Forest << Paladin
 #next 12-17 The Barrens
 
-
+step << Skyborne
+    #optional
+    .maxlevel 13,Silverpineskip
 step << Undead Rogue
     #sticky
     #completewith RotHideCluesTurnIn
@@ -4013,6 +4017,20 @@ step << Undead Warlock
     .train 1455 >> Train your class spells
     .target Richard Kerwin
     .xp <16,1
+step << Paladin
+    .goto 1458/0,418.500,1782.600
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garen|r
+    .train 647 >>Train your class spells
+    .target Garen Largo
+    .xp <14,1
+    .xp >16,1
+step << Paladin
+    #optional
+    .goto 1458/0,418.500,1782.600
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garen|r
+    .train 7294 >>Train your class spells
+    .target Garen Largo
+    .xp <16,1
 step << Priest/Mage/Warlock
     #ssf
     .goto 1458/0,206.04,1705.57
@@ -4161,6 +4179,9 @@ step << Skyborne
     .use 6948
     .zoneskip Orgrimmar
     .bindlocation 1637,1
+step << Skyborne
+    #optional
+    #label Silverpineskip
 
     --Start Undead/Skyborne RFC
 

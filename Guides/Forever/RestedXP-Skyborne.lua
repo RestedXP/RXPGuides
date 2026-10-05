@@ -5489,6 +5489,9 @@ step << Horde Mage
     .train 1449 >> Train your class spells
     .target Pephredo::5882
     .xp <14,1
+step << !Hunter
+    #optional
+    .maxlevel 13,Silverpineskip
 step << Horde
     #completewith next
     .zone Durotar >> Leave Orgrimmar
@@ -5603,6 +5606,9 @@ step << Horde !Hunter
     .goto 1420/0,629.36,1553.42
     .zone Silverpine Forest >> Travel to Silverpine Forest
     .zoneskip Silverpine Forest
+step << !Hunter
+    #optional
+    #label Silverpineskip
 
 ]])
 
