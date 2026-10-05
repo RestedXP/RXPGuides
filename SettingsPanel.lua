@@ -253,12 +253,7 @@ function addon.settings:InitializeDatabase()
         RXPCData.localDB = nil
     end
 
-    local savedDefaults = RXPData.defaultProfile or RXPCData.localDB
-    if savedDefaults and savedDefaults.profile and savedDefaults.profile.enableInventoryManager == nil then
-        savedDefaults.profile.enableInventoryManager = settingsDBDefaults.profile.enableInventoryManager
-    end
-
-    settingsDB = LibStub("AceDB-3.0"):New("RXPSettings", savedDefaults or settingsDBDefaults)
+    settingsDB = LibStub("AceDB-3.0"):New("RXPSettings", RXPData.defaultProfile or RXPCData.localDB or settingsDBDefaults)
 
     settingsDB.RegisterCallback(self, "OnProfileChanged", "RefreshProfile")
     settingsDB.RegisterCallback(self, "OnProfileCopied", "CopyProfile")
@@ -752,7 +747,7 @@ function addon.settings:CreateAceOptionsPanel()
                         hidden = not addon.VendorTreasures
                     },
                     enableInventoryManager = {
-                        name = fmt('%s %s', _G.ENABLE, _G.INVENTORY_TOOLTIP),
+                        name = L("Enable Inventory Manager"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 2.51,
