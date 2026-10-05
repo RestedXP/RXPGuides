@@ -1602,6 +1602,8 @@ function addon:OnEnable()
     end
     addon.addonLoaded = true
 
+    if addon.inventoryManager then addon.inventoryManager:Setup() end
+
     --addon.RXPFrame.GenerateMenuTable()
 
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")

@@ -15,7 +15,11 @@ local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
 local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo and addon.GetSpellInfo or _G.GetSpellInfo
 local GetSpellCooldown = addon.GetSpellCooldown
 local UnitName = addon.GetUnitName
-local BANK_CONTAINER = _G.BANK_CONTAINER or Enum.BagIndex.CharacterBankTab_1
+local BANK_CONTAINER = _G.BANK_CONTAINER
+if not BANK_CONTAINER and Enum and Enum.BagIndex then
+    BANK_CONTAINER = Enum.BagIndex.Bank or Enum.BagIndex.CharacterBankTab_1
+end
+if not BANK_CONTAINER and gameVersion < 60000 then BANK_CONTAINER = -1 end
 
 local GetMerchantItemInfo = function(...)
     local GMII = C_MerchantFrame and C_MerchantFrame.GetItemInfo or _G.GetMerchantItemInfo
@@ -3252,7 +3256,7 @@ function addon.functions.destroy(self, ...)
     local element = self.element
     local step = element and element.step
     if step and step.active then
-        RXPCData.discardPile[element.id] = true
+        addon.inventoryManager:SetDiscardedItem(element.id, true)
         local name = addon.GetItemName(element.id)
 
         if name then
@@ -3277,9 +3281,9 @@ function addon.functions.destroy(self, ...)
 
         if count == 0 then
             addon.SetElementComplete(self)
-            RXPCData.discardPile[element.id] = nil
+            addon.inventoryManager:SetDiscardedItem(element.id, false)
         else
-            RXPCData.discardPile[element.id] = true
+            addon.inventoryManager:SetDiscardedItem(element.id, true)
             addon.SetElementIncomplete(self)
         end
     end
@@ -3812,7 +3816,7 @@ function addon.functions.money(self, ...)
     if not self.element.step.active then return end
     local money
     if self.element.useNetWorth and addon.inventoryManager then
-        money = addon.inventoryManager.GetNetWorth()
+        money = addon.inventoryManager:GetNetWorth()
     else
         money = GetMoney()
     end
@@ -5171,14 +5175,17 @@ function addon.functions.questitemcount(self,text,itemId,qty,...)
 end
 
 function addon.PutItemInBank(bagContents)
+    if not BANK_CONTAINER then return end
+
     local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if CursorHasItem() and isBankOpened then
         local bank = {BANK_CONTAINER}
-        local tab = Enum.BagIndex["CharacterBankTab_1"]
-        if tab then
+        local firstBankTab = Enum and Enum.BagIndex and Enum.BagIndex.CharacterBankTab_1
+        if firstBankTab then
             local i = 1
+            local tab = firstBankTab
             while tab do
-                tinsert(bank, tab)
+                if tab ~= BANK_CONTAINER then tinsert(bank, tab) end
                 i = i + 1
                 tab = Enum.BagIndex["CharacterBankTab_" .. i]
             end
@@ -5269,6 +5276,8 @@ function addon.GoThroughBags(itemList, func)
 end
 
 function addon.DepositItems(itemList)
+    if not BANK_CONTAINER then return end
+
     local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if itemList and isBankOpened then
         if type(itemList) ~= "table" then itemList = {itemList} end
@@ -5297,6 +5306,8 @@ function addon.DepositItems(itemList)
 end
 
 function addon.IsItemInBags(itemList, reverseLogic)
+    if not BANK_CONTAINER then return end
+
     local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if itemList and isBankOpened then
         if type(itemList) ~= "table" then itemList = {itemList} end
@@ -5320,21 +5331,24 @@ function addon.IsItemNotInBags(itemList)
 end
 
 function addon.GoThroughBank(itemList, func)
+    if not BANK_CONTAINER then return end
 
     local bank = {BANK_CONTAINER}
-        if Enum.BagIndex.CharacterBankTab_1 then
-            local i = 1
-            local tab = Enum.BagIndex["CharacterBankTab_" .. i]
-            while tab do
-                tinsert(bank, tab)
-                i = i + 1
-                tab = Enum.BagIndex["CharacterBankTab_" .. i]
-            end
-        else
-            for i = _G.NUM_BAG_SLOTS + 1, _G.NUM_BAG_SLOTS + _G.NUM_BANKBAGSLOTS do
-                tinsert(bank, i)
-            end
+    local firstBankTab = Enum and Enum.BagIndex and Enum.BagIndex.CharacterBankTab_1
+
+    if firstBankTab then
+        local i = 1
+        local tab = Enum.BagIndex["CharacterBankTab_" .. i]
+        while tab do
+            if tab ~= BANK_CONTAINER then tinsert(bank, tab) end
+            i = i + 1
+            tab = Enum.BagIndex["CharacterBankTab_" .. i]
         end
+    else
+        for i = _G.NUM_BAG_SLOTS + 1, _G.NUM_BAG_SLOTS + _G.NUM_BANKBAGSLOTS do
+            tinsert(bank, i)
+        end
+    end
 
     local bagContents = {}
 
@@ -5355,6 +5369,8 @@ function addon.GoThroughBank(itemList, func)
 end
 
 function addon.WithdrawItems(itemList)
+    if not BANK_CONTAINER then return end
+
     local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if itemList and isBankOpened then
         if type(itemList) ~= "table" then itemList = {itemList} end
@@ -5383,6 +5399,8 @@ function addon.WithdrawItems(itemList)
 end
 
 function addon.IsItemInBank(itemList, reverseLogic)
+    if not BANK_CONTAINER then return end
+
     local _, isBankOpened = GetContainerNumFreeSlots(BANK_CONTAINER);
     if itemList and isBankOpened then
         if type(itemList) ~= "table" then itemList = {itemList} end
@@ -7957,7 +7975,7 @@ function addon.functions.openitem(self,text,id)
     end
     local element = self.element
     if element.step.active then
-        addon.inventoryManager.itemsToOpen[element.id] = true
+        addon.inventoryManager:OpenItems(element.id)
     end
 end
 

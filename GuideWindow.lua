@@ -814,7 +814,7 @@ function addon.SetStep(n, n2, loopback)
     table.wipe(addon.activeItems)
     table.wipe(addon.activeSpells)
     table.wipe(addon.activeMacros)
-    table.wipe(addon.inventoryManager.itemsToOpen)
+    addon.inventoryManager:OpenItems(nil, true)
 
     local useV2GuideWindow = addon.v2:IsGuideWindowEnabled()
     if not useV2GuideWindow then
