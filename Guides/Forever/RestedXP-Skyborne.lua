@@ -10,7 +10,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Speedrun Guide 1-20 << Alliance
 #subgroup Speedrun Guide 1-22 << Horde
 #defaultfor Skyborne
-#next 13-15 Westfall << Alliance
+#next 13-15 Westfall << Alliance !Hunter
+#next 14-16 Darkshore << Alliance Hunter
 #next 12-14 Silverpine Forest << Horde !Hunter
 #next 12-17 The Barrens << Horde Hunter
 
@@ -4970,6 +4971,57 @@ step << Alliance
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze::11802|r.
 --     .target Dendrite Starblaze::11802
 --     .turnin 94914 >>Turn in Moonglade
+step << Alliance Hunter
+    .goto 1453/0,765.700,-8804.000
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catherine Leland|r
+    >>|cRXP_BUY_Buy one|r |T134335:0|t[Shiny Bauble] |cRXP_BUY_and three|r |T134324:0|t[Nightcrawlers] |cRXP_BUY_from her. This is for a 900xp quest|r
+    .collect 6529,1,95065,1 --|1/1 Shiny Bauble
+    .collect 6530,3,95065,1 --|3/3 Nightcrawlers
+    .target Catherine Leland
+step << Alliance Hunter
+    .goto 1453/0,596.400,-8831.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Mullby|r
+    >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    .collect 4470,1 --Simple Wood (1)
+    .collect 4471,1 --Flint and Tinder (1)
+    .target Thurman Mullby
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+    .skill cooking,<1,1 -- shows if cooking is >1
+step << Alliance Hunter
+    #ah
+    .goto 1453/0,660.28,-8814.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[Cooking] |cRXP_BUY_with later|r
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall and Darkshore shortly:|r
+    >>|T133972:0|t[Strider Meat]
+    >>|T133912:0|t[Darkshore Grouper]
+    >>|T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    >>|T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
+    .collect 5469,5,2178,1 -- Strider Meat (5)
+    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
+    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (1-50)
+    .disablecheckbox
+    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (1-50)
+    .disablecheckbox
+    .target Auctioneer Jaxon
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step << Alliance Hunter
+    #ah
+    #optional
+    .goto 1453/0,660.28,-8814.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall and Darkshore shortly:|r
+    >>|T133972:0|t[Strider Meat]
+    >>|T133912:0|t[Darkshore Grouper]
+    .collect 5469,5,2178,1 -- Strider Meat (5)
+    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
+    .target Auctioneer Jaxon
+    .skill cooking,<50,1 --XX Shows if cooking skill is 50+
 step << Alliance
     .goto 1453,48.1,88.35,10,0
     .goto 1453,49.36,87.37,10,0
@@ -4980,17 +5032,115 @@ step << Alliance
     .goto 1453,55.67,75.99,25,0
     .goto 1453,59.9,71.41,25,0
     .goto 1453/0,332.000,-8443.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Bolvar Fordragon::1748|r inside the castle.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Bolvar Fordragon::1748|r inside the Keep.
     .target Highlord Bolvar Fordragon::1748
     .turnin 94947 >>Turn in Welcome to Azeroth
-    .accept 93963 >>Accept Exploring the Alliance
-    .accept 98021 >>Accept Journey to Sentinel Hill
-step  << Alliance
-    .goto 1453/0,350.200,-8516.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Randal Emerson::275491|r inside the castle.
-    .complete 93963,1 --1/1 Receive Instructions from Randal Emerson
-    .skipgossipid 142485
-    .target Randal Emerson::275491
+--    .accept 93963 >>Accept Exploring the Alliance
+    .accept 98021 >>Accept Journey to Sentinel Hill << !Hunter
+--step << Alliance
+--    .goto 1453/0,350.200,-8516.200
+--    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Randal Emerson::275491|r inside the Keep.
+--    .complete 93963,1 --1/1 Receive Instructions from Randal Emerson
+--    .skipgossipid 142485
+--    .target Randal Emerson::275491
+step << Alliance Hunter
+    .goto 1453/0,1269.100,-8540.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilbert Gray::267118|r
+    .target Gilbert Gray::267118
+    .accept 95065 >>Accept Fishin' Time
+    .turnin 95065 >>Turn in Fishin' Time
+step << Alliance Hunter
+    #optional
+    #label DarkshoreCook1
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(in your Profession Book)|r
+    .usespell 818
+    .zoneskip Darkshore
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step << Alliance Hunter
+    #optional
+    #requires DarkshoreCook1
+    #label DarkshoreCook2
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(in your Profession Book)|r
+    .usespell 818
+    .zoneskip Darkshore
+    .itemcount 769,<1 --Chunk of Boar Meat (<1)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step << Alliance Hunter
+    #optional
+    #requires DarkshoreCook2
+    #label DarkshoreCook3
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(in your Profession Book)|r
+    .usespell 818
+    .zoneskip Darkshore
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,<1 --Stringy Wolf Meat (<1)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step << Alliance Hunter
+    #optional
+    #requires DarkshoreCook3
+    #label DarkshoreCook4
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the following items:|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    .usespell 2550
+    .zoneskip Darkshore
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+step << Alliance Hunter
+    #optional
+    #requires DarkshoreCook4
+    #label DarkshoreCook5
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    .usespell 2550
+    .zoneskip Darkshore
+    .itemcount 769,<1 --Chunk of Boar Meat (<1)
+    .itemcount 2672,1 --Stringy Wolf Meat (1)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+step << Alliance Hunter
+    #optional
+    #requires DarkshoreCook5
+    #label DarkshoreCook6
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
+    .usespell 2550
+    .zoneskip Darkshore
+    .itemcount 769,1 --Chunk of Boar Meat (1)
+    .itemcount 2672,<1 --Stringy Wolf Meat (<1)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+step << Alliance Hunter
+    #optional
+    .goto 1453/0,1330.100,-8645.400
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat to Darkshore if needed|r
+    .zone Darkshore >> Take the boat to Darkshore
+    .skill firstaid,<1,1 -- shows if firstaid is >1
+step << Alliance Hunter
+    #label DarkshoreBoat
+    .goto 1453/0,1330.100,-8645.400
+    .zone Darkshore >> Take the boat to Darkshore
 step << Horde
     .goto 2521,63.989,75.090
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
