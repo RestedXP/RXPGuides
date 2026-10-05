@@ -283,7 +283,8 @@ function addon.inventoryManager:PLAYER_REGEN_ENABLED()
 end
 
 function addon.inventoryManager:IsFeatureEnabled()
-    return self.bagManager and self.bagManager:IsAvailable() and addon.settings.profile.enableInventoryManager
+    return self.bagManager and self.bagManager.onClickHook and self.bagManager:IsAvailable() and
+               addon.settings.profile.enableInventoryManager
 end
 
 function addon.inventoryManager:GetModKey()
@@ -331,7 +332,7 @@ function addon.inventoryManager:SortQuiver()
 
     local numQuiverSlots = self.bagManager:GetContainerNumSlots(session.quiver.slot)
     local t = GetTime()
-    local refreshCycle = (addon.settings.profile.updateFrequency or 75) / 1000
+    local refreshCycle = 5 * (addon.settings.profile.updateFrequency or 75) / 1000
     local colour = addon.guideTextColors["RXP_WARN_"]
     local id, maxStack
     local stack, locked, destLocked
@@ -929,13 +930,13 @@ function addon.inventoryManager.bagManager:Setup()
     self:LoadAdapters()
     self:SelectAdapter()
 
-    if not addon.inventoryManager:IsFeatureEnabled() then return end
-
     if not self.onClickHook then
         self.onClickHook = function(button, mouseButton, ...)
             addon.inventoryManager:OnClickHook(button, mouseButton, ...)
         end
     end
+
+    if not addon.inventoryManager:IsFeatureEnabled() then return end
 
     self:HookBags()
 end
