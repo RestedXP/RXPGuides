@@ -1887,6 +1887,10 @@ function addon:LoadGuide(guide, OnLoad)
     addon.currentGuide = addon.ProcessGuideTable(guide)
     guide = addon.currentGuide
 
+    if #guide.steps == 0 then
+        return addon:LoadGuide(addon.emptyGuide)
+    end
+
     if guideStepId then
         for index, step in ipairs(guide.steps) do
             if step.stepId == guideStepId then
