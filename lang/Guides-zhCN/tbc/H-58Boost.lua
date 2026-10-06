@@ -3,285 +3,27 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》升级指南（部落版）
+#group RestedXP 《燃烧的远征》练级指南（部落版）
 << Horde
 #name 直升人物 58-60
 #subgroup RestedXP 部落直升 58-60
-#defaultfor 58Boost
+#subweight -1
+#title Boosted Character 58-60
 #next 60-61 地狱火半岛
 
-
-
-step << Warlock
-    .goto Orgrimmar,47.99,45.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格罗达尔|r 对话
-    .turnin 64046 >>交任务 新的开始
-    .accept 64048 >>接任务 生存工具
-    .target 格罗达尔
-step << Rogue
-    .goto Orgrimmar,43.90,54.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥莫克|r 对话
-    .turnin 64046 >>交任务 新的开始
-    .accept 64048 >>接任务 生存工具
-    .target 奥莫克
-step << Shaman
-    .goto Orgrimmar,38.82,36.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .turnin 64046 >>交任务 新的开始
-    .accept 64048 >>接任务 生存工具
-    .target 卡德里斯
-step << Warrior
-    .goto Orgrimmar,79.91,31.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷兹|r 对话
-    .turnin 64046 >>交任务 新的开始
-    .accept 64048 >>接任务 生存工具
-    .target 格雷兹·怒拳
-step << Hunter
-    .goto Orgrimmar,67.24,20.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科索祖尔|r 对话
-    .turnin 64046 >>交任务 新的开始
-    .accept 64048 >>接任务 生存工具
-    .target 科索祖尔
-step << Mage
-    .goto Orgrimmar,38.45,86.12
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪诺|r 对话
-    .turnin 64046 >>交任务 新的开始
-    .accept 64048 >>接任务 生存工具
-	.target 迪诺
-step << Priest
-    .goto Orgrimmar,35.73,86.89
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尤斯|r 对话
-    .turnin 64046 >>交任务 新的开始
-    .accept 64048 >>接任务 生存工具
-	.target 萨尤斯
-step << Druid
-    .goto Thunder Bluff,76.79,31.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Kym|r 对话
-    .turnin 64047 >>交任务 新的开始
-	.accept 64049 >>接任务 生存工具
-    .target 凯姆·蛮鬃
-step << Warrior
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T133041:0|t[共济战槌]
-    .use 186057
-    .complete 64048,1 --1/1 Open the Survival Kit (1)
-    .complete 64048,2 --1/1 Equip a Weapon (1)
-step << Rogue
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T135357:0|t[共济之刃]
-    .use 186061
-    .complete 64048,1 --1/1 Open the Survival Kit (1)
-    .complete 64048,2 --1/1 Equip a Weapon (1)
-step << Hunter
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T135130:0|t[共济手杖] 和 |T135490:0|t[共济之弓]
-    .use 186055
-    .use 186056
-    .complete 64048,1 --1/1 Open the Survival Kit (1)
-    .complete 64048,2 --1/1 Equip a Weapon (1)
-step << Mage/Warlock/Priest
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T135160:0|t[共济法杖]
-    .use 186051
-    .complete 64048,1 --1/1 Open the Survival Kit (1)
-    .complete 64048,2 --1/1 Equip a Weapon (1)
-step << Druid
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] and equip the |T135130:0|t[共济手杖]
-    .use 186055
-    .complete 64049,1 --1/1 Open the Survival Kit (1)
-    .complete 64049,2 --1/1 Equip a Weapon (1)
-step << Warlock
-    .goto Orgrimmar,47.99,45.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格罗达尔|r 对话
-    .turnin 64048 >>接任务 生存工具
-    .accept 64050 >>接受任务 战斗训练
-    .target 格罗达尔
-step << Rogue
-    .goto Orgrimmar,43.90,54.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥莫克|r 对话
-    .turnin 64048 >>接任务 生存工具
-    .accept 64050 >>接受任务 战斗训练
-    .target 奥莫克
-step << Shaman
-    .goto Orgrimmar,38.82,36.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .turnin 64048 >>接任务 生存工具
-    .accept 64050 >>接受任务 战斗训练
-    .target 卡德里斯
-step << Warrior
-    .goto Orgrimmar,79.91,31.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷兹|r 对话
-    .turnin 64048 >>接任务 生存工具
-    .accept 64050 >>接受任务 战斗训练
-    .target 格雷兹·怒拳
-step << Hunter
-    .goto Orgrimmar,67.24,20.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科索祖尔|r 对话
-    .turnin 64048 >>接任务 生存工具
-    .accept 64050 >>接受任务 战斗训练
-    .target 科索祖尔
-step << Mage
-    .goto Orgrimmar,38.45,86.12
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪诺|r 对话
-    .turnin 64048 >>接任务 生存工具
-    .accept 64050 >>接任务 战斗训练
-	.target 迪诺
-step << Priest
-    .goto Orgrimmar,35.73,86.89
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尤斯|r 对话
-    .turnin 64048 >>接任务 生存工具
-    .accept 64050 >>接受任务 战斗训练
-	.target 萨尤斯
-step << Druid
-    .goto Thunder Bluff,76.79,31.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯姆|r 对话
-    .turnin 64049 >>接任务 生存工具
-    .accept 64051 >>接受任务 战斗训练
-    .target 凯姆·蛮鬃
-step << Warlock
-    .goto Orgrimmar,47.99,45.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格罗达尔|r 对话
-    >>训练一个法术
-    .complete 64050,1 -- Train a Spell (1)
-    .target 格罗达尔
-step << Rogue
-    .goto Orgrimmar,43.90,54.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥莫克|r 对话
-    >>训练一个法术
-    .complete 64050,1 -- Train a Spell (1)
-    .target 奥莫克
-step << Shaman
-    .goto Orgrimmar,38.82,36.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    >>训练一个法术
-    .complete 64050,1 -- Train a Spell (1)
-    .target 卡德里斯
-step << Warrior
-    .goto Orgrimmar,79.91,31.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷兹|r 对话
-    >>训练一个法术
-    .complete 64050,1 -- Train a Spell (1)
-    .target 格雷兹·怒拳
-step << Hunter
-    .goto Orgrimmar,67.24,20.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科索祖尔|r 对话
-    >>训练一个法术
-    .complete 64050,1 -- Train a Spell (1)
-    .target 科索祖尔
-step << Mage
-    .goto Orgrimmar,38.45,86.12
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪诺|r 对话
-    >>训练一个法术
-    .complete 64050,1 -- Train a Spell (1)
-	.target 迪诺
-step << Priest
-    .goto Orgrimmar,35.73,86.89
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尤斯|r 对话
-    >>训练一个法术
-    .complete 64050,1 -- Train a Spell (1)
-	.target 萨尤斯
-step << Druid
-    .goto Thunder Bluff,76.79,31.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯姆|r 对话
-    >>训练一个法术
-    .complete 64051,1 -- Train a Spell (1)
-    .target 凯姆·蛮鬃
-step << Warlock
-    .goto Orgrimmar,47.99,45.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格罗达尔|r 对话
-    .turnin 64050 >>交任务 战斗训练
-    .accept 64052 >>接任务 天赋异禀
-    .target 格罗达尔
-step << Rogue
-    .goto Orgrimmar,43.90,54.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥莫克|r 对话
-    .turnin 64050 >>交任务 战斗训练
-    .accept 64052 >>接任务 天赋异禀
-    .target 奥莫克
-step << Shaman
-    .goto Orgrimmar,38.82,36.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .turnin 64050 >>交任务 战斗训练
-    .accept 64052 >>接任务 天赋异禀
-    .target 卡德里斯
-step << Warrior
-    .goto Orgrimmar,79.91,31.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷兹|r 对话
-    .turnin 64050 >>交任务 战斗训练
-    .accept 64052 >>接任务 天赋异禀
-    .target 格雷兹·怒拳
-step << Hunter
-    .goto Orgrimmar,67.24,20.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科索祖尔|r 对话
-    .turnin 64050 >>交任务 战斗训练
-    .accept 64052 >>接任务 天赋异禀
-    .target 科索祖尔
-step << Mage
-    .goto Orgrimmar,38.45,86.12
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪诺|r 对话
-    .turnin 64050 >>交任务 战斗训练
-    .accept 64052 >>接任务 天赋异禀
-	.target 迪诺
-step << Priest
-    .goto Orgrimmar,35.73,86.89
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尤斯|r 对话
-    .turnin 64050 >>交任务 战斗训练
-    .accept 64052 >>接任务 天赋异禀
-	.target 萨尤斯
-step << Druid
-    .goto Thunder Bluff,76.79,31.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯姆|r 对话
-    .turnin 64051 >>交任务 战斗训练
-    .accept 64053 >>接任务 天赋异禀
-    .target 凯姆·蛮鬃
 step
-    >>分配5个技能点(默认：按N键打开天赋面板)
-	.complete 64052,1 << !Druid --5 Talent Points Allocated (1)
-    .complete 64053,1 << Druid --5 Talent Points Allocated (1)
-step << Warlock
-    .goto Orgrimmar,47.99,45.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格罗达尔|r 对话
-    .turnin 64052 >>交任务 天赋异禀
-    .accept 64063 >>接受任务 黑暗之门
-    .target 格罗达尔
-step << Rogue
-    .goto Orgrimmar,43.90,54.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥莫克|r 对话
-    .turnin 64052 >>交任务 天赋异禀
-    .accept 64063 >>接受任务 黑暗之门
-    .target 奥莫克
-step << Shaman
-    .goto Orgrimmar,38.82,36.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .turnin 64052 >>交任务 天赋异禀
-    .accept 64063 >>接受任务 黑暗之门
-    .target 卡德里斯
-step << Warrior
-    .goto Orgrimmar,79.91,31.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷兹|r 对话
-    .turnin 64052 >>交任务 天赋异禀
-    .accept 64063 >>接受任务 黑暗之门
-    .target 格雷兹·怒拳
-step << Hunter
-    .goto Orgrimmar,67.24,20.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科索祖尔|r 对话
-    .turnin 64052 >>交任务 天赋异禀
-    .accept 64063 >>接受任务 黑暗之门
-    .target 科索祖尔
-step << Mage
-    .goto Orgrimmar,38.45,86.12
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪诺|r 对话
-    .turnin 64052 >>交任务 天赋异禀
-    .accept 64052 >>接任务 天赋异禀
-	.target 迪诺
-step << Priest
-    .goto Orgrimmar,35.73,86.89
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尤斯|r 对话
-    .turnin 64052 >>交任务 天赋异禀
-    .accept 64063 >>接受任务 黑暗之门
-	.target 萨尤斯
-step << Druid
-    .goto Thunder Bluff,76.79,31.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯姆|r 对话
-    .turnin 64053 >>交任务 天赋异禀
-	.accept 64217 >>接受任务 黑暗之门
-    .target 凯姆·蛮鬃
++As soon as you log in for the first time, finish the little tutorial section in front of your class trainer to get access to all of the boosted gear
+.use 185964
+.use 186051
+.use 186052
+.use 186053
+.use 186054
+.use 186055
+.use 186056
+.use 186057
+.isQuestAvailable 64035 << Alliance
+.isQuestAvailable 64052 << Horde !Druid
+.isQuestAvailable 64053 << Horde Druid
 step << Druid
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔尔|r 对话
@@ -292,7 +34,7 @@ step << Mage
     .goto Orgrimmar,38.66,85.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_索乌|r 在小屋顶部对话
     .train 3567 >>训练 |T135759:0|t[传送：奥格瑞玛]
-    .train 11417 >>训练 |T135744:0|t[传送门：奥格瑞玛] 
+    .train 11417 >>训练 |T135744:0|t[传送门：奥格瑞玛]
     .target 索乌
 step << Warlock
     .goto Orgrimmar,47.52,46.73
@@ -355,6 +97,16 @@ step
     .turnin 5405 >>交任务 银色黎明委任徽章
 	.target 银色黎明军官加鲁什
 step
+    .goto Tirisfal Glades,83.2,71.4
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦拉·黎明之刃|r 对话
+    .accept 9443 >>Accept in The So-Called Mark of the Lightbringer
+    .target 麦拉·黎明之刃
+step
+    .goto Tirisfal Glades,83.29,72.34
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米克|r 对话
+    .accept 5901 >>接任务 瘟疫与你
+	.target 米克·莱文
+step
     #completewith next
     .use 12846 >>|cRXP_WARN_装备|r |T133440:0|t[银色黎明委任徽章] |cRXP_WARN_饰品|r
 step
@@ -412,10 +164,15 @@ step
 	+|cRXP_WARN_确保在每座塔之间杀怪并拾取|r |T133724:0|t[白骨碎片]
     .collect 22526,30,91261 --Bone Fragments
 step
+    .goto Western Plaguelands,42.28,66.05
+    .use 12815 >>|cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
+	-->>|cRXP_WARN_Do not engage the elite inside|r --not elite anymore in tbc
+    .complete 5098,2 --Tower Two marked (1)
+step
     #label TowerOne
     .goto Western Plaguelands,40.15,71.50
-    .use 12815 >>使用你的 |T135432:0|t[信号火炬] 在塔楼门口外侧的角落
-	>>|cRXP_WARN_不要招惹里面的精英怪|r
+    .use 12815 >>|cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
+	-->>|cRXP_WARN_Do not engage the elite inside|r --not elite anymore in tbc
     .complete 5098,1 --Tower One marked (1)
 step
     .goto Western Plaguelands,39.46,66.76
@@ -424,19 +181,19 @@ step
 	.target 克罗米
 step
     .goto Western Plaguelands,44.24,63.06
-    .use 12815 >>使用你的 |T135432:0|t[信号火炬] 在塔楼门口外侧的角落
-	>>|cRXP_WARN_不要招惹里面的精英怪|r
+    .use 12815 >>|cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
+	-->>|cRXP_WARN_Do not engage the elite inside|r --not elite anymore in tbc
     .complete 5098,3 --Tower Three marked (1)
 step
     .goto Western Plaguelands,45.8,63.3
 	.use 12627 >>刷新 |cRXP_ENEMY_时光寄生虫|r 用你的 |T134229:0|t[时光置换器] 在发光的粮仓旁边
 	>>|cRXP_WARN_时光寄生虫移动缓慢，死后还会分裂出更多寄生虫。如果怪太多扛不住了，准备往水里跑；它们不会游泳。|r
     .complete 4971,1 --Temporal Parasite (10)
-	.mob 时光寄生虫
+	.mob 雷恩·米克基尔
 step
     .goto Western Plaguelands,46.73,71.14
-    .use 12815 >>使用你的 |T135432:0|t[信号火炬] 在塔楼门口外侧的角落
-	>>|cRXP_WARN_不要招惹里面的精英怪|r
+    .use 12815 >>|cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
+	-->>|cRXP_WARN_Do not engage the elite inside|r --not elite anymore in tbc
     .complete 5098,4 --Tower Four marked (1)
 step
     .goto Western Plaguelands,46.04,52.33
@@ -452,10 +209,10 @@ step
     .goto Western Plaguelands,47.8,50.6
 	>>点击地上的 |cRXP_PICK_达尔松夫人的日记|r
     .turnin 5058 >>交任务 达尔松夫人的日记
-step	
+step
     .goto Western Plaguelands,47.49,51.00
-	>>击杀 |cRXP_ENEMY_游荡的骷髅|r 拾取它身上掉落的 |cRXP_LOOT_达尔松厕所钥匙|r 
-	>>|cRXP_WARN_如果骷髅没刷新，就去刷白骨碎片|r
+	>>击杀 |cRXP_ENEMY_游荡的骷髅|r 拾取它身上掉落的 |cRXP_LOOT_达尔松厕所钥匙|r
+	>>|cRXP_WARN_如果|r |cRXP_WARN_游荡的骷髅|cRXP_ENEMY_ |r还未出现，就刷|r |T133724:0|t[白骨碎片]
 	.collect 12738,1 -- Dalson Outhouse Key (x1)
 	.unitscan 游荡的骷髅
 step
@@ -467,7 +224,7 @@ step
     .goto Western Plaguelands,48.2,49.7
 	>>击杀 |cRXP_ENEMY_农夫达尔松|r 拾取他的 |cRXP_LOOT_橱柜钥匙|r
     .collect 12739,1,5060 --Collect Dalson Cabinet Key (x1)
-	.unitscan 农夫达尔松
+	.unitscan 打开 |T133652:0|t[Renn的补给] 来获得 |T133019:0|t[打捞设备] 和 |T133151:0|t[修好的潜水设备]
 step
     .goto Western Plaguelands,47.4,49.7
 	>>点击 |cRXP_PICK_锁住的柜橱|r 在房子的顶楼
@@ -475,7 +232,7 @@ step
 step
     .goto Western Plaguelands,51.92,28.07
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科尔斯塔|r 对话
-    .accept 6004 >>接受任务 未完的任务	
+    .accept 6004 >>接受任务 未完的任务
 	.target 科尔斯塔·迪普沙东
 step
 	#completewith next
@@ -485,9 +242,9 @@ step
     >>击杀 |cRXP_ENEMY_血色法师|r 和 |cRXP_ENEMY_血色骑士|r
 	>>|cRXP_WARN_那个|r |cRXP_ENEMY_法师|r |cRXP_WARN_和|r |cRXP_ENEMY_骑士|r |cRXP_WARN_共享刷新点。如有必要，多杀些怪来重置刷新|r
     .complete 6004,3 --Scarlet Mage (2)
-	.mob 血色法师
+	.mob |Tinterface/worldmap/chatbubble_64grey.blp:20|t与 雷恩·米克基尔 对话
 	.complete 6004,4 --Scarlet Knight (2)
-	.mob 血色骑士
+	.mob 雷恩·米克基尔
 step
     .goto Western Plaguelands,51.77,44.13,70,0
     .goto Western Plaguelands,40.83,52.30,70,0
@@ -498,7 +255,7 @@ step
     .complete 6004,1 --Scarlet Medic (2)
 	.mob 血色医者
     .complete 6004,2 --Scarlet Hunter (2)
-	.mob 血色猎人
+	.mob 接受任务通知吉安娜
 step
     .goto Western Plaguelands,50.43,41.12,70,0
     .goto Western Plaguelands,53.50,36.85,70,0
@@ -506,9 +263,9 @@ step
     >>杀掉 |cRXP_ENEMY_血色法师|r 和 |cRXP_ENEMY_血色骑士|r
 	>>|cRXP_WARN_那些|r |cRXP_ENEMY_法师|r |cRXP_WARN_和|r |cRXP_ENEMY_骑士|r |cRXP_WARN_共用刷新点。如有必要，多杀些怪来重置刷新。|r
     .complete 6004,3 --Scarlet Mage (2)
-	.mob 血色法师
+	.mob 你很快就要进入剃刀高地副本。开始寻找队伍，在交完几个任务后前往地下城
 	.complete 6004,4 --Scarlet Knight (2)
-	.mob 血色骑士
+	.mob 施放 |T135764:0|t[传送: Theramore]
 step
     .goto Western Plaguelands,51.92,28.07
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科尔斯塔|r 对话
@@ -517,13 +274,13 @@ step
 	.target 科尔斯塔·迪普沙东
 step
     .goto Western Plaguelands,57.83,36.10
-	>>击杀 |cRXP_ENEMY_猎人莱德雷|r 
+	>>击杀 |cRXP_ENEMY_猎人莱德雷|r
 	>>|cRXP_WARN_她周围的怪很容易连锁拉怪。缚法者会施放冰霜新星|r
     .complete 6023,1 --Huntsman Radley (1)
 	.unitscan 猎人莱德雷
 step
     .goto Western Plaguelands,54.64,23.71
-	>>击杀 |cRXP_ENEMY_骑士杜尔根|r 
+	>>击杀 |cRXP_ENEMY_骑士杜尔根|r
 	>>|cRXP_WARN_等他巡逻出塔后再开怪会让整个战斗安全得多。他有一个瞬发的5秒昏迷技能|r
     .complete 6023,2 --Cavalier Durgen (1)
 	.unitscan 骑士杜尔根
@@ -533,7 +290,7 @@ step
     >>拾取塔顶的 |cRXP_PICK_神圣箱子|r 获得 |cRXP_LOOT_光明使者的印记|r
 	>>|cRXP_WARN_那个 |cRXP_ENEMY_血色高阶牧师|r (63级  精英怪)可能刷新了，需要的话可以跳过这个任务|r
     .complete 9443,1 --Mark of the Lightbringer (1)
-    .unitscan 血色高阶牧师
+    .unitscan 接受任务调查奥卡兹岛
 step
 	#label Businessman
     .goto Western Plaguelands,51.92,28.07
@@ -551,8 +308,11 @@ step
     >>|cRXP_WARN_注意，怪物的攻击判定没有Z轴限制。如果它们站在你的正下方，依然能打到你|r
     .complete 6025,1 --Overlook Hearthglen from a high vantage point (1)
 step
+    #completewith next
+    .subzone 192 >>离开壁炉谷
+step
     .goto Western Plaguelands,51.92,28.06
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t离开壁炉谷然后和 |cRXP_FRIENDLY_科尔斯塔|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科尔斯塔|r 对话
     .turnin 6025 >>交任务 未完的任务
 	.target 科尔斯塔·迪普沙东
 step
@@ -615,7 +375,7 @@ step
 	.goto Western Plaguelands,43.40,64.40,50,0
 	.goto Western Plaguelands,45.80,65.80,50,0
 	>>击杀所有 |cRXP_ENEMY_骷髅|r 在安多哈尔，拾取它们并获得 |cRXP_LOOT_碎片|r
-	>>|cRXP_ENEMY_骷髅刽子手|r |cRXP_WARN_会斩杀|r
+	>>|cRXP_ENEMY_当你的生命值低于20%时，|r 骷髅刽子手|cRXP_WARN_ 可以|r |T135358:0|t[斩杀]|cRXP_WARN_你|r
     .complete 964,1 --Skeletal Fragments (15)
 	.mob 骷髅刽子手
 	.mob 骷髅侍僧
@@ -681,7 +441,7 @@ step
 	.goto Western Plaguelands,50.00,46.60,70,0
 	.goto Western Plaguelands,47.80,43.40,70,0
 	>>击杀 |cRXP_ENEMY_生病的狼|r
-	>>|cRXP_ENEMY_生病的狼|r |cRXP_WARN_共享刷新点和|r |cRXP_ENEMY_腐虫潜伏者|r|cRXP_WARN_如果需要的话，击杀它们来重置刷新|r
+	>>|cRXP_ENEMY_生病的狼|r |cRXP_WARN_和|r |cRXP_ENEMY_腐虫潜伏者|r|cRXP_WARN_共享刷新。如果需要的话，击杀它们来重置刷新|r
     .complete 4984,1 --Diseased Wolf (8)
 	.unitscan 生病的狼
 step
@@ -698,7 +458,7 @@ step
     .goto Western Plaguelands,59.43,52.40,90,0
     .goto Western Plaguelands,68.18,46.23,90,0
 	>>击杀 |cRXP_ENEMY_生病的灰熊|r
-	>>|cRXP_ENEMY_生病的灰熊|r |cRXP_WARN_共享刷新点和|r |cRXP_ENEMY_天灾潜伏者|r|cRXP_WARN_如果需要的话，击杀它们来重置刷新|r
+	>>|cRXP_ENEMY_生病的灰熊|r |cRXP_WARN_和|r |cRXP_ENEMY_天灾潜伏者|r|cRXP_WARN_共享刷新点，如果需要的话，击杀它们来重置刷新|r
     .complete 4985,1 --Diseased Grizzly (8)
 	.unitscan 生病的灰熊
 step
@@ -721,21 +481,21 @@ step
 	>>拾取3个 |cRXP_PICK_洋娃娃的身体部件|r 在建筑废墟的地上
 	>>|cRXP_WARN_点击洋娃娃的身体部件会刷新一些|r |cRXP_ENEMY_往日的幽灵|r |cRXP_WARN_他们会释放冰甲术和冰霜震击|r
 	.collect 12886,1,5149,1 -- Pamela's Doll's Head
-	.unitscan 往日的幽灵
+	.unitscan 交还 剃刀高地的亡灵天灾
     .isOnQuest 5149
 step
     .goto Eastern Plaguelands,39.64,92.51
 	>>拾取3个 |cRXP_PICK_洋娃娃的身体部件|r 在建筑废墟的地上
 	>>|cRXP_WARN_点击洋娃娃的身体部件会刷新一些|r |cRXP_ENEMY_往日的幽灵|r |cRXP_WARN_他们会释放冰甲术和冰霜震击|r
 	.collect 12887,1,5149,1 -- Pamela's Doll's Left Side
-	.unitscan 往日的幽灵
+	.unitscan 接受 封印神像
     .isOnQuest 5149
 step
     .goto Eastern Plaguelands,39.67,90.24
 	>>拾取3个 |cRXP_PICK_洋娃娃的身体部件|r 在建筑废墟的地上
 	>>|cRXP_WARN_点击洋娃娃的身体部件会刷新一些|r |cRXP_ENEMY_往日的幽灵|r |cRXP_WARN_他们会释放冰甲术和冰霜震击|r
 	.collect 12888,1,5149,1 -- Pamela's Doll's Right Side
-	.unitscan 往日的幽灵
+	.unitscan 奔尼斯特拉兹
     .isOnQuest 5149
 step
     .goto Eastern Plaguelands,36.47,90.80
@@ -763,7 +523,7 @@ step
 	.subzone 2264 >>前往考林路口
 step
 	#completewith next
-	>>击杀 |cRXP_ENEMY_亡灵|r 拾取它们的 |cRXP_LOOT_生命腐质|r。 
+	>>击杀 |cRXP_ENEMY_亡灵|r。拾取它们的 |cRXP_LOOT_生命腐质|r。
 	>>|cRXP_WARN_北边和东边的道路上有多组精英怪巡逻。科林路口里面有隐形怪巡逻，所以尽量把怪拉出来打|r
 	.collect 15447,7 --Living Rot (7)
 	.mob 憎恨吟唱者
@@ -782,7 +542,7 @@ step
 	.goto Eastern Plaguelands,61.40,66.40,25,0
 	.goto Eastern Plaguelands,59.40,66.40,25,0
 	.goto Eastern Plaguelands,58.00,67.60,25,0
-	.use 15454 >>|cRXP_WARN_使用|r |T133748:0|t[研钵和捣杵] |cRXP_WARN_在 |cRXP_LOOT_生命腐质|r 过期之前|r
+	.use 15454 >>|cRXP_WARN_在 |r生命腐质|cRXP_WARN_ 过期之前|cRXP_LOOT_ |r使用|r |T133748:0|t[研钵和捣杵]
     .complete 6022,1 --Coagulated Rot (1)
 step
 	#completewith LHFP
@@ -791,7 +551,7 @@ step
     .goto Eastern Plaguelands,79.60,63.87
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥林 |r 对话
     .accept 6021 >>接任务 流亡者塞达尔
-    .accept 5281 >>接任务 永不安息的灵魂
+    .accept 5281 >>接受任务 永不安息的灵魂
 	.target 护理者奥林
 step
     .goto Eastern Plaguelands,81.51,59.77
@@ -803,7 +563,7 @@ step
     .goto Eastern Plaguelands,81.627,58.077
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杰希卡·查伯斯|r 对话
     .home >>将你的炉石设置在圣光之愿礼拜堂
-    .target 杰希卡·查伯斯
+    .target |Tinterface/worldmap/chatbubble_64grey.blp:20|t在塔顶与 吉安娜·普罗德摩尔 对话
     .bindlocation 2268
     .subzoneskip 2268,1
 step
@@ -829,7 +589,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达隆郡居民的灵魂|r 对话
 	>>|cRXP_WARN_这些怪跟好几种怪共享刷新点，所以食尸鬼杀完后，把其他怪也都杀光|r
     .complete 5211,1 --Darrowshire Spirits Freed (15)
-	.unitscan 生病的剥皮者
+	.unitscan 交任务通知吉安娜
 	.skipgossip
 step
     #label Termites
@@ -872,7 +632,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达隆郡居民的灵魂|r 对话
 	>>|cRXP_WARN_这些怪跟好几种怪共享刷新点，所以食尸鬼杀完后，把其他怪也都杀光|r
     .complete 5211,1 --Darrowshire Spirits Freed (15)
-	.unitscan 生病的剥皮者
+	.unitscan 与 卡萨·赤翼 对话以开始对奥卡兹岛的调查
 	.skipgossip
 step
     #loop
@@ -890,7 +650,7 @@ step
     .collect 12840,20 --Minion's Scourgestones (x20)
 step
     #completewith next
-    .hs >>飞往圣光之愿礼拜堂
+    .hs >>炉石返回圣光之愿礼拜堂
     .bindlocation 2268,1
     .subzoneskip 2268
     .cooldown item,6948,>2,1
@@ -902,9 +662,9 @@ step
 step
     .goto Eastern Plaguelands,81.05,57.55
     >>与 |cRXP_FRIENDLY_梅兹|r 对话
-    .accept 9141 >>接任务 "梅兹的文书"
+    .accept 9141 >>接受任务 "梅兹的文书"
     .turnin 9141 >>交任务 "梅兹的文书"
-    .target 物资官员梅兹
+    .target 卡萨·赤翼
     .itemcount 12844,1 --Argent Dawn Valor Token (1)
 step
     .goto Eastern Plaguelands,81.51,59.77
@@ -916,7 +676,7 @@ step
 	.goto Eastern Plaguelands,80.22,57.01
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔吉亚|r 对话
     .fly Undercity >>飞往幽暗城
-	.target 乔吉亚
+	.target 施放 |T135764:0|t[传送: Theramore]
 	.zoneskip Undercity
 step
     .goto Undercity,69.79,43.16
@@ -935,7 +695,7 @@ step
     .goto Undercity,58.07,91.79
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希尔瓦娜斯|r 对话
     .accept 5961 >>接受任务 女妖之王的勇士
-	.target 希尔瓦娜斯·风行者
+	.target 交还 调查奥卡兹岛
 step
     #label UCvisit2
 	#completewith next
@@ -1052,7 +812,7 @@ step
 	.goto Western Plaguelands,48.35,32.00
 	>>进入伐木场，点击坡道边的 |cRXP_PICK_北山伐木场箱子|r ，然后点击 |cRXP_PICK_白蚁桶|r
     .turnin 5902 >>交任务 瘟疫与你
-    .accept 6390 >>接任务 瘟疫与你
+    .accept 6390 >>接受任务 瘟疫与你
 step
     .goto Western Plaguelands,39.46,66.76
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗米|r 在旅店的顶楼对话
@@ -1076,33 +836,34 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德灵顿|r 对话
     .turnin 5238 >>交任务 任务完成！
 	.target 高级执行官德灵顿
-step
+step << skip
     .goto Tirisfal Glades,61.87,59.11
     >>|cRXP_WARN_登上飞艇塔|r
     .zone Stranglethorn Vale >>坐飞艇去荆棘谷
-step
+step << skip
     .goto Stranglethorn Vale,32.5,29.3
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞斯塔|r 对话
     .complete 64217,2 << Druid--Speak to Thysta at Grom'gol Base Camp (1)
     .complete 64063,2 << !Druid--Speak to Thysta at Grom'gol Base Camp (1)
 	.target 塞斯塔
-step
+step << skip
     .goto Stranglethorn Vale,32.5,29.3
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞斯塔|r 对话
 	.fly Stonard >>飞往斯通纳德
 	.target 塞斯塔
     .subzoneskip 75
-step
+step << skip
 	#completewith next
 	.goto Swamp of Sorrows,33.4,71.9,60,0
 	.goto Swamp of Sorrows,33.2,68.4,60,0
 	.zone Blasted Lands >>前往诅咒之地
-step	
+
+step << skip
     .goto Blasted Lands,58.1,56.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_督军达图恩|r 对话
-    .turnin 64063 >>交任务 黑暗之门 << !Druid
-    .turnin 64217 >>交任务 黑暗之门 << Druid
-    .accept 9407 >>接受任务 跨越黑暗之门
+    --.turnin 64063 >>Turn in The Dark Portal << !Druid
+    --.turnin 64217 >>Turn in The Dark Portal << Druid
+    --.accept 9407 >>Accept Through the Dark Portal
     .target 督军达图恩
 
 ]])

@@ -806,7 +806,7 @@ step << Warrior/Rogue/Paladin
     #completewith next
     .goto Dun Morogh,47.377,52.523
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话，NPC在里面
-    .vendor >>|cRXP_BUY_购买最多20个|r |T133968:0|t[刚出炉的面包] << Warrior/Rogue
+    .vendor >>|cRXP_BUY_购买最多20个 |r |T133968:0|t[刚出炉的面包] << Warrior/Rogue
     .vendor >>|cRXP_BUY_购买最多10个|r |T133968:0|t[刚出炉的面包] << Paladin
     .target 旅店老板贝尔姆
 step << Paladin/Warrior/Rogue
@@ -1346,7 +1346,7 @@ step
 step
     .goto Dun Morogh,68.6,54.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡杉·莫格什|r 对话
-    .vendor >>|cRXP_BUY_如有需要，|r|cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包] << Warrior/Rogue
+    .vendor >>|cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_如果需要的话|r << Warrior/Rogue
     .vendor >>|cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_和|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_如果需要的话|r << !Warrior !Rogue
     .target 卡杉·莫格什
 step
@@ -1532,7 +1532,7 @@ step
     .turnin 6391 >>交任务 飞往铁炉堡
     .accept 6388 >>接受任务 格莱斯·瑟登
 step << Hunter
-    >>|cRXP_WARN_不要飞往任何地方|r
+    >>|cRXP_WARN_不要飞到任何地方|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .target 格莱斯·瑟登
     .goto Ironforge,55.501,47.742
@@ -1551,7 +1551,7 @@ step << Warrior
     .goto Ironforge,61.181,89.514
     .trainer >>学习双手锤
 step << !Hunter
-    >>|cRXP_WARN_不要飞往任何地方|r
+    >>|cRXP_WARN_不要飞到任何地方|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .target 格莱斯·瑟登
     .goto Ironforge,55.501,47.742

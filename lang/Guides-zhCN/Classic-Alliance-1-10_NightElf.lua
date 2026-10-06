@@ -141,7 +141,7 @@ step << !Hunter
     #season 0 << Warrior
     .goto Teldrassil,54.593,32.992
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃沃隆|r 对话
-    .turnin 4495 >>交任务 好朋友
+    .turnin 4495 >>交任务  好朋友
     .target 埃沃隆
     .accept 3519 >>接受任务 需要帮助的朋友
 step << !Hunter !Warrior
@@ -421,7 +421,7 @@ RXPGuides.RegisterGuide([[
 #displayname 7-13级 泰达希尔 << SoD
 #version 1
 #group RestedXP 联盟 1-20 级
-#group14-16级 黑海岸
+#groupid RXP-SRGCE-A1
 #defaultfor NightElf
 #next 14-16级 黑海岸
 
@@ -1225,7 +1225,7 @@ step << Hunter
 	#xprate <1.5
     #sticky
     #label xp10
-    .xp 10-2670 >>刷怪升级直到离10级还差2670xp（3830/6500）
+    .xp 10-2670 >>刷怪升级直到离10级还差2670经验（3830/6500）
     >>|cRXP_WARN_一旦你达到这个经验值临界点，就跳过鹰身人任务和护送任务，直接前往达纳苏斯。你稍后还会有机会来完成这些任务|r
 step << Hunter
 	#xprate <1.5

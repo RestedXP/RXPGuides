@@ -7,304 +7,23 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 直升人物 58-60
 #subgroup RestedXP 联盟直升 58-60
-#defaultfor 58Boost
+#subweight -1
+#title Boosted Character 58-60
 #next 59-61 地狱火半岛
 
-step << Warrior
-    .goto Stormwind City,78.211,47.596
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_安德尔·杰曼|r 对话
-    .turnin 64028 >>交任务 新的开始
-    .accept 64031 >>接任务 生存工具
-    .target 安德尔·杰曼
-step << Warrior
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T133041:0|t[共济战槌]
-    .use 186057
-    .complete 64031,1 --1/1 Open the Survival Kit (1)
-    .complete 64031,2 --1/1 Equip a Weapon (1)
-step << Warrior
-    .goto Stormwind City,78.211,47.596
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安德尔·杰曼|r 对话
-    .turnin 64031 >>接任务 生存工具
-    .accept 64034 >>接任务 战斗训练
-    .target 安德尔·杰曼
-step << Warrior
-    .goto Stormwind City,78.211,47.596
-    >>与 |cRXP_FRIENDLY_安德尔·杰曼|r 对话并训练一个法术
-    .complete 64034,1 -- Train a Spell (1)
-    .target 安德尔·杰曼
-step << Warrior
-    .goto Stormwind City,78.211,47.596
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安德尔·杰曼|r 对话
-    .turnin 64034 >>交任务 战斗训练
-    .accept 64035 >>接任务 天赋异禀
-step << Warrior
-    >>分配5个技能点(默认：按N键打开天赋面板)
-    .complete 64035,1 --5 Talent Points Allocated (1)
-step << Warrior
-    .goto Stormwind City,78.211,47.596
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安德尔·杰曼|r 对话
-    .turnin 64035 >>交任务 天赋异禀
-    .accept 64038 >>接任务 黑暗之门
-    .target 安德尔·杰曼
-step << Paladin
-    .goto Stormwind City,37.142,33.266
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷森·沙东布瑞克公爵|r 对话
-    .turnin 64028 >>交任务 新的开始
-    .accept 64031 >>接任务 生存工具
-    .target 格雷森·沙东布瑞克公爵
-step << Paladin
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T133041:0|t[共济战槌]
-    .use 186057
-    .complete 64031,1 --1/1 Open the Survival Kit (1)
-    .complete 64031,2 --1/1 Equip a Weapon (1)
-step << Paladin
-    .goto Stormwind City,37.142,33.266
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷森·沙东布瑞克公爵|r 对话
-    .turnin 64031 >>接任务 生存工具
-    .accept 64034 >>接任务 战斗训练
-    .target 格雷森·沙东布瑞克公爵
-step << Paladin
-    .goto Stormwind City,37.142,33.266
-    >>与 |cRXP_FRIENDLY_格雷森·沙东布瑞克公爵|r 对话并训练一个法术
-    .complete 64034,1 -- Train a Spell (1)
-    .target 格雷森·沙东布瑞克公爵
-step << Paladin
-    .goto Stormwind City,37.142,33.266
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷森·沙东布瑞克公爵|r 对话
-    .turnin 64034 >>交任务 战斗训练
-    .accept 64035 >>接任务 天赋异禀
-step << Paladin
-    >>分配5个技能点(默认：按N键打开天赋面板)
-    .complete 64035,1 --5 Talent Points Allocated (1)
-step << Paladin
-    .goto Stormwind City,37.142,33.266
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷森·沙东布瑞克公爵|r 对话
-    .turnin 64035 >>交任务 天赋异禀
-    .accept 64038 >>接受任务 黑暗之门
-    .target 格雷森·沙东布瑞克公爵
-step << Rogue
-    .goto Stormwind City,78.326,57.038
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托尼·罗曼诺|r 对话
-    .turnin 64028 >>交任务 新的开始
-    .accept 64031 >>接任务 生存工具
-    .target 托尼·罗曼诺
-step << Rogue
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T135357:0|t[共济之刃]
-    .use 186061
-    .complete 64031,1 --1/1 Open the Survival Kit (1)
-    .complete 64031,2 --1/1 Equip a Weapon (1)
-step << Rogue
-    .goto Stormwind City,78.326,57.038
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托尼·罗曼诺|r 对话
-    .turnin 64031 >>接任务 生存工具
-    .accept 64034 >>接任务 战斗训练
-    .target 托尼·罗曼诺
-step << Rogue
-    .goto Stormwind City,78.326,57.038
-    >>与 |cRXP_FRIENDLY_托尼·罗曼诺|r 对话并训练一个法术
-    .complete 64034,1 -- Train a Spell (1)
-    .target 托尼·罗曼诺
-step << Rogue
-    .goto Stormwind City,78.326,57.038
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托尼·罗曼诺|r 对话
-    .turnin 64034 >>交任务 战斗训练
-    .accept 64035 >>接任务 天赋异禀
-    .target 托尼·罗曼诺
-step << Rogue
-    >>分配5个技能点(默认：按N键打开天赋面板)
-    .complete 64035,1 --5 Talent Points Allocated (1)
-step << Rogue
-    .goto Stormwind City,78.326,57.038
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托尼·罗曼诺|r 对话
-    .turnin 64035 >>交任务 天赋异禀
-    .accept 64038 >>接受任务 黑暗之门
-    .target 托尼·罗曼诺
-step << Priest
-    .goto Stormwind City,38.572,26.005
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r 对话
-    .turnin 64028 >>交任务 新的开始
-    .accept 64031 >>接任务 生存工具
-    .target 高阶牧师劳瑞娜
-step << Priest
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T135160:0|t[共济法杖]
-    .use 186051
-    .complete 64031,1 --1/1 Open the Survival Kit (1)
-    .complete 64031,2 --1/1 Equip a Weapon (1)
-step << Priest
-    .goto Stormwind City,38.572,26.005
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r 对话
-    .turnin 64031 >>接任务 生存工具
-    .accept 64034 >>接任务 战斗训练
-    .target 高阶牧师劳瑞娜
-step << Priest
-    .goto Stormwind City,38.572,26.005
-    >>与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r 对话并训练一个法术
-    .complete 64034,1 -- Train a Spell (1)
-    .target 高阶牧师劳瑞娜
-step << Priest
-    .goto Stormwind City,38.572,26.005
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r 对话
-    .turnin 64034 >>交任务 战斗训练
-    .accept 64035 >>接任务 天赋异禀
-    .target 高阶牧师劳瑞娜
-step << Priest
-    >>分配5个技能点(默认：按N键打开天赋面板)
-    .complete 64035,1 --5 Talent Points Allocated (1)
-step << Priest
-    .goto Stormwind City,38.572,26.005
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r 对话
-    .turnin 64035 >>交任务 天赋异禀
-    .accept 64038 >>接任务 黑暗之门
-    .target 高阶牧师劳瑞娜
-step << Mage
-    .goto Stormwind City,38.528,79.328
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_詹妮亚·坎农|r 在法师塔里对话
-    .turnin 64028 >>交任务 新的开始
-    .accept 64031 >>接任务 生存工具
-    .target 詹妮亚·坎农
-step << Mage
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T135160:0|t[共济法杖]
-    .use 186051
-    .complete 64031,1 --1/1 Open the Survival Kit (1)
-    .complete 64031,2 --1/1 Equip a Weapon (1)
-step << Mage
-    .goto Stormwind City,38.528,79.328
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_詹妮亚·坎农|r 对话
-    .turnin 64031 >>接任务 生存工具
-    .accept 64034 >>接任务 战斗训练
-    .target 詹妮亚·坎农
-step << Mage
-    .goto Stormwind City,38.528,79.328
-    >>与 |cRXP_FRIENDLY_詹妮亚·坎农|r 对话并训练一个法术
-    .complete 64034,1 -- Train a Spell (1)
-    .target 詹妮亚·坎农
-step << Mage
-    .goto Stormwind City,38.528,79.328
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_詹妮亚·坎农|r 对话
-    .turnin 64034 >>交任务 战斗训练
-    .accept 64035 >>接任务 天赋异禀
-    .target 詹妮亚·坎农
-step << Mage
-    >>分配5个技能点(默认：按N键打开天赋面板)
-    .complete 64035,1 --5 Talent Points Allocated (1)
-step << Mage
-    .goto Stormwind City,38.528,79.328
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_詹妮亚·坎农|r 对话
-    .turnin 64035 >>交任务 天赋异禀
-    .accept 64038 >>接任务 黑暗之门
-    .target 詹妮亚·坎农
-step << Warlock
-    .goto Stormwind City,26.116,77.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 在“已宰的羔羊”里对话
-    .turnin 64028 >>交任务 新的开始
-    .accept 64031 >>接任务 生存工具
-    .target 厄苏拉·德林
-step << Warlock
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T135160:0|t[共济法杖]
-    .use 186051
-    .complete 64031,1 --1/1 Open the Survival Kit (1)
-    .complete 64031,2 --1/1 Equip a Weapon (1)
-step << Warlock
-    .goto Stormwind City,26.116,77.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
-    .turnin 64031 >>接任务 生存工具
-    .accept 64034 >>接受任务 战斗训练
-    .target 厄苏拉·德林
-step << Warlock
-    .goto Stormwind City,26.116,77.200
-    >>与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话并训练一个法术
-    .complete 64034,1 -- Train a Spell (1)
-    .target 厄苏拉·德林
-step << Warlock
-    .goto Stormwind City,26.116,77.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
-    .turnin 64034 >>交任务 战斗训练
-    .accept 64035 >>接任务 天赋异禀
-    .target 厄苏拉·德林
-step << Warlock
-    >>分配5个技能点(默认：按N键打开天赋面板)
-    .complete 64035,1 --5 Talent Points Allocated (1)
-step << Warlock
-    .goto Stormwind City,26.116,77.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
-    .turnin 64035 >>交任务 天赋异禀
-    .accept 64038 >>接受任务 黑暗之门
-    .target 厄苏拉·德林
-step << Hunter
-    .goto Stormwind City,61.576,15.188
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_恩瑞斯·锐矛|r 对话
-    .turnin 64028 >>交任务 新的开始
-    .accept 64031 >>接任务 生存工具
-    .target 恩瑞斯·锐矛
-step << Hunter
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] 并装备 |T135130:0|t[共济手杖] 和 |T135490:0|t[共济之弓]
-    .use 186055
-    .use 186056
-    .complete 64031,1 --1/1 Open the Survival Kit (1)
-    .complete 64031,2 --1/1 Equip a Weapon (1)
-step << Hunter
-    .goto Stormwind City,61.576,15.188
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_恩瑞斯·锐矛|r 对话
-    .turnin 64031 >>接任务 生存工具
-    .accept 64034 >>接受任务 战斗训练
-    .target 恩瑞斯·锐矛
-step << Hunter
-    .goto Stormwind City,61.576,15.188
-    >>与 |cRXP_FRIENDLY_恩瑞斯·锐矛|r 对话并训练一个法术
-    .complete 64034,1 -- Train a Spell (1)
-    .target 恩瑞斯·锐矛
-step << Hunter
-    .goto Stormwind City,61.576,15.188
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_恩瑞斯·锐矛|r 对话
-    .turnin 64034 >>交任务 战斗训练
-    .accept 64035 >>接任务 天赋异禀
-    .target 恩瑞斯·锐矛
-step << Hunter
-    >>分配5个技能点(默认：按N键打开天赋面板)
-    .complete 64035,1 --5 Talent Points Allocated (1)
-step << Hunter
-    .goto Stormwind City,61.576,15.188
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_恩瑞斯·锐矛|r 对话
-    .turnin 64035 >>交任务 天赋异禀
-    .accept 64038 >>接受任务 黑暗之门
-    .target 恩瑞斯·锐矛
-step << Druid
-    .goto Stormwind City,21.236,51.677
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞瑞德兰|r 对话
-    .turnin 64028 >>交任务 新的开始
-    .accept 64031 >>接任务 生存工具
-    .target 塞瑞德兰
-step << Druid
-    .use 185964 >>打开 |T133651:0|t[艾泽拉斯生存补给包] and equip the |T135130:0|t[共济手杖]
-    .use 186055
-    .complete 64031,1 --1/1 Open the Survival Kit (1)
-    .complete 64031,2 --1/1 Equip a Weapon (1)
-step << Druid
-    .goto Stormwind City,21.236,51.677
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞瑞德兰|r 对话
-    .turnin 64031 >>接任务 生存工具
-    .accept 64034 >>接受任务 战斗训练
-    .target 塞瑞德兰
-step << Druid
-    .goto Stormwind City,21.236,51.677
-    >>与 |cRXP_FRIENDLY_恩瑞斯·锐矛|r 对话并训练一个法术
-    .complete 64034,1 -- Train a Spell (1)
-    .target 塞瑞德兰
-step << Druid
-    .goto Stormwind City,21.236,51.677
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞瑞德兰|r 对话
-    .turnin 64034 >>交任务 战斗训练
-    .accept 64035 >>接任务 天赋异禀
-    .target 塞瑞德兰
-step << Druid
-    >>分配5个技能点(默认：按N键打开天赋面板)
-    .complete 64035,1 --5 Talent Points Allocated (1)
-step << Druid
-    .goto Stormwind City,21.236,51.677
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞瑞德兰|r 对话
-    .turnin 64035 >>交任务 天赋异禀
-    .accept 64038 >>接受任务 黑暗之门
-    .target 塞瑞德兰
+step
++As soon as you log in for the first time, finish the little tutorial section in front of your class trainer to get access to all of the boosted gear
+.use 185964
+.use 186051
+.use 186052
+.use 186053
+.use 186054
+.use 186055
+.use 186056
+.use 186057
+.isQuestAvailable 64035 << Alliance
+.isQuestAvailable 64052 << Horde !Druid
+.isQuestAvailable 64053 << Horde Druid
 step
     .isOnQuest 64038
     .goto Stormwind City,66.277,62.137
@@ -329,13 +48,13 @@ step
     .goto Burning Steppes,90.6,43.6,70,0
     >>击杀 |cRXP_ENEMY_黑色小龙|r, |cRXP_ENEMY_黑色龙兽|r, |cRXP_ENEMY_黑色龙裔|r 和一条 |cRXP_ENEMY_黑色幼龙|r
     .complete 4182,1 -- Black Broodling slain (15)
-    .mob 黑色小龙
+    .mob +黑色小龙
     .complete 4182,2 -- Black Dragonspawn slain (10)
-    .mob 黑色龙兽
+    .mob +黑色龙人
     .complete 4182,4 -- Black Wyrmkin slain (4)
-    .mob 黑色龙人
+    .mob +黑色龙人
     .complete 4182,3 -- Black Drake slain
-    .mob 黑色幼龙
+    .mob +黑色幼龙
     .isOnQuest 4182
 step
     .goto Burning Steppes,85.820,68.948
@@ -477,7 +196,7 @@ step
 step
     .goto Eastern Plaguelands,79.405,63.983
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_护理者奥林|r 对话
-    .accept 5281 >>接任务 永不安息的灵魂
+    .accept 5281 >>接受任务 永不安息的灵魂
     .accept 6021 >>接任务 流亡者塞达尔
     .target 护理者奥林
 step << Hunter
@@ -539,9 +258,9 @@ step
     .goto Western Plaguelands,50.01,76.90
     >>击杀 |cRXP_ENEMY_骷髅剥皮者|r 和 |cRXP_ENEMY_被奴役的食尸鬼|r
     .complete 5092,1 -- Skeletal Flayer slain (10)
-    .mob 骷髅剥皮者
+    .mob +骷髅剥皮者
     .complete 5092,2 -- Slavering Ghoul slain (10)
-    .mob 被奴役的食尸鬼
+    .mob +被奴役的食尸鬼
 step
     .goto Western Plaguelands,49.2,78.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛莱恩·雷德帕斯|r 对话
@@ -552,7 +271,7 @@ step
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官阿什拉姆·瓦罗菲斯特|r 对话
     .turnin 5092 >>交任务 扫清道路
-    .accept 5215 >>接任务 瘟疫之锅
+    .accept 5215 >>接受任务 瘟疫之锅
     .accept 5097 >>接受任务 标记哨塔
     .target 指挥官阿什拉姆·瓦罗菲斯特
 step
@@ -568,7 +287,7 @@ step
     .accept 5904 >>接受任务 瘟疫与你
     .target 纳萨尼尔·杜马
 step
-    .goto Western Plaguelands,40.116,71.561,-1    
+    .goto Western Plaguelands,40.116,71.561,-1
     .goto Western Plaguelands,40.038,71.713,-1
     .use 12815 >>|cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
     .complete 5097,1 --Tower One marked
@@ -584,18 +303,18 @@ step
     .turnin 5216 >>交任务 目标：费尔斯通农场
     .accept 5217 >>接受任务 返回冰风岗
 step
-    .goto Western Plaguelands,42.326,66.105,-1    
+    .goto Western Plaguelands,42.326,66.105,-1
     .goto Western Plaguelands,42.422,66.222,-1
     .use 12815 >>|cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
     .complete 5097,2 --Tower Two marked
 step
-    .goto Western Plaguelands,44.217,63.319,-1    
+    .goto Western Plaguelands,44.217,63.319,-1
     .goto Western Plaguelands,44.247,63.131,-1
     .use 12815 >>|cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
     .complete 5097,3 --Tower Three marked
 step
     #label ADC
-    .goto Western Plaguelands,46.681,71.135,-1    
+    .goto Western Plaguelands,46.681,71.135,-1
     .goto Western Plaguelands,46.558,71.156,-1
     .use 12815 >>|cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
     .complete 5097,4 --Tower Four marked
@@ -645,14 +364,14 @@ step
     .goto Western Plaguelands,43.4,57.8,70,0
     .goto Western Plaguelands,46.6,40.4,70,0
     >>击杀 |cRXP_ENEMY_生病的狼|r
-    >>|cRXP_ENEMY_生病的狼|r |cRXP_WARN_和共享刷新 |cRXP_ENEMY_腐虫潜伏者|r. 你可能需要击杀它们来强制 |cRXP_ENEMY_生病的狼|r 刷新|r
+    >>|cRXP_ENEMY_生病的狼|r |cRXP_WARN_和 |cRXP_ENEMY_腐虫潜伏者|r共享刷新。你可能需要击杀它们来强制 |cRXP_ENEMY_生病的狼|r 刷新|r
     .complete 4984,1 --Kill Diseased Wolf (x8)
     .unitscan 生病的狼
 step
     .goto Western Plaguelands,47.796,50.671
     >>|cRXP_WARN_进入达尔松之泪的谷仓|r
     >>点击地上的 |cRXP_PICK_达尔松夫人的日记|r
-    .accept 5058 >>接任务 达尔松夫人的日记
+    .accept 5058 >>接受任务 达尔松夫人的日记
     .turnin 5058 >>交任务 达尔松夫人的日记
 step
     .goto Western Plaguelands,47.86,49.88,25,0
@@ -660,7 +379,7 @@ step
     .goto Western Plaguelands,47.39,51.77,25,0
     .goto Western Plaguelands,46.64,49.21,25,0
     .goto Western Plaguelands,47.86,49.88
-    >>消灭那些 |cRXP_LOOT_游荡的骷髅|r. 从他们身上拾取 |cRXP_LOOT_达尔松厕所钥匙|r 
+    >>消灭那些 |cRXP_LOOT_游荡的骷髅|r. 从他们身上拾取 |cRXP_LOOT_达尔松厕所钥匙|r
     >>|cRXP_WARN_那些 |cRXP_LOOT_游荡的骷髅|r 在达尔松之泪谷仓和屋子周围巡逻|r
     .collect 12738,1,5060,1 --Collect Dalson Outhouse Key (x1)
     .unitscan 游荡的骷髅
@@ -687,7 +406,7 @@ step
 step
     #label DalsonCauldron
     .goto Western Plaguelands,46.176,52.009
-    >>点击 |cRXP_PICK_瘟疫之锅|r
+    >>点击 the |cRXP_PICK_瘟疫之锅|r
     .turnin 5219 >>交任务 目标：达尔松之泪
     .accept 5220 >>接受任务 返回冰风岗
 step
@@ -712,11 +431,11 @@ step
     .complete 6004,1 --Scarlet Medic (2)
     .mob 血色医者
     .complete 6004,2 --Scarlet Hunter (2)
-    .mob 血色猎人
+    .mob +血色猎人
     .complete 6004,3 --Scarlet Mage (2)
-    .mob 血色法师
+    .mob +血色法师
     .complete 6004,4 --Scarlet Knight (2)
-    .mob 血色骑士
+    .mob +血色骑士
 step
     .goto Western Plaguelands,51.923,28.062
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科尔斯塔·迪普沙东|r 对话
@@ -866,7 +585,7 @@ step
     .goto Western Plaguelands,66.0,55.6,70,0
     .goto Western Plaguelands,60.8,50.8,70,0
     >>击杀 |cRXP_ENEMY_生病的灰熊|r
-    >>|cRXP_ENEMY_生病的灰熊|r |cRXP_WARN_和共享刷新 |cRXP_ENEMY_天灾潜伏者|r. 你需要击杀它们来强制 |cRXP_ENEMY_生病的灰熊|r 刷新|r
+    >>|cRXP_ENEMY_生病的灰熊|r |cRXP_WARN_和|cRXP_ENEMY_天灾潜伏者|r 共享刷新。你可能需要击杀它们来强制 |cRXP_ENEMY_生病的灰熊|r 刷新|r
     .complete 4985,1 -- Diseased Grizzly slain (8)
     .unitscan 生病的灰熊
 step
@@ -1072,7 +791,7 @@ step << !Mage
     .goto Eastern Plaguelands,81.637,59.280
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯琳·斯蒂文|r 对话
     .fly Stormwind >>飞往暴风城
-    .target 凯琳·斯蒂文
+    .target Khaelyn Steelwing
     .zoneskip Stormwind City
     .zoneskip Hellfire Peninsula
 ]])

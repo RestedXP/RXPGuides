@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP 部落法师 AOE攻略
 #defaultfor Horde Mage
-#next 17-21级 石爪山脉/荒芜之地 AoE
+#next 17-21级 石爪山脉/荒芜之地 AoE指南
 
 step << Mage
 	#era/som
@@ -510,11 +510,11 @@ step
 >>与 |cRXP_FRIENDLY_麦伯克·米希瑞克斯|r 对话
     .accept 1069 >>接受任务深苔蜘蛛的卵
 step
-    >>拾取箱子
+    >>拾取箱子中的物品
     .goto The Barrens,63.6,49.2
     .complete 888,2 --Telescopic Lens (1)
 step
-    >>拾取箱子
+    >>拾取箱子中的物品
     .goto The Barrens,62.6,49.6
 step
     #sticky
@@ -713,7 +713,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP 部落法师 AOE攻略
 #defaultfor Horde Mage
-#next 21-30级 银松森林/希尔斯布莱德 AoE
+#next 21-30 银松森林/希尔斯布莱德 AoE
 
 step
     .goto Stonetalon Mountains,80.7,89.2,50,0
