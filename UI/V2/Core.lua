@@ -992,7 +992,7 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
         for method, func in pairs(methods) do widget[method] = func end
 
         scroll.scrollframe:HookScript("OnSizeChanged", function()
-            if not widget.rows then return end
+            if not widget.rows or widget.resizing then return end
             if widget.rowsWidth ~= scroll.scrollframe:GetWidth() then
                 widget:SetRows(widget.rows)
             else
@@ -1037,6 +1037,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         local frame = this.frame
 
         frame:StopMovingOrSizing()
+        this.guideSteps.resizing = nil
 
         if saveHeight and not this.snapshotEmpty and frame:GetHeight() > this:GetShellHeight() and
             (this.guideSteps.frame:IsShown() or not addon.settings:IsStepListShown()) then
@@ -1046,6 +1047,7 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             if not addon.settings:IsStepListShown() then addon.settings:SetStepListShown(true) end
         end
 
+        if saveHeight then this:RefreshLayout() end
         addon.settings:SaveFramePositions()
         addon.v2.events:Trigger("GuideWindowRefresh", "layout")
     end
@@ -1439,14 +1441,16 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         end)
 
         widget:UpdateResizeBounds(false)
-        frame:SetScript("OnSizeChanged", function() widget:RefreshLayout() end)
         frame:SetScript("OnMouseDown", function(_, button)
             if button == "LeftButton" and not addon.settings.profile.lockFrames then frame:StartMoving() end
         end)
 
         frame:SetScript("OnMouseUp", function() SaveStatus(widget) end)
         sizer:SetScript("OnMouseDown", function()
-            if not addon.settings.profile.lockFrames then frame:StartSizing("BOTTOMRIGHT") end
+            if not addon.settings.profile.lockFrames then
+                guideSteps.resizing = true
+                frame:StartSizing("BOTTOMRIGHT")
+            end
         end)
 
         sizer:SetScript("OnMouseUp", function() SaveStatus(widget, true) end)
