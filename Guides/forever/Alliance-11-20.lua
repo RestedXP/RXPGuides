@@ -4658,6 +4658,17 @@ step << !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r 
     .target Manifest Clerk Philmor::268511
     .accept 97220 >>Accept Philmor's Favor
+step << Shaman
+    .goto 1453/0,758.4316,-8140.6689
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
+    .accept 2040 >> Accept Underground Assault
+    .target Shoni the Shilent
+step << Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
+    .accept 167 >> Accept Oh Brother. . .
+    .accept 168 >> Accept Collecting Memories
+    .goto 1453/0,585.9322,-8241.1085
+    .target Wilder Thistlenettle
 step << Mage
     #completewith next
     .goto 1453/0,874.32,-9014.67,10 >> Travel to the Mage Tower
@@ -4722,6 +4733,11 @@ step << !NightElf
     .turnin 1338 >> Turn in Stormpike's Order
     .target Furen Longbeard
     .isOnQuest 1338
+step << !Shaman
+    .goto 1453/0,758.4316,-8140.6689
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
+    .accept 2040 >> Accept Underground Assault
+    .target Shoni the Shilent
 step
     #completewith BMenace
     .goto 1453/0,638.8,-8341.95
@@ -4731,6 +4747,12 @@ step
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
     .target Billibub Cogspinner
+step << !Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
+    .accept 167 >> Accept Oh Brother. . .
+    .accept 168 >> Accept Collecting Memories
+    .goto 1453/0,585.9322,-8241.1085
+    .target Wilder Thistlenettle
 step << Rogue
     .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
@@ -5361,6 +5383,27 @@ step << Rogue
     .itemcount 923,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.19
     .xp <21,1
+step
+    #optional
+    .isQuestComplete 2040
+    .goto 1453/0,758.4316,-8140.6689
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
+    .turnin 2040 >> Turn in Underground Assault
+    .target Shoni the Shilent
+step
+    #optional
+    .isQuestComplete 168
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
+    .turnin 168 >> Turn in Collecting Memories
+    .goto 1453/0,585.9322,-8241.1085
+    .target Wilder Thistlenettle
+step
+    #optional
+    .isQuestComplete 167
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
+    .turnin 167 >> Turn in Oh Brother. . .
+    .goto 1453/0,585.9322,-8241.1085
+    .target Wilder Thistlenettle
 step << Warrior/Paladin
     #ah
     .goto 1453/0,607.48,-8790.40
@@ -6453,6 +6496,12 @@ step
     #optional
     #completewith AshenvaleEnd
     .hs >> Hearth to Auberdine
+step
+    #optional
+    #sticky
+    .abandon 2040 >> Abandon Underground Assault
+    .abandon 167 >> Abandon Oh Brother. . .
+    .abandon 168 >> Abandon Collecting Memories
 step
     .goto 1439/1,504.41,6402.39
     >>Click the |cRXP_PICK_Wanted Poster|r
