@@ -260,6 +260,7 @@ function addon.settings:InitializeDatabase()
     settingsDB.RegisterCallback(self, "OnProfileCopied", "CopyProfile")
     settingsDB.RegisterCallback(self, "OnProfileReset", "ResetProfile")
     self.profile = settingsDB.profile
+    self:UpdateLocaleProfileDefaults()
     loadedProfileKey = settingsDB.keys.profile
     if addon.GetQuestDBDefaults then
         addon.GetQuestDBDefaults()
@@ -275,6 +276,16 @@ function addon.settings:SaveLocalProfile()
 
     self:SaveFramePositions()
     RXPCData.localDB = {profile = self.copy(self.profile)}
+end
+
+function addon.settings:UpdateLocaleProfileDefaults()
+    if addon.game ~= "FOREVER" then return end
+
+    for key, default in pairs(settingsDBDefaults.profile) do
+        if self.profile[key] == nil then
+            self.profile[key] = type(default) == "table" and copy(default) or default
+        end
+    end
 end
 
 function addon.settings:InitializeSettings()
