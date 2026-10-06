@@ -150,24 +150,6 @@ function addon.inventoryManager:Setup()
         self.DeleteJunkFrame:SetScript("OnKeyDown", function() self:WorldFrameHook() end)
         self.DeleteJunkFrame:SetScript("OnKeyUp", function() self:WorldFrameHook() end)
 
-        if _G["ContainerFrameItemButton_OnModifiedClick"] then
-            hooksecurefunc("ContainerFrameItemButton_OnModifiedClick", function(button, mouseButton)
-                local mod = self:GetModKey()
-
-                if not self:IsFeatureEnabled() or not addon.settings.profile.rightClickJunk or not mod or mouseButton ~=
-                    "RightButton" then return end
-
-                local parent = button:GetParent()
-                local bag = parent and parent:GetID()
-                local slot = button:GetID()
-
-                if bag and slot then
-                    local id = self.bagManager:GetContainerItemID(bag, slot)
-                    self:ToggleJunk(id, bag, slot)
-                end
-            end)
-        end
-
         hooksecurefunc("ToggleAllBags", function() self:InitializeBags() end)
         hooksecurefunc("ToggleBag", function() self:InitializeBags() end)
 
@@ -178,7 +160,7 @@ function addon.inventoryManager:Setup()
         self.inputHooksInitialized = true
     end
 
-    if wasInitialized then self.bagManager:UpdateAllBags() end
+    self.bagManager:UpdateAllBags()
 end
 
 function addon.inventoryManager:SetupUI()
@@ -948,25 +930,23 @@ addon.inventoryManager.bagManager.adapters = {
         containerIndex = -1,
         alignment = "TOPLEFT"
     },
-    Bagnon = {containerPattern = "%s", containerName = "BagnonContainerItem%d", custom = true, clickHook = true},
-    ElvUI = {containerPattern = "%sSlot%d", containerName = "ElvUI_ContainerFrameBag%d", clickHook = true},
-    AdiBags = {containerPattern = "%s", containerName = "AdiBagsItemButton%d", clickHook = true},
-    BetterBags = {containerPattern = "%s", containerName = "BetterBagsItemButton%d", clickHook = true},
-    Baggins = {containerPattern = "%s", containerName = "BagginsPooledItemButton%d", clickHook = true},
+    Bagnon = {containerPattern = "%s", containerName = "BagnonContainerItem%d", custom = true},
+    ElvUI = {containerPattern = "%sSlot%d", containerName = "ElvUI_ContainerFrameBag%d"},
+    AdiBags = {containerPattern = "%s", containerName = "AdiBagsItemButton%d"},
+    BetterBags = {containerPattern = "%s", containerName = "BetterBagsItemButton%d"},
+    Baggins = {containerPattern = "%s", containerName = "BagginsPooledItemButton%d"},
     ArkInventory = {
         containerPattern = "%sItem%d",
-        containerName = "ARKINV_Frame1ScrollContainerBag%d",
-        clickHook = true
+        containerName = "ARKINV_Frame1ScrollContainerBag%d"
     },
-    BaudBag = {containerPattern = "%sItem%d", containerName = "BaudBagSubBag%d", clickHook = true},
+    BaudBag = {containerPattern = "%sItem%d", containerName = "BaudBagSubBag%d"},
     Baganator = {
         containerPattern = "%s",
         containerName = "BGRLiveItemButton%d",
         alignment = "TOPRIGHT",
-        custom = true,
-        clickHook = true
+        custom = true
     },
-    EllesmereUI = {containerPattern = "%s", containerName = "EUI_MainBagFrame", custom = true, clickHook = true},
+    EllesmereUI = {containerPattern = "%s", containerName = "EUI_MainBagFrame", custom = true},
     Consolidated = {consolidated = true}
 }
 
@@ -1028,25 +1008,10 @@ function addon.inventoryManager.bagManager:UpdateBag(frame, name, pattern)
     local i = 1
     local ref = format(pattern, name, i)
     local lastFrame, button
-    local parent, bag, slot
     button = _G[ref]
 
     while button and lastFrame ~= ref do
-        parent = button:GetParent()
-        bag = parent and parent:GetID()
-
-        if bag and bag >= BACKPACK_CONTAINER and bag <= NUM_BAG_FRAMES then
-            slot = button:GetID()
-            addon.inventoryManager.bagFrame[bag][slot] = button
-
-            if self.activeAdapter.clickHook and button.GetScript and button:GetScript("OnClick") then
-                self:HookButton(button)
-            end
-
-            if addon.settings.profile.showJunkIcon then
-                addon.inventoryManager:UpdateBagButton(button, bag, slot)
-            end
-        end
+        self:HookButton(button)
 
         i = i + 1
         lastFrame = ref
