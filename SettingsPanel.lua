@@ -4032,6 +4032,15 @@ function addon.settings:DisableTextColors()
     self:RefreshTextColors()
 end
 
+--TODO: add a disclaimer if translation not found
+local function FindUnicodeCharacter(text)
+    for i = 1,#text do
+        if string.byte(text:sub(i,i)) > 127 then
+            return true
+        end
+    end
+end
+
 function addon.settings.ReplaceColors(element)
     -- Replace text placeholders
     local function replace(textLine)
