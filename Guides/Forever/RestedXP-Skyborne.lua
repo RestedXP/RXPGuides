@@ -27,11 +27,17 @@ step
     .target Rorian the Dayseeker::251361
     .accept 92461 >>Accept Harmony in Balance
 step
+    .goto 2521,42.07,23.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker::251361|r.
+    .accept 92464 >>Accept Elemental Unrest
+    .target Rorian the Dayseeker::251361
+    .xp <2,1
+step
     .goto 2521,43.44,24.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight::251368|r.
     .accept 92462 >>Accept Infestation Investigation
     .target Elatrell Featherlight::251368
-step << !Shaman
+step << Alliance/!Shaman
     #hidewindow
     #completewith Juvenile Vuldren
     #loop
@@ -43,7 +49,7 @@ step << !Shaman
     .goto 2521,43.84,28.39,40,0
     .goto 2521,42.88,27.52,40,0
     +1
-step << Shaman
+step << Horde Shaman
     #hidewindow
     #completewith Juvenile Vuldren Grind
     #loop
@@ -70,7 +76,7 @@ step
     >>Kill |cRXP_ENEMY_Juvenile Vuldren::250873|r.
     .complete 92461,1 --8/8 Juvenile Vuldren slain
     .mob Juvenile Vuldren::250873
-step << Shaman
+step << Horde Shaman
     #label Juvenile Vuldren Grind
     .xp 2+480 >>Grind to 480+/900xp to reach level 3 after turn ins for the totem quest.
 step
@@ -117,7 +123,7 @@ step << Warrior
 --     *Move or press ESC to cancel.
 --     .turnin 94414 >>Turn in The Anchors of Zephras
 --     .target Halaan Hawk-Eye::257554
-step
+step << Skyborne
     .goto 2521,43.53,24.34,20,0
     .goto 2521,43.83,24.13,10,0
     .goto 2521,43.78,24.38,5,0
@@ -131,13 +137,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myriaal Mistwake::263113|r.
     .accept 92474 >>Accept Falling With Style
     .target Myriaal Mistwake::263113
-step
+step << Skyborne
     #completewith next
     #label Harmony in Balance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker::251361|r.
     .turnin 92461,1 >>Turn in Harmony in Balance
     .target Rorian the Dayseeker::251361
-step
+step << Skyborne
     #completewith Harmony in Balance
     .goto 2521,42.06,23.48
     >>While falling from the tower, use |T132845:0|t[Walk on Air] and aim for the quest giver.
@@ -145,7 +151,7 @@ step
     .complete 92474,1 --Use Walk on Air
     .macro Walk on Air, 132845 >>/use Walk on Air
     -- .macro Cancel Walk on Air,132745 >>/cancelaura Walk on Air
-step
+step << Skyborne
     #requires Harmony in Balance
     .goto 2521,42.06,23.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker::251361|r.
@@ -157,6 +163,18 @@ step
     .accept 92483 >>Accept At Home in the Shadows << Rogue
     .accept 92482 >>Accept The Way of the Hunter << Hunter
     .accept 92484 >>Accept Embracing the Elements << Shaman
+    .accept 92532 >>Accept The Warrior's Path << Warrior
+    .accept 92485 >>Accept A Student of Nature << Druid
+step << !Skyborne
+    .goto 2521,42.06,23.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rorian the Dayseeker::251361|r.
+    .turnin 92461,1 >>Turn in Harmony in Balance
+    .target Rorian the Dayseeker::251361
+    .accept 92464 >>Accept Elemental Unrest
+    .accept 92481 >>Accept A Student of the Arcane << Alliance Mage
+    .accept 92483 >>Accept At Home in the Shadows << Rogue
+    .accept 92482 >>Accept The Way of the Hunter << Hunter
+    .accept 92484 >>Accept Embracing the Elements << Horde Shaman
     .accept 92532 >>Accept The Warrior's Path << Warrior
     .accept 92485 >>Accept A Student of Nature << Druid
 step << Druid
@@ -172,12 +190,12 @@ step << Druid
     .target Xyton Silverwind::251373
     .money <0.0010
     .xp <1,1
-step << Mage
+step << Alliance Mage
     .goto 2521,41.55,23.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorii Brightwhisper::251379|r.
     .turnin 92481 >>Turn in A Student of the Arcane
     .target Dorii Brightwhisper::251379
-step << Mage
+step << Alliance Mage
     .goto 2521,41.55,23.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorii Brightwhisper::251379|r.
     .train 1459 >>Train |T135932:0|t[Arcane Intellect]
@@ -185,13 +203,13 @@ step << Mage
     .target Dorii Brightwhisper::251379
     .money <0.0010
     .xp <1,1
-step << Shaman
+step << Horde Shaman
     .goto 2521,42.790,23.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r
     .target Windshaper Boro::251374
     .turnin 92484 >>Turn in Embracing the Elements
     .accept 92466 >>Accept Call of Earth
-step << Shaman
+step << Horde Shaman
     .goto 2521,42.79,23.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r.
     .train 8017 >>Train |T136086:0|t[Rockbiter]
@@ -288,17 +306,17 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falorne Fallwind::251371|r.
     .accept 92597 >>Accept Reading the Ley Lines
     .target Falorne Fallwind::251371
-step << Shaman
+step << Horde Shaman
     #completewith next
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     .complete 93552,1 --15/15 Windstone Cluster
-step << Shaman
+step << Horde Shaman
     .goto 2521,47.29,21.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yala Windwatcher::249363|r.
     .turnin 92464 >>Turn in Elemental Unrest
     .accept 92465 >>Accept Agitators
     .target Yala Windwatcher::249363
-step << Shaman
+step << Horde Shaman
     #completewith next
     >>Kill |cRXP_ENEMY_Al'Aketh Convert::251160|r and |cRXP_ENEMY_Roiling Winds::251143|r.
     *|cRXP_WARN_Prioritize |cRXP_ENEMY_Roiling Winds::251143|r|r
@@ -306,19 +324,19 @@ step << Shaman
     .mob +Al'Aketh Convert::251160
     .complete 92465,2 --6/6 Roiling Winds destroyed
     .mob +Roiling Winds::251143
-step << Shaman
+step << Horde Shaman
     .goto 2521,48.4,20.4
     >>Use |T1029587:0|t[Skysight] near the |cRXP_PICK_Elemental Convergence|r.
     *|cRXP_WARN_Found throughout the zone. Use |T1029587:0|t[Skysight] near one to gain 10% movement speed for 15 min instead of 15 sec.|r
     .complete 92598,1 --Use your Skysight ability near the Elemental Convergence
     .macro Skysight,1029587 >>/use spell:1259686
-step << Shaman
+step << Horde Shaman
     #completewith next
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     *|cRXP_WARN_Expect to break about 10 stones, but you may need up to 15|r.
     *|cRXP_WARN_If the area is abnormally crowded, camp one spawn point or rotate between nearby stones|r.
     .complete 93552,1 --15/15 Windstone Cluster
-step << Shaman
+step << Horde Shaman
     #loop
     .goto 2521,46.85,17.68,30,0
     .goto 2521,47.22,19,30,0
@@ -338,17 +356,17 @@ step << Shaman
     .complete 92465,2 --6/6 Roiling Winds destroyed
     .mob +Roiling Winds::251143
     .complete 92466,1 --|1/1 Signet of Akir
-step << Shaman
+step << Horde Shaman
     .goto 2521,47.29,21.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yala Windwatcher::249363|r.
     .turnin 92465 >>Turn in Agitators
     .accept 92469 >>Accept Return to Rorian
     .target Yala Windwatcher::249363
-step << Shaman
+step << Horde Shaman
     #completewith next
     .subzoneskip 16622,1
     .hs >>Hearth to Thendal Village
-step << Shaman
+step << Horde Shaman
     .goto 2521,42.788,23.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r
     .turnin 92466 >>Turn in Call of Earth
@@ -371,7 +389,7 @@ step
     >>Kill |cRXP_ENEMY_Cirrusfly Queen::251404|r.
     .complete 92463,1 --1/1 Cirrusfly Queen slain
     .mob Cirrusfly Queen::251404
-step << !Shaman
+step << Alliance/!Shaman
     #completewith next
     .goto 2521,47.41,26.43,30,0
     .goto 2521,46.62,24.61,30,0
@@ -381,19 +399,19 @@ step << !Shaman
     *|cRXP_WARN_Expect to break about 10 stones, but you may need up to 15|r.
     *|cRXP_WARN_If the area is abnormally crowded, camp one spawn point or rotate between nearby stones|r.
     .complete 93552,1 --15/15 Windstone Cluster
-step << !Shaman
+step << Alliance/!Shaman
     .goto 2521,47.29,21.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yala Windwatcher::249363|r.
     .turnin 92464 >>Turn in Elemental Unrest
     .accept 92465 >>Accept Agitators
     .target Yala Windwatcher::249363
-step << !Shaman
+step << Alliance/!Shaman
     #completewith UseRacialAbility
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     *|cRXP_WARN_Expect to break about 10 stones, but you may need up to 15|r.
     *|cRXP_WARN_If the area is abnormally crowded, camp one spawn point or rotate between nearby stones|r.
     .complete 93552,1 --15/15 Windstone Cluster
-step << !Shaman
+step << Alliance/!Shaman
     #completewith UseRacialAbility
     >>Kill |cRXP_ENEMY_Al'Aketh Convert::251160|r and |cRXP_ENEMY_Roiling Winds::251143|r.
     *|cRXP_WARN_Prioritize |cRXP_ENEMY_Roiling Winds::251143|r|r
@@ -417,7 +435,7 @@ step << Horde !Shaman
     *|cRXP_WARN_Found throughout the zone. Use |T1029587:0|t[Skysight] near one to gain 10% movement speed for 15 min instead of 15 sec.|r
     .complete 92598,1 --Use your Skysight ability near the Elemental Convergence
     .macro Skysight,1029587 >>/use spell:1259686
-step << Shaman
+step << Horde Shaman
     .goto 2521,47.241,25.244,25,0
     .goto 2521,48.802,25.869,30,0
     .goto 2521,49.677,23.806
@@ -427,13 +445,13 @@ step << Shaman
     .accept 92468 >>Accept Call of Earth
     .target Minor Manifestation of Earth::251166
     .use 6635
-step << Shaman
+step << Horde Shaman
     .isQuestComplete 93552
     .isOnQuest 93552
     .goto 2521,49.32,23.18,15,0
     .goto 2521,48.88,21.52
     .subzone 16635 >>Jump down the mountain and respawn at the Graveyard.
-step << Shaman
+step << Horde Shaman
     #ignorecorpse
     .isQuestComplete 93552
     .isOnQuest 93552
@@ -442,7 +460,7 @@ step << Shaman
     .goto 2521,41.06,22.32
     .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Spirit Healer::6491|r.
     .target Spirit Healer::6491
-step << Shaman
+step << Horde Shaman
     #loop
     .goto 2521,48.290,25.694,20,0
     .goto 2521,47.173,23.545,20,0
@@ -453,7 +471,7 @@ step << Shaman
     .goto 2521,43.809,25.423,20,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     .complete 93552,1 --15/15 Windstone Cluster
-step << !Shaman
+step << Alliance/!Shaman
     #hidewindow
     #completewith Windstone Cluster
     #loop
@@ -468,13 +486,13 @@ step << !Shaman
     .goto 2521,47.19,23.55,30,0
     .goto 2521,46.6,24.62,30,0
     +1
-step << !Shaman
+step << Alliance/!Shaman
     #completewith next
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     *|cRXP_WARN_Expect to break about 10 stones, but you may need up to 15|r.
     *|cRXP_WARN_If the area is abnormally crowded, camp one spawn point or rotate between nearby stones|r.
     .complete 93552,1 --15/15 Windstone Cluster
-step << !Shaman
+step << Alliance/!Shaman
     >>Kill |cRXP_ENEMY_Al'Aketh Convert::251160|r and |cRXP_ENEMY_Roiling Winds::251143|r.
     *Loot them for the |T1020384:0|t[Signet of Air] << Shaman
     *|cRXP_WARN_Prioritize |cRXP_ENEMY_Roiling Winds::251143|r|r
@@ -483,21 +501,21 @@ step << !Shaman
     .complete 92465,2 --6/6 Roiling Winds destroyed
     .mob +Roiling Winds::251143
     .complete 92466,1 << Shaman --|1/1 Signet of Akir
-step << !Shaman
+step << Alliance/!Shaman
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crystals|r
     *|cRXP_WARN_Expect to break about 10 stones, but you may need up to 15|r.
     *|cRXP_WARN_If the area is abnormally crowded, camp one spawn point or rotate between nearby stones|r.
     .complete 93552,1 --15/15 Windstone Cluster
-step << !Shaman
+step << Alliance/!Shaman
     #label Windstone Cluster
     .xp 3+300 >>Grind to 300+/1400xp
-step << !Shaman
+step << Alliance/!Shaman
     .goto 2521,47.29,21.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yala Windwatcher::249363|r.
     .turnin 92465 >>Turn in Agitators
     .accept 92469 >>Accept Return to Rorian
     .target Yala Windwatcher::249363
-step << !Shaman
+step << Alliance/!Shaman
     #completewith next
     .hs >>Hearth to Thendal Village
     .cooldown item,6948,>0
@@ -632,7 +650,7 @@ step << Horde
     .turnin 92471 >>Turn in Aetheen of the Gales
     .accept 92470 >>Accept Foul Matriarch
     .target Aetheen of the Gales::251366
-step << Shaman
+step << Horde Shaman
     .goto 2521,42.788,23.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r.
     .train 8042 >>Train |T136026:0|t[Earth Shock]
@@ -669,7 +687,7 @@ step << Druid Alliance
     .xp <4,1
     .money <0.02
     .target Xyton Silverwind::251373
-step << Mage
+step << Alliance Mage
     .goto 2521,41.55,23.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorii Brightwhisper::251379|r.
     .train 116 >>Train |T135846:0|t[Frostbolt]
@@ -1049,7 +1067,7 @@ step << Horde
     .turnin 92595 >>Turn in The Windshapers
     .accept 94411 >>Accept Meddlesome Mages
     .target Illaya Amberwind::251902
-step << Shaman
+step << Horde Shaman
     .goto 2521,43.454,44.872
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aarnor Galestrike::254082|r
     .trainer >>Train your class spells
@@ -1396,23 +1414,23 @@ step
     .complete 92517,1 --|10/10 Highlands Bandit slain
     .complete 93319,1 --|10/10 Pilfered Windstone
     .mob +Highlands Bandit::251918
-
---here fix 
 step
     #completewith To Shendalar
-    >>Kill |cRXP_ENEMY_Galestrider::251661|r |cRXP_WARN_along the way|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Kill |cRXP_ENEMY_Galestrider::251661|r |cRXP_WARN_along the way|r. 
+    *Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
 step
     #completewith To Shendalar
-    >>Kill |cRXP_ENEMY_Prideclaws::251245|r |cRXP_WARN_along the way|r. Loot them for |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
+    >>Kill |cRXP_ENEMY_Prideclaws::251245|r |cRXP_WARN_along the way|r. 
+    *Loot them for |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step
     #label To Shendalar
-    .isQuestAvailable 94411 << Horde
-    .isQuestNotComplete 94413 << Alliance
+    .isOnQuest 96638
+    .isQuestAvailable 96638
     .goto 2521,43.86,43.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Zerril Softbreeze::251905|r.
     .vendor 251905 >>Vendor Trash
@@ -1422,7 +1440,6 @@ step
     .target Zerril Softbreeze::251905
     .skipgossipid 137550
 step
-    #requires To Shendalar
     .goto 2521,43.850,43.840
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
     .train 2550 >>Train |T133971:0|t[Apprentice Cook]
@@ -1447,7 +1464,7 @@ step << Mage
     .target Dorii Brightwhisper::251379
     .money <0.03
     .xp <6,1
-step << Shaman
+step << Horde Shaman
     .goto 2521,43.454,44.872
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aarnor Galestrike::254082|r
     .trainer >>Train your class spells
@@ -2016,7 +2033,7 @@ step
     .target Sania Silverstream::251904
     .aura 1254832 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sania Silverstream::251904|r
     .skipgossipid 135874
-step << Shaman
+step << Horde Shaman
     .goto 2521,43.454,44.872
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aarnor Galestrike::254082|r
     .trainer >>Train your class spells
@@ -2955,7 +2972,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfunctioning Cyclone Construct::250929|r.
     .accept 92698 >>Accept What Is My Purpose?
     .target Malfunctioning Cyclone Construct::250929
-step << Shaman
+step << Horde Shaman
     #completewith ShamanLevel10
     #hidewindow
     #loop
@@ -2963,12 +2980,12 @@ step << Shaman
     .goto 2521,51.3,80.59,40,0
     .goto 2521,50.868,83.289,40,0
     +1
-step << Shaman
+step << Horde Shaman
     #completewith next
     >>Kill |cRXP_ENEMY_Ornery Galestrider::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
-step << Shaman
+step << Horde Shaman
     #completewith ShamanLevel10
     #label ShamanFluterflyDustA
     >>Spam use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies::251622|r
@@ -2977,31 +2994,31 @@ step << Shaman
     .complete 92683,1 --5/5 Flutterfly Dust
     .mob Flutterfly::251622
     .use 253666
-step << Shaman
+step << Horde Shaman
     #requires ShamanFluterflyDustA
     #completewith ShamanLevel10
     >>Kill |cRXP_ENEMY_Ornery Galestrider::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
-step << Shaman
+step << Horde Shaman
     #label ShamanLevel10
     .xp 10 >>1
-step << Shaman
+step << Horde Shaman
     #completewith next
     .hs >>Hearth to Valanaar
-step << Shaman
+step << Horde Shaman
     .goto 2521,58.313,78.499
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sessaria Skystride::252382|r.
     .accept 97243 >>Accept Call of Fire
     .target Sessaria Skystride::252382
-step << Shaman
+step << Horde Shaman
     .goto 2521,58.313,78.499
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sessaria Skystride::252382|r.
     .trainer >>Train your class spells
     .target Sessaria Skystride::252382
     .money <0.12
     .xp <10,1
-step << Shaman
+step << Horde Shaman
     #completewith CallOfFireA
     >>Spam use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies::251622|r
     >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Flutterfly Dust|r.
@@ -3009,12 +3026,12 @@ step << Shaman
     .complete 92683,1 --5/5 Flutterfly Dust
     .mob Flutterfly::251622
     .use 253666
-step << Shaman
+step << Horde Shaman
     #completewith CallOfFireA
     >>Kill |cRXP_ENEMY_Ornery Galestrider::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
-step << Shaman
+step << Horde Shaman
     #label CallOfFireA
     .goto 2521,54.402,77.329,30,0
     .goto 2521,51.240,86.187
@@ -3031,7 +3048,7 @@ step << Shaman
 --     .skipgossipid 96031
 --     .skipgossipid 98031
 --     .target Spirit Healer::6491
-step << Shaman
+step << Horde Shaman
     .goto 2521,64.380,63.586
     >>Kill |cRXP_ENEMY_Skypriest Faladiel::268602|r. Loot him for |T839910:0|t[|cRXP_LOOT_Faladiel's Heart|r].
     .complete 97244,1 --|1/1 Faladiel's Heart
@@ -3044,7 +3061,7 @@ step << Shaman
 --     .skipgossipid 96031
 --     .skipgossipid 98031
 --     .target Spirit Healer::6491
-step << Shaman
+step << Horde Shaman
     #completewith CallOfFireB
     >>Spam use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies::251622|r
     >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Flutterfly Dust|r.
@@ -3052,12 +3069,12 @@ step << Shaman
     .complete 92683,1 --5/5 Flutterfly Dust
     .mob Flutterfly::251622
     .use 253666
-step << Shaman
+step << Horde Shaman
     #completewith CallOfFireB
     >>Kill |cRXP_ENEMY_Ornery Galestrider::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
-step << Shaman
+step << Horde Shaman
     #label CallOfFireB
     .goto 2521,51.241,86.193
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Olariaan Swiftburn::268592|r.
@@ -3164,7 +3181,7 @@ step << Alliance/Shaman
 --     #label BrokenConstructC
 --     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
 --     .complete 93737,4 --|1/1 Obtain Air Construct Core from the Bandit Camp
-step << Shaman
+step << Horde Shaman
     .goto 2521,42.393,68.887
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Kuramaa's Stump|r.
     >>Kill |cRXP_ENEMY_Kuramaa::268605|r. Loot it for |T3549050:0|t[|cRXP_LOOT_Kuramaa's Mask|r].
@@ -3185,8 +3202,7 @@ step << Alliance
     .goto 2521,43.84,75.53,30,0
     .goto 2521,44.06,76.19,15,0
     .goto 2521,47.511,78.490
-    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] |cRXP_WARN_in midair|r to fly towards the waypoint location. << !Shaman
-    .cast 1259416 >>Return to the |cRXP_ENEMY_Highlands Bandit::251918|r mountain, then jump and use |T132845:0|t[Walk on Air] |cRXP_WARN_while in midair|r to fly toward the waypoint. << Shaman
+    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] |cRXP_WARN_in midair|r to fly towards the waypoint location.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 step << Alliance/Shaman
@@ -3223,11 +3239,11 @@ step << Horde
     .goto 2521,48.445,80.591
     .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
     .cooldown spell,1259686,>0,1
-step << !Shaman
+step << Alliance/!Shaman
     .isQuestAvailable 92703
     .subzoneskip 16638
     .hs >>Hearth to Valanaar
-step << !Shaman
+step << Alliance/!Shaman
     .isQuestAvailable 92703
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
     .vendor 255940 >>Vendor trash
@@ -3238,26 +3254,26 @@ step << !Shaman
     .goto 2521,62.180,72.616
     .skipgossipid 137078
     .collect 1179,15 >>Buy |T132815:0|t[Ice Cold Milk] << Mage/Druid
-step << Shaman
+step << Horde Shaman
     .goto 2521,51.240,86.187
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Olariaan Swiftburn::268592|r.
     .target Olariaan Swiftburn::268592
     .turnin 97245 >>Turn in Call of Fire
     .accept 97257 >>Accept Call of Fire
     .timer 35,Roleplay Duration
-step << Shaman
+step << Horde Shaman
     .goto 2521,51.265,85.927
     >>Wait for the roleplay. Use the |T135432:0|t[Torch of Eternal Flame] on the burning |cRXP_PICK_Brazier of Offering|r.
     .complete 97257,1 --|1/1 Complete the Ritual with Olariaan
     .use 277329
-step << Shaman
+step << Horde Shaman
     .goto 2521,52.400,81.309,25,0
     .goto 2521,54.907,76.598,15,0
     .goto 2521,58.312,78.827
     >>You have roughly 5 minutes to run back.
     .complete 97257,2 --|1/1 Light the Brazier of Eternal Flame
     .skipgossipid 140778
-step << Shaman
+step << Horde Shaman
     .goto 2521,58.315,78.512
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sessaria Skystride::252382|r.
     .target Sessaria Skystride::252382
@@ -3268,7 +3284,7 @@ step << Shaman
 --     *|cRXP_WARN_This quest is optional. You can skip it if there are too many other players doing it at the same time.|r
 --     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
 --     .mob Skyhopper::251314
-step << Shaman
+step << Horde Shaman
     .isQuestAvailable 92703
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
     .vendor 255940 >>Vendor trash
@@ -3401,10 +3417,10 @@ step << Alliance
     #label Turn in The Missing Scholar
     *|cRXP_WARN_Dual Wield the|r |T134520:0|t[Trusty Wrench] |cRXP_WARN_and|r |T7791298:0|t[Flutterfly Swatter] << Rogue
     .goto 2521,66.26,79.90
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dondallion Whisperwind::253204|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fillion Flamebreeze::253284|r.
     .turnin 92850 >>Turn in The Missing Scholar
     .accept 99260 >>Accept Fillion's Mission
-    .target Dondallion Whisperwind::253204
+    .target Fillion Flamebreeze::253284
 step << Alliance
     .goto 2521,66.627,79.942
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
@@ -4796,7 +4812,7 @@ step << Alliance
     .skipgossipid 137095
 step << Alliance
     .isOnQuest 92640
-    .isQuestNotComplete 92640,1
+    .isQuestNotComplete 92640
     .goto 2521,66.49,76.64,8,0
     .goto 2521,63.33,78.16
     .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the waypoint location.
