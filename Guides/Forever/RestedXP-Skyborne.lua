@@ -2248,7 +2248,7 @@ step
 step  << Alliance
     #completewith NearCommander
     >>Kill |cRXP_ENEMY_Al'Aketh Stormcaller::252068|r. Loot them for the |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Supplies|r].
-    >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Supply Caches|r.
+    >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Supply Caches|r (small bags).
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
     .mob +Al'Aketh Stormcaller::252068
@@ -2594,8 +2594,8 @@ step
     *|cRXP_WARN_Any buff food grants 5% increased experience from kills for 15 minutes|r.
     .macro Herb Baked Egg,132834 >>/cast cooking\n/run C_TradeSkillUI.CraftRecipe(8604,1)
 step
-    .subzoneskip 16638,1
-    .isQuestAvailable 93948
+    .subzoneskip 16638,1 << Alliance
+    .isOnQuest 93948
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
     .target Donaal Downbreeze::255940
     .bindlocation 16638
@@ -2603,7 +2603,7 @@ step
     .goto 2521,62.180,72.616
 step
     .subzoneskip 16638,1
-    .isQuestAvailable 93948
+    .isOnQuest 93948
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
     .vendor 255940 >>Vendor trash
     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
@@ -2629,6 +2629,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alvarion Windfield::252448|r on the second floor.
     .target Alvarion Windfield::252448
     .accept 92679 >>Accept Blood Tithe
+-- TODO: Add Walk on Air
 step
     .subzoneskip 16638,1
     .isQuestAvailable 93948
@@ -2686,7 +2687,7 @@ step << Horde
     .goto 2521,66.488,76.498,6,0
     .goto 2521,63.027,77.807 << Hunter
     .goto 2521,61.491,76.893 << !Hunter
-    .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
+    .cast 1259416 >>Jump off the tower and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
     *|cRXP_WARN_If you time it correctly, you can cancel it midair to land in the building|r
     .cooldown spell,1259416,>0,1
     .usespell 1259416
@@ -4409,13 +4410,11 @@ step
     .complete 93172,1 --10/10 Wind Hollow freed
     -- .complete 93736,1 << Horde --10/10 Wind Hollow Essence
     .mob +Wind Hollow::251676
-step
+step << Alliance
     #completewith Unnerving Silence
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. 
-    *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r]. << Alliance
-    *Loot them for the |T132927:0|t[Pristine Shriekling Feathers]. << Horde
-    .complete 92741,1 << Alliance --8/8 Shriekling Talons
-    .complete 94486,1 --20/20 Pristine Shriekling Feathers
+    *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r].
+    .complete 92741,1 --8/8 Shriekling Talons
     .mob Shadowgale Shriekling::256092
 step
     #completewith Unnerving Silence
@@ -4667,7 +4666,7 @@ step
     .isOnQuest 94491 << Alliance
     .isOnQuest 94896 << Horde
     .subzoneskip 16631,1
-    .hs >>Hearth to Shen'dar Village
+    .hs >>Hearth to Valanaar
     .use 6948
 step << Warrior Alliance
     .goto 2521,59.886,72.863
