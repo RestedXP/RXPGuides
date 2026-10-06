@@ -68,7 +68,14 @@ Guides/GuideList-forever.xml [AllowLoadGameType camelot]
 Guides/GuideList-tbc.xml [AllowLoadGameType tbc]
 
 lang/Guides-zhCN/GuideList-tbc.xml [AllowLoadGameType tbc]
-lang/Guides-zhCN/GuideList-classic.xml [AllowLoadGameType vanilla,camelot]
+lang/Guides-zhCN/GuideList-classic.xml [AllowLoadGameType vanilla]
+lang/Guides-zhCN/GuideList-Mainline.xml [AllowLoadGameType standard]
+lang/Guides-zhCN/GuideList-cata.xml [AllowLoadGameType cata]
+lang/Guides-zhCN/GuideList-mop.xml [AllowLoadGameType mists]
+lang/Guides-zhCN/GuideList-forever.xml [AllowLoadGameType camelot]
+lang/Guides-zhCN/GuideList.xml [AllowLoadGameType wrath]
+
+
 
 Talents.lua [AllowLoadGameType cata,vanilla,camelot,tbc]
 Guides/Talents/cata.xml [AllowLoadGameType cata]

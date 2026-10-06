@@ -1,3 +1,4 @@
+local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 --Main 1-14 Skyborne leveling guide
 RXPGuides.RegisterGuide([[
 #forever
@@ -227,7 +228,7 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ventaari Brightwish::251487|r.
     .accept 92598 >>Accept The Gift of Skysight
     .target Ventaari Brightwish::251487
-step << !Warrior !Rogue 
+step << !Warrior !Rogue
     .itemcount 159,<20 << Mage/Shaman
     .itemcount 2512,<1000 << Hunter
     .goto 2521,42.749,24.496
@@ -272,7 +273,7 @@ step << Alliance !Hunter !Mage !Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalia the Collector::251363|r.
     .accept 93552 >>Accept Harvesting Windstones
     .target Dalia the Collector::251363
-step << Alliance Rogue/Alliance Warrior 
+step << Alliance Rogue/Alliance Warrior
     .goto 2521,43.41,23.51
     #completewith Harvesting Windstones
     .collect 2131,1 >>Buy and equip a |T135274:0|t[Shortsword] << Rogue
@@ -1416,14 +1417,14 @@ step
     .mob +Highlands Bandit::251918
 step
     #completewith To Shendalar
-    >>Kill |cRXP_ENEMY_Galestrider::251661|r |cRXP_WARN_along the way|r. 
+    >>Kill |cRXP_ENEMY_Galestrider::251661|r |cRXP_WARN_along the way|r.
     *Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
 step
     #completewith To Shendalar
-    >>Kill |cRXP_ENEMY_Prideclaws::251245|r |cRXP_WARN_along the way|r. 
+    >>Kill |cRXP_ENEMY_Prideclaws::251245|r |cRXP_WARN_along the way|r.
     *Loot them for |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
@@ -2211,7 +2212,7 @@ step
     .target Piecekeeper Vaniel::252155
 step
     .goto 2521,42.38,62.07
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bloody Note|r. 
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bloody Note|r.
     *|cRXP_WARN_Keep one bag slot free|r.
     .complete 93927,1 --1/1 Collect and read the note
 step
@@ -2548,7 +2549,7 @@ step
     .isNotOnQuest 93317
     .subzoneskip 16638
     .goto 2521,49.4,58.76
-    .subzone 16626 >>Die at the exact waypoint location 
+    .subzone 16626 >>Die at the exact waypoint location
     *|cRXP_WARN_Otherwise, you may be sent to a different graveyard|r
     .macro Sit,134400 >>/sit
 step
@@ -2683,7 +2684,7 @@ step
 --     .complete 93949,1 --8/8 Enchanted Skyhopper Exterminated
 --     .mob Skyhopper::251314
 step << Horde
-    .isOnQuest 92700 
+    .isOnQuest 92700
     .goto 2521,66.488,76.498,6,0
     .goto 2521,63.027,77.807 << Hunter
     .goto 2521,61.491,76.893 << !Hunter
@@ -2693,7 +2694,7 @@ step << Horde
     .usespell 1259416
     .macro Cancel Walk on Air,132845 >>/cancelaura Walk on Air
 step << Alliance
-    .isOnQuest 92699 
+    .isOnQuest 92699
     .goto 2521,66.47,76.68,10,0
     .goto 2521,66.63,79.94
     .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
@@ -4169,7 +4170,7 @@ step << Alliance Druid
     .mob Windsong Crawler::254588
 step << Alliance Druid
     #completewith Windsong Crawler Meat Druid
-    .goto 2521,57.25,60.92,50 >>Go around the mountains 
+    .goto 2521,57.25,60.92,50 >>Go around the mountains
 step << Alliance Druid
     #requires Windsong Crawler Meat Druid
     #loop
@@ -4190,7 +4191,7 @@ step << Alliance Druid
 --     .complete 93317,1 --6/6 Windsong Crawler Meat
 -- step << Horde Druid
 --     #completewith CrawlerMeatDruidA
---     .goto 2521,57.25,60.92,50 >>Go around the mountains 
+--     .goto 2521,57.25,60.92,50 >>Go around the mountains
 -- step << Horde
 --     #requires CrawlerMeatDruidA << Druid
 --     #loop
@@ -4268,7 +4269,7 @@ step << Warrior
     .mob Zaal Stormshield::257196
 -- step << Alliance
 --     .isQuestAvailable 92850
---     .subzoneskip 
+--     .subzoneskip
 --     .goto 2521,55.12,50.55
 --     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
 --     .cooldown spell,1259705,>0,1
@@ -4313,7 +4314,7 @@ step
     .complete 93160,1 --8/8 Zephyrseed
 step << Alliance
     #completewith Abandoned Belongings1
-    >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. 
+    >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r].
     .complete 92741,1 --8/8 Shriekling Talons
     .mob Shadowgale Shriekling::256092
@@ -4412,7 +4413,7 @@ step
     .mob +Wind Hollow::251676
 step << Alliance
     #completewith Unnerving Silence
-    >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. 
+    >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r].
     .complete 92741,1 --8/8 Shriekling Talons
     .mob Shadowgale Shriekling::256092
@@ -4427,14 +4428,14 @@ step
     .turnin 94484 >>Turn in Unnerving Silence
     .accept 94485 >>Accept Tears of the Lady
     .accept 94486 >>Accept Feathers for Binding << Alliance
-    .accept 94487 >>Accept Unwanted and Unworthy 
+    .accept 94487 >>Accept Unwanted and Unworthy
 step << Alliance
     #completewith Unnerving Silence
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Tear Moss|r |cRXP_WARN_on trees|r.
     .complete 94485,1 --8/8 Lady's Tear Moss
 step << Alliance
     #completewith next
-    >>Kill |cRXP_ENEMY_Al'Aketh Footsoldiers::252665|r and |cRXP_ENEMY_Al'Aketh Stormchasers::252664|r. 
+    >>Kill |cRXP_ENEMY_Al'Aketh Footsoldiers::252665|r and |cRXP_ENEMY_Al'Aketh Stormchasers::252664|r.
     *Loot them for |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r] and |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
     .complete 94487,1 --10/10 Bloody Heirloom
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
@@ -4457,7 +4458,7 @@ step
     .goto 2521,64.14,39.18,40,0
     .goto 2521,65.7,36.82,40,0
     .goto 2521,65.63,35.57,40,0
-    >>Kill |cRXP_ENEMY_Al'Aketh Footsoldiers|r and |cRXP_ENEMY_Al'Aketh Stormchaser|r. 
+    >>Kill |cRXP_ENEMY_Al'Aketh Footsoldiers|r and |cRXP_ENEMY_Al'Aketh Stormchaser|r.
     *Loot them for |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r], |T133856:0|t[|cRXP_LOOT_Al'Alketh Cultist's Ears|r] and |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r]. << Alliance
     *Loot them for |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r]. << Horde
     .complete 94487,1 --10/10 Bloody Heirloom
@@ -4489,10 +4490,10 @@ step
     --@THIDDI: Not sure if worth it (Pristine Shriekling Feathers).
     #completewith ToHermit << Alliance
     #completewith ForestHollowsB << Horde
-    >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. 
+    >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers]. << Alliance
     *Loot them for the |T132927:0|t[Pristine Shriekling Feathers]. << Horde
-    .complete 92741,1 << Alliance --8/8 Shriekling Talons 
+    .complete 92741,1 << Alliance --8/8 Shriekling Talons
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob +Shadowgale Shriekling::256092
 step << Alliance
@@ -4521,9 +4522,9 @@ step << Horde
 -- step << Alliance
 --     --@THIDDI: Not sure if worth it (Pristine Shriekling Feathers).
 --     #label Shadowgale Shrieklings
---     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. 
+--     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
 --     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers].
---     .complete 92741,1 --8/8 Shriekling Talons 
+--     .complete 92741,1 --8/8 Shriekling Talons
 --     .complete 94486,1 --20/20 Pristine Shriekling Feathers
 --     .mob +Shadowgale Shriekling::256092
 step << Alliance
@@ -4559,7 +4560,7 @@ step
     #completewith next
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers]. << Alliance
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Loot them for the |T132927:0|t[Pristine Shriekling Feathers]. << Horde
-    .complete 92741,1 << Alliance --8/8 Shriekling Talons 
+    .complete 92741,1 << Alliance --8/8 Shriekling Talons
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob +Shadowgale Shriekling::256092
 step
@@ -4687,7 +4688,7 @@ step << Warrior Alliance
     .target Seena Skybreaker::252377
     .money <0.45
     .xp <14,1
-step << Alliance 
+step << Alliance
     .goto 2521,60.64,72.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyalah Brightfire::257006|r inside the house.
     .turnin 93317 >>Turn in Crab Season
@@ -4745,7 +4746,7 @@ step << Alliance Druid
     .train 8936 >>Train |T136085:0|t[Regrowth]
     .target Naeluna Swiftmend::254081
     .money <0.16
-    .xp <12,1 
+    .xp <12,1
 step
     .goto 2521,65.95,74.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ealaane Nimbuswalker::259012|r.
@@ -5353,7 +5354,7 @@ step << Horde
     .target Borstan::3368
 step << Horde
     .goto 1454/1,-4466.800,1954.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'geld::3348|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kor'geld::3348|r
     .accept 97242 >>Accept Yelmak's Medley
     .target Kor'geld::3348
 step << Horde
@@ -5421,7 +5422,7 @@ step << Horde
     .target Migi::268682
 step << Horde
     .goto 1454/1,-4205.800,2007.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thra::268684|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thra::268684|r
     .accept 97326 >>Accept Rocks to Rests
     .target Thra::268684
 step << Horde

@@ -1,3 +1,4 @@
+local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 -- Main 1-14 Skyborne leveling guide
 RXPGuides.RegisterGuide([[
 #forever

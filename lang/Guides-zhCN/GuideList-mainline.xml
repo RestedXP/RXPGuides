@@ -1,0 +1,27 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXMLUI.xsd">
+    <Script file="Import.lua"/>
+
+    <Script file="Retail\Snippits.lua"/>
+
+    <!-- LEVELING -->
+    <Script file="Retail\Leveling\Conventional\Starting Zones.lua"/>
+    <!-- <Script file="Retail\Leveling\Conventional\Darkmoon Faire.lua"/> -->
+    <!-- Script file="Retail\Leveling\Remix\Mists of Pandaria\Dailies.lua"/> -->
+    <!-- Script file="Retail\Leveling\Remix\Mists of Pandaria\Jade Forest.lua"/>  -->
+    <!-- <Script file="Retail\Leveling\Remix\Legion\"/> -->
+    <!-- Script file="Retail\Leveling\Remix\Legion\Introduction.lua"/>  -->
+
+    <!-- END GAME -->
+    <!-- Script file="Retail\Endgame\War Within\Storylines.Lua"/>  -->
+    <!-- Script file="Retail\Endgame\War Within\The War Within Campaign.Lua"/>  -->
+    <!-- <Script file="Retail\Endgame\War Within\Visions of a Shadowed Sun.lua"/> -->
+    <Script file="Retail\Endgame\Midnight\Storylines.Lua"/>
+
+    <!-- COLLECTABLES -->
+    <Script file="Retail\Collectables\Skyriding Glyphs.Lua"/>
+    <Script file="Retail\Collectables\Knowledge Treasures.Lua"/>
+    <Script file="Retail\Collectables\Allied Races.Lua"/>
+    <Script file="Retail\Collectables\Lorewalking.Lua"/>
+
+    <!-- LOREMASTER -->
+</Ui>

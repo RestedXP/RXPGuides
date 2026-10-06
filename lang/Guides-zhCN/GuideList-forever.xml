@@ -1,0 +1,43 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXMLUI.xsd">
+    <Script file="Import.lua"/>
+	<Script file="forever\RestedXP-Skyborne.lua"/>
+    <Script file="forever\Alliance-1-10_NightElf.lua"/>
+    <Script file="forever\Alliance-1-13_Human.lua"/>
+    <Script file="forever\Alliance-1-14_DwarfGnome.lua"/>
+    <Script file="forever\Alliance-11-20.lua"/>
+    <Script file="forever\Horde-01-12_Durotar.lua"/>
+    <Script file="forever\Horde-01-14_Undead.lua"/>
+    <Script file="forever\Horde-1-12_Mulgore.lua"/>
+    <Script file="forever\Horde-12-22_Barrens.lua"/>
+
+    <Script file="forever\Alliance-Mage-1-12.lua"/>
+    <Script file="forever\Alliance-Mage-12-21.lua"/>
+    <Script file="forever\Horde-Mage-12-21.lua"/>
+	<Script file="forever\Alliance-ADV-AoE-Mage-1-22.lua"/>
+	
+	
+	<Script file="forever\dungeon\RestedXP-Skyborne.lua"/>
+    <Script file="forever\dungeon\Alliance-1-10_NightElf.lua"/>
+    <Script file="forever\dungeon\Alliance-1-13_Human.lua"/>
+    <Script file="forever\dungeon\Alliance-1-14_DwarfGnome.lua"/>
+    <Script file="forever\dungeon\Alliance-11-20.lua"/>
+    <Script file="forever\dungeon\Horde-01-12_Durotar.lua"/>
+    <Script file="forever\dungeon\Horde-01-14_Undead.lua"/>
+    <Script file="forever\dungeon\Horde-1-12_Mulgore.lua"/>
+    <Script file="forever\dungeon\Horde-12-22_Barrens.lua"/>
+	
+	
+	<Script file="SurvivalGuide\A-Classic-Alliance-1-10_NightElf.lua"/>
+	<Script file="SurvivalGuide\A-Classic-Alliance-1-13_Human.lua"/>
+	<Script file="SurvivalGuide\A-Classic-Alliance-1-14_DwarfGnome.lua"/>
+	<Script file="SurvivalGuide\A-Classic-Alliance-11-16_NightElf.lua"/>
+	<Script file="SurvivalGuide\A-Classic-Alliance-11-20.lua"/>
+	<Script file="SurvivalGuide\A-Hardcore-18-19 Loch Modan.lua"/>
+	<Script file="SurvivalGuide\A-Hardcore-19-20 Redridge.lua"/>
+
+	<Script file="SurvivalGuide\H-Classic-Horde-01-13_Durotar.lua"/>
+	<Script file="SurvivalGuide\H-Classic-Horde-01-13_Undead.lua"/>
+	<Script file="SurvivalGuide\H-Classic-Horde-1-13_Mulgore.lua"/>
+	<Script file="SurvivalGuide\H-Classic-Horde-13-15_Silverpine.lua"/>
+	<Script file="SurvivalGuide\H-Classic-Horde-15-23_Barrens.lua"/>
+</Ui>
