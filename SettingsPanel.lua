@@ -3301,7 +3301,7 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Quest Log Size"),
                         type = "range",
                         width = optionsWidth,
-                        order = 7.4,
+                        order = 10.27,
                         min = 20,
                         max = 40,
                         step = 1,

@@ -1912,7 +1912,7 @@ addon.functions["goto"] = function(self, ...)
                 element.x = zx*100
                 element.y = zy*100
                 element.zone = zone
-                element.instance = tonumber(continent)
+                element.instance = addon.mapConversion[continent] or tonumber(continent)
             end
         else
             element.zone, element.x , element.y = addon.GetMapInfo(zone,x,y)
@@ -2092,8 +2092,8 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
         if subzone then
             element.fixedMapID = true
             zone = addon.GetMapId(subzone) or tonumber(subzone)
-            if addon.mapConversion[element.zone] then
-                zone = addon.mapConversion[element.zone]
+            if addon.mapConversion[zone] then
+                zone = addon.mapConversion[zone]
             end
             x = tonumber(x)
             y = tonumber(y)
@@ -2104,7 +2104,7 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
                 element.x = zx*100
                 element.y = zy*100
                 element.zone = zone
-                element.instance = tonumber(continent)
+                element.instance = addon.mapConversion[continent] or tonumber(continent)
             end
         else
             element.zone, element.x , element.y = addon.GetMapInfo(zone,x,y)
@@ -2231,7 +2231,7 @@ function addon.functions.pin(self, ...)
                 element.x = zx*100
                 element.y = zy*100
                 element.zone = zone
-                element.instance = tonumber(continent)
+                element.instance = addon.mapConversion[continent] or tonumber(continent)
             end
         else
             element.zone, element.x , element.y = addon.GetMapInfo(zone,x,y)
@@ -2297,7 +2297,7 @@ function addon.functions.ingamewaypoint(self, ...)
                 element.zx = zx*100
                 element.zy = zy*100
                 element.zone = zone
-                element.instance = tonumber(continent)
+                element.instance = addon.mapConversion[continent] or tonumber(continent)
             end
         else
             element.zone, element.zx , element.zy = addon.GetMapInfo(zone,x,y)

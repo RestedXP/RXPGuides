@@ -917,7 +917,9 @@ addon.mapId = {
 }]]
 
 
-addon.mapConversion = addon.mapConversion or {}
+addon.mapConversion = addon.mapConversion or {
+    ["870"] = 1064--Isle of thunder map ID changed in 5.4
+}
 
 
 --See TaxiNodes dbc table for reference
