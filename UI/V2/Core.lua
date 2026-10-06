@@ -1038,9 +1038,12 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
 
         frame:StopMovingOrSizing()
 
-        if saveHeight and this.guideSteps.frame:IsShown() and frame:GetHeight() > this:GetCollapsedHeight() then
+        if saveHeight and not this.snapshotEmpty and frame:GetHeight() > this:GetShellHeight() and
+            (this.guideSteps.frame:IsShown() or not addon.settings:IsStepListShown()) then
             this.guideHeight = frame:GetHeight()
             addon.settings.profile.v2GuideWindowExpandedHeight = this.guideHeight
+
+            if not addon.settings:IsStepListShown() then addon.settings:SetStepListShown(true) end
         end
 
         addon.settings:SaveFramePositions()
