@@ -6,7 +6,6 @@ if faction == "Alliance" then return end
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
-#forever
 #tbc
 #era/som--h
 << Horde
@@ -429,7 +428,6 @@ step
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
-#forever
 #tbc
 #era/som--h
 << Horde
@@ -2969,7 +2967,7 @@ step << Shaman/Warrior
     #completewith ReturntoJahan2
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔尔|r 对话
-    .fly Crossroads >>飞往十字路口，北贫瘠之地
+    .fly Crossroads >>飞往十字路口
     .target 塔尔
     .cooldown item,6948,<0
     .zoneskip The Barrens
@@ -3229,7 +3227,7 @@ step
     .goto Undercity,64.20,49.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师雷克尔|r 对话
     >>|cRXP_BUY_从拍卖行购买六个|r |T134339:0|t[变色的狼心] |cRXP_BUY_|r
-    >>|cRXP_WARN_如果你愿意，可以跳过这一步，这只能节省一点点时间|r
+    >>|cRXP_WARN_如果你愿意的话可以跳过，这只是个小捷径|r
     .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .target 拍卖师雷克尔
     .zoneskip Undercity,1

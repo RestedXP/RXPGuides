@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #displayname 1-7级 幽影谷
 #version 1
 #group RestedXP 联盟 1-20 级
-#groupid RXP-SRGCE-A1
+#group14-16级 黑海岸
 #defaultfor NightElf
 #next 7-13 泰达希尔 探索赛季
 step << !NightElf
@@ -513,7 +513,7 @@ RXPGuides.RegisterGuide([[
 #displayname 7-13级 泰达希尔
 #version 1
 #group RestedXP 联盟 1-20 级
-#groupid RXP-SRGCE-A1
+#group14-16级 黑海岸
 #defaultfor NightElf
 #next 13-20级 黑海岸 探索赛季
 

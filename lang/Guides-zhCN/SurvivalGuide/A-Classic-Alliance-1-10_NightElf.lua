@@ -5,7 +5,6 @@ if faction == "Horde" then return end
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
-#forever
 #tbc
 << Alliance
 #name 1-6 幽影谷
@@ -301,7 +300,6 @@ step
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
-#forever
 #tbc
 << Alliance
 #name 6-11 泰达希尔

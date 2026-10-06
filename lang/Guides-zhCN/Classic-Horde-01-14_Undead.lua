@@ -4,7 +4,6 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
-#forever
 #tbc
 #xprate <1.99
 << Horde
@@ -63,7 +62,7 @@ step << Priest/Mage
 step << Warlock/Mage
     #sticky
     #label Piercing
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温雅·玛山德|r 和 |cRXP_FRIENDLY_暗影牧师萨维斯|r 对话 << Warlock
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_温雅·玛山德|r 和 |cRXP_FRIENDLY_暗影牧师萨维斯|r 对话 << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨维斯|r 对话 << Mage
     .accept 1470 >>接受任务 控制小鬼 << Warlock
     .goto Tirisfal Glades,30.98,66.41 << Warlock
@@ -784,7 +783,6 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#forever
 #tbc
 #xprate <1.99
 << Horde
@@ -1010,6 +1008,13 @@ step
     >>拾取地上的|cRXP_LOOT_阴暗草|r
     .complete 5481,1 --Gloom Weed (3)
 step
+    #xprate <1.5
+    #completewith Pumkpins
+    >>击杀所有见到的|cRXP_ENEMY_不朽的黑暗犬|r，拾取它们的|cRXP_LOOT_血液|r
+    .complete 367,1 --Darkhound Blood (5)
+    .mob 衰老的黑暗犬
+step
+    #xprate >1.49
     #completewith GloomWeed
     >>击杀所有见到的|cRXP_ENEMY_不朽的黑暗犬|r，拾取它们的|cRXP_LOOT_血液|r
     .complete 367,1 --Darkhound Blood (5)
@@ -1100,6 +1105,7 @@ step << Rogue
     .mob Tirisfal Farmhand
     .train 400095,1
 step
+    #label Pumkpins
     #loop
     .goto Tirisfal Glades,36.63,50.09,0
     .goto Tirisfal Glades,37.20,52.17,50,0
@@ -1109,7 +1115,7 @@ step
     .goto Tirisfal Glades,35.30,50.91,50,0
     .goto Tirisfal Glades,34.57,51.58,50,0
     .goto Tirisfal Glades,36.63,50.09,50,0
-    >>拾取田野里的 |cRXP_LOOT_南瓜|r。
+    >>拾取田野里的 |cRXP_LOOT_南瓜|r
     .complete 365,1 --Tirisfal Pumpkin (10)
 step << Rogue
     #season 2
@@ -1888,7 +1894,7 @@ step
     .goto Tirisfal Glades,64.50,29.41
     .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     >>|cRXP_WARN_确保你在箭头位置（或箭头西侧）死亡|r
-step << skip
+step
     #label DoomedWeed
     #loop
     .goto Tirisfal Glades,57.71,48.96,0
@@ -1898,6 +1904,7 @@ step << skip
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_霍兰德|r 对话，他在墓地周围巡逻。
     .turnin 5482 >>交任务 末日草
     .target Junior Apothecary Holland
+    .isQuestComplete 5482
 step << Rogue
     #season 2
     .goto Tirisfal Glades,52.89,54.03
@@ -2048,6 +2055,7 @@ step << Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
 step
+    #label Brill3
     .goto Tirisfal Glades,61.71,52.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板瑞尼|r 对话
     >>|cRXP_BUY_购买|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_从她那里|r << Mage/Priest
@@ -2076,12 +2084,7 @@ step << Warrior
     .mob Vampiric Duskbat
     .train 403475,1
 step
-    #loop
-    .goto Tirisfal Glades,41.09,47.59,0
-    .goto Tirisfal Glades,51.31,50.01,60,0
-    .goto Tirisfal Glades,46.01,51.59,60,0
-    .goto Tirisfal Glades,41.09,47.59,60,0
-    .goto Tirisfal Glades,41.45,41.62,60,0
+    #completewith next
     >>杀死 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_皮毛|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
@@ -2496,13 +2499,6 @@ step << Warlock
     .goto Undercity,64.22,39.77,10,0
     .goto Undercity,65.53,43.62,15 >>乘电梯下去到幽暗城
 step << Warlock
-    #xprate <1.5
-    .goto Undercity,67.74,37.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺曼|r 对话
-    .home >>将你的炉石设置到幽暗城
-    .target Innkeeper Norman
-    .bindlocation 1497
-step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_凯伦丁|r 对话
     .turnin 1478 >>交任务 哈加尔的召唤
@@ -2638,19 +2634,11 @@ step << !Priest
     >>|cRXP_WARN_如果你愿意，可以跳过这一步，这只能节省一点点时间|r
     .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .target 拍卖师雷克尔
-step << !Warlock
-    #xprate <1.5
-    #label UCHome
-    .goto Undercity,67.74,37.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺曼|r 对话
-    .home >>将你的炉石设置到幽暗城
-    .target Innkeeper Norman
-    .bindlocation 1497
 step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_凯伦丁|r 对话
     .turnin 1473 >>交任务 虚空中的生物
-    .accept 1471 >>接受任务 誓缚
+    .accept 1471 >>接受任务誓缚
     .target 凯伦丁·哈加尔
 step << Warlock
     #completewith next
@@ -2665,7 +2653,7 @@ step << Warlock
 step << Warlock
     .goto Undercity,85.04,25.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯伦丁|r 对话
-    .turnin 1471 >>交任务 誓缚
+    .turnin 1471 >>交任务誓缚
     .target 凯伦丁·哈加尔
 step << Warrior
     #ssf
@@ -2778,6 +2766,14 @@ step << Mage/Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_比索|r 对话
     .turnin 405 >>交任务 流浪的巫妖
     .target Bethor Iceshard
+step
+    #xprate <1.5
+    #label UCHome
+    .goto Undercity,67.74,37.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺曼|r 对话
+    .home >>将你的炉石设置到幽暗城
+    .target Innkeeper Norman
+    .bindlocation 1497
 step
     #optional
     #label LogoutSkip1
@@ -4099,7 +4095,6 @@ RXPGuides.RegisterGuide([[
 #version 11
 #defaultfor Undead/Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
 #classic
-#forever
 #tbc
 #era/som--h
 #name 12-14级 银松森林
@@ -5227,6 +5222,7 @@ step << Undead
 step << Undead
     #completewith EnterRFC
     .destroy 14544 >>|cRXP_WARN_销毁|r |T134417:0|t[军官的徽章] |cRXP_WARN_因为你不再需要它|r
+    .dungeon RFC
 step << Undead
     #label EnterRFC
     .goto Orgrimmar,52.77,48.97
@@ -5447,7 +5443,6 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
-#forever
 #tbc
 << Horde
 #xprate >1.99
@@ -6515,7 +6510,6 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#forever
 #tbc
 #xprate >1.99
 << Horde
@@ -8614,7 +8608,7 @@ step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_凯伦丁|r 对话
     .turnin 1473 >>交任务 虚空中的生物
-    .accept 1471 >>接受任务 誓缚
+    .accept 1471 >>接受任务誓缚
     .target 凯伦丁·哈加尔
 step << Warlock
     #completewith next
@@ -8629,7 +8623,7 @@ step << Warlock
 step << Warlock
     .goto Undercity,85.04,25.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯伦丁|r 对话
-    .turnin 1471 >>交任务 誓缚
+    .turnin 1471 >>交任务誓缚
     .target 凯伦丁·哈加尔
 step << Warrior
     #ssf
@@ -9683,6 +9677,7 @@ step << Undead
 step << Undead
     #completewith EnterRFC
     .destroy 14544 >>|cRXP_WARN_销毁|r |T134417:0|t[军官的徽章] |cRXP_WARN_因为你不再需要它|r
+    .dungeon RFC
 step << Undead
     #label EnterRFC
     .goto Orgrimmar,52.77,48.97

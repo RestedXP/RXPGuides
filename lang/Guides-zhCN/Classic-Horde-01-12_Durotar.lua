@@ -4,7 +4,6 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
-#forever
 #tbc
 #xprate <1.99
 << Horde
@@ -1277,7 +1276,6 @@ step
     .goto Durotar,44.70,52.47
     .deathskip >>|cRXP_WARN_在箭头附近死亡并在|cRXP_FRIENDLY_灵魂治疗者|r处复活|r
     .target 灵魂医者
-    .subzoneskip 362
 step
     #softcore
     #label Betrayers
@@ -1537,7 +1535,6 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#forever
 #tbc
 #xprate <1.99
 << Horde
@@ -3765,7 +3762,6 @@ step << Rogue
 
 RXPGuides.RegisterGuide([[
 #classic
-#forever
 #tbc
 #xprate <1.99
 << Horde
@@ -3872,7 +3868,7 @@ step << Warrior/Shaman
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫布瑞姆|r 对话
     .accept 848 >>接受任务 菌类孢子
-    .accept 1492 >>接受任务 码头主管迪兹维格
+    .accept 1492 >>接受任务码头管理员迪兹维格
     .target 药剂师赫布瑞姆
 step << Warrior/Shaman
     #completewith next
@@ -3929,7 +3925,7 @@ step << Warrior/Shaman
 step << Warrior/Shaman
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图加|r 对话
-    .turnin 870 >>交任务 遗忘之池
+    .turnin 870 >>交任务  遗忘之池
     .target 图加·符文图腾
 step << Warrior/Shaman
     #completewith next
@@ -5177,7 +5173,6 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#forever
 #tbc
 << Horde
 #xprate <1.99
@@ -5877,7 +5872,7 @@ step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_卡伦丁|r交谈
     .turnin 1473 >>交任务 虚空中的生物
-    .accept 1471 >>接受任务 誓缚
+    .accept 1471 >>接受任务誓缚
     .target 凯伦丁·哈加尔
     .isQuestAvailable 1504
 step << Warlock
@@ -5895,7 +5890,7 @@ step << Warlock
 step << Warlock
     .goto Undercity,85.04,25.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯伦丁|r 对话
-    .turnin 1471 >>交任务 誓缚
+    .turnin 1471 >>交任务誓缚
     .target 凯伦丁·哈加尔
     .isQuestAvailable 1504
 step << skip --Warlock
@@ -7008,7 +7003,6 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
-#forever
 #tbc
 #xprate >1.99
 << Horde
@@ -7150,7 +7144,7 @@ step << Warlock
     .aura 403619 >>记得激活你的 |T136156:0|t[邪甲术]
 step << Warlock
     .goto Durotar,42.59,69.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
     .accept 1485 >>接受任务 邪灵劣魔
     .target Ruzan
 step << Shaman
@@ -7503,7 +7497,7 @@ step << Rogue
 step << Warlock
     #label Ruzan2
     .goto Durotar,42.59,69.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
     .turnin 1485 >>交任务 邪灵劣魔
     .accept 1499 >>接受任务 邪灵劣魔
     .target Ruzan
@@ -8209,7 +8203,6 @@ step
     .goto Durotar,44.70,52.47
     .deathskip >>|cRXP_WARN_在箭头附近死亡并在|cRXP_FRIENDLY_灵魂治疗者|r处复活|r
     .target 灵魂医者
-    .subzoneskip 362
 step
     #softcore
     #label Betrayers
@@ -8480,7 +8473,6 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#forever
 #tbc
 #xprate >1.99
 << Horde
@@ -10194,7 +10186,7 @@ step << Warlock
     .goto Orgrimmar,48.246,45.281
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_甘鲁尔·血眼|r 对话
     .turnin 1501 >>交任务 虚空中的生物
-    .accept 1504 >>接受任务 誓缚
+    .accept 1504 >>接受任务誓缚
     .target 甘鲁尔·血眼
 step << Warlock
     .goto Orgrimmar,49.49,50.56
@@ -10224,7 +10216,7 @@ step << Warlock
 step << Warlock
     .goto Orgrimmar,48.246,45.281
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_甘鲁尔·血眼|r 对话
-    .turnin 1504 >>交任务 誓缚
+    .turnin 1504 >>交任务誓缚
     .target 甘鲁尔·血眼
 step << Warlock
     .goto Orgrimmar,31.74,37.82

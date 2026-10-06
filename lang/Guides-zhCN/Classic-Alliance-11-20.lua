@@ -8,7 +8,6 @@ if faction == "Horde" then return end
 RXPGuides.RegisterGuide([[
 #xprate <1.5
 #classic
-#forever
 #tbc
 #season 0,1
 #version 1
@@ -475,11 +474,11 @@ step << Human/Dwarf Paladin
     .fly Ironforge >>飞往铁炉堡
     .target 索尔
 step << Human Mage/Human Rogue/Human Warrior/Human Warlock/Human Paladin/Human Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话 << Human Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话 << Human Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_芬斯维克|r 对话 << Human Rogue
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话 << Human Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丁克|r 对话 << Human Mage
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话 << Human Paladin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话 << Human Priest
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丁克|r 对话 << Human Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话 << Human Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布瑞尔索恩|r 对话 << Human Warlock
     .goto Ironforge,51.1,8.7,15,0 << Human Warlock
     .goto Ironforge,50.343,5.657 << Human Warlock
@@ -552,7 +551,7 @@ step << Dwarf Paladin
     #softcore
     #completewith DarkshoreBoat
     .goto Ironforge,55.501,47.742
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fly Wetlands>>飞往湿地
     .target 格莱斯·瑟登
 step
@@ -620,7 +619,7 @@ step
     .bronzetube
 step << Human/Dwarf Paladin
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
     .fp Wetlands>>获取湿地的飞行路径
     .target 谢尔雷·布隆迪尔
 step
@@ -731,13 +730,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#forever
 #tbc
 #season 0,1
 #version 1
 << Alliance
 #group RestedXP 联盟 1-20 级
-#groupid RXP-SRGCE-A1
+#group14-16级 黑海岸
 #name 14-16级 黑海岸
 #displayname 11-16级 黑海岸 << NightElf
 #displayname 13-16级 黑海岸 << Dwarf Hunter
@@ -749,6 +747,8 @@ RXPGuides.RegisterGuide([[
 -- #displayname 15-17 Darkshore << !NightElf !Dwarf/!Hunter !SoD
 -- #displayname 13-18 Darkshore << Dwarf Hunter/!NightElf sod
 
+step
+    #label start --hidden step for #include
 step << NightElf
     #label WashedA
     .goto 1439,36.621,45.596
@@ -876,6 +876,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特伦希斯|r 对话
     .accept 984 >>接受任务 熊怪的威胁
     .target 特伦希斯
+step
+    #optional
+    .goto Darkshore,37.04,44.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板莎希因|r 对话
+    .home >>将你的炉石设为奥伯丁
+    .target 旅店老板莎希因
+    .bindlocation 442
 step << !NightElf
     #label WashedA
     .goto 1439,36.701,45.122,8,0
@@ -1598,7 +1605,7 @@ step << NightElf/Hunter/Druid/Warrior
     #label AuberdineTurnin2
     #completewith Cascade
     .goto 1439,37.703,43.393
-    .subzone 442 >>Return to 奥伯丁，黑海岸
+    .subzone 442 >>返回奥伯丁
     .cooldown item,6948,<0,1 << !Druid
 step << NightElf/Hunter/Druid/Warrior
     #optional
@@ -1764,7 +1771,7 @@ step << NightElf/Hunter/Druid/Warrior
     #optional
     #completewith MysteriousCrystalHuntDruidEnd
     .goto 1439,37.703,43.393
-    .subzone 442 >>Return to 奥伯丁，黑海岸
+    .subzone 442 >>返回奥伯丁
     .cooldown item,6948,<0,1 << !Druid
     .isQuestTurnedIn 4811
 step << NightElf/Hunter/Druid/Warrior
@@ -2287,7 +2294,7 @@ step
     #completewith TOTH
     #optional
     .goto 1439,36.701,45.122
-    .subzone 442 >>Return to 奥伯丁，黑海岸
+    .subzone 442 >>返回奥伯丁
     .isOnQuest 4722
 step
     #xprate <1.5 --<< !NightElf/Hunter
@@ -3097,13 +3104,12 @@ step << Druid
 
 RXPGuides.RegisterGuide([[
 #classic
-#forever
 #tbc
 #season 0,1
 #version 1
 << Alliance
 #group RestedXP 联盟 1-20 级
-#groupid RXP-SRGCE-A1
+#group14-16级 黑海岸
 #name 16-19级 黑海岸
 #next 19-20级 赤脊山；20-21级 黑海岸/灰谷 << !Hunter
 #next 19-21级 黑海岸/灰谷 << Hunter
@@ -3544,13 +3550,13 @@ step << !Hunter
 	#xprate <1.5
     #season 0
     .goto 1439,32.644,80.711
-    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4730 >>接受任务 搁浅的海洋生物
 step << Hunter
 	#xprate <1.5
     #season 0
     .goto 1439,32.644,80.711
-    >>点击 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4730 >>接受任务 搁浅的海洋生物
 step << Druid
     #optional
@@ -4335,7 +4341,7 @@ step << !NightElf Warrior/Paladin
 step << !NightElf Warrior/Paladin/Mage/Warlock/!NightElf Rogue
     #xprate >1.59
     .goto Wetlands,9.490,59.694
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
     .fly Ironforge >>飞往铁炉堡
     .target 谢尔雷·布隆迪尔
     .zoneskip Darkshore << Warrior/Paladin
@@ -4346,7 +4352,7 @@ step << !NightElf Warrior/Paladin/Mage/Warlock/!NightElf Rogue
 step << NightElf Rogue
     #xprate >1.59
     .goto Wetlands,9.490,59.694
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
     .fp Menethil Harbor >>获取米奈希尔港的飞行路径
     .target 谢尔雷·布隆迪尔
     .dungeon !DM
@@ -4567,7 +4573,7 @@ step << Warrior
     #season 1 --Not loading for now
     #optional << NightElf
     .goto Ironforge,65.905,88.405
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
     .trainer >>训练你的职业技能
     .target 比尔班·飞钳
     .zoneskip Darkshore
@@ -4579,7 +4585,7 @@ step << Warrior
 step << NightElf Rogue
     #xprate >1.59
     .goto Ironforge,55.491,47.751
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fp Ironforge >>获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
     .zoneskip Wetlands
@@ -4640,14 +4646,14 @@ step << Mage
 step << Mage
     #xprate >1.59
     .goto Ironforge,27.18,8.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丁克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丁克|r 对话
     .trainer >>训练你的职业技能
     .target 丁克
     .dungeon !DM
 step << Paladin
     #xprate >1.59
     .goto Ironforge,23.131,6.143
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
     .trainer >>训练你的职业技能
     .target 布兰度尔·铁锤
     .zoneskip Darkshore
@@ -4841,7 +4847,7 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_"剃刀"雷吉克|r 和 |cRXP_FRIENDLY_马迪亚斯·肖尔大师|r 对话
-    .accept 2281 >>接受任务赤脊山的联络员
+    .accept 2281 >>接受任务 赤脊山的联络员
     .goto StormwindClassic,75.76,60.35
     .target +Renzik "The Shiv"
     .accept 2360 >>接受任务 马迪亚斯和迪菲亚盗贼
@@ -5209,7 +5215,7 @@ step << Rogue
     >>|cRXP_WARN_|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 出现在塔楼入口处，随后会在塔楼外侧巡逻|r
     >>|cRXP_WARN_小心，他伤害很高。如果你的|r |T132320:0|t[潜行] |cRXP_WARN_被打破，立刻使用|r |T132307:0|t[疾跑] |cRXP_WARN_逃离|r
     .complete 2359,2 --Collect Defias Tower Key (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
     .mob Malformed Defias Drone
     .dungeon !DM
 step << Rogue
@@ -5231,7 +5237,7 @@ step << Rogue
     >>|cRXP_WARN_如果你的背包中或已装备|r |T135641:0|t[匕首] |cRXP_WARN_，你可以施放|r |T132282:0|t[伏击] |cRXP_WARN_对付里面的 |cRXP_ENEMY_迪菲亚巡塔员|r 和 |cRXP_ENEMY_迪菲亚哨兵|r，从而瞬间击杀他们。击杀第一个 |cRXP_ENEMY_迪菲亚哨兵|r 后请做好逃跑准备，并记住你可能会从上方被攻击。这种方法更慢，但安全性高得多|r
     >>|cRXP_WARN_注意，如果你需要跑出塔楼，|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 和 |cRXP_ENEMY_迪菲亚苦工|r 可能会在塔楼入口处|r
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
     .mob Defias Tower Patroller
     .mob Defias Tower Sentry
     .dungeon !DM
@@ -5286,7 +5292,7 @@ step << !Dwarf Rogue
     #xprate >1.59
     #requires AntiVenomEnd
     .goto 1453,43.070,26.155
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>|cRXP_WARN_如果你有|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_或者|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_朋友，建议让他们帮你移除|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_，而不是自己处理|r
     .skill firstaid,80 >>|cRXP_WARN_将你的|r |T135966:0|t[急救] |cRXP_WARN_提升到 80|r
     .aura -9991
@@ -5296,7 +5302,7 @@ step << !Dwarf Rogue
     #xprate >1.59
     #label FirstAidEnd
     .goto 1453,43.070,26.155
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>|cRXP_WARN_如果你有|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_或者|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_朋友，建议让他们帮你移除|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_，而不是自己处理|r
     .train 7934 >>|cRXP_WARN_学习|r |T134437:0|t[抗毒药剂]
     .aura -9991
@@ -5603,7 +5609,7 @@ step << NightElf Rogue
     #xprate >1.59
     #label NEWarRogNoDMIFPP
     .goto Ironforge,55.491,47.751
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fp Ironforge >>获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
     .zoneskip Darkshore
@@ -5657,7 +5663,7 @@ step << NightElf Rogue
     #optional
     #completewith next
     .goto Ironforge,55.491,47.751
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fly Menethil >>飞往湿地
     .zoneskip Ironforge,1
     .cooldown item,6948,<0
@@ -6102,7 +6108,7 @@ step << !NightElf
     #optional
     #completewith next
     .goto Wetlands,9.490,59.694
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
     .fly Ironforge >>飞往铁炉堡
     .target 谢尔雷·布隆迪尔
     .zoneskip Elwynn Forest
@@ -6112,7 +6118,7 @@ step << !NightElf
 step << NightElf
     #xprate >1.59 << !Hunter
     .goto Wetlands,9.490,59.694
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
     .fp Menethil Harbor >>获取米奈希尔港的飞行路径
     .target 谢尔雷·布隆迪尔
     .dungeon DM
@@ -6296,7 +6302,7 @@ step << NightElf Warrior
 step << NightElf
     #xprate >1.59 << !Hunter
     .goto Ironforge,55.491,47.751
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fp Ironforge >>获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
     .zoneskip Wetlands
@@ -6358,7 +6364,7 @@ step << Mage
 step << Mage
     #xprate >1.59
     .goto Ironforge,27.18,8.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丁克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丁克|r 对话
     .trainer >>训练你的职业技能
     .target 丁克
     .dungeon DM
@@ -6366,7 +6372,7 @@ step << Priest
     #xprate >1.59
     #optional << NightElf
     .goto Ironforge,25.207,10.756
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话
     .trainer >>训练你的职业技能
     .target 托德雷·铁矿
     .zoneskip Wetlands << NightElf
@@ -6626,7 +6632,7 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_"剃刀"雷吉克|r 和 |cRXP_FRIENDLY_马迪亚斯·肖尔|r 对话
-    .accept 2281 >>接受任务赤脊山的联络员
+    .accept 2281 >>接受任务 赤脊山的联络员
     .goto StormwindClassic,75.76,60.35
     .target +Renzik "The Shiv"
     .accept 2360 >>接受任务 马迪亚斯和迪菲亚盗贼
@@ -7161,7 +7167,7 @@ step << Rogue
     >>|cRXP_WARN_|cRXP_ENEMY_丑陋的迪菲亚懒汉|r出现在塔楼入口处，随后会在塔楼外侧巡逻|r
     >>|cRXP_WARN_小心，他伤害很高。如果你的|r |T132320:0|t[潜行] |cRXP_WARN_被打破，立刻使用|r |T132307:0|t[疾跑] |cRXP_WARN_逃离|r
     .complete 2359,2 --Collect Defias Tower Key (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
     .mob Malformed Defias Drone
     .dungeon DM
 step << Rogue
@@ -7183,7 +7189,7 @@ step << Rogue
     >>|cRXP_WARN_如果你的背包中或已装备|r |T135641:0|t[匕首] |cRXP_WARN_，你可以施放|r |T132282:0|t[伏击] |cRXP_WARN_对付里面的 |cRXP_ENEMY_迪菲亚巡塔员|r 和 |cRXP_ENEMY_迪菲亚哨兵|r，从而瞬间击杀他们。击杀第一个 |cRXP_ENEMY_迪菲亚哨兵|r 后请做好逃跑准备，并记住你可能会从上方被攻击。这种方法更慢，但安全性高得多|r
     >>|cRXP_WARN_注意，如果你需要跑出塔楼，|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 和 |cRXP_ENEMY_迪菲亚苦工|r 可能会在塔楼入口处|r
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
     .mob Defias Tower Patroller
     .mob Defias Tower Sentry
     .dungeon DM
@@ -7238,7 +7244,7 @@ step << !Dwarf Rogue
     #xprate >1.59
     #requires AntiVenomEnd
     .goto 1453,43.070,26.155
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>|cRXP_WARN_如果你有|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_或者|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_朋友，建议让他们帮你移除|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_，而不是自己处理|r
     .skill firstaid,80 >>|cRXP_WARN_将你的|r |T135966:0|t[急救] |cRXP_WARN_提升到 80|r
     .aura -9991
@@ -7248,7 +7254,7 @@ step << !Dwarf Rogue
     #xprate >1.59
     #label FirstAidEnd
     .goto 1453,43.070,26.155
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>|cRXP_WARN_如果你有|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_或者|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_朋友，建议让他们帮你移除|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_，而不是自己处理|r
     .train 7934 >>|cRXP_WARN_学习|r |T134437:0|t[抗毒药剂]
     .aura -9991
@@ -7717,7 +7723,7 @@ step << Mage
     #xprate >1.59
     #optional
     #completewith next
-    .cast 3561 >>施放|T135763:0|t[传送：暴风城]
+    .cast 3561 >>施放 |T135763:0|t[传送：暴风城]
     .zoneskip Stormwind City
     .dungeon DM
 step << Mage
@@ -7936,7 +7942,7 @@ step << Mage
     #xprate >1.59
     #optional
     #completewith next
-    .cast 3561 >>施放|T135763:0|t[传送：暴风城]
+    .cast 3561 >>施放 |T135763:0|t[传送：暴风城]
     .dungeon DM
 step << Mage
     #xprate >1.59
@@ -8032,7 +8038,7 @@ step << NightElf
     #xprate >1.59 << !Hunter
     #label NEIFFP
     .goto Ironforge,55.491,47.751
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fp Ironforge >>获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
     .dungeon DM
@@ -8167,7 +8173,7 @@ step << !NightElf !Hunter
 step << !NightElf !Hunter
     #xprate <1.59
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
     .fly Ironforge >>飞往铁炉堡
     .target 谢尔雷·布隆迪尔
 
@@ -8186,7 +8192,7 @@ step << !Hunter NightElf
 step << !Hunter NightElf
     #xprate <1.59
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
     .fp Wetlands>>获取湿地的飞行路径
     .target 谢尔雷·布隆迪尔
 step << !Hunter NightElf
@@ -8344,13 +8350,12 @@ step << !Hunter
 RXPGuides.RegisterGuide([[
 #xprate <1.59
 #classic
-#forever
 #tbc
 #season 0,1
 #version 1
 << Alliance !Hunter
 #group RestedXP 联盟 1-20 级
-#groupid RXP-SRGCE-A1
+#group14-16级 黑海岸
 #name 19-20级 赤脊山
 #next 20-21级 黑海岸/灰谷
 
@@ -8444,7 +8449,7 @@ step << Rogue
     .goto StormwindClassic,78.67,60.13,5 >>进入军情7处总部。上楼去找 |cRXP_FRIENDLY_"剃刀"雷吉克|r
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"剃刀"雷吉克|r对话
-    .accept 2281 >>接受任务赤脊山的联络员
+    .accept 2281 >>接受任务 赤脊山的联络员
     .goto StormwindClassic,75.76,60.35
     .target Renzik "The Shiv"
 step << Warrior !NightElf
@@ -9359,7 +9364,7 @@ step << Rogue
     .goto 1433,51.846,45.116
     >>|cRXP_WARN_你必须完成这一步，才能进行之后的|r |T132290:0|t[毒药] |cRXP_WARN_任务|r
     >>|cRXP_WARN_站在路径点位置。调整你的镜头和鼠标位置，使你无需移动即可一次性点击 3 个|cRXP_PICK_ |r练习用保险箱|r
-    .skill lockpicking,80 >>|cRXP_WARN_在奥瑟尔木场打开地上的 |cRXP_PICK_练习用保险箱|r，直到你的|r |T136058:0|t[开锁] 技能达到 80|r
+    .skill lockpicking,80 >>|cRXP_WARN_在奥瑟尔磨坊打开地上的 |cRXP_PICK_练习用保险箱|r，直到你的|r |T136058:0|t[开锁] 技能达到 80|r
 step << Rogue
 	.goto Redridge Mountains,52.05,44.69
     >>打开 |cRXP_PICK_卢修斯的保险箱|r。从中拾取 |cRXP_LOOT_盗贼徽记|r
@@ -9691,7 +9696,7 @@ step << Rogue
     >>|cRXP_WARN_|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 出现在塔楼入口处，随后会在塔楼外侧巡逻|r
     >>|cRXP_WARN_小心，他伤害很高。如果你的|r |T132320:0|t[潜行] |cRXP_WARN_被打破，立刻使用|r |T132307:0|t[疾跑] |cRXP_WARN_逃离|r
     .complete 2359,2 --Collect Defias Tower Key (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
     .mob Malformed Defias Drone
 step << Rogue
     #optional
@@ -9709,7 +9714,7 @@ step << Rogue
     >>|cRXP_WARN_如果你的背包中或已装备|r |T135641:0|t[匕首] |cRXP_WARN_，你可以施放|r |T132282:0|t[伏击] |cRXP_WARN_对付里面的 |cRXP_ENEMY_迪菲亚巡塔员|r 和 |cRXP_ENEMY_迪菲亚哨兵|r，从而瞬间击杀他们。击杀第一个 |cRXP_ENEMY_迪菲亚哨兵|r 后请做好逃跑准备，并记住你可能会从上方被攻击。这种方法更慢，但安全性高得多|r
     >>|cRXP_WARN_注意，如果你需要跑出塔楼，|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 和 |cRXP_ENEMY_迪菲亚苦工|r 可能会在塔楼入口处|r
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
     .mob Defias Tower Patroller
     .mob Defias Tower Sentry
 step << !Dwarf Rogue
@@ -9752,7 +9757,7 @@ step << !Dwarf Rogue
 step << !Dwarf Rogue
     #requires AntiVenomEnd
     .goto 1453,43.070,26.155
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>|cRXP_WARN_如果你有|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_或者|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_朋友，建议让他们帮你移除|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_，而不是自己处理|r
     .skill firstaid,80 >>|cRXP_WARN_将你的|r |T135966:0|t[急救] |cRXP_WARN_提升到 80|r
     .aura -9991
@@ -9760,7 +9765,7 @@ step << !Dwarf Rogue
 step << !Dwarf Rogue
     #label FirstAidEnd
     .goto 1453,43.070,26.155
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>|cRXP_WARN_如果你有|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_或者|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_朋友，建议让他们帮你移除|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_，而不是自己处理|r
     .train 7934 >>|cRXP_WARN_学习|r |T134437:0|t[抗毒药剂]
     .aura -9991
@@ -9996,14 +10001,13 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#forever
 #tbc
 #season 0,1
 #version 1
 #season 0
 << Alliance Hunter
 #group RestedXP 联盟 1-20 级
-#groupid RXP-SRGCE-A1
+#group14-16级 黑海岸
 #name 19-21级 黑海岸/灰谷
 #next RestedXP 联盟 20-30\21-23 灰谷/石爪山脉
 
@@ -10245,7 +10249,7 @@ step
 step
 	#xprate >1.49
     .goto Darkshore,44.44,84.69
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 995,1 --Help Volcor escape the cave (1)
     .isQuestTurnedIn 993
 step
@@ -10790,14 +10794,13 @@ step << Dwarf Hunter
 
 RXPGuides.RegisterGuide([[
 #classic
-#forever
 #tbc
 #season 0
 #version 1
 << Alliance !Hunter
 #season 0
 #group RestedXP 联盟 1-20 级
-#groupid RXP-SRGCE-A1
+#group14-16级 黑海岸
 #name 20-21级 黑海岸/灰谷
 #next RestedXP 联盟 20-30\21-23 石爪山脉/灰谷;RestedXP 联盟 20-30\21-22 灰谷 探索赛季
 
@@ -10821,7 +10824,7 @@ step
     .hs >>炉石回到奥伯丁
 step
     .goto Darkshore,37.21,44.22
-    >>点击 |cRXP_PICK_通缉告示|r
+    >>点击 |cRXP_PICK_通缉布告|r
     .accept 4740 >>接受任务 通缉：莫克迪普！
 step
     .goto 1439,37.322,43.640
@@ -10913,7 +10916,7 @@ step
 step
     #xprate >1.49
     .goto Darkshore,44.44,84.69
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 995,1 --Help Volcor escape the cave (1)
     .isOnQuest 995
 step
@@ -11204,7 +11207,7 @@ step
 #xprate <1.5
     #label volcorEnd
     .goto Darkshore,44.44,84.69
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 995,1
     .isOnQuest 995
 step -- adjusted to heading there straight from southern most beached sea creature

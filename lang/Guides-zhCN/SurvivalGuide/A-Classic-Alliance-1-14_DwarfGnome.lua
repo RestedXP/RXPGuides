@@ -5,7 +5,6 @@ if faction == "Horde" then return end
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
-#forever
 #tbc
 #era/som--h
 << Alliance
@@ -53,7 +52,7 @@ step << Warlock
     .target 德南·弗卡特
 step << Warlock
     .goto Dun Morogh,28.650,66.145
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r对话
     .train 348 >>学习 |T135817:0|t[献祭]
     .accept 1599 >>接受任务 开端
     .target 阿拉玛尔·格里姆
@@ -103,7 +102,7 @@ step << Warlock
     #completewith next
     .hs >>炉石返回寒脊山谷
 step << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r对话
     .goto Dun Morogh,28.650,66.145
     .turnin 1599 >>交任务 开端
     .turnin 3115 >>交任务 被污染的备忘录 << Gnome Warlock
@@ -230,7 +229,7 @@ step << Gnome Mage
     .turnin 3114 >>交任务 雕文备忘录
     .trainer >>训练你的职业技能
 step << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r对话
     .target 阿拉玛尔·格里姆
     .goto Dun Morogh,28.650,66.145
     .trainer >>训练你的腐蚀术
@@ -413,7 +412,6 @@ RXPGuides.RegisterGuide([[
 #hardcore
 #era/som--h
 #classic
-#forever
 #tbc
 << Alliance
 #name 6-10级 丹莫罗
@@ -598,14 +596,14 @@ step
     .turnin 400 >>交任务 贝尔丁的工具
 step
     #label BoarMeat44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗斯洛·鲁治|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_罗斯洛·鲁治|r 对话
     .target 罗斯洛·鲁治
     .goto Dun Morogh,50.084,49.420
     .accept 5541 >>接受任务 海格纳的弹药
 step << Warrior/Paladin/Rogue
     #completewith next
     .money <0.0091
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗斯洛·鲁治|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_罗斯洛·鲁治|r 对话
     .goto Dun Morogh,50.084,49.420
     >>|cRXP_BUY_购买一把|r |T134708:0|t[矿工锄] |cRXP_BUY_如果你学习了|r |T136241:0|t[锻造]
     .collect 2901,1
@@ -969,7 +967,7 @@ step
 step
     .goto Dun Morogh,47.377,52.523
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话，NPC在里面
-    >>|cRXP_BUY_从他那里购买一杯|r |T132800:0|t[狂想麦酒] |cRXP_BUY_和一杯|r |T132800:0|t[雷霆麦酒]
+    >>|cRXP_BUY_从他那里购买1杯|r |T132800:0|t[狂想麦酒] |cRXP_BUY_和1杯|r |T132800:0|t[雷霆麦酒]
     .complete 384,2 --Collect Rhapsody Malt (x1)
     .collect 2686,1,311 --Collect Thunder Ale (x1)
     .target 旅店老板贝尔姆
@@ -1296,7 +1294,7 @@ step << Warrior/Hunter
 step << Hunter
     .goto Ironforge,70.86,85.83
     .target 贝莉亚·雷岩
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝莉亚·雷岩|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_贝莉亚·雷岩|r 对话
     .turnin 6086 >>交任务 训练野兽
 step << Warrior
     .goto Ironforge,62.237,89.628
@@ -1535,7 +1533,7 @@ step
     .accept 6388 >>接受任务 格莱斯·瑟登
 step << Hunter
     >>|cRXP_WARN_不要飞往任何地方|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .target 格莱斯·瑟登
     .goto Ironforge,55.501,47.742
     .turnin 6388 >>交任务 格莱斯·瑟登
@@ -1554,7 +1552,7 @@ step << Warrior
     .trainer >>学习双手锤
 step << !Hunter
     >>|cRXP_WARN_不要飞往任何地方|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .target 格莱斯·瑟登
     .goto Ironforge,55.501,47.742
     .turnin 6388 >>交任务 格莱斯·瑟登
@@ -1701,7 +1699,6 @@ RXPGuides.RegisterGuide([[
 #hardcore
 #era/som--h
 #classic
-#forever
 #tbc
 << Alliance
 #name 10-11 艾尔文森林（矮人/侏儒）
@@ -1788,7 +1785,7 @@ step
     .target 米莱德·斯通菲尔德
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r，拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_任务过程中5级怪物可能会变灰，但仍需完成此任务以解锁后续任务|r
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
@@ -1804,7 +1801,7 @@ step
     .goto Elwynn Forest,40.5,82.3,25,0
     .goto Elwynn Forest,37.71,83.76,25,0
     .goto Elwynn Forest,40.5,82.3
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r，拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_任务过程中5级怪物可能会变灰，但仍需完成此任务以解锁后续任务|r
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
@@ -2062,7 +2059,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .trainer >>训练你的职业技能
     .turnin 1688 >>交任务 苏伦娜·凯尔东
-    .accept 1689 >>接受任务 誓缚
+    .accept 1689 >>接受任务誓缚
     .target 黑暗缚灵者加科因
 step << Warlock
     #completewith next
@@ -2083,13 +2080,13 @@ step << Warlock
     >>在你回到 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 的路上，用生命分流回蓝
     .target 黑暗缚灵者加科因
     .goto StormwindClassic,25.2,78.5
-    .turnin 1689 >>交任务 誓缚
+    .turnin 1689 >>交任务誓缚
 step << Warlock
     #hardcore
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .target 黑暗缚灵者加科因
     .goto StormwindClassic,25.25,78.59
-    .turnin 1689 >>交任务 誓缚
+    .turnin 1689 >>交任务誓缚
 step << Warlock
     #softcore
     #completewith next
@@ -2166,7 +2163,7 @@ step << Warlock
     .turnin 239 >>交任务 西泉要塞
     .accept 11 >>接受任务 悬赏河爪豺狼人
     .goto Elwynn Forest,24.234,74.450
-    >>点击 |cRXP_PICK_通缉告示|r
+    >>点击 |cRXP_PICK_通缉布告|r
     .accept 176 >>接受任务 通缉：霍格
     .goto Elwynn Forest,24.548,74.672
     .target 瑞尼尔副队长
@@ -2176,7 +2173,7 @@ step
     .turnin 239 >>交任务 西泉要塞
     .accept 11 >>接受任务 悬赏河爪豺狼人
     .goto Elwynn Forest,24.234,74.450
-    >>点击 |cRXP_PICK_通缉告示|r
+    >>点击 |cRXP_PICK_通缉布告|r
     .accept 176 >>接受任务 通缉：霍格
     .goto Elwynn Forest,24.548,74.672
     .target 瑞尼尔副队长
@@ -2365,7 +2362,6 @@ RXPGuides.RegisterGuide([[
 #hardcore
 #era/som--h
 #classic
-#forever
 #tbc
 << Alliance
 #name 11-13 洛克莫丹 (矮人/侏儒)
@@ -2376,7 +2372,7 @@ RXPGuides.RegisterGuide([[
 #next 13-15级 西部荒野
 
 step << Dwarf Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
     .target 布兰度尔·铁锤
     .goto Ironforge,23.131,6.143
     .accept 2999 >>接受任务圣洁之书
@@ -2428,7 +2424,7 @@ step << Dwarf Paladin
     .turnin 1779 >>交任务圣洁之书
     .accept 1783 >>接受任务圣洁之书
 step << Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .goto Ironforge,55.501,47.742
     .fly Loch Modan >>飞往 洛克莫丹
     .target 格莱斯·瑟登
@@ -2723,22 +2719,22 @@ step << Paladin
     .target 虔诚的亚瑟
 step << Hunter
     .goto Ironforge,69.872,82.890
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_雷格努斯·雷石|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷格努斯·雷石|r 对话
     .trainer >>训练你的职业技能
     .target 雷格努斯·雷石
 step << Warrior
     .goto Ironforge,65.905,88.405
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
     .trainer >>训练你的职业技能
     .target 比尔班·飞钳
 step << Mage
     .goto Ironforge,27.18,8.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丁克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丁克|r 对话
     .trainer >>训练你的职业技能
     .target 丁克
 step << Mage/Priest/Warlock
     #ah
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 对话
     >>|cRXP_BUY_购买一根|r |T135144:0|t[强效魔法杖]|cRXP_BUY_，如果价格低于 33 银 40 铜|r
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
@@ -2787,7 +2783,7 @@ step << Rogue
     .target 芬斯维克
 step << Priest
     .goto Ironforge,25.207,10.756
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话
     .trainer >>训练你的职业技能
     .target 托德雷·铁矿
 step << !Paladin !Warrior !Hunter !Warlock skip

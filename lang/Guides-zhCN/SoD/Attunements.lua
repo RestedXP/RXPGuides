@@ -45,7 +45,7 @@ step
     .target Injured Adventurer
 step
     .goto Deadwind Pass,65.0,78.0
-    >>击杀任意 |cRXP_ENEMY_食人魔|r 并拾取它们，直到你找到一把 |cRXP_LOOT_逆风囚笼"钥匙"|r。在笼子上使用它来完成任务
+    >>击杀任意 |cRXP_ENEMY_食人魔|r 并拾取它们，直到你找到一把 |cRXP_LOOT_逆风囚笼"钥匙"|r。在笼子上使用它来完成任务enemy
     >>|cRXP_WARN_如果其他人在你附近完成了这个目标，即使你没有与他们组队，你也会获得任务进度|r
     .complete 86967,1
     .collect 235785,1 --Deadwind Cage "Key"
@@ -58,7 +58,7 @@ step
     .goto Deadwind Pass,51.28,39.91,20,0
     .goto Deadwind Pass,52.32,34.09
     >>回到北方的达拉然特工营地
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_哈里森·琼斯|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈里森·琼斯|r对话
     .turnin 86967 >>交任务 实施营救
     .accept 86968 >>接受任务 你怕黑吗？
     .target 哈里森·琼斯

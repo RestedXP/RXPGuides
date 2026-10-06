@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 #displayname 1-6级 北郡
 #version 1
 #group RestedXP 联盟 1-20 级
-#groupid RXP-SRGCE-A1
+#group14-16级 黑海岸
 #defaultfor Human
 #next 6-12 艾尔文森林 探索赛季
 #season 2
@@ -522,7 +522,7 @@ step
     .accept 15 >>接受任务 回音山调查行动
     .accept 3100 >>接受任务 简要的信件 << Warrior
     .accept 3101 >>接受任务 圣洁信件 << Paladin
-    .accept 3102 >>接受任务 密文信件 << Rogue
+    .accept 3102 >>接受任务密文信件 << Rogue
     .accept 3103 >>接受任务 神圣信件 << Priest
     .accept 3104 >>接受任务 雕文信件 << Mage
     .accept 3105 >>接受任务 被污染的信件 << Warlock
@@ -662,7 +662,7 @@ step << Rogue
     #requires Shadowstrike2
     .goto Elwynn Forest,50.314,39.916
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔里克·克里丹|r 对话
-    .turnin 3102 >>交任务 密文信件
+    .turnin 3102 >>交任务密文信件
     .target 乔里克·克里丹
 step << !Warlock
     #xprate >1.59
@@ -884,7 +884,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group RestedXP 联盟 1-20 级
-#groupid RXP-SRGCE-A1
+#group14-16级 黑海岸
 #name 6-12 艾尔文森林 探索赛季
 #displayname 6-12 艾尔文森林
 #next 12-13 丹莫罗 探索赛季
@@ -2349,7 +2349,7 @@ step
     .turnin 239 >>交任务 西泉要塞
     .goto Elwynn Forest,24.234,74.450
     .target 瑞尼尔副队长
-    >>点击 |cRXP_PICK_通缉告示|r << Warlock
+    >>点击 |cRXP_PICK_通缉布告|r << Warlock
     .accept 176 >>接受任务 通缉：霍格 << Warlock
     .goto Elwynn Forest,24.548,74.672 << Warlock
 step << Warlock
@@ -2791,7 +2791,7 @@ step << Warlock
     .goto StormwindClassic,25.25,78.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .turnin 1688 >>交任务 苏伦娜·凯尔东
-    .accept 1689 >>接受任务 誓缚
+    .accept 1689 >>接受任务誓缚
     .target 黑暗缚灵者加科因
 step << Warlock
     #completewith next
@@ -2811,7 +2811,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .target 黑暗缚灵者加科因
     .goto StormwindClassic,25.25,78.59
-    .turnin 1689 >>交任务 誓缚
+    .turnin 1689 >>交任务誓缚
 
 
 ----Warlock Elwynn Voidwalker Section End----
@@ -3064,7 +3064,7 @@ step << Warrior
     .goto Ironforge,65.905,88.405,12 >>前往 |cRXP_FRIENDLY_比尔班·飞钳|r
 step << Warrior
     .goto Ironforge,65.905,88.405
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
     >>|cRXP_WARN_确保你保留20银70铜以备后用|r
     .train 2687 >>训练你的职业技能
     .target 比尔班·飞钳
@@ -3075,7 +3075,7 @@ step << Warrior
     #optional
     #label WarriorTrain
     .goto Ironforge,65.905,88.405
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
     >>|cRXP_WARN_确保你保留20银70铜以备后用|r
     .train 5242 >>训练你的职业技能
     .target 比尔班·飞钳
@@ -3232,7 +3232,7 @@ step << Warrior
     .train 425447,3
 step
     .goto Ironforge,55.501,47.742
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fp Ironforge >>获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
 step << Mage/Paladin
@@ -3308,7 +3308,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 对话
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|cRXP_BUY_购买以下物品，以便在洛克莫丹更快交任务：|r
     >>|T134342:0|t[猪大肠]

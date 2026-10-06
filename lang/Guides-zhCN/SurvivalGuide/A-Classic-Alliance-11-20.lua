@@ -6,7 +6,6 @@ if faction == "Horde" then return end
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
-#forever
 #tbc
 << Alliance
 #name 13-15级 西部荒野
@@ -335,7 +334,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 对话
     >>购买以下物品，以便稍后在黑海岸快速交任务，如果你不想购买任何东西，请跳过此步骤
     >>|T133972:0|t[陆行鸟肉]
     >>|T133912:0|t[黑海岸石斑鱼]
@@ -397,11 +396,11 @@ step << !NightElf
     .goto Wetlands,10.496,60.201
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_萨莫尔·菲斯蒂沃斯|r 对话
     .vendor >>|cRXP_BUY_尽可能多地购买|r |T134831:0|t[治疗药水] |cRXP_BUY_（如果有售）|r
-    >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_萨莫尔·菲斯蒂沃斯|r 没有库存，请跳过此步骤|r
+    >>|cRXP_WARN_这是限量供应物品，如果 |cRXP_FRIENDLY_萨莫尔·菲斯蒂沃斯|r 没有库存，请跳过此步骤|r
     .target 萨莫尔·菲斯蒂沃斯
 step << !NightElf
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
     .fp Wetlands>>获取湿地的飞行路径
     .target 谢尔雷·布隆迪尔
 step << Hunter !NightElf
@@ -513,7 +512,7 @@ step << NightElf Hunter
     .target 弗德瑞克·斯图瓦
 step << NightElf
     .goto StormwindClassic,43.065,26.156
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>升级你的|T135966:0|t[急救]
     .train 3274 >>学习 中级急救
     .target Shaina Fuller
@@ -542,7 +541,6 @@ step << NightElf
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
-#forever
 #tbc
 << Alliance
 #name 15-18级 黑海岸
@@ -1112,7 +1110,7 @@ step << !NightElf Hunter/!NightElf Warrior
     .train 227 >>学习法杖
     .target 伊琳尼雅·月火
 step << !NightElf !Mage !Paladin !Warlock
-    .goto Darnassus,30.7,41.3,15 >>通过紫色传送门返回鲁瑟兰村
+    .goto Darnassus,30.7,41.3,15 >>使用紫色传送门返回鲁瑟兰村
     .zoneskip Darkshore
     .zoneskip Teldrassil
 step << !NightElf !Mage !Paladin !Warlock
@@ -1628,7 +1626,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t上楼与 |cRXP_FRIENDLY_玛斯雷·驭熊者|r 对话
     .turnin 6125 >>交任务 解毒之术
 step << Druid
-    .goto Darnassus,30.7,41.3 >>通过紫色传送门返回鲁瑟兰村
+    .goto Darnassus,30.7,41.3 >>使用紫色传送门返回鲁瑟兰村
     .zoneskip Darkshore
     .zoneskip Teldrassil
 step << Druid
@@ -1652,7 +1650,6 @@ step
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
-#forever
 #tbc
 << Alliance
 #name 20-21级 黑海岸/灰谷
@@ -1962,7 +1959,7 @@ step
 step
 .group
     .goto Darkshore,44.44,84.69
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 995,1
     .isQuestTurnedIn 986
 step

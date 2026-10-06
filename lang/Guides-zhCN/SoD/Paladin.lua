@@ -184,7 +184,7 @@ step
     .xp <8,1
 step
     .goto Ironforge,23.131,6.143
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
     .train 853 >>训练 |T135963:0|t[正义之锤号]
     .target 布兰度尔·铁锤
     .train 410001,1
@@ -476,7 +476,7 @@ step
     .xp <4,1
 step
     .goto Ironforge,23.131,6.143
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
     .train 19740 >>学习 |T135906:0|t[力量祝福]
     .target 布兰度尔·铁锤
     .train 425618,1
@@ -746,7 +746,7 @@ step
     .xp <8,1
 step
     .goto Ironforge,23.131,6.143
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
     .train 1152 >>训练 |T135949:0|t[纯净术]
     .target 布兰度尔·铁锤
     .train 425619,1

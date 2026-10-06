@@ -5,7 +5,6 @@ if faction == "Alliance" then return end
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
-#forever
 #tbc
 << Horde
 #name 1-6级 兽人/巨魔
@@ -33,7 +32,7 @@ step << Warrior/Shaman/Warlock
     .money >0.01
 step << Warlock
     .goto Durotar,42.59,69.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
     .accept 1485 >>接受任务 邪灵劣魔
     .target Ruzan
 step << Warrior/Shaman
@@ -1068,7 +1067,6 @@ step
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
-#forever
 #tbc
 << Horde
 #name 6-13级 兽人/巨魔
@@ -4233,7 +4231,7 @@ step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_凯伦丁|r 对话
     .turnin 1473 >>交任务 虚空中的生物
-    .accept 1471 >>接受任务 誓缚
+    .accept 1471 >>接受任务誓缚
     .target 凯伦丁·哈加尔
     .isQuestAvailable 1504
 step << Warlock
@@ -4251,7 +4249,7 @@ step << Warlock
 step << Warlock
     .goto Undercity,85.04,25.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯伦丁|r 对话
-    .turnin 1471 >>交任务 誓缚
+    .turnin 1471 >>交任务誓缚
     .target 凯伦丁·哈加尔
     .isQuestAvailable 1504
 step << skip --Warlock

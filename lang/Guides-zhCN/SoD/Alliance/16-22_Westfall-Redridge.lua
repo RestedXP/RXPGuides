@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #season 2
 << Alliance
 #group RestedXP 联盟 1-20 级
-#groupid RXP-SRGCE-A1
+#group14-16级 黑海岸
 #name 16-17级 西部荒野 探索赛季
 #displayname 16-17级 西部荒野
 #next 17-22级 赤脊山 探索赛季
@@ -105,7 +105,7 @@ step << Warlock
     .goto StormwindClassic,25.25,78.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .turnin 1688 >>交任务 苏伦娜·凯尔东
-    .accept 1689 >>接受任务 誓缚
+    .accept 1689 >>接受任务誓缚
     .target 黑暗缚灵者加科因
 step << Warlock
     #completewith next
@@ -125,7 +125,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .target 黑暗缚灵者加科因
     .goto StormwindClassic,25.25,78.59
-    .turnin 1689 >>交任务 誓缚
+    .turnin 1689 >>交任务誓缚
 step << Priest/Mage/Warlock
     .goto StormwindClassic,42.65,67.16,14,0
     .goto StormwindClassic,42.88,65.11
@@ -151,7 +151,7 @@ step << Rogue
     .goto StormwindClassic,78.67,60.13,5 >>进入军情7处总部。上楼去找 |cRXP_FRIENDLY_"剃刀"雷吉克|r
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"剃刀"雷吉克|r对话
-    .accept 2281 >>接受任务赤脊山的联络员
+    .accept 2281 >>接受任务 赤脊山的联络员
     .goto StormwindClassic,75.76,60.35
     .target Renzik "The Shiv"
 step << Warrior
@@ -466,7 +466,7 @@ RXPGuides.RegisterGuide([[
 #season 2
 << Alliance
 #group RestedXP 联盟 1-20 级
-#groupid RXP-SRGCE-A1
+#group14-16级 黑海岸
 #name 17-22级 赤脊山 探索赛季
 #displayname 17-22级 赤脊山
 #next RestedXP 联盟 20-30级\22-24级 湿地 探索赛季
@@ -1019,7 +1019,7 @@ step << Rogue
     >>|cRXP_WARN_|cRXP_ENEMY_丑陋的迪菲亚懒汉|r出现在塔楼入口处，随后会在塔楼外侧巡逻|r
     >>|cRXP_WARN_小心，他伤害很高。如果你的|r |T132320:0|t[潜行] |cRXP_WARN_被打破，立刻使用|r |T132307:0|t[疾跑] |cRXP_WARN_并逃离|r
     .complete 2359,2 --Collect Defias Tower Key (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
     .mob Malformed Defias Drone
 step << Rogue
     #optional
@@ -1037,7 +1037,7 @@ step << Rogue
     >>|cRXP_WARN_如果你的背包中或已装备|r |T135641:0|t[匕首] |cRXP_WARN_，你可以施放|r |T132282:0|t[伏击] |cRXP_WARN_对付里面的 |cRXP_ENEMY_迪菲亚巡塔员|r 和 |cRXP_ENEMY_迪菲亚哨兵|r，从而瞬间击杀他们。击杀第一个 |cRXP_ENEMY_迪菲亚哨兵|r 后请做好逃跑准备，并记住你可能会从上方被攻击。这种方法更慢，但安全性高得多|r
     >>|cRXP_WARN_注意，如果你需要跑出塔楼，|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 和 |cRXP_ENEMY_迪菲亚苦工|r 可能会在塔楼入口处|r
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
     .mob Defias Tower Patroller
     .mob Defias Tower Sentry
 step << !Dwarf Rogue

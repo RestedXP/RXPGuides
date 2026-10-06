@@ -585,7 +585,7 @@ step
     .train 410104,1
     .xp <4,1
 step
-    >>使用|T132147:0|t[一套匕首]制作|T134007:0|t[鱼块]
+    >>使用|T132147:0|t|T134007:0|t[一套匕首]制作|T134007:0|t|T134007:0|t[鱼块]
     .complete 76240,1 --Fish Chunks (1)
     .use 206344
     .train 410104,1
@@ -2112,7 +2112,7 @@ step
     .xp <25,1
 step
     >>使用|T136222:0|t|T136222:0|t|cRXP_LOOT_[奇怪的水球]|r来开始任务
-    .accept 78920 >>接受任务 阿奎尼斯男爵
+    .accept 78920 >>接受任务阿奎尼斯男爵
     .use 211454
     .itemcount 211454,1 --Strange Water Globe (SoD) (1)
     .train 410101,1

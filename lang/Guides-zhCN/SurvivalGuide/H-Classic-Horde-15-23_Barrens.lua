@@ -5,7 +5,6 @@ if faction == "Alliance" then return end
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
-#forever
 #tbc
 << Horde
 #name 15-19级 贫瘠之地
@@ -224,7 +223,7 @@ step
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫布瑞姆|r 对话
     .accept 848 >>接受任务 菌类孢子
-    .accept 1492 >>接受任务 码头主管迪兹维格
+    .accept 1492 >>接受任务码头管理员迪兹维格
 	.turnin 1358 >>交任务 给赫布瑞姆的样本
     .target 药剂师赫布瑞姆
 step
@@ -643,7 +642,7 @@ step
     #completewith RatchetArrive
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔尔|r 对话
-    .fly Crossroads >>飞往十字路口，北贫瘠之地
+    .fly Crossroads >>飞往十字路口
     .target 塔尔
     .cooldown item,6948,<0
     .zoneskip The Barrens
@@ -1028,7 +1027,7 @@ step
     #completewith XroadsTurnins3
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉高克|r 对话
-    .fly Crossroads >>飞往十字路口，北贫瘠之地
+    .fly Crossroads >>飞往十字路口
     .target 布拉高克
     .subzoneskip 380
     .isQuestComplete 845
@@ -1270,7 +1269,7 @@ step
     #completewith Crossroadsturnins2
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉高克|r 对话
-    .fly Crossroads >>飞往十字路口，北贫瘠之地
+    .fly Crossroads >>飞往十字路口
     .target 布拉高克
     .subzoneskip 380
 step
@@ -1286,7 +1285,7 @@ step
     .accept 875 >>接受任务 鹰身人首领
     .target +Darsok Swiftdagger
     .goto The Barrens,51.62,30.90
-    .turnin 870 >>交任务 遗忘之池
+    .turnin 870 >>交任务  遗忘之池
     .accept 877 >>接受任务 死水绿洲
     .target 图加·符文图腾
     .goto The Barrens,52.26,31.93
@@ -1306,7 +1305,7 @@ step
     .accept 875 >>接受任务 鹰身人首领
     .target +Darsok Swiftdagger
     .goto The Barrens,51.62,30.90
-    .turnin 870 >>交任务 遗忘之池
+    .turnin 870 >>交任务  遗忘之池
     .accept 877 >>接受任务 死水绿洲
     .target 图加·符文图腾
     .goto The Barrens,52.26,31.93
@@ -2040,7 +2039,7 @@ step
     .goto The Barrens,44.45,59.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_欧姆萨|r 对话
     .fp Camp Taurajo >>获得陶拉祖营地的飞行点 << !Tauren
-    .fly Crossroads >>飞往十字路口，北贫瘠之地
+    .fly Crossroads >>飞往十字路口
     .subzoneskip 380
     .target 欧姆萨·雷角
 step
@@ -2055,7 +2054,7 @@ step
     .turnin 4921 >>交任务在战斗中失踪
     .target 曼科里克
     .goto The Barrens,52.00,31.60
-    .turnin 877 >>交任务 死水绿洲
+    .turnin 877 >>交任务  死水绿洲
     .accept 880 >>接受任务 变异的生物
     .target 图加·符文图腾
     .goto The Barrens,52.26,31.93
@@ -2113,7 +2112,6 @@ step
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
-#forever
 #tbc
 << Horde
 #name 19-23级 石爪山脉/贫瘠之地/灰谷
@@ -2423,7 +2421,7 @@ step
 step
     .goto Stonetalon Mountains,58.99,62.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_其兹|r 对话
-    .turnin 1093 >>交任务  超级收割机6000
+    .turnin 1093 >>交任务超级收割机6000
     .accept 1094 >>接受任务 新的指示
     .target 菲兹克斯
 step
@@ -2710,7 +2708,7 @@ step
     #completewith XroadsHS2
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉高克|r 对话
-    .fly Crossroads >>飞往十字路口，北贫瘠之地
+    .fly Crossroads >>飞往十字路口
     .target 布拉高克
     .subzoneskip 380
 step
@@ -2768,7 +2766,7 @@ step << Warlock
     .target 甘鲁尔·血眼
 step << Warlock
     .goto Orgrimmar,47.54,46.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 库古尔|cRXP_FRIENDLY_ 对话，购买 |T133738:0|t[折磨典籍(等级 2)]|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 库古尔|cRXP_FRIENDLY_ 对话，并购买 |T133738:0|t[折磨典籍(等级 2)]|r
     .collect 16346,1,1507,1 --Grimoire of Torment (Rank 2)
     .target 库古尔
 step << Warlock
@@ -3027,7 +3025,7 @@ step << Warlock
     #completewith TurninDogran
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉高克|r 对话
-    .fly Crossroads >>飞往十字路口，北贫瘠之地
+    .fly Crossroads >>飞往十字路口
     .target 布拉高克
     .subzoneskip 392,1
     .dungeon WC
@@ -3035,7 +3033,7 @@ step << Warlock
     #completewith TurninDogran
     .goto Orgrimmar,45.13,63.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多拉斯|r 对话
-	.fly Crossroads >>飞往十字路口，北贫瘠之地
+	.fly Crossroads >>飞往十字路口
     .zoneskip Orgrimmar,1
     .target 多拉斯
 step << Warlock
@@ -3073,14 +3071,14 @@ step << Shaman
     #completewith next
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉高克|r 对话
-    .fly Crossroads >>飞往十字路口，北贫瘠之地
+    .fly Crossroads >>飞往十字路口
     .target 布拉高克
     .subzoneskip 380
 step << !Shaman
     #completewith next
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉高克|r 对话
-    .fly Crossroads >>飞往十字路口，北贫瘠之地
+    .fly Crossroads >>飞往十字路口
     .target 布拉高克
     .subzoneskip 392,1
 step
@@ -3383,7 +3381,7 @@ step
 step
     .goto Thunder Bluff,78.61,28.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈缪尔|r 对话
-    .turnin 1489 >>交任务哈缪尔·符文图腾
+    .turnin 1489 >>交任务  哈缪尔·符文图腾
     .accept 1490 >>接受任务纳拉·蛮鬃
     .target 大德鲁伊哈缪尔·符文图腾
 step
@@ -3909,7 +3907,7 @@ step
 step
     .goto The Barrens,62.37,37.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦伯克|r 对话
-    .turnin 1491 >>交任务智慧饮料
+    .turnin 1491 >>交任务  智慧饮料
     .target 麦伯克·米希瑞克斯
     .isQuestComplete 1491
     .dungeon WC
@@ -3930,7 +3928,7 @@ step
 step
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉高克|r 对话
-    .fly Crossroads >>飞往十字路口，北贫瘠之地
+    .fly Crossroads >>飞往十字路口
     .target 布拉高克
     .subzoneskip 380
     .isOnQuest 6981
@@ -4009,7 +4007,7 @@ step
     .dungeon WC
 step
     .goto Thunder Bluff,23.0,21.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_药剂师扎玛|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_药剂师扎玛|r 对话
     .turnin 962 >>交任务  毒蛇花
     .target 药剂师扎玛
     .isQuestComplete 962
@@ -4361,7 +4359,7 @@ step
     .goto Stonetalon Mountains,71.25,43.45,50,0
     .goto Stonetalon Mountains,64.82,47.23,50,0
     .goto Stonetalon Mountains,64.82,47.23,0
-    >>击杀 |cRXP_ENEMY_XT:4|r。它在河北侧巡逻
+    >>击杀 |cRXP_ENEMY_XT:4|r。它在河的北侧巡逻
     >>|cRXP_WARN_该任务现在不需要完成|r
     .complete 1068,1 --XT:4 (1)
     .unitscan XT:4
@@ -4727,7 +4725,7 @@ step << Warlock
     .goto Orgrimmar,48.25,45.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_甘鲁尔|r 对话
     .turnin 1512 >>交任务爱的礼物
-    .accept 1513 >>接受任务 誓缚
+    .accept 1513 >>接受任务誓缚
     .target 甘鲁尔·血眼
 step << Warlock
     #completewith next
@@ -4742,7 +4740,7 @@ step << Warlock
 step << Warlock
     .goto Orgrimmar,48.25,45.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_甘鲁尔|r 对话
-    .turnin 1513 >>交任务 誓缚
+    .turnin 1513 >>交任务誓缚
     .target 甘鲁尔·血眼
 step << Warlock
     .goto Orgrimmar,48.62,46.95

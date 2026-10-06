@@ -2,7 +2,6 @@ if GetLocale() ~= "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
-#forever
 #tbc
 << Alliance
 #name 11-13级 黑海岸（暗夜精灵）
@@ -513,7 +512,7 @@ step
     >>|cRXP_WARN_在等待米奈希尔港的船只时，提升你的|r|T135966:0|t[急救]|cRXP_WARN_等级|r
 step
     .goto Wetlands,9.490,59.694
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
     .fp Menethil Harbor >>获取米奈希尔港的飞行路径
     .target 谢尔雷·布隆迪尔
 step
@@ -536,7 +535,6 @@ step
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
-#forever
 #tbc
 << Alliance
 #name 13-13级 洛克莫丹（暗夜精灵）
@@ -656,7 +654,7 @@ step << Warrior
     .target 穆伦·雷矛
 step
     .goto Ironforge,55.491,47.751
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fp Ironforge >>获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
 step << Warrior
@@ -669,7 +667,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 对话
     >>购买以下物品，以便在洛克莫丹稍后更快地交任务
     >>这样可以节省时间，因为你不需要四处跑去找怪击杀。如果你不想购买，可以跳过这一步
     >>|T134342:0|t[猪大肠]
@@ -1088,7 +1086,7 @@ step << Priest
     .collect 5208,1 --Smoldering Wand (1)
     .target Ardwyn Cailen
 step << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话
     .goto Ironforge,25.204,10.749
     .trainer >>训练你的职业技能
     .target 托德雷·铁矿
@@ -1104,12 +1102,12 @@ step << Rogue
     .target 布里维夫·石拳
 step << Hunter
     .goto Ironforge,69.865,82.886
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_雷格努斯·雷石|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷格努斯·雷石|r 对话
     .trainer >>训练你的职业技能
     .target 雷格努斯·雷石
 step << Warrior
     .goto Ironforge,65.907,88.409
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
     .trainer >>训练你的职业技能
     .target 比尔班·飞钳
 step << Warrior

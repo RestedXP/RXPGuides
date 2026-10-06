@@ -415,7 +415,7 @@ step << Rogue
     .train 400081,1
 step << Rogue
     #season 2
-    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t|T135610:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_训练|r |T135610:0|t|T135610:0|t[正中眉心]
+    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_来训练|r |T135610:0|t[正中眉心]
     .use 204174
     .itemcount 204174,1
 ]])
@@ -438,7 +438,7 @@ step << Rogue
     .train 400081,1
 step << Rogue
     #season 2
-    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t|T135610:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_训练|r |T135610:0|t|T135610:0|t[正中眉心]
+    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_来训练|r |T135610:0|t[正中眉心]
     .use 204174
     .itemcount 204174,1
 ]])
@@ -468,7 +468,7 @@ step << Rogue
     .train 400081,1
 step << Rogue
     #season 2
-    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t|T135610:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_训练|r |T135610:0|t|T135610:0|t[正中眉心]
+    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_来训练|r |T135610:0|t[正中眉心]
     .use 204174
     .itemcount 204174,1
 ]])
@@ -903,7 +903,7 @@ step << Horde
     .train 400080,1
 step << Alliance
     >>前往南海镇
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达尔拉·哈瑞斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达尔拉·哈瑞斯|r 对话
     .goto Hillsbrad Foothills,49.338,52.272
     .fly Ironforge >>飞往铁炉堡
     .target 达尔拉·哈瑞斯
@@ -927,7 +927,7 @@ step << Horde
     .train 400080,1
 step << Alliance
     .goto Ironforge,55.501,47.742
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fly Southshore >>飞往南海镇
     .target 格莱斯·瑟登
     .zoneskip Silverpine Forest
@@ -1347,7 +1347,7 @@ step
     .train 400081,1
 step
     #season 2
-    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t|T135610:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_训练|r |T135610:0|t|T135610:0|t[正中眉心]
+    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_来训练|r |T135610:0|t[正中眉心]
     .use 204174
     .itemcount 204174,1
 
@@ -1374,7 +1374,7 @@ step
     .train 400081,1
 step
     #season 2
-    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t|T135610:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_训练|r |T135610:0|t|T135610:0|t[正中眉心]
+    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_来训练|r |T135610:0|t[正中眉心]
     .use 204174
     .itemcount 204174,1
 
@@ -1561,7 +1561,7 @@ step << Horde
     .train 400101,1
 step << Alliance
     >>前往南海镇
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达尔拉·哈瑞斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达尔拉·哈瑞斯|r 对话
     .goto Hillsbrad Foothills,49.338,52.272
     .fly Ironforge >>飞往铁炉堡
     .target 达尔拉·哈瑞斯
@@ -1583,7 +1583,7 @@ step << Horde
     .train 400101,1
 step << Alliance
     .goto Ironforge,55.501,47.742
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .fly Southshore >>飞往南海镇
     .target 格莱斯·瑟登
     .zoneskip Silverpine Forest

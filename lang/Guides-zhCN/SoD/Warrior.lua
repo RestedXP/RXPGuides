@@ -853,7 +853,7 @@ step
     .goto Durotar,52.13,20.77,40,0
     .goto Durotar,51.26,19.19,40,0
     .goto Durotar,53.98,23.70
-    >>击杀|cRXP_ENEMY_尘风鹰身人|r。拾取他们的|cRXP_LOOT_被砍下的鹰身人的头|r
+    >>击杀|cRXP_ENEMY_尘风鹰身人|r，并从它们身上拾取|cRXP_LOOT_被砍下的鹰身人的头|r
     .collect 206995,1 ---Severed Harpy Head (1)
     .mob Dustwind Savage
     .mob Dustwind Storm Witch
@@ -1486,8 +1486,8 @@ step
     .goto Arathi Highlands,61.35,71.72,70,0
     .goto Arathi Highlands,64.23,67.72,70,0
     .goto Arathi Highlands,66.56,63.98
-    >>击杀 |cRXP_ENEMY_枯木巨魔|r。拾取它们的 |T133057:0|t[|cRXP_LOOT_枯木槌|r]
-    >>|cRXP_WARN_你也可以从拍卖行购买|r |T133057:0|t[|cRXP_LOOT_枯木锤|r] |cRXP_WARN_|r
+    >>击杀 |cRXP_ENEMY_枯木巨魔|r，并拾取他们的 |T133057:0|t[|cRXP_LOOT_枯木棒槌|r]
+    >>|cRXP_WARN_你也可以从拍卖行购买|r |T133057:0|t[|cRXP_LOOT_枯木棒槌|r] |cRXP_WARN_|r
     .collect 216483,1
     .mob Witherbark Shadow Hunter
     .mob Witherbark Axe Thrower
