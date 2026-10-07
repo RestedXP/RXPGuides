@@ -1653,6 +1653,7 @@ step
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
     >>Kill |cRXP_LOOT_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r and |cRXP_LOOT_Tusks|r
+    >>|cRXP_WARN_If the |cRXP_LOOT_Savannah Patriarchs|r are heavily contested consider skipping this quest for now, it can be completed later|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .complete 821,1 --Savannah Lion Tusk (5)
     .disablecheckbox
@@ -1675,6 +1676,7 @@ step
     .turnin 95507 >>Turn in Vrang's Game
     .accept 95495 >>Accept The Hermit Tanner
     .target Vrang Wildgore
+    .isQuestComplete 95494
 step
     #completewith next
     .goto 1413/1,-1778.100,684.200,25,0
@@ -1687,12 +1689,14 @@ step
     .turnin 95495 >>Turn in The Hermit Tanner
     .accept 95621 >>Accept Trouble in the Valley
     .target Walton
+    .isQuestTurnedIn 95494
 step
     .goto 1413/1,-1611.500,549.000
     >>Kill |cRXP_ENEMY_Corporal Adamore|r
-    >>|cRXP_WARN_Be careful! You may aggro 2-3 mobs at the same time|r
+    >>|cRXP_WARN_Be careful! You may agro 2-3 mobs at the same time|r
     .complete 95621,1 --|1/1 Learn why the Kul Tirans are here
     .mob Corporal Adamore
+    .isQuestTurnedIn 95494
 step
     #completewith next
     .goto 1413/1,-1778.100,684.200,25,0
@@ -1706,17 +1710,20 @@ step
     .accept 95508 >>Accept Unwelcome Guests
     .timer 67,Unwelcome Guests RP
     .target Walton
+    .isQuestTurnedIn 95494
 step
     .goto 1413/1,-1629.200,835.600
-    >>Move behind the house as you wait for the RP to finish to avoid getting aggro by all mobs at once
+    >>Move behind the house as you wait for the RP to finish to avoid getting agro by all mobs at once
     >>|cRXP_WARN_You don't actually need to assist |cRXP_FRIENDLY_Walton|r, he will survive with the help of|r |cRXP_FRIENDLY_Vrang Wildgore|r
     .complete 95508,1 --|1/1 Assist Walton
     .mob Terry Longdrink
+    .isQuestTurnedIn 95494
 step
     .goto 1413/1,-1635.400,838.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Walton|r
     .turnin 95508 >>Turn in Unwelcome Guests
     .target Walton
+    .isQuestTurnedIn 95494
 step
 	#label Samophlange
     .goto 1413/1,-2686.95,825.40
@@ -1797,7 +1804,7 @@ step
 step
     #label Ignition
     .goto 1413/1,-3104.44,1109.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Wizzlecrank's Shredder|r in The Sludge Fen
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Wizzlecrank's Shredder|r in The Sludge Ven
     >>|cRXP_FRIENDLY_Wizzlecrank's Shredder|r |cRXP_WARN_has a long respawn timer. Consider skipping this quest if there is a lot of competition|r
     .accept 858 >>Accept Ignition
     .target Wizzlecrank's Shredder
@@ -3648,6 +3655,12 @@ step
     .complete 880,1 --Altered Snapjaw Shell (8)
     .mob Oasis Snapjaw
 step
+    #completewith IshamuhalesFang
+    >>Kill |cRXP_LOOT_Savannah Matriarchs|r and |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
+    .complete 95494,1 --|6/6 Savannah Lion Hide
+    .mob Savannah Matriarch
+    .mob Savannah Patriarchs
+step
     #completewith next
     >>Kill any |cRXP_ENEMY_Zhevra|r. Loot it for a |cRXP_LOOT_Fresh Zhevra Carcass|r
 	.collect 10338,1 --Collect Fresh Zhevra Carcass
@@ -3659,6 +3672,16 @@ step
     >>|cRXP_WARN_The Carcass only has a 30 minute duration!|r
     .complete 882,1 --Ishamuhale's Fang (1)
     .mob Ishamuhale
+step
+    #loop
+    .goto 1413/1,-3633.200,-600.500,0
+    .goto 1413/1,-3633.200,-600.500,50,0
+    .goto 1413/1,-3469.100,-495.000,50,0
+    .goto 1413/1,-3428.300,-584.300,50,0
+    >>Kill |cRXP_LOOT_Savannah Matriarchs|r and |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
+    .complete 95494,1 --|6/6 Savannah Lion Hide
+    .mob Savannah Matriarch
+    .mob Savannah Patriarchs
 step
     #completewith BootyTurnin
     .subzone 392 >> Travel to Ratchet
@@ -4533,7 +4556,7 @@ step
     #label DeathDUPpickup
 step << Shaman
     .goto 1456/1,269.92,-980.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r |cRXP_WARN_outside|r
     .train 2645 >> Train your class spells
     .target Tigor Skychaser
     .xp <20,1
@@ -4541,7 +4564,7 @@ step << Shaman
 step << Shaman
     #optional
     .goto 1456/1,269.92,-980.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r |cRXP_WARN_outside|r
     .train 8498 >> Train your class spells
     .target Tigor Skychaser
     .xp <22,1
@@ -5326,6 +5349,88 @@ step
     .complete 876,1 --Serena's Head (1)
     .mob Serena Bloodfeather
     .isQuestTurnedIn 875
+step
+    #completewith next
+    >>Loot the |cRXP_PICK_Sprung Traps|r on the ground
+    .complete 95507,1 --|8/8 Trapped Game
+step
+    #loop
+    .goto 1413/1,-1848.200,486.900,0
+    .goto 1413/1,-1848.200,486.900,50,0
+    .goto 1413/1,-1937.500,480.000,50,0
+    .goto 1413/1,-1983.100,579.700,50,0
+    .goto 1413/1,-1960.600,653.700,50,0
+    .goto 1413/1,-1871.600,653.700,50,0
+    .goto 1413/1,-1729.700,592.400,50,0
+    >>Kill |cRXP_LOOT_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
+    .complete 95494,1 --|6/6 Savannah Lion Hide
+    .mob Savannah Patriarch
+step
+    #loop
+    .goto 1413/1,-1960.600,653.700,0
+    .goto 1413/1,-1848.200,486.900,50,0
+    .goto 1413/1,-1937.500,480.000,50,0
+    .goto 1413/1,-1983.100,579.700,50,0
+    .goto 1413/1,-1960.600,653.700,50,0
+    .goto 1413/1,-1871.600,653.700,50,0
+    .goto 1413/1,-1729.700,592.400,50,0
+    >>Loot the |cRXP_PICK_Sprung Traps|r on the ground
+    .complete 95507,1 --|8/8 Trapped Game
+step
+    .goto 1413/1,-1812.600,789.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vrang Wildgore|r
+    .turnin 95494 >>Turn in Bruised Pride and Lion Hides
+    .turnin 95507 >>Turn in Vrang's Game
+    .accept 95495 >>Accept The Hermit Tanner
+    .target Vrang Wildgore
+    .isQuestComplete 95494
+step
+    #completewith next
+    .goto 1413/1,-1778.100,684.200,25,0
+    .goto 1413/1,-1741.700,721.400,25,0
+    .goto 1413/1,-1643.900,786.000,25,0
+    .goto 1413/1,-1605.300,818.300,20 >>Travel up the mountain
+step
+    .goto 1413/1,-1635.400,838.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Walton|r
+    .turnin 95495 >>Turn in The Hermit Tanner
+    .accept 95621 >>Accept Trouble in the Valley
+    .target Walton
+    .isQuestTurnedIn 95494
+step
+    .goto 1413/1,-1611.500,549.000
+    >>Kill |cRXP_ENEMY_Corporal Adamore|r
+    >>|cRXP_WARN_Be careful! You may agro 2-3 mobs at the same time|r
+    .complete 95621,1 --|1/1 Learn why the Kul Tirans are here
+    .mob Corporal Adamore
+    .isQuestTurnedIn 95494
+step
+    #completewith next
+    .goto 1413/1,-1778.100,684.200,25,0
+    .goto 1413/1,-1741.700,721.400,25,0
+    .goto 1413/1,-1643.900,786.000,25,0
+    .goto 1413/1,-1605.300,818.300,20 >>Travel up the mountain
+step
+    .goto 1413/1,-1635.500,838.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Walton|r
+    .turnin 95621 >>Turn in Trouble in the Valley
+    .accept 95508 >>Accept Unwelcome Guests
+    .timer 67,Unwelcome Guests RP
+    .target Walton
+    .isQuestTurnedIn 95494
+step
+    .goto 1413/1,-1629.200,835.600
+    >>Move behind the house as you wait for the RP to finish to avoid getting agro by all mobs at once
+    >>|cRXP_WARN_You don't actually need to assist |cRXP_FRIENDLY_Walton|r, he will survive with the help of|r |cRXP_FRIENDLY_Vrang Wildgore|r
+    .complete 95508,1 --|1/1 Assist Walton
+    .mob Terry Longdrink
+    .isQuestTurnedIn 95494
+step
+    .goto 1413/1,-1635.400,838.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Walton|r
+    .turnin 95508 >>Turn in Unwelcome Guests
+    .target Walton
+    .isQuestTurnedIn 95494
 step << Hunter
     .goto 1413/1,-2347.48,857.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wenikee|r
