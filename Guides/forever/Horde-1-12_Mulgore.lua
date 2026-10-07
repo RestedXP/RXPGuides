@@ -1542,7 +1542,7 @@ step
     #sofcore
     #completewith Bloodhoofturnins1
     .goto 1412/1,-598.900,-1603.700
-    .deathskip >> Die at the waypoint arror (or further south of it) and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >> Die at the waypoint arrow (or further south of it) and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
     #hardcore
     #completewith Bloodhoofturnins1

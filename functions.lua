@@ -1895,12 +1895,11 @@ addon.functions["goto"] = function(self, ...)
         local subzone,continent = zone:match("(.-)/(%d+)")
         if subzone then
             element.fixedMapID = true
-            zone = addon.GetMapId(subzone) or tonumber(subzone)
+            zone,x,y,continent = addon.GetMapInfo(subzone,x,y,tonumber(continent))
             if addon.mapConversion[zone] then
                 zone = addon.mapConversion[zone]
             end
-            x = tonumber(x)
-            y = tonumber(y)
+
             if not (x and y) then
                 return addon.comms.PrettyDebug("Error parsing guide " .. (addon.currentGuideName or _G.NONE) ..
                            ": Invalid coordinates or map name\n" .. self, zone)

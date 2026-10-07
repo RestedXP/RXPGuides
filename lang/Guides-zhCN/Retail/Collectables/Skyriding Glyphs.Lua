@@ -369,7 +369,7 @@ step
     .achievement 16577,7 >>Pick up the Dragon Glyph: Imbu in the air next to the waterfall. You have to aim quite a bit down
 step
     #completewith next
-    +From Imbu: Spam |T4640498:0|t[Skyward Ascend] to reach the glyph. Aim a little higher when using the abilitiy
+    +From Imbu: Spam |T4640498:0|t[Skyward Ascend] to reach the glyph. Aim a little higher when using the ability
     *From somewhere else: Fly to Camp Nowhere, follow the way to the waypoint and spam |T4640498:0|t[Skyward Ascend] to reach the glyph
 step
     #title Dragon Glyph: Zelthrak Outpost
@@ -410,7 +410,7 @@ step
     .achievement 16577,5 >>Pick up the Dragon Glyph: Brackenhide Hollow in the air
 step
     #completewith next
-    +From Brackenhide Hollow: Try to stay as high as possible while gliding at full speed. You should be able recharge most of your vigor. Use |T4640498:0|t[Skyward Ascend] 3-5 times. Aim a little higher when using the abilitiy
+    +From Brackenhide Hollow: Try to stay as high as possible while gliding at full speed. You should be able recharge most of your vigor. Use |T4640498:0|t[Skyward Ascend] 3-5 times. Aim a little higher when using the ability
     *From somewhere else: Fly to the Three-Falls Lookout and then use |T4640498:0|t[Skyward Ascend] to reach the glyph
 step
     #title Dragon Glyph: Creektooth Den

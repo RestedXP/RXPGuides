@@ -1624,7 +1624,7 @@ step
     .cast 1842 >>|cRXP_WARN_Cast|r |T136162:0|t[Disarm Trap] |cRXP_WARN_on the|r |cRXP_PICK_Dart Trap|r |cRXP_WARN_on the tree|r
 step
     .goto Swamp of Sorrows,42.76,30.77
-    >>Loot the |cRXP_PICK_Conspicuous Cache|r that spawned for |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r]|r
+    >>Loot the |cRXP_PICK_Conspicuous Cache|r that spawned for |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r]
     .collect 213139,1
 step
     .itemcount 213139,1
@@ -1835,8 +1835,8 @@ step
     .mob Southsea Freebooter
     .train 432301,1
 step
-    >>Open the |T133639:0|t|cRXP_LOOT_Kidnapper's Coin Purse|r and loot it for a |T133302:0|t|cRXP_LOOT_Precious Precious Medallion|r
-    .collect 221370,1 -- Precious Precious Medallion 1/1
+    >>Open the |T133639:0|t|cRXP_LOOT_Kidnapper's Coin Purse|r and loot it for a |T133302:0|t|cRXP_LOOT_Precious Medallion|r
+    .collect 221370,1 -- Precious Medallion 1/1
     .use 221371
     .train 432301,1
 step << Rogue

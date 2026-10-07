@@ -1152,9 +1152,7 @@ step
     .goto Redridge Mountains,27.09,45.65
 .target Darcy
 >>与 |cRXP_FRIENDLY_达希|r 对话
-    .turnin 131 >>交任务 水仙诉衷情
-step
-    .goto Redridge Mountains,27.01,44.81
+    .turnin 131 >>交任务 水仙诉衷情dridge Mountains,27.01,44.81
     .vendor >>购买15级饮料
 step
     #era/som

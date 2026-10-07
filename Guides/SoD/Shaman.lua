@@ -2259,7 +2259,7 @@ step
 step
     .goto Ashenvale,11.56,34.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
-    .turnin 78506 >>Turnin Elemental Distress
+    .turnin 78506 >>Turn in Elemental Distress
     .accept 78537 >>Accept Elixir of Insight
     .accept 78537 >>Turnin Elixir of Insight
     .accept 78561 >>Accept Elixir of Insight
@@ -2689,7 +2689,7 @@ step
     .waypoint Thousand Needles,26.29,52.79,15,0
     .waypoint Thousand Needles,27.23,54.04,15,0
     .waypoint Thousand Needles,26.55,55.77,15,0
-    >>Kill cRXP_ENEMY_Screeching Harpies|r. Loot them for their |cRXP_LOOT_Strong Harpy Feathers|r
+    >>Kill |cRXP_ENEMY_Screeching Harpies|r. Loot them for their |cRXP_LOOT_Strong Harpy Feathers|r
     .collect 213701,10 --Strong Harpy Feather (10x)
     .mob Screeching Harpy
     .mob Screeching Roguefeather
@@ -2964,7 +2964,7 @@ step
     .train 432241,1
 step
     .goto The Hinterlands,51.2,47.0
-    >>Kill |cRXP_ENEMY_Corrupt Moderate Manifestation of Air|r then >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Earth.|r
+    >>Kill |cRXP_ENEMY_Corrupt Moderate Manifestation of Air|r then >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Air.|r
     .turnin 81960 >>Turn in Clarifying Air
     .accept 81968 >>Accept Answering Air's Call
     .mob Corrupt Moderate Manifestation of Air

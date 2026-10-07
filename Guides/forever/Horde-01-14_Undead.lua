@@ -1111,7 +1111,7 @@ step
     .goto 1420/0,1587.700,2439.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bareth Dawnstone|r at the top of the tower
     >>|cRXP_WARN_This starts an escort quest|r
-    >>|cRXP_WARN_Be careful!. At the top of the tower you can easily agro 3 |cRXP_ENEMY_Scarlet Warriors|r at the same time|r
+    >>|cRXP_WARN_Be careful!. At the top of the tower you can easily aggro 3 |cRXP_ENEMY_Scarlet Warriors|r at the same time|r
     .accept 99144,1 >>Accept Seeking Refuge
     .target Bareth Dawnstone
 step
@@ -2534,7 +2534,7 @@ step << Priest
 step << Warrior
     .goto 1420/0,238.49,2255.03--c:Tirisfal Glades,61.85,52.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
-    .train 7384 >>Train Train your class spells
+    .train 7384 >>Train your class spells
     .target Austil de Mon
     .xp <12,1
 step << Warlock
@@ -2779,7 +2779,7 @@ step << Priest
 step << Warrior
     .goto 1420/0,238.49,2255.03--c:Tirisfal Glades,61.85,52.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
-    .train 7384 >>Train Train your class spells
+    .train 7384 >>Train your class spells
     .target Austil de Mon
     .xp <12,1
 step << Warlock
@@ -3001,7 +3001,7 @@ step << Priest
 step << Priest
     #optional
     .goto 1458/0,194.34,1681.63
-    >>|cRXP_WARN_Turn all your|r |T132889:0|t[Linen Cloth] |cRXP_WARN_into|r |T132890:0|t[Bolt of linen Linen Cloth]
+    >>|cRXP_WARN_Turn all your|r |T132889:0|t[Linen Cloth] |cRXP_WARN_into|r |T132890:0|t[Bolt of Linen Cloth]
     .collect 2996,30,435,1 --Bolt of Linen Cloth (30)
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
@@ -3276,7 +3276,7 @@ step
     .unitscan Gorefang
 step
     .goto 1421/0,715.000,1335.400
-    >>Kill |cRXP_ENEMY_Vile Vin Murlocs|r. Loot them for their |T133884:0|t[|cRXP_LOOT_Murloc Eyes|r]
+    >>Kill |cRXP_ENEMY_Vile Fin Murlocs|r. Loot them for their |T133884:0|t[|cRXP_LOOT_Murloc Eyes|r]
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .mob Vile Vin Shredder
     .mob Vile Vin Tidehunter
@@ -3448,7 +3448,7 @@ step
     .target Quinn Yorick
 step
     .goto 1421/0,715.000,1335.400
-    >>Kill |cRXP_ENEMY_Vile Vin Murlocs|r. Loot them for their |T133884:0|t[|cRXP_LOOT_Murloc Eyes|r]
+    >>Kill |cRXP_ENEMY_Vile Fin Murlocs|r. Loot them for their |T133884:0|t[|cRXP_LOOT_Murloc Eyes|r]
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .mob Vile Vin Shredder
     .mob Vile Vin Tidehunter
@@ -4397,7 +4397,7 @@ step << Skyborne
     #completewith Conscript
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
-    .fly Orgrimmar >>Fly to the Orgrimmar
+    .fly Orgrimmar >>Fly to Orgrimmar
     .target Tal
     .zoneskip Thunder Bluff,1
     .cooldown item,6948,<0

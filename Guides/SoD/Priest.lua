@@ -780,7 +780,7 @@ step
     .goto The Barrens,54.8,35.6,40,0
     .goto The Barrens,58.8,37.6,40,0
     >>Use |T135894:0|t[Dispel Magic] on the |cRXP_ENEMY_Desert Mirage|r. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise|r]
-    *|cRXP_WARN_It's a green ghost which patrolls around. Use the RestedXP target macro to target it.|r
+    *|cRXP_WARN_It's a green ghost which patrols around. Use the RestedXP target macro to target it.|r
     .collect 205932,1 -- Prophecy of a King's Demise (1)
     .train 402849,1
     .mob Desert Mirage
@@ -851,8 +851,8 @@ RXPGuides.RegisterGuide([[
 << Horde Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Chest
-#name Twisted Fate - 10 (Silverpine Forest)
-#title Twisted Fate
+#name Twisted Faith - 10 (Silverpine Forest)
+#title Twisted Faith
 
 step
     #completewith next
@@ -879,8 +879,8 @@ RXPGuides.RegisterGuide([[
 << Horde Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Chest
-#name Twisted Fate - 10 (The Barrens)
-#title Twisted Fate
+#name Twisted Faith - 10 (The Barrens)
+#title Twisted Faith
 
 step
     #completewith next

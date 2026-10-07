@@ -21,7 +21,7 @@ step << !Orc !Troll
 step << !Troll Mage
     #season 2
     #completewith next
-    +在探索赛季中，作为法师你不应该在自己种族以外的新手区域开始游戏，因为你将无法在这里获得你的第一个符文（|T133816:0|t[刻印手套 - 冰枪术]）
+    +在探索赛季中，法师不应在种族初始区域之外开始游戏，因为你将无法在此处获得第一个符文（|T133816:0|t|T133816:0|t[铭刻手套 - 冰枪术]）
 step
     .goto Durotar,43.29,68.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡尔图克|r 对话
@@ -161,7 +161,7 @@ step << Warlock
     .goto Durotar,44.58,56.10,40,0
     .goto Durotar,44.27,56.59,40,0
     .goto Durotar,43.85,55.52,40,0
-    >>击杀 |cRXP_ENEMY_邪灵劣魔|r. 拾取 |cRXP_LOOT_邪灵劣魔的徽记|r
+    >>击杀 |cRXP_ENEMY_邪灵劣魔|r，拾取 |cRXP_LOOT_邪灵劣魔的徽记|r
     .complete 1485,1 --Vile Familiar Head (6)
     .mob 邪灵劣魔
 step
@@ -290,8 +290,8 @@ step << Warlock
 step << Warlock/Warrior/Shaman/Hunter
     #xprate >1.49
     #completewith Ruzan2
-	>>|cRXP_WARN_刷|cRXP_ENEMY_杂斑野猪|r。拾取它们，直到你拥有价值2个银币的垃圾物品|r << Warrior
-	>>|cRXP_WARN_刷 |cRXP_ENEMY_杂斑野猪|r。拾取它们，直到获得价值1银币75铜币的垃圾物品|r << Warlock
+	>>|cRXP_WARN_刷怪 |cRXP_ENEMY_杂斑野猪|r，拾取它们的掉落物，直到获得价值2银币的可出售物品|r << Warrior
+	>>|cRXP_WARN_刷怪 |cRXP_ENEMY_杂斑野猪|r，拾取它们的掉落物，直到获得价值1银币75铜币的可出售物品|r << Warlock
 	>>|cRXP_WARN_刷怪 |cRXP_ENEMY_杂斑野猪|r，拾取它们的掉落物，直到获得价值1银币10铜币的可出售物品|r << Hunter
 	>>|cRXP_WARN_刷怪 |cRXP_ENEMY_杂斑野猪|r，拾取它们的掉落物，直到获得价值 1 银币的可出售物品|r << Shaman
     .mob 杂斑野猪
@@ -425,7 +425,7 @@ step << !Rogue
     #xprate >1.49
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cFF00FF25多克纳|r 对话
-    >>|cFF0E8312从她那里购买|r |T132794:0|t[清凉的泉水] |cFF0E8312|r << !Rogue !Warrior !Hunter !Shaman
+    >>|cFF0E8312从她那里购买|r |T132794:0|t|T132794:0|t[清凉的泉水] |cFF0E8312|r << !Rogue !Warrior !Hunter !Shaman
     >>|cFF0E8312从她那里购买|r |T132382:0|t|T132382:0|t[劣质箭] |cFF0E8312|r << Hunter
     >>|cRXP_WARN_保留10铜币用于学习技能|r |T135932:0|t|T135932:0|t[奥术智慧] << Mage
     .collect 159,15,6394,1 << !Rogue !Warrior !Hunter !Shaman --Refreshing Spring Water (15)
@@ -1411,7 +1411,7 @@ step << Warrior
     .goto Durotar,42.89,69.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r 对话
     .train 3127 >>学习 |T132269:0|t[招架]
-    .train 6343 >>学习 |T136105:0|t[雷霆一击]
+    .train 6343 >>训练|T136105:0|t|T136105:0|t[雷霆一击]
     .target 弗朗恩
     .money <0.02
 step << Warrior
@@ -1760,7 +1760,7 @@ step
     .goto Durotar,55.72,79.62,40,0
     .goto Durotar,54.23,82.26,40,0
     .goto Durotar,52.20,83.00,40,0
-    >>沿着海滩前进。击杀 |cRXP_ENEMY_海蟹|r 和 |cRXP_ENEMY_龙虾人|r，拾取它们掉落的 |cRXP_LOOT_粘液|r 和 |cRXP_LOOT_眼睛|r。你不需要在这里完成这一步。
+    >>沿着海滩往下跑。击杀|cRXP_ENEMY_海浪蟹|r和|cRXP_ENEMY_龙虾人|r。拾取它们的|cRXP_LOOT_蟹胶|r 和 |cRXP_LOOT_眼球|r。你不需要在这里完成这一步。
     .complete 818,2 --Crawler Mucus (8)
     .mob 海浪蟹
     .mob 成熟海浪蟹
@@ -2116,7 +2116,7 @@ step << Warrior/Rogue
     #hardcore
     .goto Durotar,51.90,41.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃克|r 对话
-    >>|cRXP_BUY_购买一把|r |T134708:0|t|T134708:0|t[矿工锄] |cRXP_BUY_从他|r |cRXP_BUY_那里|r
+    >>|cRXP_BUY_购买一把|r |T134708:0|t[矿工锄] |cRXP_BUY_从他|r |cRXP_BUY_那里|r
     .collect 2901,1,784,1 --Mining Pick (1)
     .target 沃克
 step << Warrior/Rogue
@@ -2268,7 +2268,7 @@ step << Priest
     #completewith next
     .goto Durotar,55.32,72.66
     .emote KNEEL,208309
-    .aura 417316 >>在 |cRXP_PICK_洛阿神灵祭坛|r 前跪下并与 |cRXP_FRIENDLY_毒蛇洛阿神灵|r 对话以获得 |T136077:0|t[洛阿神灵之思] buff
+    .aura 417316 >>在 |cRXP_PICK_洛阿神灵祭坛|r 前跪下并与 |cRXP_FRIENDLY_毒蛇洛阿神灵|r 对话以获得 |T136077:0|t[洛阿神灵之思]
     .skipgossip 208307,1
     .target Serpent Loa
     .train 425216,1
@@ -2276,7 +2276,7 @@ step << Priest
     #season 2
     .use 205940
     .itemcount 205940,1
-    .train 425216 >>|cRXP_WARN_使用|r |T136222:0|t|T237514:0|t[|cRXP_FRIENDLY_黑暗意图的回忆|r] |cRXP_WARN_训练|r |T237514:0|t|T237514:0|t[虚空疫病]
+    .train 425216 >>|cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_黑暗意图的回忆|r] |cRXP_WARN_训练|r |T237514:0|t[虚空疫病]
 step << !Priest !Mage
     #xprate <1.5
     #optional
@@ -2623,7 +2623,7 @@ step << Warlock
     .target 杜格鲁·血怒
 step << Warlock
     .goto Durotar,54.70,41.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭（等级 2）]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭（等级2）]
     .collect 16302,1,825,1 --Grimoire of Firebolt (Rank 2) (1)
     .target 基萨
     .money <0.01
@@ -2930,7 +2930,7 @@ step << Priest
     .emote KNEEL,208309
     .goto Durotar,55.32,72.66
     .skipgossip 208307,1
-    .aura 417316 >>在 |cRXP_PICK_洛阿神灵祭坛|r 前跪下并与 |cRXP_FRIENDLY_毒蛇洛阿神灵|r 对话以获得 |T136077:0|t[洛阿神灵之思] buff
+    .aura 417316 >>在 |cRXP_PICK_洛阿神灵祭坛|r 前跪下并与 |cRXP_FRIENDLY_毒蛇洛阿神灵|r 对话以获得 |T136077:0|t[洛阿神灵之思]
     .train 402852,1
 step << Priest
     #season 2
@@ -3347,7 +3347,7 @@ step << Warrior/Shaman
 step << Warrior/Shaman
     #xprate >1.49
     #hardcore
-    .goto Durotar,39.20,32.02,60 >>一路杀出雷霆山谷
+    .goto Durotar,39.20,32.02,60 >>战斗冲出雷霆山
     .isQuestComplete 806
 step
     #completewith next
@@ -3491,7 +3491,7 @@ step << Warrior/Shaman/Hunter
 step << Warrior/Shaman/Hunter
     #xprate <1.5 << Shaman/Warrior
     #hardcore
-    .goto Durotar,39.20,32.02,60 >>一路杀出雷霆山谷
+    .goto Durotar,39.20,32.02,60 >>战斗冲出雷霆山
     .isQuestComplete 806
 step << !Warrior !Shaman !Hunter
     #xprate >1.49
@@ -3502,7 +3502,7 @@ step << !Warrior !Shaman !Hunter
 step << !Warrior !Shaman !Hunter
     #xprate >1.49
     #hardcore
-    .goto Durotar,39.20,32.02,60 >>一路杀出雷霆山谷
+    .goto Durotar,39.20,32.02,60 >>战斗冲出雷霆山
     .isQuestComplete 806
 step << Warrior/Shaman/Hunter
     #xprate <1.5 << Shaman/Warrior
@@ -3568,7 +3568,7 @@ step << Hunter
     >>记得每当你的宠物获得训练点时，为其进行|cRXP_WARN_ |T132162:0|t[野兽训练]|r
 step << Hunter
     .goto Orgrimmar,81.17,18.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_森度吉安|r|cRXP_BUY_交谈。从他那里购买一把|r |T135499:0|t[多层弯弓] |cRXP_BUY_|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|T135499:0|t|cRXP_BUY_与|r |cRXP_FRIENDLY_森度吉安|r|cRXP_BUY_交谈。从他那里购买一把|r |T135499:0|t|T135499:0|t[多层弯弓] |cRXP_BUY_|r
     .collect 2507,1,835,1 --Collect Laminated Recurve Bow (1)
     .money <0.1751
     .itemStat 18,QUALITY,<7
@@ -3577,7 +3577,7 @@ step << Hunter
 step << Hunter
     #optional
     #completewith FindAntidote
-    +|cRXP_WARN_当你达到11级时，装备|r |T135499:0|t[多层弯弓] |cRXP_WARN_|r
+    +|cRXP_WARN_装备|r |T135499:0|t|T135499:0|t[多层弯弓] |cRXP_WARN_当你达到11级时|r
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
@@ -3733,7 +3733,7 @@ step << Warlock
 step << Warlock
     #xprate <1.5
     .goto Durotar,54.70,41.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭（等级 2）]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭（等级2）]
     .collect 16302,1,837,1 --Grimoire of Firebolt (Rank 2) (1)
     .target 基萨
     .money <0.01
@@ -3958,13 +3958,13 @@ step << Warrior/Shaman
     .target 哈肯·风之图腾
 step << Warrior/Shaman
     .goto Mulgore,47.513,60.164
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝恩|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝恩|r 对话
     .accept 767 >>接受任务 幻象仪祭
     .accept 746 >>接受任务 矮人的挖掘场
     .target 贝恩·血蹄
 step << Warrior/Shaman
     .goto Mulgore,47.3,62.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁尔|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁尔|r 对话
     .accept 743 >>接受任务 风怒鹰身人
     .target 卢尔·鹰爪
 step << Warrior/Shaman
@@ -4278,12 +4278,12 @@ step << Warrior/Shaman
     .itemcount 4854,1
 step << Warrior/Shaman
     .goto Mulgore,47.51,60.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝恩|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝恩|r 对话
     .turnin 746 >>交任务 矮人的挖掘场
     .target 贝恩·血蹄
 step << Warrior/Shaman
     .goto Mulgore,47.35,62.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁尔|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁尔|r 对话
     .turnin 743 >>交任务 风怒鹰身人
     .target 卢尔·鹰爪
 step << Warrior/Shaman
@@ -4434,7 +4434,7 @@ step << Shaman
 step << Shaman
     #season 2
     .goto Thunder Bluff,39.45,65.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
     >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态
     .turnin 76156 >>交任务 大地母亲与匿同在
     .accept 76160 >>接受任务 大地母亲与匿同在
@@ -4507,7 +4507,7 @@ step << Shaman
 step << Shaman
     #season 2
     .goto Thunder Bluff,39.45,65.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
     >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态
     .turnin 76160 >>交任务 大地母亲与匿同在
     .accept 76240 >>接受任务 大地母亲与匿同在
@@ -4520,9 +4520,9 @@ step << Shaman
     .goto Thunder Bluff,45.23,59.40,0
     .goto Thunder Bluff,40.41,51.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
-    >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
+    >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t|T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
-    .target 拍卖师斯塔比
+    .target Auctioneer Stampi
     .train 410104,1
     .xp <4,1
 step << Shaman
@@ -5167,7 +5167,7 @@ step << Rogue/Mage/Priest/Warlock
     .zoneskip Tirisfal Glades
 step
     #optional
-    .abandon 816 >>放弃任务 刻骨铭心的伤痛
+    .abandon 816 >>放弃任务 丢失的孩子
 ]])
 
 
@@ -5200,7 +5200,7 @@ step << Orc Rogue/Troll Rogue
     .money <0.3023
 step << Orc Rogue/Troll Rogue
     .goto Undercity,63.25,48.56
-    .fp Undercity >>获得幽暗城的飞行路径
+    .fp Undercity >>开启幽暗城的飞行点
     .target 迈克尔·加勒特
     .money <0.3023
 step << Orc Rogue/Troll Rogue
@@ -5382,16 +5382,16 @@ step
     .maxlevel 10
 step
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
     .accept 445 >>接受任务 给银松森林送信
-    .accept 367 >>接受任务 新的瘟疫
+    .accept 367 >>接受任务 一种新瘟疫
     .target 药剂师乔汉
     .maxlevel 10 << !Warlock
     .maxlevel 11 << Warlock
 step
     #label DeliverytoSPF
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
     .accept 445 >>接受任务 给银松森林送信
     .target 药剂师乔汉
 step
@@ -5452,7 +5452,7 @@ step
 step
     #optional
     #completewith Pumpkins
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -5461,7 +5461,7 @@ step
     #optional
     #label Pumpkins
     .goto Tirisfal Glades,40.91,54.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_西米尔|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_西米尔|r 对话
     .accept 365 >>接受任务 悲伤之地
     .target Deathguard Simmer
     .maxlevel 10 << !Warlock
@@ -5470,7 +5470,7 @@ step << Rogue
     #season 2
     #optional
     .goto Tirisfal Glades,40.91,54.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_西米尔|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_西米尔|r 对话
     .accept 365 >>接受任务 悲伤之地
     .target Deathguard Simmer
     .maxlevel 10
@@ -5480,7 +5480,7 @@ step << Mage
     .goto Tirisfal Glades,36.72,50.94,0
     .goto Tirisfal Glades,34.78,51.24,0
     >>对 |cRXP_ENEMY_古怪的甜瓜|r 施放 |T136071:0|t[变形术]
-    >>拾取地上的|T134332:0|t|cRXP_LOOT_[药剂师笔记]|r
+    >>拾取地上的|T134332:0|t|T134332:0|t|cRXP_LOOT_[药剂师笔记]|r
     .collect 208183,6 --Apothecary Notes (6)
     .mob Odd Melon
     .train 415942,1
@@ -5521,7 +5521,7 @@ step
 step
     #optional
     #completewith next
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -5570,7 +5570,7 @@ step
 step
     #optional
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
     .turnin 367 >>交任务 新的瘟疫
     .accept 368 >>接受任务 新的瘟疫
     .isQuestComplete 367
@@ -5578,14 +5578,14 @@ step
 step
     #optional
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
     .accept 368 >>接受任务 新的瘟疫
     .isQuestTurnedIn 367
     .target 药剂师乔汉
 step
     #optional
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
     .turnin 365 >>交任务 悲伤之地
     .accept 407 >>接受任务 悲伤之地
     .isQuestComplete 365
@@ -5593,7 +5593,7 @@ step
 step
     #optional
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
     .accept 407 >>接受任务 悲伤之地
     .isQuestTurnedIn 365
     .target 药剂师乔汉
@@ -5637,7 +5637,7 @@ step << Warlock/Mage
     #label UCflightpath1
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
-    .fp Undercity >>获得幽暗城的飞行路径
+    .fp Undercity >>开启幽暗城的飞行点
     .target 迈克尔·加勒特
 step << Warlock/Mage
     #optional
@@ -5645,7 +5645,7 @@ step << Warlock/Mage
     .goto Undercity,64.20,49.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师雷克尔|r 对话
     >>|cRXP_BUY_从拍卖行购买六个|r |T134339:0|t[变色的狼心] |cRXP_BUY_|r
-    >>|cRXP_WARN_如果你愿意的话可以跳过，这只是个小捷径|r
+    >>|cRXP_WARN_如果你愿意，可以跳过这一步，这只能节省一点点时间|r
     .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .target 拍卖师雷克尔
     .zoneskip Undercity,1
@@ -5662,7 +5662,7 @@ step << Mage
 step << Mage
     .goto Undercity,85.12,10.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_安娜斯塔西娅|r 对话
-    .turnin 1881 >>交任务 与安娜斯塔西娅交谈
+    .turnin 1881 >>交任务 安娜斯塔西娅
     .accept 1882 >>接受任务 巴尼尔农场
     .target 安娜斯塔西娅·哈特威尔
 step << Undead Priest
@@ -5684,7 +5684,7 @@ step << Undead Priest
     .goto Undercity,64.20,49.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师雷克尔|r 对话
     >>|cRXP_BUY_从拍卖行购买六个|r |T134339:0|t[变色的狼心] |cRXP_BUY_|r
-    >>|cRXP_WARN_如果你愿意的话可以跳过，这只是个小捷径|r
+    >>|cRXP_WARN_如果你愿意，可以跳过这一步，这只能节省一点点时间|r
     .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .target 拍卖师雷克尔
     .zoneskip Undercity,1
@@ -5723,7 +5723,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
     .goto Undercity,63.25,48.56
-    .fp Undercity >>获得幽暗城的飞行路径
+    .fp Undercity >>开启幽暗城的飞行点
     .target 迈克尔·加勒特
     .money <0.3023
     .itemStat 16,QUALITY,<7
@@ -5768,7 +5768,7 @@ step << Undead Rogue
 step << Rogue
     #label Swordtraining2
     .goto Undercity,57.29,32.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与战争军需区的|r|cRXP_FRIENDLY_阿基巴德|r交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与战争军需区的|r |cRXP_FRIENDLY_阿基巴德|r 对话
     .train 201 >>学习单手剑
     .target 阿基巴德
     .money <0.1
@@ -5787,7 +5787,7 @@ step << Rogue
     .goto Undercity,64.20,49.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师雷克尔|r 对话
     >>|cRXP_BUY_从拍卖行购买六个|r |T134339:0|t[变色的狼心] |cRXP_BUY_|r
-    >>|cRXP_WARN_如果你愿意的话可以跳过，这只是个小捷径|r
+    >>|cRXP_WARN_如果你愿意，可以跳过这一步，这只能节省一点点时间|r
     .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .target 拍卖师雷克尔
     .zoneskip Undercity,1
@@ -5870,7 +5870,7 @@ step << Warlock
     .zone Undercity >>从下水道返回幽暗城
 step << Warlock
     .goto Undercity,85.07,25.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_凯伦丁|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_卡伦丁|r交谈
     .turnin 1473 >>交任务 虚空中的生物
     .accept 1471 >>接受任务誓缚
     .target 凯伦丁·哈加尔
@@ -5907,7 +5907,7 @@ step << Warlock
 step
     #optional
     #completewith next
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -6032,7 +6032,7 @@ step
 step
     #optional
     #completewith RotHideGnolls
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -6088,7 +6088,7 @@ step
 step
     #optional
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
     .turnin 368 >>交任务 新的瘟疫
     .accept 369 >>接受任务 新的瘟疫
     .target 药剂师乔汉
@@ -6096,7 +6096,7 @@ step
 step
     #optional
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
     .accept 369 >>接受任务 新的瘟疫
     .target 药剂师乔汉
     .isQuestTurnedIn 368
@@ -6218,7 +6218,7 @@ step
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与二楼的 |cRXP_FRIENDLY_贝里尔|r 对话
-	.train 588 >>学习 |T135926:0|t[心灵之火]
+	.train 588 >>训练 |T135926:0|t[心灵之火]
     .target Dark Cleric Beryl
     .xp <12,1
 step << Mage
@@ -6516,7 +6516,7 @@ step << Warrior
 step
     #optional
     .goto Tirisfal Glades,59.45,52.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
     .turnin 369 >>交任务 新的瘟疫
     .accept 492 >>接受任务 新的瘟疫
     .accept 445 >>接受任务 给银松森林送信
@@ -6524,7 +6524,7 @@ step
     .isQuestTurnedIn 368
 step
     .goto Tirisfal Glades,59.45,52.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔汉|r 对话
     .accept 445 >>接受任务 给银松森林送信
     .target 药剂师乔汉
 step
@@ -6537,7 +6537,7 @@ step
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与二楼的 |cRXP_FRIENDLY_贝里尔|r 对话
-	.train 588,1 >>学习 |T135926:0|t[心灵之火]
+	.train 588,1 >>训练 |T135926:0|t[心灵之火]
     .target Dark Cleric Beryl
     .xp <12,1
 step << Mage
@@ -6680,7 +6680,7 @@ step
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与二楼的 |cRXP_FRIENDLY_贝里尔|r 对话
-	.train 588,1 >>学习 |T135926:0|t[心灵之火]
+	.train 588,1 >>训练 |T135926:0|t[心灵之火]
     .target Dark Cleric Beryl
     .xp <12,1
     .xp >14,1
@@ -6794,7 +6794,7 @@ step << !Undead
     #label UCflightpath3
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
-    .fp Undercity >>获得幽暗城的飞行路径
+    .fp Undercity >>开启幽暗城的飞行点
     >>|cRXP_WARN_若已解锁飞行点，请跳过此步骤！|r
     .target 迈克尔·加勒特
 step << Orc Rogue/Troll Rogue
@@ -6888,7 +6888,7 @@ step
     .goto Undercity,64.20,49.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师雷克尔|r 对话
     >>|cRXP_BUY_从拍卖行购买六个|r |T134339:0|t[变色的狼心] |cRXP_BUY_|r
-    >>|cRXP_WARN_如果你愿意的话可以跳过，这只是个小捷径|r
+    >>|cRXP_WARN_如果你愿意，可以跳过这一步，这只能节省一点点时间|r
     .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .target 拍卖师雷克尔
     .zoneskip Undercity,1
@@ -7390,7 +7390,7 @@ step << Warlock
     .goto Durotar,44.58,56.10,40,0
     .goto Durotar,44.27,56.59,40,0
     .goto Durotar,43.85,55.52,40,0
-    >>击杀 |cRXP_ENEMY_邪灵劣魔|r. 拾取 |cRXP_LOOT_邪灵劣魔的徽记|r
+    >>击杀 |cRXP_ENEMY_邪灵劣魔|r。拾取他们的 |cRXP_LOOT_邪灵劣魔的头颅|r
     .complete 1485,1 --Vile Familiar Head (6)
     .mob 邪灵劣魔
 step << Hunter
@@ -7481,7 +7481,7 @@ step << Warlock/Warrior/Shaman/Hunter
     #completewith Ruzan2
 	>>|cRXP_WARN_刷|cRXP_ENEMY_杂斑野猪|r。拾取它们，直到你拥有价值2个银币的垃圾物品|r << Warrior
 	>>|cRXP_WARN_刷 |cRXP_ENEMY_杂斑野猪|r。拾取它们，直到获得价值1银币75铜币的垃圾物品|r << Warlock
-	>>|cRXP_WARN_刷怪 |cRXP_ENEMY_杂斑野猪|r，拾取它们的掉落物，直到获得价值1银币10铜币的可出售物品|r << Hunter
+	>>|cRXP_WARN_刷 |cRXP_ENEMY_杂斑野猪|r。拾取它们，直到获得价值1银币10铜币的垃圾物品|r << Hunter
 	>>|cRXP_WARN_刷怪 |cRXP_ENEMY_杂斑野猪|r，拾取它们的掉落物，直到获得价值 1 银币的可出售物品|r << Shaman
     .mob 杂斑野猪
 	.money >0.02 << Warrior
@@ -7616,8 +7616,8 @@ step << !Rogue
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cFF00FF25多克纳|r 对话
     >>|cFF0E8312从她那里购买|r |T132794:0|t[清凉的泉水] |cFF0E8312|r << !Rogue !Warrior !Hunter !Shaman
-    >>|cFF0E8312从她那里购买|r |T132382:0|t|T132382:0|t[劣质箭] |cFF0E8312|r << Hunter
-    >>|cRXP_WARN_保留10铜币用于学习技能|r |T135932:0|t|T135932:0|t[奥术智慧] << Mage
+    >>|cFF0E8312从她那里购买|r |T132382:0|t[劣质箭] |cFF0E8312|r << Hunter
+    >>|cRXP_WARN_保留10铜币用于学习技能|r |T135932:0|t[奥术智慧] << Mage
     .collect 159,15,6394,1 << !Rogue !Warrior !Hunter !Shaman --Refreshing Spring Water (15)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >>把垃圾物品卖给商人
@@ -8216,7 +8216,7 @@ step
     .goto Durotar,51.09,42.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_厨师托尔卡|r 对话
     .accept 815 >>接受任务 恐龙蛋大餐
-    .target 厨师托尔卡
+    .target Cook Torka
 step
     #softcore
     #completewith next
@@ -8252,7 +8252,7 @@ step << Warrior/Rogue
     #softcore
     .goto Durotar,51.90,41.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃克|r 对话
-    >>|cRXP_BUY_购买一把|r |T134708:0|t|T134708:0|t[矿工锄] |cRXP_BUY_从他|r |cRXP_BUY_那里|r
+    >>|cRXP_BUY_从他那里购买一把|r |T134708:0|t[矿工锄] |cRXP_BUY_|r |cRXP_BUY_|r
     .collect 2901,1,784,1 --Mining Pick (1)
     .target 沃克
 step << Warrior/Rogue
@@ -8388,7 +8388,7 @@ step << Warlock
     #label Hraug3
     .goto Durotar,40.56,68.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫劳格|r 对话
-    >>|cRXP_BUY_购买|r |T133738:0|t[魔典:血契]|cRXP_BUY_从他那里|r
+    >>|cRXP_BUY_从他那里购买|r |T133738:0|t[魔典：血契]|cRXP_BUY_|r
     .collect 16321,1,817,1 --Grimoire of Blood Pact
     .vendor >>把垃圾物品卖给商人
     .target 赫劳格
@@ -8923,11 +8923,11 @@ step << Priest
     #completewith TravelToTiragarde
     .aura 418459 >>|cRXP_WARN_现在你需要找到一名带有洛阿神灵增益效果的亡灵牧师。你必须在他面前跪下，而他需要对你使用/pray。|r
     .use 205947
-    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|T237570:0|t|cRXP_FRIENDLY_遭渎城堡的预言|r |cRXP_WARN_来训练|r |T237570:0|t|T237570:0|t裂魂魔
+    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|cRXP_FRIENDLY_遭渎城堡的预言|r |cRXP_WARN_来训练|r |T237570:0|t[裂魂魔]
     .itemcount 205947,1
 step
     #completewith TravelToTiragarde
-    +|cRXP_WARN_绑定你的|r |T133728:0|t|T134712:0|t[微光徽记] |cRXP_WARN_和|r |T134712:0|t|T134712:0|t[强力胶水]|cRXP_WARN_。将它们保留以备紧急情况使用|r
+    +|cRXP_WARN_将你的|r |T133728:0|t[微光颅骨] |cRXP_WARN_和|r |T134712:0|t[强力胶水]|cRXP_WARN_设为快捷键。留着它们以备不时之需|r
 step << Rogue
     #season 2
     .goto Durotar,51.82,58.67
@@ -8990,7 +8990,7 @@ step << Warrior/Rogue
     #hardcore
     .goto Durotar,51.90,41.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃克|r 对话
-    >>|cRXP_BUY_购买一把|r |T134708:0|t|T134708:0|t[矿工锄] |cRXP_BUY_从他|r |cRXP_BUY_那里|r
+    >>|cRXP_BUY_从他那里购买一把|r |T134708:0|t[矿工锄] |cRXP_BUY_|r |cRXP_BUY_|r
     .collect 2901,1,784,1 --Mining Pick (1)
     .target 沃克
 step << Warrior/Rogue
@@ -9148,7 +9148,7 @@ step << Priest
     #season 2
     .use 205940
     .itemcount 205940,1
-    .train 425216 >>|cRXP_WARN_使用|r |T136222:0|t|T237514:0|t[|cRXP_FRIENDLY_黑暗意图的回忆|r] |cRXP_WARN_训练|r |T237514:0|t|T237514:0|t[虚空疫病]
+    .train 425216 >>|cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_黑暗意图的回忆|r] |cRXP_WARN_训练|r |T237514:0|t[虚空疫病]
 step
     #softcore
     #completewith RazorTurnins1
@@ -9449,7 +9449,7 @@ step << Warlock
 step << Warlock
     #xprate >1.49
     .goto Durotar,54.70,41.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭（等级 2）]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭 等级2]
     .collect 16302,1,837,1 --Grimoire of Firebolt (Rank 2) (1)
     .target 基萨
     .money <0.01
@@ -9680,7 +9680,7 @@ step << !Warrior
     #xprate <2.1
     #completewith next
     .goto Durotar,41.66,25.68,20 >>跳入雷霆山脊 << !Hunter !Warlock
-    .goto Durotar,41.66,25.68,20 >>|cRXP_WARN_解散你的|r |T136218:0|t|T136218:0|t[小鬼] |cRXP_WARN_——右键点击其单位框架并选择“解散”|r << Warlock
+    .goto Durotar,41.66,25.68,20 >>|cRXP_WARN_右键点击|r |T136218:0|t[小鬼] |cRXP_WARN_的头像并点击解散，将其解散|r << Warlock
     .goto Durotar,41.66,25.68,20 >>|cRXP_WARN_施放|r |T136095:0|t[解散宠物] |cRXP_WARN_然后跳入雷霆山脊|r << Hunter
 step
     #xprate <2.1
@@ -9689,7 +9689,7 @@ step
     >>击杀 |cRXP_ENEMY_费索·暗雷|r，并拾取他的 |cRXP_LOOT_爪子|r
     >>|cRXP_WARN_小心。在拉怪之前，先击杀巡逻的|r |cRXP_ENEMY_火刃狂热者|r |cRXP_WARN_以及后方的|r |cRXP_ENEMY_闪电蜥蜴|r |cRXP_WARN_|r
     >>|cRXP_WARN_将他向后拉向你刚刚击杀的|r |cRXP_ENEMY_闪电蜥蜴|r |cRXP_WARN_。否则你可能会引到额外的火刃怪|r
-    >>|cRXP_WARN_不要害怕为了获得|cRXP_LOOT_爪|r而死，因为你会在|cRXP_FRIENDLY_灵魂医者|r处复活|r
+    >>|cRXP_WARN_不要害怕为了拿|cRXP_LOOT_爪子|r而死，因为你随后会在|cRXP_FRIENDLY_灵魂医者|r处虚弱复活|r
     >>|cRXP_WARN_先击杀小鬼。在他施放|r |T132155:0|t[灵魂汲取] |cRXP_WARN_时使用|r |T136169:0|t[凿击] << Rogue
     >>|cRXP_WARN_先击杀小鬼。在他施放 |T136026:0|t[吸取灵魂] 时使用|r |T136169:0|t[大地震击]|cRXP_WARN_|r << Shaman
     >>|cRXP_WARN_你可以对 |r|cRXP_WARN_费索|r |cRXP_ENEMY_施放 |r|T136071:0|t[变形术]|cRXP_WARN_，然后先击杀 |r|cRXP_ENEMY_小鬼|r|cRXP_WARN_|r << Mage
@@ -9744,7 +9744,7 @@ step << Warrior
     #xprate <2.1
     #season 2
     #completewith next
-    >>击杀|cRXP_ENEMY_尘风鹰身人|r，并从它们身上拾取|cRXP_LOOT_被砍下的鹰身人的头|r
+    >>击杀|cRXP_ENEMY_尘风鹰身人|r。拾取他们的|cRXP_LOOT_被砍下的鹰身人的头|r
     .collect 206995,1 ---Severed Harpy Head (1)
     .mob Dustwind Savage
     .mob Dustwind Storm Witch
@@ -9780,7 +9780,7 @@ step << Warrior
     .goto Durotar,52.13,20.77,40,0
     .goto Durotar,51.26,19.19,40,0
     .goto Durotar,53.98,23.70,40,0
-    >>击杀|cRXP_ENEMY_尘风鹰身人|r，并从它们身上拾取|cRXP_LOOT_被砍下的鹰身人的头|r
+    >>击杀|cRXP_ENEMY_尘风鹰身人|r。拾取他们的|cRXP_LOOT_被砍下的鹰身人的头|r
     .collect 206995,1 ---Severed Harpy Head (1)
     .mob Dustwind Savage
     .mob Dustwind Storm Witch
@@ -9975,7 +9975,7 @@ step << Rogue
 step << Rogue
     #season 2
     .goto Orgrimmar,55.87,44.89
-    >>打开|cRXP_PICK_布满灰尘的箱子|r获取|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_精准符文|r]
+    >>打开|cRXP_PICK_布满灰尘的箱子|r 获取 |T134419:0|t[|cRXP_FRIENDLY_精准符文|r]
     >>|cRXP_WARN_它位于暗影裂口的二楼|r
     .collect 204174,1 --Rune of Precision (1)
     .train 400081,1
@@ -10021,7 +10021,7 @@ step << Warrior
     .goto Orgrimmar,57.40,53.93,-1
     .goto Orgrimmar,58.05,51.40,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_扎姆沙|r 和 |cRXP_FRIENDLY_格鲁阿克|r 对话
-    +当|cRXP_ENEMY_格鲁阿克|r变为敌对状态时将其击杀
+    +当|cRXP_ENEMY_格鲁阿克|r 变为敌对状态时将其击杀
     .target Zamja
     .target Gru'ark
     .skipgossip
@@ -10030,7 +10030,7 @@ step << Warrior
     #season 2
     .goto Orgrimmar,58.52,52.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_扎姆沙|r 对话
-    >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Zamja
     .train 425447,1
@@ -10339,7 +10339,7 @@ step << Warrior
 step
     #xprate <2.1
     #label RazorTurnins2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 托尔卡|r、|cRXP_FRIENDLY_奥戈尼尔|r 和 |cRXP_FRIENDLY_加索克|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 托尔卡|r， |cRXP_FRIENDLY_奥戈尼尔|r 和 |cRXP_FRIENDLY_加索克|r 对话
     .turnin 806 >>交任务 黑暗风暴
     .target 奥戈尼尔·魂痕
     .goto Durotar,52.24,43.15

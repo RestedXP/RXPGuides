@@ -5390,7 +5390,7 @@ local dangerousMobs = {
         MaxLevel = 16,
         Classification = "Normal",
         Movement = "Slow Patrol",
-        Notes = "Patrols around the Sludge Ven",
+        Notes = "Patrols around The Sludge Fen",
         Location = ".line The Barrens,57.39,8.53,57.47,8.42,57.49,8.03,57.35,7.69,57.19,7.54,57.08,7.40,56.89,7.36,56.65,7.35,56.55,7.43,56.54,7.49,56.41,7.58,56.06,7.59,55.96,7.65,55.77,7.87,55.75,8.17,55.77,8.44,55.82,8.61;.mob Overseer Glibby"
         },
       },

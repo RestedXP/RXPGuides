@@ -67,7 +67,7 @@ step << Alliance
     .accept 8910 >>接受任务 热心的建议 << Rogue
     .accept 8911 >>接受任务 热心的建议 << Warlock
     .accept 8912 >>接受任务 热心的建议 << Warrior
-    .target 德莉亚娜
+    .target Deliana
 step << Alliance
     #completewith next
     .zone Winterspring >>前往 |cFFfa9602冬泉谷|r
@@ -90,15 +90,15 @@ step << Alliance
     .complete 8910,1 << Rogue --Winterspring Blood Sample (x15)
     .complete 8911,1 << Warlock --Winterspring Blood Sample (x15)
     .complete 8912,1 << Warrior --Winterspring Blood Sample (x15)
-    .mob 幼霜刃豹
-    .mob 霜刃豹
-    .mob 霜刃捕食者
-    .mob 霜刃雌豹
-    .mob 霜刃守卫者
-    .mob Shardtooth Fury Bear
-    .mob Old Shardtooth Bear
-    .mob Crazed Shardtooth Bear
-    .mob 碎齿熊
+    .mob Frostsaber Cub
+    .mob Frostsaber
+    .mob Frostsaber Stalker
+    .mob Frostsaber Huntress
+    .mob Frostsaber Pride Watcher
+    .mob Shardtooth Mauler
+    .mob Elder Shardtooth
+    .mob Rabid Shardtooth
+    .mob Shardtooth Bear
 step << Alliance
     #completewith next
     .zone Ironforge >>前往 |cFFfa9602铁炉堡|r
@@ -130,7 +130,7 @@ step << Alliance
     .turnin 8911 >>交任务 热心的建议 << Warlock
     .turnin 8912 >>交任务 热心的建议 << Warrior
     .accept 8922 >>接受任务 超自然的设备
-    .target 德莉亚娜
+    .target Deliana
 step << Horde
     #completewith next
     .zone Orgrimmar >>前往|cFFfa9602奥格瑞玛|r
@@ -145,7 +145,7 @@ step << Horde
     .accept 8918 >>接受任务 热心的建议 << Shaman
     .accept 8919 >>接受任务 热心的建议 << Warlock
     .accept 8920 >>接受任务 热心的建议 << Warrior
-    .target 莫克瓦尔
+    .target Mokvar
 step << Horde
     #completewith next
     .zone Silithus >>前往 |cFFfa9602希利苏斯|r
@@ -174,11 +174,11 @@ step << Horde
     .complete 8918,1 << Shaman --Silithus Venom Sample (x15)
     .complete 8919,1 << Warlock --Silithus Venom Sample (x15)
     .complete 8920,1 << Warrior --Silithus Venom Sample (x15)
-    .mob 掠沙蜘蛛
-    .mob 石鞭巨钳蝎
-    .mob 石鞭蝎
-    .mob 石鞭掠夺者
-    .mob 石行蜘蛛
+    .mob Sand Skitterer
+    .mob Stonelash Pincer
+    .mob Stonelash Scorpid
+    .mob Stonelash Flayer
+    .mob Rock Stalker
 step << Horde
     #completewith next
     .zone Orgrimmar >>前往|cFFfa9602奥格瑞玛|r
@@ -210,7 +210,7 @@ step << Horde
     .turnin 8919 >>交任务 热心的建议 << Warlock
     .turnin 8920 >>交任务 热心的建议 << Warrior
     .accept 8923 >>接受任务 超自然的设备
-    .target 莫克瓦尔
+    .target Mokvar
 
     ]])
 
@@ -343,7 +343,7 @@ step << Alliance
     .goto Ironforge,43.54,52.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德莉亚娜|r 对话
     .accept 8922 >>接受任务 超自然的设备
-    .target 德莉亚娜
+    .target Deliana
 step << Horde
     #completewith next
     .zone Orgrimmar >>前往|cFFfa9602奥格瑞玛|r
@@ -351,7 +351,7 @@ step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫克瓦尔|r 对话
     .accept 8923 >>接受任务 超自然的设备
-    .target 莫克瓦尔
+    .target Mokvar
 step
     #completewith next
     .subzone 976 >>前往|cFFfa9602塔纳利斯|r的加基森
@@ -361,7 +361,7 @@ step
     .turnin 8922 >>交任务 超自然的设备 << Alliance
     .turnin 8923 >>交任务 超自然的设备 << Horde
     .accept 8921 >>接受任务 灵质提纯器
-    .target 穆克斯·玛纳斯卡波
+    .target Mux Manascrambler
 step
     #completewith next
     .zone Burning Steppes >>前往 |cFFfa9602燃烧平原|r
@@ -408,7 +408,7 @@ step
     >>|cRXP_WARN_你需要40金币来完成这个任务|r
     .turnin 8921 >>交任务 灵质提纯器
     .accept 8924 >>接受任务 猎取灵质
-    .target 穆克斯·玛纳斯卡波
+    .target Mux Manascrambler
 step
     #optional
     >>|cRXP_WARN_收集至少3个|r |T132621:0|t[地精火箭燃油]|cRXP_WARN_。它由工程师制造|r
@@ -434,8 +434,8 @@ step
     >>击杀 |cRXP_ENEMY_被折磨的德鲁伊|r 和 |cRXP_ENEMY_被折磨的哨兵|r。拾取它们的 |cRXP_LOOT_烧焦的灵质|r
     >>|cRXP_WARN_在击杀它们时|r|cRXP_WARN_将它们拉向|r |T133882:0|t[灵质提纯器]
     .complete 8924,1 --Scorched Ectoplasm (x12)
-	.mob 被折磨的德鲁伊
-	.mob 被折磨的哨兵
+	.mob Tortured Druid
+	.mob Tortured Sentinel
 step
     #completewith next
     .zone Winterspring >>前往 |cFFfa9602冬泉谷|r
@@ -454,8 +454,8 @@ step
     >>击杀 |cRXP_ENEMY_受难的上层精灵|r 和 |cRXP_ENEMY_痛苦的上层精灵|r。拾取它们的 |cRXP_LOOT_冰冻的灵质|r
     >>|cRXP_WARN_在击杀它们时|r|cRXP_WARN_将它们拉向|r |T133882:0|t[灵质提纯器]
     .complete 8924,2 --Frozen Ectoplasm (x12)
-    .mob 受难的上层精灵
-    .mob 痛苦的上层精灵
+    .mob Suffering Highborne
+    .mob Anguished Highborne
 step
     #completewith FelElemRod
     .subzone 2256 >>前往|cFFfa9602冬泉谷|r 的暗语峡谷
@@ -470,7 +470,7 @@ step
     >>|cRXP_BUY_从他那里|r|cRXP_LOOT_购买|r |T135155:0|t[|cRXP_BUY_恶魔元素之杖|r]
     >>|cRXP_WARN_这将花费40金币|r
     .collect 21939,1,8928,1 --Fel Elemental Rod (x1)
-    .target 维尔
+    .target Vi'el
 step
     #optional
     >>|cRXP_WARN_收集至少2个|r |T132621:0|t[地精火箭燃油]|cRXP_WARN_。它由工程师制造|r
@@ -491,8 +491,8 @@ step
     >>击杀 |cRXP_ENEMY_无影仆从|r 和 |cRXP_ENEMY_憎恨吟唱者|r，拾取它们的 |cRXP_LOOT_稳定的灵质|r
     >>|cRXP_WARN_在击杀它们时|r|cRXP_WARN_将它们拉向|r |T133882:0|t[灵质提纯器]
     .complete 8924,3 --Stable Ectoplasm (x12)
-    .mob 无影仆从
-    .mob 憎恨吟唱者
+    .mob Unseen Servant
+    .mob Hate Shrieker
 step
     #completewith next
     .subzone 976 >>前往|cFFfa9602塔纳利斯|r的加基森
@@ -501,7 +501,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆克斯·玛纳斯卡波|r 对话
     .turnin 8924 >>交任务 猎取灵质
     .accept 8925 >>接受任务 便携的能量源
-    .target 穆克斯·玛纳斯卡波
+    .target Mux Manascrambler
 step
     #completewith next
     .zone Burning Steppes >>前往 |cFFfa9602燃烧平原|r
@@ -509,7 +509,7 @@ step
     .goto Burning Steppes,35.38,57.73
     >>击杀 |cRXP_ENEMY_熔岩领主博奥克|r，拾取他的 |cRXP_LOOT_Magma 岩核|r
     .complete 8925,1 --Magma Core (x1)
-    .mob 熔岩领主博奥克
+    .mob Magma Lord Bokk
 step
     #completewith next
     .subzone 976 >>前往|cFFfa9602塔纳利斯|r的加基森
@@ -518,7 +518,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆克斯·玛纳斯卡波|r 对话
     .turnin 8925 >>交任务 便携的能量源
     .accept 8928 >>接受任务 小巧的商人
-    .target 穆克斯·玛纳斯卡波
+    .target Mux Manascrambler
 step
     #optional
     #completewith FelElemRod2
@@ -536,7 +536,7 @@ step
     >>|cRXP_BUY_从他那里|r|cRXP_LOOT_购买|r |T135155:0|t[|cRXP_BUY_恶魔元素之杖|r]
     >>|cRXP_WARN_这将花费40金币|r
     .collect 21939,1,8928,1 --Fel Elemental Rod (x1)
-    .target 维尔
+    .target Vi'el
 step
     #optional
     #completewith next
@@ -548,7 +548,7 @@ step
     .turnin 8928 >>交任务 小巧的商人
     .accept 8977 >>接受任务 向德莉亚娜回复 << Alliance
     .accept 8978 >>接受任务 向莫克瓦尔回复 << Horde
-    .target 穆克斯·玛纳斯卡波
+    .target Mux Manascrambler
 step << Alliance
     #completewith next
     .zone Ironforge >>前往 |cFFfa9602铁炉堡|r
@@ -564,7 +564,7 @@ step << Alliance
     .accept 8935 >>接受任务 小小的补偿 << Rogue
     .accept 8936 >>接受任务 小小的补偿 << Warlock
     .accept 8937 >>接受任务 小小的补偿 << Warrior
-    .target 德莉亚娜
+    .target Deliana
 step << Alliance
     .goto Ironforge,43.54,52.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德莉亚娜|r 对话
@@ -601,7 +601,7 @@ step << Alliance
     .turnin 8936 >>交任务 小小的补偿 << Warlock
     .turnin 8937 >>交任务 小小的补偿 << Warrior
     .accept 8929 >>接受任务 寻找安泰恩
-    .target 德莉亚娜
+    .target Deliana
 step << Horde
     #completewith next
     .zone Orgrimmar >>前往|cFFfa9602奥格瑞玛|r
@@ -617,7 +617,7 @@ step << Horde
     .accept 8942 >>接受任务 小小的补偿 << Shaman
     .accept 8943 >>接受任务 小小的补偿 << Warlock
     .accept 8944 >>接受任务 小小的补偿 << Warrior
-    .target 莫克瓦尔
+    .target Mokvar
 step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫克瓦尔|r 对话
@@ -628,7 +628,7 @@ step << Horde
     >>你需要 |T132492:0|t[|cRXP_LOOT_迅影腰带|r] 和 |T132958:0|t[|cRXP_LOOT_迅影手套|r] 来完成任务 << Rogue
     >>你需要 |T132505:0|t[|cRXP_LOOT_元素束腰|r] 和 |T132945:0|t[|cRXP_LOOT_元素护手|r] 来完成任务 << Shaman
     >>你需要 |T132501:0|t[|cRXP_LOOT_鬼雾腰带|r] 和 |T132966:0|t[|cRXP_LOOT_鬼雾手套|r] 来完成任务 << Warlock
-    >>你需要 |T132523:0|t[|cRXP_LOOT_勇气腰带|r] 和 |T132960:0|t[|cRXP_LOOT_勇气护手|r]r 来完成任务 << Warrior
+    >>你需要 |T132523:0|t[|cRXP_LOOT_勇气腰带|r] 和 |T132960:0|t[|cRXP_LOOT_勇气护手|r] 来完成任务 << Warrior
     .collect 16716,1,8927,1 << Horde Druid --Wildheart Belt (x1)
     .collect 16717,1,8927,1 << Horde Druid --Wildheart Gloves (x1)
     .collect 16680,1,8938,1 << Horde Hunter --Beaststalker's Belt (x1)
@@ -654,7 +654,7 @@ step << Horde
     .turnin 8943 >>交任务 小小的补偿 << Warlock
     .turnin 8944 >>交任务 小小的补偿 << Warrior
     .accept 8930 >>接受任务 寻找安泰恩
-    .target 莫克瓦尔
+    .target Mokvar
 
     ]])
 
@@ -824,7 +824,7 @@ step << Alliance
     .goto Ironforge,43.54,52.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德莉亚娜|r 对话
     .accept 8929 >>接受任务 寻找安泰恩
-    .target 德莉亚娜
+    .target Deliana
 step << Horde
     #completewith next
     .zone Orgrimmar >>前往|cFFfa9602奥格瑞玛|r
@@ -832,7 +832,7 @@ step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫克瓦尔|r 对话
     .accept 8930 >>接受任务 寻找安泰恩
-    .target 莫克瓦尔
+    .target Mokvar
 step
     #completewith FindingAnthion
     +|cRXP_WARN_开始寻找一支可以在45分钟内清完斯坦索姆亡灵阵营的5人小队|r
@@ -1088,7 +1088,7 @@ step << Alliance
     .turnin 8958 >>交任务 告别安泰恩 << Warlock
     .turnin 8959 >>交任务 告别安泰恩 << Warrior
     .accept 8960 >>接受任务 伯德雷的不幸
-    .target 德莉亚娜
+    .target Deliana
 step << Horde
     #completewith next
     .zone Orgrimmar >>前往|cFFfa9602奥格瑞玛|r
@@ -1136,7 +1136,7 @@ step << Horde
     .turnin 9021 >>交任务 告别安泰恩 << Warlock
     .turnin 9022 >>交任务 告别安泰恩 << Warrior
     .accept 8960 >>接受任务 伯德雷的不幸
-    .target 莫克瓦尔
+    .target Mokvar
 
 ]])
 
@@ -1255,7 +1255,7 @@ step << Alliance
     .goto Ironforge,43.54,52.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德莉亚娜|r 对话
     .accept 8960 >>接受任务 伯德雷的不幸
-    .target 德莉亚娜
+    .target Deliana
 step << Horde
     #completewith next
     .zone Orgrimmar >>前往|cFFfa9602奥格瑞玛|r
@@ -1263,7 +1263,7 @@ step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫克瓦尔|r 对话
     .accept 8960 >>接受任务 伯德雷的不幸
-    .target 莫克瓦尔
+    .target Mokvar
 step
     >>|cRXP_BUY_收集以下物品|r：
     >>|cRXP_WARN_至少一个|r |T132873:0|t[大块魔光碎片]
@@ -1321,7 +1321,7 @@ step
 step
     >>击杀 |cRXP_ENEMY_伊森迪奥斯|r。从他那里拾取 |cRXP_LOOT_伊森迪奥斯的余炭|r
     .complete 8961,1 --Incendicite of Incendius (x1)
-    .mob 伊森迪奥斯
+    .mob Lord Incendius
 step
     #completewith DukeofCynders
     .zone Silithus >>前往 |cFFfa9602希利苏斯|r
@@ -1339,14 +1339,14 @@ step
     .collect 20407,1,8961,1 --Twilight Cultist Robe (x1)
     .collect 20406,1,8961,1 --Twilight Cultist Mantle (x1)
     .collect 20408,1,8961,1 --Twilight Cultist Cowl (x1)
-    .mob 暮光掠夺者
-    .mob 暮光掠夺者莫娜
-    .mob 暮光复仇者
-    .mob 暮光地王
-    .mob 暮光唤石者
-    .mob 暮光霸主
-    .mob 暮光烈焰掠夺者
-    .mob 暮光主宰
+    .mob Twilight Marauder
+    .mob Twilight Marauder Morna
+    .mob Twilight Avenger
+    .mob Twilight Geolord
+    .mob Twilight Stonecaller
+    .mob Twilight Overlord
+    .mob Twilight Flamereaver
+    .mob Twilight Master
 step
     .reputation 609,friendly >>获取塞纳里奥议会的友善声望
     >>|cRXP_WARN_在希利苏斯刷 |cRXP_ENEMY_暮光|r 小怪或完成塞纳里奥议会的任务来获取声望|r
@@ -1354,14 +1354,14 @@ step
     .goto Silithus,48.62,37.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_霍姆·蛮鬃|r 对话
     .accept 8331 >>接受任务 奥蕾尔·金叶
-    .target 霍姆·蛮鬃
+    .target Huum Wildmane
     .itemcount 20422,<1
 step
     .goto Silithus,51.96,38.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥蕾尔·金叶|r 对话
     .turnin 8331 >>交任务 奥蕾尔·金叶
     .accept 8332 >>接受任务 议会的公爵
-    .target 奥蕾尔·金叶
+    .target Aurel Goldleaf
     .itemcount 20422,<1
 step
     .goto Silithus,38.31,46.42
@@ -1373,21 +1373,21 @@ step
     >>|cRXP_WARN_你或队伍中的某人每次召唤|r圣殿骑士|cRXP_FRIENDLY_时，都必须穿戴一整套|r |T132658:0|t[|cRXP_WARN_暮光信徒|r] |cRXP_ENEMY_套装|r
     .collect 20513,3 --Abyssal Crest (x3)
     .itemcount 20422,<1
-    .mob 土色圣殿骑士
-    .mob 赤红圣殿骑士
-    .mob 苍白圣殿骑士
-    .mob 碧蓝圣殿骑士
+    .mob Earthen Templar
+    .mob Crimson Templar
+    .mob Hoary Templar
+    .mob Azure Templar
 step
     .goto Silithus,51.96,38.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥蕾尔·金叶|r 对话
     .turnin 8332 >>交任务 议会的公爵
-    .target 奥蕾尔·金叶
+    .target Aurel Goldleaf
     .itemcount 20513,3
 step
     .goto Silithus,51.96,38.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥蕾尔·金叶|r 对话
     .turnin 8333 >>交任务 身份勋章
-    .target 奥蕾尔·金叶
+    .target Aurel Goldleaf
     .itemcount 20513,3
 step
     #label DukeofCynders
@@ -1430,10 +1430,10 @@ step
     >>击杀 |cRXP_ENEMY_雷戈虫巢|r 小怪（精英）。拾取它们的 |cRXP_LOOT_德鲁伊的遗骸|r
     >>|cRXP_WARN_这个掉落物的掉率很低，可能会耗费不少时间。建议组一个5人小队来刷|r
     .complete 8962,1 --Druidical Remains (x1)
-    .mob 雷戈喷毒者
-    .mob 雷戈主宰
-    .mob 雷戈制奴者
-    .mob 雷戈伏击者
+    .mob Hive'Regal Spitfire
+    .mob Hive'Regal Hive Lord
+    .mob Hive'Regal Slavemaker
+    .mob Hive'Regal Ambusher
     .mob Hive'Regal Burrower
     .isOnQuest 8962
 step
@@ -1581,7 +1581,7 @@ step
     .use 22049 >>|cRXP_WARN_使用|r |T133881:0|t|T133881:0|t[召唤火盆] |cRXP_WARN_在|r |cRXP_ENEMY_指挥官沃恩的|r |cRXP_WARN_房间内召唤|r |cRXP_ENEMY_莫尔·灰蹄|r
     .complete 8966,1 --Mor Grayhoof Slain (x1)
     .complete 8966,2 --Left Piece of Lord Valthalak's Amulet (x1)
-    .mob 指挥官沃恩
+    .mob War Master Voone
     .mob Mor Grayhoof
     .isOnQuest 8966
 step
@@ -1768,10 +1768,10 @@ step
     >>击杀 |cRXP_ENEMY_雷戈虫巢|r 小怪（精英）。拾取它们的 |cRXP_LOOT_德鲁伊的遗骸|r
     >>|cRXP_WARN_这个掉落物的掉率很低，可能会耗费不少时间。建议组一个5人小队来刷|r
     .complete 8986,1 --Druidical Remains (x1)
-    .mob 雷戈喷毒者
-    .mob 雷戈主宰
-    .mob 雷戈制奴者
-    .mob 雷戈伏击者
+    .mob Hive'Regal Spitfire
+    .mob Hive'Regal Hive Lord
+    .mob Hive'Regal Slavemaker
+    .mob Hive'Regal Ambusher
     .mob Hive'Regal Burrower
     .isOnQuest 8986
 step
@@ -1919,7 +1919,7 @@ step
     .use 22049 >>|cRXP_WARN_使用|r |T133881:0|t|T133881:0|t[召唤火盆] |cRXP_WARN_在|r |cRXP_ENEMY_指挥官沃恩的|r |cRXP_WARN_房间内召唤|r |cRXP_ENEMY_莫尔·灰蹄|r
     .complete 8989,1 --Mor Grayhoof Slain (x1)
     .collect 22046,1,8989,1 --Right Piece of Lord Valthalak's Amulet (x1)
-    .mob 指挥官沃恩
+    .mob War Master Voone
     .mob Mor Grayhoof
     .isOnQuest 8989
 step
@@ -2180,7 +2180,7 @@ step << Alliance
     .accept 9004 >>接受任务 最后的奖赏 << Rogue
     .accept 9005 >>接受任务 最后的奖赏 << Warlock
     .accept 9006 >>接受任务 最后的奖赏 << Warrior
-    .target 德莉亚娜
+    .target Deliana
 step << Alliance
     .goto Ironforge,43.54,52.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德莉亚娜|r 对话
@@ -2216,7 +2216,7 @@ step << Alliance
     .turnin 9004 >>交任务 最后的奖赏 << Rogue
     .turnin 9005 >>交任务 最后的奖赏 << Warlock
     .turnin 9006 >>交任务 最后的奖赏 << Warrior
-    .target 德莉亚娜
+    .target Deliana
 step << Horde
     #completewith next
     .zone Orgrimmar >>前往|cFFfa9602奥格瑞玛|r
@@ -2232,10 +2232,10 @@ step << Horde
     .accept 9012 >>接受任务 最后的奖赏 << Warlock
     .accept 9013 >>接受任务 最后的奖赏 << Warrior
     .accept 9014 >>接受任务 最后的奖赏 << Mage
-    .target 莫克瓦尔
+    .target Mokvar
 step << Horde
     .goto Orgrimmar,34.96,38.28
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫克瓦尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_莫克瓦尔|r 对话
     >>你需要 |T133129:0|t[|cRXP_LOOT_野性之心兜帽|r] 和 |T132741:0|t[|cRXP_LOOT_野性之心外衣|r] 来完成任务 << Druid
     >>你需要 |T133126:0|t[|cRXP_LOOT_野兽追猎者之帽|r] 和 |T132625:0|t[|cRXP_LOOT_野兽追猎者外套|r] 来完成任务 <<  Hunter
     >>你需要 |T132768:0|t[|cRXP_LOOT_博学者头冠|r] 和 |T132666:0|t[|cRXP_LOOT_博学者长袍|r] 来完成任务 << Mage
@@ -2268,6 +2268,6 @@ step << Horde
     .turnin 9012 >>交任务 最后的奖赏 << Warlock
     .turnin 9013 >>交任务 最后的奖赏 << Warrior
     .turnin 9014 >>交任务 最后的奖赏 << Mage
-    .target 莫克瓦尔
+    .target Mokvar
 
 ]])

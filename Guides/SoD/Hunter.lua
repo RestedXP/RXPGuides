@@ -1111,12 +1111,12 @@ RXPGuides.RegisterGuide([[
 step
     #optional
     .train 410116,1
-    +|cRXP_WARN_You must be at least level 32 before you can acquire the|r |T132147:0|t[Dual-Wield Specialization] |cRXP_WARN_rune|r
+    +|cRXP_WARN_You must be at least level 32 before you can acquire the|r |T132147:0|t[Dual Wield Specialization] |cRXP_WARN_rune|r
     .xp >32,1
 step
     .train 410116,1
     #optional
-    .train 1543 >>|cRXP_WARN_You must train|r |T135815:0|t[Flare] |cRXP_WARN_to acquire the|r |T132147:0|t[Dual-Wield Specialization] |cRXP_WARN_rune|r
+    .train 1543 >>|cRXP_WARN_You must train|r |T135815:0|t[Flare] |cRXP_WARN_to acquire the|r |T132147:0|t[Dual Wield Specialization] |cRXP_WARN_rune|r
 step
     #completewith next
     .zone Stranglethorn Vale >>Travel to Stranglethorn Vale
@@ -1142,7 +1142,7 @@ step
 step
     .itemcount 213126,1
     .use 213126
-    .train 410116 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Scrapper|r] |cRXP_WARN_to train|r |T132147:0|t[Dual-Wield Specialization]
+    .train 410116 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Scrapper|r] |cRXP_WARN_to train|r |T132147:0|t[Dual Wield Specialization]
 ]])
 
 RXPGuides.RegisterGuide([[

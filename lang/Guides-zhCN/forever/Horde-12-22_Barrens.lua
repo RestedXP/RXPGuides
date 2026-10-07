@@ -2629,7 +2629,7 @@ step
     .goto 1413/1,-2031.32,-1703.47,0
     .goto 1413/1,-2183.32,-1858.19,0
     .goto 1413/1,-2453.88,-1991.28,0
-	>>击杀|cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
+	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
     >>|cRXP_WARN_使用 |T132318:0|t [|cRXP_LOOT_拉克塔曼尼之蹄|r]以开启该任务|r
     >>|cRXP_WARN_他有 4 个刷新点（已在地图上标记）|r
     >>|cRXP_WARN_如果找不到他或无法击杀他，可以跳过此步骤。你稍后可以回来|r
@@ -2726,7 +2726,7 @@ step
     .dungeon RFC
 step << Paladin
     .goto 1456/1,253.900,-950.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Alodan|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_充满希望的阿洛丹|r 对话
     .train 1044 >>训练你的职业技能
     .target Alodan the Hopeful 
     .xp <18,1
@@ -2735,7 +2735,7 @@ step << Paladin
 step << Paladin
     #optional
     .goto 1456/1,253.900,-950.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Alodan|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_充满希望的阿洛丹|r 对话
     .train 1866 >>训练你的职业技能
     .target Alodan the Hopeful 
     .xp <20,1
@@ -3509,7 +3509,7 @@ step
     .goto 1413/1,-2031.32,-1703.47,80,0
     .goto 1413/1,-2183.32,-1858.19,80,0
     .goto 1413/1,-2453.88,-1991.28,80,0
-	>>击杀|cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
+	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
     >>|cRXP_WARN_使用 |T132318:0|t [|cRXP_LOOT_拉克塔曼尼之蹄|r]以开启该任务|r
     >>|cRXP_WARN_他有 4 个刷新点（已在地图上标记）|r
     >>|cRXP_WARN_如果找不到他，请跳过此步骤|r
@@ -3525,7 +3525,7 @@ step
     .goto 1413/1,-2346.200,-1788.600,50,0
     .goto 1413/1,-2458.300,-1824.400,50,0
     .goto 1413/1,-2381.000,-2061.000,50,0
-    >>杀死 |cRXP_ENEMY_Razormane Raiders|r。拾取他们的战利品 |cRXP_LOOT_Olgra's Adornments|r
+    >>击杀 |cRXP_ENEMY_钢鬃掠夺者|r。拾取他们的 |cRXP_LOOT_奥格拉的饰物|r
     .complete 95774,1 --|4/4 Olgra's Adornments
     .mob Razormane Raider
 step
@@ -3761,8 +3761,8 @@ step
     .goto 1413/1,-3951.600,-1093.500
     .goto 1413/1,-4012.800,-1081.800
     .goto 1413/1,-3973.000,-1028.700
-    >>击杀棘齿城附近海中的 |cRXP_PICK_Bruuz|r（20级精英）
-    >>|cRXP_WARN_这很难!如果可能的话请组队|r
+    >>击杀棘齿城附近海中的 |cRXP_PICK_布鲁兹|r（20级精英怪）
+    >>|cRXP_WARN_这个任务很难！如果可能的话请组队|r
     >>|cRXP_WARN_可以通过风筝术将其引导至棘齿城守卫处来单独完成，他们会帮助，但要确保至少造成50%伤害!|r
     .complete 92706,1 --Kill Bruuz
     .isOnQuest 92706

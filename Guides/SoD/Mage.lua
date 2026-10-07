@@ -1577,7 +1577,7 @@ step
     .accept 79094 >>Turn in The Lessons of Ta'zo
     .accept 79095 >>Turn in The Apothecary's Metaphysical Primer
     .accept 79096 >>Turn in Ataeric: On Arcane Curiosities
-    .accept 79097 >>Turn in Ataeric: Baxtan: On Destructive Magics
+    .accept 79097 >>Turn in Baxtan: On Destructive Magics
     .accept 79535 >>Turn in Basilisks: Should Petrification be Feared?
     .accept 79947 >>Turn in Geomancy: The Stone-Cold Truth
     .accept 79948 >>Turn in Defensive Magics 101
@@ -2001,7 +2001,7 @@ step
     .accept 79094 >>Turn in The Lessons of Ta'zo
     .accept 79095 >>Turn in The Apothecary's Metaphysical Primer
     .accept 79096 >>Turn in Ataeric: On Arcane Curiosities
-    .accept 79097 >>Turn in Ataeric: Baxtan: On Destructive Magics
+    .accept 79097 >>Turn in Baxtan: On Destructive Magics
     .accept 79535 >>Turn in Basilisks: Should Petrification be Feared?
     .accept 79947 >>Turn in Geomancy: The Stone-Cold Truth
     .accept 79948 >>Turn in Defensive Magics 101

@@ -2481,7 +2481,7 @@ step
     .mob 雷角蜥蜴
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_刺背野猪人|r。拾取它们的 |cRXP_LOOT_刺背野猪人的獠牙|r。保留你获得的 |T134128:0|t[|cRXP_LOOT_血岩碎片|r]
+    >>击杀|cRXP_ENEMY_刚鬃野猪人|r，拾取它们的|cRXP_LOOT_冰寒獠牙|r。保留你获得的|T134128:0|t[|cRXP_LOOT_血石碎片|r]
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob 刺背寻水者
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
@@ -2538,7 +2538,7 @@ step
     .goto The Barrens,52.41,53.07,60,0
     .goto The Barrens,52.32,53.71,60,0
     .goto The Barrens,51.39,54.22,60,0
-    >>击杀 |cRXP_ENEMY_刺背野猪人|r。拾取它们的 |cRXP_LOOT_刺背野猪人的獠牙|r。保留你获得的 |T134128:0|t[|cRXP_LOOT_血岩碎片|r]
+    >>击杀|cRXP_ENEMY_刚鬃野猪人|r，拾取它们的|cRXP_LOOT_冰寒獠牙|r。保留你获得的|T134128:0|t[|cRXP_LOOT_血石碎片|r]
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob 刺背寻水者
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
@@ -3118,7 +3118,7 @@ step << !Shaman
     .subzoneskip 380,1
 step
     .goto The Barrens,44.55,59.27
-    >>击杀 |cRXP_ENEMY_刺背野猪人|r。拾取它们的 |T134128:0|t[|cRXP_LOOT_血岩碎片|r
+    >>击杀 |cRXP_ENEMY_刺背野猪人|r。并拾取它们的 |T134128:0|t[|cRXP_LOOT_血岩碎片|r
     .collect 5075,1,5052,1 --Blood Shard (1)
     .mob 刺背寻水者
     .mob 刺背织棘者
@@ -4610,7 +4610,7 @@ step
 step
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_耶努萨克雷|r 对话
-    .turnin 6563 >>交任务阿库麦尔的精华
+    .turnin 6563 >>交任务  阿库麦尔的精华
     .turnin 6564 >>交任务  上古之神的仆从
     .target 耶努萨克雷
     .group

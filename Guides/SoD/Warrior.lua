@@ -636,7 +636,7 @@ step << Undead
 step
     #season 2
     .goto Tirisfal Glades,24.60,59.45
-    >>Loot the |cRXP_PICK_Lost Stache|r inside the cave for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    >>Loot the |cRXP_PICK_Lost Stash|r inside the cave for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
     .collect 204806,1 --Rune of Victory Rush (1)
     .train 403470,1
 step
@@ -1689,11 +1689,11 @@ step
     .collect 220914,1 --Broken Geode Hammer
     .train 427084,1
 step
-    >>Right click on the |T133054:0|t|cRXP_LOOT_Broken Geode Hammer|r to loot it for |T134419:0|t[|cRXP_FRIENDLY_Rune of the Demolition|r]
-    .collect 220913,1 --Rune of the Demolition
+    >>Right click on the |T133054:0|t|cRXP_LOOT_Broken Geode Hammer|r to loot it for |T134419:0|t[|cRXP_FRIENDLY_Rune of Demolition|r]
+    .collect 220913,1 --Rune of Demolition
     .train 427084,1
 step
-    .train 427084 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Demolition|r] |cRXP_WARN_to learn|r |T132364:0|t[Wrecking Crew]
+    .train 427084 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Demolition|r] |cRXP_WARN_to learn|r |T132364:0|t[Wrecking Crew]
     .use 220913
 ]])
 
@@ -1711,7 +1711,7 @@ step
 step
     #sticky
     #completewith summonIodax
-    >>|cRXP_WARN_To complete this quest you will need to summon and kill a lvl 50 elite golem with around 12k hp. It's possible to solo however I'd recommend finding a group. In order to summon the golem you need to colect 4 parts from the Slag Pits in Searing Gorge. However you don't need to collect them if you can find someone else to summon the boss for you. In that case you can skip straight to step 13|r
+    >>|cRXP_WARN_To complete this quest you will need to summon and kill a lvl 50 elite golem with around 12k hp. It's possible to solo however I'd recommend finding a group. In order to summon the golem you need to collect 4 parts from the Slag Pits in Searing Gorge. However you don't need to collect them if you can find someone else to summon the boss for you. In that case you can skip straight to step 13|r
     .collect 221258,1 --Right Foot of the Obliterator
     .collect 221256,1 --Right Arm of the Obliterator
     .collect 221259,1 --Left Foot of the Obliterator

@@ -80,7 +80,7 @@ step
     .accept 15 >>接受任务 回音山调查行动
     .accept 3104 >>接受任务 雕文信件
 step
-    .xp 3 >>刷怪到3级
+    .xp 3 >>刷怪升到3级
 step
     .goto Elwynn Forest,47.5,36.3,40,0
     .goto Elwynn Forest,46.6,32.2,40,0
@@ -1154,7 +1154,7 @@ step
 .target 海格纳·重枪
 >>与|cRXP_FRIENDLY_海格纳·重枪|r 对话
     .turnin 5541 >>交任务 海格纳的弹药
-    .vendor >>垃圾卖店并修理装备
+    .vendor >>出售物品并修理装备
 step
     .xp 7 >>刷怪至7级
 step
@@ -1252,12 +1252,12 @@ step
 step
     .goto Dun Morogh,49.622,48.612
 .target 驾驶员迪恩·石轮
->>与 |cRXP_FRIENDLY_驾驶员迪恩·石轮|r 对话
+>>与|cRXP_FRIENDLY_驾驶员迪恩·石轮|r 对话
     .turnin 313 >>交任务 灰色洞穴
 step
     .goto Dun Morogh,49.426,48.410
 .target 驾驶员贝隆·风箱
->>与 |cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
+>>与|cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
     .turnin 320 >>交任务 艾沃沙酒
 step
     #era/som
@@ -1440,7 +1440,7 @@ step
     .turnin 419 >>交任务 失踪的驾驶员
     .accept 417 >>接受任务 驾驶员的复仇
 step
-    >>击杀癞爪。拾取它的爪子
+    >>击杀癞爪，拾取它的爪子
     .goto Dun Morogh,80.0,36.4
     .complete 417,1 --Collect Mangy Claw (x1)
 step
@@ -1536,7 +1536,7 @@ step
     .accept 418 >>接受任务 塞尔萨玛血肠
 step << Human
     #sticky
-    .abandon 1338 >>放弃任务 卡尔·雷矛的订单。这是为了解锁巡山人卡尔·雷矛的任务
+    .abandon 1338 >>放弃任务卡尔·雷矛的订单。这是为了解锁巡山人卡尔·雷矛的任务
 step
     .goto Loch Modan,34.8,48.6
     .vendor >>购买1-2个6格包来填满你的背包栏位
@@ -1569,7 +1569,7 @@ step
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step << Gnome
     .goto Loch Modan,24.1,18.2
-    .vendor >>垃圾卖店并修理装备
+    .vendor >>出售物品并修理装备
 step << Gnome
     .goto Loch Modan,24.764,18.397
 >>与|cRXP_FRIENDLY_巡山人雷矛|r 对话
@@ -1605,7 +1605,7 @@ step
     .goto Loch Modan,35.3,22.0,12,0
     .goto Loch Modan,36.4,20.7,12,0
     .goto Loch Modan,35.5,19.9,12,0
-    >>收集洞里能找到的箱子。一定要多加小心因为11级做这个任务有一定难度
+    >>收集洞里能找到的箱子，一定要多加小心因为11级做这个任务有一定难度
     >>注意，地占师会在几秒后施放可以免疫火焰的火焰结界
     .complete 307,1 --Collect Miners' Gear (x4)
 step
@@ -1633,7 +1633,7 @@ step
     .goto Loch Modan,23.3,17.9,60 >>跑回地堡，路上刷小怪
 step
     .goto Loch Modan,24.1,18.2
-    .vendor >>垃圾卖店，修理装备
+    .vendor >>出售物品并修理装备
 step
     .goto Loch Modan,24.7,18.3
 >>与|cRXP_FRIENDLY_巡山人雷矛|r 对话
@@ -1841,7 +1841,7 @@ step
     .goto Wetlands,15.1,64.0,40,0
     .goto Wetlands,12.1,60.3,40,0
     >>打开这个链接，并在另一个屏幕上跟随它。
-    >>走无伤翻山路线，从丹莫罗直接翻山前往湿地
+    >>走无伤翻山路线。从丹莫罗直接翻山前往湿地
     >>走水路的时候小心避开海里的鳄鱼
     .link https://www.youtube.com/watch?v=9afQTimaiZQ >>https://www.youtube.com/watch?v=9afQTimaiZQ >> 点击此处查看参考视频
     .goto Wetlands,12.1,60.3,80 >>前往米奈希尔港，湿地

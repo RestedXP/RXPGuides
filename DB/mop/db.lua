@@ -918,7 +918,7 @@ addon.mapId = {
 
 
 addon.mapConversion = addon.mapConversion or {
-    ["870"] = 1064--Isle of thunder map ID changed in 5.4
+    [870] = 1064,--Isle of thunder map ID changed in 5.4
 }
 
 

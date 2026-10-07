@@ -3940,7 +3940,7 @@ step
     .target Earthseer Farsen
 step
     .isOnQuest 96392
-    .aura -1293681 >>|cRXP_WARN_按ESC取消远视|r
+    .aura -1293681 >>|cRXP_WARN_按ESC键取消远视|r
 step << skip
     .goto 1426/0,-1394.24,-5797.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Earthseer Farsen|r 对话
@@ -3951,7 +3951,7 @@ step << skip
 step
     .goto 1426/0,-1394.24,-5797.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Earthseer Farsen|r 对话
-    >>|cRXP_WARN_按ESC取消远视|r
+    >>|cRXP_WARN_按ESC键取消远视|r
     .turnin 96392 >>交任务 Farsen's Watch
     .accept 96390 >>接受任务 防患于未然
     .target Earthseer Farsen
@@ -4848,17 +4848,17 @@ step << Rogue
 --Hunter going Darkshore, rest Westfall
 step << Hunter
     .goto 1453/0,765.700,-8804.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯瑟琳·利兰|r 对话
-    >>|cRXP_BUY_购买一个|r |T134335:0|t[闪光的小珠] |cRXP_BUY_和三个|r |T134324:0|t[Nightcrawlers] |cRXP_BUY_从她购买。这是为了一个900xp任务|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_凯瑟琳·利兰|r 对话
+    >>|cRXP_BUY_从她那里购买一个|r |T134335:0|t[闪光的小珠] |cRXP_BUY_和三个|r |T134324:0|t[夜色虫] |cRXP_BUY_这是一个900点经验值的任务|r
     .collect 6529,1,95065,1 --|1/1 Shiny Bauble
     .collect 6530,3,95065,1 --|3/3 Nightcrawlers
     .target Catherine Leland
 step << Hunter
     .goto 1453/0,1269.100,-8540.601
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Gilbert Gray::267118|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉尔伯特·格雷::267118|r 对话
     .target Gilbert Gray::267118
-    .accept 95065 >>接受任务 Fishin' 时间
-    .turnin 95065 >>交任务 Fishin' 时间
+    .accept 95065 >>接受任务 钓鱼时间
+    .turnin 95065 >>交任务 钓鱼时间
 step << Hunter
     #optional
     #requires DockTravel

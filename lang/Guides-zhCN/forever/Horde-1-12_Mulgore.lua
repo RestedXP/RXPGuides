@@ -708,7 +708,7 @@ step
     .complete 766,4 --Swoop Gizzard (1)
 step << Tauren
     #completewith Ambercorns
-    >>击杀 |cRXP_ENEMY_Prairie 骑乘用狼|r。拾取它们的 |cRXP_LOOT_Paws|r
+    >>击杀 |cRXP_ENEMY_草原狼|r。拾取它们的 |cRXP_LOOT_草原狼的爪子|r
     >>击杀 |cRXP_ENEMY_成年平原陆行鸟|r。拾取它们掉落的 |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] 和 |cRXP_LOOT_陆行鸟的爪子|r
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob 草原狼
@@ -754,7 +754,7 @@ step << Tauren
 	.goto 1412/1,-448.91,-2650.89,50,0--c:Mulgore,48.60,69.43
 	.goto 1412/1,-314.31,-2660.14,50,0--c:Mulgore,45.98,69.70
 	.goto 1412/1,-447.88,-2580.34,50,0--c:Mulgore,48.58,67.37
-    >>击杀 |cRXP_ENEMY_Prairie 骑乘用狼|r。拾取它们的 |cRXP_LOOT_Paws|r
+    >>击杀 |cRXP_ENEMY_草原狼|r。拾取它们的 |cRXP_LOOT_草原狼的爪子|r
     >>击杀 |cRXP_ENEMY_成年平原陆行鸟|r。拾取它们掉落的 |T134028:0|t[|cRXP_LOOT_鲜嫩的陆行鸟肉|r] 和 |cRXP_LOOT_陆行鸟的爪子|r
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob 草原狼
