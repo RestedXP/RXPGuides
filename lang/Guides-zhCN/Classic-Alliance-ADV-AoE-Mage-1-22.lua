@@ -220,7 +220,7 @@ step
     #completewith RedBurlapBandana
     .goto Elwynn Forest,52.55,48.79,0
     .goto Elwynn Forest,55.43,45.87,0
-    >>击杀|cRXP_ENEMY_迪菲亚暴徒|r，并从他们身上拾取|T134939:0|t|T134939:0|t|cRXP_LOOT_[法术笔记：NNGABIIHGQSU]|r
+    >>击杀|cRXP_ENEMY_迪菲亚暴徒|r。拾取他们的|T134939:0|t|cRXP_LOOT_[法术笔记：NNGABIIHGQSU]|r
     >>|cRXP_WARN_注意：你无法在此处学习|r |T133816:0|t[铭刻手套 - 冰枪术] |cRXP_WARN_，因为你只能在种族出生区域获得|r |T133736:0|t[理解入门] |cRXP_WARN_|r << !Human
     .collect 203751,1,77620,1 -- Spell Notes: CALE ENCI (1)
     .mob 迪菲亚暴徒
@@ -266,7 +266,7 @@ step
     .goto Elwynn Forest,55.09,49.00,50,0
     .goto Elwynn Forest,55.43,45.87,50,0
     .goto Elwynn Forest,53.86,47.05,50,0
-    >>击杀|cRXP_ENEMY_迪菲亚暴徒|r，并从他们身上拾取|T134939:0|t|T134939:0|t|cRXP_LOOT_[法术笔记：NNGABIIHGQSU]|r
+    >>击杀|cRXP_ENEMY_迪菲亚暴徒|r。拾取他们的|T134939:0|t|cRXP_LOOT_[法术笔记：NNGABIIHGQSU]|r
     >>|cRXP_WARN_注意：你无法在此处学习|r |T133816:0|t[铭刻手套 - 冰枪术] |cRXP_WARN_，因为你只能在种族出生区域获得|r |T133736:0|t[理解入门] |cRXP_WARN_|r << !Human
     .collect 203751,1,77620,1 -- Spell Notes: CALE ENCI (1)
     .mob 迪菲亚暴徒
@@ -1036,10 +1036,10 @@ step
     .goto StormwindClassic,64.49,36.75,15,0
     .goto StormwindClassic,64.97,29.32,15,0
     .goto StormwindClassic,51.89,13.19,12,0
-    .goto StormwindClassic,51.76,12.08,12 >>前往 |cRXP_FRIENDLY_格瑞曼德|r
+    .goto StormwindClassic,51.76,12.08,12 >>前往|cRXP_FRIENDLY_格瑞曼德|r
 step
     .goto StormwindClassic,51.76,12.08
-    >>与 |cRXP_FRIENDLY_格瑞曼德|r 对话
+    >>与|cRXP_FRIENDLY_格瑞曼德|r 对话
     .turnin 1097 >>交任务 艾尔默的任务
     .accept 353 >>接受任务 雷矛的包裹
     .target 格瑞曼德·艾尔默
@@ -1091,7 +1091,7 @@ step
     .goto Ironforge,55.49,47.74,10 >>前去找 |cRXP_FRIENDLY_格莱斯|r
 step
     .goto Ironforge,55.50,47.74
-    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
+    >>与|cRXP_FRIENDLY_格莱斯|r 对话
     .fp Ironforge >>获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
 step
@@ -2224,7 +2224,7 @@ step
     >>|cRXP_WARN_确保对他造成 51% 以上的伤害，以获得击杀判定|r
     .mob 冰爪熊
 step
-    >>与 |cRXP_FRIENDLY_雷杰德|r 和 |cRXP_FRIENDLY_Marleth|r 对话
+    >>与 |cRXP_FRIENDLY_雷杰德|r 和 |cRXP_FRIENDLY_马莱斯|r 对话
     .turnin 318 >>交任务 艾沃沙酒
     .accept 319 >>接受任务 艾沃沙酒
     .accept 315 >>接受任务 完美烈酒
@@ -2483,7 +2483,7 @@ step
     .mob 雪豹
     .isQuestTurnedIn 384
 step
-    >>与 |cRXP_FRIENDLY_雷杰德|r 和 |cRXP_FRIENDLY_Marleth|r 对话
+    >>与 |cRXP_FRIENDLY_雷杰德|r 和 |cRXP_FRIENDLY_马莱斯|r 对话
     .turnin 315,1 >>交任务 完美烈酒
     .accept 413 >>接受任务 微光酒
     .turnin 319 >>交任务 艾沃沙酒
@@ -2941,7 +2941,7 @@ step
     .goto Ironforge,55.49,47.74,10 >>前去找 |cRXP_FRIENDLY_格莱斯|r
 step
     .goto Ironforge,55.50,47.74
-    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
+    >>与|cRXP_FRIENDLY_格莱斯|r 对话
     .turnin 6388 >>交任务 格莱斯·瑟登
 --   .accept 6392 >>Accept Return to Brock
 -- .fly Thelsamar >> Fly to Thelsamar
@@ -3542,12 +3542,12 @@ step
     +|cRXP_WARN_开始狂按|r |T132794:0|t|T132794:0|t[造水术 等级2] |cRXP_WARN_在乘坐飞行前尽可能多地造水|r
 step << Gnome
     .goto Ironforge,55.50,47.74
-    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
+    >>与|cRXP_FRIENDLY_格莱斯|r 对话
     .accept 6392 >>接受任务 向格雷姆罗克回复
     .target 格莱斯·瑟登
 step
     .goto Ironforge,55.50,47.74
-    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
+    >>与|cRXP_FRIENDLY_格莱斯|r 对话
     .fly Thelsamar >>飞往塞尔萨玛
     .target 格莱斯·瑟登
 ]])
@@ -4110,12 +4110,12 @@ step
     +|cRXP_WARN_开始狂按|r |T132794:0|t|T132794:0|t[造水术 等级2] |cRXP_WARN_在乘坐飞行前尽可能多地造水|r
 step << Gnome
     .goto Ironforge,55.50,47.74
-    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
+    >>与|cRXP_FRIENDLY_格莱斯|r 对话
     .accept 6392 >>接受任务 向格雷姆罗克回复
     .target 格莱斯·瑟登
 step
     .goto Ironforge,55.50,47.74
-    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
+    >>与|cRXP_FRIENDLY_格莱斯|r 对话
     .fly Thelsamar >>飞往塞尔萨玛
     .target 格莱斯·瑟登
 ]])
@@ -4806,10 +4806,10 @@ step
     .target 凯德雷克·布舍尔
 step
     #completewith Bank
-    .goto Stormwind City,55.30,68.16,10 >>进入暴风城银行
+    .goto Stormwind City,55.30,68.16,10 >>进入 暴风城银行
 step
     .goto Stormwind City,57.03,72.97
-    >>与|cRXP_FRIENDLY_牛顿|r交谈
+    >>与|cRXP_FRIENDLY_牛顿|r 对话
     .bankdeposit 769,4371,730,7207,1941,1711,1478,1712,3012,1180,1181,3013,6889 >>将以下物品存入银行：
     >>|T133970:0|t[大块野猪肉]
     >>|T133024:0|t[青铜管]
@@ -5334,7 +5334,7 @@ step
     .collect 12342,1,4673,1 --Blackwood Grain Sample (1)
 step
     #completewith next
-    >>杀死 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker
 step
@@ -5360,7 +5360,7 @@ step
     .itemcount 4358,1
 step
     #completewith Talisman
-    >>杀死 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker
 step
@@ -5410,7 +5410,7 @@ step
     .goto Darkshore,52.54,25.47,60,0
     .goto Darkshore,55.21,22.89,60,0
     .goto Darkshore,54.65,21.03,60,0
-    >>杀死 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker
 step
@@ -5431,7 +5431,7 @@ step
     .goto Darkshore,52.54,25.47,60,0
     .goto Darkshore,55.21,22.89,60,0
     .goto Darkshore,54.65,21.03
-    >>杀死 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker
 step
@@ -5580,7 +5580,7 @@ step << skip
 step
     #sticky
     #label Bank2
-    >>与|cRXP_FRIENDLY_牛顿|r交谈
+    >>与|cRXP_FRIENDLY_牛顿|r 对话
     .bankdeposit 17056,5354,2592,6889 >>将以下物品存入银行：
     >>|T132917:0|t|T132917:0|t[轻羽毛]
     >>|T133469:0|t|T133469:0|t[写给德尔格伦的信]
@@ -5589,7 +5589,7 @@ step
     .target 牛顿·伯恩赛德
 step
     .goto Stormwind City,57.03,72.97
-    >>与|cRXP_FRIENDLY_牛顿|r交谈
+    >>与|cRXP_FRIENDLY_牛顿|r 对话
     .bankwithdraw 730,7207 >>从你的银行中取出以下物品： << Gnome
     .bankwithdraw 730,16115 >>从你的银行中取出以下物品： << Human
     >>|T133884:0|t[鱼人眼睛]
@@ -6236,12 +6236,12 @@ step
     .target 凯德雷克·布舍尔
 step
     #completewith Bank3
-    .goto Stormwind City,55.30,68.16,10 >>进入暴风城银行
+    .goto Stormwind City,55.30,68.16,10 >>进入 暴风城银行
 step
     #sticky
     #label Bank4
     .goto Stormwind City,57.03,72.97
-    >>与|cRXP_FRIENDLY_牛顿|r交谈
+    >>与|cRXP_FRIENDLY_牛顿|r 对话
     .bankwithdraw 769,5354,6889 >>从你的银行中取出以下物品：
     >>|T133970:0|t[大块野猪肉]
     >>|T133469:0|t|T133469:0|t[写给德尔格伦的信]
@@ -6249,7 +6249,7 @@ step
 step
     #label Bank3
     .goto Stormwind City,57.03,72.97
-    >>与|cRXP_FRIENDLY_牛顿|r交谈
+    >>与|cRXP_FRIENDLY_牛顿|r 对话
     >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
     .bankdeposit 2998,4371,1711,1478,1712,3012,1180,1181,3013,17056,2592,2998,1941 >>将以下物品存入银行：
     >>|T133024:0|t[青铜管]
@@ -6398,7 +6398,7 @@ step
    .isOnQuest 5321
 step
     #completewith next
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
    .complete 1003,1 --Grizzled Scalp (4)
    .mob Grizzled Thistle Bear
@@ -6483,7 +6483,7 @@ step
     .isOnQuest 950
 step
     #completewith next
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -6522,7 +6522,7 @@ step
     .isOnQuest 950
 step
     #completewith SeaC
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -6624,7 +6624,7 @@ step
     .use 13536
 step
     #completewith SeaCreatureGiga
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -6704,7 +6704,7 @@ step
     .use 13536
 step
     #completewith Remtravel3
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -6741,7 +6741,7 @@ step
     .mob 月夜雄虎
 step
     #completewith next
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -6809,7 +6809,7 @@ step
 step
     #completewith Onu3
     #label Scalps2
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -6858,7 +6858,7 @@ step
     .goto Darkshore,38.70,82.44,60,0
     .goto Darkshore,38.13,79.75,60,0
     .goto Darkshore,40.52,80.57
-    >>AOE |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
+    >>AOE击杀 |cRXP_ENEMY_灰鬃蓟熊|r。拾取它们的|cRXP_LOOT_灰鬃头皮|r
     >>|cRXP_ENEMY_灰鬃蓟熊|r与|cRXP_ENEMY_月夜猛虎领主|r和|cRXP_ENEMY_巨型森林行者|r共享刷新点
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -7081,12 +7081,12 @@ step
     .target 凯德雷克·布舍尔
 step
     #completewith Bank
-    .goto Stormwind City,55.30,68.16,10 >>进入暴风城银行
+    .goto Stormwind City,55.30,68.16,10 >>进入 暴风城银行
 step
     #sticky
     #label Bank1
     .goto Stormwind City,57.03,72.97
-    >>与|cRXP_FRIENDLY_牛顿|r交谈
+    >>与|cRXP_FRIENDLY_牛顿|r 对话
     .bankwithdraw 4371,1941,1711,1478,1712,3012,1180,1181,3013,2998 >>从你的银行中取出以下物品：
     >>|T133024:0|t[青铜管]
     >>|T134943:0|t|T134943:0|t[卷轴]
@@ -7096,7 +7096,7 @@ step
 step
     #label Bank
     .goto Stormwind City,57.03,72.97
-    >>与|cRXP_FRIENDLY_牛顿|r交谈
+    >>与|cRXP_FRIENDLY_牛顿|r 对话
     >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
     .bankdeposit 17056,2592,1015,4654 >>将以下物品存入银行：
     >>|T132917:0|t|T132917:0|t[轻羽毛]
@@ -7234,7 +7234,7 @@ step
     .goto Stormwind City,72.60,23.21,20,0
     .goto Stormwind City,69.78,16.58,20,0
     .goto Stormwind City,70.34,11.47,20,0
-    .goto Stormwind City,74.19,7.45,12 >>前往 |cRXP_FRIENDLY_米尔顿|r
+    .goto Stormwind City,74.19,7.45,12 >>前往|cRXP_FRIENDLY_米尔顿|r
 step
     .goto Stormwind City,74.19,7.45
     >>与|cRXP_FRIENDLY_米尔顿|r 对话
@@ -7943,7 +7943,7 @@ step
     .target Brother Paxton
 step
     #completewith CharysEnd
-    .cast 3561 >>施放 |T135763:0|t[传送：暴风城]
+    .cast 3561 >>施放|T135763:0|t[传送：暴风城]
     .zoneskip Stormwind City
 step
     #completewith CharysEnd
@@ -8094,7 +8094,7 @@ step
     #completewith next
     #label FlyMene
     .goto Ironforge,55.50,47.74
-    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
+    >>与|cRXP_FRIENDLY_格莱斯|r 对话
     .fly Menethil >>飞往米奈希尔港，湿地
     .target 格莱斯·瑟登
 step

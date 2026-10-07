@@ -12,7 +12,7 @@ RXPGuides.RegisterGuide([[
 #name 1-6级 牛头人
 #version 1
 #group RestedXP 生存指南 (部落版)
-#subgroup RXP 生存指南 1-20级
+#subgroup RXP生存指南1-20
 #defaultfor Tauren
 #next 6-13级 牛头人
 
@@ -434,7 +434,7 @@ RXPGuides.RegisterGuide([[
 #name 6-13级 牛头人
 #version 1
 #group RestedXP 生存指南 (部落版)
-#subgroup RXP 生存指南 1-20级
+#subgroup RXP生存指南1-20
 #defaultfor Tauren
 #next 13-15级 银松森林
 
@@ -1003,7 +1003,7 @@ step << Tauren
     .complete 758,1 --Cleanse the Thunderhorn Water Well (1)
 step
     .goto Mulgore,31.27,49.87
-    >>击杀 |cRXP_ENEMY_巴尔丹掘地工|r和|cRXP_ENEMY_巴尔丹鉴定官|r。拾取它们的|cRXP_LOOT_探矿者的镐|r
+    >>击杀 |cRXP_ENEMY_巴尔丹掘地工|r 和 |cRXP_ENEMY_巴尔丹鉴定官|r。拾取它们的|cRXP_LOOT_探矿者的镐|r
     .use 4702 >>|cRXP_WARN_砸碎|r |T134707:0|t[矿工锄] |cRXP_WARN_在熔炉处|r
     >>|cRXP_WARN_小心|cRXP_ENEMY_ 巴尔丹鉴定官|r 会施放|r |T135929:0|t[次级治疗术] |cRXP_WARN_(远程施法:当自身或附近生命值低于 50% 的单位时，为其恢复约 75 点生命值)|r
     .complete 746,1 --Broken Tools (5)

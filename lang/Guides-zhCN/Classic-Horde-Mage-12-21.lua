@@ -709,7 +709,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Horde Mage
-#name 17-21级 石爪山脉/荒芜之地 AoE
+#name 17-21级 石爪山脉/荒芜之地 AoE指南
 #version 1
 #group RestedXP 部落法师 AOE攻略
 #defaultfor Horde Mage

@@ -662,7 +662,7 @@ step << Mage
     .waypoint Elwynn Forest,55.09,49.00,30,0
     .waypoint Elwynn Forest,55.43,45.87,30,0
     .waypoint Elwynn Forest,53.86,47.05,30,0
-    >>击杀|cRXP_ENEMY_迪菲亚暴徒|r，并从他们身上拾取|T134939:0|t|T134939:0|t|cRXP_LOOT_[法术笔记：NNGABIIHGQSU]|r
+    >>击杀|cRXP_ENEMY_迪菲亚暴徒|r。拾取他们的|T134939:0|t|cRXP_LOOT_[法术笔记：NNGABIIHGQSU]|r
     >>|cRXP_WARN_注意：你无法在此处训练|r |T135844:0|t|T133736:0|t[冰枪术] |cRXP_WARN_，因为你只能在种族出生区域获得|r |T133736:0|t|T133736:0|t[理解入门] |cRXP_WARN_|r << !Human
     .collect 203751,1,77620,1 -- Spell Notes: CALE ENCI (1)
     .mob 迪菲亚暴徒
@@ -2263,7 +2263,7 @@ step << Paladin
 step << Paladin
     #season 2
     .goto Elwynn Forest,61.97,47.31
-    >>|cRXP_WARN_对|cRXP_FRIENDLY_受伤的冒险者|r施放|r|T135949:0|t[纯净术] |cRXP_WARN_后与他对话，即可获得|r|T134419:0|t[神盾符文]
+    >>|cRXP_WARN_对|cRXP_FRIENDLY_受伤的冒险者|r施放|r|T135949:0|t|T134419:0|t[纯净术] |cRXP_WARN_后与他对话，即可获得|r|T134419:0|t|T134419:0|t[神盾符文]
     .collect 205685,1 --Rune of Aegis (1)
     .target Wounded Adventurer
     .skipgossip
@@ -4280,7 +4280,7 @@ step << Paladin/Warrior
     .goto Ironforge,72.40,73.63
     .gossipoption 109084 >>与|cRXP_FRIENDLY_布鲁亚特|r对话以开始战斗
     >>击败|cRXP_ENEMY_布鲁阿特|r
-    >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
+    >>|cRXP_WARN_小心，他会施放|r |T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r << Paladin
     >>|cRXP_WARN_不要意外对他施放|r |T135906:0|t|T135906:0|t[力量祝福] |cRXP_WARN_ |r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r << Paladin
@@ -4297,7 +4297,7 @@ step << Paladin/Warrior
     .goto Ironforge,72.40,73.63,-1
     .goto Ironforge,72.53,76.94,-1
     >>击败|cRXP_ENEMY_布鲁阿特|r
-    >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
+    >>|cRXP_WARN_小心，他会施放|r |T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r << Paladin
     >>|cRXP_WARN_不要意外对他施放|r |T135906:0|t|T135906:0|t[力量祝福] |cRXP_WARN_ |r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r << Paladin
@@ -4318,7 +4318,7 @@ step << Paladin/Warrior
 --XX 109539 "I've taken care of Stuart. He shouldn't be a problem anymore."
 step << Paladin
     #season 2
-    .cast 402265 >>|cRXP_WARN_使用|r |T134419:0|t[责难符文] |cRXP_WARN_学习|r |T134596:0|t[铭刻裤子 - 责难]
+    .cast 402265 >>|cRXP_WARN_使用|r |T134419:0|t|T134596:0|t责难符文 |cRXP_WARN_学习|r |T134596:0|t|T134596:0|t[铭刻护腿 - 责难]
     .use 205683
     .itemcount 205683,1 --Rune of Rebuke (1)
     .train 425621,1

@@ -2654,7 +2654,7 @@ step << Druid/Mage
 step << Druid/Mage
     #season 2
     .goto The Barrens,52.7,41.8
-    >>打开一个|cRXP_PICK_科卡尔的战利品|r 箱子以获取|T132942:0|t[|cRXP_FRIENDLY_野性神像|r] << Druid
+    >>打开一个|cRXP_PICK_科卡尔战利品|r箱子，获取|T132942:0|t|T132942:0|t[|cRXP_FRIENDLY_野性神像|r] << Druid
     >>打开一个|cRXP_PICK_科尔卡宝藏|r箱子，获取|T134939:0|t|T134939:0|t[|cRXP_FRIENDLY_法术笔记：NIZHGAES|r] << Mage
     .collect 5020,1 --Kolkar Booty Key (1)
     .collect 208689,1 << Druid --Ferocious Idol (1)
@@ -2768,7 +2768,7 @@ step
 step << Hunter
     #season 2
     #completewith next
-    +|cRXP_WARN_你必须学会|r |T135813:0|t[献祭陷阱] |cRXP_WARN_或任何其他陷阱，才能获得该符文|r
+    +|cRXP_WARN_你需要先学会|r |T135813:0|t|T135813:0|t[献祭陷阱] |cRXP_WARN_或任何其他陷阱，才能获得此符文|r
 step << Hunter
     #season 2
     #loop
@@ -2777,8 +2777,8 @@ step << Hunter
     .goto The Barrens,44.05,56.20,40,0
     .goto The Barrens,43.12,57.37,40,0
     .line The Barrens,44.60,55.51,44.60,55.51,43.12,57.37
-    >>在 |cRXP_ENEMY_巡游中的猎豹|r 的巡逻路线上使用 |T135813:0|t[献祭陷阱] 来移除他的buff
-    >>击杀他并拾取|T134419:0|t[|cRXP_FRIENDLY_野兽控制符文|r]
+    >>在|cRXP_ENEMY_巡逻的猎豹|r的巡逻路径上使用|T135813:0|t|T135813:0|t[献祭陷阱]，以移除其增益效果
+    >>击杀他并拾取|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_野兽控制符文|r]
     .collect 208701,1 --Rune of Beast Mastery (1)
     .mob Patrolling Cheetah
     .train 410110,1
@@ -3053,7 +3053,7 @@ step
 step << Druid
     #season 2
     .goto The Barrens,48.32,40.25
-    >>打开地上的|cRXP_PICK_空荡荡的钳嘴龟的巢|r 以获得|T134419:0|t[|cRXP_FRIENDLY_割伤符文|r]
+    >>打开地上的|cRXP_PICK_空空的钳爪巢穴|r获取|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_割伤符文|r]
     .collect 208687,1 --Unbalanced Idol (1)
     .train 416049,1
 step << Druid
@@ -3909,7 +3909,7 @@ step
     .use 210824 << Warlock
     .use 210653 << Rogue
     .use 210823 << Shaman
-    .train 415995 >>|cRXP_WARN_购买并使用|r |T135791:0|t[|cRXP_FRIENDLY_祥和顿悟|r] |cRXP_WARN_来训练|r |T237549:0|t[妙手回春] << Priest
+    .train 415995 >>|cRXP_WARN_购买并使用|r |T135791:0|t[|cRXP_FRIENDLY_祥和顿悟|r] |cRXP_WARN_来训练|r |T237549:0|t[瑟兰蒂缇] << Priest
     .train 410010 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_牺牲符文|r] |cRXP_WARN_来训练|r |T134596:0|t[铭刻裤子 - 神圣牺牲] << Paladin
     .train 401761 >>|cRXP_WARN_购买并使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：时光倒转|r] |cRXP_WARN_来训练|r |T237538:0|t[时光倒转] << Mage
     .train 410122 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T132266:0|t[|cRXP_FRIENDLY_独来独往符文|r] |cRXP_WARN_来学习|r |T132266:0|t|T132266:0|t[独来独往] << Hunter
@@ -7001,7 +7001,7 @@ step << Warlock
     #completewith BarrensEnd
     #label ExplorerImp
     >>在任务过程中，对怪物施放 |T136163:0|t|cRXP_FRIENDLY_[吸取灵魂]|r 直到获得一个 |T133257:0|t|cRXP_LOOT_探险之魂|r。|cRXP_WARN_使用它来学习如何召唤|r |T236294:0|t|cRXP_FRIENDLY_[探险小鬼]|r
-    .train 445459 >>|cRXP_WARN_使用|r |T133257:0|t|T236294:0|t|cRXP_LOOT_探险之魂|r |cRXP_WARN_学习如何召唤|r |T236294:0|t|T236294:0|t[|cRXP_FRIENDLY_探险小鬼|r]
+    .train 445459 >>|cRXP_WARN_使用|r |T133257:0|t|cRXP_LOOT_探险之魂|r |cRXP_WARN_学习如何召唤|r |T236294:0|t[|cRXP_FRIENDLY_探险小鬼|r]
     .train 445459,1 --Skips if you already have Explorer Imp
     .train 1120,3 --Skips if you don't have drain soul
     .use 221978
@@ -9716,7 +9716,7 @@ step
     .use 210824 << Warlock
     .use 210653 << Rogue
     .use 210823 << Shaman
-    .train 415995 >>|cRXP_WARN_购买并使用|r |T135791:0|t[|cRXP_FRIENDLY_祥和顿悟|r] |cRXP_WARN_来训练|r |T237549:0|t[妙手回春] << Priest
+    .train 415995 >>|cRXP_WARN_购买并使用|r |T135791:0|t[|cRXP_FRIENDLY_祥和顿悟|r] |cRXP_WARN_来训练|r |T237549:0|t[瑟兰蒂缇] << Priest
     .train 410010 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_牺牲符文|r] |cRXP_WARN_来训练|r |T134596:0|t[铭刻裤子 - 神圣牺牲] << Paladin
     .train 401761 >>|cRXP_WARN_购买并使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：时光倒转|r] |cRXP_WARN_来训练|r |T237538:0|t[时光倒转] << Mage
     .train 410122 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T132266:0|t[|cRXP_FRIENDLY_独来独往符文|r] |cRXP_WARN_来学习|r |T132266:0|t|T132266:0|t[独来独往] << Hunter
@@ -9903,7 +9903,7 @@ step << Druid
 step << Druid
     #season 2
     .goto The Barrens,52.7,41.8
-    >>打开一个|cRXP_PICK_科卡尔的战利品|r 箱子以获取|T132942:0|t[|cRXP_FRIENDLY_野性神像|r]
+    >>打开一个|cRXP_PICK_科卡尔战利品|r箱子，获取|T132942:0|t|T132942:0|t[|cRXP_FRIENDLY_野性神像|r]
     .collect 5020,1 --Kolkar Booty Key (1)
     .collect 208689,1 --Ferocious Idol (1)
     .itemcount 208689,<1,1
@@ -10005,7 +10005,7 @@ step
 step << Hunter
     #season 2
     #completewith next
-    +|cRXP_WARN_你必须学会|r |T135813:0|t[献祭陷阱] |cRXP_WARN_或任何其他陷阱，才能获得该符文|r
+    +|cRXP_WARN_你需要先学会|r |T135813:0|t|T135813:0|t[献祭陷阱] |cRXP_WARN_或任何其他陷阱，才能获得此符文|r
 step << Hunter
     #season 2
     #loop
@@ -10014,8 +10014,8 @@ step << Hunter
     .goto The Barrens,44.05,56.20,40,0
     .goto The Barrens,43.12,57.37,40,0
     .line The Barrens,44.60,55.51,44.60,55.51,43.12,57.37
-    >>在 |cRXP_ENEMY_巡游中的猎豹|r 的巡逻路线上使用 |T135813:0|t[献祭陷阱] 来移除他的buff
-    >>击杀他并拾取|T134419:0|t[|cRXP_FRIENDLY_野兽控制符文|r]
+    >>在|cRXP_ENEMY_巡逻的猎豹|r的巡逻路径上使用|T135813:0|t|T135813:0|t[献祭陷阱]，以移除其增益效果
+    >>击杀他并拾取|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_野兽控制符文|r]
     .collect 208701,1 --Rune of Beast Mastery (1)
     .mob Patrolling Cheetah
     .train 410110,1
@@ -10228,7 +10228,7 @@ step
 step << Druid
     #season 2
     .goto The Barrens,48.32,40.25
-    >>打开地上的|cRXP_PICK_空荡荡的钳嘴龟的巢|r 以获得|T134419:0|t[|cRXP_FRIENDLY_割伤符文|r]
+    >>打开地上的|cRXP_PICK_空空的钳爪巢穴|r获取|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_割伤符文|r]
     .collect 208687,1 --Unbalanced Idol (1)
     .train 416049,1
 step << Druid
@@ -10997,7 +10997,7 @@ step << Warlock
     #completewith CounterattackTurnin3
     #label ExplorerImp
     >>在任务过程中，对怪物施放 |T136163:0|t|cRXP_FRIENDLY_[吸取灵魂]|r 直到获得一个 |T133257:0|t|cRXP_LOOT_探险之魂|r。|cRXP_WARN_使用它来学习如何召唤|r |T236294:0|t|cRXP_FRIENDLY_[探险小鬼]|r
-    .train 445459 >>|cRXP_WARN_使用|r |T133257:0|t|T236294:0|t|cRXP_LOOT_探险之魂|r |cRXP_WARN_学习如何召唤|r |T236294:0|t|T236294:0|t[|cRXP_FRIENDLY_探险小鬼|r]
+    .train 445459 >>|cRXP_WARN_使用|r |T133257:0|t|cRXP_LOOT_探险之魂|r |cRXP_WARN_学习如何召唤|r |T236294:0|t[|cRXP_FRIENDLY_探险小鬼|r]
     .train 445459,1 --Skips if you already have Explorer Imp
     .train 1120,3 --Skips if you don't have drain soul
     .use 221978
@@ -11254,7 +11254,7 @@ step
     .use 210824 << Warlock
     .use 210653 << Rogue
     .use 210823 << Shaman
-    .train 415995 >>|cRXP_WARN_购买并使用|r |T135791:0|t[|cRXP_FRIENDLY_祥和顿悟|r] |cRXP_WARN_来训练|r |T237549:0|t[妙手回春] << Priest
+    .train 415995 >>|cRXP_WARN_购买并使用|r |T135791:0|t[|cRXP_FRIENDLY_祥和顿悟|r] |cRXP_WARN_来训练|r |T237549:0|t[瑟兰蒂缇] << Priest
     .train 410010 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_牺牲符文|r] |cRXP_WARN_来训练|r |T134596:0|t[铭刻裤子 - 神圣牺牲] << Paladin
     .train 401761 >>|cRXP_WARN_购买并使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：时光倒转|r] |cRXP_WARN_来训练|r |T237538:0|t[时光倒转] << Mage
     .train 410122 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T132266:0|t[|cRXP_FRIENDLY_独来独往符文|r] |cRXP_WARN_来学习|r |T132266:0|t|T132266:0|t[独来独往] << Hunter

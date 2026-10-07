@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #name 18-19级 洛克莫丹
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP 生存指南 1-20级
+#subgroup RXP生存指南1-20
 #next 19-20级 赤脊山
 
 

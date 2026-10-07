@@ -2750,7 +2750,7 @@ step << Mage
 step << Mage
     .goto Undercity,85.12,10.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_安娜斯塔西娅|r 对话
-    .turnin 1881 >>交任务 与安娜斯塔西娅交谈
+    .turnin 1881 >>交任务 安娜斯塔西娅
     .accept 1882 >>接受任务 巴尼尔农场
     .target 安娜斯塔西娅·哈特威尔
 step
@@ -3308,7 +3308,7 @@ step << Warrior
     #season 2
     .goto Tirisfal Glades,61.72,51.91
     >>击杀 |cRXP_ENEMY_蓝心|r，然后与楼上的 |cRXP_FRIENDLY_本尼|r 对话
-    .gossipoption 110751 >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    .gossipoption 110751 >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .mob Blueheart
@@ -8761,7 +8761,7 @@ step << skip
 step << skip
     .goto Undercity,85.12,10.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_安娜斯塔西娅|r 对话
-    .turnin 1881 >>交任务 与安娜斯塔西娅交谈
+    .turnin 1881 >>交任务 安娜斯塔西娅
     .accept 1882 >>接受任务 巴尼尔农场
     .target 安娜斯塔西娅·哈特威尔
 step
@@ -9512,7 +9512,7 @@ step << Warrior
     #season 2
     .goto Tirisfal Glades,61.72,51.91
     >>击杀 |cRXP_ENEMY_蓝心|r，然后与楼上的 |cRXP_FRIENDLY_本尼|r 对话
-    .gossipoption 110751 >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    .gossipoption 110751 >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .mob Blueheart

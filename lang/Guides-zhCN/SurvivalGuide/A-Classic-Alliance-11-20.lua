@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 #name 13-15级 西部荒野
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP 生存指南 1-20级
+#subgroup RXP生存指南1-20
 #defaultfor Human/Gnome/Dwarf/NightElf
 #next 15-18级 黑海岸
 
@@ -546,7 +546,7 @@ RXPGuides.RegisterGuide([[
 #name 15-18级 黑海岸
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP 生存指南 1-20级
+#subgroup RXP生存指南1-20
 --#defaultfor !NightElf
 #next 18-19级 洛克莫丹
 
@@ -1655,7 +1655,7 @@ RXPGuides.RegisterGuide([[
 #name 20-21级 黑海岸/灰谷
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP 生存指南 1-20级
+#subgroup RXP生存指南1-20
 #next 21-23级 石爪山 / 灰谷
 
 step << Druid
@@ -2122,7 +2122,7 @@ step
 .dungeon WC
     #completewith TravelRatchet
     .goto Ashenvale,20.31,42.33,0
-    .zone The Barrens >>在寻找哀嚎洞穴 队伍的同时，刷 |cRXP_ENEMY_咸水嘴鱼人|r。它们的位置已标记在你的地图上
+    .zone The Barrens >>在寻找哀嚎洞穴队伍的同时，刷|cRXP_ENEMY_咸水嘴鱼人|r。它们的位置已标记在你的地图上
 	.mob 盐沫战士
 	.mob 盐沫泥浆鱼人
 	.mob 盐沫智者

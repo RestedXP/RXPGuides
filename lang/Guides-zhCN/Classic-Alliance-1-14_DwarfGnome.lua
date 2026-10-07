@@ -2398,7 +2398,7 @@ step << Hunter
     #sticky
     #label Marksmanship1
     .goto Dun Morogh,28.852,49.859
-    >>对|cRXP_ENEMY_沙沙作响的灌木丛|r施放|T132212:0|t|T132212:0|t[猎人印记]
+    >>对|cRXP_ENEMY_沙沙作响的灌木丛|r施放|T132212:0|t[猎人印记]
     >>杀死刷新的 |cRXP_ENEMY_钢鬃偷猎者|r。拾取他的 |T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
     .collect 206155,1 --Rune of Marksmanship (1)
     .mob Rustling Bush
@@ -4420,7 +4420,7 @@ step << Paladin
     .goto Ironforge,72.40,73.63
     .gossipoption 109084 >>与|cRXP_FRIENDLY_布鲁亚特|r对话以开始战斗
     >>击败|cRXP_ENEMY_布鲁阿特|r
-    >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
+    >>|cRXP_WARN_小心，他会施放|r |T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r
     >>|cRXP_WARN_不要意外对他施放|r |T135906:0|t|T135906:0|t[力量祝福] |cRXP_WARN_ |r
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r
@@ -4434,7 +4434,7 @@ step << Paladin
     .goto Ironforge,72.40,73.63,-1
     .goto Ironforge,72.53,76.94,-1
     >>击败|cRXP_ENEMY_布鲁阿特|r
-    >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
+    >>|cRXP_WARN_小心，他会施放|r |T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r
     >>|cRXP_WARN_不要意外对他施放|r |T135906:0|t|T135906:0|t[力量祝福] |cRXP_WARN_ |r
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r
@@ -4449,7 +4449,7 @@ step << Paladin
 --XX 109539 "I've taken care of Stuart. He shouldn't be a problem anymore."
 step << Paladin
     #season 2
-    .cast 402265 >>|cRXP_WARN_使用|r |T134419:0|t[责难符文] |cRXP_WARN_学习|r |T134596:0|t[铭刻裤子 - 责难]
+    .cast 402265 >>|cRXP_WARN_使用|r |T134419:0|t|T134596:0|t责难符文 |cRXP_WARN_学习|r |T134596:0|t|T134596:0|t[铭刻护腿 - 责难]
     .use 205683
     .itemcount 205683,1 --Rune of Rebuke (1)
     .train 425621,1
@@ -4520,7 +4520,7 @@ step << Warrior
     .goto Ironforge,72.40,73.63
     .gossipoption 109084 >>与|cRXP_FRIENDLY_布鲁亚特|r对话以开始战斗
     >>击败|cRXP_ENEMY_布鲁阿特|r
-    >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
+    >>|cRXP_WARN_小心，他会施放|r |T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，如果有/需要的话使用|r |T133688:0|t|T133688:0|t[绷带]|cRXP_WARN_ |r
     .mob Bruart
     .skipgossip 209004,1
@@ -4533,7 +4533,7 @@ step << Warrior
     .goto Ironforge,72.40,73.63,-1
     .goto Ironforge,72.53,76.94,-1
     >>击败|cRXP_ENEMY_布鲁阿特|r
-    >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
+    >>|cRXP_WARN_小心，他会施放|r |T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，如果有/需要的话使用|r |T133688:0|t|T133688:0|t[绷带]|cRXP_WARN_ |r
     >>|cRXP_WARN_击败|cRXP_ENEMY_布鲁阿尔特|r后：|r
     >>再次与|cRXP_FRIENDLY_布鲁克·麦须|r对话，领取|T134419:0|t|T134419:0|t[狂乱攻击符文]
@@ -4582,7 +4582,7 @@ step
     .goto Ironforge,78.00,51.40
     .subzone 2257 >>进入矿道地铁
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
     .accept 6661 >>接受任务 捕捉矿道老鼠
     .target 蒙提
 step
@@ -4591,7 +4591,7 @@ step
     .use 17117
     .mob 矿道老鼠
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
     .turnin 6661 >>交任务 捕捉矿道老鼠
     .timer 11,捕捉矿道老鼠剧情表演
     .accept 6662 >>接受任务 我的兄弟，尼普希
@@ -5260,7 +5260,7 @@ step << Paladin
     >>击败 |cRXP_ENEMY_艾达·盖尔哈特|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对她|r
     >>|cRXP_WARN_注意她的施法|r |T136197:0|t[暗影震击] |cRXP_WARN_（立即造成45点暗影伤害，消耗她75点法力值。你应尽快击杀她，让她最多只能施放3次）|r
-    >>|cRXP_WARN_击败 |cRXP_ENEMY_艾达·盖尔哈特|r 之后：|r
+    >>|cRXP_WARN_击败 |cRXP_ENEMY_艾达·盖尔哈特|r 后:|r
     >>与 |cRXP_FRIENDLY_艾达·盖尔哈特|r 再次对话以获得 |T134419:0|t[殉难符文]
     .collect 205897,1 --Rune of Martyrdom (1)
     .target Ada Gelhardt
@@ -7612,7 +7612,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话，NPC在里面
     .target 旅店老板贝尔姆
     .goto Dun Morogh,47.377,52.523
-    .home >>将你的炉石绑在卡拉诺斯
+    .home >>将你的炉石设为卡拉诺斯
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨雷克·暗岩|r 对话
     .target 萨雷克·暗岩

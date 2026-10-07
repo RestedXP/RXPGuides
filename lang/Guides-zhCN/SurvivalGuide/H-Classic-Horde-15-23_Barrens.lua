@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #name 15-19级 贫瘠之地
 #version 1
 #group RestedXP 生存指南 (部落版)
-#subgroup RXP 生存指南 1-20级
+#subgroup RXP生存指南1-20
 #next 19-23级 石爪山脉/贫瘠之地/灰谷
 
 
@@ -2117,7 +2117,7 @@ RXPGuides.RegisterGuide([[
 #name 19-23级 石爪山脉/贫瘠之地/灰谷
 #version 1
 #group RestedXP 生存指南 (部落版)
-#subgroup RXP 生存指南 1-20级
+#subgroup RXP生存指南1-20
 #next 23-25 希尔斯布莱德
 
 step

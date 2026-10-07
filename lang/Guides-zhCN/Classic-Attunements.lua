@@ -164,7 +164,7 @@ step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,84.744,69.015
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克斯韦尔元帅|r 对话
-    >>|cRXP_WARN_任务链将在此处中断，直到你在黑石深渊中找到|r|T134331:0|t[弄皱的便笺] |cRXP_WARN_|r
+    >>|cRXP_WARN_直到你在黑石深渊里找到|r |T134331:0|t|T134331:0|t[弄皱的便笺] |cRXP_WARN_该任务链将在此中断|r
     .turnin 4242 >>交任务 被遗弃的希望
     .target 麦克斯韦尔元帅
 step
@@ -194,13 +194,13 @@ step
     .accept 4282 >>接受任务 一丝希望
 step
     .isOnQuest 4282
-    >>击杀 |cRXP_ENEMY_安格弗将军|r 和 |cRXP_ENEMY_傀儡统帅阿格曼奇|r。拾取他们的 |cRXP_LOOT_温德索尔元帅遗失的情报|r
+    >>击杀 |cRXP_ENEMY_安格弗将军|r 和 |cRXP_ENEMY_傀儡统帅阿格曼奇|r。从他们身上拾取 |cRXP_LOOT_温德索尔元帅遗失的情报|r
     .complete 4282,1 -- Marshal Windsor's Lost Information (1)
     .complete 4282,2 -- Marshal Windsor's Lost Information (1)
 step
     .isQuestTurnedIn 4264
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_温德索尔元帅|r 对话
-    >>|cRXP_WARN_确保所有队友在这一步都关闭了自动接取任务！RestedXP 已在此步骤默认关闭自动接取|r
+    >>|cRXP_WARN_确保所有队友在这一步都关闭了自动接取任务！RestedXP已在这一步默认关闭自动接取|r
     >>|cRXP_WARN_接受任务之后会开启冲破牢笼的护送任务。请确保你已清理干净监狱区域的所有怪物，以便更轻松地完成护送|r |cRXP_FRIENDLY_温德索尔元帅|r
     .turnin 4282 >>交任务 一线希望
     .accept 4322,1 >>接受任务 冲破牢笼！
@@ -243,7 +243,7 @@ step
     .goto StormwindClassic,75.955,19.114,-1
     .goto StormwindClassic,76.865,20.830,-1
     >>护送 |cRXP_FRIENDLY_雷吉纳德·温德索尔|r 进入暴风要塞
-    >>在要塞内千万不要帮|cRXP_FRIENDLY_雷吉纳德·温德索尔|r打怪。如果你插手，极有可能会白送命。老实呆在箭头标记的位置，等剧情自己放完就行。这会持续几分钟
+    >>在要塞内千万不要帮|cRXP_FRIENDLY_雷吉纳德·温德索尔|r 打怪。如果你插手，极有可能会白送命。老实呆在箭头标记的位置，等剧情自己放完就行。这会持续几分钟
     .complete 6403,1 -- Reginald's March (1)
     .target Reginald Windsor
 step
@@ -526,7 +526,7 @@ step
 step
     #completewith Emberstrife1
     .goto Dustwallow Marsh,54.37,84.22
-    .subzone 2158 >>进入埃博斯塔夫的洞穴
+    .subzone 2158 >>进入埃博斯塔夫
 step
     #hardcore
     #completewith next
@@ -617,7 +617,7 @@ step
     #requires SkullofDragons
     #completewith Emberstrife2
     .goto Dustwallow Marsh,54.37,84.22
-    .subzone 2158 >>进入埃博斯塔夫的洞穴
+    .subzone 2158 >>进入埃博斯塔夫
 step
     #requires SkullofDragons
     #hardcore
@@ -659,7 +659,7 @@ step
 step
     #completewith Emberstrife3
     .goto Dustwallow Marsh,54.37,84.22
-    .subzone 2158 >>进入埃博斯塔夫的洞穴
+    .subzone 2158 >>进入埃博斯塔夫
 step
     #hardcore
     #completewith next
@@ -932,12 +932,12 @@ step
 step
     #softcore
     .goto Dustwallow Marsh,54.37,84.22
-    .subzone 2158 >>进入埃博斯塔夫的洞穴
+    .subzone 2158 >>进入埃博斯塔夫
     >>|cRXP_WARN_你需要一个至少有3名玩家的队伍才能完成接下来的部分|r
 step
     #hardcore
     .goto Dustwallow Marsh,54.37,84.22
-    .subzone 2158 >>进入埃博斯塔夫的洞穴
+    .subzone 2158 >>进入埃博斯塔夫
     >>|cRXP_WARN_你需要至少3个玩家的队伍来完成下一阶段，包括一个坦克和一个治疗者以确保安全！|r
 step
     #completewith next

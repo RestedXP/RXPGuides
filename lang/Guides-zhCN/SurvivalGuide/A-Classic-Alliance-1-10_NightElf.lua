@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #name 1-6 幽影谷
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP 生存指南 1-20级
+#subgroup RXP生存指南1-20
 #defaultfor NightElf
 #next 6-11 泰达希尔
 step << !NightElf
@@ -305,7 +305,7 @@ RXPGuides.RegisterGuide([[
 #name 6-11 泰达希尔
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP 生存指南 1-20级
+#subgroup RXP生存指南1-20
 #defaultfor NightElf
 #next 11-13级 黑海岸（暗夜精灵）
 step
@@ -798,7 +798,7 @@ step << Hunter
     #era
     #sticky
     #label xp10
-    .xp 10-2670 >>刷怪升级直到离10级还差2670经验（3830/6500）
+    .xp 10-2670 >>刷怪升级直到离10级还差2670xp（3830/6500）
     >>|cRXP_WARN_一旦你达到这个经验值临界点，就跳过鹰身人任务和护送任务，直接前往达纳苏斯。你稍后还会有机会来完成这些任务|r
 step << Hunter skip
     #era/som--xpgate

@@ -161,7 +161,7 @@ step << Warlock
     .goto Durotar,44.58,56.10,40,0
     .goto Durotar,44.27,56.59,40,0
     .goto Durotar,43.85,55.52,40,0
-    >>击杀 |cRXP_ENEMY_邪灵劣魔|r. 拾取 |cRXP_LOOT_邪灵劣魔的徽记|r
+    >>击杀 |cRXP_ENEMY_邪灵劣魔|r，拾取 |cRXP_LOOT_邪灵劣魔的徽记|r
     .complete 1485,1 --Vile Familiar Head (6)
     .mob 邪灵劣魔
 step
@@ -291,7 +291,7 @@ step << Warlock/Warrior/Shaman/Hunter
     #xprate >1.49
     #completewith Ruzan2
 	>>|cRXP_WARN_刷|cRXP_ENEMY_杂斑野猪|r。拾取它们，直到你拥有价值2个银币的垃圾物品|r << Warrior
-	>>|cRXP_WARN_刷 |cRXP_ENEMY_杂斑野猪|r。拾取它们，直到获得价值1银币75铜币的垃圾物品|r << Warlock
+	>>|cRXP_WARN_刷怪 |cRXP_ENEMY_杂斑野猪|r，拾取它们的掉落物，直到获得价值1银币75铜币的可出售物品|r << Warlock
 	>>|cRXP_WARN_刷怪 |cRXP_ENEMY_杂斑野猪|r，拾取它们的掉落物，直到获得价值1银币10铜币的可出售物品|r << Hunter
 	>>|cRXP_WARN_刷怪 |cRXP_ENEMY_杂斑野猪|r，拾取它们的掉落物，直到获得价值 1 银币的可出售物品|r << Shaman
     .mob 杂斑野猪
@@ -426,7 +426,7 @@ step << !Rogue
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cFF00FF25多克纳|r 对话
     >>|cFF0E8312从她那里购买|r |T132794:0|t[清凉的泉水] |cFF0E8312|r << !Rogue !Warrior !Hunter !Shaman
-    >>|cFF0E8312从她那里购买|r |T132382:0|t|T132382:0|t[劣质箭] |cFF0E8312|r << Hunter
+    >>|cFF0E8312从她那里购买|r |T132382:0|t[劣质箭] |cFF0E8312|r << Hunter
     >>|cRXP_WARN_保留10铜币用于学习技能|r |T135932:0|t|T135932:0|t[奥术智慧] << Mage
     .collect 159,15,6394,1 << !Rogue !Warrior !Hunter !Shaman --Refreshing Spring Water (15)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
@@ -2276,7 +2276,7 @@ step << Priest
     #season 2
     .use 205940
     .itemcount 205940,1
-    .train 425216 >>|cRXP_WARN_使用|r |T136222:0|t|T237514:0|t[|cRXP_FRIENDLY_黑暗意图的回忆|r] |cRXP_WARN_训练|r |T237514:0|t|T237514:0|t[虚空疫病]
+    .train 425216 >>|cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_黑暗意图的回忆|r] |cRXP_WARN_训练|r |T237514:0|t[虚空疫病]
 step << !Priest !Mage
     #xprate <1.5
     #optional
@@ -3622,7 +3622,7 @@ step << Warrior
     #season 2
     .goto Orgrimmar,58.52,52.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_扎姆沙|r 对话
-    >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Zamja
     .train 425447,1
@@ -4145,7 +4145,7 @@ step << Shaman
     .xp <3,1
 step << Warrior/Shaman
     .goto Mulgore,31.27,49.87
-    >>击杀 |cRXP_ENEMY_巴尔丹掘地工|r和|cRXP_ENEMY_巴尔丹鉴定官|r。拾取它们的|cRXP_LOOT_探矿者的镐|r
+    >>击杀 |cRXP_ENEMY_巴尔丹掘地工|r 和 |cRXP_ENEMY_巴尔丹鉴定官|r。拾取它们的|cRXP_LOOT_探矿者的镐|r
     .use 4702 >>在熔炉处砸碎 |T134707:0|t[锄头]
     .complete 746,1 --Broken Tools (5)
     .mob 巴尔丹掘地工
@@ -5452,7 +5452,7 @@ step
 step
     #optional
     #completewith Pumpkins
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -5521,7 +5521,7 @@ step
 step
     #optional
     #completewith next
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -5662,7 +5662,7 @@ step << Mage
 step << Mage
     .goto Undercity,85.12,10.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与魔法区的|cRXP_FRIENDLY_安娜斯塔西娅|r 对话
-    .turnin 1881 >>交任务 与安娜斯塔西娅交谈
+    .turnin 1881 >>交任务 安娜斯塔西娅
     .accept 1882 >>接受任务 巴尼尔农场
     .target 安娜斯塔西娅·哈特威尔
 step << Undead Priest
@@ -5907,7 +5907,7 @@ step << Warlock
 step
     #optional
     #completewith next
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -6032,7 +6032,7 @@ step
 step
     #optional
     #completewith RotHideGnolls
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -6279,7 +6279,7 @@ step
 step
     #optional
     #completewith HorrorsandSpirits
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -6423,7 +6423,7 @@ step << Priest
 step
     #optional
     #completewith next
-    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r。拾取它们的 |cRXP_LOOT_毛皮|r
+    >>杀死你看到的 |cRXP_ENEMY_夜行蝙蝠|r，拾取它们的 |cRXP_LOOT_毛皮|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
@@ -7390,7 +7390,7 @@ step << Warlock
     .goto Durotar,44.58,56.10,40,0
     .goto Durotar,44.27,56.59,40,0
     .goto Durotar,43.85,55.52,40,0
-    >>击杀 |cRXP_ENEMY_邪灵劣魔|r. 拾取 |cRXP_LOOT_邪灵劣魔的徽记|r
+    >>击杀 |cRXP_ENEMY_邪灵劣魔|r，拾取 |cRXP_LOOT_邪灵劣魔的徽记|r
     .complete 1485,1 --Vile Familiar Head (6)
     .mob 邪灵劣魔
 step << Hunter
@@ -7480,7 +7480,7 @@ step << Warlock/Warrior/Shaman/Hunter
     #xprate >1.49
     #completewith Ruzan2
 	>>|cRXP_WARN_刷|cRXP_ENEMY_杂斑野猪|r。拾取它们，直到你拥有价值2个银币的垃圾物品|r << Warrior
-	>>|cRXP_WARN_刷 |cRXP_ENEMY_杂斑野猪|r。拾取它们，直到获得价值1银币75铜币的垃圾物品|r << Warlock
+	>>|cRXP_WARN_刷怪 |cRXP_ENEMY_杂斑野猪|r，拾取它们的掉落物，直到获得价值1银币75铜币的可出售物品|r << Warlock
 	>>|cRXP_WARN_刷怪 |cRXP_ENEMY_杂斑野猪|r，拾取它们的掉落物，直到获得价值1银币10铜币的可出售物品|r << Hunter
 	>>|cRXP_WARN_刷怪 |cRXP_ENEMY_杂斑野猪|r，拾取它们的掉落物，直到获得价值 1 银币的可出售物品|r << Shaman
     .mob 杂斑野猪
@@ -7616,7 +7616,7 @@ step << !Rogue
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cFF00FF25多克纳|r 对话
     >>|cFF0E8312从她那里购买|r |T132794:0|t[清凉的泉水] |cFF0E8312|r << !Rogue !Warrior !Hunter !Shaman
-    >>|cFF0E8312从她那里购买|r |T132382:0|t|T132382:0|t[劣质箭] |cFF0E8312|r << Hunter
+    >>|cFF0E8312从她那里购买|r |T132382:0|t[劣质箭] |cFF0E8312|r << Hunter
     >>|cRXP_WARN_保留10铜币用于学习技能|r |T135932:0|t|T135932:0|t[奥术智慧] << Mage
     .collect 159,15,6394,1 << !Rogue !Warrior !Hunter !Shaman --Refreshing Spring Water (15)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
@@ -9148,7 +9148,7 @@ step << Priest
     #season 2
     .use 205940
     .itemcount 205940,1
-    .train 425216 >>|cRXP_WARN_使用|r |T136222:0|t|T237514:0|t[|cRXP_FRIENDLY_黑暗意图的回忆|r] |cRXP_WARN_训练|r |T237514:0|t|T237514:0|t[虚空疫病]
+    .train 425216 >>|cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_黑暗意图的回忆|r] |cRXP_WARN_训练|r |T237514:0|t[虚空疫病]
 step
     #softcore
     #completewith RazorTurnins1
@@ -10030,7 +10030,7 @@ step << Warrior
     #season 2
     .goto Orgrimmar,58.52,52.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_扎姆沙|r 对话
-    >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Zamja
     .train 425447,1
