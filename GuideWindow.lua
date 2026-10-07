@@ -1596,7 +1596,7 @@ function addon.ProcessGuideTable(guide)
     for k, v in pairs(guide) do
         if type(v) ~= "table" then
             currentGuide[k] = v
-        elseif k ~= "steps" and k ~= "tips" then
+        elseif k ~= "steps" and k ~= "tips" and k ~= "questCacheIndex" then
             currentGuide[k] = CopyTable(v)
         end
     end

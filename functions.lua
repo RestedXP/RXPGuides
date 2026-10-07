@@ -527,21 +527,31 @@ end
 
 function addon.ClearQuestCache()
     local questObjectivesCache = RXPCData.questObjectivesCache
-    if not addon.currentGuide or questObjectivesCache[0] < 100 then
-        return
-    end
+    local guide = addon.currentGuide
+    if not guide or questObjectivesCache[0] < 100 then return end
+
     local questNameCache = RXPCData.questNameCache
-    local guideQuests = {}
-    for i,step in pairs(addon.currentGuide.steps) do
-        for j,element in pairs(step.elements or {}) do
-            if element.tag == "complete" then
-                local id = element.questId
-                guideQuests[id] = bit.bor(guideQuests[id] or 0,0x1)
-            elseif element.tag == "accept" then
-                local id = element.questId
-                guideQuests[id] = bit.bor(guideQuests[id] or 0,0x2)
+    local guideQuests = guide.questCacheIndex
+
+    if not guideQuests then
+        guideQuests = {}
+        local id
+
+        for _, step in pairs(guide.steps) do
+            for _, element in pairs(step.elements or {}) do
+                if element.tag == "complete" then
+                    id = element.questId
+
+                    guideQuests[id] = bit.bor(guideQuests[id] or 0,0x1)
+                elseif element.tag == "accept" then
+                    id = element.questId
+
+                    guideQuests[id] = bit.bor(guideQuests[id] or 0,0x2)
+                end
             end
         end
+
+        guide.questCacheIndex = guideQuests
     end
 
     for id in pairs(questObjectivesCache) do
@@ -550,11 +560,13 @@ function addon.ClearQuestCache()
             questObjectivesCache[0] = questObjectivesCache[0] - 1
         end
     end
+
     for id in pairs(questNameCache) do
         if not (guideQuests[id] and guideQuests[id] > 1) then
             questNameCache[id] = nil
         end
     end
+
     return true
 end
 
