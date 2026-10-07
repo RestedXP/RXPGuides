@@ -2255,8 +2255,8 @@ step --center of first small island
     #label MartEgg
     .goto 1411/1,-5599.500,-716.700
     >>击杀 |cRXP_ENEMY_血爪族母|r。拾取它的 |cRXP_LOOT_血爪族母的蛋|r
-    .complete 97223,1 --|1/1 Bloodtalon Matriarch Eggs
-    .mob Bloodtalon Matriarch
+    .complete 97223,1 --|1/1 Bloodtalon Martriarch Eggs
+    .mob Bloodtalon Martriarch
 step
     #label MainIsland
     .goto 1411/1,-5501.95,-1167.12,150 >>游到主岛上

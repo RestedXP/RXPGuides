@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #name 1-6级 北郡
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP生存指南1-20
+#subgroup RXP 生存指南 1-20级
 #defaultfor Human
 #next 6-11级 艾尔文森林； 6-13级 艾尔文森林
 step << !Human
@@ -35,7 +35,7 @@ step << Warlock
     .goto Elwynn Forest,52.9,44.3,60,0
     .goto Elwynn Forest,56.7,44.0
     >>|cRXP_WARN_闯入迪菲亚营地里的帐篷|r
-    >>打开 |cRXP_PICK_被偷走的书|r。从中拾取 |cRXP_LOOT_虚空灵能|r
+    >>打开 |cRXP_PICK_被偷走的书|r。并从中拾取 |cRXP_LOOT_虚空灵能|r
     >>|cRXP_WARN_你可以在帐篷内安全地拾取 |cRXP_LOOT_虚空灵能|r！请观看提供的小视频，了解具体操作方法|r
     .link https://youtu.be/3qQwsJhAZIk >>https://youtu.be/3qQwsJhAZIk >> |cRXP_WARN_点击这里查看视频|r
     .complete 1598,1 --Collect Powers of the Void (x1)
@@ -65,7 +65,7 @@ step << Warrior
     .vendor >>|cRXP_WARN_出售垃圾物品|r
     .target 丹尼尔修士
     .goto Elwynn Forest,47.486,41.566
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莱尼·拜舍尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_莱尼·拜舍尔|r 对话
     .train 6673 >>学习 |T132333:0|t[战斗怒吼]
     .target 莱尼·拜舍尔
     .goto Elwynn Forest,50.242,42.287
@@ -161,7 +161,7 @@ step
     .accept 3104 >>接受任务 雕文信件 << Mage
     .accept 3105 >>接受任务 被污染的信件 << Warlock
 step
-    .xp 3 >>刷怪到3级
+    .xp 3 >>刷怪升到3级
 step
     .goto Elwynn Forest,47.2,35.1,40,0
     .goto Elwynn Forest,48.9,32.8,40,0
@@ -202,7 +202,7 @@ step << Priest
     #completewith next
     .goto Elwynn Forest,49.8,40.2,10 >>穿过门口
 step << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女牧师安妮塔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_女牧师安妮塔|r 对话
     .target 女牧师安妮塔
     .goto Elwynn Forest,49.808,39.489
     .turnin 3103 >>交任务 神圣信件
@@ -212,7 +212,7 @@ step << Warrior/Paladin
     .goto Elwynn Forest,49.6,41.8,15 >>前去找 |cRXP_FRIENDLY_莱尼·拜舍尔|r << Warrior
     .goto Elwynn Forest,49.6,41.8,15 >>前去找 |cRXP_FRIENDLY_萨缪尔修士|r << Paladin
 step << Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莱尼·拜舍尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_莱尼·拜舍尔|r 对话
     .target 莱尼·拜舍尔
     .goto Elwynn Forest,50.242,42.287
     .turnin 3100 >>交任务 简要的信件
@@ -375,7 +375,7 @@ RXPGuides.RegisterGuide([[
 #name 6-11级 艾尔文森林
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP生存指南1-20
+#subgroup RXP 生存指南 1-20级
 #defaultfor Human
 #next 11-13级 洛克莫丹
 step
@@ -864,7 +864,7 @@ step
     >>|cRXP_WARN_将小屋前的 2 个|r|cRXP_ENEMY_鱼人|r|cRXP_WARN_引到你面前，拉开距离，集中击杀其中一个。当两者同时攻击你时，使用|r |T136205:0|t[闪避]|cRXP_WARN_。这是使用|r |T133581:0|t[弹珠袋]|cRXP_WARN_的好时机。击杀一个后，拉开距离并重置另一个|r << Rogue
     >>|cRXP_WARN_拉开小屋前的 2 个|r |cRXP_ENEMY_鱼人|r|cRXP_WARN_，远离后持续对其中一个施放 |r|T136183:0|t[恐惧]|cRXP_WARN_，并尽量在两者身上保持 DoT 效果|r << Warlock
     >>|cRXP_WARN_拉小屋前的2只|r|cRXP_ENEMY_鱼人|r|cRXP_WARN_，拉开距离后快速集火秒掉一只。必要时使用|r|T135954:0|t|T133581:0|t[圣佑术]|cRXP_WARN_和治疗技能。这里很适合用|r|T133581:0|t|T133581:0|t[弹子球]|cRXP_WARN_。击杀一只后跑开脱战重置|r << Paladin
-    >>|cRXP_WARN_记住，在|r |T135954:0|t|T135954:0|t[圣佑术] |cRXP_WARN_期间你无法攻击|r << Paladin
+    >>|cRXP_WARN_记住，在|r |T135954:0|t[圣佑术] |cRXP_WARN_期间你无法攻击|r << Paladin
     .turnin 45 >>交任务 罗尔夫的下落
     .accept 71 >>接受任务 回复托马斯
 step
@@ -1769,7 +1769,7 @@ step
 step
     .goto Dun Morogh,68.614,54.643
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡杉·莫格什|r 对话
-    .vendor >>|cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_如果需要的话|r << Warrior/Rogue
+    .vendor >>|cRXP_BUY_如有需要，|r|cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包] << Warrior/Rogue
     .vendor >>|cRXP_BUY_购买|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_和|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_如果需要的话|r << !Warrior !Rogue
     .target 卡杉·莫格什
 step
@@ -1858,7 +1858,7 @@ RXPGuides.RegisterGuide([[
 #name 11-13级 洛克莫丹
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP生存指南1-20
+#subgroup RXP 生存指南 1-20级
 #defaultfor Human
 #next 13-15级 西部荒野
 

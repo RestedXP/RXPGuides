@@ -164,7 +164,7 @@ step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,84.744,69.015
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克斯韦尔元帅|r 对话
-    >>|cRXP_WARN_直到你在黑石深渊里找到|r |T134331:0|t|T134331:0|t[弄皱的便笺] |cRXP_WARN_该任务链将在此中断|r
+    >>|cRXP_WARN_直到你在黑石深渊里找到|r |T134331:0|t[弄皱的便笺] |cRXP_WARN_该任务链将在此中断|r
     .turnin 4242 >>交任务 被遗弃的希望
     .target 麦克斯韦尔元帅
 step
@@ -194,7 +194,7 @@ step
     .accept 4282 >>接受任务 一丝希望
 step
     .isOnQuest 4282
-    >>击杀 |cRXP_ENEMY_安格弗将军|r 和 |cRXP_ENEMY_傀儡统帅阿格曼奇|r。从他们身上拾取 |cRXP_LOOT_温德索尔元帅遗失的情报|r
+    >>击杀 |cRXP_ENEMY_安格弗将军|r 和 |cRXP_ENEMY_傀儡统帅阿格曼奇|r。拾取他们的 |cRXP_LOOT_温德索尔元帅遗失的情报|r
     .complete 4282,1 -- Marshal Windsor's Lost Information (1)
     .complete 4282,2 -- Marshal Windsor's Lost Information (1)
 step
@@ -285,7 +285,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈尔琳|r 对话
     .turnin 6501 >>交任务 巨龙之眼
     .accept 6502 >>接受任务 龙火护符
-    .target 哈尔琳
+    .target Haleh
 step
     #completewith next
     .subzone 254 >>前往 |cFFfa9602黑石山|r
@@ -325,7 +325,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈尔琳|r 对话
     >>|cRXP_WARN_小心|cRXP_FRIENDLY_ 哈尔琳|r 面前的蓝色圆圈。踩上去会将你传送回洞穴里|r
     .turnin 6502 >>交任务 龙火护符
-    .target 哈尔琳
+    .target Haleh
 step
     #hardcore
     .isQuestTurnedIn 6403
@@ -333,7 +333,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈尔琳|r 对话
     >>|cRXP_WARN_小心！千万不要踩到 |cRXP_FRIENDLY_哈尔琳|r 前面的蓝色圆圈。这会将你传送到洞穴，里面有精英龙，你可能会死|r
     .turnin 6502 >>交任务 龙火护符
-    .target 哈尔琳
+    .target Haleh
 
 ]])
 RXPGuides.RegisterGuide([[
@@ -353,7 +353,7 @@ step
 	>>与 |cRXP_FRIENDLY_军官高图斯|r 对话来接收 |T133473:0|t[|cRXP_LOOT_高图斯的命令|r]。使用它来接受任务
     .collect 12563,1,4903 --Warlord Goretooth's Command 1/1
     .accept 4903 >>接受任务 高图斯的命令
-    .target 军阀格鲁图尔
+    .target Warlord Goretooth
     .skipgossip 0,1,1,1,1,1
 step
     #completewith next
@@ -391,7 +391,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_军官高图斯|r 对话
     .turnin 4903 >>交任务 高图斯的命令
     .accept 4941 >>接受任务 伊崔格的智慧
-    .target 军阀格鲁图尔
+    .target Warlord Goretooth
 step
     #completewith next
     .zone Orgrimmar >>前往|cFFfa9602奥格瑞玛|r
@@ -617,7 +617,7 @@ step
     #requires SkullofDragons
     #completewith Emberstrife2
     .goto Dustwallow Marsh,54.37,84.22
-    .subzone 2158 >>进入埃博斯塔夫
+    .subzone 2158 >>进入埃博斯塔夫的洞穴
 step
     #requires SkullofDragons
     #hardcore
@@ -659,7 +659,7 @@ step
 step
     #completewith Emberstrife3
     .goto Dustwallow Marsh,54.37,84.22
-    .subzone 2158 >>进入埃博斯塔夫
+    .subzone 2158 >>进入埃博斯塔夫的洞穴
 step
     #hardcore
     #completewith next
@@ -800,7 +800,7 @@ step
     .subzone 254 >>前往 |cFFfa9602黑石山|r
 step
     .goto Eastern Kingdoms,48.41,63.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洛索斯·天痕|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_洛索斯·天痕|r 对话
     .accept 7848 >>接受任务 熔火之心的传送门
     .target Lothos Riftwaker
 step
@@ -932,12 +932,12 @@ step
 step
     #softcore
     .goto Dustwallow Marsh,54.37,84.22
-    .subzone 2158 >>进入埃博斯塔夫
+    .subzone 2158 >>进入埃博斯塔夫的洞穴
     >>|cRXP_WARN_你需要一个至少有3名玩家的队伍才能完成接下来的部分|r
 step
     #hardcore
     .goto Dustwallow Marsh,54.37,84.22
-    .subzone 2158 >>进入埃博斯塔夫
+    .subzone 2158 >>进入埃博斯塔夫的洞穴
     >>|cRXP_WARN_你需要至少3个玩家的队伍来完成下一阶段，包括一个坦克和一个治疗者以确保安全！|r
 step
     #completewith next
@@ -1005,7 +1005,7 @@ step
     >>|cRXP_WARN_此任务也可在|r |cFFfa9602暴风城|r |cRXP_WARN_或者|r |cFFfa9602达纳苏斯|r 接取
     .acceptmultiple 5091,5090,5066 >>接受任务 战斗的号角：瘟疫之地！
     .unitscan Courier Hammerfall --IF
-    .unitscan 赫拉德·月行者 --DARN
+    .unitscan Herald Moonstalker --DARN
     .unitscan Crier Goodman --SW
     .isQuestAvailable 5092
 step
@@ -1071,9 +1071,9 @@ step
     .goto Western Plaguelands,50.05,80.74,60,0
     >>击杀 |cRXP_ENEMY_骷髅剥皮者|r 和 |cRXP_ENEMY_被奴役的食尸鬼|r
     .complete 5092,1 -- Skeletal Flayer slain (10)
-    .mob +骷髅剥皮者
+    .mob +Skeletal Flayer
     .complete 5092,2 -- Slavering Ghoul slain (10)
-    .mob +被奴役的食尸鬼
+    .mob +Slavering Ghoul
 step
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官阿什拉姆·瓦罗菲斯特|r 对话
@@ -1132,8 +1132,8 @@ step
 	.goto Western Plaguelands,46.40,70.00,60,0
     >>击杀 |cRXP_ENEMY_骷髅刽子手|r 和 |cRXP_ENEMY_骷髅侍僧|r。拾取他们的 |cRXP_LOOT_骸骨碎片|r
     .complete 5537,1 -- Collect Skeletal Fragments (x15)
-    .mob 骷髅刽子手
-    .mob 骷髅侍僧
+    .mob Skeletal Executioner
+    .mob Skeletal Acolyte
 step
     .goto Western Plaguelands,42.665,83.774
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_化学家阿尔比顿|r 对话
@@ -1149,7 +1149,7 @@ step
     >>|cRXP_WARN_交任务需要支付15金钱|r
     .turnin 5538 >>交任务 昂贵的模具
     .accept 5801 >>接受任务 火羽山
-    .target 克林科·古德斯迪尔
+    .target Krinkle Goodsteel
 step
     >>|cRXP_WARN_如果你之前没有购买它们，前往任何主城的拍卖行并购买2个|r |T133221:0|t[瑟银锭]
     .collect 12359,2,5801,1 --Thorium Bar x2
@@ -1264,7 +1264,7 @@ step
     >>|cRXP_WARN_此任务也可在|r |cFFfa9602奥格瑞玛|r |cRXP_WARN_或者|r |cFFfa9602雷霆崖|r 接取
     .unitscan 公告员高拉克 --ORG
     .unitscan Harbinger Balthazadd --UC
-    .unitscan 雷霆崖信使斯塔德尔 --TB
+    .unitscan Bluff Runner Windstrider --TB
     .isQuestAvailable 5096
     --VV TODO: Patrol paths
 step
@@ -1315,7 +1315,7 @@ step
     .isOnQuest 5095
 step
 	.goto Western Plaguelands,26.55,56.18
-	>>点击 |cRXP_PICK_火岩箱|r 在火堆边
+	>>点击火堆边的 |cRXP_PICK_火岩箱|r
 	.collect 12814,1,5095,1 --Flame in a Bottle (1)
     .isOnQuest 5095
 step
@@ -1391,8 +1391,8 @@ step
 	.goto Western Plaguelands,46.40,70.00,60,0
     >>击杀 |cRXP_ENEMY_骷髅刽子手|r 和 |cRXP_ENEMY_骷髅侍僧|r。拾取他们的 |cRXP_LOOT_骸骨碎片|r
     .complete 964,1 -- Collect Skeletal Fragments (x15)
-    .mob 骷髅刽子手
-    .mob 骷髅侍僧
+    .mob Skeletal Executioner
+    .mob Skeletal Acolyte
 step
     .goto Tirisfal Glades,83.28,69.23
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪瑟斯|r 对话
@@ -1408,7 +1408,7 @@ step
     >>|cRXP_WARN_交任务需要支付15金钱|r
     .turnin 5514 >>交任务 昂贵的模具
     .accept 5802 >>接受任务 火羽山
-    .target 克林科·古德斯迪尔
+    .target Krinkle Goodsteel
 step
     >>|cRXP_WARN_如果你之前没有购买它们，前往任何主城的拍卖行并购买2个|r |T133221:0|t[瑟银锭]
     .collect 12359,2,5802,1 --Thorium Bar x2
@@ -1686,7 +1686,7 @@ step
 	.goto Winterspring,64.00,22.60,25,0
     >>击杀 |cRXP_ENEMY_狂暴枭兽|r。拾取他它们的 |T237413:0|t[|cRXP_LOOT_枭兽的松果腺|r]
     .complete 84384,1
-    .mob 狂暴 Owlbeasts
+    .mob Berserk Owlbeast
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
     #completewith next

@@ -594,7 +594,7 @@ step << Tauren
     #season 2
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈鲁特|r 对话
-    .accept 77651 >>接受任务 深入荆棘
+    .accept 77651 >>Accept 深入荆棘
     .target 哈鲁特·雷角
 step
     #season 2
@@ -1690,7 +1690,7 @@ step
     .train 427084,1
 step
     >>右键点击 |T133054:0|t|cRXP_LOOT_破损的晶体之锤|r 拾取 |T134419:0|t[|cRXP_FRIENDLY_毁灭符文|r]
-    .collect 220913,1 --Rune of Demolition
+    .collect 220913,1 --Rune of the Demolition
     .train 427084,1
 step
     .train 427084 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_毁灭符文|r] |cRXP_WARN_来学习|r |T132364:0|t[破坏能手]

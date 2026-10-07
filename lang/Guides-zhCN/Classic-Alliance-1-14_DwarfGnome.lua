@@ -14,7 +14,7 @@ RXPGuides.RegisterGuide([[
 #displayname 1-6级 寒脊山谷 << !SoD
 #displayname 1-7级 寒脊山谷 << SoD
 #next 6-11级 丹莫罗 << !Hunter
-#next 6-11级 丹莫罗 (猎人)；6-11级 丹莫罗 << Hunter
+#next 6-11 丹莫罗 (猎人)；6-11 丹莫罗 << Hunter
 #defaultfor Dwarf/Gnome
 
 step << !Gnome !Dwarf
@@ -26,7 +26,7 @@ step << Mage
 step << !Gnome Mage
     #season 2
     #completewith next
-    +在探索赛季中，作为法师你不应该在自己种族以外的新手区域开始游戏，因为你将无法在这里获得你的第一个符文（|T133816:0|t[刻印手套 - 冰枪术]）
+    +在探索赛季中，法师不应在种族初始区域之外开始游戏，因为你将无法在此处获得第一个符文（|T133816:0|t|T133816:0|t[铭刻手套 - 冰枪术]）
 step << !Warlock
     #season 2 << Warrior
     #optional
@@ -43,7 +43,7 @@ step << Warlock
 #label wlrune1
     #season 2
     .goto Dun Morogh,26.733,72.552
-    >>打开地上的|cRXP_PICK_石颌足箱|r，拾取|T134419:0|t|cRXP_LOOT_[鬼影缠身符文]|r
+    >>打开地上的|cRXP_PICK_石颌足箱|r，拾取|T134419:0|t|T134419:0|t|cRXP_LOOT_[鬼影缠身符文]|r
     .collect 205230,1 -- Rune of Haunting (1)
     .train 403919,1
 step << Warlock
@@ -220,14 +220,14 @@ step << Priest/Mage/Warlock
 step << Priest
     #season 2
     .goto Dun Morogh,26.733,72.552
-    >>打开地面上的|cRXP_PICK_石颚足箱|r，从中拾取|T136222:0|t|cRXP_LOOT_[忧虑助祭的回忆]|r
+    >>打开地面上的|cRXP_PICK_石颚足箱|r，从中拾取|T136222:0|t|T136222:0|t|cRXP_LOOT_[忧虑助祭的回忆]|r
     .collect 205951,1 -- Memory of a Troubled Acolyte (1)
     .train 402862,1
 step << Mage
     #season 2
     .goto Dun Morogh,26.733,72.552
     >>打开地上的|cRXP_PICK_石颚储物箱|r，拾取里面的|T134939:0|t|T134939:0|t|cRXP_LOOT_[法术笔记：NNGABIIHGQSU|r
-    >>|cRXP_WARN_注意：你无法在此处学习|r |T133816:0|t[铭刻手套 - 冰枪术] |cRXP_WARN_，因为你只能在种族出生区域获得|r |T133736:0|t[理解入门] |cRXP_WARN_|r << !Gnome
+    >>|cRXP_WARN_注意：你无法在此处学习|r |T133816:0|t|T133736:0|t[铭刻手套 - 冰枪术] |cRXP_WARN_，因为你只能在种族出生区域获得|r |T133736:0|t|T133736:0|t[理解入门] |cRXP_WARN_|r << !Gnome
     .collect 203751,1,77667,1 -- Spell Notes: CALE ENCI (1)
     .train 401760,1
 step << !Paladin !Hunter
@@ -574,7 +574,7 @@ step << Warlock
 step << Warlock
     #season 2
     #completewith next
-    .hs >>炉石返回安威玛尔
+    .hs >>炉石回安威玛尔
 step << Paladin/Warlock/Hunter
     #optional
     #completewith next
@@ -754,7 +754,7 @@ step << Paladin
     .waypoint 1426,22.828,76.017,55,0
     .waypoint 1426,23.497,76.707,55,0
     .waypoint 1426,24.193,77.305,55,0
-    .aura 408828 >>|cRXP_WARN_施放|r |T135959:0|t[审判] |cRXP_WARN_10次以获得|r |T136116:0|t[灵感勃发] |cRXP_WARN_增益效果|r
+    .aura 408828 >>|cRXP_WARN_施放|r |T135959:0|t|T136116:0|t[审判] |cRXP_WARN_10次以获得|r |T136116:0|t|T136116:0|t[灵感勃发] |cRXP_WARN_增益效果|r
     .itemStat 18,QUALITY,2
     .train 410002,1
 step << Paladin
@@ -762,7 +762,7 @@ step << Paladin
     #completewith Observations
     #label Libram4
     #requires Libram3
-    .cast 409920 >>|cRXP_WARN_使用|r |T134916:0|t|cRXP_LOOT_[审判圣契]|r |cRXP_WARN_学习|r |T133816:0|t[铭刻手套 - 十字军打击]
+    .cast 409920 >>|cRXP_WARN_使用|r |T134916:0|t|T133816:0|t|cRXP_LOOT_[审判圣契]|r |cRXP_WARN_学习|r |T133816:0|t|T133816:0|t[铭刻手套 - 十字军打击]
     .use 205420
     .aura -408828
     .train 410002,1
@@ -1697,7 +1697,7 @@ step << Hunter
     #season 2
     #sticky
     #label pigmeat
-    >>击杀|cRXP_ENEMY_野猪|r。拾取它们的|T134026:0|t[丹莫罗猪肉]
+    >>击杀|cRXP_ENEMY_雕像 - 野猪之王|r，拾取获得|T134026:0|t|T134026:0|t[丹莫罗猪肉]
     .collect 208192,1
     .mob 峭壁野猪
     .mob 老峭壁野猪
@@ -2398,8 +2398,8 @@ step << Hunter
     #sticky
     #label Marksmanship1
     .goto Dun Morogh,28.852,49.859
-    >>对|cRXP_ENEMY_沙沙作响的灌木丛|r施放|T132212:0|t[猎人印记]
-    >>杀死刷新的 |cRXP_ENEMY_钢鬃偷猎者|r。拾取他的 |T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
+    >>对|cRXP_ENEMY_沙沙作响的灌木丛|r施放|T132212:0|t|T132212:0|t[猎人印记]
+    >>击杀刷新的|cRXP_ENEMY_鬃毛偷猎者|r，拾取|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
     .collect 206155,1 --Rune of Marksmanship (1)
     .mob Rustling Bush
     .mob Razormane Poacher
@@ -2409,7 +2409,7 @@ step << Hunter
     #sticky
     #label Marksmanship2
     #requires Marksmanship1
-    .cast 402265 >>使用 |T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
+    .cast 402265 >>使用|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
     .use 206155
     .train 410113,1
 step << Hunter/Mage/Warrior
@@ -2425,11 +2425,11 @@ step << Hunter/Mage/Warrior
     .goto 1426,30.42,39.84,50,0
     .goto 1426,30.02,39.08,50,0
     .goto 1426,33.82,37.26,50,0
-    >>击杀 |cRXP_ENEMY_菲欧迪|r。拾取他的 |T134419:0|t|cRXP_LOOT_[爆炸射击符文]|r << Hunter
+    >>击杀|cRXP_ENEMY_菲欧迪|r，从他身上拾取|T134419:0|t|T134419:0|t|cRXP_LOOT_[爆炸射击符文]|r << Hunter
     >>击杀|cRXP_ENEMY_菲欧迪|r。从他身上拾取|T134939:0|t|T134939:0|t|cRXP_LOOT_[法术笔记：IGBHNHZNAI]|r << Mage
     >>杀死 |cRXP_ENEMY_菲欧迪|r。从他身上拾取|T134419:0|t|T134419:0|t|cRXP_LOOT_[狂怒雷霆符文]|r << Warrior
     >>|cRXP_WARN_尽管|cRXP_ENEMY_菲欧迪|r显示为精英，但其生命值、伤害和护甲数值均与普通怪物相同|r
-    >>|cRXP_WARN_小心，他会施放|r |T132337:0|t[冲锋] |cRXP_WARN_（自身瞬发：提高移动速度3秒，命中后造成35-80点近战伤害。仅可在远程距离施放）|r
+    >>|cRXP_WARN_注意他施放|r |T132337:0|t|T132337:0|t[冲锋] |cRXP_WARN_（自身 瞬发：提高移动速度3秒，命中后造成35-80点近战伤害。仅可在远程距离施放）|r
     >>|cRXP_WARN_注意：|r|T134419:0|t|T134419:0|t|cRXP_LOOT_[爆炸射击符文]|r|cRXP_WARN_也会从丹莫罗的所有稀有怪身上掉落，包括|cRXP_ENEMY_瓦加什|r、|cRXP_ENEMY_癞爪|r和|r|cRXP_ENEMY_冰须|r << Hunter
     >>|cRXP_WARN_注意：|r |T134939:0|t|T134939:0|t|cRXP_LOOT_[法术笔记：IGBHNHZNAI]|r |cRXP_WARN_也会从丹莫罗的所有稀有怪物身上掉落，包括|cRXP_ENEMY_瓦加什|r、|cRXP_ENEMY_癞爪|r和|r |cRXP_ENEMY_冰须|r << Mage
     >>|cRXP_WARN_注意：|r |T134419:0|t|T134419:0|t|cRXP_LOOT_[狂怒雷霆符文]|r |cRXP_WARN_也可从丹莫罗的所有稀有怪物身上掉落，包括|cRXP_ENEMY_瓦加什|r、|cRXP_ENEMY_癞爪|r和|r|cRXP_ENEMY_冰须|r << Warrior
@@ -2445,7 +2445,7 @@ step << Hunter
     #sticky
     #requires Fyodi1
     #label FyodiEnd
-    .train 410123 >>|cRXP_WARN_使用|r |T134419:0|t|cRXP_LOOT_[爆炸射击符文]|r |cRXP_WARN_学习|r |T133816:0|t[铭刻手套 - 爆炸射击]
+    .train 410123 >>|cRXP_WARN_使用|r |T134419:0|t|T133816:0|t|cRXP_LOOT_[爆炸射击符文]|r |cRXP_WARN_学习|r |T133816:0|t|T133816:0|t[铭刻手套 - 爆炸射击]
     .use 206169
     .itemcount 206169,1
 step << Mage
@@ -3141,7 +3141,7 @@ step << Dwarf Rogue/Gnome Rogue
     #xprate >1.59
     .goto Dun Morogh,25.164,44.460
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与飞行器港口顶部的|cRXP_FRIENDLY_奥宁·铁锤|r交谈
-    >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态
+    >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态。
     .turnin 2238 >>交任务 国王的财宝
     .accept 2239 >>接受任务 奥宁的报告
     .target Onin MacHammar
@@ -3191,7 +3191,7 @@ step << Priest
     .train 425216,1
 step << Priest
     #season 2
-    .train 425216 >>|cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_黑暗意图的回忆|r] |cRXP_WARN_训练|r |T237514:0|t[虚空疫病]
+    .train 425216 >>|cRXP_WARN_使用|r |T136222:0|t|T237514:0|t[|cRXP_FRIENDLY_黑暗意图的回忆|r] |cRXP_WARN_训练|r |T237514:0|t|T237514:0|t[虚空疫病]
     >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel以获得|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_增益效果|r
     .use 205940
 step << Rogue
@@ -4129,7 +4129,7 @@ step << Rogue
 step << Rogue
     #xprate <1.59
     #season 2
-    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_来训练|r |T135610:0|t[正中眉心]
+    .train 400081 >>|cRXP_WARN_使用|r |T134419:0|t|T135610:0|t[|cRXP_FRIENDLY_精准符文|r] |cRXP_WARN_训练|r |T135610:0|t|T135610:0|t[正中眉心]
     .use 204174
     .itemcount 204174,1
 step << Dwarf Rogue/Gnome Rogue
@@ -4420,7 +4420,7 @@ step << Paladin
     .goto Ironforge,72.40,73.63
     .gossipoption 109084 >>与|cRXP_FRIENDLY_布鲁亚特|r对话以开始战斗
     >>击败|cRXP_ENEMY_布鲁阿特|r
-    >>|cRXP_WARN_小心，他会施放|r |T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
+    >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r
     >>|cRXP_WARN_不要意外对他施放|r |T135906:0|t|T135906:0|t[力量祝福] |cRXP_WARN_ |r
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r
@@ -4434,13 +4434,13 @@ step << Paladin
     .goto Ironforge,72.40,73.63,-1
     .goto Ironforge,72.53,76.94,-1
     >>击败|cRXP_ENEMY_布鲁阿特|r
-    >>|cRXP_WARN_小心，他会施放|r |T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
+    >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r
     >>|cRXP_WARN_不要意外对他施放|r |T135906:0|t|T135906:0|t[力量祝福] |cRXP_WARN_ |r
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r
     >>|cRXP_WARN_击败|cRXP_ENEMY_布鲁阿尔特|r后：|r
     >>再次与|cRXP_FRIENDLY_布鲁克·麦须|r对话，领取|T134419:0|t|T134419:0|t[责难符文]
-    >>|cRXP_WARN_如果他不给你|r |T134419:0|t[责难符文]|cRXP_WARN_，你可能需要再次与|cRXP_ENEMY_布鲁阿特|r 战斗|r
+    >>|cRXP_WARN_如果他不给你|r |T134419:0|t|T134419:0|t[责难符文]|cRXP_WARN_，你可能需要再次与|cRXP_ENEMY_布鲁亚特|r战斗|r
     .collect 205683,1 --Rune of Rebuke (1)
     .target Bruuk Barleybeard
     .skipgossip 5570,2,1
@@ -4520,7 +4520,7 @@ step << Warrior
     .goto Ironforge,72.40,73.63
     .gossipoption 109084 >>与|cRXP_FRIENDLY_布鲁亚特|r对话以开始战斗
     >>击败|cRXP_ENEMY_布鲁阿特|r
-    >>|cRXP_WARN_小心，他会施放|r |T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
+    >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，如果有/需要的话使用|r |T133688:0|t|T133688:0|t[绷带]|cRXP_WARN_ |r
     .mob Bruart
     .skipgossip 209004,1
@@ -4533,7 +4533,7 @@ step << Warrior
     .goto Ironforge,72.40,73.63,-1
     .goto Ironforge,72.53,76.94,-1
     >>击败|cRXP_ENEMY_布鲁阿特|r
-    >>|cRXP_WARN_小心，他会施放|r |T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
+    >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，如果有/需要的话使用|r |T133688:0|t|T133688:0|t[绷带]|cRXP_WARN_ |r
     >>|cRXP_WARN_击败|cRXP_ENEMY_布鲁阿尔特|r后：|r
     >>再次与|cRXP_FRIENDLY_布鲁克·麦须|r对话，领取|T134419:0|t|T134419:0|t[狂乱攻击符文]
@@ -4582,7 +4582,7 @@ step
     .goto Ironforge,78.00,51.40
     .subzone 2257 >>进入矿道地铁
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
     .accept 6661 >>接受任务 捕捉矿道老鼠
     .target 蒙提
 step
@@ -4591,7 +4591,7 @@ step
     .use 17117
     .mob 矿道老鼠
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
     .turnin 6661 >>交任务 捕捉矿道老鼠
     .timer 11,捕捉矿道老鼠剧情表演
     .accept 6662 >>接受任务 我的兄弟，尼普希
@@ -4976,7 +4976,7 @@ step
 step
     #xprate >1.49
     .goto Redridge Mountains,29.31,53.63
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_肖恩|r对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_肖恩|r 对话
     >>|cRXP_WARN_小心前进，途中有高等级怪物|r
     .accept 3741 >>接受任务 希拉里的项链
     .target 肖恩
@@ -5259,7 +5259,7 @@ step << Paladin
     .goto Duskwood,4.33,28.26
     >>击败 |cRXP_ENEMY_艾达·盖尔哈特|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对她|r
-    >>|cRXP_WARN_注意她的施法|r |T136197:0|t[暗影震击] |cRXP_WARN_（立即造成45点暗影伤害，消耗她75点法力值。你应尽快击杀她，让她最多只能施放3次）|r
+    >>|cRXP_WARN_注意她的施法|r |T136197:0|t|T136197:0|t[暗影震击] |cRXP_WARN_（立即造成45点暗影伤害，消耗她75点法力值。你应尽快击杀她，让她最多只能施放3次）|r
     >>|cRXP_WARN_击败 |cRXP_ENEMY_艾达·盖尔哈特|r 后:|r
     >>与 |cRXP_FRIENDLY_艾达·盖尔哈特|r 再次对话以获得 |T134419:0|t[殉难符文]
     .collect 205897,1 --Rune of Martyrdom (1)
@@ -5309,7 +5309,7 @@ step
 step
     .goto Elwynn Forest,38.677,81.778,50,0
     .goto Elwynn Forest,40.5,82.3
-    >>|cRXP_WARN_进入并探察法戈第矿洞|r
+    >>|cRXP_WARN_进入并且探察法戈第矿洞|r
     .complete 62,1 --Scout Through the Fargodeep Mine
 step
     .goto Elwynn Forest,40.5,82.3,25,0
@@ -5757,7 +5757,7 @@ step
     .goto Westfall,59.92,19.42
 	.target 弗娜·法布隆
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_农夫萨丁|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_农夫萨丁|r 对话
     .target Farmer Saldean
     .goto Westfall,56.04,31.23
     .accept 9 >>接受任务 清理荒野
@@ -5788,7 +5788,7 @@ step
     .accept 12 >>接受任务 西部荒野人民军
 step
     #era
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹努文队长|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丹努文队长|r 对话
     .target Captain Danuvin
     .goto Westfall,56.42,47.62
     .accept 102 >>接受任务 西部荒野的豺狼人
@@ -5831,7 +5831,7 @@ step << Rogue
     #xprate >1.49
     #ah
     .goto StormwindClassic,57.38,56.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
     >>|cRXP_BUY_最多购买2把|r |T135343:0|t|T135343:0|t[弯刀] |cRXP_BUY_如果买得起，或者从拍卖行买更便宜/更好的替代品|r
     .collect 2027,1 --Scimitar
     .target 玛尔达·维勒
@@ -5840,7 +5840,7 @@ step << Rogue
     #xprate >1.49
     #ssf
     .goto StormwindClassic,57.38,56.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
     >>|cRXP_BUY_如果买得起，从她那里买最多2把|r |T135343:0|t|T135343:0|t[弯刀] |cRXP_BUY_即可|r
     .collect 2027,1 --Scimitar
     .money <0.3815
@@ -6077,7 +6077,7 @@ step << Dwarf Paladin
 step << Dwarf Paladin
     #xprate <1.5
     .goto Ironforge,23.539,8.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆里顿·热炉|r 在楼上对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_穆里顿·热炉|r 对话
     .turnin 1779 >>交任务圣洁之书
     .accept 1783 >>接受任务圣洁之书
     .target 穆里顿·热炉
@@ -6921,7 +6921,7 @@ step << Rogue
     #xprate <1.5
     #ah
     .goto StormwindClassic,57.38,56.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
     >>|cRXP_BUY_从她那里购买最多2把|r |T135343:0|t|T135343:0|t[弯刀] |cRXP_BUY_如果你买得起，或者从拍卖行买更好的装备|r
     .collect 2027,1 --Scimitar
     .target 玛尔达·维勒
@@ -6931,7 +6931,7 @@ step << Rogue
     #xprate <1.5
     #ssf
     .goto StormwindClassic,57.38,56.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
     >>|cRXP_BUY_如果买得起，从她那里买最多2把|r |T135343:0|t|T135343:0|t[弯刀] |cRXP_BUY_即可|r
     .collect 2027,1 --Scimitar
     .money <0.3815
@@ -7432,7 +7432,7 @@ step
     .goto Wetlands,10.1,56.9,15,0
     .goto Wetlands,10.6,57.2,15,0
     .goto 1437,10.760,56.721
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_尼尔·奥雷|r 在军营底层对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与军营底楼的 |cRXP_FRIENDLY_尼尔·奥雷|r 对话
     .vendor 1448 >>|cRXP_WARN_购买|r |T133024:0|t[青铜管] |cRXP_BUY_从他那里（如果有货）|r
 	.target 尼尔·奥雷
     .bronzetube
@@ -7612,7 +7612,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话，NPC在里面
     .target 旅店老板贝尔姆
     .goto Dun Morogh,47.377,52.523
-    .home >>将你的炉石设为卡拉诺斯
+    .home >>将你的炉石绑在卡拉诺斯
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨雷克·暗岩|r 对话
     .target 萨雷克·暗岩
@@ -7929,7 +7929,7 @@ step
     .mob 瓦加什
 step << Hunter
     #season 2
-    .train 410123 >>|cRXP_WARN_使用|r |T134419:0|t|cRXP_LOOT_[爆炸射击符文]|r |cRXP_WARN_学习|r |T133816:0|t[铭刻手套 - 爆炸射击]
+    .train 410123 >>|cRXP_WARN_使用|r |T134419:0|t|T133816:0|t|cRXP_LOOT_[爆炸射击符文]|r |cRXP_WARN_学习|r |T133816:0|t|T133816:0|t[铭刻手套 - 爆炸射击]
     .use 206169
     .itemcount 206169,1
 step
@@ -8064,7 +8064,7 @@ step << Hunter
     #completewith next
     .goto Dun Morogh,28.852,49.859
     >>|cRXP_WARN_对|r|cRXP_WARN_沙沙作响的灌木丛|r|cRXP_ENEMY_施放|r|T132212:0|t|T132212:0|t[猎人印记]
-    >>杀死刷新的 |cRXP_ENEMY_钢鬃偷猎者|r。拾取他的 |T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
+    >>击杀刷新的|cRXP_ENEMY_鬃毛偷猎者|r，拾取|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
     .collect 206155,1 --Rune of Marksmanship (1)
     .mob Rustling Bush
     .mob Razormane Poacher
@@ -8094,7 +8094,7 @@ step << Hunter
     #season 2
     .goto Dun Morogh,28.852,49.859
     >>|cRXP_WARN_对|r|cRXP_WARN_沙沙作响的灌木丛|r|cRXP_ENEMY_施放|r|T132212:0|t|T132212:0|t[猎人印记]
-    >>杀死刷新的 |cRXP_ENEMY_钢鬃偷猎者|r。拾取他的 |T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
+    >>击杀刷新的|cRXP_ENEMY_鬃毛偷猎者|r，拾取|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_神射手符文|r]
     .collect 206155,1 --Rune of Marksmanship (1)
     .mob Rustling Bush
     .mob Razormane Poacher

@@ -80,7 +80,7 @@ step
     .accept 15 >>接受任务 回音山调查行动
     .accept 3104 >>接受任务 雕文信件
 step
-    .xp 3 >>刷怪到3级
+    .xp 3 >>刷怪升到3级
 step
     .goto Elwynn Forest,47.5,36.3,40,0
     .goto Elwynn Forest,46.6,32.2,40,0
@@ -1154,7 +1154,7 @@ step
 .target 海格纳·重枪
 >>与|cRXP_FRIENDLY_海格纳·重枪|r 对话
     .turnin 5541 >>交任务 海格纳的弹药
-    .vendor >>垃圾卖店并修理装备
+    .vendor >>出售物品并修理装备
 step
     .xp 7 >>刷怪至7级
 step
@@ -1252,12 +1252,12 @@ step
 step
     .goto Dun Morogh,49.622,48.612
 .target 驾驶员迪恩·石轮
->>与 |cRXP_FRIENDLY_驾驶员迪恩·石轮|r 对话
+>>与|cRXP_FRIENDLY_驾驶员迪恩·石轮|r 对话
     .turnin 313 >>交任务 灰色洞穴
 step
     .goto Dun Morogh,49.426,48.410
 .target 驾驶员贝隆·风箱
->>与 |cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
+>>与|cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
     .turnin 320 >>交任务 艾沃沙酒
 step
     #era/som
@@ -1440,7 +1440,7 @@ step
     .turnin 419 >>交任务 失踪的驾驶员
     .accept 417 >>接受任务 驾驶员的复仇
 step
-    >>击杀癞爪。拾取它的爪子
+    >>击杀癞爪，拾取它的爪子
     .goto Dun Morogh,80.0,36.4
     .complete 417,1 --Collect Mangy Claw (x1)
 step
@@ -1569,7 +1569,7 @@ step
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step << Gnome
     .goto Loch Modan,24.1,18.2
-    .vendor >>垃圾卖店并修理装备
+    .vendor >>出售物品并修理装备
 step << Gnome
     .goto Loch Modan,24.764,18.397
 >>与|cRXP_FRIENDLY_巡山人雷矛|r 对话
@@ -1633,7 +1633,7 @@ step
     .goto Loch Modan,23.3,17.9,60 >>跑回地堡，路上刷小怪
 step
     .goto Loch Modan,24.1,18.2
-    .vendor >>垃圾卖店，修理装备
+    .vendor >>出售物品并修理装备
 step
     .goto Loch Modan,24.7,18.3
 >>与|cRXP_FRIENDLY_巡山人雷矛|r 对话

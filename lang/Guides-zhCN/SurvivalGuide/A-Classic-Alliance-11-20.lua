@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 #name 13-15级 西部荒野
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP生存指南1-20
+#subgroup RXP 生存指南 1-20级
 #defaultfor Human/Gnome/Dwarf/NightElf
 #next 15-18级 黑海岸
 
@@ -37,7 +37,7 @@ step
 step
     .goto Westfall,56.04,31.23
     .target Farmer Saldean
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_农夫萨丁|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_农夫萨丁|r 对话
     .accept 9 >>接受任务 清理荒野
 step
     #label SalmaS
@@ -68,7 +68,7 @@ step
     #era
     .goto Westfall,56.42,47.62
     .target Captain Danuvin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹努文队长|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丹努文队长|r 对话
     .accept 102 >>接受任务 西部荒野的豺狼人
 step << Human
     #requires Lewis
@@ -195,7 +195,7 @@ step
 step
     #completewith next
 	.goto Westfall,56.04,31.23
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_农夫萨丁|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_农夫萨丁|r 对话
     .vendor
     >>|cRXP_WARN_不要出售|T133884:0|t|T135997:0|t[鱼人的眼球]、|T134341:0|t|T133972:0|t[血牙野猪的头]、|T134341:0|t|T134341:0|t[血牙野猪的肝]或|T133972:0|t|T133972:0|t[秃鹫肉条]|r
 	.target Farmer Saldean
@@ -235,7 +235,7 @@ step
     .mob +Young Goretusk
     .mob +Goretusk
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_农夫萨丁|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_农夫萨丁|r 对话
 	.target Farmer Saldean
     .goto Westfall,56.04,31.23
     .turnin 9 >>交任务 清理荒野
@@ -546,7 +546,7 @@ RXPGuides.RegisterGuide([[
 #name 15-18级 黑海岸
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP生存指南1-20
+#subgroup RXP 生存指南 1-20级
 --#defaultfor !NightElf
 #next 18-19级 洛克莫丹
 
@@ -1655,7 +1655,7 @@ RXPGuides.RegisterGuide([[
 #name 20-21级 黑海岸/灰谷
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP生存指南1-20
+#subgroup RXP 生存指南 1-20级
 #next 21-23级 石爪山 / 灰谷
 
 step << Druid
@@ -2122,7 +2122,7 @@ step
 .dungeon WC
     #completewith TravelRatchet
     .goto Ashenvale,20.31,42.33,0
-    .zone The Barrens >>在寻找哀嚎洞穴队伍的同时，刷|cRXP_ENEMY_咸水嘴鱼人|r。它们的位置已标记在你的地图上
+    .zone The Barrens >>在寻找哀嚎洞穴 队伍的同时，刷 |cRXP_ENEMY_咸水嘴鱼人|r。它们的位置已标记在你的地图上
 	.mob 盐沫战士
 	.mob 盐沫泥浆鱼人
 	.mob 盐沫智者

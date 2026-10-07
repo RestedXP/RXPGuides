@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #name 19-20级 赤脊山
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP生存指南1-20
+#subgroup RXP 生存指南 1-20级
 #next 20-21级 黑海岸/灰谷
 
 step << Hunter
@@ -145,7 +145,7 @@ step << !Hunter !Priest
     .target 吴平
 step << Rogue
     .goto StormwindClassic,57.38,56.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛尔达·维勒|r 对话
     >>|cRXP_BUY_购买一把|r |T135324:0|t|T135342:0|t[长剑] |cRXP_BUY_和|r |T135342:0|t|T135342:0|t[波刃短剑]
     >>|cRXP_WARN_21级时，在主手装备|r |T135324:0|t|T135342:0|t[长剑] |cRXP_WARN_，并在副手装备|r |T135342:0|t|T135342:0|t[波刃短剑] |cRXP_WARN_|r
     .collect 923,1 --Longsword
@@ -230,7 +230,7 @@ step
 	.target Chef Breanna
     .accept 92 >>接受任务 赤脊山炖肉
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_肖恩|r对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_肖恩|r 对话
 	.target 肖恩
     .goto Redridge Mountains,29.31,53.63
     .accept 3741 >>接受任务 希拉里的项链
@@ -726,7 +726,7 @@ step
     .mob Tarantula
 step
     #era/som
-    >>杀死 |cRXP_ENEMY_巨型血牙野猪|r。拾取它们的 |cRXP_LOOT_巨型血牙野猪头|r
+    >>击杀 |cRXP_ENEMY_巨型血牙野猪|r。拾取它们的 |cRXP_LOOT_巨型血牙野猪头|r
     >>杀死 |cRXP_ENEMY_恐鹫|r。拾取它们的 |cRXP_LOOT_硬秃鹫肉|r
     >>|cRXP_WARN_在交赤脊山炖肉任务之前不要卖掉这些物品|r
     >>|cRXP_WARN_保留你拾取到的所有|r|T133970:0|t|cRXP_LOOT_[大块野猪肉]|r，|cRXP_WARN_因为你可以用它们将|r|T133971:0|t[烹饪]|cRXP_WARN_提升到50级，这是稍后去暮色森林所必需的|r
@@ -1213,7 +1213,7 @@ step << Rogue
     .goto Westfall,71.49,73.49,30,0
     .goto Westfall,71.01,75.72,30,0
     .goto Westfall,69.58,73.07,30,0
-    >>|T133644:0|t[搜索] |cRXP_ENEMY_丑陋的迪菲亚懒汉|r。拾取 |cRXP_LOOT_迪菲亚塔楼钥匙|r
+    >>|T133644:0|t[搜索] |cRXP_ENEMY_丑陋的迪菲亚懒汉|r。拾取地上的物品以获得 |cRXP_LOOT_迪菲亚塔楼钥匙|r
     >>|cRXP_WARN_你必须处于|r |T132320:0|t[潜行] |cRXP_WARN_状态下才能使用|r |T133644:0|t[偷窃]
     >>|cRXP_WARN_丑陋的迪菲亚懒汉|cRXP_ENEMY_ |r出现在塔楼入口处，随后会在塔楼外侧巡逻|r
     >>|cRXP_WARN_小心，他伤害很高。如果你的|r |T132320:0|t[潜行] |cRXP_WARN_被打破，立刻使用|r |T132307:0|t[疾跑] |cRXP_WARN_并逃离|r
@@ -1226,7 +1226,7 @@ step << Rogue
     #hardcore
     #optional
     #completewith Mortwake
-    +|cRXP_WARN_如果你还没有装备|r|T135641:0|t[匕首]|cRXP_WARN_，请为这个任务装备上|r|T135641:0|t[曲木匕首]|cRXP_WARN_ |r
+    +|cRXP_WARN_如果你还没有装备|r |T135641:0|t[弯曲木匕首] |cRXP_WARN_，并且当前没有装备|r |T135641:0|t[匕首] |cRXP_WARN_，请在此任务中装备它|r
     .use 15396
     .itemcount 15396,1
     .isOnQuest 2359
@@ -1355,7 +1355,7 @@ step << Rogue
     #requires AntiVenomEnd2 << Rogue
     .goto StormwindClassic,75.78,59.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马迪亚斯·肖尔大师|r 对话
-    >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备你的主武器|r << Rogue
+    >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备上你的主武器|r << Rogue
     .turnin 2359 >>交任务 克拉文之塔
     .target 马迪亚斯·肖尔大师
     .isQuestComplete 2359
