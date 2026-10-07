@@ -579,8 +579,8 @@ step
     .xp <4,1
 step << skip
     #completewith next
-    >>|cRXP_WARN_It is heavily recommended you get the|r |T134229:0|t[Runa of Trompa de Lordaeron] |cRXP_WARN_in Loch Modan instead as it is a LOT easier|r
-    >>|cRXP_WARN_It is NOT recommended to use the|r |T134229:0|t[Runa of Trompa de Lordaeron] |cRXP_WARN_over the|r |T236250:0|t[Runa of Tempestade Divina] |cRXP_WARN_or the|r |T135961:0|t[Runa of Selo do Martírio]
+    >>|cRXP_WARN_É altamente recomendado obter o|r |T134229:0|t[Testament of Trompa de Lordaeron] |cRXP_WARN_em Loch Modan em vez disso, pois é MUITO mais fácil|r
+    >>|cRXP_WARN_Não é recomendado usar o|r |T134229:0|t[Testament of Trompa de Lordaeron] |cRXP_WARN_no lugar do|r |T236250:0|t[Runa of Tempestade Divina] |cRXP_WARN_ou do|r |T133745:0|t[Itens de MoP]
     .train 425618,1
     .xp <12,1
 step
@@ -1609,7 +1609,7 @@ step
     .collect 213447,1
 step
     .train 426175,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Atticus|r inside Stromgrade Keep to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Irmão Átticus|r em Stormgarde Keep para receber o |T134419:0|t[|cRXP_FRIENDLY_Runa de Devoção|r]
     .goto Arathi Highlands,26.06,55.75,20,0
     .goto Arathi Highlands,25.71,59.92,20,0
     .goto Arathi Highlands,23.69,60.52,20,0
@@ -2200,7 +2200,7 @@ step
 step
     .line Eastern Plaguelands,28.6,84.2,33.2,83.0,35.30,82.55,41.19,81.68,45.42,80.68,48.8,79.9,51.5,78.3,55.1,76.4
     >>Procure por um |cRXP_ENEMY_Carniçal de Queixo Caído|r. Mate-o e |Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Orthas|r um espírito anão que aparecerá. Aceite sua missão
-    >>|cRXP_WARN_O|r |cRXP_ENEMY_Carniçal de Queixo Caído|r |cRXP_WARN_patrulha a área ao sul da estrada entre o Cemitério e a Travessia de Corrin|r
+    >>|cRXP_WARN_O|r |cRXP_ENEMY_Carniçal de Queixo Caído <Carniçal com Tamanho de Anão>|r |cRXP_WARN_patrulha a área ao sul da estrada entre Undercroft e Corrin's Crossing|r
     .accept 84318 >>Aceite Bah!
     .unitscan Slack-Jawed Ghoul
     .target Orthas

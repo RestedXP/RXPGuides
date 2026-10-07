@@ -1575,7 +1575,7 @@ step << Druid NightElf
     .goto 1457/1,2572.300,10185.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Denatharion::4218|r
     .target Denatharion::4218
-    .accept 5923 >>Aceite Heeding the Call - Missão - Missão
+    .accept 5923 >>Aceite Atendendo o chamado
     .isNotOnQuest 5925
 step << Druid NightElf
     .isOnQuest 5923
@@ -1977,7 +1977,7 @@ step << Hunter
     .goto 1438/1,997.200,9903.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Byancie::6094|r
     .target Byancie::6094
-    .turnin 99050 >>Entregue The Great Árvore Provides
+    .turnin 99050 >>Turn in The Great Tree Provides
     .accept 99073 >>Aceite Aliviando Sofrimento
 step
     .goto 1438/1,971.91,9852.35,40,0
@@ -1989,7 +1989,7 @@ step
     .target Moon Priestess Amara
 step
     #optional
-    .abandon 87288 >>Abandone Soft Saber Pelts. Você não voltará a Dolnaar
+    .abandon 87288 >>Abandone Soft Saber Pelts - você não voltará para Dolanaar
 step << Rogue
     #softcore
     #completewith next

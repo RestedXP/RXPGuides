@@ -394,9 +394,9 @@ step << !NightElf
 step << !NightElf
     .goto Wetlands,10.43,61.01,10,0
     .goto Wetlands,10.496,60.201
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Samor Festivus|r acima das escadas
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Samor Festivus|r no andar de cima
     .vendor >>|cRXP_BUY_Compre o máximo de|r [Poções de Cura] |cRXP_BUY_que estiverem disponíveis|r
-    >>|cRXP_WARN_Este é um item com suprimento limitado. Pule este passo se |cRXP_FRIENDLY_Samor Festivus|r não possui nenhum|r
+    >>|cRXP_WARN_Este é um item com estoque limitado. Pule este passo se |cRXP_FRIENDLY_Samor Festivus|r não tiver nenhum|r
     .target Samor Festivus
 step << !NightElf
     .goto Wetlands,9.49,59.69
@@ -1056,8 +1056,8 @@ step
 	.target Gwennyth Bly'Leggonde
     .goto Darkshore,36.71,44.98,5,0
     .goto Felwood,19.10,20.63
-    .turnin 4723 >>Entregue Beached Sea Criatura - Missão
-    .turnin 4728 >>Entregue Beached Sea Criatura - Missão
+    .turnin 4723 >>Entregue a Criatura Marinha Encalhada
+    .turnin 4728 >>Entregue a Criatura Marinha Encalhada
     .turnin 4722 >>Entregue Tartaruga Marinha Encalhada
     .turnin 4725 >>Entregue Tartaruga Marinha Encalhada
 step
@@ -1656,7 +1656,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group Guia de Sobrevivência RestedXP (A)
 #subgroup RXP Guia de Sobrevivência 1-20
-#next 21-23 Stonetalon/Vale Gris
+#next 21-23 Serra do Espinhaço/Vale Gris
 
 step << Druid
 	#completewith next
@@ -1687,7 +1687,7 @@ step
     .goto Darkshore,37.44,41.83
     .target Archaeologist Hollee
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arqueóloga Hollee|r
-    .accept 729 >>Aceite The Absent Minded Prospector
+    .accept 729 >>Aceite O Prospector Distraído
 step
 #map Darkshore
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Trovejius Tecevento|r
@@ -1881,7 +1881,7 @@ step
     .goto Darkshore,35.72,83.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Prospector Trilheiro|r
     >>Isso iniciará uma escolta
-    .accept 731,1 >>Aceite The Absent Minded Prospector
+    .accept 731,1 >>Aceite O Prospector Distraído
     >>|cRXP_WARN_esta missão é MUITO difícil. Pule este passo se você não conseguir encontrar um grupo ou fazer solo|r
     .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_clique aqui para um guia em vídeo|r
     .target Prospector Remtravel
@@ -2082,7 +2082,7 @@ step
     .goto Ashenvale,26.88,44.47,30,0
     .goto Ashenvale,28.16,47.68,60,0
     .goto Ashenvale,34.40,48.00
-    .subzone 415 >>Viaje para Astranaar - Missão
+    .subzone 415 >>Vá para Astranaar
 step
     .goto Ashenvale,34.40,48.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Daelyshia|r
@@ -2104,7 +2104,7 @@ step
     .goto Ashenvale,35.76,49.10
     .accept 1056 >>Aceite Journey to Stonetalon Peak
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raene Correlobos|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_a Raene Correlobos|r
 	.target Raene Wolfrunner
     .goto Ashenvale,36.61,49.58
     .accept 991 >>Aceite A Purificação de Raene
@@ -2136,7 +2136,7 @@ step
     .goto The Barrens,53.87,21.52,120,0
     .goto The Barrens,59.15,25.48,120,0
     .goto The Barrens,63.087,37.607
-    .subzone 392 >>Vá para Ratchet em The Barrens. Siga a seta para evitar os |cRXP_ENEMY_Guardas de The Barrens|r
+    .subzone 392 >>Viaje até Vila Catraca, nos Sertões. Siga a seta para evitar as |cRXP_ENEMY_Guardas dos Sertões|r
 step
 .dungeon WC
     .goto The Barrens,63.084,37.163
@@ -2147,7 +2147,7 @@ step
 .dungeon WC
     .goto The Barrens,63.087,37.607
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_o Operador de Grua Mafuá|r
-    .accept 959 >>Aceite Encrencas nas Docas
+    .accept 959 >>Aceite Encrencas nas docas
     .target Crane Operator Bigglefuzz
 step
 .dungeon WC
@@ -2160,7 +2160,7 @@ step
 step
 .dungeon WC
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nalpak|r e |cRXP_FRIENDLY_Ebru|r
-    .accept 1486 >>Aceite Deviate Hides
+    .accept 1486 >>Aceite Pelegos anormais
     .target +Nalpak
     .goto 1414,51.912,55.422 -- Nalpak
     .accept 1487 >>Aceite Erradicação de Anormais
@@ -2184,7 +2184,7 @@ step
     .goto 1414,52.04,55.37,20,0
     .goto 1414,52.14,55.14,20,0
     .goto 1414,51.82,54.85
-    >>Mate o |cRXP_ENEMY_Maluc Insano|r. Saqueie-o pelo |cRXP_LOOT_99-Year-Old Teleporte|r
+    >>Mate |cRXP_ENEMY_Maluc Insano|r. Saqueie-o para obter o |cRXP_LOOT_Xerez de 99 Anos|r
     >>|cRXP_ENEMY_Maluc Insano|r pode surgir em alguns locais
     >>Esta missão é concluída FORA da Caverna Ululante
     .complete 959,1 -- 99-Year-Old Port (1)
@@ -2209,7 +2209,7 @@ step
     .isOnQuest 1486
 step
 .dungeon WC
-    >>Mate todos os tipos de |cRXP_ENEMY_Deviate|r criaturas
+    >>Mate todos os tipos de criaturas |cRXP_ENEMY_Desviantes|r
     .complete 1487,1 -- Deviate Ravager slain (7)
     .complete 1487,2 -- Deviate Viper slain (7)
     .complete 1487,3 -- Deviate Shambler slain (7)
@@ -2272,7 +2272,7 @@ step
 .dungeon WC
     .goto The Barrens,48.184,32.781
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_a Falla Vento Sábio|r
-    .turnin 6981 >>Entregue O Estilhaço Chamejante
+    .turnin 6981 >>Entregue A lasca faiscante
     .target Falla Sagewind
     .isQuestComplete 6981
 step

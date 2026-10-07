@@ -244,7 +244,7 @@ step
 step
     .goto Duskwood,49.8,74.4
     .group 3
-    >>|cRXP_WARN_Abate|r |cRXP_ENEMY_Ylanthrius|r. |cRXP_WARN_Um dragão verde voando acima da fazenda|r|cRXP_WARN_. Ele tem uma quantidade massiva de saúde, é imune a feitiços de natureza, tem um|r|T132338:0|t[Cutilada]|cRXP_WARN_,|r |T134307:0|t[Revés com a Cauda] |cRXP_WARN_e|r |T135745:0|t[Invoca] |cRXP_WARN_um|r |cRXP_ENEMY_Draco|r |cRXP_WARN_reforço que lança um bafo frontal que causa dano enorme|r
+    >>|cRXP_WARN_Abate|r |cRXP_ENEMY_Ylanthrius|r. |cRXP_WARN_Um dragão verde voando acima da fazenda|r|cRXP_WARN_. Ele tem um pool de vida massivo, é imune a feitiços de natureza, tem um|r|T132338:0|t[Cutilada]|cRXP_WARN_,|r |T134307:0|t[Revés com a Cauda] |cRXP_WARN_e|r |T135745:0|t[Summons] |cRXP_WARN_um|r |cRXP_ENEMY_Draco|r |cRXP_WARN_add que lança um sopro frontal que causa dano enorme|r
     .complete 81742,1 --Ylanthrius (1)
     .maxlevel 53
     .isOnQuest 81742
@@ -511,7 +511,7 @@ step
     #completewith IncursionsComplete
     .goto Ashenvale,93.94,38.21,25,0
     .goto Ashenvale,94.27,35.13,20 >>Entre no |cRXP_PICK_Portal Esmeralda Onírico|r
-    >>|cRXP_WARN_Corra direto passando pelos |cRXP_ENEMY_Satyr's|r, |cRXP_ENEMY_Felhounds|r e |cRXP_ENEMY_Imps|r. Eles vão resetar agressão ao entrar no portal|r
+    >>|cRXP_WARN_Corra diretamente passando pelos |cRXP_ENEMY_Satyrs|r, os |cRXP_ENEMY_Felhounds|r e os |cRXP_ENEMY_Imps|r. Eles resetarão a agressão quando você entrar no portal|r
     .aura 444759
     .maxlevel 53
 step
@@ -546,7 +546,7 @@ step
     #season 2
     .group 3
     .goto Ashenvale,86.0,46.0
-    >>|cRXP_WARN_Abate|r |cRXP_ENEMY_Larsera|r|cRXP_WARN_. Ela tem uma piscina de vida enorme, é imune aos feitiços de natureza, tem um|r|T132338:0|t[Cutilada]|cRXP_WARN_,|r |T134307:0|t[Revés com a Cauda] |cRXP_WARN_e|r |T135745:0|t[Invocações] |cRXP_WARN_um|r |cRXP_ENEMY_Draco|r |cRXP_WARN_adicional que lança um sopro frontal que causa dano enorme|r
+    >>|cRXP_WARN_Abate|r |cRXP_ENEMY_Larsera|r|cRXP_WARN_. Ela tem um pool de vida massivo, é imune a feitiços de natureza, tem um|r|T132338:0|t[Cutilada]|cRXP_WARN_,|r |T134307:0|t[Revés com a Cauda] |cRXP_WARN_e|r |T135745:0|t[Summons] |cRXP_WARN_um|r |cRXP_ENEMY_Draco|r |cRXP_WARN_add que lança um sopro frontal que causa dano enorme|r
     .complete 81780,1 --Defeat Larsera
     .isOnQuest 81780
     .maxlevel 53
@@ -889,7 +889,7 @@ step
     .accept 81832 >>Aceite Missão IX das Terras Agrestes: obter pérola onírica
     .accept 81850 >>Aceite Missão XVI das Terras Agrestes: resgatar Elianar Sorvessombra
     .accept 81851 >>Aceite Missão XVII das Terras Agrestes: resgatar Serlina Luminastra
-    .accept 81852 >>Aceite Terras Agrestes Missão XVII: Resgate [[Veanna Cloudsleeper] <[Druid of the Claw]>] <[Druid of the Claw]>
+    .accept 81852 >>Aceite Missão XVIII das Terras Agrestes: Resgatar Veanna Dormenuvem
     .target Field Captain Korlian
     .maxlevel 53
 step
@@ -1000,7 +1000,7 @@ step
     .group 3
     .goto The Hinterlands,46.0,39.8
     >>Abate |cRXP_ENEMY_Florius|r o dragão verde voando acima das ruínas
-    >>|cRXP_WARN_Tenha cuidado pois ele tem um acervo de vida massivo, é imune a magias da natureza, tem|r|T132338:0|t[Cutilada]|cRXP_WARN_,|r |T134307:0|t[Revés com a Cauda] |cRXP_WARN_e|r |T135745:0|t[Invocações] |cRXP_WARN_um|r |cRXP_ENEMY_Draco|r |cRXP_WARN_adicional que lança uma respiração frontal que causa dano enorme|r
+    >>|cRXP_WARN_Tenha cuidado pois ele tem um pool de vida massivo, é imune a feitiços de natureza, tem um|r|T132338:0|t[Cutilada]|cRXP_WARN_,|r |T134307:0|t[Revés com a Cauda] |cRXP_WARN_e|r |T135745:0|t[Summons] |cRXP_WARN_um|r |cRXP_ENEMY_Draco|r |cRXP_WARN_add que lança um sopro frontal que causa dano enorme|r
     .complete 81837,1 --Defeat Florius
     .mob Florius
     .isOnQuest 81837
@@ -1272,7 +1272,7 @@ step
     #completewith IncursionsComplete3
     .goto Feralas,50.95,11.67,30,0
     .goto Feralas,51.28,10.64,20 >>Entre no |cRXP_PICK_Portal Esmeralda Onírico|r
-    >>|cRXP_WARN_Corra direto passando pelos |cRXP_ENEMY_Satyr's|r, |cRXP_ENEMY_Felhounds|r e |cRXP_ENEMY_Imps|r. Eles vão resetar agressão ao entrar no portal|r
+    >>|cRXP_WARN_Corra diretamente passando pelos |cRXP_ENEMY_Satyrs|r, os |cRXP_ENEMY_Felhounds|r e os |cRXP_ENEMY_Imps|r. Eles resetarão a agressão quando você entrar no portal|r
     .aura 444762
     .maxlevel 53
 step
@@ -1308,7 +1308,7 @@ step
     .group 3
     .goto Feralas,53.2,16.6
     >>Abate o dragão-chefe |cRXP_ENEMY_Tirânikos|r
-    >>|cRXP_WARN_Tenha cuidado pois ele tem um acervo de vida massivo, é imune a magias da natureza, tem|r|T132338:0|t[Cutilada]|cRXP_WARN_,|r |T134307:0|t[Revés com a Cauda] |cRXP_WARN_e|r |T135745:0|t[Invocações] |cRXP_WARN_um|r |cRXP_ENEMY_Draco|r |cRXP_WARN_adicional que lança uma respiração frontal que causa dano enorme|r
+    >>|cRXP_WARN_Tenha cuidado pois ele tem um pool de vida massivo, é imune a feitiços de natureza, tem um|r|T132338:0|t[Cutilada]|cRXP_WARN_,|r |T134307:0|t[Revés com a Cauda] |cRXP_WARN_e|r |T135745:0|t[Summons] |cRXP_WARN_um|r |cRXP_ENEMY_Draco|r |cRXP_WARN_add que lança um sopro frontal que causa dano enorme|r
     .complete 81868,1 --Tyrannikus slain
     .mob Tyrannikus
     .maxlevel 53

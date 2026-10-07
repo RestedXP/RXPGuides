@@ -341,7 +341,7 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Teo Hammerstorm::257446|r
     .target Teo Hammerstorm::257446
     .turnin 98581 >>Entregue Runa Arcaica
-    .accept 94373 >>Aceite Call of Terra - Missão
+    .accept 94373 >>Aceite Clamor da Terra
     .train 8042 >>Aprenda |T136026:0|t[Choque Terreno]
 step << Paladin/Warlock/Hunter/Shaman
     .goto 1426/0,390.000,-6093.800
@@ -557,7 +557,7 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Teo Hammerstorm::257446|r
     .target Teo Hammerstorm::257446
     .turnin 94373 >>Entregue Call of Terra - Missão
-    .accept 94374 >>Aceite Call of Terra - Missão
+    .accept 94374 >>Aceite Clamor da Terra
 step << !Paladin !Warlock !Hunter !Shaman
     .goto 1426/0,390.000,-6093.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grund Drokda::2756|r
@@ -590,7 +590,7 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Minor Manifestação de Terra::5891|r
     .target Minor Manifestation of Earth::5891
     .turnin 94374 >>Entregue Call of Terra - Missão
-    .accept 94375 >>Aceite Call of Terra - Missão
+    .accept 94375 >>Aceite Clamor da Terra
 step << Shaman
     #optional
     #completewith next
@@ -1724,7 +1724,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith Dirt
-    +|cRXP_WARN_Equipe as|r |T135425:0|t[Keen Arremessando Knives]
+    +|cRXP_WARN_Equipe as|r |T135425:0|t[Facas de Arremesso Afiadas]
     .use 3107
     .itemcount 3107,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
@@ -2296,7 +2296,7 @@ step << Shaman
     .goto 1455/0,-1086.500,-4642.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eldrun Rompe-procelas::258098|r 
     .target Eldrun Stormbreaker::258098
-    .accept 94449 >>Aceite Call of Fogo
+    .accept 94449 >>Aceite Chamado do Fogo
     .trainer >>Treine suas magias de classe
 step
     #optional
@@ -2337,7 +2337,7 @@ step << Shaman
     .target Buliwyf Stonehand
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bixi Bateagita|r e |cRXP_FRIENDLY_Bulif Manopedra|r
-    >>Treine Arremesso e Maças de 2M se ainda não fez antes
+    >>Treine Arremesso e Maças de Duas Mãos se ainda não treinou antes
     .train 2567 >>Treine Arremesso
     .target +Bixi Wobblebonk
     .goto 1455/0,-1205.65,-5042.12
@@ -2363,7 +2363,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith DRT
-    +|cRXP_WARN_Equipe as|r |T135425:0|t[Keen Arremessando Knives]
+    +|cRXP_WARN_Equipe as|r |T135425:0|t[Facas de Arremesso Afiadas]
     .use 3107
     .itemcount 3107,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
@@ -2491,7 +2491,7 @@ step << !Hunter
     .subzone 2257 >>Entre no Metrô Correfundo
 step << !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma intermediária no Deeprun Tram
-    .accept 6661 >>Aceite Ratos de Porão
+    .accept 6661 >>Aceite Caçada aos Ratos das Profundezas
     .target Monty
 step << !Hunter
     >>Usar o |T133942:0|t[Rato Catcher's Flute] em |cRXP_FRIENDLY_Deeprun Ratos|r no Deeprun Tram
@@ -2500,7 +2500,7 @@ step << !Hunter
     .mob Deeprun Rat
 step << !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma intermediária no Deeprun Tram
-    .turnin 6661 >>Entregue Ratos de Porão
+    .turnin 6661 >>Entregue Caçada aos Ratos das Profundezas
     .timer 11,Ratos de Deeprun RP
     .accept 6662 >>Aceite Espetinhos de... Rato
     .target Monty
@@ -3161,7 +3161,7 @@ step << Warlock
     .goto 1453/0,1041.54,-8983.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gakin, o Neromante|r
     .turnin 1688 >>Entregue Surena Caledon
-    .accept 1689 >>Aceite A Vinculação
+    .accept 1689 >>Aceite A vinculação
     .target Gakin the Darkbinder
 step << Warlock
     #completewith next
@@ -3537,7 +3537,7 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bruegs Kindleborn::257597|r
     .target Bruegs Kindleborn::257597
     .turnin 94449 >>Entregue Call of Fogo
-    .accept 94465 >>Aceite Call of Fogo
+    .accept 94465 >>Aceite Chamado do Fogo
 step << Shaman
     .isOnQuest 94465
     .goto 1426/0,-2594.100,-5335.900,20,0
@@ -3552,7 +3552,7 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Braldir Ashmantle::257808|r
     .target Braldir Ashmantle::257808
     .turnin 94465 >>Entregue Call of Fogo
-    .accept 94466 >>Aceite Call of Fogo
+    .accept 94466 >>Aceite Chamado do Fogo
 step
     #optional
     #label BoarMeatLoch3
@@ -3938,7 +3938,7 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Braldir Ashmantle::257808|r
     .target Braldir Ashmantle::257808
     .turnin 94466 >>Entregue Call of Fogo
-    .accept 94467 >>Aceite Call of Fogo
+    .accept 94467 >>Aceite Chamado do Fogo
 step << Shaman
     #completewith next
     .goto 1432/0,-2873.800,-5672.500
@@ -3952,7 +3952,7 @@ step << Shaman
     .goto 1432/0,-2870.700,-5674.600
     >>Clique em |cRXP_PICK_Brazier of the Adormecido Chamas|r
     .turnin 94467 >>Entregue Call of Fogo
-    .accept 94468 >>Aceite Call of Fogo
+    .accept 94468 >>Aceite Chamado do Fogo
 step
     #optional
     #completewith next
@@ -4793,7 +4793,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r no meio da plataforma
     .target Monty
-    .accept 6661 >>Aceite Ratos de Porão
+    .accept 6661 >>Aceite Caçada aos Ratos das Profundezas
 step
     .use 17117 >>|cRXP_WARN_Use o|r |T133942:0|t[Rato Catcher's Flute] |cRXP_WARN_em|r |cRXP_ENEMY_Deeprun Ratos|r
     .complete 6661,1 --Rats Captured (x5)
@@ -4801,7 +4801,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r
     .target Monty
-    .turnin 6661 >>Entregue Ratos de Porão
+    .turnin 6661 >>Entregue Caçada aos Ratos das Profundezas
     .timer 11,Ratos de Deeprun RP
     .accept 6662 >>Aceite Espetinhos de... Rato
 step

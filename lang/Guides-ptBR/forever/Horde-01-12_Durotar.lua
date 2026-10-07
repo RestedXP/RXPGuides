@@ -2254,9 +2254,9 @@ step
 step --center of first small island
     #label MartEgg
     .goto 1411/1,-5599.500,-716.700
-    >>Mate a |cRXP_ENEMY_Matriarca Garrassangre|r. Saqueie-a para pegar os |cRXP_LOOT_Ovos da Matriarca Garrassangre|r
-    .complete 97223,1 --|1/1 Bloodtalon Martriarch Eggs
-    .mob Bloodtalon Martriarch
+    >>Mate a |cRXP_ENEMY_Bloodtalon Matriarch|r. Saqueie-a para obter os |cRXP_LOOT_Bloodtalon Matriarch Eggs|r
+    .complete 97223,1 --|1/1 Bloodtalon Matriarch Eggs
+    .mob Bloodtalon Matriarch
 step
     #label MainIsland
     .goto 1411/1,-5501.95,-1167.12,150 >>Nade até a ilha principal
@@ -2754,7 +2754,7 @@ step
     .goto 1411/1,-4198.05,911.22,30,0
     .goto 1411/1,-4165.27,903.11,20 >>Pule para dentro do Desfiladeiro do Trovão << !Hunter !Warlock
     .goto 1411/1,-4165.27,903.11,20 >>|cRXP_WARN_Dispense seu|r |T136218:0|t[Diabrete] |cRXP_WARN_clicando com o botão direito no quadro de unidade dele e selecionando dispensar|r << Warlock
-    |cRXP_WARN_Use|r |T136095:0|t[Dispensar Ajudante] |cRXP_WARN_e depois pule para dentro do Desfiladeiro do Trovão|r << Hunter
+    .cast 2641 >>|cRXP_WARN_Lance|r |T136095:0|t[Dispensar Ajudante] |cRXP_WARN_e então pule para Trovão Serra|r << Hunter
 step
     #softcore
     .goto 1411/1,-4190.12,868.22
@@ -4042,7 +4042,7 @@ step << Priest
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step << Priest
     .goto 1458/0,194.34,1681.63
-    >>|cRXP_WARN_Transforme todo seu|r |T132889:0|t[Linho] |cRXP_WARN_em|r |T132890:0|t[Peça de Linho]
+    >>|cRXP_WARN_Virar todo o seu|r |T132889:0|t[Linho] |cRXP_WARN_em|r |T132890:0|t[Peça de Linho]
     .collect 2996,30,435,1 --Bolt of Linen Cloth (30)
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3

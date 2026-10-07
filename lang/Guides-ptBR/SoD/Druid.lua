@@ -470,7 +470,7 @@ step
 step
     #season 2
     #completewith next
-    .subzone 387 >>Vá para o Lushwater Oasis
+    .subzone 387 >>Vá ao Oásis das Águas Claras
 step
     #season 2
     .goto The Barrens,48.32,40.25

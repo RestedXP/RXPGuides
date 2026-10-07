@@ -323,7 +323,7 @@ step
     .goto Darkshore,37.44,41.84
 .target Archaeologist Hollee
 >>Fale com a |cRXP_FRIENDLY_Arqueóloga Hollee|r
-    .accept 729 >>Aceite The Absent Minded Prospector
+    .accept 729 >>Aceite O Prospector Distraído
 step
     .goto Darkshore,37.71,43.36
 >>Fale com a |cRXP_FRIENDLY_Sentinela Glynda Nal'Shea|r
@@ -356,8 +356,8 @@ step
 .target Gwennyth Bly'Leggonde
 >>Fale com |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4722 >>Entregue Tartaruga Marinha Encalhada
-    .turnin 4723 >>Entregue Beached Sea Criatura - Missão
-    .turnin 4728 >>Entregue Beached Sea Criatura - Missão << Gnome
+    .turnin 4723 >>Entregue a Criatura Marinha Encalhada
+    .turnin 4728 >>Entregue a Criatura Marinha Encalhada << Gnome
 step
     .goto Darkshore,47.32,48.70
      >>Clique no cristal vermelho
@@ -489,7 +489,7 @@ step
     .goto Felwood,19.10,20.63
 .target Gwennyth Bly'Leggonde
 >>Fale com |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
-    .turnin 4727 >>Entregue Beached Sea Criatura - Missão
+    .turnin 4727 >>Entregue a Criatura Marinha Encalhada
     .turnin 4725 >>Entregue Tartaruga Marinha Encalhada
 step
      #completewith Murkdeep
@@ -554,7 +554,7 @@ step
      >>Inicie a missão de escolta
 .target Prospector Remtravel
 >>Fale com o |cRXP_FRIENDLY_Prospector Trilheiro|r
-    .accept 731,1 >>Aceite The Absent Minded Prospector
+    .accept 731,1 >>Aceite O Prospector Distraído
 step
      >>Escolte o Prospector Trilheiro
      >>Deixe Remtravel atrair tudo (os inimigos precisam acertá-lo para gerar agro nele) e depois dispare projéteis de fogo no inimigo
@@ -580,7 +580,7 @@ step
     #completewith Therylune
     >>Fique atento a The Powers Below. Tem baixa taxa de queda e é uma missão gratuita.
     .collect 5352,1,968 --Book: The Powers Below (1)
-    .accept 968 >>Aceite The Powers Below
+    .accept 968 >>Aceite Os Poderes de Baixo
 step
     #label Glaive
     .goto Darkshore,38.30,87.12
@@ -671,14 +671,14 @@ step
     .goto Ashenvale,22.64,51.91
 .target Therysil
 >>Fale com |cRXP_FRIENDLY_Therysil|r
-    .turnin 945 >>Entregue A Fuga de Therylune
+    .turnin 945 >>Entregue A fuga de Therylune
 step
     #hardcore
     >>Siga pela estrada para o sul. Dirija-se ao Santuário de Aessina.
     .goto Ashenvale,22.64,51.91
 .target Therysil
 >>Fale com |cRXP_FRIENDLY_Therysil|r
-    .turnin 945 >>Entregue A Fuga de Therylune
+    .turnin 945 >>Entregue A fuga de Therylune
 step
     .hs >>Use a Pedra de Regresso para Auberdine
 step
@@ -690,15 +690,15 @@ step
     .goto Darkshore,36.62,45.60
 .target Gwennyth Bly'Leggonde
 >>Fale com |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
-    .turnin 4730 >>Entregue Beached Sea Criatura - Missão
+    .turnin 4730 >>Entregue a Criatura Marinha Encalhada
     .turnin 4731 >>Entregue Tartaruga Marinha Encalhada
     .turnin 4732 >>Entregue Tartaruga Marinha Encalhada
-    .turnin 4733 >>Entregue Beached Sea Criatura - Missão
+    .turnin 4733 >>Entregue a Criatura Marinha Encalhada
 step
     .goto Darkshore,37.73,43.38
 .target Sentinel Glynda Nal'Shea
 >>Fale com a |cRXP_FRIENDLY_Sentinela Glynda Nal'Shea|r
-    .turnin 4740 >>Entregue WANTED: Lodofundo!
+    .turnin 4740 >>Entregue PROCURA-SE: Lodofundo!
 step
     .isQuestComplete 986
     >>Mantenha a próxima parte da missão no seu registro de missões para o manto +3 de estamina. Abandone a missão quando não precisar mais do manto
@@ -717,7 +717,7 @@ step
     .goto Darkshore,37.44,41.84
 .target Archaeologist Hollee
 >>Fale com a |cRXP_FRIENDLY_Arqueóloga Hollee|r
-    .accept 741 >>Aceite The Absent Minded Prospector
+    .accept 741 >>Aceite O Prospector Distraído
     .isQuestTurnedIn 731
 step
     #completewith next
@@ -737,7 +737,7 @@ step
 >>Fale com |cRXP_FRIENDLY_Arqueólogo-chefe Suiçagris|r
     .turnin 741 >>Entregue The Absent Minded Prospector
 .target Chief Archaeologist Greywhisker
-    .accept 942 >>Aceite The Absent Minded Prospector
+    .accept 942 >>Aceite O Prospector Distraído
 step
     .goto Teldrassil,58.40,94.02
     .fp Teldrassil >>Aprenda a rota de voo para Teldrassil
@@ -862,7 +862,7 @@ step
     .goto Redridge Mountains,27.72,47.38
 .target Dockmaster Baren
 >>Fale com o |cRXP_FRIENDLY_Mestre de Doca Baren|r
-    .accept 127 >>Aceite Vendendo Peixe
+    .accept 127 >>Aceite O lago está para peixe
 step
     .goto Redridge Mountains,26.75,46.42
     .accept 180 >>Aceite Wanted: General Mordente
@@ -1067,15 +1067,15 @@ step
     #level 20
     .goto Redridge Mountains,27.72,47.38
 >>Fale com o |cRXP_FRIENDLY_Mestre de Doca Baren|r
-    .turnin 127 >>Entregue Venda de Peixes
+    .turnin 127 >>Entregue O lago está para peixe
 .target Dockmaster Baren
-    .accept 150 >>Aceite Caçadores Murloc
+    .accept 150 >>Aceite Caçadores de murlocs
     .turnin 150 >>Entregue Murloc Poachers
 step
     .goto Redridge Mountains,27.72,47.38
 .target Dockmaster Baren
 >>Fale com o |cRXP_FRIENDLY_Mestre de Doca Baren|r
-    .turnin 127 >>Entregue Venda de Peixes
+    .turnin 127 >>Entregue O lago está para peixe
 step
     .goto Redridge Mountains,21.86,46.33
 >>Fale com |cRXP_FRIENDLY_Martie Jainrose|r
@@ -1095,7 +1095,7 @@ step
     .goto Redridge Mountains,21.85,46.32
 .target Martie Jainrose
 >>Fale com |cRXP_FRIENDLY_Martie Jainrose|r
-    .turnin 34 >>Entregue O Penetra
+    .turnin 34 >>Entregue O penetra
 step
     .goto Redridge Mountains,21.23,36.17,60,0
     .goto Redridge Mountains,34.20,39.70,60,0
@@ -1152,7 +1152,7 @@ step
     .goto Redridge Mountains,27.09,45.65
 .target Darcy
 >>Fale com |cRXP_FRIENDLY_Darcy|r
-    .turnin 131 >>Entregue Entregando Daffodilss
+    .turnin 131 >>Entregue Entregando Daffodills
 step
     .goto Redridge Mountains,27.01,44.81
     .vendor >>Compre uma bebida de nível 15

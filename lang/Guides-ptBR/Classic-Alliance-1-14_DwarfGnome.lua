@@ -1849,7 +1849,7 @@ step << Hunter
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
     .train 3044 >>Treine |T132218:0|t[Tiro Arcano]
-    .train 1130 >>Treine |T132212:0|t[Marca do Caçador]
+    .train 1130 >>Aprenda |T132212:0|t[Marca do Caçador]
     .target Grif Wildheart
     .money <0.02
 step << Hunter
@@ -1863,7 +1863,7 @@ step << Hunter
     #season 2
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
-    .train 1130 >>Treine |T132212:0|t[Marca do Caçador]
+    .train 1130 >>Aprenda |T132212:0|t[Marca do Caçador]
     >>|cRXP_WARN_Se você não tem dinheiro suficiente, mate os inimigos ao redor de Kharanos. Você precisará deste feitiço em breve|r
     .target Grif Wildheart
 step << Warrior/Rogue/Priest/Mage/Warlock
@@ -3386,7 +3386,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith Dirt
-    +|cRXP_WARN_Equipe as|r |T135425:0|t[Keen Arremessando Knives]
+    +|cRXP_WARN_Equipe as|r |T135425:0|t[Facas de Arremesso Afiadas]
     .use 3107
     .itemcount 3107,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
@@ -4461,7 +4461,7 @@ step << Paladin
     .train 425621,3
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bixi Bateagita|r e |cRXP_FRIENDLY_Bulif Manopedra|r
-    >>Treine Arremesso e Maças de 2M se ainda não fez antes
+    >>Treine Arremesso e Maças de Duas Mãos se ainda não treinou antes
     .train 2567 >>Treine Arremesso
     .target +Bixi Wobblebonk
     .goto Ironforge,62.237,89.628
@@ -4487,7 +4487,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith Dirt
-    +|cRXP_WARN_Equipe as|r |T135425:0|t[Keen Arremessando Knives]
+    +|cRXP_WARN_Equipe as|r |T135425:0|t[Facas de Arremesso Afiadas]
     .use 3107
     .itemcount 3107,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
@@ -4583,7 +4583,7 @@ step
     .subzone 2257 >>Entre no Metrô Correfundo
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma intermediária no Deeprun Tram
-    .accept 6661 >>Aceite Ratos de Porão
+    .accept 6661 >>Aceite Caçada aos Ratos das Profundezas
     .target Monty
 step
     >>Usar o |T133942:0|t[Rato Catcher's Flute] em |cRXP_FRIENDLY_Deeprun Ratos|r no Deeprun Tram
@@ -4592,7 +4592,7 @@ step
     .mob Deeprun Rat
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma intermediária no Deeprun Tram
-    .turnin 6661 >>Entregue Ratos de Porão
+    .turnin 6661 >>Entregue Caçada aos Ratos das Profundezas
     .timer 11,Ratos de Deeprun RP
     .accept 6662 >>Aceite Espetinhos de... Rato
     .target Monty
@@ -5076,7 +5076,7 @@ step
     .goto StormwindClassic,25.25,78.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gakin, o Neromante|r
     .turnin 1688 >>Entregue Surena Caledon
-    .accept 1689 >>Aceite A Vinculação
+    .accept 1689 >>Aceite A vinculação
     .target Gakin the Darkbinder
 step
     #optional
@@ -5640,7 +5640,7 @@ step << Warlock
     .goto StormwindClassic,25.25,78.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gakin, o Neromante|r
     .turnin 1688 >>Entregue Surena Caledon
-    .accept 1689 >>Aceite A Vinculação
+    .accept 1689 >>Aceite A vinculação
     .target Gakin the Darkbinder
 step << Warlock
     #completewith next
@@ -5928,7 +5928,7 @@ step << Rogue
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Rogue
     #optional
-    +|cRXP_WARN_Equipe as|r |T135425:0|t[Keen Arremessando Knives]
+    +|cRXP_WARN_Equipe as|r |T135425:0|t[Facas de Arremesso Afiadas]
     .use 3107
     .itemcount 3107,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
@@ -8660,7 +8660,7 @@ step
     >>|cRXP_WARN_Entre no Tram Deeprun|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r no meio da plataforma
     .target Monty
-    .accept 6661 >>Aceite Ratos de Porão
+    .accept 6661 >>Aceite Caçada aos Ratos das Profundezas
 step
     .use 17117 >>|cRXP_WARN_Use o|r |T133942:0|t[Rato Catcher's Flute] |cRXP_WARN_em|r |cRXP_ENEMY_Deeprun Ratos|r
     .complete 6661,1 --Rats Captured (x5)
@@ -8668,7 +8668,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r
     .target Monty
-    .turnin 6661 >>Entregue Ratos de Porão
+    .turnin 6661 >>Entregue Caçada aos Ratos das Profundezas
     .timer 11,Ratos de Deeprun RP
     .accept 6662 >>Aceite Espetinhos de... Rato
 step
@@ -8813,9 +8813,9 @@ step
 step
     .goto Wetlands,10.43,61.01,10,0
     .goto Wetlands,10.496,60.201
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Samor Festivus|r acima das escadas
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Samor Festivus|r no andar de cima
     .vendor >>|cRXP_BUY_Compre o máximo de|r [Poções de Cura] |cRXP_BUY_que estiverem disponíveis|r
-    >>|cRXP_WARN_Este é um item com suprimento limitado. Pule este passo se |cRXP_FRIENDLY_Samor Festivus|r não possui nenhum|r
+    >>|cRXP_WARN_Este é um item com estoque limitado. Pule este passo se |cRXP_FRIENDLY_Samor Festivus|r não tiver nenhum|r
     .target Samor Festivus
 step
     #hardcore

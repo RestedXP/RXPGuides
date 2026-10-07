@@ -695,7 +695,7 @@ step
     .goto Hillsbrad Foothills,58.2,19.6,40,0
     .goto Hillsbrad Foothills,57.5,36.4,50,0
     .goto Hillsbrad Foothills,51.1,46.4,40,0
-    >>Procure por |cRXP_FRIENDLY_Zixil|r. Ele patrulha entre Tarren Moinho e Southshore. Compre o |T134041:0|t[Freshwater Tortuguito Isca] dele
+    >>Procure |cRXP_FRIENDLY_Zixil|r. Ele patrulha entre Tarren Moinho e Southshore. Compre a |T134041:0|t[Freshwater Tortuguito Isca] dele
     .collect 210410,1 --Freshwater Snapper Bait (1)
     .target Zixil
     .train 425759,1
@@ -1433,7 +1433,7 @@ step
     >>Abra o |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Caixa|r] para o |T134419:0|t[|cRXP_FRIENDLY_Runa do Eclipse - Feitiço - Feitiço|r] << Druid
     >>Abra o |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Caixa|r] para o |T134419:0|t[|cRXP_FRIENDLY_Itens|r] << Warrior
     >>Abra o |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Caixa|r] para a |T134419:0|t[|cRXP_FRIENDLY_Runa da Escuridão Sombria|r] << Warlock
-    >>Abra o |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Caixa|r] para a |T134419:0|t[|cRXP_FRIENDLY_Runa da Lâmina Envenenada|r] << Rogue
+    >>Abra a |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Caixa|r] para a |T134419:0|t[|cRXP_FRIENDLY_Rune of the Lâmina Envenenada|r] << Rogue
     >>Abra o |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Caixa|r] para o |T134419:0|t[|cRXP_FRIENDLY_Runa do Despertar Ancestral|r] << Shaman
     .collect 212552,1 << Priest
     .collect 212551,1 << Paladin
@@ -1453,7 +1453,7 @@ step
     .train 410029 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Eclipse - Feitiço - Feitiço|r] |cRXP_WARN_para treinar|r |T236151:0|t[Eclipse - Feitiço - Feitiço] << Druid
     .train 403467 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Itens|r] |cRXP_WARN_para treinar|r |T132345:0|t[Regeneração Enfurecida] << Warrior
     .train 426452 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa da Escuridão Sombria|r] |cRXP_WARN_para treinar|r |T135823:0|t[Sombra e Chama] << Warlock
-    .train 425102 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Lâmina Envenenada|r] |cRXP_WARN_para treinar|r |T236270:0|t[Faca Envenenada] << Rogue
+    .train 425102 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Lâmina Envenenada|r] |cRXP_WARN_para treinar|r |T236270:0|t[Faca Envenenada] << Rogue
     .train 425883 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Despertar Ancestral|r] |cRXP_WARN_para treinar|r |T237571:0|t[Despertar Ancestral] << Shaman
     .use 212552 << Priest
     .use 212551 << Paladin

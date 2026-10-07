@@ -780,7 +780,7 @@ step
     .goto The Barrens,54.8,35.6,40,0
     .goto The Barrens,58.8,37.6,40,0
     >>Usar |T135894:0|t[Dissipar Magia] na |cRXP_ENEMY_Miragem do Deserto|r. Saqueie-o para obter o |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Óbito|r]
-    *|cRXP_WARN_É um espectro verde que patrulha por aí. Usar a macro de alvo RestedXP para focar nele.|r
+    *|cRXP_WARN_É um fantasma verde que patrulha ao redor. Usar a macro de alvo da RestedXP para selecioná-lo.|r
     .collect 205932,1 -- Prophecy of a King's Demise (1)
     .train 402849,1
     .mob Desert Mirage
@@ -851,8 +851,8 @@ RXPGuides.RegisterGuide([[
 << Horde Priest SoD
 #group Guia Runas e Livros RestedXP
 #subgroup Baú
-#name Destino Tortuoso - 10 (Floresta de Pinhaprata)
-#title Destino Tortuoso
+#name Fé Corrompida - 10 (Floresta de Pinhaprata)
+#title Fé Corrompida
 
 step
     #completewith next
@@ -879,8 +879,8 @@ RXPGuides.RegisterGuide([[
 << Horde Priest SoD
 #group Guia Runas e Livros RestedXP
 #subgroup Baú
-#name Destino Tortuoso - 10 (The Barrens)
-#title Destino Tortuoso
+#name Fé Corrompida - 10 (Barrens)
+#title Fé Corrompida
 
 step
     #completewith next

@@ -1594,7 +1594,7 @@ step << Hunter
     #season 2
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Selvacuore|r
-    .train 1130 >>Treine |T132212:0|t[Marca do Caçador]
+    .train 1130 >>Aprenda |T132212:0|t[Marca do Caçador]
     >>|cRXP_WARN_Se você não tem dinheiro suficiente, farme inimigos ao redor de Kharanos. Você precisará deste feitiço para uma runa mais tarde|r
     .target Grif Wildheart
 
@@ -1967,7 +1967,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith Dirt
-    +|cRXP_WARN_Equipe as|r |T135425:0|t[Keen Arremessando Knives]
+    +|cRXP_WARN_Equipe as|r |T135425:0|t[Facas de Arremesso Afiadas]
     .use 3107
     .itemcount 3107,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3

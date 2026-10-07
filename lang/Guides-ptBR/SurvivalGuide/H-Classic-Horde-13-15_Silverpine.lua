@@ -32,7 +32,7 @@ step
     .target Deathstalker Erland
 step
     #completewith next
-    >>Mate os |cRXP_ENEMY_Worgs|r. Saqueie-os pelos |cRXP_LOOT_Corações|r
+    >>Mate |cRXP_ENEMY_Worgs|r. Saqueie-os para pegar seus |cRXP_LOOT_Corações|r
     .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .mob Worg
     .mob Mottled Worg
@@ -51,7 +51,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rane Yorick|r
     .turnin 435 >>Entregue Uma escolta para Orlando
     .accept 429 >>Aceite Corações selvagens
-    .accept 449 >>Aceite O Relatório dos Furtivos
+    .accept 449 >>Aceite Relatório dos Sicários
     .target Rane Yorick
 step
     #loop
@@ -61,7 +61,7 @@ step
     .goto Silverpine Forest,59.40,13.58,50,0
     .goto Silverpine Forest,60.11,10.51,50,0
     .goto Silverpine Forest,57.72,10.07,50,0
-    >>Mate os |cRXP_ENEMY_Worgs|r. Saqueie-os pelos |cRXP_LOOT_Corações|r
+    >>Mate |cRXP_ENEMY_Worgs|r. Saqueie-os para pegar seus |cRXP_LOOT_Corações|r
     .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .mob Worg
     .mob Mottled Worg
@@ -81,7 +81,7 @@ step
 step << !Mage !Priest
     .goto Silverpine Forest,44.05,39.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Guida Farrow|r
-    .vendor >>|cRXP_BUY_Compre|r |T134532:0|t[Vermelho-speckled Cogumelo] |cRXP_BUY_dele|r
+    .vendor >>|cRXP_BUY_Compre|r |T134532:0|t[Cogumelo de Bolinhas Vermelhas] |cRXP_BUY_dele|r
     .collect 4605,20,421,1 --Red-speckled Mushroom (20)
     .target Gwyn Farrow
     .money <0.05
@@ -94,7 +94,7 @@ step
     .target Edwin Harly
     .money <0.05 << Mage/Warlock/Priest/Shaman/Druid
 step << Undead
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Allister|r e |cRXP_FRIENDLY_Podrig|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sacerdote Sombrio Allister|r e |cRXP_FRIENDLY_Necroguarda Rodrigo|r
     .accept 477 >>Aceite Border Crossings
     .target +Shadow Priest Allister
     .goto Silverpine Forest,43.98,40.93
@@ -118,15 +118,15 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hadrec|r na cripta
     .turnin 449 >>Entregue O Relatório das Aranhas da Morte
     .accept 3221 >>Aceite Fale com Renferrel
-    .accept 437 >>Aceite Os Campos Mortos
+    .accept 437 >>Aceite Os Campos Estéreis
     .target High Executor Hadrec
 step
     .goto Silverpine Forest,42.79,40.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Renferrel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Renferrel|r
     .turnin 429 >>Entregue Corações selvagens
-    .turnin 445 >>Entregue Entrega na Floresta de Pinheiros Prateados
-    .turnin 3221 >>Entregue para Renferrel
-    .accept 1359 >>Aceite Entrega de Zinge
+    .turnin 445 >>Entregue Entrega na Floresta de Pinhaprata
+    .turnin 3221 >>Entregue Fale com Renferrel
+    .accept 1359 >>Aceite Entrega para Zilda
     .accept 447 >>Aceite Uma Receita para a Morte
     .accept 430 >>Aceite Reencontrando Quintino
     .target Apothecary Renferrel
@@ -149,11 +149,11 @@ step
     .goto Silverpine Forest,44.20,39.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar|r
     .target Dalar Dawnweaver
-    .turnin 421 >>Entregue Prove Your Worth
+    .turnin 421 >>Entregue Prove seu valor
     .accept 422 >>Aceite A loucura de Arugal
 step
     #completewith Remedy
-    .goto Silverpine Forest,52.74,27.70,80 >>Vá para Valgan's Field
+    .goto Silverpine Forest,52.74,27.70,80 >>Siga para o Sítio do Valgan
 step
     #label Remedy
     .goto Silverpine Forest,52.74,27.70,8,0
@@ -172,7 +172,7 @@ step
     .goto Silverpine Forest,53.27,13.16,8,0
     .goto Silverpine Forest,53.43,12.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quintino Yorick|r no segundo andar da casa
-    .turnin 430 >>Entregue Devolver to Quinn
+    .turnin 430 >>Entregue Reencontrando Quintino
     .target Quinn Yorick
 step
     .goto Silverpine Forest,53.46,13.45
@@ -201,7 +201,7 @@ step
     .unitscan Son of Arugal
 step
     #completewith Nightlash
-    >>Mate os |cRXP_ENEMY_Ursos|r. Saque-os para obter seus |cRXP_LOOT_Corações|r
+    >>Mate |cRXP_ENEMY_Ursos|r. Saqueie-os para pegar seus |cRXP_LOOT_Corações|r
     .complete 447,1 --Grizzled Bear Heart (6)
     .mob Ferocious Grizzled Bear
     .mob Giant Grizzled Bear
@@ -218,7 +218,7 @@ step
     .mob Rot Hide Mystic
 step
     #completewith KillianVendor
-    >>Mate os |cRXP_ENEMY_Ursos|r. Saque-os para obter seus |cRXP_LOOT_Corações|r
+    >>Mate |cRXP_ENEMY_Ursos|r. Saqueie-os para pegar seus |cRXP_LOOT_Corações|r
     .complete 447,1 --Grizzled Bear Heart (6)
     .mob Ferocious Grizzled Bear
     .mob Giant Grizzled Bear
@@ -296,7 +296,7 @@ step
 step << !Mage !Priest
     .goto Silverpine Forest,44.05,39.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Guida Farrow|r
-    >>|cRXP_BUY_Compre|r |T134532:0|t[Vermelho-speckled Mushrooms] |cRXP_BUY_dela|r
+    >>|cRXP_BUY_Compre|r |T134532:0|t[Cogumelo de Bolinhas Vermelhas] |cRXP_BUY_dela|r
     .vendor >>Lixo de Vendedor
     .collect 4605,20,423,1 --Red-speckled Mushroom (20)
     .target Gwyn Farrow
@@ -498,7 +498,7 @@ step
     .zoneskip Undercity
 step << Undead
     .goto Undercity,61.48,41.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gordon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Antônio Nunes|r
     .turnin 6323 >>Entregue Carona para a Cidade Baixa
     .accept 6322 >>Aceite Miguel Garreta
     .target Gordon Wendham
@@ -675,14 +675,14 @@ step << Undead Rogue
     .isQuestTurnedIn 1886
 step << Undead Rogue
     .goto Undercity,54.84,76.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Andron|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Andron Gante|r
     .turnin 1898 >>Entregue The Deathstalkers - Missão - Missão
     .accept 1899 >>Aceite Os Sicários
     .target Andron Gant
     .isQuestTurnedIn 1886
 step << Undead Rogue
     .goto Undercity,55.43,76.87
-    >>Pegue |cRXP_PICK_Estante de Livros de Andron|r atrás de |cRXP_FRIENDLY_Andron|r
+    >>Pegue |cRXP_PICK_Estante de Livros de Andron|r atrás de |cRXP_FRIENDLY_Andron Gante|r
     .complete 1899,1 --Andron's Ledger (1)
     .isQuestTurnedIn 1886
 step << Undead Rogue
@@ -928,7 +928,7 @@ step
     .group
 step
     .goto Silverpine Forest,42.79,40.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Renferrel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Renferrel|r
     .turnin 450 >>Entregue Uma Receita para a Morte
     .target Apothecary Renferrel
     .isQuestComplete 450

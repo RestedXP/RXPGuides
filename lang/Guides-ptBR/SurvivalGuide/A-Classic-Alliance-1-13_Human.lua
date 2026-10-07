@@ -1366,7 +1366,7 @@ step << Rogue
 step
     .goto StormwindClassic,52.623,65.701
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >>Defina sua Pedra de Retorno em Ventobravo
+    .home >>Defina sua Pedra de Retorno em Cidade de Ventobravo
     .target Innkeeper Allison
 step << Warlock
     #completewith next
@@ -1490,7 +1490,7 @@ step << Warlock
     .goto StormwindClassic,25.25,78.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gakin, o Neromante|r
     .turnin 1688 >>Entregue Surena Caledon
-    .accept 1689 >>Aceite A Vinculação
+    .accept 1689 >>Aceite A vinculação
     .target Gakin the Darkbinder
 step << Warlock
     #completewith next
@@ -1588,7 +1588,7 @@ step
     >>|cRXP_WARN_Suba no Tram quando chegar. Saia no outro lado e procure |cRXP_FRIENDLY_Monty|r na plataforma do meio|r
     >>|cRXP_WARN_Lance|r |T136221:0|t[Evocar Emissário do Caos] |cRXP_WARN_e|r |T135230:0|t[Criar Pedra de Vida] |cRXP_WARN_enquanto aguarda|r << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r
-    .accept 6661 >>Aceite Ratos de Porão
+    .accept 6661 >>Aceite Caçada aos Ratos das Profundezas
     .target Monty
 step
     .use 17117 >>|cRXP_WARN_Use o|r |T133942:0|t[Rato Catcher's Flute] |cRXP_WARN_em|r |cRXP_ENEMY_Deeprun Ratos|r
@@ -1597,7 +1597,7 @@ step
 step
     .target Monty
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r
-    .turnin 6661 >>Entregue Ratos de Porão
+    .turnin 6661 >>Entregue Caçada aos Ratos das Profundezas
 step
     .zone Ironforge >>Entre em Ironforge
 step
@@ -2115,7 +2115,7 @@ step
 step
     .goto Loch Modan,33.938,50.954
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum Borrelson|r
-    .fp Thelsamar >>Aprenda a rota de voo de Thelsamar
+    .fp Thelsamar >>Pegue a rota de voo de Thelsamar
     .target Thorgrum Borrelson
 step
     .goto Loch Modan,22.071,73.127

@@ -1577,7 +1577,7 @@ step
     .accept 79094 >>Vire em As Lições de Ta'zo
     .accept 79095 >>Entregue A Cartilha Metafísica do Boticário
     .accept 79096 >>Vire em Ataeric: Sobre Curiosidades Arcanas
-    .accept 79097 >>Vire em Ataeric: Baxtan: Sobre Magias Destrutivas
+    .accept 79097 >>Entregue Baxtan: Sobre Magias Destrutivas
     .accept 79535 >>Vire em Basiliscos: quem tem medo de virar pedra?
     .accept 79947 >>Vire em Geomancia: a verdade nua e crua
     .accept 79948 >>Virar para Magia Defensiva Básica
@@ -2001,7 +2001,7 @@ step
     .accept 79094 >>Vire em As Lições de Ta'zo
     .accept 79095 >>Entregue A Cartilha Metafísica do Boticário
     .accept 79096 >>Vire em Ataeric: Sobre Curiosidades Arcanas
-    .accept 79097 >>Vire em Ataeric: Baxtan: Sobre Magias Destrutivas
+    .accept 79097 >>Entregue Baxtan: Sobre Magias Destrutivas
     .accept 79535 >>Vire em Basiliscos: quem tem medo de virar pedra?
     .accept 79947 >>Vire em Geomancia: a verdade nua e crua
     .accept 79948 >>Virar para Magia Defensiva Básica

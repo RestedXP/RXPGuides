@@ -120,7 +120,7 @@ step
     .accept 872 >>Aceite A Ofensiva do Posto Remoto
 .target Darsok Swiftdagger
 >>Fale com |cRXP_FRIENDLY_Darsok Punhálacre|r
-    .accept 867 >>Aceite As Harpias Bandoleiras
+    .accept 867 >>Aceite As harpias bandoleiras
 step
     .goto The Barrens,52.2,31.0
 >>Fale com |cRXP_FRIENDLY_Sergra Espinhonegro|r
@@ -230,14 +230,14 @@ step
     .goto The Barrens,63.3,38.4
 >>Fale com o |cRXP_FRIENDLY_Mestre Portuário Caruncho|r
     .turnin 1492 >>Entregue Mestre Portuário Caruncho
-    .turnin 890 >>Entregue [DEPRECATED]O Carregamento Desaparecido
+    .turnin 890 >>Entregue Carregamento perdido
 .target Wharfmaster Dizzywig
     .accept 892 >>Aceite [DEPRECATED]O Carregamento Desaparecido
     .accept 896 >>Aceite A Fortuna do Mineiro
 step
     .goto The Barrens,62.7,36.3
 >>Fale com |cRXP_FRIENDLY_Gasganete|r
-    .turnin 892 >>Entregue [DEPRECATED]O Carregamento Desaparecido
+    .turnin 892 >>Entregue Carregamento perdido
 .target Gazlowe
     .accept 888 >>Aceite Butim Roubado
 step
@@ -254,7 +254,7 @@ step
 >>Fale com |cRXP_FRIENDLY_Sergra Espinhonegro|r
     .turnin 845 >>Entregue As Zevras
 .target Sergra Darkthorn
-    .accept 903 >>Aceite Predadores dos Ermos
+    .accept 903 >>Aceite Predadores dos Sertões
 step
     #sticky
     #completewith next
@@ -503,7 +503,7 @@ step
     .goto The Barrens,63.30,38.40
 .target Wharfmaster Dizzywig
 >>Fale com o |cRXP_FRIENDLY_Mestre Portuário Caruncho|r
-    .turnin 896 >>Entregue A Fortuna do Mineiro
+    .turnin 896 >>Entregue A fortuna do mineiro
 step
     .goto The Barrens,62.40,37.70
 .target Mebok Mizzyrix
@@ -607,7 +607,7 @@ step
 step
     .goto The Barrens,52.2,31.0
 >>Fale com |cRXP_FRIENDLY_Sergra Espinhonegro|r
-    .turnin 905 >>Entregue No Covil dos Raptores
+    .turnin 905 >>Entregue Garrafoices furiosos
 .target Sergra Darkthorn
     .accept 3261 >>Aceite Jorn Vidente do Céu
 step
@@ -713,7 +713,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Mago da Horda AdE
 #defaultfor Horde Mage
-#next 21-30 Silverpine/Hillsbrad AdE
+#next 21-30 Floresta de Pinhaprata/Contraforte de Eira dos Montes AdE
 
 step
     .goto Stonetalon Mountains,80.7,89.2,50,0
@@ -730,7 +730,7 @@ step
 step
     .goto The Barrens,35.191,27.791
 >>Fale com |cRXP_FRIENDLY_Makaba Casco Chato|r
-    .turnin 6548 >>Entregue Vingue Minha Vila
+    .turnin 6548 >>Entregue Vingue minha vila
 .target Makaba Flathoof
     .accept 6629 >>Aceite Mate Grundig Nuvem Negra
 step
@@ -778,7 +778,7 @@ step
 >>Fale com |cRXP_FRIENDLY_Zé Fízzica|r
     .turnin 1483 >>Entregue Zé Fízzica
 .target Ziz Fizziks
-    .accept 1093 >>Aceite Super Ceifador 6000
+    .accept 1093 >>Aceite o Super Ceifador 6000
 step
     #sticky
     #requires deepmossegg
@@ -809,9 +809,9 @@ step
 step
     .goto Stonetalon Mountains,58.989,62.599
 >>Fale com |cRXP_FRIENDLY_Zé Fízzica|r
-    .turnin 1093 >>Entregue Super Ceifador 6000
+    .turnin 1093 >>Entregue o Super Ceifador 6000
 .target Ziz Fizziks
-    .accept 1094 >>Aceite Instruções Adicionais
+    .accept 1094 >>Aceite as instruções adicionais
 step
     .hs >>Use sua Pedra de Retorno para ir a Camp Taurajo
 step
@@ -882,13 +882,13 @@ step
     >>Corra de volta para Ponto de Ancoragem.
 .target Gazlowe
 >>Fale com |cRXP_FRIENDLY_Gasganete|r
-    .turnin 888 >>Entregue [DEPRICATED]Butim Roubado
+    .turnin 888 >>Entregue Butim Roubado
 step
     .goto The Barrens,63.0,37.2
 >>Fale com |cRXP_FRIENDLY_Cobogó|r
-    .turnin 1094 >>Entregue Instruções Adicionais
+    .turnin 1094 >>Entregue instruções adicionais
 .target Sputtervalve
-    .accept 1095 >>Aceite Instruções Adicionais
+    .accept 1095 >>Aceite as instruções adicionais
 step
     .goto The Barrens,62.4,37.6
 .target Mebok Mizzyrix
@@ -949,7 +949,7 @@ step
 >>Fale com |cRXP_FRIENDLY_Jorn Vidente do Céu|r
     .turnin 882 >>Entregue Ishamuhale
 .target Jorn Skyseer
-    .accept 907 >>Aceite Lagartos do Trovão Enraivecidos
+    .accept 907 >>Aceite Lagartos trovejantes enfurecidos
     .accept 1130 >>Aceite Recado de Melor
 step
     .goto The Barrens,44.8,59.1
@@ -962,7 +962,7 @@ step
 >>Fale com |cRXP_FRIENDLY_Jorn Vidente do Céu|r
     .turnin 882 >>Entregue Ishamuhale
 .target Jorn Skyseer
-    .accept 907 >>Aceite Lagartos do Trovão Enraivecidos
+    .accept 907 >>Aceite Lagartos trovejantes enfurecidos
     .accept 1130 >>Aceite Recado de Melor
 step
     #sticky
@@ -985,7 +985,7 @@ step
 >>Fale com |cRXP_FRIENDLY_Jorn Vidente do Céu|r
     .turnin 907 >>Entregue Lagartos do Trovão Enraivecidos
 .target Jorn Skyseer
-    .accept 913 >>Aceite Choro of the Thunderhawk
+    .accept 913 >>Aceite O grito do Falcotrom
 step
     .goto The Barrens,44.9,59.1
 .target Jorn Skyseer
@@ -997,7 +997,7 @@ step
 >>Fale com |cRXP_FRIENDLY_Jorn Vidente do Céu|r
     .turnin 907 >>Entregue Lagartos do Trovão Enraivecidos
 .target Jorn Skyseer
-    .accept 913 >>Aceite Choro of the Thunderhawk
+    .accept 913 >>Aceite O grito do Falcotrom
 step
     .goto The Barrens,44.8,63.2,30,0
     .goto The Barrens,47.0,61.6,30,0
@@ -1011,7 +1011,7 @@ step
     .goto The Barrens,44.8,59.1
 .target Jorn Skyseer
 >>Fale com |cRXP_FRIENDLY_Jorn Vidente do Céu|r
-    .turnin 913 >>Entregue Choro of the Thunderhawk
+    .turnin 913 >>Entregue O grito do Falcotrom
 --    .accept 874 >>Accept Mahren Skyseer
 step
     #completewith next
@@ -1024,7 +1024,7 @@ step
     .goto Thunder Bluff,32.0,66.9,60 >>Corra para o elevador e pegue-o para ir a Trovão Blefe
 step
     .goto Thunder Bluff,45.814,64.711
-    .home >>Defina sua Pedra de Retorno em Trovão Blefe
+    .home >>Defina sua Pedra de Regresso em Penhasco do Trovão
 step
     .goto Thunder Bluff,61.538,80.919
 >>Fale com o |cRXP_FRIENDLY_Melor Casco de Pedra|r
@@ -1046,7 +1046,7 @@ step
     .goto Thunder Bluff,28.4,27.7
 .target Clarice Foster
 >>Fale com |cRXP_FRIENDLY_Clarice Nourrice|r
-    .accept 264 >>Aceite Até que a Morte Nos Separe
+    .accept 264 >>Aceite Até que a morte nos separe
 step
 	.goto Thunder Bluff,47.003,49.832
     .fp Thunder Bluff >>Aprenda a rota de voo para Trovão Blefe
@@ -1076,7 +1076,7 @@ step
     .goto Stonetalon Mountains,58.989,62.599
 .target Ziz Fizziks
 >>Fale com |cRXP_FRIENDLY_Zé Fízzica|r
-    .turnin 1095 >>Entregue Instruções Adicionais
+    .turnin 1095 >>Entregue instruções adicionais
 step
     .goto Stonetalon Mountains,47.5,58.4
 .target Tammra Windfield

@@ -1295,7 +1295,7 @@ step << Druid
     .goto Teldrassil,55.945,61.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kal|r
 	.trainer >>Treine suas magias de classe
-    .accept 5925 >>Aceite Heeding the Call - Missão - Missão
+    .accept 5925 >>Aceite Atendendo o chamado
     .target Kal
 step << Priest
 #xprate >1.99

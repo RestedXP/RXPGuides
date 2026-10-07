@@ -1624,7 +1624,7 @@ step
     .cast 1842 >>|cRXP_WARN_Use|r |T136162:0|t[Desarmar Armadilha] |cRXP_WARN_na|r |cRXP_PICK_Armadilha de Dardos|r |cRXP_WARN_na árvore|r
 step
     .goto Swamp of Sorrows,42.76,30.77
-    >>Saque o |cRXP_PICK_Conspicuous Cache|r que apareceu para obter |T134419:0|t[|cRXP_FRIENDLY_Runa do Assassino|r]
+    >>Saque a |cRXP_PICK_Conspicuous Cache|r que apareceu para |T134419:0|t[|cRXP_FRIENDLY_Runa do Assassino|r]
     .collect 213139,1
 step
     .itemcount 213139,1
@@ -1835,8 +1835,8 @@ step
     .mob Southsea Freebooter
     .train 432301,1
 step
-    >>Abra o |T133639:0|t|cRXP_LOOT_Kidnapper's Moeda Purse|r e saque-o para obter um |T133302:0|t|cRXP_LOOT_Precious Precious Medallion|r
-    .collect 221370,1 -- Precious Precious Medallion 1/1
+    >>Abra a |T133639:0|t|cRXP_LOOT_Kidnapper's Moeda Purse|r e pegue a |T133302:0|t|cRXP_LOOT_Precious Medallion|r
+    .collect 221370,1 -- Precious Medallion 1/1
     .use 221371
     .train 432301,1
 step << Rogue

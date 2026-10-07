@@ -1567,7 +1567,7 @@ step
     >>|cRXP_WARN_Entre no Tram Deeprun|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r no meio da plataforma
     .target Monty
-    .accept 6661 >>Aceite Ratos de Porão
+    .accept 6661 >>Aceite Caçada aos Ratos das Profundezas
 step
     .use 17117 >>|cRXP_WARN_Use o|r |T133942:0|t[Rato Catcher's Flute] |cRXP_WARN_em|r |cRXP_ENEMY_Deeprun Ratos|r
     .complete 6661,1 --Rats Captured (x5)
@@ -1575,7 +1575,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r
     .target Monty
-    .turnin 6661 >>Entregue Ratos de Porão
+    .turnin 6661 >>Entregue Caçada aos Ratos das Profundezas
     .timer 11,Ratos de Deeprun RP
     .accept 6662 >>Aceite Espetinhos de... Rato
 step
@@ -2059,7 +2059,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gakin, o Neromante|r
     .trainer >>Treine suas magias de classe
     .turnin 1688 >>Entregue Surena Caledon
-    .accept 1689 >>Aceite A Vinculação
+    .accept 1689 >>Aceite A vinculação
     .target Gakin the Darkbinder
 step << Warlock
     #completewith next

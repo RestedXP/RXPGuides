@@ -289,7 +289,7 @@ step << NightElf Priest
     .trainer >>Treine suas magias de classe
     .target Jandria
 step << NightElf Rogue
-    >>Entre no Recanto Cenarion
+    >>Entre no Enclave Cenariano
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Syurna|r
     .goto Darnassus,31.84,16.69,30,0
     .goto Darnassus,37.00,21.92
@@ -522,7 +522,7 @@ step
     .goto Wetlands,2.433,78.689,-1
     .goto Ironforge,17.089,83.373,-1
     .zone Ironforge >>Usar o recurso de auto-resgate de personagem para pular para Ironforge. Você terá que fazer logout naquele local e navegar até o menu de ajuda em outro personagem, depois rolar para baixo até auto-serviço. Clique em seu personagem e mova-se. Se você não conseguir se desbloquear, marque este passo e nade ao longo das montanhas para Cerro Oeste
-    .link https://www.youtube.com/watch?v=oVoxsr4zcg4 >>https://www.youtube.com/watch?v=oVoxsr4zcg4 >> Clique aqui para referência de vídeo
+    .link https://www.youtube.com/watch?v=oVoxsr4zcg4 >>https://www.youtube.com/watch?v=oVoxsr4zcg4 >> Clique aqui para ver o vídeo de referência
     --*Please note that the unstuck feature doesn't work on the PTR
     .subzoneskip 809--IF Gates
     .subzoneskip 2257--Deeprun Tram
@@ -622,7 +622,7 @@ step
     >>|cRXP_WARN_Suba no Tram quando chegar. Saia no outro lado e procure |cRXP_FRIENDLY_Monty|r na plataforma do meio|r
     >>|cRXP_WARN_Lance|r |T136221:0|t[Evocar Emissário do Caos] |cRXP_WARN_e|r |T135230:0|t[Criar Pedra de Vida] |cRXP_WARN_enquanto aguarda|r << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r
-    .accept 6661 >>Aceite Ratos de Porão
+    .accept 6661 >>Aceite Caçada aos Ratos das Profundezas
     .target Monty
     .zoneskip Ironforge
     .subzoneskip 809
@@ -636,7 +636,7 @@ step
     .subzoneskip 2257
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r
-    .turnin 6661 >>Entregue Ratos de Porão
+    .turnin 6661 >>Entregue Caçada aos Ratos das Profundezas
     .timer 11,Ratos de Deeprun RP
     .accept 6662 >>Aceite Espetinhos de... Rato
     .target Monty
@@ -1022,7 +1022,7 @@ step
 step
     .goto Loch Modan,33.938,50.954
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum Borrelson|r
-    .fp Thelsamar >>Aprenda a rota de voo de Thelsamar
+    .fp Thelsamar >>Pegue a rota de voo de Thelsamar
     .target Thorgrum Borrelson
 step
     .goto Loch Modan,22.071,73.127
@@ -1126,7 +1126,7 @@ step
     >>|cRXP_WARN_Entre no Tram Deeprun|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r no meio da plataforma
     .target Monty
-    .accept 6661 >>Aceite Ratos de Porão
+    .accept 6661 >>Aceite Caçada aos Ratos das Profundezas
 step
     .use 17117 >>|cRXP_WARN_Use o|r |T133942:0|t[Rato Catcher's Flute] |cRXP_WARN_em|r |cRXP_ENEMY_Deeprun Ratos|r
     .complete 6661,1 --Rats Captured (x5)
@@ -1134,7 +1134,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r
     .target Monty
-    .turnin 6661 >>Entregue Ratos de Porão
+    .turnin 6661 >>Entregue Caçada aos Ratos das Profundezas
     .timer 11,Ratos de Deeprun RP
     .accept 6662 >>Aceite Espetinhos de... Rato
 step

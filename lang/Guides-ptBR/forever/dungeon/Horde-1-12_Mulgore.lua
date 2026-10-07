@@ -14,7 +14,7 @@ RXPGuides.RegisterGuide([[
 #subgroup (WIP) Guia de Masmorras 1-22
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
-#next 6-12 Mulgore; 6-13 Mulgore
+#next 6-12 Mulgore;6-13 Mulgore
 
 step
 #include RestedXP Forever Guide (A)\1-6 Mulgore

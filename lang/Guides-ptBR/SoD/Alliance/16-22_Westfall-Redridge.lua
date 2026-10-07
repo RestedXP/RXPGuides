@@ -105,7 +105,7 @@ step << Warlock
     .goto StormwindClassic,25.25,78.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gakin, o Neromante|r
     .turnin 1688 >>Entregue Surena Caledon
-    .accept 1689 >>Aceite A Vinculação
+    .accept 1689 >>Aceite A vinculação
     .target Gakin the Darkbinder
 step << Warlock
     #completewith next
@@ -475,7 +475,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #label BMenace
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Oficial Marris|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Marris|r
     .goto Redridge Mountains,33.50,48.97
     .accept 20 >>Aceite A Ameaça de Rocha Negra
     .target Marshal Marris
@@ -513,10 +513,10 @@ step
 	.target Magistrate Solomon
     .accept 120 >>Aceite Mensageiro para Ventobravo
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre de Doca Baren|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre de Doca Baren|r
 	.target Dockmaster Baren
     .goto Redridge Mountains,27.70,47.40
-    .accept 127 >>Aceite Vendendo Peixe
+    .accept 127 >>Aceite O lago está para peixe
 step
     .goto Redridge Mountains,26.80,44.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Darcy|r
@@ -591,7 +591,7 @@ step
     .accept 89 >>Aceite The Everstill Ponte
 step
     #label BMenace
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Oficial Marris|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Marris|r
     .goto Redridge Mountains,33.50,48.97
     .accept 20 >>Aceite A Ameaça de Rocha Negra
     .target Marshal Marris
@@ -760,7 +760,7 @@ step << Human
     .zoneskip Redridge Mountains
 step
     #label BMenace
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Oficial Marris|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Marris|r
     .goto Redridge Mountains,33.50,48.97
     .accept 20 >>Aceite A Ameaça de Rocha Negra
     .target Marshal Marris
@@ -1346,11 +1346,11 @@ step
     .accept 92 >>Aceite Gulache de Cristarrubra
     .turnin 92 >>Entregue Gulache de Cristarrubra
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre de Doca Baren|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre de Doca Baren|r
 	.target Dockmaster Baren
     .goto Redridge Mountains,27.72,47.38
-    .turnin 127 >>Entregue Venda de Peixes
-    .accept 150 >>Aceite Caçadores Murloc
+    .turnin 127 >>Entregue O lago está para peixe
+    .accept 150 >>Aceite Caçadores de murlocs
     .turnin 150 >>Entregue Murloc Poachers
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vervo Obom|r
@@ -1358,7 +1358,7 @@ step
     .goto Redridge Mountains,31.00,47.30
     .turnin 122 >>Entregue Underbelly Escamoso
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Oficial Marris|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Marris|r
 	.target Marshal Marris
     .goto Redridge Mountains,33.50,48.97
     .turnin 20 >>Entregue Blackrock Ameaça
@@ -1370,7 +1370,7 @@ step
 step << !Mage/Paladin/Warlock
     .goto StormwindClassic,52.623,65.701
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >>Defina sua Pedra de Retorno em Ventobravo
+    .home >>Defina sua Pedra de Retorno em Cidade de Ventobravo
     .target Innkeeper Allison
 step << Mage
     .goto Stormwind City,39.681,79.538

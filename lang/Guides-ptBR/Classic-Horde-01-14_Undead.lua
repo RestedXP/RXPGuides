@@ -831,7 +831,7 @@ step
     .target +Deathguard Dillinger
     .goto Tirisfal Glades,58.20,51.45
     .turnin 383 >>Entregue Informações cruciais
-    .accept 427 >>Aceite Em Guerra com a Cruzada Escarlate
+    .accept 427 >>Aceite Guerra à Cruzada Escarlate
     .target +Executor Zygand
     .goto Tirisfal Glades,60.59,51.77
 step << Rogue
@@ -850,7 +850,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     .goto Tirisfal Glades,60.12,53.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Oliver|r|cRXP_BUY_. Compre um|r |T135641:0|t[Estilete] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Olivier Ewor|r|cRXP_BUY_. Compre um|r |T135641:0|t[Estilete] |cRXP_BUY_dele|r
     .collect 2494,1,404,1 --Collect Stiletto (1)
     .money <0.0401
     .itemStat 16,QUALITY,<7
@@ -910,7 +910,7 @@ step
     .xp <7,1
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
     .turnin 5651 >>Entregue Em favor da escuridão
     .accept 5650 >>Aceite Vestes da escuridão
 	.train 591 >>Aprenda |T135924:0|t[Punição]
@@ -932,14 +932,14 @@ step << Warrior
 step << Rogue
     #season 0
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r no segundo andar
     .train 1757 >>Aprenda |T136189:0|t[Golpe Sinistro]
     .target Marion Call
     .money <0.01
 step << Rogue
     #season 2
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r no segundo andar
     .train 1757 >>Aprenda |T136189:0|t[Golpe Sinistro]
     .train 921 >>Treine |T133644:0|t [Bater Carteira]
     .target Marion Call
@@ -948,7 +948,7 @@ step << Rogue
     #optional
     #season 2
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r no segundo andar
     .train 921 >>Treine |T133644:0|t [Bater Carteira]
     .target Marion Call
     .money >0.02
@@ -981,8 +981,8 @@ step << Priest/Warlock
 step
     .goto Tirisfal Glades,61.71,52.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Geni|r
-    >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r. << Mage/Priest
-    >>|cRXP_BUY_Compre|r |T134532:0|t[Vermelho-speckled Mushrooms] |cRXP_BUY_dela|r <<Warrior/Rogue
+    >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r << Mage/Priest
+    >>|cRXP_BUY_Compre|r |T134532:0|t[Cogumelo de Bolinhas Vermelhas] |cRXP_BUY_dela|r <<Warrior/Rogue
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_e|r |T134532:0|t[Vermelho-speckled Mushrooms] |cRXP_BUY_dela|r << Warlock
     .vendor >>Lixo de Comerciante
     .collect 1179,15,367,1 << Mage/Priest --Ice Cold Milk (15)
@@ -1228,7 +1228,7 @@ step
 step
     #hardcore
     #completewith BrillTurnin1
-    .subzone 159 >>Volte para Brill
+    .subzone 159 >>Volte para Montalvo
     .subzoneskip 159
     .cooldown item,6948,<0
 step
@@ -1259,7 +1259,7 @@ step
     .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.40
     .turnin 427 >>Entregue Em Guerra com a Cruzada Escarlate
-    .accept 370 >>Aceite Em Guerra com a Cruzada Escarlate
+    .accept 370 >>Aceite Guerra à Cruzada Escarlate
     .target +Executor Zygand
     .goto Tirisfal Glades,60.58,51.77
     .isQuestComplete 367
@@ -1275,7 +1275,7 @@ step
     .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.40
     .turnin 427 >>Entregue Em Guerra com a Cruzada Escarlate
-    .accept 370 >>Aceite Em Guerra com a Cruzada Escarlate
+    .accept 370 >>Aceite Guerra à Cruzada Escarlate
     .target +Executor Zygand
     .goto Tirisfal Glades,60.58,51.77
  step
@@ -1304,8 +1304,8 @@ step
     .isQuestComplete 375
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no segundo andar
-    .turnin 5650 >>Entregue Vestes da Escuridão
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
+    .turnin 5650 >>Entregue Vestes da escuridão
     .train 591 >>Aprenda |T135924:0|t[Punição]
     .train 17 >>Aprenda |T135940:0|t[Palavra de Poder: Escudo]
     .target Dark Cleric Beryl
@@ -1317,7 +1317,7 @@ step
     .target Gretchen Dedmar
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
 	.train 139 >>Treine suas magias de classe
     .target Dark Cleric Beryl
     .xp <8,1
@@ -1335,7 +1335,7 @@ step << Warrior
     .xp <8,1
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r no segundo andar
     .train 6760 >>Treine suas magias de classe
     .target Marion Call
     .xp <8,1
@@ -1347,8 +1347,8 @@ step << Warlock
     .xp <8,1
 step << Rogue/Warrior
     .goto Tirisfal Glades,61.81,52.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neela|r
-    >>|cRXP_WARN_Tente fazê-los enquanto aguarda Zepelins|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Enfermeira Nila|r
+    >>|cRXP_WARN_Tente fazê-los enquanto estiver esperando por algo, como os Zepelins|r
     .train 3273 >>Aprenda |T135966:0|t[Primeiros Socorros]
     .target Nurse Neela
 step << Rogue
@@ -1360,7 +1360,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     .goto Tirisfal Glades,60.12,53.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Oliver|r|cRXP_BUY_. Compre um|r |T135641:0|t[Estilete] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Olivier Ewor|r|cRXP_BUY_. Compre um|r |T135641:0|t[Estilete] |cRXP_BUY_dele|r
     .collect 2494,1,367,1 --Collect Stiletto (1)
     .money <0.0401
     .itemStat 16,QUALITY,<7
@@ -1513,7 +1513,7 @@ step
     #xprate <1.5
     #hardcore
     #completewith NewPlague1
-    .subzone 159 >>Volte para Brill
+    .subzone 159 >>Volte para Montalvo
     .subzoneskip 159
 step
     #xprate <1.5
@@ -1558,7 +1558,7 @@ step
 step << Priest
     #xprate <1.5
     .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
 	.train 139 >>Treine suas magias de classe
     .target Dark Cleric Beryl
     .xp <8,1
@@ -1579,7 +1579,7 @@ step << Warrior
 step << Rogue
     #xprate <1.5
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r no segundo andar
     .train 6760 >>Treine suas magias de classe
     .target Marion Call
     .xp <8,1
@@ -1600,7 +1600,7 @@ step << Rogue
 step << Rogue
     #xprate <1.5
     .goto Tirisfal Glades,60.12,53.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Oliver|r|cRXP_BUY_. Compre um|r |T135641:0|t[Estilete] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Olivier Ewor|r|cRXP_BUY_. Compre um|r |T135641:0|t[Estilete] |cRXP_BUY_dele|r
     .collect 2494,1,398,1 --Collect Stiletto (1)
     .money <0.0401
     .itemStat 16,QUALITY,<7
@@ -1660,7 +1660,7 @@ step << Warrior
 step
     #completewith next
     >>Pegue a |cRXP_LOOT_Erva-do-demo|r no chão
-    >>|cRXP_WARN_Eles são encontrados perto de árvores na área Gnoll|r
+    >>|cRXP_WARN_São encontrados perto de árvores na área dos Gnoll|r
     .complete 5482,1 --Doom Weed (10)
     .isOnQuest 5482
 step
@@ -1678,7 +1678,7 @@ step
     .mob Rot Hide Graverobber
 step
     #completewith next
-    >>Mate os |cRXP_ENEMY_Rot Esconder-se Mongrels|r. Saqueie-os para pegar o |cRXP_LOOT_Ichor|r deles
+    >>Mate |cRXP_ENEMY_Mestiços Putricouros|r. Saqueie-os para pegar |cRXP_LOOT_Linfa|r
     .complete 358,2 --Rot Hide Mongrel (5)
     .complete 358,3 --Embalming Ichor (8)
     .disablecheckbox
@@ -1701,7 +1701,7 @@ step
     .goto Tirisfal Glades,58.36,38.55,30,0
     .goto Tirisfal Glades,57.48,35.95,30,0
     >>Pegue a |cRXP_LOOT_Erva-do-demo|r no chão
-    >>|cRXP_WARN_Eles são encontrados perto de árvores na área Gnoll|r
+    >>|cRXP_WARN_São encontrados perto de árvores na área dos Gnoll|r
     .complete 5482,1 --Doom Weed (10)
     .isOnQuest 5482
 step << Mage
@@ -1719,7 +1719,7 @@ step << Mage
     .train 118,3
 step
     #completewith MaggotEye
-    >>Mate os |cRXP_ENEMY_Rot Esconder-se Mongrels|r. Saqueie-os para pegar o |cRXP_LOOT_Ichor|r deles
+    >>Mate |cRXP_ENEMY_Mestiços Putricouros|r. Saqueie-os para pegar |cRXP_LOOT_Linfa|r
     .complete 358,2 --Rot Hide Mongrel (5)
     .complete 358,3 --Embalming Ichor (8)
     .disablecheckbox
@@ -1727,7 +1727,7 @@ step
 step
     #label MaggotEye
     .goto Tirisfal Glades,58.66,30.77
-    >>Mate o |cRXP_ENEMY_Olho de Verme|r. Saqueie-o para pegar a |cRXP_LOOT_Paw|r
+    >>Mate o |cRXP_ENEMY_Olho de Verme|r. Saqueie-o para pegar a |cRXP_LOOT_Pata|r
     .complete 398,1 --Maggot Eye's Paw (1)
     .mob Maggot Eye
 step
@@ -1737,7 +1737,7 @@ step
     .goto Tirisfal Glades,59.77,32.37,50,0
     .goto Tirisfal Glades,58.25,31.28,50,0
     .goto Tirisfal Glades,60.08,37.88,50,0
-    >>Mate os |cRXP_ENEMY_Rot Esconder-se Mongrels|r. Saqueie-os para pegar o |cRXP_LOOT_Ichor|r deles
+    >>Mate |cRXP_ENEMY_Mestiços Putricouros|r. Saqueie-os para pegar |cRXP_LOOT_Linfa|r
     .complete 358,2 --Rot Hide Mongrel (5)
     .complete 358,3 --Embalming Ichor (8)
     .disablecheckbox
@@ -1886,7 +1886,7 @@ step << Rogue
 step
     #hardcore
     #completewith Brill3
-    .subzone 159 >>Volte para Brill
+    .subzone 159 >>Volte para Montalvo
     .subzoneskip 159
 step
     #softcore
@@ -1924,7 +1924,7 @@ step
     .accept 369 >>Aceite Uma Nova Peste
     .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.40
-    .turnin 398 >>Entregue Wanted: Olho de Verme
+    .turnin 398 >>Entregue Procura-se: Olho de Verme
     .target +Executor Zygand
     .goto Tirisfal Glades,60.58,51.77
     .turnin 358 >>Entregue Roubacovas
@@ -1939,7 +1939,7 @@ step
     .accept 369 >>Aceite Uma Nova Peste
     .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.40
-    .turnin 398 >>Entregue Wanted: Olho de Verme
+    .turnin 398 >>Entregue Procura-se: Olho de Verme
     .target +Executor Zygand
     .goto Tirisfal Glades,60.58,51.77
     .turnin 358 >>Entregue Roubacovas
@@ -1976,7 +1976,7 @@ step
     .isQuestComplete 375
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
 	.train 139 >>Treine suas magias de classe
     .target Dark Cleric Beryl
     .xp <8,1
@@ -1994,7 +1994,7 @@ step << Warrior
     .xp <8,1
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r no segundo andar
     .train 6760 >>Treine suas magias de classe
     .target Marion Call
     .xp <8,1
@@ -2006,8 +2006,8 @@ step << Warlock
     .xp <8,1
 step << Rogue/Warrior
     .goto Tirisfal Glades,61.81,52.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neela|r
-    >>|cRXP_WARN_Tente fazê-los enquanto aguarda Zepelins|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Enfermeira Nila|r
+    >>|cRXP_WARN_Tente fazê-los enquanto estiver esperando por algo, como os Zepelins|r
     .train 3273 >>Aprenda |T135966:0|t[Primeiros Socorros]
     .target Nurse Neela
 step << Rogue
@@ -2019,7 +2019,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     .goto Tirisfal Glades,60.12,53.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Oliver|r|cRXP_BUY_. Compre um|r |T135641:0|t[Estilete] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Olivier Ewor|r|cRXP_BUY_. Compre um|r |T135641:0|t[Estilete] |cRXP_BUY_dele|r
     .collect 2494,1,354,1 --Collect Stiletto (1)
     .money <0.0401
     .itemStat 16,QUALITY,<7
@@ -2058,8 +2058,8 @@ step
     #label Brill3
     .goto Tirisfal Glades,61.71,52.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Geni|r
-    >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r. << Mage/Priest
-    >>|cRXP_BUY_Compre|r |T134532:0|t[Vermelho-speckled Mushrooms] |cRXP_BUY_dela|r <<Warrior/Rogue
+    >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r << Mage/Priest
+    >>|cRXP_BUY_Compre|r |T134532:0|t[Cogumelo de Bolinhas Vermelhas] |cRXP_BUY_dela|r <<Warrior/Rogue
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_e|r |T134532:0|t[Vermelho-speckled Mushrooms] |cRXP_BUY_dela|r << Warlock
     .vendor >>Lixo de Comerciante
     .collect 1179,20,426,1 << Mage/Priest --Ice Cold Milk (20)
@@ -2097,7 +2097,7 @@ step
     .isOnQuest 362
 step
     #completewith ThurmanGregor
-    >>|T134939:0|t[|cRXP_LOOT_Thurman's Carta|r] |cRXP_WARN_Pode cair desses inimigos. Aceite a missão se cair.|r
+    >>|T134939:0|t[|cRXP_LOOT_Carta de Timóteo|r] |cRXP_WARN_Pode cair desses inimigos. Aceite a missão se cair.|r
     .collect 2839,1,361 --Collect A Letter to Yvette (1)
     .accept 361 >>Aceite A carta que nunca chegou
     .use 2839
@@ -2112,7 +2112,7 @@ step
 step
     #label KillDevlin
     .goto Tirisfal Glades,47.34,40.78
-    >>Mate |cRXP_ENEMY_Devlin|r. Saque-o pelos seus |cRXP_LOOT_Restos|r
+    >>Mate |cRXP_ENEMY_Delmiro Agamand|r. Saque-o para pegar |cRXP_LOOT_Restos Mortais de Delmiro|r
     .complete 362,1 --Devlin's Remains (1)
     .mob Devlin Agamand
 step
@@ -2368,15 +2368,15 @@ step << Mage
 step
     #hardcore
     #completewith FoodandWater2
-    .subzone 159 >>Volte para Brill
+    .subzone 159 >>Volte para Montalvo
 step
     #softcore
     #completewith FoodandWater2
     .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
 step
     .goto Tirisfal Glades,58.20,51.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dillinger|r
-    .turnin 426 >>Vá para Os Moinhos Invadidos
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
+    .turnin 426 >>Vá para Os moinhos invadidos
     .target Deathguard Dillinger
 step
     #optional
@@ -2393,7 +2393,7 @@ step
     .target +Yvette Farthing
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Entregue Mortes na família
-    .turnin 362 >>Vá para Os Moinhos Assombrados
+    .turnin 362 >>Vá para Os moinhos assombrados
     .accept 355 >>Aceite Fale com Sevren
     .target +Coleman Farthing
     .goto Tirisfal Glades,61.72,52.29
@@ -2402,7 +2402,7 @@ step
     .goto Tirisfal Glades,61.72,52.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eurico|r
     .turnin 354 >>Entregue Mortes na família
-    .turnin 362 >>Vá para Os Moinhos Assombrados
+    .turnin 362 >>Vá para Os moinhos assombrados
     .accept 355 >>Aceite Fale com Sevren
     .target Coleman Farthing
 step
@@ -2414,7 +2414,7 @@ step
     .isQuestComplete 375
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
 	.trainer >>Treine suas magias de classe
     .target Dark Cleric Beryl
 step << Warrior
@@ -2450,15 +2450,15 @@ step << Rogue
     .target Marion Call
 step << Mage
     .goto Tirisfal Glades,61.96,52.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cain|r dentro da estalagem
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caio Cantígnea|r dentro da estalagem
     .accept 1881 >>Aceite Falar com Anastasia
     .target Cain Firesong
 step
     #label FoodandWater2
     .goto Tirisfal Glades,61.71,52.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Geni|r
-    >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r. << Mage/Priest/Shaman
-    >>|cRXP_BUY_Compre|r |T134532:0|t[Vermelho-speckled Mushrooms] |cRXP_BUY_dela|r <<Warrior/Rogue
+    >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r << Mage/Priest/Shaman
+    >>|cRXP_BUY_Compre|r |T134532:0|t[Cogumelo de Bolinhas Vermelhas] |cRXP_BUY_dela|r <<Warrior/Rogue
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_e|r |T134532:0|t[Vermelho-speckled Mushrooms] |cRXP_BUY_dela|r << Warlock
     .vendor >>Lixo de Comerciante
     .collect 1179,20,370,1 << Mage/Priest/Shaman --Ice Cold Milk (20)
@@ -2470,19 +2470,19 @@ step
     .target Innkeeper Renee
 step << Warrior
     .goto Tirisfal Glades,58.19,51.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dillinger|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
     .turnin 1818 >>Entregue Uma conversa com Dinis
     .accept 1819 >>Aceite Ulag, o Cutelo
     .target Deathguard Dillinger
     .isQuestAvailable 1498
 step << Warrior
     .goto Tirisfal Glades,59.16,48.51
-    >>|cRXP_WARN_Clique no crânio no chão. Isto vai invocar|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Abate o|r
+    >>|cRXP_WARN_Clique no crânio no chão. Isto vai invocar|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Mate-o|r
     .complete 1819,1 --Ulag the Cleaver (1)
     .mob Ulag the Cleaver
 step << Warrior
     .goto Tirisfal Glades,58.19,51.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dillinger|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
     .turnin 1819 >>Entregue Ulag, O Cutelo
     .accept 1820 >>Aceite Encontrando Eurico
     .target Deathguard Dillinger
@@ -2497,12 +2497,12 @@ step << Warlock
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >>Pegue o elevador para a Undercity
+    .goto Undercity,65.53,43.62,15 >>Pegue o elevador até Cidade Baixa
 step << Warlock
     .goto Undercity,85.07,25.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Carendin|r no Bairro da Magia
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Silvério Hidalgo|r no Distrito da Magia
     .turnin 1478 >>Entregue Convocação de Hidalgo
-    .accept 1473 >>Aceite Criatura do Vazio
+    .accept 1473 >>Aceite Criatura do caos
 step << Warlock
     .goto Undercity,47.25,39.12,50,0
     .goto Undercity,46.35,43.86,10,0
@@ -2525,7 +2525,7 @@ step << Rogue
 step << Warlock
     #completewith next
     .goto Tirisfal Glades,51.06,67.57
-    >>Saque |cRXP_PICK_Baú de Perrine|r para |T133733:0|t[Grimório de Egalin]
+    >>Saqueie |cRXP_PICK_Baú do Perrine|r para pegar |T133733:0|t[Grimório de Egalin]
     .complete 1473,1 --Egalin's Grimoire (1)
 step
     #label ScarletCrusade1
@@ -2595,7 +2595,7 @@ step << Warrior/Rogue
     .goto Undercity,56.06,37.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Brom|r
     .train 2575 >>Treine |T136248:0|t[Mineração]
-    >>|cRXP_WARN_Isso vai permitir que você encontre|r |T135232:0|t|cRXP_LOOT_[Pedra Rústica]|r |cRXP_WARN_de depósitos para criar|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Dano da Arma por 30 minutos)|r
+    >>|cRXP_WARN_Isto permitirá que você encontre|r |T135232:0|t|cRXP_LOOT_[Pedra Rústica]|r |cRXP_WARN_de depósitos de minérios para fabricar|r |T135248:0|t[Pedra de Afiar Rústica] |cRXP_WARN_(+2 Dano da Arma por 30 minutos)|r
     .target Brom Killian
 step << Warrior/Rogue
     .goto Undercity,56.72,36.92
@@ -2631,14 +2631,14 @@ step << !Priest
     .goto Undercity,64.20,49.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Leiloeira Rhyker|r
     >>|cRXP_BUY_Compre seis|r |T134339:0|t[Discolored Worg Corações] |cRXP_BUY_do Auction House|r
-    >>|cRXP_WARN_Pule isto se quiser, é apenas uma pequena economia de tempo|r
+    >>|cRXP_WARN_Pule isto se você quiser, é apenas uma pequena economia de tempo|r
     .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .target Auctioneer Rhyker
 step << Warlock
     .goto Undercity,85.07,25.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Carendin|r no Bairro da Magia
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Silvério Hidalgo|r no Distrito da Magia
     .turnin 1473 >>Entregue Criatura do caos
-    .accept 1471 >>Aceite A Vinculação
+    .accept 1471 >>Aceite A vinculação
     .target Carendin Halgar
 step << Warlock
     #completewith next
@@ -2732,7 +2732,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith LogoutSkip1
-    +|cRXP_WARN_Equipe as|r |T135425:0|t[Keen Arremessando Knives]
+    +|cRXP_WARN_Equipe as|r |T135425:0|t[Facas de Arremesso Afiadas]
     .use 3107
     .itemcount 3107,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
@@ -2745,32 +2745,32 @@ step << Rogue
     .target Mennet Carkad
 step << Mage
     #optional
-    .abandon 1883 >>Abandone Falar com Un'thuwa, caso contrário você não conseguirá aceitar a próxima missão
+    .abandon 1883 >>Abandone Fale com Un'Thuwa, caso contrário você não conseguirá aceitar a próxima missão
     .isOnQuest 1883
 step << Mage
     .goto Undercity,85.12,10.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anastasia|r no Bairro da Magia
     .turnin 1881 >>Entregue Falar com Anastasia
-    .accept 1882 >>Aceite A Fazenda Balnir
+    .accept 1882 >>Aceite A Fazenda dos Balnir
     .target Anastasia Hartwell
 step
     #xprate <1.5
     .goto Undercity,84.06,17.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bethor|r no Bairro da Magia
-    .turnin 405 >>Entregue O Lich Pródigo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boanerges Stalactus|r no Distrito da Magia
+    .turnin 405 >>Entregue O Lich pródigo
     .accept 357 >>Aceite A Identidade do Lich
     .target Bethor Iceshard
 step << Mage/Warlock
     #xprate >1.49
     .goto Undercity,84.06,17.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bethor|r no Bairro da Magia
-    .turnin 405 >>Entregue O Lich Pródigo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boanerges Stalactus|r no Distrito da Magia
+    .turnin 405 >>Entregue O Lich pródigo
     .target Bethor Iceshard
 step
     #xprate <1.5
     #label UCHome
     .goto Undercity,67.74,37.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Norman|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Ronan|r
     .home >>Defina sua Pedra de Regresso em Cidade Baixa
     .target Innkeeper Norman
     .bindlocation 1497
@@ -2782,7 +2782,7 @@ step << skip
     .goto Undercity,84.86,20.34
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_realize um Logout Pular posicionando seu personagem na parte mais alta da escada mais baixa até parecer que está flutuando, depois saia e entre novamente|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >>https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_Clique aqui para ver um exemplo|r
-    >>|cRXP_WARN_se você não conseguir fazer isso, apenas saia de Undercity normalmente|r
+    >>|cRXP_WARN_Se você não conseguir fazer isso, apenas saia de Cidade Baixa normalmente|r
 step << skip -- !Mage !Warlock
     #xprate >1.49
     #ah << Priest
@@ -2791,7 +2791,7 @@ step << skip -- !Mage !Warlock
     .goto Undercity,82.75,65.23 << Rogue
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Realize um Logout Pular pulando em cima da pilha de barris, depois faça logout e entre novamente|r << Priest/Warrior
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Faça um Atalho por Logout pulando sobre o triturador da Carroça Carniceira, depois, saia e entre novamente|r << Rogue
-    >>|cRXP_WARN_se você não conseguir fazer isso, apenas saia de Undercity normalmente|r
+    >>|cRXP_WARN_Se você não conseguir fazer isso, apenas saia de Cidade Baixa normalmente|r
     .zoneskip Undercity,1
 step
     #xprate <1.5 << Priest
@@ -2815,15 +2815,15 @@ step
     #optional
     .goto Tirisfal Glades,60.93,52.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Burgess|r
-    .turnin 374 >>Entregue Proof of Óbito
+    .turnin 374 >>Entregue Prova da morte
     .target Deathguard Burgess
     .isQuestComplete 374
 step
     #label AtWarS
     .goto Tirisfal Glades,60.58,51.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zygand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Executor Zigano|r
     .turnin 370 >>Entregue Em Guerra com a Cruzada Escarlate
-    .accept 371 >>Aceite Em Guerra com a Cruzada Escarlate
+    .accept 371 >>Aceite Guerra à Cruzada Escarlate
     .target Executor Zygand
 step << Rogue
     #season 2
@@ -2876,7 +2876,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Lina|r
     .turnin 359 >>Entregue Deveres Renegados
     .accept 360 >>Aceite Retornar ao Magistrado
-    .accept 356 >>Aceite Patrulha da Retaguarda
+    .accept 356 >>Aceite Patrulha da retaguarda
     .target Deathguard Linnea
 step << Warrior
     #season 2
@@ -2895,7 +2895,7 @@ step
 step
     #label ArriveBalnir
     .goto Tirisfal Glades,76.51,61.77
-    .subzone 165 >>Vá para Balnir Farmstead
+    .subzone 165 >>Vá para Fazenda dos Balnir
     .isOnQuest 356
 step << Mage
     #season 2
@@ -2977,7 +2977,7 @@ step
     .goto Tirisfal Glades,76.12,57.22,40,0
     .goto Tirisfal Glades,77.16,56.75,40,0
     .goto Tirisfal Glades,79.82,56.40,40,0
-    >>Mate os |cRXP_ENEMY_Scarlet Friars|r e os |cRXP_ENEMY_Scarlet Zealots|r. Saqueie-os pelos |cRXP_LOOT_Scarlet Insignia Rings|r
+    >>Mate |cRXP_ENEMY_Frades Escarlates|r e |cRXP_ENEMY_Zelotes Escarlates|r. Saqueie-os para pegar |cRXP_LOOT_Anel com Insígnia Escarlate|r
     .complete 371,2 --Scarlet Friar (5)
     .complete 374,1 --Scarlet Insignia Ring (10)
     .disablecheckbox
@@ -3001,13 +3001,13 @@ step
     .goto Tirisfal Glades,76.12,57.22,40,0
     .goto Tirisfal Glades,77.16,56.75,40,0
     .goto Tirisfal Glades,79.82,56.40,40,0
-    >>Abate os |cRXP_ENEMY_Scarlet Friars|r
+    >>Mate |cRXP_ENEMY_Frades Escarlates|r
     .complete 371,2 --Scarlet Friar (5)
     .mob Scarlet Friar
     .isQuestTurnedIn 374
 step
     .goto Tirisfal Glades,78.82,56.14
-    >>Abate o |cRXP_ENEMY_Capitão Vidálio|r dentro da torre
+    >>Mate o |cRXP_ENEMY_Capitão Vidálio|r que está dentro da torre
     .complete 371,1 --Captain Vachon (1)
     .mob Captain Vachon
 step
@@ -3027,7 +3027,7 @@ step
     .goto Tirisfal Glades,76.12,57.22,40,0
     .goto Tirisfal Glades,77.16,56.75,40,0
     .goto Tirisfal Glades,79.82,56.40,40,0
-    >>Mate os |cRXP_ENEMY_Scarlet Friars|r e os |cRXP_ENEMY_Scarlet Zealots|r. Saqueie-os pelos |cRXP_LOOT_Scarlet Insignia Rings|r
+    >>Mate |cRXP_ENEMY_Frades Escarlates|r e |cRXP_ENEMY_Zelotes Escarlates|r. Saqueie-os para pegar |cRXP_LOOT_Anel com Insígnia Escarlate|r
     .complete 374,1 --Scarlet Insignia Ring (10)
     .mob Scarlet Friar
     .mob Scarlet Zealot
@@ -3165,7 +3165,7 @@ step
 step
     #xprate >1.49
     #completewith ANewPlagueFinal
-    .subzone 159 >>Volte para Brill
+    .subzone 159 >>Volte para Montalvo
     .subzoneskip 159
     .cooldown item,6948,<0
 step
@@ -3177,20 +3177,20 @@ step
     #xprate <1.5
     #hardcore
     #completewith ANewPlagueFinal
-    .subzone 159 >>Volte para Brill
+    .subzone 159 >>Volte para Montalvo
     .subzoneskip 159
 step
     #xprate <1.5
     #softcore
     #completewith ANewPlagueFinal
     .goto Tirisfal Glades,66.60,44.95
-    .deathskip >>Morra |cRXP_WARN_na ilha menor|r e reapareça no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >>Morra |cRXP_WARN_NA ILHA MENOR|r e ressuscite com o |cRXP_FRIENDLY_Anjo da Cura|r
 step
     .goto Tirisfal Glades,59.45,52.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Johaan|r
     .turnin 369 >>Entregue Uma Nova Peste
     .accept 492 >>Aceite Uma Nova Peste
-    .accept 445 >>Aceite Entrega to Floresta de Pinhaprata
+    .accept 445 >>Aceite Entrega na Floresta de Pinhaprata
     .target Apothecary Johaan
 step << skip
     #phase 3-6
@@ -3203,19 +3203,19 @@ step << skip
 step
     #xprate <1.5
     .goto Tirisfal Glades,60.58,51.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zygand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Executor Zigano|r
     .turnin 371 >>Entregue Em Guerra com a Cruzada Escarlate
-    .accept 372 >>Aceite Em Guerra com a Cruzada Escarlate
+    .accept 372 >>Aceite Guerra à Cruzada Escarlate
     .target Executor Zygand
 step
     #xprate >1.49
     .goto Tirisfal Glades,60.58,51.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zygand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Executor Zigano|r
     .turnin 371 >>Entregue Em Guerra com a Cruzada Escarlate
     .target Executor Zygand
 step
     .goto Tirisfal Glades,61.26,50.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sevren|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magistrado Sevren|r
     .turnin 360 >>Entregue Retornar ao Magistrado
     .turnin 355 >>Entregue Falar com Sevren
     .target Magistrate Sevren
@@ -3229,14 +3229,14 @@ step
     #optional
     .goto Tirisfal Glades,60.93,52.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Burgess|r
-    .turnin 374 >>Entregue Proof of Óbito
+    .turnin 374 >>Entregue Prova da morte
     .target Deathguard Burgess
     .isQuestComplete 374
 step
     #xprate >1.49
     .goto Tirisfal Glades,60.93,52.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Burgess|r
-    .turnin 374 >>Entregue Proof of Óbito
+    .turnin 374 >>Entregue Prova da morte
     .target Deathguard Burgess
 step
     #xprate <1.5
@@ -3326,7 +3326,7 @@ step << Warrior
 step
     #xprate <1.5
     #completewith UndercityLS2
-    .hs >>Use sua Pedra de Retorno em Undercity
+    .hs >>Use sua Pedra de Regresso para ir a Cidade Baixa
     .cooldown item,6948,>0,1
     .bindlocation 1497,1
     .zoneskip Undercity
@@ -3341,14 +3341,14 @@ step
     .goto Undercity,64.20,49.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Leiloeira Rhyker|r
     >>|cRXP_BUY_Compre seis|r |T134339:0|t[Discolored Worg Corações] |cRXP_BUY_do Auction House|r
-    >>|cRXP_WARN_Pule isto se quiser, é apenas uma pequena economia de tempo|r
+    >>|cRXP_WARN_Pule isto se você quiser, é apenas uma pequena economia de tempo|r
     .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .target Auctioneer Rhyker
 step << Mage
     #xprate <1.5
     .goto Undercity,85.12,10.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anastasia|r no Bairro da Magia
-    .turnin 1882 >>Entregue The Balnir Farmstead
+    .turnin 1882 >>Entregue A Fazenda dos Balnir
     .target Anastasia Hartwell
 step
     #optional << Rogue
@@ -3440,7 +3440,7 @@ step << Rogue
 step << Rogue
     #xprate <1.5
     .goto Undercity,54.84,76.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Andron|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Andron Gante|r
     .turnin 1898 >>Entregue The Deathstalkers - Missão - Missão
     .accept 1899 >>Aceite Os Sicários
     .target Andron Gant
@@ -3448,7 +3448,7 @@ step << Rogue
 step << Rogue
     #xprate <1.5
     .goto Undercity,55.43,76.87
-    >>Pegue |cRXP_PICK_Estante de Livros de Andron|r atrás de |cRXP_FRIENDLY_Andron|r
+    >>Pegue |cRXP_PICK_Estante de Livros de Andron|r atrás de |cRXP_FRIENDLY_Andron Gante|r
     .complete 1899,1 --Andron's Ledger (1)
     .isQuestTurnedIn 1886
 step << Rogue
@@ -3473,7 +3473,7 @@ step << skip --Rogue
     .goto Undercity,55.22,90.88
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Perform a Logout Pular by posicionando seu personagem na borda do círculo até parecer que está flutuando, depois logging out e back in|r
 	.link https://www.youtube.com/watch?v=jj85AXyF1XE >>https://www.youtube.com/watch?v=jj85AXyF1XE >> |cRXP_WARN_clique aqui para um exemplo|r
-    >>|cRXP_WARN_se você não conseguir fazer isso, apenas saia de Undercity normalmente|r
+    >>|cRXP_WARN_Se você não conseguir fazer isso, apenas saia de Cidade Baixa normalmente|r
     .isQuestTurnedIn 1886
 step << Rogue
     #xprate <1.5
@@ -3489,7 +3489,7 @@ step << skip
     .goto Undercity,84.86,20.34
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_realize um Logout Pular posicionando seu personagem na parte mais alta da escada mais baixa até parecer que está flutuando, depois saia e entre novamente|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >>https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_Clique aqui para ver um exemplo|r
-    >>|cRXP_WARN_se você não conseguir fazer isso, apenas saia de Undercity normalmente|r
+    >>|cRXP_WARN_Se você não conseguir fazer isso, apenas saia de Cidade Baixa normalmente|r
     .zoneskip Undercity,1
     .isOnQuest 1886 << Rogue
 step
@@ -3651,7 +3651,7 @@ step
     #xprate <1.5
     #hardcore
     #completewith CrusadewarWon
-    .subzone 159 >>Volte para Brill
+    .subzone 159 >>Volte para Montalvo
     .subzoneskip 159
 step
     #xprate <1.5
@@ -3663,14 +3663,14 @@ step
     #xprate <1.5
     #label CrusadewarWon
     .goto Tirisfal Glades,60.58,51.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zygand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Executor Zigano|r
     .turnin 372 >>Entregue Em Guerra com a Cruzada Escarlate
     .target Executor Zygand
 step
     #xprate <1.5
     .goto Tirisfal Glades,60.93,52.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Burgess|r
-    .turnin 374 >>Entregue Proof of Óbito
+    .turnin 374 >>Entregue Prova da morte
     .target Deathguard Burgess
 step
     #xprate <1.5
@@ -3693,7 +3693,7 @@ step
 
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
 	.train 588 >>Treine |T135926:0|t[Fogo Interior]
     .target Dark Cleric Beryl
     .xp <12,1
@@ -3711,7 +3711,7 @@ step << Warrior
     .xp <12,1
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r no segundo andar
     .train 1766 >>Aprenda |T132219:0|t[Chute]
     .target Marion Call
     .xp <12,1
@@ -3754,7 +3754,7 @@ step << Priest/Rogue/Warrior
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >>Pegue o elevador para a Undercity
+    .goto Undercity,65.53,43.62,15 >>Pegue o elevador até Cidade Baixa
 step << Priest
     #ah
     .goto Undercity,64.20,49.60
@@ -3840,7 +3840,7 @@ step << skip --Warrior/Rogue
     #label LogoutSkip3
     .goto Undercity,61.10,54.11
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Realize um Logout Pular pulando em cima da pilha de barris, depois faça logout e entre novamente|r
-    >>|cRXP_WARN_se você não conseguir fazer isso, apenas saia de Undercity normalmente|r
+    >>|cRXP_WARN_Se você não conseguir fazer isso, apenas saia de Cidade Baixa normalmente|r
     .zoneskip Undercity,1
     .itemcount 7231,<1 << Rogue --Astor's Letter of Introduction (0)
 step << Warrior
@@ -3884,7 +3884,7 @@ step << skip --Warrior
     #season 2
     .goto 1458,48.906,70.156
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Perform a Logout Pular by jumping on top of the abomination's abdomen, then logging out and back in|r
-    >>|cRXP_WARN_se você não conseguir fazer isso, apenas saia de Undercity normalmente|r
+    >>|cRXP_WARN_Se você não conseguir fazer isso, apenas saia de Cidade Baixa normalmente|r
     .zoneskip Undercity,1
 step << Priest
     #optional
@@ -3910,7 +3910,7 @@ step << skip --Rogue/Warrior
     .goto Undercity,84.86,20.34
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_realize um Logout Pular posicionando seu personagem na parte mais alta da escada mais baixa até parecer que está flutuando, depois saia e entre novamente|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >>https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_Clique aqui para ver um exemplo|r
-    >>|cRXP_WARN_se você não conseguir fazer isso, apenas saia de Undercity normalmente|r
+    >>|cRXP_WARN_Se você não conseguir fazer isso, apenas saia de Cidade Baixa normalmente|r
     .zoneskip Undercity,1
     .itemcount 7231,<1 << Rogue --Astor's Letter of Introduction (0)
 --XX Priests only go Undercity if they need to make/buy a Lesser Magic Wand (still midway through the steps of doing so)
@@ -3926,7 +3926,7 @@ step << Priest
 step << Priest
     #optional
     .goto Undercity,70.76,30.67
-    >>|cRXP_WARN_Transforme todo seu|r |T132889:0|t[Linho] |cRXP_WARN_em|r |T132890:0|t[Rebite of Linho]
+    >>|cRXP_WARN_Virar todo o seu|r |T132889:0|t[Linho] |cRXP_WARN_em|r |T132890:0|t[Peça de Linho]
     .collect 2996,30,435,1 --Bolt of Linen Cloth (30)
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
@@ -3934,14 +3934,14 @@ step << Priest
     #optional
     .goto Undercity,70.06,29.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Victor|r
-    .train 7623 >>Treine |T132662:0|t[Veste de Linho Marrom]
+    .train 7623 >>Aprenda |T132662:0|t[Veste de Linho Marrom]
     .target Victor Ward
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step << Priest
     #optional
     .goto Undercity,70.57,30.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Millie|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Berta Gregório|r
     >>|cRXP_BUY_Compre |r |T132891:0|t[Fio Grosso] |cRXP_BUY_dela|r
     .collect 2320,30,435,1 --Coarse Thread (30)
     .target Millie Gregorian
@@ -3956,7 +3956,7 @@ step << Priest
 step << Priest
     #optional
     .goto Undercity,62.47,61.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lavinia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lavínia Queiroz|r
     .train 7411 >>Aprenda |T136244:0|t[Encantamento]
     .target Lavinia Crowe
     .itemStat 18,QUALITY,<7
@@ -3983,7 +3983,7 @@ step << Priest
 step << Priest
     #optional
     #label LesserMagicWand
-    >>|cRXP_WARN_Criar uma|r |T135139:0|t[Varinha Mágica Inferior]
+    >>|cRXP_WARN_Crie uma|r |T135139:0|t[Varinha Mágica Inferior]
     >>|cRXP_WARN_Se você não obteve um|r |T132867:0|t[Essência Mágica Inferior] |cRXP_WARN_então compre um de|r |cRXP_FRIENDLY_Thaddeus|r |cRXP_WARN_se houver um disponível. Caso contrário, termine este passo depois|r
     .collect 11287,1,435,1 --Lesser Magic Wand (1)
     .itemStat 18,QUALITY,<7
@@ -4001,7 +4001,7 @@ step << skip --Priest
     #label UndercityLS3
     .goto 1458,61.990,62.272
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Realize um Logout Pular pulando em cima da pilha de barris, depois faça logout e entre novamente|r
-    >>|cRXP_WARN_se você não conseguir fazer isso, apenas saia de Undercity normalmente|r
+    >>|cRXP_WARN_Se você não conseguir fazer isso, apenas saia de Cidade Baixa normalmente|r
     .zoneskip Undercity,1
 step << Rogue
     #optional
@@ -4021,7 +4021,7 @@ step << Rogue
 step << Rogue
     #optional
     .goto Undercity,54.84,76.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Andron|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Andron Gante|r
     .turnin 1898 >>Entregue The Deathstalkers - Missão - Missão
     .accept 1899 >>Aceite Os Sicários
     .target Andron Gant
@@ -4029,7 +4029,7 @@ step << Rogue
 step << Rogue
     #optional
     .goto Undercity,55.43,76.87
-    >>Pegue |cRXP_PICK_Estante de Livros de Andron|r atrás de |cRXP_FRIENDLY_Andron|r
+    >>Pegue |cRXP_PICK_Estante de Livros de Andron|r atrás de |cRXP_FRIENDLY_Andron Gante|r
     .complete 1899,1 --Andron's Ledger (1)
     .isQuestTurnedIn 1886
 step << Rogue
@@ -4053,7 +4053,7 @@ step << skip --Rogue
     .goto Undercity,55.22,90.88
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Position your character on the edge of the circle until it looks like they're floating. Perform a Logout Pular by logging out and back in|r
 	.link https://www.youtube.com/watch?v=jj85AXyF1XE >>https://www.youtube.com/watch?v=jj85AXyF1XE >> |cRXP_WARN_clique aqui para um exemplo|r
-    >>|cRXP_WARN_se você não conseguir fazer isso, apenas saia de Undercity normalmente|r
+    >>|cRXP_WARN_Se você não conseguir fazer isso, apenas saia de Cidade Baixa normalmente|r
     .isQuestTurnedIn 1886
     .zoneskip Undercity,1
 step << Rogue
@@ -4131,7 +4131,7 @@ step
     .target Deathstalker Erland
 step
     #completewith next
-    >>Mate os |cRXP_ENEMY_Worgs|r. Saqueie-os pelos |cRXP_LOOT_Corações|r
+    >>Mate |cRXP_ENEMY_Worgs|r. Saqueie-os para pegar seus |cRXP_LOOT_Corações|r
     .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .mob Worg
     .mob Mottled Worg
@@ -4142,7 +4142,7 @@ step
     .goto Silverpine Forest,56.17,12.62,30,0
     .goto Silverpine Forest,53.46,13.45
     >>Acompanhe |cRXP_FRIENDLY_Erland|r com segurança até |cRXP_FRIENDLY_Rane Yorick|r
-    >>|cRXP_ENEMY_Worgs|r |cRXP_WARN_Podem aparecer um em cima do outro, coma e beba sempre que conseguir|r
+    >>|cRXP_ENEMY_Worgs|r |cRXP_WARN_podem aparecer um em cima do outro, coma e beba sempre que puder|r
     .complete 435,1 --Erland must reach Rane Yorick (1)
     .mob Worg
 step
@@ -4150,7 +4150,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rane Yorick|r
     .turnin 435 >>Entregue Uma escolta para Orlando
     .accept 429 >>Aceite Corações selvagens
-    .accept 449 >>Aceite O Relatório dos Furtivos
+    .accept 449 >>Aceite Relatório dos Sicários
     .target Rane Yorick
 step
     #loop
@@ -4160,7 +4160,7 @@ step
     .goto Silverpine Forest,59.40,13.58,50,0
     .goto Silverpine Forest,60.11,10.51,50,0
     .goto Silverpine Forest,57.72,10.07,50,0
-    >>Mate os |cRXP_ENEMY_Worgs|r. Saqueie-os pelos |cRXP_LOOT_Corações|r
+    >>Mate |cRXP_ENEMY_Worgs|r. Saqueie-os para pegar seus |cRXP_LOOT_Corações|r
     .collect 3164,6,429,1 --Collect Discolored Worg Heart (x6)
     .mob Worg
     .mob Mottled Worg
@@ -4186,7 +4186,7 @@ step
 step << !Mage !Priest
     .goto Silverpine Forest,44.05,39.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Guida Farrow|r
-    .vendor >>|cRXP_BUY_Compre|r |T134532:0|t[Vermelho-speckled Cogumelo] |cRXP_BUY_dele|r
+    .vendor >>|cRXP_BUY_Compre|r |T134532:0|t[Cogumelo de Bolinhas Vermelhas] |cRXP_BUY_dele|r
     .collect 4605,20,421,1 --Red-speckled Mushroom (20)
     .target Gwyn Farrow
     .money <0.05
@@ -4199,7 +4199,7 @@ step
     .target Edwin Harly
     .money <0.05 << Mage/Warlock/Priest/Shaman/Druid
 step << Undead
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Allister|r e |cRXP_FRIENDLY_Podrig|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sacerdote Sombrio Allister|r e |cRXP_FRIENDLY_Necroguarda Rodrigo|r
     .accept 477 >>Aceite Border Crossings
     .target +Shadow Priest Allister
     .goto Silverpine Forest,43.98,40.93
@@ -4223,15 +4223,15 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hadrec|r na cripta
     .turnin 449 >>Entregue O Relatório das Aranhas da Morte
     .accept 3221 >>Aceite Fale com Renferrel
-    .accept 437 >>Aceite Os Campos Mortos
+    .accept 437 >>Aceite Os Campos Estéreis
     .target High Executor Hadrec
 step
     .goto Silverpine Forest,42.79,40.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Renferrel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boticário Renferrel|r
     .turnin 429 >>Entregue Corações selvagens
-    .turnin 445 >>Entregue Entrega na Floresta de Pinheiros Prateados
-    .turnin 3221 >>Entregue para Renferrel
-    .accept 1359 >>Aceite Entrega de Zinge
+    .turnin 445 >>Entregue Entrega na Floresta de Pinhaprata
+    .turnin 3221 >>Entregue Fale com Renferrel
+    .accept 1359 >>Aceite Entrega para Zilda
     .accept 447 >>Aceite Uma Receita para a Morte
     .accept 430 >>Aceite Reencontrando Quintino
     .target Apothecary Renferrel
@@ -4254,11 +4254,11 @@ step
     .goto Silverpine Forest,44.20,39.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalar|r
     .target Dalar Dawnweaver
-    .turnin 421 >>Entregue Prove Your Worth
+    .turnin 421 >>Entregue Prove seu valor
     .accept 422 >>Aceite A loucura de Arugal
 step
     #completewith Remedy
-    .goto Silverpine Forest,52.74,27.70,80 >>Vá para Valgan's Field
+    .goto Silverpine Forest,52.74,27.70,80 >>Siga para o Sítio do Valgan
 step
     #label Remedy
     .goto Silverpine Forest,52.74,27.70,8,0
@@ -4278,7 +4278,7 @@ step
     .goto Silverpine Forest,53.27,13.16,8,0
     .goto Silverpine Forest,53.43,12.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quintino Yorick|r no segundo andar da casa
-    .turnin 430 >>Entregue Devolver to Quinn
+    .turnin 430 >>Entregue Reencontrando Quintino
     .target Quinn Yorick
 step
     .goto Silverpine Forest,53.46,13.45
@@ -4306,7 +4306,7 @@ step
     .unitscan Son of Arugal
 step
     #completewith Nightlash
-    >>Mate os |cRXP_ENEMY_Ursos|r. Saque-os para obter seus |cRXP_LOOT_Corações|r
+    >>Mate |cRXP_ENEMY_Ursos|r. Saqueie-os para pegar seus |cRXP_LOOT_Corações|r
     .complete 447,1 --Grizzled Bear Heart (6)
     .mob Ferocious Grizzled Bear
     .mob Giant Grizzled Bear
@@ -4323,7 +4323,7 @@ step
     .mob Rot Hide Mystic
 step
     #completewith KillianVendor
-    >>Mate os |cRXP_ENEMY_Ursos|r. Saque-os para obter seus |cRXP_LOOT_Corações|r
+    >>Mate |cRXP_ENEMY_Ursos|r. Saqueie-os para pegar seus |cRXP_LOOT_Corações|r
     .complete 447,1 --Grizzled Bear Heart (6)
     .mob Ferocious Grizzled Bear
     .mob Giant Grizzled Bear
@@ -4332,8 +4332,8 @@ step
 step
     #completewith next
     >>Mate as |cRXP_ENEMY_Aranhas|r. Saque-as para obter seu |cRXP_LOOT_Sanguíneo|r
-    >>|cRXP_WARN_Cuidado com|r |cRXP_ENEMY_Krethis Umbrateia|r |cRXP_WARN_pois é impossível matá-la!|r << !Mage !Warlock
-    >>|cRXP_WARN_Cuidado com|r |cRXP_ENEMY_Krethis Umbrateia|r |cRXP_WARN_é difícil mas possível. Possui um escudo de 130 de dano com recarga de 15s e uma habilidade de choque instantâneo de 110 de dano|r << Mage/Warlock
+    >>|cRXP_WARN_Tome cuidado com|r |cRXP_ENEMY_Krethis Umbrateia|r |cRXP_WARN_pois é praticamente impossível matá-la!|r << !Mage !Warlock
+    >>|cRXP_WARN_Tome cuidado com|r |cRXP_ENEMY_Krethis Umbrateia|r |cRXP_WARN_pois é difícil matá-la, mas é possível. Ela tem um escudo que causa 130 de dano com recarga de 15s e uma habilidade de choque instantânea que causa 110 de dano|r << Mage/Warlock
     .complete 447,2 --Skittering Blood (6)
     .mob Moss Stalker
     .unitscan Krethis Shadowspinner
@@ -4357,8 +4357,8 @@ step
 	.goto Silverpine Forest,35.85,13.83,50,0
 	.goto Silverpine Forest,36.33,14.20,50,0
     >>Mate as |cRXP_ENEMY_Aranhas|r. Saque-as para obter seu |cRXP_LOOT_Sanguíneo|r
-    >>|cRXP_WARN_Cuidado com|r |cRXP_ENEMY_Krethis Umbrateia|r |cRXP_WARN_pois é impossível matá-la!|r << !Mage !Warlock
-    >>|cRXP_WARN_Cuidado com|r |cRXP_ENEMY_Krethis Umbrateia|r |cRXP_WARN_é difícil mas possível. Possui um escudo de 130 de dano com recarga de 15s e uma habilidade de choque instantâneo de 110 de dano|r << Mage/Warlock
+    >>|cRXP_WARN_Tome cuidado com|r |cRXP_ENEMY_Krethis Umbrateia|r |cRXP_WARN_pois é praticamente impossível matá-la!|r << !Mage !Warlock
+    >>|cRXP_WARN_Tome cuidado com|r |cRXP_ENEMY_Krethis Umbrateia|r |cRXP_WARN_pois é difícil matá-la, mas é possível. Ela tem um escudo que causa 130 de dano com recarga de 15s e uma habilidade de choque instantânea que causa 110 de dano|r << Mage/Warlock
     .complete 447,2 --Skittering Blood (6)
     .mob Moss Stalker
     .unitscan Krethis Shadowspi
@@ -4416,7 +4416,7 @@ step
 step << !Mage !Priest
     .goto Silverpine Forest,44.05,39.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Guida Farrow|r
-    >>|cRXP_BUY_Compre|r |T134532:0|t[Vermelho-speckled Mushrooms] |cRXP_BUY_dela|r
+    >>|cRXP_BUY_Compre|r |T134532:0|t[Cogumelo de Bolinhas Vermelhas] |cRXP_BUY_dela|r
     .vendor >>Lixo de Vendedor
     .collect 4605,20,423,1 --Red-speckled Mushroom (20)
     .target Gwyn Farrow
@@ -4617,7 +4617,7 @@ step << Undead
 
 step << Undead
     .goto Undercity,61.48,41.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gordon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Antônio Nunes|r
     .turnin 6323 >>Entregue Carona para a Cidade Baixa
     .accept 6322 >>Aceite Miguel Garreta
     .target Gordon Wendham
@@ -4753,14 +4753,14 @@ step << Undead Rogue
     .dungeon RFC
 step << Undead Rogue
     .goto Undercity,54.84,76.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Andron|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Andron Gante|r
     .turnin 1898 >>Entregue The Deathstalkers - Missão - Missão
     .accept 1899 >>Aceite Os Sicários
     .target Andron Gant
     .isQuestTurnedIn 1886
 step << Undead Rogue
     .goto Undercity,55.43,76.87
-    >>Pegue |cRXP_PICK_Estante de Livros de Andron|r atrás de |cRXP_FRIENDLY_Andron|r
+    >>Pegue |cRXP_PICK_Estante de Livros de Andron|r atrás de |cRXP_FRIENDLY_Andron Gante|r
     .complete 1899,1 --Andron's Ledger (1)
     .isQuestTurnedIn 1886
 step
@@ -4808,7 +4808,7 @@ step << skip --Undead Rogue/Undead Warrior
     #optional
     .goto 1458,48.906,70.156
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Perform a Logout Pular by jumping on top of the abomination's abdomen, then logging out and back in|r
-    >>|cRXP_WARN_se você não conseguir fazer isso, apenas saia de Undercity normalmente|r
+    >>|cRXP_WARN_Se você não conseguir fazer isso, apenas saia de Cidade Baixa normalmente|r
     .zoneskip Undercity,1
     .isQuestTurnedIn 1886 << Rogue
 step << Undead Rogue
@@ -4851,7 +4851,7 @@ step << skip --Undead Rogue
     .goto Undercity,55.22,90.88
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Position your character on the edge of the circle until it looks like they're floating. Perform a Logout Pular by logging out and back in|r
 	.link https://www.youtube.com/watch?v=jj85AXyF1XE >>https://www.youtube.com/watch?v=jj85AXyF1XE >> |cRXP_WARN_clique aqui para um exemplo|r
-    >>|cRXP_WARN_se você não conseguir fazer isso, apenas saia de Undercity normalmente|r
+    >>|cRXP_WARN_Se você não conseguir fazer isso, apenas saia de Cidade Baixa normalmente|r
     .zoneskip Undercity,1
     .isQuestTurnedIn 1886
 step << !Rogue !Warrior
@@ -4895,7 +4895,7 @@ step << Undead Mage
     #xprate >1.49
     .goto Undercity,85.12,10.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anastasia|r no Bairro da Magia
-    .turnin 1882 >>Entregue The Balnir Farmstead
+    .turnin 1882 >>Entregue A Fazenda dos Balnir
     .train 2137 >>Treine suas magias de classe
     .target Anastasia Hartwell
     .xp <14,1
@@ -4905,7 +4905,7 @@ step << Undead Mage
     #optional
     .goto Undercity,85.14,10.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anastasia|r
-    .turnin 1882 >>Entregue The Balnir Farmstead
+    .turnin 1882 >>Entregue A Fazenda dos Balnir
     .train 2120 >>Treine suas magias de classe
     .target Anastasia Hartwell
     .xp <16,1
@@ -5034,7 +5034,7 @@ step << skip --Undead !Rogue !Warrior
     .goto Undercity,69.46,25.85 << Mage/Warlock
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Faça um Atalho por Logout pulando sobre o triturador da Carroça Carniceira, depois, saia e entre novamente|r << Priest
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Realize um Logout Pular pulando em cima da pilha de barris, depois faça logout e entre novamente|r << Mage/Warlock
-    >>|cRXP_WARN_se você não conseguir fazer isso, apenas saia de Undercity normalmente|r
+    >>|cRXP_WARN_Se você não conseguir fazer isso, apenas saia de Cidade Baixa normalmente|r
     .zoneskip Undercity,1
     .dungeon RFC
 step << skip --Undead !Rogue !Warrior
@@ -5042,7 +5042,7 @@ step << skip --Undead !Rogue !Warrior
     .goto Undercity,69.46,25.85 << Priest/Mage/Warlock
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Realize um Logout Pular pulando em cima da pilha de barris, depois faça logout e entre novamente|r << Priest/Mage/Warlock
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >>https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_Clique aqui para ver um exemplo|r
-    >>|cRXP_WARN_se você não conseguir fazer isso, apenas saia de Undercity normalmente|r
+    >>|cRXP_WARN_Se você não conseguir fazer isso, apenas saia de Cidade Baixa normalmente|r
     .zoneskip Undercity,1
     .dungeon !RFC
 
@@ -5084,7 +5084,7 @@ step << Undead Rogue
 step << Undead Priest
     #xprate >1.49
     .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
 	.train 8122 >>Treine suas magias de classe
     .target Dark Cleric Beryl
     .xp <14,1
@@ -5092,7 +5092,7 @@ step << Undead Priest
 step << Undead Priest
     #xprate >1.49
     .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
 	.train 8102 >>Treine suas magias de classe
     .target Dark Cleric Beryl
     .xp <16,1
@@ -5176,7 +5176,7 @@ step << Undead
 step << Undead
     .goto Orgrimmar,45.13,63.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Doraso|r
-    >>|cRXP_WARN_Não voe para nenhum lugar!|r
+    >>|cRXP_WARN_Não voe para lugar nenhum!|r
     .fp Orgrimmar >>Aprenda a rota de voo para Orgrimmar
     .target Doras
     .dungeon RFC
@@ -5338,7 +5338,7 @@ step << Undead
     .dungeon RFC
 step << Undead
     #completewith Conscript
-    .subzone 362 >>Vá para Razor Hill
+    .subzone 362 >>Vá para Monte Navalha
 step << !Undead
     .hs >>Use a Pedra Lunar para voltar a Razor Hill
     .use 6948
@@ -6558,7 +6558,7 @@ step
     .target +Deathguard Dillinger
     .goto Tirisfal Glades,58.20,51.45
     .turnin 383 >>Entregue Informações cruciais
-    .accept 427 >>Aceite Em Guerra com a Cruzada Escarlate
+    .accept 427 >>Aceite Guerra à Cruzada Escarlate
     .target +Executor Zygand
     .goto Tirisfal Glades,60.59,51.77
 step << Rogue
@@ -6577,7 +6577,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     .goto Tirisfal Glades,60.12,53.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Oliver|r|cRXP_BUY_. Compre um|r |T135641:0|t[Estilete] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Olivier Ewor|r|cRXP_BUY_. Compre um|r |T135641:0|t[Estilete] |cRXP_BUY_dele|r
     .collect 2494,1,404,1 --Collect Stiletto (1)
     .money <0.0401
     .itemStat 16,QUALITY,<7
@@ -6637,7 +6637,7 @@ step
     .xp <7,1
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
     .turnin 5651 >>Entregue Em favor da escuridão
     .accept 5650 >>Aceite Vestes da escuridão
 	.train 591 >>Aprenda |T135924:0|t[Punição]
@@ -6659,14 +6659,14 @@ step << Warrior
 step << Rogue
     #season 0
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r no segundo andar
     .train 1757 >>Aprenda |T136189:0|t[Golpe Sinistro]
     .target Marion Call
     .money <0.01
 step << Rogue
     #season 2
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r no segundo andar
     .train 1757 >>Aprenda |T136189:0|t[Golpe Sinistro]
     .train 921 >>Treine |T133644:0|t [Bater Carteira]
     .target Marion Call
@@ -6675,7 +6675,7 @@ step << Rogue
     #optional
     #season 2
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r no segundo andar
     .train 921 >>Treine |T133644:0|t [Bater Carteira]
     .target Marion Call
     .money >0.02
@@ -6707,8 +6707,8 @@ step << Priest/Warlock
 step
     .goto Tirisfal Glades,61.71,52.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Geni|r
-    >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r. << Mage/Priest
-    >>|cRXP_BUY_Compre|r |T134532:0|t[Vermelho-speckled Mushrooms] |cRXP_BUY_dela|r <<Warrior/Rogue
+    >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r << Mage/Priest
+    >>|cRXP_BUY_Compre|r |T134532:0|t[Cogumelo de Bolinhas Vermelhas] |cRXP_BUY_dela|r <<Warrior/Rogue
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_e|r |T134532:0|t[Vermelho-speckled Mushrooms] |cRXP_BUY_dela|r << Warlock
     .vendor >>Lixo de Comerciante
     .collect 1179,15,367,1 << Mage/Priest --Ice Cold Milk (15)
@@ -6947,7 +6947,7 @@ step
 step
     #hardcore
     #completewith BrillTurnin1
-    .subzone 159 >>Volte para Brill
+    .subzone 159 >>Volte para Montalvo
     .subzoneskip 159
     .cooldown item,6948,<0
 step
@@ -6978,7 +6978,7 @@ step
     .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.40
     .turnin 427 >>Entregue Em Guerra com a Cruzada Escarlate
-    .accept 370 >>Aceite Em Guerra com a Cruzada Escarlate
+    .accept 370 >>Aceite Guerra à Cruzada Escarlate
     .target +Executor Zygand
     .goto Tirisfal Glades,60.58,51.77
     .isQuestComplete 367
@@ -6994,7 +6994,7 @@ step
     .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.40
     .turnin 427 >>Entregue Em Guerra com a Cruzada Escarlate
-    .accept 370 >>Aceite Em Guerra com a Cruzada Escarlate
+    .accept 370 >>Aceite Guerra à Cruzada Escarlate
     .target +Executor Zygand
     .goto Tirisfal Glades,60.58,51.77
 step
@@ -7034,8 +7034,8 @@ step
     .isQuestComplete 375
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no segundo andar
-    .turnin 5650 >>Entregue Vestes da Escuridão
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
+    .turnin 5650 >>Entregue Vestes da escuridão
     .train 591 >>Aprenda |T135924:0|t[Punição]
     .train 17 >>Aprenda |T135940:0|t[Palavra de Poder: Escudo]
     .target Dark Cleric Beryl
@@ -7047,7 +7047,7 @@ step
     .target Gretchen Dedmar
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
 	.train 139 >>Treine suas magias de classe
     .target Dark Cleric Beryl
     .xp <8,1
@@ -7065,7 +7065,7 @@ step << Warrior
     .xp <8,1
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r no segundo andar
     .train 6760 >>Treine suas magias de classe
     .target Marion Call
     .xp <8,1
@@ -7077,8 +7077,8 @@ step << Warlock
     .xp <8,1
 step << Rogue/Warrior
     .goto Tirisfal Glades,61.81,52.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neela|r
-    >>|cRXP_WARN_Tente fazê-los enquanto aguarda Zepelins|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Enfermeira Nila|r
+    >>|cRXP_WARN_Tente fazê-los enquanto estiver esperando por algo, como os Zepelins|r
     .train 3273 >>Aprenda |T135966:0|t[Primeiros Socorros]
     .target Nurse Neela
 step << Rogue
@@ -7090,7 +7090,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     .goto Tirisfal Glades,60.12,53.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Oliver|r|cRXP_BUY_. Compre um|r |T135641:0|t[Estilete] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Olivier Ewor|r|cRXP_BUY_. Compre um|r |T135641:0|t[Estilete] |cRXP_BUY_dele|r
     .collect 2494,1,367,1 --Collect Stiletto (1)
     .money <0.0401
     .itemStat 16,QUALITY,<7
@@ -7246,7 +7246,7 @@ step
     #xprate <1.5
     #hardcore
     #completewith NewPlague1
-    .subzone 159 >>Volte para Brill
+    .subzone 159 >>Volte para Montalvo
     .subzoneskip 159
 step
     #xprate <1.5
@@ -7293,7 +7293,7 @@ step
 step << Priest
     #xprate <1.5
     .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
 	.train 139 >>Treine suas magias de classe
     .target Dark Cleric Beryl
     .xp <8,1
@@ -7314,7 +7314,7 @@ step << Warrior
 step << Rogue
     #xprate <1.5
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r no segundo andar
     .train 6760 >>Treine suas magias de classe
     .target Marion Call
     .xp <8,1
@@ -7335,7 +7335,7 @@ step << Rogue
 step << Rogue
     #xprate <1.5
     .goto Tirisfal Glades,60.12,53.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Oliver|r|cRXP_BUY_. Compre um|r |T135641:0|t[Estilete] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Olivier Ewor|r|cRXP_BUY_. Compre um|r |T135641:0|t[Estilete] |cRXP_BUY_dele|r
     .collect 2494,1,398,1 --Collect Stiletto (1)
     .money <0.0401
     .itemStat 16,QUALITY,<7
@@ -7395,7 +7395,7 @@ step << Warrior
 step << skip
     #completewith next
     >>Pegue a |cRXP_LOOT_Erva-do-demo|r no chão
-    >>|cRXP_WARN_Eles são encontrados perto de árvores na área Gnoll|r
+    >>|cRXP_WARN_São encontrados perto de árvores na área dos Gnoll|r
     .complete 5482,1 --Doom Weed (10)
     .isOnQuest 5482
 step
@@ -7413,7 +7413,7 @@ step
     .mob Rot Hide Graverobber
 step
     #completewith next
-    >>Mate os |cRXP_ENEMY_Rot Esconder-se Mongrels|r. Saqueie-os para pegar o |cRXP_LOOT_Ichor|r deles
+    >>Mate |cRXP_ENEMY_Mestiços Putricouros|r. Saqueie-os para pegar |cRXP_LOOT_Linfa|r
     .complete 358,2 --Rot Hide Mongrel (5)
     .complete 358,3 --Embalming Ichor (8)
     .disablecheckbox
@@ -7436,7 +7436,7 @@ step << skip
     .goto Tirisfal Glades,58.36,38.55,30,0
     .goto Tirisfal Glades,57.48,35.95,30,0
     >>Pegue a |cRXP_LOOT_Erva-do-demo|r no chão
-    >>|cRXP_WARN_Eles são encontrados perto de árvores na área Gnoll|r
+    >>|cRXP_WARN_São encontrados perto de árvores na área dos Gnoll|r
     .complete 5482,1 --Doom Weed (10)
     .isOnQuest 5482
 step
@@ -7457,7 +7457,7 @@ step << Mage
     .train 118,3
 step
     #completewith MaggotEye
-    >>Mate os |cRXP_ENEMY_Rot Esconder-se Mongrels|r. Saqueie-os para pegar o |cRXP_LOOT_Ichor|r deles
+    >>Mate |cRXP_ENEMY_Mestiços Putricouros|r. Saqueie-os para pegar |cRXP_LOOT_Linfa|r
     .complete 358,2 --Rot Hide Mongrel (5)
     .complete 358,3 --Embalming Ichor (8)
     .disablecheckbox
@@ -7465,7 +7465,7 @@ step
 step
     #label MaggotEye
     .goto Tirisfal Glades,58.66,30.77
-    >>Mate o |cRXP_ENEMY_Olho de Verme|r. Saqueie-o para pegar a |cRXP_LOOT_Paw|r
+    >>Mate o |cRXP_ENEMY_Olho de Verme|r. Saqueie-o para pegar a |cRXP_LOOT_Pata|r
     .complete 398,1 --Maggot Eye's Paw (1)
     .mob Maggot Eye
 step
@@ -7475,7 +7475,7 @@ step
     .goto Tirisfal Glades,59.77,32.37,50,0
     .goto Tirisfal Glades,58.25,31.28,50,0
     .goto Tirisfal Glades,60.08,37.88,50,0
-    >>Mate os |cRXP_ENEMY_Rot Esconder-se Mongrels|r. Saqueie-os para pegar o |cRXP_LOOT_Ichor|r deles
+    >>Mate |cRXP_ENEMY_Mestiços Putricouros|r. Saqueie-os para pegar |cRXP_LOOT_Linfa|r
     .complete 358,2 --Rot Hide Mongrel (5)
     .complete 358,3 --Embalming Ichor (8)
     .disablecheckbox
@@ -7654,7 +7654,7 @@ step << Rogue
 step
     #hardcore
     #completewith DoomedWeed
-    .subzone 159 >>Volte para Brill
+    .subzone 159 >>Volte para Montalvo
     .subzoneskip 159
 step
     #softcore
@@ -7691,7 +7691,7 @@ step
     .accept 369 >>Aceite Uma Nova Peste
     .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.40
-    .turnin 398 >>Entregue Wanted: Olho de Verme
+    .turnin 398 >>Entregue Procura-se: Olho de Verme
     .target +Executor Zygand
     .goto Tirisfal Glades,60.58,51.77
     .turnin 358 >>Entregue Roubacovas
@@ -7705,7 +7705,7 @@ step
     .turnin 368 >>Entregue Uma Nova Peste
     .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.40
-    .turnin 398 >>Entregue Wanted: Olho de Verme
+    .turnin 398 >>Entregue Procura-se: Olho de Verme
     .target +Executor Zygand
     .goto Tirisfal Glades,60.58,51.77
     .turnin 358 >>Entregue Roubacovas
@@ -7741,7 +7741,7 @@ step
     .isQuestComplete 375
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
 	.train 139 >>Treine suas magias de classe
     .target Dark Cleric Beryl
     .xp <8,1
@@ -7749,7 +7749,7 @@ step << Priest
 step << Priest
     #optional
     .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
 	.train 8092 >>Treine suas magias de classe
     .target Dark Cleric Beryl
     .xp <10,1
@@ -7794,7 +7794,7 @@ step << Warrior
     .isQuestAvailable 1498
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r no segundo andar
     .train 6760 >>Treine suas magias de classe
     .target Marion Call
     .xp <8,1
@@ -7802,7 +7802,7 @@ step << Rogue
 step << Rogue
     #optional
     .goto Tirisfal Glades,61.75,52.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r
     .train 674 >>Treine suas magias de classe
     --.accept 1885 >> Accept Mennet Carkad
     .target Marion Call
@@ -7836,8 +7836,8 @@ step << Warlock
     .target Ageron Kargal
 step << Rogue/Warrior
     .goto Tirisfal Glades,61.81,52.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neela|r
-    >>|cRXP_WARN_Tente fazê-los enquanto aguarda Zepelins|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Enfermeira Nila|r
+    >>|cRXP_WARN_Tente fazê-los enquanto estiver esperando por algo, como os Zepelins|r
     .train 3273 >>Aprenda |T135966:0|t[Primeiros Socorros]
     .target Nurse Neela
 step << Rogue
@@ -7849,7 +7849,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     .goto Tirisfal Glades,60.12,53.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_Oliver|r|cRXP_BUY_. Compre um|r |T135641:0|t[Estilete] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Olivier Ewor|r|cRXP_BUY_. Compre um|r |T135641:0|t[Estilete] |cRXP_BUY_dele|r
     .collect 2494,1,354,1 --Collect Stiletto (1)
     .money <0.0401
     .itemStat 16,QUALITY,<7
@@ -7887,8 +7887,8 @@ step << Warrior
 step
     .goto Tirisfal Glades,61.71,52.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Geni|r
-    >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r. << Mage/Priest
-    >>|cRXP_BUY_Compre|r |T134532:0|t[Vermelho-speckled Mushrooms] |cRXP_BUY_dela|r <<Warrior/Rogue
+    >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r << Mage/Priest
+    >>|cRXP_BUY_Compre|r |T134532:0|t[Cogumelo de Bolinhas Vermelhas] |cRXP_BUY_dela|r <<Warrior/Rogue
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_e|r |T134532:0|t[Vermelho-speckled Mushrooms] |cRXP_BUY_dela|r << Warlock
     .vendor >>Lixo de Comerciante
     .collect 1179,20,426,1 << Mage/Priest --Ice Cold Milk (20)
@@ -7906,7 +7906,7 @@ step << Rogue/Warrior
     .target Eliza Callen
 step << Warrior
     .goto Tirisfal Glades,58.19,51.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dillinger|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
     .turnin 1818 >>Entregue Uma conversa com Dinis
     .accept 1819 >>Aceite Ulag, o Cutelo
     .target Deathguard Dillinger
@@ -7914,19 +7914,19 @@ step << Warrior
 step << Warrior
     #optional
     .goto Tirisfal Glades,58.19,51.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dillinger|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
     .accept 1819 >>Aceite Ulag, o Cutelo
     .target Deathguard Dillinger
     .isQuestTurnedIn 1818
 step << Warrior
     .goto Tirisfal Glades,59.16,48.51
-    >>|cRXP_WARN_Clique no crânio no chão. Isto vai invocar|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Abate o|r
+    >>|cRXP_WARN_Clique no crânio no chão. Isto vai invocar|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Mate-o|r
     .complete 1819,1 --Ulag the Cleaver (1)
     .mob Ulag the Cleaver
     .isQuestTurnedIn 1818
 step << Warrior
     .goto Tirisfal Glades,58.19,51.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dillinger|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
     .turnin 1819 >>Entregue Ulag, O Cutelo
     .accept 1820 >>Aceite Encontrando Eurico
     .target Deathguard Dillinger
@@ -7962,7 +7962,7 @@ step
 step
     #xprate <2.1
     #completewith ThurmanGregor
-    >>|T134939:0|t[|cRXP_LOOT_Thurman's Carta|r] |cRXP_WARN_Pode cair desses inimigos. Aceite a missão se cair.|r
+    >>|T134939:0|t[|cRXP_LOOT_Carta de Timóteo|r] |cRXP_WARN_Pode cair desses inimigos. Aceite a missão se cair.|r
     .collect 2839,1,361 --Collect A Letter to Yvette (1)
     .accept 361 >>Aceite A carta que nunca chegou
     .use 2839
@@ -7980,7 +7980,7 @@ step
     #xprate <2.1
     #label KillDevlin
     .goto Tirisfal Glades,47.34,40.78
-    >>Mate |cRXP_ENEMY_Devlin|r. Saque-o pelos seus |cRXP_LOOT_Restos|r
+    >>Mate |cRXP_ENEMY_Delmiro Agamand|r. Saque-o para pegar |cRXP_LOOT_Restos Mortais de Delmiro|r
     .complete 362,1 --Devlin's Remains (1)
     .mob Devlin Agamand
 step
@@ -8224,14 +8224,14 @@ step << skip
     #xprate <1.5
     #hardcore
     #completewith FoodandWater2
-    .subzone 159 >>Volte para Brill
+    .subzone 159 >>Volte para Montalvo
     .subzoneskip 159
     .cooldown item,6948,<0
 step
     #xprate <2.1
     #hardcore
     #completewith FoodandWater2
-    .subzone 159 >>Volte para Brill
+    .subzone 159 >>Volte para Montalvo
     .subzoneskip 159
 step
     #xprate <2.1
@@ -8241,8 +8241,8 @@ step
 step
     #xprate <2.1
     .goto Tirisfal Glades,58.20,51.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dillinger|r
-    .turnin 426 >>Vá para Os Moinhos Invadidos
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
+    .turnin 426 >>Vá para Os moinhos invadidos
     .target Deathguard Dillinger
 step
     #xprate <2.1
@@ -8261,7 +8261,7 @@ step
     .target +Yvette Farthing
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Entregue Mortes na família
-    .turnin 362 >>Vá para Os Moinhos Assombrados
+    .turnin 362 >>Vá para Os moinhos assombrados
     .accept 355 >>Aceite Fale com Sevren
     .target +Coleman Farthing
     .goto Tirisfal Glades,61.72,52.29
@@ -8271,7 +8271,7 @@ step
     .goto Tirisfal Glades,61.72,52.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eurico|r
     .turnin 354 >>Entregue Mortes na família
-    .turnin 362 >>Vá para Os Moinhos Assombrados
+    .turnin 362 >>Vá para Os moinhos assombrados
     .turnin 1820 >>Entregue Falar com Coleman << Warrior
     .accept 355 >>Aceite Fale com Sevren
     .target Coleman Farthing
@@ -8282,7 +8282,7 @@ step << Warrior
     .goto Tirisfal Glades,61.72,52.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eurico|r
     .turnin 354 >>Entregue Mortes na família
-    .turnin 362 >>Vá para Os Moinhos Assombrados
+    .turnin 362 >>Vá para Os moinhos assombrados
     .accept 355 >>Aceite Fale com Sevren
     .target Coleman Farthing
 step
@@ -8296,7 +8296,7 @@ step
 step << Priest
     #xprate <2.1
     .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
 	.trainer >>Treine suas magias de classe
     .target Dark Cleric Beryl
 step << Warrior
@@ -8349,7 +8349,7 @@ step << Warlock
 step << Rogue
     #xprate <2.1
     .goto Tirisfal Glades,61.75,52.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r
     .train 674 >>Treine suas magias de classe
     --.accept 1885 >> Accept Mennet Carkad
     .target Marion Call
@@ -8359,7 +8359,7 @@ step << Rogue
     #xprate <2.1
     #optional
     .goto Tirisfal Glades,61.75,52.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r
     .train 1766 >>Treine suas magias de classe
     --.accept 1885 >> Accept Mennet Carkad
     .target Marion Call
@@ -8367,7 +8367,7 @@ step << Rogue
 step << Mage
     #xprate <2.1
     .goto Tirisfal Glades,61.96,52.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cain|r dentro da estalagem
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caio Cantígnea|r dentro da estalagem
     .accept 1881 >>Aceite Falar com Anastasia
     .target Cain Firesong
 step
@@ -8375,8 +8375,8 @@ step
     #label FoodandWater2
     .goto Tirisfal Glades,61.71,52.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Geni|r
-    >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r. << Mage/Priest/Shaman
-    >>|cRXP_BUY_Compre|r |T134532:0|t[Vermelho-speckled Mushrooms] |cRXP_BUY_dela|r <<Warrior/Rogue
+    >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r << Mage/Priest/Shaman
+    >>|cRXP_BUY_Compre|r |T134532:0|t[Cogumelo de Bolinhas Vermelhas] |cRXP_BUY_dela|r <<Warrior/Rogue
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_e|r |T134532:0|t[Vermelho-speckled Mushrooms] |cRXP_BUY_dela|r << Warlock
     .vendor >>Lixo de Comerciante
     .collect 1179,20,370,1 << Mage/Priest/Shaman --Ice Cold Milk (20)
@@ -8389,20 +8389,20 @@ step
 step << Warrior
     #xprate <2.1
     .goto Tirisfal Glades,58.19,51.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dillinger|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
     .turnin 1818 >>Entregue Uma conversa com Dinis
     .accept 1819 >>Aceite Ulag, o Cutelo
     .target Deathguard Dillinger
 step << Warrior
     #xprate <2.1
     .goto Tirisfal Glades,59.16,48.51
-    >>|cRXP_WARN_Clique no crânio no chão. Isto vai invocar|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Abate o|r
+    >>|cRXP_WARN_Clique no crânio no chão. Isto vai invocar|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Mate-o|r
     .complete 1819,1 --Ulag the Cleaver (1)
     .mob Ulag the Cleaver
 step << Warrior
     #xprate <2.1
     .goto Tirisfal Glades,58.19,51.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dillinger|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
     .turnin 1819 >>Entregue Ulag, O Cutelo
     .accept 1820 >>Aceite Encontrando Eurico
     .target Deathguard Dillinger
@@ -8418,12 +8418,12 @@ step << Warlock
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >>Pegue o elevador para a Undercity
+    .goto Undercity,65.53,43.62,15 >>Pegue o elevador até Cidade Baixa
 step << Warlock
     .goto Undercity,85.07,25.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Carendin|r no Bairro da Magia
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Silvério Hidalgo|r no Distrito da Magia
     .turnin 1478 >>Entregue Convocação de Hidalgo
-    .accept 1473 >>Aceite Criatura do Vazio
+    .accept 1473 >>Aceite Criatura do caos
 step << Warlock
     .goto Undercity,47.25,39.12,50,0
     .goto Undercity,46.35,43.86,10,0
@@ -8460,7 +8460,7 @@ step << Rogue
 step << Warlock
     #completewith next
     .goto Tirisfal Glades,51.06,67.57
-    >>Saque |cRXP_PICK_Baú de Perrine|r para |T133733:0|t[Grimório de Egalin]
+    >>Saqueie |cRXP_PICK_Baú do Perrine|r para pegar |T133733:0|t[Grimório de Egalin]
     .complete 1473,1 --Egalin's Grimoire (1)
 step
     #label ScarletCrusade1
@@ -8534,7 +8534,7 @@ step << Warrior/Rogue
     .goto Undercity,56.06,37.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Brom|r
     .train 2575 >>Treine |T136248:0|t[Mineração]
-    >>|cRXP_WARN_Isso vai permitir que você encontre|r |T135232:0|t|cRXP_LOOT_[Pedra Rústica]|r |cRXP_WARN_de depósitos para criar|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_(+2 Dano da Arma por 30 minutos)|r
+    >>|cRXP_WARN_Isto permitirá que você encontre|r |T135232:0|t|cRXP_LOOT_[Pedra Rústica]|r |cRXP_WARN_de depósitos de minérios para fabricar|r |T135248:0|t[Pedra de Afiar Rústica] |cRXP_WARN_(+2 Dano da Arma por 30 minutos)|r
     .target Brom Killian
 step << Warrior/Rogue
     .goto Undercity,56.72,36.92
@@ -8597,7 +8597,7 @@ step << skip
 step << !Warlock
     #xprate <1.5
     .goto Undercity,67.74,37.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Norman|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Ronan|r
     .home >>Defina sua Pedra de Regresso em Cidade Baixa
     .target Innkeeper Norman
     .bindlocation 1497
@@ -8606,9 +8606,9 @@ step
     #label UCHome
 step << Warlock
     .goto Undercity,85.07,25.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Carendin|r no Bairro da Magia
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Silvério Hidalgo|r no Distrito da Magia
     .turnin 1473 >>Entregue Criatura do caos
-    .accept 1471 >>Aceite A Vinculação
+    .accept 1471 >>Aceite A vinculação
     .target Carendin Halgar
 step << Warlock
     #completewith next
@@ -8742,7 +8742,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith LogoutSkip1
-    +|cRXP_WARN_Equipe as|r |T135425:0|t[Keen Arremessando Knives]
+    +|cRXP_WARN_Equipe as|r |T135425:0|t[Facas de Arremesso Afiadas]
     .use 3107
     .itemcount 3107,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
@@ -8756,33 +8756,33 @@ step << skip
     .target Mennet Carkad
 step << skip
     #optional
-    .abandon 1883 >>Abandone Falar com Un'thuwa, caso contrário você não conseguirá aceitar a próxima missão
+    .abandon 1883 >>Abandone Fale com Un'Thuwa, caso contrário você não conseguirá aceitar a próxima missão
     .isOnQuest 1883
 step << skip
     .goto Undercity,85.12,10.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anastasia|r no Bairro da Magia
     .turnin 1881 >>Entregue Falar com Anastasia
-    .accept 1882 >>Aceite A Fazenda Balnir
+    .accept 1882 >>Aceite A Fazenda dos Balnir
     .target Anastasia Hartwell
 step
     #xprate <1.5
     .goto Undercity,84.06,17.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bethor|r no Bairro da Magia
-    .turnin 405 >>Entregue O Lich Pródigo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boanerges Stalactus|r no Distrito da Magia
+    .turnin 405 >>Entregue O Lich pródigo
     .accept 357 >>Aceite A Identidade do Lich
     .target Bethor Iceshard
 step << Warlock
     #xprate >1.49
     .goto Undercity,84.06,17.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bethor|r no Bairro da Magia
-    .turnin 405 >>Entregue O Lich Pródigo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Boanerges Stalactus|r no Distrito da Magia
+    .turnin 405 >>Entregue O Lich pródigo
     .target Bethor Iceshard
 step << skip --Warlock
     #xprate <2.1
     .goto Undercity,84.86,20.34
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_realize um Logout Pular posicionando seu personagem na parte mais alta da escada mais baixa até parecer que está flutuando, depois saia e entre novamente|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >>https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_Clique aqui para ver um exemplo|r
-    >>|cRXP_WARN_se você não conseguir fazer isso, apenas saia de Undercity normalmente|r
+    >>|cRXP_WARN_Se você não conseguir fazer isso, apenas saia de Cidade Baixa normalmente|r
 step << skip --!Mage !Warlock
     #xprate <2.1
     .goto Undercity,61.10,54.11 << Priest
@@ -8790,7 +8790,7 @@ step << skip --!Mage !Warlock
     .goto Undercity,82.75,65.23 << Rogue
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Realize um Logout Pular pulando em cima da pilha de barris, depois faça logout e entre novamente|r << Priest/Warrior
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Faça um Atalho por Logout pulando sobre o triturador da Carroça Carniceira, depois, saia e entre novamente|r << Rogue
-    >>|cRXP_WARN_se você não conseguir fazer isso, apenas saia de Undercity normalmente|r
+    >>|cRXP_WARN_Se você não conseguir fazer isso, apenas saia de Cidade Baixa normalmente|r
     .zoneskip Undercity,1
 step
     #optional
@@ -8828,22 +8828,22 @@ step
     #optional
     .goto Tirisfal Glades,60.93,52.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Burgess|r
-    .turnin 374 >>Entregue Proof of Óbito
+    .turnin 374 >>Entregue Prova da morte
     .target Deathguard Burgess
     .isQuestComplete 374
 step
     #xprate <2.1
     #label AtWarS
     .goto Tirisfal Glades,60.58,51.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zygand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Executor Zigano|r
     .turnin 370 >>Entregue Em Guerra com a Cruzada Escarlate
-    .accept 371 >>Aceite Em Guerra com a Cruzada Escarlate
+    .accept 371 >>Aceite Guerra à Cruzada Escarlate
     .target Executor Zygand
 step
     #xprate >2.09
     #label AtWarS
     .goto Tirisfal Glades,60.58,51.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zygand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Executor Zigano|r
     .turnin 370 >>Entregue Em Guerra com a Cruzada Escarlate
     .target Executor Zygand
 step << Rogue
@@ -8890,7 +8890,7 @@ step
 step
     #xprate >2.09
     #completewith ThurmanGregor
-    >>|T134939:0|t[|cRXP_LOOT_Thurman's Carta|r] |cRXP_WARN_Pode cair desses inimigos. Aceite a missão se cair.|r
+    >>|T134939:0|t[|cRXP_LOOT_Carta de Timóteo|r] |cRXP_WARN_Pode cair desses inimigos. Aceite a missão se cair.|r
     .collect 2839,1,361 --Collect A Letter to Yvette (1)
     .accept 361 >>Aceite A carta que nunca chegou
     .use 2839
@@ -8908,7 +8908,7 @@ step
     #xprate >2.09
     #label KillDevlin
     .goto Tirisfal Glades,47.34,40.78
-    >>Mate |cRXP_ENEMY_Devlin|r. Saque-o pelos seus |cRXP_LOOT_Restos|r
+    >>Mate |cRXP_ENEMY_Delmiro Agamand|r. Saque-o para pegar |cRXP_LOOT_Restos Mortais de Delmiro|r
     .complete 362,1 --Devlin's Remains (1)
     .mob Devlin Agamand
 step
@@ -8970,7 +8970,7 @@ step
     #xprate >2.09
     #hardcore
     #completewith FoodandWater2
-    .subzone 159 >>Volte para Brill
+    .subzone 159 >>Volte para Montalvo
     .subzoneskip 159
 step
     #xprate >2.09
@@ -8980,8 +8980,8 @@ step
 step
     #xprate >2.09
     .goto Tirisfal Glades,58.20,51.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dillinger|r
-    .turnin 426 >>Vá para Os Moinhos Invadidos
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
+    .turnin 426 >>Vá para Os moinhos invadidos
     .target Deathguard Dillinger
 step
     #xprate >2.09
@@ -9000,7 +9000,7 @@ step
     .target +Yvette Farthing
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Entregue Mortes na família
-    .turnin 362 >>Vá para Os Moinhos Assombrados
+    .turnin 362 >>Vá para Os moinhos assombrados
     .target +Coleman Farthing
     .goto Tirisfal Glades,61.72,52.29
     .isOnQuest 361
@@ -9009,7 +9009,7 @@ step
     .goto Tirisfal Glades,61.72,52.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eurico|r
     .turnin 354 >>Entregue Mortes na família
-    .turnin 362 >>Vá para Os Moinhos Assombrados
+    .turnin 362 >>Vá para Os moinhos assombrados
     .turnin 1820 >>Entregue Falar com Coleman << Warrior
     .target Coleman Farthing
     .isQuestTurnedIn 1819 << Warrior
@@ -9019,7 +9019,7 @@ step << Warrior
     .goto Tirisfal Glades,61.72,52.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eurico|r
     .turnin 354 >>Entregue Mortes na família
-    .turnin 362 >>Vá para Os Moinhos Assombrados
+    .turnin 362 >>Vá para Os moinhos assombrados
     .target Coleman Farthing
 step
     #xprate >2.09
@@ -9032,7 +9032,7 @@ step
 step << Priest
     #xprate >2.09
     .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
 	.trainer >>Treine suas magias de classe
     .target Dark Cleric Beryl
 step << Warrior
@@ -9067,7 +9067,7 @@ step << Warlock
 step << Rogue
     #xprate >2.09
     .goto Tirisfal Glades,61.75,52.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r
     .train 674 >>Treine suas magias de classe
     --.accept 1885 >> Accept Mennet Carkad
     .target Marion Call
@@ -9077,7 +9077,7 @@ step << Rogue
     #xprate >2.09
     #optional
     .goto Tirisfal Glades,61.75,52.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r
     .train 1766 >>Treine suas magias de classe
     --.accept 1885 >> Accept Mennet Carkad
     .target Marion Call
@@ -9087,8 +9087,8 @@ step
     #label FoodandWater2
     .goto Tirisfal Glades,61.71,52.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Geni|r
-    >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r. << Mage/Priest/Shaman
-    >>|cRXP_BUY_Compre|r |T134532:0|t[Vermelho-speckled Mushrooms] |cRXP_BUY_dela|r <<Warrior/Rogue
+    >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r << Mage/Priest/Shaman
+    >>|cRXP_BUY_Compre|r |T134532:0|t[Cogumelo de Bolinhas Vermelhas] |cRXP_BUY_dela|r <<Warrior/Rogue
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_e|r |T134532:0|t[Vermelho-speckled Mushrooms] |cRXP_BUY_dela|r << Warlock
     .vendor >>Lixo de Comerciante
     .collect 1179,20,370,1 << Mage/Priest/Shaman --Ice Cold Milk (20)
@@ -9112,7 +9112,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Lina|r
     .turnin 359 >>Entregue Deveres Renegados
     .accept 360 >>Aceite Retornar ao Magistrado
-    .accept 356 >>Aceite Patrulha da Retaguarda
+    .accept 356 >>Aceite Patrulha da retaguarda
     .target Deathguard Linnea
 step
     #xprate <2.1
@@ -9125,7 +9125,7 @@ step
     #xprate <2.1
     #label ArriveBalnir
     .goto Tirisfal Glades,76.51,61.77
-    .subzone 165 >>Vá para Balnir Farmstead
+    .subzone 165 >>Vá para Fazenda dos Balnir
     .isOnQuest 356
 step << Mage
     #xprate <2.1
@@ -9214,7 +9214,7 @@ step
     .goto Tirisfal Glades,76.12,57.22,40,0
     .goto Tirisfal Glades,77.16,56.75,40,0
     .goto Tirisfal Glades,79.82,56.40,40,0
-    >>Mate os |cRXP_ENEMY_Scarlet Friars|r e os |cRXP_ENEMY_Scarlet Zealots|r. Saqueie-os pelos |cRXP_LOOT_Scarlet Insignia Rings|r
+    >>Mate |cRXP_ENEMY_Frades Escarlates|r e |cRXP_ENEMY_Zelotes Escarlates|r. Saqueie-os para pegar |cRXP_LOOT_Anel com Insígnia Escarlate|r
     .complete 371,2 --Scarlet Friar (5)
     .complete 374,1 --Scarlet Insignia Ring (10)
     .disablecheckbox
@@ -9239,14 +9239,14 @@ step
     .goto Tirisfal Glades,76.12,57.22,40,0
     .goto Tirisfal Glades,77.16,56.75,40,0
     .goto Tirisfal Glades,79.82,56.40,40,0
-    >>Abate os |cRXP_ENEMY_Scarlet Friars|r
+    >>Mate |cRXP_ENEMY_Frades Escarlates|r
     .complete 371,2 --Scarlet Friar (5)
     .mob Scarlet Friar
     .isQuestTurnedIn 374
 step
     #xprate <2.1
     .goto Tirisfal Glades,78.82,56.14
-    >>Abate o |cRXP_ENEMY_Capitão Vidálio|r dentro da torre
+    >>Mate o |cRXP_ENEMY_Capitão Vidálio|r que está dentro da torre
     .complete 371,1 --Captain Vachon (1)
     .mob Captain Vachon
 step
@@ -9266,7 +9266,7 @@ step
     .goto Tirisfal Glades,76.12,57.22,40,0
     .goto Tirisfal Glades,77.16,56.75,40,0
     .goto Tirisfal Glades,79.82,56.40,40,0
-    >>Mate os |cRXP_ENEMY_Scarlet Friars|r e os |cRXP_ENEMY_Scarlet Zealots|r. Saqueie-os pelos |cRXP_LOOT_Scarlet Insignia Rings|r
+    >>Mate |cRXP_ENEMY_Frades Escarlates|r e |cRXP_ENEMY_Zelotes Escarlates|r. Saqueie-os para pegar |cRXP_LOOT_Anel com Insígnia Escarlate|r
     .complete 374,1 --Scarlet Insignia Ring (10)
     .mob Scarlet Friar
     .mob Scarlet Zealot
@@ -9371,7 +9371,7 @@ step
 step
     #xprate <2.1
     #completewith ANewPlagueFinal
-    .subzone 159 >>Volte para Brill
+    .subzone 159 >>Volte para Montalvo
     .subzoneskip 159
     .cooldown item,6948,<0
 step
@@ -9383,14 +9383,14 @@ step
     #xprate <1.5
     #hardcore
     #completewith ANewPlagueFinal
-    .subzone 159 >>Volte para Brill
+    .subzone 159 >>Volte para Montalvo
     .subzoneskip 159
 step
     #xprate <1.5
     #softcore
     #completewith ANewPlagueFinal
     .goto Tirisfal Glades,66.60,44.95
-    .deathskip >>Morra |cRXP_WARN_na ilha menor|r e reapareça no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >>Morra |cRXP_WARN_NA ILHA MENOR|r e ressuscite com o |cRXP_FRIENDLY_Anjo da Cura|r
 step
     #xprate <2.1
     .goto Tirisfal Glades,59.45,52.39
@@ -9410,21 +9410,21 @@ step << skip
 step
     #xprate <1.5
     .goto Tirisfal Glades,60.58,51.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zygand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Executor Zigano|r
     .turnin 371 >>Entregue Em Guerra com a Cruzada Escarlate
-    .accept 372 >>Aceite Em Guerra com a Cruzada Escarlate
+    .accept 372 >>Aceite Guerra à Cruzada Escarlate
     .target Executor Zygand
 step
     #optional
     #xprate <2.1
     .goto Tirisfal Glades,60.58,51.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zygand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Executor Zigano|r
     .turnin 371 >>Entregue Em Guerra com a Cruzada Escarlate
     .target Executor Zygand
 step
     #xprate <2.1
     .goto Tirisfal Glades,61.26,50.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sevren|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magistrado Sevren|r
     .turnin 360 >>Entregue Retornar ao Magistrado
     .turnin 355 >>Entregue Falar com Sevren
     .target Magistrate Sevren
@@ -9438,7 +9438,7 @@ step
     #optional
     .goto Tirisfal Glades,60.93,52.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Burgess|r
-    .turnin 374 >>Entregue Proof of Óbito
+    .turnin 374 >>Entregue Prova da morte
     .target Deathguard Burgess
     .isQuestComplete 374
 step
@@ -9525,7 +9525,7 @@ step << Warrior
     .itemcount 204716,1
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
 	.train 588 >>Treine |T135926:0|t[Fogo Interior]
     .target Dark Cleric Beryl
     .xp <12,1
@@ -9533,7 +9533,7 @@ step << Priest
 step << Priest
     #optional
     .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
 	.train 6074 >>Treine suas magias de classe
     .target Dark Cleric Beryl
     .xp <14,1
@@ -9560,7 +9560,7 @@ step << Warrior
     .xp <12,1
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r no segundo andar
     .train 1766 >>Aprenda |T132219:0|t[Chute]
     .target Marion Call
     .xp <12,1
@@ -9568,7 +9568,7 @@ step << Rogue
 step << Rogue
     #optional
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion|r no segundo andar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r no segundo andar
     .train 1758 >>Treine suas magias de classe
     .target Marion Call
     .xp <14,1
@@ -9631,7 +9631,7 @@ step << Undead
 step << Undead
     .goto Orgrimmar,45.13,63.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Doraso|r
-    >>|cRXP_WARN_Não voe para nenhum lugar!|r
+    >>|cRXP_WARN_Não voe para lugar nenhum!|r
     .fp Orgrimmar >>Aprenda a rota de voo para Orgrimmar
     .target Doras
     .dungeon RFC
@@ -9793,7 +9793,7 @@ step << Undead
     .dungeon RFC
 step << Undead
     #completewith Conscript
-    .subzone 362 >>Vá para Razor Hill
+    .subzone 362 >>Vá para Monte Navalha
 step << !Undead
     .hs >>Use a Pedra Lunar para voltar a Razor Hill
     .use 6948

@@ -101,7 +101,7 @@ step << Undead
 step
     #season 2
     .goto Tirisfal Glades,24.60,59.45
-    >>Pegue o |cRXP_PICK_Baú Perdido|r dentro da caverna para obter a |T134419:0|t[|cRXP_FRIENDLY_Runa da Assombração|r]
+    >>Pegue o |cRXP_PICK_Esconderijo Perdido|r dentro da caverna para a |T134419:0|t[|cRXP_FRIENDLY_Runa da Assombração|r]
     .collect 205230,1 --Rune of Haunting (1)
     .train 403919,1
 step
@@ -223,7 +223,7 @@ step
     .collect 205183,1
 step
     .train 416009,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin Halgar|r in Undercity
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Carentin Halgar|r em Undercity
     .goto Undercity,85.0,25.6
     .collect 205215,1
     .skipgossip 5675,1
@@ -405,7 +405,7 @@ step
     .goto Hillsbrad Foothills,58.2,19.6,40,0
     .goto Hillsbrad Foothills,57.5,36.4,50,0
     .goto Hillsbrad Foothills,51.1,46.4,40,0
-    >>Procure Zixil|cRXP_FRIENDLY_. Ele patrulha entre Tarren Moinho e Southshore. Compre |T133709:0|t[Explosivos de Demolição]|r dele |cRXP_WARN_por 1 ouro|r
+    >>Procure |cRXP_FRIENDLY_Zixil|r. Ele patrulha entre Tarren Moinho e Costa Sul. Compre |T133709:0|t[Explosivos de Demolição] dele |cRXP_WARN_por 1 ouro|r
     .collect 211487,1
     .target Zixil
 step
@@ -762,7 +762,7 @@ step
     #completewith next
     .train 426445,1
     .isOnQuest 78994
-    .hs >>Use sua Pedra de Retorno para ir a Ponto de Ancoragem << Alliance
+    .hs >>Use sua Pedra de Regresso para ir a Vila Catraca << Alliance
     .hs >>Use sua Pedra de Retorno para ir a Camp Taurajo << Horde
     .zoneskip The Barrens
 step

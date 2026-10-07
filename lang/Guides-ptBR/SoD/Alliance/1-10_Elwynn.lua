@@ -2555,7 +2555,7 @@ step << Warlock
 step
     .goto StormwindClassic,52.623,65.701
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >>Defina sua Pedra de Retorno em Ventobravo
+    .home >>Defina sua Pedra de Retorno em Cidade de Ventobravo
     .target Innkeeper Allison
 step << Human Paladin
     #xprate >1.59
@@ -2791,7 +2791,7 @@ step << Warlock
     .goto StormwindClassic,25.25,78.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gakin, o Neromante|r
     .turnin 1688 >>Entregue Surena Caledon
-    .accept 1689 >>Aceite A Vinculação
+    .accept 1689 >>Aceite A vinculação
     .target Gakin the Darkbinder
 step << Warlock
     #completewith next
@@ -3005,47 +3005,47 @@ step
     #xprate <1.59
     #optional
     #label TramEnd
-    >>|cRXP_WARN_Pegue o Deeprun Tram para o lado de Ironforge|r
+    >>|cRXP_WARN_Pegue o Bonde das Profundezas para o lado de Ironforge|r
     >>|cRXP_WARN_Aumente de Nível em|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_enquanto espera pelo Bonde para Ironforge se necessário|r << Rogue/Warrior/Paladin
     >>|cRXP_WARN_Você precisará de sua|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_estar em nível 80 para uma missão do nível 24|r << Rogue !Dwarf
     >>|cRXP_WARN_Lance|r |T136221:0|t[Evocar Emissário do Caos] |cRXP_WARN_e|r |T135230:0|t[Criar Pedra de Vida] |cRXP_WARN_enquanto espera pelo Bonde para Ironforge se necessário|r << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma intermediária no lado de Ironforge do Deeprun Tram
-    .accept 6661 >>Aceite Ratos de Porão
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma do meio no lado de Ironforge do Tram de Profundezas
+    .accept 6661 >>Aceite Caçada aos Ratos das Profundezas
     .target Monty
 step
     #xprate <1.59
-    >>|cRXP_WARN_Use o|r |T133942:0|t[Rato Catcher's Flute] |cRXP_WARN_em |cRXP_ENEMY_Deeprun Ratos|r dentro do Deeprun Tram|r
+    >>|cRXP_WARN_Use a|r |T133942:0|t[Rato Catcher's Flute] |cRXP_WARN_em |cRXP_ENEMY_Deeprun Ratos|r dentro do Bonde das Profundezas|r
     .complete 6661,1 --Rats Captured (x5)
     .use 17117
     .mob Deeprun Rat
 step
     #xprate <1.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r dentro do Deeprun Tram
-    .turnin 6661 >>Entregue Ratos de Porão
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r dentro do Tram de Profundezas
+    .turnin 6661 >>Entregue Caçada aos Ratos das Profundezas
     .target Monty
 step
     #xprate >1.59
     #optional
     #label TramEnd
-    >>|cRXP_WARN_Pegue o Deeprun Tram para o lado de Ironforge|r
+    >>|cRXP_WARN_Pegue o Bonde das Profundezas para o lado de Ironforge|r
     >>|cRXP_WARN_Aumente de Nível em|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_enquanto espera pelo Bonde para Ironforge se necessário|r << Rogue/Warrior/Paladin
     >>|cRXP_WARN_Você precisará de sua|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_estar em nível 80 para uma missão do nível 24|r << Rogue !Dwarf
     >>|cRXP_WARN_Lance|r |T136221:0|t[Evocar Emissário do Caos] |cRXP_WARN_e|r |T135230:0|t[Criar Pedra de Vida] |cRXP_WARN_enquanto espera pelo Bonde para Ironforge se necessário|r << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma intermediária no lado de Ironforge do Deeprun Tram
-    .accept 6661 >>Aceite Ratos de Porão
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma do meio no lado de Ironforge do Tram de Profundezas
+    .accept 6661 >>Aceite Caçada aos Ratos das Profundezas
     .target Monty
     .zoneskip Ironforge
 step
     #xprate >1.59
-    >>|cRXP_WARN_Use o|r |T133942:0|t[Rato Catcher's Flute] |cRXP_WARN_em |cRXP_ENEMY_Deeprun Ratos|r dentro do Deeprun Tram|r
+    >>|cRXP_WARN_Use a|r |T133942:0|t[Rato Catcher's Flute] |cRXP_WARN_em |cRXP_ENEMY_Deeprun Ratos|r dentro do Bonde das Profundezas|r
     .complete 6661,1 --Rats Captured (x5)
     .use 17117
     .mob Deeprun Rat
     .zoneskip Ironforge
 step
     #xprate >1.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r dentro do Deeprun Tram
-    .turnin 6661 >>Entregue Ratos de Porão
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r dentro do Tram de Profundezas
+    .turnin 6661 >>Entregue Caçada aos Ratos das Profundezas
     .target Monty
     .zoneskip Ironforge
 step
@@ -3134,7 +3134,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith Rudra
-    +|cRXP_WARN_Equipe as|r |T135425:0|t[Keen Arremessando Knives]
+    +|cRXP_WARN_Equipe as|r |T135425:0|t[Facas de Arremesso Afiadas]
     .use 3107
     .itemcount 3107,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3

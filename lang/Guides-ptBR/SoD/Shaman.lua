@@ -543,7 +543,7 @@ step
     #label Kah
     .goto Thunder Bluff,56.13,46.39,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kah Corre com a Névoa|r
-    .train 7734 >>Treine |T136245:0|t[Pesca]
+    .train 7734 >>Aprenda |T136245:0|t[Pesca]
     .target Kah Mistrunner
     .train 410104,1
     .xp <4,1
@@ -2259,7 +2259,7 @@ step
 step
     .goto Ashenvale,11.56,34.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Je'neu Sancrea|r
-    .turnin 78506 >>Entregue Elemental Affliction
+    .turnin 78506 >>Entregue Aflição Elemental
     .accept 78537 >>Aceite Elixir of Perception
     .accept 78537 >>Entregue Elixir of Perception
     .accept 78561 >>Aceite Elixir of Perception
@@ -2689,7 +2689,7 @@ step
     .waypoint Thousand Needles,26.29,52.79,15,0
     .waypoint Thousand Needles,27.23,54.04,15,0
     .waypoint Thousand Needles,26.55,55.77,15,0
-    >>Mate os cRXP_ENEMY_Screeching Harpies|r. Saqueie-os para obter suas |cRXP_LOOT_Strong Harpia Peninha|r
+    >>Abate |cRXP_ENEMY_Screeching Harpies|r. Saqueie-as para obter |cRXP_LOOT_Strong Harpia Peninha|r
     .collect 213701,10 --Strong Harpy Feather (10x)
     .mob Screeching Harpy
     .mob Screeching Roguefeather
@@ -2964,7 +2964,7 @@ step
     .train 432241,1
 step
     .goto The Hinterlands,51.2,47.0
-    >>Mate |cRXP_ENEMY_Corrompido|r. Depois >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Manifestação Moderada da Terra|r
+    >>Abate |cRXP_ENEMY_Corrupt NO TRANSLATION FOUND TO THIS ELEMENT|r depois >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Moderate Manifestação of Ar.|r
     .turnin 81960 >>Entregue Ar Purificante
     .accept 81968 >>Aceite Resposta ao Chamado do Ar
     .mob Corrupt Moderate Manifestation of Air

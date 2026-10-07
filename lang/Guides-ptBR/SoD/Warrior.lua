@@ -636,7 +636,7 @@ step << Undead
 step
     #season 2
     .goto Tirisfal Glades,24.60,59.45
-    >>Pegue o |cRXP_PICK_Lost Stache|r dentro da caverna para a |T134419:0|t[|cRXP_FRIENDLY_Runa do Ímpeto da Vitória|r]
+    >>Pegue o |cRXP_PICK_Lost Stash|r dentro da caverna para a |T134419:0|t[|cRXP_FRIENDLY_Runa do Ímpeto da Vitória|r]
     .collect 204806,1 --Rune of Victory Rush (1)
     .train 403470,1
 step
@@ -1689,11 +1689,11 @@ step
     .collect 220914,1 --Broken Geode Hammer
     .train 427084,1
 step
-    >>Clique com o botão direito em |T133054:0|t|cRXP_LOOT_Martelo de Geodo Quebrado|r para saqueá-lo e obter |T134419:0|t[|cRXP_FRIENDLY_Runa da Demolição|r]
-    .collect 220913,1 --Rune of the Demolition
+    >>Clique com o botão direito no |T133054:0|t|cRXP_LOOT_Martelo de Geodo Quebrado|r para saqueá-lo e obter a |T134419:0|t[|cRXP_FRIENDLY_Rune of Demolição|r]
+    .collect 220913,1 --Rune of Demolition
     .train 427084,1
 step
-    .train 427084 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa da Demolição|r] |cRXP_WARN_para aprender|r |T132364:0|t[Violência Gratuita]
+    .train 427084 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Demolição|r] |cRXP_WARN_para aprender|r |T132364:0|t[Violência Gratuita]
     .use 220913
 ]])
 
@@ -1711,7 +1711,7 @@ step
 step
     #sticky
     #completewith summonIodax
-    >>|cRXP_WARN_Para completar esta missão, você precisará invocar e matar um golem de élite nível 50 com cerca de 12k de vida. É possível fazer sozinho, mas recomendo procurar um grupo. Para invocar o golem, você precisa coletar 4 partes de Slag Pits em Garganta Abrasadora. No entanto, você não precisa coletar se conseguir encontrar alguém para invocar o chefe para você. Nesse caso, você pode pular direto para a etapa 13|r
+    >>|cRXP_WARN_Para completar esta missão, você precisará invocar e matar um golem de elite nível 50 com aproximadamente 12k de hp. É possível fazer sozinho, porém recomendo procurar um grupo. Para invocar o golem, você precisa coletar 4 partes das Slag Pits em Garganta Abrasadora. Porém você não precisa coletá-las se conseguir encontrar outra pessoa para invocar o chefe para você. Nesse caso, você pode pular direto para a etapa 13|r
     .collect 221258,1 --Right Foot of the Obliterator
     .collect 221256,1 --Right Arm of the Obliterator
     .collect 221259,1 --Left Foot of the Obliterator

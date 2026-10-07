@@ -2302,7 +2302,7 @@ step
     .goto 1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4722 >>Entregue Tartaruga Marinha Encalhada
-    .turnin 4723 >>Entregue Beached Sea Criatura - Missão
+    .turnin 4723 >>Entregue a Criatura Marinha Encalhada
     .target Gwennyth Bly'Leggonde
     .isOnQuest 4723
 step
@@ -2312,7 +2312,7 @@ step
     .goto 1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4722 >>Entregue Tartaruga Marinha Encalhada
-    .turnin 4723 >>Entregue Beached Sea Criatura - Missão << Warrior sod
+    .turnin 4723 >>Entregue a Criatura Marinha Encalhada << Warrior sod
     .target Gwennyth Bly'Leggonde
 step
     #season 0
@@ -2893,7 +2893,7 @@ step << !NightElf
     #optional
     .goto 1439,37.439,41.839
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arqueóloga Hollee|r
-    .accept 729 >>Aceite The Absent Minded Prospector
+    .accept 729 >>Aceite O Prospector Distraído
     .target Archaeologist Hollee
     .isQuestComplete 2138
 step
@@ -2906,7 +2906,7 @@ step << !NightElf
     #season 0
     .goto 1439,37.439,41.839
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arqueóloga Hollee|r
-    .accept 729 >>Aceite The Absent Minded Prospector
+    .accept 729 >>Aceite O Prospector Distraído
     .target Archaeologist Hollee
 step
     .goto 1439,38.843,43.416
@@ -2971,7 +2971,7 @@ step
     .goto 1439,36.621,45.596
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
-    .turnin 4723 >>Entregue Beached Sea Criatura - Missão
+    .turnin 4723 >>Entregue a Criatura Marinha Encalhada
     .turnin 4725 >>Entregue Tartaruga Marinha Encalhada
     .target Gwennyth Bly'Leggonde
     .isOnQuest 4723
@@ -3185,7 +3185,7 @@ step << Hunter
     .itemcount 3026,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.49
 step << NightElf Rogue
-    >>Entre no Recanto Cenarion
+    >>Entre no Enclave Cenariano
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Syurna|r
     .goto Darnassus,31.84,16.69,15,0
@@ -3223,7 +3223,7 @@ step << NightElf
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arqueóloga Hollee|r
     .turnin 730 >>Entregue Trouble In Costa Negra?
-    .accept 729 >>Aceite The Absent Minded Prospector
+    .accept 729 >>Aceite O Prospector Distraído
     .target Archaeologist Hollee
     .isOnQuest 730
 step << NightElf
@@ -3231,7 +3231,7 @@ step << NightElf
     .goto 1439,37.439,41.839
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arqueóloga Hollee|r
-    .accept 729 >>Aceite The Absent Minded Prospector
+    .accept 729 >>Aceite O Prospector Distraído
     .target Archaeologist Hollee
 step
     .goto 1439,37.394,40.128
@@ -3490,7 +3490,7 @@ step << Hunter
     .goto Darkshore,35.72,83.69
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Prospector Trilheiro|r. Isto iniciará uma escolta
-    .accept 731,1 >>Aceite The Absent Minded Prospector
+    .accept 731,1 >>Aceite O Prospector Distraído
     >>|cRXP_WARN_Esta missão é muito difícil. Você pode pular este passo e voltar no nível 19|r
     .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_clique aqui para um guia em vídeo|r
     .target Prospector Remtravel
@@ -3644,11 +3644,11 @@ step
     .goto 1439,36.701,45.122,8,0
     .goto 1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
-    .turnin 4728 >>Entregue Beached Sea Criatura - Missão
-    .turnin 4730 >>Entregue Beached Sea Criatura - Missão
+    .turnin 4728 >>Entregue a Criatura Marinha Encalhada
+    .turnin 4730 >>Entregue a Criatura Marinha Encalhada
     .turnin 4731 >>Entregue Tartaruga Marinha Encalhada
     .turnin 4732 >>Entregue Tartaruga Marinha Encalhada << Hunter
-    .turnin 4733 >>Entregue Beached Sea Criatura - Missão << Hunter
+    .turnin 4733 >>Entregue a Criatura Marinha Encalhada << Hunter
     .target Gwennyth Bly'Leggonde
 step
     #optional
@@ -3668,7 +3668,7 @@ step
     .goto 1439,37.703,43.393
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sentinela Glynda Nal'Shea|r
-    .turnin 4740 >>Entregue WANTED: Lodofundo!
+    .turnin 4740 >>Entregue PROCURA-SE: Lodofundo!
     .target Sentinel Glynda Nal'Shea
 step
     #label CleansingTharnariun
@@ -3683,7 +3683,7 @@ step << Hunter
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arqueóloga Hollee|r
     .turnin 731 >>Entregue The Absent Minded Prospector
-    .accept 741 >>Aceite The Absent Minded Prospector
+    .accept 741 >>Aceite O Prospector Distraído
     .target Archaeologist Hollee
     .isQuestComplete 731
 step << Hunter
@@ -3691,7 +3691,7 @@ step << Hunter
     #season 0
     .goto 1439,37.439,41.839
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arqueóloga Hollee|r
-    .accept 741 >>Aceite The Absent Minded Prospector
+    .accept 741 >>Aceite O Prospector Distraído
     .target Archaeologist Hollee
     .isQuestTurnedIn 731
 step << Hunter
@@ -4371,7 +4371,7 @@ step << NightElf Rogue
     .goto Wetlands,2.433,78.689,-1
     .goto Ironforge,17.089,83.373,-1
     .zone Ironforge >>Use o recurso de auto-destravamento do personagem unstuck para pular para Altaforja. Você precisará deslogar no local, depois acessar o menu de ajuda em outro personagem (alternativamente, cole o link de destravamento abaixo no navegador), role até autoatendimento. Clique em destravar no seu personagem e mova-se. Se não conseguir se destravar, ignore esta etapa e nade ao longo das montanhas até Cerro Oeste
-    .link https://www.youtube.com/watch?v=oVoxsr4zcg4 >>https://www.youtube.com/watch?v=oVoxsr4zcg4 >> Clique aqui para referência de vídeo
+    .link https://www.youtube.com/watch?v=oVoxsr4zcg4 >>https://www.youtube.com/watch?v=oVoxsr4zcg4 >> Clique aqui para ver o vídeo de referência
     .link https://us.battle.net/support/en/help/product/wow/197/834/solution >>https://us.battle.net/support/en/help/product/wow/197/834/solution >> Clique aqui para o link de desbloqueio
     .subzoneskip 809 --IF Gates
     .subzoneskip 2257 --Deeprun Tram
@@ -4546,7 +4546,7 @@ step << NightElf Warrior
     #season 1 --Not loading for now
     #optional << NightElf
     #completewith DeeprunDM
-    +|cRXP_WARN_Equipe as|r |T135425:0|t[Keen Arremessando Knives]
+    +|cRXP_WARN_Equipe as|r |T135425:0|t[Facas de Arremesso Afiadas]
     .use 3107
     .itemcount 3107,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
@@ -4598,7 +4598,7 @@ step <<Paladin/Mage/Warlock/Rogue
     #optional
     .goto Ironforge,50.826,5.613
     >>Use o [|cRXP_WARN_Livro: Os Poderes Inferiores|cRXP_LOOT_] |rpara iniciar a missão|r
-    .accept 968 >>Aceite The Powers Below
+    .accept 968 >>Aceite Os Poderes de Baixo
     .use 5352
     .itemcount 5352,1
     .zoneskip Darkshore << Warrior/Paladin
@@ -5622,7 +5622,7 @@ step << NightElf Rogue
     #optional
     .goto Ironforge,50.826,5.613
     >>Use o [|cRXP_WARN_Livro: Os Poderes Inferiores|cRXP_LOOT_] |rpara iniciar a missão|r
-    .accept 968 >>Aceite The Powers Below
+    .accept 968 >>Aceite Os Poderes de Baixo
     .use 5352
     .itemcount 5352,1
     .zoneskip Ironforge,1
@@ -5879,7 +5879,7 @@ step << Dwarf Hunter
     .goto Teldrassil,23.70,64.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Arqueólogo-chefe Suiçagris|r
     .turnin 741 >>Entregue The Absent Minded Prospector
-    .accept 942 >>Aceite The Absent Minded Prospector
+    .accept 942 >>Aceite O Prospector Distraído
     .target Chief Archaeologist Greywhisker
     .isOnQuest 741
 step << Dwarf Hunter
@@ -5887,7 +5887,7 @@ step << Dwarf Hunter
     #optional
     .goto Teldrassil,23.70,64.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Arqueólogo-chefe Suiçagris|r
-    .accept 942 >>Aceite The Absent Minded Prospector
+    .accept 942 >>Aceite O Prospector Distraído
     .target Chief Archaeologist Greywhisker
     .isQuestTurnedIn 741
 step << Druid
@@ -6137,7 +6137,7 @@ step << NightElf
     .goto Wetlands,2.433,78.689,-1
     .goto Ironforge,17.089,83.373,-1
     .zone Ironforge >>Use o recurso de auto-destravamento do personagem unstuck para pular para Altaforja. Você precisará deslogar no local, depois acessar o menu de ajuda em outro personagem (alternativamente, cole o link de destravamento abaixo no navegador), role até autoatendimento. Clique em destravar no seu personagem e mova-se. Se não conseguir se destravar, ignore esta etapa e nade ao longo das montanhas até Cerro Oeste
-    .link https://www.youtube.com/watch?v=oVoxsr4zcg4 >>https://www.youtube.com/watch?v=oVoxsr4zcg4 >> Clique aqui para referência de vídeo
+    .link https://www.youtube.com/watch?v=oVoxsr4zcg4 >>https://www.youtube.com/watch?v=oVoxsr4zcg4 >> Clique aqui para ver o vídeo de referência
     .link https://us.battle.net/support/en/help/product/wow/197/834/solution >>https://us.battle.net/support/en/help/product/wow/197/834/solution >> Clique aqui para o link de desbloqueio
     .subzoneskip 809 --IF Gates
     .subzoneskip 2257 --Deeprun Tram
@@ -6290,7 +6290,7 @@ step << NightElf Warrior
     #xprate >1.59
     #optional
     #completewith DeeprunDM
-    +|cRXP_WARN_Equipe as|r |T135425:0|t[Keen Arremessando Knives]
+    +|cRXP_WARN_Equipe as|r |T135425:0|t[Facas de Arremesso Afiadas]
     .use 3107
     .itemcount 3107,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
@@ -6315,7 +6315,7 @@ step
     #optional
     .goto Ironforge,50.826,5.613
     >>Use o [|cRXP_WARN_Livro: Os Poderes Inferiores|cRXP_LOOT_] |rpara iniciar a missão|r
-    .accept 968 >>Aceite The Powers Below
+    .accept 968 >>Aceite Os Poderes de Baixo
     .use 5352
     .itemcount 5352,1
     .zoneskip Wetlands << NightElf
@@ -6718,7 +6718,7 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duthorian Rall|r. Ele lhe dará o [|cRXP_LOOT_Tomo do Valor|r]
     .use 6776 >>Use o [|cRXP_WARN_Tomo do Valor|cRXP_LOOT_] |rpara iniciar a missão|r
     .collect 6776,1,1649 --Tome of Valor (1)
-    .accept 1649 >>Aceite The Tomo de Bravura
+    .accept 1649 >>Aceite o Tomo da Bravura
     .target Duthorian Rall
     .dungeon DM
 step << Paladin
@@ -6726,7 +6726,7 @@ step << Paladin
     .goto StormwindClassic,39.80,29.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Benedito Brião|r
     .turnin 1649 >>Entregue O Tomo de Bravura
-    .accept 1650 >>Aceite The Tomo de Bravura
+    .accept 1650 >>Aceite o Tomo da Bravura
     .target Duthorian Rall
     .dungeon DM
 step << Paladin
@@ -7558,7 +7558,7 @@ step << Paladin
     >>|cRXP_WARN_Ela patrulha ao redor ligeiramente em seu campo|r
     >>|cRXP_WARN_Tenha cuidado, pois isso pode ser um pouco difícil. Você enfrentará 3 ondas, de 3, depois 4, depois 5 inimigos de nível 17-18 |cRXP_ENEMY_Bandidos Defias|r
     .turnin 1650 >>Entregue O Tomo de Bravura
-    .accept 1651,1 >>Aceite The Tomo de Bravura
+    .accept 1651,1 >>Aceite o Tomo da Bravura
     .link https://youtu.be/1-nnLcqIIlQ?si=kZi41eXT8ZQmSBY2&t=10 >>https://youtu.be/1-nnLcqIIlQ?si=kZi41eXT8ZQmSBY2&t=10 >> CLIQUE AQUI para um guia em vídeo
     .target Daphne Stilwell
     .dungeon DM
@@ -7582,7 +7582,7 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Dafne Calmafonte|r
     >>|cRXP_WARN_Ela patrulha ao redor ligeiramente em seu campo|r
     .turnin 1651 >>Entregue O Tomo de Bravura
-    .accept 1652 >>Aceite The Tomo de Bravura
+    .accept 1652 >>Aceite o Tomo da Bravura
     .target Daphne Stilwell
     .dungeon DM
 step
@@ -8047,7 +8047,7 @@ step << NightElf
     #optional
     .goto Ironforge,50.826,5.613
     >>Use o [|cRXP_WARN_Livro: Os Poderes Inferiores|cRXP_LOOT_] |rpara iniciar a missão|r
-    .accept 968 >>Aceite The Powers Below
+    .accept 968 >>Aceite Os Poderes de Baixo
     .use 5352
     .itemcount 5352,1
     .zoneskip Ironforge,1
@@ -8278,7 +8278,7 @@ step << !Hunter NightElf
     #xprate <1.59
     .goto Loch Modan,33.938,50.954
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum|r
-    .fp Thelsamar >>Aprenda a rota de voo de Thelsamar
+    .fp Thelsamar >>Pegue a rota de voo de Thelsamar
     .target Thorgrum Borrelson
 step << !Hunter NightElf
     #xprate <1.59
@@ -8911,14 +8911,14 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duthorian Rall|r. Ele lhe dará o [|cRXP_LOOT_Tomo do Valor|r]
     use 6776 >>|cRXP_WARN_Use the |T133739:0|t[|cRXP_LOOT_Tome of Valor|r] to start the quest|r
     .collect 6776,1,1649 --Tome of Valor (1)
-    .accept 1649 >>Aceite The Tomo de Bravura
+    .accept 1649 >>Aceite o Tomo da Bravura
     .target Duthorian Rall
 step << Paladin
 .dungeon DM
     .goto StormwindClassic,39.80,29.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Benedito Brião|r
     .turnin 1649 >>Entregue O Tomo de Bravura
-    .accept 1650 >>Aceite The Tomo de Bravura
+    .accept 1650 >>Aceite o Tomo da Bravura
     .target Duthorian Rall
 step << Paladin
 .dungeon DM
@@ -9089,7 +9089,7 @@ step
 step
 .dungeon DM
     #completewith next
-    .subzone 91 >>Vá para a Torre de Azora. Escale a torre
+    .subzone 91 >>Viaje até a Torre de Azora. Suba a torre
     .xp <20,1
 step
 .dungeon DM
@@ -9131,7 +9131,7 @@ step
 
 step
     #label BMenace
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Oficial Marris|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Marris|r
     .goto Redridge Mountains,33.50,48.97
     .accept 20 >>Aceite A Ameaça de Rocha Negra
     .target Marshal Marris
@@ -9177,10 +9177,10 @@ step
 	.target Magistrate Solomon
     .accept 120 >>Aceite Mensageiro para Ventobravo
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre de Doca Baren|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre de Doca Baren|r
 	.target Dockmaster Baren
     .goto Redridge Mountains,27.70,47.40
-    .accept 127 >>Aceite Vendendo Peixe
+    .accept 127 >>Aceite O lago está para peixe
 step
 #xprate <1.5
     .goto Redridge Mountains,26.80,44.40
@@ -9222,7 +9222,7 @@ step << Warlock
     .goto Redridge Mountains,21.85,46.32
     .target Martie Jainrose
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Martie Jainrose|r
-    .turnin 34 >>Entregue O Penetra
+    .turnin 34 >>Entregue O penetra
 step << Rogue
     .goto Redridge Mountains,28.07,52.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lucius|r
@@ -9374,7 +9374,7 @@ step
     #completewith next
     .goto Redridge Mountains,33.50,48.97,150 >>Viaje para Lakeshire
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Oficial Marris|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Marris|r
 	.target Marshal Marris
     .goto Redridge Mountains,33.50,48.97
     .turnin 20 >>Entregue Blackrock Ameaça
@@ -9385,18 +9385,18 @@ step
     .turnin 125 >>Entregue The Perdida Ferramentas
     .accept 89 >>Aceite The Everstill Ponte
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre de Doca Baren|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre de Doca Baren|r
 	.target Dockmaster Baren
     .goto Redridge Mountains,27.72,47.38
-    .turnin 127 >>Entregue Venda de Peixes
-    .accept 150 >>Aceite Caçadores Murloc
+    .turnin 127 >>Entregue O lago está para peixe
+    .accept 150 >>Aceite Caçadores de murlocs
     .turnin 150 >>Entregue Murloc Poachers
     .xp <20,1
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre de Doca Baren|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre de Doca Baren|r
 	.target Dockmaster Baren
     .goto Redridge Mountains,27.72,47.38
-    .turnin 127 >>Entregue Venda de Peixes
+    .turnin 127 >>Entregue O lago está para peixe
 step
 #optional
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre-cuca Breanna|r
@@ -9582,14 +9582,14 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duthorian Rall|r. Ele lhe dará o [|cRXP_LOOT_Tomo do Valor|r]
     use 6776 >>|cRXP_WARN_Use the |T133739:0|t[|cRXP_LOOT_Tome of Valor|r] to start the quest|r
     .collect 6776,1,1649 --Tome of Valor (1)
-    .accept 1649 >>Aceite The Tomo de Bravura
+    .accept 1649 >>Aceite o Tomo da Bravura
     .target Duthorian Rall
 step << Paladin
 .dungeon !DM
     .goto StormwindClassic,39.80,29.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Benedito Brião|r
     .turnin 1649 >>Entregue O Tomo de Bravura
-    .accept 1650 >>Aceite The Tomo de Bravura
+    .accept 1650 >>Aceite o Tomo da Bravura
     .target Duthorian Rall
 step << Paladin
 .dungeon !DM
@@ -9825,7 +9825,7 @@ step
     .accept 119 >>Aceite Retornar a Verner
 step
     #completewith next
-    .goto Elwynn Forest,65.20,69.80,50 >>Vá para a Torre de Azora. Escale a torre
+    .goto Elwynn Forest,65.20,69.80,50 >>Viaje até a Torre de Azora. Suba a torre
 step
     .goto Elwynn Forest,65.22,69.71
     .target Theocritus
@@ -9866,11 +9866,11 @@ step
     .goto Redridge Mountains,29.24,53.63
     .turnin 3741 >>Entregue Nida's Colar
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre de Doca Baren|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre de Doca Baren|r
 	.target Dockmaster Baren
     .goto Redridge Mountains,27.72,47.38
-    .turnin 127 >>Entregue Venda de Peixes
-    .accept 150 >>Aceite Caçadores Murloc
+    .turnin 127 >>Entregue O lago está para peixe
+    .accept 150 >>Aceite Caçadores de murlocs
     .turnin 150 >>Entregue Murloc Poachers
 step
 #optional
@@ -10111,7 +10111,7 @@ step
     .goto Darkshore,35.72,83.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Prospector Trilheiro|r
     >>Isso iniciará uma escolta
-    .accept 731,1 >>Aceite The Absent Minded Prospector
+    .accept 731,1 >>Aceite O Prospector Distraído
     >>|cRXP_WARN_esta missão é MUITO difícil. Pule este passo se você não conseguir encontrar um grupo ou fazer solo|r
     .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_clique aqui para um guia em vídeo|r
     .target Prospector Remtravel
@@ -10392,7 +10392,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Therysil|r
 	.target Therysil
     .goto Ashenvale,22.64,51.91
-    .turnin 945 >>Entregue A Fuga de Therylune
+    .turnin 945 >>Entregue A fuga de Therylune
     .isQuestComplete 945
 step << Hunter
     #xprate <1.59
@@ -10442,7 +10442,7 @@ step
     .accept 1056 >>Aceite Journey to Stonetalon Peak
 step
     #xprate <1.59
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raene Correlobos|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_a Raene Correlobos|r
 	.target Raene Wolfrunner
     .goto Ashenvale,36.61,49.58
     .accept 991 >>Aceite A Purificação de Raene
@@ -10485,7 +10485,7 @@ step
 step
     #xprate <1.59
     .goto Ashenvale,46.37,46.38
-    >>Pegue |cRXP_LOOT_A lágrima de Eluna|r no chão
+    >>Pegue a |cRXP_LOOT_Lágrima de Eluna|r no chão
     .complete 1033,1
 step
     #xprate <1.59
@@ -10499,7 +10499,7 @@ step
 step
     #xprate <1.59
     .goto Ashenvale,33.30,67.79
-    >>Saque os |cRXP_PICK_Arbustos Cobertos de Poeira Estelar|r para o |cRXP_LOOT_Punhado de Poeira Estelar|r
+    >>Saqueie os |cRXP_PICK_arbustos cobertos de poeira estelar|r para obter um punhado de |cRXP_LOOT_Punhado de Poeira Estelar|r
     >>Os locais de surgimento deles estão espalhados por toda a ilha
     .complete 1034,1
 step
@@ -10549,11 +10549,11 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Talen|r
 	.target Talen
     .goto Ashenvale,14.79,31.29
-    .accept 1007 >>Aceite A Estatueta Antiga
+    .accept 1007 >>Aceite A estatueta ancestral
 step
     #xprate <1.59
     #completewith nagas
-    >>Abate os |cRXP_ENEMY_Wrathtail Nagas|r. Saque-os por suas |cRXP_LOOT_Cabeças|r
+    >>Mate |cRXP_ENEMY_Nagas Cauda da Ira|r. Saqueie-os para obter os deles |cRXP_LOOT_Cabeças|r
     >>Não saia do seu caminho para completar isso ainda
 	.mob Wrathtail Wave Rider
 	.mob Wrathtail Sorceress
@@ -10568,7 +10568,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Talen|r
 	.target Talen
     .goto Ashenvale,14.79,31.29
-    .turnin 1007 >>Entregue A Estatueta Antiga
+    .turnin 1007 >>Entregue A estatueta ancestral
     .timer 22,RP da Estatueta Antiga
     .accept 1009 >>Aceite Ruuzel
 step
@@ -10608,7 +10608,7 @@ step
     .goto Ashenvale,13.13,25.03,70,0
     .goto Ashenvale,14.86,21.06,70,0
     .goto Ashenvale,14.46,17.15,70,0
-    >>Abate os |cRXP_ENEMY_Wrathtail Nagas|r. Saque-os por suas |cRXP_LOOT_Cabeças|r
+    >>Mate |cRXP_ENEMY_Nagas Cauda da Ira|r. Saqueie-os para obter os deles |cRXP_LOOT_Cabeças|r
 	.mob Wrathtail Wave Rider
 	.mob Wrathtail Sorceress
     .mob Wrathtail Myrmidon
@@ -10637,7 +10637,7 @@ step
 step
     #label SoulGemStart
     #xprate <1.59
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Cadáver de Teronis|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cadáver de Teronis|r
 	.target Teronis' Corpse
     .goto Ashenvale,20.31,42.33
     .turnin 991 >>Entregue Purificação de Raene
@@ -10654,7 +10654,7 @@ step
     .goto Ashenvale,19.43,42.09,50,0
     .goto Ashenvale,21.01,41.61,50,0
     .goto Ashenvale,20.31,42.33
-    >>Mate os |cRXP_ENEMY_Saltspittle Murlocs|r. Saque-os pela |cRXP_LOOT_Gema Faiscante|r
+    >>Mate |cRXP_ENEMY_Murlocs Cuspe-sal|r. Saqueie-os para obter o |cRXP_LOOT_Gema Faiscante|r
     >>|cRXP_WARN_Tenha cuidado com os|cRXP_ENEMY_ Oráculos|r que podem curar e possuem um feitiço de choque de conjuração instantânea que causa 90 de dano a cada poucos segundos|r
 	.mob Saltspittle Warrior
 	.mob Saltspittle Muckdweller
@@ -10673,7 +10673,7 @@ step << !Dwarf/!Hunter
     #xprate <1.59
     #hardcore
     #completewith next
-    .goto Ashenvale,34.40,48.00,200 >>Viaje para Astranaar - Missão
+    .goto Ashenvale,34.40,48.00,200 >>Vá para Astranaar
 step << !Dwarf/!Hunter
     #xprate <1.59
     .goto Ashenvale,34.41,47.98
@@ -10685,7 +10685,7 @@ step
     .goto Darkshore,37.44,41.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arqueóloga Hollee|r
     .turnin 731 >>Entregue The Absent Minded Prospector
-    .accept 741 >>Aceite The Absent Minded Prospector
+    .accept 741 >>Aceite O Prospector Distraído
     .target Archaeologist Hollee
 step
     #xprate <1.59
@@ -10695,7 +10695,7 @@ step
     #xprate <1.59
     .goto 1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Terenthis|r
-    .turnin 995 >>Entregue Fuga por Furtividade
+    .turnin 995 >>Entregue Fuga furtiva
     .target Terenthis
     .isOnQuest 995
 step
@@ -10709,10 +10709,10 @@ step
     #xprate <1.59
     .goto 1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
-    .turnin 4730 >>Entregue Beached Sea Criatura - Missão
+    .turnin 4730 >>Entregue a Criatura Marinha Encalhada
     .turnin 4731 >>Entregue Tartaruga Marinha Encalhada
     .turnin 4732 >>Entregue Tartaruga Marinha Encalhada
-    .turnin 4733 >>Entregue Beached Sea Criatura - Missão
+    .turnin 4733 >>Entregue a Criatura Marinha Encalhada
     .target Gwennyth Bly'Leggonde
 step
     #xprate <1.59
@@ -10741,7 +10741,7 @@ step
     >>|T134797:0|t[Elixir de Respiração Aquática] --5996
     >>|T134304:0|t[Murloc Fins] --1468
     >>|T134321:0|t[Pernas de Aranha Pegajosas] --2251
-    >>|T133970:0|t[Lean Lobo Flanks] --1015
+    >>|T133970:0|t[Lombos de Lobo Magro] --1015
 step << Dwarf Hunter
     #xprate <1.59
 -- #xprate >1.59
@@ -10758,7 +10758,7 @@ step
 	.target Chief Archaeologist Greywhisker
     .goto Teldrassil,23.70,64.51
     .turnin 741 >>Entregue The Absent Minded Prospector
-    .accept 942 >>Aceite The Absent Minded Prospector
+    .accept 942 >>Aceite O Prospector Distraído
     .isOnQuest 741
 step
     #optional
@@ -10766,7 +10766,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Arqueólogo-chefe Suiçagris|r
 	.target Chief Archaeologist Greywhisker
     .goto Teldrassil,23.70,64.51
-    .accept 942 >>Aceite The Absent Minded Prospector
+    .accept 942 >>Aceite O Prospector Distraído
     .isQuestTurnedIn 741
 step << !Dwarf/!Hunter
     #xprate <1.59
@@ -10834,7 +10834,7 @@ step
 step
     .goto Darkshore,37.44,41.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arqueóloga Hollee|r
-    .accept 729 >>Aceite The Absent Minded Prospector
+    .accept 729 >>Aceite O Prospector Distraído
     .target Archaeologist Hollee
 step
     #xprate <1.59
@@ -11010,7 +11010,7 @@ step
     #label prospectorEscort
     .goto Darkshore,35.72,83.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Prospector Trilheiro|r. Isto iniciará uma escolta
-    .accept 731,1 >>Aceite The Absent Minded Prospector
+    .accept 731,1 >>Aceite O Prospector Distraído
     >>|cRXP_WARN_esta missão é MUITO difícil. Pule este passo se você não conseguir encontrar um grupo ou fazer solo|r
     .link https://www.youtube.com/watch?v=crQAvyRIceU >>https://www.youtube.com/watch?v=crQAvyRIceU >> |cRXP_WARN_clique aqui para um guia em vídeo|r
     .target Prospector Remtravel
@@ -11382,12 +11382,12 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Therysil|r
 	.target Therysil
     .goto Ashenvale,22.64,51.91
-    .turnin 945 >>Entregue A Fuga de Therylune
+    .turnin 945 >>Entregue A fuga de Therylune
     .isQuestComplete 945
 step
     #optional
     #completewith TZS
-    .subzone 415 >>Viaje para Astranaar - Missão
+    .subzone 415 >>Vá para Astranaar
 step
     #label AshenvaleEnd
     .goto Ashenvale,34.40,48.00
@@ -11415,7 +11415,7 @@ step
 step
     #xprate <1.59
     .goto Ashenvale,36.61,49.58
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raene Correlobos|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_a Raene Correlobos|r
     .accept 991 >>Aceite A Purificação de Raene
     .accept 1054 >>Aceite Purga a Ameaça
     .target Raene Wolfrunner

@@ -904,7 +904,7 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duthorian Rall|r. Ele lhe dará o [|cRXP_LOOT_Tomo do Valor|r]
     .use 6776 >>Use o [|cRXP_WARN_Tomo do Valor|cRXP_LOOT_] |rpara iniciar a missão|r
     .collect 6776,1,1649 --Tome of Valor (1)
-    .accept 1649 >>Aceite The Tomo de Bravura
+    .accept 1649 >>Aceite o Tomo da Bravura
     .target Duthorian Rall
 step << Paladin
     .goto StormwindClassic,39.80,29.77

@@ -39,9 +39,9 @@ step << Hunter
 step
     .goto Wetlands,10.43,61.01,10,0
     .goto Wetlands,10.496,60.201
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Samor Festivus|r acima das escadas
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Samor Festivus|r no andar de cima
     .vendor >>|cRXP_BUY_Compre o máximo de|r [Poções de Cura] |cRXP_BUY_que estiverem disponíveis|r
-    >>|cRXP_WARN_Este é um item com suprimento limitado. Pule este passo se |cRXP_FRIENDLY_Samor Festivus|r não possui nenhum|r
+    >>|cRXP_WARN_Este é um item com estoque limitado. Pule este passo se |cRXP_FRIENDLY_Samor Festivus|r não tiver nenhum|r
     .target Samor Festivus
 step << !Druid !Hunter
     .goto Wetlands,9.49,59.69

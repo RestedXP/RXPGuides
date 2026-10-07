@@ -692,7 +692,7 @@ step << Dwarf/Gnome
     .isQuestAvailable 418
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bixi Bateagita|r e |cRXP_FRIENDLY_Bulif Manopedra|r
-    >>Treine Arremesso e Maças de 2M se ainda não fez antes
+    >>Treine Arremesso e Maças de Duas Mãos se ainda não treinou antes
     .train 2567 >>Treine Arremesso
     .goto Ironforge,62.237,89.628
     .train 199 >>Treine Maças de Duas Mãos
@@ -709,7 +709,7 @@ step << Warrior !Human
 step << Warrior !Human
     #optional
     #completewith Dirt
-    +|cRXP_WARN_Equipe as|r |T135425:0|t[Keen Arremessando Knives]
+    +|cRXP_WARN_Equipe as|r |T135425:0|t[Facas de Arremesso Afiadas]
     .use 3107
     .itemcount 3107,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
@@ -851,7 +851,7 @@ step << Dwarf/Gnome
     .subzone 2257 >>Entre no Metrô Correfundo
 step << Dwarf/Gnome
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma intermediária no Deeprun Tram
-    .accept 6661 >>Aceite Ratos de Porão
+    .accept 6661 >>Aceite Caçada aos Ratos das Profundezas
     .target Monty
 step << Dwarf/Gnome
     >>Usar o |T133942:0|t[Rato Catcher's Flute] em |cRXP_FRIENDLY_Deeprun Ratos|r no Deeprun Tram
@@ -861,7 +861,7 @@ step << Dwarf/Gnome
 step << Dwarf/Gnome
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma intermediária no Deeprun Tram
     >>Ele fará uma encenação por alguns segundos após entregar a primeira missão. |cRXP_WARN_Pule a continuação se esperar faria você perder o bonde|r
-    .turnin 6661 >>Entregue Ratos de Porão
+    .turnin 6661 >>Entregue Caçada aos Ratos das Profundezas
     .timer 11,Ratos de Deeprun RP
     .accept 6662 >>Aceite Espetinhos de... Rato
     .target Monty

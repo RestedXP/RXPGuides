@@ -1542,7 +1542,7 @@ step
     #sofcore
     #completewith Bloodhoofturnins1
     .goto 1412/1,-598.900,-1603.700
-    .deathskip >>Morra na seta (ou mais ao sul) e ressuscite no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Die at the waypoint arrow (or further south of it) and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
     #hardcore
     #completewith Bloodhoofturnins1

@@ -860,7 +860,7 @@ step
     .hs >>Use sua Pedra de Retorno para Goldshire
 step
     .goto Elwynn Forest,43.283,65.721
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_William|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_William Pegome|r
     .turnin 112 >>Entregue Coletando Alga
     .accept 114 >>Aceite A fuga
     .target William Pestle
@@ -1060,7 +1060,7 @@ step
     #label Monty
     .goto Ironforge,76.41,51.22,30,0
     >>Fale com |cRXP_FRIENDLY_Monty|r depois de pegar o bonde
-    .accept 6661 >>Aceite Ratos de Porão
+    .accept 6661 >>Aceite Caçada aos Ratos das Profundezas
     .target Monty
 step
     >>Usar o |T133942:0|t[Rato Catcher's Flute] nos |cRXP_FRIENDLY_Deeprun Ratos|r no Deeprun Tram
@@ -1070,7 +1070,7 @@ step
 step
     >>Fale com |cRXP_FRIENDLY_Monty|r
 --  >>|cRXP_WARN_Wait out the RP|r
-    .turnin 6661 >>Entregue Ratos de Porão
+    .turnin 6661 >>Entregue Caçada aos Ratos das Profundezas
     .target Monty
     .zoneskip Stormwind City
 step
@@ -1418,7 +1418,7 @@ step
     #completewith next
     .goto Loch Modan,33.94,50.96
     >>Fale com |cRXP_FRIENDLY_Thorgrum|r
-    .fp Thelsamar >>Aprenda a rota de voo de Thelsamar
+    .fp Thelsamar >>Pegue a rota de voo de Thelsamar
     .fly Ironforge >>Voe para Altaforja
     .target Thorgrum Borrelson
 step
@@ -2904,7 +2904,7 @@ step
 step
     .goto Loch Modan,33.94,50.96
     >>Fale com |cRXP_FRIENDLY_Thorgrum|r
-    .fp Thelsamar >>Aprenda a rota de voo de Thelsamar
+    .fp Thelsamar >>Pegue a rota de voo de Thelsamar
     .turnin 6387 >>Entregue Alunos Brilhantes
     .accept 6391 >>Aceite Carona para Altaforja
     .target Thorgrum Borrelson
@@ -4663,7 +4663,7 @@ step << Gnome
     .goto Ironforge,76.41,51.22,30,0
     >>Entre no Deeprun Tram
     >>Fale com |cRXP_FRIENDLY_Monty|r
-    .accept 6661 >>Aceite Ratos de Porão
+    .accept 6661 >>Aceite Caçada aos Ratos das Profundezas
     .target Monty
 step << Gnome
     >>Usar o |T133942:0|t[Rato Catcher's Flute] nos |cRXP_FRIENDLY_Deeprun Ratos|r no Deeprun Tram
@@ -4673,7 +4673,7 @@ step << Gnome
 step
     >>Fale com |cRXP_FRIENDLY_Monty|r
     >>|cRXP_WARN_Espere a sequência de RP terminar|r << Gnome
-    .turnin 6661 >>Entregue Ratos de Porão << Gnome
+    .turnin 6661 >>Entregue Caçada aos Ratos das Profundezas << Gnome
     .timer 13,Ratos de Deeprun RP << Gnome
     .accept 6662 >>Aceite Espetinhos de... Rato
     .target Monty
@@ -5182,7 +5182,7 @@ step
     .goto Darkshore,36.62,45.59
     >>Fale com |cRXP_FRIENDLY_Gwennyth|r
     .turnin 4722 >>Entregue Tartaruga Marinha Encalhada
-    .turnin 4723 >>Entregue Beached Sea Criatura - Missão
+    .turnin 4723 >>Entregue a Criatura Marinha Encalhada
     .turnin 4725 >>Entregue Tartaruga Marinha Encalhada
     .target Gwennyth Bly'Leggonde
 --Fruit of the Sea at 18
@@ -5235,7 +5235,7 @@ step
 step
     .goto Darkshore,37.44,41.84
     >>Fale com |cRXP_FRIENDLY_Hollee|r
-    .accept 729 >>Aceite The Absent Minded Prospector
+    .accept 729 >>Aceite O Prospector Distraído
     .target Archaeologist Hollee
 step
     .goto Darkshore,37.45,40.50
@@ -6416,7 +6416,7 @@ step
     >>AdE os |cRXP_ENEMY_Twilight Disciples|r e os |cRXP_ENEMY_Twilight Thugs|r. Saqueie-os para obter o |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r]
     >>Use o [|cRXP_WARN_Livro: Os Poderes Inferiores|cRXP_LOOT_] |rpara iniciar a missão|r
     .collect 5352,1,968,1 --Book: The Powers Below (1)
-    .accept 968 >>Aceite The Powers Below
+    .accept 968 >>Aceite Os Poderes de Baixo
     .mob Twilight Disciple
     .mob Twilight Thug
     .use 13536
@@ -6494,7 +6494,7 @@ step
     .goto Darkshore,35.72,83.69
     >>Fale com |cRXP_FRIENDLY_Remtravel|r para começar a escolta
     .turnin 729 >>Entregue The Absent Minded Prospector
-    .accept 731 >>Aceite The Absent Minded Prospector
+    .accept 731 >>Aceite O Prospector Distraído
     .target Prospector Remtravel
     .use 13536
     .isOnQuest 950
@@ -6719,7 +6719,7 @@ step
     .goto Darkshore,35.72,83.69
     >>Fale com |cRXP_FRIENDLY_Remtravel|r para começar a escolta
     .turnin 729 >>Entregue The Absent Minded Prospector
-    .accept 731 >>Aceite The Absent Minded Prospector
+    .accept 731 >>Aceite O Prospector Distraído
     .target Prospector Remtravel
 step
     .goto Darkshore,35.35,84.72,40,0
@@ -6755,7 +6755,7 @@ step
     >>AdE os |cRXP_ENEMY_Twilight Disciples|r e os |cRXP_ENEMY_Twilight Thugs|r. Saqueie-os para obter o |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r]
     >>Use o [|cRXP_WARN_Livro: Os Poderes Inferiores|cRXP_LOOT_] |rpara iniciar a missão|r
     .collect 5352,1,968,1 --Book: The Powers Below (1)
-    .accept 968 >>Aceite The Powers Below
+    .accept 968 >>Aceite Os Poderes de Baixo
     .mob Twilight Disciple
     .mob Twilight Thug
 step
@@ -6916,7 +6916,7 @@ step
 step
     .goto Ashenvale,22.64,51.91
     >>Fale com |cRXP_FRIENDLY_Therysil|r
-    .turnin 945 >>Entregue A Fuga de Therylune
+    .turnin 945 >>Entregue A fuga de Therylune
     .target Therysil
 step
     .goto Ashenvale,34.41,47.99
@@ -6932,11 +6932,11 @@ step
     .target Daelyshia
 step
     >>Fale com |cRXP_FRIENDLY_Gwennyth|r e |cRXP_FRIENDLY_Gubber|r
-    .turnin 4728 >>Entregue Beached Sea Criatura - Missão
-    .turnin 4730 >>Entregue Beached Sea Criatura - Missão
+    .turnin 4728 >>Entregue a Criatura Marinha Encalhada
+    .turnin 4730 >>Entregue a Criatura Marinha Encalhada
     .turnin 4731 >>Entregue Tartaruga Marinha Encalhada
     .turnin 4732 >>Entregue Tartaruga Marinha Encalhada
-    .turnin 4733 >>Entregue Beached Sea Criatura - Missão
+    .turnin 4733 >>Entregue a Criatura Marinha Encalhada
     .target +Gwennyth Bly'Leggonde
     .goto Darkshore,36.62,45.60
     .turnin 1138,2 >>Entregue Frutos do mar
@@ -6945,7 +6945,7 @@ step
 step
     .goto Darkshore,37.73,43.38
     >>Fale com |cRXP_FRIENDLY_Glynda|r
-    .turnin 4740 >>Entregue WANTED: Lodofundo!
+    .turnin 4740 >>Entregue PROCURA-SE: Lodofundo!
     .target Sentinel Glynda Nal'Shea
 step
     >>Fale com |cRXP_FRIENDLY_Terenthis|r e |cRXP_FRIENDLY_Gershala|r
@@ -7000,7 +7000,7 @@ step
     .goto Darkshore,37.44,41.84
     >>Fale com |cRXP_FRIENDLY_Hollee|r
     .turnin 731 >>Entregue The Absent Minded Prospector
-    .accept 741 >>Aceite The Absent Minded Prospector
+    .accept 741 >>Aceite O Prospector Distraído
     .target Archaeologist Hollee
 step
     #completewith Teldrassil
@@ -7055,7 +7055,7 @@ step
     .goto Darnassus,31.24,84.49
     >>Fale com |cRXP_FRIENDLY_Greywhisker|r
     .turnin 741,3 >>Entregue The Absent Minded Prospector
-    .accept 942 >>Aceite The Absent Minded Prospector
+    .accept 942 >>Aceite O Prospector Distraído
     .target Chief Archaeologist Greywhisker
 
 ]])
@@ -7101,7 +7101,7 @@ step
     .bankdeposit 17056,2592,1015,4654 >>Deposite os itens a seguir no banco:
     >>|T132917:0|t[Pena de Luz]
     >>|T132911:0|t[Lã]
-    >>|T133970:0|t[Lean Lobo Flank]
+    >>|T133970:0|t[Lombo de Lobo Magro]
     >>|T134431:0|t[Mysterious Fossil]
     .target Newton Burnside
 step
@@ -7513,7 +7513,7 @@ step
     .target Bailiff Conacher
 step
     >>Fale com |cRXP_FRIENDLY_Baren|r e o |cRXP_PICK_Wanted Poster|r
-    .accept 127 >>Aceite Vendendo Peixe
+    .accept 127 >>Aceite O lago está para peixe
     .goto Redridge Mountains,27.72,47.38
     .accept 180 >>Aceite Wanted: General Mordente
     .goto Redridge Mountains,26.75,46.42
@@ -7789,7 +7789,7 @@ step
 step
     .goto Redridge Mountains,21.86,46.33
     >>Fale com |cRXP_FRIENDLY_Martie|r
-    .turnin 34 >>Entregue O Penetra
+    .turnin 34 >>Entregue O penetra
     .target Martie Jainrose
 step
     .goto Redridge Mountains,17.47,43.62,60,0
@@ -7892,8 +7892,8 @@ step
 step
     .goto Redridge Mountains,27.72,47.38
     >>Fale com |cRXP_FRIENDLY_Baren|r
-    .turnin 127 >>Entregue Venda de Peixes
-    .accept 150 >>Aceite Caçadores Murloc
+    .turnin 127 >>Entregue O lago está para peixe
+    .accept 150 >>Aceite Caçadores de murlocs
     .turnin 150 >>Entregue Murloc Poachers
     .goto Redridge Mountains,27.72,47.38
     .target Dockmaster Baren
@@ -8061,7 +8061,7 @@ step
     .bankdeposit 17056,2592,1015,1083,2665,1922,1284 >>Deposite os itens a seguir no banco:
     >>|T132917:0|t[Pena de Luz]
     >>|T132911:0|t[Lã]
-    >>|T133970:0|t[Lean Lobo Flank]
+    >>|T133970:0|t[Lombo de Lobo Magro]
     >>|T133277:0|t[Glifo de Azora]
     >>|T133849:0|t[Objetos de TBC Seasoning Herbs]
     >>|T133629:0|t[Suprimentos para Sven]

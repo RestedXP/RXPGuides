@@ -746,7 +746,7 @@ step
 step
     .goto 1420/0,391.400,2289.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Necroguarda Bartolomeu|r
-    >>|cRXP_WARN_Ele pode estar patrulhando ao redor do cemitério|r
+    >>|cRXP_WARN_Ele pode estar patrulhando os arredores do cemitério|r
     .accept 86784 >>Aceite Paus e ossos
     .target Deathguard Bartholomew
 step
@@ -2534,7 +2534,7 @@ step << Priest
 step << Warrior
     .goto 1420/0,238.49,2255.03--c:Tirisfal Glades,61.85,52.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil de Mon|r
-    .train 7384 >>Aprenda os feitiços da sua classe
+    .train 7384 >>Treine suas magias de classe
     .target Austil de Mon
     .xp <12,1
 step << Warlock
@@ -2779,7 +2779,7 @@ step << Priest
 step << Warrior
     .goto 1420/0,238.49,2255.03--c:Tirisfal Glades,61.85,52.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil de Mon|r
-    .train 7384 >>Aprenda os feitiços da sua classe
+    .train 7384 >>Treine suas magias de classe
     .target Austil de Mon
     .xp <12,1
 step << Warlock

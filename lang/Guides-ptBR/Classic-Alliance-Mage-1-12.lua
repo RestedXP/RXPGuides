@@ -692,14 +692,14 @@ step
     >>Pegue o bonde quando chegar, depois desça quando chegar do outro lado
 .target Monty
 >>Fale com |cRXP_FRIENDLY_Monty|r
-    .accept 6661 >>Aceite Ratos de Porão
+    .accept 6661 >>Aceite Caçada aos Ratos das Profundezas
 step
     >>Usar a flauta nos ratos espalhados ao redor
     .complete 6661,1 --Rats Captured (x5)
 step
 .target Monty
 >>Fale com |cRXP_FRIENDLY_Monty|r
-    .turnin 6661 >>Entregue Ratos de Porão
+    .turnin 6661 >>Entregue Caçada aos Ratos das Profundezas
 step
     .goto Ironforge,77.0,51.0,30 >>Entre em Ironforge
 step
@@ -1759,7 +1759,7 @@ step << Gnome
 step
     #requires RatCatching
     .goto Loch Modan,33.94,50.96
-    .fp Thelsamar >>Aprenda a rota de voo de Thelsamar
+    .fp Thelsamar >>Pegue a rota de voo de Thelsamar
 >>Fale com |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .turnin 6387 >>Entregue Alunos Brilhantes << Gnome
 .target Thorgrum Borrelson

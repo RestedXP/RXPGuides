@@ -17,8 +17,8 @@ step
     #include RestedXP Forever Guide (A)\14-16 Darkshore@WashedA-Gatehouse
 step
     .goto 1453/0,673.58,-8867.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >>Defina sua Pedra de Retorno em Ventobravo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Cristine|r
+    .home >>Defina sua Pedra de Retorno em Cidade de Ventobravo
     .target Innkeeper Allison
     .bindlocation 16509
 step
@@ -482,7 +482,7 @@ step
 step
     .goto 1453/0,673.58,-8867.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >>Defina sua Pedra de Retorno em Ventobravo
+    .home >>Defina sua Pedra de Retorno em Cidade de Ventobravo
     .target Innkeeper Allison
     .bindlocation 16509
 step
@@ -1899,7 +1899,7 @@ step << Shaman
     .goto 1432/0,-3146.000,-4837.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Norric Lochthane::258043|r
     .target Norric Lochthane::258043
-    .turnin 94494 >>Entregue Chamado da Água
+    .turnin 94494 >>Entregue Clamor da água
 	.accept 94495 >>Aceite Chamado da Água
 step << Shaman
 	#label CallofWater
@@ -1934,7 +1934,7 @@ step << Shaman
     .goto 1437/0,-3109.300,-4257.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hervdana Saegrund::258203|r
     .target Hervdana Saegrund::258203
-    .turnin 94495 >>Entregue Chamado da Água
+    .turnin 94495 >>Entregue Clamor da água
     .accept 94497 >>Aceite Chamado da Água  
 step << Shaman
     .goto 1437/0,-3069.100,-4210.100
@@ -1949,7 +1949,7 @@ step << Shaman
     .goto 1437/0,-3109.300,-4257.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hervdana Saegrund::258203|r
     .target Hervdana Saegrund::258203
-    .turnin 94497 >>Entregue Call of Água - Missão
+    .turnin 94497 >>Entregue Clamor da água
     .accept 94499 >>Aceite Call of Água - Missão
 
 --sham can hs to sw
