@@ -1653,6 +1653,7 @@ step
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
     >>击杀 |cRXP_LOOT_草原狮王|r。拾取它们的 |cRXP_LOOT_皮|r 和 |cRXP_LOOT_獠牙|r
+    >>|cRXP_WARN_如果 |cRXP_LOOT_Savannah Patriarchs|r 争夺激烈，现在可以跳过这个任务，稍后可以完成|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .complete 821,1 --Savannah Lion Tusk (5)
     .disablecheckbox
@@ -1675,6 +1676,7 @@ step
     .turnin 95507 >>交任务 弗朗恩的猎物
     .accept 95495 >>接受任务 隐居的制皮匠
     .target 弗朗恩·凝血
+    .isQuestComplete 95494
 step
     #completewith next
     .goto 1413/1,-1778.100,684.200,25,0
@@ -1687,12 +1689,14 @@ step
     .turnin 95495 >>交任务 隐居的制皮匠
     .accept 95621 >>接受任务 谷中风波
     .target Walton
+    .isQuestTurnedIn 95494
 step
     .goto 1413/1,-1611.500,549.000
     >>击杀 |cRXP_ENEMY_阿达摩尔下士|r
-    >>|cRXP_WARN_小心!你可能同时仇恨2到3个小怪|r
+    >>|cRXP_WARN_小心！你可能会同时吸引2-3个小怪|r
     .complete 95621,1 --|1/1 Learn why the Kul Tirans are here
     .mob Corporal Adamore
+    .isQuestTurnedIn 95494
 step
     #completewith next
     .goto 1413/1,-1778.100,684.200,25,0
@@ -1706,17 +1710,20 @@ step
     .accept 95508 >>接受任务 不速之客
     .timer 67,不速之客 剧情演出
     .target Walton
+    .isQuestTurnedIn 95494
 step
     .goto 1413/1,-1629.200,835.600
-    >>在房子后面等待剧情演出结束，以免同时引导所有小怪
+    >>在房子后面移动，等待剧情演出完成以避免被所有小怪同时吸引
     >>|cRXP_WARN_你实际上不需要协助 |cRXP_FRIENDLY_沃尔顿|r，他会在 |r弗朗恩·凝血|cRXP_FRIENDLY_ 的帮助下活下来|r
     .complete 95508,1 --|1/1 Assist Walton
     .mob Terry Longdrink
+    .isQuestTurnedIn 95494
 step
     .goto 1413/1,-1635.400,838.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃尔顿|r 对话
     .turnin 95508 >>交任务 不速之客
     .target Walton
+    .isQuestTurnedIn 95494
 step
 	#label Samophlange
     .goto 1413/1,-2686.95,825.40
@@ -1797,7 +1804,7 @@ step
 step
     #label Ignition
     .goto 1413/1,-3104.44,1109.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于淤泥沼泽的 |r |cRXP_FRIENDLY_维兹克兰克的伐木机|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |r|cRXP_FRIENDLY_维兹克兰克的伐木机|r 在淤泥沼泽对话
     >>|cRXP_FRIENDLY_维兹克兰克的伐木机|r |cRXP_WARN_刷新时间较长。如果竞争人数较多，可以考虑跳过此任务|r
     .accept 858 >>接受任务 点火
     .target 维兹克兰克的伐木机
@@ -2629,7 +2636,7 @@ step
     .goto 1413/1,-2031.32,-1703.47,0
     .goto 1413/1,-2183.32,-1858.19,0
     .goto 1413/1,-2453.88,-1991.28,0
-	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
+	>>击杀|cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
     >>|cRXP_WARN_使用 |T132318:0|t [|cRXP_LOOT_拉克塔曼尼之蹄|r]以开启该任务|r
     >>|cRXP_WARN_他有 4 个刷新点（已在地图上标记）|r
     >>|cRXP_WARN_如果找不到他或无法击杀他，可以跳过此步骤。你稍后可以回来|r
@@ -3509,7 +3516,7 @@ step
     .goto 1413/1,-2031.32,-1703.47,80,0
     .goto 1413/1,-2183.32,-1858.19,80,0
     .goto 1413/1,-2453.88,-1991.28,80,0
-	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
+	>>击杀|cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
     >>|cRXP_WARN_使用 |T132318:0|t [|cRXP_LOOT_拉克塔曼尼之蹄|r]以开启该任务|r
     >>|cRXP_WARN_他有 4 个刷新点（已在地图上标记）|r
     >>|cRXP_WARN_如果找不到他，请跳过此步骤|r
@@ -3648,6 +3655,12 @@ step
     .complete 880,1 --Altered Snapjaw Shell (8)
     .mob 绿洲钳嘴龟
 step
+    #completewith IshamuhalesFang
+    >>击杀 |cRXP_LOOT_Savannah Matriarchs|r 和 |cRXP_ENEMY_Savannah Patriarchs|r。拾取他们的 |cRXP_LOOT_Hides|r
+    .complete 95494,1 --|6/6 Savannah Lion Hide
+    .mob Savannah Matriarch
+    .mob Savannah Patriarchs
+step
     #completewith next
     >>击杀任意 |cRXP_ENEMY_斑马|r.拾取他们的|cRXP_LOOT_新鲜的斑马肉|r
 	.collect 10338,1 --Collect Fresh Zhevra Carcass
@@ -3659,6 +3672,16 @@ step
     >>|cRXP_WARN_这具尸体只有30分钟的持续时间!|r
     .complete 882,1 --Ishamuhale's Fang (1)
     .mob 伊沙姆哈尔
+step
+    #loop
+    .goto 1413/1,-3633.200,-600.500,0
+    .goto 1413/1,-3633.200,-600.500,50,0
+    .goto 1413/1,-3469.100,-495.000,50,0
+    .goto 1413/1,-3428.300,-584.300,50,0
+    >>击杀 |cRXP_LOOT_Savannah Matriarchs|r 和 |cRXP_ENEMY_Savannah Patriarchs|r。拾取他们的 |cRXP_LOOT_Hides|r
+    .complete 95494,1 --|6/6 Savannah Lion Hide
+    .mob Savannah Matriarch
+    .mob Savannah Patriarchs
 step
     #completewith BootyTurnin
     .subzone 392 >>前往棘齿城
@@ -4210,7 +4233,7 @@ step
     .subzoneskip 380,1
 step
     .goto 1413/1,-2515.7,-2076.41
-    >>击杀 |cRXP_ENEMY_刺背野猪人|r。拾取它们的 |T134128:0|t[|cRXP_LOOT_血岩碎片|r
+    >>击杀 |cRXP_ENEMY_Bristleback Quilboars|r，拾取 |T134128:0|t[|cRXP_LOOT_血岩碎片|r]
     .collect 5075,1,5052,1 --Blood Shard (1)
     .mob 刺背寻水者
     .mob 刺背织棘者
@@ -4516,7 +4539,7 @@ step << Mage
     .xp <22,1
 step << Paladin
     .goto 1456/1,253.900,-950.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Alodan|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿洛丹|r 对话
     .train 1866 >>训练你的职业技能
     .target Alodan the Hopeful 
     .xp <20,1
@@ -4524,7 +4547,7 @@ step << Paladin
 step << Paladin
     #optional
     .goto 1456/1,253.900,-950.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Alodan|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿洛丹|r 对话
     .train 1026 >>训练你的职业技能
     .target Alodan the Hopeful 
     .xp <22,1
@@ -4533,7 +4556,7 @@ step
     #label DeathDUPpickup
 step << Shaman
     .goto 1456/1,269.92,-980.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_提戈尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tigor|r |cRXP_WARN_在外面|r 对话
     .train 2645 >>训练你的职业技能
     .target 提戈尔·逐星
     .xp <20,1
@@ -4541,7 +4564,7 @@ step << Shaman
 step << Shaman
     #optional
     .goto 1456/1,269.92,-980.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_提戈尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tigor|r |cRXP_WARN_在外面|r 对话
     .train 8498 >>训练你的职业技能
     .target 提戈尔·逐星
     .xp <22,1
@@ -5326,6 +5349,88 @@ step
     .complete 876,1 --Serena's Head (1)
     .mob 塞瑞娜·血羽
     .isQuestTurnedIn 875
+step
+    #completewith next
+    >>在地上拾取 |cRXP_PICK_Sprung Traps|r
+    .complete 95507,1 --|8/8 Trapped Game
+step
+    #loop
+    .goto 1413/1,-1848.200,486.900,0
+    .goto 1413/1,-1848.200,486.900,50,0
+    .goto 1413/1,-1937.500,480.000,50,0
+    .goto 1413/1,-1983.100,579.700,50,0
+    .goto 1413/1,-1960.600,653.700,50,0
+    .goto 1413/1,-1871.600,653.700,50,0
+    .goto 1413/1,-1729.700,592.400,50,0
+    >>击杀 |cRXP_LOOT_Savannah Patriarchs|r。拾取他们的 |cRXP_LOOT_Hides|r
+    .complete 95494,1 --|6/6 Savannah Lion Hide
+    .mob Savannah Patriarch
+step
+    #loop
+    .goto 1413/1,-1960.600,653.700,0
+    .goto 1413/1,-1848.200,486.900,50,0
+    .goto 1413/1,-1937.500,480.000,50,0
+    .goto 1413/1,-1983.100,579.700,50,0
+    .goto 1413/1,-1960.600,653.700,50,0
+    .goto 1413/1,-1871.600,653.700,50,0
+    .goto 1413/1,-1729.700,592.400,50,0
+    >>在地上拾取 |cRXP_PICK_Sprung Traps|r
+    .complete 95507,1 --|8/8 Trapped Game
+step
+    .goto 1413/1,-1812.600,789.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩·凝血|r 对话
+    .turnin 95494 >>交任务Bruised 骄傲 和 Lion Hides
+    .turnin 95507 >>交任务Vrang's 游戏
+    .accept 95495 >>接受任务Hermit 坦纳
+    .target 弗朗恩·凝血
+    .isQuestComplete 95494
+step
+    #completewith next
+    .goto 1413/1,-1778.100,684.200,25,0
+    .goto 1413/1,-1741.700,721.400,25,0
+    .goto 1413/1,-1643.900,786.000,25,0
+    .goto 1413/1,-1605.300,818.300,20 >>沿着山路向上前进
+step
+    .goto 1413/1,-1635.400,838.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Walton|r 对话
+    .turnin 95495 >>交任务Hermit 坦纳
+    .accept 95621 >>接受任务Trouble in the Valley
+    .target Walton
+    .isQuestTurnedIn 95494
+step
+    .goto 1413/1,-1611.500,549.000
+    >>击杀 |cRXP_ENEMY_下士 Adamore|r
+    >>|cRXP_WARN_小心！你可能会同时吸引2-3个小怪|r
+    .complete 95621,1 --|1/1 Learn why the Kul Tirans are here
+    .mob Corporal Adamore
+    .isQuestTurnedIn 95494
+step
+    #completewith next
+    .goto 1413/1,-1778.100,684.200,25,0
+    .goto 1413/1,-1741.700,721.400,25,0
+    .goto 1413/1,-1643.900,786.000,25,0
+    .goto 1413/1,-1605.300,818.300,20 >>沿着山路向上前进
+step
+    .goto 1413/1,-1635.500,838.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Walton|r 对话
+    .turnin 95621 >>交任务Trouble in the Valley
+    .accept 95508 >>接受任务 不速之客
+    .timer 67,不速之客 剧情演出
+    .target Walton
+    .isQuestTurnedIn 95494
+step
+    .goto 1413/1,-1629.200,835.600
+    >>在房子后面移动，等待剧情演出完成以避免被所有小怪同时吸引
+    >>|cRXP_WARN_你其实不需要协助 |cRXP_FRIENDLY_Walton|r，他会获得|r |cRXP_FRIENDLY_弗朗恩·凝血|r的帮助而存活
+    .complete 95508,1 --|1/1 Assist Walton
+    .mob Terry Longdrink
+    .isQuestTurnedIn 95494
+step
+    .goto 1413/1,-1635.400,838.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Walton|r 对话
+    .turnin 95508 >>交任务 不速之客
+    .target Walton
+    .isQuestTurnedIn 95494
 step << Hunter
     .goto 1413/1,-2347.48,857.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维妮|r 对话
@@ -6250,7 +6355,7 @@ step << Rogue/Druid
     .zoneskip The Barrens
 step << Rogue/Druid
     #completewith MissionProbable
-    .goto 1413/1,-3216.92,1107.13,120 >>前往淤泥营地
+    .goto 1413/1,-3216.92,1107.13,120 >>旅行至淤泥沼泽
 step << Druid
     .goto 1413/1,-3119.64,1050.38
     >>拾取水中的 奇怪的锁箱|cRXP_PICK_，获取 |T133443:0|t[水性敏捷坠饰]|r

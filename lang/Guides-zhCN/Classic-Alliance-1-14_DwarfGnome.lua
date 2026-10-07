@@ -4582,7 +4582,7 @@ step
     .goto Ironforge,78.00,51.40
     .subzone 2257 >>进入矿道地铁
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
     .accept 6661 >>接受任务 捕捉矿道老鼠
     .target 蒙提
 step
@@ -4591,7 +4591,7 @@ step
     .use 17117
     .mob 矿道老鼠
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
     .turnin 6661 >>交任务 捕捉矿道老鼠
     .timer 11,捕捉矿道老鼠剧情表演
     .accept 6662 >>接受任务 我的兄弟，尼普希

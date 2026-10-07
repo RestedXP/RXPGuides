@@ -434,7 +434,7 @@ RXPGuides.RegisterGuide([[
 #name 6-13级 牛头人
 #version 1
 #group RestedXP 生存指南 (部落版)
-#subgroup RXP 生存指南 1-20级
+#subgroup RXP生存指南1-20
 #defaultfor Tauren
 #next 13-15级 银松森林
 

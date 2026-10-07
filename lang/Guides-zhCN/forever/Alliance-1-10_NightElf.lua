@@ -1977,7 +1977,7 @@ step << Hunter
     .goto 1438/1,997.200,9903.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拜恩希::6094|r 对话
     .target Byancie::6094
-    .turnin 99050 >>交任务 The Great 树 Provides
+    .turnin 99050 >>Turn in The Great Tree Provides
     .accept 99073 >>接受任务 Easing Suffering
 step
     .goto 1438/1,971.91,9852.35,40,0
@@ -1989,7 +1989,7 @@ step
     .target 哨兵阿玛拉·夜行者
 step
     #optional
-    .abandon 87288 >>你不会回到多兰纳尔了，直接放弃任务柔软的夜刃豹皮
+    .abandon 87288 >>放弃软刃豹皮，之后不再返回多兰纳尔
 step << Rogue
     #softcore
     #completewith next

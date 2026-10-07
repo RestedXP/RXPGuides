@@ -1355,7 +1355,7 @@ step << Rogue
     #requires AntiVenomEnd2 << Rogue
     .goto StormwindClassic,75.78,59.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马迪亚斯·肖尔大师|r 对话
-    >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备上你的主武器|r << Rogue
+    >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备你的主武器|r << Rogue
     .turnin 2359 >>交任务 克拉文之塔
     .target 马迪亚斯·肖尔大师
     .isQuestComplete 2359

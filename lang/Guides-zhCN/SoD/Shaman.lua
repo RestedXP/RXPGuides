@@ -2259,7 +2259,7 @@ step
 step
     .goto Ashenvale,11.56,34.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_耶努萨克雷|r 对话
-    .turnin 78506 >>交任务 元素求救
+    .turnin 78506 >>交任务 元素之困
     .accept 78537 >>接受任务 洞察药剂
     .accept 78537 >>交任务 洞察药剂
     .accept 78561 >>接受任务 洞察药剂
@@ -2689,7 +2689,7 @@ step
     .waypoint Thousand Needles,26.29,52.79,15,0
     .waypoint Thousand Needles,27.23,54.04,15,0
     .waypoint Thousand Needles,26.55,55.77,15,0
-    >>击杀 cRXP_ENEMY_尖啸鹰身人|r。拾取它们的 |cRXP_LOOT_强健鹰身人羽毛|r
+    >>击杀 |cRXP_ENEMY_Screeching Harpies|r，拾取它们的 |cRXP_LOOT_Strong 鹰身人 乱羽|r
     .collect 213701,10 --Strong Harpy Feather (10x)
     .mob Screeching Harpy
     .mob Screeching Roguefeather
@@ -2964,7 +2964,7 @@ step
     .train 432241,1
 step
     .goto The Hinterlands,51.2,47.0
-    >>击杀|cRXP_ENEMY_被腐蚀的中等空气形态|r，然后>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_中等大地形态|r交谈。
+    >>击杀 |cRXP_ENEMY_Corrupt NO TRANSLATION FOUND TO THIS ELEMENT|r 然后 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Moderate Manifestation of Air.|r 对话
     .turnin 81960 >>交任务 净化空气
     .accept 81968 >>接受任务 响应空气的召唤
     .mob Corrupt Moderate Manifestation of Air

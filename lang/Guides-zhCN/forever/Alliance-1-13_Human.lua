@@ -644,7 +644,7 @@ step
     .goto 1429/0,-162.62,-8902.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官玛克布莱德|r 对话，NPC在里面
     .turnin 91752 >>交任务 The Big Picture
-    .accept 91758 >>接受任务跟随那个狗头人
+    .accept 91758 >>接受任务 跟随那个狗头人
     .target 治安官玛克布莱德
     .isOnQuest 91752
 step
@@ -3121,7 +3121,7 @@ step << Rogue
     #optional
     .goto 1453/0,607.38,-8790.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_冈瑟尔·维勒|r 对话
-    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买一把|r |T132402:0|t[短柄斧]
+    >>|cRXP_BUY_从他那里购买一把|r |T132402:0|t[短柄斧] |cRXP_BUY_|r
     .collect 853,1 -- Hatchet (1)
     .target 冈瑟尔·维勒
     .money <0.2490
@@ -3144,7 +3144,7 @@ step << Rogue
     #ah
     .goto 1453/0,607.38,-8790.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_冈瑟尔·维勒|r 对话
-    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买一把|r |T132402:0|t[短柄斧]
+    >>|cRXP_BUY_从他那里购买一把|r |T132402:0|t[短柄斧] |cRXP_BUY_|r
     >>|cRXP_WARN_或者你也可以稍后去拍卖行看看是否有更好或更便宜的替代品|r
     >>|cRXP_WARN_务必保留 6 银币，用于之后的训练|r
     .collect 853,1 -- Hatchet (1)

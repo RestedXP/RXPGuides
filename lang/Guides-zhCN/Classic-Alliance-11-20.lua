@@ -7723,7 +7723,7 @@ step << Mage
     #xprate >1.59
     #optional
     #completewith next
-    .cast 3561 >>施放 |T135763:0|t[传送：暴风城]
+    .cast 3561 >>施放|T135763:0|t[传送：暴风城]
     .zoneskip Stormwind City
     .dungeon DM
 step << Mage
@@ -7942,7 +7942,7 @@ step << Mage
     #xprate >1.59
     #optional
     #completewith next
-    .cast 3561 >>施放 |T135763:0|t[传送：暴风城]
+    .cast 3561 >>施放|T135763:0|t[传送：暴风城]
     .dungeon DM
 step << Mage
     #xprate >1.59

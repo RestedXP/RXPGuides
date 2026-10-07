@@ -14,7 +14,7 @@ step
     .zone Burning Steppes>>|cRXP_WARN_前往|r |cFFfa9602燃烧平原|r
 step
     .goto Burning Steppes,85.820,68.948
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_赫林迪斯·河角|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫林迪斯·河角|r 对话
     .accept 4182 >>接任务 黑龙的威胁
     .target 赫林迪斯·河角
 step
@@ -41,14 +41,14 @@ step
 step
     .isQuestComplete 4182
     .goto Burning Steppes,85.820,68.948
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_赫林迪斯·河角|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫林迪斯·河角|r 对话
     .turnin 4182 >>交任务 黑龙的威胁
     .accept 4183 >>接任务 真正的主人
     .target 赫林迪斯·河角
 step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,85.820,68.948
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_赫林迪斯·河角|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫林迪斯·河角|r 对话
     .accept 4183 >>接任务 真正的主人
     .target 赫林迪斯·河角
 step

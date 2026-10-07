@@ -1838,7 +1838,7 @@ step
 step
     #label Ignition
     .goto 1413/1,-3104.44,1109.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于淤泥沼泽的 |r |cRXP_FRIENDLY_维兹克兰克的伐木机|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Wizzlecrank's Shredder|r in The Sludge Fen
     >>|cRXP_FRIENDLY_维兹克兰克的伐木机|r |cRXP_WARN_刷新时间较长。如果竞争人数较多，可以考虑跳过此任务|r
     .accept 858 >>接受任务 点火
     .target 维兹克兰克的伐木机
@@ -2622,7 +2622,7 @@ step << Druid/Mage
 step << Druid/Mage
     #season 2
     .goto 1413/1,-2717.35,-1211.61
-    >>打开一个|cRXP_PICK_科卡尔的战利品|r 箱子以获取|T132942:0|t[|cRXP_FRIENDLY_野性神像|r] << Druid
+    >>打开一个|cRXP_PICK_科卡尔战利品|r箱子，获取|T132942:0|t|T132942:0|t[|cRXP_FRIENDLY_野性神像|r] << Druid
     >>打开一个|cRXP_PICK_科尔卡宝藏|r箱子，获取|T134939:0|t|T134939:0|t[|cRXP_FRIENDLY_法术笔记：NIZHGAES|r] << Mage
     .collect 5020,1 --Kolkar Booty Key (1)
     .collect 208689,1 << Druid --Ferocious Idol (1)
@@ -2719,7 +2719,7 @@ step
     .goto 1413/1,-2031.32,-1703.47,0
     .goto 1413/1,-2183.32,-1858.19,0
     .goto 1413/1,-2453.88,-1991.28,0
-	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
+	>>击杀|cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
     >>|cRXP_WARN_使用 |T132318:0|t [|cRXP_LOOT_拉克塔曼尼之蹄|r]以开启该任务|r
     >>|cRXP_WARN_他有 4 个刷新点（已在地图上标记）|r
     >>|cRXP_WARN_如果找不到他，请跳过此步骤|r
@@ -2736,7 +2736,7 @@ step
 step << Hunter
     #season 2
     #completewith next
-    +|cRXP_WARN_你必须学会|r |T135813:0|t[献祭陷阱] |cRXP_WARN_或任何其他陷阱，才能获得该符文|r
+    +|cRXP_WARN_你需要先学会|r |T135813:0|t|T135813:0|t[献祭陷阱] |cRXP_WARN_或任何其他陷阱，才能获得此符文|r
 step << Hunter
     #season 2
     #loop
@@ -2745,8 +2745,8 @@ step << Hunter
     .goto 1413/1,-1840.82,-2184.510,40,0
     .goto 1413/1,-1746.58,-2263.56,40,0
     .line The Barrens,44.60,55.51,44.60,55.51,43.12,57.37
-    >>在 |cRXP_ENEMY_巡游中的猎豹|r 的巡逻路线上使用 |T135813:0|t[献祭陷阱] 来移除他的buff
-    >>击杀他并拾取|T134419:0|t[|cRXP_FRIENDLY_野兽控制符文|r]
+    >>在|cRXP_ENEMY_巡逻的猎豹|r的巡逻路径上使用|T135813:0|t|T135813:0|t[献祭陷阱]，以移除其增益效果
+    >>击杀他并拾取|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_野兽控制符文|r]
     .collect 208701,1 --Rune of Beast Mastery (1)
     .mob Patrolling Cheetah
     .train 410110,1
@@ -3021,7 +3021,7 @@ step
 step << Druid
     #season 2
     .goto 1413/1,-2273.51,-1106.89
-    >>打开地上的|cRXP_PICK_空荡荡的钳嘴龟的巢|r 以获得|T134419:0|t[|cRXP_FRIENDLY_割伤符文|r]
+    >>打开地上的|cRXP_PICK_空空的钳爪巢穴|r获取|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_割伤符文|r]
     .collect 208687,1 --Unbalanced Idol (1)
     .train 416049,1
 step << Druid
@@ -3684,7 +3684,7 @@ step
     .goto 1413/1,-2031.32,-1703.47,80,0
     .goto 1413/1,-2183.32,-1858.19,80,0
     .goto 1413/1,-2453.88,-1991.28,80,0
-	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
+	>>击杀|cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
     >>|cRXP_WARN_使用 |T132318:0|t [|cRXP_LOOT_拉克塔曼尼之蹄|r]以开启该任务|r
     >>|cRXP_WARN_他有 4 个刷新点（已在地图上标记）|r
     >>|cRXP_WARN_如果找不到他，请跳过此步骤|r
@@ -3878,7 +3878,7 @@ step
     .use 210824 << Warlock
     .use 210653 << Rogue
     .use 210823 << Shaman
-    .train 415995 >>|cRXP_WARN_购买并使用|r |T135791:0|t[|cRXP_FRIENDLY_祥和顿悟|r] |cRXP_WARN_来训练|r |T237549:0|t[妙手回春] << Priest
+    .train 415995 >>|cRXP_WARN_购买并使用|r |T135791:0|t[|cRXP_FRIENDLY_祥和顿悟|r] |cRXP_WARN_来训练|r |T237549:0|t[瑟兰蒂缇] << Priest
     .train 410010 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_牺牲符文|r] |cRXP_WARN_来训练|r |T134596:0|t[铭刻裤子 - 神圣牺牲] << Paladin
     .train 401761 >>|cRXP_WARN_购买并使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：时光倒转|r] |cRXP_WARN_来训练|r |T237538:0|t[时光倒转] << Mage
     .train 410122 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T132266:0|t[|cRXP_FRIENDLY_独来独往符文|r] |cRXP_WARN_来学习|r |T132266:0|t|T132266:0|t[独来独往] << Hunter
@@ -4409,8 +4409,7 @@ step
     .subzoneskip 380,1
 step
     .goto 1413/1,-1891.48,-2391.93
-    >>击杀 |cRXP_ENEMY_刺背野猪人|r。拾取它们的 |T134128:0|t[|cRXP_LOOT_血岩碎片|r
-    .collect 5075,1,5052,1 --Blood Shard (1)
+    >>击杀 |cRXP_ENEMY_Bristleback Quilboars|r，拾取 |T134128:0|t[|cRXP_LOOT_血岩碎片|r]Shard (1)
     .mob 刺背寻水者
     .mob 刺背织棘者
     .mob 刺背地卜师
@@ -6560,7 +6559,7 @@ step << Rogue/Druid
     .zoneskip The Barrens
 step << Rogue/Druid
     #completewith MissionProbable
-    .goto 1413/1,-3216.92,1107.13,120 >>前往淤泥营地
+    .goto 1413/1,-3216.92,1107.13,120 >>旅行至淤泥沼泽
 step << Druid
     .goto 1413/1,-3119.64,1050.38
     >>拾取水中的 奇怪的锁箱|cRXP_PICK_，获取 |T133443:0|t[水性敏捷坠饰]|r
@@ -6971,7 +6970,7 @@ step << Warlock
     #completewith BarrensEnd
     #label ExplorerImp
     >>在任务过程中，对怪物施放 |T136163:0|t|cRXP_FRIENDLY_[吸取灵魂]|r 直到获得一个 |T133257:0|t|cRXP_LOOT_探险之魂|r。|cRXP_WARN_使用它来学习如何召唤|r |T236294:0|t|cRXP_FRIENDLY_[探险小鬼]|r
-    .train 445459 >>|cRXP_WARN_使用|r |T133257:0|t|T236294:0|t|cRXP_LOOT_探险之魂|r |cRXP_WARN_学习如何召唤|r |T236294:0|t|T236294:0|t[|cRXP_FRIENDLY_探险小鬼|r]
+    .train 445459 >>|cRXP_WARN_使用|r |T133257:0|t|cRXP_LOOT_探险之魂|r |cRXP_WARN_学习如何召唤|r |T236294:0|t[|cRXP_FRIENDLY_探险小鬼|r]
     .train 445459,1 --Skips if you already have Explorer Imp
     .train 1120,3 --Skips if you don't have drain soul
     .use 221978
@@ -8988,7 +8987,7 @@ step
 step
     #label Ignition
     .goto 1413/1,-3104.44,1109.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于淤泥沼泽的 |r |cRXP_FRIENDLY_维兹克兰克的伐木机|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |r|cRXP_FRIENDLY_维兹克兰克的伐木机|r 在淤泥沼泽对话
     >>|cRXP_FRIENDLY_维兹克兰克的伐木机|r |cRXP_WARN_刷新时间较长。如果竞争人数较多，可以考虑跳过此任务|r
     .accept 858 >>接受任务 点火
     .target 维兹克兰克的伐木机
@@ -9688,7 +9687,7 @@ step
     .use 210824 << Warlock
     .use 210653 << Rogue
     .use 210823 << Shaman
-    .train 415995 >>|cRXP_WARN_购买并使用|r |T135791:0|t[|cRXP_FRIENDLY_祥和顿悟|r] |cRXP_WARN_来训练|r |T237549:0|t[妙手回春] << Priest
+    .train 415995 >>|cRXP_WARN_购买并使用|r |T135791:0|t[|cRXP_FRIENDLY_祥和顿悟|r] |cRXP_WARN_来训练|r |T237549:0|t[瑟兰蒂缇] << Priest
     .train 410010 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_牺牲符文|r] |cRXP_WARN_来训练|r |T134596:0|t[铭刻裤子 - 神圣牺牲] << Paladin
     .train 401761 >>|cRXP_WARN_购买并使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：时光倒转|r] |cRXP_WARN_来训练|r |T237538:0|t[时光倒转] << Mage
     .train 410122 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T132266:0|t[|cRXP_FRIENDLY_独来独往符文|r] |cRXP_WARN_来学习|r |T132266:0|t|T132266:0|t[独来独往] << Hunter
@@ -9875,7 +9874,7 @@ step << Druid
 step << Druid
     #season 2
     .goto 1413/1,-2717.35,-1211.61
-    >>打开一个|cRXP_PICK_科卡尔的战利品|r 箱子以获取|T132942:0|t[|cRXP_FRIENDLY_野性神像|r]
+    >>打开一个|cRXP_PICK_科卡尔战利品|r箱子，获取|T132942:0|t|T132942:0|t[|cRXP_FRIENDLY_野性神像|r]
     .collect 5020,1 --Kolkar Booty Key (1)
     .collect 208689,1 --Ferocious Idol (1)
     .itemcount 208689,<1,1
@@ -9961,7 +9960,7 @@ step
     .goto 1413/1,-2031.32,-1703.47,0
     .goto 1413/1,-2183.32,-1858.19,0
     .goto 1413/1,-2453.88,-1991.28,0
-	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
+	>>击杀|cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
     >>|cRXP_WARN_使用 |T132318:0|t [|cRXP_LOOT_拉克塔曼尼之蹄|r]以开启该任务|r
     >>|cRXP_WARN_他有 4 个刷新点（已在地图上标记）|r
     >>|cRXP_WARN_如果找不到他，请跳过此步骤|r
@@ -9977,7 +9976,7 @@ step
 step << Hunter
     #season 2
     #completewith next
-    +|cRXP_WARN_你必须学会|r |T135813:0|t[献祭陷阱] |cRXP_WARN_或任何其他陷阱，才能获得该符文|r
+    +|cRXP_WARN_你需要先学会|r |T135813:0|t|T135813:0|t[献祭陷阱] |cRXP_WARN_或任何其他陷阱，才能获得此符文|r
 step << Hunter
     #season 2
     #loop
@@ -9986,8 +9985,8 @@ step << Hunter
     .goto 1413/1,-1840.82,-2184.510,40,0
     .goto 1413/1,-1746.58,-2263.56,40,0
     .line The Barrens,44.60,55.51,44.60,55.51,43.12,57.37
-    >>在 |cRXP_ENEMY_巡游中的猎豹|r 的巡逻路线上使用 |T135813:0|t[献祭陷阱] 来移除他的buff
-    >>击杀他并拾取|T134419:0|t[|cRXP_FRIENDLY_野兽控制符文|r]
+    >>在|cRXP_ENEMY_巡逻的猎豹|r的巡逻路径上使用|T135813:0|t|T135813:0|t[献祭陷阱]，以移除其增益效果
+    >>击杀他并拾取|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_野兽控制符文|r]
     .collect 208701,1 --Rune of Beast Mastery (1)
     .mob Patrolling Cheetah
     .train 410110,1
@@ -10200,7 +10199,7 @@ step
 step << Druid
     #season 2
     .goto 1413/1,-2273.51,-1106.89
-    >>打开地上的|cRXP_PICK_空荡荡的钳嘴龟的巢|r 以获得|T134419:0|t[|cRXP_FRIENDLY_割伤符文|r]
+    >>打开地上的|cRXP_PICK_空空的钳爪巢穴|r获取|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_割伤符文|r]
     .collect 208687,1 --Unbalanced Idol (1)
     .train 416049,1
 step << Druid
@@ -10970,7 +10969,7 @@ step << Warlock
     #completewith CounterattackTurnin3
     #label ExplorerImp
     >>在任务过程中，对怪物施放 |T136163:0|t|cRXP_FRIENDLY_[吸取灵魂]|r 直到获得一个 |T133257:0|t|cRXP_LOOT_探险之魂|r。|cRXP_WARN_使用它来学习如何召唤|r |T236294:0|t|cRXP_FRIENDLY_[探险小鬼]|r
-    .train 445459 >>|cRXP_WARN_使用|r |T133257:0|t|T236294:0|t|cRXP_LOOT_探险之魂|r |cRXP_WARN_学习如何召唤|r |T236294:0|t|T236294:0|t[|cRXP_FRIENDLY_探险小鬼|r]
+    .train 445459 >>|cRXP_WARN_使用|r |T133257:0|t|cRXP_LOOT_探险之魂|r |cRXP_WARN_学习如何召唤|r |T236294:0|t[|cRXP_FRIENDLY_探险小鬼|r]
     .train 445459,1 --Skips if you already have Explorer Imp
     .train 1120,3 --Skips if you don't have drain soul
     .use 221978
@@ -11033,7 +11032,7 @@ step
     .goto 1413/1,-2031.32,-1703.47,80,0
     .goto 1413/1,-2183.32,-1858.19,80,0
     .goto 1413/1,-2453.88,-1991.28,80,0
-	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
+	>>击杀|cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
     >>|cRXP_WARN_使用 |T132318:0|t [|cRXP_LOOT_拉克塔曼尼之蹄|r]以开启该任务|r
     >>|cRXP_WARN_他有 4 个刷新点（已在地图上标记）|r
     >>|cRXP_WARN_如果找不到他，请跳过此步骤|r
@@ -11227,7 +11226,7 @@ step
     .use 210824 << Warlock
     .use 210653 << Rogue
     .use 210823 << Shaman
-    .train 415995 >>|cRXP_WARN_购买并使用|r |T135791:0|t[|cRXP_FRIENDLY_祥和顿悟|r] |cRXP_WARN_来训练|r |T237549:0|t[妙手回春] << Priest
+    .train 415995 >>|cRXP_WARN_购买并使用|r |T135791:0|t[|cRXP_FRIENDLY_祥和顿悟|r] |cRXP_WARN_来训练|r |T237549:0|t[瑟兰蒂缇] << Priest
     .train 410010 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_牺牲符文|r] |cRXP_WARN_来训练|r |T134596:0|t[铭刻裤子 - 神圣牺牲] << Paladin
     .train 401761 >>|cRXP_WARN_购买并使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：时光倒转|r] |cRXP_WARN_来训练|r |T237538:0|t[时光倒转] << Mage
     .train 410122 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T132266:0|t[|cRXP_FRIENDLY_独来独往符文|r] |cRXP_WARN_来学习|r |T132266:0|t|T132266:0|t[独来独往] << Hunter
@@ -11809,7 +11808,7 @@ step << Warlock
     .target 步兵劳格玛
 step
     .goto 1413/1,-1891.48,-2391.93
-    >>击杀 |cRXP_ENEMY_刺背野猪人|r。拾取它们的 |T134128:0|t[|cRXP_LOOT_血岩碎片|r
+    >>击杀 |cRXP_ENEMY_Bristleback Quilboars|r，拾取 |T134128:0|t[|cRXP_LOOT_血岩碎片|r]
     .collect 5075,1,5052,1 --Blood Shard (1)
     .mob 刺背寻水者
     .mob 刺背织棘者
@@ -13222,7 +13221,7 @@ step << Rogue
     .zoneskip The Barrens
 step << Rogue
     #completewith MissionProbable
-    .goto 1413/1,-3216.92,1107.13,120 >>前往淤泥营地
+    .goto 1413/1,-3216.92,1107.13,120 >>旅行至淤泥沼泽
 step << Rogue
     #completewith next
     .goto 1413/1,-3021.35,1214.56

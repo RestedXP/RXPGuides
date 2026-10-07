@@ -3444,7 +3444,7 @@ step
     .goto Durotar,42.28,25.45,30,0
     .goto Durotar,41.66,25.68,20 >>跳入雷霆山脊 << !Hunter !Warlock
     .goto Durotar,41.66,25.68,20 >>|cRXP_WARN_解散你的|r |T136218:0|t|T136218:0|t[小鬼] |cRXP_WARN_——右键点击其单位框架并选择“解散”|r << Warlock
-    |cRXP_WARN_施放|r |T136095:0|t[解散宠物] |cRXP_WARN_然后跳入雷霆山脊|r << Hunter
+    .cast 2641 >>|cRXP_WARN_施放|r |T136095:0|t[解散宠物] |cRXP_WARN_然后跳入雷霆山脊|r << Hunter
 step
     #xprate <1.5 << Shaman/Warrior
     #softcore
@@ -6908,7 +6908,7 @@ step << Priest
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step << Priest
     .goto Undercity,70.76,30.67
-    >>|cRXP_WARN_将你所有的|r |T132889:0|t[亚麻布] |cRXP_WARN_转化为|r |T132890:0|t[亚麻布卷]
+    >>|cRXP_WARN_将你所有的|r |T132889:0|t[亚麻布] |cRXP_WARN_全部转成|r |T132890:0|t[Bolt of 亚麻布]
     .collect 2996,30,435,1 --Bolt of Linen Cloth (30)
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3

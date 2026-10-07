@@ -594,7 +594,7 @@ step << Tauren
     #season 2
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈鲁特|r 对话
-    .accept 77651 >>Accept 深入荆棘
+    .accept 77651 >>接受任务 深入荆棘
     .target 哈鲁特·雷角
 step
     #season 2
@@ -636,7 +636,7 @@ step << Undead
 step
     #season 2
     .goto Tirisfal Glades,24.60,59.45
-    >>拾取洞穴内的 |cRXP_PICK_失落的藏宝|r 以获得 |T134419:0|t[|cRXP_FRIENDLY_乘胜追击符文|r]
+    >>在洞穴内从 |cRXP_PICK_Lost Stash|r 拾取战利品，以获得 |T134419:0|t[|cRXP_FRIENDLY_乘胜追击符文|r]
     .collect 204806,1 --Rune of Victory Rush (1)
     .train 403470,1
 step
@@ -731,7 +731,7 @@ step
     #season 2
     .goto Orgrimmar,58.52,52.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_扎姆沙|r 对话
-    >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Zamja
     .train 425447,1
@@ -770,7 +770,7 @@ step
     #season 2
     .goto Thunder Bluff,28.73,18.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奈塔里|r 对话
-    >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .train 425447,1
@@ -808,7 +808,7 @@ step
     #season 2
     .goto Tirisfal Glades,61.72,51.91
     >>击杀 |cRXP_ENEMY_蓝心|r，然后与楼上的 |cRXP_FRIENDLY_本尼|r 对话
-    .gossipoption 110751 >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    .gossipoption 110751 >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .mob Blueheart
@@ -1689,11 +1689,11 @@ step
     .collect 220914,1 --Broken Geode Hammer
     .train 427084,1
 step
-    >>右键点击 |T133054:0|t|cRXP_LOOT_破损的晶体之锤|r 拾取 |T134419:0|t[|cRXP_FRIENDLY_毁灭符文|r]
-    .collect 220913,1 --Rune of the Demolition
+    >>右键点击 |T133054:0|t|cRXP_LOOT_破损的晶体之锤|r 以拾取，用于获得 |T134419:0|t[|cRXP_FRIENDLY_Rune of Demolition|r]
+    .collect 220913,1 --Rune of Demolition
     .train 427084,1
 step
-    .train 427084 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_毁灭符文|r] |cRXP_WARN_来学习|r |T132364:0|t[破坏能手]
+    .train 427084 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Demolition|r] |cRXP_WARN_来学习|r |T132364:0|t[破坏能手]
     .use 220913
 ]])
 
@@ -1711,7 +1711,7 @@ step
 step
     #sticky
     #completewith summonIodax
-    >>|cRXP_WARN_要完成此任务你需要召唤并击杀一个拥有约1.2万生命值的50级精英魔像。虽然可以单刷但建议组队完成。为了召唤该魔像你需要从灼热峡谷的熔渣之池收集4个部件。不过如果你能找到其他人帮你召唤该首领则无需收集这些部件。在这种情况下你可以直接跳到第13步|r
+    >>|cRXP_WARN_要完成此任务，你需要召唤并击杀一只等级50的精英魔像，血量约12000。虽然可以单独完成，但我建议你找一个团队。为了召唤魔像，你需要从灼热峡谷的渣滓坑中收集4个零件。不过，如果你能找到别人为你召唤首领，就不需要收集这些零件了。这种情况下，你可以直接跳到第13步。|r
     .collect 221258,1 --Right Foot of the Obliterator
     .collect 221256,1 --Right Arm of the Obliterator
     .collect 221259,1 --Left Foot of the Obliterator

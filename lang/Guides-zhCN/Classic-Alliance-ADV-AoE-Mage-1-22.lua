@@ -1091,7 +1091,7 @@ step
     .goto Ironforge,55.49,47.74,10 >>前去找 |cRXP_FRIENDLY_格莱斯|r
 step
     .goto Ironforge,55.50,47.74
-    >>与 |cRXP_FRIENDLY_格莱斯|r 对话
+    >>与|cRXP_FRIENDLY_格莱斯|r 对话
     .fp Ironforge >>获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
 step

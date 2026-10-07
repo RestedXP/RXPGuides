@@ -809,7 +809,7 @@ step
     --too many .mobs, will cause clutter
 step << Rogue
     .goto 1420/0,270.12,2253.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_温特斯夫人|r |cRXP_BUY_对话并|r|cRXP_BUY_从她那里购买一把|r |T135421:0|t[增重飞斧]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_温特斯夫人|r |cRXP_BUY_对话，并|r|cRXP_BUY_从她那里购买一把|r |T135421:0|t[增重飞斧]
     .collect 3131,200,786,1 --Weighted Throwing Axe (200)
     .target 温特斯夫人
     .itemStat 18,QUALITY,<7
@@ -1111,7 +1111,7 @@ step
     .goto 1420/0,1587.700,2439.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在塔顶与 |cRXP_FRIENDLY_巴雷斯·晨石|r 对话
     >>|cRXP_WARN_这将开启一个护送任务|r
-    >>|cRXP_WARN_小心！在塔顶你可以轻易同时激怒3个 |cRXP_ENEMY_血色战士|r|r
+    >>|cRXP_WARN_小心！在塔顶你很容易同时引到3个 |cRXP_ENEMY_Scarlet Warriors|r|r
     .accept 99144,1 >>接受任务 寻求庇护
     .target Bareth Dawnstone
 step
@@ -2779,7 +2779,7 @@ step << Priest
 step << Warrior
     .goto 1420/0,238.49,2255.03--c:Tirisfal Glades,61.85,52.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥斯蒂尔|r 对话
-    .train 7384 >>学习你的职业技能
+    .train 7384 >>训练你的职业技能
     .target 奥斯蒂尔·德·蒙
     .xp <12,1
 step << Warlock
@@ -3001,7 +3001,7 @@ step << Priest
 step << Priest
     #optional
     .goto 1458/0,194.34,1681.63
-    >>|cRXP_WARN_将你所有的|r |T132889:0|t[亚麻布] |cRXP_WARN_转化为|r |T132890:0|t[亚麻布卷]
+    >>|cRXP_WARN_将你所有的|r |T132889:0|t[亚麻布] |cRXP_WARN_全部转成|r |T132890:0|t[Bolt of 亚麻布]
     .collect 2996,30,435,1 --Bolt of Linen Cloth (30)
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
@@ -3276,7 +3276,7 @@ step
     .unitscan Gorefang
 step
     .goto 1421/0,715.000,1335.400
-    >>击杀 |cRXP_ENEMY_邪鳍鱼人|r。拾取它们的 |T133884:0|t[|cRXP_LOOT_鱼人的眼珠|r]
+    >>杀死 |cRXP_ENEMY_Vile Fin Murlocs|r。拾取他们的 |T133884:0|t[|cRXP_LOOT_Murloc 眼睛|r]
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .mob Vile Vin Shredder
     .mob Vile Vin Tidehunter
@@ -3448,7 +3448,7 @@ step
     .target Quinn Yorick
 step
     .goto 1421/0,715.000,1335.400
-    >>击杀 |cRXP_ENEMY_邪鳍鱼人|r。拾取它们的 |T133884:0|t[|cRXP_LOOT_鱼人的眼珠|r]
+    >>杀死 |cRXP_ENEMY_Vile Fin Murlocs|r。拾取他们的 |T133884:0|t[|cRXP_LOOT_Murloc 眼睛|r]
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .mob Vile Vin Shredder
     .mob Vile Vin Tidehunter

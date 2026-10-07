@@ -1274,7 +1274,7 @@ step << Tauren
     .complete 758,1 --Cleanse the Thunderhorn Water Well (1)
 step
     .goto 1412/1,441.42,-1980.96--c:Mulgore,31.27,49.87
-    >>击杀 |cRXP_ENEMY_巴尔丹掘地工|r和|cRXP_ENEMY_巴尔丹鉴定官|r。拾取它们的|cRXP_LOOT_探矿者的镐|r
+    >>击杀 |cRXP_ENEMY_巴尔丹掘地工|r 和 |cRXP_ENEMY_巴尔丹鉴定官|r。拾取它们的|cRXP_LOOT_探矿者的镐|r
     .use 4702 >>|cRXP_WARN_砸碎|r |T134707:0|t[矿工锄] |cRXP_WARN_在熔炉处|r
     >>|cRXP_WARN_小心|cRXP_ENEMY_ 巴尔丹鉴定官|r 会施放|r |T135929:0|t[次级治疗术] |cRXP_WARN_(远程施法:当自身或附近生命值低于 50% 的单位时，为其恢复约 75 点生命值)|r
     .complete 746,1 --Broken Tools (5)
@@ -1542,7 +1542,7 @@ step
     #sofcore
     #completewith Bloodhoofturnins1
     .goto 1412/1,-598.900,-1603.700
-    .deathskip >>在位点箭头位置（或者更南边一点）死掉，然后在 |cRXP_FRIENDLY_灵魂医者|r 那里复活
+    .deathskip >> Die at the waypoint arrow (or further south of it) and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
     #hardcore
     #completewith Bloodhoofturnins1

@@ -244,7 +244,7 @@ step
 step
     .goto Duskwood,49.8,74.4
     .group 3
-    >>|cRXP_WARN_击杀|r |cRXP_ENEMY_伊兰希乌斯|r。|cRXP_WARN_一只在农场上空飞行的绿龙|r |cRXP_WARN_。他拥有极高的生命值，免疫自然系法术，拥有|r |T132338:0|t[顺劈斩] |cRXP_WARN_，|r |T134307:0|t[龙尾扫击] |cRXP_WARN_并会|r |T135745:0|t[召唤] |cRXP_WARN_一只|r |cRXP_ENEMY_幼龙|r |cRXP_WARN_小怪，该小怪会施放造成巨额伤害的正面吐息|r
+    >>|cRXP_WARN_杀死|r |cRXP_ENEMY_Ylanthrius|r. |cRXP_WARN_一条绿龙在农场上空飞行|r|cRXP_WARN_。它有巨大的生命值，对自然系法术免疫，拥有|r|T132338:0|t[顺劈]|cRXP_WARN_，|r |T134307:0|t[Tail Swipe] |cRXP_WARN_和|r |T135745:0|t[召唤] |cRXP_WARN_一个|r |cRXP_ENEMY_德雷克|r |cRXP_WARN_小怪施放正面呼吸并造成巨大伤害|r
     .complete 81742,1 --Ylanthrius (1)
     .maxlevel 53
     .isOnQuest 81742
@@ -511,7 +511,7 @@ step
     #completewith IncursionsComplete
     .goto Ashenvale,93.94,38.21,25,0
     .goto Ashenvale,94.27,35.13,20 >>进入 |cRXP_PICK_翡翠梦境传送门|r
-    >>|cRXP_WARN_径直穿过|cRXP_ENEMY_萨特|r、|cRXP_ENEMY_地狱巨犬|r和|cRXP_ENEMY_小鬼|r。进入传送门后，它们的仇恨会自动重置。|r
+    >>|cRXP_WARN_直奔过去 |cRXP_ENEMY_Satyrs|r、|cRXP_ENEMY_Felhounds|r 和 |cRXP_ENEMY_Imps|r。它们会在你进入传送门时重置仇恨|r
     .aura 444759
     .maxlevel 53
 step
@@ -546,7 +546,7 @@ step
     #season 2
     .group 3
     .goto Ashenvale,86.0,46.0
-    >>|cRXP_WARN_击杀|r |cRXP_ENEMY_拉尔瑟拉|r |cRXP_WARN_。她有巨大的生命池，免疫自然法术，有一个|r|T132338:0|t[顺劈斩]|cRXP_WARN_，|r |T134307:0|t[龙尾扫击]|cRXP_WARN_和|r |T135745:0|t[召唤]|cRXP_WARN_一条|r |cRXP_ENEMY_龙怪|r |cRXP_WARN_，它可以施放造成巨大伤害的正面吐息|r
+    >>|cRXP_WARN_杀死|r |cRXP_ENEMY_Larsera|r|cRXP_WARN_。她有巨大的生命值，对自然系法术免疫，拥有|r|T132338:0|t[顺劈]|cRXP_WARN_，|r |T134307:0|t[Tail Swipe] |cRXP_WARN_和|r |T135745:0|t[召唤] |cRXP_WARN_一个|r |cRXP_ENEMY_德雷克|r |cRXP_WARN_小怪施放正面呼吸并造成巨大伤害|r
     .complete 81780,1 --Defeat Larsera
     .isOnQuest 81780
     .maxlevel 53
@@ -889,7 +889,7 @@ step
     .accept 81832 >>接受任务 辛特兰使命IX：取回梦境珍珠
     .accept 81850 >>接受任务 辛特兰使命XVI：营救伊利阿纳尔·啜影者
     .accept 81851 >>接受任务 辛特兰使命XVII：营救瑟丽娜·星辉
-    .accept 81852 >>接受任务 辛特兰使命XVIII：营救维阿娜·云梦
+    .accept 81852 >>接受辛特兰任务XVIII：营救维安娜·云眠者
     .target Field Captain Korlian
     .maxlevel 53
 step
@@ -1000,7 +1000,7 @@ step
     .group 3
     .goto The Hinterlands,46.0,39.8
     >>击杀 |cRXP_ENEMY_弗洛里斯|r 这条在废墟上方飞行的绿龙
-    >>|cRXP_WARN_小心，他有巨大的生命池，免疫自然法术，有一个|r|T132338:0|t[顺劈斩]|cRXP_WARN_，|r |T134307:0|t[龙尾扫击]|cRXP_WARN_和|r |T135745:0|t[召唤]|cRXP_WARN_一条|r |cRXP_ENEMY_龙怪|r |cRXP_WARN_，它可以施放造成巨大伤害的正面吐息|r
+    >>|cRXP_WARN_小心，他有巨大的生命值，对自然系法术免疫，拥有|r|T132338:0|t[顺劈]|cRXP_WARN_，|r |T134307:0|t[Tail Swipe] |cRXP_WARN_和|r |T135745:0|t[召唤] |cRXP_WARN_一个|r |cRXP_ENEMY_德雷克|r |cRXP_WARN_小怪施放正面呼吸并造成巨大伤害|r
     .complete 81837,1 --Defeat Florius
     .mob Florius
     .isOnQuest 81837
@@ -1272,7 +1272,7 @@ step
     #completewith IncursionsComplete3
     .goto Feralas,50.95,11.67,30,0
     .goto Feralas,51.28,10.64,20 >>进入 |cRXP_PICK_翡翠梦境传送门|r
-    >>|cRXP_WARN_径直穿过|cRXP_ENEMY_萨特|r、|cRXP_ENEMY_地狱巨犬|r和|cRXP_ENEMY_小鬼|r。进入传送门后，它们的仇恨会自动重置。|r
+    >>|cRXP_WARN_直奔过去 |cRXP_ENEMY_Satyrs|r、|cRXP_ENEMY_Felhounds|r 和 |cRXP_ENEMY_Imps|r。它们会在你进入传送门时重置仇恨|r
     .aura 444762
     .maxlevel 53
 step
@@ -1308,7 +1308,7 @@ step
     .group 3
     .goto Feralas,53.2,16.6
     >>击杀龙族首领 |cRXP_ENEMY_泰兰尼库斯|r
-    >>|cRXP_WARN_小心，他有极高的血量，能免疫自然法术，有一个|r|T132338:0|t[顺劈斩]|cRXP_WARN_，|r |T134307:0|t[龙尾扫击]|cRXP_WARN_和|r |T135745:0|t[召唤]|cRXP_WARN_一条|r |cRXP_ENEMY_龙怪|r |cRXP_WARN_，它可以施放造成巨大伤害的正面吐息|r
+    >>|cRXP_WARN_小心，他有巨大的生命值，对自然系法术免疫，拥有|r|T132338:0|t[顺劈]|cRXP_WARN_，|r |T134307:0|t[Tail Swipe] |cRXP_WARN_和|r |T135745:0|t[召唤] |cRXP_WARN_一个|r |cRXP_ENEMY_德雷克|r |cRXP_WARN_小怪施放正面呼吸并造成巨大伤害|r
     .complete 81868,1 --Tyrannikus slain
     .mob Tyrannikus
     .maxlevel 53

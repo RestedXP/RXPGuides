@@ -473,7 +473,7 @@ step
     .target Alba Fairmoon::253092
     .turnin 92742 >>交任务 测试水井
     .turnin 92744 >>交任务 鱼人的鳃
-step
+step << !Skyborne
     .hs >>将炉石使用回暴风城
     .bindlocation 16509,1
     .cooldown item,6948,>2,1
@@ -508,6 +508,68 @@ step << Human Rogue
     .money <0.3815
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
     .target 玛尔达·维勒
+step << Skyborne
+    #optional
+    .goto 1453/0,673.58,-8867.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_旅店老板奥里森|r 对话
+    .home >>将你的炉石设置为暴风城
+    .target 旅店老板奥里森
+    .bindlocation 16509
+step << Skyborne
+    #completewith next
+    .goto 1453/0,562.300,-8385.300,20,0
+    .goto 1453/0,522.000,-8352.101
+    .subzone 2257 >>进入矿道地铁
+    .zoneskip Ironforge
+step << Skyborne
+    #optional
+    #label TramEnd
+    >>|cRXP_WARN_乘坐矿道地铁前往铁炉堡方向|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_蒙提|r 对话，你可在地深矿道铁炉堡站台的中央平台上找到他
+    .accept 6661 >>接受任务 捕捉矿道老鼠
+    .target 蒙提
+step << Skyborne
+    >>|cRXP_WARN_对 |r矿道老鼠|cRXP_WARN_ 使用 |cRXP_ENEMY_|T133942:0|t[捕鼠者长笛]|r在矿道地铁内|r
+    .complete 6661,1 --Rats Captured (x5)
+    .use 17117
+    .mob 矿道老鼠
+step << Skyborne
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_蒙提|r 对话，在地深矿道内
+    .turnin 6661 >>交任务 捕捉矿道老鼠
+    .target 蒙提
+step << Skyborne
+    .goto Ironforge,55.491,47.751
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    .fp Ironforge >>获取铁炉堡的飞行路径
+    .target 格莱斯·瑟登
+step << Skyborne Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比克斯|r 和 |cRXP_FRIENDLY_布里维夫·石手|r 对话
+    >>如果你之前没有练过，就训练投掷和双手锤
+    .train 2567 >>训练 投掷武器
+    .target 比克斯
+    .goto 1455/0,-1205.65,-5042.12
+    .train 199 >>学习双手锤
+    .goto 1455/0,-1197.27,-5041.49
+    .target 布里维夫·石拳
+step << Skyborne Warrior
+    .goto 1455,62.378,88.671
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布雷文·寒钢|r 在楼下对话
+    >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一把|r |T135425:0|t[锐利的飞刀]
+    .collect 3107,1 --Collect Keen Throwing Knife (200)
+    .target 布雷文·寒钢
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
+step << Skyborne Warrior
+    #optional
+    +|cRXP_WARN_装备|r |T135425:0|t[锐利的飞刀]
+    .use 3107
+    .itemcount 3107,1
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
+step << Skyborne
+    .hs >>将炉石使用回暴风城
+    .bindlocation 16509,1
+    .cooldown item,6948,>2,1
+    .zoneskip Stormwind City
+    .zoneskip Darkshore
 step << !NightElf
     .goto 1453/0,596.400,-8831.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔曼·穆比|r
@@ -755,7 +817,7 @@ RXPGuides.RegisterGuide([[
 #subgroup 快速升级指南1-20级
 --#groupid RXP-SRGCE-A1
 #name 14-16级 黑海岸
-#displayname 11-16级 黑海岸/西部荒野 << NightElf
+#displayname 11-16 黑海岸/洛克莫丹 << NightElf
 #displayname 13-16级 黑海岸 << Dwarf Hunter/Human Hunter/Skyborne Hunter
 #displayname 15-16级 黑海岸 << !NightElf/!Dwarf/!Human/!Skyborne Hunter
 #next 16-19级 黑海岸
@@ -2484,23 +2546,23 @@ step << NightElf
 step << NightElf
     .goto 1432/0,-3003.30,-5376.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格伦希尔德·暗爪|r 对话
-    .accept 86667 >>接受任务 Snowbound
+    .accept 86667 >>接受任务 困于风雪
     .target Grenhild Darktalon
 step << NightElf
     #completewith next
     .goto 1432/0,-2619.200,-5783.300,20,0
-    .goto 1432/0,-2534.38,-5648.28,5 >>前往南门小径隧道外的地上积雪处
+    .goto 1432/0,-2534.38,-5648.28,5 >>前往南门小径隧道外地面上的积雪处
 step << NightElf
     .goto 1432/0,-2534.38,-5648.28
-    .use 279380 >>|cRXP_WARN_使用|r |T1387609:0|t[Ceramic Jar] |cRXP_WARN_在积雪处站立来收集|r |T1387609:0|t[Jar of Snow]
+    .use 279380 >>|cRXP_WARN_在雪地上使用|r |T1387609:0|t[陶瓷罐] |cRXP_WARN_来收集|r |T1387609:0|t[雪罐]
     .complete 86667,1 -- Jar of Snow 1/1
 step << NightElf
     #label Snowbound
     .goto 1432/0,-3146.73,-4837.02
-    #arrowtext |cRXP_WARN_10分钟内完成任务!|r
+    #arrowtext |cRXP_WARN_限时10分钟内交任务！|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Norric Lochthane|r 对话
-    >>务必在 |T1387609:0|t[Jar of Snow] |cRXP_WARN_的10分钟时限到期前交任务|r
-    .turnin 86667 >>交任务 Snowbound
+    >>|cRXP_WARN_确保在|T1387609:0|t[雪罐] 10分钟计时结束前交掉此任务|r
+    .turnin 86667 >>交任务 困于风雪
     .target Norric Lochthane
 step << NightElf
     #optional
@@ -2549,7 +2611,7 @@ step << NightElf
     .waypoint 1432/0,-2684.71,-5042.87,50,0
     .waypoint 1432/0,-2712.57,-5286.61,50,0
     >>击杀 |cRXP_ENEMY_坑道鼠|r。拾取他们的 |cRXP_LOOT_耳朵|r
-    >>杀死 |cRXP_ENEMY_Tunnel 老鼠 Geomancers|r。拾取它们的 |cRXP_LOOT_Fire 焦油|r << Shaman 
+    >>击杀 |cRXP_ENEMY_坑道鼠地卜师|r。拾取他们的 |cRXP_LOOT_火焰焦油|r << Shaman 
     >>|cRXP_ENEMY_Tunnel 老鼠 Geomancers|r |cRXP_WARN_只在矿井内出现|r << Shaman
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .mob +Tunnel Rat Scout
@@ -2753,7 +2815,7 @@ step << NightElf Hunter
     .target 雷格努斯·雷石
 step << NightElf Priest
     .goto 1455/0,-897.200,-4607.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高阶牧师洛汉|r 对话  
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_高阶牧师洛汉|r 对话  
     .trainer >>训练你的职业技能
     .target High Priest Rohan
 step << NightElf Priest/NightElf Druid
@@ -2763,10 +2825,10 @@ step << NightElf Priest/NightElf Druid
     .goto 1455/0,-917.57,-4967.58,-1--c:Ironforge,25.800,75.500
     .goto 1455/0,-904.92,-4962.83,-1--c:Ironforge,24.200,74.600
     .goto 1455/0,-901.76,-4948.06,-1--c:Ironforge,23.800,71.800
-    >>|cRXP_WARN_如果你能负担的话，购买以下物品:|r
-    >>|T134711:0|t[杂兵 Wizard Oil] |cRXP_WARN_和|r |T133906:0|t[Smoked Sagefish]
-    >>|cRXP_WARN_同时留意你现在或即将能用的|r |T132317:0|t[Wand] |cRXP_WARN_高每秒伤害升级|r << Priest
-    >>|cRXP_WARN_这些会在前期提供高每秒伤害提升。如果你不想做或无法做这个，跳过这步|r
+    >>|cRXP_WARN_如果你钱够的话，购买以下物品：|r
+    >>|T134711:0|t[初级巫师之油] |cRXP_WARN_和|r |T133906:0|t[烤鼠尾鱼]
+    >>|cRXP_WARN_顺便看看有没有当前或稍后可用的高DPS的|r |T132317:0|t[法杖] |cRXP_WARN_升级装备|r << Priest
+    >>|cRXP_WARN_这些物品能在前期带来大幅DPS提升。如果你不想做或不能做，就跳过这一步|r
     .collect 20744,1 -- Minor Wizard Oil (1)
     .collect 21072,20 -- Smoked Sagefish (20)
     .target 拍卖师林姆克
@@ -2968,7 +3030,7 @@ step << Hunter/Druid
 step << Hunter/Druid
     #optional
     #completewith Tower1
-    >>杀死 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob Moonstalker
     .isOnQuest 1002
@@ -3047,7 +3109,7 @@ step
 step
     #optional
     #completewith CliffCave
-    >>杀死 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>击杀 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob Moonstalker
     .isOnQuest 1002
@@ -4658,6 +4720,17 @@ step << !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r 对话 
     .target Manifest Clerk Philmor::268511
     .accept 97220 >>接受任务 Philmor's Favor
+step << Shaman
+    .goto 1453/0,758.4316,-8140.6689
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沉默的舒尼|r 对话
+    .accept 2040 >>接受任务 地底突袭
+    .target 沉默的舒尼
+step << Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维尔德·蓟草|r 对话
+    .accept 167 >>接受任务 我的兄弟……
+    .accept 168 >>接受任务 收集记忆
+    .goto 1453/0,585.9322,-8241.1085
+    .target 维尔德·蓟草
 step << Mage
     #completewith next
     .goto 1453/0,874.32,-9014.67,10 >>前往法师塔
@@ -4722,6 +4795,11 @@ step << !NightElf
     .turnin 1338 >>交任务 卡尔·雷矛的订单
     .target 弗伦·长须
     .isOnQuest 1338
+step << !Shaman
+    .goto 1453/0,758.4316,-8140.6689
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沉默的舒尼|r 对话
+    .accept 2040 >>接受任务 地底突袭
+    .target 沉默的舒尼
 step
     #completewith BMenace
     .goto 1453/0,638.8,-8341.95
@@ -4731,6 +4809,12 @@ step
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
     .target 比利巴布·旋轮
+step << !Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维尔德·蓟草|r 对话
+    .accept 167 >>接受任务 我的兄弟……
+    .accept 168 >>接受任务 收集记忆
+    .goto 1453/0,585.9322,-8241.1085
+    .target 维尔德·蓟草
 step << Rogue
     .goto 1453/0,377.61,-8752.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥斯本|r 对话
@@ -5361,6 +5445,27 @@ step << Rogue
     .itemcount 923,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.19
     .xp <21,1
+step
+    #optional
+    .isQuestComplete 2040
+    .goto 1453/0,758.4316,-8140.6689
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沉默的舒尼|r 对话
+    .turnin 2040 >>交任务 地底突袭
+    .target 沉默的舒尼
+step
+    #optional
+    .isQuestComplete 168
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维尔德·蓟草|r 对话
+    .turnin 168 >>交任务 收集记忆
+    .goto 1453/0,585.9322,-8241.1085
+    .target 维尔德·蓟草
+step
+    #optional
+    .isQuestComplete 167
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维尔德·蓟草|r 对话
+    .turnin 167 >>交任务 我的兄弟……
+    .goto 1453/0,585.9322,-8241.1085
+    .target 维尔德·蓟草
 step << Warrior/Paladin
     #ah
     .goto 1453/0,607.48,-8790.40
@@ -5484,18 +5589,18 @@ step << Warrior
 
 
 
-step << NightElf Rogue
+step << NightElf Rogue/Skyborne Rogue
     .goto 1436/0,1037.42,-10628.27,5,0
     .zone Westfall >>前往西部荒野
     >>如果你已经有西部荒野飞行路径，就飞过去
     .isOnQuest 2360
-step << NightElf Rogue
+step << NightElf Rogue/Skyborne Rogue
     .goto 1436/0,1037.42,-10628.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索尔|r 对话
     .fp Westfall >>开启西部荒野的飞行路径
     .target 索尔
     .isOnQuest 2360
-step << !NightElf Rogue
+step << Human Rogue/Dwarf Rogue
     .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
     .fly Westfall >>飞往西部荒野
@@ -5539,7 +5644,7 @@ step << Rogue
     .goto 1436/0,581.37,-11104.97,30,0
     >>|T133644:0|t[搜索] |cRXP_ENEMY_丑陋的迪菲亚懒汉|r。拾取 |cRXP_LOOT_迪菲亚塔楼钥匙|r
     >>|cRXP_WARN_你必须处于|r |T132320:0|t[潜行] |cRXP_WARN_状态下才能使用|r |T133644:0|t[偷窃]
-    >>|cRXP_WARN_|cRXP_ENEMY_丑陋的迪菲亚懒汉|r出现在塔楼入口处，随后会在塔楼外侧巡逻|r
+    >>|cRXP_WARN_丑陋的迪菲亚懒汉|cRXP_ENEMY_ |r出现在塔楼入口处，随后会在塔楼外侧巡逻|r
     >>|cRXP_WARN_小心，他伤害很高。如果你的|r |T132320:0|t[潜行] |cRXP_WARN_被打破，立刻使用|r |T132307:0|t[疾跑] |cRXP_WARN_并逃离|r
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
@@ -5557,7 +5662,7 @@ step << Rogue
     >>|cRXP_WARN_手动|r |T132320:0|t[取消潜行]|cRXP_WARN_，然后按下你的 "与目标互动" 快捷键来打开 |cRXP_PICK_暮色森林宝箱|r。拾取其中的|r |cRXP_LOOT_克拉文·摩特维克的日志|r
     >>|cRXP_WARN_注意：你的|r |T132320:0|t[潜行] |cRXP_WARN_在拾取|r |cRXP_LOOT_克拉文·摩特维克的日志|r 后会暂时失效
     >>|cRXP_WARN_如果你在第2层没有击杀 |cRXP_ENEMY_迪菲亚哨兵|r，请做好逃跑的准备。当你站在书架顶部时，他们很可能会一直对你产生仇恨 (但不会攻击你) ，因为那里是一个脱战点|r
-    >>|cRXP_WARN_如果你的背包中或已装备|r |T135641:0|t[匕首] |cRXP_WARN_，你可以施放|r |T132282:0|t[伏击] |cRXP_WARN_对付里面的 |cRXP_ENEMY_迪菲亚巡塔员|r 和 |cRXP_ENEMY_迪菲亚哨兵|r，从而瞬间击杀他们，击杀第一个 |cRXP_ENEMY_迪菲亚哨兵|r 后请做好逃跑准备，并记住你可能会从上方被攻击。这种方法更慢，但安全性高得多|r
+    >>|cRXP_WARN_如果你的背包中或已装备|r |T135641:0|t[匕首] |cRXP_WARN_，你可以施放|r |T132282:0|t[伏击] |cRXP_WARN_对付里面的 |cRXP_ENEMY_迪菲亚巡塔员|r 和 |cRXP_ENEMY_迪菲亚哨兵|r，从而瞬间击杀他们。击杀第一个 |cRXP_ENEMY_迪菲亚哨兵|r 后请做好逃跑准备，并记住你可能会从上方被攻击。这种方法更慢，但安全性高得多|r
     >>|cRXP_WARN_注意，如果你需要跑出塔楼，|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 和 |cRXP_ENEMY_迪菲亚苦工|r 可能会在塔楼入口处|r
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
@@ -5643,7 +5748,7 @@ step << Rogue
     #requires AntiVenomEnd2 << Rogue
     .goto 1453/0,362.28,-8815.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马迪亚斯·肖尔大师|r 对话
-    >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备上你的主武器|r << Rogue
+    >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备你的主武器|r << Rogue
     .turnin 2359 >>交任务 克拉文之塔
     .target 马迪亚斯·肖尔大师
 
@@ -6453,6 +6558,12 @@ step
     #optional
     #completewith AshenvaleEnd
     .hs >>炉石回到奥伯丁
+step
+    #optional
+    #sticky
+    .abandon 2040 >>放弃任务地底突袭
+    .abandon 167 >>放弃任务我的兄弟……
+    .abandon 168 >>放弃任务收集记忆
 step
     .goto 1439/1,504.41,6402.39
     >>点击 |cRXP_PICK_通缉布告|r

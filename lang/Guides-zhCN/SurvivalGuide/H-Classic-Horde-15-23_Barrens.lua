@@ -1604,11 +1604,11 @@ step
 step
     #sticky
     #completewith Slugs
-    >>拾取淤泥沼泽周围地面上的|cRXP_PICK_工具箱|r
+    >>Loot |cRXP_PICK_Tool Buckets|r from the ground around The Sludge Fen
     .complete 3922,1 --Nugget Slugs (15)
 step
     .goto The Barrens,56.52,7.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于淤泥沼泽的 |r |cRXP_FRIENDLY_维兹克兰克的伐木机|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Wizzlecrank's Shredder|r in The Sludge Fen
     .accept 858 >>接受任务 点火
     .target 维兹克兰克的伐木机
 step
@@ -1656,7 +1656,7 @@ step
 	.goto The Barrens,56.72,6.92,25,0
 	.goto The Barrens,56.17,6.80,25,0
 	.goto The Barrens,55.69,6.94,25,0
-    >>拾取淤泥沼泽周围地面上的|cRXP_PICK_工具箱|r
+    >>Loot |cRXP_PICK_Tool Buckets|r from the ground around The Sludge Fen
     .complete 3922,1 --Nugget Slugs (15)
 step
 	#completewith NuggetSlugsTurnIn
@@ -2117,7 +2117,7 @@ RXPGuides.RegisterGuide([[
 #name 19-23级 石爪山脉/贫瘠之地/灰谷
 #version 1
 #group RestedXP 生存指南 (部落版)
-#subgroup RXP 生存指南 1-20级
+#subgroup RXP生存指南1-20
 #next 23-25 希尔斯布莱德
 
 step
@@ -2503,7 +2503,7 @@ step
     .goto The Barrens,45.93,49.08,80,0
     .goto The Barrens,47.43,51.37,80,0
     .goto The Barrens,50.10,53.34,80,0
-	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
+	>>击杀|cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
     >>|cRXP_WARN_使用 |T132318:0|t [|cRXP_LOOT_拉克塔曼尼之蹄|r]以开启该任务|r
     >>|cRXP_WARN_他有 4 个刷新点（已在地图上标记）|r
     >>|cRXP_WARN_如果找不到他，请跳过此步骤|r
@@ -3118,8 +3118,7 @@ step << !Shaman
     .subzoneskip 380,1
 step
     .goto The Barrens,44.55,59.27
-    >>击杀 |cRXP_ENEMY_刺背野猪人|r。并拾取它们的 |T134128:0|t[|cRXP_LOOT_血岩碎片|r
-    .collect 5075,1,5052,1 --Blood Shard (1)
+    >>击杀 |cRXP_ENEMY_刺背野猪人|r。并拾取它们的 |T134128:0|t[|cRXP_LOOT_血岩碎片|r052,1 --Blood Shard (1)
     .mob 刺背寻水者
     .mob 刺背织棘者
     .mob 刺背地卜师
@@ -4852,7 +4851,7 @@ step << Rogue/Druid
     .zoneskip The Barrens
 step << Rogue/Druid
     #completewith MissionProbable
-    .goto The Barrens,57.63,7.48,120 >>前往淤泥营地
+    .goto The Barrens,57.63,7.48,120 >>旅行至淤泥沼泽
 step << Druid
     .goto The Barrens,56.67,8.32
     >>拾取水中的 奇怪的锁箱|cRXP_PICK_，获取 |T133443:0|t[水性敏捷坠饰]|r

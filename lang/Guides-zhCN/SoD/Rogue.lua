@@ -1624,7 +1624,7 @@ step
     .cast 1842 >>|cRXP_WARN_对|r |cRXP_WARN_树上的|r |cRXP_PICK_飞镖陷阱|r |cRXP_WARN_施放|r |T136162:0|t[解除陷阱]
 step
     .goto Swamp of Sorrows,42.76,30.77
-    >>拾取 |cRXP_PICK_显眼的箱子|r 以获得|cRXP_FRIENDLY_ |T134419:0|t[|r刺客符文|r]
+    >>拾取为获得 |T134419:0|t[|cRXP_PICK_刺客符文|r] 而生成的 |cRXP_FRIENDLY_Conspicuous Cache|r
     .collect 213139,1
 step
     .itemcount 213139,1
@@ -1835,8 +1835,8 @@ step
     .mob Southsea Freebooter
     .train 432301,1
 step
-    >>打开|T133639:0|t|cRXP_LOOT_绑匪的钱包|r，从中拾取|T133302:0|t|cRXP_LOOT_珍贵奖章|r
-    .collect 221370,1 -- Precious Precious Medallion 1/1
+    >>打开 |T133639:0|t|cRXP_LOOT_Kidnapper's Coin Purse|r 以获得 |T133302:0|t|cRXP_LOOT_Precious Medallion|r
+    .collect 221370,1 -- Precious Medallion 1/1
     .use 221371
     .train 432301,1
 step << Rogue

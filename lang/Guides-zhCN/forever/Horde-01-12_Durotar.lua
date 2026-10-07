@@ -154,7 +154,7 @@ step << Warlock
     .goto 1411/1,-4319.67,-169.190,40,0
     .goto 1411/1,-4303.28,-186.46,40,0
     .goto 1411/1,-4281.07,-148.75,40,0
-    >>击杀 |cRXP_ENEMY_邪灵劣魔|r. 拾取 |cRXP_LOOT_邪灵劣魔的徽记|r
+    >>击杀 |cRXP_ENEMY_邪灵劣魔|r，拾取 |cRXP_LOOT_邪灵劣魔的徽记|r
     .complete 1485,1 --Vile Familiar Head (6)
     .mob 邪灵劣魔
 step
@@ -2254,9 +2254,9 @@ step
 step --center of first small island
     #label MartEgg
     .goto 1411/1,-5599.500,-716.700
-    >>击杀 |cRXP_ENEMY_血爪族母|r。拾取它的 |cRXP_LOOT_血爪族母的蛋|r
-    .complete 97223,1 --|1/1 Bloodtalon Martriarch Eggs
-    .mob Bloodtalon Martriarch
+    >>击杀 |cRXP_ENEMY_Bloodtalon Matriarch|r。拾取 |cRXP_LOOT_Bloodtalon Matriarch 道具|r
+    .complete 97223,1 --|1/1 Bloodtalon Matriarch Eggs
+    .mob Bloodtalon Matriarch
 step
     #label MainIsland
     .goto 1411/1,-5501.95,-1167.12,150 >>游到主岛上
@@ -2754,7 +2754,7 @@ step
     .goto 1411/1,-4198.05,911.22,30,0
     .goto 1411/1,-4165.27,903.11,20 >>跳入雷霆山脊 << !Hunter !Warlock
     .goto 1411/1,-4165.27,903.11,20 >>|cRXP_WARN_解散你的|r |T136218:0|t|T136218:0|t[小鬼] |cRXP_WARN_——右键点击其单位框架并选择“解散”|r << Warlock
-    |cRXP_WARN_施放|r |T136095:0|t[解散宠物] |cRXP_WARN_然后跳入雷霆山脊|r << Hunter
+    .cast 2641 >>|cRXP_WARN_施放|r |T136095:0|t[解散宠物] |cRXP_WARN_然后跳入雷霆山脊|r << Hunter
 step
     #softcore
     .goto 1411/1,-4190.12,868.22
@@ -4042,7 +4042,7 @@ step << Priest
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step << Priest
     .goto 1458/0,194.34,1681.63
-    >>|cRXP_WARN_将你所有的|r |T132889:0|t[亚麻布] |cRXP_WARN_转化为|r |T132890:0|t[亚麻布卷]
+    >>|cRXP_WARN_将你所有的|r |T132889:0|t[亚麻布] |cRXP_WARN_全部转成|r |T132890:0|t[Bolt of 亚麻布]
     .collect 2996,30,435,1 --Bolt of Linen Cloth (30)
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3

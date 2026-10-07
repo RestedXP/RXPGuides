@@ -108,19 +108,19 @@ step << Warrior
 --     .goto 2521,43.83,24.18,5,0
 --     .goto 2521,43.83,24.32,8,0
 --     .goto 2521,43.80,24.05
---     >>Climb the spiral staircase, then |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk Eye::257554|r at the top of the tower.
+--     >>Climb the spiral staircase, then |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye::257554|r at the top of the tower.
 --     .accept 94414 >>Accept The Anchors of Zephras
 --     .target Halaan Hawk-Eye::257554
 -- step
 --     .goto 2521,43.80,24.05
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk Eye::257554|r.
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye::257554|r.
 --     *Move or press ESC to cancel.
 --     .complete 94414,1 --View the Anchor Pylon
 --     .skipgossipid 137720,1
 --     .target Halaan Hawk-Eye::257554
 -- step
 --     .goto 2521,43.80,24.05
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk Eye::257554|r.
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye::257554|r.
 --     *Move or press ESC to cancel.
 --     .turnin 94414 >>Turn in The Anchors of Zephras
 --     .target Halaan Hawk-Eye::257554
@@ -213,7 +213,7 @@ step << Horde Shaman
 step << Horde Shaman
     .goto 2521,42.79,23.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塑风者波罗::251374|r 对话。
-    .train 8017 >>学习 |T136086:0|t[石化武器]
+    .train 8017 >>影袭 |T136086:0|t[石化武器]
     .target Windshaper Boro::251374
     .money <0.0010
     .skipgossipid 136811
@@ -228,7 +228,7 @@ step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_文塔里·明愿::251487|r 对话。
     .accept 92598 >>接受任务 天穹视界的天赋
     .target Ventaari Brightwish::251487
-step << !Warrior !Rogue 
+step << !Warrior !Rogue
     .itemcount 159,<20 << Mage/Shaman
     .itemcount 2512,<1000 << Hunter
     .goto 2521,42.749,24.496
@@ -273,7 +273,7 @@ step << Alliance !Hunter !Mage !Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_收藏家达莉亚::251363|r 对话。
     .accept 93552 >>接受任务 采集风之石
     .target Dalia the Collector::251363
-step << Alliance Rogue/Alliance Warrior 
+step << Alliance Rogue/Alliance Warrior
     .goto 2521,43.41,23.51
     #completewith Harvesting Windstones
     .collect 2131,1 >>购买并装备 |T135274:0|t[农夫之剑] << Rogue
@@ -350,7 +350,7 @@ step << Horde Shaman
     .goto 2521,47.19,23.55,30,0
     .goto 2521,46.6,24.62,30,0
     >>击杀 |cRXP_ENEMY_奥拉凯斯信徒::251160|r 与 |cRXP_ENEMY_翻滚之风::251143|r。
-    *拾取他们的 |T1020384:0|t[阿基尔徽记] << Shaman
+    *拾取它们的 |T1020384:0|t[Signet of Akir] << Shaman
     *|cRXP_WARN_优先击杀 |cRXP_ENEMY_翻滚之风::251143|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
     .mob +Al'Aketh Convert::251160
@@ -495,7 +495,7 @@ step << Alliance/!Shaman
     .complete 93552,1 --15/15 Windstone Cluster
 step << Alliance/!Shaman
     >>击杀 |cRXP_ENEMY_奥拉凯斯信徒::251160|r 与 |cRXP_ENEMY_翻滚之风::251143|r。
-    *拾取他们的 |T1020384:0|t[阿基尔徽记] << Shaman
+    *拾取它们的 |T1020384:0|t[Signet of Akir] << Shaman
     *|cRXP_WARN_优先击杀 |cRXP_ENEMY_翻滚之风::251143|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
     .mob +Al'Aketh Convert::251160
@@ -1417,14 +1417,14 @@ step
     .mob +Highlands Bandit::251918
 step
     #completewith To Shendalar
-    >>击杀|cRXP_ENEMY_沿途的|r |cRXP_WARN_疾风陆行鸟::251661|r。 
+    >>击杀|cRXP_ENEMY_沿途的|r |cRXP_WARN_疾风陆行鸟::251661|r。
     *拾取它们的 |T133972:0|t[|cRXP_LOOT_陆行鸟肉|r] 和 |T132832:0|t[|cRXP_LOOT_小蛋|r]。
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
 step
     #completewith To Shendalar
-    >>击杀|cRXP_ENEMY_沿途的|r |cRXP_WARN_傲爪::251245|r。 
+    >>击杀|cRXP_ENEMY_沿途的|r |cRXP_WARN_傲爪::251245|r。
     *拾取它们的 |T237416:0|t[|cRXP_LOOT_傲爪的毛皮|r]。
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
@@ -2184,7 +2184,7 @@ step
     .isOnQuest 92470
     .isQuestComplete 92470
     .subzoneskip 17674,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维和者瓦尼尔::252155|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Peacekeeper Vaaniel::252155|r 对话。
     .complete 93926,1 --1/1 Check in on the Western Watchtower in the Shen'dar Highlands
 step
     #completewith Western Watchtower
@@ -2201,18 +2201,18 @@ step
 step
     #requires Western Watchtower
     .goto 2521,42.32,62.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维和者瓦尼尔::252155|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Peacekeeper Vaaniel::252155|r 对话。
     .complete 93926,1 --1/1 Check in on the Western Watchtower in the Shen'dar Highlands
-    .target Piecekeeper Vaniel::252155
+    .target Peacekeeper Vaaniel::252155
 step
     .goto 2521,42.33,62.01
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_维和者瓦尼尔::252155|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_Peacekeeper Vaaniel::252155|r
     .turnin 93926 >>交任务 西部瞭望塔
     .accept 93927 >>接受任务 最后的请求
-    .target Piecekeeper Vaniel::252155
+    .target Peacekeeper Vaaniel::252155
 step
     .goto 2521,42.38,62.07
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_沾血的便笺|r。 
+    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_沾血的便笺|r。
     *|cRXP_WARN_保留一个空的背包栏位|r。
     .complete 93927,1 --1/1 Collect and read the note
 step
@@ -2249,7 +2249,7 @@ step
 step  << Alliance
     #completewith NearCommander
     >>击杀 |cRXP_ENEMY_奥拉凯斯唤暴者::252068|r。拾取 |T133647:0|t[|cRXP_LOOT_失窃的申达尔补给品|r]。
-    >>|TInterface/cursor/crosshair/interact.blp:16|t点击|cRXP_PICK_补给箱|r。
+    >>|TInterface/cursor/crosshair/interact.blp:16|t点击 |cRXP_PICK_Supply Caches|r （小包）。
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
     .mob +Al'Aketh Stormcaller::252068
@@ -2549,7 +2549,7 @@ step
     .isNotOnQuest 93317
     .subzoneskip 16638
     .goto 2521,49.4,58.76
-    .subzone 16626 >>在精确的路径点位置死亡 
+    .subzone 16626 >>在精确的路径点位置死亡
     *|cRXP_WARN_否则，你可能会被送到不同的墓地|r
     .macro Sit,134400 >>坐下
 step
@@ -2595,8 +2595,8 @@ step
     *|cRXP_WARN_任何增益食物都会提供击杀经验提高 5% 的效果，持续 15 分钟|r。
     .macro Herb Baked Egg,132834 >>草药烘蛋
 step
-    .subzoneskip 16638,1
-    .isQuestAvailable 93948
+    .subzoneskip 16638,1 << Alliance
+    .isOnQuest 93948
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多纳尔·微风::255940|r 对话。
     .target Donaal Downbreeze::255940
     .bindlocation 16638
@@ -2604,7 +2604,7 @@ step
     .goto 2521,62.180,72.616
 step
     .subzoneskip 16638,1
-    .isQuestAvailable 93948
+    .isOnQuest 93948
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多纳尔·微风::255940|r 对话。
     .vendor 255940 >>把垃圾物品卖给商人
     *别卖 |T133970:0|t[多汁狼肉]、|T132832:0|t[小蛋] 或 |T133972:0|t[陆行鸟肉]。 << Alliance
@@ -2630,6 +2630,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在二楼与 |cRXP_FRIENDLY_阿尔瓦里昂·风野::252448|r 对话。
     .target Alvarion Windfield::252448
     .accept 92679 >>接受任务 血之什一税
+-- TODO: Add Walk on Air
 step
     .subzoneskip 16638,1
     .isQuestAvailable 93948
@@ -2683,17 +2684,17 @@ step
 --     .complete 93949,1 --8/8 Enchanted Skyhopper Exterminated
 --     .mob Skyhopper::251314
 step << Horde
-    .isOnQuest 92700 
+    .isOnQuest 92700
     .goto 2521,66.488,76.498,6,0
     .goto 2521,63.027,77.807 << Hunter
     .goto 2521,61.491,76.893 << !Hunter
-    .cast 1259416 >>从山上跳下，使用 |T132845:0|t[踏空而行] 飞向任务发布者。
+    .cast 1259416 >>从塔楼跳下并使用 |T132845:0|t[踏空而行] 飞向任务给予者。
     *|cRXP_WARN_如果时机把握准确，你可以在半空中取消飞行，从而落入建筑内|r
     .cooldown spell,1259416,>0,1
     .usespell 1259416
     .macro Cancel Walk on Air,132845 >>取消踏空而行
 step << Alliance
-    .isOnQuest 92699 
+    .isOnQuest 92699
     .goto 2521,66.47,76.68,10,0
     .goto 2521,66.63,79.94
     .cast 1259416 >>从山上跳下，使用 |T132845:0|t[踏空而行] 飞向任务发布者。
@@ -2943,7 +2944,7 @@ step
     .goto 2521,48.920,84.441,30,0
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_LOOT_成熟的风暴苹果|r
     >>击杀 |cRXP_ENEMY_饥饿的强盗::252802|r|cRXP_WARN_（潜行状态）|r。
-    *猎人提示：不停按Tab键提前选中它们，对其使用猎人印记，这样你就能拉开距离并从远处攻击。 << Hunter
+    *猎人提示：连按Tab键提前选中目标，对其施放猎人's Mark，这样你可以跑开并从更远处攻击他们。 << Hunter
     .complete 92682,1 --10/10 Ripe Stormapple
     .complete 92682,2 --5/5 Hungry Bandit slain
     .mob +Hungry Bandit::252802
@@ -3038,7 +3039,7 @@ step << Horde Shaman
     .goto 2521,51.240,86.187
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Olariaan Swiftburn::268592|r 对话。
     .turnin 97243 >>交任务  火焰的召唤
-    .accept 97244 >>接受任务 Call to 火焰
+    .accept 97244 >>接受任务 火焰的召唤
     .target Olariaan Swiftburn::268592
 -- step << Shaman
 --     .isOnQuest 97244
@@ -3407,13 +3408,13 @@ step << Hunter
     .target Quel'ana Quickgale::252389
 step << Hunter Alliance
     .goto 2521,63.023,77.803
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安特拉瑞娅·凝云::252390|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Antelariaa Cloudgaze::252390|r 对话。
     >>|cRXP_BUY_购买|r |T132382:0|t[锋利的箭]
     .vendor 252390 >>把垃圾物品卖给商人
     *别卖 |T133970:0|t[多汁狼肉]、|T132832:0|t[小蛋] 或 |T133972:0|t[陆行鸟肉]。 << Alliance
     *|cRXP_WARN_之后烹饪会用到它们。|r
     .collect 2515,1000
-    .target Anteleriaa Cloudgaze::252390
+    .target Antelariaa Cloudgaze::252390
 step << Alliance
     #label Turn in The Missing Scholar
     *|cRXP_WARN_双持|r |T134520:0|t[可靠的扳手] |cRXP_WARN_和|r |T7791298:0|t[扑翼蝶拍] << Rogue
@@ -3855,7 +3856,7 @@ step << Alliance !Druid
 step << Alliance !Druid
     #completewith next
     >>杀死 |cRXP_ENEMY_Al'Aketh Brawlers::270201|r、|cRXP_ENEMY_Al'Aketh Preachers::253195|r 和 |cRXP_ENEMY_Al'Aketh Pillagers::253511|r。
-    *拾取战利品 |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r]。
+    *拾取 |T1379232:0|t[|cRXP_LOOT_奥拉凯斯风石护符|r]。
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
     .mob Al'Aketh Brawler::270201
     .mob Al'Aketh Preacher::253195
@@ -3885,7 +3886,7 @@ step << Alliance Druid
     .usespell 1259416
 step << Alliance Druid
     .goto 2521,69.782,61.609
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Urs'endris::255853|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乌尔森德里斯::255853|r 对话。
     .target Urs'endris::255853
     .turnin 94006 >>交任务 The Great Ursera 精神
     .accept 94638 >>接受任务 力量 and Mercy
@@ -4169,7 +4170,7 @@ step << Alliance Druid
     .mob Windsong Crawler::254588
 step << Alliance Druid
     #completewith Windsong Crawler Meat Druid
-    .goto 2521,57.25,60.92,50 >>绕过群山 
+    .goto 2521,57.25,60.92,50 >>绕过群山
 step << Alliance Druid
     #requires Windsong Crawler Meat Druid
     #loop
@@ -4190,7 +4191,7 @@ step << Alliance Druid
 --     .complete 93317,1 --6/6 Windsong Crawler Meat
 -- step << Horde Druid
 --     #completewith CrawlerMeatDruidA
---     .goto 2521,57.25,60.92,50 >>Go around the mountains 
+--     .goto 2521,57.25,60.92,50 >>Go around the mountains
 -- step << Horde
 --     #requires CrawlerMeatDruidA << Druid
 --     #loop
@@ -4268,7 +4269,7 @@ step << Warrior
     .mob Zaal Stormshield::257196
 -- step << Alliance
 --     .isQuestAvailable 92850
---     .subzoneskip 
+--     .subzoneskip
 --     .goto 2521,55.12,50.55
 --     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
 --     .cooldown spell,1259705,>0,1
@@ -4313,7 +4314,7 @@ step
     .complete 93160,1 --8/8 Zephyrseed
 step << Alliance
     #completewith Abandoned Belongings1
-    >>击杀 |cRXP_ENEMY_影风尖啸幼兽::256092|r。 
+    >>击杀 |cRXP_ENEMY_影风尖啸幼兽::256092|r。
     *拾取它们的 |T1508517:0|t[|cRXP_LOOT_尖啸幼兽的利爪|r]。
     .complete 92741,1 --8/8 Shriekling Talons
     .mob Shadowgale Shriekling::256092
@@ -4410,17 +4411,15 @@ step
     .complete 93172,1 --10/10 Wind Hollow freed
     -- .complete 93736,1 << Horde --10/10 Wind Hollow Essence
     .mob +Wind Hollow::251676
-step
+step << Alliance
     #completewith Unnerving Silence
-    >>击杀 |cRXP_ENEMY_影风尖啸幼兽::256092|r。 
-    *拾取 |T1508517:0|t[|cRXP_LOOT_尖啸幼兽的利爪|r]。 << Alliance
-    *拾取它们的 |T132927:0|t[完好的尖啸幼兽羽毛]。 << Horde
-    .complete 92741,1 << Alliance --8/8 Shriekling Talons
-    .complete 94486,1 --20/20 Pristine Shriekling Feathers
+    >>击杀 |cRXP_ENEMY_影风尖啸幼兽::256092|r。
+    *拾取 |T1508517:0|t[|cRXP_LOOT_尖啸幼兽的利爪|r]。
+    .complete 92741,1 --8/8 Shriekling Talons
     .mob Shadowgale Shriekling::256092
 step
     #completewith Unnerving Silence
-    >>|TInterface/cursor/crosshair/interact.blp:20|t|cRXP_PICK_特别是在树周围|r点击 |cRXP_WARN_Seeds|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|t|cRXP_PICK_特别是在树周围|r点击 |cRXP_WARN_种子|r。
     .complete 93160,1 --8/8 Zephyrseed
 step
     .goto 2521,61.76,39.14
@@ -4429,14 +4428,14 @@ step
     .turnin 94484 >>交任务 Unnerving 默然
     .accept 94485 >>接受任务 贵妇之泪
     .accept 94486 >>接受任务 包扎用的羽毛 << Alliance
-    .accept 94487 >>接受任务 遭弃与不配 
+    .accept 94487 >>接受任务 遭弃与不配
 step << Alliance
     #completewith Unnerving Silence
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_树上的|r |cRXP_WARN_贵妇之泪苔藓|r。
     .complete 94485,1 --8/8 Lady's Tear Moss
 step << Alliance
     #completewith next
-    >>击杀 |cRXP_ENEMY_奥拉凯斯步兵::252665|r 和 |cRXP_ENEMY_奥拉凯斯逐风者::252664|r。 
+    >>击杀 |cRXP_ENEMY_奥拉凯斯步兵::252665|r 和 |cRXP_ENEMY_奥拉凯斯逐风者::252664|r。
     *拾取它们的战利品 |T4622283:0|t[|cRXP_LOOT_染血的传家宝|r] 和 |T1379232:0|t[|cRXP_LOOT_奥拉凯斯风石护符|r]。
     .complete 94487,1 --10/10 Bloody Heirloom
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
@@ -4459,7 +4458,7 @@ step
     .goto 2521,64.14,39.18,40,0
     .goto 2521,65.7,36.82,40,0
     .goto 2521,65.63,35.57,40,0
-    >>击杀 |cRXP_ENEMY_奥拉凯斯步兵|r 和 |cRXP_ENEMY_奥拉凯斯逐风者|r。 
+    >>击杀 |cRXP_ENEMY_奥拉凯斯步兵|r 和 |cRXP_ENEMY_奥拉凯斯逐风者|r。
     *拾取它们的 |T4622283:0|t[|cRXP_LOOT_染血的传家宝|r]、|T133856:0|t[|cRXP_LOOT_奥拉凯斯教徒的耳朵|r] 和 |T1379232:0|t[|cRXP_LOOT_奥拉凯斯风石护符|r]。 << Alliance
     *拾取它们的战利品 |T4622283:0|t[|cRXP_LOOT_染血的传家宝|r]。 << Horde
     .complete 94487,1 --10/10 Bloody Heirloom
@@ -4491,15 +4490,15 @@ step
     --@THIDDI: Not sure if worth it (Pristine Shriekling Feathers).
     #completewith ToHermit << Alliance
     #completewith ForestHollowsB << Horde
-    >>击杀 |cRXP_ENEMY_影风尖啸幼兽::256092|r。 
+    >>击杀 |cRXP_ENEMY_影风尖啸幼兽::256092|r。
     *拾取 |T1508517:0|t[|cRXP_LOOT_尖啸幼兽的利爪|r] 和 |T132927:0|t[完好的尖啸幼兽羽毛]。 << Alliance
     *拾取它们的 |T132927:0|t[完好的尖啸幼兽羽毛]。 << Horde
-    .complete 92741,1 << Alliance --8/8 Shriekling Talons 
+    .complete 92741,1 << Alliance --8/8 Shriekling Talons
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob +Shadowgale Shriekling::256092
 step << Alliance
     #completewith ToHermit
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_Seeds|r |cRXP_WARN_特别是在树周围|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|t|cRXP_PICK_特别是在树周围|r点击 |cRXP_WARN_种子|r。
     .complete 93160,1 --8/8 Zephyrseed
 step << Alliance
     #completewith ToHermit
@@ -4511,7 +4510,7 @@ step << Horde
     .complete 94485,1 --8/8 Lady's Tear Moss
 step << Horde
     #label ForestHollowsA
-    >>|TInterface/cursor/crosshair/interact.blp:20|t|cRXP_PICK_特别是在树周围|r点击 |cRXP_WARN_Seeds|r。
+    >>|TInterface/cursor/crosshair/interact.blp:20|t|cRXP_PICK_特别是在树周围|r点击 |cRXP_WARN_种子|r。
     .complete 93160,1 --8/8 Zephyrseed
 step << Horde
     #label ForestHollowsB
@@ -4523,9 +4522,9 @@ step << Horde
 -- step << Alliance
 --     --@THIDDI: Not sure if worth it (Pristine Shriekling Feathers).
 --     #label Shadowgale Shrieklings
---     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. 
+--     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
 --     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers].
---     .complete 92741,1 --8/8 Shriekling Talons 
+--     .complete 92741,1 --8/8 Shriekling Talons
 --     .complete 94486,1 --20/20 Pristine Shriekling Feathers
 --     .mob +Shadowgale Shriekling::256092
 step << Alliance
@@ -4561,7 +4560,7 @@ step
     #completewith next
     >>击杀 |cRXP_ENEMY_影风尖啸幼兽::256092|r。拾取 |T1508517:0|t[|cRXP_LOOT_尖啸幼兽的利爪|r] 和 |T132927:0|t[完好的尖啸幼兽羽毛]。 << Alliance
     >>击杀 |cRXP_ENEMY_影风尖啸幼兽::256092|r。拾取 |T132927:0|t[完好的尖啸幼兽羽毛]。 << Horde
-    .complete 92741,1 << Alliance --8/8 Shriekling Talons 
+    .complete 92741,1 << Alliance --8/8 Shriekling Talons
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob +Shadowgale Shriekling::256092
 step
@@ -4668,7 +4667,7 @@ step
     .isOnQuest 94491 << Alliance
     .isOnQuest 94896 << Horde
     .subzoneskip 16631,1
-    .hs >>炉石回到申达尔村
+    .hs >>用炉石传送回 Valanaar
     .use 6948
 step << Warrior Alliance
     .goto 2521,59.886,72.863
@@ -4689,7 +4688,7 @@ step << Warrior Alliance
     .target Seena Skybreaker::252377
     .money <0.45
     .xp <14,1
-step << Alliance 
+step << Alliance
     .goto 2521,60.64,72.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在房屋内与 |cRXP_FRIENDLY_妮雅拉·明火::257006|r 对话。
     .turnin 93317 >>交任务 捕蟹季节
@@ -4747,7 +4746,7 @@ step << Alliance Druid
     .train 8936 >>学习 |T136085:0|t[愈合]
     .target Naeluna Swiftmend::254081
     .money <0.16
-    .xp <12,1 
+    .xp <12,1
 step
     .goto 2521,65.95,74.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃拉内·漫云::259012|r 对话。
@@ -4800,7 +4799,7 @@ step << Alliance
     .target Talaanis Shadowsong::252476
 step << Alliance
     .goto 2521,66.17,76.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Talaanis Shadowsong::252476|r |cRXP_WARN_在你身边|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔拉尼斯·影歌::252476|r 对话 |cRXP_WARN_他在你身边|r。
     .turnin 94568 >>交任务 密教的真正计划
     .accept 92640 >>接受任务 非常时期
     .target Talaanis Shadowsong::252476
@@ -4816,7 +4815,7 @@ step << Alliance
     .isQuestNotComplete 92640
     .goto 2521,66.49,76.64,8,0
     .goto 2521,63.33,78.16
-    .cast 1259416 >>从山上跳下来，使用 |T132845:0|t[Walk on Air] 飞往路径点所在地区。
+    .cast 1259416 >>从山上跳下，使用 |T132845:0|t[踏空而行] 飞向路径点位置。
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 step << Alliance
@@ -4837,7 +4836,7 @@ step << Alliance
     .goto 2521,62.13,76.85,30,0
     .goto 2521,63.35,78.58,30,0
     .goto 2521,66.54,79.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Elaadrin Evengale::252475|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊拉德林·晚风::252475|r 对话。
     .complete 92640,3 --1/1 Recruit the High Order
     .skipgossipid 136547
     .skipgossipid 136546
@@ -4845,7 +4844,7 @@ step << Alliance
 step << Alliance
     .goto 2521,66.628,79.936
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊拉德林·晚风::252475|r 对话。
-    .turnin 92834 >>交任务 Avenged Tenfold
+    .turnin 92834 >>交任务 十倍奉还
     .target Elaadrin Evengale::252475
 step << Alliance
     .goto 2521,66.34,79.51
@@ -5355,7 +5354,7 @@ step << Horde
     .target Borstan::3368
 step << Horde
     .goto 1454/1,-4466.800,1954.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考吉尔德::3348|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考吉尔德::3348|r 对话
     .accept 97242 >>接受任务 耶尔玛克的混合配方
     .target Kor'geld::3348
 step << Horde
@@ -5423,7 +5422,7 @@ step << Horde
     .target Migi::268682
 step << Horde
     .goto 1454/1,-4205.800,2007.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯拉::268684|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯拉::268684|r 对话
     .accept 97326 >>接受任务 以石为座
     .target Thra::268684
 step << Horde
@@ -5494,7 +5493,7 @@ step << Horde Rogue
     .xp <14,1
 step << Horde Mage
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |r皮菲瑞多::5882|cRXP_FRIENDLY_ 对话|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Pephredo::5882|r 对话
     .train 145 >>训练你的职业技能
     .target Pephredo::5882
     .xp <12,1
@@ -5502,7 +5501,7 @@ step << Horde Mage
 step << Horde Mage
     #optional
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |r皮菲瑞多::5882|cRXP_FRIENDLY_ 对话|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Pephredo::5882|r 对话
     .train 1449 >>训练你的职业技能
     .target Pephredo::5882
     .xp <14,1

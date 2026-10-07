@@ -1870,7 +1870,7 @@ step
 step
     #label Ignition
     .goto The Barrens,56.52,7.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于淤泥沼泽的 |r |cRXP_FRIENDLY_维兹克兰克的伐木机|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Wizzlecrank's Shredder|r in The Sludge Fen
     >>|cRXP_FRIENDLY_维兹克兰克的伐木机|r |cRXP_WARN_刷新时间较长。如果竞争人数较多，可以考虑跳过此任务|r
     .accept 858 >>接受任务 点火
     .target 维兹克兰克的伐木机
@@ -2751,7 +2751,7 @@ step
     .goto The Barrens,45.93,49.08,0
     .goto The Barrens,47.43,51.37,0
     .goto The Barrens,50.10,53.34,0
-	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
+	>>击杀|cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
     >>|cRXP_WARN_使用 |T132318:0|t [|cRXP_LOOT_拉克塔曼尼之蹄|r]以开启该任务|r
     >>|cRXP_WARN_他有 4 个刷新点（已在地图上标记）|r
     >>|cRXP_WARN_如果找不到他，请跳过此步骤|r
@@ -3715,7 +3715,7 @@ step
     .goto The Barrens,45.93,49.08,80,0
     .goto The Barrens,47.43,51.37,80,0
     .goto The Barrens,50.10,53.34,80,0
-	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
+	>>击杀|cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
     >>|cRXP_WARN_使用 |T132318:0|t [|cRXP_LOOT_拉克塔曼尼之蹄|r]以开启该任务|r
     >>|cRXP_WARN_他有 4 个刷新点（已在地图上标记）|r
     >>|cRXP_WARN_如果找不到他，请跳过此步骤|r
@@ -4440,8 +4440,7 @@ step
     .subzoneskip 380,1
 step
     .goto The Barrens,44.55,59.27
-    >>击杀 |cRXP_ENEMY_刺背野猪人|r。并拾取它们的 |T134128:0|t[|cRXP_LOOT_血岩碎片|r
-    .collect 5075,1,5052,1 --Blood Shard (1)
+    >>击杀 |cRXP_ENEMY_Bristleback Quilboars|r，拾取 |T134128:0|t[|cRXP_LOOT_血岩碎片|r] Shard (1)
     .mob 刺背寻水者
     .mob 刺背织棘者
     .mob 刺背地卜师
@@ -6591,7 +6590,7 @@ step << Rogue/Druid
     .zoneskip The Barrens
 step << Rogue/Druid
     #completewith MissionProbable
-    .goto The Barrens,57.63,7.48,120 >>前往淤泥营地
+    .goto The Barrens,57.63,7.48,120 >>旅行至淤泥沼泽
 step << Druid
     .goto The Barrens,56.67,8.32
     >>拾取水中的 奇怪的锁箱|cRXP_PICK_，获取 |T133443:0|t[水性敏捷坠饰]|r
@@ -9016,7 +9015,7 @@ step
 step
     #label Ignition
     .goto The Barrens,56.52,7.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于淤泥沼泽的 |r |cRXP_FRIENDLY_维兹克兰克的伐木机|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |r|cRXP_FRIENDLY_维兹克兰克的伐木机|r 在淤泥沼泽对话
     >>|cRXP_FRIENDLY_维兹克兰克的伐木机|r |cRXP_WARN_刷新时间较长。如果竞争人数较多，可以考虑跳过此任务|r
     .accept 858 >>接受任务 点火
     .target 维兹克兰克的伐木机
@@ -9989,7 +9988,7 @@ step
     .goto The Barrens,45.93,49.08,0
     .goto The Barrens,47.43,51.37,0
     .goto The Barrens,50.10,53.34,0
-	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
+	>>击杀|cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
     >>|cRXP_WARN_使用 |T132318:0|t [|cRXP_LOOT_拉克塔曼尼之蹄|r]以开启该任务|r
     >>|cRXP_WARN_他有 4 个刷新点（已在地图上标记）|r
     >>|cRXP_WARN_如果找不到他，请跳过此步骤|r
@@ -11060,7 +11059,7 @@ step
     .goto The Barrens,45.93,49.08,80,0
     .goto The Barrens,47.43,51.37,80,0
     .goto The Barrens,50.10,53.34,80,0
-	>>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
+	>>击杀|cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_拉克塔曼尼的蹄子|r]
     >>|cRXP_WARN_使用 |T132318:0|t [|cRXP_LOOT_拉克塔曼尼之蹄|r]以开启该任务|r
     >>|cRXP_WARN_他有 4 个刷新点（已在地图上标记）|r
     >>|cRXP_WARN_如果找不到他，请跳过此步骤|r
@@ -11836,7 +11835,7 @@ step << Warlock
     .target 步兵劳格玛
 step
     .goto The Barrens,44.55,59.27
-    >>击杀 |cRXP_ENEMY_刺背野猪人|r。并拾取它们的 |T134128:0|t[|cRXP_LOOT_血岩碎片|r
+    >>击杀 |cRXP_ENEMY_Bristleback Quilboars|r，拾取 |T134128:0|t[|cRXP_LOOT_血岩碎片|r]
     .collect 5075,1,5052,1 --Blood Shard (1)
     .mob 刺背寻水者
     .mob 刺背织棘者
@@ -13249,7 +13248,7 @@ step << Rogue
     .zoneskip The Barrens
 step << Rogue
     #completewith MissionProbable
-    .goto The Barrens,57.63,7.48,120 >>前往淤泥营地
+    .goto The Barrens,57.63,7.48,120 >>旅行至淤泥沼泽
 step << Rogue
     #completewith next
     .goto The Barrens,55.70,5.89

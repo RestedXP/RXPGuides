@@ -101,7 +101,7 @@ step << Undead
 step
     #season 2
     .goto Tirisfal Glades,24.60,59.45
-    >>拾取洞穴内的 |cRXP_PICK_失落的藏宝|r 以获得 |T134419:0|t[|cRXP_FRIENDLY_鬼影缠身符文|r]
+    >>在洞穴内拾取 |cRXP_PICK_Lost Stash|r 中的战利品 |T134419:0|t[|cRXP_FRIENDLY_鬼影缠身符文|r]
     .collect 205230,1 --Rune of Haunting (1)
     .train 403919,1
 step
@@ -223,7 +223,7 @@ step
     .collect 205183,1
 step
     .train 416009,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin Halgar|r in Undercity
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与幽暗城的 |cRXP_FRIENDLY_凯伦丁·哈加尔|r 对话
     .goto Undercity,85.0,25.6
     .collect 205215,1
     .skipgossip 5675,1
@@ -405,7 +405,7 @@ step
     .goto Hillsbrad Foothills,58.2,19.6,40,0
     .goto Hillsbrad Foothills,57.5,36.4,50,0
     .goto Hillsbrad Foothills,51.1,46.4,40,0
-    >>寻找 |cRXP_FRIENDLY_吉克希尔|r。他在塔伦米尔和南海镇之间巡逻。从他那里 |cRXP_WARN_花1金币|r 购买 |T133709:0|t[爆破炸药]
+    >>寻找 |cRXP_FRIENDLY_吉克希尔|r。他在塔伦米尔和南海镇之间巡逻。从他那里购买 |T133709:0|t[Demolition Explosives] |cRXP_WARN_花费1金币|r
     .collect 211487,1
     .target 吉克希尔
 step
