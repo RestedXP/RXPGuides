@@ -4032,7 +4032,23 @@ function addon.settings:DisableTextColors()
     self:RefreshTextColors()
 end
 
---TODO: add a disclaimer if translation not found
+local zhCN = GetLocale() == "zhCN"
+local missingTranslationWarning
+
+local AnnounceMissingTranslation = function()
+    local message = missingTranslationWarning
+    if not message then return end
+    addon.comms.PrettyPrint(message)
+end
+
+addon:RegisterMessage("RXP_STEP_ACTIVATED",function(self,step)
+    if step.missingTranslation then
+        missingTranslationWarning =
+            fmt(L"Missing translation for step %d (Coming soon)", step.index)
+        addon.ScheduleTask(1.5, AnnounceMissingTranslation)
+    end
+end)
+
 local function FindUnicodeCharacter(text)
     for i = 1,#text do
         if string.byte(text:sub(i,i)) > 127 then
@@ -4061,13 +4077,16 @@ function addon.settings.ReplaceColors(element)
     end
 
     local fieldString
-    if type(element) == "table" or element and element.textReplaced then
+    if type(element) == "table" then
         element.textReplaced = element.textReplaced or {}
         for i, field in pairs({"text", "rawtext", "tooltipText", "mapTooltip","title","arrowtext"}) do
             if element.textReplaced[i] then
                 element[field] = replace(element.textReplaced[i])
             else
                 fieldString = element[field]
+                if zhCN and fieldString and element.step and not FindUnicodeCharacter(fieldString) then
+                    element.step.missingTranslation = true
+                end
                 element.textReplaced[i] = fieldString
                 element[field] = replace(fieldString)
             end

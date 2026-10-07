@@ -263,6 +263,7 @@ L["You can't do that in combat."] = "无法在战斗中执行此操作。"
 L["Development"] = "开发"
 
 -- SettingsPanel.lua
+L["Missing translation for step %d (Coming soon)"] = "该步骤 %d 暂未汉化 (很快)"
 L["Migrating %s = %s"] = "正在迁移 %s = %s"
 L["Character profile (%s) already migrated"] = "角色配置文件 (%s) 已迁移"
 L["Please restart your game client and try again"] = "请重新启动游戏客户端并重试"
