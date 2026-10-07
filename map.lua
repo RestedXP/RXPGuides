@@ -24,6 +24,20 @@ local MapPinPool = {}
 local MapLinePool = {}
 local worldMapFramePool, miniMapFramePool, lineMapFramePool
 
+function addon.SetupWorldMap()
+    _G.WorldMapFrame:HookScript("OnShow", function()
+        if addon.settings.profile.disableMapPins then return end
+
+        local hasLines = false
+        for _ in lineMapFramePool:EnumerateActive() do
+            hasLines = true
+            break
+        end
+
+        if not hasLines then addon.UpdateMap(true) end
+    end)
+end
+
 addon.arrowFrame = CreateFrame("Frame", "RXPG_ARROW", UIParent)
 local af = addon.arrowFrame
 
@@ -941,6 +955,7 @@ end
 local function addWorldMapLines()
     local lineData = generateLines(addon.currentGuide.steps, addon.settings.profile.numMapPins,
                                    addon.GetGuideProgress(), false)
+    if addon.settings.profile.disableMapPins or not _G.WorldMapFrame:IsShown() then return end
 
     if #lineData > 0 then
         local canvas = _G.WorldMapFrame:GetCanvas()
