@@ -5729,7 +5729,7 @@ step << Shaman
     #optional
     .goto Thunder Bluff,23.64,18.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r
-    .train 408443 >> Train your class spells
+    .train 943 >> Train your class spells
     .target Tigor Skychaser
     .xp <26,1
     .xp >28,1
