@@ -1977,7 +1977,7 @@ step << Hunter
     .goto 1438/1,997.200,9903.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Byancie::6094|r
     .target Byancie::6094
-    .turnin 99050 >>Turn in the Great Tree Provides
+    .turnin 99050 >>Turn in The Great Tree Provides
     .accept 99073 >>Accept Easing Suffering
 step
     .goto 1438/1,971.91,9852.35,40,0
@@ -1989,7 +1989,7 @@ step
     .target Moon Priestess Amara
 step
     #optional
-    .abandon 87288 >> Abandon Soft Saber Pelts you won't be returning to Dolnaar
+    .abandon 87288 >> Abandon Soft Saber Pelts you won't be returning to Dolanaar
 step << Rogue
     #softcore
     #completewith next

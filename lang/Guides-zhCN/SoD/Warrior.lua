@@ -1690,7 +1690,7 @@ step
     .train 427084,1
 step
     >>右键点击 |T133054:0|t|cRXP_LOOT_破损的晶体之锤|r 拾取 |T134419:0|t[|cRXP_FRIENDLY_毁灭符文|r]
-    .collect 220913,1 --Rune of the Demolition
+    .collect 220913,1 --Rune of Demolition
     .train 427084,1
 step
     .train 427084 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_毁灭符文|r] |cRXP_WARN_来学习|r |T132364:0|t[破坏能手]

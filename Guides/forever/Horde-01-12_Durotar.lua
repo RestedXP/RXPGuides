@@ -2254,9 +2254,9 @@ step
 step --center of first small island
     #label MartEgg
     .goto 1411/1,-5599.500,-716.700
-    >>Kill the |cRXP_ENEMY_Bloodtalon Martriarch|r. Loot it for the |cRXP_LOOT_Bloodtalon Martriarch Eggs|r
-    .complete 97223,1 --|1/1 Bloodtalon Martriarch Eggs
-    .mob Bloodtalon Martriarch
+    >>Kill the |cRXP_ENEMY_Bloodtalon Matriarch|r. Loot it for the |cRXP_LOOT_Bloodtalon Matriarch Eggs|r
+    .complete 97223,1 --|1/1 Bloodtalon Matriarch Eggs
+    .mob Bloodtalon Matriarch
 step
     #label MainIsland
     .goto 1411/1,-5501.95,-1167.12,150 >>Swim to the main island
@@ -2754,7 +2754,7 @@ step
     .goto 1411/1,-4198.05,911.22,30,0
     .goto 1411/1,-4165.27,903.11,20 >>Jump into Thunder Ridge << !Hunter !Warlock
     .goto 1411/1,-4165.27,903.11,20 >>|cRXP_WARN_Dismiss your|r |T136218:0|t[Imp] |cRXP_WARN_by right clicking its unit frame and clicking dismiss|r << Warlock
-    .cast 2641 |cRXP_WARN_Cast|r |T136095:0|t[Dismiss Pet] |cRXP_WARN_and then jump into Thunder Ridge|r << Hunter
+    .cast 2641 >>|cRXP_WARN_Cast|r |T136095:0|t[Dismiss Pet] |cRXP_WARN_and then jump into Thunder Ridge|r << Hunter
 step
     #softcore
     .goto 1411/1,-4190.12,868.22
@@ -4042,7 +4042,7 @@ step << Priest
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step << Priest
     .goto 1458/0,194.34,1681.63
-    >>|cRXP_WARN_Turn all your|r |T132889:0|t[Linen Cloth] |cRXP_WARN_into|r |T132890:0|t[Bolt of linen Linen Cloth]
+    >>|cRXP_WARN_Turn all your|r |T132889:0|t[Linen Cloth] |cRXP_WARN_into|r |T132890:0|t[Bolt of Linen Cloth]
     .collect 2996,30,435,1 --Bolt of Linen Cloth (30)
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3

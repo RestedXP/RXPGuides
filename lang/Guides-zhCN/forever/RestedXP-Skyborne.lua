@@ -108,19 +108,19 @@ step << Warrior
 --     .goto 2521,43.83,24.18,5,0
 --     .goto 2521,43.83,24.32,8,0
 --     .goto 2521,43.80,24.05
---     >>Climb the spiral staircase, then |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk Eye::257554|r at the top of the tower.
+--     >>Climb the spiral staircase, then |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye::257554|r at the top of the tower.
 --     .accept 94414 >>Accept The Anchors of Zephras
 --     .target Halaan Hawk-Eye::257554
 -- step
 --     .goto 2521,43.80,24.05
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk Eye::257554|r.
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye::257554|r.
 --     *Move or press ESC to cancel.
 --     .complete 94414,1 --View the Anchor Pylon
 --     .skipgossipid 137720,1
 --     .target Halaan Hawk-Eye::257554
 -- step
 --     .goto 2521,43.80,24.05
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk Eye::257554|r.
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye::257554|r.
 --     *Move or press ESC to cancel.
 --     .turnin 94414 >>Turn in The Anchors of Zephras
 --     .target Halaan Hawk-Eye::257554
@@ -2203,13 +2203,13 @@ step
     .goto 2521,42.32,62.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维和者瓦尼尔::252155|r 对话。
     .complete 93926,1 --1/1 Check in on the Western Watchtower in the Shen'dar Highlands
-    .target Piecekeeper Vaniel::252155
+    .target Peacekeeper Vaaniel::252155
 step
     .goto 2521,42.33,62.01
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_维和者瓦尼尔::252155|r
     .turnin 93926 >>交任务 西部瞭望塔
     .accept 93927 >>接受任务 最后的请求
-    .target Piecekeeper Vaniel::252155
+    .target Peacekeeper Vaaniel::252155
 step
     .goto 2521,42.38,62.07
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_沾血的便笺|r。 
@@ -3413,7 +3413,7 @@ step << Hunter Alliance
     *别卖 |T133970:0|t[多汁狼肉]、|T132832:0|t[小蛋] 或 |T133972:0|t[陆行鸟肉]。 << Alliance
     *|cRXP_WARN_之后烹饪会用到它们。|r
     .collect 2515,1000
-    .target Anteleriaa Cloudgaze::252390
+    .target Antelariaa Cloudgaze::252390
 step << Alliance
     #label Turn in The Missing Scholar
     *|cRXP_WARN_双持|r |T134520:0|t[可靠的扳手] |cRXP_WARN_和|r |T7791298:0|t[扑翼蝶拍] << Rogue

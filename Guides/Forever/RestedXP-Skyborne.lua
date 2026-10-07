@@ -108,19 +108,19 @@ step << Warrior
 --     .goto 2521,43.83,24.18,5,0
 --     .goto 2521,43.83,24.32,8,0
 --     .goto 2521,43.80,24.05
---     >>Climb the spiral staircase, then |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk Eye::257554|r at the top of the tower.
+--     >>Climb the spiral staircase, then |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye::257554|r at the top of the tower.
 --     .accept 94414 >>Accept The Anchors of Zephras
 --     .target Halaan Hawk-Eye::257554
 -- step
 --     .goto 2521,43.80,24.05
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk Eye::257554|r.
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye::257554|r.
 --     *Move or press ESC to cancel.
 --     .complete 94414,1 --View the Anchor Pylon
 --     .skipgossipid 137720,1
 --     .target Halaan Hawk-Eye::257554
 -- step
 --     .goto 2521,43.80,24.05
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk Eye::257554|r.
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye::257554|r.
 --     *Move or press ESC to cancel.
 --     .turnin 94414 >>Turn in The Anchors of Zephras
 --     .target Halaan Hawk-Eye::257554
@@ -213,7 +213,7 @@ step << Horde Shaman
 step << Horde Shaman
     .goto 2521,42.79,23.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r.
-    .train 8017 >>Train |T136086:0|t[Rockbiter]
+    .train 8017 >>Train |T136086:0|t[Rockbiter Weapon]
     .target Windshaper Boro::251374
     .money <0.0010
     .skipgossipid 136811
@@ -350,7 +350,7 @@ step << Horde Shaman
     .goto 2521,47.19,23.55,30,0
     .goto 2521,46.6,24.62,30,0
     >>Kill |cRXP_ENEMY_Al'Aketh Convert::251160|r and |cRXP_ENEMY_Roiling Winds::251143|r.
-    *Loot them for the |T1020384:0|t[Signet of Air] << Shaman
+    *Loot them for the |T1020384:0|t[Signet of Akir] << Shaman
     *|cRXP_WARN_Prioritize |cRXP_ENEMY_Roiling Winds::251143|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
     .mob +Al'Aketh Convert::251160
@@ -495,7 +495,7 @@ step << Alliance/!Shaman
     .complete 93552,1 --15/15 Windstone Cluster
 step << Alliance/!Shaman
     >>Kill |cRXP_ENEMY_Al'Aketh Convert::251160|r and |cRXP_ENEMY_Roiling Winds::251143|r.
-    *Loot them for the |T1020384:0|t[Signet of Air] << Shaman
+    *Loot them for the |T1020384:0|t[Signet of Akir] << Shaman
     *|cRXP_WARN_Prioritize |cRXP_ENEMY_Roiling Winds::251143|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
     .mob +Al'Aketh Convert::251160
@@ -2184,7 +2184,7 @@ step
     .isOnQuest 92470
     .isQuestComplete 92470
     .subzoneskip 17674,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piecekeeper Vaniel::252155|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Peacekeeper Vaaniel::252155|r.
     .complete 93926,1 --1/1 Check in on the Western Watchtower in the Shen'dar Highlands
 step
     #completewith Western Watchtower
@@ -2201,15 +2201,15 @@ step
 step
     #requires Western Watchtower
     .goto 2521,42.32,62.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piecekeeper Vaniel::252155|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Peacekeeper Vaaniel::252155|r.
     .complete 93926,1 --1/1 Check in on the Western Watchtower in the Shen'dar Highlands
-    .target Piecekeeper Vaniel::252155
+    .target Peacekeeper Vaaniel::252155
 step
     .goto 2521,42.33,62.01
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Piecekeeper Vaniel::252155|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Peacekeeper Vaaniel::252155|r
     .turnin 93926 >>Turn in The Western Watch
     .accept 93927 >>Accept A Last Request
-    .target Piecekeeper Vaniel::252155
+    .target Peacekeeper Vaaniel::252155
 step
     .goto 2521,42.38,62.07
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Bloody Note|r.
@@ -2944,7 +2944,7 @@ step
     .goto 2521,48.920,84.441,30,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_LOOT_Ripe Stormapples|r
     >>Kill |cRXP_ENEMY_Hungry Bandits::252802|r |cRXP_WARN_(stealthed)|r.
-    *Hunter tips: Spam tab to target them early, use Hunter's Mark on them so you can run away an hit them from farther away. << Hunter
+    *Hunter tips: Spam tab to target them early, use Hunter's Mark on them so you can run away and hit them from farther away. << Hunter
     .complete 92682,1 --10/10 Ripe Stormapple
     .complete 92682,2 --5/5 Hungry Bandit slain
     .mob +Hungry Bandit::252802
@@ -3039,7 +3039,7 @@ step << Horde Shaman
     .goto 2521,51.240,86.187
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Olariaan Swiftburn::268592|r.
     .turnin 97243 >>Turn in Call of Fire
-    .accept 97244 >>Accept Call to Fire
+    .accept 97244 >>Accept Call of Fire
     .target Olariaan Swiftburn::268592
 -- step << Shaman
 --     .isOnQuest 97244
@@ -3408,13 +3408,13 @@ step << Hunter
     .target Quel'ana Quickgale::252389
 step << Hunter Alliance
     .goto 2521,63.023,77.803
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anteleriaa Cloudgaze::252390|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Antelariaa Cloudgaze::252390|r.
     >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrow]
     .vendor 252390 >>Vendor trash
     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
     *|cRXP_WARN_We need them for Cooking later.|r
     .collect 2515,1000
-    .target Anteleriaa Cloudgaze::252390
+    .target Antelariaa Cloudgaze::252390
 step << Alliance
     #label Turn in The Missing Scholar
     *|cRXP_WARN_Dual Wield the|r |T134520:0|t[Trusty Wrench] |cRXP_WARN_and|r |T7791298:0|t[Flutterfly Swatter] << Rogue
@@ -5493,7 +5493,7 @@ step << Horde Rogue
     .xp <14,1
 step << Horde Mage
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo::5882|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pephredo::5882|r
     .train 145 >> Train your class spells
     .target Pephredo::5882
     .xp <12,1
@@ -5501,7 +5501,7 @@ step << Horde Mage
 step << Horde Mage
     #optional
     .goto 1454/1,-4218.64,1473.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo::5882|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pephredo::5882|r
     .train 1449 >> Train your class spells
     .target Pephredo::5882
     .xp <14,1

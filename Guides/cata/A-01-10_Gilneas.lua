@@ -1346,7 +1346,7 @@ step
     #completewith next
     .goto 179,30.27,52.03,15,0
     .goto 179,29.54,51.55,15,0
-    .goto 179,28.67,51.02,10 >>Enter Graymane Manor
+    .goto 179,28.67,51.02,10 >>Enter Greymane Manor
 step
     .goto 179,28.132,50.021
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Queen Mia Greymane|r inside
@@ -1379,7 +1379,7 @@ step
     #optional
     #completewith next
     .goto 179,29.12,51.80,20,0
-    .goto 179,29.86,52.22,15 >>Descend the tower, then exit Graymane Manor. Jump down toward the |cRXP_FRIENDLY_Stagecoach Carriage|r
+    .goto 179,29.86,52.22,15 >>Descend the tower, then exit Greymane Manor. Jump down toward the |cRXP_FRIENDLY_Stagecoach Carriage|r
 step
     .goto 179,28.90,54.22
     .isOnQuest 24438

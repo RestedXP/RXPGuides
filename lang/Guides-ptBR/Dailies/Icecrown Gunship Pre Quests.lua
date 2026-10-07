@@ -692,7 +692,7 @@ step << Horde
 step
     .goto IcecrownGlacier,68.3,61.5
 	>>Abate as Abominações Colossais na área e saqueie-as por Tripas de Abominação Geladas
-	.use 43968 >>Usar o Kit de Reanimação de Abominações com algumas Tripas na mochila para invocar uma Abominação que você pode controlar. Colete tantos inimigos quantos possível fazendo a Abominação atacá-los e ganhando agro, depois use "Rasgo na Costura" para matar todos os inimigos perto da sua Abominação (os inimigos têm que estar em combate para obter crédito deles)
+	.use 43968 >>Usar o Kit de Reanimação de Abominações com algumas Tripas na mochila para invocar uma Abominação que você pode controlar. Colete tantos inimigos quantos possível fazendo a Abominação atacá-los e ganhando aggro, depois use "Rasgo na Costura" para matar todos os inimigos perto da sua Abominação (os inimigos têm que estar em combate para obter crédito deles)
 	>>Se você ficar sem Tripas, vá e mate mais Abominações Colossais. Você pode ter apenas uma Tripa com você por vez.
 	.collect 43966,1,13288,-1,1 << Alliance --Chilled Abomination Guts (3)
     .complete 13288,1 << Alliance  --Icy Ghouls Exploded (15)

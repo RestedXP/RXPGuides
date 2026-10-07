@@ -2320,7 +2320,7 @@ step
     .goto 680,30.57,63.9,30,0
     .goto 680,30.3,65.99,30,0
     .goto 680,31.07,66,30,0
-    >>Mate os |cRXP_ENEMY_Demônios|r |cRXP_WARN_mas ignore |cRXP_ENEMY_Esmagador Almavil|r a criatura infernal mesmo se tiver agro|r.
+    >>Mate os |cRXP_ENEMY_Demônios|r |cRXP_WARN_mas ignore |cRXP_ENEMY_Esmagador Almavil|r a criatura infernal mesmo se tiver aggro|r.
     .scenario 1822,2,100
     .mob Fist of the Deceiver
     .mob Living Flame

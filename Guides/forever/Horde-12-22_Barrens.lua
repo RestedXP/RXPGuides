@@ -1690,7 +1690,7 @@ step
 step
     .goto 1413/1,-1611.500,549.000
     >>Kill |cRXP_ENEMY_Corporal Adamore|r
-    >>|cRXP_WARN_Be careful! You may agro 2-3 mobs at the same time|r
+    >>|cRXP_WARN_Be careful! You may aggro 2-3 mobs at the same time|r
     .complete 95621,1 --|1/1 Learn why the Kul Tirans are here
     .mob Corporal Adamore
 step
@@ -1708,7 +1708,7 @@ step
     .target Walton
 step
     .goto 1413/1,-1629.200,835.600
-    >>Move behind the house as you wait for the RP to finish to avoid getting agro by all mobs at once
+    >>Move behind the house as you wait for the RP to finish to avoid getting aggro by all mobs at once
     >>|cRXP_WARN_You don't actually need to assist |cRXP_FRIENDLY_Walton|r, he will survive with the help of|r |cRXP_FRIENDLY_Vrang Wildgore|r
     .complete 95508,1 --|1/1 Assist Walton
     .mob Terry Longdrink
@@ -1797,7 +1797,7 @@ step
 step
     #label Ignition
     .goto 1413/1,-3104.44,1109.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Wizzlecrank's Shredder|r in The Sludge Ven
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Wizzlecrank's Shredder|r in The Sludge Fen
     >>|cRXP_FRIENDLY_Wizzlecrank's Shredder|r |cRXP_WARN_has a long respawn timer. Consider skipping this quest if there is a lot of competition|r
     .accept 858 >>Accept Ignition
     .target Wizzlecrank's Shredder
@@ -4210,7 +4210,7 @@ step
     .subzoneskip 380,1
 step
     .goto 1413/1,-2515.7,-2076.41
-    >>Kill |cRXP_ENEMY_Bristleback Quilboars|r. Loot them for a |T134128:0|t[|cRXP_LOOT_Blood Shard|r
+    >>Kill |cRXP_ENEMY_Bristleback Quilboars|r. Loot them for a |T134128:0|t[|cRXP_LOOT_Blood Shard|r]
     .collect 5075,1,5052,1 --Blood Shard (1)
     .mob Bristleback Water Seeker
     .mob Bristleback Thornweaver
@@ -6250,7 +6250,7 @@ step << Rogue/Druid
     .zoneskip The Barrens
 step << Rogue/Druid
     #completewith MissionProbable
-    .goto 1413/1,-3216.92,1107.13,120 >> Travel toward the Sludge Ven
+    .goto 1413/1,-3216.92,1107.13,120 >> Travel toward The Sludge Fen
 step << Druid
     .goto 1413/1,-3119.64,1050.38
     >>Loot the |cRXP_PICK_Strange Lockbox|r in the water for the |T133443:0|t[Half Pendant of Aquatic Agility]

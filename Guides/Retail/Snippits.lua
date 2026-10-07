@@ -1412,10 +1412,10 @@ step
     .isInScenario 940
     .goto 714,37.12,48.22
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Minerva Ravensorrow|r. << Horde
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Dagnar Stonebrew|r. << Alliance
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Dagnar Stonebrow|r. << Alliance
     .scenario 2138,1 --Release your ally
     .target Minerva Ravensorrow << Horde
-    .target Dagnar Stonebrew << Alliance
+    .target Dagnar Stonebrow << Alliance
 step
     .isInScenario 940
     .goto 714,47.96,58.44
