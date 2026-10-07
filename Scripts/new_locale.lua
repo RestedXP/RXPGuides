@@ -339,13 +339,13 @@ L["Install BugSack or disable Targeting -> 'Only show when in range'."] = ""
 
 -- InventoryManager.lua file
 
+L["Delete Cheapest Junk Item"] = ""
 L["|c%sSorting arrows/bullets|r"] = ""
 L["|c%sInventory is full, sorting arrows/bullets|r"] = ""
 L["|c%sSet %s as useful|r"] = ""
 L["|c%sSet %s as junk|r"] = ""
 L["|c%sDeleting %sx%s|r"] = ""
 L["|c%sInventory is full, deleting %sx%s|r"] = ""
-L["Delete Cheapest Junk Item"] = ""
 L["|c%sSold junk items for|r %s"] = ""
 
 -- ItemUpgrades.lua file
@@ -441,6 +441,7 @@ L["You can't do that in combat."] = ""
 -- RXPGuides.lua file
 
 L["Development"] = ""
+L["Guide progress was saved by another character. Reset it?"] = ""
 
 -- SettingsPanel.lua file
 
@@ -451,6 +452,8 @@ L["This requires a reload to take effect, continue?"] = ""
 L["Join Discord"] = ""
 L["Import Guides"] = ""
 L["Run Guide Configurator"] = ""
+L["Reset Guide Progress"] = ""
+L["Clear guide progress for current character"] = ""
 L["Show all Enabled Frames"] = ""
 L["Toggles all addon frames on or off"] = ""
 L["Lock Frames"] = ""
@@ -468,6 +471,7 @@ L["Hide Active Item window"] = ""
 L["Vendor Treasures"] = ""
 L["Enable Inventory Manager"] = ""
 L["Enable embedded Cpt. Stadics' Vendor Treasures"] = ""
+L["Enable Inventory Manager"] = ""
 L["Show Flight Timers"] = ""
 L["Enable Group Settings"] = ""
 L["Automation"] = ""
@@ -751,6 +755,8 @@ L["Debug"] = ""
 L["Get Completed Quests"] = ""
 L["Disable step skips"] = ""
 L["Ignores any kind of condition that causes a step to auto skip"] = ""
+L["Disable Map Pins"] = ""
+L["Quest Log Size"] = ""
 L["Import Completed Quests"] = ""
 L["Hearthstone batching"] = ""
 L["Enables the automation of the innkeeper prompt, where you can set your home location in the same server tick you're teleporting away"] = ""
