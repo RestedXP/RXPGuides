@@ -2482,27 +2482,6 @@ step << NightElf
     .target Mountaineer Cobbleflint
     .isQuestComplete 224
 step << NightElf
-    .goto 1432/0,-3003.30,-5376.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grenhild Darktalon|r
-    .accept 86667 >> Accept Snowbound
-    .target Grenhild Darktalon
-step << NightElf
-    #completewith next
-    .goto 1432/0,-2619.200,-5783.300,20,0
-    .goto 1432/0,-2534.38,-5648.28,5 >>Travel to the snowy patch on the ground just outside the South Gate Pass tunnel
-step << NightElf
-    .goto 1432/0,-2534.38,-5648.28
-    .use 279380 >> |cRXP_WARN_Use the|r |T1387609:0|t[Ceramic Jar] |cRXP_WARN_while standing on the snowy patch to collect the|r |T1387609:0|t[Jar of Snow]
-    .complete 86667,1 -- Jar of Snow 1/1
-step << NightElf
-    #label Snowbound
-    .goto 1432/0,-3146.73,-4837.02
-    #arrowtext |cRXP_WARN_10 minute timer to turn in quest!|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norric Lochthane|r
-    >>|cRXP_WARN_Ensure to turn this in before the 10 minute expiry on the|r |T1387609:0|t[Jar of Snow]
-    .turnin 86667 >> Turn in Snowbound
-    .target Norric Lochthane
-step << NightElf
     #optional
     #completewith Algaz
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
@@ -2549,8 +2528,6 @@ step << NightElf
     .waypoint 1432/0,-2684.71,-5042.87,50,0
     .waypoint 1432/0,-2712.57,-5286.61,50,0
     >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for their |cRXP_LOOT_Ears|r
-    >>Kill |cRXP_ENEMY_Tunnel Rat Geomancers|r. Loot them for their |cRXP_LOOT_Fire Tar|r << Shaman 
-    >>|cRXP_ENEMY_Tunnel Rat Geomancers|r |cRXP_WARN_are only found inside the mine|r << Shaman
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .mob +Tunnel Rat Scout
     .mob +Tunnel Rat Vermin
@@ -2558,8 +2535,6 @@ step << NightElf
     .mob +Tunnel Rat Geomancer
     .mob +Tunnel Rat Digger
     .mob +Tunnel Rat Surveyor
-    .complete 94466,1 -- Fire Tar (1)
-    .mob +Tunnel Rat Geomancer
 step << NightElf
     #optional
     #label SilverMine
@@ -2615,6 +2590,8 @@ step << NightElf Warrior
     .itemcount 4777,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.7
     .xp <13,1
+step
+    #label Gear
 step << NightElf
     .goto 1432/0,-2684.71,-5042.87,0
     .goto 1432/0,-2712.57,-5286.61,0
@@ -2663,7 +2640,6 @@ step << NightElf
     .goto 1432/0,-2676.99,-4825.980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
     .turnin 307 >> Turn in Filthy Paws
-    .turnin 353 >> Turn in Stormpike's Delivery
     .target Mountaineer Stormpike
 step << NightElf
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
