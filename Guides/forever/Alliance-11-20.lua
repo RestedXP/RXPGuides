@@ -2812,7 +2812,7 @@ step << NightElf
     .accept 257 >> Accept A Hunter's Boast
     .goto Loch Modan,83.49,65.40
     .target Daryl the Youngling
-step << NightElf Rogue/NightElf Hunter/NightElf Warrior
+step << NightElf Rogue/NightElf Hunter/NightElf Warrior/NightElf Druid
     .goto Loch Modan,82.6,64.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kat|r
     .vendor >> |cRXP_BUY_Buy|r |T132539:0|t[Agile Boots] |cRXP_BUY_from her if they're up|r
