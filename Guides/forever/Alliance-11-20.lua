@@ -2765,6 +2765,12 @@ step << NightElf
     .turnin 418 >> Turn in Thelsamar Blood Sausages
     .target Vidra Hearthstove
 step << NightElf
+    .goto Loch Modan,37.17,47.94,8,0
+    .goto Loch Modan,37.24,47.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jern Hornhelm|r
+    .accept 436 >> Accept Ironband's Excavation
+    .target Jern Hornhelm
+step << NightElf
     .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
     .goto 1432/0,-3006.61,-5259.57,15,0
     .goto 1432/0,-3020.95,-5282.02,15,0
@@ -2778,12 +2784,128 @@ step << NightElf
     .target Mountaineer Kadrell
     .turnin 416 >> Turn in Rat Catching
 step << NightElf
+    #loop
+    .goto 1432/0,-3319.800,-5217.600,20,0
+    .goto 1432/0,-3251.5499,-5285.8790,20,0
+    .goto 1432/0,-3342.5748,-5484.5540,20,0
+    .goto 1432/0,-3386.7082,-5462.4790,20,0
+    .goto 1432/0,-3319.800,-5217.600,0
+    .goto 1432/0,-3251.5499,-5285.8790,0
+    .goto 1432/0,-3342.5748,-5484.5540,0
+    .goto 1432/0,-3386.7082,-5462.4790,0
+    >>Click the |cRXP_PICK_Discarded Fishing Toolbox|r on the lake floor
+    >>|cRXP_WARN_NOTE: This can spawn in one of many different locations. Swim around until you see the exclamation point on your minimap|r
+    >>|cRXP_WARN_Be careful of high level|r |cRXP_ENEMY_Young Threshadon|r
+    .accept 86614 >>Accept Silver of the Waves
+step << NightElf
+    .goto Loch Modan,64.89,66.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magmar Fellhew|r
+    .turnin 436 >> Turn in Ironband's Excavation
+    .target Magmar Fellhew
+step << NightElf
+    .goto Loch Modan,65.934,65.622
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ironband|r
+    .accept 298 >> Accept Excavation Progress Report
+    .target Prospector Ironband
+step << NightElf
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
+    .accept 257 >> Accept A Hunter's Boast
+    .goto Loch Modan,83.49,65.40
+    .target Daryl the Youngling
+step << NightElf Rogue/NightElf Hunter/NightElf Warrior
+    .goto Loch Modan,82.6,64.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kat|r
+    .vendor >> |cRXP_BUY_Buy|r |T132539:0|t[Agile Boots] |cRXP_BUY_from her if they're up|r
+    .target Kat Sampson
+step << NightElf
+    .goto Loch Modan,80.09,64.16,60,0
+    .goto Loch Modan,77.16,75.57,60,0
+    .goto Loch Modan,70.78,72.91,60,0
+    .goto Loch Modan,76.65,62.27,60,0
+    .goto Loch Modan,76.36,56.05,60,0
+    .goto Loch Modan,80.09,64.16,60,0
+    .goto Loch Modan,77.16,75.57,60,0
+    .goto Loch Modan,70.78,72.91,60,0
+    .goto Loch Modan,76.65,62.27,60,0
+    .goto Loch Modan,76.36,56.05,60,0
+    .goto Loch Modan,80.09,64.16
+    >>Kill |cRXP_ENEMY_Mountain Buzzards|r
+    >>|cRXP_WARN_You must complete this quest and return to |cRXP_FRIENDLY_Daryl the Youngling|r within 15 minutes. If you fail the quest, abandon it and pick it up again|r
+    .complete 257,1 -- Mountain Buzzard slain (6)
+    .mob Mountain Buzzard
+step << NightElf
+    #completewith next
+    .goto Loch Modan,82.92,59.37,80,0
+    .goto Loch Modan,83.28,62.97,25 >> Travel toward |cRXP_FRIENDLY_Daryl the Youngling|r
+step << NightElf
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
+    .goto Loch Modan,83.49,65.40
+    .turnin 257 >> Turn in A Hunter's Boast
+    .target Daryl the Youngling
+step << NightElf
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marek Ironheart|r
+    .accept 385 >> Accept Crocolisk Hunting
+    .accept 86758 >>Accept Twisting the Knife
+    .goto Loch Modan,81.76,61.66
+    .target Marek Ironheart
+step << NightElf
+    #completewith next
+    >>Kill |cRXP_ENEMY_Loch Crocolisks|r. Loot them for their |cRXP_LOOT_Meat|r and |cRXP_LOOT_Skin|r
+    .complete 385,1 -- Crocolisk Meat (5)
+    .complete 385,2 -- Crocolisk Skin (6)
+    .mob Loch Crocolisk
+step
+    --@TODO add a line for this
+    .goto Loch Modan,62,44
+    >>Kill |cRXP_ENEMY_Daggerfang|r, he |cRXP_WARN_might be patroling along the shore|r. Loot him for |T3736888:0|t[|cRXP_LOOT_Marek's Croc-Hunting Knife|r]
+    .complete 86758,1 --Marek's Croc Hunting Knife (1)
+    .mob Daggerfang
+step << NightElf
+    #completewith next
+    .goto Loch Modan,54.7,38.3,200 >> Travel to the island located in the middle of The Loch
+step << NightElf
+    .goto Loch Modan,58.86,38.32,80,0
+    .goto Loch Modan,54.80,40.02,60,0
+    .goto Loch Modan,54.16,35.79,60,0
+    .goto Loch Modan,54.72,38.15
+    >>Kill |cRXP_ENEMY_Loch Crocolisks|r. Loot them for their |cRXP_LOOT_Meat|r and |cRXP_LOOT_Skin|r
+    .complete 385,1 -- Crocolisk Meat (5)
+    .complete 385,2 -- Crocolisk Skin (6)
+    .mob Loch Crocolisk
+step << NightElf
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marek Ironheart|r
+    .turnin 385 >>Turn in Crocolisk Hunting
+    .turnin 86758 >>Turn in Twisting the Knife
+    .goto Loch Modan,81.76,61.66
+    .target Marek Ironheart
+step << NightElf
+    >>Jump out of the lodge and die to the mobs below
+    .deathskip >> Die and respawn at the Thelsamar graveyard
+step << NightElf
+    .goto Loch Modan,37.17,47.94,8,0
+    .goto Loch Modan,37.24,47.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jern Hornhelm|r
+    .turnin 298 >> Turn in Excavation Progress Report
+    .accept 301 >> Accept Report to Ironforge
+    .target Jern Hornhelm
+step << NightElf
+    .goto 1432/0,-3104.900,-5210.100,5,0
+    .goto 1432/0,-3086.600,-5216.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khara Deepwater::1684|r
+    .target Khara Deepwater::1684
+    .turnin 86614 >>Turn in Silver of the Waves
+step << NightElf
     #label flyIF
     .goto 1432/0,-2929.87,-5424.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .fly Ironforge >> Fly to Ironforge
     .target Thorgrum Borrelson
     .zoneskip Ironforge
+step << NightElf
+    .goto Ironforge,74.645,11.742
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Stormpike|r
+    .turnin 301 >> Turn in Report to Ironforge
+    .target Prospector Stormpike
 step << NightElf Hunter
     .goto 1455/0,-1266.100,-5006.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belia Thundergranite|r
@@ -2820,8 +2942,15 @@ step << NightElf Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bilban Tosslespanner|r
     .trainer >> Train your class spells
     .target Bilban Tosslespanner
--- step << NightElf
---     #include 13-15 Westfall@NEWestfallStart-NEWestfallEnd
+step << NightElf Druid
+    #completewith next
+	.cast 18960 >> Cast Teleport: Moonglade
+	.zoneskip Moonglade
+step << NightElf Druid
+    .goto Moonglade,52.53,40.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
+    .trainer >> Train your class spells
+    .target Loganaar
 step << NightElf
     .hs >>Hearthstone to Auberdine
     .zoneskip Darkshore
