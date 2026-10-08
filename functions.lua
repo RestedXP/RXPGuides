@@ -286,9 +286,9 @@ function addon.error(text, arg1)
     if arg1 and addon.ignoredMaps and addon.ignoredMaps[arg1] then
         return
     elseif arg1 then
-        addon.comms.PrettyPrint("%s %s: %s\n%s", L("Error parsing guide"), addon.currentGuideName, arg1, text)
+        addon.comms.PrettyDebug("%s %s: %s\n%s", L("Error parsing guide"), addon.currentGuideName, arg1, text)
     else
-        addon.comms.PrettyPrint(text)
+        addon.comms.PrettyDebug(text)
     end
 end
 
