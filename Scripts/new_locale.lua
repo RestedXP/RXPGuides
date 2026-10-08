@@ -773,6 +773,7 @@ L["|cff909090Left Click: |cffffcc00Toggle Guide|r"] = ""
 L["|cff909090Right Click: |cffffcc00Show Menu|r"] = ""
 L["Experience rate change detected, reloading guide for %.2fx"] = ""
 L["Profile changed, Reload UI for settings to take effect"] = ""
+L["Missing translation for step %d (Coming soon)"] = ""
 L["Preview"] = ""
 
 -- Talents.lua file
