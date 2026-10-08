@@ -242,16 +242,19 @@ local function PinOnLeave(self)
     if self:IsForbidden() or _G.GameTooltip:IsForbidden() then
         return
     end
+
     local lineData = self.lineData
+
     if lineData then
         local element = lineData.element
+
         for line in lineMapFramePool:EnumerateActive() do
             if line.lineData.element == element then
-                self:SetAlpha(line.lineData.lineAlpha or 1)
+                line:SetAlpha(line.lineData.lineAlpha or 1)
             end
         end
-        addon.UpdateMap()
     end
+
     _G.GameTooltip:Hide()
 end
 
