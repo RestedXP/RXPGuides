@@ -5,6 +5,11 @@ local _G = _G
 local UnitInRaid = UnitInRaid
 local fmt = string.format
 
+function addon.IsGamePadEnabled()
+    local gamePad = _G.C_GamePad
+    return gamePad and gamePad.IsEnabled and gamePad.IsEnabled() or false
+end
+
 function addon.safeCall(callback, ...)
     local args = {...}
 
