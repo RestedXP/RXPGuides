@@ -758,17 +758,6 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.5,
                         hidden = not addon.VendorTreasures
                     },
-                    enableInventoryManager = {
-                        name = L("Enable Inventory Manager"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 2.51,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.inventoryManager:Setup()
-                        end
-                    },
                     showFlightTimers = {
                         name = L("Show Flight Timers"),
                         type = "toggle",
@@ -931,6 +920,17 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 6.1,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                     },
+                    enableInventoryManager = {
+                        name = L("Enable Inventory Manager"),
+                        type = "toggle",
+                        width = optionsWidth * 3,
+                        order = 6.105,
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.inventoryManager:Setup()
+                        end
+                    },
                     showJunkIcon = {
                         name = L("Show junk item indicator"), -- TODO locale
                         desc = L("Any items marked as junk will display a gold coin icon on the top left corner of the item icon within your bags"),
@@ -988,7 +988,7 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Auto Sell Junk"), -- TODO locale
                         desc = L("Automatically sell all gray items and all other items that you set as junk"),
                         type = "toggle",
-                        width = optionsWidth * 1.5,
+                        width = optionsWidth * 3,
                         order = 6.15,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         disabled = function()
@@ -1043,7 +1043,8 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         disabled = function()
-                            return not self.profile.enableInventoryManager
+                            return not self.profile.enableInventoryManager or
+                                       not next(RXPCData.discardPile or {})
                         end,
                     },
                     talentsHeader = {
