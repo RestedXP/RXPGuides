@@ -662,13 +662,25 @@ function addon.v2:ShowSettingsMenu()
     if #menu > 0 then addon:ShowMenu(menu) end
 end
 
-function addon.v2:BuildGuideStepsSnapshot()
+function addon.v2:BuildGuideStepsSnapshot(includeRows)
     -- Translate the mutable legacy guide state into rows consumed by the V2 guide window.
     local guide = addon.currentGuide
     local profile = addon.settings and addon.settings.profile
     local currentStep = addon.GetGuideProgress()
+    local rows = {}
+
+    if not profile then return {title = "", subtitle = "", rows = rows} end
+
+    if not guide or guide.empty then
+        return {title = L("Welcome to RestedXP"), subtitle = L("Select a guide:"), rows = rows, empty = true}
+    end
+
+    local activeStepIndex, step, hidden, complete, text, rawtext
+
+    local level = addon.player.level
+
+    local skippedSteps = RXPCData and RXPCData.stepSkip or {}
     local activeSteps = addon.RXPFrame and addon.RXPFrame.activeSteps
-    local activeStepIndex
 
     if activeSteps then
         for _, activeStep in ipairs(activeSteps) do
@@ -680,18 +692,7 @@ function addon.v2:BuildGuideStepsSnapshot()
 
     activeStepIndex = activeStepIndex or currentStep
 
-    local skippedSteps = RXPCData and RXPCData.stepSkip or {}
-    local rows = {}
-    local level = addon.player.level
-    local step, hidden, complete, text, rawtext
-
-    if not profile then return {title = "", subtitle = "", rows = rows} end
-
-    if not guide or guide.empty then
-        return {title = L("Welcome to RestedXP"), subtitle = L("Select a guide:"), rows = rows, empty = true}
-    end
-
-    for index, guideStep in ipairs(guide.steps or {}) do
+    for index, guideStep in ipairs(includeRows ~= false and guide.steps or rows) do
         step = guideStep
 
         complete = step.completed or skippedSteps[index] or (not step.sticky and currentStep > index)
@@ -718,13 +719,15 @@ function addon.v2:BuildGuideStepsSnapshot()
 
         hidden = hidden or text == ""
 
-        rows[#rows + 1] = {
-            index = index,
-            text = text,
-            hidden = hidden,
-            complete = complete,
-            current = index == activeStepIndex
-        }
+        if not (profile.hideCompletedSteps and complete) then
+            rows[#rows + 1] = {
+                index = index,
+                text = text,
+                hidden = hidden,
+                complete = complete,
+                current = index == activeStepIndex
+            }
+        end
     end
 
     local guideName = addon.GetGuideName(guide) or ""
@@ -1167,10 +1170,12 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
                 addon.settings.profile.frameHeight = max(addon.settings.profile.frameHeight or 0, addon.height or 35)
             end
 
-            this.guideSteps:SetRows(snapshot.rows, nil, scrollToActive)
+            if stepListShown or emptyGuide then
+                this.guideSteps:SetRows(snapshot.rows, nil, scrollToActive)
+            end
 
             local rowsHeight = this.guideSteps.rowsHeight or 0
-            local hasRows = not snapshot.empty and rowsHeight > 0
+            local hasRows = stepListShown and not snapshot.empty and rowsHeight > 0
             local empty = not hasRows or not stepListShown
 
             this.snapshotEmpty = emptyGuide
@@ -1520,7 +1525,7 @@ function addon.v2:UpdateGuideWindow(scrollToActive)
     local window = self:GetGuideWindow()
     if not window then return end
 
-    window:SetSnapshot(self:BuildGuideStepsSnapshot(), scrollToActive)
+    window:SetSnapshot(self:BuildGuideStepsSnapshot(addon.settings:IsStepListShown()), scrollToActive)
 
     window.frame:SetShown(not addon.settings.profile.hideGuideWindow and addon.settings.profile.showEnabled ~= false)
 end
