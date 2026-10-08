@@ -965,10 +965,11 @@ function addon.SetElementComplete(self, disable, skipIfInactive)
     if element.timer and active and not element.completed and not element.textOnly and not element.tag == "countdown" then
         addon.StartTimer(element.timer,element.timerText)
     end
+    local changed = not (element.completed and element.skip)
     element.completed = true
     element.skip = true
     addon.updateSteps = true
-    addon.UpdateMap()
+    if changed then addon.UpdateMap() end
     if active and GetTime() - addon.lastStepUpdate > 1 then
         addon:QueueMessage("RXP_OBJECTIVE_COMPLETE",element,addon.currentGuide)
     end
