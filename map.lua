@@ -5,16 +5,6 @@ local _G = _G
 local HBD = LibStub("HereBeDragons-2.0")
 local HBDPins_Lib = LibStub("HereBeDragons-Pins-2.0")
 local HBDPins = {}
-setmetatable(HBDPins, {
-    __index = function(t, k)
-        if addon.settings.profile.disableMapPins then
-            return addon.functions.noop
-        else
-            return HBDPins_Lib[k]
-        end
-    end
-})
-
 
 
 addon.activeWaypoints = {}
@@ -25,6 +15,16 @@ local MapLinePool = {}
 local worldMapFramePool, miniMapFramePool, lineMapFramePool
 
 function addon.SetupWorldMap()
+    setmetatable(HBDPins, {
+        __index = function(_, k)
+            if addon.settings.profile.disableMapPins or addon.IsGamePadEnabled() then
+                return addon.functions.noop
+            end
+
+            return HBDPins_Lib[k]
+        end
+    })
+
     _G.WorldMapFrame:HookScript("OnShow", function()
         if addon.settings.profile.disableMapPins then return end
 
