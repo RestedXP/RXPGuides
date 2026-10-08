@@ -405,7 +405,7 @@ step
     .goto Hillsbrad Foothills,58.2,19.6,40,0
     .goto Hillsbrad Foothills,57.5,36.4,50,0
     .goto Hillsbrad Foothills,51.1,46.4,40,0
-    >>寻找 |cRXP_FRIENDLY_吉克希尔|r。他在塔伦米尔和南海镇之间巡逻。从他那里购买 |T133709:0|t[Demolition Explosives] |cRXP_WARN_花费1金币|r
+    >>寻找 |cRXP_FRIENDLY_吉克希尔|r。他在塔伦米尔和南海镇之间巡逻。从他那里 |cRXP_WARN_花1金币|r 购买 |T133709:0|t[爆破炸药]
     .collect 211487,1
     .target 吉克希尔
 step

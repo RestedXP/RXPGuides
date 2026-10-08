@@ -216,13 +216,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官玛克布莱德|r 对话
     .turnin 7 >>交任务 狗头人的蜡烛
     .accept 15 >>接受任务 回音山调查行动
-    .accept 3100 >>接受任务 简要的信件 << Warrior
-    .accept 3101 >>接受任务 圣洁信件 << Paladin
-    .accept 3102 >>接受任务密文信件 << Rogue
-    .accept 3103 >>接受任务 神圣信件 << Priest
-    .accept 3104 >>接受任务 雕文信件 << Mage
-    .accept 3105 >>接受任务 被污染的信件 << Warlock
-    .accept 92479 >>接受任务 潦草的信件 << Hunter
+    .accept 3100 >>接受任务 简要的信件 << Human Warrior
+    .accept 3101 >>接受任务 圣洁信件 << Human Paladin
+    .accept 3102 >>接受任务密文信件 << Human Rogue
+    .accept 3103 >>接受任务 神圣信件 << Human Priest
+    .accept 3104 >>接受任务 雕文信件 << Human Mage
+    .accept 3105 >>接受任务 被污染的信件 << Human Warlock
+    .accept 92479 >>接受任务 潦草的信件 << Human Hunter
     .target 治安官玛克布莱德
 
 step << Warlock
@@ -1447,7 +1447,7 @@ step
     .goto 1429/0,91.200,-9788.500
     >>在法戈第矿洞内击杀 |cRXP_ENEMY_Nimsy|r，拾取他的 |cRXP_LOOT_Picture 书籍: Fun with Elementals|r
     >>|cRXP_WARN_试着组队完成此步骤。|cRXP_ENEMY_狗头人|r 在洞穴中刷新地非常快|r
-    >>|cRXP_WARN_他还会召唤一个 |cRXP_ENEMY_隆鸣者|r 小怪。如果你尝试单人应对，要小心。如果你无法击杀他，跳过此步骤|r
+    >>|cRXP_WARN_他还会召唤一个 |cRXP_ENEMY_隆鸣者|r 小怪。如果你尝试独自应对，要小心。如果你无法击杀他，跳过此步骤|r
     .complete 91775,1 --|1/1 Picture Book: Fun with Elementals
     .mob Nimsy
 step << Warrior
@@ -1796,7 +1796,7 @@ step
     .goto 1429,55.203,66.171,50,0
     .goto 1429,54.236,66.888,50,0
     >>击杀 |cRXP_ENEMY_鱼人|r 和 |cRXP_ENEMY_鱼人士兵|r. 拾取 |cRXP_LOOT_水晶藻叶|r
-    >>在地上拾取 |cRXP_PICK_Junk Piles|r 以获得 |cRXP_LOOT_Shiny 垃圾|r。|cRXP_WARN_如果你因为 |cRXP_ENEMY_Murlocs|r 太多而无法拾取，跳过此目标|r
+    >>在地上拾取 |cRXP_PICK_垃圾堆|r 以获得 |cRXP_LOOT_闪亮的垃圾|r。|cRXP_WARN_如果你因为 |cRXP_ENEMY_鱼人|r 太多而无法拾取，跳过此目标|r
     .complete 99128,2 -- Murloc slain (7)
     .mob +Murloc
     .complete 99128,1 -- Murloc Streamrunners slain (4)
@@ -1848,7 +1848,7 @@ step
     .goto 1429,55.523,66.707,50,0
     .goto 1429,55.203,66.171,50,0
     .goto 1429,54.236,66.888,50,0
-    >>在地上拾取 |cRXP_PICK_Junk Piles|r 以获得 |cRXP_LOOT_Shiny 垃圾|r
+    >>在地上拾取 |cRXP_PICK_垃圾堆|r 以获得 |cRXP_LOOT_闪亮的垃圾|r
     >>|cRXP_WARN_如果你因为太多 |cRXP_ENEMY_渔人|r 而无法拾取，跳过此步骤|r
     .complete 99143,1 -- Shiny Junk (6)
 step
@@ -3121,7 +3121,7 @@ step << Rogue
     #optional
     .goto 1453/0,607.38,-8790.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_冈瑟尔·维勒|r 对话
-    >>|cRXP_BUY_从他那里购买一把|r |T132402:0|t[短柄斧] |cRXP_BUY_|r
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买一把|r |T132402:0|t[短柄斧]
     .collect 853,1 -- Hatchet (1)
     .target 冈瑟尔·维勒
     .money <0.2490
@@ -3144,7 +3144,7 @@ step << Rogue
     #ah
     .goto 1453/0,607.38,-8790.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_冈瑟尔·维勒|r 对话
-    >>|cRXP_BUY_从他那里购买一把|r |T132402:0|t[短柄斧] |cRXP_BUY_|r
+    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买一把|r |T132402:0|t[短柄斧]
     >>|cRXP_WARN_或者你也可以稍后去拍卖行看看是否有更好或更便宜的替代品|r
     >>|cRXP_WARN_务必保留 6 银币，用于之后的训练|r
     .collect 853,1 -- Hatchet (1)
@@ -4021,7 +4021,7 @@ step
     .use 268548 >>|cRXP_WARN_使用|r |T132621:0|t[|cRXP_LOOT_空火药桶|r] |cRXP_WARN_来开始任务|r
     >>|cRXP_WARN_注释：这个物品掉落率很低。如果你在完成了|r 黑铁间谍|cRXP_ENEMY_ 任务时还没有找到它，请跳过此步骤|r
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
-    .accept 95213 >>接受任务 Stolen Blasting Powder
+    .accept 95213 >>接受任务 被偷走的炸药粉
     .mob Rockjaw Ambusher
 step
     .goto 1426/0,-2009.87,-5860.22,40,0

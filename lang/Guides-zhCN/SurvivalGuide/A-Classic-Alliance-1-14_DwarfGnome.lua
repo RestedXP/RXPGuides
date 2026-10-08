@@ -417,7 +417,7 @@ RXPGuides.RegisterGuide([[
 #name 6-10级 丹莫罗
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP生存指南1-20
+#subgroup RXP 生存指南 1-20级
 #defaultfor Dwarf/Gnome
 #next 10-11 艾尔文森林（矮人/侏儒）
 step
@@ -1704,7 +1704,7 @@ RXPGuides.RegisterGuide([[
 #name 10-11 艾尔文森林（矮人/侏儒）
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP生存指南1-20
+#subgroup RXP 生存指南 1-20级
 #defaultfor Gnome/Dwarf
 #next 11-13 洛克莫丹 (矮人/侏儒)
 
@@ -2367,7 +2367,7 @@ RXPGuides.RegisterGuide([[
 #name 11-13 洛克莫丹 (矮人/侏儒)
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP生存指南1-20
+#subgroup RXP 生存指南 1-20级
 #defaultfor Gnome/Dwarf
 #next 13-15级 西部荒野
 

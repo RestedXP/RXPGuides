@@ -375,7 +375,7 @@ RXPGuides.RegisterGuide([[
 #name 6-11级 艾尔文森林
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP生存指南1-20
+#subgroup RXP 生存指南 1-20级
 #defaultfor Human
 #next 11-13级 洛克莫丹
 step
@@ -1858,7 +1858,7 @@ RXPGuides.RegisterGuide([[
 #name 11-13级 洛克莫丹
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP生存指南1-20
+#subgroup RXP 生存指南 1-20级
 #defaultfor Human
 #next 13-15级 西部荒野
 

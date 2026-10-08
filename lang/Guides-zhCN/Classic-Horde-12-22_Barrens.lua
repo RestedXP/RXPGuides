@@ -158,7 +158,7 @@ step << Orc Hunter/Troll Hunter
 step << Orc Hunter/Troll Hunter
     #optional
     #completewith DisruptTheAttacks
-    +|cRXP_WARN_装备|r |T135499:0|t[多层弯弓]
+    +|cRXP_WARN_装备上|r |T135499:0|t[多层弯弓]
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
@@ -4440,7 +4440,7 @@ step
     .subzoneskip 380,1
 step
     .goto The Barrens,44.55,59.27
-    >>击杀 |cRXP_ENEMY_Bristleback Quilboars|r，拾取 |T134128:0|t[|cRXP_LOOT_血岩碎片|r] Shard (1)
+    >>击杀 |cRXP_ENEMY_刺背野猪人|r。并拾取它们的 |T134128:0|t[|cRXP_LOOT_血岩碎片|r052,1 --Blood Shard (1)
     .mob 刺背寻水者
     .mob 刺背织棘者
     .mob 刺背地卜师
@@ -6875,7 +6875,7 @@ step << Orc Hunter/Troll Hunter
 step << Orc Hunter/Troll Hunter
     #optional
     #completewith DisruptTheAttacks
-    +|cRXP_WARN_装备|r |T135499:0|t[多层弯弓]
+    +|cRXP_WARN_装备上|r |T135499:0|t[多层弯弓]
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
@@ -7240,7 +7240,7 @@ step << Orc Hunter/Troll Hunter
 step << Orc Hunter/Troll Hunter
     #optional
     #completewith KreenigSnarlsnout
-    +|cRXP_WARN_装备|r |T135499:0|t[多层弯弓]
+    +|cRXP_WARN_装备上|r |T135499:0|t[多层弯弓]
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7

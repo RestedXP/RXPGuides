@@ -15,7 +15,7 @@ RXPGuides.RegisterGuide([[
 step << !Human Mage
     #season 2
     #completewith next
-    +在探索赛季中，作为法师你不应该在自己种族以外的新手区域开始游戏，因为你将无法在这里获得你的第一个符文（|T133816:0|t[刻印手套 - 冰枪术]）
+    +在探索赛季中，法师不应在种族初始区域之外开始游戏，因为你将无法在此处获得第一个符文（|T133816:0|t|T133816:0|t[铭刻手套 - 冰枪术]）
 step
     #completewith next
     +你已选择高级指南。这是专为游戏中升级最快的职业（联盟法师）量身定制的最速指南。因此，本指南中会使用大量小众机制，并包含极高难度的 AoE 拉怪操作。在学习过程中请保持耐心与毅力！祝你好运！
@@ -1035,10 +1035,10 @@ step
     .goto 1453/0,514.05,-8608.26,15,0
     .goto 1453/0,507.6,-8541.66,15,0
     .goto 1453/0,683.43,-8397.08,12,0
-    .goto 1453/0,685.18,-8387.13,12 >>前往|cRXP_FRIENDLY_格瑞曼德|r
+    .goto 1453/0,685.18,-8387.13,12 >>前往 |cRXP_FRIENDLY_格瑞曼德|r
 step
     .goto 1453/0,685.18,-8387.13
-    >>与|cRXP_FRIENDLY_格瑞曼德|r 对话
+    >>与 |cRXP_FRIENDLY_格瑞曼德|r 对话
     .turnin 1097 >>交任务 艾尔默的任务
     .accept 353 >>接受任务 雷矛的包裹
     .target 格瑞曼德·艾尔默
@@ -1446,7 +1446,7 @@ RXPGuides.RegisterGuide([[
 step << !Gnome Mage
     #season 2
     #completewith next
-    +在探索赛季中，作为法师你不应该在自己种族以外的新手区域开始游戏，因为你将无法在这里获得你的第一个符文（|T133816:0|t[刻印手套 - 冰枪术]）
+    +在探索赛季中，法师不应在种族初始区域之外开始游戏，因为你将无法在此处获得第一个符文（|T133816:0|t|T133816:0|t[铭刻手套 - 冰枪术]）
 step
     #completewith next
     +你已选择高级指南。这是专为游戏中升级最快的职业（联盟法师）量身定制的最速指南。因此，本指南中会使用大量小众机制，并包含极高难度的 AoE 拉怪操作。在学习过程中请保持耐心与毅力！祝你好运！
@@ -3429,7 +3429,7 @@ step
     #label Bones
     .goto 1439/1,558.78,6111.57
     >>拾取 |cRXP_LOOT_搁浅的海洋生物|r
-    >>|cRXP_WARN_小心附近的|cRXP_ENEMY_灰雾海岸行者|r拥有|r |T132307:0|t|T132307:0|t[移动速度提升]
+    >>|cRXP_WARN_小心附近的|cRXP_ENEMY_灰雾海岸行者|r拥有|r |T132307:0|t[移动速度提升]
     >>|cRXP_WARN_该操作有 5 秒施法时间|r
     .complete 3524,1 --Sea Creature Bones (1)
 step
@@ -3881,7 +3881,7 @@ step
     #label Bones
     .goto 1439/1,558.78,6111.57
     >>拾取 |cRXP_LOOT_搁浅的海洋生物|r
-    >>|cRXP_WARN_小心附近的|cRXP_ENEMY_灰雾海岸行者|r拥有|r |T132307:0|t|T132307:0|t[移动速度提升]
+    >>|cRXP_WARN_小心附近的|cRXP_ENEMY_灰雾海岸行者|r拥有|r |T132307:0|t[移动速度提升]
     >>|cRXP_WARN_该操作有 5 秒施法时间|r
     .complete 3524,1 --Sea Creature Bones (1)
 step
@@ -4803,7 +4803,7 @@ step
     .goto 1453/0,637.59,-8889.81,10 >>进入 暴风城银行
 step
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 对话
+    >>与|cRXP_FRIENDLY_牛顿|r 交谈
     .bankdeposit 769,4371,730,7207,1941,1711,1478,1712,3012,1180,1181,3013,6889 >>将以下物品存入银行：
     >>|T133970:0|t[大块野猪肉]
     >>|T133024:0|t[青铜管]
@@ -5554,7 +5554,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith JenneaT
-    +|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
+    +|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务.这些布料在升级过程中会自然获得|r
 step << skip
     #completewith next
     .goto 1453/0,661.38,-8858.16,12,0
@@ -5572,16 +5572,16 @@ step << skip
 step
     #sticky
     #label Bank2
-    >>与|cRXP_FRIENDLY_牛顿|r 对话
+    >>与|cRXP_FRIENDLY_牛顿|r 交谈
     .bankdeposit 17056,5354,2592,6889 >>将以下物品存入银行：
-    >>|T132917:0|t|T132917:0|t[轻羽毛]
+    >>|T132917:0|t[轻羽毛]
     >>|T133469:0|t|T133469:0|t[写给德尔格伦的信]
     >>|T132911:0|t|T132911:0|t[毛料]
     >>|T132832:0|t[小蛋]
     .target 牛顿·伯恩赛德
 step
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 对话
+    >>与|cRXP_FRIENDLY_牛顿|r 交谈
     .bankwithdraw 730,7207 >>从你的银行中取出以下物品： << Gnome
     .bankwithdraw 730,16115 >>从你的银行中取出以下物品： << Human
     >>|T133884:0|t[鱼人眼睛]
@@ -6233,7 +6233,7 @@ step
     #sticky
     #label Bank4
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 对话
+    >>与|cRXP_FRIENDLY_牛顿|r 交谈
     .bankwithdraw 769,5354,6889 >>从你的银行中取出以下物品：
     >>|T133970:0|t[大块野猪肉]
     >>|T133469:0|t|T133469:0|t[写给德尔格伦的信]
@@ -6241,12 +6241,12 @@ step
 step
     #label Bank3
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 对话
-    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
+    >>与|cRXP_FRIENDLY_牛顿|r 交谈
+    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务.这些布料在升级过程中会自然获得|r
     .bankdeposit 2998,4371,1711,1478,1712,3012,1180,1181,3013,17056,2592,2998,1941 >>将以下物品存入银行：
     >>|T133024:0|t[青铜管]
     >>|T134943:0|t|T134943:0|t[卷轴]
-    >>|T132917:0|t|T132917:0|t[轻羽毛]
+    >>|T132917:0|t[轻羽毛]
     >>|T132911:0|t|T132911:0|t[毛料]
     >>|T134377:0|t|T134377:0|t[简易罗盘]
     >>|T132620:0|t[一桶葡萄酒]
@@ -6405,7 +6405,7 @@ step
 step
     #completewith Therylune1
     >>AOE击杀 |cRXP_ENEMY_暮光信徒|r 和 |cRXP_ENEMY_暮光暴徒|r，拾取它们掉落的 |T133743:0|t[|cRXP_LOOT_书籍：地下的力量|r]
-    >>|cRXP_WARN_使用 |T133743:0|t[|cRXP_LOOT_书籍：下层的力量|r] 来开始任务|r
+    >>|cRXP_WARN_使用 |T133743:0|t[|cRXP_LOOT_书籍：下层的力量|r] 来开启任务|r
     .collect 5352,1,968,1 --Book: The Powers Below (1)
     .accept 968 >>接受任务 深渊之神
     .mob 暮光信徒
@@ -6744,7 +6744,7 @@ step
 step
     #completewith Therylune2
     >>AOE击杀 |cRXP_ENEMY_暮光信徒|r 和 |cRXP_ENEMY_暮光暴徒|r，拾取它们掉落的 |T133743:0|t[|cRXP_LOOT_书籍：地下的力量|r]
-    >>|cRXP_WARN_使用 |T133743:0|t[|cRXP_LOOT_书籍：下层的力量|r] 来开始任务|r
+    >>|cRXP_WARN_使用 |T133743:0|t[|cRXP_LOOT_书籍：下层的力量|r] 来开启任务|r
     .collect 5352,1,968,1 --Book: The Powers Below (1)
     .accept 968 >>接受任务 深渊之神
     .mob 暮光信徒
@@ -7058,7 +7058,7 @@ RXPGuides.RegisterGuide([[
 #version 2
 #group RestedXP 联盟法师 A怪进阶攻略
 #defaultfor Human Mage/Gnome Mage
-#next 22-26 湿地 1法师AOE进阶攻略
+#next 22-26 湿地 1法师AOE 进阶攻略
 
 step
     #completewith next
@@ -7076,7 +7076,7 @@ step
     #sticky
     #label Bank1
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 对话
+    >>与|cRXP_FRIENDLY_牛顿|r 交谈
     .bankwithdraw 4371,1941,1711,1478,1712,3012,1180,1181,3013,2998 >>从你的银行中取出以下物品：
     >>|T133024:0|t[青铜管]
     >>|T134943:0|t|T134943:0|t[卷轴]
@@ -7086,13 +7086,13 @@ step
 step
     #label Bank
     .goto 1453/0,614.33,-8932.92
-    >>与|cRXP_FRIENDLY_牛顿|r 对话
-    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
+    >>与|cRXP_FRIENDLY_牛顿|r 交谈
+    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务.这些布料在升级过程中会自然获得|r
     .bankdeposit 17056,2592,1015,4654 >>将以下物品存入银行：
-    >>|T132917:0|t|T132917:0|t[轻羽毛]
+    >>|T132917:0|t[轻羽毛]
     >>|T132911:0|t|T132911:0|t[毛料]
     >>|T133970:0|t[狼肋排]
-    >>|T134431:0|t[神秘的化石]
+    >>|T134431:0|t|T134431:0|t[神秘的化石]
     .target 牛顿·伯恩赛德
 step
     #completewith next
@@ -7224,10 +7224,10 @@ step
     .goto 1453/0,405.03,-8486.89,20,0
     .goto 1453/0,442.94,-8427.47,20,0
     .goto 1453/0,435.41,-8381.66,20,0
-    .goto 1453/0,383.66,-8345.63,12 >>前往|cRXP_FRIENDLY_米尔顿|r
+    .goto 1453/0,383.66,-8345.63,12 >>前往 |cRXP_FRIENDLY_米尔顿|r
 step
     .goto 1453/0,383.66,-8345.63
-    >>与|cRXP_FRIENDLY_米尔顿|r 对话
+    >>与 |cRXP_FRIENDLY_米尔顿|r 对话
     .turnin 343 >>交任务 关于坚韧的演讲
     .accept 344 >>接受任务 帕克斯顿修士
     .target 米尔顿·西弗
@@ -7380,7 +7380,7 @@ step
     .isQuestTurnedIn 174
 step
     .goto 1431/0,-1366.09,-10779.03
-    >>与|cRXP_FRIENDLY_玛丽|r 对话
+    >>与|cRXP_FRIENDLY_玛丽|r交谈
     .turnin 175 >>交任务 眺望群星
     .accept 177 >>接受任务眺望群星
     .target 盲眼玛丽
@@ -7933,7 +7933,7 @@ step
     .target Brother Paxton
 step
     #completewith CharysEnd
-    .cast 3561 >>施放|T135763:0|t[传送：暴风城]
+    .cast 3561 >>施放 |T135763:0|t[传送：暴风城]
     .zoneskip Stormwind City
 step
     #completewith CharysEnd
@@ -8047,9 +8047,9 @@ step
 step
     .goto 1455/0,-997.66,-4886.49
     >>与 |cRXP_FRIENDLY_拜雷|r 对话
-    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
+    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务.这些布料在升级过程中会自然获得|r
     .bankdeposit 17056,2592,1015,1083,2665,1922,1284 >>将以下物品存入银行：
-    >>|T132917:0|t|T132917:0|t[轻羽毛]
+    >>|T132917:0|t[轻羽毛]
     >>|T132911:0|t|T132911:0|t[毛料]
     >>|T133970:0|t[狼肋排]
     >>|T133277:0|t|T133277:0|t[阿祖拉的铭文饰品]
@@ -8061,7 +8061,7 @@ step
     #label BankDeposit
     .goto 1455/0,-997.66,-4886.49
     .bankwithdraw 4654 >>从你的银行中取出以下物品：
-    >>|T134431:0|t[神秘的化石]
+    >>|T134431:0|t|T134431:0|t[神秘的化石]
     .target 拜雷·石衣
 step
     .goto 1455/0,-915.2,-4606.38

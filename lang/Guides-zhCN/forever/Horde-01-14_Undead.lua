@@ -23,7 +23,7 @@ step
     #completewith next
     .goto 1420/0,1675.90,1645.00,8,0
     .goto 1420/0,1665.51,1645.00,8,0
-    .goto 1420/0,1667.77,1679.04,10 >>从地穴跑出来，朝 |cRXP_FRIENDLY_摩尔多|r 方向前进
+    .goto 1420/0,1667.77,1679.04,10 >>跑出地穴，朝 |cRXP_FRIENDLY_摩尔多|r 的方向前进
 step
     .goto 1420/0,1667.77,1679.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫多|r 对话
@@ -809,7 +809,7 @@ step
     --too many .mobs, will cause clutter
 step << Rogue
     .goto 1420/0,270.12,2253.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_温特斯夫人|r |cRXP_BUY_对话，并|r|cRXP_BUY_从她那里购买一把|r |T135421:0|t[增重飞斧]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_温特斯夫人|r |cRXP_BUY_对话并|r|cRXP_BUY_从她那里购买一把|r |T135421:0|t[增重飞斧]
     .collect 3131,200,786,1 --Weighted Throwing Axe (200)
     .target 温特斯夫人
     .itemStat 18,QUALITY,<7
@@ -1111,7 +1111,7 @@ step
     .goto 1420/0,1587.700,2439.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在塔顶与 |cRXP_FRIENDLY_巴雷斯·晨石|r 对话
     >>|cRXP_WARN_这将开启一个护送任务|r
-    >>|cRXP_WARN_小心！在塔顶你很容易同时引到3个 |cRXP_ENEMY_Scarlet Warriors|r|r
+    >>|cRXP_WARN_小心！在塔顶你可以轻易同时激怒3个 |cRXP_ENEMY_血色战士|r|r
     .accept 99144,1 >>接受任务 寻求庇护
     .target Bareth Dawnstone
 step
@@ -2126,7 +2126,7 @@ step
     .zoneskip Undercity
 step << Rogue
     .goto 1458/0,323.57,1668.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与战争军需区的|r|cRXP_FRIENDLY_阿基巴德|r交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与战争军需区的|r|cRXP_FRIENDLY_阿基巴德|r交谈
     .train 201 >>学习单手剑
     .target 阿基巴德
 step << Warrior/Rogue
@@ -2696,7 +2696,7 @@ step
 step
     #requires ShadowValeCrypt
     #completewith GlowingBones
-    >>拾取地上的战利品 |cRXP_PICK_Lumber Piles|r << Paladin
+    >>拾取地上的|cRXP_PICK_木材堆|r << Paladin
     >>拾取地上和墙上的 |cRXP_PICK_低语饮剂瓶|r
     .complete 91316,1 << Paladin--|12/12 Sturdy Lumber
     .complete 95314,1 --|8/8 Bottle of Whispering Elixir
@@ -2724,7 +2724,7 @@ step
 step
     #requires ShadowValeCrypt
     .goto 1420/0,2647.800,1815.500
-    >>在地上拾取 |cRXP_PICK_Lumber Piles|r << Paladin
+    >>拾取地上的|cRXP_PICK_木材堆|r << Paladin
     >>拾取地上和墙上的 |cRXP_PICK_低语饮剂瓶|r
     .complete 91316,1 << Paladin--|12/12 Sturdy Lumber
     .complete 95314,1 --|8/8 Bottle of Whispering Elixir
@@ -2918,7 +2918,7 @@ step
     .goto 1458/0,224.300,1648.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师凯恩|r 对话
     >>|cRXP_BUY_从拍卖行|r |cRXP_BUY_购买三个|r |T133884:0|t[鱼人的眼球]
-    >>|cRXP_WARN_如果你愿意的话可以跳过，这只是个小捷径|r
+    >>|cRXP_WARN_如果你愿意，可以跳过这一步，这只能节省一点点时间|r
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .target Auctioneer Cain
 step << Mage
@@ -3001,7 +3001,7 @@ step << Priest
 step << Priest
     #optional
     .goto 1458/0,194.34,1681.63
-    >>|cRXP_WARN_将你所有的|r |T132889:0|t[亚麻布] |cRXP_WARN_全部转成|r |T132890:0|t[Bolt of 亚麻布]
+    >>|cRXP_WARN_将你所有的|r |T132889:0|t[亚麻布] |cRXP_WARN_转化为|r |T132890:0|t[亚麻布卷]
     .collect 2996,30,435,1 --Bolt of Linen Cloth (30)
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
@@ -3276,7 +3276,7 @@ step
     .unitscan Gorefang
 step
     .goto 1421/0,715.000,1335.400
-    >>杀死 |cRXP_ENEMY_Vile Fin Murlocs|r。拾取他们的 |T133884:0|t[|cRXP_LOOT_Murloc 眼睛|r]
+    >>击杀 |cRXP_ENEMY_邪鳍鱼人|r。拾取它们的 |T133884:0|t[|cRXP_LOOT_鱼人的眼珠|r]
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .mob Vile Vin Shredder
     .mob Vile Vin Tidehunter
@@ -3362,7 +3362,7 @@ step << Undead
 step
     #label BorderCrossings
     .goto 1421/0,1602.84,520.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_爱思特|r 对话
     .accept 477 >>接受任务 越境
     .target Shadow Priest Allister
 step
@@ -3746,7 +3746,7 @@ step
     .goto 1421/0,1593.6,554.23
 step
     .goto 1421/0,1602.84,520.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_爱思特|r 对话
     .turnin 482 >>交任务 达拉然的意图
     .target Shadow Priest Allister
 step

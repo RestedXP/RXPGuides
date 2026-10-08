@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP魔兽世界无限练级指南（部落版）
 #subgroup 法师A怪快速升级指南
 #defaultfor Horde Mage
-#next 17-21级 石爪山脉/荒芜之地 AoE指南
+#next 17-21级 石爪山脉/荒芜之地 AoE
 
 step << Mage
 	#era/som
@@ -708,7 +708,7 @@ step
 RXPGuides.RegisterGuide([[
 #forever
 << Horde Mage
-#name 17-21级 石爪山脉/荒芜之地 AoE指南
+#name 17-21级 石爪山脉/荒芜之地 AoE
 #version 1
 #group RestedXP魔兽世界无限练级指南（部落版）
 #subgroup 法师A怪快速升级指南

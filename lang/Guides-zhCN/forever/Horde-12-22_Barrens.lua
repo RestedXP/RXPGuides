@@ -158,7 +158,7 @@ step << Orc Hunter/Troll Hunter/Skyborne Hunter
 step << Orc Hunter/Troll Hunter/Skyborne Hunter
     #optional
     #completewith DisruptTheAttacks
-    +|cRXP_WARN_装备|r |T135499:0|t[多层弯弓]
+    +|cRXP_WARN_装备上|r |T135499:0|t[多层弯弓]
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
@@ -1693,7 +1693,7 @@ step
 step
     .goto 1413/1,-1611.500,549.000
     >>击杀 |cRXP_ENEMY_阿达摩尔下士|r
-    >>|cRXP_WARN_小心！你可能会同时吸引2-3个小怪|r
+    >>|cRXP_WARN_小心!你可能同时仇恨2到3个小怪|r
     .complete 95621,1 --|1/1 Learn why the Kul Tirans are here
     .mob Corporal Adamore
     .isQuestTurnedIn 95494
@@ -1713,7 +1713,7 @@ step
     .isQuestTurnedIn 95494
 step
     .goto 1413/1,-1629.200,835.600
-    >>在房子后面移动，等待剧情演出完成以避免被所有小怪同时吸引
+    >>在房子后面等待剧情演出结束，以免同时引导所有小怪
     >>|cRXP_WARN_你实际上不需要协助 |cRXP_FRIENDLY_沃尔顿|r，他会在 |r弗朗恩·凝血|cRXP_FRIENDLY_ 的帮助下活下来|r
     .complete 95508,1 --|1/1 Assist Walton
     .mob Terry Longdrink
@@ -1804,7 +1804,7 @@ step
 step
     #label Ignition
     .goto 1413/1,-3104.44,1109.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |r|cRXP_FRIENDLY_维兹克兰克的伐木机|r 在淤泥沼泽对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于淤泥沼泽的 |r |cRXP_FRIENDLY_维兹克兰克的伐木机|r 对话
     >>|cRXP_FRIENDLY_维兹克兰克的伐木机|r |cRXP_WARN_刷新时间较长。如果竞争人数较多，可以考虑跳过此任务|r
     .accept 858 >>接受任务 点火
     .target 维兹克兰克的伐木机
@@ -4556,7 +4556,7 @@ step
     #label DeathDUPpickup
 step << Shaman
     .goto 1456/1,269.92,-980.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tigor|r |cRXP_WARN_在外面|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_提戈尔|r |cRXP_WARN_在外面|r 对话
     .train 2645 >>训练你的职业技能
     .target 提戈尔·逐星
     .xp <20,1
@@ -4564,7 +4564,7 @@ step << Shaman
 step << Shaman
     #optional
     .goto 1456/1,269.92,-980.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Tigor|r |cRXP_WARN_在外面|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_提戈尔|r |cRXP_WARN_在外面|r 对话
     .train 8498 >>训练你的职业技能
     .target 提戈尔·逐星
     .xp <22,1

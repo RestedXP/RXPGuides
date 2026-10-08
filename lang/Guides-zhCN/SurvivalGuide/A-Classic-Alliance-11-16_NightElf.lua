@@ -540,7 +540,7 @@ RXPGuides.RegisterGuide([[
 #name 13-13级 洛克莫丹（暗夜精灵）
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP生存指南1-20
+#subgroup RXP 生存指南 1-20级
 #next 13-15级 西部荒野
 #defaultfor NightElf
 

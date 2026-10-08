@@ -4569,7 +4569,7 @@ step << Rogue
     #xprate >1.59
     .goto Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_葛利·硬骨|r 对话
-    .turnin 968 >>交任务 深渊之神
+    .turnin 968 >>交任务深渊之神
     .target 葛利·硬骨
     .isOnQuest 968
     .zoneskip Darkshore << Warrior/Paladin
@@ -4702,10 +4702,10 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_"剃刀"雷吉克|r 和 |cRXP_FRIENDLY_马迪亚斯·肖尔|r 对话
-    .accept 2281 >>接受任务 赤脊山的联络员
+    .accept 2281 >>接受任务赤脊山的联络员
     .goto StormwindClassic,75.76,60.35
     .target +Renzik "The Shiv"
-    .accept 2360 >>接受任务 马迪亚斯和迪菲亚盗贼
+    .accept 2360 >>接受任务马迪亚斯和迪菲亚盗贼
     .goto StormwindClassic,75.78,59.84
     .target +Master Mathias Shaw
     .dungeon !DM
@@ -4925,7 +4925,7 @@ step << Rogue
     #xprate >1.59
     .goto Redridge Mountains,28.07,52.02
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卢修斯|r 对话
-    .turnin 2282 >>交任务 奥瑟尔伐木场
+    .turnin 2282 >>交任务奥瑟尔伐木场
     .target Lucius
     .dungeon !DM
 step << Rogue
@@ -5147,7 +5147,7 @@ step << Rogue
     >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备上你的主武器|r << Rogue !sod
     .turnin 135 >>交任务 迪菲亚兄弟会
 --  .accept 141 >> Accept The Defias Brotherhood
-    .turnin 2359 >>交任务 克拉文之塔
+    .turnin 2359 >>交任务克拉文之塔
     .target 马迪亚斯·肖尔大师
     .dungeon !DM
 step << Rogue
@@ -5254,7 +5254,7 @@ step << NightElf Rogue
     #xprate >1.59
     #optional
     .goto Ironforge,50.826,5.613
-    >>|cRXP_WARN_使用 |T133743:0|t[|cRXP_LOOT_书籍：下层的力量|r] 来开始任务|r
+    >>|cRXP_WARN_使用 |T133743:0|t[|cRXP_LOOT_书籍：下层的力量|r] 来开启任务|r
     .accept 968 >>接受任务 深渊之神
     .use 5352
     .itemcount 5352,1
@@ -5265,7 +5265,7 @@ step << NightElf Rogue
     #xprate >1.59
     .goto Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_葛利·硬骨|r 对话
-    .turnin 968 >>交任务 深渊之神
+    .turnin 968 >>交任务深渊之神
     .target 葛利·硬骨
     .zoneskip Ironforge,1
     .zoneskip Wetlands
@@ -5350,7 +5350,7 @@ step << NightElf
     .goto Ironforge,17.089,83.373,-1
     .zone Ironforge >>使用角色脱困自助功能直接跳转到铁炉堡。你需要先在指定位置下线，然后用另一个角色进入帮助菜单 (或者把下面的脱困链接粘贴到浏览器中)，向下滚动找到自助服务。选择你的角色并点击移动。如果无法成功脱困，请跳过此步骤，沿着山脉游泳前往西部荒野
     .link https://www.youtube.com/watch?v=oVoxsr4zcg4 >>https://www.youtube.com/watch?v=oVoxsr4zcg4 >> 点击此处查看参考视频
-    .link https://us.battle.net/support/en/help/product/wow/197/834/solution >>https://us.battle.net/support/en/help/product/wow/197/834/solution >> 点击此处前往美服角色卡死链接
+    .link https://us.battle.net/support/en/help/product/wow/197/834/solution >>https://us.battle.net/support/en/help/product/wow/197/834/solution >> 点击此处前往美服角色卡死连接
     .subzoneskip 809 --IF Gates
     .subzoneskip 2257 --Deeprun Tram
     .zoneskip Elwynn Forest
@@ -5524,7 +5524,7 @@ step
     #xprate >1.59 << !Hunter
     #optional
     .goto Ironforge,50.826,5.613
-    >>|cRXP_WARN_使用 |T133743:0|t[|cRXP_LOOT_书籍：下层的力量|r] 来开始任务|r
+    >>|cRXP_WARN_使用 |T133743:0|t[|cRXP_LOOT_书籍：下层的力量|r] 来开启任务|r
     .accept 968 >>接受任务 深渊之神
     .use 5352
     .itemcount 5352,1
@@ -5538,7 +5538,7 @@ step
     #optional << NightElf
     .goto Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_葛利·硬骨|r 对话
-    .turnin 968 >>交任务 深渊之神
+    .turnin 968 >>交任务深渊之神
     .target 葛利·硬骨
     .zoneskip Wetlands << NightElf
     .zoneskip Elwynn Forest
@@ -5842,10 +5842,10 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_"剃刀"雷吉克|r 和 |cRXP_FRIENDLY_马迪亚斯·肖尔|r 对话
-    .accept 2281 >>接受任务 赤脊山的联络员
+    .accept 2281 >>接受任务赤脊山的联络员
     .goto StormwindClassic,75.76,60.35
     .target +Renzik "The Shiv"
-    .accept 2360 >>接受任务 马迪亚斯和迪菲亚盗贼
+    .accept 2360 >>接受任务马迪亚斯和迪菲亚盗贼
     .goto StormwindClassic,75.78,59.84
     .target +Master Mathias Shaw
     .dungeon DM
@@ -6281,7 +6281,7 @@ step << Rogue
     #xprate >1.59
     .goto Redridge Mountains,28.07,52.02
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
-    .turnin 2282 >>交任务 奥瑟尔伐木场
+    .turnin 2282 >>交任务奥瑟尔伐木场
     .target Lucius
     .dungeon DM
 step << Rogue
@@ -6497,7 +6497,7 @@ step
     >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备上你的主武器|r << Rogue
     .turnin 135 >>交任务 迪菲亚兄弟会
     .accept 141 >>接受任务 迪菲亚兄弟会
-    .turnin 2359 >>交任务 克拉文之塔 << Rogue
+    .turnin 2359 >>交任务克拉文之塔 << Rogue
     .target 马迪亚斯·肖尔大师
     .dungeon DM
 step
@@ -7248,7 +7248,7 @@ step << NightElf
     #xprate >1.59 << !Hunter
     #optional
     .goto Ironforge,50.826,5.613
-    >>|cRXP_WARN_使用 |T133743:0|t[|cRXP_LOOT_书籍：下层的力量|r] 来开始任务|r
+    >>|cRXP_WARN_使用 |T133743:0|t[|cRXP_LOOT_书籍：下层的力量|r] 来开启任务|r
     .accept 968 >>接受任务 深渊之神
     .use 5352
     .itemcount 5352,1
@@ -7258,7 +7258,7 @@ step << NightElf
     #xprate >1.59 << !Hunter
     .goto Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_葛利·硬骨|r 对话
-    .turnin 968 >>交任务 深渊之神
+    .turnin 968 >>交任务深渊之神
     .target 葛利·硬骨
     .zoneskip Ironforge,1
     .isOnQuest 968

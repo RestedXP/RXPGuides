@@ -396,7 +396,7 @@ step << !NightElf
     .goto Wetlands,10.496,60.201
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_萨莫尔·菲斯蒂沃斯|r 对话
     .vendor >>|cRXP_BUY_尽可能多地购买|r |T134831:0|t[治疗药水] |cRXP_BUY_（如果有售）|r
-    >>|cRXP_WARN_这是限量供应物品，如果 |cRXP_FRIENDLY_萨莫尔·菲斯蒂沃斯|r 没有库存，请跳过此步骤|r
+    >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_萨莫尔·菲斯蒂沃斯|r 没有库存，请跳过此步骤|r
     .target 萨莫尔·菲斯蒂沃斯
 step << !NightElf
     .goto Wetlands,9.49,59.69
@@ -475,7 +475,7 @@ step << Druid
     >>|cRXP_WARN_这样会更快，你就不用游那么久了|r
 step << Druid
     .goto Moonglade,36.026,41.374
-    .use 15877 >>|cRXP_WARN_在雷姆洛斯神殿使用|r |T134125:0|t[神殿灵珠] |cRXP_WARN_|r
+    .use 15877 >>|cRXP_WARN_在雷姆洛斯神殿|r|cRXP_WARN_使用|r |T134125:0|t[神殿灵珠]
     .complete 29,1 --Complete the Trial of the Lake.
 step << Druid
     .goto Moonglade,36.517,40.104
@@ -546,7 +546,7 @@ RXPGuides.RegisterGuide([[
 #name 15-18级 黑海岸
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP生存指南1-20
+#subgroup RXP 生存指南 1-20级
 --#defaultfor !NightElf
 #next 18-19级 洛克莫丹
 
@@ -680,7 +680,7 @@ step
 step
 #map Darkshore
     .goto Felwood,13.63,21.44
-    >>拾取|cRXP_PICK_海龟骨头|r以获得|cRXP_LOOT_海龟的残骸|r
+    >>拾取|cRXP_PICK_海龟骨头|r以得到|cRXP_LOOT_海龟的残骸|r
     .complete 4681,1
 step
 #map Darkshore
@@ -1655,7 +1655,7 @@ RXPGuides.RegisterGuide([[
 #name 20-21级 黑海岸/灰谷
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP生存指南1-20
+#subgroup RXP 生存指南 1-20级
 #next 21-23级 石爪山 / 灰谷
 
 step << Druid

@@ -4597,7 +4597,7 @@ step <<Paladin/Mage/Warlock/Rogue
     #xprate >1.59
     #optional
     .goto Ironforge,50.826,5.613
-    >>|cRXP_WARN_使用 |T133743:0|t[|cRXP_LOOT_书籍：下层的力量|r] 来开始任务|r
+    >>|cRXP_WARN_使用 |T133743:0|t[|cRXP_LOOT_书籍：下层的力量|r] 来开启任务|r
     .accept 968 >>接受任务 深渊之神
     .use 5352
     .itemcount 5352,1
@@ -4610,7 +4610,7 @@ step << Paladin/Mage/Warlock/Rogue
     #xprate >1.59
     .goto Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_葛利·硬骨|r 对话
-    .turnin 968 >>交任务 深渊之神
+    .turnin 968 >>交任务深渊之神
     .target 葛利·硬骨
     .isOnQuest 968
     .zoneskip Darkshore << Warrior/Paladin
@@ -4847,10 +4847,10 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_"剃刀"雷吉克|r 和 |cRXP_FRIENDLY_马迪亚斯·肖尔大师|r 对话
-    .accept 2281 >>接受任务 赤脊山的联络员
+    .accept 2281 >>接受任务赤脊山的联络员
     .goto StormwindClassic,75.76,60.35
     .target +Renzik "The Shiv"
-    .accept 2360 >>接受任务 马迪亚斯和迪菲亚盗贼
+    .accept 2360 >>接受任务马迪亚斯和迪菲亚盗贼
     .goto StormwindClassic,75.78,59.84
     .target +Master Mathias Shaw
     .dungeon !DM
@@ -5049,7 +5049,7 @@ step << Rogue
     #xprate >1.59
     #label Rendevous
     .goto Redridge Mountains,28.07,52.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卢修斯|r 对话
     .turnin 2281 >>交任务 赤脊山的联络员
     .accept 2282 >>接受任务 奥瑟尔伐木场
     .target Lucius
@@ -5124,7 +5124,7 @@ step << Rogue
     #xprate >1.59
     .goto Redridge Mountains,28.07,52.02
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卢修斯|r 对话
-    .turnin 2282 >>交任务 奥瑟尔伐木场
+    .turnin 2282 >>交任务奥瑟尔伐木场
     .target Lucius
     .dungeon !DM
 step << Rogue
@@ -5343,7 +5343,7 @@ step << Rogue
     >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备你的主武器|r << Rogue !sod
     .turnin 135 >>交任务 迪菲亚兄弟会
 --  .accept 141 >> Accept The Defias Brotherhood
-    .turnin 2359 >>交任务 克拉文之塔
+    .turnin 2359 >>交任务克拉文之塔
     .target 马迪亚斯·肖尔大师
     .dungeon !DM
 step << Rogue
@@ -5632,7 +5632,7 @@ step << NightElf Rogue
     #xprate >1.59
     .goto Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_葛利·硬骨|r 对话
-    .turnin 968 >>交任务 深渊之神
+    .turnin 968 >>交任务深渊之神
     .target 葛利·硬骨
     .zoneskip Ironforge,1
     .zoneskip Wetlands
@@ -6138,7 +6138,7 @@ step << NightElf
     .goto Ironforge,17.089,83.373,-1
     .zone Ironforge >>使用角色卡死自助服务功能传送到铁炉堡。你需要在该地点下线，然后登录另一个角色并打开帮助菜单（或者在浏览器中粘贴下方的卡死服务链接），然后向下滚动到自助服务。点击你的角色并进行移动。如果你无法使用卡死服务，请跳过此步骤，沿着山脉游到西部荒野
     .link https://www.youtube.com/watch?v=oVoxsr4zcg4 >>https://www.youtube.com/watch?v=oVoxsr4zcg4 >> 点击此处查看参考视频
-    .link https://us.battle.net/support/en/help/product/wow/197/834/solution >>https://us.battle.net/support/en/help/product/wow/197/834/solution >> 点击此处前往美服角色卡死链接
+    .link https://us.battle.net/support/en/help/product/wow/197/834/solution >>https://us.battle.net/support/en/help/product/wow/197/834/solution >> 点击此处前往美服角色卡死连接
     .subzoneskip 809 --IF Gates
     .subzoneskip 2257 --Deeprun Tram
     .zoneskip Elwynn Forest
@@ -6314,7 +6314,7 @@ step
     #xprate >1.59 << !Hunter
     #optional
     .goto Ironforge,50.826,5.613
-    >>|cRXP_WARN_使用 |T133743:0|t[|cRXP_LOOT_书籍：下层的力量|r] 来开始任务|r
+    >>|cRXP_WARN_使用 |T133743:0|t[|cRXP_LOOT_书籍：下层的力量|r] 来开启任务|r
     .accept 968 >>接受任务 深渊之神
     .use 5352
     .itemcount 5352,1
@@ -6328,7 +6328,7 @@ step
     #optional << NightElf
     .goto Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_葛利·硬骨|r 对话
-    .turnin 968 >>交任务 深渊之神
+    .turnin 968 >>交任务深渊之神
     .target 葛利·硬骨
     .zoneskip Wetlands << NightElf
     .zoneskip Elwynn Forest
@@ -6632,10 +6632,10 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_"剃刀"雷吉克|r 和 |cRXP_FRIENDLY_马迪亚斯·肖尔|r 对话
-    .accept 2281 >>接受任务 赤脊山的联络员
+    .accept 2281 >>接受任务赤脊山的联络员
     .goto StormwindClassic,75.76,60.35
     .target +Renzik "The Shiv"
-    .accept 2360 >>接受任务 马迪亚斯和迪菲亚盗贼
+    .accept 2360 >>接受任务马迪亚斯和迪菲亚盗贼
     .goto StormwindClassic,75.78,59.84
     .target +Master Mathias Shaw
     .dungeon DM
@@ -7057,7 +7057,7 @@ step
 step << Rogue
     #xprate >1.59
     .goto Redridge Mountains,28.07,52.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卢修斯|r 对话
     .turnin 2281 >>交任务 赤脊山的联络员
     .accept 2282 >>接受任务 奥瑟尔伐木场
     .target Lucius
@@ -7079,7 +7079,7 @@ step << Rogue
     #xprate >1.59
     .goto Redridge Mountains,28.07,52.02
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
-    .turnin 2282 >>交任务 奥瑟尔伐木场
+    .turnin 2282 >>交任务奥瑟尔伐木场
     .target Lucius
     .dungeon DM
 step << Rogue
@@ -7295,7 +7295,7 @@ step
     >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备你的主武器|r << Rogue
     .turnin 135 >>交任务 迪菲亚兄弟会
     .accept 141 >>接受任务 迪菲亚兄弟会
-    .turnin 2359 >>交任务 克拉文之塔 << Rogue
+    .turnin 2359 >>交任务克拉文之塔 << Rogue
     .target 马迪亚斯·肖尔大师
     .dungeon DM
 step
@@ -7723,7 +7723,7 @@ step << Mage
     #xprate >1.59
     #optional
     #completewith next
-    .cast 3561 >>施放|T135763:0|t[传送：暴风城]
+    .cast 3561 >>施放 |T135763:0|t[传送：暴风城]
     .zoneskip Stormwind City
     .dungeon DM
 step << Mage
@@ -7942,7 +7942,7 @@ step << Mage
     #xprate >1.59
     #optional
     #completewith next
-    .cast 3561 >>施放|T135763:0|t[传送：暴风城]
+    .cast 3561 >>施放 |T135763:0|t[传送：暴风城]
     .dungeon DM
 step << Mage
     #xprate >1.59
@@ -8046,7 +8046,7 @@ step << NightElf
     #xprate >1.59 << !Hunter
     #optional
     .goto Ironforge,50.826,5.613
-    >>|cRXP_WARN_使用 |T133743:0|t[|cRXP_LOOT_书籍：下层的力量|r] 来开始任务|r
+    >>|cRXP_WARN_使用 |T133743:0|t[|cRXP_LOOT_书籍：下层的力量|r] 来开启任务|r
     .accept 968 >>接受任务 深渊之神
     .use 5352
     .itemcount 5352,1
@@ -8056,7 +8056,7 @@ step << NightElf
     #xprate >1.59 << !Hunter
     .goto Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_葛利·硬骨|r 对话
-    .turnin 968 >>交任务 深渊之神
+    .turnin 968 >>交任务深渊之神
     .target 葛利·硬骨
     .zoneskip Ironforge,1
     .isOnQuest 968
@@ -8449,7 +8449,7 @@ step << Rogue
     .goto StormwindClassic,78.67,60.13,5 >>进入军情7处总部。上楼去找 |cRXP_FRIENDLY_"剃刀"雷吉克|r
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"剃刀"雷吉克|r对话
-    .accept 2281 >>接受任务 赤脊山的联络员
+    .accept 2281 >>接受任务赤脊山的联络员
     .goto StormwindClassic,75.76,60.35
     .target Renzik "The Shiv"
 step << Warrior !NightElf
@@ -8966,7 +8966,7 @@ step << Rogue
 step << Rogue
 .dungeon DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马迪亚斯·肖尔大师|r 对话
-    .accept 2360 >>接受任务 马迪亚斯和迪菲亚盗贼
+    .accept 2360 >>接受任务马迪亚斯和迪菲亚盗贼
     .goto StormwindClassic,75.78,59.84
     .target 马迪亚斯·肖尔大师
 step << Warrior
@@ -9422,10 +9422,10 @@ step
     .goto Redridge Mountains,26.80,44.30
     .turnin 131 >>交任务 水仙诉衷情
 step << Rogue
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卢修斯|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卢修斯|r 对话
 	.target Lucius
     .goto Redridge Mountains,28.07,52.02
-    .turnin 2282 >>交任务 奥瑟尔伐木场
+    .turnin 2282 >>交任务奥瑟尔伐木场
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希拉里|r 对话
 	.target Hilary
@@ -9619,7 +9619,7 @@ step << Rogue
 step << Rogue
 .dungeon !DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马迪亚斯·肖尔大师|r 对话
-    .accept 2360 >>接受任务 马迪亚斯和迪菲亚盗贼
+    .accept 2360 >>接受任务马迪亚斯和迪菲亚盗贼
     .goto StormwindClassic,75.78,59.84
     .target 马迪亚斯·肖尔大师
 step << Warrior
@@ -9678,7 +9678,7 @@ step << Rogue
 step << Rogue
     .goto Westfall,68.50,70.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_密探吉尔妮|r 对话
-    >>|cRXP_WARN_你必须完成这个任务来获取你的|r|T132290:0|t[毒药]
+    >>这个任务是必须完成的，关系到你的|cRXP_WARN_ |T132290:0|t[毒药]|r
     .turnin 2360 >>交任务 马迪亚斯和迪菲亚盗贼
     .accept 2359 >>接受任务 克拉文之塔
     .target Agent Kearnen
@@ -9798,7 +9798,7 @@ step << Rogue
     .goto StormwindClassic,75.78,59.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马迪亚斯·肖尔大师|r 对话
     >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备你的主武器|r << Rogue
-    .turnin 2359 >>交任务 克拉文之塔
+    .turnin 2359 >>交任务克拉文之塔
     .target 马迪亚斯·肖尔大师
 
 

@@ -2819,7 +2819,7 @@ step << Hunter
 step << Hunter
     #optional
     #completewith MargozTurnIn
-    +|cRXP_WARN_装备|r |T135499:0|t[多层弯弓]
+    +|cRXP_WARN_装备上|r |T135499:0|t[多层弯弓]
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
@@ -3294,7 +3294,7 @@ step << Hunter
 step << Hunter
     #optional
     #completewith DisruptTheAttacks
-    +|cRXP_WARN_装备|r |T135499:0|t[多层弯弓]
+    +|cRXP_WARN_装备上|r |T135499:0|t[多层弯弓]
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
@@ -3540,7 +3540,7 @@ step << Hunter
 step << Hunter
     #optional
     #completewith ZeptoUC1
-    +|cRXP_WARN_装备|r |T135499:0|t[多层弯弓]
+    +|cRXP_WARN_装备上|r |T135499:0|t[多层弯弓]
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7

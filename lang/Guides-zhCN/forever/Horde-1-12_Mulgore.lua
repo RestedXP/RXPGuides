@@ -506,7 +506,7 @@ step
 step
     #softcore
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿哈布·麦蹄 <老牛仔>|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_阿哈布·麦蹄|r对话 
     .accept 99411 >>接受任务 凯雷失踪了！
     .target 阿哈布·麦蹄
 step
@@ -1251,7 +1251,7 @@ step
     .unitscan 疯狂的凯雷
 step
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿哈布·麦蹄 <老牛仔>|r 对话 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_阿哈布·麦蹄|r对话 
     .turnin 99411 >>交任务 凯雷失踪了！
     .target 阿哈布·麦蹄
 step
@@ -2199,7 +2199,7 @@ step
     .goto Thunder Bluff,45.23,59.40,0
     .goto Thunder Bluff,40.41,51.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
-    >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
+    >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t|T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
     .target Auctioneer Stampi
 step
@@ -2246,7 +2246,7 @@ step
     #label Fish
     #requires Kah
     .goto Thunder Bluff,40.42,58.55
-    >>在池塘里钓鱼，直到获得一条|T133894:0|t|T133894:0|t[|cRXP_LOOT_新鲜的美味小鱼|r]
+    >>在池塘里钓鱼，直到获得一条|T133894:0|t[|cRXP_LOOT_新鲜的美味小鱼|r]
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
 step
     >>|cRXP_WARN_使用|r |T132147:0|t[一套匕首] |cRXP_WARN_来制造|r |T134007:0|t[鱼块]

@@ -104,7 +104,7 @@ step << Undead
 step
     #label BorderCrossings
     .goto Silverpine Forest,43.98,40.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_爱思特|r 对话
     .accept 477 >>接受任务 越境
     .target Shadow Priest Allister
 step
@@ -455,18 +455,18 @@ step
     .goto Silverpine Forest,44.20,39.73
 step
     .goto Silverpine Forest,43.98,40.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_爱思特|r 对话
     .turnin 482 >>交任务 达拉然的意图
     .target Shadow Priest Allister
 step
     .goto Silverpine Forest,43.98,40.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_爱思特|r 对话
     .accept 479 >>接受任务 调查安伯米尔
     .target Shadow Priest Allister
     .group
 step
     .goto Silverpine Forest,43.98,40.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_爱思特|r 对话
     .turnin 482 >>交任务 达拉然的意图
     .target Shadow Priest Allister
 step
@@ -936,7 +936,7 @@ step
 step
     #label AmbermillTurnin
     .goto Silverpine Forest,43.98,40.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_爱思特|r 对话
     .turnin 479 >>交任务 调查安伯米尔
     .target Shadow Priest Allister
     .isQuestComplete 479

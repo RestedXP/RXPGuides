@@ -579,8 +579,8 @@ step
     .xp <4,1
 step << skip
     #completewith next
-    >>|cRXP_WARN_强烈建议你在洛克莫丹而不是在别处获取|r |T134229:0|t[洛丹伦的角力证言] |cRXP_WARN_，这样会简单得多|r
-    >>|cRXP_WARN_不推荐用|r |T134229:0|t[洛丹伦的角力证言] |cRXP_WARN_代替|r |T236250:0|t[神圣风暴符文] |cRXP_WARN_或|r |T133745:0|t[论述：殉道]
+    >>|cRXP_WARN_强烈建议你改为在洛克莫丹获取|r |T134229:0|t[论述：洛丹伦号角] |cRXP_WARN_，因为这样简单得多|r
+    >>|cRXP_WARN_不推荐用|r |T134229:0|t[论述：洛丹伦号角] |cRXP_WARN_代替|r |T236250:0|t[神圣风暴符文] |cRXP_WARN_或|r |T133745:0|t[论述：殉道]
     .train 425618,1
     .xp <12,1
 step
@@ -2200,7 +2200,7 @@ step
 step
     .line Eastern Plaguelands,28.6,84.2,33.2,83.0,35.30,82.55,41.19,81.68,45.42,80.68,48.8,79.9,51.5,78.3,55.1,76.4
     >>寻找一只 |cRXP_ENEMY_错颚的食尸鬼|r。击杀他并与出现的一只矮人灵魂 |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_奥尔塔兹|r 对话。开始这个任务
-    >>|cRXP_WARN_The|r |cRXP_ENEMY_错颚的食尸鬼 <矮人尺寸的食尸鬼>|r |cRXP_WARN_在地下墓穴与科林十字路口之间的道路南侧巡逻|r
+    >>|cRXP_WARN_|r错颚的食尸鬼|cRXP_ENEMY_|r |cRXP_WARN_在墓穴与科林路口之间的道路以南区域巡逻|r
     .accept 84318 >>接受任务 喂！
     .unitscan Slack-Jawed Ghoul
     .target Orthas

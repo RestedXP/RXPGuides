@@ -1857,7 +1857,7 @@ step
     #completewith next
     .goto 1436/0,1045.12,-10508.80,100 >>前往哨兵岭
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼顶的 |cRXP_FRIENDLY_治安官格里安·斯托曼|r 和 |cRXP_FRIENDLY_哨兵瑞尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼顶的 |cRXP_FRIENDLY_格里安·斯托曼|r 和 |cRXP_FRIENDLY_哨兵瑞尔|r 对话
     .turnin 166 >>交任务 迪菲亚兄弟会
     .target +Gryan Stoutmantle
     .goto 1436/0,1045.12,-10508.80

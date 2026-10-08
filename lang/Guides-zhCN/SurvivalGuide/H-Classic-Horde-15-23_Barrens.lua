@@ -2117,7 +2117,7 @@ RXPGuides.RegisterGuide([[
 #name 19-23级 石爪山脉/贫瘠之地/灰谷
 #version 1
 #group RestedXP 生存指南 (部落版)
-#subgroup RXP生存指南1-20
+#subgroup RXP 生存指南 1-20级
 #next 23-25 希尔斯布莱德
 
 step
@@ -3118,7 +3118,7 @@ step << !Shaman
     .subzoneskip 380,1
 step
     .goto The Barrens,44.55,59.27
-    >>击杀 |cRXP_ENEMY_刺背野猪人|r。并拾取它们的 |T134128:0|t[|cRXP_LOOT_血岩碎片|r052,1 --Blood Shard (1)
+    >>击杀 |cRXP_ENEMY_刺背野猪人|r。并拾取它们的 |T134128:0|t[|cRXP_LOOT_血岩碎片|r] Shard (1)
     .mob 刺背寻水者
     .mob 刺背织棘者
     .mob 刺背地卜师

@@ -161,7 +161,7 @@ step << Orc Hunter/Troll Hunter
 step << Orc Hunter/Troll Hunter
     #optional
     #completewith DisruptTheAttacks
-    +|cRXP_WARN_装备|r |T135499:0|t[多层弯弓]
+    +|cRXP_WARN_装备上|r |T135499:0|t[多层弯弓]
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
@@ -2646,7 +2646,7 @@ step << Druid
     .itemcount 208689,1
 step << Mage
     #season 2
-    .train 401767 >>|cRXP_WARN_使用|r |T134939:0|t|T132869:0|t[|cRXP_FRIENDLY_法术笔记：NIZHGAES|r] |cRXP_WARN_训练|r |T132869:0|t|T132869:0|t[再生]
+    .train 401767 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：NIZHGAES|r] |cRXP_WARN_训练|r |T132869:0|t[再生]
     .use 208754
     .itemcount 208754,1 --Spell Notes: TENGI RONEERA (1)
 step
@@ -2746,7 +2746,7 @@ step << Hunter
     .goto 1413/1,-1746.58,-2263.56,40,0
     .line The Barrens,44.60,55.51,44.60,55.51,43.12,57.37
     >>在|cRXP_ENEMY_巡逻的猎豹|r的巡逻路径上使用|T135813:0|t|T135813:0|t[献祭陷阱]，以移除其增益效果
-    >>击杀他并拾取|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_野兽控制符文|r]
+    >>击杀他并拾取|T134419:0|t[|cRXP_FRIENDLY_野兽控制符文|r]
     .collect 208701,1 --Rune of Beast Mastery (1)
     .mob Patrolling Cheetah
     .train 410110,1
@@ -3061,7 +3061,7 @@ step
 step
     #xprate <1.5
     #completewith CounterattackComplete
-    +|cRXP_WARN_下一个任务很难，建议组队完成。你可以牵引督军克罗姆扎绕着任务给予者所在的建筑物走动|r
+    +下一个任务非常困难，建议组队完成。你可以风筝 督军克罗姆扎|cRXP_WARN_ 在任务给予者所在的建筑物周围|r
     +|cRXP_WARN_如果你无法完成这个任务，就跳过它。你稍后会有另一个机会在更高等级完成它|r
     .isQuestTurnedIn 852
 step
@@ -3253,7 +3253,7 @@ step << Druid
     #season 2
     #completewith next
     >>|cRXP_WARN_施放|r |T136085:0|t|T136041:0|t[愈合] |cRXP_WARN_或|r |T136041:0|t|T136041:0|t[治疗之触] |cRXP_WARN_在10个不同的友方野兽身上，例如猎人的宠物/熊形态下的德鲁伊/幽魂之狼下的萨满|r
-    .train 410021 >>|cRXP_WARN_使用|r |T134233:0|t|T132143:0|t[|cRXP_FRIENDLY_蛮荒神像|r] |cRXP_WARN_来训练|r |T132143:0|t|T132143:0|t[狂野打击]
+    .train 410021 >>|cRXP_WARN_使用|r |T134233:0|t[|cRXP_FRIENDLY_蛮荒神像|r] |cRXP_WARN_来训练|r |T132143:0|t[狂野打击]
     .itemcount 210534,1
 step
     #map Stonetalon Mountains
@@ -3878,14 +3878,14 @@ step
     .use 210824 << Warlock
     .use 210653 << Rogue
     .use 210823 << Shaman
-    .train 415995 >>|cRXP_WARN_购买并使用|r |T135791:0|t[|cRXP_FRIENDLY_祥和顿悟|r] |cRXP_WARN_来训练|r |T237549:0|t[瑟兰蒂缇] << Priest
+    .train 415995 >>|cRXP_WARN_购买并使用|r |T135791:0|t[|cRXP_FRIENDLY_祥和顿悟|r] |cRXP_WARN_来训练|r |T237549:0|t[妙手回春] << Priest
     .train 410010 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_牺牲符文|r] |cRXP_WARN_来训练|r |T134596:0|t[铭刻裤子 - 神圣牺牲] << Paladin
     .train 401761 >>|cRXP_WARN_购买并使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：时光倒转|r] |cRXP_WARN_来训练|r |T237538:0|t[时光倒转] << Mage
-    .train 410122 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T132266:0|t[|cRXP_FRIENDLY_独来独往符文|r] |cRXP_WARN_来学习|r |T132266:0|t|T132266:0|t[独来独往] << Hunter
-    .train 416042 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T132126:0|t[|cRXP_FRIENDLY_优胜劣汰符文|r] |cRXP_WARN_以习得|r |T132126:0|t|T132126:0|t[优胜劣汰] << Druid
+    .train 410122 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_独来独往符文|r] |cRXP_WARN_来学习|r |T132266:0|t[独来独往] << Hunter
+    .train 416042 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_优胜劣汰符文|r] |cRXP_WARN_以习得|r |T132126:0|t[优胜劣汰] << Druid
     .train 425445 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_战神符文|r] |cRXP_WARN_来学习|r |T236319:0|t[战神] << Warrior
     .train 425476 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T237562:0|t[|cRXP_FRIENDLY_契约符文|r] |cRXP_WARN_来训练|r |T237562:0|t|T237562:0|t[恶魔契约] << Warlock
-    .train 424990 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_左右开弓符文|r] |cRXP_WARN_来训练|r |T237531:0|t[左右开弓] << Rogue
+    .train 424990 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T237531:0|t[|cRXP_FRIENDLY_左右开弓符文|r] |cRXP_WARN_来学习|r |T237531:0|t|T237531:0|t[左右开弓] << Rogue
     .train 410096 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T132686:0|t[|cRXP_FRIENDLY_双武器专精符文|r] |cRXP_WARN_来学习|r |T132686:0|t|T132686:0|t[铭刻胸甲 - 双武器专精] << Shaman
     .target Grizzby
     .train 415995,1 << Priest
@@ -4409,7 +4409,7 @@ step
     .subzoneskip 380,1
 step
     .goto 1413/1,-1891.48,-2391.93
-    >>击杀 |cRXP_ENEMY_Bristleback Quilboars|r，拾取 |T134128:0|t[|cRXP_LOOT_血岩碎片|r]Shard (1)
+    >>击杀 |cRXP_ENEMY_刺背野猪人|r。拾取它们的 |T134128:0|t[|cRXP_LOOT_血岩碎片|r052,1 --Blood Shard (1)
     .mob 刺背寻水者
     .mob 刺背织棘者
     .mob 刺背地卜师
@@ -6845,7 +6845,7 @@ step << Orc Hunter/Troll Hunter
 step << Orc Hunter/Troll Hunter
     #optional
     #completewith DisruptTheAttacks
-    +|cRXP_WARN_装备|r |T135499:0|t[多层弯弓]
+    +|cRXP_WARN_装备上|r |T135499:0|t[多层弯弓]
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
@@ -6970,7 +6970,7 @@ step << Warlock
     #completewith BarrensEnd
     #label ExplorerImp
     >>在任务过程中，对怪物施放 |T136163:0|t|cRXP_FRIENDLY_[吸取灵魂]|r 直到获得一个 |T133257:0|t|cRXP_LOOT_探险之魂|r。|cRXP_WARN_使用它来学习如何召唤|r |T236294:0|t|cRXP_FRIENDLY_[探险小鬼]|r
-    .train 445459 >>|cRXP_WARN_使用|r |T133257:0|t|cRXP_LOOT_探险之魂|r |cRXP_WARN_学习如何召唤|r |T236294:0|t[|cRXP_FRIENDLY_探险小鬼|r]
+    .train 445459 >>|cRXP_WARN_使用|r |T133257:0|t|T236294:0|t|cRXP_LOOT_探险之魂|r |cRXP_WARN_学习如何召唤|r |T236294:0|t|T236294:0|t[|cRXP_FRIENDLY_探险小鬼|r]
     .train 445459,1 --Skips if you already have Explorer Imp
     .train 1120,3 --Skips if you don't have drain soul
     .use 221978
@@ -6981,7 +6981,7 @@ step << Warlock/Mage
     #completewith BarrensEnd
     #label FelPortalRune
     >>你所在的区域有|cRXP_FRIENDLY_邪能传送门|r。如果发现一个，召唤你的|T236294:0|t[|cRXP_FRIENDLY_探险小鬼|r]，并在传送门旁与它对话，派遣它去探险。10-20分钟后它会带回战利品，并有几率奖励你|T134419:0|t[|cRXP_FRIENDLY_恶魔卫士符文|r] << Warlock
-    >>你所在的区域存在|cRXP_FRIENDLY_邪能传送门|r。如果发现一个，使用|T134945:0|t|T134939:0|t|cRXP_LOOT_空间修复卷轴|r将其关闭。这将奖励你|T134939:0|t|T134939:0|t|cRXP_FRIENDLY_法术笔记：怨火之箭|r << Mage
+    >>你所在的区域存在|cRXP_FRIENDLY_邪能传送门|r。如果发现一个，使用|T134945:0|t|cRXP_LOOT_空间修复卷轴|r 将其关闭。这将奖励你|T134939:0|t|cRXP_FRIENDLY_法术笔记：怨火之箭|r << Mage
     >>|cRXP_WARN_留意传送门，直到你获得符文|r
     .collect 221499,1 << Warlock --rune of the felguard
     .collect 223147,1 << Mage --Spell Notes: Balefire Bolt
@@ -7210,7 +7210,7 @@ step << Orc Hunter/Troll Hunter
 step << Orc Hunter/Troll Hunter
     #optional
     #completewith KreenigSnarlsnout
-    +|cRXP_WARN_装备|r |T135499:0|t[多层弯弓]
+    +|cRXP_WARN_装备上|r |T135499:0|t[多层弯弓]
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
@@ -9687,14 +9687,14 @@ step
     .use 210824 << Warlock
     .use 210653 << Rogue
     .use 210823 << Shaman
-    .train 415995 >>|cRXP_WARN_购买并使用|r |T135791:0|t[|cRXP_FRIENDLY_祥和顿悟|r] |cRXP_WARN_来训练|r |T237549:0|t[瑟兰蒂缇] << Priest
+    .train 415995 >>|cRXP_WARN_购买并使用|r |T135791:0|t[|cRXP_FRIENDLY_祥和顿悟|r] |cRXP_WARN_来训练|r |T237549:0|t[妙手回春] << Priest
     .train 410010 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_牺牲符文|r] |cRXP_WARN_来训练|r |T134596:0|t[铭刻裤子 - 神圣牺牲] << Paladin
     .train 401761 >>|cRXP_WARN_购买并使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：时光倒转|r] |cRXP_WARN_来训练|r |T237538:0|t[时光倒转] << Mage
-    .train 410122 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T132266:0|t[|cRXP_FRIENDLY_独来独往符文|r] |cRXP_WARN_来学习|r |T132266:0|t|T132266:0|t[独来独往] << Hunter
-    .train 416042 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T132126:0|t[|cRXP_FRIENDLY_优胜劣汰符文|r] |cRXP_WARN_以习得|r |T132126:0|t|T132126:0|t[优胜劣汰] << Druid
+    .train 410122 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_独来独往符文|r] |cRXP_WARN_来学习|r |T132266:0|t[独来独往] << Hunter
+    .train 416042 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_优胜劣汰符文|r] |cRXP_WARN_以习得|r |T132126:0|t[优胜劣汰] << Druid
     .train 425445 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_战神符文|r] |cRXP_WARN_来学习|r |T236319:0|t[战神] << Warrior
     .train 425476 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T237562:0|t[|cRXP_FRIENDLY_契约符文|r] |cRXP_WARN_来训练|r |T237562:0|t|T237562:0|t[恶魔契约] << Warlock
-    .train 424990 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_左右开弓符文|r] |cRXP_WARN_来训练|r |T237531:0|t[左右开弓] << Rogue
+    .train 424990 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T237531:0|t[|cRXP_FRIENDLY_左右开弓符文|r] |cRXP_WARN_来学习|r |T237531:0|t|T237531:0|t[左右开弓] << Rogue
     .train 410096 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T132686:0|t[|cRXP_FRIENDLY_双武器专精符文|r] |cRXP_WARN_来学习|r |T132686:0|t|T132686:0|t[铭刻胸甲 - 双武器专精] << Shaman
     .target Grizzby
     .train 415995,1 << Priest
@@ -9986,7 +9986,7 @@ step << Hunter
     .goto 1413/1,-1746.58,-2263.56,40,0
     .line The Barrens,44.60,55.51,44.60,55.51,43.12,57.37
     >>在|cRXP_ENEMY_巡逻的猎豹|r的巡逻路径上使用|T135813:0|t|T135813:0|t[献祭陷阱]，以移除其增益效果
-    >>击杀他并拾取|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_野兽控制符文|r]
+    >>击杀他并拾取|T134419:0|t[|cRXP_FRIENDLY_野兽控制符文|r]
     .collect 208701,1 --Rune of Beast Mastery (1)
     .mob Patrolling Cheetah
     .train 410110,1
@@ -10239,7 +10239,7 @@ step
 step
     #xprate <2.1
     #completewith CounterattackComplete
-    +|cRXP_WARN_下一个任务很难，建议组队完成。你可以牵引督军克罗姆扎绕着任务给予者所在的建筑物走动|r
+    +下一个任务非常困难，建议组队完成。你可以风筝 督军克罗姆扎|cRXP_WARN_ 在任务给予者所在的建筑物周围|r
     +|cRXP_WARN_如果你无法完成这个任务，就跳过它。你稍后会有另一个机会在更高等级完成它|r
     .isQuestTurnedIn 852
 step
@@ -10366,7 +10366,7 @@ RXPGuides.RegisterGuide([[
 #subgroup （制作中）地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
 #next 24-26 南贫瘠之地 << !Rogue !Shaman
-#next 23-24 希尔斯布莱德丘陵职业任务 << Rogue/Shaman
+#next 23-24 希尔斯布莱德丘陵 职业任务 << Rogue/Shaman
 
 
 step << Druid
@@ -10438,7 +10438,7 @@ step << Druid
     #season 2
     #completewith BloodFeedersPickup
     >>|cRXP_WARN_施放|r |T136085:0|t|T136041:0|t[愈合] |cRXP_WARN_或|r |T136041:0|t|T136041:0|t[治疗之触] |cRXP_WARN_在10个不同的友方野兽身上，例如猎人的宠物/熊形态下的德鲁伊/幽魂之狼下的萨满|r
-    .train 410021 >>|cRXP_WARN_使用|r |T134233:0|t|T132143:0|t[|cRXP_FRIENDLY_蛮荒神像|r] |cRXP_WARN_来训练|r |T132143:0|t|T132143:0|t[狂野打击]
+    .train 410021 >>|cRXP_WARN_使用|r |T134233:0|t[|cRXP_FRIENDLY_蛮荒神像|r] |cRXP_WARN_来训练|r |T132143:0|t[狂野打击]
     .itemcount 210534,1
 step
     #xprate <2.1
@@ -10969,7 +10969,7 @@ step << Warlock
     #completewith CounterattackTurnin3
     #label ExplorerImp
     >>在任务过程中，对怪物施放 |T136163:0|t|cRXP_FRIENDLY_[吸取灵魂]|r 直到获得一个 |T133257:0|t|cRXP_LOOT_探险之魂|r。|cRXP_WARN_使用它来学习如何召唤|r |T236294:0|t|cRXP_FRIENDLY_[探险小鬼]|r
-    .train 445459 >>|cRXP_WARN_使用|r |T133257:0|t|cRXP_LOOT_探险之魂|r |cRXP_WARN_学习如何召唤|r |T236294:0|t[|cRXP_FRIENDLY_探险小鬼|r]
+    .train 445459 >>|cRXP_WARN_使用|r |T133257:0|t|T236294:0|t|cRXP_LOOT_探险之魂|r |cRXP_WARN_学习如何召唤|r |T236294:0|t|T236294:0|t[|cRXP_FRIENDLY_探险小鬼|r]
     .train 445459,1 --Skips if you already have Explorer Imp
     .train 1120,3 --Skips if you don't have drain soul
     .use 221978
@@ -10980,7 +10980,7 @@ step << Warlock/Mage
     #completewith CounterattackTurnin3
     #label FelPortalRune
     >>你所在的区域有|cRXP_FRIENDLY_邪能传送门|r。如果发现一个，召唤你的|T236294:0|t[|cRXP_FRIENDLY_探险小鬼|r]，并在传送门旁与它对话，派遣它去探险。10-20分钟后它会带回战利品，并有几率奖励你|T134419:0|t[|cRXP_FRIENDLY_恶魔卫士符文|r] << Warlock
-    >>你所在的区域存在|cRXP_FRIENDLY_邪能传送门|r。如果发现一个，使用|T134945:0|t|T134939:0|t|cRXP_LOOT_空间修复卷轴|r将其关闭。这将奖励你|T134939:0|t|T134939:0|t|cRXP_FRIENDLY_法术笔记：怨火之箭|r << Mage
+    >>你所在的区域存在|cRXP_FRIENDLY_邪能传送门|r。如果发现一个，使用|T134945:0|t|cRXP_LOOT_空间修复卷轴|r 将其关闭。这将奖励你|T134939:0|t|cRXP_FRIENDLY_法术笔记：怨火之箭|r << Mage
     >>|cRXP_WARN_留意传送门，直到你获得符文|r
     .collect 221499,1 << Warlock --rune of the felguard
     .collect 223147,1 << Mage --Spell Notes: Balefire Bolt
@@ -11226,14 +11226,14 @@ step
     .use 210824 << Warlock
     .use 210653 << Rogue
     .use 210823 << Shaman
-    .train 415995 >>|cRXP_WARN_购买并使用|r |T135791:0|t[|cRXP_FRIENDLY_祥和顿悟|r] |cRXP_WARN_来训练|r |T237549:0|t[瑟兰蒂缇] << Priest
+    .train 415995 >>|cRXP_WARN_购买并使用|r |T135791:0|t[|cRXP_FRIENDLY_祥和顿悟|r] |cRXP_WARN_来训练|r |T237549:0|t[妙手回春] << Priest
     .train 410010 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_牺牲符文|r] |cRXP_WARN_来训练|r |T134596:0|t[铭刻裤子 - 神圣牺牲] << Paladin
     .train 401761 >>|cRXP_WARN_购买并使用|r |T134939:0|t[|cRXP_FRIENDLY_法术笔记：时光倒转|r] |cRXP_WARN_来训练|r |T237538:0|t[时光倒转] << Mage
-    .train 410122 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T132266:0|t[|cRXP_FRIENDLY_独来独往符文|r] |cRXP_WARN_来学习|r |T132266:0|t|T132266:0|t[独来独往] << Hunter
-    .train 416042 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T132126:0|t[|cRXP_FRIENDLY_优胜劣汰符文|r] |cRXP_WARN_以习得|r |T132126:0|t|T132126:0|t[优胜劣汰] << Druid
+    .train 410122 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_独来独往符文|r] |cRXP_WARN_来学习|r |T132266:0|t[独来独往] << Hunter
+    .train 416042 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_优胜劣汰符文|r] |cRXP_WARN_以习得|r |T132126:0|t[优胜劣汰] << Druid
     .train 425445 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_战神符文|r] |cRXP_WARN_来学习|r |T236319:0|t[战神] << Warrior
     .train 425476 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T237562:0|t[|cRXP_FRIENDLY_契约符文|r] |cRXP_WARN_来训练|r |T237562:0|t|T237562:0|t[恶魔契约] << Warlock
-    .train 424990 >>|cRXP_WARN_购买并使用|r |T134419:0|t[|cRXP_FRIENDLY_左右开弓符文|r] |cRXP_WARN_来训练|r |T237531:0|t[左右开弓] << Rogue
+    .train 424990 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T237531:0|t[|cRXP_FRIENDLY_左右开弓符文|r] |cRXP_WARN_来学习|r |T237531:0|t|T237531:0|t[左右开弓] << Rogue
     .train 410096 >>|cRXP_WARN_购买并使用|r |T134419:0|t|T132686:0|t[|cRXP_FRIENDLY_双武器专精符文|r] |cRXP_WARN_来学习|r |T132686:0|t|T132686:0|t[铭刻胸甲 - 双武器专精] << Shaman
     .target Grizzby
     .train 415995,1 << Priest
@@ -12881,7 +12881,7 @@ step
 step
     #xprate <2.1
     #completewith CounterattackTurnin2
-    +|cRXP_WARN_下一个任务很难，建议组队完成。你可以牵引督军克罗姆扎绕着任务给予者所在的建筑物走动|r
+    +下一个任务非常困难，建议组队完成。你可以风筝 督军克罗姆扎|cRXP_WARN_ 在任务给予者所在的建筑物周围|r
 step
     #xprate <2.1
     .goto 1413/1,-1972.55,-306.95
@@ -13023,7 +13023,7 @@ step
 step
     #xprate <2.1
     #completewith CounterattackTurnin3
-    +|cRXP_WARN_下一个任务很难，建议组队完成。你可以牵引督军克罗姆扎绕着任务给予者所在的建筑物走动|r
+    +下一个任务非常困难，建议组队完成。你可以风筝 督军克罗姆扎|cRXP_WARN_ 在任务给予者所在的建筑物周围|r
 step
     #xprate <2.1
     .goto 1413/1,-1972.55,-306.95
