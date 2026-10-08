@@ -216,13 +216,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
     .turnin 7 >> Turn in Kobold Camp Cleanup
     .accept 15 >> Accept Investigate Echo Ridge
-    .accept 3100 >> Accept Simple Letter << Warrior
-    .accept 3101 >> Accept Consecrated Letter << Paladin
-    .accept 3102 >> Accept Encrypted Letter << Rogue
-    .accept 3103 >> Accept Hallowed Letter << Priest
-    .accept 3104 >> Accept Glyphic Letter << Mage
-    .accept 3105 >> Accept Tainted Letter << Warlock
-    .accept 92479 >>Accept A Scribbled Letter << Hunter
+    .accept 3100 >> Accept Simple Letter << Human Warrior
+    .accept 3101 >> Accept Consecrated Letter << Human Paladin
+    .accept 3102 >> Accept Encrypted Letter << Human Rogue
+    .accept 3103 >> Accept Hallowed Letter << Human Priest
+    .accept 3104 >> Accept Glyphic Letter << Human Mage
+    .accept 3105 >> Accept Tainted Letter << Human Warlock
+    .accept 92479 >>Accept A Scribbled Letter << Human Hunter
     .target Marshal McBride
 
 step << Warlock
