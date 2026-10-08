@@ -1417,8 +1417,7 @@ step << Hunter
 step << Hunter
     #sticky
     #label xp10
-    --@TODO change the XP req here
-    .xp 9+2250 >> Grind until you are 2250 into level 9 (2250/6500)
+    .xp 9+800 >> Grind until you are 800xp into level 9
     >>|cRXP_WARN_Once you reach this xp breakpoint, skip the harpy/escort quest and go straight to Darnassus. You will have another opportunity to finish those quests later|r
 step << Hunter
     #completewith xp10
@@ -1460,6 +1459,7 @@ step << !Rogue
     #completewith next
     .goto 1457/1,2070.42,9979.310,100 >> Travel to Darnassus
 step << Hunter
+    #requires xp10
     .goto 1457/1,2316.49,9924.41
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
     .vendor >>|cRXP_BUY_Sell your vendor trash|r
