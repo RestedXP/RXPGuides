@@ -383,7 +383,7 @@ step
     .isQuestTurnedIn 13712
 step
     #completewith DorDanilDen
-    >>击杀 |cRXP_ENEMY_锐爪鹰|r，并拾取他的 |T136063:0|t[|cRXP_LOOT_锐爪鹰的爪子|r]，使用它来接取任务
+    >>击杀 |cRXP_ENEMY_尖爪|r，并拾取他的 |T136063:0|t[|cRXP_LOOT_锐爪鹰的爪子|r]，使用它来接取任务
     .collect 16305,1,2 --Sharptalon's Claw (1)
     .accept 2 >>接受任务 尖爪的爪子
     .unitscan 尖爪
@@ -429,7 +429,7 @@ step
     .isQuestTurnedIn 13712
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_锐爪鹰|r，并拾取他的 |T136063:0|t[|cRXP_LOOT_锐爪鹰的爪子|r]，使用它来接取任务
+    >>击杀 |cRXP_ENEMY_尖爪|r，并拾取他的 |T136063:0|t[|cRXP_LOOT_锐爪鹰的爪子|r]，使用它来接取任务
     .collect 16305,1,2 --Sharptalon's Claw (1)
     .accept 2 >>接受任务 尖爪的爪子
     .unitscan 尖爪
