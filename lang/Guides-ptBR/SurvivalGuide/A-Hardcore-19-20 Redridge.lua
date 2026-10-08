@@ -7,8 +7,8 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 19-20 Redridge
 #version 1
-#group Guia de Sobrevivência RestedXP (A)
-#subgroup RXP Guia de Sobrevivência 1-20
+#group Sobrevivência Guia (A)
+#subgroup RXP Sobrevivência Guia 1-20
 #next 20-21 Costa Negra/Vale Gris
 
 step << Hunter
@@ -35,7 +35,7 @@ step
     .goto StormwindClassic,58.08,16.52
     .target Furen Longbeard
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Furen Barbalonga|r
-    .turnin 1338 >>Entregue Pedidos de Pico da Tempestade
+    .turnin 1338 >>Entregue Ordens dos Lançatroz
     .isOnQuest 1338
 step
 .dungeon DM
@@ -51,7 +51,7 @@ step << Hunter
     #ssf
     #completewith ExitSW
     .goto StormwindClassic,49.990,57.641
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Frederico Fornalha|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Frederico Fornalha|r
     >>|cRXP_BUY_Compre um|r [Arco Recurvo Pesado]
     .collect 3027,1 -- Heavy Recurve Bow (1)
     .target Frederico Fornalha
@@ -61,7 +61,7 @@ step << Hunter
     #ah
     #completewith ExitSW
     .goto StormwindClassic,49.990,57.641
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Frederico Fornalha|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Frederico Fornalha|r
     >>|cRXP_BUY_Compre um|r |T135489:0|t[Arco Recurvo Pesado] |cRXP_BUY_ou algo melhor da Casa de Leilões|r
     .collect 3027,1 -- Heavy Recurve Bow (1)
     .target Frederico Fornalha
@@ -69,7 +69,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.20
 step << Hunter
     .goto StormwindClassic,49.990,57.641
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Frederico Fornalha|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Frederico Fornalha|r
     >>|cRXP_BUY_Compre|r [Flechas Afiadas]
     .collect 2515,1800 --Sharp Arrow (1800)
     .target Frederico Fornalha
@@ -81,7 +81,7 @@ step << Hunter
     .xp <20,1
 step << Mage
     #completewith next
-    .goto StormwindClassic,37.69,82.09,10 >>Vá para a Torre dos Magos
+    .goto StormwindClassic,37.69,82.09,10 >>Vá para a Torre do Mago
 step << Mage
     .goto StormwindClassic,36.87,81.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elsharin|r
@@ -103,8 +103,8 @@ step << Priest
     .target Brother Joshua
 step << Warlock/Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Adriana Cailen|r
-    >>|cRXP_BUY_Compre uma|r |T135139:0|t[Varinha Incandescente] |cRXP_BUY_se for uma atualização|r
-    >>|cRXP_WARN_É importante comprar uma varinha que não cause dano de sombra. Você terá que lidar com inimigos resistentes a dano de sombra mais tarde|r
+    >>|cRXP_BUY_Compre uma|r |T135139:0|t[Varinha Incandescente] |cRXP_BUY_se for uma melhoria|r
+    >>|cRXP_WARN_É importante comprar uma varinha de dano não-sombrio. Você terá que lidar com inimigos resistentes a dano sombrio depois|r
     .goto StormwindClassic,42.65,67.16,14,0
     .goto StormwindClassic,42.88,65.11
     .collect 5210,1
@@ -112,7 +112,7 @@ step << Warlock/Priest
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >>Vá para The Slaughtered Lamb e desça
+    .goto StormwindClassic,27.2,78.1,15 >>Vá para The Slaughtered Lamb e desça as escadas
 step << Warlock
     .goto StormwindClassic,26.11,77.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ursula Deline|r
@@ -146,8 +146,8 @@ step << !Hunter !Priest
 step << Rogue
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marcia Weller|r
-    >>|cRXP_BUY_Compre uma|r |T135324:0|t[Espada Longa] |cRXP_BUY_e|r |T135342:0|t[Cris]
-    >>|cRXP_WARN_Equipe a|r |T135324:0|t[Espada Longa] |cRXP_WARN_na sua mão principal quando você tiver 21 e|r |T135342:0|t[Cris] |cRXP_WARN_na sua segunda mão|r
+    >>|cRXP_BUY_Compre um|r |T135324:0|t[Espada Longa] |cRXP_BUY_e|r |T135342:0|t[Cris]
+    >>|cRXP_WARN_Equipe a|r |T135324:0|t[Espada Longa] |cRXP_WARN_na sua Mão Principal quando você tiver 21 e|r |T135342:0|t[Cris] |cRXP_WARN_na sua Mão Secundária|r
     .collect 923,1 --Longsword
     .collect 2209,1 --Kris
     .target Marcia Weller
@@ -155,11 +155,11 @@ step
     #ah
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Leiloeira Jasona|r
-    >>Compre os seguintes itens para entregar mais rapidamente em Montanhas Cristarrubra em breve
+    >>Compre os itens a seguir para entregas mais rápidas em Montanhas Cristarrubra em breve
     >>Isso vai economizar tempo, pois você não precisará ficar procurando inimigos para matar. Pule esta etapa se preferir não comprar nenhum
     >>|T134172:0|t[Grande Goretusco Snout]
-    >>|T134028:0|t[Fortalecer Condor Carne]
-    >>|T134321:0|t[Crisp Aranha Carne]
+    >>|T134028:0|t[Carne de Condor Resistente]
+    >>|T134321:0|t[Carne de Aranha Crocante]
     >>|T134572:0|t[Rethban Ore]
     .collect 2296,5,92,1 -- Great Goretusk Snout (5)
     .collect 1080,5,92,1 -- Tough Condor Meat (5)
@@ -184,15 +184,15 @@ step << NightElf
 step << NightElf
     #label GParker
     .goto Redridge Mountains,15.27,71.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Guarda Capitão da Guarda Florestan|r
-    .accept 244 >>Aceite Gnolls Invasores
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão da Guarda Florestan|r
+    .accept 244 >>Aceite Encroaching Gnolls
     .target Guard Parker
 step << NightElf
     .goto Redridge Mountains,30.73,59.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
-    .turnin 244 >>Entregue Gnolls Invasores
+    .turnin 244 >>Entregue Encroaching Gnolls
     .target Deputy Feldon
-    .accept 246 >>Aceite Avaliando a Ameaça
+    .accept 246 >>Aceite Avaliar a Ameaça
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Encarregado Oslow|r
     .goto Redridge Mountains,32.13,48.63
@@ -202,23 +202,23 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vervo Obom|r
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
-    .accept 118 >>Aceite O Preço dos Sapatos
+    .accept 118 >>Aceite The Price of Shoes
 step
     .goto Redridge Mountains,29.31,45.33,15,0
     .goto Redridge Mountains,29.98,44.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magistrado Salomão|r
 	.target Magistrate Solomon
-    .accept 120 >>Aceite Mensageiro para Ventobravo
+    .accept 120 >>Aceite Mensageiro para Objetos de TBC
 step
     .goto Redridge Mountains,26.80,44.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Darcy|r
-    >>|cRXP_FRIENDLY_Darcy|r |cRXP_WARN_anda ao redor dentro da Estalagem|r
+    >>|cRXP_FRIENDLY_Darcy|r |cRXP_WARN_anda pela Estalagem|r
 	.target Darcy
     .accept 129 >>Aceite Um Almoço Grátis
 step
     .goto Redridge Mountains,27.35,44.07,8,0
     .goto Redridge Mountains,26.48,45.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Wiley, o Negro|r ao subir as escadas
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Wiley, o Negro|r no andar de cima
     .turnin 65 >>Entregue A Irmandade Défias
     .accept 132 >>Aceitar A Irmandade Défias
 	.target Wiley the Black
@@ -233,11 +233,11 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shawn|r
 	.target Shawn
     .goto Redridge Mountains,29.31,53.63
-    .accept 3741 >>Aceite Nida's Colar
+    .accept 3741 >>Aceite O Colar de Nida
 step
-    >>|cRXP_WARN_Pule no lago|r
-    >>Abra a |cRXP_PICK_Glinting Mud|r. Saqueie-a para |cRXP_LOOT_Hilary's Colar|r
-    >>|cRXP_WARN_Tem múltiplos locais de aparecimento no lago|r
+    >>|cRXP_WARN_Salte para o lago|r
+    >>Abra a |cRXP_PICK_Glinting Mud|r. Saque-a para |cRXP_LOOT_Colar de Nida|r
+    >>|cRXP_WARN_Tem múltiplos locais de aparição no Lago|r
     .goto Redridge Mountains,27.80,56.05,0
     .goto Redridge Mountains,26.56,50.63,0
     .goto Redridge Mountains,23.96,55.17,0
@@ -251,7 +251,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nida|r
     .goto Redridge Mountains,29.24,53.63
-    .turnin 3741 >>Entregue Nida's Colar
+    .turnin 3741 >>Entregue O Colar de Nida
     .target Hilary
 step
     .goto Redridge Mountains,30.59,59.42
@@ -267,12 +267,12 @@ step
 step
     .goto Westfall,56.55,52.64
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thor|r
-    .fly Stormwind >>Voe para Cidade de Ventobravo
+    .fly Stormwind >>Voe para Objetos de TBC
     .target Thor
 step
     .goto StormwindClassic,63.982,75.338
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_General Marcus Jonas|r
-    .turnin 120 >>Entregue Messenger to Objetos de TBC
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_General Marcus Jonas|r
+    .turnin 120 >>Entregue Mensageiro para Ventobravo
     .accept 121 >>Aceite Mensageiro para Ventobravo
     .target General Marcus Jonathan
 step
@@ -300,7 +300,7 @@ step
     .target Gryan Stoutmantle
 step
     #completewith next
-    .goto Westfall,44.50,69.62,55 >>Vá para Moonbrook
+    .goto Westfall,44.50,69.62,55 >>Viaje para Aldeia da Lua
 step
     .goto Westfall,44.50,69.62
     .line Westfall,44.50,69.62,44.50,69.62,45.08,69.40,45.21,69.35,45.63,68.69,45.85,67.73,45.62,66.99,45.52,65.71,45.61,64.95,44.28,63.88,44.26,62.80,43.60,59.89,43.37,58.42,43.26,57.01,43.12,54.24,42.15,52.74,41.74,51.42,41.48,49.89,40.91,48.71,38.93,46.05,38.51,45.46,37.85,45.54,36.60,44.21,36.06,43.86,35.12,43.49,33.92,43.21,32.56,43.05,31.34,44.54,32.56,43.05,33.92,43.21,35.12,43.49,36.06,43.86,36.26,43.77,36.87,42.87,36.95,40.85,37.04,39.79,37.91,36.98,39.06,35.58,40.48,34.31,41.27,32.87,41.76,31.27,42.26,30.26,43.20,28.99,44.29,28.19,44.64,26.85,44.57,24.94,44.64,26.85,44.29,28.19,43.20,28.99,42.26,30.26,41.76,31.27,41.27,32.87,40.48,34.31,39.06,35.58,37.91,36.98,37.04,39.79,36.95,40.85,36.87,42.87,36.26,43.77,36.06,43.86,35.12,43.49,33.92,43.21,32.56,43.05,31.34,44.54,32.56,43.05,33.92,43.21,35.12,43.49,36.06,43.86,36.60,44.21,37.85,45.54,38.51,45.46,38.93,46.05,40.91,48.71,41.48,49.89,41.74,51.42,42.15,52.74,43.12,54.24,43.26,57.01,43.37,58.42,43.60,59.89,44.26,62.80,44.28,63.88,45.61,64.95,45.52,65.71,45.62,66.99,45.85,67.73,45.63,68.69,45.21,69.35,45.08,69.40,44.50,69.62
@@ -311,29 +311,29 @@ step
     .unitscan Defias Messenger
 step
     #completewith next
-    .goto Westfall,30.01,86.02,40 >>Vá para o Farol de Cerro Oeste
+    .goto Westfall,30.01,86.02,40 >>Viaje para o Farol de Cerro Oeste
 step
     .goto Westfall,30.01,86.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitão Calvino|r
-    .accept 104 >>Aceite O Mar Não Está para Peixe
-    .accept 103 >>Aceite Keeper of the Chamas
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão Calvino|r
+    .accept 104 >>Aceite Ameaça Costeira
+    .accept 103 >>Aceite Guardião da Chama
     .target Captain Grayson
 step
     .goto Westfall,30.01,86.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitão Calvino|r
-    .turnin 103 >>Entregue Keeper of the Chamas
+    .turnin 103 >>Entregue Guardião da Chama
     .itemcount 814,5 -- Flask of Oil (5)
     .target Captain Grayson
 step
     .goto Westfall,34.43,83.93
     .line Westfall,34.43,83.93,34.43,83.93,33.88,83.32,33.08,82.86,32.56,82.71,32.08,82.49,31.91,82.36,31.55,81.88,30.86,81.42,30.63,81.16,30.33,80.81,30.02,80.11,29.68,79.22,29.32,78.19,29.29,77.60,29.27,77.31,29.18,76.26,29.07,75.29,28.95,74.14,28.85,73.29,28.79,72.48,28.37,71.94,27.84,71.29,27.44,70.25,27.29,69.47,27.13,68.65,27.09,67.57,27.07,67.01,26.74,66.09,27.07,67.01,27.09,67.57,27.13,68.65,27.29,69.47,27.44,70.25,27.84,71.29,28.37,71.94,28.79,72.48,28.85,73.29,28.95,74.14,29.07,75.29,29.18,76.26,29.27,77.31,29.29,77.60,29.32,78.19,29.68,79.22,30.02,80.11,30.33,80.81,30.63,81.16,30.86,81.42,31.55,81.88,31.91,82.36,32.08,82.49,32.56,82.71,33.08,82.86,33.88,83.32,34.43,83.93
-    >>Abata o |cRXP_ENEMY_Velho Olho-turvo|r. Saqueie-o para a |cRXP_LOOT_Escama|r
-    >>|cRXP_ENEMY_Velho Olho-turvo|r |cRXP_WARN_patrulha para cima e para baixo pela Costa Longa. Se você não o vir ao longo da Costa Longa, espere-o aparecer no acampamento |cRXP_ENEMY_Murloc|r mais ao sul|r
+    >>Mate o |cRXP_ENEMY_Velho Olho-turvo|r. Saque-o para obter sua |cRXP_LOOT_Escama|r
+    >>|cRXP_ENEMY_Velho Olho-turvo|r |cRXP_WARN_patrulha para cima e para baixo na Longshore. Se você não o vê ao longo da Longshore, espere por ele aparecer no acampamento |cRXP_ENEMY_Murloc|r mais ao sul|r
     .complete 104,1 -- Scale of Old Murk-Eye (1)
     .unitscan Old Murk-Eye
 step
     .goto Westfall,30.01,86.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitão Calvino|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão Calvino|r
     .turnin 104 >>Entregue O Mar Não Está para Peixe
     .target Captain Grayson
 step
@@ -351,37 +351,37 @@ step
     .target The Defias Traitor
 step
     .goto Westfall,42.56,71.71
-    >>Escolte o |cRXP_FRIENDLY_Traidor Défias|r para Minas Mortas
-    >>|cRXP_WARN_fique ao lado de |cRXP_FRIENDLY_Traidor Défias|r o tempo todo! esteja pronto para lutar |cRXP_ENEMY_Défias|r ao chegar em Moonbrook|r
+    >>Escorte o |cRXP_FRIENDLY_Traidor Défias|r para Minas Mortas
+    >>|cRXP_WARN_Fique ao lado de |cRXP_FRIENDLY_Traidor Défias|r o tempo todo! Esteja pronto para lutar contra |cRXP_ENEMY_The Defias|r ao chegar em Moonbrook|r
     .complete 155,1 -- Escort The Defias Traitor to discover where VanCleef is hiding (1)
     .target The Defias Traitor
 step
     .goto Westfall,25.90,47.76
-    >>|cRXP_WARN_Use |T134269:0|t[|cRXP_LOOT_Captain Sander's Mapa do Tesouro|r] para iniciar a missão|r
+    >>|cRXP_WARN_Use |T134269:0|t[|cRXP_LOOT_Captain Sander's Mapa do Tesouro|r] para começar a missão|r
     .use 1357
-    .accept 136 >>Aceite Tesouro Escondido de Capitão Sanders
+    .accept 136 >>Aceite O Tesouro Escondido do Capitão Sanders
     .itemcount 1357,1 -- Captain Sanders' Treasure Map (1)
 step
     .goto Westfall,25.90,47.76
-    >>Clique no |cRXP_PICK_Captain's Objetos de TBC|r
-    .turnin 136 >>Entregue Tesouro Escondido de Capitão Sanders
+    >>Clique no |cRXP_PICK_Báu do Capitão|r
+    .turnin 136 >>Entregue O Tesouro Escondido do Capitão Sanders
     .itemcount 1357,1 -- Captain Sanders' Treasure Map (1)
 step
     .goto Westfall,25.90,47.76
-    >>Clique no |cRXP_PICK_Captain's Objetos de TBC|r
-    .accept 138 >>Aceite Tesouro Escondido de Capitão Sanders
+    >>Clique no |cRXP_PICK_Baú do Capitão|r
+    .accept 138 >>Aceite O Tesouro Escondido do Capitão Sanders
     .isQuestTurnedIn 136
 step
     .goto Westfall,40.51,47.80
-    >>Clique no |cRXP_PICK_Broken Barril|r
-    .turnin 138 >>Entregue Tesouro Escondido de Capitão Sanders
-    .accept 139 >>Aceite Tesouro Escondido de Capitão Sanders
+    >>Clique no |cRXP_PICK_Barril Quebrado|r
+    .turnin 138 >>Entregue O Tesouro Escondido do Capitão Sanders
+    .accept 139 >>Aceite O Tesouro Escondido do Capitão Sanders
     .isQuestTurnedIn 136
 step
     .goto Westfall,40.63,17.03
-    >>Clique no |cRXP_PICK_Old Jarra|r
-    .turnin 139 >>Entregue Tesouro Escondido de Capitão Sanders
-    .accept 140 >>Aceite Tesouro Escondido de Capitão Sanders
+    >>Clique na |cRXP_PICK_Jarra Antiga|r
+    .turnin 139 >>Entregue O Tesouro Escondido do Capitão Sanders
+    .accept 140 >>Aceite O Tesouro Escondido do Capitão Sanders
     .isQuestTurnedIn 138
 step
     #completewith next
@@ -389,8 +389,8 @@ step
     .isOnQuest 140
 step
     .goto Westfall,25.97,16.90
-    >>Clique no |cRXP_PICK_Locked Baú|r
-    .turnin 140 >>Entregue Tesouro Escondido de Capitão Sanders
+    >>Clique no |cRXP_PICK_Báu Trancado|r
+    .turnin 140 >>Entregue O Tesouro Escondido do Capitão Sanders
     .isOnQuest 140
 step
     .goto Westfall,56.33,47.52
@@ -410,16 +410,16 @@ step
 .dungeon DM
     .goto Westfall,60.4,72.2
     .goto Westfall,40.4,71.6
-    .subzone 1581 >>Agora você deve estar procurando um grupo para as Minas Mortas
-    >>Triture Gnolls enquanto monta um grupo para Minas Mortas
+    .subzone 1581 >>Agora você deve estar procurando um grupo para Minas Mortas
+    >>Massacre Gnolls enquanto monta um grupo para Minas Mortas
 step
 .dungeon DM
     .goto Westfall,42.55,71.69
-    .subzone 1581 >>Vá para Minas Mortas
+    .subzone 1581 >>Voe para Minas Mortas
 step
 .dungeon DM
     #completewith EnterDM
-    >>Mate os |cRXP_ENEMY_Defias|r. Saque-os para as |cRXP_LOOT_Bandanas|r
+    >>Mate os |cRXP_ENEMY_Defias|r. Saque-os para obter suas |cRXP_LOOT_Bandanas|r
     >>|cRXP_WARN_Você pode completar isto depois de entrar na Masmorra|r
     .complete 214,1 -- Red Silk Bandana (10)
 step
@@ -463,7 +463,7 @@ step
 step
 .dungeon DM
     #completewith DMend
-    >>Abata os |cRXP_ENEMY_Defias|r dentro de Minas Mortas. Saqueie-os para |cRXP_LOOT_Bandanas|r
+    >>Mate os |cRXP_ENEMY_Defias|r dentro de Minas Mortas. Saque-os para obter suas |cRXP_LOOT_Bandanas|r
     .complete 214,1 -- Red Silk Bandana (10)
 step
 .dungeon DM
@@ -543,7 +543,7 @@ step
     #completewith next
     .goto StormwindClassic,70.439,27.097,15,0
     .goto StormwindClassic,72.003,21.525,15,0
-    .goto StormwindClassic,70.713,10.717,15 >>Vá em direção a |cRXP_FRIENDLY_Milton Resma|r na Biblioteca de Ventobravo
+    .goto StormwindClassic,70.713,10.717,15 >>Vá para |cRXP_FRIENDLY_Milton Resma|r na Biblioteca de Ventobravo
     .xp <20,1
 step
 .dungeon DM
@@ -565,7 +565,7 @@ step
 step
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thor|r
-    >>Voe para Redridge se você ainda está em Cerro Oeste
+    >>Voe para Redridge se você ainda estiver em Cerro Oeste
     .fly Redridge >>Voe para Redridge
     .target Thor
     .zoneskip Westfall,1
@@ -581,15 +581,15 @@ step
     .goto Elwynn Forest,41.71,65.55
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Ferreiro Argus|r
 	.target Smith Argus
-    .turnin 118 >>Entregue O Preço dos Sapatos
-    .accept 119 >>Aceite Retornar a Verner
+    .turnin 118 >>Entregue The Price of Shoes
+    .accept 119 >>Aceite Devolver to Verner
     .xp <20,1
 step
 .dungeon DM
     .isQuestTurnedIn 343
     #completewith next
     .goto Elwynn Forest,45.81,47.73,20,0
-    .goto Elwynn Forest,48.61,41.80,15 >>Viaje para a Abadia de Northshire
+    .goto Elwynn Forest,48.61,41.80,15 >>Vá para Northshire Abbey
     .xp <20,1
 step
 .dungeon DM
@@ -597,7 +597,7 @@ step
     .goto Elwynn Forest,49.60,40.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Irmão Paxeco|r
     .turnin 344 >>Entregue Irmão Paxeco
-    .accept 345 >>Aceite Suprimentos de Tinta
+    .accept 345 >>Aceite Tinta Suprimentos
     .target Brother Paxton
     .xp <20,1
 step
@@ -606,7 +606,7 @@ step
     #completewith next
     .goto Elwynn Forest,57.518,51.595,25,0
     .goto Elwynn Forest,58.14,52.50,20,0
-    .goto Elwynn Forest,65.20,69.80,50 >>Viaje para a Torre de Azora. Suba a torre. Siga a seta para um atalho através das montanhas
+    .goto Elwynn Forest,65.20,69.80,50 >>Vá para a Torre de Azora. Suba a torre. Siga a seta para um atalho pelas montanhas
     .xp <20,1
 step
 .dungeon DM
@@ -621,8 +621,8 @@ step
     .isQuestTurnedIn 343
     .goto Elwynn Forest,64.880,69.192
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estela Dalva|r
-    .vendor >>|cRXP_FRIENDLY_Estela Dalva|r |cRXP_BUY_tem itens de estoque limitado, como|r |T134938:0|t|T134937:0|t|T134943:0|t[Pergaminhos] |cRXP_BUY_e|r |T134850:0|t|T134830:0|t[Potions] |cRXP_BUY_, que você deve comprar se disponíveis|r << !Warrior !Rogue
-    .vendor >>|cRXP_FRIENDLY_Estela Dalva|r |cRXP_BUY_tem itens de estoque limitado, como|r |T134938:0|t|T134937:0|t|T134943:0|t[Pergaminhos] |cRXP_BUY_e|r |T134830:0|t[Potions] |cRXP_BUY_, que você deve comprar se disponíveis|r << Warrior/Rogue
+    .vendor >>|cRXP_FRIENDLY_Estela Dalva|r |cRXP_BUY_tem suprimentos limitados de itens como|r |T134938:0|t|T134937:0|t|T134943:0|t[Pergaminhos] |cRXP_BUY_e|r |T134850:0|t|T134830:0|t[Potions] |cRXP_BUY_bem como, que você deveria comprar se disponível|r << !Warrior !Rogue
+    .vendor >>|cRXP_FRIENDLY_Estela Dalva|r |cRXP_BUY_tem suprimentos limitados de itens como|r |T134938:0|t|T134937:0|t|T134943:0|t[Pergaminhos] |cRXP_BUY_e|r |T134830:0|t[Potions] |cRXP_BUY_bem como, que você deveria comprar se disponível|r << Warrior/Rogue
     .target Dawn Brightstar
     .subzoneskip 91,1
 step
@@ -639,27 +639,27 @@ step
     .target Dungar Longdrink
     .zoneskip Stormwind City,1
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Guarda Capitão da Guarda Florestan|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão da Guarda Florestan|r
 	.target Guard Parker
     .goto Redridge Mountains,15.30,71.50
-    .accept 244 >>Aceite Gnolls Invasores
+    .accept 244 >>Aceite Encroaching Gnolls
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Guarda Capitão da Guarda Florestan|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão da Guarda Florestan|r
 	.target Guard Parker
     .goto Redridge Mountains,15.27,71.45
-    .turnin 129 >>Entregue Um Almoço Grátis
-    .accept 130 >>Aceite Visite a Herbalista
+    .turnin 129 >>Entregue Grátis Lunch
+    .accept 130 >>Aceite Visit the Herbalist
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
 	.target Deputy Feldon
     .goto Redridge Mountains,30.70,60.00
-    .turnin 244 >>Entregue Gnolls Invasores
-    .accept 246 >>Aceite Avaliando a Ameaça
+    .turnin 244 >>Entregue Encroaching Gnolls
+    .accept 246 >>Aceite Assessing the Ameaça
 step
     .isQuestTurnedIn 343
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Encarregado Oslow|r
     .goto Redridge Mountains,32.13,48.63
-    .turnin 345 >>Entregue Suprimentos de Tinta
+    .turnin 345 >>Entregue Tinta Suprimentos
     .target Foreman Oslow
 step
     .isQuestTurnedIn 118
@@ -667,16 +667,16 @@ step
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
     .turnin 119 >>Entregue Devolver to Verner
-    .accept 124 >>Aceite A Baying of Gnolls
+    .accept 124 >>Aceite Baying of Gnolls
     .accept 122 >>Aceite Underbelly Escamoso
 step
     #era/som
     #completewith MongrelPoacher
-    >>Mate os |cRXP_ENEMY_Great Goretusks|r. Saque-os para obter seus |cRXP_LOOT_Great Goretusco Snouts|r
-    >>Mate os |cRXP_ENEMY_Tarantulas|r. Saque-os para obter |cRXP_LOOT_Crisp Aranha Carne|r
-    >>Mate os |cRXP_ENEMY_Dire Condors|r. Saque-os para obter |cRXP_LOOT_Tough Condor Carne|r
-    >>|cRXP_WARN_NÃO venda nenhum desses itens até você entregar a missão Gulache de Cristarrubra|r
-    >>|cRXP_WARN_Guarde qualquer|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_que você saqueia pois pode usá-los para subir|r |T133971:0|t[Culinária] |cRXP_WARN_até 50 que é necessário para Floresta do Crepúsculo depois|r
+    >>Mate os |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para obter os |cRXP_LOOT_Great Goretusco Snouts|r
+    >>Mate os |cRXP_ENEMY_Tarantulas|r. Saqueie-os para obter a |cRXP_LOOT_Crisp Aranha Carne|r
+    >>Mate os |cRXP_ENEMY_Dire Condors|r. Saqueie-os para obter a |cRXP_LOOT_Tough Condor Carne|r
+    >>|cRXP_WARN_Não venda nenhum desses itens até que você entregue a missão Gulache de Cristarrubra|r
+    >>|cRXP_WARN_Guarde qualquer|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_que você colhe bem como você pode usá-los para elevar|r |T133971:0|t[Culinária] |cRXP_WARN_até 50, que é necessário para Floresta do Crepúsculo mais tarde|r
     .collect 2296,5,92,1
     .mob +Great Goretusk
     .collect 1080,5,92,1
@@ -686,8 +686,8 @@ step
 step
     .isOnQuest 122
     #completewith Toolbox
-    >>Mate os |cRXP_ENEMY_Black Dragão Whelps|r. Saqueie-os para obter os |cRXP_LOOT_Escamoso|r
-    >>Você não tem que completar esta missão agora
+    >>Abate os |cRXP_ENEMY_Black Dragão Whelps|r. Saqueie-os para obter suas |cRXP_LOOT_Escamoso|r
+    >>Você não precisa completar esta missão agora
     .complete 122,1 --Underbelly Whelp Scale (6)
     .mob Black Dragon Whelp
 step
@@ -698,7 +698,7 @@ step
     .goto Redridge Mountains,32.52,81.78,45,0
     .goto Redridge Mountains,43.18,72.22,45,0
     .goto Redridge Mountains,31.13,82.18
-	>>Mate os |cRXP_ENEMY_Redridge Mongrels|r e os |cRXP_ENEMY_Redridge Poachers|r
+	>>Mate os |cRXP_ENEMY_Malandros de Redridge|r e os |cRXP_ENEMY_Caçadores Furtivos de Redridge|r
     .complete 246,1 --Redridge Mongrel (10)
     .mob +Redridge Mongrel
     .complete 246,2 --Redridge Poacher (6)
@@ -707,9 +707,9 @@ step
     #era/som
     #completewith next
     >>Mate os |cRXP_ENEMY_Great Goretusks|r. Saque-os para obter seus |cRXP_LOOT_Great Goretusco Snouts|r
-    >>Mate os |cRXP_ENEMY_Dire Condors|r. Saque-os para obter |cRXP_LOOT_Tough Condor Carne|r
-    >>|cRXP_WARN_NÃO venda nenhum desses itens até você entregar a missão Gulache de Cristarrubra|r
-    >>|cRXP_WARN_Guarde qualquer|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_que você saqueia pois pode usá-los para subir|r |T133971:0|t[Culinária] |cRXP_WARN_até 50 que é necessário para Floresta do Crepúsculo depois|r
+    >>Mate os |cRXP_ENEMY_Dire Condors|r. Saqueie-os por seus |cRXP_LOOT_Tough Condor Carne|r
+    >>|cRXP_WARN_NÃO venda esses itens até entregar Gulache de Cristarrubra|r
+    >>|cRXP_WARN_Guarde qualquer|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_que você saqueia bem como você pode usá-los para subir|r |T133971:0|t[Culinária] |cRXP_WARN_até 50, o que é necessário para Floresta do Crepúsculo depois|r
     .collect 2296,5,92,1
     .mob +Great Goretusk
     .collect 1080,5,92,1
@@ -721,15 +721,15 @@ step
     .goto Redridge Mountains,11.20,76.31,45,0
     .goto Redridge Mountains,13.37,81.48,45,0
     .goto Redridge Mountains,18.86,73.63
-    >>Mate os |cRXP_ENEMY_Tarantulas|r. Saque-os para obter |cRXP_LOOT_Crisp Aranha Carne|r
+    >>Mate os |cRXP_ENEMY_Tarantulas|r. Saqueie-os por seus |cRXP_LOOT_Crisp Aranha Carne|r
     .collect 1081,5,92,1
     .mob Tarantula
 step
     #era/som
-    >>Mate os |cRXP_ENEMY_Great Goretusks|r. Saque-os para obter seus |cRXP_LOOT_Great Goretusco Snouts|r
-    >>Mate os |cRXP_ENEMY_Dire Condors|r. Saque-os para obter |cRXP_LOOT_Tough Condor Carne|r
-    >>|cRXP_WARN_NÃO venda nenhum desses itens até você entregar a missão Gulache de Cristarrubra|r
-    >>|cRXP_WARN_Guarde qualquer|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_que você saqueia pois pode usá-los para subir|r |T133971:0|t[Culinária] |cRXP_WARN_até 50 que é necessário para Floresta do Crepúsculo depois|r
+    >>Mate os |cRXP_ENEMY_Great Goretusks|r. Saqueie-os por seus |cRXP_LOOT_Great Goretusco Snouts|r
+    >>Mate os |cRXP_ENEMY_Dire Condors|r. Saqueie-os para obter |cRXP_LOOT_Tough Condor Carne|r
+    >>|cRXP_WARN_NÃO venda nenhum desses itens até que você entregue Gulache de Cristarrubra|r
+    >>|cRXP_WARN_Salve qualquer|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_que você saqueie, bem como pode usá-los para subir|r |T133971:0|t[Culinária] |cRXP_WARN_até 50, o que é necessário para Floresta do Crepúsculo depois|r
     .collect 1080,5,92,1
     .mob +Dire Condor
     .goto Redridge Mountains,66.4,76.6,60,0
@@ -744,13 +744,13 @@ step
     .mob +Great Goretusk
 step
     #label Toolbox
-    >>|cRXP_WARN_Salte no lago. Cuidado com a Élite em Patrulha |cRXP_ENEMY_Lake Thresher|r na água|r
+    >>|cRXP_WARN_Salte para o Lago. Cuidado com o Élite |cRXP_ENEMY_Lake Thresher|r na água|r
     >>Abra o |cRXP_PICK_Sunken Baú|r. Pegue |cRXP_LOOT_Oslow's Caixa de Ferramentas|r
     .goto Redridge Mountains,41.52,54.68
     .complete 125,1 --Oslow's Toolbox (1)
 step
     .goto Redridge Mountains,49.0,70.0
-    .xp 20-3000 >>Farme até estar a 3000 xp do nível 20
+    .xp 20-3000 >>Farme até estar 3000 XP longe do nível 20
 step
     #completewith next
     .goto Redridge Mountains,30.73,59.99,150 >>Viaje para Lakeshire
@@ -758,32 +758,32 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Encarregado Oslow|r
 	.target Foreman Oslow
     .goto Redridge Mountains,32.13,48.63
-    .turnin 125 >>Entregue The Perdida Ferramentas
+    .turnin 125 >>Entregue Perdida Ferramentas
     .accept 89 >>Aceite The Everstill Ponte
 step
     #era
     .isQuestComplete 122
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vervo Obom|r
-    >>Se você não completou Escamas de Ventre ainda, pule este passo, você fará isso mais tarde
+    >>Pule este passo se você ainda não completou Underbelly Escamoso. Você fará depois.
 	.target Verner Osgood
     .goto Redridge Mountains,31.00,47.30
-    .turnin 122 >>Entregue Underbelly Escamoso
+    .turnin 122 >>Entregue Escamas do Baixo-ventre
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magistrado Salomão|r
 	.target Magistrate Solomon
     .goto Redridge Mountains,29.31,45.33,15,0
     .goto Redridge Mountains,29.98,44.45
-    .turnin 121 >>Entregue Messenger to Objetos de TBC
+    .turnin 121 >>Entregue Mensageiro em Ventobravo
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Martie Jainrose|r
 	.target Martie Jainrose
     .goto Redridge Mountains,21.86,46.33
-    .turnin 130 >>Entregue Visite a Herbalista
+    .turnin 130 >>Entregue Visit the Herbalist
     .accept 131 >>Aceite Entregando Daffodils
 step
     #era/som
     .isQuestComplete 92
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre-cuca Breanna|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Mestre-cuca Breanna|r
 	.target Chef Breanna
     .goto Redridge Mountains,22.67,43.83
     .turnin 92 >>Entregue Gulache de Cristarrubra
@@ -799,12 +799,12 @@ step
     .goto Redridge Mountains,30.73,59.99
     .turnin 246 >>Entregue Assessing the Ameaça
 step
-    .xp 20 >>Certifique-se de estar no nível 20 antes de voar para Ventobravo
+    .xp 20 >>Certifique-se de que está no nível 20 antes de voar para Ventobravo
 step
     .goto Redridge Mountains,30.59,59.42
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena Penafúria|r
 	.target Ariena Stormfeather
-    .fly Stormwind >>Voe para Cidade de Ventobravo
+    .fly Stormwind >>Voe para Ventobravo
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
@@ -816,7 +816,7 @@ step << Warlock
     .target Ursula Deline
 step << Warlock
     .goto StormwindClassic,25.665,77.649
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Spackle Cardopomo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Spackle Cardopomo|r
     .vendor >>|cRXP_BUY_Compre|r |T133738:0|t[Grimório of Tormento (Rank 2)]
     .target Spackle Thornberry
 step << Warlock
@@ -826,7 +826,7 @@ step << Warlock
     .target Gakin the Darkbinder
 step << Mage
     #completewith next
-    .goto StormwindClassic,37.69,82.09,10 >>Vá para a Torre dos Magos
+    .goto StormwindClassic,37.69,82.09,10 >>Vá para a Torre do Mago
 step << Mage
     .goto StormwindClassic,36.87,81.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elsharin|r
@@ -848,8 +848,8 @@ step << Rogue
     #ah
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marcia Weller|r
-    >>|cRXP_BUY_Compre uma|r |T135324:0|t[Espada Longa] |cRXP_BUY_e equipe em nível 21|r
-    >>|cRXP_BUY_Compre algo da Casa de Leilões se houver algo mais barato/melhor|r
+    >>|cRXP_BUY_Compre uma|r |T135324:0|t[Espada Longa] |cRXP_BUY_e equipe-a no nível 21|r
+    >>|cRXP_BUY_Compre algo da Casa de Leilões se encontrar algo mais barato ou melhor|r
     >>|cRXP_WARN_Pule este passo se você tiver algo melhor|r
     .collect 923,1 --Longsword (1)
     .target Marcia Weller
@@ -857,15 +857,15 @@ step << !Dwarf Rogue
     #ah
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Leiloeira Jasona|r
-    >>Compre a |T134437:0|t[Antipeçonha] para a missão |T132290:0|t[Venenos] mais tarde
-    >>Isso economizará tempo pois você não precisará correr procurando inimigos para matar. Pule este passo se desejar não comprar.
+    >>Compre a |T134437:0|t[Antipeçonha] para sua |T132290:0|t[Venenos] missão depois
+    >>Isso economizará tempo já que você não precisará correr procurando por inimigos para matar. Pule este passo se preferir não comprar
     .collect 6452,1,2359,1 --Anti-Venom (1)
     .target Auctioneer Jaxon
 step << Rogue
     #hardcore
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marcia Weller|r
-    >>|cRXP_BUY_Compre uma|r |T135324:0|t[Espada Longa] |cRXP_BUY_e equipe em nível 21|r
+    >>|cRXP_BUY_Compre uma|r |T135324:0|t[Espada Longa] |cRXP_BUY_e equipe-o no nível 21|r
     >>|cRXP_WARN_Pule este passo se você tiver algo melhor|r
     .collect 923,1 --Longsword (1)
     .target Marcia Weller
@@ -873,7 +873,7 @@ step << Warrior/Paladin
     #ah
     .goto StormwindClassic,57.54,57.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gunther Weller|r
-    >>|cRXP_BUY_Compre uma|r |T135280:0|t[Falx Dácia] |cRXP_BUY_se você tiver dinheiro suficiente. Equipe em nível 21|r
+    >>|cRXP_BUY_Compre uma|r |T135280:0|t[Falx Dácia] |cRXP_BUY_se você tiver dinheiro suficiente. Equipe-a no nível 21|r
     >>|cRXP_BUY_Compre algo da Casa de Leilões se houver algo mais barato/melhor|r
     >>|cRXP_WARN_Pule este passo se você tiver algo melhor|r
     .collect 922,1 --Dacian Falx (1)
@@ -882,7 +882,7 @@ step << Warrior/Paladin
     #hardcore
     .goto StormwindClassic,57.54,57.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gunther Weller|r
-    >>|cRXP_BUY_Compre uma|r |T135280:0|t[Falx Dácia] |cRXP_BUY_se você tiver dinheiro suficiente. Equipe em nível 21|r
+    >>|cRXP_BUY_Compre um|r |T135280:0|t[Falx Dácia] |cRXP_BUY_se você tiver dinheiro suficiente. Equipe-o no nível 21|r
     >>|cRXP_WARN_Pule este passo se você tiver algo melhor|r
     .collect 922,1 --Dacian Falx (1)
     .target Gunther Weller
@@ -908,7 +908,7 @@ step << Paladin
     .target Duthorian Rall
 step << Paladin
     .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Benedito Brião|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Benedito Brião|r
     .turnin 1649 >>Entregue O Tomo de Bravura
     .target Duthorian Rall
 step << Paladin
@@ -926,7 +926,7 @@ step
     #completewith next
     .goto StormwindClassic,70.439,27.097,15,0
     .goto StormwindClassic,72.003,21.525,15,0
-    .goto StormwindClassic,70.713,10.717,15 >>Vá em direção a |cRXP_FRIENDLY_Milton Resma|r na Biblioteca de Ventobravo
+    .goto StormwindClassic,70.713,10.717,15 >>Vá para |cRXP_FRIENDLY_Milton Resma|r na Biblioteca Objetos de TBC
 step
     .goto StormwindClassic,74.182,7.465
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Milton Resma|r
@@ -942,13 +942,13 @@ step << Rogue
     .goto StormwindClassic,74.64,52.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Osborne|r
     .trainer >>Treine suas magias de classe
-    .train 1804 >>Treine |T136058:0|t[Abrir Fechadura] para aprender Arrombamento
+    .train 1804 >>Tente |T136058:0|t[Abrir Fechadura] para aprender Arrombamento
     .target Osborne the Night Man
 step << Rogue
     #completewith next
     .goto StormwindClassic,74.90,54.00,20,0
     .goto StormwindClassic,78.43,60.15,20,0
-    .goto StormwindClassic,78.67,60.13,5 >>Entre no Quartel-General SI:7. Suba pelas escadas em direção a |cRXP_FRIENDLY_Renzik, "O Bicudo"|r e |cRXP_FRIENDLY_Mestre Mathias Shaw|r
+    .goto StormwindClassic,78.67,60.13,5 >>Entre na Sede do SI:7. Suba as escadas até |cRXP_FRIENDLY_Renzik, "O Bicudo"|r e o |cRXP_FRIENDLY_Mestre Mathias Shaw|r
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Renzik, "O Bicudo"|r e |cRXP_FRIENDLY_Mestre Mathias Shaw|r
     .accept 2281 >>Aceite Encontro em Cristarrubra
@@ -967,17 +967,17 @@ step << Warrior
     .target Ilsa Corbin
 step
     #completewith next
-    .goto Elwynn Forest,32.240,49.723,60 >>Saia de Ventobravo. Vá para Goldshire
+    .goto Elwynn Forest,32.240,49.723,60 >>Saia de Objetos de TBC. Vá para Goldshire
 step
     .goto Elwynn Forest,41.71,65.55
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Ferreiro Argus|r
 	.target Smith Argus
-    .turnin 118 >>Entregue O Preço dos Sapatos
-    .accept 119 >>Aceite Retornar a Verner
+    .turnin 118 >>Entregue The Price of Shoes
+    .accept 119 >>Aceite Devolver to Verner
 step
     #completewith next
     .goto Elwynn Forest,45.81,47.73,20,0
-    .goto Elwynn Forest,48.61,41.80,15 >>Viaje para a Abadia de Northshire
+    .goto Elwynn Forest,48.61,41.80,15 >>Vá para Northshire Abbey
 step
     .goto Elwynn Forest,49.60,40.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Irmão Paxeco|r
@@ -988,7 +988,7 @@ step
     #completewith next
     .goto Elwynn Forest,57.518,51.595,25,0
     .goto Elwynn Forest,58.14,52.50,20,0
-    .goto Elwynn Forest,65.20,69.80,50 >>Viaje para a Torre de Azora. Suba a torre. Siga a seta para um atalho através das montanhas
+    .goto Elwynn Forest,65.20,69.80,50 >>Vá para a Torre de Azora. Suba a torre. Siga a seta para um atalho pelas montanhas
 step
     .goto Elwynn Forest,65.22,69.71
     .target Theocritus
@@ -996,9 +996,9 @@ step
     .accept 94 >>Aceite A Olho Vigilante
 step
     .goto Elwynn Forest,64.880,69.192
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estela Dalva|r
-    .vendor >>|cRXP_FRIENDLY_Estela Dalva|r |cRXP_BUY_tem itens de estoque limitado, como|r |T134938:0|t|T134937:0|t|T134943:0|t[Pergaminhos] |cRXP_BUY_e|r |T134850:0|t|T134830:0|t[Potions] |cRXP_BUY_, que você deve comprar se disponíveis|r << !Warrior !Rogue
-    .vendor >>|cRXP_FRIENDLY_Estela Dalva|r |cRXP_BUY_tem itens de estoque limitado, como|r |T134938:0|t|T134937:0|t|T134943:0|t[Pergaminhos] |cRXP_BUY_e|r |T134830:0|t[Potions] |cRXP_BUY_, que você deve comprar se disponíveis|r << Warrior/Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_FRIENDLY_Sol Estela Dalva|r
+    .vendor >>|cRXP_FRIENDLY_Sol Estela Dalva|r |cRXP_BUY_tem itens de fornecimento limitado, como|r |T134938:0|t|T134937:0|t|T134943:0|t[Pergaminhos] |cRXP_BUY_e|r |T134850:0|t|T134830:0|t[Potions] |cRXP_BUY_que você deveria comprar se disponível|r << !Warrior !Rogue
+    .vendor >>|cRXP_FRIENDLY_Sol Estela Dalva|r |cRXP_BUY_tem itens de fornecimento limitado, como|r |T134938:0|t|T134937:0|t|T134943:0|t[Pergaminhos] |cRXP_BUY_e|r |T134830:0|t[Potions] |cRXP_BUY_que você deveria comprar se disponível|r << Warrior/Rogue
     .target Dawn Brightstar
     .subzoneskip 91,1
 step
@@ -1009,7 +1009,7 @@ step
 step
     .goto StormwindClassic,66.27,62.12,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
-    >>Voe para Redridge se você está em Ventobravo
+    >>Voe para Redridge se você estiver em Objetos de TBC
     .fly Redridge >>Voe para Redridge
     .target Dungar Longdrink
     .zoneskip Stormwind City,1
@@ -1022,7 +1022,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vervo Obom|r
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
-    .turnin 119 >>Entregue Devolver to Verner
+    .turnin 119 >>Entregue Devolver a Verner
     .accept 124 >>Aceite A Baying of Gnolls
 step
     #era
@@ -1033,13 +1033,13 @@ step
 step << Rogue
     .goto Redridge Mountains,28.07,52.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lucius|r
-    .turnin 2281 >>Entregue Redridge Encontro marcado
+    .turnin 2281 >>Entregue Redridge Encontro Marcado
     .target Lucius
     .accept 2282 >>Aceite Moinho de Alther
 step
     #era
 	#completewith next
-	>>Mate os |cRXP_ENEMY_Black Dragão Whelps|r. Saqueie-os para obter os |cRXP_LOOT_Escamoso|r
+	>>Abate os |cRXP_ENEMY_Black Dragão Whelps|r. Saqueie-os para obter suas |cRXP_LOOT_Escamoso|r
     .complete 122,1 --Underbelly Whelp Scale (6)
     .mob Black Dragon Whelp
 step
@@ -1052,7 +1052,7 @@ step
     .goto Redridge Mountains,34.20,39.70,60,0
     .goto Redridge Mountains,39.61,31.46,60,0
     .goto Redridge Mountains,22.5,35.7,0
-    >>Mate os |cRXP_ENEMY_Redridge Brutes|r e os |cRXP_ENEMY_Redridge Mystics|r. Saqueie-os para obter |cRXP_LOOT_Iron Pikes|r e |cRXP_LOOT_Iron Rivets|r
+    >>Mate os |cRXP_ENEMY_Redridge Brutes|r e os |cRXP_ENEMY_Redridge Mystics|r. Saque-os por seus |cRXP_LOOT_Iron Pikes|r e |cRXP_LOOT_Iron Rivets|r
     .complete 124,1 --Redridge Brute (10)
 	.mob +Redridge Brute
     .complete 124,2 --Redridge Mystic (8)
@@ -1065,7 +1065,7 @@ step
 	.mob +Redridge Brute
 step << Rogue
     .goto Redridge Mountains,52.10,45.24
-    +Abra as |cRXP_PICK_Practice Lockboxes|r até você atingir 80 em |T136058:0|t[Arrombamento]
+    +Abra os |cRXP_PICK_Cofres de Prática|r até atingir 80 em |T136058:0|t[Arrombamento]
     .skill lockpicking,80,1
 step << Rogue
 	.goto Redridge Mountains,52.05,44.69
@@ -1078,7 +1078,7 @@ step
     .goto Redridge Mountains,46.52,35.66,50,0
     .goto Redridge Mountains,34.56,65.79,50,0
     .goto Redridge Mountains,36.58,73.93
-	>>Mate os |cRXP_ENEMY_Black Dragão Whelps|r. Saqueie-os para obter os |cRXP_LOOT_Escamoso|r
+	>>Abate os |cRXP_ENEMY_Black Dragão Whelps|r. Saqueie-os para obter suas |cRXP_LOOT_Escamoso|r
 	.mob Black Dragon Whelp
     .complete 122,1 --Underbelly Whelp Scale (6)
 step
@@ -1088,8 +1088,8 @@ step
     .goto Redridge Mountains,19.24,41.53,0
     .goto Redridge Mountains,16.90,55.02,0
     .goto Redridge Mountains,26.52,44.95
-    +|cRXP_WARN_aumente seu nível de|r |T133971:0|t[Culinária] |cRXP_WARN_usando o|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_que você colheu anteriormente. Você precisa de nível 50|r |T133971:0|t[Culinária]
-    +|cRXP_WARN_se você precisa de mais|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_vá para o oeste perto de|r |cRXP_ENEMY_Ronquifuça|r |cRXP_WARN_e mate mais|r |cRXP_ENEMY_Grandes Goretusks|r
+    +|cRXP_WARN_Aumente o Nível de sua|r |T133971:0|t[Culinária] |cRXP_WARN_usando a|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_que você coletou anteriormente. Você precisa do Nível 50|r |T133971:0|t[Culinária]
+    +|cRXP_WARN_Se você precisar de mais|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_vá para o oeste perto do|r |cRXP_ENEMY_Ronquifuça|r |cRXP_WARN_e mate mais|r |cRXP_ENEMY_Great Goretusks|r
     .skill cooking,50,1
     .mob Great Goretusk
 step
@@ -1103,13 +1103,13 @@ step
 	.target Verner Osgood
     .goto Redridge Mountains,31.00,47.30
     .turnin 124 >>Entregue A Baying of Gnolls
-    .turnin 122 >>Entregue Underbelly Escamoso
+    .turnin 122 >>Entregue Escamas do Baixo-ventre
 step
     #som
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vervo Obom|r
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
-    .turnin 124 >>Entregue A Baying of Gnolls
+    .turnin 124 >>Entregue O Uivo dos Gnolls
 step << Rogue
     .goto Redridge Mountains,28.07,52.02
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lucius|r
@@ -1118,7 +1118,7 @@ step << Rogue
 step << Rogue
     #sticky
     #optional
-    .destroy 7907 >>Exclua o |T134328:0|t[Certificate of Thievery] da mochila, pois não é mais necessário
+    .destroy 7907 >>Descartar o |T134328:0|t[Certificate of Thievery] da mochila, pois não é mais necessário
 step << NightElf Rogue
     #hardcore
     #optional
@@ -1160,10 +1160,10 @@ step << !Dwarf Rogue
     .goto Duskwood,15.90,72.10,60,0
     .goto Duskwood,14.86,64.56,50,0
     .goto Duskwood,10.43,53.97
-    >>Mate os |cRXP_ENEMY_Pygmy Venenom Teia Aranhas|r e os |cRXP_ENEMY_Venom Teia Aranhas|r. Saqueie-os para obter um |cRXP_LOOT_Small Venenom Sac|r e as |cRXP_LOOT_Gooey Pernas de Aranha|r deles
-    >>|cRXP_WARN_Você precisa de um |cRXP_LOOT_Small Venenom Sac|r para fazer um|r |T134437:0|t[Antipeçonha] |cRXP_WARN_depois, para remover o efeito|r |T136230:0|t[Toque de Zanzil] |cRXP_WARN_mais tarde|r
-    >>|cRXP_WARN_Guarde as |cRXP_LOOT_Gooey Pernas de Aranha|r para depois|r
-    >>|cRXP_WARN_Se você tem um|r |T626003:0|t|cFFF48CBAThe Defias Brotherhood|r |cRXP_WARN_ou|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_amigo, você pode pular este passo e pedir a ele para remover depois|r
+    >>Mate os |cRXP_ENEMY_Pigmeu Venenom Teia Aranhas|r e os |cRXP_ENEMY_Venenom Teia Aranhas|r. Saque-os para um |cRXP_LOOT_Pequeno Venenom Sac|r e suas |cRXP_LOOT_Pegajosas Pernas de Aranha|r
+    >>|cRXP_WARN_Você precisa de um |cRXP_LOOT_Pequeno Venenom Sac|r para criar uma|r |T134437:0|t[Antipeçonha]|cRXP_WARN_ depois para remover o|r |T136230:0|t[Toque de Zanzil]|cRXP_WARN_ debilitação depois|r
+    >>|cRXP_WARN_Guarde as |cRXP_LOOT_Pegajosas Pernas de Aranha|r para depois|r
+    >>|cRXP_WARN_Se você tem um amigo|r |T626003:0|t|cFFF48CBAThe Defias Brotherhood|r |cRXP_WARN_ou|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_você pode pular este passo e pedir a eles para removê-lo para você depois|r
     .collect 1475,1,2359,1 -- Small Venom Sac (1)
     .collect 2251,6,93,1,1 -- Gooey Spider Legs (6)
     .disablecheckbox
@@ -1176,10 +1176,10 @@ step << Rogue
     #hardcore
     #optional
     #completewith TowerKey
-    +|cRXP_WARN_==PRESTE ATENÇÃO À PRÓXIMA SEÇÃO==|r
+    +|cRXP_WARN_==PRESTE ATENÇÃO NA SEÇÃO A SEGUIR==|r
     >>Pressione Escape, depois vá em -> Opções -> Controles
-    >>|cRXP_WARN_Verifique "Ativar Chave Interagir" e vincule a opção "Interagir com Alvo" a uma tecla|r
-    >>|cRXP_WARN_Além disso, é recomendado que você ative Placas de Nome de Inimigos (Tecla Padrão: V) pois permite que você veja inimigos atrás de alguns dos cantos dentro da torre|r
+    >>|cRXP_WARN_Verifique "Ativar a Tecla Interagir" e atribua a opção "Interagir com Alvo" a uma tecla|r
+    >>|cRXP_WARN_Além disso, é recomendado que você ative Placas de Nome de Inimigos (Tecla Padrão: V) pois permite que você veja inimigos atrás de alguns cantos dentro da torre|r
     .train 1856,3 -- skips step if not 22/doesnt have Vanish
 step << Rogue
     #hardcore
@@ -1213,10 +1213,10 @@ step << Rogue
     .goto Westfall,71.49,73.49,30,0
     .goto Westfall,71.01,75.72,30,0
     .goto Westfall,69.58,73.07,30,0
-    >>|T133644:0|t[Bater Carteira] o |cRXP_ENEMY_Parasita Défias Mal Formado|r. Saqueie-o pelo |cRXP_LOOT_Defias Torre Chave|r
+    >>Use |T133644:0|t[Bater Carteira] no |cRXP_ENEMY_Malformed Parasita Défias|r. Saque-o para a |cRXP_LOOT_Defias Torre Chave|r
     >>Você deve estar em [Furtividade] para usar [Bater Carteira]
     >>|cRXP_WARN_O |cRXP_ENEMY_Drone Défias Malformado|r surge na entrada da torre, depois patrulha ao redor da parte externa|r
-    >>|cRXP_WARN_Tenha cuidado, pois ele causa MUITO dano. Se sua|r |T132320:0|t[Furtividade] |cRXP_WARN_acabar, use rapidamente|r |T132307:0|t[Disparada] |cRXP_WARN_e fuja|r
+    >>|cRXP_WARN_Tenha cuidado pois ele causa muito dano. Se sua|r |T132320:0|t[Furtividade]|cRXP_WARN_ quebra, rapidamente use|r |T132307:0|t[Disparada]|cRXP_WARN_ e corra para longe|r
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5slew15IGQ >> Clique AQUI para o guia em vídeo
     .mob Malformed Defias Drone
@@ -1240,7 +1240,7 @@ step << Rogue
     >>Saia manualmente de [Furtividade]|cRXP_WARN_, depois pressione sua tecla de atalho "Interagir com Alvo" para abrir o |cRXP_PICK_Baú da Floresta do Crepúsculo|r. Saqueie-o para obter |cRXP_LOOT_Diário de Filipe Pinel|r |r
     >>OBS.: Sua [Furtividade] vai parar de funcionar temporariamente após saquear |cRXP_LOOT_Diário de Filipe Pinel|r
     >>|cRXP_WARN_Esteja preparado para correr se você não matar as |cRXP_ENEMY_Sentinelas da Torre Défias|r no 2º andar. Elas provavelmente vão te manter em aggro permanente (mas sem te atacar) quando você estiver em cima da estante pois é um ponto de evade|r
-    >>|cRXP_WARN_Se você tem uma|r |T135641:0|t[Dagger] |cRXP_WARN_na sua mochila ou equipada, você pode lançar|r |T132282:0|t[Emboscar] |cRXP_WARN_nos|cRXP_ENEMY_ Defias Torre Patrollers|r e |cRXP_ENEMY_Defias Torre Sentries|r dentro para matá-los instantaneamente. Esteja preparado para correr depois de matar a primeira |cRXP_ENEMY_Sentinela da Torre Défias|r e lembre-se de que você pode ser atingido de cima. Isso é mais lento, mas MUITO mais seguro|r
+    >>|cRXP_WARN_Se você tem um|r |T135641:0|t[Dagger]|cRXP_WARN_ na mochila ou equipado, você pode usar|r |T132282:0|t[Emboscar]|cRXP_WARN_ nos |cRXP_ENEMY_Defias Torre Patrollers|r e |cRXP_ENEMY_Defias Torre Sentries|r dentro para matá-los instantaneamente. Esteja preparado para correr depois que você matar o primeiro |cRXP_ENEMY_Defias Torre Sentinela|r e lembre-se que você pode ser atingido de cima. Isto é mais lento, mas MUITO mais seguro|r
     >>|cRXP_WARN_Tome cuidado, pois |cRXP_ENEMY_Parasita Défias Mal Formado|r e |cRXP_ENEMY_Parasita Défias|r podem ficar na entrada da torre, caso você precise sair correndo dela|r
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5slew15IGQ >> Clique AQUI para o guia em vídeo
@@ -1355,7 +1355,7 @@ step << Rogue
     #requires AntiVenomEnd2 << Rogue
     .goto StormwindClassic,75.78,59.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre Mathias Shaw|r
-    >>|cRXP_WARN_Lembre-se de reequipar sua arma principal se você trocou para uma|r |T135641:0|t[Dagger] |cRXP_WARN_mais cedo|r << Rogue
+    >>|cRXP_WARN_Lembre-se de equipar novamente sua arma principal se você trocou para uma|r |T135641:0|t[Adaga] |cRXP_WARN_anteriormente|r << Rogue
     .turnin 2359 >>Entregue A Torre de Klaven
     .target Master Mathias Shaw
     .isQuestComplete 2359

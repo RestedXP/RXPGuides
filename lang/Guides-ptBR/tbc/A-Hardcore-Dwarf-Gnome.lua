@@ -1,19 +1,14 @@
 if GetLocale() ~= "ptBR" then return end
-local faction = UnitFactionGroup("player")
-if faction == "Horde" then return end
-
 RXPGuides.RegisterGuide([[
-#hardcore
-#classic
 #tbc
-#era/som--h
+#version 7
 << Alliance
-#name 1-6 Coldridge Valley
-#version 1
-#group Sobrevivência Guia (A)
+#defaultfor Gnome/Dwarf
+#group RXP TBC Guia de Sobrevivência (A)
 #subgroup RXP Sobrevivência Guia 1-20
-#defaultfor Dwarf/Gnome
-#next 6-10 Dun Morogh
+#name 1-10 Dun Morogh
+#next 10-12 Elwynn Forest
+
 step << !Gnome !Dwarf
     #sticky
     #completewith next
@@ -83,12 +78,12 @@ step << Warlock
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Adlin Altanário|r
     .vendor >> |cRXP_WARN_Vendor trash|r
-    >>|cRXP_BUY_Compre 15|r |T132794:0|t[Água Refrescante da Fonte]|cRXP_BUY_. Mate extra |cRXP_ENEMY_Lobos Jovens Andrajosos|r se você não tiver dinheiro suficiente|r
+    >>|cRXP_BUY_Compre 15|r |T132794:0|t[Água Refrescante da Fonte]|cRXP_BUY_. Mate extra |cRXP_ENEMY_Ragged Young Wolves|r se você não tiver dinheiro suficiente|r
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Adlin Pridedrift
 step << Warlock
     #completewith next
-    .goto Dun Morogh,27.28,81.09,20 >>Entre na Caverna Cristófuro
+    .goto Dun Morogh,27.28,81.09,20 >>Vá para a Caverna Frostmane
 step << Warlock
     >>Mate os |cRXP_ENEMY_Noviços de Frostmane|r dentro da caverna. Saqueie-os para obter |cRXP_LOOT_Amuletos de Pena|r
     >>|cRXP_BUY_Equipe qualquer Armadura de Tecido que você saqueia dos|r |cRXP_ENEMY_Frostmanes|r
@@ -98,7 +93,7 @@ step << Warlock
     .complete 1599,1 --Collect Feather Charm (x3)
     .mob Frostmane Novice
 step << Warlock
-    #hardcore
+    --#hardcore
     #completewith next
     .hs >>Use sua Pedra de Retorno para Coldridge Valley
 step << Warlock
@@ -143,7 +138,7 @@ step << !Warlock
 step
     #era
     #completewith Rockjaw
-    >>Abate os |cRXP_ENEMY_Rockjaw Troggs|r e os |cRXP_ENEMY_Burly Pedraqueixo Troggs|r
+    >>Mate os |cRXP_ENEMY_Rockjaw Troggs|r e os |cRXP_ENEMY_Burly Pedraqueixo Troggs|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .mob +Rockjaw Trogg
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
@@ -191,7 +186,7 @@ step << Paladin/Mage/Warlock/Hunter
 step << Paladin/Mage/Warlock/Hunter
     #era
     .goto Dun Morogh,31.37,75.63
-    >>Abate os |cRXP_ENEMY_Rockjaw Troggs|r e os |cRXP_ENEMY_Burly Pedraqueixo Troggs|r
+    >>Mate os |cRXP_ENEMY_Rockjaw Troggs|r e os |cRXP_ENEMY_Burly Pedraqueixo Troggs|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .mob +Rockjaw Trogg
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
@@ -322,8 +317,8 @@ step
     #completewith next
     .goto Dun Morogh,27.28,81.09,20 >>Vá para a Caverna Frostmane
 step
-    .goto Dun Morogh,26.8,79.9,30,0
-    .goto Dun Morogh,29.0,79.0,15,0
+    .goto Dun Morogh,26.8,79.9,35,0
+    .goto Dun Morogh,29.0,79.0,20,0
     .goto Dun Morogh,30.6,80.3
     >>Mate o |cRXP_ENEMY_Grik'nir, o Frio|r. Saque-o para obter seu |cRXP_LOOT_Diário|r
     .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
@@ -406,20 +401,6 @@ step
 step
     .goto Dun Morogh,34.32,70.95,15,0
     .goto Dun Morogh,35.65,65.79,15 >>Passe pelo Desfiladeiro de Coldridge
-]])
-
-RXPGuides.RegisterGuide([[
-#hardcore
-#era/som--h
-#classic
-#tbc
-<< Alliance
-#name 6-10 Dun Morogh
-#version 1
-#group Sobrevivência Guia (A)
-#subgroup RXP Sobrevivência Guia 1-20
-#defaultfor Dwarf/Gnome
-#next 10-11 Elwynn (Dwarf/Gnome)
 step
     #completewith BoarMeat44 << !Paladin !Warrior !Rogue
     #completewith BearFur << Paladin/Warrior/Rogue
@@ -492,12 +473,12 @@ step << Rogue
     .goto Dun Morogh,47.563,52.608
     .trainer >>Treine suas magias de classe
 step << Mage
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magis Fagulhamanto|r no andar superior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magis Fagulhamanto|r dentro, no andar de cima
     .target Magis Sparkmantle
     .goto Dun Morogh,47.498,52.076
     .trainer >>Treine suas magias de classe
 step << Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Avar Marroforte|r no andar superior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Avar Marroforte|r no andar de cima
     .target Azar Stronghammer
     .goto Dun Morogh,47.597,52.070
     .trainer >>Treine suas magias de classe
@@ -512,26 +493,22 @@ step << Priest
     .goto Dun Morogh,45.805,54.568
     .complete 5625,1 --Heal and fortify Mountaineer Dolf
 step << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maxan Begurno|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maxan Begurno|r dentro
     .target Maxan Anvol
     .goto Dun Morogh,47.342,52.190
     .turnin 5625 >>Entregue Vestes da Luz
     .trainer >>Treine suas magias de classe
 step << Priest
     .xp 6 >>Faça grind até 6
-step << Priest/Mage/Warlock
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Belm|r dentro
     .target Innkeeper Belm
     .goto Dun Morogh,47.377,52.523
     .home >>Defina sua Pedra de Retorno na Destilaria Cervaforte
-    .vendor >>|cRXP_BUY_Compre o máximo de|r |T132815:0|t[Leite Gelado] |cRXP_BUY_que você puder|r
-step << !Mage !Priest !Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Belm|r dentro
-    .target Innkeeper Belm
-    .goto Dun Morogh,47.377,52.523
-    .home >>Defina sua Pedra de Retorno na Destilaria Cervaforte
+    .vendor >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_o máximo que puder|r << Priest/Mage/Warlock
+    .bindlocation 2102
 step << Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Granis Celeraxa|r dentro
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Granis Celeraxa|r lá dentro
     .target Granis Swiftaxe
     .goto Dun Morogh,47.360,52.646
     .trainer >>Treine suas magias de classe
@@ -561,7 +538,7 @@ step << Rogue
     .collect 2494,1 --Collect Stiletto (1)
 step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grawn Thromwyn|r
-    >>|cRXP_BUY_Compre e equipe uma|r |T133053:0|t[Marreta de Madeira]
+    >>|cRXP_BUY_Compre e equipe um|r |T133053:0|t[Marreta de Madeira]
     .target Grawn Thromwyn
     .money <0.0631
     .goto Dun Morogh,45.290,52.190
@@ -617,7 +594,7 @@ step << Warrior/Paladin/Rogue
     .cast 2580 >>|cRXP_WARN_Use|r |T136025:0|t[Localizar Minérios]
 step << Paladin/Warrior/Rogue
     #completewith BearFur
-    >>Mate os |cRXP_ENEMY_Young Preto Ursos|r. Saqueie-os pelo seu |cRXP_LOOT_Fur|r
+    >>Abate os |cRXP_ENEMY_Young Preto Ursos|r. Saque-os para obter |cRXP_LOOT_Fur|r
     .complete 317,2 --Collect Thick Bear Fur (x2)
     .mob Young Black Bear
 step << !Paladin !Warrior !Rogue
@@ -649,8 +626,8 @@ step << !Paladin !Warrior !Rogue
     .goto Dun Morogh,48.0,49.5,0
     .goto Dun Morogh,48.2,46.9,0
     .goto Dun Morogh,43.5,52.5
-    >>Mate os |cRXP_ENEMY_Young Preto Ursos|r. Saqueie-os pelo seu |cRXP_LOOT_Fur|r
-    >>Mate os |cRXP_ENEMY_Crag Boars|r e os |cRXP_ENEMY_Large Crag Boars|r. Saqueie-os pelos seus |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r e |cRXP_LOOT_Crag Javali Ribs|r
+    >>Abate os |cRXP_ENEMY_Young Preto Ursos|r. Saque-os para obter |cRXP_LOOT_Fur|r
+    >>Mate os |cRXP_ENEMY_Crag Boars|r e os |cRXP_ENEMY_Large Crag Boars|r. Saqueie-os para obter |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r e |cRXP_LOOT_Crag Javali Ribs|r
     .complete 317,2 --Collect Thick Bear Fur (x2)
     .mob +Young Black Bear
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
@@ -661,7 +638,7 @@ step << !Paladin !Warrior !Rogue
     .mob +Large Crag Boar
 step << !Paladin !Warrior !Rogue
     #completewith Ribs
-    >>Abate os |cRXP_ENEMY_Crag Boars|r e os |cRXP_ENEMY_Large Crag Boars|r. Saque-os para obter |cRXP_LOOT_Crag Javali Ribs|r
+    >>Mate os |cRXP_ENEMY_Crag Boars|r e os |cRXP_ENEMY_Large Crag Boars|r. Saqueie-os para suas |cRXP_LOOT_Crag Javali Ribs|r
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
     .mob Crag Boar
     .mob Large Crag Boar
@@ -737,19 +714,19 @@ step << Paladin/Warrior/Rogue
     .mob Crag Boar
     .mob Large Crag Boar
 step << Warrior/Paladin/Rogue
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Piloto Urrabolha|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Piloto Urrabolha|r
     .target Pilot Bellowfiz
     .goto Dun Morogh,49.426,48.410
     .turnin 317 >>Entregue Provisões para a Vaporeta
     .accept 318 >>Aceite Sempre-aceso
 step << Warrior/Paladin/Rogue
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Piloto Marchapedra|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Piloto Marchapedra|r
     .target Pilot Stonegear
     .goto Dun Morogh,49.622,48.612
     .turnin 313 >>Entregue O Covil dos Grisalhos
 step << Warrior/Paladin/Rogue
     .goto Dun Morogh,50.084,49.420
-    .collect 2901,1 >>Compre uma Picareta de Mineração
+    .collect 2901,1 >>|cRXP_BUY_Compre uma|r |T134708:0|t[Picareta de Mineração] |cRXP_BUY_se você treinou|r |T136241:0|t[Ferraria]
 step << Warrior/Paladin/Rogue
     #era
     .xp 7 >>Suba até o nível 7
@@ -758,25 +735,25 @@ step << Warrior/Rogue
     .xp 8 >>Farme inimigos próximos até o nível 8
 step << Rogue
     .xp <8,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hogral Bakkan|r nos fundos
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hogral Bakkan|r na sala dos fundos
     .target Hogral Bakkan
     .goto Dun Morogh,47.563,52.608
     .trainer >>Treine suas magias de classe
 step << Paladin
     .xp <8,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Avar Marroforte|r no piso superior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Avar Marroforte|r no andar de cima
     .target Azar Stronghammer
     .goto Dun Morogh,47.597,52.070
     .trainer >>Treine suas magias de classe
 step << Warrior
     .xp <8,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Granis Celeraxa|r dentro
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Granis Celeraxa|r lá dentro
     .target Granis Swiftaxe
     .goto Dun Morogh,47.360,52.646
     .trainer >>Treine suas magias de classe
 step << Gnome Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grawn Thromwyn|r
-    >>|cRXP_BUY_Compre e equipe uma|r |T135321:0|t[Gládio]
+    >>|cRXP_BUY_Compre e equipe um|r |T135321:0|t[Gládio]
     .target Grawn Thromwyn
     .money <0.0536
     .goto Dun Morogh,45.290,52.190
@@ -797,7 +774,7 @@ step << Rogue
     .collect 2494,1 --Collect Stiletto (1)
 step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grawn Thromwyn|r
-    >>|cRXP_BUY_Compre e equipe uma|r |T133053:0|t[Marreta de Madeira]
+    >>|cRXP_BUY_Compre e equipe um|r |T133053:0|t[Marreta de Madeira]
     .target Grawn Thromwyn
     .money <0.0631
     .goto Dun Morogh,45.290,52.190
@@ -815,7 +792,7 @@ step << Paladin/Warrior/Rogue
     .goto Dun Morogh,39.6,48.9,60,0
     .goto Dun Morogh,37.9,50.8,60,0
     .goto Dun Morogh,34.577,51.652,40 >>Vá para |cRXP_FRIENDLY_Tundra MacGrann|r
-    >>Mate os |cRXP_ENEMY_Boars|r, os |cRXP_ENEMY_Ursos|r e os |cRXP_ENEMY_Wolves|r no caminho
+    >>Mate os |cRXP_ENEMY_Javalis|r, os |cRXP_ENEMY_Ursos|r e os |cRXP_ENEMY_Lobos|r no caminho
 step << Paladin/Warrior/Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tundra MacGrann|r
     .target Tundra MacGrann
@@ -938,30 +915,6 @@ step
     .goto Dun Morogh,25.8,47.2,60,0
     .goto Dun Morogh,30.0,51.8
 step
-    #softcore
-    .goto Dun Morogh,30.3,37.5,60 >>Corra para aqui.
-step
-    #softcore
-    .goto Dun Morogh,30.9,33.1,15 >>Suba correndo pela montanha ao norte.
-step
-    #softcore
-    .goto Dun Morogh,32.4,29.1,15 >>Siga até aqui
-step
-    #softcore
-    .goto Dun Morogh,33.0,27.2,15,0
-    .goto Dun Morogh,33.0,25.2,15,0
-    .goto Wetlands,11.6,43.4,60,0
-    .goto Wetlands,11.6,43.4,0
-    .deathskip >>Corra reto para o norte, pule para baixo e morra quando o General Bate-papo mude para o Pantanal, depois ressurja em Menethil Harbor
-step
-    #softcore
-    #completewith next
-    .goto Wetlands,12.7,46.7,30 >>Nade para a costa
-step
-    #softcore
-    .goto Wetlands,9.5,59.7
-    .fp Wetlands>>Aprenda a rota de voo para Menethil Harbor
-step
 	#completewith next
     .hs >>Vá para Kharanos
 step
@@ -1009,7 +962,7 @@ step << Warlock
     .target Gimrizz Shadowcog
 step << Rogue
     .xp <8,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hogral Bakkan|r no quarto de trás
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hogral Bakkan|r na sala dos fundos
     .target Hogral Bakkan
     .goto Dun Morogh,47.563,52.608
     .trainer >>Treine suas magias de classe
@@ -1099,7 +1052,6 @@ step
     >>|cRXP_WARN_Escolha o|r |T135637:0|t[Faca Campeira] |cRXP_WARN_prêmio. Guarde-a para depois|r << Rogue
     .turnin 320 >>Fale novamente com Urrabolha
 step
-    #era << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Razzle Molavivaz|r
     .target Razzle Sprysprocket
     .goto Dun Morogh,46.005,48.637,10,0
@@ -1187,7 +1139,7 @@ step
     .complete 287,1 --Kill Frostmane Headhunter (x5)
     .mob Frostmane Headhunter
 step
-    #hardcore
+    --#hardcore
     >>Largue-se|cRXP_WARN_ para baixo neste local para explorar A Fortaleza Jubafria. Se houver inimigos abaixo, limpe ao redor normalmente e NÃO desça|r
     .goto Dun Morogh,22.86,52.16
     .complete 287,2 --Fully explore Frostmane Hold
@@ -1207,12 +1159,12 @@ step
 step << Hunter
     .xp 10-1400
 step
-    #hardcore
+    --#hardcore
 	#completewith next
 	.hs >>Vá para Kharanos
 	.cooldown item,6948,>0,1
 step
-    #hardcore
+    --#hardcore
     #completewith next
    .goto Dun Morogh,46.726,53.826,150 >>Voe para Kharanos
 step << Hunter
@@ -1407,44 +1359,17 @@ step
     .turnin 413 >>Entregue Cerveja Tremeluz
     .accept 414 >>Aceite Cerveja para Kadrell
 step
-    #completewith next
+    #completewith HonorStudents
     .goto Dun Morogh,86.203,51.260,15,0
     .goto Loch Modan,22.071,73.127,200 >>Voe para Loch Modan
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Sapatorro|r
-    .target Mountaineer Cobbleflint
-    .goto Loch Modan,22.071,73.127
-    .accept 224 >>Aceite Em Defesa das Terras do Rei
-step
-    .goto Loch Modan,23.233,73.675
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão Balbúrdia|r no bunker
-    .target Captain Rugelfuss
-    .accept 267 >>Aceite A Ameaça Trogg
 step
     #completewith HonorStudents
     .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Kadrell|r
     >>O |cRXP_FRIENDLY_Montanhista Kadrell|r |cRXP_WARN_patrulha a estrada em Thelsamar|r
     .turnin 414 >>Entregue Cerveja para Kadrell
-    .accept 416 >>Aceite Pegando Ratos
     .accept 1339 >>Aceite Tarefa do Montanhista Lançatroz
     .target Mountaineer Kadrell
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vidra Fornalenha|r
-    .target Vidra Hearthstove
-    .goto Loch Modan,34.828,49.283
-    .accept 418 >>Aceite Chouriço de Thelsamar
-step
-    #completewith next
-    .goto Loch Modan,34.757,48.618
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yanni Cuoreforte|r
-    .vendor >>|cRXP_BUY_Compre um|r |T133634:0|t[Pequeno Brown Pouch] |cRXP_BUY_se necessário|r
-    .target Yanni Stoutheart
-step << !Paladin
-    .goto Loch Modan,35.534,48.404
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com o |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
-    .home >>Defina sua Pedra de Retorno em Thelsamar
-    .target Innkeeper Hearthstove
 step
     #label HonorStudents
     .goto Loch Modan,37.17,47.94,8,0
@@ -1464,57 +1389,18 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Kadrell|r
     >>O |cRXP_FRIENDLY_Montanhista Kadrell|r |cRXP_WARN_patrulha a estrada em Thelsamar|r
     .turnin 414 >>Entregue Cerveja para Kadrell
-    .accept 416 >>Aceite Pegando Ratos
     .accept 1339 >>Aceite Tarefa do Montanhista Lançatroz
     .target Mountaineer Kadrell
-step << skip
-    #sticky
-    #completewith next
-    +Farme inimigos até ter pelo menos 33 de prata em dinheiro e itens vendáveis
---N rogue money gate for cutlass+1h swords
-step
-    #completewith Thelsamar1
-    >>Mate os |cRXP_ENEMY_Elder Preto Ursos|r. Saqueie-os pelos seus |cRXP_LOOT_Bear Carne|r
-    >>Mate os |cRXP_ENEMY_Mountain Boars|r. Saqueie-os pelos |cRXP_LOOT_Boar Intestines|r
-    >>Mate os |cRXP_ENEMY_Forest Lurkers|r. Saqueie-os pelos seus |cRXP_LOOT_Ichor|r
-    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
-    .mob +Mountain Boar
-    .collect 3173,3,418,1 --Collect Bear Meat (x3)
-    .mob +Elder Black Bear
-    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    .mob +Forest Lurker
-    >>|cRXP_WARN_Guarde qualquer|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_para usar para subir de nível |T133971:0|t[Culinária] |cRXP_WARN_mais tarde|r
-    >>|cRXP_WARN_Não se desvie para completar isto agora. Você voltará a Loch Modan em breve|r
 step
     #completewith next
-    .goto Loch Modan,23.85,17.92,100 >>Vá para o norte até Algaz Station
+    .subzone 925 >>Viagem para Algaz Station
 step
-.group
-    .goto Loch Modan,24.764,18.397
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Lançatroz|r
-    .turnin 1339 >>Entregue Montanhista Lançatroz's Task
-    .accept 1338 >>Aceite Ordens dos Lançatroz
-    .accept 307 >>Aceite Patas Nojentas
-    .target Mountaineer Stormpike
-step
-.solo
     .goto Loch Modan,24.764,18.397
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Lançatroz|r
     .turnin 1339 >>Entregue Montanhista Lançatroz's Task
     .accept 1338 >>Aceite Ordens dos Lançatroz
     .target Mountaineer Stormpike
 step
-    #softcore
-    #completewith next
-    .deathskip >>Morra e reapareça em Thelsamar
-step
-    .isQuestComplete 418
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vidra Fornalenha|r
-    .target Vidra Hearthstove
-    .goto Loch Modan,34.828,49.283
-    .turnin 418 >>Entregue Chouriço de Thelsamar
-step
-    #label Thelsamar1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .target Thorgrum Borrelson
     .goto Loch Modan,33.938,50.954
@@ -1525,14 +1411,20 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .fly Ironforge >>Voe para Altaforja
     .target Thorgrum Borrelson
+    .zoneskip Loch Modan,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Golnir Topadão|r
     .target Golnir Bouldertoe
     .goto Ironforge,51.521,26.311
     .turnin 6391 >>Entregue Carona para Altaforja
     .accept 6388 >>Aceite Grif Trovino
-step << Hunter
-    >>|cRXP_WARN_Não voe em lugar nenhum|r
+step << Rogue
+    #optional
+    .goto Ironforge,51.958,14.838
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hulfdan Barbanegra|r embaixo
+    .turnin -2218 >>Vire na Estrada para Salvação
+    .target Hulfdan Blackbeard
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Trovino|r
     .target Gryth Thurden
     .goto Ironforge,55.501,47.742
@@ -1545,26 +1437,40 @@ step
     .goto Ironforge,39.550,57.490
     .turnin 291 >>Entregue Os Relatórios
 step << Warrior
+    .goto Ironforge,61.177,89.508
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bulif Manopedra|r
-    >>|cRXP_WARN_Equipe o|r |T133052:0|t[Martelo de Cristálgida] |cRXP_WARN_agora se você não equipou antes|r
+    .train 199 >>Treine Maças de Duas Mãos
     .target Buliwyf Stonehand
-    .goto Ironforge,61.181,89.514
-    .trainer >>Treine Maças de Duas Mãos
-step << !Hunter
-    >>|cRXP_WARN_Não voe para lugar algum|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Trovino|r
-    .target Gryth Thurden
-    .goto Ironforge,55.501,47.742
-    .turnin 6388 >>Entregue Grif Trovino
-    .accept 6392 >>Aceite Retorno a Brock
-step << !Hunter skip
+step << Warrior
+    #sticky
+    .equip 16,3103 >>|cRXP_WARN_Equipe o|r |T133052:0|t[|cRXP_FRIENDLY_Martelo de Cristálgida|r]
+    .use 3103
+    .itemcount 3103,1
+step
+    .goto 1455/0,-857.000,-4840.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Aguardente|r
+    .home >>Defina sua Pedra de Regresso em Ironforge
+    .target Innkeeper Firebrew
+    .bindlocation 1537
+]])
+
+RXPGuides.RegisterGuide([[
+#tbc
+#version 7
+<< Alliance
+#defaultfor Gnome/Dwarf
+#group RXP TBC Guia de Sobrevivência (A)
+#subgroup RXP Sobrevivência Guia 1-20
+#name 10-12 Elwynn Forest
+#next 12-14 Costa Negra
+
+step
     #completewith next
-    +Faça um logout skip pulando em cima de uma das cabeças do Grifo, saindo do jogo e depois entrando novamente
-    .link https://www.youtube.com/watch?v=PWMJhodh6Bw >>https://www.youtube.com/watch?v=PWMJhodh6Bw >> |cRXP_WARN_Clique aqui para referência de vídeo|r
-    .zoneskip Ironforge,1
+    .goto Ironforge,78.00,51.40
+    .subzone 2257 >>Entre no Metrô Correfundo
+    .zoneskip Stormwind City
 step
     .goto Ironforge,78.00,52.00,5,0
-    >>|cRXP_WARN_Entre no Deeprun Tram|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma do meio
     .target Monty
     .accept 6661 >>Aceite Ratos de Porão
@@ -1581,7 +1487,7 @@ step
 step
     #completewith next
     .zone Stormwind City >>Pegue o Metrô para Ventobravo
-    >>|cRXP_WARN_Nível seus|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_e|r |T133971:0|t[Culinária] |cRXP_WARN_se necessário enquanto espera pelo Metrô|r
+    >>|cRXP_WARN_Level your|r Evolua sua[First Aid]|cRXP_WARN_if needed while waiting for the Tram|r
     >>|cRXP_WARN_Você precisará de seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_estar no nível 80 para uma missão no nível 24|r << Rogue !Dwarf
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nipsy|r quando sair do Metrô
@@ -1590,11 +1496,11 @@ step
     .target Nipsy
 step
     .zone Stormwind City >>Entre em Ventobravo
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grimand Elmore|r
-    .target Grimand Elmore
-    .goto StormwindClassic,51.757,12.091
-    .accept 353 >>Aceite Entrega para Lançatroz
+step << Hunter
+    .goto StormwindClassic,61.609,15.269
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Einris Setalume|r dentro
+    .trainer >>Treine suas magias de classe
+    .target Einris Brightspear
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Furen Barbalonga|r
     .target Furen Longbeard
@@ -1612,7 +1518,7 @@ step << Priest
 step << Priest
     .goto StormwindClassic,38.62,26.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Alta-sacerdotisa Laurena|r
-    .train 13908 >>Treine Prece Desesperada
+    .train 13908 >>Treine |T135954:0|t[Prece Desesperada]
     .target High Priestess Laurena
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ilsa|r
@@ -1676,38 +1582,29 @@ step
     .trainer >>Treine Cajados << Priest
     .trainer >>Treine Espadas de 1 Mão e Báculos << Warlock
     .trainer >>Treine Espadas de Duas Mãos << Warrior/Paladin
-step << Dwarf Paladin
-    .goto StormwindClassic,52.623,65.701
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >>Defina sua Pedra de Retorno em Ventobravo
-    .target Innkeeper Allison
 step << Rogue
-    .money <0.2000
+#ah
     .goto StormwindClassic,57.547,57.076
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gunther Weller|r
+	>>|cRXP_BUY_Buy and equip a|r |T135346:0|t[Cutlass] |cRXP_BUY_ou|r check the Auction House for something better/cheaper|r
+	.collect 851,1
     .target Gunther Weller
-    .vendor >>|cRXP_WARN_Compre|r |T135346:0|t[Alfanje] |cRXP_WARN_e equipe-o na mão principal. Equipe a|r |T135641:0|t[|cRXP_FRIENDLY_Adaga do Artífice|r] |cRXP_WARN_de antes na mão secundária|r
+    .money <0.2023
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
 step << Rogue
-    .goto StormwindClassic,57.32,62.08,20,0
-    .goto StormwindClassic,58.362,61.678
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Túlio Malheiros|r
-    .vendor >>|cRXP_BUY_Compre|r |T135425:0|t[Faca de Arremesso Afiada]|cRXP_BUY_. Equipe quando estiver no nível 11|r
-    .target Thurman Mullby
-]])
-
-RXPGuides.RegisterGuide([[
-#hardcore
-#era/som--h
-#classic
-#tbc
-<< Alliance
-#name 10-11 Elwynn (Dwarf/Gnome)
-#version 1
-#group Sobrevivência Guia (A)
-#subgroup RXP Sobrevivência Guia 1-20
-#defaultfor Gnome/Dwarf
-#next 11-13 Loch Modan (Dwarf/Gnome)
-
+#ssf
+    .goto StormwindClassic,57.547,57.076
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gunther Weller|r
+	>>|cRXP_BUY_Compre e equipe um|r |T135346:0|t[Alfanje]
+	.collect 851,1
+    .target Gunther Weller
+    .money <0.2023
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.82
+step << Rogue
+    #sticky
+    .equip 16,851 >>|cRXP_WARN_Equipe o|r |T135346:0|t[Alfanje]
+    .use 851
+    .itemcount 851,1
 step
     .goto StormwindClassic,66.277,62.137
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
@@ -1745,6 +1642,11 @@ step
     .goto Elwynn Forest,42.140,67.254
     .accept 40 >>Aceite Perigo Anfíbio
     .accept 47 >>Aceite Trocando Pó de Ouro
+step << Paladin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Irmão Guilhermino|r
+    .target Brother Wilhelm
+    .goto Elwynn Forest,41.096,66.041
+    .trainer >>Treine suas magias de classe
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Mama Campedra|r e a |cRXP_FRIENDLY_"Titia" Berenice Campedra|r
     .accept 88 >>Aceite Princesa Tem Que Morrer!
@@ -1773,7 +1675,7 @@ step
 step
     .goto Elwynn Forest,34.486,84.252
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_"Titia" Berenice Campedra|r
-    >>|cRXP_WARN_Pule a entrega por enquanto se você não tiver bastante [Naco de Carne de Javali]|r
+    >>|cRXP_WARN_Pule a entrega por enquanto se você não tiver o suficiente [|cRXP_LOOT_Naco de Carne de Javali|r]|r
     .turnin 86 >>Entregue Torta para o Guinho
     .isQuestComplete 86
     .target "Auntie" Bernice Stonefield
@@ -1786,7 +1688,7 @@ step
 step
     #completewith next
     >>Abate os |cRXP_ENEMY_Kobold Escavadores|r e os |cRXP_ENEMY_Kobold Mineradores|r. Saque-os por suas |cRXP_LOOT_Velas|r e |cRXP_LOOT_Poeira|r
-    >>|cRXP_WARN_Os inimigos de nível 5 podem ficar acinzentados durante esta missão. Ainda assim, complete-a, pois você precisa dela para desbloquear a próxima|r
+    >>|cRXP_WARN_Os inimigos nível 5 podem ficar cinzentos durante esta missão. Complete-a de qualquer forma pois você precisa dela para desbloquear a próxima|r
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -1992,12 +1894,6 @@ step
     .mob Defias Bandit
 step
     #era
-    #softcore
-    #sticky
-    #completewith next
-    .goto Elwynn Forest,83.6,69.7,120 >>Morra e reapareça no Anjo da Cura se estiver com pouca saúde, caso contrário apenas corra de volta e entregue
-step
-    #era
     #label Deed
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sara Albernaz|r
     .target Sara Timberlain
@@ -2027,22 +1923,6 @@ step
     .fp Redridge Mountains >>Aprenda a rota de voo para Montanhas Cristarrubra
     .fly Stormwind >>Voe para Ventobravo
     .target Ariena Stormfeather
-step
-    #ah
-    .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Leiloeira Jasona|r
-    >>Compre os seguintes itens para uma entrega mais rápida em Loch Modan
-    >>Isso vai economizar tempo, pois você não precisará ficar procurando inimigos para matar. Pule esta etapa se preferir não comprar nenhum
-    >>Comprar extras de |T134437:0|t[Naco de Carne de Javali] também pode ser útil para aumentar |T133971:0|t[Culinária] até 50 para depois
-    >>|T134342:0|t[Intestinos de Javali]
-    >>|T134027:0|t[Carne de Urso]
-    >>|T134437:0|t[Ícor de Aranha]
-    >>|T134437:0|t[Chunk of Javali Carne]
-    .collect 3172,3,418,1 -- Boar Intestines (3)
-    .collect 3173,3,418,1 -- Bear Meat (3)
-    .collect 3174,3,418,1 -- Spider Ichor (3)
-    .collect 769,4,86,1 -- Chunk of Boar Meat (4)
-    .target Auctioneer Jaxon
 step
     .goto StormwindClassic,56.201,64.585
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Morgado Pilão|r
@@ -2076,22 +1956,11 @@ step << Warlock
     .complete 1689,1 --Kill Summoned Voidwalker (x1)
     .mob Summoned Voidwalker
 step << Warlock
-     #softcore
-    >>Use Vampirismo a caminho de volta para |cRXP_FRIENDLY_Gakin, o Neromante|r
-    .target Gakin the Darkbinder
-    .goto StormwindClassic,25.2,78.5
-    .turnin 1689 >>Entregue A Vinculação
-step << Warlock
-    #hardcore
+    --#hardcore
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gakin, o Neromante|r
     .target Gakin the Darkbinder
     .goto StormwindClassic,25.25,78.59
     .turnin 1689 >>Entregue A Vinculação
-step << Warlock
-    #softcore
-    #completewith next
-    .goto StormwindClassic,25.2,78.5
-    .deathskip >>Morra e reapareça no Anjo da Cura usando Conversão de Vida e ficando sobre a Objetos de Cata perto de você
 step
     #completewith next
     .goto Elwynn Forest,42.20,66.00,100 >>Viaje para Goldshire
@@ -2158,59 +2027,12 @@ step
 step
     #completewith next
     .goto Elwynn Forest,24.82,76.25,80 >>Vá para Westbrook Garrison
-step << Warlock
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Delegado Ranieri|r
     .turnin 239 >>Entregue Ribeira d'Oeste Precisa de Ajuda!
-    .accept 11 >>Aceite Recompensa por Gnolls Riverpaw
     .goto Elwynn Forest,24.234,74.450
-    >>Clique no |cRXP_PICK_Cartaz de Procurado|r
-    .accept 176 >>Aceite Procurado: "Porqueiro"
-    .goto Elwynn Forest,24.548,74.672
     .target Deputy Rainer
-step
-    .group
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Delegado Ranieri|r
-    .turnin 239 >>Entregue Ribeira d'Oeste Precisa de Ajuda!
-    .accept 11 >>Aceite Recompensa por Gnolls Riverpaw
-    .goto Elwynn Forest,24.234,74.450
-    >>Clique no |cRXP_PICK_Cartaz de Procurado|r
-    .accept 176 >>Aceite Procurado: "Porqueiro"
-    .goto Elwynn Forest,24.548,74.672
-    .target Deputy Rainer
-step
-    .solo
-    .goto Elwynn Forest,24.234,74.450
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Delegado Ranieri|r
-    .turnin 239 >>Entregue Ribeira d'Oeste Precisa de Ajuda!
-    .accept 11 >>Aceite Recompensa por Gnolls Riverpaw
-    .target Deputy Rainer
-step
-    #completewith GnollEnd
-    >>Mate os |cRXP_ENEMY_Riverpaw Nanico|r e os |cRXP_ENEMY_Riverpaw Outrunners|r. Saque-os pela |T134939:0|t[|cRXP_LOOT_Agenda de Coleta de Ouro|r]
-    .use 1307 >>|cRXP_WARN_Use a |T134939:0|t[|cRXP_LOOT_Agenda de Coleta de Ouro|r] para iniciar a missão|r
-    >>|cRXP_WARN_A|r |T134939:0|t[|cRXP_LOOT_Agenda de Coleta de Ouro|r] |cRXP_WARN_é um drop muito raro. Ignorar este passo se você não a conseguir|r
-    >>|cRXP_ENEMY_Rude Mordelogo|r |cRXP_WARN_a rare spawn, does have a 100% drop chance|r
-    .collect 1307,1,123 --Collect Gold Pickup Schedule (x1)
-    .accept 123 >>Aceite O Coletor
-    .unitscan Gruff Swiftbite
-step << !Warlock
-    .group
-    #completewith next
-    >>Mate os |cRXP_ENEMY_Riverpaw Nanico|r e os |cRXP_ENEMY_Riverpaw Outrunners|r. Saqueie-os para obter suas |cRXP_LOOT_Armbands|r
-    >>|cRXP_WARN_Garanta que você tem 10|r |T132889:0|t[Linho] |cRXP_WARN_para sua próxima missão de classe The Defias Brotherhood|r << Dwarf Paladin
-    .complete 11,1 -- Painted Gnoll Armband (8)
-    .collect 2589,10,1648,1,1 << Dwarf Paladin -- Linen Cloth (10)
-    .mob Riverpaw Runt
-    .mob Riverpaw Outrunner
-step << Warlock
-    #completewith next
-    >>Mate os |cRXP_ENEMY_Riverpaw Nanico|r e os |cRXP_ENEMY_Riverpaw Outrunners|r. Saqueie-os para obter suas |cRXP_LOOT_Armbands|r
-    >>|cRXP_WARN_Garanta que você tem 10|r |T132889:0|t[Linho] |cRXP_WARN_para sua próxima missão de classe The Defias Brotherhood|r << Dwarf Paladin
-    .complete 11,1 -- Painted Gnoll Armband (8)
-    .collect 2589,10,1648,1,1 << Dwarf Paladin -- Linen Cloth (10)
-    .mob Riverpaw Runt
-    .mob Riverpaw Outrunner
-step << Warlock
+step << Dwarf Paladin
     .goto Elwynn Forest,27.0,86.7,70,0
     .goto Elwynn Forest,26.1,89.9,70,0
     .goto Elwynn Forest,25.2,92.7,70,0
@@ -2224,70 +2046,11 @@ step << Warlock
     .goto Elwynn Forest,25.2,92.7,70,0
     .goto Elwynn Forest,27.0,93.9,70,0
     .goto Elwynn Forest,25.9,93.9
-    >>Abate |cRXP_ENEMY_Hogger|r. Saqueie-o para obter sua |cRXP_LOOT_Garra|r.
-    >>|cRXP_ENEMY_Hogger|r |cRXP_WARN_pode aparecer em vários locais|r
-    >>|cRXP_WARN_Lance|r |T136183:0|t[Medo] |cRXP_WARN_em |cRXP_ENEMY_Hogger|r continuamente e use seus DoTs regulares para matá-lo|r
-    >>|cRXP_WARN_Esta missão é difícil. Encontre um grupo se necessário. Pule esta etapa se não conseguir grupo ou solar|r
-    .complete 176,1 --Huge Gnoll Claw (1)
-    .unitscan Hogger
-step
-    .group
-    .goto Elwynn Forest,27.0,86.7,70,0
-    .goto Elwynn Forest,26.1,89.9,70,0
-    .goto Elwynn Forest,25.2,92.7,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,27.0,86.7,70,0
-    .goto Elwynn Forest,26.1,89.9,70,0
-    .goto Elwynn Forest,25.2,92.7,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,27.0,86.7,70,0
-    .goto Elwynn Forest,26.1,89.9,70,0
-    .goto Elwynn Forest,25.2,92.7,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,25.9,93.9
-    >>Abate |cRXP_ENEMY_Hogger|r. Saqueie-o para obter sua |cRXP_LOOT_Garra|r.
-    >>|cRXP_ENEMY_Hogger|r |cRXP_WARN_pode aparecer em vários locais|r
-    >>|cRXP_WARN_Esta missão é difícil. Encontre um grupo se necessário. Pule esta etapa se não conseguir grupo ou solar|r
-    .complete 176,1 --Huge Gnoll Claw (1)
-    .unitscan Hogger
-step
-    #label GnollEnd
-    .goto Elwynn Forest,27.0,86.7,70,0
-    .goto Elwynn Forest,26.1,89.9,70,0
-    .goto Elwynn Forest,25.2,92.7,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,27.0,86.7,70,0
-    .goto Elwynn Forest,26.1,89.9,70,0
-    .goto Elwynn Forest,25.2,92.7,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,27.0,86.7,70,0
-    .goto Elwynn Forest,26.1,89.9,70,0
-    .goto Elwynn Forest,25.2,92.7,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,25.9,93.9
-    >>Mate os |cRXP_ENEMY_Riverpaw Nanico|r e os |cRXP_ENEMY_Riverpaw Outrunners|r. Saqueie-os para obter suas |cRXP_LOOT_Armbands|r
-    >>|cRXP_WARN_Garanta que você tem 10|r |T132889:0|t[Linho] |cRXP_WARN_para sua próxima missão de classe The Defias Brotherhood|r << Dwarf Paladin
-    .complete 11,1 -- Painted Gnoll Armband (8)
+    >>Abata os |cRXP_ENEMY_Riverpaw Nanico|r e os |cRXP_ENEMY_Riverpaw Outrunners|r. Saque-os para obter |T132889:0|t[Linho]
+    >>|cRXP_WARN_Você precisa de 10 para uma futura quest de classe de Paladino|r
     .collect 2589,10,1648,1,1 << Dwarf Paladin -- Linen Cloth (10)
     .mob Riverpaw Runt
     .mob Riverpaw Outrunner
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Delegado Durão|r
-    .target Marshal Dughan
-    .goto Elwynn Forest,42.105,65.927
-    .turnin 176 >>Entregue Wanted: "Hogger"
-    .isQuestComplete 176
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Delegado Durão|r
-    .target Marshal Dughan
-    .goto Elwynn Forest,42.105,65.927
-    .turnin 123 >>Entregue O Coletor
-    .isOnQuest 123
-step
-    .goto Elwynn Forest,24.234,74.450
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Delegado Ranieri|r
-    .turnin 11 >>Entregue Recompensa por Gnolls Riverpaw
-    .target Deputy Rainer
 step
     #completewith WestEntry
     .goto Westfall,59.95,19.35
@@ -2300,77 +2063,37 @@ step
     .isOnQuest 184
 step
     #label WestEntry
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Fazendeiro Taturana|r e |cRXP_FRIENDLY_Vera Taturana|r
-    .accept 64 >>Aceite A Herança Esquecida
-    .target +Farmer Furlbrow
-    .goto Westfall,59.95,19.35
-    .accept 151 >>Aceite A Pobre Velhinha Brancurinha
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vera Taturana|r
+    >>|cRXP_WARN_Não aceite as outras missões|r
     .accept 36 >>Aceite Ensopado de Cerro Oeste
     .goto Westfall,59.92,19.42
-	.target +Verna Furlbrow
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Fazendeiro Saldanha|r
-    .target Farmer Saldean
-    .goto Westfall,56.04,31.23
-    .accept 9 >>Aceite Os Campos da Morte
+	.target Verna Furlbrow
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Salma Saldanha|r
+    >>|cRXP_WARN_Não aceite as outras missões|r
     .target Salma Saldean
     .goto Westfall,56.40,30.50
     .turnin 36 >>Entregue Ensopado de Cerro Oeste
-    .accept 38 >>Aceite Ensopado de Cerro Oeste
-    .accept 22 >>Aceite Empadão de Fígado de Goretusco
 step
-    #softcore
-    #sticky
-    #completewith next
-    .deathskip >>Morra e renasça no Anjo da Cura, ou corra para Sentinela Hill
-step
-    #era
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel Mantoforte|r
     .target Gryan Stoutmantle
     .goto Westfall,56.33,47.52
     .turnin 109 >>Entregue Relatório para Gryan Mantoforte
-    .accept 12 >>Aceite A Milícia do Povo
-step
-    #era
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão Danuvin|r
-    .target Captain Danuvin
-    .goto Westfall,56.42,47.62
-    .accept 102 >>Aceite Patrulhando Cerro Oeste
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Batedor Galiaan|r
-    .target Scout Galiaan
-    .goto Westfall,54.00,53.00
-    .accept 153 >>Aceite Vermelho Couro Bandanas
 step
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thor|r
     .fp Sentinel Hill >>Pegue o ponto de voo do Morro da Sentinela
-    .fly Stormwind >>Voe para Ventobravo << Dwarf Paladin
     .target Thor
-step << !Paladin
-    .hs >>Use sua Pedra de Retorno em Loch Modan
-step << Dwarf Paladin
-    .goto StormwindClassic,61.149,11.568,25,0
-    .goto StormwindClassic,64.0,8.10
-    .zone Ironforge >>Entre no Bondinho Deeprun. Pegue o Bondinho para Ironforge
-    --.link https://www.youtube.com/watch?v=M_tXROi9nMQ >> |cRXP_WARN_Do a logout skip inside the Tram. Click here for video reference|r
-]])
-
-RXPGuides.RegisterGuide([[
-#hardcore
-#era/som--h
-#classic
-#tbc
-<< Alliance
-#name 11-13 Loch Modan (Anão/Gnomo)
-#version 1
-#group Sobrevivência Guia (A)
-#subgroup RXP Sobrevivência Guia 1-20
-#defaultfor Gnome/Dwarf
-#next 13-15 Cerro Oeste
-
+step
+    .hs >>Voe para Ironforge
+	.cooldown item,6948,>0,1
+    .zoneskip Ironforge
+step
+    .goto Westfall,56.55,52.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thor|r
+    .fly Ironforge >>Voe para Altaforja
+    .target Thor
+    .zoneskip Ironforge
 step << Dwarf Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Brandur Ferromalho|r
     .target Brandur Ironhammer
@@ -2420,440 +2143,7 @@ step << Dwarf Paladin
 step << Dwarf Paladin
     .goto Ironforge,23.539,8.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Muiredon Beloforja|r
+    >>|cRXP_WARN_Não aceite a próxima|r
     .target Muiredon Battleforge
     .turnin 1779 >>Entregue Tomo de Divindade
-    .accept 1783 >>Aceite Tomo de Divindade
-step << Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Trovino|r
-    .goto Ironforge,55.501,47.742
-    .fly Loch Modan >>Voe para Loch Modan
-    .target Gryth Thurden
-    .zoneskip Ironforge,1
-step
-    #optional
-    .isQuestComplete 418
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vidra Fornalenha|r
-    .target Vidra Hearthstove
-    .goto Loch Modan,34.828,49.283
-    .turnin 418 >>Entregue Chouriço de Thelsamar
-step
-    #completewith RTB
-    .goto Loch Modan,34.757,48.618
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yanni Cuoreforte|r
-    .vendor 1682 >>|cRXP_BUY_Compre|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_se necessário|r
-    .target Yanni Stoutheart
-step
-    #completewith RTB
-    .goto Loch Modan,35.534,48.404
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com o |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
-    .vendor 6734 >>|cRXP_BUY_Compre|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_se necessário|r << Warrior/Rogue
-    .vendor 6734 >>|cRXP_BUY_Compre|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_e|r |T132815:0|t[Leite Gelado] |cRXP_BUY_se necessário|r << !Warrior !Rogue
-    .target Innkeeper Hearthstove
-step
-    .goto Loch Modan,37.17,47.94,8,0
-    .goto Loch Modan,37.019,47.806
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Brock Buscapedra|r
-    .turnin 6392 >>Entregue Retorno a Brock
-    .target Brock Stoneseeker
-step << Hunter
-    .goto Loch Modan,35.828,43.457
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vrok Soltagafe|r
-    >>|cRXP_BUY_Compre|r |T135613:0|t[Cano de Atirar do Caçador] |cRXP_BUY_se conseguir pagar|r
-    .collect 2511,1
-    .money <0.1300
-    .target Vrok Blunderblast
-step
-    .group
-    #completewith BraveSoul
-    >>Mate os |cRXP_ENEMY_Elder Preto Ursos|r. Saqueie-os pelos seus |cRXP_LOOT_Bear Carne|r
-    >>Mate os |cRXP_ENEMY_Mountain Boars|r. Saqueie-os pelos |cRXP_LOOT_Boar Intestines|r
-    >>Mate os |cRXP_ENEMY_Forest Lurkers|r. Saqueie-os pelos seus |cRXP_LOOT_Ichor|r
-    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
-    .mob +Mountain Boar
-    .collect 3173,3,418,1 --Collect Bear Meat (x3)
-    .mob +Elder Black Bear
-    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    .mob +Forest Lurker
-step
-    .solo
-    #completewith StormpikeStop
-    >>Mate os |cRXP_ENEMY_Elder Preto Ursos|r. Saqueie-os pelos seus |cRXP_LOOT_Bear Carne|r
-    >>Mate os |cRXP_ENEMY_Mountain Boars|r. Saqueie-os pelos |cRXP_LOOT_Boar Intestines|r
-    >>Mate os |cRXP_ENEMY_Forest Lurkers|r. Saqueie-os pelos seus |cRXP_LOOT_Ichor|r
-    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
-    .mob +Mountain Boar
-    .collect 3173,3,418,1 --Collect Bear Meat (x3)
-    .mob +Elder Black Bear
-    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    .mob +Forest Lurker
-step
-    .group
-    #completewith MinerGear
-    >>Mate os |cRXP_ENEMY_Tunnel Ratos|r. Saqueie-os pelas |cRXP_LOOT_Orelhas|r
-    .complete 416,1 --Collect Tunnel Rat Ear (x12)
-    .mob Tunnel Rat Scout
-    .mob Tunnel Rat Vermin
-    .mob Tunnel Rat Forager
-    .mob Tunnel Rat Geomancer
-    .mob Tunnel Rat Digger
-    .mob Tunnel Rat Surveyor
-step
-    .group
-    #label BraveSoul
-    #completewith next
-    .goto Loch Modan,35.50,18.97,20 >>Entre na Mina do Riacho Prateado
-step
-    .group
-    #label MinerGear
-    .goto Loch Modan,35.93,22.55
-    >>Abra os |cRXP_PICK_Caixotes da Liga dos Mineiros|r. Saqueie-os para o |cRXP_LOOT_Miners' Equipamento|r
-    >>|cRXP_WARN_Os |cRXP_PICK_Caixotes da Liga dos Mineiros|r podem ser encontrados por toda a Mina|r
-    >>|cRXP_WARN_Você poderá fazer esta missão em um nível mais alto se desejar pular por enquanto|r
-    .complete 307,1 -- Miners' Gear (4)
-step
-    .group
-    #completewith StormpikeStop
-    >>Mate os |cRXP_ENEMY_Elder Preto Ursos|r. Saqueie-os pelos seus |cRXP_LOOT_Bear Carne|r
-    >>Mate os |cRXP_ENEMY_Mountain Boars|r. Saqueie-os pelos |cRXP_LOOT_Boar Intestines|r
-    >>Mate os |cRXP_ENEMY_Forest Lurkers|r. Saqueie-os pelos seus |cRXP_LOOT_Ichor|r
-    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
-    .mob +Mountain Boar
-    .collect 3173,3,418,1 --Collect Bear Meat (x3)
-    .mob +Elder Black Bear
-    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    .mob +Forest Lurker
-step << Paladin/Warrior
-    .goto Loch Modan,42.867,9.885
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nillen Andemar|r
-    .vendor >>|cRXP_FRIENDLY_Nillen Andemar|r |cRXP_WARN_vende|r |T133476:0|t[|cRXP_FRIENDLY_Maça Pesada com Pontas|r] |cRXP_WARN_que é um item de quantidade limitada|r
-    >>|cRXP_WARN_Verifique se está disponível e compre-o se puder. Se não puder pagar, consiga dinheiro dos |cRXP_ENEMY_Tunnel Ratos|r próximos até ter o suficiente|r
-    >>|cRXP_WARN_Faça rápido pois outro jogador pode comprá-lo antes de você|r
-    .target Nillen Andemar
-step
-    .goto Loch Modan,25.05,30.19,0
-    .goto Loch Modan,26.06,43.44,0
-    .goto Loch Modan,37.71,16.84,0
-    .goto Loch Modan,37.71,16.84,50,0
-    .goto Loch Modan,35.48,16.82,50,0
-    .goto Loch Modan,25.05,30.19,50,0
-    .goto Loch Modan,26.06,43.44,50,0
-    .goto Loch Modan,37.71,16.84,50,0
-    .goto Loch Modan,35.48,16.82
-    >>Mate os |cRXP_ENEMY_Tunnel Ratos|r. Saqueie-os pelas |cRXP_LOOT_Orelhas|r
-    >>Os |cRXP_ENEMY_Tunnel Ratos|r |cRXP_WARN_podem aparecer em toda Loch Modan. Verifique seu Mapa do Mundo para suas localizações|r
-    .complete 416,1 --Collect Tunnel Rat Ear (x12)
-    .mob Tunnel Rat Scout
-    .mob Tunnel Rat Vermin
-    .mob Tunnel Rat Forager
-    .mob Tunnel Rat Geomancer
-    .mob Tunnel Rat Digger
-    .mob Tunnel Rat Surveyor
-step
-    #completewith StormpikeDelivery
-    #label StormpikeStop
-    .goto Loch Modan,24.134,18.208
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gothor Brumn|r
-    .vendor >>|cRXP_WARN_Vá ao Comerciante e repare se necessário|r
-    .target Gothor Brumn
-step
-.group
-    .goto Loch Modan,24.77,18.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Lançatroz|r
-    .turnin 307 >>Entregue Patas Nojentas
-    .target Mountaineer Stormpike
-step
-    #label StormpikeDelivery
-    .goto Loch Modan,24.77,18.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Lançatroz|r
-    .turnin 353 >>Entregue Entrega para Lançatroz
-    .target Mountaineer Stormpike
-step
-    >>Mate os |cRXP_ENEMY_Elder Preto Ursos|r. Saqueie-os pelos seus |cRXP_LOOT_Bear Carne|r
-    >>Mate os |cRXP_ENEMY_Mountain Boars|r. Saqueie-os pelos |cRXP_LOOT_Boar Intestines|r
-    >>Mate os |cRXP_ENEMY_Forest Lurkers|r. Saqueie-os pelos seus |cRXP_LOOT_Ichor|r
-    .collect 3173,3,418,1 --Bear Meat (3)
-    .mob +Elder Black Bear
-    .goto Loch Modan,26.9,10.7,90,0
-    .goto Loch Modan,30.9,10.6,90,0
-    .goto Loch Modan,28.6,15.4,90,0
-    .goto Loch Modan,30.5,26.6,90,0
-    .goto Loch Modan,33.4,30.3,90,0
-    .goto Loch Modan,39.4,33.3,90,0
-    .goto Loch Modan,26.9,10.7,90,0
-    .goto Loch Modan,30.9,10.6,90,0
-    .goto Loch Modan,28.6,15.4,90,0
-    .goto Loch Modan,30.5,26.6,90,0
-    .goto Loch Modan,33.4,30.3,90,0
-    .goto Loch Modan,39.4,33.3,90,0
-    .goto Loch Modan,26.9,10.7
-    .collect 3172,3,418,1 --Boar Intestines (3)
-    .mob +Mountain Boar
-    .goto Loch Modan,38.0,34.9,90,0
-    .goto Loch Modan,37.1,39.8,90,0
-    .goto Loch Modan,29.8,35.9,90,0
-    .goto Loch Modan,27.7,25.3,90,0
-    .goto Loch Modan,28.6,22.6,90,0
-    .goto Loch Modan,38.0,34.9,90,0
-    .goto Loch Modan,37.1,39.8,90,0
-    .goto Loch Modan,29.8,35.9,90,0
-    .goto Loch Modan,27.7,25.3,90,0
-    .goto Loch Modan,28.6,22.6,90,0
-    .goto Loch Modan,38.0,34.9
-    .collect 3174,3,418,1 --Spider Ichor (3)
-    .goto Loch Modan,31.9,16.4,90,0
-    .goto Loch Modan,28.0,20.6,90,0
-    .goto Loch Modan,33.8,40.5,90,0
-    .goto Loch Modan,36.2,30.9,90,0
-    .goto Loch Modan,39.0,32.1,90,0
-    .goto Loch Modan,31.9,16.4,90,0
-    .goto Loch Modan,28.0,20.6,90,0
-    .goto Loch Modan,33.8,40.5,90,0
-    .goto Loch Modan,36.2,30.9,90,0
-    .goto Loch Modan,39.0,32.1,90,0
-    .goto Loch Modan,31.9,16.4
-    .mob +Forest Lurker
-step
-    .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
-    .goto Loch Modan,36.72,41.97,15,0
-    .goto Loch Modan,37.24,43.19,15,0
-    .goto Loch Modan,37.33,45.63,15,0
-    .goto Loch Modan,36.77,46.20,15,0
-    .goto Loch Modan,35.19,46.88,15,0
-    .goto Loch Modan,32.67,49.71,20,0
-    .goto Loch Modan,36.77,46.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Kadrell|r
-    >>O |cRXP_FRIENDLY_Montanhista Kadrell|r |cRXP_WARN_patrulha a estrada em Thelsamar|r
-    .target Mountaineer Kadrell
-    .turnin 416 >>Entregue Rato Pegando
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vidra Fornalenha|r
-    .target Vidra Hearthstove
-    .goto Loch Modan,34.828,49.283
-    .turnin 418 >>Entregue Chouriço de Thelsamar
-step
-    .goto Loch Modan,34.757,48.618
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yanni Cuoreforte|r
-    >>|cRXP_BUY_Compre|r |T135237:0|t[Pederneira e Lenha] |cRXP_BUY_junto com 2|r |T135435:0|t[Simple Madeira]|cRXP_BUY_. Compre qualquer|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_se necessário|r
-    .collect 4470,2 --Simple Wood (2)
-    .collect 4471,1 --Flint and Tinder (1)
-    .target Yanni Stoutheart
-step
-    .goto Loch Modan,27.01,48.74,0
-    .goto Loch Modan,27.68,56.83,0
-    .goto Loch Modan,33.35,71.59,0
-    .goto Loch Modan,31.54,74.96,0
-    .goto Loch Modan,27.01,48.74,40,0
-    .goto Loch Modan,27.68,56.83,40,0
-    .goto Loch Modan,33.35,71.59,40,0
-    .goto Loch Modan,31.54,74.96,40,0
-    .goto Loch Modan,33.88,76.58
-    >>Mate os |cRXP_ENEMY_Stonesplinter Troggs|r e os |cRXP_ENEMY_Stonesplinter Batedores|r. Saqueie-os pelos seus |cRXP_LOOT_Teeth|r
-    .complete 224,1 --Kill Stonesplinter Trogg (x10)
-    .mob +Stonesplinter Trogg
-    .complete 224,2 --Kill Stonesplinter Scout (x10)
-    .mob +Stonesplinter Scout
-    .complete 267,1 --Collect Trogg Stone Tooth (x8)
-    .mob +Stonesplinter Trogg
-    .mob +Stonesplinter Scout
-step
-    #era
-    .goto Loch Modan,27.4,48.4
-    .xp 13+9600 >>Triture até 9600+/11400xp
-step
-    #som--xpgate
-    .goto Loch Modan,27.4,48.4
-    .xp 14-2300 >>Farme até estar 2300xp longe do nível 14 (9100/11400)
-step
-    #completewith next
-    .goto Loch Modan,24.78,70.17,10,0
-    .goto Loch Modan,23.73,75.52,15 >>Corra para cima pelo caminho de terra, depois desça para o bunker
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão Balbúrdia|r
-    .target Captain Rugelfuss
-    .goto Loch Modan,23.233,73.675
-    .turnin 267 >>Entregue A Ameaça Trogg
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Sapatorro|r
-    .target Mountaineer Cobbleflint
-    .goto Loch Modan,22.071,73.127
-    .turnin 224 >>Entregue Em Defesa das Terras do Rei
-step << !Dwarf/!Paladin
-    .goto Loch Modan,33.938,50.954
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum Borrelson|r
-    .fly Ironforge>>Voe para Altaforja
-    .target Thorgrum Borrelson
-step << Dwarf Paladin
-    #completewith next
-    .goto Dun Morogh,86.09,51.15
-    .zone Dun Morogh >>Vá para Dun Morogh
-step << Dwarf Paladin
-    #completewith next
-    .goto Dun Morogh,78.321,58.088
-    .cast 8593 >>Use o [Símbolo da Vida] em |cRXP_FRIENDLY_Narm Faulk|r
-	.use 6866
-	.target Narm Faulk
-step << Dwarf Paladin
-    .goto Dun Morogh,78.321,58.088
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Narm Faulk|r
-    .use 6866
-    .turnin 1783 >>Entregue Tomo de Divindade
-    .accept 1784 >>Aceite Tomo de Divindade
-    .target Narm Faulk
-step << Dwarf Paladin
-    .goto Dun Morogh,77.3,60.5,20,0
-    .goto Dun Morogh,77.83,61.78
-    >>Mate os |cRXP_ENEMY_Dark Ferro Spies|r. Saqueie-os para o |cRXP_LOOT_Dark Ferro Script|r
-    .complete 1784,1 --Dark Iron Script (1)
-    .mob Dark Iron Spy
-step << Dwarf Paladin
-	#completewith next
-    .hs >>Use sua Pedra de Retorno para ir a Ventobravo
-step << Paladin
-    #completewith next
-    .goto StormwindClassic,42.51,33.51,20 >>Viaje até a Catedral de Ventobravo
-step << Paladin
-    .goto StormwindClassic,38.82,31.27,10,0
-    .goto StormwindClassic,38.67,32.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Artur, o Fiel|r
-    .trainer >>Treine suas magias de classe
-    .target Arthur the Faithful
-step << Hunter
-    .goto Ironforge,69.872,82.890
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Regnus Granitrondo|r
-    .trainer >>Treine suas magias de classe
-    .target Regnus Thundergranite
-step << Warrior
-    .goto Ironforge,65.905,88.405
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bilban Arremessaporca|r
-    .trainer >>Treine suas magias de classe
-    .target Bilban Tosslespanner
-step << Mage
-    .goto Ironforge,27.18,8.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dink|r
-    .trainer >>Treine suas magias de classe
-    .target Dink
-step << Mage/Priest/Warlock
-    #ah
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com um |cRXP_FRIENDLY_Leiloeiro de Ironforge|r
-    >>|cRXP_BUY_Compre uma|r |T135144:0|t[Varinha Mágica Maior] |cRXP_BUY_se custar menos de 33s 40c|r
-    .goto Ironforge,25.800,75.500,-1
-    .goto Ironforge,24.200,74.600,-1
-    .goto Ironforge,23.800,71.800,-1
-    .collect 11288,1 --Greater Magic Wand (1)
-    .target Auctioneer Lympkin
-    .target Auctioneer Redmuse
-    .target Auctioneer Buckler
-step << Mage/Priest/Warlock
-    .goto Ironforge,22.837,17.094,8,0
-    .goto Ironforge,21.131,17.276,5,0
-    .goto Ironforge,23.135,15.936
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harick Batesseixo|r embaixo
-    >>|cRXP_WARN_Se você não conseguir adquirir uma|r |T135144:0|t[Varinha Mágica Maior] |cRXP_WARN_compre uma|r |T135468:0|t[Varinha Fumegante] |cRXP_WARN_e equipe-a quando você tiver 15|r
-    .collect 5208,1 --Smoldering Wand (1)
-    .target Harick Boulderdrum
-step << Warlock
-    #softcore
-    #requires Wand2
-    .goto Ironforge,51.1,8.7,15,0 >>Entre no edifício
-    .goto Ironforge,50.4,6.3
-    .trainer >>Treine suas magias de classe
-step << Warlock
-    #hardcore
-    .goto Ironforge,51.1,8.7,15,0
-    .goto Ironforge,50.343,5.657
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cravespinho|r
-    .trainer >>Treine suas magias de classe
-    .target Briarthorn
-step << Warlock
-    .goto Ironforge,53.2,7.8,15,0
-    .goto Ironforge,52.701,6.070
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jubahl Catadefunto|r
-    .vendor >>|cRXP_BUY_Compre|r |T133738:0|t[Grimório of Consumir Sombras (Rank 1)] |cRXP_BUY_e|r |T133738:0|t[Grimório de Sacrificar (Rank 1)] |cRXP_BUY_se você puder pagar|r
-    .target Jubahl Corpseseeker
-step << Rogue
-    #optional
-    .goto Ironforge,51.958,14.838
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hulfdan Barbanegra|r embaixo
-    .turnin -2218 >>Vire na Estrada para Salvação
-    .target Hulfdan Blackbeard
-step << Rogue
-    .goto Ironforge,51.495,15.330
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Fenthwick|r
-    .trainer >>Treine suas magias de classe
-    .target Fenthwick
-step << Priest
-    .goto Ironforge,25.207,10.756
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Toldren Ferrofundo|r
-    .trainer >>Treine suas magias de classe
-    .target Toldren Deepiron
-step << !Paladin !Warrior !Hunter !Warlock skip
-    #completewith next
-    +Faça um logout skip pulando em cima de uma das cabeças do Grifo, saindo do jogo e depois entrando novamente
-    .link https://www.youtube.com/watch?v=PWMJhodh6Bw >>https://www.youtube.com/watch?v=PWMJhodh6Bw >> |cRXP_WARN_Clique aqui para referência de vídeo|r
-    .zoneskip Ironforge,1
-step << !Paladin
-    .goto Ironforge,78.00,52.00,5,0
-    .zone Stormwind City >>Entre no Deeprun Tram. Pegue o Tram para Ventobravo
-    >>|cRXP_WARN_Nível seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_e|r |T133971:0|t[Culinária] |cRXP_WARN_se necessário enquanto espera o trem|r
-    >>|cRXP_WARN_Você precisará de seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_estar no nível 80 para uma missão no nível 24|r << Rogue !Dwarf
-step
-    #completewith Fly2WF
-    .goto StormwindClassic,55.21,7.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Billibub Rodagiros|r
-    .vendor 5519 >>|cRXP_BUY_Compre um|r [Tubo de Bronze] |cRXP_BUY_com ele (se estiver disponível)|r
-    >>|cRXP_WARN_Este é um item de suprimento limitado. Pule esta etapa se o|cRXP_FRIENDLY_ Bilubub Rodagiros|r não tiver um|r
---    >>You will need 2 bronze tubes for a quest later << Rogue
-    .bronzetube
-    .target Billibub Cogspinner
-step << Rogue
-    #ah
-    .goto StormwindClassic,57.38,56.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marcia Weller|r
-    >>|cRXP_BUY_Compre 1 ou 2|r |T135343:0|t[Scimitars] |cRXP_BUY_se você puder pagar ou algo melhor do Auction House|r
-    .collect 2027,2 --Scimitar
-    .target Marcia Weller
-    .money <0.3815
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
-step << Rogue
-    #ssf
-    .goto StormwindClassic,57.38,56.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marcia Weller|r
-    >>|cRXP_BUY_Compre 1 ou 2|r |T135343:0|t[Scimitars] |cRXP_BUY_se você puder pagar|r
-    .collect 2027,2 --Scimitar
-    .money <0.3815
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
-    .target Marcia Weller
-step << Rogue
-    #optional
-    #completewith next
-    +|cRXP_WARN_Equipe a|r |T135343:0|t[Cimitarra]
-    .use 2027
-    .itemcount 2027,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.69
-    .xp <14,1
-step
-    #ah
-    .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Leiloeira Jasona|r
-    >>Compre os itens a seguir para entregas mais rápidas no Cerro Oeste em breve
-    >>Isso vai economizar tempo, pois você não precisará ficar procurando inimigos para matar. Pule esta etapa se preferir não comprar nenhum
-    >>|T133972:0|t[Stringy Vulture Carne]
-    >>|T133884:0|t[Murloc Eye]
-    >>|T135997:0|t[Goretusco Snout]
-    >>|T134185:0|t[Okra]
-    >>|T134341:0|t[Goretusco Liver]
-    >>|T132794:0|t[Frasco de Óleo]
-    .collect 729,3,38,1 -- Stringy Vulture Meat (3)
-    .collect 730,3,38,1 -- Murloc Eye (3)
-    .collect 731,3,38,1 -- Goretusk Snout (3)
-    .collect 732,3,38,1 -- Okra (3)
-    .collect 723,8,22,1 -- Goretusk Liver (8)
-    .collect 814,5,103,1 -- Flask of Oil (5)
-    .target Auctioneer Jaxon
-step
-    #label Fly2WF
-    .goto StormwindClassic,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
-    .fly Westfall >>Voe para Cerro Oeste
-    .target Dungar Longdrink
 ]])

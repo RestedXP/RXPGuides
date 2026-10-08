@@ -2,32 +2,32 @@ if GetLocale() ~= "ptBR" then return end
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
-#group Guias de Fim de Jogo
-#subgroup Guia do Feralheart Set << Druid
-#subgroup Guia do Conjunto Senhor das Feras << Hunter
-#subgroup Guia do Conjunto do Feiticeiro << Mage
+#group RestedXP Guias de Fim de Jogo
+#subgroup Guia do Set Feralheart << Druid
+#subgroup Guia do Set Senhor das Feras << Hunter
+#subgroup Guia do Set Sorcerer's << Mage
 #subgroup Guia do Conjunto da Forja da Alma << Paladin
-#subgroup Guia do Conjunto da Manta Negra << Rogue
-#subgroup Guia do Conjunto dos Cinco Trovões << Shaman
-#subgroup Guia do Conjunto da Mortalha << Warlock
-#subgroup Guia do Conjunto de Heroísmo << Warrior
-#subgroup Guia do Conjunto da Virtude << Priest
+#subgroup Guia do Set Darkmantle << Rogue
+#subgroup Guia do Set The Cinco Thunders << Shaman
+#subgroup Guia do Set Deathmist << Warlock
+#subgroup Guia do Set Heroísmo << Warrior
+#subgroup Guia do Set Virtuous << Priest
 #name Parte 1: Braçadeiras
-#next Parte 2: Cinto e Luvas
+#next Parte 2: Cinturão e Luvas
 
 
 step
-    >>Obtenha as |T132608:0|t[|cRXP_LOOT_Braçadeiras do Coração Selvagem|r]. Este é um drop de Vincular ao Equipar em |cFFfa9602Stratholme|r << Druid
-    >>Obtenha as |T132616:0|t[|cRXP_LOOT_Braceletes do Espreitador de Feras|r]. Este é um drop de Vincular ao Equipar em |cFFfa9602Stratholme|r e em |cFFfa9602Blackrock Spire|r << Hunter
-    >>Obtenha as |T133365:0|t[|cRXP_LOOT_Braceletes do Magíster|r]. Este é um drop de Vincular ao Equipar em |cFFfa9602Blackrock Spire|r << Mage
-    >>Obtenha as |T132613:0|t[|cRXP_LOOT_Braçadeiras da Forja de Luz|r]. Este é um drop de Vincular ao Equipar em |cFFfa9602Stratholme|r << Paladin
-    >>Obtenha as |T132520:0|t[|cRXP_LOOT_Braçadeiras do Devoto|r]. Este é um drop de Vincular ao Equipar em |cFFfa9602Stratholme|r << Priest
-    >>Obtenha as |T132606:0|t[|cRXP_LOOT_Braçadeiras da Arte Sombria|r]. Este é um drop de Vincular ao Equipar em |cFFfa9602Scolomântia|r << Rogue
-    >>Obtenha as |T132601:0|t[|cRXP_LOOT_Braceletes dos Elementos|r]. Este é um drop de Vincular ao Equipar em |cFFfa9602Stratholme|r << Shaman
-    >>Obtenha as |T132612:0|t[|cRXP_LOOT_Braçadeiras de Brumedo|r]. Este é um drop de Vincular ao Equipar em |cFFfa9602Blackrock Spire|r << Warlock
-    >>Obtenha as |T132617:0|t[|cRXP_LOOT_Braçadeiras do Bravura|r]. Este é um drop de Vincular ao Equipar em |cFFfa9602Blackrock Spire|r << Warrior
-    >>|cRXP_WARN_Alternativamente compre-os da Casa de Leilões << !sod
-    >>|cRXP_WARN_Alternativamente compre-os da Casa de Leilões ou de |cRXP_FRIENDLY_Pix Xizzix|r em Booty Bay em troca de|r |T133799:0|t[|cRXP_FRIENDLY_Tarnished Inframina Real|r] << sod
+    >>Obtenha o |T132608:0|t[|cRXP_LOOT_Braçadeiras do Coração Selvagem|r]. Este é um drop com Vinculação ao Equipar em |cFFfa9602Stratholme|r << Druid
+    >>Obtenha o |T132616:0|t[|cRXP_LOOT_Braceletes do Espreitador de Feras|r]. Este é um drop com Vinculação ao Equipar em |cFFfa9602Stratholme|r e |cFFfa9602Blackrock Spire|r << Hunter
+    >>Obtenha o |T133365:0|t[|cRXP_LOOT_Braceletes do Magíster|r]. Este é um drop com Vinculação ao Equipar em |cFFfa9602Blackrock Spire|r << Mage
+    >>Obtenha o |T132613:0|t[|cRXP_LOOT_Braçadeiras da Forja de Luz|r]. Este é um drop com Vinculação ao Equipar em |cFFfa9602Stratholme|r << Paladin
+    >>Obtenha o |T132520:0|t[|cRXP_LOOT_Braçadeiras do Devoto|r]. Este é um drop com Vinculação ao Equipar em |cFFfa9602Stratholme|r << Priest
+    >>Obtenha o |T132606:0|t[|cRXP_LOOT_Braçadeiras da Arte Sombria|r]. Este é um drop com Vinculação ao Equipar em |cFFfa9602Scolomântia|r << Rogue
+    >>Obtenha o |T132601:0|t[|cRXP_LOOT_Braceletes dos Elementos|r]. Este é um drop com Vinculação ao Equipar em |cFFfa9602Stratholme|r << Shaman
+    >>Obtenha o |T132612:0|t[|cRXP_LOOT_Braçadeiras de Brumedo|r]. Este é um drop com Vinculação ao Equipar em |cFFfa9602Blackrock Spire|r << Warlock
+    >>Obtenha o |T132617:0|t[|cRXP_LOOT_Braçadeiras do Bravura|r]. Este é um drop com Vinculação ao Equipar em |cFFfa9602Blackrock Spire|r << Warrior
+    >>|cRXP_WARN_Alternativamente, compre-os da Casa de Leilões << !sod
+    >>|cRXP_WARN_Alternativamente, compre-os da Casa de Leilões ou de |cRXP_FRIENDLY_Pix Xizzix|r em Booty Bay em troca de|r |T133799:0|t[|cRXP_FRIENDLY_Tarnished Inframina Real|r] << sod
     .collect 16714,1,8905,1 << Alliance Druid --Wildheart Bracers (x1)
     .collect 16681,1,8906,1 << Alliance Hunter --Beaststalker's Bindings (x1)
     .collect 16683,1,8907,1 << Alliance Mage --Magister's Bindings (x1)
@@ -59,18 +59,18 @@ step << Alliance
 step << Alliance
     .goto Ironforge,43.54,52.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deliana|r
-    .accept 8905 >>Aceite Uma Proposta Sincera << Druid
-    .accept 8906 >>Aceite Uma Proposta Sincera << Hunter
-    .accept 8907 >>Aceite Uma Proposta Sincera << Mage
-    .accept 8908 >>Aceite Uma Proposta Sincera << Paladin
-    .accept 8909 >>Aceite Uma Proposta Sincera << Priest
-    .accept 8910 >>Aceite Uma Proposta Sincera << Rogue
-    .accept 8911 >>Aceite Uma Proposta Sincera << Warlock
-    .accept 8912 >>Aceite Uma Proposta Sincera << Warrior
+    .accept 8905 >>Aceite An Earnest Proposition - Missão - Missão << Druid
+    .accept 8906 >>Aceite An Earnest Proposition - Missão - Missão << Hunter
+    .accept 8907 >>Aceite An Earnest Proposition - Missão - Missão << Mage
+    .accept 8908 >>Aceite An Earnest Proposition - Missão - Missão << Paladin
+    .accept 8909 >>Aceite An Earnest Proposition - Missão - Missão << Priest
+    .accept 8910 >>Aceite An Earnest Proposition - Missão - Missão << Rogue
+    .accept 8911 >>Aceite An Earnest Proposition - Missão - Missão << Warlock
+    .accept 8912 >>Aceite An Earnest Proposition - Missão - Missão << Warrior
     .target Deliana
 step << Alliance
     #completewith next
-    .zone Winterspring >>Vá para |cFFfa9602Hibérnia|r
+    .zone Winterspring >>Voe para |cFFfa9602Hibérnia|r
 step << Alliance
     #loop
     .goto Winterspring,50.54,14.27,0
@@ -81,7 +81,7 @@ step << Alliance
     .goto Winterspring,49.67,7.03,50,0
     .goto Winterspring,51.94,9.31,50,0
     .goto Winterspring,51.64,11.34,50,0
-    >>Mate todos os |cRXP_ENEMY_Shardtooth Ursos|r e |cRXP_ENEMY_Frostsabers|r. Saque-os para obter |cRXP_LOOT_Winterspring Sanguíneo Samples|r
+    >>Mate todos os tipos de |cRXP_ENEMY_Shardtooth Ursos|r e |cRXP_ENEMY_Frostsabers|r. Saqueie-os para obter |cRXP_LOOT_Winterspring Sanguíneo Samples|r
     .complete 8905,1 << Druid --Winterspring Blood Sample (x15)
     .complete 8906,1 << Hunter --Winterspring Blood Sample (x15)
     .complete 8907,1 << Mage --Winterspring Blood Sample (x15)
@@ -121,34 +121,34 @@ step << Alliance
     .collect 16710,1,8910,1 << Rogue --Shadowcraft Bracers (x1)
     .collect 16703,1,8911,1 << Warlock --Dreadmist Bracers (x1)
     .collect 16735,1,8912,1 << Warrior --Bracers of Valor (x1)
-    .turnin 8905 >>Entregue Uma Proposta Sincera << Druid
-    .turnin 8906 >>Entregue Uma Proposta Sincera << Hunter
-    .turnin 8907 >>Entregue Uma Proposta Sincera << Mage
-    .turnin 8908 >>Entregue Uma Proposta Sincera << Paladin
-    .turnin 8909 >>Entregue Uma Proposta Sincera << Priest
-    .turnin 8910 >>Entregue Uma Proposta Sincera << Rogue
-    .turnin 8911 >>Entregue Uma Proposta Sincera << Warlock
-    .turnin 8912 >>Entregue Uma Proposta Sincera << Warrior
-    .accept 8922 >>Aceite Um Dispositivo Sobrenatural
+    .turnin 8905 >>Entregue An Earnest Proposition - Missão - Missão << Druid
+    .turnin 8906 >>Entregue An Earnest Proposition - Missão - Missão << Hunter
+    .turnin 8907 >>Entregue An Earnest Proposition - Missão - Missão << Mage
+    .turnin 8908 >>Entregue An Earnest Proposition - Missão - Missão << Paladin
+    .turnin 8909 >>Entregue An Earnest Proposition - Missão - Missão << Priest
+    .turnin 8910 >>Entregue An Earnest Proposition - Missão - Missão << Rogue
+    .turnin 8911 >>Entregue An Earnest Proposition - Missão - Missão << Warlock
+    .turnin 8912 >>Entregue An Earnest Proposition - Missão - Missão << Warrior
+    .accept 8922 >>Aceite A Sobrenatureza Device - Missão
     .target Deliana
 step << Horde
     #completewith next
-    .zone Orgrimmar >>Voe para |cFFfa9602Orgrimmar|r
+    .zone Orgrimmar >>Vá para |cFFfa9602Orgrimmar|r
 step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mokvar|r
-    .accept 8913 >>Aceite Uma Proposta Sincera << Druid
-    .accept 8914 >>Aceite Uma Proposta Sincera << Hunter
-    .accept 8915 >>Aceite Uma Proposta Sincera << Mage
-    .accept 8916 >>Aceite Uma Proposta Sincera << Priest
-    .accept 8917 >>Aceite Uma Proposta Sincera << Rogue
-    .accept 8918 >>Aceite Uma Proposta Sincera << Shaman
-    .accept 8919 >>Aceite Uma Proposta Sincera << Warlock
-    .accept 8920 >>Aceite Uma Proposta Sincera << Warrior
+    .accept 8913 >>Aceite An Earnest Proposition - Missão - Missão << Druid
+    .accept 8914 >>Aceite An Earnest Proposition - Missão - Missão << Hunter
+    .accept 8915 >>Aceite An Earnest Proposition - Missão - Missão << Mage
+    .accept 8916 >>Aceite An Earnest Proposition - Missão - Missão << Priest
+    .accept 8917 >>Aceite An Earnest Proposition - Missão - Missão << Rogue
+    .accept 8918 >>Aceite An Earnest Proposition - Missão - Missão << Shaman
+    .accept 8919 >>Aceite An Earnest Proposition - Missão - Missão << Warlock
+    .accept 8920 >>Aceite An Earnest Proposition - Missão - Missão << Warrior
     .target Mokvar
 step << Horde
     #completewith next
-    .zone Silithus >>Voe para |cFFfa9602Silithus|r
+    .zone Silithus >>Viagem para |cFFfa9602Silithus|r
 step << Horde
     #loop
     .goto Silithus,64.82,41.47,0
@@ -165,7 +165,7 @@ step << Horde
     .goto Silithus,28.52,77.73,90,0
     .goto Silithus,45.40,80.20,90,0
     .goto Silithus,58.80,61.99,90,0
-    >>Mate todos os tipos de |cRXP_ENEMY_Aranhas|r e |cRXP_ENEMY_Scorpids|r. Saqueie-os para obter |cRXP_LOOT_Silithus Venenom Samples|r
+    >>Mate todos os tipos de |cRXP_ENEMY_Aranhas|r e |cRXP_ENEMY_Scorpids|r. Saque-os para obter os |cRXP_LOOT_Silithus Venenom Samples|r
     .complete 8913,1 << Druid --Silithus Venom Sample (x15)
     .complete 8914,1 << Hunter --Silithus Venom Sample (x15)
     .complete 8915,1 << Mage --Silithus Venom Sample (x15)
@@ -181,7 +181,7 @@ step << Horde
     .mob Rock Stalker
 step << Horde
     #completewith next
-    .zone Orgrimmar >>Voe para |cFFfa9602Orgrimmar|r
+    .zone Orgrimmar >>Vá para |cFFfa9602Orgrimmar|r
 step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mokvar|r
@@ -201,14 +201,14 @@ step << Horde
     .collect 16671,1,8918,1 << Shaman --Bindings of Elements (x1)
     .collect 16703,1,8919,1 << Warlock --Dreadmist Bracers (x1)
     .collect 16735,1,8920,1 << Warrior --Bracers of Valor (x1)
-    .turnin 8913 >>Entregue Uma Proposta Sincera << Druid
-    .turnin 8914 >>Entregue Uma Proposta Sincera << Hunter
-    .turnin 8915 >>Entregue Uma Proposta Sincera << Mage
-    .turnin 8916 >>Entregue Uma Proposta Sincera << Priest
-    .turnin 8917 >>Entregue Uma Proposta Sincera << Rogue
-    .turnin 8918 >>Entregue Uma Proposta Sincera << Shaman
-    .turnin 8919 >>Entregue Uma Proposta Sincera << Warlock
-    .turnin 8920 >>Entregue Uma Proposta Sincera << Warrior
+    .turnin 8913 >>Entregue An Earnest Proposition - Missão - Missão << Druid
+    .turnin 8914 >>Entregue An Earnest Proposition - Missão - Missão << Hunter
+    .turnin 8915 >>Entregue An Earnest Proposition - Missão - Missão << Mage
+    .turnin 8916 >>Entregue An Earnest Proposition - Missão - Missão << Priest
+    .turnin 8917 >>Entregue An Earnest Proposition - Missão - Missão << Rogue
+    .turnin 8918 >>Entregue An Earnest Proposition - Missão - Missão << Shaman
+    .turnin 8919 >>Entregue An Earnest Proposition - Missão - Missão << Warlock
+    .turnin 8920 >>Entregue An Earnest Proposition - Missão - Missão << Warrior
     .accept 8923 >>Aceite Um Dispositivo Sobrenatural
     .target Mokvar
 
@@ -218,23 +218,23 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
-#group Guias de Fim de Jogo
-#subgroup Guia do Feralheart Set << Druid
-#subgroup Guia do Conjunto Senhor das Feras << Hunter
-#subgroup Guia do Conjunto do Feiticeiro << Mage
+#group RestedXP Guias de Fim de Jogo
+#subgroup Guia do Set Feralheart << Druid
+#subgroup Guia do Set Senhor das Feras << Hunter
+#subgroup Guia do Set Sorcerer's << Mage
 #subgroup Guia do Conjunto da Forja da Alma << Paladin
-#subgroup Guia do Conjunto da Manta Negra << Rogue
-#subgroup Guia do Conjunto dos Cinco Trovões << Shaman
-#subgroup Guia do Conjunto da Mortalha << Warlock
-#subgroup Guia do Conjunto de Heroísmo << Warrior
-#subgroup Guia do Conjunto da Virtude << Priest
+#subgroup Guia do Set Darkmantle << Rogue
+#subgroup Guia do Set The Cinco Thunders << Shaman
+#subgroup Guia do Set Deathmist << Warlock
+#subgroup Guia do Set Heroísmo << Warrior
+#subgroup Guia do Set Virtuous << Priest
 #name Parte 2: Cinto e Luvas
 #next Parte 3: Calças, Ombros e Botas
 
 
 step
     #optional
-    +|cRXP_WARN_Você deve completar a Parte 1: Braçadeiras antes de começar este passo do guia|r
+    +|cRXP_WARN_Você deve completar Parte 1: Pulseiras antes de começar esta parte do guia|r
     .isQuestAvailable 8905 << Alliance Druid
     .isQuestAvailable 8906 << Alliance Hunter
     .isQuestAvailable 8907 << Alliance Mage
@@ -252,17 +252,17 @@ step
     .isQuestAvailable 8919 << Horde Warlock
     .isQuestAvailable 8920 << Horde Warrior
 step
-    >>Obtenha o |T132504:0|t[|cRXP_LOOT_Cinto do Coração Selvagem|r]. Este é um item Vinculado ao Equipar que cai em |cFFfa9602Scolomântia|r e |cFFfa9602Blackrock Spire|r << Druid
-    >>Obtenha o |T132517:0|t[|cRXP_LOOT_Cinto do Espreitador de Feras|r]. Este é um item Vinculado ao Equipar que cai em |cFFfa9602Blackrock Spire|r << Hunter
-    >>Obtenha o |T132497:0|t[|cRXP_LOOT_Cinto do Magíster|r]. Este é um drop Vincular-ao-Equipar em |cFFfa9602Stratholme|r e |cFFfa9602Blackrock Spire|r << Mage
-    >>Obtenha o |T132500:0|t[|cRXP_LOOT_Cinto da Forja de Luz|r]. Este é um drop Vincular-ao-Equipar em |cFFfa9602Stratholme|r << Paladin
-    >>Obtenha o |T132499:0|t[|cRXP_LOOT_Cinto do Devoto|r]. Este é um drop Vincular-ao-Equipar em |cFFfa9602Blackrock Spire|r << Priest
-    >>Obtenha o |T132492:0|t[|cRXP_LOOT_Cinto da Arte Sombria|r]. Este é um drop Vincular-ao-Equipar em |cFFfa9602Blackrock Spire|r << Rogue
-    >>Obtenha o |T132505:0|t[|cRXP_LOOT_Cordão dos Elementos|r]. Este é um drop Vincular-ao-Equipar em |cFFfa9602Blackrock Spire|r << Shaman
-    >>Obtenha o |T132501:0|t[|cRXP_LOOT_Cinto de Brumedo|r]. Este é um drop Vincular-ao-Equipar em |cFFfa9602Stratholme|r << Warlock
-    >>Obtenha o |T132523:0|t[|cRXP_LOOT_Cinto do Bravura|r]. Este é um drop Vincular-ao-Equipar em |cFFfa9602Blackrock Spire|r e |cFFfa9602Stratholme|r << Warrior
-    >>|cRXP_WARN_Alternativamente compre-os da Casa de Leilões << !sod
-    >>|cRXP_WARN_Alternativamente compre-os da Casa de Leilões ou de |cRXP_FRIENDLY_Pix Xizzix|r em Booty Bay em troca de|r |T133799:0|t[|cRXP_FRIENDLY_Tarnished Inframina Real|r] << sod
+    >>Obtenha o |T132504:0|t[|cRXP_LOOT_Cinto do Coração Selvagem|r]. É um drop Vinculado ao Equipar de |cFFfa9602Scolomântia|r e |cFFfa9602Blackrock Spire|r << Druid
+    >>Obtenha o |T132517:0|t[|cRXP_LOOT_Cinto do Espreitador de Feras|r]. É um drop Vinculado ao Equipar de |cFFfa9602Blackrock Spire|r << Hunter
+    >>Obtenha o |T132497:0|t[|cRXP_LOOT_Cinto do Magíster|r]. É um drop Vinculado ao Equipar de |cFFfa9602Stratholme|r e |cFFfa9602Blackrock Spire|r << Mage
+    >>Obtenha o |T132500:0|t[|cRXP_LOOT_Cinto da Forja de Luz|r]. É um drop Vinculado ao Equipar de |cFFfa9602Stratholme|r << Paladin
+    >>Obtenha o |T132499:0|t[|cRXP_LOOT_Cinto do Devoto|r]. É um drop Vinculado ao Equipar de |cFFfa9602Blackrock Spire|r << Priest
+    >>Obtenha o |T132492:0|t[|cRXP_LOOT_Cinto da Arte Sombria|r]. É um drop Vinculado ao Equipar de |cFFfa9602Blackrock Spire|r << Rogue
+    >>Obtenha o |T132505:0|t[|cRXP_LOOT_Cordão dos Elementos|r]. É um drop Vinculado ao Equipar de |cFFfa9602Blackrock Spire|r << Shaman
+    >>Obtenha o |T132501:0|t[|cRXP_LOOT_Cinto de Brumedo|r]. É um drop Vinculado ao Equipar de |cFFfa9602Stratholme|r << Warlock
+    >>Obtenha o |T132523:0|t[|cRXP_LOOT_Cinto do Bravura|r]. É um drop Vinculado ao Equipar de |cFFfa9602Blackrock Spire|r e |cFFfa9602Stratholme|r << Warrior
+    >>|cRXP_WARN_Alternativamente, compre-os na Casa de Leilões << !sod
+    >>|cRXP_WARN_Alternativamente, compre-os na Casa de Leilões ou de |cRXP_FRIENDLY_Pix Xizzix|r em Booty Bay em troca de|r |T133799:0|t[|cRXP_FRIENDLY_Tarnished Inframina Real|r] << sod
     .collect 16716,1,8926,1 << Alliance Druid --Wildheart Belt (x1)
     .collect 16680,1,8931,1 << Alliance Hunter --Beaststalker's Belt (x1)
     .collect 16685,1,8932,1 << Alliance Mage --Magister's Belt (x1)
@@ -289,17 +289,17 @@ step
     .equip 6,16736 << Warrior
     .equip 6,16673 << Shaman
 step
-    >>Obtenha o |T132951:0|t[|cRXP_LOOT_Luvas do Coração Selvagem|r]. Este é um drop Vincular-ao-Equipar em |cFFfa9602Stratholme|r << Druid
-    >>Obtenha o |T132944:0|t[|cRXP_LOOT_Luvas do Espreitador de Feras|r]. Este é um drop Vincular-ao-Equipar em |cFFfa9602Blackrock Spire|r << Hunter
-    >>Obtenha o |T132951:0|t[|cRXP_LOOT_Luvas do Magíster|r]. Este é um drop Vincular-ao-Equipar em |cFFfa9602Scolomântia|r << Mage
-    >>Obtenha o |T132953:0|t[|cRXP_LOOT_Manoplas da Forja de Luz|r]. Este é um drop Vincular-ao-Equipar em |cFFfa9602Stratholme|r << Paladin
-    >>Obtenha o |T132948:0|t[|cRXP_LOOT_Luvas do Devoto|r]. Este é um drop Vincular-ao-Equipar em |cFFfa9602Stratholme|r << Priest
-    >>Obtenha o |T132958:0|t[|cRXP_LOOT_Luvas da Arte Sombria|r]. Este é um drop Vincular-ao-Equipar em |cFFfa9602Blackrock Spire|r << Rogue
-    >>Obtenha o |T132945:0|t[|cRXP_LOOT_Manoplas dos Elementos|r]. Este é um drop Vincular-ao-Equipar em |cFFfa9602Pico da Rocha Negra Superior|r << Shaman
-    >>Obtenha o |T132966:0|t[|cRXP_LOOT_Guarda-braços de Brumedo|r]. Este é um drop Vincular-ao-Equipar em |cFFfa9602Scolomântia|r << Warlock
-    >>Obtenha o |T132960:0|t[|cRXP_LOOT_Manoplas do Bravura|r]. Este é um drop Vincular-ao-Equipar em |cFFfa9602Stratholme|r << Warrior
-    >>|cRXP_WARN_Alternativamente compre-os da Casa de Leilões << !sod
-    >>|cRXP_WARN_Alternativamente compre-os da Casa de Leilões ou de |cRXP_FRIENDLY_Pix Xizzix|r em Booty Bay em troca de|r |T133799:0|t[|cRXP_FRIENDLY_Tarnished Inframina Real|r] << sod
+    >>Obtenha o |T132951:0|t[|cRXP_LOOT_Luvas do Coração Selvagem|r]. Esta é uma queda de Vincular-ao-Equipar em |cFFfa9602Stratholme|r << Druid
+    >>Obtenha o |T132944:0|t[|cRXP_LOOT_Luvas do Espreitador de Feras|r]. Esta é uma queda de Vincular-ao-Equipar em |cFFfa9602Blackrock Spire|r << Hunter
+    >>Obtenha o |T132951:0|t[|cRXP_LOOT_Luvas do Magíster|r]. Esta é uma queda de Vincular-ao-Equipar em |cFFfa9602Scolomântia|r << Mage
+    >>Obtenha o |T132953:0|t[|cRXP_LOOT_Manoplas da Forja de Luz|r]. Esta é uma queda de Vincular-ao-Equipar em |cFFfa9602Stratholme|r << Paladin
+    >>Obtenha o |T132948:0|t[|cRXP_LOOT_Luvas do Devoto|r]. Esta é uma queda de Vincular-ao-Equipar em |cFFfa9602Stratholme|r << Priest
+    >>Obtenha o |T132958:0|t[|cRXP_LOOT_Luvas da Arte Sombria|r]. Esta é uma queda de Vincular-ao-Equipar em |cFFfa9602Blackrock Spire|r << Rogue
+    >>Obtenha o |T132945:0|t[|cRXP_LOOT_Manoplas dos Elementos|r]. Esta é uma queda de Vincular-ao-Equipar em |cFFfa9602Pico da Rocha Negra Superior|r << Shaman
+    >>Obtenha o |T132966:0|t[|cRXP_LOOT_Guarda-braços de Brumedo|r]. Esta é uma queda de Vincular-ao-Equipar em |cFFfa9602Scolomântia|r << Warlock
+    >>Obtenha o |T132960:0|t[|cRXP_LOOT_Manoplas do Bravura|r]. Esta é uma queda de Vincular-ao-Equipar em |cFFfa9602Stratholme|r << Warrior
+    >>|cRXP_WARN_Alternativamente, compre-os na Casa de Leilões << !sod
+    >>|cRXP_WARN_Alternativamente, compre-os na Casa de Leilões ou de |cRXP_FRIENDLY_Pix Xizzix|r em Booty Bay em troca de|r |T133799:0|t[|cRXP_FRIENDLY_Tarnished Inframina Real|r] << sod
     .collect 16717,1,8926,1 << Alliance Druid --Wildheart Gloves (x1)
     .collect 16676,1,8931,1 << Alliance Hunter --Beaststalker's Gloves (x1)
     .collect 16684,1,8932,1 << Alliance Mage --Magister's Gloves (x1)
@@ -326,7 +326,7 @@ step
     .equip 10,16737 << Warrior
     .equip 10,16672 << Shaman
 step
-    >>|cRXP_BUY_Coletar os seguintes itens|r:
+    >>|cRXP_BUY_Coletar os itens seguintes|r:
     >>|T133001:0|t[Delicate Arcanite Converters] |cRXP_WARN_são feitos por engenheiros|r
     >>|T132864:0|t[|cRXP_FRIENDLY_Greater Eternal Essences|r] |cRXP_WARN_são obtidos por encantadores|r
     >>|T134848:0|t[Óleo de Petrescama] |cRXP_WARN_é feito por alquimistas|r
@@ -346,7 +346,7 @@ step << Alliance
     .target Deliana
 step << Horde
     #completewith next
-    .zone Orgrimmar >>Voe para |cFFfa9602Orgrimmar|r
+    .zone Orgrimmar >>Vá para |cFFfa9602Orgrimmar|r
 step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mokvar|r
@@ -354,13 +354,13 @@ step << Horde
     .target Mokvar
 step
     #completewith next
-    .subzone 976 >>Viaje para Gadgetzan em |cFFfa9602Tanaris|r
+    .subzone 976 >>Vá para Gadgetzan em |cFFfa9602Tanaris|r
 step
     .goto Tanaris,52.47,27.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mux Zoamana|r
-    .turnin 8922 >>Entregue Um Dispositivo Sobrenatural << Alliance
-    .turnin 8923 >>Entregue Um Dispositivo Sobrenatural << Horde
-    .accept 8921 >>Aceite The Destilador Ectoplásmico
+    .turnin 8922 >>Entregue o Dispositivo Sobrenatural - Missão << Alliance
+    .turnin 8923 >>Entregue o Dispositivo Sobrenatural - Missão << Horde
+    .accept 8921 >>Aceite O Destilador Ectoplásmico
     .target Mux Manascrambler
 step
     #completewith next
@@ -385,15 +385,15 @@ step
     .goto Burning Steppes,23.40,46.28,60,0
     .goto Burning Steppes,34.32,58.78,60,0
     .goto Burning Steppes,55.26,47.90,60,0
-    >>Saque |cRXP_LOOT_Volcanic Cinza|r no chão
-    >>|cRXP_WARN_Parecem grandes pilhas de terra cinzenta e podem ser encontradas principalmente em Estepes Ardentes do Norte entre poços de lava e rios|r
+    >>Saqueie |cRXP_LOOT_Volcanic Cinza|r no chão
+    >>|cRXP_WARN_Parecem grandes amontoados de sujeira cinzenta e podem ser encontrados principalmente no norte de Estepes Ardentes, entre as piscinas de lava e rios|r
     .collect 22338,25,8921,1 --Volcanic Ash (x25)
 step
-    >>|cRXP_BUY_Coletar os seguintes itens|r:
-    >>|T133001:0|t[Delicate Arcanite Converters] |cRXP_WARN_são feitos por engenheiros|r
-    >>|T132864:0|t[|cRXP_FRIENDLY_Greater Eternal Essences|r] |cRXP_WARN_são obtidos por encantadores|r
-    >>|T134848:0|t[Óleo de Petrescama] |cRXP_WARN_é feito por alquimistas|r
-    >>|T132621:0|t[Combustível de Foguete Goblínico] |cRXP_WARN_é feito por engenheiros|r
+    >>|cRXP_BUY_Coletar os itens seguintes|r:
+    >>|T133001:0|t[Delicate Arcanite Converters] |cRXP_WARN_são feitos pelos engenheiros|r
+    >>|T132864:0|t[|cRXP_FRIENDLY_Greater Eternal Essences|r] |cRXP_WARN_são obtidos pelos encantadores|r
+    >>|T134848:0|t[Óleo de Petrescama] |cRXP_WARN_é feito pelos alquimistas|r
+    >>|T132621:0|t[Combustível de Foguete Goblínico] |cRXP_WARN_é feito pelos engenheiros|r
     >>|cRXP_WARN_Compre-os da Casa de Leilões se possível|r
     .collect 16006,1,8921,1 --Delicate Arcanite Converter (x1)
     .collect 16203,4,8921,1 --Greater Eternal Essence (x4)
@@ -401,13 +401,13 @@ step
     .collect 9061,6,8924,1 --Goblin Rocket Fuel (x6)
 step
     #completewith next
-    .subzone 976 >>Viaje para Gadgetzan em |cFFfa9602Tanaris|r
+    .subzone 976 >>Vá para Gadgetzan em |cFFfa9602Tanaris|r
 step
     .goto Tanaris,52.47,27.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mux Zoamana|r
-    >>|cRXP_WARN_Você precisará de 40 de ouro para entregar esta missão|r
-    .turnin 8921 >>Entregue The Destilador Ectoplásmico
-    .accept 8924 >>Aceite Caçando Ectoplasma
+    >>|cRXP_WARN_Você precisará de 40 ouro para entregar esta missão|r
+    .turnin 8921 >>Entregue para o Destilador Ectoplásmico
+    .accept 8924 >>Aceite Caçando para Ectoplasma
     .target Mux Manascrambler
 step
     #optional
@@ -431,14 +431,14 @@ step
 	.goto Silithus,62.60,58.60,60,0
 	.goto Silithus,60.00,55.80,60,0
 	.goto Silithus,60.60,52.80,60,0
-    >>Mate os |cRXP_ENEMY_Druidas Torturados|r e as |cRXP_ENEMY_Sentinelas Torturadas|r. Saque-os para obter seus |cRXP_LOOT_Ectoplasms Calcinados|r
-    >>|cRXP_WARN_Puxe-os para o|r |T133882:0|t[Destilador Ectoplásmico] |cRXP_WARN_conforme você os mata|r
+    >>Abate |cRXP_ENEMY_Druidas Torturados|r e |cRXP_ENEMY_Sentinelas Torturadas|r. Saqueie-os pelos |cRXP_LOOT_Ectoplasmas Calcinados|r
+    >>|cRXP_WARN_Puxe-os para o|r |T133882:0|t[Destilador Ectoplásmico] |cRXP_WARN_ao matá-los|r
     .complete 8924,1 --Scorched Ectoplasm (x12)
 	.mob Tortured Druid
 	.mob Tortured Sentinel
 step
     #completewith next
-    .zone Winterspring >>Vá para |cFFfa9602Hibérnia|r
+    .zone Winterspring >>Voe para |cFFfa9602Hibérnia|r
 step
     #completewith next
     .cast 27433 >>|cRXP_WARN_Coloque o|r |T133882:0|t[Destilador Ectoplásmico] |cRXP_WARN_no chão. Dura 5 minutos|r
@@ -451,8 +451,8 @@ step
     .goto Winterspring,55.42,43.41,50,0
     .goto Winterspring,53.29,43.82,50,0
     .goto Winterspring,52.60,40.59,50,0
-    >>Mate os |cRXP_ENEMY_Altaneiro Sofredor|r e os |cRXP_ENEMY_Altaneiro Angustiado|r. Saqueie-os para obter seus |cRXP_LOOT_Ectoplasmas Congelados|r
-    >>|cRXP_WARN_Puxe-os para o|r |T133882:0|t[Destilador Ectoplásmico] |cRXP_WARN_conforme você os mata|r
+    >>Abate |cRXP_ENEMY_Altaneiro Sofredor|r e |cRXP_ENEMY_Altaneiro Angustiado|r. Saqueie-os pelos |cRXP_LOOT_Ectoplasmas Congelados|r
+    >>|cRXP_WARN_Puxe os para o|r |T133882:0|t[Destilador Ectoplásmico] |cRXP_WARN_enquanto mata|r
     .complete 8924,2 --Frozen Ectoplasm (x12)
     .mob Suffering Highborne
     .mob Anguished Highborne
@@ -462,12 +462,12 @@ step
 step
     #hardcore
     #completewith next
-    +|cRXP_WARN_Cuidado! Você encontrará inimigos nível 60 no caminho para|r |cRXP_FRIENDLY_Vi'el|r|cRXP_WARN_. Evite-os o máximo possível|r
+    +|cRXP_WARN_Cuidado! Você encontrará inimigos de nível 60 no caminho para|r |cRXP_FRIENDLY_Vi'el|r|cRXP_WARN_. Evite-os o máximo possível|r
 step
     #label FelElemRod
     .goto Winterspring,58.87,78.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vi'el|r
-    >>|cRXP_BUY_Compre um|r |T135155:0|t[|cRXP_LOOT_Fel Elemental Rod|r] |cRXP_BUY_dele|r
+    >>|cRXP_BUY_Compre uma|r |T135155:0|t[|cRXP_LOOT_Fel Elemental Rod|r] |cRXP_BUY_dele|r
     >>|cRXP_WARN_Isto custará 40 ouro|r
     .collect 21939,1,8928,1 --Fel Elemental Rod (x1)
     .target Vi'el
@@ -481,43 +481,43 @@ step
     .subzone 2264 >>Voe para Corin's Crossing em |cFFfa9602Terras Pestilentas Orientais|r
 step
     #completewith next
-    .cast 27433 >>|cRXP_WARN_Coloque o|r |T133882:0|t[Destilador Ectoplásmico] |cRXP_WARN_no chão. Dura 5 minutos|r
+    .cast 27433 >>|cRXP_WARN_Coloque o|r |T133882:0|t[Destilador Ectoplásmico] |cRXP_WARN_no chão. Tem duração de 5 minutos|r
     .use 21946 >>|cRXP_WARN_Um|r |T132621:0|t[Combustível de Foguete Goblínico] |cRXP_WARN_é necessário cada vez que você usa o|r |T133882:0|t[Destilador Ectoplásmico]
 step
     #loop
     .goto Eastern Plaguelands,60.67,67.35,0
     .goto Eastern Plaguelands,60.67,67.35,50,0
     .goto Eastern Plaguelands,58.55,70.50,50,0
-    >>Mate os |cRXP_ENEMY_Serviçais Ocultos|r e os |cRXP_ENEMY_Gritadores do Ódio|r. Saque-os para obter seus |cRXP_LOOT_Ectoplasms Estáveis|r
-    >>|cRXP_WARN_Puxe-os para o|r |T133882:0|t[Destilador Ectoplásmico] |cRXP_WARN_conforme você os mata|r
+    >>Mate os |cRXP_ENEMY_Unseen Servants|r e os |cRXP_ENEMY_Hate Shriekers|r. Saqueie-os pelos seus |cRXP_LOOT_Stable Ectoplasms|r
+    >>|cRXP_WARN_Puxe os para o|r |T133882:0|t[Destilador Ectoplásmico] |cRXP_WARN_enquanto mata|r
     .complete 8924,3 --Stable Ectoplasm (x12)
     .mob Unseen Servant
     .mob Hate Shrieker
 step
     #completewith next
-    .subzone 976 >>Viaje para Gadgetzan em |cFFfa9602Tanaris|r
+    .subzone 976 >>Vá para Gadgetzan em |cFFfa9602Tanaris|r
 step
     .goto Tanaris,52.47,27.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mux Zoamana|r
-    .turnin 8924 >>Entregue Caçando Ectoplasma
-    .accept 8925 >>Aceite Uma Fonte de Energia Portátil
+    .turnin 8924 >>Entregue Caçando for Ectoplasm
+    .accept 8925 >>Aceite A Portable Poder Source
     .target Mux Manascrambler
 step
     #completewith next
     .zone Burning Steppes >>Voe para |cFFfa9602Estepes Ardentes|r
 step
     .goto Burning Steppes,35.38,57.73
-    >>Mate o |cRXP_ENEMY_Bokk, Senhor do Magmático|r. Saqueie-o para obter seu |cRXP_LOOT_Núcleo Magmático|r
+    >>Mate |cRXP_ENEMY_Bokk, Senhor do Magmático|r. Saqueie seu |cRXP_LOOT_Magma Núcleo|r
     .complete 8925,1 --Magma Core (x1)
     .mob Magma Lord Bokk
 step
     #completewith next
-    .subzone 976 >>Viaje para Gadgetzan em |cFFfa9602Tanaris|r
+    .subzone 976 >>Vá para Gadgetzan em |cFFfa9602Tanaris|r
 step
     .goto Tanaris,52.47,27.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mux Zoamana|r
-    .turnin 8925 >>Entregue Uma Fonte de Energia Portátil
-    .accept 8928 >>Aceite Um Comerciante Escorregadio
+    .turnin 8925 >>Entregue A Portable Poder Source
+    .accept 8928 >>Aceite O Comerciante Astuto
     .target Mux Manascrambler
 step
     #optional
@@ -527,27 +527,27 @@ step
     #optional
     #hardcore
     #completewith next
-    +|cRXP_WARN_Cuidado! Você encontrará inimigos nível 60 no caminho para|r |cRXP_FRIENDLY_Vi'el|r|cRXP_WARN_. Evite-os o máximo possível|r
+    +|cRXP_WARN_Cuidado! Você encontrará inimigos de nível 60 no caminho para|r |cRXP_FRIENDLY_Vi'el|r|cRXP_WARN_. Evite-os o máximo possível|r
 step
     #label FelElemRod2
     #optional --user should already have bought this during .complete 8924,2 earlier in Winterspring
     .goto Winterspring,58.87,78.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vi'el|r
     >>|cRXP_BUY_Compre um|r |T135155:0|t[|cRXP_LOOT_Fel Elemental Rod|r] |cRXP_BUY_dele|r
-    >>|cRXP_WARN_Isto custará 40 ouro|r
+    >>|cRXP_WARN_Isso custará 40 ouro|r
     .collect 21939,1,8928,1 --Fel Elemental Rod (x1)
     .target Vi'el
 step
     #optional
     #completewith next
-    .subzone 976 >>Viaje para Gadgetzan em |cFFfa9602Tanaris|r
+    .subzone 976 >>Vá para Gadgetzan em |cFFfa9602Tanaris|r
     .zoneskip Winterspring,1
 step
     .goto Tanaris,52.47,27.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mux Zoamana|r
-    .turnin 8928 >>Entregue Um Comerciante Escorregadio
-    .accept 8977 >>Aceite Retorno a Deliana << Alliance
-    .accept 8978 >>Aceite Retorno a Mokvar << Horde
+    .turnin 8928 >>Entregue Um Comerciante Shifty
+    .accept 8977 >>Aceite Retornar a Deliana << Alliance
+    .accept 8978 >>Aceite Retornar a Mokvar << Horde
     .target Mux Manascrambler
 step << Alliance
     #completewith next
@@ -555,27 +555,27 @@ step << Alliance
 step << Alliance
     .goto Ironforge,43.54,52.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deliana|r
-    .turnin 8977 >>Entregue Volte para Deliana
-    .accept 8926 >>Aceite Just Compensation - Missão - Missão << Druid
-    .accept 8931 >>Aceite Just Compensation - Missão - Missão << Hunter
-    .accept 8932 >>Aceite Just Compensation - Missão - Missão << Mage
-    .accept 8933 >>Aceite Just Compensation - Missão - Missão << Paladin
-    .accept 8934 >>Aceite Just Compensation - Missão - Missão << Priest
-    .accept 8935 >>Aceite Just Compensation - Missão - Missão << Rogue
-    .accept 8936 >>Aceite Just Compensation - Missão - Missão << Warlock
-    .accept 8937 >>Aceite Just Compensation - Missão - Missão << Warrior
+    .turnin 8977 >>Entregue Retornar a Deliana
+    .accept 8926 >>Aceite Just Compensation - Missão << Druid
+    .accept 8931 >>Aceite Just Compensation - Missão << Hunter
+    .accept 8932 >>Aceite Just Compensation - Missão << Mage
+    .accept 8933 >>Aceite Just Compensation - Missão << Paladin
+    .accept 8934 >>Aceite Just Compensation - Missão << Priest
+    .accept 8935 >>Aceite Just Compensation - Missão << Rogue
+    .accept 8936 >>Aceite Just Compensation - Missão << Warlock
+    .accept 8937 >>Aceite Just Compensation - Missão << Warrior
     .target Deliana
 step << Alliance
     .goto Ironforge,43.54,52.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deliana|r
-    >>Você precisará de |T132504:0|t[|cRXP_LOOT_Cinto do Coração Selvagem|r] e |T132951:0|t[|cRXP_LOOT_Luvas do Coração Selvagem|r] para entregar esta missão << Druid
-    >>Você precisará de |T132517:0|t[|cRXP_LOOT_Cinto do Espreitador de Feras|r] e |T132944:0|t[|cRXP_LOOT_Luvas do Espreitador de Feras|r] para entregar esta missão << Hunter
-    >>Você precisará de |T132497:0|t[|cRXP_LOOT_Cinto do Magíster|r] e |T132951:0|t[|cRXP_LOOT_Luvas do Magíster|r] para entregar esta missão << Mage
-    >>Você precisará de |T132500:0|t[|cRXP_LOOT_Cinto da Forja de Luz|r] e |T132953:0|t[|cRXP_LOOT_Manoplas da Forja de Luz|r] para entregar esta missão << Paladin
-    >>Você precisará de |T132499:0|t[|cRXP_LOOT_Cinto do Devoto|r] e |T132948:0|t[|cRXP_LOOT_Luvas do Devoto|r] para entregar esta missão << Priest
-    >>Você precisará de |T132492:0|t[|cRXP_LOOT_Cinto da Arte Sombria|r] e |T132958:0|t[|cRXP_LOOT_Luvas da Arte Sombria|r] para entregar esta missão << Rogue
-    >>Você precisará de |T132501:0|t[|cRXP_LOOT_Cinto de Brumedo|r] e |T132966:0|t[|cRXP_LOOT_Guarda-braços de Brumedo|r] para entregar esta missão << Warlock
-    >>Você precisará de |T132523:0|t[|cRXP_LOOT_Cinto do Bravura|r] e |T132960:0|t[|cRXP_LOOT_Manoplas do Bravura|r]r para entregar esta missão << Warrior
+    >>Você precisa de |T132504:0|t[|cRXP_LOOT_Cinto do Coração Selvagem|r] e |T132951:0|t[|cRXP_LOOT_Luvas do Coração Selvagem|r] para entregar esta missão << Druid
+    >>Você precisa de |T132517:0|t[|cRXP_LOOT_Cinto do Espreitador de Feras|r] e |T132944:0|t[|cRXP_LOOT_Luvas do Espreitador de Feras|r] para entregar esta missão << Hunter
+    >>Você precisa de |T132497:0|t[|cRXP_LOOT_Cinto do Magíster|r] e |T132951:0|t[|cRXP_LOOT_Luvas do Magíster|r] para entregar esta missão << Mage
+    >>Você precisa de |T132500:0|t[|cRXP_LOOT_Cinto da Forja de Luz|r] e |T132953:0|t[|cRXP_LOOT_Manoplas da Forja de Luz|r] para entregar esta missão << Paladin
+    >>Você precisa de |T132499:0|t[|cRXP_LOOT_Cinto do Devoto|r] e |T132948:0|t[|cRXP_LOOT_Luvas do Devoto|r] para entregar esta missão << Priest
+    >>Você precisa de |T132492:0|t[|cRXP_LOOT_Cinto da Arte Sombria|r] e |T132958:0|t[|cRXP_LOOT_Luvas da Arte Sombria|r] para entregar esta missão << Rogue
+    >>Você precisa de |T132501:0|t[|cRXP_LOOT_Cinto de Brumedo|r] e |T132966:0|t[|cRXP_LOOT_Guarda-braços de Brumedo|r] para entregar esta missão << Warlock
+    >>Você precisa de |T132523:0|t[|cRXP_LOOT_Cinto do Bravura|r] e |T132960:0|t[|cRXP_LOOT_Manoplas do Bravura|r] para entregar esta missão << Warrior
     .collect 16716,1,8926,1 << Alliance Druid --Wildheart Belt (x1)
     .collect 16717,1,8926,1 << Alliance Druid --Wildheart Gloves (x1)
     .collect 16680,1,8931,1 << Alliance Hunter --Beaststalker's Belt (x1)
@@ -592,7 +592,7 @@ step << Alliance
     .collect 16705,1,8936,1 << Alliance Warlock --Dreadmist Wraps (x1)
     .collect 16736,1,8937,1 << Alliance Warrior --Belt of Valor (x1)
     .collect 16737,1,8937,1 << Alliance Warrior --Gauntlets of Valor (x1)
-    .turnin 8926 >>Entregue Just Compensation - Missão - Missão << Druid
+    .turnin 8926 >>Entregue Just Compensation - Missão << Druid
     .turnin 8931 >>Entregue Just Compensation - Missão - Missão << Hunter
     .turnin 8932 >>Entregue Just Compensation - Missão - Missão << Mage
     .turnin 8933 >>Entregue Just Compensation - Missão - Missão << Paladin
@@ -600,15 +600,15 @@ step << Alliance
     .turnin 8935 >>Entregue Just Compensation - Missão - Missão << Rogue
     .turnin 8936 >>Entregue Just Compensation - Missão - Missão << Warlock
     .turnin 8937 >>Entregue Just Compensation - Missão - Missão << Warrior
-    .accept 8929 >>Aceite em Procura de Anthion - Missão
+    .accept 8929 >>Aceite In Procurar of Anthion - Missão
     .target Deliana
 step << Horde
     #completewith next
-    .zone Orgrimmar >>Voe para |cFFfa9602Orgrimmar|r
+    .zone Orgrimmar >>Vá para |cFFfa9602Orgrimmar|r
 step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mokvar|r
-    .turnin 8978 >>Entregue Devolver para Mokvar - Missão
+    .turnin 8978 >>Entregue Devolver para Mokvar
     .accept 8927 >>Aceite Just Compensation - Missão - Missão << Druid
     .accept 8938 >>Aceite Just Compensation - Missão - Missão << Hunter
     .accept 8939 >>Aceite Just Compensation - Missão - Missão << Mage
@@ -621,14 +621,14 @@ step << Horde
 step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mokvar|r
-    >>Você precisará de |T132504:0|t[|cRXP_LOOT_Cinto do Coração Selvagem|r] e |T132951:0|t[|cRXP_LOOT_Luvas do Coração Selvagem|r] para entregar esta missão << Druid
-    >>Você precisará de |T132517:0|t[|cRXP_LOOT_Cinto do Espreitador de Feras|r] e |T132944:0|t[|cRXP_LOOT_Luvas do Espreitador de Feras|r] para entregar esta missão << Hunter
-    >>Você precisará de |T132497:0|t[|cRXP_LOOT_Cinto do Magíster|r] e |T132951:0|t[|cRXP_LOOT_Luvas do Magíster|r] para entregar esta missão << Mage
-    >>Você precisará de |T132499:0|t[|cRXP_LOOT_Cinto do Devoto|r] e |T132948:0|t[|cRXP_LOOT_Luvas do Devoto|r] para entregar esta missão << Priest
-    >>Você precisará de |T132492:0|t[|cRXP_LOOT_Cinto da Arte Sombria|r] e |T132958:0|t[|cRXP_LOOT_Luvas da Arte Sombria|r] para entregar esta missão << Rogue
-    >>Você precisará de |T132505:0|t[|cRXP_LOOT_Cordão dos Elementos|r] e |T132945:0|t[|cRXP_LOOT_Manoplas dos Elementos|r] para entregar esta missão << Shaman
-    >>Você precisará de |T132501:0|t[|cRXP_LOOT_Cinto de Brumedo|r] e |T132966:0|t[|cRXP_LOOT_Guarda-braços de Brumedo|r] para entregar esta missão << Warlock
-    >>Você precisará de |T132523:0|t[|cRXP_LOOT_Cinto do Bravura|r] e |T132960:0|t[|cRXP_LOOT_Manoplas do Bravura|r]r para entregar esta missão << Warrior
+    >>Você vai precisar de |T132504:0|t[|cRXP_LOOT_Cinto do Coração Selvagem|r] e |T132951:0|t[|cRXP_LOOT_Luvas do Coração Selvagem|r] para entregar esta missão << Druid
+    >>Você vai precisar de |T132517:0|t[|cRXP_LOOT_Cinto do Espreitador de Feras|r] e |T132944:0|t[|cRXP_LOOT_Luvas do Espreitador de Feras|r] para entregar esta missão << Hunter
+    >>Você vai precisar de |T132497:0|t[|cRXP_LOOT_Cinto do Magíster|r] e |T132951:0|t[|cRXP_LOOT_Luvas do Magíster|r] para entregar esta missão << Mage
+    >>Você vai precisar de |T132499:0|t[|cRXP_LOOT_Cinto do Devoto|r] e |T132948:0|t[|cRXP_LOOT_Luvas do Devoto|r] para entregar esta missão << Priest
+    >>Você vai precisar de |T132492:0|t[|cRXP_LOOT_Cinto da Arte Sombria|r] e |T132958:0|t[|cRXP_LOOT_Luvas da Arte Sombria|r] para entregar esta missão << Rogue
+    >>Você vai precisar de |T132505:0|t[|cRXP_LOOT_Cordão dos Elementos|r] e |T132945:0|t[|cRXP_LOOT_Manoplas dos Elementos|r] para entregar esta missão << Shaman
+    >>Você vai precisar de |T132501:0|t[|cRXP_LOOT_Cinto de Brumedo|r] e |T132966:0|t[|cRXP_LOOT_Guarda-braços de Brumedo|r] para entregar esta missão << Warlock
+    >>Você vai precisar de |T132523:0|t[|cRXP_LOOT_Cinto do Bravura|r] e |T132960:0|t[|cRXP_LOOT_Manoplas do Bravura|r] para entregar esta missão << Warrior
     .collect 16716,1,8927,1 << Horde Druid --Wildheart Belt (x1)
     .collect 16717,1,8927,1 << Horde Druid --Wildheart Gloves (x1)
     .collect 16680,1,8938,1 << Horde Hunter --Beaststalker's Belt (x1)
@@ -653,7 +653,7 @@ step << Horde
     .turnin 8942 >>Entregue Just Compensation - Missão - Missão << Shaman
     .turnin 8943 >>Entregue Just Compensation - Missão - Missão << Warlock
     .turnin 8944 >>Entregue Just Compensation - Missão - Missão << Warrior
-    .accept 8930 >>Aceite em Procura de Anthion - Missão
+    .accept 8930 >>Aceite In Procurar of Anthion - Missão
     .target Mokvar
 
     ]])
@@ -662,22 +662,22 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
-#group Guias de Fim de Jogo
-#subgroup Guia do Feralheart Set << Druid
-#subgroup Guia do Conjunto Senhor das Feras << Hunter
-#subgroup Guia do Conjunto do Feiticeiro << Mage
+#group RestedXP Guias de Fim de Jogo
+#subgroup Guia do Set Feralheart << Druid
+#subgroup Guia do Set Senhor das Feras << Hunter
+#subgroup Guia do Set Sorcerer's << Mage
 #subgroup Guia do Conjunto da Forja da Alma << Paladin
-#subgroup Guia do Conjunto da Manta Negra << Rogue
-#subgroup Guia do Conjunto dos Cinco Trovões << Shaman
-#subgroup Guia do Conjunto da Mortalha << Warlock
-#subgroup Guia do Conjunto de Heroísmo << Warrior
-#subgroup Guia do Conjunto da Virtude << Priest
+#subgroup Guia do Set Darkmantle << Rogue
+#subgroup Guia do Set The Cinco Thunders << Shaman
+#subgroup Guia do Set Deathmist << Warlock
+#subgroup Guia do Set Heroísmo << Warrior
+#subgroup Guia do Set Virtuous << Priest
 #name Parte 3: Calças, Ombros e Botas
-#next Parte 4: Elmo & Peito
+#next Parte 4: Helm & Baú
 
 step
     #optional
-    +|cRXP_WARN_Você deve completar a Parte 2: Cinturão & Luvas antes de começar esta parte do guia|r
+    +|cRXP_WARN_Você deve completar Parte 2: Cinto e Luvas antes de iniciar esta parte do guia|r
     .isQuestAvailable 8926 << Alliance Druid
     .isQuestAvailable 8931 << Alliance Hunter
     .isQuestAvailable 8932 << Alliance Mage
@@ -695,17 +695,17 @@ step
     .isQuestAvailable 8943 << Horde Warlock
     .isQuestAvailable 8944 << Horde Warrior
 step
-    >>Obtenha as |T132542:0|t[|cRXP_LOOT_Botas do Coração Selvagem|r]. Isto é derrubado por |cRXP_ENEMY_Mother Smolderweb|r em |cFFfa9602Lower Blackrock Spire|r << Druid
-    >>Obtenha as |T132588:0|t[|cRXP_LOOT_Botas do Espreitador de Feras|r]. Isto é derrubado por |cRXP_ENEMY_Nerub'enkan|r em |cFFfa9602Stratholme|r << Hunter
-    >>Obtenha as |T132536:0|t[|cRXP_LOOT_Botas do Magíster|r]. Isto é derrubado por |cRXP_ENEMY_Hearthsinger Forresten|r (raro) em |cFFfa9602Stratholme|r << Mage
-    >>|cRXP_WARN_Nota que antes do patch de AQ, este item deveria ser derrubado de|r |cRXP_ENEMY_Chefe do Correio Malown|r<<Mage
-    >>Obtenha as |T132584:0|t[|cRXP_LOOT_Botas da Forja de Luz|r]. Isto é derrubado por |cRXP_ENEMY_Grão-Cruzado Dathrohan|r e |cRXP_ENEMY_Balnazzar|r em |cFFfa9602Stratholme|r << Paladin
-    >>Obtenha as |T132539:0|t[Sandálias do Devoto|cRXP_LOOT_]. Isto é derrubado por |rMalaki, o Pálido|cRXP_ENEMY_ em |rStratholme|cFFfa9602 << Priest
-    >>Obtenha as |T132542:0|t[|cRXP_LOOT_Botas da Arte Sombria|r]. Isto é derrubado por |cRXP_ENEMY_Ossorrange|r em |cFFfa9602Scolomântia|r << Rogue
-    >>Obtenha as |T132592:0|t[|cRXP_LOOT_Botas dos Elementos|r]. Isto é derrubado por |cRXP_ENEMY_Grão-lorde Omokk|r em |cFFfa9602Lower Blackrock Spire|r << Shaman
-    >>Obtenha as |T132539:0|t[|cRXP_LOOT_Sandálias de Brumedo|r]. Isto é derrubado por |cRXP_ENEMY_Baroness Anastari|r em |cFFfa9602Stratholme|r << Warlock
-    >>Obtenha as |T132584:0|t[|cRXP_LOOT_Botas do Bravura|r]. Isto é derrubado por |cRXP_ENEMY_Kirtonos, o Arauto|r em |cFFfa9602Scolomântia|r << Warrior
-    >>|cRXP_WARN_Alternativamente compre com |cRXP_FRIENDLY_Pix Xizzix|r em Booty Bay em troca de|r |T133799:0|t[|cRXP_FRIENDLY_Tarnished Inframina Real|r] << sod
+    >>Obtenha as |T132542:0|t[|cRXP_LOOT_Botas do Coração Selvagem|r]. Isso cai de |cRXP_ENEMY_Mother Smolderweb|r em |cFFfa9602Lower Blackrock Spire|r << Druid
+    >>Obtenha as |T132588:0|t[|cRXP_LOOT_Botas do Espreitador de Feras|r]. Isso cai de |cRXP_ENEMY_Nerub'enkan|r em |cFFfa9602Stratholme|r << Hunter
+    >>Pegue o |T132536:0|t[|cRXP_LOOT_Magister's Botas|r]. Este item é derrubado por |cRXP_ENEMY_Hearthsinger Forresten|r (Raro) em |cFFfa9602Stratholme|r << Mage
+    >>|cRXP_WARN_Nota que antes do patch AQ, este item é supostamente derrubado por|r |cRXP_ENEMY_Chefe do Correio Malown|r<<Mage
+    >>Pegue o |T132584:0|t[|cRXP_LOOT_Botas da Forja de Luz|r]. Este item é derrubado por |cRXP_ENEMY_Grão-Cruzado Dathrohan|r e |cRXP_ENEMY_Balnazzar|r em |cFFfa9602Stratholme|r << Paladin
+    >>Pegue o |T132539:0|t[Sandálias do Devoto|cRXP_LOOT_]. Este item é derrubado por |rMalaki, o Pálido|cRXP_ENEMY_ em |rStratholme|cFFfa9602 << Priest
+    >>Pegue o |T132542:0|t[|cRXP_LOOT_Botas da Arte Sombria|r]. Este item é derrubado por |cRXP_ENEMY_Ossorrange|r em |cFFfa9602Scolomântia|r << Rogue
+    >>Pegue o |T132592:0|t[|cRXP_LOOT_Botas dos Elementos|r]. Este item é derrubado por |cRXP_ENEMY_Grão-lorde Omokk|r em |cFFfa9602Lower Blackrock Spire|r << Shaman
+    >>Pegue o |T132539:0|t[|cRXP_LOOT_Sandálias de Brumedo|r]. Este item é derrubado por |cRXP_ENEMY_Baronesa Anastari|r em |cFFfa9602Stratholme|r << Warlock
+    >>Pegue o |T132584:0|t[|cRXP_LOOT_Botas do Bravura|r]. Este item é derrubado por |cRXP_ENEMY_Kirtonos, o Arauto|r em |cFFfa9602Scolomântia|r << Warrior
+    >>|cRXP_WARN_Alternativamente compre-os de |cRXP_FRIENDLY_Pix Xizzix|r em Booty Bay em troca de|r |T133799:0|t[|cRXP_FRIENDLY_Tarnished Inframina Real|r] << sod
     .collect 16715,1,8951,1 << Alliance Druid --Wildheart Boots (x1)
     .collect 16675,1,8952,1 << Alliance Hunter --Beaststalker's Boots (x1)
     .collect 16682,1,8953,1 << Alliance Mage --Magister's Boots (x1)
@@ -732,15 +732,15 @@ step
     .equip 8,16734 << Warrior
     .equip 8,16670 << Shaman
 step
-    >>Obtenha o |T134588:0|t[|cRXP_LOOT_Kilt do Coração Selvagem|r]. Isto é derrubado por |cRXP_ENEMY_Barão Rivendare|r em |cFFfa9602Stratholme|r << Druid
-    >>Obtenha as |T134583:0|t[|cRXP_LOOT_Calças do Espreitador de Feras|r]. Isto é derrubado por |cRXP_ENEMY_Barão Rivendare|r em |cFFfa9602Stratholme|r << Hunter
-    >>Obtenha as |T134586:0|t[|cRXP_LOOT_Perneiras do Magíster|r]. Isto é derrubado por |cRXP_ENEMY_Barão Rivendare|r em |cFFfa9602Stratholme|r << Mage
-    >>Obtenha os |T134584:0|t[|cRXP_LOOT_Coxotes da Forja de Luz|r]. Isto é derrubado por |cRXP_ENEMY_Barão Rivendare|r em |cFFfa9602Stratholme|r << Paladin
-    >>Obtenha a |T134588:0|t[|cRXP_LOOT_Saia do Devoto|r]. Isto é derrubado por |cRXP_ENEMY_Barão Rivendare|r em |cFFfa9602Stratholme|r << Priest
-    >>Obtenha as |T134582:0|t[|cRXP_LOOT_Calças da Arte Sombria|r]. É deixado por |cRXP_ENEMY_Barão Rivendare|r em |cFFfa9602Stratholme|r << Rogue
-    >>Obtenha o |T134583:0|t[|cRXP_LOOT_Kilt dos Elementos|r]. É deixado por |cRXP_ENEMY_Barão Rivendare|r em |cFFfa9602Stratholme|r << Shaman
-    >>Obtenha o |T134588:0|t[|cRXP_LOOT_Perneiras de Brumedo|r]. É deixado por |cRXP_ENEMY_Barão Rivendare|r em |cFFfa9602Stratholme|r << Warlock
-    >>Obtenha os |T134584:0|t[|cRXP_LOOT_Coxotes do Bravura|r]. É deixado por |cRXP_ENEMY_Barão Rivendare|r em |cFFfa9602Stratholme|r << Warrior
+    >>Pegue o |T134588:0|t[|cRXP_LOOT_Kilt do Coração Selvagem|r]. Este item é derrubado por |cRXP_ENEMY_Barão Rivendare|r em |cFFfa9602Stratholme|r << Druid
+    >>Pegue o |T134583:0|t[|cRXP_LOOT_Calças do Espreitador de Feras|r]. Este item é derrubado por |cRXP_ENEMY_Barão Rivendare|r em |cFFfa9602Stratholme|r << Hunter
+    >>Pegue o |T134586:0|t[|cRXP_LOOT_Perneiras do Magíster|r]. Este item é derrubado por |cRXP_ENEMY_Barão Rivendare|r em |cFFfa9602Stratholme|r << Mage
+    >>Obtenha o |T134584:0|t[|cRXP_LOOT_Coxotes da Forja de Luz|r]. É largado por |cRXP_ENEMY_Barão Rivendare|r em |cFFfa9602Stratholme|r << Paladin
+    >>Obtenha o |T134588:0|t[|cRXP_LOOT_Saia do Devoto|r]. É largado por |cRXP_ENEMY_Barão Rivendare|r em |cFFfa9602Stratholme|r << Priest
+    >>Obtenha o |T134582:0|t[|cRXP_LOOT_Calças da Arte Sombria|r]. É largado por |cRXP_ENEMY_Barão Rivendare|r em |cFFfa9602Stratholme|r << Rogue
+    >>Obtenha o |T134583:0|t[|cRXP_LOOT_Kilt dos Elementos|r]. É largado por |cRXP_ENEMY_Barão Rivendare|r em |cFFfa9602Stratholme|r << Shaman
+    >>Obtenha o |T134588:0|t[|cRXP_LOOT_Perneiras de Brumedo|r]. É largado por |cRXP_ENEMY_Barão Rivendare|r em |cFFfa9602Stratholme|r << Warlock
+    >>Obtenha o |T134584:0|t[|cRXP_LOOT_Coxotes do Bravura|r]. É largado por |cRXP_ENEMY_Barão Rivendare|r em |cFFfa9602Stratholme|r << Warrior
     >>|cRXP_WARN_Alternativamente, compre-os de |cRXP_FRIENDLY_Pix Xizzix|r em Booty Bay em troca de|r |T133799:0|t[|cRXP_FRIENDLY_Tarnished Inframina Real|r] << sod
     .collect 16719,1,8951,1 << Alliance Druid --Wildheart Kilt (x1)
     .collect 16678,1,8952,1 << Alliance Hunter --Beaststalker's Pants (x1)
@@ -768,16 +768,16 @@ step
     .equip 7,16732 << Warrior
     .equip 7,16668 << Shaman
 step
-    >>Obtenha o |T135032:0|t[|cRXP_LOOT_Dragonas do Coração Selvagem|r]. É deixado por |cRXP_ENEMY_Gizrul the Slavener|r em |cFFfa9602Lower Blackrock Spire|r << Druid
-    >>Obtenha o |T135041:0|t[|cRXP_LOOT_Dragonas do Espreitador de Feras|r]. É deixado por |cRXP_ENEMY_Lorde Supremo Wyrmthalak|r em |cFFfa9602Lower Blackrock Spire|r << Hunter
-    >>Obtenha o |T135054:0|t[|cRXP_LOOT_Dragonas do Magíster|r]. É deixado por |cRXP_ENEMY_Ras Friomúrmuro|r em |cFFfa9602Scolomântia|r << Mage
-    >>Obtenha os |T135041:0|t[|cRXP_LOOT_Espaldares da Forja de Luz|r]. É deixado por |cRXP_ENEMY_A Fera|r em |cFFfa9602Pico da Rocha Negra Superior|r << Paladin
-    >>Obtenha as |T135033:0|t[|cRXP_LOOT_Devoto Dragonas do Devoto|r]. É solto por |cRXP_ENEMY_Solakar Flamewreath|r em |cFFfa9602Pico da Rocha Negra Superior|r << Priest
-    >>Obtenha as |T135038:0|t[|cRXP_LOOT_Espaldares da Arte Sombria|r]. É solto por |cRXP_ENEMY_Cannon Master Willey|r em |cFFfa9602Stratholme|r << Rogue
-    >>Obtenha as |T135060:0|t[|cRXP_LOOT_Brafoneiras dos Elementos|r]. É solto por |cRXP_ENEMY_Gyth|r em |cFFfa9602Pico da Rocha Negra Superior|r << Shaman
-    >>Obtenha as |T133732:0|t[|cRXP_LOOT_Dragonas de Brumedo|r]. É solto por |cRXP_ENEMY_Janice Barov|r em |cFFfa9602Scolomântia|r << Warlock
-    >>Obtenha as |T135061:0|t[|cRXP_LOOT_Espaldares do Bravura|r]. É solto por |cRXP_ENEMY_Warchief Laceral Mão Negra|r em |cFFfa9602Pico da Rocha Negra Superior|r << Warrior
-    >>|cRXP_WARN_Alternativamente compre-as de |cRXP_FRIENDLY_Pix Xizzix|r em Booty Bay em troca de|r |T133799:0|t[|cRXP_FRIENDLY_Tarnished Inframina Real|r] << sod
+    >>Obtenha o |T135032:0|t[|cRXP_LOOT_Dragonas do Coração Selvagem|r]. É largado por |cRXP_ENEMY_Gizrul the Slavener|r em |cFFfa9602Lower Blackrock Spire|r << Druid
+    >>Obtenha o |T135041:0|t[|cRXP_LOOT_Dragonas do Espreitador de Feras|r]. É largado por |cRXP_ENEMY_Lorde Supremo Wyrmthalak|r em |cFFfa9602Lower Blackrock Spire|r << Hunter
+    >>Obtenha o |T135054:0|t[|cRXP_LOOT_Dragonas do Magíster|r]. É largado por |cRXP_ENEMY_Ras Friomúrmuro|r em |cFFfa9602Scolomântia|r << Mage
+    >>Obtenha o |T135041:0|t[|cRXP_LOOT_Espaldares da Forja de Luz|r]. É largado por |cRXP_ENEMY_A Fera|r em |cFFfa9602Pico da Rocha Negra Superior|r << Paladin
+    >>Obtenha o |T135033:0|t[|cRXP_LOOT_Dragonas do Devoto|r]. Isso cai de |cRXP_ENEMY_Solakar Flamewreath|r em |cFFfa9602Pico da Rocha Negra Superior|r << Priest
+    >>Obtenha o |T135038:0|t[|cRXP_LOOT_Espaldares da Arte Sombria|r]. Isso cai de |cRXP_ENEMY_Cannon Master Willey|r em |cFFfa9602Stratholme|r << Rogue
+    >>Obtenha o |T135060:0|t[|cRXP_LOOT_Brafoneiras dos Elementos|r]. Isso cai de |cRXP_ENEMY_Gyth|r em |cFFfa9602Pico da Rocha Negra Superior|r << Shaman
+    >>Obtenha o |T133732:0|t[|cRXP_LOOT_Dragonas de Brumedo|r]. Isso cai de |cRXP_ENEMY_Janice Barov|r em |cFFfa9602Scolomântia|r << Warlock
+    >>Obtenha o |T135061:0|t[|cRXP_LOOT_Espaldares do Bravura|r]. Isso cai de |cRXP_ENEMY_Warchief Laceral Mão Negra|r em |cFFfa9602Pico da Rocha Negra Superior|r << Warrior
+    >>|cRXP_WARN_Como alternativa, compre-os de |cRXP_FRIENDLY_Pix Xizzix|r em Booty Bay em troca de|r |T133799:0|t[|cRXP_FRIENDLY_Tarnished Inframina Real|r] << sod
     .collect 16718,1,8951,1 << Alliance Druid --Wildheart Spaulders (x1)
     .collect 16679,1,8952,1 << Alliance Hunter --Beaststalker's Mantle (x1)
     .collect 16689,1,8953,1 << Alliance Mage --Magister's Mantle (x1)
@@ -804,12 +804,12 @@ step
     .equip 3,16733 << Warrior
     .equip 3,16669 << Shaman
 step
-    >>|cRXP_BUY_Coletar os seguintes itens|r:
-    >>|T133233:0|t[Barras de Ferro Negro] |cRXP_WARN_são criadas pelos mineradores|r
-    >>|T134418:0|t[Couro Encantado] |cRXP_WARN_e|r |T132873:0|t[Fragmentos Brilhantes Grandes] |cRXP_WARN_são criados pelos encantadores|r
-    >>|T132895:0|t[Lunatrama] |cRXP_WARN_é criado por alfaiates|r
-    >>|T134355:0|t[Curado Rugged Hides] |cRXP_WARN_are created by leatherworkers|r
-    >>|T136192:0|t[|cRXP_FRIENDLY_Dark Runas|r] |cRXP_WARN_are random drops in|r |cFFfa9602Scolomântia|r
+    >>|cRXP_BUY_Coletar os itens seguintes|r:
+    >>|T133233:0|t[Escuridão Ferro Bars] |cRXP_WARN_são criados por mineiros|r
+    >>|T134418:0|t[Couro Encantado] |cRXP_WARN_e|r |T132873:0|t[Grande Brilliant Fragmentos] |cRXP_WARN_são criados por encantadores|r
+    >>|T132895:0|t[Lunatrama] |cRXP_WARN_é criada por alfaiates|r
+    >>|T134355:0|t[Curado Rugged Hides] |cRXP_WARN_são criados por curtidores|r
+    >>|T136192:0|t[|cRXP_FRIENDLY_Dark Runas|r] |cRXP_WARN_são quedas aleatórias em|r |cFFfa9602Scolomântia|r
     >>|cRXP_WARN_Compre-os da Casa de Leilões se possível|r
     .collect 11371,3,8947,1 --Dark Iron Bar (x3)
     .collect 12810,20,8947,1 --Enchanted Leather (x20)
@@ -823,26 +823,26 @@ step << Alliance
 step << Alliance
     .goto Ironforge,43.54,52.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deliana|r
-    .accept 8929 >>Aceite em Procura de Anthion - Missão
+    .accept 8929 >>Aceite In Procurar of Anthion - Missão
     .target Deliana
 step << Horde
     #completewith next
-    .zone Orgrimmar >>Voe para |cFFfa9602Orgrimmar|r
+    .zone Orgrimmar >>Vá para |cFFfa9602Orgrimmar|r
 step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mokvar|r
-    .accept 8930 >>Aceite em Procura de Anthion - Missão
+    .accept 8930 >>Aceite In Procurar of Anthion - Missão
     .target Mokvar
 step
     #completewith FindingAnthion
-    +|cRXP_WARN_Comece a procura por um grupo sólido de 5 jogadores capaz de limpar o lado dos não-mortos de Stratholme em 45 minutos|r
+    +|cRXP_WARN_Comece a procurar um grupo sólido de 5 pessoas capaz de limpar o lado não-morto de Stratholme em 45 minutos|r
 step
     #completewith next
     .zone Eastern Plaguelands >>Vá para |cFFfa9602Terras Pestilentas Orientais|r
 step
     #label FindingAnthion
     .goto Eastern Kingdoms,55.06,17.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Anthion|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anthion|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Anthion|r
     .turnin 8929 >>Entregue Em Busca de Anthion << Alliance
     .turnin 8930 >>Entregue Em Busca de Anthion << Horde
@@ -851,32 +851,32 @@ step
 step
     #completewith next
     .subzone 2017 >>Entre em Stratholme
-    >>|cRXP_WARN_Tenha um grupo pronto|r
+    >>|cRXP_WARN_Tenha certeza de que tem um grupo pronto|r
 step
-    >>Mate |cRXP_ENEMY_Barão Rivendare|r em 45 minutos para salvar |cRXP_FRIENDLY_Ysida Harmon|r
-    >>|cRXP_WARN_O cronômetro inicia quando você recebe o|r |T136129:0|t[Ultimato do Barão] |cRXP_WARN_debuff ao entrar no lado dos não-mortos|r
+    >>Abata |cRXP_ENEMY_Barão Rivendare|r dentro de 45 minutos para salvar |cRXP_FRIENDLY_Ysida Harmon|r
+    >>|cRXP_WARN_O cronômetro começa quando você obtém o|r |T136129:0|t[Ultimato do Barão] |cRXP_WARN_efeito prejudicial ao entrar no lado não-morto|r
     .complete 8945,1 --Ysida Freed (x1)
     .mob Baron Rivendare
     .target Ysida Harmon
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Ysida Harmon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ysida Harmon|r
     .turnin 8945 >>Entregue Morto Man's Plea
-    .accept 8946 >>Aceite Proof of Vida
+    .accept 8946 >>Aceite Proof of Vida - Missão - Missão
     .target Ysida Harmon
 step
     .goto Eastern Kingdoms,55.06,17.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Anthion|r fora de Stratholme
-    .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Anthion|r
-    .turnin 8946 >>Entregue Proof of Vida
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anthion|r fora de Stratholme
+    .use 22115 >>|cRXP_WARN_use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Anthion|r
+    .turnin 8946 >>Entregue Proof of Vida - Missão - Missão
     .accept 8947 >>Aceite Anthion's Strange Request - Missão - Missão
     .target Anthion Harmon
 step
-    >>|cRXP_BUY_Coletar os seguintes itens|r:
-    >>|T133233:0|t[Barras de Ferro Negro] |cRXP_WARN_são criadas pelos mineradores|r
+    >>|cRXP_BUY_Coletar os itens seguintes|r:
+    >>|T133233:0|t[Escuridão Ferro Bars] |cRXP_WARN_são criadas por mineiros|r
     >>|T134418:0|t[Couro Encantado] |cRXP_WARN_é criado por encantadores|r
-    >>|T132895:0|t[Lunatrama] |cRXP_WARN_é criado por alfaiates|r
-    >>|T134355:0|t[Curado Rugged Hides] |cRXP_WARN_are created by leatherworkers|r
-    >>|T136192:0|t[|cRXP_FRIENDLY_Dark Runas|r] |cRXP_WARN_are random drops in|r |cFFfa9602Scolomântia|r
+    >>|T132895:0|t[Lunatrama] |cRXP_WARN_é criada por alfaiates|r
+    >>|T134355:0|t[Curado Rugged Hides] |cRXP_WARN_são criados por coureiros|r
+    >>|T136192:0|t[|cRXP_FRIENDLY_Dark Runas|r] |cRXP_WARN_são dropados aleatoriamente em|r |cFFfa9602Scolomântia|r
     >>|cRXP_WARN_Compre-os da Casa de Leilões se possível|r
     .collect 11371,3,8947,1 --Dark Iron Bar (x3)
     .collect 12810,20,8947,1 --Enchanted Leather (x20)
@@ -886,48 +886,48 @@ step
     .collect 20520,4,8950,1 --Dark Rune (x4)
 step
     .goto Eastern Kingdoms,55.06,17.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Anthion|r fora de Stratholme
-    .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Anthion|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anthion|r fora de Stratholme
+    .use 22115 >>|cRXP_WARN_use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Anthion|r
     .turnin 8947 >>Entregue Anthion's Strange Request - Missão - Missão
-    .accept 8948 >>Aceite Anthion's Old Amigo
+    .accept 8948 >>Aceite Anthion's Old Amigo - Missão - Missão
     .target Anthion Harmon
 step
     #softcore
     #completewith AnthionsFriend
     .zone Feralas >>Viaje para |cFFfa9602Feralas|r
-    >>|cRXP_WARN_Esta próxima seção se passa em Martelo do Gládio Cruel. É possível fazer solo, mas agrupar-se é fortemente recomendado|r
+    >>|cRXP_WARN_A próxima seção ocorre em Martelo do Gládio Cruel. É possível fazer sozinho, mas é fortemente recomendado se agrupar|r
     .subzoneskip 2557
 step
     #hardcore
     #completewith AnthionsFriend
     .zone Feralas >>Viaje para |cFFfa9602Feralas|r
-    >>|cRXP_WARN_Esta próxima seção se passa em Martelo do Gládio Cruel. Tenha um grupo pronto com pelo menos 3 jogadores|r
+    >>|cRXP_WARN_A próxima seção ocorre em Martelo do Gládio Cruel. Tenha um grupo pronto de pelo menos 3 jogadores|r
     .subzoneskip 2557
 step
     #completewith AnthionsFriend
-    .goto Kalimdor,43.39,66.52,20 >>Entre pela entrada Norte de Martelo do Gládio Cruel
-    >>|cRXP_WARN_Você deve ter o|r |T134244:0|t[Crescent Chave] |cRXP_WARN_para conseguir abrir a porta para Martelo do Gládio Cruel North e para a biblioteca|r << !Rogue
-    >>|cRXP_WARN_Você deve ter o|r |T134244:0|t[Crescent Chave] |cRXP_WARN_ou ter nível 300 em arrombamento para conseguir abrir a porta para Martelo do Gládio Cruel North e para a biblioteca|r << Rogue
-    >>|cRXP_WARN_Alternativamente, peça a outro jogador para abrir as portas|r
+    .goto Kalimdor,43.39,66.52,20 >>Entre na entrada norte de Martelo do Gládio Cruel
+    >>|cRXP_WARN_Você deve ter a|r |T134244:0|t[Crescent Chave] |cRXP_WARN_para poder abrir a porta para Martelo do Gládio Cruel Norte|r << !Rogue
+    >>|cRXP_WARN_Você deve ter a|r |T134244:0|t[Crescent Chave] |cRXP_WARN_ou ter 300 de habilidade em invasão de fechaduras para poder abrir a porta para Martelo do Gládio Cruel Norte|r << Rogue
+    >>|cRXP_WARN_Alternativamente, peça a outro jogador para abrir a porta|r
     .itemcount 18249,<1 << !Rogue --Crescent Key
     .skill lockpicking,300,1 << Rogue
 step
     #optional
     #completewith AnthionsFriend
-    .goto Kalimdor,43.39,66.52,20 >>Entre pela entrada Norte de Martelo do Gládio Cruel
+    .goto Kalimdor,43.39,66.52,20 >>Entre na entrada norte de Martelo do Gládio Cruel
     .itemcount 18249,1 << !Rogue --Crescent Key
     .skill lockpicking,<300,1 << Rogue
 step
     #label AnthionsFriend
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Falrin Arboril|r na biblioteca de Martelo do Gládio Cruel
-    .turnin 8948 >>Entregue Anthion's Old Amigo
-    .accept 8949 >>Aceite Falrin's Vendeta
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Falrin Arboril|r na biblioteca de Martelo do Gládio Cruel
+    .turnin 8948 >>Entregue Anthion's Old Amigo - Missão - Missão
+    .accept 8949 >>Aceite Falrin's Vendeta - Missão - Missão
     .target Falrin Treeshaper
     --.link  >> |cRXP_WARN_You can reach the library without killing any mobs. Click here for video reference|r
     --VV TODO: Library skip video
 step
-    >>Mate |cRXP_ENEMY_Gordok Ogres|r no |cFFfa9602Martelo do Gládio Cruel North|r. Saque-os para obter seus |cRXP_LOOT_Warbeads|r
-    >>|cRXP_WARN_Alternativamente, você pode matar|r |cRXP_ENEMY_Spirestone Ogres|r |cRXP_WARN_em|r |cFFfa9602Lower Blackrock Spire|r
+    >>Mate os |cRXP_ENEMY_Gordok Ogres|r em |cFFfa9602Martelo do Gládio Cruel Norte|r. Saque-os para obter as |cRXP_LOOT_Warbeads|r
+    >>|cRXP_WARN_Alternativamente você pode matar|r os |cRXP_ENEMY_Spirestone Ogres|r |cRXP_WARN_em|r |cFFfa9602Lower Blackrock Spire|r
     .complete 8949,1 --Ogre Warbeads (x25)
     .mob Gordok Mage-Lord
     .mob Gordok Brute
@@ -944,26 +944,26 @@ step
     .mob Spirestone Mystic
     .mob Spirestone Warlord
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Falrin Arboril|r na biblioteca de Martelo do Gládio Cruel
-    .turnin 8949 >>Entregue Falrin's Vendeta
-    .accept 8950 >>Aceite The Instigator's Enchantment - Missão
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Falrin Arboril|r na biblioteca de Martelo do Gládio Cruel
+    .turnin 8949 >>Entregue Falrin's Vendeta - Missão - Missão
+    .accept 8950 >>Aceite The Instigator's Enchantment - Missão - Missão
     .target Falrin Treeshaper
 step
     #completewith SpectreEssence
-    .goto Kalimdor,42.98,67.73,20 >>Entre no Lado Ocidental de Martelo do Gládio Cruel
-    >>|cRXP_WARN_Você deve ter o|r |T134244:0|t[Crescent Chave] |cRXP_WARN_para poder abrir a porta em Martelo do Gládio Cruel West|r << !Rogue
-    >>|cRXP_WARN_Você deve ter o|r |T134244:0|t[Crescent Chave] |cRXP_WARN_ou ter 300 de perícia em arrombamento para poder abrir a porta em Martelo do Gládio Cruel West|r << Rogue
-    >>|cRXP_WARN_Alternativamente, peça para outro jogador abrir a porta para você|r
+    .goto Kalimdor,42.98,67.73,20 >>Entre na instância oeste de Martelo do Gládio Cruel
+    >>|cRXP_WARN_Você deve ter a|r |T134244:0|t[Crescent Chave] |cRXP_WARN_para poder abrir a porta para Martelo do Gládio Cruel Oeste|r << !Rogue
+    >>|cRXP_WARN_Você deve ter a|r |T134244:0|t[Crescent Chave] |cRXP_WARN_ou ter 300 de habilidade em invasão de fechaduras para poder abrir a porta para Martelo do Gládio Cruel Oeste|r << Rogue
+    >>|cRXP_WARN_Alternativamente, peça a outro jogador para abrir a porta|r
     .itemcount 18249,<1 << !Rogue --Crescent Key
     .skill lockpicking,300,1 << Rogue
 step
     #completewith SpectreEssence
-    .goto Kalimdor,42.98,67.73,20 >>Entre na entrada Ocidental de Martelo do Gládio Cruel
+    .goto Kalimdor,42.98,67.73,20 >>Entre na entrada oeste de Martelo do Gládio Cruel
     .itemcount 18249,1 << !Rogue --Crescent Key
     .skill lockpicking,<300,1 << Rogue
 step
     #label SpectreEssence
-    >>Mate |cRXP_ENEMY_Eldreth Ghosts|r no |cFFfa9602Martelo do Gládio Cruel West|r. Saque-os para obter os |cRXP_LOOT_Jeering Espectro's Essência|r
+    >>Mate os |cRXP_ENEMY_Eldreth Ghosts|r em |cFFfa9602Martelo do Gládio Cruel Oeste|r. Saqueie-os para |cRXP_LOOT_Jeering Spectre's Essência|r
     .complete 8950,1 --Jeering Spectre's Essence (x1)
     .mob Eldreth Wraith
     .mob Eldreth Seether
@@ -973,46 +973,46 @@ step
     .mob Eldreth Apparition
     .mob Eldreth Sorcerer
 step
-    >>|cRXP_BUY_Coletar os seguintes itens|r:
-    >>|T132873:0|t[Cacos Brilhantes Grandes] |cRXP_WARN_são criados por encantadores|r
-    >>|T136192:0|t[|cRXP_FRIENDLY_Dark Runas|r] |cRXP_WARN_are random drops in|r |cFFfa9602Scolomântia|r
+    >>|cRXP_BUY_Coletar os itens seguintes|r:
+    >>|T132873:0|t[Grande Brilliant Fragmentos] |cRXP_WARN_são criados por encantadores|r
+    >>|T136192:0|t[|cRXP_FRIENDLY_Dark Runas|r] |cRXP_WARN_são dropados aleatoriamente em|r |cFFfa9602Scolomântia|r
     >>|cRXP_WARN_Compre-os da Casa de Leilões se possível|r
     .collect 14344,8,8950,1 --Large Brilliant Shard (x8)
     .collect 20520,4,8950,1 --Dark Rune (x4)
 step
     #completewith AnthionsFriend2
-    .goto Kalimdor,43.39,66.52,20 >>Entre pela entrada Norte de Martelo do Gládio Cruel
-    >>|cRXP_WARN_Você deve ter o|r |T134244:0|t[Crescent Chave] |cRXP_WARN_para conseguir abrir a porta para Martelo do Gládio Cruel North e para a biblioteca|r << !Rogue
-    >>|cRXP_WARN_Você deve ter o|r |T134244:0|t[Crescent Chave] |cRXP_WARN_ou ter nível 300 em arrombamento para conseguir abrir a porta para Martelo do Gládio Cruel North e para a biblioteca|r << Rogue
-    >>|cRXP_WARN_Alternativamente, peça a outro jogador para abrir as portas|r
+    .goto Kalimdor,43.39,66.52,20 >>Entre na entrada norte de Martelo do Gládio Cruel
+    >>|cRXP_WARN_Você deve ter a|r |T134244:0|t[Crescent Chave] |cRXP_WARN_para poder abrir a porta para Martelo do Gládio Cruel Norte|r << !Rogue
+    >>|cRXP_WARN_Você deve ter a|r |T134244:0|t[Crescent Chave] |cRXP_WARN_ou ter 300 de habilidade em invasão de fechaduras para poder abrir a porta para Martelo do Gládio Cruel Norte|r << Rogue
+    >>|cRXP_WARN_Alternativamente, peça a outro jogador para abrir a porta|r
     .itemcount 18249,<1 << !Rogue --Crescent Key
     .skill lockpicking,300,1 << Rogue
 step
     #optional
     #completewith AnthionsFriend2
-    .goto Kalimdor,43.39,66.52,20 >>Entre pela entrada Norte de Martelo do Gládio Cruel
+    .goto Kalimdor,43.39,66.52,20 >>Entre na entrada norte de Martelo do Gládio Cruel
     .itemcount 18249,1 << !Rogue --Crescent Key
     .skill lockpicking,<300,1 << Rogue
 step
     #label AnthionsFriend2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Falrin Arboril|r na biblioteca de Martelo do Gládio Cruel
-    .turnin 8950 >>Entregue The Instigator's Enchantment - Missão
-    .accept 9015 >>Aceite The Desafio - Missão
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Falrin Arboril|r na biblioteca de Martelo do Gládio Cruel
+    .turnin 8950 >>Entregue The Instigator's Enchantment - Missão - Missão
+    .accept 9015 >>Aceite O Desafio
     .target Falrin Treeshaper
     --.link  >> |cRXP_WARN_You can reach the library without killing any mobs. Click here for video reference|r
     --VV TODO: Library skip video
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá para |cFFfa9602Blackrock Mountain|r
 step
     #completewith next
     .goto Eastern Kingdoms,48.07,62.42
     .subzone 1584,2 >>Entre no Abismo Rocha Negra
-    >>|cRXP_WARN_Tenha um grupo pronto|r
+    >>|cRXP_WARN_Tenha certeza de que tem um grupo pronto|r
 step
-    .use 21986 >>Entre na arena do Anel da Lei e use o |T132619:0|t[Estandarte de Provocação]
-    >>Isso vai invocar |cRXP_ENEMY_Theldren|r. Mate-o e saqueie-o para obter o |cRXP_LOOT_Parte Superior do Amuleto do Lorde Valthalak|r
-    >>|cRXP_WARN_Este combate é difícil. |cRXP_ENEMY_Theldren|r aparecerá com múltiplos adds élite nível 60. Certifique-se de que seu grupo tem controle de multidão suficiente para eles|r
+    .use 21986 >>Entre na arena do Anel da Lei e use o |T132619:0|t[Estandarte of Provocação]
+    >>Isso invocará |cRXP_ENEMY_Theldren|r. Mate-o e saqueie-o para obter a |cRXP_LOOT_Parte Superior do Amuleto do Lorde Valthalak|r
+    >>|cRXP_WARN_Este combate é difícil. |cRXP_ENEMY_Theldren|r aparecerá com múltiplos inimigos de élite nível 60. Certifique-se de que seu grupo tem controle de multidão suficiente para eles|r
     .complete 9015,1 --Theldren's Team Defeated
     .complete 9015,2 --Top Piece of Lord Valthalak's Amulet (x1)
     .mob Theldren
@@ -1021,25 +1021,25 @@ step
     .zone Eastern Plaguelands >>Viaje para as Terras Pestilentas Orientais
 step
     .goto Eastern Kingdoms,55.06,17.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Anthion|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anthion|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Anthion|r
-    .turnin 9015 >>Entregue The Desafio - Missão
-    .accept 8951 >>Aceite Anthion's Parting Words - Missão << Alliance Druid
-    .accept 8952 >>Aceite Anthion's Parting Words - Missão << Alliance Hunter
-    .accept 8953 >>Aceite Anthion's Parting Words - Missão << Alliance Mage
-    .accept 8954 >>Aceite Anthion's Parting Words - Missão << Alliance Paladin
-    .accept 8955 >>Aceite Anthion's Parting Words - Missão << Alliance Priest
-    .accept 8956 >>Aceite Anthion's Parting Words - Missão << Alliance Rogue
-    .accept 8958 >>Aceite Anthion's Parting Words - Missão << Alliance Warlock
-    .accept 8959 >>Aceite Anthion's Parting Words - Missão << Alliance Warrior
-    .accept 8957 >>Aceite Anthion's Parting Words - Missão << Horde Shaman
-    .accept 9016 >>Aceite Anthion's Parting Words - Missão << Horde Druid
-    .accept 9017 >>Aceite Anthion's Parting Words - Missão << Horde Hunter
-    .accept 9018 >>Aceite Anthion's Parting Words - Missão << Horde Mage
-    .accept 9019 >>Aceite Anthion's Parting Words - Missão << Horde Priest
-    .accept 9020 >>Aceite Anthion's Parting Words - Missão << Horde Rogue
-    .accept 9021 >>Aceite Anthion's Parting Words - Missão << Horde Warlock
-    .accept 9022 >>Aceite Anthion's Parting Words - Missão << Horde Warrior
+    .turnin 9015 >>Entregue O Desafio
+    .accept 8951 >>Aceite As Palavras de Despedida de Anthion << Alliance Druid
+    .accept 8952 >>Aceite As Palavras de Despedida de Anthion << Alliance Hunter
+    .accept 8953 >>Aceite As Palavras de Despedida de Anthion << Alliance Mage
+    .accept 8954 >>Aceite As Palavras de Despedida de Anthion << Alliance Paladin
+    .accept 8955 >>Aceite As Palavras de Despedida de Anthion << Alliance Priest
+    .accept 8956 >>Aceite As Palavras de Despedida de Anthion << Alliance Rogue
+    .accept 8958 >>Aceite As Palavras de Despedida de Anthion << Alliance Warlock
+    .accept 8959 >>Aceite As Palavras de Despedida de Anthion << Alliance Warrior
+    .accept 8957 >>Aceite As Palavras de Despedida de Anthion << Horde Shaman
+    .accept 9016 >>Aceite As Palavras de Despedida de Anthion << Horde Druid
+    .accept 9017 >>Aceite As Palavras de Despedida de Anthion << Horde Hunter
+    .accept 9018 >>Aceite As Palavras de Despedida de Anthion << Horde Mage
+    .accept 9019 >>Aceite As Palavras de Despedida de Anthion << Horde Priest
+    .accept 9020 >>Aceite As Palavras de Despedida de Anthion << Horde Rogue
+    .accept 9021 >>Aceite As Palavras de Despedida de Anthion << Horde Warlock
+    .accept 9022 >>Aceite As Palavras de Despedida de Anthion << Horde Warrior
     .target Anthion Harmon
 step << Alliance
     #completewith next
@@ -1047,7 +1047,7 @@ step << Alliance
 step << Alliance
     .goto Ironforge,43.54,52.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deliana|r
-    >>Você precisará de |T132542:0|t[|cRXP_LOOT_Botas do Coração Selvagem|r], |T134588:0|t[|cRXP_LOOT_Kilt do Coração Selvagem|r] e |T135032:0|t[|cRXP_LOOT_Dragonas do Coração Selvagem|r] para entregar esta missão << Druid
+    >>Você precisará do |T132542:0|t[|cRXP_LOOT_Botas do Coração Selvagem|r], do |T134588:0|t[|cRXP_LOOT_Kilt do Coração Selvagem|r] e das |T135032:0|t[|cRXP_LOOT_Dragonas do Coração Selvagem|r] para entregar esta missão << Druid
     >>Você precisará de |T132588:0|t[|cRXP_LOOT_Botas do Espreitador de Feras|r], |T134583:0|t[|cRXP_LOOT_Calças do Espreitador de Feras|r] e |T135041:0|t[|cRXP_LOOT_Dragonas do Espreitador de Feras|r] para entregar esta missão << Hunter
     >>Você precisará de |T132536:0|t[|cRXP_LOOT_Botas do Magíster|r], |T134586:0|t[|cRXP_LOOT_Perneiras do Magíster|r] e |T135054:0|t[|cRXP_LOOT_Dragonas do Magíster|r] para entregar esta missão << Mage
     >>Você precisará de |T132584:0|t[|cRXP_LOOT_Botas da Forja de Luz|r], |T134584:0|t[|cRXP_LOOT_Coxotes da Forja de Luz|r] e |T135041:0|t[|cRXP_LOOT_Espaldares da Forja de Luz|r] para entregar esta missão << Paladin
@@ -1087,11 +1087,11 @@ step << Alliance
     .turnin 8956 >>Entregue Anthion's Parting Words - Missão - Missão << Rogue
     .turnin 8958 >>Entregue Anthion's Parting Words - Missão - Missão << Warlock
     .turnin 8959 >>Entregue Anthion's Parting Words - Missão - Missão << Warrior
-    .accept 8960 >>Aceite Bodley's Unfortunate Sina - Missão
+    .accept 8960 >>Aceite Bodley's Unfortunate Sina - Missão - Missão
     .target Deliana
 step << Horde
     #completewith next
-    .zone Orgrimmar >>Voe para |cFFfa9602Orgrimmar|r
+    .zone Orgrimmar >>Vá para |cFFfa9602Orgrimmar|r
 step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mokvar|r
@@ -1135,7 +1135,7 @@ step << Horde
     .turnin 9020 >>Entregue Anthion's Parting Words - Missão - Missão << Rogue
     .turnin 9021 >>Entregue Anthion's Parting Words - Missão - Missão << Warlock
     .turnin 9022 >>Entregue Anthion's Parting Words - Missão - Missão << Warrior
-    .accept 8960 >>Aceite Bodley's Unfortunate Sina
+    .accept 8960 >>Aceite Bodley's Unfortunate Sina - Missão - Missão
     .target Mokvar
 
 ]])
@@ -1144,22 +1144,22 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
-#group Guias de Fim de Jogo
-#subgroup Guia do Feralheart Set << Druid
-#subgroup Guia do Conjunto Senhor das Feras << Hunter
-#subgroup Guia do Conjunto do Feiticeiro << Mage
+#group RestedXP Guias de Fim de Jogo
+#subgroup Guia do Set Feralheart << Druid
+#subgroup Guia do Set Senhor das Feras << Hunter
+#subgroup Guia do Set Sorcerer's << Mage
 #subgroup Guia do Conjunto da Forja da Alma << Paladin
-#subgroup Guia do Conjunto da Manta Negra << Rogue
-#subgroup Guia do Conjunto dos Cinco Trovões << Shaman
-#subgroup Guia do Conjunto da Mortalha << Warlock
-#subgroup Guia do Conjunto de Heroísmo << Warrior
-#subgroup Guia do Conjunto da Virtude << Priest
-#name Parte 4: Elmo & Peito
+#subgroup Guia do Set Darkmantle << Rogue
+#subgroup Guia do Set The Cinco Thunders << Shaman
+#subgroup Guia do Set Deathmist << Warlock
+#subgroup Guia do Set Heroísmo << Warrior
+#subgroup Guia do Set Virtuous << Priest
+#name Parte 4: Helm & Baú
 
 
 step
     #optional
-    +|cRXP_WARN_Você deve completar Parte 3: calças, ombros e botas antes de começar esta parte do guia|r
+    +|cRXP_WARN_Você deve completar a Parte 3: calças, ombros e botas antes de iniciar esta parte do guia|r
     .isQuestAvailable 8951 << Alliance Druid
     .isQuestAvailable 8952 << Alliance Hunter
     .isQuestAvailable 8953 << Alliance Mage
@@ -1177,16 +1177,16 @@ step
     .isQuestAvailable 9021 << Horde Warlock
     .isQuestAvailable 9022 << Horde Warrior
 step
-    >>Obtenha o |T133129:0|t[|cRXP_LOOT_Capucho do Coração Selvagem|r]. Ele é soltado por |cRXP_ENEMY_Umbromestre Gandling|r em |cFFfa9602Scolomântia|r << Druid
-    >>Obtenha o |T133126:0|t[|cRXP_LOOT_Casquete do Espreitador de Feras|r]. Este é obtido de |cRXP_ENEMY_Umbromestre Gandling|r em |cFFfa9602Scolomântia|r << Hunter
-    >>Obtenha o |T133076:0|t[|cRXP_LOOT_Elmo da Forja de Luz|r]. Este é obtido de |cRXP_ENEMY_Umbromestre Gandling|r em |cFFfa9602Scolomântia|r << Paladin
-    >>Obtenha a |T132767:0|t[|cRXP_LOOT_Coroa do Devoto|r]. Este é obtido de |cRXP_ENEMY_Umbromestre Gandling|r em |cFFfa9602Scolomântia|r << Priest
-    >>Obtenha o |T133143:0|t[|cRXP_LOOT_Capuz da Arte Sombria|r]. Este é obtido de |cRXP_ENEMY_Umbromestre Gandling|r em |cFFfa9602Scolomântia|r << Rogue
-    >>Obtenha a |T133072:0|t[|cRXP_LOOT_Coifa dos Elementos|r]. Este é obtido de |cRXP_ENEMY_Umbromestre Gandling|r em |cFFfa9602Scolomântia|r << Shaman
-    >>Obtenha a |T133131:0|t[|cRXP_LOOT_Máscara de Brumedo|r]. Este é obtido de |cRXP_ENEMY_Umbromestre Gandling|r em |cFFfa9602Scolomântia|r << Warlock
-    >>Obtenha o |T133070:0|t[|cRXP_LOOT_Elmo do Bravura|r]. Este é obtido de |cRXP_ENEMY_Umbromestre Gandling|r em |cFFfa9602Scolomântia|r << Warrior
-    >>Obtenha a |T132768:0|t[|cRXP_LOOT_Coroa do Magíster|r]. Este é obtido de |cRXP_ENEMY_Umbromestre Gandling|r em |cFFfa9602Scolomântia|r << Mage
-    >>|cRXP_WARN_Alternativamente compre-as de |cRXP_FRIENDLY_Pix Xizzix|r em Booty Bay em troca de|r |T133799:0|t[|cRXP_FRIENDLY_Tarnished Inframina Real|r] << sod
+    >>Obtenha o |T133129:0|t[|cRXP_LOOT_Capucho do Coração Selvagem|r]. Solto por |cRXP_ENEMY_Umbromestre Gandling|r em |cFFfa9602Scolomântia|r << Druid
+    >>Obtenha o |T133126:0|t[|cRXP_LOOT_Casquete do Espreitador de Feras|r]. Solto por |cRXP_ENEMY_Umbromestre Gandling|r em |cFFfa9602Scolomântia|r << Hunter
+    >>Obtenha o |T133076:0|t[|cRXP_LOOT_Elmo da Forja de Luz|r]. Solto por |cRXP_ENEMY_Umbromestre Gandling|r em |cFFfa9602Scolomântia|r << Paladin
+    >>Obtenha a |T132767:0|t[|cRXP_LOOT_Coroa do Devoto|r]. Solto por |cRXP_ENEMY_Umbromestre Gandling|r em |cFFfa9602Scolomântia|r << Priest
+    >>Obtenha o |T133143:0|t[|cRXP_LOOT_Capuz da Arte Sombria|r]. Solto por |cRXP_ENEMY_Umbromestre Gandling|r em |cFFfa9602Scolomântia|r << Rogue
+    >>Obtenha o |T133072:0|t[|cRXP_LOOT_Coifa dos Elementos|r]. Solto por |cRXP_ENEMY_Umbromestre Gandling|r em |cFFfa9602Scolomântia|r << Shaman
+    >>Obtenha a |T133131:0|t[|cRXP_LOOT_Máscara de Brumedo|r]. Solto por |cRXP_ENEMY_Umbromestre Gandling|r em |cFFfa9602Scolomântia|r << Warlock
+    >>Obtenha o |T133070:0|t[|cRXP_LOOT_Elmo do Bravura|r]. Solto por |cRXP_ENEMY_Umbromestre Gandling|r em |cFFfa9602Scolomântia|r << Warrior
+    >>Obtenha a |T132768:0|t[|cRXP_LOOT_Coroa do Magíster|r]. Solto por |cRXP_ENEMY_Umbromestre Gandling|r em |cFFfa9602Scolomântia|r << Mage
+    >>|cRXP_WARN_Como alternativa, compre-os de |cRXP_FRIENDLY_Pix Xizzix|r em Booty Bay em troca de|r |T133799:0|t[|cRXP_FRIENDLY_Tarnished Inframina Real|r] << sod
     .collect 16727,1,9002,1 << Alliance Paladin --Lightforge Helm (x1)
     .collect 16720,1,8999,1 << Alliance Druid --Wildheart Cowl (x1)
     .collect 16677,1,9000,1 << Alliance Hunter --Beaststalker's Cap (x1)
@@ -1213,16 +1213,16 @@ step
     .equip 1,16686 << Mage
     .equip 1,16667 << Shaman
 step
-    >>Obtenha o |T132741:0|t[|cRXP_LOOT_Colete do Coração Selvagem|r]. Este é obtido de |cRXP_ENEMY_General Drakkisath|r em |cFFfa9602Pico da Rocha Negra Superior|r << Druid
-    >>Obtenha a |T132625:0|t[|cRXP_LOOT_Túnica do Espreitador de Feras|r]. Este é obtido de |cRXP_ENEMY_General Drakkisath|r em |cFFfa9602Pico da Rocha Negra Superior|r << Hunter
-    >>Obtenha o |T132738:0|t[|cRXP_LOOT_Peitoral da Forja de Luz|r]. Este é obtido de |cRXP_ENEMY_General Drakkisath|r em |cFFfa9602Pico da Rocha Negra Superior|r << Paladin
-    >>Obtenha a |T132652:0|t[|cRXP_LOOT_Veste do Devoto|r]. Este é obtido de |cRXP_ENEMY_General Drakkisath|r em |cFFfa9602Pico da Rocha Negra Superior|r << Priest
-    >>Obtenha a |T132722:0|t[|cRXP_LOOT_Túnica da Arte Sombria|r]. Este é obtido de |cRXP_ENEMY_General Drakkisath|r em |cFFfa9602Pico da Rocha Negra Superior|r << Rogue
-    >>Obtenha o |T132633:0|t[|cRXP_LOOT_Colete dos Elementos|r]. Este é obtido de |cRXP_ENEMY_General Drakkisath|r em |cFFfa9602Pico da Rocha Negra Superior|r << Shaman
-    >>Obtenha a |T132690:0|t[|cRXP_LOOT_Veste de Brumedo|r]. Este é obtido de |cRXP_ENEMY_General Drakkisath|r em |cFFfa9602Pico da Rocha Negra Superior|r << Warlock
-    >>Obtenha o |T132738:0|t[|cRXP_LOOT_Peitoral do Bravura|r]. Este é obtido de |cRXP_ENEMY_General Drakkisath|r em |cFFfa9602Pico da Rocha Negra Superior|r << Warrior
-    >>Obtenha as |T132666:0|t[|cRXP_LOOT_Vestes do Magíster|r]. Este é obtido de |cRXP_ENEMY_General Drakkisath|r em |cFFfa9602Pico da Rocha Negra Superior|r << Mage
-    >>|cRXP_WARN_Alternativamente compre-as de |cRXP_FRIENDLY_Pix Xizzix|r em Booty Bay em troca de|r |T133799:0|t[|cRXP_FRIENDLY_Tarnished Inframina Real|r] << sod
+    >>Obtenha o |T132741:0|t[|cRXP_LOOT_Colete do Coração Selvagem|r]. Solto por |cRXP_ENEMY_General Drakkisath|r em |cFFfa9602Pico da Rocha Negra Superior|r << Druid
+    >>Obtenha o |T132625:0|t[|cRXP_LOOT_Túnica do Espreitador de Feras|r]. Solto por |cRXP_ENEMY_General Drakkisath|r em |cFFfa9602Pico da Rocha Negra Superior|r << Hunter
+    >>Obtenha o |T132738:0|t[|cRXP_LOOT_Peitoral da Forja de Luz|r]. Solto por |cRXP_ENEMY_General Drakkisath|r em |cFFfa9602Pico da Rocha Negra Superior|r << Paladin
+    >>Obtenha a |T132652:0|t[|cRXP_LOOT_Veste do Devoto|r]. Solto por |cRXP_ENEMY_General Drakkisath|r em |cFFfa9602Pico da Rocha Negra Superior|r << Priest
+    >>Obtenha a |T132722:0|t[|cRXP_LOOT_Túnica da Arte Sombria|r]. Solto por |cRXP_ENEMY_General Drakkisath|r em |cFFfa9602Pico da Rocha Negra Superior|r << Rogue
+    >>Obtenha o |T132633:0|t[|cRXP_LOOT_Colete dos Elementos|r]. Solto por |cRXP_ENEMY_General Drakkisath|r em |cFFfa9602Pico da Rocha Negra Superior|r << Shaman
+    >>Obtenha o |T132690:0|t[|cRXP_LOOT_Veste de Brumedo|r]. Solto por |cRXP_ENEMY_General Drakkisath|r em |cFFfa9602Pico da Rocha Negra Superior|r << Warlock
+    >>Obtenha o |T132738:0|t[|cRXP_LOOT_Peitoral do Bravura|r]. Solto por |cRXP_ENEMY_General Drakkisath|r em |cFFfa9602Pico da Rocha Negra Superior|r << Warrior
+    >>Obtenha o |T132666:0|t[|cRXP_LOOT_Vestes do Magíster|r]. Solto por |cRXP_ENEMY_General Drakkisath|r em |cFFfa9602Pico da Rocha Negra Superior|r << Mage
+    >>|cRXP_WARN_Como alternativa, compre-os de |cRXP_FRIENDLY_Pix Xizzix|r em Booty Bay em troca de|r |T133799:0|t[|cRXP_FRIENDLY_Tarnished Inframina Real|r] << sod
     .collect 16726,1,9002,1 << Alliance Paladin --Lightforge Breastplate (x1)
     .collect 16706,1,8999,1 << Alliance Druid --Wildheart Vest (x1)
     .collect 16674,1,9000,1 << Alliance Hunter --Beaststalker's Tunic (x1)
@@ -1254,77 +1254,77 @@ step << Alliance
 step << Alliance
     .goto Ironforge,43.54,52.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deliana|r
-    .accept 8960 >>Aceite Bodley's Unfortunate Sina
+    .accept 8960 >>Aceite Bodley's Unfortunate Sina - Missão - Missão
     .target Deliana
 step << Horde
     #completewith next
-    .zone Orgrimmar >>Voe para |cFFfa9602Orgrimmar|r
+    .zone Orgrimmar >>Vá para |cFFfa9602Orgrimmar|r
 step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mokvar|r
-    .accept 8960 >>Aceite Bodley's Unfortunate Sina
+    .accept 8960 >>Aceite Bodley's Unfortunate Sina - Missão - Missão
     .target Mokvar
 step
-    >>|cRXP_BUY_Coletar os seguintes itens|r:
-    >>|cRXP_WARN_Pelo menos um|r |T132873:0|t[Grande Fragmento Brilhante]
+    >>|cRXP_BUY_Coletar os itens seguintes|r:
+    >>|cRXP_WARN_Pelo menos um|r |T132873:0|t[Grande Brilliant Shard]
     >>|cRXP_WARN_Um|r |T134821:0|t[Frasco de Poder Supremo]
-    >>|cRXP_WARN_Compre-o da casa de leilões, se possível|r
+    >>|cRXP_WARN_Compre-o no leilão se possível|r
     .collect 14344,1,8961,1 --Large Brilliant Shard (x1)
     .collect 13512,1,8994,1 --Flask of Supreme Power (x1)
 step
-    .reputation 529,honored >>|cRXP_WARN_Obtenha reputação honrada com a Aurora Argêntea|r
+    .reputation 529,honored >>|cRXP_WARN_Obtenha reputação Honrada com Aurora Argêntea|r
 step << Alliance
     #completewith next
     .subzone 3197 >>Vá para Chillwind Camp em |cFFfa9602Terras Pestilentas Ocidentais|r
 step << Alliance
     .goto Western Plaguelands,42.84,83.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Intendente Argênteo Centelhuz|r
-    >>|cRXP_BUY_Compre um|r |T133879:0|t[Hallowed Braseiro] |cRXP_BUY_dele|r
-    >>|cRXP_WARN_Custa 120 ouro|r
+    >>|cRXP_BUY_Compre um|r |T133879:0|t[Hallowed Braseiro] |cRXP_BUY_dela|r
+    >>|cRXP_WARN_Isto custa 120 ouro|r
     .collect 22014,1,8961,1 --Hallowed Brazier (x1)
     .target Argent Quartermaster Lightspark
 step << Horde
     #completewith next
-    .subzone 2268 >>Vá para a Capela Esperança da Luz em |cFFfa9602Terras Pestilentas Orientais|r
+    .subzone 2268 >>Viaje para Capela Esperança da Luz em |cFFfa9602Terras Pestilentas Orientais|r
 step << Horde
     .goto Eastern Plaguelands,81.63,60.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Intendente Miranda Cerraculatra|r
     >>|cRXP_BUY_Compre um|r |T133879:0|t[Hallowed Braseiro] |cRXP_BUY_dela|r
-    >>|cRXP_WARN_Custa 120 ouro|r
+    >>|cRXP_WARN_Isto custa 120 ouro|r
     .collect 22014,1,8961,1 --Hallowed Brazier (x1)
     .target Quartermaster Miranda Breechlock
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá para |cFFfa9602Blackrock Mountain|r
 step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .turnin 8960 >>Entregue O Destino Desafortunado de Bodley
-    .accept 8961 >>Aceite Os Três Reis das Chamas
+    .turnin 8960 >>Entregue Bodley's Unfortunate Sina
+    .accept 8961 >>Aceite Três Reis das Chamas
     .target Bodley
 step
     #completewith next
     .goto Eastern Kingdoms,48.95,63.89
-    .subzone 1583 >>Entre no Pico da Rocha Negra Superior
+    .subzone 1583 >>Entre em Pico da Rocha Negra Superior
     >>|cRXP_WARN_Esta é uma masmorra para 10 jogadores. Você ou alguém do seu grupo deve ter o|r |T133343:0|t[|cRXP_LOOT_Selo da Ascensão|r] |cRXP_WARN_para conseguir entrar no Pico Rocha Negra Superior|r
 step
-    >>Mate |cRXP_ENEMY_Piroguarda Mirabrasa|r. Saque-o para o |cRXP_LOOT_Ember of Emberseer|r
-    >>|cRXP_WARN_Este é o primeiro chefe no|r |cFFfa9602Pico da Rocha Negra Superior|r
+    >>Abate o |cRXP_ENEMY_Piroguarda Mirabrasa|r. Saque-o para o |cRXP_LOOT_Ember of Emberseer|r
+    >>|cRXP_WARN_Este é o primeiro chefe em|r |cFFfa9602Pico da Rocha Negra Superior|r
     .complete 8961,2 --Ember of Emberseer (x1)
     .mob Pyroguard Emberseer
 step
     #completewith next
     .goto Eastern Kingdoms,48.07,62.42
     .subzone 1584,2 >>Entre no Abismo Rocha Negra
-    >>|cRXP_WARN_Tenha um grupo pronto|r
+    >>|cRXP_WARN_Tenha certeza de que tem um grupo pronto|r
 step
-    >>Mate |cRXP_ENEMY_Lorde Incendius|r. Saque-o para o |cRXP_LOOT_Incendicite of Incendius|r
+    >>Abate o |cRXP_ENEMY_Lorde Incendius|r. Saque-o para o |cRXP_LOOT_Incendicite of Incendius|r
     .complete 8961,1 --Incendicite of Incendius (x1)
     .mob Lord Incendius
 step
     #completewith DukeofCynders
-    .zone Silithus >>Voe para |cFFfa9602Silithus|r
+    .zone Silithus >>Viagem para |cFFfa9602Silithus|r
 step
     #loop
     .goto Silithus,38.31,46.42,0
@@ -1333,9 +1333,9 @@ step
     .goto Silithus,38.31,46.42,80,0
     .goto Silithus,27.93,30.66,80,0
     .goto Silithus,20.47,86.11,80,0
-    >>Abate os |cRXP_ENEMY_Crepúsculo|r inimigos em |cFFfa9602Silithus|r. Saqueie-os para obter o |T132658:0|t[|cRXP_FRIENDLY_Crepúsculo Sectário|r] equipamento
-    >>|cRXP_WARN_Você vai precisar de vários|r |T132658:0|t[|cRXP_FRIENDLY_Crepúsculo Sectário|r] |cRXP_WARN_conjuntos. É recomendado que seu grupo tenha pelo menos 5 conjuntos|r
-    >>|cRXP_WARN_Alternativamente, compre-os na casa de leilões|r
+    >>Abate os inimigos |cRXP_ENEMY_Crepúsculo|r em |cFFfa9602Silithus|r. Saque-os para obter |T132658:0|t[|cRXP_FRIENDLY_Sectário do Crepúsculo|r]
+    >>|cRXP_WARN_Você vai precisar de múltiplos|r |T132658:0|t[|cRXP_FRIENDLY_Sectário do Crepúsculo|r] |cRXP_WARN_conjuntos. É recomendado que seu grupo tenha pelo menos 5 conjuntos|r
+    >>|cRXP_WARN_Alternativamente, compre-os no leilão|r
     .collect 20407,1,8961,1 --Twilight Cultist Robe (x1)
     .collect 20406,1,8961,1 --Twilight Cultist Mantle (x1)
     .collect 20408,1,8961,1 --Twilight Cultist Cowl (x1)
@@ -1348,8 +1348,8 @@ step
     .mob Twilight Flamereaver
     .mob Twilight Master
 step
-    .reputation 609,friendly >>Obtenha uma reputação aliada com o Cenarion Círculo
-    >>|cRXP_WARN_Triture |cRXP_ENEMY_Crepúsculo|r inimigos ou complete as missões do Cenarion Círculo em Silithus para ganhar reputação|r
+    .reputation 609,friendly >>Obtenha uma reputação aliada com o Círculo Cenariano
+    >>|cRXP_WARN_Mate os inimigos |cRXP_ENEMY_Crepúsculo|r ou complete missões do Círculo Cenariano em Silithus para obter reputação|r
 step
     .goto Silithus,48.62,37.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Huum Juba Agreste|r
@@ -1368,9 +1368,9 @@ step
     .goto Silithus,38.31,46.42,0
     .goto Silithus,27.93,30.66,0
     .goto Silithus,20.47,86.11,0
-    >>Vá para um |cRXP_PICK_Pedra de Vento Menor|r em um dos três |cRXP_ENEMY_Crepúsculo|r acampamentos. Eles estão marcados no seu mapa
-    >>Evoque |cRXP_ENEMY_Templars|r e mate-os. Saqueie-os para obter suas |T133438:0|t[|cRXP_LOOT_Abissal Insígnias|r]
-    >>|cRXP_WARN_Você ou alguém do seu grupo deve equipar um|r |T132658:0|t[|cRXP_FRIENDLY_Crepúsculo Sectário|r] |cRXP_WARN_conjunto sempre para evocar um|r |cRXP_ENEMY_Templário|r
+    >>Vá para uma |cRXP_PICK_Lesser Vento Pedra|r em um dos três acampamentos |cRXP_ENEMY_Crepúsculo|r. Eles estão marcados no seu mapa
+    >>Evoque os |cRXP_ENEMY_Templars|r e mate-os. Saque-os para obter |T133438:0|t[|cRXP_LOOT_Abissal Crests|r]
+    >>|cRXP_WARN_Você ou alguém no seu grupo deve equipar um|r |T132658:0|t[|cRXP_FRIENDLY_Crepúsculo Sectário|r] |cRXP_WARN_conjunto toda vez para invocar um|r |cRXP_ENEMY_Templário|r
     .collect 20513,3 --Abyssal Crest (x3)
     .itemcount 20422,<1
     .mob Earthen Templar
@@ -1395,25 +1395,25 @@ step
     .goto Silithus,37.67,44.81,0
     .goto Silithus,24.74,32.68,0
     .goto Silithus,17.24,84.75,0
-    >>Vá para um |cRXP_PICK_Vento Pedra|r em um dos três |cRXP_ENEMY_Crepúsculo|r acampamentos. Eles estão marcados no seu mapa
-    >>Evoque os |cRXP_ENEMY_Duques|r até o |cRXP_ENEMY_O Duque de Cynders|r aparecer |cRXP_WARN_(25% de chance de aparecer)|r. Mate-o e saqueie-o para obter o |cRXP_LOOT_Brasa de Cynders|r
-    >>|cRXP_WARN_Você ou alguém do seu grupo deve ter um|r |T133281:0|t[|cRXP_LOOT_Crepúsculo Sectário Medallion of Station - Missão - Missão|r] |cRXP_WARN_e deve equipar um|r |T132658:0|t[|cRXP_FRIENDLY_Crepúsculo Sectário|r] |cRXP_WARN_conjunto sempre para evocar um novo|r |cRXP_ENEMY_Duque|r
-    >>|cRXP_WARN_Você pode precisar coletar mais|r |T133281:0|t[|cRXP_LOOT_Crepúsculo Sectário Medallion of Stations|r] |cRXP_WARN_e|r |T132658:0|t[|cRXP_FRIENDLY_Crepúsculo Sectário|r] |cRXP_WARN_conjuntos se não tiver sorte|r
+    >>Vá para uma |cRXP_PICK_Vento Pedra|r em um dos três acampamentos |cRXP_ENEMY_Crepúsculo|r. Eles estão marcados no seu mapa
+    >>Evoque os |cRXP_ENEMY_Dukes|r até que o |cRXP_ENEMY_The Duque of Cynders|r apareça |cRXP_WARN_(25% de chance de aparição)|r. Mate-o e Saque-o pela |cRXP_LOOT_Brasa de Cynders|r
+    >>|cRXP_WARN_Você ou alguém no seu grupo deve ter um|r |T133281:0|t[|cRXP_LOOT_Crepúsculo Sectário Medallion of Station - Missão - Missão|r] |cRXP_WARN_e deve equipar um|r |T132658:0|t[|cRXP_FRIENDLY_Crepúsculo Sectário|r] |cRXP_WARN_conjunto toda vez para invocar um novo|r |cRXP_ENEMY_Duque|r
+    >>|cRXP_WARN_Você pode precisar coletar mais|r |T133281:0|t[|cRXP_LOOT_Crepúsculo Sectário Medallion of Stations|r] |cRXP_WARN_e|r |T132658:0|t[|cRXP_FRIENDLY_Crepúsculo Sectário|r] |cRXP_WARN_conjuntos se tiver azar|r
     .complete 8961,3 --Cinder of Cynders (x1)
     .mob The Duke of Cynders
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá para |cFFfa9602Blackrock Mountain|r
 step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .turnin 8961 >>Entregue Três Reis das Chamas - Missão
+    .turnin 8961 >>Entregue Três Kings of Chamas - Missão
     .acceptmultiple 8962,8963,8964,8965 >>Aceite Components of Importance - Missão - Missão
     .target Bodley
 step
     #completewith next
-    .subzone 2744 >>Vá para Hive'Regal em |cFFfa9602Silithus|r
+    .subzone 2744 >>Voe para Hive'Regal em |cFFfa9602Silithus|r
     .isOnQuest 8962
 step
     #loop
@@ -1427,8 +1427,8 @@ step
     .goto Silithus,60.43,89.80,70,0
     .goto Silithus,56.57,86.74,70,0
     .goto Silithus,54.55,82.84,70,0
-    >>Abate os |cRXP_ENEMY_Hive'Regal|r inimigos (élite). Saqueie-os para obter os |cRXP_LOOT_Restos Druídicos|r
-    >>|cRXP_WARN_Isto tem uma taxa de queda muito baixa e pode levar bastante tempo. É recomendado coletar isto em um grupo de 5 pessoas|r
+    >>Mate os |cRXP_ENEMY_Hive'Regal|r inimigos (elite). Saqueie-os para obter |cRXP_LOOT_Druidical Remains|r
+    >>|cRXP_WARN_Isto tem uma chance de queda muito baixa e pode levar bastante tempo. Recomenda-se farmear-los em um grupo de 5|r
     .complete 8962,1 --Druidical Remains (x1)
     .mob Hive'Regal Spitfire
     .mob Hive'Regal Hive Lord
@@ -1438,7 +1438,7 @@ step
     .isOnQuest 8962
 step
     #completewith next
-    .subzone 2249 >>Vá para Desfiladeiro Sussurro Gélido em |cFFfa9602Hibérnia|r
+    .subzone 2249 >>Voe para Frostwhisper Engolir em |cFFfa9602Hibérnia|r
     .isOnQuest 8963
 step
     #loop
@@ -1455,15 +1455,15 @@ step
     .goto Winterspring,61.50,72.64,60,0
     .goto Winterspring,59.60,69.74,60,0
     .goto Winterspring,58.20,67.59,60,0
-    >>Abate os |cRXP_ENEMY_Friomalho Gigantes|r e os |cRXP_ENEMY_Friomalho Preservadores|r (élite). Saqueie-os para obter o |cRXP_LOOT_Starbreeze Village Relíquia|r
-    >>|cRXP_WARN_Isto tem uma taxa de queda muito baixa e pode levar bastante tempo. É recomendado coletar isto em um grupo de 5 pessoas|r
+    >>Mate os |cRXP_ENEMY_Frostmaul Giants|r e os |cRXP_ENEMY_Frostmaul Preservers|r (elite). Saqueie-os para obter a |cRXP_LOOT_Starbreeze Village Relíquia|r
+    >>|cRXP_WARN_Isto tem uma chance de queda muito baixa e pode levar bastante tempo. Recomenda-se farmear-los em um grupo de 5|r
     .complete 8963,1 --Starbreeze Village Relic (x1)
     .mob Frostmaul Giant
     .mob Frostmaul Preserver
     .isOnQuest 8963
 step
     #completewith next
-    .subzone 2266 >>Vá para Manopla de Tyr em |cFFfa9602Terras Pestilentas Orientais|r
+    .subzone 2266 >>Voe para Manopla de Tyr em |cFFfa9602Terras Pestilentas Orientais|r
     .isOnQuest 8964
 step
     #loop
@@ -1475,15 +1475,15 @@ step
     .goto Eastern Plaguelands,87.16,87.39,30,0
     .goto Eastern Plaguelands,86.36,82.80,30,0
     .goto Eastern Plaguelands,87.69,81.23,40,0
-    >>Abate os |cRXP_ENEMY_Escarlate Pretorianos|r (élite). Saqueie-os para obter a |cRXP_ENEMY_Espada Brilhante do Fanatismo|r
-    >>|cRXP_WARN_Isto tem uma taxa de queda muito baixa e pode levar bastante tempo. É recomendado coletar isto em um grupo de 5 pessoas|r
+    >>Mate os |cRXP_ENEMY_Scarlet Praetorians|r (elite). Saqueie-os para obter a |cRXP_ENEMY_Brilliant Espada of Fanatismo|r
+    >>|cRXP_WARN_Isto tem uma chance de queda muito baixa e pode levar bastante tempo. Recomenda-se farmear-los em um grupo de 5|r
     .complete 8964,1 --Brilliant Sword of Zealotry (x1)
     .mob Scarlet Praetorian
     .isOnQuest 8964
 step
     #completewith next
     .goto Hillsbrad Foothills,19.67,76.92
-    .subzone 896 >>Vá para Purgation Isle em |cFFfa9602Contraforte de Eira dos Montes|r
+    .subzone 896 >>Viaje para Purgation Isle em |cFFfa9602Contraforte de Eira dos Montes|r
     .isOnQuest 8965
 step
     #loop
@@ -1495,8 +1495,8 @@ step
     .goto Hillsbrad Foothills,16.14,84.13,30,0
     .goto Hillsbrad Foothills,16.84,81.48,30,0
     .goto Hillsbrad Foothills,15.72,81.41,40,0
-    >>Abate os |cRXP_ENEMY_Mortos-vivos Fantasmas|r (élite) na ilha. Saqueie-os para obter |cRXP_LOOT_Alma Cinzas do Banido|r
-    >>|cRXP_WARN_Isto tem uma taxa de queda muito baixa e pode levar bastante tempo. É recomendado coletar isto em um grupo de 5 pessoas|r
+    >>Abate |cRXP_ENEMY_Morto-vivo Fantasmas|r (élite) na ilha. Saque-os para |cRXP_LOOT_Alma Cinzas do Banido|r
+    >>|cRXP_WARN_Isto tem uma chance de queda muito baixa e pode levar bastante tempo. Recomenda-se farmear-los em um grupo de 5|r
     .complete 8965,1 --Soul Ashes of the Banished (x1)
     .mob Cursed Paladin
     .mob Writhing Mage
@@ -1506,13 +1506,13 @@ step
     .isOnQuest 8965
 step
     #completewith LeftPiecePU
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá para |cFFfa9602Blackrock Mountain|r
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .turnin 8962 >>Entregue Components of Importance - Missão - Missão
+    .turnin 8962 >>Entregue Componentes de Importância
     .target Bodley
     .isQuestComplete 8962
 step
@@ -1520,7 +1520,7 @@ step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .turnin 8963 >>Entregue Components of Importance - Missão - Missão
+    .turnin 8963 >>Entregue Components of Importance - Missão - Missão - Missão
     .target Bodley
     .isQuestComplete 8963
 step
@@ -1528,14 +1528,14 @@ step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .turnin 8964 >>Entregue Components of Importance - Missão - Missão
+    .turnin 8964 >>Entregue Componentes de Importância
     .target Bodley
     .isQuestComplete 8964
 step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .turnin 8965 >>Entregue Components of Importance - Missão - Missão
+    .turnin 8965 >>Entregue Componentes de Importância
     .target Bodley
     .isQuestComplete 8965
 step
@@ -1551,7 +1551,7 @@ step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .acceptmultiple 8966,8967,8968,8969 >>Aceite A Parte Esquerda do Amuleto do Lorde Valthalak
+    .acceptmultiple 8966,8967,8968,8969 >>Aceite A Parte Esquerda do Amuleto do Lorde Valthalak - Missão
     .target Bodley
     .isQuestTurnedIn 8963
 step
@@ -1574,11 +1574,11 @@ step
     #completewith next
     .goto Eastern Kingdoms,48.95,63.89
     .subzone 1583 >>Entre no Pico da Rocha Negra
-    >>|cRXP_WARN_Tenha um grupo pronto|r
+    >>|cRXP_WARN_Tenha certeza de que tem um grupo pronto|r
     .isOnQuest 8966
 step
-    >>Abate |cRXP_ENEMY_Mor Casco Gris|r. Saque-o para |T133320:0|t[|cRXP_LOOT_Parte Esquerda do Amuleto do Lorde Valthalak|r]
-    .use 22049 >>|cRXP_WARN_Use o|r |T133881:0|t[Braseiro of Beckoning] |cRXP_WARN_na sala de|r |cRXP_ENEMY_War Master Voone|r |cRXP_WARN_para convocar|r |cRXP_ENEMY_Mor Casco Gris|r
+    >>Abate |cRXP_ENEMY_Mor Casco Gris|r. Saque-o para o |T133320:0|t[|cRXP_LOOT_Parte Esquerda do Amuleto do Lorde Valthalak|r]
+    .use 22049 >>|cRXP_WARN_Use o|r |T133881:0|t[Braseiro do Chamamento] |cRXP_WARN_em quarto do|r |cRXP_ENEMY_Senhor da Guerra Voone|r |cRXP_WARN_para convocar|r |cRXP_ENEMY_Mor Casco Gris|r
     .complete 8966,1 --Mor Grayhoof Slain (x1)
     .complete 8966,2 --Left Piece of Lord Valthalak's Amulet (x1)
     .mob War Master Voone
@@ -1591,12 +1591,12 @@ step
     .isOnQuest 8967
 step
     #completewith next
-    .goto Kalimdor,43.84,67.41,20 >>Entre na entrada leste de Martelo do Gládio Cruel
-    >>|cRXP_WARN_Tenha um grupo pronto|r
+    .goto Kalimdor,43.84,67.41,20 >>Entre na entrada oriental de Martelo do Gládio Cruel
+    >>|cRXP_WARN_Tenha certeza de que tem um grupo pronto|r
     .isOnQuest 8967
 step
-    >>Abate |cRXP_ENEMY_Isalien|r. Saque-a para |T133320:0|t[|cRXP_LOOT_Parte Esquerda do Amuleto do Lorde Valthalak|r]
-    .use 22050 >>|cRXP_WARN_Use o|r |T133881:0|t[Braseiro of Beckoning] |cRXP_WARN_na sala do|r |cRXP_ENEMY_Azzin, o Selvamorfo|r |cRXP_WARN_para convocar|r |cRXP_ENEMY_Isalien|r
+    >>Abate |cRXP_ENEMY_Isalien|r. Saque-a para o |T133320:0|t[|cRXP_LOOT_Parte Esquerda do Amuleto do Lorde Valthalak|r]
+    .use 22050 >>|cRXP_WARN_Use o|r |T133881:0|t[Braseiro do Chamamento] |cRXP_WARN_em quarto do|r |cRXP_ENEMY_Azzin, o Selvamorfo|r |cRXP_WARN_para convocar|r |cRXP_ENEMY_Isalien|r
     .complete 8967,1 --Isalien slain (x1)
     .complete 8967,2 --Left Piece of Lord Valthalak's Amulet (x1)
     .mob Alzzin the Wildshaper
@@ -1611,11 +1611,11 @@ step
     #completewith next
     .goto Eastern Kingdoms,55.06,17.51
     .subzone 2017 >>Entre em Stratholme
-    >>|cRXP_WARN_Tenha um grupo pronto|r
+    >>|cRXP_WARN_Tenha certeza de que tem um grupo pronto|r
     .isOnQuest 8968
 step
-    >>Abate |cRXP_ENEMY_Jil|r e |cRXP_ENEMY_Soeiro|r. Saque-os para |T133320:0|t[|cRXP_LOOT_Parte Esquerda do Amuleto do Lorde Valthalak|r]
-    .use 22051 >>|cRXP_WARN_Use o|r |T133881:0|t[Braseiro of Beckoning] |cRXP_WARN_na sala de|r |cRXP_ENEMY_Balnazzar|r |cRXP_WARN_para convocar|r |cRXP_ENEMY_Jil|r |cRXP_WARN_e|r |cRXP_ENEMY_Soeiro|r
+    >>Abate |cRXP_ENEMY_Jil|r e |cRXP_ENEMY_Soeiro|r. Saque-os para o |T133320:0|t[|cRXP_LOOT_Parte Esquerda do Amuleto do Lorde Valthalak|r]
+    .use 22051 >>|cRXP_WARN_Use o|r |T133881:0|t[Braseiro do Chamamento] |cRXP_WARN_em quarto do|r |cRXP_ENEMY_Balnazzar|r |cRXP_WARN_para convocar|r |cRXP_ENEMY_Jil|r |cRXP_WARN_e|r |cRXP_ENEMY_Soeiro|r
     .complete 8968,1 --Jarien slain (x1)
     .complete 8968,2 --Sothos slain (x1)
     .complete 8968,3 --Left Piece of Lord Valthalak's Amulet (x1)
@@ -1625,18 +1625,18 @@ step
     .isOnQuest 8968
 step
     #completewith next
-    .zone Western Plaguelands >>Vá para |cFFfa9602Terras Pestilentas Ocidentais|r
+    .zone Western Plaguelands >>Voe para |cFFfa9602Terras Pestilentas Ocidentais|r
     .subzoneskip 2057
     .isOnQuest 8969
 step
     #completewith next
     .goto Eastern Kingdoms,52.75,26.41
     .subzone 2057 >>Entre em Scolomântia
-    >>|cRXP_WARN_Tenha um grupo pronto|r
+    >>|cRXP_WARN_Tenha certeza de que tem um grupo pronto|r
     .isOnQuest 8969
 step
-    >>Abate |cRXP_ENEMY_Kormok|r. Saque-o para |T133320:0|t[|cRXP_LOOT_Parte Esquerda do Amuleto do Lorde Valthalak|r]
-    .use 22052 >>|cRXP_WARN_Use o|r |T133881:0|t[Braseiro of Beckoning] |cRXP_WARN_na sala do|r |cRXP_ENEMY_Ras Friomúrmuro|r |cRXP_WARN_para convocar|r |cRXP_ENEMY_Kormok|r
+    >>Abate |cRXP_ENEMY_Kormok|r. Saque-o para o |T133320:0|t[|cRXP_LOOT_Parte Esquerda do Amuleto do Lorde Valthalak|r]
+    .use 22052 >>|cRXP_WARN_Use o|r |T133881:0|t[Braseiro do Chamamento] |cRXP_WARN_em quarto do|r |cRXP_ENEMY_Ras Friomúrmuro|r |cRXP_WARN_para convocar|r |cRXP_ENEMY_Kormok|r
     .complete 8969,1 --Kormok slain (x1)
     .complete 8969,2 --Left Piece of Lord Valthalak's Amulet (x1)
     .mob Ras Frostwhisper
@@ -1644,14 +1644,14 @@ step
     .isOnQuest 8969
 step
     #completewith AlcazIslandPU
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá para |cFFfa9602Blackrock Mountain|r
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8966 >>Entregue A Parte Esquerda do Amuleto do Lorde Valthalak
-    .accept 8970 >>Aceite I See Alcaz Ilha In Your Future...
+    .accept 8970 >>Aceite Vejo a Ilha de Alcaz em Seu Futuro... - Missão
     .target Bodley
     .isQuestComplete 8966
 step
@@ -1660,7 +1660,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8967 >>Entregue A Parte Esquerda do Amuleto do Lorde Valthalak
-    .accept 8970 >>Aceite I See Alcaz Ilha In Your Future...
+    .accept 8970 >>Aceite Eu Vejo a Ilha de Alcaz no Seu Futuro...
     .target Bodley
     .isQuestComplete 8967
 step
@@ -1668,8 +1668,8 @@ step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .turnin 8968 >>Entregue A Parte Esquerda do Amuleto do Lorde Valthalak
-    .accept 8970 >>Aceite I See Alcaz Ilha In Your Future...
+    .turnin 8968 >>Entregue A Parte Esquerda do Amuleto do Lorde Valthalak - Missão
+    .accept 8970 >>Aceite Eu Vejo a Ilha de Alcaz no Seu Futuro...
     .target Bodley
     .isQuestComplete 8968
 step
@@ -1677,7 +1677,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8969 >>Entregue A Parte Esquerda do Amuleto do Lorde Valthalak
-    .accept 8970 >>Aceite I See Alcaz Ilha In Your Future...
+    .accept 8970 >>Aceite Eu Vejo a Ilha de Alcaz no Seu Futuro...
     .target Bodley
     .isQuestComplete 8969
 step
@@ -1685,7 +1685,7 @@ step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .accept 8970 >>Aceite I See Alcaz Ilha In Your Future...
+    .accept 8970 >>Aceite Eu Vejo a Ilha de Alcaz no Seu Futuro...
     .target Bodley
     .isQuestTurnedIn 8966
 step
@@ -1693,7 +1693,7 @@ step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .accept 8970 >>Aceite I See Alcaz Ilha In Your Future...
+    .accept 8970 >>Aceite Eu Vejo a Ilha de Alcaz no Seu Futuro...
     .target Bodley
     .isQuestTurnedIn 8967
 step
@@ -1701,7 +1701,7 @@ step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .accept 8970 >>Aceite I See Alcaz Ilha In Your Future...
+    .accept 8970 >>Aceite Eu Vejo a Ilha de Alcaz no Seu Futuro...
     .target Bodley
     .isQuestTurnedIn 8968
 step
@@ -1709,7 +1709,7 @@ step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .accept 8970 >>Aceite I See Alcaz Ilha In Your Future...
+    .accept 8970 >>Aceite Eu Vejo a Ilha de Alcaz no Seu Futuro...
     .target Bodley
     .isQuestTurnedIn 8969
 step
@@ -1725,8 +1725,8 @@ step
     .goto Dustwallow Marsh,76.91,18.24,50,0
     .goto Dustwallow Marsh,76.56,22.15,50,0
     .goto Dustwallow Marsh,75.49,21.75,50,0
-    >>Mate os |cRXP_ENEMY_Strashaz Naga|r (elite). Saqueie-os para obter |cRXP_LOOT_Bloodkelp|r
-    >>|cRXP_WARN_Isto tem uma taxa de queda muito baixa e pode levar bastante tempo. É recomendado coletar isto em um grupo de 5 pessoas|r
+    >>Mate |cRXP_ENEMY_Strashaz Naga|r (elite). Saqueie-os para obter |cRXP_LOOT_Bloodkelp|r
+    >>|cRXP_WARN_Isto tem uma chance de queda muito baixa e pode levar bastante tempo. Recomenda-se farmear-los em um grupo de 5|r
     .complete 8970,1 --Bloodkelp (x20)
     .mob Strashaz Warrior
     .mob Strashaz Myrmidon
@@ -1735,23 +1735,23 @@ step
     .mob Strashaz Serpent Guard
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá para |cFFfa9602Blackrock Mountain|r
 step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .turnin 8970 >>Entregue Vejo a Ilha de Alcaz no Seu Futuro...
+    .turnin 8970 >>Entregue I See Alcaz Ilha In Your Future... - Missão - Missão
     .target Bodley
 step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .acceptmultiple 8985,8986,8987,8988 >>Aceite Mais Componentes de Importância
+    .acceptmultiple 8985,8986,8987,8988 >>Aceite Mais Componentes de Importância - Missão - Missão
     .target Bodley
     .isQuestTurnedIn 8970
 step
     #completewith next
-    .subzone 2744 >>Vá para Hive'Regal em |cFFfa9602Silithus|r
+    .subzone 2744 >>Voe para Hive'Regal em |cFFfa9602Silithus|r
     .isOnQuest 8986
 step
     #loop
@@ -1765,8 +1765,8 @@ step
     .goto Silithus,60.43,89.80,70,0
     .goto Silithus,56.57,86.74,70,0
     .goto Silithus,54.55,82.84,70,0
-    >>Abate os |cRXP_ENEMY_Hive'Regal|r inimigos (élite). Saqueie-os para obter os |cRXP_LOOT_Restos Druídicos|r
-    >>|cRXP_WARN_Isto tem uma taxa de queda muito baixa e pode levar bastante tempo. É recomendado coletar isto em um grupo de 5 pessoas|r
+    >>Mate os |cRXP_ENEMY_Hive'Regal|r inimigos (elite). Saqueie-os para obter |cRXP_LOOT_Druidical Remains|r
+    >>|cRXP_WARN_Isto tem uma chance de queda muito baixa e pode levar bastante tempo. Recomenda-se farmear-los em um grupo de 5|r
     .complete 8986,1 --Druidical Remains (x1)
     .mob Hive'Regal Spitfire
     .mob Hive'Regal Hive Lord
@@ -1776,7 +1776,7 @@ step
     .isOnQuest 8986
 step
     #completewith next
-    .subzone 2249 >>Vá para Desfiladeiro Sussurro Gélido em |cFFfa9602Hibérnia|r
+    .subzone 2249 >>Voe para Frostwhisper Engolir em |cFFfa9602Hibérnia|r
     .isOnQuest 8985
 step
     #loop
@@ -1793,15 +1793,15 @@ step
     .goto Winterspring,61.50,72.64,60,0
     .goto Winterspring,59.60,69.74,60,0
     .goto Winterspring,58.20,67.59,60,0
-    >>Abate os |cRXP_ENEMY_Friomalho Gigantes|r e os |cRXP_ENEMY_Friomalho Preservadores|r (élite). Saqueie-os para obter o |cRXP_LOOT_Starbreeze Village Relíquia|r
-    >>|cRXP_WARN_Isto tem uma taxa de queda muito baixa e pode levar bastante tempo. É recomendado coletar isto em um grupo de 5 pessoas|r
+    >>Mate os |cRXP_ENEMY_Frostmaul Giants|r e os |cRXP_ENEMY_Frostmaul Preservers|r (elite). Saqueie-os para obter a |cRXP_LOOT_Starbreeze Village Relíquia|r
+    >>|cRXP_WARN_Isto tem uma chance de queda muito baixa e pode levar bastante tempo. Recomenda-se farmear-los em um grupo de 5|r
     .complete 8985,1 --Starbreeze Village Relic (x1)
     .mob Frostmaul Giant
     .mob Frostmaul Preserver
     .isOnQuest 8985
 step
     #completewith next
-    .subzone 2266 >>Vá para Manopla de Tyr em |cFFfa9602Terras Pestilentas Orientais|r
+    .subzone 2266 >>Voe para Manopla de Tyr em |cFFfa9602Terras Pestilentas Orientais|r
     .isOnQuest 8987
 step
     #loop
@@ -1813,15 +1813,15 @@ step
     .goto Eastern Plaguelands,87.16,87.39,30,0
     .goto Eastern Plaguelands,86.36,82.80,30,0
     .goto Eastern Plaguelands,87.69,81.23,40,0
-    >>Abate os |cRXP_ENEMY_Escarlate Pretorianos|r (élite). Saqueie-os para obter a |cRXP_ENEMY_Espada Brilhante do Fanatismo|r
-    >>|cRXP_WARN_Isto tem uma taxa de queda muito baixa e pode levar bastante tempo. É recomendado coletar isto em um grupo de 5 pessoas|r
+    >>Mate os |cRXP_ENEMY_Scarlet Praetorians|r (elite). Saqueie-os para obter a |cRXP_ENEMY_Brilliant Espada of Fanatismo|r
+    >>|cRXP_WARN_Isto tem uma chance de queda muito baixa e pode levar bastante tempo. Recomenda-se farmear-los em um grupo de 5|r
     .complete 8987,1 --Brilliant Sword of Zealotry (x1)
     .mob Scarlet Praetorian
     .isOnQuest 8987
 step
     #completewith next
     .goto Hillsbrad Foothills,19.67,76.92
-    .subzone 896 >>Vá para Purgation Isle em |cFFfa9602Contraforte de Eira dos Montes|r
+    .subzone 896 >>Viaje para Purgation Isle em |cFFfa9602Contraforte de Eira dos Montes|r
     .isOnQuest 8988
 step
     #loop
@@ -1833,8 +1833,8 @@ step
     .goto Hillsbrad Foothills,16.14,84.13,30,0
     .goto Hillsbrad Foothills,16.84,81.48,30,0
     .goto Hillsbrad Foothills,15.72,81.41,40,0
-    >>Abate os |cRXP_ENEMY_Mortos-vivos Fantasmas|r (élite) na ilha. Saqueie-os para obter |cRXP_LOOT_Alma Cinzas do Banido|r
-    >>|cRXP_WARN_Isto tem uma taxa de queda muito baixa e pode levar bastante tempo. É recomendado coletar isto em um grupo de 5 pessoas|r
+    >>Mate os |cRXP_ENEMY_Undead Ghosts|r (élite) na ilha. Saqueie-os para |cRXP_LOOT_Soul Cinzas of the Banido|r
+    >>|cRXP_WARN_Isto tem uma chance de queda muito baixa e pode levar bastante tempo. Recomenda-se farmear-los em um grupo de 5|r
     .complete 8988,1 --Soul Ashes of the Banished (x1)
     .mob Cursed Paladin
     .mob Writhing Mage
@@ -1844,7 +1844,7 @@ step
     .isOnQuest 8988
 step
     #completewith RightPiecePU
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá para |cFFfa9602Blackrock Mountain|r
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
@@ -1873,7 +1873,7 @@ step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .turnin 8988 >>Entregue Mais Componentes de Importância
+    .turnin 8988 >>Entregue Mais Componentes de Importância - Missão - Missão
     .target Bodley
     .isQuestComplete 8988
 step
@@ -1881,7 +1881,7 @@ step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .acceptmultiple 8989,8990,8991,8992 >>Aceite A Peça Direita do Amuleto do Lorde Valthalak
+    .acceptmultiple 8989,8990,8991,8992 >>Aceite A Parte Direita do Amuleto do Lorde Valthalak
     .target Bodley
     .isQuestTurnedIn 8985
 step
@@ -1889,7 +1889,7 @@ step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .acceptmultiple 8989,8990,8991,8992 >>Aceite A Peça Direita do Amuleto do Lorde Valthalak
+    .acceptmultiple 8989,8990,8991,8992 >>Aceite A Parte Direita do Amuleto do Lorde Valthalak
     .target Bodley
     .isQuestTurnedIn 8986
 step
@@ -1897,7 +1897,7 @@ step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .acceptmultiple 8989,8990,8991,8992 >>Aceite A Peça Direita do Amuleto do Lorde Valthalak
+    .acceptmultiple 8989,8990,8991,8992 >>Aceite A Parte Direita do Amuleto do Lorde Valthalak
     .target Bodley
     .isQuestTurnedIn 8987
 step
@@ -1905,18 +1905,18 @@ step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .acceptmultiple 8989,8990,8991,8992 >>Aceite A Peça Direita do Amuleto do Lorde Valthalak
+    .acceptmultiple 8989,8990,8991,8992 >>Aceite A Parte Direita do Amuleto do Lorde Valthalak
     .target Bodley
     .isQuestTurnedIn 8988
 step
     #completewith next
     .goto Eastern Kingdoms,48.95,63.89
     .subzone 1583 >>Entre no Pico da Rocha Negra
-    >>|cRXP_WARN_Tenha um grupo pronto|r
+    >>|cRXP_WARN_Tenha certeza de que tem um grupo pronto|r
     .isOnQuest 8989
 step
     >>Mate |cRXP_ENEMY_Mor Casco Gris|r. Saque-o pelo |T133318:0|t[|cRXP_LOOT_Parte Direita do Amuleto do Lorde Valthalak|r]
-    .use 22049 >>|cRXP_WARN_Use o|r |T133881:0|t[Braseiro of Beckoning] |cRXP_WARN_na sala de|r |cRXP_ENEMY_War Master Voone|r |cRXP_WARN_para convocar|r |cRXP_ENEMY_Mor Casco Gris|r
+    .use 22049 >>|cRXP_WARN_Use the|r |T133881:0|t[Braseiro of Beckoning] |cRXP_WARN_in|r |cRXP_ENEMY_War Master Voone's|r |cRXP_WARN_room to summon|r |cRXP_ENEMY_Mor Casco Gris|r
     .complete 8989,1 --Mor Grayhoof Slain (x1)
     .collect 22046,1,8989,1 --Right Piece of Lord Valthalak's Amulet (x1)
     .mob War Master Voone
@@ -1924,15 +1924,15 @@ step
     .isOnQuest 8989
 step
     #optional
-    .use 22046 >>|cRXP_WARN_Use a|r |T133320:0|t[|cRXP_LOOT_Parte Esquerda do Amuleto do Lorde Valthalak|r]|cRXP_WARN_, |r|T133318:0|t[|cRXP_LOOT_Parte Direita do Amuleto do Lorde Valthalak|r] |cRXP_WARN_e|r |T133316:0|t[|cRXP_LOOT_Parte Superior do Amuleto do Lorde Valthalak|r] |cRXP_WARN_para criar|r |T133314:0|t[|cRXP_LOOT_Amuleto do Lorde Valthalak|r]
+    .use 22046 >>|cRXP_WARN_Use the|r |T133320:0|t[|cRXP_LOOT_Parte Esquerda do Amuleto do Lorde Valthalak|r]|cRXP_WARN_, |r|T133318:0|t[|cRXP_LOOT_Parte Direita do Amuleto do Lorde Valthalak|r] |cRXP_WARN_and|r |T133316:0|t[|cRXP_LOOT_Parte Superior do Amuleto do Lorde Valthalak|r] |cRXP_WARN_to create|r |T133314:0|t[|cRXP_LOOT_Amuleto do Lorde Valthalak|r]
     .complete 8989,2 --Lord Valthalak's Amulet (x1)
     .use 22047 --Top Piece of Lord Valthalak's Amulet
     .use 21984 --Left Piece of Lord Valthalak's Amulet
     .itemcount 22047,1
     .isOnQuest 8989
 step
-    .use 22046 >>|cRXP_WARN_Use a|r |T133320:0|t[|cRXP_LOOT_Parte Esquerda do Amuleto do Lorde Valthalak|r]|cRXP_WARN_, |r|T133318:0|t[|cRXP_LOOT_Parte Direita do Amuleto do Lorde Valthalak|r] |cRXP_WARN_e|r |T133316:0|t[|cRXP_LOOT_Parte Superior do Amuleto do Lorde Valthalak|r] |cRXP_WARN_para criar|r |T133314:0|t[|cRXP_LOOT_Amuleto do Lorde Valthalak|r]
-    >>|cRXP_WARN_Se você perdeu a|r |T133316:0|t[|cRXP_LOOT_Parte Superior do Amuleto do Lorde Valthalak|r]|cRXP_WARN_, fale com|r |cRXP_FRIENDLY_Bodley|r |cRXP_WARN_para obtê-la novamente|r
+    .use 22046 >>|cRXP_WARN_Use the|r |T133320:0|t[|cRXP_LOOT_Parte Esquerda do Amuleto do Lorde Valthalak|r]|cRXP_WARN_, |r|T133318:0|t[|cRXP_LOOT_Parte Direita do Amuleto do Lorde Valthalak|r] |cRXP_WARN_and|r |T133316:0|t[|cRXP_LOOT_Parte Superior do Amuleto do Lorde Valthalak|r] |cRXP_WARN_to create|r |T133314:0|t[|cRXP_LOOT_Amuleto do Lorde Valthalak|r]
+    >>|cRXP_WARN_If you lost the|r |T133316:0|t[|cRXP_LOOT_Parte Superior do Amuleto do Lorde Valthalak|r]|cRXP_WARN_, talk to|r |cRXP_FRIENDLY_Bodley|r |cRXP_WARN_to obtain it again|r
     .complete 8989,2 --Lord Valthalak's Amulet (x1)
     .use 22047 --Top Piece of Lord Valthalak's Amulet
     .use 21984 --Left Piece of Lord Valthalak's Amulet
@@ -1945,12 +1945,12 @@ step
     .isOnQuest 8990
 step
     #completewith next
-    .goto Kalimdor,43.84,67.41,20 >>Entre na entrada leste de Martelo do Gládio Cruel
-    >>|cRXP_WARN_Tenha um grupo pronto|r
+    .goto Kalimdor,43.84,67.41,20 >>Entre na entrada oriental de Martelo do Gládio Cruel
+    >>|cRXP_WARN_Tenha certeza de que tem um grupo pronto|r
     .isOnQuest 8990
 step
-    >>Mate |cRXP_ENEMY_Isalien|r. Saque-a pelo |T133318:0|t[|cRXP_LOOT_Parte Direita do Amuleto do Lorde Valthalak|r]
-    .use 22050 >>|cRXP_WARN_Use o|r |T133881:0|t[Braseiro of Beckoning] |cRXP_WARN_na sala do|r |cRXP_ENEMY_Azzin, o Selvamorfo|r |cRXP_WARN_para convocar|r |cRXP_ENEMY_Isalien|r
+    >>Mate |cRXP_ENEMY_Isalien|r. Saque-a pela |T133318:0|t[|cRXP_LOOT_Parte Direita do Amuleto do Lorde Valthalak|r]
+    .use 22050 >>|cRXP_WARN_Use the|r |T133881:0|t[Braseiro of Beckoning] |cRXP_WARN_in|r |cRXP_ENEMY_Alzzin the Wildshaper's|r |cRXP_WARN_sala para invocar|r |cRXP_ENEMY_Isalien|r
     .complete 8990,1 --Isalien slain (x1)
     .collect 22046,1,8990,1 --Right Piece of Lord Valthalak's Amulet (x1)
     .mob Alzzin the Wildshaper
@@ -1981,11 +1981,11 @@ step
     #completewith next
     .goto Eastern Kingdoms,55.06,17.51
     .subzone 2017 >>Entre em Stratholme
-    >>|cRXP_WARN_Tenha um grupo pronto|r
+    >>|cRXP_WARN_Tenha certeza de que tem um grupo pronto|r
     .isOnQuest 8991
 step
-    >>Mate |cRXP_ENEMY_Jil|r e |cRXP_ENEMY_Soeiro|r. Saque-os pelo |T133318:0|t[|cRXP_LOOT_Parte Direita do Amuleto do Lorde Valthalak|r]
-    .use 22051 >>|cRXP_WARN_Use o|r |T133881:0|t[Braseiro of Beckoning] |cRXP_WARN_na sala de|r |cRXP_ENEMY_Balnazzar|r |cRXP_WARN_para convocar|r |cRXP_ENEMY_Jil|r |cRXP_WARN_e|r |cRXP_ENEMY_Soeiro|r
+    >>Mate |cRXP_ENEMY_Jil|r e |cRXP_ENEMY_Soeiro|r. Saque-os pela |T133318:0|t[|cRXP_LOOT_Parte Direita do Amuleto do Lorde Valthalak|r]
+    .use 22051 >>|cRXP_WARN_Use the|r |T133881:0|t[Braseiro of Beckoning] |cRXP_WARN_in|r |cRXP_ENEMY_Balnazzar's|r |cRXP_WARN_sala para invocar|r |cRXP_ENEMY_Jil|r |cRXP_WARN_and|r |cRXP_ENEMY_Soeiro|r
     .complete 8991,1 --Jarien slain (x1)
     .complete 8991,2 --Sothos slain (x1)
     .collect 22046,1,8991,1 --Right Piece of Lord Valthalak's Amulet (x1)
@@ -2011,18 +2011,18 @@ step
     .isOnQuest 8991
 step
     #completewith next
-    .zone Western Plaguelands >>Vá para |cFFfa9602Terras Pestilentas Ocidentais|r
+    .zone Western Plaguelands >>Voe para |cFFfa9602Terras Pestilentas Ocidentais|r
     .subzoneskip 2057
     .isOnQuest 8992
 step
     #completewith next
     .goto Eastern Kingdoms,52.75,26.41
     .subzone 2057 >>Entre em Scolomântia
-    >>|cRXP_WARN_Tenha um grupo pronto|r
+    >>|cRXP_WARN_Tenha certeza de que tem um grupo pronto|r
     .isOnQuest 8992
 step
     >>Mate |cRXP_ENEMY_Kormok|r. Saque-o pelo |T133318:0|t[|cRXP_LOOT_Parte Direita do Amuleto do Lorde Valthalak|r]
-    .use 22052 >>|cRXP_WARN_Use o|r |T133881:0|t[Braseiro of Beckoning] |cRXP_WARN_na sala do|r |cRXP_ENEMY_Ras Friomúrmuro|r |cRXP_WARN_para convocar|r |cRXP_ENEMY_Kormok|r
+    .use 22052 >>|cRXP_WARN_Use the|r |T133881:0|t[Braseiro of Beckoning] |cRXP_WARN_in|r |cRXP_ENEMY_Ras Frostwhisper's|r |cRXP_WARN_sala para invocar|r |cRXP_ENEMY_Kormok|r
     .complete 8992,1 --Kormok slain (x1)
     .collect 22046,1,8992,1 --Right Piece of Lord Valthalak's Amulet (x1)
     .mob Ras Frostwhisper
@@ -2038,7 +2038,7 @@ step
     .isOnQuest 8992
 step
     .use 22046 >>|cRXP_WARN_Use a|r |T133320:0|t[|cRXP_LOOT_Parte Esquerda do Amuleto do Lorde Valthalak|r]|cRXP_WARN_, |r|T133318:0|t[|cRXP_LOOT_Parte Direita do Amuleto do Lorde Valthalak|r] |cRXP_WARN_e|r |T133316:0|t[|cRXP_LOOT_Parte Superior do Amuleto do Lorde Valthalak|r] |cRXP_WARN_para criar|r |T133314:0|t[|cRXP_LOOT_Amuleto do Lorde Valthalak|r]
-    >>|cRXP_WARN_Se você perdeu a|r |T133316:0|t[|cRXP_LOOT_Parte Superior do Amuleto do Lorde Valthalak|r]|cRXP_WARN_, fale com|r |cRXP_FRIENDLY_Bodley|r |cRXP_WARN_para obtê-la novamente|r
+    >>|cRXP_WARN_Se você perdeu a|r |T133316:0|t[|cRXP_LOOT_Parte Superior do Amuleto do Lorde Valthalak|r]|cRXP_WARN_, fale com|r |cRXP_FRIENDLY_Bodley|r |cRXP_WARN_para obter novamente|r
     .complete 8992,2 --Lord Valthalak's Amulet (x1)
     .use 22047 --Top Piece of Lord Valthalak's Amulet
     .use 21984 --Left Piece of Lord Valthalak's Amulet
@@ -2046,13 +2046,13 @@ step
     .isOnQuest 8992
 step
     #completewith FinalPrepPU
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá para |cFFfa9602Blackrock Mountain|r
 step
     #optional
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .turnin 8989 >>Entregue a Parte Direita do Amuleto do Lorde Valthalak
+    .turnin 8989 >>Entregue A Parte Direita do Amuleto do Lorde Valthalak
     .accept 8994 >>Aceite Preparativos Finais
     .target Bodley
     .isQuestComplete 8989
@@ -2061,7 +2061,7 @@ step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .turnin 8990 >>Entregue a Parte Direita do Amuleto do Lorde Valthalak
+    .turnin 8990 >>Entregue A Parte Direita do Amuleto do Lorde Valthalak
     .accept 8994 >>Aceite Preparativos Finais
     .target Bodley
     .isQuestComplete 8990
@@ -2070,7 +2070,7 @@ step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .turnin 8991 >>Entregue a Parte Direita do Amuleto do Lorde Valthalak
+    .turnin 8991 >>Entregue A Parte Direita do Amuleto do Lorde Valthalak
     .accept 8994 >>Aceite Preparativos Finais
     .target Bodley
     .isQuestComplete 8991
@@ -2078,7 +2078,7 @@ step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .turnin 8992 >>Entregue a Parte Direita do Amuleto do Lorde Valthalak
+    .turnin 8992 >>Entregue A Parte Direita do Amuleto do Lorde Valthalak
     .accept 8994 >>Aceite Preparativos Finais
     .target Bodley
     .isQuestComplete 8992
@@ -2118,52 +2118,52 @@ step
     #completewith next
     .goto Eastern Kingdoms,48.95,63.89
     .subzone 1583 >>Entre no Pico da Rocha Negra
-    >>|cRXP_WARN_Tenha um grupo pronto|r
+    >>|cRXP_WARN_Tenha certeza de que tem um grupo pronto|r
 step
-    >>Abate os |cRXP_ENEMY_Orcs|r em Blackrock Spire. Saqueie-os pelos |cRXP_LOOT_Blackrock Bracers|r
+    >>Mate os |cRXP_ENEMY_Orcs|r em Blackrock Spire. Saqueie os |cRXP_LOOT_Blackrock Bracers|r
     .complete 8994,1 --Blackrock Bracer (x40)
     --too many .mobs, would cause clutter
 step
-    >>|cRXP_BUY_Coletar uma |r |T134821:0|t[Frasco de Poder Supremo]
-    >>|cRXP_WARN_Compre-o da casa de leilões, se possível|r
+    >>|cRXP_BUY_Colete um |r |T134821:0|t[Frasco de Poder Supremo]
+    >>|cRXP_WARN_Compre-o no leilão se possível|r
     .collect 13512,1,8994,1 --Flask of Supreme Power (x1)
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá para |cFFfa9602Blackrock Mountain|r
 step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
     .turnin 8994 >>Entregue Preparativos Finais
-    .accept 8995 >>Aceite Mea Culpa, Lorde Valthalak
+    .accept 8995 >>Aceite Mea Culpa, Lorde Valthalak - Missão
     .target Bodley
 step
     #completewith next
     .goto Eastern Kingdoms,48.95,63.89
-    .subzone 1583 >>Entre no Pico da Rocha Negra Superior
+    .subzone 1583 >>Entre em Pico da Rocha Negra Superior
     >>|cRXP_WARN_Esta é uma masmorra para 10 jogadores. Você ou alguém do seu grupo deve ter o|r |T133343:0|t[|cRXP_LOOT_Selo da Ascensão|r] |cRXP_WARN_para conseguir entrar no Pico Rocha Negra Superior|r
 step
-    .use 22048 >>Abate o |cRXP_ENEMY_Lorde Valthalak|r. |cRXP_WARN_Depois use|r |T133314:0|t[Amuleto do Lorde Valthalak] |cRXP_WARN_no cadáver|r
-    .use 22056 >>|cRXP_WARN_Use o|r |T133881:0|t[Braseiro of Beckoning] |cRXP_WARN_no quarto de|r |cRXP_ENEMY_The Fera|r |cRXP_WARN_para convocar|r |cRXP_ENEMY_Lorde Valthalak|r
+    .use 22048 >>Mate |cRXP_ENEMY_Lorde Valthalak|r. |cRXP_WARN_Depois use|r |T133314:0|t[Amuleto do Lorde Valthalak] |cRXP_WARN_no cadáver|r
+    .use 22056 >>|cRXP_WARN_Use o|r |T133881:0|t[Braseiro of Beckoning] |cRXP_WARN_na sala da|r |cRXP_ENEMY_Fera|r |cRXP_WARN_para convocar|r |cRXP_ENEMY_Lorde Valthalak|r
     .complete 8995,1 --Lord Valthalak slain (x1)
     .complete 8995,2 --Lord Valthalak's Amulet (x1)
     .mob The Beast
     .mob Lord Valthalak
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Espírito de Lorde Valthalak|r que aparece
-    .turnin 8995 >>Entregue Mea Culpa, Lorde Valthalak
-    .accept 8996 >>Aceite Devolver para Bodley
+    .turnin 8995 >>Entregue Mea Culpa, Lorde Valthalak - Missão
+    .accept 8996 >>Aceite Devolver para Bodley - Missão
     .target Spirit of Lord Valthalak
 step
     #completewith next
-    .subzone 254 >>Voe para |cFFfa9602Blackrock Mountain|r
+    .subzone 254 >>Vá para |cFFfa9602Blackrock Mountain|r
 step
     .goto Eastern Kingdoms,48.90,63.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bodley|r
     .use 22115 >>|cRXP_WARN_Use o|r |T133878:0|t[Revelador Extradimensional de Fantasmas] |cRXP_WARN_para revelar|r |cRXP_FRIENDLY_Bodley|r
-    .turnin 8996 >>Entregue Devolver para Bodley
-    .accept 8997 >>Aceite De Volta ao Início << Alliance
-    .accept 8998 >>Aceite De Volta ao Início << Horde
+    .turnin 8996 >>Entregue Devolver para Bodley - Missão
+    .accept 8997 >>Aceite Volta ao Começo << Alliance
+    .accept 8998 >>Aceite Trás para o Começo - Missão << Horde
     .target Bodley
 step << Alliance
     #completewith next
@@ -2171,15 +2171,15 @@ step << Alliance
 step << Alliance
     .goto Ironforge,43.54,52.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deliana|r
-    .turnin 8997 >>Entregue De Volta ao Início
-    .accept 8999 >>Aceite Salvando o Melhor para Último << Druid
-    .accept 9000 >>Aceite Salvando o Melhor para Último << Hunter
-    .accept 9001 >>Aceite Salvando o Melhor para Último << Mage
-    .accept 9002 >>Aceite Salvando o Melhor para Último << Paladin
-    .accept 9003 >>Aceite Salvando o Melhor para Último << Priest
-    .accept 9004 >>Aceite Salvando o Melhor para Último << Rogue
-    .accept 9005 >>Aceite Salvando o Melhor para Último << Warlock
-    .accept 9006 >>Aceite Salvando o Melhor para Último << Warrior
+    .turnin 8997 >>Entregue Trás para o Começo - Missão
+    .accept 8999 >>Aceite Salvando o Melhor para o Último << Druid
+    .accept 9000 >>Aceite Salvando o Melhor para o Último << Hunter
+    .accept 9001 >>Aceite Salvando o Melhor para o Último << Mage
+    .accept 9002 >>Aceite Salvando o Melhor para o Último << Paladin
+    .accept 9003 >>Aceite Salvando o Melhor para Último - Missão << Priest
+    .accept 9004 >>Aceite Salvando o Melhor para o Último << Rogue
+    .accept 9005 >>Aceite Salvando o Melhor para o Último << Warlock
+    .accept 9006 >>Aceite Salvando o Melhor para o Último << Warrior
     .target Deliana
 step << Alliance
     .goto Ironforge,43.54,52.68
@@ -2208,30 +2208,30 @@ step << Alliance
     .collect 16721,1,9004,1 << Alliance Rogue --Shadowcraft Tunic (x1)
     .collect 16700,1,9005,1 << Alliance Warlock --Dreadmist Robe (x1)
     .collect 16730,1,9006,1 << Alliance Warrior --Breastplate of Valor (x1)
-    .turnin 8999 >>Entregue Salvando o Melhor para o Último - Missão << Druid
-    .turnin 9000 >>Entregue Salvando o Melhor para o Último - Missão << Hunter
-    .turnin 9001 >>Entregue Salvando o Melhor para o Último - Missão << Mage
-    .turnin 9002 >>Entregue Salvando o Melhor para o Último - Missão << Paladin
-    .turnin 9003 >>Entregue Salvando o Melhor para o Último - Missão << Priest
-    .turnin 9004 >>Entregue Salvando o Melhor para o Último - Missão << Rogue
-    .turnin 9005 >>Entregue Salvando o Melhor para o Último - Missão << Warlock
-    .turnin 9006 >>Entregue Salvando o Melhor para o Último - Missão << Warrior
+    .turnin 8999 >>Entregue Salvando o Melhor para Último - Missão << Druid
+    .turnin 9000 >>Entregue Salvando the Best for Último - Missão << Hunter
+    .turnin 9001 >>Entregue Salvando the Best for Último - Missão << Mage
+    .turnin 9002 >>Entregue Salvando the Best for Último - Missão << Paladin
+    .turnin 9003 >>Entregue Salvando the Best for Último - Missão << Priest
+    .turnin 9004 >>Entregue Salvando the Best for Último - Missão << Rogue
+    .turnin 9005 >>Entregue Salvando the Best for Último - Missão << Warlock
+    .turnin 9006 >>Entregue Salvando the Best for Último - Missão << Warrior
     .target Deliana
 step << Horde
     #completewith next
-    .zone Orgrimmar >>Voe para |cFFfa9602Orgrimmar|r
+    .zone Orgrimmar >>Vá para |cFFfa9602Orgrimmar|r
 step << Horde
     .goto Orgrimmar,34.96,38.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mokvar|r
-    .turnin 8998 >>Entregue De Volta ao Início
-    .accept 9007 >>Aceite Salvando o Melhor para Último << Druid
-    .accept 9008 >>Aceite Salvando o Melhor para Último << Hunter
-    .accept 9009 >>Aceite Salvando o Melhor para Último << Priest
-    .accept 9010 >>Aceite Salvando o Melhor para Último << Rogue
-    .accept 9011 >>Aceite Salvando o Melhor para Último << Shaman
-    .accept 9012 >>Aceite Salvando o Melhor para Último << Warlock
-    .accept 9013 >>Aceite Salvando o Melhor para Último << Warrior
-    .accept 9014 >>Aceite Salvando o Melhor para Último << Mage
+    .turnin 8998 >>Entregue Trás to the Beginning - Missão
+    .accept 9007 >>Aceite Salvando the Best for Último - Missão << Druid
+    .accept 9008 >>Aceite Salvando the Best for Último - Missão << Hunter
+    .accept 9009 >>Aceite Salvando the Best for Último - Missão << Priest
+    .accept 9010 >>Aceite Salvando the Best for Último - Missão << Rogue
+    .accept 9011 >>Aceite Salvando the Best for Último - Missão << Shaman
+    .accept 9012 >>Aceite Salvando the Best for Último - Missão << Warlock
+    .accept 9013 >>Aceite Salvando the Best for Último - Missão << Warrior
+    .accept 9014 >>Aceite Salvando the Best for Último - Missão << Mage
     .target Mokvar
 step << Horde
     .goto Orgrimmar,34.96,38.28
@@ -2241,7 +2241,7 @@ step << Horde
     >>Você precisará de |T132768:0|t[|cRXP_LOOT_Coroa do Magíster|r] e |T132666:0|t[|cRXP_LOOT_Vestes do Magíster|r] para entregar esta missão << Mage
     >>Você precisará de |T132767:0|t[|cRXP_LOOT_Coroa do Devoto|r] e |T132652:0|t[|cRXP_LOOT_Veste do Devoto|r] para entregar esta missão << Priest
     >>Você precisará de |T133143:0|t[|cRXP_LOOT_Capuz da Arte Sombria|r] e |T132722:0|t[|cRXP_LOOT_Túnica da Arte Sombria|r] para entregar esta missão << Rogue
-    >>Você precisará de |T133072:0|t[|cRXP_LOOT_Coifa dos Elementos|r] e |T132633:0|t[|cRXP_LOOT_Colete dos Elementos|r] para entregar esta missão << Shaman
+    >>Você precisará de |T133072:0|t[|cRXP_LOOT_Coifa dos Elementos|r] e |T132633:0|t[|cRXP_LOOT_Colete dos Elementos|r] para entregar essa missão << Shaman
     >>Você precisará de |T133131:0|t[|cRXP_LOOT_Máscara de Brumedo|r] e |T132690:0|t[|cRXP_LOOT_Veste de Brumedo|r] para entregar esta missão << Warlock
     >>Você precisará de |T133070:0|t[|cRXP_LOOT_Elmo do Bravura|r] e |T132738:0|t[|cRXP_LOOT_Peitoral do Bravura|r] para entregar esta missão << Warrior
     .collect 16720,1,9007,1 << Horde Druid --Wildheart Cowl (x1)
@@ -2260,14 +2260,14 @@ step << Horde
     .collect 16700,1,9012,1 << Horde Warlock --Dreadmist Robe (x1)
     .collect 16730,1,9013,1 << Horde Warrior --Breastplate of Valor (x1)
     .collect 16688,1,9014,1 << Horde Mage --Magister's Robes (x1)
-    .turnin 9007 >>Entregue Salvando o Melhor para o Último - Missão << Druid
-    .turnin 9008 >>Entregue Salvando o Melhor para o Último - Missão << Hunter
-    .turnin 9009 >>Entregue Salvando o Melhor para o Último - Missão << Priest
-    .turnin 9010 >>Entregue Salvando o Melhor para o Último - Missão << Rogue
-    .turnin 9011 >>Entregue Salvando o Melhor para o Último - Missão << Shaman
-    .turnin 9012 >>Entregue Salvando o Melhor para o Último - Missão << Warlock
-    .turnin 9013 >>Entregue Salvando o Melhor para o Último - Missão << Warrior
-    .turnin 9014 >>Entregue Salvando o Melhor para o Último - Missão << Mage
+    .turnin 9007 >>Entregue Salvando the Best for Último - Missão << Druid
+    .turnin 9008 >>Entregue Salvando the Best for Último - Missão << Hunter
+    .turnin 9009 >>Entregue Salvando the Best for Último - Missão << Priest
+    .turnin 9010 >>Entregue Salvando the Best for Último - Missão << Rogue
+    .turnin 9011 >>Entregue Salvando the Best for Último - Missão << Shaman
+    .turnin 9012 >>Entregue Salvando the Best for Último - Missão << Warlock
+    .turnin 9013 >>Entregue Salvando the Best for Último - Missão << Warrior
+    .turnin 9014 >>Entregue Salvando the Best for Último - Missão << Mage
     .target Mokvar
 
 ]])
