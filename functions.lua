@@ -968,9 +968,11 @@ function addon.SetElementComplete(self, disable, skipIfInactive)
     local changed = not (element.completed and element.skip)
     element.completed = true
     element.skip = true
-    addon.updateSteps = true
-    if changed then addon.UpdateMap() end
-    if active and GetTime() - addon.lastStepUpdate > 1 then
+    if changed then
+        addon.updateSteps = true
+        addon.UpdateMap()
+    end
+    if changed and active and GetTime() - addon.lastStepUpdate > 1 then
         addon:QueueMessage("RXP_OBJECTIVE_COMPLETE",element,addon.currentGuide)
     end
 
