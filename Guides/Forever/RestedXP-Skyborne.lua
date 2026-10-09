@@ -63,7 +63,7 @@ step
     .mob Juvenile Vuldren::250873
 step
     >>Kill |cRXP_ENEMY_Pesky Cirrusfly::251169|r.
-    *|cRXP_WARN_Priotize them|r
+    *|cRXP_WARN_Prioritize them|r
     .complete 92462,1 --8/8 Pesky Cirrusfly slain
     .mob Pesky Cirrusfly::251169
 step
@@ -73,7 +73,7 @@ step
     .mob Juvenile Vuldren::250873
 step << Horde Shaman
     #label Juvenile Vuldren Grind
-    .xp 2+480 >>Grind to 480+/900xp to reach level 3 after turn ins for the totem quest.
+    .xp 2+480 >>Grind to 480+/900xp to reach level 3 after turn-ins for the totem quest.
 step
     .goto 2521,43.44,24.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elatrell Featherlight::251368|r.
@@ -90,34 +90,33 @@ step << Warrior
     .money <0.0010
     .xp <1,1
     .train 5242,1 -- Battle Shout (Rank 2) Not Trained
---Quest Bugged readd next week
--- step
---     .goto 2521,43.53,24.34,20,0
---     .goto 2521,43.83,24.13,10,0
---     .goto 2521,43.78,24.38,5,0
---     .goto 2521,43.66,24.25,5,0
---     .goto 2521,43.75,24.09,5,0
---     .goto 2521,43.84,24.3,5,0
---     .goto 2521,43.66,24.23,5,0
---     .goto 2521,43.83,24.18,5,0
---     .goto 2521,43.83,24.32,8,0
---     .goto 2521,43.80,24.05
---     >>Climb the spiral staircase, then |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye::257554|r at the top of the tower.
---     .accept 94414 >>Accept The Anchors of Zephras
---     .target Halaan Hawk-Eye::257554
--- step
---     .goto 2521,43.80,24.05
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye::257554|r.
---     *Move or press ESC to cancel.
---     .complete 94414,1 --View the Anchor Pylon
---     .skipgossipid 137720,1
---     .target Halaan Hawk-Eye::257554
--- step
---     .goto 2521,43.80,24.05
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye::257554|r.
---     *Move or press ESC to cancel.
---     .turnin 94414 >>Turn in The Anchors of Zephras
---     .target Halaan Hawk-Eye::257554
+step
+    .goto 2521,43.53,24.34,20,0
+    .goto 2521,43.83,24.13,10,0
+    .goto 2521,43.78,24.38,5,0
+    .goto 2521,43.66,24.25,5,0
+    .goto 2521,43.75,24.09,5,0
+    .goto 2521,43.84,24.3,5,0
+    .goto 2521,43.66,24.23,5,0
+    .goto 2521,43.83,24.18,5,0
+    .goto 2521,43.83,24.32,8,0
+    .goto 2521,43.80,24.05
+    >>Climb the spiral staircase, then |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk Eye::257554|r at the top of the tower.
+    .accept 94414 >>Accept The Anchors of Zephras
+    .target Halaan Hawk-Eye::257554
+step
+    .goto 2521,43.80,24.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk Eye::257554|r.
+    *Move or press ESC to cancel.
+    .complete 94414,1 --View the Anchor Pylon
+    .skipgossipid 137720,1
+    .target Halaan Hawk-Eye::257554
+step
+    .goto 2521,43.80,24.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk Eye::257554|r.
+    *Move or press ESC to cancel.
+    .turnin 94414 >>Turn in The Anchors of Zephras
+    .target Halaan Hawk-Eye::257554
 step << Skyborne
     .goto 2521,43.53,24.34,20,0
     .goto 2521,43.83,24.13,10,0
@@ -944,7 +943,7 @@ step
     .mob +Al'Aketh Ambusher::251451
 step
     #label Grind6
-    .xp 5+1740 >>Grind to level 5 1740+/2800xp to reach level 6 after turn ins in the next village to be able to train new spells.
+    .xp 5+1740 >>Grind to level 5 1740+/2800xp to reach level 6 after turn-ins in the next village to be able to train new spells.
     -- Maybe only grind here if little XP is needed; otherwise, train abilities after the cave.
 step
     .goto 2521,38.32,30.18
@@ -3032,7 +3031,7 @@ step << Alliance
     .goto 2521,50.7,65.36
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Fillion Flamebreeze::253002|r inside the cave.
     *|cRXP_WARN_These birds have a smaller aggro radius than most enemies|r.
-    *Do not click on him while being in combat with a bird you'll be teleported out of the cave.
+    *|cRXP_WARN_Do not click on him while in combat with a bird, as doing so will teleport you out of the cave|r.
     .complete 92849,1 --1/1 Find Fillion Flamebreeze
 step << Alliance
     .subzoneskip 16672,1 -- Shriekling Den
@@ -3163,7 +3162,7 @@ step
     .mob Ornery Galestrider::251707
 step
     #completewith WhatIsMyPurposeA
-    >>Spam use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies::251622|r
+    >>Repeatedly use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies::251622|r
     >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Flutterfly Dust|r.
     *|cRXP_WARN_If a Flutterfly doesn't fly away, use the swatter on it again|r <<!Mage
     *|cRXP_WARN_You can repeatedly cast|r |T136071:0|t[Polymorph] |cRXP_WARN_on the same Flutterfly and use the swatter to collect multiple piles of dust from it|r. << Mage
@@ -3194,7 +3193,7 @@ step << Horde Shaman
 step << Horde Shaman
     #completewith ShamanLevel10
     #label ShamanFluterflyDustA
-    >>Spam use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies::251622|r
+    >>Repeatedly use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies::251622|r
     >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Flutterfly Dust|r.
     *|cRXP_WARN_If a Flutterfly doesn't fly away, use the swatter on it again|r
     .complete 92683,1 --5/5 Flutterfly Dust
@@ -3229,7 +3228,7 @@ step << Horde Shaman
     .subzoneskip 16638,1
 step << Horde Shaman
     #completewith CallOfFireA
-    >>Spam use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies::251622|r
+    >>Repeatedly use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies::251622|r
     >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Flutterfly Dust|r.
     *|cRXP_WARN_If a Flutterfly doesn't fly away, use the swatter on it again|r
     .complete 92683,1 --5/5 Flutterfly Dust
@@ -3272,7 +3271,7 @@ step << Horde Shaman
 --     .target Spirit Healer::6491
 step << Horde Shaman
     #completewith CallOfFireB
-    >>Spam use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies::251622|r
+    >>Repeatedly use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies::251622|r
     >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Flutterfly Dust|r.
     *|cRXP_WARN_If a Flutterfly doesn't fly away, use the swatter on it again|r
     .complete 92683,1 --5/5 Flutterfly Dust
@@ -3306,7 +3305,7 @@ step
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step
-    >>Spam use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies::251622|r
+    >>Repeatedly use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies::251622|r
     >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Flutterfly Dust|r.
     *|cRXP_WARN_If a Flutterfly doesn't fly away, use the swatter on it again|r
     .complete 92683,1 --5/5 Flutterfly Dust
@@ -3331,8 +3330,8 @@ step
     .accept 92685 >>Accept The Hills Have Eyes << Alliance/Shaman
     .target Aamelia Windfield::252800
 step << Alliance
-    .isOnQuest 92685 -- Blood-Stained Bandit Mask
-    .isQuestNotComplete 92685 -- Blood-Stained Bandit Mask
+    .isOnQuest 92685 -- The Hills Have Eyes
+    .isQuestNotComplete 92685 -- The Hills Have Eyes
     .subzoneskip 16663,1 -- Windfield Orchard
     .goto 2521,45.73,80.86
     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
@@ -3388,7 +3387,7 @@ step << Alliance/Shaman
     .goto 2521,46.71,81.94,30,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
     *|cRXP_WARN_She may be moving between locations during a roleplay sequence. Check both spots|r.
-    *You can jump of the mountain and use |T132845:0|t[Walk on Air] |cRXP_WARN_in midair|r to fly towards the waypoint location.
+    *You can jump off the mountain and use |T132845:0|t[Walk on Air] |cRXP_WARN_in midair|r to fly towards the waypoint location.
     .turnin 92685 >>Turn in The Hills Have Eyes
     .accept 92693 >>Accept Standing Our Ground
     .target Aamelia Windfield::252800
@@ -3708,7 +3707,7 @@ step << Horde Hunter
     .goto 2521,58.339,68.476,35,0
     .goto 2521,53.799,72.161,35,0
     >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Windsong Crawler::254588|r to tame it|r -- .tame 1997
-    *|cRXP_WARN_NOTE:|r If all crabs are dead then you can also train a |cRXP_ENEMY_Ornery Galestrider::251707|r until you find a crab.
+    *|cRXP_WARN_NOTE:|r If all crabs are dead then you can also tame an |cRXP_ENEMY_Ornery Galestrider::251707|r until you find a crab.
     .train 2981 >> |cRXP_WARN_Attack mobs with it to learn|r |T132140:0|t[Claw (Rank 2)]
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Click here for more info about pet training|r
 	.mob Windsong Crawler::254588
@@ -4674,6 +4673,7 @@ step
     #hidewindow
     #completewith ToHermit << Alliance
     #completewith ForestHollowsA << Horde
+    #loop
     .goto 2521,62.83,38.25,35,0
     .goto 2521,62.08,36.7,35,0
     .goto 2521,61.17,35.44,35,0
@@ -5040,15 +5040,15 @@ step << Alliance
     .skipgossipid 136541
     .mob Ayessa Dawnsinger::251968
 step << Alliance
+    .goto 2521,59.94,77.92,30,0
+    .goto 2521,61.45,77.15,30,0
+    .goto 2521,62.13,76.85,30,0
+    .goto 2521,63.35,78.58,30,0
     .goto 2521,66.34,79.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iaadaria Bitterwind::253004|r.
     .turnin 92741 >>Turn in Unwelcome Visitors
     .target Iaadaria Bitterwind::253004
 step << Alliance
-    .goto 2521,59.94,77.92,30,0
-    .goto 2521,61.45,77.15,30,0
-    .goto 2521,62.13,76.85,30,0
-    .goto 2521,63.35,78.58,30,0
     .goto 2521,66.54,79.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
     .complete 92640,3 --1/1 Recruit the High Order
@@ -5302,12 +5302,12 @@ step << Alliance
 --     .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
 --     .cooldown spell,1259416,>0,1
 --     .usespell 1259416
-step << Alliance
-    .goto 2521,66.63,79.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale|r.
-    .turnin 93089 >>Turn in What Comes Next
-    .accept 94946 >>Accept The Magical City of Dalaran
-    .target Elaadrin Evengale
+-- step << Alliance
+--     .goto 2521,66.63,79.95
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale|r.
+--     .turnin 93089 >>Turn in What Comes Next
+--     .accept 94946 >>Accept The Magical City of Dalaran
+--     .target Elaadrin Evengale
 
 
 -- step << Warrior
@@ -5418,7 +5418,7 @@ step << Alliance
     -- .goto 2521,65.44,80.46,15,0
     -- .goto 2521,65.25,81.64,25,0
     *|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denaaris Stargale::259084|r.
-    .turnin -94946 >>Turn in The Magical City of Dalaran
+    -- .turnin -94946 >>Turn in The Magical City of Dalaran
     .accept 94947 >>Accept Welcome to Azeroth
     .skipgossipid 137530
     .target Halavuul Cragwind::252388
@@ -5430,10 +5430,10 @@ step << Alliance
 step << Alliance
     #requires Magical City of Dalaran
     .goto 1416/0,438.93,448.88
-    >>|cRXP_WARN_Do not jump off the zeppelin early you may be pushed off the platform|r.
+    >>|cRXP_WARN_Do not jump off the zeppelin early, as you may be pushed off the platform|r.
     *|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denaaris Stargale::259084|r.
     .target Denaaris Stargale::259084
-    .turnin -94946 >>Turn in The Magical City of Dalaran
+    -- .turnin -94946 >>Turn in The Magical City of Dalaran
     .accept 94947 >>Accept Welcome to Azeroth
 step << Alliance Druid
     .goto 1416/0,385.700,385.400
@@ -5480,7 +5480,7 @@ step << Alliance Hunter
     >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[Cooking] |cRXP_BUY_with later|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
     >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
-    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall and Darkshore shortly:|r
+    >>|cRXP_BUY_Buy the following items for faster turn-ins at Westfall and Darkshore shortly:|r
     >>|T133972:0|t[Strider Meat]
     >>|T133912:0|t[Darkshore Grouper]
     >>|T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
@@ -5499,7 +5499,7 @@ step << Alliance Hunter
     .goto 1453/0,660.28,-8814.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
     >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
-    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall and Darkshore shortly:|r
+    >>|cRXP_BUY_Buy the following items for faster turn-ins at Westfall and Darkshore shortly:|r
     >>|T133972:0|t[Strider Meat]
     >>|T133912:0|t[Darkshore Grouper]
     .collect 5469,5,2178,1 -- Strider Meat (5)
@@ -6064,7 +6064,7 @@ step << Horde !Hunter
     #ah
     .goto 1458/0,224.300,1648.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Cain::15682|r
-    >>|cRXP_BUY_Buy Three|r |T133884:0|t[Murloc Eyes] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_BUY_Buy three|r |T133884:0|t[Murloc Eyes] |cRXP_BUY_from the Auction House|r
     >>|cRXP_WARN_Skip this if you want, it's only a small time saver|r
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .target Auctioneer Cain::15682
@@ -6092,79 +6092,3 @@ step << !Hunter
 
 ]])
 
-RXPGuides.RegisterGuide([[
-#forever
-#version 1
-#name Random Stuff
-#group RestedXP Forever Guide (A) << Alliance
-#group RestedXP Forever Guide (H) << Horde
-#internal
-
-    .goto 2521,41.07,22.33 -- spirit healer thendal village
-    .goto 2521,40.23,63.82 --watchtower
-    .goto 2521,55.01,68.16 --gustberry highlands
--- step
---     .goto 2521,53.96,38.90
---     .accept 98285 >>Accept Camping 101: Engineering
--- step
---     .goto 2521,53.96,38.90
---     .complete 98285,1 --Raise your engineering skill to 20
--- step -- repeatable
---     .goto 2521,63.80,35.99
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vayn Moongaze|r.
---     .turnin 93459 >>Turn in More Al'Aketh Ears
---     .target Vayn Moongaze
-step
-    .goto 2521,59.151,79.778
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayessa Dawnsinger::251968|r.
-    .target Ayessa Dawnsinger::251968
-    .turnin 93738 >>Turn in The Broken Construct
-    .accept 93746 >>Accept A Firm Response
-step
-    .goto 2521,59.953,57.182
-    .complete 93746,1 --|1/1 Confront Belathaan Brightwish
-step
-    .goto 2521,59.942,56.938
-    >>137326
-step
-    .goto 2521,59.155,79.787
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayessa Dawnsinger::251968|r.
-    .target Ayessa Dawnsinger::251968
-    .turnin 93746 >>Turn in A Firm Response
-    .accept 92871 >>Accept In Service of Zephras
-    .accept 93740 >>Accept Blood for Blood
-
-step
-    .goto 2521,63.983,75.093
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
-    .train 5232 >>Train |T1:0|t[Mark of the Wild (Rank 2)]
-    .train 8924 >>Train |T1:0|t[Moonfire (Rank 2)]
-    .target Lotheluum Starbreeze::252359
-
-step
-    .goto 2521,51.241,86.193
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Olariaan Swiftburn::268592|r.
-    .target Olariaan Swiftburn::268592
-    .turnin 97244 >>Turn in Call of Fire
-    .accept 97245 >>Accept Call of Fire
-step
-    .goto 2521,42.418,69.117
-    .complete 97245,1 --|1/1 Kuramaa's Mask
-step
-    .goto 2521,51.240,86.187
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Olariaan Swiftburn::268592|r.
-    .target Olariaan Swiftburn::268592
-    .turnin 97245 >>Turn in Call of Fire
-    .accept 97257 >>Accept Call of Fire
-step
-    .goto 2521,51.265,85.927
-    .complete 97257,1 --|1/1 Complete the Ritual with Olariaan
-step
-    .goto 2521,58.312,78.827
-    .complete 97257,2 --|1/1 Light the Brazier of Eternal Flame
-step
-    .goto 2521,58.315,78.512
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sessaria Skystride::252382|r.
-    .target Sessaria Skystride::252382
-    .turnin 97257 >>Turn in Call of Fire
-]])
