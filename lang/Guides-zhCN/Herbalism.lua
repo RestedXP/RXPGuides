@@ -97,7 +97,7 @@ step << Mage
 step << !Mage
     #completewith next
     .goto Hillsbrad Foothills,60.1,18.6
-    .fly Stonard >>飞往斯通纳德，悲伤沼泽
+    .fly Stonard >>飞往斯通纳德
     .skill herbalism,225,1
 step
     >>先专注于活根草和皇血草，等技能达到160后再采集枯叶草
@@ -157,7 +157,7 @@ step << !Mage
 step << !Mage
     #completewith next
     .goto Stranglethorn Vale,32.5,29.4
-    .fly Stonard >>飞往斯通纳德，悲伤沼泽
+    .fly Stonard >>飞往斯通纳德
     .skill herbalism,300,1
     .zoneskip Swamp of Sorrows
 step
