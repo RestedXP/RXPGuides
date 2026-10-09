@@ -87,12 +87,14 @@ function addon.tracker:SetupTracker()
         self.db.profile.trackedGuid = addon.player.guid
     end
 
-    self:RegisterEvent("CHAT_MSG_COMBAT_XP_GAIN")
     self:RegisterEvent("TIME_PLAYED_MSG")
-    self:RegisterEvent("PLAYER_LEVEL_UP")
-    self:RegisterEvent("QUEST_TURNED_IN")
-    self:RegisterEvent("PLAYER_DEAD")
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
+    if self.playerLevel < self.maxLevel then
+        self:RegisterEvent("CHAT_MSG_COMBAT_XP_GAIN")
+        self:RegisterEvent("PLAYER_LEVEL_UP")
+        self:RegisterEvent("QUEST_TURNED_IN")
+        self:RegisterEvent("PLAYER_DEAD")
+    end
 
     self:SetupInspections()
 
@@ -292,6 +294,7 @@ function addon.tracker:TIME_PLAYED_MSG(_, totalTimePlayed, timePlayedThisLevel)
         self:UpdateLevelSplits("full")
         self.waitingForTimePlayed = false
     end
+
 end
 
 function addon.tracker:PLAYER_LEVEL_UP(_, level)
@@ -1123,6 +1126,8 @@ function addon.tracker:ToggleLevelSplits()
 end
 
 function addon.tracker:RefreshSplitsSummary()
+    if self.playerLevel >= self.maxLevel then return end
+
     if not self.state.lastSplitsUpdate then
         self.state.lastSplitsUpdate = GetTime()
         addon.tracker:UpdateLevelSplits("full")
