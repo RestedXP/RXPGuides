@@ -364,7 +364,7 @@ step
     .isOnQuest 29422
 step
     .goto 378,39.41,29.55
-    >>|cRXP_WARN_Esperar a encenação terminar|r
+    >>|cRXP_WARN_Espere a cena terminar|r
     .complete 29422,1 --1/1 Reignite the Spirit of Fire
     .use 72583
     .target Huo
@@ -712,7 +712,7 @@ step
 step
     .goto 378,68.89,64.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ji Pata de Fogo|r
-    >>|cRXP_WARN_Esperar a encenação terminar|r
+    >>|cRXP_WARN_Espere a cena terminar|r
     .turnin 29774 >>Entregue Na Cara Não!
     .accept 29775 >>Aceite O Espírito e o Corpo de Shen-zin Su
 	.target Ji Firepaw
@@ -732,7 +732,7 @@ step
 	.target Master Shang Xi
 step
     .isOnQuest 29776
-    .goto 378,51.46,48.93,7 >>|cRXP_WARN_Esperar a encenação terminar|r
+    .goto 378,51.46,48.93,7 >>|cRXP_WARN_Espere a cena terminar|r
 step
     #completewith next
     .subzoneskip 5830
@@ -998,7 +998,7 @@ step
 step
     .goto 378,19.45,51.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre Shang Xi|r
-	>>|cRXP_WARN_Esperar a encenação terminar|r
+	>>|cRXP_WARN_Espere a cena terminar|r
     .turnin 29787 >>Entregue Merecido Descanso
     .accept 29788 >>Aceite Natureza Indesejável
     .accept 29789 >>Aceite Pequenos, mas Importantes

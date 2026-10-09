@@ -466,7 +466,7 @@ step << Paladin Cata
 step << Priest Cata
     .goto Eversong Woods,39.41,20.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Máter Arena|r
-    .train 17 >>Treine |T135940:0|t[Palavra de Poder: Escudo]
+    .train 17 >>Aprenda |T135940:0|t[Palavra de Poder: Escudo]
     .target Matron Arena
     .xp <5,1
 step << Rogue Cata

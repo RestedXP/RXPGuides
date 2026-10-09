@@ -634,7 +634,7 @@ step
     .target Sirra Von'Indi
 step
     .goto 47,73.523,46.925
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Aldora Ebanez|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Comandante Aldora Ebanez|r
     .turnin 26794 >>Entregue Morgan Ladimore
     .accept 26795 >>Aceite Mor'Ladim
     .target Commander Althea Ebonlocke

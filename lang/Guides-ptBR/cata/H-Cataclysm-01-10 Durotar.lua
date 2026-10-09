@@ -147,7 +147,7 @@ step << Shaman
 step << Warrior
     .goto 1411,42.88,69.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Frang|r
-    .turnin 2383 >>Entregue Pergaminho Simples
+    .turnin 2383 >>Entregue Pergaminho simples
     .accept 25147 >>Aceite Investida
     .train 100 >>Treine |T132337:0|t[Carga] << Cata
     .target Frang
@@ -265,7 +265,7 @@ step
     .target Galgar
 step
     .goto 1411,43.46,67.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thazz'ril|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Encarregado Thazz'ril|r
     .accept 25134 >>Aceite Peões preguiçosos
     .target Foreman Thazz'ril
 step
@@ -320,17 +320,17 @@ step
     .target Gornek
 step
     .goto 1411,42.47,69.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Canaga|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ranago Arauto da Terra|r
     .accept 25128 >>Aceite Hana'zua
     .target Canaga Earthcaller
 step
     .goto 1411,43.45,67.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zureta Vista-longa|r
-    .accept 25131 >>Aceite Familiares Torpes
+    .accept 25131 >>Aceite Familiares torpes
     .target Zureetha Fargaze
 step
     .goto 1411,43.53,67.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thazz'ril|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Encarregado Thazz'ril|r
     .turnin 37446 >>Entregue Peões preguiçosos
     .target Foreman Thazz'ril
 	.isQuestComplete 37446
@@ -362,7 +362,7 @@ step
     .goto 1411,43.95,58.65,40,0
     .goto 1411,43.11,58.25,40,0
     .goto 1411,45.26,57.37,40,0
-    >>Mate os |cRXP_ENEMY_Familiares torpes|r
+    >>Mate |cRXP_ENEMY_Familiares Torpes|r
     .complete 25131,1 --Vile Familiar (8)
     .mob Vile Familiar
 step
@@ -411,11 +411,11 @@ step
 step
     .goto 1411,43.45,67.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zureta Vista-longa|r
-    .turnin 25131 >>Entregue Familiares Torpes
+    .turnin 25131 >>Entregue Familiares torpes
     .target Zureetha Fargaze
 step
     .goto 1411,43.53,67.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thazz'ril|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Encarregado Thazz'ril|r
     .turnin 25134 >>Entregue Peões preguiçosos
     .accept 25135 >>Aceite A picareta de Thazz'ril
     .target Foreman Thazz'ril
@@ -488,12 +488,12 @@ step
     .goto 1411,43.45,67.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zureta Vista-longa|r
     .turnin 25132 >>Entregue Medalhão da Lâmina Ardente
-    .accept 25133 >>Aceite a missão Apresente-se na Aldeia Sen'jin << Orc
+    .accept 25133 >>Aceite Apresente-se na Aldeia Sen'jin << Orc
     .target Zureetha Fargaze
 step
     .goto 1411,43.53,67.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thazz'ril|r
-    .turnin 25135 >>Entregue A Picareta de Thazz'ril
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Encarregado Thazz'ril|r
+    .turnin 25135 >>Entregue A picareta de Thazz'ril
     .target Foreman Thazz'ril
 
     ]])
@@ -2302,7 +2302,7 @@ step
     .goto 1411,49.21,48.60,40,0
     .goto 1411,50.13,49.39,40,0
     .goto 1411,43.57,50.27,40,0
-    >>Abate os |cRXP_ENEMY_Razormane Quilboars|r e os |cRXP_ENEMY_Razormane Batedores|r
+    >>Mate |cRXP_ENEMY_Javatuscos Crinavalha|r e |cRXP_ENEMY_Batedores Crinavalha|r
     .complete 25190,1 --Razormane Quilboar (4)
     .mob +Razormane Quilboar
     .complete 25190,2 --Razormane Scout (4)
@@ -2343,7 +2343,7 @@ step
 step
     #xprate >1.19
     #completewith FlyORG
-    .hs >>Vá para Razor Hill
+    .hs >>Use sua Pedra de Regresso para ir a Monte Navalha
     .cooldown item,6948,>0,1
 step
     #xprate >1.19
@@ -2354,7 +2354,7 @@ step
     #xprate >1.19
     #completewith next
     .goto 1411,50.86,42.26,40,0
-    .goto 1411,49.58,40.51,12 >>Vá para a torre
+    .goto 1411,49.58,40.51,12 >>Siga em direção à torre
 step
     #xprate >1.19
     .goto 1411,49.60,40.18
@@ -2518,7 +2518,7 @@ step
 step
     #xprate <1.2
     #completewith Orgnil
-    .hs >>Use sua Pedra de Retorno para ir a Razor Hill
+    .hs >>Use sua Pedra de Regresso para ir a Monte Navalha
     .cooldown item,6948,>0
 step
     #xprate <1.2
@@ -2596,7 +2596,7 @@ step
     #xprate <1.2
     #completewith next
     .goto 1411,50.86,42.26,40,0
-    .goto 1411,49.58,40.51,12 >>Vá em direção à torre
+    .goto 1411,49.58,40.51,12 >>Siga em direção à torre
 step
     #xprate <1.2
     .goto 1411,49.60,40.18
@@ -2699,7 +2699,7 @@ step
     #optional
     .goto 1411,46.371,22.942
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rezlak|r
-    .turnin 835 >>Entregue Consolidando as Linhas
+    .turnin 835 >>Entregue Faça o que eu digo...
     .target Rezlak
     .isQuestComplete 835
 step

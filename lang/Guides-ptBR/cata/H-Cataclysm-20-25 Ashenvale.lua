@@ -824,7 +824,7 @@ step
     .goto 63,11.64,35.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Dagrun Martelo da Ira|r
     .accept 13883 >>Aceite Navios de Meia Tigela
-    .accept 26890 >>Aceite A Essência de Aku'mai
+    .accept 26890 >>Aceitar A essência de Aku'mai
     .target Dagrun Ragehammer
 step
     .goto 63,12.66,35.40
@@ -840,7 +840,7 @@ step
 step
     .goto 63,12.77,34.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Muglash|r
-    >>|cRXP_WARN_Isto iniciará uma missão de escolta. Tenha cuidado pois é difícil|r
+    >>|cRXP_WARN_Isso iniciará uma missão de escolta. Cuidado, ela é difícil|r
     .accept 6641,1 >>Aceite Vorsha, a Açoitadora
     .target Muglash
 step
@@ -1014,7 +1014,7 @@ step
 step
     .goto 63,37.77,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Karang Amakkar|r
-    .accept 216 >>Aceite No Meio do Caminho Tinha uma Pedra... e um Pelocardo...
+    .accept 216 >>Aceitar No meio do caminho tinha uma pedra... e um pelocardo...
     .target Karang Amakkar
 step
     .goto 63,37.98,43.87
@@ -1032,7 +1032,7 @@ step
     #label HellscreamsWatchPickups
     .goto 63,38.89,42.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mitsuwa|r
-    .accept 6462 >>Aceite Patuá Trolls
+    .accept 6462 >>Aceite Patuá troll
     .target Mitsuwa
 step
     #loop
