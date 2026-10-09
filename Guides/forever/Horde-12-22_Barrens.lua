@@ -116,6 +116,7 @@ step << !Tauren
 step << !Tauren
     .goto 1413/1,-2595.75,-473.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
+    .turnin 98024 >>Turn in Journey to the Crossroads << Skyborne
     .accept 871 >>Accept Disrupt the Attacks
     .accept 5041 >>Accept Supplies for the Crossroads
     .target Thork
@@ -4461,6 +4462,22 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kuruk|r|cRXP_BUY_. Buy |r |T135423:0|t[Deadly Throwing Axe] |cRXP_BUY_from him|r
     .collect 3137,200,6562,1 --Deadly Throwing Axe (200)
     .target Kuruk
+step << Rogue
+    #optional
+    .goto 1456/1,104.500,-1308.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|
+    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed] 
+    .train 6761 >>Train your class spells
+    .target Boarton Shadetotem
+    .xp <16,1
+    .xp >20,1
+step << Rogue
+    .goto 1456/1,104.500,-1308.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|
+    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed] 
+    .train 1943 >>Train your class spells
+    .target Boarton Shadetotem
+    .xp <20,1
 step
     .goto 1456/1,24.85,-1252.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
