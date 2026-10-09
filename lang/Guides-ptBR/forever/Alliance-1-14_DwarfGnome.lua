@@ -49,7 +49,7 @@ step << Warrior/Warlock/Shaman
     #season 0,1
     .goto 1426,28.792,67.837
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grundel Harkin|r dentro
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .target Grundel Harkin
     .train 6673,1 << Warrior
     .train 348,1 << Warlock
@@ -120,7 +120,7 @@ step << Priest/Mage/Warlock/Shaman
     #season 0,1
     .goto 1426/0,320.30,-6226.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Adlin Altanário|r
-    >>Lixo de Comerciante
+    >>Lixo de Mercador
     >>|cRXP_BUY_Compre 15|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dele|r << !Shaman
     >>|cRXP_BUY_Compre 10|r |T132794:0|t [Água de Fonte Refrescante] |cRXP_BUY_com ele|r << Shaman
     >>|cRXP_WARN_Farme mais |cRXP_ENEMY_Ragged Young Wolves|r se você não tiver dinheiro suficiente|r
@@ -360,7 +360,7 @@ step << Warlock
 #season 0,1
     .goto 1426/0,320.30,-6226.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Adlin Altanário|r
-    >>Lixo de Comerciante
+    >>Lixo de Mercador
     >>|cRXP_BUY_Compre 15|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dele|r
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Adlin Pridedrift
@@ -910,7 +910,7 @@ step << Warrior/Rogue/Paladin
     >>|cRXP_WARN_Isso permitirá que você crie|r |T135248:0|t [Pedras de Amolar Ásperas] |cRXP_WARN_que aumentam seu dano corpo a corpo em 2|r << Warrior/Rogue
     >>|cRXP_WARN_Isso permitirá que você crie|r |T135255:0|t [Contrapesos Ásperos] |cRXP_WARN_que aumentam seu dano corpo a corpo em 2|r << Paladin
     >>|cRXP_WARN_Se você não quiser fazer isso, pule esta etapa|r
-    .train 2018 >>Treine |T136241:0|t[Ferraria]
+    .train 2018 >>Treine |T136241:0|t [Ferraria]
     .target Tognus Flintfire
 step << Shaman
     .goto 1426,45.288,52.193
@@ -4000,9 +4000,9 @@ step
     .goto 1432/0,-3251.5499,-5285.8790,0
     .goto 1432/0,-3342.5748,-5484.5540,0
     .goto 1432/0,-3386.7082,-5462.4790,0
-    >>Clique em |cRXP_PICK_Discarded Pesca Caixa de Ferramentas|r no leito do lago
-    >>|cRXP_WARN_NOTA: Isto pode aparecer em um de muitos locais diferentes. Nade ao redor até ver o ponto de exclamação no minimapa|r
-    >>|cRXP_WARN_Cuidado com o|r |cRXP_ENEMY_Manguadonte Jovem|r
+    >>Clique em |cRXP_PICK_Discarded Pesca Caixa de Ferramentas|r no fundo do lago
+    >>|cRXP_WARN_NOTA: Isso pode aparecer em um de muitos locais diferentes. Nade à volta até ver o ponto de exclamação no seu minimapa|r
+    >>|cRXP_WARN_Cuidado com seres de alto nível|r |cRXP_ENEMY_Manguadonte Jovem|r
     .accept 86614 >>Aceite Prata das Ondas
     .xp <13,1
 step
@@ -4693,9 +4693,9 @@ step
     .goto 1432/0,-3251.5499,-5285.8790,0
     .goto 1432/0,-3342.5748,-5484.5540,0
     .goto 1432/0,-3386.7082,-5462.4790,0
-    >>Clique em |cRXP_PICK_Discarded Pesca Caixa de Ferramentas|r no leito do lago
-    >>|cRXP_WARN_NOTA: Isto pode aparecer em um de muitos locais diferentes. Nade ao redor até ver o ponto de exclamação no minimapa|r
-    >>|cRXP_WARN_Cuidado com o|r |cRXP_ENEMY_Manguadonte Jovem|r
+    >>Clique em |cRXP_PICK_Discarded Pesca Caixa de Ferramentas|r no fundo do lago
+    >>|cRXP_WARN_NOTA: Isso pode aparecer em um de muitos locais diferentes. Nade à volta até ver o ponto de exclamação no seu minimapa|r
+    >>|cRXP_WARN_Cuidado com seres de alto nível|r |cRXP_ENEMY_Manguadonte Jovem|r
     .accept 86614 >>Aceite Prata das Ondas
     .xp <13,1
 step
@@ -4720,7 +4720,7 @@ step
     .goto 1432/0,-4290.89,-5645.89,25 >>Vá para o Albergue Andarilho Distante
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dário, o Novato|r
-    .accept 257 >>Aceite Jactância do Caçador
+    .accept 257 >>Aceite A Jactância do Caçador
     .goto 1432/0,-4296.68,-5690.590
     .target Daryl the Youngling
 step
@@ -4735,14 +4735,14 @@ step
     .goto 1432/0,-4108.01,-5633.01,60,0
     .goto 1432/0,-4100.01,-5518.59,60,0
     .goto 1432/0,-4202.90,-5667.78
-    >>Abate os |cRXP_ENEMY_Mountain Buzzards|r
-    >>|cRXP_WARN_Você deve completar esta missão e retornar para |cRXP_FRIENDLY_Dário, o Novato|r em 15 minutos. Se falhar na missão, abandone-a e pegue-a novamente|r
+    >>Mate os |cRXP_ENEMY_Mountain Buzzards|r
+    >>|cRXP_WARN_Você deve completar esta missão e retornar para |cRXP_FRIENDLY_Dário, o Novato|r dentro de 15 minutos. Se você falhar, abandone-a e pegue-a novamente|r
     .complete 257,1 -- Mountain Buzzard slain (6)
     .mob Mountain Buzzard
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dário, o Novato|r
     .goto 1432/0,-4296.68,-5690.590
-    .turnin 257 >>Entregue Jactância do Caçador
+    .turnin 257 >>Entregue A Jactância do Caçador
     .target Daryl the Youngling
 step
     .goto 1432/0,-4269.26,-5653.23
@@ -4782,7 +4782,7 @@ step
     .train 2550 >>Treine |T133971:0|t[Culinária]
 step
     .goto 1455/0,-1303.75,-4631.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o Prospector Lançatroz|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Prospector Lançatroz|r
     .turnin 301 >>Entregue Apresente-se a Altaforja
     .target Prospector Stormpike
 step

@@ -196,7 +196,7 @@ step << Warlock
 step << Warlock
     #optional
     #completewith next
-    .cast 688 >>|cRXP_WARN_Lançe|r |T136218:0|t[Evocar Diabrete]
+    .cast 688 >>|cRXP_WARN_Lance|r |T136218:0|t [Invocar Diabrete]
     .usespell 688
 step << Warlock
     .goto Elwynn Forest,48.17,42.94
@@ -280,7 +280,7 @@ step << Mage/Warlock
     .goto Elwynn Forest,47.486,41.566
     >>|cRXP_WARN_Assim que você tiver 50c em itens de lixo para vender|r
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Irmão Dânio|r
-    >>Lixo de Comerciante
+    >>Lixo de Mercador
     >>|cRXP_BUY_Compre 10|r |T132794:0|t [Água de Fonte Refrescante] |cRXP_BUY_com ele|r
     .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target Brother Danil
@@ -417,7 +417,7 @@ step << Priest
 step << Priest/Mage/Warlock
     .goto Elwynn Forest,47.486,41.566
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Irmão Dânio|r
-    >>Lixo de Comerciante
+    >>Lixo de Mercador
     >>|cRXP_BUY_Compre mais 10|r |T132794:0|t [Água de Fonte Refrescante] |cRXP_BUY_com ele|r
     >>|cRXP_WARN_Certifique-se de guardar 10c ou mais para depois|r << Priest/Mage
     .collect 159,10 --Collect Refreshing Spring Water (x10)
@@ -498,7 +498,7 @@ step << Priest/Paladin
 step << !Priest !Mage !Warlock !Rogue !Paladin
     .goto Elwynn Forest,47.691,41.417
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Godrico Rothgar|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .target Godric Rothgar
 step << Mage
     .goto Elwynn Forest,48.22,41.47
@@ -967,14 +967,14 @@ step << Warrior/Rogue/Paladin
     >>|cRXP_WARN_Isso permitirá que você crie|r |T135248:0|t [Pedras de Amolar Ásperas] |cRXP_WARN_que aumentam seu dano corpo a corpo em 2|r << Warrior/Rogue
     >>|cRXP_WARN_Isso permitirá que você crie|r |T135255:0|t [Contrapesos Ásperos] |cRXP_WARN_que aumentam seu dano corpo a corpo em 2|r << Paladin
     >>|cRXP_WARN_Se você não quiser fazer isso, pule esta etapa|r
-    .train 2018 >>Treine |T136241:0|t[Ferraria]
+    .train 2018 >>Treine |T136241:0|t [Ferraria]
     .target Smith Argus
 step << Mage/Priest/Warlock
     #optional
     #completewith next
     .goto Elwynn Forest,41.706,65.786
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_André Cravo|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .target Andrew Krighton
 --  .money >1.0
 step
@@ -1514,7 +1514,7 @@ step
     #completewith CandlesEnd
     .goto Elwynn Forest,41.529,65.900
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Corina Ácero|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .target Corina Steele
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,>3.3 << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,>3.8 << Warrior
@@ -2133,7 +2133,7 @@ step
     #label GoldshireVendor
     .goto Elwynn Forest,41.529,65.900
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Corina Ácero|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .target Corina Steele
     .money >0.75
 step

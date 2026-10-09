@@ -179,7 +179,7 @@ step << Mage
     #season 2
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Adlin Altanário|r
-    >>Lixo de Comerciante
+    >>Lixo de Mercador
     >>|cRXP_BUY_Compre 10|r |T132794:0|t [Água de Fonte Refrescante] |cRXP_BUY_com ele|r
     >>|cRXP_WARN_Farme mais |cRXP_ENEMY_Ragged Young Wolves|r se você não tiver dinheiro suficiente|r
     >>|cRXP_WARN_Tenha certeza de que você guarda 10c para depois|r
@@ -190,7 +190,7 @@ step << !Priest !Mage !Warlock !Warrior !Rogue
     #completewith next << !Hunter
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Adlin Altanário|r
-    >>Lixo de Comerciante << Hunter
+    >>Lixo de Mercador << Hunter
     >>|cRXP_BUY_Compre 600|r |T132384:0|t[Luz Shots] |cRXP_BUY_dele|r << Hunter
     .vendor >>|cRXP_WARN_Venda lixo|r << !Hunter
     .collect 2516,600 << Hunter --Light Shot (600)
@@ -620,7 +620,7 @@ step << Paladin/Warlock/Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Durnan Cortapelo|r dentro
     .turnin 3364 >>Entregue Rabo-de-galo Escaldante Entrega
     .accept 3365 >>Aceite Trazer a Caneca
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .target Durnan Furcutter
     .isQuestAvailable 317
 step << Hunter
@@ -792,7 +792,7 @@ step << !Paladin !Warlock !Hunter
     >>|cRXP_WARN_Se você falhou a missão, pule este passo|r
     .turnin 3364 >>Entregue Rabo-de-galo Escaldante Entrega
     .accept 3365 >>Aceite Trazer a Caneca
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .target Durnan Furcutter
     .isOnQuest 3364
 step << !Paladin !Warlock !Hunter
@@ -801,7 +801,7 @@ step << !Paladin !Warlock !Hunter
     .goto Dun Morogh,28.769,66.377
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Durnan Cortapelo|r
     .accept 3365 >>Aceite Trazer a Caneca
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .target Durnan Furcutter
     .isQuestTurnedIn 3364
     .isQuestAvailable 317
@@ -1303,7 +1303,7 @@ step << Warrior/Rogue/Paladin
     >>|cRXP_WARN_Isso permitirá que você crie|r |T135248:0|t [Pedras de Amolar Ásperas] |cRXP_WARN_que aumentam seu dano corpo a corpo em 2|r << Warrior/Rogue
     >>|cRXP_WARN_Isso permitirá que você crie|r |T135255:0|t [Contrapesos Ásperos] |cRXP_WARN_que aumentam seu dano corpo a corpo em 2|r << Paladin
     >>|cRXP_WARN_Se você não quiser fazer isso, pule esta etapa|r
-    .train 2018 >>Treine |T136241:0|t[Ferraria]
+    .train 2018 >>Treine |T136241:0|t [Ferraria]
     .target Tognus Flintfire
 step
     #requires DeleteOldDaggers << Rogue

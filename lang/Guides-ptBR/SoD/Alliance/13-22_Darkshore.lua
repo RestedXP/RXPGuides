@@ -696,7 +696,7 @@ step << NightElf Warrior/NightElf Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kordram Rochamalho|r e |cRXP_FRIENDLY_Delfrum Barbagulha|r
     .train 2575 >>Treine |T134708:0|t[Mineração]
     .goto Darkshore,38.249,41.008
-    .train 2018 >>Treine |T136241:0|t[Ferraria]
+    .train 2018 >>Treine |T136241:0|t [Ferraria]
     .goto Darkshore,38.191,40.935
     >>|cRXP_WARN_Isso permitirá que você crie|r |T135248:0|t [Pedras de Amolar Ásperas] |cRXP_WARN_que aumentam seu dano corpo a corpo em 2|r << Warrior/Rogue
     >>|cRXP_WARN_Se você não quiser fazer isso, pule esta etapa|r
@@ -4683,7 +4683,7 @@ step << Rogue
     #label RogueTrainNoDMEnd
     .goto StormwindClassic,74.65,52.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Osborne, o Homem da Madrugada|r
-    >>Certifique-se de treinar [Abrir Fechadura] pois você precisará disso mais tarde
+    >>Certifique-se de treinar [Abrir Fechadura], pois você vai precisar disso mais tarde
     >>|cRXP_WARN_TENHA MUITO CUIDADO com sua gestão de dinheiro nos próximos passos. Compre apenas feitiços essenciais. Você precisará ter dinheiro para Esfumar-se em breve e 75 pratas para obter uma runa após retornar às Terras do Interior|r
     .train 1804 >>Treine [Abrir Fechadura]
     .trainer >>Treine suas magias de classe
@@ -5169,7 +5169,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Osborne, o Homem da Madrugada|r
     >>|cRXP_WARN_Tenha muito cuidado com seu gerenciamento de dinheiro nos próximos passos. Compre apenas habilidades essenciais. Você precisará de 75 de prata para obter uma runa após um par de missões nos Pântanos|r
     >>|cRXP_WARN_Treine|r |T132331:0|t[Sumir] e |T132320:0|t[Furtividade] (nível 2) Você precisará dela para desbloquear |T236270:0|t[Mistura Mortífera] em breve
-    .train 1856 >>Treine |T132331:0|t[Sumir]
+    .train 1856 >>Aprenda |T132331:0|t[Sumir]
     .train 1785 >>Treine |T132320:0|t[Furtividade] (nível 2)
     .target Osborne the Night Man
     .dungeon !DM
@@ -5824,7 +5824,7 @@ step << Rogue
     #label RogueTrainDMEnd
     .goto StormwindClassic,74.65,52.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Osborne, o Homem da Madrugada|r
-    >>Certifique-se de treinar [Abrir Fechadura] pois você precisará disso mais tarde
+    >>Certifique-se de treinar [Abrir Fechadura], pois você vai precisar disso mais tarde
     .train 1804 >>Treine [Abrir Fechadura]
     .trainer >>Treine suas magias de classe
     .target Osborne the Night Man
