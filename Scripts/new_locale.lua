@@ -1,5 +1,4 @@
 --
-
 -- ActiveItemFrame.lua file
 
 L["Active Items"] = ""
@@ -137,84 +136,6 @@ L["Alchemist Gribble"] = ""
 L["Altaa"] = ""
 L["Skreah"] = ""
 
--- DB\classic\db.lua file
-
-L["Mining & Engineering"] = ""
-L["Mining & Blacksmithing"] = ""
-L["Herbalism & Alchemy"] = ""
-L["Skinning & Leatherworking"] = ""
-L["Mining & Skinning"] = ""
-L["Mining & Herbalism"] = ""
-L["Herbalism & Skinning"] = ""
-L["Skinning"] = ""
-L["Herbalism"] = ""
-L["Mining "] = ""
-L["None"] = ""
-L["Loot: %s"] = ""
-L["Quest XP: %s"] = ""
-L["Travel Speed: %s"] = ""
-L["Terrible"] = ""
-L["Bad"] = ""
-L["Good"] = ""
-L["Excellent"] = ""
-
--- DB\classic\rares.lua file
-
-L["Evalcharr\", \"Fantôme de Varo"] = ""
-
--- DB\mop\rares.lua file
-
-L["Displays Pandaria rare mobs on your map"] = ""
-L["Displays Pandaria treasures on your map"] = ""
-
--- DB\questDB.lua file
-
-L["Showing expected Quest Log, scroll down to view backup quests"] = ""
-L["Quest Priority"] = ""
-L["Turn-in Route"] = ""
-L["Preparation Guide"] = ""
-L["\n\n--- Backup Quests ---"] = ""
-L["Click to view the %d best quests"] = ""
-L["Southshore"] = ""
-L["Darnassus"] = ""
-L["Cenarion Hold"] = ""
-L["Everlook"] = ""
-L["Grom'gol Base Camp"] = ""
-L["Orgrimmar"] = ""
-L["Set your Hearthstone to |cRXP_WARN_%s|r"] = ""
-L["RestedXP Preparation Guide: Quest Database"] = ""
-L["Refresh"] = ""
-L["Missing"] = ""
-L["Prepared Quests"] = ""
-L["Not Prepared"] = ""
-L["All Quests"] = ""
-L["RestedXP Preparation Guide: Quest Priority"] = ""
-L["Use Recommended"] = ""
-L["Apply Changes"] = ""
-L["This will reload the UI to apply changes"] = ""
-L["RestedXP Preparation Guide: Turn in route"] = ""
-L["Gnomish Engineering"] = ""
-L["Goblin Engineering"] = ""
-L["Mage Portals"] = ""
-L["Wrath of the Blue Flight Teleport"] = ""
-L["If you have this quest available you get a free teleport from Winterspring to Western Plaguelands"] = ""
-L["Silithus Start"] = ""
-L["Burning Steppes Start"] = ""
-L["Turn in Route"] = ""
-L["Step skipped: This is part of a quest you don't have"] = ""
-L["%dxp %s (%d)"] = ""
-L["TBC"] = ""
-L["Quest Log Quests not yet prepared"] = ""
-L["Quests not yet prepared"] = ""
-L["Total XP: %s\n%s"] = ""
-
--- DB\shared.lua file
-
-L["RXP MoP 1-80 (A)"] = ""
-L["RXP MoP 1-60 (A)"] = ""
-L["RXP MoP 1-80 (H)"] = ""
-L["RXP MoP 1-60 (H)"] = ""
-
 -- functions.lua file
 
 L[", "] = ""
@@ -337,6 +258,9 @@ L["Disable it if you're experiencing navigation issues."] = ""
 L["has known incompatibilities with Proximity targeting TargetUnit() calls."] = ""
 L["Install BugSack or disable Targeting -> 'Only show when in range'."] = ""
 
+-- HSBatching.lua file
+
+
 -- InventoryManager.lua file
 
 L["Delete Cheapest Junk Item"] = ""
@@ -405,11 +329,8 @@ L["Invalid data"] = ""
 L["Error Importing: "] = ""
 L["Importing %s"] = ""
 
--- locale\enUS.lua file
+-- Locale.lua file
 
-L["Active Item Button %d"] = ""
-L["Active Friendly Target Button %d"] = ""
-L["Active Enemy Target Button %d"] = ""
 
 -- map.lua file
 
@@ -469,9 +390,7 @@ L["Hides the main window"] = ""
 L["Hide waypoint arrow"] = ""
 L["Hide Active Item window"] = ""
 L["Vendor Treasures"] = ""
-L["Enable Inventory Manager"] = ""
 L["Enable embedded Cpt. Stadics' Vendor Treasures"] = ""
-L["Enable Inventory Manager"] = ""
 L["Show Flight Timers"] = ""
 L["Enable Group Settings"] = ""
 L["Automation"] = ""
@@ -494,6 +413,7 @@ L["Display Quest Link"] = ""
 L["Display quest tooltips on steps"] = ""
 L["Brand Menus"] = ""
 L["Apply the V2 style to RestedXP menus"] = ""
+L["Enable Inventory Manager"] = ""
 L["Show junk item indicator"] = ""
 L["Any items marked as junk will display a gold coin icon on the top left corner of the item icon within your bags"] = ""
 L["Discard junk items if bag is full"] = ""
@@ -518,9 +438,6 @@ L["Highlight or list levels for each talent"] = ""
 L["Talent Plan Number"] = ""
 L["Sets maximum number of talents to layout"] = ""
 L["Guide Routing"] = ""
-L["Guide progress was saved by another character. Reset it?"] = ""
-L["Reset Guide Progress"] = ""
-L["Clear guide progress for current character"] = ""
 L["Detect Season"] = ""
 L["Detect Rate"] = ""
 L["Auto detects seasonal buffs and adjust the routes accordingly"] = ""
@@ -547,6 +464,7 @@ L["Hardcore mode"] = ""
 L["Adjust the leveling routes to the deathless ruleset"] = ""
 L["Season"] = ""
 L["Adjust the leveling routes to the current season"] = ""
+L["None"] = ""
 L["Season of Mastery"] = ""
 L["Season of Discovery"] = ""
 L["Multibox mode"] = ""
@@ -804,9 +722,377 @@ L["RXP Gold"] = ""
 L["DarkMode"] = ""
 L["RXP Green"] = ""
 
+-- Timers.lua file
+
+
 -- Tips.lua file
 
 L["Addon Tips"] = ""
+
+-- DB\questDB.lua file
+
+L["Showing expected Quest Log, scroll down to view backup quests"] = ""
+L["Quest Priority"] = ""
+L["Turn-in Route"] = ""
+L["Preparation Guide"] = ""
+L["\n\n--- Backup Quests ---"] = ""
+L["Click to view the %d best quests"] = ""
+L["Southshore"] = ""
+L["Darnassus"] = ""
+L["Cenarion Hold"] = ""
+L["Everlook"] = ""
+L["Grom'gol Base Camp"] = ""
+L["Orgrimmar"] = ""
+L["Set your Hearthstone to |cRXP_WARN_%s|r"] = ""
+L["RestedXP Preparation Guide: Quest Database"] = ""
+L["Refresh"] = ""
+L["Missing"] = ""
+L["Prepared Quests"] = ""
+L["Not Prepared"] = ""
+L["All Quests"] = ""
+L["RestedXP Preparation Guide: Quest Priority"] = ""
+L["Use Recommended"] = ""
+L["Apply Changes"] = ""
+L["This will reload the UI to apply changes"] = ""
+L["RestedXP Preparation Guide: Turn in route"] = ""
+L["Gnomish Engineering"] = ""
+L["Goblin Engineering"] = ""
+L["Mage Portals"] = ""
+L["Wrath of the Blue Flight Teleport"] = ""
+L["If you have this quest available you get a free teleport from Winterspring to Western Plaguelands"] = ""
+L["Silithus Start"] = ""
+L["Burning Steppes Start"] = ""
+L["Turn in Route"] = ""
+L["Step skipped: This is part of a quest you don't have"] = ""
+L["%dxp %s (%d)"] = ""
+L["TBC"] = ""
+L["Quest Log Quests not yet prepared"] = ""
+L["Quests not yet prepared"] = ""
+L["Total XP: %s\n%s"] = ""
+
+-- DB\shared.lua file
+
+L["RXP MoP 1-80 (A)"] = ""
+L["RXP MoP 1-60 (A)"] = ""
+L["RXP MoP 1-80 (H)"] = ""
+L["RXP MoP 1-60 (H)"] = ""
+
+-- DB\cata\db.lua file
+
+
+-- DB\cata\flightData.lua file
+
+
+-- DB\cata\quest.lua file
+
+
+-- DB\cata\rares.lua file
+
+
+-- DB\cata\spells.lua file
+
+
+-- DB\cata\statWeights.lua file
+
+
+-- DB\classic\dangerousMobs.lua file
+
+
+-- DB\classic\db.lua file
+
+L["Mining & Engineering"] = ""
+L["Mining & Blacksmithing"] = ""
+L["Herbalism & Alchemy"] = ""
+L["Skinning & Leatherworking"] = ""
+L["Mining & Skinning"] = ""
+L["Mining & Herbalism"] = ""
+L["Herbalism & Skinning"] = ""
+L["Skinning"] = ""
+L["Herbalism"] = ""
+L["Mining "] = ""
+L["Loot: %s"] = ""
+L["Quest XP: %s"] = ""
+L["Travel Speed: %s"] = ""
+L["Terrible"] = ""
+L["Bad"] = ""
+L["Good"] = ""
+L["Excellent"] = ""
+
+-- DB\classic\flightData.lua file
+
+
+-- DB\classic\quest.lua file
+
+
+-- DB\classic\spells-sod.lua file
+
+
+-- DB\classic\spells.lua file
+
+
+-- DB\classic\SpiritHealerDB.lua file
+
+
+-- DB\classic\StatWeights.lua file
+
+
+-- DB\forever\dangerousMobs.lua file
+
+
+-- DB\forever\db.lua file
+
+
+-- DB\forever\flightData.lua file
+
+
+-- DB\forever\quest.lua file
+
+
+-- DB\forever\spells.lua file
+
+
+-- DB\forever\SpiritHealerDB.lua file
+
+
+-- DB\forever\StatWeights.lua file
+
+
+-- DB\mainline\db.lua file
+
+L["RestedXP Speed Leveling"] = ""
+L["a) Exile's Reach"] = ""
+L["ab) Shadowglen"] = ""
+L["ab) Northshire Valley"] = ""
+L["ab) New Tinkertown"] = ""
+L["ab) Ammen Vale"] = ""
+L["ab) Worgen Intro"] = ""
+L["a) Pandaren Intro"] = ""
+L["a) Dracthyr Intro"] = ""
+L["a) VoidElf Intro"] = ""
+L["a) LightforgedDraenei Intro"] = ""
+L["a) EarthenDwarf Intro"] = ""
+L["a) KulTiran Intro"] = ""
+L["a) Mechagnome Intro"] = ""
+L["a) DarkIronDwarf Intro"] = ""
+L["a) DK Intro"] = ""
+L["a) New DK Intro"] = ""
+L["ab) Deathknell"] = ""
+L["ab) Camp Narache"] = ""
+L["ab) Sunstrider Isle"] = ""
+L["ab) Goblin Intro"] = ""
+L["a) Nightborne Intro"] = ""
+L["a) HighmountainTauren"] = ""
+L["a) MagharOrc Intro"] = ""
+L["a) ZandalariTroll Intro"] = ""
+L["a) Vulpera Intro"] = ""
+L["a) DH Intro"] = ""
+L["a) Intro"] = ""
+L["a) Arathi Highlands Returning Player"] = ""
+L["a) Haranir Intro"] = ""
+L["ab) Dwarf Coldridge Vallley"] = ""
+
+-- DB\mainline\flightData.lua file
+
+
+-- DB\mainline\quest.lua file
+
+
+-- DB\mainline\rares.lua file
+
+
+-- DB\mop\db.lua file
+
+
+-- DB\mop\flightData.lua file
+
+
+-- DB\mop\quest.lua file
+
+
+-- DB\mop\rares.lua file
+
+L["Displays Pandaria rare mobs on your map"] = ""
+L["Displays Pandaria treasures on your map"] = ""
+
+-- DB\mop\spells.lua file
+
+
+-- DB\mop\statWeights.lua file
+
+
+-- DB\tbc\db.lua file
+
+
+-- DB\tbc\flightData.lua file
+
+
+-- DB\tbc\quest.lua file
+
+
+-- DB\tbc\spells.lua file
+
+
+-- DB\tbc\statWeights.lua file
+
+
+-- DB\wotlk\db.lua file
+
+
+-- DB\wotlk\flightData.lua file
+
+
+-- DB\wotlk\quest.lua file
+
+
+-- DB\wotlk\spells.lua file
+
+
+-- lang\Guides-ptBR\Classic-0.5.lua file
+
+
+-- lang\Guides-ptBR\Classic-Horde-Mage-12-21.lua file
+
+
+-- lang\Guides-ptBR\Herbalism.lua file
+
+
+-- lang\Guides-ptBR\Import.lua file
+
+
+-- lang\Guides-ptBR\Mining.lua file
+
+
+-- lang\Guides-ptBR\Skinning.lua file
+
+
+-- lang\Guides-ptBR\cata\A-01-10_dunmorogh.lua file
+
+
+-- lang\Guides-ptBR\cata\A-01-10_ElwynnForest.lua file
+
+
+-- lang\Guides-ptBR\cata\A-01-10_Gilneas.lua file
+
+
+-- lang\Guides-ptBR\cata\A-18-21_redridge.lua file
+
+
+-- lang\Guides-ptBR\cata\A-20-25_duskwood.lua file
+
+
+-- lang\Guides-ptBR\Dailies\Cooking Daily Quests.lua file
+
+
+-- lang\Guides-ptBR\Dailies\Ebon Blade Daily Quests.lua file
+
+
+-- lang\Guides-ptBR\Dailies\Fishing Daily Quests.lua file
+
+
+-- lang\Guides-ptBR\Dailies\Icecrown Gunship Daily Quests.lua file
+
+
+-- lang\Guides-ptBR\Dailies\Jewelcrafting Daily Quests.lua file
+
+
+-- lang\Guides-ptBR\Dailies\Kaluak Daily Quests.lua file
+
+
+-- lang\Guides-ptBR\Dailies\Northrend Best GPH Daily Quests.lua file
+
+
+-- lang\Guides-ptBR\Dailies\The Sons of Hodir Daily Quests.lua file
+
+
+-- lang\Guides-ptBR\Dailies\The Sons of Hodir Pre Quests.lua file
+
+
+-- lang\Guides-ptBR\forever\Horde-Mage-12-21.lua file
+
+
+-- lang\Guides-ptBR\forever\dungeon\Alliance-1-10_NightElf.lua file
+
+
+-- lang\Guides-ptBR\forever\dungeon\Alliance-1-13_Human.lua file
+
+
+-- lang\Guides-ptBR\forever\dungeon\Alliance-1-14_DwarfGnome.lua file
+
+
+-- lang\Guides-ptBR\forever\dungeon\Horde-01-12_Durotar.lua file
+
+
+-- lang\Guides-ptBR\forever\dungeon\Horde-01-14_Undead.lua file
+
+
+-- lang\Guides-ptBR\forever\dungeon\Horde-1-12_Mulgore.lua file
+
+
+-- lang\Guides-ptBR\forever\dungeon\RestedXP-Skyborne.lua file
+
+
+-- lang\Guides-ptBR\Retail\Collectables\Allied Races.Lua file
+
+
+-- lang\Guides-ptBR\Retail\Collectables\Knowledge Treasures.Lua file
+
+
+-- lang\Guides-ptBR\Retail\Collectables\Lorewalking.Lua file
+
+
+-- lang\Guides-ptBR\Retail\Collectables\Skyriding Glyphs.Lua file
+
+
+-- lang\Guides-ptBR\Retail\Endgame\Midnight\Storylines.Lua file
+
+
+-- lang\Guides-ptBR\SoD\Attunements.lua file
+
+
+-- lang\Guides-ptBR\SoD\Horde.lua file
+
+
+-- lang\Guides-ptBR\SoD\Alliance\10-16_Loch.lua file
+
+
+-- lang\Guides-ptBR\SoD\Alliance\16-22_Westfall-Redridge.lua file
+
+
+-- lang\Guides-ptBR\SurvivalGuide\A-Classic-Alliance-11-16_NightElf.lua file
+
+
+-- lang\Guides-ptBR\SurvivalGuide\A-Hardcore-19-20 Redridge.lua file
+
+
+-- lang\Guides-ptBR\tbc\H-58Boost.lua file
+
+
+-- lang\Guides-zhCN\Import.lua file
+
+
+-- lang\Guides-zhCN\Retail\Collectables\Allied Races.Lua file
+
+
+-- lang\Guides-zhCN\Retail\Collectables\Knowledge Treasures.Lua file
+
+
+-- lang\Guides-zhCN\Retail\Collectables\Lorewalking.Lua file
+
+
+-- lang\Guides-zhCN\Retail\Collectables\Skyriding Glyphs.Lua file
+
+
+-- lang\Guides-zhCN\Retail\Endgame\Midnight\Storylines.Lua file
+
+
+-- locale\enUS.lua file
+
+L["Active Item Button %d"] = ""
+L["Active Friendly Target Button %d"] = ""
+L["Active Enemy Target Button %d"] = ""
+
+-- UI\V2\AuctionHouse.lua file
+
 
 -- UI\V2\Core.lua file
 
@@ -814,20 +1100,6 @@ L["Welcome to RestedXP"] = ""
 L["Select a guide:"] = ""
 L["Open Settings"] = ""
 L["Browse Guides"] = ""
-
--- UI\V2\GuideConfigurator.lua file
-
-L["Welcome, select a guide."] = ""
-L["This guide delivers the fastest path from level 1 to %s for every class and zone. Optimized for minimal downtime, it includes the best quest routes, grinding spots, and dungeon segments to reach max level quickly and efficiently."] = ""
-L["Select Speedrun Guide"] = ""
-L["This guide delivers the safest path from level 1 to %s for every class and zone. Optimized for maximum survivability it includes the best quest routes, grinding spots, and dungeon segments to reach max level safely and efficiently."] = ""
-L["Select Survival Guide"] = ""
-L["Select your preferred features to customize the guide. The leveling route automatically adapts to your choices."] = ""
-L["Add dungeons to your journey. The guide will adjust to your selection accordingly and include dungeon quests to your route."] = ""
-L["Show elite quests and routes difficult quests early in the guide. Leave unchecked, if you prefer a solo experience."] = ""
-L["Enable Dungeons"] = ""
-L["Adds Dungeon Quests to your route. This is helpful to avoid longer grinding sessions."] = ""
-L["Configure your guide."] = ""
 
 -- UI\V2\GuideImporter.lua file
 

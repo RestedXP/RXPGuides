@@ -1,6 +1,6 @@
 
 local _,addon = ...
-
+local L = addon.locale.Get
 
 addon.professionID = {
     alchemy = {2259, 3101, 3464, 11611, 28596, 51304},
@@ -24,38 +24,39 @@ C_Spell.RequestLoadSpellData(9134) -- herbalism
 C_Spell.RequestLoadSpellData(33388) -- riding
 local faction = UnitFactionGroup("player")
 
+local group = L"RestedXP Speed Leveling"
 local defaultGuideList = {
-    [3455] = "RestedXP Speed Leveling\\a) Exile's Reach "..faction,
-    [460]  = "RestedXP Speed Leveling\\ab) Shadowglen",
-    [425]  = "RestedXP Speed Leveling\\ab) Northshire Valley",
-    [30]   = "RestedXP Speed Leveling\\ab) New Tinkertown",
-    [468]  = "RestedXP Speed Leveling\\ab) Ammen Vale",
-    [202]  = "RestedXP Speed Leveling\\ab) Worgen Intro",
-    [378]  = "RestedXP Speed Leveling\\a) Pandaren Intro",
-    [2373] = "RestedXP Speed Leveling\\a) Dracthyr Intro",
-    [2109] = "RestedXP Speed Leveling\\a) Dracthyr Intro",
-    [971]  = "RestedXP Speed Leveling\\a) VoidElf Intro",
-    [940]  = "RestedXP Speed Leveling\\a) LightforgedDraenei Intro",
-    [2322] = "RestedXP Speed Leveling\\a) EarthenDwarf Intro",
-    [1161] = "RestedXP Speed Leveling\\a) KulTiran Intro",
-    [1573] = "RestedXP Speed Leveling\\a) Mechagnome Intro",
-    [1186] = "RestedXP Speed Leveling\\a) DarkIronDwarf Intro",
-    [124]  = "RestedXP Speed Leveling\\a) DK Intro",
-    [1602] = "RestedXP Speed Leveling\\a) New DK Intro",
-    [465]  = "RestedXP Speed Leveling\\ab) Deathknell",
-    [462]  = "RestedXP Speed Leveling\\ab) Camp Narache",
-    [467]  = "RestedXP Speed Leveling\\ab) Sunstrider Isle",
-    [194]  = "RestedXP Speed Leveling\\ab) Goblin Intro",
-    [680]  = "RestedXP Speed Leveling\\a) Nightborne Intro",
-    [4652] = "RestedXP Speed Leveling\\a) HighmountainTauren",
-    ["MagharOrc"] = "RestedXP Speed Leveling\\a) MagharOrc Intro",
-    [1165] = "RestedXP Speed Leveling\\a) ZandalariTroll Intro",
-    ["Vulpera"] = "RestedXP Speed Leveling\\a) Vulpera Intro", -- changed from duplicate 85 (org)
-    [672]  = "RestedXP Speed Leveling\\a) DH Intro",
-    [627] = "RestedXP Legion Remix\\a) Intro",
-    [2451] = "RestedXP Speed Leveling\\a) Arathi Highlands Returning Player",
-    [2413] = "RestedXP Speed Leveling\\a) Haranir Intro",
-    [427]  = "RestedXP Speed Leveling\\ab) Dwarf Coldridge Vallley",
+    [3455] = format("%s\\%s %s", group, L"a) Exile's Reach", faction),
+    [460]  = format("%s\\%s", group, L"ab) Shadowglen"),
+    [425]  = format("%s\\%s", group, L"ab) Northshire Valley"),
+    [30]   = format("%s\\%s", group, L"ab) New Tinkertown"),
+    [468]  = format("%s\\%s", group, L"ab) Ammen Vale"),
+    [202]  = format("%s\\%s", group, L"ab) Worgen Intro"),
+    [378]  = format("%s\\%s", group, L"a) Pandaren Intro"),
+    [2373] = format("%s\\%s", group, L"a) Dracthyr Intro"),
+    [2109] = format("%s\\%s", group, L"a) Dracthyr Intro"),
+    [971]  = format("%s\\%s", group, L"a) VoidElf Intro"),
+    [940]  = format("%s\\%s", group, L"a) LightforgedDraenei Intro"),
+    [2322] = format("%s\\%s", group, L"a) EarthenDwarf Intro"),
+    [1161] = format("%s\\%s", group, L"a) KulTiran Intro"),
+    [1573] = format("%s\\%s", group, L"a) Mechagnome Intro"),
+    [1186] = format("%s\\%s", group, L"a) DarkIronDwarf Intro"),
+    [124]  = format("%s\\%s", group, L"a) DK Intro"),
+    [1602] = format("%s\\%s", group, L"a) New DK Intro"),
+    [465]  = format("%s\\%s", group, L"ab) Deathknell"),
+    [462]  = format("%s\\%s", group, L"ab) Camp Narache"),
+    [467]  = format("%s\\%s", group, L"ab) Sunstrider Isle"),
+    [194]  = format("%s\\%s", group, L"ab) Goblin Intro"),
+    [680]  = format("%s\\%s", group, L"a) Nightborne Intro"),
+    [4652] = format("%s\\%s", group, L"a) HighmountainTauren"),
+    ["MagharOrc"] = format("%s\\%s", group, L"a) MagharOrc Intro"),
+    [1165] = format("%s\\%s", group, L"a) ZandalariTroll Intro"),
+    ["Vulpera"] = format("%s\\%s", group, L"a) Vulpera Intro"), -- changed from duplicate 85 (org)
+    [672]  = format("%s\\%s", group, L"a) DH Intro"),
+    [627] = format("%s\\%s", "RestedXP Legion Remix", L"a) Intro"),
+    [2451] = format("%s\\%s", group, L"a) Arathi Highlands Returning Player"),
+    [2413] = format("%s\\%s", group, L"a) Haranir Intro"),
+    [427]  = format("%s\\%s", group, L"ab) Dwarf Coldridge Vallley"),
 }
 
 
