@@ -643,6 +643,11 @@ step << Horde
     .turnin 92471 >>Turn in Aetheen of the Gales
     .accept 92470 >>Accept Foul Matriarch
     .target Aetheen of the Gales::251366
+step << Shaman
+    .goto 2521,42.787,23.564
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r
+    .turnin 92468 >>Turn in Call of Earth
+    .target Windshaper Boro::251374
 step << Horde Shaman
     .goto 2521,42.788,23.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Windshaper Boro::251374|r.
@@ -3202,6 +3207,7 @@ step << Horde Shaman
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step << Horde Shaman
+    #hidewindow
     #label ShamanLevel10
     .xp 10 >>1
 step << Horde Shaman
@@ -3213,12 +3219,14 @@ step << Horde Shaman
     .accept 97243 >>Accept Call of Fire
     .target Sessaria Skystride::252382
 step << Horde Shaman
+    .isQuestAvailable 97243
     .goto 2521,58.313,78.499
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sessaria Skystride::252382|r.
     .trainer >>Train your class spells
     .target Sessaria Skystride::252382
     .money <0.12
     .xp <10,1
+    .subzoneskip 16638,1
 step << Horde Shaman
     #completewith CallOfFireA
     >>Spam use the |T537768:0|t[Flutterfly Swatter] on the |cRXP_ENEMY_Flutterflies::251622|r
@@ -3350,31 +3358,6 @@ step << Alliance/Shaman
     >>Kill |cRXP_ENEMY_Bandit Highwaymen::252820|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
     .mob Bandit Highwaymen::252820
--- step << Horde
---     #requires Bandit Highwaymen
---     #completewith BrokenConstructC
---     #hidewindow
---     #loop
---     .goto 2521,45.615,72.361,35,0
---     .goto 2521,43.551,74.999,35,0
---     .goto 2521,45.760,78.419,35,0
---     +1
--- step << Horde
---     --@THIDDI: Not sure if worth it.
---     #requires Bandit Highwaymen
---     #completewith next
---     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
---     .complete 93737,4 --|1/1 Obtain Air Construct Core from the Bandit Camp
--- step << Horde
---     #requires Bandit Highwaymen
---     >>Kill |cRXP_ENEMY_Bandit Highwaymen::252820|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
---     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
---     .mob Bandit Highwaymen::252820
--- step << Horde
---     --@THIDDI: Not sure if worth it.
---     #label BrokenConstructC
---     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
---     .complete 93737,4 --|1/1 Obtain Air Construct Core from the Bandit Camp
 step << Horde Shaman
     .goto 2521,42.393,68.887
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Kuramaa's Stump|r.
@@ -3428,11 +3411,11 @@ step << Alliance/Shaman
     .turnin 92693 >>Turn in Standing Our Ground
     .accept 92703 >>Accept Deliver the News
     .target Aamelia Windfield::252800
-step << Horde
-    .isOnQuest 92703 -- Deliver the News
-    .goto 2521,48.445,80.591
-    .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
-    .cooldown spell,1259686,>0,1
+-- step << Horde
+--     .isOnQuest 92703 -- Deliver the News
+--     .goto 2521,48.445,80.591
+--     .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
+--     .cooldown spell,1259686,>0,1
 step << Alliance/!Shaman
     .isQuestAvailable 92703 -- Deliver the News
     .subzoneskip 16638 -- Valanaar
@@ -3671,7 +3654,7 @@ step << Horde Hunter
     .target Quel'ana Quickgale::252389
 step << Horde Hunter
     #completewith next
-    +|cRXP_WARN_Dismiss your |cRXP_ENEMY_Windsong Crawler::254588|r by right clicking its unit frame and clicking dismiss, otherwise you'll be unable to tame an|r |cRXP_ENEMY_Armored Scorpid::3126|r
+    +|cRXP_WARN_Dismiss your |cRXP_ENEMY_Windsong Crawler::254588|r by right clicking its unit frame and clicking dismiss, otherwise you'll be unable to tame an|r |cRXP_ENEMY_Ornery Galestrider::251707|r
 step << Horde Hunter
     #loop
     .goto 2521,60.905,69.414,35,0
@@ -3687,6 +3670,9 @@ step << Horde Hunter
     .accept 94013 >>Accept Taming the Beast
     .target Quel'ana Quickgale::252389
 step << Horde Hunter
+    #completewith next
+    +|cRXP_WARN_Dismiss your |cRXP_ENEMY_Ornery Galestrider::251707|r by right clicking its unit frame and clicking dismiss, otherwise you'll be unable to tame an|r |cRXP_ENEMY_Vuldren::250874|r
+step << Horde Hunter
     #loop
     .goto 2521,56.946,67.887,35,0
     .goto 2521,54.080,74.719,35,0
@@ -3694,16 +3680,6 @@ step << Horde Hunter
     .goto 2521,53.021,81.568,25,0
     .goto 2521,51.647,80.140,25,0
     .goto 2521,48.981,82.669,35,0
-
-    -- .goto 2521,54.23,75,40,0
-    -- .goto 2521,53.45,80.93,40,0
-    -- .goto 2521,52.56,77.82,40,0
-    -- .goto 2521,61.944,68.828,35,0
-    -- .goto 2521,59.516,64.846,35,0
-    -- .goto 2521,57.041,67.729,35,0
-    -- .goto 2521,54.322,75.080,35,0
-    -- .goto 2521,51.925,80.458,35,0
-    -- .goto 2521,52.920,81.509,35,0
     .use 264163 >> |cRXP_WARN_Use your|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Vuldren::250874|r |cRXP_WARN_at max range|r.
     .complete 94013,1 --Tame a Vuldren
     .mob Vuldren::250874
@@ -4443,11 +4419,11 @@ step << Alliance
     >>Kill |cRXP_ENEMY_Windsong Crawlers::254588|r. Loot them for |T133972:0|t[|cRXP_LOOT_Windsong Crawler Meat|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
     .mob Windsong Crawler::254588
-step << Horde
-    .isQuestAvailable 93159 -- The Strange Hermit
-    .goto 2521,52.790,57.628
-    .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
-    .cooldown spell,1259686,>0,1
+-- step << Horde
+--     .isQuestAvailable 93159 -- The Strange Hermit
+--     .goto 2521,52.790,57.628
+--     .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
+--     .cooldown spell,1259686,>0,1
 -- step << Horde
 --     --@THIDDI: Not sure if worth it.
 --     #loop
@@ -4472,7 +4448,7 @@ step << Alliance
 step << Horde
     .isQuestAvailable 93159 -- The Strange Hermit
     #completewith next
-    .goto 2521,59.444,67.060,45,0
+    .goto 2521,59.444,67.060,45,0 << Druid
     .goto 2521,58.72,52.77,30 >>Go around the mountains and cross the bridge.
 step
     .isQuestAvailable 93159 -- The Strange Hermit
@@ -4502,7 +4478,7 @@ step << Warrior
 --     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
 --     .cooldown spell,1259705,>0,1
 --     .usespell 1259705
-step
+step << Alliance
     #completewith Learn
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r].
@@ -4655,7 +4631,7 @@ step
     .target Elegael Thornpaw::257944
     .turnin 94484 >>Turn in Unnerving Silence
     .accept 94485 >>Accept Tears of the Lady
-    .accept 94486 >>Accept Feathers for Binding << Alliance
+    .accept 94486 >>Accept Feathers for Binding
     .accept 94487 >>Accept Unwanted and Unworthy
 step << Alliance
     #completewith Unnerving Silence
