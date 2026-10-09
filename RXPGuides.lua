@@ -6,6 +6,11 @@ local UnitInRaid = UnitInRaid
 local fmt = string.format
 
 function addon.IsGamePadEnabled()
+    local interfaceStyle = _G.GetCVar and _G.GetCVar("InputDeviceInterfaceStyle")
+    if interfaceStyle ~= nil then
+        return interfaceStyle == "1"
+    end
+
     local gamePad = _G.C_GamePad
     return gamePad and gamePad.IsEnabled and gamePad.IsEnabled() or false
 end
