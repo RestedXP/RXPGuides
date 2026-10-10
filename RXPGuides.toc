@@ -1,4 +1,4 @@
-## Interface: 11508, 50504, 120100, 120005, 120007
+## Interface: 11508, 16001, 50504, 120100, 120005, 120007
 ## Interface-Mists: 50504
 ## Interface-TBC: 20506
 ## Interface-Classic: 11508

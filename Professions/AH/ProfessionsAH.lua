@@ -46,7 +46,7 @@ addon.professions.AH.session = {
 --Setup
 function addon.professions.AH:Setup()
     --TODO: add to setting enable/disable
-    if addon.game ~= "CLASSIC" and addon.game ~= "TBC" then return end
+    if addon.game ~= "CLASSIC" and addon.game ~= "TBC" and addon.game ~= "FOREVER" then return end
     if addon.professions.session.isInitialized then return end
 
     --Set the flag to check the players inventory for lingering items

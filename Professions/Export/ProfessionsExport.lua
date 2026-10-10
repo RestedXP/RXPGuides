@@ -1,6 +1,6 @@
 local addonName, addon = ...
 
-if not (addon.game == "CLASSIC" or addon.game == "TBC") then return end
+if not (addon.game == "CLASSIC" or addon.game == "TBC" or addon.game == "FOREVER") then return end
 
 
 addon.professions = addon.professions or {}
@@ -195,6 +195,14 @@ local function auctionScan()
     return { scannedAt = isoTime(scannedAt or time()), items = items }
 end
 
+-- This branch predates upstream's Forever detection, so a 1.16+ client still reports CLASSIC here.
+local function exportedGame()
+    if addon.game == "FOREVER" or (addon.game == "CLASSIC" and (addon.gameVersion or 0) >= 16000) then
+        return "FOREVER"
+    end
+    return addon.game
+end
+
 -- opts.useOverrides: take professions, faction and money from the debug overrides instead of the character.
 local function buildPayload(opts)
     local data = RXPCData and RXPCData.professions or {}
@@ -223,7 +231,7 @@ local function buildPayload(opts)
         professions = professionList(skills),
         auctionScan = auctionScan(),
 
-        game = addon.game,
+        game = exportedGame(),
         gameVersion = addon.gameVersion,
         season = addon.player.season,
         hardcore = addon.player.hardcore == true,

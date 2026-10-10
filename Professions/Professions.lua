@@ -1,7 +1,7 @@
 local addonName, addon = ...
 local L = addon.locale.Get
 
-if not (addon.game == "CLASSIC" or addon.game == "TBC") then return end
+if not (addon.game == "CLASSIC" or addon.game == "TBC" or addon.game == "FOREVER") then return end
 
 -- Localize globals
 local _G = _G
@@ -276,7 +276,7 @@ end
 function addon.professions:Setup()
     --TODO: add toggle on/off functionality
 
-    if addon.game ~= "CLASSIC" and addon.game ~= "TBC" then return end
+    if addon.game ~= "CLASSIC" and addon.game ~= "TBC" and addon.game ~= "FOREVER" then return end
     if self.session.isInitialized == true then return end
 
     for _, event in ipairs(EVENTS_TO_REGISTER) do
