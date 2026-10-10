@@ -1433,7 +1433,7 @@ step
     >>打开|T133876:0|t[|cRXP_LOOT_珠宝镶嵌宝箱|r] 获取 |T134419:0|t[|cRXP_FRIENDLY_日月之蚀符文|r] << Druid
     >>打开|T133876:0|t[|cRXP_LOOT_珠宝镶嵌宝箱|r] 以获取|T134419:0|t[|cRXP_FRIENDLY_狂怒愈体符文|r] << Warrior
     >>打开|T133876:0|t[|cRXP_LOOT_镶嵌宝石的箱子|r]，以获取|T134419:0|t[|cRXP_FRIENDLY_灼烧黑暗符文|r] << Warlock
-    >>打开|T133876:0|t[|cRXP_LOOT_Jewel-Encrusted 箱子|r]以获得|T134419:0|t[|cRXP_FRIENDLY_Rune of the 经典怀旧服 道具|r] << Rogue
+    >>打开 |T133876:0|t[|cRXP_LOOT_珠宝镶嵌宝箱|r] 获取|T134419:0|t[|cRXP_FRIENDLY_剧毒锋刃符文|r] << Rogue
     >>打开|T133876:0|t|T134419:0|t[|cRXP_LOOT_珠宝镶嵌宝箱|r]获取|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_先祖复苏符文|r] << Shaman
     .collect 212552,1 << Priest
     .collect 212551,1 << Paladin

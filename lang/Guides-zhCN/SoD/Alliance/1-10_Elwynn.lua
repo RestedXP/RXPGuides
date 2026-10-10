@@ -2874,7 +2874,7 @@ step << Human
 step << Rogue
     #xprate >1.59
     .goto 1453,74.645,52.818
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     >>|cRXP_WARN_确保训练后身上至少还剩24银。你需要这些钱在铁炉堡买一把枪，才能使用你的符文。|r
     .train 674 >>训练 |T132147:0|t[双武器]
     .train 2983 >>训练 |T132307:0|t[疾跑]
@@ -2884,7 +2884,7 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     .goto 1453,74.645,52.818
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     >>|cRXP_WARN_确保训练后身上至少还剩24银。你需要这些钱在铁炉堡买一把枪，才能使用你的符文。|r
     .train 1766 >>训练你的职业技能
     .target 夜行者奥斯伯

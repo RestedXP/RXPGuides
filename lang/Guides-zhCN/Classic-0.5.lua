@@ -2,7 +2,7 @@ if GetLocale() ~= "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 凶蛮之心套装指南 << Druid
 #subgroup 兽王套装指南 << Hunter
 #subgroup 巫师套装指南 << Mage
@@ -218,7 +218,7 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 凶蛮之心套装指南 << Druid
 #subgroup 兽王套装指南 << Hunter
 #subgroup 巫师套装指南 << Mage
@@ -662,7 +662,7 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 凶蛮之心套装指南 << Druid
 #subgroup 兽王套装指南 << Hunter
 #subgroup 巫师套装指南 << Mage
@@ -1144,7 +1144,7 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 凶蛮之心套装指南 << Druid
 #subgroup 兽王套装指南 << Hunter
 #subgroup 巫师套装指南 << Mage

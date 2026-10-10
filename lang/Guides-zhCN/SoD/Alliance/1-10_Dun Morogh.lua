@@ -200,7 +200,7 @@ step
     .goto Dun Morogh,29.927,71.201
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯登·粗臂|r 对话
     >>|cRXP_WARN_记得装备这个任务获得的护手，这样你就可以在上面铭刻符文了|r
-    .turnin 179 >>交任务矮人的交易
+    .turnin 179 >>交任务 矮人的交易
     .accept 233 >>接受任务 寒脊山谷的送信任务
     .accept 3106 >>接受任务 简易符文 << Dwarf Warrior
     .accept 3107 >>接受任务 神圣符文 << Dwarf Paladin

@@ -32,7 +32,7 @@ step << Warrior/Shaman/Warlock
     .money >0.01
 step << Warlock
     .goto Durotar,42.59,69.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
     .accept 1485 >>接受任务 邪灵劣魔
     .target Ruzan
 step << Warrior/Shaman
@@ -2349,7 +2349,7 @@ step << Shaman
 step << Shaman
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡纳尔|r 对话
-    .turnin 2983 >>交任务  火焰的召唤
+    .turnin 2983 >>交任务 火焰的召唤
     .accept 1524 >>接受任务 火焰的召唤
     .target 卡纳尔·菲斯
 step << Shaman
@@ -2374,7 +2374,7 @@ step << Shaman
     #label CallofFire2
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰尔夫|r 对话
-    .turnin 1524 >>交任务  火焰的召唤
+    .turnin 1524 >>交任务 火焰的召唤
     .accept 1525 >>接受任务 火焰的召唤
     .target 泰尔夫·祖拉姆
 step << Shaman
@@ -3190,7 +3190,7 @@ step << Shaman
     #label CallofFire3
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰尔夫|r 对话
-    .turnin 1525 >>交任务  火焰的召唤
+    .turnin 1525 >>交任务 火焰的召唤
     .accept 1526 >>接受任务 火焰的召唤
     .target 泰尔夫·祖拉姆
 step << Shaman
@@ -3206,7 +3206,7 @@ step << Shaman
 step << Shaman
     .goto Durotar,38.96,58.22
     >>点击地上的 |cRXP_PICK_火盆|r
-    .turnin 1526 >>交任务  火焰的召唤
+    .turnin 1526 >>交任务 火焰的召唤
     .accept 1527 >>接受任务 火焰的召唤
 step << Shaman
     #completewith next
@@ -3261,7 +3261,7 @@ step << Shaman/Hunter
 step << Shaman
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡纳尔|r 对话
-    .turnin 1527 >>交任务  火焰的召唤
+    .turnin 1527 >>交任务 火焰的召唤
     .target 卡纳尔·菲斯
 step << Hunter
     #completewith next
@@ -5312,7 +5312,7 @@ step << Priest/Warlock
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step << Priest/Warlock
     .goto Undercity,70.76,30.67
-    >>|cRXP_WARN_将你所有的|r |T132889:0|t[亚麻布] |cRXP_WARN_全部转成|r |T132890:0|t[Bolt of 亚麻布]
+    >>|cRXP_WARN_将你所有的|r |T132889:0|t[亚麻布] |cRXP_WARN_转化为|r |T132890:0|t[亚麻布卷]
     .collect 2996,30,435,1 --Bolt of Linen Cloth (30)
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3

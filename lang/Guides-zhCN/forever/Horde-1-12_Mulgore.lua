@@ -1927,14 +1927,14 @@ step
     .target Boarton Shadetotem
 step << Hunter
     .goto 1456/1,-123.15,-1412.93--c:Thunder Bluff,61.3,80.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r
     .turnin 861 >>交任务 猎人之道
     .accept 860 >>接受任务 瑟格拉·黑棘
     .target 梅洛·石蹄
     .isQuestComplete 861
 step << Hunter
     .goto 1456/1,-123.15,-1412.93--c:Thunder Bluff,61.3,80.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r
     .accept 860 >>接受任务 瑟格拉·黑棘
     .target 梅洛·石蹄
     .isQuestTurnedIn 861
@@ -2260,7 +2260,7 @@ step
     .target Boarton Shadetotem
 step
     .goto 1456/1,-123.15,-1412.93--c:Thunder Bluff,61.3,80.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r
     .turnin 861 >>交任务 猎人之道
     .accept 860 >>接受任务 瑟格拉·黑棘
     .target 梅洛·石蹄
@@ -2428,7 +2428,7 @@ step << Shaman
 step << Shaman
     .goto 1413/1,-3037.56,264.63--c:The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡纳尔|r 对话
-    .turnin 2984 >>交任务  火焰的召唤
+    .turnin 2984 >>交任务 火焰的召唤
     .accept 1524 >>接受任务 火焰的召唤
     .target 卡纳尔·菲斯
 step << Shaman
@@ -2449,7 +2449,7 @@ step << Shaman
     #label CallofFire2
     .goto 1411/1,-3999.24,-268.95--c:Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰尔夫|r 对话
-    .turnin 1524 >>交任务  火焰的召唤
+    .turnin 1524 >>交任务 火焰的召唤
     .accept 1525 >>接受任务 火焰的召唤
     .target 泰尔夫·祖拉姆
 step << Warrior

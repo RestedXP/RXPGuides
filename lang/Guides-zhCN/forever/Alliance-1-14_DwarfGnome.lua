@@ -140,7 +140,7 @@ step << !Priest !Mage !Warlock !Shaman
 step
     .goto 1426/0,328.18,-6214.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯登·粗臂|r 对话
-    .turnin 179 >>交任务矮人的交易
+    .turnin 179 >>交任务 矮人的交易
     .accept 233 >>接受任务 寒脊山谷的送信任务
     .accept 3106 >>接受任务 简易符文 << Dwarf Warrior
     .accept 3107 >>接受任务 神圣符文 << Dwarf Paladin
@@ -183,7 +183,7 @@ step << Warlock
     .goto 1426,30.055,82.385,40,0
     .goto 1426,30.381,80.766,40,0
     .goto 1426,30.216,80.254,40,0
-    >>击杀洞穴里面的 |cRXP_ENEMY_霜鬃巨魔新兵|r ，从他们身上拾取|cRXP_LOOT_羽饰护符|r
+    >>击杀洞穴里面的 |cRXP_ENEMY_霜鬃巨魔新兵|r 并拾取 |cRXP_LOOT_羽毛咒符|r
     .complete 1599,1 --Collect Feather Charm (x3)
     .mob Frostmane Novice
 step << Warlock
@@ -2250,7 +2250,7 @@ step << !Hunter
     #completewith flyIF
     .hs >>炉石到塞尔萨玛
     >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
-	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
+	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
 step << Hunter
     #completewith flyIF
@@ -2474,7 +2474,7 @@ step << Dwarf Paladin
 step << Hunter
     .hs >>炉石到塞尔萨玛
     >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
-	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
+	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
     .zoneskip Loch Modan
 step << Hunter
@@ -2842,7 +2842,7 @@ step << skip
     .accept 86 >>接受任务 比利的馅饼
 step << skip
     #completewith next
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r，拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_任务过程中5级怪物可能会变灰，但仍需完成此任务以解锁后续任务|r
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
@@ -2859,7 +2859,7 @@ step << skip
     .goto 1429/0,129.73,-9844.49,25,0
     .goto 1429/0,226.57,-9878.28,25,0
     .goto 1429/0,129.73,-9844.49
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r，拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_任务过程中5级怪物可能会变灰，但仍需完成此任务以解锁后续任务|r
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
@@ -3346,7 +3346,7 @@ step
 step << Dwarf Paladin
     .hs >>将炉石使用回铁炉堡
     >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
-	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
+	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
     .bindlocation 1537,1
 step << Dwarf Paladin
@@ -3360,7 +3360,7 @@ step << Dwarf Paladin
 step << !Paladin
     .hs >>炉石到塞尔萨玛
     >>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
-	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
+	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .cooldown item,6948,>2,1
     .zoneskip Loch Modan
 step << !Paladin
@@ -3536,7 +3536,7 @@ step << Shaman
     .goto 1426/0,-2510.100,-5310.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布鲁格斯·燃生::257597|r 对话
     .target Bruegs Kindleborn::257597
-    .turnin 94449 >>交任务  火焰的召唤
+    .turnin 94449 >>交任务 火焰的召唤
     .accept 94465 >>接受任务 火焰的召唤
 step << Shaman
     .isOnQuest 94465
@@ -3551,7 +3551,7 @@ step << Shaman
     .goto 1432/0,-2880.900,-5701.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Braldir Ashmantle::257808|r 对话
     .target Braldir Ashmantle::257808
-    .turnin 94465 >>交任务  火焰的召唤
+    .turnin 94465 >>交任务 火焰的召唤
     .accept 94466 >>接受任务 火焰的召唤
 step
     #optional
@@ -3937,7 +3937,7 @@ step << Shaman
     .goto 1432/0,-2880.900,-5701.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Braldir Ashmantle|r 对话
     .target Braldir Ashmantle::257808
-    .turnin 94466 >>交任务  火焰的召唤
+    .turnin 94466 >>交任务 火焰的召唤
     .accept 94467 >>接受任务 火焰的召唤
 step << Shaman
     #completewith next
@@ -3951,7 +3951,7 @@ step << Shaman
 step << Shaman
     .goto 1432/0,-2870.700,-5674.600
     >>点击 |cRXP_PICK_眠炎火盆|r
-    .turnin 94467 >>交任务  火焰的召唤
+    .turnin 94467 >>交任务 火焰的召唤
     .accept 94468 >>接受任务 火焰的召唤
 step
     #optional
@@ -3985,7 +3985,7 @@ step << Shaman
     .goto 1426/0,-2510.100,-5310.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布鲁格斯·燃生::257597|r 对话
     .target Bruegs Kindleborn::257597
-    .turnin 94468 >>交任务  火焰的召唤
+    .turnin 94468 >>交任务 火焰的召唤
 step << Shaman
     .isQuestTurnedIn 94468
     .goto 1426/0,-2594.100,-5335.900,20,0
@@ -4119,7 +4119,7 @@ step << skip --logout skip << Mage/Priest
     #optional
     #completewith Deeprun
     .goto 1455,27.611,8.074
-    .goto 1455,76.414,51.226,20 >>|cRXP_WARN_跳到|cRXP_FRIENDLY_宾克|r上方的柱子顶端，然后向她的东边稍微走一点，走到箭头指示的位置。调整你的角色位置，直到看起来像是在悬空漂浮，然后通过下线并重新上线来执行下线跳过操作|r
+    .goto 1455,76.414,51.226,20 >>|cRXP_WARN_跳到|cRXP_FRIENDLY_彬克|r上方的柱子上，然后稍微往东走到箭头位置。调整角色位置直到看起来像漂浮状态，然后通过登出再登入执行登出跳过|r
 step << Dwarf Rogue/Gnome Rogue
     #season 0,1
     #optional
@@ -4291,7 +4291,7 @@ step
 step
     #completewith Fly2WF
     .goto 1453/0,638.8,-8341.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
     .vendor 5519 >>|cRXP_BUY_如果有的话，|r|cRXP_BUY_购买|r |T133024:0|t[青铜管]
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube

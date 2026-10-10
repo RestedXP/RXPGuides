@@ -34,7 +34,7 @@ step << Warrior/Shaman/Warlock/Mage/Priest
     .money >0.01
 step << Warlock
     .goto 1411/1,-4214.45,-623.92.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
     .accept 1485 >>接受任务 邪灵劣魔
     .target Ruzan
 step << Warrior/Shaman
@@ -257,7 +257,7 @@ step << Rogue
 step << Warlock
     #label Ruzan2
     .goto 1411/1,-4214.400,-624.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
     .turnin 1485 >>交任务 邪灵劣魔
     .accept 1499 >>接受任务 邪灵劣魔
     .target Ruzan
@@ -1024,7 +1024,7 @@ step << Warlock
     #label Hraug3
     .goto 1411/1,-4107.11,-604.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫劳格|r 对话
-    >>|cRXP_BUY_购买|r |T133738:0|t[魔典:血契]|cRXP_BUY_从他那里|r
+    >>|cRXP_BUY_从他那里购买|r |T133738:0|t[魔典：血契]|cRXP_BUY_|r
     .collect 16321,1,817,1 --Grimoire of Blood Pact
     .vendor >>把垃圾物品卖给商人
     .target 赫劳格
@@ -2254,7 +2254,7 @@ step
 step --center of first small island
     #label MartEgg
     .goto 1411/1,-5599.500,-716.700
-    >>击杀 |cRXP_ENEMY_Bloodtalon Matriarch|r。拾取 |cRXP_LOOT_Bloodtalon Matriarch 道具|r
+    >>击杀 |cRXP_ENEMY_血爪族母|r。拾取它的 |cRXP_LOOT_血爪族母的蛋|r
     .complete 97223,1 --|1/1 Bloodtalon Matriarch Eggs
     .mob Bloodtalon Matriarch
 step
@@ -2891,7 +2891,7 @@ step << Hunter
     >>记得每当你的宠物获得训练点时，为其进行|cRXP_WARN_ |T132162:0|t[野兽训练]|r
 step << Hunter
     .goto 1454/1,-4819.1,2099.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|T135499:0|t|cRXP_BUY_与|r |cRXP_FRIENDLY_森度吉安|r|cRXP_BUY_交谈。从他那里购买一把|r |T135499:0|t|T135499:0|t[多层弯弓] |cRXP_BUY_|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_森度吉安|r|cRXP_BUY_交谈。从他那里购买一把|r |T135499:0|t[多层弯弓] |cRXP_BUY_|r
     .collect 2507,1,835,1 --Collect Laminated Recurve Bow (1)
     .money <0.1751
     .itemStat 18,QUALITY,<7
@@ -3111,7 +3111,7 @@ step << Shaman
 step << Shaman
     .goto 1413/1,-3037.56,264.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡纳尔|r 对话
-    .turnin 2983 >>交任务  火焰的召唤
+    .turnin 2983 >>交任务 火焰的召唤
     .accept 1524 >>接受任务 火焰的召唤
     .target 卡纳尔·菲斯
 step << Shaman
@@ -3137,7 +3137,7 @@ step << Shaman
     #label CallofFire3
     .goto 1411/1,-3999.24,-268.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰尔夫|r 对话
-    .turnin 1524 >>交任务  火焰的召唤
+    .turnin 1524 >>交任务 火焰的召唤
     .accept 1525 >>接受任务 火焰的召唤
     .target 泰尔夫·祖拉姆
 step << skip --Shaman
@@ -3789,6 +3789,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在二楼与 |cRXP_FRIENDLY_玛瑞恩|r 对话
     .train 1766 >>训练 |T132219:0|t[脚踢]
     .target 马里恩·考尔
+    .money <0.08
     .xp <12,1
 step << Warlock
     .goto 1420/0,250.24,2259.25
@@ -4042,7 +4043,7 @@ step << Priest
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step << Priest
     .goto 1458/0,194.34,1681.63
-    >>|cRXP_WARN_将你所有的|r |T132889:0|t[亚麻布] |cRXP_WARN_全部转成|r |T132890:0|t[Bolt of 亚麻布]
+    >>|cRXP_WARN_将你所有的|r |T132889:0|t[亚麻布] |cRXP_WARN_转化为|r |T132890:0|t[亚麻布卷]
     .collect 2996,30,435,1 --Bolt of Linen Cloth (30)
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3

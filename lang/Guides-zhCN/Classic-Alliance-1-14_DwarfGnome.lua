@@ -180,7 +180,7 @@ step << !Priest !Mage !Warlock
 step
     .goto Dun Morogh,29.927,71.201
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯登·粗臂|r 对话
-    .turnin 179 >>交任务矮人的交易
+    .turnin 179 >>交任务 矮人的交易
     .accept 233 >>接受任务 寒脊山谷的送信任务
     .accept 3106 >>接受任务 简易符文 << Dwarf Warrior
     .accept 3107 >>接受任务 神圣符文 << Dwarf Paladin
@@ -1403,7 +1403,7 @@ step << !Priest
     #xprate <1.5
     #optional
     .goto Dun Morogh,48.3,57.0
-    .xp 5+2690 >>刷怪达到 2690+/2800 经验
+    .xp 5+2690 >>刷怪达到2690+/2800经验
 step << !Priest
     #xprate 1.49-1.59
     #optional
@@ -6906,7 +6906,7 @@ step
     #xprate <1.5
     #completewith Fly2WF
     .goto StormwindClassic,55.21,7.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
     .vendor 5519 >>|cRXP_WARN_购买|r |T133024:0|t[青铜管] |cRXP_BUY_从他那里（如果有货）|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
@@ -8820,7 +8820,7 @@ step
 step
     #hardcore
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
     .fp Wetlands>>获取湿地的飞行路径
     .target 谢尔雷·布隆迪尔
 step

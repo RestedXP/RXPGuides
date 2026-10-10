@@ -45,7 +45,7 @@ step
     .target 萨莫尔·菲斯蒂沃斯
 step << !Druid !Hunter
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
     .fly Ironforge >>飞往铁炉堡
     .target 谢尔雷·布隆迪尔
     .zoneskip Wetlands,1
@@ -80,7 +80,7 @@ step << !Druid !Hunter
     .zoneskip Ironforge,1
 step
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
     .fly Loch Modan >>飞往 洛克莫丹
     .target 谢尔雷·布隆迪尔
     .zoneskip Wetlands,1

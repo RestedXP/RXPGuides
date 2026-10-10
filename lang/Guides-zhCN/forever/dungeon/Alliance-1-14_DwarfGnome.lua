@@ -94,7 +94,7 @@ step
 step
     #completewith Fly2WF
     .goto 1453/0,638.8,-8341.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
     .vendor 5519 >>|cRXP_BUY_如果有的话，|r|cRXP_BUY_购买|r |T133024:0|t[青铜管]
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube

@@ -396,14 +396,14 @@ step
 step
     .goto Teldrassil,60.899,41.961
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪兰妮亚·银辉|r 对话
-    .turnin 3521 >>交任务 埃沃隆的解药
+    .turnin 3521 >>交任务  埃沃隆的解药
     .accept 3522 >>接受任务 埃沃隆的解药
     .target 迪兰妮亚·月光
     .xp >7,1
 step
     .goto Teldrassil,60.899,41.961
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪兰妮亚·银辉|r 对话
-    .turnin 3521 >>交任务 埃沃隆的解药
+    .turnin 3521 >>交任务  埃沃隆的解药
     .target 迪兰妮亚·月光
     .xp <7,1
 step << !Hunter
@@ -458,7 +458,7 @@ step
     .target 埃沃隆
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃沃隆|r 对话
     >>提示：|cRXP_WARN_选择短裤作为奖励。你稍后需要用它来刻印符文|r << Priest sod
-    .turnin 3522 >>交任务 埃沃隆的解药
+    .turnin 3522 >>交任务  埃沃隆的解药
     .isOnQuest 3522
 step
     #completewith next
@@ -497,7 +497,7 @@ step << Priest
     .target 珊达
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊达|r 对话
     .accept 5622 >>接受任务 月神的恩赐
-    .turnin 3119 >>交任务 神圣符记
+    .turnin 3119 >>交任务  神圣符记
 step
     .goto Teldrassil,61.159,47.644
     .target 伯萨努斯
@@ -1580,7 +1580,7 @@ step << Hunter
     .goto Teldrassil,38.32,34.36
     .target 哨兵阿瑞尼亚·碎云
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r 对话
-    .turnin 938 >>交任务 密斯特
+    .turnin 938 >>交任务  密斯特
 step << Hunter
 	#xprate <1.5
     #completewith xp10
@@ -1605,7 +1605,7 @@ step << !Hunter
     .turnin 937 >>交任务 神谕林地
     .target 哨兵阿瑞尼亚·碎云
     .accept 940 >>接受任务 泰达希尔
-    .turnin 938 >>交任务 密斯特
+    .turnin 938 >>交任务  密斯特
 step << Druid
     #xprate <1.5
     #label xp10
@@ -2324,7 +2324,7 @@ step << !sod/Warrior/Rogue/Druid
     .goto Teldrassil,38.3,34.4
     .target 哨兵阿瑞尼亚·碎云
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r 对话
-    .turnin 938 >>交任务 密斯特
+    .turnin 938 >>交任务  密斯特
     .isOnQuest 938
 step << !sod/Warrior/Rogue/Druid
     #requires harpies2

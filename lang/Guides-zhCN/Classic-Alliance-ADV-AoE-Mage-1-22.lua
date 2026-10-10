@@ -1501,7 +1501,7 @@ step
 step
     #xprate <1.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_斯登·粗臂|r 和 |cRXP_FRIENDLY_巴尔林·霜锤|r 对话
-    .turnin 179,3 >>交任务矮人的交易
+    .turnin 179,3 >>交任务 矮人的交易
     .accept 233 >>接受任务 寒脊山谷的送信任务
     .accept 3114 >>接受任务 雕文备忘录
     .target +Sten Stoutarm
@@ -1513,7 +1513,7 @@ step
     #xprate >1.09
     .goto Dun Morogh,29.927,71.201
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯登·粗臂|r 对话
-    .turnin 179,3 >>交任务矮人的交易
+    .turnin 179,3 >>交任务 矮人的交易
     .accept 233 >>接受任务 寒脊山谷的送信任务
     .accept 3114 >>接受任务 雕文备忘录
     .target 斯登·粗臂
@@ -1960,7 +1960,7 @@ step
 	.goto Dun Morogh,49.09,54.74,40,0
 	.goto Dun Morogh,49.61,54.32,40,0
 	.goto Dun Morogh,51.43,53.21,40,0
-    .xp 5+2690 >>刷怪达到 2690+/2800 经验
+    .xp 5+2690 >>刷怪达到2690+/2800经验
     .mob 黑熊幼崽
     .mob 峭壁野猪
 step
@@ -3648,7 +3648,7 @@ step
     .goto Wetlands,7.89,56.22
     >>隔墙与 |cRXP_FRIENDLY_德温|r 对话
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1453 >>|cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
+    .vendor 1453 >>|cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
     .target 德温·晨光
     .money <0.03
 step
@@ -4672,7 +4672,7 @@ step << Gnome
     .use 17117
 step
     >>与|cRXP_FRIENDLY_蒙提|r 对话
-    >>|cRXP_WARN_等剧情结束|r << Gnome
+    >>|cRXP_WARN_等待剧情演出完成|r << Gnome
     .turnin 6661 >>交任务 捕捉矿道老鼠 << Gnome
     .timer 13,捕捉矿道老鼠剧情表演 << Gnome
     .accept 6662 >>接受任务 我的兄弟，尼普希
@@ -5385,7 +5385,7 @@ step
 step
     #label Talisman
     .goto Darkshore,52.24,33.08
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     >>击杀|cRXP_ENEMY_萨巴克希斯|r
     >>拾取掉落地上的|cRXP_PICK_萨布拉克斯的恶魔之袋|r，从中获得|cRXP_LOOT_堕落护符|r
     >>|cRXP_WARN_该操作有 5 秒施法时间|r
@@ -7363,8 +7363,8 @@ step
 step
     .goto Duskwood,75.34,48.74
     >>与 |cRXP_FRIENDLY_伊莱恩|r 对话
-    .accept 163 >>接受任务 乌鸦岭
-    .accept 164 >>接受任务 斯温的货物
+    .accept 163 >>接受任务乌鸦岭
+    .accept 164 >>接受任务斯温的货物
     .accept 165 >>接受任务隐士
     .target 艾莱尼·卡尔文
 step
@@ -7377,7 +7377,7 @@ step
     .goto Duskwood,79.78,48.06
     >>与 |cRXP_FRIENDLY_维克托|r 对话
     .accept 174 >>接受任务眺望群星
-    .turnin 174 >>交任务 眺望群星
+    .turnin 174 >>交任务眺望群星
     .accept 175 >>接受任务眺望群星
     .target 维克托·安特拉斯
     .itemcount 4371,1
@@ -7391,7 +7391,7 @@ step
 step
     .goto Duskwood,81.46,59.02
     >>与|cRXP_FRIENDLY_玛丽|r 对话
-    .turnin 175 >>交任务 眺望群星
+    .turnin 175 >>交任务眺望群星
     .accept 177 >>接受任务眺望群星
     .target 盲眼玛丽
     .isQuestTurnedIn 174
@@ -7513,9 +7513,9 @@ step
     .target 拜里弗·科纳彻尔
 step
     >>与 |cRXP_FRIENDLY_码头管理员巴伦|r 对话并点击 |cRXP_PICK_通缉告示|r
-    .accept 127 >>接受任务 卖鱼
+    .accept 127 >>接受任务卖鱼
     .goto Redridge Mountains,27.72,47.38
-    .accept 180 >>接受任务 通缉：范高雷中尉
+    .accept 180 >>接受任务通缉：范高雷中尉
     .goto Redridge Mountains,26.75,46.42
     .target 码头管理员巴伦
 step
@@ -7769,7 +7769,7 @@ step
     >>与 |cRXP_FRIENDLY_玛蒂|r 对话
     .turnin 130 >>交任务 寻访草药师
     .accept 131 >>接受任务 水仙诉衷情
-    .accept 34 >>接受任务 不速之客
+    .accept 34 >>接受任务不速之客
     .target 玛蒂·詹罗斯
 step
     #completewith next
@@ -7789,7 +7789,7 @@ step
 step
     .goto Redridge Mountains,21.86,46.33
     >>与 |cRXP_FRIENDLY_玛蒂|r 对话
-    .turnin 34 >>交任务 不速之客
+    .turnin 34 >>交任务不速之客
     .target 玛蒂·詹罗斯
 step
     .goto Redridge Mountains,17.47,43.62,60,0
@@ -7893,8 +7893,8 @@ step
     .goto Redridge Mountains,27.72,47.38
     >>与 |cRXP_FRIENDLY_码头管理员巴伦|r 对话
     .turnin 127 >>交任务卖鱼
-    .accept 150 >>接受任务 鱼人偷猎者
-    .turnin 150 >>交任务 鱼人偷猎者
+    .accept 150 >>接受任务鱼人偷猎者
+    .turnin 150 >>交任务鱼人偷猎者
     .goto Redridge Mountains,27.72,47.38
     .target 码头管理员巴伦
 step

@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP魔兽世界无限练级指南（部落版）
 #subgroup 法师A怪快速升级指南
 #defaultfor Horde Mage
-#next 17-21级 石爪山脉/荒芜之地 AoE
+#next 17-21级 石爪山脉/荒芜之地 AoE指南
 
 step << Mage
 	#era/som
@@ -699,16 +699,16 @@ step
 >>与 |cRXP_FRIENDLY_希雷斯·碎石|r 对话
     .turnin 1061 >>交任务石爪之灵
 .target 希雷斯·碎石
-    .accept 1062 >>接受任务地精侵略者
+    .accept 1062 >>接受任务 地精侵略者
 .target 玛卡巴·扁蹄
 >>与 |cRXP_FRIENDLY_玛卡巴·扁蹄|r 对话
-    .accept 6548 >>接受任务为我的村庄复仇
+    .accept 6548 >>接受任务 为我的村庄复仇
 ]])
 
 RXPGuides.RegisterGuide([[
 #forever
 << Horde Mage
-#name 17-21级 石爪山脉/荒芜之地 AoE
+#name 17-21级 石爪山脉/荒芜之地 AoE指南
 #version 1
 #group RestedXP魔兽世界无限练级指南（部落版）
 #subgroup 法师A怪快速升级指南
@@ -730,7 +730,7 @@ step
 step
     .goto 1413/1,-943.1,-265.13
 >>与 |cRXP_FRIENDLY_玛卡巴·扁蹄|r 对话
-    .turnin 6548 >>交任务为我的村庄复仇
+    .turnin 6548 >>交任务  为我的村庄复仇
 .target 玛卡巴·扁蹄
     .accept 6629 >>接受任务杀死格鲁迪格·黑云
 step
@@ -744,7 +744,7 @@ step
     .goto 1442/1,-343.42,122.80
 .target 卡雅·扁蹄
 >>与 |cRXP_FRIENDLY_卡雅·扁蹄|r 对话
-    .accept 6523 >>接受任务保护卡雅
+    .accept 6523 >>接受任务 保护卡雅
 step
      >>护送卡雅并紧跟在她身边。篝火处会刷出3个恐怖图腾。在她到达营地之前，先吃喝恢复好状态
     .goto 1442/1,-455.73,-59.55
@@ -776,7 +776,7 @@ step
 step
     .goto 1442/1,365.2,878.29
 >>与 |cRXP_FRIENDLY_菲兹克斯|r 对话
-    .turnin 1483 >>交任务菲兹克斯
+    .turnin 1483 >>交任务  菲兹克斯
 .target 菲兹克斯
     .accept 1093 >>接受任务 超级收割机6000
 step
@@ -894,7 +894,7 @@ step
 .target 麦伯克·米希瑞克斯
 >>与 |cRXP_FRIENDLY_麦伯克·米希瑞克斯|r 对话
     .turnin 865 >>交任务  一定是因为角
-    .turnin 1069 >>交任务深苔蜘蛛的卵
+    .turnin 1069 >>交任务  深苔蜘蛛的卵
 step
     .goto 1413/1,-3690.15,-981.90
 .target 酿酒师德罗恩
@@ -914,7 +914,7 @@ step
     .goto 1413/1,-2646.42,-522.48
 .target 曼科里克
 >>与 |cRXP_FRIENDLY_曼科里克|r 对话
-    .turnin 899 >>交任务复仇的怒火
+    .turnin 899 >>交任务  复仇的怒火
 step
     >>塔顶
     .goto 1413/1,-2605.88,-475.180
@@ -928,7 +928,7 @@ step
 >>与 |cRXP_FRIENDLY_药剂师赫布瑞姆|r 对话
     .turnin 848 >>交任务 菌类孢子
 .target 药剂师赫布瑞姆
-    .accept 853 >>接受任务药剂师扎玛
+    .accept 853 >>接受任务 药剂师扎玛
 step
     .goto 1413/1,-2595.75,-434.64
     .fly Camp Taurajo >>飞往陶拉祖营地
@@ -956,7 +956,7 @@ step
     .isOnQuest 883
 .target 乔恩·星眼
 >>与 |cRXP_FRIENDLY_乔恩·星眼|r 对话
-    .turnin 883 >>交任务拉克塔曼尼
+    .turnin 883 >>交任务  拉克塔曼尼
 step
     .goto 1413/1,-1916.82,-2380.44
 >>与 |cRXP_FRIENDLY_乔恩·星眼|r 对话
@@ -990,7 +990,7 @@ step
     .goto 1413/1,-1926.95,-2380.44
 .target 乔恩·星眼
 >>与 |cRXP_FRIENDLY_乔恩·星眼|r 对话
-    .turnin 884 >>交任务奥瓦坦卡
+    .turnin 884 >>交任务  奥瓦坦卡
     .isOnQuest 884
 step
     .goto 1413/1,-1926.95,-2380.44
@@ -1011,7 +1011,7 @@ step
     .goto 1413/1,-1916.82,-2380.44
 .target 乔恩·星眼
 >>与 |cRXP_FRIENDLY_乔恩·星眼|r 对话
-    .turnin 913 >>交任务 雷鹰的嘶鸣
+    .turnin 913 >>交任务  雷鹰的嘶鸣
 --    .accept 874 >>Accept Mahren Skyseer
 step
     #completewith next
@@ -1065,13 +1065,13 @@ step
 .target 玛卡巴·扁蹄
     .accept 6401 >>接受任务卡雅还活着
 .target 希雷斯·碎石
-    .accept 1063 >>接受任务巫婆长老
+    .accept 1063 >>接受任务 巫婆长老
 --    .accept 1068 >> Accept Shredding Machines
 step
     .goto 1442/1,-235.98,-180.03
 .target 辛吉拉
 >>与 |cRXP_FRIENDLY_辛吉拉|r 对话
-    .turnin 6461 >>交任务盗窃的蜘蛛
+    .turnin 6461 >>交任务  盗窃的蜘蛛
 step
     .goto 1442/1,365.2,878.29
 .target 菲兹克斯

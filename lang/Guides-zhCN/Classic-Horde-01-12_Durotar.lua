@@ -3253,7 +3253,7 @@ step << Shaman
     #xprate >1.49
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡纳尔|r 对话
-    .turnin 2983 >>交任务  火焰的召唤
+    .turnin 2983 >>交任务 火焰的召唤
     .accept 1524 >>接受任务 火焰的召唤
     .target 卡纳尔·菲斯
 step << Shaman
@@ -3276,7 +3276,7 @@ step << Shaman
     #label CallofFire3
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰尔夫|r 对话
-    .turnin 1524 >>交任务  火焰的召唤
+    .turnin 1524 >>交任务 火焰的召唤
     .accept 1525 >>接受任务 火焰的召唤
     .target 泰尔夫·祖拉姆
 step << Hunter/Shaman/Warrior
@@ -3807,7 +3807,7 @@ step << Shaman
     #xprate <1.5
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡纳尔|r 对话
-    .turnin 2983 >>交任务  火焰的召唤
+    .turnin 2983 >>交任务 火焰的召唤
     .accept 1524 >>接受任务 火焰的召唤
     .target 卡纳尔·菲斯
 step << Warrior/Shaman
@@ -3908,7 +3908,7 @@ step << Warrior/Shaman
     >>|cRXP_WARN_这将开启一个 45 分钟的限时任务|r
     .turnin 848 >>交任务 菌类孢子
     .timer 7,菌类孢子 剧情
-    .accept 853 >>接受任务药剂师扎玛
+    .accept 853 >>接受任务 药剂师扎玛
     .target 药剂师赫布瑞姆
 step << Warrior/Shaman
     .goto The Barrens,51.67,29.95
@@ -4656,7 +4656,7 @@ step << Shaman
     #label CallofFire3
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰尔夫|r 对话
-    .turnin 1524 >>交任务  火焰的召唤
+    .turnin 1524 >>交任务 火焰的召唤
     .accept 1525 >>接受任务 火焰的召唤
     .target 泰尔夫·祖拉姆
 step << Warrior
@@ -6908,7 +6908,7 @@ step << Priest
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step << Priest
     .goto Undercity,70.76,30.67
-    >>|cRXP_WARN_将你所有的|r |T132889:0|t[亚麻布] |cRXP_WARN_全部转成|r |T132890:0|t[Bolt of 亚麻布]
+    >>|cRXP_WARN_将你所有的|r |T132889:0|t[亚麻布] |cRXP_WARN_转化为|r |T132890:0|t[亚麻布卷]
     .collect 2996,30,435,1 --Bolt of Linen Cloth (30)
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
@@ -7144,7 +7144,7 @@ step << Warlock
     .aura 403619 >>记得激活你的 |T136156:0|t[邪甲术]
 step << Warlock
     .goto Durotar,42.59,69.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
     .accept 1485 >>接受任务 邪灵劣魔
     .target Ruzan
 step << Shaman
@@ -7497,7 +7497,7 @@ step << Rogue
 step << Warlock
     #label Ruzan2
     .goto Durotar,42.59,69.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
     .turnin 1485 >>交任务 邪灵劣魔
     .accept 1499 >>接受任务 邪灵劣魔
     .target Ruzan
@@ -9638,7 +9638,7 @@ step << Shaman
     #xprate >1.49
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡纳尔|r 对话
-    .turnin 2983 >>交任务  火焰的召唤
+    .turnin 2983 >>交任务 火焰的召唤
     .accept 1524 >>接受任务 火焰的召唤
     .target 卡纳尔·菲斯
 step << Shaman
@@ -9661,7 +9661,7 @@ step << Shaman
     #label CallofFire3
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰尔夫|r 对话
-    .turnin 1524 >>交任务  火焰的召唤
+    .turnin 1524 >>交任务 火焰的召唤
     .accept 1525 >>接受任务 火焰的召唤
     .target 泰尔夫·祖拉姆
 step << Warrior

@@ -24,7 +24,7 @@ step << Hunter
 step
     #completewith BMenace
     .goto StormwindClassic,55.21,7.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比利巴布·旋轮|r 对话
     .vendor >>|cRXP_BUY_买一个|r |T133024:0|t[青铜管]
     >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_比利巴布·旋轮|r 没有库存，请跳过此步骤|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
@@ -559,7 +559,7 @@ step
     .goto StormwindClassic,42.435,59.236,10,0
     .goto StormwindClassic,41.102,58.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_典狱官塞尔沃特|r 对话
-    .turnin 389 >>交任务 巴基尔·斯瑞德
+    .turnin 389 >>交任务巴基尔·斯瑞德
 --  .accept 391 >> Accept The Stockade Riots -- Accept later when going to do Stockades
     .target 典狱官塞尔沃特
 step
@@ -663,7 +663,7 @@ step
     .target Foreman Oslow
 step
     .isQuestTurnedIn 118
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗纳·奥斯古|r 对话
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
     .turnin 119 >>交任务 回复弗纳
@@ -763,7 +763,7 @@ step
 step
     #era
     .isQuestComplete 122
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗纳·奥斯古|r 对话
     >>如果还没完成任务"雏龙的鳞片"，跳过这一步，后续会回来做
 	.target Verner Osgood
     .goto Redridge Mountains,31.00,47.30
@@ -909,7 +909,7 @@ step << Paladin
 step << Paladin
     .goto StormwindClassic,39.80,29.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
-    .turnin 1649 >>交任务 勇气之书
+    .turnin 1649 >>交任务勇气之书
     .target 达索瑞恩·拉尔
 step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
@@ -951,10 +951,10 @@ step << Rogue
     .goto StormwindClassic,78.67,60.13,5 >>进入军情七处总部。向上楼朝 |cRXP_FRIENDLY_“剃刀”雷吉克|r 和 |cRXP_FRIENDLY_大师级 马迪亚斯·肖尔大师|r走去
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_"剃刀"雷吉克|r 和 |cRXP_FRIENDLY_马迪亚斯·肖尔|r 对话
-    .accept 2281 >>接受任务赤脊山的联络员
+    .accept 2281 >>接受任务 赤脊山的联络员
     .target +Renzik "The Shiv"
     .goto StormwindClassic,75.76,60.35
-    .accept 2360 >>接受任务马迪亚斯和迪菲亚盗贼
+    .accept 2360 >>接受任务 马迪亚斯和迪菲亚盗贼
     .goto StormwindClassic,75.78,59.84
     .target +Master Mathias Shaw
 step << Warrior
@@ -1019,14 +1019,14 @@ step
     .goto Redridge Mountains,32.13,48.63
     .turnin 345 >>交任务 墨水短缺
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗纳·奥斯古|r 对话
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
     .turnin 119 >>交任务 回复弗纳
     .accept 124 >>接受任务 豺狼人的乱吠
 step
     #era
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗纳·奥斯古|r 对话
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
     .accept 122 >>接受任务 雏龙的鳞片
@@ -1099,21 +1099,21 @@ step
     .turnin 89 >>交任务 止水湖上的桥
 step
     #era
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗纳·奥斯古|r 对话
 	.target Verner Osgood
     .goto Redridge Mountains,31.00,47.30
     .turnin 124 >>交任务 豺狼人的乱吠
     .turnin 122 >>交任务 雏龙的鳞片
 step
     #som
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗纳·奥斯古|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗纳·奥斯古|r 对话
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
     .turnin 124 >>交任务 豺狼人的乱吠
 step << Rogue
     .goto Redridge Mountains,28.07,52.02
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卢修斯|r 对话
-    .turnin 2282 >>交任务奥瑟尔伐木场
+    .turnin 2282 >>交任务 奥瑟尔伐木场
     .target Lucius
 step << Rogue
     #sticky
@@ -1186,7 +1186,7 @@ step << Rogue
     #optional
     .goto Westfall,68.50,70.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_密探吉尔妮|r 对话
-    >>这个任务是必须完成的，关系到你的|cRXP_WARN_ |T132290:0|t[毒药]|r
+    >>|cRXP_WARN_你必须完成这个任务来获取你的|r|T132290:0|t[毒药]
     .turnin 2360 >>交任务 马迪亚斯和迪菲亚盗贼
     .accept 2359 >>接受任务 克拉文之塔
     .target Agent Kearnen
@@ -1197,7 +1197,7 @@ step << Rogue
     #optional
     .goto Westfall,68.50,70.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_密探吉尔妮|r 对话
-    >>这个任务是必须完成的，关系到你的|cRXP_WARN_ |T132290:0|t[毒药]|r
+    >>|cRXP_WARN_你必须完成这个任务来获取你的|r|T132290:0|t[毒药]
     .accept 2359 >>接受任务 克拉文之塔
     .target Agent Kearnen
     .isQuestTurnedIn 2360
@@ -1218,7 +1218,7 @@ step << Rogue
     >>|cRXP_WARN_丑陋的迪菲亚懒汉|cRXP_ENEMY_ |r出现在塔楼入口处，随后会在塔楼外侧巡逻|r
     >>|cRXP_WARN_小心，他伤害很高。如果你的|r |T132320:0|t[潜行] |cRXP_WARN_被打破，立刻使用|r |T132307:0|t[疾跑] |cRXP_WARN_并逃离|r
     .complete 2359,2 --Collect Defias Tower Key (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
     .mob Malformed Defias Drone
     .isOnQuest 2359
     .train 1856,3 -- skips step if not 22/doesnt have Vanish
@@ -1243,7 +1243,7 @@ step << Rogue
     >>|cRXP_WARN_如果你的背包中或已装备|r |T135641:0|t[匕首] |cRXP_WARN_，你可以施放|r |T132282:0|t[伏击] |cRXP_WARN_对付里面的 |cRXP_ENEMY_迪菲亚巡塔员|r 和 |cRXP_ENEMY_迪菲亚哨兵|r，从而瞬间击杀他们。击杀第一个 |cRXP_ENEMY_迪菲亚哨兵|r 后请做好逃跑准备，并记住你可能会从上方被攻击。这种方法更慢，但安全性高得多|r
     >>|cRXP_WARN_注意，如果你需要跑出塔楼，|cRXP_ENEMY_丑陋的迪菲亚懒汉|r 和 |cRXP_ENEMY_迪菲亚苦工|r 可能会在塔楼入口处|r
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点击此处查看视频指南
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5sIew15IcG0 >> 点这里看视频教学
     .mob Defias Tower Patroller
     .mob Defias Tower Sentry
     .isOnQuest 2359
@@ -1301,7 +1301,7 @@ step << !Dwarf Rogue
     #optional
     #requires AntiVenomEnd
     .goto 1453,43.070,26.155
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>|cRXP_WARN_如果你有|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_或者|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_朋友，建议让他们帮你移除|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_，而不是自己处理|r
     .skill firstaid,80 >>|cRXP_WARN_将你的|r |T135966:0|t[急救] |cRXP_WARN_提升到 80|r
     .aura -9991
@@ -1312,7 +1312,7 @@ step << !Dwarf Rogue
     #optional
     #label FirstAidEnd
     .goto 1453,43.070,26.155
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>|cRXP_WARN_如果你有|r |T626003:0|t|cFFF48CBA圣骑士|r |cRXP_WARN_或者|r |T625999:0|t|cFFFF7C0A德鲁伊|r |cRXP_WARN_朋友，建议让他们帮你移除|r |T136230:0|t[赞吉尔之触] |cRXP_WARN_，而不是自己处理|r
     .train 7934 >>|cRXP_WARN_学习|r |T134437:0|t[抗毒药剂]
     .aura -9991
@@ -1356,7 +1356,7 @@ step << Rogue
     .goto StormwindClassic,75.78,59.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马迪亚斯·肖尔大师|r 对话
     >>|cRXP_WARN_如果你之前切换成了|r |T135641:0|t[匕首] |cRXP_WARN_，记得重新装备你的主武器|r << Rogue
-    .turnin 2359 >>交任务克拉文之塔
+    .turnin 2359 >>交任务 克拉文之塔
     .target 马迪亚斯·肖尔大师
     .isQuestComplete 2359
 ]])

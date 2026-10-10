@@ -289,7 +289,7 @@ step
 step
     .goto 1438/1,713.81,10407.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪兰妮亚·银辉|r 对话
-    .turnin 3521 >>交任务 埃沃隆的解药
+    .turnin 3521 >>交任务  埃沃隆的解药
     .target 迪兰妮亚·月光
     .accept 3522 >>接受任务 埃沃隆的解药
 step << Priest
@@ -327,7 +327,7 @@ step
     .target 埃沃隆
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃沃隆|r 对话
     >>提示：|cRXP_WARN_选择短裤作为奖励。你稍后需要用它来刻印符文|r << Priest sod
-    .turnin 3522 >>交任务 埃沃隆的解药
+    .turnin 3522 >>交任务  埃沃隆的解药
 step
     #completewith next
     .goto 1438/1,926.08,10773.42,25 >>进入暗丝洞穴
@@ -414,7 +414,7 @@ step << Priest
 	.goto 1438/1,801.64,10458.75
     .target 珊达
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊达|r 对话
-	.turnin 3119 >>交任务 神圣符记
+	.turnin 3119 >>交任务  神圣符记
     .accept 97979 >>接受任务 女神的恩赐
     .accept 5622 >>接受任务 月神的恩赐
 	.trainer >>训练你的职业技能
@@ -1350,7 +1350,7 @@ step << Druid/Priest
     .target 哨兵阿瑞尼亚·碎云
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r 对话
     >>|cRXP_WARN_记住这是一个限时任务，你需要在接受任务之后10分钟之内交任务|r
-    .turnin 938 >>交任务 密斯特
+    .turnin 938 >>交任务  密斯特
 step
     #completewith xp10 <<!Druid !Priest
 	#label harpies
@@ -1417,7 +1417,7 @@ step << Hunter
 step << Hunter
     #sticky
     #label xp10
-    .xp 9+800 >>升级至9级800经验值
+    .xp 9+800 >>刷怪升级至9级800经验值
     >>|cRXP_WARN_一旦你达到这个经验值临界点，就跳过鹰身人任务和护送任务，直接前往达纳苏斯。你稍后还会有机会来完成这些任务|r
 step << Hunter
     #completewith xp10
@@ -1426,7 +1426,7 @@ step << Hunter
     .target 哨兵阿瑞尼亚·碎云
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r 对话
     >>|cRXP_WARN_记住这是一个限时任务，你需要在接受任务之后10分钟之内交任务|r
-    .turnin 938 >>交任务 密斯特
+    .turnin 938 >>交任务  密斯特
 step << Hunter
     #completewith xp10
 	#requires harpies
@@ -2095,7 +2095,7 @@ step
     .target 哨兵阿瑞尼亚·碎云
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r 对话
     >>|cRXP_WARN_记住这是一个限时任务，你需要在接受任务之后10分钟之内交任务|r
-    .turnin 938 >>交任务 密斯特
+    .turnin 938 >>交任务  密斯特
     .isOnQuest 938
 step
     #requires harpies2

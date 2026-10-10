@@ -3954,7 +3954,7 @@ step << Warlock
 step << Rogue
     #xprate <1.59
     .goto 1453,74.645,52.818
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     >>|cRXP_WARN_只训练|r |T132147:0|t|T132307:0|t[双武器] |cRXP_WARN_和|r |T132307:0|t|T132307:0|t[疾跑]
     .train 674 >>训练 |T132147:0|t[双武器]
     .train 2983 >>训练 |T132307:0|t[疾跑]
@@ -3962,7 +3962,7 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     .goto 1453,74.645,52.818
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     .train 674 >>训练 |T132147:0|t[双武器]
     .train 2983 >>训练 |T132307:0|t[疾跑]
     .target 夜行者奥斯伯
@@ -3971,7 +3971,7 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     .goto 1453,74.645,52.818
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     .train 1766 >>训练你的职业技能
     .target 夜行者奥斯伯
     .xp <12,1
@@ -3980,7 +3980,7 @@ step << Rogue
     #xprate >1.59
     #optional
     .goto 1453,74.645,52.818
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     .trainer >>训练你的职业技能
     .target 夜行者奥斯伯
     .xp <14,1
@@ -5917,7 +5917,7 @@ step << Priest/Warlock
     .goto Ironforge,21.131,17.276,5,0
     .goto Ironforge,23.135,15.936
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼下的 |cRXP_FRIENDLY_哈瑞克·石鼓|r 对话
-    >>|cRXP_BUY_购买1根|r |T135468:0|t[烟尘魔杖] |cRXP_BUY_从他那里|r
+    >>|cRXP_BUY_从他那里|r购买1把|cRXP_BUY_ |T135468:0|t[烟尘魔杖]|r
     .collect 5208,1 --Smoldering Wand (1)
     .target 哈瑞克·石鼓
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
