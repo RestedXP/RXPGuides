@@ -4271,15 +4271,17 @@ step
     .accept 907 >>Accept Enraged Thunder Lizards
     .target Jorn Skyseer
 step
-    #completewith next
+    #completewith SleepingBag1
+    >>Kill |cRXP_ENEMY_Thunder Lizards|r. Loot them for their |cRXP_LOOT_Blood|r
+    .complete 907,1 --Thunder Lizard Blood (3)
+    .mob Thunderhead
+    .mob Stormsnout
+step
+    #completewith LizardBlood
     .goto 1413/1,-1899.59,-2624.34,0
     .goto 1413/1,-2016.12,-2650.02,0
     .goto 1413/1,-2400.18,-2398.01,0
     .goto 1413/1,-2363.70,-2537.19,0
-    .goto 1413/1,-1899.59,-2624.34,80,0
-    .goto 1413/1,-2016.12,-2650.02,80,0
-    .goto 1413/1,-2363.70,-2537.19,80,0
-    .goto 1413/1,-2400.18,-2398.01,80,0
     >>Kill |cRXP_ENEMY_Owatanka|r. Loot him for |T133723:0|t[|cRXP_LOOT_Owatanka's Tailspike|r]
     >>|cRXP_WARN_Use the |T133723:0|t[|cRXP_LOOT_Owatanka's Tailspike|r] to start the quest|r
     >>|cRXP_WARN_He has 4 spawnpoints (marked on the map)|r
@@ -4288,6 +4290,12 @@ step
     .use 5102
     .unitscan Owatanka
 step
+    #label SleepingBag1
+    .goto The Barrens,46.361,73.904
+    >>Click the |cRXP_PICK_Burned-Out Remains|r on the ground
+    .accept 79007 >> Accept ...and that note you found
+step
+    #label LizardBlood
     #loop
     .goto 1413/1,-1868.18,-2498.00,0
     .goto 1413/1,-1868.18,-2498.00,60,0
@@ -6517,6 +6525,26 @@ step << Hunter
     .train 24558 >> Train your pet spells
     .target Xao'tsu
     .xp <24,1
+step << skip
+    .goto 1454/1,-4746.58,2036.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nogg|r
+    .accept 2841 >>Accept Rig Wars
+    .target Nogg
+step
+    .goto 1454/1,-4739.57,2036.84
+    .gossipoption 95758 >>Talk to |cRXP_FRIENDLY_Sovik|r
+    .isNotOnQuest 2842
+    .target Sovik
+step
+    .goto 1454/1,-4739.57,2036.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sovik|r
+    -->>|cRXP_WARN_You are required to have Rig Wars in your quest log to accept this quest|r
+    .accept 2842 >>Accept Chief Engineer Scooty
+    .target Sovik
+step << skip
+    #optional
+    .abandon 2841 >> Abandon Rig Wars. Make sure you have Chief Engineer Scooty in your quest log
+    .dungeon !GNOMER
 step << Rogue
     .goto 1454/1,-4355.53,1520.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135423:0|t[Deadly Throwing Axe] |cRXP_BUY_from him|r

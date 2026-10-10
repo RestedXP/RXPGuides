@@ -3223,7 +3223,6 @@ RXPGuides.RegisterGuide([[
 #version 11
 #defaultfor !Hunter !Shaman !Tauren
 #forever
-#era/som--h
 #name 12-14 Silverpine Forest
 #displayname 13-15 Silverpine Forest << Paladin
 #next 12-17 The Barrens
@@ -3696,6 +3695,7 @@ step
     .goto 1421/0,1625.94,522.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadrec|r in the crypt
     .turnin 439 >>Turn in Rot Hide Clues
+    .accept 440 >>Accept The Engraved Ring
     .target High Executor Hadrec
 step
     #completewith next
