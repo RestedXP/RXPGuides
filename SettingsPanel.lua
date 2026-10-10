@@ -4441,3 +4441,9 @@ function addon.settings.dungeons:SetAll()
         addon.settings.profile.dungeons[key] = true
     end
 end
+
+function addon.settings.dungeons:SetNone()
+    for key, name in pairs(self:GetDungeons()) do
+        addon.settings.profile.dungeons[key] = false
+    end
+end

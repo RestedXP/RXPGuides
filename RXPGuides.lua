@@ -1362,6 +1362,10 @@ local function LoadCache(guide)
                                     currentGuideName)
                 if g then
                     addon.SaveGuideProgress(g, startStep, startStepId)
+                    if WOW_PROJECT_ID == WOW_PROJECT_CAMELOT then
+                        --TODO: Fix the dungeon selection for Camelot
+                        addon.settings.dungeons:SetNone()
+                    end
                     addon:LoadGuide(g, true)
                     currentGuideGroup = nil
                     currentGuideName = nil
