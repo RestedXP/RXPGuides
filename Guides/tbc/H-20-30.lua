@@ -1013,7 +1013,7 @@ step
     .mob +Bristleback Geomancer
 step
     .goto The Barrens,44.55,59.27
-    >>Kill |cRXP_ENEMY_Bristleback Quilboars|r. Loot them for a |T134128:0|t[|cRXP_LOOT_Blood Shard|r
+    >>Kill |cRXP_ENEMY_Bristleback Quilboars|r. Loot them for a |T134128:0|t[|cRXP_LOOT_Blood Shard|r]
     .collect 5075,1,5052,1 --Blood Shard (1)
     .mob Bristleback Water Seeker
     .mob Bristleback Thornweaver
@@ -3089,7 +3089,7 @@ step << Rogue
 step << Rogue/Druid
     #completewith MissionProbable
     .goto The Barrens,57.63,7.48,120,0
-    .subzone 382 >> Travel to the Sludge Ven
+    .subzone 382 >> Travel to The Sludge Fen
     .isOnQuest 30 << Druid
 step << Druid
     .goto The Barrens,56.67,8.32
@@ -5729,7 +5729,7 @@ step << Shaman
     #optional
     .goto Thunder Bluff,23.64,18.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r
-    .train 408443 >> Train your class spells
+    .train 943 >> Train your class spells
     .target Tigor Skychaser
     .xp <26,1
     .xp >28,1
@@ -7476,7 +7476,7 @@ step
     .isQuestTurnedIn 1150
     .maxlevel 31
 step
-    #loop
+    #completewith DarkcloudPin
     .goto Thousand Needles,36.10,55.02,0
     .goto Thousand Needles,30.35,51.58,0
     .goto Thousand Needles,24.34,44.72,0
@@ -7489,16 +7489,15 @@ step
     .goto Thousand Needles,24.34,44.72,60,0
     .goto Thousand Needles,20.88,39.84,60,0
     .goto Thousand Needles,17.33,36.72,60,0
-    .goto Thousand Needles,13.27,26.74,60,0
-    .goto Thousand Needles,9.98,21.71,60,0
-    .goto Thousand Needles,24.34,44.72,60,0
     >>Find and kill |cRXP_ENEMY_Rok'Alim the Pounder|r. Loot him for his |cRXP_LOOT_Fragments|r
     >>|cRXP_WARN_He patrols a large portion of the northern/western part of the zone|r
     >>|cRXP_WARN_Skip this step for now if you can't find him|r
     .complete 1151,1 -- Fragments of Rok'Alim (1)
     .unitscan Rok'Alim the Pounder
 	.isOnQuest 1151
+    .maxlevel 31
 step
+    #label DarkcloudPin
     .goto Thousand Needles,31.47,36.71,30 >> Head to Darkcloud Pinnacle
     .isOnQuest 5064,5147,4904
     .maxlevel 31
@@ -7610,16 +7609,17 @@ step
     .goto Thousand Needles,17.33,36.72,0
     .goto Thousand Needles,13.27,26.74,0
     .goto Thousand Needles,9.98,21.71,0
+    .goto Thousand Needles,13.27,26.74,60,0
+    .goto Thousand Needles,9.98,21.71,60,0
+    .goto Thousand Needles,24.34,44.72,60,0
     .goto Thousand Needles,36.10,55.02,100,0
     .goto Thousand Needles,30.35,51.58,40,0
     .goto Thousand Needles,24.34,44.72,60,0
     .goto Thousand Needles,20.88,39.84,60,0
     .goto Thousand Needles,17.33,36.72,60,0
-    .goto Thousand Needles,13.27,26.74,60,0
-    .goto Thousand Needles,9.98,21.71,60,0
-    .goto Thousand Needles,24.34,44.72,60,0
     >>Find and kill |cRXP_ENEMY_Rok'Alim the Pounder|r. Loot him for his |cRXP_LOOT_Fragments|r
     >>|cRXP_WARN_He patrols a large portion of the northern/western part of the zone|r
+    >>|cRXP_WARN_Skip this quest if you cannot find him|r
     .complete 1151,1 -- Fragments of Rok'Alim (1)
     .unitscan Rok'Alim the Pounder
 	.isOnQuest 1151
@@ -8094,11 +8094,24 @@ step << Rogue
     .target Rekkul
     .zoneskip Orgrimmar,1
 step << Shaman
-    .goto Orgrimmar,37.95,37.75
+    .goto 1454/1,-4212.89,1920.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Searn|r
-    .trainer >> Train your class spells
     .accept 1531 >> Accept Call of Air
     .target Searn Firewarder
+step << Shaman
+    .goto 1454/1,-4225.09,1933.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    .train 8232 >> Train your class spells
+    .target Kardris Dreamseeker
+    .xp <30,1
+    .xp >32,1
+step << Shaman
+    #optional
+    .goto 1454/1,-4225.09,1933.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    .train 945 >> Train your class spells
+    .target Kardris Dreamseeker
+    .xp <32,1
 step << Warlock
     .goto Orgrimmar,48.62,46.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirket|r

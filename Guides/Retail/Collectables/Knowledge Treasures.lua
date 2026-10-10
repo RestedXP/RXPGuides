@@ -1,4 +1,5 @@
 --Nesting
+local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
@@ -456,7 +457,7 @@ step
     #arrowtext Click on |cRXP_PICK_Telescope|r
     .goto 2395,40.52,44.28
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Telescope|r.
-    .complete 87394,1 --1/1 
+    .complete 87394,1 --1/1
 step
     #label ManualofMistakesandMishaps
     #arrowtext Click on |cRXP_PICK_Manual of Mistakes and Mishaps|r
@@ -484,7 +485,7 @@ step
 step
     #label CarefullyRackedSpear
     #arrowtext Click on |cRXP_PICK_Carefully Racked Spear|r
-    .isQuestAvailable 89179 
+    .isQuestAvailable 89179
     .goto 2536,33.19,65.73
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Carefully Racked Spear|r.
     .turnin 89179 >>Blacksmithing Knowledge Treasure

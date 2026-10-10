@@ -95,7 +95,7 @@ step
     .xp 3+1110 >>在回城的路上刷到1110+/1400经验值
 step
     .goto Elwynn Forest,47.7,41.4
-    .vendor >>垃圾卖店
+    .vendor >>把垃圾物品卖给商人
 step
     .goto Elwynn Forest,48.923,41.606
 >>与|cRXP_FRIENDLY_治安官玛克布莱德|r 对话
@@ -641,7 +641,7 @@ step
     .turnin 109 >>交任务 向格里安·斯托曼报到
 step
     .goto Westfall,57.002,47.169
-    .vendor >>垃圾卖店
+    .vendor >>把垃圾物品卖给商人
 .target 军需官刘易斯
 >>与|cRXP_FRIENDLY_军需官刘易斯|r 对话
     .accept 6181 >>接受任务 快捷的消息
@@ -939,7 +939,7 @@ step
     .turnin 3364 >>交任务 热酒快递
 .target 德南·弗卡特
     .accept 3365 >>接受任务 归还酒杯
-    .vendor >>垃圾卖店
+    .vendor >>把垃圾物品卖给商人
 step
     .goto Dun Morogh,28.709,66.366
 .target 玛瑞克·斯托纳尔
@@ -1035,7 +1035,7 @@ step
 step
     #completewith next
     .goto Dun Morogh,46.7,53.5
-    .vendor >>垃圾卖店
+    .vendor >>把垃圾物品卖给商人
 step
     .goto Dun Morogh,46.8,52.4
 .target 拉格纳·雷酒

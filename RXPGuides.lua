@@ -5,6 +5,16 @@ local _G = _G
 local UnitInRaid = UnitInRaid
 local fmt = string.format
 
+function addon.IsGamePadEnabled()
+    local interfaceStyle = _G.GetCVar and _G.GetCVar("InputDeviceInterfaceStyle")
+    if interfaceStyle ~= nil then
+        return interfaceStyle == "1"
+    end
+
+    local gamePad = _G.C_GamePad
+    return gamePad and gamePad.IsEnabled and gamePad.IsEnabled() or false
+end
+
 function addon.safeCall(callback, ...)
     local args = {...}
 
@@ -42,7 +52,17 @@ end
 local GetSpellCooldown = _G.GetSpellCooldown or function(spellIdentifier)
     if C_Spell and C_Spell.GetSpellCooldown then
         local info = C_Spell.GetSpellCooldown(spellIdentifier)
-        return info.startTime, info.start, info.duration, info.enabled, info.modRate
+        local enabled = info.isEnabled
+        local isActive = info.isActive
+        local startTime,duration = info.startTime, info.duration
+        if not isActive then
+            startTime = 0
+            duration = 0
+        elseif not enabled then
+            startTime = GetTime()
+            duration = 1e6
+        end
+        return startTime, duration, enabled, isActive
     end
 end
 addon.GetSpellCooldown = GetSpellCooldown
@@ -98,8 +118,9 @@ addon.HookMessage = function(self,message,callback,...)
 end
 
 function addon.SendEvent(self,...)
-    if _G.WeakAuras and _G.WeakAuras.ScanEvents then
-        _G.WeakAuras.ScanEvents(...)
+    local WeakAuras = _G.WeakAuras or _G.ForeverAuras
+    if WeakAuras and WeakAuras.ScanEvents then
+        WeakAuras.ScanEvents(...)
     end
     return addon.SendMessage(self,...)
 end
@@ -201,59 +222,6 @@ local RXPGuides = {}
 addon.RXPGuides = RXPGuides
 _G.RXPGuides = RXPGuides
 
-function addon.SaveGuideProgress(guide, step, stepId)
-    if not guide or not step or not RXPCData then return end
-
-    -- Preserve downgrade functionality
-    RXPCData.currentStep = step
-
-    local stepData = guide.steps and guide.steps[step]
-    stepId = stepId or stepData and stepData.stepId
-
-    if stepId then
-        RXPCData.currentStepId = stepId
-    end
-
-    if not guide.empty and guide.key then
-        RXPCData.guideProgress[guide.key] = {
-            step = step,
-            stepId = stepId,
-        }
-    end
-end
-
-function addon.GetGuideProgress(guide)
-    guide = guide or addon.currentGuide
-
-    if not guide then
-        return tonumber(RXPCData and RXPCData.currentStep) or 1,
-               RXPCData and RXPCData.currentStepId
-    end
-
-    local guideProgress = RXPCData and RXPCData.guideProgress
-    local progress = guide.key and guideProgress and guideProgress[guide.key]
-    local step = progress and progress.step
-    local stepId = progress and progress.stepId
-
-    if not step and RXPCData and
-            RXPCData.currentGuideGroup == guide.group and
-            RXPCData.currentGuideName == guide.name then
-
-        addon.SaveGuideProgress(guide, RXPCData.currentStep,
-                               RXPCData.currentStepId)
-
-        step = RXPCData.currentStep
-        stepId = RXPCData.currentStepId
-    end
-
-    if step then
-        step = tonumber(step) or 1
-        return step, stepId
-    end
-
-    return 1, stepId
-end
-
 addon.guideCache = {}
 addon.questQueryList = {}
 addon.itemQueryList = {}
@@ -338,7 +306,6 @@ function addon.GetStepQuestReward(titleOrId)
     -- addon.questTurnIn[747] == addon.questTurnIn["The Hunt Begins"]
 
     local element = addon.questTurnIn[titleOrId]
-
     if not element then return 0 end
     if not addon.settings.profile.enableQuestRewardAutomation then return 0,element end
 
@@ -607,6 +574,11 @@ local trainerUpdate = 0
 
 local function ProcessSpells(names, rank)
     if gameVersion > 90000 or not addon.defaultSpellList then return end
+
+    if addon.game == "FOREVER" and ClassTrainerFrame and ClassTrainerFrame.TitleContainer and ClassTrainerFrame.TitleContainer.TitleText:GetText() == UnitName("pet") then
+        return
+    end
+
     local _, race = UnitRace("player")
     local level = UnitLevel("player")
     local entries = {race, addon.player.class}
@@ -864,6 +836,14 @@ local GetQuestLogSelection, GetNumQuestLogChoices = _G.GetQuestLogSelection,
 local GetQuestLogChoiceInfo, GetQuestLogItemLink, GetQuestLogTitle =
     _G.GetQuestLogChoiceInfo, _G.GetQuestLogItemLink, _G.GetQuestLogTitle
 
+-- GetQuestLogChoiceInfo = function(arg1,...)
+--     if C_QuestLog and C_QuestLog.GetInfo then
+--         return _G.GetQuestLogChoiceInfo(arg1)
+--     else
+--         return _G.GetQuestLogChoiceInfo(arg1,...)
+--     end
+-- end
+
 -- bestSellOption, bestRatioOption, options
 local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQuestItemLink, GetQuestLogChoiceInfo)
     local hardCodedReward = addon.GetStepQuestReward(questID)
@@ -887,7 +867,7 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
         if GetQuestItemInfo then
             isUsable = select(5, GetQuestItemInfo("choice", i))
         else
-            isUsable = select(5, GetQuestLogChoiceInfo(i))
+            isUsable = select(5, GetQuestLogChoiceInfo(i,questID))
         end
 
         itemLink = GetQuestItemLink("choice", i)
@@ -1026,14 +1006,22 @@ function addon.DisplayQuestLogRewards(questLogIndex)
         questLogIndex = GetQuestLogSelection()
     end
     if questLogIndex < 1 then return end
+    local questID = 0
+    local numChoices
 
-    local numChoices = GetNumQuestLogChoices()
+    if C_QuestLog and C_QuestLog.GetInfo then
+        local o = C_QuestLog.GetInfo(questLogIndex)
+        questID = o and o.questID
+        numChoices = GetNumQuestLogChoices(questID)
+    else
+        questID = select(8, GetQuestLogTitle(questLogIndex))
+        numChoices = GetNumQuestLogChoices()
+    end
 
     if numChoices <= 1 then
         return
     end
 
-    local questID = select(8, GetQuestLogTitle(questLogIndex))
 
     -- options third return only used for handleQuestComplete
     local bestSellOption, bestRatioOption, _ = evaluateQuestChoices(questID, numChoices, nil, GetQuestLogItemLink, GetQuestLogChoiceInfo)
@@ -1385,6 +1373,84 @@ local function LoadCache(guide)
     end)
 end
 
+function addon.SaveGuideProgress(guide, step, stepId)
+    if not guide or not step or not RXPCData then return end
+
+    -- If playerGUID not saved, then it's safe to or the first mismatch
+    if not RXPCData.guideProgress.playerGUID then
+        RXPCData.guideProgress.playerGUID = addon.player.guid
+    end
+
+    -- Preserve downgrade functionality
+    RXPCData.currentStep = step
+
+    local stepData = guide.steps and guide.steps[step]
+    stepId = stepId or stepData and stepData.stepId
+
+    if stepId then
+        RXPCData.currentStepId = stepId
+    end
+
+    if not guide.empty and guide.key then
+        RXPCData.guideProgress[guide.key] = {
+            step = step,
+            stepId = stepId,
+        }
+    end
+end
+
+function addon.GetGuideProgress(guide)
+    guide = guide or addon.currentGuide
+
+    if not guide then
+        return tonumber(RXPCData and RXPCData.currentStep) or 1,
+               RXPCData and RXPCData.currentStepId
+    end
+
+    local guideProgress = RXPCData and RXPCData.guideProgress
+    local progress = guide.key and guideProgress and guideProgress[guide.key]
+    local step = progress and progress.step
+    local stepId = progress and progress.stepId
+
+    if not step and RXPCData and
+            RXPCData.currentGuideGroup == guide.group and
+            RXPCData.currentGuideName == guide.name then
+
+        addon.SaveGuideProgress(guide, RXPCData.currentStep,
+                               RXPCData.currentStepId)
+
+        step = RXPCData.currentStep
+        stepId = RXPCData.currentStepId
+    end
+
+    if step then
+        step = tonumber(step) or 1
+        return step, stepId
+    end
+
+    return 1, stepId
+end
+
+
+function addon.ResetGuideProgress()
+    if not RXPCData then return end
+
+    local guideProgress = RXPCData.guideProgress or {}
+    wipe(guideProgress)
+
+    guideProgress.playerGUID = addon.player.guid
+    RXPCData.guideProgress = guideProgress
+    RXPCData.currentStep = 1
+    RXPCData.currentStepId = nil
+    RXPCData.stepSkip = {}
+    RXPCData.completedWaypoints = {}
+
+    startStep = 1
+    startStepId = nil
+
+    addon.ReloadGuide()
+end
+
 
 function addon:OnInitialize()
     local saveLocally = false
@@ -1435,6 +1501,7 @@ function addon:OnInitialize()
         RXPData.gameVersion = gameVersion
     end
     addon.settings:InitializeDatabase()
+    addon:SetupQuestLog()
     RXPCData.guideProgress = RXPCData.guideProgress or {}
     addon.CreateMetaDataTable()
     addon.settings:InitializeSettings()
@@ -1474,6 +1541,7 @@ function addon:OnInitialize()
     addon.SetupGuideWindow()
     addon.RenderFrame()
     addon.SetupArrow()
+    addon.SetupWorldMap()
     addon:CreateActiveItemFrame()
     addon.comms:Setup()
     addon.targeting:Setup()
@@ -1545,6 +1613,8 @@ function addon:OnEnable()
         RXPData.maxLoadTime = math.ceil(RXPData.maxLoadTime/1.5)
     end
     addon.addonLoaded = true
+
+    if addon.inventoryManager then addon.inventoryManager:Setup() end
 
     --addon.RXPFrame.GenerateMenuTable()
 
@@ -1659,6 +1729,25 @@ function addon:OnEnable()
         if addon.itemUpgrades then addon.itemUpgrades:Setup() end
     end)
 
+    if addon.player.level == 1 then
+        -- Check for character re-creation after normal loading/initialization completes
+        C_Timer.After(4, function()
+            if not RXPCData.guideProgress then return end
+
+            -- No progress saved since started tracking it
+            if not RXPCData.guideProgress.playerGUID then return end
+
+            if RXPCData.guideProgress.playerGUID == addon.player.guid then
+                return
+            end
+
+            addon.comms:ConfirmChoice(
+                "RXP_GUIDE_PROGRESS_PLAYER_MISMATCH",
+                fmt("%s - %s", addonName, L("Guide progress was saved by another character. Reset it?")),
+                addon.ResetGuideProgress)
+        end)
+    end
+
 end
 
 -- Tracks if a player is on a loading screen and pauses the main update loop
@@ -1718,7 +1807,7 @@ function addon:UI_INFO_MESSAGE(_,arg1,arg2)
     if not (currentMap and arg1 == 408) then return end
     local subzoneExplored = arg2:match(addon.explorationText)
     if subzoneExplored then
-        print(currentMap,subzoneExplored)
+        --print(currentMap,subzoneExplored)
         RXPCData.exploredZones[currentMap] = RXPCData.exploredZones[currentMap] or {}
         RXPCData.exploredZones[currentMap][subzoneExplored] = true
     end
@@ -1783,7 +1872,11 @@ function addon:TRAINER_SHOW(...)
     addon.trainerFrame:SetScript("OnUpdate", trainerFrameUpdate)
 end
 
-function addon:TRAINER_CLOSED(...) addon.trainerFrame:SetScript("OnUpdate", nil) end
+function addon:TRAINER_CLOSED(...)
+    if addon.trainerFrame then
+        addon.trainerFrame:SetScript("OnUpdate", nil)
+    end
+end
 
 function addon:PLAYER_LEVEL_UP(_, level)
     if not addon.currentGuide then return end
@@ -2165,11 +2258,7 @@ function addon.LegacyUpdateLoop()
             if skip > 512 and addon.settings then
                 skip = skip % 512
                 if addon.saveSettingsLocally then
-                    addon.settings:SaveFramePositions()
-                    C_Timer.After(0,function()
-                       RXPCData.localDB =
-                          {profile = addon.settings.copy(addon.settings.profile)}
-                    end)
+                    addon.settings:SaveLocalProfile()
                 end
             end
         end
@@ -2597,6 +2686,13 @@ function addon.stepLogic.ProfessionCheck(step)
     elseif not profession then
         return true
     end
+end
+
+function addon.stepLogic.BetaVersionCheck(step)
+    if not addon.settings.profile.enableBetaFeatures and step.beta then
+        return false
+    end
+    return true
 end
 
 RXP = addon -- debug purposes

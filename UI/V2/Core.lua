@@ -662,13 +662,25 @@ function addon.v2:ShowSettingsMenu()
     if #menu > 0 then addon:ShowMenu(menu) end
 end
 
-function addon.v2:BuildGuideStepsSnapshot()
+function addon.v2:BuildGuideStepsSnapshot(includeRows)
     -- Translate the mutable legacy guide state into rows consumed by the V2 guide window.
     local guide = addon.currentGuide
     local profile = addon.settings and addon.settings.profile
     local currentStep = addon.GetGuideProgress()
+    local rows = {}
+
+    if not profile then return {title = "", subtitle = "", rows = rows} end
+
+    if not guide or guide.empty then
+        return {title = L("Welcome to RestedXP"), subtitle = L("Select a guide:"), rows = rows, empty = true}
+    end
+
+    local activeStepIndex, step, hidden, complete, text, rawtext
+
+    local level = addon.player.level
+
+    local skippedSteps = RXPCData and RXPCData.stepSkip or {}
     local activeSteps = addon.RXPFrame and addon.RXPFrame.activeSteps
-    local activeStepIndex
 
     if activeSteps then
         for _, activeStep in ipairs(activeSteps) do
@@ -680,18 +692,7 @@ function addon.v2:BuildGuideStepsSnapshot()
 
     activeStepIndex = activeStepIndex or currentStep
 
-    local skippedSteps = RXPCData and RXPCData.stepSkip or {}
-    local rows = {}
-    local level = addon.player.level
-    local step, hidden, complete, text, rawtext
-
-    if not profile then return {title = "", subtitle = "", rows = rows} end
-
-    if not guide or guide.empty then
-        return {title = L("Welcome to RestedXP"), subtitle = L("Select a guide:"), rows = rows, empty = true}
-    end
-
-    for index, guideStep in ipairs(guide.steps or {}) do
+    for index, guideStep in ipairs(includeRows ~= false and guide.steps or rows) do
         step = guideStep
 
         complete = step.completed or skippedSteps[index] or (not step.sticky and currentStep > index)
@@ -718,13 +719,15 @@ function addon.v2:BuildGuideStepsSnapshot()
 
         hidden = hidden or text == ""
 
-        rows[#rows + 1] = {
-            index = index,
-            text = text,
-            hidden = hidden,
-            complete = complete,
-            current = index == activeStepIndex
-        }
+        if not (profile.hideCompletedSteps and complete) then
+            rows[#rows + 1] = {
+                index = index,
+                text = text,
+                hidden = hidden,
+                complete = complete,
+                current = index == activeStepIndex
+            }
+        end
     end
 
     local guideName = addon.GetGuideName(guide) or ""
@@ -956,17 +959,10 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
         ["UpdateScrollbar"] = function(this)
             local scroll = this.scroll
             local contentHeight = (this.rowsHeight or 0) + scroll:GetContentTopPadding()
+            local viewHeight = scroll.scrollframe:GetHeight()
 
-            scroll.noScrollbar = contentHeight <= scroll.scrollframe:GetHeight()
-
-            if scroll.noScrollbar then
-                scroll:SetScroll(0)
-                scroll.scrollBarShown = nil
-                scroll.scrollbar:Hide()
-                scroll.scrollframe:SetPoint("BOTTOMRIGHT")
-            else
-                scroll:FixScroll()
-            end
+            scroll.noScrollbar = not this.frame:IsShown() or viewHeight <= 1 or contentHeight <= viewHeight
+            scroll:FixScroll()
         end,
 
         ["ScrollToActive"] = function(this)
@@ -992,7 +988,7 @@ function addon.ui.v2:RegisterRXPV2GuideSteps()
         for method, func in pairs(methods) do widget[method] = func end
 
         scroll.scrollframe:HookScript("OnSizeChanged", function()
-            if not widget.rows then return end
+            if not widget.rows or widget.resizing then return end
             if widget.rowsWidth ~= scroll.scrollframe:GetWidth() then
                 widget:SetRows(widget.rows)
             else
@@ -1037,12 +1033,17 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         local frame = this.frame
 
         frame:StopMovingOrSizing()
+        this.guideSteps.resizing = nil
 
-        if saveHeight and this.guideSteps.frame:IsShown() and frame:GetHeight() > this:GetCollapsedHeight() then
+        if saveHeight and not this.snapshotEmpty and frame:GetHeight() > this:GetShellHeight() and
+            (this.guideSteps.frame:IsShown() or not addon.settings:IsStepListShown()) then
             this.guideHeight = frame:GetHeight()
             addon.settings.profile.v2GuideWindowExpandedHeight = this.guideHeight
+
+            if not addon.settings:IsStepListShown() then addon.settings:SetStepListShown(true) end
         end
 
+        if saveHeight then this:RefreshLayout() end
         addon.settings:SaveFramePositions()
         addon.v2.events:Trigger("GuideWindowRefresh", "layout")
     end
@@ -1169,10 +1170,12 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
                 addon.settings.profile.frameHeight = max(addon.settings.profile.frameHeight or 0, addon.height or 35)
             end
 
-            this.guideSteps:SetRows(snapshot.rows, nil, scrollToActive)
+            if stepListShown or emptyGuide then
+                this.guideSteps:SetRows(snapshot.rows, nil, scrollToActive)
+            end
 
             local rowsHeight = this.guideSteps.rowsHeight or 0
-            local hasRows = not snapshot.empty and rowsHeight > 0
+            local hasRows = stepListShown and not snapshot.empty and rowsHeight > 0
             local empty = not hasRows or not stepListShown
 
             this.snapshotEmpty = emptyGuide
@@ -1197,9 +1200,9 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
             if guideStepsShown ~= (not empty) then addon:SortTimers() end
 
             this:UpdateResizeBounds(not empty, emptyGuide)
+            this.guideSteps:UpdateScrollbar()
 
             if not empty then
-                this.guideSteps:UpdateScrollbar()
                 if scrollToActive or not guideStepsShown then this.guideSteps:ScrollToActive() end
             end
         end,
@@ -1436,14 +1439,16 @@ function addon.ui.v2:RegisterRXPV2GuideWindow()
         end)
 
         widget:UpdateResizeBounds(false)
-        frame:SetScript("OnSizeChanged", function() widget:RefreshLayout() end)
         frame:SetScript("OnMouseDown", function(_, button)
             if button == "LeftButton" and not addon.settings.profile.lockFrames then frame:StartMoving() end
         end)
 
         frame:SetScript("OnMouseUp", function() SaveStatus(widget) end)
         sizer:SetScript("OnMouseDown", function()
-            if not addon.settings.profile.lockFrames then frame:StartSizing("BOTTOMRIGHT") end
+            if not addon.settings.profile.lockFrames then
+                guideSteps.resizing = true
+                frame:StartSizing("BOTTOMRIGHT")
+            end
         end)
 
         sizer:SetScript("OnMouseUp", function() SaveStatus(widget, true) end)
@@ -1520,7 +1525,7 @@ function addon.v2:UpdateGuideWindow(scrollToActive)
     local window = self:GetGuideWindow()
     if not window then return end
 
-    window:SetSnapshot(self:BuildGuideStepsSnapshot(), scrollToActive)
+    window:SetSnapshot(self:BuildGuideStepsSnapshot(addon.settings:IsStepListShown()), scrollToActive)
 
     window.frame:SetShown(not addon.settings.profile.hideGuideWindow and addon.settings.profile.showEnabled ~= false)
 end
@@ -1569,7 +1574,7 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
     ScrollFrame Container
     Plain container that scrolls its content and doesn't grow in height.
     -------------------------------------------------------------------------------]]
-    local Type, Version = "RXPV2ScrollFrame", 19
+    local Type, Version = "RXPV2ScrollFrame", 20
     if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
     --[[-----------------------------------------------------------------------------
@@ -1669,10 +1674,19 @@ function addon.ui.v2:RegisterRXPV2ScrollFrame()
             local height, viewheight = this.scrollframe:GetHeight(), this.content:GetHeight()
 
             if this.noScrollbar or viewheight <= 1 then
+                local scrollbarWasShown = this.scrollBarShown
+
                 this:SetScroll(0)
+                if this.scrollbar:GetValue() ~= 0 then this.scrollbar:SetValue(0) end
                 this.scrollBarShown = nil
                 this.scrollbar:Hide()
                 this.scrollframe:SetPoint("BOTTOMRIGHT")
+
+                if scrollbarWasShown and this.content.original_width then
+                    this.content.width = max(this.content.original_width - 4, 0)
+                    this:DoLayout()
+                end
+
                 this.updateLock = nil
 
                 return

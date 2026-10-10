@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 #displayname 1-7级 幽影谷 << sod
 #version 1
 #group RestedXP 联盟 1-20 级
-#groupid RXP-SRGCE-A1
+#group14-16级 黑海岸
 #defaultfor NightElf
 #next 6-11 泰达希尔
 step << !NightElf
@@ -141,7 +141,7 @@ step << !Hunter
     #season 0 << Warrior
     .goto Teldrassil,54.593,32.992
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃沃隆|r 对话
-    .turnin 4495 >>交任务  好朋友
+    .turnin 4495 >>交任务 好朋友
     .target 埃沃隆
     .accept 3519 >>接受任务 需要帮助的朋友
 step << !Hunter !Warrior
@@ -421,7 +421,7 @@ RXPGuides.RegisterGuide([[
 #displayname 7-13级 泰达希尔 << SoD
 #version 1
 #group RestedXP 联盟 1-20 级
-#groupid RXP-SRGCE-A1
+#group14-16级 黑海岸
 #defaultfor NightElf
 #next 14-16级 黑海岸
 

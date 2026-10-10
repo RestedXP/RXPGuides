@@ -747,6 +747,8 @@ RXPGuides.RegisterGuide([[
 -- #displayname 15-17 Darkshore << !NightElf !Dwarf/!Hunter !SoD
 -- #displayname 13-18 Darkshore << Dwarf Hunter/!NightElf sod
 
+step
+    #label start --hidden step for #include
 step << NightElf
     #label WashedA
     .goto 1439,36.621,45.596
@@ -874,6 +876,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
     .accept 984 >> Accept How Big a Threat?
     .target Terenthis
+step
+    #optional
+    .goto Darkshore,37.04,44.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaussiy|r downstairs
+    .home >> Set your Hearthstone to Auberdine
+    .target Innkeeper Shaussiy
+    .bindlocation 442
 step << !NightElf
     #label WashedA
     .goto 1439,36.701,45.122,8,0

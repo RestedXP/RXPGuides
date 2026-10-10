@@ -521,7 +521,7 @@ step
     .goto Thunder Bluff,45.23,59.40,0
     .goto Thunder Bluff,40.41,51.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师斯塔比|r 对话
-    >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
+    >>|cRXP_BUY_从拍卖行购买1条|r |T133894:0|t|T133894:0|t[新鲜的美味小鱼] |cRXP_BUY_|r
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
     .target Auctioneer Stampi
     .train 410104,1
@@ -580,7 +580,7 @@ step
     #label Fish
     #requires Kah
     .goto Thunder Bluff,40.42,58.55
-    >>在池塘里钓鱼，直到获得一条|T133894:0|t|T133894:0|t[|cRXP_LOOT_新鲜的美味小鱼|r]
+    >>在池塘里钓鱼，直到获得一条|T133894:0|t[|cRXP_LOOT_新鲜的美味小鱼|r]
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
     .train 410104,1
     .xp <4,1
@@ -2112,7 +2112,7 @@ step
     .xp <25,1
 step
     >>使用|T136222:0|t|T136222:0|t|cRXP_LOOT_[奇怪的水球]|r来开始任务
-    .accept 78920 >>接受任务 阿奎尼斯男爵
+    .accept 78920 >>接受任务阿奎尼斯男爵
     .use 211454
     .itemcount 211454,1 --Strange Water Globe (SoD) (1)
     .train 410101,1
@@ -2689,7 +2689,7 @@ step
     .waypoint Thousand Needles,26.29,52.79,15,0
     .waypoint Thousand Needles,27.23,54.04,15,0
     .waypoint Thousand Needles,26.55,55.77,15,0
-    >>击杀 cRXP_ENEMY_尖啸鹰身人|r。拾取它们的 |cRXP_LOOT_强健鹰身人羽毛|r
+    >>击杀 |cRXP_ENEMY_尖啸鹰身人|r。拾取它们的 |cRXP_LOOT_强健鹰身人羽毛|r
     .collect 213701,10 --Strong Harpy Feather (10x)
     .mob Screeching Harpy
     .mob Screeching Roguefeather
@@ -2964,7 +2964,7 @@ step
     .train 432241,1
 step
     .goto The Hinterlands,51.2,47.0
-    >>击杀|cRXP_ENEMY_被腐蚀的中等空气形态|r，然后>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_中等大地形态|r交谈。
+    >>击杀|cRXP_ENEMY_被腐蚀的中等空气形态|r，然后>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_中等空气形态|r交谈
     .turnin 81960 >>交任务 净化空气
     .accept 81968 >>接受任务 响应空气的召唤
     .mob Corrupt Moderate Manifestation of Air

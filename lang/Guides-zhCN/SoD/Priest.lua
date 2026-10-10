@@ -532,7 +532,7 @@ step << Priest
     .train 425215,1
 step << Priest
     .train 425215 >>|cRXP_WARN_使用|r |T136222:0|t|T237566:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r] |cRXP_WARN_来训练|r |T237566:0|t|T237566:0|t[扭曲信仰]
-    >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel以获得|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel以获得|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_增益效果|r
     .use 205905
     .itemcount 205905,1
 ]])
@@ -851,8 +851,8 @@ RXPGuides.RegisterGuide([[
 << Horde Priest SoD
 #group RestedXP符文与书籍指南
 #subgroup 胸部
-#name 扭曲命运 - 10级 (银松森林)
-#title 扭曲命运
+#name 扭曲信仰 - 10级 (银松森林)
+#title 扭曲信仰
 
 step
     #completewith next
@@ -879,8 +879,8 @@ RXPGuides.RegisterGuide([[
 << Horde Priest SoD
 #group RestedXP符文与书籍指南
 #subgroup 胸部
-#name 扭曲命运 - 10级（贫瘠之地）
-#title 扭曲命运
+#name 扭曲信仰 - 10级（贫瘠之地）
+#title 扭曲信仰
 
 step
     #completewith next

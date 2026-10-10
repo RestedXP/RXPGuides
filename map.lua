@@ -3,13 +3,40 @@ local L = addon.locale.Get
 local _G = _G
 
 local HBD = LibStub("HereBeDragons-2.0")
-local HBDPins = LibStub("HereBeDragons-Pins-2.0")
+local HBDPins_Lib = LibStub("HereBeDragons-Pins-2.0")
+local HBDPins = {}
+
+
 addon.activeWaypoints = {}
 addon.linePoints = {}
 
 local MapPinPool = {}
 local MapLinePool = {}
 local worldMapFramePool, miniMapFramePool, lineMapFramePool
+
+function addon.SetupWorldMap()
+    setmetatable(HBDPins, {
+        __index = function(_, k)
+            if addon.settings.profile.disableMapPins or addon.IsGamePadEnabled() then
+                return addon.functions.noop
+            end
+
+            return HBDPins_Lib[k]
+        end
+    })
+
+    _G.WorldMapFrame:HookScript("OnShow", function()
+        if addon.settings.profile.disableMapPins then return end
+
+        local hasLines = false
+        for _ in lineMapFramePool:EnumerateActive() do
+            hasLines = true
+            break
+        end
+
+        if not hasLines then addon.UpdateMap(true) end
+    end)
+end
 
 addon.arrowFrame = CreateFrame("Frame", "RXPG_ARROW", UIParent)
 local af = addon.arrowFrame
@@ -23,7 +50,7 @@ function addon.arrowFrame:UpdateVisuals()
 end
 
 local function IsInInstance()
-    if _G.IsInInstance() and not select(2, GetInstanceInfo()) == "scenario" then
+    if _G.IsInInstance() and select(2, GetInstanceInfo()) ~= "scenario" then
         return true
     end
 end
@@ -215,16 +242,19 @@ local function PinOnLeave(self)
     if self:IsForbidden() or _G.GameTooltip:IsForbidden() then
         return
     end
+
     local lineData = self.lineData
+
     if lineData then
         local element = lineData.element
+
         for line in lineMapFramePool:EnumerateActive() do
             if line.lineData.element == element then
-                self:SetAlpha(line.lineData.lineAlpha or 1)
+                line:SetAlpha(line.lineData.lineAlpha or 1)
             end
         end
-        addon.UpdateMap()
     end
+
     _G.GameTooltip:Hide()
 end
 
@@ -675,7 +705,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                         })
                     end
                 end
-                if not isMiniMap then
+                if not isMiniMap and not step.dangerousMob then
                     table.insert(addon.activeWaypoints, element)
                 end
                 if not element.hidePin then
@@ -844,7 +874,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
                             nEdges = nEdges + 1
                             InsertLine(element, sX, sY, fX, fY, element.lineAlpha or 1)
                         end
-                        if element.showArrow and step.active then
+                        if element.showArrow and step.active and not step.dangerousMob then
                             AddPoint(sX,sY,element,flags,addon.linePoints,addon.activeWaypoints)
                         end
                     end
@@ -928,6 +958,7 @@ end
 local function addWorldMapLines()
     local lineData = generateLines(addon.currentGuide.steps, addon.settings.profile.numMapPins,
                                    addon.GetGuideProgress(), false)
+    if addon.settings.profile.disableMapPins or not _G.WorldMapFrame:IsShown() then return end
 
     if #lineData > 0 then
         local canvas = _G.WorldMapFrame:GetCanvas()
@@ -1481,7 +1512,14 @@ p2 = {
 
 addon.classicToWrathEPL = GetMapCoefficients(p1.x,p1.y,p1.xb,p1.yb,p2.x,p2.y,p2.xb,p2.yb)
 addon.wrathToClassicEPL = GetMapCoefficients(p1.xb,p1.yb,p1.x,p1.y,p2.xb,p2.yb,p2.x,p2.y)
-
+if addon.gameVersion > 50000 then
+    --siege of orgrimmar patch bricked all the coordinates from IoT
+    local p1x,p1y = 4023.1,5033.1
+    local p1xb,p1yb = 6309.4,7167.2
+    local p2x,p2y = 3849.0,4228.2
+    local p2xb,p2yb = 6135.6,6363.3
+    addon.isleOfThunderTransform = GetMapCoefficients(p1x,p1y,p1xb,p1yb,p2x,p2y,p2xb,p2yb)
+end
 
 --addon.mID = {}
 function addon.GetMapId(zone)
@@ -1493,7 +1531,7 @@ function addon.GetMapId(zone)
     return addon.mapId[zone]
 end
 
-function addon.GetMapInfo(zone,x,y)
+function addon.GetMapInfo(zone,x,y,instance)
     x = tonumber(x)
     y = tonumber(y)
     if not (x and y and zone) then
@@ -1504,30 +1542,35 @@ function addon.GetMapInfo(zone,x,y)
             x = x*c[1]+c[2]
             y = y*c[3]+c[4]
         end
-        return addon.GetMapId("Stormwind City"),x,y
+        return addon.GetMapId("Stormwind City"),x,y,instance
     elseif zone == "EPLClassic" then
         if addon.gameVersion > 30000 or WOW_PROJECT_ID == WOW_PROJECT_MAINLINE then
             local c = addon.classicToWrathEPL
             x = x*c[1]+c[2]
             y = y*c[3]+c[4]
         end
-        return addon.GetMapId("Eastern Plaguelands"),x,y
+        return addon.GetMapId("Eastern Plaguelands"),x,y,instance
     elseif zone == "StormwindNew" then
         if addon.gameVersion < 30000 then
             local c = addon.wrathToClassicSW
             x = x*c[1]+c[2]
             y = y*c[3]+c[4]
         end
-        return addon.GetMapId("Stormwind City"),x,y
+        return addon.GetMapId("Stormwind City"),x,y,instance
     elseif zone == "EPLNew" then
         if addon.gameVersion < 30000 then
             local c = addon.wrathToClassicEPL
             x = x*c[1]+c[2]
             y = y*c[3]+c[4]
         end
-        return addon.GetMapId("Eastern Plaguelands"),x,y
+        return addon.GetMapId("Eastern Plaguelands"),x,y,instance
+    elseif instance == 870 then
+        local c = addon.isleOfThunderTransform
+        x = x*c[1]+c[2]
+        y = y*c[3]+c[4]
+        return 504,x,y,1064
     else
-        return addon.GetMapId(zone) or tonumber(zone),x,y
+        return addon.GetMapId(zone) or tonumber(zone),x,y,instance
     end
 end
 

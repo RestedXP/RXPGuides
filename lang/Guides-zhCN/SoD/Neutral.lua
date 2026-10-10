@@ -695,7 +695,7 @@ step
     .goto Hillsbrad Foothills,58.2,19.6,40,0
     .goto Hillsbrad Foothills,57.5,36.4,50,0
     .goto Hillsbrad Foothills,51.1,46.4,40,0
-    >>寻找|cRXP_FRIENDLY_齐克希尔|r。他在塔伦米尔和南海镇之间巡逻。从他那里购买|T134041:0|t|T134041:0|t[淡水钳嘴龟诱饵]
+    >>寻找|cRXP_FRIENDLY_齐克希尔|r。他在塔伦米尔和南海镇之间巡逻。从他那里购买|T134041:0|t[淡水钳嘴龟诱饵]
     .collect 210410,1 --Freshwater Snapper Bait (1)
     .target 吉克希尔
     .train 425759,1
@@ -1433,7 +1433,7 @@ step
     >>打开|T133876:0|t[|cRXP_LOOT_珠宝镶嵌宝箱|r] 获取 |T134419:0|t[|cRXP_FRIENDLY_日月之蚀符文|r] << Druid
     >>打开|T133876:0|t[|cRXP_LOOT_珠宝镶嵌宝箱|r] 以获取|T134419:0|t[|cRXP_FRIENDLY_狂怒愈体符文|r] << Warrior
     >>打开|T133876:0|t[|cRXP_LOOT_镶嵌宝石的箱子|r]，以获取|T134419:0|t[|cRXP_FRIENDLY_灼烧黑暗符文|r] << Warlock
-    >>打开 |T133876:0|t[|cRXP_LOOT_珠宝镶嵌宝箱|r] 获取|T134419:0|t[|cRXP_FRIENDLY_剧毒锋刃符文|r] << Rogue
+    >>打开|T133876:0|t[|cRXP_LOOT_Jewel-Encrusted 箱子|r]以获得|T134419:0|t[|cRXP_FRIENDLY_Rune of the 经典怀旧服 道具|r] << Rogue
     >>打开|T133876:0|t|T134419:0|t[|cRXP_LOOT_珠宝镶嵌宝箱|r]获取|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_先祖复苏符文|r] << Shaman
     .collect 212552,1 << Priest
     .collect 212551,1 << Paladin
@@ -1453,7 +1453,7 @@ step
     .train 410029 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_日月之蚀符文|r] |cRXP_WARN_训练|r |T236151:0|t[日月之蚀] << Druid
     .train 403467 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_狂怒愈体符文|r] |cRXP_WARN_来训练|r |T132345:0|t[狂怒回复] << Warrior
     .train 426452 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_灼烧黑暗符文|r] |cRXP_WARN_训练|r |T135823:0|t[影与焰] << Warlock
-    .train 425102 >>|cRXP_WARN_使用|r |T134419:0|t|T236270:0|t[|cRXP_FRIENDLY_剧毒锋刃符文|r] |cRXP_WARN_来训练|r |T236270:0|t|T236270:0|t[剧毒之刃] << Rogue
+    .train 425102 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_剧毒锋刃符文|r] |cRXP_WARN_来训练|r|T236270:0|t[剧毒之刃] << Rogue
     .train 425883 >>|cRXP_WARN_使用|r |T134419:0|t|T237571:0|t[|cRXP_FRIENDLY_先祖复苏符文|r] |cRXP_WARN_来训练|r |T237571:0|t|T237571:0|t[先祖复苏] << Shaman
     .use 212552 << Priest
     .use 212551 << Paladin

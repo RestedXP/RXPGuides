@@ -480,7 +480,7 @@ step
     .target +"Auntie" Bernice Stonefield
     .goto 1429/0,338.47,-9889.69
     .accept 88 >> Accept Princess Must Die!
-	.goto Elwynn Forest,34.660,84.482
+	.goto 1429/0,332.43,-9894.99--c:Elwynn Forest,34.660,84.482
     .target +Ma Stonefield
 step
     #completewith next
@@ -512,7 +512,7 @@ step
     .collect 769,4,86,1 --Collect Chunk of Boar Meat (x4)
     .mob Stonetusk Boar
 step
-    .goto Elwynn Forest,29.840,85.997
+    .goto 1429/0,499.72,-9930.05--c:Elwynn Forest,29.840,85.997
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tommy|r
     .turnin 106 >> Turn in Young Lovers
     .accept 111 >> Accept Speak with Gramma
@@ -883,7 +883,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma|r and |cRXP_FRIENDLY_Bernice|r
     .turnin 88,3 >> Turn in Princess Must Die!
     .target +Ma Stonefield
-    .goto Elwynn Forest,34.660,84.482
+    .goto 1429/0,332.43,-9894.99--c:Elwynn Forest,34.660,84.482
     .turnin 87 >> Turn in Goldtooth
     .goto 1429/0,338.47,-9889.69
     .target +"Auntie" Bernice Stonefield

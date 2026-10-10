@@ -62,7 +62,7 @@ step << Warrior
     .target Thran Khorman
 step << Warlock
     #season 0,1
-    .goto Dun Morogh,28.650,66.145
+    .goto 1426/0,391.07,-6048.84--c:Dun Morogh,28.650,66.145
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r inside
     .train 348 >> Train |T135817:0|t[Immolate]
     .accept 1599 >> Accept Beginnings
@@ -219,7 +219,7 @@ step << Warlock
 step << Warlock
     #season 0,1
     #label BeginningsEnd
-    .goto Dun Morogh,28.650,66.145
+    .goto 1426/0,391.07,-6048.84--c:Dun Morogh,28.650,66.145
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r upstairs
     .turnin 1599 >> Turn in Beginnings
     .turnin -3115 >> Turn in Tainted Memorandum
@@ -304,7 +304,7 @@ step << Hunter
     .goto 1426,20.671,75.838,0
     .xp 4 >> Grind to level 4
 step << Paladin/Warlock/Hunter/Shaman
-    .goto Dun Morogh,24.980,75.963
+    .goto 1426/0,571.82,-6371.20--c:Dun Morogh,24.980,75.963
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
     >>|cRXP_WARN_This will start a 5 minute timer for the quest. Do NOT go AFK or log out for the next 5 minutes|r
     .accept 3364 >> Accept Scalding Mornbrew Delivery
@@ -331,7 +331,7 @@ step << Hunter
     .train 1978 >>Train |T132204:0|t[Serpent Sting]
 step << Warlock
     #season 0,1
-    .goto Dun Morogh,28.650,66.145
+    .goto 1426/0,391.07,-6048.84--c:Dun Morogh,28.650,66.145
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r upstairs
     .turnin 3115 >> Turn in Tainted Memorandum
     .train 172 >>Train |T136118:0|t[Corruption]
@@ -365,11 +365,11 @@ step << Warlock
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Adlin Pridedrift
     .xp >6,1
-step << Paladin/Warlock/Hunter/Shaman
+step << Paladin/Warlock/Hunter
     #completewith next
     .goto 1426/0,497.300,-6118.500,20,0
     .goto 1426/0,467.700,-6012.800,20 >> Travel up to the hills in northern Coldridge Valley
-step << Paladin/Warlock/Hunter/Shaman
+step << Paladin/Warlock/Hunter
     >>Kill the |cRXP_ENEMY_Snow Leopard Prowler|r
     >>Loot |cRXP_PICK_Gozwin's Mechanic's Log|r on the ground
     .complete 97277,2 --|1/1 Snow Leopard Prowler slain
@@ -378,7 +378,7 @@ step << Paladin/Warlock/Hunter/Shaman
     .complete 97277,1 --|1/1 Gozwin's Mechanic's Log
     .goto 1426/0,458.700,-5940.600
 step << Paladin/Warlock/Hunter/Shaman
-    .goto Dun Morogh,24.980,75.963
+    .goto 1426/0,571.82,-6371.20--c:Dun Morogh,24.980,75.963
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
     .turnin 3365 >> Turn in Bring Back the Mug
     .target Nori Pridedrift
@@ -408,7 +408,7 @@ step
     .target Grelin Whitebeard
 step << !Paladin !Warlock !Hunter !Shaman
     #softcore
-    .goto Dun Morogh,24.980,75.963
+    .goto 1426/0,571.82,-6371.20--c:Dun Morogh,24.980,75.963
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
     >>|cRXP_WARN_This will start a 5 minute timer for the quest. Do NOT go AFK or log out for the next 5 minutes|r
     .accept 3364 >> Accept Scalding Mornbrew Delivery
@@ -451,7 +451,7 @@ step
     .subzoneskip 132
 step << !Paladin !Warlock !Hunter !Shaman
     #hardcore
-    .goto Dun Morogh,24.980,75.963
+    .goto 1426/0,571.82,-6371.20--c:Dun Morogh,24.980,75.963
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
     .accept 3364 >> Accept Scalding Mornbrew Delivery
     .target Nori Pridedrift
@@ -490,7 +490,7 @@ step << !Paladin !Warlock !Hunter !Shaman
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r and |cRXP_FRIENDLY_Grelin Whitebeard|r
     .accept 3364 >> Accept Scalding Mornbrew Delivery
-    .goto Dun Morogh,24.980,75.963
+    .goto 1426/0,571.82,-6371.20--c:Dun Morogh,24.980,75.963
     .target +Nori Pridedrift
     .turnin 218 >> Turn in The Stolen Journal
     .accept 282 >> Accept Senir's Observations
@@ -532,7 +532,7 @@ step << Rogue
     .target Solm Hargrin
 step << Priest
     #season 0,1
-    .goto Dun Morogh,28.600,66.385
+    .goto 1426/0,393.53,-6056.72--c:Dun Morogh,28.600,66.385
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
     .turnin 3110 >> Turn in Hallowed Rune << Dwarf
     .turnin 98574 >> Turn in Hallowed Memorandum << Gnome
@@ -547,22 +547,32 @@ step << Warrior
     .train 100 >> Train |T132337:0|t[Charge]
     .train 772 >> Train |T132155:0|t[Rend]
     .target Thran Khorman
-
+step << Shaman
+    #optional
+    #completewith next
+    .goto 1426/0,383.800,-6133.700,10 >> Return to |cRXP_FRIENDLY_Teo Hammerstorm|r in Anvilmar
+    .subzoneskip 77,1
+step << Shaman
+    .goto 1426/0,384.000,-6050.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teo Hammerstorm::257446|r
+    .target Teo Hammerstorm::257446
+    .turnin 94373 >>Turn in Call of Earth
+    .accept 94374 >>Accept Call of Earth
 step << !Paladin !Warlock !Hunter !Shaman
     .goto 1426/0,390.000,-6093.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda::2756|r
     .target Grund Drokda::2756
     .accept 97277 >>Accept Grund and Gozwin
-step << !Paladin !Warlock !Hunter !Shaman
+step << !Paladin !Warlock !Hunter
     #optional
     #completewith Stolen
     .goto 1426,28.831,68.698,12 >> Exit Anvilmar
     .subzoneskip 77,1
-step << !Paladin !Warlock !Hunter !Shaman
+step << !Paladin !Warlock !Hunter
     #completewith next
     .goto 1426/0,497.300,-6118.500,20,0
     .goto 1426/0,467.700,-6012.800,20 >> Travel up to the hills in northern Coldridge Valley
-step << !Paladin !Warlock !Hunter !Shaman
+step << !Paladin !Warlock !Hunter
     >>Kill the |cRXP_ENEMY_Snow Leopard Prowler|r
     >>Loot |cRXP_PICK_Gozwin's Mechanic's Log|r on the ground
     .complete 97277,2 --|1/1 Snow Leopard Prowler slain
@@ -570,38 +580,6 @@ step << !Paladin !Warlock !Hunter !Shaman
     .goto 1426/0,447.800,-5942.000
     .complete 97277,1 --|1/1 Gozwin's Mechanic's Log
     .goto 1426/0,458.700,-5940.600
-step << !Paladin !Warlock !Hunter !Shaman
-    #softcore
-    #label Stolen
-    .goto 1426/0,567.14,-6363.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
-    .turnin 218 >> Turn in The Stolen Journal
-    .accept 282 >> Accept Senir's Observations
-    .target Grelin Whitebeard
-step << !Paladin !Warlock !Hunter !Shaman
-    .goto Dun Morogh,24.980,75.963
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
-    .turnin 3365 >> Turn in Bring Back the Mug
-    .target Nori Pridedrift
-step << Dwarf Priest/Gnome Priest
-    #optional
-    .xp 4+1690 >> Grind to 1690+/2100xp
-step
-    .goto 1426/0,390.000,-6093.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda::2756|r
-    .target Grund Drokda::2756
-    .turnin 97277 >>Turn in Grund and Gozwin
-step << Shaman
-    .goto 1426/0,384.000,-6050.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teo Hammerstorm::257446|r
-    .target Teo Hammerstorm::257446
-    .turnin 94373 >>Turn in Call of Earth
-    .accept 94374 >>Accept Call of Earth
-step << Shaman
-    #completewith next
-    .goto 1426/0,497.300,-6118.500,20,0
-    .goto 1426/0,467.700,-6012.800,20,0
-    .goto 1426/0,468.000,-5972.100,20 >> Travel up to the hills in northern Coldridge Valley once again
 step << Shaman
     .isOnQuest 94374
     .goto 1426/0,582.100,-5907.800
@@ -613,11 +591,6 @@ step << Shaman
     .target Minor Manifestation of Earth::5891
     .turnin 94374 >>Turn in Call of Earth
     .accept 94375 >>Accept Call of Earth
-step << Warrior/Warlock/Shaman
-    .isOnQuest 94375
-    .hs >> Hearth to Coldridge Valley
-    .subzoneskip 77,1
-    .cooldown item,6948,>2,1
 step << Shaman
     #optional
     #completewith next
@@ -628,8 +601,29 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teo Hammerstorm::257446|r
     .target Teo Hammerstorm::257446
     .turnin 94375 >>Turn in Call of Earth
+step << !Paladin !Warlock !Hunter !Shaman
+    #softcore
+    #label Stolen
+    .goto 1426/0,567.14,-6363.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
+    .turnin 218 >> Turn in The Stolen Journal
+    .accept 282 >> Accept Senir's Observations
+    .target Grelin Whitebeard
+step << !Paladin !Warlock !Hunter !Shaman
+    .goto 1426/0,571.82,-6371.20--c:Dun Morogh,24.980,75.963
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
+    .turnin 3365 >> Turn in Bring Back the Mug
+    .target Nori Pridedrift
 step << Dwarf Priest/Gnome Priest
-    .goto Dun Morogh,28.600,66.385
+    #optional
+    .xp 4+1690 >> Grind to 1690+/2100xp
+step
+    .goto 1426/0,390.000,-6093.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda::2756|r
+    .target Grund Drokda::2756
+    .turnin 97277 >>Turn in Grund and Gozwin
+step << Dwarf Priest/Gnome Priest
+    .goto 1426/0,393.53,-6056.72--c:Dun Morogh,28.600,66.385
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
     .accept 5626 >> Accept In Favor of the Light
     .target Branstock Khalder
@@ -784,11 +778,25 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ingrid Dunwald|r inside upstairs
     .trainer >> Train your class spells
     .target Ingrid Dunwald
+step << Hunter
+    .goto 1426/0,-454.06,-5618.53--c:Dun Morogh,45.810,53.039
+    .target Grif Wildheart
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
+    .trainer >> Train your class spells
 step
     .goto 1426/0,-545.800,-5594.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor::1699|r
+    >>|cRXP_WARN_Skip this step if you don't have 1 silver, or if you wish to do it later|r
     .target Gremlock Pilsnor::1699
     .train 2550 >> Train |T133971:0|t[Cooking]
+    .turnin 96629 >>Turn in Camping 101: Cooking
+    .money <0.0100
+step
+    #optional
+    .isQuestComplete 96629
+    .goto 1426/0,-545.800,-5594.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor::1699|r
+    .target Gremlock Pilsnor::1699
     .turnin 96629 >>Turn in Camping 101: Cooking
 step << Rogue
     .goto 1426/0,-540.39,-5604.38
@@ -817,7 +825,7 @@ step << Rogue
     #label DeleteOldDaggers
     .destroy 2947 >> Delete the |T135426:0|t[Small Throwing Knives] from your bags, as they're no longer needed
 step << Warrior
-    .goto Dun Morogh,47.360,52.646
+    .goto 1426/0,-530.40,-5605.63--c:Dun Morogh,47.360,52.646
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Granis Swiftaxe|r inside
     .trainer >> Train your class spells
     .target Granis Swiftaxe
@@ -885,7 +893,7 @@ step << Paladin
     >>|cRXP_BUY_Buy a|r |T133053:0|t[Wooden Mallet]
     .target Grawn Thromwyn
     .money <0.0631
-    .goto Dun Morogh,45.290,52.190
+    .goto 1426/0,-428.45,-5590.65--c:Dun Morogh,45.290,52.190
     .collect 2493,1 --Collect Wooden Mallet (1)
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.00
 step << Paladin
@@ -1178,7 +1186,7 @@ step
     .turnin 318 >> Turn in Evershine
     .accept 319 >> Accept A Favor for Evershine
     .accept 315 >> Accept The Perfect Stout
-    .goto Dun Morogh,30.190,45.726
+    .goto 1426/0,315.23,-5378.42--c:Dun Morogh,30.190,45.726
     .target +Rejold Barleybrew
     .accept 310 >> Accept Bitter Rivals
     .goto 1426/0,315.42,-5372.02
@@ -1378,10 +1386,20 @@ step << Rogue
     .trainer >> Train your class spells
     .target Hogral Bakkan
 step << Warrior
-    .goto Dun Morogh,47.360,52.646
+    .goto 1426/0,-530.40,-5605.63--c:Dun Morogh,47.360,52.646
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Granis Swiftaxe|r inside
     .trainer >> Train your class spells
     .target Granis Swiftaxe
+step << Warlock
+    .goto 1426/0,-528.87,-5640.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gimrizz Shadowcog|r
+    .trainer >> Train your class spells
+    .target Gimrizz Shadowcog
+step << Hunter
+    .goto 1426/0,-454.06,-5618.53--c:Dun Morogh,45.810,53.039
+    .target Grif Wildheart
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
+    .trainer >> Train your class spells
 step
     .goto 1426/0,-504.05,-5596.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragnar Thunderbrew|r outside
@@ -1627,39 +1645,40 @@ step << Hunter
     #optional
     .xp 10 >> Grind to level 10
 step << Hunter
-    .goto Dun Morogh,45.810,53.039
+    .goto 1426/0,-454.06,-5618.53--c:Dun Morogh,45.810,53.039
     .target Grif Wildheart
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
     .accept 6064 >>Accept Taming the Beast
+    .trainer >> Train your class spells
 step << Hunter
-    .goto Dun Morogh,48.3,56.9
+    .goto 1426/0,-576.69,-5745.30--c:Dun Morogh,48.3,56.9
     .use 15911 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Large Crag Boar|r
     .complete 6064,1 --Tame a Large Crag Boar (1)
     .mob Large Crag Boar
 step << Hunter
-    .goto Dun Morogh,45.810,53.039
+    .goto 1426/0,-454.06,-5618.53--c:Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
     .turnin 6064 >>Turn in Taming the Beast
     .target Grif Wildheart
     .accept 6084 >>Accept Taming the Beast
 step << Hunter
-    .goto Dun Morogh,49.4,59.4
+    .goto 1426/0,-630.87,-5827.38--c:Dun Morogh,49.4,59.4
     .use 15913 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Snow Leopard|r
     .complete 6084,1 --Tame a Snow Leopard (1)
     .mob Snow Leopard
 step << Hunter
-    .goto Dun Morogh,45.810,53.039
+    .goto 1426/0,-454.06,-5618.53--c:Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
     .turnin 6084 >>Turn in Taming the Beast
     .target Grif Wildheart
     .accept 6085 >>Accept Taming the Beast
 step << Hunter
-    .goto Dun Morogh,50.4,59.7
+    .goto 1426/0,-680.12,-5837.23--c:Dun Morogh,50.4,59.7
     .use 15908 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Ice Claw Bear|r
     .complete 6085,1 --Tame an Ice Claw Bear (1)
     .mob Ice Claw Bear
 step << Hunter
-    .goto Dun Morogh,45.810,53.039
+    .goto 1426/0,-454.06,-5618.53--c:Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
     .turnin 6085 >>Turn in Taming the Beast
     .target Grif Wildheart
@@ -1676,12 +1695,12 @@ step << Warrior
     .money >0.1030
 step << Warrior
     #completewith WarriorThrown
-    .goto Dun Morogh,47.58,41.58,40,0
-    .goto Dun Morogh,50.19,40.79,20,0
-    .goto Ironforge,14.90,87.10,40 >> Travel to Ironforge
+    .goto 1426/0,-541.23,-5242.29,40,0--c:Dun Morogh,47.58,41.58
+    .goto 1426/0,-669.77,-5216.35,20,0--c:Dun Morogh,50.19,40.79
+    .goto 1455/0,-831.39,-5028.78,40 >> Travel to Ironforge--c:Ironforge,14.90,87.10
 step << Warrior
     #label WarriorThrown
-    .goto Ironforge,62.237,89.628
+    .goto 1455/0,-1205.65,-5042.12--c:Ironforge,62.237,89.628
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bixi Wobblebonk|r or |cRXP_FRIENDLY_Buliwyf Stonehand|r
     .trainer >> If you are in a party or have someone to help you kill |cRXP_ENEMY_Vagash|r now, train 2h Maces from |cRXP_FRIENDLY_Buliwyf Stonehand|r, otherwise train Thrown from |cRXP_FRIENDLY_Bixi Wobblebonk|r. If you aren't sure which to train, just train Thrown
     .target Bixi Wobblebonk
@@ -2283,9 +2302,9 @@ step
     #optional
     #completewith next
     .goto 1455,44.029,50.074,20,0
-    .goto Ironforge,39.550,57.490,12 >>Travel toward |cRXP_FRIENDLY_Senator Barin Redstone|r
+    .goto 1455/0,-1026.28,-4872.56,12 >>Travel toward |cRXP_FRIENDLY_Senator Barin Redstone|r--c:Ironforge,39.550,57.490
 step
-    .goto Ironforge,39.550,57.490
+    .goto 1455/0,-1026.28,-4872.56--c:Ironforge,39.550,57.490
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Barin Redstone|r
     .turnin 291 >> Turn in The Reports
     .target Senator Barin Redstone
@@ -2372,11 +2391,33 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belia Thundergranite|r
     .trainer >> Train your class spells
     .target Regnus Thundergranite
+step << Dawrf Priest
+    .goto 1455/0,-897.200,-4607.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priest Rohan|r  
+    .turnin 5639 >> Turn in Desperate Prayer
+    .trainer >> Train your class spells
+    .target High Priest Rohan
+step << Priest/Mage/Warlock
+    #ah
+    #label OilWandFood
+    #completewith AHCheck
+    .goto 1455/0,-917.57,-4967.58,-1--c:Ironforge,25.800,75.500
+    .goto 1455/0,-904.92,-4962.83,-1--c:Ironforge,24.200,74.600
+    .goto 1455/0,-901.76,-4948.06,-1--c:Ironforge,23.800,71.800
+    >>|cRXP_WARN_Buy the following if you can afford it:|r
+    >>|T134711:0|t[Minor Wizard Oil] |cRXP_WARN_and|r |T133906:0|t[Smoked Sagefish]
+    >>|cRXP_WARN_Also check for any high DPS|r |T132317:0|t[Wand] |cRXP_WARN_upgrades that you can use now/soon|r
+    >>|cRXP_WARN_These will provide a high DPS increase in early levels. If you don't want to or can't do this, skip this step|r
+    .collect 20744,1 -- Minor Wizard Oil (1)
+    .collect 21072,20 -- Smoked Sagefish (20)
+    .target Auctioneer Lympkin
+    .target Auctioneer Redmuse
+    .target Auctioneer Buckler
 step
     #ah
-    .goto Ironforge,25.800,75.500,-1
-    .goto Ironforge,24.200,74.600,-1
-    .goto Ironforge,23.800,71.800,-1
+    .goto 1455/0,-917.57,-4967.58,-1--c:Ironforge,25.800,75.500
+    .goto 1455/0,-904.92,-4962.83,-1--c:Ironforge,24.200,74.600
+    .goto 1455/0,-901.76,-4948.06,-1--c:Ironforge,23.800,71.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to an |cRXP_FRIENDLY_Ironforge Auctioneer|r
     >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[Cooking] |cRXP_BUY_with later|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
@@ -2401,11 +2442,12 @@ step
     .isQuestAvailable 418
     .skill cooking,50,1 --XX Shows if cooking skill is <50
 step
+    #label AHCheck
     #ah
     #optional
-    .goto Ironforge,25.800,75.500,-1
-    .goto Ironforge,24.200,74.600,-1
-    .goto Ironforge,23.800,71.800,-1
+    .goto 1455/0,-917.57,-4967.58,-1--c:Ironforge,25.800,75.500
+    .goto 1455/0,-904.92,-4962.83,-1--c:Ironforge,24.200,74.600
+    .goto 1455/0,-901.76,-4948.06,-1--c:Ironforge,23.800,71.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to an |cRXP_FRIENDLY_Ironforge Auctioneer|r
     >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
     >>|cRXP_BUY_Buy the following items for a faster turn in at Loch Modan shortly:|r
@@ -2421,6 +2463,8 @@ step
     .zoneskip Dun Morogh
     .isQuestAvailable 418
     .skill cooking,<50,1 --XX Shows if cooking skill is 50+
+step
+    #requires OilWandFood
 step << Dwarf Paladin
     .goto 1455/0,-856.69,-4841.490
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Firebrew|r
@@ -2437,7 +2481,6 @@ step << Hunter
     #optional
     .goto 1455/0,-1152.40,-4821.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
-    >>|cRXP_WARN_Do NOT fly anywhere|r
     .fly Loch Modan >> Fly to Loch Modan
     .target Gryth Thurden
     .zoneskip Loch Modan
@@ -2572,21 +2615,6 @@ step << !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furen Longbeard|r
     .turnin 1338 >> Turn in Stormpike's Order
     .target Furen Longbeard
-step << Priest
-    #optional
-    #completewith next
-    .goto 1453/0,809.52,-8579.22,20 >> Travel to the Stormwind Cathedral
-step << Priest
-    .goto 1453/0,862.89,-8519.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
-    .trainer >> Train your class spells
-    .turnin 5634 >> Turn in Desperate Prayer
-    .target High Priestess Laurena
-step << Priest
-    .goto 1453/0,861.81,-8512.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
-    .train 13908 >> Train Desperate Prayer
-    .target High Priestess Laurena
 step << Warrior
     .goto 1453/0,358.25,-8728.28,15,0
     .goto 1453/0,302.6,-8685.53,15,0
@@ -2744,7 +2772,7 @@ step << Rogue
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     .target Remy "Two Times"
-    .goto Elwynn Forest,42.140,67.254
+    .goto 1429/0,72.81,-9496.23--c:Elwynn Forest,42.140,67.254
     .accept 40 >> Accept A Fishy Peril
     --.accept 47 >> Accept Gold Dust Exchange
 step
@@ -2795,7 +2823,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r
     .accept 88 >> Accept Princess Must Die!
     .target +Ma Stonefield
-    .goto Elwynn Forest,34.660,84.483
+    .goto 1429/0,332.43,-9895.01--c:Elwynn Forest,34.660,84.483
 
 --
 step << skip
@@ -2805,7 +2833,7 @@ step << skip
     .goto 1429/0,338.47,-9889.67
     .accept 88 >> Accept Princess Must Die!
     .target +Ma Stonefield
-    .goto Elwynn Forest,34.660,84.483
+    .goto 1429/0,332.43,-9895.01--c:Elwynn Forest,34.660,84.483
 step << skip
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Billy Maclure|r
     .target Billy Maclure
@@ -2848,7 +2876,7 @@ step << skip
     .subzone 87 >> Travel to Goldshire
 step << skip
     #hardcore
-    .goto Elwynn Forest,42.140,67.254
+    .goto 1429/0,72.81,-9496.23--c:Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     >>|cRXP_WARN_Do NOT vendor the|r |T133581:0|t[Bag of Marbles] |cRXP_WARN_reward. This is an incredibly valuable item all the way through to level 60|r
     .turnin 47 >> Turn in Gold Dust Exchange
@@ -2893,7 +2921,7 @@ step << skip
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     >>|cRXP_WARN_Do NOT vendor the|r |T133581:0|t[Bag of Marbles] |cRXP_WARN_reward. This is an incredibly valuable item all the way through to level 60|r
     .target Remy "Two Times"
-    .goto Elwynn Forest,42.140,67.254
+    .goto 1429/0,72.81,-9496.23--c:Elwynn Forest,42.140,67.254
     .turnin 47 >> Turn in Gold Dust Exchange
 --
 
@@ -3105,7 +3133,7 @@ step << skip
     .target Morgan Pestle
 step
     #ah
-    .goto Stormwind City,53.612,59.764
+    .goto 1453/0,660.28,-8814.55--c:Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
     >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall:|r
     >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
@@ -3223,8 +3251,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r
     .target Ma Stonefield
     .turnin 88 >> Turn in Princess Must Die!
-    .goto Elwynn Forest,34.660,84.483
+    .goto 1429/0,332.43,-9895.01--c:Elwynn Forest,34.660,84.483
 step << Dwarf Paladin
+    #loop
+    .goto 1429/0,598.29,-9946.33,70,0
+    .goto 1429/0,629.53,-10020.39,70,0
+    .goto 1429/0,660.77,-10085.20,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
     >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for |T132889:0|t[Linen Cloth]
     >>|cRXP_WARN_Ensure you have 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your upcoming Paladin class quest|r
     .collect 2589,10,1648,1 -- Linen Cloth (10)
@@ -3352,6 +3385,8 @@ RXPGuides.RegisterGuide([[
 #next 13-15 Westfall;14-16 Darkshore
 #defaultfor Gnome/Dwarf
 
+step -- dont delete
+    #label LochStart
 step << Dwarf Paladin
     #optional
     #completewith next
@@ -3485,7 +3520,6 @@ step
 step
     .goto 1432/0,-2534.38,-5648.28
     .use 279380 >> |cRXP_WARN_Use the|r |T1387609:0|t[Ceramic Jar] |cRXP_WARN_while standing on the snowy patch to collect the|r |T1387609:0|t[Jar of Snow]
-    >>|cRXP_WARN_NOTE: The|r |T1387609:0|t[Jar of Snow] |cRXP_WARN_will only last for 10 minutes. You must turn the quest in before it expires!|r
     .complete 86667,1 -- Jar of Snow 1/1
 step << Shaman
     #completewith shamfire
@@ -3957,8 +3991,17 @@ step << Shaman
     .goto 1426/0,-2594.100,-5335.900,20,0
     .goto 1432/0,-2641.000,-5375.700,20 >> Carefully drop down the mountain into Loch Modan
 step
-    .goto 1432/0,-3319.800,-5217.600
+    #loop
+    .goto 1432/0,-3319.800,-5217.600,20,0
+    .goto 1432/0,-3251.5499,-5285.8790,20,0
+    .goto 1432/0,-3342.5748,-5484.5540,20,0
+    .goto 1432/0,-3386.7082,-5462.4790,20,0
+    .goto 1432/0,-3319.800,-5217.600,0
+    .goto 1432/0,-3251.5499,-5285.8790,0
+    .goto 1432/0,-3342.5748,-5484.5540,0
+    .goto 1432/0,-3386.7082,-5462.4790,0
     >>Click the |cRXP_PICK_Discarded Fishing Toolbox|r on the lake floor
+    >>|cRXP_WARN_NOTE: This can spawn in one of many different locations. Swim around until you see the exclamation point on your minimap|r
     >>|cRXP_WARN_Be careful of high level|r |cRXP_ENEMY_Young Threshadon|r
     .accept 86614 >>Accept Silver of the Waves
     .xp <13,1
@@ -4014,13 +4057,18 @@ step << Dwarf Paladin
 step << Dwarf Paladin
     #optional
     .isQuestComplete 1784
-    .goto Dun Morogh,47.58,41.58,40,0
-    .goto Dun Morogh,50.19,40.79,20,0
-    .goto Ironforge,14.90,87.10,40,0
+    .goto 1426/0,-541.23,-5242.29,40,0--c:Dun Morogh,47.58,41.58
+    .goto 1426/0,-669.77,-5216.35,20,0--c:Dun Morogh,50.19,40.79
+    .goto 1455/0,-831.39,-5028.78,40,0--c:Ironforge,14.90,87.10
     .zone Ironforge >> Return to Ironforge
 
 ----Start of <1.5x IF->Westfall Section----
 
+step << Rogue
+    .goto 1455/0,-1197.27,-5041.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Buliwyf Stonehand|r inside
+    .train 196 >> Train 1h Axes
+    .target Buliwyf Stonehand
 step << Paladin
     .goto 1455/0,-907.69,-4592.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldruk Doombrow|r
@@ -4119,6 +4167,10 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bilban Tosslespanner|r
     .trainer >> Train your class spells
     .target Bilban Tosslespanner
+
+step -- dont delete
+    #label LochEnd
+
 step << skip --logout skip << Warrior
     #optional
     #completewith Deeprun
@@ -4339,6 +4391,8 @@ RXPGuides.RegisterGuide([[
 #next 14-16 Darkshore
 #defaultfor Dwarf
 
+step -- dont delete
+    #label NormalRouteStart
 step
     #completewith next
     .goto 1426/0,-2443.41,-5560.120,15,0
@@ -4408,7 +4462,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Barin Redstone|r
     .target Senator Barin Redstone
     .goto 1455/0,-1058.62,-4836.37,20,0
-    .goto Ironforge,39.550,57.490
+    .goto 1455/0,-1026.28,-4872.56--c:Ironforge,39.550,57.490
     .turnin 291 >> Turn in The Reports
     .isOnQuest 291
 step << Hunter
@@ -4470,7 +4524,6 @@ step
     .accept 1338 >> Accept Stormpike's Order
     .accept 307 >> Accept Filthy Paws
     .target Mountaineer Stormpike
-    .dungeon DM << Human
 step << Human
     .goto 1432/0,-2676.99,-4825.980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r inside the bunker
@@ -4478,7 +4531,6 @@ step << Human
     .accept 1338 >> Accept Stormpike's Order
     .accept 307 >> Accept Filthy Paws
     .target Mountaineer Stormpike
-    .dungeon !DM
 step
     #label BraveSoul
     #completewith next
@@ -4623,7 +4675,6 @@ step
 step
     .goto 1432/0,-2534.38,-5648.28
     .use 279380 >> |cRXP_WARN_Use the|r |T1387609:0|t[Ceramic Jar] |cRXP_WARN_while standing on the snowy patch to collect the|r |T1387609:0|t[Jar of Snow]
-    >>|cRXP_WARN_NOTE: The|r |T1387609:0|t[Jar of Snow] |cRXP_WARN_will only last for 10 minutes. You must turn the quest in before it expires!|r
     .complete 86667,1 -- Jar of Snow 1/1
 step
     .goto 1432/0,-3146.73,-4837.02
@@ -4634,8 +4685,16 @@ step
     .target Norric Lochthane
 step
     #optional
-    .goto 1432/0,-3319.800,-5217.600
+    .goto 1432/0,-3319.800,-5217.600,20,0
+    .goto 1432/0,-3251.5499,-5285.8790,20,0
+    .goto 1432/0,-3342.5748,-5484.5540,20,0
+    .goto 1432/0,-3386.7082,-5462.4790,20,0
+    .goto 1432/0,-3319.800,-5217.600,0
+    .goto 1432/0,-3251.5499,-5285.8790,0
+    .goto 1432/0,-3342.5748,-5484.5540,0
+    .goto 1432/0,-3386.7082,-5462.4790,0
     >>Click the |cRXP_PICK_Discarded Fishing Toolbox|r on the lake floor
+    >>|cRXP_WARN_NOTE: This can spawn in one of many different locations. Swim around until you see the exclamation point on your minimap|r
     >>|cRXP_WARN_Be careful of high level|r |cRXP_ENEMY_Young Threshadon|r
     .accept 86614 >>Accept Silver of the Waves
     .xp <13,1
@@ -4774,6 +4833,10 @@ step
     .target Woo Ping
     .goto 1453/0,613.0,-8796.03
     .trainer >>Train Staves
+
+step --dont delete
+    #label NormalRouteEnd
+
 step
     #ah
     .goto 1453/0,660.28,-8814.55

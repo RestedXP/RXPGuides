@@ -101,7 +101,7 @@ step << Undead
 step
     #season 2
     .goto Tirisfal Glades,24.60,59.45
-    >>拾取洞穴内的 |cRXP_PICK_失落的藏宝|r 以获得 |T134419:0|t[|cRXP_FRIENDLY_鬼影缠身符文|r]
+    >>在洞穴内拾取 |cRXP_PICK_Lost Stash|r 中的战利品 |T134419:0|t[|cRXP_FRIENDLY_鬼影缠身符文|r]
     .collect 205230,1 --Rune of Haunting (1)
     .train 403919,1
 step
@@ -223,7 +223,7 @@ step
     .collect 205183,1
 step
     .train 416009,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin Halgar|r in Undercity
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与幽暗城的 |cRXP_FRIENDLY_凯伦丁·哈加尔|r 对话
     .goto Undercity,85.0,25.6
     .collect 205215,1
     .skipgossip 5675,1
@@ -458,7 +458,7 @@ step
 step
     .train 403932,1
     >>|cRXP_WARN_前往荆棘祭坛|r。使用 |T136126:0|t[生命分流] 将生命值降到极低。然后对你的宠物施放 |T136168:0|t[生命通道] 直到自己死亡，即可获得 |T134419:0|t[|cRXP_FRIENDLY_引导符文|r]
-    *|cRXP_WARN_死亡后会立刻复活|r
+    *|cRXP_WARN_你死亡后会立刻复活|r
     .goto The Barrens,58.2,26.7
     .cast 1454
     .cast 735

@@ -1,0 +1,52 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXMLUI.xsd">
+
+<Script file="mop\N-Pandaren_The Wandering Isle.lua"/>
+
+<Script file="cata\A-01-10_azuremyst.lua"/>
+<Script file="cata\A-01-10_dunmorogh.lua"/>
+<Script file="cata\A-01-10_ElwynnForest.lua"/>
+<Script file="cata\A-01-10_Gilneas.lua"/>
+<Script file="cata\A-01-10_teldrassil.lua"/>
+<Script file="cata\A-01-18_darkshore.lua"/>
+<Script file="cata\A-10-18_lochmodan.lua"/>
+<Script file="cata\A-18-21_redridge.lua"/>
+<Script file="cata\A-20-25_duskwood.lua"/>
+<Script file="cata\A-10-15_westfall.lua"/>
+
+<Script file="cata\H-Cataclysm-01-10 Durotar.lua"/>
+<Script file="cata\H-Cataclysm-01-10 Eversong.lua"/>
+<Script file="cata\H-Cataclysm-01-10 Kezan.lua"/>
+<Script file="cata\H-Cataclysm-01-10 Mulgore.lua"/>
+<Script file="cata\H-Cataclysm-01-10 Tirisfal.lua"/>
+<Script file="cata\H-Cataclysm-10-20 Azshara.lua"/>
+<Script file="cata\H-Cataclysm-20-25 Ashenvale.lua"/>
+
+
+
+
+    <Script file="Deathknight.lua"/>
+
+    <!-- <Script file="farmguides.lua"/> -->
+    <!-- <Script file="Mining.lua"/> -->
+    <!-- <Script file="Herbalism.lua"/> -->
+    <!-- <Script file="Skinning.lua"/> -->
+
+    <Script file="Import.lua"/>
+
+	<Script file="Dailies\Icecrown Gunship Daily Quests.lua"/>
+	<Script file="Dailies\Icecrown Gunship Pre Quests.lua"/>
+	<Script file="Dailies\The Sons of Hodir Pre Quests.lua"/>
+	<Script file="Dailies\The Sons of Hodir Daily Quests.lua"/>
+	<Script file="Dailies\Ebon Blade Pre Quests.lua"/>
+	<Script file="Dailies\Ebon Blade Daily Quests.lua"/>
+	<Script file="Dailies\Kaluak Daily Quests.lua"/>
+	<Script file="Dailies\Jewelcrafting Daily Quests.lua"/>
+	<Script file="Dailies\Cooking Daily Quests.lua"/>
+	<Script file="Dailies\Fishing Daily Quests.lua"/>
+	<Script file="Dailies\Northrend Best GPH Daily Quests.lua"/>
+
+    <Script file="Dailies\Argent Tournament Grounds.lua"/>
+
+	<Script file="Dailies\Cataclysm\Tol Barad Daily Quests.lua"/>
+	<Script file="Dailies\Cataclysm\Molten Front.lua"/>
+</Ui>

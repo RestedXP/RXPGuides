@@ -184,7 +184,7 @@ step
     .xp <8,1
 step
     .goto Ironforge,23.131,6.143
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
     .train 853 >>训练 |T135963:0|t[正义之锤号]
     .target 布兰度尔·铁锤
     .train 410001,1
@@ -476,7 +476,7 @@ step
     .xp <4,1
 step
     .goto Ironforge,23.131,6.143
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
     .train 19740 >>学习 |T135906:0|t[力量祝福]
     .target 布兰度尔·铁锤
     .train 425618,1
@@ -579,8 +579,8 @@ step
     .xp <4,1
 step << skip
     #completewith next
-    >>|cRXP_WARN_强烈建议你改为在洛克莫丹获取|r |T134229:0|t[洛丹伦号角] |cRXP_WARN_，因为这样简单得多|r
-    >>|cRXP_WARN_不建议使用|r |T134229:0|t[洛丹伦号角符文] |cRXP_WARN_来替代|r |T236250:0|t[神圣风暴符文] |cRXP_WARN_或|r |T135961:0|t[殉道者圣印符文]
+    >>|cRXP_WARN_强烈建议你改为在洛克莫丹获取|r |T134229:0|t[论述：洛丹伦号角] |cRXP_WARN_，因为这样简单得多|r
+    >>|cRXP_WARN_不推荐用|r |T134229:0|t[论述：洛丹伦号角] |cRXP_WARN_代替|r |T236250:0|t[神圣风暴符文] |cRXP_WARN_或|r |T133745:0|t[论述：殉道]
     .train 425618,1
     .xp <12,1
 step
@@ -746,7 +746,7 @@ step
     .xp <8,1
 step
     .goto Ironforge,23.131,6.143
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
     .train 1152 >>训练 |T135949:0|t[纯净术]
     .target 布兰度尔·铁锤
     .train 425619,1
@@ -1609,7 +1609,7 @@ step
     .collect 213447,1
 step
     .train 426175,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Atticus|r inside Stromgrade Keep to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与激流堡内的|cRXP_FRIENDLY_阿提库斯修士|r对话，以获得|T134419:0|t[|cRXP_FRIENDLY_虔敬符文|r]
     .goto Arathi Highlands,26.06,55.75,20,0
     .goto Arathi Highlands,25.71,59.92,20,0
     .goto Arathi Highlands,23.69,60.52,20,0

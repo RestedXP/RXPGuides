@@ -1348,7 +1348,7 @@ step
     --TODO: ??? bugged on wotlk beta
 step
     .goto Bloodmyst Isle,37.0,78.7
-	>>Kill Satyrs and Felsworn in the area. You may have to kill Rogues to force the respawns of the satyr's you need.
+	>>Kill Satyrs and Felsworn in the area. You may have to kill Rogues to force the respawns of the Satyrs you need.
     .complete 9594,1 --Kill Nazzivus Satyr (x8)
     .complete 9594,2 --Kill Nazzivus Felsworn (x8)
 step << Shaman

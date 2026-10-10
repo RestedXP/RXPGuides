@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 
 << Alliance
-#group RestedXP 满级指南
+#group RestedXP 终局指南
 #subgroup 开门任务
 #name 奥妮克希亚开门任务（联盟）
 
@@ -199,7 +199,7 @@ step
     .complete 4282,2 -- Marshal Windsor's Lost Information (1)
 step
     .isQuestTurnedIn 4264
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_温德索尔元帅|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_温德索尔元帅|r 对话
     >>|cRXP_WARN_确保所有队友在这一步都关闭了自动接取任务！RestedXP已在这一步默认关闭自动接取|r
     >>|cRXP_WARN_接受任务之后会开启冲破牢笼的护送任务。请确保你已清理干净监狱区域的所有怪物，以便更轻松地完成护送|r |cRXP_FRIENDLY_温德索尔元帅|r
     .turnin 4282 >>交任务 一线希望
@@ -341,7 +341,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 
 << Horde
-#group RestedXP 满级指南
+#group RestedXP 终局指南
 #subgroup 开门任务
 #name 奥妮克希亚开门任务（部落）
 
@@ -792,7 +792,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 
 #subgroup 开门任务
-#group RestedXP 满级指南
+#group RestedXP 终局指南
 #name 熔火之心开门任务
 
 step
@@ -824,7 +824,7 @@ step
     .subzone 254 >>前往 |cFFfa9602黑石山|r
 step
     .goto Eastern Kingdoms,48.41,63.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_洛索斯·天痕|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洛索斯·天痕|r 对话
     .turnin 7848 >>交任务 熔火之心的传送门
     .target Lothos Riftwaker
     .isQuestComplete 7848
@@ -837,7 +837,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 
-#group RestedXP 满级指南
+#group RestedXP 终局指南
 #subgroup 开门任务
 #name 黑翼之巢开门任务
 
@@ -882,7 +882,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 
-#group RestedXP 满级指南
+#group RestedXP 终局指南
 #subgroup 钥匙
 #name 黑石塔上层钥匙
 
@@ -974,7 +974,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 
 << Alliance
-#group RestedXP 满级指南
+#group RestedXP 终局指南
 #subgroup 钥匙
 #name 通灵学院钥匙（联盟）
 
@@ -1003,7 +1003,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_信使考雷·落锤|r 对话
     >>|cRXP_FRIENDLY_信使考雷·落锤|r |cRXP_WARN_在整个铁炉堡巡逻|r
     >>|cRXP_WARN_此任务也可在|r |cFFfa9602暴风城|r |cRXP_WARN_或者|r |cFFfa9602达纳苏斯|r 接取
-    .acceptmultiple 5091,5090,5066 >>接受任务战斗的号角：瘟疫之地！
+    .acceptmultiple 5091,5090,5066 >>接受任务 战斗的号角：瘟疫之地！
     .unitscan Courier Hammerfall --IF
     .unitscan Herald Moonstalker --DARN
     .unitscan Crier Goodman --SW
@@ -1233,7 +1233,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 
 << Horde
-#group RestedXP 满级指南
+#group RestedXP 终局指南
 #subgroup 钥匙
 #name 通灵学院钥匙（部落）
 
@@ -1260,7 +1260,7 @@ step
     .goto Undercity,66.07,54.64,50,0
     .goto Undercity,70.81,51.49,50,0
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_预言者巴萨扎德|r 对话
-    .acceptmultiple 5093,5094,5095 >>接受任务战斗的号角：瘟疫之地！
+    .acceptmultiple 5093,5094,5095 >>接受任务 战斗的号角：瘟疫之地！
     >>|cRXP_WARN_此任务也可在|r |cFFfa9602奥格瑞玛|r |cRXP_WARN_或者|r |cFFfa9602雷霆崖|r 接取
     .unitscan 公告员高拉克 --ORG
     .unitscan Harbinger Balthazadd --UC
@@ -1489,7 +1489,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 
-#group RestedXP 满级指南
+#group RestedXP 终局指南
 #subgroup 钥匙
 #name 黑石深渊钥匙
 
@@ -1553,7 +1553,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 
-#group RestedXP 满级指南
+#group RestedXP 终局指南
 #subgroup 钥匙
 #name 厄运之槌 钥匙
 
@@ -1582,7 +1582,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 
-#group RestedXP 满级指南
+#group RestedXP 终局指南
 #name 纳克萨玛斯开门任务
 #subgroup 开门任务
 
@@ -1655,7 +1655,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 
-#group RestedXP 满级指南
+#group RestedXP 终局指南
 #name 屠魔峡谷开门任务
 #subgroup 开门任务
 <<sod

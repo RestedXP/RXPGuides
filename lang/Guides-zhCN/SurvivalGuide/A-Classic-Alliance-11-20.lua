@@ -334,7 +334,7 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 对话
     >>购买以下物品，以便稍后在黑海岸快速交任务，如果你不想购买任何东西，请跳过此步骤
     >>|T133972:0|t[陆行鸟肉]
     >>|T133912:0|t[黑海岸石斑鱼]
@@ -400,7 +400,7 @@ step << !NightElf
     .target 萨莫尔·菲斯蒂沃斯
 step << !NightElf
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
     .fp Wetlands>>获取湿地的飞行路径
     .target 谢尔雷·布隆迪尔
 step << Hunter !NightElf
@@ -475,7 +475,7 @@ step << Druid
     >>|cRXP_WARN_这样会更快，你就不用游那么久了|r
 step << Druid
     .goto Moonglade,36.026,41.374
-    .use 15877 >>|cRXP_WARN_在雷姆洛斯神殿使用|r |T134125:0|t[神殿灵珠] |cRXP_WARN_|r
+    .use 15877 >>|cRXP_WARN_在雷姆洛斯神殿|r|cRXP_WARN_使用|r |T134125:0|t[神殿灵珠]
     .complete 29,1 --Complete the Trial of the Lake.
 step << Druid
     .goto Moonglade,36.517,40.104
@@ -512,7 +512,7 @@ step << NightElf Hunter
     .target 弗德瑞克·斯图瓦
 step << NightElf
     .goto StormwindClassic,43.065,26.156
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>升级你的|T135966:0|t[急救]
     .train 3274 >>学习 中级急救
     .target Shaina Fuller
@@ -680,7 +680,7 @@ step
 step
 #map Darkshore
     .goto Felwood,13.63,21.44
-    >>拾取|cRXP_PICK_海龟骨头|r以获得|cRXP_LOOT_海龟的残骸|r
+    >>拾取|cRXP_PICK_海龟骨头|r以得到|cRXP_LOOT_海龟的残骸|r
     .complete 4681,1
 step
 #map Darkshore
@@ -1110,7 +1110,7 @@ step << !NightElf Hunter/!NightElf Warrior
     .train 227 >>学习法杖
     .target 伊琳尼雅·月火
 step << !NightElf !Mage !Paladin !Warlock
-    .goto Darnassus,30.7,41.3,15 >>通过紫色传送门返回鲁瑟兰村
+    .goto Darnassus,30.7,41.3,15 >>使用紫色传送门返回鲁瑟兰村
     .zoneskip Darkshore
     .zoneskip Teldrassil
 step << !NightElf !Mage !Paladin !Warlock
@@ -1626,7 +1626,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t上楼与 |cRXP_FRIENDLY_玛斯雷·驭熊者|r 对话
     .turnin 6125 >>交任务 解毒之术
 step << Druid
-    .goto Darnassus,30.7,41.3 >>通过紫色传送门返回鲁瑟兰村
+    .goto Darnassus,30.7,41.3 >>使用紫色传送门返回鲁瑟兰村
     .zoneskip Darkshore
     .zoneskip Teldrassil
 step << Druid
@@ -1959,7 +1959,7 @@ step
 step
 .group
     .goto Darkshore,44.44,84.69
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>|cRXP_WARN_等剧情结束|r
     .complete 995,1
     .isQuestTurnedIn 986
 step
@@ -2122,7 +2122,7 @@ step
 .dungeon WC
     #completewith TravelRatchet
     .goto Ashenvale,20.31,42.33,0
-    .zone The Barrens >>在寻找哀嚎洞穴 队伍的同时，刷 |cRXP_ENEMY_咸水嘴鱼人|r。它们的位置已标记在你的地图上
+    .zone The Barrens >>在寻找哀嚎洞穴队伍的同时，刷|cRXP_ENEMY_咸水嘴鱼人|r。它们的位置已标记在你的地图上
 	.mob 盐沫战士
 	.mob 盐沫泥浆鱼人
 	.mob 盐沫智者

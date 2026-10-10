@@ -244,7 +244,7 @@ step
 step
     .goto Duskwood,49.8,74.4
     .group 3
-    >>|cRXP_WARN_击杀|r |cRXP_ENEMY_伊兰希乌斯|r。|cRXP_WARN_一只在农场上空飞行的绿龙|r |cRXP_WARN_。他拥有极高的生命值，免疫自然系法术，拥有|r |T132338:0|t[顺劈斩] |cRXP_WARN_，|r |T134307:0|t[龙尾扫击] |cRXP_WARN_并会|r |T135745:0|t[召唤] |cRXP_WARN_一只|r |cRXP_ENEMY_幼龙|r |cRXP_WARN_小怪，该小怪会施放造成巨额伤害的正面吐息|r
+    >>|cRXP_WARN_击杀|r |cRXP_ENEMY_伊兰希乌斯|r。|cRXP_WARN_它是一只在农场上空飞行的绿龙|r |cRXP_WARN_。他拥有极高的生命值，免疫自然系法术，拥有|r |T132338:0|t[顺劈斩] |cRXP_WARN_，|r |T134307:0|t[龙尾扫击] |cRXP_WARN_并会|r |T135745:0|t[召唤] |cRXP_WARN_一只|r |cRXP_ENEMY_幼龙|r |cRXP_WARN_小怪，该小怪会施放造成巨额伤害的正面吐息|r
     .complete 81742,1 --Ylanthrius (1)
     .maxlevel 53
     .isOnQuest 81742
@@ -1308,7 +1308,7 @@ step
     .group 3
     .goto Feralas,53.2,16.6
     >>击杀龙族首领 |cRXP_ENEMY_泰兰尼库斯|r
-    >>|cRXP_WARN_小心，他有极高的血量，能免疫自然法术，有一个|r|T132338:0|t[顺劈斩]|cRXP_WARN_，|r |T134307:0|t[龙尾扫击]|cRXP_WARN_和|r |T135745:0|t[召唤]|cRXP_WARN_一条|r |cRXP_ENEMY_龙怪|r |cRXP_WARN_，它可以施放造成巨大伤害的正面吐息|r
+    >>|cRXP_WARN_小心，他有巨大的生命池，免疫自然法术，有一个|r|T132338:0|t[顺劈斩]|cRXP_WARN_，|r |T134307:0|t[龙尾扫击]|cRXP_WARN_和|r |T135745:0|t[召唤]|cRXP_WARN_一条|r |cRXP_ENEMY_龙怪|r |cRXP_WARN_，它可以施放造成巨大伤害的正面吐息|r
     .complete 81868,1 --Tyrannikus slain
     .mob Tyrannikus
     .maxlevel 53

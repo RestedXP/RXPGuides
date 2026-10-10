@@ -1,8 +1,7 @@
-local _, addon = ...
+local addonName, addon = ...
 
 if addon.gameVersion > 60000 then return end
 
-local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
 local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo and addon.GetSpellInfo or _G.GetSpellInfo
 local GetSpellTexture = C_Spell and C_Spell.GetSpellTexture or _G.GetSpellTexture
 local GetSpellSubtext = C_Spell and C_Spell.GetSpellSubtext or _G.GetSpellSubtext
@@ -11,11 +10,8 @@ local IsSpellKnown = C_Spell and C_Spell.IsSpellKnown or _G.IsSpellKnown
 local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
 local GetTime, GetMirrorTimerProgress = _G.GetTime, _G.GetMirrorTimerProgress
 local UnitHealth, UnitHealthMax, UnitIsDead = _G.UnitHealth, _G.UnitHealthMax, _G.UnitIsDead
-local GetInventoryItemID, IsPlayerSpell = GetInventoryItemID, IsPlayerSpell
 local HasAction, GetActionInfo, GetMacroSpell = HasAction, GetActionInfo, GetMacroSpell
 local IsOnBarOrSpecialBar = C_ActionBar.IsOnBarOrSpecialBar
-local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or _G.GetContainerNumSlots
-local GetContainerItemID = C_Container and C_Container.GetContainerItemID or _G.GetContainerItemID
 local tinsert, fmt = tinsert, string.format
 local GetRealZoneText = GetRealZoneText
 local UIErrorsFrame = _G.UIErrorsFrame
@@ -148,35 +144,13 @@ end
 
 function addon.tips:CatalogInventory()
     if not addon.emergencyItems or not addon.settings.profile.enableEmergencyActions then return end
+
     local itemList = {}
+    local inventory = addon.inventoryManager:CatalogInventory()
 
-    local itemName, itemTexture, id
-
-    for i = 1, _G.INVSLOT_LAST_EQUIPPED do
-        id = GetInventoryItemID("player", i)
-        if id and addon.emergencyItems[id] then
-            itemName, _, _, _, _, _, _, _, _, itemTexture, _, _ = GetItemInfo(id)
-            tinsert(itemList, {name = itemName, texture = itemTexture, invSlot = i, id = id})
-        end
-    end
-
-    local bagSlots
-    for bag = _G.BACKPACK_CONTAINER, _G.NUM_BAG_FRAMES do
-        bagSlots = GetContainerNumSlots(bag)
-        for slot = 1, bagSlots do
-            id = GetContainerItemID(bag, slot)
-            if id and addon.emergencyItems[id] then
-                itemName, _, _, _, _, _, _, _, _, itemTexture, _, _ = GetItemInfo(id)
-
-                tinsert(itemList, {
-                    name = itemName,
-                    texture = itemTexture,
-                    bag = bag,
-                    slot = slot,
-                    id = id,
-                    bagSlotFrameId = bagSlots + 1 - slot
-                })
-            end
+    for _, item in ipairs(inventory) do
+        if addon.emergencyItems[item.id] then
+            tinsert(itemList, item)
         end
     end
 
@@ -224,10 +198,14 @@ end
 function addon.tips:GetHighlight(name)
     if not name then return end
 
-    if session.highlights[name] then return session.highlights[name] end
+    local parent = type(name) == "string" and _G[name] or name
+    if not parent then return end
 
-    local parent = _G[name]
-    local border = parent:CreateTexture(name .. 'Emergency', 'ARTWORK')
+    local key = type(name) == "string" and name or parent:GetName() or parent
+    if session.highlights[key] then return session.highlights[key] end
+
+    local textureName = type(key) == "string" and key .. "Emergency" or nil
+    local border = parent:CreateTexture(textureName, "ARTWORK")
 
     border.animation = border:CreateAnimationGroup()
     local animOut = border.animation:CreateAnimation("Alpha")
@@ -237,32 +215,32 @@ function addon.tips:GetHighlight(name)
     animOut:SetToAlpha(1)
     animOut:SetStartDelay(0.2)
 
-    -- local animOut = border.animation:CreateAnimation("Rotation")
-    -- animOut:SetDegrees(-360)
-    -- animOut:SetDuration(1)
-    -- animOut:SetSmoothing("OUT")
-
-    border:SetTexture("Interface/Buttons/UI-ActionButton-Border")
-    border:SetBlendMode('ADD')
+    border:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/v2/configurator-option-hover")
+    border:SetBlendMode("ADD")
+    local theme = addon.v2:GetTheme()
+    local borderColor = theme.borderColors and theme.borderColors.activeStepCheckboxChecked or
+                        addon.v2.themes["RXP Blue V2"].borderColors.activeStepCheckboxChecked
+    border:SetVertexColor(unpack(borderColor))
     border:SetAlpha(0.5)
     border:SetSize(68, 68)
-    border:SetPoint('CENTER', parent, 'CENTER', 0, 1)
+    border:SetPoint("CENTER", parent, "CENTER", 0, 1)
     border:Hide()
 
-    session.highlights[name] = border
+    session.highlights[key] = border
 
     return border
 end
 
 function addon.tips:HighlightEmergencyItem()
-    local bagBorder, actionBarLookup, actionBarBorder
+    local bagFrame, bagBorder, actionBarLookup, actionBarBorder
 
     for _, item in ipairs(session.emergencyItems) do
-        bagBorder = item.bag and item.bagSlotFrameId and
-                        addon.tips:GetHighlight(fmt('ContainerFrame%sItem%s', item.bag + 1, item.bagSlotFrameId))
+        bagFrame = item.bag and item.slot and
+                   addon.inventoryManager:GetBagItemFrame(item.bag, item.slot)
+        bagBorder = bagFrame and addon.tips:GetHighlight(bagFrame)
 
         if bagBorder then
-            if _G.IsBagOpen(item.bag) then
+            if bagFrame:IsShown() then
                 bagBorder:Show()
                 if addon.settings.profile.enableEmergencyIconAnimations and not bagBorder.animation:IsPlaying() then
                     bagBorder.animation:Play()
@@ -470,6 +448,7 @@ function addon.tips:LoadDangerousMobs(reloadData)
 
                                 if element.tag == "rare" then step.rare = true end
                                 if element.tag == "treasure" then step.treasure = true end
+                                step.dangerousMob = true
 
                                 element.step = step
                                 -- element.drawCenterPoint = true--Adds an icon at the center of the lines

@@ -68,7 +68,7 @@ step
 .target 药剂师赫布瑞姆
 >>与 |cRXP_FRIENDLY_药剂师赫布瑞姆|r 对话
     .accept 848 >>接受任务 菌类孢子
-    .accept 1492 >>接受任务 码头主管迪兹维格
+    .accept 1492 >>接受任务码头管理员迪兹维格
 step
     #sticky
     #completewith next
@@ -242,7 +242,7 @@ step
     .accept 888 >>接受任务 被窃的货物
 step
     .goto The Barrens,63.08,37.16
-    .fly Crossroads >>飞往十字路口，北贫瘠之地
+    .fly Crossroads >>飞往十字路口
 step
     .goto The Barrens,51.5,30.8
 .target 索克
@@ -468,7 +468,7 @@ step
 step
     .goto The Barrens,52.20,31.90
 >>与 |cRXP_FRIENDLY_图加·符文图腾|r 对话
-    .turnin 870 >>交任务 遗忘之池
+    .turnin 870 >>交任务  遗忘之池
 .target 图加·符文图腾
     .accept 877 >>接受任务 死水绿洲
 step
@@ -613,7 +613,7 @@ step
 step
     .goto The Barrens,52.2,31.9
 >>与 |cRXP_FRIENDLY_图加·符文图腾|r 对话
-    .turnin 877 >>交任务 死水绿洲
+    .turnin 877 >>交任务  死水绿洲
 .target 图加·符文图腾
     .accept 880 >>接受任务 变异的生物
 step
@@ -809,7 +809,7 @@ step
 step
     .goto Stonetalon Mountains,58.989,62.599
 >>与 |cRXP_FRIENDLY_菲兹克斯|r 对话
-    .turnin 1093 >>交任务  超级收割机6000
+    .turnin 1093 >>交任务超级收割机6000
 .target 菲兹克斯
     .accept 1094 >>接受任务 新的指示
 step
@@ -1097,7 +1097,7 @@ step
 step
     .goto Thunder Bluff,78.62,28.56
 >>与 |cRXP_FRIENDLY_大德鲁伊哈缪尔·符文图腾|r 对话
-    .turnin 1489 >>交任务哈缪尔·符文图腾
+    .turnin 1489 >>交任务  哈缪尔·符文图腾
 .target 大德鲁伊哈缪尔·符文图腾
     .accept 1490 >>接受任务纳拉·蛮鬃
 step
@@ -1117,7 +1117,7 @@ step
 	>>如果你还没有洗天赋，请洗成冰法AOE天赋
 step
     .goto Thunder Bluff,46.8,50.0
-    .fly The Crossroads >>飞往十字路口，北贫瘠之地
+    .fly The Crossroads >>飞往十字路口
 step
     .goto The Barrens,51.60,30.90
 	>>上楼

@@ -7,6 +7,7 @@ local UnitName = addon.GetUnitName
 addon.themes = themes
 
 themes['RXP Blue'] = {
+    name = 'RXP Blue',
     background = {12 / 255, 12 / 255, 27 / 255, 1},
     bottomFrameBG = {18 / 255, 18 / 255, 40 / 255, 1},
     bottomFrameHighlight = {54 / 255, 62 / 255, 109 / 255, 1},
@@ -28,6 +29,7 @@ themes['RXP Blue'] = {
 
 -- Built-in themes must provide all properties
 themes['RXP Red'] = {
+    name = 'RXP Red',
     background = {19 / 255, 0 / 255, 0 / 255, 1},
     bottomFrameBG = {31 / 255, 0 / 255, 0 / 255, 1},
     bottomFrameHighlight = {81 / 255, 0 / 255, 0 / 255, 1},
@@ -50,6 +52,7 @@ themes['RXP Red'] = {
 }
 
 themes['RXP Gold'] = {
+    name = 'RXP Gold',
     background = {32 / 255, 18 / 255, 0 / 255, 1},
     bottomFrameBG = {48 / 255, 27 / 255, 0 / 255, 1},
     bottomFrameHighlight = {125 / 255, 71 / 255, 0 / 255, 1},
@@ -67,6 +70,7 @@ themes['RXP Gold'] = {
 
 local classColor = _G.RAID_CLASS_COLORS[select(2, UnitClass("player"))]
 themes['DarkMode'] = {
+    name = 'DarkMode',
     background = {14 / 255, 14 / 255, 14 / 255, 255 / 255},
     bottomFrameBG = {19 / 255, 19 / 255, 19 / 255, 255 / 255},
     bottomFrameHighlight = {classColor.r, classColor.g, classColor.b, 128 / 255},
@@ -83,6 +87,7 @@ themes['DarkMode'] = {
 }
 
 themes['RXP Green'] = {
+    name = 'RXP Green',
     background = {6 / 255, 23 / 255, 12 / 255, 1},
     bottomFrameBG = {9 / 255, 34 / 255, 17 / 255, 1},
     bottomFrameHighlight = {4 / 255, 113 / 255, 65 / 255, 1},
@@ -435,8 +440,14 @@ end
 function addon.v2:GetTheme()
     local profile = addon.settings and addon.settings.profile
     local name = profile and profile.activeTheme
+    local defaultTheme = GetDefaultTheme()
+    local fallbackTheme = defaultTheme
 
-    self.activeTheme = addon:UsesDefaultTheme() and GetDefaultTheme() or self.themes[name] or GetDefaultTheme()
+    if not fallbackTheme.backgroundColors then
+        fallbackTheme = self.themes[defaultTheme.name] or self.themes['RXP Blue V2']
+    end
+
+    self.activeTheme = addon:UsesDefaultTheme() and fallbackTheme or self.themes[name] or fallbackTheme
 
     return self.activeTheme
 end

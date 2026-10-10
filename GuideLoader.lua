@@ -417,7 +417,8 @@ function addon.RegisterGuide(groupOrContent, text, defaultFor)
     if not groupOrContent then
         return error(L'Error: Guide has no contents')
     elseif addon.addonLoaded or
-      (addon.addonLoaded == false and (addon.settings.profile.preLoadData or not addon.player.hardcore)) then
+      (addon.addonLoaded == false and addon.settings.profile and
+       (addon.settings.profile.preLoadData or not addon.player.hardcore)) then
         local importedGuide, errorMsg = addon.ParseGuide(groupOrContent, text,
                                                         defaultFor)
 
@@ -817,7 +818,7 @@ function addon.LoadCachedGuides()
                 end
             else
                 guide = LibDeflate:DecompressDeflate(guideData.groupOrContent)
-                if guide:find("^--" .. addon.ReadCacheData("string")) then
+                if guide and guide:find("^--" .. addon.ReadCacheData("string")) then
                     guide, errorMsg, metadata = addon.ParseGuide(guide)
                     if metadata then
                         guideData.metadata = metadata

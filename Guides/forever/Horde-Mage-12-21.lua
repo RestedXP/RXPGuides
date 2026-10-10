@@ -423,7 +423,7 @@ step << Troll Mage
     .accept 6385 >>Accept Doras the Wind Rider Master
 step
     >>Run up to the Flight Master. Do NOT fly anywhere
-    .goto Orgrimmar,45.120,63.889
+    .goto 1454/1,-4313.46,1676.25--c:Orgrimmar,45.120,63.889
     .fp Orgrimmar >> Get the Orgrimmar flight path << Undead
 >>Talk to |cRXP_FRIENDLY_Doras|r
     .turnin 6385 >>Turn in Doras the Wind Rider Master << Troll Mage

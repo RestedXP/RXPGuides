@@ -789,7 +789,9 @@ function addon.SetStep(n, n2, loopback)
         if C_SuperTrack and trackId then
             C_SuperTrack.SetSuperTrackedQuestID(trackId)
         end
-        addon:SendEvent("RXP_STEP_ACTIVATED",step,guide)
+        C_Timer.After(0,function()
+            addon:SendEvent("RXP_STEP_ACTIVATED",step,guide)
+        end)
     end
 
     RXPCData.stepSkip[n + 1] = nil
@@ -812,7 +814,7 @@ function addon.SetStep(n, n2, loopback)
     table.wipe(addon.activeItems)
     table.wipe(addon.activeSpells)
     table.wipe(addon.activeMacros)
-    table.wipe(addon.inventoryManager.itemsToOpen)
+    addon.inventoryManager:OpenItems(nil, true)
 
     local useV2GuideWindow = addon.v2:IsGuideWindowEnabled()
     if not useV2GuideWindow then
@@ -1594,7 +1596,7 @@ function addon.ProcessGuideTable(guide)
     for k, v in pairs(guide) do
         if type(v) ~= "table" then
             currentGuide[k] = v
-        elseif k ~= "steps" and k ~= "tips" then
+        elseif k ~= "steps" and k ~= "tips" and k ~= "questCacheIndex" then
             currentGuide[k] = CopyTable(v)
         end
     end
@@ -1885,6 +1887,10 @@ function addon:LoadGuide(guide, OnLoad)
     addon.currentGuide = addon.ProcessGuideTable(guide)
     guide = addon.currentGuide
 
+    if #guide.steps == 0 then
+        return addon:LoadGuide(addon.emptyGuide)
+    end
+
     if guideStepId then
         for index, step in ipairs(guide.steps) do
             if step.stepId == guideStepId then
@@ -2069,7 +2075,8 @@ function addon:LoadGuide(guide, OnLoad)
             frame.text:SetFontObject(_G.GameFontNormalSmall)
             frame.text:ClearAllPoints()
             frame.text:SetPoint("TOPLEFT", frame, 0, -5)
-            frame.text:SetPoint("BOTTOMRIGHT", frame.number, "BOTTOMLEFT", 0, 0)
+            -- Only anchor by width, the row height is is derived from text height/wrap
+            frame.text:SetPoint("RIGHT", frame.number, "LEFT", 0, 0)
             frame.text:SetJustifyH("LEFT")
             frame.text:SetJustifyV("TOP")
             frame.text:SetTextColor(unpack(addon.activeTheme.textColor))
@@ -2202,7 +2209,7 @@ function BottomFrame.UpdateFrame(self, stepn, startFrom, skip)
             step.text = text
         end
 
-        if frame.text then
+        if frame.text and frame.text:GetText() ~= text then
             frame.text:SetText(text)
         end
 
@@ -2217,6 +2224,8 @@ function BottomFrame.UpdateFrame(self, stepn, startFrom, skip)
         end
 
         local hDiff = fheight - frame:GetHeight()
+        if hDiff == 0 then return end
+
         frame:SetHeight(fheight)
 
         for n = stepNumber + 1, #stepPos do
@@ -2390,7 +2399,7 @@ local function IsGuideActive(guide,includeInternal)
     if guide and addon.stepLogic.SeasonCheck(guide) and addon.stepLogic.PhaseCheck(guide) and
         addon.stepLogic.XpRateCheck(guide) and addon.stepLogic.FreshAccountCheck(guide) and
         addon.stepLogic.LevelCheck(guide) and (not guide.internal or includeInternal) and
-        addon.stepLogic.LoremasterCheck(guide) then
+        addon.stepLogic.LoremasterCheck(guide) and addon.stepLogic.BetaVersionCheck(guide) then
         if (not addon.player.neutral or not guide.enabledFor) then
             return true
         else

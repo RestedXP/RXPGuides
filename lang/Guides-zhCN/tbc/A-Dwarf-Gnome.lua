@@ -45,7 +45,7 @@ step << Warrior/Warlock
     .vendor >>把垃圾物品卖给商人
     .target 格伦德尔·哈金
     .train 6673,1 << Warrior
-    .train 348.1 << Warlock
+    .train 348,1 << Warlock
 step << Warrior
     .goto 1426,28.831,67.238
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯兰·库尔曼|r 对话，NPC在里面
@@ -55,7 +55,7 @@ step << Warlock
     .goto Dun Morogh,28.650,66.145
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话，NPC在里面
     .train 348 >>学习 |T135817:0|t[献祭]
-    .accept 1599 >>接受任务开端
+    .accept 1599 >>接受任务 开端
     .target 阿拉玛尔·格里姆
 step << Warrior/Warlock
     #label WarriorHS
@@ -132,12 +132,14 @@ step
     .accept 3115 >>接受任务 被污染的备忘录 << Gnome Warlock
     .target 斯登·粗臂
 step
+#xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴尔林·霜锤|r 对话
     .goto Dun Morogh,29.709,71.255
     .accept 170 >>接受任务 新的威胁
     .target 巴尔林·霜锤
 --Warlock Imp quest
 step << Warlock
+#xprate <1.5
     #completewith next
     .goto 1426,30.146,74.521,0
     .goto 1426,28.322,77.854,0
@@ -149,8 +151,8 @@ step << Warlock
     .mob 石腭穴居人
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
     .mob 壮实的石腭穴居人
-    .mob 蓬毛幼狼
-    .mob 蓬毛森林狼
+    .mob +主工程师特雷普
+    .mob +拉文德维尔
 step << Warlock
     #optional
     #label FrostmaneC
@@ -177,7 +179,7 @@ step << Warlock
     .goto 1426,30.216,80.254,40,0
     >>击杀洞穴里面的 |cRXP_ENEMY_霜鬃巨魔新兵|r 并拾取 |cRXP_LOOT_羽毛咒符|r
     .complete 1599,1 --Collect Feather Charm (x3)
-    .mob 霜鬃巨魔新兵
+    .mob +大主教欧雷里斯
 step << Warlock
     #label BeginningsHS
     #completewith BeginningsEnd
@@ -198,6 +200,7 @@ step << Warlock
     .target 阿拉玛尔·格里姆
 --XX Warlock Imp Quest End. Return to normal
 step
+#xprate <1.5
     #completewith Rockjaw << !Paladin !Warlock !Hunter
     #completewith Talin << Paladin/Warlock/Hunter
     .goto 1426,27.096,72.545,0
@@ -248,6 +251,7 @@ step
     .turnin 183 >>交任务 猎杀野猪
     .target 塔林·锐眼
 step << Paladin/Warlock/Hunter
+#xprate <1.5
     .goto 1426,27.858,76.482,0
     .goto 1426,30.727,76.831,0
     .goto 1426,29.280,75.500,0
@@ -347,6 +351,7 @@ step << Paladin/Warlock/Hunter
     .goto 1426,28.792,68.804,12 >>离开安威玛尔
     .subzoneskip 77,1
 step << Paladin/Warlock/Hunter
+#xprate <1.5
     .goto Dun Morogh,29.709,71.255
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴尔林·霜锤|r 对话
     .turnin 170 >>交任务 新的威胁
@@ -358,6 +363,7 @@ step << Warlock
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target 艾德林·怒流
 step << !Paladin !Warlock !Hunter
+#xprate <1.5
     #sticky
     #label TroggEnd
     .goto 1426,24.193,77.305,0
@@ -417,7 +423,7 @@ step << !Paladin !Warlock !Hunter
     .target 诺里斯·激流
 step << !Paladin !Warlock !Hunter
     #completewith next
-    +|cRXP_WARN_在|r|T132791:0|t[德南的热酒] 失效之前，你有5分钟时间去获得|cRXP_LOOT_格瑞林·白须的日记|r 然后|cRXP_WARN_返回安威玛尔|r
+    +|cRXP_WARN_在|cRXP_LOOT_|T132791:0|t[德南的热酒] 失效之前，你有5分钟时间去获得|r格瑞林·白须的日记|r 然后|cRXP_WARN_返回安威玛尔|r
     >>|cRXP_WARN_无需担心任务失败，你可以重试|r
 step
     #optional
@@ -531,6 +537,7 @@ step << !Paladin !Warlock !Hunter
     .turnin 3365 >>交任务 归还酒杯
     .target 诺里斯·激流
 step << !Paladin !Warlock !Hunter
+#xprate <1.5
     .goto Dun Morogh,29.709,71.255
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴尔林·霜锤|r 对话
     .turnin 170 >>交任务 新的威胁
@@ -681,6 +688,7 @@ step << Paladin
 step << Priest
     .goto Dun Morogh,47.342,52.190
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马克萨恩·安沃尔|r 对话，NPC在里面
+    .turnin -5626 >> Turn In In Favor of the Light << Dwarf
     .accept 5625 >>接受任务 圣光之衣
     .target 马克萨恩·安沃尔
 step << Priest
@@ -795,6 +803,9 @@ step
     .accept 317 >>接受任务 贝尔丁的补给
     .goto Dun Morogh,49.426,48.410
     .target 驾驶员贝隆·风箱
+step
+#xprate <1.5
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_驾驶员迪恩·石轮|r 对话
     .accept 313 >>接受任务 灰色洞穴
     .goto Dun Morogh,49.622,48.612
     .target 驾驶员迪恩·石轮
@@ -970,12 +981,14 @@ step
     .target 拉格纳·雷酒
     .isQuestComplete 384
 step
+#xprate <1.5
     #optional
     #completewith next
     .goto 1426,42.982,54.755
     .subzone 136 >>前往灰色洞穴
     .isOnQuest 313
 step
+#xprate <1.5
     #optional << Warrior/Paladin/Rogue
     #loop
     .goto 1426,42.982,54.755,0
@@ -987,13 +1000,14 @@ step
     .goto 1426,42.177,53.274,40,0
     .goto 1426,41.100,48.927,40,0
     >>击杀 |cRXP_ENEMY_雪怪|r 和 |cRXP_ENEMY_雪怪幼崽|r。拾取他们的 |cRXP_LOOT_雪怪的鬃毛|r
-    >>|cRXP_WARN_Remember to keep an eye out for|r |T134566:0|t[Copper Veins] |cRXP_WARN_which yield|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_so you can craft|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
-    >>|cRXP_WARN_Remember to keep an eye out for|r |T134566:0|t[Copper Veins] |cRXP_WARN_which yield|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_so you can craft|r |T135255:0|t[Rough Weightstones] << Paladin
+    >>|cRXP_WARN_记得留意|r |T134566:0|t[铜矿] |cRXP_WARN_它可产出|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_并让你制造出|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
+    >>|cRXP_WARN_记得留意|r |T134566:0|t[铜矿] |cRXP_WARN_它可产出|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_并让你制造出|r |T135255:0|t[劣质平衡石] << Paladin
     .complete 313,1 --Collect Wendigo Mane (x8)
     .mob 雪怪
     .mob 雪怪幼崽
     .train 2018,3 << Warrior/Paladin/Rogue --Blacksmithing Trained
 step << Warrior/Paladin/Rogue
+#xprate <1.5
     #loop
     .goto 1426,42.982,54.755,0
     .goto 1426,41.918,54.053,0
@@ -1077,6 +1091,7 @@ step << Warrior/Paladin/Rogue
     .accept 318 >>接受任务 艾沃沙酒
     .target 驾驶员贝隆·风箱
 step << Warrior/Paladin/Rogue
+#xprate <1.5
     .goto Dun Morogh,49.622,48.612
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_驾驶员迪恩·石轮|r 对话
     .turnin 313 >>交任务 灰色洞穴
@@ -1237,7 +1252,7 @@ step << !Mage !Priest !Warlock
     #completewith next
     .goto Dun Morogh,30.453,46.005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基格·吉布恩|r 对话
-    .vendor >>出售垃圾物品
+    .vendor >>|cRXP_WARN_出售垃圾物品|r
     .target 基格·吉布恩
 step << Priest/Mage/Warlock
     #completewith next
@@ -1464,8 +1479,8 @@ step
 step << Warlock
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉姆瑞兹·黑轮|r 对话
-    .train 980 >>|T136139:0|t[痛苦诅咒]
-    .train 5782 >>|T136183:0|t[恐惧]
+    .train 980 >> Train |T136139:0|t[Curse of Agony]
+    .train 5782 >>学习 |T136183:0|t[恐惧]
     .goto Dun Morogh,47.327,53.693
     .target 吉姆瑞兹·黑轮
     .xp <8,1
@@ -1598,6 +1613,7 @@ step
     .accept 287 >>接受任务 霜鬃巨魔要塞
     .target 森内尔·白须
 step << !Rogue !Warrior !Paladin
+#xprate <1.5
     .goto Dun Morogh,49.622,48.612
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_驾驶员迪恩·石轮|r 对话
     .turnin 313 >>交任务 灰色洞穴
@@ -1610,6 +1626,7 @@ step
     .turnin 320,3 >>交任务 艾沃沙酒 << Rogue
     .target 驾驶员贝隆·风箱
 step
+#xprate <1.5
     .goto Dun Morogh,46.005,48.637,10,0
     .goto Dun Morogh,45.846,49.365
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉兹·滑链|r 对话，NPC在里面
@@ -1645,7 +1662,7 @@ step
     .mob 霜鬃先知
 step
     .goto Dun Morogh,38.517,53.927
-    >>|cRXP_WARN_对|r |cRXP_ENEMY_冰须|r |cRXP_WARN_施放|r |T136071:0|t[变形术] << Mage
+    >>|cRXP_WARN_对|r |cRXP_WARN_冰须|r |cRXP_ENEMY_施放|r |T136071:0|t[变形术] << Mage
     >>|cRXP_WARN_对|r |cRXP_WARN_冰须|r |cRXP_ENEMY_施放|r |T136183:0|t[恐惧] << Warlock
     >>打开 |cRXP_PICK_马克格拉恩的储肉柜|r。拾取里面的 |cRXP_LOOT_马克格拉恩的干肉|r
     >>|cRXP_WARN_等|cRXP_ENEMY_冰须|r 巡逻出洞穴。一旦他离开洞穴， 你就可以偷偷进入并打开|r |cRXP_PICK_马克格拉恩的储肉柜|r << !Mage !Warlock
@@ -1672,6 +1689,7 @@ step
     .goto Dun Morogh,30.186,45.531
     .target 马莱斯·麦酒
 step
+#xprate <1.5
     #loop
     .goto 1426,26.653,43.844,0
     .goto 1426,24.601,40.790,0
@@ -1745,6 +1763,7 @@ step
     .train 3273 >>训练 |T135966:0|t[急救]
     .target 萨姆诺·普尔
 step
+#xprate <1.5
     .goto Dun Morogh,46.005,48.637,8,0
     .goto Dun Morogh,45.846,49.365
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉兹·滑链|r 对话，NPC在里面
@@ -1979,7 +1998,6 @@ step << Priest/Rogue
 step << Priest
     .goto Dun Morogh,47.342,52.190
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马克萨恩·安沃尔|r 对话，NPC在里面
-    .accept 5637 >>接受任务 绝望祷言 << Human/Dwarf
     .trainer >>训练你的职业技能
     .target 马克萨恩·安沃尔
 step << Rogue
@@ -2093,6 +2111,12 @@ step << !Rogue !Warrior !Warlock
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
     .mob 碎石穴居人
     .mob 碎石怪斥候
+step << Mage
+#xprate >1.49
+    .goto Loch Modan,26.67,56.94
+    .xp 12-3675 >> Grind until you are 3675xp away from level 12
+    .mob 碎石穴居人
+    .mob 碎石怪斥候
 step << !Rogue !Warrior !Warlock
     #optional
     #completewith next
@@ -2116,6 +2140,7 @@ step
     .goto 1432,34.405,48.276
     .subzone 144 >>前往塞尔萨玛，洛克莫丹
 step
+#xprate <1.5
     #sticky
     #label StouttoKadrell
     .waypoint Loch Modan,36.72,41.97,15,0
@@ -2130,6 +2155,23 @@ step
     .turnin 414 >>交任务 卡德雷尔的酒
     .accept 416 >>接受任务 狗头人的耳朵 << Mage/Warlock
     .accept 1339 >>接受任务 巡山人雷矛的任务 << Mage/Rogue/Warrior/Warlock
+    .target 巡山人卡德雷尔
+step
+#xprate >1.49
+    #sticky
+    #label StouttoKadrell
+    .waypoint Loch Modan,36.72,41.97,15,0
+    .waypoint Loch Modan,37.24,43.19,15,0
+    .waypoint Loch Modan,37.33,45.63,15,0
+    .waypoint Loch Modan,36.77,46.20,15,0
+    .waypoint Loch Modan,35.19,46.88,15,0
+    .waypoint Loch Modan,32.67,49.71,20,0
+    .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巡山人卡德雷尔|r 对话
+    >>|cRXP_FRIENDLY_巡山人卡德雷尔|r |cRXP_WARN_会沿着通往塞尔萨玛的道路巡逻|r
+    .turnin 414 >>交任务 卡德雷尔的酒
+    .accept 416 >>接受任务 狗头人的耳朵 << Warlock
+    .accept 1339 >>接受任务 巡山人雷矛的任务 << Rogue/Warrior/Warlock
     .target 巡山人卡德雷尔
 step
     #optional
@@ -2153,7 +2195,7 @@ step << !Mage !Rogue !Warrior !Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅尼·铁心|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一捆|r |T135435:0|t[普通木柴] |cRXP_BUY_和一块|r |T135237:0|t[燧石和火绒]
     >>|cRXP_BUY_需要的话也可以从她那里|r|cRXP_BUY_购买一个|r |T133634:0|t[棕色小包] << !Rogue
-    >>|cRXP_WARN_This is used to make|r |T135805:0|t[烹饪用火]|cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[烹饪]|cRXP_WARN_skill without losing time|r
+    >>|cRXP_WARN_这个可用于|r在船上或地铁上制作 |cRXP_WARN_|T135805:0|t[烹饪用火]，以便在不浪费时间的情况下提升你的 |r|T133971:0|t[烹饪] |cRXP_WARN_技能|r
     >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪] |cRXP_WARN_来完成后续暮色森林的一个任务|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
@@ -2169,6 +2211,7 @@ step << Mage/Rogue/Warrior/Warlock
     .target 旅店老板纳克罗·壁炉
     .bindlocation 2101
 step << Mage/Warlock
+#xprate <1.5 << !Warlock
     .goto Loch Modan,34.828,49.283
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维德拉·壁炉|r 对话
     .accept 418 >>接受任务 塞尔萨玛血肠
@@ -2184,13 +2227,13 @@ step << Rogue/Warrior/Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅尼·铁心|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一捆|r |T135435:0|t[普通木柴] |cRXP_BUY_和一块|r |T135237:0|t[燧石和火绒]
     >>|cRXP_BUY_需要的话也可以从她那里|r|cRXP_BUY_购买一个|r |T133634:0|t[棕色小包]
-    >>|cRXP_WARN_This is used to make|r |T135805:0|t[烹饪用火]|cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[烹饪]|cRXP_WARN_skill without losing time|r
+    >>|cRXP_WARN_这个可用于|r在船上或地铁上制作 |cRXP_WARN_|T135805:0|t[烹饪用火]，以便在不浪费时间的情况下提升你的 |r|T133971:0|t[烹饪] |cRXP_WARN_技能|r
     >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪] |cRXP_WARN_来完成后续暮色森林的一个任务|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
     .target 雅尼·铁心
     .skill cooking,<1,1 -- shows if cooking is >1
-    .money <1 -- don't want them buying etc, unless rich alts, money too tight later 
+    .money <1 -- don't want them buying etc, unless rich alts, money too tight later
 step << skip
     #loop
     .goto Loch Modan,36.72,41.97,15,0
@@ -2210,6 +2253,7 @@ step
     #optional
     #requires StouttoKadrell
 step << Mage/Warlock
+#xprate <1.5 << !Warlock
     #optional
     #completewith Algaz
     >>击杀 |cRXP_ENEMY_老黑熊|r。拾取他们的 |cRXP_LOOT_熊肉|r
@@ -2225,12 +2269,14 @@ step << Mage/Warlock
     .isOnQuest 418
     .subzoneskip 925 --Algaz Station
 step << Mage/Rogue/Warrior/Warlock
+#xprate <1.5 << Mage
     #optional
     #label Algaz
     #completewith Stormpike1
     .goto 1432,23.490,18.008
     .subzone 925 >>前往奥加兹岗哨
 step << Mage/Rogue/Warrior/Warlock
+#xprate <1.5 << Mage
     #optional
     #requires Algaz
     #completewith Stormpike1
@@ -2240,6 +2286,7 @@ step << Mage/Rogue/Warrior/Warlock
     .target 高索·布鲁姆
     .isOnQuest 1339
 step << Mage/Rogue/Warrior/Warlock
+#xprate <1.5 << Mage
     #label Stormpike1
     .goto Loch Modan,24.77,18.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与地堡里的 |cRXP_FRIENDLY_巡山人雷矛|r 对话
@@ -2248,6 +2295,7 @@ step << Mage/Rogue/Warrior/Warlock
     .accept 307 >>接受任务 污秽的爪子 << Mage/Warlock
     .target 巡山人雷矛
 step << Mage
+#xprate <1.5
     #optional
     #completewith ESSM
     >>击杀 |cRXP_ENEMY_老黑熊|r。拾取他们的 |cRXP_LOOT_熊肉|r
@@ -2262,6 +2310,7 @@ step << Mage
     .subzoneskip 149 --Silver Stream Mine
     .isQuestAvailable 418
 step << Mage
+#xprate <1.5
     #completewith MinersGear
     #optional
     #loop
@@ -2281,16 +2330,19 @@ step << Mage
     .mob 坑道鼠掘地工
     .mob 坑道鼠勘探员
 step << Mage
+#xprate <1.5
     #label ESSM
     #completewith next
     .goto Loch Modan,35.50,18.97,20 >>进入银溪矿洞
 step << Mage
+#xprate <1.5
     #label MinersGear
     .goto Loch Modan,35.93,22.55
     >>打开 |cRXP_PICK_矿工联盟的储物箱|r。拾取里面的 |cRXP_LOOT_矿工装备|r
     >>|cRXP_WARN_|cRXP_PICK_矿工联盟的储物箱|r 散布在整个矿井中|r
     .complete 307,1 -- Miners' Gear (4)
 step << Mage
+#xprate <1.5
     #optional
     #completewith FilthyMountaineer
     >>击杀 |cRXP_ENEMY_老黑熊|r。拾取他们的 |cRXP_LOOT_熊肉|r
@@ -2303,6 +2355,7 @@ step << Mage
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
     .mob 森林潜伏者
 step << Mage
+#xprate <1.5
     .goto Loch Modan,25.05,30.19,0
     .goto Loch Modan,26.06,43.44,0
     .goto Loch Modan,37.71,16.84,0
@@ -2321,19 +2374,21 @@ step << Mage
     .mob 坑道鼠掘地工
     .mob 坑道鼠勘探员
 step << Mage
+#xprate <1.5
     #completewith next
     .goto Loch Modan,24.134,18.208
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高索·布鲁姆|r 对话
     .vendor >>|cRXP_WARN_如果需要，出售物品并修理装备|r
     .target 高索·布鲁姆
 step << Mage
+#xprate <1.5
     #label FilthyMountaineer
     .goto Loch Modan,24.77,18.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巡山人雷矛|r 对话
     .turnin 307 >>交任务 污秽的爪子
-    .accept 1338 >>接受任务 卡尔·雷矛的订单
     .target 巡山人雷矛
 step << Mage
+#xprate <1.5
     >>击杀 |cRXP_ENEMY_老黑熊|r。拾取他们的 |cRXP_LOOT_熊肉|r
     >>击杀 |cRXP_ENEMY_山猪|r。拾取他们的 |cRXP_LOOT_猪大肠|r
     >>击杀 |cRXP_ENEMY_森林潜伏者|r。拾取他们的 |cRXP_LOOT_毒液|r
@@ -2380,15 +2435,17 @@ step << Mage
     .goto Loch Modan,31.9,16.4
 step << Rogue/Warrior
     #completewith FlytoIF
-    +Grind mobs until you have at least 30 Silver worth of money 和 vendorables << Rogue
-    +Grind mobs until you have at least 10 Silver worth of money 和 vendorables << Warrior
+    +刷怪，直到你至少获得价值30银币的金钱和可出售物品 << Rogue
+    +刷怪，直到你至少获得价值10银币的金钱和可出售物品 << Warrior
     .money >0.3000 << Rogue
     .money >0.1000 << Warrior
 step << Mage/Rogue/Warrior/Warlock
+#xprate <1.5 << Mage
     #completewith FlytoIF
     .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .subzoneskip 144
 step << Mage
+#xprate <1.5
     .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
     .goto Loch Modan,36.72,41.97,15,0
     .goto Loch Modan,37.24,43.19,15,0
@@ -2402,6 +2459,7 @@ step << Mage
     .target 巡山人卡德雷尔
     .turnin 416 >>交任务 狗头人的耳朵
 step << Mage
+#xprate <1.5
     .goto Loch Modan,34.828,49.283
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维德拉·壁炉|r 对话
     .turnin 418 >>交任务 塞尔萨玛血肠
@@ -2411,8 +2469,8 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅尼·铁心|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一捆|r |T135435:0|t[普通木柴] |cRXP_BUY_和一块|r |T135237:0|t[燧石和火绒]
     >>|cRXP_BUY_需要的话也可以从她那里|r|cRXP_BUY_购买一个|r |T133634:0|t[棕色小包] << !Rogue
-    >>|cRXP_WARN_This is used to make|r |T135805:0|t[烹饪用火]|cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[烹饪]|cRXP_WARN_skill without losing time|r
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[烹饪] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|cRXP_WARN_这个可用于|r在船上或地铁上制作 |cRXP_WARN_|T135805:0|t[烹饪用火]，以便在不浪费时间的情况下提升你的 |r|T133971:0|t[烹饪] |cRXP_WARN_技能|r
+    >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪] |cRXP_WARN_来完成后续暮色森林的一个任务|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
     .target 雅尼·铁心
@@ -2446,6 +2504,12 @@ step
     .goto Ironforge,51.521,26.311
     .turnin 6391 >>交任务 飞往铁炉堡
     .accept 6388 >>接受任务 格莱斯·瑟登
+step << Rogue
+    #optional
+    .goto Ironforge,51.958,14.838
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼下的 |cRXP_FRIENDLY_霍夫丹·黑须|r 对话
+    .turnin -2218 >>交任务 救赎之路
+    .target 霍夫丹·黑须
 step << Paladin
     .goto Ironforge,23.131,6.143
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
@@ -2527,7 +2591,7 @@ step << Priest/Paladin
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 交谈
     >>|cRXP_BUY_购买以下物品，以便稍后在黑海岸更快交任务|r
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
     >>|T133912:0|t[黑海岸石斑鱼]
@@ -2543,8 +2607,8 @@ step << Priest/Paladin
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 对话
-    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r|cRXP_BUY_to level your|r |T133971:0|t[烹饪]|cRXP_BUY_with later|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 交谈
+    >>|cRXP_BUY_购买|r |T133970:0|t|cRXP_LOOT_[野猪肉块]|r|cRXP_BUY_ 或|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_BUY_，以便稍后提升你的 |r|T133971:0|t[烹饪] |cRXP_BUY_技能|r
     >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪]|cRXP_WARN_后续在夜色镇完成一个任务|r
     >>|cRXP_BUY_购买以下物品，以便稍后在黑海岸更快交任务|r
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
@@ -2576,7 +2640,7 @@ step << Rogue/Warrior/Warlock
     .target 蒙提
     .accept 6661 >>接受任务 捕捉矿道老鼠
 step << Rogue/Warrior/Warlock
-    .use 17117 >>|cRXP_WARN_Use the|r |T133942:0|t[Rat Catcher's Flute]|cRXP_WARN_on|r|cRXP_ENEMY_矿道老鼠|r
+    .use 17117 >>|cRXP_WARN_对 |r矿道老鼠|cRXP_WARN_ 使用 |r|T133942:0|t[捕鼠者长笛]|cRXP_ENEMY_|r
     .complete 6661,1 --Rats Captured (x5)
     .mob 矿道老鼠
 step << Rogue/Warrior/Warlock
@@ -2588,16 +2652,16 @@ step << Rogue/Warrior/Warlock
 step << Rogue/Warrior/Warlock
     #completewith next
     .zone Stormwind City >>乘坐地铁前往暴风城
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[烹饪] |cRXP_WARN_if needed while waiting for the Tram|r
-    >>|cRXP_WARN_You will need your|r |T135966:0|t[急救] |cRXP_WARN_to be 80 for a quest at level 24|r << Rogue !Dwarf
+    >>|cRXP_WARN_在等待地铁期间，如有需要可提升你的 |r|T135966:0|t[急救]|cRXP_WARN_ 和 |r|T133971:0|t[烹饪] |cRXP_WARN_技能|r
+    >>|cRXP_WARN_你需要将|r |T135966:0|t[急救]|cRXP_WARN_ 提升至 80，以完成 24 级的一个任务|r << Rogue !Dwarf
 step << Rogue/Warrior/Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t当你下列车后与 |cRXP_FRIENDLY_尼普希|r 对话
-    >>|cRXP_FRIENDLY_尼普希|r |cRXP_WARN_is on the center platform|r
+    >>|cRXP_FRIENDLY_尼普希|r |cRXP_WARN_位于中央平台上|r
     .turnin 6662 >>交任务 我的兄弟，尼普希
     .target 尼普希
 step << Rogue/Warrior/Warlock
     #label EnterSW
-    .zone Stormwind City >>离开暴风城
+    .zone Stormwind City >>进入暴风城
 step << Warlock
     .goto StormwindClassic,51.757,12.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格瑞曼德·艾尔默|r 对话
@@ -2635,7 +2699,7 @@ step << Warrior
     .accept 1640 >>接受任务 击败巴特莱比
 step << Warrior
     .goto StormwindClassic,73.787,36.323
-    >>攻击 |cRXP_ENEMY_巴特莱比|r. He will submit at 1%
+    >>攻击 |cRXP_ENEMY_巴特莱比|r。他会在1% 生命值时投降
     .complete 1640,1 --Beat Bartleby
     .mob 巴特莱比
 step << Warrior
@@ -2662,7 +2726,7 @@ step << Rogue
     .goto StormwindClassic,57.547,57.076
     .goto 1453,53.615,59.767,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_冈瑟尔·维勒|r 对话
-    >>|cRXP_BUY_Buy a|r |T135346:0|t[斗士短剑] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_购买1把|r |T135346:0|t[斗士短剑] |cRXP_BUY_从他那里|r
     >>|cRXP_WARN_或者你也可以稍后去拍卖行看看是否有更好或更便宜的替代品|r
     .collect 851,1 -- Cutlass (1)
     .target 冈瑟尔·维勒
@@ -2673,19 +2737,19 @@ step << Rogue
     .goto StormwindClassic,57.547,57.076
     .goto 1453,53.615,59.767,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_冈瑟尔·维勒|r 对话
-    >>|cRXP_BUY_Buy a|r |T135346:0|t[斗士短剑] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_购买1把|r |T135346:0|t[斗士短剑] |cRXP_BUY_从他那里|r
     .collect 851,1 -- Cutlass (1)
     .target 冈瑟尔·维勒
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
     #optional
-    .equip 16,851 >>|cRXP_WARN_Equip the|r |T135346:0|t[斗士短剑] |cRXP_WARN_in your mainhand|r
+    .equip 16,851 >>|cRXP_WARN_将|r |T135346:0|t[斗士短剑] |cRXP_WARN_装备在主手|r
     .use 851
     .itemcount 851,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
     #optional
-    .equip 17,2218 >>|cRXP_WARN_Equip the|r |T135641:0|t[|cRXP_FRIENDLY_工匠匕首|r]|cRXP_WARN_in your offhand|r
+    .equip 17,2218 >>|cRXP_WARN_将|r |T135641:0|t[|cRXP_FRIENDLY_工匠匕首|r]|cRXP_WARN_装备在副手|r
     .use 2218
     .itemcount 2218,1
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
@@ -2695,7 +2759,7 @@ step << Warrior
     .goto StormwindClassic,57.547,57.076
     .goto 1453,53.615,59.767,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_冈瑟尔·维勒|r 对话
-    >>|cRXP_BUY_Buy a|r |T133477:0|t[巨棒] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_购买1把|r |T133477:0|t[巨棒] |cRXP_BUY_从他那里|r
     >>|cRXP_WARN_或者你也可以稍后去拍卖行看看是否有更好或更便宜的替代品|r
     .collect 1197,1 -- Giant Mace
     .target 冈瑟尔·维勒
@@ -2706,7 +2770,7 @@ step << Warrior
     .goto StormwindClassic,57.547,57.076
     .goto 1453,53.615,59.767,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_冈瑟尔·维勒|r 对话
-    >>|cRXP_BUY_Buy a|r |T133477:0|t[巨棒] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_购买1把|r |T133477:0|t[巨棒] |cRXP_BUY_从他那里|r
     .collect 1197,1 -- Giant Mace
     .target 冈瑟尔·维勒
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.9
@@ -2755,7 +2819,7 @@ step << Rogue/Warrior
     #optional
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
-    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r|cRXP_BUY_to level your|r |T133971:0|t[烹饪]|cRXP_BUY_with later|r
+    >>|cRXP_BUY_购买|r |T133970:0|t|cRXP_LOOT_[野猪肉块]|r|cRXP_BUY_ 或|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_BUY_，以便稍后提升你的 |r|T133971:0|t[烹饪] |cRXP_BUY_技能|r
     >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪]|cRXP_WARN_后续在夜色镇完成一个任务|r
     >>|cRXP_BUY_购买以下物品，以便稍后在黑海岸更快交任务|r
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
@@ -2778,7 +2842,7 @@ step << Rogue/Warrior
     #optional
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
-    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r|cRXP_BUY_to level your|r |T133971:0|t[烹饪]|cRXP_BUY_with later|r
+    >>|cRXP_BUY_购买|r |T133970:0|t|cRXP_LOOT_[野猪肉块]|r|cRXP_BUY_ 或|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_BUY_，以便稍后提升你的 |r|T133971:0|t[烹饪] |cRXP_BUY_技能|r
     >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪]|cRXP_WARN_后续在夜色镇完成一个任务|r
     >>|cRXP_BUY_购买以下物品，以便稍后在洛克莫丹与黑海岸更快交任务|r
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
@@ -2823,8 +2887,8 @@ step << Rogue/Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅尼·铁心|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一捆|r |T135435:0|t[普通木柴] |cRXP_BUY_和一块|r |T135237:0|t[燧石和火绒]
     >>|cRXP_BUY_需要的话也可以从她那里|r|cRXP_BUY_购买一个|r |T133634:0|t[棕色小包] << !Rogue
-    >>|cRXP_WARN_This is used to make|r |T135805:0|t[烹饪用火]|cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[烹饪]|cRXP_WARN_skill without losing time|r
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[烹饪] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|cRXP_WARN_这个可用于|r在船上或地铁上制作 |cRXP_WARN_|T135805:0|t[烹饪用火]，以便在不浪费时间的情况下提升你的 |r|T133971:0|t[烹饪] |cRXP_WARN_技能|r
+    >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪] |cRXP_WARN_来完成后续暮色森林的一个任务|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
     .target 雅尼·铁心
@@ -2887,33 +2951,35 @@ step
 step
     .goto StormwindClassic,26.117,77.225
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
-    .train 1120 >>训练 |T136163:0|t[吸取灵魂] 
+    .train 1120 >>训练 |T136163:0|t[吸取灵魂]
     .train 6201 >>训练 |T135230:0|t[制造初级治疗石]
-    .train 696 >>学习 |T136185:0|t[恶魔皮肤 (等级 2)] 
-    .train 707 >>学习 |T135817:0|t[献祭 (等级 2)] 
+    .train 696 >>学习 |T136185:0|t[恶魔皮肤 (等级 2)]
+    .train 707 >>学习 |T135817:0|t[献祭 (等级 2)]
     .target 厄苏拉·德林
 step
     #completewith GoldshireQuests
     .goto Stormwind City,25.841,78.080,-1
     .goto Elwynn Forest,42.105,65.927,-1
-    .deathskip >>Die and respawn at the |cRXP_FRIENDLY_灵魂医者|r by using |T136126:0|t[Life Tap] and standing on the Bonfire next to you
+    .deathskip >>使用 |T136126:0|t[生命分流] 并站在你旁边的篝火上自杀，然后在 |cRXP_FRIENDLY_灵魂医者|r 处复活
     .zoneskip Stormwind City,1
 step
     #completewith GoldshireQuests
     .goto Elwynn Forest,42.105,65.927
     .subzone 87 >>前往金雾村
 step
+#xprate <1.5
     .goto Elwynn Forest,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话
     .accept 62 >>接受任务 法戈第矿洞
-    .accept 239 >>接受任务 西泉要塞
     .target 治安官杜汉
 step
+#xprate <1.5
     .goto Elwynn Forest,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_威廉·匹斯特|r 对话
     .accept 60 >>接受任务 狗头人的蜡烛
     .target 威廉·匹斯特
 step
+#xprate <1.5
     #label GoldshireQuests
     .goto Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷米|r 对话
@@ -2921,10 +2987,18 @@ step
     .accept 40 >>接受任务 鱼人的威胁
     .target 雷米
 step
+#xprate >1.49
+    #label GoldshireQuests
+    .goto Elwynn Forest,42.140,67.254
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷米|r 对话
+    .accept 40 >>接受任务 鱼人的威胁
+    .target 雷米
+step
     #optional
     #sticky
     .abandon 109 >>放弃任务 向格里安·斯托曼报到
 step
+#xprate <1.5
     #completewith next
     >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_任务中部分怪物可能会变为灰色。即便如此，请务必完成任务，以便解锁后续任务|r
@@ -2933,11 +3007,13 @@ step
     .mob 狗头人隧道工
     .mob 狗头人矿工
 step
+#xprate <1.5
     .goto Elwynn Forest,38.677,81.778,50,0
     .goto Elwynn Forest,40.5,82.3
     >>|cRXP_WARN_进入并探察法戈第矿洞|r
     .complete 62,1 --Scout Through the Fargodeep Mine
 step
+#xprate <1.5
     .goto Elwynn Forest,40.5,82.3,25,0
     .goto Elwynn Forest,37.71,83.76,25,0
     .goto Elwynn Forest,40.5,82.3,25,0
@@ -2955,14 +3031,9 @@ step
 	.goto Elwynn Forest,34.660,84.482
     .target 斯通菲尔德妈妈
 step
-    >>点击 |cRXP_PICK_通缉告示|r
+    >>点击 |cRXP_PICK_通缉布告|r
     .accept 176 >>接受任务 通缉：霍格
     .goto Elwynn Forest,24.548,74.672
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瑞尼尔副队长|r 对话
-    .turnin 239 >>交任务 西泉要塞
-    .goto Elwynn Forest,24.234,74.450
-    .target 瑞尼尔副队长
 step
     .isOnQuest 176
     .goto Elwynn Forest,27.0,86.7,70,0
@@ -2979,8 +3050,8 @@ step
     .goto Elwynn Forest,27.0,93.9,70,0
     .goto Elwynn Forest,25.9,93.9
     >>击杀 |cRXP_ENEMY_霍格|r。拾取他的 |cRXP_LOOT_人爪|r
-    >>|cRXP_ENEMY_霍格|r |cRXP_WARN_can spawn in multiple locations|r
-    >>|cRXP_WARN_Cast|r |T136183:0|t[恐惧] |cRXP_WARN_on |cRXP_ENEMY_Hogger|r continously and use your regular DoTs to kill him|r
+    >>|cRXP_ENEMY_霍格|r |cRXP_WARN_可能会在多个位置刷新|r
+    >>|cRXP_WARN_持续对 |r霍格|cRXP_WARN_ 施放 |cRXP_ENEMY_|T136183:0|t[恐惧]|r，并使用你的常规 DoT 技能将其击杀|r
     >>|cRXP_WARN_你可以风筝他到守卫塔。确保对他造成 51% 以上的伤害|r
     >>|cRXP_WARN_这个任务有点难。如有需要请组队完成。如果你找不到队伍或无法单刷，就跳过这一步|r
     .complete 176,1 --Huge Gnoll Claw (1)
@@ -2990,10 +3061,12 @@ step
     .use 1307 >>|cRXP_WARN_使用|T134939:0|t[|cRXP_LOOT_采金日程表|r] 来激发任务|r
     .collect 1307,1,123 --Collect Gold Pickup Schedule (x1)
     .accept 123 >>接受任务 收货人
+    .itemcount 1307,1
 step
     #completewith HoggerTurnin
     .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
+#xprate <1.5
     #optional
     .goto Elwynn Forest,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话
@@ -3007,6 +3080,7 @@ step
     .target 治安官杜汉
     .isOnQuest 123
 step
+#xprate <1.5
     #label HoggerTurnin
     .goto Elwynn Forest,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话
@@ -3018,6 +3092,29 @@ step
     .accept 76 >>接受任务 玉石矿洞
     .target 治安官杜汉
 step
+#xprate >1.49
+    #optional
+    .goto Elwynn Forest,42.105,65.927
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话
+    >>|cRXP_WARN_从霍格的奖励中|r|cRXP_WARN_选择|r |T135145:0|t[平衡长棍]
+    .turnin 176 >>交任务 通缉：霍格
+    .turnin 123 >>交任务 收货人
+    .turnin 40 >>交任务 鱼人的威胁
+    .accept 35 >>接受任务 卫兵托马斯
+    .target 治安官杜汉
+    .isOnQuest 123
+step
+#xprate >1.49
+    #label HoggerTurnin
+    .goto Elwynn Forest,42.105,65.927
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话
+    >>|cRXP_WARN_从霍格的奖励中|r|cRXP_WARN_选择|r |T135145:0|t[平衡长棍]
+    .turnin 176 >>交任务 通缉：霍格
+    .turnin 40 >>交任务 鱼人的威胁
+    .accept 35 >>接受任务 卫兵托马斯
+    .target 治安官杜汉
+step
+#xprate <1.5
     #optional
     .isQuestTurnedIn 123
     .goto Elwynn Forest,42.105,65.927
@@ -3025,12 +3122,14 @@ step
     .accept 147 >>接受任务 猎杀收货人
     .target 治安官杜汉
 step
+#xprate <1.5
     .goto Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷米|r 对话
     >>|cRXP_WARN_不要出售|r |T133581:0|t[弹珠袋] |cRXP_WARN_这个任务奖励是一件非常有价值的道具，一直到 70 级都很有用|r
     .turnin 47 >>交任务 金砂交易
     .target 雷米
 step
+#xprate <1.5
     .goto Elwynn Forest,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_威廉·匹斯特|r 对话
     .turnin 60 >>交任务 狗头人的蜡烛
@@ -3051,27 +3150,31 @@ step
 step
     .goto Elwynn Forest,43.771,65.803
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板法雷|r 对话
-    >>|cRXP_BUY_Buy up to 10|r |T132815:0|t[冰镇牛奶]|cRXP_BUY_from him if you can afford it|r
+    >>|cRXP_BUY_从他那里购买10杯|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_能买多少买多少|r
     .collect 1179,10
     .target 旅店老板法雷
     .subzoneskip 87,1
 step
+#xprate <1.5
     #optional
     #completewith next
-    .goto Elwynn Forest,61.654,53.608,15 >>进入 Jasperlode Mine
+    .goto Elwynn Forest,61.654,53.608,15 >>进入玉石矿洞
 step
+#xprate <1.5
     #label JasperlodeExplore
     .goto Elwynn Forest,61.20,51.46,15,0
     .goto Elwynn Forest,60.72,50.85,15,0
     .goto Elwynn Forest,60.39,50.16
-    >>跟随 the path through middle to explore Jasperlode Mine
+    >>沿中路前进，探察玉石矿洞
     .complete 76,1 --Scout through the Jasperlode Mine
 step
+#xprate <1.5
     #optional
     #completewith Find
     .goto 1429,61.820,53.871,15 >>退出玉石矿洞
     .subzoneskip 54,1
 step
+#xprate <1.5
     #optional
     #completewith Find
     +|cRXP_WARN_将一只 |cRXP_ENEMY_森林熊幼崽|r 风筝拉至|r |cRXP_FRIENDLY_卫兵托马斯|r
@@ -3079,6 +3182,7 @@ step
     >>|cRXP_WARN_确保对他造成 51% 以上的伤害，以获得击杀判定|r
     .mob 森林熊幼崽
 step
+#xprate <1.5
     #label Find
     .goto Elwynn Forest,73.973,72.179
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卫兵托马斯|r 对话
@@ -3087,25 +3191,36 @@ step
     .accept 52 >>接受任务 保卫边境
     .target 卫兵托马斯
 step
+#xprate >1.49
+    #label Find
+    .goto Elwynn Forest,73.973,72.179
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卫兵托马斯|r 对话
+    .turnin 35 >>交任务 卫兵托马斯
+    .target 卫兵托马斯
+step
+#xprate <1.5
     #completewith AcceptBundle
     >>击杀 |cRXP_ENEMY_觅食的灰狼|r 和 |cRXP_ENEMY_森林熊幼崽|r
-    >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_森林熊幼崽|r you see|r
+    >>|cRXP_WARN_优先击杀任何看到的|cRXP_ENEMY_ |r森林熊幼崽|r
     .complete 52,1 --Kill Prowler (x8)
     .mob 觅食的灰狼
     .complete 52,2 --Kill Young Forest Bear (x5)
     .mob 森林熊幼崽
 step
+#xprate <1.5
     .goto Elwynn Forest,72.656,60.334
     >>点击地上的 |cRXP_PICK_被吃掉一半的尸体|r
     .turnin 37 >>交任务 失踪的卫兵
     .accept 45 >>接受任务 罗尔夫的下落
 step
+#xprate <1.5
     #label AcceptBundle
     .goto Elwynn Forest,81.382,66.112
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_管理员莱琳|r 对话
     .accept 5545 >>接受任务 木材危机
     .target 管理员莱琳
 step
+#xprate <1.5
     #optional
     .goto Elwynn Forest,83.283,66.089
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉里克·费恩|r 对话
@@ -3113,38 +3228,43 @@ step
     .target 拉里克·费恩
     .subzoneskip 88,1
 step
+#xprate <1.5
     #completewith Prowlers
     >>击杀 |cRXP_ENEMY_觅食的灰狼|r 和 |cRXP_ENEMY_森林熊幼崽|r
-    >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_森林熊幼崽|r you see|r
+    >>|cRXP_WARN_优先击杀任何看到的|cRXP_ENEMY_ |r森林熊幼崽|r
     .complete 52,1 --Kill Prowler (x8)
     .mob 觅食的灰狼
     .complete 52,2 --Kill Young Forest Bear (x5)
     .mob 森林熊幼崽
     .subzoneskip 86 --Stone Cairn Lake
 step
+#xprate <1.5
     #completewith next
     .goto Elwynn Forest,80.48,55.18,0
     .goto Elwynn Forest,80.15,60.03,0
     .goto Elwynn Forest,83.48,59.19,0
-    >>拾取地上的 the |cRXP_LOOT_Bundles of Wood|ron the ground at the base of the trees
+    >>拾取树根附近地上的 |cRXP_LOOT_一捆木柴|r
     .complete 5545,1 -- Bundle of Wood (8)
 step
+#xprate <1.5
     #label Prowlers
     .goto Elwynn Forest,79.80,55.50
-    >>点击地上的 |cRXP_PICK_Rolf's corpse|r on the ground
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_鱼人强盗|r will cast|r |T135915:0|t[Drink Minor Potion] |cRXP_WARN_which heals themselves for 61-68 health|r
-    >>|cRXP_WARN_Pull the 2|r|cRXP_ENEMY_Murlocs|r|cRXP_WARN_in front of the huts, move away and cast|r |T136183:0|t[恐惧]|cRXP_WARN_on one of them constantly, and try to keep DoTs on both|r << Warlock
+    >>点击地上的 |cRXP_PICK_罗尔夫的尸体|r
+    >>|cRXP_WARN_小心，|cRXP_ENEMY_鱼人强盗|r 会施放|r |T135915:0|t[喝下初级药水]|cRXP_WARN_，为自己回复 61-68 点生命值|r
+    >>|cRXP_WARN_拉开小屋前的 2 个|r |cRXP_ENEMY_鱼人|r|cRXP_WARN_，远离后持续对其中一个施放 |r|T136183:0|t[恐惧]|cRXP_WARN_，并尽量在两者身上保持 DoT 效果|r << Warlock
     .turnin 45 >>交任务 罗尔夫的下落
     .accept 71 >>接受任务 回复托马斯
 step
+#xprate <1.5
     #completewith BundleOT
     >>击杀 |cRXP_ENEMY_觅食的灰狼|r 和 |cRXP_ENEMY_森林熊幼崽|r
-    >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_森林熊幼崽|r you see|r
+    >>|cRXP_WARN_优先击杀任何看到的|cRXP_ENEMY_ |r森林熊幼崽|r
     .complete 52,1 --Kill Prowler (x8)
     .mob 觅食的灰狼
     .complete 52,2 --Kill Young Forest Bear (x5)
     .mob 森林熊幼崽
 step
+#xprate <1.5
     #loop
     .goto Elwynn Forest,80.48,55.18,0
     .goto Elwynn Forest,80.15,60.03,0
@@ -3167,20 +3287,23 @@ step
     .goto Elwynn Forest,80.48,55.18,40,0
     .goto Elwynn Forest,83.25,61.12,40,0
     .goto Elwynn Forest,83.48,59.19,40,0
-    >>拾取地上的 the |cRXP_LOOT_Bundles of Wood|ron the ground at the base of the trees
+    >>拾取树根附近地上的 |cRXP_LOOT_一捆木柴|r
     .complete 5545,1 -- Bundle of Wood (8)
 step
+#xprate <1.5
     #label BundleOT
     .goto Elwynn Forest,81.382,66.112
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_管理员莱琳|r 对话
     .turnin 5545 >>交任务 木材危机
     .target 管理员莱琳
 step
+#xprate <1.5
     .goto Elwynn Forest,79.457,68.789
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨拉·迪博雷恩|r 对话
     .accept 83 >>接受任务 红色亚麻布
     .target 萨拉·迪博雷恩
 step
+#xprate <1.5
     #loop
     .goto 1429,77.499,74.518,0
     .goto 1429,80.496,78.223,0
@@ -3198,6 +3321,7 @@ step
     .complete 52,2 --Kill Young Forest Bear (x5)
     .mob 森林熊幼崽
 step
+#xprate <1.5
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卫兵托马斯|r 对话
     .target 卫兵托马斯
     .goto Elwynn Forest,73.973,72.179
@@ -3205,18 +3329,20 @@ step
     .turnin 71 >>交任务 回复托马斯
     .accept 39 >>接受任务 托马斯的报告
 step
+#xprate <1.5
     #completewith PrincessCollar
-    >>击杀 |cRXP_ENEMY_迪菲亚强盗|r。拾取他们的 |cRXP_LOOT_Bandanas|r
+    >>击杀 |cRXP_ENEMY_迪菲亚强盗|r。拾取他们的 |cRXP_LOOT_头巾|r
     .complete 83,1 --Collect Red Linen Bandana (x6)
     .mob 迪菲亚强盗
     .isOnQuest 83
 step << Warlock
+#xprate <1.5
     .isOnQuest 147
     .goto Elwynn Forest,71.10,80.66
     >>击杀 |cRXP_ENEMY_苏伦娜·凯尔东|r，拾取她的 |cRXP_LOOT_项圈|r
-    >>击杀 |cRXP_ENEMY_收货人莫根|r。拾取他的 |cRXP_LOOT_The Collector's Ring|r
-    >>|cRXP_WARN_Focus on killing |cRXP_ENEMY_苏伦娜·凯尔东|r very quickly|r
-    >>|cRXP_WARN_Cast|r |T136183:0|t[恐惧] |cRXP_WARN_on |cRXP_ENEMY_Morgan the Collector|r continously|r
+    >>击杀 |cRXP_ENEMY_收货人莫根|r，拾取他掉落的 |cRXP_LOOT_收藏者之戒|r
+    >>|cRXP_WARN_集中火力快速击杀 |cRXP_ENEMY_苏伦娜·凯尔东|r|r
+    >>|cRXP_WARN_持续对 |r收货者摩根|cRXP_WARN_ 施放 |cRXP_ENEMY_|T136183:0|t[恐惧]|r|r
     .complete 1688,1 --Surena's Choker (1)
     .mob 苏伦娜·凯尔东
     .complete 147,1 -- The Collector's Ring (1)
@@ -3224,20 +3350,21 @@ step << Warlock
 step << Warlock
     .goto Elwynn Forest,71.10,80.66
     >>击杀 |cRXP_ENEMY_苏伦娜·凯尔东|r，拾取她的 |cRXP_LOOT_项圈|r
-    >>|cRXP_WARN_Focus on killing |cRXP_ENEMY_苏伦娜·凯尔东|r very quickly|r
-    >>|cRXP_WARN_Cast|r |T136183:0|t[恐惧] |cRXP_WARN_on |cRXP_ENEMY_Morgan the Collector|r continously|r
+    >>|cRXP_WARN_集中火力快速击杀 |cRXP_ENEMY_苏伦娜·凯尔东|r|r
+    >>|cRXP_WARN_持续对 |r收货者摩根|cRXP_WARN_ 施放 |cRXP_ENEMY_|T136183:0|t[恐惧]|r|r
     .complete 1688,1 --Surena's Choker (1)
     .mob 苏伦娜·凯尔东
 step
     #label PrincessCollar
     .goto Elwynn Forest,69.3,79.0
     >>击杀 |cRXP_ENEMY_公主|r。并拾取她的 |cRXP_LOOT_项圈|r
-    >>|cRXP_ENEMY_公主|r |cRXP_WARN_will aggro with both of her|r |cRXP_ENEMY_Porcine Entourage|r
-    >>|cRXP_ENEMY_公主|r |cRXP_WARN_will also cast|r |T132368:0|t[Rushing Charge] |cRXP_WARN_which deals heavy damage|r
+    >>|cRXP_ENEMY_公主|r |cRXP_WARN_会与她的 |r猪类随从|cRXP_ENEMY_ 一起仇恨你|r
+    >>|cRXP_ENEMY_公主|r |cRXP_WARN_还会施放|r |T132368:0|t[冲锋]|cRXP_WARN_，造成高额伤害|r
     .complete 88,1
     .mob 公主
 step
-    >>击杀 |cRXP_ENEMY_迪菲亚强盗|r。拾取他们的 |cRXP_LOOT_Bandanas|r
+#xprate <1.5
+    >>击杀 |cRXP_ENEMY_迪菲亚强盗|r。拾取他们的 |cRXP_LOOT_头巾|r
     .goto Elwynn Forest,70.5,77.6,60,0
     .goto Elwynn Forest,68.1,77.5,60,0
     .goto Elwynn Forest,68.2,81.4,60,0
@@ -3255,6 +3382,7 @@ step
     .mob 迪菲亚强盗
     .isOnQuest 83
 step
+#xprate <1.5
     .goto Elwynn Forest,79.457,68.789
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨拉·迪博雷恩|r 对话
     .turnin 83 >>交任务 红色亚麻布
@@ -3275,7 +3403,7 @@ step
     .goto Redridge Mountains,17.4,69.6
     .zone Redridge Mountains >>前往赤脊山
     .disablecheckbox
-    >>|cRXP_WARN_Ensure you have at least 2|r 训练 |T136163:0|t[灵魂碎片]|cRXP_WARN_before you get to Redridge Mountains|r
+    >>|cRXP_WARN_确保在到达赤脊山前至少拥有 2 个 |r|T136163:0|t[灵魂碎片]|cRXP_WARN_|r
     .collect 6265,2
 step
     #completewith EncroachingGnolls
@@ -3297,9 +3425,10 @@ step
     .goto Redridge Mountains,30.590,59.410
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
     .fp Redridge Mountains >>获取赤脊山的飞行路径
-    .fly Stormwind >>Fly to 暴风城，艾尔文森林
+    .fly Stormwind >>飞往暴风城
     .target 艾蕾娜·斯托姆法瑟
 step
+#xprate <1.5
     .goto StormwindClassic,56.201,64.585
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_摩根·匹斯特|r 对话
     .turnin 61,1 >>交任务 送往暴风城的货物
@@ -3345,7 +3474,7 @@ step
     #optional
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
-    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r|cRXP_BUY_to level your|r |T133971:0|t[烹饪]|cRXP_BUY_with later|r
+    >>|cRXP_BUY_购买|r |T133970:0|t|cRXP_LOOT_[野猪肉块]|r|cRXP_BUY_ 或|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_BUY_，以便稍后提升你的 |r|T133971:0|t[烹饪] |cRXP_BUY_技能|r
     >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪]|cRXP_WARN_后续在夜色镇完成一个任务|r
     >>|cRXP_BUY_购买以下物品，以便稍后在洛克莫丹与黑海岸更快交任务|r
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
@@ -3374,7 +3503,7 @@ step
     #optional
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
-    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r|cRXP_BUY_to level your|r |T133971:0|t[烹饪]|cRXP_BUY_with later|r
+    >>|cRXP_BUY_购买|r |T133970:0|t|cRXP_LOOT_[野猪肉块]|r|cRXP_BUY_ 或|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_BUY_，以便稍后提升你的 |r|T133971:0|t[烹饪] |cRXP_BUY_技能|r
     >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪]|cRXP_WARN_后续在夜色镇完成一个任务|r
     >>|cRXP_BUY_购买以下物品，以便稍后在黑海岸更快交任务|r
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
@@ -3395,13 +3524,13 @@ step
 step << Warlock
     #completewith SurenaCaledon
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >>Travel to The Slaughtered Lamb 和 go downstairs
+    .goto StormwindClassic,27.2,78.1,15 >>前往屠宰场，进入地下室
 step << Warlock
     #optional
     .goto StormwindClassic,26.117,77.225
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .train 755 >>训练 |T136168:0|t[生命通道]
-    .train 705 >>学习 |T136197:0|t[暗影箭 (等级 3)]  
+    .train 705 >>学习 |T136197:0|t[暗影箭 (等级 3)]
     .target 厄苏拉·德林
     .xp <12,1
 step << Warlock
@@ -3418,7 +3547,7 @@ step << Warlock
     .goto StormwindClassic,26.3,79.5,18,0
     .goto StormwindClassic,25.154,77.406
     >>|cRXP_WARN_前往屠宰场的最底层|r
-    .cast 7728 >>|cRXP_WARN_Use the|r |T133292:0|t[血石颈环] |cRXP_WARN_to call forth a|r |cRXP_ENEMY_Summoned Voidwalker|r
+    .cast 7728 >>|cRXP_WARN_使用|r |T133292:0|t[血石颈环] |cRXP_WARN_召唤 |r虚空行者|cRXP_ENEMY_|r
     .use 6928
 step << Warlock
     .goto StormwindClassic,25.154,77.406
@@ -3427,7 +3556,7 @@ step << Warlock
     .mob 虚空行者
 step << Warlock
     #completewith next
-    +|cRXP_WARN_Start casting|r |T136126:0|t[Life Tap] |cRXP_WARN_on your way back up to |cRXP_FRIENDLY_黑暗缚灵者加科因|r as you will do a deathskip momentarily|r
+    +|cRXP_WARN_在返回 |r黑暗缚灵者加科因|cRXP_WARN_ 的路上开始施放 |cRXP_FRIENDLY_|T136126:0|t[生命分流]|r，因为你即将进行一次死亡跳跃|r
 step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .target 黑暗缚灵者加科因
@@ -3437,13 +3566,14 @@ step
     #completewith GoldshireTurnins
     .goto Stormwind City,25.841,78.080,-1
     .goto Elwynn Forest,42.105,65.927,-1
-    .deathskip >>Die and respawn at the |cRXP_FRIENDLY_灵魂医者|r by using |T136126:0|t[Life Tap] and standing on the Bonfire next to you
+    .deathskip >>使用 |T136126:0|t[生命分流] 并站在你旁边的篝火上自杀，然后在 |cRXP_FRIENDLY_灵魂医者|r 处复活
     .zoneskip Stormwind City,1
 step
     #completewith GoldshireTurnins
     .goto Elwynn Forest,42.105,65.927
-    .subzone 87 >>Travel to 闪金镇，艾尔文
+    .subzone 87 >>前往金雾村
 step << Warlock
+#xprate <1.5
     #optional
     .isOnQuest 147
     .goto Elwynn Forest,42.105,65.927
@@ -3453,6 +3583,7 @@ step << Warlock
     .turnin 39 >>交任务 托马斯的报告
     .turnin 76 >>交任务 玉石矿洞
 step << Warlock
+#xprate <1.5
     #label GoldshireTurnins
     .goto Elwynn Forest,42.105,65.927
     .target 治安官杜汉
@@ -3478,10 +3609,10 @@ step
 step
     #optional
     #sticky
-    .abandon 59 >>Abandon Cloth 和 Leather Armor.You won't complete this quest
+    .abandon 59 >>放弃任务 布甲和皮甲。无需完成此任务
 step
     #completewith FlyIF
-    .hs >>飞往 洛克莫丹
+    .hs >>炉石返回洛克莫丹
     .bindlocation 2101,1
     .subzoneskip 2101
     .subzoneskip 144
@@ -3490,8 +3621,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅尼·铁心|r 对话
     >>|cRXP_BUY_从她那里|r|cRXP_BUY_购买一捆|r |T135435:0|t[普通木柴] |cRXP_BUY_和一块|r |T135237:0|t[燧石和火绒]
     >>|cRXP_BUY_需要的话也可以从她那里|r|cRXP_BUY_购买一个|r |T133634:0|t[棕色小包]
-    >>|cRXP_WARN_This is used to make|r |T135805:0|t[烹饪用火]|cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[烹饪]|cRXP_WARN_skill without losing time|r
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[烹饪] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|cRXP_WARN_这个可用于|r在船上或地铁上制作 |cRXP_WARN_|T135805:0|t[烹饪用火]，以便在不浪费时间的情况下提升你的 |r|T133971:0|t[烹饪] |cRXP_WARN_技能|r
+    >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪] |cRXP_WARN_来完成后续暮色森林的一个任务|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
     .target 雅尼·铁心
@@ -3517,7 +3648,7 @@ step
     .goto 1426,79.881,46.805,0
     .goto 1426,81.040,43.456,0
     .goto 1426,80.583,36.040,0
-    >>击杀 |cRXP_ENEMY_山猪|r。拾取它们的|T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    >>击杀 |cRXP_ENEMY_山猪|r。拾取它们的|T133970:0|t|cRXP_LOOT_[大块野猪肉]|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob 山猪
     .skill cooking,<1,1 -- shows if cooking is >1
@@ -3548,7 +3679,7 @@ step
     .waypoint Loch Modan,35.48,16.82,50,0
     .waypoint Loch Modan,25.05,30.19,50,0
     .waypoint Loch Modan,26.06,43.44,50,0
-    >>击杀 |cRXP_ENEMY_Tunnel Rats|r。拾取他们的 |cRXP_LOOT_耳朵|r
+    >>击杀 |cRXP_ENEMY_坑道鼠|r。拾取他们的 |cRXP_LOOT_耳朵|r
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .mob 坑道鼠斥候
     .mob 坑道鼠歹徒
@@ -3559,11 +3690,11 @@ step
 step
     #label ESSM
     #completewith next
-    .goto Loch Modan,35.50,18.97,20 >>进入磨坊 Stream Mine
+    .goto Loch Modan,35.50,18.97,20 >>进入银溪矿洞
 step
     #label MinersGear
     .goto Loch Modan,35.93,22.55
-    >>Open the |cRXP_PICK_Miners' League Crates|r.拾取地上的 them for the |cRXP_LOOT_Miners' Gear|r
+    >>打开 |cRXP_PICK_矿工联盟的储物箱|r。拾取里面的 |cRXP_LOOT_矿工装备|r
     >>|cRXP_WARN_|cRXP_PICK_矿工联盟的储物箱|r 散布在整个矿井中|r
     .complete 307,1 -- Miners' Gear (4)
 step
@@ -3588,7 +3719,7 @@ step
     .goto Loch Modan,26.06,43.44,50,0
     .goto Loch Modan,37.71,16.84,50,0
     .goto Loch Modan,35.48,16.82
-    >>击杀 |cRXP_ENEMY_Tunnel Rats|r。拾取他们的 |cRXP_LOOT_耳朵|r
+    >>击杀 |cRXP_ENEMY_坑道鼠|r。拾取他们的 |cRXP_LOOT_耳朵|r
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .mob 坑道鼠斥候
     .mob 坑道鼠歹徒
@@ -3612,7 +3743,7 @@ step
 step
     >>击杀 |cRXP_ENEMY_老黑熊|r。拾取他们的 |cRXP_LOOT_熊肉|r
     >>击杀 |cRXP_ENEMY_山猪|r。拾取他们的 |cRXP_LOOT_猪大肠|r
-    >>击杀 |cRXP_ENEMY_森林潜伏者|r。拾取他们的 |cRXP_LOOT_Ichor|r
+    >>击杀 |cRXP_ENEMY_森林潜伏者|r。拾取他们的 |cRXP_LOOT_毒液|r
     .collect 3173,3,418,1 --Bear Meat (3)
     .mob 老黑熊
     .goto Loch Modan,26.9,10.7,90,0
@@ -3686,7 +3817,7 @@ step
     #requires RatCatching
 step
     .goto Loch Modan,26.67,56.94
-    >>击杀 |cRXP_ENEMY_碎石穴居人|r 和 |cRXP_ENEMY_碎石怪斥候|r。拾取他们的 |cRXP_LOOT_Trogg Stone Teeth|r
+    >>击杀 |cRXP_ENEMY_碎石穴居人|r 和 |cRXP_ENEMY_碎石怪斥候|r。拾取他们的 |cRXP_LOOT_穴居人的石牙|r
     >>|cRXP_WARN_小心 |cRXP_ENEMY_碎石怪斥候|r，他们会施放|r |T132222:0|t[射击] |cRXP_WARN_(远程攻击：造成14-20点伤害)|r
     >>|cRXP_WARN_这是一个超级刷怪点，你无需离开这里|r
     .complete 224,1 --Kill Stonesplinter Trogg (x10)
@@ -3697,8 +3828,15 @@ step
     .mob 碎石穴居人
     .mob 碎石怪斥候
 step
+#xprate <1.5
     .goto Loch Modan,26.67,56.94
-    .xp 14-1800 >>练怪直到距离 30 级还有 6600 经验 (29700/36300)
+    .xp 14-1800 >>刷怪练级，直到距离14 级还有1800经验 (9200/11000)
+    .mob 碎石穴居人
+    .mob 碎石怪斥候
+step
+#xprate >1.49
+    .goto Loch Modan,26.67,56.94
+    .xp 14-2700 >>Grind until you are 2700xp away from level 14 (8300/11000)
     .mob 碎石穴居人
     .mob 碎石怪斥候
 step
@@ -3719,7 +3857,7 @@ step
 step
     #completewith FlyIF
     .goto Loch Modan,26.67,56.94
-    +击杀 ，直到 you have 45s worth of vendorables+money, then skip this step
+    +刷怪直到你获得价值 45金币的可出售物品和金钱，然后跳过此步骤
     .mob 碎石穴居人
     .mob 碎石怪斥候
     .money >0.4500
@@ -3732,13 +3870,13 @@ step
     #label FlyIF
     .goto Loch Modan,33.938,50.954
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
-    .fly Ironforge>>Fly to 铁炉堡，丹莫罗
+    .fly Ironforge>>飞往铁炉堡
     .target 索格拉姆·伯雷森
 step << Warlock
 #ah
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 对话
-    >>|cRXP_BUY_Buy a|r |T135144:0|t[强效魔法杖] |cRXP_BUY_if it costs less than 33s 40c|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 交谈
+    >>|cRXP_BUY_购买一根|r |T135144:0|t[强效魔法杖]|cRXP_BUY_，如果价格低于 33 银 40 铜|r
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
@@ -3759,14 +3897,14 @@ step << Warlock
     .goto Ironforge,21.131,17.276,5,0
     .goto Ironforge,23.135,15.936
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼下的 |cRXP_FRIENDLY_哈瑞克·石鼓|r 对话
-    >>|cRXP_BUY_Buy a|r |T135468:0|t[烟尘魔杖] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_购买1根|r |T135468:0|t[烟尘魔杖] |cRXP_BUY_从他那里|r
     .collect 5208,1 --Smoldering Wand (1)
     .target 哈瑞克·石鼓
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
     .money <0.7900
 step << Warlock
     #optional
-    +|cRXP_WARN_Equip the|r |T135468:0|t[烟尘魔杖]
+    +|cRXP_WARN_装备|r |T135468:0|t[烟尘魔杖]
     .use 5208
     .itemcount 5208,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
@@ -3775,39 +3913,39 @@ step << Warlock
     .goto Ironforge,51.1,8.7,15,0
     .goto Ironforge,50.343,5.657
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布瑞尔索恩|r 对话
-    .train 6222 >>学习 |T136118:0|t[腐蚀术 (等级 2)] 
+    .train 6222 >>学习 |T136118:0|t[腐蚀术 (等级 2)]
     .train 689 >>训练 |T136169:0|t[吸取生命]
     .target 布瑞尔索恩
 step << Warlock
     .goto Ironforge,53.2,7.8,15,0
     .goto Ironforge,52.701,6.070
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_寻尸者祖贝尔|r 对话
-    .vendor >>|cRXP_BUY_Buy|r |T133738:0|t[Grimoire of Consume Shadows (Rank 1)]|cRXP_BUY_and|r |T133738:0|t[Grimoire of Sacrifice (Rank 1)]|cRXP_BUY_if you can afford it|r
+    .vendor >>|cRXP_BUY_购买|r |T133738:0|t[吞噬暗影的魔典(等级1)]|cRXP_BUY_ 和 |r|T133738:0|t[牺牲的魔典(等级1)]|cRXP_BUY_，如果你负担得起|r
     .target 寻尸者祖贝尔
 step
     .goto Ironforge,55.501,47.742
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .turnin 6388 >>交任务 格莱斯·瑟登
-    .fly Menethil >>Fly to 米奈希尔港，湿地
+    .fly Menethil >>飞往米奈希尔港，湿地
 step
     .goto Wetlands,10.4,56.0,15,0
     .goto Wetlands,10.1,56.9,15,0
     .goto Wetlands,10.6,57.2,15,0
     .goto 1437,10.760,56.721
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与军营底楼的 |cRXP_FRIENDLY_尼尔·奥雷|r 对话
-    .vendor 1448 >>|cRXP_WARN_Buy a|r |T133024:0|t[青铜管]|cRXP_BUY_from him (if it's up)|r
+    .vendor 1448 >>|cRXP_WARN_购买1个|r |T133024:0|t[青铜管]|cRXP_BUY_从他那里(如果有货的话)|r
 	.target 尼尔·奥雷
     .bronzetube
     .money <0.08
 step
     .goto Wetlands,7.95,56.38
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德温·晨光|r 对话，NPC在里面
-    .vendor 1453 >>|cRXP_BUY_Buy|r |T134831:0|t[Healing Potions]|cRXP_BUY_from him (if they're up)|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与里面的 |cRXP_FRIENDLY_德温·晨光|r 对话
+    .vendor 1453 >>|cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
     .target 德温·晨光
 step
     #completewith DarkshoreBoat
     .goto Wetlands,7.10,57.96,30,0
-    .goto Wetlands,4.61,57.26,15 >>前往暴风城大教堂内，与 the dock for the boat to Auberdine
+    .goto Wetlands,4.61,57.26,15 >>前往码头，乘船前往奥伯丁
     .zoneskip Darkshore
 step
     #optional
@@ -3847,9 +3985,9 @@ step
     .skill cooking,<1,1 -- shows if cooking is >1
 step
     #optional
-    +|cRXP_WARN_You need 50|r |T133971:0|t[烹饪] |cRXP_WARN_for a quest in Duskwood later|r
+    +|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪] |cRXP_WARN_来完成后续暮色森林的一个任务|r
     >>|T133971:0|t[烹饪] 以下物品：
-    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
     >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
     .usespell 2550
     .zoneskip Darkshore
@@ -3860,8 +3998,8 @@ step
     .skill cooking,<1,1 -- shows if cooking is >1
 step
     #optional
-    +|cRXP_WARN_You need 50|r |T133971:0|t[烹饪] |cRXP_WARN_for a quest in Duskwood later|r
-    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    +|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪] |cRXP_WARN_来完成后续暮色森林的一个任务|r
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_WARN_|r |T133974:0|t[烧烤狼肉]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -3871,8 +4009,8 @@ step
     .skill cooking,<1,1 -- shows if cooking is >1
 step
     #optional
-    +|cRXP_WARN_You need 50|r |T133971:0|t[烹饪] |cRXP_WARN_for a quest in Duskwood later|r
-    >>|T133971:0|t[Cook]|cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
+    +|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪] |cRXP_WARN_来完成后续暮色森林的一个任务|r
+    >>|T133971:0|t[烹饪]|cRXP_WARN_|r |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r|cRXP_WARN_制作为|r |T133974:0|t[烤野猪肉]
     .usespell 2550
     .zoneskip Darkshore
     .itemcount 769,1 --Chunk of Boar Meat (1)
@@ -3910,7 +4048,7 @@ step
 step
     #optional
     #completewith next
-    .goto Darkshore,36.70,43.78,8 >>下楼 toward |cRXP_FRIENDLY_维兹班恩·曲针|r
+    .goto Darkshore,36.70,43.78,8 >>下楼前往 |cRXP_FRIENDLY_维兹班恩·曲针|r
 step
     .goto 1439,36.976,44.135
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维兹班恩·曲针|r 对话
@@ -3944,7 +4082,7 @@ step
 step
     .goto Darkshore,36.336,45.574
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯莱斯·月羽|r 对话
-    .fp Auberdine >>获取鹰巢山飞行路径
+    .fp Auberdine >>开启奥伯丁飞行点
     .target 凯莱斯·月羽
     .zoneskip Darkshore,1
 step
@@ -3968,7 +4106,7 @@ step
     .waypoint 1439,35.902,47.145,60,0
     .waypoint 1439,35.759,45.455,60,0
     .waypoint 1439,36.051,44.757,60,0
-    >>击杀 |cRXP_ENEMY_小潮行蟹|r 和 |cRXP_ENEMY_暗礁蟹幼崽|r。拾取他们的 |cRXP_LOOT_Crawler Legs|r
+    >>击杀 |cRXP_ENEMY_小潮行蟹|r 和 |cRXP_ENEMY_暗礁蟹幼崽|r，拾取它们的 |cRXP_LOOT_蟹腿|r
     >>你可能需要下水才能获得它们
     .complete 983,1 --Crawler Leg (6)
     .mob 小潮行蟹
@@ -3976,7 +4114,7 @@ step
     .isOnQuest 983
 step
     .goto 1439,36.371,50.920
-    >>Open the |cRXP_PICK_搁浅的海洋生物|r.拾取地上的 it for the |cRXP_LOOT_Sea Creature Bones|r
+    >>打开 |cRXP_PICK_搁浅的海洋生物|r，拾取地上的物品以获得 |cRXP_LOOT_海洋生物骨骼|r
     .complete 3524,1 --Sea Creature Bones (1)
 step
     #sticky
@@ -3990,15 +4128,15 @@ step
     .goto 1439,38.095,58.395,50,0
     .goto 1439,38.696,57.874,50,0
     .goto 1439,39.129,59.176,50,0
-    >>|cRXP_WARN_Use|r |T134335:0|t[萨纳瑞恩的希望] |cRXP_WARN_on a |cRXP_ENEMY_Rabid Thistle Bear|r. It can be used from any range as long as you have one targeted|r
-    >>==如果附近没有熊，请不要使用该任务物品== 
+    >>|cRXP_WARN_对 |r狂暴蓟熊|cRXP_WARN_ 使用|cRXP_ENEMY_ |T134335:0|t[萨纳瑞恩的希望] |r。只要选中了目标，无论距离多远都可以使用|r
+    >>==如果附近没有熊，请不要使用该任务物品==
     >>你可能会浪费陷阱，导致该任务无法完成！如果发生这种情况，你需要返回任务给予者那里再领取一个新的陷阱
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
     .unitscan 狂暴蓟熊
     .use 7586
 step
     .goto Darkshore,38.90,53.59
-    >>朝着 Furbolg Camp 的边缘跑去
+    >>朝熊怪营地的边缘跑去
     .complete 984,1 -- Find a corrupt furbolg camp
 step
     #optional
@@ -4007,7 +4145,7 @@ step
 step
     #requires BuzzBox1
     .goto 1439,36.634,46.250
-    >>点击地上的 |cRXP_PICK_Buzzbox 827|r on the ground
+    >>点击地上的 |cRXP_PICK_传声盒827号|r
     .turnin 983 >>交任务 传声盒827号
 step
     #label FirstWashed
@@ -4033,11 +4171,11 @@ step
 step
     #optional
     #sticky
-    .abandon 4681 >>交任务 搁浅的巨兽. You won't complete this quest
+    .abandon 4681 >>放弃任务 搁浅的巨兽。无需完成此任务
 step
     #optional
     .goto Darkshore,30.749,40.995
-    >>|cRXP_WARN_Level your|r |T135966:0|t[急救] |cRXP_WARN_while waiting for the boat to Azuremyst Isle|r
+    >>|cRXP_WARN_在等待前往秘蓝岛的船只时提升你的|r |T135966:0|t[急救] |cRXP_WARN_技能|r
     .zone Azuremyst Isle >>乘船前往秘蓝岛
     .skill firstaid,75,1 -- shows if firstaid is <75
     .skill firstaid,<1,1 -- shows if firstaid is >1
@@ -4070,7 +4208,7 @@ step
 step
     #completewith next
     >>|cRXP_WARN_请确保你的区域不是寒脊山小径|r
-    .deathskip >>Die 和 respawn at the |cRXP_FRIENDLY_灵魂医者|r
+    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
     .subzoneskip 131
 step
@@ -4078,7 +4216,7 @@ step
     .goto 1426,43.949,52.524,60,0
     .goto 1426,38.677,60.561,60,0
     .goto Dun Morogh,46.726,53.826
-    .subzone 131 >>Travel to 卡拉诺斯，丹莫罗
+    .subzone 131 >>前往卡拉诺斯，丹莫罗
     .mob 峭壁野猪
 step
     #label SenirEnd
@@ -4113,6 +4251,9 @@ step
     .accept 317 >>接受任务 贝尔丁的补给
     .goto Dun Morogh,49.426,48.410
     .target 驾驶员贝隆·风箱
+step
+#xprate <1.5
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_驾驶员迪恩·石轮|r 对话
     .accept 313 >>接受任务 灰色洞穴
     .goto Dun Morogh,49.622,48.612
     .target 驾驶员迪恩·石轮
@@ -4139,7 +4280,7 @@ step << !Paladin !Warrior !Rogue
     .goto Dun Morogh,49.9,50.9,0
     .goto Dun Morogh,48.0,49.5,0
     .goto Dun Morogh,48.2,46.9,0
-    >>击杀 |cRXP_ENEMY_黑熊幼崽|r。拾取他们的 |cRXP_LOOT_Fur|r
+    >>击杀 |cRXP_ENEMY_黑熊幼崽|r。拾取他们的 |cRXP_LOOT_毛皮|r
     >>击杀 |cRXP_ENEMY_峭壁野猪|r 和 |cRXP_ENEMY_大峭壁野猪|r。拾取它们的 |T133970:0|t|cRXP_LOOT_[大块野猪肉]|r 和 |cRXP_LOOT_峭壁野猪肋排|r
     .complete 317,2 --Collect Thick Bear Fur (x2)
     .mob 黑熊幼崽
@@ -4170,7 +4311,7 @@ step
     .goto Dun Morogh,49.9,50.9,0
     .goto Dun Morogh,48.0,49.5,0
     .goto Dun Morogh,48.2,46.9,0
-    .xp 5+2125 >>击杀 to 2125+/2800xp
+    .xp 5+2125 >>刷怪达到2125+/2800经验
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
     .target 驾驶员贝隆·风箱
@@ -4212,18 +4353,19 @@ step
 step
     .goto Dun Morogh,40.682,65.130
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海格纳·重枪|r 对话
-    >>|cRXP_BUY_Buy and equip a|r |T135611:0|t[精制短枪]|cRXP_BUY_. Skip this step if you can't afford it|r
+    >>|cRXP_BUY_购买和装备1把|r |T135611:0|t[精制短枪]|cRXP_BUY_. 如果你负担不起，可跳过此步骤|r
     .collect 2509,1 -- Ornate Blunderbuss (1)
     .money <0.0414
     .target 海格纳·重枪
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.95
 step
     #completewith next
-    +|cRXP_WARN_Equip the|r |T135611:0|t[精制短枪]
+    +|cRXP_WARN_装备|r |T135611:0|t[精制短枪]
     .use 2509
     .itemcount 2509,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.94
 step
+#xprate <1.5
     #loop
     .goto 1426,42.982,54.755,0
     .goto 1426,41.918,54.053,0
@@ -4233,7 +4375,7 @@ step
     .goto 1426,41.918,54.053,40,0
     .goto 1426,42.177,53.274,40,0
     .goto 1426,41.100,48.927,40,0
-    >>击杀 |cRXP_ENEMY_雪怪|r 和 |cRXP_ENEMY_雪怪幼崽|r。拾取他们的 |cRXP_LOOT_Wendigo Manes|r
+    >>击杀 |cRXP_ENEMY_雪怪|r 和 |cRXP_ENEMY_雪怪幼崽|r。拾取他们的 |cRXP_LOOT_雪怪的鬃毛|r
     .complete 313,1 --Collect Wendigo Mane (x8)
     .mob 雪怪
     .mob 雪怪幼崽
@@ -4257,7 +4399,7 @@ step
     .target 图德拉·马克格拉恩
 step
     .goto Dun Morogh,38.517,53.927
-    >>Open |cRXP_PICK_MacGrann's Meat Locker|r.拾取地上的 it for |cRXP_LOOT_MacGrann's Dried Meats|r
+    >>打开 |cRXP_PICK_马克格拉恩的储肉柜|r。拾取里面的 |cRXP_LOOT_马克格拉恩的干肉|r
     >>|cRXP_WARN_等|cRXP_ENEMY_冰须|r 巡逻出洞穴。一旦他离开洞穴， 你就可以偷偷进入并打开|r |cRXP_PICK_马克格拉恩的储肉柜|r
     .link https://www.youtube.com/watch?v=o55Y3LjgKoE >>https://www.youtube.com/watch?v=o55Y3LjgKoE >> |cRXP_WARN_点击此处查看视频参考|r
     .complete 312,1 --MacGrann's Dried Meats (1)
@@ -4270,7 +4412,7 @@ step
     #completewith next
     .goto Dun Morogh,30.453,46.005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基格·吉布恩|r 对话
-    .vendor >>出售垃圾物品
+    .vendor >>|cRXP_WARN_出售垃圾物品|r
     .target 基格·吉布恩
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷杰德·麦酒|r 和 |cRXP_FRIENDLY_马莱斯·麦酒|r 对话
@@ -4307,7 +4449,7 @@ step
     .waypoint 1426,31.767,49.790,60,0
     .waypoint 1426,33.832,48.153,60,0
     .waypoint 1426,31.691,46.837,60,0
-    >>击杀 |cRXP_ENEMY_冰爪熊|r, |cRXP_ENEMY_老峭壁野猪|r, and |cRXP_ENEMY_雪豹|r
+    >>击杀 |cRXP_ENEMY_冰爪熊|r，|cRXP_ENEMY_老峭壁野猪|r，和 |cRXP_ENEMY_雪豹|r
     >>|cRXP_WARN_达到经验值要求之后可跳过此步骤，你会尽快回来完成它|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
     .mob 冰爪熊
@@ -4340,7 +4482,7 @@ step
     .waypoint 1426,31.767,49.790,60,0
     .waypoint 1426,33.832,48.153,60,0
     .waypoint 1426,31.691,46.837,60,0
-    .xp 7+3020 >>击杀 to 3020+/4500xp
+    .xp 7+3020 >>刷怪达到3020+/4500经验
     .isQuestAvailable 384
 step
     #optional
@@ -4368,7 +4510,7 @@ step
     .waypoint 1426,31.767,49.790,60,0
     .waypoint 1426,33.832,48.153,60,0
     .waypoint 1426,31.691,46.837,60,0
-    .xp 7+3645 >>击杀 to 3645+/4500xp
+    .xp 7+3645 >>刷怪达到3645+/4500经验
     .isQuestTurnedIn 384
 step
     #optional
@@ -4432,7 +4574,7 @@ step
     .goto 1415/0,254.0286,-4708.3416,-1
     .goto 1437,11.730,43.304,-1
     >>|cRXP_WARN_面朝北方或西北方，跳下山坡|r
-    .deathskip >>Die 和 respawn at the Baradin Bay |cRXP_FRIENDLY_灵魂医者|r
+    .deathskip >>死掉并在巴拉丁海湾的 |cRXP_FRIENDLY_灵魂医者|r 复生
     .isQuestAvailable 983
     .target 灵魂医者
 step
@@ -4444,11 +4586,11 @@ step
 step
     .goto Wetlands,9.490,59.693
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷·布隆迪尔|r 对话
-    .fp Wetlands >>获取塞尔萨玛的飞行路径
+    .fp Wetlands >>获取湿地的飞行路径
     .target 谢尔雷·布隆迪尔
 step
 	#completewith Distracting
-    .hs >>Hearth to 卡拉诺斯，丹莫罗
+    .hs >>炉石回卡拉诺斯，丹莫罗
     .subzoneskip 131
     .subzoneskip 2102
     .bindlocation 2102,1
@@ -4485,7 +4627,7 @@ step
 step << Hunter
     .goto Dun Morogh,47.189,52.403
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克雷格·比尔姆|r 对话
-    >>|cRXP_WARN_Buy 5 stacks of|r |T132384:0|t[轻弹丸]
+    >>|cRXP_WARN_购买5组|r |T132384:0|t[轻弹丸]
     .collect 2516,800 --Light Shot
     .target 克雷格·比尔姆
 step
@@ -4499,6 +4641,7 @@ step
     .accept 287 >>接受任务 霜鬃巨魔要塞
     .target 森内尔·白须
 step
+#xprate <1.5
     .goto Dun Morogh,49.622,48.612
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_驾驶员迪恩·石轮|r 对话
     .turnin 313 >>交任务 灰色洞穴
@@ -4511,7 +4654,7 @@ step << Hunter
 step
     #optional
     #completewith next
-    >>击杀 |cRXP_ENEMY_冰爪熊|r, |cRXP_ENEMY_老峭壁野猪|r 和 |cRXP_ENEMY_雪豹|r
+    >>击杀 |cRXP_ENEMY_冰爪熊|r，|cRXP_ENEMY_老峭壁野猪|r，和 |cRXP_ENEMY_雪豹|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
     .mob 冰爪熊
     .complete 319,2 --Kill Elder Crag Boar (x8)
@@ -4556,7 +4699,7 @@ step
 step
     #optional
     #completewith next
-    >>击杀 |cRXP_ENEMY_冰爪熊|r, |cRXP_ENEMY_老峭壁野猪|r 和 |cRXP_ENEMY_雪豹|r
+    >>击杀 |cRXP_ENEMY_冰爪熊|r，|cRXP_ENEMY_老峭壁野猪|r，和 |cRXP_ENEMY_雪豹|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
     .mob 冰爪熊
     .complete 319,2 --Kill Elder Crag Boar (x8)
@@ -4566,7 +4709,7 @@ step
 step
     #optional
     #completewith QuarryStart
-    .goto Dun Morogh,68.379,54.492,60 >>Travel to 古博拉采掘场，丹莫罗
+    .goto Dun Morogh,68.379,54.492,60 >>前往古博拉采掘场，丹莫罗
     .subzoneskip 134
 step
     .goto Dun Morogh,68.379,54.492
@@ -4609,7 +4752,7 @@ step
 step
     #optional
     #completewith next
-    >>击杀 |cRXP_ENEMY_冰爪熊|r, |cRXP_ENEMY_老峭壁野猪|r 和 |cRXP_ENEMY_雪豹|r
+    >>击杀 |cRXP_ENEMY_冰爪熊|r，|cRXP_ENEMY_老峭壁野猪|r，和 |cRXP_ENEMY_雪豹|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
     .mob 冰爪熊
     .complete 319,2 --Kill Elder Crag Boar (x8)
@@ -4644,8 +4787,9 @@ step
     .target 驾驶员塞克·锤足
 step
     #completewith ShimmerweedCollect
-    .deathskip >>Die 和 respawn at the |cRXP_FRIENDLY_灵魂医者|r
+    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
+#xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉兹·滑链|r 对话
     .target 拉兹·滑链
     .goto Dun Morogh,46.005,48.637,10,0
@@ -4675,8 +4819,8 @@ step
     .goto Dun Morogh,40.9,45.3
     .goto Dun Morogh,39.5,43.0,0
     .goto Dun Morogh,41.5,36.0,0
-    >>击杀 |cRXP_ENEMY_霜鬃先知|r。拾取他们的 |cRXP_LOOT_Shimmerweed|r
-    >>Open the |cRXP_PICK_Shimmerweed Baskets|ron the ground.拾取地上的 them for their |cRXP_LOOT_Shimmerweed|r
+    >>击杀 |cRXP_ENEMY_霜鬃先知|r。拾取他们的 |cRXP_LOOT_微光草|r
+    >>打开地上的 |cRXP_PICK_微光草篮|r 。拾取 |cRXP_LOOT_微光草|r
     .complete 315,1 --Collect Shimmerweed (x6)
     .mob 霜鬃先知
 step
@@ -4728,6 +4872,7 @@ step
     .goto Dun Morogh,30.186,45.531
     .turnin 311 >>交任务 向马莱斯回报
 step
+#xprate <1.5
     #loop
     .goto 1426,26.653,43.844,0
     .goto 1426,24.601,40.790,0
@@ -4744,14 +4889,14 @@ step
     .goto 1426,24.871,44.693,55,0
     .goto 1426,25.540,45.374,55,0
     .goto 1426,25.950,43.930,55,0
-    >>击杀 |cRXP_ENEMY_麻风侏儒|r。拾取他们的 |cRXP_LOOT_Gyromechanic Gears|r 和 |cRXP_LOOT_Restabilization Cogs|r
+    >>击杀 |cRXP_ENEMY_麻风侏儒|r。拾取他们的 |cRXP_LOOT_多档齿轮|r 和 |cRXP_LOOT_自适应齿轮|r
     .complete 412,2 --Collect Gyromechanic Gear (x8)
     .complete 412,1 --Collect Restabilization Cog (x8)
     .mob 麻风侏儒
 step
     #sticky
     #label xp10
-    .xp 9+4175 >>击杀 to 4175+/6500xp
+    .xp 9+4175 >>刷怪达到4175+/6500经验
 step
     #sticky
     #label Headhunters
@@ -4773,7 +4918,7 @@ step
 step
     #optional
     .goto 1426,24.975,50.473,20,0
-    .goto 1426,24.682,50.836,20 >>Run up the side of the cave entrance. 交任务 霜鬃巨魔要塞
+    .goto 1426,24.682,50.836,20 >>沿着洞口坡道上行，然后跳入霜鬃巨魔要塞
     .isOnQuest 287
 step
     .goto Dun Morogh,22.86,52.16
@@ -4788,7 +4933,7 @@ step
     #requires Headhunters
 step
     #completewith AcceptTaming
-    .deathskip >>Die 和 respawn at the |cRXP_FRIENDLY_灵魂医者|r
+    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     .goto Dun Morogh,46.726,53.826
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_森内尔·白须|r 对话
@@ -4796,6 +4941,7 @@ step
     .accept 291 >>接受任务 森内尔的报告
     .target 森内尔·白须
 step
+#xprate <1.5
     .goto Dun Morogh,46.005,48.637,8,0
     .goto Dun Morogh,45.846,49.365
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉兹·滑链|r 对话，NPC在里面
@@ -4817,7 +4963,7 @@ step << Hunter
     .accept 6064 >>接受任务 驯服野兽
 step << Hunter
     .goto Dun Morogh,48.3,56.9
-    .use 15911 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_大峭壁野猪|r
+    .use 15911 >>|cRXP_WARN_对 |r大峭壁野猪|cRXP_WARN_ 使用|r |T132164:0|t[驯服之杖]|cRXP_ENEMY_|r
     .complete 6064,1 --Tame a Large Crag Boar (1)
     .mob 大峭壁野猪
 step << Hunter
@@ -4828,7 +4974,7 @@ step << Hunter
     .accept 6084 >>接受任务 驯服野兽
 step << Hunter
     .goto Dun Morogh,49.4,59.4
-    .use 15913 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_雪豹|r
+    .use 15913 >>|cRXP_WARN_使用|r |T132164:0|t[驯服之杖] |cRXP_WARN_对|r |cRXP_ENEMY_雪豹|r
     .complete 6084,1 --Tame a Snow Leopard (1)
     .mob 雪豹
 step << Hunter
@@ -4839,7 +4985,7 @@ step << Hunter
     .accept 6085 >>接受任务 驯服野兽
 step << Hunter
     .goto Dun Morogh,50.4,59.7
-    .use 15908 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_冰爪熊|r
+    .use 15908 >>|cRXP_WARN_使用|r |T132164:0|t[驯服之仗] |cRXP_WARN_对|r |cRXP_ENEMY_冰爪熊|r
     .complete 6085,1 --Tame an Ice Claw Bear (1)
     .mob 冰爪熊
 step << Hunter
@@ -4852,7 +4998,7 @@ step << Hunter
     #completewith next
     .goto Dun Morogh,49.0,44.6,30,0
     .goto Dun Morogh,45.7,42.2,30,0
-    +|cRXP_WARN_施放|r |T132164:0|t[Tame Beast] |cRXP_WARN_on an |cRXP_ENEMY_冰爪熊|r or |cRXP_ENEMY_冬狼|r to tame it on the way to Ironforge|r
+    +|cRXP_WARN_在前往铁炉堡的路上，对 |r冰爪熊|cRXP_WARN_ 或 |cRXP_ENEMY_冬狼|r 施放 |cRXP_ENEMY_|T132164:0|t[驯服野兽] |r进行驯服|r
     >>|cRXP_WARN_不必在意当前驯服哪只宠物，你很快将在黑海岸驯服新宠。完成后跳过此步骤。|r
     .link https://www.wow-petopia.com/classic/training.php >>https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_点击此处了解更多关于宠物训练的信息|r
 	.unitscan 冰爪熊
@@ -4862,19 +5008,19 @@ step << Hunter
 step << Hunter
     .goto Dun Morogh,47.58,41.58,40,0
     .goto Dun Morogh,50.19,40.79,20,0
-    .goto Ironforge,14.90,87.10,40 >>Travel to 铁炉堡，丹莫罗
+    .goto Ironforge,14.90,87.10,40 >>前往铁炉堡
 step << Hunter
     .goto Ironforge,61.442,88.232,15,0
 	.goto Ironforge,61.549,89.432
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在楼下与 |cRXP_FRIENDLY_萨古斯·雷拳|r 对话
-    >>|cRXP_BUY_Buy a|r |T135613:0|t[猎人火枪] |cRXP_BUY_if you can afford it|r
+    >>|cRXP_BUY_购买1把|r |T135613:0|t[猎人火枪] |cRXP_BUY_如果钱够|r
     .collect 2511,1
     .money <0.1324
     .target 萨古斯·雷拳
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.00  
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.00
 step << Hunter
     #completewith next
-    +|cRXP_WARN_Equip the|r |T135613:0|t[猎人火枪]
+    +|cRXP_WARN_装备|r |T135613:0|t[猎人火枪]
     .use 2511
     .itemcount 2511,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.99
@@ -4887,13 +5033,13 @@ step << Hunter
 step
     #completewith next
     .goto Ironforge,78.00,51.40
-    .subzone 2257 >>进入 Deeprun Tram
+    .subzone 2257 >>进入矿道地铁
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与中站台上的 |cRXP_FRIENDLY_蒙提|r 对话
     .target 蒙提
     .accept 6661 >>接受任务 捕捉矿道老鼠
 step
-    .use 17117 >>|cRXP_WARN_Use the|r |T133942:0|t[Rat Catcher's Flute]|cRXP_WARN_on|r|cRXP_ENEMY_矿道老鼠|r
+    .use 17117 >>|cRXP_WARN_对 |r矿道老鼠|cRXP_WARN_ 使用 |r|T133942:0|t[捕鼠者长笛]|cRXP_ENEMY_|r
     .complete 6661,1 --Rats Captured (x5)
     .mob 矿道老鼠
 step
@@ -4901,7 +5047,7 @@ step
     .target 蒙提
     .turnin 6661 >>交任务 捕捉矿道老鼠
 step
-    .zone Ironforge >>回到铁炉堡
+    .zone Ironforge >>返回铁炉堡
 step
 #ah
     #optional
@@ -4925,8 +5071,8 @@ step
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 对话
-    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r|cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r|cRXP_BUY_to level your|r |T133971:0|t[烹饪]|cRXP_BUY_with later|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁炉堡拍卖师|r 交谈
+    >>|cRXP_BUY_购买|r |T133970:0|t|cRXP_LOOT_[野猪肉块]|r|cRXP_BUY_ 或|r |T133970:0|t|cRXP_LOOT_[多汁狼肉]|r|cRXP_BUY_，以便稍后提升你的 |r|T133971:0|t[烹饪] |cRXP_BUY_技能|r
     >>|cRXP_WARN_你需要50点|r |T133971:0|t[烹饪]|cRXP_WARN_后续在夜色镇完成一个任务|r
     >>|cRXP_BUY_购买以下物品，以便稍后在黑海岸更快交任务|r
     >>|cRXP_WARN_如果你不想这样做，或者无法完成，可以跳过此步骤|r
@@ -4953,6 +5099,6 @@ step
     #label FlyMenethil
     .goto Ironforge,55.501,47.742
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
-    .fly Menethil >>Fly to 米奈希尔港，湿地
+    .fly Menethil >>飞往米奈希尔港，湿地
     .target 格莱斯·瑟登
 ]])

@@ -114,8 +114,8 @@ end
 local settingsDBDefaults = {
     profile = {
         enableTracker = true,
-        enableLevelUpAnnounceSolo = true,
-        enableLevelUpAnnounceGroup = true,
+        enableLevelUpAnnounceSolo = false,
+        enableLevelUpAnnounceGroup = false,
         enableFlyStepAnnouncements = true,
         alwaysSendBranded = true,
         checkVersions = true,
@@ -155,6 +155,7 @@ local settingsDBDefaults = {
         xprate = 1,
         guideFontSize = 9,
         activeItemsScale = 1,
+        questLogSize = addon.game == "CLASSIC" and 20 or addon.game == "FOREVER" and 40 or 25,
 
         showEnabled = true,
 
@@ -183,6 +184,7 @@ local settingsDBDefaults = {
 
         enableAddonIncompatibilityCheck = true,
         enableVendorTreasure = true,
+        enableInventoryManager = true,
 
         -- Themes
         activeTheme = 'RXP Blue',
@@ -248,15 +250,17 @@ function addon.settings:InitializeDatabase()
     if type(RXPData.defaultProfile) ~= "table" or not RXPData.defaultProfile.profile then
         RXPData.defaultProfile = false
     end
-    if not addon.player.beta then
+    if not addon.player.beta and addon.game ~= "FOREVER" then
         RXPCData.localDB = nil
     end
+
     settingsDB = LibStub("AceDB-3.0"):New("RXPSettings", RXPData.defaultProfile or RXPCData.localDB or settingsDBDefaults)
 
     settingsDB.RegisterCallback(self, "OnProfileChanged", "RefreshProfile")
     settingsDB.RegisterCallback(self, "OnProfileCopied", "CopyProfile")
     settingsDB.RegisterCallback(self, "OnProfileReset", "ResetProfile")
     self.profile = settingsDB.profile
+    self:UpdateLocaleProfileDefaults()
     loadedProfileKey = settingsDB.keys.profile
     if addon.GetQuestDBDefaults then
         addon.GetQuestDBDefaults()
@@ -265,6 +269,23 @@ end
 
 addon.settings.GetSettingsDB = function()
     return settingsDB:GetCurrentProfile()
+end
+
+function addon.settings:SaveLocalProfile()
+    if not addon.saveSettingsLocally then return end
+
+    self:SaveFramePositions()
+    RXPCData.localDB = {profile = self.copy(self.profile)}
+end
+
+function addon.settings:UpdateLocaleProfileDefaults()
+    if addon.game ~= "FOREVER" then return end
+
+    for key, default in pairs(settingsDBDefaults.profile) do
+        if self.profile[key] == nil then
+            self.profile[key] = type(default) == "table" and copy(default) or default
+        end
+    end
 end
 
 function addon.settings:InitializeSettings()
@@ -600,6 +621,18 @@ function addon.settings:CreateAceOptionsPanel()
                 hidden = not (addon.ui and addon.ui.v2 and
                     addon.ui.v2.LaunchConfigurator)
             },
+            resetGuideProgressTop = {
+                name = L("Reset Guide Progress"),
+                desc = L("Clear guide progress for current character"),
+                type = "execute",
+                width = optionsWidth,
+                order = 1.3,
+                func = addon.ResetGuideProgress,
+                confirm = function()
+                    return L("Clear guide progress for current character")
+                end,
+                hidden = addon.player.level > 1,
+            },
             generalSettings = {
                 type = "group",
                 name = _G.GENERAL,
@@ -885,7 +918,18 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "header",
                         width = "full",
                         order = 6.1,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
+                    },
+                    enableInventoryManager = {
+                        name = L("Enable Inventory Manager"),
+                        type = "toggle",
+                        width = optionsWidth * 3,
+                        order = 6.105,
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.inventoryManager:Setup()
+                        end
                     },
                     showJunkIcon = {
                         name = L("Show junk item indicator"), -- TODO locale
@@ -893,7 +937,10 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 6.11,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
+                        disabled = function()
+                            return not self.profile.enableInventoryManager
+                        end,
                     },
                     autoDiscardItems = {
                         name = L("Discard junk items if bag is full"), -- TODO locale
@@ -901,7 +948,10 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 6.12,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
+                        disabled = function()
+                            return not self.profile.enableInventoryManager
+                        end,
                     },
                     rightClickJunk = {
                         name = L("Toggle junk with modified right click"), -- TODO locale
@@ -909,7 +959,10 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 6.13,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
+                        disabled = function()
+                            return not self.profile.enableInventoryManager
+                        end,
                     },
                     rightClickMod = {
                         name = L("Right Click Modifier"), -- TODO locale
@@ -921,22 +974,26 @@ function addon.settings:CreateAceOptionsPanel()
                                 self.profile.rightClickMod or 1
                         end,
                         disabled = function ()
-                            return not self.profile.rightClickJunk
+                            return not self.profile.enableInventoryManager or
+                                       not self.profile.rightClickJunk
                         end,
                         values = {
                             [1] = "CTRL",
                             [2] = "ALT",
                             [3] = "CTRL+ALT",
                         },
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                     },
                     autoSellJunk = {
                         name = L("Auto Sell Junk"), -- TODO locale
                         desc = L("Automatically sell all gray items and all other items that you set as junk"),
                         type = "toggle",
-                        width = optionsWidth * 1.5,
+                        width = optionsWidth * 3,
                         order = 6.15,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
+                        disabled = function()
+                            return not self.profile.enableInventoryManager
+                        end,
                     },
                     maxSoulShards = {
                         name = L("Soul Shard Maximum"), -- TODO locale
@@ -950,7 +1007,10 @@ function addon.settings:CreateAceOptionsPanel()
                         usage = L"You must input an integer number",
                         width = optionsWidth * 0.7,
                         order = 6.16,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook and addon.player.class == "WARLOCK" and addon.gameVersion < 40000),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable() and addon.player.class == "WARLOCK" and addon.gameVersion < 40000),
+                        disabled = function()
+                            return not self.profile.enableInventoryManager
+                        end,
                     },
                     sellKeybind = {
                         name = L("Delete Cheapest Junk Item Keybind"), -- TODO locale
@@ -958,31 +1018,15 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "keybinding",
                         width = optionsWidth * 1.25,
                         order = 6.17,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
-                        get = function()
-                            local commandName = "CLICK RXPInventory_DeleteJunk:LeftButton"
-                            local i = addon.inventoryManager.bindingIndex
-                            local c,_,key = GetBinding(i or 1)
-                            if c == commandName then
-                                return key
-                            else
-                                for index = 1, GetNumBindings() do
-                                    local command,_,key1 = GetBinding(index)
-                                    if command == commandName then
-                                        addon.inventoryManager.bindingIndex = index
-                                        return key1
-                                    end
-                                end
-                            end
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
+                        disabled = function()
+                            return not self.profile.enableInventoryManager
                         end,
-                        set = function(info, key)
-                            local i = addon.inventoryManager.bindingIndex
-                            local c = "CLICK RXPInventory_DeleteJunk:LeftButton"
-                            local command,_,key1 = GetBinding(i or 1)
-                            if command == c and key1 then
-                                SetBinding(key1)
-                            end
-                            SetBinding(key,c)
+                        get = function()
+                            return addon.inventoryManager:GetSellKeybind()
+                        end,
+                        set = function(_, key)
+                            addon.inventoryManager:SetSellKeybind(key)
                         end
                     },
                     resetDiscardItems = {
@@ -992,12 +1036,16 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "execute",
                         width = optionsWidth,
                         func = function()
-                            addon.inventoryManager.ResetJunk()
+                            addon.inventoryManager:ResetJunk()
                         end,
                         confirm = function()
                             return L("This action will unmark all junk items.\nAre you sure?")
                         end,
-                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
+                        disabled = function()
+                            return not self.profile.enableInventoryManager or
+                                       not next(RXPCData.discardPile or {})
+                        end,
                     },
                     talentsHeader = {
                         name = function()
@@ -1241,7 +1289,7 @@ function addon.settings:CreateAceOptionsPanel()
                         sorting = {"auto", "enabled", "disabled"},
                         width = optionsWidth,
                         order = 2.2,
-                        hidden = WOW_PROJECT_ID ~= WOW_PROJECT_MAINLINE
+                        hidden = WOW_PROJECT_ID ~= WOW_PROJECT_MAINLINE or addon.game == "FOREVER"
                     },
                     phase = {
                         name = L("Content phase"),
@@ -1329,7 +1377,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = "full",
                         order = 3.0,
                         hidden = function()
-                            return not next(addon.settings.dungeons:GetDungeons())
+                            return addon.game == "FOREVER" or not next(addon.settings.dungeons:GetDungeons())
                         end
                     },
                     dungeonsSetRecommended = {
@@ -1342,7 +1390,7 @@ function addon.settings:CreateAceOptionsPanel()
                             self.dungeons:SetRecommended()
                         end,
                         hidden = function()
-                            return not next(addon.settings.dungeons:GetDungeons()) or not addon.dungeonStats
+                            return addon.game == "FOREVER" or not next(addon.settings.dungeons:GetDungeons()) or not addon.dungeonStats
                         end
                     },
                     dungeonsSetAll = {
@@ -1355,7 +1403,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.ReloadGuide()
                         end,
                         hidden = function()
-                            return not next(addon.settings.dungeons:GetDungeons())
+                            return addon.game == "FOREVER" or not next(addon.settings.dungeons:GetDungeons())
                         end
                     },
                     dungeons = {
@@ -1383,7 +1431,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.ReloadGuide()
                         end,
                         hidden = function()
-                            return not next(addon.settings.dungeons:GetDungeons())
+                            return addon.game == "FOREVER" or not next(addon.settings.dungeons:GetDungeons())
                         end
                     },
                     professions = {
@@ -2294,7 +2342,7 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             -- addon.settings.profile.showDangerousMobsMap = value
                             SetProfileOption(info, value)
-                            addon.tips:LoadDangerousMobs(true)
+                            addon.UpdateMap()
                         end,
                         disabled = function()
                             return not self.profile.enableTips
@@ -2331,7 +2379,7 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             -- addon.settings.profile.showDangerousMobsMap = value
                             SetProfileOption(info, value)
-                            addon.tips:LoadDangerousMobs(true)
+                            addon.UpdateMap()
                         end,
                         disabled = function()
                             return not self.profile.enableTips
@@ -2368,7 +2416,7 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             -- addon.settings.profile.showDangerousMobsMap = value
                             SetProfileOption(info, value)
-                            addon.tips:LoadDangerousMobs(true)
+                            addon.UpdateMap()
                         end,
                         disabled = function()
                             return not self.profile.enableTips
@@ -3176,6 +3224,7 @@ function addon.settings:CreateAceOptionsPanel()
                         confirm = requiresReload,
                         set = function(info, value)
                             SetProfileOption(info, value)
+                            addon.settings:SaveLocalProfile()
                             _G.ReloadUI()
                         end
                     },
@@ -3236,6 +3285,30 @@ function addon.settings:CreateAceOptionsPanel()
                             _G.SetCVar("scriptErrors", value and "1" or "0")
                         end,
                         order = 10.25,
+                    },
+                    disableMapPins = {
+                        --Gamepad is causing weird taint issues on beta
+                        name = L("Disable Map Pins"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            _G.ReloadUI()
+                        end,
+                        confirm = requiresReload,
+                        order = 10.26,
+                    },
+                    questLogSize = {
+                        name = L("Quest Log Size"),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 10.27,
+                        min = 20,
+                        max = 40,
+                        step = 1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                        end
                     },
                     debugQuestImport = {
                         order = 10.3,
@@ -3452,6 +3525,17 @@ function addon.settings:CreateAceOptionsPanel()
         func = function() _G.ReloadUI() end,
         disabled = function()
             return loadedProfileKey == settingsDB.keys.profile and not settingsDB.isResetting
+        end
+    }
+    optionsTable.args.profiles.args["resetGuideProgress"] = {
+        order = 0.1,
+        name = L("Reset Guide Progress"),
+        desc = L("Clear guide progress for current character"),
+        type = "execute",
+        width = optionsWidth,
+        func = addon.ResetGuideProgress,
+        confirm = function()
+            return L("Clear guide progress for current character")
         end
     }
 
@@ -3949,6 +4033,31 @@ function addon.settings:DisableTextColors()
     self:RefreshTextColors()
 end
 
+local zhCN = GetLocale() == "zhCN"
+local missingTranslationWarning
+
+local AnnounceMissingTranslation = function()
+    local message = missingTranslationWarning
+    if not message then return end
+    addon.comms.PrettyPrint(message)
+end
+
+addon:RegisterMessage("RXP_STEP_ACTIVATED",function(self,step)
+    if step.missingTranslation then
+        missingTranslationWarning =
+            fmt(L"Missing translation for step %d (Coming soon)", step.index)
+        addon.ScheduleTask(1.5, AnnounceMissingTranslation)
+    end
+end)
+
+local function FindUnicodeCharacter(text)
+    for i = 1,#text do
+        if string.byte(text:sub(i,i)) > 127 then
+            return true
+        end
+    end
+end
+
 function addon.settings.ReplaceColors(element)
     -- Replace text placeholders
     local function replace(textLine)
@@ -3969,13 +4078,16 @@ function addon.settings.ReplaceColors(element)
     end
 
     local fieldString
-    if type(element) == "table" or element and element.textReplaced then
+    if type(element) == "table" then
         element.textReplaced = element.textReplaced or {}
         for i, field in pairs({"text", "rawtext", "tooltipText", "mapTooltip","title","arrowtext"}) do
             if element.textReplaced[i] then
                 element[field] = replace(element.textReplaced[i])
             else
                 fieldString = element[field]
+                if zhCN and fieldString and element.step and not FindUnicodeCharacter(fieldString) then
+                    element.step.missingTranslation = true
+                end
                 element.textReplaced[i] = fieldString
                 element[field] = replace(fieldString)
             end

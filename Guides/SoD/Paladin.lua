@@ -579,8 +579,8 @@ step
     .xp <4,1
 step << skip
     #completewith next
-    >>|cRXP_WARN_It is heavily recommended you get the|r |T134229:0|t[Rune of Horn of Lordaeron] |cRXP_WARN_in Loch Modan instead as it is a LOT easier|r
-    >>|cRXP_WARN_It is NOT recommended to use the|r |T134229:0|t[Rune of Horn of Lordaeron] |cRXP_WARN_over the|r |T236250:0|t[Rune of Divine Storm] |cRXP_WARN_or the|r |T135961:0|t[Rune of Seal of Martyrdom]
+    >>|cRXP_WARN_It is heavily recommended you get the|r |T134229:0|t[Testament of Horn of Lordaeron] |cRXP_WARN_in Loch Modan instead as it is a LOT easier|r
+    >>|cRXP_WARN_It is NOT recommended to use the|r |T134229:0|t[Testament of Horn of Lordaeron] |cRXP_WARN_over the|r |T236250:0|t[Rune of Divine Storm] |cRXP_WARN_or the|r |T133745:0|t[Testament of Martyrdom]
     .train 425618,1
     .xp <12,1
 step
@@ -2200,7 +2200,7 @@ step
 step
     .line Eastern Plaguelands,28.6,84.2,33.2,83.0,35.30,82.55,41.19,81.68,45.42,80.68,48.8,79.9,51.5,78.3,55.1,76.4
     >>Look for a |cRXP_ENEMY_Slack-Jawed Ghoul|r. Kill him and |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orthas|r a dwarf spirit that will appear. Accept his quest
-    >>|cRXP_WARN_The|r |cRXP_ENEMY_Slack-Jawed Ghoul|r |cRXP_WARN_patrolls the area south of the road between the Undercroft and Corrin's Crossing|r
+    >>|cRXP_WARN_The|r |cRXP_ENEMY_Slack-Jawed Ghoul|r |cRXP_WARN_patrols the area south of the road between the Undercroft and Corrin's Crossing|r
     .accept 84318 >> Accept Oi!
     .unitscan Slack-Jawed Ghoul
     .target Orthas
