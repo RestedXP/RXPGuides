@@ -1,6 +1,6 @@
 local addonName, addon = ...
 
-if not (addon.game == "CLASSIC" or addon.game == "TBC") then return end
+if not (addon.game == "CLASSIC" or addon.game == "TBC" or addon.game == "FOREVER") then return end
 
 -- Debug window for the professions prototype: every debug slash command as a button or field,
 -- plus the export string for the Profession Route page. Open with /rxpprof.
