@@ -2854,7 +2854,7 @@ step << NightElf
     .complete 385,1 -- Crocolisk Meat (5)
     .complete 385,2 -- Crocolisk Skin (6)
     .mob Loch Crocolisk
-step
+step << NightElf
     --@TODO add a line for this
     .goto Loch Modan,62,44
     >>Kill |cRXP_ENEMY_Daggerfang|r, he |cRXP_WARN_might be patroling along the shore|r. Loot him for |T3736888:0|t[|cRXP_LOOT_Marek's Croc-Hunting Knife|r]
