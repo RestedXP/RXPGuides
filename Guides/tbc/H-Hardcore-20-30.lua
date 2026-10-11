@@ -7884,11 +7884,24 @@ step << Rogue
     .target Rekkul
     .zoneskip Orgrimmar,1
 step << Shaman
-    .goto Orgrimmar,37.95,37.75
+    .goto 1454/1,-4212.89,1920.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Searn|r
-    .trainer >> Train your class spells
     .accept 1531 >> Accept Call of Air
     .target Searn Firewarder
+step << Shaman
+    .goto 1454/1,-4225.09,1933.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    .train 8232 >> Train your class spells
+    .target Kardris Dreamseeker
+    .xp <30,1
+    .xp >32,1
+step << Shaman
+    #optional
+    .goto 1454/1,-4225.09,1933.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    .train 945 >> Train your class spells
+    .target Kardris Dreamseeker
+    .xp <32,1
 step << Warlock
     .goto Orgrimmar,48.62,46.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirket|r

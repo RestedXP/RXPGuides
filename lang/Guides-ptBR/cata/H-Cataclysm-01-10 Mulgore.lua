@@ -99,7 +99,7 @@ step
     .accept 3092 >>Aceite Bilhete cinzelado << Hunter
     .accept 3091 >>Aceite Bilhete << Warrior
     .accept 27015 >>Aceite Bilhete Consagrado << Paladin
-    .accept 3094 >>Aceite Bilhete Verdejante << Druid
+    .accept 3094 >>Aceite Bilhete verdejante << Druid
     .accept 3093 >>Aceite Bilhete inscrito em runas << Shaman
     .accept 27014 >>Aceite Bilhete Santificado << Priest
     .goto 7,46.15,82.32
@@ -142,7 +142,7 @@ step
 step
     .goto 7,46.18,82.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Adana|r
-    .turnin 14459 >>Entregue Os Javaliços
+    .turnin 14459 >>Entregue Os javaliços
     .turnin 14461 >>Entregue Alimento do Mal
     .accept 14460 >>Aceite Rito de Honra
     .target Adana Thunderhorn
@@ -153,7 +153,7 @@ step
     .mob Chief Squealer Thornmantle
 step
     #completewith next
-    .hs >>Use sua Pedra de Retorno para ir a Acampamento Narache
+    .hs >>Use a Pedra de Regresso para voltar à Aldeia Narache
     .cooldown item,6948,>0
 step
     .goto 7,45.17,75.44
@@ -373,7 +373,7 @@ step
     .target Ahab Wheathoof
 step << Hunter Cata
     .goto 7,47.94,55.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
     .train 2973 >>Treine suas magias de classe
     .target Yaw Sharpmane
     .xp <6,1
@@ -391,7 +391,7 @@ step << Tauren
     .target Varg Windwhisper
 step << Warrior/Shaman/Paladin
     .goto 7,45.91,58.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mahnott|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mahnott Ferida Aberta|r
     .vendor >>Venda os lixos. Venda sua arma se ela lhe der dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (6p 66c). Você voltará depois se ainda não tiver o suficiente
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
@@ -407,7 +407,7 @@ step << Warrior/Shaman/Paladin
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
 step << Hunter
     .goto 7,45.75,57.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kennah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kenna Olho de Falcão|r
     .vendor >>Comerciante trash e reparo. Venda sua arma se lhe der dinheiro suficiente para um |T135611:0|t[Bacamarte Ornado] (3s 93c). Você voltará depois se ainda não tiver o suficiente
     .target Kennah Hawkseye
     .itemStat 18,QUALITY,<7
@@ -451,12 +451,12 @@ step
     .goto 1412/1,-392.89999,-2333.50000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahmo|r
     .turnin 24215 >>Entregue Rito dos Ventos
-    .accept 14438 >>Aceite Dividindo a Terra
+    .accept 14438 >>Aceite Dividindo a terra
     .target Ahmo Thunderhorn
 step
     .goto 7,48.77,58.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harken|r
-    .accept 761 >>Aceite Caçada ao Rapineiro
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harken Totem do Vento|r
+    .accept 761 >>Aceite Caçada ao rapineiro
     .target Harken Windtotem
 step << Shaman Cata
     .goto 7,48.47,58.63
@@ -572,19 +572,19 @@ step
     #label WCleansing1
     .goto 7,48.62,59.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull|r
-    .turnin 20440 >>Entregue Água Venenosa
-    .accept 24440 >>Aceite A Purificação de Casco Invernal
+    .turnin 20440 >>Entregue Água venenosa
+    .accept 24440 >>Aceite A purificação de Casco Invernal
     .target Mull Thunderhorn
 step
     .goto 7,48.77,58.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harken|r
-    .turnin 761 >>Entregue Caçada ao Rapineiro
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harken Totem do Vento|r
+    .turnin 761 >>Entregue Caçada ao rapineiro
     .target Harken Windtotem
     .isQuestComplete 761
 step
     .goto 1412/1,-392.89999,-2333.50000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahmo|r
-    .turnin 14438 >>Entregue Dividindo a Terra
+    .turnin 14438 >>Entregue Dividindo a terra
     .accept 14491 >>Aceite A Terra Indócil
     .accept 24459 >>Aceite Morin Espreita Nuvem
     .target Maur Raincaller
@@ -595,12 +595,12 @@ step
     .target Maur Raincaller
 step << Hunter Cata
     .goto 7,47.94,55.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
     .train 2973 >>Treine suas magias de classe
     .target Yaw Sharpmane
 step << Warrior/Shaman/Paladin
     .goto 7,45.91,58.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mahnott|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mahnott Ferida Aberta|r
     .vendor >>Comerciante fraco. Venda sua arma se der dinheiro suficiente para uma |T133053:0|t[Marreta de Madeira] (6s 65c). Você voltará mais tarde se ainda não tiver dinheiro suficiente
     .target Mahnott Roughwound
     .itemStat 16,QUALITY,<7
@@ -615,7 +615,7 @@ step << Warrior/Shaman/Paladin
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
 step << Hunter
     .goto 7,45.75,57.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kennah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kenna Olho de Falcão|r
     .vendor >>Comerciante trash e reparo. Venda sua arma se lhe der dinheiro suficiente para um |T135611:0|t[Bacamarte Ornado] (3s 93c). Você voltará depois se ainda não tiver o suficiente
     .target Kennah Hawkseye
     .itemStat 18,QUALITY,<7
@@ -672,7 +672,7 @@ step
 step
     .goto 7,48.62,59.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull|r
-    .turnin 24440 >>Entregue A Purificação de Casco Invernal
+    .turnin 24440 >>Entregue A purificação de Casco Invernal
     .accept 24441 >>Aceite Totem de Chifre Troante
     .target Mull Thunderhorn
 step << Warrior Cata
@@ -715,13 +715,13 @@ step
     .target Innkeeper Kauth
 step << Hunter Cata
     .goto 7,47.94,55.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
     .train 5116 >>Treine suas magias de classe
     .target Yaw Sharpmane
     .xp <8,1
 step
     .goto 7,57.06,60.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Morin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Morin Espreita Nuvem|r
     .turnin 24459 >>Entregue Morin Espreita Nuvem
     .accept 749 >>Aceite A caravana devastada
     .target Morin Cloudstalker
@@ -747,7 +747,7 @@ step
     .accept 751 >>Aceite A caravana devastada
 step
     .goto 7,57.06,60.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Morin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Morin Espreita Nuvem|r
     .turnin 751 >>Entregue A Caravana Devastada
     .accept 26179 >>Aceite Empreendimentos S.A.
     .accept 26180 >>Aceite Supervisor Geringonça
@@ -797,7 +797,7 @@ step
 step
     #label FizsprocketTurnin
     .goto 7,57.06,60.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Morin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Morin Espreita Nuvem|r
     .turnin 26179 >>Entregue Empreendimentos S.A.
     .turnin 26180 >>Entregue Supervisor Geringonça
     .target Morin Cloudstalker
@@ -869,8 +869,8 @@ step
     .target Mull Thunderhorn
 step
     .goto 7,48.77,58.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harken|r
-    .turnin 761 >>Entregue Caçada ao Rapineiro
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harken Totem do Vento|r
+    .turnin 761 >>Entregue Caçada ao rapineiro
     .target Harken Windtotem
 step << Warrior Cata
     .goto 7,49.55,59.97
@@ -904,7 +904,7 @@ step
     .target Maur Raincaller
 step << Hunter Cata
     .goto 7,47.94,55.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
     .train 5116 >>Treine suas magias de classe
     .target Yaw Sharpmane
 step
@@ -1031,7 +1031,7 @@ step
     .goto 7,48.60,59.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull|r
     .turnin 24456 >>Entregue Purificação de Chifre Troante
-    .accept 24457 >>Aceite Rito de Visão
+    .accept 24457 >>Aceite Rito de visão
     .target Mull Thunderhorn
 step
     #xprate >1.19
@@ -1041,7 +1041,7 @@ step
     .target Mull Thunderhorn
 step << Hunter Cata
     .goto 7,47.94,55.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yaw Crina Cortante|r
     .train 1978 >>Treine suas magias de classe
     .target Yaw Sharpmane
     .xp <10,1
@@ -1078,9 +1078,9 @@ step << Paladin Cata
 step
     #xprate <1.2
     .goto 7,47.889,57.097
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zarlman|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zarlman Duas Luas|r
     .turnin 24457 >>Entregue Rito de Visão
-    .accept 20441 >>Aceite Rito de Visão
+    .accept 20441 >>Aceite Rito de visão
     .target Zarlman Two-Moons
 step
     #xprate <1.2
@@ -1103,26 +1103,26 @@ step
     #xprate <1.2
     .goto 7,49.523,17.088
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Erudito Totem da Chuva|r
-    .accept 833 >>Aceite Sepultamento Sagrado
+    .accept 833 >>Aceite Sepultamento sagrado
     .accept 773 >>Aceite Rito de sabedoria
     .target Lorekeeper Raintotem
 step
     #xprate <1.2
     .goto 7,49.685,17.241
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Skorn|r
-    .accept 861 >>Aceite A Senda do Caçador
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Skorn Nuvem Branca|r
+    .accept 861 >>Aceite A senda do caçador
     .target Skorn Whitecloud
 step
     #xprate <1.2
     .goto 7,49.586,17.587
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eyahn|r
-    .accept 744 >>Aceite Os Preparativos da Cerimônia
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eyahn Garra de Águia|r
+    .accept 744 >>Aceite Os preparativos da cerimônia
     .target Eyahn Eagletalon
 step
     #xprate <1.2
     #completewith RedRocks
     >>Mate os |cRXP_ENEMY_Alfas Lobo da Pradaria|r. Saque-os pelos |cRXP_LOOT_Dentes|r
-    >>Mate os |cRXP_ENEMY_Predadores das Terras Planas|r. Saque-os pelos |cRXP_LOOT_Garras|r
+    >>Mate |cRXP_ENEMY_Predadores das Estepes|r. Pegue suas |cRXP_LOOT_Garras|r
     .complete 24523,1 --Prairie Alpha Tooth (x4)
     .mob +Prairie Wolf Alpha
     .complete 861,1 --Flatland Prowler Claw (x4)
@@ -1184,7 +1184,7 @@ step
     .waypoint 7,47.051,13.915,80,0
     .waypoint 7,48.849,13.184,80,0
     >>Mate os |cRXP_ENEMY_Alfas Lobo da Pradaria|r. Saque-os pelos |cRXP_LOOT_Dentes|r
-    >>Mate os |cRXP_ENEMY_Predadores das Terras Planas|r. Saque-os pelos |cRXP_LOOT_Garras|r
+    >>Mate |cRXP_ENEMY_Predadores das Estepes|r. Pegue suas |cRXP_LOOT_Garras|r
     .complete 24523,1 --Prairie Alpha Tooth (x4)
     .mob +Prairie Wolf Alpha
     .complete 861,1 --Flatland Prowler Claw (x4)
@@ -1200,18 +1200,18 @@ step
     #xprate <1.2
     .goto 7,49.523,17.088
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Erudito Totem da Chuva|r
-    .turnin 833 >>Entregue Sepultamento Sagrado
+    .turnin 833 >>Entregue Sepultamento sagrado
     .target Lorekeeper Raintotem
 step
     #xprate <1.2
     .goto 7,49.685,17.241
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Skorn|r
-    .turnin 861 >>Entregue A Senda do Caçador
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Skorn Nuvem Branca|r
+    .turnin 861 >>Entregue A senda do caçador
     .target Skorn Whitecloud
 step
     #xprate <1.2
     .goto 7,49.586,17.587
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eyahn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eyahn Garra de Águia|r
     .turnin 744 >>Entregue Os preparativos da cerimônia
     .target Eyahn Eagletalon
 step
@@ -1238,7 +1238,7 @@ step
 step
     #xprate <1.2
     .goto 88,60.330,51.693
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Baine|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Baine Casco Sangrento|r
     .turnin 24550 >>Entregue Siga para o Penhasco do Trovão
     .accept 24540 >>Aceite Dança de Guerra
     .target Baine Bloodhoof
@@ -1278,7 +1278,7 @@ step
 step
     #xprate <1.2
     .goto 88,60.330,51.693
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Baine|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Baine Casco Sangrento|r
     .turnin 24540 >>Entregue Dança de Guerra
     .accept 26397 >>Aceite Tenha a Mãe Terra ao Seu Lado
     .target Baine Bloodhoof

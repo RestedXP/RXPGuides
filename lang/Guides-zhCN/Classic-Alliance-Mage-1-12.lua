@@ -851,7 +851,7 @@ step
 step
     .goto Dun Morogh,29.927,71.201
 >>与|cRXP_FRIENDLY_斯登·粗臂|r 对话
-    .turnin 179 >>交任务矮人的交易
+    .turnin 179 >>交任务 矮人的交易
 .target 斯登·粗臂
     .accept 233 >>接受任务 寒脊山谷的送信任务
     .accept 3114 >>接受任务 雕文备忘录

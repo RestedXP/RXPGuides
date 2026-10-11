@@ -1,4 +1,9 @@
 if not SetDesaturation then return end
+if WOW_PROJECT_ID == WOW_PROJECT_CAMELOT then
+    --TODO: Fix the dungeon selection for Camelot
+    return
+end
+
 local addonName, addon = ...
 
 local locale = _G.GetLocale()

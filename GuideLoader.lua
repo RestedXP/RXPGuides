@@ -818,7 +818,7 @@ function addon.LoadCachedGuides()
                 end
             else
                 guide = LibDeflate:DecompressDeflate(guideData.groupOrContent)
-                if guide:find("^--" .. addon.ReadCacheData("string")) then
+                if guide and guide:find("^--" .. addon.ReadCacheData("string")) then
                     guide, errorMsg, metadata = addon.ParseGuide(guide)
                     if metadata then
                         guideData.metadata = metadata

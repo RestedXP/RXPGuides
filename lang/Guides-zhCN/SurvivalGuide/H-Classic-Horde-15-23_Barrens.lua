@@ -1429,14 +1429,14 @@ step << Warlock
     .xp <18,1
 step << Warlock
     .goto Orgrimmar,47.54,46.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库古尔|r 对话，购买 |T133738:0|t[牺牲魔典]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库古尔|r 对话并购买 |T133738:0|t[牺牲魔典]
     .collect 16351,1,896,1 --Grimoire of Sacrifice (Rank 1) (1)
     .target 库古尔
     .xp <16,1
     .xp >18,1
 step << Warlock
     .goto Orgrimmar,47.54,46.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 库古尔|cRXP_FRIENDLY_ 对话，并购买 |T133738:0|t[火焰箭典籍(等级 3)]|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 库古尔|cRXP_FRIENDLY_ 对话，购买 |T133738:0|t[火焰箭典籍(等级 3)]|r
     .collect 16316,1,896,1 --Grimoire of Firebolt (Rank 3) (Rank 1) (1)
     .target 库古尔
     .xp <18,1
@@ -2100,10 +2100,10 @@ step
     #map Stonetalon Mountains
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希雷斯|r 和 |cRXP_FRIENDLY_玛卡巴|r 对话
     .turnin 1061 >>交任务石爪之灵
-    .accept 1062 >>接受任务地精侵略者
+    .accept 1062 >>接受任务 地精侵略者
     .target 希雷斯·碎石
     .goto The Barrens,35.26,27.88
-    .accept 6548 >>接受任务为我的村庄复仇
+    .accept 6548 >>接受任务 为我的村庄复仇
     .target 玛卡巴·扁蹄
     .goto The Barrens,35.19,27.79
 
@@ -2151,7 +2151,7 @@ step
     #map Stonetalon Mountains
     .goto The Barrens,35.19,27.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛卡巴|r 对话
-    .turnin 6548 >>交任务为我的村庄复仇
+    .turnin 6548 >>交任务  为我的村庄复仇
     .accept 6629 >>接受任务杀死格鲁迪格·黑云
     .target 玛卡巴·扁蹄
 step
@@ -2168,7 +2168,7 @@ step
 step
     .goto Stonetalon Mountains,73.48,85.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡雅|r对话
-    .accept 6523,1 >>接受任务保护卡雅
+    .accept 6523,1 >>接受任务 保护卡雅
     .target 卡雅·扁蹄
 step
     .goto Stonetalon Mountains,71.82,86.79,40,0
@@ -2240,7 +2240,7 @@ step
 step
     .goto Stonetalon Mountains,58.99,62.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_其兹|r 对话
-    .turnin 1483 >>交任务菲兹克斯
+    .turnin 1483 >>交任务  菲兹克斯
     .accept 1093 >>接受任务 超级收割机6000
     .target 菲兹克斯
 step
@@ -2309,7 +2309,7 @@ step << Troll Warrior/Undead Warrior
     .xp <20,1
 step << Orc Warrior
     .goto Stonetalon Mountains,58.22,51.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_维尼克斯|r |cRXP_BUY_交谈。购买一把|r |T135423:0|t[大型战斧] |cRXP_BUY_从他那里|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_维尼克斯|r |cRXP_BUY_对话。购买一把|r |T135423:0|t[大型战斧] |cRXP_BUY_从他那里|r
     .collect 926,1,899,1 --Collect Battle Axe (1)
     .money <0.9784
     .target 维尼克斯
@@ -2360,7 +2360,7 @@ step << Shaman
     .xp <20,1
 step << Rogue
     .goto Stonetalon Mountains,58.22,51.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_维尼克斯|r |cRXP_BUY_对话。从他那里|r|cRXP_BUY_购买一把|r |T135324:0|t[长剑]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_维尼克斯|r |cRXP_BUY_交谈。购买一把|r |T135324:0|t[长剑] |cRXP_BUY_从他那里|r
     .collect 923,1,899,1 --Collect Longsword (1)
     .money <0.8743
     .target 维尼克斯
@@ -2634,7 +2634,7 @@ step
     .target 斯布特瓦夫
     .goto The Barrens,62.98,37.22
     .turnin 865 >>交任务  一定是因为角
-    .turnin 1069 >>交任务深苔蜘蛛的卵
+    .turnin 1069 >>交任务  深苔蜘蛛的卵
     .accept 1491 >>接受任务 智慧饮料
     .target 麦伯克·米希瑞克斯
     .goto The Barrens,62.37,37.62
@@ -2650,7 +2650,7 @@ step
     .target 斯布特瓦夫
     .goto The Barrens,62.98,37.22
     .turnin 865 >>交任务  一定是因为角
-    .turnin 1069 >>交任务深苔蜘蛛的卵
+    .turnin 1069 >>交任务  深苔蜘蛛的卵
     .target 麦伯克·米希瑞克斯
     .goto The Barrens,62.37,37.62
     .turnin 821 >>交任务 老陈的空酒桶
@@ -2713,7 +2713,7 @@ step
     .subzoneskip 380
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_曼科里克|r 和 |cRXP_FRIENDLY_图加|r 对话
-    .turnin 899 >>交任务复仇的怒火
+    .turnin 899 >>交任务  复仇的怒火
     .target 曼科里克
     .goto The Barrens,51.95,31.58
     .turnin 880 >>交任务  变异的生物
@@ -2772,7 +2772,7 @@ step << Warlock
 step << Warlock
     .goto Orgrimmar,47.05,46.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡祖尔|r 对话
-    .turnin 1507 >>交任务 噬魂者
+    .turnin 1507 >>交任务  噬魂者
     .accept 1508 >>接受任务 盲眼卡祖尔
     .target 卡祖尔
 step << Warlock
@@ -2786,7 +2786,7 @@ step << Warlock
 step << Warlock
     .goto Orgrimmar,37.03,59.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赞卡沙|r 对话
-    .turnin 1508 >>交任务盲眼卡祖尔
+    .turnin 1508 >>交任务  盲眼卡祖尔
     .accept 1509 >>接受任务多格兰的消息
     .target 赞卡沙
 step
@@ -3064,7 +3064,7 @@ step << Shaman
     #label CallofWater01
     .goto The Barrens,65.83,43.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊斯伦|r 对话
-    .turnin 1528 >>交任务 水之召唤
+    .turnin 1528 >>交任务水之召唤
     .accept 1530 >>接受任务 水之召唤
     .target 水之先知伊斯伦
 step << Shaman
@@ -3085,7 +3085,7 @@ step
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫布瑞姆|r 对话
     >>|cRXP_FRIENDLY_赫布瑞姆|r |cRXP_WARN_会开启一个 45 分钟的限时任务|r
-    .accept 853 >>接受任务药剂师扎玛
+    .accept 853 >>接受任务 药剂师扎玛
     .target 药剂师赫布瑞姆
     .isQuestTurnedIn 848
     .isQuestAvailable 853
@@ -3150,7 +3150,7 @@ step
     .goto The Barrens,44.85,59.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔恩·星眼|r 对话
     .accept 883 >>接受任务 拉克塔曼尼
-    .turnin 883 >>交任务拉克塔曼尼
+    .turnin 883 >>交任务  拉克塔曼尼
     .target 乔恩·星眼
     .itemcount 5099,1
 step
@@ -3195,7 +3195,7 @@ step << Shaman
     #label CallofWater2
     .goto The Barrens,43.42,77.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布瑞恩|r 对话
-    .turnin 1530 >>交任务 水之召唤
+    .turnin 1530 >>交任务水之召唤
     .accept 1535 >>接受任务 水之召唤
     .target 布瑞恩
 step << Shaman
@@ -3205,7 +3205,7 @@ step << Shaman
 step << Shaman
     .goto The Barrens,43.42,77.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布瑞恩|r 对话
-    .turnin 1535 >>交任务 水之召唤
+    .turnin 1535 >>交任务水之召唤
     .accept 1536 >>接受任务 水之召唤
     .target 布瑞恩
 step << Shaman
@@ -3227,7 +3227,7 @@ step
     #label ThunderhawkTurnin
     .goto The Barrens,44.85,59.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔恩·星眼|r 对话
-    .turnin 913 >>交任务 雷鹰的嘶鸣
+    .turnin 913 >>交任务  雷鹰的嘶鸣
     .accept 874 >>接受任务 玛伦·星眼
     .target 乔恩·星眼
 step << !Tauren
@@ -4111,7 +4111,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希雷斯|r 和 |cRXP_FRIENDLY_玛卡巴|r 对话
     .turnin 1062 >>交任务地精侵略者
     .timer 4,地精侵略者 剧情
-    .accept 1063 >>接受任务巫婆长老
+    .accept 1063 >>接受任务 巫婆长老
     .accept 1068 >>接受任务伐木机
     .target 希雷斯·碎石
     .goto The Barrens,35.26,27.88
@@ -4140,7 +4140,7 @@ step << Warlock
 step
     .goto Stonetalon Mountains,71.25,95.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_辛吉拉|r 对话
-    .turnin 6461 >>交任务盗窃的蜘蛛
+    .turnin 6461 >>交任务  盗窃的蜘蛛
     .target 辛吉拉
 step << skip
     .goto Stonetalon Mountains,74.69,98.10
@@ -4293,7 +4293,7 @@ step
 step
     .goto Stonetalon Mountains,47.20,61.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马格兰|r 对话
-	.turnin 6284 >>交任务 贝瑟莱斯
+	.turnin 6284 >>交任务  贝瑟莱斯
     .target 马格兰
 	.isQuestComplete 6284
     .group
@@ -4466,7 +4466,7 @@ step
     .accept 6462 >>接受任务巨魔符咒
     .target 米苏瓦
     .goto Ashenvale,11.65,34.85
-    .accept 6442 >>接受任务佐拉姆海岸的纳迦
+    .accept 6442 >>接受任务 佐拉姆海岸的纳迦
     .target 玛鲁凯
     .goto Ashenvale,11.69,34.90
     .group
@@ -4481,14 +4481,14 @@ step
     .accept 6462 >>接受任务巨魔符咒
     .target 米苏瓦
     .goto Ashenvale,11.65,34.85
-    .accept 6442 >>接受任务佐拉姆海岸的纳迦
+    .accept 6442 >>接受任务 佐拉姆海岸的纳迦
     .target 玛鲁凯
     .goto Ashenvale,11.69,34.90
 step
     .goto Ashenvale,12.06,34.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆格拉什|r 对话
     >>|cRXP_WARN_这将开始一个护送任务。小心，任务难度较高|r
-    .accept 6641,1 >>接受任务鞭笞者沃尔沙
+    .accept 6641,1 >>接受任务 鞭笞者沃尔沙
     .target 穆格拉什
     .group 2
 step
@@ -4631,10 +4631,10 @@ step
     .isQuestComplete 6564
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战歌信使|r 和 |cRXP_FRIENDLY_玛鲁凯|r 对话
-    .turnin 6641 >>交任务鞭笞者沃尔沙
+    .turnin 6641 >>交任务  鞭笞者沃尔沙
     .target 战歌信使
     .goto Ashenvale,12.22,34.21
-    .turnin 6442 >>交任务佐拉姆海岸的纳迦
+    .turnin 6442 >>交任务  佐拉姆海岸的纳迦
     .target 玛鲁凯
     .goto Ashenvale,11.69,34.90
     .isQuestComplete 6641
@@ -4642,7 +4642,7 @@ step
 step
     .goto Ashenvale,11.69,34.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛鲁凯|r 对话
-    .turnin 6442 >>交任务佐拉姆海岸的纳迦
+    .turnin 6442 >>交任务  佐拉姆海岸的纳迦
     .target Marukai
 step
     .goto Ashenvale,11.90,34.53
@@ -4702,14 +4702,14 @@ step << !Warlock
 step << Warlock
     .goto The Barrens,44.62,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_劳格玛|r 对话
-    .turnin 1511 >>交任务肯兹格拉的伤药
+    .turnin 1511 >>交任务  肯兹格拉的伤药
     .accept 1515 >>接受任务多格兰之囚
     .target 步兵劳格玛
 step << Warlock
     .goto The Barrens,43.31,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多格兰|r 对话
-    .turnin 1515 >>交任务多格兰之囚
-    .accept 1512 >>接受任务爱的礼物
+    .turnin 1515 >>交任务  多格兰之囚
+    .accept 1512 >>接受任务 爱的礼物
     .target 步兵多格兰
 step << Warlock
     .goto The Barrens,44.45,59.16
@@ -4770,7 +4770,7 @@ step << Rogue
     .train 1856 >>学习 |T132331:0|t[消失]
     .train 1725 >>学习 |T132289:0|t[扰乱]
     .train 1785 >>学习 |T132320:0|t[潜行 等级2]
-    .accept 2460 >>接受任务 碎手军礼
+    .accept 2460 >>接受任务碎手军礼
     .target 申苏尔
 step << Rogue
     .goto Orgrimmar,43.05,53.73
@@ -4780,7 +4780,7 @@ step << Rogue
 step << Rogue
     .goto Orgrimmar,43.05,53.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_申苏尔|r 对话
-    .turnin 2460 >>交任务碎手军礼
+    .turnin 2460 >>交任务  碎手军礼
     .accept 2458 >>接受任务 卧底密探
     .target 申苏尔
 step << Rogue
@@ -4820,7 +4820,7 @@ step << Mage
     .xp <24,1
 step << Mage
     .goto Orgrimmar,38.66,85.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_索乌|r 在小屋顶部对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于小屋顶部的|r |cRXP_FRIENDLY_索乌|r 对话
     .train 3567 >>训练 |T135759:0|t[传送：奥格瑞玛]
     .target 索乌
 step << Troll Priest
@@ -4964,7 +4964,7 @@ step << Rogue
     .goto Orgrimmar,43.05,53.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_申苏尔|r 对话
     .turnin 2478 >>交任务  基本不可能的任务
-    .accept 2479 >>接受任务希诺特的帮助
+    .accept 2479 >>接受任务 希诺特的帮助
     .target 申苏尔
 step << Rogue
     .goto Orgrimmar,42.10,49.49

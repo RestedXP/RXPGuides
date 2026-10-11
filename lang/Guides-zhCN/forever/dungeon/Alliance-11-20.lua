@@ -1899,7 +1899,7 @@ step << Shaman
     .goto 1432/0,-3146.000,-4837.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Norric Lochthane::258043|r 对话
     .target Norric Lochthane::258043
-    .turnin 94494 >>交任务 水之召唤
+    .turnin 94494 >>交任务水之召唤
 	.accept 94495 >>接受任务 水之召唤
 step << Shaman
 	#label CallofWater
@@ -1928,13 +1928,13 @@ step << Shaman
     #requires DunAlgaz1
     .goto 1437/0,-3085.500,-4196.100,10,0
     .goto 1437/0,-3103.100,-4212.600,12,0
-    .goto 1437/0,-3098.200,-4242.600,7 >>在洞穴内登上斜坡前往 |cRXP_FRIENDLY_Hervdana Saegrund::258203|r
+    .goto 1437/0,-3098.200,-4242.600,7 >>沿着斜坡向上前往洞穴内的 |cRXP_FRIENDLY_Hervdana Saegrund::258203|r
 step << Shaman
     #label WaterTotem1
     .goto 1437/0,-3109.300,-4257.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Hervdana Saegrund::258203|r 对话
     .target Hervdana Saegrund::258203
-    .turnin 94495 >>交任务 水之召唤
+    .turnin 94495 >>交任务水之召唤
     .accept 94497 >>接受任务 水之召唤  
 step << Shaman
     .goto 1437/0,-3069.100,-4210.100
@@ -1944,12 +1944,12 @@ step << Shaman
     #completewith next
     .goto 1437/0,-3085.500,-4196.100,10,0
     .goto 1437/0,-3103.100,-4212.600,12,0
-    .goto 1437/0,-3098.200,-4242.600,7 >>返回洞穴内登上斜坡前往 |cRXP_FRIENDLY_Hervdana Saegrund::258203|r
+    .goto 1437/0,-3098.200,-4242.600,7 >>沿着斜坡向上回到洞穴内的 |cRXP_FRIENDLY_Hervdana Saegrund::258203|r
 step << Shaman
     .goto 1437/0,-3109.300,-4257.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Hervdana Saegrund::258203|r 对话
     .target Hervdana Saegrund::258203
-    .turnin 94497 >>交任务 水之召唤
+    .turnin 94497 >>交任务水之召唤
     .accept 94499 >>接受任务 水之召唤
 
 --sham can hs to sw

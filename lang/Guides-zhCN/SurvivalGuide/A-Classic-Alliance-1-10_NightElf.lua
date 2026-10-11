@@ -175,7 +175,7 @@ step
 step
     .goto Teldrassil,60.899,41.961
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪兰妮亚·银辉|r 对话
-    .turnin 3521 >>交任务 埃沃隆的解药
+    .turnin 3521 >>交任务  埃沃隆的解药
     .target 迪兰妮亚·月光
     .accept 3522 >>接受任务 埃沃隆的解药
 step << !Priest
@@ -200,7 +200,7 @@ step << Priest
 	.goto Teldrassil,59.174,40.442
     .target 珊达
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊达|r 对话
-	.turnin 3119 >>交任务 神圣符记
+	.turnin 3119 >>交任务  神圣符记
 	.trainer >>训练你的职业技能
 step
     .goto Teldrassil,57.807,41.653
@@ -220,7 +220,7 @@ step
     .goto Teldrassil,54.593,32.992
     .target 埃沃隆
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃沃隆|r 对话
-    .turnin 3522 >>交任务 埃沃隆的解药
+    .turnin 3522 >>交任务  埃沃隆的解药
 step
     #completewith next
     .goto Teldrassil,56.73,31.17,25 >>进入暗丝洞穴
@@ -813,7 +813,7 @@ step << Hunter
     .goto Teldrassil,38.32,34.36
     .target 哨兵阿瑞尼亚·碎云
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r 对话
-    .turnin 938 >>交任务 密斯特
+    .turnin 938 >>交任务  密斯特
 step << Hunter
 	#era/som
     #completewith xp10
@@ -838,7 +838,7 @@ step << !Hunter
     .turnin 937 >>交任务 神谕林地
     .target 哨兵阿瑞尼亚·碎云
     .accept 940 >>接受任务 泰达希尔
-    .turnin 938 >>交任务 密斯特
+    .turnin 938 >>交任务  密斯特
 step << !Hunter
     #era
     #label xp10
@@ -1207,7 +1207,7 @@ step
     .goto Teldrassil,38.3,34.4
     .target 哨兵阿瑞尼亚·碎云
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r 对话
-    .turnin 938 >>交任务 密斯特
+    .turnin 938 >>交任务  密斯特
 step
 	#som << !Hunter
 	#phase 3-6 << !Hunter

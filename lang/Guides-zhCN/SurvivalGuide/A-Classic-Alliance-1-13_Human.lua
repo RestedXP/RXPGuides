@@ -530,7 +530,7 @@ step
 	.goto Elwynn Forest,34.660,84.482
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r，拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .complete 60,1 --Kobold Candle (8)
@@ -557,7 +557,7 @@ step
     .vendor >>|cRXP_WARN_出售垃圾物品|r << !Priest !Warlock !Mage
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r，拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .complete 60,1 --Kobold Candle (8)
@@ -590,7 +590,7 @@ step
     .accept 107 >>接受任务 给威廉·匹斯特的信
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r，拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .complete 60,1 --Kobold Candle (8)
@@ -605,7 +605,7 @@ step
     .accept 87 >>接受任务 金牙
 step
     #completewith KillGoldtooth
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r，拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .complete 60,1 --Kobold Candle (8)
@@ -626,7 +626,7 @@ step
     .unitscan 金牙
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r，拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .complete 60,1 --Kobold Candle (8)
@@ -643,7 +643,7 @@ step
     .goto Elwynn Forest,40.5,82.3,25,0
     .goto Elwynn Forest,37.71,83.76,25,0
     .goto Elwynn Forest,40.5,82.3
-    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r，拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
+    >>击杀 |cRXP_ENEMY_狗头人隧道工|r 和 |cRXP_ENEMY_狗头人矿工|r。拾取他们的 |cRXP_LOOT_蜡烛|r 和 |cRXP_LOOT_金砂|r
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135248:0|t[劣质磨刀石] << Warrior/Rogue
     >>|cRXP_WARN_将任何拾取到的|r |T135232:0|t|cRXP_LOOT_[劣质的石头]|r |cRXP_WARN_制作成|r |T135255:0|t[劣质平衡石] << Paladin
     .complete 60,1 --Kobold Candle (8)
@@ -1031,7 +1031,7 @@ step
 step
     #softcore
     .goto Elwynn Forest,41.7,65.9
-    .vendor >>出售垃圾物品并修理装备
+    .vendor >>垃圾卖店，修理装备
 step << Warrior
     .goto Elwynn Forest,41.087,65.768
     .target 伊尔萨·考宾

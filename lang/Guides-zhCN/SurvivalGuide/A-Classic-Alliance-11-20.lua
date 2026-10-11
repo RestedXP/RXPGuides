@@ -85,7 +85,7 @@ step
     .goto Westfall,52.86,53.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_与旅店老板对话|r
 	>>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
-	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
+	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .vendor >>|T133918:0|t[长嘴泥鳅] |cRXP_WARN_非常便宜|r
 	.target 旅店老板希瑟尔
 step
@@ -400,7 +400,7 @@ step << !NightElf
     .target 萨莫尔·菲斯蒂沃斯
 step << !NightElf
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
     .fp Wetlands>>获取湿地的飞行路径
     .target 谢尔雷·布隆迪尔
 step << Hunter !NightElf
@@ -475,7 +475,7 @@ step << Druid
     >>|cRXP_WARN_这样会更快，你就不用游那么久了|r
 step << Druid
     .goto Moonglade,36.026,41.374
-    .use 15877 >>|cRXP_WARN_在雷姆洛斯神殿|r|cRXP_WARN_使用|r |T134125:0|t[神殿灵珠]
+    .use 15877 >>|cRXP_WARN_在雷姆洛斯神殿使用|r |T134125:0|t[神殿灵珠] |cRXP_WARN_|r
     .complete 29,1 --Complete the Trial of the Lake.
 step << Druid
     .goto Moonglade,36.517,40.104
@@ -512,7 +512,7 @@ step << NightElf Hunter
     .target 弗德瑞克·斯图瓦
 step << NightElf
     .goto StormwindClassic,43.065,26.156
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>升级你的|T135966:0|t[急救]
     .train 3274 >>学习 中级急救
     .target Shaina Fuller
@@ -790,7 +790,7 @@ step
 step
 #map Darkshore
     .goto Felwood,25.15,4.61
-    >>点击 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4723 >>接受任务 搁浅的海洋生物
 step << Druid
     #completewith cure1
@@ -1014,7 +1014,7 @@ step
 #map Darkshore
     #label Beached4728
     .goto Felwood,18.41,49.43
-    >>点击 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4728 >>接受任务 搁浅的海洋生物
 step
     #label BearComplete
@@ -1894,7 +1894,7 @@ step
     .isOnQuest 731
 step
     .goto Ashenvale,13.97,4.10
-    >>点击 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4733 >>接受任务 搁浅的海洋生物
     >>|cRXP_WARN_这个任务可能会非常困难。请与 |cRXP_ENEMY_鱼人|r 逐个交战，否则你可能会同时引到多个|r
     .link https://youtu.be/lfQM3Q-Ag5A >>https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_点击此处查看视频指南|r
@@ -1910,7 +1910,7 @@ step
 step
 #map Darkshore
     .goto Felwood,14.62,60.72
-    >>点击 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4730 >>接受任务 搁浅的海洋生物
 step
     #label Murkdeep
@@ -1959,7 +1959,7 @@ step
 step
 .group
     .goto Darkshore,44.44,84.69
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 995,1
     .isQuestTurnedIn 986
 step

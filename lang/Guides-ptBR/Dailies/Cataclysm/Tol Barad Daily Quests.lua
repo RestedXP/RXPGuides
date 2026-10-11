@@ -45,7 +45,7 @@ step << Horde
 step
     #completewith next
     .zone 84 >>Vá para Ventobravo << Alliance
-	.zone 85 >>Viagem para Orgrimmar << Horde
+	.zone 85 >>Vá para Orgrimmar << Horde
 	.zoneskip 245
 step
     .goto 84,73.220,18.374 << Alliance

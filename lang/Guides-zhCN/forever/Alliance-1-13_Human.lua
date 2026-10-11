@@ -3436,7 +3436,7 @@ step << Warlock
 step << Rogue
     #xprate <1.59
     .goto 1453/0,377.47,-8752.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     >>|cRXP_WARN_只训练|r |T132147:0|t|T132307:0|t[双武器] |cRXP_WARN_和|r |T132307:0|t|T132307:0|t[疾跑]
     .train 674 >>训练 |T132147:0|t[双武器]
     .train 2983 >>训练 |T132307:0|t[疾跑]
@@ -3444,7 +3444,7 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     .goto 1453/0,377.47,-8752.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     .train 674 >>训练 |T132147:0|t[双武器]
     .train 2983 >>训练 |T132307:0|t[疾跑]
     .target 夜行者奥斯伯
@@ -3453,7 +3453,7 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     .goto 1453/0,377.47,-8752.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     .train 1766 >>训练你的职业技能
     .target 夜行者奥斯伯
     .xp <12,1
@@ -3462,7 +3462,7 @@ step << Rogue
     #xprate >1.59
     #optional
     .goto 1453/0,377.47,-8752.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     .trainer >>训练你的职业技能
     .target 夜行者奥斯伯
     .xp <14,1

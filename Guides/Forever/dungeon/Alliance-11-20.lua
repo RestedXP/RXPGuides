@@ -1430,8 +1430,7 @@ step
     .goto 1420/0,6.300,1791.500,25,0
     .goto 1420/0,4.300,1847.500,10,0
     .goto 1458/0,238.400,1872.200,20,0
-    .goto 1458/0,170.700,1804.700
-    .subzone 16611 >>Travel to the Ruins of Lordaeron in Undercity. Enter the dungeon
+    .goto 1458/0,170.700,1804.700,20 >>Travel to the Ruins of Lordaeron in Undercity. Enter the dungeon
     >>|cRXP_WARN_Be careful of higher level |cRXP_ENEMY_Cats|r, |cRXP_ENEMY_Bears|r, |cRXP_ENEMY_Spiders|r or |cRXP_ENEMY_Murlocs|r as you run over|r
     >>|cRXP_WARN_As soon as you enter Undercity you will be automatically PVP flagged, becoming attackable by|r |cRXP_ENEMY_Horde|r
 

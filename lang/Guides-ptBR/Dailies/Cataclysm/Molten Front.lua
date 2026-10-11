@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith OpeningtheDoor
-	.zone 85 >>Viagem para Orgrimmar << Horde
+	.zone 85 >>Vá para Orgrimmar << Horde
 	.zone 84 >>Vá para Ventobravo << Alliance
 	.zoneskip 198
 step
@@ -1614,7 +1614,7 @@ step
 step
     #optional
     #completewith HyjalQuests
-	.zone 85 >>Viagem para Orgrimmar << Horde
+	.zone 85 >>Vá para Orgrimmar << Horde
 	.zone 84 >>Vá para Ventobravo << Alliance
 	.zoneskip 198
     .zoneskip 338
@@ -2496,7 +2496,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Matogarra|r
     >>|cRXP_WARN_NOTA: Se você acabou de entregar [As Guardiãs das Sombras] missão e |cRXP_FRIENDLY_Matogarra|r não está oferecendo a você esta missão ainda, você só pode aceitá-la após as missões diárias reiniciarem. Verifique novamente amanhã|r
     .target Matoclaw
-    .accept 29215 >>Aceite A Caça Começa
+    .accept 29215 >>Aceite A caçada começa
 step
     #completewith ITF
     .goto 198,27.484,56.394
@@ -2505,7 +2505,7 @@ step
     .isOnQuest 29215
     .goto 338,47.584,90.558
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão Saynna Tempestapasso|r
-    .turnin 29215 >>Entregue A Caça Começa
+    .turnin 29215 >>Entregue A caçada começa
     .target Captain Saynna Stormrunner
 step
     #completewith next
@@ -3299,7 +3299,7 @@ step
 step
     #optional
     #completewith HyjalQuests
-	.zone 85 >>Viagem para Orgrimmar << Horde
+	.zone 85 >>Vá para Orgrimmar << Horde
 	.zone 84 >>Vá para Ventobravo << Alliance
 	.zoneskip 198
     .zoneskip 338

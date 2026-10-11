@@ -376,7 +376,7 @@ step << Priest cata
     .goto Azuremyst Isle,80.01,49.42,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zalduun|r
     >>|cRXP_FRIENDLY_Zalduun|r |cRXP_WARN_patrulha ligeiramente|r
-    .train 17 >>Treine |T135940:0|t[Palavra de Poder: Escudo]
+    .train 17 >>Aprenda |T135940:0|t[Palavra de Poder: Escudo]
     .target Zalduun
 step << Paladin cata
     #loop
@@ -565,7 +565,7 @@ step << Warrior/Rogue/Paladin
     >>|cRXP_WARN_Isso permitirá que você crie|r |T135248:0|t [Pedras de Amolar Ásperas] |cRXP_WARN_que aumentam seu dano corpo a corpo em 2|r << Warrior/Rogue
     >>|cRXP_WARN_Isso permitirá que você crie|r |T135255:0|t [Contrapesos Ásperos] |cRXP_WARN_que aumentam seu dano corpo a corpo em 2|r << Paladin
     >>|cRXP_WARN_Se você não quiser fazer isso, pule esta etapa|r
-    .train 2018 >>Aprenda |T136241:0|t[Ferraria]
+    .train 2018 >>Treine |T136241:0|t [Ferraria]
     .target Blacksmith Calypso
     .train 2575,3 --Mining
 step
@@ -654,7 +654,7 @@ step << Hunter cata
     .goto Azuremyst Isle,49.780,51.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Acteon|r
     .train 5116 >>Treine |T135860:0|t[Tiro de Concussão]
-    .train 82243 >>Treine |T132269:0|t[Aparar]
+    .train 82243 >>Aprenda |T132269:0|t[Aparar]
     .target Acteon
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Anacoreta Fateema|r e |cRXP_FRIENDLY_Daedal|r

@@ -890,7 +890,7 @@ step
 step
     .goto 49,22.043,42.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Martie Jainrose|r
-    .turnin 26509 >>Entregue O Penetra
+    .turnin 26509 >>Entregue O penetra
     .target Martie Jainrose
 step
     #optional
@@ -1013,7 +1013,7 @@ step
 step
     .goto 49,22.043,42.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Martie Jainrose|r
-    .turnin 26509 >>Entregue O Penetra
+    .turnin 26509 >>Entregue O penetra
     .target Martie Jainrose
 step
     #loop

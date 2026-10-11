@@ -134,7 +134,7 @@ step
     .accept 3903 >>接受任务 米莉·奥斯沃斯
 step
     .goto 1429/0,-120.17,-8897.82
-    .vendor >>出售垃圾物品并修理装备
+    .vendor >>垃圾卖店，修理装备
 step
     .goto 1429/0,-363.13,-8909.39,60,0
     .goto 1429/0,-120.17,-8673.31,60,0
@@ -214,7 +214,7 @@ step
     .goto 1429/0,164.44,-9339.91,200 >>死掉之后在墓地复活，或者跑到闪金镇
 step
     .goto 1429/0,88.08,-9464.89
-    .vendor >>出售垃圾物品并修理装备
+    .vendor >>垃圾卖店，修理装备
 step
     .goto 1429/0,74.02,-9465.52
 >>与|cRXP_FRIENDLY_治安官杜汉|r 对话
@@ -363,7 +363,7 @@ step
     .accept 40 >>接受任务 鱼人的威胁
 step
     .goto 1429/0,88.08,-9464.89
-    .vendor >>出售垃圾物品并修理装备
+    .vendor >>垃圾卖店，修理装备
 step
     .goto 1429/0,74.02,-9465.52
 >>与|cRXP_FRIENDLY_治安官杜汉|r 对话
@@ -374,7 +374,7 @@ step
     .accept 76 >>接受任务 玉石矿洞
 step
     .goto 1429/0,88.08,-9464.89
-    .vendor >>出售垃圾物品并修理装备
+    .vendor >>垃圾卖店，修理装备
 step
     .goto 1429/0,33.14,-9460.75
 >>与|cRXP_FRIENDLY_威廉·匹斯特|r 对话
@@ -437,7 +437,7 @@ step
     .accept 5545 >>接受任务 木材危机
 step
     .goto 1429/0,-1355.79,-9469.52
-    .vendor >>出售垃圾物品并修理装备
+    .vendor >>垃圾卖店，修理装备
 step
     #sticky
     #completewith Bundles
@@ -591,7 +591,7 @@ step
     .accept 1097 >>接受任务 艾尔默的任务
 step
     .goto 1429/0,88.08,-9464.89
-    .vendor >>出售垃圾物品并修理装备
+    .vendor >>垃圾卖店，修理装备
 step
     .goto 1429/0,33.14,-9460.75
 .target 威廉·匹斯特
@@ -774,7 +774,7 @@ step
 step
     #completewith next
     .goto 1426/0,-1591.24,-5712.47
-    .vendor >>出售垃圾物品并修理装备
+    .vendor >>垃圾卖店，修理装备
 step
     .goto 1426/0,-1581.39,-5715.75
 .target Senator Mehr Stonehallow
@@ -851,7 +851,7 @@ step
 step
     .goto 1426/0,328.18,-6214.85
 >>与|cRXP_FRIENDLY_斯登·粗臂|r 对话
-    .turnin 179 >>交任务矮人的交易
+    .turnin 179 >>交任务 矮人的交易
 .target 斯登·粗臂
     .accept 233 >>接受任务 寒脊山谷的送信任务
     .accept 3114 >>接受任务 雕文备忘录
@@ -1388,7 +1388,7 @@ step
 step
     #completewith next
     .goto 1426/0,-1591.24,-5712.47
-    .vendor >>出售垃圾物品并修理装备
+    .vendor >>垃圾卖店，修理装备
 step
     .goto 1426/0,-1600.30,-5726.590
 .target Foreman Stonebrow
@@ -1414,7 +1414,7 @@ step
 step
     #completewith next
     .goto 1426/0,-1591.24,-5712.47
-    .vendor >>出售垃圾物品并修理装备
+    .vendor >>垃圾卖店，修理装备
 step
     .goto 1426/0,-1581.39,-5715.75
 .target Senator Mehr Stonehallow
@@ -1841,7 +1841,7 @@ step
     .goto 1437/0,-1014.03,-3911.92,40,0
     .goto 1437/0,-889.97,-3809.94,40,0
     >>打开这个链接，并在另一个屏幕上跟随它。
-    >>走无伤翻山路线。从丹莫罗直接翻山前往湿地
+    >>走无伤翻山路线，从丹莫罗直接翻山前往湿地
     >>走水路的时候小心避开海里的鳄鱼
     .link https://www.youtube.com/watch?v=9afQTimaiZQ >>https://www.youtube.com/watch?v=9afQTimaiZQ >> 点击此处查看参考视频
     .goto 1437/0,-889.97,-3809.94,80 >>前往米奈希尔港，湿地

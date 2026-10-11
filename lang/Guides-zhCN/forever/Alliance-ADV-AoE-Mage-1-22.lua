@@ -1498,7 +1498,7 @@ step
 step
     #xprate <1.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_斯登·粗臂|r 和 |cRXP_FRIENDLY_巴尔林·霜锤|r 对话
-    .turnin 179,3 >>交任务矮人的交易
+    .turnin 179,3 >>交任务 矮人的交易
     .accept 233 >>接受任务 寒脊山谷的送信任务
     .accept 3114 >>接受任务 雕文备忘录
     .target +Sten Stoutarm
@@ -1510,7 +1510,7 @@ step
     #xprate >1.09
     .goto 1426/0,328.18,-6214.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯登·粗臂|r 对话
-    .turnin 179,3 >>交任务矮人的交易
+    .turnin 179,3 >>交任务 矮人的交易
     .accept 233 >>接受任务 寒脊山谷的送信任务
     .accept 3114 >>接受任务 雕文备忘录
     .target 斯登·粗臂
@@ -1957,7 +1957,7 @@ step
 	.goto 1426/0,-615.60,-5674.38,40,0
 	.goto 1426/0,-641.21,-5660.59,40,0
 	.goto 1426/0,-730.84,-5624.15,40,0
-    .xp 5+2690 >>刷怪达到 2690+/2800 经验
+    .xp 5+2690 >>刷怪达到2690+/2800经验
     .mob 黑熊幼崽
     .mob 峭壁野猪
 step
@@ -2221,7 +2221,7 @@ step
     >>|cRXP_WARN_确保对他造成 51% 以上的伤害，以获得击杀判定|r
     .mob 冰爪熊
 step
-    >>与 |cRXP_FRIENDLY_雷杰德|r 和 |cRXP_FRIENDLY_马莱斯|r 对话
+    >>与 |cRXP_FRIENDLY_雷杰德|r 和 |cRXP_FRIENDLY_Marleth|r 对话
     .turnin 318 >>交任务 艾沃沙酒
     .accept 319 >>接受任务 艾沃沙酒
     .accept 315 >>接受任务 完美烈酒
@@ -2480,7 +2480,7 @@ step
     .mob 雪豹
     .isQuestTurnedIn 384
 step
-    >>与 |cRXP_FRIENDLY_雷杰德|r 和 |cRXP_FRIENDLY_马莱斯|r 对话
+    >>与 |cRXP_FRIENDLY_雷杰德|r 和 |cRXP_FRIENDLY_Marleth|r 对话
     .turnin 315,1 >>交任务 完美烈酒
     .accept 413 >>接受任务 微光酒
     .turnin 319 >>交任务 艾沃沙酒
@@ -3070,7 +3070,7 @@ step
     >>透过墙壁与|cRXP_FRIENDLY_萨莫尔|r对话
     >>|cRXP_WARN_注意：要实现此操作，请在选项菜单的“游戏功能 -> 控制”中绑定“与目标互动”按键|r
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1457 >>|cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
+    .vendor 1457 >>|cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
     .target 萨莫尔·菲斯蒂沃斯
     .money <0.03
 step
@@ -3088,7 +3088,7 @@ step
     .goto 1437/0,-715.87,-3697.48
     >>隔墙与 |cRXP_FRIENDLY_德温|r 对话
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1453 >>|cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
+    .vendor 1453 >>|cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
     .target 德温·晨光
     .money <0.03
 step
@@ -3625,7 +3625,7 @@ step
     >>透过墙壁与|cRXP_FRIENDLY_萨莫尔|r对话
     >>|cRXP_WARN_注意：要实现此操作，请在选项菜单的“游戏功能 -> 控制”中绑定“与目标互动”按键|r
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1457 >>|cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
+    .vendor 1457 >>|cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
     .target 萨莫尔·菲斯蒂沃斯
     .money <0.03
 step
@@ -3643,7 +3643,7 @@ step
     .goto 1437/0,-715.87,-3697.48
     >>隔墙与 |cRXP_FRIENDLY_德温|r 对话
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1453 >>|cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
+    .vendor 1453 >>|cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
     .target 德温·晨光
     .money <0.03
 step
@@ -4666,7 +4666,7 @@ step << Gnome
     .use 17117
 step
     >>与|cRXP_FRIENDLY_蒙提|r 对话
-    >>|cRXP_WARN_等剧情结束|r << Gnome
+    >>|cRXP_WARN_等待剧情演出完成|r << Gnome
     .turnin 6661 >>交任务 捕捉矿道老鼠 << Gnome
     .timer 13,捕捉矿道老鼠剧情表演 << Gnome
     .accept 6662 >>接受任务 我的兄弟，尼普希
@@ -5327,7 +5327,7 @@ step
     .collect 12342,1,4673,1 --Blackwood Grain Sample (1)
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>杀死 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker
 step
@@ -5353,7 +5353,7 @@ step
     .itemcount 4358,1
 step
     #completewith Talisman
-    >>击杀 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>杀死 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker
 step
@@ -5378,7 +5378,7 @@ step
 step
     #label Talisman
     .goto 1439/1,-480.05,6888.84
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     >>击杀|cRXP_ENEMY_萨巴克希斯|r
     >>拾取掉落地上的|cRXP_PICK_萨布拉克斯的恶魔之袋|r，从中获得|cRXP_LOOT_堕落护符|r
     >>|cRXP_WARN_该操作有 5 秒施法时间|r
@@ -5403,7 +5403,7 @@ step
     .goto 1439/1,-499.70,7221.14,60,0
     .goto 1439/1,-674.59,7333.80,60,0
     .goto 1439/1,-637.91,7415.02,60,0
-    >>击杀 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>杀死 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker
 step
@@ -5424,7 +5424,7 @@ step
     .goto 1439/1,-499.70,7221.14,60,0
     .goto 1439/1,-674.59,7333.80,60,0
     .goto 1439/1,-637.91,7415.02
-    >>击杀 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
+    >>杀死 |cRXP_ENEMY_月夜猛虎|r。拾取它们的 |cRXP_LOOT_月夜猛虎的牙齿|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker
 step
@@ -5554,7 +5554,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith JenneaT
-    +|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务.这些布料在升级过程中会自然获得|r
+    +|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
 step << skip
     #completewith next
     .goto 1453/0,661.38,-8858.16,12,0
@@ -6242,7 +6242,7 @@ step
     #label Bank3
     .goto 1453/0,614.33,-8932.92
     >>与|cRXP_FRIENDLY_牛顿|r 交谈
-    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务.这些布料在升级过程中会自然获得|r
+    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
     .bankdeposit 2998,4371,1711,1478,1712,3012,1180,1181,3013,17056,2592,2998,1941 >>将以下物品存入银行：
     >>|T133024:0|t[青铜管]
     >>|T134943:0|t|T134943:0|t[卷轴]
@@ -7087,7 +7087,7 @@ step
     #label Bank
     .goto 1453/0,614.33,-8932.92
     >>与|cRXP_FRIENDLY_牛顿|r 交谈
-    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务.这些布料在升级过程中会自然获得|r
+    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
     .bankdeposit 17056,2592,1015,4654 >>将以下物品存入银行：
     >>|T132917:0|t[轻羽毛]
     >>|T132911:0|t|T132911:0|t[毛料]
@@ -7353,8 +7353,8 @@ step
 step
     .goto 1431/0,-1200.85,-10593.99
     >>与 |cRXP_FRIENDLY_伊莱恩|r 对话
-    .accept 163 >>接受任务 乌鸦岭
-    .accept 164 >>接受任务 斯温的货物
+    .accept 163 >>接受任务乌鸦岭
+    .accept 164 >>接受任务斯温的货物
     .accept 165 >>接受任务隐士
     .target 艾莱尼·卡尔文
 step
@@ -7367,7 +7367,7 @@ step
     .goto 1431/0,-1320.73,-10581.75
     >>与 |cRXP_FRIENDLY_维克托|r 对话
     .accept 174 >>接受任务眺望群星
-    .turnin 174 >>交任务 眺望群星
+    .turnin 174 >>交任务眺望群星
     .accept 175 >>接受任务眺望群星
     .target 维克托·安特拉斯
     .itemcount 4371,1
@@ -7381,7 +7381,7 @@ step
 step
     .goto 1431/0,-1366.09,-10779.03
     >>与|cRXP_FRIENDLY_玛丽|r交谈
-    .turnin 175 >>交任务 眺望群星
+    .turnin 175 >>交任务眺望群星
     .accept 177 >>接受任务眺望群星
     .target 盲眼玛丽
     .isQuestTurnedIn 174
@@ -7503,9 +7503,9 @@ step
     .target 拜里弗·科纳彻尔
 step
     >>与 |cRXP_FRIENDLY_码头管理员巴伦|r 对话并点击 |cRXP_PICK_通缉告示|r
-    .accept 127 >>接受任务 卖鱼
+    .accept 127 >>接受任务卖鱼
     .goto 1433/0,-2172.59,-9261.02
-    .accept 180 >>接受任务 通缉：范高雷中尉
+    .accept 180 >>接受任务通缉：范高雷中尉
     .goto 1433/0,-2151.53,-9247.12
     .target 码头管理员巴伦
 step
@@ -7759,7 +7759,7 @@ step
     >>与 |cRXP_FRIENDLY_玛蒂|r 对话
     .turnin 130 >>交任务 寻访草药师
     .accept 131 >>接受任务 水仙诉衷情
-    .accept 34 >>接受任务 不速之客
+    .accept 34 >>接受任务不速之客
     .target 玛蒂·詹罗斯
 step
     #completewith next
@@ -7779,7 +7779,7 @@ step
 step
     .goto 1433/0,-2045.38,-9245.82
     >>与 |cRXP_FRIENDLY_玛蒂|r 对话
-    .turnin 34 >>交任务 不速之客
+    .turnin 34 >>交任务不速之客
     .target 玛蒂·詹罗斯
 step
     .goto 1433/0,-1950.08,-9206.58,60,0
@@ -7883,8 +7883,8 @@ step
     .goto 1433/0,-2172.59,-9261.02
     >>与 |cRXP_FRIENDLY_码头管理员巴伦|r 对话
     .turnin 127 >>交任务卖鱼
-    .accept 150 >>接受任务 鱼人偷猎者
-    .turnin 150 >>交任务 鱼人偷猎者
+    .accept 150 >>接受任务鱼人偷猎者
+    .turnin 150 >>交任务鱼人偷猎者
     .goto 1433/0,-2172.59,-9261.02
     .target 码头管理员巴伦
 step
@@ -8047,15 +8047,15 @@ step
 step
     .goto 1455/0,-997.66,-4886.49
     >>与 |cRXP_FRIENDLY_拜雷|r 对话
-    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务.这些布料在升级过程中会自然获得|r
+    >>|cRXP_WARN_注意：每种布料需要准备12组（|r|T132911:0|t|T132905:0|t[毛料]|cRXP_WARN_、|r |T132892:0|t|T132903:0|t[丝绸]|cRXP_WARN_、|r |T132892:0|t|T132892:0|t[魔纹布]|cRXP_WARN_、|r 和 |T132903:0|t|T132903:0|t[符文布]|cRXP_WARN_），用于后续的布料捐献任务。这些布料在升级过程中会自然获得|r
     .bankdeposit 17056,2592,1015,1083,2665,1922,1284 >>将以下物品存入银行：
     >>|T132917:0|t[轻羽毛]
     >>|T132911:0|t|T132911:0|t[毛料]
     >>|T133970:0|t[狼肋排]
     >>|T133277:0|t|T133277:0|t[阿祖拉的铭文饰品]
     >>|T133849:0|t|T133849:0|t[暴风城特产调料]
-    >>|T133629:0|t[斯温的货物]
-    >>|T132761:0|t[一箱马掌]
+    >>|T133629:0|t|T133629:0|t[斯温的货物]
+    >>|T132761:0|t|T132761:0|t[一箱马掌]
     .target 拜雷·石衣
 step
     #label BankDeposit
