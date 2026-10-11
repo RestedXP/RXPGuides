@@ -573,9 +573,11 @@ local spellRequest = {}
 local trainerUpdate = 0
 
 local function ProcessSpells(names, rank)
-    if gameVersion > 90000 or not addon.defaultSpellList then return end
-
-    if addon.game == "FOREVER" and ClassTrainerFrame and ClassTrainerFrame.TitleContainer and ClassTrainerFrame.TitleContainer.TitleText:GetText() == UnitName("pet") then
+	local gt = GetTime()
+    local forever = WOW_PROJECT_ID == WOW_PROJECT_CAMELOT
+    if gameVersion > 90000 or not addon.defaultSpellList or busy == gt then return end
+	busy = gt
+    if forever and ClassTrainerFrame and ClassTrainerFrame.TitleContainer and ClassTrainerFrame.TitleContainer.TitleText:GetText() == UnitName("pet") then
         return
     end
 
@@ -583,6 +585,7 @@ local function ProcessSpells(names, rank)
     local level = UnitLevel("player")
     local entries = {race, addon.player.class}
     local hcserver = C_GameRules and C_GameRules.IsHardcoreActive and C_GameRules.IsHardcoreActive()
+	local spellsToBuy = {}
     for _, entry in pairs(entries) do
         if addon.defaultSpellList[entry] then
             for spellLvl, spells in pairs(addon.defaultSpellList[entry]) do
@@ -600,7 +603,7 @@ local function ProcessSpells(names, rank)
                             local sRank = GetSpellSubtext(spellId)
                             for id, name in pairs(names) do
                                 if sName == name and sRank == rank[id] then
-                                    BuyTrainerService(id)
+                                    table.insert(spellsToBuy,id)
                                 end
                             end
                         end
@@ -609,6 +612,22 @@ local function ProcessSpells(names, rank)
             end
         end
     end
+	table.sort(spellsToBuy)
+	local lastId,start,finish,step
+	if forever then
+        --This has to be traversed from back to front, since buying a spell at the top will reorder the list
+		start,finish,step = #spellsToBuy,1,-1
+	else
+		start,finish,step = 1,#spellsToBuy,1
+	end
+	for i = start,finish,step do
+		local id = spellsToBuy[i]
+		if id ~= lastId then
+			BuyTrainerService(id)
+			--print(id,names[id],rank[id])
+		end
+		lastId = id
+	end
 end
 
 local function OnTrainer()
