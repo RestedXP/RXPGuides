@@ -2056,6 +2056,9 @@ local updateStepIndex = 0
 
 function addon.LegacyUpdateLoop()
     -- NewTicker calls function every updateFrequency, making diff/updateTick/tickRate logic obsolete
+    local profile = addon.settings.profile
+    if profile.standbyMode and not profile.showEnabled then return end
+
     if updateError then
         errorCount = errorCount + 1
     end

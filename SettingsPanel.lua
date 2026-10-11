@@ -683,6 +683,14 @@ function addon.settings:CreateAceOptionsPanel()
                             end
                         end
                     },
+                    standbyMode = {
+                        name = L("Enable Standby Mode"),
+                        desc = L("Pause guide processing when addon is hidden."),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.4,
+                        hidden = isNotAdvanced,
+                    },
                     featuresHeader = {
                         name = _G.FEATURES_LABEL,
                         type = "header",
