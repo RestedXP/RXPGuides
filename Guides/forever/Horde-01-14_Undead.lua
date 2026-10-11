@@ -2588,7 +2588,7 @@ step << Paladin
     .turnin 91282 >>Turn in A Second Home
     .accept 91285 >>Accept Murlocs at the Gates
     .target Breton Samuels
-stepz
+step
     .goto 1420/0,2038.000,2490.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leonid Barthalomew the Revered|r upstairs
     .turnin 96899 >>Turn in Bandarion Keep
