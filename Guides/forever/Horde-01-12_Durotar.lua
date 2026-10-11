@@ -313,11 +313,16 @@ step << Rogue
     .turnin 3083 >>Turn in Encrypted Tablet << Troll Rogue
     .turnin 3088 >>Turn in Encrypted Parchment << Orc Rogue
     .target Rwag
-step << skip
+step
+    #optional
     .goto 1411/1,-4102.400,-588.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kzan Thornslash|r in the back of the cave
     .turnin 97279 >>Turn in Wayward Weapons
     .target Kzan Thornslash
+    .isQuestComplete 97279
+step
+    #optional
+    .abandon 97279 >>Abandon Wayward Weapons
 step << Shaman
     .goto 1411/1,-4102.600,-588.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kzan|r

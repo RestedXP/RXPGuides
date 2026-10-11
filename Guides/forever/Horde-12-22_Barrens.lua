@@ -2090,14 +2090,8 @@ step << Warrior !Skyborne
     .train 227 >>Train Staves
     .target Hanashi
     .money <0.020
-step << Warrior !Skyborne
+step << Warrior/Paladin/Shaman !Skyborne
     #optional
-    .goto 1454/1,-4824.00,2090.540
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
-    .train 197 >>Train Two-Handed Axes
-    .target Hanashi
-    .money <0.010
-step << Shaman !Skyborne
     .goto 1454/1,-4824.00,2090.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 197 >>Train Two-Handed Axes
@@ -3791,9 +3785,10 @@ step
     .complete 92706,1 --Kill Bruuz
     .isOnQuest 92706
 step
-    .goto 1413/1,-3720.300,-920.000
-    >>Click the |cRXP_PICK_Wanted Poster|r
+    .goto 1413/1,-3728.66,-835.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazlowe|r
     .turnin 92706 >>Turn in WANTED: Bruuz
+    .target Gazlowe
     .isQuestComplete 92706
 step
     .goto 1413/1,-3770.20,-928.53
@@ -4424,6 +4419,9 @@ step
     .accept 874 >>Accept Mahren Skyseer
     .accept 6382 >>Accept The Ashenvale Hunt << Hunter
     .target Jorn Skyseer
+step
+    #optional
+    .xp 20 >>Grind to level 20
 step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
@@ -4499,6 +4497,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
     .bankdeposit 5075 >> Deposit your |T134128:0|t[Blood Shards]
     .target Chesmu
+    .isNotOnQuest 868
 step
     .goto 1456/1,38.32,-1300.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Pala|r
@@ -4634,8 +4633,9 @@ step
 step << Druid
     .goto 1456/1,-281.59,-1039.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak|r
-    .trainer >> Train your class spells
-    .accept 27 >> Accept A Lesson to Learn
+    .trainer >>Train your class spells
+    .accept 27 >>Accept A Lesson to Learn
+    .accept 98340 >>Accept The Great Cat Spirit
     .target Turak Runetotem
 step << Druid
     #completewith next
@@ -4644,8 +4644,11 @@ step << Druid
 step << Druid
     .goto 1450/1,-2678.76,8019.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite|r
-    .turnin 27 >> Turn in A Lesson to Learn
-    .accept 28 >> Accept Trial of the Lake
+    .turnin 27 >>Turn in A Lesson to Learn
+    .accept 28 >>Accept Trial of the Lake
+    .turnin 98340 >>Turn in The Great Cat Spirit
+    .accept 98341 >>Accept The Great Windborne Cat Spirit << Skyborne
+    .accept 98405 >>Accept The Great Cat Spirit << !Skyborne
     .target Dendrite Starblaze
 step << Druid
     #completewith next
@@ -4663,6 +4666,65 @@ step << Druid
     .turnin 28 >> Turn in Trial of the Lake
     .accept 30 >> Accept Trial of the Sea Lion
     .target Tajarri
+step << Druid !Skyborne
+    .goto 1450/1,-2640.000,7338.900
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Great Cat Spirit|r
+    .turnin 98405 >>Turn in The Great Cat Spirit
+    .accept 98342 >>Accept The Great Cat Spirit
+    .target Great Cat Spirit
+step << Druid Skyborne
+    .goto 1450/1,-2352.700,7375.600,10,0
+    .goto 1450/1,-2394.300,7361.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
+    .target Avatar of Saeyleenan::272054
+    .turnin 98341 >>Turn in The Great Windborne Cat Spirit
+    .accept 98404 >>Accept The Great Windborne Cat Spirit
+step << Druid
+    #completewith next
+    .goto 1450/1,-3046.700,7534.400
+    --aura 1309054?
+    .subzone 2363 >> Head to the Stormrage Barrow Dens
+step << Druid
+    >>Go deep into the cave, travel across the bridge, look for a cat statue inside an alcove and click on the small orb next to the statue
+    >>Loot |cRXP_LOOT_Relic of the Claw|r
+    .goto 1450/1,-3117.400,7455.300
+    .complete 98404,2 << Skyborne --|1/1 Relic of the Claw
+    .complete 98342,2 << !Skyborne --|1/1 Relic of the Claw
+step << Druid
+    >>Click on the small orb next to the cat statue
+    >>Loot |cRXP_LOOT_Relic of the Silent Shadow|r
+    .goto 1450/1,-3099.200,7485.700
+    .complete 98404,3  << Skyborne --|1/1 Relic of the Silent Shadow
+    .complete 98342,3  << !Skyborne --|1/1 Relic of the Silent Shadow
+step << Druid
+    >>Click on the small orb next to the cat statue
+    >>Loot |cRXP_LOOT_Relic of the Fang|r
+    .goto 1450/1,-3054.100,7476.800
+    .complete 98404,1  << Skyborne --|1/1 Relic of the Fang
+    .complete 98342,1  << !Skyborne --|1/1 Relic of the Fang
+step << Druid !Skyborne
+    .goto 1450/1,-2640.000,7338.900
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Great Cat Spirit|r
+    .turnin 98342 >>Turn in The Great Cat Spirit
+    .accept 98739 >>Accept Blessings of the Great Cat Spirit
+    .target Great Cat Spirit
+step << Druid Skyborne
+    .goto 1450/1,-2395.400,7361.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
+    .target Avatar of Saeyleenan::272054
+    .turnin 98404 >>Turn in The Great Windborne Cat Spirit
+    .accept 98738 >>Accept Blessings of the Great Windborne Cat Spirit
+step << Druid
+    #completewith next
+    .cast 18960 >>|cRXP_WARN_Cast|r |T135758:0|t[Teleport: Moonglade]
+    .zoneskip Moonglade
+step << Druid
+    .goto 1450/1,-2678.200,8021.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze::11802|r
+    .turnin 98738 >>Turn in Blessings of the Great Windborne Cat Spirit << Skyborne
+    .turnin 98739 >>Turn in Blessings of the Great Cat Spirit << !Skyborne
+    .accept 98362 >>Accept To Thunder Bluff
+    .target Dendrite Starblaze::11802
 step << Druid
     .hs >> Hearth to Thunder Bluff
     .use 6948
@@ -4687,6 +4749,11 @@ step << Druid
     .zoneskip Thunder Bluff
     .cooldown item,6948,<0
     .dungeon !WC
+step << Druid
+    .goto 1456/1,-281.59,-1039.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak|r
+    .turnin 98362 >>Turn in Thunder Bluff
+    .target Turak Runetotem
 step << Hunter
     #completewith HunterTraining2
     .goto 1456/1,-123.26,-1394.49,60 >> Travel to the Hunter Rise
@@ -5898,6 +5965,10 @@ step
    .target +Marukai
    .goto 1440/1,1025.88,3331.450
 step
+    #ah
+    #completewith WrathtailHeads
+    +|cRXP_WARN_Save all the|r |T134332:0|t[Shredder Operating Manual Pages] |cRXP_WARN_you loot|r
+step
    .goto 1440/1,1004.54,3341.83
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muglash|r
    >>|cRXP_WARN_This will start an escort quest. Be careful as it's difficult|r
@@ -5927,6 +5998,7 @@ step << Priest
     .subzone 2797,2 >> Find a group now for BFD if you wish to get a big wand upgrade (Gravestone Scepter). You could also wait to do BFD when you are in Ashenvale at level 26-28
     .dungeon BFD
 step
+    #label WrathtailHeads
 	#loop
     .goto 1440/1,1065.09,3574.76,0
 	.goto 1440/1,1073.74,3635.49,50,0
@@ -6211,6 +6283,12 @@ step << Paladin
     .train 1026 >>Train your class spells
     .target Alodan the Hopeful 
     .xp <22,1
+step
+    #ah
+    .goto 1456/1,24.85,-1252.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
+    .bankdeposit 16645,16646,16647,16648,16649,16650,16651,16652,16653,16654,16655,16656 >>Deposit all your |T134332:0|t[Shredder Operating Manual Pages]
+    .target Chesmu
 step << Warlock
     .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
@@ -6486,7 +6564,7 @@ step << Shaman
     .train 905 >> Train your class spells
     .target Kardris Dreamseeker
     .xp <24,1
-step << Troll Warrior/Undead Warrior/Tauren Warrior
+step << Troll Warrior/Undead Warrior/Tauren Warrior/Undead Paladin
     .goto 1454/1,-4824.00,2090.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 197 >>Train Two-Handed Axes

@@ -1654,7 +1654,6 @@ step
     >>|cRXP_BUY_Buy a|r |T132891:0|t[Coarse Thread] |cRXP_BUY_from her|r
     .complete 375,2 --Coarse Thread (1)
     .target Abigail Shiel
-    .itemcount 2876,5 --Duskbat Pelt (5)
     .isQuestAvailable 375
 step
     .goto 1420/0,295.87,2277.93
@@ -1669,7 +1668,6 @@ step
     .accept 359 >>Accept Forsaken Duties
     .target Magistrate Sevren
 step
-    #optional
     .goto 1420/0,236.68,2249.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretchen|r
     .turnin 375 >>Turn in The Chill of Death
@@ -2112,7 +2110,7 @@ step << Warlock
     .goto 1420/0,726.06,1801.95
     >>Loot |cRXP_PICK_Perrine's Chest|r on the ground for |T133733:0|t[Egalin's Grimoire]
     .complete 1473,1 --Egalin's Grimoire (1)
-step
+step << !Priest
     #completewith UCHome
     .goto 1458/0,714.8,1604.24,35,0
     .goto 1458/0,652.73,1623.44,35,0
@@ -2295,7 +2293,7 @@ step << skip
     .goto 1458/0,221.78,1780.14,30 >>|cRXP_WARN_Perform a Logout Skip by positioning your character on the highest part of the lowest staircase until it looks like they're floating, then logging out and back in|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_CLICK HERE for an example|r
     >>|cRXP_WARN_If you can't do this, just run out of Undercity normally|r
-step
+step << !Priest
     #completewith AtWarS
     .goto 1420/0,235.32,1883.89
     .zone Tirisfal Glades >> Exit Undercity
@@ -2590,7 +2588,7 @@ step << Paladin
     .turnin 91282 >>Turn in A Second Home
     .accept 91285 >>Accept Murlocs at the Gates
     .target Breton Samuels
-step
+stepz
     .goto 1420/0,2038.000,2490.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Leonid Barthalomew the Revered|r upstairs
     .turnin 96899 >>Turn in Bandarion Keep

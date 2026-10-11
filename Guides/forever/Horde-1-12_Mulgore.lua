@@ -5,7 +5,6 @@ if faction == "Alliance" then return end
 local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 RXPGuides.RegisterGuide([[
 #forever
-#era/som--h
 << Horde
 #name 1-6 Mulgore
 #version 11
@@ -456,7 +455,6 @@ step
 
 RXPGuides.RegisterGuide([[
 #forever
-#era/som--h
 << Horde
 #name 6-12 Mulgore
 #version 11
