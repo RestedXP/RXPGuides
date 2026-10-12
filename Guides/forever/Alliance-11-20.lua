@@ -652,7 +652,7 @@ step
     .target Baros Alexston
     .isQuestComplete 399
 step << NightElf Druid
-    .goto 1453/0,1347.6192,-8591.2168
+    .goto 1453/0,1095.500,-8741.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theridran|r
     .trainer >>Train your class spells
 	.target Theridran
@@ -2288,7 +2288,7 @@ step << NightElf Rogue/NightElf Warrior/NightElf Hunter
     .goto 1453/0,875.500,-8680.900,10 >> Exit the Stormwind Harbor
 --@TODO add new coords for harbor exit cus no philmor's favor
 step << NightElf Druid
-    .goto 1453/0,1347.6192,-8591.2168
+    .goto 1453/0,1095.500,-8741.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theridran|r
     .trainer >>Train your class spells
 	.target Theridran
