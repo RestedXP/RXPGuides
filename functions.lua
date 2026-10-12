@@ -5741,6 +5741,12 @@ function addon.functions.skipgossip(self, text, ...)
 
 end
 
+function addon.CloseGossip()
+    if addon.IsGamePadEnabled() then return end
+
+    _G.GossipFrame:Hide()
+end
+
 function addon.functions.gossip(self, text, npc, length, flags)
     if type(self) == "string" then
         npc = tonumber(npc)
@@ -5802,7 +5808,7 @@ function addon.functions.gossip(self, text, npc, length, flags)
             end
         end
         element.level = -1
-        _G.GossipFrame:Hide()
+        addon.CloseGossip()
     end
 end
 
@@ -8235,7 +8241,7 @@ function addon.functions.isQuestOffered(self, text, npc, ...)
     if event == "PLAYER_INTERACTION_MANAGER_FRAME_HIDE" then
         element.name = nil
         element.currentNPC = nil
-        _G.GossipFrame:Hide()
+        addon.CloseGossip()
     end
 end
 
