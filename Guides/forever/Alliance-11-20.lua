@@ -4826,7 +4826,7 @@ step << !Shaman
     .target Manifest Clerk Philmor::268511
     .accept 97220 >>Accept Philmor's Favor
 step << Shaman
-    .goto 1453/0,758.4316,-8140.6689
+    .goto 1453/0,634.800,-8390.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
     .accept 2040 >> Accept Underground Assault
     .target Shoni the Shilent
@@ -4834,7 +4834,7 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .accept 167 >> Accept Oh Brother. . .
     .accept 168 >> Accept Collecting Memories
-    .goto 1453/0,585.9322,-8241.1085
+    .goto 1453/0,501.200,-8468.601
     .target Wilder Thistlenettle
 step << Mage
     #completewith next
@@ -4901,7 +4901,7 @@ step << !NightElf
     .target Furen Longbeard
     .isOnQuest 1338
 step << !Shaman
-    .goto 1453/0,758.4316,-8140.6689
+    .goto 1453/0,634.800,-8390.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
     .accept 2040 >> Accept Underground Assault
     .target Shoni the Shilent
@@ -4918,7 +4918,7 @@ step << !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .accept 167 >> Accept Oh Brother. . .
     .accept 168 >> Accept Collecting Memories
-    .goto 1453/0,585.9322,-8241.1085
+    .goto 1453/0,501.200,-8468.601
     .target Wilder Thistlenettle
 step << Rogue
     .goto 1453/0,377.61,-8752.30
@@ -5553,7 +5553,7 @@ step << Rogue
 step
     #optional
     .isQuestComplete 2040
-    .goto 1453/0,758.4316,-8140.6689
+    .goto 1453/0,634.800,-8390.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
     .turnin 2040 >> Turn in Underground Assault
     .target Shoni the Shilent
@@ -5562,14 +5562,14 @@ step
     .isQuestComplete 168
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .turnin 168 >> Turn in Collecting Memories
-    .goto 1453/0,585.9322,-8241.1085
+    .goto 1453/0,501.200,-8468.601
     .target Wilder Thistlenettle
 step
     #optional
     .isQuestComplete 167
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .turnin 167 >> Turn in Oh Brother. . .
-    .goto 1453/0,585.9322,-8241.1085
+    .goto 1453/0,501.200,-8468.601
     .target Wilder Thistlenettle
 step << Warrior/Paladin
     #ah
