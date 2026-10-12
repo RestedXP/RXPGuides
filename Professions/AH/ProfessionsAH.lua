@@ -11,20 +11,41 @@ local lower, split, trim = string.lower, string.split, string.trim
 local CanSendAuctionQuery, QueryAuctionItems, SetSelectedAuctionItem = _G.CanSendAuctionQuery, _G.QueryAuctionItems, _G.SetSelectedAuctionItem
 local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo = _G.GetNumAuctionItems, _G.GetAuctionItemLink, _G.GetAuctionItemInfo
 local GetContainerNumSlots, GetContainerItemInfo = _G.C_Container.GetContainerNumSlots, _G.C_Container.GetContainerItemInfo
+local GetNumItemSearchResults, GetItemSearchResultInfo =
+    (_G.C_AuctionHouse and _G.C_AuctionHouse.GetNumItemSearchResults) or nil,
+    (_G.C_AuctionHouse and _G.C_AuctionHouse.GetItemSearchResultInfo) or nil
+local GetNumCommoditySearchResults, GetCommoditySearchResultInfo =
+    (_G.C_AuctionHouse and _G.C_AuctionHouse.GetNumCommoditySearchResults) or nil,
+    (_G.C_AuctionHouse and _G.C_AuctionHouse.GetCommoditySearchResultInfo) or nil
+local SendSearchQuery = (_G.C_AuctionHouse and _G.C_AuctionHouse.SendSearchQuery) or nil
+local IsThrottledMessageSystemReady = (_G.C_AuctionHouse and _G.C_AuctionHouse.IsThrottledMessageSystemReady) or nil
+local MakeItemKey = (_G.C_AuctionHouse and _G.C_AuctionHouse.MakeItemKey) or nil
 local GetNumSkillLines, GetSkillLineInfo = _G.GetNumSkillLines, _G.GetSkillLineInfo
 local GetNumFactions, GetFactionInfo = _G.GetNumFactions, _G.GetFactionInfo
 local GetMoney, CopyTable = _G.GetMoney, _G.CopyTable
+local GetItemNameByID = _G.C_Item.GetItemNameByID
 
 -- Local renaming
 local PROFESSIONS = addon.professions.PROFESSIONS
 
 --local enums
 local EVENTS_TO_REGISTER_AH = {
-    "AUCTION_HOUSE_SHOW",
-    "AUCTION_HOUSE_CLOSED",
-    "AUCTION_HOUSE_DISABLED",
-    "GET_ITEM_INFO_RECEIVED",
-    "AUCTION_ITEM_LIST_UPDATE",
+    --Universal
+    universal = {
+        "AUCTION_HOUSE_SHOW",
+        "AUCTION_HOUSE_CLOSED",
+        "AUCTION_HOUSE_DISABLED",
+    },
+    --Classic
+    classic = {
+        "GET_ITEM_INFO_RECEIVED",
+        "AUCTION_ITEM_LIST_UPDATE",
+    },
+    --Forever
+    forever = {
+        "ITEM_SEARCH_RESULTS_UPDATED",
+        "COMMODITY_SEARCH_RESULTS_UPDATED",
+    },
 }
 
 addon.professions.AH = addon:NewModule("ProfessionsAH", "AceEvent-3.0")
@@ -41,20 +62,28 @@ addon.professions.AH.session = {
     ahIsShowing = false,
     sentQuery = false,
     isScanning = false,
+    isClassic = false,
 }
 
 --Setup
 function addon.professions.AH:Setup()
-    --TODO: add to setting enable/disable
-    if addon.game ~= "CLASSIC" and addon.game ~= "TBC" and addon.game ~= "FOREVER" then return end
-    if addon.professions.session.isInitialized then return end
+    if addon.game ~= "CLASSIC" and addon.game ~= "TBC" and addon.game ~= "MOP" and addon.game ~= "FOREVER" then return end
+    if self.session.isInitialized then return end
+
+    if addon.game ~= "MOP" and addon.game ~= "FOREVER" then
+        self.session.isClassic = true
+    end
 
     --Set the flag to check the players inventory for lingering items
     RXPCData.professions.isInitialScanned = false
 
     --Register events
-    for _, event in ipairs(EVENTS_TO_REGISTER_AH) do
-        self:RegisterEvent(event)
+    for version, events in pairs(EVENTS_TO_REGISTER_AH) do
+        if version == "universal" or (version == "classic" and self.session.isClassic) or (version == "forever" and not self.session.isClassic) then
+            for _, event in ipairs(events) do
+                self:RegisterEvent(event)
+            end
+        end
     end
 
     self.session.isInitialized = true
@@ -113,6 +142,57 @@ function addon.professions.AH:gatherMaterialsToScan(professionName)
     end
 end
 
+--Scan functions
+
+--Scan for classic versions
+local function classicScan(itemID)
+    if not addon.professions.AH.session.isClassic then return end
+
+    --print("scanning - ", itemName)
+    if addon.professions.AH.session.sentQuery then return end
+    if not CanSendAuctionQuery() then
+        C_Timer.After(0.35, function ()
+           classicScan(itemID)
+        end)
+        return
+    end
+
+    local itemName = GetItemNameByID(itemID)
+    addon.professions.AH.session.sentQuery = true
+    -- text, minLevel, maxLevel, page, usable, rarity, getAll, exactMatch, filterData
+    QueryAuctionItems(itemName, nil, nil, addon.professions.AH.session.currentPage, false, nil, false, true, nil)
+end
+
+--Scan for forever version
+local function foreverScan(itemID)
+    if addon.professions.AH.session.isClassic then return end
+
+    if addon.professions.AH.session.sentQuery then return end
+    if not IsThrottledMessageSystemReady() then
+        C_Timer.After(0.35, function ()
+            foreverScan(itemID)
+        end)
+        return
+    end
+
+    local itemKey = MakeItemKey(itemID)
+    print("scanning", GetItemNameByID(itemKey.itemID))
+    addon.professions.AH.session.sentQuery = true
+    SendSearchQuery(itemKey, {}, false)
+end
+
+--Main scan function
+function addon.professions.AH:Scan()
+    if not self.session.ahIsShowing then return end
+
+    self.session.materialIndex = 1
+    if self.session.isClassic then
+        classicScan(self.session.materialsToScan[self.session.materialIndex])
+    else
+        foreverScan(self.session.materialsToScan[self.session.materialIndex])
+    end
+end
+
 --Events
 function addon.professions.AH:AUCTION_HOUSE_SHOW()
     if self.session.isInitialized then
@@ -132,6 +212,7 @@ function addon.professions.AH:AUCTION_HOUSE_DISABLED()
     self.session.ahIsShowing = false
 end
 
+--Classic events
 function addon.professions.AH:GET_ITEM_INFO_RECEIVED(_, itemID, success)
     --print("GET_ITEM_INFO_RECEIVED")
 end
@@ -146,46 +227,78 @@ function addon.professions.AH:AUCTION_ITEM_LIST_UPDATE()
         self.session.currentPage = 0
         self.session.materialIndex = self.session.materialIndex + 1
         if self.session.materialIndex <= #self.session.materialsToScan then
-            self:Scan(self.session.materialsToScan[self.session.materialIndex])
+            classicScan(self.session.materialsToScan[self.session.materialIndex])
         end
         return
     end
 
-    local name, count, buyoutPrice, owner, itemId, hasAllInfo, itemLink
+    local name, count, buyoutPrice, owner, itemID, hasAllInfo, itemLink
     local pricePerItem
     for i = 1, resultCount do
         itemLink = GetAuctionItemLink("list", i)
         -- name, texture, count, quality, canUse, level, levelColHeader, minBid, minIncrement, buyoutPrice, bidAmount, highBidder, bidderFullName, owner, ownerFullName, saleStatus, itemId, hasAllInfo = GetAuctionItemInfo(type, index)
-        name, _, count, _, _, _, _, _, _, buyoutPrice, _, _, _, owner, _, _, itemId, hasAllInfo = GetAuctionItemInfo("list", i)
+        name, _, count, _, _, _, _, _, _, buyoutPrice, _, _, _, owner, _, _, itemID, hasAllInfo = GetAuctionItemInfo("list", i)
 
-        self.session.foundItems[itemId] = self.session.foundItems[itemId] or {}
+        self.session.foundItems[itemID] = self.session.foundItems[itemID] or {}
         if buyoutPrice > 0 then
             --TODO: maybe even coalesce 'nearby' pricePerItems as well
             pricePerItem = ceil(buyoutPrice / count)
-            self.session.foundItems[itemId][pricePerItem] = (self.session.foundItems[itemId][pricePerItem] or 0) + count
+            self.session.foundItems[itemID][pricePerItem] = (self.session.foundItems[itemID][pricePerItem] or 0) + count
         end
     end
 
     self.session.sentQuery = false
     self.session.currentPage = self.session.currentPage + 1
 
-    self:Scan(self.session.materialsToScan[self.session.materialIndex])
+    classicScan(self.session.materialsToScan[self.session.materialIndex])
 end
 
---Scan function
-function addon.professions.AH:Scan(itemName)
-    --print("scanning - ", itemName)
-    if self.session.sentQuery then return end
-    if not CanSendAuctionQuery() then
-        C_Timer.After(0.35, function ()
-            self:Scan(itemName)
-        end)
-        return
-    end
+--Forever events
+function addon.professions.AH:ITEM_SEARCH_RESULTS_UPDATED(_, itemKey, _)
+    if not self.session.sentQuery then return end
 
-    self.session.sentQuery = true
-    -- text, minLevel, maxLevel, page, usable, rarity, getAll, exactMatch, filterData
-    QueryAuctionItems(itemName, nil, nil, self.session.currentPage, false, nil, false, true, nil)
+    local resultCount = GetNumItemSearchResults(itemKey)
+    local result, itemID, price, count
+    for i = 1, resultCount do
+		result = GetItemSearchResultInfo(itemKey, i)
+        if result and result.buyoutAmount then
+            itemID = result.itemKey.itemID
+            price = result.buyoutAmount
+            count = result.quantity
+            self.session.foundItems[itemID] = self.session.foundItems[itemID] or {}
+            self.session.foundItems[itemID][price] = count
+            print("item", itemKey.itemID, i, result.auctionID, result.buyoutAmount)
+        end
+	end
+
+    self.session.sentQuery = false
+    if self.session.materialIndex <= #self.session.materialsToScan then
+        self.session.materialIndex = self.session.materialIndex + 1
+        foreverScan(self.session.materialsToScan[self.session.materialIndex])
+    end
+end
+
+function addon.professions.AH:COMMODITY_SEARCH_RESULTS_UPDATED(_, itemID)
+    if not self.session.sentQuery then return end
+
+    local resultCount = GetNumCommoditySearchResults(itemID)
+    local result,price, count
+    for i = 1, resultCount do
+		result = GetCommoditySearchResultInfo(itemID, i)
+        if result then
+            price = result.unitPrice
+            count = result.quantity
+            self.session.foundItems[itemID] = self.session.foundItems[itemID] or {}
+            self.session.foundItems[itemID][price] = count
+            print("comm", itemID, i, result.quantity, result.auctionID, result.unitPrice)
+        end
+	end
+
+    self.session.sentQuery = false
+    if self.session.materialIndex <= #self.session.materialsToScan then
+        self.session.materialIndex = self.session.materialIndex + 1
+        foreverScan(self.session.materialsToScan[self.session.materialIndex])
+    end
 end
 
 
@@ -252,7 +365,7 @@ function addon.professions.AH:fullScan()
     end
 
     addon.professions.AH.session.materialIndex = 1
-    addon.professions.AH:Scan(addon.professions.AH.session.materialsToScan[addon.professions.AH.session.materialIndex])
+    addon.professions.AH:Scan()
 end
 
 
@@ -295,8 +408,7 @@ function debug.ScanOverride()
         addon.professions.AH:gatherMaterialsToScan(RXPCData.professions.profession2.name)
     end
     print("scanning")
-    addon.professions.AH.session.materialIndex = 1
-    addon.professions.AH:Scan(addon.professions.AH.session.materialsToScan[addon.professions.AH.session.materialIndex])
+    --TODO: edit here
 end
 
 function debug.ExportScanOnly()
@@ -422,5 +534,33 @@ SlashCmdList['df'] = debug.DetectFaction
 --TODO: Debug only
 SLASH_tt1 = '/tt'
 SlashCmdList['tt'] = function()
-    print(addon.professions.AH.session.ahIsShowing)
+    local roughStone = 2835
+    local felIronHammer = 23498
+    local weakFlux = 2880
+    --foreverScan(weakFlux)
+
+    --for k, v in pairs(addon.professions.AH.session.foundItems) do
+    --    print(tostring(k), " -> ", tostring(v))
+    --end
+    --if true then return end
+
+    addon.professions.AH.q = addon.professions.AH.q or false
+    if not addon.professions.AH.q then
+        addon.professions.AH.q = true
+        addon.professions.AH.session.materialsToScan = {
+            2835, -- rough stone
+            2840, -- copper bar
+            2880, -- weak flux
+            2589, -- linen cloth
+        }
+
+        addon.professions.AH:Scan()
+    else
+        for k, v in pairs(addon.professions.AH.session.foundItems) do
+            print(tostring(k), ":")
+            for kk, vv in pairs(v) do
+                print("->", tostring(kk), ":", tostring(vv))
+            end
+        end
+    end
 end

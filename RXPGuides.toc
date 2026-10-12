@@ -86,11 +86,10 @@ ItemUpgrades.lua [AllowLoadGameType tbc,vanilla,camelot,cata]
 
 CptStadicsVendorTreasures.lua [AllowLoadGameType vanilla,camelot,tbc,wrath]
 
-Professions\Professions.lua
-Professions\DB\ProfessionsDB.lua
-Professions\locale\ProfessionsLocale.lua
-Professions\AH\ProfessionsAH.lua
-Professions\DB\RecipeIds.lua
-Professions\Export\ProfessionsExport.lua
-
-CptStadicsVendorTreasures.lua [AllowLoadGameType vanilla,tbc,wrath]
+Professions\Professions.lua [AllowLoadGameType vanilla,tbc,mists,camelot]
+Professions\DB\ProfessionsDB.lua [AllowLoadGameType vanilla,tbc,mists,camelot]
+Professions\locale\ProfessionsLocale.lua [AllowLoadGameType vanilla,tbc,mists,camelot]
+Professions\AH\ProfessionsAH.lua [AllowLoadGameType vanilla,tbc,mists,camelot]
+Professions\DB\RecipeIds.lua [AllowLoadGameType vanilla,tbc,mists,camelot]
+Professions\Export\ProfessionsExport.lua [AllowLoadGameType vanilla,tbc,mists,camelot]
+Professions\GUI\ProfessionsDebugGUI.lua [AllowLoadGameType vanilla,tbc,mists,camelot]

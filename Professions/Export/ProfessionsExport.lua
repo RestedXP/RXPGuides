@@ -1,6 +1,6 @@
 local addonName, addon = ...
 
-if not (addon.game == "CLASSIC" or addon.game == "TBC" or addon.game == "FOREVER") then return end
+if not (addon.game == "CLASSIC" or addon.game == "TBC" or addon.game == "MOP" or addon.game == "FOREVER") then return end
 
 
 addon.professions = addon.professions or {}

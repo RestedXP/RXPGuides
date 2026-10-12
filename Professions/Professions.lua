@@ -1,7 +1,7 @@
 local addonName, addon = ...
 local L = addon.locale.Get
 
-if not (addon.game == "CLASSIC" or addon.game == "TBC" or addon.game == "FOREVER") then return end
+if not (addon.game == "CLASSIC" or addon.game == "TBC" or addon.game == "FOREVER" or addon.game == "MOP") then return end
 
 -- Localize globals
 local _G = _G
@@ -17,7 +17,7 @@ addon.professions = addon:NewModule("ProfessionsGuide", "AceEvent-3.0")
 
 --Session
 local EVENTS_TO_REGISTER = {
-    --TODO: cull unnecessary events
+    --TODO: cull unnecessary events and update with version control
     "TRADE_SKILL_SHOW", --Opening the tradeskill window
     "TRADE_SKILL_CLOSE", --Closing the tradeskill window
     "TRADE_SKILL_UPDATE", --Learning skill?, Minimizing categories in tradeskill window
@@ -40,6 +40,7 @@ local EVENTS_TO_REGISTER = {
 
 addon.professions.session = {
     isInitialized = false,
+    isClassic = false,
 }
 
 --local helper functions
@@ -276,8 +277,12 @@ end
 function addon.professions:Setup()
     --TODO: add toggle on/off functionality
 
-    if addon.game ~= "CLASSIC" and addon.game ~= "TBC" and addon.game ~= "FOREVER" then return end
+    if addon.game ~= "CLASSIC" and addon.game ~= "TBC" and addon.game ~= "MOP" and addon.game ~= "FOREVER" then return end
     if self.session.isInitialized == true then return end
+
+    if addon.game ~= "MOP" and addon.game ~= "FOREVER" then
+        self.session.isClassic = true
+    end
 
     for _, event in ipairs(EVENTS_TO_REGISTER) do
         self:RegisterEvent(event)
