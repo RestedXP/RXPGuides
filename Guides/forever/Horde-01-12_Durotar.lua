@@ -286,10 +286,12 @@ step
     .accept 3084 >>Accept Rune-Inscribed Tablet << Troll Shaman
     .accept 3085 >>Accept Hallowed Tablet << Troll Priest
     .accept 3086 >>Accept Glyphic Tablet << Troll Mage
+    .accept 98575 >>Accept Tainted Tablet << Troll Warlock
     .accept 3087 >>Accept Etched Parchment << Orc Hunter
     .accept 3088 >>Accept Encrypted Parchment << Orc Rogue
     .accept 3089 >>Accept Rune-Inscribed Parchment << Orc Shaman
     .accept 3090 >>Accept Tainted Parchment << Orc Warlock
+    .accept 98576 >>Accept Glyphic Parchment << Orc Mage
     .turnin 804,1 >>Turn in Sarkoth << Shaman
     .turnin 804 >>Turn in Sarkoth << !Shaman
     .target Gornek
@@ -357,7 +359,8 @@ step << Warlock
     #label Nartok2
     .goto 1411/1,-4111.87,-607.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
-    .turnin 3090 >>Turn in Tainted Parchment
+    .turnin 3090 >>Turn in Tainted Parchment << Orc Warlock
+    .turnin 98575 >>Turn in Tainted Tablet << Troll Warlock
     .train 172 >> Train |T136118:0|t[Corruption]
     .target Nartok
 step
@@ -388,7 +391,8 @@ step << Mage
     #requires Galgar
     .goto 1411/1,-4210.22,-625.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mai'ah|r
-    .turnin 3086 >>Turn in Glyphic Tablet << Troll
+    .turnin 3086 >>Turn in Glyphic Tablet << Troll Mage
+    .turnin 98576 >>Turn in Glyphic Parchment << Orc Mage
     .train 1459 >> Train |T135932:0|t[Arcane Intellect]
     .target Mai'ah
 step << !Warlock
@@ -2838,7 +2842,6 @@ step << Hunter/Shaman
     #completewith next
     .goto 1454/1,-4367.46,1405.44,50,0
     .zone Orgrimmar >> Enter Orgrimmar
-    .zoneskip Orgrimmar
 step << Hunter/Shaman
     .goto 1454/1,-4460.600,1584.300,10,0
     .goto 1454/1,-4460.000,1598.600

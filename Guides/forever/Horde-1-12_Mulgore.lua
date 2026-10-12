@@ -107,6 +107,13 @@ step
     .target Chief Hawkwind
 step << Shaman
     .goto 1412/1,-216.18,-2926.26--c:Mulgore,44.07,77.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marjak|r
+    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135139:0|t[Short Staff] (1s 02c). You'll come back later if you don't have enough yet
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
+    .target Marjak Keenblade
+step << Shaman
+    .goto 1412/1,-216.18,-2926.26--c:Mulgore,44.07,77.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Marjak Keenblade|r|cRXP_BUY_. Buy a|r |T135139:0|t[Short Staff] |cRXP_BUY_from him|r
     .collect 2132,1,750,1 --Collect Short Staff (1)
     .money <0.0102
@@ -121,6 +128,20 @@ step << Shaman
     .itemcount 2132,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Mountain Cougars|r. Loot them for their |cRXP_LOOT_Pelts|r
+    .complete 750,1 --Mountain Cougar Pelt (10)
+    .mob Mountain Cougar
+step
+    #label RitesoftheEarthmother
+    .goto 1412/1,-139.63,-3430.08--c:Mulgore,42.58,92.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seer Graytongue|r
+    >>|cRXP_WARN_This starts a 10-minute timed quest|r
+    .turnin 755 >>Turn in Rites of the Earthmother
+    .accept 757 >>Accept Rite of Strength
+    .accept 95805 >>Accept Grace of An'she and Mu'sha
+    .target Seer Graytongue
 step
     #loop
     .goto 1412/1,-243.41,-3384.87,0--c:Mulgore,44.60,90.86
@@ -138,15 +159,6 @@ step
     >>Kill |cRXP_ENEMY_Mountain Cougars|r. Loot them for their |cRXP_LOOT_Pelts|r
     .complete 750,1 --Mountain Cougar Pelt (10)
     .mob Mountain Cougar
-step
-    #label RitesoftheEarthmother
-    .goto 1412/1,-139.63,-3430.08--c:Mulgore,42.58,92.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seer Graytongue|r
-    >>|cRXP_WARN_This starts a 10-minute timed quest|r
-    .turnin 755 >>Turn in Rites of the Earthmother
-    .accept 757 >>Accept Rite of Strength
-    .accept 95805 >>Accept Grace of An'she and Mu'sha
-    .target Seer Graytongue
 step
     #loop
 	.goto 1412/1,-292.73,-3285.20,40,0--c:Mulgore,45.56,87.95
@@ -647,8 +659,17 @@ step
     .accept 99108 >>Accept Sparring Match
     .target Krang Stonehoof
 step
+    #softcore
     .goto 1412/1,-521.600,-2345.400
     >>Talk to a |cRXP_FRIENDLY_Novice Warrior|r, then defeat it in combat
+    .complete 99108,1 --|3/3 Player Duels won or Novice Warriors defeated
+    .target Novice Warrior
+    .skipgossip
+step
+    #hardcore
+    .goto 1412/1,-521.600,-2345.400
+    >>Talk to a |cRXP_FRIENDLY_Novice Warrior|r, then defeat it in combat
+    >>|cRXP_WARN_Be aware that this quest PVP flags you|r
     .complete 99108,1 --|3/3 Player Duels won or Novice Warriors defeated
     .target Novice Warrior
     .skipgossip
@@ -910,6 +931,7 @@ step
     .train 2550 >>Train Cooking
     .turnin 96661 >>Turn in Camping 101: Cooking
     .target Pyall Silentstride
+    .money <0.01
 step
     #label Vision
     .goto 1412/1,-405.75,-2243.32--c:Mulgore,47.76,57.53
@@ -1007,6 +1029,38 @@ step << Tauren
     .mob +Prairie Stalker
     .complete 756,2 --Cougar Claws (6)
     .mob +Flatland Cougar
+step
+    #softcore
+	#completewith Escort1
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+step << Hunter
+    #softcore
+    .goto 1412/1,-408.32,-2180.30--c:Mulgore,47.81,55.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw|r
+    .train 5116 >> Train your class spells
+    .target Yaw Sharpmane
+    .xp <8,1
+step << Druid
+    #softcore
+    .goto 1412/1,-442.74,-2315.59--c:Mulgore,48.48,59.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gennia|r
+    .train 5186 >>Train your class spells
+    .target Gennia Runetotem
+    .xp <8,1
+step << Warrior
+    #softcore
+    .goto 1412/1,-496.17,-2347.78--c:Mulgore,49.52,60.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krang|r
+    .train 284 >> Train your class spells
+    .target Krang Stonehoof
+    .xp <8,1
+step << Shaman
+    #softcore
+    .goto 1412/1,-437.61,-2298.80--c:Mulgore,48.38,59.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Narm|r
+    .train 8044 >> Train your class spells
+    .target Narm Skychaser
+    .xp <8,1
 step
     .goto 1412/1,54.800,-2442.200
     >>Kill |cRXP_ENEMY_Chakuyak|r. Loot it for its |cRXP_LOOT_Pelt|r
@@ -1169,6 +1223,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harant|r
     .vendor >> Vendor trash and repair
     .target Harant Ironbrace
+step
+    .goto 1412/1,-285.000,-2263.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pyall|r
+    .train 2550 >>Train Cooking
+    .turnin 96661 >>Turn in Camping 101: Cooking
+    .target Pyall Silentstride
 step
     .goto 1412/1,-392.500,-2318.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brave Wildrunner|r

@@ -227,7 +227,7 @@ step << !Tauren !Undead !Skyborne
     .collect 4986,1,924 --Collect Flawed Power Stone
     .complete 924,1 --Destroy the Demon Seed (1)
     .isOnQuest 924
-step << Shaman
+step << Orc Shaman/Troll Shaman/Tauren Shaman
     #sticky
     #label FireTar2
     .goto 1413/1,-2947.38,-92.1,50,0
@@ -1143,7 +1143,7 @@ step << Orc Rogue/Troll Rogue
     #optional
 	#completewith SouthSea
 	>>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r
-    >>|cRXP_WARN_He patrols up and down the hill|r
+    >>|cRXP_WARN_He spawns at the first camp and patrols up the hill|r
 	.complete 1963,1 --Tazan's Satchel (1)
     .unitscan Tazan
 step
@@ -1172,11 +1172,13 @@ step
     .complete 887,2 --Southsea Cannoneer (6)
     .mob +Southsea Cannoneer
 step << Orc Rogue/Troll Rogue
-    .goto 1413/1,-3832.02,-1381.87,50,0
-    .goto 1413/1,-3730.68,-1364.98,50,0
-    .goto 1413/1,-3677.99,-1392.00
+    #loop
+    .goto 1413/1,-3895.600,-1365.000,0
+    .goto 1413/1,-3677.99,-1392.00,50,0
+    .goto 1413/1,-3895.600,-1365.000,50,0
+    .goto 1413/1,-3826.300,-1487.300,50,0
 	>>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r
-    >>|cRXP_WARN_He patrols up and down the hill|r
+    >>|cRXP_WARN_He spawns at the first camp and patrols up the hill|r
 	.complete 1963,1 --Tazan's Satchel (1)
     .unitscan Tazan
 step
@@ -1639,6 +1641,7 @@ step
     >>|cRXP_FRIENDLY_Vrang|r |cRXP_WARN_sells|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r << Tauren Warrior/Tauren Shaman/Druid
 	.vendor	>> Vendor trash and repair
     .target Vrang Wildgore
+    .isQuestAvailable 95494,95507
     --.dungeon !RFC
 step
     #completewith next
@@ -1653,8 +1656,8 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Kill |cRXP_LOOT_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r and |cRXP_LOOT_Tusks|r
-    >>|cRXP_WARN_If the |cRXP_LOOT_Savannah Patriarchs|r are heavily contested consider skipping this quest for now, it can be completed later|r
+    >>Kill |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r and |cRXP_LOOT_Tusks|r
+    >>|cRXP_WARN_If the |cRXP_ENEMY_Savannah Patriarchs|r are heavily contested consider skipping this quest for now, it can be completed later|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .complete 821,1 --Savannah Lion Tusk (5)
     .disablecheckbox
@@ -1700,7 +1703,7 @@ step
     .isQuestTurnedIn 95494
 step
     #completewith next
-    .goto 1413/1,-1778.100,684.200,25,0
+    .goto 1413/1,-1736.900,650.300,25,0
     .goto 1413/1,-1741.700,721.400,25,0
     .goto 1413/1,-1643.900,786.000,25,0
     .goto 1413/1,-1605.300,818.300,20 >>Travel up the mountain
@@ -2461,7 +2464,7 @@ step
     .accept 865 >>Accept Raptor Horns
     .accept 1069 >>Accept Deepmoss Spider Eggs
     .target Mebok Mizzyrix
-step
+step << skip
     .goto 1413/1,-3664.82,-1050.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|cRXP_FRIENDLY_Innkeeper Wiley|r
     -->>|cRXP_BUY_Buy|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_from him|r
@@ -2620,7 +2623,7 @@ step
     .skipgossip
 step
     #optional
-    #completewith next
+    #completewith CampTArrive
     >>Kill |cRXP_ENEMY_Stormsnouts|r. Loot them for a |cRXP_LOOT_Thunder Lizard Horn|r
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
@@ -2640,12 +2643,6 @@ step
     .use 5099
     .unitscan Lakota'mani
     .xp <18,1
-step
-    #optional
-    #completewith CampTArrive
-    >>Kill |cRXP_ENEMY_Stormsnouts|r. Loot them for a |cRXP_LOOT_Horn|r. This does not have to be completed now
-    .complete 821,3 --Thunder Lizard Horn (1)
-    .mob Stormsnout
 step
     #label CampTArrive
     #completewith next
@@ -3651,7 +3648,7 @@ step
     .mob Oasis Snapjaw
 step
     #completewith IshamuhalesFang
-    >>Kill |cRXP_LOOT_Savannah Matriarchs|r and |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
+    >>Kill |cRXP_ENEMY_Savannah Matriarchs|r and |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
     .mob Savannah Patriarchs
@@ -3673,7 +3670,7 @@ step
     .goto 1413/1,-3633.200,-600.500,50,0
     .goto 1413/1,-3469.100,-495.000,50,0
     .goto 1413/1,-3428.300,-584.300,50,0
-    >>Kill |cRXP_LOOT_Savannah Matriarchs|r and |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
+    >>Kill |cRXP_ENEMY_Savannah Matriarchs|r and |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
     .mob Savannah Patriarchs
@@ -5454,7 +5451,7 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Kill |cRXP_LOOT_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
+    >>Kill |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Patriarch
 step
@@ -5498,7 +5495,7 @@ step
     .isQuestTurnedIn 95494
 step
     #completewith next
-    .goto 1413/1,-1778.100,684.200,25,0
+    .goto 1413/1,-1736.900,650.300,25,0
     .goto 1413/1,-1741.700,721.400,25,0
     .goto 1413/1,-1643.900,786.000,25,0
     .goto 1413/1,-1605.300,818.300,20 >>Travel up the mountain
