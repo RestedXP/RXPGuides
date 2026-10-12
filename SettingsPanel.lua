@@ -970,7 +970,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 6.13,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         disabled = function()
-                            return not self.profile.enableInventoryManager
+                            return not self.profile.enableInventoryManager or addon.IsGamePadEnabled()
                         end,
                     },
                     rightClickMod = {
@@ -984,7 +984,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         disabled = function ()
                             return not self.profile.enableInventoryManager or
-                                       not self.profile.rightClickJunk
+                                       not self.profile.rightClickJunk or addon.IsGamePadEnabled()
                         end,
                         values = {
                             [1] = "CTRL",
@@ -1001,7 +1001,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 6.15,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         disabled = function()
-                            return not self.profile.enableInventoryManager
+                            return not self.profile.enableInventoryManager or addon.IsGamePadEnabled()
                         end,
                     },
                     maxSoulShards = {
@@ -1029,7 +1029,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 6.17,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         disabled = function()
-                            return not self.profile.enableInventoryManager
+                            return not self.profile.enableInventoryManager or addon.IsGamePadEnabled()
                         end,
                         get = function()
                             return addon.inventoryManager:GetSellKeybind()

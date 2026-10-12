@@ -792,6 +792,8 @@ end
 function addon.inventoryManager:ProcessJunk(sellWares, override)
     if not self:IsFeatureEnabled() then return 0 end
 
+    if addon.IsGamePadEnabled() then return 0 end
+
     local isMerchant = sellWares and MerchantFrame:IsShown() and MerchantFrame.selectedTab == 1 and
                            (addon.settings.profile.autoSellJunk or override)
 
