@@ -5603,6 +5603,7 @@ function addon.functions.buy(self, ...)
         element.text = text
         return element
     end
+    if addon.IsGamePadEnabled() then return end
 
     local event = ...
     local element = self.element
