@@ -4850,7 +4850,7 @@ step << Hunter
     .target Gilbert Gray::267118
     .accept 95065 >>Accept Fishin' Time
     .turnin 95065 >>Turn in Fishin' Time
-step << Hunter
+step << Hunter skip
     #optional
     #requires DockTravel
     #label DarkshoreCook1
@@ -4864,7 +4864,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook1
     #label DarkshoreCook2
@@ -4878,7 +4878,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook2
     #label DarkshoreCook3
@@ -4892,7 +4892,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook3
     #label DarkshoreCook4
@@ -4907,7 +4907,7 @@ step << Hunter
     .itemcount 2672,1 --Stringy Wolf Meat (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook4
     #label DarkshoreCook5
@@ -4920,7 +4920,7 @@ step << Hunter
     .itemcount 2672,1 --Stringy Wolf Meat (1)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook5
     #label DarkshoreCook6

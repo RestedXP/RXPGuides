@@ -719,7 +719,7 @@ step
     #requires DockTravel
     #label DarkshoreCook1
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    >>|cRXP_WARN_While waiting for the Boat on the dock:|r
     .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(in your Profession Book)|r
     .usespell 818
     .zoneskip Darkshore
@@ -733,7 +733,7 @@ step
     #requires DarkshoreCook1
     #label DarkshoreCook2
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    >>|cRXP_WARN_While waiting for the Boat on the dock:|r
     .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(in your Profession Book)|r
     .usespell 818
     .zoneskip Darkshore
@@ -747,7 +747,7 @@ step
     #requires DarkshoreCook2
     #label DarkshoreCook3
     #completewith DarkshoreBoat
-    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    >>|cRXP_WARN_While waiting for the Boat on the dock:|r
     .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(in your Profession Book)|r
     .usespell 818
     .zoneskip Darkshore
@@ -4517,7 +4517,7 @@ step << Dwarf Hunter/Human Hunter/Skyborne Hunter
     #label DarnDwarfHCook1
     #requires TravelDarnDwarfHBoat
     #completewith DarnDwarfHBoat
-    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    >>|cRXP_WARN_While waiting for the Boat on the dock:|r
     .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
     .usespell 818
     .zoneskip Teldrassil

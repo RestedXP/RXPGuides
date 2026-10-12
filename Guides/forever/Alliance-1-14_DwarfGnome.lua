@@ -2106,7 +2106,7 @@ step << !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yanni Stoutheart|r
     >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from her|r
     >>|cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_BUY_too from her if needed|r << !Rogue
-    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
+    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_while waiting for Boats to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
@@ -4882,7 +4882,7 @@ step
     .accept 95065 >>Accept Fishin' Time
     .turnin 95065 >>Turn in Fishin' Time
 --Hunter going Darkshore, rest Westfall
-step << Hunter
+step << Hunter skip
     #optional
     #requires DockTravel
     #label DarkshoreCook1
@@ -4896,7 +4896,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook1
     #label DarkshoreCook2
@@ -4910,7 +4910,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook2
     #label DarkshoreCook3
@@ -4924,7 +4924,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook3
     #label DarkshoreCook4
@@ -4939,7 +4939,7 @@ step << Hunter
     .itemcount 2672,1 --Stringy Wolf Meat (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook4
     #label DarkshoreCook5
@@ -4952,7 +4952,7 @@ step << Hunter
     .itemcount 2672,1 --Stringy Wolf Meat (1)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook5
     #label DarkshoreCook6
