@@ -6,8 +6,8 @@ if GetLocale() ~= "ptBR" then return end
 --LEVEL 1-10
 RXPGuides.RegisterGuide([[
 #retail
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name 1a
 #displayname |cFFFCDC00NÍVEL 1-10|r
 #disabled
@@ -27,8 +27,8 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) Exílio's Reach
 #internal
 
@@ -231,21 +231,21 @@ step
     .isQuestAvailable 55122
     +Alcance imediatamente o Nível 10 e pule Exílio do Iniciante selecionando |cRXP_WARN_o guia abaixo|r
     *|cRXP_WARN_Não pule se você quiser continuar Exílio do Iniciante|r.
-    .clicknext RestedXP Speed Leveling\a) No House Skip >>RestedXP Leveling Rápido\a) Sem Pular a Casa >>CLIQUE AQUI PARA O GUIA
+    .clicknext RestedXP Speed Leveling\a) No House Skip >>CLIQUE AQUI PARA O GUIA
 step
     .goto 2352,57.44,26.64
     .zoneskip 2352,1
     .zone 84 >>Clique em |cRXP_PICK_Portal|r
-    guia, RestedXP Leveling Rápido\ba) Introdução da Aliança em DF Meia-noite (A) << Alliance
-    guia, Velocidade Leveling\b1) Introdução de BfA << Horde
+    .skipto guide,RestedXP Speed Leveling\ba) DF Alliance Intro Midnight (A) << Alliance
+    .skipto guide,RestedXP Speed Leveling\b1) BfA Intro << Horde
     .zoneskip 85
 step
     #label HousingSelect
     .zoneskip 2351,1
     .goto 2351,53.93,49.4
     .zone 85 >>Clique em |cRXP_PICKs_Portal|r
-    guia, RestedXP Leveling Rápido\ba) Introdução da Aliança em DF Meia-noite (A) << Alliance
-    guia, Velocidade Leveling\b1) Introdução de BfA << Horde
+    .skipto guide,RestedXP Speed Leveling\ba) DF Alliance Intro Midnight (A) << Alliance
+    .skipto guide,RestedXP Speed Leveling\b1) BfA Intro << Horde
     .zoneskip 84
 step
     .goto 1409,61.88,82.89
@@ -716,7 +716,7 @@ step << Warrior
     .zoneskip 1409,1
     #hidewindow
     #completewith Hjalmar's Final Execution
-    .goto 1409,51.47,47.79,30 >>Siga a Seta
+    .goto 1409,51.47,47.79,30 >>Siga a Flecha
 step << Warrior
     .zoneskip 1409,1
     #requires Hjalmar's Final Execution
@@ -1027,7 +1027,7 @@ step << Rogue
     .zoneskip 1409,1
     #hidewindow
     #completewith Gutgruk
-    .goto 1409,48.41,53.42,20 >>Siga a Seta
+    .goto 1409,48.41,53.42,20 >>Siga a Flecha
 step << Rogue
     .zoneskip 1409,1
     #requires Gutgruk
@@ -1244,7 +1244,7 @@ step
     .zoneskip 1409,1
     #hidewindow
     #completewith Who Lurks in the Pit1
-    .goto 1409,51.18,59.61,80 >>Siga a Seta
+    .goto 1409,51.18,59.61,80 >>Siga a Flecha
 step
     .zoneskip 1409,1
     #requires Who Lurks in the Pit1
@@ -1290,7 +1290,7 @@ step
     .zoneskip 1409,1
     #hidewindow
     #completewith Expedition Member
-    .goto 1409,50.26,58.69,50 >>Siga a Seta
+    .goto 1409,50.26,58.69,50 >>Siga a Flecha
 step
     .zoneskip 1409,1
     #requires Expedition Member
@@ -1308,7 +1308,7 @@ step
     .zoneskip 1409,1
     #hidewindow
     #completewith Expedition Member1
-    .goto 1409,49.70,62.02,40 >>Siga a Seta
+    .goto 1409,49.70,62.02,40 >>Siga a Flecha
 step
     .zoneskip 1409,1
     #requires Expedition Member1
@@ -1327,7 +1327,7 @@ step
     .zoneskip 1409,1
     #hidewindow
     #completewith Expedition Member2
-    .goto 1409,51.96,60.67,32 >>Siga a Seta
+    .goto 1409,51.96,60.67,32 >>Siga a Flecha
 step
     .zoneskip 1409,1
     #requires Expedition Member2
@@ -1346,7 +1346,7 @@ step
     .zoneskip 1409,1
     #hidewindow
     #completewith Expedition Member3
-    .goto 1409,50.87,58.12,18 >>Siga a Seta
+    .goto 1409,50.87,58.12,18 >>Siga a Flecha
 step
     .zoneskip 1409,1
     #requires Expedition Member3
@@ -1367,7 +1367,7 @@ step
     .zoneskip 1409,1
     #completewith Hrun
     #hidewindow
-    .goto 1409,47.79,60.27,60 >>Siga a Seta
+    .goto 1409,47.79,60.27,60 >>Siga a Flecha
 step
     .zoneskip 1409,1
     #requires Hrun
@@ -1472,7 +1472,7 @@ step
     .zoneskip 1409,1
     #completewith Right Beneath Their Eyes1
     #hidearrow
-    .goto 1409,48.9,49.51,90 >>Siga a Seta
+    .goto 1409,48.9,49.51,90 >>Siga a Flecha
 step
     .zoneskip 1409,1
     #requires Right Beneath Their Eyes1
@@ -1518,7 +1518,7 @@ step
     .zoneskip 1409,1
     #hidewindow
     #completewith ogre cooking Area
-    .goto 1409,45.68,37.55,68 >>Siga a Seta
+    .goto 1409,45.68,37.55,68 >>Siga a Flecha
 step
     .zoneskip 1409,1
     #requires ogre cooking Area
@@ -1680,7 +1680,7 @@ step
 step
     .zoneskip 1409,1
     #completewith Catapult Destruction
-    .goto 1409,40.36,32.26,130 >>Siga a Seta
+    .goto 1409,40.36,32.26,130 >>Siga a Flecha
 step
     .zoneskip 1409,1
     #requires Catapult Destruction
@@ -1809,7 +1809,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 4
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) Sem Pular a Casa 
 #chapter
 
@@ -1827,26 +1827,26 @@ step
     .goto 2352,57.44,26.64
     .zoneskip 2352,1
     .zone 84 >>Clique em |cRXP_PICK_Portal|r
-    guia, RestedXP Leveling Rápido\ba) Introdução da Aliança em DF Meia-noite (A) << Alliance
-    guia, Velocidade Leveling\b1) Introdução de BfA << Horde
+    .skipto guide,RestedXP Speed Leveling\ba) DF Alliance Intro Midnight (A) << Alliance
+    .skipto guide,RestedXP Speed Leveling\b1) BfA Intro << Horde
     .zoneskip 85
 step
     .goto 2351,53.93,49.4
     .zoneskip 2351,1
     .zone 85 >>Clique em |cRXP_PICK_Portal|r
-    guia, RestedXP Leveling Rápido\ba) Introdução da Aliança em DF Meia-noite (A) << Alliance
-    guia, Velocidade Leveling\b1) Introdução de BfA << Horde
+    .skipto guide,RestedXP Speed Leveling\ba) DF Alliance Intro Midnight (A) << Alliance
+    .skipto guide,RestedXP Speed Leveling\b1) BfA Intro << Horde
     .zoneskip 84
 ]])
 --Death Knight Plaguelands: The Scarlet Enclave
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) DK Intro
 #displayname |cFF1EFF001|r - Plaguelands
-#next Nivelamento Rápido\ba) DF Aliança Intro Meia-noite (A) << Alliance
+#next RestedXP Nivelamento Rápido\ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
 #next b1) Introdução de BfA << Horde
 
 
@@ -2225,7 +2225,7 @@ step
     .goto 124,51.44,39.07,30,0
     .goto 124,52.94,37.23
     *|cRXP_WARN_Use "Remover Trevas Macro" no Ativo Itens Frame|r
-    .cast vehicle,52362 >>vehicle,52362 >>Usar |T136129:0|t[Chamado do Cavaleiro](1)] no ponto de passagem.
+    .cast vehicle,52362 >>Usar |T136129:0|t[Chamado do Cavaleiro](1)] no ponto de passagem.
     .timer 13,Aguarde o RP
     .macro Remove Darkness,136223 >>Remova Trevas
     .macro Leave Vehicle,6656430 >>Saia do Veículo
@@ -2357,7 +2357,7 @@ step
 step
     #completewith Victory At Death's Breach!
     .goto 124,67.71,39
-    .cast vehicle,52588 >>vehicle,52588 >>Usar |T135766:0|t[3] para ser levado por um Grifo.
+    .cast vehicle,52588 >>Usar |T135766:0|t[3] para ser levado por um Grifo.
     *Usar a macro no quadro "Ativo Itens" para sair.
     .hs >>Usar |T134414:0|t[Pedra do Flagelo] para ir para Archerus.
     .cooldown item,40582,>0,1
@@ -3414,7 +3414,7 @@ step
     .target Comandante do Flagelo Thalanor
 step
     #completewith The Light of Dawn
-    .goto 124,34.27,30.30,230 >>Siga a Seta
+    .goto 124,34.27,30.30,230 >>Siga a Flecha
 step
     #requires The Light of Dawn
     .goto 124,34.27,30.30
@@ -3526,7 +3526,7 @@ step << Alliance
     .turnin 13188 >>Entregue Onde Reis Caminham
     .target Anduin Wrynn
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Normal
 step << Horde
     #completewith next
     #label Saurfang's Blessing
@@ -3586,11 +3586,11 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) Nova Introdução de Cavaleiro da Morte
 #displayname |cFF1EFF001|r - O Trono Congelado
-#next Nivelamento Rápido\ba) DF Aliança Intro Meia-noite (A) << Alliance
+#next RestedXP Nivelamento Rápido\ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
 #next b1) Introdução de BfA << Horde
 
 << DK Pandaren/DarkIronDwarf DK/KulTiran DK/LightforgedDraenei DK/Mechagnome DK/VoidElf DK/HighmountainTauren DK/Nightborne DK/ZandalariTroll DK/MagharOrc DK/Vulpera DK
@@ -3631,7 +3631,7 @@ step << Alliance
     .accept 40519 >>Aceite Legion: a volta da Legião
     .choose 1851120
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Normal
 step << Horde
     .goto 85,40.82,80.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Crona|r.
@@ -3682,11 +3682,11 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) Nova Introdução de Caçador de Demônios
 #displayname |cFF1EFF001|r - Mardum
-#next Nivelamento Rápido\ba) DF Aliança Intro Meia-noite (A) << Alliance
+#next RestedXP Nivelamento Rápido\ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
 #next b1) Introdução de BfA << Horde
 
 << DemonHunter !VoidElf
@@ -3855,7 +3855,7 @@ step
 step
     #completewith Belath Dawnblade freed
     #hidewindow
-    .goto 672,41.74,73.22,20 >>Siga a Seta
+    .goto 672,41.74,73.22,20 >>Siga a Flecha
 step
     #requires Belath Dawnblade freed
     .goto 672,41.74,73.22
@@ -3959,7 +3959,7 @@ step
 step
     #hidewindow
     #completewith Beliash
-    .goto 672,35.17,39.42,80 >>Siga a Seta
+    .goto 672,35.17,39.42,80 >>Siga a Flecha
 step
     #requires Beliash
     .goto 672,35.17,39.42
@@ -3978,7 +3978,7 @@ step
 step
     #hidewindow
     #completewith Sacrifice made
-    .goto 672,39.7,39.47,30 >>Siga a Seta
+    .goto 672,39.7,39.47,30 >>Siga a Flecha
 step
     #requires Sacrifice made
     .goto 672,39.7,39.47
@@ -4016,7 +4016,7 @@ step
     .target Kayn Solfúria
 step
     #completewith Shivarra
-    .goto 672,60.51,44.75,90 >>Siga a Seta
+    .goto 672,60.51,44.75,90 >>Siga a Flecha
 step
     #requires Shivarra
     .goto 672,60.51,44.75
@@ -4328,14 +4328,14 @@ step
     #completewith Ride to the Fel Hammer
     #title |cFFFCDC00Use a Macro|r
     .goto 672,62.52,44.91,8 >>Pressione o Macro no "Ativo Itens Frame" |cRXP_WARN_em frente de|r |cRXP_FRIENDLY_Izal Lunalva|r, depois fale com ela.
-    .macro Sit,134400 >>Sentar
+    .macro Sit,134400 >>Sente-se
 step
     #requires Ride to the Fel Hammer
     #title |cFFFCDC00Use a Macro|r
     .goto 672,62.52,44.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Izal Lunalva|r.
     .complete 39663,1 --1/1 Ride to the Fel Hammer
-    .macro Sit,134400 >>Sentar
+    .macro Sit,134400 >>Sente-se
     .emote SIT,109965
     .skipgossipid 44646
 step
@@ -4521,7 +4521,7 @@ step
     .target Kayn Solfúria
 step
     #completewith Fel Infusion
-    .goto 677,49.68,49.3,90 >>Siga a Seta
+    .goto 677,49.68,49.3,90 >>Siga a Flecha
 step
     #requires Fel Infusion
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Altruis, o Sofredor|r, |cRXP_FRIENDLY_Kayn Solfúria|r.
@@ -4642,7 +4642,7 @@ step
 step
     #completewith Immolanth1
     .isOnQuest 39683
-    .goto 678,46.7,17.8,130 >>Siga a Seta
+    .goto 678,46.7,17.8,130 >>Siga a Flecha
 step
     #requires Immolanth
     .isOnQuest 39683
@@ -4667,7 +4667,7 @@ step
 step
     #completewith Immolanth2
     .isOnQuest 40254
-    .goto 678,46.7,17.8,130 >>Siga a Seta
+    .goto 678,46.7,17.8,130 >>Siga a Flecha
 step
     #requires Immolanth2
     #title |cFFFCDC00Use a Macro|r
@@ -4688,7 +4688,7 @@ step
     .complete 39684,1 --1/1 Mirror rotated
 step
     #completewith Mirror rotated
-    .goto 678,70.54,49.62,170 >>Siga a Seta
+    .goto 678,70.54,49.62,170 >>Siga a Flecha
 step
     #requires Mirror rotated
     .goto 678,70.54,49.62
@@ -4707,7 +4707,7 @@ step
     .complete 39685,1 --1/1 Eastern Countermeasure activated
 step
     #completewith Eastern Countermeasure
-    .goto 678,50.1,78.2,85 >>Siga a Seta
+    .goto 678,50.1,78.2,85 >>Siga a Flecha
 step
     #requires Eastern Countermeasure
     .goto 678,50.1,78.2
@@ -4739,7 +4739,7 @@ step
 step
     .isQuestComplete 39683
     #completewith Forged in Fire1
-    .goto 678,41.1,47.2,85 >>Siga a Seta
+    .goto 678,41.1,47.2,85 >>Siga a Flecha
 step
     #requires Forged in Fire1
     .isQuestComplete 39683
@@ -4768,7 +4768,7 @@ step
 step
     .isQuestComplete 40254
     #completewith Forged in Fire2
-    .goto 678,41.1,47.2,85 >>Siga a Seta
+    .goto 678,41.1,47.2,85 >>Siga a Flecha
 step
     #requires Forged in Fire2
     .isQuestComplete 40254
@@ -4795,7 +4795,7 @@ step
     .target Kor'vas Sangrespinho
 step
     #completewith A New Direction
-    .goto 679,24.41,55.79,80 >>Siga a Seta
+    .goto 679,24.41,55.79,80 >>Siga a Flecha
 step
     #requires A New Direction
     .goto 679,24.41,55.79
@@ -4841,7 +4841,7 @@ step << Horde
 step << Horde
     .isOnQuest 40256
     #completewith Bastillax1
-    .goto 679,50.34,77.76,35 >>Siga a Seta
+    .goto 679,50.34,77.76,35 >>Siga a Flecha
 step << Horde
     #requires Bastillax1
     .isOnQuest 40256
@@ -4869,7 +4869,7 @@ step << Horde
 step << Horde
     .isOnQuest 39694
     #completewith Bastillax2
-    .goto 679,50.34,77.76,35 >>Siga a Seta
+    .goto 679,50.34,77.76,35 >>Siga a Flecha
 step << Horde
     #requires Bastillax2
     #title |cFFFCDC00Use a Macro|r
@@ -4896,7 +4896,7 @@ step << Alliance
     .mob Bastillax
 step << Alliance
     #completewith Bastillax3
-    .goto 679,50.34,77.76,35 >>Siga a Seta
+    .goto 679,50.34,77.76,35 >>Siga a Flecha
 step << Alliance
     #requires Bastillax3
     .isOnQuest 40255
@@ -4923,7 +4923,7 @@ step << Alliance
     .mob Bastillax
 step << Alliance
     #completewith Bastillax4
-    .goto 679,50.34,77.76,35 >>Siga a Seta
+    .goto 679,50.34,77.76,35 >>Siga a Flecha
 step << Alliance
     #requires Bastillax4
     #title |cFFFCDC00Use a Macro|r
@@ -5037,7 +5037,7 @@ step << Alliance
     .accept 44473 >>Aceite Uma Arma da Aliança
     .target Anduin Wrynn
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart3-CallBoardEnd
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Normal@CallBoardStart3-CallBoardEnd
 -- step << Alliance
 --     #completewith next
 --     #label Weapon of the Alliance
@@ -5132,11 +5132,11 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) Dracthyr Intro
 #displayname |cFF1EFF001|r - O Ara Proibido
-#next Nivelamento Rápido\ba) DF Aliança Intro Meia-noite (A) << Alliance
+#next RestedXP Nivelamento Rápido\ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
 #next b1) Introdução de BfA << Horde
 
 << Dracthyr
@@ -5183,7 +5183,7 @@ step << !Evoker
     .skipgossipid 51901
     .target Crona
 step << !Evoker Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Normal
 step << !Evoker Horde
     .goto 85,40.834,80.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Crona|r |cRXP_WARN_[1]|r.
@@ -5411,7 +5411,7 @@ step << Evoker
 step << Evoker
     #hidewindow
     #completewith Bundle of Rations
-    .goto 2109,34.2,61.06,25 >>Siga a Seta
+    .goto 2109,34.2,61.06,25 >>Siga a Flecha
 step << Evoker
     #requires Bundle of Rations
     .goto 2109,34.2,61.06
@@ -5427,7 +5427,7 @@ step << Evoker
 step << Evoker
     #hidewindow
     #completewith Stack of Weapons
-    .goto 2109,38.67,51.35,25 >>Siga a Seta
+    .goto 2109,38.67,51.35,25 >>Siga a Flecha
 step << Evoker
     #requires Stack of Weapons
     .goto 2109,38.67,51.35
@@ -5528,7 +5528,7 @@ step << Evoker
 step << Evoker
     .goto 2118,43.78,61.29
     >>Usar |T4622458:0|t[Sopro de Fogo] e |cRXP_WARN_Segure-o|r até |cRXP_WARN_Empowerment 1-3|r.
-    *>>>>|TInterface/cursor/crosshair/interact.blp:17|tClique na |cRXP_PICK_Pedra|r para restaurar a recarga.
+    *>>|TInterface/cursor/crosshair/interact.blp:17|tClique na |cRXP_PICK_Pedra|r para restaurar a recarga.
     .complete 64872,1 --Cast an Empowered I Fire Breath
     .complete 64872,2 --Cast an Empowered II Fire Breath
     .complete 64872,3 --Cast an Empowered III Fire Breath
@@ -5801,7 +5801,7 @@ step << Evoker
     #hidewindow
     #completewith Horn signets1
     #title |cFFFCDC00Use ExtraActionButton|r
-    .goto 2110,39.43,28.74,50 >>Siga a Seta
+    .goto 2110,39.43,28.74,50 >>Siga a Flecha
 step << Evoker
     #requires Horn signets1
     #title |cFFFCDC00Use ExtraActionButton|r
@@ -6070,7 +6070,7 @@ step << Evoker
 step << Evoker
     #completewith Nozdormu
     #hidewindow
-    .goto 2118,43.75,59.21,20 >>Siga a Seta
+    .goto 2118,43.75,59.21,20 >>Siga a Flecha
 step << Evoker
     #requires Nozdormu
     .goto 2118,43.75,59.21
@@ -6173,7 +6173,7 @@ step << Alliance Evoker
     .turnin 66513 >>Entregue Folga em Terra
 	.target Comandante-de-escama Lazulathel
 step << Alliance Evoker
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Normal
 -- step << Alliance Evoker
 --     .goto 84,79.84,27.05
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
@@ -6321,11 +6321,11 @@ step << Horde Evoker
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) Introdução Pandaren
 #displayname The Wandering Isle |cRXP_ENEMY_(Alternative)|r
-#next Nivelamento Rápido\ba) DF Aliança Intro Meia-noite (A) << Alliance
+#next RestedXP Nivelamento Rápido\ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
 #next b1) Introdução de BfA << Horde
 
 << Pandaren !DK
@@ -6613,7 +6613,7 @@ step
 step
     #hidewindow
     #completewith Lesson of the Sandy Fist
-    .goto 378,56.79,18.77,15 >>Siga a Seta
+    .goto 378,56.79,18.77,15 >>Siga a Flecha
 step
     #requires Lesson of the Sandy Fist
     .goto 378,56.67,18.20
@@ -6818,11 +6818,11 @@ step
     #title |cFFFCDC00Ressurreição no Curador Espiritual|r
     .goto 378,53.12,30.86,50 >>|cRXP_WARN_Morra e ressuscite no Anjo da Cura|r.
     *Puxe tantos |cRXP_ENEMY_monsters|r quanto possível
-    *|cRXP_WARN_Use the sit macro in combat to die faster|r.
+    *|cRXP_WARN_Use a macro de sentar em combate para morrer mais rápido|r.
     .emote SIT,54130
     .emote SIT,57797
 	.target Anjo da Cura
-    .macro Sit, >>Sentar
+    .macro Sit, >>Sente-se
     .mob Larápio Folhâmbar
     .mob Raposa-das-estepes
 step
@@ -6843,7 +6843,7 @@ step
     .goto 378,53.12,30.87
     .deathskip >>Morra e reapareca em Anjo da Cura.
 	.target Anjo da Cura
-    .macro Sit, >>Sentar
+    .macro Sit, >>Sente-se
     .mob Larápio Folhâmbar
     .mob Raposa-das-estepes
 step
@@ -7048,7 +7048,7 @@ step
     #requires Spirit's Guardian
     #hidewindow
     #completewith Challenger's Fires
-    .goto 378,38.81,25.50,30 >>Siga a Seta
+    .goto 378,38.81,25.50,30 >>Siga a Flecha
 step
     #requires Challenger's Fires
     .goto 378,38.81,25.50
@@ -7329,7 +7329,7 @@ step
 step
     #hidewindow
     #completewith Finding an Old Friend
-    .goto 378,71.93,38.09,30 >>Siga a Seta
+    .goto 378,71.93,38.09,30 >>Siga a Flecha
 step
     #requires Finding an Old Friend
     .goto 378,70.62,38.73
@@ -7367,7 +7367,7 @@ step
     #hidewindow
     #completewith Sting of Learning
     .goto 378,71.14,41.01,15,0
-    .goto 378,71.83,38.22,15 >>Siga a Seta
+    .goto 378,71.83,38.22,15 >>Siga a Flecha
 step
     #requires Sting of Learning
     .goto 378,70.62,38.73
@@ -7388,7 +7388,7 @@ step << Hunter
     #hidewindow
     #completewith Pool of Reflection
     #title |cFFFCDC00Siga a Seta|r
-    .goto 378,78.9,37.81,65 >>Siga a Seta
+    .goto 378,78.9,37.81,65 >>Siga a Flecha
 step << Hunter
     #requires Pool of Reflection
     .goto 378,77.54,36.66,10,0
@@ -7408,7 +7408,7 @@ step << !Hunter
     #hidewindow
     #completewith Pool of Reflection
     #title |cFFFCDC00Siga a Seta|r
-    .goto 378,78.9,37.81,65 >>Siga a Seta
+    .goto 378,78.9,37.81,65 >>Siga a Flecha
 step << !Hunter
     #requires Pool of Reflection
     .goto 378,77.54,36.66,10,0
@@ -7590,7 +7590,7 @@ step
 step
     #hidewindow
     #completewith Ask Shu for help
-    .goto 378,68.98,62.93,20 >>Siga a Seta
+    .goto 378,68.98,62.93,20 >>Siga a Flecha
 step
     #requires Ask Shu for help
     .goto 378,68.98,62.93
@@ -7685,7 +7685,7 @@ step
 step
     #hidewindow
     #completewith Breeze Village
-    .goto 378,30.97,36.74,80 >>Siga a Seta
+    .goto 378,30.97,36.74,80 >>Siga a Flecha
 step
     #requires Breeze Village
     .goto 378,30.97,36.74
@@ -7734,7 +7734,7 @@ step
     .complete 29783,1 --12/12 Abandoned Stone Block
 step
     #label Scroll of Wisdom
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClique em |cRXP_PICK_Banners|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClique nas |cRXP_PICK_Bandeiras|r.
     .complete 29778,1 --5/5 Defaced Scroll of Wisdom burned
 step
     #completewith next
@@ -7888,7 +7888,7 @@ step
     .goto 378,28.66,62.78,15,0
     .goto 378,28,64.26,15,0
     .goto 378,24.65,69.80,150 >>Nade para a Costa e espere em frente do Templo.
-    *>>>>Abate |cRXP_ENEMY_monsters|r enquanto viaja (|cRXP_WARN_if able(class-dependent)|r.
+    *>>Abate |cRXP_ENEMY_monsters|r enquanto viaja (|cRXP_WARN_if able(class-dependent)|r.
     .timer 30,Aguarde o RP
 step
     #requires Locate Dafeng
@@ -7979,7 +7979,7 @@ step
 step
     #hidewindow
     #completewith Passing
-    .goto 378,19.46,51.22,80 >>Siga a Seta
+    .goto 378,19.46,51.22,80 >>Siga a Flecha
 step
     #requires Passing
     .goto 378,19.46,51.22
@@ -8504,7 +8504,7 @@ step
 	.target Espírito de Shang Xi
 step
     #hidewindow
-    .countdown 2 >>Siga a Seta
+    .countdown 2 >>Siga a Flecha
 step
     .zoneskip 84,1
     .goto 84,74.19,91.98
@@ -8537,7 +8537,7 @@ step << Alliance
     .turnin 30987 >>Entregue Entrando para a Aliança
     .target Anduin Wrynn
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Normal
 step
     .zoneskip 1,1
     .goto 1,45.58,12.61
@@ -8577,11 +8577,11 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) Haranir Intro
 #displayname |cFF1EFF001|r - Harandar
-#next Nivelamento Rápido\ba) DF Aliança Intro Meia-noite (A) << Alliance
+#next RestedXP Nivelamento Rápido\ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
 #next b1) Introdução de BfA << Horde
 
 << Harronir
@@ -8590,7 +8590,7 @@ step
     #completewith Invasive Drifter
     .collecttoy 253629,3
     +|cRXP_WARN_Você pode mudar de guia agora para pular a zona inicial (mais rápido), ou continuar normalmente|r.
-    .clicknext RestedXP Speed Leveling\a) Harandar: Skip >>RestedXP Velocidade Leveling\a) Harandar: Pular >>CLIQUE AQUI PARA O GUIA << Alliance
+    .clicknext RestedXP Speed Leveling\a) Harandar: Skip >>CLIQUE AQUI PARA O GUIA << Alliance
 step
     #hidewindow
     #completewith Enter the rootway
@@ -8819,16 +8819,16 @@ step << Horde
     -- .accept 94444 >>Accept Choose a Path
     .target Embaixador Guardanegra
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Normal
 ]])
     --Harandar: Skip
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) Harandar: Pular
 #displayname |cFF1EFF001|r - Harandar Pular
-#next ba) DF Aliança Introdução Meia-noite (A) << Alliance
+#next ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
 #next b1) Introdução de BfA << Horde
 #chapter
 
@@ -8882,17 +8882,17 @@ step << Horde
     .collecttoy 253629,1
     .achievementComplete 61506,1
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Torre
 ]])
 --Earthen: Hall of Awakening
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) Anão Terráqueo Introdução
 #displayname |cFF1EFF001|r - Salão do Despertar
-#next Nivelamento Rápido\ba) DF Aliança Intro Meia-noite (A) << Alliance
+#next RestedXP Nivelamento Rápido\ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
 #next b1) Introdução de BfA << Horde
 
 << EarthenDwarf
@@ -8901,7 +8901,7 @@ step
     #completewith Invasive Drifter
     .collecttoy 253629,3
     +|cRXP_WARN_Você pode mudar de guia agora para pular a zona inicial (mais rápido), ou continuar normalmente|r.
-    .clicknext RestedXP Speed Leveling\a) Hall of Awakening: Skip >>RestedXP Velocidade Leveling\a) Salão do Despertar: Pular >>CLIQUE AQUI PARA O GUIA << Alliance
+    .clicknext RestedXP Speed Leveling\a) Hall of Awakening: Skip >>CLIQUE AQUI PARA O GUIA << Alliance
 step
     .goto 2322,89.38,48.77,3,0
     .goto 2322,89.45,48.04
@@ -9016,7 +9016,7 @@ step
     .disablecheckbox
 step
     #completewith The Analysis Interface
-    .goto 2322,49.05,50.41,15 >>Siga a Seta
+    .goto 2322,49.05,50.41,15 >>Siga a Flecha
 step
     #requires The Analysis Interface
     .goto 2322,47.77,54.79
@@ -9116,7 +9116,7 @@ step << Alliance
     .target Embaixador Moorgard
     .accept 81887 >>Aceite Estranho numa Terra Estranha
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Normal@ChromieTime-ChromieTime
 -- step << Alliance
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -9131,7 +9131,7 @@ step << Alliance
     .turnin 81887 >>Virando um Estranho numa Terra Estranha
     .target Adelda
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Normal@CallBoardStart-CallBoardEnd
 step << Horde
     #completewith next
     #label For the Horde
@@ -9157,11 +9157,11 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) Salão do Despertar: Pular
 #displayname |cFF1EFF001|r - Salão do Despertar Pular
-#next ba) DF Aliança Introdução Meia-noite (A) << Alliance
+#next ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
 #next b1) Introdução de BfA << Horde
 #chapter
 
@@ -9186,17 +9186,17 @@ step << Horde
     .zone 85 >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Portal para Orgrimmar|r
     .collecttoy 253629,3
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Torre
 
 ]])
 --Arathi Highlands Returning Player
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) Planalto Arathi Jogador em Retorno
 #displayname Recuperação dos Montes Arathi |cRXP_ENEMY_(Alternative)|r
-#next Nivelamento Rápido\ba) DF Aliança Intro Meia-noite (A) << Alliance
+#next RestedXP Nivelamento Rápido\ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
 #next b1) Introdução de BfA << Horde
 #internal
 
@@ -9353,7 +9353,7 @@ step << Horde
 step
     #completewith Catapults destroyed
     >>Mate os |cRXP_ENEMY_Ogres|r, os |cRXP_ENEMY_Kobolds|r e os |cRXP_ENEMY_Gnolls|r.
-    *>>>>|TInterface/cursor/crosshair/interact.blp:20|tClique nos |cRXP_PICK_Objetos|r
+    *>>|TInterface/cursor/crosshair/interact.blp:20|tClique nos |cRXP_PICK_Objetos|r
     .complete 90893,1,100 --Repel the Ogre Siege (100%)
     .mob Ogro Esmagador
     .mob Ceromante Kobold
@@ -9469,24 +9469,24 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) Exílio's Reach Aliança
 #displayname |cFF1EFF001|r - Exílio's Reach
-#next ba) DF Aliança Introdução Meia-noite (A)
+#next ba) Introdução da Aliança em Dragonflight em Midnight (A)
 
 << Alliance !Harronir !Dracthyr !DemonHunter !DK !KulTiran !EarthenDwarf !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
 
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach
 ]])
 
 --Draenei: Ammen Vale
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name ab) Ammen Vale
 #displayname Ammen Vale |cRXP_ENEMY_(Alternative)|r
 #defaultfor Draenei !DK
@@ -9822,7 +9822,7 @@ step
     #completewith Emitter Spare Part
     #hidewindow
     .goto 468,53.76,55.91,15,0
-    .goto 468,55.98,60.78,60 >>Siga a Seta
+    .goto 468,55.98,60.78,60 >>Siga a Flecha
 step
     .xp >10,1
     #requires Emitter Spare Part
@@ -10072,9 +10072,9 @@ step
     .goto 468,28.56,72.18,40,0
     .goto 468,32.29,74.47,40,0
     .goto 468,46.59,42.58,25 >>Morra e reapareca em Anjo da Cura.
-    *|cRXP_WARN_Use the sit macro in combat to die faster|r.
+    *|cRXP_WARN_Use a macro de sentar em combate para morrer mais rápido|r.
     .emote SIT,16521
-    .macro Sit, >>Sentar
+    .macro Sit, >>Sente-se
     .mob Batedor Elfo Sangrento
 step
     .xp >10,1
@@ -10114,7 +10114,7 @@ step
     #hidewindow
     .goto 468,49.29,41.05,25,0
     .goto 468,49.77,46,25,0
-    .goto 468,50.66,48.75,40 >>Siga a Seta
+    .goto 468,50.66,48.75,40 >>Siga a Flecha
 step
     .xp >10,1
     #requires Blood Elf Spy
@@ -10137,9 +10137,9 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) Ammen Vale: Pular
-#next ba) DF Aliança Introdução Meia-noite (A) << Alliance
+#next ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
 #next b1) Introdução de BfA << Horde
 #chapter
 #internal
@@ -10152,12 +10152,12 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name ac) Draenei Azuremyst Isle
 #displayname |cFF1EFF002|r - Azuremyst Isle
 #defaultfor Draenei !DK
-#next Nivelamento Rápido\ba) DF Aliança Intro Meia-noite (A)
+#next RestedXP Nivelamento Rápido\ba) Introdução da Aliança em Dragonflight em Midnight (A)
 
 << Alliance
 
@@ -10467,7 +10467,7 @@ step
     .goto 97,54.97,49.26,40,0
     .goto 97,56.41,44.31,40,0
     .goto 97,58.97,47.88,40,0
-    .goto 97,61.37,47.15,60 >>Siga a Seta
+    .goto 97,61.37,47.15,60 >>Siga a Flecha
 step
     #requires test
     #loop
@@ -10631,16 +10631,16 @@ step
 
 step
     #xprate >1.3
-    #include RestedXP Speed Leveling\a) Azuremyst Isle >1.3 XP Rate
+    #include RestedXP Nivelamento Rápido\a) Azuremyst Isle >1,3 Taxa de XP
 step
     #xprate <1.3
-    #include RestedXP Speed Leveling\a) Azuremyst Isle <1.3 XP Rate
+    #include RestedXP Nivelamento Rápido\a) Azuremyst Isle <1,3 Taxa de XP
 step
     #xprate 1.25-1.3
-    #include RestedXP Speed Leveling\a) Azuremyst Isle 1.25-1.3 XP XP Rate
+    #include RestedXP Nivelamento Rápido\a) Azuremyst Isle 1,25-1,3 Taxa de XP
 step
     #xprate <1.25
-    #include RestedXP Speed Leveling\a) Azuremyst Isle <1.25 XP Rate
+    #include RestedXP Nivelamento Rápido\a) Azuremyst Isle <1,25 Taxa de XP
 
 -- ******************** ROUTES INTERSECT HERE ********************--
 
@@ -10731,7 +10731,7 @@ step
     .goto 97,52.37,69.3,40,0
     .goto 97,58.13,69.25,40,0
     .goto 97,59.94,70.42,40,0
-    .goto 97,61.66,68.32,40 >>Siga a Seta
+    .goto 97,61.66,68.32,40 >>Siga a Flecha
 step
     .xp >10,1
     #requires Skittering Crawler Meat2
@@ -10818,7 +10818,7 @@ step
 step
     .xp >10,1
     #completewith Wrathscale Myrmidon
-    .goto 97,39.65,75.35,60 >>Siga a Seta
+    .goto 97,39.65,75.35,60 >>Siga a Flecha
 step
     .xp >10,1
     #requires Wrathscale Myrmidon
@@ -10947,8 +10947,8 @@ step
     .isQuestComplete 9527
     #completewith Turn in Tree's Company1
     .goto 97,47.87,56.19,15 >>Morra para os |cRXP_ENEMY_Owlbeasts|r.
-    *|cRXP_WARN_Use the sit macro in combat to die faster|r.
-    .macro Sit, >>Sentar
+    *|cRXP_WARN_Use a macro de sentar em combate para morrer mais rápido|r.
+    .macro Sit, >>Sente-se
 step
     .isQuestComplete 9527
     #requires Turn in Tree's Company1
@@ -10987,14 +10987,14 @@ step
     #label HousingDraenei
     .zoneskip 97,1
     .zone 2352 >>Teleporte para um Bairro com o Localizador de Casa, não |T7252953:0|t[Teleportar para terreno], depois pegue o |cRXP_PICK_Stormwind Portal|r.
-    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>https://www.youtube.com/watch?v=uVkUB7z0njo >>CLIQUE AQUI PARA VER O VÍDEO
+    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLIQUE AQUI PARA VER O VÍDEO
     .macro House Teleport, 975747 >>Casa de Teleporte
 step << Alliance
     .goto 2352,57.43,26.65
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Portal|r
     .zoneskip 2352,1
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Torre
 
 
 ]])
@@ -11002,7 +11002,7 @@ step << Alliance
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) Azuremyst Isle >1,3 Taxa de XP
 #internal
 
@@ -11047,7 +11047,7 @@ step
     #xprate >1.30
     #completewith Above130 x2
     #hidewindow
-    .goto 103,56.78,49.6,60 >>Siga a Seta
+    .goto 103,56.78,49.6,60 >>Siga a Flecha
 step
     #xprate >1.30
     #requires Above130 x2
@@ -11070,7 +11070,7 @@ step
     #xprate >1.30
     #completewith Above130 x3
     #hidewindow
-    .goto 103,54.35,36.64,60 >>Siga a Seta
+    .goto 103,54.35,36.64,60 >>Siga a Flecha
 step
     #requires Above130 x3
     #xprate >1.30
@@ -11270,7 +11270,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) Azuremyst Isle <1,3 Taxa de XP
 #internal
 
@@ -11376,7 +11376,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) Azuremyst Isle 1,25-1,3 Taxa de XP
 #internal
 
@@ -11491,7 +11491,7 @@ step
 step
     #completewith Between2530Backup x2
     #hidewindow
-    .goto 103,54.51,36.93,60 >>Siga a Seta
+    .goto 103,54.51,36.93,60 >>Siga a Flecha
 step
     #requires Between2530Backup x2
     #xprate 1.25-1.30
@@ -11544,7 +11544,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) Azuremyst Isle <1,25 Taxa de XP
 #internal
 
@@ -11608,7 +11608,7 @@ step
     #requires Under125 x2
     #completewith Under125 x3
     #hidewindow
-    .goto 103,56.78,49.6,60 >>Siga a Seta
+    .goto 103,56.78,49.6,60 >>Siga a Flecha
 step
     #requires Under125 x3
     #xprate <1.25
@@ -11693,8 +11693,8 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name ab) Dwarf Coldridge Valley
 #displayname Coldridge Valley |cRXP_ENEMY_(Alternative)|r
 #defaultfor Dwarf !DK
@@ -12335,7 +12335,7 @@ step
     #requires Grik'nir the Cold
     #completewith Frostmane Blade
     #hidewindow
-    .goto 428,76.94,32.07,60 >>Siga a Seta
+    .goto 428,76.94,32.07,60 >>Siga a Flecha
 step
     .xp >10,1
     #requires Frostmane Blade
@@ -12549,9 +12549,9 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) Coldridge Valley: Pular
-#next ba) DF Aliança Introdução Meia-noite (A) << Alliance
+#next ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
 #next b1) Introdução de BfA << Horde
 #chapter
 #internal
@@ -12564,8 +12564,8 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name ab) New Tinkertown
 #displayname  New Tinkertown |cRXP_ENEMY_(Alternative)|r
 #defaultfor Gnome !DK
@@ -12749,7 +12749,7 @@ step << Gnome Rogue
     .xp >10,1
     #hidewindow
     #completewith The Future of Gnomeregan
-    .goto 469,38.025,33.570,20 >>Siga a Seta
+    .goto 469,38.025,33.570,20 >>Siga a Flecha
 step << Gnome Rogue
     .xp >10,1
     #requires The Future of Gnomeregan
@@ -12786,7 +12786,7 @@ step << Gnome Warlock
     .xp >10,1
     #hidewindow
     #completewith The Future of Gnomeregan
-    .goto 469,37.88,37.86,20 >>Siga a Seta
+    .goto 469,37.88,37.86,20 >>Siga a Flecha
 step << Gnome Warlock
     .xp >10,1
     #requires The Future of Gnomeregan
@@ -12809,7 +12809,7 @@ step << Gnome Warrior
     .xp >10,1
     #hidewindow
     #completewith in The Future of Gnomeregan
-    .goto 469,40.68,35.59,20 >>Siga a Seta
+    .goto 469,40.68,35.59,20 >>Siga a Flecha
 step << Gnome Warrior
     .xp >10,1
     #requires in The Future of Gnomeregan
@@ -12841,7 +12841,7 @@ step << Gnome Hunter
     .xp >10,1
     #completewith The Future of Gnomeregan
     #hidewindow
-    .goto 469,41.925,31.636,10 >>Siga a Seta
+    .goto 469,41.925,31.636,10 >>Siga a Flecha
 step << Gnome Hunter
     .xp >10,1
     #requires The Future of Gnomeregan
@@ -12936,7 +12936,7 @@ step
     .xp >10,1
     #completewith Dealing with the Fallout
     #hidewindow
-    .goto 469,38.43,40.48,20 >>Siga a Seta
+    .goto 469,38.43,40.48,20 >>Siga a Flecha
 step
     .xp >10,1
     #requires Dealing with the Fallout
@@ -13046,7 +13046,7 @@ step
     .xp >10,1
     #completewith Turn in A Job for the Multi-Bot
     #hidewindow
-    .goto 469,40.4,28.22,40 >>Siga a Seta
+    .goto 469,40.4,28.22,40 >>Siga a Flecha
 step
     .xp >10,1
     #requires Turn in A Job for the Multi-Bot
@@ -13072,7 +13072,7 @@ step
     .xp >10,1
     #completewith What's Keeping Kharmarn?
     #hidewindow
-    .goto 469,38.27,33.88,30 >>Siga a Seta
+    .goto 469,38.27,33.88,30 >>Siga a Flecha
 step
     .xp >10,1
     #requires What's Keeping Kharmarn?
@@ -13442,9 +13442,9 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) New Tinkertown: Pular
-#next ba) DF Aliança Introdução Meia-noite (A) << Alliance
+#next ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
 #next b1) Introdução de BfA << Horde
 #chapter
 #internal
@@ -13457,12 +13457,12 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name ac) Anão & Gnomo Dun Morogh
 #displayname |cFF1EFF002|r - Dun Morogh
 #defaultfor Dwarf Gnome !DK
-#next Nivelamento Rápido\ba) DF Aliança Intro Meia-noite (A)
+#next RestedXP Nivelamento Rápido\ba) Introdução da Aliança em Dragonflight em Midnight (A)
 
 << Alliance
 
@@ -13524,7 +13524,7 @@ step << Gnome
     .xp >10,1
     #hidewindow
     #completewith Frostmane Aggression
-    .goto 27,53.73,52.04,40 >>Siga a Seta
+    .goto 27,53.73,52.04,40 >>Siga a Flecha
 step << Gnome
     .xp >10,1
     #requires Frostmane Aggression
@@ -13735,7 +13735,7 @@ step << Dwarf
     .xp >10,1
     #hidewindow
     #completewith Bound for KharanosDwarf
-    .goto 27,50,44.88,40 >>Siga a Seta
+    .goto 27,50,44.88,40 >>Siga a Flecha
 step << Dwarf
     .xp >10,1
     #requires Bound for KharanosDwarf
@@ -13977,7 +13977,7 @@ step
     #requires Wendigo Cave
     #hidewindow
     #completewith Mountaineer Dunstan
-    .goto 29,51.81,48.44,50 >>Siga a Seta
+    .goto 29,51.81,48.44,50 >>Siga a Flecha
 step
     .xp >10,1
     #requires Mountaineer Dunstan
@@ -13998,7 +13998,7 @@ step
     .xp >10,1
     #hidewindow
     #completewith Mountaineer Lewin
-    .goto 29,60.272,56.211,40 >>Siga a Seta
+    .goto 29,60.272,56.211,40 >>Siga a Flecha
 step
     .xp >10,1
     #requires Mountaineer Lewin
@@ -14020,7 +14020,7 @@ step
     .xp >10,1
     #hidewindow
     #completewith Mountaineer Valgrum
-    .goto 29,60.91,22.88,50 >>Siga a Seta
+    .goto 29,60.91,22.88,50 >>Siga a Flecha
 step
     .xp >10,1
     #requires Mountaineer Valgrum
@@ -14047,7 +14047,7 @@ step
     .goto 29,41.77,31.49,15,0
     .goto 29,34.13,36.32,15,0
     .goto 29,30.67,55.6,30 >>Caminho para |cRXP_PICK_Baú|r e |cRXP_ENEMY_Edan the Howler|r
-    .macro Sit, >>Sentar
+    .macro Sit, >>Sente-se
     .unitscan Edan, o Uivador
 step
     .xp >10,1
@@ -14086,11 +14086,11 @@ step
 step
     .xp >10,1
     #completewith Forced to Watch from Afar
-    .subzone 131 >>Morra e reapareça no Cemitério.
-    *|cRXP_WARN_Use the sit macro in combat to die faster|r.
+    .subzone 131 >>Morra e ressuscite no cemitério.
+    *|cRXP_WARN_Use a macro de sentar em combate para morrer mais rápido|r.
     .emote SIT,1135
     .emote SIT,1134
-    .macro Sit, >>Sentar
+    .macro Sit, >>Sente-se
     .target Anjo da Cura
 step
     .xp >10,1
@@ -14635,14 +14635,14 @@ step
 step
     .zoneskip 27,1
     .zone 2352 >>Teleporte para um Bairro com o Localizador de Casa, não |T7252953:0|t[Teleportar para terreno], depois pegue o |cRXP_PICK_Stormwind Portal|r.
-    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>https://www.youtube.com/watch?v=uVkUB7z0njo >>CLIQUE AQUI PARA VER O VÍDEO
+    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLIQUE AQUI PARA VER O VÍDEO
     .macro House Teleport, 975747 >>Casa de Teleporte
 step << Alliance
     .goto 2352,57.43,26.65
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Portal|r
     .zoneskip 2352,1
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Torre
 -- step
 --     .goto 27,82.85,48.41
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Bahrum|r
@@ -14698,8 +14698,8 @@ step << Alliance
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name ab) Northshire Valley
 #displayname Northshire Valley |cRXP_ENEMY_(Alternativa)|r
 #defaultfor Human !DK
@@ -15040,7 +15040,7 @@ step
     #hidewindow
     #completewith Blackrock Invasion
     .goto 425,34.28,47.86,30,0
-    .goto 425,33.2,53.95,20 >>Siga a Seta
+    .goto 425,33.2,53.95,20 >>Siga a Flecha
 step
     .xp >10,1
     #requires Blackrock Invasion
@@ -15221,9 +15221,9 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) Northshire Valley: Pular
-#next ba) DF Aliança Introdução Meia-noite (A) << Alliance
+#next ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
 #next b1) Introdução de BfA << Horde
 #chapter
 #internal
@@ -15236,12 +15236,12 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name ac) Elwynn Forest 1
 #displayname |cFF1EFF002|r - Elwynn Forest
 #defaultfor Human !DK
-#next Nivelamento Rápido\ba) DF Aliança Intro Meia-noite (A)
+#next RestedXP Nivelamento Rápido\ba) Introdução da Aliança em Dragonflight em Midnight (A)
 
 << Alliance
 
@@ -15443,7 +15443,7 @@ step
     .xp >10,1
     #completewith Cooking
     #hidewindow
-    .goto 37,44.37,65.99,20 >>Siga a Seta
+    .goto 37,44.37,65.99,20 >>Siga a Flecha
 step
     .xp >10,1
     #requires Cooking
@@ -16063,7 +16063,7 @@ step
     >>Abate |cRXP_ENEMY_Murlocs|r.
     *Saque o |T134304:0|t[|cRXP_LOOT_Torn Murloc Fin|r] deles.
     .complete 46,1 --Torn Murloc Fin (8)
-    .macro Sit, >>Sentar
+    .macro Sit, >>Sente-se
     .unitscan Duracasca
     .mob Murloc Colhedor
     .mob Murloc Tocaieiro
@@ -16078,9 +16078,9 @@ step
     .xp >10,1
     #completewith Fine Linen Goods 1
     #label Bushtail2
-    .subzone 88 >>Morra e reapareça no Cemitério.
-    *|cRXP_WARN_Use the sit macro in combat to die faster|r.
-    .macro Sit, >>Sentar
+    .subzone 88 >>Morra e ressuscite no cemitério.
+    *|cRXP_WARN_Use a macro de sentar em combate para morrer mais rápido|r.
+    .macro Sit, >>Sente-se
 step
     .xp >10,1
     #requires Fine Linen Goods 1
@@ -16162,7 +16162,7 @@ step
 step
     .xp >10,1
     #completewith Discover Rolf's Fate
-    .goto 37,79.795,55.510,50 >>Siga a Seta
+    .goto 37,79.795,55.510,50 >>Siga a Flecha
 step
     .xp >10,1
     #requires Discover Rolf's Fate
@@ -16316,9 +16316,9 @@ step
     .goto 37,69.43,85.37,20,0
     .goto 37,76.78,85.77
     >>Mate |cRXP_ENEMY_Duracasca|r; passe adiante se não estiver lá.
-    .subzone 88 >>Morra e reapareça no Cemitério.
-    *|cRXP_WARN_Use the sit macro in combat to die faster|r.
-    .macro Sit, >>Sentar
+    .subzone 88 >>Morra e ressuscite no cemitério.
+    *|cRXP_WARN_Use a macro de sentar em combate para morrer mais rápido|r.
+    .macro Sit, >>Sente-se
     .mob Duracasca
     .unitscan Duracasca
 step
@@ -16368,7 +16368,7 @@ step
     .accept 40519 >>Aceite Legion: a volta da Legião
     .choose 1851120
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Normal@ChromieTime-ChromieTime
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -16388,12 +16388,12 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name ab) Shadowglen
 #displayname Shadowglen |cRXP_ENEMY_(Alternativa)|r
 #defaultfor NightElf !DemonHunter !DK
-#next ac) Elfo Noturno Teldrassil
+#next ac) Elfo da Noite Teldrassil
 
 << Alliance
 
@@ -16558,7 +16558,7 @@ step
     .xp >10,1
     #completewith Moon
     #title |cFFFCDC00Siga a Seta|r
-    .goto 460,42.69,50.87,70 >>Siga a Seta
+    .goto 460,42.69,50.87,70 >>Siga a Flecha
 step
     .xp >10,1
     #requires Moon
@@ -16850,9 +16850,9 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) Shadowglen: Pular
-#next ba) DF Aliança Introdução Meia-noite (A) << Alliance
+#next ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
 #next b1) Introdução de BfA << Horde
 #chapter
 #internal
@@ -16865,8 +16865,8 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name ac) Elfo da Noite Teldrassil
 #displayname |cFF1EFF002|r - Teldrassil
 #defaultfor NightElf !DemonHunter !DK
@@ -17084,7 +17084,7 @@ step
     .goto 57,56.5,55.69,20,0
     .goto 57,56.97,55.44,20,0
     .goto 57,56.76,54.68,20,0
-    .goto 57,56.8,53.59,40 >>Siga a Seta
+    .goto 57,56.8,53.59,40 >>Siga a Flecha
 step
     .xp >10,1
     #requires Fel Cone
@@ -17251,9 +17251,9 @@ step
     .xp >10,1
     #completewith Teldrassil: The Refusal of the Aspects
     .goto 57,64.13,56.45
-    .subzone 186 >>Morra e reapareça no Cemitério.
-    *|cRXP_WARN_Use the sit macro in combat to die faster|r.
-    .macro Sit, >>Sentar
+    .subzone 186 >>Morra e ressuscite no cemitério.
+    *|cRXP_WARN_Use a macro de sentar em combate para morrer mais rápido|r.
+    .macro Sit, >>Sente-se
     .emote SIT,2008
     .emote SIT,2007
     .emote SIT,7235
@@ -17513,9 +17513,9 @@ step
     .goto 59,15.93,55.43,20,0
     .goto 59,30.97,78.72,10,0
     .goto 59,33.82,52.08,10,0
-    .subzone 186 >>Morra e reapareça no Cemitério.
-    *|cRXP_WARN_Use the sit macro in combat to die faster|r.
-    .macro Sit, >>Sentar
+    .subzone 186 >>Morra e ressuscite no cemitério.
+    *|cRXP_WARN_Use a macro de sentar em combate para morrer mais rápido|r.
+    .macro Sit, >>Sente-se
     .subzoneskip 258,1
     .emote SIT,2005
     .emote SIT,2004
@@ -17559,7 +17559,7 @@ step
     .goto 57,55.78,52.73,10,0
     .goto 57,55.78,52.17,10,0
     .goto 57,55.82,51.03,10,0
-    .goto 57,55.76,50.44,40 >>Siga a Seta
+    .goto 57,55.76,50.44,40 >>Siga a Flecha
 step
     .isQuestComplete 13946
     #requires Nature's Reprisal3
@@ -17641,9 +17641,9 @@ step
 step
     .xp >10,1
     #completewith Turn in Ferocitas the Dream Eater
-    .subzone 186 >>Morra e reapareça no Cemitério.
-    *|cRXP_WARN_Use the sit macro in combat to die faster|r.
-    .macro Sit, >>Sentar
+    .subzone 186 >>Morra e ressuscite no cemitério.
+    *|cRXP_WARN_Use a macro de sentar em combate para morrer mais rápido|r.
+    .macro Sit, >>Sente-se
 step
     .xp >10,1
     #requires Turn in Ferocitas the Dream Eater
@@ -17681,7 +17681,7 @@ step
     .goto 57,55.79,52.12,10,0
     .goto 57,55.71,51.27,10,0
     .goto 57,55.83,50.35,10,0
-    .goto 57,55.55,49.99,30 >>Siga a Seta
+    .goto 57,55.55,49.99,30 >>Siga a Flecha
 step
     .isQuestComplete 2459
     #requires Ferocitas the Dream Eater3
@@ -17854,7 +17854,7 @@ step
 step
     .xp >10,1
     #completewith Rune of Nesting
-    .goto 61,54.84,75.26,30 >>Siga a Seta
+    .goto 61,54.84,75.26,30 >>Siga a Flecha
 step
     .xp >10,1
     #requires Rune of Nesting
@@ -17872,7 +17872,7 @@ step
 step
     .xp >10,1
     #completewith Black Feather Quill
-    .goto 61,51.93,86.47,30 >>Siga a Seta
+    .goto 61,51.93,86.47,30 >>Siga a Flecha
 step
     .xp >10,1
     #requires Black Feather Quill
@@ -17934,7 +17934,7 @@ step
 step
     .xp >10,1
     #completewith Druid of the Claw
-    .goto 60,40.15,58.87,10 >>Siga a Seta
+    .goto 60,40.15,58.87,10 >>Siga a Flecha
 step
     .xp >10,1
     #requires Druid of the Claw
@@ -18033,24 +18033,24 @@ step
 step
     .zoneskip 57,1
     .zone 2352 >>Teleporte para um Bairro com o Localizador de Casa, não |T7252953:0|t[Teleportar para terreno], depois pegue o |cRXP_PICK_Stormwind Portal|r.
-    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>https://www.youtube.com/watch?v=uVkUB7z0njo >>CLIQUE AQUI PARA VER O VÍDEO
+    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLIQUE AQUI PARA VER O VÍDEO
     .macro House Teleport, 975747 >>Casa de Teleporte
 step << Alliance
     .goto 2352,57.43,26.65
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Portal|r
     .zoneskip 2352,1
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Torre
 ]])
 --Worgen: Gilneas
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name ab) Introdução do Worgen
 #displayname Gilneas |cRXP_ENEMY_(Alternativa)|r
-#next Nivelamento Rápido\ba) DF Aliança Intro Meia-noite (A)
+#next RestedXP Nivelamento Rápido\ba) Introdução da Aliança em Dragonflight em Midnight (A)
 
 << Alliance Worgen !DK
 
@@ -18144,7 +18144,7 @@ step
 step
     #hidewindow
     #completewith Lockdown!
-    .goto 202,54.626,16.717,25 >>Siga a Seta
+    .goto 202,54.626,16.717,25 >>Siga a Flecha
 step
     #requires Lockdown!
     .goto 202,54.626,16.717
@@ -18167,7 +18167,7 @@ step
 step
     #completewith Something's Amiss
     #hidewindow
-    .goto 202,59.84,22.19,20 >>Siga a Seta
+    .goto 202,59.84,22.19,20 >>Siga a Flecha
 step
     #requires Something's Amiss
     .goto 202,59.84,22.19
@@ -18335,7 +18335,7 @@ step << Warrior
 step << Warrior
     #hidewindow
     #completewith Your Instructor
-    .goto 202,67.6,64.29,20 >>Siga a Seta
+    .goto 202,67.6,64.29,20 >>Siga a Flecha
 step << Warrior
     #requires Your Instructor
     .goto 202,67.6,64.29
@@ -18373,7 +18373,7 @@ step << Mage
 step << Mage
     #completewith Arcane Inquiries
     #hidewindow
-    .goto 202,68.02,64.67,20 >>Siga a Seta
+    .goto 202,68.02,64.67,20 >>Siga a Flecha
 step << Mage
     #requires Arcane Inquiries
     .goto 202,68.02,64.67
@@ -18415,7 +18415,7 @@ step << Warrior/Mage
 step << Warrior/Mage
     #hidewindow
     #completewith WorgenWarriorMage
-    .goto 202,65.810,77.714,75 >>Siga a Seta
+    .goto 202,65.810,77.714,75 >>Siga a Flecha
 step << Warrior/Mage
     #requires WorgenWarriorMage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Rei Genn Greymane|r e o |cRXP_FRIENDLY_Lorde Godfrey|r.
@@ -18455,7 +18455,7 @@ step
     .target Capitão Broderick
 step
     #completewith Old Divisions
-    .goto 202,57.925,75.584,10 >>Siga a Seta
+    .goto 202,57.925,75.584,10 >>Siga a Flecha
 step
     #requires Old Divisions
     .goto 202,57.925,75.584
@@ -18483,7 +18483,7 @@ step
 step
     #completewith The Prison Rooftop
     #hidewindow
-    .goto 202,55.224,62.906,30 >>Siga a Seta
+    .goto 202,55.224,62.906,30 >>Siga a Flecha
 step
     #requires The Prison Rooftop
     #label The Prison Rooftop2
@@ -18745,7 +18745,7 @@ step
     .target Lorde Darius Crowley
 step
     #completewith Time to Regroup
-    .goto 202,30.37,73.14,80 >>Siga a Seta
+    .goto 202,30.37,73.14,80 >>Siga a Flecha
 step
     #requires Time to Regroup
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Rei Genn Greymane|r e o |cRXP_FRIENDLY_Lorde Darius Crowley|r.
@@ -18974,7 +18974,7 @@ step
     #title |cFFFCDC00NPC Patrols|r
     #hidewindow
     #completewith Kill or Be Killed
-    .goto 179,35.68,66.34,20 >>Siga a Seta
+    .goto 179,35.68,66.34,20 >>Siga a Flecha
 step
     #requires Kill or Be Killed
     #title |cFFFCDC00NPC Patrols|r
@@ -19274,9 +19274,9 @@ step
     #label Two By Sea
     #completewith Save the Children!
     .subzoneskip 4792
-    *|cRXP_WARN_Use the sit macro in combat to die faster|r.
-    .subzone 4793 >>Morra e reapareça no Cemitério.
-    .macro Sit, >>Sentar
+    *|cRXP_WARN_Use a macro de sentar em combate para morrer mais rápido|r.
+    .subzone 4793 >>Morra e ressuscite no cemitério.
+    .macro Sit, >>Sente-se
     .emote SIT,16537
     .emote SIT,16518
 step
@@ -19372,7 +19372,7 @@ step
     .target Lorde Godfrey
 step
     #completewith As the Land Shatters
-    .goto 179,28.98,63.93,15 >>Siga a Seta
+    .goto 179,28.98,63.93,15 >>Siga a Flecha
 step
     #requires As the Land Shatters
     .goto 179,28.98,63.93
@@ -19511,7 +19511,7 @@ step
 step
     #hidewindow
     #completewith Evacuation
-    .goto 179,37.63,65.23,60 >>Siga a Seta
+    .goto 179,37.63,65.23,60 >>Siga a Flecha
 step
     #requires Evacuation
     .goto 179,37.63,65.23
@@ -19537,7 +19537,7 @@ step
     +1
 step
     #completewith Koroth the Hillbreaker
-    |title |cFFFCDC00Evasão Koroth, o Aplaina-colinas|r
+    #title |cFFFCDC00Avoid Koroth the Hillbreaker|r
     +|cRXP_WARN_Evasão Koroth, o Aplaina-colinas|r
     .unitscan Koroth, o Aplaina-colinas
     .target Cavalo da Montanha
@@ -19703,7 +19703,7 @@ step
 step
     #completewith Hayward Brothers
     #hidewindow
-    .goto 179,36.89,84.19,180 >>Siga a Seta
+    .goto 179,36.89,84.19,180 >>Siga a Flecha
 step
     #requires Hayward Brothers
     .goto 179,36.89,84.19
@@ -20126,7 +20126,7 @@ step
     .mob Rygna
 step
     #completewith Rygna
-    .goto 179,68.35,81.65,80 >>Siga a Seta
+    .goto 179,68.35,81.65,80 >>Siga a Flecha
 step
     #requires Rygna
     .goto 179,68.35,81.65
@@ -20170,7 +20170,7 @@ step
     .target Belysra Starbreeze
 step
     #completewith The Blackwald
-    .goto 179,63.35,82.91,100 >>Siga a Seta
+    .goto 179,63.35,82.91,100 >>Siga a Flecha
 step
     #requires The Blackwald
     .goto 179,63.35,82.91
@@ -20412,7 +20412,7 @@ step
 	.target Krennan Aranas
 step
     #completewith Onwards and Upwards
-    .goto 179,72.73,80.05,160 >>Siga a Seta
+    .goto 179,72.73,80.05,160 >>Siga a Flecha
 step
     #requires Onwards and Upwards
     .goto 179,72.73,80.05
@@ -20474,7 +20474,7 @@ step
 step
     #requires Baron Ashbury
     #completewith Baron Ashbury2
-    .goto 179,85.12,74.18,30 >>Siga a Seta
+    .goto 179,85.12,74.18,30 >>Siga a Flecha
 step
     #requires Baron Ashbury2
     #title |cFFFCDC00NPC Patrols|r
@@ -20526,7 +20526,7 @@ step
     #requires Flank the Forsaken2
     #completewith Flank the Forsaken3
     #hidewindow
-    .goto 179,78.28,72.07,30 >>Siga a Seta
+    .goto 179,78.28,72.07,30 >>Siga a Flecha
 step
     #requires Flank the Forsaken3
     #label Turn in Betrayal at Tempest's Reach
@@ -20553,7 +20553,7 @@ step
 step
     #hidewindow
     #completewith Liberation Day
-    .goto 179,70.88,39.84,30 >>Siga a Seta
+    .goto 179,70.88,39.84,30 >>Siga a Flecha
 step
     #requires Liberation Day
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lorna Crowley|r, |cRXP_FRIENDLY_Magda Whitewall|r e |cRXP_FRIENDLY_Marcus|r.
@@ -20652,7 +20652,7 @@ step
 step
     #completewith Valov the Mad1
     #hidewindow
-    .goto 179,74.16,27.43,30 >>Siga a Seta
+    .goto 179,74.16,27.43,30 >>Siga a Flecha
 step
     #requires Valov the Mad1
     #label Valov the Mad2
@@ -20683,7 +20683,7 @@ step
 step
     #completewith Push Them Out
     #hidewindow
-    .goto 179,70.88,39.84,40 >>Siga a Seta
+    .goto 179,70.88,39.84,40 >>Siga a Flecha
 step
     #requires Push Them Out
     .goto 179,70.88,39.84
@@ -20707,7 +20707,7 @@ step
     .target Miliciano Guilneano
 step
     #completewith Gorerot
-    .goto 202,57.21,65.77,40 >>Siga a Seta
+    .goto 202,57.21,65.77,40 >>Siga a Flecha
 step
     #requires Gorerot
     .goto 202,57.21,65.77
@@ -20741,7 +20741,7 @@ step
     .mob Grande Dama Sylvana Correventos
 step
     #completewith Battle for Gilneas City Complete
-    .goto 202,36.23,62.52,40 >>Siga a Seta
+    .goto 202,36.23,62.52,40 >>Siga a Flecha
 step
     #requires Battle for Gilneas City Complete
     .goto 202,36.23,62.52
@@ -20819,7 +20819,7 @@ step
 step
     #completewith Vengeance or Survival
     #hidewindow
-    .goto 202,32.36,57.04,8 >>Siga a Seta
+    .goto 202,32.36,57.04,8 >>Siga a Flecha
 step
     #requires Vengeance or Survival
     .goto 202,32.36,57.04
@@ -20856,7 +20856,7 @@ step
     .target Rei Genn Greymane
 step
     #completewith Slowing the Inevitable
-    .cast vehicle, 72849 >>vehicle, 72849 >>Usar |T132182:0|t[Voar de Volta]
+    .cast vehicle, 72849 >>Usar |T132182:0|t[Voar de Volta]
 step
     #requires Slowing the Inevitable
     .goto 202,32.36,57.04
@@ -20882,7 +20882,7 @@ step
     .target Krennan Aranas
 step
     #completewith Knee-Deep
-    .goto 179,49.85,56.93,30 >>Siga a Seta
+    .goto 179,49.85,56.93,30 >>Siga a Flecha
     .mob Verme Putrescente
     .mob Aranha do Subterrâneo
     .mob Rato de Cemitério
@@ -20937,7 +20937,7 @@ step
 step
     #hidewindow
     #completewith Keel Harbor
-    .goto 179,41.93,37.60,60 >>Siga a Seta
+    .goto 179,41.93,37.60,60 >>Siga a Flecha
 step
     #requires Keel Harbor
     .goto 179,41.93,37.60
@@ -21041,16 +21041,16 @@ step
     .goto 57,55.03,93.72
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Portal para Ventobravo|r.
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Torre
 
 ]])
     --Gilneas: Skip
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) Gilneas: Pular
-#next ba) DF Aliança Introdução Meia-noite (A) << Alliance
+#next ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
 #next b1) Introdução de BfA << Horde
 #chapter
 #internal
@@ -21063,11 +21063,11 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) Introdução do Escuridão Ferro Dwarf
 #displayname |cFF1EFF001|r - Cidade de Umbraforja
-#next Nivelamento Rápido\ba) DF Aliança Intro Meia-noite (A)
+#next RestedXP Nivelamento Rápido\ba) Introdução da Aliança em Dragonflight em Midnight (A)
 
 << Alliance DarkIronDwarf !DK
 
@@ -21095,7 +21095,7 @@ step
     .accept 53500 >>Aceite Estranho numa Terra Estranha
     .target Embaixador Moorgard
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Normal@ChromieTime-ChromieTime
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -21110,17 +21110,17 @@ step
     .turnin 53500 >>Virando um Estranho numa Terra Estranha
     .target Mudrik Leger
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Normal@CallBoardStart-CallBoardEnd
 ]])
 --KulTiran: Boralus
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) a Introdução KulTiran
 #displayname |cFF1EFF001|r - Boralus
-#next Nivelamento Rápido\ba) DF Aliança Intro Meia-noite (A)
+#next RestedXP Nivelamento Rápido\ba) Introdução da Aliança em Dragonflight em Midnight (A)
 
 << Alliance KulTiran !DK
 
@@ -21139,7 +21139,7 @@ step
     .complete 55142,1 --1/1 Portal to Stormwind Taken
 step
     #completewith KultiranAllied1
-    .goto 1161,70.1,16.8,15 >>Siga a Seta
+    .goto 1161,70.1,16.8,15 >>Siga a Flecha
 step
     #requires KultiranAllied1
     .goto 1161,70.1,16.8
@@ -21152,7 +21152,7 @@ step
     .accept 55146 >>Aceite Estranho numa Terra Estranha
     .target Embaixador Moorgard
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Normal@ChromieTime-ChromieTime
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -21167,17 +21167,17 @@ step
     .turnin 55146 >>Virando um Estranho numa Terra Estranha
     .target Fornecedora Peleja
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Normal@CallBoardStart-CallBoardEnd
 ]])
 --LightforgedDraenei: The Vindicaar
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) LightforgedDraenei Introdução
 #displayname |cFF1EFF001|r - A Vindicaar
-#next Nivelamento Rápido\ba) DF Aliança Intro Meia-noite (A)
+#next RestedXP Nivelamento Rápido\ba) Introdução da Aliança em Dragonflight em Midnight (A)
 
 << Alliance LightforgedDraenei !DK
 
@@ -21207,7 +21207,7 @@ step
     .accept 50313 >>Aceite Estranho numa Terra Estranha
     .target Embaixador Moorgard
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Normal@ChromieTime-ChromieTime
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -21222,17 +21222,17 @@ step
     .turnin 50313 >>Virando um Estranho numa Terra Estranha
     .target Vindicante Minkey
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Normal@CallBoardStart-CallBoardEnd
 ]])
 --Mechagnome: Mechagon City
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) Gnomecânico Introdução
 #displayname |cFF1EFF001|r - Mechagon City
-#next Nivelamento Rápido\ba) DF Aliança Intro Meia-noite (A)
+#next RestedXP Nivelamento Rápido\ba) Introdução da Aliança em Dragonflight em Midnight (A)
 
 << Alliance Mechagnome !DK
 
@@ -21252,7 +21252,7 @@ step
     .accept 58147 >>Aceite Estranho numa Terra Estranha
     .target Embaixador Moorgard
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Normal@ChromieTime-ChromieTime
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -21267,17 +21267,17 @@ step
     .turnin 58147 >>Virando um Estranho numa Terra Estranha
     .target Lulana
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Normal@CallBoardStart-CallBoardEnd
 ]])
 --VoidElf: Telogrus Rift
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) VoidElf Introdução
 #displayname |cFF1EFF001|r - Fissura de Telogrus
-#next Nivelamento Rápido\ba) DF Aliança Intro Meia-noite (A)
+#next RestedXP Nivelamento Rápido\ba) Introdução da Aliança em Dragonflight em Midnight (A)
 
 << Alliance VoidElf !DK
 
@@ -21306,7 +21306,7 @@ step
     .accept 50305 >>Aceite Estranho numa Terra Estranha
     .target Embaixador Moorgard
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP Nivelamento Rápido\a) GC Tempo de Crona Normal@ChromieTime-ChromieTime
 step
     .goto 84,56.199,17.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Keira Onyxraven|r.
@@ -21436,8 +21436,8 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) Exílio's Reach Horda
 #displayname |cFF1EFF001|r - Exílio's Reach
 #next b1) Introdução de BfA
@@ -21596,7 +21596,7 @@ step
     .accept 56775 >>Aceite Aquecendo
     .target Thrall
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@CombatDummy-CombatDummy
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@CombatDummy-CombatDummy
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thrall|r.
     .turnin 56775 >>Entregue Aquecendo
@@ -21631,7 +21631,7 @@ step
     .turnin 58208 >>Entregue Preparar para o Impacto
     .target Thrall
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@HousingSelect1-HousingSelect2
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@HousingSelect1-HousingSelect2
 step
     .zoneskip 1409,1
     .goto 1409,61.88,82.89
@@ -21640,7 +21640,7 @@ step
     .choose 7338834
     .target Thrall
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@Murlocs-Murlocs
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@Murlocs-Murlocs
 step
     .zoneskip 1409,1
     .goto 1409,61.88,82.89
@@ -21669,7 +21669,7 @@ step
     .accept 54952 >>Aceite Os Caçadores da Expedição Perdida
     .target Thrall
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@expedition survivors-expedition survivors
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@expedition survivors-expedition survivors
 step
     .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Senhora da Guerra Bekka Sinistracha|r.
@@ -21678,7 +21678,7 @@ step
     .goto 1409,58.39,74.57
     .target +Senhora da Guerra Breka Sinistracha
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@Raw Meat-campfire
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@Raw Meat-campfire
 step << Hunter
     .zoneskip 1409,1
     .goto 1409,58.36,74.47
@@ -21703,7 +21703,7 @@ step << !Hunter
     .goto 1409,58.38,74.63
     .target +Capitã Garrick
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@ClassQuests-ClassQuests
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@ClassQuests-ClassQuests
 step << !Hunter
     .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Senhora da Guerra Bekka Sinistracha|r e |cRXP_FRIENDLY_Won'sa|r |cRXP_WARN_após a encenação|r.
@@ -21724,7 +21724,7 @@ step
     .accept 55186 >>Aceite Abaixo os Javatuscos <<!Hunter
     .target Mitridão Seguessol
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@HunterTameStart-HunterTameEnd
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@HunterTameStart-HunterTameEnd
 step << Hunter
     .zoneskip 1409,1
     .goto 1409,62.72,69.85
@@ -21734,7 +21734,7 @@ step << Hunter
     .accept 55186 >>Aceite Abaixo os Javatuscos
     .target Mitridão Seguessol
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@Quilboar Shadow Magic-QuilboarEnd
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@Quilboar Shadow Magic-QuilboarEnd
 step
     .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mitridão Seguessol|r e |cRXP_FRIENDLY_Rolho Espouqueiro|r.
@@ -21818,7 +21818,7 @@ step
     .timer 12.5,RP
     .mob Cadáver Monstruoso
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@GiantBoarEnd-GiantBoarEnd
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@GiantBoarEnd-GiantBoarEnd
 step
     .zoneskip 1409,1
     .goto 1409,52.59,53.34
@@ -21855,7 +21855,7 @@ step << Warrior/Warlock/Paladin/Priest/Rogue
     .accept 58962 >>Aceite A Barganha de um Bruxo << Warlock
     .target Bruto Throg
 step << Shaman
-    #include RestedXP Speed Leveling\a) Exile's Reach@GhostWolf-GhostWolf
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@GhostWolf-GhostWolf
 step
     .zoneskip 1409,1
     .goto 1409,52.89,56.47
@@ -21870,11 +21870,11 @@ step
     .timer 33,Aguarde o RP
     .target Shuya Sinistracha
 step << Shaman
-    #include RestedXP Speed Leveling\a) Exile's Reach@VeilBlossomStart-VeilBlossomEnd
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@VeilBlossomStart-VeilBlossomEnd
 step << Warlock
-    #include RestedXP Speed Leveling\a) Exile's Reach@WarlockClassStart-WarlockClassEnd
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@WarlockClassStart-WarlockClassEnd
 step << Warrior
-    #include RestedXP Speed Leveling\a) Exile's Reach@Hjalmar's Final Execution-Execute
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@Hjalmar's Final Execution-Execute
 step << !Shaman\!Warlock\!Warrior
     .zoneskip 1409,1
     .goto 1409,55.71,48.32,15,0
@@ -21899,7 +21899,7 @@ step
     .goto 1409,56.83,46.18
     .target +Shuya Sinistracha
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@HarpiesAreaStart-HarpiesAreaEnd
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@HarpiesAreaStart-HarpiesAreaEnd
 step
     .zoneskip 1409,1
     .goto 1409,54.29,41.61
@@ -21910,7 +21910,7 @@ step
     .target Herberto Tristarroubo
     .mob Bico Sangrento
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@HarpiesAreaEnd2-HarpiesAreaEnd2
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@HarpiesAreaEnd2-HarpiesAreaEnd2
 step
     .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Herberto Tristarroubo|r, |cRXP_FRIENDLY_Bô|r e |cRXP_FRIENDLY_Shuya Sinistracha|r.
@@ -21925,15 +21925,15 @@ step
     .goto 1409,56.83,46.18
     .target +Shuya Sinistracha
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@LightspawnStart1-LightspawnEnd2
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@LightspawnStart1-LightspawnEnd2
 step << Priest
-    #include RestedXP Speed Leveling\a) Exile's Reach@PriestClass1-PriestClass1
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@PriestClass1-PriestClass1
 step << Paladin
-    #include RestedXP Speed Leveling\a) Exile's Reach@PaladinClass1Start-PaladinClass1End
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@PaladinClass1Start-PaladinClass1End
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@Freeing the Light-Freeing the Light
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@Freeing the Light-Freeing the Light
 step << Shaman
-    #include RestedXP Speed Leveling\a) Exile's Reach@Capturedghostwolves1-Capturedghostwolves2
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@Capturedghostwolves1-Capturedghostwolves2
 step << Priest
     .zoneskip 1409,1
     .goto 1409,56.12,53.7
@@ -21942,7 +21942,7 @@ step << Priest
     .accept 58960 >>Aceite Ressuscitando os Recrutas
     .target Sha'zul
 step << Priest
-    #include RestedXP Speed Leveling\a) Exile's Reach@PriestsEnd1-PriestsEnd1
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@PriestsEnd1-PriestsEnd1
 step << Priest
     .zoneskip 1409,1
     .goto 1409,56.12,53.7
@@ -21976,7 +21976,7 @@ step << Rogue
     .skipgossipid 52645
     .target Drizza Fura-costela
 step << Rogue
-    #include RestedXP Speed Leveling\a) Exile's Reach@RogueExilesStart1-RogueExilesEnd1
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@RogueExilesStart1-RogueExilesEnd1
 step << Rogue
     .zoneskip 1409,1
     .goto 1409,45.66,56.14
@@ -21985,7 +21985,7 @@ step << Rogue
     .accept 58933 >>Aceite O Mais Mortífero dos Venenos
     .target Drizza Fura-costela
 step << Rogue
-    #include RestedXP Speed Leveling\a) Exile's Reach@RogueExilesStart2-RogueExilesEnd2
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@RogueExilesStart2-RogueExilesEnd2
 step << Hunter
     .zoneskip 1409,1
     .goto 1409,52.56,55.44
@@ -22000,7 +22000,7 @@ step << Hunter
     .skipgossipid 52664
     .target Herberto Tristarroubo
 step << Hunter
-    #include RestedXP Speed Leveling\a) Exile's Reach@Rusted Chain-Old Spring
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@Rusted Chain-Old Spring
 step << Hunter
     .zoneskip 1409,1
     .goto 1409,52.56,55.44
@@ -22009,7 +22009,7 @@ step << Hunter
     .accept 59356 >>Aceite Caça à Espreita
     .target Mitridão Seguessol
 step << Hunter
-    #include RestedXP Speed Leveling\a) Exile's Reach@Freezing trap-Freezing trap
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@Freezing trap-Freezing trap
 step << Hunter
     .zoneskip 1409,1
    .goto 1409,52.56,55.44
@@ -22018,7 +22018,7 @@ step << Hunter
     .accept 60168 >>Aceite Domar é uma Arte
     .target Mitridão Seguessol
 step << Hunter
-    #include RestedXP Speed Leveling\a) Exile's Reach@DismissPet-DismissPet
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@DismissPet-DismissPet
 step << Hunter
     .zoneskip 1409,1
     #completewith next
@@ -22123,7 +22123,7 @@ step << Mage
     .accept 59352 >>Aceite O Conhecimento de uma Maga
     .target Herberto Tristarroubo
 step << Mage
-    #include RestedXP Speed Leveling\a) Exile's Reach@Spell Book-Spell Book
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@Spell Book-Spell Book
 step << Mage
     .zoneskip 1409,1
     .goto 1409,52.16,55.49
@@ -22175,7 +22175,7 @@ step
     .zoneskip 1409,1
     #hidewindow
     #completewith Who Lurks in the Pit1
-    .goto 1409,51.18,59.61,80 >>Siga a Seta
+    .goto 1409,51.18,59.61,80 >>Siga a Flecha
 step
     .zoneskip 1409,1
     #requires Who Lurks in the Pit1
@@ -22185,7 +22185,7 @@ step
     .goto 1409,51.11,59.52
     .target +Lana Jordão
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@Trapped Expedition-Expedition Member4
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@Trapped Expedition-Expedition Member4
 step
     .zoneskip 1409,1
     #completewith next
@@ -22199,7 +22199,7 @@ step
     .zoneskip 1409,1
     #completewith Hrun
     #hidewindow
-    .goto 1409,47.79,60.27,60 >>Siga a Seta
+    .goto 1409,47.79,60.27,60 >>Siga a Flecha
 step
     .zoneskip 1409,1
     #requires Hrun
@@ -22272,7 +22272,7 @@ step << Druid
     .accept 59350 >>Aceite A Forma Druídica
     .target Crenna Filha da Terra
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@DruidStone-DruidStone
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@DruidStone-DruidStone
 step << Druid
     .zoneskip 1409,1
     .goto 1409,45.51,49.28
@@ -22299,7 +22299,7 @@ step
     .zoneskip 1409,1
     #hidewindow
     #completewith DarkMaul Citadal Horde
-    .goto 1409,48.9,49.51,90 >>Siga a Seta
+    .goto 1409,48.9,49.51,90 >>Siga a Flecha
 step
     .zoneskip 1409,1
     #requires DarkMaul Citadal Horde
@@ -22329,7 +22329,7 @@ step
     .skipgossipid 54297
     .target Herberto Tristarroubo
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@DarkmaulCitadelStart-DarkmaulCitadelEnd
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@DarkmaulCitadelStart-DarkmaulCitadelEnd
 step
     .zoneskip 1409,1
     #completewith next
@@ -22365,7 +22365,7 @@ step
     .goto 1409,40.3,32.7
     .target +Shuya Sinistracha
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@Wug's ward-Ogres
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@Wug's ward-Ogres
 step
     .zoneskip 1409,1
     #completewith next
@@ -22377,7 +22377,7 @@ step
 step
     .zoneskip 1409,1
     #completewith Catapult Destruction
-    .goto 1409,40.3,32.71,130 >>Siga a Seta
+    .goto 1409,40.3,32.71,130 >>Siga a Flecha
 step
     .zoneskip 1409,1
     #requires Catapult Destruction
@@ -22415,7 +22415,7 @@ step
     .accept 55992 >>Aceite Masmorra: Cidadela de Malhonegro
     .target Senhor da Guerra Mulgrin Passo de Trovão
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@Controlling their Stones-Darkmaul Citadel
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@Controlling their Stones-Darkmaul Citadel
 step
     .zoneskip 1409,1
     .goto 1409,39.65,31.99
@@ -22424,7 +22424,7 @@ step
     .accept 55991 >>Aceite O Fim dos Começos
     .target Thrall
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@Kalecgos1-Kalecgos1
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach@Kalecgos1-Kalecgos1
 step
     .goto 2022,81.23,28.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kalecgos|r.
@@ -22473,7 +22473,7 @@ step
     .target Naleideia Fulgorrio
 step
     .zone 2351 >>Teleporte para um Bairro com o Localizador de Casa, não |T7252953:0|t[Teleportar para terreno], depois pegue o |cRXP_PICK_Stormwind Portal|r.
-    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>https://www.youtube.com/watch?v=uVkUB7z0njo >>CLIQUE AQUI PARA VER O VÍDEO
+    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLIQUE AQUI PARA VER O VÍDEO
     .macro House Teleport, 975747 >>Casa de Teleporte
     .skyriding
 step
@@ -23103,11 +23103,11 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name ab) Sunstrider Isle
 #displayname Sunstrider Isle |cRXP_ENEMY_(Alternativa)|r
-#next ac) Elfo Sangrento, Florestas de Canto Eterno
+#next ac) Elfo Sanguíneo: Floresta da Canção Eterna
 #defaultfor BloodElf !DK
 
 << Horde
@@ -23372,8 +23372,8 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name ac) Elfo Sanguíneo: Floresta da Canção Eterna
 #displayname |cFF1EFF002|r - Bosque Canto Eterno
 #next b1) Introdução de BfA
@@ -23789,7 +23789,7 @@ step
 step
     .zoneskip 110,1
     .zone 2351 >>Teleporte para um Bairro com o Localizador de Casa, não |T7252953:0|t[Teleportar para terreno], depois pegue o |cRXP_PICK_Stormwind Portal|r.
-    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>https://www.youtube.com/watch?v=uVkUB7z0njo >>CLIQUE AQUI PARA VER O VÍDEO
+    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>CLIQUE AQUI PARA VER O VÍDEO
     .macro House Teleport, 975747 >>Casa de Teleporte
 
 ]])
@@ -23797,8 +23797,8 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name ab) Valley of Trials1  << !Troll --Orc
 #name ab) Valley of Trials2  << Troll
 #displayname |cFF1EFF002|r - Valley of Trials << Troll
@@ -23916,7 +23916,7 @@ step
 step
     #hidewindow
     #completewith SarkothRoute
-    .goto 461,34.62,44.23,15 >>Siga a Seta
+    .goto 461,34.62,44.23,15 >>Siga a Flecha
 step
     #requires SarkothRoute
 	#label Sarkoth
@@ -23951,7 +23951,7 @@ step
     .goto 461,42.95,62.42
     .turnin 25127 >>Entregue A ferroada do escorpídeo
     .goto 461,44.93,66.42
-    .accept 25131 >>Aceite Familiares Torpes
+    .accept 25131 >>Aceite Familiares torpes
     .goto 461,45.81,63.42
     .turnin 37446 >>Entregue Peões preguiçosos
     .goto 461,46.15,63.28
@@ -23967,7 +23967,7 @@ step
     .goto 461,42.95,62.42
     .turnin 25127 >>Entregue A ferroada do escorpídeo
     .goto 461,44.93,66.42
-    .accept 25131 >>Aceite Familiares Torpes
+    .accept 25131 >>Aceite Familiares torpes
     .goto 461,45.81,63.42
 	.isQuestComplete 25136
     .target Galgar
@@ -23977,7 +23977,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gornek|r, |cRXP_FRIENDLY_Zureetha|r e o |cRXP_FRIENDLY_Encarregado Thazz'ril|r.
     .turnin 25127 >>Entregue A ferroada do escorpídeo
     .goto 461,44.93,66.42
-    .accept 25131 >>Aceite Familiares Torpes
+    .accept 25131 >>Aceite Familiares torpes
     .goto 461,45.81,63.42
     .turnin 37446 >>Entregue Peões preguiçosos
     .goto 461,46.15,63.28
@@ -23989,7 +23989,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gornek|r e |cRXP_FRIENDLY_Zureetha|r.
     .turnin 25127 >>Entregue A ferroada do escorpídeo
     .goto 461,44.91,66.41
-    .accept 25131 >>Aceite Familiares Torpes
+    .accept 25131 >>Aceite Familiares torpes
     .goto 461,45.81,63.42
     .target Gornek
     .target Zureta Vista-longa
@@ -24005,7 +24005,7 @@ step
 step
     #hidewindow
     #completewith ValleyOfTrialsBackDenRoute
-    .goto 461,34.62,44.23,20 >>Siga a Seta
+    .goto 461,34.62,44.23,20 >>Siga a Flecha
 step
     #requires ValleyOfTrialsBackDenRoute
     #label ValleyOfTrialsBackDen
@@ -24043,7 +24043,7 @@ step
     .target Peão Preguiçoso
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zureta Vista-longa|r e o |cRXP_FRIENDLY_Encarregado Thazz'ril|r.
-    .turnin 25131 >>Entregue Familiares Torpes
+    .turnin 25131 >>Entregue Familiares torpes
     .goto 461,45.81,63.42
     .turnin 37446 >>Entregue Peões preguiçosos
     .accept 25135 >>Aceite A picareta de Thazz'ril
@@ -24056,7 +24056,7 @@ step
 step
 	#label ValleyTurnins
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Zureta Vista-longa e com o |cRXP_FRIENDLY_Encarregado Thazz'ril|r.
-    .turnin 25131 >>Entregue Familiares Torpes
+    .turnin 25131 >>Entregue Familiares torpes
     .accept 25132 >>Aceite Medalhão da Lâmina Ardente
     .goto 461,45.81,63.42
     .accept 25135 >>Aceite A picareta de Thazz'ril
@@ -24163,8 +24163,8 @@ step << Troll
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name ac) Ilhas do Eco1 << Troll
 #name ac) Eco Isles2 << !Troll --Orc
 #displayname Eco Isles |cRXP_ENEMY_(Alternative)|r << Troll
@@ -24199,7 +24199,7 @@ step << Orc
     #completewith next
     #label ReportToSenjinVillage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre Gadrin|r.
-    .turnin 25133 >>Entregue o relatório na Aldeia Sen'jin
+    .turnin 25133 >>Entregue Apresente-se na Aldeia Sen'jin
     .target Mestre Gadrin
 step << Orc
     #completwith ReportToSenjinVillage
@@ -24209,7 +24209,7 @@ step << Orc
     #requires ReportToSenjinVillage
     .goto 1,55.95,74.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre Gadrin|r.
-    .turnin 25133 >>Entregue o Relatório na Aldeia Sen'jin
+    .turnin 25133 >>Entregue Apresente-se na Aldeia Sen'jin
     .target Mestre Gadrin
 step
     #requires EchoIslesFirstQuestCheckA
@@ -24866,11 +24866,11 @@ step << Orc
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name ab) Acampamento Narache
 #displayname Camp Narache |cRXP_ENEMY_(Alternative)|r
-#next ac) Acampamento Tauren Mulgore
+#next ac) Tauren Camp Mulgore
 #defaultfor Tauren !DK
 
 << Horde
@@ -25018,7 +25018,7 @@ step
     #requires mulgoreAmoredBattleboar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Adana Chifre Troante|r.
     .goto 462,30.9,50.6
-    .turnin 14459 >>Entregue Os Javaliços
+    .turnin 14459 >>Entregue Os javaliços
     .turnin 14461 >>Entregue Alimento do Mal
     .accept 14460 >>Aceite Rito de Honra
     .target Adana Chifre Troante
@@ -25091,8 +25091,8 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name ac) Tauren Camp Mulgore
 #displayname |cFF1EFF002|r - Mulgore
 #next b1) Introdução de BfA
@@ -25135,7 +25135,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harken Totem do Vento|r.
     .goto 7,48.78,58.79
-    .accept 761 >>Aceite Caçada ao Rapineiro
+    .accept 761 >>Aceite Caçada ao rapineiro
     .target Harken Totem do Vento
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull Chifre Troante|r.
@@ -25147,13 +25147,13 @@ step
     .isQuestComplete 24215
     .goto 7,47.65,59.58
     .turnin 24215 >>Entregue Rito dos Ventos
-    .accept 14438 >>Aceite Dividindo a Terra
+    .accept 14438 >>Aceite Dividindo a terra
     .accept 24459 >>Aceite Morin Espreita Nuvem
     .target Ahmo Chifre Troante
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahmo Chifre Troante|r.
     .goto 7,47.65,59.58
-    .accept 14438 >>Aceite Dividindo a Terra
+    .accept 14438 >>Aceite Dividindo a terra
     .accept 24459 >>Aceite Morin Espreita Nuvem
     .target Ahmo Chifre Troante
 step
@@ -25200,8 +25200,8 @@ step
     #label MulgorePoisonedWater
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mull Chifre Troante|r.
     .goto 7,48.62,59.81
-    .turnin 20440 >>Entregue Água Venenosa
-    .accept 24440 >>Aceite A Purificação de Casco Invernal
+    .turnin 20440 >>Entregue Água venenosa
+    .accept 24440 >>Aceite A purificação de Casco Invernal
     .target Mull Chifre Troante
 step
     >>Usar o |T135139:0|t[A purificação de Casco Invernal Totem] ao lado do poço
@@ -25286,7 +25286,7 @@ step
     .isQuestComplete 761
     .goto 7,48.78,58.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harken Totem do Vento|r.
-    .turnin 761 >>Entregue Caçada ao Rapineiro
+    .turnin 761 >>Entregue Caçada ao rapineiro
     .target Harken Totem do Vento
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ahmo Chifre Troante|r.
@@ -25297,13 +25297,13 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Kauth|r.
     .goto 7,46.82,60.45
-    .home >>Defina sua Pedra de Regresso em Bloodhoof Village
+    .home >>Defina sua Pedra de Regresso para a Aldeia Casco Sangrento
     .target Estalajadeiro Kauth
 step
     .isQuestComplete 26188
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Maur Clamachuva|r.
     .goto 7,47.16,56.66
-    .turnin 26188 >>Vá para Mazzranache.
+    .turnin 26188 >>Entregue Mazzranache
     .mob Maur Clamachuva
 step
     .isOnQuest 6362
@@ -25335,7 +25335,7 @@ step
     #requires TalTheWindRiderMaster
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_WARN_Suba a torre|r. Converse com |cRXP_FRIENDLY_Tal|r.
     .goto 88,47.03,49.60
-    .turnin 6363 >>Vá para Tal, o Mestre de Mantícoras
+    .turnin 6363 >>Entregue Tal, o Mestre de Mantícoras
     .accept 6364 >>Aceite Fale novamente com Varg
     .target Tal
 step
@@ -25552,8 +25552,8 @@ step
     *2) Usar o |T237388:0|t[Mapa de Patrulha: Caminhar por Kalimdor com a Mãe Terra] e voe para Orgrimmar
     *3) Siga a seta e pegue o Zepelim para Orgrimmar (muito lento)
     *4) Usar o teletransporte do Bairro
-    .link https://www.youtube.com/watch?v=pW3S9iDpn4Q >>https://www.youtube.com/watch?v=pW3S9iDpn4Q >>Vídeo de Explicação do Personagem Preso
-    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>https://www.youtube.com/watch?v=uVkUB7z0njo >>Vídeo de Explicação do Bairro
+    .link https://www.youtube.com/watch?v=pW3S9iDpn4Q >>Vídeo de Explicação do Personagem Preso
+    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>Vídeo de Explicação do Bairro
     .macro House Teleport, 975747 >>Casa de Teleporte
 step
     .goto 88,42.81,39.13,10,0
@@ -25566,12 +25566,12 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name ab) Deathknell
 #displayname Deathknell |cRXP_ENEMY_(Alternative)|r
 #title Deathknell
-#next ac) Morto-vivo Tirisfal Glades
+#next ac) Morto-vivo Claras de Tirisfal
 #defaultfor Undead !DK
 
 << Horde
@@ -25849,8 +25849,8 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name ac) Morto-vivo Claras de Tirisfal
 #displayname |cFF1EFF002|r - Tirisfal Glades
 #next b1) Introdução de BfA
@@ -25891,7 +25891,7 @@ step
     #completewith next
     >>Abate os |cRXP_ENEMY_Fazendeiros de Tirisfal|r.
     >>Cuidado com os raros |cRXP_ENEMY_Assombrante|r e |cRXP_ENEMY_Fazendeiro Solliden|r.
-    .link https://i.imgur.com/lc7y3b4.jpeg >>https://i.imgur.com/lc7y3b4.jpeg >>Ataque |cRXP_ENEMY_Assombrante|r a partir da posição mostrada na captura de tela.
+    .link https://i.imgur.com/lc7y3b4.jpeg >>Ataque |cRXP_ENEMY_Assombrante|r a partir da posição mostrada na captura de tela.
     .goto 18,40.33,51.42,0
     .goto 18,37.91,51.27,0,0
     .complete 24978,1 --10/10 Tirisfal Farmer slain
@@ -26388,8 +26388,8 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name ab) Introdução Goblin
 #displayname Kezan & As Ilhas Perdidas |cRXP_ENEMY_(Alternative)|r
 #next b1) Introdução de BfA
@@ -27872,9 +27872,9 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) Kezan & The Perdida Isles: Pular
-#next ba) DF Aliança Introdução Meia-noite (A) << Alliance
+#next ba) Introdução da Aliança em Dragonflight em Midnight (A) << Alliance
 #next b1) Introdução de BfA << Horde
 #chapter
 
@@ -27886,8 +27886,8 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) Tauren Altamontês
 #displayname |cFF1EFF001|r - Tauren Altamontês
 #next b1) Introdução de BfA
@@ -27936,8 +27936,8 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) Filho da Noite Introdução
 #displayname |cFF1EFF001|r - O Baluarte da Noite
 #next b1) Introdução de BfA
@@ -27986,8 +27986,8 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) Trolls Zandalari Introdução
 #displayname |cFF1EFF001|r - Dazar'alor
 #next b1) Introdução de BfA
@@ -28036,8 +28036,8 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) Introdução dos Orcs Maghar
 #displayname |cFF1EFF001|r - Orgrimmar
 #next b1) Introdução de BfA
@@ -28076,8 +28076,8 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
-#group RestedXP Leveling de Velocidade
-#subgroup |cFFFCDC00(1-90)|r Default
+#group RestedXP Nivelamento Rápido
+#subgroup |cFFFCDC00(1-90)|r Padrão
 #name a) Introdução dos Vulpera
 #displayname |cFF1EFF001|r - Orgrimmar
 #next b1) Introdução de BfA
@@ -28116,7 +28116,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) Introdução da Horda: Legion
 #internal
 
@@ -28358,7 +28358,7 @@ step
     .isOnQuest 40522
     .isNotOnQuest 44184
     #completewith Fate of the Horde
-    .goto 85,48.38,71.23,10 >>Siga a Seta
+    .goto 85,48.38,71.23,10 >>Siga a Flecha
     .timer 63,Aguarde o RP
 step
     .isOnQuest 40522
@@ -28514,7 +28514,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name 1a 2
 #displayname |cFFFCDC00NÍVEL 1-10|r
 #disabled
@@ -28535,113 +28535,113 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name a) Introdução de DK 2
 #displayname |cFF1EFF001|r - Plaguelands
-#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2 << Alliance
+#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2 << Alliance
 #next b1) Introdução de BfA 2 << Horde
 
 
 << DK !Pandaren !KulTiran !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !HighmountainTauren !ZandalariTroll !Nightborne !Vulpera !MagharOrc
 
 step
-    #include RestedXP Speed Leveling\a) DK Intro
+    #include RestedXP Nivelamento Rápido\a) DK Intro
 ]])
 --Allied Race/Pandaren: The Frozen Throne
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name a) Introdução de Novo DK 2
 #displayname |cFF1EFF001|r - O Trono Congelado
-#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2 << Alliance
+#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2 << Alliance
 #next b1) Introdução de BfA 2 << Horde
 
 << DK Pandaren/DarkIronDwarf DK/KulTiran DK/LightforgedDraenei DK/Mechagnome DK/VoidElf DK/HighmountainTauren DK/Nightborne DK/ZandalariTroll DK/MagharOrc DK/Vulpera DK
 
 step
-    #include RestedXP Speed Leveling\a) New DK Intro
+    #include RestedXP Nivelamento Rápido\a) Nova Introdução de Cavaleiro da Morte
 ]])
 --Demon Hunter: Mardum
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name a) Introdução de DH 2
 #displayname |cFF1EFF001|r - Mardum
-#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2 << Alliance
+#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2 << Alliance
 #next b1) Introdução de BfA 2 << Horde
 
 << DemonHunter !VoidElf
 
 step
-    #include RestedXP Speed Leveling\a) DH Intro
+    #include RestedXP Nivelamento Rápido\a) Nova Introdução de Caçador de Demônios
 ]])
 --Dracthyr: The Forbidden Reach
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name a) Introdução de Dracthyr 2
 #displayname |cFF1EFF001|r - O Ara Proibido
-#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2 << Alliance
+#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2 << Alliance
 #next b1) Introdução de BfA 2 << Horde
 
 << Dracthyr
 
 step
-    #include RestedXP Speed Leveling\a) Dracthyr Intro
+    #include RestedXP Nivelamento Rápido\a) Dracthyr Intro
 ]])
 --Pandaren: The Wandering Isle
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name a) Introdução de Pandaren 2
 #displayname The Wandering Isle |cRXP_ENEMY_(Alternative)|r
-#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2 << Alliance
+#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2 << Alliance
 #next b1) Introdução de BfA 2 << Horde
 
 << Pandaren !DK
 
 step
-    #include RestedXP Speed Leveling\a) Pandaren Intro
+    #include RestedXP Nivelamento Rápido\a) Introdução Pandaren
 ]])
 --Haranir: Harandar
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name a) Introdução de Haranir 2
 #displayname |cFF1EFF001|r - Harandar
-#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2 << Alliance
+#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2 << Alliance
 #next b1) Introdução de BfA 2 << Horde
 
 << Harronir
 
 step
-    #include RestedXP Speed Leveling\a) Haranir Intro
+    #include RestedXP Nivelamento Rápido\a) Haranir Intro
 ]])
 --Earthen: Hall of Awakening
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name a) Introdução de EarthenDwarf 2
 #displayname |cFF1EFF001|r - Salão do Despertar
-#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2 << Alliance
+#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2 << Alliance
 #next b1) Introdução de BfA << Horde
 
 << EarthenDwarf
 
 step
-    #include RestedXP Speed Leveling\a) EarthenDwarf Intro
+    #include RestedXP Nivelamento Rápido\a) Anão Terráqueo Introdução
 ]])
 --Arathi Highlands Returning Player
 RXPGuides.RegisterGuide([[
@@ -28650,12 +28650,12 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Meia-noite
 #name a) Planalto Arathi Jogador em Retorno 2
 #displayname Recuperação dos Montes Arathi |cRXP_ENEMY_(Alternative)|r
-#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2 << Alliance
+#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2 << Alliance
 #next b1) Introdução de BfA << Horde
 #internal
 
 step
-    #include RestedXP Speed Leveling\a) Arathi Highlands Returning Player
+    #include RestedXP Nivelamento Rápido\a) Planalto Arathi Jogador em Retorno
 ]])
 
 -- =================================
@@ -28667,22 +28667,22 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name a) Exílio's Reach Aliança 2
 #displayname |cFF1EFF001|r - Exílio's Reach
-#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
+#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
 
 << Alliance !Harronir !Dracthyr !DemonHunter !DK !KulTiran !EarthenDwarf !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
 
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach
 ]])
 --Draenei: Ammen Vale
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name ab) Ammen Vale 2
 #displayname Ammen Vale |cRXP_ENEMY_(Alternative)|r
 #defaultfor Draenei !DK
@@ -28691,30 +28691,30 @@ RXPGuides.RegisterGuide([[
 << Alliance
 
 step
-    #include RestedXP Speed Leveling\ab) Ammen Vale
+    #include RestedXP Nivelamento Rápido\ab) Ammen Vale
 ]])
 --Draenei: Azuremyst Isle
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name ac) Draenei Azuremyst Isle 2
 #displayname |cFF1EFF002|r - Azuremyst Isle
 #defaultfor Draenei !DK
-#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
+#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
 
 << Alliance
 
 step
-    #include RestedXP Speed Leveling\ac) Draenei Azuremyst Isle
+    #include RestedXP Nivelamento Rápido\ac) Draenei Azuremyst Isle
 ]])
 --Dwarf: Coldridge Valley
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name ab) Dwarf Coldridge Valley 2
 #displayname Coldridge Valley |cRXP_ENEMY_(Alternative)|r
 #defaultfor Dwarf !DK
@@ -28723,14 +28723,14 @@ RXPGuides.RegisterGuide([[
 << Alliance
 
 step
-    #include RestedXP Speed Leveling\ab) Dwarf Coldridge Valley
+    #include RestedXP Nivelamento Rápido\ab) Dwarf Coldridge Valley
 ]])
 --Gnome: New Tinkertown
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name ab) New Tinkertown 2
 #displayname  New Tinkertown |cRXP_ENEMY_(Alternative)|r
 #defaultfor Gnome !DK
@@ -28739,30 +28739,30 @@ RXPGuides.RegisterGuide([[
 << Alliance
 
 step
-    #include RestedXP Speed Leveling\ab) New Tinkertown
+    #include RestedXP Nivelamento Rápido\ab) New Tinkertown
 ]])
 --Dwarf & Gnome: Dun Morogh
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name ac) Dwarf & Gnome Dun Morogh 2
 #displayname |cFF1EFF002|r - Dun Morogh
 #defaultfor Dwarf Gnome !DK
-#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
+#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
 
 << Alliance
 
 step
-    #include RestedXP Speed Leveling\ac) Dwarf & Gnome Dun Morogh
+    #include RestedXP Nivelamento Rápido\ac) Anão & Gnomo Dun Morogh
 ]])
 --Human: Northshire Valley
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name ab) Northshire Valley 2
 #displayname Northshire Valley |cRXP_ENEMY_(Alternativa)|r
 #defaultfor Human !DK
@@ -28771,145 +28771,145 @@ RXPGuides.RegisterGuide([[
 << Alliance
 
 step
-    #include RestedXP Speed Leveling\ab) Northshire Valley
+    #include RestedXP Nivelamento Rápido\ab) Northshire Valley
 ]])
 --Human: Elwynn Forest
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name ac) Elwynn Forest 1 2
 #displayname |cFF1EFF002|r - Elwynn Forest
 #defaultfor Human !DK
-#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
+#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
 
 << Alliance
 
 step
-    #include RestedXP Speed Leveling\ac) Elwynn Forest 1
+    #include RestedXP Nivelamento Rápido\ac) Elwynn Forest 1
 ]])
 --Night Elf: Shadowglen
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name ab) Shadowglen 2
 #displayname Shadowglen |cRXP_ENEMY_(Alternativa)|r
 #defaultfor NightElf !DemonHunter !DK
-#next ac) Noite Elf Teldrassil 2
+#next ac) Elfo Noturno Teldrassil 2
 
 << Alliance
 
 step
-    #include RestedXP Speed Leveling\ab) Shadowglen
+    #include RestedXP Nivelamento Rápido\ab) Shadowglen
 ]])
 --Night Elf: Teldrassil
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name ac) Elfo Noturno Teldrassil 2
 #displayname |cFF1EFF002|r - Teldrassil
 #defaultfor NightElf !DemonHunter !DK
-#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
+#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
 
 << Alliance
 
 step
-    #include RestedXP Speed Leveling\ac) Night Elf Teldrassil
+    #include RestedXP Nivelamento Rápido\ac) Elfo da Noite Teldrassil
 ]])
 --Worgen: Gilneas
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name ab) Worgen Introdução 2
 #displayname Gilneas |cRXP_ENEMY_(Alternativa)|r
-#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
+#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
 
 << Alliance Worgen !DK
 
 step
-    #include RestedXP Speed Leveling\ab) Worgen Intro
+    #include RestedXP Nivelamento Rápido\ab) Introdução do Worgen
 ]])
 --DarkIronDwarf: Shadowforge City
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name a) DarkIronDwarf Introdução 2
 #displayname |cFF1EFF001|r - Cidade de Umbraforja
-#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
+#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
 
 << Alliance DarkIronDwarf !DK
 
 step
-    #include RestedXP Speed Leveling\a) DarkIronDwarf Intro
+    #include RestedXP Nivelamento Rápido\a) Introdução do Escuridão Ferro Dwarf
 ]])
 --KulTiran: Boralus
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name a) KulTiran Introdução 2
 #displayname |cFF1EFF001|r - Boralus
-#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
+#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
 
 << Alliance KulTiran !DK
 
 step
-    #include RestedXP Speed Leveling\a) KulTiran Intro
+    #include RestedXP Nivelamento Rápido\a) a Introdução KulTiran
 ]])
 --LightforgedDraenei: The Vindicaar
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name a) LightforgedDraenei Introdução 2
 #displayname |cFF1EFF001|r - A Vindicaar
-#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
+#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
 
 << Alliance LightforgedDraenei !DK
 
 step
-    #include RestedXP Speed Leveling\a) LightforgedDraenei Intro
+    #include RestedXP Nivelamento Rápido\a) LightforgedDraenei Introdução
 ]])
 --Mechagnome: Mechagon City
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name a) Intro Gnomecânico 2
 #displayname |cFF1EFF001|r - Mechagon City
-#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
+#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
 
 << Alliance Mechagnome !DK
 
 step
-    #include RestedXP Speed Leveling\a) Mechagnome Intro
+    #include RestedXP Nivelamento Rápido\a) Gnomecânico Introdução
 ]])
 --VoidElf: Telogrus Rift
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name a) Intro Elfo do Vácuo 2
 #displayname |cFF1EFF001|r - Fissura de Telogrus
-#next RestedXP Meia-noite\ba) DF Aliança Intro Meia-noite (A) 2
+#next RestedXP Meia-noite\ba) Introdução da Aliança em Dragonflight em Midnight (A) 2
 
 << Alliance VoidElf !DK
 
 step
-    #include RestedXP Speed Leveling\a) VoidElf Intro
+    #include RestedXP Nivelamento Rápido\a) VoidElf Introdução
 ]])
 
 -- ====================================
@@ -28921,7 +28921,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name a) Ilha do Exílio Horda 2
 #displayname |cFF1EFF001|r - Exílio's Reach
 #next b1) Introdução de BfA 2
@@ -28930,30 +28930,30 @@ RXPGuides.RegisterGuide([[
 << Horde !Harronir !Dracthyr !DemonHunter !DK !Nightborne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
 
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach Horde
+    #include RestedXP Nivelamento Rápido\a) Exílio's Reach Horda
 ]])
 --Blood Elf: Sunstrider Isle
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name ab) Ilha dos Lançasol 2
 #displayname Sunstrider Isle |cRXP_ENEMY_(Alternativa)|r
-#next ac) Elfo Sangrento Matas de Canção Eterna 2
+#next ac) Elfo Sangrento: Bosque Canto Eterno 2
 #defaultfor BloodElf !DK
 
 << Horde
 
 step
-    #include RestedXP Speed Leveling\ab) Sunstrider Isle
+    #include RestedXP Nivelamento Rápido\ab) Sunstrider Isle
 ]])
 --Blood Elf: Eversong Woods(xp tag)
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name ac) Elfo Sangrento: Bosque Canto Eterno 2
 #displayname |cFF1EFF002|r - Bosque Canto Eterno
 #next b1) Introdução de BfA 2
@@ -28962,14 +28962,14 @@ RXPGuides.RegisterGuide([[
 << Horde
 
 step
-    #include RestedXP Speed Leveling\ac) Blood Elf Eversong Woods
+    #include RestedXP Nivelamento Rápido\ac) Elfo Sanguíneo: Floresta da Canção Eterna
 ]])
 --Orc: Valley of Trials
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name ab) Vale das Provas1 2 << !Troll --Orc
 #name ab) Valley of Trials2 2 << Troll
 #displayname |cFF1EFF002|r - Valley of Trials << Troll
@@ -28990,7 +28990,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name ac) Ilhas do Eco1 2 << Troll
 #name ac) Eco Isles2 2 << !Troll --Orc
 #displayname Eco Isles |cRXP_ENEMY_(Alternative)|r << Troll
@@ -29011,7 +29011,7 @@ RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name ab) Acampamento Narache 2
 #displayname Camp Narache |cRXP_ENEMY_(Alternative)|r
 #next ac) Tauren Camp Mulgore 2
@@ -29020,14 +29020,14 @@ RXPGuides.RegisterGuide([[
 << Horde
 
 step
-    #include RestedXP Speed Leveling\ab) Camp Narache
+    #include RestedXP Nivelamento Rápido\ab) Acampamento Narache
 ]])
 --Tauren: Camp Mulgore
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name ac) Tauren Camp Mulgore 2
 #displayname |cFF1EFF002|r - Mulgore
 #next b1) Introdução de BfA 2
@@ -29036,14 +29036,14 @@ RXPGuides.RegisterGuide([[
 << Horde
 
 step
-    #include RestedXP Speed Leveling\ac) Tauren Camp Mulgore
+    #include RestedXP Nivelamento Rápido\ac) Tauren Camp Mulgore
 ]])
 --Undead: Deathknell
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name ab) Morteílo 2
 #displayname Deathknell |cRXP_ENEMY_(Alternative)|r
 #title Deathknell
@@ -29053,14 +29053,14 @@ RXPGuides.RegisterGuide([[
 << Horde
 
 step
-    #include RestedXP Speed Leveling\ab) Deathknell
+    #include RestedXP Nivelamento Rápido\ab) Deathknell
 ]])
 --Undead: Tirisfal Glades
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name ac) Renegado Tirisfal Glades 2
 #displayname |cFF1EFF002|r - Tirisfal Glades
 #next b1) Introdução de BfA 2
@@ -29069,14 +29069,14 @@ RXPGuides.RegisterGuide([[
 << Horde
 
 step
-    #include RestedXP Speed Leveling\ac) Undead Tirisfal Glades
+    #include RestedXP Nivelamento Rápido\ac) Morto-vivo Claras de Tirisfal
 ]])
 --Goblin: Kezan & The Lost Isles
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name ab) Goblin Intro 2
 #displayname Kezan & As Ilhas Perdidas |cRXP_ENEMY_(Alternative)|r
 #next b1) Introdução de BfA 2
@@ -29084,14 +29084,14 @@ RXPGuides.RegisterGuide([[
 << Horde Goblin !DK
 
 step
-    #include RestedXP Speed Leveling\ab) Goblin Intro
+    #include RestedXP Nivelamento Rápido\ab) Introdução Goblin
 ]])
 --HighmountainTauren: Highmountain
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name a) HighmountainTauren 2
 #displayname |cFF1EFF001|r - Tauren Altamontês
 #next b1) Introdução de BfA 2
@@ -29099,14 +29099,14 @@ RXPGuides.RegisterGuide([[
 << Horde HighmountainTauren !DK
 
 step
-    #include RestedXP Speed Leveling\a) HighmountainTauren
+    #include RestedXP Nivelamento Rápido\a) Tauren Altamontês
 ]])
 --Nightborne: The Nighthold
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name a) Filho da Noite Intro 2
 #displayname |cFF1EFF001|r - O Baluarte da Noite
 #next b1) Introdução de BfA 2
@@ -29114,14 +29114,14 @@ RXPGuides.RegisterGuide([[
 << Horde Nightborne !DK
 
 step
-    #include RestedXP Speed Leveling\a) Nightborne Intro
+    #include RestedXP Nivelamento Rápido\a) Filho da Noite Introdução
 ]])
 --ZandalariTroll: Dazar'alor
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name a) ZandalariTroll Intro 2
 #displayname |cFF1EFF001|r - Dazar'alor
 #next b1) Introdução de BfA 2
@@ -29129,14 +29129,14 @@ RXPGuides.RegisterGuide([[
 << Horde ZandalariTroll !DK
 
 step
-    #include RestedXP Speed Leveling\a) ZandalariTroll Intro
+    #include RestedXP Nivelamento Rápido\a) Trolls Zandalari Introdução
 ]])
 --MagharOrc: Orgrimmar
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name a) MagharOrc Intro 2
 #displayname |cFF1EFF001|r - Orgrimmar
 #next b1) Introdução de BfA 2
@@ -29144,14 +29144,14 @@ RXPGuides.RegisterGuide([[
 << Horde MagharOrc !DK
 
 step
-    #include RestedXP Speed Leveling\a) MagharOrc Intro
+    #include RestedXP Nivelamento Rápido\a) Introdução dos Orcs Maghar
 ]])
 --Vulpera: Orgrimmar
 RXPGuides.RegisterGuide([[
 #retail
 #version 2
 #group RestedXP Meia-noite
-#subgroup |cFF1EFF00(1-90)|r Default
+#subgroup |cFF1EFF00(1-90)|r Padrão
 #name a) Vulpera Intro 2
 #displayname |cFF1EFF001|r - Orgrimmar
 #next b1) Introdução de BfA 2
@@ -29159,7 +29159,7 @@ RXPGuides.RegisterGuide([[
 << Horde Vulpera !DK
 
 step
-    #include RestedXP Speed Leveling\a) Vulpera Intro
+    #include RestedXP Nivelamento Rápido\a) Introdução dos Vulpera
 ]])
 --Legion Intro
 RXPGuides.RegisterGuide([[
@@ -29170,5 +29170,5 @@ RXPGuides.RegisterGuide([[
 #internal
 
 step
-    #include RestedXP Speed Leveling\a) Horde Legion Intro
+    #include RestedXP Nivelamento Rápido\a) Introdução da Horda: Legion
 ]])

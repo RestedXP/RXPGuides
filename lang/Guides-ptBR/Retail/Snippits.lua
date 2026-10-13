@@ -7,7 +7,7 @@ if GetLocale() ~= "ptBR" then return end
 RXPGuides.RegisterGuide([[
 #retail
 #version 4
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) Missões de Ventobravo
 #internal
 
@@ -43,7 +43,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 4
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) Tutorial de Moradia da Aliança
 #internal
 
@@ -125,7 +125,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 4
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) Tutorial de Moradia da Horda
 #internal
 
@@ -209,7 +209,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 4
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) DMF
 #internal
 
@@ -628,7 +628,7 @@ step << Horde
 RXPGuides.RegisterGuide([[
 #retail
 #version 4
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) GC Tempo de Crona Torre
 #internal
 
@@ -705,7 +705,7 @@ step  << Alliance
 RXPGuides.RegisterGuide([[
 #retail
 #version 4
-#group RestedXP Leveling de Velocidade
+#group RestedXP Nivelamento Rápido
 #name a) GC Tempo de Crona Normal
 #internal
 
@@ -927,7 +927,7 @@ step
 step
     #completewith TheUntetheredHorrorA
     #hidewindow
-    .goto 2371,50.36,36.31,20 >>Siga a Seta
+    .goto 2371,50.36,36.31,20 >>Siga a Flecha
 step
     #requires TheUntetheredHorrorA
     .goto 2371,50.36,36.31
@@ -1406,16 +1406,16 @@ step
 step
     #completewith next
     #hidewindow
-    .cast 202595 >>Siga a Seta
+    .cast 202595 >>Siga a Flecha
     .timer 55,Encenação
 step
     .isInScenario 940
     .goto 714,37.12,48.22
     >>|TInterface/cursor/crosshair/interact.blp:20|tClique em |cRXP_FRIENDLY_Minerva Melancorvo|r. << Horde
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClique em |cRXP_FRIENDLY_Dagnar Stonebrew|r. << Alliance
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Dagnar Stonebrow|r. << Alliance
     .scenario 2138,1 --Release your ally
     .target Minerva Melancorvo << Horde
-    .target Dagnar Stonebrew << Alliance
+    .target Dagnar Stonebrow << Alliance
 step
     .isInScenario 940
     .goto 714,47.96,58.44
@@ -1627,7 +1627,7 @@ step
 step
     #completewith next
     #hidewindow
-    .cast 186253 >>Siga a Seta
+    .cast 186253 >>Siga a Flecha
     .timer 24,Encenação
 step
     .goto 701,49.82,51.71
@@ -1904,7 +1904,7 @@ step
 step
     #completewith next
     #hidewindow
-    .cast 3365 >>Siga a Seta
+    .cast 3365 >>Siga a Flecha
     .timer 25,Encenação
 step
     .isInScenario 1026
@@ -1968,7 +1968,7 @@ RXPGuides.RegisterGuide([[}
 << DeathKnight
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Blood
+    #include RestedXP Legion Remix\a) Artefato Arma: Sanguíneo
 ]])
 --Frost 2
 RXPGuides.RegisterGuide([[}
@@ -1984,7 +1984,7 @@ RXPGuides.RegisterGuide([[}
 << DeathKnight
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Frost DK
+    #include RestedXP Legion Remix\a) Artefato Arma: Gélido DK
 ]])
 --Unholy 2
 RXPGuides.RegisterGuide([[}
@@ -2001,7 +2001,7 @@ RXPGuides.RegisterGuide([[}
 << DeathKnight
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Unholy
+    #include RestedXP Legion Remix\a) Artefato Arma: Profano
 ]])
 
 --Death Knight Order Hall Campaign Part 1
@@ -2071,9 +2071,9 @@ step
     *|cRXP_WARN_Importante: Selecione o que você já tem para ganhar um adicional de 10% de experiência (uma única vez)|r
     *|cRXP_WARN_Você poderá fazer as outras linhas de missão mais tarde|r
     *|cFFFF0000Você não pode progredir se não selecionar um|r.
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Frost DK >>RestedXP Legion Remix\a) Arma Artefato: Gelo DK >> Gelo(DPS) Linha de Missões
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Unholy >>RestedXP Legion Remix\a) Arma Artefato: Profano >> Profano(DPS) Linha de Missões
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Blood >>RestedXP Legion Remix\a) Artefato: Sangue >> Linha de missões de Sangue (Tanque)
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Frost DK >> Gelo(DPS) Linha de Missões
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Unholy >> Profano(DPS) Linha de Missões
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Blood >> Linha de missões de Sangue (Tanque)
 step
     #include ac) Order Hall Demon Hunter Part 2@Plans and Preparations-Enlist Nazgrim
 step
@@ -2273,7 +2273,7 @@ step
 step
     #completewith Illidari Fel Bat
     .zone 627 >>Saia da Instância (clique com o botão direito no seu retrato) ou pressione a macro.
-    .macro Leave Instance,236367 >>Saia da Instância.
+    .macro Leave Instance,236367 >> Saia da Instância.
 step
     #requires Illidari Fel Bat
     .goto 627,75.26,47.61
@@ -2320,7 +2320,7 @@ step
     .goto 680,30.57,63.9,30,0
     .goto 680,30.3,65.99,30,0
     .goto 680,31.07,66,30,0
-    >>Mate os |cRXP_ENEMY_Demônios|r |cRXP_WARN_mas ignore |cRXP_ENEMY_Esmagador Almavil|r a criatura infernal mesmo se tiver aggro|r.
+    >>Mate os |cRXP_ENEMY_Demônios|r |cRXP_WARN_mas ignore |cRXP_ENEMY_Esmagador Almavil|r a criatura infernal mesmo se tiver agro|r.
     .scenario 1822,2,100
     .mob Fist of the Deceiver
     .mob Living Flame
@@ -2346,7 +2346,7 @@ step
 step
     .isInScenario 900
     .zone 627 >>Saia da Instância (clique com o botão direito no seu retrato) ou pressione a macro.
-    .macro Leave Instance,236367 >>Saia da Instância.
+    .macro Leave Instance,236367 >> Saia da Instância.
 step
     .isQuestAvailable 40249
     .goto 627,73.86,46.11
@@ -2638,7 +2638,7 @@ step
     .goto 676,23.26,62.14,15,0
     .goto 676,23.73,63.82,15,0
     .goto 676,24.3,64.04,15,0
-    .goto 676,25.11,63.11,30 >>Siga a Seta
+    .goto 676,25.11,63.11,30 >>Siga a Flecha
     .timer 9,Aguarde o RP
 step
     #requires Caria Felsoul
@@ -2654,7 +2654,7 @@ step
     .scenario 2302,1
 step
     .zone 627 >>Saia da Instância (clique com o botão direito no seu retrato) ou pressione a macro.
-    .macro Leave Instance,236367 >>Saia da Instância.
+    .macro Leave Instance,236367 >> Saia da Instância.
     .complete 40249,3 --1/1 Return to Dalaran
 step
     .isQuestAvailable 39247
@@ -2693,7 +2693,7 @@ RXPGuides.RegisterGuide([[}
 << DemonHunter
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Havoc
+    #include RestedXP Legion Remix\a) Artefato Arma: Devastação
 ]])
 --Vengeance 2
 RXPGuides.RegisterGuide([[
@@ -2709,7 +2709,7 @@ RXPGuides.RegisterGuide([[
 << DemonHunter
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Vengeance
+    #include RestedXP Legion Remix\a) Artefato Arma: Vingança
 ]])
 
 --Demon Hunter Order Hall Campaign Part 1
@@ -2787,8 +2787,8 @@ step
     +Selecione um dos guias a seguir por enquanto:
     *|cRXP_WARN_Você poderá fazer as outras linhas de missão mais tarde|r
     *|cFFFF0000Você não pode progredir se não selecionar um|r.
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Havoc >>RestedXP Legion Remix\a) Arma de Artefato: Devastação >> Devastação(DPS) Cadeia de Missões
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Vengeance >>RestedXP Remix de Legion\a) Arma Artefato: Vingança >> Vingança (Tanque) Linha de Questes
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Havoc >> Devastação(DPS) Cadeia de Missões
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Vengeance >> Vingança (Tanque) Linha de Questes
 step
     #include ac) Order Hall Demon Hunter Part 2@Eternal Vigil-Champion: Asha Ravensong
 ]])
@@ -2819,7 +2819,7 @@ step
     #hidewindow
     #completewith UseDreamwalkA
     .isQuestAvailable 40646
-    .zone 747 >>Siga a Seta
+    .zone 747 >>Siga a Flecha
 step
     .zoneskip 715,1
     .isQuestAvailable 40646
@@ -2968,7 +2968,7 @@ step
 step
     #completewith next
     #hidewindow
-    .goto 47,48.90,34.31,15 >>Siga a Seta
+    .goto 47,48.90,34.31,15 >>Siga a Flecha
     .timer 15,Encenação Valorn
 step
     .goto 47,48.90,34.31
@@ -3114,7 +3114,7 @@ step
 step
     #completewith next
     #hidewindow
-    .cast 3365 >>Siga a Seta
+    .cast 3365 >>Siga a Flecha
     .timer 25,Encenação
 step
     .isInScenario 1014
@@ -3197,7 +3197,7 @@ step
     #hidewindow
     #completewith UseDreamwalkA
     .isQuestAvailable 40646
-    .zone 747 >>Siga a Seta
+    .zone 747 >>Siga a Flecha
 step
     .zoneskip 715,1
     .isQuestAvailable 40646
@@ -3501,7 +3501,7 @@ step
     #hidewindow
     #completewith UseDreamwalkA
     .isQuestAvailable 40646
-    .zone 747 >>Siga a Seta
+    .zone 747 >>Siga a Flecha
 step
     .zoneskip 715,1
     .isQuestAvailable 40646
@@ -3870,7 +3870,7 @@ step
     #hidewindow
     #completewith UseDreamwalkA
     .isQuestAvailable 40646
-    .zone 747 >>Siga a Seta
+    .zone 747 >>Siga a Flecha
 step
     .zoneskip 715,1
     .isQuestAvailable 40646
@@ -4121,7 +4121,7 @@ step
     #requires CleansingTheMotherTreeB
     #completewith next
     #hidewindow
-    .gossipoption 45306 >>Siga a Seta
+    .gossipoption 45306 >>Siga a Flecha
     .timer 21,Encenação Omnuron
 step
     #requires CleansingTheMotherTreeB
@@ -4164,7 +4164,7 @@ step
     .isOnQuest 41689
     #hidewindow
     #completewith next
-    .gossipoption 45261 >>Siga a Seta
+    .gossipoption 45261 >>Siga a Flecha
     .timer 6,Encenação Breve
 step
     .isQuestNotComplete 41689
@@ -4264,7 +4264,7 @@ RXPGuides.RegisterGuide([[}
 << Druid
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Balance Druid
+    #include RestedXP Legion Remix\a) Arma de Artefato: Druida de Equilíbrio
 ]])
 --Feral 2
 RXPGuides.RegisterGuide([[}
@@ -4280,7 +4280,7 @@ RXPGuides.RegisterGuide([[}
 << Druid
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Feral Druid
+    #include RestedXP Legion Remix\a) Artefato Arma: Druida Feral
 ]])
 --Guardian 2
 RXPGuides.RegisterGuide([[}
@@ -4296,7 +4296,7 @@ RXPGuides.RegisterGuide([[}
 << Druid
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Guardian Druid
+    #include RestedXP Legion Remix\a) Artefato Arma: Druida Guardião
 ]])
 --Restoration 2
 RXPGuides.RegisterGuide([[}
@@ -4312,7 +4312,7 @@ RXPGuides.RegisterGuide([[}
 << Druid
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Restoration Druid
+    #include RestedXP Legion Remix\a) Artefato Arma: Druida de Restauração
 ]])
 
 --Druid Order Hall Campaign 1
@@ -4379,10 +4379,10 @@ step
     *|cRXP_WARN_Importante: Selecione o que você já tem para ganhar um adicional de 10% de experiência (uma única vez)|r
     *|cRXP_WARN_Você poderá fazer as outras linhas de missão mais tarde|r
     *|cFFFF0000Você não pode progredir se não selecionar um|r.
-    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Balance Druid >>Remix\z) Artefato Arma: Druida de Equilíbrio >> Equilíbrio(DPS) Linha de Missões
-    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Feral Druid >>Remix\z) Artefato Arma: Druida Feral >> Feral(DPS) Linha de história
-    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Guardian Druid >>Remix\z) Artefato Arma: Druida Guardião >> Guardião(Tanque) Linha de história
-    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Restoration Druid >>Remix\z) Artefato Arma: Druida de Restauração >> Restauração(Curador) Linha de história
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Balance Druid >> Equilíbrio(DPS) Linha de Missões
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Feral Druid >> Feral(DPS) Linha de história
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Guardian Druid >> Guardião(Tanque) Linha de história
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Restoration Druid >> Restauração(Curador) Linha de história
 step
     #include ac) Order Hall Druid Part 2@Sowing The Seed-Making Trails
 step
@@ -4509,7 +4509,7 @@ step
 step
     #completewith next
     #hidewindow
-    .vehicle 106236 >>Siga a Seta
+    .vehicle 106236 >>Siga a Flecha
     .timer 65,Duração de Voo
 step
     .goto 627,71.22,51.77
@@ -4520,7 +4520,7 @@ step
     #completewith next
     #hidewindow
     .goto 634,85.40,9.66
-    .gossipoption 45594 >>Siga a Seta
+    .gossipoption 45594 >>Siga a Flecha
     .timer 71,Grif Encenação
 step
     .goto 634,84.90,9.67
@@ -4900,7 +4900,7 @@ step
 step
     #completewith next
     #hidewindow
-    .gossipoption 47259 >>Siga a Seta
+    .gossipoption 47259 >>Siga a Flecha
     .timer 56,Vereesa Encenação
 step
     .goto 646,32.29,32.43
@@ -4917,7 +4917,7 @@ step
 step
     #completewith next
     #hidewindow
-    .gossipoption 47260 >>Siga a Seta
+    .gossipoption 47260 >>Siga a Flecha
     .timer 14,Vereesa Encenação
 step
     .goto 646,32.29,32.43
@@ -4975,7 +4975,7 @@ step
     #completewith next
     #hidewindow
     .goto 714,69.98,59.65,20,0
-    .goto 714,71.47,73.66,20 >>Siga a Seta
+    .goto 714,71.47,73.66,20 >>Siga a Flecha
 step
     .isInScenario 972
     .goto 714,71.47,73.66
@@ -5168,7 +5168,7 @@ step
 step
     #completewith next
     #hidewindow
-    .gossipoption 45080 >>Siga a Seta
+    .gossipoption 45080 >>Siga a Flecha
     .timer 27,Apata Encenação
 step
     .isInScenario 973
@@ -5221,7 +5221,7 @@ step
 step
     #completewith next
     #hidewindow
-    .gossipoption 44907 >>Siga a Seta
+    .gossipoption 44907 >>Siga a Flecha
     .timer 13,Apata Encenação
 step
     .isInScenario 973
@@ -5320,7 +5320,7 @@ RXPGuides.RegisterGuide([[
 << Hunter
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Beast Mastery
+    #include RestedXP Legion Remix\a) Artefato Arma: Domínio das Feras
 ]])
 --Marksmanship 2
 RXPGuides.RegisterGuide([[}
@@ -5336,7 +5336,7 @@ RXPGuides.RegisterGuide([[}
 << Hunter
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Marksmanship
+    #include RestedXP Legion Remix\a) Artefato Arma: Precisão
 ]])
 --Survival 2
 RXPGuides.RegisterGuide([[}
@@ -5352,7 +5352,7 @@ RXPGuides.RegisterGuide([[}
 << Hunter
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Survival
+    #include RestedXP Legion Remix\a) Artefato Arma: Sobrevivência
 ]])
 
 --Hunter Order Hall Campaign 1
@@ -5420,9 +5420,9 @@ step
     *|cRXP_WARN_Importante: Selecione o que você já tem para ganhar um adicional de 10% de experiência (uma única vez)|r
     *|cRXP_WARN_Você poderá fazer as outras linhas de missão mais tarde|r
     *|cFFFF0000Você não pode progredir se não selecionar um|r.
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Beast Mastery >>RestedXP Legion Remix\a) Artefato Arma: Domínio das Feras >> Domínio das Feras (DPS) Cadeia de Missões
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Marksmanship >>RestedXP Legion Remix\a) Artefato Arma: Precisão >> Precisão (DPS) Cadeia de Missões
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Survival >>RestedXP Legion Remix\a) Artefato Arma: Sobrevivência >> Sobrevivência (DPS) Cadeia de Missões
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Beast Mastery >> Domínio das Feras (DPS) Cadeia de Missões
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Marksmanship >> Precisão (DPS) Cadeia de Missões
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Survival >> Sobrevivência (DPS) Cadeia de Missões
 step
     #include ac) Order Hall Hunter Part 2@Eagle's Wings-The Campaign Begins
 step
@@ -6001,7 +6001,7 @@ step
     #requires Crystal's Message
     #completewith Orange is the New Purple
     .isQuestTurnedIn 41113
-    .goto 735,44.66,57.89,40 >>Siga a Seta
+    .goto 735,44.66,57.89,40 >>Siga a Flecha
 step
     #requires Orange is the New Purple
     .isQuestTurnedIn 41113
@@ -6726,7 +6726,7 @@ RXPGuides.RegisterGuide([[
 << Mage
 
 step
-    #include a) Artifact Weapon: Arcane
+    #include a) Artefato Arma: Arcano
 ]])
 --Fire 2
 RXPGuides.RegisterGuide([[
@@ -6742,7 +6742,7 @@ RXPGuides.RegisterGuide([[
 << Mage
 
 step
-    #include a) Artifact Weapon: Fire
+    #include a) Artefato Arma: Fogo
 ]])
 --Frost 2
 RXPGuides.RegisterGuide([[
@@ -6758,7 +6758,7 @@ RXPGuides.RegisterGuide([[
 << Mage
 
 step
-    #include a) Artifact Weapon: Frost Mage
+    #include a) Arma Artefato: Mago de Gelo
 ]])
 
 --Mage Order Hall Campaign 1
@@ -6824,9 +6824,9 @@ step
     +Selecione um dos guias a seguir por enquanto:
     *|cRXP_WARN_Você poderá fazer as outras linhas de missão mais tarde|r
     *|cFFFF0000Você não pode progredir se não selecionar um|r.
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Fire >>RestedXP Legion Remix\a) Artefato Arma: Fogo >> Fogo(DPS) Questline
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Arcane >>RestedXP Legion Remix\a) Artefato Arma: Arcano >> Arcano(DPS) Questline
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Frost Mage >>RestedXP Legion Remix\a) Artefato Arma: Mago de Gelo >> Gélido(DPS) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Fire >> Fogo(DPS) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Arcane >> Arcano(DPS) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Frost Mage >> Gélido(DPS) Questline
 step
     >>Usar |T1536440:0|t[Teleporte: Salão do Guardião].
     .accept 41114 >>Aceite O Retorno do Campeão
@@ -7098,7 +7098,7 @@ step
     #completewith Journey to the East2
     #hidewindow
     #requires Journey to the East
-    .goto 371,55.03,60.75,30 >>Siga a Seta
+    .goto 371,55.03,60.75,30 >>Siga a Flecha
 step
     #requires Journey to the East2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_O Rei Macaco|r
@@ -7299,7 +7299,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Salão da Ordem
 #name a) Artefato Arma: Tecelão da Névoa
 #displayname Artefato Arma: Tecelão da Névoa
-#next a) Salão da Ordem de Monges Parte 1
+#next a) Salão da Ordem Monja Parte 1
 #internal
 
 << Monk
@@ -7448,7 +7448,7 @@ step
     #completewith MistweaverScenario
     #hidewindow
     .goto 709,50.49,47.67,15,0
-    .goto 709,49.36,47.43,15 >>Siga a Seta
+    .goto 709,49.36,47.43,15 >>Siga a Flecha
 step
     #requires MistweaverScenario
     .goto 709,47.16,47.76
@@ -7527,7 +7527,7 @@ step
     .goto 728,44.12,53.64
     >>|cRXP_WARN_Na seção "Itens Ativos"|r Há uma macro, dispare-a rapidamente depois de falar com |cRXP_FRIENDLY_Taran Zhu|r.
     .complete 41003,3 --1/1 Fly Home with Tak-Tak
-    .macro Leave Instance,236367 >>Saia da Instância.
+    .macro Leave Instance,236367 >> Saia da Instância.
     .skipgossipid 45497
     .target Tak-Tak
 step
@@ -7536,7 +7536,7 @@ step
     #title |cFFFCDC00Spam Macro|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ponshu Corpo-de-ferro|r
     .turnin 41003 >>Entregue O Presente do Imperador
-    .macro Leave Instance,236367 >>Saia da Instância.
+    .macro Leave Instance,236367 >> Saia da Instância.
     .target Ponshu Corpo-de-ferro
 step
     #completewith The Emperor's Gift
@@ -7556,7 +7556,7 @@ RXPGuides.RegisterGuide([[
 #name a) Artefato Arma: Andarilho do Vento
 #subgroup |cFFFCDC00(10-80+)|r Salão da Ordem
 #displayname Artefato Arma: Andarilho do Vento
-#next a) Parte 1 do Salão da Ordem do Monge
+#next a) Salão da Ordem Monja Parte 1
 #internal
 
 << Monk
@@ -7985,7 +7985,7 @@ RXPGuides.RegisterGuide([[
 << Monk
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Brewmaster
+    #include RestedXP Legion Remix\a) Artefato Arma: Mestre Cervejeiro
 ]])
 --Mistweaver 2
 RXPGuides.RegisterGuide([[
@@ -8002,7 +8002,7 @@ RXPGuides.RegisterGuide([[
 << Monk
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Mistweaver
+    #include RestedXP Legion Remix\a) Artefato Arma: Tecelão da Névoa
 ]])
 --Windwalker 2
 RXPGuides.RegisterGuide([[
@@ -8019,7 +8019,7 @@ RXPGuides.RegisterGuide([[
 << Monk
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Windwalker
+    #include RestedXP Legion Remix\a) Artefato Arma: Andarilho do Vento
 ]])
 
 --Monk Order Hall Campaign Part 1
@@ -8085,9 +8085,9 @@ step
     +Selecione um dos guias a seguir por enquanto:
     *|cRXP_WARN_Você poderá fazer as outras linhas de missão mais tarde|r
     *|cFFFF0000Você não pode progredir se não selecionar um|r.
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Windwalker >>RestedXP Legion Remix\a) Arma Artefato: Andarilho do Vento >> Andarilho do Vento(DPS) Cadeia de Missões
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Brewmaster >>RestedXP Legion Remix\a) Arma Artefato: Mestre Cervejeiro >> Mestre Cervejeiro(Tanque) Cadeia de Missões
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Mistweaver >>Remix\a) Artefato Arma: Tecelão da Névoa >> Tecelão da Névoa(Curador) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Windwalker >> Andarilho do Vento(DPS) Cadeia de Missões
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Brewmaster >> Mestre Cervejeiro(Tanque) Cadeia de Missões
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Mistweaver >> Tecelão da Névoa(Curador) Questline
 step
     #include ac) Order Hall Monk Part 2@Matter of Planning-The Fight Begins
 step << Alliance
@@ -8281,7 +8281,7 @@ step << Horde
 step << Horde
     #completewith Mysterious Paladin
     #hidewindow
-    .goto 627,72.01,49.34,40 >>Siga a Seta
+    .goto 627,72.01,49.34,40 >>Siga a Flecha
 step << Horde
     #requires Mysterious Paladin
     .goto 627,72.01,49.34
@@ -8493,7 +8493,7 @@ step
 step
     .isInScenario 1092
     .zone 627 >>Saia da Instância (clique com o botão direito no seu retrato) ou pressione a macro.
-    .macro Leave Instance,236367 >>Saia da Instância.
+    .macro Leave Instance,236367 >> Saia da Instância.
 step
     .isQuestAvailable 44370,44063
     #label Artifact Weapon: Holy Paladin
@@ -8527,7 +8527,7 @@ step << Alliance
 step << Alliance
     #completewith Light's Hope Sanctum
     #hidewindow
-    .goto 627,32.65,69.91,30 >>Siga a Seta
+    .goto 627,32.65,69.91,30 >>Siga a Flecha
 step << Alliance
     #requires Light's Hope Sanctum
     .goto 627,32.65,69.91
@@ -8543,7 +8543,7 @@ step << Alliance
 step << Alliance
     #completewith A United Force
     #hidewindow
-    .goto 24,63.15,37.22,40 >>Siga a Seta
+    .goto 24,63.15,37.22,40 >>Siga a Flecha
 step << Alliance
     #requires A United Force
     .goto 24,63.15,37.22
@@ -8962,7 +8962,7 @@ step << Alliance
     .isQuestAvailable 38576
     #completewith Light's Hope Sanctum
     #hidewindow
-    .goto 627,32.65,69.91,30 >>Siga a Seta
+    .goto 627,32.65,69.91,30 >>Siga a Flecha
 step << Alliance
     #requires Light's Hope Sanctum
     .isQuestAvailable 38576
@@ -8980,7 +8980,7 @@ step << Horde
     #completewith Light's Hope Sanctum
     .isQuestAvailable 38576
     #hidewindow
-    .goto 627,61.93,13.5,30 >>Siga a Seta
+    .goto 627,61.93,13.5,30 >>Siga a Flecha
 step << Horde
     #requires Light's Hope Sanctum
     .isQuestAvailable 38576
@@ -8999,7 +8999,7 @@ step
     #completewith A United Force
     #hidewindow
     .isQuestAvailable 38576
-    .goto 24,63.15,37.22,40 >>Siga a Seta
+    .goto 24,63.15,37.22,40 >>Siga a Flecha
 step
     #requires A United Force
     .isQuestAvailable 38576
@@ -9322,7 +9322,7 @@ step
 step
     .isInScenario 775
     .zone 23 >>Saia da Instância (clique com o botão direito no seu retrato) ou pressione a macro.
-    .macro Leave Instance,236367 >>Saia da Instância.
+    .macro Leave Instance,236367 >> Saia da Instância.
 step
     .zoneskip 23,1
     .goto 23,74.28,53.15
@@ -9377,7 +9377,7 @@ step
     #completewith Light's Hope
     .goto 24,46.48,82.49,15,0
     .goto 24,41.21,73.21,15,0
-    .goto 24,63.20,37.34,40 >>Siga a Seta
+    .goto 24,63.20,37.34,40 >>Siga a Flecha
 step
     #requires Light's Hope
     .goto 24,63.20,37.34
@@ -9399,7 +9399,7 @@ RXPGuides.RegisterGuide([[
 << Paladin
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Holy Paladin
+    #include RestedXP Legion Remix\a) Artefato Arma: Paladino Sagrado
 ]])
 --Protection 2
 RXPGuides.RegisterGuide([[
@@ -9415,7 +9415,7 @@ RXPGuides.RegisterGuide([[
 << Paladin
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Paladin Protection
+    #include RestedXP Legion Remix\a) Arma Artefato: Paladino Proteção
 ]])
 --Retribution 2
 RXPGuides.RegisterGuide([[
@@ -9431,7 +9431,7 @@ RXPGuides.RegisterGuide([[
 << Paladin
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Retribution
+    #include RestedXP Legion Remix\a) Artefato Arma: Retribuição
 ]])
 
 --Paladin Order Hall Campaign Part 1
@@ -9497,9 +9497,9 @@ step
     +Selecione um dos guias a seguir por enquanto:
     *|cRXP_WARN_Você poderá fazer as outras linhas de missão mais tarde|r
     *|cFFFF0000Você não pode progredir se não selecionar um|r.
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Retribution >>RestedXP Legion Remix\a) Artefato Arma: Retribuição >> Retribuição(DPS) Linha de Missões
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Paladin Protection >>RestedXP Legion Remix\a) Artefato Arma: Paladino Proteção >> Proteção(Tanque) Linha de Missões
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Holy Paladin >>RestedXP Legion Remix\a) Artefato Arma: Paladino Sagrado >> Sagrado(Curador) Linha de Missões
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Retribution >> Retribuição(DPS) Linha de Missões
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Paladin Protection >> Proteção(Tanque) Linha de Missões
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Holy Paladin >> Sagrado(Curador) Linha de Missões
 step
     #include ac) Order Hall Paladin Part 2@A United Force-Order Hall Paladin Part 2
 ]])
@@ -9661,7 +9661,7 @@ step
 step
     #completewith next
     #hidewindow
-    .cast 3365 >>Siga a Seta
+    .cast 3365 >>Siga a Flecha
     .timer 37,Príncipe do Nexus Encenação
 step
     .goto 115,56.65,69.10
@@ -9804,7 +9804,7 @@ step
     #requires SubdueLightsWrathA
     #completewith next
     #hidewindow
-    .cast 207949 >>Siga a Seta
+    .cast 207949 >>Siga a Flecha
     .timer 30,Duração da Subjugação
 step
     #requires SubdueLightsWrathA
@@ -10023,7 +10023,7 @@ step
 step
     #completewith next
     #hidewindow
-    .cast 213109 >>Siga a Seta
+    .cast 213109 >>Siga a Flecha
     .timer 5,Encenação Alora
 step
     .goto 646,33.99,33.93
@@ -10132,7 +10132,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Salão da Ordem
 #name a) Artefato Arma: Sombra
 #displayname Artefato Arma: Sombra
-#next a) Salão da Ordem Sacerdote Part 1
+#next a) Salão da Ordem Sacerdote Parte 1
 #internal
 
 << Priest
@@ -10373,7 +10373,7 @@ RXPGuides.RegisterGuide([[}
 << Priest
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Discipline
+    #include RestedXP Legion Remix\a) Artefato Arma: Disciplina
 ]])
 --Holy 2
 RXPGuides.RegisterGuide([[}
@@ -10389,7 +10389,7 @@ RXPGuides.RegisterGuide([[}
 << Priest
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Holy Priest
+    #include RestedXP Legion Remix\a) Artefato Arma: Sacerdote Sagrado
 ]])
 --Shadow 2
 RXPGuides.RegisterGuide([[}
@@ -10405,7 +10405,7 @@ RXPGuides.RegisterGuide([[}
 << Priest
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Shadow
+    #include RestedXP Legion Remix\a) Artefato Arma: Sombra
 ]])
 
 --Priest Order Hall Campaign Part 1
@@ -10473,9 +10473,9 @@ step
     *|cRXP_WARN_Importante: Selecione o que você já tem para ganhar um adicional de 10% de experiência (uma única vez)|r
     *|cRXP_WARN_Você poderá fazer as outras linhas de missão mais tarde|r
     *|cFFFF0000Você não pode progredir se não selecionar um|r.
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Shadow >>RestedXP Legion Remix\a) Arma Artefato: Sombra >> Sombra(DPS) Campanha
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Holy Priest >>RestedXP Legion Remix\a) Arma Artefato: Sacerdote Sagrado >> Sagrado(Curador) Campanha
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Discipline >>RestedXP Legion Remix\a) Arma Artefato: Disciplina >> Disciplina(Curador) Campanha
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Shadow >> Sombra(DPS) Campanha
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Holy Priest >> Sagrado(Curador) Campanha
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Discipline >> Disciplina(Curador) Campanha
 step
     #include ac) Order Hall Priest Part 2@The Light and the Void-Recruit Ishanah
 step
@@ -10834,7 +10834,7 @@ step
     .isInScenario 1123
     .zoneskip 37,1
     #completewith Confront Mathias Shaw.
-    .goto 37,32.05,49.23,40 >>Siga a Seta
+    .goto 37,32.05,49.23,40 >>Siga a Flecha
     .timer 45,Aguarde o RP
 step
     #requires Confront Mathias Shaw.
@@ -10848,7 +10848,7 @@ step
     +Entre em |cRXP_WARN_Furtividade|r e evite os guardas, especialmente aqueles com marcadores de olho que detectam furtividade melhor.
 step
     .isInScenario 1123
-    .goto 84,72.35,88.62,15 >>Siga a Seta
+    .goto 84,72.35,88.62,15 >>Siga a Flecha
 step
     #completewith next
     #label smoke bomb
@@ -11530,7 +11530,7 @@ step
 step
     #requires Lucian Trias'
     #completewith Lucian Trias'2
-    .goto 627,53.16,33.12,10 >>Siga a Seta
+    .goto 627,53.16,33.12,10 >>Siga a Flecha
 step
     #requires Lucian Trias'2
     .goto 627,54.39,31.73
@@ -11779,7 +11779,7 @@ step
     #completewith Fangs of the Devourer
     .zoneskip 740,1
     .zone 628 >>Saia da Instância (clique com o botão direito no seu retrato) ou pressione a macro.
-    .macro Leave Instance,236367 >>Saia da Instância.
+    .macro Leave Instance,236367 >> Saia da Instância.
 step
     #requires Fangs of the Devourer
     #hidewindow
@@ -11848,7 +11848,7 @@ RXPGuides.RegisterGuide([[
 << Rogue
 
 step
-    #include a) Artifact Weapon: Assassination
+    #include a) Arma Artefato: Assassinato
 ]])
 --Outlaw 2
 RXPGuides.RegisterGuide([[
@@ -11864,7 +11864,7 @@ RXPGuides.RegisterGuide([[
 << Rogue
 
 step
-    #include a) Artifact Weapon: Outlaw
+    #include a) Arma Artefato: Fora da Lei
 ]])
 --Subtlety 2
 RXPGuides.RegisterGuide([[
@@ -11880,7 +11880,7 @@ RXPGuides.RegisterGuide([[
 << Rogue
 
 step
-    #include a) Artifact Weapon: Subtlety
+    #include a) Arma Artefato: Subterfúgio
 ]])
 
 --Rogue Order Hall Campaign Part 1
@@ -11959,9 +11959,9 @@ step
     +Selecione um dos guias a seguir por enquanto:
     *|cRXP_WARN_Você poderá fazer as outras linhas de missão mais tarde|r
     *|cFFFF0000Você não pode progredir se não selecionar um|r.
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Assassination >>Remix\a) Artefato Arma: Assassinato >> Assassinato(DPS) Cadeia de Missões
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Outlaw >>Remix\a) Artefato Arma: Outlaw >> Outlaw(DPS) Cadeia de Missões
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Subtlety >>Remix\a) Artefato Arma: Subterfúgio >> Subterfúgio(DPS) Cadeia de Missões
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Assassination >> Assassinato(DPS) Cadeia de Missões
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Outlaw >> Outlaw(DPS) Cadeia de Missões
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Subtlety >> Subterfúgio(DPS) Cadeia de Missões
 step
     #include ac) Order Hall Rogue Part 2@Honoring Success-Lethal Efficiency2
 ]])
@@ -12114,7 +12114,7 @@ step
 step
     #hidewindow
     #completewith TheEdictOfFireA
-    .goto 395,74.25,53.19,50 >>Siga a Seta
+    .goto 395,74.25,53.19,50 >>Siga a Flecha
 step
     #requires TheEdictOfFireA
     .goto 395,74.83,51.02
@@ -12139,7 +12139,7 @@ step
 step
     #hidewindow
     #completewith TheEdictOfStoneA
-    .goto 395,48.87,30.24,50 >>Siga a Seta
+    .goto 395,48.87,30.24,50 >>Siga a Flecha
 step
     #requires TheEdictOfStoneA
     .goto 395,48.87,30.24
@@ -12856,7 +12856,7 @@ RXPGuides.RegisterGuide([[}
 << Shaman
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Elemental
+    #include RestedXP Legion Remix\a) Artefato Arma: Elemental
 ]])
 --Enhancement 2
 RXPGuides.RegisterGuide([[}
@@ -12872,7 +12872,7 @@ RXPGuides.RegisterGuide([[}
 << Shaman
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Enhancement
+    #include RestedXP Legion Remix\a) Arma Artefato: Aprimoramento
 ]])
 --Restoration 2
 RXPGuides.RegisterGuide([[}
@@ -12888,7 +12888,7 @@ RXPGuides.RegisterGuide([[}
 << Shaman
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Restoration Shaman
+    #include RestedXP Legion Remix\a) Artefato Arma: Xamã de Restauração
 ]])
 
 --Shaman Order Hall Campaign Part 1
@@ -12955,9 +12955,9 @@ step
     *|cRXP_WARN_Importante: Selecione o que você já tem para ganhar um adicional de 10% de experiência (uma única vez)|r
     *|cRXP_WARN_Você poderá fazer as outras linhas de missão mais tarde|r
     *|cFFFF0000Você não pode progredir se não selecionar um|r.
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Elemental >>RestedXP Legion Remix\a) Artefato Arma: Elemental >> Elemental(DPS) Linha de Missões
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Enhancement >>RestedXP Legion Remix\a) Artefato Arma: Aperfeiçoamento >> Aperfeiçoamento(DPS) Linha de Missões
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Restoration Shaman >>RestedXP Legion Remix\a) Artefato Arma: Xamã de Restauração >> Restauração(Curador) Linha de Missões
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Elemental >> Elemental(DPS) Linha de Missões
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Enhancement >> Aperfeiçoamento(DPS) Linha de Missões
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Restoration Shaman >> Restauração(Curador) Linha de Missões
 step
     #include ac) Order Hall Shaman Part 2@A Ring Reforged-Azeroth Needs You
 step
@@ -13153,7 +13153,7 @@ step
 step
     #completewith next
     #hidewindow
-    .cast 198335 >>Siga a Seta
+    .cast 198335 >>Siga a Flecha
     .timer 20,Encenação
 step
     .goto 42,35.57,35.52
@@ -13162,7 +13162,7 @@ step
 step
     #completewith next
     #hidewindow
-    .cast 198335 >>Siga a Seta
+    .cast 198335 >>Siga a Flecha
     .timer 15,Encenação
 step
     .goto 42,46.99,62.32
@@ -13181,7 +13181,7 @@ step
     #requires TheFateOfDeadwindA
     #completewith next
     #hidewindow
-    .cast 198335 >>Siga a Seta
+    .cast 198335 >>Siga a Flecha
     .timer 13,Encenação
 step
     #requires TheFateOfDeadwindA
@@ -13230,7 +13230,7 @@ step
 step
     #completewith next
     #hidewindow
-    .cast 3365 >>Siga a Seta
+    .cast 3365 >>Siga a Flecha
     .timer 25,Encenação
 step
     .isInScenario 988
@@ -13558,7 +13558,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Salão da Ordem
 #name a) Arma de Artefato: Destruição
 #displayname Arma de Artefato: Destruição
-#next a) Salão da Ordem de Bruxaria Parte 1
+#next a) Salão da Ordem Bruxo Parte 1
 #internal
 
 << Warlock
@@ -13683,7 +13683,7 @@ step
 step
     #completewith next
     #hidewindow
-    .gossipoption 45857 >>Siga a Seta
+    .gossipoption 45857 >>Siga a Flecha
     .timer 25,Encenação: Calydus
 step
     .goto 22,69.16,79.16
@@ -13829,7 +13829,7 @@ step
 step
     #completewith next
     #hidewindow
-    .goto 646,60.40,25.22,10 >>Siga a Seta
+    .goto 646,60.40,25.22,10 >>Siga a Flecha
     .timer 60,Encenação de Gul'dan
 step
     .goto 646,55.79,63.01
@@ -13879,7 +13879,7 @@ RXPGuides.RegisterGuide([[}
 << Warlock
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Affliction
+    #include RestedXP Legion Remix\a) Artefato Arma: Suplício
 ]])
 --Demonology 2
 RXPGuides.RegisterGuide([[}
@@ -13895,7 +13895,7 @@ RXPGuides.RegisterGuide([[}
 << Warlock
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Demonology
+    #include RestedXP Legion Remix\a) Arma Artefato: Demonologia
 ]])
 --Destruction 2
 RXPGuides.RegisterGuide([[}
@@ -13911,7 +13911,7 @@ RXPGuides.RegisterGuide([[}
 << Warlock
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Destruction
+    #include RestedXP Legion Remix\a) Arma de Artefato: Destruição
 ]])
 
 --Warlock Order Hall Campaign Part 1
@@ -13978,9 +13978,9 @@ step
     *|cRXP_WARN_Importante: Selecione o que você já tem para ganhar um adicional de 10% de experiência (uma única vez)|r
     *|cRXP_WARN_Você poderá fazer as outras linhas de missão mais tarde|r
     *|cFFFF0000Você não pode progredir se não selecionar um|r.
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Affliction >>Remix\a) Artefato Arma: Suplício >> Suplício(DPS) Questline
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Demonology >>Remix\a) Artefato Arma: Demonologia >> Demonologia(DPS) Questline
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Destruction >>Remix\a) Artefato Arma: Destruição >> Destruição(DPS) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Affliction >> Suplício(DPS) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Demonology >> Demonologia(DPS) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Destruction >> Destruição(DPS) Questline
 step
     #include ac) Order Hall Warlock Part 2@Dreadscar-Ritssyn Flamescowl
 step
@@ -14155,7 +14155,7 @@ step
 step
     .isOnQuest 41105
     #title |cFFFCDC00Siga a Seta|r
-    .goto 18,13.5,56.65,100 >>Siga a Seta
+    .goto 18,13.5,56.65,100 >>Siga a Flecha
     *|cRXP_WARN_if you are stuck;relog|r
 step
     .isOnQuest 41105
@@ -14518,7 +14518,7 @@ step
 step
     >>Saia da Instância (clique com o botão direito no seu retrato) ou pressione a macro.
     .complete 40043,3 --1/1 Return to Skyhold
-    .macro Leave Instance,236367 >>Saia da Instância.
+    .macro Leave Instance,236367 >> Saia da Instância.
 step
     .goto 695,58.35,84.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Odyn|r
@@ -14788,7 +14788,7 @@ RXPGuides.RegisterGuide([[
 << Warrior
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Arms
+    #include RestedXP Legion Remix\a) Artefato Arma: Armas
 ]])
 --Fury 2
 RXPGuides.RegisterGuide([[
@@ -14804,7 +14804,7 @@ RXPGuides.RegisterGuide([[
 << Warrior
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Fury
+    #include RestedXP Legion Remix\a) Arma Artefato: Fúria
 ]])
 --Protection 2
 RXPGuides.RegisterGuide([[
@@ -14820,7 +14820,7 @@ RXPGuides.RegisterGuide([[
 << Warrior
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Warrior Protection
+    #include RestedXP Legion Remix\a) Artefato Arma: Guerreiro Proteção
 ]])
 
 --Warrior Order Hall Campaign Part 1
@@ -14891,9 +14891,9 @@ step
     +Selecione um dos guias a seguir por enquanto:
     *|cRXP_WARN_Você poderá fazer as outras linhas de missão mais tarde|r
     *|cFFFF0000Você não pode progredir se não selecionar um|r.
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Arms >>RestedXP Legion Remix\a) Arma Artefato: Armas >> Armas (DPS) Linha de missões
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Fury >>RestedXP Legion Remix\a) Arma Artefato: Fúria >> Fúria (DPS) Linha de missões
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Warrior Protection >>RestedXP Legion Remix\a) Arma Artefato: Guerreiro Proteção >> Proteção (Tanque) Linha de missões
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Arms >> Armas (DPS) Linha de missões
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Fury >> Fúria (DPS) Linha de missões
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Warrior Protection >> Proteção (Tanque) Linha de missões
 step
     #include ac) Order Hall Warrior Part 2@OrderHallPart2Start1-Accept The Eye of Odyn
 ]])
