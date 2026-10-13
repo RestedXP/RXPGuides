@@ -4604,9 +4604,6 @@ step << Human Warrior
     .target Bilban Tosslespanner
     .zoneskip Ironforge,1
 
-step -- dont delete
-    #label NormalRouteEnd
-
 step
     .hs >> Hearth to Stormwind City
     .zoneskip Stormwind City
@@ -4835,6 +4832,9 @@ step << Rogue
     .itemcount 2027,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
     .xp <14,1
+
+step -- dont delete
+    #label NormalRouteEnd
 
 --Hunter going Darkshore, rest Westfall
 step << Hunter

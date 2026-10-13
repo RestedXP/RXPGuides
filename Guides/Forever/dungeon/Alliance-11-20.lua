@@ -569,7 +569,7 @@ step
     .target Gryan Stoutmantle
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .accept 12 >> Accept The People's Militia
-step
+step << skip
     .goto 1436/0,1041.97,-10511.13
     .target Captain Danuvin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Danuvin|r
@@ -597,7 +597,7 @@ step
     .accept 92742 >>Accept Testing the Wells
     .accept 92744 >>Accept Murloc Gills
 step
-	#completewith GnollPaws
+	#completewith MurlocEyeGills
     >>Open the |cRXP_PICK_Sacks of Oats|r on the ground. Loot them for the |cRXP_LOOT_Handful of Oats|r
     >>|cRXP_WARN_You can usually find them near Farm Fences or Buildings|r
     .complete 151,1 --Handful of Oats (8)
@@ -678,7 +678,7 @@ step
     >>|cRXP_WARN_You can loot |cRXP_PICK_Furlbrow's Wardrobe|r from outside if you angle your camera correctly|r
 	>>|cRXP_WARN_Be aware of |cRXP_ENEMY_Benny Blanco|r. He hits hard|r
     .complete 64,1 --Furlbrow's Pocket Watch
-step
+step << skip
     #completewith next
     >>Kill |cRXP_ENEMY_Riverpaw Gnolls|r and |cRXP_ENEMY_Riverpaw Scouts|r. Loot them for their |T134297:0|t|cRXP_LOOT_Gnoll Paws|r
     .complete 102,1 --Gnoll Paw (8)
@@ -689,6 +689,7 @@ step
     .use 254545 >>|cRXP_WARN_Use the|r |T236996:0|t[Well Water Sample Kit] |cRXP_WARN_at the Jansen Stead well|r
     .complete 92742,1 --|1/1 Jansen Stead Water Sample
 step
+    #label MurlocEyeGills
     .goto 1436/0,1192.12,-9641.73,60,0
     .goto 1436/0,1042.67,-9619.33,60,0
     .goto 1436/0,1192.12,-9641.73,60,0
@@ -700,7 +701,7 @@ step
     .complete 92744,1 -- Longshore Murloc Gills 7/7
     .mob Murloc Raider
     .mob Murloc Coastrunner
-step
+step << skip
     #label GnollPaws
     .goto 1436/0,1042.67,-9715.0,60,0
     .goto 1436/0,1517.97,-9743.000,60,0
@@ -900,6 +901,7 @@ step
     .goto 1436/0,1324.200,-10490.400
     >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r
     >>|cRXP_WARN_It is a dynamic respawn area meaning if you kill enough they will keep respawning|r
+    >>|cRXP_WARN_If you are still very far behind on |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r and have killed all required |cRXP_ENEMY_Defias|r, abandon the quest|r [Red Leather Bandanas]
     .complete 12,1 -- Defias Trapper slain (15)
     .mob +Defias Trapper
     .complete 12,2 -- Defias Smuggler slain (15)
@@ -919,11 +921,14 @@ step
     .goto 1436/0,1045.12,-10508.80
     .accept 65 >> Accept The Defias Brotherhood
 step
+    #optional
+    .isQuestComplete 102
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Danuvin|r
 	.target Captain Danuvin
     .goto 1436/0,1041.97,-10511.13
     .turnin 102 >> Turn in Patrolling Westfall
 step
+    .isQuestComplete 153
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Galiaan|r
 	.target Scout Galiaan
     .goto 1436/0,1126.67,-10636.670
