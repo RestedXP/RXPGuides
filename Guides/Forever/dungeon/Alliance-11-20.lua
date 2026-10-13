@@ -597,6 +597,10 @@ step
     .accept 92742 >>Accept Testing the Wells
     .accept 92744 >>Accept Murloc Gills
 step
+    #optional
+    .abandon 102 >> Abandon Patrolling Westfall
+    >>|cRXP_WARN_You won't complete this quest in this guide|r
+step
 	#completewith MurlocEyeGills
     >>Open the |cRXP_PICK_Sacks of Oats|r on the ground. Loot them for the |cRXP_LOOT_Handful of Oats|r
     >>|cRXP_WARN_You can usually find them near Farm Fences or Buildings|r
