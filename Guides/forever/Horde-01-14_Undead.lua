@@ -157,6 +157,9 @@ step << Warlock
 step << Warlock
     #completewith next
     .cast 688 >>|cRXP_WARN_Cast|r |T136218:0|t[Summon Imp]
+step << Priest
+    #completewith next
+    +|cRXP_WARN_Save up your|r |T132889:0|t[Linen Cloth]|cRXP_WARN_. This will allow you to create a wand later|r
 step
     #label Zombies
     #requires Piercing << Warlock/Mage
@@ -194,7 +197,6 @@ step << Mage/Warlock/Priest
     .collect 159,10,383,1 --Collect Refreshing Spring Water (10)
     .vendor >> Vendor Trash
     .target Joshua Kien
-    .isOnQuest 364
     .money <0.0050
     .itemcount 159,<10
  step << Mage/Warlock/Priest
@@ -206,9 +208,6 @@ step << Mage/Warlock/Priest
     .collect 159,5,383,1 --Collect Refreshing Spring Water (5)
     .vendor >> Vendor Trash
     .target Joshua Kien
-    .isOnQuest 364
-    .money >0.0050
-    .itemcount 159,<5
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sarvis|r and |cRXP_FRIENDLY_Elreth|r << !Warlock !Mage !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r, and |cRXP_FRIENDLY_Maximillion|r << Warlock
@@ -257,6 +256,11 @@ step << Mage/Warlock/Priest
     .collect 159,10,383,1 --Collect Refreshing Spring Water (10)
     .target Joshua Kien
     .isOnQuest 364
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Rattlecage Skeletons|r
+    .complete 3901,1 --Kill Rattlecage Skeleton (12)
+    .mob Rattlecage Skeleton
 step
     #loop
     .goto 1420/0,1482.50,2126.70,0
@@ -379,7 +383,7 @@ step << Priest
     .train 2052 >> Train |T135929:0|t[Lesser Heal Rank 2]
     .train 589 >> Train |T136207:0|t[Shadow Word: Pain]
     .target Dark Cleric Duesten
-    .money <0.02
+    .money <0.021
 step << Priest
     .goto 1420/0,1627.55,1848.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duesten|r
@@ -984,15 +988,10 @@ step << Priest/Warlock
 step
     .goto 1420/0,244.81,2269.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Renee|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Mage/Priest/Paladin
-    >>|cRXP_BUY_Buy|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r << Warrior/Rogue
-    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_and|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r << Warlock
-    .collect 1179,15,367,1 << Mage/Priest/Paladin --Ice Cold Milk (15)
-    .collect 4605,10,367,1 << Rogue/Warrior --Red-speckled Mushroom (10)
-    .collect 1179,10,367,1 << Warlock --Ice Cold Milk (10)
-    .collect 4605,5,367,1 << Warlock --Red-speckled Mushroom (5)
-    .money <0.025 << Warrior/Rogue
-    .money <0.0375 << Mage/Priest/Warlock/Paladin
+    .vendor >>|cRXP_BUY_Buy as much|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her as you can|r << Mage/Priest/Paladin
+    .vendor >>|cRXP_BUY_Buy as much|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her as you can|r << Warrior/Rogue
+    .vendor >>|cRXP_BUY_Buy as much|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_and|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her as you can|r << Warlock
+    .money <0.0125
     .target Innkeeper Renee
 step
     .goto 1420/0,84.900,2023.500
@@ -1296,6 +1295,13 @@ step << Warlock
     .train 980 >> Train your class spells
     .target Rupert Boch
     .xp <8,1
+step << Mage/Priest/Warlock
+    .goto 1420/0,244.81,2269.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Renee|r
+    .vendor >>|cRXP_BUY_Buy as much|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her as you can|r << Mage/Priest
+    .vendor >>|cRXP_BUY_Buy as much|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_and|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her as you can|r << Warlock
+    .money <0.0125
+    .target Innkeeper Renee
 step
     .goto 1420/0,243.200,2288.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William|r
@@ -2331,6 +2337,20 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r
     .turnin 1820 >>Turn in Speak with Coleman
     .target Coleman Farthing
+step
+    #label Brill33
+    .goto 1420/0,244.81,2269.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Renee|r
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Mage/Priest/Paladin
+    >>|cRXP_BUY_Buy|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r << Warrior/Rogue
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_and|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r << Warlock
+    .collect 1179,20,96898,1 << Mage/Priest/Paladin --Ice Cold Milk (20)
+    .collect 4605,20,96898,1 << Rogue/Warrior --Red-speckled Mushroom (20)
+    .collect 1179,10,96898,1 << Warlock --Ice Cold Milk (10)
+    .collect 4605,10,96898,1 << Warlock --Red-speckled Mushroom (10)
+    .money <0.025 << Warrior/Rogue
+    .money <0.0375 << Mage/Priest/Warlock/Paladin
+    .target Innkeeper Renee
 step
     .goto 1420/0,54.600,1996.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadric Harlson|r
