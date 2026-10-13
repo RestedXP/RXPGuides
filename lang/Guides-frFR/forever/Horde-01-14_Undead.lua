@@ -997,7 +997,7 @@ step
 step
     .goto 1420/0,84.900,2023.500
     >>Parlez au |cRXP_FRIENDLY_Nécrogarde Kristof|r
-    >>|cRXP_WARN_Select "I need a report for Executor Zygand"|r
+    >>|cRXP_WARN_Sélectionnez "J'ai besoin d'un rapport pour Exécuteur Zygand"|r
     .complete 99141,2 --|1/1 Kristof's Report
     .skipgossipid 142730
     .target Deathguard Kristof
@@ -1060,7 +1060,7 @@ step
     .goto 1420/0,496.96,2256.54,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Gordo|r.
     >>|cRXP_WARN_C'est une abomination qui patrouille le long de la route pour Brill|r
-    >>|cRXP_WARN_Select "I need a report for Executor Zygand|r
+    >>|cRXP_WARN_Sélectionnez "J'ai besoin d'un rapport pour Exécuteur Zygand"|r
     .complete 99141,3 --|1/1 Gordo's Report
     .target Gordo
     --.gossipoption 142737
@@ -1185,7 +1185,7 @@ step
 step
     .goto 1420/0,403.300,2287.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez au |cRXP_FRIENDLY_Nécrogarde Dillinger|r.
-    >>|cRXP_WARN_Select "I need a report for Executor Zygand|r
+    >>|cRXP_WARN_Sélectionnez "I need a report for Exécuteur Zygand|r
     .turnin 404 >>Rendez la quête Une tâche putride
     .accept 426 >>Acceptez la quête La chute des moulins
     .complete 99141,1 --|1/1 Dillinger's Report

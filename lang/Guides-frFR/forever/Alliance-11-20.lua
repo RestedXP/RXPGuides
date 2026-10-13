@@ -2793,10 +2793,10 @@ step << NightElf
     .goto 1432/0,-3251.5499,-5285.8790,0
     .goto 1432/0,-3342.5748,-5484.5540,0
     .goto 1432/0,-3386.7082,-5462.4790,0
-    >>Click the |cRXP_PICK_Discarded Fishing Toolbox|r on the lake floor
-    >>|cRXP_WARN_NOTE: This can spawn in one of many different locations. Swim around until you see the exclamation point on your minimap|r
-    >>|cRXP_WARN_Be careful of high level|r |cRXP_ENEMY_Young Threshadon|r
-    .accept 86614 >>Accept Silver of the Waves
+    >>Cliquez sur la |cRXP_PICK_Boîte à outils de pêche abandonnée|r sur le fond du lac
+    >>|cRXP_WARN_NOTE : Ceci peut apparaître dans l'un de nombreux emplacements différents. Nagez autour jusqu'à ce que vous voyiez le point d'exclamation sur votre minicarte|r
+    >>|cRXP_WARN_Attention aux ennemis de haut niveau|r |cRXP_ENEMY_Jeune battrodon|r
+    .accept 86614 >>Acceptez la quête Argent of the Waves
 step << NightElf
     .goto Loch Modan,64.89,66.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Magmar Tombebranche|r
@@ -2814,8 +2814,8 @@ step << NightElf
     .target Daryl the Youngling
 step << NightElf Rogue/NightElf Hunter/NightElf Warrior/NightElf Druid
     .goto Loch Modan,82.6,64.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kat|r
-    .vendor >> |cRXP_BUY_Buy|r |T132539:0|t[Agile Boots] |cRXP_BUY_from her if they're up|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kat|r
+    .vendor >> |cRXP_BUY_Achetez|r |T132539:0|t[Bottes agiles] |cRXP_BUY_auprès d'elle si elles sont disponibles|r
     .target Kat Sampson
 step << NightElf
     .goto Loch Modan,80.09,64.16,60,0
@@ -2845,7 +2845,7 @@ step << NightElf
 step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marek Cœur-de-fer|r
     .accept 385 >> Acceptez la quête Chasse aux crocilisques
-    .accept 86758 >>Accept Twisting the Knife
+    .accept 86758 >>Acceptez la quête Twisting the Couteau
     .goto Loch Modan,81.76,61.66
     .target Marek Ironheart
 step << NightElf
@@ -2857,7 +2857,7 @@ step << NightElf
 step
     --@TODO add a line for this
     .goto Loch Modan,62,44
-    >>Kill |cRXP_ENEMY_Daggerfang|r, he |cRXP_WARN_might be patroling along the shore|r. Loot him for |T3736888:0|t[|cRXP_LOOT_Marek's Croc-Hunting Knife|r]
+    >>Tuez |cRXP_ENEMY_Daggerfang|r, il |cRXP_WARN_pourrait patrouiller le long de la rive|r. Ramassez |T3736888:0|t[|cRXP_LOOT_Marek's Croco-Couteau de chasse|r]
     .complete 86758,1 --Marek's Croc Hunting Knife (1)
     .mob Daggerfang
 step << NightElf
@@ -2875,12 +2875,12 @@ step << NightElf
 step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marek Cœur-de-fer|r
     .turnin 385 >>Rendez la quête Chasse aux crocilisques
-    .turnin 86758 >>Turn in Twisting the Knife
+    .turnin 86758 >>Rendre la quête Twisting the Couteau
     .goto Loch Modan,81.76,61.66
     .target Marek Ironheart
 step << NightElf
-    >>Jump out of the lodge and die to the mobs below
-    .deathskip >> Die and respawn at the Thelsamar graveyard
+    >>Sautez hors du pavillon et laissez-vous tuer par les mobs en bas
+    .deathskip >> Mourez et réapparaissez au cimetière de Thelsamar
 step << NightElf
     .goto Loch Modan,37.17,47.94,8,0
     .goto Loch Modan,37.24,47.38
@@ -2891,9 +2891,9 @@ step << NightElf
 step << NightElf
     .goto 1432/0,-3104.900,-5210.100,5,0
     .goto 1432/0,-3086.600,-5216.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khara Deepwater::1684|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Khara Deepwater::1684|r
     .target Khara Deepwater::1684
-    .turnin 86614 >>Turn in Silver of the Waves
+    .turnin 86614 >>Rendre la quête Argent of the Waves
 step << NightElf
     #label flyIF
     .goto 1432/0,-2929.87,-5424.84

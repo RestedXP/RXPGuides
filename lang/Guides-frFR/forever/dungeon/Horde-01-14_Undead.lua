@@ -52,5 +52,5 @@ RXPGuides.RegisterGuide([[
 
 
 step
-#include RestedXP Guide Forever (A)\12-14 Forêt des Pins argentés
+#include RestedXP Forever Guide (A)\12-14 Silverpine Forest
 ]])

@@ -1417,7 +1417,7 @@ step << Hunter
 step << Hunter
     #sticky
     #label xp10
-    .xp 9+800 >> Grind until you are 800xp into level 9
+    .xp 9+800 >> Broyez jusqu'à ce que vous ayez 800 XP au niveau 9
     >>|cRXP_WARN_Une fois que vous atteignez ce seuil d'expérience, ignorez la quête des harpies/l'escorte et allez directement à Darnassus. Vous aurez une autre occasion de terminer ces quêtes plus tard|r
 step << Hunter
     #completewith xp10

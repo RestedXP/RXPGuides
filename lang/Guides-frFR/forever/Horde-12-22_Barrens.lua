@@ -4292,8 +4292,8 @@ step
 step
     #label SleepingBag1
     .goto The Barrens,46.361,73.904
-    >>Click the |cRXP_PICK_Burned-Out Remains|r on the ground
-    .accept 79007 >> Accept ...and that note you found
+    >>Cliquez sur les |cRXP_PICK_Burned-Sortie Remains|r sur le sol
+    .accept 79007 >> Acceptez… et cette note que vous avez trouvée
 step
     #label LizardBlood
     #loop
@@ -4473,7 +4473,7 @@ step << Rogue
 step << Rogue
     #optional
     .goto 1456/1,104.500,-1308.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Boarton Shadetotem|
     >>|cRXP_WARN_Il est|r |T132320:0|t[Camouflé] 
     .train 6761 >>Apprenez vos sorts de classe
     .target Boarton Shadetotem
@@ -4481,7 +4481,7 @@ step << Rogue
     .xp >20,1
 step << Rogue
     .goto 1456/1,104.500,-1308.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Boarton Shadetotem|
     >>|cRXP_WARN_Il est|r |T132320:0|t[Camouflé] 
     .train 1943 >>Apprenez vos sorts de classe
     .target Boarton Shadetotem
@@ -5806,7 +5806,7 @@ step << skip
 step
     .goto 1440/1,-632.700,2311.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Va'xug Firefure|r 
-    .accept 98251 >>Accept Never Coming Back
+    .accept 98251 >>Acceptez la quête Jamais le retour
     .target Va'xug Firefure
 step
     #loop
@@ -5825,8 +5825,8 @@ step
 step
     .goto 1440/1,-632.900,2312.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Va'xug Firefure|r
-    .turnin 98251 >>Turn in Never Coming Back
-    .accept 98252 >>Accept A Void Path
+    .turnin 98251 >>Rendez la quête Jamais le retour
+    .accept 98252 >>Acceptez la quête Un chemin du Vide
     .target Va'xug Firefure
 step
     .goto 1440/1,-545.200,2446.600
@@ -5836,7 +5836,7 @@ step
 step
     .goto 1440/1,-545.500,2445.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à l' |cRXP_FRIENDLY_Oeil de Kilrogg|r
-    .turnin 98252 >>Turn in A Void Path
+    .turnin 98252 >>Rendez la quête Un chemin du Vide
     .target Eye of Kilrogg
     .isQuestComplete 98252
 step
@@ -6532,7 +6532,7 @@ step << skip
     .target Nogg
 step
     .goto 1454/1,-4739.57,2036.84
-    .gossipoption 95758 >>Talk to |cRXP_FRIENDLY_Sovik|r
+    .gossipoption 95758 >>Parlez à |cRXP_FRIENDLY_Sovik|r
     .isNotOnQuest 2842
     .target Sovik
 step
@@ -6543,7 +6543,7 @@ step
     .target Sovik
 step << skip
     #optional
-    .abandon 2841 >> Abandon Rig Wars. Make sure you have Chief Engineer Scooty in your quest log
+    .abandon 2841 >> Abandonnez la quête Guerre des plates-formes. Assurez-vous d'avoir L'ingénieur en chef Scooty dans votre journal de quêtes.
     .dungeon !GNOMER
 step << Rogue
     .goto 1454/1,-4355.53,1520.68
