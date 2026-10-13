@@ -851,8 +851,8 @@ RXPGuides.RegisterGuide([[
 << Horde Priest SoD
 #group RestedXP Guía de Runas y Libros
 #subgroup Pechera
-#name Twisted Faith - 10 (Silverpine Forest)
-#title Twisted Faith
+#name Fe distorsionada - 10 (Bosque de Argénteos)
+#title Fe distorsionada
 
 step
     #completewith next
@@ -879,8 +879,8 @@ RXPGuides.RegisterGuide([[
 << Horde Priest SoD
 #group RestedXP Guía de Runas y Libros
 #subgroup Pechera
-#name Twisted Faith - 10 (The Barrens)
-#title Twisted Faith
+#name Fe distorsionada - 10 (Los Baldíos)
+#title Fe distorsionada
 
 step
     #completewith next

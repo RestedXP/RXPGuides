@@ -988,7 +988,7 @@ step << Warrior
 step << Hunter
     .goto 1453/0,552.78,-8415.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Einris Lanza Reluciente|r dentro
-    >>|cRXP_WARN_If you just trained earlier, skip this step|r
+    >>|cRXP_WARN_Si acababas de entrenar hace poco, omite este paso|r
     .trainer >> Aprende tus hechizos de clase
     .target Einris Brightspear
 step
@@ -1045,7 +1045,7 @@ step
 step
     .goto 1453/0,765.700,-8804.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Catherine Leland|r
-    >>|cRXP_BUY_Buy one|r |T134335:0|t[Shiny Bauble] |cRXP_BUY_and three|r |T134324:0|t[Nightcrawlers] |cRXP_BUY_from her. This is for a 900xp quest|r
+    >>|cRXP_BUY_Compra uno|r |T134335:0|t[Adorno lustroso] |cRXP_BUY_y tres|r |T134324:0|t[Reptadores nocturnos] |cRXP_BUY_de ella. Esto es para una misión de 900 xp|r
     .collect 6529,1,95065,1 --|1/1 Shiny Bauble
     .collect 6530,3,95065,1 --|3/3 Nightcrawlers
     .target Catherine Leland
@@ -1054,18 +1054,18 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gilbert Gray::267118|r
     .target Gilbert Gray::267118
     .accept 95065 >>Acepta la misión Hora de la pesca
-    .turnin 95065 >>Turn in Fishin' Time
+    .turnin 95065 >>Entrega la misión Fishin' Tiempo
 step
     .goto 1453/0,1193.100,-8328.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r 
     .target Manifest Clerk Philmor::268511
-    .accept 97220 >>Accept Philmor's Favor
+    .accept 97220 >>Acepta la misión Philmor's Favor
 step
     .goto 1453/0,566.600,-8845.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Elaine Trias::483|r
     .target Elaine Trias::483
-    .turnin 97220 >>Turn in Philmor's Favor
-    .accept 97222 >>Accept Gatehouse Goods
+    .turnin 97220 >>Entrega la misión Philmor's Favor
+    .accept 97222 >>Acepta la misión Gatehouse Objetos
 step
     .goto 1453/0,568.300,-8862.200
     .use 277198 >> |cRXP_WARN_Usa el|r |T132762:0|t[Cargamento de entrada] |cRXP_WARN_frente a la |cRXP_PICK_Entrada|r arriba|r
@@ -1074,7 +1074,7 @@ step
     .goto 1453/0,566.600,-8845.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Elaine Trias::483|r
     .target Elaine Trias::483
-    .turnin 97222 >>Turn in Gatehouse Goods
+    .turnin 97222 >>Entrega la misión Gatehouse Objetos
 step
     #optional
     #label endOfTheGuide
@@ -1118,13 +1118,13 @@ step
 step
     #label QuarryStart
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
-    .accept 96392 >> Accept Farsen's Watch
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
+    .accept 96392 >> Acepta la misión Farsen's Observar
     .target Earthseer Farsen
 step
     .isOnQuest 96392
     .goto 1426/0,-1394.24,-5797.83
-    .gossipoption 139831 >> Talk to |cRXP_FRIENDLY_Earthseer Farsen|r to view his farsight
+    .gossipoption 139831 >> Habla con |cRXP_FRIENDLY_Earthseer Farsen|r para ver su vista lejana
     >>|cRXP_WARN_Puedes cancelar la Vista lejana cuando se completa el objetivo|r
     .target Earthseer Farsen
 step
@@ -1132,24 +1132,24 @@ step
     .aura -1293681 >> |cRXP_WARN_Presiona ESC para cancelar la Vista lejana|r
 step << skip
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
     >>|cRXP_WARN_Puedes cancelar la Vista lejana cuando se completa el objetivo|r
     .complete 96392,1 -- Use Farsen's Farsight
     .skipgossip
     .target Earthseer Farsen
 step
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
     >>|cRXP_WARN_Presiona ESC para cancelar la Vista lejana|r
-    .turnin 96392 >> Turn in Farsen's Watch
-    .accept 96390 >> Accept Nip 'Em in the Bud
+    .turnin 96392 >> Entrega la misión Farsen's Observar
+    .accept 96390 >> Acepta la misión Nip 'Em in the Compa
     .target Earthseer Farsen
 step
     .goto 1426/0,-2009.87,-5860.22,40,0
     .goto 1426/0,-2034.49,-5922.60
     >>Mata |cRXP_ENEMY_Espías Hierro Negro|r. Despójalos para obtener el |T237385:0|t[|cRXP_LOOT_Mapa de Hierro Negro|r]
     .use 274268 >>|cRXP_WARN_Usa el|r |T237385:0|t[|cRXP_LOOT_Mapa de Hierro Negro|r] |cRXP_WARN_para iniciar la misión|r
-    >>|cRXP_WARN_You can skip killing |cRXP_ENEMY_Dark Iron Spies|r for the other quest because they are low level once you find the|r |T237385:0|t[|cRXP_LOOT_Dark Iron Map|r]
+    >>|cRXP_WARN_Puedes saltarte matar a los |cRXP_ENEMY_Dark Hierro Spies|r para la otra misión porque son de bajo nivel una vez que encuentres el|r |T237385:0|t[|cRXP_LOOT_Dark Hierro Mapa|r]
     .complete 96390,1 -- Dark Iron Spy slain 10/10
     .disablecheckbox
     .collect 274268,1,96391,1 -- Dark Iron Map (1)
@@ -1158,16 +1158,16 @@ step
 step
     #label OII
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
-    .turnin 96391 >> Turn in Underground Map
-    .accept 96393 >> Accept Old Ironforge Incursion
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
+    .turnin 96391 >> Entrega la misión Subterráneo Mapa
+    .accept 96393 >> Acepta la misión Old Ironforge Incursion
     .target Earthseer Farsen
 step
     #optional
     .isQuestComplete 96390
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
-    .turnin 96390 >> Turn in Nip 'Em in the Bud
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
+    .turnin 96390 >> Entrega la misión Nip 'Em in the Compa
     .target Earthseer Farsen
 
 step
@@ -1185,10 +1185,10 @@ step
     .goto 1455/0,-1081.900,-4850.100,10,0
     .goto 1455/0,-1082.800,-4886.000,10,0
     .goto 1455/0,-1087.700,-4821.900,10,0
-    .goto 1455/0,-1010.300,-4850.900,10 >> Travel down into Old Ironforge via |cRXP_FRIENDLY_King Magni's|r room
+    .goto 1455/0,-1010.300,-4850.900,10 >> Viaja hacia abajo en Old Ironforge a través de la sala de |cRXP_FRIENDLY_King Magni|r
 step
     .goto 1455/0,-971.800,-4820.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Afadra Dunwall|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Afadra Dunwall|r
     .accept 96394 >> Acepta la misión Los muertos sin descanso
     .target Afadra Dunwall
 step
@@ -1199,43 +1199,43 @@ step
 step
     .goto 1455/0,-968.200,-4803.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thom Filch|r
-    .accept 96403 >> Accept Important Heirlooms
+    .accept 96403 >> Acepta la misión Important Heirlooms
     .target Thom Filch
 step
     #label EnterHoT
     .goto 1455/0,-933.200,-4821.900
-    .subzone 16919 >> Enter the Hall of Thanes
+    .subzone 16919 >> Entra en el Hall of Thanes
 
 step
     #completewith FaldrimAnvilmar
-    >>Loot the |cRXP_PICK_Dwarven Heirlooms|r on the ground through the Hall of Thanes
-    >>|cRXP_WARN_You can collect plenty of these at the end of the dungeon as well|r
+    >>Despoja los |cRXP_PICK_Dwarven Heirlooms|r en el suelo a lo largo del Hall of Thanes
+    >>|cRXP_WARN_Puedes recoger muchos de estos al final de la mazmorra también|r
     .complete 96403,1 -- Dwarven Heirloom (8)
 step
     #completewith FaldrimAnvilmar
-    >>Kill |cRXP_ENEMY_Enraged Apparitions|r and |cRXP_ENEMY_Tormented Souls|r
+    >>Mata a las |cRXP_ENEMY_Enraged Apariciones|r y a las |cRXP_ENEMY_Almas atormentadas|r
     .complete 96394,1 -- Enraged Apparition slain (15)
     .mob +Enraged Apparition slain (15)
     .complete 96394,2 -- Tormented Soul slain (10)
     .mob +Tormented Soul slain (10)
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ghostly Attendant|r
-    .accept 96395 >> Accept An Ancient Grudge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ghostly Asistente|r
+    .accept 96395 >> Acepta la misión An Ancient Resentimiento
     .target Ghostly Attendant
 step
     #label FaldrimAnvilmar
-    >>Kill |cRXP_ENEMY_Faldrim Anvilmar|r
+    >>Mata a |cRXP_ENEMY_Faldrim Anvilmar|r
     .complete 96395,1 -- Faldrim Anvilmar slain (1)
     .mob Faldrim Anvilmar
 step
     #completewith next
-    +|cRXP_WARN_Return to the|r |cRXP_FRIENDLY_Ghostly Attendant|r
+    +|cRXP_WARN_Regresa junto al|r |cRXP_FRIENDLY_Ghostly Asistente|r
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ghostly Attendant|r
-    .turnin 96395 >> Turn in An Ancient Grudge
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ghostly Asistente|r
+    .turnin 96395 >> Entrega la misión An Ancient Resentimiento
     .target Ghostly Attendant
 step
-    >>Kill |cRXP_ENEMY_Enraged Apparitions|r and |cRXP_ENEMY_Tormented Souls|r
+    >>Mata a las |cRXP_ENEMY_Enraged Apariciones|r y a las |cRXP_ENEMY_Almas atormentadas|r
     >>|cRXP_WARN_Completa esto ahora porque quizás no tengas la oportunidad de terminarla después|r
     .complete 96394,1 -- Enraged Apparition slain (15)
     .mob +Enraged Apparition slain (15)
@@ -1253,7 +1253,7 @@ step
 step
     #label ToU
     >>Haz clic en el |cRXP_PICK_Tratado del entendimiento|r
-    .accept 98423 >> Accept The Treaty of Understanding
+    .accept 98423 >> Acepta la misión The Treaty of Understanding
 step
     >>Despoja las |cRXP_PICK_Reliquias de los enanos|r del suelo a lo largo de El Salón de Señores Feudales
     .complete 96403,1 -- Dwarven Heirloom (8)
@@ -1264,7 +1264,7 @@ step
 step
     .goto 1455/0,-968.200,-4803.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thom Filch|r
-    .turnin 96403 >> Turn in Important Heirlooms
+    .turnin 96403 >> Entrega la misión Important Heirlooms
     .target Thom Filch
 step
     #completewith next
@@ -1274,11 +1274,11 @@ step
     .goto 1455/0,-993.500,-4817.600,10,0
     .goto 1455/0,-983.700,-4847.800,10,0
     .goto 1455/0,-1022.000,-4842.100,10,0
-    .goto 1455/0,-994.000,-4843.100,10 >> Return to |cRXP_FRIENDLY_Afadra Dunwall|r up the ramp
+    .goto 1455/0,-994.000,-4843.100,10 >> Regresa a |cRXP_FRIENDLY_Afadra Dunwall|r subiendo la rampa
 step
     .goto 1455/0,-971.800,-4820.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Afadra Dunwall|r
-    .turnin 96394 >> Turn in The Restless Dead
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Afadra Dunwall|r
+    .turnin 96394 >> Entrega la misión Los muertos sin descanso
     .target Afadra Dunwall
 step
     #completewith next
@@ -1289,13 +1289,13 @@ step
 step
     .goto 1455/0,-1022.600,-4865.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Rey Magni Barbabronce|r
-    .turnin 96393 >> Turn in Old Ironforge Incursion
-    .turnin 98423 >> Turn in The Treaty of Understanding
+    .turnin 96393 >> Entrega la misión Old Ironforge Incursion
+    .turnin 98423 >> Entrega la misión The Treaty of Understanding
     .target King Magni Bronzebeard
 
 step << Shaman
     .goto 1455/0,-1086.500,-4642.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldrun Stormbreaker::258098|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Eldrun Rompetormentas::258098|r
     .target Eldrun Stormbreaker::258098
     .trainer >> Aprende tus hechizos de clase
 step << Priest/Paladin/Mage
@@ -1322,7 +1322,7 @@ step << Warlock
     .goto 1455/0,-1134.20,-4610.39,15,0
     .goto 1455/0,-1130.26,-4601.270
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Jubahl Buscador de cadáveres|r
-    .vendor >> |cRXP_BUY_Buy|r |T133738:0|t[Grimoire of Sacrifice (Rank 1)]
+    .vendor >> |cRXP_BUY_Compra|r |T133738:0|t[Grimorio de sacrificio (Rank 1)]
     .target Jubahl Corpseseeker
     .train 20381,1
 step << Warrior/Hunter
@@ -1350,12 +1350,12 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith EnterRoL
-    +|cRXP_WARN_You will now run Ruins of Lordaeron|r
-    >>|cRXP_WARN_All the quests are picked up inside the dungeon|r
+    +|cRXP_WARN_Ahora entrarás a Ruins of Lordaeron|r
+    >>|cRXP_WARN_Todas las misiones se aceptan dentro de la mazmorra|r
 step
     .goto 1455/0,-1152.400,-4821.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gryth Thurden|r
-    >>|cRXP_WARN_If you do not have the Wetlands flight path, skip this step|r
+    >>|cRXP_WARN_Si no tienes la ruta de vuelo hacia Los Humedales, omite este paso|r
     .fly Wetlands >> Vuela a Los Humedales
     .target Gryth Thurden
     .zoneskip Ironforge,1
@@ -1365,7 +1365,7 @@ step
     .goto 1426/0,-721.900,-5078.900,30,0
     .goto 1426/0,-426.500,-5181.000,70,0
     .goto 1426/0,-230.400,-5154.600,80,0
-    .goto 1426/0,-65.000,-5115.000,100 >> |cRXP_WARN_Exit Ironforge. Travel to the Dun Morogh -> Wetlands deathskip location|r
+    .goto 1426/0,-65.000,-5115.000,100 >> |cRXP_WARN_Salir de Ironforge. Viaja a Dun Morogh -> ubicación de deathskip de Los Humedales|r
     .zoneskip Wetlands
     .zoneskip Hillsbrad Foothills
     .subzoneskip 150 -- menethil
@@ -1380,7 +1380,7 @@ step
     .goto 1426,32.645,27.740,15,0
     .goto 1415,44.910,52.022,15,0
     .goto 1415,44.910,52.030
-    .subzone 207 >>|cRXP_WARN_Climb the mountain, then walk down past the jagged pattern until your zone changes to the Wetlands|r
+    .subzone 207 >>|cRXP_WARN_Sube la montaña, luego baja pasando el patrón dentado hasta que tu zona cambie a Los Humedales|r
     .zoneskip Hillsbrad Foothills
     .subzoneskip 150 -- menethil
     .subzoneskip 16611 -- ruins of lordaeron
@@ -1437,7 +1437,7 @@ step
 
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capitán Truman|r
-    .accept 95250 >> Accept Abominable Creatures
+    .accept 95250 >> Acepta la misión Abominable Creatures
     .target Captain Truman
 step
     #sticky
@@ -1449,7 +1449,7 @@ step
     >>Despoja todos los enemigos para obtener la |T133328:0|t[|cRXP_LOOT_Insignia ensangrentada|r]
     .use 268535 >> |cRXP_WARN_Usa la|r |T133328:0|t[|cRXP_LOOT_Insignia ensangrentada|r] |cRXP_WARN_para iniciar la misión|r
     .collect 268535,1,95195,1 -- Bloodied Insignia (1)  
-    .accept 95195 >> Accept Bloodied Insignia
+    .accept 95195 >> Acepta la misión Ensangrentado Insignia
 step
     #sticky
     #label BloodiedInsignia
@@ -1462,13 +1462,13 @@ step
     >>|cRXP_WARN_Mantente atento a esto. Puede aparecer en muchas ubicaciones diferentes y puede ser difícil de ver|r
     .use 268579 >> |cRXP_WARN_Usa el|r |T4504543:0|t[|cRXP_LOOT_Blasón de Lordaeron|r] |cRXP_WARN_para iniciar la misión|r
     .collect 268579,1,95189,1 -- Crest of Lordaeron (1)
-    .accept 95189 >> Accept Crest of Lordaeron
+    .accept 95189 >> Acepta la misión Crest of Lordaeron
 step
     #sticky
     #label CrumpledPaper
-    >>Click the |cRXP_PICK_Crumpled Paper|r on the ground near |cRXP_ENEMY_Rath'mael|r
-    >>|cRXP_WARN_You can do this after you've killed him|r
-    .accept 92415 >> Accept Remember That I Love You
+    >>Haz clic en el |cRXP_PICK_Crumpled Papel|r en el suelo cerca de |cRXP_ENEMY_Rath'mael|r
+    >>|cRXP_WARN_Puedes hacer esto después de haberlo matado|r
+    .accept 92415 >> Acepta la misión Recuerdo That I Love You
 step
     #requires BaronHead
 step
@@ -1479,27 +1479,27 @@ step
     #requires CrumpledPaper
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capitán Truman|r
-    >>|cRXP_FRIENDLY_Captain Truman|r |cRXP_WARN_is back at the start of the dungeon|r
-    .turnin 95250 >> Turn in Abominable Creatures
+    >>|cRXP_FRIENDLY_Capitán Truman|r |cRXP_WARN_está de vuelta al inicio de la mazmorra|r
+    .turnin 95250 >> Entrega la misión Abominable Creatures
     .target Captain Truman
 
 step
     .hs >> Usa tu Piedra de hogar para ir a Ventormenta
-    >>|cRXP_WARN_If your Hearthstone was not set at Stormwind, make your way there|r
+    >>|cRXP_WARN_Si tu Piedra de Hogar no fue establecida en Ventormenta, dirígete allá|r
     .zoneskip Stormwind City
 step
     .isOnQuest 92415
     .goto 1453/0,744.400,-8621.101
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Supervisora de huérfanos Ruiseñor|r
-    .turnin 92415 >> Turn in Remember That I Love You
-    .accept 95161 >> Accept Remember That I Love You
+    .turnin 92415 >> Entrega la misión Recuerdo That I Love You
+    .accept 95161 >> Acepta la misión Recuerdo That I Love You
     .target Orphan Matron Nightingale
 step
     #optional
     .isQuestTurnedIn 92415
     .goto 1453/0,744.400,-8621.101
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Supervisora de huérfanos Ruiseñor|r
-    .accept 95161 >> Accept Remember That I Love You
+    .accept 95161 >> Acepta la misión Recuerdo That I Love You
     .target Orphan Matron Nightingale
 step
     .goto 1453/0,634.700,-8390.800
@@ -1516,19 +1516,19 @@ step
     #completewith next
     .goto 1453/0,437.600,-8524.5000,20,0
     .goto 1453/0,408.100,-8478.500,15,0
-    .goto 1453/0,502.900,-8358.800,15 >> Travel to the Stormwind Library
+    .goto 1453/0,502.900,-8358.800,15 >> Viaja a la Biblioteca de Ventormenta
 step
     .isOnQuest 95189
     .goto 1453/0,531.000,-8322.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lady Dena Kennedy|r
-    >>|cRXP_WARN_She walks around slightly in the Royal Gallery|r
-    .turnin 95189 >> Turn in Crest of Lordaeron
+    >>|cRXP_WARN_Ella camina un poco en la Galería Real|r
+    .turnin 95189 >> Entrega la misión Crest of Lordaeron
     .target Lady Dena Kennedy
 step
     .isOnQuest 95195
     .goto 1453/0,521.000,-8954.101
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_General Marcus Jonathan|r
-    .turnin 95195 >> Turn in Bloodied Insignia
+    .turnin 95195 >> Entrega la misión Ensangrentado Insignia
     .target General Marcus Jonathan
 step << Rogue
     .goto 1453/0,377.47,-8752.39
@@ -1694,7 +1694,7 @@ step
     #ah
     .goto 1453/0,660.28,-8814.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Subastadora Jaxon|r
-    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall shortly:|r
+    >>|cRXP_BUY_Compra los siguientes objetos para entregas más rápidas en Páramos de Poniente en breve:|r
     >>|cRXP_WARN_Si no quieres o no puedes hacer esto, omite este paso|r
     >>|T132794:0|t[Frasco de aceite]
     .collect 814,5,103,1 -- Flask of Oil (5)
@@ -1734,7 +1734,7 @@ step
     .target The Defias Traitor
 step
     .goto 1436/0,1527.07,-11073.23
-    >>Escort the |cRXP_FRIENDLY_The Defias Traitor|r to the Deadmines
+    >>Escolta a |cRXP_FRIENDLY_El Traidor de los Defias|r a las Minas de la Muerte
     .complete 155,1 -- Escort The Defias Traitor to discover where VanCleef is hiding (1)
     .target The Defias Traitor
 step
@@ -1773,7 +1773,7 @@ step
 step
     #completewith next
     >>Mata a los |cRXP_ENEMY_Mineros esquelético|r, a los |cRXP_ENEMY_Dinamitadores no-muertos|r y a los |cRXP_ENEMY_Excavadores no-muertos|r. Despójalos para obtener sus |cRXP_LOOT_Tarjetas|r
-    >>|cRXP_WARN_NOTE: This quest does NOT give bonus XP similar to other dungeon quests, and takes significantly longer to complete. Consider skipping this quest if your group agrees|r
+    >>|cRXP_WARN_NOTA: Esta misión NO otorga XP adicional similar a otras misiones de mazmorra, y tarda significativamente más tiempo en completarse. Considera omitir esta misión si tu grupo está de acuerdo|r
     >>|cRXP_WARN_Esto se completa FUERA de la Mazmorra|r
     .complete 168,1 -- Miners' Union Card (4)
     .mob Skeletal Miner
@@ -1884,7 +1884,7 @@ step << Shaman
     .target Thor
 step << Shaman
     .goto 1455/0,-1086.500,-4642.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldrun Stormbreaker::258098|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Eldrun Rompetormentas::258098|r
     .target Eldrun Stormbreaker::258098
     .accept 94494 >>Acepta la misión La llamada del agua
     .trainer >> Aprende tus hechizos de clase
@@ -1897,23 +1897,23 @@ step << Shaman
 step << Shaman
 	.isOnQuest 94494
     .goto 1432/0,-3146.000,-4837.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norric Lochthane::258043|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Norric Lochthane::258043|r
     .target Norric Lochthane::258043
     .turnin 94494 >>Entrega la misión La llamada del agua
 	.accept 94495 >>Acepta la misión La llamada del agua
 step << Shaman
 	#label CallofWater
     .goto 1432/0,-3146.000,-4837.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norric Lochthane::258043|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Norric Lochthane::258043|r
     .target Norric Lochthane::258043
     .accept 94495 >>Acepta la misión La llamada del agua
 step << Shaman
 	#optional
 	.isOnQuest 468
     .goto 1432/0,-2695.500,-4678.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Rockgar::1342|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Mountaineer Rockgar::1342|r
     .target Mountaineer Rockgar::1342
-    .turnin 468 >>Turn in Report to Mountaineer Rockgar
+    .turnin 468 >>Entrega la misión Report a Montaraz Rockgar
 step << Shaman
     #completewith WaterTotem1
     #label DunAlgaz1
@@ -1922,23 +1922,23 @@ step << Shaman
     .goto 1437/0,-2480.200,-4421.800,15,0
     .goto 1437/0,-2464.200,-4280.900,15,0
     .goto 1437/0,-2419.800,-4092.100,15,0
-    .goto 1437/0,-2629.900,-4086.400,15 >> Travel through Dun Algaz to Wetlands
+    .goto 1437/0,-2629.900,-4086.400,15 >> Viaja a través de Dun Algaz hacia Los Humedales
 step << Shaman
     #completewith WaterTotem1
     #requires DunAlgaz1
     .goto 1437/0,-3085.500,-4196.100,10,0
     .goto 1437/0,-3103.100,-4212.600,12,0
-    .goto 1437/0,-3098.200,-4242.600,7 >> Travel up the ramp toward |cRXP_FRIENDLY_Hervdana Saegrund::258203|r inside the cave
+    .goto 1437/0,-3098.200,-4242.600,7 >> Sube la rampa hacia |cRXP_FRIENDLY_Hervdana Saegrund::258203|r dentro de la cueva
 step << Shaman
     #label WaterTotem1
     .goto 1437/0,-3109.300,-4257.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hervdana Saegrund::258203|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hervdana Saegrund::258203|r
     .target Hervdana Saegrund::258203
     .turnin 94495 >>Entrega la misión La llamada del agua
     .accept 94497 >>Acepta la misión La llamada del agua  
 step << Shaman
     .goto 1437/0,-3069.100,-4210.100
-    .use 265732 >>|cRXP_WARN_Use the|r |T132825:0|t[Unfilled Brown Waterskin] |cRXP_WARN_at the base of the waterfall|r
+    .use 265732 >>|cRXP_WARN_Usa la|r |T132825:0|t[Bota de agua marrón sin llenar] |cRXP_WARN_en la base de la cascada|r
     .complete 94497,1 --|1/1 Full Brown Waterskin
 step << Shaman
     #completewith next

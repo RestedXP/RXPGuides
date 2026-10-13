@@ -146,7 +146,7 @@ step
     >>|cRXP_WARN_Esto inicia una misión con tiempo límite de 10 minutos|r
     .turnin 755 >>Entrega la misión Los ritos de la Madre Tierra
     .accept 757 >>Acepta la misión Rito de la fuerza
-    .accept 95805 >>Accept Grace of An'she and Mu'sha
+    .accept 95805 >>Acepta la misión Gracia de An'she y Mu'sha
     .target Seer Graytongue
 step
     #loop
@@ -244,7 +244,7 @@ step
     .goto 1412/1,-1005.500,-3372.700
     >>Haz clic en el |cRXP_PICK_Santuario|r
     >>|cRXP_WARN_Asegúrate de que no se agote el tiempo|r
-    .turnin 95805 >>Turn in Grace of An'she and Mu'sha
+    .turnin 95805 >>Entrega la misión Gracia de An'she y Mu'sha
 step
     #loop
     .goto 1412/1,-828.57,-3199.92,0--c:Mulgore,55.99,85.46
@@ -478,7 +478,7 @@ step
 step
     #hardcore
     .goto 1412/1,-363.000,-2490.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaga Wildhoof|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kaga Wildhoof|r
     .turnin 96659 >>Entrega la misión El aventurero
     .accept 96605 >>Acepta la misión Bendita naturaleza
     .target Kaga Wildhoof
@@ -493,7 +493,7 @@ step
 step
     #hardcore
     .goto 1412/1,-363.000,-2490.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaga Wildhoof|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kaga Wildhoof|r
     .turnin 96605 >>Entrega la misión Bendita naturaleza
     .accept 96661 >>Acepta la misión Campamento básico: Cocina
     .target Kaga Wildhoof
@@ -635,7 +635,7 @@ step
 step
     #hardcore
     .goto 1412/1,-430.600,-2097.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab Wheathoof|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ahab Pezuña de Trigo|r 
     .accept 99411 >>Acepta la misión ¡Kyle ha desaparecido!
     .target Ahab Wheathoof
 step
@@ -646,7 +646,7 @@ step
 step
     .goto 1412/1,-496.200,-2347.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Krang Pezuña Pétrea|r 
-    .accept 99108 >>Accept Sparring Match
+    .accept 99108 >>Acepta la misión Combate de práctica
     .target Krang Stonehoof
 step
     .goto 1412/1,-521.600,-2345.400
@@ -657,7 +657,7 @@ step
 step
     .goto 1412/1,-496.100,-2348.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Krang Pezuña Pétrea|r
-    .turnin 99108 >>Turn in Sparring Match
+    .turnin 99108 >>Entrega la misión Entrenamiento Partida
     .target Krang Stonehoof
 step << Tauren
     .goto 1412/1,-445.31,-2341.62--c:Mulgore,48.53,60.40
@@ -668,7 +668,7 @@ step
     .goto 1412/1,-426.800,-2373.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Valiente Corresalvaje|r
     >>|cRXP_WARN_Patrulla por la zona|r
-    .accept 99079 >>Accept Longwalker Malah
+    .accept 99079 >>Acepta la misión Longwalker Malah
     .target Brave Wildrunner
 step
     #softcore
@@ -679,7 +679,7 @@ step
 step
     #softcore
     .goto 1412/1,-363.000,-2490.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaga Wildhoof|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kaga Wildhoof|r
     .turnin 96659 >>Entrega la misión El aventurero
     .accept 96605 >>Acepta la misión Bendita naturaleza
     .target Kaga Wildhoof
@@ -694,7 +694,7 @@ step
 step
     #softcore
     .goto 1412/1,-363.000,-2490.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaga Wildhoof|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kaga Wildhoof|r
     .turnin 96605 >>Entrega la misión Bendita naturaleza
     .accept 96661 >>Acepta la misión Campamento básico: Cocina
     .target Kaga Wildhoof
@@ -708,8 +708,8 @@ step
     .complete 766,4 --Swoop Gizzard (1)
 step << Tauren
     #completewith Ambercorns
-    >>Kill |cRXP_ENEMY_Prairie Wolves|r. Loot them for their |cRXP_LOOT_Paws|r
-    >>Kill |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r] and |cRXP_LOOT_Talons|r
+    >>Mata a los |cRXP_ENEMY_Prairie Wolves|r. Despoja para obtener sus |cRXP_LOOT_Paws|r
+    >>Mata a los |cRXP_ENEMY_Adult Plainstriders|r. Despójalos para obtener su |T134028:0|t[|cRXP_LOOT_Carne de zancudo tierna|r] y sus |cRXP_LOOT_Garras|r
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob +Prairie Wolf
     .complete 748,2 --Plainstrider Talon (4)
@@ -717,7 +717,7 @@ step << Tauren
     .mob +Adult Plainstrider
 step << !Tauren
     #completewith Ambercorns
-    >>Kill |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r]
+    >>Mata a los |cRXP_ENEMY_Adult Plainstriders|r. Despójalos para obtener su |T134028:0|t[|cRXP_LOOT_Carne de zancudo tierna|r]
     .collect 287505,1,99411,1 --Collect Tender Strider Meat (1)
     .mob Adult Plainstrider
 step
@@ -754,8 +754,8 @@ step << Tauren
 	.goto 1412/1,-448.91,-2650.89,50,0--c:Mulgore,48.60,69.43
 	.goto 1412/1,-314.31,-2660.14,50,0--c:Mulgore,45.98,69.70
 	.goto 1412/1,-447.88,-2580.34,50,0--c:Mulgore,48.58,67.37
-    >>Kill |cRXP_ENEMY_Prairie Wolves|r. Loot them for their |cRXP_LOOT_Paws|r
-    >>Kill |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r] and |cRXP_LOOT_Talons|r
+    >>Mata a los |cRXP_ENEMY_Prairie Wolves|r. Despoja para obtener sus |cRXP_LOOT_Paws|r
+    >>Mata a los |cRXP_ENEMY_Adult Plainstriders|r. Despójalos para obtener su |T134028:0|t[|cRXP_LOOT_Carne de zancudo tierna|r] y sus |cRXP_LOOT_Garras|r
     .complete 748,1 --Prairie Wolf Paw (6)
     .mob +Prairie Wolf
     .complete 748,2 --Plainstrider Talon (4)
@@ -777,12 +777,12 @@ step << !Tauren
 	.goto 1412/1,-448.91,-2650.89,50,0--c:Mulgore,48.60,69.43
 	.goto 1412/1,-314.31,-2660.14,50,0--c:Mulgore,45.98,69.70
 	.goto 1412/1,-447.88,-2580.34,50,0--c:Mulgore,48.58,67.37
-    >>Kill |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r]
+    >>Mata a los |cRXP_ENEMY_Adult Plainstriders|r. Despójalos para obtener su |T134028:0|t[|cRXP_LOOT_Carne de zancudo tierna|r]
     .collect 287505,1,99411,1 --Collect Tender Strider Meat (1)
     .mob Adult Plainstrider
 step << Tauren
     #completewith next
-    .use 33009>> Find |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r] to feed him
+    .use 33009>> Encuentra a |cRXP_FRIENDLY_Kyle|r. Usa la |T134028:0|t[|cRXP_LOOT_Carne de zancudo tierna|r] para alimentarlo
     >>|cRXP_WARN_Corre en el sentido de las agujas del reloj alrededor del Poblado Pezuña de Sangre|r
     .complete 99411,1 --1/1 Kyle fed
     .unitscan Kyle the Frenzied
@@ -814,7 +814,7 @@ step
     .complete 771,1 --Well Stone (2)
 step
     #completewith KyleFed
-    .use 33009>> Find |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r] to feed him
+    .use 33009>> Encuentra a |cRXP_FRIENDLY_Kyle|r. Usa la |T134028:0|t[|cRXP_LOOT_Carne de zancudo tierna|r] para alimentarlo
     >>|cRXP_WARN_Corre en el sentido de las agujas del reloj alrededor del Poblado Pezuña de Sangre|r
     .complete 99411,1 --1/1 Kyle fed
     .unitscan Kyle the Frenzied
@@ -969,8 +969,8 @@ step
 step
     .goto 1412/1,-1066.400,-2325.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Malah Ventolongo|r
-    .turnin 99079 >>Turn in Longwalker Malah
-    .accept 99081 >>Accept Grim Tidings
+    .turnin 99079 >>Entrega la misión Longwalker Malah
+    .accept 99081 >>Acepta la misión Grim Tidings
     .target Malah Longwind
 step
     #completewith EnterCave
@@ -1011,7 +1011,7 @@ step << Tauren
     .mob +Flatland Cougar
 step
     .goto 1412/1,54.800,-2442.200
-    >>Kill |cRXP_ENEMY_Chakuyak|r. Loot it for its |cRXP_LOOT_Pelt|r
+    >>Mata a |cRXP_ENEMY_Chakuyak|r. Despoja para obtener su |cRXP_LOOT_Pelt|r
     .complete 96130,1 --|1/1 Chakuyak's Pelt
     .mob Chakuyak
 step
@@ -1020,7 +1020,7 @@ step
     .goto 1412/1,297.800,-2398.500,30 >>Entra en la cueva
 step
     #completewith Escort1
-    >>Kill |cRXP_ENEMY_Palemane Tanners|r, |cRXP_ENEMY_Palemane Skinners|r and |cRXP_ENEMY_Palemane Poachers|r
+    >>Mata a los |cRXP_ENEMY_Palemane Tanners|r, a los |cRXP_ENEMY_Palemane Skinners|r y a los |cRXP_ENEMY_Palemane Poachers|r
     .complete 745,1 --Palemane Tanner (10)
     .mob +Palemane Tanner
     .complete 745,2 --Palemane Skinner (8)
@@ -1033,14 +1033,14 @@ step
     .goto 1412/1,297.800,-2398.500,20,0
     .goto 1412/1,395.800,-2339.300,20,0
     .goto 1412/1,442.300,-2439.100
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Perith Stormhoof|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Perith Pezuña Tempestuosa|r
     >>|cRXP_WARN_Esto inicia una misión de escolta|r
-    .accept 98430 >>Accept The Longwalkers
+    .accept 98430 >>Acepta la misión The Longwalkers
     .target Perith Stormhoof
 step
     #label Escort1
     .goto 1412/1,192.500,-2394.000
-    >>Escort |cRXP_FRIENDLY_Perith Stormhoof|r out of the cave
+    >>Escolta a |cRXP_FRIENDLY_Perith Pezuña Tempestuosa|r fuera de la cueva
     .complete 98430,1 --escort (manually entered cords where its completed)
     .target Perith Stormhoof
 step
@@ -1053,7 +1053,7 @@ step
     .goto 1412/1,450.000,-2407.900,30,0
     .goto 1412/1,460.000,-2341.200,30,0
     .goto 1412/1,479.700,-2345.900,30,0
-    >>Kill |cRXP_ENEMY_Palemane Tanners|r, |cRXP_ENEMY_Palemane Skinners|r and |cRXP_ENEMY_Palemane Poachers|r
+    >>Mata a los |cRXP_ENEMY_Palemane Tanners|r, a los |cRXP_ENEMY_Palemane Skinners|r y a los |cRXP_ENEMY_Palemane Poachers|r
     .complete 745,1 --Palemane Tanner (10)
     .mob +Palemane Tanner
     .complete 745,2 --Palemane Skinner (8)
@@ -1071,7 +1071,7 @@ step
     .subzone 222 >> Regresa al Poblado Pezuña de Sangre
 step
     #completewith KyleFed2
-    .use 33009>> Find |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r] to feed him
+    .use 33009>> Encuentra a |cRXP_FRIENDLY_Kyle|r. Usa la |T134028:0|t[|cRXP_LOOT_Carne de zancudo tierna|r] para alimentarlo
     >>|cRXP_WARN_Corre en el sentido de las agujas del reloj alrededor del Poblado Pezuña de Sangre|r
     .complete 99411,1 --1/1 Kyle fed
     .unitscan Kyle the Frenzied
@@ -1175,15 +1175,15 @@ step
     .goto 1412/1,-392.500,-2318.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Valiente Corresalvaje|r
     >>|cRXP_WARN_Patrulla por la zona|r
-    .turnin 99081 >>Turn in Grim Tidings
-    .accept 99101 >>Accept Our Ancient Enemy
+    .turnin 99081 >>Entrega la misión Grim Tidings
+    .accept 99101 >>Acepta la misión Our Ancient Enemy
     .target Brave Wildrunner
 step
     .goto 1412/1,-392.900,-2333.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Baine Pezuña de Sangre|r
     .turnin 745 >>Entrega la misión Compartir la tierra
-    .turnin 99101 >>Turn in Our Ancient Enemy
-    .accept 99080 >>Accept Drive Them Out
+    .turnin 99101 >>Entrega la misión Our Ancient Enemy
+    .accept 99080 >>Acepta la misión Drive Them Fuera
     .target Baine Bloodhoof
 step
     .goto 1412/1,-454.56,-2304.63--c:Mulgore,48.71,59.32
@@ -1245,7 +1245,7 @@ step
     .goto 1412/1,-438.600,-2387.500,30,0
     .goto 1412/1,-491.400,-2326.900,30,0
     .goto 1412/1,-469.300,-2256.000,30,0
-    .use 33009>> Find |cRXP_FRIENDLY_Kyle|r. Use the |T134028:0|t[|cRXP_LOOT_Tender Strider Meat|r] to feed him
+    .use 33009>> Encuentra a |cRXP_FRIENDLY_Kyle|r. Usa la |T134028:0|t[|cRXP_LOOT_Carne de zancudo tierna|r] para alimentarlo
     >>|cRXP_WARN_Corre en el sentido de las agujas del reloj alrededor del Poblado Pezuña de Sangre|r
     .complete 99411,1 --1/1 Kyle fed
     .unitscan Kyle the Frenzied
@@ -1826,7 +1826,7 @@ step
     >>|cRXP_WARN_Usa los|r |T134332:0|t[|cRXP_LOOT_Planes de expansión de Mulgore|r] |cRXP_WARN_para iniciar la misión|r
     .complete 765,1 --Fizsprocket's Clipboard (1)
     .collect 281031,1,98424 --Mulgore Expansion Plans (x1)
-    .accept 98424 >>Accept Fizsprocket's Notes
+    .accept 98424 >>Acepta la misión Fizsprocket's Notes
     .mob Supervisor Saltatuercas
 step
     .goto 1412/1,-1128.700,-1674.600
@@ -1839,7 +1839,7 @@ step
 step
     #label Fizsprocket
     .goto 1412/1,-1153.900,-1637.800
-    >>Loot the |cRXP_PICK_Documents|r on the ground
+    >>Despoja los |cRXP_PICK_Documents|r en el suelo
     .complete 98424,3 --|1/1 One "Gerenzo", of Stonetalon
 step
     #label VentureCos
@@ -1885,7 +1885,7 @@ step
     >>|cRXP_WARN_Patrulla a lo largo del camino oriental|r
     .turnin 764 >>Entrega la misión Los Ventura y Cía.
     .turnin 765 >>Entrega la misión Supervisor Saltatuercas
-    .turnin 98424 >>Turn in Fizsprocket's Notes
+    .turnin 98424 >>Entrega la misión Fizsprocket's Notes
 	.unitscan Morin Cloudstalker
 step << skip -- Tauren
     #softcore
@@ -1898,7 +1898,7 @@ step << Tauren
 step
     .goto 1412/1,-393.100,-2333.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Baine Pezuña de Sangre|r
-    .turnin 99080 >>Turn in Drive Them Out
+    .turnin 99080 >>Entrega la misión Drive Them Fuera
     .accept 99082 >>Acepta la misión La Gran jefa
     .target Baine Bloodhoof
 step << Tauren
@@ -1975,7 +1975,7 @@ step
     .turnin 775 >>Entrega la misión Viaje a Cima del Trueno
     .accept 776 >>Acepta la misión Los ritos de la Madre Tierra
     .turnin 99082 >>Entrega la misión La Gran jefa
-    .turnin 98430 >>Turn in The Longwalkers
+    .turnin 98430 >>Entrega la misión The Longwalkers
     .target Cairne Bloodhoof
     .isQuestComplete 99082
 step
@@ -1983,7 +1983,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Cairne|r
     .turnin 775 >>Entrega la misión Viaje a Cima del Trueno
     .accept 776 >>Acepta la misión Los ritos de la Madre Tierra
-    .turnin 98430 >>Turn in The Longwalkers
+    .turnin 98430 >>Entrega la misión The Longwalkers
     .target Cairne Bloodhoof
 step << Tauren Druid
     .goto 1456/1,-298.50,-1049.01--c:Thunder Bluff,78.1,28.6
@@ -2110,7 +2110,7 @@ step
     .mob Flatland Prowler
 step
     #completewith next
-    >>Loot |cRXP_PICK_Windfury Cones|r on the ground
+    >>Recoge las |cRXP_PICK_Piñas de Viento Furioso|r del suelo
     >>|cRXP_WARN_Se pueden encontrar principalmente bajo/cerca de los árboles|r
     .collect 206170,8,76160,1 --Windfury Cone (8)
 step
@@ -2249,7 +2249,7 @@ step
     >>Pesca en el estanque hasta que obtengas un |T133894:0|t[|cRXP_LOOT_Pececito luminoso crudo|r]
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
 step
-    >>|cRXP_WARN_Use the|r |T132147:0|t[Knife Set] |cRXP_WARN_to create|r |T134007:0|t[Fish Chunks]
+    >>|cRXP_WARN_Usa el|r |T132147:0|t[Cuchillo Set] |cRXP_WARN_para crear|r |T134007:0|t[Pez Chunks]
     .complete 76240,1 --Fish Chunks (1)
     .use 206344
 step
@@ -2268,8 +2268,8 @@ step
     #completewith next
     .goto 1456/1,-141.400,-1432.700,10,0
     .goto 1456/1,-161.300,-1454.200,10,0
-    .zone Mulgore >>Jump down the Hunter Rise onto the small hill to exit Thunder Bluff
-    >>|cRXP_WARN_Follow the arrow precisely to avoid dying. Regain some health before the second jump|r
+    .zone Mulgore >>Salta desde la Loma del Cazador a la pequeña colina para salir de Cima del Trueno
+    >>|cRXP_WARN_Sigue la flecha precisamente para evitar morir. Recupera algo de salud antes del segundo salto|r
 step
     #completewith WildManeTurnIn
     .subzone 222 >>Viaja al Poblado Pezuña de Sangre

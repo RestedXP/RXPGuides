@@ -695,7 +695,7 @@ step
     .goto Hillsbrad Foothills,58.2,19.6,40,0
     .goto Hillsbrad Foothills,57.5,36.4,50,0
     .goto Hillsbrad Foothills,51.1,46.4,40,0
-    >>Look for |cRXP_FRIENDLY_Zixil|r. He patrols between Tarren Mill and Southshore. Buy the |T134041:0|t[Freshwater Snapper Bait] from him
+    >>Busca a |cRXP_FRIENDLY_Zixil|r. Patrulla entre Tarren Molino y Costasur. Cómprale el |T134041:0|t[Freshwater Mordedor Cebo]
     .collect 210410,1 --Freshwater Snapper Bait (1)
     .target Zixil
     .train 425759,1
@@ -1453,7 +1453,7 @@ step
     .train 410029 >>|cRXP_WARN_Usa la|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Eclipse|r] |cRXP_WARN_para aprender|r |T236151:0|t[Eclipse] << Druid
     .train 403467 >>|cRXP_WARN_Usa la|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Ira curativa|r] |cRXP_WARN_para aprender|r |T132345:0|t[Regeneración iracunda] << Warrior
     .train 426452 >>|cRXP_WARN_Usa la|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Oscuridad ardiente|r] |cRXP_WARN_para aprender|r |T135823:0|t[Sombras y llamas] << Warlock
-    .train 425102 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Poisoned Blade|r] |cRXP_WARN_to train|r |T236270:0|t[Poisoned Knife] << Rogue
+    .train 425102 >>|cRXP_WARN_Usa la|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Hoja envenenada|r] |cRXP_WARN_para entrenar|r |T236270:0|t[Cuchillo envenenado] << Rogue
     .train 425883 >>|cRXP_WARN_Usa la|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Despertar ancestral|r] |cRXP_WARN_para aprender|r |T237571:0|t[Despertar ancestral] << Shaman
     .use 212552 << Priest
     .use 212551 << Paladin

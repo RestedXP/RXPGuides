@@ -2689,7 +2689,7 @@ step
     .waypoint Thousand Needles,26.29,52.79,15,0
     .waypoint Thousand Needles,27.23,54.04,15,0
     .waypoint Thousand Needles,26.55,55.77,15,0
-    >>Kill |cRXP_ENEMY_Screeching Harpies|r. Loot them for their |cRXP_LOOT_Strong Harpy Feathers|r
+    >>Mata a las |cRXP_ENEMY_Screeching Harpies|r. Despójalas para obtener sus |cRXP_LOOT_Plumas de Arpía Fuertes|r
     .collect 213701,10 --Strong Harpy Feather (10x)
     .mob Screeching Harpy
     .mob Screeching Roguefeather
@@ -2964,7 +2964,7 @@ step
     .train 432241,1
 step
     .goto The Hinterlands,51.2,47.0
-    >>Kill |cRXP_ENEMY_Corrupt Moderate Manifestation of Air|r then >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Air.|r
+    >>Mata |cRXP_ENEMY_Corrupt NO TRANSLATION FOUND TO THIS ELEMENT|r luego >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Moderate Manifestación of Aire.|r
     .turnin 81960 >>Entrega la misión Aire purificador
     .accept 81968 >>Acepta la misión El llamado del viento
     .mob Corrupt Moderate Manifestation of Air

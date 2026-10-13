@@ -1368,7 +1368,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Pal'juh|r
     >>|cRXP_WARN_Esto inicia una misión de escolta|r
     >>|cRXP_WARN_Si |cRXP_FRIENDLY_Pal'juh|r no está ahí, puedes saltarte este paso y suicidarte (deathskip) para reaparecer en la hoguera del Poblado Sen'jin|r
-    .accept 99123,1 >>Accept Lost in the Shadows
+    .accept 99123,1 >>Acepta la misión Perdido in the Sombras
     .target Pal'juh
 step
     #hardcore
@@ -1376,7 +1376,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Pal'juh|r
     >>|cRXP_WARN_Esto inicia una misión de escolta|r
     >>|cRXP_WARN_Si |cRXP_FRIENDLY_Pal'juh|r no está ahí, puedes omitir este paso|r
-    .accept 99123,1 >>Accept Lost in the Shadows
+    .accept 99123,1 >>Acepta la misión Perdido in the Sombras
     .target Pal'juh
 step
     #softcore
@@ -1411,7 +1411,7 @@ step
 step
     .goto 1411/1,-4920.900,-814.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Maestro Vornal|r
-    .turnin 99123 >>Turn in Lost in the Shadows
+    .turnin 99123 >>Entrega la misión Perdido in the Sombras
     .target Master Vornal
     .isQuestComplete 99123
 step << Shaman
@@ -1641,7 +1641,7 @@ step
     .goto 1411/1,-4663.88,310.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con|r |cRXP_FRIENDLY_Torka|r
     .train 2550 >>Aprende Cocina
-    .turnin 96655 >>Turn in Camping 101: Cooking
+    .turnin 96655 >>Entrega la misión Campamento 101: Cocina
     .target Cook Torka
 step
     #hardcore
@@ -1876,13 +1876,13 @@ step --camp quest
     #softcore
     #optional
     .goto 1411/1,-4713.000,140.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brakk|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Brakk|r
     .accept 96604 >>Acepta la misión Bendita naturaleza
     .target Brakk
 step
     #softcore
     .goto 1411/1,-4715.200,140.100
-    >>|cRXP_WARN_Type /sit at the campfire and wait for one minute until you get the "Camp Benefits" buff|r
+    >>|cRXP_WARN_Escribe /sit en la hoguera y espera un minuto hasta que obtengas el efecto "Camp Benefits"|r
     .complete 96604,1 --|1/1 Use the /sit emote near the campfire
     .macro Sit,134400 >>Siéntate
     .timer 59, RP
@@ -1890,8 +1890,8 @@ step
 step
     #softcore
     .goto 1411/1,-4713.000,140.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brakk|r
-    .turnin 96604 >>Turn in The Great Outdoors
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Brakk|r
+    .turnin 96604 >>Entrega la misión El gran mundo exterior
     --.accept 97900 >>Accept Camping 101: Blacksmithing
     .accept 96655 >>Acepta la misión Campamento básico: Cocina
     --.accept 97907 >>Accept Camping 101: Mining
@@ -2579,7 +2579,7 @@ step << Hunter
     .target Thotar
 step << Hunter
     .goto 1411/1,-4724.900,287.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil Soulscar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Orgnil Escaralma|r
     .accept 99048 >>Acepta la misión Una mano faltante
     .target Orgnil Soulscar
 step << Hunter
@@ -2638,8 +2638,8 @@ step << Hunter
     .isQuestTurnedIn 6062
 step << Hunter
     .goto 1411/1,-5061.700,201.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Heglan Shadeeye|r
-    .turnin 99048 >>Turn in A Missing Hand
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Heglan Shadeeye|r
+    .turnin 99048 >>Entrega la misión A Missing Hand
     .accept 99049 >>Acepta la misión Amenaza desde las profundidades
     .target Heglan Shadeeye
 step << Hunter
@@ -2850,7 +2850,7 @@ step << Hunter/Shaman
 step << Hunter/Shaman
     .goto 1454/1,-4568.100,1855.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kamari|r
-    .turnin 96877 >>Turn in Halikor's Hoof
+    .turnin 96877 >>Entrega la misión Halikor's Hoof
     .target Kamari
     .isOnQuest 96877
 step << Hunter/Shaman
@@ -2923,7 +2923,7 @@ step << Hunter/Shaman
 step << Hunter/Shaman
     .goto 1454/1,-4477.900,1964.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Yelmak|r
-    >>|cRXP_WARN_You may have to wait about 10 seconds before you can accept this quest|r
+    >>|cRXP_WARN_Puede que tengas que esperar aproximadamente 10 segundos antes de poder aceptar esta misión|r
     .accept 97275 >>Acepta la misión La prisa de Whuut
     .target Yelmak
 step << Hunter/Shaman
@@ -3022,7 +3022,7 @@ step << !Hunter
     .goto 1411/1,-4665.47,311.62
     .turnin 806 >>Entrega la misión Oscuras tormentas
     .accept 828 >>Acepta la misión Margoz
-    .accept 99048 >>Accept A Missing Hand << Shaman
+    .accept 99048 >>Acepta la misión A Missing Hand << Shaman
     .target +Orgnil Soulscar
     .goto 1411/1,-4724.69,287.30
     .turnin 825 >>Entrega la misión Los restos del naufragio...
@@ -3147,25 +3147,25 @@ step << skip --Shaman
 step << Shaman
     .goto 1411/1,-5061.700,201.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Heglan Sombramira|r
-    .turnin 99048 >>Turn in A Missing Hand
-    .accept 99049 >>Accept Threat from Below
+    .turnin 99048 >>Entrega la misión A Missing Hand
+    .accept 99049 >>Acepta la misión Amenaza from Below
     .target Heglan Shadeeye
 step << Shaman
     .goto 1411/1,-5073.900,244.700
-    >>Loot the |cRXP_PICK_Abandoned Dagger|r on the ground
+    >>Despoja el |cRXP_PICK_Abandoned Dagger|r en el suelo
     .complete 99049,1 --|1/1 Orcish Dagger
 step << Shaman
     .goto 1411/1,-5140.800,229.100
-    >>Loot the |cRXP_PICK_Weapon Piece|r on the ground
+    >>Recoge la |cRXP_PICK_Weapon Piece|r del suelo
     .complete 99049,3 --|1/1 Broken Bone Trident
 step << Shaman
     .goto 1411/1,-5138.000,314.100
-    >>Loot the |cRXP_PICK_Strange Debris|r on the ground
+    >>Recoge los |cRXP_PICK_Strange Escombros|r del suelo
     .complete 99049,2 --|1/1 Banner Scrap
 step << Shaman
     .goto 1411/1,-4725.000,287.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Orgnil Escaralma|r
-    .turnin 99049 >>Turn in Threat from Below
+    .turnin 99049 >>Entrega la misión Amenaza from Below
     --.accept 99051 >>Accept Threat from Below
     .target Orgnil Soulscar
 step << Hunter
@@ -3292,7 +3292,7 @@ step
     >>|cRXP_WARN_¡Esto es difícil! Únete a un grupo si es posible. Tiene 800 de salud, pero su daño es manejable. Omite este paso si no puedes matarlo|r
     >>|cRXP_WARN_Tiene al menos dos ubicaciones de aparición diferentes dentro de Monte del Trueno|r
     .collect 275723,1,96877 --Halikor's Hoof (x1)
-    .accept 96877 >>Accept Halikor's Hoof
+    .accept 96877 >>Acepta la misión Halikor's Hoof
     .mob Halikor
 step
     .goto 1411/1,-4047.300,918.400
@@ -3462,7 +3462,7 @@ step
 step
     .goto 1454/1,-4568.100,1855.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kamari|r
-    .turnin 96877 >>Turn in Halikor's Hoof
+    .turnin 96877 >>Entrega la misión Halikor's Hoof
     .target Kamari
     .isOnQuest 96877
 step
@@ -3507,7 +3507,7 @@ step
 step
     .goto 1454/1,-4477.900,1964.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Yelmak|r
-    >>|cRXP_WARN_You may have to wait about 10 seconds before you can accept this quest|r
+    >>|cRXP_WARN_Puede que tengas que esperar aproximadamente 10 segundos antes de poder aceptar esta misión|r
     .accept 97275 >>Acepta la misión La prisa de Whuut
     .target Yelmak
 step
@@ -3708,7 +3708,7 @@ step
 step
     .goto 1420/0,254.600,2225.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Guardia de la Muerte Terrence|r
-    .accept 96895 >>Accept The Argent Emissary
+    .accept 96895 >>Acepta la misión The Argent Emisario
     .target Deathguard Terrence
 step << Warrior
     #optional
@@ -3820,7 +3820,7 @@ step
 step
     .goto 1420/0,54.600,1996.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hadric Harlson|r
-    .turnin 96895 >>Turn in The Argent Emissary
+    .turnin 96895 >>Entrega la misión The Argent Emisario
     .accept 96897 >>Acepta la misión El Culto de los Malditos
     .accept 96898 >>Acepta la misión Los restos de la guerra
     .target Hadric Harlson
@@ -3955,7 +3955,7 @@ step << Troll Warrior/Undead Warrior/Tauren Shaman/Troll Shaman/Orc Shaman
 step
     #ah
     .goto 1458/0,224.300,1648.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Cain|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Subastador Cain|r
     >>|cRXP_BUY_Compra tres|r |T133884:0|t[Ojos de múrloc] |cRXP_BUY_en la Casa de subastas|r
     >>|cRXP_WARN_Omitir esto si quieres, es solo un pequeño ahorro de tiempo|r
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)

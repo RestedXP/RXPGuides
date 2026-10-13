@@ -1642,7 +1642,7 @@ step
     --.dungeon !RFC
 step
     #completewith next
-    >>Loot the |cRXP_PICK_Sprung Traps|r on the ground
+    >>Despoja las |cRXP_PICK_Sprung Traps|r en el suelo
     .complete 95507,1 --|8/8 Trapped Game
 step
     #loop
@@ -1653,8 +1653,8 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Kill |cRXP_LOOT_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r and |cRXP_LOOT_Tusks|r
-    >>|cRXP_WARN_If the |cRXP_LOOT_Savannah Patriarchs|r are heavily contested consider skipping this quest for now, it can be completed later|r
+    >>Mata a los |cRXP_LOOT_Savannah Patriarchs|r. Despoja los |cRXP_LOOT_Hides|r y los |cRXP_LOOT_Tusks|r
+    >>|cRXP_WARN_Si los |cRXP_LOOT_Savannah Patriarchs|r están muy disputados, considera omitir esta misión por ahora; se puede completar más tarde|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .complete 821,1 --Savannah Lion Tusk (5)
     .disablecheckbox
@@ -1709,7 +1709,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Walton|r
     .turnin 95621 >>Entrega la misión Problemas en el valle
     .accept 95508 >>Acepta la misión Huéspedes no deseados
-    .timer 67,Unwelcome Guests RP
+    .timer 67,Huéspedes no deseados Roleplay
     .target Walton
     .isQuestTurnedIn 95494
 step
@@ -1722,7 +1722,7 @@ step
 step
     .goto 1413/1,-1635.400,838.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Walton|r
-    .turnin 95508 >>Turn in Unwelcome Guests
+    .turnin 95508 >>Entrega la misión Huéspedes no deseados
     .target Walton
     .isQuestTurnedIn 95494
 step
@@ -2013,13 +2013,13 @@ step << Tauren/Undead
 step << !Orc !Troll
     .goto 1454/1,-4482.600,1775.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Borstan|r
-    .turnin 97246 >>Turn in Meal Appeal
+    .turnin 97246 >>Entrega la misión Meal Appeal
     .accept 97249 >>Acepta la misión Comida favorita
     .target Borstan
 step << !Orc !Troll
     .goto 1454/1,-4466.800,1954.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Kor'geld|r 
-    .accept 97242 >>Accept Yelmak's Medley
+    .accept 97242 >>Acepta la misión Yelmak's Medley
     .target Kor'geld
 step << !Orc !Troll
     #completewith next
@@ -2161,28 +2161,28 @@ step << !Orc !Troll
 step << !Orc !Troll
     .goto 1454/1,-4463.000,1966.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Whuut|r
-    .turnin 97275 >>Turn in Whuut's the Rush
+    .turnin 97275 >>Entrega la misión Whuut's the Carga
     .target Whuut
 step << !Orc !Troll
     .goto 1454/1,-4193.400,2001.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Migi|r
-    .turnin 97249 >>Turn in Favorite Food
+    .turnin 97249 >>Entrega la misión Favorite Comida
     .target Migi
 step << skip --!Orc !Troll
     .goto 1454/1,-4205.800,2007.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thra|r 
-    .accept 97326 >>Accept Rocks to Rests
+    .accept 97326 >>Acepta la misión Rocas to Rests
     .target Thra
 step << skip --!Orc !Troll
     .goto 1454/1,-4293.600,1949.900
-    >>Loot the orange |cRXP_PICK_Rocks|r on the ground
-    >>|cRXP_WARN_Skip this quest if there is a lot of competition! There aren't that many |cRXP_PICK_Rocks|r and they do not respawn quickly|r
+    >>Despoja las |cRXP_PICK_Rocks|r naranjas del suelo
+    >>|cRXP_WARN_Omite esta misión si hay mucha competencia. No hay tantas |cRXP_PICK_Rocks|r y no reaparecen rápidamente|r
     .complete 97326,1 --|8/8 Smooth Boulder
     .isOnQuest 97326
 step << skip --!Orc !Troll
     .goto 1454/1,-4205.900,2007.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Thra|r
-    .turnin 97326 >>Turn in Rocks to Rests
+    .turnin 97326 >>Entrega la misión Rocas to Rests
     .target Thra
     .isQuestComplete 97326
 step << Shaman
@@ -2356,8 +2356,8 @@ step
 step
     #completewith RapHornsPickup
     .goto 1413/1,-3262.600,-99.400,0
-    +|cRXP_WARN_As you continue to quest through The Barrens, try to find a 5-man group for "Chol'aruk the Ravener" at some point|r
-    >>|cRXP_WARN_Completing this will give 4100xp. The entrance to the cave where he is located is marked on your map (|cRXP_ENEMY_Razormane|r area)|r
+    +|cRXP_WARN_Mientras continúas haciendo misiones a través de The Barrens, intenta encontrar un grupo de 5 jugadores para "Chol'aruk the Ravener" en algún momento|r
+    >>|cRXP_WARN_Completar esto te dará 4100xp. La entrada a la cueva donde está está marcada en tu mapa (|cRXP_ENEMY_Razormane|r zona)|r
     .isOnQuest 97003
 step
     .goto 1413/1,-3031.48,461.91
@@ -2413,7 +2413,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Desdio|r
     .turnin 2382 >>Entrega la misión Desdio de Trinquete << Rogue
     .accept 2381 >>Acepta la misión Saquear a los saqueadores << Rogue
-    .accept 97253 >>Accept Parts and Pieces
+    .accept 97253 >>Acepta la misión Parts and Pieces
     .target Wrenix the Wretched
 step << Rogue
     .goto 1413/1,-3773.24,-841.37
@@ -2734,7 +2734,7 @@ step
     .dungeon RFC
 step << Paladin
     .goto 1456/1,253.900,-950.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alodan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alodan|r
     .train 1044 >>Aprende tus hechizos de clase
     .target Alodan the Hopeful 
     .xp <18,1
@@ -2743,7 +2743,7 @@ step << Paladin
 step << Paladin
     #optional
     .goto 1456/1,253.900,-950.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alodan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alodan|r
     .train 1866 >>Aprende tus hechizos de clase
     .target Alodan the Hopeful 
     .xp <20,1
@@ -2791,7 +2791,7 @@ step
     #label Xroadsturnins2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Mankrik|r, |cRXP_FRIENDLY_Tonga|r, |cRXP_FRIENDLY_Sergra|r y |cRXP_FRIENDLY_Gazrog|r
     .turnin 4921 >>Entrega la misión Perdida en la batalla
-    .accept 95774 >>Accept Her Name Is Olgra
+    .accept 95774 >>Acepta la misión Her Name Is Olgra
     .target +Mankrik
     .goto 1413/1,-2641.35,-521.12
     .turnin 877 >>Entrega la misión El Oasis Estancado
@@ -2977,8 +2977,8 @@ step
 step
     #label CounterattackComplete
     .goto 1413/1,-1884.39,-289.38
-    >>Kill |cRXP_ENEMY_Warlord Krom'zar|r (elite lvl 20) once he appears. Loot the |cRXP_PICK_Banner|r that he drops on the ground
-    >>|cRXP_WARN_Be careful! He is strong and is guarded by at least two|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r
+    >>Mata a |cRXP_ENEMY_Señor de la guerra Krom'zar|r (élite nivel 20) una vez que aparece. Despoja el |cRXP_PICK_Estandarte|r que él suelta en el suelo
+    >>|cRXP_WARN_¡Ten cuidado! Es fuerte y está protegido por al menos dos|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r
     >>|cRXP_WARN_Puede tardar hasta 3 minutos en reaparecer|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
@@ -3098,7 +3098,7 @@ step
     .goto 1442/1,-774.61,-5.17,40,0
     .goto 1442/1,-774.61,-27.96,40,0
     .goto 1442/1,-726.27,-39.36,40,0
-    >>Kill |cRXP_ENEMY_Grimtotem Ruffians|r and |cRXP_ENEMY_Grimtotem Mercenaries|r
+    >>Mata a los |cRXP_ENEMY_Grimtotem Ruffians|r y a los |cRXP_ENEMY_Grimtotem [DEPRECATED]Mercenarios|r
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
     .mob +Grimtotem Ruffian
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
@@ -3491,7 +3491,7 @@ step
 step
     #label LakotaMani2
     #completewith LakotaMani2
-    >>Kill |cRXP_ENEMY_Razormane Raiders|r. Loot them for |cRXP_LOOT_Olgra's Adornments|r
+    >>Mata a los |cRXP_ENEMY_Razormane Raiders|r. Despoja los |cRXP_LOOT_Olgra's Adornments|r
     .complete 95774,1 --|4/4 Olgra's Adornments
     .mob Razormane Raider
 step
@@ -3533,7 +3533,7 @@ step
     .goto 1413/1,-2346.200,-1788.600,50,0
     .goto 1413/1,-2458.300,-1824.400,50,0
     .goto 1413/1,-2381.000,-2061.000,50,0
-    >>Kill |cRXP_ENEMY_Razormane Raiders|r. Loot them for |cRXP_LOOT_Olgra's Adornments|r
+    >>Mata a los |cRXP_ENEMY_Razormane Raiders|r. Despoja los |cRXP_LOOT_Olgra's Adornments|r
     .complete 95774,1 --|4/4 Olgra's Adornments
     .mob Razormane Raider
 step
@@ -3596,7 +3596,7 @@ step << Warlock/Shaman
 	.goto 1413/1,-2687.96,-1973.04,60,0
 	.goto 1413/1,-2678.84,-2016.28,60,0
 	.goto 1413/1,-2584.6,-2050.74,60,0
-    .xp 19+9500 >> Grind to 9500+/21300 xp
+    .xp 19+9500 >> Farmea hasta 9500+/21300 xp
 step
     #loop
     .goto 1413/1,-2532.92,-1965.61,0
@@ -3657,7 +3657,7 @@ step
     .mob Oasis Snapjaw
 step
     #completewith IshamuhalesFang
-    >>Kill |cRXP_LOOT_Savannah Matriarchs|r and |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
+    >>Mata a los |cRXP_LOOT_Savannah Matriarchs|r y a los |cRXP_ENEMY_Savannah Patriarchs|r. Despoja sus |cRXP_LOOT_Hides|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
     .mob Savannah Patriarchs
@@ -3679,7 +3679,7 @@ step
     .goto 1413/1,-3633.200,-600.500,50,0
     .goto 1413/1,-3469.100,-495.000,50,0
     .goto 1413/1,-3428.300,-584.300,50,0
-    >>Kill |cRXP_LOOT_Savannah Matriarchs|r and |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
+    >>Mata a los |cRXP_LOOT_Savannah Matriarchs|r y a los |cRXP_ENEMY_Savannah Patriarchs|r. Despoja sus |cRXP_LOOT_Hides|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
     .mob Savannah Patriarchs
@@ -3690,7 +3690,7 @@ step
     .goto 1413/1,-3767.800,-842.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Desdio|r
     .turnin 2381 >>Entrega la misión Saquear a los saqueadores << Rogue
-    .turnin 97253 >>Turn in Parts and Pieces
+    .turnin 97253 >>Entrega la misión Parts and Pieces
     .target Wrenix the Wretched
     .isQuestComplete 97253
 step << Rogue
@@ -3714,7 +3714,7 @@ step
 step
     .goto 1413/1,-3720.300,-920.000
     >>Haz clic en el |cRXP_PICK_Cartel de Se busca|r
-    .accept 92706 >>Accept WANTED: Bruuz
+    .accept 92706 >>Acepta la misión WANTED: Bruuz
 step
     .goto 1413/1,-3697.24,-929.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Mebok|r
@@ -3785,15 +3785,15 @@ step
     .goto 1413/1,-3951.600,-1093.500
     .goto 1413/1,-4012.800,-1081.800
     .goto 1413/1,-3973.000,-1028.700
-    >>Kill |cRXP_PICK_Bruuz|r (lvl 20 elite) in the sea near Ratchet
-    >>|cRXP_WARN_This is hard! Group up if possible|r
-    >>|cRXP_WARN_It can be solo'd by kiting him to the Ratchet guards who will help, but make sure to deal at least 50% damage!|r
+    >>Mata a |cRXP_PICK_Bruuz|r (nivel 20 élite) en el mar cerca de Ratchet
+    >>|cRXP_WARN_¡Es difícil! ¡Agrúpate si es posible!|r
+    >>|cRXP_WARN_¡Puedes hacerlo solo kiteando al enemigo hacia los guardias de Trinquete, que te ayudarán, pero asegúrate de infligir al menos un 50% del daño!|r
     .complete 92706,1 --Kill Bruuz
     .isOnQuest 92706
 step
     .goto 1413/1,-3720.300,-920.000
     >>Haz clic en el |cRXP_PICK_Cartel de Se busca|r
-    .turnin 92706 >>Turn in WANTED: Bruuz
+    .turnin 92706 >>Entrega la misión WANTED: Bruuz
     .isQuestComplete 92706
 step
     .goto 1413/1,-3770.20,-928.53
@@ -3834,7 +3834,7 @@ step
     #label XroadsHS2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Mankrik|r y |cRXP_FRIENDLY_Tonga|r
     .turnin 899 >>Entrega la misión Consumido por el odio
-    .turnin 95774 >>Turn in Her Name Is Olgra
+    .turnin 95774 >>Entrega la misión Her Name Is Olgra
     .target +Mankrik
     .goto 1413/1,-2641.35,-521.12
     .turnin 880 >>Entrega la misión Seres alterados
@@ -4292,8 +4292,8 @@ step
 step
     #label SleepingBag1
     .goto The Barrens,46.361,73.904
-    >>Click the |cRXP_PICK_Burned-Out Remains|r on the ground
-    .accept 79007 >> Accept ...and that note you found
+    >>Haz clic en los |cRXP_PICK_Burned-Fuera Remains|r en el suelo
+    .accept 79007 >> Acepta ...y esa nota que encontraste
 step
     #label LizardBlood
     #loop
@@ -4473,7 +4473,7 @@ step << Rogue
 step << Rogue
     #optional
     .goto 1456/1,104.500,-1308.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Boarton Shadetotem|
     >>|cRXP_WARN_Está|r |T132320:0|t[En sigilo] 
     .train 6761 >>Aprende tus hechizos de clase
     .target Boarton Shadetotem
@@ -4481,7 +4481,7 @@ step << Rogue
     .xp >20,1
 step << Rogue
     .goto 1456/1,104.500,-1308.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Boarton Shadetotem|
     >>|cRXP_WARN_Está|r |T132320:0|t[En sigilo] 
     .train 1943 >>Aprende tus hechizos de clase
     .target Boarton Shadetotem
@@ -4564,7 +4564,7 @@ step << Mage
     .xp <22,1
 step << Paladin
     .goto 1456/1,253.900,-950.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alodan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alodan|r
     .train 1866 >>Aprende tus hechizos de clase
     .target Alodan the Hopeful 
     .xp <20,1
@@ -4572,7 +4572,7 @@ step << Paladin
 step << Paladin
     #optional
     .goto 1456/1,253.900,-950.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alodan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alodan|r
     .train 1026 >>Aprende tus hechizos de clase
     .target Alodan the Hopeful 
     .xp <22,1
@@ -4581,7 +4581,7 @@ step
     #label DeathDUPpickup
 step << Shaman
     .goto 1456/1,269.92,-980.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r |cRXP_WARN_outside|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tigor|r |cRXP_WARN_fuera|r
     .train 2645 >> Aprende tus hechizos de clase
     .target Tigor Skychaser
     .xp <20,1
@@ -4589,7 +4589,7 @@ step << Shaman
 step << Shaman
     #optional
     .goto 1456/1,269.92,-980.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r |cRXP_WARN_outside|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tigor|r |cRXP_WARN_fuera|r
     .train 8498 >> Aprende tus hechizos de clase
     .target Tigor Skychaser
     .xp <22,1
@@ -5376,7 +5376,7 @@ step
     .isQuestTurnedIn 875
 step
     #completewith next
-    >>Loot the |cRXP_PICK_Sprung Traps|r on the ground
+    >>Despoja las |cRXP_PICK_Sprung Traps|r en el suelo
     .complete 95507,1 --|8/8 Trapped Game
 step
     #loop
@@ -5387,7 +5387,7 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Kill |cRXP_LOOT_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
+    >>Mata a los |cRXP_LOOT_Savannah Patriarchs|r. Despoja sus |cRXP_LOOT_Hides|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Patriarch
 step
@@ -5399,14 +5399,14 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Loot the |cRXP_PICK_Sprung Traps|r on the ground
+    >>Despoja las |cRXP_PICK_Sprung Traps|r en el suelo
     .complete 95507,1 --|8/8 Trapped Game
 step
     .goto 1413/1,-1812.600,789.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vrang Wildgore|r
-    .turnin 95494 >>Turn in Bruised Pride and Lion Hides
-    .turnin 95507 >>Turn in Vrang's Game
-    .accept 95495 >>Accept The Hermit Tanner
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Vrang Sangrevaje|r
+    .turnin 95494 >>Entrega la misión Orgullo Magullado y la misión Lion Hides
+    .turnin 95507 >>Entrega la misión Vrang's Game
+    .accept 95495 >>Acepta la misión El ermitaño Curtidor
     .target Vrang Sangrevaje
     .isQuestComplete 95494
 step
@@ -5417,15 +5417,15 @@ step
     .goto 1413/1,-1605.300,818.300,20 >>Sube por la montaña
 step
     .goto 1413/1,-1635.400,838.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Walton|r
-    .turnin 95495 >>Turn in The Hermit Tanner
-    .accept 95621 >>Accept Trouble in the Valley
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Walton|r
+    .turnin 95495 >>Entrega la misión El ermitaño Curtidor
+    .accept 95621 >>Acepta la misión Trouble in the Valley
     .target Walton
     .isQuestTurnedIn 95494
 step
     .goto 1413/1,-1611.500,549.000
-    >>Kill |cRXP_ENEMY_Corporal Adamore|r
-    >>|cRXP_WARN_Be careful! You may aggro 2-3 mobs at the same time|r
+    >>Mata al |cRXP_ENEMY_Corporal Adamore|r
+    >>|cRXP_WARN_¡Ten cuidado! Podrías agarrar a 2-3 criaturas al mismo tiempo|r
     .complete 95621,1 --|1/1 Learn why the Kul Tirans are here
     .mob Corporal Adamore
     .isQuestTurnedIn 95494
@@ -5437,23 +5437,23 @@ step
     .goto 1413/1,-1605.300,818.300,20 >>Sube por la montaña
 step
     .goto 1413/1,-1635.500,838.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Walton|r
-    .turnin 95621 >>Turn in Trouble in the Valley
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Walton|r
+    .turnin 95621 >>Entrega la misión Trouble in the Valley
     .accept 95508 >>Acepta la misión Huéspedes no deseados
-    .timer 67,Unwelcome Guests RP
+    .timer 67,Huéspedes no deseados Roleplay
     .target Walton
     .isQuestTurnedIn 95494
 step
     .goto 1413/1,-1629.200,835.600
-    >>Move behind the house as you wait for the RP to finish to avoid getting aggro by all mobs at once
-    >>|cRXP_WARN_You don't actually need to assist |cRXP_FRIENDLY_Walton|r, he will survive with the help of|r |cRXP_FRIENDLY_Vrang Wildgore|r
+    >>Muévete detrás de la casa mientras esperas a que termine el Roleplay para evitar agarrar todas las criaturas a la vez
+    >>|cRXP_WARN_No necesitas asistir a |cRXP_FRIENDLY_Walton|r, sobrevivirá con la ayuda de|r |cRXP_FRIENDLY_Vrang Sangrevaje|r
     .complete 95508,1 --|1/1 Assist Walton
     .mob Terry Longdrink
     .isQuestTurnedIn 95494
 step
     .goto 1413/1,-1635.400,838.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Walton|r
-    .turnin 95508 >>Turn in Unwelcome Guests
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Walton|r
+    .turnin 95508 >>Entrega la misión Huéspedes no deseados
     .target Walton
     .isQuestTurnedIn 95494
 step << Hunter
@@ -5693,14 +5693,14 @@ step
     .goto 1442/1,928.20,1015.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Tammra|r
     .turnin 6401 >>Entrega la misión Kaya está viva
-    .accept 6301 >>Accept Cycle of Rebirth
+    .accept 6301 >>Acepta la misión El ciclo del renacimiento
     .target Tammra Windfield
     .isQuestTurnedIn 6523
 step
     .goto 1442/1,365.16,878.250
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ziz|r
     .turnin 1095 >>Entrega la misión Más instrucciones
-    .accept 1096 >>Accept Gerenzo Wrenchwhistle
+    .accept 1096 >>Acepta la misión Gerenzo Silbillave
     .target Ziz Fizziks
 step
     .line Stonetalon Mountains,70.82,55.25,70.52,56.22,69.76,56.70,68.52,56.04,67.77,55.97,66.94,56.25,66.41,56.31,65.74,57.20,65.14,57.02,64.37,56.47,63.72,56.80,62.99,56.25,62.32,56.11,61.58,55.10,61.10,54.68,60.98,54.06,59.81,53.51,59.66,52.14,60.33,51.68
@@ -5726,9 +5726,9 @@ step
     .goto 1442/1,-212.54,1117.59,80,0
     .goto 1442/1,332.44,1218.86,80,0
     .goto 1442/1,-202.900,1088.600
-    >>Kill |cRXP_ENEMY_XT:9|r
-    >>|cRXP_WARN_It patrols the southern side of the river|r
-    >>|cRXP_WARN_His spawn point is marked on your map|r
+    >>Mata al |cRXP_ENEMY_XT:9|r
+    >>|cRXP_WARN_Patrulla el lado sur del río|r
+    >>|cRXP_WARN_Su punto de aparición está marcado en tu mapa|r
     .complete 1068,2 --XT:9 (1)
     .unitscan XT:9
     .isQuestTurnedIn 1062
@@ -5757,8 +5757,8 @@ step << skip --better to do in stonetalon part 2
     .goto 1442/1,-233.54,1501.83,80,0
     .goto 1442/1,80.46,1378.74,80,0
     .goto 1442/1,80.46,1378.74,0
-    >>Kill |cRXP_ENEMY_XT:4|r
-    >>|cRXP_WARN_It patrols the northern side of the river|r
+    >>Mata al |cRXP_ENEMY_XT:4|r
+    >>|cRXP_WARN_Patrulla el lado norte del río|r
     >>|cRXP_WARN_Omite este paso si no puedes encontrarlo|r
     .complete 1068,1 --XT:4 (1)
     .unitscan XT:4
@@ -5805,8 +5805,8 @@ step << skip
     .zoneskip Ashenvale
 step
     .goto 1440/1,-632.700,2311.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Va'xug Firefure|r 
-    .accept 98251 >>Accept Never Coming Back
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Va'xug Firefure|r 
+    .accept 98251 >>Acepta la misión Never Coming Atrás
     .target Va'xug Firefure
 step
     #loop
@@ -5816,27 +5816,27 @@ step
     .goto 1440/1,-878.400,2168.400,50,0
     .goto 1440/1,-712.300,2023.900,50,0
     .goto 1440/1,-534.500,2045.100,50,0
-    >>Kill |cRXP_ENEMY_Ashenvale Bears|r and |cRXP_ENEMY_Shadowhorn Stags|r
-    >>|cRXP_WARN_Be care of |cRXP_ENEMY_Ursangous|r (strong lvl 25) that patrols in the area|r
+    >>Mata a los |cRXP_ENEMY_Ashenvale Osos|r y a los |cRXP_ENEMY_Shadowhorn Stags|r
+    >>|cRXP_WARN_Ten cuidado con |cRXP_ENEMY_Ursangous|r (fuerte nivel 25) que patrulla en la zona|r
     .complete 98251,2 --|6/6 Ashenvale Bear slain
     .mob +Ashenvale Bear
     .complete 98251,1 --|6/6 Shadowhorn Stag slain
     .mob +Shadowhorn Stag
 step
     .goto 1440/1,-632.900,2312.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Va'xug Firefure|r
-    .turnin 98251 >>Turn in Never Coming Back
-    .accept 98252 >>Accept A Void Path
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Va'xug Firefure|r
+    .turnin 98251 >>Entrega la misión Never Coming Atrás
+    .accept 98252 >>Acepta la misión A Vacío Camino
     .target Va'xug Firefure
 step
     .goto 1440/1,-545.200,2446.600
-    >>|cRXP_WARN_Run to the main road as the |cRXP_FRIENDLY_Eye of Kilrogg|r follows you|r
+    >>|cRXP_WARN_Corre hacia la carretera principal mientras |cRXP_FRIENDLY_Ojo de Kilrogg|r te sigue|r
     .complete 98252,1 --|1/1 Eye of Kilrogg guided to the road
     .target Eye of Kilrogg
 step
     .goto 1440/1,-545.500,2445.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eye of Kilrogg|r
-    .turnin 98252 >>Turn in A Void Path
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Ojo de Kilrogg|r
+    .turnin 98252 >>Entrega la misión A Vacío Camino
     .target Eye of Kilrogg
     .isQuestComplete 98252
 step
@@ -6199,7 +6199,7 @@ step
     .target Apothecary Zamah
 step << Paladin
     .goto 1456/1,253.900,-950.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alodan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alodan|r
     .train 1866 >>Aprende tus hechizos de clase
     .target Alodan the Hopeful 
     .xp <20,1
@@ -6207,7 +6207,7 @@ step << Paladin
 step << Paladin
     #optional
     .goto 1456/1,253.900,-950.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alodan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Alodan|r
     .train 1026 >>Aprende tus hechizos de clase
     .target Alodan the Hopeful 
     .xp <22,1
@@ -6532,7 +6532,7 @@ step << skip
     .target Nogg
 step
     .goto 1454/1,-4739.57,2036.84
-    .gossipoption 95758 >>Talk to |cRXP_FRIENDLY_Sovik|r
+    .gossipoption 95758 >>Habla con |cRXP_FRIENDLY_Sovik|r
     .isNotOnQuest 2842
     .target Sovik
 step
@@ -6543,7 +6543,7 @@ step
     .target Sovik
 step << skip
     #optional
-    .abandon 2841 >> Abandon Rig Wars. Make sure you have Chief Engineer Scooty in your quest log
+    .abandon 2841 >> Abandona Las guerras de la plataforma. Asegúrate de que tienes Scooty, ingeniero jefe en tu registro de misiones
     .dungeon !GNOMER
 step << Rogue
     .goto 1454/1,-4355.53,1520.68

@@ -1577,7 +1577,7 @@ step
     .accept 79094 >>Entrega la misión Las enseñanzas de Ta'zo
     .accept 79095 >>Entrega la misión El manual de la metafísica del boticario
     .accept 79096 >>Entrega la misión Ataeric: Tratado de curiosidades arcanas
-    .accept 79097 >>Turn in Baxtan: On Destructive Magics
+    .accept 79097 >>Entrega la misión Baxtan: Sobre la magia destructiva
     .accept 79535 >>Entrega la misión Los basiliscos y el infundado miedo a la petrificación
     .accept 79947 >>Entrega la misión Geomancia: De rocas y verdades
     .accept 79948 >>Entrega la misión Magia defensiva I
@@ -2001,7 +2001,7 @@ step
     .accept 79094 >>Entrega la misión Las enseñanzas de Ta'zo
     .accept 79095 >>Entrega la misión El manual de la metafísica del boticario
     .accept 79096 >>Entrega la misión Ataeric: Tratado de curiosidades arcanas
-    .accept 79097 >>Turn in Baxtan: On Destructive Magics
+    .accept 79097 >>Entrega la misión Baxtan: Sobre la magia destructiva
     .accept 79535 >>Entrega la misión Los basiliscos y el infundado miedo a la petrificación
     .accept 79947 >>Entrega la misión Geomancia: De rocas y verdades
     .accept 79948 >>Entrega la misión Magia defensiva I

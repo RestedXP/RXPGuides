@@ -746,7 +746,7 @@ step
 step
     .goto 1420/0,391.400,2289.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Guardia de la Muerte Bartholomew|r
-    >>|cRXP_WARN_He may be patrolling around the graveyard|r
+    >>|cRXP_WARN_Puede estar patrullando alrededor del cementerio|r
     .accept 86784 >>Acepta la misión Leños y huesos
     .target Deathguard Bartholomew
 step
@@ -1300,7 +1300,7 @@ step
     .goto 1420/0,243.200,2288.100
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_William|r
     .train 2550 >>Aprende Cocina
-    .turnin 96658 >>Turn in Camping 101: Cooking
+    .turnin 96658 >>Entrega la misión Campamento 101: Cocina
     .target William Pickman
 step << Rogue/Warrior
     .goto 1420/0,240.29,2246.30
@@ -2040,12 +2040,12 @@ step << Warrior
 step
     .goto 1420/0,254.600,2225.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Guardia de la Muerte Terrence|r
-    .accept 96895 >>Accept The Argent Emissary
+    .accept 96895 >>Acepta la misión The Argent Emisario
     .target Deathguard Terrence
 step << Paladin
     .goto 1420/0,311.600,2251.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Shari Fontana|r
-    .accept 91282 >>Accept A Second Home
+    .accept 91282 >>Acepta la misión A Second Home
     .trainer >>Aprende tus hechizos de clase
     .target Shari Stilwell
 step << Warlock
@@ -2569,7 +2569,7 @@ step
     .goto 1420/0,355.52,2429.76,30,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Holland|r
     >>|cRXP_WARN_Patrulla alrededor del cementerio|r
-    .turnin 99142 >>Turn in Tomb Weed
+    .turnin 99142 >>Entrega la misión Tomb Weed
     .target Junior Apothecary Holland
 
     --Bandarion Keep section
@@ -2587,7 +2587,7 @@ step
 step << Paladin
     .goto 1420/0,2045.900,2475.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Breton Samuels|r
-    .turnin 91282 >>Turn in A Second Home
+    .turnin 91282 >>Entrega la misión A Second Home
     .accept 91285 >>Acepta la misión Múrlocs al acecho
     .target Breton Samuels
 step
@@ -2605,7 +2605,7 @@ step
 step
     .goto 1420/0,2041.200,2416.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hilda, la Ultrajadora|r fuera
-    .accept 99152 >>Accept As Above, So Below
+    .accept 99152 >>Acepta la misión As Above, So Below
     .target Hilda the Breaker
 step
     .goto 1420/0,2122.100,2436.800
@@ -2705,7 +2705,7 @@ step
     .use 268812 >>Mata al |cRXP_ENEMY_Horror susurrante|r (élite). Despójalo para obtener |T134438:0|t[|cRXP_LOOT_Residuo de horror susurrante|r]
     >>|cRXP_WARN_¡Esto es difícil! Únete a un grupo si es posible. Tiene 700 de salud, pero su daño es manejable. Omite este paso si no puedes matarlo|r
     .collect 268812,1,95328 --Whispering Horror Residue (x1)
-    .accept 95328 >>Accept Whispering Horror Residue
+    .accept 95328 >>Acepta la misión Horror susurrante Residuo
     .mob Whispering Horror
 step
     #requires ShadowValeCrypt
@@ -2735,7 +2735,7 @@ step
 step
     .goto 1420/0,2037.100,2416.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Hilda, la Ultrajadora|r
-    .turnin 99152 >>Turn in As Above, So Below
+    .turnin 99152 >>Entrega la misión As Above, So Below
     .target Hilda the Breaker
 step
     .goto 1420/0,2122.500,2436.800
@@ -2916,7 +2916,7 @@ step << Warrior
 step
     #ah
     .goto 1458/0,224.300,1648.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Cain|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Subastador Cain|r
     >>|cRXP_BUY_Compra tres|r |T133884:0|t[Ojos de múrloc] |cRXP_BUY_en la Casa de subastas|r
     >>|cRXP_WARN_Omitir esto si quieres, es solo un pequeño ahorro de tiempo|r
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
@@ -2967,7 +2967,7 @@ step << Rogue
 step
     .goto 1458/0,399.800,1776.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Padre Lankester|r
-    .turnin 95328 >>Turn in Whispering Horror Residue
+    .turnin 95328 >>Entrega la misión Horror susurrante Residuo
     .target Father Lankester
     .isOnQuest 95328
 step << Priest
@@ -3191,11 +3191,11 @@ step << Paladin
 step << !Paladin
     #completewith Entersilverpine
     #optional
-    .abandon 96899 >>Abandon Bandarion Keep
+    .abandon 96899 >>Abandona la misión Bandarion Keep
 step << !Paladin
     #completewith Entersilverpine
     #optional
-    .abandon 95314 >>Abandon That Shadowvale Green Elixir
+    .abandon 95314 >>Abandona la misión That Shadowvale Verde Elixir
 step << !Paladin
     #completewith next
     .goto 1458/0,419.89,1627.54,50,0
@@ -3275,7 +3275,7 @@ step
     .unitscan Gorefang
 step
     .goto 1421/0,715.000,1335.400
-    >>Kill |cRXP_ENEMY_Vile Fin Murlocs|r. Loot them for their |T133884:0|t[|cRXP_LOOT_Murloc Eyes|r]
+    >>Mata a los |cRXP_ENEMY_Vile Fin Murlocs|r. Despójalos para obtener los |T133884:0|t[|cRXP_LOOT_Murloc Ojos|r]
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .mob Vile Vin Shredder
     .mob Vile Vin Tidehunter
@@ -3446,7 +3446,7 @@ step
     .target Quinn Yorick
 step
     .goto 1421/0,715.000,1335.400
-    >>Kill |cRXP_ENEMY_Vile Fin Murlocs|r. Loot them for their |T133884:0|t[|cRXP_LOOT_Murloc Eyes|r]
+    >>Mata a los |cRXP_ENEMY_Vile Fin Murlocs|r. Despójalos para obtener los |T133884:0|t[|cRXP_LOOT_Murloc Ojos|r]
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .mob Vile Vin Shredder
     .mob Vile Vin Tidehunter
@@ -4018,7 +4018,7 @@ step << Undead Warlock
     .xp <16,1
 step << Paladin
     .goto 1458/0,418.500,1782.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Garen|r
     .train 647 >>Aprende tus hechizos de clase
     .target Garen Largo
     .xp <14,1
@@ -4026,7 +4026,7 @@ step << Paladin
 step << Paladin
     #optional
     .goto 1458/0,418.500,1782.600
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Garen|r
     .train 7294 >>Aprende tus hechizos de clase
     .target Garen Largo
     .xp <16,1

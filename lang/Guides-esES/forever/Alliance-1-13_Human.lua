@@ -1756,13 +1756,13 @@ step
 step
     .goto 1429,47.5,62.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Jason Mathers|r
-    .accept 99127 >> Accept A Net Disaster
+    .accept 99127 >> Acepta la misión A Red Disaster
     .target Jason Mathers
 step
     #softcore
     .goto 1429,47.6,62.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lee Moreno|r
-    .accept 99143 >> Accept Bottles and Baubles
+    .accept 99143 >> Acepta la misión Bottles and Baubles
     .target Lee Brown
 step
     #loop
@@ -1775,8 +1775,8 @@ step
 step
     .goto 1429,47.5,62.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Jason Mathers|r
-    .turnin 99127 >> Turn in A Net Disaster
-    .accept 99128 >> Accept Slimy Menace
+    .turnin 99127 >> Entrega la misión A Red Disaster
+    .accept 99128 >> Acepta la misión Amenaza Babosa
     .target Jason Mathers
 step
     #softcore
@@ -1855,14 +1855,14 @@ step
     .isQuestComplete 99143
     .goto 1429,47.6,62.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lee Moreno|r
-    .turnin 99143 >> Turn in Bottles and Baubles
+    .turnin 99143 >> Entrega la misión Bottles and Baubles
     .target Lee Brown
 --xx abandon if didnt complete/check routing for potential later turnin
 step
     .goto 1429,47.5,62.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Jason Mathers|r
-    .turnin 99128 >> Turn in Slimy Menace
-    .accept 99129 >> Accept A Man About a Murloc
+    .turnin 99128 >> Entrega la misión Amenaza Babosa
+    .accept 99129 >> Acepta la misión A Man About a Múrloc
     .target Jason Mathers
 
 step << Warrior/Paladin/Rogue
@@ -2330,7 +2330,7 @@ step
     .use 247826 >> |cRXP_WARN_Usa la|r |T134169:0|t[|cRXP_LOOT_Cabeza de Croaky|r] |cRXP_WARN_para iniciar la misión|r
     >>|cRXP_WARN_Es un enemigo élite de nivel 11. Omite este paso si no puedes matarlo|r
     .collect 247826,1,91740,1 -- Croaky's Head (1)
-    .accept 91740 >>Accept Croaky's Head
+    .accept 91740 >>Acepta la misión Croaky's Cabeza
     .mob Croaky
 step
     #loop
@@ -2455,9 +2455,9 @@ step
     #optional
     .isQuestComplete 91740
     .goto 1429/0,-1406.200,-9775.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merell Ross::248277|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Merell Ross::248277|r
     .target Merell Ross::248277
-    .turnin 91740 >>Turn in Croaky's Head
+    .turnin 91740 >>Entrega la misión Cabeza de Croaky
 step << !Warlock
     #optional
     #label WolfMeatCooking8
@@ -2598,7 +2598,7 @@ step
     .goto 1429/0,-69.500,-9380.200
     .isQuestComplete 91746
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Helene Desollapelambres|r
-    .turnin 91746 >> Turn in Elmpaw's Head
+    .turnin 91746 >> Entrega la misión Elmpaw's Cabeza
     .target Helene Peltskinner
 step
     #optional
@@ -2758,7 +2758,7 @@ step << !Warlock
 step
     .goto 1429/0,72.81,-9496.23--c:Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Remy "Dos Veces"|r
-    .turnin 99129 >> Turn in A Man About a Murloc
+    .turnin 99129 >> Entrega la misión A Man About a Múrloc
     --.accept 99130 >> Accept An Enticing Offer
     .target Remy "Two Times"
     --skipping the follow up. terrible drop rates/respawn times
@@ -2772,13 +2772,13 @@ step << skip
 step << skip
     .goto 1429/0,72.81,-9496.23--c:Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Remy "Dos Veces"|r
-    .turnin 99130 >> Turn in An Enticing Offer
-    .accept 99131 >> Accept Baited for Success
+    .turnin 99130 >> Entrega la misión An Tentador Offer
+    .accept 99131 >> Acepta la misión Baited for Éxito
     .target Remy "Two Times"
 sstep << skip
     .goto 1429,47.5,62.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Jason Mathers|r
-    .turnin 99131 >> Turn in Baited for Success
+    .turnin 99131 >> Entrega la misión Baited for Éxito
     .target Jason Mathers
 
 
@@ -3098,10 +3098,10 @@ step << Priest/Mage/Warlock
     #ah
     .goto 1453/0,660.28,-8814.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Subastadora Jaxon|r
-    >>|cRXP_WARN_Buy the following if you can afford it:|r
-    >>|T134711:0|t[Minor Wizard Oil] |cRXP_WARN_and|r |T133906:0|t[Smoked Sagefish]
-    >>|cRXP_WARN_Also check for any high DPS|r |T132317:0|t[Wand] |cRXP_WARN_upgrades that you can use now/soon|r
-    >>|cRXP_WARN_These will provide a high DPS increase in early levels. If you don't want to or can't do this, skip this step|r
+    >>|cRXP_WARN_Compra lo siguiente si puedes permitírtelo:|r
+    >>|T134711:0|t[Aceite de zahorí menor] |cRXP_WARN_y|r |T133906:0|t[Sabiola ahumada]
+    >>|cRXP_WARN_También busca mejoras de DPS altas|r |T132317:0|t[Varita] |cRXP_WARN_que puedas usar ahora/pronto|r
+    >>|cRXP_WARN_Estos proporcionarán un aumento de DPS alto en los primeros niveles. Si no quieres hacerlo o no puedes, omite este paso|r
     .collect 20744,1 -- Minor Wizard Oil (1)
     .collect 21072,20 -- Smoked Sagefish (20)
     .target Auctioneer Jaxon
@@ -3110,7 +3110,7 @@ step << Rogue
     #optional
     .goto 1453/0,607.38,-8790.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gunther Pozador|r
-    >>|cRXP_BUY_Buy a|r |T132402:0|t[Hatchet] |cRXP_BUY_from him. Equip it later when you're level 11|r
+    >>|cRXP_BUY_Compra una|r |T132402:0|t[Hachuela] |cRXP_BUY_de él. Equípala más tarde cuando llegues al nivel 11|r
     .collect 853,1 -- Hatchet (1)
     .target Gunther Weller
     .money <0.2490
@@ -3121,7 +3121,7 @@ step << Rogue
     #optional
     .goto 1453/0,607.38,-8790.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gunther Pozador|r
-    >>|cRXP_BUY_Buy a|r |T132402:0|t[Hatchet] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Compra una|r |T132402:0|t[Hachuela] |cRXP_BUY_de él|r
     .collect 853,1 -- Hatchet (1)
     .target Gunther Weller
     .money <0.2490
@@ -3132,7 +3132,7 @@ step << Rogue
     #ah
     .goto 1453/0,607.38,-8790.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gunther Pozador|r
-    >>|cRXP_BUY_Buy a|r |T132402:0|t[Hatchet] |cRXP_BUY_from him. Equip it later when you're level 11|r
+    >>|cRXP_BUY_Compra una|r |T132402:0|t[Hachuela] |cRXP_BUY_de él. Equípala más tarde cuando llegues al nivel 11|r
     >>|cRXP_WARN_Alternativamente, busca en la Casa de subastas algo mejor o más barato|r
     >>|cRXP_WARN_Asegúrate de guardar 6 de plata para aprender facultades después|r
     .collect 853,1 -- Hatchet (1)
@@ -3144,7 +3144,7 @@ step << Rogue
     #ah
     .goto 1453/0,607.38,-8790.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gunther Pozador|r
-    >>|cRXP_BUY_Buy a|r |T132402:0|t[Hatchet] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Compra una|r |T132402:0|t[Hachuela] |cRXP_BUY_de él|r
     >>|cRXP_WARN_Alternativamente, busca en la Casa de subastas algo mejor o más barato|r
     >>|cRXP_WARN_Asegúrate de guardar 6 platas para aprender facultades después|r
     .collect 853,1 -- Hatchet (1)
@@ -3154,7 +3154,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith Continue
-    +|cRXP_WARN_Equip the|r |T132402:0|t[Hatchet]
+    +|cRXP_WARN_Equipa la|r |T132402:0|t[Hachuela]
     .use 853
     .itemcount 853,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.2
@@ -3829,7 +3829,7 @@ step
     .goto 1426/0,-682.300,-5489.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Beldin Brasacerada::1376|r 
     .target Beldin Steelgrill::1376
-    .accept 96408 >>Accept A Visitor to Dun Morogh
+    .accept 96408 >>Acepta la misión A Visitor to Dun Morogh
 step
     #optional
     #label BoarMeatDunMorogh1
@@ -3928,14 +3928,14 @@ step
 step
     #label QuarryStart
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
-    .turnin -96408 >> Turn in A Visitor to Dun Morogh
-    .accept 96392 >> Accept Farsen's Watch
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
+    .turnin -96408 >> Entrega la misión A Visitor to Dun Morogh
+    .accept 96392 >> Acepta la misión Farsen's Observar
     .target Earthseer Farsen
 step
     .isOnQuest 96392
     .goto 1426/0,-1394.24,-5797.83
-    .gossipoption 139831 >> Talk to |cRXP_FRIENDLY_Earthseer Farsen|r to view his farsight
+    .gossipoption 139831 >> Habla con |cRXP_FRIENDLY_Earthseer Farsen|r para ver su vista lejana
     >>|cRXP_WARN_Puedes cancelar la Vista lejana cuando se completa el objetivo|r
     .target Earthseer Farsen
 step
@@ -3943,17 +3943,17 @@ step
     .aura -1293681 >> |cRXP_WARN_Presiona ESC para cancelar la Vista lejana|r
 step << skip
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
     >>|cRXP_WARN_Puedes cancelar la Vista lejana cuando se completa el objetivo|r
     .complete 96392,1 -- Use Farsen's Farsight
     .skipgossip
     .target Earthseer Farsen
 step
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
     >>|cRXP_WARN_Presiona ESC para cancelar la Vista lejana|r
-    .turnin 96392 >> Turn in Farsen's Watch
-    .accept 96390 >> Accept Nip 'Em in the Bud
+    .turnin 96392 >> Entrega la misión Farsen's Observar
+    .accept 96390 >> Acepta la misión Nip 'Em in the Compa
     .target Earthseer Farsen
 step
     #optional
@@ -4021,7 +4021,7 @@ step
     .use 268548 >> |cRXP_WARN_Usa el|r |T132621:0|t[|cRXP_LOOT_Tonel de pólvora vacío|r] |cRXP_WARN_para iniciar la misión|r
     >>|cRXP_WARN_NOTA: Este objeto tiene una baja probabilidad de caída. Omite este paso si no lo encuentras para cuando hayas terminado con los|r |cRXP_ENEMY_Espías Hierro Negro|r
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
-    .accept 95213 >> Accept Stolen Blasting Powder
+    .accept 95213 >> Acepta la misión Stolen Reventar Powder
     .mob Rockjaw Ambusher
 step
     .goto 1426/0,-2009.87,-5860.22,40,0
@@ -4035,23 +4035,23 @@ step
 step
     #label OII
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
-    .turnin 96390 >> Turn in Nip 'Em in the Bud
-    .turnin 96391 >> Turn in Underground Map
-    .accept 96393 >> Accept Old Ironforge Incursion
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
+    .turnin 96390 >> Entrega la misión Nip 'Em in the Compa
+    .turnin 96391 >> Entrega la misión Subterráneo Mapa
+    .accept 96393 >> Acepta la misión Old Ironforge Incursion
     .target Earthseer Farsen
 step
     .isOnQuest 95213
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
-    .turnin 95213 >> Turn in Stolen Blasting Powder
-    .accept 95214 >> Accept Stolen Blasting Powder
+    .turnin 95213 >> Entrega la misión Stolen Reventar Powder
+    .accept 95214 >> Acepta la misión Stolen Reventar Powder
     .target Quarrymaster Thesten
 step
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
-    .accept 95214 >> Accept Stolen Blasting Powder
+    .accept 95214 >> Acepta la misión Stolen Reventar Powder
     .target Quarrymaster Thesten
 step
     .isOnQuest 95214
@@ -4069,7 +4069,7 @@ step
     .isQuestComplete 95214
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
-    .turnin 95214 >> Turn in Stolen Blasting Powder
+    .turnin 95214 >> Entrega la misión Stolen Reventar Powder
     .target Quarrymaster Thesten
 step
     .goto 1426/0,-2197.02,-5279.07,45,0
@@ -4848,17 +4848,17 @@ step << Rogue
 --Hunter going Darkshore, rest Westfall
 step << Hunter
     .goto 1453/0,765.700,-8804.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catherine Leland|r
-    >>|cRXP_BUY_Buy one|r |T134335:0|t[Shiny Bauble] |cRXP_BUY_and three|r |T134324:0|t[Nightcrawlers] |cRXP_BUY_from her. This is for a 900xp quest|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Catherine Leland|r
+    >>|cRXP_BUY_Compra uno|r |T134335:0|t[Adorno lustroso] |cRXP_BUY_y tres|r |T134324:0|t[Reptadores nocturnos] |cRXP_BUY_de ella. Esto es para una misión de 900 xp|r
     .collect 6529,1,95065,1 --|1/1 Shiny Bauble
     .collect 6530,3,95065,1 --|3/3 Nightcrawlers
     .target Catherine Leland
 step << Hunter
     .goto 1453/0,1269.100,-8540.601
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilbert Gray::267118|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Gilbert Gris::267118|r
     .target Gilbert Gray::267118
-    .accept 95065 >>Accept Fishin' Time
-    .turnin 95065 >>Turn in Fishin' Time
+    .accept 95065 >>Acepta la misión Fishin' Tiempo
+    .turnin 95065 >>Entrega la misión Fishin' Tiempo
 step << Hunter
     #optional
     #requires DockTravel

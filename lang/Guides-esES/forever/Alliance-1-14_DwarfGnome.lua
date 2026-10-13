@@ -751,7 +751,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Maxan Anvol::1226|r 
     .target Maxan Anvol::1226
     .accept 5625 >> Acepta la misión Las prendas de la Luz << Priest
-    .accept 99158 >>Accept Dawn in the Mountains
+    .accept 99158 >>Acepta la misión Alba in the Mountains
 step << Priest
     .goto 1426/0,-453.81,-5668.73
     >>|cRXP_WARN_Lanza|r |T135929:0|t[Sanación inferior] (Rango 2) |cRXP_WARN_y luego|r |T135987:0|t[Palabra de poder: entereza] |cRXP_WARN_al |cRXP_FRIENDLY_Montaraz Dolf|r que está fuera|r
@@ -1411,7 +1411,7 @@ step << Hunter
     .goto 1426/0,-1041.000,-5350.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Padre Gavin::1253|r
     .target Father Gavin::1253
-    .turnin 99158 >>Turn in Dawn in the Mountains
+    .turnin 99158 >>Entrega la misión Alba in the Mountains
 step << Hunter
     #completewith Rudra
     #label Dirt
@@ -1687,7 +1687,7 @@ step
     .goto 1426/0,-682.300,-5489.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Beldin Brasacerada::1376|r 
     .target Beldin Steelgrill::1376
-    .accept 96408 >>Accept A Visitor to Dun Morogh
+    .accept 96408 >>Acepta la misión A Visitor to Dun Morogh
 step << Warrior
     #optional
     #completewith WarriorThrown
@@ -1769,7 +1769,7 @@ step << !Hunter
     .goto 1426/0,-1041.000,-5350.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Padre Gavin::1253|r
     .target Father Gavin::1253
-    .turnin 99158 >>Turn in Dawn in the Mountains
+    .turnin 99158 >>Entrega la misión Alba in the Mountains
 step << !Hunter
     #completewith Rudra
     #label Dirt
@@ -1829,14 +1829,14 @@ step
     .subzoneskip 134 --Gol'Bolar Quarry
 step
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
-    .turnin 96408 >> Turn in A Visitor to Dun Morogh
-    .accept 96392 >> Accept Farsen's Watch
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
+    .turnin 96408 >> Entrega la misión A Visitor to Dun Morogh
+    .accept 96392 >> Acepta la misión Farsen's Observar
     .target Earthseer Farsen
 step
     .isOnQuest 96392
     .goto 1426/0,-1394.24,-5797.83
-    .gossipoption 139831 >> Talk to |cRXP_FRIENDLY_Earthseer Farsen|r to view his farsight
+    .gossipoption 139831 >> Habla con |cRXP_FRIENDLY_Earthseer Farsen|r para ver su vista lejana
     >>|cRXP_WARN_Puedes cancelar la Vista lejana cuando se completa el objetivo|r
     .target Earthseer Farsen
 step
@@ -1844,17 +1844,17 @@ step
     .aura -1293681 >> |cRXP_WARN_Presiona ESC para cancelar la Vista lejana|r
 step << skip
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
     >>|cRXP_WARN_Puedes cancelar la Vista lejana cuando se completa el objetivo|r
     .complete 96392,1 -- Use Farsen's Farsight
     .skipgossip
     .target Earthseer Farsen
 step
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
     >>|cRXP_WARN_Presiona ESC para cancelar la Vista lejana|r
-    .turnin 96392 >> Turn in Farsen's Watch
-    .accept 96390 >> Accept Nip 'Em in the Bud
+    .turnin 96392 >> Entrega la misión Farsen's Observar
+    .accept 96390 >> Acepta la misión Nip 'Em in the Compa
     .target Earthseer Farsen
 step
     #optional
@@ -1982,7 +1982,7 @@ step
     .use 268548 >> |cRXP_WARN_Usa el|r |T132621:0|t[|cRXP_LOOT_Tonel de pólvora vacío|r] |cRXP_WARN_para iniciar la misión|r
     >>|cRXP_WARN_NOTA: Este objeto tiene una baja probabilidad de caída. Omite este paso si no lo encuentras para cuando hayas terminado con los|r |cRXP_ENEMY_Espías Hierro Negro|r
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
-    .accept 95213 >> Accept Stolen Blasting Powder
+    .accept 95213 >> Acepta la misión Stolen Reventar Powder
     .mob Rockjaw Ambusher
 step
     .goto 1426/0,-2009.87,-5860.22,40,0
@@ -1996,23 +1996,23 @@ step
 step
     #label OII
     .goto 1426/0,-1394.24,-5797.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
-    .turnin 96390 >> Turn in Nip 'Em in the Bud
-    .turnin 96391 >> Turn in Underground Map
-    .accept 96393 >> Accept Old Ironforge Incursion
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Earthseer Farsen|r
+    .turnin 96390 >> Entrega la misión Nip 'Em in the Compa
+    .turnin 96391 >> Entrega la misión Subterráneo Mapa
+    .accept 96393 >> Acepta la misión Old Ironforge Incursion
     .target Earthseer Farsen
 step
     .isOnQuest 95213
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
-    .turnin 95213 >> Turn in Stolen Blasting Powder
-    .accept 95214 >> Accept Stolen Blasting Powder
+    .turnin 95213 >> Entrega la misión Stolen Reventar Powder
+    .accept 95214 >> Acepta la misión Stolen Reventar Powder
     .target Quarrymaster Thesten
 step
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
-    .accept 95214 >> Accept Stolen Blasting Powder
+    .accept 95214 >> Acepta la misión Stolen Reventar Powder
     .target Quarrymaster Thesten
 step
     .isOnQuest 95214
@@ -2030,7 +2030,7 @@ step
     .isQuestComplete 95214
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Capataz de cantera Thesten|r
-    .turnin 95214 >> Turn in Stolen Blasting Powder
+    .turnin 95214 >> Entrega la misión Stolen Reventar Powder
     .target Quarrymaster Thesten
 step
     #completewith next
@@ -2294,7 +2294,7 @@ step << Dwarf/Gnome
     .target Golnir Bouldertoe
 step << Shaman
     .goto 1455/0,-1086.500,-4642.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldrun Stormbreaker::258098|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Eldrun Rompetormentas::258098|r 
     .target Eldrun Stormbreaker::258098
     .accept 94449 >>Acepta la misión La llamada del fuego
     .trainer >> Aprende tus hechizos de clase
@@ -3032,7 +3032,7 @@ step
     .use 247826 >> |cRXP_WARN_Usa la|r |T134169:0|t[|cRXP_LOOT_Cabeza de Croaky|r] |cRXP_WARN_para iniciar la misión|r
     >>|cRXP_WARN_Es un enemigo élite de nivel 11. Omite este paso si no puedes matarlo|r
     .collect 247826,1,91740,1 -- Croaky's Head (1)
-    .accept 91740 >>Accept Croaky's Head
+    .accept 91740 >>Acepta la misión Croaky's Cabeza
     .mob Croaky
 step
     #loop
@@ -3100,9 +3100,9 @@ step
 step
     .isOnQuest 91740
     .goto 1429/0,-1406.200,-9775.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merell Ross::248277|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Merell Ross::248277|r
     .target Merell Ross::248277
-    .turnin 91740 >>Turn in Croaky's Head
+    .turnin 91740 >>Entrega la misión Cabeza de Croaky
 step
     #completewith next
     .goto 1433/0,-1948.56,-9582.75
@@ -3950,7 +3950,7 @@ step << Shaman
     .complete 94467,1 -- Glowing Ember (1)
 step << Shaman
     .goto 1432/0,-2870.700,-5674.600
-    >>Click the |cRXP_PICK_Brazier of the Dormant Flame|r
+    >>Haz clic en el |cRXP_PICK_Brasero de la Llama Durmiente|r
     .turnin 94467 >>Entrega la misión La llamada del fuego
     .accept 94468 >>Acepta la misión La llamada del fuego
 step
@@ -4000,17 +4000,17 @@ step
     .goto 1432/0,-3251.5499,-5285.8790,0
     .goto 1432/0,-3342.5748,-5484.5540,0
     .goto 1432/0,-3386.7082,-5462.4790,0
-    >>Click the |cRXP_PICK_Discarded Fishing Toolbox|r on the lake floor
-    >>|cRXP_WARN_NOTE: This can spawn in one of many different locations. Swim around until you see the exclamation point on your minimap|r
+    >>Haz clic en la |cRXP_PICK_Caja de herramientas de pesca descartada|r en el piso del lago
+    >>|cRXP_WARN_NOTA: Esto puede aparecer en una de muchas ubicaciones diferentes. Nada alrededor hasta que veas el signo de exclamación en tu minimapa|r
     >>|cRXP_WARN_Ten cuidado con los|r Jóvenes trillanodontes|cRXP_ENEMY_ de nivel alto|r
-    .accept 86614 >>Accept Silver of the Waves
+    .accept 86614 >>Acepta la misión Plateado of the Waves
     .xp <13,1
 step
     .goto 1432/0,-3104.900,-5210.100,5,0
     .goto 1432/0,-3086.600,-5216.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Khara Aguahonda::1684|r
     .target Khara Deepwater::1684
-    .turnin 86614 >>Turn in Silver of the Waves
+    .turnin 86614 >>Entrega la misión Plateado of the Waves
     .xp <13,1
 step << !Dwarf/!Paladin
     .goto 1432/0,-2929.87,-5424.84
@@ -4067,7 +4067,7 @@ step << Dwarf Paladin
 step << Rogue
     .goto 1455/0,-1197.27,-5041.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Buliwyf Petramano|r dentro
-    .train 196 >> Train 1h Axes
+    .train 196 >> Aprende Hachas de 1 mano
     .target Buliwyf Stonehand
 step << Paladin
     .goto 1455/0,-907.69,-4592.93
@@ -4091,7 +4091,7 @@ step << Dwarf Paladin
     .target Tiza Battleforge
 step << Shaman
     .goto 1455/0,-1086.500,-4642.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eldrun Stormbreaker::258098|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Eldrun Rompetormentas::258098|r 
     .target Eldrun Stormbreaker::258098
     .trainer >> Aprende tus hechizos de clase
 step << Mage/Priest/Warlock
@@ -4693,10 +4693,10 @@ step
     .goto 1432/0,-3251.5499,-5285.8790,0
     .goto 1432/0,-3342.5748,-5484.5540,0
     .goto 1432/0,-3386.7082,-5462.4790,0
-    >>Click the |cRXP_PICK_Discarded Fishing Toolbox|r on the lake floor
-    >>|cRXP_WARN_NOTE: This can spawn in one of many different locations. Swim around until you see the exclamation point on your minimap|r
+    >>Haz clic en la |cRXP_PICK_Caja de herramientas de pesca descartada|r en el piso del lago
+    >>|cRXP_WARN_NOTA: Esto puede aparecer en una de muchas ubicaciones diferentes. Nada alrededor hasta que veas el signo de exclamación en tu minimapa|r
     >>|cRXP_WARN_Ten cuidado con los|r Jóvenes trillanodontes|cRXP_ENEMY_ de nivel alto|r
-    .accept 86614 >>Accept Silver of the Waves
+    .accept 86614 >>Acepta la misión Plateado of the Waves
     .xp <13,1
 step
     #optional
@@ -4704,7 +4704,7 @@ step
     .goto 1432/0,-3086.600,-5216.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Khara Aguahonda::1684|r
     .target Khara Deepwater::1684
-    .turnin 86614 >>Turn in Silver of the Waves
+    .turnin 86614 >>Entrega la misión Plateado of the Waves
     .xp <13,1
 step
     #completewith next

@@ -780,7 +780,7 @@ step
     .mob Webwood Lurker
     .mob Webwood Venomfang
 step
-    >>Kill |cRXP_ENEMY_Nightsabers|r. Loot them for their |cRXP_LOOT_Fangs|r and |cRXP_LOOT_Pelts|r
+    >>Mata a los |cRXP_ENEMY_Nightsabers|r. Despójalos para obtener |cRXP_LOOT_Colmillos|r y |cRXP_LOOT_Pieles|r
     >>Mata |cRXP_ENEMY_Lechuzas estrígidas|r. Despójalas para obtener sus |cRXP_LOOT_Plumas|r
     >>Mata |cRXP_ENEMY_Rondadores Tejemadera|r. Despójalos para obtener su |cRXP_LOOT_Seda|r
     >>|cRXP_WARN_Guarda cualquier|r |T132832:0|t[Huevo pequeño] |cRXP_WARN_y|r |T134321:0|t[Pata de araña pequeña] |cRXP_WARN_para subir|r |T133971:0|t[Cocina] |cRXP_WARN_después|r
@@ -1047,7 +1047,7 @@ step
     .target Brannol Eaglemoon
 step
     #completewith spiderLegs
-    >>Kill |cRXP_ENEMY_Nightsabers|r. Loot them for their |cRXP_LOOT_Fangs|r and |cRXP_LOOT_Pelts|r
+    >>Mata a los |cRXP_ENEMY_Nightsabers|r. Despójalos para obtener |cRXP_LOOT_Colmillos|r y |cRXP_LOOT_Pieles|r
     .complete 87288,1 --Soft Nightsaber Pelt (x6)
     .mob Nightsaber
 step
@@ -1217,12 +1217,12 @@ step << Priest
     .goto 1438/1,985.45,9905.43
     .target Laurna Morninglight
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Laurna Luzdelalba|r
-    >>|cRXP_WARN_Skip this step if you already trained level 8 spells|r
+    >>|cRXP_WARN_Omitir|r este paso si ya entrenaste hechizos de nivel 8
 	.trainer >> Aprende tus hechizos de clase
 step
     #optional
     #completewith next
-    >>Kill |cRXP_ENEMY_Nightsabers|r. Loot them for their |cRXP_LOOT_Fangs|r and |cRXP_LOOT_Pelts|r
+    >>Mata a los |cRXP_ENEMY_Nightsabers|r. Despójales de sus |cRXP_LOOT_Colmillos|r y |cRXP_LOOT_Pelts|r
     .complete 87288,1 --Soft Nightsaber Pelt (x6)
     .mob Nightsaber
     .isOnQuest 87288
@@ -1235,7 +1235,7 @@ step
     #label Melenas
     .goto 1438/1,1207.65,10114.01
     >>Mata a |cRXP_ENEMY_Lord Melenas|r. Despójalo para obtener su |cRXP_LOOT_Cabeza|r
-    >>You can use the |T134296:0|t[|cRXP_FRIENDLY_Severed Voodoo Claws|r] on him to severely reduce his damage!
+    >>¡Puedes usar las |T134296:0|t[|cRXP_FRIENDLY_Severed Vudú Claws|r] en él para reducir severamente su daño!
     >>|cRXP_ENEMY_Lord Melenas|r puede estar ubicado en muchos lugares diferentes en Roca Mácula
     .complete 932,1 --Collect Melenas' Head (x1)
     .unitscan Lord Melenas
@@ -1311,7 +1311,7 @@ step
     .goto 1438/1,1863.46,10665.16,50 >> Viaja al Claro del Oráculo
 step
     .goto 1438/1,1899.700,10582.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Eralya Leafshadow::275683|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Sentinel Eralya Sombra de Hoja::275683|r
     .target Sentinel Eralya Leafshadow::275683
     .turnin 99046 >>Entrega la misión La corredora perdida
     .accept 99047 >>Acepta la misión Aún con vida
@@ -1357,7 +1357,7 @@ step
     .goto 1438/1,2102.82,10819.27,0,0
     >>Mata a las |cRXP_ENEMY_Arpías Sangrepluma|r. Despójalas para conseguir sus |cRXP_LOOT_Cinturones|r
     >>|cRXP_ENEMY_Matriarcas Sangrepluma|r |cRXP_WARN_lanzan|r |T136052:0|t[Ola de sanación] |cRXP_WARN_y|r |T136048:0|t[Descarga de relámpagos] |cRXP_WARN_que hace mucho daño. Intenta derrotarlas rápidamente|r
-    >>|cRXP_WARN_Avoid fighting them as much as you can|r
+    >>|cRXP_WARN_Evita|r pelear con ellos lo máximo posible
     .complete 937,1 --Collect Bloodfeather Belt (x6)
     .mob Bloodfeather Harpy
     .mob Bloodfeather Rogue
@@ -1369,23 +1369,23 @@ step << Druid/Priest
     .goto 1438/1,1864.47,10663.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Centinela Arynia Quiebranubes|r
     .turnin 937 >> Entrega la misión El claro encantado
-    .accept 98392 >> Accept Darkness in the Glade
+    .accept 98392 >> Acepta la misión Oscuridad in the Glade
     .target Sentinel Arynia Cloudsbreak
 step << Druid/Priest
     .goto 1438/1,2032.50,10500.90--c:Teldrassil,35.0,39.2
-    >>Kill |cRXP_ENEMY_Hatescreech|r. Loot her for her |T133288:0|t[|cRXP_LOOT_Amulet|r]
+    >>Mata a |cRXP_ENEMY_Hatescreech|r. Despójala de su |T133288:0|t[|cRXP_LOOT_Amulet|r]
     .complete 98392,1
     .mob Hatescreech
 step << Druid/Priest
     .goto 1438/1,2103.78,10623.08--c:Teldrassil,33.6,35.6
-    >>Kill |cRXP_ENEMY_Windmistress Gaedress|r. Loot her for her |T133333:0|t[|cRXP_LOOT_Amulet|r]
+    >>Mata a |cRXP_ENEMY_Windmistress Gaedress|r. Despójala de su |T133333:0|t[|cRXP_LOOT_Amulet|r]
     .complete 98392,2
     .mob Windmistress Gaedress
 step << Druid/Priest
     .goto 1438/1,2042.68,10860.64--c:Teldrassil,34.8,28.6
-    >>Kill |cRXP_ENEMY_Witchmother Arysa|r. Loot her for her |T133324:0|t[|cRXP_LOOT_Amulet|r]
-    >>|cRXP_ENEMY_Witchmother Arysa|r and |cRXP_ENEMY_Bloodfeather Matriarchs|r |cRXP_WARN_cast|r |T136052:0|t[Healing Wave] |cRXP_WARN_and|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_which does a lot of damage. Try to burst them fast|r
-    >>|cRXP_WARN_Avoid fighting the Matriarchs as much as you can|r
+    >>Mata a |cRXP_ENEMY_Witchmother Arysa|r. Despójala de su |T133324:0|t[|cRXP_LOOT_Amulet|r]
+    >>|cRXP_ENEMY_Witchmother Arysa|r y |cRXP_ENEMY_Bloodfeather Matriarchs|r |cRXP_WARN_lanzan|r |T136052:0|t[Ola de sanación] |cRXP_WARN_y|r |T136048:0|t[Descarga de relámpagos] |cRXP_WARN_que hacen mucho daño. Intenta reventarlos rápido|r
+    >>|cRXP_WARN_Evita|r pelear con las Matriarchs lo máximo posible
     .complete 98392,3
     .mob Witchmother Arysa
 step
@@ -1395,12 +1395,12 @@ step
 step << Druid/Priest
     .goto 1438/1,1864.47,10663.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Centinela Arynia Quiebranubes|r
-    .turnin 98392 >> Turn in Darkness in the Glade
-    .accept 98398 >> Accept The Oracle Tree
+    .turnin 98392 >> Entrega la misión Oscuridad in the Glade
+    .accept 98398 >> Acepta la misión La oráculo Árbol
     .target Sentinel Arynia Cloudsbreak
 step << Druid/Priest
     .goto 1438/1,1932.400,10673.500
-    >>Go to the |cRXP_FRIENDLY_Oracle Tree Bark|r
+    >>Ve a |cRXP_FRIENDLY_Oracle Árbol Corteza|r
     .turnin 98398 >> Entrega la misión Árbol del oráculo
     .accept 940 >> Acepta la misión Teldrassil
 step << Druid/Priest
@@ -1417,7 +1417,7 @@ step << Hunter
 step << Hunter
     #sticky
     #label xp10
-    .xp 9+800 >> Grind until you are 800xp into level 9
+    .xp 9+800 >> Farmea hasta los 800 xp en el nivel 9
     >>|cRXP_WARN_Una vez que llegues a este punto de ruptura de experiencia, omite la misión de harpías/escolta y ve directamente a Darnassus. Tendrás otra oportunidad para completar esas misiones más tarde|r
 step << Hunter
     #completewith xp10
@@ -1496,14 +1496,14 @@ step << Priest
     .goto 1457/1,2315.900,10148.200
     .itemcount 10938,1 --Lesser Magic Essence (1)
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lalina Luna de Verano|r
-    .train 7411 >>Train |T136244:0|t[|cRXP_LOOT_Enchanting|r]. You will need it to craft a |T135139:0|t[|cRXP_LOOT_Wand|r]
+    .train 7411 >>Aprende |T136244:0|t[|cRXP_LOOT_Encantamiento|r]. Lo necesitarás para fabricar una |T135139:0|t[|cRXP_LOOT_Varita|r]
     .target Lalina Summermoon
 step << Priest
     #optional
     .itemcount 10938,1 --Lesser Magic Essence (1)
     .goto 1457/1,2318.400,10134.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Vaean|r
-    >>|cRXP_BUY_Buy the following materials from him:|r
+    >>|cRXP_BUY_Compra|r los siguientes materiales a él:
     .collect 6217,1 --Copper Rod (1)
     .collect 247786,9 --Mote of Magic (9)
     .collect 4470,9 --Simple Wood (9)
@@ -1512,32 +1512,32 @@ step << Priest
 step << Priest
     #optional
     .itemcount 10938,1 --Lesser Magic Essence (1)
-    >>Use |T136244:0|t[|cRXP_LOOT_Enchanting|r] in your |cRXP_WARN_profession tab|r to create a |T135225:0|t[|cRXP_LOOT_Runed Copper Rod|r]
+    >>Usa |T136244:0|t[|cRXP_LOOT_Encantamiento|r] en tu |cRXP_WARN_pestaña de profesión|r para crear una |T135225:0|t[|cRXP_LOOT_Vara rúnica de cobre|r]
     .collect 6218,1 --Runed Copper Rod
     .skill enchanting,10,1
 step << Priest
     #optional
     .itemcount 10938,1 --Lesser Magic Essence (1)
-    +Use |T136244:0|t[|cRXP_LOOT_Enchanting|r] in your |cRXP_WARN_profession tab|r to craft |T135645:0|t[|cRXP_LOOT_Novice's Practice Wands|r] |cRXP_WARN_until you reach 10 enchanting|r
+    +Usa |T136244:0|t[|cRXP_LOOT_Encantamiento|r] en tu |cRXP_WARN_pestaña de profesión|r para fabricar |T135645:0|t[|cRXP_LOOT_Novice's Practicar Varitas|r] |cRXP_WARN_hasta que alcances 10 en encantamiento|r
     .skill enchanting,10,1
 step << Priest
     #optional
     .goto 1457/1,2315.900,10148.200
     .itemcount 10938,1 --Lesser Magic Essence (1)
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Lalina Luna de Verano|r
-    .train 14293 >>Train |T135139:0|t[|cRXP_FRIENDLY_Lesser Magic Wand|r] from her
+    .train 14293 >>Aprende |T135139:0|t[|cRXP_FRIENDLY_Varita mágica inferior|r] de ella
     .target Lalina Summermoon
     .skill enchanting,<10,1
 step << Priest
     #optional
     .itemcount 10938,1 --Lesser Magic Essence (1)
-    >>Use |T136244:0|t[|cRXP_LOOT_Enchanting|r] in your |cRXP_WARN_profession tab|r to craft a |T135139:0|t[|cRXP_FRIENDLY_Lesser Magic Wand|r]
+    >>Usa |T136244:0|t[|cRXP_LOOT_Encantamiento|r] en tu |cRXP_WARN_pestaña de profesión|r para fabricar una |T135139:0|t[|cRXP_FRIENDLY_Varita mágica inferior|r]
     .collect 11287,1 --Lesser Magic Wand
     .skill enchanting,<10,1
 step << Priest
     #optional
     #completewith next
-    +|cRXP_WARN_Equip the|r |T135139:0|t[|cRXP_FRIENDLY_Lesser Magic Wand|r]
+    +|cRXP_WARN_Equipa la|r |T135139:0|t[|cRXP_FRIENDLY_Varita mágica inferior|r]
     .use 11287
     .itemcount 11287,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.12
@@ -1547,9 +1547,9 @@ step << Priest
     .goto 1457/1,2343.10,9856.95,-1
     .goto 1457/1,2341.74,9872.610,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con el |cRXP_FRIENDLY_Subastador de Darnassus|r
-    >>|T134711:0|t[Minor Wizard Oil] |cRXP_WARN_and|r |T133906:0|t[Smoked Sagefish] |cRXP_WARN_will provide a high DPS increase in early levels|r
-    >>|cRXP_WARN_Also check for any high DPS|r |T132317:0|t[Wand] |cRXP_WARN_upgrades that you can use now/soon|r
-    *|cRXP_WARN_Skip this step if you wish to not buy any|r
+    >>|T134711:0|t[Aceite de zahorí menor] |cRXP_WARN_y|r |T133906:0|t[Sabiola ahumada] |cRXP_WARN_proporcionarán un alto aumento de daño en niveles iniciales|r
+    >>|cRXP_WARN_También busca mejoras de DPS altas|r |T132317:0|t[Varita] |cRXP_WARN_que puedas usar ahora/pronto|r
+    *|cRXP_WARN_Omite|r este paso si no deseas comprar nada
     .collect 20744,1 -- Minor Wizard Oil (1)
     .collect 21072,20 -- Smoked Sagefish (20)
     .target Auctioneer Tolon
@@ -1703,7 +1703,7 @@ step
     .turnin 488 >> Entrega la misión Las apuestas de Zenn
     .isQuestComplete 488
 step
-    .abandon 488 >>Abandon Zenn's Bidding
+    .abandon 488 >>Abandona la misión Las apuestas de Zenn
 step
     #label SeekRedemption
 	.goto 1438/1,959.28,9872.28
@@ -1789,7 +1789,7 @@ step
     .accept 935 >> Acepta la misión La corona de la Tierra
 step << !Druid
     #completewith DenalanEnd
-    >>Kill all |cRXP_ENEMY_Lasher Sproutlings|r you see on the way to Denalan. Loot them for |T237424:0|t[|cRXP_LOOT_Dewy Lasher Fronds|r]
+    >>Mata a los |cRXP_ENEMY_Lasher Sproutlings|r que veas en el camino hacia Denalan. Despoja las |T237424:0|t[|cRXP_LOOT_Dewy Azotador Fronds|r]
     .complete 99050,1
     .mob Lasher Sproutling
 step
@@ -1918,7 +1918,7 @@ step << !Druid
     .goto 1438/1,997.36,9549.97,55,0
     .goto 1438/1,867.02,9630.74,55,0
     .goto 1438/1,697.97,9581.87
-    >>Finish killing |cRXP_ENEMY_Lasher Sproutlings|r. Loot them for |T237424:0|t[|cRXP_LOOT_Dewy Lasher Fronds|r]
+    >>Termina de matar a los |cRXP_ENEMY_Lasher Sproutlings|r. Despoja las |T237424:0|t[|cRXP_LOOT_Dewy Azotador Fronds|r]
     .complete 99050,1
     .mob Lasher Sproutling
 step << Hunter
@@ -2103,39 +2103,39 @@ step
     .goto 1438/1,1864.47,10663.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Centinela Arynia Quiebranubes|r
     .turnin 937 >> Entrega la misión El claro encantado
-    .accept 98392 >> Accept Darkness in the Glade
+    .accept 98392 >> Acepta la misión Oscuridad in the Glade
     .target Sentinel Arynia Cloudsbreak
 step
     .isOnQuest 99073
     .goto 1438/1,1899.700,10582.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Eralya Leafshadow::275683|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con |cRXP_FRIENDLY_Sentinel Eralya Sombra de Hoja::275683|r
     .target Sentinel Eralya Leafshadow::275683
-    .turnin 99073 >>Turn in Easing Suffering
+    .turnin 99073 >>Entrega la misión Easing Sufrimiento
 step
     .goto 1438/1,2032.50,10500.90--c:Teldrassil,35.0,39.2
-    >>Kill |cRXP_ENEMY_Hatescreech|r. Loot her for her |T133288:0|t[|cRXP_LOOT_Amulet|r]
+    >>Mata a |cRXP_ENEMY_Hatescreech|r. Despójala de su |T133288:0|t[|cRXP_LOOT_Amulet|r]
     .complete 98392,1
     .mob Hatescreech
 step
     .goto 1438/1,2103.78,10623.08--c:Teldrassil,33.6,35.6
-    >>Kill |cRXP_ENEMY_Windmistress Gaedress|r. Loot her for her |T133333:0|t[|cRXP_LOOT_Amulet|r]
+    >>Mata a |cRXP_ENEMY_Windmistress Gaedress|r. Despójala de su |T133333:0|t[|cRXP_LOOT_Amulet|r]
     .complete 98392,2
     .mob Windmistress Gaedress
 step
     .goto 1438/1,2042.68,10860.64--c:Teldrassil,34.8,28.6
-    >>Kill |cRXP_ENEMY_Witchmother Arysa|r. Loot her for her |T133324:0|t[|cRXP_LOOT_Amulet|r]
+    >>Mata a |cRXP_ENEMY_Witchmother Arysa|r. Despójala de su |T133324:0|t[|cRXP_LOOT_Amulet|r]
     .complete 98392,3
     .mob Witchmother Arysa
 step
     .goto 1438/1,1864.47,10663.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHabla con la |cRXP_FRIENDLY_Centinela Arynia Quiebranubes|r
-    .turnin 98392 >> Turn in Darkness in the Glade
-    .accept 98398 >> Accept The Oracle Tree
+    .turnin 98392 >> Entrega la misión Oscuridad in the Glade
+    .accept 98398 >> Acepta la misión La oráculo Árbol
     .target Sentinel Arynia Cloudsbreak
 step
     .goto 1438/1,1932.400,10673.500
-    >>Go to the |cRXP_FRIENDLY_Oracle Tree Bark|r
-    .turnin 98398 >> Turn in The Oracle Tree
+    >>Ve a |cRXP_FRIENDLY_Oracle Árbol Corteza|r
+    .turnin 98398 >> Entrega la misión La oráculo Árbol
     .accept 940 >> Acepta la misión Teldrassil
 step
     #softcore
@@ -2158,7 +2158,7 @@ step
 step << !Warrior
     --@TODO add note that u need to wait for the other player owl to despawn
     .goto 1457/1,2009.100,9986.601
-    >>Go to the Gates of Darnassus and use the |T133298:0|t[|cRXP_LOOT_Lunar Pendant|r]
+    >>Ve a las Puertas de Darnassus y usa el |T133298:0|t[|cRXP_LOOT_Lunar Pendant|r]
     .complete 98067,4
     .use 279378
 step << !Warrior
@@ -2309,11 +2309,11 @@ step
     -- >>|T134187:0|t[Earthroot] << Druid era
     >>|T133912:0|t[Mero de Costa Oscura]
     >>|T133972:0|t[Carne de zancudo]
-    >>|T134711:0|t[Minor Wizard Oil] << Priest/Druid
-    >>|T133906:0|t[Smoked Sagefish] << Priest/Druid
-    >>|T134711:0|t[Minor Wizard Oil] |cRXP_WARN_and|r |T133906:0|t[Smoked Sagefish] |cRXP_WARN_will provide a high DPS increase in early levels|r << Priest/Druid
-    >>|cRXP_WARN_Also check for any high DPS|r |T132317:0|t[Wand] |cRXP_WARN_upgrades that you can use now/soon|r << Priest
-    *|cRXP_WARN_Skip this step if you wish to not buy any|r
+    >>|T134711:0|t[Aceite de zahorí menor] << Priest/Druid
+    >>|T133906:0|t[Sabiola ahumada] << Priest/Druid
+    >>|T134711:0|t[Aceite de zahorí menor] |cRXP_WARN_y|r |T133906:0|t[Sabiola ahumada] |cRXP_WARN_proporcionarán un alto aumento de daño en niveles iniciales|r << Priest/Druid
+    >>|cRXP_WARN_También busca mejoras de DPS altas|r |T132317:0|t[Varita] |cRXP_WARN_que puedas usar ahora/pronto|r << Priest
+    *|cRXP_WARN_Omite|r este paso si no deseas comprar nada
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     -- .collect 2449,5,6123,1 << Druid

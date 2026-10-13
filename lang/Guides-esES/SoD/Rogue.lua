@@ -1835,7 +1835,7 @@ step
     .mob Southsea Freebooter
     .train 432301,1
 step
-    >>Open the |T133639:0|t|cRXP_LOOT_Kidnapper's Coin Purse|r and loot it for a |T133302:0|t|cRXP_LOOT_Precious Medallion|r
+    >>Abre la |T133639:0|t|cRXP_LOOT_Kidnapper's Moneda Purse|r y despójala para obtener un |T133302:0|t|cRXP_LOOT_Precious Medallion|r
     .collect 221370,1 -- Precious Medallion 1/1
     .use 221371
     .train 432301,1
