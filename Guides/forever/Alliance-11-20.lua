@@ -2304,19 +2304,6 @@ step << NightElf
     .accept 97926 >> Accept Making Do
 --    .accept 399 >> Accept Humble Beginnings
     .target Baros Alexston
-step << NightElf Rogue
-    .goto 1453/0,377.47,-8752.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
-    .trainer >> Train your class spells
-    .target Osborne the Night Man
-step << NightElf Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r
-    .goto 1453/0,358.25,-8728.28,15,0
-    .goto 1453/0,302.6,-8685.53,15,0
-	.goto 1453/0,323.3,-8689.29
-    .trainer >> Train your class spells
-    .target Wu Shen
-    .target Ilsa Corbin
 step << NightElf Rogue/NightElf Warrior/NightElf Hunter
     .goto 1453/0,613.12,-8795.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
@@ -2340,6 +2327,11 @@ step << NightElf Rogue/NightElf Warrior/NightElf Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias::483|r
     .target Elaine Trias::483
     .turnin 97222 >>Turn in Gatehouse Goods
+step << NightElf Rogue
+    .goto 1453/0,377.47,-8752.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
+    .trainer >> Train your class spells
+    .target Osborne the Night Man
 step << NightElf Hunter
     .goto 1453/0,552.78,-8415.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r
@@ -2360,14 +2352,33 @@ step << NightElf
     .zoneskip Loch Modan
     .zoneskip Dun Morogh
 step << NightElf
+    #completewith next
     .zone Ironforge >> Take the tram to Ironforge
     .zoneskip Loch Modan
     .zoneskip Dun Morogh
+step << NightElf
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monty|r on the middle platform in the Deeprun Tram |cRXP_WARN_on the Ironforge side!|r
+    .accept 6661 >> Accept Deeprun Rat Roundup
+    .target Monty
+step << NightElf
+    >>Use the |T133942:0|t[Rat Catcher's Flute] on |cRXP_FRIENDLY_Deeprun Rats|r in the Deeprun Tram
+    .complete 6661,1 --Rats Captured (x5)
+    .use 17117
+    .mob Deeprun Rat
+step << NightElf
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monty|r on the middle platform in the Deeprun Tram
+    .turnin 6661 >> Turn in Deeprun Rat Roundup
+    .target Monty
 step << NightElf
     .goto Ironforge,55.491,47.751
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
     .fp Ironforge >> Get the Ironforge flight path
     .target Gryth Thurden
+step << NightElf Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bilban Tosslespanner|r
+    .goto Ironforge,65.905,88.405
+    .trainer >> Train your class spells
+    .target Bilban Tosslespanner
 step << NightElf Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bixi Wobblebonk|r and |cRXP_FRIENDLY_Buliwyf Stonehand|r
     >>Train Thrown and 2h Maces if you didn't earlier
@@ -2395,9 +2406,9 @@ step << NightElf
     #completewith next
     .zone Dun Morogh >> Travel to Dun Morogh
 step << NightElf
-    .goto Dun Morogh, 59.9, 49.5, 30, 0
-    .goto Dun Morogh, 61.2, 47.2, 15, 0
-    .goto Dun Morogh, 62.1, 47.3, 20 >>Run up the ramp to |cRXP_ENEMY_Vagash|r
+    .goto Dun Morogh,59.9,49.5,30,0
+    .goto Dun Morogh,61.2,47.2,15,0
+    .goto Dun Morogh,62.1,47.3,20 >>Run up the ramp to |cRXP_ENEMY_Vagash|r
 step << NightElf
     #completewith next
     +Kite |cRXP_ENEMY_Vagash|r to |cRXP_FRIENDLY_Rudra Amberstill|r
@@ -2405,13 +2416,13 @@ step << NightElf
     .mob Vagash
 step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:16|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
-    .goto Dun Morogh, 63.1, 49.8
+    .goto Dun Morogh,63.1,49.8
     .target Rudra Amberstill
     .accept 314 >>Accept Protecting the Herd
 step << NightElf
     >>Kite |cRXP_ENEMY_Vagash|r into the |cRXP_FRIENDLY_Dun Morogh Mountaineer|r
     >>|cRXP_WARN_Make sure you deal at least 50% damage to him|r
-    .goto Dun Morogh, 62.8, 54.6, 10, 0
+    .goto Dun Morogh,62.8,54.6,10,0
     .mob Vagash
     .target Dun Morogh Mountaineer
     .complete 314, 1
@@ -2855,7 +2866,6 @@ step << NightElf
     .complete 385,2 -- Crocolisk Skin (6)
     .mob Loch Crocolisk
 step << NightElf
-    --@TODO add a line for this
     .goto Loch Modan,62,44
     >>Kill |cRXP_ENEMY_Daggerfang|r, he |cRXP_WARN_might be patroling along the shore|r. Loot him for |T3736888:0|t[|cRXP_LOOT_Marek's Croc-Hunting Knife|r]
     .complete 86758,1 --Marek's Croc Hunting Knife (1)
@@ -2878,6 +2888,43 @@ step << NightElf
     .turnin 86758 >>Turn in Twisting the Knife
     .goto Loch Modan,81.76,61.66
     .target Marek Ironheart
+step << NightElf
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
+    .goto Loch Modan,83.49,65.40
+    .accept 258 >> Accept A Hunter's Challenge
+    .target Daryl the Youngling
+    .xp >16,1
+step << NightElf
+    #optional
+    .goto Loch Modan,74.65,49.60,70,0
+    .goto Loch Modan,75.80,43.43,70,0
+    .goto Loch Modan,71.10,38.98,70,0
+    .goto Loch Modan,65.59,41.89,70,0
+    .goto Loch Modan,61.66,32.02,70,0
+    .goto Loch Modan,72.79,39.86,70,0
+    .goto Loch Modan,73.87,51.85,70,0
+    .goto Loch Modan,69.45,39.18
+    >>Kill |cRXP_ENEMY_Elder Mountain Boars|r
+    >>|cRXP_WARN_You must complete this quest and return to |cRXP_FRIENDLY_Daryl the Youngling|r with 12 minutes. If you fail the quest, abandon it and pick it up again|r
+    .complete 258,1 -- Elder Mountain Boar slain (5)
+    .mob Elder Mountain Boar
+    .isOnQuest 258
+step << NightElf
+    #completewith next
+    #optional
+    .goto Loch Modan,82.92,59.37,80,0
+    .goto Loch Modan,83.28,62.97,25 >> Travel toward |cRXP_FRIENDLY_Daryl the Youngling|r
+step << NightElf
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
+    .goto Loch Modan,83.49,65.40
+    .turnin 258 >> Turn in A Hunter's Challenge
+    .target Daryl the Youngling
+    .isOnQuest 258
+step << NightElf
+    #optional
+    .xp 16-2360 >> Grind untill you're 2360 xp away from level 16 (12.040/14.400)
 step << NightElf
     >>Jump out of the lodge and die to the mobs below
     .deathskip >> Die and respawn at the Thelsamar graveyard
