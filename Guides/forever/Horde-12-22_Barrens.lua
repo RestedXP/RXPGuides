@@ -2798,6 +2798,7 @@ step
     .goto 1413/1,-2639.32,-436.00
 step
     #optional
+    #completewith Hezrul
     .destroy 5165 >>|cRXP_WARN_Delete any leftover|r |T132914:0|t[Sunscale Feathers] |cRXP_WARN_you still have|r
     .itemcount 5165,1
 step << Hunter
@@ -3413,10 +3414,6 @@ step
     >>|cRXP_WARN_Be careful! The|r |cRXP_ENEMY_Deepmoss Hatchlings|r |cRXP_WARN_have a chance of summoning a level 22|r |cRXP_ENEMY_Deepmoss Matriarch|r
     .complete 1069,1 --Collect Deepmoss Egg (x15)
 step
-    #optional
-	#completewith next
-	+|cRXP_WARN_If you have over 15 |cRXP_LOOT_Deepmoss Eggs|r|cRXP_WARN_, split the stack of any extras (shift click), then delete them|r
-step
     .goto 1442/1,365.16,878.250
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz|r
     .turnin 1093 >> Turn in Super Reaper 6000
@@ -3475,18 +3472,17 @@ step
     .accept 882 >>Accept Ishamuhale
     .target Jorn Skyseer
 step
-	#completewith LakotaMani2
-    >>Kill |cRXP_ENEMY_Stormsnouts|r. Loot them for a |cRXP_LOOT_Horn|r
-    .complete 821,3 --Thunder Lizard Horn (1)
-    .mob Stormsnout
-step
-    #label LakotaMani2
     #completewith LakotaMani2
     >>Kill |cRXP_ENEMY_Razormane Raiders|r. Loot them for |cRXP_LOOT_Olgra's Adornments|r
     .complete 95774,1 --|4/4 Olgra's Adornments
     .mob Razormane Raider
 step
-    #completewith next
+	#completewith Adornments
+    >>Kill |cRXP_ENEMY_Stormsnouts|r. Loot them for a |cRXP_LOOT_Horn|r
+    .complete 821,3 --Thunder Lizard Horn (1)
+    .mob Stormsnout
+step
+    #completewith Adornments
     >>Kill |cRXP_ENEMY_Bristleback Quilboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cRXP_LOOT_Blood Shards|r] you get
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .mob +Bristleback Water Seeker
@@ -3499,6 +3495,7 @@ step
     .mob +Bristleback Thornweaver
     .mob +Bristleback Geomancer
 step
+    #label LakotaMani2
     #loop
     .goto 1413/1,-1951.27,-1956.15,0
     .goto 1413/1,-2031.32,-1703.47,0
@@ -3517,7 +3514,7 @@ step
     .use 5099
     .unitscan Lakota'mani
 step
-    #label LakotaMani2
+    #label Adornments
     #loop
     .goto 1413/1,-2241.200,-1988.500,0
     .goto 1413/1,-2241.200,-1988.500,50,0
@@ -3706,6 +3703,7 @@ step
     .goto 1413/1,-3720.300,-920.000
     >>Click the |cRXP_PICK_Wanted Poster|r
     .accept 92706 >>Accept WANTED: Bruuz
+    .group << Rogue/Warrior
 step
     .goto 1413/1,-3697.24,-929.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok|r
@@ -3720,6 +3718,10 @@ step
     .turnin 865 >>Turn in Raptor Horns
     .turnin 1069 >>Turn in Deepmoss Spider Eggs
     .target Mebok Mizzyrix
+step
+    #optional
+    #completewith XroadsHS2
+    .destroy 5570 >>|cRXP_WARN_Delete any|r |T132834:0|t[Deepmoss Spider Eggs] |cRXP_WARN_you have left|r
 step
     .goto 1413/1,-3687.11,-981.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drohn|r
@@ -3777,15 +3779,18 @@ step
     .goto 1413/1,-4012.800,-1081.800
     .goto 1413/1,-3973.000,-1028.700
     >>Kill |cRXP_PICK_Bruuz|r (lvl 20 elite) in the sea near Ratchet
-    >>|cRXP_WARN_This is hard! Group up if possible|r
-    >>|cRXP_WARN_It can be solo'd by kiting him to the Ratchet guards who will help, but make sure to deal at least 50% damage!|r
+    >>|cRXP_WARN_This is hard! Group up if possible|r << !Rogue !Warrior
+    >>|cRXP_WARN_Try to kite him to Ratchet to guards who will help, but make sure to deal at least 50% damage!|r
     .complete 92706,1 --Kill Bruuz
+    .mob Bruuz
     .isOnQuest 92706
+    .group << Rogue/Warrior
 step
     .goto 1413/1,-3728.66,-835.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazlowe|r
     .turnin 92706 >>Turn in WANTED: Bruuz
     .target Gazlowe
+    .group << Rogue/Warrior
     .isQuestComplete 92706
 step
     .goto 1413/1,-3770.20,-928.53
@@ -3836,6 +3841,7 @@ step
     .goto 1413/1,-2672.76,-544.77
 step
     #optional
+    #completewith IshamuhaleTurnin
     .destroy 5085 >>|cRXP_WARN_Delete any leftover|r |T133721:0|t[Bristleback Quilboar Tusks] |cRXP_WARN_you may still have|r
     .itemcount 5085,1
 step
@@ -4463,12 +4469,12 @@ step << Rogue !Skyborne
 step << Rogue
     .goto 1456/1,110.13,-1299.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kuruk|r|cRXP_BUY_. Buy |r |T135423:0|t[Deadly Throwing Axe] |cRXP_BUY_from him|r
-    .collect 3137,200,6562,1 --Deadly Throwing Axe (200)
+    .collect 3137,1,6562,1 --Deadly Throwing Axe (200)
     .target Kuruk
 step << Rogue
     #optional
     .goto 1456/1,104.500,-1308.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
     >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed] 
     .train 6761 >>Train your class spells
     .target Boarton Shadetotem
@@ -4476,7 +4482,7 @@ step << Rogue
     .xp >20,1
 step << Rogue
     .goto 1456/1,104.500,-1308.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
     >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed] 
     .train 1943 >>Train your class spells
     .target Boarton Shadetotem
@@ -5376,13 +5382,13 @@ step
     #optional
     .abandon 962 >>Abandon Serpentbloom
 step
-    #completewith Serena
+    #completewith EnterSTM2
     .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Crossroads >>Fly to The Crossroads
     .target Tal
-    .subzoneskip 380
-    .isQuestTurnedIn 852 << !Hunter
+    .zoneskip The Barrens
+    .zoneskip Stonetalon Mountains
 step
     .goto 1413/1,-1972.55,-306.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
@@ -5531,6 +5537,14 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torek|r
     .turnin 6541 >> Turn in Report to Kadrak
     .target Kadrak
+step << Hunter
+    #optional
+    .goto 1413/1,-2253.24,1246.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torek|r
+    .accept 3513 >>Accept The Runed Scroll
+    .turnin 3513 >>Turn in The Runed Scroll
+    .target Kadrak
+    .itemcount 10621,1
 step << Hunter
     .goto 1440/1,-2240.94,1778.570
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torek|r to start the escort
@@ -6623,7 +6637,7 @@ step << skip
 step << Rogue
     .goto 1454/1,-4355.53,1520.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135423:0|t[Deadly Throwing Axe] |cRXP_BUY_from him|r
-    .collect 3137,200,6544,1 --Deadly Throwing Axe (200)
+    .collect 3137,1,6544,1 --Deadly Throwing Axe (200)
     .target Trak'gen
 step << Rogue
     >>|cRXP_WARN_If you have any|r |T134437:0|t[Anti-Venom]|cRXP_WARN_, use one to cure yourself of|r |T136230:0|t[Touch of Zanzil]
