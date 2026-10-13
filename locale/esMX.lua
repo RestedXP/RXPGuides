@@ -423,6 +423,12 @@ L["aide d"] = "Ayuda d"
 
 L["effet s"] = "Efecto s"
 
+-- lang\Guides-frFR\Retail\Leveling\Conventional\Starting Zones.lua file
+
+L["appel du héros : la marche de l"] = "Llamada del héroe: la marcha de l"
+L["aide n"] = "Ayuda n"
+L["extraction de la kaja"] = "Extracción de la Kaja"
+
 -- lang\Guides-frFR\SoD\Incursions.lua file
 
 L["entrée est bloquée par un|r |cRXP_ENEMY_Récolte-rêve|r|cRXP_WARN_ (Elite de niveau 41). Contrôlez-le ou tuez-le alors que vous entrez à l"] = "La entrada está bloqueada por un|r |cRXP_ENEMY_Récolte-rêve|r |cRXP_WARN_ (Élite de nivel 41). Contrólalo o mátalo cuando entres a l"
