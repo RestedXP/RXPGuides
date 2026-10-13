@@ -722,7 +722,7 @@ step
     .goto Orgrimmar,57.40,53.93,-1
     .goto Orgrimmar,58.05,51.40,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_扎姆沙|r 和 |cRXP_FRIENDLY_格鲁阿克|r 对话
-    +当|cRXP_ENEMY_格鲁阿克|r变为敌对状态时将其击杀
+    +当|cRXP_ENEMY_格鲁阿克|r 变为敌对状态时将其击杀
     .target Zamja
     .target Gru'ark
     .skipgossip
@@ -853,7 +853,7 @@ step
     .goto Durotar,52.13,20.77,40,0
     .goto Durotar,51.26,19.19,40,0
     .goto Durotar,53.98,23.70
-    >>击杀|cRXP_ENEMY_尘风鹰身人|r，并从它们身上拾取|cRXP_LOOT_被砍下的鹰身人的头|r
+    >>击杀|cRXP_ENEMY_尘风鹰身人|r。拾取他们的|cRXP_LOOT_被砍下的鹰身人的头|r
     .collect 206995,1 ---Severed Harpy Head (1)
     .mob Dustwind Savage
     .mob Dustwind Storm Witch
@@ -1689,11 +1689,11 @@ step
     .collect 220914,1 --Broken Geode Hammer
     .train 427084,1
 step
-    >>右键点击 |T133054:0|t|cRXP_LOOT_破损的晶体之锤|r 以拾取，用于获得 |T134419:0|t[|cRXP_FRIENDLY_Rune of Demolition|r]
+    >>右键点击 |T133054:0|t|cRXP_LOOT_破损的晶体之锤|r 拾取 |T134419:0|t[|cRXP_FRIENDLY_毁灭符文|r]
     .collect 220913,1 --Rune of Demolition
     .train 427084,1
 step
-    .train 427084 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Demolition|r] |cRXP_WARN_来学习|r |T132364:0|t[破坏能手]
+    .train 427084 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_毁灭符文|r] |cRXP_WARN_来学习|r |T132364:0|t[破坏能手]
     .use 220913
 ]])
 
@@ -1711,7 +1711,7 @@ step
 step
     #sticky
     #completewith summonIodax
-    >>|cRXP_WARN_要完成此任务，你需要召唤并击杀一只等级50的精英魔像，血量约12000。虽然可以单独完成，但我建议你找一个团队。为了召唤魔像，你需要从灼热峡谷的渣滓坑中收集4个零件。不过，如果你能找到别人为你召唤首领，就不需要收集这些零件了。这种情况下，你可以直接跳到第13步。|r
+    >>|cRXP_WARN_要完成此任务你需要召唤并击杀一个拥有约1.2万生命值的50级精英魔像。虽然可以单刷但建议组队完成。为了召唤该魔像你需要从灼热峡谷的熔渣之池收集4个部件。不过如果你能找到其他人帮你召唤该首领则无需收集这些部件。在这种情况下你可以直接跳到第13步|r
     .collect 221258,1 --Right Foot of the Obliterator
     .collect 221256,1 --Right Arm of the Obliterator
     .collect 221259,1 --Left Foot of the Obliterator

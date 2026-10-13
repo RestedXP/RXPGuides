@@ -6,24 +6,24 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Human Mage
-#name 1-10 ADV Elwynn Forest Human Mago AdE
+#name 1-10 ADV Elwynn Forest Humano Mago AdE
 #version 2
-#group ADV AdE Maga da Aliança
+#group RestedXP ADV AdE Maga da Aliança
 #defaultfor Human Mage
-#next 10-11 ADV Dun Morogh Human Mago AdE
+#next 10-11 ADV Dun Morogh Humano Mago AdE
 
 
 step << !Human Mage
     #season 2
     #completewith next
-    +Na Temporada de Descoberta, você NÃO deve começar fora da zona inicial de sua raça como um Mago, pois você não conseguirá obter sua primeira runa aqui (|T133816:0|t[Gravar Luvas - Lança de Gelo])
+    +Na Temporada de Descoberta, você não deveria começar fora da zona de início de sua raça como um Mago, pois você será incapaz de obter sua primeira runa aqui (|T133816:0|t[Gravar Luvas - Lança de Gelo])
 step
     #completewith next
-    +Você selecionou o guia Avançado. Este é o guia mais rápido para a classe mais rápida do jogo (Maga da Aliança). Dessa forma, haverá muitas mecânicas de nicho utilizadas bem como puxadas de AdE altamente difíceis. Mantenha-se persistente enquanto aprende! Boa Sorte!
+    +Você selecionou o guia Avançado. Este é o guia mais rápido para a classe mais rápida do jogo (Maga da Aliança). Assim, haverá muitas mecânicas de nicho e puxes AdE altamente difíceis. Mantenha-se persistente enquanto aprende! Boa Sorte!
 step
     #completewith next
     .goto Elwynn Forest,48.45,45.80,50,0
-    +|cRXP_WARN_Abate |cRXP_ENEMY_Young Wolves|r. Saque-os até ter itens de vendedor no valor de 10 de cobre|r
+    +|cRXP_WARN_Abate |cRXP_ENEMY_Lobos Jovens|r. Saque-os até ter 10 de cobre em itens para vender|r
     .mob Young Wolf
 step
     .goto Elwynn Forest,48.171,42.943
@@ -33,7 +33,7 @@ step
 step
     .goto Elwynn Forest,47.48,41.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Danil|r
-    .vendor >>Venda lixo até ter 10+ de cobre
+    .vendor >>Venda itens de valor trivial até ter 10+ de cobre
     .target Brother Danil
 step
     .goto Elwynn Forest,48.26,41.93,15,0
@@ -48,19 +48,19 @@ step
     .goto Elwynn Forest,49.26,40.67,10,0
     .goto Elwynn Forest,49.66,40.15,10,0
     .goto Elwynn Forest,49.44,39.89,5,0
-    >>Salte das escadas para o corrimão
+    >>Pule das escadas para o corrimão
     .goto Elwynn Forest,49.66,39.41,10 >>Vá para |cRXP_FRIENDLY_Khelden|r lá em cima
 step
     .goto Elwynn Forest,49.66,39.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Khelden|r
-    .train 1459 >>Treine |T135932:0|t[Inteligência Arcana]
+    .train 1459 >>Aprenda |T135932:0|t[Inteligência Arcana]
     .target Khelden Bremen
 step
     #completewith next
     .goto Elwynn Forest,49.66,40.15,10,0
     .goto Elwynn Forest,49.26,40.67,10,0
     .goto Elwynn Forest,48.97,41.14,10,0
-    .goto Elwynn Forest,48.171,42.943,10 >>Viaje para |cRXP_FRIENDLY_Willem|r
+    .goto Elwynn Forest,48.171,42.943,10 >>Vá para |cRXP_FRIENDLY_Willem|r
 step
     .goto Elwynn Forest,48.171,42.943
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Willem|r
@@ -70,13 +70,13 @@ step
     #completewith next
     .goto Elwynn Forest,46.10,42.57,70,0
     .goto Elwynn Forest,46.59,39.35
-    +|cRXP_WARN_Abate |cRXP_ENEMY_Young Wolves|r. Saque-os até ter itens de vendedor no valor de 50 de cobre (incluindo sua armadura)|r
+    +|cRXP_WARN_Abate |cRXP_ENEMY_Lobos Jovens|r. Saque-os até ter 50 de cobre em itens para vender (incluindo sua armadura)|r
     .mob Young Wolf
 step
     .goto Elwynn Forest,47.48,41.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Danil|r
     >>|cRXP_BUY_Compre 10|r |T132794:0|t [Água de Fonte Refrescante] |cRXP_BUY_com ele|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .collect 159,10,7,1 --Collect Refreshing Spring Water (x10)
     .target Brother Danil
 step
@@ -87,8 +87,8 @@ step
     .target Eagan Peltskinner
 step
     #completewith next
-    >>Abate |cRXP_LOOT_Young Wolves|r e |cRXP_LOOT_Timber Wolves|r. Saqueie-os pelos seus |cRXP_LOOT_Tough Lobo Carne|r
-    >>Concentre-se em |cRXP_LOOT_Young Wolves|r
+    >>Abata |cRXP_LOOT_Young Wolves|r e |cRXP_LOOT_Timber Wolves|r. Saqueie-os para obter |cRXP_LOOT_Tough Lobo Carne|r
+    >>Concentre-se nos |cRXP_LOOT_Lobos Jovens|r
     .complete 33,1 --Collect Tough Wolf Meat (x8)
 	.mob Young Wolf
     .mob Timber Wolf
@@ -115,21 +115,21 @@ step
 	.goto Elwynn Forest,46.03,40.91,35,0
 	.goto Elwynn Forest,48.04,39.55,35,0
 	.goto Elwynn Forest,49.32,37.91,35,0
-    >>Mate os |cRXP_LOOT_Young Wolves|r e os |cRXP_LOOT_Timber Wolves|r. Saqueie-os para obter |cRXP_LOOT_Tough Lobo Carne|r
-    >>Concentre-se em |cRXP_LOOT_Young Wolves|r
+    >>Abata |cRXP_LOOT_Young Wolves|r e |cRXP_LOOT_Timber Wolves|r. Saqueie-os para obter |cRXP_LOOT_Tough Lobo Carne|r
+    >>Concentre-se nos |cRXP_LOOT_Lobos Jovens|r
     .complete 33,1 --Collect Tough Wolf Meat (x8)
 	.mob Young Wolf
     .mob Timber Wolf
 step
     .goto Elwynn Forest,48.94,40.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Eagan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eagan|r
     .turnin 33,1 >>Entregue Lobos Além da Fronteira
     .target Eagan Peltskinner
 step
     .goto Elwynn Forest,47.48,41.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Danil|r
     |cRXP_BUY_Buy 10|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .collect 159,10,15,1 --Collect Refreshing Spring Water (x10)
     .target Brother Danil
 step
@@ -168,9 +168,9 @@ step
     .mob Timber Wolf
  step
     .goto Elwynn Forest,47.48,41.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Danil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Danil|r
     >>|cRXP_BUY_Compre 10|r |T132794:0|t [Água de Fonte Refrescante] |cRXP_BUY_com ele|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .collect 159,10,15,1 --Collect Refreshing Spring Water (x10)
     .target Brother Danil
 step
@@ -186,11 +186,11 @@ step
     .goto Elwynn Forest,49.66,40.15,10,0
     .goto Elwynn Forest,49.44,39.89,5,0
     >>Pule das escadas para o corrimão
-    .goto Elwynn Forest,49.66,39.41,10 >>Viaje para |cRXP_FRIENDLY_Khelden|r andar de cima
+    .goto Elwynn Forest,49.66,39.41,10 >>Vá para |cRXP_FRIENDLY_Khelden|r lá em cima
 step
     #season 0
     .goto Elwynn Forest,49.66,39.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Khelden|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Khelden|r
     .turnin 3104 >>Entregue Carta Glífica
     .train 116 >>Treine |T135846:0|t[Seta de Gelo]
     .target Khelden Bremen
@@ -220,8 +220,8 @@ step
     #completewith RedBurlapBandana
     .goto Elwynn Forest,52.55,48.79,0
     .goto Elwynn Forest,55.43,45.87,0
-    >>Abate os |cRXP_ENEMY_Defias Thugs|r. Saque-os para a |T134939:0|t|cRXP_LOOT_[Anotações de Feitiços: ALEG DEN AÇOL]|r
-    >>|cRXP_WARN_NOTA: Você não conseguirá treinar|r |T133816:0|t[Gravar Luvas - Lança de Gelo] |cRXP_WARN_aqui pois você só pode obter uma|r |T133736:0|t[Compreensão Primer] |cRXP_WARN_na zona inicial de sua raça|r << !Human
+    >>Abate |cRXP_ENEMY_Defias Capangas|r. Saque-os para obter a |T134939:0|t|cRXP_LOOT_[Anotações de Feitiços: ALEG DEN AÇOL]|r
+    >>|cRXP_WARN_NOTA: Você será incapaz de treinar|r |T133816:0|t[Gravar Luvas - Lança de Gelo] |cRXP_WARN_aqui, pois você só pode obter um|r |T133736:0|t[Compreensão Primer] |cRXP_WARN_na zona de início de sua raça|r << !Human
     .collect 203751,1,77620,1 -- Spell Notes: CALE ENCI (1)
     .mob Defias Thug
     .train 401760,1
@@ -229,7 +229,7 @@ step << Human
     #season 2
     #requires CALEENCI
     #completewith RedBurlapBandana
-    .train 401760 >>|cRXP_WARN_Use as|r |T134939:0|t|cRXP_LOOT_[Anotações de Feitiços: ALEG DEN AÇOL]|r |cRXP_WARN_para aprender|r |T133816:0|t[Gravar Luvas - Lança de Gelo]
+    .train 401760 >>|cRXP_WARN_Use o|r |T134939:0|t|cRXP_LOOT_[Anotações de Feitiços: ALEG DEN AÇOL]|r |cRXP_WARN_para aprender|r |T133816:0|t[Gravar Luvas - Lança de Gelo]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
 step
@@ -252,7 +252,7 @@ step
 	.goto Elwynn Forest,54.76,45.96,35,0
 	.goto Elwynn Forest,53.81,44.79,35,0
 	.goto Elwynn Forest,51.14,49.29,35,0
-    >>Abate |cRXP_ENEMY_Defias Thugs|r. Saque-os para |cRXP_LOOT_Red Burlap Bandanas|r
+    >>Abate |cRXP_ENEMY_Defias Capangas|r. Saque-os para |cRXP_LOOT_Red Burlap Bandanas|r
     .complete 18,1 --Collect Red Burlap Bandana (x12)
 	.mob Defias Thug
 step
@@ -266,20 +266,20 @@ step
     .goto Elwynn Forest,55.09,49.00,50,0
     .goto Elwynn Forest,55.43,45.87,50,0
     .goto Elwynn Forest,53.86,47.05,50,0
-    >>Abate os |cRXP_ENEMY_Defias Thugs|r. Saque-os para a |T134939:0|t|cRXP_LOOT_[Anotações de Feitiços: ALEG DEN AÇOL]|r
-    >>|cRXP_WARN_NOTA: Você não conseguirá treinar|r |T133816:0|t[Gravar Luvas - Lança de Gelo] |cRXP_WARN_aqui pois você só pode obter uma|r |T133736:0|t[Compreensão Primer] |cRXP_WARN_na zona inicial de sua raça|r << !Human
+    >>Abate |cRXP_ENEMY_Defias Capangas|r. Saque-os para obter a |T134939:0|t|cRXP_LOOT_[Anotações de Feitiços: ALEG DEN AÇOL]|r
+    >>|cRXP_WARN_NOTA: Você será incapaz de treinar|r |T133816:0|t[Gravar Luvas - Lança de Gelo] |cRXP_WARN_aqui, pois você só pode obter um|r |T133736:0|t[Compreensão Primer] |cRXP_WARN_na zona de início de sua raça|r << !Human
     .collect 203751,1,77620,1 -- Spell Notes: CALE ENCI (1)
     .mob Defias Thug
     .train 401760,1
 step << Human
     #optional
     #season 2
-    .train 401760 >>|cRXP_WARN_Use as|r |T134939:0|t|cRXP_LOOT_[Anotações de Feitiços: ALEG DEN AÇOL]|r |cRXP_WARN_para aprender|r |T133816:0|t[Gravar Luvas - Lança de Gelo]
+    .train 401760 >>|cRXP_WARN_Use o|r |T134939:0|t|cRXP_LOOT_[Anotações de Feitiços: ALEG DEN AÇOL]|r |cRXP_WARN_para aprender|r |T133816:0|t[Gravar Luvas - Lança de Gelo]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
 step
     .goto Elwynn Forest,48.171,42.943
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Willem|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Willem|r
     .turnin 18,5 >>Entregue Irmandade de Ladrões
     .accept 6 >>Aceite Recompensa por Garrick Patatenra
     .accept 3903 >>Aceite Madel Quintana
@@ -295,7 +295,7 @@ step
     .goto Elwynn Forest,47.48,41.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Danil|r
     >>|cRXP_BUY_Compre 10|r |T132794:0|t [Água de Fonte Refrescante] |cRXP_BUY_com ele|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .collect 159,10,21,1 --Collect Refreshing Spring Water (x10)
     .target Brother Danil
 step
@@ -308,12 +308,12 @@ step
     .goto Elwynn Forest,48.58,26.57,40,0
     .goto Elwynn Forest,49.95,25.74,40,0
     .goto Elwynn Forest,50.27,26.83
-    >>Mate os |cRXP_ENEMY_Kobold Laborers|r
+    >>Abate |cRXP_ENEMY_Operários Kobold|r
     .complete 21,1 --Kill Kobold Laborer (x12)
 	.mob Kobold Laborer
 step
     .goto Elwynn Forest,50.70,39.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Milly|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Milly|r
     .turnin 3903 >>Entregue Madel Quintana
     .accept 3904 >>Aceite Colheita da Madel
     .target Milly Osworth
@@ -343,12 +343,12 @@ step
 	.goto Elwynn Forest,54.52,49.58,35,0
 	.goto Elwynn Forest,54.43,48.10,35,0
 	.goto Elwynn Forest,53.68,47.29,35,0
-    >>Pegue o |cRXP_PICK_Buckets of Grapes|r no chão
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Saque o |cRXP_PICK_Buckets of Grapes|r no chão
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
     .goto Elwynn Forest,57.52,48.25
-    >>Abate |cRXP_ENEMY_Garrick Patatenra|r. Saqueie-o para |cRXP_LOOT_Garrick's Cabeça|r
+    >>Mate o |cRXP_ENEMY_Garrick Padfoot|r. Saqueie-o para |cRXP_LOOT_Garrick's Cabeça|r
     .complete 6,1 --Collect Garrick's Head (x1)
 	.mob Garrick Padfoot
 step
@@ -363,8 +363,8 @@ step
 	.goto Elwynn Forest,54.52,49.58,35,0
 	.goto Elwynn Forest,54.43,48.10,35,0
 	.goto Elwynn Forest,53.68,47.29,35,0
-    >>Saque os |cRXP_PICK_Buckets of Grapes|r no chão
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Saque o |cRXP_PICK_Buckets of Grapes|r no chão
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
 #loop
@@ -377,7 +377,7 @@ step
 	.goto Elwynn Forest,54.52,49.58,35,0
 	.goto Elwynn Forest,54.43,48.10,35,0
 	.goto Elwynn Forest,53.68,47.29,35,0
-    .xp 5+1175 >>Triture até 1175+/2800 XP
+    .xp 5+1175 >>Farme até 1175+/2800xp
     .mob Defias Thug
 step
     .goto Elwynn Forest,50.70,39.35
@@ -405,8 +405,8 @@ step
     .goto Elwynn Forest,49.20,41.81,10,0
     .goto Elwynn Forest,49.57,41.46,10,0
     .goto Elwynn Forest,49.33,40.93,10,0
-    >>Vá para cima
-    .goto Elwynn Forest,49.471,41.586,10 >>Vá em direção a |cRXP_FRIENDLY_Neals|r
+    >>Suba as escadas
+    .goto Elwynn Forest,49.471,41.586,10 >>Vá para |cRXP_FRIENDLY_Neals|r
 step
     .goto Elwynn Forest,49.471,41.586
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neals|r
@@ -424,7 +424,7 @@ step << Human
     .goto 1429,49.595,40.673,6,0
     .goto 1429,49.324,40.492,6,0
     .goto 1429,49.436,39.881,10,0
-    .goto Elwynn Forest,49.661,39.402,12 >>Desça as escadas, depois vá em direção a |cRXP_FRIENDLY_Gaspar Melchior|r
+    .goto Elwynn Forest,49.661,39.402,12 >>Desça, depois vá para |cRXP_FRIENDLY_Gaspar Melchior|r
     .isQuestComplete 77620
 step << Human
     #season 2
@@ -446,7 +446,7 @@ step
     .target Marshal Dughan
 step
     .goto Elwynn Forest,43.283,65.721
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_William|r através da parede enquanto entra na Estalagem
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_William|r através da parede ao entrar na Estalagem
     .accept 60 >>Aceite Velas Kobold
     .target William Pestle
 step
@@ -457,11 +457,11 @@ step
     .goto Elwynn Forest,43.771,65.803
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Farley|r
     .turnin 2158,2 >>Entregue Descanso e Relaxamento
-    .vendor 295 >>Comerciante de Lixo. |cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_por até 2 prata|r
+    .vendor 295 >>Comerciante de Lixo. |cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_até 2 prata|r
     .target Innkeeper Farley
 step
     .goto Elwynn Forest,43.25,66.25
-    >>Salte para o Lustre lá embaixo
+    >>Pule no Lustre no andar de baixo
     >>Fale com |cRXP_FRIENDLY_Zaldimar|r através da parede
     .trainer >>Treine seus feitiços de classe (Bola de Fogo R2, Impacto de Fogo)
 	.target Zaldimar Wefhellt
@@ -472,7 +472,7 @@ step
     .target Remy "Two Times"
 step
     #completewith BoarMeat1
-    >>Abate os |cRXP_ENEMY_Stonetusk Boars|r. Saqueie-os para |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
+    >>Abate os |cRXP_ENEMY_Javalis de Pedra|r. Saque-os para |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
     .collect 769,4,86,1 --Collect Chunk of Boar Meat (x4)
     .mob Stonetusk Boar
 step
@@ -485,7 +485,7 @@ step
     .target +Ma Stonefield
 step
     #completewith next
-    >>Abate os |cRXP_ENEMY_Kobold Tunnelers|r. Saque-os para |cRXP_LOOT_Pó de Ouro|r e |cRXP_LOOT_Velas dos kobolds|r
+    >>Mate os |cRXP_ENEMY_Kobold Escavadores|r. Saqueie-os para |cRXP_LOOT_Pó de Ouro|r e |cRXP_LOOT_Velas dos Kobolds|r
     .complete 47,1 --Collect Gold Dust (x10)
     .complete 60,1 --Collect Kobold Candle (x8)
     .mob Kobold Tunneler
@@ -493,7 +493,7 @@ step
     .goto Elwynn Forest,43.132,85.722
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Billy|r
     .turnin 85 >>Entregue O Colar Perdido
-    .accept 86 >>Aceite Torta para o Guinho
+    .accept 86 >>Aceite Juntando a Fome...
     .target Billy Maclure
 step
     #label BoarMeat1
@@ -504,12 +504,12 @@ step
 step
     .goto Elwynn Forest,42.36,89.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joshua|r
-    >>|cRXP_BUY_Compre o máximo|r |T132815:0|t[Leite Gelado] |cRXP_BUY_que você puder pagar dele|r
-    .vendor 258 >>Comerciante Lixo
+    >>|cRXP_BUY_Compre o máximo|r |T132815:0|t[Leite Gelado] |cRXP_BUY_quanto você conseguir pagar|r
+    .vendor 258 >>Lixo de Mercador
     .target Joshua Maclure
 step
     #completewith next
-    >>Mate os |cRXP_ENEMY_Stonetusk Boars|r. Saqueie-os para obter |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
+    >>Abate os |cRXP_ENEMY_Javalis de Pedra|r. Saque-os para |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
     .collect 769,4,86,1 --Collect Chunk of Boar Meat (x4)
     .mob Stonetusk Boar
 step
@@ -526,14 +526,14 @@ step
 	.goto Elwynn Forest,33.51,85.22,35,0
 	.goto Elwynn Forest,32.17,83.88,35,0
 	.goto Elwynn Forest,31.15,85.36,35,0
-    >>Abate os |cRXP_ENEMY_Stonetusk Boars|r. Saqueie-os para |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
+    >>Abate os |cRXP_ENEMY_Javalis de Pedra|r. Saque-os para |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
     .collect 769,4,86,1 --Collect Chunk of Boar Meat (x4)
     .mob Stonetusk Boar
 step
     .goto Elwynn Forest,34.486,84.253
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bernice|r e depois |cRXP_FRIENDLY_Gramma|r dentro
-    .turnin 86 >>Entregue Torta para o Guinho
-    .accept 84 >>Aceite De Volta para o Guinho
+    .turnin 86 >>Entregue Juntando a Fome...
+    .accept 84 >>Aceite ...com a Vontade de Comer
     .target +"Auntie" Bernice Stonefield
     .goto Elwynn Forest,34.486,84.253
     .turnin 111 >>Entregue Fale com a Vovó
@@ -542,21 +542,21 @@ step
     .goto Elwynn Forest,34.94,83.86
 step
     #completewith next
-    >>Mate os |cRXP_ENEMY_Kobold Tunnelers|r. Saqueie-os para obter |cRXP_LOOT_Pó de Ouro|r e |cRXP_LOOT_Velas dos kobolds|r
+    >>Mate os |cRXP_ENEMY_Kobold Escavadores|r. Saqueie-os para |cRXP_LOOT_Pó de Ouro|r e |cRXP_LOOT_Velas dos Kobolds|r
     .complete 47,1 --Collect Gold Dust (x10)
     .complete 60,1 --Collect Kobold Candle (x8)
     .mob Kobold Tunneler
 step
     .goto Elwynn Forest,43.132,85.722
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Billy|r
-    .turnin 84 >>Entregue De Volta para o Guinho
+    .turnin 84 >>Entregue ...com a Vontade de Comer
     .accept 87 >>Aceite Dentadouro
     .target Billy Maclure
 step
     .goto Elwynn Forest,42.36,89.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joshua|r
-    >>|cRXP_BUY_Compre o máximo|r |T132815:0|t[Leite Gelado] |cRXP_BUY_quanto você puder pagar dele|r
-    .vendor 258 >>Comerciante Lixo
+    >>|cRXP_BUY_Compre o máximo|r |T132815:0|t[Leite Gelado] |cRXP_BUY_quanto você conseguir pagar|r
+    .vendor 258 >>Lixo de Mercador
     .target Joshua Maclure
     .itemcount 1179,<8
 step
@@ -564,7 +564,7 @@ step
     .goto Elwynn Forest,39.00,82.27,15 >>Entre na Mina Fargodeep
 step
     #completewith Goldtooth
-    >>Abate os |cRXP_ENEMY_Kobold Tunnelers|r e os |cRXP_ENEMY_Kobold Miners|r. Saque-os para |cRXP_LOOT_Pó de Ouro|r e |cRXP_LOOT_Velas dos kobolds|r
+    >>Mate os |cRXP_ENEMY_Kobold Escavadores|r e os |cRXP_ENEMY_Kobold Mineiros|r. Saqueie-os para |cRXP_LOOT_Pó de Ouro|r e |cRXP_LOOT_Velas dos Kobolds|r
     .complete 47,1 --Collect Gold Dust (x10)
     .complete 60,1 --Collect Kobold Candle (x8)
     .mob Kobold Tunneler
@@ -573,17 +573,17 @@ step
     #label Mine
     .goto Elwynn Forest,39.07,80.87,12,0
     .goto Elwynn Forest,39.71,79.92
-    >>Entre em um dos maiores espaços abertos em Fargodeep Mina
+    >>Entre em um dos maiores espaços abertos da Mina Fargodeep
     .complete 62,1 --Scout Through the Fargodeep Mine
 step
     #completewith next
     .goto Elwynn Forest,39.95,78.81,12,0
     .goto Elwynn Forest,40.43,78.33,12,0
-    .goto Elwynn Forest,41.73,78.03,40 >>Vá em direção a |cRXP_ENEMY_Dentadouro|r
+    .goto Elwynn Forest,41.73,78.03,40 >>Vá para o |cRXP_ENEMY_Dentadouro|r
 step
     #label Goldtooth
     .goto Elwynn Forest,41.73,78.03
-    >>Mate |cRXP_ENEMY_Dentadouro|r. Saqueie |T133970:0|t|cRXP_LOOT_Bernice's Colar|r dele
+    >>Mate o |cRXP_ENEMY_Dentadouro|r. Saqueie-o para |cRXP_LOOT_Bernice's Colar|r
     .complete 87,1 --Collect Bernice's Necklace (x1)
     .mob Goldtooth
 step
@@ -595,7 +595,7 @@ step
 	.goto Elwynn Forest,36.76,83.19,35,0
 	.goto Elwynn Forest,38.02,81.70,35,0
 	.goto Elwynn Forest,39.14,82.87,35,0
-    >>Mate os |cRXP_ENEMY_Kobold Tunnelers|r e os |cRXP_ENEMY_Kobold Miners|r. Saqueie-os para obter |cRXP_LOOT_Pó de Ouro|r e |cRXP_LOOT_Velas dos kobolds|r
+    >>Mate os |cRXP_ENEMY_Kobold Escavadores|r e os |cRXP_ENEMY_Kobold Mineiros|r. Saqueie-os para |cRXP_LOOT_Pó de Ouro|r e |cRXP_LOOT_Velas dos Kobolds|r
     .complete 47,1 --Collect Gold Dust (x10)
     .complete 60,1 --Collect Kobold Candle (x8)
     .mob Kobold Tunneler
@@ -609,13 +609,13 @@ step << skip
     .goto Elwynn Forest,39.90,81.46,-1
     .goto Elwynn Forest,40.86,81.24,-1
     .goto Elwynn Forest,40.32,79.31,-1
-    .goto Elwynn Forest,39.30,60.48,30 >>|cRXP_WARN_Faça um Pulo de Logout dentro da caverna pulando em um triturador, nos troncos flutuantes, nas caixas, ou na luz do minecart dentro da caverna, depois saia e entre de novo|r
-    >>|cRXP_WARN_Alternativamente, volte correndo para Goldshire|r
-    >>|cRXP_WARN_NOTA: Itemrack pode causar problemas após logout skip onde a UI do jogo congela. Desabilite o addon ou crie uma macro /reload para clicar se isso acontecer|r
-    .link https://www.youtube.com/watch?v=SWBtPqm5M0Q >>https://www.youtube.com/watch?v=SWBtPqm5M0Q >>|cRXP_WARN_Clique aqui para aprender como fazer skip de logout|r
+    .goto Elwynn Forest,39.30,60.48,30 >>|cRXP_WARN_Faça um Logout Pular dentro da caverna pulando sobre um triturador, os troncos flutuantes, as caixas ou a luz do carrinho de mina dentro da caverna, depois desconecte e conecte novamente|r
+    >>|cRXP_WARN_Alternativamente, corra de volta para Goldshire|r
+    >>|cRXP_WARN_NOTA: Itemrack atualmente pode causar problemas após o logout skip, em que a UI no jogo congela. Certifique-se de desabilitar o addon ou criar uma macro /reload que você possa usar quando/se isso acontecer|r
+    .link https://www.youtube.com/watch?v=SWBtPqm5M0Q >>https://www.youtube.com/watch?v=SWBtPqm5M0Q >>|cRXP_WARN_CLIQUE AQUI para aprender a fazer o logout skip|r
 step
     #completewith next
-    .subzone 87 >>Volte para Goldshire
+    .subzone 87 >>Retorne para Goldshire
 step
     .goto Elwynn Forest,42.14,67.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Remy|r
@@ -632,17 +632,17 @@ step
     .target Marshal Dughan
 step
     .goto Elwynn Forest,43.283,65.721
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_William|r pela parede ao entrar na Estalagem
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_William|r através da parede ao entrar na Estalagem
     .turnin 60 >>Entregue Velas dos Kobolds
     .accept 61 >>Aceite Carregamento para Ventobravo
     .turnin 107 >>Entregue Bilhete para Durval
-    .accept 112 >>Aceite Coletando Alga
+    .accept 112 >>Aceite Coletando Algas
     .target William Pestle
 step
     .goto Elwynn Forest,43.771,65.803
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Farley|r
     >>|cRXP_BUY_Compre 35|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .collect 1179,35,432,1 --Ice Cold Milk (35)
     .target Innkeeper Farley
 step
@@ -662,20 +662,20 @@ step
     .goto Elwynn Forest,54.10,62.74,50,0
     .goto Elwynn Forest,57.48,63.21,50,0
     .goto Elwynn Forest,56.37,66.50
-    >>Mate os |cRXP_ENEMY_Murloc Streamrunners|r e os |cRXP_ENEMY_Murlocs|r. Saqueie-os por |cRXP_LOOT_Crystal Alga Frond|r
-    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Murloc Streamrunners|r têm|r |T132307:0|t[Increased Movespeed]
+    >>Mate os |cRXP_ENEMY_Murloc Streamrunners|r e os |cRXP_ENEMY_Murlocs|r. Saqueie-os para obter |cRXP_LOOT_Crystal Alga Frond|r
+    >>|cRXP_WARN_Tenha cuidado, pois |cRXP_ENEMY_Murloc Streamrunners|r têm|r |T132307:0|t[Increased Movespeed]
     .complete 112,1 --Collect Crystal Kelp Frond (x4)
 	.mob Murloc Streamrunner
 	.mob Murloc
 step
     #completewith next
-    .goto Elwynn Forest,61.66,53.96,12 >>Entre na Mina Jasperlode
+    .goto Elwynn Forest,61.66,53.96,12 >>Entre na Mina de Jasperlode
 step
     .goto Elwynn Forest,61.19,51.47,12,0
     .goto Elwynn Forest,60.68,50.84,12,0
     .goto Elwynn Forest,60.40,50.16
     >>Siga o caminho do meio da caverna
-    >>|cRXP_WARN_Tome cuidado pois os |cRXP_ENEMY_Kobold Geomancers|r lançam |T135812:0|t[Bola de Fogo] |cRXP_WARN_(Lançamento à Distância: Causa cerca de 30 de dano)|r
+    >>|cRXP_WARN_Tenha cuidado, pois |cRXP_ENEMY_Kobold Geomancers|r lançam|r |T135812:0|t[Bola de Fogo] |cRXP_WARN_(Ataque à Distância: Causa aproximadamente 30 de dano)|r
     .complete 76,1 --Scout through the Jasperlode Mine
 step
     #completewith next
@@ -694,21 +694,21 @@ step
     .goto Elwynn Forest,74.89,67.20,45,0
     .goto Elwynn Forest,72.59,65.60,45,0
     .goto Elwynn Forest,71.61,60.82,50,0
-    >>Mate todos os |cRXP_ENEMY_Young Forest Ursos|r que você vê e os |cRXP_ENEMY_Prowlers|r
+    >>Mate todos os |cRXP_ENEMY_Young Forest Ursos|r que você vir e os |cRXP_ENEMY_Prowlers|r
     .complete 52,2 --Kill Young Forest Bear (x5)
     .unitscan +Young Forest Bear
     .complete 52,1 --Kill Prowler (x8)
 	.mob +Prowler
 step
     .goto Elwynn Forest,72.65,60.33
-	>>Clique em |cRXP_PICK_half-eaten body|r no chão
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+	>>Clique em |cRXP_PICK_corpo semicomido|r no chão
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .turnin 37 >>Entregue Encontre os Guardas Perdidos
     .accept 45 >>Aceite Descubra o Destino de Rodolfo
 step
     #completewith Bears
     .goto Elwynn Forest,78.78,60.94,70,0
-    >>Mate todos os |cRXP_ENEMY_Young Forest Ursos|r que você vê e os |cRXP_ENEMY_Prowlers|r
+    >>Mate todos os |cRXP_ENEMY_Young Forest Ursos|r que você vir e os |cRXP_ENEMY_Prowlers|r
     .complete 52,2 --Kill Young Forest Bear (x5)
     .unitscan +Young Forest Bear
     .complete 52,1 --Kill Prowler (x8)
@@ -720,19 +720,19 @@ step
     .target Supervisor Raelen
 step
     #completewith next
-    >>Pegue os |cRXP_PICK_Bundles Of Madeira|r na base das árvores
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Pegue os |cRXP_PICK_Feixes de Madeira|r na base das árvores
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 5545,1 --Collect Bundle of Wood (x8)
 step
-    .goto Elwynn Forest,79.79,55.51,45 >>Vá para |cRXP_PICK_Rolf's Cadáver|r
+    .goto Elwynn Forest,79.79,55.51,45 >>Viaje para |cRXP_PICK_Cadáver de Rolf|r
     .isOnQuest 45
 step
     .goto Elwynn Forest,79.79,55.51
-    >>Mate os |cRXP_ENEMY_Murloc Lurkers|r e os |cRXP_ENEMY_Murloc Foragers|r guardando |cRXP_PICK_Rolf's Cadáver|r
+    >>Mate os |cRXP_ENEMY_Murloc Lurkers|r e os |cRXP_ENEMY_Murloc Foragers|r guardando |cRXP_PICK_Cadáver de Rolf|r
     >>|cRXP_WARN_Você pode ter que matar um e depois reiniciar|r
-    >>Tenha cuidado pois |cRXP_ENEMY_Murloc Lurkers|r lançam |T132090:0|t[Punhalada pelas Costas] |cRXP_WARN_(Combate Corpo a Corpo Instantâneo: Causa dano dobrado vindo de trás)|cRXP_ENEMY_ e |rMurloc Foragers|r lançam |T135915:0|t[Beber Poção Menor] |cRXP_WARN_(Auto-uso: Cura cerca de 65 pontos)|r
-	>>Clique em |cRXP_PICK_Rolf's Cadáver|r no chão
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Tenha cuidado, pois |cRXP_ENEMY_Murloc Lurkers|r lançam |T132090:0|t[Punhalada pelas Costas] |cRXP_WARN_(Ataque Corpo a Corpo Instantâneo: Causa dano duplo quando atacado pelas costas) e |cRXP_ENEMY_Murloc Foragers|r lançam|r |T135915:0|t[Beber Poção Menor] |cRXP_WARN_(Auto-lançamento: Cura aproximadamente 65 de vida)|r
+	>>Clique em |cRXP_PICK_Cadáver de Rolf|r no chão
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .turnin 45 >>Entregue Descubra o Destino de Rodolfo
     .accept 71 >>Aceite Apresente-se a Tomás
 step
@@ -754,8 +754,8 @@ step
 	.goto Elwynn Forest,83.48,59.19,35,0
 	.goto Elwynn Forest,81.77,59.17,35,0
 	.goto Elwynn Forest,80.48,55.18,35,0
-    >>Saque o |cRXP_PICK_Bundles Of Madeira|r na base das árvores
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Pegue os |cRXP_PICK_Feixes de Madeira|r na base das árvores
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 5545,1 --Collect Bundle of Wood (x8)
 step
     .goto Elwynn Forest,81.382,66.112
@@ -765,8 +765,8 @@ step
 step
     #label Bears
     .goto Elwynn Forest,79.457,68.789
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sara|r dentro
-    .accept 83 >>Aceite Mercadorias de Linho Vermelho
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sara|r
+    .accept 83 >>Aceite Tecidos de Linho Vermelho
     .target Sara Timberlain
 step
     .goto Elwynn Forest,75.05,72.54,0
@@ -780,8 +780,8 @@ step
     .goto Elwynn Forest,76.66,76.68,45,0
     .goto Elwynn Forest,79.27,79.44,45,0
     .goto Elwynn Forest,81.57,76.85
-    >>Mate todos os |cRXP_ENEMY_Young Forest Ursos|r que você vê e os |cRXP_ENEMY_Prowlers|r
-    >>|cRXP_WARN_Inflige 51%+ de dano nos |cRXP_ENEMY_Young Forest Ursos|r e nos |cRXP_ENEMY_Prowlers|r, depois puxe-os para o |cRXP_FRIENDLY_Guarda de Ventobravo|r para matá-los mais eficientemente|r
+    >>Mate todos os |cRXP_ENEMY_Young Forest Ursos|r que você vir e os |cRXP_ENEMY_Prowlers|r
+    >>|cRXP_WARN_Inflija 51%+ de dano aos |cRXP_ENEMY_Young Forest Ursos|r e aos |cRXP_ENEMY_Prowlers|r, depois puxe-os para o |cRXP_FRIENDLY_Guarda de Ventobravo|r para matá-los com mais eficiência|r
     .complete 52,2 --Kill Young Forest Bear (x5)
     .complete 52,1 --Kill Prowler (x8)
     .unitscan Young Forest Bear
@@ -792,7 +792,7 @@ step
     .turnin 52 >>Entregue Proteja a Fronteira
     .turnin 71 >>Entregue Apresente-se a Tomás
     .accept 39 >>Aceite Entregar o Relatório de Tomás
-    .accept 109 >>Aceite Entregar para Miguel Mantoforte
+    .accept 109 >>Aceite Reportar-se a Miguel Mantoforte
     .target Guard Thomas
     .xp <9,1
 step
@@ -817,7 +817,7 @@ step
 	.goto Elwynn Forest,71.38,76.77,40,0
 	.goto Elwynn Forest,70.95,77.25,40,0
 	.goto Elwynn Forest,70.45,76.94,40,0
-    >>Mate os |cRXP_ENEMY_Bandidos Défias|r. Saque-os para obter |cRXP_LOOT_Red Linen Bandanas|r e |T134939:0|t[|cRXP_LOOT_Escritura de Cerro Oeste|r]
+    >>Mate os |cRXP_ENEMY_Bandidos Défias|r. Saque-os por |cRXP_LOOT_Red Linen Bandanas|r e o |T134939:0|t[|cRXP_LOOT_Escritura de Cerro Oeste|r]
     >>|cRXP_WARN_Use o |T134939:0|t[|cRXP_LOOT_Escritura de Cerro Oeste|r] para iniciar a missão|r
     .complete 83,1 --Collect Red Linen Bandana (x6)
     .collect 1972,1,184,1 --Collect Westfall Deed (x1)
@@ -827,23 +827,23 @@ step
 step
     #label Deed
     >>|cRXP_WARN_Use o |T134939:0|t[|cRXP_LOOT_Escritura de Cerro Oeste|r] para iniciar a missão|r
-    .accept 184 >>Aceite Escritura do Taturana
+    .accept 184 >>Aceite Escritura de Furlbrow
     .itemcount 1972,1
 step
     .goto Elwynn Forest,69.89,79.52
-    >>Mate a |cRXP_ENEMY_Princesa|r. Saque-a para obter o |cRXP_LOOT_Colar de Latão|r
-    >>|cRXP_WARN_Lembre-se de usar a cerca para kitar ela|r
+    >>Mate a |cRXP_ENEMY_Princesa|r. Saque-a pelo |cRXP_LOOT_Colar de Latão|r
+    >>|cRXP_WARN_Lembre-se de kitá-la usando a cerca|r
     .complete 88,1 --Collect Brass Collar (x1)
     .mob Princess
 step
     .goto Elwynn Forest,79.457,68.789
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sara|r
-    .turnin 83 >>Entregue Mercadorias de Linho Vermelho
+    .turnin 83 >>Entregue Tecidos de Linho Vermelho
     .target Sara Timberlain
     .isQuestComplete 83
 step << skip
     .goto Redridge Mountains,9.62,71.36
-    .zone Redridge Mountains >>Vá para Montanhas Cristarrubra
+    .zone Redridge Mountains >>Viaje para Montanhas Cristarrubra
     .isOnQuest 88
 step << skip
     #completewith next
@@ -857,19 +857,19 @@ step << skip
     .target Ariena Stormfeather
 step
     #completewith next
-    .hs >>Volte para Goldshire
+    .hs >>Use sua Pedra de Retorno para Goldshire
 step
     .goto Elwynn Forest,43.283,65.721
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_William Pegome|r
     .turnin 112 >>Entregue Coletando Alga
-    .accept 114 >>Aceite A Fuga
+    .accept 114 >>Aceite A fuga
     .target William Pestle
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dughan|r e |cRXP_FRIENDLY_Argus|r
-    .turnin 39 >>Entregue O Relatório de Tomás
+    .turnin 39 >>Entregue Relatório de Tomás
     .turnin 76 >>Entregue A Mina de Jaspe
-    .accept 239 >>Aceite Ribeira d'Oeste Precisa de Ajuda!
-    .accept 109 >>Aceite Entregar para Miguel Mantoforte
+    .accept 239 >>Aceite Ribeira d'Oeste Precisa de Ajuda
+    .accept 109 >>Aceite Reportar-se a Miguel Mantoforte
     .target +Marshal Dughan
     .goto Elwynn Forest,42.105,65.927
     .accept 1097 >>Aceite Tarefa de Elmore
@@ -882,7 +882,7 @@ step
     .target Maybell Maclure
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ma|r e |cRXP_FRIENDLY_Bernice|r
-    .turnin 88,3 >>Entregue Princesa tem que Morrer!
+    .turnin 88,3 >>Entregue Princesa Tem que Morrer
     .target +Ma Stonefield
     .goto Elwynn Forest,34.660,84.482
     .turnin 87 >>Entregue Dentadouro
@@ -896,7 +896,7 @@ step
 	.goto Elwynn Forest,33.51,85.22,35,0
 	.goto Elwynn Forest,32.17,83.88,35,0
 	.goto Elwynn Forest,31.15,85.36,35,0
-    .xp 9+4825 >>Farme até 4225+/6500 XP
+    .xp 9+4825 >>Farme até 4225+/6500 xp
     .mob Stonetusk Boar
     .isOnQuest 184
 step
@@ -907,22 +907,22 @@ step
 	.goto Elwynn Forest,33.51,85.22,35,0
 	.goto Elwynn Forest,32.17,83.88,35,0
 	.goto Elwynn Forest,31.15,85.36,35,0
-    .xp 9+4825 >>Farme até 4825+/6500 XP
+    .xp 9+4825 >>Farme até 4825+/6500 xp
     .mob Stonetusk Boar
     .itemcount 1972,<1
 step
     .goto Elwynn Forest,24.23,74.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rainer|r
-    .turnin 239 >>Entregue Ribeira d'Oeste Precisa de Ajuda!
+    .turnin 239 >>Entregue Ribeira d'Oeste Precisa de Ajuda
     .target Deputy Rainer
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Fazendeiro Taturana|r e |cRXP_FRIENDLY_Verna|r
     .accept 64 >>Aceite A Herança Esquecida
-    .turnin 184 >>Entregue Escritura do Taturana
+    .turnin 184 >>Entregue Escritura do Furlbrow
     .target +Farmer Furlbrow
     .goto Westfall,59.95,19.35
     .accept 36 >>Aceite Ensopado de Cerro Oeste
-    .accept 151 >>Aceite A Pobre Velhinha Brancurinha
+    .accept 151 >>Aceite Pobre Velha Brancurinha
     .goto Westfall,59.91,19.41
     .target +Verna Furlbrow
     .isOnQuest 184
@@ -932,20 +932,20 @@ step
     .target +Farmer Furlbrow
     .goto Westfall,59.95,19.35
     .accept 36 >>Aceite Ensopado de Cerro Oeste
-    .accept 151 >>Aceite A Pobre Velhinha Brancurinha
+    .accept 151 >>Aceite Pobre Velha Brancurinha
     .target +Verna Furlbrow
     .goto Westfall,59.91,19.41
 step
     #completewith next
-    >>Abra os |cRXP_PICK_Saco de Aveia|r no chão. Saqueie-os para |cRXP_LOOT_Handfuls of Oats|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Abra os |cRXP_PICK_Sacos de Aveia|r no chão. Saque-os por |cRXP_LOOT_Handfuls of Oats|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 151,1 --Handful of Oats (8)
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Fazendeiro Saldanha|r e depois |cRXP_FRIENDLY_Salma|r dentro
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Fazendeiro Saldanha|r e depois com |cRXP_FRIENDLY_Salma|r dentro
     .accept 9 >>Aceite Os Campos da Morte
     .target +Farmer Saldean
     .goto Westfall,56.04,31.23
-    .turnin 36 >>Entregue Ensopado de Cerro Oeste
+    .turnin 36 >>Entregue Cozido de Costa Negra
     .accept 38 >>Aceite Ensopado de Cerro Oeste
     .accept 22 >>Aceite Empadão de Fígado de Goretusco
     .target +Salma Saldean
@@ -953,10 +953,10 @@ step
 step
     #completewith next
     >>|cRXP_WARN_Tenha MUITO cuidado com os |cRXP_ENEMY_Harvest Watchers|r e os |cRXP_ENEMY_Harvest Golems|r no caminho|r
-    .goto Westfall,56.33,47.52,20 >>Vá para |cRXP_FRIENDLY_Gryan|r
+    .goto Westfall,56.33,47.52,20 >>Viaje para |cRXP_FRIENDLY_Gryan|r
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gryan|r, |cRXP_FRIENDLY_Danuvin|r, e depois |cRXP_FRIENDLY_Lewis|r dentro
-    .turnin 109 >>Entregue Relatório para Gryan Mantoforte
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gryan|r, |cRXP_FRIENDLY_Danuvin|r e depois com |cRXP_FRIENDLY_Lewis|r dentro
+    .turnin 109 >>Entregue Miguel Mantoforte
     .accept 12 >>Aceite A Milícia do Povo
     .target +Gryan Stoutmantle
     .goto Westfall,56.33,47.52
@@ -984,7 +984,7 @@ step
     .goto StormwindClassic,58.13,59.40,20,0
     .goto StormwindClassic,57.06,61.83,20,0
     .goto StormwindClassic,56.55,64.79,12,0
-    .goto StormwindClassic,56.20,64.60,12 >>Vá para |cRXP_FRIENDLY_Morgan|r
+    .goto StormwindClassic,56.20,64.60,12 >>Viaje para |cRXP_FRIENDLY_Morgan|r
 step
     .goto StormwindClassic,56.20,64.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Morgan|r
@@ -1001,15 +1001,15 @@ step << skip
     .goto Stormwind City,51.83,60.41,4,0
     .goto Stormwind City,51.59,60.15,6,0
     .goto Stormwind City,39.17,76.58,12,0
-    >>|cRXP_WARN_Suba na tocha, depois desça para ficar embaixo de Ventobravo|r
-    >>|cRXP_WARN_Com Sombras em "Justo" ou "Baixo", entre no meio dos pés de Derek the Dinosaur (a parte mais clara da terra) bem antes do vazio azul, depois caminhe reto para frente|r
+    >>|cRXP_WARN_Pule para cima da tocha, depois caia para ficar sob Ventobravo|r
+    >>|cRXP_WARN_Com Sombras em "Fair" ou "Low", fique no meio dos pés de Derek the Dinosaur (a parte mais clara da terra) bem antes do vazio azul, depois caminhe em linha reta para frente|r
     .goto Stormwind City,38.61,79.39,10 >>Viaje para |cRXP_FRIENDLY_Jennea|r
 step << skip
     .goto Stormwind City,38.61,79.39
     >>Fale com |cRXP_FRIENDLY_Jennea|r
-    .trainer >>Treine seus feitiços de classe (Armadura de Gelo r2, Novane de Gelo, Polimorfia, Conjurar Água r1 & r2)
+    .trainer >>Treine seus feitiços de classe (Armadura Gélida r2, Novane Congelante, Polimorfia, Conjurar Água r1 & r2)
     >>Custo Total: 15s
-    >>Lembre que você pode querer dinheiro para Poções de Cura (3s cada), Tubo de Bronze (8s cada) e comida de nível 5 (20c por 5)
+    >>Lembre-se que você pode querer dinheiro para Poções de Cura (3s cada), Tubo de Bronze (8s cada), e comida de nível 5 (20c por 5)
     .target Jennea Cannon
 step << skip
     #completewith next
@@ -1022,7 +1022,7 @@ step
     .goto StormwindClassic,60.05,51.60,12,0
     .goto StormwindClassic,67.54,46.88,12,0
     .goto StormwindClassic,71.01,48.62,12,0
-    .goto StormwindClassic,74.31,47.22,12 >>Vá em direção a |cRXP_FRIENDLY_Osric|r
+    .goto StormwindClassic,74.31,47.22,12 >>Vá para |cRXP_FRIENDLY_Osric|r
 step
     .goto StormwindClassic,74.31,47.22
     >>Fale com |cRXP_FRIENDLY_Osric|r
@@ -1036,7 +1036,7 @@ step
     .goto StormwindClassic,64.49,36.75,15,0
     .goto StormwindClassic,64.97,29.32,15,0
     .goto StormwindClassic,51.89,13.19,12,0
-    .goto StormwindClassic,51.76,12.08,12 >>Vá em direção a |cRXP_FRIENDLY_Grimand|r
+    .goto StormwindClassic,51.76,12.08,12 >>Vá para |cRXP_FRIENDLY_Grimand|r
 step
     .goto StormwindClassic,51.76,12.08
     >>Fale com |cRXP_FRIENDLY_Grimand|r
@@ -1055,12 +1055,12 @@ step
     .goto Stormwind City,63.89,8.25,20 >>Vá para o Deeprun Tram
 step
     #completewith next
-    +|cRXP_WARN_Ride the Deeprun Tram whilst spam casting|r |T132794:0|t[Conjurar Água r2]
+    +|cRXP_WARN_Monte o Deeprun Tram enquanto lança continuamente|r |T132794:0|t[Conjurar Água r2]
 step
     #label Monty
     .goto Ironforge,76.41,51.22,30,0
-    >>Fale com |cRXP_FRIENDLY_Monty|r depois de pegar o tram
-    .accept 6661 >>Aceite Ratos de Porão
+    >>Fale com |cRXP_FRIENDLY_Monty|r depois de pegar o bonde
+    .accept 6661 >>Aceite Caçada aos Ratos das Profundezas
     .target Monty
 step
     >>Usar o |T133942:0|t[Rato Catcher's Flute] nos |cRXP_FRIENDLY_Deeprun Ratos|r no Deeprun Tram
@@ -1070,7 +1070,7 @@ step
 step
     >>Fale com |cRXP_FRIENDLY_Monty|r
 --  >>|cRXP_WARN_Wait out the RP|r
-    .turnin 6661 >>Virar em Ratos de Porão
+    .turnin 6661 >>Entregue Caçada aos Ratos das Profundezas
     .target Monty
     .zoneskip Stormwind City
 step
@@ -1105,9 +1105,9 @@ step
 step
     .goto Ironforge,27.17,8.58
     >>Fale com |cRXP_FRIENDLY_Dink|r
-    .trainer >>Treine seus feitiços de classe (Armadura de Gelo r2, Novane de Gelo, Polimorfia, Conjurar Água r1 & r2)
+    .trainer >>Treine seus feitiços de classe (Armadura Gélida r2, Novane Congelante, Polimorfia, Conjurar Água r1 & r2)
     >>Custo Total: 15s
-    >>Lembre que você pode querer dinheiro para Poções de Cura (3s cada), Tubo de Bronze (8s cada) e comida de nível 5 (20c por 5)
+    >>Lembre-se que você pode querer dinheiro para Poções de Cura (3s cada), Tubo de Bronze (8s cada), e comida de nível 5 (20c por 5)
     .target Dink
 step
     #completewith next
@@ -1115,7 +1115,7 @@ step
     .goto Ironforge,22.59,38.13,20,0
     .goto Ironforge,20.40,53.19,20,0
     >>Entre no prédio
-    .goto Ironforge,18.14,51.45,10 >>Voe para |cRXP_FRIENDLY_Firebrew|r
+    .goto Ironforge,18.14,51.45,10 >>Vá para |cRXP_FRIENDLY_Firebrew|r
 step
     #label IFHS
     .goto Ironforge,18.14,51.45
@@ -1135,7 +1135,7 @@ step
     .target Bailey Stonemantle
 step << skip
     .goto Ironforge,36.35,57.88
-    .goto Dun Morogh,53.03,35.71,10 >>|cRXP_WARN_Salte no topo dos lados do cofre. Faça logout e pule para Dun Morogh|r
+    .goto Dun Morogh,53.03,35.71,10 >>|cRXP_WARN_Salte no topo dos lados do cofre. Faça logout para pular para Dun Morogh|r
     .isQuestAvailable 314
 step
     .goto Ironforge,15.16,85.70,20,0
@@ -1147,9 +1147,9 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Human Mage
-#name 10-11 ADV Dun Morogh Human Mago AdE
+#name 10-11 ADV Dun Morogh Humano Mago AdE
 #version 2
-#group ADV AdE Maga da Aliança
+#group RestedXP ADV AdE Maga da Aliança
 #defaultfor Human Mage
 #next 10-12 ADV Costa Negra 1 Mago AdE
 
@@ -1157,43 +1157,43 @@ step
     #completewith Rudra
     #label Dirt
     .goto Dun Morogh,59.84,49.56,40,0
-    .goto Dun Morogh,61.36,47.07,40 >>Suba o caminho de terra
+    .goto Dun Morogh,61.36,47.07,40 >>Suba pelo caminho de terra
     .isQuestAvailable 314
 step
     #completewith next
     #requires Dirt
-    +|cRXP_WARN_Leve |cRXP_ENEMY_Ragash|r para|r |cRXP_FRIENDLY_Rudra|r
-    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >>https://youtu.be/Zg4FNWw-P5k?t=3815 >>|cRXP_WARN_CLIQUE AQUI Se você está tendo dificuldades|r
+    +|cRXP_WARN_Atraia |cRXP_ENEMY_Ragash|r para baixo até|r |cRXP_FRIENDLY_Rudra|r
+    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >>https://youtu.be/Zg4FNWw-P5k?t=3815 >>|cRXP_WARN_CLIQUE AQUI se você está tendo dificuldades|r
     .mob Vagash
 step
     #label Rudra
     .goto Dun Morogh,63.08,49.85
     >>Fale com |cRXP_FRIENDLY_Rudra|r
-    .accept 314 >>Aceite Amarre sua Cabra pois Ragash Está Solto
+    .accept 314 >>Aceite Amarre Sua Cabra Pois Ragash Está Solto
     .target Rudra Amberstill
 step
     .goto Dun Morogh,62.57,46.14,0
     .goto Dun Morogh,62.78,54.60,40,0
     .goto Dun Morogh,62.82,55.73
-    >>Abate |cRXP_ENEMY_Ragash|r. Saque-o para obter o |cRXP_LOOT_Dentada de Ragash|r
-    >>|cRXP_WARN_Atraia |cRXP_ENEMY_Ragash|r até o |cRXP_FRIENDLY_Dun Morogh Montanhista|r ao sul do rancho. Certifique-se de que você causa 51%+ de dano a ele|r
-    >>|cRXP_WARN_Lembre-se de conseguir XP de exploração em Tundrid Hills e atraia o |cRXP_ENEMY_Neve Leopardo|r para o |cRXP_FRIENDLY_Dun Morogh Montanhista|r se for conveniente|r
+    >>Abata o |cRXP_ENEMY_Ragash|r. Saque-o para obter a |cRXP_LOOT_Presa de Ragash|r
+    >>|cRXP_WARN_Arraste o |cRXP_ENEMY_Ragash|r para o |cRXP_FRIENDLY_Montanhista de Dun Morogh|r ao sul do rancho. Certifique-se de causar 51%+ de dano a ele|r
+    >>|cRXP_WARN_Lembre-se de obter pontos de experiência de exploração de The Tundrid Hills e puxe o |cRXP_ENEMY_Leopardo da Neve|r para o |cRXP_FRIENDLY_Montanhista de Dun Morogh|r se conveniente|r
     .complete 314,1 --Collect Fang of Vagash (1)
     .mob Vagash
 step
     .goto Dun Morogh,63.08,49.85
     >>Fale com |cRXP_FRIENDLY_Rudra|r
-    .turnin 314,3 >>Entregue Amarre sua Cabra pois Ragash Está Solto
+    .turnin 314,3 >>Entregue Amarre Sua Cabra Pois Ragash Está Solto
     .target Rudra Amberstill
 step
     #completewith Ghilm
-    +|cRXP_WARN_Lembre-se de guardar|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_que você consegue ao subir de nível|r |T133971:0|t[Culinária] |cRXP_WARN_até 50 depois|r
+    +|cRXP_WARN_Lembre-se de guardar|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_que você obtém ao subir de nível|r |T133971:0|t[Culinária] |cRXP_WARN_até nível 50 depois|r
 step
     #completewith next
     .goto Dun Morogh,66.34,50.92,50,0
     .goto Dun Morogh,67.72,53.66,30,0
-    +|cRXP_WARN_Atraia o |cRXP_ENEMY_Urso de Garra de Gelo|r para o |cRXP_FRIENDLY_Ironforge Montanhista|r (certifique-se de que você causa 51%+ de dano para ganhar crédito)|r
-    >>|cRXP_WARN_Tome cuidado pois eles lançam|r |T135853:0|t[Garra de Gelo] |cRXP_WARN_(Corpo a Corpo Instant: Causa dano adicional de 4 pontos de corpo a corpo)|r
+    +|cRXP_WARN_Arraste o |cRXP_ENEMY_Urso de Garra de Gelo|r para o |cRXP_FRIENDLY_Montanhista de Ironforge|r (certifique-se de causar 51%+ de dano para obter crédito)|r
+    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T135853:0|t[Garra de Gelo] |cRXP_WARN_(Corpo a Corpo Instantâneo: Causa 4 dano adicional de combate)|r
     .mob Ice Claw Bear
 step
     #sticky
@@ -1237,8 +1237,8 @@ step
     .target +Foreman Stonebrow
 step
     #completewith Bonesnappers
-    >>Abate os |cRXP_ENEMY_Rockjaw Skullthumpers|r
-    >>|cRXP_WARN_Não vá se desviar de seu caminho para matá-los|r
+    >>Abata os |cRXP_ENEMY_Rockjaw Skullthumpers|r
+    >>|cRXP_WARN_Não saia do seu caminho para matá-los|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob Rockjaw Skullthumper
 step
@@ -1251,8 +1251,8 @@ step
     .goto Dun Morogh,71.94,50.48,40,0
     .goto Dun Morogh,72.55,51.50,40,0
     .goto Dun Morogh,72.62,52.56
-    >>Abate |cRXP_ENEMY_Pedraqueixo Bonesnappers|r dentro da caverna
-    >>|cRXP_WARN_Tome cuidado pois eles lançam|r |T132154:0|t[Derrubar] |cRXP_WARN_(Corpo a Corpo Instant: Atordoa por 2 segundos)|r
+    >>Abata os |cRXP_ENEMY_Rockjaw Bonesnappers|r dentro da caverna
+    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T132154:0|t[Derrubar] |cRXP_WARN_(Corpo a Corpo Instantâneo: Imobiliza por 2 segundos)|r
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
     .mob Rockjaw Bonesnapper
 step
@@ -1265,7 +1265,7 @@ step
 	.goto Dun Morogh,68.36,59.57,30,0
 	.goto Dun Morogh,69.16,57.51,30,0
 	.goto Dun Morogh,69.93,57.29,30,0
-    >>Abate os |cRXP_ENEMY_Rockjaw Skullthumpers|r
+    >>Abata os |cRXP_ENEMY_Rockjaw Skullthumpers|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob Rockjaw Skullthumper
 step
@@ -1273,7 +1273,7 @@ step
     #label Frast
     .goto Dun Morogh,68.87,55.96,0,0
     >>Fale com |cRXP_FRIENDLY_Frast|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .target Frast Dokner
     .isQuestAvailable 419
 step
@@ -1288,13 +1288,13 @@ step
     #requires Frast
     .goto Dun Morogh,69.33,55.46
     >>Fale com |cRXP_FRIENDLY_Umídio|r
-    .train 2575 >>Aprenda |T136248:0|t[Mineração]
+    .train 2575 >>Treine |T136248:0|t[Mineração]
     .target Dank Drizzlecut
 step
     #label Shortcut1
     #completewith Pilot
     .goto Dun Morogh,70.35,55.28,5,0
-    .link https://youtu.be/G2IscpFZVeQ?t=4034 >>https://youtu.be/G2IscpFZVeQ?t=4034 >>|cRXP_WARN_CLIQUE AQUI se você está tendo dificuldade|r
+    .link https://youtu.be/G2IscpFZVeQ?t=4034 >>https://youtu.be/G2IscpFZVeQ?t=4034 >>|cRXP_WARN_Clique aqui se você está tendo dificuldades|r
     .goto Dun Morogh,70.52,54.75,12 >>Pegue o atalho atrás de |cRXP_FRIENDLY_Umídio|r
 step
     #completewith Pilot
@@ -1302,41 +1302,41 @@ step
     #label Shortcut2
     .goto Dun Morogh,70.97,50.70,50,0
     .goto Dun Morogh,72.90,49.79,50,0
-    .goto Dun Morogh,77.11,48.82,50 >>|cRXP_WARN_Puxe os |cRXP_ENEMY_Rockjaw Ambushers|r próximos para os |cRXP_FRIENDLY_Montanhistas de Altaforja|r que podem patrulhar na estrada (certifique-se de causar 51%+ de dano para obter crédito)|r
+    .goto Dun Morogh,77.11,48.82,50 >>|cRXP_WARN_Atraia os |cRXP_ENEMY_Emboscadores Pedraqueixo|r para os |cRXP_FRIENDLY_Montanhistas de Altaforja|r que podem patrulhar na estrada (certifique-se de causar 51%+ de dano para obter crédito)|r
     .mob Rockjaw Ambusher
     .unitscan Ironforge Mountaineer
 step
     #requires Shortcut2
     #completewith next
     .goto Dun Morogh,81.23,42.66,50,0
-    .goto Dun Morogh,83.01,40.31,30 >>Arraste o |cRXP_ENEMY_Rochetusco Cicatrizado|r pelo túnel
-    >>|cRXP_WARN_Tenha cuidado ao lançarem|r |T132337:0|t[Investida] |cRXP_WARN_(Instantâneo Pessoal: Aumenta velocidade de movimento por 3 segundos, causando 40-100 de dano corpo a corpo ao acertar. Apenas lançável à distância)|r
+    .goto Dun Morogh,83.01,40.31,30 >>Atraia um |cRXP_ENEMY_Rochetusco Cicatrizado|r através do túnel
+    >>|cRXP_WARN_Tenha cuidado enquanto eles conjuram|r |T132337:0|t[Carga] |cRXP_WARN_(Auto Instantâneo: Aumenta velocidade de movimento por 3 segundos, causando 40-100 dano corpo a corpo ao atingir. Lançável apenas a distância)|r
     .mob Scarred Crag Boar
 step
     #label Pilot
     .goto Dun Morogh,83.89,39.19
-    >>Converse com |cRXP_FRIENDLY_Hammerfoot|r
+    >>Fale com |cRXP_FRIENDLY_Hammerfoot|r
     .accept 419 >>Aceite O Piloto Perdido
     .target Pilot Hammerfoot
 step
     .goto Dun Morogh,81.37,37.02,30,0
     .goto Dun Morogh,79.67,36.17
-    >>Clique em |cRXP_PICK_Cadáver Anão|r no chão
-    >>|cRXP_WARN_CERTIFIQUE-SE de ter um espaço livre no inventário. |cRXP_ENEMY_Ronhagarra|r não descerá se você não aceitar a próxima missão|r
-    >>|cRXP_WARN_LEMBRE-SE: você está conduzindo |cRXP_ENEMY_Ronhagarra|r de volta para |cRXP_FRIENDLY_Hammerfoot|r
+    >>Clique no |cRXP_PICK_Cadáver Anão|r no chão
+    >>|cRXP_WARN_Tenha certeza de que você tem um espaço livre no inventário. |cRXP_ENEMY_Ronhagarra|r não descerá se você não aceitar a próxima missão|r
+    >>|cRXP_WARN_Lembre-se de que você está atraindo |cRXP_ENEMY_Ronhagarra|r de volta para |cRXP_FRIENDLY_Hammerfoot|r
     .turnin 419 >>Entregue O Piloto Perdido
     .accept 417 >>Aceite A Vingança do Piloto
 step
     .goto Dun Morogh,78.41,37.80,60,0
     .goto Dun Morogh,83.89,39.19
-    >>Mate |cRXP_ENEMY_Ronhagarra|r. Saqueie a |cRXP_LOOT_Mangy Garra|r dele
-    >>|cRXP_WARN_Atraia-o para |cRXP_FRIENDLY_Hammerfoot|r (certifique-se de causar 51%+ de dano para receber crédito)|r
+    >>Mate |cRXP_ENEMY_Ronhagarra|r. Saqueie-o pelo |cRXP_LOOT_Mangy Garra|r
+    >>|cRXP_WARN_Atraia-o até |cRXP_FRIENDLY_Hammerfoot|r (certifique-se de causar 51%+ de dano para obter crédito)|r
     .complete 417,1 --Collect Mangy Claw (x1)
     .mob Mangeclaw
     .target Pilot Hammerfoot
 step
     .goto Dun Morogh,83.892,39.188
-    >>Converse com |cRXP_FRIENDLY_Hammerfoot|r
+    >>Fale com |cRXP_FRIENDLY_Hammerfoot|r
     .turnin 417,1 >>Entregue A Vingança do Piloto
     .target Pilot Hammerfoot
 step
@@ -1352,20 +1352,20 @@ step
     .goto Dun Morogh,81.60,50.01,20,0
     .goto Dun Morogh,83.59,49.18,20,0
     >>Atraia um |cRXP_ENEMY_Rochetusco Cicatrizado|r no caminho
-    .goto Dun Morogh,84.26,48.93,20 >>Faça o Mountain Pular. Lembre-se de descer com cuidado
+    .goto Dun Morogh,84.26,48.93,20 >>Faça o Pulo da Montanha. Lembre-se de descer com cuidado
     .mob Scarred Crag Boar
 step
     .goto Loch Modan,19.01,61.88
-    >>Arraste o |cRXP_ENEMY_Rochetusco Cicatrizado|r pelo túnel
-    >>|cRXP_WARN_Tenha cuidado ao lançarem|r |T132337:0|t[Investida] |cRXP_WARN_(Instantâneo Pessoal: Aumenta velocidade de movimento por 3 segundos, causando 40-100 de dano corpo a corpo ao acertar. Apenas lançável à distância)|r
-    .zone Loch Modan >>Viaje através do túnel até Loch Modan
+    >>Atraia um |cRXP_ENEMY_Rochetusco Cicatrizado|r através do túnel
+    >>|cRXP_WARN_Tenha cuidado enquanto eles conjuram|r |T132337:0|t[Carga] |cRXP_WARN_(Auto Instantâneo: Aumenta velocidade de movimento por 3 segundos, causando 40-100 dano corpo a corpo ao atingir. Lançável apenas a distância)|r
+    .zone Loch Modan >>Vá pelo túnel para Loch Modan
     .mob Scarred Crag Boar
 step
     #completewith Rugelfuss
-    +|cRXP_WARN_Tente atrair um |cRXP_ENEMY_Urso Preto|r ou |cRXP_ENEMY_Tocaieira da Floresta|r para o Bunker com você (lembre-se de causar 51%+ de dano para receber crédito)|r
-    >>|cRXP_WARN_Saque os |cRXP_ENEMY_Anciões Ursos Pretos|r deles|r |T134027:0|t[|cRXP_LOOT_Urso Carne|r]
-    >>|cRXP_WARN_Saque os |cRXP_ENEMY_Tocaieiras da Floresta|r delas|r |T134437:0|t[|cRXP_LOOT_Aranha Ichor|r]
-    >>|cRXP_FRIENDLY_Cobbleflint|r|cRXP_WARN_, |cRXP_FRIENDLY_Gravelgaw|r, e |cRXP_FRIENDLY_Wallbang|r não vão ajudá-lo|r
+    +|cRXP_WARN_Tente atrair um próximo |cRXP_ENEMY_Ancião Urso Preto|r ou |cRXP_ENEMY_Tocaieira da Floresta|r para o Bunker com você (lembre-se de causar 51%+ de dano para obter crédito)|r
+    >>|cRXP_WARN_Saqueie os |cRXP_ENEMY_Elder Preto Ursos|r pelos seus|r |T134027:0|t[|cRXP_LOOT_Bear Carne|r]
+    >>|cRXP_WARN_Saqueie os |cRXP_ENEMY_Tocaieiras da Floresta|r para seus|r |T134437:0|t[|cRXP_LOOT_Spider Ichor|r]
+    >>|cRXP_FRIENDLY_Cobbleflint|r|cRXP_WARN_, |cRXP_FRIENDLY_Gravelgaw|r, e |cRXP_FRIENDLY_Wallbang|r não o ajudarão|r
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
     .disablecheckbox
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
@@ -1383,7 +1383,7 @@ step
     #completewith next
     .goto Loch Modan,23.27,75.65,12,0
     .goto Loch Modan,23.62,75.42,12,0
-    .goto Loch Modan,23.12,73.93,12 >>Entre no Bunker. Vá para o topo
+    .goto Loch Modan,23.12,73.93,12 >>Entre no Bunker. Vá para o andar superior
 step
     #label Rugelfuss
     .goto Loch Modan,23.233,73.675
@@ -1397,12 +1397,12 @@ step << skip
     .goto Loch Modan,19.50,62.56,30 >>Volte para o Túnel
 step << skip
     .goto Loch Modan,18.84,61.48
-    .link https://www.youtube.com/watch?v=AOAlX9B5aO0 >>https://www.youtube.com/watch?v=AOAlX9B5aO0 >>|cRXP_WARN_CLIQUE AQUI Se você está tendo dificuldades|r
-    .goto Loch Modan,32.19,46.95,30 >>|cRXP_WARN_Saltando Logout Pular do Braseiro dentro do túnel para Thelsamar|r
+    .link https://www.youtube.com/watch?v=AOAlX9B5aO0 >>https://www.youtube.com/watch?v=AOAlX9B5aO0 >>|cRXP_WARN_Clique aqui se você está tendo dificuldades|r
+    .goto Loch Modan,32.19,46.95,30 >>|cRXP_WARN_Saltando o Pulo de Logout do Braseiro dentro do túnel para Thelsamar|r
     .isOnQuest 267
 step
     #completewith next
-    .subzone 144 >>Voe para Thelsamar
+    .subzone 144 >>Vá para Thelsamar
 step
     .goto Loch Modan,32.93,49.51,40,0
     .goto Loch Modan,34.49,47.44,40,0
@@ -1410,9 +1410,9 @@ step
     .goto Loch Modan,37.39,45.17,40,0
     .goto Loch Modan,37.12,42.79
     >>Fale com |cRXP_FRIENDLY_Kadrell|r
-    >>|cRXP_FRIENDLY_Kadrell|r |cRXP_WARN_patrula pela estrada principal de Thelsamar|r
-    .accept 416 >>Aceite Pegando Ratos
-    .accept 1339 >>Aceite Tarefa do Montanhista Lançatroz
+    >>|cRXP_FRIENDLY_Kadrell|r |cRXP_WARN_Patrulha pela estrada principal de Thelsamar|r
+    .accept 416 >>Aceite Caçando Ratos
+    .accept 1339 >>Aceite Tarefa de Montanhista Lançatroz
     .target Mountaineer Kadrell
 step
     #completewith next
@@ -1428,10 +1428,10 @@ step << skip
     #completewith next
     .goto Ironforge,43.83,59.58,20,0
     .goto Ironforge,38.27,71.43,20,0
-    .goto Ironforge,33.70,76.24,10 >>|cRXP_WARN_Viaje em direção ao local do Logout Pular|r
+    .goto Ironforge,33.70,76.24,10 >>|cRXP_WARN_Viagem em direção ao ponto de Pulo|r
 step << skip
     .goto Ironforge,33.70,76.24
-    .zone Dun Morogh >>|cRXP_WARN_Posicione seu personagem até pareça estar flutuando na borda do corrimão de metal. Logout skip para Dun Morogh|r
+    .zone Dun Morogh >>|cRXP_WARN_Posicione seu personagem até parecer que você está flutuando na borda do corrimão de metal. Faça logout para Dun Morogh|r
     .isOnQuest 416
 ]])
 
@@ -1441,7 +1441,7 @@ RXPGuides.RegisterGuide([[
 << Gnome Mage
 #name 1-10 ADV Dun Morogh Mago Gnomo AdE
 #version 2
-#group ADV AdE Maga da Aliança
+#group RestedXP ADV AdE Maga da Aliança
 #defaultfor Gnome Mage
 #next 10-12 ADV Costa Negra 1 Mago AdE
 
@@ -1449,17 +1449,17 @@ RXPGuides.RegisterGuide([[
 step << !Gnome Mage
     #season 2
     #completewith next
-    +Na Temporada da Descoberta, você NÃO deve começar fora da zona iniciante de sua raça como um Mago, pois você não conseguirá obter sua primeira runa aqui (|T133816:0|t[Gravar Luvas - Lança de Gelo])
+    +Na Temporada de Descoberta, você não deveria começar fora da zona de início de sua raça como um Mago, pois você será incapaz de obter sua primeira runa aqui (|T133816:0|t[Gravar Luvas - Lança de Gelo])
 step
     #completewith next
-    +Você selecionou o guia Avançado. Este é o guia mais rápido para a classe mais rápida do jogo (Maga da Aliança). Como tal, haverá muitas mecânicas de nicho usadas bem como pulls de AdE altamente difíceis. Mantenha-se persistente enquanto aprende! Boa Sorte!
+    +Você selecionou o guia Avançado. Este é o guia mais rápido para a classe mais rápida do jogo (Maga da Aliança). Assim, haverá muitas mecânicas de nicho e puxes AdE altamente difíceis. Mantenha-se persistente enquanto aprende! Boa Sorte!
 step
     #completewith Adlin
-	.destroy 6948 >>Remova a |T134414:0|t[Pedra de Regresso] da mochila, pois não é mais necessária
+	.destroy 6948 >>Exclua a |T134414:0|t[Pedra de Regresso] da mochila, pois não é mais necessário
 step
     .goto Dun Morogh,29.927,71.201
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sten Braçoforte|r
-    .accept 179 >>Aceite Fornecedores Anões
+    .accept 179 >>Aceite Equipadores Anões
     .target Sten Stoutarm
 step
     .goto 1426,29.529,73.286,0
@@ -1472,7 +1472,7 @@ step
     .goto 1426,27.562,74.331,60,0
     .goto 1426,27.793,73.123,60,0
     .goto 1426,28.557,72.487,60,0
-    >>Abate os |cRXP_ENEMY_Lobos Jovens Esfarrapados|r. Saqueie-os para sua |cRXP_LOOT_Tough Lobo Carne|r
+    >>Mate os |cRXP_ENEMY_Ragged Young Wolves|r. Saqueie-os para obter |cRXP_LOOT_Tough Lobo Carne|r
     .complete 179,1 --Collect Tough Wolf Meat (x8)
     .mob Ragged Young Wolf
 step
@@ -1481,9 +1481,9 @@ step
     #label Adlin
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Adlin Altanário|r
-    >>Comerciante Lixo
-    >>|cRXP_BUY_Compre 15|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_do vendedor|r
-    >>|cRXP_WARN_Triture extra |cRXP_ENEMY_Ragged Young Wolves|r se não tem dinheiro suficiente|r
+    >>Lixo de Mercador
+    >>|cRXP_BUY_Compre 15|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dele|r
+    >>|cRXP_WARN_Farme mais |cRXP_ENEMY_Ragged Young Wolves|r se você não tiver dinheiro suficiente|r
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Adlin Pridedrift
     .xp >6,1
@@ -1491,18 +1491,18 @@ step
     #season 2
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Adlin Altanário|r
-    >>Comerciante Lixo
-    >>|cRXP_BUY_Compre 15|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_do vendedor|r
-    >>|cRXP_WARN_Triture extra |cRXP_ENEMY_Lobos Jovens Esfarrapados|r se você não tiver dinheiro suficiente|r
-    >>|cRXP_WARN_Certifique-se de economizar 10c para depois|r
+    >>Lixo de Mercador
+    >>|cRXP_BUY_Compre 15|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dele|r
+    >>|cRXP_WARN_Farme mais |cRXP_ENEMY_Ragged Young Wolves|r se você não tiver dinheiro suficiente|r
+    >>|cRXP_WARN_Tenha certeza de que você guarda 10c para depois|r
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Adlin Pridedrift
     .xp >6,1
 step
     #xprate <1.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sten Braçoforte|r e |cRXP_FRIENDLY_Balir Gelomarra|r
-    .turnin 179,3 >>Entregue Fornecedores Anões
-    .accept 233 >>Aceite Entrega de Correspondência do Vale de Coldridge
+    .turnin 179,3 >>Entregue Equipadores Anões
+    .accept 233 >>Aceite Entrega de Correio do Vale Coldridge
     .accept 3114 >>Aceite Memorando Glífico
     .target +Sten Stoutarm
     .goto Dun Morogh,29.927,71.201
@@ -1513,8 +1513,8 @@ step
     #xprate >1.09
     .goto Dun Morogh,29.927,71.201
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sten Braçoforte|r
-    .turnin 179,3 >>Entregue Fornecedores Anões
-    .accept 233 >>Aceite Entrega de Correspondência do Vale de Coldridge
+    .turnin 179,3 >>Entregue Equipadores Anões
+    .accept 233 >>Aceite Entrega de Correio do Vale Coldridge
     .accept 3114 >>Aceite Memorando Glífico
     .target Sten Stoutarm
 step
@@ -1530,7 +1530,7 @@ step
     .goto 1426,21.813,72.584,0
     .goto 1426,19.578,72.086,0
     .goto 1426,20.627,70.415,0
-    >>Mate os |cRXP_ENEMY_Rockjaw Troggs|r e os |cRXP_ENEMY_Burly Pedraqueixo Troggs|r
+    >>Mate os |cRXP_ENEMY_Troggs Pedraqueixo|r e os |cRXP_ENEMY_Troggs Pedraqueixo Parrudo|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .mob +Rockjaw Trogg
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
@@ -1539,8 +1539,8 @@ step
 step
     #season 2
     .goto Dun Morogh,26.733,72.552
-    >>Abra o |cRXP_PICK_Rockjaw Objetos de TBC|r no chão. Saqueie-o para |T134939:0|t|cRXP_LOOT_[Anotações de Feitiços: ALEG DEN AÇOL]|r
-    >>|cRXP_WARN_NOTA: Você não conseguirá treinar|r |T133816:0|t[Gravar Luvas - Lança de Gelo] |cRXP_WARN_aqui pois você só consegue obter um|r |T133736:0|t[Compreensão Primer] |cRXP_WARN_na zona iniciante de sua raça|r << !Gnome
+    >>Abra o |cRXP_PICK_Baú de Pedraqueixo|r no chão. Saqueie-o para o |T134939:0|t|cRXP_LOOT_[Anotações de Feitiços: ALEG DEN AÇOL]|r
+    >>|cRXP_WARN_NOTA: Você será incapaz de treinar|r |T133816:0|t[Gravar Luvas - Lança de Gelo] |cRXP_WARN_aqui, pois você só pode obter um|r |T133736:0|t[Compreensão Primer] |cRXP_WARN_na zona de início de sua raça|r << !Gnome
     .collect 203751,1,77667,1 -- Spell Notes: CALE ENCI (1)
     .train 401760,1
 step << Gnome
@@ -1559,23 +1559,23 @@ step
     #season 2
     .goto Dun Morogh,28.709,66.366
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marryk Nurribit|r dentro
-    .turnin 3114 >>Entregue Memorando Glífico << Gnome
+    .turnin 3114 >>Entregue Glyphic Memorandum << Gnome
     .accept 77667 >>Aceite Pesquisa de Feitiços << Gnome
     .turnin 77667 >>Entregue Pesquisa de Feitiços << Gnome
-    .train 1459 >>Treine |T135932:0|t[Inteligência Arcana]
+    .train 1459 >>Aprenda |T135932:0|t[Inteligência Arcana]
     .target Marryk Nurribit
 step << Gnome
     #season 2
     #label GlovesEquip
     #completewith Observations
-    .equip 10,711 >>|cRXP_WARN_Equipe as|r |T132961:0|t[Luvas de Tecido Esfarrapado]
+    .equip 10,711 >>|cRXP_WARN_Equipe o|r |T132961:0|t[Luvas de Tecido Esfarrapado]
     .use 711
     .train 401760,1
 step << Gnome
     #season 2
     #requires GlovesEquip
     #completewith Observations
-    .engrave 10 >>|cRXP_WARN_Grave seu|r |T132961:0|t[Luvas de Tecido Esfarrapado] com|r |T133816:0|t[Gravar Luvas - Lança de Gelo]
+    .engrave 10 >>|cRXP_WARN_Grave suas|r |T132961:0|t[Luvas de Tecido Esfarrapado] com|r |T133816:0|t[Gravar Luvas - Lança de Gelo]
     .train 401760,1
 step
     #season 2
@@ -1595,7 +1595,7 @@ step
     .goto 1426,21.813,72.584,0
     .goto 1426,19.578,72.086,0
     .goto 1426,20.627,70.415,0
-    >>Mate os |cRXP_ENEMY_Rockjaw Troggs|r e os |cRXP_ENEMY_Burly Pedraqueixo Troggs|r
+    >>Mate os |cRXP_ENEMY_Troggs Pedraqueixo|r e os |cRXP_ENEMY_Troggs Pedraqueixo Parrudo|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .mob +Rockjaw Trogg
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
@@ -1605,9 +1605,9 @@ step
     #label Talin
     .goto Dun Morogh,22.601,71.433
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Talin Olhobom|r
-    .turnin 233 >>Entregue Entrega de Correspondência do Vale de Coldridge
+    .turnin 233 >>Entregue Coldridge Valley Malha Entrega
     .accept 183 >>Aceite O Caçador de Javalis
-    .accept 234 >>Aceite Entrega de Correspondência do Vale de Coldridge
+    .accept 234 >>Aceite Entrega de Correio do Vale Coldridge
     .target Talin Keeneye
 step
     #loop
@@ -1626,7 +1626,7 @@ step
     .goto 1426,24.754,69.257,45,0
     .goto 1426,24.878,71.191,45,0
     .goto 1426,24.358,72.591,45,0
-    >>Mate os |cRXP_ENEMY_Pequenos Javalis de Pedra|r
+    >>Mate os |cRXP_ENEMY_Javalis Pequenos do Penhasco|r
     .complete 183,1 --Kill Small Crag Boar (x12)
     .mob Small Crag Boar
 step
@@ -1638,8 +1638,8 @@ step
     #label Rockjaw
     .goto 1426,25.077,75.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grolin Barbabranca|r
-    .turnin 234 >>Entregue Entrega de Correspondência do Vale de Coldridge
-    .accept 182 >>Aceite A Caverna dos Trolls
+    .turnin 234 >>Entregue Coldridge Valley Malha Entrega
+    .accept 182 >>Aceite The Trolls Cave
     .target Grelin Whitebeard
 step
     #completewith next
@@ -1662,8 +1662,8 @@ step
     .goto Dun Morogh,28.29,79.85,20,0
     .goto Dun Morogh,29.34,79.09,30,0
     .goto Dun Morogh,28.29,79.85
-    >>Abata os |cRXP_ENEMY_Frostmane Trolls Whelps|r dentro da caverna
-    >>|cRXP_WARN_Limpe um caminho até pouco antes da Picolé falante Lake room|r
+    >>Abate |cRXP_ENEMY_Frostmane Trolls Whelps|r dentro da caverna
+    >>|cRXP_WARN_Limpe um caminho até logo antes da sala do Lago Congelado|r
     .complete 182,1,10 --Kill Frostmane Troll Whelp (x14)
     .mob Frostmane Troll Whelp
 step
@@ -1673,48 +1673,48 @@ step
     .goto Dun Morogh,27.12,78.68,40,0
     .goto Dun Morogh,25.95,80.39,40,0
     .goto Dun Morogh,25.78,78.31
-    >>Abata os |cRXP_ENEMY_Frostmane Trolls Whelps|r a caminho de volta para |cRXP_FRIENDLY_Grolin Barbabranca|r
+    >>Abate |cRXP_ENEMY_Frostmane Trolls Whelps|r no caminho de volta para |cRXP_FRIENDLY_Grolin Barbabranca|r
     .complete 182,1--Kill Frostmane Troll Whelp (x14)
     .mob Frostmane Troll Whelp
 step << skip
     #completewith next
-    +|cRXP_WARN_Se você não sabe como fazer skip de logout, assista este vídeo primeiro|r
-    .link https://www.youtube.com/watch?v=SWBtPqm5M0Q >>https://www.youtube.com/watch?v=SWBtPqm5M0Q >>|cRXP_WARN_Clique aqui para aprender como fazer skip de logout|r
+    +|cRXP_WARN_Se você não sabe como fazer logout skip, assista primeiro este vídeo|r
+    .link https://www.youtube.com/watch?v=SWBtPqm5M0Q >>https://www.youtube.com/watch?v=SWBtPqm5M0Q >>|cRXP_WARN_CLIQUE AQUI para aprender a fazer o logout skip|r
 step << skip
     >>Fale com |cRXP_FRIENDLY_Grolin Barbabranca|r e |cRXP_FRIENDLY_Nóri Fluiorgulho|r
-    >>|cRXP_WARN_Observe que "Rabo-de-galo Escaldante Entrega" tem um temporizador de 5 minutos|r
-    >>|cRXP_WARN_Verifique se você tem 3 espaços de inventário para as entregas/aceitações|r
-    .turnin 182,4 >>Entregue A Caverna dos Trolls
+    >>|cRXP_WARN_Saiba que "Entrega de Mornbrew Escaldante" tem um cronômetro de 5 minutos|r
+    >>|cRXP_WARN_Certifique-se de ter 3 espaços de inventário para estas entregas/aceitações|r
+    .turnin 182,4 >>Entregue The Trolls Cave
     .accept 218 >>Aceite O Diário Roubado
     .goto Dun Morogh,25.076,75.713,-1
     .target +Grelin Whitebeard
-    .accept 3364 >>Aceite Entrega de Cerveja da Manhã Escaldante
+    .accept 3364 >>Aceite Rabo-de-galo Escaldante Entrega
     .goto Dun Morogh,24.98,75.96,-1
     .target +Nori Pridedrift
 step
     >>Fale com |cRXP_FRIENDLY_Grolin Barbabranca|r
-    >>|cRXP_WARN_Certifique-se de ter 3 espaços de inventário para essas entregas/aceitações|r
-    .turnin 182,4 >>Entregue A Caverna dos Trolls
+    >>|cRXP_WARN_Certifique-se de ter 3 espaços de inventário para estas entregas/aceitações|r
+    .turnin 182,4 >>Entregue The Trolls Cave
     .accept 218 >>Aceite O Diário Roubado
     .goto Dun Morogh,25.076,75.713
     .target +Grelin Whitebeard
 step
     .goto Dun Morogh,26.73,79.72,40,0
     .goto Dun Morogh,29.34,79.09,30,0
-    .goto Dun Morogh,29.67,79.68,10 >>|cRXP_WARN_Entre na Caverna. Corra pelo caminho que você limpou (sem lutar se possível) em direção ao Picolé falante Lake dentro|r
+    .goto Dun Morogh,29.67,79.68,10 >>|cRXP_WARN_Entre na caverna. Corra pelo caminho que você limpou (sem lutar, se possível) em direção ao Lago Congelado no interior|r
     .isOnQuest 218
 step
     .goto Dun Morogh,30.48,80.16
-    >>|cRXP_WARN_Abata o |cRXP_ENEMY_Frostmane Trolls Whelp|r na sua frente|r
-    >>Abata |cRXP_ENEMY_Grik'nir the Frio|r. Saqueie o |cRXP_LOOT_Diário de Grolin Barbabranca|r
-    >>|cRXP_WARN_Cuidado pois ele lança|r |T135849:0|t[Choque Gélido] |cRXP_WARN_(Alcance Instantâneo: Causa 10 de dano Gélido e reduz a velocidade de movimento em 50% por 8 segundos)|r
+    >>|cRXP_WARN_Abate o |cRXP_ENEMY_Jovem Trolls Jubafria|r na sua frente|r
+    >>Abate |cRXP_ENEMY_Grik'nir, o Frio|r. Saque o |cRXP_LOOT_Diário de Grolin Barbabranca|r
+    >>|cRXP_WARN_Tenha cuidado, pois ele lança|r |T135849:0|t[Choque Gélido] |cRXP_WARN_(Distância Instantânea: Causa 10 de dano Gélido e reduz a velocidade de movimento em 50% por 8 segundos)|r
     .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
     .mob Grik'nir the Cold
 step << skip
     #completewith Rybrad
     #label LogoutSkip1
     .goto Dun Morogh,29.63,79.50
-    .goto Dun Morogh,29.76,69.66,30 >>|cRXP_WARN_Posicione seu personagem até parecer que está flutuando na borda do penhasco acima do Picolé falante Lake, então desconecte e volte para Anvilmar|r
+    .goto Dun Morogh,29.76,69.66,30 >>|cRXP_WARN_Posicione seu personagem até parecer que está flutuando na beirada do penhasco acima do Lago Congelado, depois faça logout skip de volta para Anvilmar|r
     .isOnQuest 218
 step
     >>Fale com |cRXP_FRIENDLY_Grolin Barbabranca|r e |cRXP_FRIENDLY_Nóri Fluiorgulho|r
@@ -1722,7 +1722,7 @@ step
     .accept 282 >>Aceite Observações de Senir
     .goto Dun Morogh,25.076,75.713,-1
     .target +Grelin Whitebeard
-    .accept 3364 >>Aceite Entrega de Cerveja da Manhã Escaldante
+    .accept 3364 >>Aceite Rabo-de-galo Escaldante Entrega
     .goto Dun Morogh,24.98,75.96,-1
     .target +Nori Pridedrift
 step
@@ -1736,16 +1736,16 @@ step
     #label Rybrad
     .goto Dun Morogh,28.66,67.74
     >>Fale com |cRXP_FRIENDLY_Rybrad Friamargem|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .target Rybrad Coldbank
     .isOnQuest 218,3364
 step
     >>Fale com |cRXP_FRIENDLY_Durnan Cortapelo|r e |cRXP_FRIENDLY_Marryk Nurribit|r
-    .turnin 3364 >>Entregue Entrega de Cerveja da Manhã Escaldante
-    .accept 3365 >>Aceite Traga o Caneco
+    .turnin 3364 >>Entregue Rabo-de-galo Escaldante Entrega
+    .accept 3365 >>Aceite Trazer a Caneca
     .goto Dun Morogh,28.77,66.37
     .target +Durnan Furcutter
-    .turnin 3114 >>Entregue Memorando Glífico
+    .turnin 3114 >>Entregue Glyphic Memorandum
     .trainer >>Treine seus feitiços de classe (Inteligência Arcana, Seta de Gelo)
     .goto Dun Morogh,28.709,66.366
     .target +Marryk Nurribit
@@ -1773,7 +1773,7 @@ step
     .waypoint 1426,31.138,74.048,50,0
     .waypoint 1426,30.077,74.479,50,0
     .waypoint 1426,29.280,75.500,50,0
-    >>|cRXP_WARN_Mate TODOS os |cRXP_ENEMY_Rockjaw Troggs|r que você vê e|r |cRXP_ENEMY_Burly Pedraqueixo Troggs|r
+    >>|cRXP_WARN_Abate TODOS os |cRXP_ENEMY_Rockjaw Troggs|r que você vir e TODOS os |rBurly Pedraqueixo Troggs|cRXP_ENEMY_|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .mob +Rockjaw Trogg
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
@@ -1787,7 +1787,7 @@ step
     -- .accept 282 >> Accept Senir's Observations
     -- .goto Dun Morogh,25.076,75.713
     -- .target +Grelin Whitebeard
-    .turnin 3365 >>Entregue Traga o Caneco
+    .turnin 3365 >>Entregue Trazer a Caneca
     .goto Dun Morogh,24.98,75.96
     .target +Nori Pridedrift
 step
@@ -1816,20 +1816,20 @@ step
     .abandon 170 >>Abandone Uma Nova Ameaça
 step
     .goto Dun Morogh,34.32,70.95,15,0
-    .goto Dun Morogh,35.65,65.79,15 >>Passe pelo Desfiladeiro de Coldridge
+    .goto Dun Morogh,35.65,65.79,15 >>Atravesse Coldridge Passe
     .subzoneskip 800,1
     .isOnQuest 2160
 step
     #completewith StockingJ
     .goto Dun Morogh,36.51,62.94,40,0
-    >>Mate |cRXP_ENEMY_Crag Boars|r. Saqueie-os para obter |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r e |cRXP_LOOT_Crag Javali Ribs|r
-    >>|cRXP_WARN_Cuidado pois eles lançam|r |T132337:0|t[carga] |cRXP_WARN_(Auto Instantâneo: Aumenta a velocidade de movimento por 3 segundos, causando 25-70 de dano corpo a corpo ao acertar. Só pode ser lançado à distância)|r
+    >>Mate os |cRXP_ENEMY_Crag Boars|r. Saqueie-os para obter |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r e |cRXP_LOOT_Crag Javali Ribs|r
+    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T132337:0|t[Investida] |cRXP_WARN_(Autoalvo Instantâneo: aumenta a velocidade de movimento por 3 segundos, causando 25-70 de dano corpo-a-corpo ao acertar. Lançável apenas à distância)|r
     .collect 769,4,317,1 --Collect Chunk of Boar Meat (x4)
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
     .mob Crag Boar
 step
     .goto Dun Morogh,37.97,61.87,30,0
-    .goto Dun Morogh,39.89,59.26,45 >>|cRXP_WARN_Cause 51%+ de dano aos |cRXP_ENEMY_Juvenile Neve Leopards|r e aos |cRXP_ENEMY_Young Preto Ursos|r próximos, depois arraste-os para o |cRXP_FRIENDLY_Ironforge Montanhista|r para matá-los mais eficientemente|r
+    .goto Dun Morogh,39.89,59.26,45 >>|cRXP_WARN_Inflija 51%+ de dano nos |cRXP_ENEMY_Juvenile Neve Leopards|r e |cRXP_ENEMY_Young Preto Ursos|r próximos, então puxe-os para o |cRXP_FRIENDLY_Ironforge Montanhista|r para matá-los com mais eficiência|r
     .mob Juvenile Snow Leopard
     .mob Young Black Bear
     .target Ironforge Mountaineer
@@ -1838,38 +1838,38 @@ step
     #completewith next
     .goto Dun Morogh,43.44,55.64,50,0
     .goto Dun Morogh,44.14,52.64,50,0
-    .goto Dun Morogh,46.021,51.676,20 >>Vá para |cRXP_FRIENDLY_Tharek|r
+    .goto Dun Morogh,46.021,51.676,20 >>Viaje para |cRXP_FRIENDLY_Tharek|r
 step
     .goto Dun Morogh,46.021,51.676
     >>Fale com |cRXP_FRIENDLY_Tharek|r
-    .accept 400 >>Aceite Ferramentas para Gradaço
+    .accept 400 >>Aceite Ferramentas Para Gradaço
     .target Tharek Blackstone
 step
     #label StockingJ
     .goto Dun Morogh,49.426,48.410
-    >>Fuja de |cRXP_ENEMY_Jovens Ursos Preto|r no caminho |cRXP_WARN_(certifique-se de causar 51%+ de dano para receber crédito)|r
+    >>Atraia |cRXP_ENEMY_Young Preto Ursos|r pelo caminho |cRXP_WARN_(certifique-se de causar 51%+ de dano para receber crédito)|r
     >>Fale com |cRXP_FRIENDLY_Bellowfiz|r
-    .accept 317 >>Aceite Provisões para a Vaporeta
+    .accept 317 >>Aceite Provisões Para a Vaporeta
     .mob Young Black Bear
     .target Pilot Bellowfiz
 step
-    >>Fale com |cRXP_FRIENDLY_Stonegear|r, |cRXP_FRIENDLY_Beldin|r e |cRXP_FRIENDLY_Loslor|r
-    >>|cRXP_WARN_Fuja de |cRXP_ENEMY_Jovens Ursos Preto|r para o |cRXP_FRIENDLY_Ironforge Montanhista|r se puxou algum (certifique-se de causar 51%+ de dano para receber crédito)|r
-    .accept 313 >>Aceite O Covil dos Cansados
+    >>Fale com |cRXP_FRIENDLY_Stonegear|r, |cRXP_FRIENDLY_Beldin|r, e |cRXP_FRIENDLY_Loslor|r
+    >>|cRXP_WARN_Atraia os |cRXP_ENEMY_Young Preto Ursos|r para o |cRXP_FRIENDLY_Ironforge Montanhista|r se você puxou algum (certifique-se de causar 51%+ de dano para receber crédito)|r
+    .accept 313 >>Aceite The Grizzled Den
     .target +Pilot Stonegear
     .goto Dun Morogh,49.622,48.612
-    .turnin 400 >>Entregue Ferramentas para Gradaço
+    .turnin 400 >>Entregue Ferramentas Para Gradaço
     .target +Beldin Steelgrill
     .goto Dun Morogh,50.45,49.09
-    .accept 5541 >>Aceite Sem Munição não Tem Negócio
-    .vendor >>Comerciante Lixo
+    .accept 5541 >>Aceite Sem Munição Não Tem Negócio
+    .vendor >>Lixo de Mercador
     .goto Dun Morogh,50.084,49.420
     .target +Loslor Rudge
     .isQuestAvailable 312
 step
     #completewith next
-    >>Mate os |cRXP_ENEMY_Crag Boars|r e os |cRXP_ENEMY_Large Crag Boars|r. Saque-os por |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r e |cRXP_LOOT_Costelas de Javali do Rochedo|r
-    >>|cRXP_WARN_Tenha cuidado enquanto eles lançam|r |T132337:0|t[carga] |cRXP_WARN_(Pessoal Instantâneo: Aumenta velocidade de movimento por 3 segundos, causando 25-70 de dano corpo a corpo no acerto. Apenas lançável à distância)|r
+    >>Abata os |cRXP_ENEMY_Crag Boars|r e os |cRXP_ENEMY_Large Crag Boars|r. Saqueie-os para pegar |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r e |cRXP_LOOT_Crag Javali Ribs|r
+    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T132337:0|t[Investida] |cRXP_WARN_(Autoalvo Instantâneo: aumenta a velocidade de movimento por 3 segundos, causando 25-70 de dano corpo-a-corpo ao acertar. Lançável apenas à distância)|r
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
     .mob Crag Boar
@@ -1895,9 +1895,9 @@ step
     .goto Dun Morogh,45.37,49.50,50,0
     .goto Dun Morogh,43.69,52.05,50,0
     .goto Dun Morogh,45.18,54.38
-    >>Mate os |cRXP_ENEMY_Jovens Ursos Preto|r e os |cRXP_ENEMY_Ursos de Garra Gélida|r. Saque-os para obter sua |cRXP_LOOT_Pelagem Espessa de Urso|r
-    >>|cRXP_WARN_Fuja de |cRXP_ENEMY_Jovens Ursos Preto|r e |cRXP_ENEMY_Ursos de Garra Gélida|r para perto dos |cRXP_FRIENDLY_Montanhistas de Altaforja|r (certifique-se de causar 51%+ de dano para receber crédito)|r
-    >>|cRXP_WARN_Tenha cuidado enquanto eles lançam|r |T135853:0|t[Garra de Gelo] |cRXP_WARN_(Corpo a Corpo Instantâneo: Causa 4 de dano corpo a corpo adicional)|r
+    >>Abata os |cRXP_ENEMY_Young Preto Ursos|r e os |cRXP_ENEMY_Ice Garra Ursos|r. Saqueie-os para pegar a |cRXP_LOOT_Thick Urso Fur|r
+    >>|cRXP_WARN_Atraia os |cRXP_ENEMY_Young Preto Ursos|r e os |cRXP_ENEMY_Ice Garra Ursos|r para os |cRXP_FRIENDLY_Ironforge Mountaineers|r próximos (certifique-se de causar 51%+ de dano para receber crédito)|r
+    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T135853:0|t[Garra de Gelo] |cRXP_WARN_(Corpo a Corpo Instantâneo: Causa 4 dano adicional de combate)|r
     .complete 317,2 --Collect Thick Bear Fur (x2)
     .mob Young Black Bear
     .mob Ice Claw Bear
@@ -1924,8 +1924,8 @@ step
 	.goto Dun Morogh,49.09,54.74,40,0
 	.goto Dun Morogh,49.61,54.32,40,0
 	.goto Dun Morogh,51.43,53.21,40,0
-    >>Mate os |cRXP_ENEMY_Crag Boars|r e os |cRXP_ENEMY_Large Crag Boars|r. Saqueie-os para |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r e |cRXP_LOOT_Crag Javali Ribs|r
-    >>|cRXP_WARN_Tenha cuidado enquanto eles lançam|r |T132337:0|t[carga] |cRXP_WARN_(Pessoal Instantâneo: Aumenta velocidade de movimento por 3 segundos, causando 25-70 de dano corpo a corpo no acerto. Apenas lançável à distância)|r
+    >>Abata os |cRXP_ENEMY_Crag Boars|r e os |cRXP_ENEMY_Large Crag Boars|r. Saqueie-os para pegar |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r e |cRXP_LOOT_Crag Javali Ribs|r
+    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T132337:0|t[Investida] |cRXP_WARN_(Autoalvo Instantâneo: aumenta a velocidade de movimento por 3 segundos, causando 25-70 de dano corpo-a-corpo ao acertar. Lançável apenas à distância)|r
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
     .disablecheckbox
@@ -1934,7 +1934,7 @@ step
 step
     .goto Dun Morogh,49.426,48.410
     >>Fale com |cRXP_FRIENDLY_Bellowfiz|r
-    .turnin 317 >>Entregue Provisões para a Vaporeta
+    .turnin 317 >>Entregue Provisões Para a Vaporeta
     .accept 318 >>Aceite Sempre-aceso
     .target Pilot Bellowfiz
 step
@@ -1960,18 +1960,18 @@ step
 	.goto Dun Morogh,49.09,54.74,40,0
 	.goto Dun Morogh,49.61,54.32,40,0
 	.goto Dun Morogh,51.43,53.21,40,0
-    .xp 5+2690 >>Farme até 2690+/2800 XP
+    .xp 5+2690 >>Suba até 2690+/2800xp
     .mob Young Black Bear
     .mob Crag Boar
 step
     #completewith InnLS1
-    +|cRXP_WARN_Desequipe seu|r |T135148:0|t[Cajado]
+    +|cRXP_WARN_Desequipar seu atual|r |T135148:0|t[Cajado]
     -- +|cRXP_WARN_Remember the Inn Logout Skip soon. Unequip your current|r |T135148:0|t[Staff]
     -- >>|cRXP_WARN_NOTE: Itemrack currently can cause problems after logout skipping where your ingame UI freezes. Make sure to disable the addon or make a /reload command you can click when/if that happens|r
 step
     #completewith Tannok
-    .cast 1459 >>Reative |T135932:0|t[Inteligência Arcana]
-    .cast 168 >>Reative |T135843:0|t[Armadura Gélida]
+    .cast 1459 >>Aplique |T135932:0|t[Inteligência Arcana]
+    .cast 168 >>Aplique |T135843:0|t[Armadura Gélida]
 step
     .goto Dun Morogh,46.83,52.36
     >>Fale com |cRXP_FRIENDLY_Ragnar|r
@@ -2000,7 +2000,7 @@ step
     .target Tannok Frosthammer
 step
     .goto Dun Morogh,47.50,52.08
-    >>Fale com |cRXP_FRIENDLY_Magis|r no andar superior
+    >>Fale com |cRXP_FRIENDLY_Magis|r acima
     .trainer >>Treine seus feitiços de classe (Bola de Fogo R2, Impacto de Fogo)
     .target Magis Sparkmantle
     .isQuestAvailable 312
@@ -2008,14 +2008,14 @@ step
     #completewith Golorn
     .goto Dun Morogh,47.38,52.52
     >>Fale com |cRXP_FRIENDLY_Belm|r
-    .home >>Defina sua Pedra de Retorno na Destilaria Cervaforte
+    .home >>Defina sua Pedra de Retorno em Cervaforte Distillery
     .target Innkeeper Belm
     .isQuestAvailable 312
 step
     #requires Tannok
     .goto Dun Morogh,47.38,52.52
     >>Fale com |cRXP_FRIENDLY_Belm|r
-    >>|cRXP_BUY_Compre um|r |T132800:0|t[Rapsódia Malt] |cRXP_BUY_dele|r
+    >>|cRXP_BUY_Compre uma|r |T132800:0|t[Rapsódia Malt] |cRXP_BUY_dele|r
     .complete 384,2 --Collect Rhapsody Malt (x1)
     .target Innkeeper Belm
     .itemcount 2886,6
@@ -2031,7 +2031,7 @@ step
     #requires Tannok
     .goto Dun Morogh,47.38,52.52
     >>Fale com |cRXP_FRIENDLY_Belm|r
-    >>|cRXP_BUY_Compre 20|r |T132815:0|t[Leite Gelado] |cRXP_BUY_do vendedor|r
+    >>|cRXP_BUY_Compre 20|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r
     .collect 1179,20,312,1 --Ice Cold Milk (20)
     .target Innkeeper Belm
     .money <0.0582
@@ -2064,7 +2064,7 @@ step
     #requires Tannok
     .goto Dun Morogh,47.38,52.52
     >>Fale com |cRXP_FRIENDLY_Belm|r
-    >>|cRXP_BUY_Compre 20|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_do vendedor|r
+    >>|cRXP_BUY_Compre 20|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dele|r
     .collect 159,20,312,1 --Refreshing Spring Water (20)
     .itemcount 1179,<1
     .target Innkeeper Belm
@@ -2073,7 +2073,7 @@ step
     #requires Tannok
     .goto Dun Morogh,47.38,52.52
     >>Fale com |cRXP_FRIENDLY_Belm|r
-    >>|cRXP_BUY_Compre 15|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_do vendedor|r
+    >>|cRXP_BUY_Compre 15|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dele|r
     .collect 159,15,312,1 --Refreshing Spring Water (15)
     .itemcount 1179,<1
     .target Innkeeper Belm
@@ -2091,7 +2091,7 @@ step
     #requires Tannok
     .goto Dun Morogh,47.38,52.52
     >>Fale com |cRXP_FRIENDLY_Belm|r
-    >>|cRXP_BUY_Compre 5|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_do vendedor|r
+    >>|cRXP_BUY_Compre 5|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dele|r
     .collect 159,5,312,1 --Refreshing Spring Water (5)
     .itemcount 1179,<1
     .target Innkeeper Belm
@@ -2099,13 +2099,13 @@ step
 step << skip
     #completewith SenirO
     .goto Dun Morogh,47.46,52.60,-1
-    .goto Dun Morogh,47.13,54.91,35 >>|cRXP_WARN_Salte acima dos barris na parede atrás de |cRXP_FRIENDLY_Belm|r ou desconecte-se e pule para Kharanos|r
+    .goto Dun Morogh,47.13,54.91,35 >>|cRXP_WARN_Salto para cima dos barris na parede atrás de |cRXP_FRIENDLY_Belm|r. Logout Pular para Kharanos|r
 step
     #sticky
     #label Golorn
     .goto Dun Morogh,46.77,53.72,-1
     >>Fale com |cRXP_FRIENDLY_Golorn|r
-    >>|cRXP_BUY_Compre um|r |T135637:0|t[Faca de Esfolamento] |cRXP_BUY_do vendedor|r
+    >>|cRXP_BUY_Compre um|r |T135637:0|t[Faca de Esfolamento] |cRXP_BUY_dele|r
     .collect 7005,1,312,1 --Skinning Knife (1)
     .target Golorn Frostbeard
 step
@@ -2117,7 +2117,7 @@ step
 step
     #completewith next
     #requires Golorn
-    +Equipe o |T135637:0|t[Faca de Esfolamento]
+    +Equipe a |T135637:0|t[Faca de Esfolamento]
     .use 7005
     .itemcount 7005,1
     .itemStat 16,QUALITY,<7
@@ -2134,25 +2134,25 @@ step
 	.goto Dun Morogh,42.46,51.96,10,0
 	.goto Dun Morogh,42.13,52.68,10,0
 	.goto Dun Morogh,42.57,54.80,10,0
-    >>Mate os |cRXP_ENEMY_Jovens Wendigos|r e os |cRXP_ENEMY_Wendigos|r. Saqueie-os para obter seus |cRXP_LOOT_Wendigo Manes|r
-    >>|cRXP_WARN_Tenha cuidado, pois eles lançam|r |T135848:0|t[Sopro Gélido] |cRXP_WARN_(Conjuração Corpo a Corpo: Causa 6-10 de dano Gélido) e têm aumentado|r |T135849:0|t[Resistência ao Gelo]
+    >>Mate os |cRXP_ENEMY_Young Wendigos|r e os |cRXP_ENEMY_Wendigos|r. Saque-os por suas |cRXP_LOOT_Wendigo Manes|r
+    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T135848:0|t[Sopro Gélido] |cRXP_WARN_(Corpo a Corpo Cast: Deals 6-10 Gélido damage) and have increased|r |T135849:0|t[Resistência ao Gelo]
     .complete 313,1 --Collect Wendigo Mane (x8)
     .mob Young Wendigo
     .mob Wendigo
 step
     .goto Dun Morogh,44.13,56.95
-    >>Abra a |cRXP_PICK_Ammo Caixote|r no chão. Saqueie-a para obter |cRXP_LOOT_Rumbleshot's Ammo|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Abra o |cRXP_PICK_Caixote de Munição|r no chão. Saque-o por |cRXP_LOOT_Munição de Rumbleshot|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 5541,1 --Collect Rumbleshot's Ammo (x1)
 step
     #completewith Ammo
     .goto Dun Morogh,40.60,62.24,45,0
-    >>Mate os |cRXP_ENEMY_Crag Boars|r e os |cRXP_ENEMY_Juvenile Neve Leopards|r no caminho
-    >>Saqueie os |cRXP_ENEMY_Javalis da Rocha|r para obter suas |cRXP_LOOT_Crag Javali Ribs|r
-    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Javalis da Rocha|r lançam|r |T132337:0|t[Investida] |cRXP_WARN_(Auto instantâneo: Aumenta velocidade de movimento por 3 segundos, infligindo 25-70 de dano corporal no acerto. Apenas conjurável a distância)|r
+    >>Mate os |cRXP_ENEMY_Crag Boars|r e os |cRXP_ENEMY_Juvenile Neve Leopards|r pelo caminho
+    >>Saqueie os |cRXP_ENEMY_Crag Boars|r por suas |cRXP_LOOT_Crag Javali Ribs|r
+    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Crag Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
     .complete 384,1 --Crag Boar Rib (6)
     .disablecheckbox
-    .goto Dun Morogh,40.682,65.130,20 >>Viaje para |cRXP_FRIENDLY_Hegnar|r
+    .goto Dun Morogh,40.682,65.130,20 >>Vá para |cRXP_FRIENDLY_Hegnar|r
     .mob Crag Boar
     .mob Juvenile Snow Leopard
     .xp >7-1000,1
@@ -2160,9 +2160,9 @@ step
 step
     #completewith Ammo
     .goto Dun Morogh,40.60,62.24,45,0
-    >>Mate os |cRXP_ENEMY_Javalis da Rocha|r e os |cRXP_ENEMY_Leopardos da Neve Juvenis|r no caminho
-    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Crag Boars|r lançam|r |T132337:0|t[carga] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
-    .goto Dun Morogh,40.682,65.130,20 >>Viaje para |cRXP_FRIENDLY_Hegnar|r
+    >>Mate os |cRXP_ENEMY_Crag Boars|r e os |cRXP_ENEMY_Juvenile Neve Leopards|r pelo caminho
+    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Crag Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
+    .goto Dun Morogh,40.682,65.130,20 >>Vá para |cRXP_FRIENDLY_Hegnar|r
     .mob Crag Boar
     .mob Juvenile Snow Leopard
     .xp >7-1000,1
@@ -2170,14 +2170,14 @@ step
 step
     #completewith next
     .goto Dun Morogh,40.60,62.24,45,0
-    .goto Dun Morogh,40.682,65.130,20 >>Viaje para |cRXP_FRIENDLY_Hegnar|r
+    .goto Dun Morogh,40.682,65.130,20 >>Vá para |cRXP_FRIENDLY_Hegnar|r
     .xp <7-1000,1
 step
     #label Ammo
     .goto Dun Morogh,40.682,65.130
     >>Fale com |cRXP_FRIENDLY_Hegnar|r
-    .turnin 5541 >>Entregue Sem Munição não Tem Negócio
-    .vendor >>Comerciante Lixo
+    .turnin 5541 >>Entregue Sem Munição Não Tem Negócio
+    .vendor >>Lixo de Mercador
     .target Hegnar Rumbleshot
     .isQuestAvailable 312
 step
@@ -2186,12 +2186,12 @@ step
     .goto Dun Morogh,35.11,56.78,45,0
     .goto Dun Morogh,35.62,54.73,50,0
     .goto Dun Morogh,36.38,52.49,40,0
-    >>|cRXP_WARN_Inflige 51%+ dano aos |cRXP_ENEMY_Juvenile Neve Leopards|r e aos |cRXP_ENEMY_Young Preto Ursos|r, então puxe-os para o |cRXP_FRIENDLY_Ironforge Montanhista|r para matá-los mais eficientemente|r
-    >>Mate os |cRXP_ENEMY_Grandes Javalis da Rocha|r e os |cRXP_ENEMY_Javalis da Rocha|r no caminho. Saqueie-os para obter suas |cRXP_LOOT_Crag Javali Ribs|r
-    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Grandes Javalis da Rocha|r e |cRXP_ENEMY_Javalis da Rocha|r lançam|r |T132337:0|t[Investida] |cRXP_WARN_(Auto instantâneo: Aumenta velocidade de movimento por 3 segundos, infligindo 25-70 de dano corporal no acerto. Apenas conjurável a distância)|r
+    >>|cRXP_WARN_Inflija 51%+ de dano nos |cRXP_ENEMY_Juvenile Neve Leopards|r e |cRXP_ENEMY_Young Preto Ursos|r próximos, então puxe-os para o |cRXP_FRIENDLY_Ironforge Montanhista|r para matá-los com mais eficiência|r
+    >>Mate os |cRXP_ENEMY_Large Crag Boars|r e os |cRXP_ENEMY_Crag Boars|r pelo caminho. Saqueie-os por suas |cRXP_LOOT_Crag Javali Ribs|r
+    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Large Crag Boars|r e os |cRXP_ENEMY_Crag Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
     .complete 384,1 --Crag Boar Rib (6)
     .disablecheckbox
-    .xp 7 >>Farme até o nível 7 no caminho para |cRXP_FRIENDLY_Tundra|r antes de falar com ele
+    .xp 7 >>Suba até o Nível 7 no caminho para |cRXP_FRIENDLY_Tundra|r antes de falar com ele
     .target Ironforge Mountaineer
     .mob Crag Boar
     .mob Juvenile Snow Leopard
@@ -2202,9 +2202,9 @@ step
     .goto Dun Morogh,35.11,56.78,45,0
     .goto Dun Morogh,35.62,54.73,50,0
     .goto Dun Morogh,36.38,52.49,40,0
-    >>|cRXP_WARN_Inflige 51%+ dano aos |cRXP_ENEMY_Juvenile Neve Leopards|r e aos |cRXP_ENEMY_Young Preto Ursos|r, então puxe-os para o |cRXP_FRIENDLY_Ironforge Montanhista|r para matá-los mais eficientemente|r
-    >>Mate os |cRXP_ENEMY_Grandes Javalis da Rocha|r e os |cRXP_ENEMY_Javalis da Rocha|r no caminho
-    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Large Crag Boars|r e |cRXP_ENEMY_Crag Boars|r lançam|r |T132337:0|t[carga] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
+    >>|cRXP_WARN_Inflija 51%+ de dano nos |cRXP_ENEMY_Juvenile Neve Leopards|r e |cRXP_ENEMY_Young Preto Ursos|r próximos, então puxe-os para o |cRXP_FRIENDLY_Ironforge Montanhista|r para matá-los com mais eficiência|r
+    >>Mate os |cRXP_ENEMY_Large Crag Boars|r e os |cRXP_ENEMY_Crag Boars|r pelo caminho
+    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Large Crag Boars|r e os |cRXP_ENEMY_Crag Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
     .xp 7 >>Suba até o Nível 7 no caminho para |cRXP_FRIENDLY_Tundra|r antes de falar com ele
     .target Ironforge Mountaineer
     .mob Crag Boar
@@ -2214,19 +2214,19 @@ step
     #label TundraOne
     .goto Dun Morogh,34.57,51.66
     >>Fale com |cRXP_FRIENDLY_Tundra|r
-    .accept 312 >>Aceite Por Baixo da Carne-seca
+    .accept 312 >>Aceite Por Baixo da Carne-Seca
     .target Tundra MacGrann
 step
     #completewith next
-    +|cRXP_WARN_Arraste um |cRXP_ENEMY_Urso Garra de Gelo|r para |cRXP_FRIENDLY_Rejold|r
-    >>|cRXP_WARN_Tente aceitar a missão antes de o |cRXP_ENEMY_Urso Garra de Gelo|r morrer para obter crédito na missão|r
-    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T135853:0|t[Garra de Gelo] |cRXP_WARN_(Corpo a Corpo Instante: Inflige 4 danos adicionais de ataque físico)|r
-    >>|cRXP_WARN_Garanta 51%+ de dano para obter crédito|r
+    +|cRXP_WARN_Arraste um |cRXP_ENEMY_Urso Garra de Gelo|r para|r |cRXP_FRIENDLY_Rejold|r
+    >>|cRXP_WARN_Tente aceitar a missão antes que o |cRXP_ENEMY_Urso Garra de Gelo|r morra para receber crédito|r
+    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T135853:0|t[Garra de Gelo] |cRXP_WARN_(Corpo a Corpo Instantâneo: Causa 4 dano adicional de combate)|r
+    >>|cRXP_WARN_Você deve causar 51%+ de dano para ganhar crédito da missão|r
     .mob Ice Claw Bear
 step
     >>Fale com |cRXP_FRIENDLY_Rejold|r e |cRXP_FRIENDLY_Marleth|r
     .turnin 318 >>Entregue Sempre-aceso
-    .accept 319 >>Aceite Tudo pela Sempre-aceso
+    .accept 319 >>Aceite Tudo Pela Sempre-aceso
     .accept 315 >>Aceite Em Busca da Cerveja Perfeita
     .target +Rejold Barleybrew
     .goto Dun Morogh,30.19,45.73
@@ -2237,7 +2237,7 @@ step
     .goto Dun Morogh,30.45,46.01,0,0
     >>Fale com |cRXP_FRIENDLY_Keeg|r
     >>|cRXP_BUY_Compre até 10 mais|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .collect 1179,10,312,1 --Ice Cold Milk (10)
     .target Keeg Gibn
     .itemcount 1179,10
@@ -2247,7 +2247,7 @@ step
     .goto Dun Morogh,30.45,46.01,0,0
     >>Fale com |cRXP_FRIENDLY_Keeg|r
     >>|cRXP_BUY_Compre até 5 mais|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .collect 1179,5,312,1 --Ice Cold Milk (5)
     .target Keeg Gibn
     .itemcount 1179,5
@@ -2257,9 +2257,9 @@ step
     #completewith CaveLS
     .goto Dun Morogh,33.51,47.50,50,0
     .goto Dun Morogh,36.85,45.48,50,0
-    >>Mate os |cRXP_ENEMY_Ice Garra Ursos|r, os |cRXP_ENEMY_anciões Crag Boars|r e os |cRXP_ENEMY_Neve Leopards|r a caminho da caverna. Saque os |cRXP_ENEMY_anciões Crag Boars|r para |cRXP_LOOT_Crag Javali Ribs|r
-    >>|cRXP_WARN_Concentração nos|r |cRXP_ENEMY_Neve Leopards|r
-    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Ice Garra Ursos|r conjuram|r |T135853:0|t[Garra de Gelo] |cRXP_WARN_(Corpo a Corpo Instantâneo: Causa 4 danos adicionais de corpo a corpo), e |cRXP_ENEMY_Elder Crag Boars|r conjuram|r |T132337:0|t[Carga] |cRXP_WARN_(Próprio Instantâneo: Aumenta a velocidade de movimento por 3 segundos, causando 25-70 de dano corpo a corpo ao acertar. Só pode ser usado à distância)|r
+    >>Mate os |cRXP_ENEMY_Ice Garra Ursos|r, os |cRXP_ENEMY_Elder Crag Boars|r e os |cRXP_ENEMY_Snow Leopards|r a caminho da Caverna. Saqueie os |cRXP_ENEMY_Elder Crag Boars|r por suas |cRXP_LOOT_Crag Javali Ribs|r
+    >>|cRXP_WARN_Foque nos|r |cRXP_ENEMY_Snow Leopards|r
+    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Ice Garra Ursos|r lançam|r |T135853:0|t[Garra de Gelo] |cRXP_WARN_(Corpo a Corpo Instant: Causa 4 de dano corpo a corpo adicional), e |cRXP_ENEMY_Elder Crag Boars|r lançam|r |T132337:0|t[carga] |cRXP_WARN_(Self Instant: Aumenta a velocidade de movimento por 3 segundos, causando 25-70 de dano corpo a corpo ao acertar. Só pode ser lançado à distância)|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
     .mob +Ice Claw Bear
     .complete 319,2 --Kill Elder Crag Boar (x8)
@@ -2273,9 +2273,9 @@ step
     #completewith CaveLS
     .goto Dun Morogh,33.51,47.50,50,0
     .goto Dun Morogh,36.85,45.48,50,0
-    >>Mate os |cRXP_ENEMY_Ice Garra Ursos|r, os |cRXP_ENEMY_anciões Crag Boars|r e os |cRXP_ENEMY_Neve Leopards|r a caminho da caverna
-    >>|cRXP_WARN_Focus on the|r |cRXP_ENEMY_Snow Leopards|r
-    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Ice Garra Ursos|r lançam|r |T135853:0|t[Garra de Gelo] |cRXP_WARN_(Corpo a Corpo Instantâneo: Causa 4 danos adicionais de corpo a corpo), e os |cRXP_ENEMY_anciões Crag Boars|r lançam|r |T132337:0|t[Investida] |cRXP_WARN_(Instantâneo do Self: Aumenta velocidade de movimento por 3 segundos, causando 25-70 danos de corpo a corpo ao acertar. Apenas lançável à distância)|r
+    >>Mate os |cRXP_ENEMY_Ice Garra Ursos|r, os |cRXP_ENEMY_Elder Crag Boars|r e os |cRXP_ENEMY_Snow Leopards|r a caminho da caverna
+    >>|cRXP_WARN_Foque nos|r |cRXP_ENEMY_Snow Leopards|r
+    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Ice Garra Ursos|r lançam|r |T135853:0|t[Garra de Gelo] |cRXP_WARN_(Corpo a Corpo Instant: Causa 4 de dano corpo a corpo adicional), e |cRXP_ENEMY_Elder Crag Boars|r lançam|r |T132337:0|t[carga] |cRXP_WARN_(Self Instant: Aumenta a velocidade de movimento por 3 segundos, causando 25-70 de dano corpo a corpo ao acertar. Só pode ser lançado à distância)|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
     .mob +Ice Claw Bear
     .complete 319,2 --Kill Elder Crag Boar (x8)
@@ -2290,7 +2290,7 @@ step << skip
 step << skip
     #label CaveLS
     .goto Dun Morogh,38.32,43.36
-    .goto Dun Morogh,47.13,54.91,30 >>|cRXP_WARN_Execute um Logout Pular dentro da caverna para voltar a Kharanos|r
+    .goto Dun Morogh,47.13,54.91,30 >>|cRXP_WARN_Faça um Logout Pular dentro da caverna para se teleportar de volta para Kharanos|r
     .isOnQuest 319
 step
     .goto Dun Morogh,46.726,53.826
@@ -2330,7 +2330,7 @@ step
     .target Jarven Thunderbrew
 step
     .goto Dun Morogh,47.72,52.70
-    >>Passe o mouse sobre o |cRXP_PICK_Guardado Trovão Ale Barril|r no andar de baixo. Espere o |cRXP_PICK_Guardado Trovão Ale Barril|r se tornar Unguarded
+    >>Fique passando o mouse sobre o |cRXP_PICK_Guarded Trovão Ale Barril|r no andar de baixo. Espere o |cRXP_PICK_Guarded Trovão Ale Barril|r ficar sem guarda
     >>Clique no |cRXP_PICK_Unguarded Trovão Ale Barril|r
     .turnin 310 >>Entregue A Guerra das Cervejas
     .accept 311 >>Aceite Fale Novamente com Marleth
@@ -2362,22 +2362,22 @@ step
 step
     #completewith next
     .goto Dun Morogh,46.65,47.42,40,0
-    +|cRXP_WARN_Cause 51%+ damage to nearby os |cRXP_ENEMY_Neve Farejador Wolves|r, os |cRXP_ENEMY_Winter Wolves|r, and os |cRXP_ENEMY_Young Preto Ursos|r. Puxe-os para o |cRXP_FRIENDLY_Ironforge Montanhista|r para matá-los mais eficientemente|r
-    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Neve Farejador Wolves|r têm|r |T132150:0|t[Increased Agro Distância] |cRXP_WARN_(Alcance de Agro aumentado em cerca de 8 jardas)|r
+    +|cRXP_WARN_Cause 51%+ de dano aos |cRXP_ENEMY_Snow Farejador Wolves|r, aos |cRXP_ENEMY_Winter Wolves|r e aos |cRXP_ENEMY_Young Preto Ursos|r. Puxe-os para o |cRXP_FRIENDLY_Ironforge Montanhista|r para matá-los de forma mais eficiente|r
+    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Snow Farejador Wolves|r têm|r |T132150:0|t[Increased Agro Distância] |cRXP_WARN_(o alcance de agro é aumentado em cerca de 8 jardas)|r
     .mob Snow Tracker Wolf
     .mob Winter Wolf
     .mob Young Black Bear
     .target Ironforge Mountaineer
 step
     .goto Dun Morogh,42.91,45.17,25,0
-    .goto Dun Morogh,42.32,45.27,45 >>Corra para a rampa em direção aos |cRXP_ENEMY_Frostmane Seers|r
+    .goto Dun Morogh,42.32,45.27,45 >>Corra pela rampa em direção aos |cRXP_ENEMY_Frostmane Seers|r
     .isOnQuest 315
 step
     #requires SeerRamp
     #completewith next
-    >>Abate a patrulha de |cRXP_ENEMY_Frostmane Caça-talentos|r
-    >>|cRXP_WARN_Tenha cuidado, pois ele patrulha entre todos os estacionários|r |cRXP_ENEMY_Frostmane Seers|r
-    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T132222:0|t[Atirar] |cRXP_WARN_(Lançamento à Distância: Causa 8-15 de dano)|r
+    >>Mate a patrulha de |cRXP_ENEMY_Caçador de Cabeças Jubafria|r
+    >>|cRXP_WARN_Tenha cuidado, pois ele patrulha entre todos os que estão parados|r |cRXP_ENEMY_Frostmane Seers|r
+    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T132222:0|t[Atirar] |cRXP_WARN_(Ataque à Distância: Causa 8-15 dano)|r
     .complete 287,1 --Kill Frostmane Headhunters (5)
     .mob Frostmane Headhunter
 step
@@ -2393,15 +2393,15 @@ step
     .goto Dun Morogh,39.67,39.87,20,0
     .goto Dun Morogh,39.94,37.70,20,0
     .goto Dun Morogh,41.84,35.63
-    >>Abate |cRXP_ENEMY_Frostmane Seers|r. Saqueie-os para obter |cRXP_LOOT_Tremulerva|r
-    >>Abra o |cRXP_PICK_Tremulerva Cestos|r no chão. Saque deles para obter |cRXP_LOOT_Tremulerva|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
-    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T136048:0|t[Raio] |cRXP_WARN_(Lançamento à Distância: Causa 15-30 de dano de Natureza)|r
+    >>Mate os |cRXP_ENEMY_Frostmane Seers|r. Saque-os para obter suas |cRXP_LOOT_Tremulerva|r
+    >>Abra os |cRXP_PICK_Tremulerva Cestos|r no chão. Saque-os para obter |cRXP_LOOT_Tremulerva|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T136048:0|t[Raio] |cRXP_WARN_(Ataque à Distância: Causa 15-30 dano de Natureza)|r
     .complete 315,1 --Collect Shimmerweed (x6)
     .mob Frostmane Seer
 step
     #completewith IBCave
-    >>Abate os |cRXP_ENEMY_grandes Crag Boars|r e os |cRXP_ENEMY_anciões Crag Boars|r. Saque deles para obter |cRXP_LOOT_Crag Javali Ribs|r
+    >>Mate os |cRXP_ENEMY_Large Crag Boars|r e os |cRXP_ENEMY_Elder Crag Boars|r. Saque-os para obter |cRXP_LOOT_Crag Javali Ribs|r
     .complete 384,1 --Crag Boar Rib (6)
     .mob Large Crag Boar
     .mob Elder Crag Boar
@@ -2409,29 +2409,29 @@ step
     #completewith next
     .goto Dun Morogh,40.45,47.23,40,0
     .goto Dun Morogh,37.72,51.88,40,0
-    >>Abate os dois |cRXP_ENEMY_anciões Crag Boars|r a caminho da caverna (se estiverem vivos)
-    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T132337:0|t[Investida] |cRXP_WARN_(Instantâneo do Self: Aumenta velocidade de movimento por 3 segundos, causando 25-85 danos de corpo a corpo ao acertar. Apenas lançável à distância)|r
+    >>Mate os dois |cRXP_ENEMY_Elder Crag Boars|r a caminho da caverna (se estão aí)
+    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T132337:0|t[carga] |cRXP_WARN_(Self Instant: Aumenta a velocidade de movimento por 3 segundos, causando 25-85 de dano corpo a corpo ao acertar. Só pode ser lançado à distância)|r
     .complete 319,2 --Kill Elder Crag Boar (x8)
     .mob Elder Crag Boar
 step
     #label IBCave
-    .goto Dun Morogh,37.85,53.71,50 >>Viaje em direção à Caverna
+    .goto Dun Morogh,37.85,53.71,50 >>Viaje para a Caverna
     .isOnQuest 312
 step
     #completewith next
-    +|cRXP_WARN_Depois de saquear, lembre-se de pular e se desviar de seus ataques para evitar o Tontear e pular no tronco da árvore para se evadir temporariamente dele|r
+    +|cRXP_WARN_Após saqueá-lo, lembre-se de pular virando para desviar seus ataques, evitar o Tontear e pular no tronco para evadi-lo temporariamente|r
 step
     .goto Dun Morogh,38.51,53.93
-    >>|cRXP_WARN_Se |cRXP_ENEMY_Old Icebeard[=Velho Barbafria]|r está na caverna, leve-o para cima pelo lado da caverna, depois bem acima dela. Espere ele chegar perto, depois pule para baixo e vá para o fundo da caverna|r
-    >>Abra o |cRXP_PICK_Armário de Carne de MacGrann|r no chão. Saque dele para obter |cRXP_LOOT_Carnes Secas de Macgrann|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Se o |cRXP_ENEMY_Velho Barbafria|r está na caverna, puxe-o pela lateral da caverna, depois todo o caminho acima dela. Espere ele chegar perto, depois pule para baixo e vá em direção ao fundo da caverna|r
+    >>Abra |cRXP_PICK_MacGrann's Carne Locker|r no chão. Saque-o para obter |cRXP_LOOT_Macgrann's Dried Meats|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .link https://youtu.be/Zg4FNWw-P5k?t=3120 >>https://youtu.be/Zg4FNWw-P5k?t=3120 >>|cRXP_WARN_CLIQUE AQUI Se você está tendo dificuldades|r
     .complete 312,1 --Collect MacGrann's Dried Meats (x1)
     .mob Old Icebeard
 step
     .goto Dun Morogh,34.57,51.66
     >>Fale com |cRXP_FRIENDLY_Tundra|r
-    .turnin 312,1 >>Entregue O Saque Roubado de Tundra MacGrann
+    .turnin 312,1 >>Entregue O Esconderijo Roubado de Tundra MacGrann
     .target Tundra MacGrann
 step
     .goto Dun Morogh,32.11,49.72,40,0
@@ -2446,9 +2446,9 @@ step
     .goto Dun Morogh,28.42,45.14,40,0
     .goto Dun Morogh,28.85,41.75,40,0
     .goto Dun Morogh,31.30,39.17
-    >>Abate os |cRXP_ENEMY_Ice Garra Ursos|r, os |cRXP_ENEMY_anciões Crag Boars|r e os |cRXP_ENEMY_Neve Leopards|r. Saque os |cRXP_ENEMY_anciões Crag Boars|r para |cRXP_LOOT_Crag Javali Ribs|r
-    >>|cRXP_WARN_Lembre-se de kitar um |cRXP_ENEMY_Urso Garra de Gelo|r ou |cRXP_ENEMY_Snow Leopards|r de volta até o mestre da missão se possível|r
-    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Ice Garra Ursos|r conjuram|r |T135853:0|t[Garra de Gelo] |cRXP_WARN_(Corpo a Corpo Instantâneo: Causa 4 danos adicionais de corpo a corpo), e |cRXP_ENEMY_Elder Crag Boars|r conjuram|r |T132337:0|t[Carga] |cRXP_WARN_(Próprio Instantâneo: Aumenta a velocidade de movimento por 3 segundos, causando 35-85 de dano corpo a corpo ao acertar. Só pode ser usado à distância)|r
+    >>Mate os |cRXP_ENEMY_Ice Garra Ursos|r, os |cRXP_ENEMY_Elder Crag Boars|r e os |cRXP_ENEMY_Snow Leopards|r. Saque os |cRXP_ENEMY_Elder Crag Boars|r para obter |cRXP_LOOT_Crag Javali Ribs|r
+    >>|cRXP_WARN_Lembre-se de puxar um |cRXP_ENEMY_Urso Garra de Gelo|r ou |cRXP_ENEMY_Snow Leopards|r de volta para o fornecedor da missão, se possível|r
+    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Ice Garra Ursos|r lançam|r |T135853:0|t[Garra de Gelo] |cRXP_WARN_(Corpo a Corpo Instant: Causa 4 de dano corpo a corpo adicional), e |cRXP_ENEMY_Elder Crag Boars|r lançam|r |T132337:0|t[carga] |cRXP_WARN_(Self Instant: Aumenta a velocidade de movimento por 3 segundos, causando 35-85 de dano corpo a corpo ao acertar. Só pode ser lançado à distância)|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
     .mob +Ice Claw Bear
     .complete 319,2 --Kill Elder Crag Boar (x8)
@@ -2472,9 +2472,9 @@ step
     .goto Dun Morogh,28.42,45.14,40,0
     .goto Dun Morogh,28.85,41.75,40,0
     .goto Dun Morogh,31.30,39.17
-    >>Abate os |cRXP_ENEMY_Ice Garra Ursos|r, os |cRXP_ENEMY_anciões Crag Boars|r e os |cRXP_ENEMY_Neve Leopards|r
-    >>|cRXP_WARN_Lembre-se de levar um |cRXP_ENEMY_Ice Garra Urso|r ou os |cRXP_ENEMY_Neve Leopards|r de volta para o criador da missão se possível|r
-    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Ice Garra Ursos|r lançam|r |T135853:0|t[Garra de Gelo] |cRXP_WARN_(Corpo a Corpo Instantâneo: Causa 4 danos adicionais de corpo a corpo), e os |cRXP_ENEMY_anciões Crag Boars|r lançam|r |T132337:0|t[Investida] |cRXP_WARN_(Instantâneo do Self: Aumenta velocidade de movimento por 3 segundos, causando 35-85 danos de corpo a corpo ao acertar. Apenas lançável à distância)|r
+    >>Mate os |cRXP_ENEMY_Ice Garra Ursos|r, os |cRXP_ENEMY_Elder Crag Boars|r e os |cRXP_ENEMY_Snow Leopards|r
+    >>|cRXP_WARN_Lembre-se de puxar um |cRXP_ENEMY_Urso Garra de Gelo|r ou |cRXP_ENEMY_Snow Leopards|r de volta para o fornecedor da missão, se possível|r
+    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Ice Garra Ursos|r lançam|r |T135853:0|t[Garra de Gelo] |cRXP_WARN_(Corpo a Corpo Instant: Causa 4 de dano corpo a corpo adicional), e |cRXP_ENEMY_Elder Crag Boars|r lançam|r |T132337:0|t[carga] |cRXP_WARN_(Self Instant: Aumenta a velocidade de movimento por 3 segundos, causando 35-85 de dano corpo a corpo ao acertar. Só pode ser lançado à distância)|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
     .mob +Ice Claw Bear
     .complete 319,2 --Kill Elder Crag Boar (x8)
@@ -2484,9 +2484,9 @@ step
     .isQuestTurnedIn 384
 step
     >>Fale com |cRXP_FRIENDLY_Rejold|r e |cRXP_FRIENDLY_Marleth|r
-    .turnin 315,1 >>Entregue Em Busca da Cerveja Perfeita
+    .turnin 315,1 >>Entregue em Em Busca da Cerveja Perfeita
     .accept 413 >>Aceite Cerveja Tremeluz
-    .turnin 319 >>Entregue Tudo pela Sempre-aceso
+    .turnin 319 >>Entregue Tudo Pela Sempre-aceso
     .accept 320 >>Aceite Fale Novamente com Urrabolha
     .goto Dun Morogh,30.189,45.725
     .turnin 311 >>Fale novamente com Marleth
@@ -2519,8 +2519,8 @@ step
     .goto Dun Morogh,28.42,45.14,40,0
     .goto Dun Morogh,28.85,41.75,40,0
     .goto Dun Morogh,31.30,39.17
-    >>Mate os |cRXP_ENEMY_Elder Crag Boars|r. Saque-os para obter suas |cRXP_LOOT_Crag Javali Ribs|r
-    >>|cRXP_WARN_Tenha cuidado pois eles conjuram|r |T132337:0|t[carga] |cRXP_WARN_(instantâneo: aumenta a velocidade de movimento por 3 segundos, causa 35-85 de dano corpo a corpo ao acertar. Só pode ser conjurado à distância)|r
+    >>Mate os |cRXP_ENEMY_Elder Crag Boars|r. Saqueie-os para obter seus |cRXP_LOOT_Crag Javali Ribs|r
+    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T132337:0|t[carga] |cRXP_WARN_(Self Instant: Aumenta a velocidade de movimento por 3 segundos, causando 35-85 de dano corpo a corpo ao acertar. Só pode ser lançado à distância)|r
     .complete 384,1 --Crag Boar Rib (6)
     .mob Elder Crag Boar
 step
@@ -2530,23 +2530,23 @@ step
 step
     .goto Dun Morogh,24.29,50.80,40,0
     .goto Dun Morogh,23.31,51.36
-    >>Abate os |cRXP_ENEMY_Frostmane Headhunters|r dentro da caverna
-    >>|cRXP_WARN_Tome cuidado pois eles lançam|r |T132222:0|t[Atirar] |cRXP_WARN_(Lançamento à Distância: Causa 8-15 de dano)|r
-    >>|cRXP_WARN_Tenha cuidado com o |cRXP_ENEMY_Caçador de Cabeças Jubafria|r patrulhando lá dentro|r
+    >>Mate os |cRXP_ENEMY_Frostmane Headhunters|r dentro da caverna
+    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T132222:0|t[Atirar] |cRXP_WARN_(Ataque à Distância: Causa 8-15 dano)|r
+    >>|cRXP_WARN_Tenha cuidado com o |cRXP_ENEMY_Caçador de Cabeças Jubafria|r em patrulha lá dentro|r
     .complete 287,1 --Kill Frostmane Headhunter (x5)
     .mob Frostmane Headhunter
 step
     #label Explore
     .goto Dun Morogh,23.01,52.04,8,0
     .goto Dun Morogh,22.90,52.09
-    >>|cRXP_WARN_Desça cuidadosamente até o nicho abaixo (NÃO caia). Desça cuidadosamente pelo nicho até obter crédito|r
-    >>|cRXP_WARN_Tenha cuidado com o |cRXP_ENEMY_Esfolador Jubafria|r abaixo, pois ele pode ser capaz de atacá-lo no nicho se estiver perto|r
-    >>|cRXP_WARN_Prepare-se para conjurar|r |T134414:0|t[Pedra de Regresso]
-    .link https://youtu.be/Zg4FNWw-P5k?t=3619 >>https://youtu.be/Zg4FNWw-P5k?t=3619 >>|cRXP_WARN_CLIQUE AQUI Se você está tendo dificuldade|r
+    >>|cRXP_WARN_Caminhe cuidadosamente para baixo até o recanto abaixo (NÃO caia). Caminhe cuidadosamente pelo recanto até obter crédito|r
+    >>|cRXP_WARN_Tenha cuidado com o |cRXP_ENEMY_Esfolador Jubafria|r abaixo, pois ele pode atacar você no recanto se estiver perto de lá|r
+    >>|cRXP_WARN_Esteja pronto para lançar|r |T134414:0|t[Pedra de Regresso]
+    .link https://youtu.be/Zg4FNWw-P5k?t=3619 >>https://youtu.be/Zg4FNWw-P5k?t=3619 >>|cRXP_WARN_Clique aqui se você estiver tendo dificuldade|r
     .complete 287,2 --Fully explore Frostmane Hold
 step << skip
     #completewith next
-    +|cRXP_WARN_Lembre-se da Saída Rápida da Estalagem em breve!|r
+    +|cRXP_WARN_Lembre-se do Pular de Saída da Estalagem em breve!|r
 step
     #completewith Senir2
     .hs >>Vá para Kharanos
@@ -2558,13 +2558,13 @@ step
     .target Innkeeper Belm
 step
     .goto Dun Morogh,47.50,52.08
-    >>Fale com |cRXP_FRIENDLY_Magis|r no andar de cima
-    .trainer >>Treine seus feitiços de classe (Seta de Gelo r2, Polimorfia)
+    >>Fale com |cRXP_FRIENDLY_Magis|r acima
+    .trainer >>Treine seus feiços de classe (Seta de Gelo r2, Polimorfia)
     .target Magis Sparkmantle
     .isQuestAvailable 314
 step
     #completewith Senir2
-    +|cRXP_WARN_Lembre-se de guardar|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_que você consegue ao subir de nível|r |T133971:0|t[Culinária] |cRXP_WARN_até 50 depois|r
+    +|cRXP_WARN_Lembre-se de guardar|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_que você obtém ao subir de nível|r |T133971:0|t[Culinária] |cRXP_WARN_até nível 50 depois|r
 step
     .goto Dun Morogh,46.83,52.36
     >>Fale com |cRXP_FRIENDLY_Ragnar|r
@@ -2574,24 +2574,24 @@ step
     #label Senir2
     .goto Dun Morogh,46.726,53.826
     >>Fale com |cRXP_FRIENDLY_Senir|r
-    .turnin 287,2 >>Entregue A Fortaleza Jubafria
+    .turnin 287,2 >>Entregue em A Fortaleza Jubafria
     .accept 291 >>Aceite Os Relatórios
     .target Senir Whitebeard
 step
     #completewith next
-    .cast 1459 >>Reaplique |T135932:0|t[Inteligência Arcana]
-    .cast 168 >>Reaplique |T135843:0|t[Armadura Gélida]
+    .cast 1459 >>Aplique |T135932:0|t[Inteligência Arcana]
+    .cast 168 >>Aplique |T135843:0|t[Armadura Gélida]
 step
     >>Fale com |cRXP_FRIENDLY_Bellowfiz|r e |cRXP_FRIENDLY_Stonegear|r
     .turnin 320,2 >>Fale novamente com Urrabolha
     .target +Pilot Bellowfiz
     .goto Dun Morogh,49.426,48.410
-    .turnin 313 >>Entregue O Covil dos Grisalhos
+    .turnin 313 >>Entregue O Covil Canjento
     .goto Dun Morogh,49.622,48.612
     .target +Pilot Stonegear
 step
     #completewith next
-    +|cRXP_WARN_Inflija 51%+ de dano aos |cRXP_ENEMY_Winter Wolves|r próximos, depois puxe-os para os |cRXP_FRIENDLY_Montanhistas de Altaforja|r que podem estar patrulhando na estrada para matá-los com mais eficiência|r
+    +|cRXP_WARN_Inflija 51%+ de dano nas |cRXP_ENEMY_Winter Wolves|r próximas, então puxe-as para os |cRXP_FRIENDLY_Montanhistas de Altaforja|r que podem estar patrulhando na estrada para eliminá-las de forma mais eficiente|r
     >>|cRXP_WARN_Se você não vir os |cRXP_FRIENDLY_Montanhistas de Altaforja|r, pule este passo|r
     .mob Winter Wolf
     .target Ironforge Mountaineer
@@ -2599,44 +2599,44 @@ step
     #completewith Rudra
     #label Dirt
     .goto Dun Morogh,59.84,49.56,40,0
-    .goto Dun Morogh,61.36,47.07,40 >>Suba o caminho de terra
+    .goto Dun Morogh,61.36,47.07,40 >>Suba pelo caminho de terra
     .isQuestAvailable 314
 step
     #completewith next
     #requires Dirt
-    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >>https://youtu.be/Zg4FNWw-P5k?t=3815 >>|cRXP_WARN_CLIQUE AQUI Se você está tendo dificuldades|r
-    +|cRXP_WARN_Leve |cRXP_ENEMY_Ragash|r para|r |cRXP_FRIENDLY_Rudra|r
+    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >>https://youtu.be/Zg4FNWw-P5k?t=3815 >>|cRXP_WARN_CLIQUE AQUI se você está tendo dificuldades|r
+    +|cRXP_WARN_Atraia |cRXP_ENEMY_Ragash|r para baixo até|r |cRXP_FRIENDLY_Rudra|r
     .mob Vagash
 step
     #label Rudra
     .goto Dun Morogh,63.08,49.85
     >>Fale com |cRXP_FRIENDLY_Rudra|r
-    .accept 314 >>Aceite Amarre sua Cabra pois Ragash Está Solto
+    .accept 314 >>Aceite Amarre Sua Cabra Pois Ragash Está Solto
     .target Rudra Amberstill
 step
     .goto Dun Morogh,62.57,46.14,0
     .goto Dun Morogh,62.78,54.60,40,0
     .goto Dun Morogh,62.82,55.73
-    >>Abate |cRXP_ENEMY_Ragash|r. Saque-o para obter o |cRXP_LOOT_Dentada de Ragash|r
-    >>|cRXP_WARN_Atraia |cRXP_ENEMY_Ragash|r até o |cRXP_FRIENDLY_Dun Morogh Montanhista|r ao sul do rancho. Certifique-se de que você causa 51%+ de dano a ele|r
-    >>|cRXP_WARN_Lembre-se de conseguir XP de exploração em Tundrid Hills e atraia o |cRXP_ENEMY_Neve Leopardo|r para o |cRXP_FRIENDLY_Dun Morogh Montanhista|r se for conveniente|r
-    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >>https://youtu.be/Zg4FNWw-P5k?t=3815 >>|cRXP_WARN_CLIQUE AQUI Se você está tendo dificuldades|r
+    >>Abata o |cRXP_ENEMY_Ragash|r. Saque-o para obter a |cRXP_LOOT_Presa de Ragash|r
+    >>|cRXP_WARN_Arraste o |cRXP_ENEMY_Ragash|r para o |cRXP_FRIENDLY_Montanhista de Dun Morogh|r ao sul do rancho. Certifique-se de causar 51%+ de dano a ele|r
+    >>|cRXP_WARN_Lembre-se de obter pontos de experiência de exploração de The Tundrid Hills e puxe o |cRXP_ENEMY_Leopardo da Neve|r para o |cRXP_FRIENDLY_Montanhista de Dun Morogh|r se conveniente|r
+    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >>https://youtu.be/Zg4FNWw-P5k?t=3815 >>|cRXP_WARN_CLIQUE AQUI se você está tendo dificuldades|r
     .complete 314,1 --Collect Fang of Vagash (1)
     .mob Vagash
 step
     .goto Dun Morogh,63.08,49.85
     >>Fale com |cRXP_FRIENDLY_Rudra|r
-    .turnin 314,3 >>Entregue Amarre sua Cabra pois Ragash Está Solto
+    .turnin 314,3 >>Entregue Amarre Sua Cabra Pois Ragash Está Solto
     .target Rudra Amberstill
 step << skip
     #completewith Ghilm
-    +|cRXP_WARN_Lembre-se de guardar|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_que você consegue ao subir de nível|r |T133971:0|t[Culinária] |cRXP_WARN_até 50 depois|r
+    +|cRXP_WARN_Lembre-se de guardar|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_que você obtém ao subir de nível|r |T133971:0|t[Culinária] |cRXP_WARN_até nível 50 depois|r
 step
     #completewith next
     .goto Dun Morogh,66.34,50.92,50,0
     .goto Dun Morogh,67.72,53.66,30,0
-    +|cRXP_WARN_Atraia o |cRXP_ENEMY_Urso de Garra de Gelo|r para o |cRXP_FRIENDLY_Ironforge Montanhista|r (certifique-se de que você causa 51%+ de dano para ganhar crédito)|r
-    >>|cRXP_WARN_Tome cuidado pois eles lançam|r |T135853:0|t[Garra de Gelo] |cRXP_WARN_(Corpo a Corpo Instant: Causa dano adicional de 4 pontos de corpo a corpo)|r
+    +|cRXP_WARN_Arraste o |cRXP_ENEMY_Urso de Garra de Gelo|r para o |cRXP_FRIENDLY_Montanhista de Ironforge|r (certifique-se de causar 51%+ de dano para obter crédito)|r
+    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T135853:0|t[Garra de Gelo] |cRXP_WARN_(Corpo a Corpo Instantâneo: Causa 4 dano adicional de combate)|r
     .mob Ice Claw Bear
 step
     #sticky
@@ -2680,8 +2680,8 @@ step
     .target +Foreman Stonebrow
 step
     #completewith Bonesnappers
-    >>Abate os |cRXP_ENEMY_Rockjaw Skullthumpers|r
-    >>|cRXP_WARN_Não vá se desviar de seu caminho para matá-los|r
+    >>Abata os |cRXP_ENEMY_Rockjaw Skullthumpers|r
+    >>|cRXP_WARN_Não saia do seu caminho para matá-los|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob Rockjaw Skullthumper
 step
@@ -2694,8 +2694,8 @@ step
     .goto Dun Morogh,71.94,50.48,40,0
     .goto Dun Morogh,72.55,51.50,40,0
     .goto Dun Morogh,72.62,52.56
-    >>Abate |cRXP_ENEMY_Pedraqueixo Bonesnappers|r dentro da caverna
-    >>|cRXP_WARN_Tome cuidado pois eles lançam|r |T132154:0|t[Derrubar] |cRXP_WARN_(Corpo a Corpo Instant: Atordoa por 2 segundos)|r
+    >>Abata os |cRXP_ENEMY_Rockjaw Bonesnappers|r dentro da caverna
+    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T132154:0|t[Derrubar] |cRXP_WARN_(Corpo a Corpo Instantâneo: Imobiliza por 2 segundos)|r
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
     .mob Rockjaw Bonesnapper
 step
@@ -2708,7 +2708,7 @@ step
 	.goto Dun Morogh,68.36,59.57,30,0
 	.goto Dun Morogh,69.16,57.51,30,0
 	.goto Dun Morogh,69.93,57.29,30,0
-    >>Abate os |cRXP_ENEMY_Rockjaw Skullthumpers|r
+    >>Abata os |cRXP_ENEMY_Rockjaw Skullthumpers|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob Rockjaw Skullthumper
 step
@@ -2716,7 +2716,7 @@ step
     #label Frast
     .goto Dun Morogh,68.87,55.96,0,0
     >>Fale com |cRXP_FRIENDLY_Frast|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .target Frast Dokner
 step
     >>Fale com |cRXP_FRIENDLY_Stonebrow|r e |cRXP_FRIENDLY_Mehr|r
@@ -2730,13 +2730,13 @@ step
     #requires Frast
     .goto Dun Morogh,69.33,55.46
     >>Fale com |cRXP_FRIENDLY_Umídio|r
-    .train 2575 >>Aprenda |T136248:0|t[Mineração]
+    .train 2575 >>Treine |T136248:0|t[Mineração]
     .target Dank Drizzlecut
 step
     #label Shortcut1
     #completewith Pilot
     .goto Dun Morogh,70.35,55.28,5,0
-    .link https://youtu.be/G2IscpFZVeQ?t=4034 >>https://youtu.be/G2IscpFZVeQ?t=4034 >>|cRXP_WARN_CLIQUE AQUI se você está tendo dificuldade|r
+    .link https://youtu.be/G2IscpFZVeQ?t=4034 >>https://youtu.be/G2IscpFZVeQ?t=4034 >>|cRXP_WARN_Clique aqui se você está tendo dificuldades|r
     .goto Dun Morogh,70.52,54.75,12 >>Pegue o atalho atrás de |cRXP_FRIENDLY_Umídio|r
 step
     #completewith Pilot
@@ -2744,42 +2744,42 @@ step
     #label Shortcut2
     .goto Dun Morogh,70.97,50.70,50,0
     .goto Dun Morogh,72.90,49.79,50,0
-    .goto Dun Morogh,77.11,48.82,50 >>|cRXP_WARN_Puxe os |cRXP_ENEMY_Rockjaw Ambushers|r próximos para os |cRXP_FRIENDLY_Montanhistas de Altaforja|r que podem patrulhar na estrada (certifique-se de causar 51%+ de dano para obter crédito)|r
+    .goto Dun Morogh,77.11,48.82,50 >>|cRXP_WARN_Atraia os |cRXP_ENEMY_Emboscadores Pedraqueixo|r para os |cRXP_FRIENDLY_Montanhistas de Altaforja|r que podem patrulhar na estrada (certifique-se de causar 51%+ de dano para obter crédito)|r
     .mob Rockjaw Ambusher
     .unitscan Ironforge Mountaineer
 step
     #requires Shortcut2
     #completewith next
     .goto Dun Morogh,81.23,42.66,50,0
-    .goto Dun Morogh,83.01,40.31,30 >>Arraste o |cRXP_ENEMY_Rochetusco Cicatrizado|r pelo túnel
-    >>|cRXP_WARN_Tenha cuidado ao lançarem|r |T132337:0|t[Investida] |cRXP_WARN_(Instantâneo Pessoal: Aumenta velocidade de movimento por 3 segundos, causando 40-100 de dano corpo a corpo ao acertar. Apenas lançável à distância)|r
+    .goto Dun Morogh,83.01,40.31,30 >>Atraia um |cRXP_ENEMY_Rochetusco Cicatrizado|r através do túnel
+    >>|cRXP_WARN_Tenha cuidado enquanto eles conjuram|r |T132337:0|t[Carga] |cRXP_WARN_(Auto Instantâneo: Aumenta velocidade de movimento por 3 segundos, causando 40-100 dano corpo a corpo ao atingir. Lançável apenas a distância)|r
     .mob Scarred Crag Boar
 step
     #label Pilot
     .goto Dun Morogh,83.89,39.19
-    >>Converse com |cRXP_FRIENDLY_Hammerfoot|r
+    >>Fale com |cRXP_FRIENDLY_Hammerfoot|r
     .accept 419 >>Aceite O Piloto Perdido
     .target Pilot Hammerfoot
     .isQuestAvailable 419
 step
     .goto Dun Morogh,81.37,37.02,30,0
     .goto Dun Morogh,79.67,36.17
-    >>Clique em |cRXP_PICK_Cadáver Anão|r no chão
-    >>|cRXP_WARN_Garanta que você tem 1 espaço de inventário livre para esta entrega|r
-    >>|cRXP_WARN_Lembrar que você vai levar |cRXP_ENEMY_Ronhagarra|r de volta para |cRXP_FRIENDLY_Hammerfoot|r
+    >>Clique no |cRXP_PICK_Cadáver Anão|r no chão
+    >>|cRXP_WARN_Certifique-se de ter 1 espaço livre no inventário para esta entrega|r
+    >>|cRXP_WARN_Lembre-se de que você vai arrastar |cRXP_ENEMY_Ronhagarra|r de volta para |cRXP_FRIENDLY_Hammerfoot|r
     .turnin 419 >>Entregue O Piloto Perdido
     .accept 417 >>Aceite A Vingança do Piloto
 step
     .goto Dun Morogh,78.41,37.80,60,0
     .goto Dun Morogh,83.89,39.19
-    >>Mate |cRXP_ENEMY_Ronhagarra|r. Saqueie a |cRXP_LOOT_Mangy Garra|r dele
-    >>|cRXP_WARN_Atraia-o para |cRXP_FRIENDLY_Hammerfoot|r (certifique-se de causar 51%+ de dano para receber crédito)|r
+    >>Mate |cRXP_ENEMY_Ronhagarra|r. Saqueie-o pelo |cRXP_LOOT_Mangy Garra|r
+    >>|cRXP_WARN_Atraia-o até |cRXP_FRIENDLY_Hammerfoot|r (certifique-se de causar 51%+ de dano para obter crédito)|r
     .complete 417,1 --Collect Mangy Claw (x1)
     .mob Mangeclaw
     .target Pilot Hammerfoot
 step
     .goto Dun Morogh,83.892,39.188
-    >>Converse com |cRXP_FRIENDLY_Hammerfoot|r
+    >>Fale com |cRXP_FRIENDLY_Hammerfoot|r
     .turnin 417,1 >>Entregue A Vingança do Piloto
     .target Pilot Hammerfoot
 step
@@ -2789,7 +2789,7 @@ step
     .goto Dun Morogh,81.23,42.66,30 >>Corra de volta pelo túnel
 step
     .goto Dun Morogh,78.73,49.77
-    >>|cRXP_WARN_Cuidado enquanto |cRXP_ENEMY_Javalis de Pedregulho Cicatrizados|r e |cRXP_ENEMY_Javalis de Pedregulho Anciãos|r lançam|r |T132337:0|t[carga] |cRXP_WARN_(Instantâneo Próprio: Aumenta a velocidade de movimento por 3 segundos, causando 40-100 de dano corpo a corpo ao atingir. Apenas lançável à distância), e |cRXP_ENEMY_Ice Garra Ursos|r lançam|r |T135853:0|t[Garra de Gelo] |cRXP_WARN_(Corpo a Corpo Instantâneo: Causa 4 danos corpo a corpo adicionais)|r
+    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Scarred Crag Boars|r e |cRXP_ENEMY_Elder Crag Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 40-100 melee damage on hit. Only castable at range), e |cRXP_ENEMY_Ice Garra Ursos|r lançam|r |T135853:0|t[Garra de Gelo] |cRXP_WARN_(Corpo a Corpo Instant: Deals an additional 4 melee damage)|r
     .xp 9+5450 >>Farme até 5450+/6500xp
     .mob Ice Claw Bear
     .mob Elder Crag Boar
@@ -2803,13 +2803,13 @@ step
     .goto Dun Morogh,81.60,50.01,20,0
     .goto Dun Morogh,83.59,49.18,20,0
     >>Atraia um |cRXP_ENEMY_Rochetusco Cicatrizado|r no caminho
-    >>|cRXP_WARN_Tenha cuidado ao lançarem|r |T132337:0|t[Investida] |cRXP_WARN_(Instantâneo Pessoal: Aumenta velocidade de movimento por 3 segundos, causando 40-100 de dano corpo a corpo ao acertar. Apenas lançável à distância)|r
-    .goto Dun Morogh,84.26,48.93,20 >>Faça o Mountain Pular. Lembre-se de descer com cuidado
+    >>|cRXP_WARN_Tenha cuidado enquanto eles conjuram|r |T132337:0|t[Carga] |cRXP_WARN_(Auto Instantâneo: Aumenta velocidade de movimento por 3 segundos, causando 40-100 dano corpo a corpo ao atingir. Lançável apenas a distância)|r
+    .goto Dun Morogh,84.26,48.93,20 >>Faça o Pulo da Montanha. Lembre-se de descer com cuidado
     .mob Scarred Crag Boar
 step
     #requires Tunnel2
     #completewith next
-    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Scarred Crag Boars|r conjuram|r |T132337:0|t[carga] |cRXP_WARN_(Autoinstantâneo: Aumenta a velocidade de movimento por 3 segundos, causando 40-100 de dano corpo-a-corpo ao acertar. Apenas conjurável à distância)|r
+    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Scarred Crag Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 40-100 melee damage on hit. Only castable at range)|r
     .xp 9+5990 >>Farme até 5990+/6500xp
     .mob Scarred Crag Boar
 step
@@ -2823,14 +2823,14 @@ step
     .goto Dun Morogh,86.74,49.58,40,0
     .goto Dun Morogh,86.36,47.36
     .xp 9+6320 >>Farme até 6320+/6500xp
-    >>|cRXP_WARN_Cuidado enquanto |cRXP_ENEMY_Javalis de Pedregulho Cicatrizados|r lançam|r |T132337:0|t[carga] |cRXP_WARN_(Instantâneo: Aumenta velocidade de movimento por 3 segundos, causando 40-100 de dano corpo a corpo ao atingir. Apenas lançável à distância)|r
+    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Scarred Crag Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 40-100 melee damage on hit. Only castable at range)|r
     .mob Scarred Crag Boar
 step
     #label CragB1
     #completewith Cobbleflint
     .goto Loch Modan,16.45,58.54,20,0
-    .goto Loch Modan,19.59,62.76,30 >>Arraste o |cRXP_ENEMY_Rochetusco Cicatrizado|r pelo túnel
-    >>|cRXP_WARN_Tenha cuidado ao lançarem|r |T132337:0|t[Investida] |cRXP_WARN_(Instantâneo Pessoal: Aumenta velocidade de movimento por 3 segundos, causando 40-100 de dano corpo a corpo ao acertar. Apenas lançável à distância)|r
+    .goto Loch Modan,19.59,62.76,30 >>Atraia um |cRXP_ENEMY_Rochetusco Cicatrizado|r através do túnel
+    >>|cRXP_WARN_Tenha cuidado enquanto eles conjuram|r |T132337:0|t[Carga] |cRXP_WARN_(Auto Instantâneo: Aumenta velocidade de movimento por 3 segundos, causando 40-100 dano corpo a corpo ao atingir. Lançável apenas a distância)|r
     .mob Scarred Crag Boar
 step
 #loop
@@ -2839,16 +2839,16 @@ step
 	.goto Loch Modan,19.06,75.46,35,0
 	.goto Loch Modan,20.91,77.67,35,0
 	.goto Loch Modan,21.14,71.62,35,0
-    .xp 10 >>Farme até o nível 10
+    .xp 10 >>Farme até Nível 10
     .mob Elder Black Bear
     .mob Forest Lurker
 step
     #requires CragB1
     #completewith Rugelfuss
-    +|cRXP_WARN_Tente atrair um |cRXP_ENEMY_Urso Preto|r ou |cRXP_ENEMY_Tocaieira da Floresta|r para o Bunker com você (lembre-se de causar 51%+ de dano para receber crédito)|r
-    >>|cRXP_WARN_Saque os |cRXP_ENEMY_Anciões Ursos Pretos|r deles|r |T134027:0|t[|cRXP_LOOT_Urso Carne|r]
-    >>|cRXP_WARN_Saque os |cRXP_ENEMY_Tocaieiras da Floresta|r delas|r |T134437:0|t[|cRXP_LOOT_Aranha Ichor|r]
-    >>|cRXP_FRIENDLY_Cobbleflint|r|cRXP_WARN_, |cRXP_FRIENDLY_Gravelgaw|r, e |cRXP_FRIENDLY_Wallbang|r não vão ajudá-lo|r
+    +|cRXP_WARN_Tente atrair um próximo |cRXP_ENEMY_Ancião Urso Preto|r ou |cRXP_ENEMY_Tocaieira da Floresta|r para o Bunker com você (lembre-se de causar 51%+ de dano para obter crédito)|r
+    >>|cRXP_WARN_Saqueie os |cRXP_ENEMY_Elder Preto Ursos|r pelos seus|r |T134027:0|t[|cRXP_LOOT_Bear Carne|r]
+    >>|cRXP_WARN_Saqueie os |cRXP_ENEMY_Tocaieiras da Floresta|r para seus|r |T134437:0|t[|cRXP_LOOT_Spider Ichor|r]
+    >>|cRXP_FRIENDLY_Cobbleflint|r|cRXP_WARN_, |cRXP_FRIENDLY_Gravelgaw|r, e |cRXP_FRIENDLY_Wallbang|r não o ajudarão|r
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
     .disablecheckbox
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
@@ -2865,7 +2865,7 @@ step
     #completewith next
     .goto Loch Modan,23.27,75.65,12,0
     .goto Loch Modan,23.62,75.42,12,0
-    .goto Loch Modan,23.12,73.93,12 >>Entre no Bunker. Vá para o topo
+    .goto Loch Modan,23.12,73.93,12 >>Entre no Bunker. Vá para o andar superior
 step
     #label Rugelfuss
     .goto Loch Modan,23.233,73.675
@@ -2879,8 +2879,8 @@ step << skip
     .goto Loch Modan,19.50,62.56,30 >>Volte para o Túnel
 step << skip
     .goto Loch Modan,18.84,61.48
-    .link https://www.youtube.com/watch?v=AOAlX9B5aO0 >>https://www.youtube.com/watch?v=AOAlX9B5aO0 >>|cRXP_WARN_CLIQUE AQUI Se você está tendo dificuldades|r
-    .goto Loch Modan,32.19,46.95,30 >>|cRXP_WARN_Saltando Logout Pular do Braseiro dentro do túnel para Thelsamar|r
+    .link https://www.youtube.com/watch?v=AOAlX9B5aO0 >>https://www.youtube.com/watch?v=AOAlX9B5aO0 >>|cRXP_WARN_Clique aqui se você está tendo dificuldades|r
+    .goto Loch Modan,32.19,46.95,30 >>|cRXP_WARN_Saltando o Pulo de Logout do Braseiro dentro do túnel para Thelsamar|r
     .isOnQuest 414
 step
     .goto Loch Modan,32.93,49.51,40,0
@@ -2889,16 +2889,16 @@ step
     .goto Loch Modan,37.39,45.17,40,0
     .goto Loch Modan,37.12,42.79
     >>Fale com |cRXP_FRIENDLY_Kadrell|r
-    >>|cRXP_FRIENDLY_Kadrell|r |cRXP_WARN_patrula pela estrada principal de Thelsamar|r
+    >>|cRXP_FRIENDLY_Kadrell|r |cRXP_WARN_Patrulha pela estrada principal de Thelsamar|r
     .turnin 414 >>Entregue Cerveja para Kadrell
-    .accept 416 >>Aceite Pegando Ratos
-    .accept 1339 >>Aceite Tarefa do Montanhista Lançatroz
+    .accept 416 >>Aceite Caçando Ratos
+    .accept 1339 >>Aceite Tarefa de Montanhista Lançatroz
     .target Mountaineer Kadrell
 step
     .goto Loch Modan,37.18,47.13,10,0
     .goto Loch Modan,37.02,47.80
     >>Fale com |cRXP_FRIENDLY_Brock|r
-    >>|cRXP_WARN_Ele pode estar dentro ou fora do prédio|r
+    >>|cRXP_WARN_Ele pode estar dentro ou fora do edifício|r
     .accept 6387 >>Aceite Alunos Brilhantes
     .target Brock Stoneseeker
 step
@@ -2930,14 +2930,14 @@ step
     >>Fale com |cRXP_FRIENDLY_Golnir|r
     .turnin 6391 >>Entregue Carona para Altaforja
     .accept 6388 >>Aceite Grif Trovino
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .target Golnir Bouldertoe
     .isOnQuest 291
 step
     #completewith next
     .goto Ironforge,49.67,28.23,12,0
     .goto Ironforge,55.81,38.35,30,0
-    >>Saia do prédio
+    >>Saia do edifício
     .goto Ironforge,55.49,47.74,10 >>Vá para |cRXP_FRIENDLY_Gryth|r
 step
     .goto Ironforge,55.50,47.74
@@ -2969,20 +2969,20 @@ step
 step
     .goto Ironforge,27.17,8.58
     >>Fale com |cRXP_FRIENDLY_Dink|r
-    .trainer >>Treine seus feitiços de classe (Armadura de Gelo r2, Novane de Gelo, Polimorfia, Conjurar Água r1 & r2)
+    .trainer >>Treine seus feitiços de classe (Armadura Gélida r2, Novane Congelante, Polimorfia, Conjurar Água r1 & r2)
     >>Custo Total: 15s
-    >>Lembre que você pode querer dinheiro para Poções de Cura (3s cada), Tubo de Bronze (8s cada) e comida de nível 5 (20c por 5)
+    >>Lembre-se que você pode querer dinheiro para Poções de Cura (3s cada), Tubo de Bronze (8s cada), e comida de nível 5 (20c por 5)
     .target Dink
 step << skip
     #completewith IFHS
-    +|cRXP_WARN_Lembre-se de fazer Logout Pular nas Velas após definir sua|r |T134414:0|t[Pedra de Regresso]
+    +|cRXP_WARN_Lembre-se de Pular o Logout nas Velas depois de definir sua|r |T134414:0|t[Pedra de Regresso]
 step
     #completewith next
     --.goto Ironforge,27.25,12.79,20,0
     --.goto Ironforge,22.59,38.13,20,0
     --.goto Ironforge,20.40,53.19,20,0
     >>Entre no prédio
-    .goto Ironforge,18.14,51.45,10 >>Voe para |cRXP_FRIENDLY_Firebrew|r
+    .goto Ironforge,18.14,51.45,10 >>Vá para |cRXP_FRIENDLY_Firebrew|r
 step
     #label IFHS
     .goto Ironforge,18.14,51.45
@@ -2991,7 +2991,7 @@ step
     .target Innkeeper Firebrew
 step << skip
     .goto Ironforge,19.11,52.80
-    .zone Dun Morogh >>|cRXP_WARN_Salte no topo de Velas na mesa. Pule por logout para Dun Morogh|r
+    .zone Dun Morogh >>|cRXP_WARN_Salte no topo das velas na mesa. Faça o logout skip para Dun Morogh|r
     .isOnQuest 416
 ]])
 
@@ -3001,7 +3001,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 10-12 ADV Costa Negra 1 Mago AdE
 #version 2
-#group ADV AdE Maga da Aliança
+#group RestedXP ADV AdE Maga da Aliança
 #defaultfor Human Mage/Gnome Mage
 #next 12-14 ADV Loch Modan Mago AdE
 
@@ -3014,7 +3014,7 @@ step
     #completewith next
     .goto Dun Morogh,53.48,37.50,30,0
     .goto Dun Morogh,54.04,38.60,30,0
-    .goto Dun Morogh,59.43,42.85,150 >>Vá para o ponto de pulo. Mantenha-se junto ao lado esquerdo da montanha no caminho
+    .goto Dun Morogh,59.43,42.85,150 >>Vá para o ponto de salto. Passe rente ao lado esquerdo da montanha durante o trajeto
 step
     #label DeathlessSkip
     .goto Dun Morogh,60.18,43.01,12,0
@@ -3037,10 +3037,10 @@ step
     .goto Dun Morogh,60.64,13.89,6,0
     .goto Dun Morogh,61.40,13.27,10,0
     .goto Dun Morogh,61.52,12.58,8,0
-    >>|cRXP_WARN_Faça o Deathless Dun Morogh -> Os Pântanos skip|r
-    >>|cRXP_WARN_Coma até se recuperar completamente após cada queda se não se sente confiante|r
-    .link https://youtu.be/QcEUvwu49KI?t=73 >>https://youtu.be/QcEUvwu49KI?t=73 >> |cRXP_WARN_CLIQUE AQUI para referência (é ALTAMENTE RECOMENDADO que você faça isso)|r
-    .goto Dun Morogh,60.65,11.38,20 >>Desça com cuidado pela encosta da montanha
+    >>|cRXP_WARN_Faça o salto Deathless Dun Morogh -> Pantanal|r
+    >>|cRXP_WARN_Coma até ficar cheio após cada queda se você não se sente confiante|r
+    .link https://youtu.be/QcEUvwu49KI?t=73 >>https://youtu.be/QcEUvwu49KI?t=73 >> |cRXP_WARN_CLIQUE AQUI para referência (é FORTEMENTE aconselhado que você faça isso)|r
+    .goto Dun Morogh,60.65,11.38,20 >>Desça cuidadosamente a encosta da montanha
     .isQuestAvailable 983
 step
     .goto Dun Morogh,60.80,10.33,10,0
@@ -3054,11 +3054,11 @@ step
     .goto Wetlands,15.07,66.41,20,0
     .goto Wetlands,15.31,65.47,20,0
     .goto Wetlands,15.10,63.72,12,0
-    >>|cRXP_WARN_Faça o Deathless Dun Morogh -> Os Pântanos skip|r
-    >>|cRXP_WARN_Tenha cuidado com |cRXP_ENEMY_Lodogã|r (raro) antes de descer em direção à costa (se ele estiver ativo)|r
-    >>|cRXP_WARN_Tenha cuidado com os |cRXP_ENEMY_Bluegill Raiders|r a oeste quando você chegar ao mar|r
-    >>|cRXP_WARN_Evite os |cRXP_ENEMY_Young Pantanal Crocolisks|r ao cruzar o mar. Espere que eles se afastem|r
-    .link https://youtu.be/QcEUvwu49KI?t=336 >>https://youtu.be/QcEUvwu49KI?t=336 >> |cRXP_WARN_CLIQUE AQUI para referência (é ALTAMENTE RECOMENDADO que você faça isso)|r
+    >>|cRXP_WARN_Faça o salto Deathless Dun Morogh -> Pantanal|r
+    >>|cRXP_WARN_Cuidado com |cRXP_ENEMY_Lodogã|r (raro) antes de descer em direção à costa (se ele estiver aparecido)|r
+    >>|cRXP_WARN_Cuidado com os |cRXP_ENEMY_Bluegill Raiders|r a oeste quando você chegar ao mar|r
+    >>|cRXP_WARN_Evite os |cRXP_ENEMY_Young Pantanal Crocolisks|r ao cruzar o mar. Espere que eles patrulhem para longe|r
+    .link https://youtu.be/QcEUvwu49KI?t=336 >>https://youtu.be/QcEUvwu49KI?t=336 >> |cRXP_WARN_CLIQUE AQUI para referência (é FORTEMENTE aconselhado que você faça isso)|r
     .goto Wetlands,12.69,60.97,15 >>Vá para Menethil Harbor
     .mob Young Wetlands Crocolisk
     .mob Bluegill Raider
@@ -3067,19 +3067,19 @@ step
 step
     #completewith next
     .goto Wetlands,10.80,59.80,10,0
-    .goto Wetlands,10.63,60.10,10 >>Go dentro da Inn
+    .goto Wetlands,10.63,60.10,10 >>Entre na Estalagem
 step
     .goto Wetlands,10.50,60.20
-    >>Pule para o Lustro abaixo
-    >>Fale com |cRXP_FRIENDLY_Samor|r através da parede
-    >>|cRXP_WARN_NOTA: Para fazer isso, vincule "Interagir com Alvo" em Gameplay -> Controles no menu de Opções|r
+    >>Pule no Lustre no andar de baixo
+    >>Converse com |cRXP_FRIENDLY_Samor|r através da parede
+    >>|cRXP_WARN_NOTA: Para fazer isso, vincule "Interagir com Alvo" em Jogabilidade → Controles no menu de Opções|r
     >>|cRXP_WARN_Se o Barco acabou de chegar, pule este passo|r
     .vendor 1457 >>|cRXP_BUY_Compre|r [Poção de Cura] |cRXP_BUY_dele (se estiverem disponíveis)|r
     .target Samor Festivus
     .money <0.03
 step
     .goto Wetlands,9.49,59.69
-    >>Fale com |cRXP_FRIENDLY_Shellei|r
+    >>Converse com |cRXP_FRIENDLY_Shellei|r
     .fp Menethil Harbor >>Aprenda a rota de voo para Menethil Harbor
     .target Shellei Brondir
 step
@@ -3090,7 +3090,7 @@ step
     .itemcount 769,1
 step
     .goto Wetlands,7.89,56.22
-    >>Fale com |cRXP_FRIENDLY_Dewin|r através da parede
+    >>Converse com |cRXP_FRIENDLY_Dewin|r através da parede
     >>|cRXP_WARN_Se o Barco acabou de chegar, pule este passo|r
     .vendor 1453 >>|cRXP_BUY_Compre|r [Poção de Cura] |cRXP_BUY_dele (se estiverem disponíveis)|r
     .target Dewin Shimmerdawn
@@ -3099,11 +3099,11 @@ step
     #completewith Darkshore
     #label DarkshoreBoat
     .goto Wetlands,6.09,58.45,20,0
-    .goto Wetlands,4.50,57.02,20 >>Vá para o Barco da Costa Negra
+    .goto Wetlands,4.50,57.02,20 >>Vá em direção ao Barco Costa Negra
 step
     #completewith next
     #requires DarkshoreBoat
-    +|cRXP_WARN_Comece|r |T132794:0|t[Conjurar Água r2]|cRXP_WARN_ rapidamente para conjurar o máximo de água possível|r
+    +|cRXP_WARN_Fique conjurando repetidamente|r |T132794:0|t[Conjurar Água r2] |cRXP_WARN_para conjurar o máximo de água possível|r
 step
     #label Darkshore
     .goto Wetlands,4.25,57.21
@@ -3111,11 +3111,11 @@ step
 step
     #label Darkshoreshore
     #completewith Wizbang
-    .goto Darkshore,35.73,45.23,60 >>Pule do barco quando você estiver mais perto da costa
+    .goto Darkshore,35.73,45.23,60 >>Pule do barco quando você estiver mais próximo da costa
 step
     #requires Darkshoreshore
     #completewith Wizbang
-    +|cRXP_WARN_Atraia 2-3 |cRXP_ENEMY_Pygmy Tide Crawlers|r em direção a |cRXP_FRIENDLY_Wizbang|r (Lembre-se de usar|r |T135848:0|t[Novane Congelante]|cRXP_WARN_) Mate-os quando você aceitar a missão|r
+    +|cRXP_WARN_Atraia 2-3 |cRXP_ENEMY_Pygmy Tide Crawlers|r em direção a |cRXP_FRIENDLY_Wizbang|r (Lembre-se de usar|r |T135848:0|t[Novane Congelante]|cRXP_WARN_) Abata-os quando aceitar a missão|r
     .mob Pygmy Tide Crawler
 step
     #requires Darkshoreshore
@@ -3123,7 +3123,7 @@ step
     .goto Darkshore,36.77,44.28,0,0
     >>Fale com |cRXP_FRIENDLY_Laird|r
     >>|cRXP_BUY_Compre até 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_dele|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .collect 4592,20,983,1 --Longjaw Mud Snapper (20)
     .isQuestAvailable 983
 step
@@ -3132,30 +3132,30 @@ step
     .goto Darkshore,36.72,44.52,20,0
     .goto Darkshore,36.84,44.18,10,0
     .goto Darkshore,36.71,43.87,10,0
-    >>Vá para cima até o andar superior
-    .goto Darkshore,36.98,44.14,8 >>Vá para |cRXP_FRIENDLY_Wizbang|r
+    >>Suba até o andar superior
+    .goto Darkshore,36.98,44.14,8 >>Vá em direção a |cRXP_FRIENDLY_Wizbang|r
 step
     #label Wizbang
     .goto Darkshore,36.98,44.14
-    >>Fale com |cRXP_FRIENDLY_Wizbang|r
+    >>Converse com |cRXP_FRIENDLY_Wizbang|r
     .accept 983 >>Aceite Caixazorra 827
     .target Wizbang Cranktoggle
 step
     #completewith next
-    >>Mate os |cRXP_ENEMY_Pygmy Tide Crawlers|r que você atraiu. Saqueie-os por suas |cRXP_LOOT_Pernas de Caranguejo|r
+    >>Abata os |cRXP_ENEMY_Pygmy Tide Crawlers|r que você atraiu. Saqueie-os para conseguir suas |cRXP_LOOT_Pernas de Rastejante|r
     .complete 983,1 --Crawler Leg (6)
     .mob Pygmy Tide Crawler
 step
     #completewith next
     .goto Darkshore,37.44,43.12,20,0
     .goto Darkshore,37.73,41.40,20,0
-    .goto Darkshore,37.39,40.13,10 >>Vá para |cRXP_FRIENDLY_Thundris|r
+    .goto Darkshore,37.39,40.13,10 >>Vá em direção a |cRXP_FRIENDLY_Thundris|r
 step
     #sticky
     #label DalmondBags
     .goto Darkshore,37.45,40.50
     >>Fale com |cRXP_FRIENDLY_Dalmond|r
-    .vendor 4182 >>|cRXP_BUY_Compre o máximo de|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_que precisar/conseguir|r
+    .vendor 4182 >>|cRXP_BUY_Compre o máximo|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_que você precisa/consegue|r
     .target Dalmond
     .money <0.0500
     .isQuestAvailable 954
@@ -3167,7 +3167,7 @@ step
     .target Thundris Windweaver
 	.skill cooking,10,1
 step
-    >>Fale com |cRXP_FRIENDLY_Thundris|r e |cRXP_FRIENDLY_Alanndarian|r
+    >>Converse com |cRXP_FRIENDLY_Thundris|r e |cRXP_FRIENDLY_Alanndarian|r
     .accept 954 >>Aceite Bashal'Aran
     .accept 958 >>Aceite Ferramentas dos Altaneiros
     .target +Thundris Windweaver
@@ -3182,7 +3182,7 @@ step
     .goto Darkshore,37.85,41.39,20,0
     .goto Darkshore,38.58,42.61,20,0
     .goto Darkshore,39.05,43.23,20,0
-    .goto Darkshore,39.37,43.49,12 >>Vá para |cRXP_FRIENDLY_Terenthis|r
+    .goto Darkshore,39.37,43.49,12 >>Vá em direção a |cRXP_FRIENDLY_Terenthis|r
 step
     #requires DalmondBags
     >>Fale com |cRXP_FRIENDLY_Terenthis|r e |cRXP_FRIENDLY_Tharnariun|r
@@ -3196,7 +3196,7 @@ step
     .goto Darkshore,36.77,44.28
     >>Fale com |cRXP_FRIENDLY_Laird|r
     >>|cRXP_BUY_Compre até 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_dele|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .collect 4592,20,983,1 --Longjaw Mud Snapper (20)
     .isQuestAvailable 983
     .itemcount 4592,<20
@@ -3207,20 +3207,20 @@ step
     .goto Darkshore,35.86,47.35,50,0
     .goto Darkshore,35.74,48.20,50,0
     .goto Darkshore,36.25,49.90,50,0
-    >>Mate os |cRXP_ENEMY_Pygmy Tide Crawlers|r. Saqueie-os por suas |cRXP_LOOT_Pernas de Caranguejo|r
+    >>Abata os |cRXP_ENEMY_Pygmy Tide Crawlers|r. Saqueie-os para conseguir suas |cRXP_LOOT_Pernas de Rastejante|r
     .complete 983,1 --Crawler Leg (6)
     .mob Pygmy Tide Crawler
 step
     #completewith next
     .goto Darkshore,38.23,52.84,75,0
-    >>|cRXP_WARN_Use|r |T134335:0|t[Tharnariun's Esperança] |cRXP_WARN_em um |cRXP_ENEMY_Ursocardo Raivoso|r. Tem um alcance de 50 jardas|r
-    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T135914:0|t[Hidrofobia] |cRXP_WARN_(Instantâneo Corpo a Corpo: Reduz toda regeneração de vida em 50% por 10 Minutos)|r
+    >>|cRXP_WARN_Use|r |T134335:0|t[Tharnariun's Esperança] |cRXP_WARN_em um |cRXP_ENEMY_Ursocardo Raivoso|r. Tem alcance de 50 jardas|r
+    >>|cRXP_WARN_Cuidado pois eles lançam |T135914:0|t[Hidrofobia] (Instantâneo Corpo a Corpo: Reduz TODA regeneração de saúde em 50% por 10 minutos)|r
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
     .use 7586
     .unitscan Rabid Thistle Bear
 step
     .goto Darkshore,38.90,53.59
-    >>Corra para o Acampamento Furbolg
+    >>Corra em direção ao Acampamento Furbolg
     >>|cRXP_WARN_Não tente lutar contra o|r |cRXP_ENEMY_Voz-do-vento Bosquenero|r
     .complete 984,1 --Find a corrupt furbolg camp (1)
 step
@@ -3228,8 +3228,8 @@ step
     .goto Darkshore,38.80,58.29,60,0
     .goto Darkshore,38.38,60.75,60,0
     .goto Darkshore,38.57,66.39
-    >>|cRXP_WARN_Use|r |T134335:0|t[Esperança de Tharnariun] |cRXP_WARN_em um |cRXP_ENEMY_Ursocardo Raivoso|r. Tem um alcance de 50 jardas|r
-    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T135914:0|t[Hidrofobia] |cRXP_WARN_(Instantâneo Corpo a Corpo: Reduz toda regeneração de vida em 50% por 10 Minutos)|r
+    >>|cRXP_WARN_Use|r |T134335:0|t[Tharnariun's Esperança] |cRXP_WARN_em um |cRXP_ENEMY_Ursocardo Raivoso|r. Tem alcance de 50 jardas|r
+    >>|cRXP_WARN_Cuidado pois eles lançam |T135914:0|t[Hidrofobia] (Instantâneo Corpo a Corpo: Reduz TODA regeneração de saúde em 50% por 10 minutos)|r
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
     .use 7586
     .unitscan Rabid Thistle Bear
@@ -3240,24 +3240,24 @@ step
     .target Sentinel Tysha Moonblade
 step
     #completewith Relics
-    +|cRXP_WARN_Evite atrair |cRXP_ENEMY_Lady Miralua|r (rara) se ela estiver ativa|r
+    +|cRXP_WARN_Evite puxar |cRXP_ENEMY_Lady Miralua|r (rara) se ela estiver presente|r
     .unitscan Lady Moongazer
 step
     #completewith Fall
-    >>Abate os |cRXP_ENEMY_Amaldiçoado Highbornes|r e os |cRXP_ENEMY_Writhing Highbornes|r. Saque-os para |cRXP_LOOT_Highborne Relics|r
-    >>|cRXP_WARN_Abate |cRXP_ENEMY_Ululante Highbornes|r apenas se estiverem no seu caminho|r
+    >>Abata os |cRXP_ENEMY_Highbornes Amaldiçoados|r e os |cRXP_ENEMY_Writhing Highbornes|r. Saque-os por |cRXP_LOOT_Highborne Relics|r
+    >>|cRXP_WARN_Abate os |cRXP_ENEMY_Highbornes Ululantes|r apenas se estiverem no seu caminho|r
     .complete 958,1 --Highborne Relic (7)
     .mob Cursed Highborne
     .mob Writhing Highborne
 step
     .goto Darkshore,42.65,63.15
     >>Clique em |cRXP_PICK_The Queda of Ameth'Aran|r no chão
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 953,2 --Read the Fall of Ameth'Aran (1)
 step
     .goto Darkshore,43.30,58.70
     >>Clique em |cRXP_PICK_The Lay of Ameth'Aran|r no chão
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 953,1 --Read the Lay of Ameth'Aran (1)
 step
     #label Fall
@@ -3275,25 +3275,25 @@ step
     .goto Darkshore,42.38,63.40,50,0
     .goto Darkshore,41.21,61.64,50,0
     .goto Darkshore,41.76,57.96
-    >>Abate os |cRXP_ENEMY_Amaldiçoado Highbornes|r e os |cRXP_ENEMY_Writhing Highbornes|r
-    >>|cRXP_WARN_Abate |cRXP_ENEMY_Ululante Highbornes|r apenas se estiverem no seu caminho|r
+    >>Abata os |cRXP_ENEMY_Highbornes Amaldiçoados|r e os |cRXP_ENEMY_Writhing Highbornes|r
+    >>|cRXP_WARN_Abate os |cRXP_ENEMY_Highbornes Ululantes|r apenas se estiverem no seu caminho|r
     .complete 958,1 --Highborne Relic (7)
     .mob Cursed Highborne
     .mob Writhing Highborne
 step
     #completewith next
-    +|cRXP_WARN_Leve 2-3 |cRXP_ENEMY_Torpe Sprites|r em direção a |cRXP_FRIENDLY_Astérion|r (Lembre-se de usar|r |T135848:0|t[Novane Congelante]|cRXP_WARN_) Abate-os quando aceitar a missão|r
+    +|cRXP_WARN_Leve 2-3 |cRXP_ENEMY_Vile Sprites|r em direção a |cRXP_FRIENDLY_Asterion|r (Lembre-se de usar|r |T135848:0|t[Novane Congelante]|cRXP_WARN_) Mate-os quando você aceitar a missão|r
     .mob Vile Sprite
 step
     .goto Darkshore,44.17,36.29
-    >>Fale com o |cRXP_FRIENDLY_Astérion|r
+    >>Fale com |cRXP_FRIENDLY_Astérion|r
     .turnin 954 >>Entregue Bashal'Aran
     .accept 955 >>Aceite Bashal'Aran
     .target Asterion
 step
     #completewith BashalF
-    +|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Licillino|r (raro) pode estar ativo|r
-    >>|cRXP_WARN_Ele conjura|r |T136197:0|t[Seta Sombria] |cRXP_WARN_(Conjuração à Distância: Causa 55-70 dano de Sombra)|r
+    +|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Licillino|r (raro) pode estar presente|r
+    >>|cRXP_WARN_Ele lança|r |T136197:0|t[Seta Sombria] |cRXP_WARN_(Lançamento à Distância: Causa 55-70 de dano de Sombra)|r
     .unitscan Licillin
 step
 #loop
@@ -3308,14 +3308,14 @@ step
 	.goto Darkshore,46.91,37.11,35,0
 	.goto Darkshore,45.47,36.01,35,0
 	.goto Darkshore,44.57,36.57,35,0
-    >>Abate os |cRXP_ENEMY_Torpe Sprites|r e os |cRXP_ENEMY_Selvagem Grells|r. Saque-os para obter seus |cRXP_LOOT_Capeta Earrings|r
-    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Torpe Sprites|r lançam|r |T136016:0|t[Veneno] |cRXP_WARN_(Corpo a Corpo Instantâneo: Causa 3 dano a cada 3 segundos por 15 segundos) e os |cRXP_ENEMY_Selvagem Grells|r lançam|r |T136215:0|t[Enlouquecido] |cRXP_WARN_(Efeito Pessoal Instantâneo: Aumenta velocidade de ataque em 20% quando abaixo de 20% de vida)|r
+    >>Mate os |cRXP_ENEMY_Vile Sprites|r e os |cRXP_ENEMY_Wild Grells|r. Saqueie-os pelos |cRXP_LOOT_Grell Earrings|r
+    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Vile Sprites|r lançam |T136016:0|t[Veneno] |cRXP_WARN_(Corpo a Corpo Instantâneo: Causa 3 de dano a cada 3 segundos por 15 segundos) e os |cRXP_ENEMY_Wild Grells|r lançam |T136215:0|t[Enlouquecido] |cRXP_WARN_(Auto Instantâneo: Aumenta a velocidade de ataque em 20% com menos de 20% de vida)|r
     .complete 955,1 --Grell Earring (8)
     .mob Vile Sprite
     .mob Wild Grell
 step
     .goto Darkshore,44.17,36.29
-    >>Fale com o |cRXP_FRIENDLY_Astérion|r
+    >>Fale com |cRXP_FRIENDLY_Astérion|r
     .turnin 955 >>Entregue Bashal'Aran
     .accept 956 >>Aceite Bashal'Aran
     .target Asterion
@@ -3337,7 +3337,7 @@ step
     .goto Darkshore,47.77,37.20,45,0
     .goto Darkshore,47.44,36.76
     >>Mate |cRXP_ENEMY_Sátiro Deth'ryll|r. Saqueie-os para obter |cRXP_LOOT_Selo Antigo de Pedra-da-lua|r
-    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T132222:0|t[Atirar] |cRXP_WARN_(Conjuração à Distância: Causa 15-25 de dano)|r
+    >>|cRXP_WARN_Tenha cuidado pois eles lançam |T132222:0|t[Atirar] |cRXP_WARN_(Lançamento à Distância: Causa 15-25 dano)|r
     .complete 956,1 --Ancient Moonstone Seal (1)
     .mob Deth'ryll Satyr
 step
@@ -3353,7 +3353,7 @@ step
 	.goto Darkshore,46.91,37.11,35,0
 	.goto Darkshore,45.47,36.01,35,0
 	.goto Darkshore,44.57,36.57,35,0
-    .xp 11+1100 >>Farme até 1100+/8800 xp
+    .xp 11+1100 >>Farme para 1100+/8800xp
     .mob Vile Sprite
     .mob Wild Grell
 --910+900+750+975+850 = 4385 (Turnins starting from Bashal Seal turnin)
@@ -3361,7 +3361,7 @@ step
 step
     #label BashalF
     .goto Darkshore,44.17,36.29
-    >>Fale com o |cRXP_FRIENDLY_Astérion|r
+    >>Fale com |cRXP_FRIENDLY_Astérion|r
     .turnin 956 >>Entregue Bashal'Aran
     .accept 957 >>Aceite Bashal'Aran
     .target Asterion
@@ -3370,7 +3370,7 @@ step
     #label DalmondBags1
     .goto Darkshore,37.45,40.50,0,0
     >>Fale com |cRXP_FRIENDLY_Dalmond|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .target Dalmond
     .isQuestAvailable 3524
 step
@@ -3424,7 +3424,7 @@ step
 step
     #requires Gwennyth
     #completewith next
-    >>|cRXP_WARN_Guarde os|r |T133884:0|t[Murloc Olhos]|cRXP_WARN_ que você saqueia dos |cRXP_ENEMY_Brumagris Coastrunners|r e dos |cRXP_ENEMY_Brumagris Raiders|r
+    >>|cRXP_WARN_Guarde os |T133884:0|t[Murloc Olhos] |cRXP_WARN_que você saqueia dos |cRXP_ENEMY_Greymist Coastrunners|r e dos |cRXP_ENEMY_Greymist Raiders|r
     .collect 730,3,38,1 --Murloc Eyes (3)
     .mob Greymist Coastrunner
     .mob Greymist Raider
@@ -3432,9 +3432,9 @@ step
     #requires Gwennyth
     #label Bones
     .goto Darkshore,36.38,50.88
-    >>Saque a |cRXP_LOOT_Beached Sea Criatura|r
-    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Brumagris Coastrunners|r próximos têm|r |T132307:0|t[Increased Movespeed]
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Saqueie a |cRXP_LOOT_Beached Sea Criatura - Missão|r
+    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Brumagris Coastrunners|r próximos têm |T132307:0|t[Velocidade de Movimento Aumentada]
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 3524,1 --Sea Creature Bones (1)
 step
     .goto Darkshore,36.22,44.89
@@ -3468,18 +3468,18 @@ step
     .target Cerellean Whiteclaw
 step
     #completewith Gwen
-    >>Abate os |cRXP_ENEMY_Costa Negra Threshers|r
-    >>|cRXP_WARN_Não se esforce para conseguir estes|r
+    >>Mate os |cRXP_ENEMY_Darkshore Threshers|r
+    >>|cRXP_WARN_NÃO se desvie para estes|r
     .complete 1001,1 --Thresher Eye (3)
     .mob Darkshore Thresher
 step
     #completewith next
     .goto Darkshore,32.91,42.24,15,0
-    .goto Darkshore,32.41,43.82,25 >>Corra pelo cais em direção aos |cRXP_LOOT_Sea Tartaruga Remains|r
+    .goto Darkshore,32.41,43.82,25 >>Corra ao longo do cais em direção à |cRXP_LOOT_Carcaça de Tartaruga Marinha|r
 step
     .goto Darkshore,31.86,46.33
-    >>Nade embaixo da água
-    >>Saque os |cRXP_LOOT_Sea Tartaruga Remains|r
+    >>Nade debaixo da água
+    >>Saqueie a |cRXP_LOOT_Carcaça de Tartaruga Marinha|r
     .complete 4681,1 --Sea Turtle Remains (1)
 step
     .goto Darkshore,36.12,44.70,50,0
@@ -3498,7 +3498,7 @@ step
     .goto Darkshore,35.23,53.81,50,0
     .goto Darkshore,35.22,55.37,50,0
     .goto Darkshore,36.70,57.09
-    .xp 11+7825 >>Farme até 7825+/8800xp
+    .xp 11+7825 >>Farme para 7825+/8800xp
     .mob Pygmy Tide Crawler
     .mob Young Reef Crawler
 step
@@ -3510,40 +3510,40 @@ step
     .target Gwennyth Bly'Leggonde
 step << skip
     #completewith next
-    +Equipe seus novos sapatos (Equipe as |T132537:0|t[Botas do Rastelo de Areia])
+    +Equipe seus novos creps (Equipe as |T132537:0|t[Botas do Rastelo de Areia])
     .use 15398
     .itemcount 15398,1
     .itemStat 8,LEVEL,<14
 step
     .goto Darkshore,37.04,44.13
-    >>|cRXP_WARN_===ATENÇÃO===|r
-    >>|cRXP_WARN_Converse com|r |cRXP_FRIENDLY_Shaussiy|r
-    >>|cRXP_WARN_Se esta é sua primeira vez fazendo um Lote de Pedra de Regresso, assista o guia para isto abaixo|r
-    >>|cRXP_WARN_Abrir a menu "Set Pedra de Regresso", depois lance|r |T134414:0|t[Pedra de Regresso]
-    .hs >>|cRXP_WARN_Pedra de Regresso de Auberdine para Ironforge|r
-    .link https://www.youtube.com/watch?v=Is-h2TJpL3M >>https://www.youtube.com/watch?v=Is-h2TJpL3M >> |cRXP_WARN_CLIQUE AQUI (é FORTEMENTE aconselhado que você o faça). Certifique-se de que você configurou e testou seu Tamanho de Janela de Lote antes para reduzir o risco de falha|r
+    >>|cRXP_WARN_===PRESTE ATENÇÃO===|r
+    >>|cRXP_WARN_Fale com|r |cRXP_FRIENDLY_Shaussiy|r
+    >>|cRXP_WARN_Se esta é sua primeira vez fazendo um Batch de Pedra de Regresso, assista ao guia abaixo|r
+    >>|cRXP_WARN_Abra o menu "Definir Pedra de Regresso", depois lance|r |T134414:0|t[Pedra de Regresso]
+    .hs >>|cRXP_WARN_Batch de Pedra de Regresso de Auberdine para Ironforge|r
+    .link https://www.youtube.com/watch?v=Is-h2TJpL3M >>https://www.youtube.com/watch?v=Is-h2TJpL3M >> |cRXP_WARN_CLIQUE AQUI (é ALTAMENTE aconselhado que você faça isso). Certifique-se de ter definido e testado seu Tamanho de Janela de Batching antes para reduzir o risco de falha|r
     .target Innkeeper Shaussiy
     .zoneskip Ironforge
 step
     .goto Ironforge,27.17,8.58
     >>Fale com |cRXP_FRIENDLY_Dink|r
-    .trainer >>Treine seus feitiços de classe (Bola de Fogo r3, Atenuar Magia)
+    .trainer >>Aprenda seus feitiços de classe (Bola de Fogo r3, Atenuar Magia)
     >>Custo Total: 12s
-    >>Lembre-se de que você pode precisar de dinheiro para um |T133024:0|t[Tubo de Bronze] (8s cada) e voo para Thelsamar (1s 10c)
+    >>Lembre-se de que você pode querer dinheiro para um |T133024:0|t[Tubo de Bronze] (8s cada) e para o voo de Thelsamar (1s 10c)
     .target Dink
 step << skip
     .goto Ironforge,27.22,8.58,-1
     .goto Ironforge,67.83,42.47,-1
-    .vendor 5175 >>Faça logout no pilar acima de |cRXP_FRIENDLY_Dink|r para verificar |cRXP_FRIENDLY_Cogspinner|r para um |T133024:0|t[Tubo de Bronze] se desejar
+    .vendor 5175 >>Faça logout na coluna acima de |cRXP_FRIENDLY_Dink|r para procurar um |T133024:0|t[Tubo de Bronze] em |cRXP_FRIENDLY_Cogspinner|r se desejar
     .itemcount 4371,<1
     .isQuestAvailable 418
 step
     #completewith next
-    +|cRXP_WARN_Início lançar feitiços repetidamente|r |T132794:0|t[Conjurar Água r2] |cRXP_WARN_para conjurar o máximo de água possível antes de pegar o voo|r
+    +|cRXP_WARN_Comece a fazer spam com |T132794:0|t[Conjurar Água r2] |cRXP_WARN_para conjurar o máximo de água possível antes de pegar o voo|r
 step << Gnome
     .goto Ironforge,55.50,47.74
     >>Fale com |cRXP_FRIENDLY_Gryth|r
-    .accept 6392 >>Aceite Retorno a Brock
+    .accept 6392 >>Aceite Retornar com Brock
     .target Gryth Thurden
 step
     .goto Ironforge,55.50,47.74
@@ -3556,21 +3556,21 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Alliance Mage
-#name 10-12 LAUNCH ADV Costa Negra 1 Mago AdE
+#name 10-12 LANÇAMENTO ADV Costa Negra 1 Mago AdE
 #version 2
-#group ADV AdE Maga da Aliança
+#group RestedXP ADV AdE Maga da Aliança
 #defaultfor none
 #next 12-14 ADV Loch Modan Mago AdE
 
 --VV Make this an alternative route that must be manually selected
 step
     #completewith next
-    +|cRXP_WARN_NOTA: A rota de Lançamento contém missões que são MUITO difíceis de fazer em solo. Isso é especificamente para servidores muito movimentados onde você pode se agrupar para as missões mais difíceis, OU jogadores que roubam kills|r
+    +|cRXP_WARN_NOTA: A rota Lançar contém missões que são MUITO difíceis de fazer solo. Isto é especificamente para servidores muito lotados onde você pode se agrupar para as missões mais difíceis, OU para jogadores que têm mob taggers|r
 step
     #completewith next
     .goto Dun Morogh,53.48,37.50,30,0
     .goto Dun Morogh,54.04,38.60,30,0
-    .goto Dun Morogh,59.43,42.85,150 >>Viaje para o local de pulo. Fique no lado esquerdo da montanha no caminho
+    .goto Dun Morogh,59.43,42.85,150 >>Vá para o ponto de salto. Passe rente ao lado esquerdo da montanha durante o trajeto
 step
     .goto Dun Morogh,60.18,43.01,12,0
     .goto Dun Morogh,60.42,43.75,12,0
@@ -3592,10 +3592,10 @@ step
     .goto Dun Morogh,60.64,13.89,6,0
     .goto Dun Morogh,61.40,13.27,10,0
     .goto Dun Morogh,61.52,12.58,8,0
-    >>|cRXP_WARN_Faça o Deathless Dun Morogh -> Os Pântanos skip|r
-    >>|cRXP_WARN_Coma até se recuperar completamente depois de cada queda se você não se sentir confiante|r
-    .link https://youtu.be/QcEUvwu49KI?t=73 >>https://youtu.be/QcEUvwu49KI?t=73 >> |cRXP_WARN_CLIQUE AQUI para referência (é ALTAMENTE recomendado que você o faça)|r
-    .goto Dun Morogh,60.65,11.38,20 >>Pule cuidadosamente pela encosta da montanha
+    >>|cRXP_WARN_Faça o salto Deathless Dun Morogh -> Pantanal|r
+    >>|cRXP_WARN_Coma até ficar cheio após cada queda se você não se sente confiante|r
+    .link https://youtu.be/QcEUvwu49KI?t=73 >>https://youtu.be/QcEUvwu49KI?t=73 >> |cRXP_WARN_CLIQUE AQUI para referência (é FORTEMENTE aconselhado que você faça isso)|r
+    .goto Dun Morogh,60.65,11.38,20 >>Desça cuidadosamente a encosta da montanha
     .isQuestAvailable 983
 step
     .goto Dun Morogh,60.80,10.33,10,0
@@ -3609,11 +3609,11 @@ step
     .goto Wetlands,15.07,66.41,20,0
     .goto Wetlands,15.31,65.47,20,0
     .goto Wetlands,15.10,63.72,12,0
-    >>|cRXP_WARN_Faça o Deathless Dun Morogh -> Os Pântanos skip|r
-    >>|cRXP_WARN_Tenha cuidado com |cRXP_ENEMY_Lodogã|r (raro) antes de descer em direção à costa (se estiver ativo)|r
-    >>|cRXP_WARN_Tenha cuidado com os |cRXP_ENEMY_Bluegill Raiders|r a oeste quando você chegar ao mar|r
-    >>|cRXP_WARN_Evite os |cRXP_ENEMY_Young Pantanal Crocolisks|r ao atravessar o mar. Espere que se afastem patrulhando|r
-    .link https://youtu.be/QcEUvwu49KI?t=336 >>https://youtu.be/QcEUvwu49KI?t=336 >> |cRXP_WARN_CLIQUE AQUI para referência (é ALTAMENTE recomendado que você o faça)|r
+    >>|cRXP_WARN_Faça o salto Deathless Dun Morogh -> Pantanal|r
+    >>|cRXP_WARN_Cuidado com |cRXP_ENEMY_Lodogã|r (raro) antes de descer em direção à costa (se ele estiver aparecido)|r
+    >>|cRXP_WARN_Cuidado com os |cRXP_ENEMY_Bluegill Raiders|r a oeste quando você chegar ao mar|r
+    >>|cRXP_WARN_Evite os |cRXP_ENEMY_Young Pantanal Crocolisks|r ao cruzar o mar. Espere que eles patrulhem para longe|r
+    .link https://youtu.be/QcEUvwu49KI?t=336 >>https://youtu.be/QcEUvwu49KI?t=336 >> |cRXP_WARN_CLIQUE AQUI para referência (é FORTEMENTE aconselhado que você faça isso)|r
     .goto Wetlands,12.69,60.97,15 >>Vá para Menethil Harbor
     .mob Young Wetlands Crocolisk
     .mob Bluegill Raider
@@ -3623,30 +3623,30 @@ step
 step
     #completewith next
     .goto Wetlands,10.80,59.80,10,0
-    .goto Wetlands,10.63,60.10,10 >>Go dentro da Inn
+    .goto Wetlands,10.63,60.10,10 >>Entre na Estalagem
 step
     .goto Wetlands,10.50,60.20
-    >>Salte para o Lustre lá embaixo
-    >>Fale com Samor através da parede
-    >>|cRXP_WARN_NOTA: Para fazer isso, vincule "Interagir com Alvo" em Gameplay -> Controles no menu de Opções|r
+    >>Pule no Lustre no andar de baixo
+    >>Converse com |cRXP_FRIENDLY_Samor|r através da parede
+    >>|cRXP_WARN_NOTA: Para fazer isso, vincule "Interagir com Alvo" em Jogabilidade → Controles no menu de Opções|r
     >>|cRXP_WARN_Se o Barco acabou de chegar, pule este passo|r
     .vendor 1457 >>|cRXP_BUY_Compre|r [Poção de Cura] |cRXP_BUY_dele (se estiverem disponíveis)|r
     .target Samor Festivus
     .money <0.03
 step
     .goto Wetlands,9.49,59.69
-    >>Fale com Shellei
+    >>Converse com |cRXP_FRIENDLY_Shellei|r
     .fp Menethil Harbor >>Aprenda a rota de voo para Menethil Harbor
     .target Shellei Brondir
 step
     #completewith DarkshoreBoat
     .goto Wetlands,7.89,56.22
-    >>|cRXP_WARN_Se o barco acaba de chegar, pule este passo|r
-    +|cRXP_WARN_Cozinhe qualquer|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_que você tenha de fora (há uma fogueira dentro)|r
+    >>|cRXP_WARN_Se o Barco acabou de chegar, pule este passo|r
+    +|cRXP_WARN_Cozinhe qualquer|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_WARN_que você tem de fora (há uma fogueira dentro)|r
     .itemcount 769,1
 step
     .goto Wetlands,7.89,56.22
-    >>Fale com Dewin através da parede
+    >>Converse com |cRXP_FRIENDLY_Dewin|r através da parede
     >>|cRXP_WARN_Se o Barco acabou de chegar, pule este passo|r
     .vendor 1453 >>|cRXP_BUY_Compre|r [Poção de Cura] |cRXP_BUY_dele (se estiverem disponíveis)|r
     .target Dewin Shimmerdawn
@@ -3655,11 +3655,11 @@ step
     #completewith Darkshore
     #label DarkshoreBoat
     .goto Wetlands,6.09,58.45,20,0
-    .goto Wetlands,4.50,57.02,20 >>Viaje para o barco de Costa Negra
+    .goto Wetlands,4.50,57.02,20 >>Vá em direção ao Barco Costa Negra
 step
     #completewith next
     #requires DarkshoreBoat
-    +|cRXP_WARN_Comece|r |T132794:0|t[Conjurar Água r2]|cRXP_WARN_ rapidamente para conjurar o máximo de água possível|r
+    +|cRXP_WARN_Fique conjurando repetidamente|r |T132794:0|t[Conjurar Água r2] |cRXP_WARN_para conjurar o máximo de água possível|r
 step
     #label Darkshore
     .goto Wetlands,4.25,57.21
@@ -3667,11 +3667,11 @@ step
 step
     #label Darkshoreshore
     #completewith Wizbang
-    .goto Darkshore,35.73,45.23,60 >>Salte do barco quando você estiver mais próximo da costa
+    .goto Darkshore,35.73,45.23,60 >>Pule do barco quando você estiver mais próximo da costa
 step
     #requires Darkshoreshore
     #completewith Wizbang
-    +|cRXP_WARN_Puxe entre 2 e 3 |cRXP_ENEMY_Pygmy Tide Crawlers|r em direção a Wizbang (Lembre-se de usar|r |T135848:0|t[Novane Congelante]|cRXP_WARN_) Abata-os quando você aceitar a missão|r
+    +|cRXP_WARN_Atraia 2-3 |cRXP_ENEMY_Pygmy Tide Crawlers|r em direção a |cRXP_FRIENDLY_Wizbang|r (Lembre-se de usar|r |T135848:0|t[Novane Congelante]|cRXP_WARN_) Abata-os quando aceitar a missão|r
     .mob Pygmy Tide Crawler
 step
     #requires Darkshoreshore
@@ -3679,7 +3679,7 @@ step
     .goto Darkshore,36.77,44.28,0,0
     >>Fale com |cRXP_FRIENDLY_Laird|r
     >>|cRXP_BUY_Compre até 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_dele|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .collect 4592,20,983,1 --Longjaw Mud Snapper (20)
     .isQuestAvailable 983
 step
@@ -3688,24 +3688,24 @@ step
     .goto Darkshore,36.72,44.52,20,0
     .goto Darkshore,36.84,44.18,10,0
     .goto Darkshore,36.71,43.87,10,0
-    >>Vá para cima até o andar superior
-    .goto Darkshore,36.98,44.14,8 >>Viaje para Wizbang
+    >>Suba até o andar superior
+    .goto Darkshore,36.98,44.14,8 >>Vá em direção a |cRXP_FRIENDLY_Wizbang|r
 step
     #label Wizbang
     .goto Darkshore,36.98,44.14
-    >>Fale com Wizbang
+    >>Converse com |cRXP_FRIENDLY_Wizbang|r
     .accept 983 >>Aceite Caixazorra 827
     .target Wizbang Cranktoggle
 step
     #completewith DalmondBags
-    >>Abata os |cRXP_ENEMY_Pygmy Tide Crawlers|r que você puxou. Saque-os para obter |cRXP_LOOT_Crawler Pernas|r
+    >>Abata os |cRXP_ENEMY_Pygmy Tide Crawlers|r que você atraiu. Saqueie-os para conseguir suas |cRXP_LOOT_Pernas de Rastejante|r
     .complete 983,1 --Crawler Leg (6)
     .mob Pygmy Tide Crawler
 step
     .goto Darkshore,36.77,44.28
     >>Fale com |cRXP_FRIENDLY_Laird|r
     >>|cRXP_BUY_Compre até 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_dele|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .collect 4592,20,983,1 --Longjaw Mud Snapper (20)
     .isQuestAvailable 983
     .itemcount 4592,<20
@@ -3715,9 +3715,9 @@ step << skip
     .goto Darkshore,37.85,41.39,20,0
     .goto Darkshore,38.58,42.61,20,0
     .goto Darkshore,39.05,43.23,20,0
-    .goto Darkshore,39.37,43.49,12 >>Viaje para Terenthis
+    .goto Darkshore,39.37,43.49,12 >>Vá em direção a |cRXP_FRIENDLY_Terenthis|r
 step
-    >>Fale com Terenthis e Tharnariun
+    >>Fale com |cRXP_FRIENDLY_Terenthis|r e |cRXP_FRIENDLY_Tharnariun|r
     .accept 984 >>Aceite Uma grande ameaça?
     .target +Terenthis
     .goto Darkshore,39.37,43.49,-1
@@ -3728,13 +3728,13 @@ step << skip
     #completewith next
     .goto Darkshore,37.44,43.12,20,0
     .goto Darkshore,37.73,41.40,20,0
-    .goto Darkshore,37.39,40.13,10 >>Viaje para Thundris
+    .goto Darkshore,37.39,40.13,10 >>Vá em direção a |cRXP_FRIENDLY_Thundris|r
 step
     #sticky
     #label DalmondBags
     .goto Darkshore,37.45,40.50
     >>Fale com |cRXP_FRIENDLY_Dalmond|r
-    .vendor 4182 >>|cRXP_BUY_Compre o máximo de|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_que precisar/conseguir|r
+    .vendor 4182 >>|cRXP_BUY_Compre o máximo|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_que você precisa/consegue|r
     .target Dalmond
     .money <0.0500
     .isQuestAvailable 954
@@ -3746,7 +3746,7 @@ step
     .target Thundris Windweaver
 	.skill cooking,10,1
 step
-    >>Fale com Thundris e Alanndarian
+    >>Converse com |cRXP_FRIENDLY_Thundris|r e |cRXP_FRIENDLY_Alanndarian|r
     .accept 954 >>Aceite Bashal'Aran
     .accept 958 >>Aceite Ferramentas dos Altaneiros
     .target +Thundris Windweaver
@@ -3757,26 +3757,26 @@ step
 	.skill cooking,<10,1
 step
     .goto Darkshore,46.71,34.64
-    >>|cRXP_WARN_Se você encontrar um |cRXP_ENEMY_Rabid Ursocardo|r, use|r |T134335:0|t[Tharnariun's Esperança] |cRXP_WARN_depois provoque-o|r
-    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T135914:0|t[Hidrofobia] |cRXP_WARN_(Instantâneo Corpo a Corpo: Reduz toda regeneração de vida em 50% por 10 Minutos)|r
+    >>|cRXP_WARN_Se você encontrar um |cRXP_ENEMY_Ursocardo Raivoso|r, use|r |T134335:0|t[Tharnariun's Esperança] |cRXP_WARN_e então agrida-o|r
+    >>|cRXP_WARN_Cuidado pois eles lançam |T135914:0|t[Hidrofobia] (Instantâneo Corpo a Corpo: Reduz TODA regeneração de saúde em 50% por 10 minutos)|r
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
     .use 7586
     .unitscan Rabid Thistle Bear
 step
     #completewith next
-    +|cRXP_WARN_Puxe entre 2 e 3 |cRXP_ENEMY_Vile Sprites|r em direção a Astérion (Lembre-se de usar|r |T135848:0|t[Novane Congelante]|cRXP_WARN_) Abata-os quando você aceitar a missão|r
+    +|cRXP_WARN_Leve 2-3 |cRXP_ENEMY_Vile Sprites|r em direção a |cRXP_FRIENDLY_Asterion|r (Lembre-se de usar|r |T135848:0|t[Novane Congelante]|cRXP_WARN_) Mate-os quando você aceitar a missão|r
     .mob Vile Sprite
 step
     #label Bash1
     .goto Darkshore,44.17,36.29
-    >>Fale com o |cRXP_FRIENDLY_Astérion|r
+    >>Fale com |cRXP_FRIENDLY_Astérion|r
     .turnin 954 >>Entregue Bashal'Aran
     .accept 955 >>Aceite Bashal'Aran
     .target Asterion
 step
     #completewith BashalF
-    +|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Licillino|r (raro) pode estar ativo|r
-    >>|cRXP_WARN_Ele lança|r |T136197:0|t[Seta Sombria]|cRXP_WARN_ (Lançamento a Distância: Causa 55-70 de dano de Sombra)|r
+    +|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Licillino|r (raro) pode estar presente|r
+    >>|cRXP_WARN_Ele lança|r |T136197:0|t[Seta Sombria] |cRXP_WARN_(Lançamento à Distância: Causa 55-70 de dano de Sombra)|r
     .unitscan Licillin
 step
 #loop
@@ -3791,14 +3791,14 @@ step
 	.goto Darkshore,46.91,37.11,35,0
 	.goto Darkshore,45.47,36.01,35,0
 	.goto Darkshore,44.57,36.57,35,0
-    >>Abata os |cRXP_ENEMY_Vile Sprites|r e os |cRXP_ENEMY_Wild Grells|r. Saque-os para obter seus |cRXP_LOOT_Grell Earrings|r
-    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Vile Sprites|r lançam|r |T136016:0|t[Veneno]|cRXP_WARN_ (Corpo a Corpo Instantâneo: Causa 3 de dano a cada 3 segundos por 15 segundos) e os |cRXP_ENEMY_Wild Grells|r lançam|r |T136215:0|t[Enlouquecido]|cRXP_WARN_ (Instantâneo: Aumenta velocidade de ataque em 20% abaixo de 20% de vida)|r
+    >>Mate os |cRXP_ENEMY_Vile Sprites|r e os |cRXP_ENEMY_Wild Grells|r. Saqueie-os pelos |cRXP_LOOT_Grell Earrings|r
+    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Vile Sprites|r lançam |T136016:0|t[Veneno] |cRXP_WARN_(Corpo a Corpo Instantâneo: Causa 3 de dano a cada 3 segundos por 15 segundos) e os |cRXP_ENEMY_Wild Grells|r lançam |T136215:0|t[Enlouquecido] |cRXP_WARN_(Auto Instantâneo: Aumenta a velocidade de ataque em 20% com menos de 20% de vida)|r
     .complete 955,1 --Grell Earring (8)
     .mob Vile Sprite
     .mob Wild Grell
 step
     .goto Darkshore,44.17,36.29
-    >>Fale com o |cRXP_FRIENDLY_Astérion|r
+    >>Fale com |cRXP_FRIENDLY_Astérion|r
     .turnin 955 >>Entregue Bashal'Aran
     .accept 956 >>Aceite Bashal'Aran
     .target Asterion
@@ -3820,22 +3820,22 @@ step
     .goto Darkshore,47.77,37.20,45,0
     .goto Darkshore,47.44,36.76
     >>Mate |cRXP_ENEMY_Sátiro Deth'ryll|r. Saqueie-os para obter |cRXP_LOOT_Selo Antigo de Pedra-da-lua|r
-    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T132222:0|t[Atirar]|cRXP_WARN_ (Lançamento a Distância: Causa 15-25 de dano)|r
+    >>|cRXP_WARN_Tenha cuidado pois eles lançam |T132222:0|t[Atirar] |cRXP_WARN_(Lançamento à Distância: Causa 15-25 dano)|r
     .complete 956,1 --Ancient Moonstone Seal (1)
     .mob Deth'ryll Satyr
 step
     #label BashalF
     .goto Darkshore,44.17,36.29
-    >>Fale com o |cRXP_FRIENDLY_Astérion|r
+    >>Fale com |cRXP_FRIENDLY_Astérion|r
     .turnin 956 >>Entregue Bashal'Aran
     .accept 957 >>Aceite Bashal'Aran
     .target Asterion
 step
     .goto Darkshore,38.84,43.41
-    .xp 10+6625 >>Farme até ter 6625+/7600xp no caminho de volta para Tharnariun
+    .xp 10+6625 >>Farme 6625+/7600 de experiência no caminho de volta para |cRXP_FRIENDLY_Tharnariun|r
 step
     .goto Darkshore,38.84,43.41
-    >>Fale com |cRXP_FRIENDLY_Tharnariun|r
+    >>Converse com |cRXP_FRIENDLY_Tharnariun|r
     .turnin 2118 >>Entregue Terras Pestilentas
     .accept 2138 >>Aceite Purificação dos infectados
     .target Tharnariun Treetender
@@ -3847,7 +3847,7 @@ step
     .target Cerellean Whiteclaw
 step
     #completewith next
-    >>Abate os |cRXP_ENEMY_Pygmy Tide Crawlers|r. Saqueie-os para obter as |cRXP_LOOT_Crawler Pernas|r
+    >>Abata os |cRXP_ENEMY_Pygmy Tide Crawlers|r. Saqueie-os para conseguir suas |cRXP_LOOT_Pernas de Rastejante|r
     .complete 983,1 --Crawler Leg (6)
     .mob Pygmy Tide Crawler
 step
@@ -3877,7 +3877,7 @@ step
 step
     #requires Gwennyth
     #completewith next
-    >>|cRXP_WARN_Guarde os|r |T133884:0|t[Murloc Olhos] |cRXP_WARN_que você saqueia dos |cRXP_ENEMY_Greymist Coastrunners|r e|r |cRXP_ENEMY_Greymist Raiders|r
+    >>|cRXP_WARN_Guarde os |T133884:0|t[Murloc Olhos] |cRXP_WARN_que você saqueia dos |cRXP_ENEMY_Greymist Coastrunners|r e dos |cRXP_ENEMY_Greymist Raiders|r
     .collect 730,3,38,1 --Murloc Eyes (3)
     .mob Greymist Coastrunner
     .mob Greymist Raider
@@ -3885,9 +3885,9 @@ step
     #requires Gwennyth
     #label Bones
     .goto Darkshore,36.38,50.88
-    >>Saqueie o |cRXP_LOOT_Beached Sea Criatura - Missão|r
-    >>|cRXP_WARN_Cuidado, os |cRXP_ENEMY_Greymist Coastrunners|r próximos têm|r |T132307:0|t[Increased Movespeed]
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Saqueie a |cRXP_LOOT_Beached Sea Criatura - Missão|r
+    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Brumagris Coastrunners|r próximos têm |T132307:0|t[Velocidade de Movimento Aumentada]
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 3524,1 --Sea Creature Bones (1)
 step
     .goto Darkshore,36.22,44.89
@@ -3898,8 +3898,8 @@ step
 step
     #requires Gwennyth
     .goto Darkshore,38.90,53.59
-    >>Corra para o Acampamento Furbolg
-    >>|cRXP_WARN_Não tente lutar contra|r |cRXP_ENEMY_Voz-do-vento Bosquenero|r
+    >>Corra em direção ao Acampamento Furbolg
+    >>|cRXP_WARN_Não tente lutar contra o|r |cRXP_ENEMY_Voz-do-vento Bosquenero|r
     .complete 984,1 --Find a corrupt furbolg camp (1)
 step
     .goto Darkshore,40.30,59.73
@@ -3908,35 +3908,35 @@ step
     .target Sentinel Tysha Moonblade
 step
     #completewith Anaya
-    +|cRXP_WARN_Evite puxar |cRXP_ENEMY_Lady Miralua|r (rara) se ela estiver ativa|r
+    +|cRXP_WARN_Evite puxar |cRXP_ENEMY_Lady Miralua|r (rara) se ela estiver presente|r
     .unitscan Lady Moongazer
  step
     #completewith Relics
     .goto Darkshore,42.45,60.66,0
-    >>Abate o |cRXP_ENEMY_Anaya Correalba|r. Saque-a pelo |cRXP_LOOT_Pingente de Anaya|r
+    >>Abate |cRXP_ENEMY_Anaya Correalba|r. Saque-a para o |cRXP_LOOT_Anaya's Pendant|r
     .complete 963,1 --Anaya's Pendant (1)
     .unitscan Anaya Dawnrunner
 step
     #completewith Fall
-    >>Abate os |cRXP_ENEMY_Cursed Highbornes|r e os |cRXP_ENEMY_Writhing Highbornes|r. Saqueie-os para obter as |cRXP_LOOT_Highborne Relics|r
-    >>|cRXP_WARN_Mate os |cRXP_ENEMY_Wailing Highbornes|r apenas se estiverem no seu caminho|r
+    >>Abata os |cRXP_ENEMY_Highbornes Amaldiçoados|r e os |cRXP_ENEMY_Writhing Highbornes|r. Saque-os por |cRXP_LOOT_Highborne Relics|r
+    >>|cRXP_WARN_Abate os |cRXP_ENEMY_Highbornes Ululantes|r apenas se estiverem no seu caminho|r
     .complete 958,1 --Highborne Relic (7)
     .mob Cursed Highborne
     .mob Writhing Highborne
 step
     .goto Darkshore,42.37,61.82
     >>Clique na |cRXP_PICK_Chama Antiga|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 957,1 --Destroy the seal at the ancient flame (1)
 step
     .goto Darkshore,42.65,63.15
-    >>Clique em |cRXP_PICK_A Queda de Ameth'Aran|r no chão
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Clique em |cRXP_PICK_The Queda of Ameth'Aran|r no chão
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 953,2 --Read the Fall of Ameth'Aran (1)
 step
     .goto Darkshore,43.30,58.70
-    >>Clique em |cRXP_PICK_A Balada de Ameth'Aran|r no chão
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Clique em |cRXP_PICK_The Lay of Ameth'Aran|r no chão
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 953,1 --Read the Lay of Ameth'Aran (1)
 step
     #label Fall
@@ -3954,32 +3954,32 @@ step
     .goto Darkshore,42.38,63.40,50,0
     .goto Darkshore,41.21,61.64,50,0
     .goto Darkshore,41.76,57.96
-    >>Abate os |cRXP_ENEMY_Cursed Highbornes|r e os |cRXP_ENEMY_Writhing Highbornes|r
-    >>|cRXP_WARN_Abate os |cRXP_ENEMY_Wailing Highbornes|r apenas se eles estiverem no seu caminho|r
+    >>Abata os |cRXP_ENEMY_Highbornes Amaldiçoados|r e os |cRXP_ENEMY_Writhing Highbornes|r
+    >>|cRXP_WARN_Abate os |cRXP_ENEMY_Highbornes Ululantes|r apenas se estiverem no seu caminho|r
     .complete 958,1 --Highborne Relic (7)
     .mob Cursed Highborne
     .mob Writhing Highborne
 step
     #label Anaya
     .goto Darkshore,42.45,60.66
-    >>Abate o |cRXP_ENEMY_Anaya Correalba|r. Saque-a pelo |cRXP_LOOT_Pingente de Anaya|r
+    >>Abate |cRXP_ENEMY_Anaya Correalba|r. Saque-a para o |cRXP_LOOT_Anaya's Pendant|r
     .complete 963,1 --Anaya's Pendant (1)
     .unitscan Anaya Dawnrunner
 step
     #completewith next
     .goto Darkshore,45.25,53.44,30 >>Vá para dentro da caverna
-    >>|cRXP_WARN_Evite os |cRXP_ENEMY_Thistle Ursos|r, os |cRXP_ENEMY_Moonkins|r, e os |cRXP_ENEMY_Raging Moonkins|r em rota (se possível)|r
+    >>|cRXP_WARN_Evite |cRXP_ENEMY_Thistle Ursos|r, |cRXP_ENEMY_Moonkins|r e |cRXP_ENEMY_Raging Moonkins|r no caminho (se possível)|r
     .isOnQuest 958
 step
     .goto Darkshore,45.75,53.08
-    .goto Darkshore,41.70,36.51,30 >>Abate o |cRXP_WARN_Oráculo Luniscante|cRXP_ENEMY_ dentro da caverna|r --, then drink Logout Skip by logging out on top of the Mushroom at the back of the cave|r
-    >>|cRXP_WARN_Cuidado, ele conjura|r |T136006:0|t[Ira] |cRXP_WARN_(Conjuração à Distância: Causa 30-45 de dano de natureza),|r |T136096:0|t[Fogo Lunar] |cRXP_WARN_(Conjuração Instantânea: Causa 20-30 de dano de natureza, depois 44 de dano de natureza durante 12 segundos), e|r |T136085:0|t[Recrescimento] |cRXP_WARN_(Conjuração Pessoal: Cura cerca de 150 de dano. Raro, mas corra se isto acontecer)|r
-    >>|cRXP_WARN_Você pode LoS seu|r |T136006:0|t[Ira] |cRXP_WARN_atrás das rochas dentro da boca da caverna|r
+    .goto Darkshore,41.70,36.51,30 >>Abate o |cRXP_WARN_Luniscante Oráculo|cRXP_ENEMY_ dentro da caverna|r --, then drink Logout Skip by logging out on top of the Mushroom at the back of the cave|r
+    >>|cRXP_WARN_Tenha cuidado pois ele lança|r |T136006:0|t[Ira] |cRXP_WARN_(Lançamento à distância: Causa 30-45 de dano da Natureza),|r |T136096:0|t[Fogo Lunar] |cRXP_WARN_(Instantâneo à distância: Causa 20-30 de dano da Natureza, depois 44 de dano da Natureza ao longo de 12 segundos), e|r |T136085:0|t[Recrescimento] |cRXP_WARN_(Lançamento pessoal: Cura cerca de 150 de dano. Raro, mas fuja se isso acontecer)|r
+    >>|cRXP_WARN_Você pode contornar seu|r |T136006:0|t[Ira] |cRXP_WARN_por trás das rochas dentro da boca da caverna|r
     .mob Moonkin Oracle
     .isOnQuest 958
 step
     .goto Darkshore,44.18,36.29
-    >>Fale com o |cRXP_FRIENDLY_Astérion|r
+    >>Fale com |cRXP_FRIENDLY_Astérion|r
     .turnin 957,3 >>Entregue Bashal'Aran
     .target Asterion
 step
@@ -3987,7 +3987,7 @@ step
     #label DalmondBags1
     .goto Darkshore,37.45,40.50,0,0
     >>Fale com |cRXP_FRIENDLY_Dalmond|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .target Dalmond
     .isQuestAvailable 3524
 step
@@ -4036,18 +4036,18 @@ step
     .target Cerellean Whiteclaw
 step
     #completewith Gwen
-    >>Abate os |cRXP_ENEMY_Costa Negra Threshers|r
-    >>|cRXP_WARN_NÃO saia do seu caminho para estes|r
+    >>Mate os |cRXP_ENEMY_Darkshore Threshers|r
+    >>|cRXP_WARN_NÃO se desvie para estes|r
     .complete 1001,1 --Thresher Eye (3)
     .mob Darkshore Thresher
 step
     #completewith next
     .goto Darkshore,32.91,42.24,15,0
-    .goto Darkshore,32.41,43.82,25 >>Corra ao longo do cais em direção aos |cRXP_LOOT_Restos de Tartaruga Marinha|r
+    .goto Darkshore,32.41,43.82,25 >>Corra ao longo do cais em direção à |cRXP_LOOT_Carcaça de Tartaruga Marinha|r
 step
     .goto Darkshore,31.86,46.33
-    >>Nade embaixo da água
-    >>Saqueie os |cRXP_LOOT_Restos de Tartaruga Marinha|r
+    >>Nade debaixo da água
+    >>Saqueie a |cRXP_LOOT_Carcaça de Tartaruga Marinha|r
     .complete 4681,1 --Sea Turtle Remains (1)
 step
     .goto Darkshore,36.12,44.70,50,0
@@ -4066,7 +4066,7 @@ step
     .goto Darkshore,35.23,53.81,50,0
     .goto Darkshore,35.22,55.37,50,0
     .goto Darkshore,36.70,57.09
-    .xp 11+7825 >>Obtenha 7825+/8800 xp
+    .xp 11+7825 >>Farme para 7825+/8800xp
     .mob Pygmy Tide Crawler
     .mob Young Reef Crawler
 step
@@ -4078,18 +4078,18 @@ step
     .target Gwennyth Bly'Leggonde
 step << skip
     #completewith next
-    +Equipe suas novas |T132537:0|t[Botas do Rastelo de Areia]
+    +Equipe seus novos creps (Equipe as |T132537:0|t[Botas do Rastelo de Areia])
     .use 15398
     .itemcount 15398,1
     .itemStat 8,LEVEL,<14
 step
     .goto Darkshore,37.04,44.13
-    >>|cRXP_WARN_===ATENÇÃO===|r
-    >>|cRXP_WARN_Converse com|r |cRXP_FRIENDLY_Shaussiy|r
-    >>|cRXP_WARN_Se esta é sua primeira vez fazendo um Lote de Pedra de Retorno, assista o guia abaixo|r
-    >>|cRXP_WARN_Abrir a menu "Set Pedra de Regresso", depois lance|r |T134414:0|t[Pedra de Regresso]
-    .hs >>|cRXP_WARN_Lote de Pedra de Regresso de Auberdine para Ironforge|r
-    .link https://www.youtube.com/watch?v=Is-h2TJpL3M >>https://www.youtube.com/watch?v=Is-h2TJpL3M >> |cRXP_WARN_CLIQUE AQUI (é fortemente aconselhado que você faça). Certifique-se de que você configurou e testou seu Tamanho de Janela de Lote antes para reduzir o risco de falha|r
+    >>|cRXP_WARN_===PRESTE ATENÇÃO===|r
+    >>|cRXP_WARN_Fale com|r |cRXP_FRIENDLY_Shaussiy|r
+    >>|cRXP_WARN_Se esta é sua primeira vez fazendo um Batch de Pedra de Regresso, assista ao guia abaixo|r
+    >>|cRXP_WARN_Abra o menu "Definir Pedra de Regresso", depois lance|r |T134414:0|t[Pedra de Regresso]
+    .hs >>|cRXP_WARN_Batch de Pedra de Regresso de Auberdine para Ironforge|r
+    .link https://www.youtube.com/watch?v=Is-h2TJpL3M >>https://www.youtube.com/watch?v=Is-h2TJpL3M >> |cRXP_WARN_CLIQUE AQUI (é ALTAMENTE aconselhado que você faça isso). Certifique-se de ter definido e testado seu Tamanho de Janela de Batching antes para reduzir o risco de falha|r
     .target Innkeeper Shaussiy
     .zoneskip Ironforge
 step
@@ -4097,21 +4097,21 @@ step
     >>Fale com |cRXP_FRIENDLY_Dink|r
     .trainer >>Aprenda seus feitiços de classe (Bola de Fogo r3, Atenuar Magia)
     >>Custo Total: 12s
-    >>Lembre-se de guardar dinheiro para um |T133024:0|t[Tubo de Bronze] (8s cada) e para voar de Thelsamar (1s 10c)
+    >>Lembre-se de que você pode querer dinheiro para um |T133024:0|t[Tubo de Bronze] (8s cada) e para o voo de Thelsamar (1s 10c)
     .target Dink
 step << skip
     .goto Ironforge,27.22,8.58,-1
     .goto Ironforge,67.83,42.47,-1
-    .vendor 5175 >>Faça logout no pilar acima de |cRXP_FRIENDLY_Dink|r para verificar |cRXP_FRIENDLY_Cogspinner|r por um |T133024:0|t[Tubo de Bronze] se desejar
+    .vendor 5175 >>Faça logout na coluna acima de |cRXP_FRIENDLY_Dink|r para procurar um |T133024:0|t[Tubo de Bronze] em |cRXP_FRIENDLY_Cogspinner|r se desejar
     .itemcount 4371,<1
     .isQuestAvailable 418
 step
     #completewith next
-    +|cRXP_WARN_Início lançar feitiços repetidamente|r |T132794:0|t[Conjurar Água r2] |cRXP_WARN_para conjurar o máximo de água possível antes de pegar o voo|r
+    +|cRXP_WARN_Comece a fazer spam com |T132794:0|t[Conjurar Água r2] |cRXP_WARN_para conjurar o máximo de água possível antes de pegar o voo|r
 step << Gnome
     .goto Ironforge,55.50,47.74
     >>Fale com |cRXP_FRIENDLY_Gryth|r
-    .accept 6392 >>Aceite Retorno a Brock
+    .accept 6392 >>Aceite Retornar com Brock
     .target Gryth Thurden
 step
     .goto Ironforge,55.50,47.74
@@ -4126,12 +4126,12 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 12-14 ADV Loch Modan Mago AdE
 #version 2
-#group ADV AdE Maga da Aliança
+#group RestedXP ADV AdE Maga da Aliança
 #defaultfor Human Mage/Gnome Mage
 #next 14-16 ADV Costa Negra 2 Mago AdE
 step
     #completewith next
-    +|cRXP_WARN_Enquanto você faz missões em Loch Modan, guarde TODOS os |T133970:0|t[|cRXP_LOOT_Pedaços de Carne de Javali|r] que você pega para depois|r
+    +|cRXP_WARN_Enquanto você faz missões em Loch Modan, guarde TUDO dos |T133970:0|t[|cRXP_LOOT_Chunks of Javali Carne]|r que você saqueia para depois|r
 step
     .zone Loch Modan >>Voe para Loch Modan
     .isOnQuest 6392 << Gnome
@@ -4144,7 +4144,7 @@ step
     #completewith next
     .goto Loch Modan,23.27,75.65,12,0
     .goto Loch Modan,23.62,75.42,12,0
-    .goto Loch Modan,23.12,73.93,12 >>Entre no Bunker. Vá para o topo
+    .goto Loch Modan,23.12,73.93,12 >>Entre no Bunker. Vá para o andar superior
 step
     .goto Loch Modan,23.233,73.675
     >>Fale com |cRXP_FRIENDLY_Rugelfuss|r
@@ -4152,11 +4152,11 @@ step
     .target Captain Rugelfuss
 step
     #completewith Rugel2
-    >>Mate os |cRXP_ENEMY_Mountain Boars|r. Saqueie-os pelos |cRXP_LOOT_Boar Intestines|r
-    >>Mate os |cRXP_ENEMY_Elder Preto Ursos|r. Saqueie-os pelos seus |cRXP_LOOT_Bear Carne|r
-    >>Abate |cRXP_ENEMY_Forest Lurkers|r. Saqueie-os por seus |cRXP_LOOT_Spider Ichor|r
+    >>Mate os |cRXP_ENEMY_Mountain Boars|r. Saqueie-os para obter |cRXP_LOOT_Boar Intestines|r
+    >>Mate os |cRXP_ENEMY_Elder Preto Ursos|r. Saqueie-os para obter |cRXP_LOOT_Bear Carne|r
+    >>Mate os |cRXP_ENEMY_Forest Lurkers|r. Saqueie-os para obter |cRXP_LOOT_Spider Ichor|r
     >>|cRXP_WARN_Lembre-se de puxá-los para os |cRXP_FRIENDLY_Mountaineers|r se necessário|r
-    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Mountain Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Instantâneo: Aumenta a velocidade de movimento por 3 segundos, causando 40-100 de dano corpo a corpo ao acertar. Apenas lançável em alcance)|r
+    >>|cRXP_WARN_Cuidado quando os |cRXP_ENEMY_Mountain Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Auto-Instantâneo: Aumenta a velocidade de movimento por 3 segundos, causando 40-100 de dano corpo-a-corpo no acerto. Só pode ser lançado à distância)|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
     .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
@@ -4165,9 +4165,9 @@ step
     .mob +Forest Lurker
 step
     .goto Loch Modan,26.67,56.94
-    >>Mate os |cRXP_ENEMY_Troggs Lascadores de Pedra|r e os |cRXP_ENEMY_Batedores Lascadores de Pedra|r. Saque-os pelo seu |cRXP_LOOT_Dentes de Trogg de Pedra|r
-    >>|cRXP_WARN_Cuidado pois os |cRXP_ENEMY_Batedores Lascadores de Pedra|r lançam|r |T132222:0|t[Atirar] |cRXP_WARN_(Lançamento à Distância: Causa 14-20 de dano)|r
-    >>|cRXP_WARN_Esta é uma área de reaparição rápida. Você não deve precisar sair daqui|r
+    >>Mate os |cRXP_ENEMY_Stonesplinter Troggs|r e os |cRXP_ENEMY_Stonesplinter Batedores|r. Saqueie-os para seus |cRXP_LOOT_Trogg Pedra Teeth|r
+    >>|cRXP_WARN_Cuidado, pois os |cRXP_ENEMY_Stonesplinter Batedores|r lançam|r |T132222:0|t[Atirar] |cRXP_WARN_(Lançamento à Distância: Causa 14-20 de dano)|r
+    >>|cRXP_WARN_Esta é uma área de hiperspawn. Você não deveria precisar sair daqui|r
     .complete 224,1 --Kill Stonesplinter Trogg (x10)
     .mob +Stonesplinter Trogg
     .complete 224,2 --Kill Stonesplinter Scout (x10)
@@ -4184,7 +4184,7 @@ step
     #completewith next
     .goto Loch Modan,23.27,75.65,12,0
     .goto Loch Modan,23.62,75.42,12,0
-    .goto Loch Modan,23.12,73.93,12 >>Entre no Bunker. Vá para o topo
+    .goto Loch Modan,23.12,73.93,12 >>Entre no Bunker. Vá para o andar superior
 step
     #label Rugel2
     .goto Loch Modan,23.233,73.675
@@ -4198,15 +4198,15 @@ step << skip
     .goto Loch Modan,19.50,62.56,30 >>Volte para o Túnel
 step << skip
     .goto Loch Modan,18.84,61.48
-    .goto Loch Modan,32.19,46.95,30 >>Pulo de Logout do Braseiro dentro do túnel para Thelsamar
+    .goto Loch Modan,32.19,46.95,30 >>Pule o logout de Braseiro dentro do túnel para Thelsamar
     .isOnQuest 1339
 step
     #completewith next
-    >>Mate os |cRXP_ENEMY_Mountain Boars|r. Saqueie-os pelos |cRXP_LOOT_Boar Intestines|r
-    >>Mate os |cRXP_ENEMY_Elder Preto Ursos|r. Saqueie-os pelos seus |cRXP_LOOT_Bear Carne|r
-    >>Mate os |cRXP_ENEMY_Emboscadores da Floresta|r. Saque-os pelo seu |cRXP_LOOT_Ícor de Aranha|r
+    >>Mate os |cRXP_ENEMY_Mountain Boars|r. Saqueie-os para obter |cRXP_LOOT_Boar Intestines|r
+    >>Mate os |cRXP_ENEMY_Elder Preto Ursos|r. Saqueie-os para obter |cRXP_LOOT_Bear Carne|r
+    >>Mate os |cRXP_ENEMY_Forest Lurkers|r. Saqueie-os para obter |cRXP_LOOT_Spider Ichor|r
     >>|cRXP_WARN_Lembre-se de puxá-los para os |cRXP_FRIENDLY_Mountaineers|r se necessário|r
-    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Mountain Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Instantâneo: Aumenta a velocidade de movimento por 3 segundos, causando 40-100 de dano corpo a corpo ao acertar. Apenas lançável em alcance)|r
+    >>|cRXP_WARN_Cuidado quando os |cRXP_ENEMY_Mountain Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Auto-Instantâneo: Aumenta a velocidade de movimento por 3 segundos, causando 40-100 de dano corpo-a-corpo no acerto. Só pode ser lançado à distância)|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
     .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
@@ -4219,25 +4219,25 @@ step
 step
     .goto Loch Modan,24.13,18.20
     >>Fale com |cRXP_FRIENDLY_Gothor|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .target Gothor Brumn
     .isOnQuest 1339
 step
     .goto Loch Modan,24.764,18.397
-    >>Vá para cima
-    >>Fale com |cRXP_FRIENDLY_Stormpike|r
+    >>Suba
+    >>Converse com |cRXP_FRIENDLY_Stormpike|r
     .turnin 353 >>Entregue Entrega para Lançatroz << Human
-    .turnin 1339 >>Entregue Montanhista Lançatroz's Task
+    .turnin 1339 >>Entregue Tarefa de Montanhista Lançatroz
     .accept 1338 >>Aceite Ordens dos Lançatroz
     .accept 307 >>Aceite Patas Nojentas
     .target Mountaineer Stormpike
 step
     #completewith Entrance
-    >>Mate os |cRXP_ENEMY_Mountain Boars|r. Saqueie-os pelos |cRXP_LOOT_Boar Intestines|r
-    >>Mate os |cRXP_ENEMY_Elder Preto Ursos|r. Saqueie-os pelos seus |cRXP_LOOT_Bear Carne|r
-    >>Abate |cRXP_ENEMY_Forest Lurkers|r. Saqueie-os por seus |cRXP_LOOT_Spider Ichor|r
+    >>Mate os |cRXP_ENEMY_Mountain Boars|r. Saqueie-os para obter |cRXP_LOOT_Boar Intestines|r
+    >>Mate os |cRXP_ENEMY_Elder Preto Ursos|r. Saqueie-os para obter |cRXP_LOOT_Bear Carne|r
+    >>Mate os |cRXP_ENEMY_Forest Lurkers|r. Saqueie-os para obter |cRXP_LOOT_Spider Ichor|r
     >>|cRXP_WARN_Lembre-se de puxá-los para os |cRXP_FRIENDLY_Mountaineers|r se necessário|r
-    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Mountain Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Instantâneo: Aumenta a velocidade de movimento por 3 segundos, causando 40-100 de dano corpo a corpo ao acertar. Apenas lançável em alcance)|r
+    >>|cRXP_WARN_Cuidado quando os |cRXP_ENEMY_Mountain Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Auto-Instantâneo: Aumenta a velocidade de movimento por 3 segundos, causando 40-100 de dano corpo-a-corpo no acerto. Só pode ser lançado à distância)|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
     .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
@@ -4246,7 +4246,7 @@ step
     .mob +Forest Lurker
 step
     #completewith Exit
-    >>Mate os |cRXP_ENEMY_Ratos do Túnel|r. Saque-os pelos seus |cRXP_LOOT_Orelhas de Rato do Túnel|r
+    >>Abate os |cRXP_ENEMY_Ratos do Túnel|r. Saqueie-os para obter |cRXP_LOOT_Orelhas de Ratos do Túnel|r
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .mob Tunnel Rat Vermin
     .mob Tunnel Rat Kobold
@@ -4256,7 +4256,7 @@ step
     .mob Tunnel Rat Digger
 step
     #label Entrance
-    .goto Loch Modan,35.47,18.95,40 >>Viagem para a entrada da Mina
+    .goto Loch Modan,35.47,18.95,40 >>Vá para a entrada da Mina
     .isOnQuest 307
 step
     #label Gear
@@ -4276,8 +4276,8 @@ step
     .goto Loch Modan,36.10,22.97,12,0
     .goto Loch Modan,36.23,24.88,12,0
     .goto Loch Modan,34.93,24.89
-    >>Saque o |cRXP_LOOT_Equipamento do Mineiro|r no chão. |cRXP_WARN_Eles compartilham pontos de aparição|r
-    >>|cRXP_WARN_Cuidado pois os |cRXP_ENEMY_Ratos do Túnel Geomantes|r lançam|r |T135824:0|t[Proteção Rápida contra Chamas] |cRXP_WARN_(Lançamento Pessoal: Concede 10 segundos de imunidade ao fogo) e|r |T135824:0|t[Impacto de Fogo] |cRXP_WARN_(Lançamento Instantâneo à Distância: Causa 20-30 de dano de fogo)
+    >>Pegue o |cRXP_LOOT_Equipamento de Mineiros|r do chão. |cRXP_WARN_Eles compartilham pontos de desova|r
+    >>Tenha cuidado pois os |cRXP_WARN_Geomantes de Ratos do Túnel|cRXP_ENEMY_ lançam|r |T135824:0|t[Proteção Rápida contra Chamas] |r(Lançamento de Si: Confere imunidade a fogo por 10 segundos) e|cRXP_WARN_ |T135824:0|t[Impacto de Fogo] |r(Instantâneo a Distância: Causa 20-30 de dano de Fogo)|cRXP_WARN_
     .complete 307,1 --Collect Miners' Gear (x4)
 --VV Rat Diggers
 step
@@ -4299,8 +4299,8 @@ step
 	.goto Loch Modan,38.85,21.25,40,0
 	.goto Loch Modan,37.89,18.88,40,0
 	.goto Loch Modan,34.38,17.67,40,0
-    >>Mate os |cRXP_ENEMY_Tunnel Rato Batedores|r, os |cRXP_ENEMY_Tunnel Rato Vermin|r, os |cRXP_ENEMY_Tunnel Rato Kobolds|r e os |cRXP_ENEMY_Tunnel Rato Foragers|r. Saqueie-os pelas suas |cRXP_LOOT_Tunnel Rato Orelhas|r
-    >>|cRXP_WARN_Cuidado pois os |cRXP_ENEMY_Ratos do Túnel Kobolds|r lançam|r |T132152:0|t[Surra] |cRXP_WARN_(Concede 2 ataques extras a cada 10 segundos)|r
+    >>Abate os |cRXP_ENEMY_Batedores de Ratos do Túnel|r, os |cRXP_ENEMY_Daninho Ratatúnel|r, os |cRXP_ENEMY_Kobolds do Túnel|r, e os |cRXP_ENEMY_Forrageadores de Ratos do Túnel|r. Saqueie-os para obter |cRXP_LOOT_Orelhas de Ratos do Túnel|r
+    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Kobolds do Túnel|r lançam|r |T132152:0|t[Surra] |cRXP_WARN_(Carrega 2 ataques extras a cada 10 segundos)|r
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .mob Tunnel Rat Vermin
     .mob Tunnel Rat Kobold
@@ -4308,11 +4308,11 @@ step
     .mob Tunnel Rat Forager
 step
     #completewith next
-    >>Mate os |cRXP_ENEMY_Mountain Boars|r. Saqueie-os pelos |cRXP_LOOT_Boar Intestines|r
-    >>Mate os |cRXP_ENEMY_Elder Preto Ursos|r. Saqueie-os pelos seus |cRXP_LOOT_Bear Carne|r
-    >>Abate |cRXP_ENEMY_Forest Lurkers|r. Saqueie-os por seus |cRXP_LOOT_Spider Ichor|r
+    >>Mate os |cRXP_ENEMY_Mountain Boars|r. Saqueie-os para obter |cRXP_LOOT_Boar Intestines|r
+    >>Mate os |cRXP_ENEMY_Elder Preto Ursos|r. Saqueie-os para obter |cRXP_LOOT_Bear Carne|r
+    >>Mate os |cRXP_ENEMY_Forest Lurkers|r. Saqueie-os para obter |cRXP_LOOT_Spider Ichor|r
     >>|cRXP_WARN_Lembre-se de puxá-los para os |cRXP_FRIENDLY_Mountaineers|r se necessário|r
-    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Mountain Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Instantâneo: Aumenta a velocidade de movimento por 3 segundos, causando 40-100 de dano corpo a corpo ao acertar. Apenas lançável em alcance)|r
+    >>|cRXP_WARN_Cuidado quando os |cRXP_ENEMY_Mountain Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Auto-Instantâneo: Aumenta a velocidade de movimento por 3 segundos, causando 40-100 de dano corpo-a-corpo no acerto. Só pode ser lançado à distância)|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
     .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
@@ -4320,18 +4320,18 @@ step
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
     .mob +Forest Lurker
 step
-    .goto Loch Modan,23.57,17.93,30 >>Viagem para Algaz Station
+    .goto Loch Modan,23.57,17.93,30 >>Vá para Algaz Station
     .isOnQuest 307
 step
     .goto Loch Modan,24.13,18.20
     >>Fale com |cRXP_FRIENDLY_Gothor|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .target Gothor Brumn
     .isOnQuest 307
 step
     .goto Loch Modan,24.764,18.397
-    >>Vá para cima
-    >>Fale com |cRXP_FRIENDLY_Stormpike|r
+    >>Suba
+    >>Converse com |cRXP_FRIENDLY_Stormpike|r
     .turnin 307,2 >>Entregue Patas Nojentas
     .target Mountaineer Stormpike
 step
@@ -4353,11 +4353,11 @@ step
 	.goto Loch Modan,25.77,25.60,35,0
 	.goto Loch Modan,23.64,22.20,35,0
 	.goto Loch Modan,31.01,24.84,35,0
-    >>Mate os |cRXP_ENEMY_Mountain Boars|r. Saqueie-os pelos |cRXP_LOOT_Boar Intestines|r
-    >>Mate os |cRXP_ENEMY_Elder Preto Ursos|r. Saqueie-os pelos seus |cRXP_LOOT_Bear Carne|r
-    >>Abate |cRXP_ENEMY_Forest Lurkers|r. Saqueie-os por seus |cRXP_LOOT_Spider Ichor|r
+    >>Mate os |cRXP_ENEMY_Mountain Boars|r. Saqueie-os para obter |cRXP_LOOT_Boar Intestines|r
+    >>Mate os |cRXP_ENEMY_Elder Preto Ursos|r. Saqueie-os para obter |cRXP_LOOT_Bear Carne|r
+    >>Mate os |cRXP_ENEMY_Forest Lurkers|r. Saqueie-os para obter |cRXP_LOOT_Spider Ichor|r
     >>|cRXP_WARN_Lembre-se de puxá-los para os |cRXP_FRIENDLY_Mountaineers|r se necessário|r
-    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Mountain Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Instantâneo: Aumenta a velocidade de movimento por 3 segundos, causando 40-100 de dano corpo a corpo ao acertar. Apenas lançável em alcance)|r
+    >>|cRXP_WARN_Cuidado quando os |cRXP_ENEMY_Mountain Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Auto-Instantâneo: Aumenta a velocidade de movimento por 3 segundos, causando 40-100 de dano corpo-a-corpo no acerto. Só pode ser lançado à distância)|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
     .mob +Mountain Boar
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
@@ -4367,11 +4367,11 @@ step
     .xp <13+5500,1 << Gnome
 step
     #completewith Boast
-    >>Abate os |cRXP_ENEMY_Mangy Mountain Boars|r e os |cRXP_ENEMY_Mountain Boars|r. Saque-os para obter seus |cRXP_LOOT_Boar Intestines|r
-    >>Abate os |cRXP_ENEMY_Grizzled Preto Ursos|r e os |cRXP_ENEMY_Elder Preto Ursos|r. Saque-os para obter seus |cRXP_LOOT_Bear Carne|r
-    >>Abate os |cRXP_ENEMY_Cliff Lurkers|r e os |cRXP_ENEMY_Forest Lurkers|r. Saque-os para obter seus |cRXP_LOOT_Spider Ichor|r
+    >>Mate os |cRXP_ENEMY_Mangy Mountain Boars|r e os |cRXP_ENEMY_Mountain Boars|r. Saqueie-os para obter |cRXP_LOOT_Boar Intestines|r
+    >>Mate os |cRXP_ENEMY_Grizzled Preto Ursos|r e os |cRXP_ENEMY_Elder Preto Ursos|r. Saqueie-os para obter |cRXP_LOOT_Bear Carne|r
+    >>Mate os |cRXP_ENEMY_Cliff Lurkers|r e os |cRXP_ENEMY_Forest Lurkers|r. Saqueie-os para obter |cRXP_LOOT_Spider Ichor|r
     >>|cRXP_WARN_Lembre-se de puxá-los para os |cRXP_FRIENDLY_Mountaineers|r se necessário|r
-    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Mountain Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Instantâneo: Aumenta a velocidade de movimento por 3 segundos, causando 40-100 de dano corpo a corpo ao acertar. Apenas lançável em alcance)|r
+    >>|cRXP_WARN_Cuidado quando os |cRXP_ENEMY_Mountain Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Auto-Instantâneo: Aumenta a velocidade de movimento por 3 segundos, causando 40-100 de dano corpo-a-corpo no acerto. Só pode ser lançado à distância)|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
     .mob +Mangy Mountain Boar
     .mob +Mountain Boar
@@ -4384,9 +4384,9 @@ step
     .xp >13+5500,1 << Gnome
 step
     .goto Loch Modan,37.18,47.13,10,0
-    >>Fale com |cRXP_FRIENDLY_Brock|r e |cRXP_FRIENDLY_Jern|r
+    >>Converse com |cRXP_FRIENDLY_Brock|r e com |cRXP_FRIENDLY_Jern|r
     >>|cRXP_WARN_Eles podem estar dentro ou fora do prédio|r
-    .turnin 6392 >>Entregue Retorno a Brock << Gnome
+    .turnin 6392 >>Entregue Retornar com Brock << Gnome
     .target +Brock Stoneseeker
     .goto Loch Modan,37.02,47.80
     .accept 436 >>Aceite Ironband's Escavação
@@ -4396,7 +4396,7 @@ step
 step
     .goto Loch Modan,37.23,47.37
     >>Fale com |cRXP_FRIENDLY_Jern|r
-    >>|cRXP_WARN_Ele pode estar dentro ou fora do prédio|r
+    >>|cRXP_WARN_Ele pode estar dentro ou fora do edifício|r
     .accept 436 >>Aceite Ironband's Escavação
     .target Jern Hornhelm
     .xp >13+6550,1 << Gnome
@@ -4420,7 +4420,7 @@ step << Human
 	.goto Loch Modan,25.77,25.60,50,0
 	.goto Loch Modan,23.64,22.20,50,0
 	.goto Loch Modan,31.01,24.84,50,0
-    .xp 13+8675 >>Farme até 8675+/11400 xp
+    .xp 13+8675 >>Triture até 8675+/11400xp
 step << Gnome
 #loop
 	.line Loch Modan,31.01,24.84,32.69,28.67,34.93,31.55,36.78,33.19,39.65,32.82,38.15,38.16,33.53,40.53,29.87,53.51,29.58,46.54,29.95,39.84,27.09,40.10,29.03,33.44,27.19,29.01,25.77,25.60,23.64,22.20,31.01,24.84
@@ -4440,7 +4440,7 @@ step << Gnome
 	.goto Loch Modan,25.77,25.60,50,0
 	.goto Loch Modan,23.64,22.20,50,0
 	.goto Loch Modan,31.01,24.84,50,0
-    .xp 13+6545 >>Farme até 6545+/11400 xp
+    .xp 13+6545 >>Triture até 6545+/11400xp
     .xp <13+5500,1
     .isOnQuest 6392
 step << Gnome
@@ -4448,19 +4448,19 @@ step << Gnome
     .goto Loch Modan,46.14,63.53,50,0
     .goto Loch Modan,49.35,67.36,50,0
     .goto Loch Modan,51.91,68.00,50,0
-    .goto Loch Modan,64.83,66.05,20 >>Vá em direção a |cRXP_FRIENDLY_Aldren|r
+    .goto Loch Modan,64.83,66.05,20 >>Vá para |cRXP_FRIENDLY_Aldren|r
 step << Gnome
     #completewith Boast
     .goto Loch Modan,64.83,66.05
     >>Fale com |cRXP_FRIENDLY_Aldren|r
-    .vendor 1214 >>|cRXP_BUY_Compre |r |T132491:0|t[Cinto do Homem Sábio] |cRXP_BUY_dele (se estiver disponível)|r
+    .vendor 1214 >>|cRXP_BUY_Compre o |r |T132491:0|t[Cinto do Homem Sábio] |cRXP_BUY_dele (se disponível)|r
     .isQuestAvailable 298
 step << Gnome
     >>Fale com |cRXP_FRIENDLY_Ironband|r e |cRXP_FRIENDLY_Magmar|r
     .accept 298 >>Aceite Relatório de Progresso da Escavação
     .target +Prospector Ironband
     .goto Loch Modan,65.94,65.62
-    .turnin 436 >>Entregue A Escavação de Ironband
+    .turnin 436 >>Entregue Ironband's Escavação
     .goto Loch Modan,64.89,66.66
     .target +Magmar Fellhew
     .isOnQuest 436
@@ -4496,7 +4496,7 @@ step << Gnome
 	.goto Loch Modan,77.39,55.98,45,0
 	.goto Loch Modan,79.63,59.85,45,0
 	.goto Loch Modan,79.89,65.91,45,0
-    >>Abate os |cRXP_ENEMY_Mountain Buzzards|r
+    >>Mate os |cRXP_ENEMY_Mountain Buzzards|r
     .complete 257,1 --Mountain Buzzard (6)
     .mob Mountain Buzzard
     .isOnQuest 257
@@ -4529,11 +4529,11 @@ step << Gnome
 	.goto Loch Modan,25.77,25.60,50,0
 	.goto Loch Modan,23.64,22.20,50,0
 	.goto Loch Modan,31.01,24.84,50,0
-    >>Abate os |cRXP_ENEMY_Mangy Mountain Boars|r e os |cRXP_ENEMY_Mountain Boars|r. Saque-os para obter seus |cRXP_LOOT_Boar Intestines|r
-    >>Abate os |cRXP_ENEMY_Grizzled Preto Ursos|r e os |cRXP_ENEMY_Elder Preto Ursos|r. Saque-os para obter seus |cRXP_LOOT_Bear Carne|r
-    >>Abate os |cRXP_ENEMY_Cliff Lurkers|r e os |cRXP_ENEMY_Forest Lurkers|r. Saque-os para obter seus |cRXP_LOOT_Spider Ichor|r
+    >>Mate os |cRXP_ENEMY_Mangy Mountain Boars|r e os |cRXP_ENEMY_Mountain Boars|r. Saqueie-os para obter |cRXP_LOOT_Boar Intestines|r
+    >>Mate os |cRXP_ENEMY_Grizzled Preto Ursos|r e os |cRXP_ENEMY_Elder Preto Ursos|r. Saqueie-os para obter |cRXP_LOOT_Bear Carne|r
+    >>Mate os |cRXP_ENEMY_Cliff Lurkers|r e os |cRXP_ENEMY_Forest Lurkers|r. Saqueie-os para obter |cRXP_LOOT_Spider Ichor|r
     >>|cRXP_WARN_Lembre-se de puxá-los para os |cRXP_FRIENDLY_Mountaineers|r se necessário|r
-    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Mountain Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Instantâneo: Aumenta a velocidade de movimento por 3 segundos, causando 40-100 de dano corpo a corpo ao acertar. Apenas lançável em alcance)|r
+    >>|cRXP_WARN_Cuidado quando os |cRXP_ENEMY_Mountain Boars|r lançam|r |T132337:0|t[Carga] |cRXP_WARN_(Auto-Instantâneo: Aumenta a velocidade de movimento por 3 segundos, causando 40-100 de dano corpo-a-corpo no acerto. Só pode ser lançado à distância)|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
     .mob +Mangy Mountain Boar
     .mob +Mountain Boar
@@ -4562,7 +4562,7 @@ step << Gnome
 	.goto Loch Modan,25.77,25.60,50,0
 	.goto Loch Modan,23.64,22.20,50,0
 	.goto Loch Modan,31.01,24.84,50,0
-    .xp 13+6780 >>Farme até 6780+/11400 xp
+    .xp 13+6780 >>Farme até 6780+/11400 XP
     .isOnQuest 298
 step
     #sticky
@@ -4573,14 +4573,14 @@ step
     .goto Loch Modan,37.39,45.17,40,0
     .goto Loch Modan,37.12,42.79
     >>Fale com |cRXP_FRIENDLY_Kadrell|r
-    >>|cRXP_FRIENDLY_Kadrell|r |cRXP_WARN_patrula pela estrada principal de Thelsamar|r
-    .turnin 416,2 >>Entregue Rato Pegando
+    >>|cRXP_FRIENDLY_Kadrell|r |cRXP_WARN_Patrulha pela estrada principal de Thelsamar|r
+    .turnin 416,2 >>Entregue Pegando Ratos
     .target Mountaineer Kadrell
 step << Gnome
     .goto Loch Modan,37.18,47.13,10,0
-    >>Fale com |cRXP_FRIENDLY_Brock|r e |cRXP_FRIENDLY_Jern|r
+    >>Converse com |cRXP_FRIENDLY_Brock|r e com |cRXP_FRIENDLY_Jern|r
     >>|cRXP_WARN_Eles podem estar dentro ou fora do prédio|r
-    .turnin 6392 >>Entregue Retorno a Brock
+    .turnin 6392 >>Entregue Retornar com Brock
     .target +Brock Stoneseeker
     .goto Loch Modan,37.02,47.80
     .turnin 298 >>Entregue Relatório de Progresso da Escavação
@@ -4590,9 +4590,9 @@ step << Gnome
     .isOnQuest 298
 step << Gnome
     .goto Loch Modan,37.18,47.13,10,0
-    >>Fale com |cRXP_FRIENDLY_Brock|r e |cRXP_FRIENDLY_Jern|r
+    >>Converse com |cRXP_FRIENDLY_Brock|r e com |cRXP_FRIENDLY_Jern|r
     >>|cRXP_WARN_Eles podem estar dentro ou fora do prédio|r
-    .turnin 6392 >>Entregue Retorno a Brock
+    .turnin 6392 >>Entregue Retornar com Brock
     .target Brock Stoneseeker
     .goto Loch Modan,37.02,47.80
     .accept 301 >>Aceite Apresente-se a Altaforja
@@ -4603,36 +4603,36 @@ step << Gnome
     .goto Loch Modan,37.18,47.13,10,0
     .goto Loch Modan,37.02,47.80
     >>Fale com |cRXP_FRIENDLY_Brock|r
-    >>|cRXP_WARN_Ele pode estar dentro ou fora do prédio|r
-    .turnin 6392 >>Entregue Retorno a Brock
+    >>|cRXP_WARN_Ele pode estar dentro ou fora do edifício|r
+    .turnin 6392 >>Entregue Retornar com Brock
     .target Brock Stoneseeker
 step
     #completewith next
     .goto Loch Modan,35.25,47.74,12,0
     .goto Loch Modan,35.39,48.36,12,0
-    >>Go dentro da Inn
-    .goto Loch Modan,34.828,49.283,10 >>Vá em direção a |cRXP_FRIENDLY_Vidra|r
+    >>Entre na Estalagem
+    .goto Loch Modan,34.828,49.283,10 >>Vá para |cRXP_FRIENDLY_Vidra|r
 step
     .goto Loch Modan,34.828,49.283
-    >>Fale com |cRXP_FRIENDLY_Vidra|r
+    >>Converse com |cRXP_FRIENDLY_Vidra|r
     .accept 418 >>Aceite Chouriço de Thelsamar
-    .turnin 418 >>Entregue Chouriço de Thelsamar
+    .turnin 418 >>Entregue Chouriço em Thelsamar
     .target Vidra Hearthstove
 step
     .goto Loch Modan,34.76,48.62
-    >>|cRXP_WARN_NÃO descarte nenhum de seus extras|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
-    .skill cooking,10 >>Cozinhe |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r em |T133974:0|t[Carne Assada de Porco] até |T133971:0|t[Culinária] atingir 10
+    >>|cRXP_WARN_NÃO descarte nenhum dos seus extras|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
+    .skill cooking,10 >>Cozinhe |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r em |T133974:0|t[Carne Assada de Porco] até sua |T133971:0|t[Culinária] atingir nível 10
 step
     .goto Loch Modan,34.76,48.62
-    >>Fale com |cRXP_FRIENDLY_Yanni|r
-    >>|cRXP_BUY_Compre tantas|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_quanto você precisar/conseguir|r
-    >>|cRXP_WARN_NÃO fique abaixo de 45 Prateado|r
-    .vendor >>Comerciante Lixo
+    >>Converse com |cRXP_FRIENDLY_Yanni|r
+    >>|cRXP_BUY_Compre o máximo|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_que você precisa/consegue|r
+    >>|cRXP_WARN_NÃO desça abaixo de 45 Prateado|r
+    .vendor >>Lixo de Mercador
     .isOnQuest 1338
 step
     #completewith next
     #requires Kadrell
-    +|cRXP_WARN_Início lançar feitiços repetidamente|r |T132794:0|t[Conjurar Água r2] |cRXP_WARN_para conjurar o máximo de água possível antes de pegar o voo|r
+    +|cRXP_WARN_Comece a fazer spam com |T132794:0|t[Conjurar Água r2] |cRXP_WARN_para conjurar o máximo de água possível antes de pegar o voo|r
 step
     #requires Kadrell
     .goto Loch Modan,33.94,50.96
@@ -4643,7 +4643,7 @@ step
 --VV WIP. Report to Ironforge needed
 step << Gnome
     .goto Ironforge,74.64,11.72
-    >>Fale com |cRXP_FRIENDLY_Stormpike|r
+    >>Converse com |cRXP_FRIENDLY_Stormpike|r
     .turnin 301 >>Entregue Apresente-se a Altaforja
     .target Prospector Stormpike
     .isOnQuest 301
@@ -4651,7 +4651,7 @@ step << skip
     #completewith Monty
     .goto Ironforge,74.82,8.69,-1
     .goto Ironforge,56.21,46.86,-1
-    .goto Ironforge,76.41,51.22,30 >>Faça logout e pule para fora do Deeprun Tram
+    .goto Ironforge,76.41,51.22,30 >>Use Logout Pular para chegar à parte externa do Deeprun Tram
 step
     .goto Ironforge,67.83,42.47
     >>Fale com |cRXP_FRIENDLY_Cogspinner|r
@@ -4663,7 +4663,7 @@ step << Gnome
     .goto Ironforge,76.41,51.22,30,0
     >>Entre no Deeprun Tram
     >>Fale com |cRXP_FRIENDLY_Monty|r
-    .accept 6661 >>Aceite Ratos de Porão
+    .accept 6661 >>Aceite Caçada aos Ratos das Profundezas
     .target Monty
 step << Gnome
     >>Usar o |T133942:0|t[Rato Catcher's Flute] nos |cRXP_FRIENDLY_Deeprun Ratos|r no Deeprun Tram
@@ -4673,26 +4673,26 @@ step << Gnome
 step
     >>Fale com |cRXP_FRIENDLY_Monty|r
     >>|cRXP_WARN_Espere a sequência de RP terminar|r << Gnome
-    .turnin 6661 >>Virar em Ratos de Porão << Gnome
-    .timer 13,Ratos de Porão RP << Gnome
-    .accept 6662 >>Aceite Meu Irmão, Nipsy
+    .turnin 6661 >>Entregue Caçada aos Ratos das Profundezas << Gnome
+    .timer 13,Ratos de Deeprun RP << Gnome
+    .accept 6662 >>Aceite Espetinhos de... Rato
     .target Monty
     .zoneskip Stormwind City
 step
-    >>|cRXP_WARN_Ride the Deeprun Tram whilst spam casting|r |T132794:0|t[Conjurar Água r2]
-    >>Fale com |cRXP_FRIENDLY_Nipsy|r do outro lado do Deeprun Tram
-    .turnin 6662 >>Entregue Espetinhos de... rato
+    >>|cRXP_WARN_Monte o Deeprun Tram enquanto lança continuamente|r |T132794:0|t[Conjurar Água r2]
+    >>Converse com |cRXP_FRIENDLY_Nipsy|r no outro lado do Deeprun Tram
+    .turnin 6662 >>Entregue Espetinhos de... Rato
     .target Nipsy
     .isOnQuest 6662
 step
     #label Monty << Human
-    .zone Stormwind City >>Entre em Ventobravo
+    .zone Stormwind City >>Entre na Cidade de Ventobravo
     .isOnQuest 1338
 step
     #completewith next
     .goto Stormwind City,59.96,12.21,20,0
     .goto Stormwind City,57.03,11.37,20,0
-    .goto Stormwind City,55.25,7.07,15 >>Vá em direção a |cRXP_FRIENDLY_Billibub|r
+    .goto Stormwind City,55.25,7.07,15 >>Vá para |cRXP_FRIENDLY_Billibub|r
 step
     .goto Stormwind City,55.25,7.07
     >>Fale com |cRXP_FRIENDLY_Billibub|r
@@ -4701,8 +4701,8 @@ step
     .itemcount 4371,<1
 step
     .goto Stormwind City,58.09,16.55
-    >>Fale com |cRXP_FRIENDLY_Furen|r
-    .turnin 1338 >>Entregue Ordens dos Lançatroz
+    >>Converse com |cRXP_FRIENDLY_Furen|r
+    .turnin 1338 >>Entregue Pedidos de Pico da Tempestade
     .target Furen Longbeard
 step
     #completewith next
@@ -4711,12 +4711,12 @@ step
     .goto Stormwind City,52.23,31.66,20,0
     .goto Stormwind City,49.82,34.42,20,0
     .goto Stormwind City,47.86,31.13,12,0
-    .goto Stormwind City,49.18,30.29,12 >>Viaje para |cRXP_FRIENDLY_Baros|r
+    .goto Stormwind City,49.18,30.29,12 >>Vá para |cRXP_FRIENDLY_Baros|r
 step
     .goto Stormwind City,49.18,30.29
     >>Entre no prédio
-    >>Fale com |cRXP_FRIENDLY_Baros|r
-    .accept 399 >>Aceite Humilde Beginnings
+    >>Converse com |cRXP_FRIENDLY_Baros|r
+    .accept 399 >>Aceite Humildes Começos
     .target Baros Alexston
 step
     #completewith next
@@ -4729,18 +4729,18 @@ step
     .goto Stormwind City,51.83,60.41,4,0
     .goto Stormwind City,51.59,60.15,6,0
     .goto Stormwind City,39.17,76.58,12,0
-    >>|cRXP_WARN_Suba na tocha, depois desça para ficar embaixo de Ventobravo|r
-    >>|cRXP_WARN_Com Sombras em "Justo" ou "Baixo", entre no meio dos pés de Derek the Dinosaur (a parte mais clara da terra) bem antes do vazio azul, depois caminhe reto para frente|r
-    >>|cRXP_WARN_Nota: há uma pequena chance de morte ao usar este método. Você também pode caminhar até a Torre do Mago normalmente se preferir|r
-    .link https://youtu.be/gV8-wgQEomc >>https://youtu.be/gV8-wgQEomc >> CLIQUE AQUI para o guia
+    >>|cRXP_WARN_Pule para cima da tocha, depois caia para ficar sob Ventobravo|r
+    >>|cRXP_WARN_Com Sombras em "Fair" ou "Low", fique no meio dos pés de Derek the Dinosaur (a parte mais clara da terra) bem antes do vazio azul, depois caminhe em linha reta para frente|r
+    >>|cRXP_WARN_NOTA: Há uma pequena chance de morrer usando este método. Você também pode caminhar normalmente para a Mago Torre se desejar|r
+    .link https://youtu.be/gV8-wgQEomc >>https://youtu.be/gV8-wgQEomc >> CLIQUE AQUI para um guia
     .goto Stormwind City,38.61,79.39,10 >>Viaje para |cRXP_FRIENDLY_Jennea|r
 step
     .goto Stormwind City,38.61,79.39
     >>Fale com |cRXP_FRIENDLY_Jennea|r
     .accept 1861 >>Aceite Lago Espelho << Gnome
-    .trainer >>Treine seus feiços de classe (Impacto de Fogo r2, Inteligência Arcana r2, Explosão Arcana)
+    .trainer >>Treine seus feitiços de classe (Impacto de Fogo r2, Inteligência Arcana r2, Explosão Arcana)
     >>Custo Total: 27s
-    >>Lembre que você pode querer dinheiro para Poções (1-3s cada) e Pergaminhos (50c-3s cada)
+    >>Lembre-se de que você pode querer dinheiro para poções (1-3s cada) e Pergaminhos (50c-3s cada)
     .target Jennea Cannon
 step
     #completewith next
@@ -4754,7 +4754,7 @@ step
     .goto Stormwind City,32.07,81.50,10,0
     .goto Stormwind City,32.63,80.62,8,0
     >>Saia da Torre do Mago
-    .goto Stormwind City,32.16,79.84,10 >>Vá para |cRXP_FRIENDLY_Charys|r
+    .goto Stormwind City,32.16,79.84,10 >>Voe para |cRXP_FRIENDLY_Charys|r
 step
     .goto Stormwind City,32.16,79.84
     >>Entre no edifício
@@ -4770,13 +4770,13 @@ step
     .goto Stormwind City,46.32,66.93,20,0
     .goto Stormwind City,42.45,61.76,20,0
     .goto Stormwind City,41.17,63.74,15,0
-    .goto Stormwind City,41.57,65.46,10 >>Vá para |cRXP_FRIENDLY_Adair|r
+    .goto Stormwind City,41.57,65.46,10 >>Voe para |cRXP_FRIENDLY_Adair|r
     .money <0.0090
 step
     .goto Stormwind City,41.57,65.46
     >>Entre no edifício
     >>Fale com |cRXP_FRIENDLY_Adair|r
-    .vendor 1316 >>|cRXP_BUY_Compre itens sem inteligência|r |T134943:0|t[Pergaminhos] |cRXP_BUY_dele (se estiverem disponíveis)|r
+    .vendor 1316 >>|cRXP_BUY_Compre sem inteligência|r |T134943:0|t[Pergaminhos] |cRXP_BUY_dele (se estiverem disponíveis)|r
     .money <0.0090
     .target Adair Gilroy
 step << skip
@@ -4785,7 +4785,7 @@ step << skip
     .goto Stormwind City,52.10,61.42,12,0
     .goto Stormwind City,49.36,63.42,12,0
     .goto Stormwind City,51.16,68.35,12,0
-    .goto Stormwind City,52.05,67.96,10 >>Viaje para |cRXP_FRIENDLY_Roberto|r
+    .goto Stormwind City,52.05,67.96,10 >>Voe para |cRXP_FRIENDLY_Roberto|r
 step << skip
     .goto Stormwind City,52.05,67.96
     >>Entre no prédio
@@ -4796,11 +4796,11 @@ step << skip
 step
     #completewith next
     .goto Stormwind City,52.10,61.34,15,0
-    .goto Stormwind City,55.46,65.26,8 >>Viaje para |cRXP_FRIENDLY_Keldric|r
+    .goto Stormwind City,55.46,65.26,8 >>Voe para |cRXP_FRIENDLY_Keldric|r
     .money <0.01
 step
     .goto Stormwind City,55.46,65.26
-    >>Fale com |cRXP_FRIENDLY_Keldric|r através da parede
+    >>Fale com |cRXP_FRIENDLY_Keldric|r pela parede
     .vendor 1257 >>|cRXP_BUY_Compre|r |T134830:0|t[Lesser Cura Potions] |cRXP_BUY_dele (se estiverem disponíveis)|r
     .money <0.01
     .target Orlande Bórgia
@@ -4811,11 +4811,11 @@ step
     .goto Stormwind City,57.03,72.97
     >>Fale com |cRXP_FRIENDLY_Newton|r
     .bankdeposit 769,4371,730,7207,1941,1711,1478,1712,3012,1180,1181,3013,6889 >>Deposite os itens a seguir no banco:
-    >>|T133970:0|t[Chunk of Javali Carne]
+    >>|T133970:0|t[Pedaço de Carne de Javali]
     >>|T133024:0|t[Tubo de Bronze]
-    >>|T133884:0|t[Murloc Olhos]
-    >>|T132788:0|t[Jennea's Frasco]
-    >>|T132620:0|t[Barril de Merlot]
+    >>|T133884:0|t[Olhos Murloc]
+    >>|T132788:0|t[Frasco de Jennea]
+    >>|T132620:0|t[Cask of Merlot]
     >>|T134943:0|t[Pergaminhos]
     >>|T132832:0|t[Ovo Pequeno]
     .target Newton Burnside
@@ -4828,9 +4828,9 @@ step
 step << skip
     .goto Stormwind City,57.03,72.97
     .bankdeposit 769,4371,7207 >>Deposite os itens a seguir no banco:
-    >>|T133970:0|t[Chunk of Javali Carne]
+    >>|T133970:0|t[Pedaço de Carne de Javali]
     >>|T133024:0|t[Tubo de Bronze]
-    >>|T132788:0|t[Jennea's Frasco]
+    >>|T132788:0|t[Frasco de Jennea]
     .target Newton Burnside
     .itemcount 769,1
     .itemcount 4371,1
@@ -4838,9 +4838,9 @@ step << skip
 step << skip
     .goto Stormwind City,57.03,72.97
     .bankdeposit 769,730,7207 >>Deposite os itens a seguir no banco:
-    >>|T133970:0|t[Chunk of Javali Carne]
-    >>|T133884:0|t[Murloc Olhos]
-    >>|T132788:0|t[Jennea's Frasco]
+    >>|T133970:0|t[Pedaço de Carne de Javali]
+    >>|T133884:0|t[Olhos Murloc]
+    >>|T132788:0|t[Frasco de Jennea]
     .target Newton Burnside
     .itemcount 769,1
     .itemcount 730,1
@@ -4849,8 +4849,8 @@ step << skip
     .goto Stormwind City,57.03,72.97
     .bankdeposit 4371,730,7207 >>Deposite os itens a seguir no banco:
     >>|T133024:0|t[Tubo de Bronze]
-    >>|T133884:0|t[Murloc Olhos]
-    >>|T132788:0|t[Jennea's Frasco]
+    >>|T133884:0|t[Olhos Murloc]
+    >>|T132788:0|t[Frasco de Jennea]
     .target Newton Burnside
     .itemcount 4371,1
     .itemcount 730,1
@@ -4858,8 +4858,8 @@ step << skip
 step << skip
     .goto Stormwind City,57.03,72.97
     .bankdeposit 769,7207 >>Deposite os itens a seguir no banco:
-    >>|T133970:0|t[Chunk of Javali Carne]
-    >>|T132788:0|t[Jennea's Frasco]
+    >>|T133970:0|t[Pedaço de Carne de Javali]
+    >>|T132788:0|t[Frasco de Jennea]
     .target Newton Burnside
     .itemcount 769,1
     .itemcount 7207,1
@@ -4867,21 +4867,21 @@ step << skip
     .goto Stormwind City,57.03,72.97
     .bankdeposit 4371,7207 >>Deposite os itens a seguir no banco:
     >>|T133024:0|t[Tubo de Bronze]
-    >>|T132788:0|t[Jennea's Frasco]
+    >>|T132788:0|t[Frasco de Jennea]
     .target Newton Burnside
     .itemcount 4371,1
     .itemcount 7207,1
 step << skip
     .goto Stormwind City,57.03,72.97
     .bankdeposit 730,7207 >>Deposite os itens a seguir no banco:
-    >>|T133884:0|t[Murloc Olhos]
-    >>|T132788:0|t[Jennea's Frasco]
+    >>|T133884:0|t[Olhos Murloc]
+    >>|T132788:0|t[Frasco de Jennea]
     .target Newton Burnside
     .itemcount 730,1
     .itemcount 7207,1
 step << skip
     .goto Stormwind City,57.03,72.97
-    .bankdeposit 7207 >>Deposite o seguinte item no banco:
+    .bankdeposit 7207 >>Deposite o item a seguir no banco:
     >>|T132788:0|t[Frasco de Jennea]
     .target Newton Burnside
     .itemcount 7207,1
@@ -4889,14 +4889,14 @@ step
     #completewith next
     .goto Stormwind City,53.45,64.92,10,0
     >>Entre na Estalagem
-    .goto Stormwind City,52.61,65.72,10 >>Vá para Allison
+    .goto Stormwind City,52.61,65.72,10 >>Voe para |cRXP_FRIENDLY_Allison|r
     .target Innkeeper Allison
 step
     .goto Stormwind City,52.61,65.72
-    >>|cRXP_WARN_===ATENÇÃO===|r
-    >>|cRXP_WARN_Conversar com|r |cRXP_FRIENDLY_Allison|r
-    >>|cRXP_WARN_Abrir a menu "Set Pedra de Regresso", depois lance|r |T134414:0|t[Pedra de Regresso]
-    .hs >>|cRXP_WARN_Hearthstone BATCH from Objetos de TBC to Auberdine|r
+    >>|cRXP_WARN_===PRESTE ATENÇÃO===|r
+    >>|cRXP_WARN_Fale com|r |cRXP_FRIENDLY_Allison|r
+    >>|cRXP_WARN_Abra o menu "Definir Pedra de Regresso", depois lance|r |T134414:0|t[Pedra de Regresso]
+    .hs >>|cRXP_WARN_Hearthstone BATCH de Ventobravo para Auberdine|r
     .target Innkeeper Allison
     .zoneskip Darkshore
 
@@ -4907,14 +4907,14 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 14-16 ADV Costa Negra 2 Mago AdE
 #version 2
-#group ADV AdE Maga da Aliança
+#group RestedXP ADV AdE Maga da Aliança
 #defaultfor Human Mage/Gnome Mage
 #next 16-18 ADV Cerro Oeste Mago AdE
 
 
 step
     #completewith DeepO
-    +|cRXP_WARN_Guarde qualquer |T132917:0|t[Luz Peninha] que você ganhar para mais tarde|r
+    +|cRXP_WARN_Salve qualquer |T132917:0|t[Luz Peninha] que você conseguir para depois|r
 step
     .goto Darkshore,36.77,44.28
     >>Fale com |cRXP_FRIENDLY_Laird|r
@@ -4924,7 +4924,7 @@ step
     .isQuestAvailable 982
 step
     >>Fale com |cRXP_FRIENDLY_Barithras|r e |cRXP_FRIENDLY_Glynda|r
-    .accept 947 >>Aceite Cave Mushrooms
+    .accept 947 >>Aceite Cogumelos da Caverna
     .target +Barithras Moonshade
     .goto Darkshore,37.32,43.64
     .accept 4811 >>Aceite O Cristal Vermelho
@@ -4947,23 +4947,23 @@ step
     .goto Darkshore,35.87,38.18,50,0
     .goto Darkshore,36.28,32.23,50,0
     .goto Darkshore,37.61,30.86,50,0
-    >>Mate os |cRXP_ENEMY_Darkshore Threshers|r na água. Saqueie-os para obter |cRXP_LOOT_Thresher Olhos|r
+    >>Mate os |cRXP_ENEMY_Darkshore Threshers|r na água. Saqueie-os para obter seus |cRXP_LOOT_Thresher Olhos|r
    .complete 1001,1 --Thresher Eye (3)
    .mob Darkshore Thresher
 step
    .goto Darkshore,38.21,28.76
 --  .goto Darkshore,38.23,28.79
-    >>Pegue o |cRXP_LOOT_Silver Dawning Caixa-forte|r através da parede do barco
-    >>|cRXP_WARN_Use sua combinação de teclado "Interagir com Alvo" debaixo d'água ao lado da seta|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Pegue a |cRXP_LOOT_Silver Dawning Caixa-forte|r através da parede do barco
+    >>|cRXP_WARN_Use a tecla de atalho 'Interagir com Alvo' debaixo da água ao lado da seta|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
    .complete 982,1 --Silver Dawning's Lockbox (1)
 step
    #label MistV
    .goto Darkshore,39.58,27.47
 --  .goto Darkshore,39.63,27.45
-   >>Pegue o |cRXP_LOOT_Mist Véu Caixa-forte|r através da parede do barco
-   >>|cRXP_WARN_Use o atalho "Interagir com Alvo" embaixo d'água, ao lado da seta|r
-   >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+   >>Pegue a |cRXP_LOOT_Mist Véu Caixa-forte|r através da parede do barco
+   >>|cRXP_WARN_Use a tecla de atalho 'Interagir com Alvo' debaixo da água ao lado da seta|r
+   >>|cRXP_WARN_Isto leva 5 segundos|r
    .complete 982,2 --Mist Veil's Lockbox (1)
 step
    .goto Darkshore,40.44,28.63,50,0
@@ -4974,67 +4974,67 @@ step
    .goto Darkshore,35.87,38.18,50,0
    .goto Darkshore,36.28,32.23,50,0
    .goto Darkshore,37.61,30.86
-   >>Mate os |cRXP_ENEMY_Darkshore Threshers|r na água. Saqueie-os pelos seus |cRXP_LOOT_Thresher Olhos|r
+   >>Mate os |cRXP_ENEMY_Darkshore Threshers|r na água. Saqueie-os para obter seus |cRXP_LOOT_Thresher Olhos|r
    .complete 1001,1 --Thresher Eye (3)
    .mob Darkshore Thresher
 step
    #completewith next
-   +|cRXP_WARN_Guarde os|r |T133884:0|t[Murloc Olhos] |cRXP_WARN_que você saqueia dos|r |cRXP_ENEMY_Greymist Coastrunners|r |cRXP_WARN_e|r |cRXP_ENEMY_Greymist Seers|r
+   +|cRXP_WARN_Salve os|r |T133884:0|t[Murloc Olhos] |cRXP_WARN_que você obtém dos|r |cRXP_ENEMY_Greymist Coastrunners|r |cRXP_WARN_e dos|r |cRXP_ENEMY_Greymist Seers|r
 step
    .goto Darkshore,41.91,31.48
    >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
-   >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
-   .accept 4723 >>Aceite Beached Sea Criatura - Missão
+   >>|cRXP_WARN_Isto leva 5 segundos|r
+   .accept 4723 >>Aceite Criatura Marinha Encalhada
 step
    .goto Darkshore,41.96,28.61
    >>Clique em |cRXP_PICK_Buzzbox 411|r
-   .turnin 1001 >>Vire para Buzzbox 411
+   .turnin 1001 >>Entregue Buzzbox 411
    .accept 1002 >>Aceite NO TRANSLATION FOUND TO THIS ELEMENT
 step
     #completewith SeaTurtle1
     .goto Darkshore,43.67,27.81,50,0
-    >>AdE os |cRXP_ENEMY_Foreststrider Fledglings|r. Saqueie-os por sua |cRXP_LOOT_Strider Carne|r
+    >>Use AdE nos |cRXP_ENEMY_Foreststrider Fledglings|r. Saqueie-os para obter |cRXP_LOOT_Strider Carne|r
     .collect 5469,5,2178,1 --Strider Meat (5)
     .mob Foreststrider Fledgeling
 step
     #completewith SeaTurtle1
-    >>Abate os |cRXP_ENEMY_Espreitaluna Nanico|r e os |cRXP_ENEMY_Espreitalunas|r. Saque-os pelos seus |cRXP_LOOT_Espreitaluna Presas|r
+    >>Abate os |cRXP_ENEMY_Moonstalker Nanico|r e os |cRXP_ENEMY_Moonstalkers|r. Saque-os para obter suas |cRXP_LOOT_Moonstalker Presas|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker Runt
     .mob Moonstalker
 step
     #completewith next
     >>Mate |cRXP_ENEMY_Ursocardos Raivosos|r
-    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T135914:0|t[Hidrofobia] |cRXP_WARN_(Instantâneo Corpo a Corpo: Reduz toda regeneração de vida em 50% por 10 Minutos)|r
+    >>|cRXP_WARN_Cuidado pois eles lançam |T135914:0|t[Hidrofobia] (Instantâneo Corpo a Corpo: Reduz TODA regeneração de saúde em 50% por 10 minutos)|r
     .complete 2138,1 --Rabid Thistle Bear (20)
     .mob Rabid Thistle Bear
 step
     #label SeaTurtle1
-    .goto Darkshore,44.20,20.60,80 >>Viaje em direção a |cRXP_LOOT_Beached Tartaruga Marinha|r
+    .goto Darkshore,44.20,20.60,80 >>Vá para o |cRXP_LOOT_Beached Tartaruga Marinha|r
     .isQuestAvailable 4725
 step
     #completewith next
-    +Guarde os |T133884:0|t[Murloc Olhos] que você saqueia dos |cRXP_ENEMY_Greymist Warriors|r e |cRXP_ENEMY_Greymist Netters|r
+    +Salve os |T133884:0|t[Murloc Olhos] que você obtém dos |cRXP_ENEMY_Greymist Warriors|r e |cRXP_ENEMY_Greymist Netters|r
 step
     .goto Darkshore,44.20,20.60
-    >>Pegue a |cRXP_LOOT_Beached Tartaruga Marinha|r no chão
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Pegue o |cRXP_LOOT_Beached Tartaruga Marinha|r no chão
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .accept 4725 >>Aceite Tartaruga Marinha Encalhada
 step
     #completewith River
-    >>Mate os |cRXP_ENEMY_Foreststrider Fledglings|r. Saqueie-os por sua |cRXP_LOOT_Strider Carne|r
+    >>Abate os |cRXP_ENEMY_Foreststrider Fledglings|r. Saque-os para obter sua |cRXP_LOOT_Strider Carne|r
     .collect 5469,5,2178,1 --Strider Meat (5)
     .mob Foreststrider Fledgeling
 step
     #completewith River
-    >>Mate os |cRXP_ENEMY_Moonstalker Nanico|r e os |cRXP_ENEMY_Moonstalkers|r. Saqueie-os para obter |cRXP_LOOT_Moonstalker Presas|r
+    >>Abate os |cRXP_ENEMY_Moonstalker Nanico|r e os |cRXP_ENEMY_Moonstalkers|r. Saque-os para obter suas |cRXP_LOOT_Moonstalker Presas|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker Runt
     .mob Moonstalker
 step
     #completewith RedC
     >>Mate |cRXP_ENEMY_Ursocardos Raivosos|r
-    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T135914:0|t[Hidrofobia] |cRXP_WARN_(Instantâneo Corpo a Corpo: Reduz toda regeneração de vida em 50% por 10 Minutos)|r
+    >>|cRXP_WARN_Cuidado pois eles lançam |T135914:0|t[Hidrofobia] (Instantâneo Corpo a Corpo: Reduz TODA regeneração de saúde em 50% por 10 minutos)|r
     .complete 2138,1 --Rabid Thistle Bear (20)
     .mob Rabid Thistle Bear
 step
@@ -5045,48 +5045,48 @@ step
     .use 12350
 step
     #completewith RedC
-    >>Mate os |cRXP_ENEMY_Foreststriders|r. Saqueie-os para obter |cRXP_LOOT_Strider Carne|r
+    >>Abate os |cRXP_ENEMY_Foreststriders|r. Saqueie-os para obter |cRXP_LOOT_Strider Carne|r
     .collect 5469,5,2178,1 --Strider Meat (5)
     .mob Foreststrider
 step
     #completewith RedC
-    >>Abate os |cRXP_ENEMY_Espreitaluna Nanico|r e os |cRXP_ENEMY_Espreitalunas|r. Saque-os pelos seus |cRXP_LOOT_Espreitaluna Presas|r
+    >>Abate os |cRXP_ENEMY_Moonstalker Nanico|r e os |cRXP_ENEMY_Moonstalkers|r. Saque-os para obter suas |cRXP_LOOT_Moonstalker Presas|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker Runt
     .mob Moonstalker
 step
     #label RedC
-    .goto Darkshore,47.11,48.63,400 >>Viaje em direção a |cRXP_PICK_The Vermelho Cristal|r
+    .goto Darkshore,47.11,48.63,400 >>Vá para o |cRXP_PICK_The Vermelho Cristal|r
     .isOnQuest 4811
 step
     #completewith Bash
-    >>Mate os |cRXP_ENEMY_Foreststrider Fledglings|r. Saqueie-os por sua |cRXP_LOOT_Strider Carne|r
+    >>Abate os |cRXP_ENEMY_Foreststrider Fledglings|r. Saque-os para obter sua |cRXP_LOOT_Strider Carne|r
     .collect 5469,5,2178,1 --Strider Meat (5)
     .mob Foreststrider Fledgling
 step
     #completewith Bash
-    >>Mate os |cRXP_ENEMY_Moonstalker Nanico|r. Saqueie-os para obter |cRXP_LOOT_Moonstalker Presas|r
+    >>Abate os |cRXP_ENEMY_Moonstalker Nanico|r. Saque-os para obter suas |cRXP_LOOT_Moonstalker Presas|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker Runt
 step
     .goto Darkshore,47.11,48.63
-    >>Corra para |cRXP_PICK_The Vermelho Cristal|r
-    >>|cRXP_WARN_Lembre-se de puxar os |cRXP_ENEMY_Raging Moonkins|r que estão presos juntos|r
+    >>Corra até o |cRXP_PICK_The Vermelho Cristal|r
+    >>|cRXP_WARN_Lembre-se de puxar os |cRXP_ENEMY_Raging Moonkins|r que estão ligados entre si|r
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range (1)
 step
     #label Bash
-    .goto Darkshore,42.37,61.82,175 >>Viaje em direção a |cRXP_PICK_Ancient Chamas|r
+    .goto Darkshore,42.37,61.82,175 >>Vá para o |cRXP_PICK_Ancient Chamas|r
     .isOnQuest 957
 step
     #completewith next
     .goto Darkshore,42.45,60.66,0
-    >>Mate |cRXP_ENEMY_Anaya Correalba|r. Saque-a para obter |cRXP_LOOT_Anaya's Pendant|r
+    >>Abate |cRXP_ENEMY_Anaya Correalba|r. Saque-a para o |cRXP_LOOT_Anaya's Pendant|r
     .complete 963,1 --Anaya's Pendant (1)
     .unitscan Anaya Dawnrunner
 step
     .goto Darkshore,42.37,61.82
     >>Clique na |cRXP_PICK_Chama Antiga|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 957,1 --Destroy the seal at the ancient flame (1)
 step
     .goto Darkshore,42.45,60.66,50,0
@@ -5097,28 +5097,28 @@ step
     .goto Darkshore,42.53,59.00,50,0
     .goto Darkshore,42.45,60.66,50,0
     .goto Darkshore,43.25,62.41
-    >>Abate o |cRXP_ENEMY_Anaya Correalba|r. Saque-a pelo |cRXP_LOOT_Pingente de Anaya|r
+    >>Abate |cRXP_ENEMY_Anaya Correalba|r. Saque-a para o |cRXP_LOOT_Anaya's Pendant|r
     .complete 963,1 --Anaya's Pendant (1)
     .unitscan Anaya Dawnrunner
 step
     #completewith RBears
-    >>Mate os |cRXP_ENEMY_Foreststrider Fledglings|r. Saqueie-os por sua |cRXP_LOOT_Strider Carne|r
+    >>Abate os |cRXP_ENEMY_Foreststrider Fledglings|r. Saque-os para obter sua |cRXP_LOOT_Strider Carne|r
     .collect 5469,5,2178,1 --Strider Meat (5)
     .mob Foreststrider Fledgling
 step
     #completewith RBears
-    >>Abate os |cRXP_ENEMY_Espreitaluna Nanico|r e os |cRXP_ENEMY_Espreitalunas|r. Saque-os pelos seus |cRXP_LOOT_Espreitaluna Presas|r
+    >>Abate os |cRXP_ENEMY_Moonstalker Nanico|r e os |cRXP_ENEMY_Moonstalkers|r. Saque-os para obter suas |cRXP_LOOT_Moonstalker Presas|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker Runt
     .mob Moonstalker
 step
     #completewith next
-    +Guarde os |T133884:0|t[Murloc Olhos] que você saqueia dos |cRXP_ENEMY_Greymist Coastrunners|r e |cRXP_ENEMY_Greymist Seers|r
+    +Salve os |T133884:0|t[Murloc Olhos] que você obtém dos |cRXP_ENEMY_Greymist Coastrunners|r e |cRXP_ENEMY_Greymist Seers|r
 step
     #label BeachedST
     .goto Darkshore,37.10,62.17
     >>Clique na |cRXP_PICK_Tartaruga Marinha Encalhada|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .accept 4722 >>Aceite Tartaruga Marinha Encalhada
 step
 #loop
@@ -5133,7 +5133,7 @@ step
 	.goto Darkshore,38.50,63.73,45,0
 	.goto Darkshore,38.74,58.10,45,0
     >>Mate |cRXP_ENEMY_Ursocardos Raivosos|r
-    >>|cRXP_WARN_Tenha cuidado pois eles lançam|r |T135914:0|t[Hidrofobia] |cRXP_WARN_(Instantâneo Corpo a Corpo: Reduz toda regeneração de vida em 50% por 10 Minutos)|r
+    >>|cRXP_WARN_Cuidado pois eles lançam |T135914:0|t[Hidrofobia] (Instantâneo Corpo a Corpo: Reduz TODA regeneração de saúde em 50% por 10 minutos)|r
     .complete 2138,1 --Rabid Thistle Bear (20)
     .mob Rabid Thistle Bear
 step
@@ -5148,14 +5148,14 @@ step
 	.goto Darkshore,39.21,53.01,50,0
 	.goto Darkshore,39.90,54.38,50,0
     >>Mate |cRXP_ENEMY_Desbravador Bosquenero|r e |cRXP_ENEMY_Xamã Bosquenero|r
-    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Blackwood Desbravadores|r lançam|r |T132152:0|t[Surra] |cRXP_WARN_(Aplica 2 ataques extras a cada 10 segundos), e |cRXP_ENEMY_Blackwood Windtalkers|r lançam|r |T136022:0|t[Rajada de Vento] |cRXP_WARN_(atordoamento corpo-a-corpo em aoe)|r
+    >>|cRXP_WARN_Cuidado enquanto |cRXP_ENEMY_Blackwood Desbravadores|r lançam|r |T132152:0|t[Surra]|cRXP_WARN_ (Cargas: 2 ataques extras a cada 10 segundos), e |cRXP_ENEMY_Blackwood Windtalkers|r lançam|r |T136022:0|t[Rajada de Vento]|cRXP_WARN_ (atordoamento aoe corpo a corpo)|r
     .complete 985,1 --Blackwood Pathfinder (8)
     .mob +Blackwood Pathfinder
     .complete 985,2 --Blackwood Windtalker (5)
     .mob +Blackwood Windtalker
 step
     #completewith Auberdine
-    >>Mate os |cRXP_ENEMY_Espreitaluna Nanico|r. Saqueie-os para obter seus |cRXP_LOOT_Espreitaluna Presas|r
+    >>Mate os |cRXP_ENEMY_Moonstalker Nanico|r. Saqueie-os para obter suas |cRXP_LOOT_Moonstalker Presas|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker Runt
 step
@@ -5170,7 +5170,7 @@ step
 	.goto Darkshore,41.67,49.47,50,0
 	.goto Darkshore,41.45,50.84,50,0
 	.goto Darkshore,38.63,51.25,50,0
-    >>Mate os |cRXP_ENEMY_Foreststrider Fledglings|r. Saqueie-os por sua |cRXP_LOOT_Strider Carne|r
+    >>Abate os |cRXP_ENEMY_Foreststrider Fledglings|r. Saque-os para obter sua |cRXP_LOOT_Strider Carne|r
     .collect 5469,5,2178,1 --Strider Meat (5)
     .mob Foreststrider Fledgling
 step
@@ -5190,7 +5190,7 @@ step
     .goto Darkshore,36.77,44.28
     >>Fale com |cRXP_FRIENDLY_Laird|r
     >>|cRXP_BUY_Compre até 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_dele|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .collect 4592,20,4763,1 --Longjaw Mud Snapper (40)
     .target Laird
     .isOnQuest 982
@@ -5202,7 +5202,7 @@ step
     .target Cerellean Whiteclaw
 step
     #completewith CliffRi
-    +Equipe a |T134797:0|t[Lágrima de Luto]
+    +Equipe o |T134797:0|t[Lágrima de Luto]
     .use 5611
     .itemcount 5611,1
     .itemStat 17,LEVEL,<16
@@ -5222,7 +5222,7 @@ step
     .money <0.1000
 step
     .goto Darkshore,36.77,44.28
-    >>Converse com |cRXP_FRIENDLY_Allyndia|r
+    >>Fale com |cRXP_FRIENDLY_Allyndia|r
     >>|cRXP_BUY_Compre 5|r |T132796:0|t[Melão Suco] |cRXP_BUY_dela|r
     .collect 1205,5,4763,1 --Melon Juice (5)
     .target Allyndia
@@ -5240,14 +5240,14 @@ step
 step
     .goto Darkshore,37.45,40.50
     >>Fale com |cRXP_FRIENDLY_Dalmond|r
-    .vendor 4182 >>|cRXP_BUY_Compre o máximo de|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_que precisar/conseguir|r
+    .vendor 4182 >>|cRXP_BUY_Compre o máximo|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_que você precisa/consegue|r
     .target Dalmond
     .money <0.0500
     .money >0.2500
 step
     .goto Darkshore,37.45,40.50
     >>Fale com |cRXP_FRIENDLY_Dalmond|r
-    .vendor 4182 >>|cRXP_BUY_Compre uma|r |T133634:0|t[Brown Couro Satchel] |cRXP_BUY_com ele|r
+    .vendor 4182 >>|cRXP_BUY_Compre um|r |T133634:0|t[Bolsa de Couro Marrom] |cRXP_BUY_dele|r
     .target Dalmond
     .money <0.2500
 step
@@ -5255,7 +5255,7 @@ step
     .goto Darkshore,37.39,40.13
     >>Fale com |cRXP_FRIENDLY_Thundris|r
     .turnin 4762 >>Entregue Rio Fontescarpa
-    .accept 4763 >>Aceite Os Corrompidos Bosquenero
+    .accept 4763 >>Aceite A Corrupção de Bosque Negro
     .target Thundris Windweaver
 step
     .goto Darkshore,37.69,40.66
@@ -5267,7 +5267,7 @@ step
     #label DeepO
     .goto Darkshore,38.11,41.16
     >>Fale com |cRXP_FRIENDLY_Gorbold|r
-    .turnin 982,2 >>Vá para o Oceano Profundo, no Mar Vasto
+    .turnin 982,2 >>Entregue Oceano Profundo, Vasto Mar
     .target Gorbold Steelhand
 step
     #completewith next
@@ -5282,104 +5282,104 @@ step
     .target Sentinel Glynda Nal'Shea
 step
     .goto Darkshore,37.81,43.89
-    >>Usar a |T133748:0|t[Vazio Purificação Tigela] e a |T134865:0|t[Vazio Água Tube] no Moonwell
+    >>Usar |T133748:0|t[Vazio Purificação Tigela] e |T134865:0|t[Vazio Água Tube] no Poço da Lua
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
     .collect 14339,1,4812,1 --Moonwell Water Tube (1)
     .use 12346
     .use 14338
 step
-    >>Converse com |cRXP_FRIENDLY_Tharnariun|r, |cRXP_FRIENDLY_Terenthis|r, e depois |cRXP_FRIENDLY_Elissa|r acima
+    >>Fale com |cRXP_FRIENDLY_Tharnariun|r, |cRXP_FRIENDLY_Terenthis|r, e depois |cRXP_FRIENDLY_Elissa|r acima
     .turnin 2138 >>Entregue Purificação dos infectados
-    .accept 2139 >>Aceite Esperança de Tharnariun
+    .accept 2139 >>Aceite A Esperança de Tharnariun
     .target +Tharnariun Treetender
     .goto Darkshore,38.84,43.42
     .turnin 985 >>Entregue Uma grande ameaça?
     .accept 986 >>Aceite Um Mestre Perdido
     .target +Terenthis
     .goto Darkshore,39.37,43.49
-    .accept 965 >>Aceite A Torre de Althalaxx
+    .accept 965 >>Aceite The Torre of Althalaxx
     .goto Darkshore,39.27,43.13,8,0
     .goto Darkshore,39.04,43.55
     .target +Sentinel Elissa Starbreeze
 step << Gnome
     #completewith next
-    +Equipe o |T132491:0|t[Cinto do Homem Sábio]
+    +Equipe |T132491:0|t[Cinto do Homem Sábio]
     .use 4786
     .itemcount 4786,1
     .itemStat 6,LEVEL,<20
 step
     .goto Darkshore,47.32,48.70
-    >>Clique |cRXP_PICK_O Cristal Vermelho|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
-    >>|cRXP_WARN_Lembrar de puxar o |cRXP_ENEMY_Enraivecedora Moonkins|r que estão amarrados juntos|r
+    >>Clique em |cRXP_PICK_The Vermelho Cristal|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>|cRXP_WARN_Lembre-se de puxar os |cRXP_ENEMY_Raging Moonkins|r que estão ligados entre si|r
     .turnin 4812 >>Entregue Como cascatas
     .accept 4813 >>Aceite Fragmentos incrustados
 step
     #completewith GrainSample
-    >>Abate os |cRXP_ENEMY_Moonstalker Nanico|r e os |cRXP_ENEMY_Moonstalkers|r. Saqueie-os por seus |cRXP_LOOT_Moonstalker Presas|r
+    >>Abate os |cRXP_ENEMY_Moonstalker Nanico|r e os |cRXP_ENEMY_Moonstalkers|r. Saque-os para obter suas |cRXP_LOOT_Moonstalker Presas|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker Runt
     .mob Moonstalker
 step
     .goto Darkshore,44.18,36.29
-    >>Fale com o |cRXP_FRIENDLY_Astérion|r
+    >>Fale com |cRXP_FRIENDLY_Astérion|r
     .turnin 957,3 >>Entregue Bashal'Aran
     .target Asterion
 step
     #label GrainSample
     .goto Darkshore,50.66,34.98
-    >>Abra o |cRXP_PICK_Blackwood Grão Stores|r. Saqueie-o para obter o |cRXP_LOOT_Amostra de Grão Bosquenero|r
-    >>|cRXP_WARN_Puxe os mobs que o protegem, use|r |T135848:0|t[Novane Congelante]|cRXP_WARN_, saqueie o |cRXP_LOOT_Amostra de Grão Bosquenero|r, depois corra em direção à |cRXP_ENEMY_Matriarca do Covil|r, escapando dos mobs que aparecerem|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Abra |cRXP_PICK_Blackwood Grão Stores|r. Saque a |cRXP_LOOT_Amostra de Grão Bosquenero|r
+    >>|cRXP_WARN_Agro os inimigos que o protegem, lance|r |T135848:0|t[Novane Congelante]|cRXP_WARN_, saque a |cRXP_LOOT_Amostra de Grão Bosquenero|r, depois corra em direção à |cRXP_ENEMY_Matriarca do Covil|r para longe dos inimigos que aparecem|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .collect 12342,1,4673,1 --Blackwood Grain Sample (1)
 step
     #completewith next
-    >>Abate os |cRXP_ENEMY_Moonstalkers|r. Saque-os por seus |cRXP_LOOT_Espreitaluna Presas|r
+    >>Abate os |cRXP_ENEMY_Moonstalkers|r. Saqueie-os para obter |cRXP_LOOT_Moonstalker Presas|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker
 step
     #completewith DenM
     .goto Darkshore,52.33,35.94,20,0
     .goto Darkshore,52.39,36.85,20,0
-    .goto Darkshore,51.58,37.52,30 >>Vá para a |cRXP_ENEMY_Matriarca do Covil|r
+    .goto Darkshore,51.58,37.52,30 >>Vá para |cRXP_ENEMY_Matriarca do Covil|r
 step
     .goto Darkshore,51.51,38.22
     >>Mate a |cRXP_ENEMY_Matriarca do Covil|r
-    >>|cRXP_WARN_Tenha cuidado pois a |cRXP_ENEMY_Matriarca do Covil|r e seus |cRXP_ENEMY_Thistle Cubs|r lançam|r |T132141:0|t[Assolar] |cRXP_WARN_(atordoamento de 2 segundos)|r
+    >>|cRXP_WARN_Cuidado quando a |cRXP_ENEMY_Matriarca do Covil|r e seus |cRXP_ENEMY_Filhotes Espinhosos|r lançarem|r |T132141:0|t[Assolar] |cRXP_WARN_(atordoamento de 2 segundos)|r
     .complete 2139,1 --Den Mother (1)
     .mob Den Mother
     .itemcount 4358,<1
 step
     #label DenM
     .goto Darkshore,51.51,38.22
-    >>Abate a |cRXP_ENEMY_Matriarca do Covil|r
-    >>|cRXP_WARN_Tenha cuidado pois a |cRXP_ENEMY_Matriarca do Covil|r e seus |cRXP_ENEMY_Thistle Cubs|r lançam|r |T132141:0|t[Assolar] |cRXP_WARN_(2 second stun)|r
-    >>|cRXP_WARN_Puxe separando a |cRXP_ENEMY_Matriarca do Covil|r com sua|r |T133714:0|t[Dinamite Grosseira]
+    >>Mate a |cRXP_ENEMY_Matriarca do Covil|r
+    >>|cRXP_WARN_Cuidado quando a |cRXP_ENEMY_Matriarca do Covil|r e seus |cRXP_ENEMY_Filhotes Espinhosos|r lançarem|r |T132141:0|t[Assolar] |cRXP_WARN_(atordoamento de 2 segundos)|r
+    >>|cRXP_WARN_Divida e Puxe |cRXP_ENEMY_Matriarca do Covil|r com sua|r |T133714:0|t[Dinamite Grosseira]
     .complete 2139,1 --Den Mother (1)
     .mob Den Mother
     .itemcount 4358,1
 step
     #completewith Talisman
-    >>Mate os |cRXP_ENEMY_Moonstalkers|r. Saqueie-os para obter seus |cRXP_LOOT_Espreitaluna Presas|r
+    >>Abate os |cRXP_ENEMY_Moonstalkers|r. Saqueie-os para obter |cRXP_LOOT_Moonstalker Presas|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker
 step
     .goto Darkshore,51.80,33.51
-    >>Abra o |cRXP_PICK_Blackwood Nut Stores|r. Saqueie-o para obter o |cRXP_LOOT_Amostra de Castanha Bosquenero|r :3
-    >>|cRXP_WARN_Puxe os mobs que o protegem, use|r |T135848:0|t[Novane Congelante]|cRXP_WARN_, saqueie o |cRXP_LOOT_Amostra de Castanha Bosquenero|r, depois corra para o norte|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Abra |cRXP_PICK_Blackwood Nut Stores|r. Saque a |cRXP_LOOT_Amostra de Castanha Bosquenero|r :3
+    >>|cRXP_WARN_Agro os inimigos que o protegem, lance|r |T135848:0|t[Novane Congelante]|cRXP_WARN_, saque a |cRXP_LOOT_Amostra de Castanha Bosquenero|r, depois corra para o norte|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .collect 12343,1,4673,1 --Blackwood Nut Sample (1)
 step
     .goto Darkshore,52.85,33.42
-    >>Abra o |cRXP_PICK_Blackwood Fruit Stores|r. Saqueie-o para obter o |cRXP_LOOT_Amostra de Fruta Bosquenero|r
+    >>Abra |cRXP_PICK_Blackwood Fruit Stores|r. Saque a |cRXP_LOOT_Amostra de Fruta Bosquenero|r
     >>Mate os |cRXP_ENEMY_Blackwood Warriors|r que atacam
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .collect 12341,1,4673,1 --Blackwood Fruit Sample (1)
 step
     #completewith next
     .goto Darkshore,52.51,33.11
-    .cast 16072 >>Usar o |T134712:0|t[Cheio Purificação Tigela] perto da fogueira para evocar |cRXP_ENEMY_Zabraxxis|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    .cast 16072 >>Usar |T134712:0|t[Cheio Purificação Tigela] perto da fogueira para invocar |cRXP_ENEMY_Zabraxxis|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .timer 20,O RP Corrompido Bosquenero
     .use 12347
 step
@@ -5387,14 +5387,14 @@ step
     .goto Darkshore,52.24,33.08
     >>|cRXP_WARN_Espere a sequência de RP terminar|r
     >>Mate |cRXP_ENEMY_Zabraxxis|r
-    >>Saqueie a |cRXP_PICK_Bolsa de Demônio de Zabraxxis|r que cai no chão. Saqueie-o para obter o |cRXP_LOOT_Talismã da Corrupção|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Saque |cRXP_PICK_Saco de Demônio de Zabraxxis|r que cai no chão. Saque dele o |cRXP_LOOT_Talisman of Corrupção|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 4763,1 --Talisman of Corruption (1)
     .mob Xabraxxis
 step
     .goto Darkshore,51.29,24.53
-    >>Clique |cRXP_PICK_Buzzbox 323|r
-    .turnin 1002 >>Entregue no NO TRANSLATION FOUND TO THIS ELEMENT
+    >>Clique em |cRXP_PICK_Buzzbox 323|r
+    .turnin 1002 >>Entregue NO TRANSLATION FOUND TO THIS ELEMENT
     .accept 1003 >>Aceite Buzzbox 525
     .isQuestComplete 1002
 step
@@ -5410,13 +5410,13 @@ step
     .goto Darkshore,52.54,25.47,60,0
     .goto Darkshore,55.21,22.89,60,0
     .goto Darkshore,54.65,21.03,60,0
-    >>Mate os |cRXP_ENEMY_Moonstalkers|r. Saqueie-os pelas |cRXP_LOOT_Moonstalker Presas|r
+    >>Abate os |cRXP_ENEMY_Moonstalkers|r. Saqueie-os para obter |cRXP_LOOT_Moonstalker Presas|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker
 step
     .goto Darkshore,53.11,18.10
-    >>Saqueie o |cRXP_LOOT_Beached Tartaruga Marinha|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Saque a |cRXP_LOOT_Tartaruga Marinha Encalhada|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .accept 4727 >>Aceite Tartaruga Marinha Encalhada
 step
     .goto Darkshore,53.74,31.52,60,0
@@ -5431,19 +5431,19 @@ step
     .goto Darkshore,52.54,25.47,60,0
     .goto Darkshore,55.21,22.89,60,0
     .goto Darkshore,54.65,21.03
-    >>Mate os |cRXP_ENEMY_Moonstalkers|r. Saqueie-os pelas |cRXP_LOOT_Moonstalker Presas|r
+    >>Abate os |cRXP_ENEMY_Moonstalkers|r. Saqueie-os para obter |cRXP_LOOT_Moonstalker Presas|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker
 step
     .goto Darkshore,51.29,24.53
-    >>Clique |cRXP_PICK_Buzzbox 323|r
-    .turnin 1002 >>Entregue no NO TRANSLATION FOUND TO THIS ELEMENT
+    >>Clique em |cRXP_PICK_Buzzbox 323|r
+    .turnin 1002 >>Entregue NO TRANSLATION FOUND TO THIS ELEMENT
     .accept 1003 >>Aceite Buzzbox 525
 step
     .goto Darkshore,54.97,24.89
     >>Fale com |cRXP_FRIENDLY_Balthule|r
     .turnin 965 >>Entregue A Torre de Althalaxx
-    .accept 966 >>Aceite A Torre de Althalaxx
+    .accept 966 >>Aceite The Torre of Althalaxx
     .target Balthule Shadowstrike
 step
     .goto Darkshore,55.36,26.49,50,0
@@ -5451,14 +5451,14 @@ step
     .goto Darkshore,58.27,25.30,50,0
     .goto Darkshore,55.36,26.49,50,0
     .goto Darkshore,56.36,27.01
-    >>Mate os |cRXP_ENEMY_Dark Strand Fanatics|r. Saqueie-os para obter |cRXP_LOOT_Worn Parchments|r
+    >>Mate |cRXP_ENEMY_Dark Strand Fanatics|r. Saque deles |cRXP_LOOT_Worn Parchments|r
     .complete 966,1 --Worn Parchment (4)
     .mob Dark Strand Fanatic
 step
     .goto Darkshore,54.97,24.89
     >>Fale com |cRXP_FRIENDLY_Balthule|r
     .turnin 966 >>Entregue A Torre de Althalaxx
-    .accept 967 >>Aceite A Torre de Althalaxx
+    .accept 967 >>Aceite The Torre of Althalaxx
     .target Balthule Shadowstrike
 step
     #label CapCave
@@ -5467,23 +5467,23 @@ step
 step << skip
     #requires CapCave
     #completewith CapCave1
-    +|cRXP_WARN_Remember the Cave Logout Pular soon|r
+    +|cRXP_WARN_Lembre-se de Pular a Caverna em breve|r
 step
     #completewith next
     .goto Darkshore,55.04,33.34,8,0
     .goto Darkshore,55.28,34.00,8,0
     .goto Darkshore,55.09,34.67,8,0
     .goto Darkshore,55.30,35.58,8,0
-    >>Saqueie |cRXP_LOOT_os Scaber Stalks azuis|r no chão
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Saque os azuis |cRXP_LOOT_Scaber Stalks|r no chão
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 947,1,4 --Scaber Stalk (5)
 step
     .goto Darkshore,55.45,36.23,12,0
     .goto Darkshore,55.70,36.30,12,0
     .goto Darkshore,55.89,35.40,12,0
-    >>Permaneça no nível superior da caverna. Desça se não houver |cRXP_LOOT_Morte Cap|r no nível superior
-    >>Saqueie |cRXP_LOOT_o Morte Cap laranja|r no chão ao final do caminho superior da caverna
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Fique no nível superior da caverna. Desça se não houver |cRXP_LOOT_Death Cap|r no nível superior
+    >>Saque a laranja |cRXP_LOOT_Death Cap|r no chão, no final do caminho superior da caverna
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 947,2 --Death Cap (1)
 step
     #label CapCave1
@@ -5491,12 +5491,12 @@ step
     .goto Darkshore,55.28,34.00,8,0
     .goto Darkshore,55.09,34.67,8,0
     .goto Darkshore,55.30,35.58
-    >>Saqueie os primeiros |cRXP_LOOT_Scaber Stalks|r na boca da caverna após saquear |cRXP_LOOT_Morte Cap|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Saque a primeira |cRXP_LOOT_Scaber Stalks|r na entrada da caverna depois de saquear a |cRXP_LOOT_Death Cap|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 947,1 --Scaber Stalk (5)
 step << skip
     .goto Darkshore,54.96,34.52
-    .goto Darkshore,41.70,36.51,30 >>|cRXP_WARN_Perform a Logout Pular inside the cave|r
+    .goto Darkshore,41.70,36.51,30 >>|cRXP_WARN_Faça um Logout Pular dentro da caverna|r
     .isOnQuest 4763
 step
     #completewith next
@@ -5505,21 +5505,21 @@ step
 step
     .goto Darkshore,37.39,40.13
     >>Fale com |cRXP_FRIENDLY_Thundris|r
-    .turnin 4763,1 >>Entregue Os Corrompidos Blackwood
+    .turnin 4763,1 >>Entregue O Bosque Negro Corrompido
     .target Thundris Windweaver
 step
     .goto Darkshore,37.45,40.50
     >>Fale com |cRXP_FRIENDLY_Dalmond|r
-    .vendor 4182 >>|cRXP_BUY_Compre um|r |T133634:0|t[Brown Couro Satchel] |cRXP_BUY_dele|r
-    >>|cRXP_WARN_Não vá abaixo de 30 Prateado|r
+    .vendor 4182 >>|cRXP_BUY_Compre um|r |T133634:0|t[Bolsa de Couro Marrom] |cRXP_BUY_dele|r
+    >>|cRXP_WARN_NÃO desça de 30 Pratas|r
     .target Dalmond
 step
     .goto Darkshore,38.84,43.42
-    >>Fale com |cRXP_FRIENDLY_Tharnariun|r
+    >>Converse com |cRXP_FRIENDLY_Tharnariun|r
     .turnin 2139,1 >>Entregue A Esperança de Tharnariun
     .target Tharnariun Treetender
 step
-    >>Fale com |cRXP_FRIENDLY_Glynda|r, |cRXP_FRIENDLY_Barithras|r, e o |cRXP_PICK_Wanted Poster|r
+    >>Fale com |cRXP_FRIENDLY_Glynda|r, |cRXP_FRIENDLY_Barithras|r, e |cRXP_PICK_Cartaz de Procurado|r
     .turnin 4813,2 >>Entregue Fragmentos incrustados
     .target +Sentinel Glynda Nal'Shea
     .goto Darkshore,37.68,43.38
@@ -5527,7 +5527,7 @@ step
     .accept 948 >>Aceite Onu
     .target +Barithras Moonshade
     .goto Darkshore,37.32,43.64
-    .accept 4740 >>Aceite Procurado: Lodofundo!
+    .accept 4740 >>Aceite WANTED: Lodofundo!
     .goto Darkshore,37.22,44.22
 step
     .goto Darkshore,36.77,44.28
@@ -5542,10 +5542,10 @@ step
     .target Gwennyth Bly'Leggonde
 step
     .goto Darkshore,37.04,44.13
-    >>|cRXP_WARN_===ATENÇÃO===|r
-    >>|cRXP_WARN_Converse com|r |cRXP_FRIENDLY_Shaussiy|r
-    >>|cRXP_WARN_Abrir a menu "Set Pedra de Regresso", depois lance|r |T134414:0|t[Pedra de Regresso]
-    .hs >>|cRXP_WARN_Hearthstone BATCH from Auberdine to Objetos de TBC City|r
+    >>|cRXP_WARN_===PRESTE ATENÇÃO===|r
+    >>|cRXP_WARN_Fale com|r |cRXP_FRIENDLY_Shaussiy|r
+    >>|cRXP_WARN_Abra o menu "Definir Pedra de Regresso", depois lance|r |T134414:0|t[Pedra de Regresso]
+    .hs >>|cRXP_WARN_Pedra de Retorno BATCH de Auberdine para Cidade de Ventobravo|r
     .target Innkeeper Shaussiy
     .zoneskip Stormwind City
 ]])
@@ -5554,22 +5554,22 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Alliance Mage
-#name 16-18 Avançado Cerro Oeste Mago AdE
+#name 16-18 ADV Cerro Oeste Mago AdE
 #version 2
-#group ADV AdE Maga da Aliança
+#group RestedXP ADV AdE Maga da Aliança
 #defaultfor Human Mage/Gnome Mage
 #next 18-20 ADV Costa Negra 3 Mago AdE
 
 step
     #completewith JenneaT
-    +|cRXP_WARN_NOTA: Você precisa de 12 pilhas de cada tecido (|r|T132911:0|t[Lã]|cRXP_WARN_,|r |T132905:0|t[Seda]|cRXP_WARN_,|r |T132892:0|t[Magitrama]|cRXP_WARN_,|r e |T132903:0|t[Runatrama]|cRXP_WARN_) para efetuar as entregas de tecido depois. Você obterá estes naturalmente ao subir de nível|r
+    +|cRXP_WARN_NOTA: Você precisa de 12 pilhas de cada pano (|r|T132911:0|t[Lã]|cRXP_WARN_,|r |T132905:0|t[Seda]|cRXP_WARN_,|r |T132892:0|t[Magitrama]|cRXP_WARN_,|r e |T132903:0|t[Runatrama]|cRXP_WARN_) para fazer as entregas de pano depois. Você obterá estes naturalmente conforme sobe de nível|r
 step << skip
     #completewith next
     .goto Stormwind City,53.53,64.63,12,0
     .goto Stormwind City,52.10,61.42,12,0
     .goto Stormwind City,49.36,63.42,12,0
     .goto Stormwind City,51.16,68.35,12,0
-    .goto Stormwind City,52.05,67.96,10 >>Viaje para |cRXP_FRIENDLY_Roberto|r
+    .goto Stormwind City,52.05,67.96,10 >>Voe para |cRXP_FRIENDLY_Roberto|r
 step << skip
     .goto Stormwind City,52.05,67.96
     >>Entre no prédio
@@ -5592,8 +5592,8 @@ step
     >>Fale com |cRXP_FRIENDLY_Newton|r
     .bankwithdraw 730,7207 >>Retire os seguintes itens do seu banco: << Gnome
     .bankwithdraw 730,16115 >>Retire os seguintes itens do seu banco: << Human
-    >>|T133884:0|t[Murloc Olhos]
-    >>|T132788:0|t[Jennea's Frasco] << Gnome
+    >>|T133884:0|t[Olhos Murloc]
+    >>|T132788:0|t[Frasco de Jennea] << Gnome
     >>|T132763:0|t[Caixote de Osric] << Human
     .target Newton Burnside
 step
@@ -5603,10 +5603,10 @@ step
     .goto Stormwind City,51.83,60.41,4,0
     .goto Stormwind City,51.59,60.15,6,0
     .goto Stormwind City,39.17,76.58,12,0
-    >>|cRXP_WARN_Suba na tocha, depois desça para ficar embaixo de Ventobravo|r
-    >>|cRXP_WARN_Com Sombras em "Justo" ou "Baixo", entre no meio dos pés de Derek the Dinosaur (a parte mais clara da terra) bem antes do vazio azul, depois caminhe reto para frente|r
-    >>|cRXP_WARN_Nota: há uma pequena chance de morte ao usar este método. Você também pode caminhar até a Torre do Mago normalmente se preferir|r
-    .link https://youtu.be/gV8-wgQEomc >>https://youtu.be/gV8-wgQEomc >> CLIQUE AQUI para o guia
+    >>|cRXP_WARN_Pule para cima da tocha, depois caia para ficar sob Ventobravo|r
+    >>|cRXP_WARN_Com Sombras em "Fair" ou "Low", fique no meio dos pés de Derek the Dinosaur (a parte mais clara da terra) bem antes do vazio azul, depois caminhe em linha reta para frente|r
+    >>|cRXP_WARN_NOTA: Há uma pequena chance de morrer usando este método. Você também pode caminhar normalmente para a Mago Torre se desejar|r
+    .link https://youtu.be/gV8-wgQEomc >>https://youtu.be/gV8-wgQEomc >> CLIQUE AQUI para um guia
     .goto Stormwind City,38.61,79.39,10 >>Viaje para |cRXP_FRIENDLY_Jennea|r
 step
     #requires Bank2
@@ -5618,17 +5618,17 @@ step
     .target Jennea Cannon
 step
     .goto Stormwind City,55.46,65.26
-    >>Fale com |cRXP_FRIENDLY_Keldric|r através da parede
+    >>Fale com |cRXP_FRIENDLY_Keldric|r pela parede
     .vendor 1257 >>|cRXP_BUY_Compre|r |T134830:0|t[Lesser Cura Potions] |cRXP_BUY_dele (se estiverem disponíveis)|r
     .target Orlande Bórgia
     .money <0.14
 step
     #completewith next
     .goto Stormwind City,56.69,57.76,12,0
-    .goto Stormwind City,57.13,57.69,10 >>Voe para |cRXP_FRIENDLY_Woo Enviar Enviar Ping|r
+    .goto Stormwind City,57.13,57.69,10 >>Vá para |cRXP_FRIENDLY_Woo Enviar Ping|r
 step
     .goto Stormwind City,57.13,57.69
-    >>Fale com |cRXP_FRIENDLY_Woo Enviar Enviar Ping|r
+    >>Fale com |cRXP_FRIENDLY_Woo Enviar Ping|r
     .train 1180 >>Treine |T132321:0|t[Adagas]
     .target Woo Ping
 step
@@ -5636,18 +5636,18 @@ step
     .goto Stormwind City,57.17,58.83,12,0
     .goto Stormwind City,63.42,63.75,20,0
     .goto Stormwind City,63.14,65.25,15,0
-    .goto Stormwind City,66.27,62.12,10 >>Voe para |cRXP_FRIENDLY_Dungar|r
+    .goto Stormwind City,66.27,62.12,10 >>Vá para |cRXP_FRIENDLY_Dungar|r
 step << Human
     .goto Stormwind City,66.27,62.12
     >>Fale com |cRXP_FRIENDLY_Dungar|r
     .turnin 6261 >>Entregue Dungar Tragolongo
-    .accept 6285 >>Aceite Devolver para Lewis
+    .accept 6285 >>Aceite Retornar a Lewis
     .target Dungar Longdrink
 step
     #completewith next << Human
     .goto Stormwind City,66.27,62.12
     >>Fale com |cRXP_FRIENDLY_Dungar|r
-    .fp Stormwind City >>Aprenda a rota de voo para Ventobravo << Gnome
+    .fp Stormwind City >>Aprenda a rota de voo para a Cidade de Ventobravo << Gnome
     .fly Westfall >>Voe para Cerro Oeste << Human
     .target Dungar Longdrink
     .zoneskip Westfall << Human
@@ -5656,62 +5656,62 @@ step << Gnome
     #label Stormwind1
     .goto Stormwind City,65.94,65.48,12,0
     .goto Stormwind City,65.85,66.00,8,0
-    .goto Stormwind City,65.22,75.58,40 >>Desça para a saliência abaixo de |cRXP_FRIENDLY_Dungar|r
+    .goto Stormwind City,65.22,75.58,40 >>Desça para o ressalto abaixo de |cRXP_FRIENDLY_Dungar|r
 step << Gnome
     #completewith next
     .goto Elwynn Forest,32.10,50.32,40 >>Saia de Ventobravo
 step << skip
     #completewith next
     #requires Stormwind1
-    .goto Elwynn Forest,42.96,65.62,30 >>Viaje para o Goldshire Estalagem
+    .goto Elwynn Forest,42.96,65.62,30 >>Vá para a Estalagem de Vila de Ouro do Sol
 step << skip
     #label GoldshireTrain
     .goto Elwynn Forest,43.25,66.25
-    >>Pule para o lustre no andar inferior se você não tiver a habilidade, senão pule de cima da Cadeira
+    >>Pule para o Lustre no andar de baixo se você não tiver a montaria, caso contrário pule para cima a partir da Cadeira
     >>Fale com |cRXP_FRIENDLY_Zaldimar|r através da parede
-    .accept 1919 >>Aceite Relatório a Jennea
+    .accept 1919 >>Aceite Relatório para Jennea
     .trainer >>Treine seus feitiços de classe (Golpe Flamejante)
     >>Custo Total: 15s
 step << skip
     .goto Elwynn Forest,44.00,65.69
     >>Fale com |cRXP_FRIENDLY_Dobbins|r
-    >>|cRXP_BUY_Compre um|r |T132794:0|t[Skin of Sweet Rum] |cRXP_BUY_dele|r
+    >>|cRXP_BUY_Compre um|r |T132794:0|t[Skin of Sweet Rum] |cRXP_BUY_do vendedor|r
     .collect 1939,1,116,1 --Skin of Sweet Rum
     .target Barkeep Dobbins
 step << skip
     .goto Elwynn Forest,43.77,65.80
     >>Fale com |cRXP_FRIENDLY_Farley|r
-    >>|cRXP_BUY_Compre 45|r |T132796:0|t[Melão Suco] |cRXP_BUY_dele|r
+    >>|cRXP_BUY_Compre 45|r |T132796:0|t[Melão Suco] |cRXP_BUY_do vendedor|r
     .collect 1205,45,64,1 --Melon Juice (45)
     .target Innkeeper Farley
     .money <0.45
 step << Gnome
     .goto Elwynn Forest,28.98,61.50
     >>Usar |T132788:0|t[Jennea's Frasco] na cachoeira
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .use 7207
     .complete 1861,1 --Mirror Lake Water Sample (1)
 step
     >>Fale com o |cRXP_FRIENDLY_Fazendeiro Taturana|r e |cRXP_FRIENDLY_Verna|r
     .accept 64 >>Aceite A Herança Esquecida
-    .accept 109 >>Aceite Entregar para Miguel Mantoforte
+    .accept 109 >>Aceite Reportar-se a Miguel Mantoforte
     .target +Farmer Furlbrow
     .goto Westfall,59.95,19.35
     .accept 36 >>Aceite Ensopado de Cerro Oeste
-    .accept 151 >>Aceite A Pobre Velhinha Brancurinha
+    .accept 151 >>Aceite Pobre Velha Brancurinha
     .goto Westfall,59.91,19.41
     .target +Verna Furlbrow
 step << Gnome
     #completewith Gryan
-    >>Abra o |cRXP_PICK_Sacks of Oats|r no chão. Saque-o para obter |cRXP_LOOT_Handfuls of Oats|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Abra os |cRXP_PICK_Sacos de Aveia|r no chão. Saque-os por |cRXP_LOOT_Handfuls of Oats|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 151,1 --Handful of Oats (8)
 step
     >>Fale com o |cRXP_FRIENDLY_Fazendeiro Saldanha|r e depois |cRXP_FRIENDLY_Salma|r dentro
     .accept 9 >>Aceite Os Campos da Morte
     .target +Farmer Saldean
     .goto Westfall,56.04,31.23
-    .turnin 36 >>Entregue Ensopado de Cerro Oeste
+    .turnin 36 >>Entregue Cozido de Costa Negra
     .accept 38 >>Aceite Ensopado de Cerro Oeste
     .accept 22 >>Aceite Empadão de Fígado de Goretusco
     .goto Westfall,56.42,30.52
@@ -5719,8 +5719,8 @@ step
 step << Gnome
     #completewith Gryan
     .goto Westfall,53.54,31.72,60,0
-    >>AdE os |cRXP_ENEMY_Harvest Watchers|r e os |cRXP_ENEMY_Harvest Golems|r. Saque-os para obter |cRXP_LOOT_Flasks of Oil|r e |cRXP_LOOT_Hops|r
-    >>|cRXP_WARN_Lembrar de|r |T135826:0|t[Golpe Flamejante]|cRXP_WARN_/|r|T136116:0|t[Explosão Arcana] |cRXP_WARN_AoE agora|r
+    >>Ataque em área os |cRXP_ENEMY_Harvest Watchers|r e os |cRXP_ENEMY_Harvest Golems|r. Saque-os para obter |cRXP_LOOT_Flasks of Oil|r e |cRXP_LOOT_Hops|r
+    >>|cRXP_WARN_Lembre-se de|r |T135826:0|t[Golpe Flamejante]|cRXP_WARN_/|r|T136116:0|t[Explosão Arcana] |cRXP_WARN_AoE agora|r
     .complete 9,1 --Harvest Watcher (20)
     .collect 814,5,103,1 --Flask of Oil (5)
     .collect 1274,5,117,1 --Hops (5)
@@ -5728,8 +5728,8 @@ step << Gnome
     .mob Harvest Golem
 step << Gnome
     #completewith next
-    >>AdE os |cRXP_ENEMY_Young Goretusks|r. Saque-os para obter |cRXP_LOOT_Goretusk Livers|r e |cRXP_LOOT_Goretusk Snouts|r
-    >>AdE |cRXP_ENEMY_Young Fleshrippers|r. Saque-os pelo |cRXP_LOOT_Stringy Vulture Carne|r
+    >>Ataque em área os |cRXP_ENEMY_Young Goretusks|r. Saqueie-os em busca de seus |cRXP_LOOT_Fígados de Goretusco|r e |cRXP_LOOT_Focinhos de Goretusco|r
+    >>Ataque em área os |cRXP_ENEMY_Young Fleshrippers|r. Saque-os para obter |cRXP_LOOT_Stringy Vulture Carne|r
     .collect 723,8,22,1 --Goretusk Liver (8)
     .mob +Young Goretusk
     .collect 731,3,38,1 --Goretusk Snout (3)
@@ -5738,14 +5738,14 @@ step << Gnome
     .mob +Young Fleshripper
 step
     #label Gryan << Gnome
-	>>Fale com |cRXP_FRIENDLY_Gryan|r e |cRXP_FRIENDLY_Danuvin|r << Gnome
-	>>Fale com |cRXP_FRIENDLY_Gryan|r e depois |cRXP_FRIENDLY_Lewis|r dentro << Human
-    .turnin 109 >>Entregue Relatório para Gryan Mantoforte << Gnome
+	>>Fale com |cRXP_FRIENDLY_Gryan|r e com |cRXP_FRIENDLY_Danuvin|r << Gnome
+	>>Fale com |cRXP_FRIENDLY_Gryan|r e depois com |cRXP_FRIENDLY_Lewis|r dentro << Human
+    .turnin 109 >>Entregue Miguel Mantoforte << Gnome
     .accept 65 >>Aceitar A Irmandade Défias
     .accept 12 >>Aceite A Milícia do Povo << Gnome
     .target +Gryan Stoutmantle
     .goto Westfall,56.33,47.52
-    .turnin 6285 >>Entregue para Lewis << Human
+    .turnin 6285 >>Entregue Volte para Lewis << Human
     .goto Westfall,57.002,47.169 << Human
     .accept 102 >>Aceite Patrulhando Cerro Oeste << Gnome
     .goto Westfall,56.42,47.62 << Gnome
@@ -5754,7 +5754,7 @@ step
 step
     .goto Westfall,53.98,52.99
 	>>Fale com |cRXP_FRIENDLY_Galiaan|r
-    .accept 153 >>Aceite Vermelho Couro Bandanas
+    .accept 153 >>Aceite Bandanas de Couro Vermelho
 	.target Scout Galiaan
 step
     .goto Westfall,52.86,53.72
@@ -5821,13 +5821,13 @@ step
     .money <0.05
 step
     #completewith Grayson
-    >>Abra os |cRXP_PICK_Saco de Aveia|r no chão. Saqueie-os para |cRXP_LOOT_Handfuls of Oats|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Abra os |cRXP_PICK_Sacos de Aveia|r no chão. Saque-os por |cRXP_LOOT_Handfuls of Oats|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 151,1 --Handful of Oats (8)
 step
     #completewith Oil
-    >>AdE os |cRXP_ENEMY_Goretusks|r. Saqueie seus |cRXP_LOOT_Goretusk Livers|r e |cRXP_LOOT_Goretusk Snouts|r
-    >>AdE os |cRXP_ENEMY_Fleshrippers|r. Saqueie seus |cRXP_LOOT_Stringy Vulture Carne|r
+    >>Ataque em área os |cRXP_ENEMY_Goretusks|r. Saque-os para obter |cRXP_LOOT_Goretusk Livers|r e |cRXP_LOOT_Goretusk Snouts|r
+    >>Ataque em área os |cRXP_ENEMY_Fleshrippers|r. Saque-os para obter |cRXP_LOOT_Stringy Vulture Carne|r
     .collect 723,8,22,1 --Goretusk Liver (8)
     .mob +Goretusk
     .collect 731,3,38,1 --Goretusk Snout (3)
@@ -5837,14 +5837,14 @@ step
 step
     #completewith Compass
     .goto Westfall,39.45,52.34,60,0
-    >>AdE os |cRXP_ENEMY_Harvest Watchers|r. Saqueie seus |cRXP_LOOT_Flasks of Oil|r e |cRXP_LOOT_Hops|r
+    >>Ataque em área os |cRXP_ENEMY_Harvest Watchers|r. Saque-os para obter |cRXP_LOOT_Flasks of Oil|r e |cRXP_LOOT_Hops|r
     .complete 9,1 --Harvest Watcher (20)
     .collect 814,5,103,1 --Flask of Oil (5)
     .collect 1274,5,117,1 --Hops (5)
     .mob Harvest Watcher
 step
     #completewith Oil
-    >>AdE os |cRXP_ENEMY_Defias|r. Saqueie seus |cRXP_LOOT_Red Couro Bandanas|r
+    >>Ataque em área os |cRXP_ENEMY_Defias|r. Saque-os para obter |cRXP_LOOT_Red Couro Bandanas|r
     .complete 153,1 --Red Leather Bandana (15)
     .mob Defias Smuggler
     .mob Defias Trapper
@@ -5853,8 +5853,8 @@ step
 step
     #label Compass
     .goto Westfall,36.24,54.52
-    >>Abra o |cRXP_PICK_Baú de Alexston|r. Saqueie-o pelo |cRXP_LOOT_A Simple Compass|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Abra o |cRXP_PICK_Alexston's Baú|r. Saqueie-o para obter o |cRXP_LOOT_A Simple Compass|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 399,1 --A Simple Compass (1)
 step
     #label Oil
@@ -5868,22 +5868,22 @@ step
     .goto Westfall,33.64,47.01,60,0
     .goto Westfall,32.96,36.48,60,0
     .goto Westfall,39.45,52.34
-    >>AdE os |cRXP_ENEMY_Harvest Watchers|r e os |cRXP_ENEMY_Harvest Golems|r. Saqueie seus |cRXP_LOOT_Flasks of Oil|r e |cRXP_LOOT_Hops|r
+    >>Ataque em área os |cRXP_ENEMY_Harvest Watchers|r e os |cRXP_ENEMY_Harvest Golems|r. Saque-os para obter |cRXP_LOOT_Flasks of Oil|r e |cRXP_LOOT_Hops|r
     .collect 814,5,103,1 --Flask of Oil (5)
     .collect 1274,5,117,1 --Hops (5)
     .mob Harvest Watcher
     .mob Harvest Golem
 step
     #completewith next
-    +|cRXP_WARN_Procure por |cRXP_ENEMY_Velho Olho-turvo|r. Tente ficar perto da borda do penhasco para não perdê-lo|r
+    +|cRXP_WARN_Procure por |cRXP_ENEMY_Velho Olho-turvo|r. Tente ficar perto da borda da crista para não perdê-lo|r
     .unitscan Old Murk-Eye
 step
     .goto Westfall,30.40,57.93,60,0
     .goto Westfall,29.29,65.46,60,0
     .goto Westfall,32.62,68.40,60,0
     .goto Westfall,31.07,69.42,60,0
-    .goto Westfall,31.40,72.29,30 >>AdE os Acampamentos Gnoll
-    >>AdE os |cRXP_ENEMY_Riverpaw Herbalists|r, os |cRXP_ENEMY_Riverpaw Mongrels|r, e os |cRXP_ENEMY_Riverpaw Brutes|r. Saqueie seus |cRXP_LOOT_Gnoll Paws|r
+    .goto Westfall,31.40,72.29,30 >>Ataque em área os Acampamentos Gnoll
+    >>Ataque em área os |cRXP_ENEMY_Riverpaw Herbalists|r, os |cRXP_ENEMY_Riverpaw Mongrels|r e os |cRXP_ENEMY_Riverpaw Brutes|r. Saque-os para obter |cRXP_LOOT_Gnoll Paws|r
     >>Se você encontrar |cRXP_ENEMY_Velho Olho-turvo|r, pule este passo
     .complete 102,1 --Gnoll Paws (8)
     .mob Riverpaw Herbalist
@@ -5891,13 +5891,13 @@ step
     .mob Riverpaw Brute
 step
     #completewith next
-    +|cRXP_WARN_Procure |cRXP_ENEMY_Velho Olho-turvo|r. Leve-o em direção|r |cRXP_FRIENDLY_Grayson|r
+    +|cRXP_WARN_Encontre |cRXP_ENEMY_Velho Olho-turvo|r. Leve-o para|r |cRXP_FRIENDLY_Grayson|r
     .unitscan Old Murk-Eye
 step
     #label Grayson
     .goto Westfall,30.02,86.02
     >>Fale com |cRXP_FRIENDLY_Grayson|r
-    .accept 104 >>Aceite Ameaça Costeira
+    .accept 104 >>Aceite O Mar Não Está para Peixe
     .target Captain Grayson
 step
     .goto Westfall,33.92,83.88,70,0
@@ -5926,20 +5926,20 @@ step
     .goto Westfall,27.27,69.96,70,0
     .goto Westfall,26.86,66.82,70,0
     .goto Westfall,26.27,65.76
-    >>AdE o |cRXP_ENEMY_Velho Olho-turvo|r. Saqueie-o pela |cRXP_LOOT_Escama de Velho Olho-turvo|r
+    >>Ataque em área o |cRXP_ENEMY_Velho Olho-turvo|r. Saque-o para obter a |cRXP_LOOT_Escama de Velho Olho-turvo|r
     .complete 104,1 --Scale of Old Murk-Eye
     .unitscan Old Murk-Eye
 step
     .goto Westfall,30.02,86.02
     >>Fale com |cRXP_FRIENDLY_Grayson|r
-    .accept 103 >>Aceite Guardião da Chama
-    .turnin 103,1 >>Entregue Guardião da Chama
+    .accept 103 >>Aceite Keeper of the Chamas
+    .turnin 103,1 >>Entregue Keeper of the Chamas
     .turnin 104,3 >>Entregue O Mar Não Está para Peixe
     .target Captain Grayson
 step
     #completewith next
-    >>Use AdE nos |cRXP_ENEMY_Defias Knuckledusters|r e nos |cRXP_ENEMY_Defias Highwaymen|r. Saqueie-os para obter |cRXP_LOOT_Red Couro Bandanas|r
-    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Defias Highwaymen|r lançam|r |T132090:0|t[Punhalada pelas Costas] |cRXP_WARN_(causa dano duplo pelas costas)|r
+    >>Ataque em área os |cRXP_ENEMY_Defias Knuckledusters|r e os |cRXP_ENEMY_Defias Highwaymen|r. Saque-os para obter |cRXP_LOOT_Red Couro Bandanas|r
+    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Defias Highwaymen|r lançam|r |T132090:0|t[Punhalada pelas Costas] |cRXP_WARN_(causa o dobro de dano por trás)|r
     .complete 153,1 --Red Leather Bandana (15)
     .mob Defias Knuckleduster
     .mob Defias Highwaymen
@@ -5954,8 +5954,8 @@ step
     .goto Westfall,48.77,77.70,60,0
     .goto Westfall,51.73,74.67,60,0
     .goto Westfall,52.56,72.87,60,0
-    >>AdE os |cRXP_ENEMY_Defias Knuckledusters|r e os |cRXP_ENEMY_Defias Highwaymen|r. Saqueie seus |cRXP_LOOT_Red Couro Bandanas|r
-    >>|cRXP_WARN_Tenha cuidado pois o |cRXP_ENEMY_Defias Highwaymen|r lança|r |T132090:0|t[Punhalada pelas Costas] |cRXP_WARN_(causa o dobro do dano vindo de trás)|r
+    >>Ataque em área os |cRXP_ENEMY_Defias Knuckledusters|r e os |cRXP_ENEMY_Defias Highwaymen|r. Saque-os para obter |cRXP_LOOT_Red Couro Bandanas|r
+    >>|cRXP_WARN_Tenha cuidado pois os |cRXP_ENEMY_Defias Highwaymen|r lançam|r |T132090:0|t[Punhalada pelas Costas] |cRXP_WARN_(causa o dobro de dano por trás)|r
     .complete 153,1 --Red Leather Bandana (15)
     .mob Defias Knuckleduster
     .mob Defias Highwaymen
@@ -5964,13 +5964,13 @@ step
     .isOnQuest 153
 step
     #completewith Footpads
-    >>Abra os |cRXP_PICK_Saco de Aveia|r no chão. Saqueie-os para |cRXP_LOOT_Handfuls of Oats|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Abra os |cRXP_PICK_Sacos de Aveia|r no chão. Saque-os por |cRXP_LOOT_Handfuls of Oats|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 151,1 --Handful of Oats (8)
 step
     #completewith AoE1
-    >>Use AdE nos |cRXP_ENEMY_Goretusks|r. Saqueie-os para obter |cRXP_LOOT_Goretusk Livers|r e |cRXP_LOOT_Goretusk Snouts|r
-    >>Use AdE nos |cRXP_ENEMY_Fleshrippers|r. Saqueie-os para obter |cRXP_LOOT_Stringy Vulture Carne|r
+    >>Ataque em área os |cRXP_ENEMY_Goretusks|r. Saque-os para obter |cRXP_LOOT_Goretusk Livers|r e |cRXP_LOOT_Goretusk Snouts|r
+    >>Ataque em área os |cRXP_ENEMY_Fleshrippers|r. Saque-os para obter |cRXP_LOOT_Stringy Vulture Carne|r
     .collect 723,8,22,1 --Goretusk Liver (8)
     .mob +Great Goretusk
     .mob +Goretusk
@@ -5983,8 +5983,8 @@ step
     .mob +Fleshripper
 step
     #completewith next
-    >>Use AdE nos |cRXP_ENEMY_Defias Trappers|r e nos |cRXP_ENEMY_Defias Smugglers|r. Saqueie-os para obter |cRXP_LOOT_Red Couro Bandanas|r
-    >>|cRXP_WARN_Tenha cuidado pois o |cRXP_ENEMY_Defias Trappers|r lança|r |T132090:0|t[Punhalada pelas Costas] |cRXP_WARN_(causa o dobro do dano vindo de trás) e|r |T132149:0|t[Rede] |cRXP_WARN_(Imobiliza por 9 segundos)|r
+    >>Ataque em área os |cRXP_ENEMY_Defias Trappers|r e os |cRXP_ENEMY_Defias Smugglers|r. Saqueie-os em busca de seus |cRXP_LOOT_Red Couro Bandanas|r
+    >>|cRXP_WARN_Cuidado pois os |cRXP_ENEMY_Defias Trappers|r usam|r |T132090:0|t[Punhalada pelas Costas] |cRXP_WARN_(causa dano dobrado pelas costas) e|r |T132149:0|t[Rede] |cRXP_WARN_(imobiliza por 9 segundos)|r
     .complete 153,1 --Red Leather Bandana (15)
     .mob Defias Trapper
     .mob Defias Smuggler
@@ -5999,13 +5999,13 @@ step
 step
     #completewith Watch
     .goto Westfall,44.54,34.71,60,0
-    >>Use AdE nos |cRXP_ENEMY_Harvest Watchers|r
+    >>Ataque em área os |cRXP_ENEMY_Harvest Watchers|r
     .complete 9,1 --Harvest Watcher (20)
     .mob Harvest Watcher
 step
     #completewith Furlbrows
-    >>AdE os |cRXP_ENEMY_Young Goretusks|r. Saqueie seus |cRXP_LOOT_Goretusk Livers|r e |cRXP_LOOT_Goretusk Snouts|r
-    >>AdE os |cRXP_ENEMY_Fleshrippers|r e os |cRXP_ENEMY_Young Fleshrippers|r. Saqueie-os por sua |cRXP_LOOT_Stringy Vulture Carne|r
+    >>Ataque em área os |cRXP_ENEMY_Young Goretusks|r. Saqueie-os em busca de seus |cRXP_LOOT_Fígados de Goretusco|r e |cRXP_LOOT_Focinhos de Goretusco|r
+    >>Ataque em área os |cRXP_ENEMY_Fleshrippers|r e os |cRXP_ENEMY_Young Fleshrippers|r. Saqueie-os em busca de sua |cRXP_LOOT_Carne de Abutre Fibrosa|r
     .collect 723,8,22,1 --Goretusk Liver (8)
     .mob +Young Goretusk
     .collect 731,3,38,1 --Goretusk Snout (3)
@@ -6017,9 +6017,9 @@ step
     .goto Westfall,44.14,26.66,60,0
     .goto Westfall,46.13,26.52,60,0
     .goto Westfall,48.74,20.79
-    >>AdE os |cRXP_ENEMY_Defias Trappers|r e os |cRXP_ENEMY_Defias Smugglers|r. Saqueie seus |cRXP_LOOT_Red Couro Bandanas|r
-    >>|cRXP_WARN_Cuidado pois os |cRXP_ENEMY_Defias Trappers|r lançam|r |T132090:0|t[Punhalada pelas Costas] |cRXP_WARN_e|r |T132149:0|t[Rede]
-    >>|cRXP_WARN_Pule este passo se você não estiver com pelo menos 10/15 em ambos os |cRXP_ENEMY_Defias Trappers|r e os |cRXP_ENEMY_Defias Smugglers|r
+    >>Ataque em área os |cRXP_ENEMY_Defias Trappers|r e os |cRXP_ENEMY_Defias Smugglers|r. Saqueie-os em busca de seus |cRXP_LOOT_Red Couro Bandanas|r
+    >>|cRXP_WARN_Cuidado pois os |cRXP_ENEMY_Defias Trappers|r usam|r |T132090:0|t[Punhalada pelas Costas] |cRXP_WARN_e|r |T132149:0|t[Rede]
+    >>|cRXP_WARN_Pule este passo se você não tem pelo menos 10/15 em ambos |cRXP_ENEMY_Defias Trappers|r e|r |cRXP_ENEMY_Defias Smugglers|r
     .complete 153,1,1 --Red Leather Bandana (15)
     .mob +Defias Trapper
     .mob +Defias Smuggler
@@ -6030,8 +6030,8 @@ step
 step
     #completewith next
     .goto Westfall,48.74,20.79,60,0
-    >>Use AdE nos |cRXP_ENEMY_Defias Trappers|r e nos |cRXP_ENEMY_Defias Smugglers|r. Saqueie-os para obter |cRXP_LOOT_Red Couro Bandanas|r
-    >>|cRXP_WARN_Tenha cuidado pois o |cRXP_ENEMY_Defias Trappers|r lança|r |T132090:0|t[Punhalada pelas Costas] |cRXP_WARN_e|r |T132149:0|t[Rede]
+    >>Ataque em área os |cRXP_ENEMY_Defias Trappers|r e os |cRXP_ENEMY_Defias Smugglers|r. Saqueie-os em busca de seus |cRXP_LOOT_Red Couro Bandanas|r
+    >>|cRXP_WARN_Cuidado pois os |cRXP_ENEMY_Defias Trappers|r usam|r |T132090:0|t[Punhalada pelas Costas] |cRXP_WARN_e|r |T132149:0|t[Rede]
     .complete 153,1 --Red Leather Bandana (15)
     .mob Defias Trapper
     .mob Defias Smuggler
@@ -6039,19 +6039,19 @@ step
     #label Watch
     .goto Westfall,49.33,19.26
     >>Abra o |cRXP_PICK_Furlbrow's Wardrobe|r. Saqueie-o para obter o |cRXP_LOOT_Furlbrow's Pocket Vigiar|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 64,1 --Furlbrow's Pocket Watch (1)
 step
     #completewith Oats
     .goto Westfall,50.50,21.38,60,0
     .goto Westfall,51.70,23.16,60,0
-    >>Use AdE nos |cRXP_ENEMY_Harvest Watchers|r
+    >>Ataque em área os |cRXP_ENEMY_Harvest Watchers|r
     .complete 9,1 --Harvest Watcher (20)
     .mob Harvest Watcher
 step
     .goto Westfall,52.02,15.00,60,0
     .goto Westfall,56.93,12.75
-    >>AdE os |cRXP_ENEMY_Riverpaw Batedores|r e os |cRXP_ENEMY_Riverpaw Gnolls|r. Saqueie seus |cRXP_LOOT_Gnoll Paws|r
+    >>Ataque em área os |cRXP_ENEMY_Riverpaw Batedores|r e os |cRXP_ENEMY_Riverpaw Gnolls|r. Saqueie-os em busca de suas |cRXP_LOOT_Garras de Gnoll|r
     .complete 102,1 --Gnoll Paws (8)
     .mob Riverpaw Scout
     .mob Riverpaw Gnoll
@@ -6059,22 +6059,22 @@ step
     .goto Westfall,52.36,9.59,60,0
     .goto Westfall,53.80,10.69,60,0
     .goto Westfall,55.96,8.22
-    >>AdE os |cRXP_ENEMY_Murloc Coastrunners|r e os |cRXP_ENEMY_Murloc Raiders|r. Saqueie seus |cRXP_LOOT_Murloc Olhos|r
+    >>Ataque em área os |cRXP_ENEMY_Murloc Coastrunners|r e os |cRXP_ENEMY_Murloc Raiders|r. Saqueie-os em busca de seus |cRXP_LOOT_Olhos de Murloc|r
     .collect 730,3,38,1 --Murloc Eye (3)
     .mob Murloc Coastrunner
     .mob Murloc Raider
 step
     #label Footpads
     .goto Westfall,56.56,19.25
-    >>AdE os |cRXP_ENEMY_Defias Footpads|r. Saqueie seus |cRXP_LOOT_Red Couro Bandanas|r
-    >>|cRXP_WARN_Tenha cuidado pois |cRXP_ENEMY_Defias Footpads|r lança|r |T132090:0|t[Punhalada pelas Costas]
+    >>Ataque em área os |cRXP_ENEMY_Defias Footpads|r. Saqueie-os em busca de seus |cRXP_LOOT_Red Couro Bandanas|r
+    >>|cRXP_WARN_Cuidado pois os |cRXP_ENEMY_Defias Footpads|r usam|r |T132090:0|t[Punhalada pelas Costas]
     .complete 153,1 --Red Leather Bandana (15)
     .mob Defias Footpad
 step
     #label Oats
     .goto Westfall,56.56,19.25
-    >>Abra os |cRXP_PICK_Saco de Aveia|r no chão. Saqueie-os para |cRXP_LOOT_Handfuls of Oats|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Abra os |cRXP_PICK_Sacos de Aveia|r no chão. Saque-os por |cRXP_LOOT_Handfuls of Oats|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 151,1 --Handful of Oats (8)
 step
     #label Furlbrows
@@ -6082,14 +6082,14 @@ step
     .turnin 64 >>Entregue A Herança Esquecida
     .target +Farmer Furlbrow
     .goto Westfall,59.95,19.35
-    .turnin 151 >>Entregue Poor Velha Brancurinha
+    .turnin 151 >>Entregue Pobre Velha Brancurinha
     .goto Westfall,59.91,19.41
     .target +Verna Furlbrow
 step
     .goto Westfall,59.72,34.62,80,0
     .goto Westfall,60.24,47.40
-    >>AdE os |cRXP_ENEMY_Goretusks|r e os |cRXP_ENEMY_Young Goretusks|r. Saqueie seus |cRXP_LOOT_Goretusk Livers|r e |cRXP_LOOT_Goretusk Snouts|r
-    >>AdE os |cRXP_ENEMY_Fleshrippers|r e os |cRXP_ENEMY_Young Fleshrippers|r. Saqueie-os por sua |cRXP_LOOT_Stringy Vulture Carne|r
+    >>Ataque em área os |cRXP_ENEMY_Goretusks|r e os |cRXP_ENEMY_Young Goretusks|r. Saqueie-os em busca de seus |cRXP_LOOT_Fígados de Goretusco|r e |cRXP_LOOT_Focinhos de Goretusco|r
+    >>Ataque em área os |cRXP_ENEMY_Fleshrippers|r e os |cRXP_ENEMY_Young Fleshrippers|r. Saqueie-os em busca de sua |cRXP_LOOT_Carne de Abutre Fibrosa|r
     .collect 723,8,22,1 --Goretusk Liver (8)
     .mob +Goretusk
     .mob +Young Goretusk
@@ -6102,29 +6102,29 @@ step
 step
     .goto Westfall,52.84,30.46,60,0
     .goto Westfall,51.70,23.16
-    >>AdE |cRXP_ENEMY_Harvest Watchers|r
+    >>Ataque em área os |cRXP_ENEMY_Harvest Watchers|r
     .complete 9,1 --Harvest Watcher (20)
     .mob Harvest Watcher
 step
     .goto Westfall,51.70,23.16
-    .xp 17+11890 >>Farme até 11890+/17700xp
+    .xp 17+11890 >>Suba até 11890+/17700xp
     .isQuestComplete 12
 step
     .goto Westfall,51.70,23.16
-    >>|cRXP_WARN_Pule este passo se você já completou o objetivo de The People's Militia|r
-    .xp 17+12800 >>Farme até 12800+/17700xp
+    >>|cRXP_WARN_Pule este passo se você completou o objetivo de The People's Militia|r
+    .xp 17+12800 >>Suba até 12800+/17700xp
 step
-    >>Fale com o |cRXP_FRIENDLY_Fazendeiro Saldanha|r e então com |cRXP_FRIENDLY_Salma|r dentro
-    .turnin 9,1 >>Entregue The Matando Fields
-    .vendor >>Comerciante Lixo
+    >>Fale com o |cRXP_FRIENDLY_Fazendeiro Saldanha|r e depois |cRXP_FRIENDLY_Salma|r dentro
+    .turnin 9,1 >>Entregue Campos de Matança
+    .vendor >>Lixo de Mercador
     .target +Farmer Saldean
     .goto Westfall,56.04,31.23
-    .turnin 22 >>Entregue Empadão de Fígado de Goretusco
-    .turnin 38 >>Entregue Ensopado de Cerro Oeste
+    .turnin 22 >>Vá para Empadão de Fígado de Goretusco
+    .turnin 38 >>Entregue Cozido de Costa Negra
     .goto Westfall,56.42,30.52
     .target +Salma Saldean
 step
-	>>Fale com |cRXP_FRIENDLY_Gryan|r e |cRXP_FRIENDLY_Danuvin|r
+	>>Fale com |cRXP_FRIENDLY_Gryan|r e com |cRXP_FRIENDLY_Danuvin|r
     .turnin 12 >>Entregue The People's Militia
     .target +Gryan Stoutmantle
     .goto Westfall,56.33,47.52
@@ -6140,11 +6140,11 @@ step
 step
     .goto Westfall,53.98,52.99
 	>>Fale com |cRXP_FRIENDLY_Galiaan|r
-    .turnin 153,2 >>Entregue Vermelho Couro Bandanas
+    .turnin 153,2 >>Entregue Bandanas de Couro Vermelho
 	.target Scout Galiaan
 step
     #completewith next
-    +|cRXP_WARN_Início lançar feitiços repetidamente|r |T132794:0|t[Conjurar Água r2] |cRXP_WARN_para conjurar o máximo de água possível antes de pegar o voo|r
+    +|cRXP_WARN_Comece a fazer spam com |T132794:0|t[Conjurar Água r2] |cRXP_WARN_para conjurar o máximo de água possível antes de pegar o voo|r
 step
     #completewith next
     .goto Westfall,56.56,52.64
@@ -6157,17 +6157,17 @@ step
     .goto Stormwind City,51.83,60.41,4,0
     .goto Stormwind City,51.59,60.15,6,0
     .goto Stormwind City,39.17,76.58,12,0
-    >>|cRXP_WARN_Suba na tocha, depois desça para ficar embaixo de Ventobravo|r
-    >>|cRXP_WARN_Com Sombras em "Justo" ou "Baixo", entre no meio dos pés de Derek the Dinosaur (a parte mais clara da terra) bem antes do vazio azul, depois caminhe reto para frente|r
-    >>|cRXP_WARN_Nota: há uma pequena chance de morte ao usar este método. Você também pode caminhar até a Torre do Mago normalmente se preferir|r
-    .link https://youtu.be/gV8-wgQEomc >>https://youtu.be/gV8-wgQEomc >> CLIQUE AQUI para o guia
+    >>|cRXP_WARN_Pule para cima da tocha, depois caia para ficar sob Ventobravo|r
+    >>|cRXP_WARN_Com Sombras em "Fair" ou "Low", fique no meio dos pés de Derek the Dinosaur (a parte mais clara da terra) bem antes do vazio azul, depois caminhe em linha reta para frente|r
+    >>|cRXP_WARN_NOTA: Há uma pequena chance de morrer usando este método. Você também pode caminhar normalmente para a Mago Torre se desejar|r
+    .link https://youtu.be/gV8-wgQEomc >>https://youtu.be/gV8-wgQEomc >> CLIQUE AQUI para um guia
     .goto Stormwind City,38.61,79.39,10 >>Viaje para |cRXP_FRIENDLY_Jennea|r
 step
     .goto Stormwind City,38.61,79.39
     >>Fale com |cRXP_FRIENDLY_Jennea|r
-    .turnin 1861,1 >>Entregue Espelho Lake
+    .turnin 1861,1 >>Vá para o Lago Espelho
 --   .turnin 1919 >> Turn in Report to Jennea
-    .trainer >>Aprenda seus feitiços de classe (Bola de Fogo r4)
+    .trainer >>Treine seus feitiços de classe (Bola de Fogo r4)
     >>Custo Total: 18s
     .target Jennea Cannon
 step
@@ -6182,7 +6182,7 @@ step
     .goto Stormwind City,32.07,81.50,10,0
     .goto Stormwind City,32.63,80.62,8,0
     >>Saia da Torre do Mago
-    .goto Stormwind City,32.16,79.84,10 >>Vá para |cRXP_FRIENDLY_Charys|r
+    .goto Stormwind City,32.16,79.84,10 >>Voe para |cRXP_FRIENDLY_Charys|r
 step
     .goto Stormwind City,32.16,79.84
     >>Entre no edifício
@@ -6199,7 +6199,7 @@ step
     .goto Stormwind City,30.53,55.10,20,0
     .goto Stormwind City,26.04,52.25,20,0
     .goto Stormwind City,24.67,52.60,20,0
-    .goto Stormwind City,21.41,55.80,10 >>Vá em direção a |cRXP_FRIENDLY_Argos|r
+    .goto Stormwind City,21.41,55.80,10 >>Vá para |cRXP_FRIENDLY_Argos|r
 step
     .goto Stormwind City,21.41,55.80
     >>Fale com |cRXP_FRIENDLY_Argos|r
@@ -6209,7 +6209,7 @@ step
     .goto Stormwind City,41.57,65.46
     >>Entre no edifício
     >>Fale com |cRXP_FRIENDLY_Adair|r
-    .vendor 1316 >>|cRXP_BUY_Compre itens sem inteligência|r |T134943:0|t[Pergaminhos] |cRXP_BUY_dele (se estiverem disponíveis)|r
+    .vendor 1316 >>|cRXP_BUY_Compre sem inteligência|r |T134943:0|t[Pergaminhos] |cRXP_BUY_dele (se estiverem disponíveis)|r
     .target Adair Gilroy
 step
     #completewith next
@@ -6217,7 +6217,7 @@ step
     .goto Stormwind City,52.10,61.42,12,0
     .goto Stormwind City,49.36,63.42,12,0
     .goto Stormwind City,51.16,68.35,12,0
-    .goto Stormwind City,52.05,67.96,10 >>Viaje para |cRXP_FRIENDLY_Roberto|r
+    .goto Stormwind City,52.05,67.96,10 >>Voe para |cRXP_FRIENDLY_Roberto|r
 step
     .goto Stormwind City,52.05,67.96
     >>Entre no prédio
@@ -6228,10 +6228,10 @@ step
 step
     #completewith next
     .goto Stormwind City,52.10,61.34,15,0
-    .goto Stormwind City,55.46,65.26,8 >>Viaje para |cRXP_FRIENDLY_Keldric|r
+    .goto Stormwind City,55.46,65.26,8 >>Voe para |cRXP_FRIENDLY_Keldric|r
 step
     .goto Stormwind City,55.46,65.26
-    >>Fale com |cRXP_FRIENDLY_Keldric|r através da parede
+    >>Fale com |cRXP_FRIENDLY_Keldric|r pela parede
     .vendor 1257 >>|cRXP_BUY_Compre|r |T134830:0|t[Lesser Cura Potions] |cRXP_BUY_dele (se estiverem disponíveis)|r
     .target Orlande Bórgia
 step
@@ -6243,21 +6243,21 @@ step
     .goto Stormwind City,57.03,72.97
     >>Fale com |cRXP_FRIENDLY_Newton|r
     .bankwithdraw 769,5354,6889 >>Retire os seguintes itens do seu banco:
-    >>|T133970:0|t[Chunk of Javali Carne]
+    >>|T133970:0|t[Pedaço de Carne de Javali]
     >>|T133469:0|t[Carta para Delgren]
     >>|T132832:0|t[Ovo Pequeno]
 step
     #label Bank3
     .goto Stormwind City,57.03,72.97
     >>Fale com |cRXP_FRIENDLY_Newton|r
-    >>|cRXP_WARN_NOTA: Você precisa de 12 pilhas de cada tecido (|r|T132911:0|t[Lã]|cRXP_WARN_,|r |T132905:0|t[Seda]|cRXP_WARN_,|r |T132892:0|t[Magitrama]|cRXP_WARN_,|r e |T132903:0|t[Runatrama]|cRXP_WARN_) para efetuar as entregas de tecido depois. Você obterá estes naturalmente ao subir de nível|r
+    >>|cRXP_WARN_NOTA: Você precisa de 12 pilhas de cada pano (|r|T132911:0|t[Lã]|cRXP_WARN_,|r |T132905:0|t[Seda]|cRXP_WARN_,|r |T132892:0|t[Magitrama]|cRXP_WARN_,|r e |T132903:0|t[Runatrama]|cRXP_WARN_) para fazer as entregas de pano depois. Você obterá estes naturalmente conforme sobe de nível|r
     .bankdeposit 2998,4371,1711,1478,1712,3012,1180,1181,3013,17056,2592,2998,1941 >>Deposite os itens a seguir no banco:
     >>|T133024:0|t[Tubo de Bronze]
     >>|T134943:0|t[Pergaminhos]
     >>|T132917:0|t[Pena de Luz]
     >>|T132911:0|t[Lã]
     >>|T134377:0|t[A Simple Compass]
-    >>|T132620:0|t[Barril de Merlot]
+    >>|T132620:0|t[Cask of Merlot]
     .target Newton Burnside
 --   .itemcount 769,1
 --   .itemcount 4371,1
@@ -6269,14 +6269,14 @@ step
     #completewith next
     .goto Stormwind City,53.45,64.92,10,0
     >>Entre na Estalagem
-    .goto Stormwind City,52.61,65.72,10 >>Vá para Allison
+    .goto Stormwind City,52.61,65.72,10 >>Voe para |cRXP_FRIENDLY_Allison|r
     .target Innkeeper Allison
 step
     .goto Stormwind City,52.61,65.72
-    >>|cRXP_WARN_===ATENÇÃO===|r
-    >>|cRXP_WARN_Conversar com|r |cRXP_FRIENDLY_Allison|r
-    >>|cRXP_WARN_Abrir a menu "Set Pedra de Regresso", depois lance|r |T134414:0|t[Pedra de Regresso]
-    .hs >>|cRXP_WARN_Hearthstone BATCH from Objetos de TBC to Auberdine|r
+    >>|cRXP_WARN_===PRESTE ATENÇÃO===|r
+    >>|cRXP_WARN_Fale com|r |cRXP_FRIENDLY_Allison|r
+    >>|cRXP_WARN_Abra o menu "Definir Pedra de Regresso", depois lance|r |T134414:0|t[Pedra de Regresso]
+    .hs >>|cRXP_WARN_Hearthstone BATCH de Ventobravo para Auberdine|r
     .target Innkeeper Allison
     .zoneskip Darkshore
 ]])
@@ -6287,14 +6287,14 @@ RXPGuides.RegisterGuide([[
 << Alliance Mage
 #name 18-20 ADV Costa Negra 3 Mago AdE
 #version 2
-#group ADV AdE Maga da Aliança
+#group RestedXP ADV AdE Maga da Aliança
 #defaultfor Human Mage/Gnome Mage
-#next 20-22 Aventura Redridge 1 Mago AdE
+#next 20-22 ADV Redridge 1 Mago AdE
 
 step
     .goto Darkshore,36.83,43.91
     >>Fale com |cRXP_FRIENDLY_Taldan|r
-    >>|cRXP_BUY_Compre 45|r |T132796:0|t[Melão Suco] |cRXP_BUY_dele|r
+    >>|cRXP_BUY_Compre 45|r |T132796:0|t[Melão Suco] |cRXP_BUY_do vendedor|r
     .collect 1205,45,4740,1 --Melon Juice (45)
     .target Taldan
     .money <0.45
@@ -6314,7 +6314,7 @@ step
     .money <0.35
 step
     .goto Darkshore,36.83,43.91
-    >>Converse com |cRXP_FRIENDLY_Taldan|r
+    >>Fale com |cRXP_FRIENDLY_Taldan|r
     >>|cRXP_BUY_Compre 30|r |T132796:0|t[Melão Suco] |cRXP_BUY_dele|r
     .collect 1205,30,4740,1 --Melon Juice (30)
     .target Taldan
@@ -6361,45 +6361,45 @@ step
     .collect 4592,40,4740,1 --Longjaw Mud Snapper (40)
     .target Laird
 step
-    >>REMOVA ESTE PASSO DEPOIS
-    .accept 4740 >>Aceite Procurado: Lodofundo!
+    >>REMOVE THIS STEP LATER
+    .accept 4740 >>Aceite WANTED: Lodofundo!
     .goto Darkshore,37.22,44.22
 step
     .goto Darkshore,36.09,44.93
-    >>Converse com |cRXP_FRIENDLY_Gubber|r
+    >>Fale com |cRXP_FRIENDLY_Gubber|r
     .accept 1138 >>Aceite Fruit of the Sea
     .target Gubber Blump
 step
     .goto Darkshore,43.55,76.29
     >>Fale com |cRXP_FRIENDLY_Onu|r
-    .turnin 948 >>Entregue em Onu
-    .accept 944 >>Aceite A Foice do Mestre
+    .turnin 948 >>Entregue Onu
+    .accept 944 >>Aceite A Alameda do Mestre
     .target Onu
 step
     .goto Darkshore,44.40,76.42
     >>Fale com |cRXP_FRIENDLY_Kerlonian|r
     >>|cRXP_WARN_Se |cRXP_FRIENDLY_Kerlonian|r não está lá, pule este passo|r
-    .accept 5321 >>Aceite O Adormecido Despertou
+    .accept 5321 >>Aceite A Adormecida Despertou
     .target Kerlonian Evershade
 step
     .goto Darkshore,44.39,76.30
-    >>Abra o |cRXP_PICK_Kerlonian's Baú|r. Pegue-o para obter o |cRXP_LOOT_Corneta do Despertar|r
+    >>Abra |cRXP_PICK_Baú de Kerlonian|r. Saque-o para obter a |cRXP_LOOT_Corneta do Despertar|r
     >>|cRXP_WARN_Use a|r |T134229:0|t[|cRXP_LOOT_Corneta do Despertar|r] |cRXP_WARN_em |cRXP_FRIENDLY_Kerlonian|r quando ele adormecer|r
-    >>|cRXP_WARN_Ambos têm um tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_ambos têm um tempo de lançamento de 5 segundos|r
     .complete 5321,1 --Horn of Awakening (1)
     .isOnQuest 5321
 step
     #completewith Glaive1
-    >>Use AdE em |cRXP_ENEMY_Espreitaluna Sires|r. Saqueie-os pelos seus |cRXP_LOOT_Fine Espreitaluna Pelts|r
-    >>|cRXP_ENEMY_Espreitaluna Sires|r compartilham spawns com |cRXP_ENEMY_Grizzled Thistle Ursos|r e |cRXP_ENEMY_Giant Foreststriders|r
+    >>AdE os |cRXP_ENEMY_Moonstalker Sires|r. Saqueie-os para obter seus |cRXP_LOOT_Fine Espreitaluna Pelts|r
+    >>|cRXP_ENEMY_Moonstalker Sires|r aparecem junto com |cRXP_ENEMY_Grizzled Thistle Ursos|r e |cRXP_ENEMY_Giant Foreststriders|r
    .complete 986,1 --Fine Moonstalker Pelt (5)
    .mob Moonstalker Sire
    .use 13536
    .isOnQuest 5321
 step
     #completewith next
-    >>Use AdE em |cRXP_ENEMY_Grizzled Thistle Ursos|r. Saque-os pelos seus |cRXP_LOOT_Grizzled Scalps|r
-    >>|cRXP_ENEMY_Grizzled Thistle Ursos|r compartilham spawns com |cRXP_ENEMY_Espreitaluna Sires|r e |cRXP_ENEMY_Giant Foreststriders|r
+    >>AdE os |cRXP_ENEMY_Grizzled Thistle Ursos|r. Saqueie-os para obter seus |cRXP_LOOT_Grizzled Scalps|r
+    >>|cRXP_ENEMY_Grizzled Thistle Ursos|r aparecem junto com |cRXP_ENEMY_Moonstalker Sires|r e |cRXP_ENEMY_Giant Foreststriders|r
    .complete 1003,1 --Grizzled Scalp (4)
    .mob Grizzled Thistle Bear
    .use 13536
@@ -6407,7 +6407,7 @@ step
 step
     #label Glaive1
    .goto Darkshore,38.65,87.34
-    >>Voe para The Master's Glaive
+    >>Vá para The Master's Glaive
    .complete 944,1 --Enter the Master's Glaive (1)
    .use 13536
    .isOnQuest 5321
@@ -6424,67 +6424,67 @@ step
 step
     #completewith next
     .goto Darkshore,38.65,87.34
-    >>Coloque o |T134715:0|t[Frasco de Vidência] no chão
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Coloque |T134715:0|t[Frasco de Vidência] no chão
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     >>Clique em |cRXP_PICK_Frasco de Vidência|r no chão
-    .turnin 944 >>Volte a The Master's Glaive
-    .accept 949 >>Aceite O Acampamento do Crepúsculo
+    .turnin 944 >>Entregue The Master's Glaive
+    .accept 949 >>Aceite O Acampamento Crepuscular
     .use 13536
     .use 5251
     .isOnQuest 5321
 step
    .goto Darkshore,38.65,87.34
     >>Fale com |cRXP_FRIENDLY_Therylune|r
-    >>|cRXP_WARN_Se |cRXP_FRIENDLY_Therylune|r não está lá, AdE os |cRXP_ENEMY_Twilight Disciples|r e os |cRXP_ENEMY_Twilight Thugs|r para obter |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r] até ela aparecer|r
+    >>|cRXP_WARN_Se |cRXP_FRIENDLY_Therylune|r não estiver lá, Ataque os |cRXP_ENEMY_Twilight Disciples|r e os |cRXP_ENEMY_Twilight Thugs|r para obter o |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r] até ela aparecer|r
    .accept 945 >>Aceite A Fuga de Therylune
    .target Therylune
    .use 13536
    .isOnQuest 5321
 step
     #completewith Tome1
-    >>Escorte |cRXP_FRIENDLY_Therylune|r
+    >>Escolte |cRXP_FRIENDLY_Therylune|r
     .complete 945,1 --Escort Therylune away from the Master's Glaive (1)
     .use 13536
     .target Therylune
     .isOnQuest 5321
 step
    .goto Darkshore,38.55,86.03
-   >>Coloque o |T134715:0|t[Frasco de Vidência] no chão
-   >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+   >>Coloque |T134715:0|t[Frasco de Vidência] no chão
+   >>|cRXP_WARN_Isto leva 5 segundos|r
    >>Clique em |cRXP_PICK_Frasco de Vidência|r no chão
-   .turnin 944 >>Volte a The Master's Glaive
-   .accept 949 >>Aceite O Acampamento do Crepúsculo
+   .turnin 944 >>Entregue The Master's Glaive
+   .accept 949 >>Aceite O Acampamento Crepuscular
    .use 13536
    .use 5251
    .isOnQuest 5321
 step
     #label Tome1
    .goto Darkshore,38.55,86.03
-    >>Clique no |cRXP_PICK_Crepúsculo Tomo|r
-   .turnin 949 >>Entregue O Acampamento do Crepúsculo
-   .accept 950 >>Aceite Retorno a Onu
+    >>Clique em |cRXP_PICK_Twilight Tomo|r
+   .turnin 949 >>Entregue O Acampamento Crepuscular
+   .accept 950 >>Aceite Devolver a Onu
    .use 13536
    .isOnQuest 5321
 step
    #label Therylune1
-   >>Escorte |cRXP_FRIENDLY_Therylune|r
-   >>|cRXP_WARN_Certifique-se de que |cRXP_FRIENDLY_Therylune|r permanece no alcance de renderização ou você falhará na missão|r
+   >>Escolte |cRXP_FRIENDLY_Therylune|r
+   >>|cRXP_WARN_Certifique-se de que |cRXP_FRIENDLY_Therylune|r permaneça no alcance de renderização ou você falhará na missão|r
    .complete 945,1 --Escort Therylune away from the Master's Glaive (1)
    .use 13536
    .target Therylune
    .isOnQuest 950
 step
     #completewith Remtravel1
-    >>Use AdE em |cRXP_ENEMY_Espreitaluna Sires|r. Saqueie-os pelos seus |cRXP_LOOT_Fine Espreitaluna Pelts|r
-    >>|cRXP_ENEMY_Espreitaluna Sires|r compartilham spawns com |cRXP_ENEMY_Grizzled Thistle Ursos|r e |cRXP_ENEMY_Giant Foreststriders|r
+    >>AdE os |cRXP_ENEMY_Moonstalker Sires|r. Saqueie-os para obter seus |cRXP_LOOT_Fine Espreitaluna Pelts|r
+    >>|cRXP_ENEMY_Moonstalker Sires|r aparecem junto com |cRXP_ENEMY_Grizzled Thistle Ursos|r e |cRXP_ENEMY_Giant Foreststriders|r
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .mob Moonstalker Sire
     .use 13536
     .isOnQuest 950
 step
     #completewith next
-    >>Use AdE em |cRXP_ENEMY_Grizzled Thistle Ursos|r. Saque-os pelos seus |cRXP_LOOT_Grizzled Scalps|r
-    >>|cRXP_ENEMY_Grizzled Thistle Ursos|r compartilham spawns com |cRXP_ENEMY_Espreitaluna Sires|r e |cRXP_ENEMY_Giant Foreststriders|r
+    >>AdE os |cRXP_ENEMY_Grizzled Thistle Ursos|r. Saqueie-os para obter seus |cRXP_LOOT_Grizzled Scalps|r
+    >>|cRXP_ENEMY_Grizzled Thistle Ursos|r aparecem junto com |cRXP_ENEMY_Moonstalker Sires|r e |cRXP_ENEMY_Giant Foreststriders|r
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
     .use 13536
@@ -6492,7 +6492,7 @@ step
 step
     #label Remtravel1
     .goto Darkshore,35.72,83.69
-    >>Fale com |cRXP_FRIENDLY_Remtravel|r para iniciar a escolta
+    >>Fale com |cRXP_FRIENDLY_Remtravel|r para começar a escolta
     .turnin 729 >>Entregue The Absent Minded Prospector
     .accept 731 >>Aceite O Prospector Distraído
     .target Prospector Remtravel
@@ -6504,8 +6504,8 @@ step
     .goto Darkshore,35.35,84.72,40,0
     .goto Darkshore,35.72,83.69,40,0
     .goto Darkshore,31.28,87.39
-    >>Escorte |cRXP_FRIENDLY_Remtravel|r
-    >>Quando o |cRXP_ENEMY_Gravelflint Quebraossos|r e o |cRXP_ENEMY_Gravelflint Geomante|r aparecerem, deixe o |cRXP_ENEMY_Gravelflint Geomante|r lançar |T135812:0|t[Bola de Fogo] em |cRXP_FRIENDLY_Remtravel|r, depois lance |T136071:0|t[Polimorfia] nele. Abata o |cRXP_ENEMY_Gravelflint Quebraossos|r e depois o |cRXP_ENEMY_Gravelflint Geomante|r
+    >>Escolte |cRXP_FRIENDLY_Remtravel|r
+    >>Quando os |cRXP_ENEMY_Quebraossos Pedrarneira|r e |cRXP_ENEMY_Geomante Pedrarneira|r aparecerem, deixe o |cRXP_ENEMY_Geomante Pedrarneira|r conjurar |T135812:0|t[Bola de Fogo] em |cRXP_FRIENDLY_Remtravel|r, depois conjure |T136071:0|t[Polimorfia] nele. Mate os |cRXP_ENEMY_Quebraossos Pedrarneira|r e depois o |cRXP_ENEMY_Geomante Pedrarneira|r
     .complete 731,1 --Escort Prospector Remtravel (1)
     .target Prospector Remtravel
     .mob Gravelflint Geomancer
@@ -6514,76 +6514,76 @@ step
     .isOnQuest 950
 step
     #completewith SeaC
-    >>Use AdE em |cRXP_ENEMY_Espreitaluna Sires|r. Saqueie-os pelos seus |cRXP_LOOT_Fine Espreitaluna Pelts|r
-    >>|cRXP_ENEMY_Espreitaluna Sires|r compartilham spawns com |cRXP_ENEMY_Grizzled Thistle Ursos|r e |cRXP_ENEMY_Giant Foreststriders|r
+    >>AdE os |cRXP_ENEMY_Moonstalker Sires|r. Saqueie-os para obter seus |cRXP_LOOT_Fine Espreitaluna Pelts|r
+    >>|cRXP_ENEMY_Moonstalker Sires|r aparecem junto com |cRXP_ENEMY_Grizzled Thistle Ursos|r e |cRXP_ENEMY_Giant Foreststriders|r
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .mob Moonstalker Sire
     .use 13536
     .isOnQuest 950
 step
     #completewith SeaC
-    >>Use AdE em |cRXP_ENEMY_Grizzled Thistle Ursos|r. Saque-os pelos seus |cRXP_LOOT_Grizzled Scalps|r
-    >>|cRXP_ENEMY_Grizzled Thistle Ursos|r compartilham spawns com |cRXP_ENEMY_Espreitaluna Sires|r e |cRXP_ENEMY_Giant Foreststriders|r
+    >>AdE os |cRXP_ENEMY_Grizzled Thistle Ursos|r. Saqueie-os para obter seus |cRXP_LOOT_Grizzled Scalps|r
+    >>|cRXP_ENEMY_Grizzled Thistle Ursos|r aparecem junto com |cRXP_ENEMY_Moonstalker Sires|r e |cRXP_ENEMY_Giant Foreststriders|r
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
     .use 13536
     .isOnQuest 950
 step
     #completewith next
-    +Não desperte |cRXP_FRIENDLY_Kerlonian|r de agora em diante
-    >>Fique atento a |cRXP_ENEMY_Mamãe Moa da Floresta|r
+    +Não desperte |cRXP_FRIENDLY_Kerlonian|r novamente
+    >>Fique de olho em |cRXP_ENEMY_Mamãe Moa da Floresta|r
     .unitscan Strider Clutchmother
     .isOnQuest 950
 step
     #label SeaC
     .goto Darkshore,31.28,87.39
     >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
-    >>|cRXP_WARN_Loot it at the Neck|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
-    .accept 4733 >>Aceite Beached Sea Criatura - Missão
+    >>|cRXP_WARN_Saqueie-o no Neck|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
+    .accept 4733 >>Aceite Criatura Marinha Encalhada
     .isOnQuest 950
 step
     #completewith next
-    .abandon 5321 >>Abandone A Adormecida has Desperto
+    .abandon 5321 >>Abandone A Adormecida que Despertou
     .isOnQuest 950
 step
     .goto Darkshore,31.22,85.56
-    >>Saque a |cRXP_LOOT_Tartaruga Marinha Encalhada|r no chão
+    >>Pegue o |cRXP_LOOT_Beached Tartaruga Marinha|r no chão
     >>|cRXP_WARN_The Tartaruga Casca has LoS|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .accept 4732 >>Aceite Tartaruga Marinha Encalhada
     .isOnQuest 950
 step
     #completewith SeaCreature
-    >>AdE |cRXP_ENEMY_Encrusted Tide Crawlers|r. Saque-os para seus |cRXP_LOOT_Pedaços Finos de Caranguejo|r
+    >>AdE os |cRXP_ENEMY_Encrusted Tide Crawlers|r. Saqueie-os para obter seus |cRXP_LOOT_Fine Caranguejo Chunks|r
    .complete 1138,1 --Fine Crab Chunks (6)
    .mob Encrusted Tide Crawler
    .isOnQuest 950
 step
     .goto Darkshore,31.70,83.72
-    >>Saque a |cRXP_LOOT_Tartaruga Marinha Encalhada|r no chão
+    >>Pegue o |cRXP_LOOT_Beached Tartaruga Marinha|r no chão
     >>|cRXP_WARN_The Tartaruga Casca has LoS|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .accept 4731 >>Aceite Tartaruga Marinha Encalhada
     .isOnQuest 950
 step
     #label SeaCreature
     .goto Darkshore,32.70,80.73
     >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
-    .accept 4730 >>Aceite Beached Sea Criatura - Missão
+    >>|cRXP_WARN_Isto leva 5 segundos|r
+    .accept 4730 >>Aceite Criatura Marinha Encalhada
     .isOnQuest 950
 step
     #completewith next
-    >>AdE |cRXP_ENEMY_Reef Crawlers|r. Saque-os para seus |cRXP_LOOT_Pedaços Finos de Caranguejo|r
+    >>AdE os |cRXP_ENEMY_Reef Crawlers|r. Saqueie-os para obter seus |cRXP_LOOT_Fine Caranguejo Chunks|r
    .complete 1138,1 --Fine Crab Chunks (6)
    .mob Reef Crawler
    .isOnQuest 950
 step
    .goto Darkshore,36.52,76.55
    >>Limpe o Acampamento Murloc sem se mover para o centro do acampamento
-   >>Depois de limpar tudo, mova-se para o centro do acampamento para convocar 3 ondas (3 Corredores de Costa, 2 Guerreiros, Lodofundo e um Caçador)
-   >>|cRXP_WARN_Se você tiver sorte, |cRXP_ENEMY_Lodofundo|r talvez já esteja ativo cerca de 30 metros da costa a oeste (se alguém morreu nele antes)|r
+   >>Depois de limpar tudo, vá para o centro do acampamento para invocar 3 ondas (3 Coastrunners, 2 Warriors, Lodofundo e um Caçador)
+   >>|cRXP_WARN_Se tiver sorte, |cRXP_ENEMY_Lodofundo|r pode já estar ativo a cerca de 30 jardas da costa para o oeste (se alguém morreu nele antes)|r
    .complete 4740,1 --Murkdeep (1)
    .unitscan Murkdeep
    .isOnQuest 950
@@ -6593,15 +6593,15 @@ step
     .goto Darkshore,36.01,73.48,60,0
     .goto Darkshore,35.02,72.20,60,0
     .goto Darkshore,35.42,71.52,60,0
-    >>AdE |cRXP_ENEMY_Reef Crawlers|r. Saque-os para seus |cRXP_LOOT_Pedaços Finos de Caranguejo|r
+    >>AdE os |cRXP_ENEMY_Reef Crawlers|r. Saqueie-os para obter seus |cRXP_LOOT_Fine Caranguejo Chunks|r
     .complete 1138,1 --Fine Crab Chunks (6)
     .mob Reef Crawler
     .isOnQuest 950
 step
     .goto Darkshore,35.97,70.90
     >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
-    .accept 4728 >>Aceite Beached Sea Criatura - Missão
+    >>|cRXP_WARN_Isto leva 5 segundos|r
+    .accept 4728 >>Aceite Criatura Marinha Encalhada
     .isOnQuest 950
 step
     .goto Darkshore,35.42,71.52,60,0
@@ -6611,21 +6611,21 @@ step
     .goto Darkshore,35.61,78.13,60,0
     .goto Darkshore,35.27,79.57,60,0
     .goto Darkshore,34.18,80.71
-    >>Use AdE em |cRXP_ENEMY_Reef Crawlers|r. Saqueie-os para obter |cRXP_LOOT_Fine Caranguejo Chunks|r
+    >>AdE os |cRXP_ENEMY_Reef Crawlers|r. Saqueie-os para obter seus |cRXP_LOOT_Fine Caranguejo Chunks|r
     .complete 1138,1 --Fine Crab Chunks (6)
     .mob Reef Crawler
     .isOnQuest 950
 step
     #completewith SeaCreatureGiga
-    >>Use AdE em |cRXP_ENEMY_Espreitaluna Sires|r. Saqueie-os pelos seus |cRXP_LOOT_Fine Espreitaluna Pelts|r
-    >>|cRXP_ENEMY_Espreitaluna Sires|r compartilham spawns com |cRXP_ENEMY_Grizzled Thistle Ursos|r e |cRXP_ENEMY_Giant Foreststriders|r
+    >>AdE os |cRXP_ENEMY_Moonstalker Sires|r. Saqueie-os para obter seus |cRXP_LOOT_Fine Espreitaluna Pelts|r
+    >>|cRXP_ENEMY_Moonstalker Sires|r aparecem junto com |cRXP_ENEMY_Grizzled Thistle Ursos|r e |cRXP_ENEMY_Giant Foreststriders|r
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .mob Moonstalker Sire
     .use 13536
 step
     #completewith SeaCreatureGiga
-    >>Use AdE em |cRXP_ENEMY_Grizzled Thistle Ursos|r. Saque-os pelos seus |cRXP_LOOT_Grizzled Scalps|r
-    >>|cRXP_ENEMY_Grizzled Thistle Ursos|r compartilham spawns com |cRXP_ENEMY_Espreitaluna Sires|r e |cRXP_ENEMY_Giant Foreststriders|r
+    >>AdE os |cRXP_ENEMY_Grizzled Thistle Ursos|r. Saqueie-os para obter seus |cRXP_LOOT_Grizzled Scalps|r
+    >>|cRXP_ENEMY_Grizzled Thistle Ursos|r aparecem junto com |cRXP_ENEMY_Moonstalker Sires|r e |cRXP_ENEMY_Giant Foreststriders|r
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
     .use 13536
@@ -6633,29 +6633,29 @@ step
     #label Onu2
     .goto Darkshore,43.55,76.29
     >>Fale com |cRXP_FRIENDLY_Onu|r
-    .turnin 950 >>Entregue Retorno a Onu
+    .turnin 950 >>Entregue Devolver a Onu
     .target Onu
     .isQuestComplete 950
 step
     #label SeaCreatureGiga
     .goto Darkshore,35.97,70.90
     >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
-    .accept 4728 >>Aceite Beached Sea Criatura - Missão
+    >>|cRXP_WARN_Isto leva 5 segundos|r
+    .accept 4728 >>Aceite Criatura Marinha Encalhada
 step
     #completewith next
     .goto Darkshore,35.42,71.52,60,0
     .goto Darkshore,35.02,72.20,60,0
     .goto Darkshore,36.01,73.48,60,0
     .goto Darkshore,35.96,75.22,60,0
-    >>AdE |cRXP_ENEMY_Reef Crawlers|r. Saque-os para seus |cRXP_LOOT_Pedaços Finos de Caranguejo|r
+    >>AdE os |cRXP_ENEMY_Reef Crawlers|r. Saqueie-os para obter seus |cRXP_LOOT_Fine Caranguejo Chunks|r
     .complete 1138,1 --Fine Crab Chunks (6)
     .mob Reef Crawler
 step
     .goto Darkshore,36.52,76.55
-    >>Limpe o Acampamento Murloc sem se deslocar para o centro do acampamento
-    >>Assim que limpar tudo, vá para o centro do acampamento para invocar 3 ondas (3 Coastrunners, 2 Guerreiros, Lodofundo e um Caçador)
-    >>|cRXP_WARN_Se você tiver sorte, |cRXP_ENEMY_Lodofundo|r pode já estar em pé a 30 jardas da costa para o oeste (se alguém tiver morrido nele anteriormente)|r
+    >>Limpe o Acampamento Murloc sem se mover para o centro do acampamento
+    >>Depois de limpar tudo, vá para o centro do acampamento para invocar 3 ondas (3 Coastrunners, 2 Warriors, Lodofundo e um Caçador)
+    >>|cRXP_WARN_Se tiver sorte, |cRXP_ENEMY_Lodofundo|r pode já estar ativo a cerca de 30 jardas da costa para o oeste (se alguém morreu nele antes)|r
     .complete 4740,1 --Murkdeep (1)
     .unitscan Murkdeep
 step
@@ -6663,61 +6663,61 @@ step
     .goto Darkshore,35.61,78.13,60,0
     .goto Darkshore,35.27,79.57,60,0
     .goto Darkshore,34.18,80.71,60,0
-    >>AdE |cRXP_ENEMY_Reef Crawlers|r. Saque-os para seus |cRXP_LOOT_Pedaços Finos de Caranguejo|r
+    >>AdE os |cRXP_ENEMY_Reef Crawlers|r. Saqueie-os para obter seus |cRXP_LOOT_Fine Caranguejo Chunks|r
     .complete 1138,1 --Fine Crab Chunks (6)
     .mob Reef Crawler
 step
     .goto Darkshore,32.70,80.73
     >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
-    .accept 4730 >>Aceite Beached Sea Criatura - Missão
+    >>|cRXP_WARN_Isto leva 5 segundos|r
+    .accept 4730 >>Aceite Criatura Marinha Encalhada
 step
     .goto Darkshore,32.80,81.72,60,0
     .goto Darkshore,32.08,83.28
-    >>Use AdE em |cRXP_ENEMY_Encrusted Tide Crawlers|r. Saqueie-os para obter |cRXP_LOOT_Fine Caranguejo Chunks|r
+    >>AdE os |cRXP_ENEMY_Encrusted Tide Crawlers|r. Saqueie-os para obter seus |cRXP_LOOT_Fine Caranguejo Chunks|r
     .complete 1138,1 --Fine Crab Chunks (6)
     .mob Encrusted Tide Crawler
 step
     .goto Darkshore,31.70,83.72
-    >>Saque a |cRXP_LOOT_Tartaruga Marinha Encalhada|r no chão
+    >>Pegue o |cRXP_LOOT_Beached Tartaruga Marinha|r no chão
     >>|cRXP_WARN_The Tartaruga Casca has LoS|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .accept 4731 >>Aceite Tartaruga Marinha Encalhada
 step
     .goto Darkshore,31.22,85.56
-    >>Pegue a |cRXP_LOOT_Beached Tartaruga Marinha|r no chão
+    >>Pegue o |cRXP_LOOT_Beached Tartaruga Marinha|r no chão
     >>|cRXP_WARN_The Tartaruga Casca has LoS|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .accept 4732 >>Aceite Tartaruga Marinha Encalhada
 step
     .goto Darkshore,31.28,87.39
     >>Pegue a |cRXP_LOOT_Beached Sea Criatura - Missão|r no chão
-    >>|cRXP_WARN_Saque-o no Pescoço|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
-    .accept 4733 >>Aceite Beached Sea Criatura - Missão
+    >>|cRXP_WARN_Saqueie-o no Neck|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
+    .accept 4733 >>Aceite Criatura Marinha Encalhada
 step
     #completewith Remtravel3
-    >>Use AdE em |cRXP_ENEMY_Espreitaluna Sires|r. Saqueie-os pelos seus |cRXP_LOOT_Fine Espreitaluna Pelts|r
-    >>|cRXP_ENEMY_Espreitaluna Sires|r compartilham spawns com |cRXP_ENEMY_Grizzled Thistle Ursos|r e |cRXP_ENEMY_Giant Foreststriders|r
+    >>AdE os |cRXP_ENEMY_Moonstalker Sires|r. Saqueie-os para obter seus |cRXP_LOOT_Fine Espreitaluna Pelts|r
+    >>|cRXP_ENEMY_Moonstalker Sires|r aparecem junto com |cRXP_ENEMY_Grizzled Thistle Ursos|r e |cRXP_ENEMY_Giant Foreststriders|r
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .mob Moonstalker Sire
     .use 13536
 step
     #completewith Remtravel3
-    >>Use AdE em |cRXP_ENEMY_Grizzled Thistle Ursos|r. Saque-os pelos seus |cRXP_LOOT_Grizzled Scalps|r
-    >>|cRXP_ENEMY_Grizzled Thistle Ursos|r compartilham spawns com |cRXP_ENEMY_Espreitaluna Sires|r e |cRXP_ENEMY_Giant Foreststriders|r
+    >>AdE os |cRXP_ENEMY_Grizzled Thistle Ursos|r. Saqueie-os para obter seus |cRXP_LOOT_Grizzled Scalps|r
+    >>|cRXP_ENEMY_Grizzled Thistle Ursos|r aparecem junto com |cRXP_ENEMY_Moonstalker Sires|r e |cRXP_ENEMY_Giant Foreststriders|r
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
     .use 13536
 step
     #completewith next
-    +Não desperte |cRXP_FRIENDLY_Kerlonian|r de agora em diante
-    >>Fique atento a |cRXP_ENEMY_Mamãe Moa da Floresta|r
+    +Não desperte |cRXP_FRIENDLY_Kerlonian|r novamente
+    >>Fique de olho em |cRXP_ENEMY_Mamãe Moa da Floresta|r
     .unitscan Strider Clutchmother
  step
     #label Remtravel3
     .goto Darkshore,35.72,83.69
-    >>Fale com |cRXP_FRIENDLY_Remtravel|r para iniciar a escolta
+    >>Fale com |cRXP_FRIENDLY_Remtravel|r para começar a escolta
     .turnin 729 >>Entregue The Absent Minded Prospector
     .accept 731 >>Aceite O Prospector Distraído
     .target Prospector Remtravel
@@ -6727,28 +6727,28 @@ step
     .goto Darkshore,35.35,84.72,40,0
     .goto Darkshore,35.72,83.69,40,0
     .goto Darkshore,38.65,87.34
-    >>Escorte |cRXP_FRIENDLY_Remtravel|r
-    >>Quando o |cRXP_ENEMY_Gravelflint Quebraossos|r e o |cRXP_ENEMY_Gravelflint Geomante|r aparecerem, deixe o |cRXP_ENEMY_Gravelflint Geomante|r lançar |T135812:0|t[Bola de Fogo] em |cRXP_FRIENDLY_Remtravel|r, depois lance |T136071:0|t[Polimorfia] nele. Abata o |cRXP_ENEMY_Gravelflint Quebraossos|r e depois o |cRXP_ENEMY_Gravelflint Geomante|r
+    >>Escolte |cRXP_FRIENDLY_Remtravel|r
+    >>Quando os |cRXP_ENEMY_Quebraossos Pedrarneira|r e |cRXP_ENEMY_Geomante Pedrarneira|r aparecerem, deixe o |cRXP_ENEMY_Geomante Pedrarneira|r conjurar |T135812:0|t[Bola de Fogo] em |cRXP_FRIENDLY_Remtravel|r, depois conjure |T136071:0|t[Polimorfia] nele. Mate os |cRXP_ENEMY_Quebraossos Pedrarneira|r e depois o |cRXP_ENEMY_Geomante Pedrarneira|r
     .complete 731,1 --Escort Prospector Remtravel (1)
     .target Prospector Remtravel
     .mob Gravelflint Geomancer
     .mob Gravelflint Bonesnapper
 step
     #completewith Glaive2
-    >>Use AdE em |cRXP_ENEMY_Espreitaluna Sires|r. Saqueie-os pelos seus |cRXP_LOOT_Fine Espreitaluna Pelts|r
-    >>|cRXP_ENEMY_Espreitaluna Sires|r compartilham spawns com |cRXP_ENEMY_Grizzled Thistle Ursos|r e |cRXP_ENEMY_Giant Foreststriders|r
+    >>AdE os |cRXP_ENEMY_Moonstalker Sires|r. Saqueie-os para obter seus |cRXP_LOOT_Fine Espreitaluna Pelts|r
+    >>|cRXP_ENEMY_Moonstalker Sires|r aparecem junto com |cRXP_ENEMY_Grizzled Thistle Ursos|r e |cRXP_ENEMY_Giant Foreststriders|r
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .mob Moonstalker Sire
 step
     #completewith next
-    >>Use AdE em |cRXP_ENEMY_Grizzled Thistle Ursos|r. Saque-os pelos seus |cRXP_LOOT_Grizzled Scalps|r
-    >>|cRXP_ENEMY_Grizzled Thistle Ursos|r compartilham spawns com |cRXP_ENEMY_Espreitaluna Sires|r e |cRXP_ENEMY_Giant Foreststriders|r
+    >>AdE os |cRXP_ENEMY_Grizzled Thistle Ursos|r. Saqueie-os para obter seus |cRXP_LOOT_Grizzled Scalps|r
+    >>|cRXP_ENEMY_Grizzled Thistle Ursos|r aparecem junto com |cRXP_ENEMY_Moonstalker Sires|r e |cRXP_ENEMY_Giant Foreststriders|r
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
 step
     #label Glaive2
    .goto Darkshore,38.65,87.34
-    >>Voe para The Master's Glaive
+    >>Vá para The Master's Glaive
    .complete 944,1 --Enter the Master's Glaive (1)
 step
     #completewith Therylune2
@@ -6761,56 +6761,56 @@ step
 step
     #completewith next
     .goto Darkshore,38.65,87.34
-    >>Coloque o |T134715:0|t[Frasco de Vidência] no chão
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
-    >>Clique no |cRXP_PICK_Frasco de Vidência|r no chão
-    .turnin 944 >>Volte a The Master's Glaive
-    .accept 949 >>Aceite O Acampamento do Crepúsculo
+    >>Coloque |T134715:0|t[Frasco de Vidência] no chão
+    >>|cRXP_WARN_Isto leva 5 segundos|r
+    >>Clique em |cRXP_PICK_Frasco de Vidência|r no chão
+    .turnin 944 >>Entregue The Master's Glaive
+    .accept 949 >>Aceite O Acampamento Crepuscular
     .use 5251
 step
     .goto Darkshore,38.65,87.34
     >>Fale com |cRXP_FRIENDLY_Therylune|r
-    >>|cRXP_WARN_Se |cRXP_FRIENDLY_Therylune|r não está lá, AdE os |cRXP_ENEMY_Twilight Disciples|r e os |cRXP_ENEMY_Twilight Thugs|r para obter |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r] até ela aparecer|r
+    >>|cRXP_WARN_Se |cRXP_FRIENDLY_Therylune|r não estiver lá, Ataque os |cRXP_ENEMY_Twilight Disciples|r e os |cRXP_ENEMY_Twilight Thugs|r para obter o |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r] até ela aparecer|r
     .accept 945 >>Aceite A Fuga de Therylune
     .target Therylune
 step
     #completewith Tome2
-    >>Escorte |cRXP_FRIENDLY_Therylune|r
+    >>Escolte |cRXP_FRIENDLY_Therylune|r
     .complete 945,1 --Escort Therylune away from the Master's Glaive (1)
     .target Therylune
 step
     .goto Darkshore,38.55,86.03
-    >>Coloque o |T134715:0|t[Frasco de Vidência] no chão
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Coloque |T134715:0|t[Frasco de Vidência] no chão
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     >>Clique em |cRXP_PICK_Frasco de Vidência|r no chão
-    .turnin 944 >>Volte a The Master's Glaive
-    .accept 949 >>Aceite O Acampamento do Crepúsculo
+    .turnin 944 >>Entregue The Master's Glaive
+    .accept 949 >>Aceite O Acampamento Crepuscular
     .use 5251
 step
     #label Tome2
     .goto Darkshore,38.55,86.03
-    >>Clique no |cRXP_PICK_Crepúsculo Tomo|r
-    .turnin 949 >>Entregue O Acampamento do Crepúsculo
-    .accept 950 >>Aceite Retorno a Onu
+    >>Clique em |cRXP_PICK_Twilight Tomo|r
+    .turnin 949 >>Entregue O Acampamento Crepuscular
+    .accept 950 >>Aceite Devolver a Onu
     .use 13536
 step
     #label Therylune2
-    >>Escorte |cRXP_FRIENDLY_Therylune|r
-    >>|cRXP_WARN_Certifique-se de que |cRXP_FRIENDLY_Therylune|r permanece no alcance de renderização ou você falhará na missão|r
+    >>Escolte |cRXP_FRIENDLY_Therylune|r
+    >>|cRXP_WARN_Certifique-se de que |cRXP_FRIENDLY_Therylune|r permaneça no alcance de renderização ou você falhará na missão|r
     .complete 945,1 --Escort Therylune away from the Master's Glaive (1)
     .use 13536
     .target Therylune
 step
     #completewith Onu3
-    >>Use AdE em |cRXP_ENEMY_Espreitaluna Sires|r. Saqueie-os pelos seus |cRXP_LOOT_Fine Espreitaluna Pelts|r
-    >>|cRXP_ENEMY_Espreitaluna Sires|r compartilham spawns com |cRXP_ENEMY_Grizzled Thistle Ursos|r e |cRXP_ENEMY_Giant Foreststriders|r
+    >>AdE os |cRXP_ENEMY_Moonstalker Sires|r. Saqueie-os para obter seus |cRXP_LOOT_Fine Espreitaluna Pelts|r
+    >>|cRXP_ENEMY_Moonstalker Sires|r aparecem junto com |cRXP_ENEMY_Grizzled Thistle Ursos|r e |cRXP_ENEMY_Giant Foreststriders|r
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .mob Moonstalker Sire
 step
     #completewith Onu3
     #label Scalps2
-    >>Use AdE em |cRXP_ENEMY_Grizzled Thistle Ursos|r. Saque-os pelos seus |cRXP_LOOT_Grizzled Scalps|r
-    >>|cRXP_ENEMY_Grizzled Thistle Ursos|r compartilham spawns com |cRXP_ENEMY_Espreitaluna Sires|r e |cRXP_ENEMY_Giant Foreststriders|r
+    >>AdE os |cRXP_ENEMY_Grizzled Thistle Ursos|r. Saqueie-os para obter seus |cRXP_LOOT_Grizzled Scalps|r
+    >>|cRXP_ENEMY_Grizzled Thistle Ursos|r aparecem junto com |cRXP_ENEMY_Moonstalker Sires|r e |cRXP_ENEMY_Giant Foreststriders|r
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
 step
@@ -6818,29 +6818,29 @@ step
     #completewith next
     .goto Darkshore,41.40,80.56,-1
     >>Clique em |cRXP_PICK_Buzzbox 525|r
-    .turnin 1003 >>Vá a Buzzbox 525
+    .turnin 1003 >>Entregue Buzzbox 525
 step
     #label Onu3
     .goto Darkshore,43.55,76.29,-1
     >>Fale com |cRXP_FRIENDLY_Onu|r
-    .turnin 950 >>Entregue Retorno a Onu
+    .turnin 950 >>Entregue Devolver a Onu
     .target Onu
 step
     .goto Darkshore,44.40,76.42
     >>Fale com |cRXP_FRIENDLY_Kerlonian|r
     >>|cRXP_WARN_Se |cRXP_FRIENDLY_Kerlonian|r não está lá, pule este passo|r
-    .accept 5321 >>Aceite O Adormecido Despertou
+    .accept 5321 >>Aceite A Adormecida Despertou
     .target Kerlonian Evershade
 step
     .goto Darkshore,44.39,76.30
-    >>Abra o |cRXP_PICK_Kerlonian's Baú|r. Pegue-o para obter o |cRXP_LOOT_Corneta do Despertar|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>Abra |cRXP_PICK_Baú de Kerlonian|r. Saque-o para obter a |cRXP_LOOT_Corneta do Despertar|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 5321,1 --Horn of Awakening (1)
     .isOnQuest 5321
 step
     #completewith 525
-    >>Use AdE em |cRXP_ENEMY_Espreitaluna Sires|r. Saqueie-os pelos seus |cRXP_LOOT_Fine Espreitaluna Pelts|r
-    >>|cRXP_ENEMY_Espreitaluna Sires|r compartilham spawns com |cRXP_ENEMY_Grizzled Thistle Ursos|r e |cRXP_ENEMY_Giant Foreststriders|r
+    >>AdE os |cRXP_ENEMY_Moonstalker Sires|r. Saqueie-os para obter seus |cRXP_LOOT_Fine Espreitaluna Pelts|r
+    >>|cRXP_ENEMY_Moonstalker Sires|r aparecem junto com |cRXP_ENEMY_Grizzled Thistle Ursos|r e |cRXP_ENEMY_Giant Foreststriders|r
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .mob Moonstalker Sire
 step
@@ -6858,8 +6858,8 @@ step
     .goto Darkshore,38.70,82.44,60,0
     .goto Darkshore,38.13,79.75,60,0
     .goto Darkshore,40.52,80.57
-    >>Use AdE em |cRXP_ENEMY_Grizzled Thistle Ursos|r. Saque-os pelos seus |cRXP_LOOT_Grizzled Scalps|r
-    >>|cRXP_ENEMY_Grizzled Thistle Ursos|r compartilham spawns com |cRXP_ENEMY_Espreitaluna Sires|r e |cRXP_ENEMY_Giant Foreststriders|r
+    >>AdE os |cRXP_ENEMY_Grizzled Thistle Ursos|r. Saqueie-os para obter seus |cRXP_LOOT_Grizzled Scalps|r
+    >>|cRXP_ENEMY_Grizzled Thistle Ursos|r aparecem junto com |cRXP_ENEMY_Moonstalker Sires|r e |cRXP_ENEMY_Giant Foreststriders|r
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
     .use 13536
@@ -6867,7 +6867,7 @@ step
     #label 525
     .goto Darkshore,41.40,80.56
     >>Clique em |cRXP_PICK_Buzzbox 525|r
-    .turnin 1003 >>Vá a Buzzbox 525
+    .turnin 1003 >>Entregue Buzzbox 525
     .use 13536
 step
     .goto Darkshore,41.10,84.17,70,0
@@ -6884,26 +6884,26 @@ step
     .goto Darkshore,42.76,90.70,70,0
     .goto Darkshore,41.77,87.88,70,0
     .goto Darkshore,44.57,93.03
-    >>AdE os |cRXP_ENEMY_Moonstalker Matriarchs|r e os |cRXP_ENEMY_Moonstalker Sires|r. Saqueie-os para obter suas |cRXP_LOOT_Fine Espreitaluna Pelts|r
-    >>|cRXP_ENEMY_Espreitaluna Sires|r compartilham spawns com |cRXP_ENEMY_Grizzled Thistle Ursos|r e |cRXP_ENEMY_Giant Foreststriders|r
+    >>AdE os |cRXP_ENEMY_Moonstalker Matriarchs|r e os |cRXP_ENEMY_Moonstalker Sires|r. Saqueie-os para obter seus |cRXP_LOOT_Fine Espreitaluna Pelts|r
+    >>|cRXP_ENEMY_Moonstalker Sires|r aparecem junto com |cRXP_ENEMY_Grizzled Thistle Ursos|r e |cRXP_ENEMY_Giant Foreststriders|r
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .unitscan Moonstalker Sire
     .unitscan Moonstalker Matriarch
     .use 13536
 step
     #completewith Sleeper
-    .xp 19+4635 >>Farme até 4635+/21300xp
+    .xp 19+4635 >>Tritúre até 4635+/21300xp
     .isOnQuest 5321
 step
     #completewith Delgren
-    >>AdE os |cRXP_ENEMY_Ghostpaw Runners|r. Saqueie-os para obter suas |cRXP_LOOT_Lean Lobo Flanks|r
+    >>AdE |cRXP_ENEMY_Ghostpaw Runners|r. Saqueie-os para obter |cRXP_LOOT_Lean Lobo Flanks|r
     .collect 1015,10,90,1 --Lean Wolf Flank (10)
     .mob Ghostpaw Runner
 step
     #label Sleeper
     .goto Ashenvale,27.26,35.58
     >>Fale com |cRXP_FRIENDLY_Liladris|r
-    .turnin 5321,1 >>Entregue O Adormecido Despertou
+    .turnin 5321,1 >>Entregue A Adormecida Despertou
     .target Liladris Moonriver
     .use 13536
     .isOnQuest 5321
@@ -6920,10 +6920,10 @@ step
     .target Therysil
 step
     .goto Ashenvale,34.41,47.99
-    .xp 19+8720 >>Farme até 8720+/21300xp
+    .xp 19+8720 >>Tritúre até 8720+/21300xp
 step << skip
     #completewith next
-    +|cRXP_WARN_Início lançar feitiços repetidamente|r |T132794:0|t[Conjurar Água r2] |cRXP_WARN_para conjurar o máximo de água possível antes de pegar o voo|r
+    +|cRXP_WARN_Comece a fazer spam com |T132794:0|t[Conjurar Água r2] |cRXP_WARN_para conjurar o máximo de água possível antes de pegar o voo|r
 step
     #completewith next
     .goto Ashenvale,34.41,47.99
@@ -6959,7 +6959,7 @@ step
 step
     .goto Darkshore,38.11,41.16
     >>Fale com |cRXP_FRIENDLY_Gorbold|r
-    >>|cRXP_BUY_Compre 20|r |T134059:0|t[Temperos Suaves] |cRXP_BUY_dele|r
+    >>|cRXP_BUY_Compre 20|r |T134059:0|t[Temperos Suaves] |cRXP_BUY_com ele|r
     .collect 2678,20,90,1 --Mild Spices (20)
     .target Gorbold Steelhand
     .itemcount 6889,20
@@ -6967,7 +6967,7 @@ step
 step
     .goto Darkshore,38.11,41.16
     >>Fale com |cRXP_FRIENDLY_Gorbold|r
-    >>|cRXP_BUY_Compre 15|r |T134059:0|t[Temperos Suaves] |cRXP_BUY_dele|r
+    >>|cRXP_BUY_Compre 15|r |T134059:0|t[Temperos Suaves] |cRXP_BUY_com ele|r
     .collect 2678,15,90,1 --Mild Spices (15)
     .target Gorbold Steelhand
     .itemcount 6889,15
@@ -6975,7 +6975,7 @@ step
 step
     .goto Darkshore,38.11,41.16
     >>Fale com |cRXP_FRIENDLY_Gorbold|r
-    >>|cRXP_BUY_Compre 10|r |T134059:0|t[Temperos Suaves] |cRXP_BUY_dele|r
+    >>|cRXP_BUY_Compre 10|r |T134059:0|t[Temperos Suaves] |cRXP_BUY_com ele|r
     .collect 2678,10,90,1 --Mild Spices (10)
     .target Gorbold Steelhand
     .itemcount 6889,10
@@ -6983,7 +6983,7 @@ step
 step
     .goto Darkshore,38.11,41.16
     >>Fale com |cRXP_FRIENDLY_Gorbold|r
-    >>|cRXP_BUY_Compre 5|r |T134059:0|t[Temperos Suaves] |cRXP_BUY_dele|r
+    >>|cRXP_BUY_Compre 5|r |T134059:0|t[Temperos Suaves] |cRXP_BUY_com ele|r
     .collect 2678,5,90,1 --Mild Spices (5)
     .target Gorbold Steelhand
     .itemcount 6889,5
@@ -6991,7 +6991,7 @@ step
 step
     .goto Darkshore,37.45,40.50
     >>Fale com |cRXP_FRIENDLY_Dalmond|r
-    >>|cRXP_BUY_Compre uma|r |T135435:0|t[Madeira Simples] |cRXP_BUY_e|r |T135237:0|t[Pederneira e Lenha] |cRXP_BUY_dele|r
+    >>|cRXP_BUY_Compre uma|r |T135435:0|t[Simple Madeira] |cRXP_BUY_e|r |T135237:0|t[Pederneira e Lenha] |cRXP_BUY_com ele|r
     .collect 4470,1,90,1 --Simple Wood (1)
     .collect 4471,1,90,1 --Flint and Tinder (1)
     .target Dalmond
@@ -7009,48 +7009,48 @@ step
     .goto Darkshore,37.44,43.03,20,0
     .goto Darkshore,36.85,44.05,20,0
     .goto Darkshore,32.96,41.88,20,0
-    .goto Darkshore,33.23,39.91,50 >>Voe para o Barco de Darnassus
+    .goto Darkshore,33.23,39.91,50 >>Vá para o barco de Darnassus
 step
     #completewith Teldrassil
     #requires BoatT
-    .cast 818 >>Use |T135805:0|t[Fogo para Cozinhar] no Barco (ou Cais se o barco ainda não está visível)
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    .cast 818 >>Use |T135805:0|t[Fogo para Cozinhar] no barco (ou no Dock se o barco ainda não estiver visível)
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .skill cooking,50,1
 step
     #completewith Teldrassil
     #requires BoatT
     #label BoarM
-    +Cozinhe qualquer |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r em |T133974:0|t[Carne Assada de Porco]
+    +Cozinhe qualquer |T133970:0|t[Naco de Carne de Javali]|cRXP_LOOT_ em |T133974:0|t[Carne Assada de Porco]|r
     .itemcount 769,1
     .skill cooking,50,1
 step
     #completewith next
     #requires BoarM
-    +|cRXP_WARN_Comece|r |T132794:0|t[Conjurar Água r2]|cRXP_WARN_ rapidamente para conjurar o máximo de água possível|r
+    +|cRXP_WARN_Fique conjurando repetidamente|r |T132794:0|t[Conjurar Água r2] |cRXP_WARN_para conjurar o máximo de água possível|r
 step
     #label Teldrassil
-    .goto Teldrassil,54.91,96.25,100 >>Pegue o Barco para Teldrassil
+    .goto Teldrassil,54.91,96.25,100 >>Pegue o barco para Teldrassil
 step
     #completewith next
     .goto Teldrassil,55.52,93.68,60,0
     .goto Teldrassil,56.80,92.90,40,0
     .goto Teldrassil,57.47,92.97,20,0
-    .goto Teldrassil,58.40,94.01,20 >>Voe para |cRXP_FRIENDLY_Vesprystus|r
+    .goto Teldrassil,58.40,94.01,20 >>Vá para |cRXP_FRIENDLY_Vesprystus|r
 step
     .goto Teldrassil,58.40,94.01
     >>Fale com |cRXP_FRIENDLY_Vesprystus|r
-    .fp Rut'theran >>Aprenda a rota de voo da Vila de Rut'theran
+    .fp Rut'theran >>Aprenda a rota de voo para Vila de Rut'theran
     .target Vesprystus
 step
     #completewith next
     .goto 1438,55.885,89.350
-    .zone Darnassus >>Passe através do portal roxo para Darnassus
+    .zone Darnassus >>Atravesse o portal roxo para Darnassus
 step
     #completewith next
     .goto Darnassus,37.94,48.14,30,0
     .goto Darnassus,38.20,65.96,30,0
     .goto Darnassus,36.79,72.44,30,0
-    .goto Darnassus,31.24,84.49,20 >>Voe para |cRXP_FRIENDLY_Greywhisker|r
+    .goto Darnassus,31.24,84.49,20 >>Vá para |cRXP_FRIENDLY_Greywhisker|r
 step
     .goto Darnassus,31.24,84.49
     >>Fale com |cRXP_FRIENDLY_Greywhisker|r
@@ -7064,20 +7064,20 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Alliance Mage
-#name 20-22 Aventura Redridge 1 Mago AdE
+#name 20-22 ADV Redridge 1 Mago AdE
 #version 2
-#group ADV AdE Maga da Aliança
+#group RestedXP ADV AdE Maga da Aliança
 #defaultfor Human Mage/Gnome Mage
-#next 22-26 ADV Pantanal 1 Mago AdE
+#next 22-26 Avançado Pantanal 1 Mago AdE
 
 step
     #completewith next
-    .hs >>Use sua Pedra de Retorno para ir a Ventobravo
+    .hs >>Use sua Pedra de Retorno para ir à Cidade de Ventobravo
     .zoneskip Stormwind City
 step
     .goto Stormwind City,55.46,65.26
-    >>Fale com |cRXP_FRIENDLY_Keldric|r através da parede
-    .vendor 1257 >>Comerciante Lixo. |cRXP_BUY_Compre|r |T134830:0|t[Poção de Cura Menor] |cRXP_BUY_dele (se estiverem disponíveis)|r
+    >>Fale com |cRXP_FRIENDLY_Keldric|r pela parede
+    .vendor 1257 >>Vendedor de Lixo. |cRXP_BUY_Compre|r |T134830:0|t[Lesser Cura Potions] |cRXP_BUY_dele (se estiverem disponíveis)|r
     .target Orlande Bórgia
 step
     #completewith Bank
@@ -7090,26 +7090,26 @@ step
     .bankwithdraw 4371,1941,1711,1478,1712,3012,1180,1181,3013,2998 >>Retire os seguintes itens do seu banco:
     >>|T133024:0|t[Tubo de Bronze]
     >>|T134943:0|t[Pergaminhos]
-    >>|T132620:0|t[Barril de Merlot]
+    >>|T132620:0|t[Cask of Merlot]
     >>|T134377:0|t[A Simple Compass]
     .target Newton Burnside
 step
     #label Bank
     .goto Stormwind City,57.03,72.97
     >>Fale com |cRXP_FRIENDLY_Newton|r
-    >>|cRXP_WARN_NOTA: Você precisa de 12 pilhas de cada tecido (|r|T132911:0|t[Lã]|cRXP_WARN_,|r |T132905:0|t[Seda]|cRXP_WARN_,|r |T132892:0|t[Magitrama]|cRXP_WARN_,|r e |T132903:0|t[Runatrama]|cRXP_WARN_) para efetuar as entregas de tecido depois. Você obterá estes naturalmente ao subir de nível|r
+    >>|cRXP_WARN_NOTA: Você precisa de 12 pilhas de cada pano (|r|T132911:0|t[Lã]|cRXP_WARN_,|r |T132905:0|t[Seda]|cRXP_WARN_,|r |T132892:0|t[Magitrama]|cRXP_WARN_,|r e |T132903:0|t[Runatrama]|cRXP_WARN_) para fazer as entregas de pano depois. Você obterá estes naturalmente conforme sobe de nível|r
     .bankdeposit 17056,2592,1015,4654 >>Deposite os itens a seguir no banco:
     >>|T132917:0|t[Pena de Luz]
     >>|T132911:0|t[Lã]
     >>|T133970:0|t[Lombo de Lobo Magro]
-    >>|T134431:0|t[Fóssil Misterioso]
+    >>|T134431:0|t[Mysterious Fossil]
     .target Newton Burnside
 step
     #completewith next
     #requires Bank1
     .goto Stormwind City,52.16,61.44,12,0
     .goto Stormwind City,49.41,63.41,12,0
-    .goto Stormwind City,51.16,68.33,12 >>Viaje para |cRXP_FRIENDLY_Roberto|r
+    .goto Stormwind City,51.16,68.33,12 >>Voe para |cRXP_FRIENDLY_Roberto|r
 step
     #requires Bank1
     .goto Stormwind City,52.05,67.96
@@ -7125,11 +7125,11 @@ step
     .goto Stormwind City,51.83,60.41,4,0
     .goto Stormwind City,51.59,60.15,6,0
     .goto Stormwind City,39.17,76.58,12,0
-    >>|cRXP_WARN_Suba na tocha, depois desça para ficar embaixo de Ventobravo|r
-    >>|cRXP_WARN_Com Sombras em "Justo" ou "Baixo", entre no meio dos pés de Derek the Dinosaur (a parte mais clara da terra) bem antes do vazio azul, depois caminhe reto para frente|r
-    >>|cRXP_WARN_Nota: há uma pequena chance de morte ao usar este método. Você também pode caminhar até a Torre do Mago normalmente se preferir|r
-    .link https://youtu.be/gV8-wgQEomc >>https://youtu.be/gV8-wgQEomc >> CLIQUE AQUI para o guia
-    .goto Stormwind City,38.61,79.39,10 >>Voe para |cRXP_FRIENDLY_Larimaine|r
+    >>|cRXP_WARN_Pule para cima da tocha, depois caia para ficar sob Ventobravo|r
+    >>|cRXP_WARN_Com Sombras em "Fair" ou "Low", fique no meio dos pés de Derek the Dinosaur (a parte mais clara da terra) bem antes do vazio azul, depois caminhe em linha reta para frente|r
+    >>|cRXP_WARN_NOTA: Há uma pequena chance de morrer usando este método. Você também pode caminhar normalmente para a Mago Torre se desejar|r
+    .link https://youtu.be/gV8-wgQEomc >>https://youtu.be/gV8-wgQEomc >> CLIQUE AQUI para um guia
+    .goto Stormwind City,38.61,79.39,10 >>Vá para |cRXP_FRIENDLY_Larimaine|r
 step
     #requires Bank1
     .goto Stormwind City,39.69,79.56
@@ -7140,7 +7140,7 @@ step
 step
     .goto Stormwind City,38.61,79.39
     >>Fale com |cRXP_FRIENDLY_Jennea|r
-    .trainer >>Aprenda seus feitiços de classe (Lampejo, Evocação, Armadura Gélida r3, Escudo de Mana, Conjurar Água r3)
+    .trainer >>Treine seus feitiços de classe (Lampejo, Evocação, Armadura Gélida r3, Escudo de Mana, Conjurar Água r3)
     >>|cRXP_WARN_NÃO treine Nevasca ainda|r
     >>Custo Total: 1g
     .target Jennea Cannon
@@ -7156,12 +7156,12 @@ step
     .goto Stormwind City,32.07,81.50,10,0
     .goto Stormwind City,32.63,80.62,8,0
     >>Saia da Torre do Mago
-    .goto Stormwind City,32.16,79.84,10 >>Vá para |cRXP_FRIENDLY_Charys|r
+    .goto Stormwind City,32.16,79.84,10 >>Voe para |cRXP_FRIENDLY_Charys|r
 step
     .goto Stormwind City,32.16,79.84
     >>Entre no edifício
     >>Fale com |cRXP_FRIENDLY_Charys|r
-    >>|cRXP_BUY_Compre 2|r |T134419:0|t[Runa de Teleporte]|cRXP_BUY_,|r |T134851:0|t[Mana Inferior Potions]|cRXP_BUY_,|r |T134831:0|t[Cura Potions]|cRXP_BUY_, e um|r |T132515:0|t[Tecido Belt] |cRXP_BUY_dela (se estiverem disponíveis)|r
+    >>|cRXP_BUY_Compre 2|r |T134419:0|t[Runa de Teleporte]|cRXP_BUY_,|r |T134851:0|t[Poções de Mana Inferior]|cRXP_BUY_,|r |T134831:0|t[Poções de Cura]|cRXP_BUY_, e um|r |T132515:0|t[Cinto de Tecido] |cRXP_BUY_dela (se estiverem disponíveis)|r
     >>|cRXP_WARN_NÃO vá abaixo de 18s 31c|r
     .collect 17031,2,344,1 --Rune of Teleportation (2)
     .target Andréa Iserian
@@ -7171,7 +7171,7 @@ step
     .goto Stormwind City,32.16,79.84
     >>Entre no edifício
     >>Fale com |cRXP_FRIENDLY_Charys|r
-    >>|cRXP_BUY_Compre dois|r |T134419:0|t[Runa de Teleporte]|cRXP_BUY_,|r |T134851:0|t[Mana Inferior Potions]|cRXP_BUY_,|r |T134831:0|t[Cura Potions]|cRXP_BUY_, e um|r |T132515:0|t[Tecido Belt] |cRXP_BUY_dela (se estiverem disponíveis)|r
+    >>|cRXP_BUY_Compre dois|r |T134419:0|t[Runa de Teleporte]|cRXP_BUY_,|r |T134851:0|t[Poções de Mana Inferior]|cRXP_BUY_,|r |T134831:0|t[Poções de Cura]|cRXP_BUY_, e um|r |T132515:0|t[Cinto de Tecido] |cRXP_BUY_dela (se estiverem disponíveis)|r
     >>|cRXP_WARN_NÃO vá abaixo de 26s 31c|r
     .collect 17031,2,344,1 --Rune of Teleportation (2)
     .target Andréa Iserian
@@ -7184,12 +7184,12 @@ step
     .goto Stormwind City,46.32,66.93,20,0
     .goto Stormwind City,42.45,61.76,20,0
     .goto Stormwind City,41.17,63.74,15,0
-    .goto Stormwind City,41.57,65.46,10 >>Vá para |cRXP_FRIENDLY_Adair|r
+    .goto Stormwind City,41.57,65.46,10 >>Voe para |cRXP_FRIENDLY_Adair|r
 step
     .goto Stormwind City,41.57,65.46
     >>Entre no edifício
     >>Fale com |cRXP_FRIENDLY_Adair|r
-    .vendor 1316 >>|cRXP_BUY_Compre itens sem inteligência|r |T134943:0|t[Pergaminhos] |cRXP_BUY_dele (se estiverem disponíveis)|r
+    .vendor 1316 >>|cRXP_BUY_Compre sem inteligência|r |T134943:0|t[Pergaminhos] |cRXP_BUY_dele (se estiverem disponíveis)|r
     >>|cRXP_WARN_NÃO vá abaixo de 18s 31c|r
     .money <0.1831
     .target Adair Gilroy
@@ -7198,14 +7198,14 @@ step
     .goto Stormwind City,41.57,65.46
     >>Entre no edifício
     >>Fale com |cRXP_FRIENDLY_Adair|r
-    .vendor 1316 >>|cRXP_BUY_Compre itens sem inteligência|r |T134943:0|t[Pergaminhos] |cRXP_BUY_dele (se estiverem disponíveis)|r
+    .vendor 1316 >>|cRXP_BUY_Compre sem inteligência|r |T134943:0|t[Pergaminhos] |cRXP_BUY_dele (se estiverem disponíveis)|r
     >>|cRXP_WARN_NÃO vá abaixo de 26s 31c|r
     .money <0.2631
     .target Adair Gilroy
 step
     #completewith next
     .goto Stormwind City,37.84,58.50,5,0
-    .goto Stormwind City,37.81,45.02,20 >>Corra pela borda da parede em vez de dar a volta
+    .goto Stormwind City,37.81,45.02,20 >>Suba a borda da parede em vez de contornar
 step
     .goto Stormwind City,45.70,38.42
     >>Fale com |cRXP_FRIENDLY_Kristoff|r
@@ -7215,12 +7215,12 @@ step
     #completewith next
     .goto Stormwind City,47.85,32.67,15,0
     .goto Stormwind City,47.96,31.15,12,0
-    .goto Stormwind City,49.18,30.29,12 >>Viaje para |cRXP_FRIENDLY_Baros|r
+    .goto Stormwind City,49.18,30.29,12 >>Vá para |cRXP_FRIENDLY_Baros|r
 step
     .goto Stormwind City,49.18,30.29
     >>Entre no prédio
-    >>Fale com |cRXP_FRIENDLY_Baros|r
-    .turnin 399 >>Entregue Humilde Beginnings
+    >>Converse com |cRXP_FRIENDLY_Baros|r
+    .turnin 399 >>Entregue Começos Humildes
     .target Baros Alexston
 step
     .goto Stormwind City,55.25,7.07
@@ -7234,7 +7234,7 @@ step
     .goto Stormwind City,72.60,23.21,20,0
     .goto Stormwind City,69.78,16.58,20,0
     .goto Stormwind City,70.34,11.47,20,0
-    .goto Stormwind City,74.19,7.45,12 >>Viaje para |cRXP_FRIENDLY_Milton|r
+    .goto Stormwind City,74.19,7.45,12 >>Vá para |cRXP_FRIENDLY_Milton|r
 step
     .goto Stormwind City,74.19,7.45
     >>Fale com |cRXP_FRIENDLY_Milton|r
@@ -7249,7 +7249,7 @@ step
     .goto Stormwind City,69.20,29.08,30,0
     .goto Stormwind City,61.74,42.34,20,0
     .goto Stormwind City,64.80,60.34,12,0
-    .goto Stormwind City,64.17,60.60,12 >>Viaje para |cRXP_FRIENDLY_Felicia|r
+    .goto Stormwind City,64.17,60.60,12 >>Vá para |cRXP_FRIENDLY_Felicia|r
 step
     .goto Stormwind City,64.17,60.60
     >>Fale com |cRXP_FRIENDLY_Felicia|r
@@ -7265,10 +7265,10 @@ step
     .goto Stormwind City,63.13,65.23,20,0
     .goto Stormwind City,65.94,65.48,12,0
     .goto Stormwind City,65.85,66.00,8,0
-    .goto Stormwind City,65.22,75.58,40 >>Desça para a saliência abaixo de |cRXP_FRIENDLY_Dungar|r
+    .goto Stormwind City,65.22,75.58,40 >>Desça para o ressalto abaixo de |cRXP_FRIENDLY_Dungar|r
 step
     #completewith next
-    .goto Elwynn Forest,42.96,65.62,30 >>Viaje para o Goldshire Estalagem
+    .goto Elwynn Forest,42.96,65.62,30 >>Vá para a Estalagem de Vila de Ouro do Sol
 step << skip
     #completewith Paxton
     #requires PaxtonT
@@ -7277,12 +7277,12 @@ step << skip
     .goto Elwynn Forest,48.27,41.93,50,0
     .goto Elwynn Forest,48.79,41.56,10,0
     .goto Elwynn Forest,49.26,40.69,10,0
-    >>Pegue a Rota da Montanha em direção a |cRXP_FRIENDLY_Paxton|r
-    .goto Elwynn Forest,49.61,40.41,10 >>Viaje para |cRXP_FRIENDLY_Paxton|r
+    >>Pegue a Trajetória da Montanha em direção a |cRXP_FRIENDLY_Paxton|r
+    .goto Elwynn Forest,49.61,40.41,10 >>Vá para |cRXP_FRIENDLY_Paxton|r
 step
     .goto Elwynn Forest,44.00,65.69
     >>Fale com |cRXP_FRIENDLY_Dobbins|r
-    >>|cRXP_BUY_Compre um|r |T132794:0|t[Skin of Sweet Rum] |cRXP_BUY_dele|r
+    >>|cRXP_BUY_Compre um|r |T132794:0|t[Skin of Sweet Rum] |cRXP_BUY_do vendedor|r
     .collect 1939,1,116,1 --Skin of Sweet Rum
     .target Barkeep Dobbins
 step
@@ -7297,7 +7297,7 @@ step
     #requires FarleyHome
     .goto Elwynn Forest,48.79,41.56,10,0
     .goto Elwynn Forest,49.26,40.69,10,0
-    .goto Elwynn Forest,49.61,40.41,10 >>Viaje para |cRXP_FRIENDLY_Paxton|r
+    .goto Elwynn Forest,49.61,40.41,10 >>Vá para |cRXP_FRIENDLY_Paxton|r
 step
     #requires FarleyHome
     .goto Elwynn Forest,49.61,40.41
@@ -7311,13 +7311,13 @@ step
     .goto Elwynn Forest,48.79,41.56,10,0
     .goto Elwynn Forest,48.28,42.21,10,0
     .goto Elwynn Forest,57.62,51.97,30,0
-    .goto Elwynn Forest,64.45,69.10,15 >>Pegue a Rota da Montanha em direção à Torre de Azora
+    .goto Elwynn Forest,64.45,69.10,15 >>Pegue a Trajetória da Montanha em direção a Torre de Azora
 step
     #sticky
     #label Dawn
     .goto Elwynn Forest,64.88,69.19,0,0
-    >>Fale com |cRXP_FRIENDLY_Sol|r acima
-    .vendor 958 >>|cRXP_BUY_Compre os|r |T134943:0|t[Pergaminhos]|cRXP_BUY_,|r |T134850:0|t[Mana Menor Potions]|cRXP_BUY_, e|r |T134830:0|t[Lesser Cura Potions] |cRXP_BUY_dela (se estiverem disponíveis)|r
+    >>Fale com |cRXP_FRIENDLY_Sol|r em cima
+    .vendor 958 >>|cRXP_BUY_Compre sem inteligência|r |T134943:0|t[Pergaminhos]|cRXP_BUY_,|r |T134850:0|t[Mana Menor Potions]|cRXP_BUY_, e|r |T134830:0|t[Lesser Cura Potions] |cRXP_BUY_dela (se estiverem disponíveis)|r
     >>|cRXP_WARN_NÃO vá abaixo de 11s 38c|r
     .money <0.1138
     .target Dawn Brightstar
@@ -7327,7 +7327,7 @@ step
     #label Dawn2
     .goto Elwynn Forest,64.88,69.19,0,0
     >>Fale com |cRXP_FRIENDLY_Sol|r em cima
-    .vendor 958 >>|cRXP_BUY_Compre itens sem inteligência|r |T134943:0|t[Pergaminhos]|cRXP_BUY_,|r |T134850:0|t[Mana Menor Potions]|cRXP_BUY_, e|r |T134830:0|t[Lesser Cura Potions] |cRXP_BUY_dela (se estiverem disponíveis)|r
+    .vendor 958 >>|cRXP_BUY_Compre sem inteligência|r |T134943:0|t[Pergaminhos]|cRXP_BUY_,|r |T134850:0|t[Mana Menor Potions]|cRXP_BUY_, e|r |T134830:0|t[Lesser Cura Potions] |cRXP_BUY_dela (se estiverem disponíveis)|r
     >>|cRXP_WARN_NÃO vá abaixo de 19s 38c|r
     .money <0.1938
     .target Dawn Brightstar
@@ -7335,7 +7335,7 @@ step
 step
     #label Theo
     .goto Elwynn Forest,65.22,69.71
-    >>Vá para cima
+    >>Suba as escadas
     >>Fale com |cRXP_FRIENDLY_Teócrito|r
     .accept 94 >>Aceite A Olho Vigilante
     .target Theocritus
@@ -7350,7 +7350,7 @@ step
     #requires Dawn2
     .goto Duskwood,73.81,44.02
     >>Fale com |cRXP_FRIENDLY_Hann|r
-    >>|cRXP_BUY_Compre a|r |T132798:0|t[Garrafa de Pinga] |cRXP_BUY_dele|r
+    >>|cRXP_BUY_Compre a|r |T132798:0|t[Garrafa de Pinga] |cRXP_BUY_dela|r
     .collect 1942,1,116,1 --Bottle of Moonshine (1)
     .target Barkeep Hann
 step
@@ -7363,8 +7363,8 @@ step
 step
     .goto Duskwood,75.34,48.74
     >>Fale com |cRXP_FRIENDLY_Elaine|r
-    .accept 163 >>Aceite Monte Corvo
-    .accept 164 >>Aceite Entregas a Sven
+    .accept 163 >>Aceite Corvo Hill
+    .accept 164 >>Aceite Entregas para Sven
     .accept 165 >>Aceite O Eremita
     .target Elaine Carevin
 step
@@ -7376,23 +7376,23 @@ step
 step
     .goto Duskwood,79.78,48.06
     >>Fale com |cRXP_FRIENDLY_Viktori|r
-    .accept 174 >>Aceite Ora (direis) ouvir estrelas!
-    .turnin 174 >>Entregue Olhe para as Estrelas
-    .accept 175 >>Aceite Ora (direis) ouvir estrelas!
+    .accept 174 >>Aceite Ora (direis) ouvir Estrelas!
+    .turnin 174 >>Entregue Ora (direis) ouvir Estrelas!
+    .accept 175 >>Aceite Ora (direis) ouvir Estrelas!
     .target Viktori Prism'Antras
     .itemcount 4371,1
 step
     #label Viktori
     .goto Duskwood,79.78,48.06
     >>Fale com |cRXP_FRIENDLY_Viktori|r
-    .accept 175 >>Aceite Ora (direis) ouvir estrelas!
+    .accept 175 >>Aceite Ora (direis) ouvir Estrelas!
     .target Viktori Prism'Antras
     .isQuestTurnedIn 174
 step
     .goto Duskwood,81.46,59.02
     >>Fale com |cRXP_FRIENDLY_Mary|r
-    .turnin 175 >>Entregue Ora (direis) ouvir estrelas!
-    .accept 177 >>Aceite Olhe para as Estrelas
+    .turnin 175 >>Entregue Ora (direis) ouvir Estrelas!
+    .accept 177 >>Aceite Ora (direis) ouvir Estrelas!
     .target Blind Mary
     .isQuestTurnedIn 174
 step
@@ -7403,38 +7403,38 @@ step
 step
     #completewith Kzixx
     .goto Duskwood,76.66,23.49,60,0
-    .goto Duskwood,81.82,19.76,20 >>Vá para |cRXP_FRIENDLY_Kzixx|r
+    .goto Duskwood,81.82,19.76,20 >>Vá em direção a |cRXP_FRIENDLY_Kzixx|r
 step
     .goto Duskwood,81.82,19.76
     >>Fale com |cRXP_FRIENDLY_Kzixx|r
-    .vendor 3134 >>|cRXP_BUY_Compre|r |T134851:0|t[Poções de Mana Inferiores] |cRXP_BUY_e|r |T134831:0|t[Poções de Cura] |cRXP_BUY_dele (se estiverem disponíveis)|r
+    .vendor 3134 >>|cRXP_BUY_Compre|r |T134851:0|t[Mana Inferior Potions] |cRXP_BUY_e|r |T134831:0|t[Cura Potions] |cRXP_BUY_dele (se estiverem disponíveis)|r
     .itemcount 4827,1
     .target Kzixx
 step
     .goto Duskwood,81.82,19.76
     >>Fale com |cRXP_FRIENDLY_Kzixx|r
-    .vendor 3134 >>|cRXP_BUY_Compre|r |T134851:0|t[Poções de Mana Inferiores] |cRXP_BUY_e|r |T134831:0|t[Poções de Cura] |cRXP_BUY_dele (se estiverem disponíveis)|r
+    .vendor 3134 >>|cRXP_BUY_Compre|r |T134851:0|t[Mana Inferior Potions] |cRXP_BUY_e|r |T134831:0|t[Cura Potions] |cRXP_BUY_dele (se estiverem disponíveis)|r
     .itemcount 4828,1
     .target Kzixx
 step
     .goto Duskwood,81.82,19.76
     >>Fale com |cRXP_FRIENDLY_Kzixx|r
-    .vendor 3134 >>|cRXP_BUY_Compre|r |T134851:0|t[Poções de Mana Inferiores] |cRXP_BUY_e|r |T134831:0|t[Poções de Cura] |cRXP_BUY_dele (se estiverem disponíveis)|r
+    .vendor 3134 >>|cRXP_BUY_Compre|r |T134851:0|t[Mana Inferior Potions] |cRXP_BUY_e|r |T134831:0|t[Cura Potions] |cRXP_BUY_dele (se estiverem disponíveis)|r
     .itemcount 4829,1
     .target Kzixx
 step
     #label Kzixx
     .goto Duskwood,81.82,19.76
     >>Fale com |cRXP_FRIENDLY_Kzixx|r
-    .vendor 3134 >>|cRXP_BUY_Compre|r |T134851:0|t[Mana Inferior Potions]|cRXP_BUY_,|r |T134831:0|t[Cura Potions]|cRXP_BUY_, e um|r |T132515:0|t[Cinturão de Tecido] |cRXP_BUY_dele (se estiverem disponíveis e se necessário)|r
+    .vendor 3134 >>|cRXP_BUY_Compre|r |T134851:0|t[Mana Inferior Potions]|cRXP_BUY_,|r |T134831:0|t[Cura Potions]|cRXP_BUY_, e um|r |T132515:0|t[Tecido Belt] |cRXP_BUY_dele (se estiverem disponíveis e se necessário)|r
     .itemcount 4827,<1
     .itemcount 4828,<1
     .itemcount 4829,<1
     .target Kzixx
 step
     #completewith Gnolls
-    >>AdE |cRXP_ENEMY_Tarantulas|r. Saqueie-os para |cRXP_LOOT_Crisp Aranha Carne|r
-    >>AdE |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para |cRXP_LOOT_Great Goretusco Snouts|r e |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
+    >>Ataque em área os |cRXP_ENEMY_Tarantulas|r. Saqueie-os para obter |cRXP_LOOT_Crisp Aranha Carne|r
+    >>Ataque em área os |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para obter |cRXP_LOOT_Great Goretusco Snouts|r e |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
     .collect 1081,5,92,1 --Crisp Spider Meat (5)
     .mob +Tarantula
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
@@ -7444,8 +7444,8 @@ step
     .skill cooking,50,1
 step
     #completewith Gnolls
-    >>AdE |cRXP_ENEMY_Tarantulas|r. Saqueie-os para |cRXP_LOOT_Crisp Aranha Carne|r
-    >>AdE |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para |cRXP_LOOT_Great Goretusco Snouts|r
+    >>Ataque em área os |cRXP_ENEMY_Tarantulas|r. Saqueie-os para obter |cRXP_LOOT_Crisp Aranha Carne|r
+    >>Ataque em área os |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para obter |cRXP_LOOT_Great Goretusco Snouts|r
     .collect 1081,5,92,1 --Crisp Spider Meat (5)
     .mob +Tarantula
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
@@ -7456,7 +7456,7 @@ step
     .goto Redridge Mountains,14.87,70.30,60,0
     .goto Redridge Mountains,16.93,70.20
     >>Fale com |cRXP_FRIENDLY_Parker|r
-    .accept 244 >>Aceite Encroaching Gnolls
+    .accept 244 >>Aceite Gnolls Invasores
     .target Guard Parker
 step << skip
     #label AoE1
@@ -7464,14 +7464,14 @@ step << skip
     .isOnQuest 244
 step << skip
     #completewith Gnolls
-    >>AdE |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para |cRXP_LOOT_Great Goretusco Snouts|r e |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
+    >>Ataque em área os |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para obter |cRXP_LOOT_Great Goretusco Snouts|r e |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
     .collect 769,50,90,1,1 --Chunk of Boar Meat (50)
     .mob Great Goretusk
     .skill cooking,50,1
 step << skip
     #completewith next
-    >>AdE |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para |cRXP_LOOT_Great Goretusco Snouts|r
+    >>Ataque em área os |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para obter |cRXP_LOOT_Great Goretusco Snouts|r
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
     .mob Great Goretusk
     .skill cooking,50
@@ -7479,8 +7479,8 @@ step
     #label Gnolls
     .goto Redridge Mountains,30.74,59.99
     >>Fale com |cRXP_FRIENDLY_Feldon|r
-    .turnin 244 >>Entregue Encroaching Gnolls
-    .accept 246 >>Aceite Assessing the Ameaça
+    .turnin 244 >>Entregue Gnolls Invasores
+    .accept 246 >>Aceite Avaliando a Ameaça
     .target Deputy Feldon
 step
     .goto Redridge Mountains,30.59,59.40
@@ -7488,26 +7488,26 @@ step
     .fp Redridge Mountains >>Aprenda a rota de voo para Montanhas Cristarrubra
 step
     >>Fale com |cRXP_FRIENDLY_Marris|r e |cRXP_FRIENDLY_Oslow|r
-    .accept 20 >>Aceite Ameaça Pedranegra
+    .accept 20 >>Aceite A Ameaça de Rocha Negra
     .target +Marshal Marris
     .goto Redridge Mountains,33.51,48.96
     .accept 125 >>Aceite As Ferramentas Perdidas
     .turnin 345 >>Entregue Suprimentos de Tinta
-    .accept 347 >>Aceite Minério de Rethban
+    .accept 347 >>Aceite Rethban Ore
     .goto Redridge Mountains,32.14,48.64
     .target +Foreman Oslow
 step
     .goto Redridge Mountains,29.89,47.36
     >>Fale com |cRXP_FRIENDLY_Karen|r
-    >>|cRXP_BUY_Compre uma|r |T134708:0|t[Picareta de Mineração] |cRXP_BUY_dela|r
-    >>|cRXP_WARN_Você vai precisar disso mais tarde|r
+    >>|cRXP_BUY_Compre|r |T134708:0|t[Picareta de Mineração] |cRXP_BUY_dela|r
+    >>|cRXP_WARN_Você precisará disso depois|r
     .collect 2901,1,125,1 --Mining Pick (1)
     .target Karen Taylor
 step
     >>Fale com |cRXP_FRIENDLY_Conacher|r
 --  .accept 120 >>Accept Messenger to Stormwind
 --  .goto Redridge Mountains,29.99,44.45
-    .accept 91 >>Aceite A Lei de Salomão
+    .accept 91 >>Aceite Solomon's Law
     .goto Redridge Mountains,29.72,44.26
 --  .target Magistrate Solomon
     .target Bailiff Conacher
@@ -7522,7 +7522,7 @@ step
     #sticky
     #label Darcy1
     .goto Redridge Mountains,26.92,44.95,0,0
-    >>Vá para dentro da estalagem
+    >>Vá para dentro da Estalagem
     >>Fale com |cRXP_FRIENDLY_Darcy|r
     .accept 129 >>Aceite Um Almoço Grátis
     .target Darcy
@@ -7530,20 +7530,20 @@ step
     .goto Redridge Mountains,26.49,43.95
     >>Entre na Estalagem
     >>Fale com |cRXP_FRIENDLY_Daniels|r
-    .accept 116 >>Aceite Tempos Difíceis
-    .turnin 116 >>Entregue Tempos Difíceis
+    .accept 116 >>Aceite Secar Times
+    .turnin 116 >>Entregue Secar Times
     .target Barkeep Daniels
 step
     .goto Redridge Mountains,26.47,45.33
     >>Entre na Estalagem
-    >>Fale com |cRXP_FRIENDLY_Wiley|r pulando do corrimão
+    >>Fale com |cRXP_FRIENDLY_Wiley|r ao pular do corrimão no andar de baixo
     .turnin 65 >>Entregue A Irmandade Défias
 --  .accept 132 >>Accept The Defias Brotherhood
     .target Wiley the Black
 step
     .goto Redridge Mountains,29.32,53.64
-    >>Fale com Shawn
-    .accept 3741 >>Aceite O Colar de Nida
+    >>Fale com |cRXP_FRIENDLY_Shawn|r
+    .accept 3741 >>Aceite Nida's Colar
     .target Shawn
 step
     .goto Redridge Mountains,31.29,54.27,90,0
@@ -7554,25 +7554,25 @@ step
     .goto Redridge Mountains,31.12,54.21,90,0
     .goto Redridge Mountains,34.03,55.34,90,0
     .goto Redridge Mountains,38.09,54.49
-    >>|cRXP_WARN_Nadar debaixo d'água e verifique os locais de aparecimento. Existem 8 locais com 2 aparecimentos simultaneamente|r
-    >>Abra a |cRXP_PICK_Glinting Mud|r. Saque-a para |cRXP_LOOT_Colar de Nida|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Nade debaixo d'água e verifique os locais de spawn. Existem 8 locais com 2 aparições de uma vez|r
+    >>Abra a |cRXP_PICK_Glinting Mud|r. Saqueie-a para |cRXP_LOOT_Hilary's Colar|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 3741,1 --Hilary's Necklace (1)
 step
     .goto Redridge Mountains,29.24,53.63
     >>Fale com |cRXP_FRIENDLY_Nida|r
-    .turnin 3741 >>Entregue O Colar de Nida
+    .turnin 3741 >>Entregue Nida's Colar
     .target Hilary
 step
     #completewith Gnolls2
-    >>AdE |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para |cRXP_LOOT_Great Goretusco Snouts|r e |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
+    >>Ataque em área os |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para obter |cRXP_LOOT_Great Goretusco Snouts|r e |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
     .collect 769,50,90,1,1 --Chunk of Boar Meat (50)
     .mob Great Goretusk
     .skill cooking,50,1
 step
     #completewith next
-    >>AdE |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para |cRXP_LOOT_Great Goretusco Snouts|r
+    >>Ataque em área os |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para obter |cRXP_LOOT_Great Goretusco Snouts|r
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
     .mob Great Goretusk
     .skill cooking,<50,1
@@ -7585,8 +7585,8 @@ step
     .mob Redridge Thrasher
 step
     #completewith Gnolls3
-    >>AdE |cRXP_ENEMY_Tarantulas|r. Saqueie-os para |cRXP_LOOT_Crisp Aranha Carne|r
-    >>AdE |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para |cRXP_LOOT_Great Goretusco Snouts|r e |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
+    >>Ataque em área os |cRXP_ENEMY_Tarantulas|r. Saqueie-os para obter |cRXP_LOOT_Crisp Aranha Carne|r
+    >>Ataque em área os |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para obter |cRXP_LOOT_Great Goretusco Snouts|r e |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
     .collect 1081,5,92,1 --Crisp Spider Meat (5)
     .mob +Tarantula
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
@@ -7596,8 +7596,8 @@ step
     .skill cooking,50,1
 step
     #completewith Gnolls3
-    >>AdE os |cRXP_ENEMY_Tarantulas|r. Saqueie-os para |cRXP_LOOT_Crisp Aranha Carne|r
-    >>AdE |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para |cRXP_LOOT_Great Goretusco Snouts|r
+    >>Ataque em área os |cRXP_ENEMY_Tarantulas|r. Saqueie-os para obter |cRXP_LOOT_Crisp Aranha Carne|r
+    >>Ataque em área os |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para obter |cRXP_LOOT_Great Goretusco Snouts|r
     .collect 1081,5,92,1 --Crisp Spider Meat (5)
     .mob +Tarantula
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
@@ -7608,8 +7608,8 @@ step
     .goto Redridge Mountains,14.87,70.30,60,0
     .goto Redridge Mountains,16.93,70.20
     >>Fale com |cRXP_FRIENDLY_Parker|r
-    .turnin 129 >>Entregue Grátis Lunch
-    .accept 130 >>Aceite Visit the Herbalist
+    .turnin 129 >>Entregue Um Almoço Grátis
+    .accept 130 >>Aceite Visite a Herbalista
     .target Guard Parker
 step
     #label Gnolls3
@@ -7623,8 +7623,8 @@ step
     .goto Redridge Mountains,32.26,82.83,60,0
     .goto Redridge Mountains,34.60,82.99,60,0
     .goto Redridge Mountains,43.37,71.01
-    >>AdE os |cRXP_ENEMY_Redridge Mongrels|r, os |cRXP_ENEMY_Redridge Thrashers|r e os |cRXP_ENEMY_Redridge Poachers|r
-    >>|cRXP_WARN_Lembre-se de manter na zona morta os|r |cRXP_ENEMY_Redridge Poachers|r
+    >>Mate com AdE os |cRXP_ENEMY_Redridge Mongrels|r, os |cRXP_ENEMY_Redridge Thrashers|r e os |cRXP_ENEMY_Redridge Poachers|r
+    >>|cRXP_WARN_Lembre-se de ficar na zona morta dos|r |cRXP_ENEMY_Redridge Poachers|r
     .complete 246,1 --Redridge Mongrel (10)
     .mob +Redridge Mongrel
     .complete 246,2 --Redridge Poacher (6)
@@ -7636,14 +7636,14 @@ step
     .target Deputy Feldon
 step
     .goto Redridge Mountains,41.52,54.68,-1
-    >>Mergulhe
+    >>Vá para debaixo da água
     >>Abra o |cRXP_PICK_Sunken Baú|r. Pegue |cRXP_LOOT_Oslow's Caixa de Ferramentas|r
-    >>|cRXP_WARN_Tempo de lançamento de 5 segundos|r
+    >>|cRXP_WARN_Isto leva 5 segundos|r
     .complete 125,1 --Oslow's Toolbox (1)
 step
     #completewith next
     .goto Redridge Mountains,40.30,45.98,60,0
-    >>AdE os |cRXP_ENEMY_Murloc Flesheaters|r e os |cRXP_ENEMY_Murloc Batedores|r. Saqueie-os para obter alguns dos |cRXP_LOOT_Spotted Sunfish|r e |cRXP_LOOT_Murloc Fins|r
+    >>Mate com AdE os |cRXP_ENEMY_Murloc Flesheaters|r e os |cRXP_ENEMY_Murloc Batedores|r. Saqueie-os para obter alguns dos |cRXP_LOOT_Spotted Sunfish|r e |cRXP_LOOT_Murloc Fins|r
     .complete 127,1 --Spotted Sunfish (10)
     .collect 1468,8,150,1 --Murloc Fin (8)
     .mob Murloc Flesheater
@@ -7651,19 +7651,19 @@ step
 step
     .goto Redridge Mountains,32.14,48.63
     >>Fale com |cRXP_FRIENDLY_Oslow|r
-    .turnin 125 >>Entregue Perdida Ferramentas
+    .turnin 125 >>Entregue The Perdida Ferramentas
     .accept 89 >>Aceite The Everstill Ponte
     .target Foreman Oslow
 step
     .goto Redridge Mountains,30.83,46.49
     >>Fale com |cRXP_FRIENDLY_Dorin|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Lixo de Mercador
     .target Dorin Songblade
     .isOnQuest 89
 step << skip
     #completewith next
     .goto Redridge Mountains,29.24,45.40,10,0
-    .goto Redridge Mountains,28.89,44.87,8 >>Entre no Town Hall
+    .goto Redridge Mountains,28.89,44.87,8 >>Vá para dentro do Salão da Prefeitura
 step
     .goto Redridge Mountains,37.16,45.20,60,0
     .goto Redridge Mountains,38.36,41.34,60,0
@@ -7679,13 +7679,13 @@ step
     .goto Redridge Mountains,59.74,42.01,60,0
     .goto Redridge Mountains,62.34,41.76,60,0
     .goto Redridge Mountains,62.56,45.36,60,0
-    >>AdE os |cRXP_ENEMY_Blackrock Outrunners|r, os |cRXP_ENEMY_Blackrock Renegades|r e os |cRXP_ENEMY_Blackrock Grunts|r. Saqueie-os pelos |cRXP_LOOT_Battleworn Machados|r
-    >>AdE os |cRXP_ENEMY_Murloc Tidecallers|r e os |cRXP_ENEMY_Murloc Batedores|r. Saqueie-os pelos |cRXP_LOOT_Spotted Sunfish|r e |cRXP_LOOT_Murloc Fins|r
-    >>AdE os |cRXP_ENEMY_Dire Condors|r. Saqueie-os pelos |cRXP_LOOT_Tough Condor Carne|r
-    >>AdE os |cRXP_ENEMY_Greater Tarantulas|r. Saqueie-os pelos |cRXP_LOOT_Crisp Aranha Carne|r
-    >>AdE os |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para |cRXP_LOOT_Great Goretusco Snouts|r
-    >>AdE os |cRXP_ENEMY_Redridge Mystics|r e os |cRXP_ENEMY_Redridge Brutes|r. Saqueie-os pelos |cRXP_LOOT_Iron Pikes|r e |cRXP_LOOT_Iron Rivets|r
-    >>|cRXP_WARN_Cuidado enquanto |cRXP_ENEMY_Blackrock Outrunners|r lançam|r |T132149:0|t[Rede]|cRXP_WARN_, |cRXP_ENEMY_Atroz Condors|r lançam|r |T132154:0|t[Derrubar]
+    >>Mate com AdE os |cRXP_ENEMY_Blackrock Outrunners|r, os |cRXP_ENEMY_Blackrock Renegades|r e os |cRXP_ENEMY_Blackrock Grunts|r. Saqueie-os para obter seus |cRXP_LOOT_Battleworn Machados|r
+    >>Mate com AdE os |cRXP_ENEMY_Murloc Tidecallers|r e os |cRXP_ENEMY_Murloc Batedores|r. Saqueie-os para obter seus |cRXP_LOOT_Spotted Sunfish|r e |cRXP_LOOT_Murloc Fins|r
+    >>Mate com AdE os |cRXP_ENEMY_Dire Condors|r. Saqueie-os para obter seus |cRXP_LOOT_Tough Condor Carne|r
+    >>Mate com AdE os |cRXP_ENEMY_Greater Tarantulas|r. Saqueie-os para obter sua |cRXP_LOOT_Crisp Aranha Carne|r
+    >>Ataque em área os |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para obter |cRXP_LOOT_Great Goretusco Snouts|r
+    >>Mate com AdE os |cRXP_ENEMY_Redridge Mystics|r e os |cRXP_ENEMY_Redridge Brutes|r. Saqueie-os para obter seus |cRXP_LOOT_Iron Pikes|r e |cRXP_LOOT_Iron Rivets|r
+    >>|cRXP_WARN_Cuidado, pois os |cRXP_ENEMY_Blackrock Outrunners|r lançam|r |T132149:0|t[Rede]|cRXP_WARN_ e os |cRXP_ENEMY_Dire Condors|r lançam|r |T132154:0|t[Derrubar]
     .complete 20,1 --Blackrock Axe (10)
 #loop
 	.line Redridge Mountains,37.16,45.20,38.36,41.34,40.09,40.64,42.89,39.26,59.36,44.56,59.79,42.05,62.58,41.46,62.57,45.48,59.36,44.56
@@ -7748,7 +7748,7 @@ step
     #completewith Herbalist
     .goto Redridge Mountains,36.64,37.01,60,0
     .goto Redridge Mountains,32.21,40.09,60,0
-    >>AdE |cRXP_ENEMY_Redridge Mystics|r e |cRXP_ENEMY_Redridge Brutes|r. Saqueie-os para os |cRXP_LOOT_Iron Pikes|r e os |cRXP_LOOT_Iron Rivets|r
+    >>Mate com AdE os |cRXP_ENEMY_Redridge Mystics|r e os |cRXP_ENEMY_Redridge Brutes|r. Saqueie-os para obter seus |cRXP_LOOT_Iron Pikes|r e |cRXP_LOOT_Iron Rivets|r
     .complete 89,1 --Iron Pike (5)
     .complete 89,2 --Iron Rivet (5)
     .mob Redridge Mystic
@@ -7767,7 +7767,7 @@ step
     #label Herbalist
     .goto Redridge Mountains,21.86,46.33
     >>Fale com |cRXP_FRIENDLY_Martie|r
-    .turnin 130 >>Entregue Visit the Herbalist
+    .turnin 130 >>Entregue Visite a Herbalista
     .accept 131 >>Aceite Entregando Daffodils
     .accept 34 >>Aceite O Penetra
     .target Martie Jainrose
@@ -7775,14 +7775,14 @@ step
     #completewith next
     .goto Redridge Mountains,17.72,55.71,60,0
     .goto Redridge Mountains,16.09,53.08,60,0
-    >>AdE |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para |cRXP_LOOT_Great Goretusco Snouts|r
+    >>Ataque em área os |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para obter |cRXP_LOOT_Great Goretusco Snouts|r
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
     .mob Great Goretusk
 step
     .goto Redridge Mountains,15.66,49.31
     >>Mate |cRXP_ENEMY_Ronquifuça|r
-    >>|cRXP_WARN_Arraste-a em direção à cerca ao norte de |cRXP_FRIENDLY_Lamar|r. Salte para frente e para trás para colocá-la em um lugar seguro sem receber nenhum dano|r
-    >>Cuidado enquanto |cRXP_ENEMY_Ronquifuça|r lança |T132337:0|t[carga] e |T136025:0|t[Tremor]
+    >>|cRXP_WARN_Leve-a em direção à cerca ao norte de |cRXP_FRIENDLY_Lamar|r. Pule para frente e para trás para se manter seguro sem sofrer danos|r
+    >>Tenha cuidado com |cRXP_ENEMY_Ronquifuça|r lançando |T132337:0|t[carga] e |T136025:0|t[Tremor]
     .complete 34,1 --Bellygrub's Tusk (1)
     .mob Bellygrub
     .target Lamar Veisilli
@@ -7800,20 +7800,20 @@ step
     .goto Redridge Mountains,20.92,39.37,60,0
     .goto Redridge Mountains,17.72,55.71,60,0
     .goto Redridge Mountains,16.09,53.08
-    >>AdE |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para |cRXP_LOOT_Great Goretusco Snouts|r
+    >>Ataque em área os |cRXP_ENEMY_Great Goretusks|r. Saqueie-os para obter |cRXP_LOOT_Great Goretusco Snouts|r
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
     .mob Great Goretusk
 step
     #completewith next
     .goto Redridge Mountains,21.35,36.34,60,0
-    >>AdE |cRXP_ENEMY_Redridge Mystics|r e |cRXP_ENEMY_Redridge Brutes|r. Saqueie-os para os |cRXP_LOOT_Iron Pikes|r e os |cRXP_LOOT_Iron Rivets|r
+    >>Mate com AdE os |cRXP_ENEMY_Redridge Mystics|r e os |cRXP_ENEMY_Redridge Brutes|r. Saqueie-os para obter seus |cRXP_LOOT_Iron Pikes|r e |cRXP_LOOT_Iron Rivets|r
     .complete 89,1 --Iron Pike (5)
     .complete 89,2 --Iron Rivet (5)
     .mob Redridge Mystic
     .mob Redridge Brute
 step
     .goto Redridge Mountains,19.50,31.91,60,0
-    .goto Redridge Mountains,20.58,28.29,40 >>Vá para Rethban Caverns
+    .goto Redridge Mountains,20.58,28.29,40 >>Vá para as Cavernas de Rethban
     .isOnQuest 347
 step
 #loop
@@ -7827,9 +7827,9 @@ step
 	.goto Redridge Mountains,17.48,19.55,20,0
 	.goto Redridge Mountains,16.05,21.04,20,0
 	.goto Redridge Mountains,18.95,24.50,20,0
-    >>AdE os |cRXP_ENEMY_Redridge Drudgers|r. Saqueie-os pelos |cRXP_LOOT_Rethban Ore|r, |cRXP_LOOT_Iron Pikes|r e |cRXP_LOOT_Iron Rivets|r
-    >>AdE os |cRXP_ENEMY_Redridge Bashers|r. Saqueie-os pelos |cRXP_LOOT_Iron Pikes|r e |cRXP_LOOT_Iron Rivets|r
-    >>Extraia os |cRXP_PICK_Copper Veins|r na caverna. Saqueie-os pelos |cRXP_LOOT_Rethban Ore|r
+    >>Mate com AdE os |cRXP_ENEMY_Redridge Drudgers|r. Saqueie-os para obter seu |cRXP_LOOT_Rethban Ore|r, |cRXP_LOOT_Iron Pikes|r e |cRXP_LOOT_Iron Rivets|r
+    >>Mate com AdE os |cRXP_ENEMY_Redridge Bashers|r. Saqueie-os para obter seus |cRXP_LOOT_Iron Pikes|r e |cRXP_LOOT_Iron Rivets|r
+    >>Minere os |cRXP_PICK_Copper Veins|r na caverna. Saqueie-os para obter o |cRXP_LOOT_Rethban Ore|r
     .complete 347,1 --Rethban Ore (5)
     .mob +Redridge Drudger
     .complete 89,1 --Iron Pike (5)
@@ -7871,13 +7871,13 @@ step << skip
     .goto Redridge Mountains,18.40,24.13,-1
     .goto Redridge Mountains,21.29,24.06,-1
     .goto Redridge Mountains,16.58,20.97,-1
-    .goto Redridge Mountains,33.82,48.07,30 >>Pule para fora da caverna (no lado Leste) de volta para Lakeshire
+    .goto Redridge Mountains,33.82,48.07,30 >>Use Logout Pular para sair da caverna (no lado LESTE) de volta para Lakeshire
 step
     #completewith next
     .subzone 69 >>Volte para Lakeshire
 step
     >>Fale com |cRXP_FRIENDLY_Marris|r e |cRXP_FRIENDLY_Oslow|r
-    .turnin 20 >>Entregue Ameaça Blackrock
+    .turnin 20 >>Entregue Blackrock Ameaça
     .accept 19 >>Aceite Tharil'zun
     .target +Marshal Marris
     .goto Redridge Mountains,33.51,48.96
@@ -7887,25 +7887,25 @@ step
 step
     .goto Redridge Mountains,30.94,47.24
     >>Fale com |cRXP_FRIENDLY_Verner|r
-    .accept 118 >>Aceite The Price of Shoes
+    .accept 118 >>Aceite O Preço dos Sapatos
     .target Verner Osgood
 step
     .goto Redridge Mountains,27.72,47.38
     >>Fale com |cRXP_FRIENDLY_Baren|r
     .turnin 127 >>Entregue O lago está para peixe
     .accept 150 >>Aceite Caçadores de murlocs
-    .turnin 150 >>Entregue Caçadores de Murlocs
+    .turnin 150 >>Entregue Murloc Poachers
     .goto Redridge Mountains,27.72,47.38
     .target Dockmaster Baren
 step
     #sticky
     #label Kimberly
     .goto Redridge Mountains,27.08,45.54,0,0
-    .vendor >>Itens para Venda. Você pode vender a |T134708:0|t[Picareta de Mineração] agora se quiser
+    .vendor >>Lixo de vendedor. Você pode vender a |T134708:0|t[Picareta de Mineração] agora se desejar
     .target Kimberly Hiett
 step
     .goto Redridge Mountains,26.92,44.95
-    >>Entre na Estalagem
+    >>Vá para dentro da Estalagem
     >>Fale com |cRXP_FRIENDLY_Darcy|r
     .turnin 131 >>Entregue Entregando Daffodils
     .target Darcy
@@ -7923,23 +7923,23 @@ step
     .target Chef Breanna
 step
     #completewith next
-    .hs >>Volte para Goldshire
+    .hs >>Use sua Pedra de Retorno para Goldshire
 step
     .goto Elwynn Forest,41.71,65.55
     >>Fale com |cRXP_FRIENDLY_Argus|r
-    .turnin 118 >>Entregue The Price of Shoes
-    .accept 119 >>Aceite Devolver to Verner
+    .turnin 118 >>Entregue O Preço dos Sapatos
+    .accept 119 >>Aceite Retornar a Verner
     .target Smith Argus
 step
     #completewith next
     .goto Elwynn Forest,48.79,41.56,10,0
     .goto Elwynn Forest,49.26,40.69,10,0
-    .goto Elwynn Forest,49.61,40.41,10 >>Vá em direção a |cRXP_FRIENDLY_Paxton|r
+    .goto Elwynn Forest,49.61,40.41,10 >>Vá para |cRXP_FRIENDLY_Paxton|r
 step
     .goto Elwynn Forest,49.61,40.41
     >>Fale com |cRXP_FRIENDLY_Paxton|r
-    .turnin 347 >>Entregue Rethban Ore
-    .accept 346 >>Entregue para Kristoff
+    .turnin 347 >>Entregue Minério de Rethban
+    .accept 346 >>Aceite Devolver a Kristoff
     .target Brother Paxton
 step
     #completewith CharysEnd
@@ -7947,13 +7947,13 @@ step
     .zoneskip Stormwind City
 step
     #completewith CharysEnd
-    >>|cRXP_WARN_===ATENÇÃO===|r
-    +|cRXP_WARN_Mude para o spec Gélido AdE|r
+    >>|cRXP_WARN_===PRESTE ATENÇÃO===|r
+    +|cRXP_WARN_Mude para Gélido AdE|r
     .xp <22,1
 step
     .goto Stormwind City,38.23,81.86
     >>Fale com |cRXP_FRIENDLY_Dumas|r
-    .train 10 >>Trem Nevasca
+    .train 10 >>Treine Nevasca
     .target Maginor Dumas
     .xp <22,1
 step
@@ -7968,10 +7968,10 @@ step
     .goto Stormwind City,32.07,81.50,10,0
     .goto Stormwind City,32.63,80.62,8,0
     >>Saia da Torre do Mago
-    .goto Stormwind City,32.16,79.84,10 >>Vá para |cRXP_FRIENDLY_Charys|r
+    .goto Stormwind City,32.16,79.84,10 >>Voe para |cRXP_FRIENDLY_Charys|r
 step
     #completewith BankDeposit
-    +|cRXP_WARN_Não desça abaixo de 1g 43s 30c|r
+    +|cRXP_WARN_NÃO fique abaixo de 1g 43s 30c|r
     .xp >22,1
 step
     .goto Stormwind City,32.16,79.84
@@ -7984,14 +7984,14 @@ step
     .goto Stormwind City,32.16,79.84
     >>Entre no edifício
     >>Fale com |cRXP_FRIENDLY_Charys|r
-    .vendor 1307 >>|cRXP_BUY_Compre|r |T134851:0|t[Poções de Mana Inferiores] |cRXP_BUY_e|r |T134831:0|t[Poções de Cura] |cRXP_BUY_dele (se estiverem disponíveis)|r
+    .vendor 1307 >>|cRXP_BUY_Compre|r |T134851:0|t[Mana Inferior Potions] |cRXP_BUY_e|r |T134831:0|t[Cura Potions] |cRXP_BUY_dele (se estiverem disponíveis)|r
     .itemcount 4828,1
     .target Andréa Iserian
 step
     .goto Stormwind City,32.16,79.84
     >>Entre no edifício
     >>Fale com |cRXP_FRIENDLY_Charys|r
-    .vendor 1307 >>|cRXP_BUY_Compre|r |T134851:0|t[Poções de Mana Inferiores] |cRXP_BUY_e|r |T134831:0|t[Poções de Cura] |cRXP_BUY_dele (se estiverem disponíveis)|r
+    .vendor 1307 >>|cRXP_BUY_Compre|r |T134851:0|t[Mana Inferior Potions] |cRXP_BUY_e|r |T134831:0|t[Cura Potions] |cRXP_BUY_dele (se estiverem disponíveis)|r
     .itemcount 4829,1
     .target Andréa Iserian
 step
@@ -7999,7 +7999,7 @@ step
     .goto Stormwind City,32.16,79.84
     >>Entre no edifício
     >>Fale com |cRXP_FRIENDLY_Charys|r
-    .vendor 1307 >>|cRXP_BUY_Compre|r |T134851:0|t[Mana Inferior Potions]|cRXP_BUY_,|r |T134831:0|t[Cura Potions]|cRXP_BUY_, e um|r |T132515:0|t[Cinturão de Tecido] |cRXP_BUY_dele (se estiverem disponíveis e se necessário)|r
+    .vendor 1307 >>|cRXP_BUY_Compre|r |T134851:0|t[Mana Inferior Potions]|cRXP_BUY_,|r |T134831:0|t[Cura Potions]|cRXP_BUY_, e um|r |T132515:0|t[Tecido Belt] |cRXP_BUY_dele (se estiverem disponíveis e se necessário)|r
     .itemcount 4827,<1
     .itemcount 4828,<1
     .itemcount 4829,<1
@@ -8012,22 +8012,22 @@ step
     .goto Stormwind City,46.32,66.93,20,0
     .goto Stormwind City,42.45,61.76,20,0
     .goto Stormwind City,41.17,63.74,15,0
-    .goto Stormwind City,41.57,65.46,10 >>Vá para |cRXP_FRIENDLY_Adair|r
+    .goto Stormwind City,41.57,65.46,10 >>Voe para |cRXP_FRIENDLY_Adair|r
 step
     #label AdairX
     .goto Stormwind City,41.57,65.46
     >>Entre no edifício
     >>Fale com |cRXP_FRIENDLY_Adair|r
-    .vendor 1316 >>|cRXP_BUY_Compre itens sem inteligência|r |T134943:0|t[Pergaminhos] |cRXP_BUY_dele (se estiverem disponíveis)|r
+    .vendor 1316 >>|cRXP_BUY_Compre sem inteligência|r |T134943:0|t[Pergaminhos] |cRXP_BUY_dele (se estiverem disponíveis)|r
     .target Adair Gilroy
 step
     #completewith next
     .goto Stormwind City,37.84,58.50,5,0
-    .goto Stormwind City,37.81,45.02,20 >>Corra pela borda da parede em vez de dar a volta
+    .goto Stormwind City,37.81,45.02,20 >>Suba a borda da parede em vez de contornar
 step
     .goto Stormwind City,45.70,38.42
     >>Fale com |cRXP_FRIENDLY_Kristoff|r
-    .turnin 346 >>Entregue para Kristoff
+    .turnin 346 >>Entregue Devolver a Kristoff
     .target Brother Kristoff
 step
     .goto Stormwind City,55.25,7.07
@@ -8041,7 +8041,7 @@ step
     .goto Stormwind City,63.89,8.25,20 >>Vá para o Deeprun Tram
 step
     #completewith next
-    +|cRXP_WARN_Monte o Deeprun Tram ao conjurar|r |T132816:0|t[Conjurar Água r3]
+    +|cRXP_WARN_Monte o Deeprun Tram enquanto faz spam de conjuração|r |T132816:0|t[Conjurar Água r3]
 step
     .zone Ironforge >>Pegue o Deeprun Tram para Ironforge
 step
@@ -8057,21 +8057,21 @@ step
 step
     .goto Ironforge,35.93,60.13
     >>Fale com |cRXP_FRIENDLY_Bailey|r
-    >>|cRXP_WARN_NOTA: Você precisa de 12 pilhas de cada tecido (|r|T132911:0|t[Lã]|cRXP_WARN_,|r |T132905:0|t[Seda]|cRXP_WARN_,|r |T132892:0|t[Magitrama]|cRXP_WARN_,|r e |T132903:0|t[Runatrama]|cRXP_WARN_) para efetuar as entregas de tecido depois. Você obterá estes naturalmente ao subir de nível|r
+    >>|cRXP_WARN_NOTA: Você precisa de 12 pilhas de cada pano (|r|T132911:0|t[Lã]|cRXP_WARN_,|r |T132905:0|t[Seda]|cRXP_WARN_,|r |T132892:0|t[Magitrama]|cRXP_WARN_,|r e |T132903:0|t[Runatrama]|cRXP_WARN_) para fazer as entregas de pano depois. Você obterá estes naturalmente conforme sobe de nível|r
     .bankdeposit 17056,2592,1015,1083,2665,1922,1284 >>Deposite os itens a seguir no banco:
     >>|T132917:0|t[Pena de Luz]
     >>|T132911:0|t[Lã]
     >>|T133970:0|t[Lombo de Lobo Magro]
     >>|T133277:0|t[Glifo de Azora]
-    >>|T133849:0|t[Ervas Temperadas de Ventobravo]
+    >>|T133849:0|t[Objetos de TBC Seasoning Herbs]
     >>|T133629:0|t[Suprimentos para Sven]
-    >>|T132761:0|t[Caixote de Horseshoes]
+    >>|T132761:0|t[Caixote de Ferraduras]
     .target Bailey Stonemantle
 step
     #label BankDeposit
     .goto Ironforge,35.93,60.13
     .bankwithdraw 4654 >>Retire os seguintes itens do seu banco:
-    >>|T134431:0|t[Fóssil Misterioso]
+    >>|T134431:0|t[Mysterious Fossil]
     .target Bailey Stonemantle
 step
     .goto Ironforge,25.50,7.04
@@ -8080,16 +8080,16 @@ step
     .target Milstaff Stormeye
 step
     #completewith FlyMene
-    >>|cRXP_WARN_===ATENÇÃO===|r
-    +|cRXP_WARN_Mude para a especialização Gélido com foco em AdE|r
+    >>|cRXP_WARN_===PRESTE ATENÇÃO===|r
+    +|cRXP_WARN_Mude para Gélido AdE|r
 step
     .goto Ironforge,27.18,8.60
     >>Fale com |cRXP_FRIENDLY_Dink|r
-    .train 10 >>Trem Nevasca
+    .train 10 >>Treine Nevasca
     .target Dink
 step
     #completewith next
-    +|cRXP_WARN_Início conjura constante|r |T132816:0|t[Conjurar Água r3] |cRXP_WARN_para conjurar o máximo de água possível antes de apanhar o voo|r
+    +|cRXP_WARN_Inicie spam de conjuração|r |T132816:0|t[Conjurar Água r3] |cRXP_WARN_para conjurar o máximo de água possível antes de pegar o voo|r
 step
     #completewith next
     #label FlyMene
@@ -8098,5 +8098,5 @@ step
     .fly Menethil >>Voe para Menethil Harbor
     .target Gryth Thurden
 step
-    .zone Wetlands >>Viaje para os Pântanos
+    .zone Wetlands >>Viagem para Pantanal
 ]])

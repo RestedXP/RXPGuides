@@ -1448,10 +1448,10 @@ step << Hunter
     .turnin 314 >> Turn in Protecting the Herd
     .target Rudra Amberstill
 step << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r
     .accept 432 >> Accept Those Blasted Troggs!
-    .goto 1426/0,-1580.000,-5714.700
-    .target Senator Mehr Stonehallow
+    .goto 1426/0,-1600.30,-5726.590
+    .target Foreman Stonebrow  
 step << Hunter
     #loop
     .goto 1426,70.073,57.030,0
@@ -1467,10 +1467,10 @@ step << Hunter
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob Rockjaw Skullthumper
 step << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r
     .turnin 432 >> Turn in Those Blasted Troggs!
-    .target Senator Mehr Stonehallow
-    .goto 1426/0,-1580.000,-5714.700
+    .target Foreman Stonebrow
+    .goto 1426/0,-1600.30,-5726.590
 step << Hunter
     .goto 1426/0,-2197.02,-5279.07,45,0
     .goto 1426/0,-2329.60,-5163.76
@@ -1884,13 +1884,14 @@ step << !Hunter
 --XX Mud slappers instead
 step
     #label QuarryStart
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r and |cRXP_FRIENDLY_Foreman Stonebrow|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r and |cRXP_FRIENDLY_Foreman Stonebrow|r << !Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r << Hunter
     .accept 433 >> Accept The Public Servant
     .target +Senator Mehr Stonehallow
     .goto 1426/0,-1579.96,-5714.73
-    .accept 432 >> Accept Those Blasted Troggs!
-    .goto 1426/0,-1600.30,-5726.590
-    .target +Foreman Stonebrow
+    .accept 432 >> Accept Those Blasted Troggs! << !Hunter
+    .goto 1426/0,-1600.30,-5726.590 << !Hunter
+    .target +Foreman Stonebrow << !Hunter
 step
     #sticky
     #label Skullthumpers
@@ -1937,13 +1938,14 @@ step
     #requires Skullthumpers
 --XXREQ Placeholder invis step until multiple requires per step
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r and |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
-    .turnin 432 >> Turn in Those Blasted Troggs!
-    .target +Senator Mehr Stonehallow
-    .goto 1426/0,-1600.30,-5726.590
-    .turnin 433 >> Turn in The Public Servant
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r and |cRXP_FRIENDLY_Foreman Stonebrow|r << !Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r << Hunter
+    .accept 433 >> Accept The Public Servant
     .goto 1426/0,-1579.96,-5714.73
-    .target +Foreman Stonebrow  
+    .target +Senator Mehr Stonehallow
+    .accept 432 >> Accept Those Blasted Troggs! << !Hunter
+    .goto 1426/0,-1600.30,-5726.590 << !Hunter
+    .target +Foreman Stonebrow << !Hunter
 step
     #optional
     #label BoarMeatDunMorogh3
@@ -2104,7 +2106,7 @@ step << !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yanni Stoutheart|r
     >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from her|r
     >>|cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_BUY_too from her if needed|r << !Rogue
-    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
+    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_while waiting for Boats to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
@@ -3385,8 +3387,6 @@ RXPGuides.RegisterGuide([[
 #next 13-15 Westfall;14-16 Darkshore
 #defaultfor Gnome/Dwarf
 
-step -- dont delete
-    #label LochStart
 step << Dwarf Paladin
     #optional
     #completewith next
@@ -4168,9 +4168,6 @@ step << Warrior
     .trainer >> Train your class spells
     .target Bilban Tosslespanner
 
-step -- dont delete
-    #label LochEnd
-
 step << skip --logout skip << Warrior
     #optional
     #completewith Deeprun
@@ -4880,7 +4877,7 @@ step
     .accept 95065 >>Accept Fishin' Time
     .turnin 95065 >>Turn in Fishin' Time
 --Hunter going Darkshore, rest Westfall
-step << Hunter
+step << Hunter skip
     #optional
     #requires DockTravel
     #label DarkshoreCook1
@@ -4894,7 +4891,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook1
     #label DarkshoreCook2
@@ -4908,7 +4905,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook2
     #label DarkshoreCook3
@@ -4922,7 +4919,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook3
     #label DarkshoreCook4
@@ -4937,7 +4934,7 @@ step << Hunter
     .itemcount 2672,1 --Stringy Wolf Meat (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook4
     #label DarkshoreCook5
@@ -4950,7 +4947,7 @@ step << Hunter
     .itemcount 2672,1 --Stringy Wolf Meat (1)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook5
     #label DarkshoreCook6

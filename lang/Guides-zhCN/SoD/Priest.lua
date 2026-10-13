@@ -595,7 +595,7 @@ step << Priest
     .mob 霜鬃先知
     .train 402852,1
 step << Priest
-    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|T237570:0|t|cRXP_FRIENDLY_遭渎城堡的预言|r |cRXP_WARN_来训练|r |T237570:0|t|T237570:0|t裂魂魔
+    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|cRXP_FRIENDLY_遭渎城堡的预言|r |cRXP_WARN_来训练|r |T237570:0|t[裂魂魔]
     >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光明祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel，以获得2层|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_增益效果|r
     .use 205947
     .itemcount 205947,1
@@ -644,7 +644,7 @@ step << Priest
     .mob Shadow Sprite
     .train 402852,1
 step << Priest
-    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|T237570:0|t|cRXP_FRIENDLY_遭渎城堡的预言|r |cRXP_WARN_来训练|r |T237570:0|t|T237570:0|t裂魂魔
+    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|cRXP_FRIENDLY_遭渎城堡的预言|r |cRXP_WARN_来训练|r |T237570:0|t[裂魂魔]
     >>|cRXP_WARN_你必须在圣洁区域（如一座月亮井、北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/下跪以获得2层|r |T135934:0|t|T136057:0|t[冥想] |cRXP_WARN_buff|r
     .use 205947
     .itemcount 205947,1
@@ -780,7 +780,7 @@ step
     .goto The Barrens,54.8,35.6,40,0
     .goto The Barrens,58.8,37.6,40,0
     >>对|T135894:0|t|T135975:0|t[沙漠魅影]使用|cRXP_ENEMY_驱散魔法|r。拾取尸体获得|T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_帝王消陨的预言|r]
-    *|cRXP_WARN_这是一只绿色的幽灵，在周围巡逻。使用目标宏来锁定它。|r
+    *|cRXP_WARN_这是一只巡逻的绿色幽灵。使用RestedXP目标宏来锁定它。|r
     .collect 205932,1 -- Prophecy of a King's Demise (1)
     .train 402849,1
     .mob Desert Mirage
@@ -851,7 +851,7 @@ RXPGuides.RegisterGuide([[
 << Horde Priest SoD
 #group RestedXP符文与书籍指南
 #subgroup 胸部
-#name 扭曲信仰 - 10 (银松森林)
+#name 扭曲信仰 - 10级 (银松森林)
 #title 扭曲信仰
 
 step
@@ -879,7 +879,7 @@ RXPGuides.RegisterGuide([[
 << Horde Priest SoD
 #group RestedXP符文与书籍指南
 #subgroup 胸部
-#name 扭曲信仰 - 10 (贫瘠之地)
+#name 扭曲信仰 - 10级（贫瘠之地）
 #title 扭曲信仰
 
 step

@@ -75,7 +75,7 @@ step
     .goto 1429/0,-112.54,-8899.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Danil|r
     >>|cRXP_BUY_Compre 10|r |T132794:0|t [Água de Fonte Refrescante] |cRXP_BUY_com ele|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .collect 159,10,7,1 --Collect Refreshing Spring Water (x10)
     .target Brother Danil
 step
@@ -128,7 +128,7 @@ step
     .goto 1429/0,-112.54,-8899.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Danil|r
     |cRXP_BUY_Buy 10|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .collect 159,10,15,1 --Collect Refreshing Spring Water (x10)
     .target Brother Danil
 step
@@ -169,7 +169,7 @@ step
     .goto 1429/0,-112.54,-8899.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Danil|r
     >>|cRXP_BUY_Compre 10|r |T132794:0|t [Água de Fonte Refrescante] |cRXP_BUY_com ele|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .collect 159,10,15,1 --Collect Refreshing Spring Water (x10)
     .target Brother Danil
 step
@@ -294,7 +294,7 @@ step
     .goto 1429/0,-112.54,-8899.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Danil|r
     >>|cRXP_BUY_Compre 10|r |T132794:0|t [Água de Fonte Refrescante] |cRXP_BUY_com ele|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .collect 159,10,21,1 --Collect Refreshing Spring Water (x10)
     .target Brother Danil
 step
@@ -504,7 +504,7 @@ step
     .goto 1429/0,65.17,-10008.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joshua|r
     >>|cRXP_BUY_Compre o máximo|r |T132815:0|t[Leite Gelado] |cRXP_BUY_quanto você conseguir pagar|r
-    .vendor 258 >>Lixo de Comerciante
+    .vendor 258 >>Lixo de Mercador
     .target Joshua Maclure
 step
     #completewith next
@@ -555,7 +555,7 @@ step
     .goto 1429/0,65.17,-10008.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joshua|r
     >>|cRXP_BUY_Compre o máximo|r |T132815:0|t[Leite Gelado] |cRXP_BUY_quanto você conseguir pagar|r
-    .vendor 258 >>Lixo de Comerciante
+    .vendor 258 >>Lixo de Mercador
     .target Joshua Maclure
     .itemcount 1179,<8
 step
@@ -641,7 +641,7 @@ step
     .goto 1429/0,16.20,-9462.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Farley|r
     >>|cRXP_BUY_Compre 35|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .collect 1179,35,432,1 --Ice Cold Milk (35)
     .target Innkeeper Farley
 step
@@ -1271,7 +1271,7 @@ step
     #label Frast
     .goto 1426/0,-1589.76,-5714.44,0,0
     >>Fale com |cRXP_FRIENDLY_Frast|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .target Frast Dokner
     .isQuestAvailable 419
 step
@@ -1478,7 +1478,7 @@ step
     #label Adlin
     .goto 1426/0,320.30,-6226.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Adlin Altanário|r
-    >>Lixo de Comerciante
+    >>Lixo de Mercador
     >>|cRXP_BUY_Compre 15|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dele|r
     >>|cRXP_WARN_Farme mais |cRXP_ENEMY_Ragged Young Wolves|r se você não tiver dinheiro suficiente|r
     .collect 159,15 --Collect Refreshing Spring Water (x15)
@@ -1488,7 +1488,7 @@ step
     #season 2
     .goto 1426/0,320.30,-6226.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Adlin Altanário|r
-    >>Lixo de Comerciante
+    >>Lixo de Mercador
     >>|cRXP_BUY_Compre 15|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dele|r
     >>|cRXP_WARN_Farme mais |cRXP_ENEMY_Ragged Young Wolves|r se você não tiver dinheiro suficiente|r
     >>|cRXP_WARN_Tenha certeza de que você guarda 10c para depois|r
@@ -1733,7 +1733,7 @@ step
     #label Rybrad
     .goto 1426/0,390.58,-6101.21
     >>Fale com |cRXP_FRIENDLY_Rybrad Friamargem|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .target Rybrad Coldbank
     .isOnQuest 218,3364
 step
@@ -1859,7 +1859,7 @@ step
     .target +Beldin Steelgrill
     .goto 1426/0,-682.58,-5488.87
     .accept 5541 >>Aceite Sem Munição Não Tem Negócio
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .goto 1426/0,-664.55,-5499.710
     .target +Loslor Rudge
     .isQuestAvailable 312
@@ -2174,7 +2174,7 @@ step
     .goto 1426/0,-201.51,-6015.520
     >>Fale com |cRXP_FRIENDLY_Hegnar|r
     .turnin 5541 >>Entregue Sem Munição Não Tem Negócio
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .target Hegnar Rumbleshot
     .isQuestAvailable 312
 step
@@ -2234,7 +2234,7 @@ step
     .goto 1426/0,302.42,-5387.74,0,0
     >>Fale com |cRXP_FRIENDLY_Keeg|r
     >>|cRXP_BUY_Compre até 10 a mais|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .collect 1179,10,312,1 --Ice Cold Milk (10)
     .target Keeg Gibn
     .itemcount 1179,10
@@ -2244,7 +2244,7 @@ step
     .goto 1426/0,302.42,-5387.74,0,0
     >>Fale com |cRXP_FRIENDLY_Keeg|r
     >>|cRXP_BUY_Compre até 5 a mais|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .collect 1179,5,312,1 --Ice Cold Milk (5)
     .target Keeg Gibn
     .itemcount 1179,5
@@ -2713,7 +2713,7 @@ step
     #label Frast
     .goto 1426/0,-1589.76,-5714.44,0,0
     >>Fale com |cRXP_FRIENDLY_Frast|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .target Frast Dokner
 step
     >>Fale com |cRXP_FRIENDLY_Stonebrow|r e |cRXP_FRIENDLY_Mehr|r
@@ -2927,7 +2927,7 @@ step
     >>Fale com |cRXP_FRIENDLY_Golnir|r
     .turnin 6391 >>Entregue Carona para Altaforja
     .accept 6388 >>Aceite Grif Trovino
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .target Golnir Bouldertoe
     .isOnQuest 291
 step
@@ -3119,7 +3119,7 @@ step
     .goto 1439/1,533.23,6399.77,0,0
     >>Fale com |cRXP_FRIENDLY_Laird|r
     >>|cRXP_BUY_Compre até 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_dele|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .collect 4592,20,983,1 --Longjaw Mud Snapper (20)
     .isQuestAvailable 983
 step
@@ -3192,7 +3192,7 @@ step
     .goto 1439/1,533.23,6399.77
     >>Fale com |cRXP_FRIENDLY_Laird|r
     >>|cRXP_BUY_Compre até 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_dele|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .collect 4592,20,983,1 --Longjaw Mud Snapper (20)
     .isQuestAvailable 983
     .itemcount 4592,<20
@@ -3366,7 +3366,7 @@ step
     #label DalmondBags1
     .goto 1439/1,488.69,6564.830,0,0
     >>Fale com |cRXP_FRIENDLY_Dalmond|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .target Dalmond
     .isQuestAvailable 3524
 step
@@ -3674,7 +3674,7 @@ step
     .goto 1439/1,533.23,6399.77,0,0
     >>Fale com |cRXP_FRIENDLY_Laird|r
     >>|cRXP_BUY_Compre até 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_dele|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .collect 4592,20,983,1 --Longjaw Mud Snapper (20)
     .isQuestAvailable 983
 step
@@ -3700,7 +3700,7 @@ step
     .goto 1439/1,533.23,6399.77
     >>Fale com |cRXP_FRIENDLY_Laird|r
     >>|cRXP_BUY_Compre até 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_dele|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .collect 4592,20,983,1 --Longjaw Mud Snapper (20)
     .isQuestAvailable 983
     .itemcount 4592,<20
@@ -3982,7 +3982,7 @@ step
     #label DalmondBags1
     .goto 1439/1,488.69,6564.830,0,0
     >>Fale com |cRXP_FRIENDLY_Dalmond|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .target Dalmond
     .isQuestAvailable 3524
 step
@@ -4213,7 +4213,7 @@ step
 step
     .goto 1432/0,-2659.34,-4822.300
     >>Fale com |cRXP_FRIENDLY_Gothor|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .target Gothor Brumn
     .isOnQuest 1339
 step
@@ -4319,7 +4319,7 @@ step
 step
     .goto 1432/0,-2659.34,-4822.300
     >>Fale com |cRXP_FRIENDLY_Gothor|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .target Gothor Brumn
     .isOnQuest 307
 step
@@ -4383,7 +4383,7 @@ step
     .turnin 6392 >>Entregue Retornar com Brock << Gnome
     .target +Brock Stoneseeker
     .goto 1432/0,-3014.88,-5366.820
-    .accept 436 >>Aceite Escavação de Ironband
+    .accept 436 >>Aceite Ironband's Escavação
     .goto 1432/0,-3020.68,-5358.91
     .target +Jern Hornhelm
     .xp >13+5500,1 << Gnome
@@ -4391,7 +4391,7 @@ step
     .goto 1432/0,-3020.68,-5358.91
     >>Fale com |cRXP_FRIENDLY_Jern|r
     >>|cRXP_WARN_Ele pode estar dentro ou fora do edifício|r
-    .accept 436 >>Aceite Escavação de Ironband
+    .accept 436 >>Aceite Ironband's Escavação
     .target Jern Hornhelm
     .xp >13+6550,1 << Gnome
     .isQuestTurnedIn 6392
@@ -4454,7 +4454,7 @@ step << Gnome
     .accept 298 >>Aceite Relatório de Progresso da Escavação
     .target +Prospector Ironband
     .goto 1432/0,-3812.59,-5694.63
-    .turnin 436 >>Entregue Escavação de Ironband
+    .turnin 436 >>Entregue Ironband's Escavação
     .goto 1432/0,-3783.63,-5713.77
     .target +Magmar Fellhew
     .isOnQuest 436
@@ -4476,7 +4476,7 @@ step << Gnome
     #label Boast
     .goto 1432/0,-4296.41,-5694.63
     >>Fale com |cRXP_FRIENDLY_Daryl|r
-    .accept 257 >>Aceite Jactância do Caçador
+    .accept 257 >>Aceite A Jactância do Caçador
     .target Daryl The Youngling
     .isOnQuest 298
 step << Gnome
@@ -4490,7 +4490,7 @@ step << Gnome
 	.goto 1432/0,-4128.42,-5517.30,45,0
 	.goto 1432/0,-4190.21,-5588.49,45,0
 	.goto 1432/0,-4197.38,-5699.97,45,0
-    >>Abate os |cRXP_ENEMY_Mountain Buzzards|r
+    >>Mate os |cRXP_ENEMY_Mountain Buzzards|r
     .complete 257,1 --Mountain Buzzard (6)
     .mob Mountain Buzzard
     .isOnQuest 257
@@ -4501,7 +4501,7 @@ step << Gnome
 step << Gnome
     .goto 1432/0,-4296.41,-5694.63
     >>Fale com |cRXP_FRIENDLY_Daryl|r
-    .turnin 257,2 >>Entregue Jactância do Caçador
+    .turnin 257,2 >>Entregue A Jactância do Caçador
     .target Daryl The Youngling
     .isQuestComplete 257
 step << Gnome
@@ -4621,7 +4621,7 @@ step
     >>Converse com |cRXP_FRIENDLY_Yanni|r
     >>|cRXP_BUY_Compre o máximo|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_que você precisa/consegue|r
     >>|cRXP_WARN_NÃO desça abaixo de 45 Prateado|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .isOnQuest 1338
 step
     #completewith next
@@ -5183,7 +5183,7 @@ step
     .goto 1439/1,533.23,6399.77
     >>Fale com |cRXP_FRIENDLY_Laird|r
     >>|cRXP_BUY_Compre até 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_dele|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .collect 4592,20,4763,1 --Longjaw Mud Snapper (40)
     .target Laird
     .isOnQuest 982
@@ -6108,7 +6108,7 @@ step
 step
     >>Fale com o |cRXP_FRIENDLY_Fazendeiro Saldanha|r e depois |cRXP_FRIENDLY_Salma|r dentro
     .turnin 9,1 >>Entregue Campos de Matança
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .target +Farmer Saldean
     .goto 1436/0,1055.27,-10128.70
     .turnin 22 >>Vá para Empadão de Fígado de Goretusco
@@ -7647,7 +7647,7 @@ step
 step
     .goto 1433/0,-2240.10,-9248.14
     >>Fale com |cRXP_FRIENDLY_Dorin|r
-    .vendor >>Lixo de Comerciante
+    .vendor >>Lixo de Mercador
     .target Dorin Songblade
     .isOnQuest 89
 step << skip

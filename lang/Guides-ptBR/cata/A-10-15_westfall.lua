@@ -540,7 +540,7 @@ step
     .turnin 26356 >>Entregue O Tesouro Escondido do Capitão Albernaz
 step
     #completewith next
-    .subzone 115 >>Viaje para o Farol de Cerro Oeste
+    .subzone 115 >>Vá ao Farol de Cerro Oeste
 step
     .goto 1436/0,1949.100,-11397.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitão Calvino|r
@@ -580,5 +580,5 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitão Calvino|r
     .target Captain Grayson
     .turnin 26348 >>Entregue Limpando a Área
-    .turnin 26349 >>Entregue O Mar Não Está para Peixe
+    .turnin 26349 >>Entregue O mar não está para peixe
 ]])

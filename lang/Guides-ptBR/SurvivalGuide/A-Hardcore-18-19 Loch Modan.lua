@@ -6,8 +6,8 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #name 18-19 Loch Modan
 #version 1
-#group Sobrevivência Guia (A)
-#subgroup RXP Sobrevivência Guia 1-20
+#group Guia de Sobrevivência RestedXP (A)
+#subgroup RXP Guia de Sobrevivência 1-20
 #next 19-20 Redridge
 
 
@@ -32,7 +32,7 @@ step
 step << Hunter
     .goto Wetlands,11.113,58.316
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Edwina Monzor|r
-    .vendor >>|cRXP_BUY_Compre uma|r |T134410:0|t[Aljava Média] |cRXP_BUY_e|r |T132382:0|t[Sharp Flechas]
+    .vendor >>|cRXP_BUY_Compre um|r |T134410:0|t[Aljava Média] |cRXP_BUY_e|r |T132382:0|t[Sharp Flechas]
     .collect 11362,1 --Medium Quiver (1)
     .collect 2515,1800 --Sharp Arrow (1800)
     .target Edwina Monzor
@@ -88,8 +88,8 @@ step
     .group
     .goto Loch Modan,34.53,43.72,10,0
     .goto Loch Modan,34.69,43.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magistrado Grã-narina|r
-    .accept 255 >>Aceite [DEPRECATED][DEPRECATED][DEPRECATED]Mercenaries
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magistrado Grã-narina|r
+    .accept 255 >>Aceite [DEPRECATED][DEPRECATED]Mercenaries
     .target Magistrate Bluntnose
 step
     .goto Loch Modan,37.17,47.94,8,0
@@ -99,11 +99,11 @@ step
     .target Jern Hornhelm
 step
     #completewith next
-    .goto Loch Modan,23.85,17.92,100 >>Vá para o norte até Algaz Station
+    .goto Loch Modan,23.85,17.92,100 >>Vá para o norte em direção a Algaz Station
 step
     .goto Loch Modan,23.85,17.92,10,0
     .goto Loch Modan,24.77,18.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Montanhista Lançatroz|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Lançatroz|r
     .turnin 353 >>Entregue Entrega para Lançatroz << NightElf
     .accept 307 >>Aceite Patas Nojentas
     .target Mountaineer Stormpike
@@ -112,7 +112,7 @@ step
    .goto Loch Modan,35.50,18.97,20 >>Entre na Mina do Riacho Prateado
 step
     .goto Loch Modan,35.93,22.55
-    >>Abra os |cRXP_PICK_Caixotes da Liga dos Mineiros|r. Saqueie-os para o |cRXP_LOOT_Miners' Equipamento|r
+    >>Abra os |cRXP_PICK_Caixotes da Liga dos Mineiros|r. Saqueie-os para obter o |cRXP_LOOT_Equipamento dos Mineiros|r
     >>|cRXP_WARN_Os |cRXP_PICK_Caixotes da Liga dos Mineiros|r podem ser encontrados por toda a Mina|r
     .complete 307,1 -- Miners' Gear (4)
 step
@@ -123,25 +123,25 @@ step
     .target Mountaineer Stormpike
 step
     #completewith next
-    .goto Loch Modan,43.43,10.14,50 >>Vá para o Stonewrought Dam
-step
-    .goto Loch Modan,46.05,13.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Engenheiro-chefe Vedaçude VII|r
-    .accept 250 >>Aceite Uma Ameaça Sombria Paira
-    .target Chief Engineer Hinderweir VII
-step
-    .goto Loch Modan,56.05,13.24
-    >>Clique no |cRXP_PICK_Barril Suspeito|r
-    .turnin 250 >>Entregue Uma Ameaça Sombria Paira
-    .accept 199 >>Aceite A Ameaça Sombria que Paira
+    .goto Loch Modan,43.43,10.14,50 >>Viaje para a Stonewrought Dam
 step
     .goto Loch Modan,46.05,13.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Engenheiro-chefe Vedaçude VII|r
-    .turnin 199 >>Entregue A Ameaça Sombria que Paira
+    .accept 250 >>Aceite A Escuridão Ameaça Looms
+    .target Chief Engineer Hinderweir VII
+step
+    .goto Loch Modan,56.05,13.24
+    >>Clique no |cRXP_PICK_Suspeito Barril|r
+    .turnin 250 >>Entregue A Escuridão Ameaça Looms
+    .accept 199 >>Aceite A Escuridão Ameaça Looms
+step
+    .goto Loch Modan,46.05,13.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Engenheiro-chefe Vedaçude VII|r
+    .turnin 199 >>Entregue A Escuridão Ameaça Looms
     .target Chief Engineer Hinderweir VII
 step
     #completewith next
-    +|cRXP_WARN_Tenha cuidado para não correr para os|r |cRXP_ENEMY_Horde Runners|r|cRXP_WARN_! É um grupo de elite com 2 |cRXP_ENEMY_Orcs|r e um |cRXP_ENEMY_Tauren|r que patrulham o lado leste de The Loch (a linha no seu mapa)|r
+    +|cRXP_WARN_Cuidado para não esbarrar nos|r |cRXP_ENEMY_Horda Runners|r|cRXP_WARN_! É um grupo de élite de 2 |cRXP_ENEMY_Orcs|r e um |cRXP_ENEMY_Tauren|r que patrulham o lado leste de The Loch (a linha no seu mapa)|r
     .line Loch Modan,55.5,67.1,60.2,62.0,62.9,57.6,63.7,54.3,64.2,51.8,64.5,46.1,64.2,35.9,63.4,33.7,59.3,24.4,60.2,22.4,57.3,19.4
     .unitscan Haren Swifthoof
     .unitscan Gradok
@@ -149,7 +149,7 @@ step
 step
     #completewith next
     .goto Loch Modan,82.92,59.37,80,0
-    .goto Loch Modan,83.28,62.97,25 >>Vá para The Andarilho Lodge
+    .goto Loch Modan,83.28,62.97,25 >>Vá para o Albergue Andarilho Distante
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dário, o Novato|r
     .accept 257 >>Aceite A Jactância do Caçador
@@ -167,7 +167,7 @@ step << Hunter
     .target Dargh Trueaim
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marek Ferrocordis|r
-    .accept 385 >>Aceite Caça aos Crocoliscos
+    .accept 385 >>Aceite Crocolisco Caçando
     .goto Loch Modan,81.76,61.66
     .target Marek Ironheart
 step
@@ -182,19 +182,19 @@ step
     .goto Loch Modan,76.65,62.27,60,0
     .goto Loch Modan,76.36,56.05,60,0
     .goto Loch Modan,80.09,64.16
-    >>Abate os |cRXP_ENEMY_Mountain Buzzards|r
-    >>|cRXP_WARN_Você deve completar esta missão e retornar para |cRXP_FRIENDLY_Dário, o Novato|r em 15 minutos. Se você falhar na missão, abandone-a e pegue-a novamente|r
+    >>Mate os |cRXP_ENEMY_Mountain Buzzards|r
+    >>|cRXP_WARN_Você deve completar esta missão e retornar para |cRXP_FRIENDLY_Dário, o Novato|r dentro de 15 minutos. Se você falhar, abandone-a e pegue-a novamente|r
     .complete 257,1 -- Mountain Buzzard slain (6)
     .mob Mountain Buzzard
 step
     #completewith next
     .goto Loch Modan,82.92,59.37,80,0
-    .goto Loch Modan,83.28,62.97,25 >>Vá em direção a |cRXP_FRIENDLY_Dário, o Novato|r
+    .goto Loch Modan,83.28,62.97,25 >>Vá até |cRXP_FRIENDLY_Dário, o Novato|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dário, o Novato|r
     .goto Loch Modan,83.49,65.40
     .turnin 257 >>Entregue A Jactância do Caçador
-    .accept 258 >>Aceite O Desafio da Caçadora
+    .accept 258 >>Aceite A Caçador's Desafio
     .target Daryl the Youngling
 step
     .goto Loch Modan,74.65,49.60,70,0
@@ -205,18 +205,18 @@ step
     .goto Loch Modan,72.79,39.86,70,0
     .goto Loch Modan,73.87,51.85,70,0
     .goto Loch Modan,69.45,39.18
-    >>Mate os |cRXP_ENEMY_Anciões Javalis da Montanha|r
-    >>|cRXP_WARN_Você deve completar esta missão e retornar para |cRXP_FRIENDLY_Dário, o Novato|r com 12 minutos. Se falhar na missão, abandone-a e aceite-a novamente|r
+    >>Abate os |cRXP_ENEMY_Javalis Montanhosos Antigos|r
+    >>|cRXP_WARN_Você deve completar esta missão e retornar a |cRXP_FRIENDLY_Dário, o Novato|r em 12 minutos. Se você falhar a missão, abandone-a e pegue-a novamente|r
     .complete 258,1 -- Elder Mountain Boar slain (5)
     .mob Elder Mountain Boar
 step
     #completewith next
     .goto Loch Modan,82.92,59.37,80,0
-    .goto Loch Modan,83.28,62.97,25 >>Voe para |cRXP_FRIENDLY_Dário, o Novato|r
+    .goto Loch Modan,83.28,62.97,25 >>Vá até |cRXP_FRIENDLY_Dário, o Novato|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dário, o Novato|r
     .goto Loch Modan,83.49,65.40
-    .turnin 258 >>Entregue O Desafio da Caçadora
+    .turnin 258 >>Entregue A Caçador's Desafio
     .target Daryl the Youngling
 step
     .group
@@ -226,26 +226,26 @@ step
     .target Vyrin Swiftwind
 step
     #completewith next
-    +|cRXP_WARN_Cuidado para não encontrar os|r |cRXP_ENEMY_Horde Runners|r|cRXP_WARN_! É um grupo de elite de 2 |cRXP_ENEMY_Orcs|r e um |cRXP_ENEMY_Tauren|r que patrulham o lado leste de The Loch (a linha no seu mapa)|r
+    +|cRXP_WARN_Cuidado para não esbarrar nos|r |cRXP_ENEMY_Horda Runners|r|cRXP_WARN_! É um grupo de élite de 2 |cRXP_ENEMY_Orcs|r e um |cRXP_ENEMY_Tauren|r que patrulham o lado leste de The Loch (a linha no seu mapa)|r
     .line Loch Modan,55.5,67.1,60.2,62.0,62.9,57.6,63.7,54.3,64.2,51.8,64.5,46.1,64.2,35.9,63.4,33.7,59.3,24.4,60.2,22.4,57.3,19.4
     .unitscan Haren Swifthoof
     .unitscan Gradok
     .unitscan Thragomm
 step
     #completewith next
-    .goto Loch Modan,54.7,38.3,200 >>Voe para a ilhota localizada no meio de The Loch
+    .goto Loch Modan,54.7,38.3,200 >>Vá até a ilha localizada no meio de The Loch
 step
     .goto Loch Modan,58.86,38.32,80,0
     .goto Loch Modan,54.80,40.02,60,0
     .goto Loch Modan,54.16,35.79,60,0
     .goto Loch Modan,54.72,38.15
-    >>Mate os |cRXP_ENEMY_Crocossauros de Loch|r. Saqueie-os por sua |cRXP_LOOT_Carne|r e |cRXP_LOOT_Pele|r
+    >>Mate os |cRXP_ENEMY_Loch Crocolisks|r. Saqueie-os para obter |cRXP_LOOT_Carne|r e |cRXP_LOOT_Skin|r
     .complete 385,1 -- Crocolisk Meat (5)
     .complete 385,2 -- Crocolisk Skin (6)
     .mob Loch Crocolisk
 step
     #completewith next
-    +|cRXP_WARN_Cuidado para não encontrar os|r |cRXP_ENEMY_Horde Runners|r|cRXP_WARN_! É um grupo de elite de 2 |cRXP_ENEMY_Orcs|r e um |cRXP_ENEMY_Tauren|r que patrulham o lado leste de The Loch (a linha no seu mapa)|r
+    +|cRXP_WARN_Cuidado para não esbarrar nos|r |cRXP_ENEMY_Horda Runners|r|cRXP_WARN_! É um grupo de élite de 2 |cRXP_ENEMY_Orcs|r e um |cRXP_ENEMY_Tauren|r que patrulham o lado leste de The Loch (a linha no seu mapa)|r
     .line Loch Modan,55.5,67.1,60.2,62.0,62.9,57.6,63.7,54.3,64.2,51.8,64.5,46.1,64.2,35.9,63.4,33.7,59.3,24.4,60.2,22.4,57.3,19.4
     .unitscan Haren Swifthoof
     .unitscan Gradok
@@ -256,8 +256,8 @@ step
 step
     .goto Loch Modan,64.89,66.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magmar Machadeiro|r
-    .turnin 436 >>Entregue A Escavação de Ironband
-    .accept 297 >>Aceite Ídolos
+    .turnin 436 >>Entregue Ironband's Escavação
+    .accept 297 >>Aceite Reunir Ídolos
     .target Magmar Fellhew
 step
     .goto Loch Modan,65.934,65.622
@@ -270,7 +270,7 @@ step
     .goto Loch Modan,72.86,62.09,20,0
     .goto Loch Modan,71.03,68.89,30,0
     .goto Loch Modan,70.38,62.82
-    >>Mate os |cRXP_ENEMY_Stonesplinter Diggers|r, os |cRXP_ENEMY_Stonesplinter Geomancers|r e os |cRXP_ENEMY_Berserk Troggs|r. Saqueie-os por seus |cRXP_LOOT_Idols|r
+    >>Mate os |cRXP_ENEMY_Stonesplinter Diggers|r, os |cRXP_ENEMY_Stonesplinter Geomancers|r e os |cRXP_ENEMY_Berserk Troggs|r. Saqueie-os para obter |cRXP_LOOT_Idols|r
     .complete 297,1
     .mob Stonesplinter Digger
     .mob Stonesplinter Geomancer
@@ -278,12 +278,12 @@ step
 step
     .goto Loch Modan,64.89,66.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magmar Machadeiro|r
-    .turnin 297 >>Entregue Ídolos
+    .turnin 297 >>Entregue Reunir Ídolos
     .target Magmar Fellhew
 step
     .group
     #completewith next
-    .goto Loch Modan,41.21,64.33,100 >>Voe para Pata Parda Serra
+    .goto Loch Modan,41.21,64.33,100 >>Vá para Serra Pata Parda
     .isOnQuest 271
 step
     .group 3
@@ -293,7 +293,7 @@ step
     .goto Loch Modan,37.81,62.87,15,0
     .goto Loch Modan,36.73,61.08
     >>Mate |cRXP_ENEMY_Ol' Fuligem|r. Saqueie-o por sua |cRXP_LOOT_Cabeça|r
-    >>|cRXP_ENEMY_Ol' Fuligem|r |cRXP_WARN_nem sempre fica dentro de sua caverna e pode patrulhar pelo caminho para baixo|r
+    >>|cRXP_ENEMY_Ol' Fuligem|r |cRXP_WARN_não está sempre dentro de sua caverna e pode patrulhar pela trilha até os terrenos inferiores|r
     >>|cRXP_ENEMY_Ol' Fuligem|r |cRXP_WARN_é um Élite nível 20|r
     .complete 271,1 -- Ol' Sooty's Head (1)
     .unitscan Ol' Sooty
@@ -301,11 +301,11 @@ step
 step
     #completewith next
     .goto Loch Modan,82.92,59.37,80,0
-    .goto Loch Modan,83.28,62.97,25 >>Voe para The Andarilho Lodge
+    .goto Loch Modan,83.28,62.97,25 >>Vá para o Albergue Andarilho Distante
 step
     .goto Loch Modan,81.76,61.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marek Ferrocordis|r
-    .turnin 385 >>Entregue Caçada de Crocossauros
+    .turnin 385 >>Entregue Crocolisco Caçando
     .target Marek Ironheart
 step
     .group
@@ -333,12 +333,12 @@ step
     .abandon 271 >>Abandone A Vingança de Vyrin
 step
     .group
-    .goto Loch Modan,73.87,29.64,100 >>Voe para Mo'grosh Baluarte
+    .goto Loch Modan,73.87,29.64,100 >>Vá para Mo'grosh Baluarte
     .isOnQuest 255
 step
     .group 3
-    >>Mate os |cRXP_ENEMY_Ogros Mo'grosh|r, os |cRXP_ENEMY_Executores Mo'grosh|r e os |cRXP_ENEMY_Brutos Mo'grosh|r
-    >>|cRXP_ENEMY_Brutos Mo'grosh|r |cRXP_WARN_são encontrados apenas dentro das Cavernas. É recomendado que você não entre na caverna nordeste, e apenas os mate nas 2 outras Mini-Cavernas|r
+    >>Mate os |cRXP_ENEMY_Mo'grosh Ogres|r, os |cRXP_ENEMY_Mo'grosh Enforcers|r e os |cRXP_ENEMY_Mo'grosh Brutes|r
+    >>|cRXP_ENEMY_Mo'grosh Brutes|r |cRXP_WARN_são encontrados apenas dentro das cavernas. Não entre na caverna do nordeste e apenas os mate nas 2 outras mini-cavernas|r
     .complete 255,1 -- Mo'grosh Ogre slain (4)
     .mob +Mo'grosh Ogre
     .goto Loch Modan,73.87,29.64,60,0
@@ -364,14 +364,14 @@ step
     .mob +Mo'grosh Brute
 step
     #completewith next
-    +|cRXP_WARN_Cuidado para não encontrar os|r |cRXP_ENEMY_Horde Runners|r|cRXP_WARN_! É um grupo de elite de 2 |cRXP_ENEMY_Orcs|r e um |cRXP_ENEMY_Tauren|r que patrulham o lado leste de The Loch (a linha no seu mapa)|r
+    +|cRXP_WARN_Cuidado para não esbarrar nos|r |cRXP_ENEMY_Horda Runners|r|cRXP_WARN_! É um grupo de élite de 2 |cRXP_ENEMY_Orcs|r e um |cRXP_ENEMY_Tauren|r que patrulham o lado leste de The Loch (a linha no seu mapa)|r
     .line Loch Modan,55.5,67.1,60.2,62.0,62.9,57.6,63.7,54.3,64.2,51.8,64.5,46.1,64.2,35.9,63.4,33.7,59.3,24.4,60.2,22.4,57.3,19.4
     .unitscan Haren Swifthoof
     .unitscan Gradok
     .unitscan Thragomm
 step
     #completewith FINISHED
-    .goto Loch Modan,36.77,46.20,150 >>Voe para Thelsamar
+    .goto Loch Modan,36.77,46.20,150 >>Vá para Thelsamar
 step
     .goto Loch Modan,37.17,47.94,8,0
     .goto Loch Modan,37.24,47.38
@@ -383,13 +383,13 @@ step
     .group
     .goto Loch Modan,34.53,43.72,10,0
     .goto Loch Modan,34.69,43.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magistrado Grã-narina|r
-    .turnin 255 >>Entregue [DEPRECATED][DEPRECATED][DEPRECATED]Mercenaries
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magistrado Grã-narina|r
+    .turnin 255 >>Entregue [DEPRECATED][DEPRECATED]Mercenaries
     .target Magistrate Bluntnose
     .isQuestComplete 255
 step
     .group
-    .abandon 255 >>Abandone [DEPRECATED][DEPRECATED][DEPRECATED]Mercenaries
+    .abandon 255 >>Abandone [DEPRECATED][DEPRECATED]Mercenaries
 step
     #label FINISHED
     .goto Loch Modan,33.938,50.954
@@ -404,14 +404,14 @@ step
 step
     .isQuestTurnedIn 2078
     .goto Ironforge,35.90,60.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bailey Itamanto|r
-    .bankdeposit 5996 >>Deposite os itens a seguir no banco:
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Bailey Itamanto|r
+    .bankdeposit 5996 >>Deposite os seguintes itens no seu banco:
     >>|T134797:0|t[Elixir de Respiração Aquática] (Se você tiver) -- 5996
     .target Bailey Stonemantle
 step
     #completewith next
     .goto Ironforge,67.84,42.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Cortarroda Rodagiros|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cortarroda Rodagiros|r
     .vendor >>|cRXP_BUY_Compre um|r [Tubo de Bronze]
     >>|cRXP_WARN_Este é um item de suprimento limitado. Pule esta etapa se o|cRXP_FRIENDLY_ Cortarroda Rodagiros|r não tiver um|r
 --  >>You will need 2 bronze tubes for a quest later << Rogue
@@ -419,8 +419,8 @@ step
     .target Gearcutter Cogspinner
 step
     .goto Ironforge,78.00,52.00,5,0
-    .zone Stormwind City >>Entre no Metrô Corredeira. Pegue o trem para Ventobravo
-    >>|cRXP_WARN_Nível seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_e|r |T133971:0|t[Culinária] |cRXP_WARN_se necessário enquanto espera o trem|r
-    >>|cRXP_WARN_Você precisará de seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_estar no nível 80 para uma missão no nível 24|r << Rogue !Dwarf
+    .zone Stormwind City >>Entre no Bonde Profundo. Pegue o bonde para Ventobravo
+    >>|cRXP_WARN_Nível sua|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_e|r |T133971:0|t[Culinária] |cRXP_WARN_se necessário enquanto aguarda o bonde|r
+    >>|cRXP_WARN_Você precisará de sua|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_estar em nível 80 para uma missão do nível 24|r << Rogue !Dwarf
     --.link https://www.youtube.com/watch?v=M_tXROi9nMQ >> |cRXP_WARN_Click here for a video guide for a logout skip on the tram|r
 ]])

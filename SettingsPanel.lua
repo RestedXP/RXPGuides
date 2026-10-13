@@ -42,6 +42,7 @@ addon.settings = addon:NewModule("Settings", "AceConsole-3.0")
 if not addon.settings.gui then addon.settings.gui = {} end
 addon.settings.enabledBetaFeatures = {
     ["Guide Window v2"] = "Allow the Guide Window and Active Steps v2", --GuideWindow/addon.v2
+    ["Standby Mode"] = "Pause guide processing when addon is hidden.",
 }
 
 local function copy(t)
@@ -683,6 +684,14 @@ function addon.settings:CreateAceOptionsPanel()
                             end
                         end
                     },
+                    standbyMode = {
+                        name = L("Enable Standby Mode"),
+                        desc = L("Pause guide processing when addon is hidden."),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.4,
+                        hidden = isNotAdvanced,
+                    },
                     featuresHeader = {
                         name = _G.FEATURES_LABEL,
                         type = "header",
@@ -961,7 +970,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 6.13,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         disabled = function()
-                            return not self.profile.enableInventoryManager
+                            return not self.profile.enableInventoryManager or addon.IsGamePadEnabled()
                         end,
                     },
                     rightClickMod = {
@@ -975,7 +984,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         disabled = function ()
                             return not self.profile.enableInventoryManager or
-                                       not self.profile.rightClickJunk
+                                       not self.profile.rightClickJunk or addon.IsGamePadEnabled()
                         end,
                         values = {
                             [1] = "CTRL",
@@ -992,7 +1001,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 6.15,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         disabled = function()
-                            return not self.profile.enableInventoryManager
+                            return not self.profile.enableInventoryManager or addon.IsGamePadEnabled()
                         end,
                     },
                     maxSoulShards = {
@@ -1020,7 +1029,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 6.17,
                         hidden = not (addon.inventoryManager and addon.inventoryManager.bagManager and addon.inventoryManager.bagManager:IsAvailable()),
                         disabled = function()
-                            return not self.profile.enableInventoryManager
+                            return not self.profile.enableInventoryManager or addon.IsGamePadEnabled()
                         end,
                         get = function()
                             return addon.inventoryManager:GetSellKeybind()
@@ -4439,5 +4448,11 @@ end
 function addon.settings.dungeons:SetAll()
     for key, name in pairs(self:GetDungeons()) do
         addon.settings.profile.dungeons[key] = true
+    end
+end
+
+function addon.settings.dungeons:SetNone()
+    for key, name in pairs(self:GetDungeons()) do
+        addon.settings.profile.dungeons[key] = false
     end
 end

@@ -289,7 +289,7 @@ step
 step
     .goto 1438/1,713.81,10407.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪兰妮亚·银辉|r 对话
-    .turnin 3521 >>交任务 埃沃隆的解药
+    .turnin 3521 >>交任务  埃沃隆的解药
     .target 迪兰妮亚·月光
     .accept 3522 >>接受任务 埃沃隆的解药
 step << Priest
@@ -327,7 +327,7 @@ step
     .target 埃沃隆
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃沃隆|r 对话
     >>提示：|cRXP_WARN_选择短裤作为奖励。你稍后需要用它来刻印符文|r << Priest sod
-    .turnin 3522 >>交任务 埃沃隆的解药
+    .turnin 3522 >>交任务  埃沃隆的解药
 step
     #completewith next
     .goto 1438/1,926.08,10773.42,25 >>进入暗丝洞穴
@@ -414,7 +414,7 @@ step << Priest
 	.goto 1438/1,801.64,10458.75
     .target 珊达
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊达|r 对话
-	.turnin 3119 >>交任务 神圣符记
+	.turnin 3119 >>交任务  神圣符记
     .accept 97979 >>接受任务 女神的恩赐
     .accept 5622 >>接受任务 月神的恩赐
 	.trainer >>训练你的职业技能
@@ -1350,7 +1350,7 @@ step << Druid/Priest
     .target 哨兵阿瑞尼亚·碎云
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r 对话
     >>|cRXP_WARN_记住这是一个限时任务，你需要在接受任务之后10分钟之内交任务|r
-    .turnin 938 >>交任务 密斯特
+    .turnin 938 >>交任务  密斯特
 step
     #completewith xp10 <<!Druid !Priest
 	#label harpies
@@ -1417,8 +1417,7 @@ step << Hunter
 step << Hunter
     #sticky
     #label xp10
-    --@TODO change the XP req here
-    .xp 9+2250 >>打怪直到9级经验达到2250点（2250/6500）
+    .xp 9+800 >>刷怪升级至9级800经验值
     >>|cRXP_WARN_一旦你达到这个经验值临界点，就跳过鹰身人任务和护送任务，直接前往达纳苏斯。你稍后还会有机会来完成这些任务|r
 step << Hunter
     #completewith xp10
@@ -1427,7 +1426,7 @@ step << Hunter
     .target 哨兵阿瑞尼亚·碎云
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r 对话
     >>|cRXP_WARN_记住这是一个限时任务，你需要在接受任务之后10分钟之内交任务|r
-    .turnin 938 >>交任务 密斯特
+    .turnin 938 >>交任务  密斯特
 step << Hunter
     #completewith xp10
 	#requires harpies
@@ -1460,6 +1459,7 @@ step << !Rogue
     #completewith next
     .goto 1457/1,2070.42,9979.310,100 >>前往达纳苏斯
 step << Hunter
+    #requires xp10
     .goto 1457/1,2316.49,9924.41
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿瑞耶尔·天影|r 对话
     .vendor >>|cRXP_BUY_把你背包里的垃圾卖店|r
@@ -1977,7 +1977,7 @@ step << Hunter
     .goto 1438/1,997.200,9903.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拜恩希::6094|r 对话
     .target Byancie::6094
-    .turnin 99050 >>Turn in The Great Tree Provides
+    .turnin 99050 >>交任务 The Great 树 Provides
     .accept 99073 >>接受任务 Easing Suffering
 step
     .goto 1438/1,971.91,9852.35,40,0
@@ -1989,7 +1989,7 @@ step
     .target 哨兵阿玛拉·夜行者
 step
     #optional
-    .abandon 87288 >>放弃软刃豹皮，之后不再返回多兰纳尔
+    .abandon 87288 >>你不会回到多兰纳尔了，直接放弃任务柔软的夜刃豹皮
 step << Rogue
     #softcore
     #completewith next
@@ -2095,7 +2095,7 @@ step
     .target 哨兵阿瑞尼亚·碎云
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r 对话
     >>|cRXP_WARN_记住这是一个限时任务，你需要在接受任务之后10分钟之内交任务|r
-    .turnin 938 >>交任务 密斯特
+    .turnin 938 >>交任务  密斯特
     .isOnQuest 938
 step
     #requires harpies2

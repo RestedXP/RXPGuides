@@ -1259,7 +1259,7 @@ step << NightElf Warrior/NightElf Rogue
     .train 2575 >>Treine |T134708:0|t[Mineração]
     .target +Kurdram Stonehammer
     .goto 1439/1,436.36,6542.65
-    .train 2018 >>Treine |T136241:0|t[Ferraria]
+    .train 2018 >>Treine |T136241:0|t [Ferraria]
     .target +Delfrum Flintbeard
     .goto 1439/1,440.16,6545.84
     >>|cRXP_WARN_Isso permitirá que você crie|r |T135248:0|t [Pedras de Amolar Ásperas] |cRXP_WARN_que aumentam seu dano corpo a corpo em 2|r << Warrior/Rogue
@@ -2544,27 +2544,6 @@ step << NightElf
     .target Mountaineer Cobbleflint
     .isQuestComplete 224
 step << NightElf
-    .goto 1432/0,-3003.30,-5376.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grenilda Garranegra|r
-    .accept 86667 >>Aceite Snowbound
-    .target Grenhild Darktalon
-step << NightElf
-    #completewith next
-    .goto 1432/0,-2619.200,-5783.300,20,0
-    .goto 1432/0,-2534.38,-5648.28,5 >>Vá para a mancha nevada no chão logo fora do túnel da Passagem do Portão Sul
-step << NightElf
-    .goto 1432/0,-2534.38,-5648.28
-    .use 279380 >>|cRXP_WARN_Use o|r |T1387609:0|t[Ceramic Jar] |cRXP_WARN_enquanto estiver em pé na área nevada para coletar o|r |T1387609:0|t[Jar of Neve]
-    .complete 86667,1 -- Jar of Snow 1/1
-step << NightElf
-    #label Snowbound
-    .goto 1432/0,-3146.73,-4837.02
-    #arrowtext |cRXP_WARN_cronômetro de 10 minutos para entregar a missão!|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Norric Lochthane|r
-    >>|cRXP_WARN_Certifique-se de entregar isto antes do vencimento de 10 minutos no|r |T1387609:0|t[Jar of Neve]
-    .turnin 86667 >>Entregue Snowbound
-    .target Norric Lochthane
-step << NightElf
     #optional
     #completewith Algaz
     >>Mate os |cRXP_ENEMY_Elder Preto Ursos|r. Saqueie-os para obter |cRXP_LOOT_Bear Carne|r
@@ -2611,8 +2590,6 @@ step << NightElf
     .waypoint 1432/0,-2684.71,-5042.87,50,0
     .waypoint 1432/0,-2712.57,-5286.61,50,0
     >>Mate os |cRXP_ENEMY_Tunnel Ratos|r. Saqueie-os para obter |cRXP_LOOT_Orelhas|r
-    >>Mate os |cRXP_ENEMY_Tunnel Rato Geomancers|r. Saqueie-os para obter |cRXP_LOOT_Fire Piche|r << Shaman 
-    >>|cRXP_ENEMY_Tunnel Rato Geomancers|r |cRXP_WARN_são encontrados apenas dentro da mina|r << Shaman
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .mob +Tunnel Rat Scout
     .mob +Tunnel Rat Vermin
@@ -2620,8 +2597,6 @@ step << NightElf
     .mob +Tunnel Rat Geomancer
     .mob +Tunnel Rat Digger
     .mob +Tunnel Rat Surveyor
-    .complete 94466,1 -- Fire Tar (1)
-    .mob +Tunnel Rat Geomancer
 step << NightElf
     #optional
     #label SilverMine
@@ -2677,6 +2652,8 @@ step << NightElf Warrior
     .itemcount 4777,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.7
     .xp <13,1
+step
+    #label Gear
 step << NightElf
     .goto 1432/0,-2684.71,-5042.87,0
     .goto 1432/0,-2712.57,-5286.61,0
@@ -2725,7 +2702,6 @@ step << NightElf
     .goto 1432/0,-2676.99,-4825.980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Lançatroz|r
     .turnin 307 >>Entregue Patas Nojentas
-    .turnin 353 >>Entregue Entrega para Lançatroz
     .target Mountaineer Stormpike
 step << NightElf
     >>Mate os |cRXP_ENEMY_Elder Preto Ursos|r. Saqueie-os para sua |cRXP_LOOT_Bear Carne|r
@@ -2789,6 +2765,12 @@ step << NightElf
     .turnin 418 >>Entregue Chouriço em Thelsamar
     .target Vidra Hearthstove
 step << NightElf
+    .goto Loch Modan,37.17,47.94,8,0
+    .goto Loch Modan,37.24,47.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jern Elmocorno|r
+    .accept 436 >>Aceite Ironband's Escavação
+    .target Jern Hornhelm
+step << NightElf
     .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
     .goto 1432/0,-3006.61,-5259.57,15,0
     .goto 1432/0,-3020.95,-5282.02,15,0
@@ -2802,12 +2784,128 @@ step << NightElf
     .target Mountaineer Kadrell
     .turnin 416 >>Entregue Pegando Ratos
 step << NightElf
+    #loop
+    .goto 1432/0,-3319.800,-5217.600,20,0
+    .goto 1432/0,-3251.5499,-5285.8790,20,0
+    .goto 1432/0,-3342.5748,-5484.5540,20,0
+    .goto 1432/0,-3386.7082,-5462.4790,20,0
+    .goto 1432/0,-3319.800,-5217.600,0
+    .goto 1432/0,-3251.5499,-5285.8790,0
+    .goto 1432/0,-3342.5748,-5484.5540,0
+    .goto 1432/0,-3386.7082,-5462.4790,0
+    >>Clique em |cRXP_PICK_Discarded Pesca Caixa de Ferramentas|r no fundo do lago
+    >>|cRXP_WARN_NOTA: Isso pode aparecer em um de muitos locais diferentes. Nade à volta até ver o ponto de exclamação no seu minimapa|r
+    >>|cRXP_WARN_Cuidado com seres de alto nível|r |cRXP_ENEMY_Manguadonte Jovem|r
+    .accept 86614 >>Aceite Prata das Ondas
+step << NightElf
+    .goto Loch Modan,64.89,66.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Magmar Machadeiro|r
+    .turnin 436 >>Entregue Ironband's Escavação
+    .target Magmar Fellhew
+step << NightElf
+    .goto Loch Modan,65.934,65.622
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Prospector Bandaferro|r
+    .accept 298 >>Aceite Relatório de Progresso da Escavação
+    .target Prospector Ironband
+step << NightElf
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dário, o Novato|r
+    .accept 257 >>Aceite A Jactância do Caçador
+    .goto Loch Modan,83.49,65.40
+    .target Daryl the Youngling
+step << NightElf Rogue/NightElf Hunter/NightElf Warrior/NightElf Druid
+    .goto Loch Modan,82.6,64.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kat|r
+    .vendor >>|cRXP_BUY_Compre|r |T132539:0|t[Botas Ágeis] |cRXP_BUY_dela se estiverem disponíveis|r
+    .target Kat Sampson
+step << NightElf
+    .goto Loch Modan,80.09,64.16,60,0
+    .goto Loch Modan,77.16,75.57,60,0
+    .goto Loch Modan,70.78,72.91,60,0
+    .goto Loch Modan,76.65,62.27,60,0
+    .goto Loch Modan,76.36,56.05,60,0
+    .goto Loch Modan,80.09,64.16,60,0
+    .goto Loch Modan,77.16,75.57,60,0
+    .goto Loch Modan,70.78,72.91,60,0
+    .goto Loch Modan,76.65,62.27,60,0
+    .goto Loch Modan,76.36,56.05,60,0
+    .goto Loch Modan,80.09,64.16
+    >>Mate os |cRXP_ENEMY_Mountain Buzzards|r
+    >>|cRXP_WARN_Você deve completar esta missão e retornar para |cRXP_FRIENDLY_Dário, o Novato|r dentro de 15 minutos. Se você falhar, abandone-a e pegue-a novamente|r
+    .complete 257,1 -- Mountain Buzzard slain (6)
+    .mob Mountain Buzzard
+step << NightElf
+    #completewith next
+    .goto Loch Modan,82.92,59.37,80,0
+    .goto Loch Modan,83.28,62.97,25 >>Vá até |cRXP_FRIENDLY_Dário, o Novato|r
+step << NightElf
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dário, o Novato|r
+    .goto Loch Modan,83.49,65.40
+    .turnin 257 >>Entregue A Jactância do Caçador
+    .target Daryl the Youngling
+step << NightElf
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marek Ferrocordis|r
+    .accept 385 >>Aceite Crocolisco Caçando
+    .accept 86758 >>Aceite Torcendo a Faca
+    .goto Loch Modan,81.76,61.66
+    .target Marek Ironheart
+step << NightElf
+    #completewith next
+    >>Mate os |cRXP_ENEMY_Loch Crocolisks|r. Saqueie-os para obter |cRXP_LOOT_Carne|r e |cRXP_LOOT_Skin|r
+    .complete 385,1 -- Crocolisk Meat (5)
+    .complete 385,2 -- Crocolisk Skin (6)
+    .mob Loch Crocolisk
+step
+    --@TODO add a line for this
+    .goto Loch Modan,62,44
+    >>Mate |cRXP_ENEMY_Daggerfang|r, |cRXP_WARN_ele pode estar patrulhando ao longo da costa|r. Saqueie-o para obter |T3736888:0|t[|cRXP_LOOT_Marek's Croc-Faca de Caça|r]
+    .complete 86758,1 --Marek's Croc Hunting Knife (1)
+    .mob Daggerfang
+step << NightElf
+    #completewith next
+    .goto Loch Modan,54.7,38.3,200 >>Vá até a ilha localizada no meio de The Loch
+step << NightElf
+    .goto Loch Modan,58.86,38.32,80,0
+    .goto Loch Modan,54.80,40.02,60,0
+    .goto Loch Modan,54.16,35.79,60,0
+    .goto Loch Modan,54.72,38.15
+    >>Mate os |cRXP_ENEMY_Loch Crocolisks|r. Saqueie-os para obter |cRXP_LOOT_Carne|r e |cRXP_LOOT_Skin|r
+    .complete 385,1 -- Crocolisk Meat (5)
+    .complete 385,2 -- Crocolisk Skin (6)
+    .mob Loch Crocolisk
+step << NightElf
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marek Ferrocordis|r
+    .turnin 385 >>Entregue Crocolisco Caçando
+    .turnin 86758 >>Entregue Torcendo a Faca
+    .goto Loch Modan,81.76,61.66
+    .target Marek Ironheart
+step << NightElf
+    >>Pule para fora da cabana e morra pelos inimigos abaixo
+    .deathskip >>Morra e reapareça no cemitério de Thelsamar
+step << NightElf
+    .goto Loch Modan,37.17,47.94,8,0
+    .goto Loch Modan,37.24,47.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jern Elmocorno|r
+    .turnin 298 >>Entregue Relatório de Progresso da Escavação
+    .accept 301 >>Aceite Apresente-se a Altaforja
+    .target Jern Hornhelm
+step << NightElf
+    .goto 1432/0,-3104.900,-5210.100,5,0
+    .goto 1432/0,-3086.600,-5216.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Khara Deepwater::1684|r
+    .target Khara Deepwater::1684
+    .turnin 86614 >>Entregue Prata das Ondas
+step << NightElf
     #label flyIF
     .goto 1432/0,-2929.87,-5424.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .fly Ironforge >>Voe para Altaforja
     .target Thorgrum Borrelson
     .zoneskip Ironforge
+step << NightElf
+    .goto Ironforge,74.645,11.742
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Prospector Lançatroz|r
+    .turnin 301 >>Entregue Apresente-se a Altaforja
+    .target Prospector Stormpike
 step << NightElf Hunter
     .goto 1455/0,-1266.100,-5006.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bélia Granitrondo|r
@@ -2844,8 +2942,15 @@ step << NightElf Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bilban Arremessaporca|r
     .trainer >>Treine suas magias de classe
     .target Bilban Tosslespanner
--- step << NightElf
---     #include 13-15 Westfall@NEWestfallStart-NEWestfallEnd
+step << NightElf Druid
+    #completewith next
+	.cast 18960 >>Lance Teleporte: Clareira da Lua
+	.zoneskip Moonglade
+step << NightElf Druid
+    .goto Moonglade,52.53,40.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
+    .trainer >>Treine suas magias de classe
+    .target Loganaar
 step << NightElf
     .hs >>Use sua Pedra de Regresso para ir a Auberdine
     .zoneskip Darkshore
@@ -4194,7 +4299,7 @@ step
     .complete 951,1 -- Mathystra Relics (6)
 step
     .goto 1439,56.654,13.484
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gelkak Giramastro|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Gelkak Giramastro|r
     .accept 2098 >>Aceite A Recuperação do Giramastro
     .target Gelkak Gyromast
 step
@@ -4297,7 +4402,7 @@ step
 step
     #optional << Warrior/Paladin/Rogue/Shaman
     .goto 1439,56.654,13.484
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Gelkak Giramastro|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gelkak Giramastro|r
     .turnin 2078 >>Entregue A Vingança de Giramastro
     .target Gelkak Gyromast
     .isQuestComplete 2078
@@ -6114,10 +6219,10 @@ step
     .turnin 967 >>Entregue A Torre de Althalaxx
     .accept 970 >>Aceite The Torre of Althalaxx
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Orendil Folharga|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Orendil Folharga|r
 	.target Orendil Broadleaf
     .goto 1440/1,175.87,3189.61
-    .accept 1010 >>Aceite Cabelo-de-bathran
+    .accept 1010 >>Aceite Cabelo de Bathran
     .xp <20,1
 step
     .goto 1440/1,-102.08,3492.890
@@ -6155,7 +6260,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Orendil Folharga|r
 	.target Orendil Broadleaf
     .goto 1440/1,175.87,3189.61
-    .accept 1010 >>Aceite Cabelo de Bathran
+    .accept 1010 >>Aceite Cabelo-de-bathran
 step
     .goto 1440/1,-203.58,3849.97,50,0
     .goto 1440/1,-2.90,3737.73,40,0
@@ -6165,7 +6270,7 @@ step
     .complete 1010,1
     .isOnQuest 1010
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Orendil Folharga|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Orendil Folharga|r
 	.target Orendil Broadleaf
     .goto 1440/1,175.87,3189.61
     .turnin 1010 >>Entregue Cabelo de Bathran
@@ -6262,7 +6367,7 @@ step << Hunter
     .target Haljan Oakheart
 step
     #completewith ElunesTear
-    >>Guarde até 6 |cRXP_LOOT_Pernas de Aranha Pegajosa|r saqueadas das |cRXP_ENEMY_Aranhas|r na área. Você precisará delas mais tarde para uma missão
+    >>Guarde até 6 |cRXP_LOOT_Pernas de Aranha Pegajosa|r saqueadas das |cRXP_ENEMY_Aranhas|r na área. Você precisará delas mais tarde para uma missão.
     .collect 2251,6,93,1 -- Gooey Spider Legs
 step
     .goto 1440/1,-974.00,2890.19
@@ -6309,7 +6414,7 @@ step
 step
     #sticky
     #completewith StatuetteStart
-    >>Guarde até 6 |cRXP_LOOT_Pernas de Aranha Pegajosa|r saqueadas das |cRXP_ENEMY_Aranhas|r na área. Você precisará delas mais tarde para uma missão
+    >>Guarde até 6 |cRXP_LOOT_Pernas de Aranha Pegajosa|r saqueadas das |cRXP_ENEMY_Aranhas|r na área. Você precisará delas mais tarde para uma missão.
     .collect 2251,6,93,1 -- Gooey Spider Legs
 step
     #sticky
@@ -6391,7 +6496,7 @@ step
 step
     #sticky
     #completewith SoulGemStart
-    >>Guarde até 6 |cRXP_LOOT_Pernas de Aranha Pegajosa|r saqueadas das |cRXP_ENEMY_Aranhas|r na área. Você precisará delas mais tarde para uma missão
+    >>Guarde até 6 |cRXP_LOOT_Pernas de Aranha Pegajosa|r saqueadas das |cRXP_ENEMY_Aranhas|r na área. Você precisará delas mais tarde para uma missão.
     .collect 2251,6,93,1 -- Gooey Spider Legs
 step
     #sticky
@@ -6881,7 +6986,7 @@ step
     .target Delgren the Purifier
 step
     #optional
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Orendil Folharga|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Orendil Folharga|r
 	.target Orendil Broadleaf
     .goto 1440/1,175.87,3189.61
     .accept 1010 >>Aceite Cabelo-de-bathran
@@ -6904,9 +7009,9 @@ step
     .goto 1440/1,-203.58,3849.97,50,0
     .goto 1440/1,-2.90,3737.73,40,0
     .goto 1440/1,-138.99,3806.92
-    >>Abra os |cRXP_PICK_Plant Bundles|r no chão. Pegue-os para obter |cRXP_LOOT_Bathran's Hairs|r
+    >>Abra os |cRXP_PICK_Pacotes de Plantas|r no chão. Saque-os para o |cRXP_LOOT_Bathran's Hairs|r
     >>Eles parecem pequenos sacos marrons e podem estar parcialmente enterrados no chão. Eles podem ser difíceis de ver
-    >>|cRXP_WARN_Certifique-se de que você tem|r |T134916:0|t[Localizar Plantas] |cRXP_WARN_ativado para vê-los no minimapa|r
+    >>|cRXP_WARN_Certifique-se de que tem|r |T134916:0|t[Localizar Plantas] |cRXP_WARN_habilitado para vê-los no minimapa|r
     .complete 1010,1 --Bathran's Hair (5)
     .isOnQuest 1010
     .skill herbalism,<1,1
@@ -6915,7 +7020,7 @@ step
     .goto 1440/1,-203.58,3849.97,50,0
     .goto 1440/1,-2.90,3737.73,40,0
     .goto 1440/1,-138.99,3806.92
-    >>Abra os |cRXP_PICK_Plant Bundles|r no chão. Pegue-os para obter |cRXP_LOOT_Bathran's Hairs|r
+    >>Abra os |cRXP_PICK_Pacotes de Plantas|r no chão. Saque-os para o |cRXP_LOOT_Bathran's Hairs|r
     >>Eles parecem pequenos sacos marrons e podem estar parcialmente enterrados no chão. Eles podem ser difíceis de ver
     .complete 1010,1 --Bathran's Hair (5)
     .isOnQuest 1010
@@ -6954,22 +7059,22 @@ step
     .goto 1440/1,-203.58,3849.97,50,0
     .goto 1440/1,-2.90,3737.73,40,0
     .goto 1440/1,-138.99,3806.92
-    >>Abra os |cRXP_PICK_Pacotes de Plantas|r no chão. Saque-os para o |cRXP_LOOT_Bathran's Hairs|r
+    >>Abra os |cRXP_PICK_Plant Bundles|r no chão. Pegue-os para obter |cRXP_LOOT_Bathran's Hairs|r
     >>Eles parecem pequenos sacos marrons e podem estar parcialmente enterrados no chão. Eles podem ser difíceis de ver
-    >>|cRXP_WARN_Certifique-se de que tem|r |T134916:0|t[Localizar Plantas] |cRXP_WARN_habilitado para vê-los no minimapa|r
+    >>|cRXP_WARN_Certifique-se de que você tem|r |T134916:0|t[Localizar Plantas] |cRXP_WARN_ativado para vê-los no minimapa|r
     .complete 1010,1 --Bathran's Hair (5)
     .skill herbalism,<1,1
 step
     .goto 1440/1,-203.58,3849.97,50,0
     .goto 1440/1,-2.90,3737.73,40,0
     .goto 1440/1,-138.99,3806.92
-    >>Abra os |cRXP_PICK_Pacotes de Plantas|r no chão. Saque-os para o |cRXP_LOOT_Bathran's Hairs|r
+    >>Abra os |cRXP_PICK_Plant Bundles|r no chão. Pegue-os para obter |cRXP_LOOT_Bathran's Hairs|r
     >>Eles parecem pequenos sacos marrons e podem estar parcialmente enterrados no chão. Eles podem ser difíceis de ver
     .complete 1010,1 --Bathran's Hair (5)
     .skill herbalism,1,1
 step
     .goto 1440/1,175.87,3189.61
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Orendil Folharga|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Orendil Folharga|r
     .turnin 1010 >>Entregue Cabelo-de-bathran
     .accept 1020 >>Aceite A Cura de Orendil
     .target Orendil Broadleaf

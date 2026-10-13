@@ -264,7 +264,7 @@ step
 step
     .goto Teldrassil,60.899,41.961
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪兰妮亚·银辉|r 对话
-    .turnin 3521 >>交任务 埃沃隆的解药
+    .turnin 3521 >>交任务  埃沃隆的解药
     .target 迪兰妮亚·月光
     .accept 3522 >>接受任务 埃沃隆的解药
 step << !Priest !Warrior
@@ -291,7 +291,7 @@ step << Priest
 	.goto Teldrassil,59.174,40.442
     .target 珊达
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊达|r 对话
-	.turnin 3119 >>交任务 神圣符记 << !sod
+	.turnin 3119 >>交任务  神圣符记 << !sod
     .turnin 77574 >>交任务 艾露恩之思 << sod
 	.trainer >>训练你的职业技能
 step
@@ -322,7 +322,7 @@ step
     .target 埃沃隆
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃沃隆|r 对话
     >>提示：|cRXP_WARN_选择短裤作为奖励。你稍后需要用它来刻印符文|r << Priest sod
-    .turnin 3522 >>交任务 埃沃隆的解药
+    .turnin 3522 >>交任务  埃沃隆的解药
 step
     #season 0 << Warrior
     #completewith next
@@ -1235,7 +1235,7 @@ step << Hunter
     .target 哨兵阿瑞尼亚·碎云
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r 对话
     >>|cRXP_WARN_记住这是一个限时任务，你需要在接受任务之后10分钟之内交任务|r
-    .turnin 938 >>交任务 密斯特
+    .turnin 938 >>交任务  密斯特
 step << Hunter
 	#xprate <1.5
     #completewith xp10
@@ -1261,7 +1261,7 @@ step << !Hunter
     .turnin 937 >>交任务 神谕林地
     .target 哨兵阿瑞尼亚·碎云
     .accept 940 >>接受任务 泰达希尔
-    .turnin 938 >>交任务 密斯特
+    .turnin 938 >>交任务  密斯特
 step << Druid
     #xprate <1.5
     #label xp10
@@ -1728,7 +1728,7 @@ step
     .target 哨兵阿瑞尼亚·碎云
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵阿瑞尼亚·碎云|r 对话
     >>|cRXP_WARN_记住这是一个限时任务，你需要在接受任务之后10分钟之内交任务|r
-    .turnin 938 >>交任务 密斯特
+    .turnin 938 >>交任务  密斯特
     .isOnQuest 938
 step
     #requires harpies2

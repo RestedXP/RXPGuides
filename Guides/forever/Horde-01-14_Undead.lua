@@ -1654,7 +1654,6 @@ step
     >>|cRXP_BUY_Buy a|r |T132891:0|t[Coarse Thread] |cRXP_BUY_from her|r
     .complete 375,2 --Coarse Thread (1)
     .target Abigail Shiel
-    .itemcount 2876,5 --Duskbat Pelt (5)
     .isQuestAvailable 375
 step
     .goto 1420/0,295.87,2277.93
@@ -1669,7 +1668,6 @@ step
     .accept 359 >>Accept Forsaken Duties
     .target Magistrate Sevren
 step
-    #optional
     .goto 1420/0,236.68,2249.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretchen|r
     .turnin 375 >>Turn in The Chill of Death
@@ -2112,7 +2110,7 @@ step << Warlock
     .goto 1420/0,726.06,1801.95
     >>Loot |cRXP_PICK_Perrine's Chest|r on the ground for |T133733:0|t[Egalin's Grimoire]
     .complete 1473,1 --Egalin's Grimoire (1)
-step
+step << !Priest
     #completewith UCHome
     .goto 1458/0,714.8,1604.24,35,0
     .goto 1458/0,652.73,1623.44,35,0
@@ -2295,7 +2293,7 @@ step << skip
     .goto 1458/0,221.78,1780.14,30 >>|cRXP_WARN_Perform a Logout Skip by positioning your character on the highest part of the lowest staircase until it looks like they're floating, then logging out and back in|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_CLICK HERE for an example|r
     >>|cRXP_WARN_If you can't do this, just run out of Undercity normally|r
-step
+step << !Priest
     #completewith AtWarS
     .goto 1420/0,235.32,1883.89
     .zone Tirisfal Glades >> Exit Undercity
@@ -3223,7 +3221,6 @@ RXPGuides.RegisterGuide([[
 #version 11
 #defaultfor !Hunter !Shaman !Tauren
 #forever
-#era/som--h
 #name 12-14 Silverpine Forest
 #displayname 13-15 Silverpine Forest << Paladin
 #next 12-17 The Barrens
@@ -3275,7 +3272,12 @@ step
     .mob Mottled Worg
     .unitscan Gorefang
 step
-    .goto 1421/0,715.000,1335.400
+    #loop
+    .goto 1421/0,941.300,1210.400,0
+    .goto 1421/0,706.700,1317.400,0
+    .goto 1421/0,941.300,1210.400,50,0
+    .goto 1421/0,830.000,1309.400,50,0
+    .goto 1421/0,706.700,1317.400,50,0
     >>Kill |cRXP_ENEMY_Vile Fin Murlocs|r. Loot them for their |T133884:0|t[|cRXP_LOOT_Murloc Eyes|r]
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .mob Vile Vin Shredder
@@ -3313,15 +3315,14 @@ step
     .goto 1421/0,1204.68,1290.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rane Yorick|r
     .turnin 435 >>Turn in Escorting Erland
-    .turnin 429 >>Turn in Wild Hearts
     .accept 449 >>Accept The Deathstalkers' Report
     .target Rane Yorick
-step
+step << skip
     #softcore
     #completewith ProveyourWorth
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
-    #hardcore
+    --#hardcore
     #completewith next
     .goto 1421/0,1359.66,864.19,50,0
     .goto 1421/0,1359.66,741.27,50,0
@@ -3447,7 +3448,12 @@ step
     .accept 91920 >>Accept Wild Eyes
     .target Quinn Yorick
 step
-    .goto 1421/0,715.000,1335.400
+    #loop
+    .goto 1421/0,941.300,1210.400,0
+    .goto 1421/0,706.700,1317.400,0
+    .goto 1421/0,941.300,1210.400,50,0
+    .goto 1421/0,830.000,1309.400,50,0
+    .goto 1421/0,706.700,1317.400,50,0
     >>Kill |cRXP_ENEMY_Vile Fin Murlocs|r. Loot them for their |T133884:0|t[|cRXP_LOOT_Murloc Eyes|r]
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .mob Vile Vin Shredder
@@ -3612,12 +3618,12 @@ step
     .goto 1421/0,1582.68,640.47,15,0--c:Silverpine Forest,44.46,36.65
     .goto 1421/0,1563.78,738.75,30 >> Travel down the hill--c:Silverpine Forest,44.91,33.14
 step
-    #completewith DecrepitFerry
+    #completewith Yorick3
     +|cRXP_WARN_Be careful! There may be a|r |cRXP_ENEMY_Son of Arugal|r |cRXP_WARN_in the area! This is a level 25 elite, steer clear from him!|r
     .unitscan Son of Arugal
 step
     #label Shackles
-    #loop
+    #completewith Yorick3
     .goto 1421/0,1609.1399,798.6667,50,0,0
     .goto 1421/0,1609.1399,798.6667,50,0
     .goto 1421/0,1592.7599,783.2667,50,0
@@ -3644,6 +3650,7 @@ step
     .mob +Moonrage Darksoul
     .unitscan Son of Arugal
 step
+    #label Yorick3
     .goto 1421/0,1207.62,1293.71,8,0
     .goto 1421/0,1220.64,1299.59,8,0
     .goto 1421/0,1212.66,1298.19,8,0
@@ -3678,6 +3685,19 @@ step
     .turnin 438 >>Turn in The Decrepit Ferry
     .accept 439 >>Accept Rot Hide Clues
 step
+    #loop
+    .goto 1421/0,1079.000,375.000,0
+    .goto 1421/0,1079.000,375.000,30,0
+    .goto 1421/0,1015.900,417.200,20,0
+    .goto 1421/0,1134.400,301.200,40,0
+    >>Kill |cRXP_ENEMY_Moonrage Gluttons|r and |cRXP_ENEMY_Moonrage Darksouls|r. Loot them for their |cRXP_LOOT_Shackles|r
+    >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_Moonrage Darksouls|r |cRXP_WARN_enrage when they are below 25% health. Kill them quickly when they are low|r
+    .complete 423,1 --Glutton Shackle (6)
+    .mob +Moonrage Glutton
+    .complete 423,2 --Darksoul Shackle (3)
+    .mob +Moonrage Darksoul
+    .unitscan Son of Arugal
+step
     #completewith next
     .goto 1421/0,1538.58,511.39,100 >> Travel back to The Sepulcher
     .subzoneskip 228
@@ -3697,6 +3717,7 @@ step
     .goto 1421/0,1625.94,522.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hadrec|r in the crypt
     .turnin 439 >>Turn in Rot Hide Clues
+    .accept 440 >>Accept The Engraved Ring
     .target High Executor Hadrec
 step
     #completewith next
@@ -3774,7 +3795,7 @@ step << Rogue
     .goto 1458/0,286.53,1616.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Louis Warren|r in the Trade Quarter
     >>|cRXP_BUY_Buy a|r |T135343:0|t[Scimitar] |cRXP_BUY_from him|r
-    .collect 2027,1,809,1 --Collect Scimitar (1)
+    .collect 2027,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
@@ -3785,7 +3806,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Louis Warren|r in the Trade Quarter
     >>|cRXP_BUY_Buy a|r |T135343:0|t[Scimitar] |cRXP_BUY_from him|r
     >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
-    .collect 2027,1,809,1 --Collect Scimitar (1)
+    .collect 2027,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
@@ -3914,8 +3935,7 @@ step
     .goto 1458,52.275,79.254,15,0
     .goto 1458,51.279,79.923,15,0
     .goto 1458,49.693,78.903,15,0
-    .goto 1458,47.951,76.171,15,0
-    .goto 1458/0,404.63,1434.67,12 >> Travel toward |cRXP_FRIENDLY_Faranell|r in The Apothecarium
+    .goto 1458,47.951,76.171,15 >>Travel to the The Apothecarium
 step
     .goto 1458/0,426.100,1403.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doctor Martin Felben|r
@@ -4204,9 +4224,19 @@ step << Undead/Skyborne
     .target Thrall
     .dungeon RFC
 step << Undead/Skyborne
+    #completewith next
+    .goto 1454/1,-4367.46,1405.44,50,0
+    .zone Durotar >> Exit Orgrimmar
+    .dungeon RFC
+step << Undead/Skyborne
     .goto 1411/1,-4769.10,1484.39,0
     >>Kill |cRXP_ENEMY_Burning Blade|r mobs in Skull Rock until |cRXP_LOOT_Lieutenant's Insignia|r drops
     .complete 5726,1 --Lieutenant's Insignia (1)
+    .dungeon RFC
+step << Undead/Skyborne
+    #completewith next
+    .goto 1454/1,-4367.46,1405.44,50,0
+    .zone Orgrimmar >> Enter Orgrimmar
     .dungeon RFC
 step << Undead/Skyborne
     .goto 1454/1,-4125.79,1920.10

@@ -85,7 +85,7 @@ step
     .goto Westfall,52.86,53.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_与旅店老板对话|r
 	>>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
-	>>|cRXP_BUY_如有需要，购买食物|r << Warrior/Rogue
+	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .vendor >>|T133918:0|t[长嘴泥鳅] |cRXP_WARN_非常便宜|r
 	.target 旅店老板希瑟尔
 step
@@ -396,11 +396,11 @@ step << !NightElf
     .goto Wetlands,10.496,60.201
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_萨莫尔·菲斯蒂沃斯|r 对话
     .vendor >>|cRXP_BUY_尽可能多地购买|r |T134831:0|t[治疗药水] |cRXP_BUY_（如果有售）|r
-    >>|cRXP_WARN_这是限量供应物品，如果 |cRXP_FRIENDLY_萨莫尔·菲斯蒂沃斯|r 没有库存，请跳过此步骤|r
+    >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_萨莫尔·菲斯蒂沃斯|r 没有库存，请跳过此步骤|r
     .target 萨莫尔·菲斯蒂沃斯
 step << !NightElf
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
     .fp Wetlands>>获取湿地的飞行路径
     .target 谢尔雷·布隆迪尔
 step << Hunter !NightElf
@@ -512,7 +512,7 @@ step << NightElf Hunter
     .target 弗德瑞克·斯图瓦
 step << NightElf
     .goto StormwindClassic,43.065,26.156
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_珊娜·弗勒|r 对话
     >>升级你的|T135966:0|t[急救]
     .train 3274 >>学习 中级急救
     .target Shaina Fuller
@@ -546,7 +546,7 @@ RXPGuides.RegisterGuide([[
 #name 15-18级 黑海岸
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP生存指南1-20
+#subgroup RXP 生存指南 1-20级
 --#defaultfor !NightElf
 #next 18-19级 洛克莫丹
 
@@ -680,7 +680,7 @@ step
 step
 #map Darkshore
     .goto Felwood,13.63,21.44
-    >>拾取|cRXP_PICK_海龟骨头|r以获得|cRXP_LOOT_海龟的残骸|r
+    >>拾取|cRXP_PICK_海龟骨头|r以得到|cRXP_LOOT_海龟的残骸|r
     .complete 4681,1
 step
 #map Darkshore
@@ -790,7 +790,7 @@ step
 step
 #map Darkshore
     .goto Felwood,25.15,4.61
-    >>点击 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4723 >>接受任务 搁浅的海洋生物
 step << Druid
     #completewith cure1
@@ -1014,7 +1014,7 @@ step
 #map Darkshore
     #label Beached4728
     .goto Felwood,18.41,49.43
-    >>点击 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4728 >>接受任务 搁浅的海洋生物
 step
     #label BearComplete
@@ -1655,7 +1655,7 @@ RXPGuides.RegisterGuide([[
 #name 20-21级 黑海岸/灰谷
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP生存指南1-20
+#subgroup RXP 生存指南 1-20级
 #next 21-23级 石爪山 / 灰谷
 
 step << Druid
@@ -1894,7 +1894,7 @@ step
     .isOnQuest 731
 step
     .goto Ashenvale,13.97,4.10
-    >>点击 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4733 >>接受任务 搁浅的海洋生物
     >>|cRXP_WARN_这个任务可能会非常困难。请与 |cRXP_ENEMY_鱼人|r 逐个交战，否则你可能会同时引到多个|r
     .link https://youtu.be/lfQM3Q-Ag5A >>https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_点击此处查看视频指南|r
@@ -1910,7 +1910,7 @@ step
 step
 #map Darkshore
     .goto Felwood,14.62,60.72
-    >>点击 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4730 >>接受任务 搁浅的海洋生物
 step
     #label Murkdeep
@@ -1959,7 +1959,7 @@ step
 step
 .group
     .goto Darkshore,44.44,84.69
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 995,1
     .isQuestTurnedIn 986
 step

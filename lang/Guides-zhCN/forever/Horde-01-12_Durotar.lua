@@ -34,7 +34,7 @@ step << Warrior/Shaman/Warlock/Mage/Priest
     .money >0.01
 step << Warlock
     .goto 1411/1,-4214.45,-623.92.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
     .accept 1485 >>接受任务 邪灵劣魔
     .target Ruzan
 step << Warrior/Shaman
@@ -130,7 +130,7 @@ step << Warlock
     #completewith next
     .goto 1411/1,-4266.26,-563.29,25,0
     >>在前往火刃集会所的路上，击杀 |cRXP_ENEMY_杂斑野猪|r
-    >>|cRXP_WARN_尽量在到达那里之前升到 2 级|r
+    >>|cRXP_WARN_尽量在到达那里之前升到2级|r
     .complete 788,1 --Mottled Boar (10)
     .mob 杂斑野猪
 step << Warlock
@@ -154,7 +154,7 @@ step << Warlock
     .goto 1411/1,-4319.67,-169.190,40,0
     .goto 1411/1,-4303.28,-186.46,40,0
     .goto 1411/1,-4281.07,-148.75,40,0
-    >>击杀 |cRXP_ENEMY_邪灵劣魔|r，拾取 |cRXP_LOOT_邪灵劣魔的徽记|r
+    >>击杀 |cRXP_ENEMY_邪灵劣魔|r。拾取他们的 |cRXP_LOOT_邪灵劣魔的头颅|r
     .complete 1485,1 --Vile Familiar Head (6)
     .mob 邪灵劣魔
 step
@@ -257,7 +257,7 @@ step << Rogue
 step << Warlock
     #label Ruzan2
     .goto 1411/1,-4214.400,-624.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
     .turnin 1485 >>交任务 邪灵劣魔
     .accept 1499 >>接受任务 邪灵劣魔
     .target Ruzan
@@ -1024,7 +1024,7 @@ step << Warlock
     #label Hraug3
     .goto 1411/1,-4107.11,-604.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫劳格|r 对话
-    >>|cRXP_BUY_购买|r |T133738:0|t[魔典:血契]|cRXP_BUY_从他那里|r
+    >>|cRXP_BUY_从他那里购买|r |T133738:0|t[魔典：血契]|cRXP_BUY_|r
     .collect 16321,1,817,1 --Grimoire of Blood Pact
     .vendor >>把垃圾物品卖给商人
     .target 赫劳格
@@ -1310,7 +1310,7 @@ step
     .goto 1411/1,-4908.69,-998.27,40,0
     .goto 1411/1,-4829.91,-1091.33,40,0
     .goto 1411/1,-4722.57,-1117.42,40,0
-    >>沿着海滩前进。击杀 |cRXP_ENEMY_海蟹|r 和 |cRXP_ENEMY_龙虾人|r，拾取它们掉落的 |cRXP_LOOT_粘液|r 和 |cRXP_LOOT_眼睛|r。你不需要在这里完成这一步。
+    >>沿着海滩往下跑。击杀|cRXP_ENEMY_海浪蟹|r和|cRXP_ENEMY_龙虾人|r。拾取它们的|cRXP_LOOT_蟹胶|r 和 |cRXP_LOOT_眼球|r。你不需要在这里完成这一步。
     .complete 818,2 --Crawler Mucus (8)
     .mob 海浪蟹
     .mob 成熟海浪蟹
@@ -2155,7 +2155,7 @@ step << Warlock
     .target 杜格鲁·血怒
 step << Warlock
     .goto 1411/1,-4854.76,345.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭（等级 2）]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭 等级2]
     .collect 16302,1,825,1 --Grimoire of Firebolt (Rank 2) (1)
     .target 基萨
     .money <0.01
@@ -2254,7 +2254,7 @@ step
 step --center of first small island
     #label MartEgg
     .goto 1411/1,-5599.500,-716.700
-    >>击杀 |cRXP_ENEMY_Bloodtalon Matriarch|r。拾取 |cRXP_LOOT_Bloodtalon Matriarch 道具|r
+    >>击杀 |cRXP_ENEMY_血爪族母|r。拾取它的 |cRXP_LOOT_血爪族母的蛋|r
     .complete 97223,1 --|1/1 Bloodtalon Matriarch Eggs
     .mob Bloodtalon Matriarch
 step
@@ -2753,7 +2753,7 @@ step
     .goto 1411/1,-4327.07,932.02,40,0
     .goto 1411/1,-4198.05,911.22,30,0
     .goto 1411/1,-4165.27,903.11,20 >>跳入雷霆山脊 << !Hunter !Warlock
-    .goto 1411/1,-4165.27,903.11,20 >>|cRXP_WARN_解散你的|r |T136218:0|t|T136218:0|t[小鬼] |cRXP_WARN_——右键点击其单位框架并选择“解散”|r << Warlock
+    .goto 1411/1,-4165.27,903.11,20 >>|cRXP_WARN_右键点击|r |T136218:0|t[小鬼] |cRXP_WARN_的头像并点击解散，将其解散|r << Warlock
     .cast 2641 >>|cRXP_WARN_施放|r |T136095:0|t[解散宠物] |cRXP_WARN_然后跳入雷霆山脊|r << Hunter
 step
     #softcore
@@ -2761,7 +2761,7 @@ step
     >>击杀 |cRXP_ENEMY_费索·暗雷|r，并拾取他的 |cRXP_LOOT_爪子|r
     >>|cRXP_WARN_小心。在拉怪之前，先击杀巡逻的|r |cRXP_ENEMY_火刃狂热者|r |cRXP_WARN_以及后方的|r |cRXP_ENEMY_闪电蜥蜴|r |cRXP_WARN_|r
     >>|cRXP_WARN_将他向后拉向你刚刚击杀的|r |cRXP_ENEMY_闪电蜥蜴|r |cRXP_WARN_。否则你可能会引到额外的火刃怪|r
-    >>|cRXP_WARN_不要害怕为了获得|cRXP_LOOT_爪|r而死，因为你会在|cRXP_FRIENDLY_灵魂医者|r处复活|r
+    >>|cRXP_WARN_不要害怕为了拿|cRXP_LOOT_爪子|r而死，因为你随后会在|cRXP_FRIENDLY_灵魂医者|r处虚弱复活|r
     >>|cRXP_WARN_先击杀小鬼。在他施放|r |T132155:0|t[灵魂汲取] |cRXP_WARN_时使用|r |T136169:0|t[凿击] << Rogue
     >>|cRXP_WARN_先击杀小鬼。在他施放 |T136026:0|t[吸取灵魂] 时使用|r |T136169:0|t[大地震击]|cRXP_WARN_|r << Shaman
     >>|cRXP_WARN_你可以对 |r|cRXP_WARN_费索|r |cRXP_ENEMY_施放 |r|T136071:0|t[变形术]|cRXP_WARN_，然后先击杀 |r|cRXP_ENEMY_小鬼|r|cRXP_WARN_|r << Mage
@@ -2798,12 +2798,12 @@ step << Hunter/Shaman
     .xp >10,1
 step << Hunter/Shaman
     #softcore
-    .goto 1411/1,-4035.2,679.63,60 >>一路杀出雷霆山谷
+    .goto 1411/1,-4035.2,679.63,60 >>战斗冲出雷霆山
     .isQuestComplete 806
     .xp <10,1
 step << Hunter/Shaman
     #hardcore
-    .goto 1411/1,-4035.2,679.63,60 >>一路杀出雷霆山谷
+    .goto 1411/1,-4035.2,679.63,60 >>战斗冲出雷霆山
     .isQuestComplete 806
 step << Hunter/Shaman
     .goto 1411/1,-4158.93,1153.04
@@ -2909,7 +2909,7 @@ step << Hunter
 step << Hunter
     #optional
     #completewith FindAntidote
-    +|cRXP_WARN_装备|r |T135499:0|t[多层弯弓]
+    +|cRXP_WARN_装备上|r |T135499:0|t[多层弯弓]
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
@@ -3054,7 +3054,7 @@ step << Warlock
     .target 杜格鲁·血怒
 step << Warlock
     .goto 1411/1,-4854.76,345.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭（等级 2）]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基萨|r 对话并购买 |T133738:0|t[火焰箭 等级2]
     .collect 16302,1,837,1 --Grimoire of Firebolt (Rank 2) (1)
     .target 基萨
     .money <0.01
@@ -3111,7 +3111,7 @@ step << Shaman
 step << Shaman
     .goto 1413/1,-3037.56,264.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡纳尔|r 对话
-    .turnin 2983 >>交任务  火焰的召唤
+    .turnin 2983 >>交任务 火焰的召唤
     .accept 1524 >>接受任务 火焰的召唤
     .target 卡纳尔·菲斯
 step << Shaman
@@ -3137,7 +3137,7 @@ step << Shaman
     #label CallofFire3
     .goto 1411/1,-3999.24,-268.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰尔夫|r 对话
-    .turnin 1524 >>交任务  火焰的召唤
+    .turnin 1524 >>交任务 火焰的召唤
     .accept 1525 >>接受任务 火焰的召唤
     .target 泰尔夫·祖拉姆
 step << skip --Shaman
@@ -3789,6 +3789,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在二楼与 |cRXP_FRIENDLY_玛瑞恩|r 对话
     .train 1766 >>训练 |T132219:0|t[脚踢]
     .target 马里恩·考尔
+    .money <0.08
     .xp <12,1
 step << Warlock
     .goto 1420/0,250.24,2259.25
@@ -3956,7 +3957,7 @@ step
     .goto 1458/0,224.300,1648.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师凯恩|r 对话
     >>|cRXP_BUY_从拍卖行|r |cRXP_BUY_购买三个|r |T133884:0|t[鱼人的眼球]
-    >>|cRXP_WARN_如果你愿意的话可以跳过，这只是个小捷径|r
+    >>|cRXP_WARN_如果你愿意，可以跳过这一步，这只能节省一点点时间|r
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .target Auctioneer Cain
     .zoneskip Undercity,1
@@ -4042,7 +4043,7 @@ step << Priest
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step << Priest
     .goto 1458/0,194.34,1681.63
-    >>|cRXP_WARN_将你所有的|r |T132889:0|t[亚麻布] |cRXP_WARN_全部转成|r |T132890:0|t[Bolt of 亚麻布]
+    >>|cRXP_WARN_将你所有的|r |T132889:0|t[亚麻布] |cRXP_WARN_转化为|r |T132890:0|t[亚麻布卷]
     .collect 2996,30,435,1 --Bolt of Linen Cloth (30)
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3

@@ -2728,7 +2728,7 @@ step << Priest
     #requires GoldshireVendor
     .goto 1429/0,33.14,-9460.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
-    .accept 5635 >> Accept Desperate Prayer
+    .accept 94774 >> Accept Divine Grace
     .trainer >> Train your class spells
     .target Priestess Josetta
     .xp <10,1
@@ -3521,20 +3521,11 @@ step << Priest
     #completewith Prayer
     .goto 1453/0,809.52,-8579.22,20 >> Enter the Stormwind Cathedral
 step << Priest
-    #optional
     .goto 1453/0,862.89,-8519.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
-    .turnin 5635 >> Turn in Desperate Prayer
-    .train 8092 >> Train your class spells
+    .turnin -94774 >> Turn in Divine Grace
+    .trainer >> Train your class spells
     .target High Priestess Laurena
-    .isOnQuest 5635
-step << Priest
-    .goto 1453/0,862.89,-8519.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
-    .turnin 5634 >> Turn in Desperate Prayer
-    .train 8092 >> Train your class spells
-    .target High Priestess Laurena
-    .train 13908,1
 step << Priest
     #optional
     #label Prayer
@@ -4613,9 +4604,6 @@ step << Human Warrior
     .target Bilban Tosslespanner
     .zoneskip Ironforge,1
 
-step -- dont delete
-    #label NormalRouteEnd
-
 step
     .hs >> Hearth to Stormwind City
     .zoneskip Stormwind City
@@ -4845,6 +4833,9 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
     .xp <14,1
 
+step -- dont delete
+    #label NormalRouteEnd
+
 --Hunter going Darkshore, rest Westfall
 step << Hunter
     .goto 1453/0,765.700,-8804.000
@@ -4859,7 +4850,7 @@ step << Hunter
     .target Gilbert Gray::267118
     .accept 95065 >>Accept Fishin' Time
     .turnin 95065 >>Turn in Fishin' Time
-step << Hunter
+step << Hunter skip
     #optional
     #requires DockTravel
     #label DarkshoreCook1
@@ -4873,7 +4864,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook1
     #label DarkshoreCook2
@@ -4887,7 +4878,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook2
     #label DarkshoreCook3
@@ -4901,7 +4892,7 @@ step << Hunter
     .itemcount 4470,1 --Simple Wood (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1 --XX Shows if cooking skill is <50
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook3
     #label DarkshoreCook4
@@ -4916,7 +4907,7 @@ step << Hunter
     .itemcount 2672,1 --Stringy Wolf Meat (1+)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook4
     #label DarkshoreCook5
@@ -4929,7 +4920,7 @@ step << Hunter
     .itemcount 2672,1 --Stringy Wolf Meat (1)
     .itemcount 4471,1 --Flint and Tinder (1)
     .skill cooking,50,1
-step << Hunter
+step << Hunter skip
     #optional
     #requires DarkshoreCook5
     #label DarkshoreCook6

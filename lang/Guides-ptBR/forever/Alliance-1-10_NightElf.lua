@@ -1417,8 +1417,7 @@ step << Hunter
 step << Hunter
     #sticky
     #label xp10
-    --@TODO change the XP req here
-    .xp 9+2250 >>Farme até estar a 2250 XP do nível 9 (2250/6500)
+    .xp 9+800 >>Farme até estar 800 XP adentro do nível 9
     >>|cRXP_WARN_Quando você atingir este ponto de xp, pule a missão Hárpia/Escolta e vá direto para Darnassus. Você terá outra oportunidade para terminar essas missões mais tarde|r
 step << Hunter
     #completewith xp10
@@ -1460,6 +1459,7 @@ step << !Rogue
     #completewith next
     .goto 1457/1,2070.42,9979.310,100 >>Viagem para Darnassus
 step << Hunter
+    #requires xp10
     .goto 1457/1,2316.49,9924.41
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariyell Caelumbra|r
     .vendor >>|cRXP_BUY_Venda|r seu lixo de vendedor
@@ -1977,7 +1977,7 @@ step << Hunter
     .goto 1438/1,997.200,9903.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Byancie::6094|r
     .target Byancie::6094
-    .turnin 99050 >>Turn in The Great Tree Provides
+    .turnin 99050 >>Entregue The Great Árvore Provides
     .accept 99073 >>Aceite Aliviando Sofrimento
 step
     .goto 1438/1,971.91,9852.35,40,0

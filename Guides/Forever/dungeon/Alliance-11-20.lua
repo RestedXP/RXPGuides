@@ -461,33 +461,28 @@ step
 
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
 #beta
-<< Alliance
+<< Alliance !NightElf
 #name 13-15 Westfall 
 #displayname 14-15 Westfall << Gnome/Dwarf !Hunter
-#displayname 13-15 Westfall << Hunter
 #group RestedXP Forever Dungeon Guide (A)
 #subgroup (WIP) Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
-#next 15-16 Hall of Thanes
+#next 15-17 Darkshore
 
 step
     #optional
     .maxlevel 14,endOfTheGuide
+
 step
     .goto 1453/0,673.58,-8867.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Allison|r
     .home >> Set your Hearthstone to Stormwind City
     .target Innkeeper Allison
     .bindlocation 16509
-step
-    #label NEWestfallStart --hidden step for #include
-
 step
     #ah
     .goto 1453/0,660.28,-8814.55
@@ -574,7 +569,7 @@ step
     .target Gryan Stoutmantle
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .accept 12 >> Accept The People's Militia
-step
+step << skip
     .goto 1436/0,1041.97,-10511.13
     .target Captain Danuvin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Danuvin|r
@@ -602,7 +597,7 @@ step
     .accept 92742 >>Accept Testing the Wells
     .accept 92744 >>Accept Murloc Gills
 step
-	#completewith GnollPaws
+	#completewith MurlocEyeGills
     >>Open the |cRXP_PICK_Sacks of Oats|r on the ground. Loot them for the |cRXP_LOOT_Handful of Oats|r
     >>|cRXP_WARN_You can usually find them near Farm Fences or Buildings|r
     .complete 151,1 --Handful of Oats (8)
@@ -683,7 +678,7 @@ step
     >>|cRXP_WARN_You can loot |cRXP_PICK_Furlbrow's Wardrobe|r from outside if you angle your camera correctly|r
 	>>|cRXP_WARN_Be aware of |cRXP_ENEMY_Benny Blanco|r. He hits hard|r
     .complete 64,1 --Furlbrow's Pocket Watch
-step
+step << skip
     #completewith next
     >>Kill |cRXP_ENEMY_Riverpaw Gnolls|r and |cRXP_ENEMY_Riverpaw Scouts|r. Loot them for their |T134297:0|t|cRXP_LOOT_Gnoll Paws|r
     .complete 102,1 --Gnoll Paw (8)
@@ -694,6 +689,7 @@ step
     .use 254545 >>|cRXP_WARN_Use the|r |T236996:0|t[Well Water Sample Kit] |cRXP_WARN_at the Jansen Stead well|r
     .complete 92742,1 --|1/1 Jansen Stead Water Sample
 step
+    #label MurlocEyeGills
     .goto 1436/0,1192.12,-9641.73,60,0
     .goto 1436/0,1042.67,-9619.33,60,0
     .goto 1436/0,1192.12,-9641.73,60,0
@@ -705,7 +701,7 @@ step
     .complete 92744,1 -- Longshore Murloc Gills 7/7
     .mob Murloc Raider
     .mob Murloc Coastrunner
-step
+step << skip
     #label GnollPaws
     .goto 1436/0,1042.67,-9715.0,60,0
     .goto 1436/0,1517.97,-9743.000,60,0
@@ -902,15 +898,26 @@ step
     .use 254545 >>|cRXP_WARN_Use the|r |T236996:0|t[Well Water Sample Kit] |cRXP_WARN_at the Molsen Farm well|r
     .complete 92742,2 --|1/1 Molsen Farm Water Sample
 step
+    .isOnQuest 153
     .goto 1436/0,1324.200,-10490.400
     >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r
     >>|cRXP_WARN_It is a dynamic respawn area meaning if you kill enough they will keep respawning|r
+    >>|cRXP_WARN_If you are still very far behind on |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r and have killed all required |cRXP_ENEMY_Defias|r, abandon the quest|r [Red Leather Bandanas]
     .complete 12,1 -- Defias Trapper slain (15)
     .mob +Defias Trapper
     .complete 12,2 -- Defias Smuggler slain (15)
     .mob +Defias Smuggler
     .complete 153,1 -- Red Leather Bandana (15)
     .mob +Defias Trapper
+    .mob +Defias Smuggler
+step
+    #optional
+    .goto 1436/0,1324.200,-10490.400
+    >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r
+    >>|cRXP_WARN_It is a dynamic respawn area meaning if you kill enough they will keep respawning|r
+    .complete 12,1 -- Defias Trapper slain (15)
+    .mob +Defias Trapper
+    .complete 12,2 -- Defias Smuggler slain (15)
     .mob +Defias Smuggler
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
@@ -924,11 +931,14 @@ step
     .goto 1436/0,1045.12,-10508.80
     .accept 65 >> Accept The Defias Brotherhood
 step
+    #optional
+    .isQuestComplete 102
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Danuvin|r
 	.target Captain Danuvin
     .goto 1436/0,1041.97,-10511.13
     .turnin 102 >> Turn in Patrolling Westfall
 step
+    .isQuestComplete 153
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Galiaan|r
 	.target Scout Galiaan
     .goto 1436/0,1126.67,-10636.670
@@ -985,6 +995,13 @@ step << Warrior
     .trainer >> Train your class spells
     .target Wu Shen
     .target Ilsa Corbin
+step
+    .goto 1453/0,765.700,-8804.000
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catherine Leland|r
+    >>|cRXP_BUY_Buy one|r |T134335:0|t[Shiny Bauble] |cRXP_BUY_and three|r |T134324:0|t[Nightcrawlers] |cRXP_BUY_from her. This is for a 900xp quest|r
+    .collect 6529,1,95065,1 --|1/1 Shiny Bauble
+    .collect 6530,3,95065,1 --|3/3 Nightcrawlers
+    .target Catherine Leland
 step << Hunter
     .goto 1453/0,552.78,-8415.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r inside
@@ -1041,14 +1058,13 @@ step << Priest
     .train 8122,1
     .target Brother Joshua
 step
-    #label NEWestfallEnd --hidden step for #include
+    #optional
+    .abandon 153 >> Abandon Red Leather Bandanas
+
 step
-    .goto 1453/0,765.700,-8804.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catherine Leland|r
-    >>|cRXP_BUY_Buy one|r |T134335:0|t[Shiny Bauble] |cRXP_BUY_and three|r |T134324:0|t[Nightcrawlers] |cRXP_BUY_from her. This is for a 900xp quest|r
-    .collect 6529,1,95065,1 --|1/1 Shiny Bauble
-    .collect 6530,3,95065,1 --|3/3 Nightcrawlers
-    .target Catherine Leland
+    #optional
+    #label endOfTheGuide
+
 step
     .goto 1453/0,1269.100,-8540.601
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilbert Gray::267118|r
@@ -1056,10 +1072,180 @@ step
     .accept 95065 >>Accept Fishin' Time
     .turnin 95065 >>Turn in Fishin' Time
 step
+    #optional
+    #requires DockTravel
+    #label DarkshoreCook1
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_While waiting for the Boat on the dock:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(in your Profession Book)|r
+    .usespell 818
+    .zoneskip Darkshore
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step
+    #optional
+    #requires DarkshoreCook1
+    #label DarkshoreCook2
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_While waiting for the Boat on the dock:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(in your Profession Book)|r
+    .usespell 818
+    .zoneskip Darkshore
+    .itemcount 769,<1 --Chunk of Boar Meat (<1)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step
+    #optional
+    #requires DarkshoreCook2
+    #label DarkshoreCook3
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_While waiting for the Boat on the dock:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(in your Profession Book)|r
+    .usespell 818
+    .zoneskip Darkshore
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,<1 --Stringy Wolf Meat (<1)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step
+    #optional
+    #requires DarkshoreCook3
+    #label DarkshoreCook4
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the following items:|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    .usespell 2550
+    .zoneskip Darkshore
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+step
+    #optional
+    #requires DarkshoreCook4
+    #label DarkshoreCook5
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    .usespell 2550
+    .zoneskip Darkshore
+    .itemcount 769,<1 --Chunk of Boar Meat (<1)
+    .itemcount 2672,1 --Stringy Wolf Meat (1)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+step
+    #optional
+    #requires DarkshoreCook5
+    #label DarkshoreCook6
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
+    .usespell 2550
+    .zoneskip Darkshore
+    .itemcount 769,1 --Chunk of Boar Meat (1)
+    .itemcount 2672,<1 --Stringy Wolf Meat (<1)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+step
+    #optional
+    .goto 1453/0,1330.100,-8645.400
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat to Darkshore if needed|r
+    .zone Darkshore >> Take the boat to Darkshore
+    .skill firstaid,<1,1 -- shows if firstaid is >1
+step
+    #label DarkshoreBoat
+    .goto 1453/0,1330.100,-8645.400
+    .zone Darkshore >> Take the boat to Darkshore
+]])
+
+
+
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+#beta
+<< Alliance !NightElf
+#name 15-17 Darkshore
+#group RestedXP Forever Dungeon Guide (A)
+#subgroup (WIP) Dungeon Guide 1-20
+--#groupid RXP-SRGCE-A1
+#next 17-18 Hall of Thanes
+
+step
+#include RestedXP Forever Guide (A)\14-16 Darkshore
+step
+    .goto 1439/1,929.100,6543.600
+    .zone Stormwind City >> Take the boat to Stormwind City
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step
     .goto 1453/0,1193.100,-8328.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Manifest Clerk Philmor::268511|r 
     .target Manifest Clerk Philmor::268511
     .accept 97220 >>Accept Philmor's Favor
+step << Druid
+    .goto 1453/0,1095.500,-8741.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theridran|r
+    .trainer >>Train your class spells
+	.target Theridran
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step << Warlock
+    #optional
+    #completewith next
+    .goto 1453/0,988.44,-8942.15,20,0
+    .goto 1453/0,1015.33,-8978.9,15 >> Travel to The Slaughtered Lamb and go downstairs
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step << Warlock
+    .goto 1453/0,1029.89,-8971.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r
+    .trainer >> Train your class spells
+    .target Ursula Deline
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step << Mage
+    #optional
+    #completewith next
+    .goto 1453/0,874.32,-9014.67,10 >> Travel to the Mage Tower
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step << Mage
+    .goto 1453/0,885.34,-9006.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elsharin|r
+    .trainer >> Train your class spells
+    .target Elsharin
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step << Priest/Paladin
+    #optional
+    #completewith next
+    .goto 1453/0,809.52,-8579.22,20 >> Travel to the Stormwind Cathedral
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step << Paladin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
+    .goto 1453/0,859.13,-8559.14,10,0
+    .goto 1453/0,861.14,-8573.03
+    .trainer >> Train your class spells
+    .target Arthur the Faithful
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step << Priest
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r
+    .goto 1453/0,862.89,-8519.61
+    .trainer >> Train your class spells
+    .target Brother Joshua
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
 step
     .goto 1453/0,566.600,-8845.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias::483|r
@@ -1071,27 +1257,58 @@ step
     .use 277198 >> |cRXP_WARN_Use the|r |T132762:0|t[Gatehouse Shipment] |cRXP_WARN_in front of the |cRXP_PICK_Gatehouse Door|r upstairs|r
     .complete 97222,1 --|1/1 Gatehouse Shipment delivered
 step
+    #label Gatehouse
     .goto 1453/0,566.600,-8845.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias::483|r
     .target Elaine Trias::483
-    .turnin 97222 >>Turn in Gatehouse Goods
+    .turnin 97222 >>Turn in Gatehouse Goods  
+step << Hunter
+    .goto 1453/0,552.78,-8415.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r
+    .trainer >> Train your class spells
+    .target Einris Brightspear
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step << Hunter
+    .goto 1453/0,553.22,-8422.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karrina Mekenda|r
+    .trainer >> Train your pet spells
+    .target Karrina Mekenda
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step << Rogue
+    .goto 1453/0,377.47,-8752.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
+    .trainer >> Train your class spells
+    .target Osborne the Night Man
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step << Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r
+    .goto 1453/0,358.25,-8728.28,15,0
+    .goto 1453/0,302.6,-8685.53,15,0
+	.goto 1453/0,323.3,-8689.29
+    .trainer >> Train your class spells
+    .target Wu Shen
+    .target Ilsa Corbin
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
 step
-    #optional
-    #label endOfTheGuide
-step
-    #label DeeprunEnter
     #completewith next
     .goto 1453/0,562.300,-8385.300,20,0
     .goto 1453/0,522.000,-8352.101
     .subzone 2257 >>Enter the Deeprun Tram
     .zoneskip Ironforge
-    .zoneskip Loch Modan
     .zoneskip Dun Morogh
 step
     .zone Ironforge >> Take the tram to Ironforge
-    .zoneskip Loch Modan
     .zoneskip Dun Morogh
 ]])
+
+
+
+
+
 
 RXPGuides.RegisterGuide([[
 #forever
@@ -1101,10 +1318,10 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Forever Dungeon Guide (A)
 #subgroup (WIP) Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
-#name 15-16 Hall of Thanes
-#next 16-18 Ruins of Lordaeron
+#name 17-18 Hall of Thanes
+#next 18-19 Ruins of Lordaeron
 
-step << NightElf
+step << NightElf/Skyborne
     .goto Ironforge,55.491,47.751
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
     .fp Ironforge >> Get the Ironforge flight path
@@ -1142,16 +1359,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
     >>|cRXP_WARN_Press ESCAPE to cancel the Farsight|r
     .turnin 96392 >> Turn in Farsen's Watch
-    .accept 96390 >> Accept Nip 'Em in the Bud
+    --.accept 96390 >> Accept Nip 'Em in the Bud
     .target Earthseer Farsen
 step
     .goto 1426/0,-2009.87,-5860.22,40,0
     .goto 1426/0,-2034.49,-5922.60
     >>Kill |cRXP_ENEMY_Dark Iron Spies|r. Loot them for the |T237385:0|t[|cRXP_LOOT_Dark Iron Map|r]
     .use 274268 >>|cRXP_WARN_Use the|r |T237385:0|t[|cRXP_LOOT_Dark Iron Map|r] |cRXP_WARN_to start the quest|r
-    >>|cRXP_WARN_You can skip killing |cRXP_ENEMY_Dark Iron Spies|r for the other quest because they are low level once you find the|r |T237385:0|t[|cRXP_LOOT_Dark Iron Map|r]
-    .complete 96390,1 -- Dark Iron Spy slain 10/10
-    .disablecheckbox
+    -->>|cRXP_WARN_You can skip killing |cRXP_ENEMY_Dark Iron Spies|r for the other quest because they are low level once you find the|r |T237385:0|t[|cRXP_LOOT_Dark Iron Map|r]
+    --.complete 96390,1 -- Dark Iron Spy slain 10/10
+    --.disablecheckbox
     .collect 274268,1,96391,1 -- Dark Iron Map (1)
     .accept 96391 >> Accept Underground Map
     .mob Dark Iron Spy
@@ -1345,8 +1562,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Forever Dungeon Guide (A)
 #subgroup (WIP) Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
-#name 16-18 Ruins of Lordaeron
-#next 18-20 Deadmines
+#name 18-19 Ruins of Lordaeron
+#next 19-20 Deadmines
 
 step
     #completewith EnterRoL
@@ -1430,8 +1647,7 @@ step
     .goto 1420/0,6.300,1791.500,25,0
     .goto 1420/0,4.300,1847.500,10,0
     .goto 1458/0,238.400,1872.200,20,0
-    .goto 1458/0,170.700,1804.700
-    .subzone 16611 >>Travel to the Ruins of Lordaeron in Undercity. Enter the dungeon
+    .goto 1458/0,170.700,1804.700,20 >>Travel to the Ruins of Lordaeron in Undercity. Enter the dungeon
     >>|cRXP_WARN_Be careful of higher level |cRXP_ENEMY_Cats|r, |cRXP_ENEMY_Bears|r, |cRXP_ENEMY_Spiders|r or |cRXP_ENEMY_Murlocs|r as you run over|r
     >>|cRXP_WARN_As soon as you enter Undercity you will be automatically PVP flagged, becoming attackable by|r |cRXP_ENEMY_Horde|r
 
@@ -1597,16 +1813,24 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Forever Dungeon Guide (A)
 #subgroup (WIP) Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
-#name 18-20 Deadmines
-#next 20-20 Redridge
+#name 19-20 Deadmines
+#next 20-21 Darkshore/Ashenvale
 
 step
-    #completewith next
+    #completewith TDB1
+    #label FlyWestfall
     .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    >>|cRXP_WARN_If you do not already have the Westfall flight path, skip this step|r << !Human !Gnome !Dwarf
     .fly Westfall >> Fly to Westfall
     .target Dungar Longdrink
 step
+    #optional
+    #requires FlyWestfall
+    #completewith TDB1
+    .zone Westfall >> Travel to Westfall
+step
+    #label TDB1
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
 	.target Gryan Stoutmantle
     .goto 1436/0,1045.12,-10508.80
@@ -1616,14 +1840,21 @@ step
     .goto 1453/0,490.03,-8835.82,-1
     .goto 1436/0,1037.42,-10628.27,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r or |cRXP_FRIENDLY_Thor|r
-    >>|cRXP_WARN_If you do not already have the Redridge Mountains flight path, skip this step|r
+    >>|cRXP_WARN_If you do not already have the Redridge Mountains flight path, skip this step|r << !Human !Gnome !Dwarf
     .fly Redridge >> Fly to Redridge Mountains
     .target Dungar Longdrink
     .zoneskip Redridge Mountains
     .zoneskip Elwynn Forest
 step
-    #completewith RRDB
+    .isQuestAvailable 132
+    .goto 1433/0,-1906.400,-9606.800
     .zone Redridge Mountains >> Travel to Redridge Mountains
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
+    .goto 1433/0,-2268.32,-9279.12
+    .accept 125 >> Accept The Lost Tools
+    .target Foreman Oslow
+    .zoneskip 1433,1
 step
     #label RRDB
     .goto 1433/0,-2164.56,-9213.10,8,0
@@ -1652,6 +1883,17 @@ step
     .goto 1433/0,-1986.76,-9324.30,70,0
     .goto 1433/0,-2397.70,-9363.97,70,0
     .complete 3741,1 --Hilary's Necklace (1)
+    .zoneskip 1433,1
+step
+    >>Open the |cRXP_PICK_Sunken Chest|r. Loot it for |cRXP_LOOT_Oslow's Toolbox|r
+    .goto 1433/0,-2472.16,-9366.72
+    .complete 125,1 --Oslow's Toolbox (1)
+    .zoneskip 1433,1
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
+    .goto 1433/0,-2268.32,-9279.12
+    .turnin 125 >> Turn in The Lost Tools
+    .target Foreman Oslow
     .zoneskip 1433,1
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hilary|r
@@ -1700,6 +1942,7 @@ step
     .collect 814,5,103,1 -- Flask of Oil (5)
     .target Auctioneer Jaxon
 step
+    #completewith EnterDM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .goto 1453/0,490.03,-8835.82
     .fly Westfall >> Fly to Westfall
@@ -1878,6 +2121,7 @@ step
 
 --Shaman water totem quest start
 step << Shaman
+    #completewith next
     .goto 1436/0,1037.42,-10628.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
     .fly Ironforge >> Fly to Ironforge
@@ -1951,8 +2195,136 @@ step << Shaman
     .target Hervdana Saegrund::258203
     .turnin 94497 >>Turn in Call of Water
     .accept 94499 >>Accept Call of Water
+step
+    .hs >> Hearth to Stormwind
+step << Shaman
+    #completewith next
+    .goto 1453/0,490.03,-8835.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    .fly Redridge >> Fly to Redridge Mountains
+    .target Dungar Longdrink
+    .zoneskip Redridge Mountains
+step << Shaman
+    .isOnQuest 94499
+    .goto 1433/0,-3121.100,-9485.000
+    .use 265747 >> |cRXP_WARN_Use the|r |T132829:0|t[Unfilled Red Waterskin] |cRXP_WARN_at Stonewatch Falls|r
+    .complete 94499,1 --|1/1 Full Red Waterskin
+step << Shaman
+    #completewith DarkshoreBoat
+    .goto 1433/0,-2234.900,-9435.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
+    .fly Stormwind >> Fly to Stormwind
+    .target Ariena Stormfeather
+    .zoneskip Stormwind City
+    .zoneskip Darkshore
+step << Rogue
+    .goto 1453/0,377.47,-8752.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
+    .trainer >> Train your class spells
+    .target Osborne the Night Man
+step << Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r
+    .goto 1453/0,358.25,-8728.28,15,0
+    .goto 1453/0,302.6,-8685.53,15,0
+	.goto 1453/0,323.3,-8689.29
+    .trainer >> Train your class spells
+    .target Wu Shen
+    .target Ilsa Corbin
+step
+    .isQuestComplete 167
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
+    .turnin 167 >> Turn in Oh Brother. . .
+    .goto 1453/0,501.200,-8468.601
+    .target Wilder Thistlenettle
+step
+    .isQuestComplete 168
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
+    .turnin 168 >> Turn in Collecting Memories
+    .goto 1453/0,501.200,-8468.601
+    .target Wilder Thistlenettle
+step << Hunter
+    .goto 1453/0,552.78,-8415.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r
+    .trainer >> Train your class spells
+    .target Einris Brightspear
+step << Hunter
+    .goto 1453/0,553.22,-8422.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karrina Mekenda|r
+    .trainer >> Train your pet spells
+    .target Karrina Mekenda
+step
+    .isQuestComplete 2040
+    .goto 1453/0,634.800,-8390.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
+    .turnin 2040 >> Turn in Underground Assault
+    .target Shoni the Shilent
+step << Druid
+    .goto 1453/0,1095.500,-8741.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theridran|r
+    .trainer >>Train your class spells
+	.target Theridran
+step << Warlock
+    #optional
+    #completewith next
+    .goto 1453/0,988.44,-8942.15,20,0
+    .goto 1453/0,1015.33,-8978.9,15 >> Travel to The Slaughtered Lamb and go downstairs
+step << Warlock
+    .goto 1453/0,1029.89,-8971.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r
+    .trainer >> Train your class spells
+    .target Ursula Deline
+step << Warlock
+    .goto 1453/0,1041.54,-8983.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r
+    .accept 1716 >> Accept Devourer of Souls
+    .target Gakin the Darkbinder
+step << Mage
+    #optional
+    #completewith next
+    .goto 1453/0,874.32,-9014.67,10 >> Travel to the Mage Tower
+step << Mage
+    .goto 1453/0,885.34,-9006.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elsharin|r
+    .trainer >> Train your class spells
+    .target Elsharin
+step << Priest/Paladin
+    #optional
+    #completewith next
+    .goto 1453/0,809.52,-8579.22,20 >> Travel to the Stormwind Cathedral
+step << Paladin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
+    .goto 1453/0,859.13,-8559.14,10,0
+    .goto 1453/0,861.14,-8573.03
+    .trainer >> Train your class spells
+    .target Arthur the Faithful
+step << Priest
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r
+    .goto 1453/0,862.89,-8519.61
+    .trainer >> Train your class spells
+    .target Brother Joshua
+step
+    #optional
+    .goto 1453/0,1330.100,-8645.400
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat to Darkshore if needed|r
+    .zone Darkshore >> Take the boat to Darkshore
+    .skill firstaid,<1,1 -- shows if firstaid is >1
+step
+    #label DarkshoreBoat
+    .goto 1453/0,1330.100,-8645.400
+    .zone Darkshore >> Take the boat to Darkshore
+]])
 
---sham can hs to sw
---everyone else can fly sw turn in / train 20 spells
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+#beta
+<< Alliance
+#group RestedXP Forever Dungeon Guide (A)
+#subgroup (WIP) Dungeon Guide 1-20
+--#groupid RXP-SRGCE-A1
+#name 20-21 Darkshore/Ashenvale
+#next 21-23 Stonetalon/Ashenvale
+
+--add .dungeon WC and set HS astranaar for it
 
 ]])

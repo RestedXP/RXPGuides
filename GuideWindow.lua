@@ -248,6 +248,13 @@ end
 
 function addon.ActiveStepElementEventHandler(frame, event, ...)
     if addon.isHidden then return end
+    if addon.IsGamePadEnabled() then
+        if event == "PLAYER_INTERACTION_MANAGER_FRAME_HIDE" then
+            addon.comms.PrettyDebug("Gamepad event override, %s", event)
+
+            return
+        end
+    end
 
     if frame.callback and frame.step and frame.step.active then
         addon.Call(frame.element.tag, frame.callback, frame, event, ...)

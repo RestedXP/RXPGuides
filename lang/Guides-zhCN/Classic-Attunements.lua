@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 
 << Alliance
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 开门任务
 #name 奥妮克希亚开门任务（联盟）
 
@@ -341,7 +341,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 
 << Horde
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 开门任务
 #name 奥妮克希亚开门任务（部落）
 
@@ -792,7 +792,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 
 #subgroup 开门任务
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #name 熔火之心开门任务
 
 step
@@ -837,7 +837,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 开门任务
 #name 黑翼之巢开门任务
 
@@ -882,7 +882,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 钥匙
 #name 黑石塔上层钥匙
 
@@ -974,7 +974,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 
 << Alliance
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 钥匙
 #name 通灵学院钥匙（联盟）
 
@@ -1233,7 +1233,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 
 << Horde
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 钥匙
 #name 通灵学院钥匙（部落）
 
@@ -1489,7 +1489,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 钥匙
 #name 黑石深渊钥匙
 
@@ -1553,7 +1553,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 钥匙
 #name 厄运之槌 钥匙
 
@@ -1582,7 +1582,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #name 纳克萨玛斯开门任务
 #subgroup 开门任务
 
@@ -1655,7 +1655,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #tbc
 
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #name 屠魔峡谷开门任务
 #subgroup 开门任务
 <<sod

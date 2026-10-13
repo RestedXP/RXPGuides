@@ -63,7 +63,7 @@ step
     #completewith next
     .goto Felwood,19.27,19.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莱尔德|r 对话
-    >>|cRXP_BUY_如有需要，购买食物|r
+    >>|cRXP_BUY_需要的话就买点食物|r
     .vendor >>|T133918:0|t[长嘴泥鳅] |cRXP_WARN_非常便宜|r
     .target 莱尔德
 step
@@ -540,7 +540,7 @@ RXPGuides.RegisterGuide([[
 #name 13-13级 洛克莫丹（暗夜精灵）
 #version 1
 #group RestedXP 生存指南 (联盟版)
-#subgroup RXP生存指南1-20
+#subgroup RXP 生存指南 1-20级
 #next 13-15级 西部荒野
 #defaultfor NightElf
 

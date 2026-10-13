@@ -116,6 +116,7 @@ step << !Tauren
 step << !Tauren
     .goto 1413/1,-2595.75,-473.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
+    .turnin 98024 >>Turn in Journey to the Crossroads << Skyborne
     .accept 871 >>Accept Disrupt the Attacks
     .accept 5041 >>Accept Supplies for the Crossroads
     .target Thork
@@ -226,7 +227,7 @@ step << !Tauren !Undead !Skyborne
     .collect 4986,1,924 --Collect Flawed Power Stone
     .complete 924,1 --Destroy the Demon Seed (1)
     .isOnQuest 924
-step << Shaman
+step << Orc Shaman/Troll Shaman/Tauren Shaman
     #sticky
     #label FireTar2
     .goto 1413/1,-2947.38,-92.1,50,0
@@ -1142,7 +1143,7 @@ step << Orc Rogue/Troll Rogue
     #optional
 	#completewith SouthSea
 	>>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r
-    >>|cRXP_WARN_He patrols up and down the hill|r
+    >>|cRXP_WARN_He spawns at the first camp and patrols up the hill|r
 	.complete 1963,1 --Tazan's Satchel (1)
     .unitscan Tazan
 step
@@ -1171,11 +1172,13 @@ step
     .complete 887,2 --Southsea Cannoneer (6)
     .mob +Southsea Cannoneer
 step << Orc Rogue/Troll Rogue
-    .goto 1413/1,-3832.02,-1381.87,50,0
-    .goto 1413/1,-3730.68,-1364.98,50,0
-    .goto 1413/1,-3677.99,-1392.00
+    #loop
+    .goto 1413/1,-3895.600,-1365.000,0
+    .goto 1413/1,-3677.99,-1392.00,50,0
+    .goto 1413/1,-3895.600,-1365.000,50,0
+    .goto 1413/1,-3826.300,-1487.300,50,0
 	>>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r
-    >>|cRXP_WARN_He patrols up and down the hill|r
+    >>|cRXP_WARN_He spawns at the first camp and patrols up the hill|r
 	.complete 1963,1 --Tazan's Satchel (1)
     .unitscan Tazan
 step
@@ -1638,6 +1641,7 @@ step
     >>|cRXP_FRIENDLY_Vrang|r |cRXP_WARN_sells|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r << Tauren Warrior/Tauren Shaman/Druid
 	.vendor	>> Vendor trash and repair
     .target Vrang Wildgore
+    .isQuestAvailable 95494,95507
     --.dungeon !RFC
 step
     #completewith next
@@ -1652,8 +1656,8 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Kill |cRXP_LOOT_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r and |cRXP_LOOT_Tusks|r
-    >>|cRXP_WARN_If the |cRXP_LOOT_Savannah Patriarchs|r are heavily contested consider skipping this quest for now, it can be completed later|r
+    >>Kill |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r and |cRXP_LOOT_Tusks|r
+    >>|cRXP_WARN_If the |cRXP_ENEMY_Savannah Patriarchs|r are heavily contested consider skipping this quest for now, it can be completed later|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .complete 821,1 --Savannah Lion Tusk (5)
     .disablecheckbox
@@ -1699,7 +1703,7 @@ step
     .isQuestTurnedIn 95494
 step
     #completewith next
-    .goto 1413/1,-1778.100,684.200,25,0
+    .goto 1413/1,-1736.900,650.300,25,0
     .goto 1413/1,-1741.700,721.400,25,0
     .goto 1413/1,-1643.900,786.000,25,0
     .goto 1413/1,-1605.300,818.300,20 >>Travel up the mountain
@@ -2089,14 +2093,8 @@ step << Warrior !Skyborne
     .train 227 >>Train Staves
     .target Hanashi
     .money <0.020
-step << Warrior !Skyborne
+step << Warrior/Paladin/Shaman !Skyborne
     #optional
-    .goto 1454/1,-4824.00,2090.540
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
-    .train 197 >>Train Two-Handed Axes
-    .target Hanashi
-    .money <0.010
-step << Shaman !Skyborne
     .goto 1454/1,-4824.00,2090.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 197 >>Train Two-Handed Axes
@@ -2466,7 +2464,7 @@ step
     .accept 865 >>Accept Raptor Horns
     .accept 1069 >>Accept Deepmoss Spider Eggs
     .target Mebok Mizzyrix
-step
+step << skip
     .goto 1413/1,-3664.82,-1050.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|cRXP_FRIENDLY_Innkeeper Wiley|r
     -->>|cRXP_BUY_Buy|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_from him|r
@@ -2625,7 +2623,7 @@ step
     .skipgossip
 step
     #optional
-    #completewith next
+    #completewith CampTArrive
     >>Kill |cRXP_ENEMY_Stormsnouts|r. Loot them for a |cRXP_LOOT_Thunder Lizard Horn|r
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
@@ -2645,12 +2643,6 @@ step
     .use 5099
     .unitscan Lakota'mani
     .xp <18,1
-step
-    #optional
-    #completewith CampTArrive
-    >>Kill |cRXP_ENEMY_Stormsnouts|r. Loot them for a |cRXP_LOOT_Horn|r. This does not have to be completed now
-    .complete 821,3 --Thunder Lizard Horn (1)
-    .mob Stormsnout
 step
     #label CampTArrive
     #completewith next
@@ -3621,7 +3613,7 @@ step
     .goto 1413/1,-2859.22,-1804.81,50,0
     .goto 1413/1,-2833.88,-1749.41,50,0
     .goto 1413/1,-2881.51,-1723.74,50,0
-    .goto 1413/1,-2932.18,-1698.06.0,50,0
+    .goto 1413/1,-2932.18,-1698.06,50,0
     .goto 1413/1,-2973.72,-1627.8,50,0
     >>Finish killing |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
     .complete 821,2 --Plainstrider Kidney (5)
@@ -3656,7 +3648,7 @@ step
     .mob Oasis Snapjaw
 step
     #completewith IshamuhalesFang
-    >>Kill |cRXP_LOOT_Savannah Matriarchs|r and |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
+    >>Kill |cRXP_ENEMY_Savannah Matriarchs|r and |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
     .mob Savannah Patriarchs
@@ -3678,7 +3670,7 @@ step
     .goto 1413/1,-3633.200,-600.500,50,0
     .goto 1413/1,-3469.100,-495.000,50,0
     .goto 1413/1,-3428.300,-584.300,50,0
-    >>Kill |cRXP_LOOT_Savannah Matriarchs|r and |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
+    >>Kill |cRXP_ENEMY_Savannah Matriarchs|r and |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Matriarch
     .mob Savannah Patriarchs
@@ -3790,9 +3782,10 @@ step
     .complete 92706,1 --Kill Bruuz
     .isOnQuest 92706
 step
-    .goto 1413/1,-3720.300,-920.000
-    >>Click the |cRXP_PICK_Wanted Poster|r
+    .goto 1413/1,-3728.66,-835.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazlowe|r
     .turnin 92706 >>Turn in WANTED: Bruuz
+    .target Gazlowe
     .isQuestComplete 92706
 step
     .goto 1413/1,-3770.20,-928.53
@@ -4058,7 +4051,7 @@ step
     .goto 1434/0,273.91,-12406.71,40,0
     .goto 1434/0,492.15,-12499.03,40,0
     .goto 1434/0,759.53,-12494.77,60,0
-    .goto 1434/0,1004.57,-12317.37.0,60,0
+    .goto 1434/0,1004.57,-12317.37,60,0
     .goto 1434/0,1178.78,-12166.78,60,0
     .goto 1434/0,1360.0,-11978.74,60,0
     .goto 1436/0,1578.87,-11699.5,60,0
@@ -4270,15 +4263,17 @@ step
     .accept 907 >>Accept Enraged Thunder Lizards
     .target Jorn Skyseer
 step
-    #completewith next
+    #completewith SleepingBag1
+    >>Kill |cRXP_ENEMY_Thunder Lizards|r. Loot them for their |cRXP_LOOT_Blood|r
+    .complete 907,1 --Thunder Lizard Blood (3)
+    .mob Thunderhead
+    .mob Stormsnout
+step
+    #completewith LizardBlood
     .goto 1413/1,-1899.59,-2624.34,0
     .goto 1413/1,-2016.12,-2650.02,0
     .goto 1413/1,-2400.18,-2398.01,0
     .goto 1413/1,-2363.70,-2537.19,0
-    .goto 1413/1,-1899.59,-2624.34,80,0
-    .goto 1413/1,-2016.12,-2650.02,80,0
-    .goto 1413/1,-2363.70,-2537.19,80,0
-    .goto 1413/1,-2400.18,-2398.01,80,0
     >>Kill |cRXP_ENEMY_Owatanka|r. Loot him for |T133723:0|t[|cRXP_LOOT_Owatanka's Tailspike|r]
     >>|cRXP_WARN_Use the |T133723:0|t[|cRXP_LOOT_Owatanka's Tailspike|r] to start the quest|r
     >>|cRXP_WARN_He has 4 spawnpoints (marked on the map)|r
@@ -4287,6 +4282,12 @@ step
     .use 5102
     .unitscan Owatanka
 step
+    #label SleepingBag1
+    .goto The Barrens,46.361,73.904
+    >>Click the |cRXP_PICK_Burned-Out Remains|r on the ground
+    .accept 79007 >> Accept ...and that note you found
+step
+    #label LizardBlood
     #loop
     .goto 1413/1,-1868.18,-2498.00,0
     .goto 1413/1,-1868.18,-2498.00,60,0
@@ -4415,6 +4416,9 @@ step
     .accept 874 >>Accept Mahren Skyseer
     .accept 6382 >>Accept The Ashenvale Hunt << Hunter
     .target Jorn Skyseer
+step
+    #optional
+    .xp 20 >>Grind to level 20
 step << !Tauren !Skyborne
     .goto 1413/1,-1891.48,-2391.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
@@ -4461,6 +4465,22 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kuruk|r|cRXP_BUY_. Buy |r |T135423:0|t[Deadly Throwing Axe] |cRXP_BUY_from him|r
     .collect 3137,200,6562,1 --Deadly Throwing Axe (200)
     .target Kuruk
+step << Rogue
+    #optional
+    .goto 1456/1,104.500,-1308.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|
+    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed] 
+    .train 6761 >>Train your class spells
+    .target Boarton Shadetotem
+    .xp <16,1
+    .xp >20,1
+step << Rogue
+    .goto 1456/1,104.500,-1308.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|
+    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed] 
+    .train 1943 >>Train your class spells
+    .target Boarton Shadetotem
+    .xp <20,1
 step
     .goto 1456/1,24.85,-1252.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
@@ -4474,6 +4494,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
     .bankdeposit 5075 >> Deposit your |T134128:0|t[Blood Shards]
     .target Chesmu
+    .isNotOnQuest 868
 step
     .goto 1456/1,38.32,-1300.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Pala|r
@@ -4609,8 +4630,9 @@ step
 step << Druid
     .goto 1456/1,-281.59,-1039.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak|r
-    .trainer >> Train your class spells
-    .accept 27 >> Accept A Lesson to Learn
+    .trainer >>Train your class spells
+    .accept 27 >>Accept A Lesson to Learn
+    .accept 98340 >>Accept The Great Cat Spirit
     .target Turak Runetotem
 step << Druid
     #completewith next
@@ -4619,8 +4641,11 @@ step << Druid
 step << Druid
     .goto 1450/1,-2678.76,8019.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite|r
-    .turnin 27 >> Turn in A Lesson to Learn
-    .accept 28 >> Accept Trial of the Lake
+    .turnin 27 >>Turn in A Lesson to Learn
+    .accept 28 >>Accept Trial of the Lake
+    .turnin 98340 >>Turn in The Great Cat Spirit
+    .accept 98341 >>Accept The Great Windborne Cat Spirit << Skyborne
+    .accept 98405 >>Accept The Great Cat Spirit << !Skyborne
     .target Dendrite Starblaze
 step << Druid
     #completewith next
@@ -4638,6 +4663,65 @@ step << Druid
     .turnin 28 >> Turn in Trial of the Lake
     .accept 30 >> Accept Trial of the Sea Lion
     .target Tajarri
+step << Druid !Skyborne
+    .goto 1450/1,-2640.000,7338.900
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Great Cat Spirit|r
+    .turnin 98405 >>Turn in The Great Cat Spirit
+    .accept 98342 >>Accept The Great Cat Spirit
+    .target Great Cat Spirit
+step << Druid Skyborne
+    .goto 1450/1,-2352.700,7375.600,10,0
+    .goto 1450/1,-2394.300,7361.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
+    .target Avatar of Saeyleenan::272054
+    .turnin 98341 >>Turn in The Great Windborne Cat Spirit
+    .accept 98404 >>Accept The Great Windborne Cat Spirit
+step << Druid
+    #completewith next
+    .goto 1450/1,-3046.700,7534.400
+    --aura 1309054?
+    .subzone 2363 >> Head to the Stormrage Barrow Dens
+step << Druid
+    >>Go deep into the cave, travel across the bridge, look for a cat statue inside an alcove and click on the small orb next to the statue
+    >>Loot |cRXP_LOOT_Relic of the Claw|r
+    .goto 1450/1,-3117.400,7455.300
+    .complete 98404,2 << Skyborne --|1/1 Relic of the Claw
+    .complete 98342,2 << !Skyborne --|1/1 Relic of the Claw
+step << Druid
+    >>Click on the small orb next to the cat statue
+    >>Loot |cRXP_LOOT_Relic of the Silent Shadow|r
+    .goto 1450/1,-3099.200,7485.700
+    .complete 98404,3  << Skyborne --|1/1 Relic of the Silent Shadow
+    .complete 98342,3  << !Skyborne --|1/1 Relic of the Silent Shadow
+step << Druid
+    >>Click on the small orb next to the cat statue
+    >>Loot |cRXP_LOOT_Relic of the Fang|r
+    .goto 1450/1,-3054.100,7476.800
+    .complete 98404,1  << Skyborne --|1/1 Relic of the Fang
+    .complete 98342,1  << !Skyborne --|1/1 Relic of the Fang
+step << Druid !Skyborne
+    .goto 1450/1,-2640.000,7338.900
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Great Cat Spirit|r
+    .turnin 98342 >>Turn in The Great Cat Spirit
+    .accept 98739 >>Accept Blessings of the Great Cat Spirit
+    .target Great Cat Spirit
+step << Druid Skyborne
+    .goto 1450/1,-2395.400,7361.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
+    .target Avatar of Saeyleenan::272054
+    .turnin 98404 >>Turn in The Great Windborne Cat Spirit
+    .accept 98738 >>Accept Blessings of the Great Windborne Cat Spirit
+step << Druid
+    #completewith next
+    .cast 18960 >>|cRXP_WARN_Cast|r |T135758:0|t[Teleport: Moonglade]
+    .zoneskip Moonglade
+step << Druid
+    .goto 1450/1,-2678.200,8021.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze::11802|r
+    .turnin 98738 >>Turn in Blessings of the Great Windborne Cat Spirit << Skyborne
+    .turnin 98739 >>Turn in Blessings of the Great Cat Spirit << !Skyborne
+    .accept 98362 >>Accept To Thunder Bluff
+    .target Dendrite Starblaze::11802
 step << Druid
     .hs >> Hearth to Thunder Bluff
     .use 6948
@@ -4662,6 +4746,11 @@ step << Druid
     .zoneskip Thunder Bluff
     .cooldown item,6948,<0
     .dungeon !WC
+step << Druid
+    .goto 1456/1,-281.59,-1039.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak|r
+    .turnin 98362 >>Turn in Thunder Bluff
+    .target Turak Runetotem
 step << Hunter
     #completewith HunterTraining2
     .goto 1456/1,-123.26,-1394.49,60 >> Travel to the Hunter Rise
@@ -5362,7 +5451,7 @@ step
     .goto 1413/1,-1960.600,653.700,50,0
     .goto 1413/1,-1871.600,653.700,50,0
     .goto 1413/1,-1729.700,592.400,50,0
-    >>Kill |cRXP_LOOT_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
+    >>Kill |cRXP_ENEMY_Savannah Patriarchs|r. Loot them for their |cRXP_LOOT_Hides|r
     .complete 95494,1 --|6/6 Savannah Lion Hide
     .mob Savannah Patriarch
 step
@@ -5406,7 +5495,7 @@ step
     .isQuestTurnedIn 95494
 step
     #completewith next
-    .goto 1413/1,-1778.100,684.200,25,0
+    .goto 1413/1,-1736.900,650.300,25,0
     .goto 1413/1,-1741.700,721.400,25,0
     .goto 1413/1,-1643.900,786.000,25,0
     .goto 1413/1,-1605.300,818.300,20 >>Travel up the mountain
@@ -5873,6 +5962,10 @@ step
    .target +Marukai
    .goto 1440/1,1025.88,3331.450
 step
+    #ah
+    #completewith WrathtailHeads
+    +|cRXP_WARN_Save all the|r |T134332:0|t[Shredder Operating Manual Pages] |cRXP_WARN_you loot|r
+step
    .goto 1440/1,1004.54,3341.83
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muglash|r
    >>|cRXP_WARN_This will start an escort quest. Be careful as it's difficult|r
@@ -5902,6 +5995,7 @@ step << Priest
     .subzone 2797,2 >> Find a group now for BFD if you wish to get a big wand upgrade (Gravestone Scepter). You could also wait to do BFD when you are in Ashenvale at level 26-28
     .dungeon BFD
 step
+    #label WrathtailHeads
 	#loop
     .goto 1440/1,1065.09,3574.76,0
 	.goto 1440/1,1073.74,3635.49,50,0
@@ -6186,6 +6280,12 @@ step << Paladin
     .train 1026 >>Train your class spells
     .target Alodan the Hopeful 
     .xp <22,1
+step
+    #ah
+    .goto 1456/1,24.85,-1252.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
+    .bankdeposit 16645,16646,16647,16648,16649,16650,16651,16652,16653,16654,16655,16656 >>Deposit all your |T134332:0|t[Shredder Operating Manual Pages]
+    .target Chesmu
 step << Warlock
     .goto 1456/1,26.1,-1196.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
@@ -6461,7 +6561,7 @@ step << Shaman
     .train 905 >> Train your class spells
     .target Kardris Dreamseeker
     .xp <24,1
-step << Troll Warrior/Undead Warrior/Tauren Warrior
+step << Troll Warrior/Undead Warrior/Tauren Warrior/Undead Paladin
     .goto 1454/1,-4824.00,2090.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 197 >>Train Two-Handed Axes
@@ -6500,6 +6600,26 @@ step << Hunter
     .train 24558 >> Train your pet spells
     .target Xao'tsu
     .xp <24,1
+step << skip
+    .goto 1454/1,-4746.58,2036.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nogg|r
+    .accept 2841 >>Accept Rig Wars
+    .target Nogg
+step
+    .goto 1454/1,-4739.57,2036.84
+    .gossipoption 95758 >>Talk to |cRXP_FRIENDLY_Sovik|r
+    .isNotOnQuest 2842
+    .target Sovik
+step
+    .goto 1454/1,-4739.57,2036.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sovik|r
+    -->>|cRXP_WARN_You are required to have Rig Wars in your quest log to accept this quest|r
+    .accept 2842 >>Accept Chief Engineer Scooty
+    .target Sovik
+step << skip
+    #optional
+    .abandon 2841 >> Abandon Rig Wars. Make sure you have Chief Engineer Scooty in your quest log
+    .dungeon !GNOMER
 step << Rogue
     .goto 1454/1,-4355.53,1520.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135423:0|t[Deadly Throwing Axe] |cRXP_BUY_from him|r

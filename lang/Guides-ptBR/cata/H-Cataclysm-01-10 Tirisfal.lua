@@ -463,7 +463,7 @@ step
 step
     #xprate <1.2
     .goto 18,44.61,53.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Johaan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joaquino|r
     .accept 24975 >>Aceite Campos de mágoa
     .target Apothecary Johaan
 step
@@ -561,7 +561,7 @@ step
 step
     #xprate <1.2
     .goto 18,44.61,53.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Johaan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joaquino|r
     .turnin 24975 >>Entregue Campos de mágoa
     .target Apothecary Johaan
 step
@@ -659,7 +659,7 @@ step
     .target Anette Williams
 step << Undead
     .goto 90,61.49,41.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gordon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Antônio Nunes|r
     .turnin 6323 >>Entregue Carona para a Cidade Baixa
     .accept 6322 >>Aceite Miguel Garreta
     .target Gordon Wendham
