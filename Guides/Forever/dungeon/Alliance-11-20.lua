@@ -898,6 +898,7 @@ step
     .use 254545 >>|cRXP_WARN_Use the|r |T236996:0|t[Well Water Sample Kit] |cRXP_WARN_at the Molsen Farm well|r
     .complete 92742,2 --|1/1 Molsen Farm Water Sample
 step
+    .isOnQuest 153
     .goto 1436/0,1324.200,-10490.400
     >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r
     >>|cRXP_WARN_It is a dynamic respawn area meaning if you kill enough they will keep respawning|r
@@ -908,6 +909,15 @@ step
     .mob +Defias Smuggler
     .complete 153,1 -- Red Leather Bandana (15)
     .mob +Defias Trapper
+    .mob +Defias Smuggler
+step
+    #optional
+    .goto 1436/0,1324.200,-10490.400
+    >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r. Loot them for their |T133694:0|t|cRXP_LOOT_Red Leather Bandanas|r
+    >>|cRXP_WARN_It is a dynamic respawn area meaning if you kill enough they will keep respawning|r
+    .complete 12,1 -- Defias Trapper slain (15)
+    .mob +Defias Trapper
+    .complete 12,2 -- Defias Smuggler slain (15)
     .mob +Defias Smuggler
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
@@ -1047,6 +1057,9 @@ step << Priest
     .trainer >> Train your class spells
     .train 8122,1
     .target Brother Joshua
+step
+    #optional
+    .abandon 153 >> Abandon Red Leather Bandanas
 
 step
     #optional
