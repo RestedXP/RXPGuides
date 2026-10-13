@@ -1383,10 +1383,10 @@ s["PRIEST"] = {
         1243 -- power word: fortitude
     },
     [4] = {
-        2052, -- lesser heal r2
         359 -- shadow word pain
     },
     [6] = {
+        2052, -- lesser heal r2
         17, -- power word shield
         591 -- smite r2
     },
