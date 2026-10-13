@@ -423,6 +423,12 @@ L["aide d"] = "援助"
 
 L["effet s"] = "效果"
 
+-- lang\Guides-frFR\Retail\Leveling\Conventional\Starting Zones.lua file
+
+L["appel du héros : la marche de l"] = "英雄的召唤：行进"
+L["aide n"] = "援助"
+L["extraction de la kaja"] = "提取卡加"
+
 -- lang\Guides-frFR\SoD\Incursions.lua file
 
 L["entrée est bloquée par un|r |cRXP_ENEMY_Récolte-rêve|r|cRXP_WARN_ (Elite de niveau 41). Contrôlez-le ou tuez-le alors que vous entrez à l"] = "入口被 |cRXP_ENEMY_梦幻收割者|r |cRXP_WARN_（精英 41级）|r 阻挡。进入时控制或击杀它..."
