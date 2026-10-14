@@ -2,6 +2,7 @@ local addonName, addon = ...
 local L = addon.locale.Get
 
 addon.professions = addon.professions or {}
+addon.professions.materialIds = addon.professions.materialIds or {}
 addon.professions.PROFESSIONS = addon.professions.PROFESSIONS or {}
 
 -- Localize globals
@@ -23,9 +24,10 @@ local MakeItemKey = (_G.C_AuctionHouse and _G.C_AuctionHouse.MakeItemKey) or nil
 local GetNumSkillLines, GetSkillLineInfo = _G.GetNumSkillLines, _G.GetSkillLineInfo
 local GetNumFactions, GetFactionInfo = _G.GetNumFactions, _G.GetFactionInfo
 local GetMoney, CopyTable = _G.GetMoney, _G.CopyTable
-local GetItemNameByID = _G.C_Item.GetItemNameByID
+local GetItemNameByID, GetItemInfo = _G.C_Item.GetItemNameByID, _G.C_Item.GetItemInfo
 
 -- Local renaming
+local MATERIALS = addon.professions.materialIds
 local PROFESSIONS = addon.professions.PROFESSIONS
 
 --local enums
@@ -35,10 +37,10 @@ local EVENTS_TO_REGISTER_AH = {
         "AUCTION_HOUSE_SHOW",
         "AUCTION_HOUSE_CLOSED",
         "AUCTION_HOUSE_DISABLED",
+        "GET_ITEM_INFO_RECEIVED",
     },
     --Classic
     classic = {
-        "GET_ITEM_INFO_RECEIVED",
         "AUCTION_ITEM_LIST_UPDATE",
     },
     --Forever
@@ -92,9 +94,9 @@ end
 function addon.professions.AH.session:Reset()
     self.foundItems = {}
     self.materialIndex = 1
+    self.materialsToScan = {}
     self.currentPage = 0
     self.currentItemName = ""
-    self.ahIsShowing = false
     self.sentQuery = false
     self.isScanning = false
 end
@@ -126,19 +128,16 @@ end
 
 
 function addon.professions.AH:gatherMaterialsToScan(professionName)
-    if not PROFESSIONS[professionName] then return end
-    --We create a local table first for easier lookup
-    local lookup = {}
-    for recipeName, _ in pairs(PROFESSIONS[professionName].RECIPES) do
-        for materialName, materialTable in pairs(PROFESSIONS[professionName].RECIPES[recipeName].materials) do
-            if not materialTable.fromVendor and not lookup[materialName] then
-                lookup[materialName] = true
-            end
+    if self.session.isClassic or true then
+        if not MATERIALS.classic[professionName] then return end
+        for _, materialId in ipairs(MATERIALS.classic[professionName]) do
+            tinsert(self.session.materialsToScan, materialId)
         end
-    end
-    --Repopulate the correct table
-    for k, _ in pairs(lookup) do
-        tinsert(self.session.materialsToScan, k)
+    else
+        if not MATERIALS.forever[professionName] then return end
+        for _, materialId in ipairs(MATERIALS.forever[professionName]) do
+            tinsert(self.session.materialsToScan, materialId)
+        end
     end
 end
 
@@ -148,7 +147,6 @@ end
 local function classicScan(itemID)
     if not addon.professions.AH.session.isClassic then return end
 
-    --print("scanning - ", itemName)
     if addon.professions.AH.session.sentQuery then return end
     if not CanSendAuctionQuery() then
         C_Timer.After(0.35, function ()
@@ -157,10 +155,14 @@ local function classicScan(itemID)
         return
     end
 
-    local itemName = GetItemNameByID(itemID)
-    addon.professions.AH.session.sentQuery = true
-    -- text, minLevel, maxLevel, page, usable, rarity, getAll, exactMatch, filterData
-    QueryAuctionItems(itemName, nil, nil, addon.professions.AH.session.currentPage, false, nil, false, true, nil)
+    local item = Item:CreateFromItemID(itemID)
+    local itemName
+    item:ContinueOnItemLoad(function ()
+        itemName = item:GetItemName()
+        addon.professions.AH.session.sentQuery = true
+        -- text, minLevel, maxLevel, page, usable, rarity, getAll, exactMatch, filterData
+        QueryAuctionItems(itemName, nil, nil, addon.professions.AH.session.currentPage, false, nil, false, true, nil)
+    end)
 end
 
 --Scan for forever version
@@ -168,6 +170,7 @@ local function foreverScan(itemID)
     if addon.professions.AH.session.isClassic then return end
 
     if addon.professions.AH.session.sentQuery then return end
+
     if not IsThrottledMessageSystemReady() then
         C_Timer.After(0.35, function ()
             foreverScan(itemID)
@@ -175,10 +178,14 @@ local function foreverScan(itemID)
         return
     end
 
-    local itemKey = MakeItemKey(itemID)
-    print("scanning", GetItemNameByID(itemKey.itemID))
-    addon.professions.AH.session.sentQuery = true
-    SendSearchQuery(itemKey, {}, false)
+    local item = Item:CreateFromItemID(itemID)
+    local itemKey
+    item:ContinueOnItemLoad(function ()
+        itemKey = MakeItemKey(item:GetItemID())
+        addon.professions.AH.session.sentQuery = true
+        SendSearchQuery(itemKey, {}, false)
+    end)
+
 end
 
 --Main scan function
@@ -221,7 +228,6 @@ function addon.professions.AH:AUCTION_ITEM_LIST_UPDATE()
     if not self.session.sentQuery then return end
 
     local resultCount, totalAuctions = GetNumAuctionItems("list")
-    print(resultCount, totalAuctions)
     if resultCount == 0 or totalAuctions == 0 then
         self.session.sentQuery = false
         self.session.currentPage = 0
@@ -259,6 +265,7 @@ function addon.professions.AH:ITEM_SEARCH_RESULTS_UPDATED(_, itemKey, _)
 
     local resultCount = GetNumItemSearchResults(itemKey)
     local result, itemID, price, count
+    local totalCount = 0
     for i = 1, resultCount do
 		result = GetItemSearchResultInfo(itemKey, i)
         if result and result.buyoutAmount then
@@ -267,9 +274,10 @@ function addon.professions.AH:ITEM_SEARCH_RESULTS_UPDATED(_, itemKey, _)
             count = result.quantity
             self.session.foundItems[itemID] = self.session.foundItems[itemID] or {}
             self.session.foundItems[itemID][price] = count
-            print("item", itemKey.itemID, i, result.auctionID, result.buyoutAmount)
+            totalCount = totalCount + count
         end
 	end
+    print(GetItemNameByID(itemKey.itemID), totalCount, "item")
 
     self.session.sentQuery = false
     if self.session.materialIndex <= #self.session.materialsToScan then
@@ -283,6 +291,7 @@ function addon.professions.AH:COMMODITY_SEARCH_RESULTS_UPDATED(_, itemID)
 
     local resultCount = GetNumCommoditySearchResults(itemID)
     local result,price, count
+    local totalCount = 0
     for i = 1, resultCount do
 		result = GetCommoditySearchResultInfo(itemID, i)
         if result then
@@ -290,9 +299,10 @@ function addon.professions.AH:COMMODITY_SEARCH_RESULTS_UPDATED(_, itemID)
             count = result.quantity
             self.session.foundItems[itemID] = self.session.foundItems[itemID] or {}
             self.session.foundItems[itemID][price] = count
-            print("comm", itemID, i, result.quantity, result.auctionID, result.unitPrice)
+            totalCount = totalCount + count
         end
 	end
+    print(GetItemNameByID(itemID), totalCount, "com")
 
     self.session.sentQuery = false
     if self.session.materialIndex <= #self.session.materialsToScan then
@@ -306,28 +316,46 @@ end
 local function gatherPlayerProfessionInfo()
     if not RXPCData.professions.profession1 then RXPCData.professions.profession1 = {} end
     if not RXPCData.professions.profession2 then RXPCData.professions.profession2 = {} end
-    --skillName, header, isExpanded, skillRank, numTempPoints, skillModifier,
-    --skillMaxRank, isAbandonable, stepCost, rankCost, minLevel, skillCostType,
-    --skillDescription = GetSkillLineInfo(index)
-    local skillName, isHeader, skillRank, skillMaxRank
-    local foundFirst = false
-    for i = 1, GetNumSkillLines() do
-        skillName, isHeader, _, skillRank, _, _, skillMaxRank, _, _, _, _, _, _ = GetSkillLineInfo(i)
-        if skillName and not isHeader and addon.professions.locale.PROFESSION_NAMES[skillName] then
-            if not foundFirst then
-                RXPCData.professions.profession1 = {
-                    name = lower(skillName),
-                    skillLevel = skillRank,
-                    skillMaxLevel = skillMaxRank,
-                }
-                foundFirst = true
-            else
-                RXPCData.professions.profession2 = {
-                    name = lower(skillName),
-                    skillLevel = skillRank,
-                    skillMaxLevel = skillMaxRank,
-                }
+
+    if addon.professions.AH.session.isClassic then --TODO: check if even needed
+        --skillName, header, isExpanded, skillRank, numTempPoints, skillModifier,
+        --skillMaxRank, isAbandonable, stepCost, rankCost, minLevel, skillCostType,
+        --skillDescription = GetSkillLineInfo(index)
+        local skillName, isHeader, skillRank, skillMaxRank
+        local foundFirst = false
+        for i = 1, GetNumSkillLines() do
+            skillName, isHeader, _, skillRank, _, _, skillMaxRank, _, _, _, _, _, _ = GetSkillLineInfo(i)
+            if skillName and not isHeader and addon.professions.locale.PROFESSION_NAMES[skillName] then
+                if not foundFirst then
+                    RXPCData.professions.profession1 = {
+                        name = lower(skillName),
+                        skillLevel = skillRank,
+                        skillMaxLevel = skillMaxRank,
+                    }
+                    foundFirst = true
+                else
+                    RXPCData.professions.profession2 = {
+                        name = lower(skillName),
+                        skillLevel = skillRank,
+                        skillMaxLevel = skillMaxRank,
+                    }
+                end
             end
+        end
+    else
+        local prof1Index, prof2Index, archaeology, fishing, cooking = GetProfessions()
+        local name, skillLevel, maxSkillLevel, skillLine, specializationIndex, specializationOffset, skillLineName
+        if prof1Index then
+            name, _, skillLevel, maxSkillLevel,
+            _, _, skillLine,
+            _, specializationIndex,
+            specializationOffset, skillLineName = GetProfessionInfo(prof1Index)
+        end
+        if prof2Index then
+            name, _, skillLevel, maxSkillLevel,
+            _, _, skillLine,
+            _, specializationIndex,
+            specializationOffset, skillLineName = GetProfessionInfo(prof2Index)
         end
     end
 end
@@ -377,6 +405,10 @@ function addon.professions.AH:exportInfo()
     RXPCData.professions.scannedAt = self.session.scannedAt
 end
 
+--[[ 
+Debug section
+]]
+
 --Debug actions, shared by the slash commands below and the debug window (GUI/ProfessionsDebugGUI.lua)
 local debug = {}
 addon.professions.debug = debug
@@ -403,12 +435,15 @@ function debug.ScanOverride()
     addon.professions.AH.session.scannedAt = time()
     print("gathering first profession")
     addon.professions.AH:gatherMaterialsToScan(RXPCData.professions.profession1.name)
+    --debug.ListScanItems()
     if RXPCData.professions.profession2.name then
         print("gathering second profession")
         addon.professions.AH:gatherMaterialsToScan(RXPCData.professions.profession2.name)
+        --debug.ListScanItems()
     end
-    print("scanning")
-    --TODO: edit here
+
+    addon.professions.AH.session.materialIndex = 1
+    addon.professions.AH:Scan()
 end
 
 function debug.ExportScanOnly()
@@ -537,13 +572,10 @@ SlashCmdList['tt'] = function()
     local roughStone = 2835
     local felIronHammer = 23498
     local weakFlux = 2880
-    --foreverScan(weakFlux)
 
-    --for k, v in pairs(addon.professions.AH.session.foundItems) do
-    --    print(tostring(k), " -> ", tostring(v))
-    --end
-    --if true then return end
+    if true then return end
 
+    print("tt:")
     addon.professions.AH.q = addon.professions.AH.q or false
     if not addon.professions.AH.q then
         addon.professions.AH.q = true
@@ -557,10 +589,12 @@ SlashCmdList['tt'] = function()
         addon.professions.AH:Scan()
     else
         for k, v in pairs(addon.professions.AH.session.foundItems) do
-            print(tostring(k), ":")
+            local total = 0
             for kk, vv in pairs(v) do
-                print("->", tostring(kk), ":", tostring(vv))
+                total = total + vv
             end
+            print(tostring(k), ":", total)
         end
+        addon.professions.AH.q = false
     end
 end

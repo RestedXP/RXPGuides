@@ -226,7 +226,7 @@ function addon.professions:SKILL_LINES_CHANGED()
 end
 
 --Updates crafted items list
-function addon.professions:CHAT_MSG_LOOT(_, text)
+function addon.professions:CHAT_MSG_LOOT(_, text) --TODO: Rework this
     --TODO: change only to check prof1 and prof2
     --TODO: get crafted stack size and update accordingly
     local itemName = match(text, "%[(.*)%]")
@@ -285,7 +285,7 @@ function addon.professions:Setup()
     end
 
     for _, event in ipairs(EVENTS_TO_REGISTER) do
-        self:RegisterEvent(event)
+        --self:RegisterEvent(event)
     end
     RXPCData.professions.isInitialScanned = RXPCData.professions.isInitialScanned or false
     self.AH:Setup()

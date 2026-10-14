@@ -131,7 +131,7 @@ end
 
 local function knownRecipes(skills)
     local known = array()
-    for key, recipeIds in pairs(addon.professionSnapshotRecipeIds or {}) do
+    for key, recipeIds in pairs(addon.professions.professionSnapshotRecipeIds or {}) do
         if skills[key] then
             for _, spellId in ipairs(recipeIds) do
                 if addon.IsPlayerSpell(spellId) then
@@ -146,7 +146,7 @@ end
 
 local function bagCounts()
     local counts = {}
-    for _, itemId in ipairs(addon.professionSnapshotReagentIds or {}) do
+    for _, itemId in ipairs(addon.professions.professionSnapshotReagentIds or {}) do
         local count = GetItemCount(itemId)
         if count and count > 0 then
             counts[itemId] = count
