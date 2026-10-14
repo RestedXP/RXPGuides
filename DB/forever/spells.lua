@@ -409,8 +409,8 @@ s["SHAMAN"] = {
     },
     [12] = {
         1535, -- fire nova totem
-        547, -- healing wave r3
-        370 -- Purge
+        547 -- healing wave r3
+        --370 -- Purge
     },
     [14] = {
         8045, -- earth shock r3
@@ -426,7 +426,8 @@ s["SHAMAN"] = {
         913, -- healing wave r4
         6390, -- stoneclaw totem r2
         8143, -- Tremor Totem
-        8027 -- Flametongue Weapon r2
+        8027, -- Flametongue Weapon r2
+        36936 -- Totemic Recall
     },
     [20] = {
         8056, -- frost shock
@@ -438,20 +439,20 @@ s["SHAMAN"] = {
     [22] = {
         131, -- Water Breathing
         2870, -- cure disease
-        8498, -- fire nova totem r2
-        8166 -- Poison Cleansing Totem
+        8498 -- fire nova totem r2
+        --8166 -- Poison Cleansing Totem --wont have water totem until level 33-36
     },
     [24] = {
         8046, -- earth shock r4
         939, -- healing wave r5
         905, -- lightning shield r3
         10399, -- rockbiter e4
-        8160, -- strength of earth totem r2
-        8181 -- Frost resistance totem
+        8160 -- strength of earth totem r2
+        --8181 -- Frost resistance totem
     },
     [26] = {
         943, -- Lightning Bolt r5
-        5675, -- Mana Spring Totem
+        --5675, -- Mana Spring Totem --wont have water totem until level 33-36
         6196, -- far sight
         8030, -- Flametongue Weapon r3
         8190 -- Magma Totem r1
@@ -460,15 +461,15 @@ s["SHAMAN"] = {
         8053, -- flame shock r3
         8008, -- lesser healing wave r2
         6391, -- stoneclaw totem r3
-        546, -- water walking
-        8184 -- Fire resistance totem
+        546 -- water walking
+        --8184 -- Fire resistance totem
     },
     [30] = {
         556, -- astral recall
         8177, -- grounding totem
         20608, -- reincarnation
         6364, -- searing totem r3
-        36936, -- totemic call
+        --36936, -- totemic call
         8232 -- windfury weapon
     },
     [32] = {
@@ -480,14 +481,15 @@ s["SHAMAN"] = {
         6041 -- Lightning Bolt r6
     },
     [34] = {
-        8058, -- frost shock r2
-        16314 -- rockbiter weapon r5
+        8058 -- frost shock r2
+        --16314 -- rockbiter weapon r5 --Windfury is superior
     },
     [36] = {
         8010, -- lesser healing wave r3
         10412, -- earth shock r5
         10495, -- Mana Spring Totem r2
-        16339 -- Flametongue Weapon r4
+        10585 -- Magma Totem r2
+        --16339 -- Flametongue Weapon r4  --Windfury is superior
     },
     [38] = {
         6392, -- stoneclaw totem r4
@@ -502,6 +504,7 @@ s["SHAMAN"] = {
         8134, -- lightning shield r5
         6365, -- searing totem r4
         8235, -- windfury weapon r2
+        6377, -- Healing Stream Totem 3
         930 -- Chain Lightning r2
     },
     [42] = {
@@ -515,7 +518,6 @@ s["SHAMAN"] = {
     [46] = {
         10472, -- frost shock r3
         10496, -- Mana Spring Totem r3
-        10585, -- Magma Totem r2
         10586 -- Magma Totem r3
     },
     [48] = {
@@ -523,12 +525,15 @@ s["SHAMAN"] = {
         10395, -- healing wave r8
         10431, -- lightning shield r6
         10427, -- stoneclaw totem r5
-        2860 -- Chain Lightning r3
+        2860, -- Chain Lightning r3
+        17354 -- Mana Tide Totem r2
     },
     [50] = {
         10437, -- searing totem r5
         10486, -- windfury weapon r3
-        15207 -- Lightning Bolt r9
+        15207, -- Lightning Bolt r9
+        1238299, --Lava Burst r2
+        1239242 --Riptide r2
     },
     [52] = {
         11315, -- fire nova totem r5
@@ -545,11 +550,13 @@ s["SHAMAN"] = {
         10497, -- Mana Spring Totem r4
         10627, -- Grace of Air Totem r2
         15208, -- Lightning Bolt r10
-        10605 -- Chain Lightning r4
+        10605, -- Chain Lightning r4
+        10587 -- Magma Totem r4
     },
     [58] = {
         10473, -- frost shock r4
-        10428 -- stoneclaw totem r6
+        10428, -- stoneclaw totem r6
+        17359 -- Mana Tide Totem r3
     },
     [60] = {
         10414, -- earthshock r7
@@ -559,7 +566,9 @@ s["SHAMAN"] = {
         10438, -- searing totem r6
         25361, -- strength of earth totem r5
         16362, -- windfury weapon r4
-        25359 -- Grace of Air Totem r3
+        25359, -- Grace of Air Totem r3
+        1238300, --Lava Burst r3
+        1239243 --Riptide r3
     }
 }
 
@@ -955,7 +964,8 @@ s["ROGUE"] = {
     [40] = {
         8624, -- eviscerate r6
         1860, -- safe fall
-        1726 -- stealth r3
+        1726, -- stealth r3
+        399956 -- Mutilate r2
     },
     [42] = {
         --1768, -- kick r3
@@ -979,7 +989,8 @@ s["ROGUE"] = {
     },
     [50] = {
         8643, -- kidney shot r2
-        11297 -- sap r3
+        11297, -- sap r3
+        1241582 -- Mutilate r3
     },
     [52] = {
         11274, -- rupture r5
@@ -1003,7 +1014,8 @@ s["ROGUE"] = {
         1787, -- stealth r4
         11275, -- rupture r6
         11343, -- instant poison r6
-        31016 -- eviscerate r9
+        31016, -- eviscerate r9
+        1241584 -- Mutilate r4
     }
 }
 
