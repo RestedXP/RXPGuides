@@ -1386,7 +1386,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = "full",
                         order = 3.0,
                         hidden = function()
-                            return addon.game == "FOREVER" or not next(addon.settings.dungeons:GetDungeons())
+                            return (addon.game == "FOREVER" and not addon.settings.profile.debug) or not next(addon.settings.dungeons:GetDungeons())
                         end
                     },
                     dungeonsSetRecommended = {
@@ -1399,7 +1399,7 @@ function addon.settings:CreateAceOptionsPanel()
                             self.dungeons:SetRecommended()
                         end,
                         hidden = function()
-                            return addon.game == "FOREVER" or not next(addon.settings.dungeons:GetDungeons()) or not addon.dungeonStats
+                            return (addon.game == "FOREVER" and not addon.settings.profile.debug) or not next(addon.settings.dungeons:GetDungeons()) or not addon.dungeonStats
                         end
                     },
                     dungeonsSetAll = {
@@ -1412,7 +1412,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.ReloadGuide()
                         end,
                         hidden = function()
-                            return addon.game == "FOREVER" or not next(addon.settings.dungeons:GetDungeons())
+                            return (addon.game == "FOREVER" and not addon.settings.profile.debug) or not next(addon.settings.dungeons:GetDungeons())
                         end
                     },
                     dungeons = {
@@ -1440,7 +1440,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.ReloadGuide()
                         end,
                         hidden = function()
-                            return addon.game == "FOREVER" or not next(addon.settings.dungeons:GetDungeons())
+                            return (addon.game == "FOREVER" and not addon.settings.profile.debug) or not next(addon.settings.dungeons:GetDungeons())
                         end
                     },
                     professions = {
