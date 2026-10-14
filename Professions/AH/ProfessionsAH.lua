@@ -280,8 +280,8 @@ function addon.professions.AH:ITEM_SEARCH_RESULTS_UPDATED(_, itemKey, _)
     print(GetItemNameByID(itemKey.itemID), totalCount, "item")
 
     self.session.sentQuery = false
+    self.session.materialIndex = self.session.materialIndex + 1
     if self.session.materialIndex <= #self.session.materialsToScan then
-        self.session.materialIndex = self.session.materialIndex + 1
         foreverScan(self.session.materialsToScan[self.session.materialIndex])
     end
 end
@@ -305,8 +305,8 @@ function addon.professions.AH:COMMODITY_SEARCH_RESULTS_UPDATED(_, itemID)
     print(GetItemNameByID(itemID), totalCount, "com")
 
     self.session.sentQuery = false
+    self.session.materialIndex = self.session.materialIndex + 1
     if self.session.materialIndex <= #self.session.materialsToScan then
-        self.session.materialIndex = self.session.materialIndex + 1
         foreverScan(self.session.materialsToScan[self.session.materialIndex])
     end
 end
