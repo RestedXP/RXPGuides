@@ -58,17 +58,17 @@ step << Horde Shaman
     +1
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Juvenile Vuldren::250873|r.
+    >>Kill |cRXP_ENEMY_Juvenile Vuldrens::250873|r.
     .complete 92461,1 --8/8 Juvenile Vuldren slain
     .mob Juvenile Vuldren::250873
 step
-    >>Kill |cRXP_ENEMY_Pesky Cirrusfly::251169|r.
+    >>Kill |cRXP_ENEMY_Pesky Cirrusflies::251169|r.
     *|cRXP_WARN_Prioritize them|r
     .complete 92462,1 --8/8 Pesky Cirrusfly slain
     .mob Pesky Cirrusfly::251169
 step
     #label Juvenile Vuldren
-    >>Kill |cRXP_ENEMY_Juvenile Vuldren::250873|r.
+    >>Kill |cRXP_ENEMY_Juvenile Vuldrens::250873|r.
     .complete 92461,1 --8/8 Juvenile Vuldren slain
     .mob Juvenile Vuldren::250873
 step << Horde Shaman
@@ -224,7 +224,7 @@ step << Alliance Rogue/Alliance Warrior
     .collect 2131,1 >>Buy and equip a |T135274:0|t[Shortsword] << Rogue
     .collect 1194,1 >>Buy and equip a |T135276:0|t[Bastard Sword] << Warrior
     .vendor 251364 >>|cRXP_WARN_Vendor trash|r
-    *Don't sell |T133970:0|t[Stringy Meat] or |T132889:0|t[|cRXP_LOOT_Linen Cloth|r].
+    *Don't sell |T133970:0|t[Stringy Meat] or |T132889:0|t[Linen Cloth].
     .target Destin Thriceforged::251364
 step << Horde
     .goto 2521,42.60,24.39
@@ -243,7 +243,7 @@ step << Horde !Warrior !Rogue/Alliance !Warrior !Rogue !Hunter
     >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Hunter !Shaman
     -- >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from her|r << Hunter
     .vendor 251537 >>|cRXP_WARN_Vendor trash|r
-    *Don't sell |T133970:0|t[Stringy Meat] or |T132889:0|t[|cRXP_LOOT_Linen Cloth|r]. << Alliance
+    *Don't sell |T133970:0|t[Stringy Meat] or |T132889:0|t[Linen Cloth]. << Alliance
     .collect 159,20 << !Hunter !Shaman --Refreshing Spring Water (20)
     -- .collect 2512,1000 << Hunter --Rough Arrow (1000)
     .target Uualia Suncrest::251537
@@ -266,7 +266,7 @@ step << Alliance Hunter/Horde Rogue/Horde Warrior
     .collect 1194,1 >>Buy and equip a |T135276:0|t[Bastard Sword] << Hunter/Horde Warrior
     .collect 2131,1 >>Buy and equip a |T135274:0|t[Shortsword] << Horde Rogue
     .vendor 251364 >>|cRXP_WARN_Vendor trash|r
-    *Don't sell |T133970:0|t[Stringy Meat] or |T132889:0|t[|cRXP_LOOT_Linen Cloth|r].
+    *Don't sell |T133970:0|t[Stringy Meat] or |T132889:0|t[Linen Cloth].
     .target Destin Thriceforged::251364
 step << Alliance
     .goto 2521,43.33,24.92
@@ -290,7 +290,7 @@ step << Horde Shaman
     .target Yala Windwatcher::249363
 step << Horde Shaman
     #completewith next
-    >>Kill |cRXP_ENEMY_Al'Aketh Convert::251160|r and |cRXP_ENEMY_Roiling Winds::251143|r.
+    >>Kill |cRXP_ENEMY_Al'Aketh Converts::251160|r and |cRXP_ENEMY_Roiling Winds::251143|r.
     *|cRXP_WARN_Prioritize |cRXP_ENEMY_Roiling Winds::251143|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
     .mob +Al'Aketh Convert::251160
@@ -320,7 +320,7 @@ step << Horde Shaman
     .goto 2521,45.82,19.09,40,0
     .goto 2521,47.19,23.55,30,0
     .goto 2521,46.6,24.62,30,0
-    >>Kill |cRXP_ENEMY_Al'Aketh Convert::251160|r and |cRXP_ENEMY_Roiling Winds::251143|r.
+    >>Kill |cRXP_ENEMY_Al'Aketh Converts::251160|r and |cRXP_ENEMY_Roiling Winds::251143|r.
     *Loot them for the |T1020384:0|t[Signet of Akir]
     *|cRXP_WARN_Prioritize |cRXP_ENEMY_Roiling Winds::251143|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
@@ -434,7 +434,7 @@ step << Alliance/!Shaman
     .complete 93552,1 --15/15 Windstone Cluster
 step << Alliance/!Shaman
     #completewith UseRacialAbility
-    >>Kill |cRXP_ENEMY_Al'Aketh Convert::251160|r and |cRXP_ENEMY_Roiling Winds::251143|r.
+    >>Kill |cRXP_ENEMY_Al'Aketh Converts::251160|r and |cRXP_ENEMY_Roiling Winds::251143|r.
     *|cRXP_WARN_Prioritize |cRXP_ENEMY_Roiling Winds::251143|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
     .mob +Al'Aketh Convert::251160
@@ -478,7 +478,7 @@ step << Alliance/!Shaman
     *|cRXP_WARN_If the area is abnormally crowded, camp one spawn point or rotate between nearby stones|r.
     .complete 93552,1 --15/15 Windstone Cluster
 step << Alliance/!Shaman
-    >>Kill |cRXP_ENEMY_Al'Aketh Convert::251160|r and |cRXP_ENEMY_Roiling Winds::251143|r.
+    >>Kill |cRXP_ENEMY_Al'Aketh Converts::251160|r and |cRXP_ENEMY_Roiling Winds::251143|r.
     *Loot them for the |T1020384:0|t[Signet of Akir] << Shaman
     *|cRXP_WARN_Prioritize |cRXP_ENEMY_Roiling Winds::251143|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
@@ -726,7 +726,7 @@ step
     .goto 2521,42.76,24.5,10,0
     .goto 2521,42.41,25.15
     .vendor 251537 >>|cRXP_WARN_Vendor trash|r
-    *Don't sell |T133970:0|t[Stringy Meat] or |T132889:0|t[|cRXP_LOOT_Linen Cloth|r]. << Alliance
+    *Don't sell |T133970:0|t[Stringy Meat] or |T132889:0|t[Linen Cloth]. << Alliance
     .collect 2512,800 << Hunter --Rough Arrow (800)
     .collect 159,20 >>Buy |T132794:0|t[Refreshing Spring Water] << Druid/Mage/Priest/Warlock/Paladin
 step
@@ -769,7 +769,7 @@ step
     .mob Scrawny Ursera::250926
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Ursera Scavenger::250937|r.
+    >>Kill |cRXP_ENEMY_Ursera Scavengers::250937|r.
     .complete 92470,1 --8/8 Ursera Scavenger slain
     .mob Ursera Scavenger::250937
 step
@@ -791,7 +791,7 @@ step
     .goto 2521,38.12,27.71,30,0
     .goto 2521,37.7,29.46,30,0
     .goto 2521,40.79,26.64,30,0
-    >>Kill |cRXP_ENEMY_Ursera Scavenger::250937|r.
+    >>Kill |cRXP_ENEMY_Ursera Scavengers::250937|r.
     .complete 92470,1 --8/8 Ursera Scavenger slain
     .macro Sit to Die Faster,134400 >>/sit
     .mob Ursera Scavenger::250937
@@ -851,8 +851,8 @@ step
     .goto 2521,42.76,24.52,10,0
     .goto 2521,42.41,25.15
     .vendor 251537 >>|cRXP_WARN_Vendor trash|r
-    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T132889:0|t[|cRXP_LOOT_Linen Cloth|r]. << Alliance
-    *Don't sell |T132832:0|t[Small Eggs] or |T132889:0|t[|cRXP_LOOT_Linen Cloth|r]. << Horde
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T132889:0|t[Linen Cloth]. << Alliance
+    *Don't sell |T132832:0|t[Small Eggs] or |T132889:0|t[Linen Cloth]. << Horde
     *|cRXP_WARN_We need them for Cooking later|r.
 step
     #requires Aggressive Encroachment2
@@ -887,7 +887,7 @@ step
     .target Hanaa Nightwind::252095
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Al'Aketh Brute::251145|r and |cRXP_ENEMY_Al'Aketh Neophyte::251448|r.
+    >>Kill |cRXP_ENEMY_Al'Aketh Brutes::251145|r and |cRXP_ENEMY_Al'Aketh Neophytes::251448|r.
     .complete 92544,1 --|6/6 Al'Aketh Brute slain
     .mob +Al'Aketh Brute::251145
     .complete 92544,2 --|4/4 Al'Aketh Neophyte slain
@@ -936,7 +936,7 @@ step
     .goto 2521,37.3,32.89,40,0
     .goto 2521,37.16,34.72,40,0
     .goto 2521,38.08,35.01,40,0
-    >>Kill |cRXP_ENEMY_Al'Aketh Brute::251145|r and |cRXP_ENEMY_Al'Aketh Neophyte::251448|r.
+    >>Kill |cRXP_ENEMY_Al'Aketh Brutes::251145|r and |cRXP_ENEMY_Al'Aketh Neophytes::251448|r.
     *|cRXP_WARN_Refresh|r |T236219:0|t[Read Ley Line] |cRXP_WARN_near the Leyline|r << Alliance
     .usespell 1259705
     .complete 92544,1 --|6/6 Al'Aketh Brute slain
@@ -993,8 +993,8 @@ step << !Rogue !Warrior
     >>|cRXP_WARN_Save 2 silver for your class spells!|r << Shaman/Druid
     >>|cRXP_WARN_Save 2 silver for your class spells!|r << Mage
     .vendor 254358 >>|cRXP_WARN_Vendor trash|r.
-    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[|cRXP_LOOT_Linen Cloth|r]. << Alliance
-    *Don't sell |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[|cRXP_LOOT_Linen Cloth|r]. << Horde
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. << Alliance
+    *Don't sell |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. << Horde
     *|cRXP_WARN_We need them for Cooking later|r.
 step << Rogue/Warrior
     #completewith The Next Step
@@ -1003,8 +1003,8 @@ step << Rogue/Warrior
     .goto 2521,44.78,45.05,10,0
     .goto 2521,45.67,45.51
     .vendor 254360 >>|cRXP_WARN_Vendor trash|r.
-    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[|cRXP_LOOT_Linen Cloth|r]. << Alliance
-    *Don't sell |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[|cRXP_LOOT_Linen Cloth|r]. << Horde
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. << Alliance
+    *Don't sell |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. << Horde
     *|cRXP_WARN_We need them for Cooking later|r.
     .target Belandiel Farflight::254360
 step
@@ -1289,8 +1289,8 @@ step
     .goto 2521,44.72,45.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veena Vericloud::254358|r.
     .collect 1179,5 >>|cRXP_BUY_Buy 5|r |T132815:0|t[Ice Cold Milk], |cRXP_BUY_or 10 if you can afford them|r << Druid/Priest/Warlock/Mage
-    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[|cRXP_LOOT_Linen Cloth|r]. << Alliance
-    *Don't sell |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[|cRXP_LOOT_Linen Cloth|r]. << Horde
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. << Alliance
+    *Don't sell |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. << Horde
     *|cRXP_WARN_We need them for Cooking later|r.
 step
     .goto 2521,44.47,44.98
@@ -1451,7 +1451,7 @@ step
     .mob Prideclaw::251245
 step
     #completewith BadwindBennicA
-    >>Kill |cRXP_ENEMY_Galestrider::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Kill |cRXP_ENEMY_Galestriders::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
     *|cRXP_WARN_Prioritize them|r
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
@@ -1511,7 +1511,7 @@ step
     .mob "Badwind" Bennic::255534
 step
     #completewith OutCave
-    >>Kill |cRXP_ENEMY_Galestrider::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Kill |cRXP_ENEMY_Galestriders::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
@@ -1540,7 +1540,7 @@ step
     .mob +Highlands Bandit::251918
 step
     #completewith To Shendalar
-    >>Kill |cRXP_ENEMY_Galestrider::251661|r |cRXP_WARN_along the way|r.
+    >>Kill |cRXP_ENEMY_Galestriders::251661|r |cRXP_WARN_along the way|r.
     *Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
     -- *|cRXP_WARN_While the Tornado speed buff is active, avoid killing them|r.
     .complete 92553,2 --8/8 Strider Meat
@@ -1562,8 +1562,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Zerril Softbreeze::251905|r and buy 5 |T134059:0|t[Mild Spices].
     .vendor 251905 >>Vendor Trash
     .collect 2678,5 -- Mild Spices
-    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[|cRXP_LOOT_Linen Cloth|r]. << Alliance
-    *Don't sell |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[|cRXP_LOOT_Linen Cloth|r]. << Horde
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. << Alliance
+    *Don't sell |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. << Horde
     *|cRXP_WARN_We need them for Cooking later|r.
     .target Zerril Softbreeze::251905
     .skipgossipid 137550
@@ -1704,6 +1704,7 @@ step << Rogue/Warrior/Paladin/Shaman
     .usespell 2018
 step << Rogue/Warrior/Paladin/Shaman
     #completewith Turn in The Adventurer
+    .train 2018,3 -- Blacksmithing Trained
     +Abandon Blacksmithing or continue with it.
 -- step << Mage/Druid/Shaman/Priest/Warlock/Paladin/Rogue/Warrior
 step
@@ -1733,8 +1734,8 @@ step
     *|cRXP_BUY_Buy at most 10|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Mage/Druid/Shaman/Priest/Warlock/Paladin
     *|cRXP_WARN_When equipping bags, make sure your Reagent Bag is in the dedicated Reagent Bag slot|r.
     .collect 2946,1 >>|cRXP_BUY_Buy a|r |T135641:0|t[Balanced Throwing Dagger]. << Rogue/Warrior
-    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[|cRXP_LOOT_Linen Cloth|r]. << Alliance
-    *Don't sell |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[|cRXP_LOOT_Linen Cloth|r]. << Horde
+    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. << Alliance
+    *Don't sell |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. << Horde
     .target Veena Vericloud::254358
 
 --Class Trainer Backup
@@ -1829,7 +1830,7 @@ step << Alliance
     .itemcount 2672,1 --Stringy Wolf Meat
     >>|cRXP_WARN_Remain seated until the quest is complete. If you don't get credit when the timer ends, relog or skip|r.
     *|cRXP_WARN_Use the Macros in the "Active Items Frame" to craft|r |T133685:0|t[Linen Bandages] and |T133974:0|t[Charred Wolf Meat] for later quests.
-    *You can craft and rebuff without losing quest credit.
+    *You can craft and rebuff without losing quest credit. You can also eat buff food here to gain 5% increased experience from kills.
     .complete 96101,2 --Gain the Boosted Rest buff
     .macro First Aid,135966 >>/run local t=C_TradeSkillUI;t.OpenTradeSkill(129);t.CraftRecipe(3275,C_Item.GetItemCount(2589))
     .macro Cooking,133971 >>/run local t=C_TradeSkillUI;if not t.IsTradeSkillReady() or t.GetBaseProfessionInfo().professionID~=185 then t.OpenTradeSkill(185) else local n=t.GetCraftableCount(2538);if n and n>0 then t.CraftRecipe(2538,n) end end
@@ -1838,7 +1839,7 @@ step
     .itemcount 2589,1 -- Linen Cloth
     >>|cRXP_WARN_Remain seated until the quest is complete. If you don't get credit when the timer ends, relog or skip|r.
     *|cRXP_WARN_Press the Macro in the "Active Items Frame" to craft|r |T133685:0|t[Linen Bandages] for a later quest. 
-    *You can craft and rebuff without losing quest credit.
+    *You can craft and rebuff without losing quest credit. You can also eat buff food here to gain 5% increased experience from kills.
     .complete 96101,2 --Gain the Boosted Rest buff
     .macro First Aid,135966 >>/run local t=C_TradeSkillUI;t.OpenTradeSkill(129);t.CraftRecipe(3275,C_Item.GetItemCount(2589))
 step << Alliance
@@ -1846,12 +1847,12 @@ step << Alliance
     .itemcount 2672,1 --Stringy Wolf Meat
     >>|cRXP_WARN_Remain seated until the quest is complete. If you don't get credit when the timer ends, relog or skip|r.
     *|cRXP_WARN_Press the Macro in the "Active Items Frame" to craft|r |T133974:0|t[Charred Wolf Meat] for a later quest|r
-    *You can craft and rebuff without losing quest credit.
+    *You can craft and rebuff without losing quest credit. You can also eat buff food here to gain 5% increased experience from kills.
     .complete 96101,2 --Gain the Boosted Rest buff
     .macro Cooking,133971 >>/run local t=C_TradeSkillUI;if not t.IsTradeSkillReady() or t.GetBaseProfessionInfo().professionID~=185 then t.OpenTradeSkill(185) else local n=t.GetCraftableCount(2538);if n and n>0 then t.CraftRecipe(2538,n) end end
 step
     >>|cRXP_WARN_Remain seated until the quest is complete. If you don't get credit when the timer ends, relog or skip|r.
-    *You can craft and rebuff without losing quest credit.
+    *You can craft and rebuff without losing quest credit. You can also eat buff food here to gain 5% increased experience from kills.
     .complete 96101,2 --Gain the Boosted Rest buff
 step
     .goto 2521,41.67,44.79
@@ -1990,13 +1991,13 @@ step
     .mob Prideclaw::251245
 step
     #completewith HippogryphHarassmentA
-    >>Kill |cRXP_ENEMY_Galestrider::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Kill |cRXP_ENEMY_Galestriders::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
 step << Alliance
     #completewith next
-    >>Kill |cRXP_ENEMY_Windshaper Novice Seer::257532|r.
+    >>Kill |cRXP_ENEMY_Windshaper Novice Seers::257532|r.
     .usespell 1259705
     .complete 94413,1 --6/6 Windshaper Novice Seer defeated
     .mob Windshaper Novice Seer::257532
@@ -2012,7 +2013,7 @@ step << Alliance
     .goto 2521,37.96,46.86,40,0
     .goto 2521,38.75,48.72,40,0
     .goto 2521,38.99,47.24,40,0
-    >>Kill |cRXP_ENEMY_Windshaper Novice Seer::257532|r.
+    >>Kill |cRXP_ENEMY_Windshaper Novice Seers::257532|r.
     *|cRXP_WARN_Refresh|r |T236219:0|t[Read Ley Line] |cRXP_WARN_near the Leyline|r
     .usespell 1259705
     .complete 94413,1 --6/6 Windshaper Novice Seer defeated
@@ -2079,7 +2080,7 @@ step << Alliance
     +1
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Hippogryph Youth::251291|r, |cRXP_ENEMY_Hippogryph Protector::251284|r and the |cRXP_ENEMY_Hippogryph Matriarch::251261|r.
+    >>Kill |cRXP_ENEMY_Hippogryph Youths::251291|r, |cRXP_ENEMY_Hippogryph Protectors::251284|r and the |cRXP_ENEMY_Hippogryph Matriarch::251261|r.
     *|cRXP_WARN_Loot them for valuable vendor trash to help pay for weapon upgrades and class training|r.
     *|cRXP_WARN_Prioritize the |cRXP_ENEMY_Matriarch::251261|r|r
     .complete 92516,1 --|8/8 Hippogryph Youth slain
@@ -2093,7 +2094,7 @@ step
     .complete 93951,1 --|8/8 Hippogryph Down
 step
     #label HippogryphHarassmentA
-    >>Kill |cRXP_ENEMY_Hippogryph Youth::251291|r, |cRXP_ENEMY_Hippogryph Protector::251284|r and the |cRXP_ENEMY_Hippogryph Matriarch::251261|r.
+    >>Kill |cRXP_ENEMY_Hippogryph Youths::251291|r, |cRXP_ENEMY_Hippogryph Protectors::251284|r and the |cRXP_ENEMY_Hippogryph Matriarch::251261|r.
     *|cRXP_WARN_Loot them for valuable vendor trash to help pay for weapon upgrades and class training|r.
     *|cRXP_WARN_Prioritize the |cRXP_ENEMY_Matriarch::251261|r|r
     .complete 92516,1 --|8/8 Hippogryph Youth slain
@@ -2104,7 +2105,7 @@ step
     .mob +Hippogryph Matriarch::251261
 step
     #completewith VulgarasHeadA
-    >>Kill |cRXP_ENEMY_Galestrider::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Kill |cRXP_ENEMY_Galestriders::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
@@ -2124,7 +2125,7 @@ step
     .mob Vulgara::254589
 step
     #completewith A Little Beauty
-    >>Kill |cRXP_ENEMY_Galestrider::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Kill |cRXP_ENEMY_Galestriders::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
@@ -2458,7 +2459,7 @@ step
     .target Fenn Fairweather::251992
 step
     #completewith LivingLightningA
-    >>Kill |cRXP_ENEMY_Galestrider::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Kill |cRXP_ENEMY_Galestriders::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
@@ -2660,14 +2661,14 @@ step
     .usespell 1259416
 step  << Alliance
     #completewith NearCommander
-    >>Kill |cRXP_ENEMY_Al'Aketh Stormcaller::252068|r. Loot them for the |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Supplies|r].
+    >>Kill |cRXP_ENEMY_Al'Aketh Stormcallers::252068|r. Loot them for the |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Supplies|r].
     >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Supply Caches|r (small bags).
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
     .mob +Al'Aketh Stormcaller::252068
 step << Alliance
     #completewith NearCommander
-    >>Kill |cRXP_ENEMY_Galestrider::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Kill |cRXP_ENEMY_Galestriders::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
@@ -2688,7 +2689,7 @@ step << Alliance
     .usespell 1259705
 step
     #completewith CommanderCyclasHeadA
-    >>Kill |cRXP_ENEMY_Galestrider::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Kill |cRXP_ENEMY_Galestriders::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
@@ -2704,7 +2705,7 @@ step
     .mob Living Lightning::251662
 step
     #completewith CommanderCyclasHeadA
-    >>Kill |cRXP_ENEMY_Al'Aketh Stormcaller::252068|r. Loot them for the |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Supplies|r].
+    >>Kill |cRXP_ENEMY_Al'Aketh Stormcallers::252068|r. Loot them for the |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Supplies|r].
     >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Supply Caches|r.
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
@@ -2737,7 +2738,7 @@ step
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning::251662
 step
-    >>Kill |cRXP_ENEMY_Al'Aketh Stormcaller::252068|r. Loot them for the |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Supplies|r].
+    >>Kill |cRXP_ENEMY_Al'Aketh Stormcallers::252068|r. Loot them for the |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Supplies|r].
     >>|TInterface/cursor/crosshair/interact.blp:16|tClick on the |cRXP_PICK_Supply Caches|r.
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
@@ -2773,7 +2774,7 @@ step
     +1
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Galestrider::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Kill |cRXP_ENEMY_Galestriders::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
@@ -2783,7 +2784,7 @@ step
     .mob Prideclaw::251245
 step
     #label RestockingTheLardersA
-    >>Kill |cRXP_ENEMY_Galestrider::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Kill |cRXP_ENEMY_Galestriders::251661|r. Loot them for |T133972:0|t[|cRXP_LOOT_Strider Meat|r] and |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
@@ -2937,6 +2938,7 @@ step
 step
     .train 3273,3 -- First Aid Trained
     .itemcount 2589,1 -- Linen Cloth
+    .goto 2521,43.08,46.31
     >>Press the Macro in the "Active Items Frame" to craft |T133685:0|t[Linen Bandages].
     *|cRXP_WARN_Skip this if you can't reach skill 20|r
     .complete 97965,1 >>Complete Camping 101: First Aid
@@ -3209,7 +3211,7 @@ step << Alliance
 step << Alliance
     #completewith Unwelcome Visitors
     .aura 1258510
-    >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
+    >>Kill |cRXP_ENEMY_Skyhoppers::251314|r.
     .complete 93949,1 --8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
 step << Alliance
@@ -3289,8 +3291,8 @@ step << Alliance
     .goto 2521,52.064,69.396
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fillion Flamebreeze::253284|r.
     .target Fillion Flamebreeze::253284
-    .turnin 92849 >>Turn in The Missing Scholar
-    .accept 92850 >>Accept The Missing Scholar
+    .turnin 92849 >>Turn in The Missing Scholar 1
+    .accept 92850 >>Accept The Missing Scholar 2
 -- step << Alliance
 --     #completewith next
 --     #label Shriekling Matriarch
@@ -3339,7 +3341,7 @@ step << Alliance
 
 -- step << Horde
 --     #completewith LeavingValanaarA
---     >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
+--     >>Kill |cRXP_ENEMY_Skyhoppers::251314|r.
 --     .complete 93949,1 --8/8 Enchanted Skyhopper Exterminated
 --     .mob Skyhopper::251314
 step << Horde
@@ -3478,7 +3480,7 @@ step
     #loop
     .goto 2521,46.164,78.043,30,0
     .goto 2521,48.920,84.441,30,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_LOOT_Ripe Stormapples|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Ripe Stormapples|r.
     >>Kill |cRXP_ENEMY_Hungry Bandits::252802|r |cRXP_WARN_(stealthed)|r.
     *Hunter tips: Spam tab to target them early, use Hunter's Mark on them so you can run away and hit them from farther away. << Hunter
     .complete 92682,1 --10/10 Ripe Stormapple
@@ -3491,7 +3493,7 @@ step << Horde
     .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
 step
     #completewith WhatIsMyPurposeA
-    >>Kill |cRXP_ENEMY_Ornery Galestrider::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
+    >>Kill |cRXP_ENEMY_Ornery Galestriders::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step
@@ -3527,7 +3529,7 @@ step << Horde Shaman
     +1
 step << Horde Shaman
     #completewith next
-    >>Kill |cRXP_ENEMY_Ornery Galestrider::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
+    >>Kill |cRXP_ENEMY_Ornery Galestriders::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step << Horde Shaman
@@ -3542,7 +3544,7 @@ step << Horde Shaman
 step << Horde Shaman
     #requires ShamanFluterflyDustA
     #completewith ShamanLevel10
-    >>Kill |cRXP_ENEMY_Ornery Galestrider::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
+    >>Kill |cRXP_ENEMY_Ornery Galestriders::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step << Horde Shaman
@@ -3576,7 +3578,7 @@ step << Horde Shaman
     .use 253666 -- Flutterfly Swatter
 step << Horde Shaman
     #completewith CallOfFireA
-    >>Kill |cRXP_ENEMY_Ornery Galestrider::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
+    >>Kill |cRXP_ENEMY_Ornery Galestriders::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step << Horde Shaman
@@ -3619,7 +3621,7 @@ step << Horde Shaman
     .use 253666 -- Flutterfly Swatter
 step << Horde Shaman
     #completewith CallOfFireB
-    >>Kill |cRXP_ENEMY_Ornery Galestrider::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
+    >>Kill |cRXP_ENEMY_Ornery Galestriders::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step << Horde Shaman
@@ -3646,7 +3648,7 @@ step
     +1
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Ornery Galestrider::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
+    >>Kill |cRXP_ENEMY_Ornery Galestriders::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step
@@ -3660,7 +3662,7 @@ step
     .use 253666 -- Flutterfly Swatter
 step
     #label GalestriderTenderloinA
-    >>Kill |cRXP_ENEMY_Ornery Galestrider::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
+    >>Kill |cRXP_ENEMY_Ornery Galestriders::251707|r. Loot them for |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r].
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step
@@ -3833,7 +3835,7 @@ step << Horde Shaman
     .turnin 97257 >>Turn in Call of Fire
 -- step << Horde Shaman
 --     #completewith next
---     >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
+--     >>Kill |cRXP_ENEMY_Skyhoppers::251314|r.
 --     *|cRXP_WARN_This quest is optional. You can skip it if there are too many other players doing it at the same time|r.
 --     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
 --     .mob Skyhopper::251314
@@ -3883,7 +3885,7 @@ step
 step << Alliance
     #completewith Turn in The Missing Scholar
     .aura 1258510
-    >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
+    >>Kill |cRXP_ENEMY_Skyhoppers::251314|r.
     *|cRXP_WARN_If you find a Tornado, touch it to gain its speed buff|r.
     *|cRXP_WARN_While the Tornado speed buff is active, avoid killing them|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
@@ -4013,7 +4015,7 @@ step << Alliance
     *|cRXP_WARN_Dual Wield the|r |T134520:0|t[Trusty Wrench] |cRXP_WARN_and|r |T7791298:0|t[Flutterfly Swatter] << Rogue
     .goto 2521,66.21,79.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fillion Flamebreeze::253284|r.
-    .turnin 92850 >>Turn in The Missing Scholar
+    .turnin 92850 >>Turn in The Missing Scholar 2
     .accept 99260 >>Accept Fillion's Mission
     .target Fillion Flamebreeze::253284
     .use 263313 << Rogue -- Trusty Wrench
@@ -4022,7 +4024,7 @@ step << Alliance
     #completewith Protect the Index
     .subzoneskip 16638,1 -- Valanaar
     .aura 1258510
-    >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
+    >>Kill |cRXP_ENEMY_Skyhoppers::251314|r.
     *|cRXP_WARN_If you find a Tornado, touch it to gain its speed buff|r.
     *|cRXP_WARN_While the Tornado speed buff is active, avoid killing them|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
@@ -4235,7 +4237,7 @@ step << Alliance Hunter
 
 step << Alliance Hunter/Alliance Mage
     #completewith SkyhopperMultiClass
-    >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
+    >>Kill |cRXP_ENEMY_Skyhoppers::251314|r.
     *|cRXP_WARN_If you find a Tornado, touch it to gain its speed buff|r.
     *|cRXP_WARN_While the Tornado speed buff is active, avoid killing them|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
@@ -4299,7 +4301,7 @@ step << Alliance Hunter
     .mob Vuldren Alpha::250874
 step << Alliance Hunter
     #completewith next
-    >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
+    >>Kill |cRXP_ENEMY_Skyhoppers::251314|r.
     *|cRXP_WARN_If you find a Tornado, touch it to gain its speed buff|r.
     *|cRXP_WARN_While the Tornado speed buff is active, avoid killing them|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
@@ -4350,7 +4352,7 @@ step << Mage
     .goto 2521,64.18,78.18,30,0
     .goto 2521,63.19,79.17,30,0
     .goto 2521,64.36,80.69,30,0
-    >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
+    >>Kill |cRXP_ENEMY_Skyhoppers::251314|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
 step << Alliance !Hunter
@@ -4374,7 +4376,7 @@ step << Alliance !Mage/Alliance !Hunter
     .goto 2521,63.8,78.01,30,0
     .goto 2521,63.16,78.97,30,0
     .goto 2521,65.37,78.53,40,0
-    >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
+    >>Kill |cRXP_ENEMY_Skyhoppers::251314|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
 
@@ -4392,7 +4394,7 @@ step << Alliance !Mage/Alliance !Hunter
 --     .goto 2521,59.8,75.68,30,0
 --     .goto 2521,61.4,74.76,40,0
 --     .goto 2521,62.61,76.14,40,0
---     >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
+--     >>Kill |cRXP_ENEMY_Skyhoppers::251314|r.
 --     *|cRXP_WARN_This quest is optional. You can skip it if there are too many other players doing it at the same time|r.
 --     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
 --     .mob Skyhopper::251314
@@ -4608,7 +4610,7 @@ step << Alliance !Druid
     
 step << Alliance
     #completewith next
-    >>Kill |cRXP_ENEMY_Al'Aketh Brawler::270201|r.
+    >>Kill |cRXP_ENEMY_Al'Aketh Brawlers::270201|r.
     *Loot them for |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
     *You will make progress here but likely finish the quest at another location later.
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
@@ -4668,7 +4670,7 @@ step << Alliance !Druid
     .goto 2521,64.46,66.11,40,0
     .goto 2521,64.71,67.65,40,0
     .goto 2521,66.59,67.5,40,0
-    >>Kill |cRXP_ENEMY_Al'Aketh Brawler::270201|r and |cRXP_ENEMY_Al'Aketh Healer::254596|r.
+    >>Kill |cRXP_ENEMY_Al'Aketh Brawlers::270201|r and |cRXP_ENEMY_Al'Aketh Healers::254596|r.
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
@@ -4748,7 +4750,7 @@ step << Alliance Druid
     .goto 2521,64.46,66.11,40,0
     .goto 2521,64.71,67.65,40,0
     .goto 2521,66.59,67.5,40,0
-    >>Kill |cRXP_ENEMY_Al'Aketh Brawler::270201|r and |cRXP_ENEMY_Al'Aketh Healer::254596|r.
+    >>Kill |cRXP_ENEMY_Al'Aketh Brawlers::270201|r and |cRXP_ENEMY_Al'Aketh Healers::254596|r.
     .complete 92642,1 --4/4 Al'Aketh Healer slain
     .mob +Al'Aketh Healer::254596
     .complete 92642,2 --8/8 Al'Aketh Brawler slain
@@ -4873,7 +4875,7 @@ step << Alliance
     .target Fendaal Windstone::273017
 step << Alliance
     #completewith Fendaal Windstone
-    >>Kill |cRXP_ENEMY_Al'Aketh Assassin::254626|r.
+    >>Kill |cRXP_ENEMY_Al'Aketh Assassins::254626|r.
     .complete 98512,1 --10/10 Al'Aketh Assassin slain
     .mob Al'Aketh Assassin::254626
 step << Alliance
@@ -4898,7 +4900,7 @@ step << Alliance
     .goto 2521,54.58,60.52,35,0
     .goto 2521,55.93,60.3,35,0
     .goto 2521,56.04,59.08,35,0
-    >>Kill |cRXP_ENEMY_Al'Aketh Assassin::254626|r.
+    >>Kill |cRXP_ENEMY_Al'Aketh Assassins::254626|r.
     .complete 98512,1 --10/10 Al'Aketh Assassin slain
     .mob Al'Aketh Assassin::254626
 step << Alliance
@@ -5110,8 +5112,8 @@ step << Alliance
     .subzoneskip 16833,1 -- Ruins of Ban'aethal
     .cooldown spell,1259705,>0,1 -- Read Ley Line
     .goto 2521,56.61,29.26,20,0
-    .goto 2521,58.06,28.2,30,0
-    .goto 2521,57.91,26.83,30,0
+    -- .goto 2521,58.06,28.2,30,0
+    -- .goto 2521,57.91,26.83,30,0
     .goto 2521,58.14,30.47,10,0
     .goto 2521,57.81,31.07,20,0
     .goto 2521,57.55,31.01,20,0
@@ -5209,7 +5211,7 @@ step
     .goto 2521,64.14,39.18,40,0
     .goto 2521,65.7,36.82,40,0
     .goto 2521,65.63,35.57,40,0
-    >>Kill |cRXP_ENEMY_Al'Aketh Footsoldiers|r and |cRXP_ENEMY_Al'Aketh Stormchaser|r.
+    >>Kill |cRXP_ENEMY_Al'Aketh Footsoldiers|r and |cRXP_ENEMY_Al'Aketh Stormchasers|r.
     *Loot them for |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r], |T133856:0|t[|cRXP_LOOT_Al'Aketh Cultist's Ears|r] and |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r]. << Alliance
     *Loot them for |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r]. << Horde
     .complete 94487,1 --10/10 Bloody Heirloom
@@ -5247,7 +5249,7 @@ step
     #completewith ForestHollowsB << Horde
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
     *Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers]. << Alliance
-    *Loot them for the |T132927:0|t[Pristine Shriekling Feathers]. << Horde
+    *Loot them for the |T132927:0|t[Pristine Shriekling Feathers].
     .complete 92741,1 << Alliance --8/8 Shriekling Talons
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob +Shadowgale Shriekling::256092
@@ -5313,7 +5315,7 @@ step
     --@THIDDI: Not sure if worth it (Pristine Shriekling Feathers).
     #completewith next
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers]. << Alliance
-    >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Loot them for the |T132927:0|t[Pristine Shriekling Feathers]. << Horde
+    >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Loot them for the |T132927:0|t[Pristine Shriekling Feathers].
     .complete 92741,1 << Alliance --8/8 Shriekling Talons
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob +Shadowgale Shriekling::256092
@@ -5324,7 +5326,7 @@ step
     --@THIDDI: Not sure if worth it (Pristine Shriekling Feathers).
     #label Pristine Shriekling Feathers
     >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Loot them for |T1508517:0|t[|cRXP_LOOT_Shriekling Talons|r] and |T132927:0|t[Pristine Shriekling Feathers]. << Alliance
-    >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Loot them for the |T132927:0|t[Pristine Shriekling Feathers]. << Horde
+    >>Kill |cRXP_ENEMY_Shadowgale Shrieklings::256092|r. Loot them for the |T132927:0|t[Pristine Shriekling Feathers].
     .complete 92741,1 << Alliance --8/8 Shriekling Talons
     .complete 94486,1 --20/20 Pristine Shriekling Feathers
     .mob +Shadowgale Shriekling::256092
@@ -5376,7 +5378,6 @@ step
     .goto 2521,65.79,33,15,0
     .goto 2521,65.93,33.55,15,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Druids|r.
-    *|cRXP_WARN_Do not move during the interaction or it may fail to grant credit|r.
     .complete 94489,1,4 --7/7 Injured Druids healed
     .target Mithraless Sterngale::258288
     .target Baeo Sharpstrike::258289
@@ -5502,6 +5503,12 @@ step << Alliance Warrior
     .train 72 >>Train |T132357:0|t[Shield Bash]
     .skipgossipid 136813
     .target Seena Skybreaker::252377
+step << Alliance Hunter/Alliance Rogue/Alliance Warrior
+    .goto 2521,60.64,72.94,8,0
+    .goto 2521,60.64,72.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyalah Brightfire::257006|r inside the house.
+    .turnin 93317 >>Turn in Crab Season
+    .target Nyalah Brightfire::257006
 step << Alliance
     .goto 2521,63.55,73.45,25,0
     .goto 2521,63.99,75.09
@@ -5692,7 +5699,7 @@ step << Alliance
     .complete 93065,1 --|1/1 Find Valennia on the Road
     .turnin 93065 >>Turn in Prepare for Battle
     .target Valennia Stormfist::253844
-step << Alliance
+step << Alliance !Hunter !Rogue !Warrior
     .goto 2521,60.95,73.17,15,0
     .goto 2521,60.64,72.94,8,0
     .goto 2521,60.64,72.66
@@ -5714,7 +5721,7 @@ step << Alliance
 --     #label Al'Aketh Guardian
 --     .goto 2521,59.58,66.41,30,0
 --     .goto 2521,58.98,60.8,30,0
---     >>Kill |cRXP_ENEMY_Al'Aketh Guardian|r.
+--     >>Kill |cRXP_ENEMY_Al'Aketh Guardians|r.
 --     .complete 92947,1 --8/8 Al'Aketh Guardian slain
 --     .complete 92947,2 --8/8 Al'Aketh Spiritcaller slain
 --     .complete 92947,3 --8/8 Al'Aketh Blademaster slain
