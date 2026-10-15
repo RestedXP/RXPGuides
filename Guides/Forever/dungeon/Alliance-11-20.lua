@@ -1858,7 +1858,6 @@ step
     .goto 1433/0,-2268.32,-9279.12
     .accept 125 >> Accept The Lost Tools
     .target Foreman Oslow
-    .zoneskip 1433,1
 step
     #label RRDB
     .goto 1433/0,-2164.56,-9213.10,8,0
@@ -1872,7 +1871,6 @@ step
 	.target Shawn
     .goto 1433/0,-2207.10,-9351.52
     .accept 3741 >> Accept Hilary's Necklace
-    .zoneskip 1433,1
 step
     >>|cRXP_WARN_Jump into the Lake|r
     >>Open the |cRXP_PICK_Glinting Mud|r. Loot it for |cRXP_LOOT_Hilary's Necklace|r
@@ -1887,24 +1885,20 @@ step
     .goto 1433/0,-1986.76,-9324.30,70,0
     .goto 1433/0,-2397.70,-9363.97,70,0
     .complete 3741,1 --Hilary's Necklace (1)
-    .zoneskip 1433,1
 step
     >>Open the |cRXP_PICK_Sunken Chest|r. Loot it for |cRXP_LOOT_Oslow's Toolbox|r
     .goto 1433/0,-2472.16,-9366.72
     .complete 125,1 --Oslow's Toolbox (1)
-    .zoneskip 1433,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
     .goto 1433/0,-2268.32,-9279.12
     .turnin 125 >> Turn in The Lost Tools
     .target Foreman Oslow
-    .zoneskip 1433,1
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hilary|r
 	.target Hilary
     .goto 1433/0,-2205.58,-9351.52
     .turnin 3741 >> Turn in Hilary's Necklace
-    .zoneskip 1433,1
 step
     #completewith next
     .goto 1433/0,-2234.900,-9435.300
@@ -2199,21 +2193,155 @@ step << Shaman
     .target Hervdana Saegrund::258203
     .turnin 94497 >>Turn in Call of Water
     .accept 94499 >>Accept Call of Water
-step
+step << Shaman
+    .isOnQuest 94499
     .hs >> Hearth to Stormwind
 step << Shaman
-    #completewith next
+    .isOnQuest 94499
     .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .fly Redridge >> Fly to Redridge Mountains
     .target Dungar Longdrink
     .zoneskip Redridge Mountains
+
+step
+   .maxlevel 19,Level20Check
+
+step
+    #optional << Shaman
+    .goto 1436/0,1037.42,-10628.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .fly Redridge >> Fly to Redridge Mountains
+    .target Thor
+step
+    .goto 1433/0,-1906.400,-9606.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
+    .accept 244 >> Accept Encroaching Gnolls
+    .target Guard Parker
+step
+    .goto 1433/0,-2237.93,-9443.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
+    .turnin 244 >> Turn in Encroaching Gnolls
+    .accept 246 >> Accept Assessing the Threat
+    .accept 98407 >>Accept Show of Force
+    .target Deputy Feldon
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
+    .goto 1433/0,-2298.06,-9284.04
+    .accept 20 >> Accept Blackrock Menace
+    .accept 98387 >>Accept Blackrock Blockade
+    .target Marshal Marris
+step
+    .group
+    .goto 1433/0,-2208.600,-9243.500
+    >>Click the |cRXP_PICK_Wanted Poster|r
+    .accept 95999 >>Accept WANTED: Incinerator Gar'im
+step
+    #loop
+    .goto 1433/0,-1913.800,-9490.601,50,0
+    .goto 1433/0,-2211.01,-9773.870,45,0
+    .goto 1433/0,-2276.79,-9759.11,45,0
+    .goto 1433/0,-2508.20,-9620.68,45,0
+    .goto 1433/0,-2246.61,-9764.90,45,0
+	>>Kill |cRXP_ENEMY_Redridge Mongrels|r and |cRXP_ENEMY_Redridge Poachers|r
+    >>Kill |cRXP_ENEMY_Redridge Thrashers|r. Loot them for their |cRXP_LOOT_Spiked Collars|r
+    .complete 246,1 --Redridge Mongrel (10)
+    .mob +Redridge Mongrel
+    .complete 246,2 --Redridge Poacher (6)
+	.mob +Redridge Poacher
+    .complete 98407,1 --Spiked Collar (5)
+	.mob +Redridge Thrasher
+step
+    .group 4
+    .isOnQuest 95999
+    #sticky
+    #label IncineratorGarim
+    .waypoint 1433/0,-3261.400,-9824.700
+    >>Kill |cRXP_ENEMY_Incinerator Gar'im|r inside the cave. Loot him for the |cRXP_LOOT_Broken Staff of Incinerator Gar'im|r
+    >>|cRXP_WARN_Skip this step if you are unable to find a group for him|r
+    .complete 95999,1 -- Broken Staff of Incinerator Gar'im (1)
+    .mob Incinerator Gar'im
+step
+    #completewith next
+    >>Loot the |cRXP_PICK_Grain Sacks|r and |cRXP_PICK_Meat Haunches|r on the ground for |cRXP_LOOT_Stolen Supplies|r
+    >>Loot the |cRXP_PICK_Weapon Racks|r and |cRXP_PICK_Stolen Weapons|r the ground
+    .complete 98387,1 -- Stolen Supplies (10)
+    .complete 98387,2 -- Stolen Weapon (8)
+step
+    #label orcs
+    #loop
+    >>Kill |cRXP_ENEMY_Blackrock Grunts|r and |cRXP_ENEMY_Blackrock Outrunners|r. Loot them for their |cRXP_LOOT_Axes|r
+	>>|cRXP_WARN_Be aware the |cRXP_ENEMY_Blackrock Outrunners|r will cast |T132149:0|t[Net] on you|r
+    .goto 1433/0,-3177.25,-9718.85,60,0
+    .goto 1433/0,-3224.57,-9782.42,60,0
+    .goto 1433/0,-3259.74,-9566.82,60,0
+    .goto 1433/0,-3092.80,-9694.82,60,0
+    .goto 1433/0,-3177.25,-9718.85,60,0
+    .complete 20,1 --Battleworn Axe (10)
+    .mob Blackrock Grunt
+	.mob Blackrock Outrunner
+step
+    #loop
+    .goto 1433/0,-3177.25,-9718.85,60,0
+    .goto 1433/0,-3224.57,-9782.42,60,0
+    .goto 1433/0,-3259.74,-9566.82,60,0
+    .goto 1433/0,-3092.80,-9694.82,60,0
+    .goto 1433/0,-3177.25,-9718.85,60,0
+    >>Loot the |cRXP_PICK_Grain Sacks|r and |cRXP_PICK_Meat Haunches|r on the ground for |cRXP_LOOT_Stolen Supplies|r
+    >>Loot the |cRXP_PICK_Weapon Racks|r and |cRXP_PICK_Stolen Weapons|r the ground
+    .complete 98387,1 -- Stolen Supplies (10)
+    .complete 98387,2 -- Stolen Weapon (8)
+step
+    #requires IncineratorGarim
+step
+    #optional
+    .isQuestComplete 20
+    .isQuestComplete 98387
+    .isQuestComplete 95999
+    .isQusetComplete 2040
+    .xp 20 >> Grind to 13650/21,300xp
+step
+    .isQuestComplete 20
+    .isQuestComplete 98387
+    .isQusetComplete 2040
+    .xp 20 >> Grind to 16200/21,300xp
+step << Shaman
+    #optional
+    .isOnQuest 94499
+    .goto 1433/0,-3121.100,-9485.000
+    .use 265747 >> |cRXP_WARN_Use the|r |T132829:0|t[Unfilled Red Waterskin] |cRXP_WARN_at Stonewatch Falls|r
+    .complete 94499,1 --|1/1 Full Red Waterskin
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
+	.target Marshal Marris
+    .goto 1433/0,-2298.06,-9284.04
+    .turnin 20 >> Turn in Blackrock Menace
+    .turnin 98387 >>Turn in Blackrock Blockade
+step
+    .isQuestComplete 95999
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Solomon|r
+	.target Magistrate Solomon
+    .goto 1433/0,-2207.10,-9231.34,15,0
+    .goto 1433/0,-2221.65,-9218.60
+    .turnin 95999 >>Turn in WANTED: Incinerator Gar'im
+step
+    #optional
+    .xp 20 >> Grind to 20
+
+step
+    #label Level20Check
+
 step << Shaman
     .isOnQuest 94499
     .goto 1433/0,-3121.100,-9485.000
     .use 265747 >> |cRXP_WARN_Use the|r |T132829:0|t[Unfilled Red Waterskin] |cRXP_WARN_at Stonewatch Falls|r
     .complete 94499,1 --|1/1 Full Red Waterskin
-step << Shaman
+step
+    #optional << Shaman
+    .hs >> Hearth to Stormwind
+    .cooldown item,6948,>2,1  
+step
+    #optional
     #completewith DarkshoreBoat
     .goto 1433/0,-2234.900,-9435.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
@@ -2224,10 +2352,12 @@ step << Shaman
 step << Rogue
     .goto 1453/0,377.47,-8752.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
+    >>|cRXP_WARN_Turn in the Deadmines quests if you are not level 20 yet|r
     .trainer >> Train your class spells
     .target Osborne the Night Man
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r
+    >>|cRXP_WARN_Turn in the Deadmines quests if you are not level 20 yet|r
     .goto 1453/0,358.25,-8728.28,15,0
     .goto 1453/0,302.6,-8685.53,15,0
 	.goto 1453/0,323.3,-8689.29
@@ -2262,11 +2392,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
     .turnin 2040 >> Turn in Underground Assault
     .target Shoni the Shilent
-step << Druid
-    .goto 1453/0,1095.500,-8741.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theridran|r
-    .trainer >>Train your class spells
-	.target Theridran
 step << Warlock
     #optional
     #completewith next
@@ -2306,16 +2431,19 @@ step << Priest
     .goto 1453/0,862.89,-8519.61
     .trainer >> Train your class spells
     .target Brother Joshua
-step
+step << !Druid
     #optional
     .goto 1453/0,1330.100,-8645.400
     >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat to Darkshore if needed|r
     .zone Darkshore >> Take the boat to Darkshore
     .skill firstaid,<1,1 -- shows if firstaid is >1
-step
+step << !Druid
     #label DarkshoreBoat
     .goto 1453/0,1330.100,-8645.400
     .zone Darkshore >> Take the boat to Darkshore
+step
+    #optional
+    .abandon 95999 >>Abandon WANTED: Incinerator Gar'im
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2329,6 +2457,125 @@ RXPGuides.RegisterGuide([[
 #name 20-21 Darkshore/Ashenvale
 #next 21-23 Stonetalon/Ashenvale
 
---add .dungeon WC and set HS astranaar for it
+step << Druid
+    #completewith catspirit1
+	.cast 18960 >> Cast Teleport: Moonglade
+step << Druid
+    #completewith next
+    .goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
+    .fly Teldrassil >> Fly to Darnassus
+    .skipgossip
+    .timer 153,Darnassus
+    .target Silva Fil'naveth
+    .zoneskip Darnassus
+    .zoneskip Teldrassil
+step << NightElf !Druid
+    #hidewindow
+    #optional
+    #completewith next
+    .goto 1438/1,965.80,8780.95
+    .zone Darnassus >> Take the purple portal into Darnassus
+step << Druid
+    #label catspirit1
+    .goto 1457/1,2564.600,10179.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker::4217|r
+    .target Mathrengyl Bearwalker::4217
+    .accept 98393 >>Accept The Great Cat Spirit
+
+step << Druid
+    .goto 1450/1,-2678.900,8020.000
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze::11802|r
+    .target Dendrite Starblaze::11802
+    .turnin 98393 >>Turn in The Great Cat Spirit
+    .accept 98341 >>Accept The Great Windborne Cat Spirit << Skyborne
+    .accept 98394 >>Accept The Great Cat Spirit << !Skyborne
+step << Druid !Skyborne
+    .goto 1450/1,-2640.000,7338.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Great Cat Spirit|r
+    .turnin 98394 >>Turn in The Great Cat Spirit
+    .accept 98396 >>Accept The Great Cat Spirit
+    .target Great Cat Spirit
+step << Druid Skyborne
+    .goto 1450/1,-2352.700,7375.600,10,0
+    .goto 1450/1,-2394.300,7361.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
+    .target Avatar of Saeyleenan::272054
+    .turnin 98341 >>Turn in The Great Windborne Cat Spirit
+    .accept 98404 >>Accept The Great Windborne Cat Spirit
+step << Druid
+    #completewith next
+    .goto 1450/1,-3046.700,7534.400
+    --aura 1309054?
+    .subzone 2363 >> Head to the Stormrage Barrow Dens
+step << Druid
+    >>Go deep into the cave, travel across the bridge, look for a cat statue inside an alcove and click on the small orb next to the statue
+    >>Loot |cRXP_LOOT_Relic of the Claw|r
+    .goto 1450/1,-3117.400,7455.300
+    .complete 98404,2 << Skyborne --|1/1 Relic of the Claw
+    .complete 98396,2 << !Skyborne --|1/1 Relic of the Claw
+step << Druid
+    >>Click on the small orb next to the cat statue
+    >>Loot |cRXP_LOOT_Relic of the Silent Shadow|r
+    .goto 1450/1,-3099.200,7485.700
+    .complete 98404,3  << Skyborne --|1/1 Relic of the Silent Shadow
+    .complete 98396,3  << !Skyborne --|1/1 Relic of the Silent Shadow
+step << Druid
+    >>Click on the small orb next to the cat statue
+    >>Loot |cRXP_LOOT_Relic of the Fang|r
+    .goto 1450/1,-3054.100,7476.800
+    .complete 98404,1  << Skyborne --|1/1 Relic of the Fang
+    .complete 98396,1  << !Skyborne --|1/1 Relic of the Fang
+step << Druid !Skyborne
+    .goto 1450/1,-2640.000,7338.900
+     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Great Cat Spirit|r
+    .turnin 98396 >>Turn in The Great Cat Spirit
+    .accept 98731 >>Accept Blessings of the Great Cat Spirit
+    .target Great Cat Spirit
+step << Druid Skyborne
+    .goto 1450/1,-2395.400,7361.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avatar of Saeyleenan::272054|r
+    .target Avatar of Saeyleenan::272054
+    .turnin 98404 >>Turn in The Great Windborne Cat Spirit
+    .accept 98738 >>Accept Blessings of the Great Windborne Cat Spirit
+step << Druid
+    .goto 1450/1,-2678.200,8021.500
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTeleport to Moonglade and talk to |cRXP_FRIENDLY_Dendrite Starblaze::11802|r
+    .target Dendrite Starblaze::11802
+    .usespell 18960
+    .turnin 98738 >>Turn in Blessings of the Great Windborne Cat Spirit << Skyborne
+    .accept 98397 >>Accept To Darnassus --<< Alliance
+    --.accept 98362 >>Accept To Thunder Bluff << Horde
+step << Druid
+    #completewith catspirit2
+    .goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
+    .fly Teldrassil >> Fly to Darnassus
+    .skipgossip
+    .timer 153,Darnassus
+    .target Silva Fil'naveth
+    .zoneskip Darnassus
+    .zoneskip Teldrassil
+step << Druid
+    #completewith next
+    .goto 1450/1,-2400.33,7795.33--c:Moonglade,44.148,45.229
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
+    .fly Teldrassil >> Fly to Darnassus
+    .skipgossip
+    .timer 153,Darnassus
+    .target Silva Fil'naveth
+    .zoneskip Darnassus
+    .zoneskip Teldrassil
+step << Druid
+    #label catspirit2
+    .goto 1457/1,2564.400,10179.900
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker::4217|r
+    .target Mathrengyl Bearwalker::4217
+    .turnin 98397 >>Turn in To Darnassus
+step << Druid
+    #completewith next
+    .hs >> Hearth to Lakeshire
+
+
 
 ]])
