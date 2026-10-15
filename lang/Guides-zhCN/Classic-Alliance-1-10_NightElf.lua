@@ -141,7 +141,7 @@ step << !Hunter
     #season 0 << Warrior
     .goto Teldrassil,54.593,32.992
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃沃隆|r 对话
-    .turnin 4495 >> 交任务 好朋友
+    .turnin 4495 >> 交任务  好朋友
     .target 埃沃隆
     .accept 3519 >> 接受任务 需要帮助的朋友
 step << !Hunter !Warrior

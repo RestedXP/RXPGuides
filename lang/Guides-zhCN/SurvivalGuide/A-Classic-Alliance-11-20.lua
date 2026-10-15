@@ -37,7 +37,7 @@ step
 step
     .goto Westfall,56.04,31.23
     .target Farmer Saldean
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_农夫萨丁|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_农夫萨丁|r 对话
     .accept 9 >> 接受任务 清理荒野
 step
     #label SalmaS
@@ -68,7 +68,7 @@ step
     #era
     .goto Westfall,56.42,47.62
     .target Captain Danuvin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丹努文队长|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹努文队长|r 对话
     .accept 102 >> 接受任务 西部荒野的豺狼人
 step << Human
     #requires Lewis
@@ -195,7 +195,7 @@ step
 step
     #completewith next
 	.goto Westfall,56.04,31.23
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_农夫萨丁|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_农夫萨丁|r 对话
     .vendor
     >>|cRXP_WARN_不要出售|T133884:0|t|T135997:0|t[鱼人的眼球]、|T134341:0|t|T133972:0|t[血牙野猪的头]、|T134341:0|t|T134341:0|t[血牙野猪的肝]或|T133972:0|t|T133972:0|t[秃鹫肉条]|r
 	.target Farmer Saldean
@@ -235,7 +235,7 @@ step
     .mob +Young Goretusk
     .mob +Goretusk
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_农夫萨丁|r 对话
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_农夫萨丁|r 对话
 	.target Farmer Saldean
     .goto Westfall,56.04,31.23
     .turnin 9 >> 交任务 清理荒野
@@ -790,7 +790,7 @@ step
 step
 #map Darkshore
     .goto Felwood,25.15,4.61
-    >>点击 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4723 >> 接受任务 搁浅的海洋生物
 step << Druid
     #completewith cure1
@@ -1014,7 +1014,7 @@ step
 #map Darkshore
     #label Beached4728
     .goto Felwood,18.41,49.43
-    >>点击 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4728 >> 接受任务 搁浅的海洋生物
 step
     #label BearComplete
@@ -1894,7 +1894,7 @@ step
     .isOnQuest 731
 step
     .goto Ashenvale,13.97,4.10
-    >>点击 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4733 >> 接受任务 搁浅的海洋生物
     >>|cRXP_WARN_这个任务可能会非常困难。请与 |cRXP_ENEMY_鱼人|r 逐个交战，否则你可能会同时引到多个|r
     .link https://youtu.be/lfQM3Q-Ag5A >> |cRXP_WARN_点击此处查看视频指南|r
@@ -1910,7 +1910,7 @@ step
 step
 #map Darkshore
     .goto Felwood,14.62,60.72
-    >>点击 |cRXP_PICK_搁浅的海洋生物|r
+    >>点击地上的 |cRXP_PICK_搁浅的海洋生物|r
     .accept 4730 >> 接受任务 搁浅的海洋生物
 step
     #label Murkdeep

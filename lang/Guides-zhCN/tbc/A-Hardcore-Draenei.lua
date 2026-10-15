@@ -12,12 +12,12 @@ RXPGuides.RegisterGuide([[
 step
     .goto Azuremyst Isle,82.96,43.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦格伦|r 对话
-    .accept 9279 >>接受任务 你活下来了！
+    .accept 9279 >> 接受任务 你活下来了！
     .target 麦格伦
 step << Shaman/Warrior
 	#completewith next
 	.goto Azuremyst Isle,79.987,47.117
-	.vendor >>|cRXP_WARN_猎杀 2-3只 |cRXP_ENEMY_峡谷蛾|r 或 |cRXP_ENEMY_暴躁的变异体|r 并获取可卖给商人的垃圾物品(价值 10 铜币以上)|r
+	.vendor >> |cRXP_WARN_猎杀 2-3只 |cRXP_ENEMY_峡谷蛾|r 或 |cRXP_ENEMY_暴躁的变异体|r 并获取可卖给商人的垃圾物品(价值 10 铜币以上)|r
     >>|cRXP_WARN_在里面的 |cRXP_FRIENDLY_欧洛克|r 处出售垃圾物品|r
     .mob 峡谷蛾
     .mob 暴躁的变异体
@@ -40,20 +40,20 @@ step << Priest/Mage
 step
     .goto Azuremyst Isle,80.419,45.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_普罗尼图斯|r 对话
-    .turnin 9279 >>交任务 你活下来了！
-    .accept 9280 >>接受任务 补充治疗水晶
+    .turnin 9279 >> 交任务 你活下来了！
+    .accept 9280 >> 接受任务 补充治疗水晶
     .target 普罗尼图斯
 step << Priest/Mage
     .goto Azuremyst Isle,79.253,50.884
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗约什|r 对话
-    .vendor >>出售垃圾物品
+    .vendor >> 出售垃圾物品
     >>|cRXP_BUY_购买10瓶|r |T132794:0|t[清凉的泉水]
     .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target 罗约什
 step
     .goto Azuremyst Isle,79.139,46.536
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_植物学家塔蕾克丝|r 对话
-    .accept 10302 >>接受任务 暴躁的变异体
+    .accept 10302 >> 接受任务 暴躁的变异体
     .target 植物学家塔蕾克丝
 step
     #loop
@@ -76,16 +76,16 @@ step
     .isQuestComplete 9280
     .goto Azuremyst Isle,80.419,45.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_普罗尼图斯|r 对话
-    .turnin 9280 >>交任务 补充治疗水晶
-    .accept 9409 >>接受任务 紧急物资！
+    .turnin 9280 >> 交任务 补充治疗水晶
+    .accept 9409 >> 接受任务 紧急物资！
     .target 普罗尼图斯
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_植物学家塔蕾克丝|r 和 |cRXP_FRIENDLY_学徒维莎尔|r 对话
-    .turnin 10302 >>交任务 暴躁的变异体
-    .accept 9293 >>接受任务 必需的措施……
+    .turnin 10302 >> 交任务 暴躁的变异体
+    .accept 9293 >> 接受任务 必需的措施……
     .target 植物学家塔蕾克丝
     .goto Azuremyst Isle,79.139,46.536
-    .accept 9799 >>接受任务 跑腿采花
+    .accept 9799 >> 接受任务 跑腿采花
     .target 学徒维莎尔
     .goto Azuremyst Isle,79.071,46.624
 step
@@ -165,32 +165,32 @@ step
     .mob 峡谷蛾
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_植物学家塔蕾克丝|r 和 |cRXP_FRIENDLY_学徒维莎尔|r 对话
-    .turnin 9293 >>交任务 必需的措施……
-    .accept 9294 >>接受任务 净化湖水
+    .turnin 9293 >> 交任务 必需的措施……
+    .accept 9294 >> 接受任务 净化湖水
     .target 植物学家塔蕾克丝
     .goto Azuremyst Isle,79.139,46.536
-    .turnin 9799 >>交任务 跑腿采花
+    .turnin 9799 >> 交任务 跑腿采花
     .target 学徒维莎尔
     .goto Azuremyst Isle,79.071,46.624
 step
     .goto Azuremyst Isle,80.419,45.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_普罗尼图斯|r 对话
-    .turnin 9280 >>交任务 补充治疗水晶
-    .accept 9409 >>接受任务 紧急物资！
+    .turnin 9280 >> 交任务 补充治疗水晶
+    .accept 9409 >> 接受任务 紧急物资！
     .target 普罗尼图斯
 step
 	#completewith next
 	.goto Azuremyst Isle,79.987,47.117
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_欧洛克|r 对话
-	.vendor >>把垃圾物品卖给商人
+	.vendor >> 把垃圾物品卖给商人
     .target 欧洛克
 step << Mage
 	.goto Azuremyst Isle,79.582,48.762
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瓦拉图|r 对话
-	.accept 9290 >>接受任务 法师训练
-	.turnin 9290 >>交任务 法师训练
-    .train 1459 >>学习 |T135932:0|t[奥术智慧]
-    .train 116 >>学习 |T135846:0|t[寒冰箭]
+	.accept 9290 >> 接受任务 法师训练
+	.turnin 9290 >> 交任务 法师训练
+    .train 1459 >> 学习 |T135932:0|t[奥术智慧]
+    .train 116 >> 学习 |T135846:0|t[寒冰箭]
     .target 瓦拉图
 step << Paladin
     #loop
@@ -198,11 +198,11 @@ step << Paladin
     .goto Azuremyst Isle,80.12,49.13,7,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥雷伦|r 对话
     >>|cRXP_FRIENDLY_奥雷伦|r |cRXP_WARN_可能会稍微巡逻|r
-	.accept 9287 >>接受任务 圣骑士训练
-	.turnin 9287 >>交任务 圣骑士训练
+	.accept 9287 >> 接受任务 圣骑士训练
+	.turnin 9287 >> 交任务 圣骑士训练
     .train 465 >>训练 |T135893:0|t[虔诚光环]
-    .train 19740 >>学习 |T135906:0|t[力量祝福]
-    .train 20271 >>学习 |T135959:0|t[审判]
+    .train 19740 >> 学习 |T135906:0|t[力量祝福]
+    .train 20271 >> 学习 |T135959:0|t[审判]
     .target 奥雷伦
 step
     #loop
@@ -210,21 +210,21 @@ step
     .goto Azuremyst Isle,80.01,49.42,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎尔杜|r 对话
     >>|cRXP_FRIENDLY_扎尔杜|r |cRXP_WARN_会稍微巡逻|r
-    .turnin 9409 >>交任务 紧急物资！
-    .accept 9283 >>接受任务 拯救幸存者！
-    .accept 9291 >>接受任务 牧师训练 << Priest
-    .turnin 9291 >>交任务 牧师训练 << Priest
-    .train 1243 >>学习 |T135987:0|t[真言术：韧] << Priest
-    .train 2052 >>学习 |T135929:0|t[次级治疗术] << Priest
-    .train 589 >>训练 |T136207:0|t[暗言术：痛] << Priest
+    .turnin 9409 >> 交任务 紧急物资！
+    .accept 9283 >> 接受任务 拯救幸存者！
+    .accept 9291 >> 接受任务 牧师训练 << Priest
+    .turnin 9291 >> 交任务 牧师训练 << Priest
+    .train 1243 >> 学习 |T135987:0|t[真言术：韧] << Priest
+    .train 2052 >> 学习 |T135929:0|t[次级治疗术] << Priest
+    .train 589 >> 训练 |T136207:0|t[暗言术：痛] << Priest
     .target 扎尔杜
 step << Shaman
     .goto Azuremyst Isle,79.278,49.126
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_费曼瓦尔|r 对话
-    .accept 9421 >>接受任务 萨满祭司训练
-	.turnin 9421 >>交任务 萨满祭司训练
-    .accept 9449 >>接受任务 大地的召唤
-	.train 8042 >>影袭 |T136026:0|t[大地震击]
+    .accept 9421 >> 接受任务 萨满祭司训练
+	.turnin 9421 >> 交任务 萨满祭司训练
+    .accept 9449 >> 接受任务 大地的召唤
+	.train 8042 >> 影袭 |T136026:0|t[大地震击]
     .target 费曼瓦尔
 step << Shaman
     #completewith next
@@ -234,8 +234,8 @@ step << Shaman
 step << Shaman
     .goto Azuremyst Isle,71.788,40.241
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_峡谷之灵|r 对话
-    .turnin 9449 >>交任务 大地的召唤
-    .accept 9450 >>接受任务 大地的召唤
+    .turnin 9449 >> 交任务 大地的召唤
+    .accept 9450 >> 接受任务 大地的召唤
     .target 峡谷之灵
 step << Shaman
     #loop
@@ -248,8 +248,8 @@ step << Shaman
 step << Shaman
     .goto Azuremyst Isle,71.788,40.241
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_峡谷之灵|r 对话
-    .turnin 9450 >>交任务 大地的召唤
-    .accept 9451 >>接受任务 大地的召唤
+    .turnin 9450 >> 交任务 大地的召唤
+    .accept 9451 >> 接受任务 大地的召唤
     .target 峡谷之灵
 step << Shaman
     #completewith next
@@ -259,7 +259,7 @@ step << Shaman
 step << Shaman
     .goto Azuremyst Isle,79.278,49.126
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_费曼瓦尔|r 对话
-    .turnin 9451 >>交任务 大地的召唤
+    .turnin 9451 >> 交任务 大地的召唤
     .target 费曼瓦尔
 step << Shaman
     .isQuestComplete 9283
@@ -269,21 +269,21 @@ step << Shaman
     .goto Azuremyst Isle,80.01,49.42,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎尔杜|r 对话
     >>|cRXP_FRIENDLY_扎尔杜|r |cRXP_WARN_会稍微巡逻|r
-    .turnin 9283 >>交任务 拯救幸存者！
+    .turnin 9283 >> 交任务 拯救幸存者！
     .target 扎尔杜
 step << Warrior
     .goto Azuremyst Isle,79.587,49.446
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库勒|r 对话
-    .accept 9289 >>接受任务 战士训练
-	.turnin 9289 >>交任务 战士训练
-    .train 100 >>学习 |T132337:0|t[冲锋]
-    .train 772 >>学习 |T132155:0|t[撕裂]
+    .accept 9289 >> 接受任务 战士训练
+	.turnin 9289 >> 交任务 战士训练
+    .train 100 >> 学习 |T132337:0|t[冲锋]
+    .train 772 >> 学习 |T132155:0|t[撕裂]
     .target 库勒
 step << Hunter
 	.goto Azuremyst Isle,79.886,49.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基尔尼|r 对话
-	.accept 9288 >>接受任务 猎人训练
-	.turnin 9288 >>交任务 猎人训练
+	.accept 9288 >> 接受任务 猎人训练
+	.turnin 9288 >> 交任务 猎人训练
     .train 1978 >>学习 |T132204:0|t[毒蛇钉刺]
     .target 基尔尼
 
@@ -305,23 +305,23 @@ step << Shaman/Hunter
 	#completewith next
 	.goto Azuremyst Isle,79.188,50.928
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_姆拉|r 对话
-	.vendor >>把垃圾物品卖给商人
+	.vendor >> 把垃圾物品卖给商人
     >>|cRXP_BUY_从她那里|r购买 5 堆|cRXP_BUY_ |T132382:0|t[劣质箭] |r << Hunter
     .collect 2512,1000 << Hunter --Rough Arrow (1000)
     .target 姆拉
 step
     .goto Azuremyst Isle,79.419,51.235
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_技师沙娜安|r 对话
-    .accept 9305 >>接受任务 备用零件
+    .accept 9305 >> 接受任务 备用零件
     .target 技师沙娜安
 step
     .goto Azuremyst Isle,79.486,51.620
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守备官奥达尔|r 对话
-    .accept 9303 >>接受任务 疫苗
+    .accept 9303 >> 接受任务 疫苗
     .target 守备官奥达尔
 step
     #completewith Owlkininoculated
-    .usespell 28880 >>|cRXP_WARN_对|r |T135923:0|t[纳鲁的祝福]|cRXP_WARN_施放于|r|cRXP_FRIENDLY_德莱尼幸存者|r|cRXP_WARN_。他们分散在整个新手区域各处|r
+    .usespell 28880 >>|cRXP_WARN_对一名|r |cRXP_WARN_德莱尼幸存者|r |cRXP_FRIENDLY_施放|r |T135923:0|t[纳鲁的祝福] |cRXP_WARN_。他们分散在整个新手区域各处|r
     .complete 9283,1 --Draenei Survivors Saved
     .unitscan 德莱尼幸存者
     .subzoneskip 3559 -- Nestlewood Hills
@@ -354,7 +354,7 @@ step
     .mob 木巢枭兽
 step
     #completewith next
-    .subzone 3527 >>返回 坠毁点
+    .subzone 3527 >> 返回 坠毁点
 step
     .goto 1943/1,3865.399,6144.700
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守备官奥达尔|r 对话
@@ -384,29 +384,29 @@ step
     .goto Azuremyst Isle,80.01,49.42,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎尔杜|r 对话
     >>|cRXP_FRIENDLY_扎尔杜|r |cRXP_WARN_会稍微巡逻|r
-    .turnin 9283 >>交任务 拯救幸存者！
+    .turnin 9283 >> 交任务 拯救幸存者！
     .target 扎尔杜
 step
 	#completewith next
 	.goto Azuremyst Isle,79.987,47.117
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_欧洛克|r 对话
-	.vendor >>把垃圾物品卖给商人
+	.vendor >> 把垃圾物品卖给商人
     .target 欧洛克
 step
     .goto Azuremyst Isle,79.139,46.536
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_植物学家塔蕾克丝|r 对话
-    .turnin 9294 >>交任务 净化湖水
+    .turnin 9294 >> 交任务 净化湖水
     .target 植物学家塔蕾克丝
 step
     #completewith SurveyorCandress
-    .usespell 28880 >>|cRXP_WARN_对|r |T135923:0|t[纳鲁的祝福]|cRXP_WARN_施放于|r|cRXP_FRIENDLY_德莱尼幸存者|r|cRXP_WARN_。他们分散在整个新手区域各处|r
+    .usespell 28880 >>|cRXP_WARN_对一名|r |cRXP_WARN_德莱尼幸存者|r |cRXP_FRIENDLY_施放|r |T135923:0|t[纳鲁的祝福] |cRXP_WARN_。他们分散在整个新手区域各处|r
     .complete 9283,1 --Draenei Survivors Saved
     .unitscan 德莱尼幸存者
 step
     .goto Azuremyst Isle,71.998,60.856
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图兰|r 对话
-    .turnin 9309 >>交任务 失踪的斥候
-    .accept 10303 >>接受任务 血精灵
+    .turnin 9309 >> 交任务 失踪的斥候
+    .accept 10303 >> 接受任务 血精灵
     .target 图兰
 step
     .goto Azuremyst Isle,69.420,64.608
@@ -416,8 +416,8 @@ step
 step
     .goto Azuremyst Isle,71.998,60.856
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图兰|r 对话
-    .turnin 10303 >>交任务 血精灵
-    .accept 9311 >>接受任务 血精灵间谍
+    .turnin 10303 >> 交任务 血精灵
+    .accept 9311 >> 接受任务 血精灵间谍
     .target 图兰
 step
     #label SurveyorCandress
@@ -426,7 +426,7 @@ step
     .use 24414 >>|cRXP_WARN_使用|r |T132319:0|t[|cRXP_LOOT_血精灵计划书|r] |cRXP_WARN_来开始任务|r
     .complete 9311,1 --Kill Surveyor Candress (x1)
     .collect 24414,1,9798,1 -- Blood Elf Plans
-    .accept 9798 >>接受任务 血精灵计划书
+    .accept 9798 >> 接受任务 血精灵计划书
     .mob 测量员卡蒂瑞丝
 step
     #loop
@@ -438,7 +438,7 @@ step
     .goto Azuremyst Isle,77.6,56.0,80,0
     .goto Azuremyst Isle,74.8,43.4,80,0
     .goto Azuremyst Isle,80.2,42.6,80,0
-    >>|cRXP_WARN_对|r |T135923:0|t[纳鲁的祝福]|cRXP_WARN_施放于|r|cRXP_FRIENDLY_德莱尼幸存者|r|cRXP_WARN_。他们分散在整个新手区域各处|r
+    >>|cRXP_WARN_对一名|r |cRXP_WARN_德莱尼幸存者|r |cRXP_FRIENDLY_施放|r |T135923:0|t[纳鲁的祝福] |cRXP_WARN_。他们分散在整个新手区域各处|r
     .complete 9283,1 --Draenei Survivors Saved
     .unitscan 德莱尼幸存者
 step
@@ -455,20 +455,20 @@ step
     .mob 血精灵斥候
 step
     #completewith next
-    .subzone 3527 >>返回坠毁点
+    .subzone 3527 >> 返回坠毁点
 step
     #label BloodElfSpy
     .goto Azuremyst Isle,79.488,51.622
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守备官奥达尔|r 对话
-    .turnin 9311 >>交任务 血精灵间谍
-    .turnin 9798 >>交任务 血精灵计划书
-    .accept 9312 >>接受任务 图像发射器
+    .turnin 9311 >> 交任务 血精灵间谍
+    .turnin 9798 >> 交任务 血精灵计划书
+    .accept 9312 >> 接受任务 图像发射器
     .target 守备官奥达尔
 step
     .goto Azuremyst Isle,79.422,51.234
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_技师沙娜安|r 对话
-    .turnin 9312 >>交任务 图像发射器
-    .accept 9313 >>接受任务 前往碧蓝岗哨
+    .turnin 9312 >> 交任务 图像发射器
+    .accept 9313 >> 接受任务 前往碧蓝岗哨
     .target 技师沙娜安
 step
     #loop
@@ -477,22 +477,22 @@ step
     .goto Azuremyst Isle,80.01,49.42,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎尔杜|r 对话
     >>|cRXP_FRIENDLY_扎尔杜|r |cRXP_WARN_会稍微巡逻|r
-    .turnin 9283 >>交任务 拯救幸存者！
+    .turnin 9283 >> 交任务 拯救幸存者！
     .target 扎尔杜
 step
     .goto Azuremyst Isle,64.497,54.037
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃文|r 对话
-    .accept 9314 >>接受任务 碧蓝岗哨的消息
+    .accept 9314 >> 接受任务 碧蓝岗哨的消息
     .target 埃文
 step
     .goto Azuremyst Isle,61.052,54.248
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪泰娜|r 对话
-    .accept 9452 >>接受任务 美味的红钳鱼
+    .accept 9452 >> 接受任务 美味的红钳鱼
     .target 迪泰娜
 step
     .isOnQuest 9452
     .goto Azuremyst Isle,62.38,51.93,40,0
-    .goto Azuremyst Isle,61.87,41.62,60 >>|cRXP_WARN_沿着河向北游|r
+    .goto Azuremyst Isle,61.87,41.62,60 >> |cRXP_WARN_沿着河向北游|r
     .use 23654 >>|cRXP_WARN_沿途看到|r |T134325:0|t[德莱尼渔网] |cRXP_WARN_时对|r |cRXP_PICK_红钳鱼鱼群|r |cRXP_WARN_使用。到达河流上游后跳过此步骤，稍后会完成|r
 	.collect 23614,10 -- Red Snapper (10)
     .disablecheckbox
@@ -500,76 +500,76 @@ step
 	#completewith next
     >>|cRXP_WARN_留意一下|r |cRXP_FRIENDLY_年幼的德莱尼人|r
     >>|cRXP_WARN_趁他们战斗时，对他们施放|r |T135923:0|t[纳鲁的赐福] |cRXP_WARN_，然后接任务|r
-	.accept 9612 >>接受任务 非常感谢！
+	.accept 9612 >> 接受任务 非常感谢！
 	.unitscan 年幼的德莱尼人
 step
     .goto Azuremyst Isle,53.9,34.4
     >>击杀 |cRXP_ENEMY_感染的夜行豹幼崽|r，拾取 |T134072:0|t[|cRXP_LOOT_微微发光的水晶|r]
     .use 23678 >>|cRXP_WARN_使用|r |T134072:0|t[|cRXP_LOOT_微微发光的水晶|r] |cRXP_WARN_来开始任务|r
 	.collect 23678,1,9455,1 -- Faintly Glowing Crystal (1)
-    .accept 9455 >>接受任务 奇怪的发现
+    .accept 9455 >> 接受任务 奇怪的发现
     .mob 感染的夜行豹幼崽
 step
     #completewith NightstalkerCleanUp
     .goto 1943/1,4776.600,6457.500,55,0
     .goto 1943/1,4807.399,6348.100,55,0
     .goto 1943/1,4860.899,6302.500,55,0
-    .subzone 3576 >>前往碧蓝岗哨。跟随箭头到达该处",  "grounding_notes": "Translated 'Go to' as 前往; translated '跟随 the arrow to get there safely' following Chinese word order. Location names kept (no annotations).
+    .subzone 3576 >> 前往碧蓝岗哨。跟随箭头到达该处",  "grounding_notes": "Translated 'Go to' as 前往; translated '跟随 the arrow to get there safely' following Chinese word order. Location names kept (no annotations).
 step
     .goto Azuremyst Isle,48.391,51.771
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_学者法蒂玛|r 对话
-    .accept 9463 >>接受任务 医疗材料
+    .accept 9463 >> 接受任务 医疗材料
     .target 学者法蒂玛
 step
 	.isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
-	.turnin 9612 >>交任务 非常感谢！
-    .turnin 9455 >>交任务 奇怪的发现
-    .accept 9456 >>接受任务 清理夜行豹……
+	.turnin 9612 >> 交任务 非常感谢！
+    .turnin 9455 >> 交任务 奇怪的发现
+    .accept 9456 >> 接受任务 清理夜行豹……
     .target 大主教梅内莱厄斯
 step
     #label NightstalkerCleanUp
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
-    .turnin 9455 >>交任务 奇怪的发现
-    .accept 9456 >>接受任务 清理夜行豹……
+    .turnin 9455 >> 交任务 奇怪的发现
+    .accept 9456 >> 接受任务 清理夜行豹……
     .target 大主教梅内莱厄斯
 step
     .goto Azuremyst Isle,48.7,50.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_技师戴维恩|r 对话
-    .turnin 9313 >>交任务 前往碧蓝岗哨
+    .turnin 9313 >> 交任务 前往碧蓝岗哨
     .target 技师戴维恩
 step
     .goto Azuremyst Isle,48.4,49.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_看护员谢尔兰|r 对话
-    .turnin 9314 >>交任务 碧蓝岗哨的消息
+    .turnin 9314 >> 交任务 碧蓝岗哨的消息
     .target 看护员谢尔兰
 step
 	.goto Azuremyst Isle,48.336,49.144
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_看护员谢尔兰|r 对话
-    .home >>将你的炉石绑定到碧蓝岗哨
+    .home >> 将你的炉石绑定到碧蓝岗哨
     .target 看护员谢尔兰
     .bindlocation 3576
     .subzoneskip 3576,1
 step << Priest
     .goto Azuremyst Isle,48.603,49.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古安|r 对话
-    .accept 9586 >>接受任务 帮助塔瓦拉
+    .accept 9586 >> 接受任务 帮助塔瓦拉
     .train 591 >>影袭 |T135924:0|t[惩击]
     .train 17 >>影袭 |T135940:0|t[真言术：盾]
     .target 古安
 step << Mage
     .goto Azuremyst Isle,49.868,49.949
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞米德|r 对话
-    .train 143 >>学习 |T135812:0|t[火球术]
+    .train 143 >> 学习 |T135812:0|t[火球术]
     .train 2136 >>学习 |T135807:0|t[火焰冲击]
     .target 塞米德
 step << Hunter
     .goto Azuremyst Isle,49.780,51.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾克提恩|r 对话
-    .train 3044 >>训练 |T132218:0|t[奥术射击]
-    .train 1130 >>训练 |T132212:0|t[猎人印记]
+    .train 3044 >> 训练 |T132218:0|t[奥术射击]
+    .train 1130 >> 训练 |T132212:0|t[猎人印记]
     .target 艾克提恩
 step << Shaman
     .goto Azuremyst Isle,49.579,53.107
@@ -581,7 +581,7 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
 step << Shaman
     #sticky
-    .equip 16,2495 >>|cRXP_WARN_装备|r |T135145:0|t[学徒短杖]
+    .equip 16,2495 >> |cRXP_WARN_装备|r |T135145:0|t[学徒短杖]
     .use 2495
     .itemcount 2495,1
 step << Paladin
@@ -594,13 +594,13 @@ step << Paladin
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.00
 step << Paladin
     #sticky
-    .equip 16,2493 >>|cRXP_WARN_装备买来的|r |T133053:0|t[木槌棒]
+    .equip 16,2493 >> |cRXP_WARN_装备买来的|r |T133053:0|t[木槌棒]
     .use 2493
     .itemcount 2493,1
 step << Warrior
     .goto Azuremyst Isle,49.579,53.107
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳贝克|r 对话
-    >>|cRXP_BUY_Buy a|r |T135321:0|t[Gladius] |cRXP_BUY_if you can afford it|r
+    >>|cRXP_BUY_Buy a|r |T135321:0|t[Gladius] |cRXP_BUY_if you can afford it|r (NOT TRANSLATED IN :zhCN YET)
     .collect 2488,1 --Collect Gladius (1)
     .target 纳贝克
     .money <0.0536
@@ -625,14 +625,14 @@ step << Warrior/Paladin
 step << Warrior/Paladin
     #optional
     #completewith SGrain
-    .cast 2580 >>|cRXP_WARN_施放|r |T136025:0|t[寻找矿物]
+    .cast 2580 >> |cRXP_WARN_施放|r |T136025:0|t[寻找矿物]
     .usespell 2580
     .train 2575,3 --Mining
 step
 	#completewith level8
     >>|cRXP_WARN_留意一下|r |cRXP_FRIENDLY_年幼的德莱尼人|r
     >>|cRXP_WARN_趁他们战斗时，对他们施放|r |T135923:0|t[纳鲁的赐福] |cRXP_WARN_，然后接任务|r
-	.accept 9612 >>接受任务 非常感谢！
+	.accept 9612 >> 接受任务 非常感谢！
 	.unitscan 年幼的德莱尼人
 step
     #completewith LeavesTree
@@ -651,18 +651,18 @@ step << Priest
 step
     .goto Azuremyst Isle,47.038,70.206
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海军上将奥德修斯|r 对话
-    .accept 9506 >>接受任务 第三类接触
+    .accept 9506 >> 接受任务 第三类接触
     .target 海军上将奥德修斯
 step
     .goto Azuremyst Isle,46.681,70.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"曲奇"米维克索斯|r 对话
-    .accept 9512 >>接受任务 曲奇的大餐
+    .accept 9512 >> 接受任务 曲奇的大餐
     .target “曲奇”米维克索斯 <厨师>
 step << Warrior/Paladin
     .goto Azuremyst Isle,46.355,71.192
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁匠卡里普索|r 对话
     >>|cRXP_WARN_这将使你能够制作 |r|T135248:0|t[劣质磨刀石]|cRXP_WARN_ 和|r |T135255:0|t[劣质平衡石]|cRXP_WARN_，它们可使你的近战伤害提高 2 点|r
-    .train 2018 >>学习 |T136241:0|t[锻造]
+    .train 2018 >> 学习 |T136241:0|t[锻造]
     .target 铁匠卡里普索
     .train 2575,3 --Mining
 step
@@ -687,21 +687,21 @@ step
 step
     .goto Azuremyst Isle,46.681,70.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"曲奇"米维克索斯|r 对话
-    .turnin 9512 >>交任务 曲奇的大餐
+    .turnin 9512 >> 交任务 曲奇的大餐
     .target “曲奇”米维克索斯 <厨师>
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海军上将奥德修斯|r 和 |cRXP_FRIENDLY_女祭司基琳·伊尔蒂娜|r 对话
-    .turnin 9506 >>交任务 第三类接触
-    .accept 9530 >>接受任务 天才的方案！
+    .turnin 9506 >> 交任务 第三类接触
+    .accept 9530 >> 接受任务 天才的方案！
     .target 海军上将奥德修斯
     .goto Azuremyst Isle,47.038,70.206
-    .accept 9513 >>接受任务 夺回废墟
+    .accept 9513 >> 接受任务 夺回废墟
     .target 女祭司基琳·伊尔蒂娜
     .goto Azuremyst Isle,47.131,70.289
 step
     .goto Azuremyst Isle,47.243,69.998
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考古学家阿达曼特·铁心|r 对话
-    .accept 9523 >>接受任务 贵重物品，小心轻放
+    .accept 9523 >> 接受任务 贵重物品，小心轻放
     .target 考古学家阿达曼特·铁心
 step
     #label LeavesTree
@@ -731,19 +731,19 @@ step
 step
     .goto Azuremyst Isle,47.038,70.206
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海军上将奥德修斯|r 对话
-    .turnin 9530 >>交任务 天才的方案！
-    .accept 9531 >>接受任务 间谍之树
+    .turnin 9530 >> 交任务 天才的方案！
+    .accept 9531 >> 接受任务 间谍之树
     .target 海军上将奥德修斯
 step
     #label level8
-	.xp 8-950 >>刷怪练级，直到距离8级还差950点经验（3550/4500）
+	.xp 8-950 >> 刷怪练级，直到距离8级还差950点经验（3550/4500）
     >>|cRXP_WARN_尽量在碧蓝岗哨附近完成|r
 step
 	.goto Azuremyst Isle,49.780,51.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾克提恩|r 对话
-	.accept 9454 >>接受任务 狩猎月痕鹿
-    .turnin 9454 >>交任务 狩猎月痕鹿
-    .accept 10324 >>接受任务 狩猎月痕鹿
+	.accept 9454 >> 接受任务 狩猎月痕鹿
+    .turnin 9454 >> 交任务 狩猎月痕鹿
+    .accept 10324 >> 接受任务 狩猎月痕鹿
     .target 艾克提恩
 step
     #completewith TenderloinRecipe
@@ -752,15 +752,15 @@ step
 step << Hunter
     .goto Azuremyst Isle,49.780,51.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾克提恩|r 对话
-    .train 5116 >>训练 |T135860:0|t[震荡射击]
-    .train 14260 >>训练 |T132223:0|t[猛禽一击]
+    .train 5116 >> 训练 |T135860:0|t[震荡射击]
+    .train 14260 >> 训练 |T132223:0|t[猛禽一击]
     .target 艾克提恩
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_学者法蒂玛|r 和 |cRXP_FRIENDLY_丹达尔|r 对话
-    .turnin 9463 >>交任务 医疗材料
+    .turnin 9463 >> 交任务 医疗材料
     .target 学者法蒂玛
     .goto Azuremyst Isle,48.390,51.770
-    .accept 9473 >>接受任务 备选方案的备选方案
+    .accept 9473 >> 接受任务 备选方案的备选方案
     .target 丹达尔
     .goto Azuremyst Isle,48.392,51.482
 step
@@ -768,24 +768,24 @@ step
     .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
-    .turnin 9612 >>交任务 非常感谢！
+    .turnin 9612 >> 交任务 非常感谢！
     .target 大主教梅内莱厄斯
 step << Shaman
     .goto Azuremyst Isle,48.053,50.419
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图伦|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 图伦
     .subzoneskip 3576,1
 step
     .goto Azuremyst Isle,48.9,51.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜尔维|r 对话
-    .accept 10428 >>接受任务 失踪的渔夫
+    .accept 10428 >> 接受任务 失踪的渔夫
     .target 杜尔维
 step
     #label TenderloinRecipe
     .goto Azuremyst Isle,49.365,51.086
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_译码者奥鲁恩|r 对话
-    .accept 9538 >>接受任务 学外语……
+    .accept 9538 >> 接受任务 学外语……
     .target 译码者奥鲁恩
 step
 	.use 23818 >>|cRXP_WARN_使用|r |T133741:0|t[止松熊怪语言入门]
@@ -793,38 +793,38 @@ step
 step
     .goto Azuremyst Isle,49.439,50.977
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿基达图腾|r 对话
-    .turnin 9538 >>交任务 学外语……
-    .accept 9539 >>接受任务 库欧图腾
+    .turnin 9538 >> 交任务 学外语……
+    .accept 9539 >> 接受任务 库欧图腾
     .target 阿基达图腾
 step << Priest
     .goto Azuremyst Isle,48.603,49.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古安|r 对话
-    .turnin 9586 >>交任务 帮助塔瓦拉
-    .trainer >>训练你的职业技能
+    .turnin 9586 >> 交任务 帮助塔瓦拉
+    .trainer >> 训练你的职业技能
     .target 古安
 step << Paladin
     .goto Azuremyst Isle,48.356,49.558
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图拉丝|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 图拉丝
     .subzoneskip 3576,1
 step << Mage
     .goto Azuremyst Isle,49.868,49.949
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞米德|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 塞米德
     .subzoneskip 3576,1
 step << Warrior
     .goto Azuremyst Isle,50.023,50.515
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁安达|r 对话
-    .train 772 >>学习 |T132155:0|t[撕裂]
+    .train 772 >> 学习 |T132155:0|t[撕裂]
     .target 鲁安达
     .subzoneskip 3576,1
 step
 	#completewith AncientRelics
     >>|cRXP_WARN_留意一下|r |cRXP_FRIENDLY_年幼的德莱尼人|r
     >>|cRXP_WARN_趁他们战斗时，对他们施放|r |T135923:0|t[纳鲁的赐福] |cRXP_WARN_，然后接任务|r
-	.accept 9612 >>接受任务 非常感谢！
+	.accept 9612 >> 接受任务 非常感谢！
 	.unitscan 年幼的德莱尼人
 step
 	#completewith TotemofTikti
@@ -838,8 +838,8 @@ step
 	.goto Azuremyst Isle,49.9,45.9,100,0
     .goto Azuremyst Isle,55.233,41.643
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库欧图腾|r 对话
-    .turnin 9539 >>交任务 库欧图腾
-    .accept 9540 >>接受任务 提克提图腾
+    .turnin 9539 >> 交任务 库欧图腾
+    .accept 9540 >> 接受任务 提克提图腾
     .target 库欧图腾
 step
     #loop
@@ -854,14 +854,14 @@ step
     #label TotemofTikti
     .goto Azuremyst Isle,64.475,39.772
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_提克提图腾|r 对话
-    .turnin 9540 >>交任务 提克提图腾
-    .accept 9541 >>接受任务 尤尔图腾
+    .turnin 9540 >> 交任务 提克提图腾
+    .accept 9541 >> 接受任务 尤尔图腾
     .timer 30,尤尔图腾剧情演出
     .target 提克提图腾
 step
     .isOnQuest 9541
     .goto Azuremyst Isle,63.64,40.09
-    .aura 30430 >>|cRXP_WARN_跟随|r |cRXP_FRIENDLY_止松先祖提克提|r|cRXP_WARN_。他会为你施加|r |T132107:0|t[毒蛇的拥抱] |cRXP_WARN_，使你的游泳速度提高150%，并获得水下呼吸效果|r
+    .aura 30430 >> |cRXP_WARN_跟随|r |cRXP_FRIENDLY_止松先祖提克提|r|cRXP_WARN_。他会为你施加|r |T132107:0|t[毒蛇的拥抱] |cRXP_WARN_，使你的游泳速度提高150%，并获得水下呼吸效果|r
 step
     .goto Azuremyst Isle,63.2,68.0
     .use 23654 >>|cRXP_WARN_使用|r |T134325:0|t[德莱尼渔网]|cRXP_WARN_对|r|cRXP_PICK_红钳鱼鱼群|r
@@ -870,28 +870,28 @@ step
 step
     .goto Azuremyst Isle,61.052,54.248
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪泰娜|r 对话
-    .turnin 9452 >>交任务 美味的红钳鱼
-    .accept 9453 >>接受任务 找到艾克提恩！
+    .turnin 9452 >> 交任务 美味的红钳鱼
+    .accept 9453 >> 接受任务 找到艾克提恩！
     .target 迪泰娜
 step
     .goto Azuremyst Isle,63.116,67.880
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与水底下的 |cRXP_FRIENDLY_尤尔图腾|r 对话
-    .turnin 9541 >>交任务 尤尔图腾
-    .accept 9542 >>接受任务 瓦克图腾
+    .turnin 9541 >> 交任务 尤尔图腾
+    .accept 9542 >> 接受任务 瓦克图腾
     .timer 71,瓦克图腾剧情演出
     .target 尤尔图腾
 step
     .isOnQuest 9542
     .goto Azuremyst Isle,60.971,69.354
-    .aura 30448 >>|cRXP_WARN_跟随|r |cRXP_FRIENDLY_止松先祖尤尔|r|cRXP_WARN_。他会为你施加|r |T132142:0|t[森林之影] |cRXP_WARN_，使你获得移动速度提高和隐身效果|r
+    .aura 30448 >> |cRXP_WARN_跟随|r |cRXP_FRIENDLY_止松先祖尤尔|r|cRXP_WARN_。他会为你施加|r |T132142:0|t[森林之影] |cRXP_WARN_，使你获得移动速度提高和隐身效果|r
 step
     #completewith next
-    .goto Azuremyst Isle,28.115,62.391,30 >>|cRXP_WARN_前往秘蓝岛西部|r
+    .goto Azuremyst Isle,28.115,62.391,30 >> |cRXP_WARN_前往秘蓝岛西部|r
 step
     .goto Azuremyst Isle,28.115,62.391
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瓦克图腾|r 对话
-    .turnin 9542 >>交任务 瓦克图腾
-    .accept 9544 >>接受任务 阿基达的预言
+    .turnin 9542 >> 交任务 瓦克图腾
+    .accept 9544 >> 接受任务 阿基达的预言
     .target 瓦克图腾
 step
     .aura -30448
@@ -937,7 +937,7 @@ step
     >>击杀 |cRXP_ENEMY_怒鳞纳迦|r、|cRXP_ENEMY_怒鳞侍从|r 和 |cRXP_ENEMY_怒鳞海妖|r，拾取 |T134462:0|t[|cRXP_LOOT_写满符文的石板|r]
     .use 23759 >>|cRXP_WARN_使用|r |T134462:0|t[|cRXP_LOOT_写满符文的石板|r] |cRXP_WARN_来开始任务|r
     .collect 23759,1,9514 --Collect Rune Covered Tablet (x1)
-    .accept 9514>>写满符文的石板
+    .accept 9514>> 写满符文的石板
     .complete 9513,1 --Kill Wrathscale Myrmidon (x5)
     .mob 怒鳞侍从
     .complete 9513,2 --Kill Wrathscale Naga (x5)
@@ -957,11 +957,11 @@ step
     .complete 9523,1 --Collect Ancient Relic (x8)
 step
     #completewith next
-    .subzone 3579 >>游往叛徒湾
+    .subzone 3579 >> 游往叛徒湾
 step
     .isOnQuest 9531
     .goto Azuremyst Isle,18.473,84.349
-    .cast 30298 >>|cRXP_WARN_在娜迦旗帜处|r使用|cRXP_WARN_ |T132288:0|t[树伪装工具包]|r
+    .cast 30298 >> |cRXP_WARN_在娜迦旗帜处|r使用|cRXP_WARN_ |T132288:0|t[树伪装工具包]|r
     .timer 73,间谍之树剧情表演
     .use 23792
 step
@@ -973,8 +973,8 @@ step
 step
     .goto Azuremyst Isle,16.587,94.450
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库雷|r 对话
-    .turnin 10428 >>交任务 失踪的渔夫
-    .accept 9527 >>接受任务 遗体
+    .turnin 10428 >> 交任务 失踪的渔夫
+    .accept 9527 >> 接受任务 遗体
     .target 库雷
 step
     .goto Azuremyst Isle,13.209,89.742
@@ -986,11 +986,11 @@ step
 step
     .goto Azuremyst Isle,16.587,94.450
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库雷|r 对话
-    .turnin 9527 >>交任务 遗体
+    .turnin 9527 >> 交任务 遗体
     .target 库雷
 step
     #completewith next
-	.hs >>炉石返回碧蓝岗哨，秘血岛
+	.hs >> 炉石返回碧蓝岗哨，秘血岛
     .bindlocation 3576,1
 step
     .goto 1943/1,5182.200,6172.300
@@ -1017,36 +1017,36 @@ step
 step
     .goto Azuremyst Isle,47.243,69.998
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考古学家阿达曼特·铁心|r 对话
-    .turnin 9523 >>交任务 贵重物品，小心轻放
+    .turnin 9523 >> 交任务 贵重物品，小心轻放
     .target 考古学家阿达曼特·铁心
 step
     .goto Azuremyst Isle,47.038,70.206
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海军上将奥德修斯|r 对话
-    .turnin 9531 >>交任务 间谍之树
-    .accept 9537 >>接受任务 绳侏儒以法
+    .turnin 9531 >> 交任务 间谍之树
+    .accept 9537 >> 接受任务 绳侏儒以法
     .target 海军上将奥德修斯
 step
     .goto Azuremyst Isle,47.131,70.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女祭司基琳·伊尔蒂娜|r 对话
-    .turnin 9513 >>交任务 夺回废墟
+    .turnin 9513 >> 交任务 夺回废墟
     .target 女祭司基琳·伊尔蒂娜
 step -- to avoid long RP incase turned in in above step
     .goto Azuremyst Isle,47.131,70.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女祭司基琳·伊尔蒂娜|r 对话
-    .turnin 9514 >>交任务 写满符文的石板
+    .turnin 9514 >> 交任务 写满符文的石板
     .target 女祭司基琳·伊尔蒂娜
 step
     #completewith next
     .goto Azuremyst Isle,46.219,70.983
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洛根·丹尼尔|r 对话
-    .vendor >>|cRXP_WARN_剧情播放期间，出售垃圾物品|r << !Hunter
+    .vendor >> |cRXP_WARN_剧情播放期间，出售垃圾物品|r << !Hunter
     >>|cRXP_BUY_在等待剧情结束时，向他购买更多组|r |T132382:0|t[劣质箭]|cRXP_BUY_|r << Hunter
     .collect 2512,1000 << Hunter --Rough Arrow (1000)
     .target 洛根·丹尼尔
 step
     .goto Azuremyst Isle,47.131,70.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女祭司基琳·伊尔蒂娜|r 对话
-    .accept 9515 >>接受任务 督军斯雷提兹
+    .accept 9515 >> 接受任务 督军斯雷提兹
     .target 女祭司基琳·伊尔蒂娜
 step
     .goto Azuremyst Isle,50.2,70.6,40,0
@@ -1061,116 +1061,116 @@ step
 step
     .goto Azuremyst Isle,47.038,70.206
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海军上将奥德修斯|r 对话
-    .turnin 9537 >>交任务 绳侏儒以法
-    .accept 9602 >>接受任务 邪恶的书信
+    .turnin 9537 >> 交任务 绳侏儒以法
+    .accept 9602 >> 接受任务 邪恶的书信
     .target 海军上将奥德修斯
 step << !Hunter
     .isOnQuest 9515
     .goto Azuremyst Isle,26.75,75.84
-    .subzone 3569 >> Enter the Tides' Hollow cave
+    .subzone 3569 >> Enter the Tides' Hollow cave (NOT TRANSLATED IN :zhCN YET)
 step << !Hunter
     #completewith next
-    .goto Azuremyst Isle,26.33,73.79,15 >>跳下到下层
+    .goto Azuremyst Isle,26.33,73.79,15 >> 跳下到下层
 step << !Hunter
     >>击杀 |cRXP_ENEMY_督军斯雷提兹|r
     .goto Azuremyst Isle,24.98,74.10
     .complete 9515,1 -- Warlord Sriss'tiz slain 1/1
     .mob 督军斯雷提兹
 step << !Hunter
-    .xp 9+5360 >>升级至 5360+/6500 点经验值
+    .xp 9+5360 >> 升级至 5360+/6500 点经验值
 step << !Hunter
     #optional
     .isOnQuest 9515
-    .goto Azuremyst Isle,26.75,75.84,10 >> Exit the Tides' Hollow cave
+    .goto Azuremyst Isle,26.75,75.84,10 >> Exit the Tides' Hollow cave (NOT TRANSLATED IN :zhCN YET)
     .subzoneskip 3569,1
 step << !Hunter
 	#completewith next
     >>|cRXP_WARN_留意一下|r |cRXP_FRIENDLY_年幼的德莱尼人|r
     >>|cRXP_WARN_趁他们战斗时，对他们施放|r |T135923:0|t[纳鲁的赐福] |cRXP_WARN_，然后接任务|r
-	.accept 9612 >>接受任务 非常感谢！
+	.accept 9612 >> 接受任务 非常感谢！
 	.unitscan 年幼的德莱尼人
 step << !Hunter
     .goto Azuremyst Isle,47.131,70.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女祭司基琳·伊尔蒂娜|r 对话
-    .turnin 9515 >>交任务 督军斯雷提兹
+    .turnin 9515 >> 交任务 督军斯雷提兹
     .target 女祭司基琳·伊尔蒂娜
 step << !Hunter
     .goto Azuremyst Isle,46.681,70.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"曲奇"米维克索斯|r 对话
-    .train 2550 >>学习 |T133971:0|t[烹饪]
+    .train 2550 >> 学习 |T133971:0|t[烹饪]
     .target “曲奇”米维克索斯 <厨师>
 step << !Hunter
-    .cast 33277 >>|cRXP_WARN_使用|r |T134939:0|t[Recipe: Roasted Moongraze Tenderloin] |cRXP_WARN_来学习|r |T133971:0|t[烹饪] |cRXP_WARN_配方|r
+    .cast 33277 >> |cRXP_WARN_使用|r |T134939:0|t[Recipe: Roasted Moongraze Tenderloin] |cRXP_WARN_来学习|r |T133971:0|t[烹饪] |cRXP_WARN_配方|r
     .use 27686
     .itemcount 27686,1
     .skill cooking,<1,1 -- shows if cooking is >1
 step
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
-    .turnin 9602 >>交任务 邪恶的书信
-    .accept 9623 >>接受任务 成年
+    .turnin 9602 >> 交任务 邪恶的书信
+    .accept 9623 >> 接受任务 成年
     .target 大主教梅内莱厄斯
 step
     .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
-    .turnin 9612 >>交任务 非常感谢！
+    .turnin 9612 >> 交任务 非常感谢！
     .target 大主教梅内莱厄斯
 step << Shaman
     .goto Azuremyst Isle,48.053,50.419
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图伦|r 对话
-    .accept 9464 >>接受任务 火焰的召唤
-    .trainer >>训练你的职业技能
+    .accept 9464 >> 接受任务 火焰的召唤
+    .trainer >> 训练你的职业技能
     .target 图伦
     .subzoneskip 3576,1
 step << Hunter
     .goto Azuremyst Isle,49.780,51.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾克提恩|r 对话
-    .accept 9757 >>接受任务 寻找女猎手凯拉·夜弓
-    .trainer >>训练你的职业技能
+    .accept 9757 >> 接受任务 寻找女猎手凯拉·夜弓
+    .trainer >> 训练你的职业技能
     .target 艾克提恩
 step << Priest
     .goto Azuremyst Isle,48.603,49.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古安|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 古安
     .subzoneskip 3576,1
 step << Paladin
     .goto Azuremyst Isle,48.356,49.558
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图拉丝|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 图拉丝
     .subzoneskip 3576,1
 step << Mage
     .goto Azuremyst Isle,49.868,49.949
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞米德|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 塞米德
     .subzoneskip 3576,1
 step << Warrior
     .goto Azuremyst Isle,50.023,50.515
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁安达|r 对话
-    .trainer >>训练你的职业技能
-    .accept 9582 >>接受任务 一人之力
+    .trainer >> 训练你的职业技能
+    .accept 9582 >> 接受任务 一人之力
     .target 鲁安达
 step << Hunter
     .goto Azuremyst Isle,24.183,54.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女猎手凯拉·夜弓|r 对话
-    .turnin 9757 >>交任务 寻找女猎手凯拉·夜弓
-    .accept 9591 >>接受任务 驯服野兽
+    .turnin 9757 >> 交任务 寻找女猎手凯拉·夜弓
+    .accept 9591 >> 接受任务 驯服野兽
     .target 女猎手凯拉·夜弓
 step << Hunter
     .goto Azuremyst Isle,20.7,65.1
-	.use 23896 >>|cRXP_WARN_使用|r |T135139:0|t[驯服图腾] |cRXP_WARN_对水中的 |cRXP_ENEMY_带刺的螃蟹|r 使用|r
+	.use 23896 >> |cRXP_WARN_使用|r |T135139:0|t[驯服图腾] |cRXP_WARN_对水中的 |cRXP_ENEMY_带刺的螃蟹|r 使用|r
     .complete 9591,1 --Tame a Barbed Crawler
     .mob 带刺的螃蟹
 step << Hunter
     .isOnQuest 9515
     .goto Azuremyst Isle,26.75,75.84
-    .subzone 3569 >> Enter the Tides' Hollow cave
+    .subzone 3569 >> Enter the Tides' Hollow cave (NOT TRANSLATED IN :zhCN YET)
 step << Hunter
     #completewith next
-    .goto Azuremyst Isle,26.33,73.79,15 >>跳下到下层
+    .goto Azuremyst Isle,26.33,73.79,15 >> 跳下到下层
 step << Hunter
     >>击杀 |cRXP_ENEMY_督军斯雷提兹|r
     .goto Azuremyst Isle,24.98,74.10
@@ -1178,59 +1178,59 @@ step << Hunter
     .mob 督军斯雷提兹
 step << Hunter
     .isOnQuest 9515
-    .goto Azuremyst Isle,26.75,75.84,10 >> Exit the Tides' Hollow cave
+    .goto Azuremyst Isle,26.75,75.84,10 >> Exit the Tides' Hollow cave (NOT TRANSLATED IN :zhCN YET)
     .subzoneskip 3569,1
 step << Hunter
     .goto Azuremyst Isle,47.131,70.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女祭司基琳·伊尔蒂娜|r 对话
-    .turnin 9515 >>交任务 督军斯雷提兹
+    .turnin 9515 >> 交任务 督军斯雷提兹
     .target 女祭司基琳·伊尔蒂娜
 step << Hunter
     .goto Azuremyst Isle,46.681,70.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"曲奇"米维克索斯|r 对话
-    .train 2550 >>学习 |T133971:0|t[烹饪]
+    .train 2550 >> 学习 |T133971:0|t[烹饪]
     .target “曲奇”米维克索斯 <厨师>
 step << Hunter
-    .cast 33277 >>|cRXP_WARN_使用|r |T134939:0|t[Recipe: Roasted Moongraze Tenderloin] |cRXP_WARN_来学习|r |T133971:0|t[烹饪] |cRXP_WARN_配方|r
+    .cast 33277 >> |cRXP_WARN_使用|r |T134939:0|t[Recipe: Roasted Moongraze Tenderloin] |cRXP_WARN_来学习|r |T133971:0|t[烹饪] |cRXP_WARN_配方|r
     .use 27686
     .itemcount 27686,1
     .skill cooking,<1,1 -- shows if cooking is >1
 step << Hunter
     .goto Azuremyst Isle,24.183,54.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女猎手凯拉·夜弓|r 对话
-    .turnin 9591 >>交任务 驯服野兽
-    .accept 9592 >>接受任务 驯服野兽
+    .turnin 9591 >> 交任务 驯服野兽
+    .accept 9592 >> 接受任务 驯服野兽
     .target 女猎手凯拉·夜弓
 step
     .goto The Exodar,81.488,51.449
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_象群管理者妥拉留斯|r 对话
-    .turnin 9623 >>交任务 成年
-    .accept 9625 >>接受任务 雷象可不是好玩的！
+    .turnin 9623 >> 交任务 成年
+    .accept 9625 >> 接受任务 雷象可不是好玩的！
     .target 象群管理者妥拉留斯
 step << Hunter
     .goto Azuremyst Isle,34.56,34.04,60,0
 	.goto Azuremyst Isle,41.0,30.4,50,0
     .goto Azuremyst Isle,43.6,26.2
-	.use 23897 >>|cRXP_WARN_使用|r |T135139:0|t[驯服图腾]|cRXP_WARN_对|r|cRXP_ENEMY_巨型林地陆行鸟|r
+	.use 23897 >> |cRXP_WARN_使用|r |T135139:0|t[驯服图腾]|cRXP_WARN_对|r|cRXP_ENEMY_巨型林地陆行鸟|r
     .complete 9592,1 --Tame a Greater Timberstrider
     .mob 巨型林地陆行鸟
 step << Hunter
     .goto Azuremyst Isle,24.183,54.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女猎手凯拉·夜弓|r 对话
-    .turnin 9592 >>交任务 驯服野兽
-    .accept 9593 >>接受任务 驯服野兽
+    .turnin 9592 >> 交任务 驯服野兽
+    .accept 9593 >> 接受任务 驯服野兽
     .target 女猎手凯拉·夜弓
 step << Hunter
     .goto Azuremyst Isle,35.0,33.9,50,0
     .goto Azuremyst Isle,41.2,28.6
-	.use 23898 >>|cRXP_WARN_使用|r |T135139:0|t[驯服图腾]|cRXP_WARN_对|r|cRXP_ENEMY_夜行豹|r
+	.use 23898 >> |cRXP_WARN_使用|r |T135139:0|t[驯服图腾]|cRXP_WARN_对|r|cRXP_ENEMY_夜行豹|r
     .complete 9593,1 --Tame a Nightstalker
     .mob 逐夜
 step << Hunter
     .goto Azuremyst Isle,24.183,54.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女猎手凯拉·夜弓|r 对话
-    .turnin 9593 >>交任务 驯服野兽
-    .accept 9675 >>接受任务 训练野兽
+    .turnin 9593 >> 交任务 驯服野兽
+    .accept 9675 >> 接受任务 训练野兽
     .target 女猎手凯拉·夜弓
 step << Hunter
     .isOnQuest 9675
@@ -1239,12 +1239,12 @@ step << Hunter
 	.goto The Exodar,53.79,86.11,30,0
     .goto The Exodar,44.240,86.612
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_甘纳尔|r 对话
-    .turnin 9675 >>交任务 训练野兽
-	.trainer >>训练你的宠物技能
+    .turnin 9675 >> 交任务 训练野兽
+	.trainer >> 训练你的宠物技能
     .target 甘纳尔
 step << Hunter
     #completewith next
-    .destroy 2512 >>摧毁你所有的 |T132382:0|t[劣质箭]
+    .destroy 2512 >> 摧毁你所有的 |T132382:0|t[劣质箭]
 step << Hunter
 	#completewith next
     .goto The Exodar,47.911,89.801
@@ -1254,11 +1254,11 @@ step << Hunter
     .target 艾维尔琳
 step << Hunter
 	#completewith next
-	.goto The Exodar,53.696,78.280,15 >>沿着坡道向上，前往 |cRXP_FRIENDLY_韩迪尔|r
+	.goto The Exodar,53.696,78.280,15 >> 沿着坡道向上，前往 |cRXP_FRIENDLY_韩迪尔|r
 step << Hunter
     .goto The Exodar,53.362,85.753
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_韩迪尔|r 对话
-    .train 202 >>学习双手剑
+    .train 202 >> 学习双手剑
     .target 韩迪尔
 step << Hunter
 	#completewith next
@@ -1273,20 +1273,20 @@ step
     .goto Azuremyst Isle,44.762,23.906
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫多|r 对话
     .target 莫多
-    .accept 9560 >>接受任务 末日的野兽！
+    .accept 9560 >> 接受任务 末日的野兽！
 step
     .goto Azuremyst Isle,44.627,23.481
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古尔弗|r 对话
     .target 古尔弗
-    .accept 9562 >>接受任务 鱼人……
+    .accept 9562 >> 接受任务 鱼人……
 step
     .goto Azuremyst Isle,46.685,20.617
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_止松老酋长|r 对话
     .target 止松老酋长
-    .turnin 9559 >>交任务 止松要塞
+    .turnin 9559 >> 交任务 止松要塞
 step << Hunter
     .goto Azuremyst Isle,54.7,18.4
-	.cast 1515 >>|cRXP_WARN_施放|r |T132164:0|t[驯服野兽] |cRXP_WARN_对|r |cRXP_ENEMY_成型的掠食者|r |cRXP_WARN_施放以驯服它|r
+	.cast 1515 >> |cRXP_WARN_施放|r |T132164:0|t[驯服野兽] |cRXP_WARN_对|r |cRXP_ENEMY_成型的掠食者|r |cRXP_WARN_施放以驯服它|r
     .mob 成型的掠食者
 step << Shaman
 	#completewith next
@@ -1296,8 +1296,8 @@ step << Shaman
 step << Shaman
     .goto Azuremyst Isle,59.534,17.951
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_坦普|r 对话
-    .turnin 9464 >>交任务  火焰的召唤
-    .accept 9465 >>接受任务 火焰的召唤
+    .turnin 9464 >> 交任务 火焰的召唤
+    .accept 9465 >> 接受任务 火焰的召唤
     .target 坦普
 step
     #loop
@@ -1313,7 +1313,7 @@ step
 step << Warrior
     #completewith next
     .goto Azuremyst Isle,54.021,9.956
-    .cast 30767 >>点击 |cRXP_PICK_掠食者牢笼|r 来释放 |cRXP_ENEMY_死亡掠食者|r
+    .cast 30767 >> 点击 |cRXP_PICK_掠食者牢笼|r 来释放 |cRXP_ENEMY_死亡掠食者|r
 step << Warrior
     .goto Azuremyst Isle,54.084,9.721
     >>击杀 |cRXP_ENEMY_死亡掠食者|r
@@ -1323,24 +1323,24 @@ step
     .goto Azuremyst Isle,44.762,23.906
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫多|r 对话
     .target 莫多
-    .turnin 9560 >>交任务 末日的野兽！
+    .turnin 9560 >> 交任务 末日的野兽！
 step
     .goto Azuremyst Isle,46.904,21.160
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_止松酋长|r 对话
     .target 止松酋长
-    .accept 9573 >>接受任务 欧莫鲁酋长
+    .accept 9573 >> 接受任务 欧莫鲁酋长
 step
     .goto Azuremyst Isle,46.685,20.617
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_止松老酋长|r 对话
     .target 止松老酋长
-    .accept 9565 >>接受任务 搜索止松要塞
+    .accept 9565 >> 接受任务 搜索止松要塞
 step
     .isOnQuest 9573,9565
-    .goto Azuremyst Isle,45.391,18.194,20 >>进入止松要塞洞穴
+    .goto Azuremyst Isle,45.391,18.194,20 >> 进入止松要塞洞穴
 step
     #completewith next
     .isOnQuest 9573,9565
-    .goto Azuremyst Isle,47.453,16.078,10 >>前往洞穴的上层
+    .goto Azuremyst Isle,47.453,16.078,10 >> 前往洞穴的上层
 step
 	.goto Azuremyst Isle,47.394,14.121
     >>击杀 |cRXP_ENEMY_欧莫鲁酋长|r
@@ -1357,7 +1357,7 @@ step
 step
     #completewith next
     .isOnQuest 9573,9565
-    .goto Azuremyst Isle,48.26,13.78,10 >>跳下去并前往洞穴深处
+    .goto Azuremyst Isle,48.26,13.78,10 >> 跳下去并前往洞穴深处
 step
     #completewith next
     >>击杀 |cRXP_ENEMY_发狂的野枭兽|r << !Shaman
@@ -1369,45 +1369,45 @@ step
     .goto Azuremyst Isle,50.632,11.544
     >>点击 |cRXP_PICK_血色水晶|r
     >>|cRXP_WARN_尽量避免击杀 |cRXP_ENEMY_库肯|r，因为你很快还需要击杀他|r
-    .turnin 9565 >>交任务 搜索止松要塞
-    .accept 9566 >>接受任务 血水晶
+    .turnin 9565 >> 交任务 搜索止松要塞
+    .accept 9566 >> 接受任务 血水晶
 step
     #completewith next
     >>击杀 |cRXP_ENEMY_发狂的野枭兽|r << !Shaman
     >>击杀 |cRXP_ENEMY_发狂的野枭兽|r，拾取它们的 |cRXP_LOOT_仪式火炬|r << Shaman
-    >>|cRXP_WARN_You will finish this shortly if you haven't yet|r
+    >>|cRXP_WARN_You will finish this shortly if you haven't yet|r (NOT TRANSLATED IN :zhCN YET)
     .complete 9573,2 --Kill Crazed Wildkin (x9)
     .complete 9465,1 << Shaman --Collect Ritual Torch (x1)
     .mob 发狂的野枭兽
 step
     .isOnQuest 9573,9566
-    .goto Azuremyst Isle,45.391,18.194,12 >>离开洞穴
+    .goto Azuremyst Isle,45.391,18.194,12 >> 离开洞穴
 step
     .goto Azuremyst Isle,46.685,20.617
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_止松老酋长|r 对话
     .target 止松老酋长
-    .turnin 9566 >>交任务 血水晶
+    .turnin 9566 >> 交任务 血水晶
 step
     #optional
     .isQuestComplete 9573
     .goto Azuremyst Isle,46.904,21.160
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_止松酋长|r 对话
     .target 止松酋长
-    .turnin 9573 >>交任务 欧莫鲁酋长
+    .turnin 9573 >> 交任务 欧莫鲁酋长
 step
     .goto Azuremyst Isle,46.972,22.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_启示者库尔兹|r 对话
     .target 启示者库尔兹
-    .accept 9570 >>接受任务 可怕的库肯
+    .accept 9570 >> 接受任务 可怕的库肯
 step
 	.goto Azuremyst Isle,46.964,22.011
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_帕卡特·钢皮|r 对话
-    .vendor >>|cRXP_BUY_购买一个|r |T133634:0|t[棕色小包]
+    .vendor >> |cRXP_BUY_购买一个|r |T133634:0|t[棕色小包]
     .target 帕卡特·钢皮
     .subzoneskip 3572,1
 step
     .isOnQuest 9570,9573
-    .goto Azuremyst Isle,45.391,18.194,20 >>再次进入止松要塞洞穴
+    .goto Azuremyst Isle,45.391,18.194,20 >> 再次进入止松要塞洞穴
 step
     #completewith next
     >>击杀 |cRXP_ENEMY_发狂的野枭兽|r << !Shaman
@@ -1433,38 +1433,38 @@ step
     .goto Azuremyst Isle,46.904,21.160
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_止松酋长|r 对话
     .target 止松酋长
-    .turnin 9573 >>交任务 欧莫鲁酋长
+    .turnin 9573 >> 交任务 欧莫鲁酋长
 step
     .goto Azuremyst Isle,46.972,22.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_启示者库尔兹|r 对话
     .target 启示者库尔兹
-    .turnin 9570 >>交任务 可怕的库肯
-    .accept 9571 >>接受任务 库肯的毛皮
+    .turnin 9570 >> 交任务 可怕的库肯
+    .accept 9571 >> 接受任务 库肯的毛皮
 step << Shaman
     .goto Azuremyst Isle,46.685,20.617
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_止松老酋长|r 对话
-    .accept 9622 >>接受任务 警告你的人民
+    .accept 9622 >> 接受任务 警告你的人民
     .target 止松老酋长
 step
 	#label end
     .goto Azuremyst Isle,44.762,23.906
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫多|r 对话
     .target 莫多
-    .turnin 9571 >>交任务 库肯的毛皮
+    .turnin 9571 >> 交任务 库肯的毛皮
 step << Shaman
     .goto Azuremyst Isle,59.534,17.951
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_坦普|r 对话
-    .turnin 9465 >>交任务  火焰的召唤
-    .accept 9467 >>接受任务 火焰的召唤
+    .turnin 9465 >> 交任务 火焰的召唤
+    .accept 9467 >> 接受任务 火焰的召唤
     .target 坦普
 step << Shaman
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
-    .turnin 9622 >>交任务 警告你的人民
+    .turnin 9622 >> 交任务 警告你的人民
     .target 大主教梅内莱厄斯
 step << Shaman
     #completewith Wickerman
-    .subzone 3639 >>前往 银雾岛
+    .subzone 3639 >> 前往 银雾岛
 step << Shaman
     #completewith Wickerman
     .use 24336 >>打开 |T133655:0|t[防火背包]，获取 |T135432:0|t[仪祭火炬]
@@ -1486,8 +1486,8 @@ step << Shaman
 step << Shaman
     .goto Azuremyst Isle,59.534,17.951
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_坦普|r 对话
-    .turnin 9467 >>交任务  火焰的召唤
-    .accept 9468 >>接受任务 火焰的召唤
+    .turnin 9467 >> 交任务 火焰的召唤
+    .accept 9468 >> 接受任务 火焰的召唤
     .target 坦普
 step
     #completewith next
@@ -1507,10 +1507,10 @@ step
     .goto Azuremyst Isle,34.6,20.2,50,0
     .goto Azuremyst Isle,34.6,15.2,50,0
     >>击杀 |cRXP_ENEMY_咕噜咕拉|r. 拾取以获得|T134350:0|t[|cRXP_LOOT_古尔弗的尊严|r]
-    .use 23850 >>|cRXP_WARN_使用|r |T134350:0|t[|cRXP_LOOT_古尔弗的尊严|r] |cRXP_WARN_开始任务|r
+    .use 23850 >> |cRXP_WARN_使用|r |T134350:0|t[|cRXP_LOOT_古尔弗的尊严|r] |cRXP_WARN_开始任务|r
     >>|cRXP_ENEMY_咕噜咕拉|r |cRXP_WARN_沿海岸巡逻|r
 	.collect 23850,1,9564,1 --Gurf's Dignity (1)
-    .accept 9564 >>接受任务 古尔弗的尊严
+    .accept 9564 >> 接受任务 古尔弗的尊严
 	.unitscan 咕噜咕拉
 step
     #loop
@@ -1530,29 +1530,29 @@ step
 step
     .goto Azuremyst Isle,44.627,23.481
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古尔弗|r 对话
-    .turnin 9564 >>交任务 古尔弗的尊严
-    .turnin 9562 >>交任务 鱼人……
+    .turnin 9564 >> 交任务 古尔弗的尊严
+    .turnin 9562 >> 交任务 鱼人……
     .target 古尔弗
 step
     .goto Bloodmyst Isle,63.5,88.8
-	.zone Bloodmyst Isle >>前往 秘血岛
+	.zone Bloodmyst Isle >> 前往 秘血岛
 step
     .goto Bloodmyst Isle,63.426,88.787
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥纳尔|r 对话
     .target 奥纳尔
-    .accept 9624 >>接受任务 美味的点心
+    .accept 9624 >> 接受任务 美味的点心
 step
     .isOnQuest 9625
     .goto Bloodmyst Isle,63.036,87.905
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷象管理者沃克汉|r 对话
     .target 雷象管理者沃克汉
-    .turnin 9625 >>交任务 雷象可不是好玩的！
-    .accept 9634 >>接受任务 大战异型掠夺者
+    .turnin 9625 >> 交任务 雷象可不是好玩的！
+    .accept 9634 >> 接受任务 大战异型掠夺者
 step
     .goto Bloodmyst Isle,63.036,87.905
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷象管理者沃克汉|r 对话
     .target 雷象管理者沃克汉
-    .accept 9634 >>接受任务 大战异型掠夺者
+    .accept 9634 >> 接受任务 大战异型掠夺者
 step
     #completewith next
 	>>拾取地上的 |cRXP_LOOT_沙梨|r
@@ -1590,16 +1590,16 @@ step
     .goto Bloodmyst Isle,63.426,88.787
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥纳尔|r 对话
     .target 奥纳尔
-    .turnin 9624 >>交任务 美味的点心
+    .turnin 9624 >> 交任务 美味的点心
 step
     .goto Bloodmyst Isle,63.036,87.905
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷象管理者沃克汉|r 对话
     .target 雷象管理者沃克汉
-    .turnin 9634 >>交任务 大战异型掠夺者
+    .turnin 9634 >> 交任务 大战异型掠夺者
 step
     .goto Bloodmyst Isle,68.257,80.999
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_止松公主|r 对话
-    .accept 9667 >>接受任务 拯救止松公主
+    .accept 9667 >> 接受任务 拯救止松公主
     .target 止松公主
 step
     .goto Bloodmyst Isle,64.2,76.8
@@ -1617,7 +1617,7 @@ step
 step
     .goto Bloodmyst Isle,62.998,87.541
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯希尔|r 对话
-    .accept 9663 >>接受任务 凯希尔的信使
+    .accept 9663 >> 接受任务 凯希尔的信使
     .target 凯希尔
 step
     .isOnQuest 9663
@@ -1630,67 +1630,67 @@ step
 step
     #optional
     #completewith next
-    .subzone 3584 >>前往血环堡
+    .subzone 3584 >> 前往血环堡
 step
     .goto Bloodmyst Isle,55.843,59.807
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托菲尔·罗阿|r 对话
     .target 托菲尔·罗阿
-    .accept 9603 >>接受任务 床铺，绷带，以及更多
+    .accept 9603 >> 接受任务 床铺，绷带，以及更多
 step
     .goto Bloodmyst Isle,55.156,55.953
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_止松大使欧罗尔格|r 对话
-    .turnin 9667 >>交任务 拯救止松公主
+    .turnin 9667 >> 交任务 拯救止松公主
     .target 止松大使欧罗尔格
 step
     .goto Bloodmyst Isle,56.428,56.817
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛特帕尔姆|r 对话
     .target 玛特帕尔姆
-    .accept 9648 >>接受任务 玛特帕尔姆蘑菇展
+    .accept 9648 >> 接受任务 玛特帕尔姆蘑菇展
 step
     #completewith next
     .goto Bloodmyst Isle,57.680,53.876
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_兰度|r 对话
     .target 兰度
-    .turnin 9603 >>交任务 床铺，绷带，以及更多
+    .turnin 9603 >> 交任务 床铺，绷带，以及更多
 step
     .goto Bloodmyst Isle,57.680,53.876
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_兰度|r 对话
     .target 兰度
-    .fp Blood Watch>>获取秘血岗哨的飞行路径
+    .fp Blood Watch>> 获取秘血岗哨的飞行路径
     .subzoneskip 3584,1
 step
     #optional
     .goto Bloodmyst Isle,57.680,53.876
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_兰度|r 对话
     .target 兰度
-    .turnin 9603 >>交任务 床铺，绷带，以及更多
+    .turnin 9603 >> 交任务 床铺，绷带，以及更多
 step
     .goto Bloodmyst Isle,52.684,53.214
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_主教埃德门图斯|r 对话
-    .accept 9693 >>接受任务 阿古斯的意义
+    .accept 9693 >> 接受任务 阿古斯的意义
     .target 主教埃德门图斯
 step
     .goto Bloodmyst Isle,52.588,53.207
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_先行官米库拉斯|r 对话
-    .accept 9581 >>接受任务 研究水晶
+    .accept 9581 >> 接受任务 研究水晶
     .target 先行官米库拉斯
 step
     .solo
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守备官波鲁斯|r 对话
     .target 守备官波鲁斯
-    .turnin 9693 >>交任务 阿古斯的意义
+    .turnin 9693 >> 交任务 阿古斯的意义
 step
     .group
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守备官波鲁斯|r 对话
     .target 守备官波鲁斯
-    .turnin 9693 >>交任务 阿古斯的意义
-    .accept 9694 >>接受任务 秘血岗哨
+    .turnin 9693 >> 交任务 阿古斯的意义
+    .accept 9694 >> 接受任务 秘血岗哨
 step
     #optional
     #sticky
-    .abandon 9663 >>放弃任务 凯希尔的信使
+    .abandon 9663 >> 放弃任务 凯希尔的信使
 step
     .group 2
     #loop
@@ -1710,7 +1710,7 @@ step
     .goto Bloodmyst Isle,55.429,55.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守备官波鲁斯|r 对话
     .target 守备官波鲁斯
-    .turnin 9694 >>交任务 秘血岗哨
+    .turnin 9694 >> 交任务 秘血岗哨
 step
     #completewith ImpactSiteCrystalSample
     .xp 12
@@ -1755,7 +1755,7 @@ step
 step
     .goto Bloodmyst Isle,62.998,87.541
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯希尔|r 对话
-    .accept 9663 >>接受任务 凯希尔的信使
+    .accept 9663 >> 接受任务 凯希尔的信使
     .target 凯希尔
 step
     #completewith next
@@ -1764,96 +1764,96 @@ step
     .goto Azuremyst Isle,50.99,13.09,70,0
     .goto Azuremyst Isle,49.40,23.09,80,0
     .goto Azuremyst Isle,46.685,20.617
-	.subzone 3572 >>|cRXP_WARN_不要与任何怪物交战、攻击或施放任何法术，否则你会被强制下坐骑！如果被身后攻击触发迷惑，同样也会被强制下坐骑！|r
+	.subzone 3572 >> |cRXP_WARN_不要与任何怪物交战、攻击或施放任何法术，否则你会被强制下坐骑！如果被身后攻击触发迷惑，同样也会被强制下坐骑！|r
     *|cRXP_WARN_跟随向南的道路|r
 step << !Shaman
     .goto Azuremyst Isle,46.685,20.617
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_止松老酋长|r 对话
-    .accept 9622 >>接受任务 警告你的人民
+    .accept 9622 >> 接受任务 警告你的人民
     .target 止松老酋长
 step
     .goto Azuremyst Isle,49.25,49.53
     .isOnQuest 9663
-    .subzone 3576 >>|cRXP_WARN_继续沿路南行，前往碧蓝岗哨|r
+    .subzone 3576 >> |cRXP_WARN_继续沿路南行，前往碧蓝岗哨|r
 step << Mage
     .goto Azuremyst Isle,49.868,49.949
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞米德|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 塞米德
     .subzoneskip 3576,1
     .xp <12,1
 step << Warrior
     .goto Azuremyst Isle,50.023,50.515
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁安达|r 对话
-    .turnin 9582 >>交任务 一人之力
-    .accept 10350 >>接受任务 贝霍玛特
+    .turnin 9582 >> 交任务 一人之力
+    .accept 10350 >> 接受任务 贝霍玛特
     .target 鲁安达
     .subzoneskip 3576,1
 step << Warrior
     .goto Azuremyst Isle,50.023,50.515
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁安达|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 鲁安达
     .subzoneskip 3576,1
     .xp <12,1
 step << Hunter
     .goto Azuremyst Isle,49.780,51.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾克提恩|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 艾克提恩
     .subzoneskip 3576,1
     .xp <12,1
 step << Priest
     .goto Azuremyst Isle,48.603,49.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_古安|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 古安
     .subzoneskip 3576,1
     .xp <12,1
 step << Paladin
     .goto Azuremyst Isle,48.356,49.558
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图拉丝|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 图拉丝
     .subzoneskip 3576,1
     .xp <12,1
 step << Shaman
     .goto Azuremyst Isle,48.053,50.419
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图伦|r 对话
-    .turnin 9468 >>交任务  火焰的召唤
-    .accept 9461 >>接受任务 火焰的召唤
+    .turnin 9468 >> 交任务 火焰的召唤
+    .accept 9461 >> 接受任务 火焰的召唤
     .target 图伦
     .subzoneskip 3576,1
 step << Shaman
     .goto Azuremyst Isle,48.053,50.419
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图伦|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 图伦
     .subzoneskip 3576,1
     .xp <12,1
 step
     #optional
-    .use 23910 >>|cRXP_WARN_使用 |r|T133473:0|t[血精灵通讯器] |cRXP_WARN_来开始任务|r
-    .accept 9616 >>接受任务 强盗！
+    .use 23910 >> |cRXP_WARN_使用 |r|T133473:0|t[血精灵通讯器] |cRXP_WARN_来开始任务|r
+    .accept 9616 >> 接受任务 强盗！
     .itemcount 23910,1
 step
     #optional
     .isOnQuest 9616
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
-    .turnin 9616 >>交任务 强盗！
+    .turnin 9616 >> 交任务 强盗！
     .target 大主教梅内莱厄斯
 step
     #optional
     .isOnQuest 9612
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
-    .turnin 9612 >>交任务 非常感谢！
+    .turnin 9612 >> 交任务 非常感谢！
     .target 大主教梅内莱厄斯
 step
     .goto Azuremyst Isle,48.391,51.771
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_学者法蒂玛|r 对话
-    .train 3273 >>训练 |T135966:0|t[急救]
+    .train 3273 >> 训练 |T135966:0|t[急救]
     .target 学者法蒂玛
 step
     .goto 1943/1,5143.700,6130.400
@@ -1867,16 +1867,16 @@ step
 step << !Shaman
     .goto Azuremyst Isle,47.110,50.603
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大主教梅内莱厄斯|r 对话
-    .turnin 9622 >>交任务 警告你的人民
+    .turnin 9622 >> 交任务 警告你的人民
     .target 大主教梅内莱厄斯
 step
     #completewith next
-    .goto The Exodar,73.682,53.701,15 >>前往埃索达内部
+    .goto The Exodar,73.682,53.701,15 >> 进入埃索达
 step
     .goto 1947/1,5903.899,6593.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布雷尔|r 对话
     .target 布雷尔 <旅店老板>
-    .home >>将你的炉石设为埃索达
+    .home >> 将你的炉石设为埃索达
     .bindlocation 3557
 step
     #ah
@@ -1933,7 +1933,7 @@ step << Shaman/Warrior
 step << Shaman/Warrior
     #optional
     #sticky
-    .equip 16,854 >>|cRXP_WARN_装备|r |T135154:0|t[短杖]
+    .equip 16,854 >> |cRXP_WARN_装备|r |T135154:0|t[短杖]
     .use 854
     .itemcount 854,1
 step << Paladin
@@ -1969,23 +1969,23 @@ step << Paladin
 step << Paladin
     #optional
     #sticky
-    .equip 16,1197 >>|cRXP_WARN_装备|r |T133477:0|t[巨棒]
+    .equip 16,1197 >> |cRXP_WARN_装备|r |T133477:0|t[巨棒]
     .use 1197
     .itemcount 1197,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
     .itemcount 1198,<1 -- skips if had money to buy Claymore + traiing 2h swords
 step << Paladin
 	#completewith next
-	.goto The Exodar,53.696,78.280,15 >>沿着坡道向上，前往 |cRXP_FRIENDLY_韩迪尔|r
+	.goto The Exodar,53.696,78.280,15 >> 沿着坡道向上，前往 |cRXP_FRIENDLY_韩迪尔|r
 step << Paladin
     .goto The Exodar,53.362,85.753
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_韩迪尔|r 对话
-    .train 202 >>学习双手剑
+    .train 202 >> 学习双手剑
     .target 韩迪尔
 step << Paladin
     #optional
     #sticky
-    .equip 16,1198 >>|cRXP_WARN_Equip the|r |T135350:0|t[优质重剑]
+    .equip 16,1198 >> |cRXP_WARN_Equip the|r |T135350:0|t[优质重剑]
     .use 1198
     .itemcount 1198,1
     .itemStat 16,QUALITY,<7
@@ -1993,31 +1993,31 @@ step << Paladin
 step << Warrior
     #completewith next
     .goto The Exodar,53.39,85.68,15,0
-    .goto The Exodar,50.50,81.28,20 >>上楼梯前往顶层的 |cRXP_FRIENDLY_贝霍玛特|r
+    .goto The Exodar,50.50,81.28,20 >> 上楼梯前往顶层的 |cRXP_FRIENDLY_贝霍玛特|r
 step << Warrior
     .goto The Exodar,55.580,82.290
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝霍玛特|r 对话
-    .turnin 10350 >>交任务 贝霍玛特
+    .turnin 10350 >> 交任务 贝霍玛特
     .target 贝霍玛特
 step << Shaman
     .goto The Exodar,32.844,54.484
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_先知维伦|r 对话
     .target 先知维伦
-    .turnin 9461 >>交任务  火焰的召唤
-    .accept 9555 >>接受任务 火焰的召唤
+    .turnin 9461 >> 交任务 火焰的召唤
+    .accept 9555 >> 接受任务 火焰的召唤
 step << Shaman
     #completewith next
-    .goto The Exodar,27.90,29.43,10 >>沿斜坡前去找 |cRXP_FRIENDLY_先知诺布杜|r
+    .goto The Exodar,27.90,29.43,10 >> 沿斜坡前去找 |cRXP_FRIENDLY_先知诺布杜|r
 step << Shaman
     .goto The Exodar,31.27,27.65,15,0
     .goto The Exodar,29.76,33.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_预言者努波顿|r 对话
     >>|cRXP_FRIENDLY_预言者努波顿|r |cRXP_WARN_偶尔巡逻|r
     .target 预言者努波顿
-    .turnin 9555 >>交任务  火焰的召唤
+    .turnin 9555 >> 交任务 火焰的召唤
 step
     #completewith DarkshoreBoat
-    .goto 1947/1,6179.200,6216.100,20 >>离开埃索达
+    .goto 1947/1,6179.200,6216.100,20 >> 离开埃索达
     .zoneskip The Exodar,1
 step
     #completewith DarkshoreBoat
@@ -2044,12 +2044,12 @@ step
 step
     #optional
     .goto Azuremyst Isle,20.405,54.184
-    .zone Darkshore >>乘船前往黑海岸
-    >>|cRXP_WARN_在等待船的时候提升你的|r |T135966:0|t[急救] |cRXP_WARN_等级|r
+    .zone Darkshore >> 乘船前往黑海岸
+    >>|cRXP_WARN_趁等船时升级|r |T135966:0|t[急救] |cRXP_WARN_技能|r
     .skill firstaid,75,1 -- shows if firstaid is <75
     .skill firstaid,<1,1 -- shows if firstaid is >1
 step
     #label DarkshoreBoat
     .goto Azuremyst Isle,20.405,54.184
-    .zone Darkshore >>乘船前往黑海岸
+    .zone Darkshore >> 乘船前往黑海岸
 ]])

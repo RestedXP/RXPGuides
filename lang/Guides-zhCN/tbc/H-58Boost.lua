@@ -3,16 +3,16 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group RestedXP 《燃烧的远征》练级指南（部落版）
+#group RestedXP 《燃烧的远征》升级指南（部落版）
 << Horde
 #name 直升人物 58-60
 #subgroup RestedXP 部落直升 58-60
 #subweight -1
-#title Boosted Character 58-60
+#title Boosted Character 58-60 (NOT TRANSLATED IN :zhCN YET)
 #next 60-61 地狱火半岛
 
 step
-+As soon as you log in for the first time, finish the little tutorial section in front of your class trainer to get access to all of the boosted gear
++As soon as you log in for the first time, finish the little tutorial section in front of your class trainer to get access to all of the boosted gear (NOT TRANSLATED IN :zhCN YET)
 .use 185964
 .use 186051
 .use 186052
@@ -33,8 +33,8 @@ step << Druid
 step << Mage
     .goto Orgrimmar,38.66,85.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_索乌|r 在小屋顶部对话
-    .train 3567 >>训练 |T135759:0|t[传送：奥格瑞玛]
-    .train 11417 >>训练 |T135744:0|t[传送门：奥格瑞玛]
+    .train 3567 >> 训练 |T135759:0|t[传送：奥格瑞玛]
+    .train 11417 >> 训练 |T135744:0|t[传送门：奥格瑞玛]
     .target 索乌
 step << Warlock
     .goto Orgrimmar,47.52,46.73
@@ -62,7 +62,7 @@ step
 step
     #completewith UCflightpath1
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >>进入幽暗城
+    .zone Undercity >> 进入幽暗城
     .zoneskip Undercity
 step
     #completewith UCflightpath1
@@ -71,17 +71,17 @@ step
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >>乘电梯下去到幽暗城
+    .goto Undercity,65.53,43.62,15 >> 乘电梯下去到幽暗城
 step
     #label UCflightpath1
     .isQuestAvailable 5211
     .goto Undercity,63.25,48.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
-    .fp Undercity >>获得幽暗城的飞行路径
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    .fp Undercity >> 获得幽暗城的飞行路径
     .target 迈克尔·加勒特
 step
 	#completewith next
-	.subzone 152 >>离开幽暗城并前往亡灵壁垒
+	.subzone 152 >> 离开幽暗城并前往亡灵壁垒
 step
     .goto Tirisfal Glades,83.15,68.92
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t前往亡灵壁垒，然后与 |cRXP_FRIENDLY_德灵顿|r 对话
@@ -99,7 +99,7 @@ step
 step
     .goto Tirisfal Glades,83.2,71.4
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦拉·黎明之刃|r 对话
-    .accept 9443 >>Accept in The So-Called Mark of the Lightbringer
+    .accept 9443 >>Accept in The So-Called Mark of the Lightbringer (NOT TRANSLATED IN :zhCN YET)
     .target 麦拉·黎明之刃
 step
     .goto Tirisfal Glades,83.29,72.34
@@ -119,7 +119,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德灵顿|r 对话
     .turnin 5096 >>交任务 误导血色十字军
     .accept 5098 >>接受任务 标记哨塔
-    .accept 5228 >>接受任务 瘟疫之锅
+    .accept 5228 >>接任务 瘟疫之锅
 	.target 高级执行官德灵顿
 step
     .goto Tirisfal Glades,83.03,71.91
@@ -151,7 +151,7 @@ step
     .accept 5023 >>接受任务 迟到总比不到好
 step
 	#completewith next
-	.subzone 152 >>回到亡灵壁垒，提瑞斯法
+	.subzone 152 >> 回到亡灵壁垒，提瑞斯法
 step
     .goto Tirisfal Glades,83.03,71.91
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_范蒂丝|r 对话
@@ -165,13 +165,13 @@ step
     .collect 22526,30,91261 --Bone Fragments
 step
     .goto Western Plaguelands,42.28,66.05
-    .use 12815 >>|cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
+    .use 12815 >> |cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
 	-->>|cRXP_WARN_Do not engage the elite inside|r --not elite anymore in tbc
     .complete 5098,2 --Tower Two marked (1)
 step
     #label TowerOne
     .goto Western Plaguelands,40.15,71.50
-    .use 12815 >>|cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
+    .use 12815 >> |cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
 	-->>|cRXP_WARN_Do not engage the elite inside|r --not elite anymore in tbc
     .complete 5098,1 --Tower One marked (1)
 step
@@ -181,7 +181,7 @@ step
 	.target 克罗米
 step
     .goto Western Plaguelands,44.24,63.06
-    .use 12815 >>|cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
+    .use 12815 >> |cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
 	-->>|cRXP_WARN_Do not engage the elite inside|r --not elite anymore in tbc
     .complete 5098,3 --Tower Three marked (1)
 step
@@ -192,7 +192,7 @@ step
 	.mob 雷恩·米克基尔
 step
     .goto Western Plaguelands,46.73,71.14
-    .use 12815 >>|cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
+    .use 12815 >> |cRXP_WARN_使用|r |T135432:0|t[信号火炬] |cRXP_WARN_在塔楼入口旁|r
 	-->>|cRXP_WARN_Do not engage the elite inside|r --not elite anymore in tbc
     .complete 5098,4 --Tower Four marked (1)
 step
@@ -317,7 +317,7 @@ step
 	.target 科尔斯塔·迪普沙东
 step
 	#completewith next
-	.subzone 152 >>回到亡灵壁垒，提瑞斯法
+	.subzone 152 >> 回到亡灵壁垒，提瑞斯法
 step
     .goto Tirisfal Glades,83.03,71.91
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_范蒂丝|r 对话
@@ -520,10 +520,10 @@ step
     .isQuestTurnedIn 5149
 step
 	#completewith RottingUndead
-	.subzone 2264 >>前往考林路口
+	.subzone 2264 >> 前往考林路口
 step
 	#completewith next
-	>>击杀 |cRXP_ENEMY_亡灵|r。拾取它们的 |cRXP_LOOT_生命腐质|r。
+	>>击杀 |cRXP_ENEMY_亡灵|r 拾取它们的 |cRXP_LOOT_生命腐质|r。
 	>>|cRXP_WARN_北边和东边的道路上有多组精英怪巡逻。科林路口里面有隐形怪巡逻，所以尽量把怪拉出来打|r
 	.collect 15447,7 --Living Rot (7)
 	.mob 憎恨吟唱者
@@ -546,7 +546,7 @@ step
     .complete 6022,1 --Coagulated Rot (1)
 step
 	#completewith LHFP
-	.subzone 2268 >>前往圣光之愿礼拜堂
+	.subzone 2268 >> 前往圣光之愿礼拜堂
 step
     .goto Eastern Plaguelands,79.60,63.87
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥林 |r 对话
@@ -562,13 +562,13 @@ step
 step
     .goto Eastern Plaguelands,81.627,58.077
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杰希卡·查伯斯|r 对话
-    .home >>将你的炉石设置在圣光之愿礼拜堂
+    .home >> 将你的炉石设置在圣光之愿礼拜堂
     .target |Tinterface/worldmap/chatbubble_64grey.blp:20|t在塔顶与 吉安娜·普罗德摩尔 对话
     .bindlocation 2268
     .subzoneskip 2268,1
 step
     #completewith next
-    .subzone 2273 >>前往祖玛沙尔
+    .subzone 2273 >> 前往祖玛沙尔
 step
 	.goto Eastern Plaguelands,64.25,22.09,50,0
 	.goto Eastern Plaguelands,68.57,20.95,50,0
@@ -579,7 +579,7 @@ step
 	.unitscan 渗透者哈米亚
 step
 	#completewith Termites
-	.subzone 2277 >>前往病木林
+	.subzone 2277 >> 前往病木林
 step
     #completewith Egan1
     .goto Eastern Plaguelands,77.11,48.00,0
@@ -662,8 +662,8 @@ step
 step
     .goto Eastern Plaguelands,81.05,57.55
     >>与 |cRXP_FRIENDLY_梅兹|r 对话
-    .accept 9141 >>接受任务 "梅兹的文书"
-    .turnin 9141 >>交任务 "梅兹的文书"
+    .accept 9141 >> 接受任务 "梅兹的文书"
+    .turnin 9141 >> 交任务 "梅兹的文书"
     .target 卡萨·赤翼
     .itemcount 12844,1 --Argent Dawn Valor Token (1)
 step
@@ -739,7 +739,7 @@ step
 	.goto Western Plaguelands,38.60,56.20,50,0
 	.goto Western Plaguelands,37.80,57.60,50,0
 	>>击杀那些 |cRXP_ENEMY_喋喋不休的食尸鬼|r，拾取 |cRXP_LOOT_另一半好运护符|r
-    .use 12722 >>使用它合成 |cRXP_LOOT_另一半好运护符|r
+    .use 12722 >> 使用它合成 |cRXP_LOOT_另一半好运护符|r
     .complete 5051,1 --Good Luck Charm (1)
 	.unitscan 喋喋不休的食尸鬼
 step
@@ -769,7 +769,7 @@ step
 	>>拾取 |cRXP_PICK_发霉的书籍|r 在市政厅里直到获得 |cRXP_LOOT_达隆郡的历史|r
 	>>|cRXP_WARN_很多书都是假的，打开还会刷出怪。真书的书页是纯白的，没有灰色或深色的阴影。你可能得去开假书，才能把真书刷出来|r
     .complete 5154,1 --Annals of Darrowshire (1)
-	.link https://i.imgur.com/B2HDb6K.png >>https://i.imgur.com/B2HDb6K.png >> 点击这里查看图片示例
+	.link https://i.imgur.com/B2HDb6K.png >> 点击这里查看图片示例
 step
     .goto Western Plaguelands,39.46,66.76
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗米|r 在旅店的顶楼对话
@@ -812,7 +812,7 @@ step
 	.goto Western Plaguelands,48.35,32.00
 	>>进入伐木场，点击坡道边的 |cRXP_PICK_北山伐木场箱子|r ，然后点击 |cRXP_PICK_白蚁桶|r
     .turnin 5902 >>交任务 瘟疫与你
-    .accept 6390 >>接受任务 瘟疫与你
+    .accept 6390 >>接任务 瘟疫与你
 step
     .goto Western Plaguelands,39.46,66.76
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗米|r 在旅店的顶楼对话
@@ -849,14 +849,14 @@ step << skip
 step << skip
     .goto Stranglethorn Vale,32.5,29.3
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞斯塔|r 对话
-	.fly Stonard >>飞往斯通纳德
+	.fly Stonard >> 飞往斯通纳德
 	.target 塞斯塔
     .subzoneskip 75
 step << skip
 	#completewith next
 	.goto Swamp of Sorrows,33.4,71.9,60,0
 	.goto Swamp of Sorrows,33.2,68.4,60,0
-	.zone Blasted Lands >>前往诅咒之地
+	.zone Blasted Lands >> 前往诅咒之地
 
 step << skip
     .goto Blasted Lands,58.1,56.1
