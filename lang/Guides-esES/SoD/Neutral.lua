@@ -1,4 +1,4 @@
-if GetLocale() ~= "esES" then return end
+if GetLocale() ~= "esES" and GetLocale() ~= "esMX" then return end
 local _,addon = ...
 if addon.GetSeason() ~= 2 then return end
 RXPGuides.RegisterGuide([[

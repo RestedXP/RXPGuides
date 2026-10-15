@@ -1,4 +1,4 @@
-if GetLocale() ~= "esES" then return end
+if GetLocale() ~= "esES" and GetLocale() ~= "esMX" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
@@ -113,7 +113,7 @@ step << Rogue
     .goto Elwynn Forest,67.4,78.6,60,0
     .goto Elwynn Forest,70.8,79.8,60,0
     .goto Elwynn Forest,89.2,78.8
-    >>|T133644:0|t[Roba] al|cRXP_ENEMY_Defias|r. Despójalos para obtener el |T134327:0|t[|cRXP_LOOT_Trozo superior izquierdo de mapa]|r
+    >>|T133644:0|tUsa [Robar] en los |cRXP_ENEMY_Defias|r. Despójalos para obtener el |T134327:0|t[|cRXP_LOOT_Trozo superior izquierdo de mapa]|r
     >>|cRXP_WARN_Debes estar en|r |T132320:0|t[Sigilo] |cRXP_WARN_para usar|r |T133644:0|t[Robar]
     >>|cRXP_WARN_Nota: Esto también lo puede soltar cualquier otro miembro |cRXP_ENEMY_Defias|r en el Bosque de Elwynn|r
     .collect 203785,1 -- Top-Left Map Piece (1)

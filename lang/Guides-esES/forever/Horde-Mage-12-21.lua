@@ -1,4 +1,4 @@
-if GetLocale() ~= "esES" then return end
+if GetLocale() ~= "esES" and GetLocale() ~= "esMX" then return end
 local faction = UnitFactionGroup("player")
 if faction == "Alliance" then return end
 

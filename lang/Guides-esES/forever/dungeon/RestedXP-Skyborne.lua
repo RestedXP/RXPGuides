@@ -1,4 +1,4 @@
-if GetLocale() ~= "esES" then return end
+if GetLocale() ~= "esES" and GetLocale() ~= "esMX" then return end
 -- Main 1-14 Skyborne leveling guide
 RXPGuides.RegisterGuide([[
 #forever
