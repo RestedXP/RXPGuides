@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group Guia RestedXP TBC (A)
+#group RestedXP Guia TBC (A)
 << Alliance
 #name Personagem Melhorado 58-60
 #subgroup RestedXP Aliança 1-20 58-60
@@ -29,12 +29,12 @@ step
     .goto Stormwind City,66.277,62.137
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
     .complete 64038,1 --Speak to Dungar Longdrink, the Gryphon Master (1)
-    .fly Morgan's Vigil >>Fly to Vigia de Morgan
+    .fly Morgan's Vigil >> Fly to Vigia de Morgan
     .target Dungar Longdrink
 step
     .goto Burning Steppes,85.820,68.948
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helendis Flumicórnio|r
-    .accept 4182 >>Aceite Ameaça Dragonkin
+    .accept 4182 >> Aceite Ameaça Dragonkin
     .target Helendis Riverhorn
 step
     #loop
@@ -59,22 +59,22 @@ step
 step
     .goto Burning Steppes,85.820,68.948
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helendis Flumicórnio|r
-    .turnin 4182 >>Entregue Ameaça Dragonkin
-    .accept 4183 >>Aceite The True Masters
+    .turnin 4182 >> Entregue Ameaça Dragonkin
+    .accept 4183 >> Aceite The True Masters
     .target Helendis Riverhorn
 step
     .isQuestTurnedIn 4182
     #completewith next
     .goto Burning Steppes,84.333,68.328
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Borgus Braçoforte|r
-    .fly Redridge >>Voe para Montanhas Cristarrubra
+    .fly Redridge >> Voe para Montanhas Cristarrubra
     .target Borgus Stoutarm
 step
     .isQuestTurnedIn 4182
     .goto Redridge Mountains,29.98,44.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magistrado Salomão|r
-    .turnin 4183 >>Entregue The True Masters
-    .accept 4184 >>Aceite The True Masters
+    .turnin 4183 >> Entregue The True Masters
+    .accept 4184 >> Aceite The True Masters
     .target Magistrate Solomon
 step << Mage
     .isOnQuest 4184
@@ -85,7 +85,7 @@ step << !Mage
     .isQuestTurnedIn 4182
     .goto Redridge Mountains,30.590,59.410
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena Penafúria|r
-    .fly Stormwind >>Voe para Ventobravo
+    .fly Stormwind >> Voe para Ventobravo
     .target Ariena Stormfeather
     .zoneskip Redridge Mountains,1
 step
@@ -97,8 +97,8 @@ step
     .isQuestTurnedIn 4182
     .goto Stormwind City,78.213,17.980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Grão-lorde Bolvar Fordragon|r
-    .turnin 4184 >>Entregue The True Masters
-    .accept 4185 >>Aceite The True Masters
+    .turnin 4184 >> Entregue The True Masters
+    .accept 4185 >> Aceite The True Masters
     .target Highlord Bolvar Fordragon
 step
     .isQuestTurnedIn 4182
@@ -111,35 +111,35 @@ step
     .isQuestTurnedIn 4182
     .goto Stormwind City,78.213,17.980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Grão-lorde Bolvar Fordragon|r
-    .turnin 4185 >>Entregue The True Masters
-    .accept 4186 >>Aceite The True Masters
+    .turnin 4185 >> Entregue The True Masters
+    .accept 4186 >> Aceite The True Masters
     .target Highlord Bolvar Fordragon
 step
     #completewith next
     .goto Stormwind City,66.27,62.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
-    .fly Redridge >>Voe para Montanhas Cristarrubra
+    .fly Redridge >> Voe para Montanhas Cristarrubra
     .target Dungar Longdrink
     .zoneskip Redridge Mountains
 step
     .isQuestTurnedIn 4182
     .goto Redridge Mountains,29.98,44.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magistrado Salomão|r
-    .turnin 4186 >>Entregue The True Masters
-    .accept 4223 >>Aceite The True Masters
+    .turnin 4186 >> Entregue The True Masters
+    .accept 4223 >> Aceite The True Masters
     .target Magistrate Solomon
 step
     #completewith next
     .goto Redridge Mountains,30.590,59.410
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena Penafúria|r
-    .fly Burning Steppes>>Voe para Estepes Ardentes
+    .fly Burning Steppes>> Voe para Estepes Ardentes
     .target Ariena Stormfeather
     .zoneskip Burning Steppes
 step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,84.744,69.015
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Maximiliano|r
-    .turnin 4223 >>Entregue The True Masters
+    .turnin 4223 >> Entregue The True Masters
     .target Marshal Maxwell
 step
     #completewith next
@@ -150,7 +150,7 @@ step
 step
     .goto Hillsbrad Foothills,51.170,58.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Innkeeper Anderson|r
-    .home >>Defina sua Pedra de Retorno em Costa Sul
+    .home >> Defina sua Pedra de Retorno em Costa Sul
     .target Innkeeper Anderson
     .bindlocation 271
 step
@@ -164,44 +164,44 @@ step
 	.goto Western Plaguelands,42.909,84.494
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anchorite Truuen|r
     >>|cRXP_WARN_Pule este passo se ele não estiver aqui|r
-    .accept 9474 >>Aceite The Marca of the Lightbringer
+    .accept 9474 >> Aceite The Marca of the Lightbringer
 	.target Anchorite Truuen
 step
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
-    .accept 5092 >>Aceite Abrindo Caminho
+    .accept 5092 >> Aceite Abrindo Caminho
     .target Commander Ashlam Valorfist
 step
     .goto Western Plaguelands,42.967,83.546
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Oficial Argêntea Cândida|r
-    .accept 5401 >>Aceite Ordem da Aurora Argêntea
-    .turnin 5401 >>Entregue Ordem da Aurora Argêntea
+    .accept 5401 >> Aceite Ordem da Aurora Argêntea
+    .turnin 5401 >> Entregue Ordem da Aurora Argêntea
     .target Argent Officer Pureheart
 step
     #completewith ADC
-    .cast 17670 >>|cRXP_WARN_Equipe o|r |T133440:0|t[Ordem da Aurora Argêntea] |cRXP_WARN_para começar a coletar|r |T133447:0|t[Pedra do Flagelo]
+    .cast 17670 >> |cRXP_WARN_Equipe o|r |T133440:0|t[Ordem da Aurora Argêntea] |cRXP_WARN_para começar a coletar|r |T133447:0|t[Pedra do Flagelo]
     .use 12846
 step
     .goto Western Plaguelands,43.419,84.834
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nathaniel Dumah|r
-    .accept 5903 >>Aceite A Praga Sobre Ti
+    .accept 5903 >> Aceite A Praga Sobre Ti
     .target Nathaniel Dumah
 step
     #completewith next
     .goto Western Plaguelands,42.924,85.061
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bibilfaz Penapita|r
-    .fly Eastern Plaguelands >>Fly to Terras Pestilentas Orientais
+    .fly Eastern Plaguelands >> Fly to Terras Pestilentas Orientais
     .target Bibilfaz Featherwhistle
     .zoneskip Eastern Plaguelands
 step
     .goto Eastern Plaguelands,79.405,63.983
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caretaker Alen|r
-    .accept 5281 >>Aceite As Almas Inquietas
-    .accept 6021 >>Aceite Zaeldarr, o Proscrito
+    .accept 5281 >> Aceite As Almas Inquietas
+    .accept 6021 >> Aceite Zaeldarr, o Proscrito
     .target Caretaker Alen
 step << Hunter
     #sticky
-    .tame 8602 >>|cRXP_WARN_Se seu pet não tem habilidades além de|r |T132270:0|t[Rosnar]|cRXP_WARN_, abandone seu pet e capture um |cRXP_ENEMY_Morcego|r de nível 58 no caminho para Plaguewood|r
+    .tame 8602 >> |cRXP_WARN_Se seu pet não tem habilidades além de|r |T132270:0|t[Rosnar]|cRXP_WARN_, abandone seu pet e capture um |cRXP_ENEMY_Morcego|r de nível 58 no caminho para Plaguewood|r
     >>|cRXP_WARN_Compre alguns|r |T134526:0|t[Dried King Bolete] |cRXP_WARN_para alimentar seu novo pet|r
     .collect 8948,20
     .goto Eastern Plaguelands,79.5,64.0
@@ -232,10 +232,10 @@ step
     #label Egan
     .goto Eastern Plaguelands,14.448,33.740
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Egan|r
-    .turnin 5281 >>Entregue As Almas Inquietas
+    .turnin 5281 >> Entregue As Almas Inquietas
     .target Egan
 step
-    .hs >>Use sua Pedra de Regresso para ir à Costa Sul
+    .hs >> Use sua Pedra de Regresso para ir à Costa Sul
     >>|cRXP_BUY_Compre comida/água se necessário|r << !Warrior !Rogue
 	>>|cRXP_BUY_Compre comida se necessário|r << Warrior/Rogue
     .cooldown item,6948,>2,1
@@ -251,7 +251,7 @@ step
 	.goto Western Plaguelands,42.909,84.494
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anchorite Truuen|r
     >>|cRXP_WARN_Pule este passo se ele não estiver aqui|r
-    .accept 9474 >>Aceite The Marca of the Lightbringer
+    .accept 9474 >> Aceite The Marca of the Lightbringer
 	.target Anchorite Truuen
 step
     .goto Western Plaguelands,48.91,80.84,70,0
@@ -265,31 +265,31 @@ step
     .goto Western Plaguelands,49.2,78.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marlene Trilharrubra|r
     >>|cRXP_FRIENDLY_Marlene Trilharrubra|r também pode estar no andar de cima
-    .accept 5142 >>Aceite Pequena Pâmela
+    .accept 5142 >> Aceite Pequena Pâmela
     .target Marlene Redpath
 step
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
-    .turnin 5092 >>Entregue Abrindo Caminho
-    .accept 5215 >>Aceite Os Caldeirões do Flagelo
-    .accept 5097 >>Aceite Em Todas as Torres de Vigia
+    .turnin 5092 >> Entregue Abrindo Caminho
+    .accept 5215 >> Aceite Os Caldeirões do Flagelo
+    .accept 5097 >> Aceite Em Todas as Torres de Vigia
     .target Commander Ashlam Valorfist
 step
     .goto Western Plaguelands,42.972,84.501
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Alta-sacerdotisa Donélia|r
-    .turnin 5215 >>Entregue Os Caldeirões do Flagelo
-    .accept 5216 >>Aceite Alvo: Campo Pedravil
+    .turnin 5215 >> Entregue Os Caldeirões do Flagelo
+    .accept 5216 >> Aceite Alvo: Campo Pedravil
     .target High Priestess MacDonnell
 step
     .goto Western Plaguelands,43.418,84.834
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nathaniel Dumah|r
-    .turnin 5903 >>Entregue Uma Praga Sobre Vós
-    .accept 5904 >>Aceite A Praga Sobre Ti
+    .turnin 5903 >> Entregue Uma Praga Sobre Vós
+    .accept 5904 >> Aceite A Praga Sobre Ti
     .target Nathaniel Dumah
 step
     .goto Western Plaguelands,40.116,71.561,-1
     .goto Western Plaguelands,40.038,71.713,-1
-    .use 12815 >>|cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre|r
+    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre|r
     .complete 5097,1 --Tower One marked
 step
     .goto Western Plaguelands,37.015,57.145
@@ -300,57 +300,57 @@ step
 step
     .goto Western Plaguelands,37.194,56.860
     >>Clique em |cRXP_PICK_Caldeirão da Praga|r
-    .turnin 5216 >>Entregue Alvo: Campo Pedravil
-    .accept 5217 >>Aceite Retorno ao Acampamento Vento Frio
+    .turnin 5216 >> Entregue Alvo: Campo Pedravil
+    .accept 5217 >> Aceite Retorno ao Acampamento Vento Frio
 step
     .goto Western Plaguelands,42.326,66.105,-1
     .goto Western Plaguelands,42.422,66.222,-1
-    .use 12815 >>|cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre|r
+    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre|r
     .complete 5097,2 --Tower Two marked
 step
     .goto Western Plaguelands,44.217,63.319,-1
     .goto Western Plaguelands,44.247,63.131,-1
-    .use 12815 >>|cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre|r
+    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre|r
     .complete 5097,3 --Tower Three marked
 step
     #label ADC
     .goto Western Plaguelands,46.681,71.135,-1
     .goto Western Plaguelands,46.558,71.156,-1
-    .use 12815 >>|cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre|r
+    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre|r
     .complete 5097,4 --Tower Four marked
 step
     #completewith next
-    .subzone 3197 >>Viaje até Chillwind Camp
+    .subzone 3197 >> Viaje até Chillwind Camp
 step
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
-    .turnin 5097 >>Entregue All Along the Watchtowers
-    .accept 5533 >>Aceite Scolomântia
+    .turnin 5097 >> Entregue All Along the Watchtowers
+    .accept 5533 >> Aceite Scolomântia
     .target Commander Ashlam Valorfist
 step
     #sticky
     #optional
     .isQuestTurnedIn 5097
-    .destroy 12815 >>Destrua a |T135432:0|t[Tocha Sinalizadora]
+    .destroy 12815 >> Destrua a |T135432:0|t[Tocha Sinalizadora]
 step
     .goto Western Plaguelands,42.665,83.774
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Alquimista Arvignon|r
     >>|cRXP_WARN_Não aceite a sequência ainda|r
-    .turnin 5533 >>Entregue Scolomântia
+    .turnin 5533 >> Entregue Scolomântia
     .accept 5537 >>Aceite Fragmentos de Ossos
     .target Alchemist Arbington
 step
     .goto Western Plaguelands,42.972,84.501
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Alta-sacerdotisa Donélia|r
-    .turnin 5217 >>Entregue em Chillwind Camp
-    .accept 5219 >>Aceite Alvo: Lágrimas de Dalson
+    .turnin 5217 >> Entregue em Chillwind Camp
+    .accept 5219 >> Aceite Alvo: Lágrimas de Dalson
     .target High Priestess MacDonnell
 step
     .goto Western Plaguelands,53.733,64.662
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mulgris Riofundo|r
     >>|cRXP_ENEMY_Freezing Carniçais|r |cRXP_WARN_cast|r |T135848:0|t[Congelamento Instantâneo]|cRXP_WARN_. Esta habilidade atordoa por 5 segundos. Evite atrair vários ao mesmo tempo|r
     -->>|cRXP_WARN_If you have an Interact with Target/Mouseover keybind you can talk to |cRXP_FRIENDLY_Mulgris Deepriver|r from outside the house which is a lot safer|r
-    .accept 4984 >>Aceite The Wildlife Suffers Too
+    .accept 4984 >> Aceite The Wildlife Suffers Too
     .target Mulgris Deepriver
 step
     #loop
@@ -371,8 +371,8 @@ step
     .goto Western Plaguelands,47.796,50.671
     >>|cRXP_WARN_Entre no Celeiro das Lágrimas de Dalson|r
     >>Clique em |cRXP_PICK_Mrs. Dalson's Diary|r no chão
-    .accept 5058 >>Aceite Mrs. Dalson Diary
-    .turnin 5058 >>Entregue Mrs. Dalson Diary
+    .accept 5058 >> Aceite Mrs. Dalson Diary
+    .turnin 5058 >> Entregue Mrs. Dalson Diary
 step
     .goto Western Plaguelands,47.86,49.88,25,0
     .goto Western Plaguelands,48.48,51.56,25,0
@@ -387,7 +387,7 @@ step
     #completewith next
     .goto Western Plaguelands,48.109,49.654
     >>Clique em |cRXP_PICK_Casinha|r para invocar |cRXP_ENEMY_Fazendeiro Dalson|r
-    .turnin 5059 >>Entregue Trancado
+    .turnin 5059 >> Entregue Trancado
 step
     .goto Western Plaguelands,48.115,49.814
     >>Mate |cRXP_ENEMY_Fazendeiro Dalson|r. Saque-o pelo |cRXP_LOOT_Dalson Cabinet Chave|r
@@ -396,7 +396,7 @@ step
 step
     .goto Western Plaguelands,47.353,49.626
     >>Clique em |cRXP_PICK_Armário Trancado|r acima das escadas na casa
-    .turnin 5060 >>Entregue Trancado
+    .turnin 5060 >> Entregue Trancado
 step
     .goto Western Plaguelands,46.156,52.427
     >>Mate for the |cRXP_LOOT_Dalson's Tears Cauldron Key|r
@@ -407,18 +407,18 @@ step
     #label DalsonCauldron
     .goto Western Plaguelands,46.176,52.009
     >>Clique em |cRXP_PICK_Caldeirão da Praga|r
-    .turnin 5219 >>Entregue Alvo: Lágrimas de Dalson
-    .accept 5220 >>Aceite Retorno ao Acampamento Vento Frio
+    .turnin 5219 >> Entregue Alvo: Lágrimas de Dalson
+    .accept 5220 >> Aceite Retorno ao Acampamento Vento Frio
 step
     .goto Western Plaguelands,48.348,31.996
     >>Clique em the |cRXP_PICK_Northridge Lumber Mill Crate|rto place the |cRXP_PICK_Termite Barrel|re then click on the |cRXP_PICK_Termite Barrel|rafter
     .skipgossip
-    .turnin 5904 >>Entregue Uma Praga Sobre Vós
-    .accept 6389 >>Aceite A Praga Sobre Ti
+    .turnin 5904 >> Entregue Uma Praga Sobre Vós
+    .accept 6389 >> Aceite A Praga Sobre Ti
 step
     .goto Western Plaguelands,51.923,28.062
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kirsta Deepshadow|r
-    .accept 6004 >>Aceite Negócios inacabados
+    .accept 6004 >> Aceite Negócios inacabados
     .target Kirsta Deepshadow
 step
     .goto Western Plaguelands,50.85,40.68,60,0
@@ -439,8 +439,8 @@ step
 step
     .goto Western Plaguelands,51.923,28.062
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kirsta Deepshadow|r
-    .turnin 6004 >>Entregue Negócios inacabados
-    .accept 6023 >>Aceite Negócios inacabados
+    .turnin 6004 >> Entregue Negócios inacabados
+    .accept 6023 >> Aceite Negócios inacabados
     .target Kirsta Deepshadow
 step
     .goto Western Plaguelands,56.38,34.11,50,0
@@ -469,13 +469,13 @@ step
 step
     .goto Western Plaguelands,51.923,28.062
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kirsta Deepshadow|r
-    .turnin 6023 >>Entregue Negócios inacabados
-    .accept 6025 >>Aceite Negócios inacabados
+    .turnin 6023 >> Entregue Negócios inacabados
+    .accept 6025 >> Aceite Negócios inacabados
     .target Kirsta Deepshadow
 step
     #completewith next
     .goto Western Plaguelands,45.7,18.8
-    .subzone 190 >>Viaje até Hearthglen
+    .subzone 190 >> Viaje até Hearthglen
 step
     .goto Western Plaguelands,45.7,18.8
     >>Vá para a Torre de Hearthglen
@@ -486,28 +486,28 @@ step
 step
     .goto Western Plaguelands,51.923,28.062
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kirsta Deepshadow|r
-    .turnin 6025 >>Entregue Negócios inacabados
+    .turnin 6025 >> Entregue Negócios inacabados
     .isQuestComplete 6025
     .target Kirsta Deepshadow
 step
     #completewith next
-    .subzone 3197 >>Viaje até Chillwind Camp
+    .subzone 3197 >> Viaje até Chillwind Camp
 step
     .goto Western Plaguelands,42.972,84.501
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Alta-sacerdotisa Donélia|r
     .target High Priestess MacDonnell
-    .turnin 5220 >>Entregue em Chillwind Camp
-    .accept 5222 >>Aceite Alvo: Santuário Contorcido
+    .turnin 5220 >> Entregue em Chillwind Camp
+    .accept 5222 >> Aceite Alvo: Santuário Contorcido
 step
     .isQuestComplete 9474
 	.goto Western Plaguelands,42.909,84.494
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anchorite Truuen|r
-    .turnin 9474 >>Entregue A Marca do Portador da Luz
+    .turnin 9474 >> Entregue A Marca do Portador da Luz
 	.target Anchorite Truuen
 step
     .goto Western Plaguelands,43.418,84.834
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nathaniel Dumah|r
-    .turnin 6389 >>Entregue Uma Praga Sobre Vós
+    .turnin 6389 >> Entregue Uma Praga Sobre Vós
     .target Nathaniel Dumah
 step
     #completewith CountingTime
@@ -518,7 +518,7 @@ step
 step
     .goto Western Plaguelands,39.456,66.760
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Crona|r no andar de cima
-    .accept 4971 >>Aceite A Matter of Tempo
+    .accept 4971 >> Aceite A Matter of Tempo
     .target Chromie
 step
     .goto Western Plaguelands,45.172,62.559,25,0
@@ -537,7 +537,7 @@ step
     .isQuestTurnedIn 4971
     .goto Western Plaguelands,39.456,66.760
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Chromie|r
-    .turnin 4972 >>Entregue Contando o Tempo
+    .turnin 4972 >> Entregue Contando o Tempo
     .target Chromie
 step
     #loop
@@ -560,15 +560,15 @@ step
 step
     .goto Western Plaguelands,53.020,65.718
     >>Clique em |cRXP_PICK_Caldeirão da Praga|r
-    .turnin 5222 >>Entregue Alvo: Santuário Contorcido
-    .accept 5223 >>Aceite Retorno ao Acampamento Vento Frio
+    .turnin 5222 >> Entregue Alvo: Santuário Contorcido
+    .accept 5223 >> Aceite Retorno ao Acampamento Vento Frio
 step
     .goto Western Plaguelands,53.733,64.662
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mulgris Riofundo|r
     >>|cRXP_ENEMY_Freezing Carniçais|r |cRXP_WARN_cast|r |T135848:0|t[Congelamento Instantâneo]|cRXP_WARN_. Esta habilidade atordoa por 5 segundos. Evite atrair vários ao mesmo tempo|r
     -->>|cRXP_WARN_If you have an Interact with Target/Mouseover keybind you can talk to |cRXP_FRIENDLY_Mulgris Deepriver|r from outside the house which is a lot safer|r
-    .turnin 4984 >>Entregue A Natureza Também Sofre
-    .accept 4985 >>Aceite The Wildlife Suffers Too
+    .turnin 4984 >> Entregue A Natureza Também Sofre
+    .accept 4985 >> Aceite The Wildlife Suffers Too
     .target Mulgris Deepriver
 step
     #loop
@@ -593,27 +593,27 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mulgris Riofundo|r
     >>|cRXP_ENEMY_Freezing Carniçais|r |cRXP_WARN_cast|r |T135848:0|t[Congelamento Instantâneo]|cRXP_WARN_. Esta habilidade atordoa por 5 segundos. Evite atrair vários ao mesmo tempo|r
     -->>|cRXP_WARN_If you have an Interact with Target/Mouseover keybind you can talk to |cRXP_FRIENDLY_Mulgris Deepriver|r from outside the house which is a lot safer|r
-    .turnin 4985 >>Entregue A Natureza Também Sofre
-    .accept 4986 >>Aceite Glyphed Oaken Branch << Mage
+    .turnin 4985 >> Entregue A Natureza Também Sofre
+    .accept 4986 >> Aceite Glyphed Oaken Branch << Mage
     .target Mulgris Deepriver
 step
     #completewith next
-    .subzone 3197 >>Viaje até Chillwind Camp
+    .subzone 3197 >> Viaje até Chillwind Camp
     .zoneskip Hillsbrad Foothills
 step
     .goto Western Plaguelands,42.972,84.501
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Alta-sacerdotisa Donélia|r
-    .turnin 5223 >>Entregue em Chillwind Camp
-    .accept 5225 >>Aceite Alvo: Gahrron's Murchando
+    .turnin 5223 >> Entregue em Chillwind Camp
+    .accept 5225 >> Aceite Alvo: Gahrron's Murchando
     .target High Priestess MacDonnell
 step
     .goto Western Plaguelands,62.573,58.573
     >>Clique em |cRXP_PICK_Caldeirão da Praga|r
-    .turnin 5225 >>Entregue Alvo: Gahrron's Murchando
-    .accept 5226 >>Aceite Retorno ao Acampamento Vento Frio
+    .turnin 5225 >> Entregue Alvo: Gahrron's Murchando
+    .accept 5226 >> Aceite Retorno ao Acampamento Vento Frio
 step
     #completewith next
-    .goto Eastern Plaguelands,27.850,86.245,15 >>Entre na casa de The Undercroft crypt
+    .goto Eastern Plaguelands,27.850,86.245,15 >> Entre na casa de The Undercroft crypt
 step
     .goto Eastern Plaguelands,27.467,84.853
     >>Mate for his |cRXP_LOOT_Cabeça|r
@@ -623,14 +623,14 @@ step
     .isOnQuest 5142
     .goto Eastern Plaguelands,36.489,90.718
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Pâmela Trilharrubra|r
-    .turnin 5142 >>Entregue Pequena Pâmela
-    .accept 5149 >>Aceite A boneca de Pâmela
+    .turnin 5142 >> Entregue Pequena Pâmela
+    .accept 5149 >> Aceite A boneca de Pâmela
     .target Pamela Redpath
 step
     .isQuestTurnedIn 5601,5142
     .goto Eastern Plaguelands,36.489,90.718
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Pâmela Trilharrubra|r
-    .accept 5149 >>Aceite A boneca de Pâmela
+    .accept 5149 >> Aceite A boneca de Pâmela
     .target Pamela Redpath
 step
     .goto Eastern Plaguelands,38.038,92.549,15,0
@@ -650,12 +650,12 @@ step
 step
     .goto Eastern Plaguelands,36.489,90.718
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Pâmela Trilharrubra|r
-    .turnin 5149 >>Entregue A boneca de Pâmela
-    .accept 5152 >>Aceite a Tia Marlene
-    .accept 5241 >>Aceite o Tio Carlin
+    .turnin 5149 >> Entregue A boneca de Pâmela
+    .accept 5152 >> Aceite a Tia Marlene
+    .accept 5241 >> Aceite o Tio Carlin
     .target Pamela Redpath
 step
-    .hs >>Use sua Pedra de Regresso para ir à Costa Sul
+    .hs >> Use sua Pedra de Regresso para ir à Costa Sul
     >>|cRXP_BUY_Compre comida/água se necessário|r << !Warrior !Rogue
 	>>|cRXP_BUY_Compre comida se necessário|r << Warrior/Rogue
     .cooldown item,6948,>2,1
@@ -670,31 +670,31 @@ step
 step
     .goto Western Plaguelands,42.972,84.501
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Alta-sacerdotisa Donélia|r
-    .turnin 5226 >>Entregue em Chillwind Camp
+    .turnin 5226 >> Entregue em Chillwind Camp
     .target High Priestess MacDonnell
 step
     .isQuestComplete 9474
 	.goto Western Plaguelands,42.909,84.494
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anchorite Truuen|r
-    .turnin 9474 >>Entregue A Marca do Portador da Luz
+    .turnin 9474 >> Entregue A Marca do Portador da Luz
 	.target Anchorite Truuen
 step
     .goto Western Plaguelands,42.702,84.031
     .target Commander Ashlam Valorfist
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
-    .accept 5237 >>Aceite Missão Cumprida!
-    .turnin 5237 >>Entregue Missão Cumprida!
+    .accept 5237 >> Aceite Missão Cumprida!
+    .turnin 5237 >> Entregue Missão Cumprida!
 step
     .goto Western Plaguelands,42.665,83.774
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Alquimista Arvignon|r
-    .turnin 5537 >>Entregue Fragmentos de Ossos
+    .turnin 5537 >> Entregue Fragmentos de Ossos
     .target Alchemist Arbington
 step
     .goto Western Plaguelands,49.2,78.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marlene Trilharrubra|r
     >>|cRXP_FRIENDLY_Marlene Trilharrubra|r também pode estar no andar de cima
-    .turnin 5152 >>Entregue Auntie Marlene
-    .accept 5153 >>Aceite Uma Historiadora Estranha
+    .turnin 5152 >> Entregue Auntie Marlene
+    .accept 5153 >> Aceite Uma Historiadora Estranha
     .target Marlene Redpath
 step
     .goto Western Plaguelands,49.696,76.754
@@ -733,7 +733,7 @@ step
     .complete 4972,1 --Collect Andorhal Watch (x5)
 step
     #completewith next
-    .goto Western Plaguelands,43.822,69.250,10,0 >>Entre na Prefeitura das Ruínas de Andorhal
+    .goto Western Plaguelands,43.822,69.250,10,0 >> Entre na Prefeitura das Ruínas de Andorhal
 step
     .goto Western Plaguelands,43.50,69.46
     >>Entre na Prefeitura das Ruínas de Andorhal
@@ -741,7 +741,7 @@ step
     >>|cRXP_WARN_O |cRXP_PICK_Musty Tomo|r correto terá suas páginas completamente escuras ou com uma mancha marrom. Se for apenas metade branco e metade preto, é uma armadilha|r
     >>|cRXP_WARN_Pode haver vezes em que todos os |cRXP_PICK_Musty Tomes|r são armadilhas e você deve abri-los para forçar um correto a aparecer|r
     .complete 5154,1 --Collect Annals of Darrowshire (x1)
-    .link https://youtu.be/GUb1Ny4NwQw >>https://youtu.be/GUb1Ny4NwQw >> |cRXP_WARN_Clique aqui para referência de vídeo sobre como identificar o correto|r |cRXP_PICK_Musty Tomo|r
+    .link https://youtu.be/GUb1Ny4NwQw >> |cRXP_WARN_Clique aqui para referência de vídeo sobre como identificar o correto|r |cRXP_PICK_Musty Tomo|r
 step
     .goto Western Plaguelands,39.456,66.760
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Chromie|r
@@ -752,7 +752,7 @@ step
 step
     .goto Western Plaguelands,42.924,85.061
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bibilfaz Penapita|r
-    .fly Eastern Plaguelands >>Fly to Terras Pestilentas Orientais
+    .fly Eastern Plaguelands >> Fly to Terras Pestilentas Orientais
     .target Bibilfaz Featherwhistle
     .zoneskip Eastern Plaguelands
 step
@@ -765,11 +765,11 @@ step
 step
     .goto Eastern Plaguelands,79.405,63.983
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caretaker Alen|r
-    .turnin 6021 >>Entregue Zaeldarr, o Proscrito
+    .turnin 6021 >> Entregue Zaeldarr, o Proscrito
     .target Caretaker Alen
 step
     .goto Eastern Plaguelands,51.41,49.70,0
-    .xp 60-8750 >>Farme XP até estar a 8750xp antes do nível 60
+    .xp 60-8750 >> Farme XP até estar a 8750xp antes do nível 60
 step
     .goto Eastern Plaguelands,51.106,49.937
     >>Saque o |cRXP_LOOT_Crânio de Horgus|r embaixo da água
@@ -790,7 +790,7 @@ step << Mage
 step << !Mage
     .goto Eastern Plaguelands,81.637,59.280
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Khaelyn Asadaço|r
-    .fly Stormwind >>Voe para Ventobravo
+    .fly Stormwind >> Voe para Ventobravo
     .target Khaelyn Steelwing
     .zoneskip Stormwind City
     .zoneskip Hellfire Peninsula

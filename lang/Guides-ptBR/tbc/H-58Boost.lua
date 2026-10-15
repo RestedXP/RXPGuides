@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
 #version 7
-#group Guia RestedXP TBC (A)
+#group Guia RestedXP TBC (H)
 << Horde
 #name Personagem Melhorado 58-60
 #subgroup RestedXP Impulso Horda 58-60
@@ -33,8 +33,8 @@ step << Druid
 step << Mage
     .goto Orgrimmar,38.66,85.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Thuul|r no topo da cabana
-    .train 3567 >>Aprenda |T135759:0|t[Teleporte: Orgrimmar]
-    .train 11417 >>|T135744:0|tAprenda Portal: Orgrimmar
+    .train 3567 >> Aprenda |T135759:0|t[Teleporte: Orgrimmar]
+    .train 11417 >> |T135744:0|tAprenda Portal: Orgrimmar
     .target Thuul
 step << Warlock
     .goto Orgrimmar,47.52,46.73
@@ -53,16 +53,16 @@ step
     .complete 64217,1 --Visit Snurk Bucksquick, the Zeppelin Master (1)
     .zoneskip Durotar
 step
-    .goto Durotar,50.8,13.8,40 >>Suba a Torre Zepelim
+    .goto Durotar,50.8,13.8,40 >>Suba a Torre do Zepelim
     .complete 64063,1 --Visit Snurk Bucksquick, the Zeppelin Master (1)
-    .zone Tirisfal Glades >>Pegue o zepelim para Tirisfal Glades
+    .zone Tirisfal Glades >>Pegue o Zepelim para Clareiras de Tirisfal
     .zoneskip Tirisfal Glades
     .zoneskip Undercity
     .zoneskip Western Plaguelands
 step
     #completewith UCflightpath1
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >>Entre em Cidade Baixa
+    .zone Undercity >> Entre em Cidade Baixa
     .zoneskip Undercity
 step
     #completewith UCflightpath1
@@ -71,17 +71,17 @@ step
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >>Pegue o elevador até Cidade Baixa
+    .goto Undercity,65.53,43.62,15 >> Pegue o elevador até Cidade Baixa
 step
     #label UCflightpath1
     .isQuestAvailable 5211
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel|r
-    .fp Undercity >>Aprenda a rota de voo para Undercity
+    .fp Undercity >> Aprenda a rota de voo de Cidade Baixa
     .target Michael Garrett
 step
 	#completewith next
-	.subzone 152 >>Exit Undercity e travel to the Bulwark
+	.subzone 152 >> Exit Undercity e travel to the Bulwark
 step
     .goto Tirisfal Glades,83.15,68.92
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tVoe para o Baluarte, depois fale com |cRXP_FRIENDLY_Derrington|r.
@@ -151,7 +151,7 @@ step
     .accept 5023 >>Aceite Better Late Than Never
 step
 	#completewith next
-	.subzone 152 >>Return to O Baluarte
+	.subzone 152 >> Return to O Baluarte
 step
     .goto Tirisfal Glades,83.03,71.91
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vandis|r
@@ -165,13 +165,13 @@ step
     .collect 22526,30,91261 --Bone Fragments
 step
     .goto Western Plaguelands,42.28,66.05
-    .use 12815 >>|cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre|r
+    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre|r
 	-->>|cRXP_WARN_Do not engage the elite inside|r --not elite anymore in tbc
     .complete 5098,2 --Tower Two marked (1)
 step
     #label TowerOne
     .goto Western Plaguelands,40.15,71.50
-    .use 12815 >>|cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre|r
+    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre|r
 	-->>|cRXP_WARN_Do not engage the elite inside|r --not elite anymore in tbc
     .complete 5098,1 --Tower One marked (1)
 step
@@ -181,7 +181,7 @@ step
 	.target Chromie
 step
     .goto Western Plaguelands,44.24,63.06
-    .use 12815 >>|cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre|r
+    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre|r
 	-->>|cRXP_WARN_Do not engage the elite inside|r --not elite anymore in tbc
     .complete 5098,3 --Tower Three marked (1)
 step
@@ -192,7 +192,7 @@ step
 	.mob Temporal Parasite
 step
     .goto Western Plaguelands,46.73,71.14
-    .use 12815 >>|cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre|r
+    .use 12815 >> |cRXP_WARN_Use a|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre|r
 	-->>|cRXP_WARN_Do not engage the elite inside|r --not elite anymore in tbc
     .complete 5098,4 --Tower Four marked (1)
 step
@@ -317,7 +317,7 @@ step
 	.target Kirsta Deepshadow
 step
 	#completewith next
-	.subzone 152 >>Return to O Baluarte
+	.subzone 152 >> Return to O Baluarte
 step
     .goto Tirisfal Glades,83.03,71.91
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vandis|r
@@ -463,7 +463,7 @@ step
 	.unitscan Diseased Grizzly
 step
 	.goto Eastern Plaguelands,26.55,74.72
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nathanos|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nathanos Arauto da Praga|r
     .accept 6022 >>Aceite Matar com Propósito
 	.target Nathanos Blightcaller
 step
@@ -520,11 +520,11 @@ step
     .isQuestTurnedIn 5149
 step
 	#completewith RottingUndead
-	.subzone 2264 >>Vá para Corrin's Crossing
+	.subzone 2264 >> Vá para Corrin's Crossing
 step
 	#completewith next
 	>>Abate os |cRXP_ENEMY_Mortos-vivos|r. Saque-os por seus |cRXP_LOOT_Putrefação Viva|r.
-	>>|cRXP_WARN_Grupos de Élites patrulham a estrada norte e leste. Inimigos Invisíveis patrulham dentro de Corrin's Crossing, então tente puxar inimigos para fora|r
+	>>|cRXP_WARN_Grupos de elites patrulham as estradas ao norte e a leste. Inimigos invisíveis patrulham o Cruzamento de Corin, então tente atrair os inimigos para fora|r
 	.collect 15447,7 --Living Rot (7)
 	.mob Hate Shrieker
 	.mob Scourge Warder
@@ -542,11 +542,11 @@ step
 	.goto Eastern Plaguelands,61.40,66.40,25,0
 	.goto Eastern Plaguelands,59.40,66.40,25,0
 	.goto Eastern Plaguelands,58.00,67.60,25,0
-	.use 15454 >>|cRXP_WARN_Use o|r |T133748:0|t[Almofariz e Pilão] |cRXP_WARN_antes da |cRXP_LOOT_Putrefação Viva|r expire|r
+	.use 15454 >>|cRXP_WARN_Use o|r |T133748:0|t[Almofariz e Pilão] |cRXP_WARN_antes que a|cRXP_LOOT_ Putrefação Viva|r expire|r
     .complete 6022,1 --Coagulated Rot (1)
 step
 	#completewith LHFP
-	.subzone 2268 >>Viaje até a Capela Esperança da Luz
+	.subzone 2268 >> Viaje até a Capela Esperança da Luz
 step
     .goto Eastern Plaguelands,79.60,63.87
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alen|r
@@ -562,13 +562,13 @@ step
 step
     .goto Eastern Plaguelands,81.627,58.077
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jessica Dávila|r
-    .home >>Defina sua Pedra do Regresso na Capela Esperança da Luz
+    .home >> Defina sua Pedra do Regresso na Capela Esperança da Luz
     .target Jessica Chambers
     .bindlocation 2268
     .subzoneskip 2268,1
 step
     #completewith next
-    .subzone 2273 >>Viaje até Zul'Mashar
+    .subzone 2273 >> Viaje até Zul'Mashar
 step
 	.goto Eastern Plaguelands,64.25,22.09,50,0
 	.goto Eastern Plaguelands,68.57,20.95,50,0
@@ -579,7 +579,7 @@ step
 	.unitscan Infiltrator Hameya
 step
 	#completewith Termites
-	.subzone 2277 >>Viaje até Plaguewood
+	.subzone 2277 >> Viaje até Plaguewood
 step
     #completewith Egan1
     .goto Eastern Plaguelands,77.11,48.00,0
@@ -662,8 +662,8 @@ step
 step
     .goto Eastern Plaguelands,81.05,57.55
     >>Fale com |cRXP_FRIENDLY_Metz|r
-    .accept 9141 >>Aceite They Call Me "The Rooster"
-    .turnin 9141 >>Entregue They Call Me "The Rooster"
+    .accept 9141 >> Aceite They Call Me "The Rooster"
+    .turnin 9141 >> Entregue They Call Me "The Rooster"
     .target Dispatch Commander Metz
     .itemcount 12844,1 --Argent Dawn Valor Token (1)
 step
@@ -739,7 +739,7 @@ step
 	.goto Western Plaguelands,38.60,56.20,50,0
 	.goto Western Plaguelands,37.80,57.60,50,0
 	>>Mate as |cRXP_ENEMY_Jabbering Ghoul|r. Saqueie-o para obter o |cRXP_LOOT_Good Luck Other-Half-Charm|r
-    .use 12722 >>Usar-o para criar o |cRXP_LOOT_Pingente da Sorte|r
+    .use 12722 >> Usar-o para criar o |cRXP_LOOT_Pingente da Sorte|r
     .complete 5051,1 --Good Luck Charm (1)
 	.unitscan Jabbering Ghoul
 step
@@ -769,7 +769,7 @@ step
 	>>Saqueie hall until you loot the |cRXP_LOOT_Annals of Darrowshire|r
 	>>|cRXP_WARN_Muitos livros são falsificados e fazem aparecer inimigos quando abertos. Os livros verdadeiros têm páginas inteiramente brancas, sem coloração cinza/escura. Você pode precisar clicar em livros falsificados para fazer aparecer um verdadeiro|r
     .complete 5154,1 --Annals of Darrowshire (1)
-	.link https://i.imgur.com/B2HDb6K.png >>https://i.imgur.com/B2HDb6K.png >> Clique AQUI para um exemplo visual
+	.link https://i.imgur.com/B2HDb6K.png >> Clique AQUI para um exemplo visual
 step
     .goto Western Plaguelands,39.46,66.76
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Crona|r no andar superior da estalagem
@@ -801,7 +801,7 @@ step
 	.isQuestComplete 6024
 step
 	.goto Eastern Plaguelands,26.55,74.72
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nathanos|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nathanos Arauto da Praga|r
     .turnin 6022 >>Entregue Matar com Propósito
 	.turnin 5961 >>Entregue O Campeão da Rainha Banshees
 	.target Nathanos Blightcaller
@@ -849,14 +849,14 @@ step << skip
 step << skip
     .goto Stranglethorn Vale,32.5,29.3
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thysta|r
-	.fly Stonard >>Fly to Pedregal
+	.fly Stonard >> Fly to Pedregal
 	.target Thysta
     .subzoneskip 75
 step << skip
 	#completewith next
 	.goto Swamp of Sorrows,33.4,71.9,60,0
 	.goto Swamp of Sorrows,33.2,68.4,60,0
-	.zone Blasted Lands >>Viaje para as Terras Devastadas
+	.zone Blasted Lands >> Viaje para as Terras Devastadas
 
 step << skip
     .goto Blasted Lands,58.1,56.1

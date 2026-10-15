@@ -2,7 +2,7 @@ if GetLocale() ~= "ptBR" then return end
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group Guia RestedXP TBC (A)
+#group Guia RestedXP TBC (H)
 << Horde
 #name 1-6 Bosque do Canto Eterno
 #version 7
@@ -17,7 +17,7 @@ step << !BloodElf
 step
     .goto Eversong Woods,38.2,20.8
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Erona|r
-    .accept 8325 >>Aceite Retomada da Ilha Andassol
+    .accept 8325 >> Aceite Retomada da Ilha Andassol
     .target Magistrix Erona
 step
     #loop
@@ -32,14 +32,14 @@ step
 step
     .goto Eversong Woods,38.2,20.8
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Erona|r
-    .turnin 8325 >>Entregue Retomada da Ilha Andassol
-    .accept 8326 >>Aceite Medidas Drásticas
-    .accept 8328 >>Aceite Treinamento de Mago << Mage
-    .accept 8563 >>Aceite Treinamento de Bruxo << Warlock
-    .accept 8564 >>Aceite Treinamento de Sacerdote << Priest
-    .accept 9392 >>Aceite Treinamento de Ladino << Rogue
-	.accept 9393 >>Aceite Treinamento de Caçador << Hunter
-    .accept 9676 >>Aceite Treinamento de Paladino << Paladin
+    .turnin 8325 >> Entregue Retomada da Ilha Andassol
+    .accept 8326 >> Aceite Medidas Drásticas
+    .accept 8328 >> Aceite Treinamento de Mago << Mage
+    .accept 8563 >> Aceite Treinamento de Bruxo << Warlock
+    .accept 8564 >> Aceite Treinamento de Sacerdote << Priest
+    .accept 9392 >> Aceite Treinamento de Ladino << Rogue
+	.accept 9393 >> Aceite Treinamento de Caçador << Hunter
+    .accept 9676 >> Aceite Treinamento de Paladino << Paladin
     .target Magistrix Erona
 step
     #completewith next
@@ -48,48 +48,48 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shara|r
     >>|cRXP_BUY_Compre|r |T132382:0|t[Flechas Ásperas] |cRXP_BUY_dela até sua|r |T134409:0|t[Aljava] |cRXP_BUY_está cheia|r << Hunter
     >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dela|r << Warlock/Mage/Priest
-    .vendor >>Comerciante Lixo
+    .vendor >>Venda os itens de lixo
     .collect 159,10,8336,1 << Warlock/Mage/Priest --Collect Refreshing Spring Water (x10)
     .target Shara Sunwing
 step << Mage
     .goto Eversong Woods,39.23,21.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Julia|r
-    .turnin 8328 >>Entregue Treinamento de Mago
-    .accept 10068 >>Aceite Vigia da Nascente Solanian
-    .train 1459 >>Treine suas magias de classe
+    .turnin 8328 >> Entregue Treinamento de Mago
+    .accept 10068 >> Aceite Vigia da Nascente Solanian
+    .train 1459 >> Treine suas magias de classe
     .target Julia Sunstriker
 step << Warlock
     .goto Eversong Woods,38.93,21.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Teli'Larien|r
-    .turnin 8563 >>Entregue Treinamento de Bruxo
-    .accept 10073 >>Aceite Vigia da Nascente Solanian
-    .accept 8344 >>Aceite Windows to the Source
+    .turnin 8563 >> Entregue Treinamento de Bruxo
+    .accept 10073 >> Aceite Vigia da Nascente Solanian
+    .accept 8344 >> Aceite Windows to the Source
     .trainer>> Train your class spells
     .target Summoner Teli'Larien
 step << Priest
     .goto Eversong Woods,39.42,20.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arena|r
-    .turnin 8564 >>Entregue Treinamento de Sacerdote
-    .accept 10072 >>Aceite Vigia da Nascente Solanian
-    .train 1243 >>Treine suas magias de classe
+    .turnin 8564 >> Entregue Treinamento de Sacerdote
+    .accept 10072 >> Aceite Vigia da Nascente Solanian
+    .train 1243 >> Treine suas magias de classe
     .target Matron Arena
 step << Rogue
     .goto Eversong Woods,38.93,20.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kariel|r
-    .turnin 9392 >>Entregue Treinamento de Ladino
-    .accept 10071 >>Aceite Vigia da Nascente Solanian
+    .turnin 9392 >> Entregue Treinamento de Ladino
+    .accept 10071 >> Aceite Vigia da Nascente Solanian
     .target Pathstalker Kariel
 step << Hunter
     .goto Eversong Woods,39.05,20.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sallina|r
-    .turnin 9393 >>Entregue Treinamento de Caçador
-    .accept 10070 >>Aceite Vigia da Nascente Solanian
+    .turnin 9393 >> Entregue Treinamento de Caçador
+    .accept 10070 >> Aceite Vigia da Nascente Solanian
     .target Ranger Sallina
 step << Paladin
     .goto Eversong Woods,39.47,20.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jesthenis|r
-    .turnin 9676 >>Entregue Treinamento de Paladino
-    .accept 10069 >>Aceite Vigia da Nascente Solanian
+    .turnin 9676 >> Entregue Treinamento de Paladino
+    .accept 10069 >> Aceite Vigia da Nascente Solanian
     .target Jesthenis Sunstriker
 step
     #completewith next
@@ -100,20 +100,20 @@ step
     .goto Eversong Woods,38.76,19.36,10 >>Vá para cima
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Solanian|r, |cRXP_FRIENDLY_Ithanas|r, and |cRXP_FRIENDLY_Helion|r
-    .turnin 10068 >>Entregue Vigia da Nascente Solanian << Mage
-    .turnin 10069 >>Entregue Vigia da Nascente Solanian << Paladin
-    .turnin 10070 >>Entregue Vigia da Nascente Solanian << Hunter
-    .turnin 10071 >>Entregue Vigia da Nascente Solanian << Rogue
-    .turnin 10072 >>Entregue Vigia da Nascente Solanian << Priest
-    .turnin 10073 >>Entregue Vigia da Nascente Solanian << Warlock
-    .accept 8330 >>Aceite Os Pertences de Solanian
-    .accept 8345 >>Aceite O Altar de Dath'Remar
+    .turnin 10068 >> Entregue Vigia da Nascente Solanian << Mage
+    .turnin 10069 >> Entregue Vigia da Nascente Solanian << Paladin
+    .turnin 10070 >> Entregue Vigia da Nascente Solanian << Hunter
+    .turnin 10071 >> Entregue Vigia da Nascente Solanian << Rogue
+    .turnin 10072 >> Entregue Vigia da Nascente Solanian << Priest
+    .turnin 10073 >> Entregue Vigia da Nascente Solanian << Warlock
+    .accept 8330 >> Aceite Os Pertences de Solanian
+    .accept 8345 >> Aceite O Altar de Dath'Remar
     .target +Well Watcher Solanian
     .goto Eversong Woods,38.76,19.36
-    .accept 8336 >>Aceite Um Punhado de Lascas
+    .accept 8336 >> Aceite Um Punhado de Lascas
     .target +Arcanist Ithanas
     .goto Eversong Woods,38.27,19.13
-    .accept 8346 >>Aceite Sede Eterna
+    .accept 8346 >> Aceite Sede Eterna
     .target +Arcanist Helion
     .goto Eversong Woods,37.18,18.94
 step << Warlock
@@ -156,7 +156,7 @@ step << Warlock
     >>|cRXP_WARN_Use a |T132884:0|t[|cRXP_LOOT_Lasca Arcana Maculada|r] para iniciar a missão|r
     .complete 8344,2 --Tainted Wraith Essence (1)
     .collect 20483,1,8338,1 --Tainted Arcane Sliver (1)
-    .accept 8338 >>Aceite Lasca Arcana Maculada
+    .accept 8338 >> Aceite Lasca Arcana Maculada
     .mob Tainted Arcane Wraith
     .use 20483
 step << Warlock
@@ -185,22 +185,22 @@ step << Warlock
     .goto Eversong Woods,31.70,26.46,30,0
     .goto Eversong Woods,31.98,27.94,30,0
     .goto Eversong Woods,31.54,29.52,30,0
-    .xp 3+200 >>Triture até 200+/1400xp
+    .xp 3+200 >> Triture até 200+/1400xp
 step << Warlock
     #softcore
     #completewith FistfulTI
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
 step << Warlock
     #hardcore
     #completewith FistfulTI
     .goto Eversong Woods,37.18,18.94,50 >>Viaje até |cRXP_FRIENDLY_Helion|r e |cRXP_FRIENDLY_Ithanas|r
 step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helion|r e |cRXP_FRIENDLY_Ithanas|r
-    .turnin 8346 >>Entregue Sede Eterna
-    .turnin 8338 >>Entregue Lasca Arcana Maculada
+    .turnin 8346 >> Entregue Sede Eterna
+    .turnin 8338 >> Entregue Lasca Arcana Maculada
     .target +Arcanist Helion
     .goto Eversong Woods,37.18,18.94
-    .turnin 8336 >>Entregue Um Punhado de Lascas
+    .turnin 8336 >> Entregue Um Punhado de Lascas
     .target +Arcanist Ithanas
     .goto Eversong Woods,38.27,19.13
     .isQuestComplete 8346
@@ -208,10 +208,10 @@ step << Warlock
     #label FistfulTI
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helion|r e |cRXP_FRIENDLY_Ithanas|r
-    .turnin 8338 >>Entregue Lasca Arcana Maculada
+    .turnin 8338 >> Entregue Lasca Arcana Maculada
     .target +Arcanist Helion
     .goto Eversong Woods,37.18,18.94
-    .turnin 8336 >>Entregue Um Punhado de Lascas
+    .turnin 8336 >> Entregue Um Punhado de Lascas
     .target +Arcanist Ithanas
     .goto Eversong Woods,38.27,19.13
 step << Warlock
@@ -220,24 +220,24 @@ step << Warlock
     .goto Eversong Woods,38.66,20.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shara|r
     >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dela|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Venda os itens de lixo
     .collect 159,10,8327,1 --Collect Refreshing Spring Water (10)
     .target Shara Sunwing
 step << Warlock
     .goto Eversong Woods,38.93,21.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Teli'Larien|r
-    .turnin 8344 >>Entregue Windows to the Source
-    .train 172 >>Treine suas magias de classe
+    .turnin 8344 >> Entregue Windows to the Source
+    .train 172 >> Treine suas magias de classe
     .target Summoner Teli'Larien
     .xp <4,1
 step << Warlock
     .goto Eversong Woods,38.93,21.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Teli'Larien|r
-    .turnin 8344 >>Entregue Windows to the Source
+    .turnin 8344 >> Entregue Windows to the Source
     .target Summoner Teli'Larien
 step << Warlock
 	#completewith Measures
-	.cast 688 >>|cRXP_WARN_Lance|r |T136218:0|t[Evocar Diabrete]
+	.cast 688 >>|cRXP_WARN_Lance|r |T136218:0|t [Invocar Diabrete]
 step << Warlock
     .goto Eversong Woods,38.86,21.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yasmine|r
@@ -265,8 +265,8 @@ step
     #label Measures
     .goto Eversong Woods,38.2,20.8
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Erona|r
-    .turnin 8326 >>Entregue Medidas Drásticas
-    .accept 8327 >>Aceite Apresente-se a Lanthan Perilon
+    .turnin 8326 >> Entregue Medidas Drásticas
+    .accept 8327 >> Aceite Apresente-se a Lanthan Perilon
     .target Magistrix Erona
 step << !Warlock
     #completewith Journal
@@ -284,8 +284,8 @@ step
     #label Report
     .goto Eversong Woods,35.37,22.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lanthan|r
-    .turnin 8327 >>Entregue Apresente-se a Lanthan Perilon
-    .accept 8334 >>Aceite Agressão
+    .turnin 8327 >> Entregue Apresente-se a Lanthan Perilon
+    .accept 8334 >> Aceite Agressão
     .target Lanthan Perilon
 step
     #label Journal
@@ -387,8 +387,8 @@ step
     #label Aggression
     .goto Eversong Woods,35.37,22.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lanthan|r
-    .turnin 8334 >>Entregue Agressão
-    .accept 8335 >>Aceite Felendren, o Banido
+    .turnin 8334 >> Entregue Agressão
+    .accept 8335 >> Aceite Felendren, o Banido
     .target Lanthan Perilon
 step << !Warlock
     #loop
@@ -410,7 +410,7 @@ step << !Warlock !Rogue
     .goto Eversong Woods,34.64,18.82,40,0
     .goto Eversong Woods,33.78,19.46,40,0
     .goto Eversong Woods,34.17,20.59,40,0
-    .xp 4-360 >>Triture até 1740+/2100xp
+    .xp 4-360 >> Triture até 1740+/2100xp
 step << !Warlock !Rogue
     #xprate >1.49
     #loop
@@ -419,21 +419,21 @@ step << !Warlock !Rogue
     .goto Eversong Woods,34.64,18.82,40,0
     .goto Eversong Woods,33.78,19.46,40,0
     .goto Eversong Woods,34.17,20.59,40,0
-    .xp 4-540 >>Farme até 1560+/2100xp
+    .xp 4-540 >> Farme até 1560+/2100xp
 step << !Warlock !Rogue
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helion|r e |cRXP_FRIENDLY_Ithanas|r
-    .turnin 8346 >>Entregue Sede Eterna
+    .turnin 8346 >> Entregue Sede Eterna
     .target +Arcanist Helion
     .goto Eversong Woods,37.18,18.94
-    .turnin 8336 >>Entregue Um Punhado de Lascas
+    .turnin 8336 >> Entregue Um Punhado de Lascas
     .target +Arcanist Ithanas
     .goto Eversong Woods,38.27,19.13
     .isQuestComplete 8346
 step << !Warlock !Rogue
     #label FistfulTI
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ithanas|r
-    .turnin 8336 >>Entregue Um Punhado de Lascas
+    .turnin 8336 >> Entregue Um Punhado de Lascas
     .target +Arcanist Ithanas
     .goto Eversong Woods,38.27,19.13
 step << Mage/Priest
@@ -442,28 +442,28 @@ step << Mage/Priest
     .goto Eversong Woods,38.66,20.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shara|r
     >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dela|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Venda os itens de lixo
     .collect 159,10,8336,1 --Collect Refreshing Spring Water (10)
     .target Shara Sunwing
 step << Mage
     .goto Eversong Woods,39.23,21.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Julia|r
-    .train 116 >>Treine suas magias de classe
+    .train 116 >> Treine suas magias de classe
     .target Julia Sunstriker
 step << Priest
     .goto Eversong Woods,39.42,20.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arena|r
-    .train 589 >>Treine suas magias de classe
+    .train 589 >> Treine suas magias de classe
     .target Matron Arena
 step << Hunter
     .goto Eversong Woods,39.05,20.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sallina|r
-    .train 1978 >>Treine suas magias de classe
+    .train 1978 >> Treine suas magias de classe
     .target Ranger Sallina
 step << Paladin
     .goto Eversong Woods,39.47,20.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jesthenis|r
-    .train 20271 >>Treine suas magias de classe
+    .train 20271 >> Treine suas magias de classe
     .target Jesthenis Sunstriker
 step
     #completewith RunRamp
@@ -496,7 +496,7 @@ step << !Warlock
     >>Mate uma |cRXP_ENEMY_Aparição Arcana Maculada|r. Saqueie-a pela |T132884:0|t[|cRXP_LOOT_Lasca Arcana Maculada|r].
     >>|cRXP_WARN_Use a |T132884:0|t[|cRXP_LOOT_Lasca Arcana Maculada|r] para iniciar a missão|r
     .collect 20483,1,8338,1 --Tainted Arcane Sliver (1)
-    .accept 8338 >>Aceite Lasca Arcana Maculada
+    .accept 8338 >> Aceite Lasca Arcana Maculada
     .mob Tainted Arcane Wraith
     .use 20483
 step
@@ -522,12 +522,12 @@ step << !Warlock
     >>Mate uma |cRXP_ENEMY_Aparição Arcana Maculada|r. Saqueie-a pela |T132884:0|t[|cRXP_LOOT_Lasca Arcana Maculada|r].
     >>|cRXP_WARN_Use a |T132884:0|t[|cRXP_LOOT_Lasca Arcana Maculada|r] para iniciar a missão|r
     .collect 20483,1,8338,1 --Tainted Arcane Sliver (1)
-    .accept 8338 >>Aceite Lasca Arcana Maculada
+    .accept 8338 >> Aceite Lasca Arcana Maculada
     .mob Tainted Arcane Wraith
     .use 20483
 step
     #completewith SolanianB
-    .hs >>Vá para Sunstrider Isle
+    .hs >> Vá para Sunstrider Isle
 step
     #loop
     .goto Eversong Woods,36.79,19.88,0
@@ -550,27 +550,27 @@ step
     #label SolanianB
     .goto Eversong Woods,38.76,19.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Solanian|r
-    .turnin 8330 >>Entregue Os Pertences de Solanian
-    .turnin 8345 >>Entregue O Altar de Dath'Remar
+    .turnin 8330 >> Entregue Os Pertences de Solanian
+    .turnin 8345 >> Entregue O Altar de Dath'Remar
     .target Well Watcher Solanian
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ithanas|r
-    .turnin 8336 >>Entregue Um Punhado de Lascas
+    .turnin 8336 >> Entregue Um Punhado de Lascas
     .target +Arcanist Ithanas
     .goto Eversong Woods,38.27,19.13
     .isQuestComplete 8336
 step
     #label SolanianB
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helion|r
-    .turnin 8338 >>Entregue Lasca Arcana Maculada << !Warlock
-    .turnin 8346 >>Entregue Sede Eterna
+    .turnin 8338 >> Entregue Lasca Arcana Maculada << !Warlock
+    .turnin 8346 >> Entregue Sede Eterna
     .goto Eversong Woods,37.18,18.94
     .target +Arcanist Helion
 step
     .goto Eversong Woods,35.37,22.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lanthan|r
-    .turnin 8335 >>Entregue Felendren, o Banido
-    .accept 8347 >>Aceite O Auxílio aos Vanguardeiros
+    .turnin 8335 >> Entregue Felendren, o Banido
+    .accept 8347 >> Aceite O Auxílio aos Vanguardeiros
     .target Lanthan Perilon
 step
     #xprate <1.5
@@ -581,7 +581,7 @@ step
 	.goto Eversong Woods,35.15,29.78,40,0
 	.goto Eversong Woods,36.52,29.35,40,0
 	.goto Eversong Woods,35.58,27.42,40,0
-    .xp 5+1800 >>Farme até 1800+/2800 XP
+    .xp 5+1800 >> Farme até 1800+/2800 XP
 step
     #xprate >1.49
     #loop
@@ -591,7 +591,7 @@ step
 	.goto Eversong Woods,35.15,29.78,40,0
 	.goto Eversong Woods,36.52,29.35,40,0
 	.goto Eversong Woods,35.58,27.42,40,0
-    .xp 5+1300 >>Mate inimigos até atingir 1300+/2800 de xp
+    .xp 5+1300 >> Mate inimigos até atingir 1300+/2800 de xp
 step
     #completewith next
     .goto Eversong Woods,38.91,30.27,30,0
@@ -599,20 +599,20 @@ step
 step
     .goto Eversong Woods,40.41,32.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alarion|r
-    .turnin 8347 >>Entregue O Auxílio aos Vanguardeiros
-    .accept 9704 >>Aceite Ceifado pelos Ignóbeis!
+    .turnin 8347 >> Entregue O Auxílio aos Vanguardeiros
+    .accept 9704 >> Aceite Ceifado pelos Ignóbeis!
     .target Outrunner Alarion
 step
     .goto Eversong Woods,42.02,35.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o cadáver do |cRXP_FRIENDLY_Outrunner|r no chão
-    .turnin 9704 >>Entregue Ceifado pelos Ignóbeis!
-    .accept 9705 >>Aceite Recuperação do Pacote
+    .turnin 9704 >> Entregue Ceifado pelos Ignóbeis!
+    .accept 9705 >> Aceite Recuperação do Pacote
     .target Slain Outrunner
 step
     .goto Eversong Woods,40.41,32.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alarion|r
-    .turnin 9705 >>Entregue Recuperação do Pacote
-    .accept 8350 >>Aceite Concluindo a Entrega
+    .turnin 9705 >> Entregue Recuperação do Pacote
+    .accept 8350 >> Aceite Concluindo a Entrega
     .target Outrunner Alarion
 step
     #xprate <1.5
@@ -621,7 +621,7 @@ step
     .goto Eversong Woods,45.97,43.35,40,0
     .goto Eversong Woods,46.57,35.10,40,0
     .goto Eversong Woods,43.62,34.88,40,0
-    .xp 5+2690 >>Farme até 2690+/2800 XP
+    .xp 5+2690 >> Farme até 2690+/2800 XP
 step
     #xprate >1.49
     #loop
@@ -629,13 +629,13 @@ step
     .goto Eversong Woods,45.97,43.35,40,0
     .goto Eversong Woods,46.57,35.10,40,0
     .goto Eversong Woods,43.62,34.88,40,0
-    .xp 5+2635 >>Farme até 2635+/2800xp
+    .xp 5+2635 >> Farme até 2635+/2800xp
 ]])
 
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group Guia RestedXP TBC (A)
+#group Guia RestedXP TBC (H)
 << Horde
 #name 6-10 Bosque do Canto Eterno
 #displayname 8-11 Bosque do Canto Eterno << Orc Warrior/Troll Warrior
@@ -648,33 +648,33 @@ RXPGuides.RegisterGuide([[
 step
     .goto Eversong Woods,47.26,46.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jarondis|r
-    .accept 8472 >>Aceite Defeito Grave
+    .accept 8472 >> Aceite Defeito Grave
     .target Magister Jaronis
 step
     #completewith FalconHS
     .goto Eversong Woods,47.79,47.35,8,0
-    .goto Eversong Woods,47.86,47.76,8 >>Go dentro da Inn
+    .goto Eversong Woods,47.86,47.76,8 >> Go dentro da Inn
 step << BloodElf Warlock
     .goto Eversong Woods,48.16,47.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Delaniel|r
-    .turnin 8350 >>Entregue Concluindo a Entrega
-    .home >>Defina sua Pedra de Retorno em Falconwing Square
+    .turnin 8350 >> Entregue Concluindo a Entrega
+    .home >> Defina sua Pedra de Retorno em Falconwing Square
     .target Innkeeper Delaniel
     .bindlocation 3665
 step << !Warlock !Warrior
     .goto Eversong Woods,48.16,47.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Delaniel|r
-    .home >>Defina sua Pedra de Retorno em Falconwing Square
+    .home >> Defina sua Pedra de Retorno em Falconwing Square
     .target Innkeeper Delaniel
     .bindlocation 3665
 step << Priest/Mage/Warlock/Warrior/Rogue
     #completewith next
     .goto Eversong Woods,48.27,47.05,8,0
-    .goto Eversong Woods,48.06,47.11,8 >>Vá para cima
+    .goto Eversong Woods,48.06,47.11,8 >> Vá para cima
 step << Priest
     .goto Eversong Woods,47.85,47.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ponaris|r no andar de cima
-    .accept 9489 >>Purifique a Cicatriz << BloodElf
+    .accept 9489 >> Purifique a Cicatriz << BloodElf
     .train 591 >>Treine suas magias de classe
     .target Ponaris
 step << Mage
@@ -690,7 +690,7 @@ step << Warlock
 step << Warrior/Rogue
     .goto Eversong Woods,48.58,47.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kanaria|r no andar de cima
-    .train 3273 >>Treine |T135966:0|t[Primeiros Socorros]
+    .train 3273 >>Aprenda |T135966:0|t[Primeiros Socorros]
     .target Kanaria
 step << Mage/Warlock/Priest
     .goto Eversong Woods,48.16,47.76
@@ -705,12 +705,12 @@ step
 step << !Warlock !Warrior
     #completewith next
     .goto Eversong Woods,47.86,47.76,8,0
-    .goto Eversong Woods,47.79,47.35,8 >>Saia
+    .goto Eversong Woods,47.79,47.35,8 >> Saia
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Wanted Poster|r e |cRXP_FRIENDLY_Aeldon|r
-    .accept 8468 >>Aceite Wanted: Thaelis, o Famélico
+    .accept 8468 >> Aceite Wanted: Thaelis, o Famélico
     .goto Eversong Woods,48.18,46.31
-    .accept 8463 >>Aceite Cristais de Mana Instáveis
+    .accept 8463 >> Aceite Cristais de Mana Instáveis
     .target +Aeldon Sunbrand
     .goto Eversong Woods,48.17,46.00
 step << Paladin
@@ -739,7 +739,7 @@ step << Rogue/Warrior
 step << Undead Warrior/Paladin/Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Geron|r
-    .vendor >>Vendedor lixo. Venda sua arma se conseguir o suficiente para um |T135321:0|t[Gládio] (5s 9c). Retorne se ainda não tiver o suficiente
+    .vendor >> Vendedor lixo. Venda sua arma se conseguir o suficiente para um |T135321:0|t[Gládio] (5s 9c). Retorne se ainda não tiver o suficiente
     .target Geron
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
@@ -757,7 +757,7 @@ step << Undead Warrior/Paladin/Rogue
 step << Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Geron|r
-    .vendor >>Vendedor lixo. Venda sua arma se conseguir o suficiente para um |T135641:0|t[Estilete] (3s 82c). Retorne se ainda não tiver o suficiente
+    .vendor >> Vendedor lixo. Venda sua arma se conseguir o suficiente para um |T135641:0|t[Estilete] (3s 82c). Retorne se ainda não tiver o suficiente
     .target Geron
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
@@ -824,15 +824,15 @@ step
     .mob +Arcane Patroller
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jarondis|r, |cRXP_FRIENDLY_Kan'ren|r, and |cRXP_FRIENDLY_Aeldon|r
-    .turnin 8472 >>Entregue Defeito Grave
-    .accept 8895 >>Aceite Entrega para o Sacrário do Norte
+    .turnin 8472 >> Entregue Defeito Grave
+    .accept 8895 >> Aceite Entrega para o Sacrário do Norte
     .target +Magister Jaronis
     .goto Eversong Woods,47.26,46.31
-    .turnin 8468 >>Entregue Wanted: Thaelis, o Famélico
+    .turnin 8468 >> Entregue Wanted: Thaelis, o Famélico
     .target +Sergeant Kan'ren
     .goto Eversong Woods,47.77,46.58
-    .turnin 8463 >>Entregue Cristais de Mana Instáveis
-    .accept 9352 >>Aceite Intrusões Darnassianas
+    .turnin 8463 >> Entregue Cristais de Mana Instáveis
+    .accept 9352 >> Aceite Intrusões Darnassianas
     .target +Aeldon Sunbrand
     .goto Eversong Woods,48.17,46.00
 step << Paladin
@@ -857,12 +857,12 @@ step << Hunter
 step << Mage/Warlock
     #completewith next
     .goto Eversong Woods,47.79,47.35,8,0
-    .goto Eversong Woods,47.86,47.76,8 >>Go dentro da Inn
+    .goto Eversong Woods,47.86,47.76,8 >> Go dentro da Inn
 	.xp <8,1
 step << Mage/Warlock
     #completewith next
     .goto Eversong Woods,48.27,47.05,8,0
-    .goto Eversong Woods,48.06,47.11,8 >>Vá para cima
+    .goto Eversong Woods,48.06,47.11,8 >> Vá para cima
 	.xp <8,1
 step << Mage
     .goto Eversong Woods,48.04,48.11
@@ -894,7 +894,7 @@ step << Rogue/Warrior
 step << Undead Warrior/Paladin/Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Geron|r
-    .vendor >>Vendedor lixo. Venda sua arma se conseguir o suficiente para um |T135321:0|t[Gládio] (5s 9c). Retorne se ainda não tiver o suficiente
+    .vendor >> Vendedor lixo. Venda sua arma se conseguir o suficiente para um |T135321:0|t[Gládio] (5s 9c). Retorne se ainda não tiver o suficiente
     .target Geron
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
@@ -912,7 +912,7 @@ step << Undead Warrior/Paladin/Rogue
 step << Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Geron|r
-    .vendor >>Vendedor lixo. Venda sua arma se conseguir o suficiente para um |T135641:0|t[Estilete] (3s 82c). Retorne se ainda não tiver o suficiente
+    .vendor >> Vendedor lixo. Venda sua arma se conseguir o suficiente para um |T135641:0|t[Estilete] (3s 82c). Retorne se ainda não tiver o suficiente
     .target Geron
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
@@ -946,7 +946,7 @@ step << Rogue
 step
     #completewith BuyFood1
     .goto Eversong Woods,47.79,47.35,8,0
-    .goto Eversong Woods,47.86,47.76,8 >>Go dentro da Inn
+    .goto Eversong Woods,47.86,47.76,8 >> Go dentro da Inn
 step
     .goto Eversong Woods,48.16,47.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Delaniel|r
@@ -980,21 +980,21 @@ step
     #label Caidanis
     .goto Eversong Woods,44.63,53.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caidanis|r
-    .turnin 8895 >>Entregue Entrega para o Sacrário do Norte
-    .accept 9119 >>Aceite Defeito no Sacrário do Oeste
+    .turnin 8895 >> Entregue Entrega para o Sacrário do Norte
+    .accept 9119 >> Aceite Defeito no Sacrário do Oeste
     .target Ley-Keeper Caidanis
 step
     #xprate <1.5
     .goto Eversong Woods,45.19,56.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ralen|r
-    .accept 9035 >>Aceite Emboscada de Beira de Estrada
+    .accept 9035 >> Aceite Emboscada de Beira de Estrada
     .target Apprentice Ralen
 step
     #xprate <1.5
     .goto Eversong Woods,44.88,61.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Meledor|r
-    .turnin 9035 >>Entregue Emboscada de Beira de Estrada
-    .accept 9062 >>Aceite Pacotes Encharcados
+    .turnin 9035 >> Entregue Emboscada de Beira de Estrada
+    .accept 9062 >> Aceite Pacotes Encharcados
     .target Apprentice Meledor
 step
     #xprate <1.5
@@ -1005,8 +1005,8 @@ step
     #xprate <1.5
     .goto Eversong Woods,44.88,61.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Meledor|r
-    .turnin 9062 >>Entregue Pacotes Encharcados
-    .accept 9064 >>Aceite A Casa Caiu
+    .turnin 9062 >> Entregue Pacotes Encharcados
+    .accept 9064 >> Aceite A Casa Caiu
     .target Apprentice Meledor
 step << BloodElf Priest
     #xprate <1.5
@@ -1019,7 +1019,7 @@ step
     #xprate <1.5
     .goto Eversong Woods,50.34,50.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jaela|r
-    .accept 8475 >>Aceite A Trilha da Morte
+    .accept 8475 >> Aceite A Trilha da Morte
     .target Ranger Jaela
 step << BloodElf Priest
     .goto Eversong Woods,50.19,50.88,-1
@@ -1042,8 +1042,8 @@ step
     #xprate <1.5
     .goto Eversong Woods,55.70,54.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Antheol|r
-    .turnin 9064 >>Entregue A Casa Caiu
-    .accept 9066 >>Aceite O Castigo Vem a Cavalo
+    .turnin 9064 >> Entregue A Casa Caiu
+    .accept 9066 >> Aceite O Castigo Vem a Cavalo
     .target Instructor Antheol
 step
     #xprate <1.5
@@ -1060,7 +1060,7 @@ step
     #xprate <1.5
     .goto Eversong Woods,50.34,50.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jaela|r
-    .turnin 8475 >>Entregue A Trilha da Morte
+    .turnin 8475 >> Entregue A Trilha da Morte
     .target Ranger Jaela
 step << Paladin/Priest/Mage
     #xprate <1.5
@@ -1079,8 +1079,8 @@ step << Paladin/Priest/Mage
 step
     .goto Eversong Woods,36.70,57.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Velania|r
-    .turnin 9119 >>Entregue Defeito no Sacrário do Oeste
-    .accept 8486 >>Aceite Instabilidade Arcana
+    .turnin 9119 >> Entregue Defeito no Sacrário do Oeste
+    .accept 8486 >> Aceite Instabilidade Arcana
     .target Ley-Keeper Velania
 step
     #completewith next
@@ -1100,7 +1100,7 @@ step
     >>|cRXP_WARN_Use o |T133464:0|t[|cRXP_LOOT_Documentos incriminadores|r] para iniciar a missão|r
     .complete 9352,1 --Intruder Defeated
     .collect 20765,1,8482,1 --Incriminating Documents (1)
-    .accept 8482 >>Aceite Documentos Incriminadores
+    .accept 8482 >> Aceite Documentos Incriminadores
     .mob Darnassian Scout
     .use 20765
 step
@@ -1119,15 +1119,15 @@ step
 step
     .goto Eversong Woods,36.70,57.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Velania|r
-    .turnin 8486 >>Entregue Instabilidade Arcana
-    .turnin 9352 >>Entregue Intrusões Darnassianas
+    .turnin 8486 >> Entregue Instabilidade Arcana
+    .turnin 9352 >> Entregue Intrusões Darnassianas
     .target Ley-Keeper Velania
 step
     .goto Eversong Woods,30.22,58.35,10,0
     .goto Eversong Woods,30.23,58.44,10,0
     .goto Eversong Woods,29.90,58.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hathvelion|r
-    .accept 8884 >>Aceite Cabeças de Bagre, Cabeças de Bagre...
+    .accept 8884 >> Aceite Cabeças de Bagre, Cabeças de Bagre...
     .target Hathvelion Sungaze
 step
     #loop
@@ -1144,7 +1144,7 @@ step
     >>|cRXP_WARN_Use o |T134939:0|t[|cRXP_LOOT_Cartas Náuticas Perdidas da Capitão Kelisendra|r] para iniciar a missão|r
     .complete 8884,1 --Collect Grimscale Murloc Head (x8)
     .collect 21776,1,8887 --Captain Kelisendra's Lost Rutters
-    .accept 8887 >>Aceite As Cartas Náuticas Perdidas da Capitã Kelisendra
+    .accept 8887 >> Aceite As Cartas Náuticas Perdidas da Capitã Kelisendra
     .mob Grimscale Forager
     .mob Grimscale Seer
     .use 21776
@@ -1160,7 +1160,7 @@ step << Warrior/Warlock/Hunter/Rogue
     .goto Eversong Woods,25.70,60.50,40,0
     .goto Eversong Woods,25.36,62.88,40,0
     .goto Eversong Woods,25.61,64.29,40,0
-    .xp 7+3195 >>Farme até 3195+/4500 XP
+    .xp 7+3195 >> Farme até 3195+/4500 XP
 step << Warrior/Warlock/Hunter/Rogue
     #xprate >1.49
     #loop
@@ -1173,14 +1173,14 @@ step << Warrior/Warlock/Hunter/Rogue
     .goto Eversong Woods,25.70,60.50,40,0
     .goto Eversong Woods,25.36,62.88,40,0
     .goto Eversong Woods,25.61,64.29,40,0
-    .xp 7+2540 >>Farme até 2540+/4500xp
+    .xp 7+2540 >> Farme até 2540+/4500xp
 step
     .goto Eversong Woods,29.90,58.45,10,0
     .goto Eversong Woods,30.23,58.44,10,0
     .goto Eversong Woods,30.22,58.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hathvelion|r
-    .turnin 8884 >>Entregue Cabeças de Bagre, Cabeças de Bagre...
-    .accept 8885 >>Aceite O Anel de Mmmrrrggglll
+    .turnin 8884 >> Entregue Cabeças de Bagre, Cabeças de Bagre...
+    .accept 8885 >> Aceite O Anel de Mmmrrrggglll
     .target Hathvelion Sungaze
 step << Paladin/Priest/Mage
     #softcore
@@ -1188,36 +1188,36 @@ step << Paladin/Priest/Mage
     .goto Eversong Woods,27.94,59.41,20,0
     .goto Eversong Woods,28.01,61.01,20,0
     .goto Eversong Woods,26.25,60.46
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     .target Anjo da Cura
 step << Warrior/Warlock/Hunter/Rogue
     #softcore
     #completewith next
-    .goto Eversong Woods,35.50,55.70,30 >>Corra em direção a logo ao norte do Sacrário do Oeste
+    .goto Eversong Woods,35.50,55.70,30 >> Corra em direção a logo ao norte do Sacrário do Oeste
     .isOnQuest 8885
 step << Warrior/Warlock/Hunter/Rogue
     #softcore
     .goto Eversong Woods,35.50,55.70
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     >>|cRXP_WARN_Certifique-se de que sua subzona é Bosque do Canto Eterno e NÃO Sacrário do Oeste|r
     .target Anjo da Cura
     .isOnQuest 8885
 step << Warrior/Warlock/Hunter/Rogue
     #completewith next
     .goto Eversong Woods,46.70,49.09,20,0
-    .goto Eversong Woods,46.69,48.02,20 >>Vá em direção à |cRXP_FRIENDLY_Aeldon|r
+    .goto Eversong Woods,46.69,48.02,20 >> Vá em direção à |cRXP_FRIENDLY_Aeldon|r
 step << Warrior/Warlock/Hunter/Rogue
     #xprate <1.5
     .goto Eversong Woods,48.17,46.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aeldon|r
-    .turnin 8482 >>Entregue Documentos Incriminadores
-    .accept 8483 >>Aceite O Espião Enânico
+    .turnin 8482 >> Entregue Documentos Incriminadores
+    .accept 8483 >> Aceite O Espião Enânico
     .target Aeldon Sunbrand
 step << Warrior/Warlock/Hunter/Rogue
     #xprate >1.49
     .goto Eversong Woods,48.17,46.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aeldon|r
-    .turnin 8482 >>Entregue Documentos Incriminadores
+    .turnin 8482 >> Entregue Documentos Incriminadores
     .target Aeldon Sunbrand
 step << Rogue/Warrior
     .goto Eversong Woods,48.34,45.95
@@ -1239,11 +1239,11 @@ step << Hunter
 step << Warlock
     #completewith next
     .goto Eversong Woods,47.79,47.35,8,0
-    .goto Eversong Woods,47.86,47.76,8 >>Go dentro da Inn
+    .goto Eversong Woods,47.86,47.76,8 >> Go dentro da Inn
 step << Warlock
     #completewith next
     .goto Eversong Woods,48.27,47.05,8,0
-    .goto Eversong Woods,48.06,47.11,8 >>Vá para cima
+    .goto Eversong Woods,48.06,47.11,8 >> Vá para cima
 step << Warlock
     .goto Eversong Woods,48.23,47.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Celoenus|r no andar de cima
@@ -1259,7 +1259,7 @@ step << Warlock
 step << Undead Warrior/Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Geron|r
-    .vendor >>Vendedor lixo. Venda sua arma se conseguir o suficiente para um |T135321:0|t[Gládio] (5s 9c). Retorne se ainda não tiver o suficiente
+    .vendor >> Vendedor lixo. Venda sua arma se conseguir o suficiente para um |T135321:0|t[Gládio] (5s 9c). Retorne se ainda não tiver o suficiente
     .target Geron
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
@@ -1275,7 +1275,7 @@ step << Undead Warrior/Rogue
 step << Rogue
     .goto Eversong Woods,48.49,45.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Geron|r
-    .vendor >>Vendedor lixo. Venda sua arma se conseguir o suficiente para um |T135641:0|t[Estilete] (3s 82c). Retorne se ainda não tiver o suficiente
+    .vendor >> Vendedor lixo. Venda sua arma se conseguir o suficiente para um |T135641:0|t[Estilete] (3s 82c). Retorne se ainda não tiver o suficiente
     .target Geron
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
@@ -1330,13 +1330,13 @@ step << Warrior
     #xprate <1.5
     .goto Eversong Woods,48.17,46.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aeldon|r
-    .turnin 8483 >>Entregue O Espião Enânico
+    .turnin 8483 >> Entregue O Espião Enânico
     .target Aeldon Sunbrand
 step << Undead Warlock
     #xprate <1.5
     .goto Eversong Woods,48.17,46.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aeldon|r
-    .turnin 8483 >>Entregue O Espião Enânico
+    .turnin 8483 >> Entregue O Espião Enânico
     .target Aeldon Sunbrand
 step << Warrior/Warlock/Hunter/Rogue
     #xprate <1.5
@@ -1359,12 +1359,12 @@ step
     #label Situation
     .goto Eversong Woods,43.34,70.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Degolien|r
-    .accept 8892 >>Aceite Incidente no Ancoradouro Velaclara
+    .accept 8892 >> Aceite Incidente no Ancoradouro Velaclara
     .target Ranger Degolien
 step
     #xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marniel|r e |cRXP_FRIENDLY_Ardeyn|r
-    .accept 9358 >>Aceite A Patrulheira Sareyn
+    .accept 9358 >> Aceite A Patrulheira Sareyn
     .target +Marniel Amberlight
     .goto Eversong Woods,43.67,71.31
     .accept 9258 >>Aceite Mata Queimada
@@ -1374,21 +1374,21 @@ step
     #xprate >1.49
     .goto Eversong Woods,43.67,71.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marniel|r
-    .accept 9358 >>Aceite A Patrulheira Sareyn
+    .accept 9358 >> Aceite A Patrulheira Sareyn
     .target Marniel Amberlight
 step
     #completewith next
     .goto Eversong Woods,44.04,70.35,0
     >>|cRXP_BUY_Compre|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_de|r |cRXP_FRIENDLY_Halis|r |cRXP_BUY_se você precisa de bolsas|r
-    .vendor >>Lixo Comerciante
+    .vendor >> Lixo Comerciante
     .target Halis Dawnstrider
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Velan|r e |cRXP_FRIENDLY_Landra|r
-    .accept 8491 >>Aceite Caça às Peles
+    .accept 8491 >> Aceite Caça às Peles
     .target +Velan Brightoak
     .goto Eversong Woods,44.72,69.63
-    .accept 9395 >>Aceite Refúgio de Saltheril
-    .accept 9254 >>Aceite A Aprendiz Desobediente
+    .accept 9395 >> Aceite Refúgio de Saltheril
+    .accept 9254 >> Aceite A Aprendiz Desobediente
     .target +Magistrix Landra Dawnstrider
     .goto Eversong Woods,44.03,70.76
 step
@@ -1416,11 +1416,11 @@ step
 step
     #label Sunsail
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kelisendra|r e |cRXP_FRIENDLY_Velendris|r
-    .turnin 8887 >>Entregue As Cartas Náuticas Perdidas da Capitã Kelisendra
-    .accept 8886 >>Aceite Piratas Escamatroz!
+    .turnin 8887 >> Entregue As Cartas Náuticas Perdidas da Capitã Kelisendra
+    .accept 8886 >> Aceite Piratas Escamatroz!
     .target +Captain Kelisendra
     .goto Eversong Woods,36.36,66.62
-    .accept 8480 >>Aceite Armamentos Perdidos
+    .accept 8480 >> Aceite Armamentos Perdidos
     .target +Velendris Whitemorn
     .goto Eversong Woods,36.36,66.78
 step
@@ -1550,7 +1550,7 @@ step
     .goto Eversong Woods,30.23,58.44,10,0
     .goto Eversong Woods,30.22,58.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hathvelion|r
-    .turnin 8885 >>Entregue O Anel de Mmmrrrggglll
+    .turnin 8885 >> Entregue O Anel de Mmmrrrggglll
     .target Hathvelion Sungaze
 step
     #completewith next
@@ -1560,10 +1560,10 @@ step
     .isOnQuest 8491
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kelisendra|r e |cRXP_FRIENDLY_Velendris|r
-    .turnin 8886 >>Entregue Piratas Escamatroz
+    .turnin 8886 >> Entregue Piratas Escamatroz
     .target +Captain Kelisendra
     .goto Eversong Woods,36.36,66.62
-    .turnin 9076 >>Entregue O Líder dos Ignóbeis
+    .turnin 9076 >> Entregue O Líder dos Ignóbeis
     .target +Velendris Whitemorn
     .goto Eversong Woods,36.36,66.78
 step << Hunter
@@ -1586,7 +1586,7 @@ step << !Hunter
     .goto Eversong Woods,44.04,70.35,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Halis|r
     >>|cRXP_BUY_Compre|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_dele se você precisar de mochilas|r
-    .vendor >>Comerciante Lixo
+    .vendor >> Venda os itens de lixo
     .target Halis Dawnstrider
 step
     #completewith next
@@ -1600,15 +1600,15 @@ step
 step
     .goto Eversong Woods,44.72,69.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Velan|r
-    .turnin 8491 >>Entregue Caça às Peles
+    .turnin 8491 >> Entregue Caça às Peles
     .target Velan Brightoak
     .isQuestComplete 8491
 step
     #label Sareyn
     .goto Eversong Woods,46.93,71.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sareyn|r
-    .turnin 9358 >>Entregue A Patrulheira Sareyn
-    .accept 9252 >>Aceite Defendendo a Vila de Brisabela
+    .turnin 9358 >> Entregue A Patrulheira Sareyn
+    .accept 9252 >> Aceite Defendendo a Vila de Brisabela
     .target Ranger Sareyn
 step
     #completewith Notes
@@ -1630,8 +1630,8 @@ step
 step
     .goto Eversong Woods,54.28,70.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mirveda|r
-    .turnin 9254 >>Entregue A Aprendiz Desobediente
-    .accept 8487 >>Aceite Solo Conspurcado
+    .turnin 9254 >> Entregue A Aprendiz Desobediente
+    .accept 8487 >> Aceite Solo Conspurcado
     .target Apprentice Mirveda
 step
     #loop
@@ -1650,9 +1650,9 @@ step
     .goto Eversong Woods,54.28,70.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mirveda|r
     >>|cRXP_WARN_Espere a sequência de RP terminar|r
-    .turnin 8487 >>Entregue Solo Conspurcado
+    .turnin 8487 >> Entregue Solo Conspurcado
     .timer 9,Solo Conspurcado RP
-    .accept 8488 >>Aceite Resultados Inesperados
+    .accept 8488 >> Aceite Resultados Inesperados
     .target Apprentice Mirveda
 step
     .goto Eversong Woods,53.66,69.74,20,0
@@ -1665,8 +1665,8 @@ step
     #label Notes
     .goto Eversong Woods,54.28,70.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mirveda|r
-    .turnin 8488 >>Entregue Resultados Inesperados
-    .accept 9255 >>Aceite Anotações de Pesquisa
+    .turnin 8488 >> Entregue Resultados Inesperados
+    .accept 9255 >> Aceite Anotações de Pesquisa
     .target Apprentice Mirveda
 step
     #loop
@@ -1695,7 +1695,7 @@ step << !Warrior !Warlock/BloodElf
     .goto Eversong Woods,52.60,68.47,40,0
     .goto Eversong Woods,53.24,69.28,40,0
     .goto Eversong Woods,53.88,70.03,40,0
-    .xp 9+5875 >>Farme até 5875+/6500xp
+    .xp 9+5875 >> Farme até 5875+/6500xp
 step << !Warrior !Warlock/BloodElf
     #xprate >1.49
     #loop
@@ -1708,7 +1708,7 @@ step << !Warrior !Warlock/BloodElf
     .goto Eversong Woods,52.60,68.47,40,0
     .goto Eversong Woods,53.24,69.28,40,0
     .goto Eversong Woods,53.88,70.03,40,0
-    .xp 9+5560 >>Farme até 5560+/6500xp
+    .xp 9+5560 >> Farme até 5560+/6500xp
 step << Warrior/Undead Warlock/Orc Warlock
     #loop
     .goto Eversong Woods,53.88,70.03,0
@@ -1720,10 +1720,10 @@ step << Warrior/Undead Warlock/Orc Warlock
     .goto Eversong Woods,52.60,68.47,40,0
     .goto Eversong Woods,53.24,69.28,40,0
     .goto Eversong Woods,53.88,70.03,40,0
-    .xp 10 >>Suba até o nível 10
+    .xp 10 >> Suba até o nível 10
 step << Warrior
     #completewith WarriorClassQ
-    .hs >>Use sua Pedra de Regresso para ir a Montalvo
+    .hs >> Use sua Pedra de Regresso para ir a Montalvo
     .bindlocation 2119,1
     .zoneskip Tirisfal Glades
 step << Warrior
@@ -1732,20 +1732,20 @@ step << Warrior
     .isOnQuest 1505
 step << Warrior
     #optional
-    .abandon 1498 >>Abandone Caminho da Defesa
+    .abandon 1498 >>Abandone Caminho da defesa
     .isOnQuest 1498
 step << Warrior
     .goto Tirisfal Glades,61.85,52.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil|r
-    .trainer >>Treine suas magias de classe
-    .accept 1818 >>Aceite Uma conversa com Dinis
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil de Mon|r
+    .trainer >> Treine suas magias de classe
+    .accept 1818 >> Aceite Uma conversa com Dinis
     .target Austil de Mon
     .isQuestAvailable 1498
 step << Warrior
     .goto Tirisfal Glades,58.19,51.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
-    .turnin 1818 >>Entregue Uma conversa com Dinis
-    .accept 1819 >>Aceite Ulag, o Cutelo
+    .turnin 1818 >> Entregue Uma conversa com Dinis
+    .accept 1819 >> Aceite Ulag, o Cutelo
     .target Deathguard Dillinger
     .isQuestAvailable 1498
 step << Warrior
@@ -1757,15 +1757,15 @@ step << Warrior
 step << Warrior
     .goto Tirisfal Glades,58.19,51.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
-    .turnin 1819 >>Entregue Ulag, O Cutelo
-    .accept 1820 >>Aceite Encontrando Eurico
+    .turnin 1819 >> Entregue Ulag, O Cutelo
+    .accept 1820 >> Aceite Encontrando Eurico
     .target Deathguard Dillinger
     .isQuestComplete 1819
 step << Warrior
     #label WarriorClassQ
     .goto Tirisfal Glades,61.72,52.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eurico|r
-    .turnin 1820 >>Entregue Fale com Coleman
+    .turnin 1820 >>Entregue Encontrando Eurico
     .target Coleman Farthing
     .isOnQuest 1820
 step << Warrior
@@ -1838,21 +1838,21 @@ step << Undead Warlock
 step << Undead Warlock
     #optional
     .goto Undercity,88.91,15.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Richard|r
-    .train 707 >>Treine suas magias de classe
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ricardo Curi|r
+    .train 707 >> Treine suas magias de classe
     .target Richard Kerwin
     .xp <10,1
     .xp >12,1
 step << Undead Warlock
     .goto Undercity,88.91,15.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Richard|r
-    .train 705 >>Treine suas magias de classe
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ricardo Curi|r
+    .train 705 >> Treine suas magias de classe
     .target Richard Kerwin
     .xp <12,1
 step << Undead Warlock
     #completewith next
     .goto Tirisfal Glades,61.75,64.96
-    .zone Tirisfal Glades >>Saia da Cidade Baixa
+    .zone Tirisfal Glades >> Saia da Cidade Baixa
     .isOnQuest 1473
 step << Undead Warlock
     .goto Tirisfal Glades,51.44,67.69,15,0
@@ -1903,7 +1903,7 @@ step << Warrior/Undead Warlock
     #label ExitUC
     #completewith ExitSVM
     .goto Undercity,54.67,11.25
-    .zone Silvermoon City >>Pegue o |cRXP_PICK_Orb of Deslocamento|r para a Cidade de Silvermoon
+    .zone Silvermoon City >> Pegue o |cRXP_PICK_Orb of Deslocamento|r para a Cidade de Silvermoon
 step << Warrior/Undead Warlock
     #xprate <1.5
     .goto Silvermoon City,79.50,58.52
@@ -1921,16 +1921,16 @@ step << Warrior/Undead Warlock
     #xprate <1.5
     .goto Eversong Woods,55.70,54.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Antheol|r
-    .turnin 9066 >>Entregue O Castigo Vem a Cavalo
+    .turnin 9066 >> Entregue O Castigo Vem a Cavalo
     .target Instructor Antheol
 step << !Warrior !Warlock !Hunter
     #completewith ExitFalcon
-    .hs >>Hearth to Praça Asa do Falcão
+    .hs >> Hearth to Praça Asa do Falcão
     .bindlocation 3665,1
     .subzoneskip 3665
 step << BloodElf Warlock/BloodElf Hunter
     #completewith ExitFalcon
-    .hs >>Hearth to Praça Asa do Falcão
+    .hs >> Hearth to Praça Asa do Falcão
     .bindlocation 3665,1
     .subzoneskip 3665
 step
@@ -1964,14 +1964,14 @@ step << Paladin/Priest/Mage
     #xprate <1.5
     .goto Eversong Woods,48.17,46.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aeldon|r
-    .turnin 8482 >>Entregue Documentos Incriminadores
-    .accept 8483 >>Aceite O Espião Enânico
+    .turnin 8482 >> Entregue Documentos Incriminadores
+    .accept 8483 >> Aceite O Espião Enânico
     .target Aeldon Sunbrand
 step << Paladin/Priest/Mage
     #xprate >1.49
     .goto Eversong Woods,48.17,46.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aeldon|r
-    .turnin 8482 >>Entregue Documentos Incriminadores
+    .turnin 8482 >> Entregue Documentos Incriminadores
     .target Aeldon Sunbrand
 step << Paladin/Priest/Mage
     #xprate <1.5
@@ -1996,12 +1996,12 @@ step
     #xprate <1.5
     .goto Eversong Woods,48.17,46.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aeldon|r
-    .turnin 8483 >>Entregue O Espião Enânico
+    .turnin 8483 >> Entregue O Espião Enânico
     .target Aeldon Sunbrand
 step
     #optional
     .goto Eversong Woods,45.02,37.68
-    .xp 10 >>Suba até o nível 10
+    .xp 10 >> Suba até o nível 10
 step << Paladin
     #optional
     .goto Eversong Woods,48.39,46.47
@@ -2013,7 +2013,7 @@ step << Paladin
 step << Paladin
     .goto Eversong Woods,48.39,46.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Noellene|r
-    .accept 9677 >>Aceite Chamados de Grão-Cavaleiro Sangueroico
+    .accept 9677 >> Aceite Chamados de Grão-Cavaleiro Sangueroico
     .train 19834 >>Treine suas magias de classe
     .target Noellene
 	.xp <12,1
@@ -2041,18 +2041,18 @@ step << Hunter
 step << Mage/Priest/Warlock
     #completewith next
     .goto Eversong Woods,47.79,47.35,8,0
-    .goto Eversong Woods,47.86,47.76,8 >>Go dentro da Inn
+    .goto Eversong Woods,47.86,47.76,8 >> Go dentro da Inn
 	.xp <10,1
 step << Mage/Priest/Warlock
     #completewith MaPrWaTrain2
     .goto Eversong Woods,48.27,47.05,8,0
-    .goto Eversong Woods,48.06,47.11,8 >>Vá para cima
+    .goto Eversong Woods,48.06,47.11,8 >> Vá para cima
 	.xp <10,1
 step << Priest
     #optional
     .goto Eversong Woods,47.85,47.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ponaris|r no andar de cima
-    .turnin 9489 >>Purifique a Cicatriz << BloodElf
+    .turnin 9489 >> Purifique a Cicatriz << BloodElf
     .train 8092 >>Treine suas magias de classe
     .target Ponaris
 	.xp <10,1
@@ -2061,7 +2061,7 @@ step << Priest
     #label MaPrWaTrain2
     .goto Eversong Woods,47.85,47.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ponaris|r no andar de cima
-    .turnin 9489 >>Purifique a Cicatriz << BloodElf
+    .turnin 9489 >> Purifique a Cicatriz << BloodElf
     .train 592 >>Treine suas magias de classe
     .target Ponaris
 	.xp <12,1
@@ -2110,7 +2110,7 @@ step << BloodElf Warlock
     #completewith next
     .goto Silvermoon City,73.39,59.65,30,0
     .goto Silvermoon City,78.28,59.34,8,0
-    .goto Silvermoon City,78.36,60.14,8 >>Go dentro da Inn
+    .goto Silvermoon City,78.36,60.14,8 >> Go dentro da Inn
 step << BloodElf Warlock
     #xprate <1.5
     .goto Silvermoon City,79.50,58.52
@@ -2158,8 +2158,8 @@ step
     #xprate <1.5
     .goto Eversong Woods,55.70,54.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Antheol|r
-    .turnin 9066 >>Entregue O Castigo Vem a Cavalo
-    .accept 9402 >>Aceite Pega! << Mage
+    .turnin 9066 >> Entregue O Castigo Vem a Cavalo
+    .accept 9402 >> Aceite Pega! << Mage
     .target Instructor Antheol
 step << Mage
     .goto Eversong Woods,54.87,56.37
@@ -2180,7 +2180,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group Guia RestedXP TBC (A)
+#group Guia RestedXP TBC (H)
 << Horde
 #defaultfor !Shaman
 #name 10-12 Canto Eterno (Canto Eterno Woods)
@@ -2210,7 +2210,7 @@ step << Orc Hunter/Troll Hunter/Orc Warlock/Tauren
 step << Orc Hunter/Troll Hunter/Orc Warlock/Tauren
     .goto Eversong Woods,54.37,50.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gloaming|r
-    .fp Silvermoon >>Aprenda a rota de voo para Luaprata
+    .fp Silvermoon >> Aprenda a rota de voo para Luaprata
     .target Skymistress Gloaming
 step << Troll Mage
     .goto Eversong Woods,55.70,54.51
@@ -2298,9 +2298,9 @@ step
     #label Farstrider1
     .goto Eversong Woods,59.52,62.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arathel|r
-    .train 2018 >>Aprenda |T136241:0|t[Ferraria]. Você obterá |T136248:0|t[Mineração] mais tarde, o que permitirá criar |T135248:0|t[Sharpening Stones] (+2 Dano da Arma por 1 hora) << Paladin/BloodElf Rogue/Undead Rogue
+    .train 2018 >> Aprenda |T136241:0|t[Ferraria]. Você obterá |T136248:0|t[Mineração] mais tarde, o que permitirá criar |T135248:0|t[Sharpening Stones] (+2 Dano da Arma por 1 hora) << Paladin/BloodElf Rogue/Undead Rogue
     >>|cRXP_WARN_Você pode pular|r |T136241:0|t[Ferraria] |cRXP_WARN_se desejar|r << Paladin/BloodElf Rogue/Undead Rogue
-    .accept 8477 >>Aceite O Martelo do Lanceiro
+    .accept 8477 >> Aceite O Martelo do Lanceiro
     .target Arathel Sunforge
 step << BloodElf Hunter
     #loop
@@ -2320,8 +2320,8 @@ step << BloodElf Hunter
 step << BloodElf Hunter
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dawnrunner|r
-    .turnin 9484 >>Entregue Domar a Fera - Missão
-    .accept 9486 >>Aceite Domando a Fera
+    .turnin 9484 >> Entregue Domar a Fera - Missão
+    .accept 9486 >> Aceite Domando a Fera
     .target Lieutenant Dawnrunner
 step << BloodElf Hunter
     #loop
@@ -2341,8 +2341,8 @@ step << BloodElf Hunter
 step << BloodElf Hunter
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dawnrunner|r
-    .turnin 9486 >>Entregue Domar a Fera - Missão
-    .accept 9485 >>Aceite Domando a Fera
+    .turnin 9486 >> Entregue Domar a Fera - Missão
+    .accept 9485 >> Aceite Domando a Fera
     .target Lieutenant Dawnrunner
 step
     #optional
@@ -2375,7 +2375,7 @@ step
 step
     .goto Eversong Woods,70.53,72.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ven'jashi|r na Jaula
-    .accept 8479 >>Aceite Zul'Marosh
+    .accept 8479 >> Aceite Zul'Marosh
     .target Ven'jashi
 step
     #completewith next
@@ -2389,14 +2389,14 @@ step
     >>|cRXP_WARN_Use o |T134946:0|t[|cRXP_LOOT_Amani Invasão Plans|r] para iniciar a missão|r
     .complete 8479,1 --Collect Chieftain Zul'Marosh's Head (x1)
     .collect 23249,1,9360 --Collect Amani Invasion Plans (x1)
-    .accept 9360 >>Aceite Invasão Amani
+    .accept 9360 >> Aceite Invasão Amani
     .mob Chieftain Zul'Marosh
     .use 23249
 step
     #label Marosh
     .goto Eversong Woods,70.53,72.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ven'jashi|r na Jaula
-    .turnin 8479 >>Entregue Zul'Marosh
+    .turnin 8479 >> Entregue Zul'Marosh
     .target Ven'jashi
 step
     #loop
@@ -2436,9 +2436,9 @@ step
     #label AmaniTurnins
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dawnrunner|r
-    .turnin 8476 >>Entregue Defendendo o Terreno
-    .turnin 9360 >>Entregue Invasão Amani
-    .accept 9363 >>Aceite Aviso à Vila de Brisabela
+    .turnin 8476 >> Entregue Defendendo o Terreno
+    .turnin 9360 >> Entregue Invasão Amani
+    .accept 9363 >> Aceite Aviso à Vila de Brisabela
     .target Lieutenant Dawnrunner
 step << BloodElf Hunter
     #completewith next
@@ -2458,48 +2458,48 @@ step << BloodElf Hunter
     .use 23703
 step << BloodElf Hunter
     #completewith FlySMC
-    .subzone 3488 >>Vá para Tranquillien
+    .subzone 3488 >> Vá para Tranquillien
 step << BloodElf Hunter
     .goto Ghostlands,46.55,28.38,10,0
     .goto Ghostlands,46.08,28.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vandril|r
-    .accept 9327 >>Aceite Os Renegados
+    .accept 9327 >> Aceite Os Renegados
     .target Arcanist Vandril
 step << BloodElf Hunter
     .goto Ghostlands,44.78,32.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mavren|r
-    .turnin 9327 >>Entregue Os Renegados
-    .accept 9758 >>Aceite Fale com o Arcanista Vandril
+    .turnin 9327 >> Entregue Os Renegados
+    .accept 9758 >> Aceite Fale com o Arcanista Vandril
     .target High Executor Mavren
 step << BloodElf Hunter
     .goto Ghostlands,47.34,29.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lymel|r
-    .accept 9130 >>Aceite Mercadoria de Luaprata
+    .accept 9130 >> Aceite Mercadoria de Luaprata
     .target Quartermaster Lymel
 step << BloodElf Hunter
     .goto Ghostlands,46.55,28.38,10,0
     .goto Ghostlands,46.08,28.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vandril|r
-    .turnin 9758 >>Entregue Fale com o Arcanista Vandril
-    .accept 9138 >>Aceite Vila Corona Solar
+    .turnin 9758 >> Entregue Fale com o Arcanista Vandril
+    .accept 9138 >> Aceite Vila Corona Solar
     .target Arcanist Vandril
 step << BloodElf Hunter
     .goto Ghostlands,45.42,30.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sunwing|r
-    .turnin 9130 >>Entregue Mercadoria de Luaprata
-    .accept 9133 >>Aceite Voo para Luaprata
+    .turnin 9130 >> Entregue Mercadoria de Luaprata
+    .accept 9133 >> Aceite Voo para Luaprata
     .target Skymaster Sunwing
 step << BloodElf Hunter
     .goto Ghostlands,47.23,28.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rathis|r
-    .accept 9152 >>Aceite Suprimentos de Raposo
+    .accept 9152 >> Aceite Suprimentos de Raposo
     .target Rathis Tomber
 step << BloodElf Hunter
     #label FlySMC
     #completewith FairBreezeHunter1
     .goto Ghostlands,45.42,30.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sunwing|r
-    .fly Silvermoon City >>Voe para Silvermoon
+    .fly Silvermoon City >> Voe para Silvermoon
     .target Skymaster Sunwing
     .zoneskip Silvermoon City
 step << BloodElf Hunter
@@ -2517,11 +2517,11 @@ step << BloodElf Hunter
     #label AmaniTurnins
     .goto Eversong Woods,60.32,62.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dawnrunner|r
-    .turnin 8476 >>Entregue Defendendo o Terreno
-    .turnin 9360 >>Entregue Invasão Amani
-    .accept 9363 >>Aceite Aviso à Vila de Brisabela
-    .turnin 9485 >>Entregue Domar a Fera - Missão
-    .accept 9673 >>Aceite Treinamento de Feras
+    .turnin 8476 >> Entregue Defendendo o Terreno
+    .turnin 9360 >> Entregue Invasão Amani
+    .accept 9363 >> Aceite Aviso à Vila de Brisabela
+    .turnin 9485 >> Entregue Domar a Fera - Missão
+    .accept 9673 >> Aceite Treinamento de Feras
     .target Lieutenant Dawnrunner
 step
     #xprate <1.5
@@ -2560,7 +2560,7 @@ step << Hunter !Troll
 step
     .goto Eversong Woods,59.52,62.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arathel|r
-    .turnin 8477 >>Entregue O Martelo do Lanceiro
+    .turnin 8477 >> Entregue O Martelo do Lanceiro
     .target Arathel Sunforge
 step << Rogue
     #optional
@@ -2573,12 +2573,12 @@ step
     #completewith next
     .goto Eversong Woods,59.53,62.16,12,0
     .goto Eversong Woods,59.82,61.91,12,0
-    .goto Eversong Woods,59.82,61.91,10 >>Suba a rampa em direção a |cRXP_FRIENDLY_Duskwither|r
+    .goto Eversong Woods,59.82,61.91,10 >> Suba a rampa em direção a |cRXP_FRIENDLY_Duskwither|r
 step
     #label MagiApp
     .goto Eversong Woods,60.31,61.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duskwither|r
-    .accept 8888 >>Aceite A Aprendiz do Magíster
+    .accept 8888 >> Aceite A Aprendiz do Magíster
     .target Magister Duskwither
 step
     #optional
@@ -2591,16 +2591,16 @@ step
 step
     .goto Eversong Woods,67.80,56.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loralthalis|r
-    .turnin 8888 >>Entregue A Aprendiz do Magíster
-    .accept 8889 >>Aceite Desativando a Torre
-    .accept 9394 >>Aceite Onde Está Wyllithen?
+    .turnin 8888 >> Entregue A Aprendiz do Magíster
+    .accept 8889 >> Aceite Desativando a Torre
+    .accept 9394 >> Aceite Onde Está Wyllithen?
     .target Apprentice Loralthalis
 step
     #label Wylliethen1
     .goto Eversong Woods,68.71,46.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Wyllithen|r
-    .turnin 9394 >>Entregue Onde Está Wyllithen?
-    .accept 8894 >>Aceite Limpando o Terreno
+    .turnin 9394 >> Entregue Onde Está Wyllithen?
+    .accept 8894 >> Aceite Limpando o Terreno
     .target Groundskeeper Wyllithen
 step
     #completewith DeactivationComplete
@@ -2623,13 +2623,13 @@ step
     #completewith next
     .goto Eversong Woods,69.16,52.01,8,0
     .goto Eversong Woods,69.09,51.74,8,0
-    .goto Eversong Woods,68.93,51.69,8 >>Vá para cima
+    .goto Eversong Woods,68.93,51.69,8 >> Vá para cima
 step
     #sticky
     #label Journalt
     .goto Eversong Woods,69.24,52.11,0,0
     >>Clique no table
-    .accept 8891 >>Aceite Pesquisas Abandonadas
+    .accept 8891 >> Aceite Pesquisas Abandonadas
 step
     >>Clique no |cRXP_PICK_Floating Green Crystal|r
     .complete 8889,2 --Second Power Source Deactivated (x1)
@@ -2641,7 +2641,7 @@ step
     .goto Eversong Woods,69.57,52.12,12,0
     .goto Eversong Woods,69.82,52.50,12,0
     .goto Eversong Woods,69.76,52.98,12,0
-    .goto Eversong Woods,69.64,53.35,15 >>Vá para cima
+    .goto Eversong Woods,69.64,53.35,15 >> Vá para cima
 step
     #requires Journalt
     .goto Eversong Woods,69.64,53.35
@@ -2673,7 +2673,7 @@ step
 step
     .goto Eversong Woods,68.71,46.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Wyllithen|r
-    .turnin 8894 >>Entregue Limpando o Terreno
+    .turnin 8894 >> Entregue Limpando o Terreno
     .target Groundskeeper Wyllithen
 step << Mage
     #xprate <1.5
@@ -2688,7 +2688,7 @@ step << Mage
 	.goto Eversong Woods,67.61,45.28,40,0
 	.goto Eversong Woods,67.13,48.48,40,0
 	.goto Eversong Woods,69.01,48.22,40,0
-    .xp 11+5535 >>Farme até 5535+/8700xp
+    .xp 11+5535 >> Farme até 5535+/8700xp
     .isQuestComplete 9403
 step << !BloodElf/!Warlock
     #xprate <1.5
@@ -2703,7 +2703,7 @@ step << !BloodElf/!Warlock
 	.goto Eversong Woods,67.61,45.28,40,0
 	.goto Eversong Woods,67.13,48.48,40,0
 	.goto Eversong Woods,69.01,48.22,40,0
-    .xp 11+6375 >>Suba até 6375+/8700 XP
+    .xp 11+6375 >> Suba até 6375+/8700 XP
     .isQuestNotComplete 9403 << Mage
 step << Mage
     #xprate >1.49
@@ -2718,7 +2718,7 @@ step << Mage
 	.goto Eversong Woods,67.61,45.28,40,0
 	.goto Eversong Woods,67.13,48.48,40,0
 	.goto Eversong Woods,69.01,48.22,40,0
-    .xp 11+3960 >>Farme até 3960+/8700xp
+    .xp 11+3960 >> Farme até 3960+/8700xp
     .isQuestComplete 9403
 step << !BloodElf/!Warlock
     #xprate >1.49
@@ -2733,13 +2733,13 @@ step << !BloodElf/!Warlock
 	.goto Eversong Woods,67.61,45.28,40,0
 	.goto Eversong Woods,67.13,48.48,40,0
 	.goto Eversong Woods,69.01,48.22,40,0
-    .xp 11+5110 >>Farme até 5110+/8700xp
+    .xp 11+5110 >> Farme até 5110+/8700xp
     .isQuestNotComplete 9403 << Mage
 step
     .goto Eversong Woods,67.80,56.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loralthalis|r
-    .turnin 8889 >>Entregue Desativando a Torre
-    .accept 8890 >>Aceite Notícias da Torre
+    .turnin 8889 >> Entregue Desativando a Torre
+    .accept 8890 >> Aceite Notícias da Torre
     .target Apprentice Loralthalis
 step
     #loop
@@ -2802,13 +2802,13 @@ step
     #completewith next
     .goto Eversong Woods,59.53,62.16,12,0
     .goto Eversong Woods,59.82,61.91,12,0
-    .goto Eversong Woods,59.82,61.91,10 >>Suba a rampa em direção a |cRXP_FRIENDLY_Duskwither|r
+    .goto Eversong Woods,59.82,61.91,10 >> Suba a rampa em direção a |cRXP_FRIENDLY_Duskwither|r
 step
     #label Spire
     .goto Eversong Woods,60.31,61.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duskwither|r
-    .turnin 8890 >>Entregue Notícias da Torre
-    .turnin 8891 >>Entregue Pesquisas Abandonadas
+    .turnin 8890 >> Entregue Notícias da Torre
+    .turnin 8891 >> Entregue Pesquisas Abandonadas
     .target Magister Duskwither
 step << Mage
     .goto Eversong Woods,55.70,54.51
@@ -2826,7 +2826,7 @@ step << Druid
     .goto Silvermoon City,72.53,56.24,10,0
     .goto Silvermoon City,71.55,55.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harene|r
-    .train 8936 >>Treine suas magias de classe
+    .train 8936 >> Treine suas magias de classe
     .target Harene Plainwalker
 	.xp <12,1
 	.xp >14,1
@@ -2834,7 +2834,7 @@ step << Druid
     .goto Silvermoon City,72.53,56.24,10,0
     .goto Silvermoon City,71.55,55.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harene|r
-    .train 782 >>Treine suas magias de classe
+    .train 782 >> Treine suas magias de classe
     .target Harene Plainwalker
 	.xp <14,1
 step
@@ -2842,7 +2842,7 @@ step
     #completewith next
     .goto Silvermoon City,73.39,59.65,30,0
     .goto Silvermoon City,78.28,59.34,8,0
-    .goto Silvermoon City,78.36,60.14,8 >>Go dentro da Inn
+    .goto Silvermoon City,78.36,60.14,8 >> Go dentro da Inn
 step
     #xprate <1.5
     .goto Silvermoon City,79.50,58.52
@@ -2855,7 +2855,7 @@ step << !BloodElf Hunter
     #completewith next
     .goto Silvermoon City,73.39,59.65,30,0
     .goto Silvermoon City,78.28,59.34,8,0
-    .goto Silvermoon City,78.36,60.14,8 >>Go dentro da Inn.Exit out the other side
+    .goto Silvermoon City,78.36,60.14,8 >> Go dentro da Inn.Exit out the other side
 step << BloodElf Hunter
     #completewith next
     .goto Silvermoon City,80.90,57.53,8,0
@@ -2864,14 +2864,14 @@ step << Orc Warlock/Undead Warlock
     #optional
     .goto Silvermoon City,74.39,47.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Talionia|r
-    .train 705 >>Treine suas magias de classe
+    .train 705 >> Treine suas magias de classe
     .target Talionia
     .xp <12,1
     .xp >14,1
 step << Orc Warlock/Undead Warlock
     .goto Silvermoon City,74.39,47.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Talionia|r
-    .train 6222 >>Treine suas magias de classe
+    .train 6222 >> Treine suas magias de classe
     .target Talionia
     .xp <14,1
 step << Rogue
@@ -2884,7 +2884,7 @@ step << BloodElf Rogue
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zelanis|r
     >>|cRXP_WARN_Certifique-se de que treinou|r |T133644:0|t[Bater Carteira] |cRXP_WARN_e|r |T132320:0|t[Furtividade] |cRXP_WARN_para uma missão depois|r
-    .accept 9532 >>Aceite Encontre Keltus Umbrafronde
+    .accept 9532 >> Aceite Encontre Keltus Umbrafronde
     .train 2983 >>Treine suas magias de classe
     .target Zelanis
     .train 2983,1
@@ -2894,7 +2894,7 @@ step << BloodElf Rogue
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zelanis|r
     >>|cRXP_WARN_Certifique-se de que treinou|r |T133644:0|t[Bater Carteira] |cRXP_WARN_e|r |T132320:0|t[Furtividade] |cRXP_WARN_para uma missão depois|r
-    .accept 9532 >>Aceite Encontre Keltus Umbrafronde
+    .accept 9532 >> Aceite Encontre Keltus Umbrafronde
     .train 1758 >>Treine suas magias de classe
     .target Zelanis
     .train 1758,1
@@ -2904,13 +2904,13 @@ step << BloodElf Rogue
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zelanis|r
     >>|cRXP_WARN_Certifique-se de que treinou|r |T133644:0|t[Bater Carteira] |cRXP_WARN_e|r |T132320:0|t[Furtividade] |cRXP_WARN_para uma missão depois|r
-    .accept 9532 >>Aceite Encontre Keltus Umbrafronde
+    .accept 9532 >> Aceite Encontre Keltus Umbrafronde
     .target Zelanis
 step << BloodElf Rogue
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zelanis|r
-    .train 921 >>Treine |T133644:0|t[Bater Carteira] para uma missão depois
-    .train 1784 >>Treine |T132320:0|t[Furtividade] para uma missão depois
+    .train 921 >> Treine |T133644:0|t[Bater Carteira] para uma missão depois
+    .train 1784 >> Treine |T132320:0|t[Furtividade] para uma missão depois
     .train 921,1
     .train 1784,1
     .target Zelanis
@@ -2918,14 +2918,14 @@ step << BloodElf Rogue
     #optional
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zelanis|r
-    .train 1784 >>Treine |T132320:0|t[Furtividade] para uma missão depois
+    .train 1784 >> Treine |T132320:0|t[Furtividade] para uma missão depois
     .target Zelanis
 step << BloodElf Rogue
     #optional
     #label Zelanis
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zelanis|r
-    .train 921 >>Treine |T133644:0|t[Bater Carteira] para uma missão depois
+    .train 921 >> Treine |T133644:0|t[Bater Carteira] para uma missão depois
     .target Zelanis
 step << !BloodElf Rogue
     #optional
@@ -2947,7 +2947,7 @@ step << Rogue
     #completewith next
     .goto Silvermoon City,73.39,59.65,30,0
     .goto Silvermoon City,78.28,59.34,8,0
-    .goto Silvermoon City,78.36,60.14,8 >>Go dentro da Inn
+    .goto Silvermoon City,78.36,60.14,8 >> Go dentro da Inn
 step << Rogue
     #xprate <1.5
     .goto Silvermoon City,79.50,58.52
@@ -2969,7 +2969,7 @@ step << BloodElf Paladin/BloodElf Rogue/Undead Rogue
 step << BloodElf Paladin/BloodElf Rogue/Undead Rogue
     .goto Silvermoon City,78.90,43.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Belil|r
-    .train 2580 >>Aprenda |T136248:0|t[Mineração]. Isso permitirá encontrar |T135232:0|t|cRXP_LOOT_Pedra Rústica|r nos veios para criar |T135248:0|t[Pedras de Afiar] (+2 Dano da Arma por 1 hora) << Paladin/BloodElf Rogue/Undead Rogue
+    .train 2580 >> Aprenda |T136248:0|t[Mineração]. Isso permitirá encontrar |T135232:0|t|cRXP_LOOT_Pedra Rústica|r nos veios para criar |T135248:0|t[Pedras de Afiar] (+2 Dano da Arma por 1 hora) << Paladin/BloodElf Rogue/Undead Rogue
     .target Belil
     .skill blacksmithing,1
 step << BloodElf Paladin/BloodElf Rogue/Undead Rogue
@@ -2982,7 +2982,7 @@ step << BloodElf Paladin/BloodElf Rogue/Undead Rogue
     .skill mining,1
 step << BloodElf Paladin/BloodElf Rogue/Undead Rogue
     #completewith Defending
-    .cast 2580 >>|cRXP_WARN_Use|r |T136025:0|t[Localizar Minérios]
+    .cast 2580 >> |cRXP_WARN_Use|r |T136025:0|t[Localizar Minérios]
 step << Paladin
     #completewith FirstTrialB
     .goto Silvermoon City,89.02,37.03,12,0
@@ -3054,8 +3054,8 @@ step << Hunter
 step << BloodElf Hunter
     .goto Silvermoon City,82.20,28.06
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Halthenis|r
-    .turnin 9673 >>Entregue Treinamento de Feras
-    .train 4187 >>Treine as magias do seu mascote
+    .turnin 9673 >> Entregue Treinamento de Feras
+    .train 4187 >> Treine as magias do seu mascote
     .target Halthenis
 step << Hunter
     .goto Silvermoon City,82.39,26.09 << BloodElf
@@ -3063,7 +3063,7 @@ step << Hunter
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tana|r << BloodElf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zandine|r << !BloodElf
     >>|cRXP_WARN_Arrastar|r |T132162:0|t[Treinamento de Feras] |cRXP_WARN_para suas barras de ação. Ensine habilidades ao seu mascote|r << BloodElf
-    .train 14281 >>Treine suas magias de classe
+    .train 14281 >> Treine suas magias de classe
     .target Tana << BloodElf
     .target Zandine << !BloodElf
 	.xp <12,1
@@ -3099,7 +3099,7 @@ step << !Undead Rogue
     #completewith Louis
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel|r
-    .fp Undercity >>Aprenda a rota de voo para Undercity
+    .fp Undercity >> Aprenda a rota de voo de Cidade Baixa
     .target Michael Garrett
 step << Rogue
     #optional
@@ -3183,19 +3183,19 @@ step << BloodElf Hunter
     .goto Silvermoon City,65.53,72.60,8,0
     .goto Silvermoon City,53.93,71.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sathren|r
-    .turnin 9133 >>Entregue Voo para Luaprata
-    .accept 9134 >>Aceite A Mestre dos Ares Crepúsculo
+    .turnin 9133 >> Entregue Voo para Luaprata
+    .accept 9134 >> Aceite A Mestre dos Ares Crepúsculo
     .target Sathren Azuredawn
 step << BloodElf Hunter
     #completewith next
     .goto Eversong Woods,56.52,49.83
-    .zone Eversong Woods >>Saia de Luaprata
+    .zone Eversong Woods >> Saia de Luaprata
     .zoneskip Ghostlands
 step << BloodElf Hunter
     .goto Eversong Woods,54.37,50.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gloaming|r
-    .turnin 9134 >>Entregue A Mestre dos Ares Crepúsculo
-    .accept 9135 >>Aceite Reencontro com Sathiel
+    .turnin 9134 >> Entregue A Mestre dos Ares Crepúsculo
+    .accept 9135 >> Aceite Reencontro com Sathiel
     .target Skymistress Gloaming
     .zoneskip Ghostlands
 step
@@ -3203,7 +3203,7 @@ step
     #label SMtraining01
 step << BloodElf !Hunter !Warlock/Undead !Warlock !Warrior/Orc !Warrior !Warlock !Hunter/Troll !Warrior !Hunter/!Tauren
     #completewith Defending
-    .hs >>Hearth to Praça Asa do Falcão
+    .hs >> Hearth to Praça Asa do Falcão
     .cooldown item,6948,>0
     .bindlocation 3665,1
     .subzoneskip 3665
@@ -3221,7 +3221,7 @@ step << Rogue
     .zoneskip Ghostlands
 step << Rogue
     .goto Undercity,54.67,11.25
-    .zone Silvermoon City >>Pegue o |cRXP_PICK_Orb of Deslocamento|r para a Cidade de Silvermoon
+    .zone Silvermoon City >> Pegue o |cRXP_PICK_Orb of Deslocamento|r para a Cidade de Silvermoon
     .cooldown item,6948,<0
     .zoneskip Eversong Woods
     .zoneskip Ghostlands
@@ -3250,13 +3250,13 @@ step << Mage/Priest
 step << Mage/Priest
     #completewith MaPrWaTrain2
     .goto Eversong Woods,48.27,47.05,8,0
-    .goto Eversong Woods,48.06,47.11,8 >>Vá para cima
+    .goto Eversong Woods,48.06,47.11,8 >> Vá para cima
 	.xp <10,1
 step << Priest
     #optional
     .goto Eversong Woods,47.85,47.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ponaris|r no andar de cima
-    .train 592 >>Treine suas magias de classe
+    .train 592 >> Treine suas magias de classe
     .target Ponaris
 	.xp <12,1
 	.xp >14,1
@@ -3264,14 +3264,14 @@ step << Priest
     #label MaPrWaTrain2
     .goto Eversong Woods,47.85,47.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ponaris|r no andar de cima
-    .train 598 >>Treine suas magias de classe
+    .train 598 >> Treine suas magias de classe
     .target Ponaris
 	.xp <14,1
 step << Mage
     #optional
     .goto Eversong Woods,48.04,48.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Garridel|r no andar de cima
-    .train 145 >>Treine suas magias de classe
+    .train 145 >> Treine suas magias de classe
     .target Garridel
 	.xp <12,1
 	.xp >14,1
@@ -3279,7 +3279,7 @@ step << Mage
     #label MaPrWaTrain2
     .goto Eversong Woods,48.04,48.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Garridel|r no andar de cima
-    .train 1449 >>Treine suas magias de classe
+    .train 1449 >> Treine suas magias de classe
     .target Garridel
 	.xp <14,1
 step
@@ -3304,8 +3304,8 @@ step
 step
     .goto Eversong Woods,46.93,71.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sareyn|r
-    .turnin 9252 >>Entregue Defendendo a Vila de Brisabela
-    .accept 9253 >>Aceite O Guarda-Runas Deryan
+    .turnin 9252 >> Entregue Defendendo a Vila de Brisabela
+    .accept 9253 >> Aceite O Guarda-Runas Deryan
     .target Ranger Sareyn
     .isQuestComplete 9252
 step
@@ -3313,13 +3313,13 @@ step
     #label Defending
     .goto Eversong Woods,46.93,71.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sareyn|r
-    .accept 9253 >>Aceite O Guarda-Runas Deryan
+    .accept 9253 >> Aceite O Guarda-Runas Deryan
     .target Ranger Sareyn
     .isQuestTurnedIn 9252
 step
     .goto Eversong Woods,44.72,69.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Velan|r
-    .turnin 8491 >>Entregue Caça às Peles
+    .turnin 8491 >> Entregue Caça às Peles
     .target Velan Brightoak
     .isQuestComplete 8491
 step
@@ -3395,14 +3395,14 @@ step
     #xprate <1.5
     #optional
     #completewith next
-    .destroy 23500 >>|cRXP_WARN_EXCLUIR|r |T133461:0|t[Saltheril's Haven Party Invitation] |cRXP_WARN_from your bags, as it's no longer needed|r
+    .destroy 23500 >> |cRXP_WARN_EXCLUIR|r |T133461:0|t[Saltheril's Haven Party Invitation] |cRXP_WARN_from your bags, as it's no longer needed|r
 step
     #xprate <1.5
     #label SGrove
     .goto Eversong Woods,34.06,80.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Larianna|r
-    .turnin 9258 >>Entregue Mata Queimada
-    .accept 8473 >>Aceite Trabalho Sujo
+    .turnin 9258 >> Entregue Mata Queimada
+    .accept 8473 >> Aceite Trabalho Sujo
     .target Larianna Riverwind
 step
     #xprate <1.5
@@ -3419,7 +3419,7 @@ step
     >>|cRXP_WARN_Use |T133280:0|t[|cRXP_LOOT_Pingente do Velho Cascabranca|r] para iniciar a missão|r
     >>|cRXP_ENEMY_Velho Cascabranca|r |cRXP_WARN_tem um tempo de reaparição de 7 minutos e 30 segundos|r
     .collect 23228,1,8474,1 --Collect Old Whitebark's Pendant (x1)
-    .accept 8474 >>Aceite Pingente do Velho Cascabranca
+    .accept 8474 >> Aceite Pingente do Velho Cascabranca
     .mob Old Whitebark
     .use 23228
 step
@@ -3441,15 +3441,15 @@ step
     #xprate <1.5
     .goto Eversong Woods,34.06,80.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Larianna|r
-    .turnin 8473 >>Entregue Trabalho Sujo
-    .turnin 8474 >>Entregue Pingente do Velho Cascabranca
-    .accept 10166 >>Aceite Memórias do Cascabranca
+    .turnin 8473 >> Entregue Trabalho Sujo
+    .turnin 8474 >> Entregue Pingente do Velho Cascabranca
+    .accept 10166 >> Aceite Memórias do Cascabranca
     .target Larianna Riverwind
 step
     #xprate <1.5
     #completewith next
     .goto Eversong Woods,37.79,86.25
-    .cast 33980 >>|cRXP_WARN_Usar|r |T133280:0|t[Old Whitebark's Pendant] |cRXP_WARN_to summon|r |cRXP_ENEMY_Whitebark's Spirit|r
+    .cast 33980 >> |cRXP_WARN_Usar|r |T133280:0|t[Old Whitebark's Pendant] |cRXP_WARN_to summon|r |cRXP_ENEMY_Whitebark's Spirit|r
     .use 28209
     .isOnQuest 10166
 step
@@ -3457,13 +3457,13 @@ step
     .goto Eversong Woods,37.79,86.25
     >>Derrote |cRXP_ENEMY_Espírito do Cascabranca|r
     >>Fale com |cRXP_FRIENDLY_Espírito do Cascabranca|r depois de derrotá-lo
-    .turnin 10166 >>Entregue Memórias do Cascabranca
+    .turnin 10166 >> Entregue Memórias do Cascabranca
     .target Whitebark's Spirit
     .use 28209
 step
     .goto Eversong Woods,44.19,85.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deryan|r
-    .turnin 9253 >>Entregue o Guarda-Runas Deryan
+    .turnin 9253 >> Entregue o Guarda-Runas Deryan
     .target Runewarden Deryan
     .isOnQuest 9253
 step << Mage
@@ -3489,7 +3489,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group Guia RestedXP TBC (A)
+#group Guia RestedXP TBC (H)
 << Horde
 #name 12-16 Terra Fantasma
 #displayname 13-16 Terra Fantasma << Orc !Hunter !Warlock/Troll !Hunter
@@ -3505,10 +3505,10 @@ step << Mage
     .isQuestComplete 9404
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dawnstrider|r e |cRXP_FRIENDLY_Thedra|r
-    .turnin 9144 >>Entregue Perdido na Terra Fantasma
+    .turnin 9144 >> Entregue Perdido na Terra Fantasma
     .target +Courier Dawnstrider
     .goto Eversong Woods,48.98,88.99
-    .accept 9147 >>Aceite O Mensageiro Caído
+    .accept 9147 >> Aceite O Mensageiro Caído
     .target +Apothecary Thedra
     .goto Eversong Woods,49.02,89.05
 step << BloodElf Warlock
@@ -3571,67 +3571,67 @@ step
     .mob Mistbat
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thedra|r e |cRXP_FRIENDLY_Dawnstrider|r
-    .turnin 9147 >>Entregue O Mensageiro Caído
+    .turnin 9147 >> Entregue O Mensageiro Caído
     .target +Apothecary Thedra
     .goto Eversong Woods,49.02,89.05
-    .accept 9148 >>Aceite Entrega para Tranquillien
+    .accept 9148 >> Aceite Entrega para Tranquillien
     .target +Courier Dawnstrider
     .goto Eversong Woods,48.98,88.99
 step
     #completewith next
-    .subzone 3488 >>Vá para Tranquillien
+    .subzone 3488 >> Vá para Tranquillien
 step
     .goto Ghostlands,46.55,28.38,10,0
     .goto Ghostlands,46.08,28.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vandril|r
-    .turnin 9148 >>Entregue Entrega para Tranquillien
-    .accept 9327 >>Aceite Os Renegados << BloodElf
-    .accept 9329 >>Aceite Os Renegados << !BloodElf
+    .turnin 9148 >> Entregue Entrega para Tranquillien
+    .accept 9327 >> Aceite Os Renegados << BloodElf
+    .accept 9329 >> Aceite Os Renegados << !BloodElf
     .target Arcanist Vandril
 step << Warrior
     .goto Ghostlands,45.42,30.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sunwing|r
-    .fp Tranquillien >>Aprenda a rota de voo para Tranquillien
+    .fp Tranquillien >> Aprenda a rota de voo para Tranquillien
     .target Skymaster Sunwing
 step
     .goto Ghostlands,45.17,32.37,10,0
     .goto Ghostlands,44.77,32.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mavren|r
-    .turnin 9327 >>Entregue Os Renegados << BloodElf
-    .turnin 9329 >>Entregue Os Renegados << !BloodElf
-    .accept 9758 >>Aceite Fale com o Arcanista Vandril
+    .turnin 9327 >> Entregue Os Renegados << BloodElf
+    .turnin 9329 >> Entregue Os Renegados << !BloodElf
+    .accept 9758 >> Aceite Fale com o Arcanista Vandril
     .target High Executor Mavren
 step << BloodElf !Hunter
     .goto Ghostlands,47.34,29.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lymel|r
-    .accept 9130 >>Aceite Mercadoria de Luaprata
+    .accept 9130 >> Aceite Mercadoria de Luaprata
     .target Quartermaster Lymel
 step << BloodElf Warlock
     #completewith next
     .goto Ghostlands,48.34,31.99,8,0
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kalarin|r
-    .home >>Defina sua Pedra de Retorno em Tranquillien
+    .home >> Defina sua Pedra de Retorno em Tranquillien
     .target Innkeeper Kalarin
     .bindlocation 3488
 step
     .goto Ghostlands,46.55,28.38,10,0
     .goto Ghostlands,46.08,28.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vandril|r
-    .turnin 9758 >>Entregue Fale com o Arcanista Vandril
-    .accept 9138 >>Aceite Vila Corona Solar
+    .turnin 9758 >> Entregue Fale com o Arcanista Vandril
+    .accept 9138 >> Aceite Vila Corona Solar
     .target Arcanist Vandril
 step << BloodElf
     .goto Ghostlands,45.42,30.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sunwing|r
-    .turnin 9130 >>Entregue Mercadoria de Luaprata
-    .accept 9133 >>Aceite Voo para Luaprata << Warlock/Priest/Mage
+    .turnin 9130 >> Entregue Mercadoria de Luaprata
+    .accept 9133 >> Aceite Voo para Luaprata << Warlock/Priest/Mage
     .target Skymaster Sunwing
 step << BloodElf Warlock
     #completewith RuneOS
     .goto Ghostlands,45.42,30.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sunwing|r
-    .fly Silvermoon >>Voe para Silvermoon
+    .fly Silvermoon >> Voe para Silvermoon
     .target Skymaster Sunwing
     .zoneskip Silvermoon City
 step << BloodElf Warlock
@@ -3646,8 +3646,8 @@ step << BloodElf Warlock
     .goto Silvermoon City,65.53,72.60,8,0
     .goto Silvermoon City,53.93,71.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sathren|r
-    .turnin 9133 >>Entregue Voo para Luaprata
-    .accept 9134 >>Aceite A Mestre dos Ares Crepúsculo
+    .turnin 9133 >> Entregue Voo para Luaprata
+    .accept 9134 >> Aceite A Mestre dos Ares Crepúsculo
     .target Sathren Azuredawn
 step << BloodElf Warlock
     #completewith RuneOS
@@ -3663,7 +3663,7 @@ step << BloodElf Warlock
     .goto Silvermoon City,74.39,47.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Talionia|r
     .turnin 9619 >>Entregue Runa de Evocação
-    .train 705 >>Treine suas magias de classe
+    .train 705 >> Treine suas magias de classe
     .target Talionia
     .xp <12,1
     .xp >14,1
@@ -3673,7 +3673,7 @@ step << BloodElf Warlock
     .goto Silvermoon City,74.39,47.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Talionia|r
     .turnin 9619 >>Entregue Runa de Evocação
-    .train 6222 >>Treine suas magias de classe
+    .train 6222 >> Treine suas magias de classe
     .target Talionia
     .xp <14,1
     .xp >16,1
@@ -3683,7 +3683,7 @@ step << BloodElf Warlock
     .goto Silvermoon City,74.39,47.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Talionia|r
     .turnin 9619 >>Entregue Runa de Evocação
-    .train 1455 >>Treine suas magias de classe
+    .train 1455 >> Treine suas magias de classe
     .target Talionia
     .xp <16,1
     .train 1455,1
@@ -3701,13 +3701,13 @@ step << BloodElf Warlock
 step
     .goto Ghostlands,47.23,28.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rathis|r
-    .accept 9152 >>Aceite Suprimentos de Raposo
+    .accept 9152 >> Aceite Suprimentos de Raposo
     .target Rathis Tomber
 step
     #label AnokPickup
     .goto Ghostlands,57.54,14.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Elfo Sangrento Moribundo|r no chão
-    .accept 9315 >>Aceite Anok'suten
+    .accept 9315 >> Aceite Anok'suten
     .target Dying Blood Elf
 step << !Paladin
     #completewith next
@@ -3791,12 +3791,12 @@ step << Paladin
 step
     .goto Ghostlands,69.40,15.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valanna|r
-    .accept 9143 >>Aceite Dando Um Jeito em Zeb'Sora
+    .accept 9143 >> Aceite Dando Um Jeito em Zeb'Sora
     .target Ranger Valanna
 step
     .goto Ghostlands,72.29,19.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Geranis|r
-    .accept 9157 >>Aceite Rituais Esquecidos
+    .accept 9157 >> Aceite Rituais Esquecidos
     .target Geranis Whitemorn
 step
     #loop
@@ -3822,13 +3822,13 @@ step
     .goto Ghostlands,73.48,32.15,15,0
     .goto Ghostlands,72.50,32.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sedina|r
-    .accept 9158 >>Aceite Vetores da Praga
+    .accept 9158 >> Aceite Vetores da Praga
     .target Farstrider Sedina
 step << !Mage
     .goto Ghostlands,72.29,32.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Heron|r
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
-    >>|cRXP_BUY_Compre|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_dele|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cRXP_BUY_Compre|r |T133918:0|t[Pargos-da-lama Bocalonga] |cRXP_BUY_dele|r << !Priest !Mage !Warlock !Druid !Paladin
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_e|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_dele|r << Paladin
     .collect 1179,20,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Ice Cold Milk (20)
     .collect 4592,20,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Longjaw Mud Snapper (20)
@@ -3843,7 +3843,7 @@ step << !Mage
     .goto Ghostlands,72.29,32.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Heron|r
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
-    >>|cRXP_BUY_Compre|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_dele|r << !Priest !Mage !Warlock !Druid !Paladin
+    >>|cRXP_BUY_Compre|r |T133918:0|t[Pargos-da-lama Bocalonga] |cRXP_BUY_dele|r << !Priest !Mage !Warlock !Druid !Paladin
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_e|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_dele|r << Paladin
     .collect 1179,10,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Ice Cold Milk (10)
     .collect 4592,20,9281,1 << !Priest !Mage !Warlock !Druid !Paladin --Longjaw Mud Snapper (20)
@@ -3857,7 +3857,7 @@ step << !Mage
 step
     .goto Ghostlands,72.29,32.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Heron|r
-    >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Compre|r |T132796:0|t[Suco de Melão] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Buy|r a[Mutton Chops]|cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
     >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_e|r |T133970:0|t[Mutton Chops] |cRXP_BUY_dele|r << Paladin
     .collect 1205,20,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (20)
@@ -3871,7 +3871,7 @@ step
 step
     .goto Ghostlands,72.29,32.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Heron|r
-    >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Compre|r |T132796:0|t[Suco de Melão] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Buy|r a[Mutton Chops]|cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
     >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_e|r |T133970:0|t[Mutton Chops] |cRXP_BUY_dele|r << Paladin
     .collect 1205,10,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (10)
@@ -3909,7 +3909,7 @@ step << Hunter
     .goto Ghostlands,76.07,25.13,40,0
     .goto Ghostlands,74.82,29.77,40,0
     .train 16830 >>|cRXP_WARN_Lance|r |T132164:0|t[Domar Fera] |cRXP_WARN_em um|cRXP_ENEMY_ |rLince Garralma|r. Ataque inimigos com isso para aprender |T132140:0|t[Garra (Rank 2)]
-    .link https://www.wow-petopia.com/classic/training.php >>Clique no link para mais informações sobre treinamento de pets: https://www.wow-petopia.com/classic/training.php
+    .link https://www.wow-petopia.com/classic/training.php >> Clique no link para mais informações sobre treinamento de pets: https://www.wow-petopia.com/classic/training.php
     .mob Ghostclaw Lynx
 step
     #loop
@@ -3938,11 +3938,11 @@ step
     .mob Ghostclaw Lynx
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sedina|r, |cRXP_FRIENDLY_Solanna|r, the |cRXP_FRIENDLY_Wanted Poster|r, |cRXP_FRIENDLY_Krenn'an|r, and |cRXP_FRIENDLY_Helios|r
-    .turnin 9158 >>Entregue Vetores da Praga
-    .accept 9159 >>Aceite Enfraquecendo a Praga
+    .turnin 9158 >> Entregue Vetores da Praga
+    .accept 9159 >> Aceite Enfraquecendo a Praga
     .target +Farstrider Sedina
     .goto Ghostlands,72.50,32.14
-    .accept 9276 >>Aceite Ataque a Zeb'Tela
+    .accept 9276 >> Aceite Ataque a Zeb'Tela
     .target +Farstrider Solanna
     .goto Ghostlands,72.33,31.24
     .accept 9215 >>Aceite Traga-Me a Cabeça de Kel'gash!
@@ -3956,8 +3956,8 @@ step
     .xp <15,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sedina|r, the |cRXP_FRIENDLY_Wanted Poster|r, and |cRXP_FRIENDLY_Krenn'an|r
-    .turnin 9158 >>Entregue Vetores da Praga
-    .accept 9159 >>Aceite Enfraquecendo a Praga
+    .turnin 9158 >> Entregue Vetores da Praga
+    .accept 9159 >> Aceite Enfraquecendo a Praga
     .target +Farstrider Sedina
     .goto Ghostlands,72.50,32.14
     .accept 9215 >>Aceite Traga-Me a Cabeça de Kel'gash!
@@ -3998,14 +3998,14 @@ step
 step
     .goto Ghostlands,72.29,19.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Geranis|r
-    .turnin 9157 >>Entregue Rituais Esquecidos
-    .accept 9174 >>Aceite Derrote Aquantion
+    .turnin 9157 >> Entregue Rituais Esquecidos
+    .accept 9174 >> Aceite Derrote Aquantion
     .target Geranis Whitemorn
 step
     #completewith next << !Mage !Priest
     #completewith AquantionKill << Priest/Mage
     .goto Ghostlands,71.32,14.93
-    .cast 28226 >>Clique no |cRXP_ENEMY_Aquantion|r
+    .cast 28226 >> Clique no |cRXP_ENEMY_Aquantion|r
 step
     .goto Ghostlands,71.31,14.58
     >>Mate |cRXP_ENEMY_Aquantion|r
@@ -4042,7 +4042,7 @@ step
     #label Aquantion
     .goto Ghostlands,72.29,19.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Geranis|r
-    .turnin 9174 >>Entregue Derrote Aquantion
+    .turnin 9174 >> Entregue Derrote Aquantion
     .target Geranis Whitemorn
 step
     #loop
@@ -4066,8 +4066,8 @@ step
 step
     .goto Ghostlands,69.40,15.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valanna|r
-    .turnin 9143 >>Entregue Dando um Jeito em Zeb'Sora
-    .accept 9146 >>Aceite Apresente-se ao Capitão Helios
+    .turnin 9143 >> Entregue Dando um Jeito em Zeb'Sora
+    .accept 9146 >> Aceite Apresente-se ao Capitão Helios
     .target Ranger Valanna
 step
     #optional
@@ -4165,22 +4165,22 @@ step << Priest/Mage/Warlock/Rogue/Druid/Warrior
     #xprate <1.5 << !Warrior
     #softcore
     #completewith SuncrownTurnin
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     .target Anjo da Cura
 step << Priest/Mage/Warlock/Rogue/Druid/Warrior
     #hardcore
     #completewith SuncrownTurnin
-    .subzone 3488 >>Vá para Tranquillien
+    .subzone 3488 >> Vá para Tranquillien
 step << !Priest !Mage !Warlock !Rogue !Druid !Warrior
     #softcore
     #xprate <1.5
     #completewith SuncrownTurnin
-    .subzone 3488 >>Vá para Tranquillien
+    .subzone 3488 >> Vá para Tranquillien
 step << !Warrior
     #softcore
     #xprate >1.49
     #completewith SuncrownTurnin
-    .subzone 3488 >>Vá para Tranquillien
+    .subzone 3488 >> Vá para Tranquillien
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vandril|r e o |cRXP_FRIENDLY_Wanted Poster|r
     .turnin 9315 >>Entregue Anok'suten
@@ -4190,7 +4190,7 @@ step
     .goto Ghostlands,46.08,28.33 << !Priest !Mage !Warlock !Rogue !Druid
     .goto Ghostlands,46.08,28.33,10,0 << Priest/Mage/Warlock/Rogue/Druid
     .goto Ghostlands,46.55,28.38 << Priest/Mage/Warlock/Rogue/Druid
-    .accept 9156 >>Accept Wanted:Knucklerot e Luzran
+    .accept 9156 >> Accept Wanted:Knucklerot e Luzran
     .goto Ghostlands,48.35,31.67
     .target Arcanist Vandril
     .isQuestComplete 9315
@@ -4203,14 +4203,14 @@ step
     .goto Ghostlands,46.08,28.33 << !Priest !Mage !Warlock !Rogue !Druid
     .goto Ghostlands,46.08,28.33,10,0 << Priest/Mage/Warlock/Rogue/Druid
     .goto Ghostlands,46.55,28.38 << Priest/Mage/Warlock/Rogue/Druid
-    .accept 9156 >>Accept Wanted:Knucklerot e Luzran
+    .accept 9156 >> Accept Wanted:Knucklerot e Luzran
     .goto Ghostlands,48.35,31.67
     .target Arcanist Vandril
 step << !Warrior
     .goto Ghostlands,48.34,31.99,8,0
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kalarin|r
-    .home >>Defina sua Pedra de Retorno em Tranquillien
+    .home >> Defina sua Pedra de Retorno em Tranquillien
     .target Innkeeper Kalarin
     .bindlocation 3488
 step << Mage/Priest/Warlock
@@ -4343,17 +4343,17 @@ step << Paladin/Warrior
 step
     #optional
     #completewith ManaEssence
-    .abandon 9315 >>Abandone Anok'suten
+    .abandon 9315 >> Abandone Anok'suten
 step << Rogue
     .goto Ghostlands,47.67,34.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Renzithen|r
-    .accept 9149 >>Aceite A Costa Infecta
+    .accept 9149 >> Aceite A Costa Infecta
     .target Apothecary Renzithen
 step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eralan|r
     >>|cRXP_BUY_Compre o|r |T135427:0|t[Fura-gargantas] |cRXP_BUY_e a|r |T135344:0|t[Cimitarra Sinistra] |cRXP_BUY_dela se estiverem disponíveis|r
-    .vendor 16268 >>Comerciante Lixo
+    .vendor 16268 >> Venda os itens de lixo
     .target Eralan
     .money <0.7517 << BloodElf/Undead
     .money <0.7893 << Orc/Troll
@@ -4366,7 +4366,7 @@ step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eralan|r
     >>|cRXP_BUY_Compre a|r |T135344:0|t[Cimitarra Sinistra] |cRXP_BUY_dela se estiver disponível|r
-    .vendor 16268 >>Comerciante Lixo
+    .vendor 16268 >> Venda os itens de lixo
     .target Eralan
     .money <0.6947 << BloodElf/Undead
     .money <0.7294 << Orc/Troll
@@ -4379,7 +4379,7 @@ step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eralan|r
     >>|cRXP_BUY_Compre o|r |T135427:0|t[Fura-gargantas] |cRXP_BUY_dela se estiver disponível|r
-    .vendor 16268 >>Comerciante Lixo
+    .vendor 16268 >> Venda os itens de lixo
     .target Eralan
     .money <0.0570 << BloodElf/Undead
     .money <0.0599 << Orc/Troll
@@ -4423,21 +4423,21 @@ step << Rogue
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step << !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Renzithen|r, |cRXP_FRIENDLY_Rathiel|r, |cRXP_FRIENDLY_Valwyn|r, |cRXP_FRIENDLY_Dame|r, |cRXP_FRIENDLY_Maltendis|r e |cRXP_FRIENDLY_Darenis|r
-    .accept 9149 >>Aceite A Costa Infecta
+    .accept 9149 >> Aceite A Costa Infecta
     .target +Apothecary Renzithen
     .goto Ghostlands,47.67,34.87
-    .accept 9155 >>Aceite Na Trilha da Morte
+    .accept 9155 >> Aceite Na Trilha da Morte
     .target +Deathstalker Rathiel
     .goto Ghostlands,46.02,33.58
-    .accept 9193 >>Aceite Investigue as Catacumbas Amani
+    .accept 9193 >> Aceite Investigue as Catacumbas Amani
     .target +Advisor Valwyn
     .goto Ghostlands,45.17,32.37,10,0
     .goto Ghostlands,44.84,32.81
     .accept 9160 >>Aceite Investigue An'daroth
     .target +Dame Auriferous
     .goto Ghostlands,44.88,32.51
-    .accept 9199 >>Aceite Fetiche Trolls
-    .accept 9192 >>Aceite Encrenca nas Minas Telúminas
+    .accept 9199 >> Aceite Fetiche Trolls
+    .accept 9192 >> Aceite Encrenca nas Minas Telúminas
     .target +Deathstalker Maltendis
     .goto Ghostlands,44.74,32.28
     .accept 9150 >>Aceite Resgatando o Passado
@@ -4445,18 +4445,18 @@ step << !Rogue
     .goto Ghostlands,46.02,31.95
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rathiel|r, |cRXP_FRIENDLY_Valwyn|r, |cRXP_FRIENDLY_Dame|r, |cRXP_FRIENDLY_Maltendis|r, and |cRXP_FRIENDLY_Darenis|r
-    .accept 9155 >>Aceite Na Trilha da Morte
+    .accept 9155 >> Aceite Na Trilha da Morte
     .target +Deathstalker Rathiel
     .goto Ghostlands,46.02,33.58
-    .accept 9193 >>Aceite Investigue as Catacumbas Amani
+    .accept 9193 >> Aceite Investigue as Catacumbas Amani
     .target +Advisor Valwyn
     .goto Ghostlands,45.17,32.37,10,0
     .goto Ghostlands,44.84,32.81
     .accept 9160 >>Aceite Investigar An'daroth
     .target +Dame Auriferous
     .goto Ghostlands,44.88,32.51
-    .accept 9199 >>Aceite Fetiche Trolls
-    .accept 9192 >>Aceite Encrenca nas Minas Telúminas
+    .accept 9199 >> Aceite Fetiche Trolls
+    .accept 9192 >> Aceite Encrenca nas Minas Telúminas
     .target +Deathstalker Maltendis
     .goto Ghostlands,44.74,32.28
     .accept 9150 >>Aceite Resgatando o Passado
@@ -4464,31 +4464,31 @@ step << Rogue
     .goto Ghostlands,46.02,31.95
 step << Warrior
     #completewith BrillTrain2
-    .hs >>Use sua Pedra de Regresso para ir a Montalvo
+    .hs >> Use sua Pedra de Regresso para ir a Montalvo
     .bindlocation 2119,1
     .zoneskip Tirisfal Glades
 step << Warrior
     .goto Tirisfal Glades,61.85,52.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil|r
-    .train 7384 >>Treine suas magias de classe
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil de Mon|r
+    .train 7384 >> Treine suas magias de classe
     .target Austil de Mon
     .xp <14,1
     .xp >16,1
 step << Warrior
     #label BrillTrain2
     .goto Tirisfal Glades,61.85,52.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil|r
-    .train 285 >>Treine suas magias de classe
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil de Mon|r
+    .train 285 >> Treine suas magias de classe
     .target Austil de Mon
     .xp <16,1
 step << Warrior
     #completewith next
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >>Entre em Cidade Baixa
+    .zone Undercity >> Entre em Cidade Baixa
     .zoneskip Undercity
 step << Warrior
     .goto Undercity,54.67,11.25
-    .zone Silvermoon City >>Pegue o |cRXP_PICK_Orb of Deslocamento|r para a Cidade de Silvermoon
+    .zone Silvermoon City >> Pegue o |cRXP_PICK_Orb of Deslocamento|r para a Cidade de Silvermoon
     .zoneskip Eversong Woods
     .zoneskip Ghostlands
 step << !Paladin !Shaman !Warrior !Druid !BloodElf/!Warlock
@@ -4496,7 +4496,7 @@ step << !Paladin !Shaman !Warrior !Druid !BloodElf/!Warlock
     #completewith SMTraining2
     .goto Ghostlands,45.42,30.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sunwing|r
-    .fly Silvermoon >>Voe para Silvermoon
+    .fly Silvermoon >> Voe para Silvermoon
     .target Skymaster Sunwing
     .zoneskip Silvermoon City
 step << Rogue
@@ -4508,7 +4508,7 @@ step << Rogue
 step << Rogue
     #xprate <1.5
     #optional
-    .abandon 9491 >>Abandone Ganância
+    .abandon 9491 >> Abandone Ganância
 step << Rogue
     #xprate <1.5
     #completewith RogueTrain2
@@ -4529,7 +4529,7 @@ step << Rogue
     #label RogueTrain2
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zelanis|r
-    .accept 10372 >>Aceite Uma Pergunta Discreta
+    .accept 10372 >> Aceite Uma Pergunta Discreta
     .train 6761 >>Treine suas magias de classe
     .target Zelanis
     .xp <16,1
@@ -4558,7 +4558,7 @@ step << !Undead Rogue
     #optional
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel|r
-    .fp Undercity >>Aprenda a rota de voo para Undercity
+    .fp Undercity >> Aprenda a rota de voo de Cidade Baixa
     .target Michael Garrett
     .itemcount 2027,<2
     .money <0.7632 << Troll/Orc
@@ -4569,7 +4569,7 @@ step << !Undead Rogue
     #xprate <1.5
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel|r
-    .fp Undercity >>Aprenda a rota de voo para Undercity
+    .fp Undercity >> Aprenda a rota de voo de Cidade Baixa
     .target Michael Garrett
     .itemcount 2027,<1
     .money <0.3816 << Troll/Orc
@@ -4626,7 +4626,7 @@ step << Rogue
 step << Rogue
     #xprate <1.5
     .goto Undercity,54.67,11.25
-    .zone Silvermoon City >>Pegue o |cRXP_PICK_Orb of Deslocamento|r para a Cidade de Silvermoon
+    .zone Silvermoon City >> Pegue o |cRXP_PICK_Orb of Deslocamento|r para a Cidade de Silvermoon
     .cooldown item,6948,<0
     .zoneskip Eversong Woods
     .zoneskip Ghostlands
@@ -4658,8 +4658,8 @@ step << BloodElf Priest/BloodElf Mage
     .goto Silvermoon City,65.53,72.60,8,0
     .goto Silvermoon City,53.93,71.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sathren|r
-    .turnin 9133 >>Entregue Voo para Luaprata
-    .accept 9134 >>Aceite A Mestre dos Ares Crepúsculo
+    .turnin 9133 >> Entregue Voo para Luaprata
+    .accept 9134 >> Aceite A Mestre dos Ares Crepúsculo
     .target Sathren Azuredawn
 step << Priest
     #xprate <1.5
@@ -4680,14 +4680,14 @@ step << Priest/Mage
     .goto Silvermoon City,57.45,24.46,15,0
     .goto Silvermoon City,55.31,24.96,15,0 << Priest
     .goto Silvermoon City,57.21,21.25,15,0 << Mage
-    .goto Silvermoon City,55.38,26.76,12 >>Vá em direção à |cRXP_FRIENDLY_Lotheolan|r << Priest
-    .goto Silvermoon City,57.16,18.85,12 >>Vá em direção à |cRXP_FRIENDLY_Zaedana|r << Mage
+    .goto Silvermoon City,55.38,26.76,12 >> Vá em direção à |cRXP_FRIENDLY_Lotheolan|r << Priest
+    .goto Silvermoon City,57.16,18.85,12 >> Vá em direção à |cRXP_FRIENDLY_Zaedana|r << Mage
 step << Priest
     #xprate <1.5
     #optional
     .goto Silvermoon City,55.38,26.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lotheolan|r
-    .train 8122 >>Treine suas magias de classe
+    .train 8122 >> Treine suas magias de classe
     .target Lotheolan
 	.xp <14,1
 	.xp >16,1
@@ -4695,7 +4695,7 @@ step << Priest
     #xprate <1.5
     .goto Silvermoon City,55.38,26.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lotheolan|r
-    .train 8102 >>Treine suas magias de classe
+    .train 8102 >> Treine suas magias de classe
     .target Lotheolan
 	.xp <16,1
 step << Mage
@@ -4703,7 +4703,7 @@ step << Mage
     #optional
     .goto Silvermoon City,57.16,18.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zaedana|r
-    .train 1460 >>Treine suas magias de classe
+    .train 1460 >> Treine suas magias de classe
     .target Zaedana
 	.xp <14,1
 	.xp >16,1
@@ -4711,7 +4711,7 @@ step << Mage
     #xprate <1.5
     .goto Silvermoon City,57.16,18.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zaedana|r
-    .train 2120 >>Treine suas magias de classe
+    .train 2120 >> Treine suas magias de classe
     .target Zaedana
 	.xp <16,1
 step << !BloodElf Warlock
@@ -4726,20 +4726,20 @@ step << !BloodElf Warlock
     #xprate <1.5
     .goto Silvermoon City,74.39,47.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Talionia|r
-    .train 6222 >>Treine suas magias de classe
+    .train 6222 >> Treine suas magias de classe
     .target Talionia
     .xp <14,1
 step << BloodElf Priest
     #xprate <1.5
     #completewith next
     .goto Eversong Woods,56.52,49.83
-    .zone Eversong Woods >>Saia de Luaprata
+    .zone Eversong Woods >> Saia de Luaprata
 step << BloodElf Priest/BloodElf Mage
     #xprate <1.5
     .goto Eversong Woods,54.37,50.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gloaming|r
-    .turnin 9134 >>Entregue A Mestre dos Ares Crepúsculo
-    .accept 9135 >>Aceite Reencontro com Sathiel
+    .turnin 9134 >> Entregue A Mestre dos Ares Crepúsculo
+    .accept 9135 >> Aceite Reencontro com Sathiel
     .target Skymistress Gloaming
     .zoneskip Ghostlands
 step << !Paladin !Shaman !Warrior !BloodElf/!Warlock !Paladin !Rogue
@@ -4760,7 +4760,7 @@ step << !Paladin !Shaman !Druid !BloodElf/!Warlock !Paladin !Rogue
     #xprate <1.5 << !Warrior
     #completewith next
     .goto Eversong Woods,56.52,49.83
-    .zone Eversong Woods >>Saia de Luaprata
+    .zone Eversong Woods >> Saia de Luaprata
     .zoneskip Ghostlands
     .cooldown item,6948,<0 << !Warrior
     .itemStat 16,QUALITY,<7 << Rogue
@@ -4779,13 +4779,13 @@ step << Warrior
     .goto Ghostlands,48.34,31.99,8,0
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kalarin|r
-    .home >>Defina sua Pedra de Retorno em Tranquillien
+    .home >> Defina sua Pedra de Retorno em Tranquillien
     .target Innkeeper Kalarin
     .bindlocation 3488
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kalarin|r
-    >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Compre|r |T132796:0|t[Suco de Melão] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Compre|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_dele|r << !Priest !Mage !Warlock !Druid !Paladin
     >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_e|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_dele|r << Paladin
     .collect 1205,30,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (30)
@@ -4800,7 +4800,7 @@ step
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kalarin|r
-    >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Compre|r |T132796:0|t[Suco de Melão] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Compre|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_dele|r << !Priest !Mage !Warlock !Druid !Paladin
     >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_e|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_dele|r << Paladin
     .collect 1205,20,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (20)
@@ -4814,7 +4814,7 @@ step
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kalarin|r
-    >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Compre|r |T132796:0|t[Suco de Melão] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Compre|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_dele|r << !Priest !Mage !Warlock !Druid !Paladin
     >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_e|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_dele|r << Paladin
     .collect 1205,10,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (10)
@@ -4828,7 +4828,7 @@ step
 step << BloodElf Priest/BloodElf Mage
     .goto Ghostlands,47.34,29.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lymel|r
-    .turnin 9135 >>Entregue Reencontro com Lymel
+    .turnin 9135 >> Entregue Reencontro com Lymel
     .target Quartermaster Lymel
 step
     #completewith SanctumOTM
@@ -4898,8 +4898,8 @@ step << BloodElf Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Keltus|r
     >>|cRXP_WARN_NÃO mate o|r |cRXP_ENEMY_Sentinela Líder|r
     >>|cRXP_FRIENDLY_Keltus|r|cRXP_WARN_seu faseamento pode ser bugado. Se ele não estiver lá, nade para a Floresta Canto Eterno e volte|r
-    .turnin 9532 >>Entregue Encontrar Keltus Umbrafronde
-    .accept 9460 >>Aceite Combinando Forças
+    .turnin 9532 >> Entregue Encontrar Keltus Umbrafronde
+    .accept 9460 >> Aceite Combinando Forças
     .target Keltus Darkleaf
 step << BloodElf Rogue
     #completewith next
@@ -4948,13 +4948,13 @@ step
 	.goto Ghostlands,35.94,11.58,35,0
 	.goto Ghostlands,38.51,13.19,35,0
 	.goto Ghostlands,37.50,14.67,35,0
-    .xp 14+5200 >>Suba até 5200+/12300xp
+    .xp 14+5200 >> Suba até 5200+/12300xp
 step << BloodElf Rogue
     .goto Ghostlands,32.97,11.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Keltus|r
     >>|cRXP_FRIENDLY_Keltus|r|cRXP_WARN_seu faseamento pode ser bugado. Se ele não estiver lá, nade para a Floresta Canto Eterno e volte|r
-    .turnin 9460 >>Entregue Combinando Forças
-    .accept 9618 >>Aceite Devolvendo os Relatórios
+    .turnin 9460 >> Entregue Combinando Forças
+    .accept 9618 >> Aceite Devolvendo os Relatórios
     .target Keltus Darkleaf
 step
     #completewith next
@@ -5090,7 +5090,7 @@ step
 step
     .goto Ghostlands,31.44,48.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shatharia|r
-    .accept 9207 >>Aceite Amostras das Minas Telúminas
+    .accept 9207 >> Aceite Amostras das Minas Telúminas
     .target Apprentice Shatharia
 step
     #loop
@@ -5195,32 +5195,32 @@ step
     .disablecheckbox
 step
     #completewith TranqVisit3
-    .subzone 3488 >>Vá para Tranquillien
+    .subzone 3488 >> Vá para Tranquillien
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vandril|r, |cRXP_FRIENDLY_Rathis|r, and |cRXP_FRIENDLY_Mouldier|r
-    .turnin 9139 >>Entregue em Vila de Aurinévoa
+    .turnin 9139 >> Entregue em Vila de Aurinévoa
     .target +Arcanist Vandril
     .goto Ghostlands,46.08,28.33,10,0
     .goto Ghostlands,46.55,28.38
-    .accept 9140 >>Aceite Vila dos Correventos
-    .turnin 9152 >>Entregue em Suprimentos de Raposo
+    .accept 9140 >> Aceite Vila dos Correventos
+    .turnin 9152 >> Entregue em Suprimentos de Raposo
     .target +Rathis Tomber
     .goto Ghostlands,47.14,28.30,10,0
     .goto Ghostlands,47.27,28.59
-    .accept 9171 >>Aceite Comida Crocante
-    .turnin 9171 >>Entregue em Comida Crocante
+    .accept 9171 >> Aceite Comida Crocante
+    .turnin 9171 >> Entregue em Comida Crocante
     .target +Master Chef Mouldier
     .goto Ghostlands,48.43,30.93
     .itemcount 22644,5
 step
     #label TranqVisit3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vandril|r e |cRXP_FRIENDLY_Rathis|r
-    .turnin 9139 >>Entregue em Vila de Aurinévoa
+    .turnin 9139 >> Entregue em Vila de Aurinévoa
     .target +Arcanist Vandril
     .goto Ghostlands,46.08,28.33,10,0
     .goto Ghostlands,46.55,28.38
-    .accept 9140 >>Aceite Vila dos Correventos
-    .turnin 9152 >>Entregue em Suprimentos de Raposo
+    .accept 9140 >> Aceite Vila dos Correventos
+    .turnin 9152 >> Entregue em Suprimentos de Raposo
     .target +Rathis Tomber
     .goto Ghostlands,47.14,28.30,10,0
     .goto Ghostlands,47.27,28.59
@@ -5228,7 +5228,7 @@ step
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kalarin|r
-    >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Compre|r |T132796:0|t[Suco de Melão] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Compre|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_dele|r << !Priest !Mage !Warlock !Druid !Paladin
     >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_e|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_dele|r << Paladin
     .collect 1205,30,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (30)
@@ -5243,7 +5243,7 @@ step
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kalarin|r
-    >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Compre|r |T132796:0|t[Suco de Melão] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Compre|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_dele|r << !Priest !Mage !Warlock !Druid !Paladin
     >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_e|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_dele|r << Paladin
     .collect 1205,20,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (20)
@@ -5257,7 +5257,7 @@ step
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kalarin|r
-    >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Compre|r |T132796:0|t[Suco de Melão] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Compre|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_dele|r << !Priest !Mage !Warlock !Druid !Paladin
     >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_e|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_dele|r << Paladin
     .collect 1205,10,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (10)
@@ -5301,13 +5301,13 @@ step << Rogue/Hunter/Druid/Shaman
 step << Rogue
     .goto Ghostlands,47.67,34.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Renzithen|r
-    .turnin 9149 >>Entregue em A Costa Infecta
+    .turnin 9149 >> Entregue em A Costa Infecta
     .target Apothecary Renzithen
 step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eralan|r
     >>|cRXP_BUY_Compre o|r |T135427:0|t[Fura-gargantas] |cRXP_BUY_e a|r |T135344:0|t[Cimitarra Sinistra] |cRXP_BUY_dela se estiverem disponíveis|r
-    .vendor 16268 >>Comerciante Lixo
+    .vendor 16268 >> Venda os itens de lixo
     .target Eralan
     .money <0.7517 << BloodElf/Undead
     .money <0.7893 << Orc/Troll
@@ -5320,7 +5320,7 @@ step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eralan|r
     >>|cRXP_BUY_Compre a|r |T135344:0|t[Cimitarra Sinistra] |cRXP_BUY_dela se estiver disponível|r
-    .vendor 16268 >>Comerciante Lixo
+    .vendor 16268 >> Venda os itens de lixo
     .target Eralan
     .money <0.6947 << BloodElf/Undead
     .money <0.7294 << Orc/Troll
@@ -5332,7 +5332,7 @@ step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eralan|r
     >>|cRXP_BUY_Compre o|r |T135427:0|t[Fura-gargantas] |cRXP_BUY_dela se estiver disponível|r
-    .vendor 16268 >>Comerciante Lixo
+    .vendor 16268 >> Venda os itens de lixo
     .target Eralan
     .money <0.0570 << BloodElf/Undead
     .money <0.0599 << Orc/Troll
@@ -5377,50 +5377,50 @@ step << Rogue
 step << !Rogue
     .goto Ghostlands,47.67,34.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Renzithen|r
-    .turnin 9149 >>Entregue em A Costa Infecta
+    .turnin 9149 >> Entregue em A Costa Infecta
     .target Apothecary Renzithen
 step
     #optional
     .goto Ghostlands,46.02,33.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rathiel|r
-    .turnin 9155 >>Entregue na Trilha da Morte
-    .turnin 9156 >>Turn in Wanted:Knucklerot e Luzran
+    .turnin 9155 >> Entregue na Trilha da Morte
+    .turnin 9156 >> Turn in Wanted:Knucklerot e Luzran
     .target Deathstalker Rathiel
     .isQuestComplete 9156
 step
     .goto Ghostlands,46.02,33.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rathiel|r
-    .turnin 9155 >>Entregue na Trilha da Morte
+    .turnin 9155 >> Entregue na Trilha da Morte
     .target Deathstalker Rathiel
 step
     .goto Ghostlands,45.17,32.37,10,0
     .goto Ghostlands,44.88,32.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dame|r
-    .turnin 9160 >>Entregue em Investigar An'daroth
-    .accept 9163 >>Aceite Em Território Ocupado
+    .turnin 9160 >> Entregue em Investigar An'daroth
+    .accept 9163 >> Aceite Em Território Ocupado
     .target Dame Auriferous
 step
     .goto Ghostlands,44.77,32.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mavren|r
-    .accept 9173 >>Aceite Reconquistando o Pico dos Correventos
+    .accept 9173 >> Aceite Reconquistando o Pico dos Correventos
     .target High Executor Mavren
 step
     .goto Ghostlands,44.74,32.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maltendis|r
-    .turnin 9192 >>Entregue em Encrenca nas Minas Telúminas
+    .turnin 9192 >> Entregue em Encrenca nas Minas Telúminas
     .target Deathstalker Maltendis
 step
     #optional
     .goto Ghostlands,46.02,31.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Darenis|r
-    .turnin 9150 >>Entregue em Resgatando o Passado
-    .accept 9151 >>Aceite O Sacrário Solar
+    .turnin 9150 >> Entregue em Resgatando o Passado
+    .accept 9151 >> Aceite O Sacrário Solar
     .target Magister Darenis
     .xp <17,1
 step
     .goto Ghostlands,46.02,31.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Darenis|r
-    .turnin 9150 >>Entregue em Resgatando o Passado
+    .turnin 9150 >> Entregue em Resgatando o Passado
     .target Magister Darenis
 step
     #completewith Clearing
@@ -5428,15 +5428,15 @@ step
     .destroy 22580 >>|cRXP_WARN_Destruir|r |T134137:0|t[Essência de Mana Cristalizada] |cRXP_WARN_pois não é mais necessário para nada|r
 step << Druid
 	#completewith DruidTrain2
-	.cast 18960 >>Use Teleporte: Clareira da Lua
+	.cast 18960 >> Use Teleporte: Clareira da Lua
 	.zoneskip Moonglade
 	.xp <16,1
 step << Druid
     #optional
     .goto Moonglade,52.53,40.57
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
-    .train 783 >>Treine suas magias de classe << wotlk
-    .train 8925 >>Treine suas magias de classe << TBC
+    .train 783 >> Treine suas magias de classe << wotlk
+    .train 8925 >> Treine suas magias de classe << TBC
 	.target Loganaar
     .cooldown item,6948,>0
 	.xp <16,1
@@ -5445,7 +5445,7 @@ step << Druid
     #label DruidTrain2
     .goto Moonglade,52.53,40.57
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
-    .train 8938 >>Treine suas magias de classe
+    .train 8938 >> Treine suas magias de classe
 	.target Loganaar
     .cooldown item,6948,>0
 	.xp <18,1
@@ -5453,7 +5453,7 @@ step << !Druid !Shaman !Warrior
     #completewith SMTraining3
     .goto Ghostlands,45.42,30.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sunwing|r
-    .fly Silvermoon >>Voe para Silvermoon
+    .fly Silvermoon >> Voe para Silvermoon
     .target Skymaster Sunwing
     .train 6761,1 << Rogue
     .zoneskip Silvermoon City
@@ -5474,8 +5474,8 @@ step << Rogue
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zelanis|r
     >>|cRXP_WARN_Certifique-se de que você treinou|r |T136058:0|t[Abrir Fechadura] |cRXP_WARN_para uma missão depois|r
-    .turnin 9618 >>Entregue em Devolver os Relatórios - Missão << BloodElf
-    .accept 10372 >>Aceite Uma Pergunta Discreta
+    .turnin 9618 >> Entregue em Devolver os Relatórios - Missão << BloodElf
+    .accept 10372 >> Aceite Uma Pergunta Discreta
     .train 1804 >>Treine suas magias de classe
     .target Zelanis
     .train 1804,1
@@ -5483,7 +5483,7 @@ step << Rogue
 step << Rogue
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zelanis|r
-    .turnin 9618 >>Entregue em Devolver os Relatórios - Missão << BloodElf
+    .turnin 9618 >> Entregue em Devolver os Relatórios - Missão << BloodElf
     .target Zelanis
 step << Rogue
     #completewith Scimitars
@@ -5507,7 +5507,7 @@ step << !Undead Rogue
     #optional
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel|r
-    .fp Undercity >>Aprenda a rota de voo para Undercity
+    .fp Undercity >> Aprenda a rota de voo de Cidade Baixa
     .target Michael Garrett
     .itemcount 2027,<2
     .money <0.7632 << Troll/Orc
@@ -5517,7 +5517,7 @@ step << !Undead Rogue
 step << !Undead Rogue
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel|r
-    .fp Undercity >>Aprenda a rota de voo para Undercity
+    .fp Undercity >> Aprenda a rota de voo de Cidade Baixa
     .target Michael Garrett
     .itemcount 2027,<1
     .money <0.3816 << Troll/Orc
@@ -5571,7 +5571,7 @@ step << Rogue
     .zoneskip Ghostlands
 step << Rogue
     .goto Undercity,54.67,11.25
-    .zone Silvermoon City >>Pegue o |cRXP_PICK_Orb of Deslocamento|r para a Cidade de Silvermoon
+    .zone Silvermoon City >> Pegue o |cRXP_PICK_Orb of Deslocamento|r para a Cidade de Silvermoon
     .cooldown item,6948,<0
     .zoneskip Eversong Woods
     .zoneskip Ghostlands
@@ -5582,20 +5582,20 @@ step << Priest/Mage
     .goto Silvermoon City,57.45,24.46,15,0
     .goto Silvermoon City,55.31,24.96,15,0 << Priest
     .goto Silvermoon City,57.21,21.25,15,0 << Mage
-    .goto Silvermoon City,55.38,26.76,12 >>Vá em direção à |cRXP_FRIENDLY_Lotheolan|r << Priest
-    .goto Silvermoon City,57.16,18.85,12 >>Vá em direção à |cRXP_FRIENDLY_Zaedana|r << Mage
+    .goto Silvermoon City,55.38,26.76,12 >> Vá em direção à |cRXP_FRIENDLY_Lotheolan|r << Priest
+    .goto Silvermoon City,57.16,18.85,12 >> Vá em direção à |cRXP_FRIENDLY_Zaedana|r << Mage
 step << Priest
     #optional
     .goto Silvermoon City,55.38,26.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lotheolan|r
-    .train 8102 >>Treine suas magias de classe
+    .train 8102 >> Treine suas magias de classe
     .target Lotheolan
 	.xp <16,1
 	.xp >18,1
 step << Priest
     .goto Silvermoon City,55.38,26.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lotheolan|r
-    .train 970 >>Treine suas magias de classe
+    .train 970 >> Treine suas magias de classe
     .target Lotheolan
     .train 8102,1
 	.xp <18,1
@@ -5603,14 +5603,14 @@ step << Mage
     #optional
     .goto Silvermoon City,57.16,18.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zaedana|r
-    .train 2120 >>Treine suas magias de classe
+    .train 2120 >> Treine suas magias de classe
     .target Zaedana
 	.xp <16,1
 	.xp >18,1
 step << Mage
     .goto Silvermoon City,57.16,18.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zaedana|r
-    .train 3140 >>Treine suas magias de classe
+    .train 3140 >> Treine suas magias de classe
     .target Zaedana
 	.xp <18,1
 step << Hunter
@@ -5654,7 +5654,7 @@ step << Hunter
 step << Hunter
     .goto Silvermoon City,84.71,28.05
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zandine|r
-    .train 14318 >>Treine suas magias de classe
+    .train 14318 >> Treine suas magias de classe
     .target Zandine
 	.xp <18,1
 step << Hunter
@@ -5678,14 +5678,14 @@ step << Warlock
     #optional
     .goto Silvermoon City,74.39,47.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Talionia|r
-    .train 6222 >>Treine suas magias de classe
+    .train 6222 >> Treine suas magias de classe
     .target Talionia
     .xp <16,1
     .xp >18,1
 step << Warlock
     .goto Silvermoon City,74.39,47.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Talionia|r
-    .train 1014 >>Treine suas magias de classe
+    .train 1014 >> Treine suas magias de classe
     .target Talionia
     .xp <18,1
 step << Paladin
@@ -5798,14 +5798,14 @@ step
     #label SMTraining3
 step << Druid
 	#completewith DruidTrain1
-	.cast 18960 >>Use Teleporte: Clareira da Lua
+	.cast 18960 >> Use Teleporte: Clareira da Lua
 	.zoneskip Moonglade
 	.xp <14,1
 step << Druid
     #optional
     .goto Moonglade,52.53,40.57
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
-    .train 782 >>Treine suas magias de classe
+    .train 782 >> Treine suas magias de classe
 	.target Loganaar
     .cooldown item,6948,>0
 	.xp <14,1
@@ -5814,7 +5814,7 @@ step << Druid
     #label DruidTrain1
     .goto Moonglade,52.53,40.57
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
-    .train 8925 >>Treine suas magias de classe
+    .train 8925 >> Treine suas magias de classe
 	.target Loganaar
     .cooldown item,6948,>0
 	.xp <16,1
@@ -5827,7 +5827,7 @@ step << !Shaman !Warrior !Rogue
 step << !Shaman !Warrior !Druid
     #completewith Clearing
     .goto Eversong Woods,56.52,49.83
-    .zone Eversong Woods >>Saia de Luaprata
+    .zone Eversong Woods >> Saia de Luaprata
     .zoneskip Ghostlands
     .cooldown item,6948,<0
 step << !Shaman !Warrior !Druid
@@ -5841,14 +5841,14 @@ step << !Shaman !Warrior !Druid
 step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eralan|r
-    .turnin 10372 >>Entregue Uma Pergunta Discreta
-    .accept 9491 >>Aceite Ganância
+    .turnin 10372 >> Entregue Uma Pergunta Discreta
+    .accept 9491 >> Aceite Ganância
     .target Eralan
     .isOnQuest 10372
 step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eralan|r
-    .accept 9491 >>Aceite Ganância
+    .accept 9491 >> Aceite Ganância
     .target Eralan
     .isQuestTurnedIn 10372
 step
@@ -5875,7 +5875,7 @@ step
     #label Clearing
     .goto Ghostlands,46.40,56.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vor'el|r
-    .accept 9281 >>Aceite Abrindo Caminho
+    .accept 9281 >> Aceite Abrindo Caminho
     .target Apprentice Vor'el
 step
     #xprate <1.5
@@ -5938,7 +5938,7 @@ step
     .mob +Deathcage Sorcerer
 step
     #label SpireT01
-    .goto Ghostlands,34.06,57.57,80 >>Atravesse o Morto Scar
+    .goto Ghostlands,34.06,57.57,80 >> Atravesse o Morto Scar
     .isOnQuest 9173
 step
     #completewith SpireT
@@ -5950,14 +5950,14 @@ step
     .mob Knucklerot
 step
     #label SpireT
-    .goto Ghostlands,17.21,58.09,80 >>Viaje até Windrunner Spire
+    .goto Ghostlands,17.21,58.09,80 >> Viaje até Windrunner Spire
     .isOnQuest 9173
 step
     #completewith next
     >>Saqueie |T133303:0|t[|cRXP_LOOT_The Lady's Necklace|r]
     >>|cRXP_WARN_Use o |T133303:0|t[|cRXP_LOOT_Colar da Dama|r] para iniciar a missão|r
     .collect 22597,1,9175 --Collect The Lady's Necklace (x1)
-    .accept 9175 >>Aceite O Colar da Dama Sombria
+    .accept 9175 >> Aceite O Colar da Dama Sombria
     .use 22597
 step
     #loop
@@ -5996,7 +5996,7 @@ step
     >>Mate Saqueie them for |T133303:0|t[|cRXP_LOOT_The Lady's Necklace|r]
     >>|cRXP_WARN_Use o |T133303:0|t[|cRXP_LOOT_Colar da Dama|r] para iniciar a missão|r
     .collect 22597,1,9175,1 --Collect The Lady's Necklace (x1)
-    .accept 9175 >>Aceite O Colar da Dama Sombria
+    .accept 9175 >> Aceite O Colar da Dama Sombria
     .use 22597
 step
     #completewith next
@@ -6033,7 +6033,7 @@ step
     .mob +Stonewing Slayer
 step
     #completewith next
-    .cast 7840 >>|cRXP_WARN_Use a|r |T134754:0|t[Poção de Velocidade de Nado] |cRXP_WARN_na água para nadar através dela mais rápido|r
+    .cast 7840 >> |cRXP_WARN_Use a|r |T134754:0|t[Poção de Velocidade de Nado] |cRXP_WARN_na água para nadar através dela mais rápido|r
     .use 6372
     .itemcount 6372,1
 step
@@ -6066,12 +6066,12 @@ step << Priest/Druid/Rogue/Paladin
 	.goto Ghostlands,12.51,24.81,30,0
 	.goto Ghostlands,9.43,23.77,30,0
 	.goto Ghostlands,10.47,22.51,30,0
-    .xp 15+10600 >>Farme até 10600+/13600
+    .xp 15+10600 >> Farme até 10600+/13600
 step
     #optional
     #softcore
     #completewith WindrunnerV
-    .deathskip >>Morra e reviva no Anjo da Cura
+    .deathskip >> Morra e reviva no Anjo da Cura
     .train 6761,1 << Rogue
     .train 2120,1 << Mage
     .train 5118,1 << Hunter wotlk
@@ -6108,7 +6108,7 @@ step
     .train 62124,3 << Paladin wotlk
 step
     #completewith WindrunnerV
-    .cast 7840 >>|cRXP_WARN_Use a|r |T134754:0|t[Poção de Velocidade de Nado] |cRXP_WARN_na água para nadar de volta mais rápido|r
+    .cast 7840 >> |cRXP_WARN_Use a|r |T134754:0|t[Poção de Velocidade de Nado] |cRXP_WARN_na água para nadar de volta mais rápido|r
     .use 6372
     .itemcount 6372,1
     .cooldown item,6948,<0
@@ -6122,11 +6122,11 @@ step
     .train 62124,3 << Paladin wotlk
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com  |cRXP_FRIENDLY_Mouldier|r e |cRXP_FRIENDLY_Vandril|r
-    .accept 9171 >>Aceite Comida Crocante
-    .turnin 9171 >>Entregue em Comida Crocante
+    .accept 9171 >> Aceite Comida Crocante
+    .turnin 9171 >> Entregue em Comida Crocante
     .target +Master Chef Mouldier
     .goto Ghostlands,48.43,30.93
-    .turnin 9140 >>Entregue Vila dos Correventos
+    .turnin 9140 >> Entregue Vila dos Correventos
     .target +Arcanist Vandril
     .goto Ghostlands,46.08,28.33,10,0
     .goto Ghostlands,46.55,28.38
@@ -6135,12 +6135,12 @@ step
     .cooldown item,6948,>0
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vandril|r e |cRXP_FRIENDLY_Mouldier|r
-    .turnin 9140 >>Entregue Vila dos Correventos
+    .turnin 9140 >> Entregue Vila dos Correventos
     .target +Arcanist Vandril
     .goto Ghostlands,46.08,28.33,10,0
     .goto Ghostlands,46.55,28.38
-    .accept 9171 >>Aceite Comida Crocante
-    .turnin 9171 >>Entregue em Comida Crocante
+    .accept 9171 >> Aceite Comida Crocante
+    .turnin 9171 >> Entregue em Comida Crocante
     .target +Master Chef Mouldier
     .goto Ghostlands,48.43,30.93
     .itemcount 22644,5
@@ -6151,25 +6151,25 @@ step
     .goto Ghostlands,46.08,28.33,10,0
     .goto Ghostlands,46.55,28.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vandril|r
-    .turnin 9140 >>Entregue Vila dos Correventos
+    .turnin 9140 >> Entregue Vila dos Correventos
     .target Arcanist Vandril
 step
     .goto Ghostlands,46.02,31.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Darenis|r
-    .accept 9151 >>Aceite O Sacrário Solar
+    .accept 9151 >> Aceite O Sacrário Solar
     .target Magister Darenis
     .xp <17,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dame|r e |cRXP_FRIENDLY_Mavren|r
-    .turnin 9163 >>Entregue Em Território Ocupado
-    .accept 9166 >>Aceite Entregue Os Planos para An'telas
+    .turnin 9163 >> Entregue Em Território Ocupado
+    .accept 9166 >> Aceite Entregue Os Planos para An'telas
     .target +Dame Auriferous
     .goto Ghostlands,45.17,32.37,10,0
     .goto Ghostlands,44.88,32.51
-    .turnin 9173 >>Entregue Reconquistando O Pico dos Correventos
-    .turnin 9175 >>Entregue O Colar da Dama Sombria
-    .accept 9177 >>Aceite Jornada para a Subcidade << !BloodElf
-    .accept 9180 >>Aceite Jornada para a Subcidade << BloodElf
+    .turnin 9173 >> Entregue Reconquistando O Pico dos Correventos
+    .turnin 9175 >> Entregue O Colar da Dama Sombria
+    .accept 9177 >> Aceite Jornada para a Subcidade << !BloodElf
+    .accept 9180 >> Aceite Jornada para a Subcidade << BloodElf
     .target +High Executor Mavren
     .goto Ghostlands,44.77,32.44
 step
@@ -6179,7 +6179,7 @@ step << Rogue/Mage/Hunter/Priest/Warlock/Paladin
     #completewith next
     .goto Ghostlands,45.42,30.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sunwing|r
-    .fly Silvermoon >>Voe para Silvermoon
+    .fly Silvermoon >> Voe para Silvermoon
     .target Skymaster Sunwing
     .train 6761,1 << Rogue
     .train 2120,1 << Mage
@@ -6205,7 +6205,7 @@ step << Rogue/Mage/Hunter/Priest/Warlock/Paladin
     .train 62124,1 << Paladin wotlk
 step << Rogue
     #optional
-    .abandon 9491 >>Abandone Ganância
+    .abandon 9491 >> Abandone Ganância
     .isQuestAvailable 10372
 step << Rogue
     #completewith SMTraining4
@@ -6217,8 +6217,8 @@ step << Rogue
     .goto Silvermoon City,79.70,52.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zelanis|r
     >>|cRXP_WARN_Certifique-se de que você treinou|r |T136058:0|t[Abrir Fechadura] |cRXP_WARN_para uma missão depois|r
-    .turnin 9618 >>Entregue em Devolver os Relatórios - Missão << BloodElf
-    .accept 10372 >>Aceite Uma Pergunta Discreta
+    .turnin 9618 >> Entregue em Devolver os Relatórios - Missão << BloodElf
+    .accept 10372 >> Aceite Uma Pergunta Discreta
     .train 1804 >>Treine suas magias de classe
     .target Zelanis
     .train 1804,1
@@ -6244,7 +6244,7 @@ step << !Undead Rogue
     #optional
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel|r
-    .fp Undercity >>Aprenda a rota de voo para Undercity
+    .fp Undercity >> Aprenda a rota de voo de Cidade Baixa
     .target Michael Garrett
     .itemcount 2027,<2
     .money <0.7632 << Troll/Orc
@@ -6254,7 +6254,7 @@ step << !Undead Rogue
 step << !Undead Rogue
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel|r
-    .fp Undercity >>Aprenda a rota de voo para Undercity
+    .fp Undercity >> Aprenda a rota de voo de Cidade Baixa
     .target Michael Garrett
     .itemcount 2027,<1
     .money <0.3816 << Troll/Orc
@@ -6307,7 +6307,7 @@ step << Rogue
     .zoneskip Ghostlands
 step << Rogue
     .goto Undercity,54.67,11.25
-    .zone Silvermoon City >>Pegue o |cRXP_PICK_Orb of Deslocamento|r para a Cidade de Silvermoon
+    .zone Silvermoon City >> Pegue o |cRXP_PICK_Orb of Deslocamento|r para a Cidade de Silvermoon
     .cooldown item,6948,<0
     .zoneskip Eversong Woods
     .zoneskip Ghostlands
@@ -6318,18 +6318,18 @@ step << Priest/Mage
     .goto Silvermoon City,57.45,24.46,15,0
     .goto Silvermoon City,55.31,24.96,15,0 << Priest
     .goto Silvermoon City,57.21,21.25,15,0 << Mage
-    .goto Silvermoon City,55.38,26.76,12 >>Vá em direção à |cRXP_FRIENDLY_Lotheolan|r << Priest
-    .goto Silvermoon City,57.16,18.85,12 >>Vá em direção à |cRXP_FRIENDLY_Zaedana|r << Mage
+    .goto Silvermoon City,55.38,26.76,12 >> Vá em direção à |cRXP_FRIENDLY_Lotheolan|r << Priest
+    .goto Silvermoon City,57.16,18.85,12 >> Vá em direção à |cRXP_FRIENDLY_Zaedana|r << Mage
 step << Priest
     #optional
     .goto Silvermoon City,55.38,26.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lotheolan|r
-    .train 8102 >>Treine suas magias de classe
+    .train 8102 >> Treine suas magias de classe
     .target Lotheolan
 step << Mage
     .goto Silvermoon City,57.16,18.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zaedana|r
-    .train 2120 >>Treine suas magias de classe
+    .train 2120 >> Treine suas magias de classe
     .target Zaedana
 step << Priest
     #ah
@@ -6422,7 +6422,7 @@ step << Warlock
     #optional
     .goto Silvermoon City,74.39,47.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Talionia|r
-    .train 6222 >>Treine suas magias de classe
+    .train 6222 >> Treine suas magias de classe
     .target Talionia
 step << Paladin
     #completewith next
@@ -6451,13 +6451,13 @@ step
 step
     #sticky
     #completewith EnterRFC
-    .subzone 2437 >>Agora você deve procurar um grupo para Cavernas Ígneas
+    .subzone 2437 >> Agora você deve procurar um grupo para Cavernas Ígneas
     .dungeon RFC
 step
     #completewith UCPortRFC
     .goto Ghostlands,45.42,30.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sunwing|r
-    .fly Silvermoon >>Voe para Silvermoon
+    .fly Silvermoon >> Voe para Silvermoon
     .target Skymaster Sunwing
     .dungeon RFC
 step
@@ -6485,7 +6485,7 @@ step
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >>Pegue o elevador até Cidade Baixa
+    .goto Undercity,65.53,43.62,15 >> Pegue o elevador até Cidade Baixa
     .dungeon RFC
 step
     #completewith next
@@ -6494,13 +6494,13 @@ step
     .goto Undercity,45.32,78.32,10,0
     .goto Undercity,46.26,83.91,10,0
     .goto Undercity,49.03,87.92,10,0
-    .goto Undercity,52.94,89.60,10 >>Entre no Royal Quarter
+    .goto Undercity,52.94,89.60,10 >>Entre no Distrito Real
     .dungeon RFC
 step
     #label RFCPowerPickup
     .goto Undercity,56.2,96.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Varimatras|r
-    .accept 5725 >>Aceite O Poder de Destruir...
+    .accept 5725 >>Aceite O poder de destruir...
     .target Varimathras
     .zoneskip Durotar
     .zoneskip Orgrimmar
@@ -6519,14 +6519,14 @@ step
     .goto Tirisfal Glades,61.34,59.17,8,0
     .goto Tirisfal Glades,60.51,58.69,-1
     .goto Tirisfal Glades,60.94,46.35,-1
-    >>Suba a Torre Zepelim
-    .zone Durotar >>Pegue o Zepelim para Durotar
+    >>Suba a Torre do Zepelim
+    .zone Durotar >>Pegue o zepelim para Durotar
     .zoneskip Orgrimmar
     .dungeon RFC
 step
     #completewith EnterRFC
     .goto Orgrimmar,48.97,92.84,50,0
-    .zone Orgrimmar >>Entre em Orgrimmar
+    .zone Orgrimmar >> Entre em Orgrimmar
     .dungeon RFC
 step << !Troll !Orc
     .goto Orgrimmar,45.12,63.89
@@ -6547,7 +6547,7 @@ step
     .dungeon RFC
 step
     .goto Durotar,53.08,9.19
-    >>Abate os |cRXP_ENEMY_Lâmina Ardente|r em Rocha do Crânio até que |cRXP_LOOT_Lieutenant's Insignia|r caia
+    >>Mate inimigos da |cRXP_ENEMY_Lâmina Ardente|r na Rocha da Caveira até cair a |cRXP_LOOT_Insígnia do Tenente|r
     >>|cRXP_WARN_Isto é uma missão de pré-requisito para Cavernas Ígneas. Pule este passo se você não deseja fazê-lo|r
     .complete 5726,1 --Lieutenant's Insignia (1)
     .isOnQuest 5726
@@ -6571,7 +6571,7 @@ step
 step
     .goto Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neeru Cortafogo|r
-    .accept 5761 >>Aceite Abate da Fera
+    .accept 5761 >>Aceite Mate a besta
     .target Neeru Fireblade
     .dungeon RFC
 step
@@ -6601,22 +6601,22 @@ step
     .dungeon RFC
 step
     #completewith EnterRFC
-    .destroy 14544 >>|cRXP_WARN_Destrua|r |T134417:0|t[Lieutenant's Insignia] |cRXP_WARN_já que você não precisa mais dele|r
+    .destroy 14544 >>|cRXP_WARN_Destrua|r |T134417:0|t[Insígnia do Tenente] |cRXP_WARN_pois você não precisa mais dela|r
     .dungeon RFC
 step
     #label EnterRFC
     .goto Orgrimmar,52.77,48.97
-    .subzone 2437,2 >>Entre no portal da Instância RFC. Entre na zona
+    .subzone 2437,2 >> Entre no portal da instância das Cavernas Ígneas e atravesse-o
     .dungeon RFC
 step
-    >>|cRXP_WARN_Se possível, compartilhe as seguintes missões com os membros do grupo|r
+    >>|cRXP_WARN_Se possível, peça aos membros do grupo que compartilhem as seguintes missões|r
     >>|cRXP_WARN_Pule este passo se ninguém tem estas missões|r
-    .accept 5722 >>Aceite Procurando pela Bolsa Perdida
-    .accept 5723 >>Aceite Testando a Força de um Inimigo
+    .accept 5722 >>Aceite Em busca da algibeira perdida
+    .accept 5723 >>Aceite Testando a força do inimigo
     .dungeon RFC
 step
     #completewith next
-    >>Abate os |cRXP_ENEMY_Troggs Iraflama|r e os |cRXP_ENEMY_Xamãs Iraflama|r
+    >>Mate |cRXP_ENEMY_Troggs Iraflama|r e |cRXP_ENEMY_Xamãs Iraflama|r
     .complete 5723,1 --Ragefire Trogg (8)
     .mob +Ragefire Trogg
     .complete 5723,2 --Ragefire Shaman (8)
@@ -6625,21 +6625,21 @@ step
     .dungeon RFC
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
-    .turnin 5722 >>Entregue Procurando a Mochila Perdida
-    .accept 5724 >>Aceite Retorno da Sacola Perdida
+    .turnin 5722 >>Entregue Em busca da algibeira perdida
+    .accept 5724 >>Aceite Devolvendo a algibeira perdida
     .target Maur Grimtotem
     .isOnQuest 5722
     .dungeon RFC
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maur|r
-    .accept 5724 >>Aceite Retorno da Sacola Perdida
+    .accept 5724 >>Aceite Devolvendo a algibeira perdida
     .target Maur Grimtotem
     .isQuestTurnedIn 5722
     .dungeon RFC
 step
     #label TroggsShamans
-    >>Abate os |cRXP_ENEMY_Troggs Iraflama|r e os |cRXP_ENEMY_Xamãs Iraflama|r
+    >>Mate |cRXP_ENEMY_Troggs Iraflama|r e |cRXP_ENEMY_Xamãs Iraflama|r
     .complete 5723,1 --Ragefire Trogg (8)
     .mob +Ragefire Trogg
     .complete 5723,2 --Ragefire Shaman (8)
@@ -6649,7 +6649,7 @@ step
 step
     #requires TroggsShamans
     #completewith BazzalanandJergosh
-    >>Mate os |cRXP_ENEMY_Cultistas Lâmina Calcinante|r e os |cRXP_ENEMY_Bruxos Lâmina Calcinante|r. Saque-os para obter |cRXP_LOOT_Spells of Sombra|r e |cRXP_LOOT_Incantations from the Nether|r
+    >>Mate |cRXP_ENEMY_Sectário da Lâmina Calcinante|r e |cRXP_ENEMY_Bruxo da Lâmina Calcinante|r. Saqueie-os para pegar os |cRXP_LOOT_Feitiços da Sombra|r e as |cRXP_LOOT_Encantamentos do Éter|r
     .complete 5725,1 --Spells of Shadow (1)
     .complete 5725,2 --	Incantations from the Nether (1)
     .mob Searing Blade Cultist
@@ -6657,14 +6657,14 @@ step
     .isOnQuest 5725
     .dungeon RFC
 step
-    >>Mate |cRXP_ENEMY_Taragaman, o Famélico|r. Saqueie-o para obter seu |cRXP_LOOT_Coração|r
+    >>Mate |cRXP_ENEMY_Taragaman, o Famélico|r. Saqueie-o para pegar seu |cRXP_LOOT_Coração|r
     .complete 5761,1 -- Taragaman the Hungerer's Heart
     .mob Taragaman the Hungerer
     .isOnQuest 5761
     .dungeon RFC
 step
     #label BazzalanandJergosh
-    >>Abate |cRXP_ENEMY_Bazzalan|r e |cRXP_ENEMY_Jergosh, o Invocador|r
+    >>Mate |cRXP_ENEMY_Bazzalan|r e |cRXP_ENEMY_Jergosh, o Invocador|r
     .complete 5728,1 --Bazzalan (1)
     .mob +Bazzalan
     .complete 5728,2 --Jergosh the Invoker (1)
@@ -6672,7 +6672,7 @@ step
     .isOnQuest 5728
     .dungeon RFC
 step
-    >>Mate os |cRXP_ENEMY_Cultistas Lâmina Calcinante|r e os |cRXP_ENEMY_Bruxos Lâmina Calcinante|r. Saque-os para obter |cRXP_LOOT_Spells of Sombra|r e |cRXP_LOOT_Incantations from the Nether|r
+    >>Mate |cRXP_ENEMY_Sectário da Lâmina Calcinante|r e |cRXP_ENEMY_Bruxo da Lâmina Calcinante|r. Saqueie-os para pegar os |cRXP_LOOT_Feitiços da Sombra|r e as |cRXP_LOOT_Encantamentos do Éter|r
     .complete 5725,1 --Spells of Shadow (1)
     .complete 5725,2 --	Incantations from the Nether (1)
     .mob Searing Blade Cultist
@@ -6682,7 +6682,7 @@ step
 step
     .goto Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Neeru Cortafogo|r
-    .turnin 5761 >>Entregue Abate da Fera
+    .turnin 5761 >>Entregue Mate a besta
     .target Neeru Fireblade
     .isQuestComplete 5761
     .dungeon RFC
@@ -6718,15 +6718,15 @@ step
     .dungeon RFC
 step << Druid
 	#completewith DruidTrain3
-	.cast 18960 >>Use Teleporte: Clareira da Lua
+	.cast 18960 >> Use Teleporte: Clareira da Lua
 	.zoneskip Moonglade
 	.xp <16,1
 step << Druid
     #optional
     .goto Moonglade,52.53,40.57
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
-    .train 783 >>Treine suas magias de classe << wotlk
-    .train 8925 >>Treine suas magias de classe << TBC
+    .train 783 >> Treine suas magias de classe << wotlk
+    .train 8925 >> Treine suas magias de classe << TBC
 	.target Loganaar
     .cooldown item,6948,>0
 	.xp <16,1
@@ -6735,7 +6735,7 @@ step << Druid
     #label DruidTrain3
     .goto Moonglade,52.53,40.57
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
-    .train 8938 >>Treine suas magias de classe
+    .train 8938 >> Treine suas magias de classe
 	.target Loganaar
     .cooldown item,6948,>0
 	.xp <18,1
@@ -6748,7 +6748,7 @@ step
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kalarin|r
-    >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Compre|r |T132796:0|t[Suco de Melão] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Compre|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_dele|r << !Priest !Mage !Warlock !Druid !Paladin
     >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_e|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_dele|r << Paladin
     .collect 1205,30,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (30)
@@ -6763,7 +6763,7 @@ step
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kalarin|r
-    >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Compre|r |T132796:0|t[Suco de Melão] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Compre|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_dele|r << !Priest !Mage !Warlock !Druid !Paladin
     >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_e|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_dele|r << Paladin
     .collect 1205,20,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (20)
@@ -6777,7 +6777,7 @@ step
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kalarin|r
-    >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Compre|r |T132796:0|t[Suco de Melão] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Compre|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_dele|r << !Priest !Mage !Warlock !Druid !Paladin
     >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_e|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_dele|r << Paladin
     .collect 1205,10,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (10)
@@ -6794,7 +6794,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group Guia RestedXP TBC (A)
+#group Guia RestedXP TBC (H)
 << Horde
 #name 16-20 Terra Fantasma
 #defaultfor !Shaman
@@ -6873,14 +6873,14 @@ step << Rogue/Hunter/Druid/Shaman
 step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eralan|r
-    .turnin 10372 >>Entregue Uma Pergunta Discreta
-    .accept 9491 >>Aceite Ganância
+    .turnin 10372 >> Entregue Uma Pergunta Discreta
+    .accept 9491 >> Aceite Ganância
     .target Eralan
     .isOnQuest 10372
 step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eralan|r
-    .accept 9491 >>Aceite Ganância
+    .accept 9491 >> Aceite Ganância
     .target Eralan
     .isQuestTurnedIn 10372
 step << Rogue wotlk
@@ -6895,7 +6895,7 @@ step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eralan|r
     >>|cRXP_BUY_Compre o|r |T135427:0|t[Fura-gargantas] |cRXP_BUY_e a|r |T135344:0|t[Cimitarra Sinistra] |cRXP_BUY_dela se estiverem disponíveis|r
-    .vendor 16268 >>Comerciante Lixo
+    .vendor 16268 >> Venda os itens de lixo
     .target Eralan
     .money <0.7517 << BloodElf/Undead
     .money <0.7893 << Orc/Troll
@@ -6908,7 +6908,7 @@ step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eralan|r
     >>|cRXP_BUY_Compre a|r |T135344:0|t[Cimitarra Sinistra] |cRXP_BUY_dela se estiver disponível|r
-    .vendor 16268 >>Comerciante Lixo
+    .vendor 16268 >> Venda os itens de lixo
     .target Eralan
     .money <0.6947 << BloodElf/Undead
     .money <0.7294 << Orc/Troll
@@ -6921,7 +6921,7 @@ step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eralan|r
     >>|cRXP_BUY_Compre o|r |T135427:0|t[Fura-gargantas] |cRXP_BUY_dela se estiver disponível|r
-    .vendor 16268 >>Comerciante Lixo
+    .vendor 16268 >> Venda os itens de lixo
     .target Eralan
     .money <0.0570 << BloodElf/Undead
     .money <0.0599 << Orc/Troll
@@ -6969,10 +6969,10 @@ step
 step
     .goto Ghostlands,54.84,49.30,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quallestis|r e |cRXP_FRIENDLY_Kaendris|r
-    .turnin 9207 >>Entregue Amostras das Minas Telúminas
+    .turnin 9207 >> Entregue Amostras das Minas Telúminas
     .target +Magister Quallestis
     .goto Ghostlands,54.95,48.49
-    .accept 9282 >>Aceite O Enclave dos Andarilhos
+    .accept 9282 >> Aceite O Enclave dos Andarilhos
     .target +Magister Kaendris
     .goto Ghostlands,55.07,48.83
 step
@@ -6988,14 +6988,14 @@ step
 step
     .goto Ghostlands,54.87,48.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Idonis|r
-    .turnin 9151 >>Entregue O Sacrário Solar
-    .accept 9220 >>Aceite Guerra na Cidadela da Morte
+    .turnin 9151 >> Entregue O Sacrário Solar
+    .accept 9220 >> Aceite Guerra na Cidadela da Morte
     .target Magister Idonis
     .isOnQuest 9151
 step
     .goto Ghostlands,54.87,48.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Idonis|r
-    .accept 9220 >>Aceite Guerra na Cidadela da Morte
+    .accept 9220 >> Aceite Guerra na Cidadela da Morte
     .target Magister Idonis
     .isQuestTurnedIn 9151
 step
@@ -7007,8 +7007,8 @@ step
 step
     .goto Ghostlands,60.29,35.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sylastor|r
-    .turnin 9166 >>Entregue os Planos para An'telas
-    .accept 9169 >>Aceite Desativar An'owyn
+    .turnin 9166 >> Entregue os Planos para An'telas
+    .accept 9169 >> Aceite Desativar An'owyn
     .target Magister Sylastor
 step
     #completewith Enclave2
@@ -7037,7 +7037,7 @@ step << Hunter
 step << Hunter
     .goto Ghostlands,72.13,32.03
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Narina|r
-    >>|cRXP_BUY_Compre|r |T132382:0|t[Sharp Flechas] |cRXP_BUY_dela|r
+    >>|cRXP_BUY_Compre|r |T132382:0|t[Flechas Afiadas] |cRXP_BUY_dela|r
     .collect 2515,2000,9276,1 << Hunter --Sharp Arrow (2000)
     .target Narina
     .money <0.0480 << BloodElf
@@ -7045,22 +7045,22 @@ step << Hunter
 step
     #label Enclave2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sedina|r, |cRXP_FRIENDLY_Solanna|r, |cRXP_FRIENDLY_Krenn'an|r e |cRXP_FRIENDLY_Helios|r
-    .turnin 9159 >>Entregue Enfraquecendo a Praga
+    .turnin 9159 >> Entregue Enfraquecendo a Praga
     .target +Farstrider Sedina
     .goto Ghostlands,72.50,32.14
-    .accept 9276 >>Aceite Ataque a Zeb'Tela
+    .accept 9276 >> Aceite Ataque a Zeb'Tela
     .target +Farstrider Solanna
     .goto Ghostlands,72.33,31.24
     .turnin 9274 >>Entregue Espíritos dos Afogados
     .target +Ranger Krenn'an
     .goto Ghostlands,72.21,29.78
-    .turnin 9146 >>Entregue "Apresente-se ao Capitão Helios"
+    .turnin 9146 >> Entregue "Apresente-se ao Capitão Helios"
     .accept 9214 >>Aceite Armas dos Pinhumbra
     .target +Captain Helios
     .goto Ghostlands,72.37,29.64
 step
     #optional
-    .abandon 9274 >>Abandone Espíritos dos Afogados
+    .abandon 9274 >> Abandone Espíritos dos Afogados
 step
     #completewith next
     .goto Ghostlands,72.80,30.17,10,0
@@ -7070,7 +7070,7 @@ step
 step
     .goto Ghostlands,72.61,31.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Venustus|r
-    .accept 9275 >>Aceite O Gosto Amargo da Morte
+    .accept 9275 >> Aceite O Gosto Amargo da Morte
     .target Apothecary Venustus
 step
     #completewith next
@@ -7082,8 +7082,8 @@ step
 step
     .goto Ghostlands,71.96,32.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Leiloeiro Leiloeiro Vynna|r
-    .turnin 9282 >>Entregue O Enclave dos Andarilhos
-    .accept 9161 >>Aceite A Sombra do Traidor
+    .turnin 9282 >> Entregue O Enclave dos Andarilhos
+    .accept 9161 >> Aceite A Sombra do Traidor
     .target Ranger Vynna
 step
     #completewith TrollR1
@@ -7094,7 +7094,7 @@ step
     .isOnQuest 9199
 step
     .goto Ghostlands,68.08,29.39,50,0
-    .goto Ghostlands,66.24,28.55,12 >>Entre na casa de the Crypt
+    .goto Ghostlands,66.24,28.55,12 >> Entre na casa de the Crypt
     .isOnQuest 9199
 step << Rogue
     #loop
@@ -7113,7 +7113,7 @@ step << Rogue
     .goto Ghostlands,61.68,28.58,15,0
     >>|T136058:0|t[Abrir Fechadura] as |cRXP_PICK_Burial Chests|r no chão dentro da Cripta. Saqueie-as para obter o |cRXP_LOOT_Gold Band|r
     >>Clique no ground to burn them
-    .skill lockpicking,18 >>Suba sua habilidade de |T136058:0|t[Arrombamento] para 18
+    .skill lockpicking,18 >> Suba sua habilidade de |T136058:0|t[Arrombamento] para 18
     .complete 9491,1 --Pitted Gold Band (1)
     .complete 9193,1,6 --Mummified Troll Remains Burned (x10)
     .skill lockpicking,18,1
@@ -7169,7 +7169,7 @@ step
 step
     .goto Ghostlands,62.93,32.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lilatha|r para começar a escolta
-    .accept 9212,1 >>Aceite Fuga das Catacumbas
+    .accept 9212,1 >> Aceite Fuga das Catacumbas
     .target Ranger Lilatha
 step
     #completewith TrollR
@@ -7183,7 +7183,7 @@ step << Rogue
     >>|T136058:0|t[Abrir Fechadura] as |cRXP_PICK_Burial Chests|r no chão dentro da Cripta. Saqueie-as para obter o |cRXP_LOOT_Pitted Ouro Band|r
     >>Clique no ground to burn them
     >>|cRXP_WARN_Termine isto antes de sair das catacumbas|r
-    .skill lockpicking,20 >>Suba sua |T136058:0|t[Arrombamento] para 20
+    .skill lockpicking,20 >> Suba sua |T136058:0|t[Arrombamento] para 20
     .complete 9491,1 --Pitted Gold Band (1)
     .complete 9193,1 --Collect Mummified Troll Remains Burned (x10)
 step << Rogue
@@ -7228,7 +7228,7 @@ step << Rogue
     .goto Ghostlands,61.68,28.58,15,0
     >>|T136058:0|t[Abrir Fechadura] as |cRXP_PICK_Burial Chests|r no chão dentro da Cripta. Saqueie-as para obter o |cRXP_LOOT_Pitted Ouro Band|r
     >>Clique no ground to burn them
-    .skill lockpicking,20 >>Suba sua |T136058:0|t[Arrombamento] para 20
+    .skill lockpicking,20 >> Suba sua |T136058:0|t[Arrombamento] para 20
     .complete 9491,1 --Pitted Gold Band (1)
     .complete 9193,1 --Mummified Troll Remains Burned (x10)
 step << !Rogue
@@ -7280,7 +7280,7 @@ step << Rogue
 step
     .goto Ghostlands,72.37,29.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helios|r
-    .turnin 9212 >>Entregue Fuga das Catacumbas
+    .turnin 9212 >> Entregue Fuga das Catacumbas
     .target Captain Helios
 step << Warlock TBC
     #optional
@@ -7316,11 +7316,11 @@ step << Rogue
     .subzoneskip 3488
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valwyn|r e |cRXP_FRIENDLY_Maltendis|r
-    .turnin 9193 >>Entregue Investigue as Catacumbas Amani
+    .turnin 9193 >> Entregue Investigue as Catacumbas Amani
     .target +Advisor Valwyn
     .goto Ghostlands,45.17,32.37,10,0
     .goto Ghostlands,44.84,32.81
-    .turnin 9199 >>Entregue Juju dos Trolls
+    .turnin 9199 >> Entregue Juju dos Trolls
     .target +Deathstalker Maltendis
     .goto Ghostlands,44.74,32.28
 step << Rogue wotlk
@@ -7348,7 +7348,7 @@ step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eralan|r
     >>|cRXP_BUY_Compre o|r |T135427:0|t[Fura-gargantas] |cRXP_BUY_e a|r |T135344:0|t[Cimitarra Sinistra] |cRXP_BUY_dela se estiverem disponíveis|r
-    .vendor 16268 >>Comerciante Lixo
+    .vendor 16268 >> Venda os itens de lixo
     .target Eralan
     .money <0.7517 << BloodElf/Undead
     .money <0.7893 << Orc/Troll
@@ -7361,7 +7361,7 @@ step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eralan|r
     >>|cRXP_BUY_Compre a|r |T135344:0|t[Cimitarra Sinistra] |cRXP_BUY_dela se estiver disponível|r
-    .vendor 16268 >>Comerciante Lixo
+    .vendor 16268 >> Venda os itens de lixo
     .target Eralan
     .money <0.6947 << BloodElf/Undead
     .money <0.7294 << Orc/Troll
@@ -7374,7 +7374,7 @@ step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eralan|r
     >>|cRXP_BUY_Compre o|r |T135427:0|t[Fura-gargantas] |cRXP_BUY_dela se estiver disponível|r
-    .vendor 16268 >>Comerciante Lixo
+    .vendor 16268 >> Venda os itens de lixo
     .target Eralan
     .money <0.0570 << BloodElf/Undead
     .money <0.0599 << Orc/Troll
@@ -7427,8 +7427,8 @@ step
 step
     .goto Ghostlands,79.63,17.57
     >>Clique no |cRXP_PICK_Book|r no chão
-    .turnin 9161 >>Entregue A Sombra do Traidor
-    .accept 9162 >>Aceite Vestígios do Passado
+    .turnin 9161 >> Entregue A Sombra do Traidor
+    .accept 9162 >> Aceite Vestígios do Passado
 step << Rogue
     #completewith next
     >>|T136058:0|t[Abrir Fechadura] as |cRXP_PICK_Primitive Chests|r no chão perto das ruínas. Saqueie-as para obter o |cRXP_LOOT_Archaeologist's Encolhido Cabeça|r
@@ -7457,7 +7457,7 @@ step
 step
     .goto Ghostlands,72.29,32.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Heron|r
-    >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Compre|r |T132796:0|t[Suco de Melão] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Buy|r a[Mutton Chops]|cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
     >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_e|r |T133970:0|t[Mutton Chops] |cRXP_BUY_dele|r << Paladin
     .collect 1205,20,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (20)
@@ -7472,7 +7472,7 @@ step
 step
     .goto Ghostlands,72.29,32.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Heron|r
-    >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Compre|r |T132796:0|t[Suco de Melão] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Buy|r a[Mutton Chops]|cRXP_BUY_from him|r << !Priest !Mage !Warlock !Druid !Paladin
     >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_e|r |T133970:0|t[Mutton Chops] |cRXP_BUY_dele|r << Paladin
     .collect 1205,10,9281,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (10)
@@ -7486,8 +7486,8 @@ step
     .xp >30,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Solanna|r
-    .turnin 9276 >>Entregue Ataque a Zeb'Tela
-    .accept 9277 >>Aceite Ataque a Zeb'Nowa
+    .turnin 9276 >> Entregue Ataque a Zeb'Tela
+    .accept 9277 >> Aceite Ataque a Zeb'Nowa
     .goto Ghostlands,72.33,31.24
     .target Farstrider Solanna
 step
@@ -7500,8 +7500,8 @@ step
 step
     .goto Ghostlands,71.96,32.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Leiloeiro Leiloeiro Vynna|r
-    .turnin 9162 >>Entregue Vestígios do Passado
-    .accept 9172 >>Aceite Apresente-se ao magíster Kaendris
+    .turnin 9162 >> Entregue Vestígios do Passado
+    .accept 9172 >> Aceite Apresente-se ao magíster Kaendris
     .target Ranger Vynna
 step << Rogue
     #completewith KelGash
@@ -7557,14 +7557,14 @@ step
 	.goto Ghostlands,64.70,67.70,50,0
 	.goto Ghostlands,65.42,66.39,50,0
 	.goto Ghostlands,64.66,64.07,50,0
-    .xp 18 >>Farme até nível 18
+    .xp 18 >> Farme até nível 18
     >>|cRXP_WARN_Você precisa estar no nível 18 para derrotar sozinho |cRXP_ENEMY_Kel'gash, o Perverso|r. Você pode pular isto se conseguir um grupo|r
 step
     #completewith next
     .goto Ghostlands,65.29,79.31,12,0
     .goto Ghostlands,65.77,79.73,8,0
     .goto Ghostlands,65.93,80.68,8,0
-    .goto Ghostlands,65.59,80.72,8 >>Vá para cima
+    .goto Ghostlands,65.59,80.72,8 >> Vá para cima
 step
     #label KelGash
     .goto Ghostlands,65.29,79.46
@@ -7658,26 +7658,26 @@ step
     .subzone 3496 >>Vá para o Enclave dos Andarilhos Celestes
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Solanna|r e |cRXP_FRIENDLY_Helios|r
-    .turnin 9277 >>Entregue Ataque a Zeb'Nowa
+    .turnin 9277 >> Entregue Ataque a Zeb'Nowa
     .target +Farstrider Solanna
     .goto Ghostlands,72.33,31.24
-    .turnin 9214 >>Entregue Armas dos Pinhumbra
-    .turnin 9215 >>Entregue Traga-me a Cabeça de Kel'gash!
+    .turnin 9214 >> Entregue Armas dos Pinhumbra
+    .turnin 9215 >> Entregue Traga-me a Cabeça de Kel'gash!
     .target +Captain Helios
     .goto Ghostlands,72.37,29.64
     .isQuestComplete 9215
 step
     #label Enclave4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Solanna|r e |cRXP_FRIENDLY_Helios|r
-    .turnin 9277 >>Entregue Ataque a Zeb'Nowa
+    .turnin 9277 >> Entregue Ataque a Zeb'Nowa
     .target +Farstrider Solanna
     .goto Ghostlands,72.33,31.24
-    .turnin 9214 >>Entregue Armas dos Pinhumbra
+    .turnin 9214 >> Entregue Armas dos Pinhumbra
     .target +Captain Helios
     .goto Ghostlands,72.37,29.64
 step
     #optional
-    .abandon 9215 >>Abandone Traga-me a Cabeça de Kel'gash!
+    .abandon 9215 >> Abandone Traga-me a Cabeça de Kel'gash!
 step << Paladin/Rogue/Warrior
     #optional
     #completewith StoneOL
@@ -7695,7 +7695,7 @@ step
 step
     .goto Ghostlands,72.61,31.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Venustus|r
-    .turnin 9275 >>Entregue O Gosto Amargo da Morte
+    .turnin 9275 >> Entregue O Gosto Amargo da Morte
     .target Apothecary Venustus
 step
     #completewith next
@@ -7705,7 +7705,7 @@ step
 step
     .goto Ghostlands,60.29,35.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sylastor|r
-    .turnin 9169 >>Entregue Desativar An'owyn
+    .turnin 9169 >> Entregue Desativar An'owyn
     .target Magister Sylastor
 step << !Rogue
     #completewith Truth
@@ -7713,7 +7713,7 @@ step << !Rogue
     .goto Ghostlands,54.68,41.88,20,0
     .goto Ghostlands,51.07,38.21,20,0
     .goto Ghostlands,48.58,35.52,20,0
-    .goto Ghostlands,45.17,32.37,50 >>Voe de volta para Tranquillien
+    .goto Ghostlands,45.17,32.37,50 >> Voe de volta para Tranquillien
     .isQuestAvailable 9151 << !Paladin/!wotlk
 step << Rogue
     #completewith Truth
@@ -7721,7 +7721,7 @@ step << Rogue
     .goto Ghostlands,54.68,41.88,20,0
     .goto Ghostlands,51.07,38.21,20,0
     .goto Ghostlands,48.58,35.52,20,0
-    .goto Ghostlands,47.67,34.87,40 >>Voe de volta para Tranquillien
+    .goto Ghostlands,47.67,34.87,40 >> Voe de volta para Tranquillien
     .isQuestAvailable 9151
 step << Rogue wotlk
     #completewith Truth
@@ -7739,7 +7739,7 @@ step << Rogue
     >>|cRXP_WARN_Guarde a|r |T135662:0|t[Adaga Gumefólia] |cRXP_WARN_para mais tarde, pois você precisará dela para uma missão|r << tbc
     .turnin 10548,1 >>Entregue A Triste Verdade << tbc
     .turnin 10548 >>Entregue A Triste Verdade << wotlk
-    .vendor >>Comerciante Lixo
+    .vendor >> Venda os itens de lixo
     .target Eralan
     .money <0.7517 << BloodElf/Undead
     .money <0.7893 << Orc/Troll
@@ -7756,7 +7756,7 @@ step << Rogue
     >>|cRXP_WARN_Guarde a|r |T135662:0|t[Adaga Gumefólia] |cRXP_WARN_para mais tarde, pois você precisará dela para uma missão|r << tbc
     .turnin 10548,1 >>Entregue A Triste Verdade << tbc
     .turnin 10548 >>Entregue A Triste Verdade << wotlk
-    .vendor >>Comerciante Lixo
+    .vendor >> Venda os itens de lixo
     .target Eralan
     .money <0.6947 << BloodElf/Undead
     .money <0.7294 << Orc/Troll
@@ -7773,7 +7773,7 @@ step << Rogue
     >>|cRXP_WARN_Guarde a|r |T135662:0|t[Adaga Gumefólia] |cRXP_WARN_para mais tarde, pois você precisará dela para uma missão|r << tbc
     .turnin 10548,1 >>Entregue A Triste Verdade << tbc
     .turnin 10548 >>Entregue A Triste Verdade << wotlk
-    .vendor >>Comerciante Lixo
+    .vendor >> Venda os itens de lixo
     .target Eralan
     .money <0.0570 << BloodElf/Undead
     .money <0.0599 << Orc/Troll
@@ -7826,25 +7826,25 @@ step << Rogue
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5 << wotlk
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Darenis|r, |cRXP_FRIENDLY_Valwyn|r, and |cRXP_FRIENDLY_Maltendis|r
-    .accept 9151 >>Aceite O Sacrário Solar
+    .accept 9151 >> Aceite O Sacrário Solar
     .target +Magister Darenis
     .goto Ghostlands,46.02,31.95
-    .turnin 9193 >>Entregue Investigue as Catacumbas Amani
+    .turnin 9193 >> Entregue Investigue as Catacumbas Amani
     .target +Advisor Valwyn
     .goto Ghostlands,45.17,32.37,10,0
     .goto Ghostlands,44.84,32.81
-    .turnin 9199 >>Entregue Juju dos Trolls
+    .turnin 9199 >> Entregue Juju dos Trolls
     .target +Deathstalker Maltendis
     .goto Ghostlands,44.74,32.28
     .isQuestAvailable 9151 << !Paladin/!wotlk
 step
     #label Truth
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valwyn|r e |cRXP_FRIENDLY_Maltendis|r
-    .turnin 9193 >>Entregue Investigue as Catacumbas Amani
+    .turnin 9193 >> Entregue Investigue as Catacumbas Amani
     .target +Advisor Valwyn
     .goto Ghostlands,45.17,32.37,10,0
     .goto Ghostlands,44.84,32.81
-    .turnin 9199 >>Entregue Juju dos Trolls
+    .turnin 9199 >> Entregue Juju dos Trolls
     .target +Deathstalker Maltendis
     .goto Ghostlands,44.74,32.28
     .isQuestAvailable 9151 << !Paladin/!wotlk
@@ -7852,7 +7852,7 @@ step << Paladin wotlk
     #completewith next
     .goto Ghostlands,45.42,30.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sunwing|r
-    .fly Silvermoon >>Voe para Silvermoon
+    .fly Silvermoon >> Voe para Silvermoon
     .target Skymaster Sunwing
     .xp <20,1
     .zoneskip Silvermoon City
@@ -7914,15 +7914,15 @@ step << Warlock TBC
     .xp <18,1
 step << Druid
 	#completewith DruidTrain5
-	.cast 18960 >>Use Teleporte: Clareira da Lua
+	.cast 18960 >> Use Teleporte: Clareira da Lua
 	.zoneskip Moonglade
 	.xp <16,1
 step << Druid
     #optional
     .goto Moonglade,52.53,40.57
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
-    .train 783 >>Treine suas magias de classe << wotlk
-    .train 8925 >>Treine suas magias de classe << TBC
+    .train 783 >> Treine suas magias de classe << wotlk
+    .train 8925 >> Treine suas magias de classe << TBC
 	.target Loganaar
     .cooldown item,6948,>0
 	.xp <16,1
@@ -7931,7 +7931,7 @@ step << Druid
     #optional
     .goto Moonglade,52.53,40.57
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
-    .train 8938 >>Treine suas magias de classe
+    .train 8938 >> Treine suas magias de classe
 	.target Loganaar
     .cooldown item,6948,>0
 	.xp <18,1
@@ -7940,7 +7940,7 @@ step << Druid
     #label DruidTrain5
     .goto Moonglade,52.53,40.57
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
-    .train 6756 >>Treine suas magias de classe
+    .train 6756 >> Treine suas magias de classe
 	.target Loganaar
     .cooldown item,6948,>0
 	.xp <20,1
@@ -7955,7 +7955,7 @@ step << Paladin wotlk
     #completewith ReportMK
     >>|cRXP_WARN_Pressione "Mudança+P" para abrir sua aba de montarias|r
     >>|cRXP_WARN_Arrastar o|r |T136103:0|t[Cavalo de Guerra Thalassiano] |cRXP_WARN_para suas barras de ação|r
-    .cast 34769 >>Monte seu |T136103:0|t[Cavalo de Guerra Thalassiano]
+    .cast 34769 >> Monte seu |T136103:0|t[Cavalo de Guerra Thalassiano]
     .train 34769,3
 step << Mage/Warlock/Priest
     .goto Ghostlands,47.71,32.32
@@ -8000,8 +8000,8 @@ step
     #label ReportMK
     .goto Ghostlands,54.84,49.30,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kaendris|r
-    .turnin 9172 >>Entregue Apresente-se ao Magíster Kaendris
-    .accept 9176 >>Aceite Os Zigurates Gêmeos
+    .turnin 9172 >> Entregue Apresente-se ao Magíster Kaendris
+    .accept 9176 >> Aceite Os Zigurates Gêmeos
     .goto Ghostlands,55.07,48.83
     .target Magister Kaendris
 step
@@ -8013,14 +8013,14 @@ step
 step
     .goto Ghostlands,54.87,48.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Idonis|r
-    .turnin 9151 >>Entregue O Sacrário Solar
-    .accept 9220 >>Aceite Guerra na Cidadela da Morte
+    .turnin 9151 >> Entregue O Sacrário Solar
+    .accept 9220 >> Aceite Guerra na Cidadela da Morte
     .target Magister Idonis
     .isOnQuest 9151
 step
     .goto Ghostlands,54.87,48.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Idonis|r
-    .accept 9220 >>Aceite Guerra na Cidadela da Morte
+    .accept 9220 >> Aceite Guerra na Cidadela da Morte
     .target Magister Idonis
     .isQuestTurnedIn 9151
 step
@@ -8114,7 +8114,7 @@ step
 step
     #label Deatholme1
     #completewith next
-    .goto Ghostlands,35.17,74.71,40 >>Entre em Deatholme
+    .goto Ghostlands,35.17,74.71,40 >> Entre em Deatholme
     .isOnQuest 9220
 step << Paladin/Druid/Shaman
     #loop
@@ -8173,7 +8173,7 @@ step
 step
     .goto Ghostlands,48.91,32.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kalarin|r
-    >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
+    >>|cRXP_BUY_Compre|r |T132796:0|t[Suco de Melão] |cRXP_BUY_dele|r << Priest/Mage/Warlock/Druid
     >>|cRXP_BUY_Compre|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_dele|r << !Priest !Mage !Warlock !Druid !Paladin
     >>|cRXP_BUY_Compre|r |T132796:0|t[Melão Suco] |cRXP_BUY_e|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_dele|r << Paladin
     .collect 1205,20,9170,1 << Priest/Mage/Warlock/Druid/Paladin --Melon Juice (10)
@@ -8188,8 +8188,8 @@ step
 step
     .goto Ghostlands,48.43,30.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mouldier|r
-    .accept 9171 >>Aceite Comida Crocante
-    .turnin 9171 >>Entregue em Comida Crocante
+    .accept 9171 >> Aceite Comida Crocante
+    .turnin 9171 >> Entregue em Comida Crocante
     .target Master Chef Mouldier
     .itemcount 22644,5
     .isQuestAvailable 9171
@@ -8198,7 +8198,7 @@ step
     #completewith Aminel
     .goto Ghostlands,48.91,31.13,12,0
     .goto Ghostlands,49.36,31.74,12,0
-    .goto Ghostlands,49.36,31.74,10 >>Vá para cima
+    .goto Ghostlands,49.36,31.74,10 >> Vá para cima
 step
     .goto Ghostlands,48.91,31.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aminel|r
@@ -8260,17 +8260,17 @@ step << Rogue/Hunter/Druid/Shaman
 step
     #label Truth2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valwyn|r e |cRXP_FRIENDLY_Maltendis|r
-    .turnin 9193 >>Entregue Investigue as Catacumbas Amani
+    .turnin 9193 >> Entregue Investigue as Catacumbas Amani
     .target +Advisor Valwyn
     .goto Ghostlands,45.17,32.37,10,0
     .goto Ghostlands,44.84,32.81
-    .turnin 9199 >>Entregue Juju dos Trolls
+    .turnin 9199 >> Entregue Juju dos Trolls
     .target +Deathstalker Maltendis
     .goto Ghostlands,44.74,32.28
 step
     .goto Ghostlands,46.02,33.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rathiel|r
-    .turnin 9156 >>Turn in Wanted:Knucklerot e Luzran
+    .turnin 9156 >> Turn in Wanted:Knucklerot e Luzran
     .target Deathstalker Rathiel
     .isQuestComplete 9156
 step << Rogue wotlk
@@ -8288,7 +8288,7 @@ step << Rogue
     >>|cRXP_WARN_Guarde a|r |T135662:0|t[Adaga Gumefólia] |cRXP_WARN_para mais tarde, pois você precisará dela para uma missão|r << tbc
     .turnin 10548,1 >>Entregue A Triste Verdade << tbc
     .turnin 10548 >>Entregue A Triste Verdade << wotlk
-    .vendor >>Comerciante Lixo
+    .vendor >> Venda os itens de lixo
     .target Eralan
     .money <0.7517 << BloodElf/Undead
     .money <0.7893 << Orc/Troll
@@ -8304,7 +8304,7 @@ step << Rogue
     >>|cRXP_WARN_Guarde a|r |T135662:0|t[Adaga Gumefólia] |cRXP_WARN_para mais tarde, pois você precisará dela para uma missão|r << tbc
     .turnin 10548,1 >>Entregue A Triste Verdade << tbc
     .turnin 10548 >>Entregue A Triste Verdade << wotlk
-    .vendor >>Comerciante Lixo
+    .vendor >> Venda os itens de lixo
     .target Eralan
     .money <0.6947 << BloodElf/Undead
     .money <0.7294 << Orc/Troll
@@ -8320,7 +8320,7 @@ step << Rogue
     >>|cRXP_WARN_Guarde a|r |T135662:0|t[Adaga Gumefólia] |cRXP_WARN_para mais tarde, pois você precisará dela para uma missão|r << tbc
     .turnin 10548,1 >>Entregue A Triste Verdade << tbc
     .turnin 10548 >>Entregue A Triste Verdade << wotlk
-    .vendor >>Comerciante Lixo
+    .vendor >> Venda os itens de lixo
     .target Eralan
     .money <0.0570 << BloodElf/Undead
     .money <0.0599 << Orc/Troll
@@ -8377,8 +8377,8 @@ step
     .goto Ghostlands,54.84,49.30,10,0
     .goto Ghostlands,55.07,48.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kaendris|r
-    .turnin 9176 >>Entregue Os Zigurates Gêmeos
-    .accept 9167 >>Aceite A Destruição do Traidor
+    .turnin 9176 >> Entregue Os Zigurates Gêmeos
+    .accept 9167 >> Aceite A Destruição do Traidor
     .target Magister Kaendris
 step
     #completewith next
@@ -8387,16 +8387,16 @@ step
     .goto Ghostlands,55.17,48.21,10 >>Vá para cima
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Idonis|r e |cRXP_FRIENDLY_Janeda|r
-    .turnin 9220 >>Entregue Guerra na Cidadela da Morte
-    .accept 9170 >>Aceite Os Tenentes de Dar'Khan
+    .turnin 9220 >> Entregue Guerra na Cidadela da Morte
+    .accept 9170 >> Aceite Os Tenentes de Dar'Khan
     .target +Magister Idonis
     .goto Ghostlands,54.87,48.55
-    .accept 9877 >>Aceite Um Trago Restaurador
+    .accept 9877 >> Aceite Um Trago Restaurador
     .target +Arcanist Janeda
     .goto Ghostlands,54.82,48.35
 step
     #completewith next
-    .subzone 3488 >>Vá para Tranquillien
+    .subzone 3488 >> Vá para Tranquillien
 step
     #label RDraught
     .goto Ghostlands,47.67,34.87
@@ -8410,7 +8410,7 @@ step
 step
     .goto Ghostlands,46.40,56.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vor'el|r
-    .turnin 9281 >>Entregue Abrindo Caminho
+    .turnin 9281 >> Entregue Abrindo Caminho
     .target Apprentice Vor'el
 step
     #completewith Varnis
@@ -8545,7 +8545,7 @@ step
     .mob +Deathcage Sorcerer
 step
     #completewith next
-    .goto Ghostlands,35.17,74.71,40 >>Entre em Deatholme
+    .goto Ghostlands,35.17,74.71,40 >> Entre em Deatholme
     .isOnQuest 9164
 step
     #completewith next
@@ -8659,7 +8659,7 @@ step
 step
     #softcore
     #completewith HeroSindorei
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     .target Anjo da Cura
 step
     #hardcore
@@ -8669,9 +8669,9 @@ step
     .goto Ghostlands,54.84,49.30,10,0
     .goto Ghostlands,55.07,48.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kaendris|r
-    .turnin 9167 >>Entregue A Destruição do Traidor
-    .accept 9328 >>Aceite Herói dos Sin'dorei << BloodElf
-    .accept 9811 >>Aceite Amigo dos Sin'dorei << !BloodElf
+    .turnin 9167 >> Entregue A Destruição do Traidor
+    .accept 9328 >> Aceite Herói dos Sin'dorei << BloodElf
+    .accept 9811 >> Aceite Amigo dos Sin'dorei << !BloodElf
     .target Magister Kaendris
     .isQuestComplete 9167
 step
@@ -8679,8 +8679,8 @@ step
     .goto Ghostlands,54.84,49.30,10,0
     .goto Ghostlands,55.07,48.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kaendris|r
-    .accept 9328 >>Aceite Herói dos Sin'dorei << BloodElf
-    .accept 9811 >>Aceite Amigo dos Sin'dorei << !BloodElf
+    .accept 9328 >> Aceite Herói dos Sin'dorei << BloodElf
+    .accept 9811 >> Aceite Amigo dos Sin'dorei << !BloodElf
     .target Magister Kaendris
     .isQuestTurnedIn 9167
 step
@@ -8705,7 +8705,7 @@ step << !Troll/!wotlk !Orc/!wotlk
 step << !Troll/!wotlk !Orc/!wotlk
     #completewith KnuLuz
     #completewith next
-    .subzone 3488 >>Vá para Tranquillien
+    .subzone 3488 >> Vá para Tranquillien
     .cooldown item,6948,<0
 step
     .goto Ghostlands,47.71,32.32
@@ -8727,7 +8727,7 @@ step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eralan|r
     >>|cRXP_BUY_Compre o|r |T135427:0|t[Fura-gargantas] |cRXP_BUY_e a|r |T135344:0|t[Cimitarra Sinistra] |cRXP_BUY_dela se estiverem disponíveis|r
-    .vendor 16268 >>Comerciante Lixo
+    .vendor 16268 >> Venda os itens de lixo
     .target Eralan
     .money <0.7517 << BloodElf/Undead
     .money <0.7893 << Orc/Troll
@@ -8740,7 +8740,7 @@ step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eralan|r
     >>|cRXP_BUY_Compre a|r |T135344:0|t[Cimitarra Sinistra] |cRXP_BUY_dela se estiver disponível|r
-    .vendor 16268 >>Comerciante Lixo
+    .vendor 16268 >> Venda os itens de lixo
     .target Eralan
     .money <0.6947 << BloodElf/Undead
     .money <0.7294 << Orc/Troll
@@ -8753,7 +8753,7 @@ step << Rogue
     .goto Ghostlands,47.20,34.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eralan|r
     >>|cRXP_BUY_Compre o|r |T135427:0|t[Fura-gargantas] |cRXP_BUY_dela se estiver disponível|r
-    .vendor 16268 >>Comerciante Lixo
+    .vendor 16268 >> Venda os itens de lixo
     .target Eralan
     .money <0.0570 << BloodElf/Undead
     .money <0.0599 << Orc/Troll
@@ -8799,14 +8799,14 @@ step
     #label KnuLuz
     .goto Ghostlands,46.02,33.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rathiel|r
-    .turnin 9156 >>Turn in Wanted:Knucklerot e Luzran
+    .turnin 9156 >> Turn in Wanted:Knucklerot e Luzran
     .target Deathstalker Rathiel
     .isQuestComplete 9156
 step
     #completewith Aminel2
     .goto Ghostlands,48.91,31.13,12,0
     .goto Ghostlands,49.36,31.74,12,0
-    .goto Ghostlands,49.36,31.74,10 >>Vá para cima
+    .goto Ghostlands,49.36,31.74,10 >> Vá para cima
 step
     .goto Ghostlands,48.91,31.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aminel|r
@@ -8847,7 +8847,7 @@ step
     #completewith SMTraining5
     .goto Ghostlands,45.42,30.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sunwing|r
-    .fly Silvermoon >>Voe para Silvermoon
+    .fly Silvermoon >> Voe para Silvermoon
     .target Skymaster Sunwing
     .zoneskip Silvermoon City
 step << Mage
@@ -8859,7 +8859,7 @@ step << BloodElf !Warlock !Paladin wotlk
     .goto Eversong Woods,61.08,54.15,12,0
     .goto Eversong Woods,61.38,53.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Perascamin|r
-    .skill riding,75 >>Treine |T136103:0|t[Aprendiz de Montaria] com ele
+    .skill riding,75 >> Treine |T136103:0|t[Aprendiz de Montaria] com ele
 	.target Perascamin
     .money <4.5 << Rogue
     .money <4.693 << !Rogue
@@ -8878,47 +8878,47 @@ step << BloodElf !Warlock !Paladin wotlk
     .skill riding,<75,1
 step << BloodElf !Warlock !Paladin wotlk
     #optional
-    .cast 55884 >>Usar o |T132227:0|t[Falcostruz Vermelho] para aprendê-lo
+    .cast 55884 >> Usar o |T132227:0|t[Falcostruz Vermelho] para aprendê-lo
     .use 28927
     .itemcount 28927,1
 step << BloodElf !Warlock !Paladin wotlk
     #optional
-    .cast 55884 >>Usar o |T132229:0|t[Falcostruz Azul] para aprendê-lo
+    .cast 55884 >> Usar o |T132229:0|t[Falcostruz Azul] para aprendê-lo
     .use 29220
     .itemcount 29220,1
 step << BloodElf !Warlock !Paladin wotlk
     #optional
-    .cast 55884 >>Usar o |T132228:0|t[Falcostruz Preto] para aprendê-lo
+    .cast 55884 >> Usar o |T132228:0|t[Falcostruz Preto] para aprendê-lo
     .use 29221
     .itemcount 29221,1
 step << BloodElf !Warlock !Paladin wotlk
     #optional
-    .cast 55884 >>Usar o |T132231:0|t[Falcostruz Roxo] para aprendê-lo
+    .cast 55884 >> Usar o |T132231:0|t[Falcostruz Roxo] para aprendê-lo
     .use 29222
     .itemcount 29222,1
 step << BloodElf !Warlock !Paladin wotlk
     #completewith LorThemar
     >>|cRXP_WARN_Pressione "Mudança+P" para abrir sua aba de montarias|r
     >>|cRXP_WARN_Arrastar o|r |T132227:0|t[Falcostruz Vermelho] |cRXP_WARN_para suas barras de ação|r
-    .cast 34795 >>Monte seu |T132227:0|t[Falcostruz Vermelho]
+    .cast 34795 >> Monte seu |T132227:0|t[Falcostruz Vermelho]
     .train 34795,3
 step << BloodElf !Warlock !Paladin wotlk
     #completewith LorThemar
     >>|cRXP_WARN_Pressione "Mudança+P" para abrir sua aba de montarias|r
     >>|cRXP_WARN_Arrastar o|r |T132229:0|t[Falcostruz Azul] |cRXP_WARN_para suas barras de ação|r
-    .cast 35020 >>Monte seu |T132229:0|t[Falcostruz Azul]
+    .cast 35020 >> Monte seu |T132229:0|t[Falcostruz Azul]
     .train 35020,3
 step << BloodElf !Warlock !Paladin wotlk
     #completewith LorThemar
     >>|cRXP_WARN_Pressione "Mudança+P" para abrir sua aba de montarias|r
     >>|cRXP_WARN_Arrastar o|r |T132228:0|t[Falcostruz Preto] |cRXP_WARN_para suas barras de ação|r
-    .cast 29221 >>Monte seu |T132228:0|t[Falcostruz Preto]
+    .cast 29221 >> Monte seu |T132228:0|t[Falcostruz Preto]
     .train 29221,3
 step << BloodElf !Warlock !Paladin wotlk
     #completewith LorThemar
     >>|cRXP_WARN_Pressione "Mudança+P" para abrir sua aba de montarias|r
     >>|cRXP_WARN_Arrastar o|r |T132231:0|t[Falcostruz Roxo] |cRXP_WARN_para suas barras de ação|r
-    .cast 29222 >>Monte seu |T132231:0|t[Falcostruz Roxo]
+    .cast 29222 >> Monte seu |T132231:0|t[Falcostruz Roxo]
     .train 29222,3
 step << Mage/Priest/Warlock/Hunter/Paladin
     #completewith SMTraining5
@@ -8942,22 +8942,22 @@ step << Priest/Mage
     .goto Silvermoon City,57.45,24.46,15,0
     .goto Silvermoon City,55.31,24.96,15,0 << Priest
     .goto Silvermoon City,57.21,21.25,15,0 << Mage
-    .goto Silvermoon City,55.38,26.76,12 >>Vá em direção à |cRXP_FRIENDLY_Lotheolan|r << Priest
-    .goto Silvermoon City,57.16,18.85,12 >>Vá em direção à |cRXP_FRIENDLY_Zaedana|r << Mage
+    .goto Silvermoon City,55.38,26.76,12 >> Vá em direção à |cRXP_FRIENDLY_Lotheolan|r << Priest
+    .goto Silvermoon City,57.16,18.85,12 >> Vá em direção à |cRXP_FRIENDLY_Zaedana|r << Mage
 step << Priest
     .goto Silvermoon City,55.38,26.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lotheolan|r
-    .train 7128 >>Treine suas magias de classe
+    .train 7128 >> Treine suas magias de classe
     .target Lotheolan
 step << Mage
     .goto Silvermoon City,57.16,18.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zaedana|r
-    .train 1953 >>Treine suas magias de classe
+    .train 1953 >> Treine suas magias de classe
     .target Zaedana
 step << Mage
     .goto Silvermoon City,58.07,20.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Narinth|r
-    .train 32272 >>Aprenda |T135761:0|t[Teleporte: Luaprata]
+    .train 32272 >> Aprenda |T135761:0|t[Teleporte: Luaprata]
     .target Narinth
     .money <0.5000
 step << Hunter
@@ -8970,7 +8970,7 @@ step << Hunter
 step << Hunter
     .goto Silvermoon City,84.71,28.05
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zandine|r
-    .train 14282 >>Treine suas magias de classe
+    .train 14282 >> Treine suas magias de classe
     .target Zandine
  step << Hunter
     .goto Silvermoon City,86.24,35.45
@@ -9005,14 +9005,14 @@ step << Warlock TBC
 step << Warlock
     .goto Silvermoon City,74.39,47.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Talionia|r
-    .train 5784 >>Aprenda |T136103:0|t[Evocar Corcel Vil] << wotlk
-    .train 706 >>Treine suas magias de classe << tbc
+    .train 5784 >> Aprenda |T136103:0|t[Evocar Corcel Vil] << wotlk
+    .train 706 >> Treine suas magias de classe << tbc
     .target Talionia
 step << Warlock wotlk
     #completewith LorThemar
     >>|cRXP_WARN_Pressione "Mudança+P" para abrir sua aba de montarias|r
     >>|cRXP_WARN_Arrastar o|r |T136103:0|t[Corcel Vil] |cRXP_WARN_para suas barras de ação|r
-    .cast 5784 >>Monte seu |T136103:0|t[Corcel Vil]
+    .cast 5784 >> Monte seu |T136103:0|t[Corcel Vil]
     .train 5784,3
 step << Paladin wotlk
     #completewith SMTraining5
@@ -9048,7 +9048,7 @@ step << Paladin wotlk
     #completewith LorThemar
     >>|cRXP_WARN_Pressione "Mudança+P" para abrir sua aba de montarias|r
     >>|cRXP_WARN_Arrastar o|r |T136103:0|t[Cavalo de Guerra Thalassiano] |cRXP_WARN_para suas barras de ação|r
-    .cast 34769 >>Monte seu |T136103:0|t[Cavalo de Guerra Thalassiano]
+    .cast 34769 >> Monte seu |T136103:0|t[Cavalo de Guerra Thalassiano]
     .train 34769,3
 step << Rogue
     #completewith SMTraining5
@@ -9061,7 +9061,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zelanis|r
     >>|cRXP_WARN_Certifique-se de que treinou|r |T132282:0|t[Emboscar] |cRXP_WARN_e|r |T132302:0|t[Ruptura] |cRXP_WARN_para uma próxima missão|r << tbc
     .accept 10794 >>Aceite Rogues of the Estilhaçada Hand
-    .train 8676 >>Treine |T132282:0|t[Emboscar] << tbc
+    .train 8676 >>Aprenda |T132282:0|t[Emboscar] << tbc
     .train 1943 >>Aprenda |T132302:0|t[Ruptura] << tbc
     .train 1943 >>Treine suas magias de classe << wotlk
     .target Zelanis
@@ -9073,7 +9073,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zelanis|r
     >>|cRXP_WARN_Certifique-se de que treinou|r |T132282:0|t[Emboscar] |cRXP_WARN_e|r |T132302:0|t[Ruptura] |cRXP_WARN_para uma próxima missão|r << tbc
     .accept 10794 >>Aceite Rogues of the Estilhaçada Hand
-    .train 8676 >>Treine |T132282:0|t[Emboscar] << tbc
+    .train 8676 >>Aprenda |T132282:0|t[Emboscar] << tbc
     .train 1943 >>Aprenda |T132302:0|t[Ruptura] << tbc
     .train 1759 >>Treine suas magias de classe
     .target Zelanis
@@ -9084,7 +9084,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zelanis|r
     >>|cRXP_WARN_Certifique-se de que treinou|r |T132282:0|t[Emboscar] |cRXP_WARN_e|r |T132302:0|t[Ruptura] |cRXP_WARN_para uma próxima missão|r << tbc
     .accept 10794 >>Aceite Rogues of the Estilhaçada Hand
-    .train 8676 >>Treine |T132282:0|t[Emboscar] << tbc
+    .train 8676 >>Aprenda |T132282:0|t[Emboscar] << tbc
     .train 1943 >>Aprenda |T132302:0|t[Ruptura] << tbc
     .train 6762 >>Treine suas magias de classe << wotlk
     .target Zelanis
@@ -9106,7 +9106,7 @@ step << Druid
     .goto Silvermoon City,72.53,56.24,10,0
     .goto Silvermoon City,71.55,55.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harene|r
-    .train 8938 >>Treine suas magias de classe
+    .train 8938 >> Treine suas magias de classe
     .target Harene Plainwalker
 	.xp <18,1
 	.xp >20,1
@@ -9115,7 +9115,7 @@ step << Druid
     .goto Silvermoon City,72.53,56.24,10,0
     .goto Silvermoon City,71.55,55.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harene|r
-    .train 6756 >>Treine suas magias de classe
+    .train 6756 >> Treine suas magias de classe
     .target Harene Plainwalker
 	.xp <20,1
 	.xp >22,1
@@ -9123,12 +9123,12 @@ step << Druid
     .goto Silvermoon City,72.53,56.24,10,0
     .goto Silvermoon City,71.55,55.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harene|r
-    .train 8926 >>Treine suas magias de classe
+    .train 8926 >> Treine suas magias de classe
     .target Harene Plainwalker
 	.xp <22,1
 step << skip
     .goto Silvermoon City,53.926,71.029
-    .turnin 9134 >>Entregue A Mestre dos Ares Crepúsculo
+    .turnin 9134 >> Entregue A Mestre dos Ares Crepúsculo
 --VV BloodElf Paladin
 step << Warlock
     .abandon 10605 >>Abandone Invocações de Carendin
@@ -9145,10 +9145,10 @@ step
 step
     .goto Silvermoon City,53.80,20.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lor'themar|r
-    .turnin 9328 >>Entregue Herói dos Sin'dorei << BloodElf
-    .accept 9621 >>Aceite Carta para Sylvana << BloodElf
-    .turnin 9811 >>Entregue Amigo dos Sin'dorei << !BloodElf
-    .accept 9812 >>Aceite Carta para Sylvana << !BloodElf
+    .turnin 9328 >> Entregue Herói dos Sin'dorei << BloodElf
+    .accept 9621 >> Aceite Carta para Sylvana << BloodElf
+    .turnin 9811 >> Entregue Amigo dos Sin'dorei << !BloodElf
+    .accept 9812 >> Aceite Carta para Sylvana << !BloodElf
     .target Lor'themar Theron
     .isOnQuest 9328 << BloodElf
     .isOnQuest 9811 << !BloodElf
@@ -9156,8 +9156,8 @@ step
     #label LorThemar
     .goto Silvermoon City,53.80,20.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lor'themar|r
-    .accept 9621 >>Aceite Carta para Sylvana << BloodElf
-    .accept 9812 >>Aceite Carta para Sylvana << !BloodElf
+    .accept 9621 >> Aceite Carta para Sylvana << BloodElf
+    .accept 9812 >> Aceite Carta para Sylvana << !BloodElf
     .target Lor'themar Theron
     .isQuestTurnedIn 9328 << BloodElf
     .isQuestTurnedIn 9811 << !BloodElf
@@ -9179,14 +9179,14 @@ step
 step << !Undead
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel|r
-    .fp Undercity >>Aprenda a rota de voo para Undercity
+    .fp Undercity >> Aprenda a rota de voo de Cidade Baixa
     .target Michael Garrett
 step << Mage
     #completewith next
     .goto Undercity,68.25,40.67,15,0
     .goto Undercity,66.06,30.63,20,0
     .goto Undercity,67.27,23.68,20,0
-    .goto Undercity,82.77,15.85,20 >>Vá em direção à |cRXP_FRIENDLY_Hannah|r
+    .goto Undercity,82.77,15.85,20 >> Vá em direção à |cRXP_FRIENDLY_Hannah|r
 step << Mage
     .goto Undercity,82.77,15.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hannah|r
@@ -9228,18 +9228,18 @@ step
     .goto Undercity,46.18,83.63,15,0
     .goto Undercity,48.80,87.63,15,0
     .goto Undercity,52.45,89.49,15,0
-    .goto Undercity,58.06,91.79,20 >>Vá em direção à Royal Quarter
+    .goto Undercity,58.06,91.79,20 >> Vá em direção à Royal Quarter
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sylvana|r e |cRXP_FRIENDLY_Sunsorrow|r
-    .turnin 9621 >>Entregue Enviado à Horda << BloodElf
-    .accept 9626 >>Aceite Encontro com o Chefe de Guerra << BloodElf
-    .turnin 9180 >>Entregue Jornada para Undercity << BloodElf
-    .turnin 9812 >>Entregue Enviado à Horda << !BloodElf
-    .accept 9813 >>Aceite Encontro com os Orcs << !BloodElf
-    .turnin 9177 >>Entregue Jornada para Undercity << !BloodElf
+    .turnin 9621 >> Entregue Enviado à Horda << BloodElf
+    .accept 9626 >> Aceite Encontro com o Chefe de Guerra << BloodElf
+    .turnin 9180 >> Entregue Jornada para Undercity << BloodElf
+    .turnin 9812 >> Entregue Enviado à Horda << !BloodElf
+    .accept 9813 >> Aceite Encontro com os Orcs << !BloodElf
+    .turnin 9177 >> Entregue Jornada para Undercity << !BloodElf
     .target +Lady Sylvanas Windrunner
     .goto Undercity,58.06,91.79
-    .accept 9425 >>Aceite Relatório para Tarren Moinho << BloodElf
+    .accept 9425 >> Aceite Relatório para Tarren Moinho << BloodElf
     .target +Ambassador Sunsorrow << BloodElf
     .goto Undercity,57.77,90.57 << BloodElf
     .isOnQuest 9621 << BloodElf
@@ -9247,13 +9247,13 @@ step
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sylvana|r e |cRXP_FRIENDLY_Sunsorrow|r
-    .accept 9626 >>Aceite Encontro com o Chefe de Guerra << BloodElf
-    .turnin 9180 >>Entregue Jornada para Undercity << BloodElf
-    .accept 9813 >>Aceite Encontro com os Orcs << !BloodElf
-    .turnin 9177 >>Entregue Jornada para Undercity << !BloodElf
+    .accept 9626 >> Aceite Encontro com o Chefe de Guerra << BloodElf
+    .turnin 9180 >> Entregue Jornada para Undercity << BloodElf
+    .accept 9813 >> Aceite Encontro com os Orcs << !BloodElf
+    .turnin 9177 >> Entregue Jornada para Undercity << !BloodElf
     .target +Lady Sylvanas Windrunner
     .goto Undercity,58.06,91.79
-    .accept 9425 >>Aceite Relatório para Tarren Moinho << BloodElf
+    .accept 9425 >> Aceite Relatório para Tarren Moinho << BloodElf
     .target +Ambassador Sunsorrow << BloodElf
     .goto Undercity,57.77,90.57 << BloodElf
     .isQuestTurnedIn 9621 << BloodElf
@@ -9262,17 +9262,17 @@ step
     #optional
     #label UndercitySM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sylvana|r e |cRXP_FRIENDLY_Sunsorrow|r
-    .turnin 9177 >>Entregue Jornada para Undercity << !BloodElf
-    .turnin 9180 >>Entregue Jornada para Undercity << BloodElf
+    .turnin 9177 >> Entregue Jornada para Undercity << !BloodElf
+    .turnin 9180 >> Entregue Jornada para Undercity << BloodElf
     .target +Lady Sylvanas Windrunner
     .goto Undercity,58.06,91.79
-    .accept 9425 >>Aceite Relatório para Tarren Moinho << BloodElf
+    .accept 9425 >> Aceite Relatório para Tarren Moinho << BloodElf
     .target +Ambassador Sunsorrow << BloodElf
     .goto Undercity,57.77,90.57 << BloodElf
     --TODO: Beta check if 9180 turns in properly
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Varimatras|r
-    .turnin 5725 >>Entregue O Poder de Destruir...
+    .turnin 5725 >>Entregue O poder de destruir...
     .target Varimathras
     .isQuestComplete 5725
     .dungeon RFC
@@ -9302,14 +9302,14 @@ step << Warrior
     #optional
     .goto Undercity,48.32,15.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Angela|r
-    .train 845 >>Treine suas magias de classe
+    .train 845 >> Treine suas magias de classe
     .target Angela Curthas
     .xp <20,1
     .xp >22,1
 step << Warrior
     .goto Undercity,48.32,15.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Angela|r
-    .train 6192 >>Treine suas magias de classe
+    .train 6192 >> Treine suas magias de classe
     .target Angela Curthas
     .xp <22,1
 step
@@ -9328,7 +9328,7 @@ step
 step << !Warlock Undead wotlk
     .goto Tirisfal Glades,60.08,52.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Velma|r
-    .skill riding,75 >>Aprenda |T136103:0|t[Aprendiz de Montaria] com ela
+    .skill riding,75 >> Aprenda |T136103:0|t[Aprendiz de Montaria] com ela
     .target Velma Warnam
     .money <4.5
 step << !Warlock Undead wotlk
@@ -9344,43 +9344,43 @@ step << !Warlock Undead wotlk
     .skill riding,<75,1
 step << !Warlock Undead wotlk
     #optional
-    .cast 55884 >>Usar o |T132264:0|t[Cavalo Descarnado Vermelho] para aprendê-lo
+    .cast 55884 >> Usar o |T132264:0|t[Cavalo Descarnado Vermelho] para aprendê-lo
     .use 13331
     .itemcount 13331,1
 step << !Warlock Undead wotlk
     #optional
-    .cast 55884 >>Usar o |T132264:0|t[Cavalo Descarnado Azul] para aprendê-lo
+    .cast 55884 >> Usar o |T132264:0|t[Cavalo Descarnado Azul] para aprendê-lo
     .use 13332
     .itemcount 13332,1
 step << !Warlock Undead wotlk
     #optional
-    .cast 55884 >>Usar o |T132264:0|t[Cavalo Descarnado Castanho] para aprendê-lo
+    .cast 55884 >> Usar o |T132264:0|t[Cavalo Descarnado Castanho] para aprendê-lo
     .use 13333
     .itemcount 13333,1
 step << !Warlock Undead wotlk
     #optional
-    .cast 55884 >>Usar o |T132264:0|t[Cavalo Descarnado Preto] para aprendê-lo
+    .cast 55884 >> Usar o |T132264:0|t[Cavalo Descarnado Preto] para aprendê-lo
     .use 46308
     .itemcount 46308,1
 step << !Warlock Undead wotlk
     >>|cRXP_WARN_Pressione "Mudança+P" para abrir sua aba de montarias|r
     >>|cRXP_WARN_Arraste o|r |T132264:0|t[Cavalo Descarnado Vermelho] |cRXP_WARN_para suas Barras de Ação|r
-    .cast 17462 >>Monte seu |T132264:0|t[Cavalo Descarnado Vermelho]
+    .cast 17462 >> Monte seu |T132264:0|t[Cavalo Descarnado Vermelho]
     .train 17462,3
 step << !Warlock Undead wotlk
     >>|cRXP_WARN_Pressione "Mudança+P" para abrir sua aba de montarias|r
     >>|cRXP_WARN_Arraste o|r |T132264:0|t[Cavalo Descarnado Azul] |cRXP_WARN_para suas Barras de Ação|r
-    .cast 17463 >>Monte seu |T132264:0|t[Cavalo Descarnado Azul]
+    .cast 17463 >> Monte seu |T132264:0|t[Cavalo Descarnado Azul]
     .train 17463,3
 step << !Warlock Undead wotlk
     >>|cRXP_WARN_Pressione "Mudança+P" para abrir sua aba de montarias|r
     >>|cRXP_WARN_Arraste o|r |T132264:0|t[Cavalo Descarnado Castanho] |cRXP_WARN_para suas Barras de Ação|r
-    .cast 17464 >>Monte seu |T132264:0|t[Cavalo Descarnado Castanho]
+    .cast 17464 >> Monte seu |T132264:0|t[Cavalo Descarnado Castanho]
     .train 17464,3
 step << !Warlock Undead wotlk
     >>|cRXP_WARN_Pressione "Mudança+P" para abrir sua aba de montarias|r
     >>|cRXP_WARN_Arraste o|r |T132264:0|t[Cavalo Descarnado Preto] |cRXP_WARN_para suas Barras de Ação|r
-    .cast 64977 >>Monte seu |T132264:0|t[Cavalo Descarnado Preto]
+    .cast 64977 >> Monte seu |T132264:0|t[Cavalo Descarnado Preto]
     .train 64977,3
 step
     #label Durotar
@@ -9392,6 +9392,6 @@ step
     .goto Tirisfal Glades,61.34,59.17,8,0
     .goto Tirisfal Glades,60.51,58.69,-1
     .goto Tirisfal Glades,60.94,46.35,-1
-    >>Suba a Torre Zepelim
-    .zone Durotar >>Pegue o Zepelim para Durotar
+    >>Suba a Torre do Zepelim
+    .zone Durotar >>Pegue o zepelim para Durotar
 ]])

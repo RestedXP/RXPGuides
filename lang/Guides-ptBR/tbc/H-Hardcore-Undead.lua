@@ -15,16 +15,16 @@ step << !Undead
     +|cRXP_WARN_Você selecionou um guia destinado para Morto-vivo. É recomendado que você escolha a mesma zona inicial em que começou|r
 step
     #completewith Zombies
-	.destroy 6948 >>Destrua a |T134414:0|t[Pedra de Regresso] da sua bolsa, pois não é mais necessária
+	.destroy 6948 >> Destrua a |T134414:0|t[Pedra de Regresso] da sua bolsa, pois não é mais necessária
 step
     #completewith next
     .goto Tirisfal Glades,30.04,72.78,8,0
     .goto Tirisfal Glades,30.27,72.78,8,0
-    .goto Tirisfal Glades,30.22,71.65,10 >>Vá para fora da cripta em direção a |cRXP_FRIENDLY_Coveiro Mordo|r
+    .goto Tirisfal Glades,30.22,71.65,10 >> Vá para fora da cripta em direção a |cRXP_FRIENDLY_Coveiro Mordo|r
 step
     .goto Tirisfal Glades,30.22,71.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Coveiro Mordo|r
-    .accept 363 >>Aceite Despertar bruto
+    .accept 363 >> Aceite Despertar bruto
     .target Undertaker Mordo
 step << Warrior/Warlock/Priest/Mage
     #completewith Vendor
@@ -42,13 +42,13 @@ step << Warrior/Warlock/Priest/Mage
     .money >0.01
 step << Warrior/Priest/Mage
     #completewith Training1
-    .goto Tirisfal Glades,32.22,65.64,8 >>Entre no prédio
+    .goto Tirisfal Glades,32.22,65.64,8 >> Entre no prédio
 step << Priest/Mage
     #label Vendor
     .goto Tirisfal Glades,32.29,65.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joshua|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Josué|r
     >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dele|r
-    .vendor >>Comerciante Lixo
+    .vendor >> Venda os itens de lixo
 	.collect 159,10,383,1 --Collect Refreshing Spring Water (10)
     .target Joshua Kien
 step << Warlock/Mage
@@ -58,15 +58,15 @@ step << Warlock/Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sacerdote Sombrio Sarvis|r << Mage
     .accept 1470 >>Aceite Perfurando o véu << Warlock
     .goto Tirisfal Glades,30.98,66.41,0,0 << Warlock
-    .turnin 363 >>Entregue Despertar bruto
-    .accept 364 >>Aceite Os desmiolados
+    .turnin 363 >> Entregue Despertar bruto
+    .accept 364 >> Aceite Os desmiolados
     .goto Tirisfal Glades,30.84,66.20,0,0
     .target Venya Marthand
     .target Shadow Priest Sarvis
 step << Warlock/Mage
     .goto Tirisfal Glades,31.35,66.21,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Noviça Elvira|r
-    .accept 376 >>Aceite Os malditos
+    .accept 376 >> Aceite Os malditos
     .goto Tirisfal Glades,30.86,66.05
     .target Shadow Priest Sarvis
     .target Novice Elreth
@@ -75,30 +75,30 @@ step << Mage
     #requires Percing
     .goto Tirisfal Glades,30.94,66.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Isabella|r
-    .train 1459 >>Treine |T135932:0|t[Inteligência Arcana]
+    .train 1459 >> Treine |T135932:0|t[Inteligência Arcana]
     .target Isabella
 step << Warlock
     #label Vendor
     .goto Tirisfal Glades,30.81,66.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Queila Ferraz|r
-    .vendor >>Comerciante Lixo
+    .vendor >>Venda os itens de lixo
     .target Kayla Smithe
     .money >0.1
 step << Warlock
     .goto Tirisfal Glades,30.91,66.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maximillion|r
-    .train 348 >>Treine |T135817:0|t[Imolação]
+    .train 348 >>Treine |T135817:0|t [Imolar]
     .target Maximillion
 step << !Warlock !Mage
     .goto Tirisfal Glades,31.35,66.21,10,0
     .goto Tirisfal Glades,30.84,66.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sacerdote Sombrio Sarvis|r
-    .turnin 363 >>Entregue Despertar bruto
-    .accept 364 >>Aceite Os desmiolados
+    .turnin 363 >> Entregue Despertar bruto
+    .accept 364 >> Aceite Os desmiolados
     .target Shadow Priest Sarvis
 step << !Warlock !Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Noviça Elvira|r
-    .accept 376 >>Aceite Os malditos
+    .accept 376 >> Aceite Os malditos
     .goto Tirisfal Glades,30.86,66.05
     .target Shadow Priest Sarvis
     .target Novice Elreth
@@ -108,7 +108,7 @@ step << Warrior
     #label Vendor
     .goto Tirisfal Glades,32.42,65.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arquibaldo|r
-    .vendor >>Comerciante Lixo
+    .vendor >> Venda os itens de lixo
     .target Archibald Kava
     .money >0.1
 step << Warrior
@@ -142,7 +142,7 @@ step << Warlock
 step << Warlock
     .goto Tirisfal Glades,32.23,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joshua|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Josué|r
     >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dele|r
 	.collect 159,5,383,1 --Collect Refreshing Spring Water (5)
     .target Joshua Kien
@@ -155,7 +155,7 @@ step << Warlock
     .target Venya Marthand
 step << Warlock
     #completewith next
-    .cast 688 >>|cRXP_WARN_Lance|r |T136218:0|t[Evocar Diabrete]
+    .cast 688 >>|cRXP_WARN_Lance|r |T136218:0|t [Invocar Diabrete]
 step
     #label Zombies
     #requires Piercing << Warlock/Mage
@@ -188,10 +188,10 @@ step << Mage/Warlock/Priest
 step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.23,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joshua|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Josué|r
     >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dele|r
     .collect 159,10,383,1 --Collect Refreshing Spring Water (10)
-    .vendor >>Comerciante Lixo
+    .vendor >> Venda os itens de lixo
     .target Joshua Kien
     .isOnQuest 364
     .money <0.0050
@@ -200,45 +200,45 @@ step << Mage/Warlock/Priest
     #label Vendor2
     .goto Tirisfal Glades,32.23,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joshua|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Josué|r
     >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dele|r
     .collect 159,5,383,1 --Collect Refreshing Spring Water (5)
-    .vendor >>Comerciante Lixo
+    .vendor >> Venda os itens de lixo
     .target Joshua Kien
     .isOnQuest 364
     .money >0.0050
     .itemcount 159,<5
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sarvis|r e |cRXP_FRIENDLY_Elreth|r << !Warlock !Mage !Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r e |cRXP_FRIENDLY_Maximillion|r << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sarvis|r, |cRXP_FRIENDLY_Elreth|r e |cRXP_FRIENDLY_Isabella|r << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sacerdote Sombrio Sarvis|r, |cRXP_FRIENDLY_Noviça Elvira|r e |cRXP_FRIENDLY_Maximillion|r << Warlock
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sacerdote Sombrio Sarvis|r, |cRXP_FRIENDLY_Noviça Elvira|r e |cRXP_FRIENDLY_Isabella|r << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sacerdote Sombrio Sarvis|r, |cRXP_FRIENDLY_Noviça Elvira|r e |cRXP_FRIENDLY_Clérigo das Trevas Duesten|r << Priest
-    .turnin 364 >>Entregue Os Mentecaptos
-    .accept 3095 >>Aceite Pergaminho simples << Warrior
-    .accept 3096 >>Aceite Pergaminho cifrado << Rogue
-    .accept 3097 >>Aceite Pergaminho consagrado << Priest
-    .accept 3098 >>Aceite Pergaminho glífico << Mage
-    .accept 3099 >>Aceite Pergaminho conspurcado << Warlock
-    .accept 3901 >>Aceite Desossando alguns Range-ossos
+    .turnin 364 >> Entregue Os Mentecaptos
+    .accept 3095 >> Aceite Pergaminho simples << Warrior
+    .accept 3096 >> Aceite Pergaminho cifrado << Rogue
+    .accept 3097 >> Aceite Pergaminho consagrado << Priest
+    .accept 3098 >> Aceite Pergaminho glífico << Mage
+    .accept 3099 >> Aceite Pergaminho conspurcado << Warlock
+    .accept 3901 >> Aceite Desossando alguns Range-ossos
     .target +Shadow Priest Sarvis
     .goto Tirisfal Glades,31.35,66.21,10,0
     .goto Tirisfal Glades,30.84,66.20
-    .accept 376 >>Aceite Os malditos
+    .accept 376 >> Aceite Os malditos
     .target +Novice Elreth
     .goto Tirisfal Glades,30.86,66.05
-    .turnin 3099 >>Entregue Pergaminho conspurcado << Warlock
+    .turnin 3099 >> Entregue Pergaminho conspurcado << Warlock
     .goto Tirisfal Glades,30.91,66.34 << Warlock
     .target +Maximillion << Warlock
     .target +Isabella << Mage
-    .turnin 3098 >>Entregue Pergaminho glífico << Mage
+    .turnin 3098 >> Entregue Pergaminho glífico << Mage
     .goto Tirisfal Glades,30.94,66.06 << Mage
-    .turnin 3097 >>Entregue Pergaminho consagrado << Priest
+    .turnin 3097 >> Entregue Pergaminho consagrado << Priest
     .target +Dark Cleric Duesten << Priest
     .goto Tirisfal Glades,31.11,66.02 << Priest
 step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.23,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joshua|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Josué|r
     >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dele|r
     .collect 159,10,383,1 --Collect Refreshing Spring Water (10)
     .target Joshua Kien
@@ -300,73 +300,73 @@ step
 step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.25,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joshua|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Josué|r
     >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dele|r
     >>|cRXP_WARN_NÃO fique com menos de 1 de Prata|r << Mage/Warlock/Priest
-    .vendor >>Comerciante Lixo
+    .vendor >> Venda os itens de lixo
     .target Joshua Kien
     .money >0.1
     .isOnQuest 3901
     .itemcount 159,<20
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sarvis|r e |cRXP_FRIENDLY_Elreth|r
-    .turnin 3901 >>Entregue Entrechocar as Caveiras de Chocalho
+    .turnin 3901 >> Entregue Entrechocar as Caveiras de Chocalho
     .target +Shadow Priest Sarvis
     .goto Tirisfal Glades,31.35,66.21,10,0
     .goto Tirisfal Glades,30.84,66.20
-    .turnin 376 >>Entregue Os malditos
-    .accept 6395 >>Aceite O último desejo de Marla
+    .turnin 376 >> Entregue Os malditos
+    .accept 6395 >> Aceite O último desejo de Marla
     .target +Novice Elreth
     .goto Tirisfal Glades,30.86,66.05
 step << Priest
     .goto Tirisfal Glades,31.11,66.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duesten|r
-    .train 589 >>Treine suas magias de classe
+    .train 589 >> Treine suas magias de classe
     .target Dark Cleric Duesten
     .money <0.021
 step << Priest
     .goto Tirisfal Glades,31.11,66.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duesten|r
-    .train 2052 >>Aprenda |T135929:0|t[Cura Inferior Grau 2]
-    .train 589 >>Aprenda |T136207:0|t[Palavra Sombria: Dor]
+    .train 2052 >> Aprenda |T135929:0|t[Cura Inferior Grau 2]
+    .train 589 >> Aprenda |T136207:0|t[Palavra Sombria: Dor]
     .target Dark Cleric Duesten
     .money <0.02
 step << Priest
     .goto Tirisfal Glades,31.11,66.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duesten|r
-    .train 1243 >>Aprenda |T135987:0|t[Palavra de Poder: Fortitude]
-    .train 589 >>Aprenda |T136207:0|t[Palavra Sombria: Dor]
+    .train 1243 >> Aprenda |T135987:0|t[Palavra de Poder: Fortitude]
+    .train 589 >> Aprenda |T136207:0|t[Palavra Sombria: Dor]
     .target Dark Cleric Duesten
     .money <0.011
 step << Priest
     .goto Tirisfal Glades,31.11,66.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duesten|r
-    .train 589 >>Aprenda |T136207:0|t[Palavra Sombria: Dor]
+    .train 589 >> Aprenda |T136207:0|t[Palavra Sombria: Dor]
     .target Dark Cleric Duesten
     .money <0.01
 step << Warlock
     .goto Tirisfal Glades,30.91,66.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maximillion|r
-    .train 172 >>Treine |T136118:0|t[Corrupção]
+    .train 172 >> Treine |T136118:0|t[Corrupção]
     .target Maximillion
 step << Mage
     .goto Tirisfal Glades,30.94,66.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Isabella|r
-    .train 116 >>Treine |T135846:0|t[Seta de Gelo]
+    .train 116 >> Treine |T135846:0|t[Seta de Gelo]
     .target Isabella
 step
     .goto Tirisfal Glades,31.35,66.21,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Necroguarda Saulo|r e o |cRXP_FRIENDLY_Executor Arren|r
-    .accept 3902 >>Aceite Vasculhando Plangemortis
+    .accept 3902 >> Aceite Vasculhando Plangemortis
     .goto Tirisfal Glades,31.61,65.62
     .target +Deathguard Saltain
-    .accept 380 >>Aceite Vale Teia da Noite
+    .accept 380 >> Aceite Vale Teia da Noite
     .goto Tirisfal Glades,32.15,66.01
     .target +Executor Arren
 step << Rogue/Warrior
     .goto Tirisfal Glades,32.42,65.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arquibaldo|r
-    .vendor >>Comerciante Lixo
+    .vendor >> Venda os itens de lixo
     .target Archibald Kava
     .money >0.1
     .isOnQuest 3095 << Warrior
@@ -374,31 +374,31 @@ step << Rogue/Warrior
 step << Warrior
     .goto Tirisfal Glades,32.68,65.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dannal|r
-    .turnin 3095 >>Entregue Pergaminho simples
-    .train 100 >>Aprenda |T132337:0|t[carga]
-    .train 772 >>Aprenda |T132155:0|t[Dilacerar]
+    .turnin 3095 >> Entregue Pergaminho simples
+    .train 100 >> Aprenda |T132337:0|t[carga]
+    .train 772 >> Aprenda |T132155:0|t[Dilacerar]
     .target Dannal Stern
     .money <0.02
  step << Warrior
     #label Training2
     .goto Tirisfal Glades,32.68,65.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dannal|r
-    .turnin 3095 >>Entregue Pergaminho simples
-    .train 772 >>Aprenda |T132155:0|t[Dilacerar]
+    .turnin 3095 >> Entregue Pergaminho simples
+    .train 772 >> Aprenda |T132155:0|t[Dilacerar]
     .target Dannal Stern
     .money <0.01
 step << Rogue
     .goto Tirisfal Glades,32.53,65.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_David|r
-    .turnin 3096 >>Entregue Pergaminho cifrado
-    .train 53 >>Aprenda |T132090:0|t[Punhalada pelas Costas]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Davi|r
+    .turnin 3096 >> Entregue Pergaminho cifrado
+    .train 53 >> Aprenda |T132090:0|t[Punhalada pelas Costas]
     .money <0.04
     .target David Trias
 step << Rogue
     #label Training2
     .goto Tirisfal Glades,32.53,65.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_David|r
-    .turnin 3096 >>Entregue Pergaminho cifrado
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Davi|r
+    .turnin 3096 >> Entregue Pergaminho cifrado
     .target David Trias
 step
     #loop
@@ -470,27 +470,27 @@ step
     #label Scavenging
     .goto Tirisfal Glades,31.61,65.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Saulo|r
-    .turnin 3902 >>Entregue Vasculhando Plangemortis
+    .turnin 3902 >> Entregue Vasculhando Plangemortis
     .target Deathguard Saltain
 step
     #label NightWebH
     .goto Tirisfal Glades,32.15,66.01,0,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Executor Arren|r
-    .turnin 380 >>Entregue Vale Teia da Noite
-    .accept 381 >>Aceite A Cruzada Escarlate
+    .turnin 380 >> Entregue Vale Teia da Noite
+    .accept 381 >> Aceite A Cruzada Escarlate
     .target Executor Arren
 step << Rogue/Warrior
     .goto Tirisfal Glades,32.42,65.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arquibaldo|r
-    .vendor >>Comerciante Lixo
+    .vendor >> Venda os itens de lixo
     .target Archibald Kava
     .isOnQuest 6395
 step << Warlock/Mage/Priest
     .goto Tirisfal Glades,32.29,65.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joshua|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Josué|r
     >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dele|r
 	.collect 159,15,383,1 << Warlock/Mage/Priest --Collect Refreshing Spring Water (15)
-    .vendor >>Comerciante Lixo
+    .vendor >> Venda os itens de lixo
     .target Joshua Kien
     .isOnQuest 6395
     .itemcount 159,<15
@@ -536,11 +536,11 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Noviça Elvira|r << !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Noviça Elvira|r e |cRXP_FRIENDLY_Clérigo das Trevas Duesten|r << Priest
-    .turnin 6395 >>Entregue O último desejo de Marla
+    .turnin 6395 >> Entregue O último desejo de Marla
     .target +Novice Elreth
     .goto Tirisfal Glades,31.35,66.21,10,0
     .goto Tirisfal Glades,30.86,66.05
-    .accept 5651 >>Aceite Em favor da escuridão << Priest
+    .accept 5651 >> Aceite Em favor da escuridão << Priest
     .target +Dark Cleric Duesten << Priest
     .goto Tirisfal Glades,31.11,66.02 << Priest
 step
@@ -548,13 +548,13 @@ step
     #label ScarletC
     .goto Tirisfal Glades,32.15,66.01,0,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Executor Arren|r
-    .turnin 381 >>Entregue A Cruzada Escarlate
-    .accept 382 >>Aceite O mensageiro escarlate
+    .turnin 381 >> Entregue A Cruzada Escarlate
+    .accept 382 >> Aceite O mensageiro escarlate
     .target Executor Arren
 step
     .goto Tirisfal Glades,32.42,65.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arquibaldo|r
-    .vendor >>Comerciante Lixo
+    .vendor >> Venda os itens de lixo
     .target Archibald Kava
 step
     #requires ScarletC
@@ -565,8 +565,8 @@ step
 step
     .goto Tirisfal Glades,32.15,66.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Executor Arren|r
-    .turnin 382 >>Entregue O mensageiro escarlate
-    .accept 383 >>Aceite Informações cruciais
+    .turnin 382 >> Entregue O mensageiro escarlate
+    .accept 383 >> Aceite Informações cruciais
     .target Executor Arren
 step
     #loop
@@ -618,7 +618,7 @@ step << Rogue
 step << Rogue
     .goto Tirisfal Glades,60.12,53.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oliver|r
-    .vendor >>Itens para venda. Venda sua arma se der dinheiro suficiente para um |T135641:0|t[Estilete] (4s 01c). Você voltará mais tarde se não tiver o suficiente ainda.
+    .vendor >> Itens para venda. Venda sua arma se der dinheiro suficiente para um |T135641:0|t[Estilete] (4s 01c). Você voltará mais tarde se não tiver o suficiente ainda.
     .target Oliver Dwor
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
@@ -649,13 +649,13 @@ step << Rogue
 step << Warrior
     .goto Tirisfal Glades,60.12,53.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oliver|r
-    .vendor >>Comerciante lixo. Venda sua arma se der dinheiro suficiente para um |T135321:0|t[Gládio] (5s 36c). Você voltará depois se ainda não tiver dinheiro suficiente.
+    .vendor >> Comerciante lixo. Venda sua arma se der dinheiro suficiente para um |T135321:0|t[Gládio] (5s 36c). Você voltará depois se ainda não tiver dinheiro suficiente.
     .target Oliver Dwor
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
 step << Warrior
     .goto Tirisfal Glades,60.12,53.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar para|r |cRXP_FRIENDLY_Oliver|r|cRXP_BUY_. Compre um|r |T135321:0|t[Gládio] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Olivier Ewor|r|cRXP_BUY_. Compre um|r |T135321:0|t[Gládio] |cRXP_BUY_dele|r
     .collect 2488,1,8475,1 --Collect Gladius (1)
     .target Oliver Dwor
     .money <0.0536
@@ -671,20 +671,20 @@ step << Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
 step << Mage
     .goto Tirisfal Glades,61.97,52.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Cain|r no segundo andar
-    .train 143 >>Aprenda |T135812:0|t[Bola de Fogo]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caio Cantígnea|r no segundo andar
+    .train 143 >> Aprenda |T135812:0|t[Bola de Fogo]
     .train 2136 >>Aprenda |T135807:0|t[Impacto de Fogo]
     .target Cain Firesong
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil de Mon|r
     .train 3127 >>Aprenda |T132269:0|t[Aparar]
     .target Austil de Mon
     .money <0.01
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r no segundo andar
-    .train 1757 >>Aprenda |T136189:0|t[Golpe Sinistro]
+    .train 1757 >> Aprenda |T136189:0|t[Golpe Sinistro]
     .target Marion Call
     .money <0.01
 step << Warlock
@@ -692,26 +692,26 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gina Lang|r no segundo andar
     >>|cRXP_BUY_Compre |r |T133738:0|t[Grimório de Pacto de Sangue] |cRXP_BUY_dela|r
     .collect 16321,1,404,1 --Grimoire of Blood Pact
-    .vendor >>Comerciante Lixo
+    .vendor >>Venda os itens de lixo
     .target Gina Lang
     .train 6307,1 --Blood Pact (Rank 1)
 step << Warlock
     .goto Tirisfal Glades,61.59,52.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rupertino Boch|r
-    .train 695 >>Treine |T136197:0|t[Seta Sombria]
-    .train 1454 >>Aprenda |T136126:0|t[Conversão de Vida]
+    .train 695 >> Treine |T136197:0|t[Seta Sombria]
+    .train 1454 >> Aprenda |T136126:0|t[Conversão de Vida]
     .target Rupert Boch
     .money <0.02
 step << Warlock
     .goto Tirisfal Glades,61.59,52.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rupertino Boch|r
-    .train 695 >>Treine |T136197:0|t[Seta Sombria]
+    .train 695 >> Treine |T136197:0|t[Seta Sombria]
     .target Rupert Boch
 step
     .goto Tirisfal Glades,61.71,52.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Geni|r
     .turnin 8 >>Entregue Palavra de ladino
-    .home >>Defina sua Pedra de Regresso em Montalvo << Priest
+    .home >> Defina sua Pedra de Regresso em Montalvo << Priest
     .target Innkeeper Renee
     .bindlocation 2119 << Priest
 step << Priest
@@ -719,10 +719,10 @@ step << Priest
     .goto Tirisfal Glades,61.76,52.31,6,0
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no andar de cima
-    .turnin 5651 >>Entregue Em favor da escuridão
-    .accept 5650 >>Aceite Vestes da escuridão
-    .train 2052 >>Aprenda |T135929:0|t[Cura Inferior Grau 2]
-    .train 1243 >>Aprenda |T135987:0|t[Palavra de Poder: Fortitude]
+    .turnin 5651 >> Entregue Em favor da escuridão
+    .accept 5650 >> Aceite Vestes da escuridão
+    .train 2052 >> Aprenda |T135929:0|t[Cura Inferior Grau 2]
+    .train 1243 >> Aprenda |T135987:0|t[Palavra de Poder: Fortitude]
     .target Dark Cleric Beryl
     .train 2052,1
     .train 1243,1
@@ -731,9 +731,9 @@ step << Priest
     .goto Tirisfal Glades,61.76,52.31,6,0
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no andar de cima
-    .turnin 5651 >>Entregue Em favor da escuridão
-    .accept 5650 >>Aceite Vestes da escuridão
-    .train 1243 >>Aprenda |T135987:0|t[Palavra de Poder: Fortitude]
+    .turnin 5651 >> Entregue Em favor da escuridão
+    .accept 5650 >> Aceite Vestes da escuridão
+    .train 1243 >> Aprenda |T135987:0|t[Palavra de Poder: Fortitude]
     .target Dark Cleric Beryl
     .train 1243,1
 step << Priest
@@ -741,9 +741,9 @@ step << Priest
     .goto Tirisfal Glades,61.76,52.31,6,0
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no andar de cima
-    .turnin 5651 >>Entregue Em favor da escuridão
-    .accept 5650 >>Aceite Vestes da escuridão
-    .train 2052 >>Aprenda |T135929:0|t[Cura Inferior Grau 2]
+    .turnin 5651 >> Entregue Em favor da escuridão
+    .accept 5650 >> Aceite Vestes da escuridão
+    .train 2052 >> Aprenda |T135929:0|t[Cura Inferior Grau 2]
     .target Dark Cleric Beryl
     .train 2052,1
 step << Priest
@@ -751,8 +751,8 @@ step << Priest
     .goto Tirisfal Glades,61.76,52.31,6,0
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no andar de cima
-    .turnin 5651 >>Entregue Em favor da escuridão
-    .accept 5650 >>Aceite Vestes da escuridão
+    .turnin 5651 >> Entregue Em favor da escuridão
+    .accept 5650 >> Aceite Vestes da escuridão
     .target Dark Cleric Beryl
 step << Priest
     #completewith next
@@ -765,14 +765,14 @@ step << Priest
     #sticky
     #label Kel1
     .goto Tirisfal Glades,59.18,46.49
-    .cast 2052 >>|cRXP_WARN_lançou|r |T135929:0|t[Lesser Heal Rank 2] |cRXP_WARN_on|r |cRXP_FRIENDLY_Kel|r
+    .cast 2052 >> |cRXP_WARN_lançou|r |T135929:0|t[Lesser Heal Rank 2] |cRXP_WARN_on|r |cRXP_FRIENDLY_Kel|r
     .isOnQuest 5650
 step << Priest
     #sticky
     #requires Kel1
     #completewith next
     .goto Tirisfal Glades,59.18,46.49
-    .cast 1243 >>|cRXP_WARN_lançou|r |T135987:0|t[Power Word: Fortitude] |cRXP_WARN_on|r |cRXP_FRIENDLY_Kel|r
+    .cast 1243 >> |cRXP_WARN_lançou|r |T135987:0|t[Power Word: Fortitude] |cRXP_WARN_on|r |cRXP_FRIENDLY_Kel|r
 step << Priest
     .goto Tirisfal Glades,59.18,46.49
     >>Heal e then Fortify |cRXP_FRIENDLY_Kel|r
@@ -780,7 +780,7 @@ step << Priest
     .target Deathguard Kel
 step << Priest
     #completewith next
-    .hs >>Use sua Pedra de Regresso para ir a Montalvo
+    .hs >> Use sua Pedra de Regresso para ir a Montalvo
     .bindlocation 2119,1
     .subzoneskip 159
 step << Priest
@@ -788,7 +788,7 @@ step << Priest
     .goto Tirisfal Glades,61.76,52.31,6,0
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Beryl|r no andar de cima
-    .turnin 5650 >>Entregue Vestes da escuridão
+    .turnin 5650 >> Entregue Vestes da escuridão
     .target Dark Cleric Beryl
 step
     #completewith next
@@ -800,7 +800,7 @@ step
     .goto Undercity,65.82,5.44,15,0
     .goto Undercity,62.76,11.02,12,0
     .goto Undercity,54.67,11.25
-    .zone Silvermoon City >>Use o Orbe da Translocação para Luaprata
+    .zone Silvermoon City >> Use o Orbe da Translocação para Luaprata
 step
     #completewith next
     .goto Silvermoon City,62.89,31.20,20,0
@@ -812,13 +812,13 @@ step
     #label SilvermoonFP
     .goto Eversong Woods,54.37,50.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gloaming|r
-    .fp Silvermoon >>Aprenda a rota de voo para Luaprata
+    .fp Silvermoon >> Aprenda a rota de voo para Luaprata
     .target Skymistress Gloaming
     .isQuestAvailable 8463
 step
     .goto Eversong Woods,50.34,50.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jaela|r
-    .accept 8475 >>Aceite A Trilha da Morte
+    .accept 8475 >> Aceite A Trilha da Morte
     .target Ranger Jaela
 step
     .goto Eversong Woods,46.68,49.10,40 >>Vá para Falconwing Square

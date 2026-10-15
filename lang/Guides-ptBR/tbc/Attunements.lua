@@ -14,21 +14,21 @@ step
     #label Deadwind1
     #completewith Kara1
     .goto Deadwind Pass,42.88,34.52
-    .zone Deadwind Pass >>Viaje até Deadwind Pass in Eastern Kingdoms
+    .zone Deadwind Pass >> Viaje até Deadwind Pass in Eastern Kingdoms
 step
     #requires Deadwind1
     #completewith Kara1
-    .subzone 2562 >>Viaje até Karazhan
+    .subzone 2562 >> Viaje até Karazhan
 step
     .goto Deadwind Pass,47.0,75.6
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Archmage Alturus|r
-    .accept 9824 >>Aceite Perturbações Arcanas
-    .accept 9825 >>Aceite Atividade Incessante
+    .accept 9824 >> Aceite Perturbações Arcanas
+    .accept 9825 >> Aceite Atividade Incessante
     .target Archmage Alturus
 step
     #completewith PondReading
     .goto Deadwind Pass,47.710,78.267
-    .subzone 2837 >>Desça as escadas para a Adega do Mestre
+    .subzone 2837 >> Desça as escadas para a Adega do Mestre
 step
     #optional
     #completewith Reading2
@@ -41,7 +41,7 @@ step
 step
     #label PondReading
     .goto Deadwind Pass,42.910,78.275
-    .use 24474 >>|cRXP_WARN_Use o|r |T134075:0|t[Cristal Violeta da Vidência] |cRXP_WARN_enquanto está em pé no|r |cRXP_PICK_Subterrâneo Pond|r
+    .use 24474 >> |cRXP_WARN_Use o|r |T134075:0|t[Cristal Violeta da Vidência] |cRXP_WARN_enquanto está em pé no|r |cRXP_PICK_Subterrâneo Pond|r
     .complete 9824,2 -- Underground Pond Reading (1)
 step
     .isOnQuest 9824
@@ -50,17 +50,17 @@ step
     .goto Deadwind Pass,46.84,74.90,25,0
     .goto Deadwind Pass,45.84,78.04,15,0
     .goto Deadwind Pass,48.74,78.87,10,0
-    .subzone 2562 >>|cRXP_WARN_Volte pelo caminho por onde veio para sair da Master's Cellar. Em breve você entrará novamente por outra entrada da Master's Cellar|r
+    .subzone 2562 >> |cRXP_WARN_Retorne pela mesma direção de onde você veio para sair da Master's Cellar. Em breve, você entrará novamente por outra entrada da Master's Cellar|r
     .subzoneskip 2837,1
 step
     #completewith next
     .goto Deadwind Pass,48.887,78.881
-    .subzone 2837 >>Desça o outro conjunto de escadas para a Adega do Mestre
+    .subzone 2837 >> Desça o outro conjunto de escadas para a Adega do Mestre
 step
     #label Reading2
     .goto Deadwind Pass,54.56,82.09,25,0
     .goto Deadwind Pass,53.200,90.211
-    .use 24474 >>|cRXP_WARN_Use o|r |T134075:0|t[Cristal Violeta da Vidência] |cRXP_WARN_ao lado do|r |cRXP_PICK_Subterrâneo Well|r
+    .use 24474 >> |cRXP_WARN_Use o|r |T134075:0|t[Cristal Violeta da Vidência] |cRXP_WARN_ao lado do|r |cRXP_PICK_Subterrâneo Well|r
     .complete 9824,1 -- Underground Well Reading (1)
 step
     #loop
@@ -82,32 +82,32 @@ step
     #label Kara1
     .goto Deadwind Pass,47.0,75.6
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Archmage Alturus|r
-    .turnin 9824 >>Entregue Perturbações Arcanas
-    .turnin 9825 >>Entregue Atividade Incessante
-    .accept 9826 >>Aceite Contato de Dalaran
+    .turnin 9824 >> Entregue Perturbações Arcanas
+    .turnin 9825 >> Entregue Atividade Incessante
+    .accept 9826 >> Aceite Contato de Dalaran
     .target Archmage Alturus
 step
     #completewith next
-    .zone Alterac Mountains >>Viaje para as Montanhas Alterac
+    .zone Alterac Mountains >> Viaje para as Montanhas Alterac
 step
     .goto Alterac Mountains,15.6,54.6
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Archmage Cedric|r
-    .turnin 9826 >>Entregue ao Contato de Dalaran
-    .accept 9829 >>Aceite Hadggar
+    .turnin 9826 >> Entregue ao Contato de Dalaran
+    .accept 9829 >> Aceite Hadggar
     .target Archmage Cedric
 step
     #completewith next
-    .zone Shattrath City >>Viaje até Shattrath
+    .zone Shattrath City >> Viaje até Shattrath
 step
     .goto Shattrath City,54.751,44.322
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Khadgar|r
-    .turnin 9829 >>Entregue Hadggar
-    .accept 9831 >>Aceite Entrando em Karazhan
+    .turnin 9829 >> Entregue Hadggar
+    .accept 9831 >> Aceite Entrando em Karazhan
     .target Khadgar
 step
     .isOnQuest 9831
     .goto Terokkar Forest,39.634,73.553
-    .subzone 3789 >>|cRXP_WARN_Encontre um grupo para a masmorra Labirinto Soturno em Mata Terokkar. Depois que você encontrar um grupo, entre no Labirinto Soturno|r
+    .subzone 3789 >> |cRXP_WARN_Encontre um grupo para a masmorra Labirinto Soturno em Mata Terokkar. Depois que você encontrar um grupo, entre no Labirinto Soturno|r
 step
     .isOnQuest 9831
     >>|cRXP_WARN_Depois que você matar |cRXP_ENEMY_Murmur|r, abra o |cRXP_PICK_Recipiente Arcano|r no chão para invocar o |cRXP_ENEMY_Guardião do Primeiro Fragmento|r
@@ -116,12 +116,12 @@ step
     .mob First Fragment Guardian
 step
     #completewith next
-    .zone Shattrath City >>Viaje até Shattrath
+    .zone Shattrath City >> Viaje até Shattrath
 step
     .goto Shattrath City,54.751,44.322
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Khadgar|r
-    .turnin 9831 >>Entregue Entrando em Karazhan
-    .accept 9832 >>Aceite O Segundo e o Terceiro Fragmentos
+    .turnin 9831 >> Entregue Entrando em Karazhan
+    .accept 9832 >> Aceite O Segundo e o Terceiro Fragmentos
     .target Khadgar
 step << !Druid
     #completewith next
@@ -143,12 +143,12 @@ step
     .mob Third Fragment Guardian
 step
     #completewith next
-    .zone Shattrath City >>Viaje até Shattrath
+    .zone Shattrath City >> Viaje até Shattrath
 step
     .goto Shattrath City,54.751,44.322
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Khadgar|r
-    .turnin 9832 >>Turn in The Second e Third Fragments
-    .accept 9836 >>Aceite O Toque do Mestre
+    .turnin 9832 >> Turn in The Second e Third Fragments
+    .accept 9836 >> Aceite O Toque do Mestre
     .target Khadgar
 step
     #optional
@@ -157,24 +157,24 @@ step
 step
     .isOnQuest 9836
     .goto Tanaris,57.270,62.872
-    .subzone 2300 >>|cRXP_WARN_Encontre um grupo para a masmorra Preto Pântano. Depois que você encontrar um grupo, entre no Preto Pântano|r
+    .subzone 2300 >> |cRXP_WARN_Encontre um grupo para a masmorra Preto Pântano. Depois que você encontrar um grupo, entre no Preto Pântano|r
 step
     >>Sucesso Lamaçal Negro
     >>|cRXP_WARN_Certifique-se de estar ao lado de |cRXP_FRIENDLY_Medivh|r uma vez que tiver matado |rAeonus|cRXP_ENEMY_|r
     .complete 9836,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Medivh|r
-    .turnin 9836 >>Entregue O Toque do Mestre
-    .accept 9837 >>Aceite Retorne a Hadggar
+    .turnin 9836 >> Entregue O Toque do Mestre
+    .accept 9837 >> Aceite Retorne a Hadggar
     .target Medivh
 step
     #completewith next
-    .zone Shattrath City >>Viaje até Shattrath
+    .zone Shattrath City >> Viaje até Shattrath
 step
     .goto Shattrath City,54.751,44.322
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Khadgar|r
-    .turnin 9837 >>Entregue Retorne a Hadggar
-    .accept 9838 >>Aceite O Olho Violeta
+    .turnin 9837 >> Entregue Retorne a Hadggar
+    .accept 9838 >> Aceite O Olho Violeta
     .target Khadgar
 step
     .isQuestTurnedIn 9837
@@ -192,10 +192,10 @@ step
     #completewith next
     .goto Zangarmarsh,50.37,40.90,20,0 -- coilfang reservoir entrance
     .goto Zangarmarsh,49.018,35.631 -- slave pens
-    .subzone 3717 >>|cRXP_WARN_Encontre um grupo para HERÓICO: Slave Pens em Pântano Zíngaro. Depois que você encontrar um grupo, entre no Slave Pens|r
+    .subzone 3717 >> |cRXP_WARN_Encontre um grupo para HERÓICO: Slave Pens em Pântano Zíngaro. Depois que você encontrar um grupo, entre no Slave Pens|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Skar'this the Heretic|r
-    .accept 10901 >>Aceite A Clava de Kar'desh
+    .accept 10901 >> Aceite A Clava de Kar'desh
     .target Skar'this the Heretic
 step
     >>|cRXP_WARN_Procure incursões para Gruul, o Matador de Arrastarões e Karazhan|r
@@ -207,7 +207,7 @@ step
     .goto Zangarmarsh,50.37,40.90,20,0 -- coilfang reservoir entrance
     .goto Zangarmarsh,49.018,35.631 -- slave pens
     >>|cRXP_WARN_Return to |cRXP_FRIENDLY_Skar'this the Heretic|rdentro HEROIC:Slave Pens|r
-    .turnin 10901 >>Entregue A Clava de Kar'desh
+    .turnin 10901 >> Entregue A Clava de Kar'desh
     .target Skar'this the Heretic
 step
     .isQuestTurnedIn 10901
@@ -223,23 +223,23 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Shadowmoon Valley >>Viagem para Vale da Lua Negra
+    .zone Shadowmoon Valley >> Viagem para Vale da Lua Negra
 step << Alliance
     .goto Shadowmoon Valley,36.368,56.953
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Earthmender Sophurus|r
-    .accept 10680 >>Aceite A Mão de Gul'dan
+    .accept 10680 >> Aceite A Mão de Gul'dan
 	.target Earthmender Sophurus
 step << Horde
     .goto Shadowmoon Valley,28.489,26.573
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Earthmender Splinthoof|r
-    .accept 10681 >>Aceite A Mão de Gul'dan
+    .accept 10681 >> Aceite A Mão de Gul'dan
 	.target Earthmender Splinthoof
 step
     .goto Shadowmoon Valley,42.190,45.060
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Earthmender Torlok|r
-    .turnin 10680 >>Entregue A Mão de Gul'dan << Alliance
-    .turnin 10681 >>Entregue A Mão de Gul'dan << Horde
-    .accept 10458 >>Accept Enraged Spirits of Fire e Earth
+    .turnin 10680 >> Entregue A Mão de Gul'dan << Alliance
+    .turnin 10681 >> Entregue A Mão de Gul'dan << Horde
+    .accept 10458 >> Accept Enraged Spirits of Fire e Earth
 	.target Earthmender Torlok
 step
     .use 30094 >>|cRXP_WARN_Use the|r|T135462:0|t[Totem of Spirits]|cRXP_WARN_and kill|r|cRXP_ENEMY_Enraged Fire Spirits|re 
@@ -265,8 +265,8 @@ step
 step
     .goto Shadowmoon Valley,42.190,45.060
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Earthmender Torlok|r
-    .turnin 10458 >>Turn in Enraged Spirits of Fire e Earth
-    .accept 10480 >>Aceite Espíritos da Água Enfurecidos
+    .turnin 10458 >> Turn in Enraged Spirits of Fire e Earth
+    .accept 10480 >> Aceite Espíritos da Água Enfurecidos
 	.target Earthmender Torlok
 step
     #loop
@@ -285,8 +285,8 @@ step
 step
     .goto Shadowmoon Valley,42.190,45.060
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Earthmender Torlok|r
-    .turnin 10480 >>Entregue Espíritos da Água Enfurecidos
-    .accept 10481 >>Aceite Espíritos do Ar Enfurecidos
+    .turnin 10480 >> Entregue Espíritos da Água Enfurecidos
+    .accept 10481 >> Aceite Espíritos do Ar Enfurecidos
 	.target Earthmender Torlok
 step
     #loop
@@ -304,14 +304,14 @@ step
 step
     .goto Shadowmoon Valley,42.190,45.060
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Earthmender Torlok|r
-    .turnin 10481 >>Entregue Espíritos do Ar Enfurecidos
-    .accept 10513 >>Aceite Oronok Coração-Partido
+    .turnin 10481 >> Entregue Espíritos do Ar Enfurecidos
+    .accept 10513 >> Aceite Oronok Coração-Partido
 	.target Earthmender Torlok
 step
     .goto Shadowmoon Valley,53.918,23.529
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oronok Coração-partido|r
-    .turnin 10513 >>Entregue Oronok Coração-Partido
-    .accept 10514 >>Aceite Eu Fui Muitas Coisas...
+    .turnin 10513 >> Entregue Oronok Coração-Partido
+    .accept 10514 >> Aceite Eu Fui Muitas Coisas...
 	.target Oronok Torn-heart
 step
     #loop
@@ -330,8 +330,8 @@ step
 step
     .goto Shadowmoon Valley,53.918,23.529
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oronok Coração-partido|r
-    .turnin 10514 >>Entregue Eu Fui Muitas Coisas...
-    .accept 10515 >>Aceite Dê uma Lição
+    .turnin 10514 >> Entregue Eu Fui Muitas Coisas...
+    .accept 10515 >> Aceite Dê uma Lição
 	.target Oronok Torn-heart
 step
     #loop
@@ -348,24 +348,24 @@ step
 step
     .goto Shadowmoon Valley,53.918,23.529
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oronok Coração-partido|r
-    .turnin 10515 >>Entregue Dê uma Lição
-    .accept 10519 >>Accept The Cipher of Damnation -Truth e History
+    .turnin 10515 >> Entregue Dê uma Lição
+    .accept 10519 >> Accept The Cipher of Damnation -Truth e History
     .complete 10519,1 --The Cipher of Damnation - History and Truth
 	.skipgossip
 	.target Oronok Torn-heart
 step
     .goto Shadowmoon Valley,53.918,23.529
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oronok Coração-partido|r
-    .turnin 10519 >>Turn in The Cipher of Damnation -Truth e History
-    .accept 10521 >>Aceite Grom'tor, Filho de Oronok
-    .accept 10527 >>Aceite Ar'tor, Filho de Oronok
-    .accept 10546 >>Aceite Borak, Filho de Oronok
+    .turnin 10519 >> Turn in The Cipher of Damnation -Truth e History
+    .accept 10521 >> Aceite Grom'tor, Filho de Oronok
+    .accept 10527 >> Aceite Ar'tor, Filho de Oronok
+    .accept 10546 >> Aceite Borak, Filho de Oronok
 	.target Oronok Torn-heart
 step
     .goto Shadowmoon Valley,44.576,23.614
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grom'tor, filho de Oronok|r
-    .turnin 10521 >>Entregue Grom'tor, Filho de Oronok
-    .accept 10522 >>Aceite A Cifra da Danação: a carga de Grom'tor
+    .turnin 10521 >> Entregue Grom'tor, Filho de Oronok
+    .accept 10522 >> Aceite A Cifra da Danação: a carga de Grom'tor
 	.target Grom'tor, Son of Oronok
 step
     #loop
@@ -386,14 +386,14 @@ step
 step
     .goto Shadowmoon Valley,44.576,23.614
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grom'tor, filho de Oronok|r
-    .turnin 10522 >>Entregue A Cifra da Danação: a carga de Grom'tor
-    .accept 10523 >>Aceite A Cifra da Danação: primeiro fragmento recuperado
+    .turnin 10522 >> Entregue A Cifra da Danação: a carga de Grom'tor
+    .accept 10523 >> Aceite A Cifra da Danação: primeiro fragmento recuperado
 	.target Grom'tor, Son of Oronok
 step
     .goto Shadowmoon Valley,29.617,50.397
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ar'tor, Son of Oronok|r
-    .turnin 10527 >>Entregue Ar'tor, filho de Oronok
-    .accept 10528 >>Aceite Prisões demoníacas de cristal
+    .turnin 10527 >> Entregue Ar'tor, filho de Oronok
+    .accept 10528 >> Aceite Prisões demoníacas de cristal
 	.target Ar'tor, Son of Oronok
 step
     .goto Shadowmoon Valley,28.005,47.568
@@ -403,13 +403,13 @@ step
 step
     .goto Shadowmoon Valley,29.617,50.397
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ar'tor, Son of Oronok|r
-    .turnin 10528 >>Entregue Prisões demoníacas de cristal
+    .turnin 10528 >> Entregue Prisões demoníacas de cristal
 	.target Ar'tor, Son of Oronok
 step
     .isQuestTurnedIn 10528
     .goto Shadowmoon Valley,29.539,50.560
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Espírito de Ar'tor|r
-    .accept 10537 >>Aceite Lohn'goron, arco dos Coração-partido
+    .accept 10537 >> Aceite Lohn'goron, arco dos Coração-partido
 	.target Spirit of Ar'tor
 step
     #loop
@@ -428,8 +428,8 @@ step
 step
     .goto Shadowmoon Valley,29.539,50.560
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Espírito de Ar'tor|r
-    .turnin 10537 >>Entregue Lohn'goron, arco dos Coração-partido
-    .accept 10540 >>Aceite A Cifra da Danação: a missão de Ar'tor
+    .turnin 10537 >> Entregue Lohn'goron, arco dos Coração-partido
+    .accept 10540 >> Aceite A Cifra da Danação: a missão de Ar'tor
 	.target Spirit of Ar'tor
 step
     .goto Shadowmoon Valley,29.5,57.5
@@ -441,14 +441,14 @@ step
 step
     .goto Shadowmoon Valley,29.539,50.560
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Espírito de Ar'tor|r
-    .turnin 10540 >>Entregue A Cifra da Danação: a missão de Ar'tor
-    .accept 10541 >>Aceite A Cifra da Danação: segundo fragmento recuperado
+    .turnin 10540 >> Entregue A Cifra da Danação: a missão de Ar'tor
+    .accept 10541 >> Aceite A Cifra da Danação: segundo fragmento recuperado
 	.target Spirit of Ar'tor
 step
     .goto Shadowmoon Valley,47.557,57.178
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Borak, filho de Oronok|r
-    .turnin 10546 >>Entregue Borak, filho de Oronok
-    .accept 10547 >>Aceite De Cardólatras e Ovos...
+    .turnin 10546 >> Entregue Borak, filho de Oronok
+    .accept 10547 >> Aceite De Cardólatras e Ovos...
 	.target Borak, Son of Oronok
 step
     #loop
@@ -461,21 +461,21 @@ step
     .complete 10547,1 --Collect Rotten Arakkoa Egg (x1)
 step
     #completewith next
-    .zone Shattrath City >>Viaje até Shattrath
+    .zone Shattrath City >> Viaje até Shattrath
 step
     .goto Shattrath City,63.944,70.028
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tobias the Filth Gorger|r
-    .turnin 10547 >>Turn in Of Thistleheads e Eggs...
-    .accept 10550 >>Aceite O feixe de cardossangue
+    .turnin 10547 >> Turn in Of Thistleheads e Eggs...
+    .accept 10550 >> Aceite O feixe de cardossangue
 	.target Tobias the Filth Gorger
 step
     #completewith next
-    .zone Shadowmoon Valley >>Vá para Vale da Lua Negra
+    .zone Shadowmoon Valley >> Vá para Vale da Lua Negra
 step
     .goto Shadowmoon Valley,47.557,57.178
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Borak, filho de Oronok|r
-    .turnin 10550 >>Entregue O feixe de cardossangue
-    .accept 10570 >>Aceite Um cardólatra da pesada
+    .turnin 10550 >> Entregue O feixe de cardossangue
+    .accept 10570 >> Aceite Um cardólatra da pesada
 	.target Borak, Son of Oronok
 step
     #completewith next
@@ -491,8 +491,8 @@ step
 step
     .goto Shadowmoon Valley,47.557,57.178
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Borak, filho de Oronok|r
-    .turnin 10570 >>Entregue Um cardólatra da pesada
-    .accept 10576 >>Aceite O golpe Lua Negra
+    .turnin 10570 >> Entregue Um cardólatra da pesada
+    .accept 10576 >> Aceite O golpe Lua Negra
 	.target Borak, Son of Oronok
 step
     #loop
@@ -513,8 +513,8 @@ step
 step
     .goto Shadowmoon Valley,47.557,57.178
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Borak, filho de Oronok|r
-    .turnin 10576 >>Entregue O golpe Lua Negra
-    .accept 10577 >>Aceite O que Illidan quer, Illidan consegue...
+    .turnin 10576 >> Entregue O golpe Lua Negra
+    .accept 10577 >> Aceite O que Illidan quer, Illidan consegue...
 	.target Borak, Son of Oronok
 step
     #completewith next
@@ -530,8 +530,8 @@ step
 step
     .goto Shadowmoon Valley,47.557,57.178
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Borak, filho de Oronok|r
-    .turnin 10577 >>Entregue O que Illidan quer, Illidan consegue...
-    .accept 10578 >>Aceite A Cifra da Danação: a missão de Borak
+    .turnin 10577 >> Entregue O que Illidan quer, Illidan consegue...
+    .accept 10578 >> Aceite A Cifra da Danação: a missão de Borak
 	.target Borak, Son of Oronok
 step
     #loop
@@ -544,16 +544,16 @@ step
 step
     .goto Shadowmoon Valley,47.557,57.178
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Borak, filho de Oronok|r
-    .turnin 10578 >>Entregue A Cifra da Danação: a missão de Borak
-    .accept 10579 >>Aceite A Cifra da Danação: terceiro fragmento recuperado
+    .turnin 10578 >> Entregue A Cifra da Danação: a missão de Borak
+    .accept 10579 >> Aceite A Cifra da Danação: terceiro fragmento recuperado
 	.target Borak, Son of Oronok
 step
     .goto Shadowmoon Valley,53.918,23.529
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oronok Coração-partido|r
-    .turnin 10523 >>Entregue A Cifra da Danação: primeiro fragmento recuperado
-    .turnin 10541 >>Entregue A Cifra da Danação: segundo fragmento recuperado
-    .turnin 10579 >>Entregue A Cifra da Danação: terceiro fragmento recuperado
-    .accept 10588 >>Aceite A Cifra da Danação
+    .turnin 10523 >> Entregue A Cifra da Danação: primeiro fragmento recuperado
+    .turnin 10541 >> Entregue A Cifra da Danação: segundo fragmento recuperado
+    .turnin 10579 >> Entregue A Cifra da Danação: terceiro fragmento recuperado
+    .accept 10588 >> Aceite A Cifra da Danação
 	.target Oronok Torn-heart
 step
     #completewith next
@@ -568,23 +568,23 @@ step
 step
     .goto Shadowmoon Valley,42.190,45.060
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Earthmender Torlok|r
-    .turnin 10588 >>Entregue A Cifra da Danação
+    .turnin 10588 >> Entregue A Cifra da Danação
 	.target Earthmender Torlok
 step
     #completewith next
-    .zone Shattrath City >>Viaje até Shattrath
+    .zone Shattrath City >> Viaje até Shattrath
 step
     .goto Shattrath City,54.751,44.322
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Khadgar|r
-    .accept 10883 >>Aceite A Chave de Tormenta
+    .accept 10883 >> Aceite A Chave de Tormenta
     .target Khadgar
 step
     .goto Shattrath City,53.991,44.743
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_A'dal|r
-    .turnin 10883 >>Entregue A Chave de Tormenta
-    .accept 10884 >>Aceite Prova dos naarus: misericórdia
-    .accept 10885 >>Aceite Prova dos naarus: força
-    .accept 10886 >>Aceite Prova dos naarus: tenacidade
+    .turnin 10883 >> Entregue A Chave de Tormenta
+    .accept 10884 >> Aceite Prova dos naarus: misericórdia
+    .accept 10885 >> Aceite Prova dos naarus: força
+    .accept 10886 >> Aceite Prova dos naarus: tenacidade
     .target A'dal
 step
     >>|cRXP_WARN_Você agora tem 3 missões de Julgamento. Todas estas missões precisam ser completadas em dificuldade HEROICA|r
@@ -600,10 +600,10 @@ step
 step
     .goto Shattrath City,53.991,44.743
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_A'dal|r
-    .turnin 10884 >>Entregue Prova dos Naarus: Misericórdia
-    .turnin 10885 >>Entregue Prova dos Naarus: Força
-    .turnin 10886 >>Entregue Prova dos Naarus: Tenacidade
-    .accept 10888 >>Aceite Prova dos Naarus: Magtheridon
+    .turnin 10884 >> Entregue Prova dos Naarus: Misericórdia
+    .turnin 10885 >> Entregue Prova dos Naarus: Força
+    .turnin 10886 >> Entregue Prova dos Naarus: Tenacidade
+    .accept 10888 >> Aceite Prova dos Naarus: Magtheridon
     .target A'dal
 step
     >>Mate |cRXP_ENEMY_Magtheridon|r
@@ -611,7 +611,7 @@ step
 step
     .goto Shattrath City,53.991,44.743
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_A'dal|r
-    .turnin 10888 >>Entregue Prova dos Naarus: Magtheridon
+    .turnin 10888 >> Entregue Prova dos Naarus: Magtheridon
     .target A'dal
 step
     .isQuestTurnedIn 10888
@@ -621,13 +621,13 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group RXP TBC Guia de Sintonia
+#group Guia de Sintonia RXP TBC
 #name 4. Monte Hyjal
 #title Monte Hyjal
 
 step
     #completewith next
-    .goto Tanaris,65.669,49.940,50 >>Vá para as Cavernas do Tempo
+    .goto Tanaris,65.669,49.940,50 >> Vá para as Cavernas do Tempo
     .subzoneskip 1941
 step
     #loop
@@ -635,7 +635,7 @@ step
     .goto Tanaris,58.21,54.79,20,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Soridormi|r
     >>|cRXP_FRIENDLY_Soridormi|r |cRXP_WARN_patrulha levemente|r
-    .accept 10445 >>Aceite As Ampolas da Eternidade
+    .accept 10445 >> Aceite As Ampolas da Eternidade
     .target Soridormi
 step
     >>Mate for |cRXP_LOOT_Vashj's Vial Remnant|r
@@ -644,7 +644,7 @@ step
     .complete 10445,2 -- Kael's Vial Remnant (1)
 step
     #completewith next
-    .goto Tanaris,65.669,49.940,50 >>Retorne às Cavernas do Tempo
+    .goto Tanaris,65.669,49.940,50 >> Retorne às Cavernas do Tempo
     .subzoneskip 1941
 step
     #loop
@@ -652,7 +652,7 @@ step
     .goto Tanaris,58.21,54.79,20,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Soridormi|r
     >>|cRXP_FRIENDLY_Soridormi|r |cRXP_WARN_patrola levemente|r
-    .turnin 10445 >>Entregue As Ampolas da Eternidade
+    .turnin 10445 >> Entregue As Ampolas da Eternidade
     .target Soridormi
 step
     .isQuestTurnedIn 10445
@@ -662,29 +662,29 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #version 7
-#group Guia RXP TBC Sintonização
+#group Guia de Sintonia RXP TBC
 #name 5. Templo Preto
 #title Templo Preto
 
 step
 #aldor
     #completewith SeerUdalo
-    .zone Shadowmoon Valley >>Viagem para Vale da Lua Negra
+    .zone Shadowmoon Valley >> Viagem para Vale da Lua Negra
 step
 #aldor
     .goto Shadowmoon Valley,62.648,28.445
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Anacoreta Ceyla|r
-    .accept 10568 >>Aceite Tabuletas de Baa'ri
+    .accept 10568 >> Aceite Tabuletas de Baa'ri
 	.target Anchorite Ceyla
 step
 #scryer
     #completewith SeerUdalo
-    .zone Shadowmoon Valley >>Vá para o Vale da Lua Negra
+    .zone Shadowmoon Valley >> Vá para o Vale da Lua Negra
 step
 #scryer
     .goto Shadowmoon Valley,56.258,59.586
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Arcanista Thelis|r
-    .accept 10683 >>Aceite Tabuletas de Baa'ri
+    .accept 10683 >> Aceite Tabuletas de Baa'ri
     .target Arcanist Thelis
 step
 #aldor
@@ -709,15 +709,15 @@ step
 #aldor
     .goto Shadowmoon Valley,62.648,28.445
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Anacoreta Ceyla|r
-    .turnin 10568 >>Entregue Tabuletas de Baa'ri
-    .accept 10571 >>Aceite Oronu, o Ancião
+    .turnin 10568 >> Entregue Tabuletas de Baa'ri
+    .accept 10571 >> Aceite Oronu, o Ancião
 	.target Anchorite Ceyla
 step
 #scryer
     .goto Shadowmoon Valley,56.258,59.586
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Arcanista Thelis|r
-    .turnin 10683 >>Entregue Tabuletas de Baa'ri
-    .accept 10684 >>Aceite Oronu, o Ancião
+    .turnin 10683 >> Entregue Tabuletas de Baa'ri
+    .accept 10684 >> Aceite Oronu, o Ancião
     .target Arcanist Thelis
 step
 #aldor
@@ -735,15 +735,15 @@ step
 #aldor
     .goto Shadowmoon Valley,62.648,28.445
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Anacoreta Ceyla|r
-    .turnin 10571 >>Entregue Oronu, o Ancião
-    .accept 10574 >>Aceite Os Corruptores Grislíngua
+    .turnin 10571 >> Entregue Oronu, o Ancião
+    .accept 10574 >> Aceite Os Corruptores Grislíngua
 	.target Anchorite Ceyla
 step
 #scryer
     .goto Shadowmoon Valley,56.258,59.586
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Arcanista Thelis|r
-    .turnin 10684 >>Entregue Oronu, o Ancião
-    .accept 10685 >>Aceite Os Corruptores Grislíngua
+    .turnin 10684 >> Entregue Oronu, o Ancião
+    .accept 10685 >> Aceite Os Corruptores Grislíngua
     .target Arcanist Thelis
 step
 #aldor
@@ -797,29 +797,29 @@ step
 #aldor
     .goto Shadowmoon Valley,62.648,28.445
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Anacoreta Ceyla|r
-    .turnin 10574 >>Entregue Os Corruptores Grislíngua
-    .accept 10575 >>Aceite A Jaula do Carcereiro
+    .turnin 10574 >> Entregue Os Corruptores Grislíngua
+    .accept 10575 >> Aceite A Jaula do Carcereiro
 	.target Anchorite Ceyla
 step
 #scryer
     .goto Shadowmoon Valley,56.258,59.586
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Arcanista Thelis|r
-    .turnin 10685 >>Entregue Os Corruptores Grislíngua
-    .accept 10686 >>Aceite A Jaula do Carcereiro
+    .turnin 10685 >> Entregue Os Corruptores Grislíngua
+    .accept 10686 >> Aceite A Jaula do Carcereiro
     .target Arcanist Thelis
 step
 #aldor
     .goto Shadowmoon Valley,57.328,49.577
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sanoru|r
-    .turnin 10575 >>Entregue A Jaula do Carcereiro
-    .accept 10622 >>Aceite Prova de Fidelidade
+    .turnin 10575 >> Entregue A Jaula do Carcereiro
+    .accept 10622 >> Aceite Prova de Fidelidade
 	.target Sanoru
 step
 #scryer
     .goto Shadowmoon Valley,57.328,49.577
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sanoru|r
-    .turnin 10686 >>Entregue A Jaula do Carcereiro
-    .accept 10622 >>Aceite Prova de Fidelidade
+    .turnin 10686 >> Entregue A Jaula do Carcereiro
+    .accept 10622 >> Aceite Prova de Fidelidade
 	.target Sanoru
 step
     #loop
@@ -834,8 +834,8 @@ step
 step
     .goto Shadowmoon Valley,57.328,49.577
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sanoru|r
-    .turnin 10622 >>Entregue Prova de Fidelidade
-    .accept 10628 >>Aceite Akama
+    .turnin 10622 >> Entregue Prova de Fidelidade
+    .accept 10628 >> Aceite Akama
 	.target Sanoru
 step
     #label SeerUdalo
@@ -844,30 +844,30 @@ step
     .goto Shadowmoon Valley,58.110,48.184
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Akama|r
     >>|cRXP_FRIENDLY_Akama|r |cRXP_WARN_está mais adiante dentro da Jaula da Guardiã|r
-    .turnin 10628 >>Entregue Akama
-    .accept 10705 >>Aceite Vidente Udalo
+    .turnin 10628 >> Entregue Akama
+    .accept 10705 >> Aceite Vidente Udalo
 	.target Akama
 step
     #completewith next
     .isOnQuest 10705
-    .subzone 3846 >>|cRXP_WARN_Encontre um grupo para o Arcatraz. Você deve conversar com |cRXP_FRIENDLY_Udalo|r dentro da masmorra|r
+    .subzone 3846 >> |cRXP_WARN_Encontre um grupo para o Arcatraz. Você deve conversar com |cRXP_FRIENDLY_Udalo|r dentro da masmorra|r
     .subzoneskip 3848
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Udalo|r
-    .turnin 10705 >>Entregue Vidente Udalo
-    .accept 10706 >>Aceite Um Portento Misterioso
+    .turnin 10705 >> Entregue Vidente Udalo
+    .accept 10706 >> Aceite Um Portento Misterioso
 	.target Udalo
 step
     #completewith next
-    .zone Shadowmoon Valley >>Volte para o Vale da Lua Negra
+    .zone Shadowmoon Valley >> Volte para o Vale da Lua Negra
 step
     .goto Shadowmoon Valley,57.328,49.577,10,0
     .goto Shadowmoon Valley,57.37,47.80,20,0
     .goto Shadowmoon Valley,57.72,48.50,10,0
     .goto Shadowmoon Valley,58.110,48.184
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Akama|r
-    .turnin 10706 >>Entregue Um Portento Misterioso
-    .accept 10707 >>Aceite O Terraço de Ata'mal
+    .turnin 10706 >> Entregue Um Portento Misterioso
+    .accept 10707 >> Aceite O Terraço de Ata'mal
 	.target Akama
 step
     .goto Shadowmoon Valley,71.597,35.508
@@ -882,83 +882,83 @@ step
     .goto Shadowmoon Valley,57.72,48.50,10,0
     .goto Shadowmoon Valley,58.110,48.184
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Akama|r
-    .turnin 10707 >>Entregue O Terraço de Ata'mal
-    .accept 11052 >>Aceite A Promessa de Akama
+    .turnin 10707 >> Entregue O Terraço de Ata'mal
+    .accept 11052 >> Aceite A Promessa de Akama
 	.target Akama
 step
     #completewith next
-    .zone Shattrath City >>Viaje até Shattrath
+    .zone Shattrath City >> Viaje até Shattrath
 step
     .goto Shattrath City,53.98,44.73
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_A'dal|r
-    .turnin 11052 >>Entregue A Promessa de Akama
+    .turnin 11052 >> Entregue A Promessa de Akama
 	.target A'dal
 step
     #completewith next
-    .subzone 3607 >>|cRXP_WARN_Entre na Incursão Serpentshrine Cavern. Você deve derrotar o chefe |cRXP_ENEMY_Senhor do Abismo Karathress|r, depois converse com |cRXP_FRIENDLY_Vidente Olum|r que está localizado atrás dele|r
+    .subzone 3607 >> |cRXP_WARN_Entre na Incursão Serpentshrine Cavern. Você deve derrotar o chefe |cRXP_ENEMY_Senhor do Abismo Karathress|r, depois converse com |cRXP_FRIENDLY_Vidente Olum|r que está localizado atrás dele|r
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Seer Olum|r
-    .accept 10944 >>Aceite O Segredo Comprometido
+    .accept 10944 >> Aceite O Segredo Comprometido
 step
     #completewith next
-    .zone Shadowmoon Valley >>Volte para o Vale da Lua Negra
+    .zone Shadowmoon Valley >> Volte para o Vale da Lua Negra
 step
     .goto Shadowmoon Valley,57.328,49.577,10,0
     .goto Shadowmoon Valley,57.37,47.80,20,0
     .goto Shadowmoon Valley,57.72,48.50,10,0
     .goto Shadowmoon Valley,58.110,48.184
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Akama|r
-    .turnin 10944 >>Entregue O Segredo Comprometido
-    .accept 10946 >>Aceite Ardil dos Grislíngua
+    .turnin 10944 >> Entregue O Segredo Comprometido
+    .accept 10946 >> Aceite Ardil dos Grislíngua
 	.target Akama
 step
     .use 31946 >>Mate while wearing the |T133132:0|t[Ashtongue Cowl]
     .complete 10946,1 -- Ruse of the Ashtongue 1/1
 step
     #completewith next
-    .zone Shadowmoon Valley >>Volte para o Vale da Lua Negra
+    .zone Shadowmoon Valley >> Volte para o Vale da Lua Negra
 step
     .goto Shadowmoon Valley,57.328,49.577,10,0
     .goto Shadowmoon Valley,57.37,47.80,20,0
     .goto Shadowmoon Valley,57.72,48.50,10,0
     .goto Shadowmoon Valley,58.110,48.184
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Akama|r
-    .turnin 10946 >>Entregue Ardil dos Grislíngua
-    .accept 10947 >>Aceite Um Artefato do Passado
+    .turnin 10946 >> Entregue Ardil dos Grislíngua
+    .accept 10947 >> Aceite Um Artefato do Passado
 	.target Akama
 step
     >>Mate .Saqueie him for the |cRXP_LOOT_Time-Phased Phylactery|r
     .complete 10947,1 -- Time-Phased Phylactery (1)
 step
     #completewith next
-    .zone Shadowmoon Valley >>Volte para o Vale da Lua Negra
+    .zone Shadowmoon Valley >> Volte para o Vale da Lua Negra
 step
     .goto Shadowmoon Valley,57.328,49.577,10,0
     .goto Shadowmoon Valley,57.37,47.80,20,0
     .goto Shadowmoon Valley,57.72,48.50,10,0
     .goto Shadowmoon Valley,58.110,48.184
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Akama|r
-    .turnin 10947 >>Entregue Um Artefato do Passado
-    .accept 10948 >>Aceite A Alma Cativa
+    .turnin 10947 >> Entregue Um Artefato do Passado
+    .accept 10948 >> Aceite A Alma Cativa
 	.target Akama
 step
     #completewith next
-    .zone Shattrath City >>Viaje até Shattrath
+    .zone Shattrath City >> Viaje até Shattrath
 step
     .goto Shattrath City,53.98,44.73
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_A'dal|r
-    .turnin 10948 >>Entregue A Alma Cativa
-    .accept 10949 >>Aceite Entrada do Templo Negro
+    .turnin 10948 >> Entregue A Alma Cativa
+    .accept 10949 >> Aceite Entrada do Templo Negro
 	.target A'dal
 step
     #completewith next
-    .zone Shadowmoon Valley >>Volte para o Vale da Lua Negra
+    .zone Shadowmoon Valley >> Volte para o Vale da Lua Negra
 step
     .goto Shadowmoon Valley,65.233,43.956
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Xi'ri|r
     >>|cRXP_WARN_Se você está em um grupo, certifique-se de que outros membros do grupo entregaram a missão antes de aceitar a próxima. Aceitar automaticamente foi desativado para este passo|r
-    .turnin 10949 >>Entregue Entrada do Templo Negro
-    .accept 10985,1 >>Aceite Uma Distração para Akama
+    .turnin 10949 >> Entregue Entrada do Templo Negro
+    .accept 10985,1 >> Aceite Uma Distração para Akama
     .target Xi'ri
 step
     .goto Shadowmoon Valley,65.233,43.956
@@ -970,8 +970,8 @@ step
 step
     .goto Shadowmoon Valley,65.233,43.956
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Xi'ri|r
-    .turnin 10985 >>Entregue Uma Distração para Akama
-    .accept 10958 >>Aceite Em Busca dos Grislíngua
+    .turnin 10985 >> Entregue Uma Distração para Akama
+    .accept 10958 >> Aceite Em Busca dos Grislíngua
     .target Xi'ri
 step
     .isQuestTurnedIn 10985
