@@ -57,9 +57,9 @@ Guides/Talents/tbc.xml
 
 ItemUpgrades.lua
 
-Professions\Professions.lua
-Professions\DB\ProfessionsDB.lua
-Professions\locale\ProfessionsLocale.lua
-Professions\AH\ProfessionsAH.lua
-Professions\DB\RecipeIds.lua
-Professions\Export\ProfessionsExport.lua
+Professions\Professions.lua [AllowLoadGameType vanilla,tbc,mists,camelot]
+Professions\DB\ProfessionIds.lua [AllowLoadGameType vanilla,tbc,mists,camelot]
+Professions\locale\ProfessionsLocale.lua [AllowLoadGameType vanilla,tbc,mists,camelot]
+Professions\AH\ProfessionsAH.lua [AllowLoadGameType vanilla,tbc,mists,camelot]
+Professions\Export\ProfessionsExport.lua [AllowLoadGameType vanilla,tbc,mists,camelot]
+Professions\GUI\ProfessionsDebugGUI.lua [AllowLoadGameType vanilla,tbc,mists,camelot]
