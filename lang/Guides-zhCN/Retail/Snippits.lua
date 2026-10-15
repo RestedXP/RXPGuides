@@ -660,13 +660,13 @@ step << Alliance
     .choose 1668214
 step << Alliance
     .goto 84,56.26,17.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_克罗米|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_克罗米|r 对话
     .turnin 62567 >>交任务 招募冒险者：克罗米的召唤
     .target 克罗米
 step << Alliance
     .isQuestAvailable 70122
     .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_克罗米|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_克罗米|r 对话
     -- .complete 53500,1 --Talk to Chromie (1)
     -- .accept 65436 >>Accept The Dragon Isles Await
     .cast 452213 >>进入克罗米时间
@@ -713,7 +713,7 @@ step
     #label ChromieTime
     .isQuestAvailable 70122
     .goto 84,56.257,17.311
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_克罗米|r 对话。
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_克罗米|r 对话
     -- .complete 53500,1 --Talk to Chromie (1)
     -- .accept 65436 >>Accept The Dragon Isles Await
     .cast 452213 >>进入克罗米时间
@@ -791,7 +791,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP 地心之战 博学者
+#group War Within Loremaster
 #name a) 道具 解锁 Free
 #internal
 
@@ -803,7 +803,7 @@ step
     .target Hashim
     .isOnQuest 90938
 step
-    账号,89561
+    .isQuestTurnedIn account,89561
     #completewith next
     #label Reshii Wraps
     .equip 15,235499 >>装备 |T7110834:0|t[雷什裹布]
@@ -966,7 +966,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP 军团再临：幻境新生
+#group RestedXP军团再临：幻境新生
 #name a) 驭空术 熊猫
 #internal
 
@@ -1247,7 +1247,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP 军团再临：幻境新生
+#group RestedXP军团再临：幻境新生
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) 神器武器：鲜血
 #displayname 神器武器：鲜血
@@ -1412,10 +1412,10 @@ step
     .isInScenario 940
     .goto 714,37.12,48.22
     >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_FRIENDLY_米妮瓦·悲鸦|r。 << Horde
-    >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_FRIENDLY_达格纳·石眉|r。 << Alliance
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_FRIENDLY_Dagnar Stonebrow|r. << Alliance
     .scenario 2138,1 --Release your ally
     .target Minerva Ravensorrow << Horde
-    .target Dagnar Stonebrew << Alliance
+    .target Dagnar Stonebrow << Alliance
 step
     .isInScenario 940
     .goto 714,47.96,58.44
@@ -1476,11 +1476,11 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP 军团再临：幻境新生
+#group RestedXP军团再临：幻境新生
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) 神器 武器: 冰霜 死亡骑士
 #displayname 神器 武器: 福斯特
-#next a) Order Hall 死亡骑士 第1部
+#next a) Order Hall 死亡骑士 第一部分
 #internal
 
 << DeathKnight
@@ -1677,11 +1677,11 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP 军团再临：幻境新生
+#group RestedXP军团再临：幻境新生
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) 神器武器: Unholy
 #displayname 神器 武器: Unholy
-#next a) 死亡骑士 Order Hall 第1部分
+#next a) Order Hall 死亡骑士 第一部分
 #internal
 
 << DeathKnight
@@ -1968,7 +1968,7 @@ RXPGuides.RegisterGuide([[}
 << DeathKnight
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Blood
+    #include RestedXP军团再临：幻境新生\a) 神器武器：鲜血
 ]])
 --Frost 2
 RXPGuides.RegisterGuide([[}
@@ -1984,14 +1984,14 @@ RXPGuides.RegisterGuide([[}
 << DeathKnight
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Frost DK
+    #include RestedXP军团再临：幻境新生\a) 神器 武器: 冰霜 死亡骑士
 ]])
 --Unholy 2
 RXPGuides.RegisterGuide([[}
 #retail
 #chapter
 #version 1
-#group RestedXP 军团再临：幻境新生
+#group RestedXP军团再临：幻境新生
 #name z) 神器武器: 邪恶
 #displayname 神器武器: 邪恶
 #next ac) Order Hall 死亡骑士 第一部分
@@ -2001,14 +2001,14 @@ RXPGuides.RegisterGuide([[}
 << DeathKnight
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Unholy
+    #include RestedXP军团再临：幻境新生\a) 神器武器: Unholy
 ]])
 
 --Death Knight Order Hall Campaign Part 1
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP 军团再临：幻境新生
+#group RestedXP军团再临：幻境新生
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) Order Hall 死亡骑士 第一部分
 #displayname |cFF00CCFF1|r - Order Hall 序章|r
@@ -2066,14 +2066,14 @@ step
     .accept 40715 >>接受任务 必要的选择
     .target Duke Lankral
 step
-    账号,91955
+    .isQuestAvailable account,91955
     +现在选择以下指南之一：
     *|cRXP_WARN_重要：选择你已经拥有的那个来获得额外的10%经验值（仅1次）|r
     *|cRXP_WARN_稍后你还可以完成其他的任务线|r
     *|cFFFF0000如果你不选择1个，就无法进行下去|r。
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Frost DK >>RestedXP Legion Remix\a) 神器 武器: 福斯特 DK >> 福斯特(每秒伤害) 任务线
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Unholy >>RestedXP Legion Remix\a) 神器 武器: Unholy >> Unholy(每秒伤害) 任务线
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Blood >>RestedXP Legion Remix\a) 神器 武器: 鲜血 >> 鲜血(坦克) 任务线
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Frost DK >> 福斯特(每秒伤害) 任务线
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Unholy >> Unholy(每秒伤害) 任务线
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Blood >> 鲜血(坦克) 任务线
 step
     #include ac) Order Hall Demon Hunter Part 2@Plans and Preparations-Enlist Nazgrim
 step
@@ -2088,7 +2088,7 @@ step
 RXPGuides.RegisterGuide([[}
 #retail
 #version 1
-#group RestedXP 军团再临：幻境新生
+#group RestedXP军团再临：幻境新生
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) 神器 武器: Havoc
 #displayname 神器武器：Havoc
@@ -2273,7 +2273,7 @@ step
 step
     #completewith Illidari Fel Bat
     .zone 627 >>离开副本（右键点击你的角色框架）或按下宏。
-    .macro Leave Instance,236367 >>离开副本
+    .macro Leave Instance,236367 >> 离开副本
 step
     #requires Illidari Fel Bat
     .goto 627,75.26,47.61
@@ -2346,7 +2346,7 @@ step
 step
     .isInScenario 900
     .zone 627 >>离开副本（右键点击你的角色框架）或按下宏。
-    .macro Leave Instance,236367 >>离开副本
+    .macro Leave Instance,236367 >> 离开副本
 step
     .isQuestAvailable 40249
     .goto 627,73.86,46.11
@@ -2654,7 +2654,7 @@ step
     .scenario 2302,1
 step
     .zone 627 >>离开副本（右键点击玩家头像）或者直接按宏。
-    .macro Leave Instance,236367 >>离开副本
+    .macro Leave Instance,236367 >> 离开副本
     .complete 40249,3 --1/1 Return to Dalaran
 step
     .isQuestAvailable 39247
@@ -2684,7 +2684,7 @@ RXPGuides.RegisterGuide([[}
 #retail
 #version 1
 #chapter
-#group RestedXP 军团再临：幻境新生
+#group RestedXP军团再临：幻境新生
 #name z) 神器 武器: Havoc
 #displayname 神器 武器: Havoc
 #next ac) Order Hall 恶魔猎手 第二部分
@@ -2693,7 +2693,7 @@ RXPGuides.RegisterGuide([[}
 << DemonHunter
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Havoc
+    #include RestedXP军团再临：幻境新生\a) 神器 武器: Havoc
 ]])
 --Vengeance 2
 RXPGuides.RegisterGuide([[
@@ -2709,7 +2709,7 @@ RXPGuides.RegisterGuide([[
 << DemonHunter
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Vengeance
+    #include RestedXP军团再临：幻境新生\a) 神器武器：复仇
 ]])
 
 --Demon Hunter Order Hall Campaign Part 1
@@ -2787,8 +2787,8 @@ step
     +暂时选择以下指南之一：
     *|cRXP_WARN_你稍后还可以完成其他的任务线|r
     *|cFFFF0000如果你不选择一个，就无法进行下去|r。
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Havoc >>RestedXP Legion Remix\a) 神器 武器: Havoc >> Havoc(每秒伤害) 任务线
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Vengeance >>RestedXP Legion Remix\a) 神器武器: 复仇 >> 复仇(坦克)任务线
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Havoc >> Havoc(每秒伤害) 任务线
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Vengeance >> 复仇(坦克)任务线
 step
     #include ac) Order Hall Demon Hunter Part 2@Eternal Vigil-Champion: Asha Ravensong
 ]])
@@ -3481,7 +3481,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP 军团再临：幻境新生
+#group RestedXP军团再临：幻境新生
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) 神器 武器: Guardian 德鲁伊
 #displayname 神器 武器: 守护者
@@ -3850,7 +3850,7 @@ step
 RXPGuides.RegisterGuide([[
 #retail
 #version 1
-#group RestedXP 军团再临：幻境新生
+#group RestedXP军团再临：幻境新生
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) 恢复德鲁伊的神器武器
 #displayname 神器 武器: Restoration
@@ -4264,7 +4264,7 @@ RXPGuides.RegisterGuide([[}
 << Druid
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Balance Druid
+    #include RestedXP军团再临：幻境新生\a) 神器 武器: 平衡 德鲁伊
 ]])
 --Feral 2
 RXPGuides.RegisterGuide([[}
@@ -4280,7 +4280,7 @@ RXPGuides.RegisterGuide([[}
 << Druid
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Feral Druid
+    #include RestedXP军团再临：幻境新生\a) 神器武器：野性德鲁伊
 ]])
 --Guardian 2
 RXPGuides.RegisterGuide([[}
@@ -4296,7 +4296,7 @@ RXPGuides.RegisterGuide([[}
 << Druid
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Guardian Druid
+    #include RestedXP军团再临：幻境新生\a) 神器 武器: Guardian 德鲁伊
 ]])
 --Restoration 2
 RXPGuides.RegisterGuide([[}
@@ -4312,7 +4312,7 @@ RXPGuides.RegisterGuide([[}
 << Druid
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Restoration Druid
+    #include RestedXP军团再临：幻境新生\a) 恢复德鲁伊的神器武器
 ]])
 
 --Druid Order Hall Campaign 1
@@ -4379,10 +4379,10 @@ step
     *|cRXP_WARN_重要：选择你已经拥有的那个来获得额外的10%经验值（仅一次）|r
     *|cRXP_WARN_你稍后还可以完成其他的任务线|r
     *|cFFFF0000如果你不选择一个，就无法进行下去|r。
-    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Balance Druid >>Remix\z) 神器 武器: 平衡 德鲁伊 >> 平衡(每秒伤害) Questline
-    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Feral Druid >>Remix\z) 神器 武器: 野性 德鲁伊 >> 野性(每秒伤害) Questline
-    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Guardian Druid >>Remix\z) 神器 武器: Guardian 德鲁伊 >> Guardian(坦克) Questline
-    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Restoration Druid >>Remix\z) 神器 武器: Restoration 德鲁伊 >> Restoration(治疗者) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Balance Druid >> 平衡(每秒伤害) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Feral Druid >> 野性(每秒伤害) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Guardian Druid >> Guardian(坦克) Questline
+    .clicknext RestedXP Legion Remix\z) Artifact Weapon: Restoration Druid >> Restoration(治疗者) Questline
 step
     #include ac) Order Hall Druid Part 2@Sowing The Seed-Making Trails
 step
@@ -5026,7 +5026,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) 神器 武器: Survival
 #displayname 神器 武器: Survival
-#next a) Order Hall 猎人 第1部分
+#next a) Order Hall 猎人 第一部分
 #internal
 
 << Hunter
@@ -5320,7 +5320,7 @@ RXPGuides.RegisterGuide([[
 << Hunter
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Beast Mastery
+    #include RestedXP军团再临：幻境新生\a) 神器 武器: 经典怀旧服 道具
 ]])
 --Marksmanship 2
 RXPGuides.RegisterGuide([[}
@@ -5336,7 +5336,7 @@ RXPGuides.RegisterGuide([[}
 << Hunter
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Marksmanship
+    #include RestedXP军团再临：幻境新生\a) 神器 武器: Marksmanship
 ]])
 --Survival 2
 RXPGuides.RegisterGuide([[}
@@ -5352,7 +5352,7 @@ RXPGuides.RegisterGuide([[}
 << Hunter
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Survival
+    #include RestedXP军团再临：幻境新生\a) 神器 武器: Survival
 ]])
 
 --Hunter Order Hall Campaign 1
@@ -5420,9 +5420,9 @@ step
     *|cRXP_WARN_重要：选择你已经拥有的那个来获得额外的10%经验值（仅一次）|r
     *|cRXP_WARN_你稍后还可以完成其他的任务线|r
     *|cFFFF0000如果你不选择一个，就无法进行下去|r。
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Beast Mastery >>Remix\a) 神器 武器: 野兽控制 >> 野兽控制(每秒伤害) 任务线
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Marksmanship >>Remix\a) 神器 武器: Marksmanship >> Marksmanship(每秒伤害) Questline
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Survival >>Remix\a) 神器 武器: Survival >> Survival(每秒伤害) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Beast Mastery >> 野兽控制(每秒伤害) 任务线
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Marksmanship >> Marksmanship(每秒伤害) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Survival >> Survival(每秒伤害) Questline
 step
     #include ac) Order Hall Hunter Part 2@Eagle's Wings-The Campaign Begins
 step
@@ -6726,7 +6726,7 @@ RXPGuides.RegisterGuide([[
 << Mage
 
 step
-    #include a) Artifact Weapon: Arcane
+    #include a) 神器 武器: 奥术
 ]])
 --Fire 2
 RXPGuides.RegisterGuide([[
@@ -6742,7 +6742,7 @@ RXPGuides.RegisterGuide([[
 << Mage
 
 step
-    #include a) Artifact Weapon: Fire
+    #include a)神器武器:火焰
 ]])
 --Frost 2
 RXPGuides.RegisterGuide([[
@@ -6758,7 +6758,7 @@ RXPGuides.RegisterGuide([[
 << Mage
 
 step
-    #include a) Artifact Weapon: Frost Mage
+    #include a) 神器武器: 福斯特 法师
 ]])
 
 --Mage Order Hall Campaign 1
@@ -6824,9 +6824,9 @@ step
     +暂时选择以下指南之一：
     *|cRXP_WARN_你稍后还可以完成其他的任务线|r
     *|cFFFF0000如果你不选择一个，就无法进行下去|r。
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Fire >>Remix\a) 神器 武器: 火焰 >> 火焰(每秒伤害) Questline
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Arcane >>Remix\a) 神器 武器: 奥术 >> 奥术(每秒伤害) Questline
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Frost Mage >>RestedXP Legion Remix\a) 神器 武器: 冰霜 法师 >> 冰霜(每秒伤害) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Fire >> 火焰(每秒伤害) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Arcane >> 奥术(每秒伤害) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Frost Mage >> 冰霜(每秒伤害) Questline
 step
     >>使用 |T1536440:0|t[传送: 守护者圣殿]。
     .accept 41114 >>接受任务勇士归来
@@ -7527,7 +7527,7 @@ step
     .goto 728,44.12,53.64
     >>|cRXP_WARN_在"使用中 物品"部分|r有一个宏，与 |cRXP_FRIENDLY_祝踏岚|r 对话后狂按它。
     .complete 41003,3 --1/1 Fly Home with Tak-Tak
-    .macro Leave Instance,236367 >>离开副本
+    .macro Leave Instance,236367 >> 离开副本
     .skipgossipid 45497
     .target Tak-Tak
 step
@@ -7536,7 +7536,7 @@ step
     #title |cFFFCDC00Spam 宏|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_金刚不坏彭戍|r 对话
     .turnin 41003 >>交任务 皇帝的礼物
-    .macro Leave Instance,236367 >>离开副本
+    .macro Leave Instance,236367 >> 离开副本
     .target Iron-Body Ponshu
 step
     #completewith The Emperor's Gift
@@ -7985,7 +7985,7 @@ RXPGuides.RegisterGuide([[
 << Monk
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Brewmaster
+    #include RestedXP军团再临：幻境新生\a) 神器 武器: Brewmaster
 ]])
 --Mistweaver 2
 RXPGuides.RegisterGuide([[
@@ -8002,7 +8002,7 @@ RXPGuides.RegisterGuide([[
 << Monk
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Mistweaver
+    #include RestedXP军团再临：幻境新生\a) 神器 武器: Mistweaver
 ]])
 --Windwalker 2
 RXPGuides.RegisterGuide([[
@@ -8019,7 +8019,7 @@ RXPGuides.RegisterGuide([[
 << Monk
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Windwalker
+    #include RestedXP军团再临：幻境新生\a) 神器 武器: 踏风
 ]])
 
 --Monk Order Hall Campaign Part 1
@@ -8085,9 +8085,9 @@ step
     +暂时选择以下指南之一：
     *|cRXP_WARN_你稍后还可以完成其他的任务线|r
     *|cFFFF0000如果你不选择一个，就无法进行下去|r。
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Windwalker >>RestedXP Legion Remix\a) 神器 武器: 踏风 >> 踏风(每秒伤害) 任务线
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Brewmaster >>RestedXP Legion Remix\a) 神器 武器: Brewmaster >> Brewmaster(坦克) 任务线
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Mistweaver >>RestedXP Legion Remix\a) 神器 武器: Mistweaver >> Mistweaver(治疗者) 任务线
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Windwalker >> 踏风(每秒伤害) 任务线
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Brewmaster >> Brewmaster(坦克) 任务线
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Mistweaver >> Mistweaver(治疗者) 任务线
 step
     #include ac) Order Hall Monk Part 2@Matter of Planning-The Fight Begins
 step << Alliance
@@ -8116,7 +8116,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) 神器武器：神圣圣骑士
 #displayname 神器 武器: 神圣
-#next a) 圣骑士职业大厅 第1部分
+#next a) Order Hall 圣骑士 Part 1
 #internal
 
 << Paladin
@@ -8493,7 +8493,7 @@ step
 step
     .isInScenario 1092
     .zone 627 >>离开副本（右键点击你的角色框架）或按下宏。
-    .macro Leave Instance,236367 >>离开副本
+    .macro Leave Instance,236367 >> 离开副本
 step
     .isQuestAvailable 44370,44063
     #label Artifact Weapon: Holy Paladin
@@ -8559,7 +8559,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) 神器 武器: 圣骑士 防护
 #displayname 神器武器：防护
-#next a) Order Hall 迪菲亚兄弟会 Part 1
+#next a) Order Hall 圣骑士 Part 1
 #internal
 
 << Paladin
@@ -9016,7 +9016,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) 神器武器: Retribution
 #displayname 神器 武器: 惩戒
-#next a) Order Hall 迪菲亚兄弟会 Part 1
+#next a) Order Hall 圣骑士 Part 1
 #internal
 
 << Paladin
@@ -9322,7 +9322,7 @@ step
 step
     .isInScenario 775
     .zone 23 >>离开副本（右键点击你的角色框架）或按下宏。
-    .macro Leave Instance,236367 >>离开副本
+    .macro Leave Instance,236367 >> 离开副本
 step
     .zoneskip 23,1
     .goto 23,74.28,53.15
@@ -9399,7 +9399,7 @@ RXPGuides.RegisterGuide([[
 << Paladin
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Holy Paladin
+    #include RestedXP军团再临：幻境新生\a) 神器武器：神圣圣骑士
 ]])
 --Protection 2
 RXPGuides.RegisterGuide([[
@@ -9415,7 +9415,7 @@ RXPGuides.RegisterGuide([[
 << Paladin
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Paladin Protection
+    #include RestedXP军团再临：幻境新生\a) 神器 武器: 圣骑士 防护
 ]])
 --Retribution 2
 RXPGuides.RegisterGuide([[
@@ -9431,7 +9431,7 @@ RXPGuides.RegisterGuide([[
 << Paladin
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Retribution
+    #include RestedXP军团再临：幻境新生\a) 神器武器: Retribution
 ]])
 
 --Paladin Order Hall Campaign Part 1
@@ -9497,9 +9497,9 @@ step
     +暂时选择以下指南之一：
     *|cRXP_WARN_你稍后还可以完成其他的任务线|r
     *|cFFFF0000如果你不选择一个，就无法进行下去|r。
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Retribution >>RestedXP Legion Remix\a) 神器 武器: Retribution >> Retribution(每秒伤害) Questline
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Paladin Protection >>RestedXP Legion Remix\a) 神器 武器: 圣骑士 防护 >> 防护(坦克) Questline
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Holy Paladin >>RestedXP Legion Remix\a) 神器 武器: 神圣 圣骑士 >> 神圣(治疗者) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Retribution >> Retribution(每秒伤害) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Paladin Protection >> 防护(坦克) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Holy Paladin >> 神圣(治疗者) Questline
 step
     #include ac) Order Hall Paladin Part 2@A United Force-Order Hall Paladin Part 2
 ]])
@@ -10132,7 +10132,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) 神器武器：暗影
 #displayname 神器武器：暗影
-#next a) 职业大厅 牧师第一部分
+#next a) Order Hall 牧师 第1部分
 #internal
 
 << Priest
@@ -10373,7 +10373,7 @@ RXPGuides.RegisterGuide([[}
 << Priest
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Discipline
+    #include RestedXP军团再临：幻境新生\a) 神器 武器: 训诫
 ]])
 --Holy 2
 RXPGuides.RegisterGuide([[}
@@ -10389,7 +10389,7 @@ RXPGuides.RegisterGuide([[}
 << Priest
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Holy Priest
+    #include RestedXP军团再临：幻境新生\a) 神器武器：神圣牧师
 ]])
 --Shadow 2
 RXPGuides.RegisterGuide([[}
@@ -10405,7 +10405,7 @@ RXPGuides.RegisterGuide([[}
 << Priest
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Shadow
+    #include RestedXP军团再临：幻境新生\a) 神器武器：暗影
 ]])
 
 --Priest Order Hall Campaign Part 1
@@ -10473,9 +10473,9 @@ step
     *|cRXP_WARN_重要：选择你已经拥有的那个来获得额外的10%经验值（仅一次）|r
     *|cRXP_WARN_你稍后还可以完成其他的任务线|r
     *|cFFFF0000如果你不选择一个，就无法进行下去|r。
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Shadow >>RestedXP Legion Remix\a) 神器 武器: 暗影 >> 暗影(每秒伤害) Questline
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Holy Priest >>RestedXP Legion Remix\a) 神器 武器: 神圣 >> 神圣(治疗者) Questline
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Discipline >>RestedXP Legion Remix\a) 神器 武器: 戒律 >> 戒律(治疗者) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Shadow >> 暗影(每秒伤害) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Holy Priest >> 神圣(治疗者) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Discipline >> 戒律(治疗者) Questline
 step
     #include ac) Order Hall Priest Part 2@The Light and the Void-Recruit Ishanah
 step
@@ -11043,7 +11043,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) 神器武器：诡诈
 #displayname 神器武器：诡诈
-#next a) 职业大厅 潜行者 第一部分
+#next a) Order Hall 潜行者 Part 1
 #internal
 
 << Rogue
@@ -11357,7 +11357,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) 神器武器：Subtlety
 #displayname 神器武器：Subtlety
-#next a) Order Hall 潜行者第1部分
+#next a) Order Hall 潜行者 Part 1
 #internal
 
 << Rogue
@@ -11779,7 +11779,7 @@ step
     #completewith Fangs of the Devourer
     .zoneskip 740,1
     .zone 628 >>离开副本（右键点击你的角色框架）或按下宏。
-    .macro Leave Instance,236367 >>离开副本
+    .macro Leave Instance,236367 >> 离开副本
 step
     #requires Fangs of the Devourer
     #hidewindow
@@ -11848,7 +11848,7 @@ RXPGuides.RegisterGuide([[
 << Rogue
 
 step
-    #include a) Artifact Weapon: Assassination
+    #include a) 神器 武器: Assassination
 ]])
 --Outlaw 2
 RXPGuides.RegisterGuide([[
@@ -11864,7 +11864,7 @@ RXPGuides.RegisterGuide([[
 << Rogue
 
 step
-    #include a) Artifact Weapon: Outlaw
+    #include a) 神器武器：诡诈
 ]])
 --Subtlety 2
 RXPGuides.RegisterGuide([[
@@ -11880,7 +11880,7 @@ RXPGuides.RegisterGuide([[
 << Rogue
 
 step
-    #include a) Artifact Weapon: Subtlety
+    #include a) 神器武器：Subtlety
 ]])
 
 --Rogue Order Hall Campaign Part 1
@@ -11959,9 +11959,9 @@ step
     +暂时选择以下指南之一：
     *|cRXP_WARN_你稍后还可以完成其他的任务线|r
     *|cFFFF0000如果你不选择一个，就无法进行下去|r。
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Assassination >>RestedXP Legion Remix\a) 神器 武器: Assassination >> Assassination(每秒伤害) Questline
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Outlaw >>RestedXP Legion Remix\a) 神器 武器: 逃犯 >> 逃犯(每秒伤害) Questline
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Subtlety >>RestedXP Legion Remix\a) 神器 武器: Subtlety >> Subtlety(每秒伤害) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Assassination >> Assassination(每秒伤害) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Outlaw >> 逃犯(每秒伤害) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Subtlety >> Subtlety(每秒伤害) Questline
 step
     #include ac) Order Hall Rogue Part 2@Honoring Success-Lethal Efficiency2
 ]])
@@ -12606,7 +12606,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) 神器 武器：Restoration 萨满祭司
 #displayname 神器 武器: Restoration
-#next a) Order Hall 萨满祭司 第一部分
+#next a) Order Hall 萨满祭司 第1部分
 #internal
 
 << Shaman
@@ -12856,7 +12856,7 @@ RXPGuides.RegisterGuide([[}
 << Shaman
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Elemental
+    #include RestedXP军团再临：幻境新生\a) 神器 武器: 元素
 ]])
 --Enhancement 2
 RXPGuides.RegisterGuide([[}
@@ -12872,7 +12872,7 @@ RXPGuides.RegisterGuide([[}
 << Shaman
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Enhancement
+    #include RestedXP军团再临：幻境新生\a) 神器 武器：Enhancement
 ]])
 --Restoration 2
 RXPGuides.RegisterGuide([[}
@@ -12888,7 +12888,7 @@ RXPGuides.RegisterGuide([[}
 << Shaman
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Restoration Shaman
+    #include RestedXP军团再临：幻境新生\a) 神器 武器：Restoration 萨满祭司
 ]])
 
 --Shaman Order Hall Campaign Part 1
@@ -12955,9 +12955,9 @@ step
     *|cRXP_WARN_重要：选择你已经拥有的那个来获得额外的10%经验值（仅一次）|r
     *|cRXP_WARN_你稍后还可以完成其他的任务线|r
     *|cFFFF0000如果你不选择一个，就无法进行下去|r。
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Elemental >>Remix\a) 神器 武器: 元素 >> 元素(每秒伤害) Questline
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Enhancement >>Remix\a) 神器 武器: Enhancement >> Enhancement(每秒伤害) Questline
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Restoration Shaman >>Remix\a) 神器 武器: Restoration 萨满祭司 >> Restoration(治疗者) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Elemental >> 元素(每秒伤害) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Enhancement >> Enhancement(每秒伤害) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Restoration Shaman >> Restoration(治疗者) Questline
 step
     #include ac) Order Hall Shaman Part 2@A Ring Reforged-Azeroth Needs You
 step
@@ -13558,7 +13558,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(10-80+)|r Order Hall
 #name a) 神器 武器：Destruction
 #displayname 神器 武器：Destruction
-#next a) Order Hall术士 第一部分
+#next a) Order Hall 术士 Part 1
 #internal
 
 << Warlock
@@ -13879,7 +13879,7 @@ RXPGuides.RegisterGuide([[}
 << Warlock
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Affliction
+    #include RestedXP军团再临：幻境新生\a) 神器 武器: Affliction
 ]])
 --Demonology 2
 RXPGuides.RegisterGuide([[}
@@ -13895,7 +13895,7 @@ RXPGuides.RegisterGuide([[}
 << Warlock
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Demonology
+    #include RestedXP军团再临：幻境新生\a) 神器 武器: Demonology
 ]])
 --Destruction 2
 RXPGuides.RegisterGuide([[}
@@ -13911,7 +13911,7 @@ RXPGuides.RegisterGuide([[}
 << Warlock
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Destruction
+    #include RestedXP军团再临：幻境新生\a) 神器 武器：Destruction
 ]])
 
 --Warlock Order Hall Campaign Part 1
@@ -13978,9 +13978,9 @@ step
     *|cRXP_WARN_重要：选择你已经拥有的那个来获得额外的10%经验值（仅一次）|r
     *|cRXP_WARN_你稍后还可以完成其他的任务线|r
     *|cFFFF0000如果你不选择一个，就无法进行下去|r。
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Affliction >>RestedXP Legion Remix\a) 神器 武器: Affliction >> Affliction(每秒伤害) Questline
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Demonology >>RestedXP Legion Remix\a) 神器 武器: Demonology >> Demonology(每秒伤害) Questline
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Destruction >>RestedXP Legion Remix\a) 神器 武器: Destruction >> Destruction(每秒伤害) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Affliction >> Affliction(每秒伤害) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Demonology >> Demonology(每秒伤害) Questline
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Destruction >> Destruction(每秒伤害) Questline
 step
     #include ac) Order Hall Warlock Part 2@Dreadscar-Ritssyn Flamescowl
 step
@@ -14518,7 +14518,7 @@ step
 step
     >>离开副本（右键点击你的角色框架）或按下宏。
     .complete 40043,3 --1/1 Return to Skyhold
-    .macro Leave Instance,236367 >>离开副本
+    .macro Leave Instance,236367 >> 离开副本
 step
     .goto 695,58.35,84.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥丁|r 对话
@@ -14788,7 +14788,7 @@ RXPGuides.RegisterGuide([[
 << Warrior
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Arms
+    #include RestedXP军团再临：幻境新生\a) 神器 武器: Arms
 ]])
 --Fury 2
 RXPGuides.RegisterGuide([[
@@ -14804,7 +14804,7 @@ RXPGuides.RegisterGuide([[
 << Warrior
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Fury
+    #include RestedXP军团再临：幻境新生\a) 神器武器: 狂怒
 ]])
 --Protection 2
 RXPGuides.RegisterGuide([[
@@ -14820,7 +14820,7 @@ RXPGuides.RegisterGuide([[
 << Warrior
 
 step
-    #include RestedXP Legion Remix\a) Artifact Weapon: Warrior Protection
+    #include RestedXP军团再临：幻境新生\a) 神器 武器: 战士 防护
 ]])
 
 --Warrior Order Hall Campaign Part 1
@@ -14891,9 +14891,9 @@ step
     +暂时选择以下指南之一：
     *|cRXP_WARN_你稍后还可以完成其他的任务线|r
     *|cFFFF0000如果你不选择一个，就无法进行下去|r。
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Arms >>RestedXP Legion Remix\a) 神器 武器: Arms >> Arms(每秒伤害) 任务线
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Fury >>RestedXP Legion Remix\a) 神器 武器: 元素之怒 >> 元素之怒(每秒伤害) 任务线
-    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Warrior Protection >>RestedXP Legion Remix\a) 神器 武器: 战士 防护 >> 防护(坦克) 任务线
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Arms >> Arms(每秒伤害) 任务线
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Fury >> 元素之怒(每秒伤害) 任务线
+    .clicknext RestedXP Legion Remix\a) Artifact Weapon: Warrior Protection >> 防护(坦克) 任务线
 step
     #include ac) Order Hall Warrior Part 2@OrderHallPart2Start1-Accept The Eye of Odyn
 ]])

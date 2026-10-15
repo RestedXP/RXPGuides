@@ -231,21 +231,21 @@ step
     .isQuestAvailable 55122
     +立即达到等级 10 并跳过流放者离岛，通过选择 |cRXP_WARN_下面的指南|r
     *|cRXP_WARN_如果你想继续流放者离岛，请不要使用此指南|r。
-    .clicknext RestedXP Speed Leveling\a) No House Skip >>加速升级\a) 不跳过房屋 >>点击此处查看指南
+    .clicknext RestedXP Speed Leveling\a) No House Skip >>点击此处查看指南
 step
     .goto 2352,57.44,26.64
     .zoneskip 2352,1
     .zone 84 >>点击 |cRXP_PICK_传送门|r
-    指南，加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A << Alliance
-    指南，加速升级\b1) BfA 序章 << Horde
+    .skipto guide,RestedXP Speed Leveling\ba) DF Alliance Intro Midnight (A) << Alliance
+    .skipto guide,RestedXP Speed Leveling\b1) BfA Intro << Horde
     .zoneskip 85
 step
     #label HousingSelect
     .zoneskip 2351,1
     .goto 2351,53.93,49.4
     .zone 85 >>点击 |cRXP_PICKs_传送门|r
-    指南，加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A << Alliance
-    指南，加速升级\b1) BfA 序章 << Horde
+    .skipto guide,RestedXP Speed Leveling\ba) DF Alliance Intro Midnight (A) << Alliance
+    .skipto guide,RestedXP Speed Leveling\b1) BfA Intro << Horde
     .zoneskip 84
 step
     .goto 1409,61.88,82.89
@@ -1827,15 +1827,15 @@ step
     .goto 2352,57.44,26.64
     .zoneskip 2352,1
     .zone 84 >>点击 |cRXP_PICK_传送门|r
-    指南，加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A << Alliance
-    指南，加速升级\b1) BfA 序章 << Horde
+    .skipto guide,RestedXP Speed Leveling\ba) DF Alliance Intro Midnight (A) << Alliance
+    .skipto guide,RestedXP Speed Leveling\b1) BfA Intro << Horde
     .zoneskip 85
 step
     .goto 2351,53.93,49.4
     .zoneskip 2351,1
     .zone 85 >>点击 |cRXP_PICK_传送门|r
-    指南，加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A << Alliance
-    指南，加速升级\b1) BfA 序章 << Horde
+    .skipto guide,RestedXP Speed Leveling\ba) DF Alliance Intro Midnight (A) << Alliance
+    .skipto guide,RestedXP Speed Leveling\b1) BfA Intro << Horde
     .zoneskip 84
 ]])
 --Death Knight Plaguelands: The Scarlet Enclave
@@ -1846,8 +1846,8 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name a) DK初始任务
 #displayname |cFF1EFF001|r - 瘟疫之地
-#next RestedXP 加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A << Alliance
-#next b1) 争霸艾泽拉斯开场 << Horde
+#next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟) << Alliance
+#next b1) 争霸艾泽拉斯介绍 << Horde
 
 
 << DK !Pandaren !KulTiran !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !HighmountainTauren !ZandalariTroll !Nightborne !Vulpera !MagharOrc
@@ -1925,7 +1925,7 @@ step
     .complete 12842,1 --Weapon emblazoned (1)
     .macro Runeforging,237523 >>符文熔铸
 step
-    #title |cFFFCDC00NPC巡逻|r
+    #title |cFFFCDC00NPC 巡逻|r
     #loop
     .goto 124,47.6,29.72,30,0
     .goto 124,49.42,28.17,30,0
@@ -2225,7 +2225,7 @@ step
     .goto 124,51.44,39.07,30,0
     .goto 124,52.94,37.23
     *|cRXP_WARN_在活跃物品栏使用“移除黑暗宏”|r
-    .cast vehicle,52362 >>vehicle,52362 >>在路点位置使用 |T136129:0|t[骑手的召唤1)]。
+    .cast vehicle,52362 >>在路点位置使用 |T136129:0|t[骑手的召唤1)]。
     .timer 13,剧情表演
     .macro Remove Darkness,136223 >>移除黑暗
     .macro Leave Vehicle,6656430 >>离开载具
@@ -2357,7 +2357,7 @@ step
 step
     #completewith Victory At Death's Breach!
     .goto 124,67.71,39
-    .cast vehicle,52588 >>vehicle,52588 >>使用|T135766:0|t[3]让狮鹫把你接走。
+    .cast vehicle,52588 >>使用|T135766:0|t[3]让狮鹫把你接走。
     *使用“活动物品”中的宏命令跳下。
     .hs >>使用|T134414:0|t[天灾石]前往阿彻鲁斯。
     .cooldown item,40582,>0,1
@@ -2651,7 +2651,7 @@ step
 step
     #requires Behind Scarlet Lines
     .goto 124,54.29,57.31
-    #title |cFFFCDC00重新装备武器|r
+    #title |cFFFCDC00重新装备旧武器|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯雷塞斯王子|r 对话
     .turnin 12720 >>交任务 说服者
     .accept 12723 >>接受任务 深入血色敌后
@@ -3003,7 +3003,7 @@ step << Alliance Human
     .turnin 12742,1 >>交任务 特殊的怜悯
     .target 骑士指挥官瘟疫铁拳
 step << Horde
-    #title |cFFFCDC00NPC巡逻|r
+    #title |cFFFCDC00NPC 巡逻|r
     #loop
     .goto 124,52.84,82.41,15,0
     .goto 124,52.61,80.97,15,0
@@ -3526,7 +3526,7 @@ step << Alliance
     .turnin 13188 >>交任务 王者之城
     .target 安度因·乌瑞恩
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
+    #include RestedXP 快速升级\a) GC 克罗米时间 普通
 step << Horde
     #completewith next
     #label Saurfang's Blessing
@@ -3590,8 +3590,8 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name a) 新建DK初始任务
 #displayname |cFF1EFF001|r - 冰封王座
-#next RestedXP 加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A << Alliance
-#next b1) 争霸艾泽拉斯开场 << Horde
+#next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟) << Alliance
+#next b1) 争霸艾泽拉斯介绍 << Horde
 
 << DK Pandaren/DarkIronDwarf DK/KulTiran DK/LightforgedDraenei DK/Mechagnome DK/VoidElf DK/HighmountainTauren DK/Nightborne DK/ZandalariTroll DK/MagharOrc DK/Vulpera DK
 
@@ -3631,7 +3631,7 @@ step << Alliance
     .accept 40519 >>接受任务 军团再临：军团回归
     .choose 1851120
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
+    #include RestedXP 快速升级\a) GC 克罗米时间 普通
 step << Horde
     .goto 85,40.82,80.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_克罗米|r 对话。
@@ -3686,8 +3686,8 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name a) 恶魔猎手新手任务
 #displayname |cFF1EFF001|r - 马顿
-#next RestedXP 加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A << Alliance
-#next b1) 争霸艾泽拉斯开场 << Horde
+#next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟) << Alliance
+#next b1) 争霸艾泽拉斯介绍 << Horde
 
 << DemonHunter !VoidElf
 
@@ -5037,7 +5037,7 @@ step << Alliance
     .accept 44473 >>接受任务 联盟的武器
     .target 安度因·乌瑞恩
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart3-CallBoardEnd
+    #include RestedXP 快速升级\a) GC 克罗米时间 普通@CallBoardStart3-CallBoardEnd
 -- step << Alliance
 --     #completewith next
 --     #label Weapon of the Alliance
@@ -5136,8 +5136,8 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name a) 龙希尔新手任务
 #displayname |cFF1EFF001|r - 禁忌离岛
-#next RestedXP 加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A << Alliance
-#next b1) 争霸艾泽拉斯开场 << Horde
+#next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟) << Alliance
+#next b1) 争霸艾泽拉斯介绍 << Horde
 
 << Dracthyr
 
@@ -5183,7 +5183,7 @@ step << !Evoker
     .skipgossipid 51901
     .target 克罗米
 step << !Evoker Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
+    #include RestedXP 快速升级\a) GC 克罗米时间 普通
 step << !Evoker Horde
     .goto 85,40.834,80.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗米|r对话 |cRXP_WARN_[1]|r。
@@ -5528,7 +5528,7 @@ step << Evoker
 step << Evoker
     .goto 2118,43.78,61.29
     >>使用 |T4622458:0|t[火焰吐息]，|cRXP_WARN_按住技能蓄力|r 至 |cRXP_WARN_强化1-3级|r。
-    *>>>>|TInterface/cursor/crosshair/interact.blp:17|t点击 |cRXP_PICK_石头|r 以重置其冷却时间。
+    *>>|TInterface/cursor/crosshair/interact.blp:17|t点击 |cRXP_PICK_石头|r 以重置其冷却时间。
     .complete 64872,1 --Cast an Empowered I Fire Breath
     .complete 64872,2 --Cast an Empowered II Fire Breath
     .complete 64872,3 --Cast an Empowered III Fire Breath
@@ -6173,7 +6173,7 @@ step << Alliance Evoker
     .turnin 66513 >>交任务 探路假期
 	.target 鳞长阿苏拉泰
 step << Alliance Evoker
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
+    #include RestedXP 快速升级\a) GC 克罗米时间 普通
 -- step << Alliance Evoker
 --     .goto 84,79.84,27.05
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrathion|r.
@@ -6324,9 +6324,9 @@ RXPGuides.RegisterGuide([[
 #group RestedXP 快速升级
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name a) 熊猫人初始剧情
-#displayname 迷踪岛|cRXP_ENEMY_（替代方案）|r
-#next RestedXP 加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A << Alliance
-#next b1) 争霸艾泽拉斯开场 << Horde
+#displayname 迷踪岛|cRXP_ENEMY_（备选版）|r
+#next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟) << Alliance
+#next b1) 争霸艾泽拉斯介绍 << Horde
 
 << Pandaren !DK
 
@@ -7888,7 +7888,7 @@ step
     .goto 378,28.66,62.78,15,0
     .goto 378,28,64.26,15,0
     .goto 378,24.65,69.80,150 >>游到岸边，在神殿前等待。
-    *>>>>在旅行中杀死 |cRXP_ENEMY_monsters|r（|cRXP_WARN_if able(class-dependent)|r。
+    *>>在旅行中杀死 |cRXP_ENEMY_monsters|r（|cRXP_WARN_if able(class-dependent)|r。
     .timer 30,RP
 step
     #requires Locate Dafeng
@@ -8537,7 +8537,7 @@ step << Alliance
     .turnin 30987 >>交任务 加入联盟
     .target 安度因·乌瑞恩
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
+    #include RestedXP 快速升级\a) GC 克罗米时间 普通
 step
     .zoneskip 1,1
     .goto 1,45.58,12.61
@@ -8581,8 +8581,8 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name a) 哈籁尼尔 开场
 #displayname |cFF1EFF001|r - 哈籁恩达尔
-#next RestedXP 加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A << Alliance
-#next b1) 争霸艾泽拉斯开场 << Horde
+#next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟) << Alliance
+#next b1) 争霸艾泽拉斯介绍 << Horde
 
 << Harronir
 
@@ -8590,7 +8590,7 @@ step
     #completewith Invasive Drifter
     .collecttoy 253629,3
     +|cRXP_WARN_你现在可以切换指南来跳过初始区域（更快），或继续正常进行|r。
-    .clicknext RestedXP Speed Leveling\a) Harandar: Skip >>RestedXP 加速升级\a) 哈籁恩达尔: 跳过 >>点击此处查看指南 << Alliance
+    .clicknext RestedXP Speed Leveling\a) Harandar: Skip >>点击此处查看指南 << Alliance
 step
     #hidewindow
     #completewith Enter the rootway
@@ -8819,7 +8819,7 @@ step << Horde
     -- .accept 94444 >>Accept Choose a Path
     .target 黑卫士大使
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal
+    #include RestedXP 快速升级\a) GC 克罗米时间 普通
 ]])
     --Harandar: Skip
 RXPGuides.RegisterGuide([[
@@ -8828,8 +8828,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP 快速升级
 #name a) 哈籁恩达尔: 跳过
 #displayname |cFF1EFF001|r - 哈籁恩达尔 跳过
-#next ba) DF 联盟 Intro 至暗之夜 A << Alliance
-#next b1) 争霸艾泽拉斯开场 << Horde
+#next ba)巨龙时代联盟开场至暗之夜(联盟) << Alliance
+#next b1) 争霸艾泽拉斯介绍 << Horde
 #chapter
 
 << Harronir
@@ -8882,7 +8882,7 @@ step << Horde
     .collecttoy 253629,1
     .achievementComplete 61506,1
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
+    #include RestedXP 快速升级\a) GC 克罗米时间塔楼
 ]])
 --Earthen: Hall of Awakening
 RXPGuides.RegisterGuide([[
@@ -8892,8 +8892,8 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name a) 土灵矮人 开场
 #displayname |cFF1EFF001|r - 觉醒大厅
-#next RestedXP 加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A << Alliance
-#next b1) 争霸艾泽拉斯开场 << Horde
+#next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟) << Alliance
+#next b1) 争霸艾泽拉斯介绍 << Horde
 
 << EarthenDwarf
 
@@ -8901,7 +8901,7 @@ step
     #completewith Invasive Drifter
     .collecttoy 253629,3
     +|cRXP_WARN_你现在可以切换指南来跳过初始区域（更快），或继续正常进行|r。
-    .clicknext RestedXP Speed Leveling\a) Hall of Awakening: Skip >>RestedXP 加速升级\a) 觉醒大厅: 跳过 >>点击此处查看指南 << Alliance
+    .clicknext RestedXP Speed Leveling\a) Hall of Awakening: Skip >>点击此处查看指南 << Alliance
 step
     .goto 2322,89.38,48.77,3,0
     .goto 2322,89.45,48.04
@@ -9116,7 +9116,7 @@ step << Alliance
     .target Ambassador Moorgard
     .accept 81887 >>接受任务 异乡异客
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP 快速升级\a) GC 克罗米时间 普通@ChromieTime-ChromieTime
 -- step << Alliance
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -9131,7 +9131,7 @@ step << Alliance
     .turnin 81887 >>交任务 异乡异客
     .target Adhelda
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
+    #include RestedXP 快速升级\a) GC 克罗米时间 普通@CallBoardStart-CallBoardEnd
 step << Horde
     #completewith next
     #label For the Horde
@@ -9161,8 +9161,8 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name a) 觉醒大厅: 跳过
 #displayname |cFF1EFF001|r - 觉醒大厅 跳过
-#next ba) DF 联盟 Intro 至暗之夜 A << Alliance
-#next b1) 争霸艾泽拉斯开场 << Horde
+#next ba)巨龙时代联盟开场至暗之夜(联盟) << Alliance
+#next b1) 争霸艾泽拉斯介绍 << Horde
 #chapter
 
 << EarthenDwarf
@@ -9186,7 +9186,7 @@ step << Horde
     .zone 85 >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_Portal to 奥格瑞玛|r
     .collecttoy 253629,3
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
+    #include RestedXP 快速升级\a) GC 克罗米时间塔楼
 
 ]])
 --Arathi Highlands Returning Player
@@ -9196,8 +9196,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP 快速升级
 #name a) 阿拉希高地 回归玩家
 #displayname 阿拉希高地 升级追赶攻略|cRXP_ENEMY_（备选版）|r
-#next RestedXP 加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A << Alliance
-#next b1) 争霸艾泽拉斯开场 << Horde
+#next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟) << Alliance
+#next b1) 争霸艾泽拉斯介绍 << Horde
 #internal
 
 step
@@ -9353,7 +9353,7 @@ step << Horde
 step
     #completewith Catapults destroyed
     >>击杀 |cRXP_ENEMY_食人魔|r，|cRXP_ENEMY_狗头人|r和|cRXP_ENEMY_豺狼人|r。
-    *>>>>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_物体|r
+    *>>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_物体|r
     .complete 90893,1,100 --Repel the Ogre Siege (100%)
     .mob 食人魔重击者
     .mob 狗头人 Waxmancer
@@ -9473,12 +9473,12 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name a）流放者离岛联盟
 #displayname |cFF1EFF001|r - 流放者离岛
-#next ba) DF 联盟 Intro 至暗之夜 A
+#next ba)巨龙时代联盟开场至暗之夜(联盟)
 
 << Alliance !Harronir !Dracthyr !DemonHunter !DK !KulTiran !EarthenDwarf !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
 
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach
+    #include RestedXP 快速升级\a) 流放者离岛
 ]])
 
 --Draenei: Ammen Vale
@@ -10139,8 +10139,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP 快速升级
 #name a) 埃门谷: 跳过
-#next ba) DF 联盟 Intro 至暗之夜 A << Alliance
-#next b1) 争霸艾泽拉斯开场 << Horde
+#next ba)巨龙时代联盟开场至暗之夜(联盟) << Alliance
+#next b1) 争霸艾泽拉斯介绍 << Horde
 #chapter
 #internal
 
@@ -10157,7 +10157,7 @@ RXPGuides.RegisterGuide([[
 #name ac) 德莱尼 秘蓝岛
 #displayname |cFF1EFF002|r - 秘蓝岛
 #defaultfor Draenei !DK
-#next RestedXP 加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A
+#next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟)
 
 << Alliance
 
@@ -10631,16 +10631,16 @@ step
 
 step
     #xprate >1.3
-    #include RestedXP Speed Leveling\a) Azuremyst Isle >1.3 XP Rate
+    #include RestedXP 快速升级\a) 秘蓝岛 >1.3 倍经验值
 step
     #xprate <1.3
-    #include RestedXP Speed Leveling\a) Azuremyst Isle <1.3 XP Rate
+    #include RestedXP 快速升级\a) 秘蓝岛 <1.3 倍经验值
 step
     #xprate 1.25-1.3
-    #include RestedXP Speed Leveling\a) Azuremyst Isle 1.25-1.3 XP XP Rate
+    #include RestedXP 快速升级\a) 秘蓝岛 1.25-1.3 倍经验值
 step
     #xprate <1.25
-    #include RestedXP Speed Leveling\a) Azuremyst Isle <1.25 XP Rate
+    #include RestedXP 快速升级\a) 秘蓝岛 <1.25 倍经验值
 
 -- ******************** ROUTES INTERSECT HERE ********************--
 
@@ -10987,14 +10987,14 @@ step
     #label HousingDraenei
     .zoneskip 97,1
     .zone 2352 >>使用房屋查找器传送至某处邻里，不要用|T7252953:0|t[传送至地块]，然后乘坐|cRXP_PICK_暴风城传送门|r。
-    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>https://www.youtube.com/watch?v=uVkUB7z0njo>>点击观看视频
+    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>点击观看视频
     .macro House Teleport, 975747 >>房屋传送
 step << Alliance
     .goto 2352,57.43,26.65
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_传送门|r
     .zoneskip 2352,1
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
+    #include RestedXP 快速升级\a) GC 克罗米时间塔楼
 
 
 ]])
@@ -12551,8 +12551,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP 快速升级
 #name a) 寒脊山谷：跳过
-#next ba) DF 联盟 Intro 至暗之夜 A << Alliance
-#next b1) 争霸艾泽拉斯开场 << Horde
+#next ba)巨龙时代联盟开场至暗之夜(联盟) << Alliance
+#next b1) 争霸艾泽拉斯介绍 << Horde
 #chapter
 #internal
 
@@ -12764,14 +12764,14 @@ step << Gnome Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_贝西·冰雹|r对话。
     .turnin 26197 >>交任务 诺莫瑞根的未来
     .accept 26421 >>接受任务 晋见大工匠
-    .target Bipsi Frostflinger",  "grounding_notes": "No annotations. NPC proper noun kept in English.
+    .target 比普西·冰霜投掷者
 step << Gnome Priest
     .xp >10,1
     .goto 469,39.46,28.8
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_“怪医”克斯宾|r 对话。
     .turnin 26199 >>交任务 诺莫瑞根的未来
     .accept 26422 >>接受任务 晋见大工匠
-    .target "怪医"克斯宾",  "grounding_notes": "No annotations. NPC name with epithet kept in Chinese as provided.
+    .target 怪医克斯宾
 step << Gnome Warlock
     .xp >10,1
     #completewith next
@@ -12836,7 +12836,7 @@ step << Gnome Hunter
     .turnin 41217 >>交任务 诺莫瑞根的未来
     .accept 41218 >>接受任务 晋见大工匠
     .disablecheckbox
-    .target Muffinus Chromebrew",  "grounding_notes": "No annotations. NPC proper noun kept in English.
+    .target 穆芬努斯·铬酿师
 step << Gnome Hunter
     .xp >10,1
     #completewith The Future of Gnomeregan
@@ -12849,7 +12849,7 @@ step << Gnome Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_穆菲努斯·铬酒|r对话。
     .turnin 41217 >>交任务 诺莫瑞根的未来
     .accept 41218 >>接受任务 晋见大工匠
-    .target Muffinus Chromebrew",  "grounding_notes": "No annotations. NPC proper noun kept in English.
+    .target 穆芬努斯·铬酿师
 step
     .xp >10,1
     .goto 469,38.95,32.3
@@ -12876,7 +12876,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大工匠梅卡托克|r 对话。
     .turnin 26208 >>交任务 战斗继续
     .accept 26566 >>接受任务 侏儒才智的胜利
-    .target 大工匠梅卡托克",  "grounding_notes": "No annotations. NPC name already in Chinese, kept as provided.
+    .target 大工匠梅卡托克
 step
     .xp >10,1
     .goto 469,40.578,28.021
@@ -13444,8 +13444,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP 快速升级
 #name a) 新工匠镇：跳过
-#next ba) DF 联盟 Intro 至暗之夜 A << Alliance
-#next b1) 争霸艾泽拉斯开场 << Horde
+#next ba)巨龙时代联盟开场至暗之夜(联盟) << Alliance
+#next b1) 争霸艾泽拉斯介绍 << Horde
 #chapter
 #internal
 
@@ -13462,7 +13462,7 @@ RXPGuides.RegisterGuide([[
 #name ac) 矮人和地精 丹莫罗
 #displayname |cFF1EFF002|r - 丹莫罗
 #defaultfor Dwarf Gnome !DK
-#next RestedXP 加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A
+#next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟)
 
 << Alliance
 
@@ -14635,14 +14635,14 @@ step
 step
     .zoneskip 27,1
     .zone 2352 >>使用房屋查找器传送至某处邻里，不要用|T7252953:0|t[传送至地块]，然后乘坐|cRXP_PICK_暴风城传送门|r。
-    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>https://www.youtube.com/watch?v=uVkUB7z0njo>>点击观看视频
+    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>点击观看视频
     .macro House Teleport, 975747 >>房屋传送
 step << Alliance
     .goto 2352,57.43,26.65
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_传送门|r
     .zoneskip 2352,1
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
+    #include RestedXP 快速升级\a) GC 克罗米时间塔楼
 -- step
 --     .goto 27,82.85,48.41
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Bahrum|r
@@ -15223,8 +15223,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP 快速升级
 #name a) 北郡山谷：跳过
-#next ba) DF 联盟 Intro 至暗之夜 A << Alliance
-#next b1) 争霸艾泽拉斯开场 << Horde
+#next ba)巨龙时代联盟开场至暗之夜(联盟) << Alliance
+#next b1) 争霸艾泽拉斯介绍 << Horde
 #chapter
 #internal
 
@@ -15241,7 +15241,7 @@ RXPGuides.RegisterGuide([[
 #name ac) 艾尔文森林 1
 #displayname |cFF1EFF002|r - 艾尔文森林
 #defaultfor Human !DK
-#next RestedXP 加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A
+#next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟)
 
 << Alliance
 
@@ -16368,7 +16368,7 @@ step
     .accept 40519 >>接受任务 军团再临：军团回归
     .choose 1851120
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP 快速升级\a) GC 克罗米时间 普通@ChromieTime-ChromieTime
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -16852,8 +16852,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP 快速升级
 #name a) 幽影谷：跳过
-#next ba) DF 联盟 Intro 至暗之夜 A << Alliance
-#next b1) 争霸艾泽拉斯开场 << Horde
+#next ba)巨龙时代联盟开场至暗之夜(联盟) << Alliance
+#next b1) 争霸艾泽拉斯介绍 << Horde
 #chapter
 #internal
 
@@ -18033,14 +18033,14 @@ step
 step
     .zoneskip 57,1
     .zone 2352 >>使用房屋查找器传送至某处邻里，不要用|T7252953:0|t[传送至地块]，然后乘坐|cRXP_PICK_暴风城传送门|r。
-    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>https://www.youtube.com/watch?v=uVkUB7z0njo>>点击观看视频
+    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>点击观看视频
     .macro House Teleport, 975747 >>房屋传送
 step << Alliance
     .goto 2352,57.43,26.65
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|t点击|cRXP_PICK_传送门|r
     .zoneskip 2352,1
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
+    #include RestedXP 快速升级\a) GC 克罗米时间塔楼
 ]])
 --Worgen: Gilneas
 RXPGuides.RegisterGuide([[
@@ -18050,7 +18050,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name ab) 狼人 开场
 #displayname 吉尔尼斯|cRXP_ENEMY_（备选版）|r
-#next RestedXP 加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A
+#next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟)
 
 << Alliance Worgen !DK
 
@@ -20856,7 +20856,7 @@ step
     .target 吉恩·格雷迈恩国王
 step
     #completewith Slowing the Inevitable
-    .cast vehicle, 72849 >>载具，72849 >> 使用 |T132182:0|t[飞回]
+    .cast vehicle, 72849 >>使用 |T132182:0|t[飞回]
 step
     #requires Slowing the Inevitable
     .goto 202,32.36,57.04
@@ -21041,7 +21041,7 @@ step
     .goto 57,55.03,93.72
     .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|t点击 |cRXP_PICK_通往暴风城的传送门|r。
 step << Alliance
-    #include RestedXP Speed Leveling\a) GC Chromie Time Tower
+    #include RestedXP 快速升级\a) GC 克罗米时间塔楼
 
 ]])
     --Gilneas: Skip
@@ -21050,8 +21050,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP 快速升级
 #name a) 吉尔尼斯：跳过
-#next ba) DF 联盟 Intro 至暗之夜 A << Alliance
-#next b1) 争霸艾泽拉斯开场 << Horde
+#next ba)巨龙时代联盟开场至暗之夜(联盟) << Alliance
+#next b1) 争霸艾泽拉斯介绍 << Horde
 #chapter
 #internal
 
@@ -21067,7 +21067,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name a) 黑铁矮人 开场
 #displayname |cFF1EFF001|r - 暗炉城
-#next RestedXP 加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A
+#next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟)
 
 << Alliance DarkIronDwarf !DK
 
@@ -21095,7 +21095,7 @@ step
     .accept 53500 >>接受任务 异乡异客
     .target Ambassador Moorgard
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP 快速升级\a) GC 克罗米时间 普通@ChromieTime-ChromieTime
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -21110,7 +21110,7 @@ step
     .turnin 53500 >>交任务 异乡异客
     .target Mudrik Leger
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
+    #include RestedXP 快速升级\a) GC 克罗米时间 普通@CallBoardStart-CallBoardEnd
 ]])
 --KulTiran: Boralus
 RXPGuides.RegisterGuide([[
@@ -21120,7 +21120,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name a) 库尔提拉斯人 开场
 #displayname |cFF1EFF001|r - 伯拉勒斯
-#next RestedXP 加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A
+#next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟)
 
 << Alliance KulTiran !DK
 
@@ -21152,7 +21152,7 @@ step
     .accept 55146 >>接受任务 异乡异客
     .target Ambassador Moorgard
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP 快速升级\a) GC 克罗米时间 普通@ChromieTime-ChromieTime
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -21167,7 +21167,7 @@ step
     .turnin 55146 >>交任务 异乡异客
     .target 补给官 Frey
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
+    #include RestedXP 快速升级\a) GC 克罗米时间 普通@CallBoardStart-CallBoardEnd
 ]])
 --LightforgedDraenei: The Vindicaar
 RXPGuides.RegisterGuide([[
@@ -21177,7 +21177,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name a) 光铸德莱尼 开场
 #displayname |cFF1EFF001|r - 维迪卡尔
-#next RestedXP 加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A
+#next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟)
 
 << Alliance LightforgedDraenei !DK
 
@@ -21207,7 +21207,7 @@ step
     .accept 50313 >>接受任务 异乡异客
     .target Ambassador Moorgard
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP 快速升级\a) GC 克罗米时间 普通@ChromieTime-ChromieTime
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -21222,7 +21222,7 @@ step
     .turnin 50313 >>交任务 异乡异客
     .target Vindicator Minkey
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
+    #include RestedXP 快速升级\a) GC 克罗米时间 普通@CallBoardStart-CallBoardEnd
 ]])
 --Mechagnome: Mechagon City
 RXPGuides.RegisterGuide([[
@@ -21232,7 +21232,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name a) 机械侏儒 开场
 #displayname |cFF1EFF001|r - 麦卡贡市
-#next RestedXP 加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A
+#next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟)
 
 << Alliance Mechagnome !DK
 
@@ -21252,7 +21252,7 @@ step
     .accept 58147 >>接受任务 异乡异客
     .target Ambassador Moorgard
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP 快速升级\a) GC 克罗米时间 普通@ChromieTime-ChromieTime
 -- step
 --     .goto 84,56.257,17.311
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chromie|r |cRXP_WARN_[2]|r.
@@ -21267,7 +21267,7 @@ step
     .turnin 58147 >>交任务 异乡异客
     .target Lulana
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@CallBoardStart-CallBoardEnd
+    #include RestedXP 快速升级\a) GC 克罗米时间 普通@CallBoardStart-CallBoardEnd
 ]])
 --VoidElf: Telogrus Rift
 RXPGuides.RegisterGuide([[
@@ -21277,7 +21277,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name a) 虚空精灵 开场
 #displayname |cFF1EFF001|r - 泰洛古斯裂隙
-#next RestedXP 加速升级\ba) 巨龙时代 联盟 序章 至暗之夜 A
+#next RestedXP 快速升级\ba)巨龙时代联盟开场至暗之夜(联盟)
 
 << Alliance VoidElf !DK
 
@@ -21306,7 +21306,7 @@ step
     .accept 50305 >>接受任务 异乡异客
     .target Ambassador Moorgard
 step
-    #include RestedXP Speed Leveling\a) GC Chromie Time Normal@ChromieTime-ChromieTime
+    #include RestedXP 快速升级\a) GC 克罗米时间 普通@ChromieTime-ChromieTime
 step
     .goto 84,56.199,17.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_凯拉·暗鸦|r对话。
@@ -21440,7 +21440,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name a) 流放者离岛部落
 #displayname |cFF1EFF001|r - 流放者离岛
-#next b1) 争霸艾泽拉斯开场
+#next b1) 争霸艾泽拉斯介绍
 
 
 << Horde !Harronir !Dracthyr !DemonHunter !DK !Nightborne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
@@ -21596,7 +21596,7 @@ step
     .accept 56775 >>接受任务 热身
     .target 萨尔
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@CombatDummy-CombatDummy
+    #include RestedXP 快速升级\a) 流放者离岛@CombatDummy-CombatDummy
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_萨尔|r 对话。
     .turnin 56775 >>交任务 热身
@@ -21631,7 +21631,7 @@ step
     .turnin 58208 >>交任务 抵御冲击
     .target 萨尔
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@HousingSelect1-HousingSelect2
+    #include RestedXP 快速升级\a) 流放者离岛@HousingSelect1-HousingSelect2
 step
     .zoneskip 1409,1
     .goto 1409,61.88,82.89
@@ -21640,7 +21640,7 @@ step
     .choose 7338834
     .target 萨尔
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@Murlocs-Murlocs
+    #include RestedXP 快速升级\a) 流放者离岛@Murlocs-Murlocs
 step
     .zoneskip 1409,1
     .goto 1409,61.88,82.89
@@ -21669,7 +21669,7 @@ step
     .accept 54952 >>接受任务 寻找失踪的考察队
     .target 萨尔
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@expedition survivors-expedition survivors
+    #include RestedXP 快速升级\a) 流放者离岛@expedition survivors-expedition survivors
 step
     .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_督军布雷卡·恐斧|r 对话。
@@ -21678,7 +21678,7 @@ step
     .goto 1409,58.39,74.57
     .target +督军布雷卡·恐斧
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@Raw Meat-campfire
+    #include RestedXP 快速升级\a) 流放者离岛@Raw Meat-campfire
 step << Hunter
     .zoneskip 1409,1
     .goto 1409,58.36,74.47
@@ -21703,7 +21703,7 @@ step << !Hunter
     .goto 1409,58.38,74.63
     .target +嘉里克船长
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@ClassQuests-ClassQuests
+    #include RestedXP 快速升级\a) 流放者离岛@ClassQuests-ClassQuests
 step << !Hunter
     .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_FRIENDLY_剧情结束后|r与|cRXP_FRIENDLY_督军布雷卡·恐斧|r和|cRXP_WARN_雯莎|r 对话。
@@ -21724,7 +21724,7 @@ step
     .accept 55186 >>接受任务 打倒野猪人 <<!Hunter
     .target 米斯德兰·寻曦者
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@HunterTameStart-HunterTameEnd
+    #include RestedXP 快速升级\a) 流放者离岛@HunterTameStart-HunterTameEnd
 step << Hunter
     .zoneskip 1409,1
     .goto 1409,62.72,69.85
@@ -21734,7 +21734,7 @@ step << Hunter
     .accept 55186 >>接受任务 打倒野猪人
     .target 米斯德兰·寻曦者
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@Quilboar Shadow Magic-QuilboarEnd
+    #include RestedXP 快速升级\a) 流放者离岛@Quilboar Shadow Magic-QuilboarEnd
 step
     .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米斯德兰·寻曦者|r 和 |cRXP_FRIENDLY_考克·菲兹波普|r 对话。
@@ -21818,7 +21818,7 @@ step
     .timer 12.5,RP
     .mob 巨尸
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@GiantBoarEnd-GiantBoarEnd
+    #include RestedXP 快速升级\a) 流放者离岛@GiantBoarEnd-GiantBoarEnd
 step
     .zoneskip 1409,1
     .goto 1409,52.59,53.34
@@ -21855,7 +21855,7 @@ step << Warrior/Warlock/Paladin/Priest/Rogue
     .accept 58962 >>接受任务 术士的交易 << Warlock
     .target 步兵索格
 step << Shaman
-    #include RestedXP Speed Leveling\a) Exile's Reach@GhostWolf-GhostWolf
+    #include RestedXP 快速升级\a) 流放者离岛@GhostWolf-GhostWolf
 step
     .zoneskip 1409,1
     .goto 1409,52.89,56.47
@@ -21870,11 +21870,11 @@ step
     .timer 33,RP
     .target 修加·恐斧
 step << Shaman
-    #include RestedXP Speed Leveling\a) Exile's Reach@VeilBlossomStart-VeilBlossomEnd
+    #include RestedXP 快速升级\a) 流放者离岛@VeilBlossomStart-VeilBlossomEnd
 step << Warlock
-    #include RestedXP Speed Leveling\a) Exile's Reach@WarlockClassStart-WarlockClassEnd
+    #include RestedXP 快速升级\a) 流放者离岛@WarlockClassStart-WarlockClassEnd
 step << Warrior
-    #include RestedXP Speed Leveling\a) Exile's Reach@Hjalmar's Final Execution-Execute
+    #include RestedXP 快速升级\a) 流放者离岛@Hjalmar's Final Execution-Execute
 step << !Shaman\!Warlock\!Warrior
     .zoneskip 1409,1
     .goto 1409,55.71,48.32,15,0
@@ -21899,7 +21899,7 @@ step
     .goto 1409,56.83,46.18
     .target +Shuja Grimaxe
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@HarpiesAreaStart-HarpiesAreaEnd
+    #include RestedXP 快速升级\a) 流放者离岛@HarpiesAreaStart-HarpiesAreaEnd
 step
     .zoneskip 1409,1
     .goto 1409,54.29,41.61
@@ -21910,7 +21910,7 @@ step
     .target 赫伯特·暗爆
     .mob 血喙
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@HarpiesAreaEnd2-HarpiesAreaEnd2
+    #include RestedXP 快速升级\a) 流放者离岛@HarpiesAreaEnd2-HarpiesAreaEnd2
 step
     .zoneskip 1409,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫伯特·暗爆|r, |cRXP_FRIENDLY_布尔|r, 和 |cRXP_FRIENDLY_修加·恐斧|r 对话。
@@ -21925,15 +21925,15 @@ step
     .goto 1409,56.83,46.18
     .target +修加·恐斧
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@LightspawnStart1-LightspawnEnd2
+    #include RestedXP 快速升级\a) 流放者离岛@LightspawnStart1-LightspawnEnd2
 step << Priest
-    #include RestedXP Speed Leveling\a) Exile's Reach@PriestClass1-PriestClass1
+    #include RestedXP 快速升级\a) 流放者离岛@PriestClass1-PriestClass1
 step << Paladin
-    #include RestedXP Speed Leveling\a) Exile's Reach@PaladinClass1Start-PaladinClass1End
+    #include RestedXP 快速升级\a) 流放者离岛@PaladinClass1Start-PaladinClass1End
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@Freeing the Light-Freeing the Light
+    #include RestedXP 快速升级\a) 流放者离岛@Freeing the Light-Freeing the Light
 step << Shaman
-    #include RestedXP Speed Leveling\a) Exile's Reach@Capturedghostwolves1-Capturedghostwolves2
+    #include RestedXP 快速升级\a) 流放者离岛@Capturedghostwolves1-Capturedghostwolves2
 step << Priest
     .zoneskip 1409,1
     .goto 1409,56.12,53.7
@@ -21942,7 +21942,7 @@ step << Priest
     .accept 58960 >>接受任务 复活新兵
     .target 夏祖尔
 step << Priest
-    #include RestedXP Speed Leveling\a) Exile's Reach@PriestsEnd1-PriestsEnd1
+    #include RestedXP 快速升级\a) 流放者离岛@PriestsEnd1-PriestsEnd1
 step << Priest
     .zoneskip 1409,1
     .goto 1409,56.12,53.7
@@ -21976,7 +21976,7 @@ step << Rogue
     .skipgossipid 52645
     .target 德莉扎·侧袭者
 step << Rogue
-    #include RestedXP Speed Leveling\a) Exile's Reach@RogueExilesStart1-RogueExilesEnd1
+    #include RestedXP 快速升级\a) 流放者离岛@RogueExilesStart1-RogueExilesEnd1
 step << Rogue
     .zoneskip 1409,1
     .goto 1409,45.66,56.14
@@ -21985,7 +21985,7 @@ step << Rogue
     .accept 58933 >>接受任务 最致命的药膏
     .target 德莉扎·侧袭者
 step << Rogue
-    #include RestedXP Speed Leveling\a) Exile's Reach@RogueExilesStart2-RogueExilesEnd2
+    #include RestedXP 快速升级\a) 流放者离岛@RogueExilesStart2-RogueExilesEnd2
 step << Hunter
     .zoneskip 1409,1
     .goto 1409,52.56,55.44
@@ -22000,7 +22000,7 @@ step << Hunter
     .skipgossipid 52664
     .target 赫伯特·暗爆
 step << Hunter
-    #include RestedXP Speed Leveling\a) Exile's Reach@Rusted Chain-Old Spring
+    #include RestedXP 快速升级\a) 流放者离岛@Rusted Chain-Old Spring
 step << Hunter
     .zoneskip 1409,1
     .goto 1409,52.56,55.44
@@ -22009,7 +22009,7 @@ step << Hunter
     .accept 59356 >>接受任务 狩猎潜伏者
     .target 米斯德兰·寻曦者
 step << Hunter
-    #include RestedXP Speed Leveling\a) Exile's Reach@Freezing trap-Freezing trap
+    #include RestedXP 快速升级\a) 流放者离岛@Freezing trap-Freezing trap
 step << Hunter
     .zoneskip 1409,1
    .goto 1409,52.56,55.44
@@ -22018,7 +22018,7 @@ step << Hunter
     .accept 60168 >>接受任务 驯服的艺术
     .target 米斯德兰·寻曦者
 step << Hunter
-    #include RestedXP Speed Leveling\a) Exile's Reach@DismissPet-DismissPet
+    #include RestedXP 快速升级\a) 流放者离岛@DismissPet-DismissPet
 step << Hunter
     .zoneskip 1409,1
     #completewith next
@@ -22123,7 +22123,7 @@ step << Mage
     .accept 59352 >>接受任务 法师的知识
     .target 赫伯特·暗爆
 step << Mage
-    #include RestedXP Speed Leveling\a) Exile's Reach@Spell Book-Spell Book
+    #include RestedXP 快速升级\a) 流放者离岛@Spell Book-Spell Book
 step << Mage
     .zoneskip 1409,1
     .goto 1409,52.16,55.49
@@ -22185,7 +22185,7 @@ step
     .goto 1409,51.11,59.52
     .target +拉娜·乔丹
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@Trapped Expedition-Expedition Member4
+    #include RestedXP 快速升级\a) 流放者离岛@Trapped Expedition-Expedition Member4
 step
     .zoneskip 1409,1
     #completewith next
@@ -22272,7 +22272,7 @@ step << Druid
     .accept 59350 >>接受任务 德鲁伊的形态
     .target 科蕾娜·大地之女
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@DruidStone-DruidStone
+    #include RestedXP 快速升级\a) 流放者离岛@DruidStone-DruidStone
 step << Druid
     .zoneskip 1409,1
     .goto 1409,45.51,49.28
@@ -22329,7 +22329,7 @@ step
     .skipgossipid 54297
     .target 赫伯特·暗爆
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@DarkmaulCitadelStart-DarkmaulCitadelEnd
+    #include RestedXP 快速升级\a) 流放者离岛@DarkmaulCitadelStart-DarkmaulCitadelEnd
 step
     .zoneskip 1409,1
     #completewith next
@@ -22365,7 +22365,7 @@ step
     .goto 1409,40.3,32.7
     .target +修加·恐斧
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@Wug's ward-Ogres
+    #include RestedXP 快速升级\a) 流放者离岛@Wug's ward-Ogres
 step
     .zoneskip 1409,1
     #completewith next
@@ -22415,7 +22415,7 @@ step
     .accept 55992 >>接受任务 地下城：暗槌堡垒
     .target 督军穆尔格林·雷行者
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@Controlling their Stones-Darkmaul Citadel
+    #include RestedXP 快速升级\a) 流放者离岛@Controlling their Stones-Darkmaul Citadel
 step
     .zoneskip 1409,1
     .goto 1409,39.65,31.99
@@ -22424,7 +22424,7 @@ step
     .accept 55991 >>接受任务 终结与开始
     .target 萨尔
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach@Kalecgos1-Kalecgos1
+    #include RestedXP 快速升级\a) 流放者离岛@Kalecgos1-Kalecgos1
 step
     .goto 2022,81.23,28.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_卡雷苟斯|r 对话。
@@ -22473,7 +22473,7 @@ step
     .target 娜蕾迪亚·流光
 step
     .zone 2351 >>使用房屋查找器传送至某处邻里，不要用|T7252953:0|t[传送至地块]，然后乘坐|cRXP_PICK_暴风城传送门|r。
-    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>https://www.youtube.com/watch?v=uVkUB7z0njo>>点击观看视频
+    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>点击观看视频
     .macro House Teleport, 975747 >>房屋传送
     .skyriding
 step
@@ -23376,7 +23376,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name ac) 血精灵 永歌森林
 #displayname |cFF1EFF002|r - 永歌森林
-#next b1) 争霸艾泽拉斯开场
+#next b1) 争霸艾泽拉斯介绍
 #defaultfor BloodElf !DK
 
 << Horde
@@ -23789,7 +23789,7 @@ step
 step
     .zoneskip 110,1
     .zone 2351 >>使用房屋查找器传送至某处邻里，不要用|T7252953:0|t[传送至地块]，然后乘坐|cRXP_PICK_暴风城传送门|r。
-    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>https://www.youtube.com/watch?v=uVkUB7z0njo>>点击观看视频
+    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>点击观看视频
     .macro House Teleport, 975747 >>房屋传送
 
 ]])
@@ -24170,7 +24170,7 @@ RXPGuides.RegisterGuide([[
 #displayname 回音群岛|cRXP_ENEMY_（备选版）|r << Troll
 #displayname |cFF1EFF002|r - 回音群岛 << !Troll
 #next ab) 试炼谷2 << Troll
-#next b1) 争霸艾泽拉斯开场 << !Troll
+#next b1) 争霸艾泽拉斯介绍 << !Troll
 #defaultfor Orc !DK/Troll !DK
 
 << Horde
@@ -24202,7 +24202,7 @@ step << Orc
     .turnin 25133 >>交任务 去森金村报到
     .target 加德林大师
 step << Orc
-    #completwith 去森金村报到
+    #completwith ReportToSenjinVillage
     .goto 461,68.14,69.72,20,0
     .goto 461,71.74,67.17,20 >>离开试炼谷
 step << Orc
@@ -25095,7 +25095,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name ac) 牛头人营地莫高雷
 #displayname |cFF1EFF002|r - 莫高雷
-#next b1) 争霸艾泽拉斯开场
+#next b1) 争霸艾泽拉斯介绍
 #defaultfor Tauren !DK
 
 << Horde
@@ -25552,8 +25552,8 @@ step
     *2) 使用 |T237388:0|t[侦察地图: Walking Kalimdor with the Earthmother] 道具并飞往奧格瑞玛
     *3) 跟随箭头并乘坐飞艇前往奧格瑞玛（非常慢）
     *4) 使用 Neighbourhood 传送
-    .link https://www.youtube.com/watch?v=pW3S9iDpn4Q >>https://www.youtube.com/watch?v=pW3S9iDpn4Q >>角色卡死说明视频
-    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>https://www.youtube.com/watch?v=uVkUB7z0njo >>Neighbourhood说明视频
+    .link https://www.youtube.com/watch?v=pW3S9iDpn4Q >>角色卡死说明视频
+    .link https://www.youtube.com/watch?v=uVkUB7z0njo >>Neighbourhood说明视频
     .macro House Teleport, 975747 >>房屋传送
 step
     .goto 88,42.81,39.13,10,0
@@ -25571,7 +25571,7 @@ RXPGuides.RegisterGuide([[
 #name ab) 丧钟镇
 #displayname 丧钟镇|cRXP_ENEMY_（备选版）|r
 #title 丧钟镇
-#next c) 亡灵 提瑞斯法林地
+#next ac) 亡灵 提瑞斯法林地
 #defaultfor Undead !DK
 
 << Horde
@@ -25651,7 +25651,7 @@ step
     .goto 465,44.2,70.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莉莉安·沃斯|r 对话。
     .complete 24960,1 --1/1 Speak with Lilian Voss
-    .target 莉莉安·沃斯",  "grounding_notes": "Already in zh-CN; passed through unchanged
+    .target 莉莉安·沃斯
     .skipgossipid 39163
     .skipgossipid 39164
 step
@@ -25739,7 +25739,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t进入房屋与|cRXP_FRIENDLY_莉莉安·沃斯|r对话。
     >>|cRXP_WARN_她可能在楼下或楼上。（在剧情中）与她对话后，可以直接离开房子，回去找|cRXP_FRIENDLY_新兵艾尔雷斯|r|r。
     .complete 24961,1 --1/1 Show Lilian her reflection
-    .target 莉莉安·沃斯",  "grounding_notes": "Already in zh-CN; passed through unchanged
+    .target 莉莉安·沃斯
     .skipgossipid 38950
 step
     .goto 465,46.7,58.2
@@ -25853,7 +25853,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name ac) 亡灵 提瑞斯法林地
 #displayname |cFF1EFF002|r - 提瑞斯法林地
-#next b1) 争霸艾泽拉斯开场
+#next b1) 争霸艾泽拉斯介绍
 #defaultfor Undead !DK
 
 << Horde
@@ -25891,7 +25891,7 @@ step
     #completewith next
     >>击杀 |cRXP_ENEMY_提瑞斯法农夫|r。
     >>留意稀有|cRXP_ENEMY_暗影猎手|r和|cRXP_ENEMY_农夫索利丹|r。
-    .link https://i.imgur.com/lc7y3b4.jpeg >>https://media.restedxp.com/u/kL69C6.jpeg >>可以从截图所示位置攻击|cRXP_ENEMY_暗影猎手|r。
+    .link https://i.imgur.com/lc7y3b4.jpeg >>可以从截图所示位置攻击|cRXP_ENEMY_暗影猎手|r。
     .goto 18,40.33,51.42,0
     .goto 18,37.91,51.27,0,0
     .complete 24978,1 --10/10 Tirisfal Farmer slain
@@ -25970,7 +25970,7 @@ step
     .goto 18,31.74,46.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莉莉安·沃斯|r 对话。
     .complete 24979,1 --1/1 Find the Scarlet Prisoner
-    .target 莉莉安·沃斯",  "grounding_notes": "Already in zh-CN; passed through unchanged
+    .target 莉莉安·沃斯
     .skipgossipid 38511
     .skipgossipid 38021
 step
@@ -26392,7 +26392,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name ab) 地精 开场
 #displayname 科赞与失落群岛|cRXP_ENEMY_（备选版）|r
-#next b1) 争霸艾泽拉斯开场
+#next b1) 争霸艾泽拉斯介绍
 
 << Horde Goblin !DK
 
@@ -27090,7 +27090,7 @@ step
     .use 49611
     .goto 174,31.67,65.81
     .complete 14238,1 --10/10 SI:7 Assassin slain
-    .mob 军情七处刺客", "grounding_notes": "Ungrounded; no lookup provided; proper noun type kept as given
+    .mob 军情七处刺客
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基拉格·血牙|r 对话。
     .goto 174,34.61,66.85
@@ -27874,8 +27874,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP 快速升级
 #name a) 科赞 & 失落群岛: 跳过
-#next ba) DF 联盟 Intro 至暗之夜 A << Alliance
-#next b1) BfA Intro << Horde
+#next ba)巨龙时代联盟开场至暗之夜(联盟) << Alliance
+#next b1) 争霸艾泽拉斯介绍 << Horde
 #chapter
 
 << Horde Goblin !DK
@@ -27890,7 +27890,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name a) 至高岭牛头人
 #displayname |cFF1EFF001|r - 至高岭牛头人
-#next b1) BfA Intro
+#next b1) 争霸艾泽拉斯介绍
 
 << Horde HighmountainTauren !DK
 
@@ -27940,7 +27940,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name a) 夜之子 开场
 #displayname |cFF1EFF001|r - 暗夜要塞
-#next b1) BfA Intro
+#next b1) 争霸艾泽拉斯介绍
 
 << Horde Nightborne !DK
 
@@ -27990,7 +27990,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name a) 赞达拉巨魔 开场
 #displayname |cFF1EFF001|r - 达萨罗
-#next b1) BfA Intro
+#next b1) 争霸艾泽拉斯介绍
 
 << Horde ZandalariTroll !DK
 
@@ -28040,7 +28040,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name a) 玛格汉兽人 开场
 #displayname |cFF1EFF001|r - 奥格瑞玛
-#next b1) BfA Intro
+#next b1) 争霸艾泽拉斯介绍
 
 << Horde MagharOrc !DK
 
@@ -28080,7 +28080,7 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFFFCDC00(1-90)|r 默认
 #name a) 狐人 开场
 #displayname |cFF1EFF001|r - 奥格瑞玛
-#next b1) BfA Intro
+#next b1) 争霸艾泽拉斯介绍
 
 << Horde Vulpera !DK
 
@@ -28538,14 +28538,14 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name a) DK初始任务2
 #displayname |cFF1EFF001|r - 瘟疫之地
-#next RestedXP 至暗之夜\ba) 巨龙时代 联盟 序章 至暗之夜 A 2 << Alliance
-#next b1) 争霸艾泽拉斯开场 2 << Horde
+#next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2 << Alliance
+#next b1) 争霸艾泽拉斯介绍 2 << Horde
 
 
 << DK !Pandaren !KulTiran !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !HighmountainTauren !ZandalariTroll !Nightborne !Vulpera !MagharOrc
 
 step
-    #include RestedXP Speed Leveling\a) DK Intro
+    #include RestedXP 快速升级\a) DK初始任务
 ]])
 --Allied Race/Pandaren: The Frozen Throne
 RXPGuides.RegisterGuide([[
@@ -28555,13 +28555,13 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name a) 新建DK初始任务2
 #displayname |cFF1EFF001|r - 冰封王座
-#next RestedXP 至暗之夜\ba) 巨龙时代 联盟 序章 至暗之夜 A 2 << Alliance
-#next b1) 争霸艾泽拉斯开场 2 << Horde
+#next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2 << Alliance
+#next b1) 争霸艾泽拉斯介绍 2 << Horde
 
 << DK Pandaren/DarkIronDwarf DK/KulTiran DK/LightforgedDraenei DK/Mechagnome DK/VoidElf DK/HighmountainTauren DK/Nightborne DK/ZandalariTroll DK/MagharOrc DK/Vulpera DK
 
 step
-    #include RestedXP Speed Leveling\a) New DK Intro
+    #include RestedXP 快速升级\a) 新建DK初始任务
 ]])
 --Demon Hunter: Mardum
 RXPGuides.RegisterGuide([[
@@ -28571,13 +28571,13 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name a) 恶魔猎手新手任务2
 #displayname |cFF1EFF001|r - 马顿
-#next RestedXP 至暗之夜\ba) 巨龙时代 联盟 序章 至暗之夜 A 2 << Alliance
-#next b1) 争霸艾泽拉斯开场 2 << Horde
+#next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2 << Alliance
+#next b1) 争霸艾泽拉斯介绍 2 << Horde
 
 << DemonHunter !VoidElf
 
 step
-    #include RestedXP Speed Leveling\a) DH Intro
+    #include RestedXP 快速升级\a) 恶魔猎手新手任务
 ]])
 --Dracthyr: The Forbidden Reach
 RXPGuides.RegisterGuide([[
@@ -28587,13 +28587,13 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name a) 龙希尔 初始任务2
 #displayname |cFF1EFF001|r - 禁忌离岛
-#next RestedXP 至暗之夜\ba) 巨龙时代 联盟 序章 至暗之夜 A 2 << Alliance
-#next b1) 争霸艾泽拉斯开场 2 << Horde
+#next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2 << Alliance
+#next b1) 争霸艾泽拉斯介绍 2 << Horde
 
 << Dracthyr
 
 step
-    #include RestedXP Speed Leveling\a) Dracthyr Intro
+    #include RestedXP 快速升级\a) 龙希尔新手任务
 ]])
 --Pandaren: The Wandering Isle
 RXPGuides.RegisterGuide([[
@@ -28603,13 +28603,13 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name a) 熊猫人初始剧情2
 #displayname 迷踪岛|cRXP_ENEMY_（备选版）|r
-#next RestedXP 至暗之夜\ba) 巨龙时代 联盟 序章 至暗之夜 A 2 << Alliance
-#next b1) 争霸艾泽拉斯开场 2 << Horde
+#next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2 << Alliance
+#next b1) 争霸艾泽拉斯介绍 2 << Horde
 
 << Pandaren !DK
 
 step
-    #include RestedXP Speed Leveling\a) Pandaren Intro
+    #include RestedXP 快速升级\a) 熊猫人初始剧情
 ]])
 --Haranir: Harandar
 RXPGuides.RegisterGuide([[
@@ -28619,13 +28619,13 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name a) 哈籁尼尔 开场2
 #displayname |cFF1EFF001|r - 哈籁恩达尔
-#next RestedXP 至暗之夜\ba) 巨龙时代 联盟 序章 至暗之夜 A 2 << Alliance
-#next b1) 争霸艾泽拉斯开场 2 << Horde
+#next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2 << Alliance
+#next b1) 争霸艾泽拉斯介绍 2 << Horde
 
 << Harronir
 
 step
-    #include RestedXP Speed Leveling\a) Haranir Intro
+    #include RestedXP 快速升级\a) 哈籁尼尔 开场
 ]])
 --Earthen: Hall of Awakening
 RXPGuides.RegisterGuide([[
@@ -28635,13 +28635,13 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name a) 土灵矮人 开场 2
 #displayname |cFF1EFF001|r - 觉醒大厅
-#next RestedXP 至暗之夜\ba) 巨龙时代 联盟 序章 至暗之夜 A 2 << Alliance
-#next b1) BfA Intro << Horde
+#next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2 << Alliance
+#next b1) 争霸艾泽拉斯介绍 << Horde
 
 << EarthenDwarf
 
 step
-    #include RestedXP Speed Leveling\a) EarthenDwarf Intro
+    #include RestedXP 快速升级\a) 土灵矮人 开场
 ]])
 --Arathi Highlands Returning Player
 RXPGuides.RegisterGuide([[
@@ -28650,12 +28650,12 @@ RXPGuides.RegisterGuide([[
 #group RestedXP 至暗之夜
 #name a) 阿拉希高地 回归玩家 2
 #displayname 阿拉希高地 升级追赶攻略|cRXP_ENEMY_（备选版）|r
-#next RestedXP 至暗之夜\ba) 巨龙时代 联盟 序章 至暗之夜 A 2 << Alliance
-#next b1) BfA Intro << Horde
+#next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2 << Alliance
+#next b1) 争霸艾泽拉斯介绍 << Horde
 #internal
 
 step
-    #include RestedXP Speed Leveling\a) Arathi Highlands Returning Player
+    #include RestedXP 快速升级\a) 阿拉希高地 回归玩家
 ]])
 
 -- =================================
@@ -28670,12 +28670,12 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name a) 流放者离岛联盟 2
 #displayname |cFF1EFF001|r - 流放者离岛
-#next RestedXP 至暗之夜\ba) 巨龙时代 联盟 序章 至暗之夜 A 2
+#next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
 << Alliance !Harronir !Dracthyr !DemonHunter !DK !KulTiran !EarthenDwarf !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
 
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach
+    #include RestedXP 快速升级\a) 流放者离岛
 ]])
 --Draenei: Ammen Vale
 RXPGuides.RegisterGuide([[
@@ -28691,7 +28691,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 
 step
-    #include RestedXP Speed Leveling\ab) Ammen Vale
+    #include RestedXP 快速升级\ab) 埃门谷
 ]])
 --Draenei: Azuremyst Isle
 RXPGuides.RegisterGuide([[
@@ -28702,12 +28702,12 @@ RXPGuides.RegisterGuide([[
 #name ac) 德莱尼 秘蓝岛 2
 #displayname |cFF1EFF002|r - 秘蓝岛
 #defaultfor Draenei !DK
-#next RestedXP 至暗之夜\ba) 巨龙时代 联盟 序章 至暗之夜 A 2
+#next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
 << Alliance
 
 step
-    #include RestedXP Speed Leveling\ac) Draenei Azuremyst Isle
+    #include RestedXP 快速升级\ac) 德莱尼 秘蓝岛
 ]])
 --Dwarf: Coldridge Valley
 RXPGuides.RegisterGuide([[
@@ -28723,7 +28723,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 
 step
-    #include RestedXP Speed Leveling\ab) Dwarf Coldridge Valley
+    #include RestedXP 快速升级\ab) Dwarf 寒脊山谷
 ]])
 --Gnome: New Tinkertown
 RXPGuides.RegisterGuide([[
@@ -28739,7 +28739,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 
 step
-    #include RestedXP Speed Leveling\ab) New Tinkertown
+    #include RestedXP 快速升级\ab) 新工匠镇
 ]])
 --Dwarf & Gnome: Dun Morogh
 RXPGuides.RegisterGuide([[
@@ -28750,12 +28750,12 @@ RXPGuides.RegisterGuide([[
 #name ac) 矮人和地精 丹莫罗2
 #displayname |cFF1EFF002|r - 丹莫罗
 #defaultfor Dwarf Gnome !DK
-#next RestedXP 至暗之夜\ba) 巨龙时代 联盟 序章 至暗之夜 A 2
+#next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
 << Alliance
 
 step
-    #include RestedXP Speed Leveling\ac) Dwarf & Gnome Dun Morogh
+    #include RestedXP 快速升级\ac) 矮人和地精 丹莫罗
 ]])
 --Human: Northshire Valley
 RXPGuides.RegisterGuide([[
@@ -28771,7 +28771,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 
 step
-    #include RestedXP Speed Leveling\ab) Northshire Valley
+    #include RestedXP 快速升级\ab) 北郡山谷
 ]])
 --Human: Elwynn Forest
 RXPGuides.RegisterGuide([[
@@ -28782,12 +28782,12 @@ RXPGuides.RegisterGuide([[
 #name ac) 艾尔文森林 1 2
 #displayname |cFF1EFF002|r - 艾尔文森林
 #defaultfor Human !DK
-#next RestedXP 至暗之夜\ba) 巨龙时代 联盟 序章 至暗之夜 A 2
+#next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
 << Alliance
 
 step
-    #include RestedXP Speed Leveling\ac) Elwynn Forest 1
+    #include RestedXP 快速升级\ac) 艾尔文森林 1
 ]])
 --Night Elf: Shadowglen
 RXPGuides.RegisterGuide([[
@@ -28803,7 +28803,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 
 step
-    #include RestedXP Speed Leveling\ab) Shadowglen
+    #include RestedXP 快速升级\ab) 幽影谷
 ]])
 --Night Elf: Teldrassil
 RXPGuides.RegisterGuide([[
@@ -28814,12 +28814,12 @@ RXPGuides.RegisterGuide([[
 #name ac) 暗夜精灵 泰达希尔2
 #displayname |cFF1EFF002|r - 泰达希尔
 #defaultfor NightElf !DemonHunter !DK
-#next RestedXP 至暗之夜\ba) 巨龙时代 联盟 序章 至暗之夜 A 2
+#next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
 << Alliance
 
 step
-    #include RestedXP Speed Leveling\ac) Night Elf Teldrassil
+    #include RestedXP 快速升级\ac) 暗夜精灵 泰达希尔
 ]])
 --Worgen: Gilneas
 RXPGuides.RegisterGuide([[
@@ -28829,12 +28829,12 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name ab) 狼人 开场2
 #displayname 吉尔尼斯|cRXP_ENEMY_（备选版）|r
-#next RestedXP 至暗之夜\ba) 巨龙时代 联盟 序章 至暗之夜 A 2
+#next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
 << Alliance Worgen !DK
 
 step
-    #include RestedXP Speed Leveling\ab) Worgen Intro
+    #include RestedXP 快速升级\ab) 狼人 开场
 ]])
 --DarkIronDwarf: Shadowforge City
 RXPGuides.RegisterGuide([[
@@ -28844,12 +28844,12 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name a) 黑铁矮人 开场2
 #displayname |cFF1EFF001|r - 暗炉城
-#next RestedXP 至暗之夜\ba) 巨龙时代 联盟 序章 至暗之夜 A 2
+#next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
 << Alliance DarkIronDwarf !DK
 
 step
-    #include RestedXP Speed Leveling\a) DarkIronDwarf Intro
+    #include RestedXP 快速升级\a) 黑铁矮人 开场
 ]])
 --KulTiran: Boralus
 RXPGuides.RegisterGuide([[
@@ -28859,12 +28859,12 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name a) 库尔提拉斯人 开场2
 #displayname |cFF1EFF001|r - 伯拉勒斯
-#next RestedXP 至暗之夜\ba) 巨龙时代 联盟 序章 至暗之夜 A 2
+#next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
 << Alliance KulTiran !DK
 
 step
-    #include RestedXP Speed Leveling\a) KulTiran Intro
+    #include RestedXP 快速升级\a) 库尔提拉斯人 开场
 ]])
 --LightforgedDraenei: The Vindicaar
 RXPGuides.RegisterGuide([[
@@ -28874,12 +28874,12 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name a) 光铸德莱尼 开场2
 #displayname |cFF1EFF001|r - 维迪卡尔
-#next RestedXP 至暗之夜\ba) 巨龙时代 联盟 序章 至暗之夜 A 2
+#next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
 << Alliance LightforgedDraenei !DK
 
 step
-    #include RestedXP Speed Leveling\a) LightforgedDraenei Intro
+    #include RestedXP 快速升级\a) 光铸德莱尼 开场
 ]])
 --Mechagnome: Mechagon City
 RXPGuides.RegisterGuide([[
@@ -28889,12 +28889,12 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name a) 机械侏儒 开场2
 #displayname |cFF1EFF001|r - 麦卡贡市
-#next RestedXP 至暗之夜\ba) 巨龙时代 联盟 序章 至暗之夜 A 2
+#next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
 << Alliance Mechagnome !DK
 
 step
-    #include RestedXP Speed Leveling\a) Mechagnome Intro
+    #include RestedXP 快速升级\a) 机械侏儒 开场
 ]])
 --VoidElf: Telogrus Rift
 RXPGuides.RegisterGuide([[
@@ -28904,12 +28904,12 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name a) 虚空精灵 开场2
 #displayname |cFF1EFF001|r - 泰洛古斯裂隙
-#next RestedXP 至暗之夜\ba) 巨龙时代 联盟 序章 至暗之夜 A 2
+#next RestedXP 至暗之夜\ba) 巨龙时代联盟开场至暗之夜(联盟)2
 
 << Alliance VoidElf !DK
 
 step
-    #include RestedXP Speed Leveling\a) VoidElf Intro
+    #include RestedXP 快速升级\a) 虚空精灵 开场
 ]])
 
 -- ====================================
@@ -28924,13 +28924,13 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name a) 流放者离岛部落 2
 #displayname |cFF1EFF001|r - 流放者离岛
-#next b1) 争霸艾泽拉斯开场 2
+#next b1) 争霸艾泽拉斯介绍 2
 
 
 << Horde !Harronir !Dracthyr !DemonHunter !DK !Nightborne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
 
 step
-    #include RestedXP Speed Leveling\a) Exile's Reach Horde
+    #include RestedXP 快速升级\a) 流放者离岛部落
 ]])
 --Blood Elf: Sunstrider Isle
 RXPGuides.RegisterGuide([[
@@ -28946,7 +28946,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 
 step
-    #include RestedXP Speed Leveling\ab) Sunstrider Isle
+    #include RestedXP 快速升级\ab) 逐日岛
 ]])
 --Blood Elf: Eversong Woods(xp tag)
 RXPGuides.RegisterGuide([[
@@ -28956,13 +28956,13 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name ac) 血精灵 永歌森林 2
 #displayname |cFF1EFF002|r - 永歌森林
-#next b1) 争霸艾泽拉斯开场 2
+#next b1) 争霸艾泽拉斯介绍 2
 #defaultfor BloodElf !DK
 
 << Horde
 
 step
-    #include RestedXP Speed Leveling\ac) Blood Elf Eversong Woods
+    #include RestedXP 快速升级\ac) 血精灵 永歌森林
 ]])
 --Orc: Valley of Trials
 RXPGuides.RegisterGuide([[
@@ -28981,9 +28981,9 @@ RXPGuides.RegisterGuide([[
 << Horde
 
 step << !Troll
-    #include RestedXP Speed Leveling\ab) Valley of Trials1
+    #include RestedXP 快速升级\ab) 试炼谷1
 step << Troll
-    #include RestedXP Speed Leveling\ab) Valley of Trials2
+    #include RestedXP 快速升级\ab) 试炼谷2
 ]])
 --Orc: Echo Isles
 RXPGuides.RegisterGuide([[
@@ -28996,15 +28996,15 @@ RXPGuides.RegisterGuide([[
 #displayname 回音群岛|cRXP_ENEMY_（备选版）|r << Troll
 #displayname |cFF1EFF002|r - 回音群岛 << !Troll
 #next ab) 试炼谷2 2 << Troll
-#next b1) 争霸艾泽拉斯开场 2 << !Troll
+#next b1) 争霸艾泽拉斯介绍 2 << !Troll
 #defaultfor Orc !DK/Troll !DK
 
 << Horde
 
 step << !Troll
-    #include RestedXP Speed Leveling\ac) Echo Isles1
+    #include RestedXP 快速升级\ac) 回音群岛1
 step << Troll
-    #include RestedXP Speed Leveling\ac) Echo Isles2
+    #include RestedXP 快速升级\ac) 回音群岛2
 ]])
 --Tauren: Camp Narache
 RXPGuides.RegisterGuide([[
@@ -29020,7 +29020,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 
 step
-    #include RestedXP Speed Leveling\ab) Camp Narache
+    #include RestedXP 快速升级\ab) 纳拉其营地
 ]])
 --Tauren: Camp Mulgore
 RXPGuides.RegisterGuide([[
@@ -29030,13 +29030,13 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name ac) 牛头人营地莫高雷 2
 #displayname |cFF1EFF002|r - 莫高雷
-#next b1) 争霸艾泽拉斯开场 2
+#next b1) 争霸艾泽拉斯介绍 2
 #defaultfor Tauren !DK
 
 << Horde
 
 step
-    #include RestedXP Speed Leveling\ac) Tauren Camp Mulgore
+    #include RestedXP 快速升级\ac) 牛头人营地莫高雷
 ]])
 --Undead: Deathknell
 RXPGuides.RegisterGuide([[
@@ -29053,7 +29053,7 @@ RXPGuides.RegisterGuide([[
 << Horde
 
 step
-    #include RestedXP Speed Leveling\ab) Deathknell
+    #include RestedXP 快速升级\ab) 丧钟镇
 ]])
 --Undead: Tirisfal Glades
 RXPGuides.RegisterGuide([[
@@ -29063,13 +29063,13 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name ac) 亡灵 提瑞斯法林地 2
 #displayname |cFF1EFF002|r - 提瑞斯法林地
-#next b1) 争霸艾泽拉斯开场 2
+#next b1) 争霸艾泽拉斯介绍 2
 #defaultfor Undead !DK
 
 << Horde
 
 step
-    #include RestedXP Speed Leveling\ac) Undead Tirisfal Glades
+    #include RestedXP 快速升级\ac) 亡灵 提瑞斯法林地
 ]])
 --Goblin: Kezan & The Lost Isles
 RXPGuides.RegisterGuide([[
@@ -29079,12 +29079,12 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name ab) 地精 开场2
 #displayname 科赞与失落群岛|cRXP_ENEMY_（备选版）|r
-#next b1) 争霸艾泽拉斯开场 2
+#next b1) 争霸艾泽拉斯介绍 2
 
 << Horde Goblin !DK
 
 step
-    #include RestedXP Speed Leveling\ab) Goblin Intro
+    #include RestedXP 快速升级\ab) 地精 开场
 ]])
 --HighmountainTauren: Highmountain
 RXPGuides.RegisterGuide([[
@@ -29094,12 +29094,12 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name a) 至高岭牛头人 2
 #displayname |cFF1EFF001|r - 至高岭牛头人
-#next b1) 争霸艾泽拉斯开场 2
+#next b1) 争霸艾泽拉斯介绍 2
 
 << Horde HighmountainTauren !DK
 
 step
-    #include RestedXP Speed Leveling\a) HighmountainTauren
+    #include RestedXP 快速升级\a) 至高岭牛头人
 ]])
 --Nightborne: The Nighthold
 RXPGuides.RegisterGuide([[
@@ -29109,12 +29109,12 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name a) 夜之子 开场2
 #displayname |cFF1EFF001|r - 暗夜要塞
-#next b1) 争霸艾泽拉斯开场 2
+#next b1) 争霸艾泽拉斯介绍 2
 
 << Horde Nightborne !DK
 
 step
-    #include RestedXP Speed Leveling\a) Nightborne Intro
+    #include RestedXP 快速升级\a) 夜之子 开场
 ]])
 --ZandalariTroll: Dazar'alor
 RXPGuides.RegisterGuide([[
@@ -29124,12 +29124,12 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name a) 赞达拉巨魔 开场2
 #displayname |cFF1EFF001|r - 达萨罗
-#next b1) 争霸艾泽拉斯开场 2
+#next b1) 争霸艾泽拉斯介绍 2
 
 << Horde ZandalariTroll !DK
 
 step
-    #include RestedXP Speed Leveling\a) ZandalariTroll Intro
+    #include RestedXP 快速升级\a) 赞达拉巨魔 开场
 ]])
 --MagharOrc: Orgrimmar
 RXPGuides.RegisterGuide([[
@@ -29139,12 +29139,12 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name a) 玛格汉兽人 开场2
 #displayname |cFF1EFF001|r - 奥格瑞玛
-#next b1) 争霸艾泽拉斯开场 2
+#next b1) 争霸艾泽拉斯介绍 2
 
 << Horde MagharOrc !DK
 
 step
-    #include RestedXP Speed Leveling\a) MagharOrc Intro
+    #include RestedXP 快速升级\a) 玛格汉兽人 开场
 ]])
 --Vulpera: Orgrimmar
 RXPGuides.RegisterGuide([[
@@ -29154,12 +29154,12 @@ RXPGuides.RegisterGuide([[
 #subgroup |cFF1EFF00(1-90)|r 默认
 #name a) 狐人 开场 2
 #displayname |cFF1EFF001|r - 奥格瑞玛
-#next b1) 争霸艾泽拉斯开场 2
+#next b1) 争霸艾泽拉斯介绍 2
 
 << Horde Vulpera !DK
 
 step
-    #include RestedXP Speed Leveling\a) Vulpera Intro
+    #include RestedXP 快速升级\a) 狐人 开场
 ]])
 --Legion Intro
 RXPGuides.RegisterGuide([[
@@ -29170,5 +29170,5 @@ RXPGuides.RegisterGuide([[
 #internal
 
 step
-    #include RestedXP Speed Leveling\a) Horde Legion Intro
+    #include RestedXP 快速升级\a) 部落军团开场
 ]])

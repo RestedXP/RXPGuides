@@ -1,4 +1,5 @@
 if GetLocale() ~= "zhCN" then return end
+local L = GetLocale() if L and RXP.enabledLocale[L] then return end
 -- Omnium Folio Unlock
 RXPGuides.RegisterGuide([[
 #retail
@@ -2049,7 +2050,7 @@ step
     #label ManaforeOmegaDimensiusLoomsA
     .goto 2371,41.95,22.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Phase-General Ameer|r.
-    .complete 86820,3 --1/1 
+    .complete 86820,3 --1/1
     .skipgossipid 135141
 step
     #completewith ManaforeOmegaDimensiusLoomsA
@@ -2058,7 +2059,7 @@ step
     #requires ManaforeOmegaDimensiusLoomsA
     .goto 2371,41.95,22.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Phase-General Ameer|r.
-    .complete 86820,3 --1/1 
+    .complete 86820,3 --1/1
     .skipgossipid 135141
 step
     .goto 2371,41.95,22.33
