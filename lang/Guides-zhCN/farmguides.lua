@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Nagrand,50,50
-    .zone Nagrand >>前往纳格兰
+    .zone Nagrand >> 前往纳格兰
 step
     #hidewindow
     +测试
@@ -30,7 +30,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Nagrand,50,50
-    .zone Nagrand >>前往纳格兰
+    .zone Nagrand >> 前往纳格兰
 step
     #hidewindow
     +测试
@@ -50,7 +50,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Nagrand,50,50
-    .zone Nagrand >>前往纳格兰
+    .zone Nagrand >> 前往纳格兰
 step
     #hidewindow
     +测试
@@ -69,7 +69,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Netherstorm,50,50
-    .zone Netherstorm >>前往虚空风暴
+    .zone Netherstorm >> 前往虚空风暴
 step
     #hidewindow
     +测试
@@ -88,7 +88,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Netherstorm,50,50
-    .zone Netherstorm >>前往虚空风暴
+    .zone Netherstorm >> 前往虚空风暴
 step
     #hidewindow
     +测试
@@ -107,7 +107,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Netherstorm,50,50
-    .zone Netherstorm >>前往虚空风暴
+    .zone Netherstorm >> 前往虚空风暴
 step
     #hidewindow
     +测试
@@ -127,7 +127,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Terokkar Forest,50,50
-    .zone Terokkar Forest >>前往泰罗卡森林
+    .zone Terokkar Forest >> 前往泰罗卡森林
 step
     #hidewindow
     +测试
@@ -146,7 +146,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Terokkar Forest,50,50
-    .zone Terokkar Forest >>前往泰罗卡森林
+    .zone Terokkar Forest >> 前往泰罗卡森林
 step
     #hidewindow
     +测试
@@ -165,7 +165,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Terokkar Forest,50,50
-    .zone Terokkar Forest >>前往泰罗卡森林
+    .zone Terokkar Forest >> 前往泰罗卡森林
 step
     #hidewindow
     +测试
@@ -184,7 +184,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Shadowmoon Valley,50,50
-    .zone Shadowmoon Valley >>前往影月谷
+    .zone Shadowmoon Valley >> 前往影月谷
 step
     #hidewindow
     +测试
@@ -203,7 +203,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Shadowmoon Valley,50,50
-    .zone Shadowmoon Valley >>前往影月谷
+    .zone Shadowmoon Valley >> 前往影月谷
 step
     #hidewindow
     +测试
@@ -222,7 +222,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Shadowmoon Valley,50,50
-    .zone Shadowmoon Valley >>前往影月谷
+    .zone Shadowmoon Valley >> 前往影月谷
 step
     #hidewindow
     +测试
@@ -241,7 +241,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Zangarmarsh,50,50
-    .zone Zangarmarsh >>前往赞加沼泽
+    .zone Zangarmarsh >> 前往赞加沼泽
 step
     +必需目标，请勿删除此行
     .loop @20,Zangarmarsh,77.9,91.1,86.4,86.5,82.6,82.2,84.5,79.6,82.0,69.6,81.8,59.0,89.2,38.0,85.5,26.7,84.4,42.4,81.8,44.2,78.2,39.7,81.7,34.5,79.9,28.0,70.9,33.6,69.9,43.6,60.9,32.6,49.1,29.0,40.0,31.9,34.6,16.3,31.0,21.7,19.9,15.4,19.6,4.8,15.9,14.3,14.7,29.5,11.5,38.8,8.1,51.5,11.1,65.9,16.6,57.9,18.4,70.5,25.4,54.9,31.3,66.6,27.5,38.8,36.9,34.1,37.0,62.9,57.1,69.9,70.1,69.5,67.1,78.6,76.1,90.3,77.9,91.1
@@ -259,7 +259,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Zangarmarsh,50,50
-    .zone Zangarmarsh >>前往赞加沼泽
+    .zone Zangarmarsh >> 前往赞加沼泽
 step
     +必需目标，请勿删除此行
     .loop @20,Zangarmarsh,84.6,88.7,85.5,79.1,83.1,70.5,87.4,46.9,80.3,36.4,87.1,35.2,84.2,28.7,75.5,29.3,71.5,34.5,56.2,33.5,56.0,43.7,46.3,37.9,34.5,16.5,33.2,21.6,18.8,14.7,19.0,2.7,14.2,20.7,14.3,31.9,7.6,51.9,11.2,62.0,17.3,68.3,27.5,66.2,30.7,59.7,40.4,66.9,48.9,66.8,67.1,76.4,68.9,86.7,76.8,91.8,84.6,88.7
@@ -277,7 +277,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Zangarmarsh,50,50
-    .zone Zangarmarsh >>前往赞加沼泽
+    .zone Zangarmarsh >> 前往赞加沼泽
 step
     +必需目标，请勿删除此行
     .loop @20,Zangarmarsh,77.9,91.1,85.0,85.2,82.6,82.2,84.5,79.6,82.0,69.6,81.8,59.0,89.4,37.6,85.7,28.8,84.4,42.4,81.8,44.2,78.2,39.7,81.7,34.5,80.3,29.8,71.6,35.6,69.9,43.6,61.0,33.9,49.0,30.6,40.0,31.9,34.8,17.7,31.0,21.7,19.9,15.4,19.6,2.4,15.9,14.3,14.7,29.5,11.5,38.8,9.1,51.7,11.1,65.9,16.6,57.9,18.4,70.5,25.4,54.9,31.3,66.6,27.5,36.6,36.9,34.1,37.5,62.3,57.1,69.9,70.1,69.5,67.1,78.6,76.1,90.3,77.9,91.1
@@ -295,7 +295,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Hellfire Peninsula,50,50
-    .zone Hellfire Peninsula >>前往地狱火半岛
+    .zone Hellfire Peninsula >> 前往地狱火半岛
 step
     #hidewindow
     +测试
@@ -314,7 +314,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Hellfire Peninsula,50,50
-    .zone Hellfire Peninsula >>前往地狱火半岛
+    .zone Hellfire Peninsula >> 前往地狱火半岛
 step
     #hidewindow
     +测试
@@ -333,7 +333,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Hellfire Peninsula,50,50
-    .zone Hellfire Peninsula >>前往地狱火半岛
+    .zone Hellfire Peninsula >> 前往地狱火半岛
 step
     #hidewindow
     +测试
@@ -352,7 +352,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Blade's Edge Mountains,50,50
-    .zone Blade's Edge Mountains >>前往刀锋山
+    .zone Blade's Edge Mountains >> 前往刀锋山
 step
     #hidewindow
     +测试
@@ -371,7 +371,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Blade's Edge Mountains,50,50
-    .zone Blade's Edge Mountains >>飞往刀锋山
+    .zone Blade's Edge Mountains >> 飞往刀锋山
 step
     #hidewindow
     +测试
@@ -390,7 +390,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Blade's Edge Mountains,50,50
-    .zone Blade's Edge Mountains >>前往刀锋山
+    .zone Blade's Edge Mountains >> 前往刀锋山
 step
     #hidewindow
     +测试
@@ -539,7 +539,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Nagrand,50,50
-    .zone Nagrand >>前往纳格兰
+    .zone Nagrand >> 前往纳格兰
 step
     #hidewindow
     +area1
@@ -855,7 +855,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Un'Goro Crater,50,50
-    .zone Un'Goro Crater >>前往安戈洛环形山
+    .zone Un'Goro Crater >> 前往安戈洛环形山
 step
     #hidewindow
     +测试
@@ -874,7 +874,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Un'Goro Crater,50,50
-    .zone Un'Goro Crater >>前往安戈洛环形山
+    .zone Un'Goro Crater >> 前往安戈洛环形山
 step
     #hidewindow
     +测试
@@ -893,7 +893,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Un'Goro Crater,50,50
-    .zone Un'Goro Crater >>前往安戈洛环形山
+    .zone Un'Goro Crater >> 前往安戈洛环形山
 step
     #hidewindow
     +测试
@@ -912,7 +912,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Winterspring,50,50
-    .zone Winterspring >>前往冬泉谷
+    .zone Winterspring >> 前往冬泉谷
 step
     #hidewindow
     +测试
@@ -931,7 +931,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Winterspring,50,50
-    .zone Winterspring >>前往冬泉谷
+    .zone Winterspring >> 前往冬泉谷
 step
     #hidewindow
     +测试
@@ -950,7 +950,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Winterspring,50,50
-    .zone Winterspring >>前往冬泉谷
+    .zone Winterspring >> 前往冬泉谷
 step
     #hidewindow
     +测试
@@ -969,7 +969,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Borean Tundra,50,50
-    .zone Borean Tundra >>前往北风苔原
+    .zone Borean Tundra >> 前往北风苔原
 step
     #hidewindow
     +测试
@@ -988,7 +988,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Borean Tundra,50,50
-    .zone Borean Tundra >>前往北风苔原
+    .zone Borean Tundra >> 前往北风苔原
 step
     #hidewindow
     +测试
@@ -1007,7 +1007,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Borean Tundra,50,50
-    .zone Borean Tundra >>前往北风苔原
+    .zone Borean Tundra >> 前往北风苔原
 step
     #hidewindow
     +测试
@@ -1026,7 +1026,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Borean Tundra,50,50
-    .zone Borean Tundra >>前往北风苔原
+    .zone Borean Tundra >> 前往北风苔原
 step
     #hidewindow
     +测试
@@ -1045,7 +1045,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Borean Tundra,50,50
-    .zone Borean Tundra >>前往北风苔原
+    .zone Borean Tundra >> 前往北风苔原
 step
     #hidewindow
     +测试
@@ -1064,7 +1064,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Borean Tundra,50,50
-    .zone Borean Tundra >>前往北风苔原
+    .zone Borean Tundra >> 前往北风苔原
 step
     #hidewindow
     +area1
@@ -1087,7 +1087,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Sholazar Basin,50,50
-    .zone Borean Tundra >>前往索拉查盆地
+    .zone Borean Tundra >> 前往索拉查盆地
 step
     #hidewindow
     +area1
@@ -1110,7 +1110,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Sholazar Basin,50,50
-    .zone Sholazar Basin >>前往索拉查盆地
+    .zone Sholazar Basin >> 前往索拉查盆地
 step
     #hidewindow
     +测试
@@ -1129,7 +1129,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Sholazar Basin,50,50
-    .zone Sholazar Basin >>前往索拉查盆地
+    .zone Sholazar Basin >> 前往索拉查盆地
 step
     #hidewindow
     +测试
@@ -1148,7 +1148,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Sholazar Basin,50,50
-    .zone Sholazar Basin >>前往索拉查盆地
+    .zone Sholazar Basin >> 前往索拉查盆地
 step
     #hidewindow
     +测试
@@ -1167,7 +1167,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Sholazar Basin,50,50
-    .zone Sholazar Basin >>前往索拉查盆地
+    .zone Sholazar Basin >> 前往索拉查盆地
 step
     #hidewindow
     +测试
@@ -1186,7 +1186,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Dragonblight,50,50
-    .zone Dragonblight >>飞往龙骨荒野
+    .zone Dragonblight >> 飞往龙骨荒野
 step
     #hidewindow
     +测试
@@ -1205,7 +1205,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Dragonblight,50,50
-    .zone Dragonblight >>飞往龙骨荒野
+    .zone Dragonblight >> 飞往龙骨荒野
 step
     #hidewindow
     +测试
@@ -1224,7 +1224,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Dragonblight,50,50
-    .zone Dragonblight >>飞往龙骨荒野
+    .zone Dragonblight >> 飞往龙骨荒野
 step
     #hidewindow
     +测试
@@ -1243,7 +1243,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Grizzly Hills,50,50
-    .zone Grizzly Hills >>飞往灰熊丘陵
+    .zone Grizzly Hills >> 飞往灰熊丘陵
 step
     #hidewindow
     +测试
@@ -1262,7 +1262,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Grizzly Hills,50,50
-    .zone Grizzly Hills >>飞往灰熊丘陵
+    .zone Grizzly Hills >> 飞往灰熊丘陵
 step
     #hidewindow
     +测试
@@ -1281,7 +1281,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Howling Fjord,50,50
-    .zone Howling Fjord >>前往嚎风峡湾
+    .zone Howling Fjord >> 前往嚎风峡湾
 step
     #hidewindow
     +测试
@@ -1300,7 +1300,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Howling Fjord,50,50
-    .zone Howling Fjord >>前往嚎风峡湾
+    .zone Howling Fjord >> 前往嚎风峡湾
 step
     #hidewindow
     +测试
@@ -1319,7 +1319,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Howling Fjord,50,50
-    .zone Howling Fjord >>前往嚎风峡湾
+    .zone Howling Fjord >> 前往嚎风峡湾
 step
     #hidewindow
     +测试
@@ -1338,7 +1338,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Howling Fjord,50,50
-    .zone Howling Fjord >>前往嚎风峡湾
+    .zone Howling Fjord >> 前往嚎风峡湾
 step
     #hidewindow
     +测试
@@ -1357,7 +1357,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Howling Fjord,50,50
-    .zone Howling Fjord >>前往嚎风峡湾
+    .zone Howling Fjord >> 前往嚎风峡湾
 step
     #hidewindow
     +测试
@@ -1376,7 +1376,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Zul'Drak,50,50
-    .zone Zul'Drak >>前往祖达克
+    .zone Zul'Drak >> 前往祖达克
 step
     #hidewindow
     +测试
@@ -1395,7 +1395,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Zul'Drak,50,50
-    .zone Zul'Drak >>前往祖达克
+    .zone Zul'Drak >> 前往祖达克
 step
     #hidewindow
     +测试
@@ -1414,7 +1414,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Zul'Drak,50,50
-    .zone Zul'Drak >>前往祖达克
+    .zone Zul'Drak >> 前往祖达克
 step
     #hidewindow
     +测试
@@ -1433,7 +1433,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Zul'Drak,50,50
-    .zone Zul'Drak >>前往祖达克
+    .zone Zul'Drak >> 前往祖达克
 step
     #hidewindow
     +测试
@@ -1452,7 +1452,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>前往风暴峭壁
+    .zone The Storm Peaks >> 前往风暴峭壁
 step
     #hidewindow
     +测试
@@ -1471,7 +1471,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>前往风暴峭壁
+    .zone The Storm Peaks >> 前往风暴峭壁
 step
     #hidewindow
     +测试
@@ -1490,7 +1490,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>前往风暴峭壁
+    .zone The Storm Peaks >> 前往风暴峭壁
 step
     #hidewindow
     +测试
@@ -1509,7 +1509,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>前往风暴峭壁
+    .zone The Storm Peaks >> 前往风暴峭壁
 step
     #hidewindow
     +测试
@@ -1529,7 +1529,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>前往风暴峭壁
+    .zone The Storm Peaks >> 前往风暴峭壁
 step
     #hidewindow
     +测试
@@ -1548,7 +1548,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>前往风暴峭壁
+    .zone The Storm Peaks >> 前往风暴峭壁
 step
     #hidewindow
     +测试
@@ -1567,7 +1567,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>前往风暴峭壁
+    .zone The Storm Peaks >> 前往风暴峭壁
 step
     #hidewindow
     +测试
@@ -1586,7 +1586,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>前往风暴峭壁
+    .zone The Storm Peaks >> 前往风暴峭壁
 step
     #hidewindow
     +测试
@@ -1605,7 +1605,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Icecrown,50,50
-    .zone Icecrown >>前往冰冠冰川
+    .zone Icecrown >> 前往冰冠冰川
 step
     #hidewindow
     +测试
@@ -1624,7 +1624,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Wintergrasp,50,50
-    .zone Wintergrasp >>前往冬拥湖
+    .zone Wintergrasp >> 前往冬拥湖
 step
     #hidewindow
     +测试
@@ -1643,7 +1643,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Borean Tundra,50,50
-    .zone Borean Tundra >>前往北风苔原
+    .zone Borean Tundra >> 前往北风苔原
 step
     #hidewindow
     +测试
@@ -1662,7 +1662,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Borean Tundra,50,50
-    .zone Borean Tundra >>前往北风苔原
+    .zone Borean Tundra >> 前往北风苔原
 step
     #hidewindow
     +测试
@@ -1681,7 +1681,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Borean Tundra,50,50
-    .zone Borean Tundra >>前往北风苔原
+    .zone Borean Tundra >> 前往北风苔原
 step
     #hidewindow
     +测试
@@ -1700,7 +1700,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Sholazar Basin,50,50
-    .zone Sholazar Basin >>前往索拉查盆地
+    .zone Sholazar Basin >> 前往索拉查盆地
 step
     #hidewindow
     +测试
@@ -1719,7 +1719,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Sholazar Basin,50,50
-    .zone Sholazar Basin >>前往索拉查盆地
+    .zone Sholazar Basin >> 前往索拉查盆地
 step
     #hidewindow
     +测试
@@ -1738,7 +1738,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Sholazar Basin,50,50
-    .zone Sholazar Basin >>前往索拉查盆地
+    .zone Sholazar Basin >> 前往索拉查盆地
 step
     #hidewindow
     +测试
@@ -1757,7 +1757,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Dragonblight,50,50
-    .zone Dragonblight >>飞往龙骨荒野
+    .zone Dragonblight >> 飞往龙骨荒野
 step
     #hidewindow
     +测试
@@ -1776,7 +1776,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Dragonblight,50,50
-    .zone Dragonblight >>飞往龙骨荒野
+    .zone Dragonblight >> 飞往龙骨荒野
 step
     #hidewindow
     +测试
@@ -1795,7 +1795,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Dragonblight,50,50
-    .zone Dragonblight >>飞往龙骨荒野
+    .zone Dragonblight >> 飞往龙骨荒野
 step
     #hidewindow
     +测试
@@ -1814,7 +1814,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Howling Fjord,50,50
-    .zone Howling Fjord >>前往嚎风峡湾
+    .zone Howling Fjord >> 前往嚎风峡湾
 step
     #hidewindow
     +测试
@@ -1833,7 +1833,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Howling Fjord,50,50
-    .zone Howling Fjord >>前往嚎风峡湾
+    .zone Howling Fjord >> 前往嚎风峡湾
 step
     #hidewindow
     +测试
@@ -1852,7 +1852,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Howling Fjord,50,50
-    .zone Howling Fjord >>前往嚎风峡湾
+    .zone Howling Fjord >> 前往嚎风峡湾
 step
     #hidewindow
     +测试
@@ -1871,7 +1871,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Grizzly Hills,50,50
-    .zone Grizzly Hills >>飞往灰熊丘陵
+    .zone Grizzly Hills >> 飞往灰熊丘陵
 step
     #hidewindow
     +测试
@@ -1890,7 +1890,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Grizzly Hills,50,50
-    .zone Grizzly Hills >>飞往灰熊丘陵
+    .zone Grizzly Hills >> 飞往灰熊丘陵
 step
     #hidewindow
     +测试
@@ -1909,7 +1909,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Grizzly Hills,50,50
-    .zone Grizzly Hills >>飞往灰熊丘陵
+    .zone Grizzly Hills >> 飞往灰熊丘陵
 step
     #hidewindow
     +测试
@@ -1928,7 +1928,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Zul'Drak,50,50
-    .zone Zul'Drak >>前往祖达克
+    .zone Zul'Drak >> 前往祖达克
 step
     #hidewindow
     +测试
@@ -1947,7 +1947,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Zul'Drak,50,50
-    .zone Zul'Drak >>前往祖达克
+    .zone Zul'Drak >> 前往祖达克
 step
     #hidewindow
     +测试
@@ -1966,7 +1966,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Zul'Drak,50,50
-    .zone Zul'Drak >>前往祖达克
+    .zone Zul'Drak >> 前往祖达克
 step
     #hidewindow
     +测试
@@ -1985,7 +1985,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>前往风暴峭壁
+    .zone The Storm Peaks >> 前往风暴峭壁
 step
     #hidewindow
     +测试
@@ -2004,7 +2004,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>前往风暴峭壁
+    .zone The Storm Peaks >> 前往风暴峭壁
 step
     #hidewindow
     +测试
@@ -2023,7 +2023,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint The Storm Peaks,50,50
-    .zone The Storm Peaks >>前往风暴峭壁
+    .zone The Storm Peaks >> 前往风暴峭壁
 step
     #hidewindow
     +测试
@@ -2042,7 +2042,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Wintergrasp,50,50
-    .zone Wintergrasp >>前往冬拥湖
+    .zone Wintergrasp >> 前往冬拥湖
 step
     #hidewindow
     +测试
@@ -2061,7 +2061,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Wintergrasp,50,50
-    .zone Wintergrasp >>前往冬拥湖
+    .zone Wintergrasp >> 前往冬拥湖
 step
     #hidewindow
     +测试
@@ -2080,7 +2080,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Wintergrasp,50,50
-    .zone Wintergrasp >>前往冬拥湖
+    .zone Wintergrasp >> 前往冬拥湖
 step
     #hidewindow
     +测试
@@ -2099,7 +2099,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Wintergrasp,50,50
-    .zone Wintergrasp >>前往冬拥湖
+    .zone Wintergrasp >> 前往冬拥湖
 step
     #hidewindow
     +测试
@@ -2118,7 +2118,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Wintergrasp,50,50
-    .zone Wintergrasp >>前往冬拥湖
+    .zone Wintergrasp >> 前往冬拥湖
 step
     #hidewindow
     +测试
@@ -2137,7 +2137,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Wintergrasp,50,50
-    .zone Wintergrasp >>前往冬拥湖
+    .zone Wintergrasp >> 前往冬拥湖
 step
     #hidewindow
     +测试
@@ -2157,7 +2157,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Wintergrasp,50,50
-    .zone Wintergrasp >>前往冬拥湖
+    .zone Wintergrasp >> 前往冬拥湖
 step
     #hidewindow
     +测试
@@ -2176,7 +2176,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Wintergrasp,50,50
-    .zone Wintergrasp >>前往冬拥湖
+    .zone Wintergrasp >> 前往冬拥湖
 step
     #hidewindow
     +测试
@@ -2195,7 +2195,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Icecrown,50,50
-    .zone Icecrown >>前往冰冠冰川
+    .zone Icecrown >> 前往冰冠冰川
 step
     #hidewindow
     +测试
@@ -2214,7 +2214,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Icecrown,50,50
-    .zone Icecrown >>前往冰冠冰川
+    .zone Icecrown >> 前往冰冠冰川
 step
     #hidewindow
     +测试
@@ -2233,7 +2233,7 @@ RXPGuides.RegisterGuide([[
 step
     #sticky
     .waypoint Icecrown,50,50
-    .zone Icecrown >>前往冰冠冰川
+    .zone Icecrown >> 前往冰冠冰川
 step
     #hidewindow
     +测试

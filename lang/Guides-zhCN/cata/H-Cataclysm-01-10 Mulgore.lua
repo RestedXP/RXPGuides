@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #mop
 << Horde
 #name 1-6 莫高雷
-#next 6-10 莫高雷
+#next 6-10级 莫高雷
 #version 1
 --#group RXP Cataclysm (H) << cata
 
@@ -153,7 +153,7 @@ step
     .mob Chief Squealer Thornmantle
 step
     #completewith next
-    .hs >>使用炉石返回纳拉其营地
+    .hs >> 使用炉石返回纳拉其营地
     .cooldown item,6948,>0
 step
     .goto 7,45.17,75.44
@@ -183,14 +183,14 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_兰卡|r 对话
     .turnin 3092 >>交任务 风化便笺
     .accept 27021 >>接受任务 猎人之道
-    .train 56641 >>学习 |T132213:0|t[稳固射击] << Cata
+    .train 56641 >> 学习 |T132213:0|t[稳固射击] << Cata
     .target 兰卡·远箭
 step << Warrior
     .goto 7,44.99,75.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈鲁特|r 对话
     .turnin 3091 >>交任务 简易便笺
     .accept 27020 >>接受任务 第一堂课
-    .train 100 >>学习 |T132337:0|t[冲锋] << Cata
+    .train 100 >> 学习 |T132337:0|t[冲锋] << Cata
     .target 哈鲁特·雷角
 step << Paladin
     .goto 7,44.96,75.34
@@ -374,7 +374,7 @@ step
 step << Hunter Cata
     .goto 7,47.94,55.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅文|r 对话
-    .train 2973 >>训练你的职业技能
+    .train 2973 >> 训练你的职业技能
     .target 雅文·刺鬃
     .xp <6,1
 step
@@ -387,12 +387,12 @@ step << Tauren
     .goto 7,46.06,58.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瓦尔戈|r 对话
     .accept 6361 >>接受任务 一捆兽皮
-    .vendor >>出售垃圾物品并修理装备 << Paladin/Priest
+    .vendor >> 出售垃圾物品并修理装备 << Paladin/Priest
     .target Varg Windwhisper
 step << Warrior/Shaman/Paladin
     .goto 7,45.91,58.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛诺特|r 对话
-    .vendor >>清理杂物，把灰色物品都卖掉。如果卖掉你的武器能凑够买 |T133053:0|t[木槌棒] 的钱（6 银 66 铜），就一起卖了。若钱还不够，稍后再回来购买
+    .vendor >> 清理杂物，把灰色物品都卖掉。如果卖掉你的武器能凑够买 |T133053:0|t[木槌棒] 的钱（6 银 66 铜），就一起卖了。若钱还不够，稍后再回来购买
     .target 玛诺特·深痕
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -408,7 +408,7 @@ step << Warrior/Shaman/Paladin
 step << Hunter
     .goto 7,45.75,57.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_肯纳|r 对话
-    .vendor >>清理杂物并出售灰色物品。如果卖掉你的武器能让你凑够 |T135611:0|t[精制短枪](3银93铜)，就把它卖掉购买。若钱还不够，稍后再回来购买
+    .vendor >> 清理杂物并出售灰色物品。如果卖掉你的武器能让你凑够 |T135611:0|t[精制短枪](3银93铜)，就把它卖掉购买。若钱还不够，稍后再回来购买
     .target 肯纳·鹰眼
     .itemStat 18,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -461,22 +461,22 @@ step
 step << Shaman Cata
     .goto 7,48.47,58.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔尔·云歌|r 对话
-    .train 8042 >>训练你的职业技能
+    .train 8042 >> 训练你的职业技能
     .target Tarl Cloudsong
 step << Priest Cata
     .goto 7,48.76,58.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_先知艾尔苏|r 对话
-    .train 589 >>训练你的职业技能
+    .train 589 >> 训练你的职业技能
     .target Seer Alsoomse
 step << Druid Cata
     .goto 7,48.56,59.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_根妮亚|r 对话
-    .train 8921 >>训练你的职业技能
+    .train 8921 >> 训练你的职业技能
     .target 根妮亚·符文图腾
 step << Paladin Cata
     .goto 7,48.78,58.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_烈日行者艾乌比|r 对话
-    .train 465 >>训练你的职业技能
+    .train 465 >> 训练你的职业技能
     .target Sunwalker Iopi
 step
     .goto 7,48.62,59.80
@@ -486,7 +486,7 @@ step
 step << Warrior Cata
     .goto 7,49.55,59.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克朗|r 对话
-    .train 34428 >>训练你的职业技能
+    .train 34428 >> 训练你的职业技能
     .target 克朗·石蹄
 step
     #completewith WCleansing1
@@ -564,7 +564,7 @@ step
     #completewith AcceptDangers
     .goto 1412/1,-354.10001,-2318.40015,0
     .goto 1412/1,-488.20001,-2347.90015,0
-    .use 33009>>找到 |cRXP_FRIENDLY_凯雷|r。使用 |T134343:0|t[|cRXP_LOOT_嫩陆行鸟肉|r] 来喂他
+    .use 33009>> 找到 |cRXP_FRIENDLY_凯雷|r。使用 |T134343:0|t[|cRXP_LOOT_嫩陆行鸟肉|r] 来喂他
     >>|cRXP_WARN_他在血蹄村周围不停地跑圈|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan 疯狂的凯雷
@@ -596,12 +596,12 @@ step
 step << Hunter Cata
     .goto 7,47.94,55.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅文|r 对话
-    .train 2973 >>训练你的职业技能
+    .train 2973 >> 训练你的职业技能
     .target 雅文·刺鬃
 step << Warrior/Shaman/Paladin
     .goto 7,45.91,58.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛诺特|r 对话
-    .vendor >>清理杂物，把灰色物品都卖掉。如果卖掉你的武器能凑够买 |T133053:0|t[木槌棒] 的钱（6 银65 铜），就一起卖了。若钱还不够，稍后再回来购买
+    .vendor >> 清理杂物，把灰色物品都卖掉。如果卖掉你的武器能凑够买 |T133053:0|t[木槌棒] 的钱（6 银65 铜），就一起卖了。若钱还不够，稍后再回来购买
     .target 玛诺特·深痕
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -616,7 +616,7 @@ step << Warrior/Shaman/Paladin
 step << Hunter
     .goto 7,45.75,57.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_肯纳|r 对话
-    .vendor >>清理杂物并出售灰色物品。如果卖掉你的武器能让你凑够 |T135611:0|t[精制短枪](3银93铜)，就把它卖掉购买。若钱还不够，稍后再回来购买
+    .vendor >> 清理杂物并出售灰色物品。如果卖掉你的武器能让你凑够 |T135611:0|t[精制短枪](3银93铜)，就把它卖掉购买。若钱还不够，稍后再回来购买
     .target 肯纳·鹰眼
     .itemStat 18,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
@@ -665,7 +665,7 @@ step
     #completewith next
     .goto 1412/1,-354.10001,-2318.40015,0
     .goto 1412/1,-488.20001,-2347.90015,0
-    .use 33009>>找到 |cRXP_FRIENDLY_凯雷|r。使用 |T134343:0|t[|cRXP_LOOT_嫩陆行鸟肉|r] 来喂他
+    .use 33009>> 找到 |cRXP_FRIENDLY_凯雷|r。使用 |T134343:0|t[|cRXP_LOOT_嫩陆行鸟肉|r] 来喂他
     >>|cRXP_WARN_他在血蹄村周围不停地跑圈|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan 疯狂的凯雷
@@ -678,31 +678,31 @@ step
 step << Warrior Cata
     .goto 7,49.55,59.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克朗|r 对话
-    .train 84939 >>训练你的职业技能
+    .train 84939 >> 训练你的职业技能
     .target 克朗·石蹄
     .xp <7,1
 step << Shaman Cata
     .goto 7,48.47,58.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔尔·云歌|r 对话
-    .train 324 >>训练你的职业技能
+    .train 324 >> 训练你的职业技能
     .target Tarl Cloudsong
     .xp <8,1
 step << Priest Cata
     .goto 7,48.76,58.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_先知艾尔苏|r 对话
-    .train 588 >>训练你的职业技能
+    .train 588 >> 训练你的职业技能
     .target Seer Alsoomse
     .xp <8,1
 step << Druid Cata
     .goto 7,48.56,59.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_根妮亚|r 对话
-    .train 768 >>训练你的职业技能
+    .train 768 >> 训练你的职业技能
     .target 根妮亚·符文图腾
     .xp <8,1
 step << Paladin Cata
     .goto 7,48.78,58.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_烈日行者艾乌比|r 对话
-    .train 635 >>训练你的职业技能
+    .train 635 >> 训练你的职业技能
     .target Sunwalker Iopi
     .xp <7,1
 step
@@ -716,7 +716,7 @@ step
 step << Hunter Cata
     .goto 7,47.94,55.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅文|r 对话
-    .train 5116 >>训练你的职业技能
+    .train 5116 >> 训练你的职业技能
     .target 雅文·刺鬃
     .xp <8,1
 step
@@ -755,7 +755,7 @@ step
 step
     #label VentureCoCave
     #completewith FizsprocketKill
-    .goto 7,60.86,47.47,10 >>进入洞穴
+    .goto 7,60.86,47.47,10 >> 进入洞穴
 step
     #completewith FizsprocketKill
     >>击杀 |cRXP_ENEMY_风险投资公司工人|r
@@ -847,7 +847,7 @@ step
     #completewith ThunderHornTotem
     .goto 1412/1,-354.10001,-2318.40015,0
     .goto 1412/1,-488.20001,-2347.90015,0
-    .use 33009>>找到 |cRXP_FRIENDLY_凯雷|r。使用 |T134343:0|t[|cRXP_LOOT_嫩陆行鸟肉|r] 来喂他
+    .use 33009>> 找到 |cRXP_FRIENDLY_凯雷|r。使用 |T134343:0|t[|cRXP_LOOT_嫩陆行鸟肉|r] 来喂他
     >>|cRXP_WARN_他在血蹄村周围不停地跑圈|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan 疯狂的凯雷
@@ -856,7 +856,7 @@ step
     #completewith FlyTB
     .goto 1412/1,-354.10001,-2318.40015,0
     .goto 1412/1,-488.20001,-2347.90015,0
-    .use 33009>>找到 |cRXP_FRIENDLY_凯雷|r。使用 |T134343:0|t[|cRXP_LOOT_嫩陆行鸟肉|r] 来喂他
+    .use 33009>> 找到 |cRXP_FRIENDLY_凯雷|r。使用 |T134343:0|t[|cRXP_LOOT_嫩陆行鸟肉|r] 来喂他
     >>|cRXP_WARN_他在血蹄村周围不停地跑圈|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan 疯狂的凯雷
@@ -875,27 +875,27 @@ step
 step << Warrior Cata
     .goto 7,49.55,59.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克朗|r 对话
-    .train 84939 >>训练你的职业技能
+    .train 84939 >> 训练你的职业技能
     .target 克朗·石蹄
 step << Shaman Cata
     .goto 7,48.47,58.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔尔·云歌|r 对话
-    .train 324 >>训练你的职业技能
+    .train 324 >> 训练你的职业技能
     .target Tarl Cloudsong
 step << Priest Cata
     .goto 7,48.76,58.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_先知艾尔苏|r 对话
-    .train 588 >>训练你的职业技能
+    .train 588 >> 训练你的职业技能
     .target Seer Alsoomse
 step << Druid Cata
     .goto 7,48.56,59.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_根妮亚|r 对话
-    .train 768 >>训练你的职业技能
+    .train 768 >> 训练你的职业技能
     .target 根妮亚·符文图腾
 step << Paladin Cata
     .goto 7,48.78,58.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_烈日行者艾乌比|r 对话
-    .train 635 >>训练你的职业技能
+    .train 635 >> 训练你的职业技能
     .target Sunwalker Iopi
 step
     .goto 7,47.16,56.65
@@ -905,7 +905,7 @@ step
 step << Hunter Cata
     .goto 7,47.94,55.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅文|r 对话
-    .train 5116 >>训练你的职业技能
+    .train 5116 >> 训练你的职业技能
     .target 雅文·刺鬃
 step
     #xprate <1.2
@@ -981,7 +981,7 @@ step
     .complete 24456,1 --Well Cleansed (1)
 step
     #completewith DangerTurnin
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     #loop
     .goto 1412/1,-354.10001,-2318.40015,0
@@ -1000,7 +1000,7 @@ step
     .waypoint 1412/1,-421.60001,-2256.00000,30,0
     .waypoint 1412/1,-377.10001,-2257.30005,30,0
     .waypoint 1412/1,-368.80002,-2275.90015,30,0
-    .use 33009>>找到 |cRXP_FRIENDLY_凯雷|r。使用 |T134343:0|t[|cRXP_LOOT_嫩陆行鸟肉|r] 来喂他
+    .use 33009>> 找到 |cRXP_FRIENDLY_凯雷|r。使用 |T134343:0|t[|cRXP_LOOT_嫩陆行鸟肉|r] 来喂他
     >>|cRXP_WARN_他在血蹄村周围不停地跑圈|r
     .complete 11129,1 --1/1 Kyle fed
     .unitscan 疯狂的凯雷
@@ -1042,37 +1042,37 @@ step
 step << Hunter Cata
     .goto 7,47.94,55.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅文|r 对话
-    .train 1978 >>训练你的职业技能
+    .train 1978 >> 训练你的职业技能
     .target 雅文·刺鬃
     .xp <10,1
 step << Warrior Cata
     .goto 7,49.55,59.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克朗|r 对话
-    .train 71 >>训练你的职业技能
+    .train 71 >> 训练你的职业技能
     .target 克朗·石蹄
     .xp <10,1
 step << Shaman Cata
     .goto 7,48.47,58.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔尔·云歌|r 对话
-    .train 3599 >>训练你的职业技能
+    .train 3599 >> 训练你的职业技能
     .target Tarl Cloudsong
     .xp <10,1
 step << Priest Cata
     .goto 7,48.76,58.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_先知艾尔苏|r 对话
-    .train 8092 >>训练你的职业技能
+    .train 8092 >> 训练你的职业技能
     .target Seer Alsoomse
     .xp <10,1
 step << Druid Cata
     .goto 7,48.56,59.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_根妮亚|r 对话
-    .train 5215 >>训练你的职业技能
+    .train 5215 >> 训练你的职业技能
     .target 根妮亚·符文图腾
     .xp <10,1
 step << Paladin Cata
     .goto 7,48.78,58.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_烈日行者艾乌比|r 对话
-    .train 82242 >>训练你的职业技能
+    .train 82242 >> 训练你的职业技能
     .target Sunwalker Iopi
     .xp <10,1
 step
@@ -1229,7 +1229,7 @@ step
 step
     #xprate <1.2
     #completewith next
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     #xprate <1.2
     #completewith next
@@ -1295,7 +1295,7 @@ step
 step << !Tauren
     .goto 88,47.05,49.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔尔|r 对话
-    .fly Orgrimmar >>飞往奥格瑞玛
+    .fly Orgrimmar >> 飞往奥格瑞玛
     .target 塔尔
     .zoneskip Thunder Bluff,1
 step << Tauren

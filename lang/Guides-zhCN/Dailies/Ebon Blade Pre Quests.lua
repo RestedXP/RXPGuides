@@ -27,7 +27,7 @@ step << Horde
     .accept 12892 >>接受任务 乐趣十足
 step
     .goto IcecrownGlacier,44.5,21.6
-	.use 41265 >>飞往塔顶，对眼魔使用背包里的眼魔发射器，直到它死亡
+	.use 41265 >> 飞往塔顶，对眼魔使用背包里的眼魔发射器，直到它死亡
     .complete 12887,1 << Alliance --The Ocular has been destroyed (1)
     .complete 12892,1 << Horde --The Ocular has been destroyed (1)
 step
@@ -65,11 +65,11 @@ step
     .accept 12893 >>接受任务 解放你的思想
 step
     .goto IcecrownGlacier,44.4,27.0
-	.use 41366 >>击杀劣尸维尔。并在他的尸体上使用统御之杖
+	.use 41366 >> 击杀劣尸维尔。并在他的尸体上使用统御之杖
     .complete 12893,1 --Vile turned (1)
 step
     .goto IcecrownGlacier,41.8,24.5
-	.use 41366 >>击杀奈丝伍德夫人，在她的尸体上使用统御之杖
+	.use 41366 >> 击杀奈丝伍德夫人，在她的尸体上使用统御之杖
     .complete 12893,2 --Lady Nightswood turned (1)
 step
     .goto IcecrownGlacier,43.0,23.5,70,0
@@ -78,7 +78,7 @@ step
     .goto IcecrownGlacier,45.7,19.7,70,0
     .goto IcecrownGlacier,43.7,19.0,70,0
     .goto IcecrownGlacier,42.6,21.1
-	.use 41366 >>击杀跳跃者，在他的尸体上使用统御之杖。他在上层主楼外行走。
+	.use 41366 >> 击杀跳跃者，在他的尸体上使用统御之杖。他在上层主楼外行走。
     .complete 12893,3 --The Leaper turned (1)
 	.unitscan The Leaper
 step
@@ -90,7 +90,7 @@ step
     .accept 12897 >>接受任务 顽固的敌人 << Horde
 step
     .goto IcecrownGlacier,44.7,19.8
-	>>进入建筑并点击将军的武器架，小心，这会刷出精英怪。击杀莱斯班恩将军
+	>> 进入建筑并点击将军的武器架，小心，这会刷出精英怪。击杀莱斯班恩将军
     .complete 12896,1 << Alliance --General Lightsbane (1)
     .complete 12897,1 << Horde --General Lightsbane (1)
 step << Alliance
@@ -115,7 +115,7 @@ step
 step
 	#completewith next
     .goto IcecrownGlacier,43.7,24.4
-    .fp The Shadow Vault >>开启暗影拱顶飞行点
+    .fp The Shadow Vault >> 开启暗影拱顶飞行点
 step
     .goto IcecrownGlacier,44.7,20.3
 	>>进入房屋。与兰克拉尔对话
@@ -129,7 +129,7 @@ step
     .goto IcecrownGlacier,37.5,24.7,0,0
 	#sticky
 	#label mjordincombat
-	.use 41372 >>从远处使用挑战旗对尤尔丁格斗者，你可以同时挑战多个格斗者，只要你不进入战斗（但每个2人组只能挑战1个怪）
+	.use 41372 >> 从远处使用挑战旗对尤尔丁格斗者，你可以同时挑战多个格斗者，只要你不进入战斗（但每个2人组只能挑战1个怪）
     .complete 12939,1 --Mjordin Combatants challenged and defeated (6)
 step
 	>>飞往野蛮之台
@@ -154,14 +154,14 @@ step
     .accept 12943 >>接受任务 暗影拱顶裁决令
 step
 	#completewith next
-    .goto IcecrownGlacier,39.01,23.99,25 >>前往乌弗朗之厅的路线从这里开始
+    .goto IcecrownGlacier,39.01,23.99,25 >> 前往乌弗朗之厅的路线从这里开始
 step
     .goto IcecrownGlacier,41.0,23.9
-	>>返回野蛮之台，然后进入乌弗朗之厅。与维林对话，他被锁链束缚在里面
+	>> 返回野蛮之台，然后进入乌弗朗之厅。与维林对话，他被锁链束缚在里面
     .accept 12949 >>接受任务 夺取钥匙
 step
     .goto IcecrownGlacier,40.3,23.9
-	.use 41776 >>在领主面前，使用你的背包中的暗影拱顶裁决令。击杀他。
+	.use 41776 >> 在领主面前，使用你的背包中的暗影拱顶裁决令。击杀他。
     .complete 12943,1 --Thane Ufrang the Mighty (1)
 step
     .goto IcecrownGlacier,37.7,23.9,70,0
@@ -189,7 +189,7 @@ step
 step
     .goto IcecrownGlacier,43.8,23.3,30,0
     .goto IcecrownGlacier,43.1,21.1
-	>>进入建筑。与左边的维林对话
+	>> 进入建筑。与左边的维林对话
     .turnin 13085 >>交任务 维林回来了
     .accept 12982 >>接受任务 黑锋囚犯
 step
@@ -222,7 +222,7 @@ step
 step
     .goto IcecrownGlacier,43.8,23.3,30,0
     .goto IcecrownGlacier,43.1,21.1
-	>>进入建筑。与左边的维林对话
+	>> 进入建筑。与左边的维林对话
     .turnin 12982 >>交任务 黑锋囚犯
 step
     .goto IcecrownGlacier,44.7,20.4
@@ -243,14 +243,14 @@ step
     .daily 13069 >>接受任务 把它们打下来！
 step
     .goto IcecrownGlacier,27.9,33.2
-	>>进入位于中央的尤顿海姆快速火焰镳枪之一。
-	>>在鱼叉内时，连续使用“速射鱼叉炮”（3）击落巨龙
+	>> 进入位于中央的尤顿海姆快速火焰镳枪之一。
+	>> 在鱼叉内时，连续使用“速射鱼叉炮”（3）击落巨龙
 	.complete 13069,1 --Jotunheim Proto-Drakes & their riders shot down
 	.isOnQuest 13069
 step
 	#completewith next
     .goto IcecrownGlacier,28.0,37.7
-    .vehicle 30564 >>右键点击一个约尔达始祖龙来骑乘它
+    .vehicle 30564 >> 右键点击一个约尔达始祖龙来骑乘它
 	.isOnQuest 13071
 step
     .goto IcecrownGlacier,27.7,41.1,70,0
@@ -282,7 +282,7 @@ step
 	#sticky
 	#label DeathRise
     .goto IcecrownGlacier,19.3,47.8
-    .fp Death's Rise >>开启死亡高地飞行路径
+    .fp Death's Rise >> 开启死亡高地飞行路径
 step
 	>>与希塔尔对话
     .daily 12813 >>接受任务 转化尸体
@@ -300,7 +300,7 @@ step
 	#label transformedcorpse
     .goto IcecrownGlacier,9.5,44.8,50,0
     .goto IcecrownGlacier,9.5,44.8,0,0
-	.use 40587 >>击杀该区域的攻势怪物。对它们的尸体使用背包中的达克门德的药剂
+	.use 40587 >> 击杀该区域的攻势怪物。对它们的尸体使用背包中的达克门德的药剂
     .complete 12813,1 --Scarlet Onslaught corpse transformed (10)
 	.isOnQuest 12813
 step
@@ -332,7 +332,7 @@ step
 	.isOnQuest 12838
 step
 	#requires transformedcorpse
-	.use 40551 >>在离海岸约30-90码处的海中击杀饥饿的巨鲨。从你的背包中取出戈尔膀胱，在他们的尸体上使用
+	.use 40551 >> 在离海岸约30-90码处的海中击杀饥饿的巨鲨。从你的背包中取出戈尔膀胱，在他们的尸体上使用
     .goto IcecrownGlacier,4.8,41.5,90,0
     .goto IcecrownGlacier,4.3,35.9,90,0
     .goto IcecrownGlacier,11.7,35.6,90,0
@@ -361,7 +361,7 @@ step
     .goto IcecrownGlacier,19.7,48.4
 step
     .goto IcecrownGlacier,10.4,44.1
-	>>击杀该区域的先锋军狮鹫骑士，并拾取他们的先锋军狮鹫缰绳
+	>> 击杀该区域的先锋军狮鹫骑士，并拾取他们的先锋军狮鹫缰绳
 	.collect 40970,1,12814,1 --Onslaught Grpyhon Reins (1)
 step
     .goto IcecrownGlacier,19.6,47.8
@@ -379,7 +379,7 @@ step
     .goto IcecrownGlacier,10.5,39.0,70,0
     .goto IcecrownGlacier,12.7,41.2,70,0
     .goto IcecrownGlacier,10.5,44.1
-	>>击杀该区域内的狮鹫骑士。用远程能力击杀他们，或在空中聚集多个然后俯冲击杀。如果聚集太多，不要被他们从背后击中，否则会被击下坐骑。
+	>> 击杀该区域内的狮鹫骑士。用远程能力击杀他们，或在空中聚集多个然后俯冲击杀。如果聚集太多，不要被他们从背后击中，否则会被击下坐骑。
     .complete 12815,1 --Onslaught Gryphon Rider (10)
 step
 	.goto Icecrown,19.64,47.80

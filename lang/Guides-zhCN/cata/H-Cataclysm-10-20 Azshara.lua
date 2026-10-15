@@ -18,18 +18,18 @@ RXPGuides.RegisterGuide([[
 
 step << Rogue Cata/Warlock Cata/Mage Cata
     #completewith next
-    .goto 1454,45.81,66.88,40 >>前往暗影裂口
+    .goto 1454,45.81,66.88,40 >> 前往暗影裂口
 step << Priest Cata/Paladin Cata
     #completewith next
-    .goto 1454,49.88,75.54,30 >>进入格罗玛什要塞
+    .goto 1454,49.88,75.54,30 >> 进入格罗玛什要塞
 step << Shaman Cata/Druid Cata
     #completewith next
     .goto 1454,44.84,75.46,40,0
-    .goto 1454,41.53,60.64,40 >>前往智慧谷
+    .goto 1454,41.53,60.64,40 >> 前往智慧谷
 step << Rogue Cata
     .goto 1454,44.65,61.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_戈达尔|r对话
-    .train 61922 >>训练你的职业技能
+    .train 61922 >> 训练你的职业技能
     .target Gordul
 step << Rogue Cata
     .goto 1454,29.60,50.40
@@ -40,43 +40,43 @@ step << Rogue Cata
 step << Shaman Cata
     .goto 1454,44.64,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎伊|r 对话
-    .train 3599 >>训练你的职业技能
+    .train 3599 >> 训练你的职业技能
     .target Sahi Cloudsinger
     .xp <10,1
 step << Druid Cata
     .goto 1454,44.79,51.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎乌拉|r 对话
-    .train 5215 >>训练你的职业技能
+    .train 5215 >> 训练你的职业技能
     .target Shalla Whiteleaf
     .xp <10,1
 step << Mage Cata
     .goto 1454,48.45,62.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛鲁德|r对话
-    .train 5505 >>训练你的职业技能
+    .train 5505 >> 训练你的职业技能
     .target Marud
     .xp <10,1
 step << Priest Cata
     .goto 1454,49.17,70.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_提耶利斯|r对话
-    .train 8092 >>训练你的职业技能
+    .train 8092 >> 训练你的职业技能
     .target Tyelis
     .xp <10,1
 step << Warlock Cata
     .goto 1454,54.49,39.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米尔科特|r 对话
-    .train 1120 >>训练你的职业技能
+    .train 1120 >> 训练你的职业技能
     .target 米尔科特
     .xp <10,1
 step << Paladin Cata
     .goto 1454,49.27,71.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_派雷亚诺|r对话
-    .train 82242 >>训练你的职业技能
+    .train 82242 >> 训练你的职业技能
     .target 派雷亚诺
     .xp <10,1
 step
     #completewith next
     .goto 1454,59.59,50.63,40,0
-    .goto 1454,65.39,49.14,40 >>前往荣誉谷
+    .goto 1454,65.39,49.14,40 >> 前往荣誉谷
 step << !Goblin
     .goto 1454,66.433,49.292
     >>点击 |cRXP_PICK_酋长的命令板|r
@@ -86,21 +86,21 @@ step << !Warrior !Paladin !Rogue !Hunter !Shaman
     #completewith next
     .goto 1454,66.84,50.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_基罗|r对话
-    .vendor >>出售物品并修理装备
+    .vendor >> 出售物品并修理装备
     .target Kiro
 step << Warrior Cata
     .goto 1454,73.71,45.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_罗纳卡达|r 对话
-    .train 71 >>训练你的职业技能
+    .train 71 >> 训练你的职业技能
     .target Blademaster Ronakada
     .xp <10,1
 step << Warrior/Paladin
     .goto 1454,76.38,37.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_考鲁|r 对话
-    .vendor >>出售垃圾物品并修理装备。如果卖掉武器能让你凑够钱买|T133477:0|t[巨棒]（24银）的话，就把它卖掉 << Orc/Troll
-    .vendor >>出售垃圾物品并修理装备。如果卖掉武器能让你凑够钱买|T133477:0|t[巨棒]（25银34铜）的话，就把它卖掉 << Tauren
-    .vendor >>出售垃圾物品并修理装备。如果卖掉武器能让你凑够钱买|T133477:0|t[巨棒]（26银67铜）的话，就把它卖掉 << Undead/BloodElf
-    .vendor >>出售垃圾物品并修理装备。如果卖掉武器能让你凑够钱买|T133477:0|t[巨棒]（21银34铜）的话，就把它卖掉 << Goblin
+    .vendor >> 出售垃圾物品并修理装备。如果卖掉武器能让你凑够钱买|T133477:0|t[巨棒]（24银）的话，就把它卖掉 << Orc/Troll
+    .vendor >> 出售垃圾物品并修理装备。如果卖掉武器能让你凑够钱买|T133477:0|t[巨棒]（25银34铜）的话，就把它卖掉 << Tauren
+    .vendor >> 出售垃圾物品并修理装备。如果卖掉武器能让你凑够钱买|T133477:0|t[巨棒]（26银67铜）的话，就把它卖掉 << Undead/BloodElf
+    .vendor >> 出售垃圾物品并修理装备。如果卖掉武器能让你凑够钱买|T133477:0|t[巨棒]（21银34铜）的话，就把它卖掉 << Goblin
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.9
     .target Koru
@@ -120,9 +120,9 @@ step << Shaman
     .goto 1454,76.12,37.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索玛|r 对话
     >>|cRXP_WARN_如果你没有选择增强专精，请跳过此步骤！|r
-    .vendor >>出售垃圾物品并修理。如果卖掉武器能凑够钱买|T132938:0|t[右手黄铜指虎]  (19银17铜)和|T132938:0|t[左手黄铜指虎] [19银24铜]，就卖掉武器 << Orc/Troll
-    .vendor >>出售垃圾物品并修理。如果卖掉武器能凑够钱买|T132938:0|t[右手黄铜指虎]  (20银24铜)和|T132938:0|t[左手黄铜指虎] [20银31铜]，就卖掉武器 << Tauren
-    .vendor >>出售垃圾物品并修理。如果卖掉武器能凑够钱买|T132938:0|t[右手黄铜指虎]  (17银4铜)和|T132938:0|t[左手黄铜指虎] [17银10铜]，就卖掉武器 << Goblin
+    .vendor >> 出售垃圾物品并修理。如果卖掉武器能凑够钱买|T132938:0|t[右手黄铜指虎]  (19银17铜)和|T132938:0|t[左手黄铜指虎] [19银24铜]，就卖掉武器 << Orc/Troll
+    .vendor >> 出售垃圾物品并修理。如果卖掉武器能凑够钱买|T132938:0|t[右手黄铜指虎]  (20银24铜)和|T132938:0|t[左手黄铜指虎] [20银31铜]，就卖掉武器 << Tauren
+    .vendor >> 出售垃圾物品并修理。如果卖掉武器能凑够钱买|T132938:0|t[右手黄铜指虎]  (17银4铜)和|T132938:0|t[左手黄铜指虎] [17银10铜]，就卖掉武器 << Goblin
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
     .target Shoma
@@ -142,10 +142,10 @@ step << Shaman
 step << Hunter
     .goto 1454,75.08,36.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_森度吉安|r对话
-    .vendor >>出售垃圾物品并修理装备。如果卖掉武器能让你凑够|T135489:0|t[多层弯弓]（15银76铜）的钱，那就卖掉 << Orc/Troll
-    .vendor >>出售垃圾物品并修理装备。如果卖掉武器能让你凑够|T135489:0|t[多层弯弓]（16银64铜）的钱，那就卖掉 << Tauren
-    .vendor >>出售垃圾物品并修理装备。如果卖掉武器能让你凑够|T135489:0|t[多层弯弓]（17银52铜）的钱，那就卖掉 << Undead/BloodElf
-    .vendor >>出售垃圾物品并修理装备。如果卖掉武器能让你凑够|T135489:0|t[多层弯弓]（14银2铜）的钱，那就卖掉 << Goblin
+    .vendor >> 出售垃圾物品并修理装备。如果卖掉武器能让你凑够|T135489:0|t[多层弯弓]（15银76铜）的钱，那就卖掉 << Orc/Troll
+    .vendor >> 出售垃圾物品并修理装备。如果卖掉武器能让你凑够|T135489:0|t[多层弯弓]（16银64铜）的钱，那就卖掉 << Tauren
+    .vendor >> 出售垃圾物品并修理装备。如果卖掉武器能让你凑够|T135489:0|t[多层弯弓]（17银52铜）的钱，那就卖掉 << Undead/BloodElf
+    .vendor >> 出售垃圾物品并修理装备。如果卖掉武器能让你凑够|T135489:0|t[多层弯弓]（14银2铜）的钱，那就卖掉 << Goblin
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.5
     .target 森度吉安
@@ -165,9 +165,9 @@ step << Hunter
 step << Rogue
     .goto 1454,76.12,37.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索玛|r 对话
-    .vendor >>出售垃圾物品并修理装备。如果卖掉武器能让你有足够的钱购买|T135346:0|t[斗士短剑]，那就卖掉；如果钱够的话就买两把（每把18银20铜） << Orc/Troll
-    .vendor >>出售垃圾物品并修理装备。如果卖掉武器能让你有足够的钱购买|T135346:0|t[斗士短剑]，那就卖掉；如果钱够的话就买两把（每把20银23铜） << Undead/BloodElf
-    .vendor >>出售垃圾物品并修理装备。如果卖掉武器能让你有足够的钱购买|T135346:0|t[斗士短剑]，那就卖掉；如果钱够的话就买两把（每把16银18铜） << Goblin
+    .vendor >> 出售垃圾物品并修理装备。如果卖掉武器能让你有足够的钱购买|T135346:0|t[斗士短剑]，那就卖掉；如果钱够的话就买两把（每把18银20铜） << Orc/Troll
+    .vendor >> 出售垃圾物品并修理装备。如果卖掉武器能让你有足够的钱购买|T135346:0|t[斗士短剑]，那就卖掉；如果钱够的话就买两把（每把20银23铜） << Undead/BloodElf
+    .vendor >> 出售垃圾物品并修理装备。如果卖掉武器能让你有足够的钱购买|T135346:0|t[斗士短剑]，那就卖掉；如果钱够的话就买两把（每把16银18铜） << Goblin
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
     .target Shoma
@@ -237,13 +237,13 @@ step << Rogue
 step << Hunter Cata
     .goto 1454,63.87,32.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥玛克|r对话
-    .train 1978 >>训练你的职业技能
+    .train 1978 >> 训练你的职业技能
     .target 奥玛克
     .xp <10,1
 step
     #completewith RunawayShredder
     .goto 1454,75.39,4.15,0
-    .zone Azshara >>从北部出口进入艾萨拉
+    .zone Azshara >> 从北部出口进入艾萨拉
 step
     #optional
     .goto 76,26.81,76.96
@@ -486,7 +486,7 @@ step
     .waypoint 76,25.517,69.028,20,0
     .waypoint 76,24.911,68.008,20,0
     .waypoint 76,23.005,68.003,20,0
-    .use 48104 >>|cRXP_WARN_使用|r |T249182:0|t[血肉重塑器] |cRXP_WARN_在|r |cRXP_FRIENDLY_山麓矿工|r身上
+    .use 48104 >> |cRXP_WARN_使用|r |T249182:0|t[血肉重塑器] |cRXP_WARN_在|r |cRXP_FRIENDLY_山麓矿工|r身上
     .complete 14194,1 --Mountainfoot Miner Destoned (8)
     .target Mountainfoot Miner
 step
@@ -590,7 +590,7 @@ step
     .target Commander Molotov
 step
     .goto 76,31.12,57.59
-    .vehicle >>骑上 |cRXP_FRIENDLY_锈水财阀迫击炮|r
+    .vehicle >> 骑上 |cRXP_FRIENDLY_锈水财阀迫击炮|r
     .target Bilgewater Mortar
     .isOnQuest 14471
 step
@@ -609,7 +609,7 @@ step
     .target Glix Grindlock
 step
     .goto 76,31.61,60.49
-    .use 49700 >>|cRXP_WARN_使用你的|r |T133032:0|t[SFG] |cRXP_WARN_来击杀|r |cRXP_ENEMY_被奴役的亚考罗克之子|r
+    .use 49700 >> |cRXP_WARN_使用你的|r |T133032:0|t[SFG] |cRXP_WARN_来击杀|r |cRXP_ENEMY_被奴役的亚考罗克之子|r
     .complete 14472,1 --Enslaved Son of Arkkoroc (1)
     .mob Enslaved Son of Arkkoroc
 step
@@ -625,7 +625,7 @@ step
 step
     .goto 76,31.924,50.964
     >>前往埃达拉斯废墟的中心
-    .use 49701 >>|cRXP_WARN_使用你的|r |T133866:0|t[隐形力场生成器] |cRXP_WARN_来变为隐形|r
+    .use 49701 >> |cRXP_WARN_使用你的|r |T133866:0|t[隐形力场生成器] |cRXP_WARN_来变为隐形|r
     .complete 24452,1 --Heart of Arkkoroc identified
 step
     .goto 76,29.45,57.65
@@ -657,7 +657,7 @@ step
     .complete 14201,1 --Recovered Artifacts (5)
 step
     >>在 |cRXP_FRIENDLY_地精勘测员小格雷德|r 进行勘测时，保护她免受来袭的 |cRXP_ENEMY_仇恨之影|r 攻击
-    .use 48655 >>|cRXP_WARN_如果需要的话，使用你的|r |T133015:0|t[勘测员的信标] |cRXP_WARN_召唤一个新的|r |cRXP_FRIENDLY_地精勘测员|r |cRXP_WARN_|r
+    .use 48655 >> |cRXP_WARN_如果需要的话，使用你的|r |T133015:0|t[勘测员的信标] |cRXP_WARN_召唤一个新的|r |cRXP_FRIENDLY_地精勘测员|r |cRXP_WARN_|r
     .complete 14202,2 --Survey North Marker (1)
     .goto 76,34.69,71.58
     .complete 14202,3 --Survey East Marker (1)
@@ -778,7 +778,7 @@ step
     .complete 14258,1 --Goblin Mortar Shell (5)
 step
     #completewith NineVisit1
-    .use 49132 >>|cRXP_WARN_使用|r |T133037:0|t[Fireliminator X-21] |cRXP_WARN_瞄准火焰和|r |cRXP_FRIENDLY_研究实习生|r
+    .use 49132 >> |cRXP_WARN_使用|r |T133037:0|t[Fireliminator X-21] |cRXP_WARN_瞄准火焰和|r |cRXP_FRIENDLY_研究实习生|r
     .complete 14308,1 --Lab Fires Extinguished (8)
     .complete 14308,2 --Research Interns Rescued (6)
     .target Research Intern
@@ -800,7 +800,7 @@ step
     .waypoint 76,44.122,76.798,30,0
     .waypoint 76,43.906,74.755,30,0
     .waypoint 76,43.465,75.872,30,0
-    .use 49132 >>|cRXP_WARN_使用|r |T133037:0|t[Fireliminator X-21] |cRXP_WARN_瞄准火焰和|r |cRXP_FRIENDLY_研究实习生|r
+    .use 49132 >> |cRXP_WARN_使用|r |T133037:0|t[Fireliminator X-21] |cRXP_WARN_瞄准火焰和|r |cRXP_FRIENDLY_研究实习生|r
     >>|cRXP_WARN_小心|r |cRXP_ENEMY_四号实验体|r|cRXP_WARN_（红色迅猛龙），它可以一击秒杀你。|r
     .complete 14308,1 --Lab Fires Extinguished (8)
     .complete 14308,2 --Research Interns Rescued (6)
@@ -821,7 +821,7 @@ step
     .goto 76,49.490,74.495
     >>点击 |cRXP_PICK_反应堆控制控制台|r，开始护送任务
     >>护送小车回到南部火箭车终点站
-    .use 49132 >>|cRXP_WARN_当|r |T133037:0|t[X-21型火焰消除器] |cRXP_WARN_瞄准|r |cRXP_FRIENDLY_巨型实验室地精|r |cRXP_WARN_时，在他身上着火时使用|r
+    .use 49132 >> |cRXP_WARN_当|r |T133037:0|t[X-21型火焰消除器] |cRXP_WARN_瞄准|r |cRXP_FRIENDLY_巨型实验室地精|r |cRXP_WARN_时，在他身上着火时使用|r
     .complete 14310,1 --Azsharite Core Delivered (1)
     .target Hulking Labgoblin
 step
@@ -892,7 +892,7 @@ step
 step
     .goto 76,42.25,76.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_九号实验品|r对话
-    .turnin 14422 >>交任务 飞向外太空的迅猛龙
+    .turnin 14422 >> 交任务 飞向外太空的迅猛龙
     .target Subject Nine
 step
     .goto 76,45.06,75.48
@@ -1131,22 +1131,22 @@ step
 step << Shaman Cata
     .goto 76,56.671,49.531
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克斯·雪崩|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Maxx Avalanche
 step << Mage Cata
     .goto 76,56.919,49.598
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_“点火器”菲兹|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Fizz Lighter
 step << Warlock Cata
     .goto 76,56.708,49.283
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾沃·邪指|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Evol Fingers
 step << Priest Cata
     .goto 76,56.852,50.279
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_修女金筛|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Sister Goldskimmer
 step
     .goto 76,56.978,50.093
@@ -1155,23 +1155,23 @@ step
 step
     .goto 1447/1,-6519.00000,3529.80005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格里米·油指|r对话
-    .home >>设置你的炉石在锈水港
+    .home >> 设置你的炉石在锈水港
     .target Grimy Greasefingers
     .subzoneskip 4821,1
 step << Rogue Cata
     .goto 76,56.884,50.575
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史丁奇·剃刀|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Stinky Shapshiv
 step << Hunter Cata
     .goto 76,56.914,50.709
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴姆·重磅炸弹|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Bamm Megabomb
 step << Warrior Cata
     .goto 76,57.167,50.105
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在楼上的 |cRXP_FRIENDLY_全能战士NX-01型|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Warrior-Matic NX-01
 
     --VV Confirm if there are no Druid/Pala trainers in Bilgewater
@@ -2073,7 +2073,7 @@ step
     #xprate <1.2
     #optional
     #completewith next
-    .goto 76,32.755,32.247,12 >>离开黑喉要塞
+    .goto 76,32.755,32.247,12 >> 离开黑喉要塞
     .subzoneskip 1216,1
     .isOnQuest 14435
 step
@@ -2208,7 +2208,7 @@ step << Druid Cata
     #label DruidTraining1
     .goto 1450/1,-2593.69995,7867.39990
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洛甘纳尔|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 洛甘纳尔
 step
     #completewith next
@@ -2218,37 +2218,37 @@ step
 step << Shaman Cata
     .goto 76,56.671,49.531
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克斯·雪崩|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Max Avalanche
 step << Mage Cata
     .goto 76,56.919,49.598
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_“点火器”菲兹|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Fizz Lighter
 step << Warlock Cata
     .goto 76,56.708,49.283
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾沃·邪指|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Evol Fingers
 step << Priest Cata
     .goto 76,56.852,50.279
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_修女金筛|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Sister Goldskimmer
 step << Rogue Cata
     .goto 76,56.884,50.575
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史丁奇·剃刀|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Stinky Shapshiv
 step << Hunter Cata
     .goto 76,56.914,50.709
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴姆·重磅炸弹|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Bamm Megabomb
 step << Warrior Cata
     .goto 76,57.167,50.105
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在楼上的 |cRXP_FRIENDLY_全能战士NX-01型|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Warrior-Matic NX-01
 step
     .goto 76,53.264,49.955
@@ -2487,7 +2487,7 @@ step
     #completewith WarhorseTraining << Paladin
     .goto 76,14.346,65.018
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗格|r 对话
-    .fly Orgrimmar >>飞往奥格瑞玛
+    .fly Orgrimmar >> 飞往奥格瑞玛
     .target Kroum
     .zoneskip Orgrimmar
 step

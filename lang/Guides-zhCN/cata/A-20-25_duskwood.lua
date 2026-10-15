@@ -18,7 +18,7 @@ RXPGuides.RegisterGuide([[
 
 step
     .goto 47,93.30,12.00
-    .zone 47 >>前往暮色森林
+    .zone 47 >> 前往暮色森林
 step
     .goto 47,78.74,44.53,8,0
     .goto 47,79.09,44.17
@@ -76,7 +76,7 @@ step
 	.target +Commander Althea Ebonlocke
 step
     .goto 47,75.33,48.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡洛尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡洛尔|r 对话
     .accept 26688 >>接受任务 林子里的狼人
 	.target 卡洛尔
 
@@ -151,7 +151,7 @@ step
 	.mob Dire Wolf
 step
     .isOnQuest 26620,26618,26623,26688,26667
-    .hs >>炉石回到夜色镇
+    .hs >> 炉石回到夜色镇
     .cooldown item,6948,>2
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与室内的 |cRXP_FRIENDLY_书记员达尔塔|r 和室外的 |cRXP_FRIENDLY_阿尔泰娅·埃伯洛克|r 对话
@@ -165,7 +165,7 @@ step
 	.target +Commander Althea Ebonlocke
 step
     .goto 47,75.33,48.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡洛尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡洛尔|r 对话
     .turnin 26688 >>交任务 林子里的狼人
     .accept 26689 >>接受任务 烂果园
 	.target 卡洛尔
@@ -189,7 +189,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与房子里的 |cRXP_FRIENDLY_玛丽|r 对话
     .turnin 26652 >>交任务 幽灵的发丝
     .accept 26654 >>接受任务 归还梳子
-    .turnin 26683 >>交任务 眺望群星
+    .turnin 26683 >>交任务眺望群星
     .accept 26684 >>接受任务 疯狂的食尸鬼
 	.target 盲眼玛丽
 step
@@ -205,7 +205,7 @@ step
 	.mob Rotting Horror
 step
     #completewith next
-    .subzone 42 >>返回到夜色镇
+    .subzone 42 >> 返回到夜色镇
 step
     .goto 47,75.56,45.37,8,0
     .goto 47,75.83,45.26
@@ -288,7 +288,7 @@ step
 step
 	#completewith next
     .goto 47,66.03,75.79,8,0
-    .goto 47,65.98,76.42,8 >>进入谷仓
+    .goto 47,65.98,76.42,8 >> 进入谷仓
 step
 #label journal1
     .goto 47,66.59,76.44
@@ -331,7 +331,7 @@ step
 	.goto 47,73.82,45.95,8 >>离开旅店
 step
     .goto 47,75.33,48.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡洛尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_卡洛尔|r 对话
     .turnin 26689,1 >>交任务 烂果园
     .accept 26690 >>接受任务 邪齿和堕落
 	.target 卡洛尔
@@ -415,7 +415,7 @@ step
 	.target 伊瓦夫人
 step
     #completewith next
-	.cast 82029 >>|cRXP_WARN_使用|r |T133343:0|t[密斯特曼托家族戒指] |cRXP_WARN_召唤|r |cRXP_ENEMY_斯塔文·密斯特曼托|r
+	.cast 82029 >> |cRXP_WARN_使用|r |T133343:0|t[密斯特曼托家族戒指] |cRXP_WARN_召唤|r |cRXP_ENEMY_斯塔文·密斯特曼托|r
 	.timer 33,密斯特曼托的复仇 剧情RP
 step
     .goto 47,77.42,35.85,10,0
@@ -432,7 +432,7 @@ step
 	.target Tobias Mistmantle
 step
 	#completewith next
-    .goto 47,69.51,48.83,30 >>走市政厅后方的小路前往阳光树林
+    .goto 47,69.51,48.83,30 >> 走市政厅后方的小路前往阳光树林
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守夜人道茨|r 和 |cRXP_FRIENDLY_学徒菲斯|r 对话
     .accept 25235 >>接受任务 粗野的沃古尔
@@ -480,7 +480,7 @@ step
     .complete 26680,1 --1/1 Abercrombie's Crate
 step
     #completewith next
-    .goto 47,34.23,77.47,15 >>进入裂拳食人魔洞穴
+    .goto 47,34.23,77.47,15 >> 进入裂拳食人魔洞穴
 step
 	#label Zzarc
     .goto 47,37.87,84.33
@@ -579,7 +579,7 @@ step
 	.target Oliver Harris
 	.target Sister Elsington
 step
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     >>|cRXP_WARN_若计时结束后未获得进度，放弃「异想天开」并重新接受任务|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_奥利弗·哈里斯|r,|cRXP_FRIENDLY_斯温·约根|r, 和|cRXP_FRIENDLY_艾丽辛顿修女|r 对话
     .complete 26760,1 --1/1 Worgen cured
@@ -623,7 +623,7 @@ step
     .complete 26723,1 --1/1 Remains of Morbent Fel
 step
     .isOnQuest 26793,26685,26680
-    .hs >>炉石回到夜色镇
+    .hs >> 炉石回到夜色镇
     .cooldown item,6948,>2
 step
     .goto 47,72.43,46.80,15,0
@@ -640,7 +640,7 @@ step
     .target 指挥官阿尔泰娅·埃伯洛克
 step
 	#sticky
-    .destroy 2154 >>删除 |T133741:0|t[摩根·拉迪莫尔的故事]
+    .destroy 2154 >> 删除 |T133741:0|t[摩根·拉迪莫尔的故事]
 step
     .goto 47,79.53,47.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维克托·安特拉斯|r 对话
@@ -881,5 +881,5 @@ step
     #label endOfTheGuide
 step
     .goto 50,51.88,12.10
-    .zone 50 >>前往北荆棘谷
+    .zone 50 >> 前往北荆棘谷
 ]])

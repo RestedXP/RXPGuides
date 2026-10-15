@@ -146,37 +146,37 @@ step
 step << Priest
     .goto 62,50.647,19.840
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾尔拉娜·晨光|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Irlara Morninglight
 step << Hunter
     .goto 62,50.352,19.126
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_兰拉·弓叶|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Lanla Bowleaf
 step << Mage
     .goto 62,50.465,19.210
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉雷瑟·贝德|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Lareth Beld
 step << Warlock
     .goto 62,50.487,19.240
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_蕾拉·杜布斯|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Laera Dubois
 step << Rogue
     .goto 62,50.684,18.509
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_肯拉尔·夜风|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Kenral Nightwind
 step << Warrior
     .goto 62,50.831,18.787
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵 哨兵月翼|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Sentinel Moonwing
 step << Druid
     .goto 62,50.120,19.495
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜拉尔|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Dular
 step
     .goto 62,52.96,25.46,40,0
@@ -253,7 +253,7 @@ step
 	.mob Vile Corruptor
 step
     #completewith next
-    .hs >>炉石回到洛达内尔
+    .hs >> 炉石回到洛达内尔
     .cooldown item,6948,>2
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维兹班恩·曲针|r 和 |cRXP_FRIENDLY_萨纳瑞恩·绿树|r 对话
@@ -387,7 +387,7 @@ step
 step
     #completewith next
     .goto 62,42.938,39.031
-    .aura 64198 >>点击地上的 |cRXP_PICK_丛林守护者的熏香|r
+    .aura 64198 >> 点击地上的 |cRXP_PICK_丛林守护者的熏香|r
     .skipgossip
 step
     .goto 62,43.683,39.926
@@ -542,15 +542,15 @@ step
 step
     #completewith next
     .goto 62,38.77,60.82,25,0
-    .goto 62,39.66,62.12,30 >>前往小山顶端的祭坛
+    .goto 62,39.66,62.12,30 >> 前往小山顶端的祭坛
 step
     .goto 62,39.66,62.12
-    .cast 65361 >>|cRXP_WARN_在祭坛旁边使用|r |T135839:0|t[充能的安抚图腾] |cRXP_WARN_然后保护它|r
+    .cast 65361 >> |cRXP_WARN_在祭坛旁边使用|r |T135839:0|t[充能的安抚图腾] |cRXP_WARN_然后保护它|r
     .use 46546
     .isOnQuest 13580
 step
     .goto 62,39.66,62.12
-    .use 46546 >>|cRXP_WARN_保护|r |T135839:0|t[充能的安抚图腾] |cRXP_WARN_并抵抗来袭的敌人|r
+    .use 46546 >> |cRXP_WARN_保护|r |T135839:0|t[充能的安抚图腾] |cRXP_WARN_并抵抗来袭的敌人|r
     .complete 13580,1 --|1/1 Ritual of Soothing complete
     .mob Fire Elemental Remnant
     .mob Fire Elemental Rager
@@ -594,7 +594,7 @@ step
 step
 #completewith next
     .goto 62,46.620,54.478,25,0
-    .goto 62,47.366,55.964,25 >>前往碎地者洞穴
+    .goto 62,47.366,55.964,25 >> 前往碎地者洞穴
     .subzoneskip 4708
 step
     .goto 62,49.003,57.076
@@ -619,8 +619,8 @@ step
     .goto 62/1,192.60001,5918.10010
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_玛法里奥·怒风|r 对话
     .target Malfurion Stormrage
-    .turnin 13940 >>交任务 离开梦境
-    .accept 13588 >>接受任务 群风之眼
+    .turnin 13940 >> 交任务 离开梦境
+    .accept 13588 >> 接受任务 群风之眼
 step
     .goto 62,43.555,53.701
     >>与 |cRXP_FRIENDLY_塔丝瑟拉|r 对话并与其飞行，用她的第一个技能击杀 |cRXP_ENEMY_暮光龙骑兵|r 并摧毁 |cRXP_ENEMY_暮光传送门|r
@@ -640,7 +640,7 @@ step
 ----
 step
     #completewith next
-    .hs >>炉石回到洛达内尔
+    .hs >> 炉石回到洛达内尔
 step
 #sticky
 #label glynda2
@@ -677,37 +677,37 @@ step << skip--terrible xp/hr
 step << Priest
     .goto 62,50.647,19.840
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾尔拉娜·晨光|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Irlara Morninglight
 step << Hunter
     .goto 62,50.352,19.126
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_兰拉·弓叶|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Lanla Bowleaf
 step << Mage
     .goto 62,50.465,19.210
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉雷瑟·贝德|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Lareth Beld
 step << Warlock
     .goto 62,50.487,19.240
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_蕾拉·杜布斯|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Laera Dubois
 step << Rogue
     .goto 62,50.684,18.509
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_肯拉尔·夜风|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Kenral Nightwind
 step << Warrior
     .goto 62,50.831,18.787
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵 哨兵月翼|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Sentinel Moonwing
 step << Druid
     .goto 62,50.120,19.495
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜拉尔|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Dular
 step
     #optional
@@ -779,7 +779,7 @@ step
 #completewith escort1a
     .goto 62,62.143,9.604,0
     >>击杀 |cRXP_ENEMY_部落执行者|r 和 |cRXP_ENEMY_碎矛秘法师|r
-    .use 44999 >>在部落营地周围的 |cRXP_PICK_碎矛军备|r 上使用 |T135433:0|t[卫戍火把]
+    .use 44999 >> 在部落营地周围的 |cRXP_PICK_碎矛军备|r 上使用 |T135433:0|t[卫戍火把]
     .complete 13507,1 --|6/6 Horde Enforcer slain
     .mob +Horde Enforcer
     .complete 13507,2 --|6/6 Shatterspear Mystic slain
@@ -814,7 +814,7 @@ step
     .goto 62,61.720,11.021,30,0
     .goto 62,62.143,9.604,0
     >>击杀 |cRXP_ENEMY_部落执行者|r 和 |cRXP_ENEMY_碎矛秘法师|r
-    .use 44999 >>在部落营地周围的 |cRXP_PICK_碎矛军备|r 上使用 |T135433:0|t[卫戍火把]
+    .use 44999 >> 在部落营地周围的 |cRXP_PICK_碎矛军备|r 上使用 |T135433:0|t[卫戍火把]
     .complete 13507,1 --|6/6 Horde Enforcer slain
     .mob +Horde Enforcer
     .complete 13507,2 --|6/6 Shatterspear Mystic slain
@@ -847,7 +847,7 @@ step
 #sticky
 #label sheya
     .goto 62,61.233,20.367
-    .use 44995 >>|cRXP_WARN_使用|r |T136021:0|t[树妖之矛] |cRXP_WARN_击杀|r |cRXP_ENEMY_风暴编织者赛雅|r
+    .use 44995 >> |cRXP_WARN_使用|r |T136021:0|t[树妖之矛] |cRXP_WARN_击杀|r |cRXP_ENEMY_风暴编织者赛雅|r
     .complete 13512,2 --|1/1 Sheya Stormweaver slain
     .mob Sheya Stormweaver
 step
@@ -871,7 +871,7 @@ step
     .mob Teegan Holloway
 step
     .goto 62,56.801,25.781
-    .use 44995 >>|cRXP_WARN_使用|r |T136021:0|t[树妖之矛] |cRXP_WARN_击杀|r |cRXP_ENEMY_洛伦瑟·唤雷|r
+    .use 44995 >> |cRXP_WARN_使用|r |T136021:0|t[树妖之矛] |cRXP_WARN_击杀|r |cRXP_ENEMY_洛伦瑟·唤雷|r
     .complete 13512,1 --|1/1 Lorenth Thundercall slain
     .mob Lorenth Thundercall
 step--TODO: Fix this bit
@@ -899,7 +899,7 @@ step
 step
 #completewith next
     .goto 62,69.435,19.546
-    .vehicle >>|cRXP_WARN_骑上|r |cRXP_FRIENDLY_狂怒的保护者|r
+    .vehicle >> |cRXP_WARN_骑上|r |cRXP_FRIENDLY_狂怒的保护者|r
     .target Vengeful Protector
 step
     .goto 62,70.684,20.841,0
@@ -915,7 +915,7 @@ step
     .complete 13514,2 --|6/6 Shatterspear Structures destroyed
 step
     .isOnQuest 13514
-    .exitvehicle >>|cRXP_WARN_从 |r狂怒的保护者|cRXP_FRIENDLY_ 上下来|r
+    .exitvehicle >> |cRXP_WARN_从 |r狂怒的保护者|cRXP_FRIENDLY_ 上下来|r
 step
     .goto 62,72.263,19.096
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女猎手桑德娅·月落|r 对话
@@ -925,7 +925,7 @@ step
 step
     .isOnQuest 13515
     .goto 62,72.263,19.096
-    .gossip 33178,0 >>与 |cRXP_FRIENDLY_女猎手桑德娅·月落|r 对话以开始突击
+    .gossip 33178,0 >> 与 |cRXP_FRIENDLY_女猎手桑德娅·月落|r 对话以开始突击
     .skipgossip 33178,1
     .target Huntress Sandrya Moonfall
 step
@@ -949,7 +949,7 @@ step
     .turnin 13514 >>交任务 古树的怒火
 step
     #completewith next
-    .hs >>炉石回到洛达内尔
+    .hs >> 炉石回到洛达内尔
 step << skip
     .goto 62,51.004,19.217
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高尔博德·钢手|r 对话
@@ -969,37 +969,37 @@ step
 step << Priest
     .goto 62,50.647,19.840
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾尔拉娜·晨光|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Irlara Morninglight
 step << Hunter
     .goto 62,50.352,19.126
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_兰拉·弓叶|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Lanla Bowleaf
 step << Mage
     .goto 62,50.465,19.210
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉雷瑟·贝德|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Lareth Beld
 step << Warlock
     .goto 62,50.487,19.240
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_蕾拉·杜布斯|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Laera Dubois
 step << Rogue
     .goto 62,50.684,18.509
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_肯拉尔·夜风|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Kenral Nightwind
 step << Warrior
     .goto 62,50.831,18.787
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵 哨兵月翼|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Sentinel Moonwing
 step << Druid
     .goto 62,50.120,19.495
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜拉尔|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Dular
 step
     #optional
@@ -1065,12 +1065,12 @@ step
 step
 #questguide
     .goto 62,40.634,84.297
-    .subzone 449 >>前往主宰之剑
+    .subzone 449 >> 前往主宰之剑
     .isOnQuest 13892
 step
 #questguide
     #completewith next
-    .cast 65426 >>|cRXP_WARN_使用|r |T133236:0|t[黑豹雕像] |cRXP_WARN_来变身成黑豹|r
+    .cast 65426 >> |cRXP_WARN_使用|r |T133236:0|t[黑豹雕像] |cRXP_WARN_来变身成黑豹|r
     .use 46696
 step
 #questguide
@@ -1095,7 +1095,7 @@ step
     .goto 62,40.733,85.046,10,0
     .goto 62,39.809,85.356,10,0
     .goto 62,40.101,84.651
-    .use 46696 >>|cRXP_WARN_使用|r |T133236:0|t[黑豹雕像] |cRXP_WARN_再次变身成黑豹|r
+    .use 46696 >> |cRXP_WARN_使用|r |T133236:0|t[黑豹雕像] |cRXP_WARN_再次变身成黑豹|r
     >>|cRXP_WARN_潜行到|r |cRXP_ENEMY_灾难预言者索维利恩|r |cRXP_WARN_身旁，爬上脚手架。再次等待剧情完成|r
     >>|cRXP_WARN_避开 |cRXP_ENEMY_无面者|r 因为他们具有隐形探测能力|r
     .target Doomspeaker Trevellion
@@ -1129,7 +1129,7 @@ step
 #questguide
 #requires fleetfoot
     .goto 62,45.300,76.734
-    .use 44888 >>|cRXP_WARN_在|r |cRXP_WARN_远古熊雕像|r |cRXP_PICK_处使用|r |T134189:0|t[受祝福的草药包]
+    .use 44888 >> |cRXP_WARN_在|r |cRXP_WARN_远古熊雕像|r |cRXP_PICK_处使用|r |T134189:0|t[受祝福的草药包]
     .complete 13544,1
 step
 #questguide
@@ -1345,7 +1345,7 @@ step
     .complete 13909,1
 step
 #questguide
-    .use 46702 >>|cRXP_WARN_使用|r |T132997:0|t[远古圣物碎片] |cRXP_WARN_组合成|r |cRXP_LOOT_组装完成的远古圣物|r
+    .use 46702 >> |cRXP_WARN_使用|r |T132997:0|t[远古圣物碎片] |cRXP_WARN_组合成|r |cRXP_LOOT_组装完成的远古圣物|r
     .complete 13918,1
 step
 #questguide
@@ -1360,7 +1360,7 @@ step
 step
 #questguide
     .goto 62,35.905,81.942
-    .use 46385 >>|cRXP_WARN_在|r |cRXP_WARN_鱼人村落施工点|r|cRXP_PICK_使用|r |T132281:0|t[奇特的移动式鱼人茅舍制造器]
+    .use 46385 >> |cRXP_WARN_在|r |cRXP_WARN_鱼人村落施工点|r|cRXP_PICK_使用|r |T132281:0|t[奇特的移动式鱼人茅舍制造器]
     .complete 13910,1 --|1/1 Greymist Murloc Home Built
 step
 #questguide
@@ -1433,7 +1433,7 @@ step
 #questguide
 #completewith next
     .goto 62,44.474,75.350
-    .vehicle >>|cRXP_WARN_与|cRXP_FRIENDLY_ 奥修斯|r 对话，骑上|r |cRXP_FRIENDLY_角鹰兽|r
+    .vehicle >> |cRXP_WARN_与|cRXP_FRIENDLY_ 奥修斯|r 对话，骑上|r |cRXP_FRIENDLY_角鹰兽|r
     .skipgossip
 step
 #questguide
@@ -1455,13 +1455,13 @@ step
 #questguide
     #completewith next
     .goto 62,45.031,79.192
-    .cast 65207 >>|cRXP_WARN_对水下的|r 吞噬神器|cRXP_WARN_ 使用|cRXP_PICK_ |T133749:0|t[予生者幼苗] |r以召唤|r |cRXP_ENEMY_吞噬者尤萨尔|r
+    .cast 65207 >> |cRXP_WARN_对水下的|r 吞噬神器|cRXP_WARN_ 使用|cRXP_PICK_ |T133749:0|t[予生者幼苗] |r以召唤|r |cRXP_ENEMY_吞噬者尤萨尔|r
     .timer 10,黑海岸的吞噬者 剧情演出
     .use 46370
 step
 #questguide
     .goto 62,45.031,79.192
-    .use 46370 >>击杀 |cRXP_ENEMY_吞噬者尤萨尔|r
+    .use 46370 >> 击杀 |cRXP_ENEMY_吞噬者尤萨尔|r
     .complete 13891,1
     .mob Yoth'al the Devourer
 step
@@ -1499,7 +1499,7 @@ step
     .goto 62,32.796,84.294
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_玛法里奥·怒风|r对话
     .turnin 13900 >>交任务 献给艾萨拉
-    .accept 13897 >>接受任务 黑海岸之战
+    .accept 13897 >> 接受任务 黑海岸之战
     .target Malfurion Stormrage
 step
 #questguide
@@ -1540,5 +1540,5 @@ step
 step
 #questguide
     #completewith next
-    .hs >>炉石回到洛达内尔
+    .hs >> 炉石回到洛达内尔
 ]])

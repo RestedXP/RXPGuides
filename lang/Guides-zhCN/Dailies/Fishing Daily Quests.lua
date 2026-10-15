@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 
 step
 	.goto Dalaran,53.04,64.95
-	.daily 13830,13832,13833,13834,13836, >>在达拉然与|cRXP_FRIENDLY_玛西娅·切斯|r 对话。她有5个日常钓鱼任务中的1个可用。接受任意一个可用的任务
+	.daily 13830,13832,13833,13834,13836, >> 在达拉然与|cRXP_FRIENDLY_玛西娅·切斯|r 对话。她有5个日常钓鱼任务中的1个可用。接受任意一个可用的任务
 	>>幽灵鱼 -- 13830
 	>>下水道中的珍宝 -- 13832
 	>>血浓于水 -- 13833
@@ -35,7 +35,7 @@ step << Horde
 step
 	.goto Wintergrasp,79.57,46.92,-1
 	.goto Wintergrasp,79.88,41.38,-1
-	.zone Wintergrasp >>前往冬拥湖
+	.zone Wintergrasp >> 前往冬拥湖
 	.isOnQuest 13834
 step << Alliance
 	>>在冬拥湖任意位置钓|cRXP_LOOT_恐怖鱼|r
@@ -77,7 +77,7 @@ step
 	.target Aludane
 step
 	.goto SholazarBasin,49.40,62.13
-	.zone SholazarBasin >>前往索拉查盆地
+	.zone SholazarBasin >> 前往索拉查盆地
 	.isOnQuest 13830
 step
 	#completewith next

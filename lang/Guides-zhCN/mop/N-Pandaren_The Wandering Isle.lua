@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RXP 起始区域（熊猫人）
 #name 1-12级 迷踪岛
-#next RXP 大灾变1-80级 (联盟)\10-20级洛克莫丹;RXP大灾变1-80级 (部落)\10-22级艾萨拉;RXP熊猫人之谜1-80 (联盟)\10-20级洛克莫丹;RXP熊猫人之谜1-80级(部落)\10-22级艾萨拉;跳过
+#next RXP 大灾变 1-80 (联盟)\10-20级 洛克莫丹;RXP 大灾变 1-80 (部落)\10-22级 艾萨拉;RXP 熊猫人之谜1-80级(联盟)\10-20级 洛克莫丹;RXP MoP 1-80 (H)\10-22级 艾萨拉;skip
 
 
 << Pandaren !DK
@@ -153,7 +153,7 @@ step
 step
 	#completewith next
     --#title |cFFFCDC00Jump down|r
-    .goto 378,60.19,19.35,6 >>|cRXP_WARN_跳下去|r
+    .goto 378,60.19,19.35,6 >> |cRXP_WARN_跳下去|r
 step
     .goto 378,59.67,19.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_尚喜师父|r 对话
@@ -221,7 +221,7 @@ step
 	#completewith next
     --#title |cFFFCDC00Enter the cave|r
     .goto 378,57.21,31.04,30,0
-    .goto 378,57.63,35.20,10 >>进入洞穴
+    .goto 378,57.63,35.20,10 >> 进入洞穴
 	.timer 87,洞穴 剧情RP
 step
     .goto 378,57.89,36.55
@@ -315,7 +315,7 @@ step
 	.target +Master Shang Xi
 step
    --#title |cFFFCDC00Enter the cave|r
-    .goto 378,41.09,24.83,10 >>进入洞穴
+    .goto 378,41.09,24.83,10 >> 进入洞穴
     .isOnQuest 29420
 step
     .goto 378,40.75,23.86,10,0
@@ -389,7 +389,7 @@ step
     .goto 378,50.12,38.94,15,0
     .goto 378,50.32,37.48,20,0
     .goto 378,51.58,40.46
-    .subzone 5820 >>前往 |cRXP_WARN_五晨寺|r
+    .subzone 5820 >> 前往 |cRXP_WARN_五晨寺|r
 step
     .goto 378,51.41,46.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_尚喜师父|r 对话
@@ -411,7 +411,7 @@ step
     .goto 378,57.12,46.63,10,0
     .goto 378,63.12,41.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_木艺师大伟|r 对话
-    .train 2366 >>训练草药学
+    .train 2366 >> 训练草药学
     .target Whittler Dewei
     .skipgossipid 112959
     .skipgossipid 130364
@@ -420,7 +420,7 @@ step
     .isOnQuest 29521
     .goto 378,63.12,41.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_木艺师大伟|r 对话
-    .train 2575 >>训练采矿
+    .train 2575 >> 训练采矿
 	.target Whittler Dewei
     .skipgossipid 130364
     .skipgossipid 112912
@@ -454,7 +454,7 @@ step
     .isQuestNotComplete 29663
     #label JumpOnPole
     .goto 378,63.37,45.17
-	.vehicle >>当你不在水中或变身为青蛙时，点击 |cRXP_FRIENDLY_平衡杆|r
+	.vehicle >> 当你不在水中或变身为青蛙时，点击 |cRXP_FRIENDLY_平衡杆|r
 step
     #label RingTrainingBell
     .goto 378,61.41,47.81
@@ -618,7 +618,7 @@ step
     .complete 29770,3 --3/3 Pilfered Pumpkin
 step
 	.isOnQuest 29770
-    .goto 378,77.05,71.02,10 >>进入洞穴
+    .goto 378,77.05,71.02,10 >> 进入洞穴
 step
 	#label Carrots
 	.goto 378,74.70,74.76,0
@@ -638,7 +638,7 @@ step
 	.mob Plump Carrotcruncher
 step
 	.isOnQuest 29770
-    .goto 378,74.99,69.42,10 >>离开洞穴
+    .goto 378,74.99,69.42,10 >> 离开洞穴
 step
 	.goto 378,77.85,71.75,0
     .goto 378,74.73,67.2,15,0
@@ -852,7 +852,7 @@ step
 	.isOnQuest 29779
     .goto 378,29.28,39.98,15,0
     .goto 378,27.42,36.25,30,0
-    .goto 378,26.42,33.68,30 >>前往 |cRXP_WARN_玉立柱|r
+    .goto 378,26.42,33.68,30 >> 前往 |cRXP_WARN_玉立柱|r
 step
 	#completewith RukRuk
 	>>击杀|cRXP_ENEMY_狒狒村猢狲|r
@@ -947,13 +947,13 @@ step
 	#sticky
 	#label Temple2
 	#requires Temple1
-    .goto 378,26.64,66.63,10 >>在第一波风平息后，从两组楼梯之间跑过去
+    .goto 378,26.64,66.63,10 >> 在第一波风平息后，从两组楼梯之间跑过去
 	.isOnQuest 29785
 step
 	#sticky
 	#label Temple3
 	#requires Temple2
-    .goto 378,26.64,66.63,10 >>在下一个房间的风平息后，朝|cRXP_FRIENDLY_大风|r跑去
+    .goto 378,26.64,66.63,10 >> 在下一个房间的风平息后，朝|cRXP_FRIENDLY_大风|r跑去
 	.isOnQuest 29785
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大风|r 和 |cRXP_FRIENDLY_艾莎|r 对话
@@ -1046,7 +1046,7 @@ step
 	.timer 231,神真子的苦难 RP
 step
     .goto 378,30.8,92.9
-	>>|cRXP_WARN_等剧情结束|r
+	>>|cRXP_WARN_等待剧情演出完成|r
     .complete 29791,2 --1/1 Uncover the source of Shen-zin Su's pain
 step
     .goto 378,51.35,57.21,20,0
@@ -1326,13 +1326,13 @@ step
 	.target Ji Firepaw
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_季·火掌|r 对话
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .goto 378,38.77,86.32
     .accept 29800 >>接受任务 新的盟友
 	.target Ji Firepaw
 step
     #completewith next
-    .hs >>炉石返回 |cRXP_WARN_五晨寺|r
+    .hs >> 炉石返回 |cRXP_WARN_五晨寺|r
 step
     .goto 378,51.45,48.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_尚喜师父的灵魂|r 对话，选择你的阵营
@@ -1372,12 +1372,12 @@ step <<skip
 step
     .zoneskip 84
     #completewith next
-    .goto 85,49.87,75.52,20 >>进入格罗玛什要塞
+    .goto 85,49.87,75.52,20 >> 进入格罗玛什要塞
 step
     .zoneskip 84
     .goto 85,48.76,70.77
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加尔鲁什·地狱咆哮|r对话
-    .turnin 31012 >>交任务 加入部落
+    .turnin 31012 >> 交任务 加入部落
     .target 加尔鲁什·地狱咆哮
     .neutralzonefinished
 step

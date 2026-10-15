@@ -141,7 +141,7 @@ step
     .goto 202,62.290,31.759,15,0
     .goto 202,64.098,34.535,15,0
     .goto 202,68.809,45.472,15,0
-    .goto 202,70.770,55.050,15 >>前往 |cRXP_FRIENDLY_格温·阿姆斯特|r
+    .goto 202,70.770,55.050,15 >> 前往 |cRXP_FRIENDLY_格温·阿姆斯特|r
 step
     .goto 202,70.770,55.050
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话
@@ -289,9 +289,9 @@ step << Priest
 step << Druid
     .goto 202,70.190,65.887
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丰收女巫塞莱斯廷|r对话
-    .turnin 14283 >>交任务 复苏之触 << cata
-    .turnin 14283 >>交任务 月火术 << !cata
-    .accept 14291 >>接受任务 人多安全
+    .turnin 14283 >> 交任务 复苏之触 << cata
+    .turnin 14283 >> 交任务 月火术 << !cata
+    .accept 14291 >> 接受任务 人多安全
 	.target Celestine of the Harvest
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 和 |cRXP_FRIENDLY_高弗雷勋爵|r对话
@@ -466,7 +466,7 @@ step
     #completewith next
     .goto 202,55.818,81.572,6,0
     .goto 202,56.184,82.795,12,0
-    .goto 202,59.207,83.777,15 >>前去找|cRXP_FRIENDLY_吉恩·格雷迈恩国王|r
+    .goto 202,59.207,83.777,15 >> 前去找|cRXP_FRIENDLY_吉恩·格雷迈恩国王|r
 step
     .goto 202,59.207,83.777
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 对话
@@ -477,7 +477,7 @@ step
 step << skip
     #completewith next
     .goto 202,58.710,77.289,0
-    .deathskip >>救援|cRXP_FRIENDLY_克雷南·阿朗纳斯|r之后，在|cRXP_FRIENDLY_灵魂医者|r处死亡并且复活
+    .deathskip >> 救援|cRXP_FRIENDLY_克雷南·阿朗纳斯|r之后，在|cRXP_FRIENDLY_灵魂医者|r处死亡并且复活
     .target 灵魂医者
 step
     .goto 202,59.207,83.777,0
@@ -497,7 +497,7 @@ step << skip
     #optional
     #completewith next
     .goto 202,58.710,77.289
-    .deathskip >>救援|cRXP_FRIENDLY_克雷南·阿朗纳斯|r之后，在|cRXP_FRIENDLY_灵魂医者|r处死亡并且复活
+    .deathskip >> 救援|cRXP_FRIENDLY_克雷南·阿朗纳斯|r之后，在|cRXP_FRIENDLY_灵魂医者|r处死亡并且复活
     .target 灵魂医者
 step
     .goto 202,55.715,80.753
@@ -512,7 +512,7 @@ step
     .goto 202,53.411,82.729,15,0
     .goto 202,44.351,82.504,15,0
     .goto 202,41.103,81.945,15,0
-    .goto 202,30.373,73.142,15 >>前去找|cRXP_FRIENDLY_吉恩·格雷迈恩国王|r
+    .goto 202,30.373,73.142,15 >> 前去找|cRXP_FRIENDLY_吉恩·格雷迈恩国王|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 和 |cRXP_FRIENDLY_达利乌斯·克罗雷领主|r对话
     .turnin 14294 >>交任务 重整旗鼓
@@ -524,7 +524,7 @@ step
 step
     #completewith next
     .goto 202,31.282,72.645
-    .vehicle >>乘坐 |cRXP_FRIENDLY_克罗雷的马|r
+    .vehicle >> 乘坐 |cRXP_FRIENDLY_克罗雷的马|r
     .timer 79,牺牲 剧情RP
     .target Crowley's Horse
 step
@@ -538,7 +538,7 @@ step
 --XX about 40s slower not to d
 step
     #completewith next
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .goto 202,40.548,39.446,20 >>骑上 |cRXP_FRIENDLY_克罗雷的马|r 前去找|cRXP_FRIENDLY_托比亚斯·密斯特曼托|r
 step
     .goto 202,40.548,39.446
@@ -554,7 +554,7 @@ step
     .goto 202,38.395,38.282,-1
     .goto 202,37.896,39.535,-1
     .goto 202,37.955,40.949,-1
-    .vehicle >>乘坐 |cRXP_FRIENDLY_叛军大炮|r
+    .vehicle >> 乘坐 |cRXP_FRIENDLY_叛军大炮|r
     .target Rebel Cannon
 step
     .goto 202,40.13,36.52
@@ -601,7 +601,7 @@ step
 	.target Lord Daruius Crowley
 step
     .goto 179,36.47,61.39
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉恩·格雷迈恩国王|r 对话
     .accept 14375 >>接受任务 人性的最后希望
     .turnin 14375 >>交任务 人性的最后希望
@@ -610,7 +610,7 @@ step
 --XX 2dp waypoints here on out (gc bug)
 step
     .goto 179,36.51,62.27
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高弗雷勋爵|r对话
     .accept 14313 >>接受任务 恢复人性
 	.target Lord Godfrey
@@ -633,8 +633,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_杰克·“万金油”·德林顿|r对话
     >>|cRXP_WARN_采集草药和矿脉可以获得经验值。只采集你路径上的资源|r
     >>|cRXP_WARN_如果不愿完成，可跳过此步骤|r
-    .train 2366 >>学习 |T136065:0|t[草药学]
-    .train 2575 >>学习 |T136248:0|t[采矿]
+    .train 2366 >> 学习 |T136065:0|t[草药学]
+    .train 2575 >> 学习 |T136248:0|t[采矿]
     .target Jack "All Trades" Derrington
     .skipgossip 50247,1,1,1
     .train 2366,1 --Herbalism
@@ -648,7 +648,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_杰克·“万金油”·德林顿|r对话
     >>|cRXP_WARN_采集草药可以获得经验值。只采集你路径上的资源|r
     >>|cRXP_WARN_如果不愿完成，可跳过此步骤|r
-    .train 2366 >>学习 |T136065:0|t[草药学]
+    .train 2366 >> 学习 |T136065:0|t[草药学]
     .target Jack "All Trades" Derrington
     .skipgossip 50247,2,2,2
     .train 2575,3 --Mining
@@ -660,25 +660,25 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_杰克·“万金油”·德林顿|r对话
     >>|cRXP_WARN_采集矿脉可以获得经验值。只采集你路径上的资源|r
     >>|cRXP_WARN_如果不愿完成，可跳过此步骤|r
-    .train 2575 >>学习 |T136248:0|t[采矿]
+    .train 2575 >> 学习 |T136248:0|t[采矿]
     .target Jack "All Trades" Derrington
     .skipgossip 50247,2,3,2
     .train 2366,3 --Herbalism
 step << Hunter cata
     .goto 179,38.032,63.359
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_猎手布雷克|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Huntsman Blake
 step << Warrior cata
     .goto 179,38.278,63.457
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克利希中士|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Sergeant Cleese
 step
     #completewith INOG
     #optional
-    .cast 2383 >>|cRXP_WARN_施放|r [寻找草药]
-    .cast 2580 >>|cRXP_WARN_施放|r [寻找矿物]
+    .cast 2383 >> |cRXP_WARN_施放|r [寻找草药]
+    .cast 2580 >> |cRXP_WARN_施放|r [寻找矿物]
     .train 2575,3 --Mining
     .train 2366,3 --Herbalism
     .subzoneskip 4786,1
@@ -693,27 +693,27 @@ step
 step << Priest cata
     .goto 179,36.015,64.943
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾尔米拉修女|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Sister Almyra
 step << Druid cata
     .goto 179,36.276,64.123
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丰收女巫塞莱斯廷|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Celestine of the Harvest
 step << Mage cata
     .goto 179,36.099,63.825
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米莉安·唤法者|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Myriam Spellwaker
 step << Warlock cata
     .goto 179,35.824,63.866
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维图斯·暗行者|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Vitus Darkwalker
 step << Rogue cata
     .goto 179,36.735,65.379
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_侠盗萝伦|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Loren the Fence
 step
     #label INOG
@@ -911,7 +911,7 @@ step
     #optional
     #completewith Morris
     #label Catapult3
-    .goto 179,24.94,76.50,6 >>返回楼上
+    .goto 179,24.94,76.50,6 >> 返回楼上
 step
     #optional
     #requires Catapult3
@@ -956,7 +956,7 @@ step << skip
     #requires Combatants
     #completewith Unleash
     .goto 179,27.65,66.05,0
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
     .subzoneskip 4792
 --XX not worth the timesave
@@ -1292,41 +1292,41 @@ step
 	.target Sebastian Hayward
 step
     #completewith next
-    .hs >>炉石回到暮湾镇
+    .hs >> 炉石回到暮湾镇
 step << Priest cata
     .goto 179,36.015,64.943
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾尔米拉修女|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Sister Almyra
 step << Druid cata
     .goto 179,36.276,64.123
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丰收女巫塞莱斯廷|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Celestine of the Harvest
 step << Mage cata
     .goto 179,36.099,63.825
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米莉安·唤法者|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Celestine of the Harvest
 step << Warlock cata
     .goto 179,35.824,63.866
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维图斯·暗行者|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Vitus Darkwalker
 step << Rogue cata
     .goto 179,36.735,65.379
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_侠盗萝伦|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Loren the Fence
 step << Hunter cata
     .goto 179,38.032,63.359
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_猎手布雷克|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Huntsman Blake
 step << Warrior cata
     .goto 179,38.278,63.457
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克利希中士|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Sergeant Cleese
 step
     .goto 179,37.63,65.23
@@ -1339,7 +1339,7 @@ step << skip
     #optional
     #label Manor01
     #completewith next
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
 --XX add waypoint to tie to timer
 step
     #optional
@@ -1388,7 +1388,7 @@ step
     .target Stagecoach Carriage
 step
     .isOnQuest 24438
-    .goto 179,51.81,80.49,10 >>|cRXP_WARN_等剧情结束|r
+    .goto 179,51.81,80.49,10 >> |cRXP_WARN_等待剧情演出完成|r
 step
     .goto 179,51.81,80.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_利亚姆·格雷迈恩王子|r对话
@@ -1467,7 +1467,7 @@ step << !Mage
 step << Mage
     .goto 179,59.073,92.955
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米莉安·唤法者|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Myriam Spellwaker
 step
     .goto 179,59.86,91.71
@@ -1490,32 +1490,32 @@ step
 step << Priest
     .goto 179,60.482,91.587
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在楼上的 |cRXP_FRIENDLY_艾尔米拉修女|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Sister Almyra
 step << Druid
     .goto 179,60.002,92.230
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丰收女巫塞莱斯廷|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Celestine of the Harvest
 step << Warrior
     .goto 179,59.500,91.003
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克利希中士|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Sergeant Cleese
 step << Rogue
     .goto 179,60.255,90.426
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_侠盗萝伦|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Loren the Fence
 step << Hunter
     .goto 179,60.468,90.790
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_猎手布雷克|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Huntsman Blake
 step << Warlock
     .goto 179,61.723,91.088
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维图斯·暗行者|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Vitus Darkwalker
 step
     #sticky
@@ -1741,7 +1741,7 @@ step
     #optional
     #requires Taldoren
     #completewith ScytheOfElune
-    .goto 179,57.85,75.95,8 >>进入房子
+    .goto 179,57.85,75.95,8 >> 进入房子
 step
     #label ScytheOfElune
     .goto 179,57.51,75.59
@@ -1770,7 +1770,7 @@ step
 	.target Lord Darius Crowley
 step
     #completewith next
-    .hs >>使用炉石返回到风谷村
+    .hs >> 使用炉石返回到风谷村
 step
     .goto 179,59.86,91.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_格温·阿姆斯特|r 对话
@@ -1943,7 +1943,7 @@ step
 step << skip
     #requires Enslaved
 	#completewith next
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .subzoneskip 4732,1
 --XX skipping because theres 0 repair vendors in Gilneas past duskhaven?
 step
@@ -2027,7 +2027,7 @@ step
 step
     #optional
     #completewith next
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .goto 202,36.89,59.09,8 >>进入房子
 step
     .goto 202,38.62,60.25
@@ -2147,7 +2147,7 @@ step
     #optional
     #requires RidingBat
     #completewith Survival
-    .goto 179,57.11,39.50,5 >>|cRXP_WARN_等剧情结束|r
+    .goto 179,57.11,39.50,5 >>|cRXP_WARN_等待剧情演出完成|r
 step
     #label Survival
     .goto 179,54.83,35.83,-1
@@ -2347,7 +2347,7 @@ step
     #requires Darnassus
     #completewith Oak
     .goto 89,48.960,19.200,20,0
-    .goto 89,48.126,14.432,60 >>进入风嚎橡树
+    .goto 89,48.126,14.432,60 >> 进入风嚎橡树
 step
     #label Oak
     .goto 89,48.126,14.432
@@ -2362,7 +2362,7 @@ step
     #optional
     #label DarkshoreTravel
     #completewith Darkshore
-    .goto 89,48.960,19.200,20 >>离开 风嚎橡树
+    .goto 89,48.960,19.200,20 >> 离开 风嚎橡树
 step
     #optional
     #requires DarkshoreTravel
@@ -2373,7 +2373,7 @@ step
     #label Darkshore
     .goto 57,55.415,88.398
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维斯派塔斯|r 对话
-    .fly Lor'Danel >>飞往洛达内尔
+    .fly Lor'Danel >> 飞往洛达内尔
     .target 维斯派塔斯
     .zoneskip 62
 ]])

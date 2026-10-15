@@ -470,7 +470,7 @@ step
     #xprate <1.2
     #completewith next
     .goto 18,44.49,53.85,3,0
-    .goto 18,44.63,53.75,3 >>上楼
+    .goto 18,44.63,53.75,3 >> 上楼
 step
     #xprate <1.2
     .goto 18,44.75,53.65
@@ -568,7 +568,7 @@ step
     #xprate <1.2
     #completewith MurlocDelivery
     .goto 18,44.49,53.85,3,0
-    .goto 18,44.63,53.75,3 >>上楼
+    .goto 18,44.63,53.75,3 >> 上楼
 step
     #xprate <1.2
     .goto 18,44.75,53.65
@@ -586,7 +586,7 @@ step
     #xprate <1.2
     #completewith next
     .goto 18,44.49,53.86,5,0
-    .goto 18,44.75,53.65 >>上楼交付 |cRXP_FRIENDLY_鱼人|r
+    .goto 18,44.75,53.65 >> 上楼交付 |cRXP_FRIENDLY_鱼人|r
     .complete 24974,2 --1/1 Vile Fin returned
 step
     #xprate <1.2
@@ -665,7 +665,7 @@ step << Undead
     .target Gordon Wendham
 step << Undead
     .goto 90,63.28,48.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
     .turnin 6322 >>交任务 迈克尔·加勒特
     .accept 6324 >>接受任务 向莫里斯回报
     .target 迈克尔·加勒特

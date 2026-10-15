@@ -13,8 +13,8 @@ RXPGuides.RegisterGuide([[
 #next RestedXP 部落 60-70级\59-61级 地狱火半岛 << Horde wotlk
 #next RXP 大灾变 60-80级 部落\59-61级 地狱火半岛 << Horde cata
 #next RXP 大灾变 60-80级 联盟\59-61级 地狱火半岛 << Alliance cata
-#next RXP 熊猫人之谜 60-80级(部落)\59-61级 地狱火半岛 << Horde !wotlk !cata
-#next RXP 熊猫人之谜 60-80级(联盟)\59-61级 地狱火半岛 << Alliance !wotlk !cata
+#next RXP 熊猫人之谜 60-80级 (部落)\59-61级 地狱火半岛 << Horde !wotlk !cata
+#next RXP 熊猫人之谜 60-80级 (联盟)\59-61级 地狱火半岛 << Alliance !wotlk !cata
 #defaultfor DK
 #name 55-58 血色领地
 
@@ -45,7 +45,7 @@ step
 step
     .isOnQuest 12619
     .goto 124,47.9,27.6
-    .cast 51769 >>|cRXP_WARN_引导|r |T135410:0|t[|cRXP_LOOT_破旧的长剑|r] |cRXP_WARN_于|r |cRXP_PICK_符文熔炉|r处
+    .cast 51769 >> |cRXP_WARN_引导|r |T135410:0|t[|cRXP_LOOT_破旧的长剑|r] |cRXP_WARN_于|r |cRXP_PICK_符文熔炉|r处
     .timer 8,灵魂之刃刻符 剧情RP
 	.use 38607
     .complete 12619,1 --Runebladed Sword (1)
@@ -68,7 +68,7 @@ step
 step
     #optional
     #completewith next
-    .equip 16,38707 >>|cRXP_WARN_装备 |r |T135335:0|t[|cFF0070FF符文灵魂之剑|r]
+    .equip 16,38707 >> |cRXP_WARN_装备 |r |T135335:0|t[|cFF0070FF符文灵魂之剑|r]
     .use 38707
 step
     #loop
@@ -83,11 +83,11 @@ step
 step
     #optional
     .isOnQuest 12848
-    .equip 16,38707 >>|cRXP_WARN_装备 |r |T135335:0|t[|cFF0070FF符文灵魂之剑|r]
+    .equip 16,38707 >> |cRXP_WARN_装备 |r |T135335:0|t[|cFF0070FF符文灵魂之剑|r]
     .use 38707
 step
     #completewith next
-    .cast 54669 >>点击中央内墙上的一个|cRXP_PICK_阿彻鲁斯灵魂监牢|r，释放一名|cRXP_ENEMY_不配的学徒|r
+    .cast 54669 >> 点击中央内墙上的一个|cRXP_PICK_阿彻鲁斯灵魂监牢|r，释放一名|cRXP_ENEMY_不配的学徒|r
     .timer 17,黑锋叛徒 剧情RP
 step
     .goto 124,48.4,29.0
@@ -121,7 +121,7 @@ step
     .isOnQuest 12641
     .goto 124,51.062,36.310,-1
     .goto 124,52.130,35.220,-1
-    .aura 51852 >>点击|cRXP_PICK_阿彻鲁斯之眼控制台|r
+    .aura 51852 >> 点击|cRXP_PICK_阿彻鲁斯之眼控制台|r
 step
     .goto 124,61.42,60.12,0
 	>>|cRXP_WARN_施放|r |T136158:0|t[阿彻鲁斯虹吸] (1) |cRXP_WARN_在新阿瓦隆熔炉上|r
@@ -149,7 +149,7 @@ step
 step
     #optional
 	#completewith next
- 	.aura -51852 >>|cRXP_WARN_按下Escape或|r |T136190:0|t[召回阿彻鲁斯之眼] (5) |cRXP_WARN_来返回黑锋要塞|r
+ 	.aura -51852 >> |cRXP_WARN_按下Escape或|r |T136190:0|t[召回阿彻鲁斯之眼] (5) |cRXP_WARN_来返回黑锋要塞|r
 step
     .goto 124,51.350,35.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_巫妖王|r交谈
@@ -158,7 +158,7 @@ step
     .accept 12657 >>接受任务 天灾的力量
 step
     #completewith next
-    .goto 124,50.516,33.404,5 >>踩上紫色传送器以前往下层
+    .goto 124,50.516,33.404,5 >> 踩上紫色传送器以前往下层
 step
     .goto 124,48.872,29.747
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大领主达里安·莫格莱尼|r对话
@@ -176,7 +176,7 @@ step
 	#completewith next
     .goto 124,52.092,35.048,-1
     .goto 124,50.961,36.165,-1
-    .fly >>骑乘|cRXP_FRIENDLY_天灾狮鹫|r 飞往死亡裂口
+    .fly >> 骑乘|cRXP_FRIENDLY_天灾狮鹫|r 飞往死亡裂口
     .target Scourge Gryphon
     .skipgossip
 step
@@ -254,13 +254,13 @@ step
 step
     .isOnQuest 12687
     .goto 124,54.6,46.4
-    .vehicle >>杀死一名 |cRXP_ENEMY_阿彻鲁斯黑暗骑士|r。之后召唤 |cRXP_FRIENDLY_阿彻鲁斯死亡战马|r
+    .vehicle >> 杀死一名 |cRXP_ENEMY_阿彻鲁斯黑暗骑士|r。之后召唤 |cRXP_FRIENDLY_阿彻鲁斯死亡战马|r
     .mob 阿克鲁斯暗骑士
     .target 阿克鲁斯死亡战马
 step
     #optional
     .isOnQuest 12687
-    .goto 124,51.70,35.76,20 >>回到死亡裂口
+    .goto 124,51.70,35.76,20 >> 回到死亡裂口
 step
     .goto 124,51.70,35.76
 	>>|cRXP_WARN_施放|r |T136129:0|t[骑手的召唤]（1次）|cRXP_WARN_在死亡裂口处使用一次。等待短暂的剧情动画结束|r
@@ -274,7 +274,7 @@ step
     .turnin 12687 >>交任务 进入暗影界
 step
 	#completewith DuelDK
-	.cast 48778 >>|cRXP_WARN_你现在已经拥有|r |T237534:0|t[阿彻鲁斯死亡战马]|cRXP_WARN_。记得从坐骑面板（默认快捷键：Shift+P）将它添加到你的动作条上|r
+	.cast 48778 >> |cRXP_WARN_你现在已经拥有|r |T237534:0|t[阿彻鲁斯死亡战马]|cRXP_WARN_。记得从坐骑面板（默认快捷键：Shift+P）将它添加到你的动作条上|r
 step
     #loop
     .goto 124,55.9,38.8,50,0
@@ -333,7 +333,7 @@ step
     .goto 124,60.925,29.682,60,0
     .goto 124,54.1,34.9
     >>|cRXP_WARN_进入海文郡矿洞|r
-    .use 39253 >>|cRXP_WARN_在|r |T133882:0|t[收割者的礼物] |cRXP_WARN_用于|cRXP_ENEMY_血色矿工|r，趁他们脱离战斗时使用。不要击杀或攻击他们|r
+    .use 39253 >> |cRXP_WARN_在|r |T133882:0|t[收割者的礼物] |cRXP_WARN_用于|cRXP_ENEMY_血色矿工|r，趁他们脱离战斗时使用。不要击杀或攻击他们|r
     >>|cRXP_WARN_当你拥有5只|cRXP_FRIENDLY_血色食尸鬼|r跟随你时，返回|r |cRXP_ENEMY_收割者戈提克|r处
     >>|cRXP_WARN_击杀任意与你交战的|cRXP_ENEMY_血色鬼魂|r|r
     .complete 12698,1 --Scarlet Ghoul Returned (5)
@@ -358,13 +358,13 @@ step
     .isOnQuest 12701
     #requires Follow1
     #completewith ScarletCannon
-    .goto 124,65.376,32.933,35 >>|cRXP_WARN_再次从下方跳下|r
+    .goto 124,65.376,32.933,35 >> |cRXP_WARN_再次从下方跳下|r
 step
     .isOnQuest 12701
     #label ScarletCannon
     .goto 124,67.022,38.817,15,0
     .goto 124,67.706,39.023
-    .vehicle >>|cRXP_WARN_沿着坡道跑上血色战舰。进入|r |cRXP_PICK_血色火炮|r
+    .vehicle >> |cRXP_WARN_沿着坡道跑上血色战舰。进入|r |cRXP_PICK_血色火炮|r
     .target Scarlet Cannon
 step
 	>>|cRXP_WARN_施放|r |T136186:0|t[血色火炮] (1) |cRXP_WARN_来击杀|r |cRXP_ENEMY_血色舰队防御者|r
@@ -373,7 +373,7 @@ step
     .mob Scarlet Fleet Defender
 step
     .isOnQuest 12701
-    .cast vehicle,52588,52589 >>vehicle,52588,52589 >>|cRXP_WARN_施放|r |T135766:0|t[骷髅狮鹫] (5) |cRXP_WARN_回到死亡裂口|r
+    .cast vehicle,52588,52589 >>|cRXP_WARN_施放|r |T135766:0|t[骷髅狮鹫] (5) |cRXP_WARN_回到死亡裂口|r
     .timer 70,死亡裂口飞行
 step
     .goto 124,52.272,33.965
@@ -384,7 +384,7 @@ step
 step
     #completewith next
     .goto 124,53.094,32.473
-    .fly >>骑上|cRXP_FRIENDLY_天灾狮鹫|r返回阿彻鲁斯
+    .fly >> 骑上|cRXP_FRIENDLY_天灾狮鹫|r返回阿彻鲁斯
     .skipgossip
     .target Scourge Gryphon
 step
@@ -399,12 +399,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索瓦尔勋爵|r对话
     .accept 12849 >>接受任务 鲜血、冰霜与邪恶的力量
 	.turnin 12849 >>交任务 鲜血、冰霜与邪恶的力量
-	.trainer >>训练你的职业技能 << wotlk/cata
+	.trainer >> 训练你的职业技能 << wotlk/cata
 step
     #completewith next
     .goto 124,52.092,35.048,-1
     .goto 124,50.961,36.165,-1
-    .fly >>骑乘|cRXP_FRIENDLY_天灾狮鹫|r 飞往死亡裂口
+    .fly >> 骑乘|cRXP_FRIENDLY_天灾狮鹫|r 飞往死亡裂口
     .target Scourge Gryphon
     .skipgossip
 step
@@ -432,7 +432,7 @@ step
     .accept 12716 >>接受任务 药剂师的要求
 step
     #completewith LTTS
-    .goto 124,54.007,58.135,20 >>进入追忆墓穴
+    .goto 124,54.007,58.135,20 >> 进入追忆墓穴
 step
     .goto 124,54.299,57.302
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯雷塞斯王子|r对话
@@ -459,7 +459,7 @@ step
     .complete 12716,3 --Crusader Skull (10)
 step
     #completewith next
-    .goto 124,52.924,71.237,25 >>返回新阿瓦隆市政厅
+    .goto 124,52.924,71.237,25 >> 返回新阿瓦隆市政厅
 step
     #label QuimbyRegistry
 	>>击杀 |cRXP_ENEMY_奎比镇长|r。拾取桌子上的 |cRXP_PICK_新阿瓦隆户籍册|r
@@ -470,7 +470,7 @@ step
     .goto 124,52.462,71.010
 step
     #completewith next
-    .goto 124,54.007,58.135,20 >>回到追忆墓穴
+    .goto 124,54.007,58.135,20 >> 回到追忆墓穴
 step
     .goto 124,54.301,57.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯雷塞斯王子|r对话
@@ -502,7 +502,7 @@ step
     .complete 12716,2 --Iron Chain (1)
 step
     #completewith next
-    .goto 124,57.676,64.336,15 >>进入旅店
+    .goto 124,57.676,64.336,15 >> 进入旅店
 step
     .goto 124,57.847,62.617,10,0
     .goto 124,57.521,61.883,10,0
@@ -511,12 +511,12 @@ step
     .complete 12716,1 --Empty Cauldron (1)
 step
     .isOnQuest 12720
-	.use 39418 >>|cRXP_WARN_打开|r |T132595:0|t[精致的珠宝箱] |cRXP_WARN_以获取2个|r |T135271:0|t[凯雷塞斯的说服者]
+	.use 39418 >> |cRXP_WARN_打开|r |T132595:0|t[精致的珠宝箱] |cRXP_WARN_以获取2个|r |T135271:0|t[凯雷塞斯的说服者]
     .collect 39371,2 -- Keleseth's Persuader
 step
     .isOnQuest 12720
-    .equip 16,39371 >>|cRXP_WARN_装备|r |T135271:0|t[凯雷塞斯的说服者] |cRXP_WARN_在你的主手|r
-    .equip 17,39371 >>|cRXP_WARN_装备|r |T135271:0|t[凯雷塞斯的说服者] |cRXP_WARN_在你的副手|r
+    .equip 16,39371 >> |cRXP_WARN_装备|r |T135271:0|t[凯雷塞斯的说服者] |cRXP_WARN_在你的主手|r
+    .equip 17,39371 >> |cRXP_WARN_装备|r |T135271:0|t[凯雷塞斯的说服者] |cRXP_WARN_在你的副手|r
     .use 39371
 step
 	#label Dawn
@@ -527,7 +527,7 @@ step
 step
     #optional
     .isOnQuest 12720
-    .equip 16,38707 >>|cRXP_WARN_装备 |r |T135335:0|t[|cFF0070FF符文灵魂之剑|r]
+    .equip 16,38707 >> |cRXP_WARN_装备 |r |T135335:0|t[|cFF0070FF符文灵魂之剑|r]
     .use 38707
 step
     #loop
@@ -563,7 +563,7 @@ step
     .itemcount 39328,20
 step
     #completewith BSL
-    .goto 124,54.007,58.135,20 >>回到追忆墓穴
+    .goto 124,54.007,58.135,20 >> 回到追忆墓穴
 step
     .goto 124,54.678,57.437
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瑞文戴尔男爵|r对话
@@ -578,7 +578,7 @@ step
     .accept 12723 >>接受任务 深入血色敌后
 step
     #completewith next
-    .goto 124,56.150,79.986,15 >>前往血色旅店。与 |cRXP_FRIENDLY_奥尔巴兹·血毒|r和|cRXP_FRIENDLY_萨萨里安|r 在楼上对话
+    .goto 124,56.150,79.986,15 >> 前往血色旅店。与 |cRXP_FRIENDLY_奥尔巴兹·血毒|r和|cRXP_FRIENDLY_萨萨里安|r 在楼上对话
 step
     .goto 124,56.249,79.847
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼上与 |cRXP_FRIENDLY_奥尔巴兹·血毒|r对话
@@ -593,7 +593,7 @@ step
 step
     #completewith next
     .goto 124,61.752,68.157,20,0
-    .goto 124,62.876,68.650,10 >>进入血色城堡，进入地下室
+    .goto 124,62.876,68.650,10 >> 进入血色城堡，进入地下室
     >>|cRXP_WARN_不要释放灵魂（如果你死亡）。一名 |cRXP_FRIENDLY_瓦格里女武神|r 会复活你|r
 step
     .goto 124,62.954,67.856
@@ -632,10 +632,10 @@ step
     .itemcount 39328,20
 step
     #completewith ACFV
-    .goto 124,56.150,79.986,15 >>回到血色旅店。与 |cRXP_FRIENDLY_奥尔巴兹·血毒|r和|cRXP_FRIENDLY_萨萨里安|r 在楼上对话
+    .goto 124,56.150,79.986,15 >> 回到血色旅店。与 |cRXP_FRIENDLY_奥尔巴兹·血毒|r和|cRXP_FRIENDLY_萨萨里安|r 在楼上对话
 step
 	#completewith ACFV
-	.destroy 39328 >>删除你拥有的任意的 |T133730:0|t[十字军徽记]
+	.destroy 39328 >> 删除你拥有的任意的 |T133730:0|t[十字军徽记]
 step
     .goto 124,56.254,79.845
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼上与 |cRXP_FRIENDLY_奥尔巴兹·血毒|r对话
@@ -748,7 +748,7 @@ step
 	.accept 12751 >>接受任务 欢迎回家
 step
     #completewith AATO
-    .goto 124,56.150,79.986,15 >>回到血色旅店。与 |cRXP_FRIENDLY_奥尔巴兹·血毒|r和|cRXP_FRIENDLY_萨萨里安|r 在楼上对话
+    .goto 124,56.150,79.986,15 >> 回到血色旅店。与 |cRXP_FRIENDLY_奥尔巴兹·血毒|r和|cRXP_FRIENDLY_萨萨里安|r 在楼上对话
 step
     .goto 124,56.268,80.157
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨萨里安|r对话
@@ -762,10 +762,10 @@ step
     .accept 12754 >>接受任务 悬崖伏击
 step
     #completewith ScarletCourier
-    .subzone 4360 >>前往血色悬崖
+    .subzone 4360 >> 前往血色悬崖
 step
     #completewith ScarletCourier
-    .cast 53061 >>|cRXP_WARN_使用|r |T136065:0|t[伪装工具] |cRXP_WARN_在血色悬崖|r
+    .cast 53061 >> |cRXP_WARN_使用|r |T136065:0|t[伪装工具] |cRXP_WARN_在血色悬崖|r
     .use 39645
 step
     #label ScarletCourier
@@ -776,7 +776,7 @@ step
     .mob 血色信使
 step
     #completewith next
-    .goto 124,56.150,79.986,15 >>返回血色旅店。与楼上的|cRXP_FRIENDLY_奥尔巴兹·血毒|r 对话
+    .goto 124,56.150,79.986,15 >> 返回血色旅店。与楼上的|cRXP_FRIENDLY_奥尔巴兹·血毒|r 对话
 step
     .goto 124,56.253,79.844
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼上与 |cRXP_FRIENDLY_奥尔巴兹·血毒|r对话
@@ -791,7 +791,7 @@ step
     .accept 12756 >>接受任务 血色先锋军
 step
     #completewith next
-    .goto 124,56.150,79.986,15 >>返回血色旅店。与楼上的|cRXP_FRIENDLY_奥尔巴兹·血毒|r 对话
+    .goto 124,56.150,79.986,15 >> 返回血色旅店。与楼上的|cRXP_FRIENDLY_奥尔巴兹·血毒|r 对话
 step
     .goto 124,56.251,79.846
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼上与 |cRXP_FRIENDLY_奥尔巴兹·血毒|r对话
@@ -801,7 +801,7 @@ step
 step
     #completewith next
     .goto 124,56.180,80.036
-    .subzone 4281 >>|cRXP_WARN_穿过|cRXP_PICK_阿彻鲁斯传送门|r，它位于|r |cRXP_FRIENDLY_奥巴兹·血毒|r身后
+    .subzone 4281 >> |cRXP_WARN_穿过|cRXP_PICK_阿彻鲁斯传送门|r，它位于|r |cRXP_FRIENDLY_奥巴兹·血毒|r身后
 step
     .goto 124,48.872,29.749
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大领主达里安·莫格莱尼|r对话
@@ -812,12 +812,12 @@ step << wotlk/cata
     .goto 124,46.697,31.934
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿曼萨加德|r 对话
     .target 阿曼萨加德
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
 step
     #completewith next
     .goto 124,52.092,35.048,-1
     .goto 124,50.961,36.165,-1
-    .fly >>骑乘|cRXP_FRIENDLY_天灾狮鹫|r 飞往死亡裂口
+    .fly >> 骑乘|cRXP_FRIENDLY_天灾狮鹫|r 飞往死亡裂口
     .target Scourge Gryphon
     .skipgossip
 step
@@ -829,7 +829,7 @@ step
 step
 	#completewith next
 	.use 39700
-	.vehicle >>|cRXP_WARN_使用|r |T134228:0|t[冰霜巨龙号角] |cRXP_WARN_以骑乘|r |cRXP_FRIENDLY_冰霜征服者|r
+	.vehicle >> |cRXP_WARN_使用|r |T134228:0|t[冰霜巨龙号角] |cRXP_WARN_以骑乘|r |cRXP_FRIENDLY_冰霜征服者|r
 step
     #loop
     .goto 124,56.0,62.2,100,0
@@ -850,10 +850,10 @@ step
     .complete 12779,1 --Scarlet Soldiers (150)
 step
     #completewith TLKC
-    .goto 124,53.575,36.865,30 >>飞回|cRXP_FRIENDLY_巫妖王|r
+    .goto 124,53.575,36.865,30 >> 飞回|cRXP_FRIENDLY_巫妖王|r
 step
     #completewith TLKC
-    .exitvehicle >>|cRXP_WARN_退出|r |cRXP_FRIENDLY_冰霜征服者|r
+    .exitvehicle >> |cRXP_WARN_退出|r |cRXP_FRIENDLY_冰霜征服者|r
 step
     #label TLKC
     .goto 124,53.575,36.865
@@ -866,7 +866,7 @@ step
     .goto 124,49.3,28.7,45,0
     .goto 124,47.1,24.1,45,0
     .goto 124,39.430,21.142,70,0
-    .goto 124,35.161,26.725,80 >>穿过剧毒小径前往布洛米尔
+    .goto 124,35.161,26.725,80 >> 穿过剧毒小径前往布洛米尔
 step
     .goto 124,34.1,30.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_天灾指挥官萨拉诺尔|r对话
@@ -876,7 +876,7 @@ step
 step
 	#completewith next
     .goto 124,34.441,31.107
-	.gossipoption 93584 >>|cRXP_WARN_与 |cRXP_FRIENDLY_大领主达里安·莫格莱尼|r 对话以开始剧情演出|r
+	.gossipoption 93584 >> |cRXP_WARN_与 |cRXP_FRIENDLY_大领主达里安·莫格莱尼|r 对话以开始剧情演出|r
     >>|cRXP_WARN_如果他不在 |cRXP_FRIENDLY_天灾指挥官萨拉诺尔|r 旁边，这意味着战斗正在进行或准备中，相关信息应该显示在你的屏幕顶部。移动到圣光之愿礼拜堂并等待剧情演出|r
     .skipgossip
     .subzoneskip 2268
@@ -893,32 +893,32 @@ step
     .accept 13165 >>接受任务 夺回阿彻鲁斯
 step
     #optional
-    .equip 16,38633 >>|cRXP_WARN_装备 |r |T132480:0|t[|cFF0070FF黑锋巨斧|r]
+    .equip 16,38633 >> |cRXP_WARN_装备 |r |T132480:0|t[|cFF0070FF黑锋巨斧|r]
     .use 38633
     .itemcount 38633,1
 step
     #optional
-    .equip 16,38632 >>|cRXP_WARN_装备 |r |T135335:0|t[|cFF0070FF黑锋重剑|r]
+    .equip 16,38632 >> |cRXP_WARN_装备 |r |T135335:0|t[|cFF0070FF黑锋重剑|r]
     .use 38632
     .itemcount 38632,1
 step
 	#completewith next
-	.cast 50977 >>|cRXP_WARN_施放|r |T135766:0|t[黑锋之门]
+	.cast 50977 >> |cRXP_WARN_施放|r |T135766:0|t[黑锋之门]
     .usespell 50977
 	.subzoneskip 4281
 step
 	#completewith next
-    .subzone 4281 >>|cRXP_WARN_穿过|r |T135766:0|t[黑锋之门]
+    .subzone 4281 >> |cRXP_WARN_穿过|r |T135766:0|t[黑锋之门]
 step
     .goto 23/0,-5650.600,2375.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大领主达里安·莫格莱尼|r对话
     .target 大领主达里安·莫格莱尼
     .turnin 13165 >>交任务 夺回阿彻鲁斯
     .accept 13166 >>接受任务 黑锋要塞之战
-    .trainer >>训练你的职业技能 << wotlk/cata
+    .trainer >> 训练你的职业技能 << wotlk/cata
 step
     #completewith Pwerk
-    .goto 23,83.179,48.888,5 >>踩上紫色传送点以前往上层
+    .goto 23,83.179,48.888,5 >> 踩上紫色传送点以前往上层
 step
     .isOnQuest 13166
     #sticky
@@ -954,7 +954,7 @@ step
 step
     #requires Cinderglacier
 	#completewith next
-    .goto 23,83.179,48.888,5 >>踩上紫色传送器以前往下层
+    .goto 23,83.179,48.888,5 >> 踩上紫色传送器以前往下层
 step
     #requires Cinderglacier
     .goto 23/0,-5650.700,2375.400
@@ -977,7 +977,7 @@ step << Horde
 step << Horde
     .goto Orgrimmar,38.1,85.8 << wotlk
     .goto Orgrimmar,35.478,69.111 << cata/mop
-	.zone Blasted Lands >>使用传送点前往诅咒之地
+	.zone Blasted Lands >> 使用传送点前往诅咒之地
     .zoneskip Orgrimmar,1
 step << Alliance
     .isOnQuest 13188
@@ -991,6 +991,6 @@ step << Alliance
     .turnin 13188 >>交任务 王者之城
 step << Alliance
     .goto Stormwind City,48.99,87.36
-	.zone Blasted Lands >>使用法师塔中的传送点前往诅咒之地
+	.zone Blasted Lands >> 使用法师塔中的传送点前往诅咒之地
     .zoneskip Stormwind City,1
 ]])

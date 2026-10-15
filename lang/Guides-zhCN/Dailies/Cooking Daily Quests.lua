@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 
 step << Alliance
 	.goto Dalaran,40.43,65.66
-	.daily 13100,13101,13102,13103,13107 >>与 |cRXP_FRIENDLY_凯瑟琳·李|r 在旅馆内对话。她提供5个每日烹饪任务中的1个。接受任意可用的任务
+	.daily 13100,13101,13102,13103,13107 >> 与 |cRXP_FRIENDLY_凯瑟琳·李|r 在旅馆内对话。她提供5个每日烹饪任务中的1个。接受任意可用的任务
 	>>魔法蘑菇肉片
 	>>下水道炖肉
 	>>荠菜热狗
@@ -18,7 +18,7 @@ step << Alliance
 	.target Katherine Lee
 step << Horde
 	.goto Dalaran,69.96,39.05
-	.daily 13112,13113,13114,13115,13116 >>与在旅馆内的 |cRXP_FRIENDLY_埃维罗·隆古巴|r 对话。他提供5个每日烹饪任务中的1个。接受任意可用的任务
+	.daily 13112,13113,13114,13115,13116 >> 与在旅馆内的 |cRXP_FRIENDLY_埃维罗·隆古巴|r 对话。他提供5个每日烹饪任务中的1个。接受任意可用的任务
 	>>魔法蘑菇肉片
 	>>下水道炖肉
 	>>荠菜热狗
@@ -55,7 +55,7 @@ step << Horde
 	.isOnQuest 13116
 step
 	#sticky
-	>>在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获得|cRXP_LOOT_犀牛肉|r。或者可以直接从达拉然的拍卖行购买|cRXP_LOOT_犀牛肉|r或|cRXP_LOOT_犀肉热狗|r
+	>> 在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获得|cRXP_LOOT_犀牛肉|r。或者可以直接从达拉然的拍卖行购买|cRXP_LOOT_犀牛肉|r或|cRXP_LOOT_犀肉热狗|r
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -70,7 +70,7 @@ step
 	.isOnQuest 13116 << Horde
 step << Alliance
 	#sticky
-	>>在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获得|cRXP_LOOT_犀牛肉|r。或者可以直接从暴风城或铁炉堡的拍卖行购买|cRXP_LOOT_犀牛肉|r或|cRXP_LOOT_犀肉热狗|r
+	>> 在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获得|cRXP_LOOT_犀牛肉|r。或者可以直接从暴风城或铁炉堡的拍卖行购买|cRXP_LOOT_犀牛肉|r或|cRXP_LOOT_犀肉热狗|r
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -85,7 +85,7 @@ step << Alliance
 	.isOnQuest 13107
 step << Horde
 	#sticky
-	>>在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获得|cRXP_LOOT_犀牛肉|r。或者可以直接从奥格瑞玛的拍卖行购买|cRXP_LOOT_犀牛肉|r或|cRXP_LOOT_犀肉热狗|r
+	>> 在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获得|cRXP_LOOT_犀牛肉|r。或者可以直接从奥格瑞玛的拍卖行购买|cRXP_LOOT_犀牛肉|r或|cRXP_LOOT_犀肉热狗|r
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -151,7 +151,7 @@ step << Horde
 	.isOnQuest 13112
 step
 	#sticky
-	>>在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获取|cRXP_LOOT_冰冷的肉|r。或者你也可以直接在达拉然的拍卖行购买|cRXP_LOOT_冰冷的肉|r
+	>> 在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获取|cRXP_LOOT_冰冷的肉|r。或者你也可以直接在达拉然的拍卖行购买|cRXP_LOOT_冰冷的肉|r
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -166,7 +166,7 @@ step
 	.isOnQuest 13112 << Horde
 step << Alliance
 	#sticky
-	>>在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获取|cRXP_LOOT_冰冷的肉|r。或者你也可以直接在暴风城或铁炉堡的拍卖行购买|cRXP_LOOT_冰冷的肉|r
+	>> 在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获取|cRXP_LOOT_冰冷的肉|r。或者你也可以直接在暴风城或铁炉堡的拍卖行购买|cRXP_LOOT_冰冷的肉|r
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -181,7 +181,7 @@ step << Alliance
 	.isOnQuest 13100
 step << Horde
 	#sticky
-	>>在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获取|cRXP_LOOT_冰冷的肉|r。或者你也可以直接在奥格瑞玛的拍卖行购买|cRXP_LOOT_冰冷的肉|r
+	>> 在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获取|cRXP_LOOT_冰冷的肉|r。或者你也可以直接在奥格瑞玛的拍卖行购买|cRXP_LOOT_冰冷的肉|r
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -234,7 +234,7 @@ step
 	.isOnQuest 13114 << Horde
 step
 	#sticky
-	>>在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获取|cRXP_LOOT_冰冷的肉|r。或者你也可以直接在达拉然的拍卖行购买|cRXP_LOOT_冰冷的肉|r
+	>> 在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获取|cRXP_LOOT_冰冷的肉|r。或者你也可以直接在达拉然的拍卖行购买|cRXP_LOOT_冰冷的肉|r
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -249,7 +249,7 @@ step
 	.isOnQuest 13114 << Horde
 step << Alliance
 	#sticky
-	>>在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获取|cRXP_LOOT_冰冷的肉|r。或者你也可以直接在暴风城或铁炉堡的拍卖行购买|cRXP_LOOT_冰冷的肉|r
+	>> 在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获取|cRXP_LOOT_冰冷的肉|r。或者你也可以直接在暴风城或铁炉堡的拍卖行购买|cRXP_LOOT_冰冷的肉|r
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -264,7 +264,7 @@ step << Alliance
 	.isOnQuest 13102
 step << Horde
 	#sticky
-	>>在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获取|cRXP_LOOT_冰冷的肉|r。或者你也可以直接在奥格瑞玛的拍卖行购买|cRXP_LOOT_冰冷的肉|r
+	>> 在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获取|cRXP_LOOT_冰冷的肉|r。或者你也可以直接在奥格瑞玛的拍卖行购买|cRXP_LOOT_冰冷的肉|r
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -359,7 +359,7 @@ step << Horde
 step
 	#sticky
     #completewith stew
-	>>在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获得|cRXP_LOOT_冰冷的肉|r。或者可以直接从达拉然的拍卖行购买|cRXP_LOOT_冰冷的肉|r或|cRXP_LOOT_诺森德炖肉|r
+	>> 在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获得|cRXP_LOOT_冰冷的肉|r。或者可以直接从达拉然的拍卖行购买|cRXP_LOOT_冰冷的肉|r或|cRXP_LOOT_诺森德炖肉|r
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -375,7 +375,7 @@ step
 step << Alliance
 	#sticky
     #completewith stew
-	>>在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获得|cRXP_LOOT_冰冷的肉|r。或者可以直接从暴风城或铁炉堡的拍卖行购买|cRXP_LOOT_冰冷的肉|r或|cRXP_LOOT_诺森德炖肉|r
+	>> 在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获得|cRXP_LOOT_冰冷的肉|r。或者可以直接从暴风城或铁炉堡的拍卖行购买|cRXP_LOOT_冰冷的肉|r或|cRXP_LOOT_诺森德炖肉|r
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -391,7 +391,7 @@ step << Alliance
 step << Horde
 	#sticky
     #completewith stew
-	>>在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获得|cRXP_LOOT_冰冷的肉|r。或者可以直接从奥格瑞玛的拍卖行购买|cRXP_LOOT_冰冷的肉|r或|cRXP_LOOT_诺森德炖肉|r
+	>> 在风暴峭壁击杀|cRXP_ENEMY_犀牛|r获得|cRXP_LOOT_冰冷的肉|r。或者可以直接从奥格瑞玛的拍卖行购买|cRXP_LOOT_冰冷的肉|r或|cRXP_LOOT_诺森德炖肉|r
 	.goto TheStormPeaks,43.26,59.11,70,0
 	.goto TheStormPeaks,44.93,61.45,70,0
 	.goto TheStormPeaks,45.77,57.91,70,0
@@ -410,8 +410,8 @@ step << Alliance
 	>>要学习烹饪 |cRXP_LOOT_诺森德炖肉|r，需携带4份 |cRXP_LOOT_冰冷的肉|r前往嚎风峡湾的 |cRXP_FRIENDLY_布罗姆|r处。或者，你也可以直接在拍卖行购买 |cRXP_LOOT_诺森德炖肉|r。如果选择从拍卖行购买，请跳过此步骤
 	>>完成此任务总共需要 8 块冰冷的肉
 	.collect 43013,4 -- Chilled Meat (4)
-	.accept 13087 >>接受任务 诺森德的厨师
-	.turnin 13087 >>交任务 诺森德的厨师
+	.accept 13087 >> 接受任务 诺森德的厨师
+	.turnin 13087 >> 交任务 诺森德的厨师
 	.goto HowlingFjord,58.21,62.06
 	.target Brom Brewbaster
 step << Horde
@@ -421,8 +421,8 @@ step << Horde
 	>>要学习烹饪 |cRXP_LOOT_诺森德炖肉|r，需携带4份 |cRXP_LOOT_冰冷的肉|r前往嚎风峡湾的 |cRXP_FRIENDLY_托马斯·克里奇|r处。或者，你也可以直接在拍卖行购买 |cRXP_LOOT_诺森德炖肉|r。如果选择从拍卖行购买，请跳过此步骤
 	>>完成此任务总共需要 8 块冰冷的肉
 	.collect 43013,4 -- Chilled Meat (4)
-	.accept 13089 >>接受任务 诺森德的厨师
-	.turnin 13089 >>交任务 诺森德的厨师
+	.accept 13089 >> 接受任务 诺森德的厨师
+	.turnin 13089 >> 交任务 诺森德的厨师
 	.goto HowlingFjord,78.61,29.48
 	.target Thomas Kolichio
 step << Alliance

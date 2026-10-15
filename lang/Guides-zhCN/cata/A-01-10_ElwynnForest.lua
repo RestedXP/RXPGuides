@@ -61,15 +61,15 @@ step
     .turnin 28767 >>交任务 击退敌人！ << Human Hunter
     .turnin 29078 >>交任务 击退敌人！ << !Human
     .turnin 31139 >>交任务 击退敌人！ << Human Death Knight/Human Monk
-    .accept 28759 >>接受任务 狮入羊口 << Human Hunter
-    .accept 28769 >>接受任务 狮入羊口 << Human Mage
-    .accept 28770 >>接受任务 狮入羊口 << Human Paladin
-    .accept 28771 >>接受任务 狮入羊口 << Human Priest
-    .accept 28772 >>接受任务 狮入羊口 << Human Rogue
-    .accept 28773 >>接受任务 狮入羊口 << Human Warlock
-    .accept 28774 >>接受任务 狮入羊口 << Human Warrior
-    .accept 29079 >>接受任务 狮入羊口 << !Human
-    .accept 31140 >>接受任务 狮入羊口 << Human Death Knight/Human Monk
+    .accept 28759 >> 接受任务 狮入羊口 << Human Hunter
+    .accept 28769 >> 接受任务 狮入羊口 << Human Mage
+    .accept 28770 >> 接受任务 狮入羊口 << Human Paladin
+    .accept 28771 >> 接受任务 狮入羊口 << Human Priest
+    .accept 28772 >> 接受任务 狮入羊口 << Human Rogue
+    .accept 28773 >> 接受任务 狮入羊口 << Human Warlock
+    .accept 28774 >> 接受任务 狮入羊口 << Human Warrior
+    .accept 29079 >> 接受任务 狮入羊口 << !Human
+    .accept 31140 >> 接受任务 狮入羊口 << Human Death Knight/Human Monk
     .target 治安官玛克布莱德
 step
     #loop
@@ -152,8 +152,8 @@ step << Warrior/Paladin
     #completewith next
     .goto 425,35.84,51.87,8,0
     .goto 425,38.46,52.30,8,0
-    .goto 425,40.87,53.80,10 >>前去找修道院内的 |cRXP_FRIENDLY_莱尼·拜舍尔|r << Warrior
-    .goto 425,41.55,53.23,10 >>前去找修道院内的 |cRXP_FRIENDLY_萨缪尔修士|r << Paladin
+    .goto 425,40.87,53.80,10 >> 前去找修道院内的 |cRXP_FRIENDLY_莱尼·拜舍尔|r << Warrior
+    .goto 425,41.55,53.23,10 >> 前去找修道院内的 |cRXP_FRIENDLY_萨缪尔修士|r << Paladin
 step << Warrior
     .goto 425,40.87,53.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莱尼·拜舍尔|r 对话
@@ -184,8 +184,8 @@ step << Human Priest/Human Mage
     .goto 425,38.95,46.52,8,0 << Priest
     .goto 425,38.31,46.07,8,0 << Mage
     .goto 425,37.94,45.13,5,0 << Mage
-    .goto 425,39.31,43.78,10 >>前去找修道院内的 |cRXP_FRIENDLY_女牧师安妮塔|r << Priest
-    .goto 425,38.78,43.47,10 >>前往修道院内楼上的 |cRXP_FRIENDLY_凯尔登·布雷门|r。如果你可以的话，从他房间外的扶梯跳跃 << Mage
+    .goto 425,39.31,43.78,10 >> 前去找修道院内的 |cRXP_FRIENDLY_女牧师安妮塔|r << Priest
+    .goto 425,38.78,43.47,10 >> 前往修道院内楼上的 |cRXP_FRIENDLY_凯尔登·布雷门|r。如果你可以的话，从他房间外的扶梯跳跃 << Mage
 step << Human Priest
     .goto 425,39.31,43.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女牧师安妮塔|r 对话
@@ -252,7 +252,7 @@ step << Human Warrior/Human Paladin/Human Mage
     .goto 425,37.20,48.32,8,0 << Mage
     .goto 425,35.61,51.32,8,0 << Mage
     .goto 425,33.82,53.38,10,0
-    .goto 425,35.58,60.57,40 >>前往 |cRXP_ENEMY_训练假人|r
+    .goto 425,35.58,60.57,40 >> 前往 |cRXP_ENEMY_训练假人|r
 step << !Priest Human
     .goto 425,35.58,60.57,-1
     .goto 425,35.82,61.08,-1
@@ -294,10 +294,10 @@ step << Human Warrior/Human Paladin/Human Mage/Human Monk
     .goto 425,37.20,48.32,8,0 << Mage
     .goto 425,38.31,46.07,8,0 << Mage
     .goto 425,37.94,45.13,5,0 << Mage
-    .goto 425,40.87,53.80,10 >>回去找修道院内的 |cRXP_FRIENDLY_莱尼·拜舍尔|r << Warrior
-    .goto 425,41.55,53.23,10 >>回去找修道院内的 |cRXP_FRIENDLY_萨缪尔修士|r << Paladin
-    .goto 425,38.78,43.47,10 >>回去找修道院内的 |cRXP_FRIENDLY_凯尔登·布雷门|r << Mage
-    .goto 425/0,-212.100,-8907.400,10 >>回去找修道院内的 |cRXP_FRIENDLY_阿宝|r << Monk
+    .goto 425,40.87,53.80,10 >> 回去找修道院内的 |cRXP_FRIENDLY_莱尼·拜舍尔|r << Warrior
+    .goto 425,41.55,53.23,10 >> 回去找修道院内的 |cRXP_FRIENDLY_萨缪尔修士|r << Paladin
+    .goto 425,38.78,43.47,10 >> 回去找修道院内的 |cRXP_FRIENDLY_凯尔登·布雷门|r << Mage
+    .goto 425/0,-212.100,-8907.400,10 >> 回去找修道院内的 |cRXP_FRIENDLY_阿宝|r << Monk
 step << Human Monk
     .goto 425/0,-212.100,-8907.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女牧师安妮塔|r 对话
@@ -393,7 +393,7 @@ step << !DK !Monk
 step << skip
     #optional
     #completewith Rear
-    .goto 425,31.59,16.72,40 >>|cRXP_WARN_[稀有] 查看|cRXP_ENEMY_大蜡烛伽格|r是否刷出。如果他刷新了就击杀他|r
+    .goto 425,31.59,16.72,40 >> |cRXP_WARN_[稀有] 查看|cRXP_ENEMY_大蜡烛伽格|r是否刷出。如果他刷新了就击杀他|r
     *|cRXP_WARN_击杀稀有怪和拾取宝箱非常重要，它们会奖励大量经验|r
 	.unitscan Gug Fatcandle
     .noflyable
@@ -553,7 +553,7 @@ step
     .mob Blackrock Invader
 step
     #completewith next
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_米莉·奥斯沃斯|r和|cRXP_FRIENDLY_治安官玛克布莱德|r 对话
     .turnin 26391 >>交任务 灭火拯救希望
@@ -570,7 +570,7 @@ step
     .mob Kurtok the Slayer
 step
     #completewith next
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     .goto 425,33.56,53.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官玛克布莱德|r 对话
@@ -581,7 +581,7 @@ step
     #optional
     #completewith next
     .goto 37,46.877,48.018,20,0
-    .goto 37,45.563,47.738,15 >>前去找 |cRXP_FRIENDLY_法尔坎·伊森斯泰德|r
+    .goto 37,45.563,47.738,15 >> 前去找 |cRXP_FRIENDLY_法尔坎·伊森斯泰德|r
     .skill riding,75,1
 step
     .goto 37,45.563,47.738
@@ -615,7 +615,7 @@ step << Dwarf/Gnome
     #completewith Belm
     .goto 27,54.083,50.335,8,0
     .goto 27,54.277,50.312,8,0
-    .goto 27,54.485,50.847,10 >>进入雷酒酿制厂。前去找内部的 |cRXP_FRIENDLY_旅店老板贝尔姆|r
+    .goto 27,54.485,50.847,10 >> 进入雷酒酿制厂。前去找内部的 |cRXP_FRIENDLY_旅店老板贝尔姆|r
     .subzoneskip 2102
 step << Gnome
 #xprate >1.19
@@ -647,7 +647,7 @@ step << cata Shaman
 step << cata Shaman
     #xprate <1.2
     .goto 1426/0,-536.50000,-5581.50000
-    .train 331 >>在卡拉诺斯旅店学习 |T136052:0|t[治疗波]
+    .train 331 >> 在卡拉诺斯旅店学习 |T136052:0|t[治疗波]
 step << Gnome
 #xprate >1.19
     #optional
@@ -677,21 +677,21 @@ step << Dwarf/Gnome
     .accept 6388 >>接受任务 格莱斯·瑟登
 step << Dwarf/Gnome
     .goto 1455/0,-1154.90002,-4820.70020
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .target 格莱斯·瑟登
     .turnin 6388 >>交任务 格莱斯·瑟登
     .accept 6392 >>接受任务 向布洛克回复
 step << Dwarf/Gnome
 #completewith next
     .goto Ironforge,55.501,47.743
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .target 格莱斯·瑟登
-    .fly Goldshire >>飞往闪金镇
+    .fly Goldshire >> 飞往闪金镇
 step << Human
     #completewith GSReport
     .goto 37,41.71,52.74,-1
     .goto 37,39.48,60.53,-1
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .isOnQuest 2158
     .skill riding,75,1
 step
@@ -717,7 +717,7 @@ step
     #completewith next
     .goto 37,43.19,65.74,5,0
     .goto 37,43.23,65.95,5,0
-    .goto 37,43.318,65.705,4 >>前去找|cRXP_FRIENDLY_威廉·匹斯特|r
+    .goto 37,43.318,65.705,4 >> 前去找|cRXP_FRIENDLY_威廉·匹斯特|r
 step
     .goto 37,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_威廉·匹斯特|r 对话
@@ -741,7 +741,7 @@ step
     .goto 37,43.23,65.95,5,0
     .goto 37,43.13,65.74,5,0
     .goto 37,42.93,65.71,6,0
-    .goto 37,42.14,67.26,12 >>前去找|cRXP_FRIENDLY_雷米|r
+    .goto 37,42.14,67.26,12 >> 前去找|cRXP_FRIENDLY_雷米|r
 step
     #label RemyTT
     .goto 37,42.14,67.26
@@ -784,8 +784,8 @@ step
     #label Billy1
     .goto 37,43.13,85.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比利·马科伦|r 对话
-    .turnin 85 >>交任务 丢失的项链
-    .accept 86 >>接受任务 比利的馅饼
+    .turnin 85 >> 交任务 丢失的项链
+    .accept 86 >> 接受任务 比利的馅饼
     .target 比利·马科伦
 step
     #completewith TommyJoe
@@ -797,12 +797,12 @@ step
 step
     .goto 37,43.154,89.625
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在里面与 |cRXP_FRIENDLY_梅贝尔·马科伦|r 对话
-    .accept 106 >>接受任务 年轻的恋人
+    .accept 106 >> 接受任务 年轻的恋人
     .target 梅贝尔·马科伦
 step
     #optional
     .goto 37,41.69,86.91
-    .xp 6 >>刷怪升级到6级
+    .xp 6 >> 刷怪升级到6级
     .mob 石牙野猪
 step
     .goto 37,34.66,84.48
@@ -855,8 +855,8 @@ step
     #label TommyJoe
     .goto 37,29.840,85.997
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托米·乔·斯通菲尔德|r 对话
-    .turnin 106 >>交任务 年轻的恋人
-    .accept 111 >>接受任务 托米的祖母
+    .turnin 106 >> 交任务 年轻的恋人
+    .accept 111 >> 接受任务 托米的祖母
     .target 托米·乔·斯通菲尔德
 step
     #loop
@@ -881,20 +881,20 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_波尼斯·斯通菲尔德姑妈|r 对话
     .goto 37,34.486,84.253
-    .turnin 86 >>交任务 比利的馅饼
+    .turnin 86 >> 交任务 比利的馅饼
     .target 波尼斯·斯通菲尔德姑妈
 step << Human
 #xprate <1.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_波尼斯·斯通菲尔德姑妈|r 对话
     .goto 37,34.486,84.253
     .target 波尼斯·斯通菲尔德姑妈
-    .accept 84 >>接受任务 比利的馅饼
+    .accept 84 >> 接受任务 比利的馅饼
 step
 #requires princessT
     .goto 37,34.94,83.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米莱德·斯通菲尔德|r 对话，NPC在里面
-    .turnin 111 >>交任务 托米的祖母
-    .accept 107 >>接受任务 给威廉·匹斯特的信
+    .turnin 111 >> 交任务 托米的祖母
+    .accept 107 >> 接受任务 给威廉·匹斯特的信
     .target 米莱德·斯通菲尔德
 step << Human
 #xprate <1.2
@@ -908,8 +908,8 @@ step << Human
 #xprate <1.2
     .goto 37,43.13,85.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比利·马科伦|r 对话
-    .turnin 84 >>交任务 比利的馅饼
-    .accept 87 >>接受任务 金牙
+    .turnin 84 >> 交任务 比利的馅饼
+    .accept 87 >> 接受任务 金牙
     .target 比利·马科伦
 step
     #xprate >1.59
@@ -978,7 +978,7 @@ step
     .goto 39,78.65,28.65,20,0
     .goto 39,57.67,25.29,20,0
     .goto 38,53.73,72.25
-    .xp 6+2275 >>刷怪达到 2275+/3600经验
+    .xp 6+2275 >> 刷怪达到 2275+/3600经验
     .mob 狗头人隧道工
     .mob 狗头人矿工
 --XX 625 (Gold Dust) 700 (Goldtooth) - Ensure "A Fishy Peril"
@@ -986,33 +986,33 @@ step << Human
 #xprate <1.2
     .goto 37,34.486,84.253
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_波尼斯·斯通菲尔德姑妈|r 对话
-    .turnin 87 >>交任务 金牙
+    .turnin 87 >> 交任务 金牙
     .target 波尼斯·斯通菲尔德姑妈
 --XX Early turnin XP gate for level 8? No idea how good/bad xp will be by now. Can be made optional/turned in later but I wanted to skip The Escape since you can fly Eastvale at 6+ and go north for checking rares instead
 step << Human
     #completewith Kelp
-    .hs >>使用炉石返回闪金镇
+    .hs >> 使用炉石返回闪金镇
     .subzoneskip 87
 step << !Human
 #completewith next
-    .deathskip >>送死然后在闪金镇复活
+    .deathskip >> 送死然后在闪金镇复活
     .subzoneskip 87
 step
     #label Kelp
     #xprate >1.19 << Human
     .goto 37,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_威廉·匹斯特|r 对话
-    .turnin 60 >>交任务 狗头人的蜡烛
-    .turnin 107 >>交任务 给威廉·匹斯特的信
+    .turnin 60 >> 交任务 狗头人的蜡烛
+    .turnin 107 >> 交任务 给威廉·匹斯特的信
     .target 威廉·匹斯特
 step << Human
     #label Kelp
     #xprate <1.2
     .goto 37,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_威廉·匹斯特|r 对话
-    .turnin 60 >>交任务 狗头人的蜡烛
-    .turnin 107 >>交任务 给威廉·匹斯特的信
-    .accept 112 >>接受任务 收集海藻
+    .turnin 60 >> 交任务 狗头人的蜡烛
+    .turnin 107 >> 交任务 给威廉·匹斯特的信
+    .accept 112 >> 接受任务 收集海藻
     .target 威廉·匹斯特
 step
     #completewith next
@@ -1023,67 +1023,67 @@ step
 step
     .goto 37,42.14,67.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷米|r 对话
-    .turnin 47 >>交任务 金砂交易
-    .accept 40 >>接受任务 鱼人的威胁
+    .turnin 47 >> 交任务 金砂交易
+    .accept 40 >> 接受任务 鱼人的威胁
 	.target 雷米
 step << Hunter cata
     .goto 37,40.854,65.902
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_本杰明·福柯沃斯|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Benjamin Foxworthy
 step << Paladin cata
     .goto 37,41.074,65.953
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_威尔海姆修士|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 威尔海姆修士
 step << Warrior cata
     .goto 37,41.069,65.825
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_里瑞亚·杜拉克|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 里瑞亚·杜拉克
 step << Warlock cata
     #completewith next
-    .goto 37,44.54,65.76,15 >>前往闪金镇客栈地下室
+    .goto 37,44.54,65.76,15 >> 前往闪金镇客栈地下室
 step << Warlock cata
     .goto 37,44.389,66.240
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛克西米利安·克洛文|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 玛克西米利安·克洛文
 step << Mage/Priest/Rogue cata
     #completewith next
-    .goto 37,43.86,66.40,15 >>前往闪金镇旅店楼上
+    .goto 37,43.86,66.40,15 >> 前往闪金镇旅店楼上
 step << Mage cata
     .goto 37,43.246,66.192
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎尔迪玛·维夫希尔特|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 扎尔迪玛·维夫希尔特
 step << Priest cata
     .goto 37,43.282,65.720
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女牧师洁塞塔|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 女牧师洁塞塔
 step << Rogue cata
     .goto 37,43.872,65.943
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞恩·塞尔留斯|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 科瑞恩·塞尔留斯
 step << Human
     #xprate <1.2
     .goto 37,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话
-    .turnin 40 >>交任务 鱼人的威胁
-    .turnin 62 >>交任务 法戈第矿洞
-    .accept 35 >>接受任务 卫兵托马斯
-    .accept 76 >>接受任务 玉石矿洞
+    .turnin 40 >> 交任务 鱼人的威胁
+    .turnin 62 >> 交任务 法戈第矿洞
+    .accept 35 >> 接受任务 卫兵托马斯
+    .accept 76 >> 接受任务 玉石矿洞
     .target 治安官杜汉
     .isOnQuest 112
 step
     #optional << Human
     .goto 37,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话
-    .turnin 40 >>交任务 鱼人的威胁
-    .accept 35 >>接受任务 卫兵托马斯
-    .turnin 62 >>交任务 法戈第矿洞
+    .turnin 40 >> 交任务 鱼人的威胁
+    .accept 35 >> 接受任务 卫兵托马斯
+    .turnin 62 >> 交任务 法戈第矿洞
     .target 治安官杜汉
 step
     #xprate >1.59
@@ -1108,7 +1108,7 @@ step << Human
     #requires ChargerMurloc
     .goto 37,56.23,66.64
     >>|cRXP_WARN_等20秒计时器结束（接受飞行后的20秒），在乘坐 |cRXP_FRIENDLY_暴风城战马|r 时登出再登录，利用技巧下坐骑|r
-    .subzone 18 >>前往水晶湖
+    .subzone 18 >> 前往水晶湖
     .isOnQuest 76
     .skill riding,75,1
 step << Human
@@ -1146,7 +1146,7 @@ step << Human
     #xprate <1.2
     #completewith Thomas
     .goto 37,61.58,70.04,0
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .isOnQuest 76
     .skill riding,75,1
 step << Human
@@ -1214,7 +1214,7 @@ step
 step
     .goto 37,81.382,66.112
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_管理员莱琳|r 对话
-    .accept 5545 >>接受任务 木材危机
+    .accept 5545 >> 接受任务 木材危机
     .target 管理员莱琳
 step
     .goto 37,81.860,66.040
@@ -1301,9 +1301,9 @@ step
     .goto 37,73.973,72.177
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卫兵托马斯|r 对话
     --.turnin 46 >> Turn in Bounty on Murlocs
-    .turnin 52 >>交任务 保卫边境
-    .turnin 71 >>交任务 回复托马斯
-    .accept 59 >>接受任务 布甲和皮甲
+    .turnin 52 >> 交任务 保卫边境
+    .turnin 71 >> 交任务 回复托马斯
+    .accept 59 >> 接受任务 布甲和皮甲
     .target 卫兵托马斯
 --XX     #optional if above not skipped
 step
@@ -1314,12 +1314,12 @@ step
 step
     .goto 37,79.462,68.715
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨拉·迪博雷恩|r 对话
-    .turnin 59 >>交任务 布甲和皮甲
+    .turnin 59 >> 交任务 布甲和皮甲
     .target 萨拉·迪博雷恩
 step
     .goto 37,81.382,66.112
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_管理员莱琳|r 对话
-    .turnin 5545 >>交任务 木材危机
+    .turnin 5545 >> 交任务 木材危机
     .target 管理员莱琳
 step
     .goto 37,81.860,66.040
@@ -1338,14 +1338,14 @@ step << Hunter
 step << Human
     #optional
     #completewith hs1
-    .hs >>使用炉石返回闪金镇
+    .hs >> 使用炉石返回闪金镇
     .cooldown item,6948,<0,1
 step << Human
     #completewith hs1
     #xprate <1.2
     .goto 37,81.829,66.556
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迅翼高斯|r 对话
-    .fly Goldshire >>飞往闪金镇
+    .fly Goldshire >> 飞往闪金镇
     .target Goss the Swift
     .subzoneskip 87
     .zoneskip 37,1
@@ -1357,14 +1357,14 @@ step << Human !Paladin !Warrior !Rogue
     #xprate >1.19
     .goto 37,81.829,66.556
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迅翼高斯|r 对话
-    .fly Gol'Bolar Quarry >>飞往古博拉采掘场
+    .fly Gol'Bolar Quarry >> 飞往古博拉采掘场
     .target Goss the Swift
     .cooldown item,6948,>0,1
 step << Human
 #xprate <1.2
     .goto 37,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_威廉·匹斯特|r 对话
-    .turnin 112 >>交任务 收集海藻
+    .turnin 112 >> 交任务 收集海藻
     .target 威廉·匹斯特
     .isQuestComplete 112
 
@@ -1372,7 +1372,7 @@ step << Human
 #xprate <1.2
     .goto 37,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话
-    .turnin 76 >>交任务 玉石矿洞
+    .turnin 76 >> 交任务 玉石矿洞
     --.accept 239 >> Accept Westbrook Garrison Needs Help!
     .target 治安官杜汉
     .isQuestComplete 76
@@ -1386,8 +1386,8 @@ step << Human
     #label FlySW
     .goto 37,41.715,64.636
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勇敢的巴特利|r对话
-    .fly Stormwind >>飞往暴风城 << Rogue/Paladin/Warrior
-    .fly Gol'Bolar Quarry >>飞往古博拉采掘场 << !Rogue !Paladin !Warrior
+    .fly Stormwind >> 飞往暴风城 << Rogue/Paladin/Warrior
+    .fly Gol'Bolar Quarry >> 飞往古博拉采掘场 << !Rogue !Paladin !Warrior
 	.target Bartlett the Brave
     .zoneskip Stormwind City
     .itemStat 16,QUALITY,<7
@@ -1453,14 +1453,14 @@ step << Human (Rogue/Paladin/Warrior)
     .goto 84,70.938,72.472,-1
     .goto 37,81.829,66.556,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 或 |cRXP_FRIENDLY_迅翼高斯|r 对话
-    .fly Gol'Bolar Quarry >>飞往古博拉采掘场
+    .fly Gol'Bolar Quarry >> 飞往古博拉采掘场
 	.target 杜加尔·朗德瑞克
     .zoneskip 27 --Dun Morogh
     .target Goss the Swift
 
 step << Dwarf/Gnome
 #completewith next
-    .hs >>炉石回卡拉诺斯，丹莫罗
+    .hs >> 炉石回卡拉诺斯，丹莫罗
     .zoneskip Dun Morogh
 step << Dwarf/Gnome
     .goto 27,54.733,50.815
@@ -1471,11 +1471,11 @@ step << Dwarf/Gnome
 step << Dwarf/Gnome
     .goto 27,53.802,52.762
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_布洛兰·风须|r对话
-    .fly Gol'Bolar Quarry >>飞往古博拉采掘场
+    .fly Gol'Bolar Quarry >> 飞往古博拉采掘场
 	.target Brolan Galebeard
 step << Human
-    .abandon 26394 >>放弃你任务日志里所有艾尔文森林的任务
+    .abandon 26394 >> 放弃你任务日志里所有艾尔文森林的任务
 step
 #label end
-.zone Dun Morogh >>前往东部丹莫罗
+.zone Dun Morogh >> 前往东部丹莫罗
 ]])

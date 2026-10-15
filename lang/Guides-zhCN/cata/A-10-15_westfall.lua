@@ -16,7 +16,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith WestfallEntry
-    .zone 52 >>前往西部荒野
+    .zone 52 >> 前往西部荒野
 step
     .isOnQuest 26378
     .goto 1436/0,914.900,-9849.900
@@ -135,7 +135,7 @@ step
     .mob Coyote
 step
     #completewith BackOfMine
-    .goto 52,53.24,92.20 >>进入詹戈洛德矿洞
+    .goto 52,53.24,92.20 >> 进入詹戈洛德矿洞
 step
     #completewith BackOfMine
     >>击杀 |cRXP_ENEMY_狗头人掘地工|r
@@ -144,7 +144,7 @@ step
 step
     #completewith BackOfMine
     .goto 52,46.405,19.289
-    .cast 79262 >>|cRXP_WARN_在詹戈洛德矿洞后方|r|cRXP_WARN_使用|r |T132762:0|t[“老好人”洛伊的老房子]
+    .cast 79262 >> |cRXP_WARN_在詹戈洛德矿洞后方|r|cRXP_WARN_使用|r |T132762:0|t[“老好人”洛伊的老房子]
     .use 57761
 step
     #label BackOfMine
@@ -208,7 +208,7 @@ step
     >>击杀 |cRXP_ENEMY_看守傀儡|r。拾取 |T133862:0|t[|cRXP_LOOT_看守傀儡之心|r]
     .use 57935 >>|cRXP_WARN_使用|r |T133862:0|t[|cRXP_LOOT_看守傀儡之心|r] |cRXP_WARN_来开始任务|r
     .collect 57935,1,26252,1 -- Harvest Watcher Heart (1)
-    .accept 26252 >>接受任务 傀儡之心
+    .accept 26252 >> 接受任务 傀儡之心
     .complete 26237,1 --|Harvest Watcher slain: 10/10
     .mob Harvest Watcher
 step
@@ -234,7 +234,7 @@ step
     .mob +Young Fleshripper
 step
     .goto 1436/0,1283.100,-10164.700
-    .use 57954 >>|cRXP_WARN_对|r |cRXP_WARN_过载的麦田傀儡|cRXP_ENEMY_ |r使用 |T133862:0|t[看守傀儡之心] 来控制它|r
+    .use 57954 >> |cRXP_WARN_对|r |cRXP_WARN_过载的麦田傀儡|cRXP_ENEMY_ |r使用 |T133862:0|t[看守傀儡之心] 来控制它|r
     .complete 26257,1 --|Overloaded Harvest Golem enabled: 1/1
     .target Overloaded Harvest Golem
 step
@@ -244,7 +244,7 @@ step
     .mob Energized Harvest Reaper
 step
     .isOnQuest 26257
-    .exitvehicle >>|cRXP_WARN_退出|r |cRXP_ENEMY_过载的麦田傀儡|r
+    .exitvehicle >> |cRXP_WARN_退出|r |cRXP_ENEMY_过载的麦田傀儡|r
 step
     #loop
     .goto 52,41.4,37.4,60,0
@@ -311,7 +311,7 @@ step
     .goto 52,56.91,57.72,20,0
     .goto 52,53.94,57.06,20,0
     .goto 52,52.20,55.75,20,0
-    .use 57991 >>|cRXP_WARN_到哨兵岭附近找|r |cRXP_WARN_无家可归的暴风城平民|cRXP_FRIENDLY_|r，给他们用|r |T237329:0|t[杂味炖肉]
+    .use 57991 >> |cRXP_WARN_到哨兵岭附近找|r |cRXP_WARN_无家可归的暴风城平民|cRXP_FRIENDLY_|r，给他们用|r |T237329:0|t[杂味炖肉]
     .complete 26271,1 --|Westfall Homeless fed: 20/20
     .target Homeless Stormwind Citizen
     .target West Plains Drifter
@@ -368,11 +368,11 @@ step
     #completewith next
     .isOnQuest 26290
     .goto 52,70.38,74.45
-    .subzone 5289 >>前往摩特维克之塔
+    .subzone 5289 >> 前往摩特维克之塔
 step
     .isOnQuest 26290
     .goto 52,70.38,74.45
-    .cast 79528 >>|cRXP_WARN_在摩特维克之塔内|r|cRXP_WARN_使用|r |T134724:0|t[遮蔽药水]
+    .cast 79528 >> |cRXP_WARN_在摩特维克之塔内|r|cRXP_WARN_使用|r |T134724:0|t[遮蔽药水]
     .use 58112 >>|cRXP_WARN_跑过塔楼前面的 |cRXP_ENEMY_佣兵|r。一旦你与他们进入战斗，|cRXP_FRIENDLY_密探吉尔妮|r 就会攻击他们|r
 step
     .goto 52,70.543,74.060
@@ -390,7 +390,7 @@ step
     .accept 26291 >>接受任务 月溪镇的大麻烦
 step
     #completewith next
-    .hs >>炉石到哨兵岭
+    .hs >> 炉石到哨兵岭
     .cooldown item,6948,>2,1
 step
     .goto 1436/0,1045.300,-10508.800
@@ -429,10 +429,10 @@ step
     .goto 52,45.6,70.8,40,0
     .goto 52,43.8,67.4,40,0
     >>击杀 |cRXP_ENEMY_月溪镇暴徒|r。拾取 |T237277:0|t[|cRXP_LOOT_红头巾|r]
-    .use 58117 >>|cRXP_WARN_使用|r |T237277:0|t[|cRXP_LOOT_红头巾|r] |cRXP_WARN_来开始任务|r
+    .use 58117 >> |cRXP_WARN_使用|r |T237277:0|t[|cRXP_LOOT_红头巾|r] |cRXP_WARN_来开始任务|r
     .collect 58117,1,26296,1 -- Red Bandana (1)
     .disablecheckbox
-    .accept 26296 >>接受任务 搜证
+    .accept 26296 >> 接受任务 搜证
     .mob Moonbrook Thug
 step
     #label MoonbrookThugs
@@ -485,10 +485,10 @@ step
     .goto 1415,40.92,81.99,15,0
     .goto 1415,40.90,82.18,10,0
     .goto 1415,40.77,82.58,15,0
-    .goto 1415,40.48,82.44,5 >>进入死亡矿井，进副本
+    .goto 1415,40.48,82.44,5 >> 进入死亡矿井，进副本
 step
     .isOnQuest 26320
-    .cast 79586 >>|cRXP_WARN_在死亡矿井副本内|r|cRXP_WARN_使用|r [焚香炉]
+    .cast 79586 >> |cRXP_WARN_在死亡矿井副本内|r|cRXP_WARN_使用|r [焚香炉]
     .timer 155,过去的影像 剧情RP
     .use 58147
 step
@@ -496,7 +496,7 @@ step
     .complete 26320,1 -- Vision of the Past uncovered 1/1
 step
     #completewith next
-    .hs >>炉石到哨兵岭
+    .hs >> 炉石到哨兵岭
     .cooldown item,6948,>2,1
 step
     .goto 1436/0,1045.100,-10508.800
@@ -506,14 +506,14 @@ step
     --.accept 26322 >>Accept Rise of the Brotherhood
     --.timer 105,Rise of the Brotherhood RP
 step << skip -- quest isn't needed for loremaster
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 26322,1 -- Rise of the Brotherhood witnessed 1/1
 step
     .goto 1436/0,2110.100,-10514.500
     >>击杀海岸沿线的 |cRXP_ENEMY_鱼人|r。拾取 |T134269:0|t[|cRXP_LOOT_杉德尔船长的藏宝图|r]
-    .use 1357 >>|cRXP_WARN_使用|r |T134269:0|t[|cRXP_LOOT_杉德尔船长的藏宝图|r] |cRXP_WARN_来开始任务|r
+    .use 1357 >> |cRXP_WARN_使用|r |T134269:0|t[|cRXP_LOOT_杉德尔船长的藏宝图|r] |cRXP_WARN_来开始任务|r
     .collect 1357,1,26353,1 -- Captain Sanders' Treasure Map (1)
-    .accept 26353 >>接受任务 杉德尔船长的宝藏
+    .accept 26353 >> 接受任务 杉德尔船长的宝藏
     .mob Murloc Hunter
     .mob Murloc Warrior
 step
@@ -533,14 +533,14 @@ step
     .accept 26356 >>接受任务 杉德尔船长的宝藏
 step
     #completewith next
-    .goto 52,25.97,16.90,20 >>游向小岛
+    .goto 52,25.97,16.90,20 >> 游向小岛
 step
     .goto 1436/0,2107.700,-9794.300
     >>点击地上的 |cRXP_PICK_上锁的箱子|r
     .turnin 26356 >>交任务 杉德尔船长的宝藏
 step
     #completewith next
-    .subzone 115 >>前往西部荒野灯塔
+    .subzone 115 >> 前往西部荒野灯塔
 step
     .goto 1436/0,1949.100,-11397.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_葛瑞森船长|r对话

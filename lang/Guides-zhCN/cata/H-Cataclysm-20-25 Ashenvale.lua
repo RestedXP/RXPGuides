@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #mop
 << Horde
 #name 22-27级 灰谷
-#next 27-31级 北荆棘谷
+#next 27-31 北荆棘谷
 #version 1
 --#group RXP Cataclysm (H) << cata
 
@@ -59,7 +59,7 @@ step
 step
     .goto 10,41.99,15.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高尔特上尉|r 对话
-    .fp The Mor'shan Rampart >>获取莫尔杉壁垒飞行路径
+    .fp The Mor'shan Rampart >> 获取莫尔杉壁垒飞行路径
     .target Gort Goreflight
     .subzoneskip 1703,1
 step
@@ -71,7 +71,7 @@ step
     .mob +Ashenvale Bowman
 step
     #completewith Skirmishers
-    .use 45001 >>|cRXP_WARN_对|r |cRXP_WARN_受伤的莫尔杉防御者|r |cRXP_FRIENDLY_使用|r |T133690:0|t[医用药膏]
+    .use 45001 >> |cRXP_WARN_对|r |cRXP_WARN_受伤的莫尔杉防御者|r |cRXP_FRIENDLY_使用|r |T133690:0|t[医用药膏]
     .complete 13613,1 --5/5 Wounded Mor'shan Defenders Rescued
     .target Wounded Mor'shan Defender
 step
@@ -111,7 +111,7 @@ step
     .waypoint 63,68.994,86.080,20,0
     .waypoint 10,40.760,12.633,20,0
     .waypoint 63,65.280,86.817,20,0
-    .use 45001 >>对 |cRXP_FRIENDLY_受伤的莫尔杉防御者|r 使用 |T133690:0|t[医用药膏]
+    .use 45001 >> 对 |cRXP_FRIENDLY_受伤的莫尔杉防御者|r 使用 |T133690:0|t[医用药膏]
     .complete 13613,1 --5/5 Wounded Mor'shan Defenders Rescued
     .target Wounded Mor'shan Defender
 step
@@ -150,7 +150,7 @@ step
 step
     #completewith next
     .goto 63,64.16,84.50
-    .cast 62772 >>|cRXP_WARN_对|r |cRXP_WARN_高拉特|r |cRXP_FRIENDLY_使用|r |T134719:0|t[高拉特的灌魔之血]
+    .cast 62772 >> |cRXP_WARN_对|r |cRXP_WARN_高拉特|r |cRXP_FRIENDLY_使用|r |T134719:0|t[高拉特的灌魔之血]
     .timer 103,高拉特的复仇 剧情演出
     .use 45023
 step
@@ -216,7 +216,7 @@ step
     #completewith next
     >>击杀 |cRXP_ENEMY_尖爪|r 如果他在的话。拾取 |T136063:0|t[|cRXP_LOOT_尖爪的爪子|r] 并使用它来开始任务
     .collect 16305,1,2 --Sharptalon's Claw (1)
-    .accept 2 >>接受任务 尖爪的爪子
+    .accept 2 >> 接受任务尖爪的爪子
     .unitscan 尖爪
     .use 16305
     .maxlevel 24
@@ -299,7 +299,7 @@ step
 step
     .goto 63,73.56,60.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库莱比|r 对话
-    .accept 6503 >>接受任务 灰谷先驱者
+    .accept 6503 >>接受任务灰谷先驱者
     .target 库莱比
     .isQuestTurnedIn 13712
 step
@@ -383,9 +383,9 @@ step
     .isQuestTurnedIn 13712
 step
     #completewith DorDanilDen
-    >>击杀 |cRXP_ENEMY_尖爪|r，并拾取他的 |T136063:0|t[|cRXP_LOOT_锐爪鹰的爪子|r]，使用它来接取任务
+    >>击杀 |cRXP_ENEMY_锐爪鹰|r，并拾取他的 |T136063:0|t[|cRXP_LOOT_锐爪鹰的爪子|r]，使用它来接取任务
     .collect 16305,1,2 --Sharptalon's Claw (1)
-    .accept 2 >>接受任务 尖爪的爪子
+    .accept 2 >> 接受任务尖爪的爪子
     .unitscan 尖爪
     .use 16305
     .maxlevel 24
@@ -408,7 +408,7 @@ step
     .mob Severed Keeper
 step
     .goto 63,75.52,74.20
-    .use 45683 >>|cRXP_WARN_在洞穴中央|r |cRXP_WARN_使用|r |T134840:0|t[被污染的卡多雷之血]
+    .use 45683 >> |cRXP_WARN_在洞穴中央|r |cRXP_WARN_使用|r |T134840:0|t[被污染的卡多雷之血]
     .complete 13805,1 --1/1 Forest Heart Corrupted
     .isQuestTurnedIn 13712
 step
@@ -429,9 +429,9 @@ step
     .isQuestTurnedIn 13712
 step
     #completewith next
-    >>击杀 |cRXP_ENEMY_尖爪|r，并拾取他的 |T136063:0|t[|cRXP_LOOT_锐爪鹰的爪子|r]，使用它来接取任务
+    >>击杀 |cRXP_ENEMY_锐爪鹰|r，并拾取他的 |T136063:0|t[|cRXP_LOOT_锐爪鹰的爪子|r]，使用它来接取任务
     .collect 16305,1,2 --Sharptalon's Claw (1)
-    .accept 2 >>接受任务 尖爪的爪子
+    .accept 2 >> 接受任务尖爪的爪子
     .unitscan 尖爪
     .use 16305
     .maxlevel 24
@@ -465,14 +465,14 @@ step
     .waypoint 1440/1,-2480.90015,1737.70007,40,0
     >>击杀 |cRXP_ENEMY_尖爪|r，并拾取他的 |T136063:0|t[|cRXP_LOOT_锐爪鹰的爪子|r]，使用它来接取任务
     .collect 16305,1,2 --Sharptalon's Claw (1)
-    .accept 2 >>接受任务 尖爪的爪子
+    .accept 2 >> 接受任务尖爪的爪子
     .unitscan 尖爪
     .use 16305
     .isQuestTurnedIn 13712
     .maxlevel 24
 step << skip
     #completewith next
-    .hs >>使用炉石返回碎木岗哨
+    .hs >> 使用炉石返回碎木岗哨
     .use 6948
     .subzoneskip 431
     --Need hearth cd for zoram strand
@@ -566,7 +566,7 @@ step
 step
     #questguide
     .goto 63,74.09,62.92
-    .use 45598 >>|cRXP_WARN_爬上塔楼，用|r |T134569:0|t[被诅咒的矿石] |cRXP_WARN_瞄准|r |cRXP_ENEMY_暴怒的古树|r |cRXP_WARN_和|r |cRXP_ENEMY_暗夜精灵攻击部队|r
+    .use 45598 >> |cRXP_WARN_爬上塔楼，用|r |T134569:0|t[被诅咒的矿石] |cRXP_WARN_瞄准|r |cRXP_ENEMY_暴怒的古树|r |cRXP_WARN_和|r |cRXP_ENEMY_暗夜精灵攻击部队|r
     .complete 13798,2 --5/5 Raging Ancients Slain
     .complete 13798,1 --30/30 Attacking Elves Slain
     .mob Raging Ancients
@@ -608,7 +608,7 @@ step
 step
     #questguide
     #completewith next
-    .use 45807 >>|cRXP_WARN_使用你的|r |T132399:0|t[碎木伐木斧] |cRXP_WARN_砍倒|r |cRXP_FRIENDLY_灰谷橡树|r
+    .use 45807 >> |cRXP_WARN_使用你的|r |T132399:0|t[碎木伐木斧] |cRXP_WARN_砍倒|r |cRXP_FRIENDLY_灰谷橡树|r
     .complete 13815,1 --6/6 Ashenvale Oaks Chopped Down
     .target Ashenvale Oak
 step
@@ -627,7 +627,7 @@ step
     #questguide
     #label ChopSomeTrees
     .goto 63,86.51,54.67
-    .use 45807 >>|cRXP_WARN_使用你的|r |T132399:0|t[碎木伐木斧] |cRXP_WARN_砍倒|r |cRXP_FRIENDLY_灰谷橡树|r
+    .use 45807 >> |cRXP_WARN_使用你的|r |T132399:0|t[碎木伐木斧] |cRXP_WARN_砍倒|r |cRXP_FRIENDLY_灰谷橡树|r
     .complete 13815,1 --6/6 Ashenvale Oaks Chopped Down
     .target Ashenvale Oak
 step
@@ -642,7 +642,7 @@ step
 step
     #questguide
     #completewith next
-    .subzone 435 >>前往屠魔峡谷
+    .subzone 435 >> 前往屠魔峡谷
 step
     #questguide
     .goto 63,89.75,76.72
@@ -787,7 +787,7 @@ step
     .maxlevel 24,AshenvaleEnd
     .goto 63,73.19,61.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乌尔格拉|r 对话
-    .gossipoption 111682 >>飞往佐拉姆海岸
+    .gossipoption 111682 >> 飞往佐拉姆海岸
     .timer 165,佐拉姆海岸，灰谷
     .target 乌尔格拉
     .subzoneskip 414
@@ -797,7 +797,7 @@ step
     .maxlevel 25,AshenvaleEnd
     .goto 63,73.19,61.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乌尔格拉|r 对话
-    .gossipoption 111682 >>飞往佐拉姆海岸
+    .gossipoption 111682 >> 飞往佐拉姆海岸
     .timer 165,佐拉姆海岸，灰谷
     .target 乌尔格拉
     .subzoneskip 414
@@ -841,7 +841,7 @@ step
     .goto 63,12.77,34.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆格拉什|r 对话
     >>|cRXP_WARN_这将开始一个护送任务。小心，任务难度较高|r
-    .accept 6641,1 >>接受任务鞭笞者沃尔沙
+    .accept 6641,1 >> 接受任务 鞭笞者沃尔沙
     .target 穆格拉什
 step
     #completewith LitLightHouse
@@ -879,7 +879,7 @@ step
     .complete 13883,1 --10/10 Sunken Scrap Metal
 step
     #completewith next
-    .goto 63,11.69,35.36,30 >>前往佐拉姆加前哨站的熔炉
+    .goto 63,11.69,35.36,30 >> 前往佐拉姆加前哨站的熔炉
 step
     .goto 63,11.69,35.36
     .use 46365 >>|cRXP_WARN_将|r |T237338:0|t[魔尾多头蛇脂块] |cRXP_WARN_练成|r |cRXP_LOOT_魔尾多头蛇之油|r
@@ -967,7 +967,7 @@ step
     .complete 26890,1 --20/20 Sapphire of Aku'Mai
 step
     #completewith next
-    .hs >>炉石回到佐拉姆岗哨
+    .hs >> 炉石回到佐拉姆岗哨
     .use 6948
     .subzoneskip 2897
 step
@@ -1073,7 +1073,7 @@ step
 step
     .goto 63,41.49,34.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与洞穴深处的 |cRXP_FRIENDLY_鲁尔|r 对话。这将开始一个护送任务
-    .accept 6482 >>接受任务鲁尔的自由
+    .accept 6482 >> 接受任务鲁尔的自由
     .target 鲁尔·雪蹄
 step
     .goto 63,40.68,33.21,20,0
@@ -1143,7 +1143,7 @@ step
     .mob +Astranaar Thrower
 step
     #completewith next
-    .cast vehicle,65481 >>vehicle,65481 >>|cRXP_WARN_使用|r |T136011:0|t[返回基地] |cRXP_WARN_飞回地狱咆哮岗哨|r
+    .cast vehicle,65481 >>|cRXP_WARN_使用|r |T136011:0|t[返回基地] |cRXP_WARN_飞回地狱咆哮岗哨|r
     .subzoneskip 4691
 step
     .goto 63,37.99,42.83
@@ -1209,7 +1209,7 @@ step
     .waypoint 1440/1,-1247.30005,2860.00000,30,0
     .waypoint 1440/1,-1300.80005,2733.19995,30,0
     .waypoint 1440/1,-1323.30005,2631.60010,30,0
-    .use 46352 >>|cRXP_WARN_对|r |cRXP_WARN_熔岩裂缝|r |cRXP_PICK_使用|r |T237588:0|t[大地的赠礼]
+    .use 46352 >> |cRXP_WARN_对|r |cRXP_WARN_熔岩裂缝|r |cRXP_PICK_使用|r |T237588:0|t[大地的赠礼]
     .complete 13880,1 --8/8 Lava fissures filled
 step
     #questguide
@@ -1265,7 +1265,7 @@ step
     .target Stikwad
 step
     #completewith SilverwindPickups
-    .goto 63,49.96,67.25,100 >>前往银风避难所
+    .goto 63,49.96,67.25,100 >> 前往银风避难所
 step
     .goto 63,49.79,65.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞娜尼·雷心|r 对话
@@ -1351,7 +1351,7 @@ step
     .target 塞娜尼·雷心
 step
     .goto 63,56.37,63.54
-    .use 16972 >>|cRXP_WARN_在图腾丘上使用|r |T237588:0|t[大地的赠礼] |cRXP_WARN_并保护它免受来袭的|r |cRXP_ENEMY_黑喉熊怪|r
+    .use 16972 >> |cRXP_WARN_在图腾丘上使用|r |T237588:0|t[大地的赠礼] |cRXP_WARN_并保护它免受来袭的|r |cRXP_ENEMY_黑喉熊怪|r
     >>在 |cRXP_ENEMY_穆戈特酋长|r 出现时击杀他。从 |cRXP_PICK_图腾篮|r 中拾取 |cRXP_LOOT_穆戈特的图腾|r
     .complete 6621,1 --1/1 Murgut's Totem
     .mob Chief Murgut
@@ -1365,7 +1365,7 @@ step
     >>击杀 |cRXP_ENEMY_泰德雷斯|r，并拾取她的 |T136222:0|t[|cRXP_LOOT_被污染的水球|r]。使用它来开启任务
     .complete 25,2 --1/1 Tideress slain
     .collect 16408,1,1918 --Collect Befouled Water Globe (x1)
-    .accept 1918 >>接受任务 被污染的水元素
+    .accept 1918 >>接受任务被污染的水元素
     .mob 泰德雷斯
 step
     #loop
@@ -1389,7 +1389,7 @@ step
     >>击杀 |cRXP_ENEMY_乌桑戈斯|r，并拾取他的 |T132941:0|t[|cRXP_LOOT_乌桑戈斯的爪子|r]，使用它来接取任务
     >>|cRXP_WARN_他会在附近稍微巡逻|r
     .collect 16303,1,23 --Collect Ursangous's Paw (x1)
-    .accept 23 >>接受任务 乌萨苟斯的爪子
+    .accept 23 >> 接受任务 乌萨苟斯的爪子
     .unitscan 乌萨苟斯
     .use 16303
 step
@@ -1437,7 +1437,7 @@ step
     >>击杀 |cRXP_ENEMY_乌桑戈斯|r，并拾取他的 |T132941:0|t[|cRXP_LOOT_乌桑戈斯的爪子|r]，使用它来接取任务
     >>|cRXP_WARN_他会在附近稍微巡逻|r
     .collect 16303,1,23 --Collect Ursangous's Paw (x1)
-    .accept 23 >>接受任务 乌萨苟斯的爪子
+    .accept 23 >> 接受任务 乌萨苟斯的爪子
     .unitscan 乌萨苟斯
     .use 16303
 step
@@ -1459,7 +1459,7 @@ step
     .target Captain Tarkan
 step
     #completewith next
-    .goto 63,60.65,52.69,100 >>前往林中树居
+    .goto 63,60.65,52.69,100 >> 前往林中树居
 step
     .goto 63,60.65,52.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨格|r 对话
@@ -1471,7 +1471,7 @@ step
     >>击杀 |cRXP_ENEMY_夏杜布拉|r，并拾取她的 |T132225:0|t[|cRXP_LOOT_夏杜布拉的头颅|r]，使用它来接取任务
     >>|cRXP_ENEMY_萨杜布拉|r 在附近小范围巡逻
     .collect 16304,1,24 --Collect Shadumbra's Head
-	.accept 24 >>接受任务猎影的头
+	.accept 24 >> 接受任务猎影的头
 	.unitscan 猎影
     .use 16304
 step
@@ -1488,7 +1488,7 @@ step
     >>击杀 |cRXP_ENEMY_夏杜布拉|r，并拾取她的 |T132225:0|t[|cRXP_LOOT_夏杜布拉的头颅|r]，使用它来接取任务
     >>|cRXP_ENEMY_猎影|r 会在建筑周围巡逻
     .collect 16304,1,24 --Collect Shadumbra's Head
-	.accept 24 >>接受任务猎影的头
+	.accept 24 >> 接受任务猎影的头
 	.unitscan 猎影
     .use 16304
 step
@@ -1498,7 +1498,7 @@ step
     .target Thagg
 step
     #completewith FlytoSP
-    .hs >>使用炉石返回地狱咆哮岗哨
+    .hs >> 使用炉石返回地狱咆哮岗哨
     .use 6948
     .subzoneskip 4691
     .cooldown item,6948,>0,1
@@ -1523,12 +1523,12 @@ step
 step
     .goto 63,74.12,60.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅玛|r 对话
-    .turnin 6482 >>交任务鲁尔的自由
+    .turnin 6482 >> 交任务鲁尔的自由
     .target 雅玛·雪蹄
 step
     .goto 63,74.19,60.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马斯托克·维尔西斯|r 对话
-    .accept 1918 >>接受任务 被污染的水元素
+    .accept 1918 >>接受任务被污染的水元素
     .turnin 1918 >>交任务被污染的水元素
     .target 马斯托克·维尔西斯
     .itemcount 16408,1
@@ -1548,14 +1548,14 @@ step
     .zoneskip Orgrimmar
 step << Rogue Cata/Warlock Cata
     #completewith next
-    .goto 1454,45.81,66.88,40 >>前往暗影裂口
+    .goto 1454,45.81,66.88,40 >> 前往暗影裂口
 step << Shaman Cata/Druid Cata/Paladin Cata/Warrior Cata/Hunter Cata/Priest Cata
     #completewith next
-    .goto 1454/1,-4291.89990,1876.70007,50 >>前往智慧谷
+    .goto 1454/1,-4291.89990,1876.70007,50 >> 前往智慧谷
 step << Rogue Cata
     .goto 1454,44.65,61.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_戈达尔|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Gordul
 step << Rogue Cata
     .goto 1454,29.60,50.40
@@ -1565,17 +1565,17 @@ step << Rogue Cata
 step << Shaman Cata
     .goto 1454/1,-4282.60010,1884.09998
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎伊|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Sahi Cloudsinger
 step << Druid Cata
     .goto 1454/1,-4285.10010,1889.09998
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎乌拉|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Shalla Whiteleaf
 step << Mage Cata
     .goto 1454/1,-4125.10010,1690.59998
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_尤塞尔奈|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Uthel'nay
 step << Mage Cata
     .goto 1454/1,-4128.89990,1692.09998
@@ -1594,27 +1594,27 @@ step << Mage Cata
 step << Priest Cata
     .goto 1454/1,-4297.60010,1863.30005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_先知利瓦萨|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Seer Liwatha
 step << Warlock Cata
     .goto 1454,54.49,39.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米尔科特|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 米尔科特
 step << Paladin Cata
     .goto 1454/1,-4292.50000,1863.70007
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_烈日行者阿托莫|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Sunwalker Atohmo
 step << Hunter Cata
     .goto 1454/1,-4281.00000,1872.50000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺希·平原行者|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Nohi Plainswalker
 step << Warrior Cata
     .goto 1454/1,-4284.00000,1867.80005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳胡·怒蹄|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Nahu Ragehoof
 
 
@@ -1661,7 +1661,7 @@ step
     .isQuestTurnedIn 13841
 step
     #questguide
-    .hs >>使用炉石返回奥格瑞玛
+    .hs >> 使用炉石返回奥格瑞玛
     .use 6948
     .cooldown item,6948,>2
     .zoneskip Orgrimmar

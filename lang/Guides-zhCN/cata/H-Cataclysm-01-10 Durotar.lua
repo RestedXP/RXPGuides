@@ -89,7 +89,7 @@ step
 	.goto 1411,43.02,71.23,30,0
 	.goto 1411,43.43,70.84,30,0
 	.goto 1411,44.39,70.04,30,0
-    .xp 2+650 >>刷怪达到650+/900经验
+    .xp 2+650 >> 刷怪达到650+/900经验
     .mob Northwatch Scout
 step
     .goto 1411,43.27,68.22
@@ -100,7 +100,7 @@ step
     .accept 3087 >>接受任务 风蚀羊皮纸 << Hunter
     .accept 25138 >>接受任务 雕文羊皮纸 << Mage
     .accept 3089 >>接受任务 符文羊皮纸 << Shaman
-    .accept 2383 >>接受任务 简易羊皮纸 << Warrior
+    .accept 2383 >> 接受任务 简易羊皮纸 << Warrior
     .accept 3090 >>接受任务 被污染的羊皮纸 << Warlock
     .accept 31156 >>接受任务 智者的来信 << Monk
     .target 高内克
@@ -115,21 +115,21 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁瓦格|r 对话
     .turnin 3088 >>交任务 密文羊皮纸
     .accept 25141 >>接受任务 刺骨
-    .train 2098 >>学习 |T132292:0|t[刺骨] << Cata
+    .train 2098 >> 学习 |T132292:0|t[刺骨] << Cata
     .target 鲁瓦格
 step << Hunter
     .goto 1411,42.84,69.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡朗尼沙|r对话
     .turnin 3087 >>交任务 风蚀羊皮纸
     .accept 25139 >>接受任务 稳固射击
-    .train 56641 >>训练 |T132213:0|t[稳固射击] << Cata
+    .train 56641 >> 训练 |T132213:0|t[稳固射击] << Cata
     .target Karranisha
 step << Mage cata
     .goto 1411,42.52,69.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥克莱法|r对话
     .turnin 25138 >>交任务 雕文羊皮纸
     .accept 25149 >>接受任务 奥术飞弹
-    .train 5143 >>训练 |T136096:0|t[奥术飞弹] << Cata
+    .train 5143 >> 训练 |T136096:0|t[奥术飞弹] << Cata
     .target Acrypha
 step << Mage !cata
     .goto 1411,42.52,69.03
@@ -142,21 +142,21 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r 对话
     .turnin 3089 >>交任务 符文羊皮纸
     .accept 25143 >>接受任务 根源打击
-    .train 73899 >>训练 |T460956:0|t[根源打击] << Cata
+    .train 73899 >> 训练 |T460956:0|t[根源打击] << Cata
     .target 史克里克
 step << Warrior
     .goto 1411,42.88,69.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r 对话
     .turnin 2383 >>交任务 简易羊皮纸
     .accept 25147 >>接受任务 冲锋
-    .train 100 >>学习 |T132337:0|t[冲锋] << Cata
+    .train 100 >> 学习 |T132337:0|t[冲锋] << Cata
     .target 弗朗恩
 step << Warlock cata
     .goto 1411,42.38,68.06
     .>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .turnin 3090 >>交任务 被污染的羊皮纸
     .accept 25145 >>接受任务 献祭
-    .train 348 >>学习 |T135817:0|t[献祭] << Cata
+    .train 348 >> 学习 |T135817:0|t[献祭] << Cata
     .target 纳托克
 step << Warlock !cata
     .goto 1411,42.38,68.06
@@ -437,7 +437,7 @@ step
     .complete 25136,1 --6/6 Cactus Apple
 step
     #completewith next
-    .goto 1411,45.41,55.69,30 >>进入洞穴
+    .goto 1411,45.41,55.69,30 >> 进入洞穴
 step
     #completewith Yarrog
 	>>击杀 |cRXP_ENEMY_地狱捕猎者|r
@@ -471,7 +471,7 @@ step
     #completewith next
     .goto 1411,42.50,54.48,-1
     .goto 1411,44.77,54.64,-1
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     >>|cRXP_WARN_确保你在路点箭头附近死亡|r
     .target 灵魂医者
 step
@@ -508,7 +508,7 @@ RXPGuides.RegisterGuide([[
 --#group RXP Cataclysm (H) << cata
 #defaultfor Troll
 #group RXP 大灾变 1-80 (部落) << cata
-#group RXP MoP 1-80 (H) << mop
+#group RXP 熊猫人之谜 1-80级 (部落) << mop
 #subweight 10000
 
 step << !Troll
@@ -517,15 +517,15 @@ step << !Troll
 step
     .goto 1411,62.45,84.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_金萨拉|r对话
-    .accept 31159 >>接受任务 暗矛的崛起 << Monk
-	.accept 24770 >>接受任务 暗矛的崛起 << Rogue
-	.accept 24607 >>接受任务 暗矛的崛起 << Warrior
-	.accept 24750 >>接受任务 暗矛的崛起 << Mage
-	.accept 24758 >>接受任务 暗矛的崛起 << Shaman
-	.accept 24764 >>接受任务 暗矛的崛起 << Druid
-	.accept 24776 >>接受任务 暗矛的崛起 << Hunter
-	.accept 24782 >>接受任务 暗矛的崛起 << Priest
-	.accept 26272 >>接受任务 暗矛的崛起 << Warlock
+    .accept 31159 >> 接受任务 暗矛的崛起 << Monk
+	.accept 24770 >> 接受任务 暗矛的崛起 << Rogue
+	.accept 24607 >> 接受任务 暗矛的崛起 << Warrior
+	.accept 24750 >> 接受任务 暗矛的崛起 << Mage
+	.accept 24758 >> 接受任务 暗矛的崛起 << Shaman
+	.accept 24764 >> 接受任务 暗矛的崛起 << Druid
+	.accept 24776 >> 接受任务 暗矛的崛起 << Hunter
+	.accept 24782 >> 接受任务 暗矛的崛起 << Priest
+	.accept 26272 >> 接受任务 暗矛的崛起 << Warlock
     .target Jin'thala
 step << Monk
     .goto 463/1,-5441.400,-1149.400
@@ -536,50 +536,50 @@ step << Monk
 step << Rogue
     .goto 1411,65.89,83.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷加提|r 对话
-    .turnin 24770 >>交任务 暗矛的崛起
-    .accept 24771 >>接受任务 基础教程：攻击目标
+    .turnin 24770 >> 交任务 暗矛的崛起
+    .accept 24771 >> 接受任务 基础教程：攻击目标
     .target Legati
 step << Warrior
     .goto 1411,65.79,84.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺泰特|r 对话
-    .turnin 24607 >>交任务 暗矛的崛起
-    .accept 24639 >>接受任务 基础教程：攻击目标
+    .turnin 24607 >> 交任务 暗矛的崛起
+    .accept 24639 >> 接受任务 基础教程：攻击目标
     .target Nortet
 step << Mage
     .goto 1411,68.22,83.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索拉萨|r 对话
-    .turnin 24750 >>交任务 暗矛的崛起
-    .accept 24751 >>接受任务 基础教程：攻击目标
+    .turnin 24750 >> 交任务 暗矛的崛起
+    .accept 24751 >> 接受任务 基础教程：攻击目标
     .target Soratha
 step << Shaman
     .goto 1411,64.94,84.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奈卡利|r对话
-    .turnin 24758 >>交任务 暗矛的崛起
-    .accept 24759 >>接受任务 基础教程：攻击目标
+    .turnin 24758 >> 交任务 暗矛的崛起
+    .accept 24759 >> 接受任务 基础教程：攻击目标
     .target Nekali
 step << Druid
     .goto 1411,67.67,84.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_岑塔布拉|r对话
-    .turnin 24764 >>交任务 暗矛的崛起
-    .accept 24765 >>接受任务 基础教程：攻击目标
+    .turnin 24764 >> 交任务 暗矛的崛起
+    .accept 24765 >> 接受任务 基础教程：攻击目标
     .target Zen'tabra
 step << Hunter
     .goto 1411,67.09,83.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_欧塔扎|r对话
-    .turnin 24776 >>交任务 暗矛的崛起
-    .accept 24777 >>接受任务 基础教程：攻击目标
+    .turnin 24776 >> 交任务 暗矛的崛起
+    .accept 24777 >> 接受任务 基础教程：攻击目标
     .target Ortezza
 step << Priest
     .goto 1411,67.59,83.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图娜尼|r对话
-    .turnin 24782 >>交任务 暗矛的崛起
-    .accept 24783 >>接受任务 基础教程：攻击目标
+    .turnin 24782 >> 交任务 暗矛的崛起
+    .accept 24783 >> 接受任务 基础教程：攻击目标
     .target Tunari
 step << Warlock
     .goto 1411,64.92,83.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃德雷卡|r对话
-    .turnin 26272 >>交任务 暗矛的崛起
-    .accept 26273 >>接受任务 基础教程：攻击目标
+    .turnin 26272 >> 交任务 暗矛的崛起
+    .accept 26273 >> 接受任务 基础教程：攻击目标
     .target Voldreka
 step
     .goto 1411,66.912,83.481 << Hunter
@@ -610,50 +610,50 @@ step << Monk
 step << Rogue
     .goto 1411,65.89,83.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷加提|r对话
-    .turnin 24771 >>交任务 基础教程：攻击目标
-    .accept 24773 >>接受任务 粗暴的开始
+    .turnin 24771 >> 交任务 基础教程：攻击目标
+    .accept 24773 >> 接受任务 粗暴的开始
     .target Legati
 step << Warrior
     .goto 1411,65.79,84.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺泰特|r对话
-    .turnin 24639 >>交任务 基础教程：攻击目标
-    .accept 24641 >>接受任务 粗暴的开始
+    .turnin 24639 >> 交任务 基础教程：攻击目标
+    .accept 24641 >> 接受任务 粗暴的开始
     .target Nortet
 step << Mage
     .goto 1411,68.22,83.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索拉萨|r对话
-    .turnin 24751 >>交任务 基础教程：攻击目标
-    .accept 24753 >>接受任务 粗暴的开始
+    .turnin 24751 >> 交任务 基础教程：攻击目标
+    .accept 24753 >> 接受任务 粗暴的开始
     .target Soratha
 step << Shaman
     .goto 1411,64.94,84.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奈卡利|r对话
-    .turnin 24759 >>交任务 基础教程：攻击目标
-    .accept 24761 >>接受任务 粗暴的开始
+    .turnin 24759 >> 交任务 基础教程：攻击目标
+    .accept 24761 >> 接受任务 粗暴的开始
     .target Nekali
 step << Druid
     .goto 1411,67.67,84.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_岑塔布拉|r对话
-    .turnin 24765 >>交任务 基础教程：攻击目标
-    .accept 24767 >>接受任务 粗暴的开始
+    .turnin 24765 >> 交任务 基础教程：攻击目标
+    .accept 24767 >> 接受任务 粗暴的开始
     .target Zen'tabra
 step << Hunter
     .goto 1411,67.09,83.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_欧塔扎|r对话
-    .turnin 24777 >>交任务 基础教程：攻击目标
-    .accept 24779 >>接受任务 粗暴的开始
+    .turnin 24777 >> 交任务 基础教程：攻击目标
+    .accept 24779 >> 接受任务 粗暴的开始
     .target Ortezza
 step << Priest
     .goto 1411,67.59,83.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图娜尼|r对话
-    .turnin 24783 >>交任务 基础教程：攻击目标
-    .accept 24785 >>接受任务 粗暴的开始
+    .turnin 24783 >> 交任务 基础教程：攻击目标
+    .accept 24785 >> 接受任务 粗暴的开始
     .target Tunari
 step << Warlock
     .goto 1411,64.92,83.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃德雷卡|r对话
-    .turnin 26273 >>交任务 基础教程：攻击目标
-    .accept 26275 >>接受任务 粗暴的开始
+    .turnin 26273 >> 交任务 基础教程：攻击目标
+    .accept 26275 >> 接受任务 粗暴的开始
     .target Voldreka
 step << Monk
     #loop
@@ -775,50 +775,50 @@ step << Monk
 step << Rogue
     .goto 1411,65.89,83.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷加提|r对话
-    .turnin 24773 >>交任务 粗暴的开始
-    .accept 24774 >>接受任务 试炼场
+    .turnin 24773 >> 交任务 粗暴的开始
+    .accept 24774 >> 接受任务 试炼场
     .target Legati
 step << Warrior
     .goto 1411,65.79,84.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺泰特|r对话
-    .turnin 24641 >>交任务 粗暴的开始
-    .accept 24642 >>接受任务 试炼场
+    .turnin 24641 >> 交任务 粗暴的开始
+    .accept 24642 >> 接受任务 试炼场
     .target Nortet
 step << Mage
     .goto 1411,68.22,83.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索拉萨|r对话
-    .turnin 24753 >>交任务 粗暴的开始
-    .accept 24754 >>接受任务 试炼场
+    .turnin 24753 >> 交任务 粗暴的开始
+    .accept 24754 >> 接受任务 试炼场
     .target Soratha
 step << Shaman
     .goto 1411,64.94,84.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奈卡利|r对话
-    .turnin 24761 >>交任务 粗暴的开始
-    .accept 24762 >>接受任务 试炼场
+    .turnin 24761 >> 交任务 粗暴的开始
+    .accept 24762 >> 接受任务 试炼场
     .target Nekali
 step << Druid
     .goto 1411,67.67,84.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_岑塔布拉|r对话
-    .turnin 24767 >>交任务 粗暴的开始
-    .accept 24768 >>接受任务 试炼场
+    .turnin 24767 >> 交任务 粗暴的开始
+    .accept 24768 >> 接受任务 试炼场
     .target Zen'tabra
 step << Hunter
     .goto 1411,67.09,83.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_欧塔扎|r对话
-    .turnin 24779 >>交任务 粗暴的开始
-    .accept 24780 >>接受任务 试炼场
+    .turnin 24779 >> 交任务 粗暴的开始
+    .accept 24780 >> 接受任务 试炼场
     .target Ortezza
 step << Priest
     .goto 1411,67.59,83.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图娜尼|r对话
-    .turnin 24785 >>交任务 粗暴的开始
-    .accept 24786 >>接受任务 试炼场
+    .turnin 24785 >> 交任务 粗暴的开始
+    .accept 24786 >> 接受任务 试炼场
     .target Tunari
 step << Warlock
     .goto 1411,64.92,83.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃德雷卡|r对话
-    .turnin 26275 >>交任务 粗暴的开始
-    .accept 26276 >>接受任务 试炼场
+    .turnin 26275 >> 交任务 粗暴的开始
+    .accept 26276 >> 接受任务 试炼场
     .target Voldreka
 step << Monk
     .goto 1411,65.58,83.74
@@ -930,14 +930,14 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷加提|r对话
     .turnin 24774 >>交任务 试炼场
     .accept 24772 >>接受任务 潜行者的技艺
-    .train 2098 >>训练 |T132292:0|t[刺骨] << Cata
+    .train 2098 >> 训练 |T132292:0|t[刺骨] << Cata
     .target Legati
 step << Warrior
     .goto 1411,65.79,84.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺泰特|r对话
     .turnin 24642 >>交任务 试炼场
     .accept 24640 >>接受任务 战士的技艺
-    .train 100 >>|T132337:0|t[冲锋] << Cata
+    .train 100 >> |T132337:0|t[冲锋] << Cata
     .target Nortet
 step << Mage
     .goto 1411,68.22,83.98
@@ -1134,20 +1134,20 @@ step
 step
     .goto 1411,68.50,87.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托拉金|r 对话
-    .accept 25037 >>接受任务 捉螃蟹
+    .accept 25037 >> 接受任务 捉螃蟹
     .target Tora'Jin
 step
     .goto 1411,67.26,87.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫拉亚|r 对话
-    .turnin 25064 >>交任务 莫拉亚
-    .accept 24622 >>接受任务 巨魔的铁杆伙伴
+    .turnin 25064 >> 交任务 莫拉亚
+    .accept 24622 >> 接受任务 巨魔的铁杆伙伴
     .target Moraya
 step
     #label CrossBridge
     #completewith Kijara
     .goto 1411,66.09,89.14,40,0
     .goto 1411,64.94,89.02,40,0
-    .goto 1411,63.42,93.50,40 >>过桥
+    .goto 1411,63.42,93.50,40 >> 过桥
 step
     #require CrossBridge
     #completewith next
@@ -1307,7 +1307,7 @@ step << Troll
     .target Tortunga << Troll
 step << Troll
     .goto 1411,68.02,89.06
-    .gossipoption 112038 >>与 |cRXP_FRIENDLY_佐奴恩|r对话
+    .gossipoption 112038 >> 与 |cRXP_FRIENDLY_佐奴恩|r对话
     .timer 39,突破防线 剧情RP
     .target Jornun
     .isOnQuest 25035
@@ -1380,7 +1380,7 @@ step << skip
     .isQuestTurnedIn 25035
 step << skip
     .goto 1411,69.13,72.32
-    .gossipoption 37251 >>与 |cRXP_FRIENDLY_瓦妮拉|r 对话返回暗矛要塞
+    .gossipoption 37251 >> 与 |cRXP_FRIENDLY_瓦妮拉|r 对话返回暗矛要塞
     .target Vanira
     .isOnQuest 24814
     --VV Add timer in case it's not an instant teleport
@@ -1403,7 +1403,7 @@ RXPGuides.RegisterGuide([[
 --#group RXP Cataclysm (H) << cata
 #defaultfor Orc/Troll
 #group RXP 大灾变 1-80 (部落) << cata
-#group RXP MoP 1-80 (H) << mop
+#group RXP 熊猫人之谜 1-80级 (部落) << mop
 #subweight 10000
 
 step << skip
@@ -1412,16 +1412,16 @@ step << skip
     .goto 1411,63.67,82.61,60,0
     .goto 1411,60.48,81.45,60,0
     .goto 1411,60.09,79.68,60,0
-    .subzone 367 >>前往森金村
+    .subzone 367 >> 前往森金村
 step << Troll
     #completewith BreakingtheChain
     .goto 1411,64.10,74.25,40,0
-    .subzone 367 >>前往森金村
+    .subzone 367 >> 前往森金村
 step << Orc
     #completewith BreakingtheChain
     .goto 1411,48.47,67.93,60,0
     .goto 1411,50.44,68.39,60,0
-    .subzone 367 >>前往森金村
+    .subzone 367 >> 前往森金村
 step
     #optional << Troll
     .goto 1411,55.95,74.73
@@ -1440,32 +1440,32 @@ step << Troll
 step << Shaman Cata
     .goto 1411,56.27,75.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_寇娜|r对话
-    .train 8042 >>训练你的职业技能
+    .train 8042 >> 训练你的职业技能
     .target Cona
 step << Druid Cata
     .goto 1411,56.18,75.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德恩库露|r 对话
-    .train 8921 >>训练你的职业技能
+    .train 8921 >> 训练你的职业技能
     .target Den'chulu
 step << Hunter Cata
     .goto 1411,55.72,73.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海赞|r 对话
-    .train 2973 >>训练你的职业技能
+    .train 2973 >> 训练你的职业技能
     .target 海赞
     .xp <6,1
 step
     #completewith next
     .goto 1411,56.13,74.53,10,0
-    .goto 1411,56.30,73.89,10 >>进入大屋
+    .goto 1411,56.30,73.89,10 >> 进入大屋
 step << Mage/Priest/Warlock/Druid
     .goto 1411,56.41,73.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰塔希|r对话
-    .vendor >>把垃圾物品卖给商人
+    .vendor >> 把垃圾物品卖给商人
     .target Tai'tasi
 step << Warrior Cata
     .goto 1411,56.70,73.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_耶尼斯|r对话
-    .train 34428 >>训练你的职业技能
+    .train 34428 >> 训练你的职业技能
     .target Yeniss
 step << Warrior/Shaman/Paladin
     .goto 1411,56.47,73.12
@@ -1532,25 +1532,25 @@ step << Mage Cata/Priest Cata/Warlock Cata
     #completewith next
     .goto 1411,56.59,73.25,10,0
     .goto 1411,56.50,72.90,10,0
-    .goto 1411,56.33,73.28,10 >>上楼
+    .goto 1411,56.33,73.28,10 >> 上楼
 step << Mage Cata
     .goto 1411,56.37,73.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在楼上的 |cRXP_FRIENDLY_波姆山库|r对话
-    .train 2136 >>训练你的职业技能
+    .train 2136 >> 训练你的职业技能
     .target Bomsanchu
 step << Priest Cata
     .goto 1411,56.41,73.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_帕拉塔|r对话
-    .train 589 >>训练你的职业技能
+    .train 589 >> 训练你的职业技能
     .target Parata
 step << Warlock Cata
     .goto 1411,56.31,73.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_古希尼|r对话
-    .train 87389 >>训练你的职业技能
+    .train 87389 >> 训练你的职业技能
     .target Gusini
 step << Mage Cata/Priest Cata/Warlock Cata
     #completewith next
-    .goto 1411,55.71,75.28,10 >>向 |cRXP_FRIENDLY_波贝|r的方向跳下
+    .goto 1411,55.71,75.28,10 >> 向 |cRXP_FRIENDLY_波贝|r的方向跳下
 step
     #label Bombay
     .goto 1411,55.71,75.28
@@ -1626,23 +1626,23 @@ step
 step << Shaman Cata
     .goto 1411,56.27,75.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_寇娜|r对话
-    .train 8042 >>训练你的职业技能
+    .train 8042 >> 训练你的职业技能
     .target Cona
 step << Druid Cata
     .goto 1411,56.18,75.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德恩库露|r对话
-    .train 8921 >>训练你的职业技能
+    .train 8921 >> 训练你的职业技能
     .target Den'chulu
 step << Hunter Cata
     .goto 1411,55.72,73.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海赞|r 对话
-    .train 2973 >>训练你的职业技能
+    .train 2973 >> 训练你的职业技能
     .target 海赞
     .xp <6,1
 step << Warrior Cata
     .goto 1411,56.70,73.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_耶尼斯|r对话
-    .train 34428 >>训练你的职业技能
+    .train 34428 >> 训练你的职业技能
     .target Yeniss
 step << Warrior/Shaman/Paladin
     .goto 1411,56.47,73.12
@@ -1708,17 +1708,17 @@ step << Hunter
 step << Mage Cata
     .goto 1411,56.37,73.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在楼上的 |cRXP_FRIENDLY_波姆山库|r 对话
-    .train 2136 >>训练你的职业技能
+    .train 2136 >> 训练你的职业技能
     .target Bomsanchu
 step << Priest Cata
     .goto 1411,56.41,73.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_帕拉塔|r对话
-    .train 589 >>训练你的职业技能
+    .train 589 >> 训练你的职业技能
     .target Parata
 step << Warlock Cata
     .goto 1411,56.31,73.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_古希尼|r对话
-    .train 87389 >>训练你的职业技能
+    .train 87389 >> 训练你的职业技能
     .target Gusini
 step
     #xprate <1.1
@@ -1773,7 +1773,7 @@ step
     .mob Northwatch Ranger
 step
     #completewith next
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     --VV Beta test needed
 step
     #xprate <1.1
@@ -1801,67 +1801,67 @@ step
 step
     .goto 1411,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_特莱耶克|r 对话
-    .vendor >>出售垃圾物品并修理装备
+    .vendor >> 出售垃圾物品并修理装备
     .target 特莱耶克
 step << Rogue Cata
     .goto 1411,56.05,73.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_姆纳尔提|r 对话
-    .train 15087 >>训练你的职业技能
+    .train 15087 >> 训练你的职业技能
     .target Munalti
     .xp <8,1
 step << Shaman Cata
     .goto 1411,56.27,75.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_寇娜|r对话
-    .train 324 >>训练你的职业技能
+    .train 324 >> 训练你的职业技能
     .target Cona
     .xp <8,1
 step << Druid Cata
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德恩库露|r对话
     .goto 1411,56.18,75.24
-    .train 768 >>训练你的职业技能
+    .train 768 >> 训练你的职业技能
     .target Den'chulu
     .xp <8,1
 step << Hunter Cata
     .goto 1411,55.72,73.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海赞|r 对话
-    .train 2973 >>训练你的职业技能
+    .train 2973 >> 训练你的职业技能
     .target 海赞
     .xp <6,1
     .xp >8,1
 step << Hunter Cata
     .goto 1411,55.72,73.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海赞|r 对话
-    .train 5116 >>训练你的职业技能
+    .train 5116 >> 训练你的职业技能
     .target 海赞
     .xp <8,1
 step << Warrior Cata
     .goto 1411,56.70,73.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_耶尼斯|r对话
-    .train 772 >>训练你的职业技能
+    .train 772 >> 训练你的职业技能
     .target Yeniss
     .xp <7,1
 step << Mage Cata
     .goto 1411,56.37,73.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在楼上的 |cRXP_FRIENDLY_波姆山库|r对话
-    .train 96089 >>训练你的职业技能
+    .train 96089 >> 训练你的职业技能
     .target Bomsanchu
     .xp <7,1
 step << Priest Cata
     .goto 1411,56.41,73.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_帕拉塔|r对话
-    .train 588 >>训练你的职业技能
+    .train 588 >> 训练你的职业技能
     .target Parata
     .xp <8,1
 step << Warlock Cata
     .goto 1411,56.31,73.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_古希尼|r对话
-    .train 687 >>训练你的职业技能
+    .train 687 >> 训练你的职业技能
     .target Gusini
     .xp <8,1
 step << cata
     #completewith RazorVisit1
     .goto 1411,55.26,74.66
-    .gossipoption 112084 >>与 |cRXP_FRIENDLY_狼骑兵希亚什|r 对话
+    .gossipoption 112084 >> 与 |cRXP_FRIENDLY_狼骑兵希亚什|r 对话
     >>|cRXP_WARN_乘坐飞行前往剃刀岭|r
     .timer 67,骑术剧情RP
     .target Raider Jhash
@@ -1875,7 +1875,7 @@ step << !cata
 step
     .goto 1411,51.51,41.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板格罗斯克|r 对话
-    .home >>将你的炉石绑定到剃刀岭
+    .home >> 将你的炉石绑定到剃刀岭
     .target 旅店老板格罗斯克
     .isQuestAvailable 2517
 step
@@ -1893,7 +1893,7 @@ step
 step
     #label TravelToTiragarde
     #completewith Palliter
-    .subzone 372>>前往提拉加德堡
+    .subzone 372>> 前往提拉加德堡
 step
     #completewith Palliter
     >>击杀|cRXP_ENEMY_北望海军陆战队员|r和|cRXP_ENEMY_北望神射手|r
@@ -1954,7 +1954,7 @@ step
     #completewith next
     .goto 1411,58.71,56.76,-1
     .goto 1411,58.56,54.00,-1
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     >>|cRXP_WARN_确保在路点附近或城堡的北面死亡|r
 step
     .goto 1411,52.00,43.44
@@ -1982,37 +1982,37 @@ step << skip
 step << Rogue Cata
     .goto 1411,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与碉堡内顶楼的 |cRXP_FRIENDLY_卡普拉克|r 对话
-    .train 15087 >>训练你的职业技能
+    .train 15087 >> 训练你的职业技能
     .target 卡普拉克
     .xp <8,1
 step << Shaman Cata
     .goto 1411,54.42,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在里面的 |cRXP_FRIENDLY_斯瓦特|r对话
-    .train 324 >>训练你的职业技能
+    .train 324 >> 训练你的职业技能
     .target 斯瓦特
     .xp <8,1
 step << Druid Cata
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贾布|r对话
     .goto 1411,53.10,41.61
-    .train 768 >>训练你的职业技能
+    .train 768 >> 训练你的职业技能
     .target Jabul
     .xp <8,1
 step << Hunter Cata
     .goto 1411,51.86,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与碉堡内底楼的 |cRXP_FRIENDLY_索塔尔|r 对话
-    .train 5116 >>训练你的职业技能
+    .train 5116 >> 训练你的职业技能
     .target 索塔尔
     .xp <8,1
 step << Warrior Cata
     .goto 1411,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在里面的 |cRXP_FRIENDLY_塔绍尔·锯痕|r 对话
-    .train 772 >>训练你的职业技能
+    .train 772 >> 训练你的职业技能
     .target 塔绍尔·锯痕
     .xp <7,1
 step << Mage Cata
     .goto 1411,53.04,41.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安苏瓦|r 对话
-    .train 122 >>训练你的职业技能
+    .train 122 >> 训练你的职业技能
     .target 安苏瓦
     .xp <8,1
 step << Priest Cata
@@ -2097,7 +2097,7 @@ step
     .mob Foaming Sea Elemental
 step
     #completewith next
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     .goto 1411,53.08,43.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉尔·诺兹维格|r 对话
@@ -2119,37 +2119,37 @@ step
 step << Rogue Cata
     .goto 1411,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在顶楼的碉堡内的 |cRXP_FRIENDLY_卡普拉克|r 对话
-    .train 15087 >>训练你的职业技能
+    .train 15087 >> 训练你的职业技能
     .target 卡普拉克
     .xp <8,1
 step << Shaman Cata
     .goto 1411,54.42,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在里面的 |cRXP_FRIENDLY_斯瓦特|r对话
-    .train 324 >>训练你的职业技能
+    .train 324 >> 训练你的职业技能
     .target 斯瓦特
     .xp <8,1
 step << Druid Cata
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贾布|r对话
     .goto 1411,53.10,41.61
-    .train 768 >>训练你的职业技能
+    .train 768 >> 训练你的职业技能
     .target Jabul
     .xp <8,1
 step << Hunter Cata
     .goto 1411,51.86,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在底楼的碉堡内的 |cRXP_FRIENDLY_索塔尔|r 对话
-    .train 5116 >>训练你的职业技能
+    .train 5116 >> 训练你的职业技能
     .target 索塔尔
     .xp <8,1
 step << Warrior Cata
     .goto 1411,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在里面的 |cRXP_FRIENDLY_塔绍尔·锯痕|r 对话
-    .train 772 >>训练你的职业技能
+    .train 772 >> 训练你的职业技能
     .target 塔绍尔·锯痕
     .xp <7,1
 step << Mage Cata
     .goto 1411,53.04,41.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安苏瓦|r 对话
-    .train 122 >>训练你的职业技能
+    .train 122 >> 训练你的职业技能
     .target 安苏瓦
     .xp <8,1
 step << Priest Cata
@@ -2167,7 +2167,7 @@ step << Warlock Cata
 step
     .goto 1411,51.900,41.147
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_沃克|r 对话
-    .vendor >>出售垃圾物品并修理装备
+    .vendor >> 出售垃圾物品并修理装备
     .target 沃克
 step
     #optional
@@ -2175,7 +2175,7 @@ step
 step
     #completewith next
     .goto 1411,50.86,42.26,40,0
-    .goto 1411,49.58,40.51,12 >>前往瞭望塔
+    .goto 1411,49.58,40.51,12 >> 前往瞭望塔
 step
     .goto 1411,49.60,40.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在瞭望塔顶部与 |cRXP_FRIENDLY_索恩克|r对话
@@ -2209,7 +2209,7 @@ step
     .mob Dreadmaw Toothgnasher
 step
     #completewith next
-    .goto 1411,35.84,41.38,30 >>前去找 |cRXP_FRIENDLY_岑塔基|r
+    .goto 1411,35.84,41.38,30 >> 前去找 |cRXP_FRIENDLY_岑塔基|r
 step
     .goto 1411,35.84,41.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_岑塔基|r 对话
@@ -2343,18 +2343,18 @@ step
 step
     #xprate >1.19
     #completewith FlyORG
-    .hs >>炉石返回剃刀岭，杜隆塔尔
+    .hs >> 炉石返回剃刀岭，杜隆塔尔
     .cooldown item,6948,>0,1
 step
     #xprate >1.19
     #completewith FlyORG
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .cooldown item,6948,<0
 step
     #xprate >1.19
     #completewith next
     .goto 1411,50.86,42.26,40,0
-    .goto 1411,49.58,40.51,12 >>朝着塔楼方向前进
+    .goto 1411,49.58,40.51,12 >> 朝着塔楼方向前进
 step
     #xprate >1.19
     .goto 1411,49.60,40.18
@@ -2364,60 +2364,60 @@ step
 step
     #xprate <1.2
     #completewith DustwindCave
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step << Rogue Cata
     .goto 1411,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与碉堡内顶楼的 |cRXP_FRIENDLY_卡普拉克|r 对话
-    .train 61922 >>训练你的职业技能
+    .train 61922 >> 训练你的职业技能
     .target 卡普拉克
     .xp <10,1
 step << Shaman Cata
     .goto 1411,54.42,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在里面与 |cRXP_FRIENDLY_斯瓦特|r 对话
-    .train 3599 >>训练你的职业技能
+    .train 3599 >> 训练你的职业技能
     .target 斯瓦特
     .xp <10,1
 step << Druid Cata
     .goto 1411,53.10,41.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贾布|r 对话
-    .train 5215 >>训练你的职业技能
+    .train 5215 >> 训练你的职业技能
     .target Jabul
     .xp <10,1
 step << Hunter Cata
     .goto 1411,51.86,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在底楼的碉堡内的 |cRXP_FRIENDLY_索塔尔|r 对话
-    .train 1978 >>训练你的职业技能
+    .train 1978 >> 训练你的职业技能
     .target 索塔尔
     .xp <10,1
 step << Warrior Cata
     .goto 1411,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在里面的 |cRXP_FRIENDLY_塔绍尔·锯痕|r 对话
-    .train 71 >>训练你的职业技能
+    .train 71 >> 训练你的职业技能
     .target 塔绍尔·锯痕
     .xp <10,1
 step << Mage Cata
     .goto 1411,53.04,41.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安苏瓦|r 对话
-    .train 2139 >>训练你的职业技能
+    .train 2139 >> 训练你的职业技能
     .target 安苏瓦
     .xp <9,1
 step << Priest Cata
     .goto 1411,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在里面的 |cRXP_FRIENDLY_帕拉塔|r 对话
-    .train 8092 >>训练你的职业技能
+    .train 8092 >> 训练你的职业技能
     .target 泰金
     .xp <9,1
 step << Warlock Cata
     .goto 1411,54.38,41.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在外面与 |cRXP_FRIENDLY_杜格鲁|r 对话
-    .train 1120 >>训练你的职业技能
+    .train 1120 >> 训练你的职业技能
     .target Ghugru Gorelust
     .xp <10,1
 step
     #xprate <1.2
     #label DustwindCave
     #completewith next
-    .goto 1411,52.82,28.88,40 >>进入洞穴内部
+    .goto 1411,52.82,28.88,40 >> 进入洞穴内部
 step
     #xprate <1.2
     #loop
@@ -2444,7 +2444,7 @@ step
     .goto 1411,56.13,28.06,70,0
     .goto 1411,56.30,24.76,70,0
     .goto 1411,56.11,21.96,40,0
-    .goto 1411,56.21,20.23 >>前往瓦克纳格
+    .goto 1411,56.21,20.23 >> 前往瓦克纳格
 step
     #xprate <1.2
     .goto 1411,56.21,20.23
@@ -2513,12 +2513,12 @@ step
     .goto 1411,57.13,27.37,40,0
     .goto 1411,55.79,31.03,40,0
     .goto 1411,53.90,35.53,40,0
-    .goto 1411,52.81,39.75,40 >>跑步返回剃刀岭
+    .goto 1411,52.81,39.75,40 >> 跑步返回剃刀岭
     .cooldown item,6948,<0
 step
     #xprate <1.2
     #completewith Orgnil
-    .hs >>炉石返回剃刀岭，杜隆塔尔
+    .hs >> 炉石返回剃刀岭，杜隆塔尔
     .cooldown item,6948,>0
 step
     #xprate <1.2
@@ -2540,63 +2540,63 @@ step << Rogue Cata
     #xprate <1.2
     .goto 1411,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在顶楼的碉堡内的 |cRXP_FRIENDLY_卡普拉克|r 对话
-    .train 61922 >>训练你的职业技能
+    .train 61922 >> 训练你的职业技能
     .target 卡普拉克
     .xp <10,1
 step << Shaman Cata
     #xprate <1.2
     .goto 1411,54.42,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在里面的 |cRXP_FRIENDLY_斯瓦特|r对话
-    .train 3599 >>训练你的职业技能
+    .train 3599 >> 训练你的职业技能
     .target 斯瓦特
     .xp <10,1
 step << Druid Cata
     #xprate <1.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贾布|r对话
     .goto 1411,53.10,41.61
-    .train 5215 >>训练你的职业技能
+    .train 5215 >> 训练你的职业技能
     .target Jabul
     .xp <10,1
 step << Hunter Cata
     #xprate <1.2
     .goto 1411,51.86,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在底楼的碉堡内的 |cRXP_FRIENDLY_索塔尔|r 对话
-    .train 1978 >>训练你的职业技能
+    .train 1978 >> 训练你的职业技能
     .target 索塔尔
     .xp <10,1
 step << Warrior Cata
     #xprate <1.2
     .goto 1411,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在里面的 |cRXP_FRIENDLY_塔绍尔·锯痕|r 对话
-    .train 71 >>训练你的职业技能
+    .train 71 >> 训练你的职业技能
     .target 塔绍尔·锯痕
     .xp <10,1
 step << Mage Cata
     #xprate <1.2
     .goto 1411,53.04,41.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安苏瓦|r 对话
-    .train 2139 >>训练你的职业技能
+    .train 2139 >> 训练你的职业技能
     .target 安苏瓦
     .xp <9,1
 step << Priest Cata
     #xprate <1.2
     .goto 1411,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在里面的 |cRXP_FRIENDLY_帕拉塔|r 对话
-    .train 8092 >>训练你的职业技能
+    .train 8092 >> 训练你的职业技能
     .target 泰金
     .xp <9,1
 step << Warlock Cata
     #xprate <1.2
     .goto 1411,54.38,41.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在外面与 |cRXP_FRIENDLY_杜格鲁|r 对话
-    .train 1120 >>训练你的职业技能
+    .train 1120 >> 训练你的职业技能
     .target Ghugru Gorelust
     .xp <10,1
 step
     #xprate <1.2
     #completewith next
     .goto 1411,50.86,42.26,40,0
-    .goto 1411,49.58,40.51,12 >>朝着塔楼方向前进
+    .goto 1411,49.58,40.51,12 >> 朝着塔楼方向前进
 step
     #xprate <1.2
     .goto 1411,49.60,40.18
@@ -2622,7 +2622,7 @@ step
     #completewith next
     .goto 1411,46.26,30.19
     >>|cRXP_WARN_前往该路径点。在到达之前不要死亡。|r
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     #xprate <1.2
     #optional
@@ -2706,7 +2706,7 @@ step
     #xprate <1.2
     #optional
     #completewith Fizzled
-    .goto 1411,45.11,13.65,30 >>跑向 |cRXP_FRIENDLY_戈尔|r
+    .goto 1411,45.11,13.65,30 >> 跑向 |cRXP_FRIENDLY_戈尔|r
 step << skip
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_戈尔|r 和 |cRXP_FRIENDLY_希恩·石柱|r 对话
     .turnin 25196 >>交任务 德拉诺什尔封锁线
@@ -2750,7 +2750,7 @@ step
 step << skip
     .goto 1411,44.90,14.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希恩·石柱|r 对话
-    .gossipoption 112089 >>与 |cRXP_FRIENDLY_希恩·石柱|r 对话
+    .gossipoption 112089 >> 与 |cRXP_FRIENDLY_希恩·石柱|r 对话
     .target Shin Stonepillar
 step << skip
     .goto 1411,52.47,16.47
@@ -2823,7 +2823,7 @@ step
     #xprate <1.2
     #optional
     #completewith FizzledTurnin
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .isQuestComplete 25236
 step
     #xprate <1.2

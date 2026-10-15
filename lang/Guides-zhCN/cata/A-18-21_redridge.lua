@@ -49,7 +49,7 @@ step << NightElf
 step << NightElf
     .goto 89,42.782,32.919
     >>与 |cRXP_FRIENDLY_贾萨姆|r对话
-    .train 33388 >>训练初级骑术
+    .train 33388 >> 训练初级骑术
     .target 贾萨姆
     .money <3.4000
     .xp <20,1
@@ -59,7 +59,7 @@ step << NightElf
     .zoneskip 89,1
 step << Draenei
     .goto 57,52.30,89.50
-    .zone Azuremyst Isle >>乘船前往秘蓝岛
+    .zone Azuremyst Isle >> 乘船前往秘蓝岛
     .mountcount 0-150,<1
     .itemcount 29743,<1
     .itemcount 29744,<1
@@ -76,25 +76,25 @@ step << Draenei
 step << Draenei
     .goto 89,81.348,52.623
     >>与 |cRXP_FRIENDLY_埃亚伦|r对话
-    .train 33388 >>训练初级骑术
+    .train 33388 >> 训练初级骑术
     .target 埃亚伦
     .money <3.6000
     .xp <20,1
     .zoneskip Azuremyst Isle,1
 step << Draenei
     .goto Azuremyst Isle,20.41,54.18
-    .zone 57 >>乘船返回鲁瑟兰村
+    .zone 57 >> 乘船返回鲁瑟兰村
     .zoneskip Azuremyst Isle,1
 step << NightElf/Draenei/Worgen
     .goto 57,55.037,93.677,25,0
     .goto 57,55.037,93.677,0
-    .zone Stormwind City >>乘船前往暴风城
+    .zone Stormwind City >> 乘船前往暴风城
 step << Gnome/Dwarf
 #completewith next
     .goto 48,33.938,50.932
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
-    .fly Kharanos >>飞往卡拉诺斯 << Gnome
-    .fly Gol'Bolar Quarry >>飞往古博拉采掘场 << Dwarf
+    .fly Kharanos >> 飞往卡拉诺斯 << Gnome
+    .fly Gol'Bolar Quarry >> 飞往古博拉采掘场 << Dwarf
     .target 索格拉姆·伯雷森
     .zoneskip Loch Modan,1
     .mountcount 0-150,<1
@@ -129,7 +129,7 @@ step << Human/Dwarf/Gnome
     .goto 1426/0,-497.200,-5663.700,-1 << Gnome
     .goto 1426/0,-1578.000,-5718.000,-1 << Dwarf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
-    .fly Stormwind >>飞往暴风城
+    .fly Stormwind >> 飞往暴风城
     .target 索格拉姆·伯雷森
     .target Brolan Galebeard << Gnome
     .target Dominic Galebeard << Dwarf
@@ -254,19 +254,19 @@ step
     .goto 84,64.55,70.61,15,0
     .goto 84,68.50,73.43,10,0
     .goto 84,68.54,74.89,10,0
-    .goto 84,70.94,72.47,10 >>前往 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r
-    .不可飞行 --Azeroth Flying
+    .goto 84,70.94,72.47,10 >> 前往 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r
+    .noflyable --Azeroth Flying
 step
     #completewith EnterRR
     .goto 84,70.94,72.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
-    .fly Eastvale Logging Camp >>飞往东谷伐木场
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    .fly Eastvale Logging Camp >> 飞往东谷伐木场
 	.target 杜加尔·朗德瑞克
     .zoneskip 49 --Redridge Mountains
 step
     .goto 37,84.322,64.870
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_兰达尔·亨特|r对话
-    .train 33388 >>训练初级骑术
+    .train 33388 >> 训练初级骑术
     .money <3.6000
     .target 兰达尔·亨特
     .xp <20,1
@@ -284,13 +284,13 @@ step << Human
 step
     #label EnterRR
     .goto 49,11.78,64.40
-    .zone Redridge Mountains >>前往赤脊山
+    .zone Redridge Mountains >> 前往赤脊山
     .isQuestAvailable 26504
 step
     #optional
     .goto Redridge Mountains,29.405,53.770
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
-    .fp Lakeshire >>获得湖畔镇飞行点
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    .fp Lakeshire >> 获得湖畔镇飞行点
     .target 艾蕾娜·斯托姆法瑟
     .xp <21,1
 step
@@ -391,7 +391,7 @@ step
     #completewith next
     .goto 49,23.281,68.320,50,0
     .goto 49,28.028,74.887,30 >>前去找 |cRXP_PICK_豺狼人的命令|r
-    .不可飞行 --Azeroth Flying
+    .noflyable --Azeroth Flying
 step
     #label GnollOrders
     .goto 49,28.028,74.887
@@ -530,8 +530,8 @@ step
     .target Watch Captain Parker
 step
     .goto Redridge Mountains,29.405,53.770
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
-    .fp Lakeshire >>获得湖畔镇飞行点
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    .fp Lakeshire >> 获得湖畔镇飞行点
     .target 艾蕾娜·斯托姆法瑟
 step
     #optional
@@ -548,12 +548,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在码头的 |cRXP_FRIENDLY_肖恩|r 对话
     .accept 26508 >>接受任务 尼达的项链
     .target 肖恩
-    .不可飞行 --Azeroth Flying
+    .noflyable --Azeroth Flying
 step
     #optional
     #completewith next
     .goto 49,28.282,41.910,8,0
-    .goto 49,27.972,41.567,8 >>进入湖畔镇议政厅
+    .goto 49,27.972,41.567,8 >> 进入湖畔镇议政厅
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在里面的|cRXP_FRIENDLY_拜里弗·科纳彻尔|r和|cRXP_FRIENDLY_所罗门镇长|r 对话
     .accept 26511 >>接受任务 打扫止水湖
@@ -568,7 +568,7 @@ step
     #completewith next
     .goto 49,27.960,41.519,8,0
     .goto 49,28.310,41.910,8,0
-    .goto 49,28.588,42.644,15 >>离开湖畔镇议政厅
+    .goto 49,28.588,42.644,15 >> 离开湖畔镇议政厅
 step
     #sticky
     #label EverstillMurlocs
@@ -597,7 +597,7 @@ step
     #requires EverstillMurlocs
     #completewith next
     .goto 49,28.282,41.910,8,0
-    .goto 49,27.972,41.567,8 >>进入湖畔镇议政厅
+    .goto 49,27.972,41.567,8 >> 进入湖畔镇议政厅
 step
     #requires EverstillMurlocs
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在里面的|cRXP_FRIENDLY_拜里弗·科纳彻尔|r和|cRXP_FRIENDLY_所罗门镇长|r 对话
@@ -613,7 +613,7 @@ step
     #completewith next
     .goto 49,27.960,41.519,8,0
     .goto 49,28.310,41.910,8,0
-    .goto 49,28.588,42.644,15 >>离开湖畔镇议政厅
+    .goto 49,28.588,42.644,15 >> 离开湖畔镇议政厅
 step
     .goto 49,31.856,44.894
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官马瑞斯|r 对话
@@ -709,7 +709,7 @@ step
     #completewith Ardo
     #requires DirtScroll
     .goto 49,20.431,26.655
-    .subzone 98 >>进入瑞斯班洞穴
+    .subzone 98 >> 进入瑞斯班洞穴
     .isOnQuest 26544
 step
     #sticky
@@ -819,7 +819,7 @@ step
     .goto 49,27.502,28.865,50,0
     .goto 49,26.595,28.355,50,0
     .goto 49,25.013,28.408,50,0
-    .cast 80704 >>在原地不动时，对一个|cRXP_ENEMY_峡谷双头魔|r使用|T332402:0|t[双头魔控制宝珠]
+    .cast 80704 >> 在原地不动时，对一个|cRXP_ENEMY_峡谷双头魔|r使用|T332402:0|t[双头魔控制宝珠]
     .use 58895
     .unitscan Canyon Ettin
     .isOnQuest 26520
@@ -838,7 +838,7 @@ step
     #optional
     #completewith next
     .goto 49,28.282,41.910,8,0
-    .goto 49,27.972,41.567,8 >>进入湖畔镇议政厅
+    .goto 49,27.972,41.567,8 >> 进入湖畔镇议政厅
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在内部的|cRXP_FRIENDLY_所罗门镇长|r和|cRXP_FRIENDLY_托德曼上校|r 对话
     .turnin 26545 >>交任务 犹勒必须死！
@@ -871,12 +871,12 @@ step
     #completewith next
     .goto 49,27.960,41.519,8,0
     .goto 49,28.310,41.910,8,0
-    .goto 49,28.588,42.644,15 >>离开湖畔镇议政厅
+    .goto 49,28.588,42.644,15 >> 离开湖畔镇议政厅
 ------Skip/remove section if Keeshan added
 step
     .goto 49,22.043,42.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛蒂·詹罗斯|r 对话
-    .accept 26509 >>接受任务 不速之客
+    .accept 26509 >>接受任务不速之客
     .target 玛蒂·詹罗斯
 step
     .goto 49,16.919,45.720,0
@@ -923,8 +923,8 @@ step
 step
     .train 33388,1
     .goto Redridge Mountains,29.405,53.770
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
-    .fly Eastvale Logging Camp >>飞往东谷伐木场
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    .fly Eastvale Logging Camp >> 飞往东谷伐木场
 	.target 艾蕾娜·斯托姆法瑟
 step << Human
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯蒂·亨特|r对话
@@ -939,7 +939,7 @@ step
     .train 33388,1
     .goto 37,84.322,64.870
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_兰达尔·亨特|r对话
-    .train 33388 >>训练初级骑术
+    .train 33388 >> 训练初级骑术
     .money <3.6000
     .target 兰达尔·亨特
     .xp <20,1
@@ -947,7 +947,7 @@ step
     .train 33388,3
     .goto 37,81.830,66.553
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迅翼高斯|r对话
-    .fly Lakeshire, Redridge >>飞往夜色镇
+    .fly Lakeshire, Redridge >> 飞往夜色镇
 	.target Goss the Swift
     .zoneskip 37,1
 step
@@ -962,18 +962,18 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t当你在码头上的时候，与 |cRXP_FRIENDLY_尼达|r 对话
     .turnin 26508 >>交任务 尼达的项链
     .target Nida
-    .不可飞行 --Azeroth Flying
+    .noflyable --Azeroth Flying
 ------XX Optional Section
 step
     #optional
     #completewith KeeshanStart
     .goto 49,26.093,42.716,10,0
     .goto 49,26.138,42.315,8,0
-    .goto 49,26.306,42.096,8 >>进入湖畔镇旅店
+    .goto 49,26.306,42.096,8 >> 进入湖畔镇旅店
 step
     .goto 49,26.393,41.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板布瑞安娜|r 对话
-    .home >>将你的炉石绑定到湖畔镇
+    .home >> 将你的炉石绑定到湖畔镇
     .target Innkeeper Brianna
     .isOnQuest 26567
 step
@@ -995,11 +995,11 @@ step
     .goto 49,26.253,40.514,8,0
     .goto 49,26.306,42.096,8,0
     .goto 49,26.138,42.315,8,0
-    .goto 49,25.990,42.754,10 >>离开湖畔镇旅店 --Exiting West (OPTIONAL SECTION)
+    .goto 49,25.990,42.754,10 >> 离开湖畔镇旅店 --Exiting West (OPTIONAL SECTION)
 step
     .goto 49,22.043,42.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_玛蒂·詹罗斯|r 对话
-    .accept 26509 >>接受任务 不速之客
+    .accept 26509 >>接受任务不速之客
     .target 玛蒂·詹罗斯
 step
     .goto 49,16.919,45.720,0
@@ -1052,12 +1052,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t当你在码头上的时候，与 |cRXP_FRIENDLY_尼达|r 对话
     .turnin 26508 >>交任务 尼达的项链
     .target Nida
-    .不可飞行 --Azeroth Flying
+    .noflyable --Azeroth Flying
 step
     #optional
     #completewith next
     .goto 49,28.282,41.910,8,0
-    .goto 49,27.972,41.567,8 >>进入湖畔镇议政厅
+    .goto 49,27.972,41.567,8 >> 进入湖畔镇议政厅
 step
     .goto 49,28.659,40.744
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的|cRXP_FRIENDLY_托德曼上校|r对话
@@ -1070,7 +1070,7 @@ step
     #completewith next
     .goto 49,27.960,41.519,8,0
     .goto 49,28.310,41.910,8,0
-    .goto 49,28.588,42.644,15 >>离开湖畔镇议政厅
+    .goto 49,28.588,42.644,15 >> 离开湖畔镇议政厅
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_工头奥斯洛|r和|cRXP_FRIENDLY_治安官马瑞斯|r 对话
     .accept 26569 >>接受任务 测量设备
@@ -1098,7 +1098,7 @@ step
     .goto 49,44.242,39.198,50,0
     .goto 49,47.119,41.138,15,0
     .goto 49,47.529,41.955,12 >>前往|cRXP_FRIENDLY_梅森纳|r
-    .不可飞行 --Azeroth Flying
+    .noflyable --Azeroth Flying
 step
     #label Messner1
     .goto 49,47.529,41.955
@@ -1140,7 +1140,7 @@ step
     #label Render
     .goto 49,44.518,27.137,70 >>前往撕裂者营地的外围
     .isOnQuest 26560
-    .不可飞行 --Azeroth Flying
+    .noflyable --Azeroth Flying
 step
     #completewith Danforth
     #label Spyglass1
@@ -1179,8 +1179,8 @@ step
     #completewith next
     .goto 49,37.338,15.299,40,0
     .goto 49,35.846,14.524,40,0
-    .goto 49,33.538,11.867,15 >>前往|cRXP_FRIENDLY_约根森|r
-    .不可飞行 --Azeroth Flying
+    .goto 49,33.538,11.867,15 >> 前往|cRXP_FRIENDLY_约根森|r
+    .noflyable --Azeroth Flying
 step
     .goto 49,33.538,11.867
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与笼中的|cRXP_FRIENDLY_约根森|r对话，然后在他重新出现在你身旁
@@ -1191,7 +1191,7 @@ step
 step
     #completewith BlackrockC
     #label RendersRock
-    .goto 49,30.861,9.190,20 >>进入撕裂者之石
+    .goto 49,30.861,9.190,20 >> 进入撕裂者之石
     .isOnQuest 265261
 step
     #sticky
@@ -1228,7 +1228,7 @@ step
     .goto 49,26.615,13.314,15,0
     .goto 49,25.552,14.772,15,0
     .goto 49,25.856,16.403,15,0
-    .goto 49,27.634,18.155,15 >前往里面的|cRXP_ENEMY_巴尔贝留斯大王|r
+    .goto 49,27.634,18.155,15 >Travel toward |cRXP_ENEMY_Overlord Barbarius|r inside
 step
     .goto 49,27.634,18.155
     >>击杀里面的|cRXP_ENEMY_巴尔贝留斯大王|r，拾取|cRXP_LOOT_黑石控制杆钥匙|r
@@ -1257,7 +1257,7 @@ step
     .goto 49,30.004,12.928,15,0
     .goto 49,29.820,10.349,15,0
     .goto 49,30.372,9.117,15,0
-    .goto 49,31.635,9.630,30 >>离开撕裂者之石
+    .goto 49,31.635,9.630,30 >> 离开撕裂者之石
 step
     #optional
     #loop
@@ -1287,7 +1287,7 @@ step
 	.mob Blackrock Summoner
 step
     #completewith next
-    .hs >>使用炉石回到湖畔镇
+    .hs >> 使用炉石回到湖畔镇
 step
     .goto 49,26.456,42.038
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与湖畔镇旅店中的|cRXP_FRIENDLY_金伯利·海特|r对话
@@ -1298,7 +1298,7 @@ step
     #optional
     #completewith next
     .goto 49,28.282,41.910,8,0
-    .goto 49,27.972,41.567,8 >>进入湖畔镇议政厅
+    .goto 49,27.972,41.567,8 >> 进入湖畔镇议政厅
 step
     .goto 49,28.659,40.744
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托德曼上校|r对话
@@ -1311,13 +1311,13 @@ step
     #completewith next
     .goto 49,27.960,41.519,8,0
     .goto 49,28.310,41.910,8,0
-    .goto 49,28.588,42.644,15 >>离开湖畔镇议政厅
+    .goto 49,28.588,42.644,15 >> 离开湖畔镇议政厅
 step
     #optional
     #completewith Keeshan2
     .goto 49,26.093,42.716,10,0
     .goto 49,26.138,42.315,8,0
-    .goto 49,26.306,42.096,8 >>进入湖畔镇旅店
+    .goto 49,26.306,42.096,8 >> 进入湖畔镇旅店
 step
     #optional
     #completewith next
@@ -1344,7 +1344,7 @@ step
     .goto 49,26.253,40.514,8,0
     .goto 49,26.306,42.096,8,0
     .goto 49,26.138,42.315,8,0
-    .goto 49,26.108,42.747,10 >>离开湖畔镇旅店 --East
+    .goto 49,26.108,42.747,10 >> 离开湖畔镇旅店 --East
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_工头奥斯洛|r和|cRXP_FRIENDLY_治安官马瑞斯|r 对话
     .turnin 26569 >>交任务 测量设备
@@ -1357,7 +1357,7 @@ step
 #questguide
 	#label Boat
     .goto 49,34.426,45.914
-	.vehicle >>进入 |cRXP_PICK_基沙恩的小船|r
+	.vehicle >> 进入 |cRXP_PICK_基沙恩的小船|r
 	.timer 43,战争不会结束 剧情RP
     .isOnQuest 26616
 step
@@ -1519,7 +1519,7 @@ step << Human
     #completewith next
     .goto 49,52.920,54.640
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿尔伦·玛尔斯特|r对话
-    .fly Eastvale Logging Camp >>飞往东谷伐木场
+    .fly Eastvale Logging Camp >> 飞往东谷伐木场
 	.target Arlen Marsters
     .isQuestAvailable 26646 --Prisoners of War
     .skill riding,75,1
@@ -1528,7 +1528,7 @@ step << Human
 #questguide
     .goto 37,84.321,64.870
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_兰达尔·亨特|r对话
-    .skill riding,75 >>从他那里学习 |T136103:0|t[初级骑术]
+    .skill riding,75 >> 从他那里学习 |T136103:0|t[初级骑术]
     .target 兰达尔·亨特
 step << Human
 #questguide
@@ -1544,21 +1544,21 @@ step << Human
 step << Human
 #questguide
     #optional
-    .cast 55884 >>使用 |T132261:0|t[杂色马缰绳] 来学习
+    .cast 55884 >> 使用 |T132261:0|t[杂色马缰绳] 来学习
     .use 2414
     .itemcount 2414,1
     .zoneskip 37,1
 step << Human
 #questguide
     #optional
-    .cast 55884 >>使用 |T132261:0|t[栗色马缰绳] 来学习
+    .cast 55884 >> 使用 |T132261:0|t[栗色马缰绳] 来学习
     .use 5655
     .itemcount 5655,1
     .zoneskip 37,1
 step << Human
 #questguide
     #optional
-    .cast 55884 >>使用 |T132261:0|t[棕马缰绳] 来学会
+    .cast 55884 >> 使用 |T132261:0|t[棕马缰绳] 来学会
     .use 5656
     .itemcount 5656,1
     .zoneskip 37,1
@@ -1568,7 +1568,7 @@ step << Human
     #completewith Goss
     >>|cRXP_WARN_按下"Shift+P"打开坐骑标签页|r
     >>|cRXP_WARN_将|r |T132261:0|t[杂色马] |cRXP_WARN_拖到你的动作条上|r
-    .cast 472 >>骑上你的|T132261:0|t[杂色马]
+    .cast 472 >> 骑上你的|T132261:0|t[杂色马]
     .train 472,3
     .zoneskip 37,1
 step << Human
@@ -1577,7 +1577,7 @@ step << Human
     #completewith Goss
     >>|cRXP_WARN_按下"Shift+P"打开坐骑标签页|r
     >>|cRXP_WARN_将|r |T132261:0|t[栗色马] |cRXP_WARN_拖到你的动作条上|r
-    .cast 6648 >>骑上你的|T132261:0|t[栗色马]
+    .cast 6648 >> 骑上你的|T132261:0|t[栗色马]
     .train 6648,3
     .zoneskip 37,1
 step << Human
@@ -1586,7 +1586,7 @@ step << Human
     #completewith Goss
     >>|cRXP_WARN_按下"Shift+P"打开坐骑标签页|r
     >>|cRXP_WARN_将|r |T132261:0|t[棕马] |cRXP_WARN_拖到你的动作条上|r
-    .cast 458 >>骑上你的|T132261:0|t[棕马]
+    .cast 458 >> 骑上你的|T132261:0|t[棕马]
     .train 458,3
     .zoneskip 37,1
 step << Human
@@ -1596,7 +1596,7 @@ step << Human
     #completewith Duskwood
     .goto 37,81.829,66.556
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迅翼高斯|r对话
-    .fly Darkshire >>飞往夜色镇
+    .fly Darkshire >> 飞往夜色镇
     .target Goss the Swift
     .zoneskip 37,1
 step
@@ -1605,7 +1605,7 @@ step
     #completewith Duskwood
     .goto 49,52.920,54.640
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿尔伦·玛尔斯特|r对话
-    .fly Darkshire >>飞往夜色镇
+    .fly Darkshire >> 飞往夜色镇
 	.target Arlen Marsters
     .isQuestAvailable 26646
     .skill riding,<75,1 << Human
@@ -1640,12 +1640,12 @@ step << Druid
     .mob Blackrock Warden
     .mob Blackrock Guard
     .isOnQuest 26646
-    .不可飞行 --Azeroth Flying
+    .noflyable --Azeroth Flying
 step
     #questguide
     #optional
     #completewith next
-    .goto 49,68.486,75.120,20 >>进入在撕裂者山谷的洞穴
+    .goto 49,68.486,75.120,20 >> 进入在撕裂者山谷的洞穴
 step
     #questguide
     .goto 49,69.525,76.315
@@ -1669,7 +1669,7 @@ step
     #optional
     #completewith next
     .goto 49,66.318,70.789,15 >>进入塔内
-    .不可飞行 --Azeroth Flying
+    .noflyable --Azeroth Flying
 step
     #questguide
     .goto 49,66.411,71.479
@@ -1686,7 +1686,7 @@ step
     #optional
     #label FieldKit
     #completewith War
-    .aura -82587 >>|cRXP_WARN_点击取消|r|T133878:0|t[b连战地工具]|cRXP_WARN_buff|r
+    .aura -82587 >> |cRXP_WARN_点击取消|r|T133878:0|t[b连战地工具]|cRXP_WARN_buff|r
     .isOnQuest 26651
 step
     #questguide
@@ -1694,8 +1694,8 @@ step
     #requires FieldKit
     #completewith War
     >>|cRXP_WARN_避开|cRXP_ENEMY_黑石典狱官|r、|cRXP_ENEMY_黑石卫士|r和|r|cRXP_ENEMY_黑石龙骑士|r
-    .goto 49,77.683,65.506,15 >>前往|cRXP_FRIENDLY_约翰·J·基沙恩|r
-    .不可飞行 --Azeroth Flying
+    .goto 49,77.683,65.506,15 >> 前往|cRXP_FRIENDLY_约翰·J·基沙恩|r
+    .noflyable --Azeroth Flying
 step
     #questguide
     #label War
@@ -1792,7 +1792,7 @@ step
     #completewith next
     .goto 49,72.538,44.629,20,0
     .goto 49,71.952,44.819,15 >>前往伊尔加拉之塔入口
-    .不可飞行 --Azeroth Flying
+    .noflyable --Azeroth Flying
 step
     #questguide
     #optional
@@ -1800,7 +1800,7 @@ step
     #requires Ilgalar1
     #completewith next
     .goto 49,71.952,44.819
-    .cast 81776 >>点击伊尔加拉之塔底部的 |cRXP_PICK_伊尔加拉牢笼|r
+    .cast 81776 >> 点击伊尔加拉之塔底部的 |cRXP_PICK_伊尔加拉牢笼|r
     .isOnQuest 26694
 step
     #questguide
@@ -1816,8 +1816,8 @@ step
     #completewith next
     .goto 49,76.973,52.844,40,0
     .goto 49,77.906,58.960,40,0
-    .goto 49,77.683,65.506,15 >>返回|cRXP_FRIENDLY_约翰·J·基沙恩|r处
-    .不可飞行 --Azeroth Flying
+    .goto 49,77.683,65.506,15 >> 返回|cRXP_FRIENDLY_约翰·J·基沙恩|r处
+    .noflyable --Azeroth Flying
 step
     #questguide
     #requires Extinction
@@ -1829,7 +1829,7 @@ step
 step
     #questguide
     .goto 49,77.204,65.923
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_托德曼上校|r对话
     .accept 26708 >>接受任务 啊啊啊啊啊啊啊啊啊啊啊！啊啊啊啊啊啊啊啊啊！！！
     .target Colonel Troteman
@@ -1838,7 +1838,7 @@ step
     #completewith BlackrockInvaders
     #label BravoCompany
     .goto 49,76.916,66.133
-    .vehicle >>进入|cRXP_FRIENDLY_B连围攻坦克|r
+    .vehicle >> 进入|cRXP_FRIENDLY_B连围攻坦克|r
     .target Bravo Company Siege Tank
     .isOnQuest 26708
 step
@@ -1868,7 +1868,7 @@ step
     #completewith next
     >>|cRXP_WARN_离开|r |cRXP_FRIENDLY_B连围攻坦克|r
     >>|cRXP_WARN_这会立即将你从|cRXP_ENEMY_黑石入侵者|r所在阶段切换回|r |cRXP_ENEMY_暗皮豺狼人|r阶段
-    .goto 49,60.660,36.666,15 >>返回|cRXP_FRIENDLY_托德曼上校|r
+    .goto 49,60.660,36.666,15 >> 返回|cRXP_FRIENDLY_托德曼上校|r
 step
     #questguide
     .goto 49,60.660,36.666
@@ -1893,7 +1893,7 @@ step
     #completewith next
     .goto 49,60.307,47.402,40,0
     .goto 49,57.775,56.285,45 >>前去找|cRXP_ENEMY_加塞尔佐格|r
-    .不可飞行 --Azeroth Flying
+    .noflyable --Azeroth Flying
 step
     #questguide
     .goto 49,57.775,56.285
@@ -1929,7 +1929,7 @@ step
 step
     #questguide
     #completewith next
-    .hs >>使用炉石回到湖畔镇
+    .hs >> 使用炉石回到湖畔镇
     .cooldown item,6948,>2
     .isOnQuest 26726
     .subzoneskip 69 --Yes that is Lakeshire's subzone id
@@ -1938,7 +1938,7 @@ step
     #optional
     #completewith next
     .goto 49,28.282,41.910,8,0
-    .goto 49,27.972,41.567,8 >>进入湖畔镇议政厅
+    .goto 49,27.972,41.567,8 >> 进入湖畔镇议政厅
     .isOnQuest 26726
 step
     #questguide

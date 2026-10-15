@@ -10,17 +10,17 @@ RXPGuides.RegisterGuide([[
 
 step
 	#completewith next
-	.goto IcecrownGlacier,69.66,22.86,200 >>前往冰冠冰川的|T236690:0|t银色比武场
+	.goto IcecrownGlacier,69.66,22.86,200 >> 前往冰冠冰川的|T236690:0|t银色比武场
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_裁决者玛蕾尔·图哈特|r对话
 	.goto IcecrownGlacier,69.66,22.86
-	.accept 13667 >>接受任务 银色锦标赛 << Alliance
-	.accept 13668 >>接受任务 银色锦标赛 << Horde
+	.accept 13667 >> 接受任务 银色锦标赛 << Alliance
+	.accept 13668 >> 接受任务 银色锦标赛 << Horde
 	.target Justicar Mariel Trueheart
 step
 	#completewith next
 	.goto IcecrownGlacier,72.59,22.61
-	.fp Argent Tournament Grounds >>获得银色比武场的飞行路径
+	.fp Argent Tournament Grounds >> 获得银色比武场的飞行路径
 	.target Helidan Lightwing
 step
 	>>前往联盟的银色盟约大帐 << Alliance
@@ -29,24 +29,24 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔导师埃迪恩·炎谷|r对话 << Horde
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
 	.goto IcecrownGlacier,76.27,24.38 << Horde
-	.turnin 13667 >>交任务 银色锦标赛 << Alliance
-	.turnin 13668 >>交任务 银色锦标赛 << Horde
+	.turnin 13667 >> 交任务 银色锦标赛 << Alliance
+	.turnin 13668 >> 交任务 银色锦标赛 << Horde
 	.target Arcanist Taelis << Alliance
 	.target Magister Edien Sunhollow << Horde
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥术师泰利斯|r，|cRXP_FRIENDLY_阿瓦雷斯·迅击|r 和 |cRXP_FRIENDLY_斥候沙琳蒂亚|r 对话 << Alliance
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔导师埃迪恩·炎谷|r，|cRXP_FRIENDLY_阿玛里尔·誓日|r 和 |cRXP_FRIENDLY_加拉希亚·晨光|r 对话 << Horde
-	.accept 13828 >>接受任务 近战训练 << Alliance
+	.accept 13828 >> 接受任务 近战训练 << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
-	.accept 13837 >>接受任务 冲锋训练 << Alliance
+	.accept 13837 >> 接受任务 冲锋训练 << Alliance
 	.goto IcecrownGlacier,76.44,19.35 << Alliance
-	.accept 13835 >>接受任务 碎盾训练 << Alliance
+	.accept 13835 >> 接受任务 碎盾训练 << Alliance
 	.goto IcecrownGlacier,76.47,19.46 << Alliance
-	.accept 13829 >>接受任务 近战训练 << Horde
+	.accept 13829 >> 接受任务 近战训练 << Horde
 	.goto IcecrownGlacier,76.27,24.38 << Horde
-	.accept 13839 >>接受任务 冲锋训练 << Horde
+	.accept 13839 >> 接受任务 冲锋训练 << Horde
 	.goto IcecrownGlacier,76.31,24.38 << Horde
-	.accept 13838 >>接受任务 碎盾训练 << Horde
+	.accept 13838 >> 接受任务 碎盾训练 << Horde
 	.goto IcecrownGlacier,76.24,24.44 << Horde
 	.target Arcanist Taelis << Alliance
 	.target Avareth Swiftstrike << Alliance
@@ -121,17 +121,17 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥术师泰利斯|r、|cRXP_FRIENDLY_阿瓦雷斯·迅击|r 和 |cRXP_FRIENDLY_斥候沙琳蒂亚|r 对话 << Alliance
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔导师埃迪恩·炎谷|r，|cRXP_FRIENDLY_阿玛里尔·誓日|r 和 |cRXP_FRIENDLY_加拉希亚·晨光|r 对话 << Horde
-	.turnin 13828 >>交任务 近战训练 << Alliance
+	.turnin 13828 >> 交任务 近战训练 << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
-	.turnin 13837 >>交任务 冲锋训练 << Alliance
+	.turnin 13837 >> 交任务 冲锋训练 << Alliance
 	.goto IcecrownGlacier,76.44,19.35 << Alliance
-	.turnin 13835 >>交任务 碎盾训练 << Alliance
+	.turnin 13835 >> 交任务 碎盾训练 << Alliance
 	.goto IcecrownGlacier,76.47,19.46 << Alliance
-	.turnin 13829 >>交任务 近战训练 << Horde
+	.turnin 13829 >> 交任务 近战训练 << Horde
 	.goto IcecrownGlacier,76.27,24.38 << Horde
-	.turnin 13839 >>交任务 冲锋训练 << Horde
+	.turnin 13839 >> 交任务 冲锋训练 << Horde
 	.goto IcecrownGlacier,76.31,24.38 << Horde
-	.turnin 13838 >>交任务 碎盾训练 << Horde
+	.turnin 13838 >> 交任务 碎盾训练 << Horde
 	.goto IcecrownGlacier,76.24,24.44 << Horde
 	.target Arcanist Taelis << Alliance
 	.target Avareth Swiftstrike << Alliance
@@ -142,9 +142,9 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥术师泰利斯|r对话 << Alliance
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔导师埃迪恩·炎谷|r对话 << Horde
-	.accept 13672 >>接受任务 迎接挑战 << Alliance
+	.accept 13672 >> 接受任务 迎接挑战 << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
-	.accept 13678 >>接受任务 迎接挑战 << Horde
+	.accept 13678 >> 接受任务 迎接挑战 << Horde
 	.goto IcecrownGlacier,76.27,24.38 << Horde
 	.target Arcanist Taelis << Alliance
 	.target Magister Edien Sunhollow << Horde
@@ -157,13 +157,13 @@ step
 	.goto IcecrownGlacier,76.27,24.38 << Horde
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿瓦雷斯·迅击|r 和 |cRXP_FRIENDLY_斥候沙琳蒂亚|r 对话 << Alliance
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿玛里尔·誓日|r 和 |cRXP_FRIENDLY_加拉希亚·晨光|r 对话 << Horde
-	.daily 13671 >>接受任务 实战训练 << Alliance
+	.daily 13671 >> 接受任务 实战训练 << Alliance
 	.goto IcecrownGlacier,76.44,19.35 << Alliance
-	.daily 13676 >>接受任务 实战训练 << Horde
+	.daily 13676 >> 接受任务 实战训练 << Horde
 	.goto IcecrownGlacier,76.31,24.38 << Horde
-	.daily 13625 >>接受任务 学习骑战 << Alliance
+	.daily 13625 >> 接受任务 学习骑战 << Alliance
 	.goto IcecrownGlacier,76.47,19.46 << Alliance
-	.daily 13677 >>接受任务 学习骑战 << Horde
+	.daily 13677 >> 接受任务 学习骑战 << Horde
 	.goto IcecrownGlacier,76.24,24.44 << Horde
 	.target Arcanist Taelis << Alliance
 	.target Avareth Swiftstrike << Alliance
@@ -247,7 +247,7 @@ step
 	.isOnQuest 13669 << Alliance
 	.isOnQuest 13674 << Horde
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>前往龙骨荒野东北部的达克玛尔湖
+	.zone Dragonblight >> 前往龙骨荒野东北部的达克玛尔湖
 step
 	.isOnQuest 13669 << Alliance
 	.isOnQuest 13674 << Horde
@@ -263,7 +263,7 @@ step
 	.isOnQuest 13670 << Alliance
 	.isOnQuest 13675 << Horde
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>前往晶歌森林
+	.zone CrystalsongForest >> 前往晶歌森林
 step
 	.isOnQuest 13670 << Alliance
 	.isOnQuest 13675 << Horde
@@ -276,7 +276,7 @@ step
 	.isOnQuest 13670 << Alliance
 	.isOnQuest 13675 << Horde
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>前往嚎风峡湾北部的冬息湖
+	.zone HowlingFjord >> 前往嚎风峡湾北部的冬息湖
 step
 	.isOnQuest 13670 << Alliance
 	.isOnQuest 13675 << Horde
@@ -290,7 +290,7 @@ step
 	.isOnQuest 13666 << Alliance
 	.isOnQuest 13673 << Horde
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>前往灰熊丘陵
+	.zone Grizzly Hills >> 前往灰熊丘陵
 step
 	.isOnQuest 13666 << Alliance
 	.isOnQuest 13673 << Horde
@@ -312,23 +312,23 @@ step
 	.target Lake Frog
 	.target Maiden of Ashwood Lake
 step
-	.goto IcecrownGlacier,76.46,19.41,300 >>返回到冰冠冰川的|T236690:0|t银色比武场 << Alliance
-	.goto IcecrownGlacier,76.27,24.38,300 >>返回到冰冠冰川的|T236690:0|t银色比武场 << Horde
+	.goto IcecrownGlacier,76.46,19.41,300 >> 返回到冰冠冰川的|T236690:0|t银色比武场 << Alliance
+	.goto IcecrownGlacier,76.27,24.38,300 >> 返回到冰冠冰川的|T236690:0|t银色比武场 << Horde
 	.isOnQuest 13666,13673,13675,13670,13674,13669
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥术师泰利斯|r，|cRXP_FRIENDLY_阿瓦雷斯·迅击|r 和 |cRXP_FRIENDLY_斥候沙琳蒂亚|r 对话 << Alliance
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔导师埃迪恩·炎谷|r，|cRXP_FRIENDLY_阿玛里尔·誓日|r 和 |cRXP_FRIENDLY_加拉希亚·晨光|r 对话 << Horde
-	.turnin 13669 >>交任务 珍贵的武器 << Alliance
+	.turnin 13669 >> 交任务 珍贵的武器 << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
-	.turnin 13674 >>交任务 珍贵的武器 << Horde
+	.turnin 13674 >> 交任务 珍贵的武器 << Horde
 	.goto IcecrownGlacier,76.27,24.38 << Horde
-	.turnin 13671 >>交任务 实战训练 << Alliance
+	.turnin 13671 >> 交任务 实战训练 << Alliance
 	.goto IcecrownGlacier,76.44,19.35 << Alliance
-	.turnin 13676 >>交任务 实战训练 << Horde
+	.turnin 13676 >> 交任务 实战训练 << Horde
 	.goto IcecrownGlacier,76.31,24.38 << Horde
-	.turnin 13625 >>交任务 学习骑战 << Alliance
+	.turnin 13625 >> 交任务 学习骑战 << Alliance
 	.goto IcecrownGlacier,76.47,19.46 << Alliance
-	.turnin 13677 >>交任务 学习骑战 << Horde
+	.turnin 13677 >> 交任务 学习骑战 << Horde
 	.goto IcecrownGlacier,76.24,24.44 << Horde
 	.target Arcanist Taelis << Alliance
 	.target Avareth Swiftstrike << Alliance
@@ -341,17 +341,17 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥术师泰利斯|r，|cRXP_FRIENDLY_阿瓦雷斯·迅击|r 和 |cRXP_FRIENDLY_斥候沙琳蒂亚|r 对话 << Alliance
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔导师埃迪恩·炎谷|r，|cRXP_FRIENDLY_阿玛里尔·誓日|r 和 |cRXP_FRIENDLY_加拉希亚·晨光|r 对话 << Horde
-	.turnin 13670 >>交任务 冬之利刃 << Alliance
+	.turnin 13670 >> 交任务 冬之利刃 << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
-	.turnin 13675 >>交任务 冬之利刃 << Horde
+	.turnin 13675 >> 交任务 冬之利刃 << Horde
 	.goto IcecrownGlacier,76.27,24.38 << Horde
-	.turnin 13671 >>交任务 实战训练 << Alliance
+	.turnin 13671 >> 交任务 实战训练 << Alliance
 	.goto IcecrownGlacier,76.44,19.35 << Alliance
-	.turnin 13676 >>交任务 实战训练 << Horde
+	.turnin 13676 >> 交任务 实战训练 << Horde
 	.goto IcecrownGlacier,76.31,24.38 << Horde
-	.turnin 13625 >>交任务 学习骑战 << Alliance
+	.turnin 13625 >> 交任务 学习骑战 << Alliance
 	.goto IcecrownGlacier,76.47,19.46 << Alliance
-	.turnin 13677 >>交任务 学习骑战 << Horde
+	.turnin 13677 >> 交任务 学习骑战 << Horde
 	.goto IcecrownGlacier,76.24,24.44 << Horde
 	.target Arcanist Taelis << Alliance
 	.target Avareth Swiftstrike << Alliance
@@ -364,17 +364,17 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥术师泰利斯|r，|cRXP_FRIENDLY_阿瓦雷斯·迅击|r 和 |cRXP_FRIENDLY_斥候沙琳蒂亚|r 对话 << Alliance
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔导师埃迪恩·炎谷|r，|cRXP_FRIENDLY_阿玛里尔·誓日|r 和 |cRXP_FRIENDLY_加拉希亚·晨光|r 对话 << Horde
-	.turnin 13666 >>交任务 冠军的利剑 << Alliance
+	.turnin 13666 >> 交任务 冠军的利剑 << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
-	.turnin 13673 >>交任务 冠军的利剑 << Horde
+	.turnin 13673 >> 交任务 冠军的利剑 << Horde
 	.goto IcecrownGlacier,76.27,24.38 << Horde
-	.turnin 13671 >>交任务 实战训练 << Alliance
+	.turnin 13671 >> 交任务 实战训练 << Alliance
 	.goto IcecrownGlacier,76.44,19.35 << Alliance
-	.turnin 13676 >>交任务 实战训练 << Horde
+	.turnin 13676 >> 交任务 实战训练 << Horde
 	.goto IcecrownGlacier,76.31,24.38 << Horde
-	.turnin 13625 >>交任务 学习骑战 << Alliance
+	.turnin 13625 >> 交任务 学习骑战 << Alliance
 	.goto IcecrownGlacier,76.47,19.46 << Alliance
-	.turnin 13677 >>交任务 学习骑战 << Horde
+	.turnin 13677 >> 交任务 学习骑战 << Horde
 	.goto IcecrownGlacier,76.24,24.44 << Horde
 	.target Arcanist Taelis << Alliance
 	.target Avareth Swiftstrike << Alliance
@@ -387,13 +387,13 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿瓦雷斯·迅击|r和 |cRXP_FRIENDLY_斥候沙琳蒂亚|r 对话 << Alliance
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿玛里尔·誓日|r和 |cRXP_FRIENDLY_加拉希亚·晨光|r 对话 << Horde
-	.turnin -13671 >>交任务 实战训练 << Alliance
+	.turnin -13671 >> 交任务 实战训练 << Alliance
 	.goto IcecrownGlacier,76.44,19.35 << Alliance
-	.turnin -13676 >>交任务 实战训练 << Horde
+	.turnin -13676 >> 交任务 实战训练 << Horde
 	.goto IcecrownGlacier,76.31,24.38 << Horde
-	.turnin -13625 >>交任务 学习骑战 << Alliance
+	.turnin -13625 >> 交任务 学习骑战 << Alliance
 	.goto IcecrownGlacier,76.47,19.46 << Alliance
-	.turnin -13677 >>交任务 学习骑战 << Horde
+	.turnin -13677 >> 交任务 学习骑战 << Horde
 	.goto IcecrownGlacier,76.24,24.44 << Horde
 	.target Avareth Swiftstrike << Alliance
 	.target Scout Shalyndria << Alliance
@@ -407,17 +407,17 @@ step -- Checking if they have 15 Aspirant's Seals after a set of turn ins.
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔导师埃迪恩·炎谷|r 对话 << Horde
 	.complete 13672,1 << Alliance -- Aspirant's Seal (15)
 	.complete 13678,1 << Horde -- Aspirant's Seal (15)
-	.turnin 13672 >>交任务 迎接挑战 << Alliance
+	.turnin 13672 >> 交任务 迎接挑战 << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
-	.turnin 13678 >>交任务 迎接挑战 << Horde
+	.turnin 13678 >> 交任务 迎接挑战 << Horde
 	.goto IcecrownGlacier,76.27,24.38 << Horde
 	.target Arcanist Taelis << Alliance
 	.target Magister Edien Sunhollow << Horde
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥术师泰利斯|r 对话 << Alliance
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔导师埃迪恩·炎谷|r 对话 << Horde
-	.accept 13679 >>接受任务 候选者的挑战 << Alliance
-	.accept 13680 >>接受任务 候选者的挑战 << Horde
+	.accept 13679 >> 接受任务 候选者的挑战 << Alliance
+	.accept 13680 >> 接受任务 候选者的挑战 << Horde
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
 	.goto IcecrownGlacier,76.27,24.38 << Horde
 	.target Arcanist Taelis << Alliance
@@ -461,18 +461,18 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_魔导师埃迪恩·炎谷|r对话 << Horde
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
 	.goto IcecrownGlacier,76.27,24.38 << Horde
-	.turnin 13679 >>交任务 候选者的挑战 << Alliance
-	.turnin 13680 >>交任务 候选者的挑战 << Horde
-	.accept 13690 >>接受任务 埃索达的勇士 << Draenei
-	.accept 13685 >>接受任务 铁炉堡的勇士 << Dwarf
-	.accept 13688 >>接受任务 诺莫瑞根的勇士 << Gnome
-	.accept 13684 >>接受任务 暴风城的勇士	<< Human
-	.accept 13689 >>接受任务 达纳苏斯的勇士 << NightElf
-	.accept 13695 >>接受任务 幽暗城的勇士 << Scourge
-	.accept 13691 >>接受任务 奥格瑞玛的勇士 << Orc
-	.accept 13694 >>接受任务 雷霆崖的勇士 << Tauren
-	.accept 13693 >>接受任务 森金的勇士 << Troll
-	.accept 13696 >>接受任务 银月城的勇士 << BloodElf
+	.turnin 13679 >> 交任务 候选者的挑战 << Alliance
+	.turnin 13680 >> 交任务 候选者的挑战 << Horde
+	.accept 13690 >> 接受任务 埃索达的勇士 << Draenei
+	.accept 13685 >> 接受任务 铁炉堡的勇士 << Dwarf
+	.accept 13688 >> 接受任务 诺莫瑞根的勇士 << Gnome
+	.accept 13684 >> 接受任务 暴风城的勇士	<< Human
+	.accept 13689 >> 接受任务 达纳苏斯的勇士 << NightElf
+	.accept 13695 >> 接受任务 幽暗城的勇士 << Scourge
+	.accept 13691 >> 接受任务 奥格瑞玛的勇士 << Orc
+	.accept 13694 >> 接受任务 雷霆崖的勇士 << Tauren
+	.accept 13693 >> 接受任务 森金的勇士 << Troll
+	.accept 13696 >> 接受任务 银月城的勇士 << BloodElf
 	.target Arcanist Taelis << Alliance
 	.target Magister Edien Sunhollow << Horde
 step
@@ -496,26 +496,26 @@ step
 	.goto IcecrownGlacier,76.20,24.63 << Tauren
 	.goto IcecrownGlacier,75.95,24.53 << Troll
 	.goto IcecrownGlacier,76.45,23.85 << BloodElf
-	.turnin 13690 >>交任务 埃索达的勇士 << Draenei
-	.turnin 13685 >>交任务 铁炉堡的勇士 << Dwarf
-	.turnin 13688 >>交任务 诺莫瑞根的勇士 << Gnome
-	.turnin 13684 >>交任务 暴风城的勇士	<< Human
-	.turnin 13689 >>交任务 达纳苏斯的勇士 << NightElf
-	.turnin 13695 >>交任务 幽暗城的勇士 << Scourge
-	.turnin 13691 >>交任务 奥格瑞玛的勇士 << Orc
-	.turnin 13694 >>交任务 雷霆崖的勇士 << Tauren
-	.turnin 13693 >>交任务 森金的勇士 << Troll
-	.turnin 13696 >>交任务 银月城的勇士 << BloodElf
-	.accept 13716 >>接受任务 勇士之战 << Draenei
-	.accept	13714 >>接受任务 勇士之战 << Dwarf
-	.accept 13715 >>接受任务 勇士之战 << Gnome
-	.accept	13718 >>接受任务 勇士之战 << Human
-	.accept 13717 >>接受任务 勇士之战 << NightElf
-	.accept	13721 >>接受任务 勇士之战 << Scourge
-	.accept 13697 >>接受任务 勇士之战 << Orc
-	.accept 13720 >>接受任务 勇士之战 << Tauren
-	.accept 13719 >>接受任务 勇士之战 << Troll
-	.accept 13722 >>接受任务 勇士之战 << BloodElf
+	.turnin 13690 >> 交任务 埃索达的勇士 << Draenei
+	.turnin 13685 >> 交任务 铁炉堡的勇士 << Dwarf
+	.turnin 13688 >> 交任务 诺莫瑞根的勇士 << Gnome
+	.turnin 13684 >> 交任务 暴风城的勇士	<< Human
+	.turnin 13689 >> 交任务 达纳苏斯的勇士 << NightElf
+	.turnin 13695 >> 交任务 幽暗城的勇士 << Scourge
+	.turnin 13691 >> 交任务 奥格瑞玛的勇士 << Orc
+	.turnin 13694 >> 交任务 雷霆崖的勇士 << Tauren
+	.turnin 13693 >> 交任务 森金的勇士 << Troll
+	.turnin 13696 >> 交任务 银月城的勇士 << BloodElf
+	.accept 13716 >> 接受任务 勇士之战 << Draenei
+	.accept	13714 >> 接受任务 勇士之战 << Dwarf
+	.accept 13715 >> 接受任务 勇士之战 << Gnome
+	.accept	13718 >> 接受任务 勇士之战 << Human
+	.accept 13717 >> 接受任务 勇士之战 << NightElf
+	.accept	13721 >> 接受任务 勇士之战 << Scourge
+	.accept 13697 >> 接受任务 勇士之战 << Orc
+	.accept 13720 >> 接受任务 勇士之战 << Tauren
+	.accept 13719 >> 接受任务 勇士之战 << Troll
+	.accept 13722 >> 接受任务 勇士之战 << BloodElf
 	.target Colosos << Draenei
 	.target Lana Stouthammer << Dwarf
 	.target Ambrose Boltspark << Gnome
@@ -532,10 +532,10 @@ step << Human
 	.daily 13603,13616,13600 >>接受任务 冠军的利剑 |c99ffff99或者|r 冬之利刃 |c99ffff99或者|r 珍贵的武器
 	.goto IcecrownGlacier,76.60,19.12
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马库斯·巴洛爵士|r 和 |cRXP_FRIENDLY_约瑟夫·霍雷上尉|r 对话
-	.daily 13592 >>接受任务 勇士的实战训练
+	.daily 13592 >> 接受任务 勇士的实战训练
 	.goto IcecrownGlacier,76.53,19.08
-	.daily 13665 >>接受任务 总决赛
-	.daily 13847 >>接受任务 兵临城下
+	.daily 13665 >> 接受任务 总决赛
+	.daily 13847 >> 接受任务 兵临城下
 	.goto IcecrownGlacier,76.62,19.21
 	.target Marshal Jacob Alerius
 	.target Sir Marcus Barlowe
@@ -547,10 +547,10 @@ step << Draenei
 	.daily 13752,13754,13753 >>接受任务 冠军的利剑 |c99ffff99或者|r 冬之利刃 |c99ffff99或者|r 珍贵的武器
 	.goto IcecrownGlacier,76.10,19.10
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨安度斯|r 和 |cRXP_FRIENDLY_兰妮|r 对话
-	.daily 13755 >>接受任务 勇士的实战训练
+	.daily 13755 >> 接受任务 勇士的实战训练
 	.goto IcecrownGlacier,76.08,19.19
-	.daily 13756 >>接受任务 总决赛
-	.daily 13854 >>接受任务 兵临城下
+	.daily 13756 >> 接受任务 总决赛
+	.daily 13854 >> 接受任务 兵临城下
 	.goto IcecrownGlacier,76.15,19.08
 	.target Colosos
 	.target Saandos
@@ -562,10 +562,10 @@ step << NightElf
 	.daily 13757,13759,13758 >>接受任务 冠军的利剑 |c99ffff99或者|r 冬之利刃 |c99ffff99或者|r 珍贵的武器
 	.goto IcecrownGlacier,76.34,19.03
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊蕾丝蒂亚·刃歌|r 和 |cRXP_FRIENDLY_艾莱·觅星|r 对话
-	.daily 13760 >>接受任务 勇士的实战训练
+	.daily 13760 >> 接受任务 勇士的实战训练
 	.goto IcecrownGlacier,76.29,18.99
-	.daily 13761 >>接受任务 总决赛
-	.daily 13855 >>接受任务 兵临城下
+	.daily 13761 >> 接受任务 总决赛
+	.daily 13855 >> 接受任务 兵临城下
 	.goto IcecrownGlacier,76.40,19.00
 	.target Jaelyne Evensong
 	.target Illestria Bladesinger
@@ -577,10 +577,10 @@ step << Dwarf
 	.daily 13741,13743,13742 >>接受任务 冠军的利剑 |c99ffff99或者|r 冬之利刃 |c99ffff99或者|r 珍贵的武器
 	.goto IcecrownGlacier,76.64,19.49
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁洛·强击|r和 |cRXP_FRIENDLY_克拉拉·沸酒|r 对话
-	.daily 13744 >>接受任务 勇士的实战训练
+	.daily 13744 >> 接受任务 勇士的实战训练
 	.goto IcecrownGlacier,76.66,19.41
-	.daily 13745 >>接受任务 总决赛
-	.daily 13851 >>接受任务 兵临城下
+	.daily 13745 >> 接受任务 总决赛
+	.daily 13851 >> 接受任务 兵临城下
 	.goto IcecrownGlacier,76.64,19.57
 	.target Lana Stouthammer
 	.target Rollo Sureshot
@@ -592,10 +592,10 @@ step << Gnome
 	.daily 13746,13748,13747 >>接受任务 冠军的利剑 |c99ffff99或者|r 冬之利刃 |c99ffff99或者|r 珍贵的武器
 	.goto IcecrownGlacier,76.55,19.82
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_提克·扳钳|r和 |cRXP_FRIENDLY_弗林克·扳钳|r 对话
-	.daily 13749 >>接受任务 勇士的实战训练
+	.daily 13749 >> 接受任务 勇士的实战训练
 	.goto IcecrownGlacier,76.60,19.79
-	.daily 13750 >>接受任务 总决赛
-	.daily 13852 >>接受任务 兵临城下
+	.daily 13750 >> 接受任务 总决赛
+	.daily 13852 >> 接受任务 兵临城下
 	.goto IcecrownGlacier,76.52,19.89
 	.target Ambrose Boltspark
 	.target Tickin Gearspanner
@@ -607,10 +607,10 @@ step << BloodElf
 	.daily 13783,13785,13784 >>接受任务 冠军的利剑 |c99ffff99或者|r 冬之利刃 |c99ffff99或者|r 珍贵的武器
 	.goto IcecrownGlacier,76.45,23.85
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克希尔·炎枪|r 和 |cRXP_FRIENDLY_安妮拉·索隆|r 对话
-	.daily 13786 >>接受任务 勇士的实战训练
+	.daily 13786 >> 接受任务 勇士的实战训练
 	.goto IcecrownGlacier,76.41,23.75
-	.daily 13787 >>接受任务 总决赛
-	.daily 13859 >>接受任务 兵临城下
+	.daily 13787 >> 接受任务 总决赛
+	.daily 13859 >> 接受任务 兵临城下
 	.goto IcecrownGlacier,76.52,23.93
 	.target Eressea Dawnsinger
 	.target Kethiel Sunlance
@@ -622,10 +622,10 @@ step << Scourge
 	.daily 13778,13780,13779 >>接受任务 冠军的利剑 |c99ffff99或者|r 冬之利刃 |c99ffff99或者|r 珍贵的武器
 	.goto IcecrownGlacier,76.53,24.21
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎拉·查尔克|r 和 |cRXP_FRIENDLY_马夫德雷奇|r 对话
-	.daily 13781 >>接受任务 勇士的实战训练
+	.daily 13781 >> 接受任务 勇士的实战训练
 	.goto IcecrownGlacier,76.56,24.11
-	.daily 13782 >>接受任务 总决赛
-	.daily 13860 >>接受任务 兵临城下
+	.daily 13782 >> 接受任务 总决赛
+	.daily 13860 >> 接受任务 兵临城下
 	.goto IcecrownGlacier,76.55,24.33
 	.target Deathstalker Visceri
 	.target Sarah Chalke
@@ -637,10 +637,10 @@ step << Orc
 	.daily 13762,13764,13763 >>接受任务 冠军的利剑 |c99ffff99或者|r 冬之利刃 |c99ffff99或者|r 珍贵的武器
 	.goto IcecrownGlacier,76.46,24.60
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃基诺斯|r 和 |cRXP_FRIENDLY_茉拉·狼女|r 对话
-	.daily 13765 >>接受任务 勇士的实战训练
+	.daily 13765 >> 接受任务 勇士的实战训练
 	.goto IcecrownGlacier,76.50,24.48
-	.daily 13767 >>接受任务 总决赛
-	.daily 13856 >>接受任务 兵临城下
+	.daily 13767 >> 接受任务 总决赛
+	.daily 13856 >> 接受任务 兵临城下
 	.goto IcecrownGlacier,76.40,24.59
 	.target Mokra the Skullcrusher
 	.target Akinos
@@ -652,10 +652,10 @@ step << Tauren
 	.daily 13773,13775,13774 >>接受任务 冠军的利剑 |c99ffff99或者|r 冬之利刃 |c99ffff99或者|r 珍贵的武器
 	.goto IcecrownGlacier,76.20,24.63
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德恩·暴怒图腾|r 和 |cRXP_FRIENDLY_安卡·爪蹄|r 对话
-	.daily 13776 >>接受任务 勇士的实战训练
+	.daily 13776 >> 接受任务 勇士的实战训练
 	.goto IcecrownGlacier,76.26,24.66
-	.daily 13777 >>接受任务 总决赛
-	.daily 13858 >>接受任务 兵临城下
+	.daily 13777 >> 接受任务 总决赛
+	.daily 13858 >> 接受任务 兵临城下
 	.goto IcecrownGlacier,76.14,24.64
 	.target Runok Wildmane
 	.target Dern Ragetotem
@@ -667,10 +667,10 @@ step << Troll
 	.daily 13768,13770,13769 >>接受任务 冠军的利剑 |c99ffff99或者|r 冬之利刃 |c99ffff99或者|r 珍贵的武器
 	.goto IcecrownGlacier,75.95,24.53
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_暗影猎手梅兹克雷|r 和 |cRXP_FRIENDLY_加尔祖|r 对话
-	.daily 13771 >>接受任务 勇士的实战训练
+	.daily 13771 >> 接受任务 勇士的实战训练
 	.goto IcecrownGlacier,76.04,24.59
-	.daily 13772 >>接受任务 总决赛
-	.daily 13857 >>接受任务 兵临城下
+	.daily 13772 >> 接受任务 总决赛
+	.daily 13857 >> 接受任务 兵临城下
 	.goto IcecrownGlacier,75.93,24.41
 	.target Zul'tore
 	.target Shadow Hunter Mezil-kree
@@ -887,7 +887,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>前往龙骨荒野东北部的达克玛尔湖
+	.zone Dragonblight >> 前往龙骨荒野东北部的达克玛尔湖
 	.isOnQuest 13600,13742,13747,13753,13758,13763,13769,13774,13779,13784
 step
 	.goto Dragonblight,93.18,26.00
@@ -910,7 +910,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>前往晶歌森林
+	.zone CrystalsongForest >> 前往晶歌森林
 	.isOnQuest 13616,13743,13748,13754,13759,13764,13770,13775,13780,13785
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -922,7 +922,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>前往嚎风峡湾北部的冬息湖
+	.zone HowlingFjord >> 前往嚎风峡湾北部的冬息湖
 	.isOnQuest 13616,13743,13748,13754,13759,13764,13770,13775,13780,13785
 step
 	.goto HowlingFjord,42.18,19.65
@@ -943,7 +943,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>前往灰熊丘陵
+	.zone Grizzly Hills >> 前往灰熊丘陵
 	.isOnQuest 13603,13741,13746,13752,13757,13762,13768,13773,13778,13783
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -974,17 +974,17 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13603,13741,13746,13752,13757,13762,13768,13773,13778,13783
 step
-	.goto IcecrownGlacier,76.46,19.41,300 >>返回到冰冠冰川的|T236690:0|t银色比武场 << Alliance
-	.goto IcecrownGlacier,76.27,24.38,300 >>返回到冰冠冰川的|T236690:0|t银色比武场 << Horde
+	.goto IcecrownGlacier,76.46,19.41,300 >> 返回到冰冠冰川的|T236690:0|t银色比武场 << Alliance
+	.goto IcecrownGlacier,76.27,24.38,300 >> 返回到冰冠冰川的|T236690:0|t银色比武场 << Horde
 	.isOnQuest 13603,13741,13746,13752,13757,13762,13768,13773,13778,13783,13616,13743,13748,13754,13759,13764,13770,13775,13780,13785,13600,13742,13747,13753,13758,13763,13769,13774,13779,13784
 step << Human
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅克布·奥勒留斯元帅|r、|cRXP_FRIENDLY_马库斯·巴洛爵士|r 和 |cRXP_FRIENDLY_约瑟夫·霍雷上尉|r 对话
-	.turnin 13603 >>交任务 冠军的利剑
+	.turnin 13603 >> 交任务 冠军的利剑
 	.goto IcecrownGlacier,76.60,19.12
-	.turnin 13592 >>交任务 勇士的实战训练
+	.turnin 13592 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.53,19.08
-	.turnin 13665 >>交任务 总决赛
-	.turnin 13847 >>交任务 兵临城下
+	.turnin 13665 >> 交任务 总决赛
+	.turnin 13847 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.62,19.21
 	.target Marshal Jacob Alerius
 	.target Sir Marcus Barlowe
@@ -992,12 +992,12 @@ step << Human
 	.isQuestComplete 13603 -- A Blade Fit For A Champion
 step << Human
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅克布·奥勒留斯元帅|r、|cRXP_FRIENDLY_马库斯·巴洛爵士|r 和 |cRXP_FRIENDLY_约瑟夫·霍雷上尉|r 对话
-	.turnin 13616 >>交任务 冬之利刃
+	.turnin 13616 >> 交任务 冬之利刃
 	.goto IcecrownGlacier,76.60,19.12
-	.turnin 13592 >>交任务 勇士的实战训练
+	.turnin 13592 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.53,19.08
-	.turnin 13665 >>交任务 总决赛
-	.turnin 13847 >>交任务 兵临城下
+	.turnin 13665 >> 交任务 总决赛
+	.turnin 13847 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.62,19.21
 	.target Marshal Jacob Alerius
 	.target Sir Marcus Barlowe
@@ -1005,12 +1005,12 @@ step << Human
 	.isQuestComplete 13616 -- The Edge Of Winter
 step << Human
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅克布·奥勒留斯元帅|r、|cRXP_FRIENDLY_马库斯·巴洛爵士|r 和 |cRXP_FRIENDLY_约瑟夫·霍雷上尉|r 对话
-	.turnin 13600 >>交任务 珍贵的武器
+	.turnin 13600 >> 交任务 珍贵的武器
 	.goto IcecrownGlacier,76.60,19.12
-	.turnin 13592 >>交任务 勇士的实战训练
+	.turnin 13592 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.53,19.08
-	.turnin 13665 >>交任务 总决赛
-	.turnin 13847 >>交任务 兵临城下
+	.turnin 13665 >> 交任务 总决赛
+	.turnin 13847 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.62,19.21
 	.target Marshal Jacob Alerius
 	.target Sir Marcus Barlowe
@@ -1018,22 +1018,22 @@ step << Human
 	.isQuestComplete 13600 -- A Worthy Weapon
 step << Human
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马库斯·巴洛爵士|r 和 |cRXP_FRIENDLY_约瑟夫·霍雷上尉|r 对话
-	.turnin -13592 >>交任务 勇士的实战训练
+	.turnin -13592 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.53,19.08
-	.turnin -13665 >>交任务 总决赛
-	.turnin -13847 >>交任务 兵临城下
+	.turnin -13665 >> 交任务 总决赛
+	.turnin -13847 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.62,19.21
 	.target Sir Marcus Barlowe
 	.target Captain Joseph Holley
 
 step << Draenei
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗索斯|r、|cRXP_FRIENDLY_萨安度斯|r 和 |cRXP_FRIENDLY_兰妮|r 对话
-	.turnin 13752 >>交任务 冠军的利剑
+	.turnin 13752 >> 交任务 冠军的利剑
 	.goto IcecrownGlacier,76.10,19.10
-	.turnin 13755 >>交任务 勇士的实战训练
+	.turnin 13755 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.08,19.19
-	.turnin 13756 >>交任务 总决赛
-	.turnin 13854 >>交任务 兵临城下
+	.turnin 13756 >> 交任务 总决赛
+	.turnin 13854 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.15,19.08
 	.target Colosos
 	.target Saandos
@@ -1041,12 +1041,12 @@ step << Draenei
 	.isQuestComplete 13752 -- A Blade Fit For A Champion
 step << Draenei
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗索斯|r、|cRXP_FRIENDLY_萨安度斯|r 和 |cRXP_FRIENDLY_兰妮|r 对话
-	.turnin 13754 >>交任务 冬之利刃
+	.turnin 13754 >> 交任务 冬之利刃
 	.goto IcecrownGlacier,76.10,19.10
-	.turnin 13755 >>交任务 勇士的实战训练
+	.turnin 13755 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.08,19.19
-	.turnin 13756 >>交任务 总决赛
-	.turnin 13854 >>交任务 兵临城下
+	.turnin 13756 >> 交任务 总决赛
+	.turnin 13854 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.15,19.08
 	.target Colosos
 	.target Saandos
@@ -1054,12 +1054,12 @@ step << Draenei
 	.isQuestComplete 13754 -- The Edge Of Winter
 step << Draenei
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗索斯|r、|cRXP_FRIENDLY_萨安度斯|r 和 |cRXP_FRIENDLY_兰妮|r 对话
-	.turnin 13753 >>交任务 珍贵的武器
+	.turnin 13753 >> 交任务 珍贵的武器
 	.goto IcecrownGlacier,76.10,19.10
-	.turnin 13755 >>交任务 勇士的实战训练
+	.turnin 13755 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.08,19.19
-	.turnin 13756 >>交任务 总决赛
-	.turnin 13854 >>交任务 兵临城下
+	.turnin 13756 >> 交任务 总决赛
+	.turnin 13854 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.15,19.08
 	.target Colosos
 	.target Saandos
@@ -1067,22 +1067,22 @@ step << Draenei
 	.isQuestComplete 13753 -- A Worthy Weapon
 step << Draenei
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨安度斯|r 和 |cRXP_FRIENDLY_兰妮|r 对话
-	.turnin -13755 >>交任务 勇士的实战训练
+	.turnin -13755 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.08,19.19
-	.turnin -13756 >>交任务 总决赛
-	.turnin -13854 >>交任务 兵临城下
+	.turnin -13756 >> 交任务 总决赛
+	.turnin -13854 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.15,19.08
 	.target Saandos
 	.target Ranii
 
 step << NightElf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_娅琳·永歌|r、|cRXP_FRIENDLY_伊蕾丝蒂亚·刃歌|r 和 |cRXP_FRIENDLY_艾莱·觅星|r 对话
-	.turnin 13757 >>交任务 冠军的利剑
+	.turnin 13757 >> 交任务 冠军的利剑
 	.goto IcecrownGlacier,76.34,19.03
-	.turnin 13760 >>交任务 勇士的实战训练
+	.turnin 13760 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.29,18.99
-	.turnin 13761 >>交任务 总决赛
-	.turnin 13855 >>交任务 兵临城下
+	.turnin 13761 >> 交任务 总决赛
+	.turnin 13855 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.40,19.00
 	.target Jaelyne Evensong
 	.target Illestria Bladesinger
@@ -1090,12 +1090,12 @@ step << NightElf
 	.isQuestComplete 13757 -- A Blade Fit For A Champion
 step << NightElf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_娅琳·永歌|r、|cRXP_FRIENDLY_伊蕾丝蒂亚·刃歌|r 和 |cRXP_FRIENDLY_艾莱·觅星|r 对话
-	.turnin 13759 >>交任务 冬之利刃
+	.turnin 13759 >> 交任务 冬之利刃
 	.goto IcecrownGlacier,76.34,19.03
-	.turnin 13760 >>交任务 勇士的实战训练
+	.turnin 13760 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.29,18.99
-	.turnin 13761 >>交任务 总决赛
-	.turnin 13855 >>交任务 兵临城下
+	.turnin 13761 >> 交任务 总决赛
+	.turnin 13855 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.40,19.00
 	.target Jaelyne Evensong
 	.target Illestria Bladesinger
@@ -1103,12 +1103,12 @@ step << NightElf
 	.isQuestComplete 13759 -- The Edge Of Winter
 step << NightElf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_娅琳·永歌|r、|cRXP_FRIENDLY_伊蕾丝蒂亚·刃歌|r 和 |cRXP_FRIENDLY_艾莱·觅星|r 对话
-	.turnin 13758 >>交任务 珍贵的武器
+	.turnin 13758 >> 交任务 珍贵的武器
 	.goto IcecrownGlacier,76.34,19.03
-	.turnin 13760 >>交任务 勇士的实战训练
+	.turnin 13760 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.29,18.99
-	.turnin 13761 >>交任务 总决赛
-	.turnin 13855 >>交任务 兵临城下
+	.turnin 13761 >> 交任务 总决赛
+	.turnin 13855 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.40,19.00
 	.target Jaelyne Evensong
 	.target Illestria Bladesinger
@@ -1116,22 +1116,22 @@ step << NightElf
 	.isQuestComplete 13758 -- A Worthy Weapon
 step << NightElf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊蕾丝蒂亚·刃歌|r 和 |cRXP_FRIENDLY_艾莱·觅星|r 对话
-	.turnin -13760 >>交任务 勇士的实战训练
+	.turnin -13760 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.29,18.99
-	.turnin -13761 >>交任务 总决赛
-	.turnin -13855 >>交任务 兵临城下
+	.turnin -13761 >> 交任务 总决赛
+	.turnin -13855 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.40,19.00
 	.target Illestria Bladesinger
 	.target Airae Starseeker
 
 step << Dwarf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉娜·硬锤|r、|cRXP_FRIENDLY_鲁洛·强击|r 和 |cRXP_FRIENDLY_克拉拉·沸酒|r 对话
-	.turnin 13741 >>交任务 冠军的利剑
+	.turnin 13741 >> 交任务 冠军的利剑
 	.goto IcecrownGlacier,76.64,19.49
-	.turnin 13744 >>交任务 勇士的实战训练
+	.turnin 13744 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.66,19.41
-	.turnin 13745 >>交任务 总决赛
-	.turnin 13851 >>交任务 兵临城下
+	.turnin 13745 >> 交任务 总决赛
+	.turnin 13851 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.64,19.57
 	.target Lana Stouthammer
 	.target Rollo Sureshot
@@ -1139,12 +1139,12 @@ step << Dwarf
 	.isQuestComplete 13741 -- A Blade Fit For A Champion
 step << Dwarf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉娜·硬锤|r、|cRXP_FRIENDLY_鲁洛·强击|r 和 |cRXP_FRIENDLY_克拉拉·沸酒|r 对话
-	.turnin 13743 >>交任务 冬之利刃
+	.turnin 13743 >> 交任务 冬之利刃
 	.goto IcecrownGlacier,76.64,19.49
-	.turnin 13744 >>交任务 勇士的实战训练
+	.turnin 13744 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.66,19.41
-	.turnin 13745 >>交任务 总决赛
-	.turnin 13851 >>交任务 兵临城下
+	.turnin 13745 >> 交任务 总决赛
+	.turnin 13851 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.64,19.57
 	.target Lana Stouthammer
 	.target Rollo Sureshot
@@ -1152,12 +1152,12 @@ step << Dwarf
 	.isQuestComplete 13743 -- The Edge Of Winter
 step << Dwarf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉娜·硬锤|r、|cRXP_FRIENDLY_鲁洛·强击|r 和 |cRXP_FRIENDLY_克拉拉·沸酒|r 对话
-	.turnin 13742 >>交任务 珍贵的武器
+	.turnin 13742 >> 交任务 珍贵的武器
 	.goto IcecrownGlacier,76.64,19.49
-	.turnin 13744 >>交任务 勇士的实战训练
+	.turnin 13744 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.66,19.41
-	.turnin 13745 >>交任务 总决赛
-	.turnin 13851 >>交任务 兵临城下
+	.turnin 13745 >> 交任务 总决赛
+	.turnin 13851 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.64,19.57
 	.target Lana Stouthammer
 	.target Rollo Sureshot
@@ -1165,22 +1165,22 @@ step << Dwarf
 	.isQuestComplete 13742 -- A Worthy Weapon
 step << Dwarf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁洛·强击|r 和 |cRXP_FRIENDLY_克拉拉·沸酒|r 对话
-	.turnin -13744 >>交任务 勇士的实战训练
+	.turnin -13744 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.66,19.41
-	.turnin -13745 >>交任务 总决赛
-	.turnin -13851 >>交任务 兵临城下
+	.turnin -13745 >> 交任务 总决赛
+	.turnin -13851 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.64,19.57
 	.target Rollo Sureshot
 	.target Clara Tumblebrew
 
 step << Gnome
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安布罗斯·雷钉|r、|cRXP_FRIENDLY_提克·扳钳|r 和 |cRXP_FRIENDLY_弗林克·扳钳|r 对话
-	.turnin 13746 >>交任务 冠军的利剑
+	.turnin 13746 >> 交任务 冠军的利剑
 	.goto IcecrownGlacier,76.55,19.82
-	.turnin 13749 >>交任务 勇士的实战训练
+	.turnin 13749 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.60,19.79
-	.turnin 13750 >>交任务 总决赛
-	.turnin 13852 >>交任务 兵临城下
+	.turnin 13750 >> 交任务 总决赛
+	.turnin 13852 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.52,19.89
 	.target Ambrose Boltspark
 	.target Tickin Gearspanner
@@ -1188,12 +1188,12 @@ step << Gnome
 	.isQuestComplete 13746 -- A Blade Fit For A Champion
 step << Gnome
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安布罗斯·雷钉|r、|cRXP_FRIENDLY_提克·扳钳|r 和 |cRXP_FRIENDLY_弗林克·扳钳|r 对话
-	.turnin 13748 >>交任务 冬之利刃
+	.turnin 13748 >> 交任务 冬之利刃
 	.goto IcecrownGlacier,76.55,19.82
-	.turnin 13749 >>交任务 勇士的实战训练
+	.turnin 13749 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.60,19.79
-	.turnin 13750 >>交任务 总决赛
-	.turnin 13852 >>交任务 兵临城下
+	.turnin 13750 >> 交任务 总决赛
+	.turnin 13852 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.52,19.89
 	.target Ambrose Boltspark
 	.target Tickin Gearspanner
@@ -1201,12 +1201,12 @@ step << Gnome
 	.isQuestComplete 13748 -- The Edge Of Winter
 step << Gnome
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安布罗斯·雷钉|r、|cRXP_FRIENDLY_提克·扳钳|r 和 |cRXP_FRIENDLY_弗林克·扳钳|r 对话
-	.turnin 13747 >>交任务 珍贵的武器
+	.turnin 13747 >> 交任务 珍贵的武器
 	.goto IcecrownGlacier,76.55,19.82
-	.turnin 13749 >>交任务 勇士的实战训练
+	.turnin 13749 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.60,19.79
-	.turnin 13750 >>交任务 总决赛
-	.turnin 13852 >>交任务 兵临城下
+	.turnin 13750 >> 交任务 总决赛
+	.turnin 13852 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.52,19.89
 	.target Ambrose Boltspark
 	.target Tickin Gearspanner
@@ -1214,22 +1214,22 @@ step << Gnome
 	.isQuestComplete 13747 -- A Worthy Weapon
 step << Gnome
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_提克·扳钳|r 和 |cRXP_FRIENDLY_弗林克·扳钳|r 对话
-	.turnin -13749 >>交任务 勇士的实战训练
+	.turnin -13749 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.60,19.79
-	.turnin -13750 >>交任务 总决赛
-	.turnin -13852 >>交任务 兵临城下
+	.turnin -13750 >> 交任务 总决赛
+	.turnin -13852 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.52,19.89
 	.target Tickin Gearspanner
 	.target Flickin Gearspanner
 
 step << Troll
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖尔托|r、|cRXP_FRIENDLY_暗影猎手梅兹克雷|r 和 |cRXP_FRIENDLY_加尔祖|r 对话
-	.turnin 13768 >>交任务 冠军的利剑
+	.turnin 13768 >> 交任务 冠军的利剑
 	.goto IcecrownGlacier,75.95,24.53
-	.turnin 13771 >>交任务 勇士的实战训练
+	.turnin 13771 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.04,24.59
-	.turnin 13772 >>交任务 总决赛
-	.turnin 13857 >>交任务 兵临城下
+	.turnin 13772 >> 交任务 总决赛
+	.turnin 13857 >> 交任务 兵临城下
 	.goto IcecrownGlacier,75.93,24.41
 	.target Zul'tore
 	.target Shadow Hunter Mezil-kree
@@ -1237,12 +1237,12 @@ step << Troll
 	.isQuestComplete 13768 -- A Blade Fit For A Champion
 step << Troll
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖尔托|r、|cRXP_FRIENDLY_暗影猎手梅兹克雷|r 和 |cRXP_FRIENDLY_加尔祖|r 对话
-	.turnin 13770 >>交任务 冬之利刃
+	.turnin 13770 >> 交任务 冬之利刃
 	.goto IcecrownGlacier,75.95,24.53
-	.turnin 13771 >>交任务 勇士的实战训练
+	.turnin 13771 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.04,24.59
-	.turnin 13772 >>交任务 总决赛
-	.turnin 13857 >>交任务 兵临城下
+	.turnin 13772 >> 交任务 总决赛
+	.turnin 13857 >> 交任务 兵临城下
 	.goto IcecrownGlacier,75.93,24.41
 	.target Zul'tore
 	.target Shadow Hunter Mezil-kree
@@ -1250,12 +1250,12 @@ step << Troll
 	.isQuestComplete 13770 -- The Edge Of Winter
 step << Troll
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖尔托|r、|cRXP_FRIENDLY_暗影猎手梅兹克雷|r 和 |cRXP_FRIENDLY_加尔祖|r 对话
-	.turnin 13769 >>交任务 珍贵的武器
+	.turnin 13769 >> 交任务 珍贵的武器
 	.goto IcecrownGlacier,75.95,24.53
-	.turnin 13771 >>交任务 勇士的实战训练
+	.turnin 13771 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.04,24.59
-	.turnin 13772 >>交任务 总决赛
-	.turnin 13857 >>交任务 兵临城下
+	.turnin 13772 >> 交任务 总决赛
+	.turnin 13857 >> 交任务 兵临城下
 	.goto IcecrownGlacier,75.93,24.41
 	.target Zul'tore
 	.target Shadow Hunter Mezil-kree
@@ -1263,22 +1263,22 @@ step << Troll
 	.isQuestComplete 13769 -- A Worthy Weapon
 step << Troll
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_暗影猎手梅兹克雷|r 和 |cRXP_FRIENDLY_加尔祖|r 对话
-	.turnin -13771 >>交任务 勇士的实战训练
+	.turnin -13771 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.04,24.59
-	.turnin -13772 >>交任务 总决赛
-	.turnin -13857 >>交任务 兵临城下
+	.turnin -13772 >> 交任务 总决赛
+	.turnin -13857 >> 交任务 兵临城下
 	.goto IcecrownGlacier,75.93,24.41
 	.target Shadow Hunter Mezil-kree
 	.target Gahju
 
 step << Tauren
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁诺克·蛮鬃|r、|cRXP_FRIENDLY_德恩·暴怒图腾|r 和 |cRXP_FRIENDLY_安卡·爪蹄|r 对话
-	.turnin 13773 >>交任务 冠军的利剑
+	.turnin 13773 >> 交任务 冠军的利剑
 	.goto IcecrownGlacier,76.20,24.63
-	.turnin 13776 >>交任务 勇士的实战训练
+	.turnin 13776 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.26,24.66
-	.turnin 13777 >>交任务 总决赛
-	.turnin 13858 >>交任务 兵临城下
+	.turnin 13777 >> 交任务 总决赛
+	.turnin 13858 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.14,24.64
 	.target Runok Wildmane
 	.target Dern Ragetotem
@@ -1286,12 +1286,12 @@ step << Tauren
 	.isQuestComplete 13773 -- A Blade Fit For A Champion
 step << Tauren
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁诺克·蛮鬃|r、|cRXP_FRIENDLY_德恩·暴怒图腾|r 和 |cRXP_FRIENDLY_安卡·爪蹄|r 对话
-	.turnin 13775 >>交任务 冬之利刃
+	.turnin 13775 >> 交任务 冬之利刃
 	.goto IcecrownGlacier,76.20,24.63
-	.turnin 13776 >>交任务 勇士的实战训练
+	.turnin 13776 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.26,24.66
-	.turnin 13777 >>交任务 总决赛
-	.turnin 13858 >>交任务 兵临城下
+	.turnin 13777 >> 交任务 总决赛
+	.turnin 13858 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.14,24.64
 	.target Runok Wildmane
 	.target Dern Ragetotem
@@ -1299,12 +1299,12 @@ step << Tauren
 	.isQuestComplete 13775 -- The Edge Of Winter
 step << Tauren
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁诺克·蛮鬃|r、|cRXP_FRIENDLY_德恩·暴怒图腾|r 和 |cRXP_FRIENDLY_安卡·爪蹄|r 对话
-	.turnin 13774 >>交任务 珍贵的武器
+	.turnin 13774 >> 交任务 珍贵的武器
 	.goto IcecrownGlacier,76.20,24.63
-	.turnin 13776 >>交任务 勇士的实战训练
+	.turnin 13776 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.26,24.66
-	.turnin 13777 >>交任务 总决赛
-	.turnin 13858 >>交任务 兵临城下
+	.turnin 13777 >> 交任务 总决赛
+	.turnin 13858 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.14,24.64
 	.target Runok Wildmane
 	.target Dern Ragetotem
@@ -1312,22 +1312,22 @@ step << Tauren
 	.isQuestComplete 13774 -- A Worthy Weapon
 step << Tauren
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德恩·暴怒图腾|r 和 |cRXP_FRIENDLY_安卡·爪蹄|r 对话
-	.turnin -13776 >>交任务 勇士的实战训练
+	.turnin -13776 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.26,24.66
-	.turnin -13777 >>交任务 总决赛
-	.turnin -13858 >>交任务 兵临城下
+	.turnin -13777 >> 交任务 总决赛
+	.turnin -13858 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.14,24.64
 	.target Dern Ragetotem
 	.target Anka Clawhoof
 
 step << Orc
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_碎颅者莫克拉|r、|cRXP_FRIENDLY_埃基诺斯|r 和 |cRXP_FRIENDLY_茉拉·狼女|r 对话
-	.turnin 13762 >>交任务 冠军的利剑
+	.turnin 13762 >> 交任务 冠军的利剑
 	.goto IcecrownGlacier,76.46,24.60
-	.turnin 13765 >>交任务 勇士的实战训练
+	.turnin 13765 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.50,24.48
-	.turnin 13767 >>交任务 总决赛
-	.turnin 13856 >>交任务 兵临城下
+	.turnin 13767 >> 交任务 总决赛
+	.turnin 13856 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.40,24.59
 	.target Mokra the Skullcrusher
 	.target Akinos
@@ -1335,12 +1335,12 @@ step << Orc
 	.isQuestComplete 13762 -- A Blade Fit For A Champion
 step << Orc
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_碎颅者莫克拉|r、|cRXP_FRIENDLY_埃基诺斯|r 和 |cRXP_FRIENDLY_茉拉·狼女|r 对话
-	.turnin 13764 >>交任务 冬之利刃
+	.turnin 13764 >> 交任务 冬之利刃
 	.goto IcecrownGlacier,76.46,24.60
-	.turnin 13765 >>交任务 勇士的实战训练
+	.turnin 13765 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.50,24.48
-	.turnin 13767 >>交任务 总决赛
-	.turnin 13856 >>交任务 兵临城下
+	.turnin 13767 >> 交任务 总决赛
+	.turnin 13856 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.40,24.59
 	.target Mokra the Skullcrusher
 	.target Akinos
@@ -1348,12 +1348,12 @@ step << Orc
 	.isQuestComplete 13764 -- The Edge Of Winter
 step << Orc
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_碎颅者莫克拉|r、|cRXP_FRIENDLY_埃基诺斯|r 和 |cRXP_FRIENDLY_茉拉·狼女|r 对话
-	.turnin 13763 >>交任务 珍贵的武器
+	.turnin 13763 >> 交任务 珍贵的武器
 	.goto IcecrownGlacier,76.46,24.60
-	.turnin 13765 >>交任务 勇士的实战训练
+	.turnin 13765 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.50,24.48
-	.turnin 13767 >>交任务 总决赛
-	.turnin 13856 >>交任务 兵临城下
+	.turnin 13767 >> 交任务 总决赛
+	.turnin 13856 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.40,24.59
 	.target Mokra the Skullcrusher
 	.target Akinos
@@ -1361,22 +1361,22 @@ step << Orc
 	.isQuestComplete 13763 -- A Worthy Weapon
 step << Orc
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃基诺斯|r 和 |cRXP_FRIENDLY_茉拉·狼女|r 对话
-	.turnin -13765 >>交任务 勇士的实战训练
+	.turnin -13765 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.50,24.48
-	.turnin -13767 >>交任务 总决赛
-	.turnin -13856 >>交任务 兵临城下
+	.turnin -13767 >> 交任务 总决赛
+	.turnin -13856 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.40,24.59
 	.target Akinos
 	.target Morah Worgsister
 
 step << Scourge
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_死亡猎手维赛里|r、|cRXP_FRIENDLY_莎拉·查尔克|r 和 |cRXP_FRIENDLY_马夫德雷奇|r 对话
-	.turnin 13778 >>交任务 冠军的利剑
+	.turnin 13778 >> 交任务 冠军的利剑
 	.goto IcecrownGlacier,76.53,24.21
-	.turnin 13781 >>交任务 勇士的实战训练
+	.turnin 13781 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.56,24.11
-	.turnin 13782 >>交任务 总决赛
-	.turnin 13860 >>交任务 兵临城下
+	.turnin 13782 >> 交任务 总决赛
+	.turnin 13860 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.55,24.33
 	.target Deathstalker Visceri
 	.target Sarah Chalke
@@ -1384,12 +1384,12 @@ step << Scourge
 	.isQuestComplete 13778 -- A Blade Fit For A Champion
 step << Scourge
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_死亡猎手维赛里|r、|cRXP_FRIENDLY_莎拉·查尔克|r 和 |cRXP_FRIENDLY_马夫德雷奇|r 对话
-	.turnin 13780 >>交任务 冬之利刃
+	.turnin 13780 >> 交任务 冬之利刃
 	.goto IcecrownGlacier,76.53,24.21
-	.turnin 13781 >>交任务 勇士的实战训练
+	.turnin 13781 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.56,24.11
-	.turnin 13782 >>交任务 总决赛
-	.turnin 13860 >>交任务 兵临城下
+	.turnin 13782 >> 交任务 总决赛
+	.turnin 13860 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.55,24.33
 	.target Deathstalker Visceri
 	.target Sarah Chalke
@@ -1397,12 +1397,12 @@ step << Scourge
 	.isQuestComplete 13780 -- The Edge Of Winter
 step << Scourge
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_死亡猎手维赛里|r、|cRXP_FRIENDLY_莎拉·查尔克|r 和 |cRXP_FRIENDLY_马夫德雷奇|r 对话
-	.turnin 13779 >>交任务 珍贵的武器
+	.turnin 13779 >> 交任务 珍贵的武器
 	.goto IcecrownGlacier,76.53,24.21
-	.turnin 13781 >>交任务 勇士的实战训练
+	.turnin 13781 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.56,24.11
-	.turnin 13782 >>交任务 总决赛
-	.turnin 13860 >>交任务 兵临城下
+	.turnin 13782 >> 交任务 总决赛
+	.turnin 13860 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.55,24.33
 	.target Deathstalker Visceri
 	.target Sarah Chalke
@@ -1410,22 +1410,22 @@ step << Scourge
 	.isQuestComplete 13779 -- A Worthy Weapon
 step << Scourge
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎拉·查尔克|r 和 |cRXP_FRIENDLY_马夫德雷奇|r 对话
-	.turnin -13781 >>交任务 勇士的实战训练
+	.turnin -13781 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.56,24.11
-	.turnin -13782 >>交任务 总决赛
-	.turnin -13860 >>交任务 兵临城下
+	.turnin -13782 >> 交任务 总决赛
+	.turnin -13860 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.55,24.33
 	.target Sarah Chalke
 	.target Handler Dretch
 
 step << BloodElf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃蕾希·晨歌|r、|cRXP_FRIENDLY_克希尔·炎枪|r 和 |cRXP_FRIENDLY_安妮拉·索隆|r 对话
-	.turnin 13783 >>交任务 冠军的利剑
+	.turnin 13783 >> 交任务 冠军的利剑
 	.goto IcecrownGlacier,76.45,23.85
-	.turnin 13786 >>交任务 勇士的实战训练
+	.turnin 13786 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.41,23.75
-	.turnin 13787 >>交任务 总决赛
-	.turnin 13859 >>交任务 兵临城下
+	.turnin 13787 >> 交任务 总决赛
+	.turnin 13859 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.52,23.93
 	.target Eressea Dawnsinger
 	.target Kethiel Sunlance
@@ -1433,12 +1433,12 @@ step << BloodElf
 	.isQuestComplete 13783 -- A Blade Fit For A Champion
 step << BloodElf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃蕾希·晨歌|r、|cRXP_FRIENDLY_克希尔·炎枪|r 和 |cRXP_FRIENDLY_安妮拉·索隆|r 对话
-	.turnin 13785 >>交任务 冬之利刃
+	.turnin 13785 >> 交任务 冬之利刃
 	.goto IcecrownGlacier,76.45,23.85
-	.turnin 13786 >>交任务 勇士的实战训练
+	.turnin 13786 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.41,23.75
-	.turnin 13787 >>交任务 总决赛
-	.turnin 13859 >>交任务 兵临城下
+	.turnin 13787 >> 交任务 总决赛
+	.turnin 13859 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.52,23.93
 	.target Eressea Dawnsinger
 	.target Kethiel Sunlance
@@ -1446,12 +1446,12 @@ step << BloodElf
 	.isQuestComplete 13785 -- The Edge Of Winter
 step << BloodElf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃蕾希·晨歌|r、|cRXP_FRIENDLY_克希尔·炎枪|r 和 |cRXP_FRIENDLY_安妮拉·索隆|r 对话
-	.turnin 13784 >>交任务 珍贵的武器
+	.turnin 13784 >> 交任务 珍贵的武器
 	.goto IcecrownGlacier,76.45,23.85
-	.turnin 13786 >>交任务 勇士的实战训练
+	.turnin 13786 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.41,23.75
-	.turnin 13787 >>交任务 总决赛
-	.turnin 13859 >>交任务 兵临城下
+	.turnin 13787 >> 交任务 总决赛
+	.turnin 13859 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.52,23.93
 	.target Eressea Dawnsinger
 	.target Kethiel Sunlance
@@ -1459,10 +1459,10 @@ step << BloodElf
 	.isQuestComplete 13784 -- A Worthy Weapon
 step << BloodElf
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克希尔·炎枪|r 和 |cRXP_FRIENDLY_安妮拉·索隆|r 对话
-	.turnin -13786 >>交任务 勇士的实战训练
+	.turnin -13786 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.41,23.75
-	.turnin -13787 >>交任务 总决赛
-	.turnin -13859 >>交任务 兵临城下
+	.turnin -13787 >> 交任务 总决赛
+	.turnin -13859 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.52,23.93
 	.target Kethiel Sunlance
 	.target Aneera Thuron
@@ -1491,36 +1491,36 @@ step -- Checking if they have 25 Valiant's Seals after a set of turn ins.
 	.goto IcecrownGlacier,76.20,24.63 << Tauren
 	.goto IcecrownGlacier,75.95,24.53 << Troll
 	.goto IcecrownGlacier,76.45,23.85 << BloodElf
-	.complete 13716,1 >>交任务 勇士之战 << Draenei -- Valiant's Seal (25)
-	.complete 13714,1 >>交任务 勇士之战 << Dwarf -- Valiant's Seal (25)
-	.complete 13715,1 >>交任务 勇士之战 << Gnome -- Valiant's Seal (25)
-	.complete 13718,1 >>交任务 勇士之战 << Human -- Valiant's Seal (25)
-	.complete 13717,1 >>交任务 勇士之战 << NightElf -- Valiant's Seal (25)
-	.complete 13721,1 >>交任务 勇士之战 << Scourge -- Valiant's Seal (25)
-	.complete 13697,1 >>交任务 勇士之战 << Orc -- Valiant's Seal (25)
-	.complete 13720,1 >>交任务 勇士之战 << Tauren -- Valiant's Seal (25)
-	.complete 13719,1 >>交任务 勇士之战 << Troll -- Valiant's Seal (25)
-	.complete 13722,1 >>交任务 勇士之战 << BloodElf -- Valiant's Seal (25)
-	.turnin 13716 >>交任务 勇士之战 << Draenei
-	.turnin 13714 >>交任务 勇士之战 << Dwarf
-	.turnin 13715 >>交任务 勇士之战 << Gnome
-	.turnin 13718 >>交任务 勇士之战 << Human
-	.turnin 13717 >>交任务 勇士之战 << NightElf
-	.turnin 13721 >>交任务 勇士之战 << Scourge
-	.turnin 13697 >>交任务 勇士之战 << Orc
-	.turnin 13720 >>交任务 勇士之战 << Tauren
-	.turnin 13719 >>交任务 勇士之战 << Troll
-	.turnin 13722 >>交任务 勇士之战 << BloodElf
-	.accept 13724 >>接受任务 勇士的挑战 << Draenei
-	.accept	13713 >>接受任务 勇士的挑战 << Dwarf
-	.accept 13723 >>接受任务 勇士的挑战 << Gnome
-	.accept	13699 >>接受任务 勇士的挑战 << Human
-	.accept 13725 >>接受任务 勇士的挑战 << NightElf
-	.accept	13729 >>接受任务 勇士的挑战 << Scourge
-	.accept 13726 >>接受任务 勇士的挑战 << Orc
-	.accept 13728 >>接受任务 勇士的挑战 << Tauren
-	.accept 13727 >>接受任务 勇士的挑战 << Troll
-	.accept 13731 >>接受任务 勇士的挑战 << BloodElf
+	.complete 13716,1 >> 交任务 勇士之战 << Draenei -- Valiant's Seal (25)
+	.complete 13714,1 >> 交任务 勇士之战 << Dwarf -- Valiant's Seal (25)
+	.complete 13715,1 >> 交任务 勇士之战 << Gnome -- Valiant's Seal (25)
+	.complete 13718,1 >> 交任务 勇士之战 << Human -- Valiant's Seal (25)
+	.complete 13717,1 >> 交任务 勇士之战 << NightElf -- Valiant's Seal (25)
+	.complete 13721,1 >> 交任务 勇士之战 << Scourge -- Valiant's Seal (25)
+	.complete 13697,1 >> 交任务 勇士之战 << Orc -- Valiant's Seal (25)
+	.complete 13720,1 >> 交任务 勇士之战 << Tauren -- Valiant's Seal (25)
+	.complete 13719,1 >> 交任务 勇士之战 << Troll -- Valiant's Seal (25)
+	.complete 13722,1 >> 交任务 勇士之战 << BloodElf -- Valiant's Seal (25)
+	.turnin 13716 >> 交任务 勇士之战 << Draenei
+	.turnin 13714 >> 交任务 勇士之战 << Dwarf
+	.turnin 13715 >> 交任务 勇士之战 << Gnome
+	.turnin 13718 >> 交任务 勇士之战 << Human
+	.turnin 13717 >> 交任务 勇士之战 << NightElf
+	.turnin 13721 >> 交任务 勇士之战 << Scourge
+	.turnin 13697 >> 交任务 勇士之战 << Orc
+	.turnin 13720 >> 交任务 勇士之战 << Tauren
+	.turnin 13719 >> 交任务 勇士之战 << Troll
+	.turnin 13722 >> 交任务 勇士之战 << BloodElf
+	.accept 13724 >> 接受任务 勇士的挑战 << Draenei
+	.accept	13713 >> 接受任务 勇士的挑战 << Dwarf
+	.accept 13723 >> 接受任务 勇士的挑战 << Gnome
+	.accept	13699 >> 接受任务 勇士的挑战 << Human
+	.accept 13725 >> 接受任务 勇士的挑战 << NightElf
+	.accept	13729 >> 接受任务 勇士的挑战 << Scourge
+	.accept 13726 >> 接受任务 勇士的挑战 << Orc
+	.accept 13728 >> 接受任务 勇士的挑战 << Tauren
+	.accept 13727 >> 接受任务 勇士的挑战 << Troll
+	.accept 13731 >> 接受任务 勇士的挑战 << BloodElf
 	.target Colosos << Draenei
 	.target Lana Stouthammer << Dwarf
 	.target Ambrose Boltspark << Gnome
@@ -1610,16 +1610,16 @@ step
 	.goto IcecrownGlacier,76.20,24.63 << Tauren
 	.goto IcecrownGlacier,75.95,24.53 << Troll
 	.goto IcecrownGlacier,76.45,23.85 << BloodElf
-	.turnin 13724 >>交任务 勇士的挑战 << Draenei
-	.turnin	13713 >>交任务 勇士的挑战 << Dwarf
-	.turnin 13723 >>交任务 勇士的挑战 << Gnome
-	.turnin	13699 >>交任务 勇士的挑战 << Human
-	.turnin 13725 >>交任务 勇士的挑战 << NightElf
-	.turnin	13729 >>交任务 勇士的挑战 << Scourge
-	.turnin 13726 >>交任务 勇士的挑战 << Orc
-	.turnin 13728 >>交任务 勇士的挑战 << Tauren
-	.turnin 13727 >>交任务 勇士的挑战 << Troll
-	.turnin 13731 >>交任务 勇士的挑战 << BloodElf
+	.turnin 13724 >> 交任务 勇士的挑战 << Draenei
+	.turnin	13713 >> 交任务 勇士的挑战 << Dwarf
+	.turnin 13723 >> 交任务 勇士的挑战 << Gnome
+	.turnin	13699 >> 交任务 勇士的挑战 << Human
+	.turnin 13725 >> 交任务 勇士的挑战 << NightElf
+	.turnin	13729 >> 交任务 勇士的挑战 << Scourge
+	.turnin 13726 >> 交任务 勇士的挑战 << Orc
+	.turnin 13728 >> 交任务 勇士的挑战 << Tauren
+	.turnin 13727 >> 交任务 勇士的挑战 << Troll
+	.turnin 13731 >> 交任务 勇士的挑战 << BloodElf
 	.target Colosos << Draenei
 	.target Lana Stouthammer << Dwarf
 	.target Ambrose Boltspark << Gnome
@@ -1651,16 +1651,16 @@ step
 	.goto IcecrownGlacier,76.20,24.63 << Tauren
 	.goto IcecrownGlacier,75.95,24.53 << Troll
 	.goto IcecrownGlacier,76.45,23.85 << BloodElf
-	.accept 13734 >>接受任务 冠军诞生 << Draenei
-	.accept	13732 >>接受任务 冠军诞生 << Dwarf
-	.accept 13733 >>接受任务 冠军诞生 << Gnome
-	.accept	13702 >>接受任务 冠军诞生 << Human
-	.accept 13735 >>接受任务 冠军诞生 << NightElf
-	.accept	13739 >>接受任务 冠军诞生 << Scourge
-	.accept 13736 >>接受任务 冠军诞生 << Orc
-	.accept 13738 >>接受任务 冠军诞生 << Tauren
-	.accept 13737 >>接受任务 冠军诞生 << Troll
-	.accept 13740 >>接受任务 冠军诞生 << BloodElf
+	.accept 13734 >> 接受任务 冠军诞生 << Draenei
+	.accept	13732 >> 接受任务 冠军诞生 << Dwarf
+	.accept 13733 >> 接受任务 冠军诞生 << Gnome
+	.accept	13702 >> 接受任务 冠军诞生 << Human
+	.accept 13735 >> 接受任务 冠军诞生 << NightElf
+	.accept	13739 >> 接受任务 冠军诞生 << Scourge
+	.accept 13736 >> 接受任务 冠军诞生 << Orc
+	.accept 13738 >> 接受任务 冠军诞生 << Tauren
+	.accept 13737 >> 接受任务 冠军诞生 << Troll
+	.accept 13740 >> 接受任务 冠军诞生 << BloodElf
 	.target Colosos << Draenei
 	.target Lana Stouthammer << Dwarf
 	.target Ambrose Boltspark << Gnome
@@ -1674,16 +1674,16 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_裁决者玛蕾尔·图哈特|r 对话
 	.goto IcecrownGlacier,69.66,22.86
-	.turnin 13734 >>交任务 冠军诞生 << Draenei
-	.turnin	13732 >>交任务 冠军诞生 << Dwarf
-	.turnin 13733 >>交任务 冠军诞生 << Gnome
-	.turnin	13702 >>交任务 冠军诞生 << Human
-	.turnin 13735 >>交任务 冠军诞生 << NightElf
-	.turnin	13739 >>交任务 冠军诞生 << Scourge
-	.turnin 13736 >>交任务 冠军诞生 << Orc
-	.turnin 13738 >>交任务 冠军诞生 << Tauren
-	.turnin 13737 >>交任务 冠军诞生 << Troll
-	.turnin 13740 >>交任务 冠军诞生 << BloodElf
+	.turnin 13734 >> 交任务 冠军诞生 << Draenei
+	.turnin	13732 >> 交任务 冠军诞生 << Dwarf
+	.turnin 13733 >> 交任务 冠军诞生 << Gnome
+	.turnin	13702 >> 交任务 冠军诞生 << Human
+	.turnin 13735 >> 交任务 冠军诞生 << NightElf
+	.turnin	13739 >> 交任务 冠军诞生 << Scourge
+	.turnin 13736 >> 交任务 冠军诞生 << Orc
+	.turnin 13738 >> 交任务 冠军诞生 << Tauren
+	.turnin 13737 >> 交任务 冠军诞生 << Troll
+	.turnin 13740 >> 交任务 冠军诞生 << BloodElf
 	.target Justicar Mariel Trueheart
 step
 	.goto IcecrownGlacier,76.33,19.48 << Alliance
@@ -1729,19 +1729,19 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗索斯|r 对话
 	.goto IcecrownGlacier,76.10,19.10
-	.accept 13705 >>接受任务 埃索达的勇士
-	.turnin 13705 >>交任务 埃索达的勇士
+	.accept 13705 >> 接受任务 埃索达的勇士
+	.turnin 13705 >> 交任务 埃索达的勇士
 	.target Colosos
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗索斯|r 对话。他有3个日常任务，其中1个可用。接受任何可用的任务
-	.accept 13716 >>接受任务 勇士之战
+	.accept 13716 >> 接受任务 勇士之战
 	.daily 13752,13754,13753 >>接受任务 冠军的利剑 |c99ffff99或者|r 冬之利刃 |c99ffff99或者|r 珍贵的武器
 	.goto IcecrownGlacier,76.10,19.10
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨安度斯|r 和 |cRXP_FRIENDLY_兰妮|r 对话
-	.daily 13755 >>接受任务 勇士的实战训练
+	.daily 13755 >> 接受任务 勇士的实战训练
 	.goto IcecrownGlacier,76.08,19.19
-	.daily 13756 >>接受任务 总决赛
-	.daily 13854 >>接受任务 兵临城下
+	.daily 13756 >> 接受任务 总决赛
+	.daily 13854 >> 接受任务 兵临城下
 	.goto IcecrownGlacier,76.15,19.08
 	.target Colosos
 	.target Saandos
@@ -1856,7 +1856,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>前往龙骨荒野东北部的达克玛尔湖
+	.zone Dragonblight >> 前往龙骨荒野东北部的达克玛尔湖
 	.isOnQuest 13753
 step
 	.goto Dragonblight,93.18,26.00
@@ -1870,7 +1870,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>前往晶歌森林
+	.zone CrystalsongForest >> 前往晶歌森林
 	.isOnQuest 13754
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -1882,7 +1882,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>前往嚎风峡湾北部的冬息湖
+	.zone HowlingFjord >> 前往嚎风峡湾北部的冬息湖
 	.isOnQuest 13754
 step
 	.goto HowlingFjord,42.18,19.65
@@ -1894,7 +1894,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>前往灰熊丘陵
+	.zone Grizzly Hills >> 前往灰熊丘陵
 	.isOnQuest 13752
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -1916,16 +1916,16 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13752
 step
-	.goto IcecrownGlacier,76.46,19.41,300 >>返回到冰冠冰川的|T236690:0|t银色比武场
+	.goto IcecrownGlacier,76.46,19.41,300 >> 返回到冰冠冰川的|T236690:0|t银色比武场
 	.isOnQuest 13752,13754,13753,13755,13756,13854
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗索斯|r、|cRXP_FRIENDLY_萨安度斯|r 和 |cRXP_FRIENDLY_兰妮|r 对话
-	.turnin 13752 >>交任务 冠军的利剑
+	.turnin 13752 >> 交任务 冠军的利剑
 	.goto IcecrownGlacier,76.10,19.10
-	.turnin 13755 >>交任务 勇士的实战训练
+	.turnin 13755 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.08,19.19
-	.turnin 13756 >>交任务 总决赛
-	.turnin 13854 >>交任务 兵临城下
+	.turnin 13756 >> 交任务 总决赛
+	.turnin 13854 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.15,19.08
 	.target Colosos
 	.target Saandos
@@ -1933,12 +1933,12 @@ step
 	.isQuestComplete 13752 -- A Blade Fit For A Champion
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗索斯|r、|cRXP_FRIENDLY_萨安度斯|r 和 |cRXP_FRIENDLY_兰妮|r 对话
-	.turnin 13754 >>交任务 冬之利刃
+	.turnin 13754 >> 交任务 冬之利刃
 	.goto IcecrownGlacier,76.10,19.10
-	.turnin 13755 >>交任务 勇士的实战训练
+	.turnin 13755 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.08,19.19
-	.turnin 13756 >>交任务 总决赛
-	.turnin 13854 >>交任务 兵临城下
+	.turnin 13756 >> 交任务 总决赛
+	.turnin 13854 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.15,19.08
 	.target Colosos
 	.target Saandos
@@ -1946,12 +1946,12 @@ step
 	.isQuestComplete 13754 -- The Edge Of Winter
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗索斯|r、|cRXP_FRIENDLY_萨安度斯|r 和 |cRXP_FRIENDLY_兰妮|r 对话
-	.turnin 13753 >>交任务 珍贵的武器
+	.turnin 13753 >> 交任务 珍贵的武器
 	.goto IcecrownGlacier,76.10,19.10
-	.turnin 13755 >>交任务 勇士的实战训练
+	.turnin 13755 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.08,19.19
-	.turnin 13756 >>交任务 总决赛
-	.turnin 13854 >>交任务 兵临城下
+	.turnin 13756 >> 交任务 总决赛
+	.turnin 13854 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.15,19.08
 	.target Colosos
 	.target Saandos
@@ -1959,10 +1959,10 @@ step
 	.isQuestComplete 13753 -- A Worthy Weapon
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨安度斯|r 和 |cRXP_FRIENDLY_兰妮|r 对话
-	.turnin -13755 >>交任务 勇士的实战训练
+	.turnin -13755 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.08,19.19
-	.turnin -13756 >>交任务 总决赛
-	.turnin -13854 >>交任务 兵临城下
+	.turnin -13756 >> 交任务 总决赛
+	.turnin -13854 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.15,19.08
 	.target Saandos
 	.target Ranii
@@ -1972,9 +1972,9 @@ step -- Checking if they have 25 Valiant's Seals after a set of turn ins.
 	>>|c99ffff99如果还需要继续完成日常任务，请在次日重新加载指南，直至你能交此任务|r。
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_克罗索斯|r 对话
 	.goto IcecrownGlacier,76.10,19.10
-	.complete 13716,1 >>交任务 勇士之战 -- Valiant's Seal (25)
-	.turnin 13716 >>交任务 勇士之战
-	.accept 13724 >>接受任务 勇士的挑战
+	.complete 13716,1 >> 交任务 勇士之战 -- Valiant's Seal (25)
+	.turnin 13716 >> 交任务 勇士之战
+	.accept 13724 >> 接受任务 勇士的挑战
 	.target Colosos
 step -- The Valiant's Challenge
 	#completewith next
@@ -1999,7 +1999,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克罗索斯|r 对话
 	.goto IcecrownGlacier,76.10,19.10
-	.turnin 13724 >>交任务 勇士的挑战
+	.turnin 13724 >> 交任务 勇士的挑战
 	.target Colosos
 step
 	.goto IcecrownGlacier,76.33,19.48
@@ -2026,19 +2026,19 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅克布·奥勒留斯元帅|r 对话
 	.goto IcecrownGlacier,76.60,19.12
-	.accept 13593 >>接受任务 暴风城的勇士
-	.turnin 13593 >>交任务 暴风城的勇士
+	.accept 13593 >> 接受任务 暴风城的勇士
+	.turnin 13593 >> 交任务 暴风城的勇士
 	.target Marshal Jacob Alerius
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅克布·奥勒留斯元帅|r 对话。他有3个日常任务中的1个，接受任何可用的任务
-	.accept 13718 >>接受任务 勇士之战
+	.accept 13718 >> 接受任务 勇士之战
 	.daily 13603,13616,13600 >>接受任务 冠军的利剑 |c99ffff99或者|r 冬之利刃 |c99ffff99或者|r 珍贵的武器
 	.goto IcecrownGlacier,76.60,19.12
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马库斯·巴洛爵士|r 和 |cRXP_FRIENDLY_约瑟夫·霍雷上尉|r 对话
-	.daily 13592 >>接受任务 勇士的实战训练
+	.daily 13592 >> 接受任务 勇士的实战训练
 	.goto IcecrownGlacier,76.53,19.08
-	.daily 13665 >>接受任务 总决赛
-	.daily 13847 >>接受任务 兵临城下
+	.daily 13665 >> 接受任务 总决赛
+	.daily 13847 >> 接受任务 兵临城下
 	.goto IcecrownGlacier,76.62,19.21
 	.target Marshal Jacob Alerius
 	.target Sir Marcus Barlowe
@@ -2154,7 +2154,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>前往龙骨荒野东北部的达克玛尔湖
+	.zone Dragonblight >> 前往龙骨荒野东北部的达克玛尔湖
 	.isOnQuest 13600
 step
 	.goto Dragonblight,93.18,26.00
@@ -2168,7 +2168,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>前往晶歌森林
+	.zone CrystalsongForest >> 前往晶歌森林
 	.isOnQuest 13616
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -2180,7 +2180,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>前往嚎风峡湾北部的冬息湖
+	.zone HowlingFjord >> 前往嚎风峡湾北部的冬息湖
 	.isOnQuest 13616
 step
 	.goto HowlingFjord,42.18,19.65
@@ -2192,7 +2192,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>前往灰熊丘陵
+	.zone Grizzly Hills >> 前往灰熊丘陵
 	.isOnQuest 13603
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -2214,16 +2214,16 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13603
 step
-	.goto IcecrownGlacier,76.46,19.41,300 >>返回到冰冠冰川的|T236690:0|t银色比武场
+	.goto IcecrownGlacier,76.46,19.41,300 >> 返回到冰冠冰川的|T236690:0|t银色比武场
 	.isOnQuest 13603,13616,13600,13592,13665,13847
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅克布·奥勒留斯元帅|r、|cRXP_FRIENDLY_马库斯·巴洛爵士|r 和 |cRXP_FRIENDLY_约瑟夫·霍雷上尉|r 对话
-	.turnin 13603 >>交任务 冠军的利剑
+	.turnin 13603 >> 交任务 冠军的利剑
 	.goto IcecrownGlacier,76.60,19.12
-	.turnin 13592 >>交任务 勇士的实战训练
+	.turnin 13592 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.53,19.08
-	.turnin 13665 >>交任务 总决赛
-	.turnin 13847 >>交任务 兵临城下
+	.turnin 13665 >> 交任务 总决赛
+	.turnin 13847 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.62,19.21
 	.target Marshal Jacob Alerius
 	.target Sir Marcus Barlowe
@@ -2231,12 +2231,12 @@ step
 	.isQuestComplete 13603 -- A Blade Fit For A Champion
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅克布·奥勒留斯元帅|r、|cRXP_FRIENDLY_马库斯·巴洛爵士|r 和 |cRXP_FRIENDLY_约瑟夫·霍雷上尉|r 对话
-	.turnin 13616 >>交任务 冬之利刃
+	.turnin 13616 >> 交任务 冬之利刃
 	.goto IcecrownGlacier,76.60,19.12
-	.turnin 13592 >>交任务 勇士的实战训练
+	.turnin 13592 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.53,19.08
-	.turnin 13665 >>交任务 总决赛
-	.turnin 13847 >>交任务 兵临城下
+	.turnin 13665 >> 交任务 总决赛
+	.turnin 13847 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.62,19.21
 	.target Marshal Jacob Alerius
 	.target Sir Marcus Barlowe
@@ -2244,12 +2244,12 @@ step
 	.isQuestComplete 13616 -- The Edge Of Winter
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅克布·奥勒留斯元帅|r、|cRXP_FRIENDLY_马库斯·巴洛爵士|r 和 |cRXP_FRIENDLY_约瑟夫·霍雷上尉|r 对话
-	.turnin 13600 >>交任务 珍贵的武器
+	.turnin 13600 >> 交任务 珍贵的武器
 	.goto IcecrownGlacier,76.60,19.12
-	.turnin 13592 >>交任务 勇士的实战训练
+	.turnin 13592 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.53,19.08
-	.turnin 13665 >>交任务 总决赛
-	.turnin 13847 >>交任务 兵临城下
+	.turnin 13665 >> 交任务 总决赛
+	.turnin 13847 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.62,19.21
 	.target Marshal Jacob Alerius
 	.target Sir Marcus Barlowe
@@ -2257,10 +2257,10 @@ step
 	.isQuestComplete 13600 -- A Worthy Weapon
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马库斯·巴洛爵士|r 和 |cRXP_FRIENDLY_约瑟夫·霍雷上尉|r 对话
-	.turnin -13592 >>交任务 勇士的实战训练
+	.turnin -13592 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.53,19.08
-	.turnin -13665 >>交任务 总决赛
-	.turnin -13847 >>交任务 兵临城下
+	.turnin -13665 >> 交任务 总决赛
+	.turnin -13847 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.62,19.21
 	.target Sir Marcus Barlowe
 	.target Captain Joseph Holley
@@ -2269,9 +2269,9 @@ step
 	>>你需要收集 |T133441:0|t|c99CCFFFF25 勇士的徽记|r。每天完成 4 个日常任务可以获得 5 枚
 	>>|c99ffff99如果还需要继续完成日常任务，请在次日重新加载指南，直至你能交此任务|r。
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅克布·奥勒留斯元帅|r对话
-	.complete 13718,1 >>交任务 勇士之战 -- Valiant's Seal (25)
-	.turnin 13718 >>交任务 勇士之战
-	.accept	13699 >>接受任务 勇士的挑战
+	.complete 13718,1 >> 交任务 勇士之战 -- Valiant's Seal (25)
+	.turnin 13718 >> 交任务 勇士之战
+	.accept	13699 >> 接受任务 勇士的挑战
 	.target Marshal Jacob Alerius
 step -- The Valiant's Challenge
 	#completewith next
@@ -2296,7 +2296,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雅克布·奥勒留斯元帅|r 对话
 	.goto IcecrownGlacier,76.60,19.12
-	.turnin	13699 >>交任务 勇士的挑战
+	.turnin	13699 >> 交任务 勇士的挑战
 	.target Marshal Jacob Alerius
 step
 	.goto IcecrownGlacier,76.33,19.48
@@ -2323,19 +2323,19 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉娜·硬锤|r 对话
 	.goto IcecrownGlacier,76.64,19.49
-	.accept 13703 >>接受任务 铁炉堡的勇士
-	.turnin 13703 >>交任务 铁炉堡的勇士
+	.accept 13703 >> 接受任务 铁炉堡的勇士
+	.turnin 13703 >> 交任务 铁炉堡的勇士
 	.target Lana Stouthammer
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉娜·硬锤|r 对话。她有3个日常任务中的1个，接受任何可用的任务
-	.accept 13714 >>接受任务 勇士之战
+	.accept 13714 >> 接受任务 勇士之战
 	.daily 13741,13743,13742 >>接受任务 冠军的利剑 |c99ffff99或者|r 冬之利刃 |c99ffff99或者|r 珍贵的武器
 	.goto IcecrownGlacier,76.64,19.49
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁洛·强击|r 和 |cRXP_FRIENDLY_克拉拉·沸酒|r 对话
-	.daily 13744 >>接受任务 勇士的实战训练
+	.daily 13744 >> 接受任务 勇士的实战训练
 	.goto IcecrownGlacier,76.66,19.41
-	.daily 13745 >>接受任务 总决赛
-	.daily 13851 >>接受任务 兵临城下
+	.daily 13745 >> 接受任务 总决赛
+	.daily 13851 >> 接受任务 兵临城下
 	.goto IcecrownGlacier,76.64,19.57
 	.target Lana Stouthammer
 	.target Rollo Sureshot
@@ -2452,7 +2452,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>前往龙骨荒野东北部的达克玛尔湖
+	.zone Dragonblight >> 前往龙骨荒野东北部的达克玛尔湖
 	.isOnQuest 13742
 step
 	.goto Dragonblight,93.18,26.00
@@ -2466,7 +2466,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>前往晶歌森林
+	.zone CrystalsongForest >> 前往晶歌森林
 	.isOnQuest 13743
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -2478,7 +2478,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>前往嚎风峡湾北部的冬息湖
+	.zone HowlingFjord >> 前往嚎风峡湾北部的冬息湖
 	.isOnQuest 13743
 step
 	.goto HowlingFjord,42.18,19.65
@@ -2490,7 +2490,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>前往灰熊丘陵
+	.zone Grizzly Hills >> 前往灰熊丘陵
 	.isOnQuest 13741
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -2512,17 +2512,17 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13741
 step
-	.goto IcecrownGlacier,76.46,19.41,300 >>返回到冰冠冰川的|T236690:0|t银色比武场 << Alliance
-	.goto IcecrownGlacier,76.27,24.38,300 >>返回到冰冠冰川的|T236690:0|t银色比武场 << Horde
+	.goto IcecrownGlacier,76.46,19.41,300 >> 返回到冰冠冰川的|T236690:0|t银色比武场 << Alliance
+	.goto IcecrownGlacier,76.27,24.38,300 >> 返回到冰冠冰川的|T236690:0|t银色比武场 << Horde
 	.isOnQuest 13741,13743,13742,13744,13745,13851
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉娜·硬锤|r、|cRXP_FRIENDLY_鲁洛·强击|r 和 |cRXP_FRIENDLY_克拉拉·沸酒|r 对话
-	.turnin 13741 >>交任务 冠军的利剑
+	.turnin 13741 >> 交任务 冠军的利剑
 	.goto IcecrownGlacier,76.64,19.49
-	.turnin 13744 >>交任务 勇士的实战训练
+	.turnin 13744 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.66,19.41
-	.turnin 13745 >>交任务 总决赛
-	.turnin 13851 >>交任务 兵临城下
+	.turnin 13745 >> 交任务 总决赛
+	.turnin 13851 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.64,19.57
 	.target Lana Stouthammer
 	.target Rollo Sureshot
@@ -2530,12 +2530,12 @@ step
 	.isQuestComplete 13741 -- A Blade Fit For A Champion
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉娜·硬锤|r、|cRXP_FRIENDLY_鲁洛·强击|r 和 |cRXP_FRIENDLY_克拉拉·沸酒|r 对话
-	.turnin 13743 >>交任务 冬之利刃
+	.turnin 13743 >> 交任务 冬之利刃
 	.goto IcecrownGlacier,76.64,19.49
-	.turnin 13744 >>交任务 勇士的实战训练
+	.turnin 13744 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.66,19.41
-	.turnin 13745 >>交任务 总决赛
-	.turnin 13851 >>交任务 兵临城下
+	.turnin 13745 >> 交任务 总决赛
+	.turnin 13851 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.64,19.57
 	.target Lana Stouthammer
 	.target Rollo Sureshot
@@ -2543,12 +2543,12 @@ step
 	.isQuestComplete 13743 -- The Edge Of Winter
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉娜·硬锤|r、|cRXP_FRIENDLY_鲁洛·强击|r 和 |cRXP_FRIENDLY_克拉拉·沸酒|r 对话
-	.turnin 13742 >>交任务 珍贵的武器
+	.turnin 13742 >> 交任务 珍贵的武器
 	.goto IcecrownGlacier,76.64,19.49
-	.turnin 13744 >>交任务 勇士的实战训练
+	.turnin 13744 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.66,19.41
-	.turnin 13745 >>交任务 总决赛
-	.turnin 13851 >>交任务 兵临城下
+	.turnin 13745 >> 交任务 总决赛
+	.turnin 13851 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.64,19.57
 	.target Lana Stouthammer
 	.target Rollo Sureshot
@@ -2556,10 +2556,10 @@ step
 	.isQuestComplete 13742 -- A Worthy Weapon
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁洛·强击|r Sureshot 和 |cRXP_FRIENDLY_克拉拉·沸酒|r 对话
-	.turnin -13744 >>交任务 勇士的实战训练
+	.turnin -13744 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.66,19.41
-	.turnin -13745 >>交任务 总决赛
-	.turnin -13851 >>交任务 兵临城下
+	.turnin -13745 >> 交任务 总决赛
+	.turnin -13851 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.64,19.57
 	.target Rollo Sureshot
 	.target Clara Tumblebrew
@@ -2569,9 +2569,9 @@ step
 	>>|c99ffff99如果还需要继续完成日常任务，请在次日重新加载指南，直至你能交此任务|r。
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉娜·硬锤|r 对话
 	.goto IcecrownGlacier,76.64,19.49
-	.complete 13714,1 >>交任务 勇士之战 -- Valiant's Seal (25)
-	.turnin 13714 >>交任务 勇士之战
-	.accept	13713 >>接受任务 勇士的挑战
+	.complete 13714,1 >> 交任务 勇士之战 -- Valiant's Seal (25)
+	.turnin 13714 >> 交任务 勇士之战
+	.accept	13713 >> 接受任务 勇士的挑战
 	.target Lana Stouthammer
 step -- The Valiant's Challenge
 	#completewith next
@@ -2596,7 +2596,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉娜·硬锤|r 对话
 	.goto IcecrownGlacier,76.64,19.49
-	.turnin	13713 >>交任务 勇士的挑战
+	.turnin	13713 >> 交任务 勇士的挑战
 	.target Lana Stouthammer
 step
 	.goto IcecrownGlacier,76.33,19.48
@@ -2622,19 +2622,19 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安布罗斯·雷钉|r 对话
 	.goto IcecrownGlacier,76.55,19.82
-	.accept 13704 >>接受任务 诺莫瑞根的勇士
-	.turnin 13704 >>交任务 诺莫瑞根的勇士
+	.accept 13704 >> 接受任务 诺莫瑞根的勇士
+	.turnin 13704 >> 交任务 诺莫瑞根的勇士
 	.target Ambrose Boltspark
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安布罗斯·雷钉|r 对话。他有3个日常任务中的1个，接受任何可用的任务
-	.accept 13715 >>接受任务 勇士之战
+	.accept 13715 >> 接受任务 勇士之战
 	.daily 13746,13748,13747 >>接受任务 冠军的利剑 |c99ffff99或者|r 冬之利刃 |c99ffff99或者|r 珍贵的武器
 	.goto IcecrownGlacier,76.55,19.82
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_提克·扳钳|r和 |cRXP_FRIENDLY_弗林克·扳钳|r 对话
-	.daily 13749 >>接受任务 勇士的实战训练
+	.daily 13749 >> 接受任务 勇士的实战训练
 	.goto IcecrownGlacier,76.60,19.79
-	.daily 13750 >>接受任务 总决赛
-	.daily 13852 >>接受任务 兵临城下
+	.daily 13750 >> 接受任务 总决赛
+	.daily 13852 >> 接受任务 兵临城下
 	.goto IcecrownGlacier,76.52,19.89
 	.target Ambrose Boltspark
 	.target Tickin Gearspanner
@@ -2750,7 +2750,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>前往龙骨荒野东北部的达克玛尔湖
+	.zone Dragonblight >> 前往龙骨荒野东北部的达克玛尔湖
 	.isOnQuest 13747
 step
 	.goto Dragonblight,93.18,26.00
@@ -2764,7 +2764,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>前往晶歌森林
+	.zone CrystalsongForest >> 前往晶歌森林
 	.isOnQuest 13748
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -2776,7 +2776,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>前往嚎风峡湾北部的冬息湖
+	.zone HowlingFjord >> 前往嚎风峡湾北部的冬息湖
 	.isOnQuest 13748
 step
 	.goto HowlingFjord,42.18,19.65
@@ -2788,7 +2788,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>前往灰熊丘陵
+	.zone Grizzly Hills >> 前往灰熊丘陵
 	.isOnQuest 13746
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -2810,16 +2810,16 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13746
 step
-	.goto IcecrownGlacier,76.46,19.41,300 >>返回到冰冠冰川的|T236690:0|t银色比武场
+	.goto IcecrownGlacier,76.46,19.41,300 >> 返回到冰冠冰川的|T236690:0|t银色比武场
 	.isOnQuest 13746,13748,13747,13749,13750,13852
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安布罗斯·雷钉|r、|cRXP_FRIENDLY_提克·扳钳|r 和 |cRXP_FRIENDLY_弗林克·扳钳|r 对话
-	.turnin 13746 >>交任务 冠军的利剑
+	.turnin 13746 >> 交任务 冠军的利剑
 	.goto IcecrownGlacier,76.55,19.82
-	.turnin 13749 >>交任务 勇士的实战训练
+	.turnin 13749 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.60,19.79
-	.turnin 13750 >>交任务 总决赛
-	.turnin 13852 >>交任务 兵临城下
+	.turnin 13750 >> 交任务 总决赛
+	.turnin 13852 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.52,19.89
 	.target Ambrose Boltspark
 	.target Tickin Gearspanner
@@ -2827,12 +2827,12 @@ step
 	.isQuestComplete 13746 -- A Blade Fit For A Champion
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安布罗斯·雷钉|r、|cRXP_FRIENDLY_提克·扳钳|r 和 |cRXP_FRIENDLY_弗林克·扳钳|r 对话
-	.turnin 13748 >>交任务 冬之利刃
+	.turnin 13748 >> 交任务 冬之利刃
 	.goto IcecrownGlacier,76.55,19.82
-	.turnin 13749 >>交任务 勇士的实战训练
+	.turnin 13749 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.60,19.79
-	.turnin 13750 >>交任务 总决赛
-	.turnin 13852 >>交任务 兵临城下
+	.turnin 13750 >> 交任务 总决赛
+	.turnin 13852 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.52,19.89
 	.target Ambrose Boltspark
 	.target Tickin Gearspanner
@@ -2840,12 +2840,12 @@ step
 	.isQuestComplete 13748 -- The Edge Of Winter
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安布罗斯·雷钉|r、|cRXP_FRIENDLY_提克·扳钳|r 和 |cRXP_FRIENDLY_弗林克·扳钳|r 对话
-	.turnin 13747 >>交任务 珍贵的武器
+	.turnin 13747 >> 交任务 珍贵的武器
 	.goto IcecrownGlacier,76.55,19.82
-	.turnin 13749 >>交任务 勇士的实战训练
+	.turnin 13749 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.60,19.79
-	.turnin 13750 >>交任务 总决赛
-	.turnin 13852 >>交任务 兵临城下
+	.turnin 13750 >> 交任务 总决赛
+	.turnin 13852 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.52,19.89
 	.target Ambrose Boltspark
 	.target Tickin Gearspanner
@@ -2853,10 +2853,10 @@ step
 	.isQuestComplete 13747 -- A Worthy Weapon
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_提克·扳钳|r 和 |cRXP_FRIENDLY_弗林克·扳钳|r 对话
-	.turnin -13749 >>交任务 勇士的实战训练
+	.turnin -13749 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.60,19.79
-	.turnin -13750 >>交任务 总决赛
-	.turnin -13852 >>交任务 兵临城下
+	.turnin -13750 >> 交任务 总决赛
+	.turnin -13852 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.52,19.89
 	.target Tickin Gearspanner
 	.target Flickin Gearspanner
@@ -2866,9 +2866,9 @@ step -- Checking if they have 25 Valiant's Seals after a set of turn ins.
 	>>|c99ffff99如果还需要继续完成日常任务，请在次日重新加载指南，直至你能交此任务|r。
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安布罗斯·雷钉|r 对话
 	.goto IcecrownGlacier,76.55,19.82
-	.complete 13715,1 >>交任务 勇士之战 -- Valiant's Seal (25)
-	.turnin 13715 >>交任务 勇士之战
-	.accept 13723 >>接受任务 勇士的挑战
+	.complete 13715,1 >> 交任务 勇士之战 -- Valiant's Seal (25)
+	.turnin 13715 >> 交任务 勇士之战
+	.accept 13723 >> 接受任务 勇士的挑战
 	.target Ambrose Boltspark
 step -- The Valiant's Challenge
 	#completewith next
@@ -2893,7 +2893,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安布罗斯·雷钉|r 对话
 	.goto IcecrownGlacier,76.55,19.82
-	.turnin 13723 >>交任务 勇士的挑战
+	.turnin 13723 >> 交任务 勇士的挑战
 	.target Ambrose Boltspark
 step
 	.goto IcecrownGlacier,76.33,19.48
@@ -2919,19 +2919,19 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_娅琳·永歌|r 对话
 	.goto IcecrownGlacier,76.34,19.03
-	.accept 13706 >>接受任务 达纳苏斯的勇士
-	.turnin 13706 >>交任务 达纳苏斯的勇士
+	.accept 13706 >> 接受任务 达纳苏斯的勇士
+	.turnin 13706 >> 交任务 达纳苏斯的勇士
 	.target Jaelyne Evensong
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_娅琳·永歌|r 对话。她有3个日常任务，其中1个可用。接受任何可用的任务
-	.accept 13717 >>接受任务 勇士之战
+	.accept 13717 >> 接受任务 勇士之战
 	.daily 13757,13759,13758 >>接受任务 冠军的利剑 |c99ffff99或者|r 冬之利刃 |c99ffff99或者|r 珍贵的武器
 	.goto IcecrownGlacier,76.34,19.03
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊蕾丝蒂亚·刃歌|r 和 |cRXP_FRIENDLY_艾莱·觅星|r 对话
-	.daily 13760 >>接受任务 勇士的实战训练
+	.daily 13760 >> 接受任务 勇士的实战训练
 	.goto IcecrownGlacier,76.29,18.99
-	.daily 13761 >>接受任务 总决赛
-	.daily 13855 >>接受任务 兵临城下
+	.daily 13761 >> 接受任务 总决赛
+	.daily 13855 >> 接受任务 兵临城下
 	.goto IcecrownGlacier,76.40,19.00
 	.target Jaelyne Evensong
 	.target Illestria Bladesinger
@@ -3046,7 +3046,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>前往龙骨荒野东北部的达克玛尔湖
+	.zone Dragonblight >> 前往龙骨荒野东北部的达克玛尔湖
 	.isOnQuest 13758
 step
 	.goto Dragonblight,93.18,26.00
@@ -3060,7 +3060,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>前往晶歌森林
+	.zone CrystalsongForest >> 前往晶歌森林
 	.isOnQuest 13759
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -3072,7 +3072,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>前往嚎风峡湾北部的冬息湖
+	.zone HowlingFjord >> 前往嚎风峡湾北部的冬息湖
 	.isOnQuest 13759
 step
 	.goto HowlingFjord,42.18,19.65
@@ -3084,7 +3084,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>前往灰熊丘陵
+	.zone Grizzly Hills >> 前往灰熊丘陵
 	.isOnQuest 13757
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -3106,16 +3106,16 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13757
 step
-	.goto IcecrownGlacier,76.46,19.41,300 >>返回到冰冠冰川的|T236690:0|t银色比武场
+	.goto IcecrownGlacier,76.46,19.41,300 >> 返回到冰冠冰川的|T236690:0|t银色比武场
 	.isOnQuest 13757,13759,13758,13760,13761,13855
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_娅琳·永歌|r、|cRXP_FRIENDLY_伊蕾丝蒂亚·刃歌|r 和 |cRXP_FRIENDLY_艾莱·觅星|r 对话
-	.turnin 13757 >>交任务 冠军的利剑
+	.turnin 13757 >> 交任务 冠军的利剑
 	.goto IcecrownGlacier,76.34,19.03
-	.turnin 13760 >>交任务 勇士的实战训练
+	.turnin 13760 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.29,18.99
-	.turnin 13761 >>交任务 总决赛
-	.turnin 13855 >>交任务 兵临城下
+	.turnin 13761 >> 交任务 总决赛
+	.turnin 13855 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.40,19.00
 	.target Jaelyne Evensong
 	.target Illestria Bladesinger
@@ -3123,12 +3123,12 @@ step
 	.isQuestComplete 13757 -- A Blade Fit For A Champion
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_娅琳·永歌|r、|cRXP_FRIENDLY_伊蕾丝蒂亚·刃歌|r 和 |cRXP_FRIENDLY_艾莱·觅星|r 对话
-	.turnin 13759 >>交任务 冬之利刃
+	.turnin 13759 >> 交任务 冬之利刃
 	.goto IcecrownGlacier,76.34,19.03
-	.turnin 13760 >>交任务 勇士的实战训练
+	.turnin 13760 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.29,18.99
-	.turnin 13761 >>交任务 总决赛
-	.turnin 13855 >>交任务 兵临城下
+	.turnin 13761 >> 交任务 总决赛
+	.turnin 13855 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.40,19.00
 	.target Jaelyne Evensong
 	.target Illestria Bladesinger
@@ -3136,12 +3136,12 @@ step
 	.isQuestComplete 13759 -- The Edge Of Winter
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_娅琳·永歌|r、|cRXP_FRIENDLY_伊蕾丝蒂亚·刃歌|r 和 |cRXP_FRIENDLY_艾莱·觅星|r 对话
-	.turnin 13758 >>交任务 珍贵的武器
+	.turnin 13758 >> 交任务 珍贵的武器
 	.goto IcecrownGlacier,76.34,19.03
-	.turnin 13760 >>交任务 勇士的实战训练
+	.turnin 13760 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.29,18.99
-	.turnin 13761 >>交任务 总决赛
-	.turnin 13855 >>交任务 兵临城下
+	.turnin 13761 >> 交任务 总决赛
+	.turnin 13855 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.40,19.00
 	.target Jaelyne Evensong
 	.target Illestria Bladesinger
@@ -3149,10 +3149,10 @@ step
 	.isQuestComplete 13758 -- A Worthy Weapon
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊蕾丝蒂亚·刃歌|r 和 |cRXP_FRIENDLY_艾莱·觅星|r 对话
-	.turnin -13760 >>交任务 勇士的实战训练
+	.turnin -13760 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.29,18.99
-	.turnin -13761 >>交任务 总决赛
-	.turnin -13855 >>交任务 兵临城下
+	.turnin -13761 >> 交任务 总决赛
+	.turnin -13855 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.40,19.00
 	.target Illestria Bladesinger
 	.target Airae Starseeker
@@ -3162,9 +3162,9 @@ step
 	>>|c99ffff99如果还需要继续完成日常任务，请在次日重新加载指南，直至你能交此任务|r。
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_娅琳·永歌|r 对话
 	.goto IcecrownGlacier,76.34,19.03
-	.complete 13717,1 >>交任务 勇士之战 -- Valiant's Seal (25)
-	.turnin 13717 >>交任务 勇士之战
-	.accept 13725 >>接受任务 勇士的挑战
+	.complete 13717,1 >> 交任务 勇士之战 -- Valiant's Seal (25)
+	.turnin 13717 >> 交任务 勇士之战
+	.accept 13725 >> 接受任务 勇士的挑战
 	.target Jaelyne Evensong
 step -- The Valiant's Challenge
 	#completewith next
@@ -3189,7 +3189,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_娅琳·永歌|r 对话
 	.goto IcecrownGlacier,76.34,19.03
-	.turnin 13725 >>交任务 勇士的挑战
+	.turnin 13725 >> 交任务 勇士的挑战
 	.target Jaelyne Evensong
 step
 	.goto IcecrownGlacier,76.33,19.48
@@ -3216,19 +3216,19 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_碎颅者莫克拉|r 对话
 	.goto IcecrownGlacier,76.46,24.60
-	.accept 13707 >>接受任务 奥格瑞玛的勇士
-	.turnin 13707 >>交任务 奥格瑞玛的勇士
+	.accept 13707 >> 接受任务 奥格瑞玛的勇士
+	.turnin 13707 >> 交任务 奥格瑞玛的勇士
 	.target Mokra the Skullcrusher
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_碎颅者莫克拉|r 对话。他有3个日常任务，其中1个可用。接受任何可用的任务
-	.accept 13697 >>接受任务 勇士之战
+	.accept 13697 >> 接受任务 勇士之战
 	.daily 13762,13764,13763 >>接受任务 冠军的利剑 |c99ffff99或者|r 冬之利刃 |c99ffff99或者|r 珍贵的武器
 	.goto IcecrownGlacier,76.46,24.60
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃基诺斯|r 和 |cRXP_FRIENDLY_茉拉·狼女|r 对话
-	.daily 13765 >>接受任务 勇士的实战训练
+	.daily 13765 >> 接受任务 勇士的实战训练
 	.goto IcecrownGlacier,76.50,24.48
-	.daily 13767 >>接受任务 总决赛
-	.daily 13856 >>接受任务 兵临城下
+	.daily 13767 >> 接受任务 总决赛
+	.daily 13856 >> 接受任务 兵临城下
 	.goto IcecrownGlacier,76.40,24.59
 	.target Mokra the Skullcrusher
 	.target Akinos
@@ -3342,7 +3342,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>前往龙骨荒野东北部的达克玛尔湖
+	.zone Dragonblight >> 前往龙骨荒野东北部的达克玛尔湖
 	.isOnQuest 13763
 step
 	.goto Dragonblight,93.18,26.00
@@ -3356,7 +3356,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>前往晶歌森林
+	.zone CrystalsongForest >> 前往晶歌森林
 	.isOnQuest 13764
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -3368,7 +3368,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>前往嚎风峡湾北部的冬息湖
+	.zone HowlingFjord >> 前往嚎风峡湾北部的冬息湖
 	.isOnQuest 13764
 step
 	.goto HowlingFjord,42.18,19.65
@@ -3380,7 +3380,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>前往灰熊丘陵
+	.zone Grizzly Hills >> 前往灰熊丘陵
 	.isOnQuest 13762
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -3402,16 +3402,16 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13762
 step
-	.goto IcecrownGlacier,76.27,24.38,300 >>返回到冰冠冰川的|T236690:0|t银色比武场
+	.goto IcecrownGlacier,76.27,24.38,300 >> 返回到冰冠冰川的|T236690:0|t银色比武场
 	.isOnQuest 13762,13764,13763,13765,13767,13856
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_碎颅者莫克拉|r、|cRXP_FRIENDLY_埃基诺斯|r 和 |cRXP_FRIENDLY_茉拉·狼女|r 对话
-	.turnin 13762 >>交任务 冠军的利剑
+	.turnin 13762 >> 交任务 冠军的利剑
 	.goto IcecrownGlacier,76.46,24.60
-	.turnin 13765 >>交任务 勇士的实战训练
+	.turnin 13765 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.50,24.48
-	.turnin 13767 >>交任务 总决赛
-	.turnin 13856 >>交任务 兵临城下
+	.turnin 13767 >> 交任务 总决赛
+	.turnin 13856 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.40,24.59
 	.target Mokra the Skullcrusher
 	.target Akinos
@@ -3419,12 +3419,12 @@ step
 	.isQuestComplete 13762 -- A Blade Fit For A Champion
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_碎颅者莫克拉|r、|cRXP_FRIENDLY_埃基诺斯|r 和 |cRXP_FRIENDLY_茉拉·狼女|r 对话
-	.turnin 13764 >>交任务 冬之利刃
+	.turnin 13764 >> 交任务 冬之利刃
 	.goto IcecrownGlacier,76.46,24.60
-	.turnin 13765 >>交任务 勇士的实战训练
+	.turnin 13765 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.50,24.48
-	.turnin 13767 >>交任务 总决赛
-	.turnin 13856 >>交任务 兵临城下
+	.turnin 13767 >> 交任务 总决赛
+	.turnin 13856 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.40,24.59
 	.target Mokra the Skullcrusher
 	.target Akinos
@@ -3432,12 +3432,12 @@ step
 	.isQuestComplete 13764 -- The Edge Of Winter
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_碎颅者莫克拉|r、|cRXP_FRIENDLY_埃基诺斯|r 和 |cRXP_FRIENDLY_茉拉·狼女|r 对话
-	.turnin 13763 >>交任务 珍贵的武器
+	.turnin 13763 >> 交任务 珍贵的武器
 	.goto IcecrownGlacier,76.46,24.60
-	.turnin 13765 >>交任务 勇士的实战训练
+	.turnin 13765 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.50,24.48
-	.turnin 13767 >>交任务 总决赛
-	.turnin 13856 >>交任务 兵临城下
+	.turnin 13767 >> 交任务 总决赛
+	.turnin 13856 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.40,24.59
 	.target Mokra the Skullcrusher
 	.target Akinos
@@ -3445,10 +3445,10 @@ step
 	.isQuestComplete 13763 -- A Worthy Weapon
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃基诺斯|r 和 |cRXP_FRIENDLY_茉拉·狼女|r 对话
-	.turnin -13765 >>交任务 勇士的实战训练
+	.turnin -13765 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.50,24.48
-	.turnin -13767 >>交任务 总决赛
-	.turnin -13856 >>交任务 兵临城下
+	.turnin -13767 >> 交任务 总决赛
+	.turnin -13856 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.40,24.59
 	.target Akinos
 	.target Morah Worgsister
@@ -3458,9 +3458,9 @@ step
 	>>|c99ffff99如果还需要继续完成日常任务，请在次日重新加载指南，直至你能交此任务|r。
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_碎颅者莫克拉|r 对话
 	.goto IcecrownGlacier,76.46,24.60
-	.complete 13697,1 >>交任务 勇士之战 -- Valiant's Seal (25)
-	.turnin 13697 >>交任务 勇士之战
-	.accept 13726 >>接受任务 勇士的挑战
+	.complete 13697,1 >> 交任务 勇士之战 -- Valiant's Seal (25)
+	.turnin 13697 >> 交任务 勇士之战
+	.accept 13726 >> 接受任务 勇士的挑战
 	.target Mokra the Skullcrusher
 step -- The Valiant's Challenge
 	#completewith next
@@ -3484,7 +3484,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_碎颅者莫克拉|r 对话
 	.goto IcecrownGlacier,76.46,24.60
-	.turnin 13726 >>交任务 勇士的挑战
+	.turnin 13726 >> 交任务 勇士的挑战
 	.target Mokra the Skullcrusher
 step
 	.goto IcecrownGlacier,76.17,24.21
@@ -3510,19 +3510,19 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖尔托|r 对话
 	.goto IcecrownGlacier,75.95,24.53
-	.accept 13708 >>接受任务 森金的勇士
-	.turnin 13708 >>交任务 森金的勇士
+	.accept 13708 >> 接受任务 森金的勇士
+	.turnin 13708 >> 交任务 森金的勇士
 	.target Zul'tore
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖尔托|r 对话。他有3个日常任务，其中1个可用。接受任何可用的任务
-	.accept 13719 >>接受任务 勇士之战
+	.accept 13719 >> 接受任务 勇士之战
 	.daily 13768,13770,13769 >>接受任务 冠军的利剑 |c99ffff99或者|r 冬之利刃 |c99ffff99或者|r 珍贵的武器
 	.goto IcecrownGlacier,75.95,24.53
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_暗影猎手梅兹克雷|r 和 |cRXP_FRIENDLY_加尔祖|r 对话
-	.daily 13771 >>接受任务 勇士的实战训练
+	.daily 13771 >> 接受任务 勇士的实战训练
 	.goto IcecrownGlacier,76.04,24.59
-	.daily 13772 >>接受任务 总决赛
-	.daily 13857 >>接受任务 兵临城下
+	.daily 13772 >> 接受任务 总决赛
+	.daily 13857 >> 接受任务 兵临城下
 	.goto IcecrownGlacier,75.93,24.41
 	.target Zul'tore
 	.target Shadow Hunter Mezil-kree
@@ -3638,7 +3638,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>前往龙骨荒野东北部的达克玛尔湖
+	.zone Dragonblight >> 前往龙骨荒野东北部的达克玛尔湖
 	.isOnQuest 13769
 step
 	.goto Dragonblight,93.18,26.00
@@ -3652,7 +3652,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>前往晶歌森林
+	.zone CrystalsongForest >> 前往晶歌森林
 	.isOnQuest 13770
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -3664,7 +3664,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>前往嚎风峡湾北部的冬息湖
+	.zone HowlingFjord >> 前往嚎风峡湾北部的冬息湖
 	.isOnQuest 13770
 step
 	.goto HowlingFjord,42.18,19.65
@@ -3676,7 +3676,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>前往灰熊丘陵
+	.zone Grizzly Hills >> 前往灰熊丘陵
 	.isOnQuest 13768
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -3698,16 +3698,16 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13768
 step
-	.goto IcecrownGlacier,76.27,24.38,300 >>返回到冰冠冰川的|T236690:0|t银色比武场
+	.goto IcecrownGlacier,76.27,24.38,300 >> 返回到冰冠冰川的|T236690:0|t银色比武场
 	.isOnQuest 13768,13770,13769,13771,13772,13857
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖尔托|r、|cRXP_FRIENDLY_暗影猎手梅兹克雷|r 和 |cRXP_FRIENDLY_加尔祖|r 对话
-	.turnin 13768 >>交任务 冠军的利剑
+	.turnin 13768 >> 交任务 冠军的利剑
 	.goto IcecrownGlacier,75.95,24.53
-	.turnin 13771 >>交任务 勇士的实战训练
+	.turnin 13771 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.04,24.59
-	.turnin 13772 >>交任务 总决赛
-	.turnin 13857 >>交任务 兵临城下
+	.turnin 13772 >> 交任务 总决赛
+	.turnin 13857 >> 交任务 兵临城下
 	.goto IcecrownGlacier,75.93,24.41
 	.target Zul'tore
 	.target Shadow Hunter Mezil-kree
@@ -3715,12 +3715,12 @@ step
 	.isQuestComplete 13768 -- A Blade Fit For A Champion
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖尔托|r、|cRXP_FRIENDLY_暗影猎手梅兹克雷|r 和 |cRXP_FRIENDLY_加尔祖|r 对话
-	.turnin 13770 >>交任务 冬之利刃
+	.turnin 13770 >> 交任务 冬之利刃
 	.goto IcecrownGlacier,75.95,24.53
-	.turnin 13771 >>交任务 勇士的实战训练
+	.turnin 13771 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.04,24.59
-	.turnin 13772 >>交任务 总决赛
-	.turnin 13857 >>交任务 兵临城下
+	.turnin 13772 >> 交任务 总决赛
+	.turnin 13857 >> 交任务 兵临城下
 	.goto IcecrownGlacier,75.93,24.41
 	.target Zul'tore
 	.target Shadow Hunter Mezil-kree
@@ -3728,12 +3728,12 @@ step
 	.isQuestComplete 13770 -- The Edge Of Winter
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖尔托|r、|cRXP_FRIENDLY_暗影猎手梅兹克雷|r 和 |cRXP_FRIENDLY_加尔祖|r 对话
-	.turnin 13769 >>交任务 珍贵的武器
+	.turnin 13769 >> 交任务 珍贵的武器
 	.goto IcecrownGlacier,75.95,24.53
-	.turnin 13771 >>交任务 勇士的实战训练
+	.turnin 13771 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.04,24.59
-	.turnin 13772 >>交任务 总决赛
-	.turnin 13857 >>交任务 兵临城下
+	.turnin 13772 >> 交任务 总决赛
+	.turnin 13857 >> 交任务 兵临城下
 	.goto IcecrownGlacier,75.93,24.41
 	.target Zul'tore
 	.target Shadow Hunter Mezil-kree
@@ -3741,10 +3741,10 @@ step
 	.isQuestComplete 13769 -- A Worthy Weapon
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_暗影猎手梅兹克雷|r 和 |cRXP_FRIENDLY_加尔祖|r 对话
-	.turnin -13771 >>交任务 勇士的实战训练
+	.turnin -13771 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.04,24.59
-	.turnin -13772 >>交任务 总决赛
-	.turnin -13857 >>交任务 兵临城下
+	.turnin -13772 >> 交任务 总决赛
+	.turnin -13857 >> 交任务 兵临城下
 	.goto IcecrownGlacier,75.93,24.41
 	.target Shadow Hunter Mezil-kree
 	.target Gahju
@@ -3754,9 +3754,9 @@ step
 	>>|c99ffff99如果还需要继续完成日常任务，请在次日重新加载指南，直至你能交此任务|r。
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖尔托|r 对话
 	.goto IcecrownGlacier,75.95,24.53
-	.complete 13719,1 >>交任务 勇士之战 -- Valiant's Seal (25)
-	.turnin 13719 >>交任务 勇士之战
-	.accept 13727 >>接受任务 勇士的挑战
+	.complete 13719,1 >> 交任务 勇士之战 -- Valiant's Seal (25)
+	.turnin 13719 >> 交任务 勇士之战
+	.accept 13727 >> 接受任务 勇士的挑战
 	.target Zul'tore
 step -- The Valiant's Challenge
 	#completewith next
@@ -3781,7 +3781,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_祖尔托|r 对话
 	.goto IcecrownGlacier,75.95,24.53
-	.turnin 13727 >>交任务 勇士的挑战
+	.turnin 13727 >> 交任务 勇士的挑战
 	.target Zul'tore
 step
 	.goto IcecrownGlacier,76.17,24.21
@@ -3807,19 +3807,19 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁诺克·蛮鬃|r 对话
 	.goto IcecrownGlacier,76.20,24.63
-	.accept 13709 >>接受任务 雷霆崖的勇士
-	.turnin 13709 >>交任务 雷霆崖的勇士
+	.accept 13709 >> 接受任务 雷霆崖的勇士
+	.turnin 13709 >> 交任务 雷霆崖的勇士
 	.target Runok Wildmane
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁诺克·蛮鬃|r 对话。他有3个日常任务，其中1个可用。接受任何可用的任务
-	.accept 13720 >>接受任务 勇士之战
+	.accept 13720 >> 接受任务 勇士之战
 	.daily 13773,13775,13774 >>接受任务 冠军的利剑 |c99ffff99或者|r 冬之利刃 |c99ffff99或者|r 珍贵的武器
 	.goto IcecrownGlacier,76.20,24.63
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德恩·暴怒图腾|r 和 |cRXP_FRIENDLY_安卡·爪蹄|r 对话
-	.daily 13776 >>接受任务 勇士的实战训练
+	.daily 13776 >> 接受任务 勇士的实战训练
 	.goto IcecrownGlacier,76.26,24.66
-	.daily 13777 >>接受任务 总决赛
-	.daily 13858 >>接受任务 兵临城下
+	.daily 13777 >> 接受任务 总决赛
+	.daily 13858 >> 接受任务 兵临城下
 	.goto IcecrownGlacier,76.14,24.64
 	.target Runok Wildmane
 	.target Dern Ragetotem
@@ -3935,7 +3935,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>前往龙骨荒野东北部的达克玛尔湖
+	.zone Dragonblight >> 前往龙骨荒野东北部的达克玛尔湖
 	.isOnQuest 13774
 step
 	.goto Dragonblight,93.18,26.00
@@ -3949,7 +3949,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>前往晶歌森林
+	.zone CrystalsongForest >> 前往晶歌森林
 	.isOnQuest 13775
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -3961,7 +3961,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>前往嚎风峡湾北部的冬息湖
+	.zone HowlingFjord >> 前往嚎风峡湾北部的冬息湖
 	.isOnQuest 13775
 step
 	.goto HowlingFjord,42.18,19.65
@@ -3973,7 +3973,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>前往灰熊丘陵
+	.zone Grizzly Hills >> 前往灰熊丘陵
 	.isOnQuest 13773
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -3995,17 +3995,17 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13773
 step
-	.goto IcecrownGlacier,76.46,19.41,300 >>返回到冰冠冰川的|T236690:0|t银色比武场 << Alliance
-	.goto IcecrownGlacier,76.27,24.38,300 >>返回到冰冠冰川的|T236690:0|t银色比武场 << Horde
+	.goto IcecrownGlacier,76.46,19.41,300 >> 返回到冰冠冰川的|T236690:0|t银色比武场 << Alliance
+	.goto IcecrownGlacier,76.27,24.38,300 >> 返回到冰冠冰川的|T236690:0|t银色比武场 << Horde
 	.isOnQuest 13773,13775,13774,13776,13777,13858
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁诺克·蛮鬃|r、|cRXP_FRIENDLY_德恩·暴怒图腾|r 和 |cRXP_FRIENDLY_安卡·爪蹄|r 对话
-	.turnin 13773 >>交任务 冠军的利剑
+	.turnin 13773 >> 交任务 冠军的利剑
 	.goto IcecrownGlacier,76.20,24.63
-	.turnin 13776 >>交任务 勇士的实战训练
+	.turnin 13776 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.26,24.66
-	.turnin 13777 >>交任务 总决赛
-	.turnin 13858 >>交任务 兵临城下
+	.turnin 13777 >> 交任务 总决赛
+	.turnin 13858 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.14,24.64
 	.target Runok Wildmane
 	.target Dern Ragetotem
@@ -4013,12 +4013,12 @@ step
 	.isQuestComplete 13773 -- A Blade Fit For A Champion
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁诺克·蛮鬃|r、|cRXP_FRIENDLY_德恩·暴怒图腾|r 和 |cRXP_FRIENDLY_安卡·爪蹄|r 对话
-	.turnin 13775 >>交任务 冬之利刃
+	.turnin 13775 >> 交任务 冬之利刃
 	.goto IcecrownGlacier,76.20,24.63
-	.turnin 13776 >>交任务 勇士的实战训练
+	.turnin 13776 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.26,24.66
-	.turnin 13777 >>交任务 总决赛
-	.turnin 13858 >>交任务 兵临城下
+	.turnin 13777 >> 交任务 总决赛
+	.turnin 13858 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.14,24.64
 	.target Runok Wildmane
 	.target Dern Ragetotem
@@ -4026,12 +4026,12 @@ step
 	.isQuestComplete 13775 -- The Edge Of Winter
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁诺克·蛮鬃|r、|cRXP_FRIENDLY_德恩·暴怒图腾|r 和 |cRXP_FRIENDLY_安卡·爪蹄|r 对话
-	.turnin 13774 >>交任务 珍贵的武器
+	.turnin 13774 >> 交任务 珍贵的武器
 	.goto IcecrownGlacier,76.20,24.63
-	.turnin 13776 >>交任务 勇士的实战训练
+	.turnin 13776 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.26,24.66
-	.turnin 13777 >>交任务 总决赛
-	.turnin 13858 >>交任务 兵临城下
+	.turnin 13777 >> 交任务 总决赛
+	.turnin 13858 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.14,24.64
 	.target Runok Wildmane
 	.target Dern Ragetotem
@@ -4039,10 +4039,10 @@ step
 	.isQuestComplete 13774 -- A Worthy Weapon
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德恩·暴怒图腾|r 和 |cRXP_FRIENDLY_安卡·爪蹄|r 对话
-	.turnin -13776 >>交任务 勇士的实战训练
+	.turnin -13776 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.26,24.66
-	.turnin -13777 >>交任务 总决赛
-	.turnin -13858 >>交任务 兵临城下
+	.turnin -13777 >> 交任务 总决赛
+	.turnin -13858 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.14,24.64
 	.target Dern Ragetotem
 	.target Anka Clawhoof
@@ -4052,9 +4052,9 @@ step -- Checking if they have 25 Valiant's Seals after a set of turn ins.
 	>>|c99ffff99如果还需要继续完成日常任务，请在次日重新加载指南，直至你能交此任务|r。
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁诺克·蛮鬃|r 对话
 	.goto IcecrownGlacier,76.20,24.63
-	.complete 13720,1 >>交任务 勇士之战 -- Valiant's Seal (25)
-	.turnin 13720 >>交任务 勇士之战
-	.accept 13728 >>接受任务 勇士的挑战
+	.complete 13720,1 >> 交任务 勇士之战 -- Valiant's Seal (25)
+	.turnin 13720 >> 交任务 勇士之战
+	.accept 13728 >> 接受任务 勇士的挑战
 	.target Runok Wildmane
 step -- The Valiant's Challenge
 	#completewith next
@@ -4079,7 +4079,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁诺克·蛮鬃|r 对话
 	.goto IcecrownGlacier,76.20,24.63
-	.turnin 13728 >>交任务 勇士的挑战
+	.turnin 13728 >> 交任务 勇士的挑战
 	.target Runok Wildmane
 step
 	.goto IcecrownGlacier,76.17,24.21
@@ -4105,19 +4105,19 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_死亡猎手维赛里|r 对话
 	.goto IcecrownGlacier,76.53,24.21
-	.accept 13710 >>接受任务 幽暗城的勇士
-	.turnin 13710 >>交任务 幽暗城的勇士
+	.accept 13710 >> 接受任务 幽暗城的勇士
+	.turnin 13710 >> 交任务 幽暗城的勇士
 	.target Deathstalker Visceri
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_死亡猎手维赛里|r 对话。他有3个日常任务，其中1个可用。接受任何可用的任务
-	.accept 13721 >>接受任务 勇士之战
+	.accept 13721 >> 接受任务 勇士之战
 	.daily 13778,13780,13779 >>接受任务 冠军的利剑 |c99ffff99或者|r 冬之利刃 |c99ffff99或者|r 珍贵的武器
 	.goto IcecrownGlacier,76.53,24.21
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎拉·查尔克|r 和 |cRXP_FRIENDLY_马夫德雷奇|r 对话
-	.daily 13781 >>接受任务 勇士的实战训练
+	.daily 13781 >> 接受任务 勇士的实战训练
 	.goto IcecrownGlacier,76.56,24.11
-	.daily 13782 >>接受任务 总决赛
-	.daily 13860 >>接受任务 兵临城下
+	.daily 13782 >> 接受任务 总决赛
+	.daily 13860 >> 接受任务 兵临城下
 	.goto IcecrownGlacier,76.55,24.33
 	.target Deathstalker Visceri
 	.target Sarah Chalke
@@ -4232,7 +4232,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>前往龙骨荒野东北部的达克玛尔湖
+	.zone Dragonblight >> 前往龙骨荒野东北部的达克玛尔湖
 	.isOnQuest 13779
 step
 	.goto Dragonblight,93.18,26.00
@@ -4246,7 +4246,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>前往晶歌森林
+	.zone CrystalsongForest >> 前往晶歌森林
 	.isOnQuest 13780
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -4258,7 +4258,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>前往嚎风峡湾北部的冬息湖
+	.zone HowlingFjord >> 前往嚎风峡湾北部的冬息湖
 	.isOnQuest 13780
 step
 	.goto HowlingFjord,42.18,19.65
@@ -4270,7 +4270,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>前往灰熊丘陵
+	.zone Grizzly Hills >> 前往灰熊丘陵
 	.isOnQuest 13778
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -4292,17 +4292,17 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13778
 step
-	.goto IcecrownGlacier,76.46,19.41,300 >>返回到冰冠冰川的|T236690:0|t银色比武场 << Alliance
-	.goto IcecrownGlacier,76.27,24.38,300 >>返回到冰冠冰川的|T236690:0|t银色比武场 << Horde
+	.goto IcecrownGlacier,76.46,19.41,300 >> 返回到冰冠冰川的|T236690:0|t银色比武场 << Alliance
+	.goto IcecrownGlacier,76.27,24.38,300 >> 返回到冰冠冰川的|T236690:0|t银色比武场 << Horde
 	.isOnQuest 13778,13780,13779,13781,13782,13860
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_死亡猎手维赛里|r、|cRXP_FRIENDLY_莎拉·查尔克|r 和 |cRXP_FRIENDLY_马夫德雷奇|r 对话
-	.turnin 13778 >>交任务 冠军的利剑
+	.turnin 13778 >> 交任务 冠军的利剑
 	.goto IcecrownGlacier,76.53,24.21
-	.turnin 13781 >>交任务 勇士的实战训练
+	.turnin 13781 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.56,24.11
-	.turnin 13782 >>交任务 总决赛
-	.turnin 13860 >>交任务 兵临城下
+	.turnin 13782 >> 交任务 总决赛
+	.turnin 13860 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.55,24.33
 	.target Deathstalker Visceri
 	.target Sarah Chalke
@@ -4310,12 +4310,12 @@ step
 	.isQuestComplete 13778 -- A Blade Fit For A Champion
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_死亡猎手维赛里|r、|cRXP_FRIENDLY_莎拉·查尔克|r 和 |cRXP_FRIENDLY_马夫德雷奇|r 对话
-	.turnin 13780 >>交任务 冬之利刃
+	.turnin 13780 >> 交任务 冬之利刃
 	.goto IcecrownGlacier,76.53,24.21
-	.turnin 13781 >>交任务 勇士的实战训练
+	.turnin 13781 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.56,24.11
-	.turnin 13782 >>交任务 总决赛
-	.turnin 13860 >>交任务 兵临城下
+	.turnin 13782 >> 交任务 总决赛
+	.turnin 13860 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.55,24.33
 	.target Deathstalker Visceri
 	.target Sarah Chalke
@@ -4323,12 +4323,12 @@ step
 	.isQuestComplete 13780 -- The Edge Of Winter
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_死亡猎手维赛里|r、|cRXP_FRIENDLY_莎拉·查尔克|r 和 |cRXP_FRIENDLY_马夫德雷奇|r 对话
-	.turnin 13779 >>交任务 珍贵的武器
+	.turnin 13779 >> 交任务 珍贵的武器
 	.goto IcecrownGlacier,76.53,24.21
-	.turnin 13781 >>交任务 勇士的实战训练
+	.turnin 13781 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.56,24.11
-	.turnin 13782 >>交任务 总决赛
-	.turnin 13860 >>交任务 兵临城下
+	.turnin 13782 >> 交任务 总决赛
+	.turnin 13860 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.55,24.33
 	.target Deathstalker Visceri
 	.target Sarah Chalke
@@ -4336,10 +4336,10 @@ step
 	.isQuestComplete 13779 -- A Worthy Weapon
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莎拉·查尔克|r 和 |cRXP_FRIENDLY_马夫德雷奇|r 对话
-	.turnin -13781 >>交任务 勇士的实战训练
+	.turnin -13781 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.56,24.11
-	.turnin -13782 >>交任务 总决赛
-	.turnin -13860 >>交任务 兵临城下
+	.turnin -13782 >> 交任务 总决赛
+	.turnin -13860 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.55,24.33
 	.target Sarah Chalke
 	.target Handler Dretch
@@ -4349,9 +4349,9 @@ step -- Checking if they have 25 Valiant's Seals after a set of turn ins.
 	>>|c99ffff99如果还需要继续完成日常任务，请在次日重新加载指南，直至你能交此任务|r。
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_死亡猎手维赛里|r 对话
 	.goto IcecrownGlacier,76.53,24.21
-	.complete 13721,1 >>交任务 勇士之战 -- Valiant's Seal (25)
-	.turnin 13721 >>交任务 勇士之战
-	.accept	13729 >>接受任务 勇士的挑战
+	.complete 13721,1 >> 交任务 勇士之战 -- Valiant's Seal (25)
+	.turnin 13721 >> 交任务 勇士之战
+	.accept	13729 >> 接受任务 勇士的挑战
 	.target Deathstalker Visceri
 step -- The Valiant's Challenge
 	#completewith next
@@ -4376,7 +4376,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_死亡猎手维赛里|r 对话
 	.goto IcecrownGlacier,76.53,24.21
-	.turnin	13729 >>交任务 勇士的挑战
+	.turnin	13729 >> 交任务 勇士的挑战
 	.target Deathstalker Visceri
 step
 	.goto IcecrownGlacier,76.17,24.21
@@ -4403,20 +4403,20 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃蕾希·晨歌|r 对话
 	.goto IcecrownGlacier,76.45,23.85
-	.accept 13711 >>接受任务 银月城的勇士
-	.turnin 13711 >>交任务 银月城的勇士
+	.accept 13711 >> 接受任务 银月城的勇士
+	.turnin 13711 >> 交任务 银月城的勇士
 	.target Eressea Dawnsinger
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_碎颅者莫克拉|r 对话。他有3个日常任务，其中1个可用。接受任何可用的任务
-	.accept 13722 >>接受任务 勇士之战
+	.accept 13722 >> 接受任务 勇士之战
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃蕾希·晨歌|r 对话。她有3个日常任务，其中1个可用。接受任何可用的任务
 	.daily 13783,13785,13784 >>接受任务 冠军的利剑 |c99ffff99或者|r 冬之利刃 |c99ffff99或者|r 珍贵的武器
 	.goto IcecrownGlacier,76.45,23.85
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克希尔·炎枪|r 和 |cRXP_FRIENDLY_安妮拉·索隆|r 对话
-	.daily 13786 >>接受任务 勇士的实战训练
+	.daily 13786 >> 接受任务 勇士的实战训练
 	.goto IcecrownGlacier,76.41,23.75
-	.daily 13787 >>接受任务 总决赛
-	.daily 13859 >>接受任务 兵临城下
+	.daily 13787 >> 接受任务 总决赛
+	.daily 13859 >> 接受任务 兵临城下
 	.goto IcecrownGlacier,76.52,23.93
 	.target Eressea Dawnsinger
 	.target Kethiel Sunlance
@@ -4533,7 +4533,7 @@ step -- A Worthy Weapon v2
 step
 	#completewith next
 	.goto Dragonblight,93.18,26.00
-	.zone Dragonblight >>前往龙骨荒野东北部的达克玛尔湖
+	.zone Dragonblight >> 前往龙骨荒野东北部的达克玛尔湖
 	.isOnQuest 13784
 step
 	.goto Dragonblight,93.18,26.00
@@ -4547,7 +4547,7 @@ step
 step -- The Edge Of Winter v2
 	#completewith next
 	.goto CrystalsongForest,55.05,75.04
-	.zone CrystalsongForest >>前往晶歌森林
+	.zone CrystalsongForest >> 前往晶歌森林
 	.isOnQuest 13785
 step
 	.goto CrystalsongForest,55.05,75.04
@@ -4559,7 +4559,7 @@ step
 step
 	#completewith next
 	.goto HowlingFjord,42.18,19.65
-	.zone HowlingFjord >>前往嚎风峡湾北部的冬息湖
+	.zone HowlingFjord >> 前往嚎风峡湾北部的冬息湖
 	.isOnQuest 13785
 step
 	.goto HowlingFjord,42.18,19.65
@@ -4571,7 +4571,7 @@ step
 step -- A Blade Fit For A Champion v2
 	#completewith next
 	.goto Grizzly Hills,60.83,51.36
-	.zone Grizzly Hills >>前往灰熊丘陵
+	.zone Grizzly Hills >> 前往灰熊丘陵
 	.isOnQuest 13783
 step
 	.goto Grizzly Hills,60.83,51.36,10,0
@@ -4593,16 +4593,16 @@ step
 	.target Maiden of Ashwood Lake
 	.isOnQuest 13783
 step
-	.goto IcecrownGlacier,76.27,24.38,300 >>返回到冰冠冰川的|T236690:0|t银色比武场
+	.goto IcecrownGlacier,76.27,24.38,300 >> 返回到冰冠冰川的|T236690:0|t银色比武场
 	.isOnQuest 13783,13785,13784,13786,13787,13859
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃蕾希·晨歌|r、|cRXP_FRIENDLY_克希尔·炎枪|r 和 |cRXP_FRIENDLY_安妮拉·索隆|r 对话
-	.turnin 13783 >>交任务 冠军的利剑
+	.turnin 13783 >> 交任务 冠军的利剑
 	.goto IcecrownGlacier,76.45,23.85
-	.turnin 13786 >>交任务 勇士的实战训练
+	.turnin 13786 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.41,23.75
-	.turnin 13787 >>交任务 总决赛
-	.turnin 13859 >>交任务 兵临城下
+	.turnin 13787 >> 交任务 总决赛
+	.turnin 13859 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.52,23.93
 	.target Eressea Dawnsinger
 	.target Kethiel Sunlance
@@ -4610,12 +4610,12 @@ step
 	.isQuestComplete 13783 -- A Blade Fit For A Champion
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃蕾希·晨歌|r、|cRXP_FRIENDLY_克希尔·炎枪|r 和 |cRXP_FRIENDLY_安妮拉·索隆|r 对话
-	.turnin 13785 >>交任务 冬之利刃
+	.turnin 13785 >> 交任务 冬之利刃
 	.goto IcecrownGlacier,76.45,23.85
-	.turnin 13786 >>交任务 勇士的实战训练
+	.turnin 13786 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.41,23.75
-	.turnin 13787 >>交任务 总决赛
-	.turnin 13859 >>交任务 兵临城下
+	.turnin 13787 >> 交任务 总决赛
+	.turnin 13859 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.52,23.93
 	.target Eressea Dawnsinger
 	.target Kethiel Sunlance
@@ -4623,12 +4623,12 @@ step
 	.isQuestComplete 13785 -- The Edge Of Winter
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃蕾希·晨歌|r、|cRXP_FRIENDLY_克希尔·炎枪|r 和 |cRXP_FRIENDLY_安妮拉·索隆|r 对话
-	.turnin 13784 >>交任务 珍贵的武器
+	.turnin 13784 >> 交任务 珍贵的武器
 	.goto IcecrownGlacier,76.45,23.85
-	.turnin 13786 >>交任务 勇士的实战训练
+	.turnin 13786 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.41,23.75
-	.turnin 13787 >>交任务 总决赛
-	.turnin 13859 >>交任务 兵临城下
+	.turnin 13787 >> 交任务 总决赛
+	.turnin 13859 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.52,23.93
 	.target Eressea Dawnsinger
 	.target Kethiel Sunlance
@@ -4636,10 +4636,10 @@ step
 	.isQuestComplete 13784 -- A Worthy Weapon
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克希尔·炎枪|r 和 |cRXP_FRIENDLY_安妮拉·索隆|r 对话
-	.turnin -13786 >>交任务 勇士的实战训练
+	.turnin -13786 >> 交任务 勇士的实战训练
 	.goto IcecrownGlacier,76.41,23.75
-	.turnin -13787 >>交任务 总决赛
-	.turnin -13859 >>交任务 兵临城下
+	.turnin -13787 >> 交任务 总决赛
+	.turnin -13859 >> 交任务 兵临城下
 	.goto IcecrownGlacier,76.52,23.93
 	.target Kethiel Sunlance
 	.target Aneera Thuron
@@ -4649,9 +4649,9 @@ step -- Checking if they have 25 Valiant's Seals after a set of turn ins.
 	>>|c99ffff99如果还需要继续完成日常任务，请在次日重新加载指南，直至你能交此任务|r。
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃蕾希·晨歌|r 对话
 	.goto IcecrownGlacier,76.45,23.85
-	.complete 13722,1 >>交任务 勇士之战 -- Valiant's Seal (25)
-	.turnin 13722 >>交任务 勇士之战
-	.accept 13731 >>接受任务 勇士的挑战
+	.complete 13722,1 >> 交任务 勇士之战 -- Valiant's Seal (25)
+	.turnin 13722 >> 交任务 勇士之战
+	.accept 13731 >> 接受任务 勇士的挑战
 	.target Eressea Dawnsinger
 step -- The Valiant's Challenge
 	#completewith next
@@ -4676,7 +4676,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_埃蕾希·晨歌|r 对话
 	.goto IcecrownGlacier,76.45,23.85
-	.turnin 13731 >>交任务 勇士的挑战
+	.turnin 13731 >> 交任务 勇士的挑战
 	.target Eressea Dawnsinger
 step
 	.goto IcecrownGlacier,76.17,24.21
@@ -4703,8 +4703,8 @@ RXPGuides.RegisterGuide([[
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_北伐军战士莱达拉|r 对话
 	.goto IcecrownGlacier,69.43,23.02
-	.accept 13633 >>接受任务 西部荒野的黑骑士？ << Alliance
-	.accept 13634 >>接受任务 银松森林的黑骑士？ << Horde
+	.accept 13633 >> 接受任务 西部荒野的黑骑士？ << Alliance
+	.accept 13634 >> 接受任务 银松森林的黑骑士？ << Horde
 	.target Crusader Rhydalla
 step << Mage
 	.zone Stormwind City >>飞往暴风城 << Alliance
@@ -4717,10 +4717,10 @@ step << Alliance !Mage
 step << Alliance
 	#completewith next
 	.goto StormwindClassic,66.2,62.2
-	.fly Westfall >>飞往西部荒野
+	.fly Westfall >> 飞往西部荒野
 	.isOnQuest 13633
 step << Alliance
-	>>前往月溪镇。拾取房屋内的 |cRXP_PICK_尘封的日记|r
+	>> 前往月溪镇。拾取房屋内的 |cRXP_PICK_尘封的日记|r
 	.goto Westfall,42.09,69.66
 	.complete 13633,1 -- Dusty Journal (1)
 	.isOnQuest 13633
@@ -4731,10 +4731,10 @@ step << Horde !Mage
 step << Horde
 	#completewith next
 	.goto Undercity,63.25,48.56
-	.fly Silverpine >>飞往银松森林
+	.fly Silverpine >> 飞往银松森林
 	.isOnQuest 13634
 step << Horde
-	>>前往瓦尔甘农场。拾取房屋内的 |cRXP_PICK_尘封的日记|r
+	>> 前往瓦尔甘农场。拾取房屋内的 |cRXP_PICK_尘封的日记|r
 	.goto Silverpine Forest,52.85,27.92,8,0
 	.goto Silverpine Forest,53.17,28.10
 	.complete 13634,1 -- Dusty Journal (1)
@@ -4745,14 +4745,14 @@ step << Mage
 	.isOnQuest 13633,13634
 step
 	#completewith next
-	.goto IcecrownGlacier,69.43,23.02,500 >>返回到冰冠冰川的|T236690:0|t银色比武场
+	.goto IcecrownGlacier,69.43,23.02,500 >> 返回到冰冠冰川的|T236690:0|t银色比武场
 	.isOnQuest 13633,13634
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_北伐军战士莱达拉|r 对话
 	.goto IcecrownGlacier,69.43,23.02
-	.turnin 13633 >>交任务 西部荒野的黑骑士？ << Alliance
-	.turnin 13634 >>交任务 银松森林的黑骑士？ << Horde
-	.accept 13641 >>接受任务 先知的水晶
+	.turnin 13633 >> 交任务 西部荒野的黑骑士？ << Alliance
+	.turnin 13634 >> 交任务 银松森林的黑骑士？ << Horde
+	.accept 13641 >> 接受任务 先知的水晶
 	.target Crusader Rhydalla
 step << Mage
 	#completewith next
@@ -4762,7 +4762,7 @@ step
 	#completewith next
 	.isOnQuest 13641
 	.goto CrystalsongForest,43.90,40.07
-	.zone CrystalsongForest >>前往晶歌森林
+	.zone CrystalsongForest >> 前往晶歌森林
 step
 	>>击杀 |cRXP_ENEMY_自由的先知|r。拾取 |cRXP_LOOT_先知的水晶|r
 	.goto CrystalsongForest,43.90,40.07,30,0
@@ -4774,13 +4774,13 @@ step
 	.mob Unbound Seer
 step
 	#completewith next
-	.goto IcecrownGlacier,69.43,23.02,500 >>返回到冰冠冰川的|T236690:0|t银色比武场
+	.goto IcecrownGlacier,69.43,23.02,500 >> 返回到冰冠冰川的|T236690:0|t银色比武场
 	.isOnQuest 13641
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_北伐军战士莱达拉|r 对话
 	.goto IcecrownGlacier,69.43,23.02
-	.turnin 13641 >>交任务 先知的水晶
-	.accept 13643 >>接受任务 死者讲述的故事
+	.turnin 13641 >> 交任务 先知的水晶
+	.accept 13643 >> 接受任务 死者讲述的故事
 	.target Crusader Rhydalla
 step
 	>>向东前往 |T236690:0|t银色比武场的墓地
@@ -4795,8 +4795,8 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_北伐军战士莱达拉|r 对话
 	.goto IcecrownGlacier,69.43,23.02
-	.turnin 13643 >>交任务 死者讲述的故事
-	.accept 13654 >>接受任务 怪异的侍从
+	.turnin 13643 >> 交任务 死者讲述的故事
+	.accept 13654 >> 接受任务 怪异的侍从
 	.target Crusader Rhydalla
 step << Mage
 	#completewith next
@@ -4806,7 +4806,7 @@ step
 	#completewith next
 	.isOnQuest 13654
 	.goto CrystalsongForest,37.48,57.47
-	.zone CrystalsongForest >>前往晶歌森林
+	.zone CrystalsongForest >> 前往晶歌森林
 step
 	>>击杀 |cRXP_ENEMY_骷髅伐木工|r。拾取一块 |cRXP_LOOT_大腿骨|r
 	.goto CrystalsongForest,37.48,57.47,15,0
@@ -4827,13 +4827,13 @@ step
 	.mob Maloric
 step
 	#completewith next
-	.goto IcecrownGlacier,69.43,23.02,500 >>返回到冰冠冰川的|T236690:0|t银色比武场
+	.goto IcecrownGlacier,69.43,23.02,500 >> 返回到冰冠冰川的|T236690:0|t银色比武场
 	.isOnQuest 13654
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_北伐军战士莱达拉|r 对话
 	.goto IcecrownGlacier,69.43,23.02
-	.turnin 13654 >>交任务 怪异的侍从
-	.accept 13663 >>接受任务 黑骑士的命令
+	.turnin 13654 >> 交任务 怪异的侍从
+	.accept 13663 >> 接受任务 黑骑士的命令
 	.target Crusader Rhydalla
 step
 	.use 45083 >>对 |cFFFFFF99黑骑士的狮鹫|r 使用背包中的 |T133331:0|t|cRXP_FRIENDLY_魔法缰绳|r
@@ -4854,13 +4854,13 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_北伐军战士莱达拉|r 对话
 	.goto IcecrownGlacier,69.43,23.02
-	.turnin 13663 >>交任务 黑骑士的命令
+	.turnin 13663 >> 交任务 黑骑士的命令
 	.target Crusader Rhydalla
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_北伐军战士莱达拉|r 对话
 	>>注意：接受该任务需要你已成为 |cRXP_WARN_冠军|r。如果你无法接受此任务，请先完成|cRXP_LOOT_1.0|r 成为冠军指南
 	.goto IcecrownGlacier,69.43,23.02
-	.accept 13664 >>接受任务 黑骑士之死
+	.accept 13664 >> 接受任务 黑骑士之死
 	.target Crusader Rhydalla
 step
 	#completewith next
@@ -4888,13 +4888,13 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_北伐军战士莱达拉|r 对话
 	.goto IcecrownGlacier,69.43,23.02
-	.turnin 13664 >>交任务 黑骑士之死
+	.turnin 13664 >> 交任务 黑骑士之死
 	.target Crusader Rhydalla
 
 step -- 14016 and 14017 added in 3.2 - Add in Phase 3
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_北伐军战士莱达拉|r 对话
 	.goto IcecrownGlacier,69.43,23.02
-	.accept 14016 >>接受任务 黑骑士的诅咒
+	.accept 14016 >> 接受任务 黑骑士的诅咒
 	.target Crusader Rhydalla
 step
 	>>向东前往 |T236690:0|t银色比武场的墓地
@@ -4906,8 +4906,8 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_北伐军战士莱达拉|r 对话
 	.goto IcecrownGlacier,69.43,23.02
-	.turnin 14016 >>交任务 黑骑士之墓
-	.accept 14017 >>接受任务 黑骑士的命运
+	.turnin 14016 >> 交任务 黑骑士之墓
+	.accept 14017 >> 接受任务 黑骑士的命运
 	.target Crusader Rhydalla
 step
 	>>东行，飞往亡语者岗哨
@@ -4920,7 +4920,7 @@ step
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_北伐军战士莱达拉|r 对话
 	.goto IcecrownGlacier,69.43,23.02
-	.turnin 14017 >>交任务 黑骑士之墓
+	.turnin 14017 >> 交任务 黑骑士之墓
 	.target Crusader Rhydalla
 step
 	+|cRXP_WARN_黑骑士|cRXP_ENEMY_的故事线已到此结束！|r
@@ -4940,31 +4940,31 @@ step
 	>>如果无法接受任务，请确认已完成前提指南
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_裁决者玛蕾尔·图哈特|r 对话
 	.goto IcecrownGlacier,69.66,22.86
-	.accept 13794 >>接受任务 纯洁者耶德瑞克 << !DK
-	.accept 13795 >>接受任务 科罗克·斩亡者 << DK
+	.accept 13794 >> 接受任务 纯洁者耶德瑞克 << !DK
+	.accept 13795 >> 接受任务 科罗克·斩亡者 << DK
 	.target Justicar Mariel Trueheart
 step << !DK
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纯洁者耶德瑞克|r 对话
 	.goto IcecrownGlacier,69.96,23.44
-	.turnin 13794 >>交任务 纯洁者耶德瑞克
+	.turnin 13794 >> 交任务 纯洁者耶德瑞克
 	.target Eadric the Pure
 step << DK
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科罗克·斩亡者|r 对话
 	.goto IcecrownGlacier,73.80,20.06
-	.turnin 13795 >>交任务 科罗克·斩亡者
+	.turnin 13795 >> 交任务 科罗克·斩亡者
 	.target Crok Scourgebane
 step << !DK
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纯洁者耶德瑞克|r、|cRXP_FRIENDLY_鲁莉|r 和 |cRXP_FRIENDLY_塞利安·碎日|r 对话
-	.daily 13682 >>接受任务 空中的威胁 << Alliance
-	.daily 13809 >>接受任务 空中的威胁 << Horde
-	.daily 13861 >>接受任务 堡垒外的战斗 << Alliance
-	.daily 13862 >>接受任务 堡垒外的战斗 << Horde
+	.daily 13682 >> 接受任务 空中的威胁 << Alliance
+	.daily 13809 >> 接受任务 空中的威胁 << Horde
+	.daily 13861 >> 接受任务 堡垒外的战斗 << Alliance
+	.daily 13862 >> 接受任务 堡垒外的战斗 << Horde
 	.goto IcecrownGlacier,69.96,23.44
-	.daily 13790 >>接受任务 冠军的比武 << Alliance
-	.daily 13811 >>接受任务 冠军的比武 << Horde
+	.daily 13790 >> 接受任务 冠军的比武 << Alliance
+	.daily 13811 >> 接受任务 冠军的比武 << Horde
 	.goto IcecrownGlacier,69.93,23.33
-	.daily 13789 >>接受任务 攻入敌阵 << Alliance
-	.daily 13810 >>接受任务 攻入敌阵 << Horde
+	.daily 13789 >> 接受任务 攻入敌阵 << Alliance
+	.daily 13810 >> 接受任务 攻入敌阵 << Horde
 	.goto IcecrownGlacier,69.92,23.53
 	.isQuestTurnedIn 13664 -- Must complete 13664 to accept Threat From Above
 	.target Eadric the Pure
@@ -4972,30 +4972,30 @@ step << !DK
 	.target Cellian Daybreak
 step << !DK
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纯洁者耶德瑞克|r、|cRXP_FRIENDLY_鲁莉|r 和 |cRXP_FRIENDLY_塞利安·碎日|r 对话
-	.daily 13861 >>接受任务 堡垒外的战斗 << Alliance
-	.daily 13862 >>接受任务 堡垒外的战斗 << Horde
+	.daily 13861 >> 接受任务 堡垒外的战斗 << Alliance
+	.daily 13862 >> 接受任务 堡垒外的战斗 << Horde
 	.goto IcecrownGlacier,69.96,23.44
-	.daily 13790 >>接受任务 冠军的比武 << Alliance
-	.daily 13811 >>接受任务 冠军的比武 << Horde
+	.daily 13790 >> 接受任务 冠军的比武 << Alliance
+	.daily 13811 >> 接受任务 冠军的比武 << Horde
 	.goto IcecrownGlacier,69.93,23.33
-	.daily 13789 >>接受任务 攻入敌阵 << Alliance
-	.daily 13810 >>接受任务 攻入敌阵 << Horde
+	.daily 13789 >> 接受任务 攻入敌阵 << Alliance
+	.daily 13810 >> 接受任务 攻入敌阵 << Horde
 	.goto IcecrownGlacier,69.92,23.53
 	.target Eadric the Pure
 	.target Luuri
 	.target Cellian Daybreak
 step << DK
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科罗克·斩亡者|r、|cRXP_FRIENDLY_伊尔蕾·夜幕|r 和 |cRXP_FRIENDLY_放血者佐尔比|r 对话
-	.daily 13788 >>接受任务 空中的威胁 << Alliance
-	.daily 13812 >>接受任务 空中的威胁 << Horde
-	.daily 13864 >>接受任务 堡垒外的战斗 << Alliance
-	.daily 13863 >>接受任务 堡垒外的战斗 << Horde
+	.daily 13788 >> 接受任务 空中的威胁 << Alliance
+	.daily 13812 >> 接受任务 空中的威胁 << Horde
+	.daily 13864 >> 接受任务 堡垒外的战斗 << Alliance
+	.daily 13863 >> 接受任务 堡垒外的战斗 << Horde
 	.goto IcecrownGlacier,73.80,20.06
-	.daily 13793 >>接受任务 冠军的比武 << Alliance
-	.daily 13814 >>接受任务 冠军的比武 << Horde
+	.daily 13793 >> 接受任务 冠军的比武 << Alliance
+	.daily 13814 >> 接受任务 冠军的比武 << Horde
 	.goto IcecrownGlacier,73.59,20.08
-	.daily 13791 >>接受任务 攻入敌阵 << Alliance
-	.daily 13813 >>接受任务 攻入敌阵 << Horde
+	.daily 13791 >> 接受任务 攻入敌阵 << Alliance
+	.daily 13813 >> 接受任务 攻入敌阵 << Horde
 	.goto IcecrownGlacier,73.80,19.45
 	.isQuestTurnedIn 13664
 	.target Crok Scourgebane
@@ -5003,14 +5003,14 @@ step << DK
 	.target Zor'be the Bloodletter
 step << DK
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科罗克·斩亡者|r、|cRXP_FRIENDLY_伊尔蕾·夜幕|r 和 |cRXP_FRIENDLY_放血者佐尔比|r 对话
-	.daily 13864 >>接受任务 堡垒外的战斗 << Alliance
-	.daily 13863 >>接受任务 堡垒外的战斗 << Horde
+	.daily 13864 >> 接受任务 堡垒外的战斗 << Alliance
+	.daily 13863 >> 接受任务 堡垒外的战斗 << Horde
 	.goto IcecrownGlacier,73.80,20.06
-	.daily 13793 >>接受任务 冠军的比武 << Alliance
-	.daily 13814 >>接受任务 冠军的比武 << Horde
+	.daily 13793 >> 接受任务 冠军的比武 << Alliance
+	.daily 13814 >> 接受任务 冠军的比武 << Horde
 	.goto IcecrownGlacier,73.59,20.08
-	.daily 13791 >>接受任务 攻入敌阵 << Alliance
-	.daily 13813 >>接受任务 攻入敌阵 << Horde
+	.daily 13791 >> 接受任务 攻入敌阵 << Alliance
+	.daily 13813 >> 接受任务 攻入敌阵 << Horde
 	.goto IcecrownGlacier,73.80,19.45
 	.target Crok Scourgebane
 	.target Illyrie Nightfall
@@ -5292,23 +5292,23 @@ step -- Battle Before The Citadel
 	.isOnQuest 13861,13862,13864,13863
 	.mob Boneguard Commander
 step
-	.goto IcecrownGlacier,69.96,23.44,300 >>返回到冰冠冰川的|T236690:0|t银色比武场 << !DK
+	.goto IcecrownGlacier,69.96,23.44,300 >> 返回到冰冠冰川的|T236690:0|t银色比武场 << !DK
 	.isOnQuest 13682,13809,13861,13862,13790,13811,13789,13810
 step
-	.goto IcecrownGlacier,73.80,20.06,300 >>返回到冰冠冰川的|T236690:0|t银色比武场 << DK
+	.goto IcecrownGlacier,73.80,20.06,300 >> 返回到冰冠冰川的|T236690:0|t银色比武场 << DK
 	.isOnQuest 13788,13812,13864,13863,13793,13814,13791,13813
 step << !DK
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纯洁者耶德瑞克|r、|cRXP_FRIENDLY_鲁莉|r 和 |cRXP_FRIENDLY_塞利安·碎日|r 对话
-	.turnin 13682 >>交任务 空中的威胁 << Alliance
-	.turnin 13809 >>交任务 空中的威胁 << Horde
-	.turnin 13861 >>交任务 堡垒外的战斗 << Alliance
-	.turnin 13862 >>交任务 堡垒外的战斗 << Horde
+	.turnin 13682 >> 交任务 空中的威胁 << Alliance
+	.turnin 13809 >> 交任务 空中的威胁 << Horde
+	.turnin 13861 >> 交任务 堡垒外的战斗 << Alliance
+	.turnin 13862 >> 交任务 堡垒外的战斗 << Horde
 	.goto IcecrownGlacier,69.96,23.44
-	.turnin 13790 >>交任务 冠军的比武 << Alliance
-	.turnin 13811 >>交任务 冠军的比武 << Horde
+	.turnin 13790 >> 交任务 冠军的比武 << Alliance
+	.turnin 13811 >> 交任务 冠军的比武 << Horde
 	.goto IcecrownGlacier,69.93,23.33
-	.turnin 13789 >>交任务 攻入敌阵 << Alliance
-	.turnin 13810 >>交任务 攻入敌阵 << Horde
+	.turnin 13789 >> 交任务 攻入敌阵 << Alliance
+	.turnin 13810 >> 交任务 攻入敌阵 << Horde
 	.goto IcecrownGlacier,69.92,23.53
 	.target Eadric the Pure
 	.target Luuri
@@ -5317,30 +5317,30 @@ step << !DK
 	.isQuestComplete 13809 << Horde
 step << !DK
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纯洁者耶德瑞克|r、|cRXP_FRIENDLY_鲁莉|r 和 |cRXP_FRIENDLY_塞利安·碎日|r 对话
-	.turnin 13861 >>交任务 堡垒外的战斗 << Alliance
-	.turnin 13862 >>交任务 堡垒外的战斗 << Horde
+	.turnin 13861 >> 交任务 堡垒外的战斗 << Alliance
+	.turnin 13862 >> 交任务 堡垒外的战斗 << Horde
 	.goto IcecrownGlacier,69.96,23.44
-	.turnin 13790 >>交任务 冠军的比武 << Alliance
-	.turnin 13811 >>交任务 冠军的比武 << Horde
+	.turnin 13790 >> 交任务 冠军的比武 << Alliance
+	.turnin 13811 >> 交任务 冠军的比武 << Horde
 	.goto IcecrownGlacier,69.93,23.33
-	.turnin 13789 >>交任务 攻入敌阵 << Alliance
-	.turnin 13810 >>交任务 攻入敌阵 << Horde
+	.turnin 13789 >> 交任务 攻入敌阵 << Alliance
+	.turnin 13810 >> 交任务 攻入敌阵 << Horde
 	.goto IcecrownGlacier,69.92,23.53
 	.target Eadric the Pure
 	.target Luuri
 	.target Cellian Daybreak
 step << DK
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科罗克·斩亡者|r、|cRXP_FRIENDLY_伊尔蕾·夜幕|r 和 |cRXP_FRIENDLY_放血者佐尔比|r 对话
-	.turnin 13788 >>交任务 空中的威胁 << Alliance
-	.turnin 13812 >>交任务 空中的威胁 << Horde
-	.turnin 13864 >>交任务 堡垒外的战斗 << Alliance
-	.turnin 13863 >>交任务 堡垒外的战斗 << Horde
+	.turnin 13788 >> 交任务 空中的威胁 << Alliance
+	.turnin 13812 >> 交任务 空中的威胁 << Horde
+	.turnin 13864 >> 交任务 堡垒外的战斗 << Alliance
+	.turnin 13863 >> 交任务 堡垒外的战斗 << Horde
 	.goto IcecrownGlacier,73.80,20.06
-	.turnin 13793 >>交任务 冠军的比武 << Alliance
-	.turnin 13814 >>交任务 冠军的比武 << Horde
+	.turnin 13793 >> 交任务 冠军的比武 << Alliance
+	.turnin 13814 >> 交任务 冠军的比武 << Horde
 	.goto IcecrownGlacier,73.59,20.08
-	.turnin 13791 >>交任务 攻入敌阵 << Alliance
-	.turnin 13813 >>交任务 攻入敌阵 << Horde
+	.turnin 13791 >> 交任务 攻入敌阵 << Alliance
+	.turnin 13813 >> 交任务 攻入敌阵 << Horde
 	.goto IcecrownGlacier,73.80,19.45
 	.target Crok Scourgebane
 	.target Illyrie Nightfall
@@ -5349,14 +5349,14 @@ step << DK
 	.isQuestComplete 13812 << Horde
 step << DK
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科罗克·斩亡者|r、|cRXP_FRIENDLY_伊尔蕾·夜幕|r 和 |cRXP_FRIENDLY_放血者佐尔比|r 对话
-	.turnin 13864 >>交任务 堡垒外的战斗 << Alliance
-	.turnin 13863 >>交任务 堡垒外的战斗 << Horde
+	.turnin 13864 >> 交任务 堡垒外的战斗 << Alliance
+	.turnin 13863 >> 交任务 堡垒外的战斗 << Horde
 	.goto IcecrownGlacier,73.80,20.06
-	.turnin 13793 >>交任务 冠军的比武 << Alliance
-	.turnin 13814 >>交任务 冠军的比武 << Horde
+	.turnin 13793 >> 交任务 冠军的比武 << Alliance
+	.turnin 13814 >> 交任务 冠军的比武 << Horde
 	.goto IcecrownGlacier,73.59,20.08
-	.turnin 13791 >>交任务 攻入敌阵 << Alliance
-	.turnin 13813 >>交任务 攻入敌阵 << Horde
+	.turnin 13791 >> 交任务 攻入敌阵 << Alliance
+	.turnin 13813 >> 交任务 攻入敌阵 << Horde
 	.goto IcecrownGlacier,73.80,19.45
 	.target Crok Scourgebane
 	.target Illyrie Nightfall

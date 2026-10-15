@@ -85,7 +85,7 @@ step << Hunter
     .goto Eversong Woods,39.05,20.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_游侠萨琳娜|r 对话
     .turnin 9393 >>交任务 猎人训练
-    .accept 10070 >>接受任务 稳固射击
+    .accept 10070 >> 接受任务 稳固射击
     .train 56641 >>学习 |T132213:0|t[稳固射击] << Cata
     .target 游侠萨琳娜
 step << Mage cata
@@ -398,7 +398,7 @@ step
     .use 20483
 step
     #completewith SolanianB
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
     #completewith next
     >>击杀 |cRXP_ENEMY_法力浮龙|r。拾取他们的 |cRXP_LOOT_奥术薄片|r
@@ -584,19 +584,19 @@ step
 step
     .goto Eversong Woods,48.165,45.999
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾尔杜·炙痕|r 对话
-    .accept 8463 >>接受任务 不稳定的法力水晶
+    .accept 8463 >> 接受任务 不稳定的法力水晶
     .target 艾尔杜·炙痕
 step << Rogue
     .goto Eversong Woods,48.492,45.905
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_盖隆|r 对话 对话
-    .vendor >>卖掉灰色垃圾物品。如果卖掉当前武器后金币足够购买 |T135321:0|t[步兵剑](5银9铜)，就一并出售;如果钱还不够，稍后再回来购买
+    .vendor >> 卖掉灰色垃圾物品。如果卖掉当前武器后金币足够购买 |T135321:0|t[步兵剑](5银9铜)，就一并出售;如果钱还不够，稍后再回来购买
     .target 盖隆
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Rogue
     .goto Eversong Woods,48.492,45.905
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_盖隆|r 对话 对话
-    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买1把|r |T135321:0|t[步兵剑]
+    >>|cRXP_BUY_购买1把|r |T135321:0|t[步兵剑]|cRXP_BUY_从他那里|r
     .collect 2488,1,8468,1 --Gladius (1)
     .target 盖隆
     .money <0.0509
@@ -605,7 +605,7 @@ step << Rogue
 step << Warrior/Paladin
     .goto Eversong Woods,48.492,45.905
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_盖隆|r 对话 对话
-    .vendor >>清理杂物，把灰色物品都卖掉。如果卖掉你的武器能凑够买 |T133053:0|t[木槌棒] 的钱（6 银 66 铜），就一起卖了。若钱还不够，稍后再回来购买
+    .vendor >> 清理杂物，把灰色物品都卖掉。如果卖掉你的武器能凑够买 |T133053:0|t[木槌棒] 的钱（6 银 66 铜），就一起卖了。若钱还不够，稍后再回来购买
     .target 盖隆
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5
@@ -794,14 +794,14 @@ step << Warlock Cata
 step << Rogue
     .goto Eversong Woods,48.492,45.905
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_盖隆|r 对话 对话
-    .vendor >>卖掉灰色垃圾物品。如果卖掉当前武器后金币足够购买 |T135321:0|t[步兵剑](5银9铜)，就一并出售;如果钱还不够，稍后再回来购买
+    .vendor >> 卖掉灰色垃圾物品。如果卖掉当前武器后金币足够购买 |T135321:0|t[步兵剑](5银9铜)，就一并出售;如果钱还不够，稍后再回来购买
     .target 盖隆
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Rogue
     .goto Eversong Woods,48.492,45.905
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_盖隆|r 对话 对话
-    >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买1把|r |T135321:0|t[步兵剑]
+    >>|cRXP_BUY_购买1把|r |T135321:0|t[步兵剑]|cRXP_BUY_从他那里|r
     .collect 2488,1,9062,1 --Gladius (1)
     .target 盖隆
     .money <0.0509
@@ -810,7 +810,7 @@ step << Rogue
 step << Warrior/Paladin
     .goto Eversong Woods,48.492,45.905
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_盖隆|r 对话 对话
-    .vendor >>清理杂物，把灰色物品都卖掉。如果卖掉你的武器能凑够买 |T133053:0|t[木槌棒] 的钱（6 银 66 铜），就一起卖了。若钱还不够，稍后再回来购买
+    .vendor >> 清理杂物，把灰色物品都卖掉。如果卖掉你的武器能凑够买 |T133053:0|t[木槌棒] 的钱（6 银 66 铜），就一起卖了。若钱还不够，稍后再回来购买
     .target 盖隆
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5
@@ -872,7 +872,7 @@ step
     >>|cRXP_WARN_使用|T133464:0|t[|cRXP_LOOT_秘密文件|r] 来激发任务|r
     .complete 9352,1 --Intruder Defeated
     .collect 20765,1,8482 --Incriminating Documents (1)
-    .accept 8482 >>接受任务 秘密文件
+    .accept 8482 >> 接受任务 秘密文件
     .mob 达纳苏斯斥候
     .use 20765
 step
@@ -932,7 +932,7 @@ step
     .goto Eversong Woods,27.94,59.41,20,0
     .goto Eversong Woods,28.01,61.01,20,0
     .goto Eversong Woods,26.25,60.46
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
 step
     #xprate <1.2
@@ -946,7 +946,7 @@ step
 step
     .goto Eversong Woods,43.34,70.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_游侠戴戈利恩|r 对话
-    .accept 8892 >>接受任务 阳帆港
+    .accept 8892 >> 接受任务 阳帆港
     .target 游侠戴戈利恩
 step << BloodElf
     .goto Eversong Woods,43.698,71.555
@@ -1131,7 +1131,7 @@ step
     .mob 魔泉捕猎者
 step
     #completewith SunsailTurnin
-    .deathskip >>去送死，在|cRXP_FRIENDLY_灵魂医者|r那里复活，或者跑回晴风村
+    .deathskip >> 去送死，在|cRXP_FRIENDLY_灵魂医者|r那里复活，或者跑回晴风村
 step
     #xprate <1.2
     .goto Eversong Woods,44.72,69.63
@@ -1236,7 +1236,7 @@ step
     #xprate <1.2
     .goto Eversong Woods,54.28,70.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_学徒米尔维达|r 对话
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .turnin 8487 >>交任务 被腐蚀的土地
     .timer 9,被腐蚀的土地 剧情
     .accept 8488 >>接受任务 出人意料的结果
@@ -1279,7 +1279,7 @@ step
 step
     #xprate <1.2
     #completewith DefendingFBV
-    .deathskip >>去送死，在|cRXP_FRIENDLY_灵魂医者|r那里复活，或者跑回晴风村
+    .deathskip >> 去送死，在|cRXP_FRIENDLY_灵魂医者|r那里复活，或者跑回晴风村
     .isQuestComplete 9252
 step
     #xprate <1.2
@@ -1293,12 +1293,12 @@ step
     #label DefendingFBV
     .goto Eversong Woods,46.93,71.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨蕾恩|r 对话
-    .turnin 9252 >>交任务 保卫晴风村
+    .turnin 9252 >> 交任务 保卫晴风村
     .target 游侠萨蕾恩
     .isQuestComplete 9252
 step << !Undead
     #completewith IncrDocs
-    .hs >>炉石返回鹰翼广场，永歌森林
+    .hs >> 炉石返回鹰翼广场，永歌森林
     .cooldown item,6948,>2,1
 step
     #completewith IncrDocs
@@ -1311,7 +1311,7 @@ step
     #label IncrDocs
     .goto Eversong Woods,48.17,46.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾尔杜·炙痕|r 对话
-    .turnin 8482 >>交任务 秘密文件
+    .turnin 8482 >> 交任务 秘密文件
     .target 艾尔杜·炙痕
 step << Paladin Cata
     .goto Eversong Woods,48.39,46.47

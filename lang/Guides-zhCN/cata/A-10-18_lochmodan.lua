@@ -21,8 +21,8 @@ step
     .maxlevel 20,endOfTheGuide
 step << Pandaren
     .goto 84,70.94,72.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
-    .fly Gol'Bolar Quarry >>飞往古博拉采掘场
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    .fly Gol'Bolar Quarry >> 飞往古博拉采掘场
 	.target 杜加尔·朗德瑞克
     .zoneskip Dun Morogh
     .zoneskip Loch Modan
@@ -33,7 +33,7 @@ step << Pandaren
     .goto 27,88.331,47.792,12,0
     .goto 27,88.873,48.312,12,0
     .goto 48,12.138,54.947,20,0
-    .goto 48,14.025,56.641,12 >>|cRXP_WARN_沿山路向上走，然后小心地向下靠近|r |cRXP_FRIENDLY_驾驶员塞克·锤足|r
+    .goto 48,14.025,56.641,12 >> |cRXP_WARN_沿山路向上走，然后小心地向下靠近|r |cRXP_FRIENDLY_驾驶员塞克·锤足|r
     .noflyable
 step << Pandaren
     .goto 48,14.006,56.485
@@ -70,7 +70,7 @@ step
     .goto 48,21.398,66.390,30,0
     .goto 48,21.559,68.292,30,0
     .goto 48,23.670,75.378,15,0
-    .goto 48,23.495,75.054,12 >>前往地堡里找 |cRXP_FRIENDLY_拉格弗斯上尉|r
+    .goto 48,23.495,75.054,12 >> 前往地堡里找 |cRXP_FRIENDLY_拉格弗斯上尉|r
     .xp >30,1
     .isOnQuest 13635
 step
@@ -124,7 +124,7 @@ step
     .goto 48,24.950,78.306,20,0
     .goto 48,27.712,76.586,20,0
     .goto 48,30.076,78.276
-    .subzone 923 >>沿小路上行，前往碎石怪之谷
+    .subzone 923 >> 沿小路上行，前往碎石怪之谷
     .xp >30,1
 step
 #loop
@@ -201,7 +201,7 @@ step
 step
     .goto 48,33.940,50.955
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
-    .fp Thelsamar >>获取塞尔萨玛的飞行路径
+    .fp Thelsamar >> 获取塞尔萨玛的飞行路径
     .target 索格拉姆·伯雷森
 step
     .goto 48,35.079,46.663
@@ -226,42 +226,42 @@ step
 step << Paladin cata
     .goto 48,35.374,48.810
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_法尔多克·石信|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Faldoc Stonefaith
 step << Rogue cata
     .goto 48,34.935,48.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格尔达·铜刃|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Galda Bronzeblade
 step << Mage cata
     .goto 48,35.012,48.445
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_绿袍甘道尔|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Gindle the Green
 step << Hunter cata
     .goto 48,34.553,48.117
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝尔达·野性之心|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Belda Wildheart
 step << Warrior cata
     .goto 48,33.951,46.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格伦丁·迅斧|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Grendin Swiftaxe
 step << Shaman cata
     .goto 48,36.596,48.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格伦希尔德·暗爪|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Grenhild Darktalon
 step << Warlock cata
     .goto 48,35.879,46.199
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索尔宾·暗影齿轮|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Solbin Shadowcog
 step << Priest cata
     .goto 48,36.108,45.893
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女牧师贝尔拉|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Priestess Baerla
 step
     .goto 48,37.303,46.517
@@ -332,7 +332,7 @@ step
 step
     #label SilverStreamMine
     #completewith ForemanSharpsneer
-    .goto 48,35.49,19.13,15 >>进入银溪矿洞
+    .goto 48,35.49,19.13,15 >> 进入银溪矿洞
 step
     #sticky
     #label koboldmine1
@@ -357,7 +357,7 @@ step
 step
     #requires koboldmine1
     #completewith next
-    .goto 48,35.49,19.13,15 >>离开银泉矿洞
+    .goto 48,35.49,19.13,15 >> 离开银泉矿洞
 step
     #completewith TheBearer
     >>击杀 |cRXP_ENEMY_森林潜伏者|r
@@ -407,7 +407,7 @@ step
     .mob 森林潜伏者
 step
     .isOnQuest 26860,25118
-    .hs >>炉石到塞尔萨玛
+    .hs >> 炉石到塞尔萨玛
     .cooldown item,6948,>2,1
 step
     .goto 48,35.969,44.330
@@ -437,27 +437,27 @@ step
 step << Paladin cata
     .goto 48,35.374,48.810
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_法尔多克·石信|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Faldoc Stonefaith
 step << Rogue cata
     .goto 48,34.935,48.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格尔达·铜刃|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Galda Bronzeblade
 step << Mage cata
     .goto 48,35.012,48.445
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_绿袍甘道尔|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Gindle the Green
 step << Hunter cata
     .goto 48,34.553,48.117
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝尔达·野性之心|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Belda Wildheart
 step << Warrior cata
     .goto 48,33.951,46.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格伦丁·迅斧|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Grendin Swiftaxe
 step
     .goto 48,35.079,46.663
@@ -467,17 +467,17 @@ step
 step << Shaman cata
     .goto 48,36.596,48.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格伦希尔德·暗爪|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Grenhild Darktalon
 step << Warlock cata
     .goto 48,35.879,46.199
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索尔宾·暗影齿轮|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Solbin Shadowcog
 step << Priest cata
     .goto 48,36.108,45.893
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女牧师贝尔拉|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Priestess Baerla
 step
     .goto 48,40.642,58.310,15,0
@@ -490,7 +490,7 @@ step
 step
     .goto 48,36.752,61.108
     >>点击洞穴内的 |cRXP_PICK_被盗的探险者协会文件|r
-    .accept 13656>>接受任务 探险者协会的文件（1/6）
+    .accept 13656>> 接受任务 探险者协会的文件（1/6）
 step
     #completewith next
     >>击杀 |cRXP_ENEMY_洛克鹫|r
@@ -560,15 +560,15 @@ step
     .maxlevel 20,endOfTheGuide
 step
     .isOnQuest 26868
-    .use 60681 >>|cRXP_WARN_打开|r |T133639:0|t[凯娜莉的贮藏包] |cRXP_WARN_获取|r |T237425:0|t[|cRXP_LOOT_精巧的植物伪装包|r] |cRXP_WARN_和|r |T134839:0|t[|cRXP_LOOT_超浓鱼人信息素|r]
+    .use 60681 >> |cRXP_WARN_打开|r |T133639:0|t[凯娜莉的贮藏包] |cRXP_WARN_获取|r |T237425:0|t[|cRXP_LOOT_精巧的植物伪装包|r] |cRXP_WARN_和|r |T134839:0|t[|cRXP_LOOT_超浓鱼人信息素|r]
     .collect 60502,1,26868,1 -- Clever Plant Disguise Kit (1)
     .collect 60503,1,26868,1 -- Potent Murloc Pheromones (1)
 step
     .isOnQuest 26868
-    .goto 48,50.585,56.048,85 >>|cRXP_WARN_前去找|r |cRXP_ENEMY_藓皮使者|r
+    .goto 48,50.585,56.048,85 >> |cRXP_WARN_前去找|r |cRXP_ENEMY_藓皮使者|r
 step
     .isOnQuest 26868
-    .cast 82788 >>|cRXP_WARN_使用|r |T237425:0|t[|cRXP_LOOT_精巧的植物伪装包|r] |cRXP_WARN_来伪装自己|r
+    .cast 82788 >> |cRXP_WARN_使用|r |T237425:0|t[|cRXP_LOOT_精巧的植物伪装包|r] |cRXP_WARN_来伪装自己|r
     .use 60502
 step
     .goto 48,50.585,56.048
@@ -660,7 +660,7 @@ step
 step
     #completewith next
     .goto 48,69.478,51.742,70,0
-    .goto 48,83.597,60.675,40 >>前往旅行者营地
+    .goto 48,83.597,60.675,40 >> 前往旅行者营地
     .subzoneskip 147
 step
     .goto 48,82.789,63.459
@@ -782,7 +782,7 @@ step
     .mob Mudbelly Boar
 step
     .isOnQuest 27016,27028,13660,27025,27030,27031
-    .hs >>炉石返回旅行者营地
+    .hs >> 炉石返回旅行者营地
     .cooldown item,6948,>2,1
 step
 #requires doc5
@@ -823,13 +823,13 @@ step
     .mob Bobcat
 step
     .goto 48,72.590,72.017,70,0
-    .goto 48,71.603,77.167,20 >>前往铁翼洞穴
+    .goto 48,71.603,77.167,20 >> 前往铁翼洞穴
     .subzoneskip 5391
     .isOnQuest 27032
 step
     .isOnQuest 27032
     #completewith next
-    .goto 48,78.594,76.215,20 >>|cRXP_WARN_前往洞穴深处，一路清怪|r
+    .goto 48,78.594,76.215,20 >> |cRXP_WARN_前往洞穴深处，一路清怪|r
 step
     .goto 48,78.594,76.215
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_生锈的天行者|r 对话
@@ -838,7 +838,7 @@ step
     .accept 27033 >>接受任务 天行者之心
 step
     #completewith next
-    .goto 48,71.603,77.167,20 >>离开铁翼洞穴
+    .goto 48,71.603,77.167,20 >> 离开铁翼洞穴
     .subzoneskip 5391,1
     .isOnQuest 27033
 step
@@ -864,7 +864,7 @@ step
     .mob Bobcat
 step
     .isOnQuest 27026,27036
-    .hs >>炉石返回旅行者营地
+    .hs >> 炉石返回旅行者营地
     .cooldown item,6948,>2,1
 step
     .goto 48,82.789,63.459
@@ -916,48 +916,48 @@ step
 step << Paladin cata
     .goto 48,35.374,48.810
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_法尔多克·石信|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Faldoc Stonefaith
 step << Rogue cata
     .goto 48,34.935,48.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格尔达·铜刃|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Galda Bronzeblade
 step << Mage cata
     .goto 48,35.012,48.445
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_绿袍甘道尔|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Gindle the Green
 step << Hunter cata
     .goto 48,34.553,48.117
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝尔达·野性之心|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Belda Wildheart
 step << Warrior cata
     .goto 48,33.951,46.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格伦丁·迅斧|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Grendin Swiftaxe
 step << Shaman cata
     .goto 48,36.596,48.341
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格伦希尔德·暗爪|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Grenhild Darktalon
 step << Warlock cata
     .goto 48,35.879,46.199
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索尔宾·暗影齿轮|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Solbin Shadowcog
 step << Priest cata
     .goto 48,36.108,45.893
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女牧师贝尔拉|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Priestess Baerla
 step
 #questguide
     .goto 48,33.938,50.932
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
-    .fly Farstrider Lodge >>飞往旅行者营地
+    .fly Farstrider Lodge >> 飞往旅行者营地
     .target 索格拉姆·伯雷森
 step
 #questguide
@@ -1045,7 +1045,7 @@ step
 #questguide
     .goto 48,25.315,1.591,15,0
     .goto 56,54.873,83.458,15,0
-    .zone Wetlands >>前往湿地
+    .zone Wetlands >> 前往湿地
     .isOnQuest 26137
 step
 #questguide

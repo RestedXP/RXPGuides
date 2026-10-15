@@ -9,14 +9,14 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith OpeningtheDoor
-	.zone 85 >>前往奥格瑞玛 << Horde
-	.zone 84 >>前往暴风城 << Alliance
+	.zone 85 >> 前往奥格瑞玛 << Horde
+	.zone 84 >> 前往暴风城 << Alliance
 	.zoneskip 198
 step
     #completewith OpeningtheDoor
     .goto 85,51.000,38.221 << Horde
     .goto 84,76.178,18.695 << Alliance
-	.zone 198 >>使用传送门前往海加尔山
+	.zone 198 >> 使用传送门前往海加尔山
 step
     #label OpeningtheDoor
     .goto 198/1,-2082.800,4424.500
@@ -76,7 +76,7 @@ step
     .accept 29198 >>接受任务 庇护所保卫战
 step
     .goto 198/1,-2080.200,4421.700
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 29198,1
 step
     .goto 198/1,-2080.200,4421.700
@@ -98,7 +98,7 @@ step
     .goto 198,27.108,62.009,5,0
     .goto 198,27.170,62.563,5,0
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦托克劳|r 或 |cRXP_FRIENDLY_米露恩|r 对话
-    .daily 29125,29147,29164,29101,29161 >>接取随机刷新的日常任务
+    .daily 29125,29147,29164,29101,29161 >> 接取随机刷新的日常任务
     .disablecheckbox
     .questcount <1,29125,29147,29164,29101,29161
     .target Matoclaw
@@ -167,7 +167,7 @@ step
     .goto 198,14.98,43.10,70,0
     .goto 198,10.29,36.11,70,0
     >>击杀 |cRXP_ENEMY_刺背入侵者|r
-    .use 69235 >>|cRXP_WARN_在他们的尸体上|r|cRXP_WARN_使用|r |T134298:0|t[狼的尖牙]
+    .use 69235 >> |cRXP_WARN_在他们的尸体上|r|cRXP_WARN_使用|r |T134298:0|t[狼的尖牙]
     .complete 29164,1 -- Howl atop an invader's corpse (10)
     .mob Flame Terror
     .mob Brimstone Hound
@@ -176,7 +176,7 @@ step
 step
     .isOnQuest 29147
     #completewith next
-    .cast 97241 >>|cRXP_WARN_使用|r |T135992:0|t[群鸟女王的翎羽] |cRXP_WARN_来变身成|r |cRXP_FRIENDLY_艾维娜之翼|r
+    .cast 97241 >> |cRXP_WARN_使用|r |T135992:0|t[群鸟女王的翎羽] |cRXP_WARN_来变身成|r |cRXP_FRIENDLY_艾维娜之翼|r
     .use 69234
 step
     .isOnQuest 29147
@@ -185,7 +185,7 @@ step
     .goto 198,10.13,36.76,80,0
     .goto 198,13.24,33.64,80,0
     .goto 198,18.65,40.28,80,0
-    .use 69234 >>|cRXP_WARN_在 |r高山鸣雀|cRXP_WARN_, |cRXP_FRIENDLY_森林猫头鹰|r 和|cRXP_FRIENDLY_ |r金翼雄鹰|r |cRXP_FRIENDLY_附近使用|r |T132172:0|t[召唤鸟群] (1)
+    .use 69234 >> |cRXP_WARN_在 |r高山鸣雀|cRXP_WARN_, |cRXP_FRIENDLY_森林猫头鹰|r 和|cRXP_FRIENDLY_ |r金翼雄鹰|r |cRXP_FRIENDLY_附近使用|r |T132172:0|t[召唤鸟群] (1)
     .complete 29147,1 -- Alpine Songbird gathered (12)
     .target +Alpine Songbird
     .complete 29147,2 -- Forest Owl gathered (5)
@@ -205,7 +205,7 @@ step
 step
     #completewith next
     .goto 198,14.310,33.203
-    .vehicle >>点击 |cRXP_PICK_攀爬树|r 来攀爬它
+    .vehicle >> 点击 |cRXP_PICK_攀爬树|r 来攀爬它
     .target Climbing Tree
     .isOnQuest 29161
 step
@@ -221,31 +221,31 @@ step
     .complete 29161,1 --6/6 Hyjal Bear Cubs Rescued
 step
     .isQuestComplete 29161
-    .exitvehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .exitvehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .vehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .vehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .exitvehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .exitvehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .vehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .vehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .exitvehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .exitvehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .vehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .vehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .exitvehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .exitvehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     .isOnQuest 29161
     >>在任务日志中点击任务提交弹窗。
@@ -295,12 +295,12 @@ step
     #completewith next
     .isOnQuest 29162
     .goto 198/1,-1500.700,4929.300
-    .cast 97517 >>|cRXP_WARN_使用|r |T134093:0|t[艾森娜的翡翠] |cRXP_WARN_来召唤|r |cRXP_ENEMY_派拉齐尼斯|r
+    .cast 97517 >> |cRXP_WARN_使用|r |T134093:0|t[艾森娜的翡翠] |cRXP_WARN_来召唤|r |cRXP_ENEMY_派拉齐尼斯|r
     .use 69232
 step
     .isOnQuest 29162
     .goto 198/1,-1500.700,4929.300
-    .use 69232 >>击杀 |cRXP_ENEMY_派拉齐尼斯|r
+    .use 69232 >> 击杀 |cRXP_ENEMY_派拉齐尼斯|r
     >>|cRXP_WARN_使用|r |T134093:0|t[艾森娜的翡翠] |cRXP_WARN_移除|r |cRXP_WARN_派拉齐尼斯|cRXP_ENEMY_ |r施加的 |T136016:0|t[沸腾毒箭] 减益|r
     .complete 29162,1 --|Pyrachnis slain: 1/1
     .mob Pyrachnis
@@ -308,36 +308,36 @@ step
     #completewith next
     .isOnQuest 29126
     .goto 198,41.667,56.130
-    .cast 97012 >>|cRXP_WARN_在|r 灰烬堆|cRXP_WARN_ 上使用|cRXP_PICK_ |T135139:0|t[守护者之杖] |r来召唤|r |cRXP_ENEMY_盖伦格斯|r
+    .cast 97012 >> |cRXP_WARN_在|r 灰烬堆|cRXP_WARN_ 上使用|cRXP_PICK_ |T135139:0|t[守护者之杖] |r来召唤|r |cRXP_ENEMY_盖伦格斯|r
     .use 68997
 step
     .goto 198,41.667,56.130
     .isOnQuest 29126
-    .use 68997 >>击杀|cRXP_ENEMY_盖伦格斯|r
+    .use 68997 >> 击杀|cRXP_ENEMY_盖伦格斯|r
     .complete 29126,1 -- Galenges slain (1)
     .mob Galenges
 step
     .isOnQuest 29148
     #completewith next
     .goto 198/1,-1500.700,4929.300
-    .cast 97324 >>|cRXP_WARN_在西部的火焰传送门附近使用|r |T135992:0|t[群鸟女王的翎羽] |cRXP_WARN_来召唤|r |cRXP_ENEMY_米拉盖佐尔|r
+    .cast 97324 >> |cRXP_WARN_在西部的火焰传送门附近使用|r |T135992:0|t[群鸟女王的翎羽] |cRXP_WARN_来召唤|r |cRXP_ENEMY_米拉盖佐尔|r
     .use 69212
 step
     .isOnQuest 29148
     .goto 198/1,-1500.700,4929.300
-    .use 69212 >>击杀 |cRXP_ENEMY_米拉盖佐尔|r
+    .use 69212 >> 击杀 |cRXP_ENEMY_米拉盖佐尔|r
     .complete 29148,1 -- Millagazor slain (1)
     .mob Millagazor
 step
     .isOnQuest 29165
     #completewith next
     .goto 198,41.667,56.130
-    .cast 97498 >>|cRXP_WARN_使用|r |T134298:0|t[狼的尖牙] |cRXP_WARN_来召唤|r |cRXP_ENEMY_莱拉克斯|r
+    .cast 97498 >> |cRXP_WARN_使用|r |T134298:0|t[狼的尖牙] |cRXP_WARN_来召唤|r |cRXP_ENEMY_莱拉克斯|r
     .use 69225
 step
     .isOnQuest 29165
     .goto 198,41.667,56.130
-    .use 69225 >>击杀 |cRXP_ENEMY_莱拉克斯|r
+    .use 69225 >> 击杀 |cRXP_ENEMY_莱拉克斯|r
     .complete 29165,1 -- Lylagar slain (1)
     .mob Lylagar
 step
@@ -517,7 +517,7 @@ step
 step
     #completewith GatesofHell
     .goto 198,27.484,56.394
-    .zone 338 >>穿过传送门前往火焰之地
+    .zone 338 >> 穿过传送门前往火焰之地
 step
     >>击杀 |cRXP_ENEMY_黑曜石熔渣之主|r
     .complete 29201,1 --|Secure a foothold in the Firelands: 1/1
@@ -544,7 +544,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith WispAway
     .goto 198,27.484,56.394
-    .zone 338 >>穿过传送门前往火焰之地
+    .zone 338 >> 穿过传送门前往火焰之地
 step
     .goto 338,48.513,86.257
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莱茵·羽歌|r 对话
@@ -559,7 +559,7 @@ step
     .goto 338,45.589,85.822
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_将军泰尔迪斯·月落|r 对话
     .daily 29179 >>接受任务 元素敌人
-    .daily 29304,29141,29142,29137 >>接取随机刷新的日常任务
+    .daily 29304,29141,29142,29137 >> 接取随机刷新的日常任务
     .target General Taldris Moonfall
 step -- 29138 Burn Victims
     .isOnQuest 29138
@@ -571,7 +571,7 @@ step -- 29138 Burn Victims
     .goto 338,45.8,64.2,45,0
     .goto 338,52.8,64.4,45,0
     .goto 338,53.6,79.6,45,0
-    .use 69240 >>|cRXP_WARN_对|r |cRXP_WARN_受伤的海加尔防御者|r |cRXP_FRIENDLY_使用|r |T463860:0|t[魔法药膏]
+    .use 69240 >> |cRXP_WARN_对|r |cRXP_WARN_受伤的海加尔防御者|r |cRXP_FRIENDLY_使用|r |T463860:0|t[魔法药膏]
     .complete 29138,1 -- Wounded Hyjal Defender saved 1/1
     .target Wounded Hyjal Defender
 step -- 29179 Hostile Elements
@@ -708,25 +708,25 @@ step
     .isQuestComplete 29304
     .goto 338,45.589,85.822
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_将军泰尔迪斯·月落|r 对话
-    .dailyturnin 29304 >>交任务 犬祸
+    .dailyturnin 29304 >> 交任务 犬祸
     .target General Taldris Moonfall
 step
     .isQuestComplete 29141
     .goto 338,45.589,85.822
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_将军泰尔迪斯·月落|r 对话
-    .dailyturnin 29141 >>交任务 摔得更惨
+    .dailyturnin 29141 >> 交任务 摔得更惨
     .target General Taldris Moonfall
 step
     .isQuestComplete 29142
     .goto 338,45.589,85.822
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_将军泰尔迪斯·月落|r 对话
-    .dailyturnin 29142 >>交任务 叛徒归来
+    .dailyturnin 29142 >> 交任务 叛徒归来
     .target General Taldris Moonfall
 step
     .isQuestComplete 29137
     .goto 338,45.589,85.822
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_将军泰尔迪斯·月落|r 对话
-    .dailyturnin 29137 >>交任务 防线上的突破口
+    .dailyturnin 29137 >> 交任务 防线上的突破口
     .target General Taldris Moonfall
 step
     .isQuestComplete 29138
@@ -755,7 +755,7 @@ step
 step
     #completewith HyjalQuests
     .goto 338,53.026,83.693
-    .zone 198 >>使用传送门前往海加尔山
+    .zone 198 >> 使用传送门前往海加尔山
 step --accepted back at sanctuary of malorne
     .goto 198/1,-2088.800,4452.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_队长索伦·月落|r 对话
@@ -766,7 +766,7 @@ step
     .goto 198,27.108,62.009,5,0
     .goto 198,27.170,62.563,5,0
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦托克劳|r 或 |cRXP_FRIENDLY_米露恩|r 对话
-    .daily 29125,29147,29164,29101,29161 >>接取随机刷新的日常任务
+    .daily 29125,29147,29164,29101,29161 >> 接取随机刷新的日常任务
     .disablecheckbox
     .questcount <1,29125,29147,29164,29101,29161
     .target Matoclaw
@@ -777,7 +777,7 @@ step
     .goto 198,27.527,62.510,5,0
     .goto 198,27.172,62.565,5,0
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦托克劳|r 或 |cRXP_FRIENDLY_多尔达恩·织夜者|r 对话
-    .daily 29123,29149,29127,29163,29166,29247,29246,29248 >>接取随机刷新的日常任务
+    .daily 29123,29149,29127,29163,29166,29247,29246,29248 >> 接取随机刷新的日常任务
     .disablecheckbox
     .questcount <1,29123,29149,29127,29163,29166,29247,29246,29248
     .target Matoclaw
@@ -846,7 +846,7 @@ step
     .goto 198,14.98,43.10,70,0
     .goto 198,10.29,36.11,70,0
     >>击杀 |cRXP_ENEMY_刺背入侵者|r
-    .use 69235 >>|cRXP_WARN_在他们的尸体上|r|cRXP_WARN_使用|r |T134298:0|t[狼的尖牙]
+    .use 69235 >> |cRXP_WARN_在他们的尸体上|r|cRXP_WARN_使用|r |T134298:0|t[狼的尖牙]
     .complete 29164,1 -- Howl atop an invader's corpse (10)
     .mob Flame Terror
     .mob Brimstone Hound
@@ -855,7 +855,7 @@ step
 step
     .isOnQuest 29147
     #completewith next
-    .cast 97241 >>|cRXP_WARN_使用|r |T135992:0|t[群鸟女王的翎羽] |cRXP_WARN_来变身成|r |cRXP_FRIENDLY_艾维娜之翼|r
+    .cast 97241 >> |cRXP_WARN_使用|r |T135992:0|t[群鸟女王的翎羽] |cRXP_WARN_来变身成|r |cRXP_FRIENDLY_艾维娜之翼|r
     .use 69234
 step
     .isOnQuest 29147
@@ -864,7 +864,7 @@ step
     .goto 198,10.13,36.76,80,0
     .goto 198,13.24,33.64,80,0
     .goto 198,18.65,40.28,80,0
-    .use 69234 >>|cRXP_WARN_在 |r高山鸣雀|cRXP_WARN_, |cRXP_FRIENDLY_森林猫头鹰|r 和|cRXP_FRIENDLY_ |r金翼雄鹰|r |cRXP_FRIENDLY_附近使用|r |T132172:0|t[召唤鸟群] (1)
+    .use 69234 >> |cRXP_WARN_在 |r高山鸣雀|cRXP_WARN_, |cRXP_FRIENDLY_森林猫头鹰|r 和|cRXP_FRIENDLY_ |r金翼雄鹰|r |cRXP_FRIENDLY_附近使用|r |T132172:0|t[召唤鸟群] (1)
     .complete 29147,1 -- Alpine Songbird gathered (12)
     .target +Alpine Songbird
     .complete 29147,2 -- Forest Owl gathered (5)
@@ -884,7 +884,7 @@ step
 step
     #completewith next
     .goto 198,14.310,33.203
-    .vehicle >>点击 |cRXP_PICK_攀爬树|r 来攀爬它
+    .vehicle >> 点击 |cRXP_PICK_攀爬树|r 来攀爬它
     .target Climbing Tree
     .isOnQuest 29161
 step
@@ -900,31 +900,31 @@ step
     .complete 29161,1 --6/6 Hyjal Bear Cubs Rescued
 step
     .isQuestComplete 29161
-    .exitvehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .exitvehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .vehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .vehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .exitvehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .exitvehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .vehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .vehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .exitvehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .exitvehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .vehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .vehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .exitvehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .exitvehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     .isOnQuest 29161
     >>在任务日志中点击任务提交弹窗。
@@ -974,12 +974,12 @@ step
     #completewith next
     .isOnQuest 29162
     .goto 198/1,-1500.700,4929.300
-    .cast 97517 >>|cRXP_WARN_使用|r |T134093:0|t[艾森娜的翡翠] |cRXP_WARN_来召唤|r |cRXP_ENEMY_派拉齐尼斯|r
+    .cast 97517 >> |cRXP_WARN_使用|r |T134093:0|t[艾森娜的翡翠] |cRXP_WARN_来召唤|r |cRXP_ENEMY_派拉齐尼斯|r
     .use 69232
 step
     .isOnQuest 29162
     .goto 198/1,-1500.700,4929.300
-    .use 69232 >>击杀 |cRXP_ENEMY_派拉齐尼斯|r
+    .use 69232 >> 击杀 |cRXP_ENEMY_派拉齐尼斯|r
     >>|cRXP_WARN_使用|r |T134093:0|t[艾森娜的翡翠] |cRXP_WARN_移除|r |cRXP_WARN_派拉齐尼斯|cRXP_ENEMY_ |r施加的 |T136016:0|t[沸腾毒箭] 减益|r
     .complete 29162,1 --|Pyrachnis slain: 1/1
     .mob Pyrachnis
@@ -987,36 +987,36 @@ step
     #completewith next
     .isOnQuest 29126
     .goto 198,41.667,56.130
-    .cast 97012 >>|cRXP_WARN_在|r 灰烬堆|cRXP_WARN_ 上使用|cRXP_PICK_ |T135139:0|t[守护者之杖] |r来召唤|r |cRXP_ENEMY_盖伦格斯|r
+    .cast 97012 >> |cRXP_WARN_在|r 灰烬堆|cRXP_WARN_ 上使用|cRXP_PICK_ |T135139:0|t[守护者之杖] |r来召唤|r |cRXP_ENEMY_盖伦格斯|r
     .use 68997
 step
     .goto 198,41.667,56.130
     .isOnQuest 29126
-    .use 68997 >>击杀|cRXP_ENEMY_盖伦格斯|r
+    .use 68997 >> 击杀|cRXP_ENEMY_盖伦格斯|r
     .complete 29126,1 -- Galenges slain (1)
     .mob Galenges
 step
     .isOnQuest 29148
     #completewith next
     .goto 198/1,-1500.700,4929.300
-    .cast 97324 >>|cRXP_WARN_在西部的火焰传送门附近使用|r |T135992:0|t[群鸟女王的翎羽] |cRXP_WARN_来召唤|r |cRXP_ENEMY_米拉盖佐尔|r
+    .cast 97324 >> |cRXP_WARN_在西部的火焰传送门附近使用|r |T135992:0|t[群鸟女王的翎羽] |cRXP_WARN_来召唤|r |cRXP_ENEMY_米拉盖佐尔|r
     .use 69212
 step
     .isOnQuest 29148
     .goto 198/1,-1500.700,4929.300
-    .use 69212 >>击杀 |cRXP_ENEMY_米拉盖佐尔|r
+    .use 69212 >> 击杀 |cRXP_ENEMY_米拉盖佐尔|r
     .complete 29148,1 -- Millagazor slain (1)
     .mob Millagazor
 step
     .isOnQuest 29165
     #completewith next
     .goto 198,41.667,56.130
-    .cast 97498 >>|cRXP_WARN_使用|r |T134298:0|t[狼的尖牙] |cRXP_WARN_来召唤|r |cRXP_ENEMY_莱拉克斯|r
+    .cast 97498 >> |cRXP_WARN_使用|r |T134298:0|t[狼的尖牙] |cRXP_WARN_来召唤|r |cRXP_ENEMY_莱拉克斯|r
     .use 69225
 step
     .isOnQuest 29165
     .goto 198,41.667,56.130
-    .use 69225 >>击杀 |cRXP_ENEMY_莱拉克斯|r
+    .use 69225 >> 击杀 |cRXP_ENEMY_莱拉克斯|r
     .complete 29165,1 -- Lylagar slain (1)
     .mob Lylagar
 step
@@ -1252,7 +1252,7 @@ step
     #completewith next
     .isQuestComplete 29128
     .goto 198,27.484,56.394
-    .zone 338 >>穿过传送门前往火焰之地
+    .zone 338 >> 穿过传送门前往火焰之地
 step
     .isQuestComplete 29128
     .goto 338,45.589,85.822
@@ -1269,7 +1269,7 @@ step
 step
     #completewith next
     .goto 338,53.026,83.693
-    .zone 198 >>使用传送门前往海加尔山
+    .zone 198 >> 使用传送门前往海加尔山
 step
     .isQuestComplete 29181
     .goto 198,47.017,91.361
@@ -1292,7 +1292,7 @@ step
     #completewith next
     .isOnQuest 29182
     .goto 198,27.484,56.394
-    .zone 338 >>穿过传送门前往火焰之地
+    .zone 338 >> 穿过传送门前往火焰之地
 step
     .isQuestComplete 29181
     .goto 338,43.028,80.598
@@ -1319,7 +1319,7 @@ step
     .skipgossip
 step
     #completewith next
-    .subzone 5746 >>|cRXP_WARN_掉进大洞。前往|r |cRXP_FRIENDLY_希萨莉·黑鸦|r
+    .subzone 5746 >> |cRXP_WARN_掉进大洞。前往|r |cRXP_FRIENDLY_希萨莉·黑鸦|r
 step
     .isQuestTurnedIn 29181
     .goto 338,42.541,59.713
@@ -1350,7 +1350,7 @@ step
 step
     .isOnQuest 29272
     .goto 338,51.897,30.965
-    .gossip 53233 >>再次与 |cRXP_FRIENDLY_安伦·觅影者|r 对话以开始护送
+    .gossip 53233 >> 再次与 |cRXP_FRIENDLY_安伦·觅影者|r 对话以开始护送
     .skipgossip
     .target Anren Shadowseeker
 step
@@ -1402,7 +1402,7 @@ step
     #label ExitUnderground
     #completewith DruidDailies
     .goto 338,33.08,67.62
-    .aura 98833 >>|cRXP_WARN_回到你之前跳下来的那个大洞口。站在|r |T514278:0|t[暖气流喷管]|cRXP_WARN_上，然后往上跳，就能回到熔火前线的地面了|r
+    .aura 98833 >> |cRXP_WARN_回到你之前跳下来的那个大洞口。站在|r |T514278:0|t[暖气流喷管]|cRXP_WARN_上，然后往上跳，就能回到熔火前线的地面了|r
     .subzoneskip 5746,1
 step
     #requires ExitUnderground
@@ -1433,20 +1433,20 @@ step
     .isQuestTurnedIn 29181
     .goto 338,34.496,56.208
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫希斯·轻翼|r 对话
-    .daily 29290,29287,29288 >>接取随机刷新的日常任务
+    .daily 29290,29287,29288 >> 接取随机刷新的日常任务
     .target Morthis Whisperwing
 step
     .isQuestTurnedIn 29181
     #label DruidDailies
     .goto 338,34.295,56.419
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿尔索恩·风歌|r 对话
-    .daily 29293,29296 >>接取随机刷新的日常任务
+    .daily 29293,29296 >> 接取随机刷新的日常任务
     .target Arthorn Windsong
 step
     #completewith next
     .goto 338,33.808,57.177
     .isOnQuest 29290
-    .vehicle >>召唤坐骑 |cRXP_FRIENDLY_驯服的火鹰|r
+    .vehicle >> 召唤坐骑 |cRXP_FRIENDLY_驯服的火鹰|r
     .target Trained Fire Hawk
 step
     .isOnQuest 29290
@@ -1469,7 +1469,7 @@ step
     #optional
     #sticky
     .isOnQuest 29287,29288,29293,29296
-    .subzone 5748 >>|cRXP_WARN_使用踏脚石登上火羽峰。最好在踏脚石尽头使用一个通风口，这样可以获得 |r |T236222:0|t[康复之风] |cRXP_WARN_增益，使你的攻击速度和急速提高 100 %，并让你跳得更高更远|r
+    .subzone 5748 >> |cRXP_WARN_使用踏脚石登上火羽峰。最好在踏脚石尽头使用一个通风口，这样可以获得 |r |T236222:0|t[康复之风] |cRXP_WARN_增益，使你的攻击速度和急速提高 100 %，并让你跳得更高更远|r
 step
     #sticky
     #label HowHot
@@ -1545,43 +1545,43 @@ step
     .isQuestComplete 29290
     .goto 338,34.496,56.208
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫希斯·轻翼|r 对话
-    .dailyturnin 29290 >>交任务 天空中的火焰
+    .dailyturnin 29290 >> 交任务 天空中的火焰
     .target Morthis Whisperwing
 step
     .isQuestComplete 29287
     .goto 338,34.496,56.208
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫希斯·轻翼|r 对话
-    .dailyturnin 29287 >>交任务 事起山峰
+    .dailyturnin 29287 >> 交任务 事起山峰
     .target Morthis Whisperwing
 step
     .isQuestComplete 29288
     .goto 338,34.496,56.208
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫希斯·轻翼|r 对话
-    .dailyturnin 29288 >>交任务 从小抓起
+    .dailyturnin 29288 >> 交任务 从小抓起
     .target Morthis Whisperwing
 step
     .isQuestComplete 29293
     .goto 338,34.295,56.419
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿尔索恩·风歌|r 对话
-    .dailyturnin 29293 >>交任务 焦黑的羽翼
+    .dailyturnin 29293 >> 交任务 焦黑的羽翼
     .target Arthorn Windsong
 step
     .isQuestComplete 29296
     .goto 338,34.295,56.419
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿尔索恩·风歌|r 对话
-    .dailyturnin 29296 >>交任务 鸟儿的领地意识
+    .dailyturnin 29296 >> 交任务 鸟儿的领地意识
     .target Arthorn Windsong
 step
     .isQuestComplete 29273
     .goto 338,51.245,85.865
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安伦·觅影者|r 对话
-    .dailyturnin 29273 >>交任务 到底有多热
+    .dailyturnin 29273 >> 交任务 到底有多热
     .target Anren Shadowseeker
 step
     .isQuestComplete 29274
     .goto 338,51.555,85.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索罗·白蹄|r 对话
-    .dailyturnin 29274 >>交任务 沙恩诺克斯的猎狗
+    .dailyturnin 29274 >> 交任务 沙恩诺克斯的猎狗
     .target Tholo Whitehoof
 step
     .goto 338,47.017,91.361
@@ -1614,8 +1614,8 @@ step
 step
     #optional
     #completewith HyjalQuests
-	.zone 85 >>前往奥格瑞玛 << Horde
-	.zone 84 >>前往暴风城 << Alliance
+	.zone 85 >> 前往奥格瑞玛 << Horde
+	.zone 84 >> 前往暴风城 << Alliance
 	.zoneskip 198
     .zoneskip 338
 step
@@ -1629,7 +1629,7 @@ step
     #optional
     #completewith HyjalQuests
     .goto 338,53.026,83.693
-    .zone 198 >>使用传送门前往海加尔山
+    .zone 198 >> 使用传送门前往海加尔山
     .zoneskip 338,1
 step --accepted back at sanctuary of malorne
     .goto 198/1,-2088.800,4452.300
@@ -1641,7 +1641,7 @@ step
     .goto 198,27.108,62.009,5,0
     .goto 198,27.170,62.563,5,0
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦托克劳|r 或 |cRXP_FRIENDLY_米露恩|r 对话
-    .daily 29125,29147,29164,29101,29161 >>接取随机刷新的日常任务
+    .daily 29125,29147,29164,29101,29161 >> 接取随机刷新的日常任务
     .disablecheckbox
     .questcount <1,29125,29147,29164,29101,29161
     .target Matoclaw
@@ -1652,7 +1652,7 @@ step
     .goto 198,27.527,62.510,5,0
     .goto 198,27.172,62.565,5,0
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦托克劳|r 或 |cRXP_FRIENDLY_多尔达恩·织夜者|r 对话
-    .daily 29123,29149,29127,29163,29166,29247,29246,29248 >>接取随机刷新的日常任务
+    .daily 29123,29149,29127,29163,29166,29247,29246,29248 >> 接取随机刷新的日常任务
     .disablecheckbox
     .questcount <1,29123,29149,29127,29163,29166,29247,29246,29248
     .target Matoclaw
@@ -1721,7 +1721,7 @@ step
     .goto 198,14.98,43.10,70,0
     .goto 198,10.29,36.11,70,0
     >>击杀 |cRXP_ENEMY_刺背入侵者|r
-    .use 69235 >>|cRXP_WARN_在他们的尸体上|r|cRXP_WARN_使用|r |T134298:0|t[狼的尖牙]
+    .use 69235 >> |cRXP_WARN_在他们的尸体上|r|cRXP_WARN_使用|r |T134298:0|t[狼的尖牙]
     .complete 29164,1 -- Howl atop an invader's corpse (10)
     .mob Flame Terror
     .mob Brimstone Hound
@@ -1730,7 +1730,7 @@ step
 step
     .isOnQuest 29147
     #completewith next
-    .cast 97241 >>|cRXP_WARN_使用|r |T135992:0|t[群鸟女王的翎羽] |cRXP_WARN_来变身成|r |cRXP_FRIENDLY_艾维娜之翼|r
+    .cast 97241 >> |cRXP_WARN_使用|r |T135992:0|t[群鸟女王的翎羽] |cRXP_WARN_来变身成|r |cRXP_FRIENDLY_艾维娜之翼|r
     .use 69234
 step
     .isOnQuest 29147
@@ -1739,7 +1739,7 @@ step
     .goto 198,10.13,36.76,80,0
     .goto 198,13.24,33.64,80,0
     .goto 198,18.65,40.28,80,0
-    .use 69234 >>|cRXP_WARN_在 |r高山鸣雀|cRXP_WARN_, |cRXP_FRIENDLY_森林猫头鹰|r 和|cRXP_FRIENDLY_ |r金翼雄鹰|r |cRXP_FRIENDLY_附近使用|r |T132172:0|t[召唤鸟群] (1)
+    .use 69234 >> |cRXP_WARN_在 |r高山鸣雀|cRXP_WARN_, |cRXP_FRIENDLY_森林猫头鹰|r 和|cRXP_FRIENDLY_ |r金翼雄鹰|r |cRXP_FRIENDLY_附近使用|r |T132172:0|t[召唤鸟群] (1)
     .complete 29147,1 -- Alpine Songbird gathered (12)
     .target +Alpine Songbird
     .complete 29147,2 -- Forest Owl gathered (5)
@@ -1759,7 +1759,7 @@ step
 step
     #completewith next
     .goto 198,14.310,33.203
-    .vehicle >>点击 |cRXP_PICK_攀爬树|r 来攀爬它
+    .vehicle >> 点击 |cRXP_PICK_攀爬树|r 来攀爬它
     .target Climbing Tree
     .isOnQuest 29161
 step
@@ -1775,31 +1775,31 @@ step
     .complete 29161,1 --6/6 Hyjal Bear Cubs Rescued
 step
     .isQuestComplete 29161
-    .exitvehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .exitvehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .vehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .vehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .exitvehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .exitvehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .vehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .vehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .exitvehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .exitvehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .vehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .vehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .exitvehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .exitvehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     .isOnQuest 29161
     >>在任务日志中点击任务提交弹窗。
@@ -1849,12 +1849,12 @@ step
     #completewith next
     .isOnQuest 29162
     .goto 198/1,-1500.700,4929.300
-    .cast 97517 >>|cRXP_WARN_使用|r |T134093:0|t[艾森娜的翡翠] |cRXP_WARN_来召唤|r |cRXP_ENEMY_派拉齐尼斯|r
+    .cast 97517 >> |cRXP_WARN_使用|r |T134093:0|t[艾森娜的翡翠] |cRXP_WARN_来召唤|r |cRXP_ENEMY_派拉齐尼斯|r
     .use 69232
 step
     .isOnQuest 29162
     .goto 198/1,-1500.700,4929.300
-    .use 69232 >>击杀 |cRXP_ENEMY_派拉齐尼斯|r
+    .use 69232 >> 击杀 |cRXP_ENEMY_派拉齐尼斯|r
     >>|cRXP_WARN_使用|r |T134093:0|t[艾森娜的翡翠] |cRXP_WARN_移除|r |cRXP_WARN_派拉齐尼斯|cRXP_ENEMY_ |r施加的 |T136016:0|t[沸腾毒箭] 减益|r
     .complete 29162,1 --|Pyrachnis slain: 1/1
     .mob Pyrachnis
@@ -1862,36 +1862,36 @@ step
     #completewith next
     .isOnQuest 29126
     .goto 198,41.667,56.130
-    .cast 97012 >>|cRXP_WARN_在|r 灰烬堆|cRXP_WARN_ 上使用|cRXP_PICK_ |T135139:0|t[守护者之杖] |r来召唤|r |cRXP_ENEMY_盖伦格斯|r
+    .cast 97012 >> |cRXP_WARN_在|r 灰烬堆|cRXP_WARN_ 上使用|cRXP_PICK_ |T135139:0|t[守护者之杖] |r来召唤|r |cRXP_ENEMY_盖伦格斯|r
     .use 68997
 step
     .goto 198,41.667,56.130
     .isOnQuest 29126
-    .use 68997 >>击杀|cRXP_ENEMY_盖伦格斯|r
+    .use 68997 >> 击杀|cRXP_ENEMY_盖伦格斯|r
     .complete 29126,1 -- Galenges slain (1)
     .mob Galenges
 step
     .isOnQuest 29148
     #completewith next
     .goto 198/1,-1500.700,4929.300
-    .cast 97324 >>|cRXP_WARN_在西部的火焰传送门附近使用|r |T135992:0|t[群鸟女王的翎羽] |cRXP_WARN_来召唤|r |cRXP_ENEMY_米拉盖佐尔|r
+    .cast 97324 >> |cRXP_WARN_在西部的火焰传送门附近使用|r |T135992:0|t[群鸟女王的翎羽] |cRXP_WARN_来召唤|r |cRXP_ENEMY_米拉盖佐尔|r
     .use 69212
 step
     .isOnQuest 29148
     .goto 198/1,-1500.700,4929.300
-    .use 69212 >>击杀 |cRXP_ENEMY_米拉盖佐尔|r
+    .use 69212 >> 击杀 |cRXP_ENEMY_米拉盖佐尔|r
     .complete 29148,1 -- Millagazor slain (1)
     .mob Millagazor
 step
     .isOnQuest 29165
     #completewith next
     .goto 198,41.667,56.130
-    .cast 97498 >>|cRXP_WARN_使用|r |T134298:0|t[狼的尖牙] |cRXP_WARN_来召唤|r |cRXP_ENEMY_莱拉克斯|r
+    .cast 97498 >> |cRXP_WARN_使用|r |T134298:0|t[狼的尖牙] |cRXP_WARN_来召唤|r |cRXP_ENEMY_莱拉克斯|r
     .use 69225
 step
     .isOnQuest 29165
     .goto 198,41.667,56.130
-    .use 69225 >>击杀 |cRXP_ENEMY_莱拉克斯|r
+    .use 69225 >> 击杀 |cRXP_ENEMY_莱拉克斯|r
     .complete 29165,1 -- Lylagar slain (1)
     .mob Lylagar
 step
@@ -2127,7 +2127,7 @@ step
     #completewith RayneFeathersong
     .isQuestComplete 29128
     .goto 198,27.484,56.394
-    .zone 338 >>穿过传送门前往火焰之地
+    .zone 338 >> 穿过传送门前往火焰之地
 step
     .isQuestTurnedIn 29215 -- If turned in quest to unlock Wardens
     .goto 338,50.644,87.244
@@ -2144,7 +2144,7 @@ step
     .isQuestTurnedIn 29282
     .goto 338,46.758,90.170
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莉吉特|r 对话
-    .daily 29263,29278,29295,29297 >>接取随机刷新的日常任务
+    .daily 29263,29278,29295,29297 >> 接取随机刷新的日常任务
     >>|cRXP_WARN_如果 |cRXP_FRIENDLY_莉吉特|r 今天没有提供任务，请跳过此步骤|r
     .target Ricket
 step
@@ -2156,7 +2156,7 @@ step
     .goto 338,45.589,85.822
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_将军泰尔迪斯·月落|r 对话
     .daily 29179 >>接受任务 元素敌人
-    .daily 29304,29141,29142,29137 >>接取随机刷新的日常任务
+    .daily 29304,29141,29142,29137 >> 接取随机刷新的日常任务
     .target General Taldris Moonfall
 step
     .isQuestComplete 29128
@@ -2174,7 +2174,7 @@ step -- 29138 Burn Victims
     .goto 338,45.8,64.2,45,0
     .goto 338,52.8,64.4,45,0
     .goto 338,53.6,79.6,45,0
-    .use 69240 >>|cRXP_WARN_对|r |cRXP_WARN_受伤的海加尔防御者|r |cRXP_FRIENDLY_使用|r |T463860:0|t[魔法药膏]
+    .use 69240 >> |cRXP_WARN_对|r |cRXP_WARN_受伤的海加尔防御者|r |cRXP_FRIENDLY_使用|r |T463860:0|t[魔法药膏]
     .complete 29138,1 -- Wounded Hyjal Defender saved 1/1
     .target Wounded Hyjal Defender
 step -- Embergris 29255
@@ -2414,25 +2414,25 @@ step
     .isQuestComplete 29263
     .goto 338,46.919,89.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达默克·冲炉|r 对话
-    .dailyturnin 29263 >>交任务 一颗苦果
+    .dailyturnin 29263 >> 交任务 一颗苦果
     .target Damek Bloombeard
 step
     .isQuestComplete 29278
     .goto 338,46.919,89.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达默克·冲炉|r 对话
-    .dailyturnin 29278 >>交任务 活体黑曜石
+    .dailyturnin 29278 >> 交任务 活体黑曜石
     .target Damek Bloombeard
 step
     .isQuestComplete 29295
     .goto 338,46.919,89.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达默克·冲炉|r 对话
-    .dailyturnin 29295 >>交任务 它们越大
+    .dailyturnin 29295 >> 交任务 它们越大
     .target Damek Bloombeard
 step
     .isQuestComplete 29297
     .goto 338,46.919,89.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达默克·冲炉|r 对话
-    .dailyturnin 29297 >>交任务 再见小鸟
+    .dailyturnin 29297 >> 交任务 再见小鸟
     .target Damek Bloombeard
 step
     .isQuestComplete 29179
@@ -2444,25 +2444,25 @@ step
     .isQuestComplete 29304
     .goto 338,45.589,85.822
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_将军泰尔迪斯·月落|r 对话
-    .dailyturnin 29304 >>交任务 犬祸
+    .dailyturnin 29304 >> 交任务 犬祸
     .target General Taldris Moonfall
 step
     .isQuestComplete 29141
     .goto 338,45.589,85.822
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_将军泰尔迪斯·月落|r 对话
-    .dailyturnin 29141 >>交任务 摔得更惨
+    .dailyturnin 29141 >> 交任务 摔得更惨
     .target General Taldris Moonfall
 step
     .isQuestComplete 29142
     .goto 338,45.589,85.822
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_将军泰尔迪斯·月落|r 对话
-    .dailyturnin 29142 >>交任务 叛徒归来
+    .dailyturnin 29142 >> 交任务 叛徒归来
     .target General Taldris Moonfall
 step
     .isQuestComplete 29137
     .goto 338,45.589,85.822
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_将军泰尔迪斯·月落|r 对话
-    .dailyturnin 29137 >>交任务 防线上的突破口
+    .dailyturnin 29137 >> 交任务 防线上的突破口
     .target General Taldris Moonfall
 step
     .isQuestComplete 29138
@@ -2480,7 +2480,7 @@ step
 step
     #completewith THB
     .goto 338,53.026,83.693
-    .zone 198 >>使用传送门前往海加尔山
+    .zone 198 >> 使用传送门前往海加尔山
 step
     .isQuestComplete 29214
     .goto 198,26.799,62.157
@@ -2500,7 +2500,7 @@ step
 step
     #completewith ITF
     .goto 198,27.484,56.394
-    .zone 338 >>穿过传送门前往火焰之地
+    .zone 338 >> 穿过传送门前往火焰之地
 step
     .isOnQuest 29215
     .goto 338,47.584,90.558
@@ -2511,43 +2511,43 @@ step
     #completewith next
     .goto 338,57.02,66.92,40,0
     .goto 338,71.30,38.43
-    .subzone 5744 >>前往野火哨站
+    .subzone 5744 >> 前往野火哨站
 step
     .isQuestTurnedIn 29215
     .goto 338,71.309,38.430
     >>击杀一名 |cRXP_ENEMY_烈焰德鲁伊|r。他会掉落一颗 |cRXP_PICK_干橡果|r 在地上
     >>|cRXP_WARN_你必须在野火哨站击杀 |cRXP_ENEMY_利爪德鲁伊|r。在灰烬旷野中的那些不会计数|r
     >>点击地上的 |cRXP_PICK_干橡果|r
-    .accept 29245 >>接受任务 神秘的种子
+    .accept 29245 >> 接受任务 神秘的种子
     .mob Druid of the Flame
 step
     .isQuestTurnedIn 29215
     .goto 338,50.644,87.244
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾薇尔拉|r 对话
-    .turnin 29245 >>交任务 神秘的种子
-    .accept 29249 >>接受任务 植树的季节
+    .turnin 29245 >> 交任务 神秘的种子
+    .accept 29249 >> 接受任务 植树的季节
     .target Avrilla
 step
     .isOnQuest 29249
     .goto 338,53.527,90.736
-    .cast 8386,6477,6478 >>点击地上的 |cRXP_PICK_安戈洛的泥土|r
+    .cast 8386,6477,6478 >> 点击地上的 |cRXP_PICK_安戈洛的泥土|r
     .timer 10,植树的季节 剧情演出
 step
     .isQuestTurnedIn 29215
     .goto 338,53.527,90.736
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 29249,1 -- Acorn Planted 1/1
 step
     .isQuestTurnedIn 29215
     >>在任务日志中点击任务提交弹窗。
-    .turnin 29249 >>交任务 植树的季节
-    .accept 29254 >>接受任务 小小的鞭笞者
+    .turnin 29249 >> 交任务 植树的季节
+    .accept 29254 >> 接受任务 小小的鞭笞者
     .target Avrilla
 step
     .isQuestTurnedIn 29215
     .goto 338,50.644,87.244
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾薇尔拉|r 对话
-    .turnin 29254 >>交任务 小小的鞭笞者
+    .turnin 29254 >> 交任务 小小的鞭笞者
     .target Avrilla
 step
     .isQuestTurnedIn 29215
@@ -2633,10 +2633,10 @@ step
     .skipgossip
 step << skip
     .goto 338,34.400,66.213
-    .subzone 5746 >>点击 |cRXP_PICK_垂降绳索|r 下入熔火激流
+    .subzone 5746 >> 点击 |cRXP_PICK_垂降绳索|r 下入熔火激流
 step
     #completewith next
-    .subzone 5746 >>|cRXP_WARN_掉进大洞。前往|r |cRXP_FRIENDLY_希萨莉·黑鸦|r
+    .subzone 5746 >> |cRXP_WARN_掉进大洞。前往|r |cRXP_FRIENDLY_希萨莉·黑鸦|r
 step
     .isQuestTurnedIn 29181
     .goto 338,42.541,59.713
@@ -2709,7 +2709,7 @@ step
     #label ExitUnderground
     #completewith DruidEnd
     .goto 338,33.08,67.62
-    .aura 98833 >>|cRXP_WARN_回到你之前跳下来的那个大洞口。站在|r |T514278:0|t[暖气流喷管]|cRXP_WARN_上，然后往上跳，就能回到熔火前线的地面了|r
+    .aura 98833 >> |cRXP_WARN_回到你之前跳下来的那个大洞口。站在|r |T514278:0|t[暖气流喷管]|cRXP_WARN_上，然后往上跳，就能回到熔火前线的地面了|r
     .subzoneskip 5746,1
 step
     #requires ExitUnderground
@@ -2736,25 +2736,25 @@ step -- Ricket @ DRUIDS
     .goto 338,36.251,56.586
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莉吉特|r 对话
     >>|cRXP_WARN_如果她不在就跳过这一步|r
-    .daily 29263,29278,29295,29297 >>接取随机刷新的日常任务
+    .daily 29263,29278,29295,29297 >> 接取随机刷新的日常任务
     .target Ricket
 step
     .isQuestTurnedIn 29181
     .goto 338,34.496,56.208
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫希斯·轻翼|r 对话
-    .daily 29290,29287,29288 >>接取随机刷新的日常任务
+    .daily 29290,29287,29288 >> 接取随机刷新的日常任务
     .target Morthis Whisperwing
 step
     .isQuestTurnedIn 29181
     .goto 338,34.295,56.419
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿尔索恩·风歌|r 对话
-    .daily 29293,29296 >>接取随机刷新的日常任务
+    .daily 29293,29296 >> 接取随机刷新的日常任务
     .target Arthorn Windsong
 step
     #completewith next
     .goto 338,33.808,57.177
     .isOnQuest 29290
-    .vehicle >>召唤坐骑 |cRXP_FRIENDLY_驯服的火鹰|r
+    .vehicle >> 召唤坐骑 |cRXP_FRIENDLY_驯服的火鹰|r
     .target Trained Fire Hawk
 step
     .isOnQuest 29290
@@ -2777,7 +2777,7 @@ step
     #optional
     #sticky
     .isOnQuest 29287,29288,29293,29296,29273
-    .subzone 5748 >>|cRXP_WARN_使用踏脚石登上火羽峰。最好在踏脚石尽头使用一个通风口，这样可以获得 |r |T236222:0|t[康复之风] |cRXP_WARN_增益，使你的攻击速度和急速提高 100 %，并让你跳得更高更远|r
+    .subzone 5748 >> |cRXP_WARN_使用踏脚石登上火羽峰。最好在踏脚石尽头使用一个通风口，这样可以获得 |r |T236222:0|t[康复之风] |cRXP_WARN_增益，使你的攻击速度和急速提高 100 %，并让你跳得更高更远|r
 step
     #sticky
     #label HowHot
@@ -2868,31 +2868,31 @@ step
     .isQuestComplete 29290
     .goto 338,34.496,56.208
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫希斯·轻翼|r 对话
-    .dailyturnin 29290 >>交任务 天空中的火焰
+    .dailyturnin 29290 >> 交任务 天空中的火焰
     .target Morthis Whisperwing
 step
     .isQuestComplete 29287
     .goto 338,34.496,56.208
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫希斯·轻翼|r 对话
-    .dailyturnin 29287 >>交任务 事起山峰
+    .dailyturnin 29287 >> 交任务 事起山峰
     .target Morthis Whisperwing
 step
     .isQuestComplete 29288
     .goto 338,34.496,56.208
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫希斯·轻翼|r 对话
-    .dailyturnin 29288 >>交任务 从小抓起
+    .dailyturnin 29288 >> 交任务 从小抓起
     .target Morthis Whisperwing
 step
     .isQuestComplete 29293
     .goto 338,34.295,56.419
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿尔索恩·风歌|r 对话
-    .dailyturnin 29293 >>交任务 焦黑的羽翼
+    .dailyturnin 29293 >> 交任务 焦黑的羽翼
     .target Arthorn Windsong
 step
     .isQuestComplete 29296
     .goto 338,34.295,56.419
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿尔索恩·风歌|r 对话
-    .dailyturnin 29296 >>交任务 鸟儿的领地意识
+    .dailyturnin 29296 >> 交任务 鸟儿的领地意识
     .target Arthorn Windsong
 step
     .isQuestTurnedIn 29284
@@ -2920,19 +2920,19 @@ step
     .isQuestComplete 29295
     .goto 338,46.919,89.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达默克·冲炉|r 对话
-    .dailyturnin 29295 >>交任务 它们越大
+    .dailyturnin 29295 >> 交任务 它们越大
     .target Damek Bloombeard
 step
     .isQuestComplete 29273
     .goto 338,51.245,85.865
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安伦·觅影者|r 对话
-    .dailyturnin 29273 >>交任务 到底有多热
+    .dailyturnin 29273 >> 交任务 到底有多热
     .target Anren Shadowseeker
 step
     .isQuestComplete 29274
     .goto 338,51.555,85.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索罗·白蹄|r 对话
-    .dailyturnin 29274 >>交任务 沙恩诺克斯的猎狗
+    .dailyturnin 29274 >> 交任务 沙恩诺克斯的猎狗
     .target Tholo Whitehoof
 
 --Calling the Ancients unlock
@@ -2947,7 +2947,7 @@ step
     #optional
     #completewith next
     .goto 338,53.026,83.693
-    .zone 198 >>使用传送门前往海加尔山
+    .zone 198 >> 使用传送门前往海加尔山
     .zoneskip 338,1
 step
     .isQuestComplete 29283
@@ -2966,7 +2966,7 @@ step
     #completewith WardenEnd
     .isOnQuest 29284
     .goto 198,27.484,56.394
-    .zone 338 >>穿过传送门前往火焰之地
+    .zone 338 >> 穿过传送门前往火焰之地
 step
     .isOnQuest 29284
     .goto 338,43.812,88.964
@@ -3009,7 +3009,7 @@ step
     #optional
     #completewith next
     .goto 338,53.026,83.693
-    .zone 198 >>使用传送门前往海加尔山
+    .zone 198 >> 使用传送门前往海加尔山
     .zoneskip 338,1
 step
     .isQuestComplete 29281
@@ -3029,7 +3029,7 @@ step
     #completewith next
     .isOnQuest 29282
     .goto 198,27.484,56.394
-    .zone 338 >>穿过传送门前往火焰之地
+    .zone 338 >> 穿过传送门前往火焰之地
 step
     .isOnQuest 29282
     .goto 338,46.758,90.170
@@ -3040,7 +3040,7 @@ step
     .isQuestTurnedIn 29282
     .goto 338,46.758,90.170
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莉吉特|r 对话
-    .daily 29263,29278,29295,29297 >>接取随机刷新的日常任务
+    .daily 29263,29278,29295,29297 >> 接取随机刷新的日常任务
     .target Ricket
 step -- 29263 A Bitter Pill
     .isOnQuest 29263
@@ -3079,32 +3079,32 @@ step -- 29297 Bye Bye Burdy -- WARDENS ONLY
     .goto 338,73.03,54.88,50,0
     .goto 338,73.82,38.28,50,0
     .goto 338,63.73,38.76,50,0
-    .use 69832 >>|cRXP_WARN_对飞行在空中的|r |cRXP_WARN_烈焰德鲁伊|cRXP_ENEMY_ |r使用|r |T135129:0|t[戳鸟之矛]
+    .use 69832 >> |cRXP_WARN_对飞行在空中的|r |cRXP_WARN_烈焰德鲁伊|cRXP_ENEMY_ |r使用|r |T135129:0|t[戳鸟之矛]
     .complete 29297,1 -- Druids of the Flame in Fire Crow form slain (3)
     .mob Druid of the Flame
 step
     .isQuestComplete 29263
     .goto 338,46.919,89.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达默克·冲炉|r 对话
-    .dailyturnin 29263 >>交任务 一颗苦果
+    .dailyturnin 29263 >> 交任务 一颗苦果
     .target Damek Bloombeard
 step
     .isQuestComplete 29278
     .goto 338,46.919,89.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达默克·冲炉|r 对话
-    .dailyturnin 29278 >>交任务 活体黑曜石
+    .dailyturnin 29278 >> 交任务 活体黑曜石
     .target Damek Bloombeard
 step
     .isQuestComplete 29295
     .goto 338,46.919,89.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达默克·冲炉|r 对话
-    .dailyturnin 29295 >>交任务 它们越大
+    .dailyturnin 29295 >> 交任务 它们越大
     .target Damek Bloombeard
 step
     .isQuestComplete 29297
     .goto 338,46.919,89.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达默克·冲炉|r 对话
-    .dailyturnin 29297 >>交任务 再见小鸟
+    .dailyturnin 29297 >> 交任务 再见小鸟
     .target Damek Bloombeard
 --Complete Additional Armaments unlock
 
@@ -3118,27 +3118,27 @@ step
     #optional
     #completewith next
     .goto 338,53.026,83.693
-    .zone 198 >>使用传送门前往海加尔山
+    .zone 198 >> 使用传送门前往海加尔山
     .zoneskip 338,1
 step
     .isQuestComplete 29279
     .goto 198,27.170,62.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦托克劳|r 对话
-    .turnin 29279 >>交任务 注满月井
-    .accept 29280 >>接受任务 滋养之水
+    .turnin 29279 >> 交任务 注满月井
+    .accept 29280 >> 接受任务 滋养之水
     .target Matoclaw
 step
     .isQuestTurnedIn 29279
     .goto 198,27.170,62.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦托克劳|r 对话
-    .accept 29280 >>接受任务 滋养之水
+    .accept 29280 >> 接受任务 滋养之水
     .target Matoclaw
 step
     #optional
     #completewith next
     .isOnQuest 29280
     .goto 198,27.484,56.394
-    .zone 338 >>穿过传送门前往火焰之地
+    .zone 338 >> 穿过传送门前往火焰之地
 step
     .isOnQuest 29280
     .goto 338,44.087,86.321
@@ -3150,7 +3150,7 @@ step
     .goto 338,47.022,91.368
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_玛法里奥·怒风|r对话
     .target Malfurion Stormrage
-    .accept 29203 >>接受任务 深入神庙
+    .accept 29203 >> 接受任务 深入神庙
 step
     .isOnQuest 29203
     #completewith next
@@ -3171,96 +3171,96 @@ step
     .goto 338,47.022,91.368
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_玛法里奥·怒风|r对话
     .target Malfurion Stormrage
-    .turnin 29203 >>交任务深入神庙
+    .turnin 29203 >> 交任务深入神庙
 step
     .isQuestTurnedIn 29203
     >>|cRXP_WARN_你现在应已收到 |cRXP_FRIENDLY_瑟蕾莎·树皮|r 寄来的邮件，内含|r |T514925:0|t[|cRXP_LOOT_烟熏过的坠饰|r]
     .use 69854 >>|cRXP_WARN_使用|r |T514925:0|t[|cRXP_LOOT_烟熏过的坠饰|r] |cRXP_WARN_来开始任务|r
     .collect 69854,1,29298,1 -- Smoke-Stained Locket (1)
-    .accept 29298 >>接受任务 一条烟熏过的坠饰
+    .accept 29298 >> 接受任务 一条烟熏过的坠饰
 step
     #optional
     #completewith SecretsWithin
     .goto 338,53.026,83.693
-    .zone 198 >>使用传送门前往海加尔山
+    .zone 198 >> 使用传送门前往海加尔山
     .zoneskip 338,1
 step
     .isQuestTurnedIn 29203
     #completewith next
-    .zone Moonglade >>前往月光林地
+    .zone Moonglade >> 前往月光林地
 step
     #label SecretsWithin
     .isQuestTurnedIn 29203
     .goto Moonglade,51.685,45.098
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉比恩·萨图纳|r 对话
-    .turnin 29298 >>交任务 一条烟熏过的坠饰
-    .accept 29302 >>接受任务 解开其中的秘密
+    .turnin 29298 >> 交任务 一条烟熏过的坠饰
+    .accept 29302 >> 接受任务 解开其中的秘密
     .timer 42,解开其中的秘密 剧情演出
     .target Rabine Saturna
 step
     .isQuestTurnedIn 29203
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 29302,1 -- Look into Leyara's memories 1/1
 step
     .isQuestTurnedIn 29203
     .goto Moonglade,51.685,45.098
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉比恩·萨图纳|r 对话
-    .turnin 29302 >>交任务 解开其中的秘密
-    .accept 29303 >>接受任务 悲剧与家庭
+    .turnin 29302 >> 交任务 解开其中的秘密
+    .accept 29303 >> 接受任务 悲剧与家庭
     .target Rabine Saturna
 step
     .isOnQuest 29303
     #completewith next
-    .zone Ashenvale >>前往灰谷
+    .zone Ashenvale >> 前往灰谷
 step
     .isOnQuest 29303
     .goto Ashenvale,40.501,53.281
-    .cast 6247 >>点击 |cRXP_PICK_暗夜精灵坟墓|r
+    .cast 6247 >> 点击 |cRXP_PICK_暗夜精灵坟墓|r
     .timer 48,悲剧与家庭 剧情演出
     .skipgossip
 step
     .isOnQuest 29203
     .goto Ashenvale,40.501,53.281
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 29303,1 -- Look deeper into Leyara's memories 1/1
     .skipgossip
 step
     .isQuestTurnedIn 29203
     >>在任务日志中点击任务提交弹窗。
-    .turnin 29303 >>交任务 悲剧与家庭
-    .accept 29310 >>接受任务 临界点
+    .turnin 29303 >> 交任务 悲剧与家庭
+    .accept 29310 >> 接受任务 临界点
 step
     .isOnQuest 29310
     #completewith next
-    .zone 198 >>前往海加尔山
+    .zone 198 >> 前往海加尔山
 step
     .isOnQuest 29310
     .goto 198,7.561,34.582
-    .cast 6247 >>点击 |cRXP_PICK_小型墓碑|r
+    .cast 6247 >> 点击 |cRXP_PICK_小型墓碑|r
     .timer 59,临界点 剧情演出
     .skipgossip
 step
     .isOnQuest 29310
     .goto 198,7.561,34.582
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 29310,1 -- Look deeper into Leyara's memories 1/1
     .skipgossip
 step
     .isQuestTurnedIn 29203
     >>在任务日志中点击任务提交弹窗。
-    .turnin 29310 >>交任务 临界点
-    .accept 29311 >>接受任务 皆不可考
+    .turnin 29310 >> 交任务 临界点
+    .accept 29311 >> 接受任务 皆不可考
 step
     #optional
     #completewith next
     .isOnQuest 29311
     .goto 198,27.484,56.394
-    .zone 338 >>穿过传送门前往火焰之地
+    .zone 338 >> 穿过传送门前往火焰之地
 step
     .isOnQuest 29311
     .goto 338,47.022,91.368
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_玛法里奥·怒风|r对话
-    .turnin 29311 >>交任务 皆不可考
+    .turnin 29311 >> 交任务 皆不可考
     .target Malfurion Stormrage
 --Complete Filling the Moonwell
 
@@ -3299,8 +3299,8 @@ step
 step
     #optional
     #completewith HyjalQuests
-	.zone 85 >>前往奥格瑞玛 << Horde
-	.zone 84 >>前往暴风城 << Alliance
+	.zone 85 >> 前往奥格瑞玛 << Horde
+	.zone 84 >> 前往暴风城 << Alliance
 	.zoneskip 198
     .zoneskip 338
 step
@@ -3314,7 +3314,7 @@ step
     #optional
     #completewith HyjalQuests
     .goto 338,53.026,83.693
-    .zone 198 >>使用传送门前往海加尔山
+    .zone 198 >> 使用传送门前往海加尔山
     .zoneskip 338,1
 step --accepted back at sanctuary of malorne
     .goto 198/1,-2088.800,4452.300
@@ -3326,7 +3326,7 @@ step
     .goto 198,27.108,62.009,5,0
     .goto 198,27.170,62.563,5,0
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦托克劳|r 或 |cRXP_FRIENDLY_米露恩|r 对话
-    .daily 29125,29147,29164,29101,29161 >>接取随机刷新的日常任务
+    .daily 29125,29147,29164,29101,29161 >> 接取随机刷新的日常任务
     .disablecheckbox
     .questcount <1,29125,29147,29164,29101,29161
     .target Matoclaw
@@ -3337,7 +3337,7 @@ step
     .goto 198,27.527,62.510,5,0
     .goto 198,27.172,62.565,5,0
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦托克劳|r 或 |cRXP_FRIENDLY_多尔达恩·织夜者|r 对话
-    .daily 29123,29149,29127,29163,29166,29247,29246,29248 >>接取随机刷新的日常任务
+    .daily 29123,29149,29127,29163,29166,29247,29246,29248 >> 接取随机刷新的日常任务
     .disablecheckbox
     .questcount <1,29123,29149,29127,29163,29166,29247,29246,29248
     .target Matoclaw
@@ -3406,7 +3406,7 @@ step
     .goto 198,14.98,43.10,70,0
     .goto 198,10.29,36.11,70,0
     >>击杀 |cRXP_ENEMY_刺背入侵者|r
-    .use 69235 >>|cRXP_WARN_在他们的尸体上|r|cRXP_WARN_使用|r |T134298:0|t[狼的尖牙]
+    .use 69235 >> |cRXP_WARN_在他们的尸体上|r|cRXP_WARN_使用|r |T134298:0|t[狼的尖牙]
     .complete 29164,1 -- Howl atop an invader's corpse (10)
     .mob Flame Terror
     .mob Brimstone Hound
@@ -3415,7 +3415,7 @@ step
 step
     .isOnQuest 29147
     #completewith next
-    .cast 97241 >>|cRXP_WARN_使用|r |T135992:0|t[群鸟女王的翎羽] |cRXP_WARN_来变身成|r |cRXP_FRIENDLY_艾维娜之翼|r
+    .cast 97241 >> |cRXP_WARN_使用|r |T135992:0|t[群鸟女王的翎羽] |cRXP_WARN_来变身成|r |cRXP_FRIENDLY_艾维娜之翼|r
     .use 69234
 step
     .isOnQuest 29147
@@ -3424,7 +3424,7 @@ step
     .goto 198,10.13,36.76,80,0
     .goto 198,13.24,33.64,80,0
     .goto 198,18.65,40.28,80,0
-    .use 69234 >>|cRXP_WARN_在 |r高山鸣雀|cRXP_WARN_, |cRXP_FRIENDLY_森林猫头鹰|r 和|cRXP_FRIENDLY_ |r金翼雄鹰|r |cRXP_FRIENDLY_附近使用|r |T132172:0|t[召唤鸟群] (1)
+    .use 69234 >> |cRXP_WARN_在 |r高山鸣雀|cRXP_WARN_, |cRXP_FRIENDLY_森林猫头鹰|r 和|cRXP_FRIENDLY_ |r金翼雄鹰|r |cRXP_FRIENDLY_附近使用|r |T132172:0|t[召唤鸟群] (1)
     .complete 29147,1 -- Alpine Songbird gathered (12)
     .target +Alpine Songbird
     .complete 29147,2 -- Forest Owl gathered (5)
@@ -3444,7 +3444,7 @@ step
 step
     #completewith next
     .goto 198,14.310,33.203
-    .vehicle >>点击 |cRXP_PICK_攀爬树|r 来攀爬它
+    .vehicle >> 点击 |cRXP_PICK_攀爬树|r 来攀爬它
     .target Climbing Tree
     .isOnQuest 29161
 step
@@ -3460,31 +3460,31 @@ step
     .complete 29161,1 --6/6 Hyjal Bear Cubs Rescued
 step
     .isQuestComplete 29161
-    .exitvehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .exitvehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .vehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .vehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .exitvehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .exitvehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .vehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .vehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .exitvehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .exitvehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .vehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .vehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     #optional
     .isQuestComplete 29161
-    .exitvehicle >>|cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
+    .exitvehicle >> |cRXP_WARN_施放|r |T450905:0|t[往下爬] (2) |cRXP_WARN_来离开树冠|r
 step
     .isOnQuest 29161
     >>在任务日志中点击任务提交弹窗。
@@ -3534,12 +3534,12 @@ step
     #completewith next
     .isOnQuest 29162
     .goto 198/1,-1500.700,4929.300
-    .cast 97517 >>|cRXP_WARN_使用|r |T134093:0|t[艾森娜的翡翠] |cRXP_WARN_来召唤|r |cRXP_ENEMY_派拉齐尼斯|r
+    .cast 97517 >> |cRXP_WARN_使用|r |T134093:0|t[艾森娜的翡翠] |cRXP_WARN_来召唤|r |cRXP_ENEMY_派拉齐尼斯|r
     .use 69232
 step
     .isOnQuest 29162
     .goto 198/1,-1500.700,4929.300
-    .use 69232 >>击杀 |cRXP_ENEMY_派拉齐尼斯|r
+    .use 69232 >> 击杀 |cRXP_ENEMY_派拉齐尼斯|r
     >>|cRXP_WARN_使用|r |T134093:0|t[艾森娜的翡翠] |cRXP_WARN_移除|r |cRXP_WARN_派拉齐尼斯|cRXP_ENEMY_ |r施加的 |T136016:0|t[沸腾毒箭] 减益|r
     .complete 29162,1 --|Pyrachnis slain: 1/1
     .mob Pyrachnis
@@ -3547,36 +3547,36 @@ step
     #completewith next
     .isOnQuest 29126
     .goto 198,41.667,56.130
-    .cast 97012 >>|cRXP_WARN_在|r 灰烬堆|cRXP_WARN_ 上使用|cRXP_PICK_ |T135139:0|t[守护者之杖] |r来召唤|r |cRXP_ENEMY_盖伦格斯|r
+    .cast 97012 >> |cRXP_WARN_在|r 灰烬堆|cRXP_WARN_ 上使用|cRXP_PICK_ |T135139:0|t[守护者之杖] |r来召唤|r |cRXP_ENEMY_盖伦格斯|r
     .use 68997
 step
     .goto 198,41.667,56.130
     .isOnQuest 29126
-    .use 68997 >>击杀|cRXP_ENEMY_盖伦格斯|r
+    .use 68997 >> 击杀|cRXP_ENEMY_盖伦格斯|r
     .complete 29126,1 -- Galenges slain (1)
     .mob Galenges
 step
     .isOnQuest 29148
     #completewith next
     .goto 198/1,-1500.700,4929.300
-    .cast 97324 >>|cRXP_WARN_在西部的火焰传送门附近使用|r |T135992:0|t[群鸟女王的翎羽] |cRXP_WARN_来召唤|r |cRXP_ENEMY_米拉盖佐尔|r
+    .cast 97324 >> |cRXP_WARN_在西部的火焰传送门附近使用|r |T135992:0|t[群鸟女王的翎羽] |cRXP_WARN_来召唤|r |cRXP_ENEMY_米拉盖佐尔|r
     .use 69212
 step
     .isOnQuest 29148
     .goto 198/1,-1500.700,4929.300
-    .use 69212 >>击杀 |cRXP_ENEMY_米拉盖佐尔|r
+    .use 69212 >> 击杀 |cRXP_ENEMY_米拉盖佐尔|r
     .complete 29148,1 -- Millagazor slain (1)
     .mob Millagazor
 step
     .isOnQuest 29165
     #completewith next
     .goto 198,41.667,56.130
-    .cast 97498 >>|cRXP_WARN_使用|r |T134298:0|t[狼的尖牙] |cRXP_WARN_来召唤|r |cRXP_ENEMY_莱拉克斯|r
+    .cast 97498 >> |cRXP_WARN_使用|r |T134298:0|t[狼的尖牙] |cRXP_WARN_来召唤|r |cRXP_ENEMY_莱拉克斯|r
     .use 69225
 step
     .isOnQuest 29165
     .goto 198,41.667,56.130
-    .use 69225 >>击杀 |cRXP_ENEMY_莱拉克斯|r
+    .use 69225 >> 击杀 |cRXP_ENEMY_莱拉克斯|r
     .complete 29165,1 -- Lylagar slain (1)
     .mob Lylagar
 step
@@ -3812,7 +3812,7 @@ step
     #completewith RayneFeathersong
     .isQuestComplete 29128
     .goto 198,27.484,56.394
-    .zone 338 >>穿过传送门前往火焰之地
+    .zone 338 >> 穿过传送门前往火焰之地
 step
     .isQuestTurnedIn 29215
     .goto 338,50.644,87.244
@@ -3829,7 +3829,7 @@ step
     .isQuestTurnedIn 29282
     .goto 338,46.758,90.170
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莉吉特|r 对话
-    .daily 29263,29278,29295,29297 >>接取随机刷新的日常任务
+    .daily 29263,29278,29295,29297 >> 接取随机刷新的日常任务
     >>|cRXP_WARN_如果 |cRXP_FRIENDLY_莉吉特|r 今天没有提供任务，请跳过此步骤|r
     .target Ricket
 step
@@ -3841,7 +3841,7 @@ step
     .goto 338,45.589,85.822
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_将军泰尔迪斯·月落|r 对话
     .daily 29179 >>接受任务 元素敌人
-    .daily 29304,29141,29142,29137 >>接取随机刷新的日常任务
+    .daily 29304,29141,29142,29137 >> 接取随机刷新的日常任务
     .target General Taldris Moonfall
 step
     .isQuestComplete 29128
@@ -3859,7 +3859,7 @@ step -- 29138 Burn Victims
     .goto 338,45.8,64.2,45,0
     .goto 338,52.8,64.4,45,0
     .goto 338,53.6,79.6,45,0
-    .use 69240 >>|cRXP_WARN_对|r |cRXP_WARN_受伤的海加尔防御者|r |cRXP_FRIENDLY_使用|r |T463860:0|t[魔法药膏]
+    .use 69240 >> |cRXP_WARN_对|r |cRXP_WARN_受伤的海加尔防御者|r |cRXP_FRIENDLY_使用|r |T463860:0|t[魔法药膏]
     .complete 29138,1 -- Wounded Hyjal Defender saved 1/1
     .target Wounded Hyjal Defender
 step -- Embergris 29255
@@ -4099,25 +4099,25 @@ step
     .isQuestComplete 29263
     .goto 338,46.919,89.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达默克·冲炉|r 对话
-    .dailyturnin 29263 >>交任务 一颗苦果
+    .dailyturnin 29263 >> 交任务 一颗苦果
     .target Damek Bloombeard
 step
     .isQuestComplete 29278
     .goto 338,46.919,89.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达默克·冲炉|r 对话
-    .dailyturnin 29278 >>交任务 活体黑曜石
+    .dailyturnin 29278 >> 交任务 活体黑曜石
     .target Damek Bloombeard
 step
     .isQuestComplete 29295
     .goto 338,46.919,89.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达默克·冲炉|r 对话
-    .dailyturnin 29295 >>交任务 它们越大
+    .dailyturnin 29295 >> 交任务 它们越大
     .target Damek Bloombeard
 step
     .isQuestComplete 29297
     .goto 338,46.919,89.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达默克·冲炉|r 对话
-    .dailyturnin 29297 >>交任务 再见小鸟
+    .dailyturnin 29297 >> 交任务 再见小鸟
     .target Damek Bloombeard
 step
     .isQuestComplete 29179
@@ -4129,25 +4129,25 @@ step
     .isQuestComplete 29304
     .goto 338,45.589,85.822
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_将军泰尔迪斯·月落|r 对话
-    .dailyturnin 29304 >>交任务 犬祸
+    .dailyturnin 29304 >> 交任务 犬祸
     .target General Taldris Moonfall
 step
     .isQuestComplete 29141
     .goto 338,45.589,85.822
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_将军泰尔迪斯·月落|r 对话
-    .dailyturnin 29141 >>交任务 摔得更惨
+    .dailyturnin 29141 >> 交任务 摔得更惨
     .target General Taldris Moonfall
 step
     .isQuestComplete 29142
     .goto 338,45.589,85.822
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_将军泰尔迪斯·月落|r 对话
-    .dailyturnin 29142 >>交任务 叛徒归来
+    .dailyturnin 29142 >> 交任务 叛徒归来
     .target General Taldris Moonfall
 step
     .isQuestComplete 29137
     .goto 338,45.589,85.822
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_将军泰尔迪斯·月落|r 对话
-    .dailyturnin 29137 >>交任务 防线上的突破口
+    .dailyturnin 29137 >> 交任务 防线上的突破口
     .target General Taldris Moonfall
 step
     .isQuestComplete 29138
@@ -4191,12 +4191,12 @@ step -- Ricket @ WARDENS
     .goto 338,66.429,65.396
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莉吉特|r 对话
     >>|cRXP_WARN_如果她不在就跳过这一步|r
-    .daily 29263,29278,29295,29297 >>接取随机刷新的日常任务
+    .daily 29263,29278,29295,29297 >> 接取随机刷新的日常任务
     .target Ricket
 step
     .goto 338,66.100,63.908
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德尔德伦·鸦榆|r 对话
-    .daily 29189,29159,29160 >>接取随机刷新的两个日常任务
+    .daily 29189,29159,29160 >> 接取随机刷新的两个日常任务
     .disablecheckbox
     .target Deldren Ravenelm
     .questcount <2,29189,29159,29160
@@ -4274,7 +4274,7 @@ step -- 29297 Bye Bye Burdy -- WARDENS ONLY
     .goto 338,73.03,54.88,50,0
     .goto 338,73.82,38.28,50,0
     .goto 338,63.73,38.76,50,0
-    .use 69832 >>|cRXP_WARN_对飞行在空中的|r |cRXP_WARN_烈焰德鲁伊|cRXP_ENEMY_ |r使用|r |T135129:0|t[戳鸟之矛]
+    .use 69832 >> |cRXP_WARN_对飞行在空中的|r |cRXP_WARN_烈焰德鲁伊|cRXP_ENEMY_ |r使用|r |T135129:0|t[戳鸟之矛]
     .complete 29297,1 -- Druids of the Flame in Fire Crow form slain (3)
     .mob Druid of the Flame
 step
@@ -4302,19 +4302,19 @@ step
     .isQuestComplete 29160
     .goto 338,66.100,63.908
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德尔德伦·鸦榆|r 对话
-    .dailyturnin 29160 >>交任务 蛋打蛛亡
+    .dailyturnin 29160 >> 交任务 蛋打蛛亡
     .target Deldren Ravenelm
 step
     .isQuestComplete 29159
     .goto 338,66.100,63.908
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德尔德伦·鸦榆|r 对话
-    .dailyturnin 29159 >>交任务 火蜘蛛恐惧症
+    .dailyturnin 29159 >> 交任务 火蜘蛛恐惧症
     .target Deldren Ravenelm
 step
     .isQuestComplete 29189
     .goto 338,66.100,63.908
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德尔德伦·鸦榆|r 对话
-    .dailyturnin 29189 >>交任务 邪恶的网
+    .dailyturnin 29189 >> 交任务 邪恶的网
     .target Deldren Ravenelm
 step
     .isQuestComplete 29192
@@ -4331,7 +4331,7 @@ step
 step
     .goto 338,64.855,67.305
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦琳·刀翼|r 对话
-    .daily 29210 >>接受任务 忍受炎热
+    .daily 29210 >> 接受任务 忍受炎热
     .target Marin Bladewing
 step -- this step will autoskip if they completed 29276 earlier
     .goto 338,65.959,66.093
@@ -4391,7 +4391,7 @@ step
     .isQuestComplete 29210
     .goto 338,57.742,49.502
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瑟蕾莎·树皮|r 对话
-    .dailyturnin 29210 >>交任务 忍受炎热
+    .dailyturnin 29210 >> 交任务 忍受炎热
     .target Theresa Barkskin
 step
     .isQuestTurnedIn 29284
@@ -4413,19 +4413,19 @@ step
     .isQuestComplete 29276
     .goto 338,51.245,85.865
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安伦·觅影者|r 对话
-    .dailyturnin 29276 >>交任务 烈焰蛛后
+    .dailyturnin 29276 >> 交任务 烈焰蛛后
     .target Anren Shadowseeker
 step
     .isQuestComplete 29275
     .goto 338,51.547,85.511
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索罗·白蹄|r 对话
-    .dailyturnin 29275 >>交任务 范达尔的研究
+    .dailyturnin 29275 >> 交任务 范达尔的研究
     .target Tholo Whitehoof
 step
     .isQuestComplete 29297
     .goto 338,46.919,89.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达默克·冲炉|r 对话
-    .dailyturnin 29297 >>交任务 再见小鸟
+    .dailyturnin 29297 >> 交任务 再见小鸟
     .target Damek Bloombeard
 step
     .isQuestComplete 29243
@@ -4446,7 +4446,7 @@ step
     #optional
     #completewith next
     .goto 338,53.026,83.693
-    .zone 198 >>使用传送门前往海加尔山
+    .zone 198 >> 使用传送门前往海加尔山
     .zoneskip 338,1
 step
     .isQuestComplete 29283
@@ -4465,7 +4465,7 @@ step
     #completewith WardenEnd
     .isOnQuest 29284
     .goto 198,27.484,56.394
-    .zone 338 >>穿过传送门前往火焰之地
+    .zone 338 >> 穿过传送门前往火焰之地
 step
     .isOnQuest 29284
     .goto 338,43.812,88.964
@@ -4508,7 +4508,7 @@ step
     #optional
     #completewith next
     .goto 338,53.026,83.693
-    .zone 198 >>使用传送门前往海加尔山
+    .zone 198 >> 使用传送门前往海加尔山
     .zoneskip 338,1
 step
     .isQuestComplete 29281
@@ -4528,7 +4528,7 @@ step
     #completewith next
     .isOnQuest 29282
     .goto 198,27.484,56.394
-    .zone 338 >>穿过传送门前往火焰之地
+    .zone 338 >> 穿过传送门前往火焰之地
 step
     .isOnQuest 29282
     .goto 338,46.758,90.170
@@ -4539,7 +4539,7 @@ step
     .isQuestTurnedIn 29282
     .goto 338,46.758,90.170
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莉吉特|r 对话
-    .daily 29263,29278,29295,29297 >>接取随机刷新的日常任务
+    .daily 29263,29278,29295,29297 >> 接取随机刷新的日常任务
     .target Ricket
 step -- 29263 A Bitter Pill
     .isOnQuest 29263
@@ -4578,32 +4578,32 @@ step -- 29297 Bye Bye Burdy -- WARDENS ONLY
     .goto 338,73.03,54.88,50,0
     .goto 338,73.82,38.28,50,0
     .goto 338,63.73,38.76,50,0
-    .use 69832 >>|cRXP_WARN_对飞行在空中的|r |cRXP_WARN_烈焰德鲁伊|cRXP_ENEMY_ |r使用|r |T135129:0|t[戳鸟之矛]
+    .use 69832 >> |cRXP_WARN_对飞行在空中的|r |cRXP_WARN_烈焰德鲁伊|cRXP_ENEMY_ |r使用|r |T135129:0|t[戳鸟之矛]
     .complete 29297,1 -- Druids of the Flame in Fire Crow form slain (3)
     .mob Druid of the Flame
 step
     .isQuestComplete 29263
     .goto 338,46.919,89.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达默克·冲炉|r 对话
-    .dailyturnin 29263 >>交任务 一颗苦果
+    .dailyturnin 29263 >> 交任务 一颗苦果
     .target Damek Bloombeard
 step
     .isQuestComplete 29278
     .goto 338,46.919,89.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达默克·冲炉|r 对话
-    .dailyturnin 29278 >>交任务 活体黑曜石
+    .dailyturnin 29278 >> 交任务 活体黑曜石
     .target Damek Bloombeard
 step
     .isQuestComplete 29295
     .goto 338,46.919,89.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达默克·冲炉|r 对话
-    .dailyturnin 29295 >>交任务 它们越大
+    .dailyturnin 29295 >> 交任务 它们越大
     .target Damek Bloombeard
 step
     .isQuestComplete 29297
     .goto 338,46.919,89.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达默克·冲炉|r 对话
-    .dailyturnin 29297 >>交任务 再见小鸟
+    .dailyturnin 29297 >> 交任务 再见小鸟
     .target Damek Bloombeard
 --Complete Additional Armaments unlock
 
@@ -4617,27 +4617,27 @@ step
     #optional
     #completewith next
     .goto 338,53.026,83.693
-    .zone 198 >>使用传送门前往海加尔山
+    .zone 198 >> 使用传送门前往海加尔山
     .zoneskip 338,1
 step
     .isQuestComplete 29279
     .goto 198,27.170,62.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦托克劳|r 对话
-    .turnin 29279 >>交任务 注满月井
-    .accept 29280 >>接受任务 滋养之水
+    .turnin 29279 >> 交任务 注满月井
+    .accept 29280 >> 接受任务 滋养之水
     .target Matoclaw
 step
     .isQuestTurnedIn 29279
     .goto 198,27.170,62.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦托克劳|r 对话
-    .accept 29280 >>接受任务 滋养之水
+    .accept 29280 >> 接受任务 滋养之水
     .target Matoclaw
 step
     #optional
     #completewith next
     .isOnQuest 29280
     .goto 198,27.484,56.394
-    .zone 338 >>穿过传送门前往火焰之地
+    .zone 338 >> 穿过传送门前往火焰之地
 step
     .isOnQuest 29280
     .goto 338,44.087,86.321
@@ -4649,7 +4649,7 @@ step
     .goto 338,47.022,91.368
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_玛法里奥·怒风|r对话
     .target Malfurion Stormrage
-    .accept 29203 >>接受任务 深入神庙
+    .accept 29203 >> 接受任务 深入神庙
 step
     .isOnQuest 29203
     #completewith next
@@ -4670,96 +4670,96 @@ step
     .goto 338,47.022,91.368
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_玛法里奥·怒风|r对话
     .target Malfurion Stormrage
-    .turnin 29203 >>交任务深入神庙
+    .turnin 29203 >> 交任务深入神庙
 step
     .isQuestTurnedIn 29203
     >>|cRXP_WARN_你现在应已收到 |cRXP_FRIENDLY_瑟蕾莎·树皮|r 寄来的邮件，内含|r |T514925:0|t[|cRXP_LOOT_烟熏过的坠饰|r]
     .use 69854 >>|cRXP_WARN_使用|r |T514925:0|t[|cRXP_LOOT_烟熏过的坠饰|r] |cRXP_WARN_来开始任务|r
     .collect 69854,1,29298,1 -- Smoke-Stained Locket (1)
-    .accept 29298 >>接受任务 一条烟熏过的坠饰
+    .accept 29298 >> 接受任务 一条烟熏过的坠饰
 step
     #optional
     #completewith SecretsWithin
     .goto 338,53.026,83.693
-    .zone 198 >>使用传送门前往海加尔山
+    .zone 198 >> 使用传送门前往海加尔山
     .zoneskip 338,1
 step
     .isQuestTurnedIn 29203
     #completewith next
-    .zone Moonglade >>前往月光林地
+    .zone Moonglade >> 前往月光林地
 step
     #label SecretsWithin
     .isQuestTurnedIn 29203
     .goto Moonglade,51.685,45.098
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉比恩·萨图纳|r 对话
-    .turnin 29298 >>交任务 一条烟熏过的坠饰
-    .accept 29302 >>接受任务 解开其中的秘密
+    .turnin 29298 >> 交任务 一条烟熏过的坠饰
+    .accept 29302 >> 接受任务 解开其中的秘密
     .timer 42,解开其中的秘密 剧情演出
     .target Rabine Saturna
 step
     .isQuestTurnedIn 29203
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 29302,1 -- Look into Leyara's memories 1/1
 step
     .isQuestTurnedIn 29203
     .goto Moonglade,51.685,45.098
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉比恩·萨图纳|r 对话
-    .turnin 29302 >>交任务 解开其中的秘密
-    .accept 29303 >>接受任务 悲剧与家庭
+    .turnin 29302 >> 交任务 解开其中的秘密
+    .accept 29303 >> 接受任务 悲剧与家庭
     .target Rabine Saturna
 step
     .isOnQuest 29303
     #completewith next
-    .zone Ashenvale >>前往灰谷
+    .zone Ashenvale >> 前往灰谷
 step
     .isOnQuest 29303
     .goto Ashenvale,40.501,53.281
-    .cast 6247 >>点击 |cRXP_PICK_暗夜精灵坟墓|r
+    .cast 6247 >> 点击 |cRXP_PICK_暗夜精灵坟墓|r
     .timer 48,悲剧与家庭 剧情演出
     .skipgossip
 step
     .isOnQuest 29203
     .goto Ashenvale,40.501,53.281
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 29303,1 -- Look deeper into Leyara's memories 1/1
     .skipgossip
 step
     .isQuestTurnedIn 29203
     >>在任务日志中点击任务提交弹窗。
-    .turnin 29303 >>交任务 悲剧与家庭
-    .accept 29310 >>接受任务 临界点
+    .turnin 29303 >> 交任务 悲剧与家庭
+    .accept 29310 >> 接受任务 临界点
 step
     .isOnQuest 29310
     #completewith next
-    .zone 198 >>前往海加尔山
+    .zone 198 >> 前往海加尔山
 step
     .isOnQuest 29310
     .goto 198,7.561,34.582
-    .cast 6247 >>点击 |cRXP_PICK_小型墓碑|r
+    .cast 6247 >> 点击 |cRXP_PICK_小型墓碑|r
     .timer 59,临界点 剧情演出
     .skipgossip
 step
     .isOnQuest 29310
     .goto 198,7.561,34.582
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 29310,1 -- Look deeper into Leyara's memories 1/1
     .skipgossip
 step
     .isQuestTurnedIn 29203
     >>在任务日志中点击任务提交弹窗。
-    .turnin 29310 >>交任务 临界点
-    .accept 29311 >>接受任务 皆不可考
+    .turnin 29310 >> 交任务 临界点
+    .accept 29311 >> 接受任务 皆不可考
 step
     #optional
     #completewith next
     .isOnQuest 29311
     .goto 198,27.484,56.394
-    .zone 338 >>穿过传送门前往火焰之地
+    .zone 338 >> 穿过传送门前往火焰之地
 step
     .isOnQuest 29311
     .goto 338,47.022,91.368
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_玛法里奥·怒风|r对话
-    .turnin 29311 >>交任务 皆不可考
+    .turnin 29311 >> 交任务 皆不可考
     .target Malfurion Stormrage
 --Complete Filling the Moonwell
 

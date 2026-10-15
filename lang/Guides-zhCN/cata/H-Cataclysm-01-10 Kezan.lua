@@ -129,7 +129,7 @@ step
     #completewith next
     .goto 194,57.10,78.44,10,0
     .goto 194,53.39,75.13,20,0
-    .goto 194,47.36,78.46,30 >>跟随箭头绕着房子走
+    .goto 194,47.36,78.46,30 >> 跟随箭头绕着房子走
 step
     .goto 194,45.19,74.76
     >>攻击|cFFFF5722布鲁诺·防火棉|r
@@ -242,7 +242,7 @@ step
 step
     #completewith next
     .goto 194,47.71,57.76
-    .vehicle >>进入 |cRXP_FRIENDLY_锈水海盗队伐木机|r
+    .vehicle >> 进入 |cRXP_FRIENDLY_锈水海盗队伐木机|r
     .target Bilgewater Buccaneer
 step
     >>使用|T134480:0|t[投掷足球炸弹]（1）
@@ -280,13 +280,13 @@ step << Rogue
     .goto 194,58.27,73.10,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cFF00FF25史莉琪·剃刀|r 对话
     .accept 14010 >>接受任务 刺骨
-    .train 2098 >>学习 |T132292:0|t[刺骨] << Cata
+    .train 2098 >> 学习 |T132292:0|t[刺骨] << Cata
     .target Slinky Sharpshiv
 step << Warrior
     .goto 194,60.27,77.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cFF00FF25全能战士NX-01型|r 对话
     .accept 14013 >>接受任务 冲锋
-    .train 100 >>|T132337:0|t[冲锋] << Cata
+    .train 100 >> |T132337:0|t[冲锋] << Cata
     .target Warrior-Matic NX-01
 step << Hunter
     .goto 194,60.42,77.50
@@ -666,7 +666,7 @@ step
 step
     #completewith next
     .goto 194,22.31,16.78
-    .cast 92633 >>点击大炮
+    .cast 92633 >> 点击大炮
 step
     .goto 194,20.76,13.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cFF00FF25贸易大王加里维克斯|r 对话
@@ -691,7 +691,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     >>有时可能会卡住，需要重新登录或使用 /reload
-    .timer 45 >>还不是见圣光的时候 剧情演出
+    .timer 45 >> 还不是见圣光的时候 剧情演出
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cFF00FF25扎普诺兹医生|r 和 |cFF00FF25“发明家”盖格林登|r 对话
     .turnin 14239 >>交任务 还不是见圣光的时候！

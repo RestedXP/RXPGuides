@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 
 step
 	.goto Dalaran,40.67,35.35
-	>>要开始珠宝加工日常任务，你必须首先完成完成发货任务，该任务要求你在达拉然给|cRXP_FRIENDLY_蒂莫西·琼斯|r 带去一块|cRXP_LOOT_玉髓|r
+	>> 要开始珠宝加工日常任务，你必须首先完成完成发货任务，该任务要求你在达拉然给|cRXP_FRIENDLY_蒂莫西·琼斯|r 带去一块|cRXP_LOOT_玉髓|r
 	.collect 36923,1 --Chalcedony (1)
 	.isQuestAvailable 13041
 	.target Timothy Jones
@@ -22,7 +22,7 @@ step
 	.isQuestAvailable 13041
 step
 	.goto Dalaran,40.67,35.35
-	.daily 12958,12959,12960,12961,12962,12963 >>与达拉然的|cRXP_FRIENDLY_蒂莫西·琼斯|r 对话。他有6个珠宝加工日常任务中的1个，接受任意可用的任务
+	.daily 12958,12959,12960,12961,12962,12963 >> 与达拉然的|cRXP_FRIENDLY_蒂莫西·琼斯|r 对话。他有6个珠宝加工日常任务中的1个，接受任意可用的任务
 	>>货单: 鲜血玉髓护符 -- 12958
 	>>货单: 发光象牙雕像 -- 12959
 	>>货单: 邪恶日之胸针 -- 12960
@@ -54,7 +54,7 @@ step
 	.complete 12958,1 --Blood Jade Amulet (1)
 	.isOnQuest 12958
 step << Mage
-	.zone Dalaran >>传送至达拉然
+	.zone Dalaran >> 传送至达拉然
 step
 	>>与达拉然的 |cRXP_FRIENDLY_蒂莫西·琼斯|r 对话
 	.goto Dalaran,40.67,35.35
@@ -86,7 +86,7 @@ step
 	.complete 12959,1 --Glowing Ivory Figurine (1)
 	.isOnQuest 12959
 step << Mage
-	.zone Dalaran >>传送至达拉然
+	.zone Dalaran >> 传送至达拉然
 step
 	>>与达拉然的 |cRXP_FRIENDLY_蒂莫西·琼斯|r 对话
 	.goto Dalaran,40.67,35.35
@@ -115,7 +115,7 @@ step
 	.complete 12960,1 --Wicked Sun Brooch (1)
 	.isOnQuest 12960
 step << Mage
-	.zone Dalaran >>传送至达拉然
+	.zone Dalaran >> 传送至达拉然
 step
 	>>与达拉然的 |cRXP_FRIENDLY_蒂莫西·琼斯|r 对话
 	.goto Dalaran,40.67,35.35
@@ -145,7 +145,7 @@ step
 	.complete 12961,1 --Intricate Bone Figurine (1)
 	.isOnQuest 12961
 step << Mage
-	.zone Dalaran >>传送至达拉然
+	.zone Dalaran >> 传送至达拉然
 step
 	>>与达拉然的 |cRXP_FRIENDLY_蒂莫西·琼斯|r 对话
 	.goto Dalaran,40.67,35.35
@@ -173,7 +173,7 @@ step
 	.complete 12962,1 --Bright Armor Relic (1)
 	.isOnQuest 12962
 step << Mage
-	.zone Dalaran >>传送至达拉然
+	.zone Dalaran >> 传送至达拉然
 step
 	>>与达拉然的 |cRXP_FRIENDLY_蒂莫西·琼斯|r 对话
 	.goto Dalaran,40.67,35.35
@@ -202,7 +202,7 @@ step
 	.complete 12963,1 --Shifting Sun Curio (1)
 	.isOnQuest 12963
 step << Mage
-	.zone Dalaran >>传送至达拉然
+	.zone Dalaran >> 传送至达拉然
 step
 	>>与达拉然的 |cRXP_FRIENDLY_蒂莫西·琼斯|r 对话
 	.goto Dalaran,40.67,35.35

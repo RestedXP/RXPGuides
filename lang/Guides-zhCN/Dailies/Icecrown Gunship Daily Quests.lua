@@ -121,7 +121,7 @@ step << Alliance
 step << Alliance
     #completewith next
     .goto Icecrown,62.55,50.67
-    .vehicle 32227 >>右键点击飞行器顶部的炮塔以开始任务
+    .vehicle 32227 >> 右键点击飞行器顶部的炮塔以开始任务
 	.isOnQuest 13309
 step << Alliance
 	>>在飞行时，射击建筑物上的所有矛炮
@@ -286,7 +286,7 @@ step
 step
     .goto IcecrownGlacier,68.3,61.5
 	>>击杀该区域内的巨大憎恶，并拾取冷却的憎恶破胆
-	.use 43968 >>使用憎恶复活套装，配合背包中的破胆来召唤你能控制的憎恶。让憎恶攻击小怪并吸引仇恨，以此聚集尽可能多的小怪，然后使用"憎恶爆炸"击杀憎恶附近的所有小怪（小怪必须处于战斗状态才能获得功劳）
+	.use 43968 >> 使用憎恶复活套装，配合背包中的破胆来召唤你能控制的憎恶。让憎恶攻击小怪并吸引仇恨，以此聚集尽可能多的小怪，然后使用"憎恶爆炸"击杀憎恶附近的所有小怪（小怪必须处于战斗状态才能获得功劳）
 	>>如果你用完了破胆，去击杀更多巨大憎恶，你一次只能携带1个破胆。
 	.collect 43966,1,13289,-1,1 << Alliance --Chilled Abomination Guts (3)
     .complete 13289,1 << Alliance  --Icy Ghouls Exploded (15)
@@ -313,13 +313,13 @@ step
 	.isOnQuest 13281 << Horde
 step
 	.goto IcecrownGlacier,62.3,63.4
-	.use 44009 >>使用你的背包中的肉巨人脊骨来制造脓性脊骨液
+	.use 44009 >> 使用你的背包中的肉巨人脊骨来制造脓性脊骨液
 	.collect 44010,1 -- Pustulant Spinal Fluid (1)
 	.isOnQuest 13297 << Alliance
 	.isOnQuest 13281 << Horde
 step
     .goto IcecrownGlacier,62.3,63.4
-	.use 44010 >>在冒泡的绿色大锅上使用你的背包中的脓性脊骨液。击杀生成的怪物，并在提示"快速添加液体"时再次使用脊骨液。此任务非常困难。如果需要，请组队或放弃/跳过此项每日任务
+	.use 44010 >> 在冒泡的绿色大锅上使用你的背包中的脓性脊骨液。击杀生成的怪物，并在提示"快速添加液体"时再次使用脊骨液。此任务非常困难。如果需要，请组队或放弃/跳过此项每日任务
     .complete 13297,1 << Alliance --Batch of Plague Neutralized (1)
     .complete 13281,1 << Horde --Batch of Plague Neutralized (1)
 	.isOnQuest 13297 << Alliance
@@ -348,7 +348,7 @@ step
 step
     .goto IcecrownGlacier,49.7,34.4
 	.use 44301 -- to combine the 10 tainted essences into a writhing mass
-	.use 44304 >>右键点击你背包里的被污染的精华，将其合成为沸腾的魔质。然后将其扔进大锅中
+	.use 44304 >> 右键点击你背包里的被污染的精华，将其合成为沸腾的魔质。然后将其扔进大锅中
 	.complete 13322,1 << Alliance
 	.complete 13357,1 << Horde
 	.isOnQuest 13322 << Alliance
@@ -358,7 +358,7 @@ step
     .goto IcecrownGlacier,54.7,28.0,70,0
     .goto IcecrownGlacier,57.0,28.8,70,0
     .goto IcecrownGlacier,54.1,31.4
-	.use 44433 >>击杀该区域的5个奴役的仆从（虚空行者）。在他们的尸体上使用虹吸之杖获取黑暗物质
+	.use 44433 >> 击杀该区域的5个奴役的仆从（虚空行者）。在他们的尸体上使用虹吸之杖获取黑暗物质
 	.collect 44434,5,13344,1 << Alliance --Dark Matter (5)
 	.collect 44434,5,13365,1 << Horde --Dark Matter (5)
 	.isOnQuest 13344 << Alliance
@@ -372,7 +372,7 @@ step
 	.isOnQuest 13365 << Horde
 step
 	#completewith next
-    .goto IcecrownGlacier,51.9,32.5,30 >>进入奥杜尔撒
+    .goto IcecrownGlacier,51.9,32.5,30 >> 进入奥杜尔撒
 	.isOnQuest 13350 << Alliance
 	.isOnQuest 13368 << Horde
 step
@@ -391,14 +391,14 @@ step
 step
     .goto IcecrownGlacier,51.9,29.0
 	>>这个任务非常困难。如果需要请组队，或放弃/跳过该日常任务
-	.use 44476 >>点击背包中的任何物品以将其合并为奥鲁麦斯的残骸
+	.use 44476 >> 点击背包中的任何物品以将其合并为奥鲁麦斯的残骸
 	.collect 44480,1 --Alumeth's Remains (1)
 	.isOnQuest 13350 << Alliance
 	.isOnQuest 13368 << Horde
 step
     .goto IcecrownGlacier,51.9,29.0
 	>>这个任务非常困难。如果需要请组队，或放弃/跳过该日常任务
-	.use 44480 >>在发光晶体前使用奥鲁麦斯的残骸来召唤他，击杀他
+	.use 44480 >> 在发光晶体前使用奥鲁麦斯的残骸来召唤他，击杀他
     .complete 13350,1 << Alliance --Alumeth the Ascended Defeated (1)
     .complete 13368,1 << Horde --Alumeth the Ascended Defeated (1)
 	.isOnQuest 13350 << Alliance

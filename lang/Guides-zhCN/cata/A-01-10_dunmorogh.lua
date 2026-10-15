@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #mop
 #name 1-6级 寒脊山谷
 #displayname 1-6级 寒脊山谷
-#next 6-7级 丹莫罗；6-9级 艾尔文森林
+#next 6-7级 丹莫罗;6-9级 艾尔文森林
 #defaultfor Dwarf !DK
 
 << Alliance
@@ -125,7 +125,7 @@ step
     #completewith next
     .goto 27,35.914,68.096,30,0
     .goto 27,35.751,67.107,12,0
-    .goto 27,35.650,66.782,12 >>进入安威玛尔
+    .goto 27,35.650,66.782,12 >> 进入安威玛尔
     .isOnQuest 24473
 step
     #loop
@@ -151,7 +151,7 @@ step
     #optional
     #completewith next
     .goto 27,35.805,67.328,10,0
-    .goto 27,35.912,68.003,15 >>离开安威玛尔
+    .goto 27,35.912,68.003,15 >> 离开安威玛尔
     .isOnQuest 24474
     .subzoneskip 77,1
 step
@@ -258,24 +258,24 @@ step
     #completewith FirstThing
     .goto 27,35.914,68.096,30,0
     .goto 27,35.751,67.107,12,0
-    .goto 27,35.650,66.782,15 >>进入安威玛尔
+    .goto 27,35.650,66.782,15 >> 进入安威玛尔
     .cooldown item,6948,<0 << Dwarf !DK
     .isOnQuest 24474
-    .不可飞行  --Azeroth Flying
+    .noflyable  --Azeroth Flying
 step << Dwarf !DK
     #optional
     #completewith FirstThing
-    .hs >>炉石返回安威玛尔
+    .hs >> 炉石返回安威玛尔
     .cooldown item,6948,>2,1
     .isOnQuest 24474
-    .不可飞行  --Azeroth Flying
+    .noflyable  --Azeroth Flying
     .subzoneskip 77
 step
     #optional
     #completewith FirstThing
     .goto 27,35.914,68.096,30,0
     .goto 27,35.751,67.107,12,0
-    .goto 27,35.650,66.782,15 >>进入安威玛尔
+    .goto 27,35.650,66.782,15 >> 进入安威玛尔
     .isOnQuest 24474
     .flyable  --Azeroth Flying
 step
@@ -305,7 +305,7 @@ step
     #requires FirstThing
     #completewith RockjawA
     .goto 27,35.805,67.328,10,0
-    .goto 27,35.702,68.138,20 >>离开安威玛尔
+    .goto 27,35.702,68.138,20 >> 离开安威玛尔
     .isOnQuest 24475
     .subzoneskip 77,1
 step
@@ -400,25 +400,25 @@ step
     #completewith Sun
     .goto 27,35.914,68.096,30,0
     .goto 27,35.751,67.107,12,0
-    .goto 27,35.650,66.782,15 >>进入安威玛尔
+    .goto 27,35.650,66.782,15 >> 进入安威玛尔
     .cooldown item,6948,<0 << Dwarf !DK
     .isOnQuest 24475
-    .不可飞行  --Azeroth Flying
+    .noflyable  --Azeroth Flying
 step << Dwarf !DK
     #optional
     #requires DunWolves
     #completewith Sun
-    .hs >>炉石返回安威玛尔
+    .hs >> 炉石返回安威玛尔
     .cooldown item,6948,>2,1
     .isOnQuest 24475
-    .不可飞行  --Azeroth Flying
+    .noflyable  --Azeroth Flying
 step
     #optional
     #requires DunWolves
     #completewith Sun
     .goto 27,35.914,68.096,30,0
     .goto 27,35.751,67.107,12,0
-    .goto 27,35.650,66.782,15 >>进入安威玛尔
+    .goto 27,35.650,66.782,15 >> 进入安威玛尔
     .isOnQuest 24475
     .flyable  --Azeroth Flying
 step
@@ -446,7 +446,7 @@ step
     #optional
     #completewith next
     .goto 27,35.805,67.328,10,0
-    .goto 27,35.702,68.138,20 >>离开安威玛尔
+    .goto 27,35.702,68.138,20 >> 离开安威玛尔
     .isOnQuest 24487
     .subzoneskip 77,1
 step
@@ -495,27 +495,27 @@ step
 step
     #optional
     #completewith next
-    .goto 27,27.759,75.195,10 >>前往内部找 |cRXP_FRIENDLY_占卜者米里姆库亚|r
+    .goto 27,27.759,75.195,10 >> 前往内部找 |cRXP_FRIENDLY_占卜者米里姆库亚|r
     .timer 11,打探消息 剧情RP
     .isOnQuest 24489
 --XX you can start the event earlier then get the box and come back but its way too hard to communicate it/trust the player enough for a 3s time gain vs 20s time loss
 step
     .goto 27,27.759,75.195
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     >>|cRXP_WARN_保持靠近 |cRXP_FRIENDLY_占卜者米里姆库亚|r，否则任务目标无法完成|r
     .complete 24489,3 --Soothsayer Mirim'koa Scouted (1)
     .target Soothsayer Mirim'koa
 step
     #optional
     #completewith next
-    .goto 27,29.593,78.754,11 >>前往内部找 |cRXP_FRIENDLY_占卜者里卡卡利|r
+    .goto 27,29.593,78.754,11 >> 前往内部找 |cRXP_FRIENDLY_占卜者里卡卡利|r
     .timer 11,打探消息 剧情RP
     .isOnQuest 24489
 step
     #sticky
     #label Rikkari
     .goto 27,29.593,78.754
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     >>|cRXP_WARN_保持靠近 |cRXP_FRIENDLY_占卜者里卡卡利|r，否则任务目标无法完成|r
     .complete 24489,2 --Soothsayer Rikkari Scouted (1)
     .target Soothsayer Rikkari
@@ -528,7 +528,7 @@ step
     #optional
     #completewith next
     #requires Rikkari
-    .goto 27,33.323,77.988,11 >>前往 |cRXP_FRIENDLY_占卜者史卡拉|r
+    .goto 27,33.323,77.988,11 >> 前往 |cRXP_FRIENDLY_占卜者史卡拉|r
     .timer 13,打探消息 剧情RP
     .isOnQuest 24489
 step
@@ -536,7 +536,7 @@ step
     #requires Rikkari
     #label Shikala
     .goto 27,33.323,77.988
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     >>|cRXP_WARN_保持靠近 |cRXP_FRIENDLY_占卜者史卡拉|r，否则任务目标无法完成|r
     .complete 24489,1 --Soothsayer Shi'kala Scouted (1)
     .target Soothsayer Shi'kala
@@ -569,7 +569,7 @@ step
 step << cata
     #optional
     #completewith Griknir
-    .goto 428,12.774,40.711,15 >>进入寒脊山谷洞穴
+    .goto 428,12.774,40.711,15 >> 进入寒脊山谷洞穴
 	.isOnQuest 218
 step << cata
     #optional
@@ -631,7 +631,7 @@ step << !tbc !wotlk !cata
     #optional
     #completewith Griknir
     #label Hovel1
-    .goto 428,12.774,40.711,15 >>进入寒脊山谷洞穴
+    .goto 428,12.774,40.711,15 >> 进入寒脊山谷洞穴
 	.isOnQuest 218
 step << !tbc !wotlk !cata
     #optional
@@ -642,7 +642,7 @@ step << !tbc !wotlk !cata
     .goto 428,18.302,48.547,15,0
     .goto 428,37.713,29.248,15,0
     .goto 428,52.353,14.297,15,0
-    .goto 428,76.449,32.098,80 >>往里走到|cRXP_ENEMY_冷酷的格瑞克尼尔|r处
+    .goto 428,76.449,32.098,80 >> 往里走到|cRXP_ENEMY_冷酷的格瑞克尼尔|r处
 	.isOnQuest 218
 step << !tbc !wotlk !cata
     #sticky
@@ -725,7 +725,7 @@ step
     #completewith Pack
     .goto 27,35.914,68.096,30,0
     .goto 27,35.836,67.146,12,0
-    .goto 27,35.953,66.803,15 >>进入安威玛尔
+    .goto 27,35.953,66.803,15 >> 进入安威玛尔
     .isOnQuest 24492
     .subzoneskip 77
 step
@@ -753,7 +753,7 @@ step
     .complete 24492,1 --|Coldridge Beer Flagon: 1/1
 step
     #completewith next
-    .goto Dun Morogh,36.120,64.787,8 >>跑上楼
+    .goto Dun Morogh,36.120,64.787,8 >> 跑上楼
 step
     .goto Dun Morogh,35.782,64.496
     >>打开地上的|cRXP_PICK_狼皮斗篷箱|r，拾取里面的|cRXP_LOOT_粗糙的狼皮斗篷|r
@@ -763,7 +763,7 @@ step
     #requires Forget
     #completewith next
     .goto 27,35.805,67.328,10,0
-    .goto 27,35.912,68.003,20 >>离开安威玛尔
+    .goto 27,35.912,68.003,20 >> 离开安威玛尔
     .isOnQuest 24492
     .subzoneskip 77,1
 step
@@ -779,7 +779,7 @@ step
     .goto 27,53.713,52.190
     >>|cRXP_WARN_等26秒计时器结束后（接受飞行后的26秒），在 |cRXP_FRIENDLY_米罗的旋翼机|r 上登出再登录，利用登出跳过技巧直接到卡拉诺斯|r
     >>|cRXP_WARN_如果在计时器过期前执行，你可能会登出跳过到新工匠镇或回到寒脊山谷。如果发生这种情况，请正常前往卡拉诺斯|r
-    .subzone 131 >>前往卡拉诺斯，丹莫罗
+    .subzone 131 >> 前往卡拉诺斯，丹莫罗
     .isOnQuest 24493
 ]])
 
@@ -794,7 +794,7 @@ RXPGuides.RegisterGuide([[
 #mop
 #name 1-6级 新工匠镇
 #displayname 1-6级 新工匠镇
-#next 6-7级 丹莫罗；6-9级 艾尔文森林
+#next 6-7级 丹莫罗;6-9级 艾尔文森林
 #defaultfor Gnome !DK
 
 << Gnome Alliance
@@ -887,11 +887,11 @@ step << skip -- not working currently in cata
 step
     .isOnQuest 27635
     .goto 30,58.746,82.974
-    .vehicle >>点击 |cRXP_FRIENDLY_净化者500型|r
+    .vehicle >> 点击 |cRXP_FRIENDLY_净化者500型|r
     .timer 30,净化处理 剧情演出
     .target Sanitron 500
 step
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     .complete 27635,1 --Decontamination Process started (1)
     .target Sanitron 500
 step
@@ -902,7 +902,7 @@ step
 	.target Technician Braggle
 step
     .goto 30,67.282,84.148
-    .gossip 46293,0 >>与 |cRXP_FRIENDLY_托尔本·光爆|r对话
+    .gossip 46293,0 >> 与 |cRXP_FRIENDLY_托尔本·光爆|r对话
     .skipgossip 46293,1
     .isOnQuest 27674
     .target Torben Zapblast
@@ -1124,12 +1124,12 @@ step
 step << Priest cata
     .goto Dun Morogh,33.898,34.782
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_"怪医"克斯宾|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
 	.target "Doc" Cogspin
 step << Mage cata
     .goto Dun Morogh,34.534,35.065
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝西·冰雹|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
 	.target Bipsi Frostflinger
 step
     .goto 469,39.225,26.552
@@ -1145,13 +1145,13 @@ step
 step << Warrior cata
     .goto Dun Morogh,34.274,37.520
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_教官汽轴|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
 	.target Drill Sergeant Steamcrank
 step << Warrior
     #optional
     .goto Dun Morogh,34.274,37.520
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_教官汽轴|r对话
-    .accept 26204 >>接受任务 战士的技艺
+    .accept 26204 >> 接受任务 战士的技艺
 	.target Drill Sergeant Steamcrank
     .itemStat 16,QUALITY,<7
 step << Warrior
@@ -1168,31 +1168,31 @@ step << Warrior
     .isQuestComplete 26204
     .goto Dun Morogh,34.274,37.520
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_教官汽轴|r对话
-    .turnin 26204 >>交任务 战士的技艺
+    .turnin 26204 >> 交任务 战士的技艺
 	.target Drill Sergeant Steamcrank
     .itemStat 16,QUALITY,<7
 step << Warrior
     #optional
     #completewith next
-    .equip 16,59039 >>|cRXP_WARN_装备|r |T135275:0|t[轻灵佩剑]
+    .equip 16,59039 >> |cRXP_WARN_装备|r |T135275:0|t[轻灵佩剑]
     .use 59039
     .itemcount 59039,1
     .itemStat 16,QUALITY,<7
 step << Warlock cata
     .goto Dun Morogh,33.246,38.397
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
 	.target 阿拉玛尔·格里姆
 step << Rogue cata
     .goto Dun Morogh,33.376,36.738
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯尔希·钢烁|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
 	.target Kelsey Steelspark
 step << Rogue
     #optional
     .goto Dun Morogh,33.376,36.738
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯尔希·钢烁|r对话
-    .accept 26207 >>接受任务 潜行者的技艺
+    .accept 26207 >> 接受任务 潜行者的技艺
 	.target Kelsey Steelspark
     .itemStat 16,QUALITY,<7
 step << Rogue
@@ -1209,13 +1209,13 @@ step << Rogue
     .isQuestComplete 26207
     .goto Dun Morogh,33.376,36.738
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯尔希·钢烁|r对话
-    .turnin 26207 >>交任务 潜行者的技艺
+    .turnin 26207 >> 交任务 潜行者的技艺
 	.target Kelsey Steelspark
     .itemStat 16,QUALITY,<7
 step << Rogue
     #optional
     #completewith next
-    .equip 16,59043 >>|cRXP_WARN_装备|r |T133514:0|t[死亡之星]
+    .equip 16,59043 >> |cRXP_WARN_装备|r |T133514:0|t[死亡之星]
     .use 59043
     .itemcount 59043,1
     .itemStat 16,QUALITY,<7
@@ -1295,7 +1295,7 @@ step
     .goto 470,45.246,74.390,15,0
     .goto 470,31.866,44.578,45 >>前往里面的 |cRXP_ENEMY_穴居人头目布鲁戈|r 处
     >>|cRXP_WARN_这些睡着的|cRXP_ENEMY_石腭真菌投掷者|r 不会被你惊动，除非你主动攻击|r
-    .不可飞行 --Azeroth Flying
+    .noflyable --Azeroth Flying
 step
     #completewith Bruggor
     .goto 470,87.857,52.221,15,0
@@ -1329,7 +1329,7 @@ step
     .goto 470,83.611,44.352,15,0
     .goto 469,33.781,66.184,20 >>离开霜鬃巨魔要塞洞穴
     >>|cRXP_WARN_这些睡着的|cRXP_ENEMY_石腭真菌投掷者|r 不会被你惊动，除非你主动攻击|r
-    .不可飞行 --Azeroth Flying
+    .noflyable --Azeroth Flying
     .subzoneskip 135,1
 step
     #optional
@@ -1359,7 +1359,7 @@ step
     .goto 469,47.880,44.670,-1
 -- .goto 425,38.29,58.12
     *|cRXP_WARN_狂按 /坐下 或脱掉装备，这样死得更快|r
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .skill riding,75,1
 --XX NOTE: Dying in gnomer sends you to Chill Breeze
 step
@@ -1430,7 +1430,7 @@ step << skip
     .goto 469,47.880,44.670,-1
 -- .goto 425,38.29,58.12
     *|cRXP_WARN_狂按 /坐下 或脱掉装备，这样死得更快|r
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .skill riding,75,1
 --XX unlikely to ever be worth
 step
@@ -1485,7 +1485,7 @@ step
     #completewith Razlo
     #label Mekkatalk
     .goto 469,57.188,47.535
-    .gossipoption 38798 >>与 |cRXP_FRIENDLY_大工匠梅卡托克|r对话
+    .gossipoption 38798 >> 与 |cRXP_FRIENDLY_大工匠梅卡托克|r对话
     .timer 72,碎轮的倒台！ 剧情RP
     .target High Tinker Mekkatorque
     .isOnQuest 26364
@@ -1494,7 +1494,7 @@ step
     #optional
     #completewith next
     #requires Mekkatalk
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     +|cRXP_WARN_使用|r |T308321:0|t[轨道定位装置] |cRXP_WARN_在|r |cRXP_ENEMY_拉奇诺·碎轮|r |cRXP_WARN_和|r |cRXP_ENEMY_碎齿的守护者|r身上
     .isOnQuest 26364
     .use 58253
@@ -1573,7 +1573,7 @@ step
     #completewith Belm
     .goto 27,54.083,50.335,8,0
     .goto 27,54.277,50.312,8,0
-    .goto 27,54.485,50.847,10 >>进入雷酒酿制厂。前去找内部的 |cRXP_FRIENDLY_旅店老板贝尔姆|r
+    .goto 27,54.485,50.847,10 >> 进入雷酒酿制厂。前去找内部的 |cRXP_FRIENDLY_旅店老板贝尔姆|r
     .subzoneskip 2102
 step << Gnome
     #requires Distillery
@@ -1598,7 +1598,7 @@ step
 step << Warrior cata
     .goto 27,54.470,50.974
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格兰尼斯·快斧|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 格兰尼斯·快斧
 step << Dwarf/Gnome/DarkIronDwarf
     .goto 27,54.723,50.607,8,0
@@ -1611,37 +1611,37 @@ step << Dwarf/Gnome/DarkIronDwarf
 step << Rogue cata
     .goto 27,54.673,50.933
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_霍格拉尔·巴坎|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 霍格拉尔·巴坎
 step << Priest cata
     .goto 27,54.455,50.508
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马克萨恩·安沃尔|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 马克萨恩·安沃尔
 step << Shaman cata
     .goto 27,54.605,50.232
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈鲁宾·霜锤|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Halbin Frosthammer
 step << Mage cata
     .goto 27,54.609,50.397
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛济斯·石衣|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 玛济斯·石衣
 step << Paladin cata
     .goto 27,54.709,50.392
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿扎尔·战锤|r对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 阿扎尔·战锤
 step << Warlock cata
     .goto 27,54.437,52.022
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉姆瑞兹·黑轮|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 吉姆瑞兹·黑轮
 step << Hunter cata
     .goto 27,52.913,51.364
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格瑞夫|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 格瑞夫
 step
     .goto 27,53.124,49.995
@@ -1662,9 +1662,9 @@ step
     #optional
     #completewith next
     #label Ramp
-    .goto 27,51.034,40.862,50 >>沿坡道向上走
+    .goto 27,51.034,40.862,50 >> 沿坡道向上走
     .subzoneskip 802
-    .不可飞行 --Azeroth Flying
+    .noflyable --Azeroth Flying
     .isOnQuest 25724
 step << skip
     #requires Ramp
@@ -1743,13 +1743,13 @@ step
     #optional
     #requires Shimmerweed
 	#completewith next
-    .goto 27,50.495,40.006,70 >>前往营地东侧。在 |cRXP_FRIENDLY_灵魂医者|r复活
-    .不可飞行 --Azeroth Flying
+    .goto 27,50.495,40.006,70 >> 前往营地东侧。在 |cRXP_FRIENDLY_灵魂医者|r复活
+    .noflyable --Azeroth Flying
 step
     #requires Shimmerweed
     #completewith next
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
-    .不可飞行 --Azeroth Flying
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .noflyable --Azeroth Flying
 step << Dwarf/Gnome/DarkIronDwarf
     #requires Shimmerweed
     .goto 27,53.802,52.762
@@ -1819,7 +1819,7 @@ step
 step
     #optional
     #label WendigoCave
-    .goto 29,61.676,88.466,40 >>进入雪怪洞穴
+    .goto 29,61.676,88.466,40 >> 进入雪怪洞穴
 	.isOnQuest 25668
 step
     #optional
@@ -1875,7 +1875,7 @@ step
     #requires Wendigos
     #completewith Afar
     >>|cRXP_WARN_确保你死在|cRXP_FRIENDLY_巡山人沃格姆|r所在位置的东侧/东南侧|r
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .isOnQuest 313
     .subzoneskip 131
 step
@@ -2161,7 +2161,7 @@ step
     .target Sergeant Flinthammer
 step
     #questguide
-    >>|cRXP_WARN_等剧情结束|r
+    >>|cRXP_WARN_等待剧情演出完成|r
     >>击杀 |cRXP_ENEMY_霜鬃袭击者|r
     .complete 25932,1 --Defend Amberstill Ranch (1)
     .mob Frostmane Raider
@@ -2247,7 +2247,7 @@ step << Human
     #label FlySW
     .goto 37,41.715,64.636
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勇敢的巴特利|r对话
-    .fly Gol'Bolar Quarry >>飞往古博拉采掘场
+    .fly Gol'Bolar Quarry >> 飞往古博拉采掘场
 	.target Bartlett the Brave
     .zoneskip Dun Morogh
 
@@ -2398,7 +2398,7 @@ step
     .accept 25979 >>接受任务 情绪澎湃
     .goto 27,82.642,48.295
     .target +Khurgorn Singefeather
-    .turnin -25986 >>交任务 盔枕湖的麻烦
+    .turnin -25986 >> 交任务 盔枕湖的麻烦
     .accept 25978 >>接受任务 冰中之棺
     .goto 27,82.854,48.409
     .target +Sergeant Bahrum
@@ -2490,7 +2490,7 @@ step
 #xprate <1.2
     #requires Spies
     #completewith next
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
 step
 #xprate <1.2
     #requires Spies
@@ -2509,7 +2509,7 @@ step
     .goto 27,88.331,47.792,12,0
     .goto 27,88.873,48.312,12,0
     .goto 48,12.138,54.947,20,0
-    .goto 48,14.025,56.641,12 >>|cRXP_WARN_沿山路向上走，然后小心地向下靠近|r |cRXP_FRIENDLY_驾驶员塞克·锤足|r
+    .goto 48,14.025,56.641,12 >> |cRXP_WARN_沿山路向上走，然后小心地向下靠近|r |cRXP_FRIENDLY_驾驶员塞克·锤足|r
     .noflyable
 step
     .goto 48,14.006,56.485
@@ -2547,11 +2547,11 @@ step
 step
     .goto 48,16.385,58.564,30,0
     .goto 48,19.511,62.766,30,0
-    .goto 48,21.097,64.989,30 >>穿过南门小径，进入洛克莫丹
+    .goto 48,21.097,64.989,30 >> 穿过南门小径，进入洛克莫丹
     .noflyable
     .isOnQuest 26855
 step << skip
-    .hs >>炉石回到 |cFFfa9602雷酒酿制厂|r
+    .hs >> 炉石回到 |cFFfa9602雷酒酿制厂|r
 step << skip
     #completewith next
     .goto 27,53.80,52.76
@@ -2565,7 +2565,7 @@ step << skip
     .goto 87,51.865,30.064,15,0
     .goto 87,49.712,28.525,8,0
 	.goto 87,51.54,26.30,6 >>前往 |cRXP_FRIENDLY_高尼尔·石趾|r
-    .不可飞行 --Azeroth Flying
+    .noflyable --Azeroth Flying
 step << skip
     #completewith next
     .goto 87,49.712,28.525,8,0
@@ -2580,7 +2580,7 @@ step << skip
 	.target 高尼尔·石趾
 step << skip
     .goto 87,55.508,47.742
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .turnin 6388 >>交任务 格莱斯·瑟登
 	.target 格莱斯·瑟登
 step << skip
@@ -2605,18 +2605,18 @@ step << skip
     #completewith next
     .goto 84,68.50,73.43,10,0
     .goto 84,68.54,74.89,10,0
-    .goto 84,70.94,72.47,10 >>前往 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r
+    .goto 84,70.94,72.47,10 >> 前往 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r
     .skill riding,75,1
 step << skip
     #completewith next
     .goto 84,70.94,72.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
-    .fly Goldshire >>飞往闪金镇
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    .fly Goldshire >> 飞往闪金镇
 	.target 杜加尔·朗德瑞克
     .zoneskip 37 --Elwynn Forest
 --XX Elwynn Non-human route: Copy retail elwynn (Fargo->Hogger->WF start->HS/Fly Goldshire->Eastvale->HS/Fly Loch/Fly Redridge?)
 step << skip
     .goto 37,42.11,65.93
-    .zone 37 >>前往艾尔文森林
+    .zone 37 >> 前往艾尔文森林
     .isQuestAvailable 62 --The Fargodeep Mine
 ]])

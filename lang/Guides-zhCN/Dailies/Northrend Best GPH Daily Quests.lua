@@ -25,11 +25,11 @@ step
     .goto TheStormPeaks,63.13,62.94
     .daily 12977 >>接受任务 霍迪尔的呼唤
     .goto TheStormPeaks,64.17,65.01
-	.daily 13006 >>接受任务 粘滞清洁
+	.daily 13006 >> 接受任务 粘滞清洁
 	.goto TheStormPeaks,64.24,59.23
-	.daily 12994 >>接受任务 猎杀间谍
+	.daily 12994 >> 接受任务 猎杀间谍
 	.goto TheStormPeaks,63.49,59.73
-	.daily 13046 >>接受任务 喂饱安格里姆
+	.daily 13046 >> 接受任务 喂饱安格里姆
 	.goto TheStormPeaks,67.61,59.95
 	.reputation 1119,revered,<0,1 -- if you're 0 into revered it will display this step
 step
@@ -38,9 +38,9 @@ step
     .goto TheStormPeaks,63.13,62.94
     .daily 12977 >>接受任务 霍迪尔的呼唤
     .goto TheStormPeaks,64.17,65.01
-	.daily 13006 >>接受任务 粘滞清洁
+	.daily 13006 >> 接受任务 粘滞清洁
 	.goto TheStormPeaks,64.24,59.23
-	.daily 12994 >>接受任务 猎杀间谍
+	.daily 12994 >> 接受任务 猎杀间谍
 	.goto TheStormPeaks,63.49,59.73
 	.reputation 1119,honored,<0,1 -- if you're 0 into honored it will display this step
 step
@@ -49,7 +49,7 @@ step
     .goto TheStormPeaks,63.13,62.94
     .daily 12977 >>接受任务 霍迪尔的呼唤
     .goto TheStormPeaks,64.17,65.01
-	.daily 13006 >>接受任务 粘滞清洁
+	.daily 13006 >> 接受任务 粘滞清洁
 	.goto TheStormPeaks,64.24,59.23
 	.reputation 1119,friendly,<0,1 -- if you're 0 into friendly it will display this step
 step
@@ -61,33 +61,33 @@ step
 step
 	.goto TheStormPeaks,73.5,62.9,70,0
     .goto TheStormPeaks,76.2,63.4
-	.use 42246 >>在弗约恩之砧附近的暗硫残渣旁使用冰之精华，拾取战利品冻铁碎片
+	.use 42246 >> 在弗约恩之砧附近的暗硫残渣旁使用冰之精华，拾取战利品冻铁碎片
     .complete 12981,1 --Frozen Iron Scrap (6)
 	.isOnQuest 12981
 step
     .goto TheStormPeaks,70.73,50.96,65,0
 	.goto TheStormPeaks,73.00,49.05,65,0
     .goto TheStormPeaks,71.45,47.76
-	.use 42164 >>击杀该区域的尼弗莱姆先祖和不安分的霜巨人。对它们的尸体使用背包中的霍迪尔的号角，以解放它们
+	.use 42164 >> 击杀该区域的尼弗莱姆先祖和不安分的霜巨人。对它们的尸体使用背包中的霍迪尔的号角，以解放它们
     .complete 12977,1 --Niffelem Forefather freed (5)
     .complete 12977,2 --Restless Frostborn freed (5)
 	.isOnQuest 12977
 step
 	#completewith next
     .goto TheStormPeaks,57.23,64.02
-	.use 42479 >>在你的背包中对坠落座狼的尸体使用虚空座狼之牙。跟随虚空冰霜座狼直到其追踪到风铸入侵者，然后击杀它。
+	.use 42479 >> 在你的背包中对坠落座狼的尸体使用虚空座狼之牙。跟随虚空冰霜座狼直到其追踪到风铸入侵者，然后击杀它。
 	.complete 12994,1 --Stormforged Infiltrators Slain (3)
 	.isOnQuest 12994
 step
 	.goto TheStormPeaks,57.92,61.07,60,0
 	.goto TheStormPeaks,57.83,63.59,60,0
 	.goto TheStormPeaks,56.51,65.00
-	.use 42774 >>对游荡的巨人杀手使用阿恩格里姆之牙，将其伤害至30%或更低生命值，但不要击杀它
+	.use 42774 >> 对游荡的巨人杀手使用阿恩格里姆之牙，将其伤害至30%或更低生命值，但不要击杀它
 	.complete 13046,1 --Arngrim's spirit fed (5)
 	.isOnQuest 13046
 step
     .goto TheStormPeaks,57.23,64.02
-	.use 42479 >>在你的背包中对坠落座狼的尸体使用虚空座狼之牙。跟随虚空冰霜座狼直到其追踪到风铸入侵者，然后击杀它。
+	.use 42479 >> 在你的背包中对坠落座狼的尸体使用虚空座狼之牙。跟随虚空冰霜座狼直到其追踪到风铸入侵者，然后击杀它。
 	.complete 12994,1 --Stormforged Infiltrators Slain (3)
 	.isOnQuest 12994
 step
@@ -103,11 +103,11 @@ step
     .goto TheStormPeaks,63.13,62.94
     .turnin 12977 >>交任务 霍迪尔的呼唤
     .goto TheStormPeaks,64.17,65.01
-	.turnin 13006 >>交任务 粘滞清洁
+	.turnin 13006 >> 交任务 粘滞清洁
 	.goto TheStormPeaks,64.24,59.23
-	.turnin 12994 >>交任务 猎杀间谍
+	.turnin 12994 >> 交任务 猎杀间谍
 	.goto TheStormPeaks,63.49,59.73
-	.turnin 13046 >>交任务 喂饱安格里姆
+	.turnin 13046 >> 交任务 喂饱安格里姆
 	.goto TheStormPeaks,67.61,59.95
 	.isQuestComplete 12994
 	.isQuestComplete 13046
@@ -118,9 +118,9 @@ step
     .goto TheStormPeaks,63.13,62.94
     .turnin 12977 >>交任务 霍迪尔的呼唤
     .goto TheStormPeaks,64.17,65.01
-	.turnin 13006 >>交任务 粘滞清洁
+	.turnin 13006 >> 交任务 粘滞清洁
 	.goto TheStormPeaks,64.24,59.23
-	.turnin 13046 >>交任务 喂饱安格里姆
+	.turnin 13046 >> 交任务 喂饱安格里姆
 	.goto TheStormPeaks,67.61,59.95
 	.isQuestComplete 13046
 step
@@ -130,9 +130,9 @@ step
     .goto TheStormPeaks,63.13,62.94
     .turnin 12977 >>交任务 霍迪尔的呼唤
     .goto TheStormPeaks,64.17,65.01
-	.turnin 13006 >>交任务 粘滞清洁
+	.turnin 13006 >> 交任务 粘滞清洁
 	.goto TheStormPeaks,64.24,59.23
-	.turnin 12994 >>交任务 猎杀间谍
+	.turnin 12994 >> 交任务 猎杀间谍
 	.goto TheStormPeaks,63.49,59.73
 	.isQuestComplete 12994
 step
@@ -142,11 +142,11 @@ step
     .goto TheStormPeaks,63.13,62.94
     .turnin 12977 >>交任务 霍迪尔的呼唤
     .goto TheStormPeaks,64.17,65.01
-	.turnin 13006 >>交任务 粘滞清洁
+	.turnin 13006 >> 交任务 粘滞清洁
 	.goto TheStormPeaks,64.24,59.23
-	.turnin 12994 >>交任务 猎杀间谍
+	.turnin 12994 >> 交任务 猎杀间谍
 	.goto TheStormPeaks,63.49,59.73
-	.turnin 13046 >>交任务 喂饱安格里姆
+	.turnin 13046 >> 交任务 喂饱安格里姆
 	.goto TheStormPeaks,67.61,59.95
 	.isQuestComplete 12994
 	.isQuestComplete 13046
@@ -157,9 +157,9 @@ step
     .goto TheStormPeaks,63.13,62.94
     .turnin 12977 >>交任务 霍迪尔的呼唤
     .goto TheStormPeaks,64.17,65.01
-	.turnin 13006 >>交任务 粘滞清洁
+	.turnin 13006 >> 交任务 粘滞清洁
 	.goto TheStormPeaks,65.00,60.95
-	.turnin 13046 >>交任务 喂饱安格里姆
+	.turnin 13046 >> 交任务 喂饱安格里姆
 	.goto TheStormPeaks,67.61,59.95
 	.isQuestComplete 13046
 step
@@ -169,9 +169,9 @@ step
     .goto TheStormPeaks,63.13,62.94
     .turnin 12977 >>交任务 霍迪尔的呼唤
     .goto TheStormPeaks,64.17,65.01
-	.turnin 13006 >>交任务 粘滞清洁
+	.turnin 13006 >> 交任务 粘滞清洁
 	.goto TheStormPeaks,64.24,59.23
-	.turnin 12994 >>交任务 猎杀间谍
+	.turnin 12994 >> 交任务 猎杀间谍
 	.goto TheStormPeaks,63.49,59.73
 	.isQuestComplete 12994
 step
@@ -181,11 +181,11 @@ step
     .goto TheStormPeaks,63.13,62.94
     .turnin -12977 >>交任务 霍迪尔的呼唤
     .goto TheStormPeaks,64.17,65.01
-	.turnin -13006 >>交任务 粘滞清洁
+	.turnin -13006 >> 交任务 粘滞清洁
 	.goto TheStormPeaks,64.24,59.23
 step << Mage
 	#completewith next
-	.zone Dalaran >>传送至达拉然
+	.zone Dalaran >> 传送至达拉然
 	>>飞往冰冠冰川
 step << !Mage
 	#completewith next
@@ -243,7 +243,7 @@ step << Alliance
 step << Alliance
     #completewith next
     .goto Icecrown,62.55,50.67
-    .vehicle 32227 >>右键点击飞行器顶部的炮塔以开始任务
+    .vehicle 32227 >> 右键点击飞行器顶部的炮塔以开始任务
 	.isOnQuest 13309
 step << Alliance
 	>>飞行时射击你看到的所有矛炮使其瘫痪。在此过程中渗透者会掉下来
@@ -426,7 +426,7 @@ step
 step
     .goto IcecrownGlacier,49.7,34.4
 	.use 44301 -- to combine the 10 tainted essences into a writhing mass
-	.use 44304 >>右键点击你背包里的被污染的精华，将其合成为沸腾的魔质。然后将其扔进大锅中
+	.use 44304 >> 右键点击你背包里的被污染的精华，将其合成为沸腾的魔质。然后将其扔进大锅中
 	.complete 13322,1 << Alliance
 	.complete 13357,1 << Horde
 	.isOnQuest 13322 << Alliance
@@ -436,7 +436,7 @@ step
     .goto IcecrownGlacier,54.7,28.0,70,0
     .goto IcecrownGlacier,57.0,28.8,70,0
     .goto IcecrownGlacier,54.1,31.4
-	.use 44433 >>击杀该区域的5个奴役的仆从（虚空行者）。在他们的尸体上使用虹吸之杖获取黑暗物质
+	.use 44433 >> 击杀该区域的5个奴役的仆从（虚空行者）。在他们的尸体上使用虹吸之杖获取黑暗物质
 	.collect 44434,5,13344,1 << Alliance --Dark Matter (5)
 	.collect 44434,5,13365,1 << Horde --Dark Matter (5)
 	.isOnQuest 13344 << Alliance
@@ -510,7 +510,7 @@ step
 step
 	#completewith next
     .goto IcecrownGlacier,28.0,37.7
-    .vehicle 30564 >>右键点击一个约尔达始祖龙来骑乘它
+    .vehicle 30564 >> 右键点击一个约尔达始祖龙来骑乘它
 	.isOnQuest 13071
 step
     .goto IcecrownGlacier,27.7,41.1,70,0
@@ -566,7 +566,7 @@ step
     #completewith next
 	.goto IcecrownGlacier,9.5,44.8,50,0
     .goto IcecrownGlacier,9.5,44.8,0,0
-	.use 40587 >>击杀该区域的攻势怪物。对它们的尸体使用背包中的达克门德的药剂
+	.use 40587 >> 击杀该区域的攻势怪物。对它们的尸体使用背包中的达克门德的药剂
     .complete 12813,1 --Scarlet Onslaught corpse transformed (10)
 	.isOnQuest 12813
 step
@@ -598,7 +598,7 @@ step
 step
 	.goto IcecrownGlacier,9.5,44.8,50,0
     .goto IcecrownGlacier,9.5,44.8,0,0
-	.use 40587 >>击杀该区域的攻势怪物。对它们的尸体使用背包中的达克门德的药剂
+	.use 40587 >> 击杀该区域的攻势怪物。对它们的尸体使用背包中的达克门德的药剂
     .complete 12813,1 --Scarlet Onslaught corpse transformed (10)
 	.isOnQuest 12813
 step

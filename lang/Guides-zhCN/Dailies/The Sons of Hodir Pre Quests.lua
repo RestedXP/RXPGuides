@@ -66,7 +66,7 @@ step
     .goto TheStormPeaks,44.3,66.8,40,0
     .goto TheStormPeaks,43.0,68.0,40,0
     .goto TheStormPeaks,43.4,70.5
-	.use 42837 >>在矿道里对筋疲力尽的维库人使用你背包里的训诫之杖
+	.use 42837 >> 在矿道里对筋疲力尽的维库人使用你背包里的训诫之杖
     .complete 12906,1 --Exhausted Vrykul Disciplined (6)
 step
     .goto TheStormPeaks,44.39,68.93
@@ -147,7 +147,7 @@ step
     .waypoint TheStormPeaks,53.1,65.7,0,niffelen,VEHICLE_PASSENGERS_CHANGED,VEHICLE_UPDATE
     .goto The Storm Peaks,66.75,60.63
 	>>当靠近被寒冰屏障冻结的布伦希尔达囚徒时，使用你的龙的第一个技能。
-    >>当你的龙上有3个囚徒时，回到布伦希尔达。重复此操作3次
+    >> 当你的龙上有3个囚徒时，回到布伦希尔达。重复此操作3次
     .complete 12856,1 --Rescued Brunnhildar Prisoners (9)
     .complete 12856,2 --Freed Proto-Drakes (3)
 step
@@ -197,7 +197,7 @@ step
 step
 	#completewith next
     .goto TheStormPeaks,50.79,67.68
-	.vehicle >>飞往基加拉格。使用你的背包中的冰喉母熊的缰绳来骑乘它。
+	.vehicle >> 飞往基加拉格。使用你的背包中的冰喉母熊的缰绳来骑乘它。
 	.use 42481
 step
     .goto TheStormPeaks,50.79,67.68
@@ -211,7 +211,7 @@ step
 step
 	#completewith next
     .goto TheStormPeaks,49.24,68.46
-	.vehicle >>飞往利齿之坑。使用你的背包中的冰喉母熊的缰绳来骑乘它。
+	.vehicle >> 飞往利齿之坑。使用你的背包中的冰喉母熊的缰绳来骑乘它。
 	.use 42499
 step
     .goto TheStormPeaks,49.24,68.46
@@ -268,7 +268,7 @@ step
     .goto TheStormPeaks,75.0,63.6,70,0
     .goto TheStormPeaks,71.8,61.1
 	>>在霜域湖和乔恩姆之砧的地面上拾取花岗岩巨石（一次只能携带一个）
-	.use 41505 >>当你在风暴熔铸钢铁巨人处拥有投石时，使用背包中的托里姆的大地符咒来帮助击杀它们
+	.use 41505 >> 当你在风暴熔铸钢铁巨人处拥有投石时，使用背包中的托里姆的大地符咒来帮助击杀它们
 	.collect 41506,1,12915,1,-1
     .complete 12915,2 --Stormforged Iron Giants (5)
 step
@@ -292,7 +292,7 @@ step
 step
     .goto TheStormPeaks,77.34,62.87
 	>>在霜域湖和乔恩姆之砧的地面上拾取花岗岩巨石（一次只能携带一个）
-	.use 41505 >>当你拥有投石时，使用背包中的托里姆的大地符咒来帮助击杀它们
+	.use 41505 >> 当你拥有投石时，使用背包中的托里姆的大地符咒来帮助击杀它们
     .complete 12915,1 --Fjorn (1)
 step
 	#label Thorim1
@@ -352,12 +352,12 @@ step << !Human
 step << Human
 	#completewith HornF
 	>>留意该区域的永冻之冰碎片物品。如果看到，拾取它并开始任务
-	.accept 13420 >>接受任务 永冻之冰
+	.accept 13420 >> 接受任务 永冻之冰
 step << Human
     .goto TheStormPeaks,69.6,58.8,70,0
     .goto TheStormPeaks,70.3,62.2
 	>>击杀脆弱的复仇者，并从它们身上拾取冰之精华
-	.use 42424 >>对死亡铁巨人使用钻石尖锄，有时会刷新小怪，需要击杀它们，然后拾取它们掉落的风暴之眼
+	.use 42424 >> 对死亡铁巨人使用钻石尖锄，有时会刷新小怪，需要击杀它们，然后拾取它们掉落的风暴之眼
 	.collect 42246,6 --Essence of Ice (6)
 	.complete 12985,1 --Stormforged Eye (8)
 	.isQuestAvailable 13047
@@ -371,7 +371,7 @@ step << !Human
 step
     .goto TheStormPeaks,73.5,62.9,70,0
     .goto TheStormPeaks,76.2,63.4
-	.use 42246 >>在弗约恩之砧附近的暗硫残渣旁使用冰之精华，拾取战利品冻铁碎片
+	.use 42246 >> 在弗约恩之砧附近的暗硫残渣旁使用冰之精华，拾取战利品冻铁碎片
     .complete 12981,1 --Frozen Iron Scrap (6)
 	.isQuestAvailable 13047
 step
@@ -381,7 +381,7 @@ step
     .complete 12975,1 --Horn Fragment (8)
 step << Human
 	>>返回丹尼芬雷，与卡尔德、约库姆国王、亚米尔德、弗约恩之砧和霍迪尔的角力对话
-	.turnin 13420 >>交任务 永冻之冰
+	.turnin 13420 >> 交任务 永冻之冰
     .goto TheStormPeaks,67.11,60.97
     .turnin 12975 >>交任务 回首往事
     .accept 12976 >>接受任务 亡者的纪念碑
@@ -433,7 +433,7 @@ step << !Human
 step << !Human
     .goto TheStormPeaks,69.6,58.8,70,0
     .goto TheStormPeaks,70.3,62.2
-	.use 42424 >>对死亡铁巨人使用钻石尖锄，有时会刷新小怪，需要击杀它们，然后拾取它们掉落的风暴之眼
+	.use 42424 >> 对死亡铁巨人使用钻石尖锄，有时会刷新小怪，需要击杀它们，然后拾取它们掉落的风暴之眼
 	.complete 12985,1 --Stormforged Eye (8)
 step << !Human
 	>>返回丹尼芬雷，与亚米尔德和霍迪尔的角力对话
@@ -445,7 +445,7 @@ step << !Human
 	.isQuestAvailable 13047
 step
     .goto TheStormPeaks,64.24,59.23
-	.use 42442 >>飞往丹尼芬雷闪闪发光的冰锥，骑上飞行坐骑后，使用背包中的宣告碑
+	.use 42442 >> 飞往丹尼芬雷闪闪发光的冰锥，骑上飞行坐骑后，使用背包中的宣告碑
     .complete 12987,1 --Hodir's Helm Mounted (1)
 step
     .goto TheStormPeaks,63.20,63.27
@@ -469,7 +469,7 @@ step
 step
     .goto TheStormPeaks,55.8,63.9,30,0
     .goto TheStormPeaks,54.7,60.6
-	.use 42732 >>进入冬眠洞穴并沿着右边走，在死亡的冰喉熊上使用永冻刀片，直到你获得冰喉熊腰肉
+	.use 42732 >> 进入冬眠洞穴并沿着右边走，在死亡的冰喉熊上使用永冻刀片，直到你获得冰喉熊腰肉
 	.collect 42733,1 --Icemaw Bear Flank (1)
 	.isQuestAvailable 13047
 step
@@ -499,7 +499,7 @@ step
     .accept 13051 >>接受任务 侵犯领土
 step
     .goto TheStormPeaks,38.73,65.54
-	.cast 56788 >>在育母的巢穴顶部使用背包中的偷来的原生龙蛋来引诱维拉努斯
+	.cast 56788 >> 在育母的巢穴顶部使用背包中的偷来的原生龙蛋来引诱维拉努斯
 	.timer 42,维拉努斯 剧情RP（继续做任务）
 	.use 42797
 	.isQuestAvailable 13047
@@ -524,14 +524,14 @@ step
     .turnin 13006 >>交任务 粘滞清洁
     .goto TheStormPeaks,64.22,59.39
     .turnin 13011 >>交任务 杀戮乔库塔尔
-	.vehicle >>与约库姆国王对话。骑它前往落雷谷
+	.vehicle >> 与约库姆国王对话。骑它前往落雷谷
 	.timer 118,科洛米尔，风暴之锤 剧情RP
 	.skipgossip
 	.isQuestAvailable 13047
 step
 	#completewith TerraceM
 	>>留意该区域的永冻之冰碎片物品。如果看到，拾取它并开始任务
-	.accept 13420 >>接受任务 永冻之冰
+	.accept 13420 >> 接受任务 永冻之冰
 	.isQuestAvailable 13047
 step
 	#completewith ThorimRP
@@ -539,7 +539,7 @@ step
     .goto TheStormPeaks,70.1,52.5,0
     .goto TheStormPeaks,72.7,52.1,0
     .goto TheStormPeaks,74.7,48.3,0
-	.use 42164 >>击杀该区域的尼弗莱姆先祖和不安分的霜巨人。对它们的尸体使用背包中的霍迪尔的号角，以解放它们
+	.use 42164 >> 击杀该区域的尼弗莱姆先祖和不安分的霜巨人。对它们的尸体使用背包中的霍迪尔的号角，以解放它们
 	>>你可以在剧情演出进行时进行此操作
     .complete 12977,1 --Niffelem Forefather freed (5)
     .complete 12977,2 --Restless Frostborn freed (5)
@@ -561,7 +561,7 @@ step
     .goto TheStormPeaks,70.1,52.5,60,0
     .goto TheStormPeaks,72.7,52.1,60,0
     .goto TheStormPeaks,74.7,48.3
-	.use 42164 >>击杀该区域的尼弗莱姆先祖和不安分的霜巨人。对它们的尸体使用背包中的霍迪尔的号角，以解放它们
+	.use 42164 >> 击杀该区域的尼弗莱姆先祖和不安分的霜巨人。对它们的尸体使用背包中的霍迪尔的号角，以解放它们
     .complete 12977,1 --Niffelem Forefather freed (5)
     .complete 12977,2 --Restless Frostborn freed (5)
 	.isQuestAvailable 13047
@@ -576,34 +576,34 @@ step
 step
 	#completewith Duronn
     .goto TheStormPeaks,52.0,50.4,0
-	.use 42840 >>使用背包中的角力来帮助你击杀前往指定怪物途中的铁矮人和铁哨兵
+	.use 42840 >> 使用背包中的角力来帮助你击杀前往指定怪物途中的铁矮人和铁哨兵
     .complete 13005,1 --Iron Sentinel (7)
     .complete 13005,2 --Iron Dwarf Assailant (20)
 	.isQuestAvailable 13047
 step
     .goto TheStormPeaks,48.72,45.65
-	.use 42840 >>使用背包中的角力召唤一支小型军队，用它击杀哈勒夫尼尔
+	.use 42840 >> 使用背包中的角力召唤一支小型军队，用它击杀哈勒夫尼尔
     .complete 13035,2 --Halefnir the Windborn (1)
 step
 	#label Duronn
     .goto TheStormPeaks,44.94,38.03
-	.use 42840 >>使用背包中的角力召唤一支小型军队，用它击杀杜洛恩
+	.use 42840 >> 使用背包中的角力召唤一支小型军队，用它击杀杜洛恩
     .complete 13035,3 --Duronn the Runewrought (1)
 step
 	#completewith next
     .goto TheStormPeaks,57.7,44.5,50,0
     .goto TheStormPeaks,57.7,44.5,0
-	.use 42840 >>使用角力来帮助你击杀艾森法斯特洞穴外的铁哨兵
+	.use 42840 >> 使用角力来帮助你击杀艾森法斯特洞穴外的铁哨兵
     .complete 13005,1 --Iron Sentinel (7)
 step
     .goto TheStormPeaks,56.9,44.1,30,0
     .goto TheStormPeaks,55.30,43.32
 	>>前往位于山脉东侧底部的塑造者之厅
-	.use 42840 >>使用峭壁号角来召唤一支小军队。用它击杀伊森法斯
+	.use 42840 >> 使用峭壁号角来召唤一支小军队。用它击杀伊森法斯
     .complete 13035,1 --Eisenfaust (1)
 step
     .goto TheStormPeaks,58.48,45.21
-	.use 42840 >>使用背包中的角力来帮助你击杀该区域内的铁矮人和铁哨兵
+	.use 42840 >> 使用背包中的角力来帮助你击杀该区域内的铁矮人和铁哨兵
     .complete 13005,1 --Iron Sentinel (7)
     .complete 13005,2 --Iron Dwarf Assailant (20)
 step
@@ -616,7 +616,7 @@ step
     #completewith next
 	.goto TheStormPeaks,44.49,28.19
 	>>飞往奥杜尔外部
-    .fp Ulduar >>开启奥杜尔的飞行点
+    .fp Ulduar >> 开启奥杜尔的飞行点
     .skill riding,<300,1
 step
     .goto TheStormPeaks,35.93,31.52
@@ -628,19 +628,19 @@ step
 	#completewith end
     .goto TheStormPeaks,44.49,28.19
 	>>飞往奥杜尔外部
-    .fp Ulduar >>开启奥杜尔的飞行点
-	.fly Dun Niffelem >>飞往丹尼芬雷。这需要1分44秒，你可以在此期间休息一下
+    .fp Ulduar >> 开启奥杜尔的飞行点
+	.fly Dun Niffelem >> 飞往丹尼芬雷。这需要1分44秒，你可以在此期间休息一下
     .skill riding,300,1
 step
 	#completewith next
-    .goto TheStormPeaks,36.2,49.3,200 >>骑乘你的飞行坐骑飞往丹尼芬雷
+    .goto TheStormPeaks,36.2,49.3,200 >> 骑乘你的飞行坐骑飞往丹尼芬雷
     .skill riding,<300,1
 step
 	>>返回丹尼芬雷。与乔库姆、卡尔德和霍迪尔的号角交谈
     .turnin 13047 >>交任务 清算之战
 --  .accept 13108 >>Accept Whatever it Takes!
     .goto TheStormPeaks,65.45,60.16
-	.turnin 13420 >>交任务 永冻之冰
+	.turnin 13420 >> 交任务 永冻之冰
     .goto TheStormPeaks,67.11,60.97
     .turnin 12977 >>交任务 霍迪尔的呼唤
     .goto TheStormPeaks,64.17,65.01

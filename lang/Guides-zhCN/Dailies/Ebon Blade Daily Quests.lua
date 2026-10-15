@@ -44,7 +44,7 @@ step
 step
 	#completewith next
     .goto IcecrownGlacier,28.0,37.7
-    .vehicle 30564 >>右键点击一个约尔达始祖龙来骑乘它
+    .vehicle 30564 >> 右键点击一个约尔达始祖龙来骑乘它
 	.isOnQuest 13071
 step
     .goto IcecrownGlacier,27.7,41.1,70,0
@@ -100,7 +100,7 @@ step
     #completewith next
 	.goto IcecrownGlacier,9.5,44.8,50,0
     .goto IcecrownGlacier,9.5,44.8,0,0
-	.use 40587 >>击杀该区域的攻势怪物。对它们的尸体使用背包中的达克门德的药剂
+	.use 40587 >> 击杀该区域的攻势怪物。对它们的尸体使用背包中的达克门德的药剂
     .complete 12813,1 --Scarlet Onslaught corpse transformed (10)
 	.isOnQuest 12813
 step
@@ -132,7 +132,7 @@ step
 step
 	.goto IcecrownGlacier,9.5,44.8,50,0
     .goto IcecrownGlacier,9.5,44.8,0,0
-	.use 40587 >>击杀该区域的攻势怪物。对它们的尸体使用背包中的达克门德的药剂
+	.use 40587 >> 击杀该区域的攻势怪物。对它们的尸体使用背包中的达克门德的药剂
     .complete 12813,1 --Scarlet Onslaught corpse transformed (10)
 	.isOnQuest 12813
 step

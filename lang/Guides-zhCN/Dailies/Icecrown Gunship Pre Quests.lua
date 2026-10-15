@@ -12,7 +12,7 @@ step
 	>>如果你无法完成它们，稍后可以再来尝试
 step
     .goto IcecrownGlacier,87.8,78.1
-    .fp The Argent Vanguard >>获得银色前线基地的飞行点
+    .fp The Argent Vanguard >> 获得银色前线基地的飞行点
 step
     .goto IcecrownGlacier,87.5,75.8
 	>>飞往银色前线基地，与提里奥·弗丁对话
@@ -68,7 +68,7 @@ step
 step
 	#completewith next
     .goto IcecrownGlacier,87.1,79.2
-	.vehicle 30228 >>右键点击银色天爪龙以进行骑乘
+	.vehicle 30228 >> 右键点击银色天爪龙以进行骑乘
 step
 	>>飞往天灾城。使用"抓取被俘虏的北伐军士兵"(1)来救援十字军（一次只能抓取一个），然后飞回到银色前线基地的古斯塔夫处，使用"放下被俘虏的北伐军士兵"(2)来释放他们。使用"翱翔"(3)卡CD以获得更快的速度。
 	.pin Icecrown,78.7,67.0
@@ -122,7 +122,7 @@ step
     .complete 13122,1 --Scourgestone (15)
 step
 	#completewith Kings
-	.use 43153 >>击杀天灾城中的复生十字军。在他们的尸体上使用你包里的神圣之水来拯救他们的灵魂
+	.use 43153 >> 击杀天灾城中的复生十字军。在他们的尸体上使用你包里的神圣之水来拯救他们的灵魂
     .goto IcecrownGlacier,78.6,69.7,0
     .goto IcecrownGlacier,77.9,66.2,0
     .goto IcecrownGlacier,78.5,64.6,0
@@ -168,7 +168,7 @@ step
     .goto IcecrownGlacier,77.9,66.2,80,0
     .goto IcecrownGlacier,78.5,64.6,80,0
     .goto IcecrownGlacier,80.2,65.7
-	.use 43153 >>在天灾城击杀复活的十字军，在他们的尸体处使用你的背包中的圣水来解放他们的灵魂
+	.use 43153 >> 在天灾城击杀复活的十字军，在他们的尸体处使用你的背包中的圣水来解放他们的灵魂
     .complete 13110,1 --Restless Soul Freed (10)
     .complete 13118,3 --Reanimated Crusader (8)
 step
@@ -274,7 +274,7 @@ step
     .accept 13068 >>接受任务 勇气的传说
 step
     .goto IcecrownGlacier,79.4,72.3
-    .fp Crusaders' Pinnacle >>开启北伐军之峰飞行点
+    .fp Crusaders' Pinnacle >> 开启北伐军之峰飞行点
 step << Horde
     .goto IcecrownGlacier,79.5,72.7
 	>>进入塔内，与底层床上的强眉交谈
@@ -325,16 +325,16 @@ step << Alliance
     .accept 13296 >>接受任务 前往伊米海姆！
 step << Horde
 	.goto IcecrownGlacier,67.00,38.00
-	>>飞往奥格瑞姆之锤，这艘在高空中飞行的巨大部落船只。进入前面的大厅，与掠天者考尔姆·黑痕对话
+	>> 飞往奥格瑞姆之锤，这艘在高空中飞行的巨大部落船只。进入前面的大厅，与掠天者考尔姆·黑痕对话
     .turnin 13224 >>交任务 奥格瑞姆之锤
     .accept 13228 >>接受任务 破碎前线
 step << Horde
-	>>接受来自战争使者达沃斯·里赫和凯尔坦修士的任务，他们在楼梯附近和下层甲板走动
+	>> 接受来自战争使者达沃斯·里赫和凯尔坦修士的任务，他们在楼梯附近和下层甲板走动
     .daily 13302 >>接受任务 萨隆邪铁的奴隶
     .daily 13330 >>接受任务 伊米亚之血
     .accept 13340 >>接受任务 协助突袭
 step << Horde
-	>>前往船的下层甲板，与首席技师考伯克拉对话
+	>> 前往船的下层甲板，与首席技师考伯克拉对话
     .accept 13293 >>接受任务 前往伊米海姆！
 step << Alliance
     .goto IcecrownGlacier,62.6,51.3
@@ -345,7 +345,7 @@ step << Alliance
 step << Alliance
     #completewith next
     .goto Icecrown,62.55,50.67
-    .vehicle 32227 >>右键点击飞行器顶部的炮塔以开始任务
+    .vehicle 32227 >> 右键点击飞行器顶部的炮塔以开始任务
 	.isOnQuest 13309
 step << Alliance
 	-- completionist
@@ -373,7 +373,7 @@ step << Alliance
 	.complete 13336,1 --Ymirheim Vrykul Slain (20)
 step << Alliance
     .goto Icecrown,59.89,53.50
-	>>护送部队，如果需要，让部分士兵坦克怪物
+	>> 护送部队，如果需要，让部分士兵坦克怪物
     .complete 13284,1 --4/4 Alliance troops escorted to Ymirheim
 	.isOnQuest 13284
 step << Alliance
@@ -456,7 +456,7 @@ step << Horde
 	.complete 13330,1 --Ymirheim Vrykul Slain (20)
 	.isOnQuest 13330
 step << Horde
-	>>护送部队。
+	>> 护送部队。
     .goto IcecrownGlacier,59.4,52.8
     .complete 13301,1 --Horde troops escorted to Ymirheim (4)
 	.isOnQuest 13301
@@ -584,7 +584,7 @@ step
     .turnin 13330 >>交任务 伊米亚之血
 	.isQuestComplete 13330
 step << Horde
-	>>前往船的下层甲板，与首席技师考伯克拉对话
+	>> 前往船的下层甲板，与首席技师考伯克拉对话
     .turnin 13238 >>交任务 有价值的帮手？
     .accept 13239 >>接受任务 爆炸油
 step << Alliance
@@ -687,12 +687,12 @@ step << Horde
     .accept 13264 >>接受任务 你的憎恶伙伴
 	.accept 13277 >>接受任务 对抗巨人
 step << Horde
-	>>前往船的下层甲板，与首席技师考伯克拉对话
+	>> 前往船的下层甲板，与首席技师考伯克拉对话
     .turnin 13239 >>交任务 爆炸油
 step
     .goto IcecrownGlacier,68.3,61.5
 	>>击杀该区域内的巨大憎恶，并拾取冷却的憎恶破胆
-	.use 43968 >>使用憎恶复活套装，配合背包中的破胆来召唤你能控制的憎恶。让憎恶攻击小怪并吸引仇恨，以此聚集尽可能多的小怪，然后使用"憎恶爆炸"击杀憎恶附近的所有小怪（小怪必须处于战斗状态才能获得功劳）
+	.use 43968 >> 使用憎恶复活套装，配合背包中的破胆来召唤你能控制的憎恶。让憎恶攻击小怪并吸引仇恨，以此聚集尽可能多的小怪，然后使用"憎恶爆炸"击杀憎恶附近的所有小怪（小怪必须处于战斗状态才能获得功劳）
 	>>如果你用完了破胆，去击杀更多巨大憎恶，你一次只能携带1个破胆。
 	.collect 43966,1,13288,-1,1 << Alliance --Chilled Abomination Guts (3)
     .complete 13288,1 << Alliance  --Icy Ghouls Exploded (15)
@@ -774,7 +774,7 @@ step << Horde
 	.accept 13279 >>接受任务 化学常识
     .accept 13278 >>接受任务 污染者科普洛斯
 step << Horde
-	>>前往船的下层甲板，与首席技师考伯克拉对话
+	>> 前往船的下层甲板，与首席技师考伯克拉对话
     .accept 13379 >>接受任务 绿色科技
 step << Alliance
     .goto IcecrownGlacier,65.1,57.2,0
@@ -798,12 +798,12 @@ step << Alliance
     .accept 13383 >>接受任务 “借来”的技术
 step
 	#completewith next
-    .goto IcecrownGlacier,63.3,62.1,25 >>进入通往莫德雷萨内部的大门。它在第二层，由瘟疫恶魔守卫
+    .goto IcecrownGlacier,63.3,62.1,25 >> 进入通往莫德雷萨内部的大门。它在第二层，由瘟疫恶魔守卫
 	.isOnQuest 13295 << Alliance
 	.isOnQuest 13279 << Horde
 step
     .goto IcecrownGlacier,62.3,63.4
-	.use 44010 >>对包中的绿色沸腾大锅使用脊骨脓液。击杀刷新的怪物，并在提示“即将添加液体”时再次使用脊骨脓液。此任务难度极高，如有需要请组队完成。
+	.use 44010 >> 对包中的绿色沸腾大锅使用脊骨脓液。击杀刷新的怪物，并在提示“即将添加液体”时再次使用脊骨脓液。此任务难度极高，如有需要请组队完成。
     .complete 13295,1 << Alliance --Batch of Plague Neutralized (1)
     .complete 13279,1 << Horde --Batch of Plague Neutralized (1)
 step
@@ -834,7 +834,7 @@ step
 	.complete 13319,1 << Alliance --Overseer Faedris Killed (1)
 step
 	#requires darksub
-	.use 44251 >>对奥杜尔萨外面的坩埚使用分离的药瓶
+	.use 44251 >> 对奥杜尔萨外面的坩埚使用分离的药瓶
     .complete 13355,3 << Horde --Dark Sample Collected (1)
 	.complete 13320,3 << Alliance --Dark Sample Collected (1)
     .goto IcecrownGlacier,49.7,34.4
@@ -917,7 +917,7 @@ step << Alliance
     .accept 13321 >>接受任务 重新考验
 step << Horde
 	.goto IcecrownGlacier,67.00,38.00
-	>>飞到奥格瑞姆之锤，那是部落在高空中飞行的巨型战舰。进入前方的大房间，与科利特拉交谈
+	>> 飞到奥格瑞姆之锤，那是部落在高空中飞行的巨型战舰。进入前方的大房间，与科利特拉交谈
 	.turnin 13352 >>交任务 从天而“降”
     .turnin 13354 >>交任务 指挥体系
     .turnin 13279 >>交任务 化学常识
@@ -925,7 +925,7 @@ step << Horde
     .accept 13358 >>接受任务 活动窃听器
     .accept 13366 >>接受任务 需要更多情报
 step << Horde
-	>>前往船的下层甲板，与首席技师考伯克拉对话
+	>> 前往船的下层甲板，与首席技师考伯克拉对话
     .turnin 13355 >>交任务 无法复制
     .accept 13356 >>接受任务 重新考验
 step
@@ -940,7 +940,7 @@ step
     .goto IcecrownGlacier,54.7,28.0,70,0
     .goto IcecrownGlacier,57.0,28.8,70,0
     .goto IcecrownGlacier,54.1,31.4
-	.use 44433 >>击杀该区域的5个奴役的仆从（虚空行者）。在他们的尸体上使用虹吸之杖获取黑暗物质
+	.use 44433 >> 击杀该区域的5个奴役的仆从（虚空行者）。在他们的尸体上使用虹吸之杖获取黑暗物质
 	.collect 44434,5,13342,1 << Alliance --Dark Matter (5)
 	.collect 44434,5,13358,1 << Horde --Dark Matter (5)
 step
@@ -950,7 +950,7 @@ step
     .complete 13358,1 << Horde --Dark Messenger Summoned (1)
 step
 	#completewith next
-    .goto IcecrownGlacier,51.9,32.5,30 >>进入奥杜尔撒内部
+    .goto IcecrownGlacier,51.9,32.5,30 >> 进入奥杜尔撒内部
 	.isOnQuest 13366 << Horde
 	.isOnQuest 13345 << Alliance
 step
@@ -969,14 +969,14 @@ step
 	#sticky
 	#label Thesis
     .goto IcecrownGlacier,49.7,34.4
-	.use 44459 >>点击你背包中的一个研究页面，将它们合并成论文
+	.use 44459 >> 点击你背包中的一个研究页面，将它们合并成论文
     .complete 13366,1 << Horde --Cult of the Damned Thesis (1)
 	.complete 13345,1 << Alliance --Cult of the Damned Thesis (1)
 step
 	#requires taintedessence
     .goto IcecrownGlacier,49.7,34.4
 	.use 44301
-	.use 44304 >>右键点击你背包里的被污染的精华，将其合成为沸腾的魔质。然后将其扔进大锅中
+	.use 44304 >> 右键点击你背包里的被污染的精华，将其合成为沸腾的魔质。然后将其扔进大锅中
 	.complete 13321,1 << Alliance
 	.complete 13356,1 << Horde
 step << Alliance
@@ -1006,13 +1006,13 @@ step << Alliance
     .turnin 13321 >>交任务 重新考验
 step << Horde
 	.goto IcecrownGlacier,67.00,38.00
-	>>飞到奥格瑞姆之锤，那是部落在高空中飞行的巨型战舰。进入前方的大房间，与科利特拉交谈
+	>> 飞到奥格瑞姆之锤，那是部落在高空中飞行的巨型战舰。进入前方的大房间，与科利特拉交谈
     .turnin 13358 >>交任务 活动窃听器
 	.turnin 13366 >>交任务 需要更多情报
     .accept 13367 >>接受任务 片刻不得安宁
     .accept 13306 >>接受任务 构建路障
 step << Horde
-	>>前往船的下层甲板，与首席技师考伯克拉对话
+	>> 前往船的下层甲板，与首席技师考伯克拉对话
     .turnin 13356 >>交任务 重新考验
 step
     .goto IcecrownGlacier,52.5,42.0,70,0
@@ -1039,14 +1039,14 @@ step
 step
     .goto IcecrownGlacier,51.9,29.0
 	>>这个任务非常困难，如果需要可以组队完成
-	.use 44476 >>点击背包中的任何物品以将其合并为奥鲁麦斯的残骸
+	.use 44476 >> 点击背包中的任何物品以将其合并为奥鲁麦斯的残骸
 	.collect 44480,1 --Alumeth's Remains (1)
 	.isOnQuest 13346 << Alliance
 	.isOnQuest 13367 << Horde
 step
     .goto IcecrownGlacier,51.9,29.0
 	>>这个任务非常困难，如果需要可以组队完成
-	.use 44480 >>在发光晶体前使用奥鲁麦斯的残骸来召唤他，击杀他
+	.use 44480 >> 在发光晶体前使用奥鲁麦斯的残骸来召唤他，击杀他
     .complete 13346,1 << Alliance --Alumeth the Ascended Defeated (1)
     .complete 13367,1 << Horde --Alumeth the Ascended Defeated (1)
 	.isOnQuest 13346 << Alliance
@@ -1067,7 +1067,7 @@ step << Alliance
 	.accept 13334 >>接受任务 溅血的旗帜
 step << Horde
 	.goto IcecrownGlacier,67.00,38.00
-	>>飞到奥格瑞姆之锤，那是部落在高空中飞行的巨型战舰。进入前方的大房间，与科利特拉交谈
+	>> 飞到奥格瑞姆之锤，那是部落在高空中飞行的巨型战舰。进入前方的大房间，与科利特拉交谈
     .turnin 13367 >>交任务 片刻不得安宁
     .turnin 13306 >>交任务 构建路障
 	.accept 13312 >>接受任务 铁墙壁垒
@@ -1081,7 +1081,7 @@ step
 step
     .goto IcecrownGlacier,45.5,46.5
 	>>这个任务非常困难，如果需要可以组队完成
-	.use 44186 >>飞到阳台，然后在格姆克尔之珠处使用背包中的扭曲符文。击杀邪恶的格姆克尔
+	.use 44186 >> 飞到阳台，然后在格姆克尔之珠处使用背包中的扭曲符文。击杀邪恶的格姆克尔
     .complete 13337,1 << Alliance --Grimkor the Wicked (1)
     .complete 13312,1 << Horde --Grimkor the Wicked (1)
 step
@@ -1126,7 +1126,7 @@ step << Alliance
 	.turnin 13314 >>交任务 获取情报
 step << Horde
 	.goto IcecrownGlacier,67.00,38.00
-	>>飞到奥格瑞姆之锤，那是部落在高空中飞行的巨型战舰。进入前方的大房间，与科利特拉交谈
+	>> 飞到奥格瑞姆之锤，那是部落在高空中飞行的巨型战舰。进入前方的大房间，与科利特拉交谈
 	.turnin 13312 >>交任务 铁墙壁垒
 	.turnin 13307 >>交任务 溅血的旗帜
 step << Horde
@@ -1137,7 +1137,7 @@ step << Horde
 	.use 44212 >>在空中对破天者侦察机使用背包中的SGM-3
 	.complete 13313,1 --Skybreaker Recon Fighters shot down (6)
 step << Horde
-	>>飞往奥格瑞姆之锤，它是一个高空中飞行的部落战舰。进入前面的大房间。与考尔姆·黑痕对话
+	>> 飞往奥格瑞姆之锤，它是一个高空中飞行的部落战舰。进入前面的大房间。与考尔姆·黑痕对话
 	.turnin 13313 >>交任务 遮挡天空
 step
 	+如果你跳过或未完成本指南中的任何任务，请重新开始并完成它们，请点击齿轮图标返回到冰冠冰川飞空艇解锁日常任务指南

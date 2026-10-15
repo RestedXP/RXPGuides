@@ -44,13 +44,13 @@ step << Horde
 
 step
     #completewith next
-    .zone 84 >>前往暴风城 << Alliance
-	.zone 85 >>前往奥格瑞玛 << Horde
+    .zone 84 >> 前往暴风城 << Alliance
+	.zone 85 >> 前往奥格瑞玛 << Horde
 	.zoneskip 245
 step
     .goto 84,73.220,18.374 << Alliance
     .goto 85,47.405,39.261 << Horde
-    .zone 245 >>通过传送门前往托尔巴拉德
+    .zone 245 >> 通过传送门前往托尔巴拉德
 step << Alliance
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷中士|r、|cRXP_FRIENDLY_指挥官马库斯·约翰森|r、|cRXP_FRIENDLY_营地协调员巴拉克|r 和 |cRXP_FRIENDLY_法恩斯沃中尉|r 对话
     >>|TInterface/GossipFrame/DailyQuestIcon:0|t|cRXP_WARN_在巴拉丁营地接取所有可用的日常任务|r
@@ -80,7 +80,7 @@ step << Horde
 step << Alliance
     #completewith CommanderLargo
     .goto 245,75.26,44.80
-    .subzone 5540 >>前往拉尔戈的瞭望台
+    .subzone 5540 >> 前往拉尔戈的瞭望台
 step << Alliance
     .isOnQuest 27987
     #loop
@@ -111,7 +111,7 @@ step << Alliance
     .mob Commander Largo
 step << Alliance
     #completewith Seabass
-    .subzone 5538 >>前往洛斯贝格村
+    .subzone 5538 >> 前往洛斯贝格村
 step << Alliance
     .isOnQuest 28130
     #loop
@@ -140,7 +140,7 @@ step << Alliance
     .mob Rustberg Fisherman
 step << Alliance
     #completewith Tankslain
-    .subzone 5534 >>前往失落希望海角
+    .subzone 5534 >> 前往失落希望海角
 step << Alliance
     .isOnQuest 27972
     #loop
@@ -178,7 +178,7 @@ step << Alliance
     .unitscan Tank
 step << Alliance
     #completewith KeepLordFarson
-    .subzone 5539 >>前往法尔森要塞
+    .subzone 5539 >> 前往法尔森要塞
 step << Alliance
     .isOnQuest 28063
     .goto 245,37.34,29.35
@@ -199,7 +199,7 @@ step << Alliance
     .mob Keep Lord Farson
 step << Alliance
     #completewith ForemanWellson
-    .subzone 5535 >>前往维尔松船坞
+    .subzone 5535 >> 前往维尔松船坞
 step << Alliance
     .isOnQuest 27973
     #loop
@@ -220,7 +220,7 @@ step << Alliance
     #loop
     .goto 245,22.08,36.61,20,0
     .goto 245,21.76,47.89,20,0
-    .vehicle 48283 >>|cRXP_WARN_进入一个|r |cRXP_FRIENDLY_维尔松火炮|r
+    .vehicle 48283 >> |cRXP_WARN_进入一个|r |cRXP_FRIENDLY_维尔松火炮|r
     .target Wellson Cannon
 step << Alliance
     .isOnQuest 28275
@@ -240,7 +240,7 @@ step << Alliance
     .unitscan Foreman Wellson
 step << Horde
     #completewith FirstLieutenantConnor
-    .subzone 5536 >>前往遗忘山丘
+    .subzone 5536 >> 前往遗忘山丘
 step << Horde
     .isOnQuest 27949
     #loop
@@ -275,7 +275,7 @@ step << Horde
     .unitscan First Lieutenant Connor
 step
     #completewith SiegeEngineScrap
-    .subzone 5542 >>前往不眠前线
+    .subzone 5542 >> 前往不眠前线
 step << Alliance
     .isOnQuest 28046
     #loop
@@ -304,13 +304,13 @@ step
     .goto 245,47.46,69.52,60,0 << Horde
     .goto 245,43.90,60.75,60,0 << Horde
     .goto 245,39.23,61.12,60,0 << Horde
-    .use 62829 >>|cRXP_WARN_在不眠前线时，使用|r |T134519:0|t[磁性废料收集器] |cRXP_WARN_，可使 |cRXP_LOOT_攻城坦克废料|r 在地面显现|r
+    .use 62829 >> |cRXP_WARN_在不眠前线时，使用|r |T134519:0|t[磁性废料收集器] |cRXP_WARN_，可使 |cRXP_LOOT_攻城坦克废料|r 在地面显现|r
     >>|cRXP_WARN_注意|r |T134519:0|t[磁性废料收集器] |cRXP_WARN_并非每次都能显现|r |cRXP_LOOT_攻城坦克废料|r
     >>拾取地上的 |cRXP_LOOT_攻城坦克废料|r
     .complete 27992,1 -- Siege Engine Scrap (7)
 step << Alliance
     #completewith FirstLieutenantConnor
-    .subzone 5536 >>前往遗忘山丘
+    .subzone 5536 >> 前往遗忘山丘
 step << Alliance
     .isOnQuest 27949
     #loop
@@ -345,7 +345,7 @@ step << Alliance
     .unitscan First Lieutenant Connor
 step << Alliance
     #completewith next
-    .subzone 5537 >>前往黑暗森林
+    .subzone 5537 >> 前往黑暗森林
 step << Alliance
     .isOnQuest 27944
     #loop
@@ -370,7 +370,7 @@ step << Alliance
     .mob Darkwood Broodmother
 step << Horde
     #completewith ForemanWellson
-    .subzone 5535 >>前往维尔松船坞
+    .subzone 5535 >> 前往维尔松船坞
 step << Horde
     .isOnQuest 27973
     #loop
@@ -391,7 +391,7 @@ step << Horde
     #loop
     .goto 245,22.08,36.61,20,0
     .goto 245,21.76,47.89,20,0
-    .vehicle 48283 >>|cRXP_WARN_进入|r |cRXP_FRIENDLY_维尔松火炮|r
+    .vehicle 48283 >> |cRXP_WARN_进入|r |cRXP_FRIENDLY_维尔松火炮|r
     .target Wellson Cannon
 step << Horde
     .isOnQuest 28275
@@ -411,7 +411,7 @@ step << Horde
     .unitscan Foreman Wellson
 step << Horde
     #completewith KeepLordFarson
-    .subzone 5539 >>前往法尔森要塞
+    .subzone 5539 >> 前往法尔森要塞
 step << Horde
     .isOnQuest 28063
     .goto 245,37.34,29.35
@@ -432,7 +432,7 @@ step << Horde
     .mob Keep Lord Farson
 step << Horde
     #completewith Tankslain
-    .subzone 5534 >>前往失落希望海角
+    .subzone 5534 >> 前往失落希望海角
 step << Horde
     .isOnQuest 27972
     #loop
@@ -470,7 +470,7 @@ step << Horde
     .unitscan Tank
 step << Horde
     #completewith Seabass
-    .subzone 5538 >>前往洛斯贝格村
+    .subzone 5538 >> 前往洛斯贝格村
 step << Horde
     .isOnQuest 28130
     #loop
@@ -500,7 +500,7 @@ step << Horde
 step << Horde
     #completewith CommanderLargo
     .goto 245,75.26,44.80
-    .subzone 5540 >>前往拉尔戈的瞭望台
+    .subzone 5540 >> 前往拉尔戈的瞭望台
 step << Horde
     .isOnQuest 27987
     #loop
@@ -531,7 +531,7 @@ step << Horde
     .mob Commander Largo
 step << Horde
     #completewith next
-    .subzone 5537 >>前往黑暗森林
+    .subzone 5537 >> 前往黑暗森林
 step << Horde
     .isOnQuest 27944
     #loop
@@ -556,331 +556,331 @@ step << Horde
     .mob Darkwood Broodmother
 step << Alliance
     #completewith BaradinBaseCampTurnins
-    .goto 245,69.14,57.86,150 >>返回巴拉丁营地
+    .goto 245,69.14,57.86,150 >> 返回巴拉丁营地
     .subzoneskip 5545
 step << Alliance
     .isQuestComplete 28275
     .goto 245,72.934,60.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷中士|r 对话
-    .dailyturnin 28275 >>交任务 炮弹发射！
+    .dailyturnin 28275 >> 交任务 炮弹发射！
     .target Sergeant Gray
 step << Alliance
     .isQuestComplete 27987
     .goto 245,72.934,60.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷中士|r 对话
-    .dailyturnin 27987 >>交任务 炮弹！
+    .dailyturnin 27987 >> 交任务 炮弹！
     .target Sergeant Gray
 step << Alliance
     .isQuestComplete 27978
     .goto 245,72.934,60.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷中士|r 对话
-    .dailyturnin 27978 >>交任务 鬼魂毁灭者
+    .dailyturnin 27978 >> 交任务 鬼魂毁灭者
     .target Sergeant Gray
 step << Alliance
     .isQuestComplete 27991
     .goto 245,72.934,60.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷中士|r 对话
-    .dailyturnin 27991 >>交任务 夺回拉尔戈的瞭望台
+    .dailyturnin 27991 >> 交任务 夺回拉尔戈的瞭望台
     .target Sergeant Gray
 step << Alliance
     .isQuestComplete 27973
     .goto 245,72.934,60.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷中士|r 对话
-    .dailyturnin 27973 >>交任务 当心鬼魂！
+    .dailyturnin 27973 >> 交任务 当心鬼魂！
     .target Sergeant Gray
 step << Alliance
     .isQuestComplete 27975
     .goto 245,72.934,60.938
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷中士|r 对话
-    .dailyturnin 27975 >>交任务 通缉令：工头维尔松
+    .dailyturnin 27975 >> 交任务 通缉令：工头维尔松
     .target Sergeant Gray
 step << Alliance
     .isQuestComplete 28059
     .goto 245,73.390,59.176
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官马库斯·约翰森|r 对话
-    .dailyturnin 28059 >>交任务 占领要塞
+    .dailyturnin 28059 >> 交任务 占领要塞
     .target Commander Marcus Johnson
 step << Alliance
     .isQuestComplete 28063
     .goto 245,73.390,59.176
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官马库斯·约翰森|r 对话
-    .dailyturnin 28063 >>交任务 绝不浪费武器
+    .dailyturnin 28063 >> 交任务 绝不浪费武器
     .target Commander Marcus Johnson
 step << Alliance
     .isQuestComplete 28130
     .goto 245,73.390,59.176
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官马库斯·约翰森|r 对话
-    .dailyturnin 28130 >>交任务 不友善的村落
+    .dailyturnin 28130 >> 交任务 不友善的村落
     .target Commander Marcus Johnson
 step << Alliance
     .isQuestComplete 28137
     .goto 245,73.390,59.176
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官马库斯·约翰森|r 对话
-    .dailyturnin 28137 >>交任务 弄点黑鲈鱼来
+    .dailyturnin 28137 >> 交任务 弄点黑鲈鱼来
     .target Commander Marcus Johnson
 step << Alliance
     .isQuestComplete 28065
     .goto 245,73.390,59.176
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官马库斯·约翰森|r 对话
-    .dailyturnin 28065 >>交任务 设身处地
+    .dailyturnin 28065 >> 交任务 设身处地
     .target Commander Marcus Johnson
 step << Alliance
     .isQuestComplete 27948
     .goto 245,73.729,57.571
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_营地协调员巴拉克|r 对话
-    .dailyturnin 27948 >>交任务 棘手的任务
+    .dailyturnin 27948 >> 交任务 棘手的任务
     .target Camp Coordinator Brack
 step << Alliance
     .isQuestComplete 27972
     .goto 245,73.729,57.571
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_营地协调员巴拉克|r 对话
-    .dailyturnin 27972 >>交任务 鼓舞士气
+    .dailyturnin 27972 >> 交任务 鼓舞士气
     .target Camp Coordinator Brack
 step << Alliance
     .isQuestComplete 27970
     .goto 245,73.729,57.571
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_营地协调员巴拉克|r 对话
-    .dailyturnin 27970 >>交任务 P·哈里斯船长
+    .dailyturnin 27970 >> 交任务 P·哈里斯船长
     .target Camp Coordinator Brack
 step << Alliance
     .isQuestComplete 27971
     .goto 245,73.729,57.571
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_营地协调员巴拉克|r 对话
-    .dailyturnin 27971 >>交任务 激怒敌人
+    .dailyturnin 27971 >> 交任务 激怒敌人
     .target Camp Coordinator Brack
 step << Alliance
     .isQuestComplete 28050
     .goto 245,73.729,57.571
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_营地协调员巴拉克|r 对话
-    .dailyturnin 28050 >>交任务 巨鲨“坦克”
+    .dailyturnin 28050 >> 交任务 巨鲨“坦克”
     .target Camp Coordinator Brack
 step << Alliance
     .isQuestComplete 27944
     .goto 245,73.729,57.571
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_营地协调员巴拉克|r 对话
-    .dailyturnin 27944 >>交任务 削减蜘蛛的数量
+    .dailyturnin 27944 >> 交任务 削减蜘蛛的数量
     .target Camp Coordinator Brack
 step << Alliance
     .isQuestComplete 28046
     .goto 245,74.776,59.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_法恩斯沃中尉|r 对话
-    .dailyturnin 28046 >>交任务 收尾工作
+    .dailyturnin 28046 >> 交任务 收尾工作
     .target Lieutenant Farnsworth
 step << Alliance
     .isQuestComplete 27967
     .goto 245,74.776,59.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_法恩斯沃中尉|r 对话
-    .dailyturnin 27967 >>交任务 康纳中尉
+    .dailyturnin 27967 >> 交任务 康纳中尉
     .target Lieutenant Farnsworth
 step << Alliance
     .isQuestComplete 27992
     .goto 245,74.776,59.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_法恩斯沃中尉|r 对话
-    .dailyturnin 27992 >>交任务 磁铁的原理是什么呢？
+    .dailyturnin 27992 >> 交任务 磁铁的原理是什么呢？
     .target Lieutenant Farnsworth
 step << Alliance
     .isQuestComplete 27966
     .goto 245,74.776,59.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_法恩斯沃中尉|r 对话
-    .dailyturnin 27966 >>交任务 回收残骸
+    .dailyturnin 27966 >> 交任务 回收残骸
     .target Lieutenant Farnsworth
 step << Alliance
     #label BaradinBaseCampTurnins
     .isQuestComplete 27949
     .goto 245,74.776,59.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_法恩斯沃中尉|r 对话
-    .dailyturnin 27949 >>交任务 被遗忘的灵魂
+    .dailyturnin 27949 >> 交任务 被遗忘的灵魂
     .target Lieutenant Farnsworth
 step << Horde
     #completewith HellscreamsGraspTurnins
-    .goto 245,52.43,68.91,150 >>返回地狱咆哮之握
+    .goto 245,52.43,68.91,150 >> 返回地狱咆哮之握
     .subzoneskip 5546
 step << Horde
     .isQuestComplete 28693
     .goto 245,54.890,79.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_普拉格上尉|r 对话
-    .dailyturnin 28693 >>交任务 收尾工作
+    .dailyturnin 28693 >> 交任务 收尾工作
     .target Captain Prug
 step << Horde
     .isQuestComplete 27967
     .goto 245,54.890,79.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_普拉格上尉|r 对话
-    .dailyturnin 27967 >>交任务 康纳中尉
+    .dailyturnin 27967 >> 交任务 康纳中尉
     .target Captain Prug
 step << Horde
     .isQuestComplete 27992
     .goto 245,54.890,79.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_普拉格上尉|r 对话
-    .dailyturnin 27992 >>交任务 磁铁的原理是什么呢？
+    .dailyturnin 27992 >> 交任务 磁铁的原理是什么呢？
     .target Captain Prug
 step << Horde
     .isQuestComplete 27966
     .goto 245,54.890,79.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_普拉格上尉|r 对话
-    .dailyturnin 27966 >>交任务 回收残骸
+    .dailyturnin 27966 >> 交任务 回收残骸
     .target Captain Prug
 step << Horde
     .isQuestComplete 27949
     .goto 245,54.890,79.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_普拉格上尉|r 对话
-    .dailyturnin 27949 >>交任务 被遗忘的灵魂
+    .dailyturnin 27949 >> 交任务 被遗忘的灵魂
     .target Captain Prug
 step << Horde
     .isQuestComplete 28275
     .goto 245,55.770,78.478
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_列兵萨罗斯克|r 对话
-    .dailyturnin 28275 >>交任务 炮弹发射！
+    .dailyturnin 28275 >> 交任务 炮弹发射！
     .target Private Sarlosk
 step << Horde
     .isQuestComplete 27987
     .goto 245,55.770,78.478
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_列兵萨罗斯克|r 对话
-    .dailyturnin 27987 >>交任务 炮弹！
+    .dailyturnin 27987 >> 交任务 炮弹！
     .target Private Sarlosk
 step << Horde
     .isQuestComplete 27978
     .goto 245,55.770,78.478
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_列兵萨罗斯克|r 对话
-    .dailyturnin 27978 >>交任务 鬼魂毁灭者
+    .dailyturnin 27978 >> 交任务 鬼魂毁灭者
     .target Private Sarlosk
 step << Horde
     .isQuestComplete 27991
     .goto 245,55.770,78.478
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_列兵萨罗斯克|r 对话
-    .dailyturnin 27991 >>交任务 夺回拉尔戈的瞭望台
+    .dailyturnin 27991 >> 交任务 夺回拉尔戈的瞭望台
     .target Private Sarlosk
 step << Horde
     .isQuestComplete 27973
     .goto 245,55.770,78.478
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_列兵萨罗斯克|r 对话
-    .dailyturnin 27973 >>交任务 当心鬼魂！
+    .dailyturnin 27973 >> 交任务 当心鬼魂！
     .target Private Sarlosk
 step << Horde
     .isQuestComplete 27975
     .goto 245,55.770,78.478
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_列兵萨罗斯克|r 对话
-    .dailyturnin 27975 >>交任务 通缉令：工头维尔松
+    .dailyturnin 27975 >> 交任务 通缉令：工头维尔松
     .target Private Sarlosk
 step << Horde
     .isQuestComplete 27948
     .goto 245,55.223,81.329
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_三副克隆卡尔|r 对话
-    .dailyturnin 27948 >>交任务 棘手的任务
+    .dailyturnin 27948 >> 交任务 棘手的任务
     .target 3rd Officer Kronkar
 step << Horde
     .isQuestComplete 27972
     .goto 245,55.223,81.329
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_三副克隆卡尔|r 对话
-    .dailyturnin 27972 >>交任务 鼓舞士气
+    .dailyturnin 27972 >> 交任务 鼓舞士气
     .target 3rd Officer Kronkar
 step << Horde
     .isQuestComplete 27970
     .goto 245,55.223,81.329
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_三副克隆卡尔|r 对话
-    .dailyturnin 27970 >>交任务 P·哈里斯船长
+    .dailyturnin 27970 >> 交任务 P·哈里斯船长
     .target 3rd Officer Kronkar
 step << Horde
     .isQuestComplete 27971
     .goto 245,55.223,81.329
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_三副克隆卡尔|r 对话
-    .dailyturnin 27971 >>交任务 激怒敌人
+    .dailyturnin 27971 >> 交任务 激怒敌人
     .target 3rd Officer Kronkar
 step << Horde
     .isQuestComplete 28050
     .goto 245,55.223,81.329
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_三副克隆卡尔|r 对话
-    .dailyturnin 28050 >>交任务 巨鲨“坦克”
+    .dailyturnin 28050 >> 交任务 巨鲨“坦克”
     .target 3rd Officer Kronkar
 step << Horde
     .isQuestComplete 27944
     .goto 245,55.223,81.329
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_三副克隆卡尔|r 对话
-    .dailyturnin 27944 >>交任务 削减蜘蛛的数量
+    .dailyturnin 27944 >> 交任务 削减蜘蛛的数量
     .target 3rd Officer Kronkar
 step << Horde
     .isQuestComplete 28059
     .goto 245,53.535,80.569
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官拉尔玛什|r 对话
-    .dailyturnin 28059 >>交任务 占领要塞
+    .dailyturnin 28059 >> 交任务 占领要塞
     .target Commander Larmash
 step << Horde
     .isQuestComplete 28063
     .goto 245,53.535,80.569
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官拉尔玛什|r 对话
-    .dailyturnin 28063 >>交任务 绝不浪费武器
+    .dailyturnin 28063 >> 交任务 绝不浪费武器
     .target Commander Larmash
 step << Horde
     .isQuestComplete 28130
     .goto 245,53.535,80.569
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官拉尔玛什|r 对话
-    .dailyturnin 28130 >>交任务 不友善的村落
+    .dailyturnin 28130 >> 交任务 不友善的村落
     .target Commander Larmash
 step << Horde
     .isQuestComplete 28137
     .goto 245,53.535,80.569
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官拉尔玛什|r 对话
-    .dailyturnin 28137 >>交任务 弄点黑鲈鱼来
+    .dailyturnin 28137 >> 交任务 弄点黑鲈鱼来
     .target Commander Larmash
 step << Horde
     #label HellscreamsGraspTurnins
     .isQuestComplete 28065
     .goto 245,53.535,80.569
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官拉尔玛什|r 对话
-    .dailyturnin 28065 >>交任务 设身处地
+    .dailyturnin 28065 >> 交任务 设身处地
     .target Commander Larmash
 step
     #completewith next
     .goto 245,66.83,81.42,30,0
     .goto 244,40.80,20.76
-    .zone 244 >>|cRXP_WARN_你已完成今日托尔巴拉德半岛的所有日常任务。南行前往托尔巴拉德继续完成那里的日常任务|r
+    .zone 244 >> |cRXP_WARN_你已完成今日托尔巴拉德半岛的所有日常任务。南行前往托尔巴拉德继续完成那里的日常任务|r
 step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_万斯沃斯少尉|r、|cRXP_FRIENDLY_法洛斯元帅|r、|cRXP_FRIENDLY_帕克中士|r 和 |cRXP_FRIENDLY_指挥官斯蒂文斯|r 对话
-    .daily 28186 >>接受任务 被诅咒的镣铐
-    .daily 28165 >>接受任务 恶魔监狱
-    .daily 28185 >>接受任务 斯瓦诺斯
+    .daily 28186 >> 接受任务 被诅咒的镣铐
+    .daily 28165 >> 接受任务 恶魔监狱
+    .daily 28185 >> 接受任务 斯瓦诺斯
     .goto 244,53.108,46.414
     .target +2nd Lieutenant Wansworth
-    .daily 28232 >>接受任务 下面的食物
-    .daily 28188 >>接受任务 监狱暴动
-    .daily 28223 >>接受任务 典狱官
+    .daily 28232 >> 接受任务 下面的食物
+    .daily 28188 >> 接受任务 监狱暴动
+    .daily 28223 >> 接受任务 典狱官
     .goto 244,53.517,47.011
     .target +Marshal Fallows
-    .daily 28122 >>接受任务 巨大的问题
-    .daily 28162 >>接受任务 沼泽之饵
-    .daily 28163 >>接受任务 负隅顽抗
+    .daily 28122 >> 接受任务 巨大的问题
+    .daily 28162 >> 接受任务 沼泽之饵
+    .daily 28163 >> 接受任务 负隅顽抗
     .goto 244,54.568,46.338
     .target +Sergeant Parker
-    .daily 28117 >>接受任务 清理地牢
-    .daily 28120 >>接受任务 以史为鉴
-    .daily 28118 >>接受任务 被囚禁的大法师
+    .daily 28117 >> 接受任务 清理地牢
+    .daily 28120 >> 接受任务 以史为鉴
+    .daily 28118 >> 接受任务 被囚禁的大法师
     .goto 244,54.385,45.623
     .target +Commander Stevens
 step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉兹加尔上士|r、|cRXP_FRIENDLY_指挥官扎诺斯|r、|cRXP_FRIENDLY_列兵加尔诺斯|r 和 |cRXP_FRIENDLY_拉斯格斯教官|r 对话
-    .daily 28232 >>接受任务 下面的食物
-    .daily 28188 >>接受任务 监狱暴动
-    .daily 28223 >>接受任务 典狱官
+    .daily 28232 >> 接受任务 下面的食物
+    .daily 28188 >> 接受任务 监狱暴动
+    .daily 28223 >> 接受任务 典狱官
     .goto 244,48.719,53.631
     .target +Staff Sergeant Lazgar
-    .daily 28122 >>接受任务 巨大的问题
-    .daily 28162 >>接受任务 沼泽之饵
-    .daily 28659 >>接受任务 负隅顽抗
+    .daily 28122 >> 接受任务 巨大的问题
+    .daily 28162 >> 接受任务 沼泽之饵
+    .daily 28659 >> 接受任务 负隅顽抗
     .goto 244,48.003,54.792
     .target +Commander Zanoth
-    .daily 28117 >>接受任务 清理地牢
-    .daily 28120 >>接受任务 以史为鉴
-    .daily 28118 >>接受任务 被囚禁的大法师
+    .daily 28117 >> 接受任务 清理地牢
+    .daily 28120 >> 接受任务 以史为鉴
+    .daily 28118 >> 接受任务 被囚禁的大法师
     .goto 244,48.476,55.240
     .target +Private Garnoth
-    .daily 28186 >>接受任务 被诅咒的镣铐
-    .daily 28165 >>接受任务 恶魔监狱
-    .daily 28185 >>接受任务 斯瓦诺斯
+    .daily 28186 >> 接受任务 被诅咒的镣铐
+    .daily 28165 >> 接受任务 恶魔监狱
+    .daily 28185 >> 接受任务 斯瓦诺斯
     .goto 244,49.230,53.860
     .target +Drillmaster Razgoth
 step
     #completewith GalusStaff
     .goto 244,61.330,50.108
-    .subzone 5658 >>进入咒怨地牢
+    .subzone 5658 >> 进入咒怨地牢
 step
     #completewith GalusStaff
     .isOnQuest 28117
@@ -929,7 +929,7 @@ step
 step
     #completewith SvarnosCollar
     .goto 244,42.722,38.648
-    .subzone 5657 >>前往恶魔监狱
+    .subzone 5657 >> 前往恶魔监狱
 step
     #completewith SvarnosCollar
     .isOnQuest 28165
@@ -999,7 +999,7 @@ step
 step
     #completewith WardensKeys
     .goto 244,43.93,70.10
-    .subzone 5659 >>前往矿渣洞
+    .subzone 5659 >> 前往矿渣洞
 step
     #completewith WardensKeys
     .isOnQuest 28188
@@ -1092,46 +1092,46 @@ step
     .mob Problim
 step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_万斯沃斯少尉|r、|cRXP_FRIENDLY_法洛斯元帅|r、|cRXP_FRIENDLY_帕克中士|r 和 |cRXP_FRIENDLY_指挥官斯蒂文斯|r 对话
-    .dailyturnin 28186 >>交任务 被诅咒的镣铐
-    .dailyturnin 28165 >>交任务 恶魔监狱
-    .dailyturnin 28185 >>交任务 斯瓦诺斯
+    .dailyturnin 28186 >> 交任务 被诅咒的镣铐
+    .dailyturnin 28165 >> 交任务 恶魔监狱
+    .dailyturnin 28185 >> 交任务 斯瓦诺斯
     .goto 244,53.108,46.414
     .target +2nd Lieutenant Wansworth
-    .dailyturnin 28232 >>交任务 下面的食物
-    .dailyturnin 28188 >>交任务 监狱暴动
-    .dailyturnin 28223 >>交任务 典狱官
+    .dailyturnin 28232 >> 交任务 下面的食物
+    .dailyturnin 28188 >> 交任务 监狱暴动
+    .dailyturnin 28223 >> 交任务 典狱官
     .goto 244,53.517,47.011
     .target +Marshal Fallows
-    .dailyturnin 28122 >>交任务 巨大的问题
-    .dailyturnin 28162 >>交任务 沼泽之饵
-    .dailyturnin 28163 >>交任务 负隅顽抗
+    .dailyturnin 28122 >> 交任务 巨大的问题
+    .dailyturnin 28162 >> 交任务 沼泽之饵
+    .dailyturnin 28163 >> 交任务 负隅顽抗
     .goto 244,54.568,46.338
     .target +Sergeant Parker
-    .dailyturnin 28117 >>交任务 清理地牢
-    .dailyturnin 28120 >>交任务 以史为鉴
-    .dailyturnin 28118 >>交任务 被囚禁的大法师
+    .dailyturnin 28117 >> 交任务 清理地牢
+    .dailyturnin 28120 >> 交任务 以史为鉴
+    .dailyturnin 28118 >> 交任务 被囚禁的大法师
     .goto 244,54.385,45.623
     .target +Commander Stevens
 step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉兹加尔上士|r、|cRXP_FRIENDLY_指挥官扎诺斯|r、|cRXP_FRIENDLY_列兵加尔诺斯|r 和 |cRXP_FRIENDLY_拉斯格斯教官|r 对话
-    .dailyturnin 28232 >>交任务 下面的食物
-    .dailyturnin 28188 >>交任务 监狱暴动
-    .dailyturnin 28223 >>交任务 典狱官
+    .dailyturnin 28232 >> 交任务 下面的食物
+    .dailyturnin 28188 >> 交任务 监狱暴动
+    .dailyturnin 28223 >> 交任务 典狱官
     .goto 244,48.719,53.631
     .target +Staff Sergeant Lazgar
-    .dailyturnin 28122 >>交任务 巨大的问题
-    .dailyturnin 28162 >>交任务 沼泽之饵
-    .dailyturnin 28659 >>交任务 负隅顽抗
+    .dailyturnin 28122 >> 交任务 巨大的问题
+    .dailyturnin 28162 >> 交任务 沼泽之饵
+    .dailyturnin 28659 >> 交任务 负隅顽抗
     .goto 244,48.003,54.792
     .target +Commander Zanoth
-    .dailyturnin 28117 >>交任务 清理地牢
-    .dailyturnin 28120 >>交任务 以史为鉴
-    .dailyturnin 28118 >>交任务 被囚禁的大法师
+    .dailyturnin 28117 >> 交任务 清理地牢
+    .dailyturnin 28120 >> 交任务 以史为鉴
+    .dailyturnin 28118 >> 交任务 被囚禁的大法师
     .goto 244,48.476,55.240
     .target +Private Garnoth
-    .dailyturnin 28186 >>交任务 被诅咒的镣铐
-    .dailyturnin 28165 >>交任务 恶魔监狱
-    .dailyturnin 28185 >>交任务 斯瓦诺斯
+    .dailyturnin 28186 >> 交任务 被诅咒的镣铐
+    .dailyturnin 28165 >> 交任务 恶魔监狱
+    .dailyturnin 28185 >> 交任务 斯瓦诺斯
     .goto 244,49.230,53.860
     .target +Drillmaster Razgoth
 step
