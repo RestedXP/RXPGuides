@@ -1,0 +1,12 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXMLUI.xsd">
+
+	<Script file="Import.lua"/>
+	<Script file="Retail\Snippits.lua"/>
+	<Script file="Retail\Leveling\Conventional\Starting Zones.lua"/>
+	<Script file="Retail\Endgame\Midnight\Storylines.Lua"/>
+	<Script file="Retail\Collectables\Skyriding Glyphs.Lua"/>
+	<Script file="Retail\Collectables\Knowledge Treasures.Lua"/>
+	<Script file="Retail\Collectables\Allied Races.Lua"/>
+	<Script file="Retail\Collectables\Lorewalking.Lua"/>
+
+</Ui>
