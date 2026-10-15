@@ -20,6 +20,7 @@ exceptions = [
     r'\\Guides\\',
     r'\\locale\\',
     r'\\Scripts\\',
+    r'\\lang\\',
 ]
 allowed = [
     re.escape('enUS.lua')
