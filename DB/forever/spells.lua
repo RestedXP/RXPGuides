@@ -80,7 +80,8 @@ s["DRUID"] = {
         782, -- thorns r2
         5178, -- wrath r3
         5187, -- healing touch r3
-        5211 -- bash
+        5211, -- bash
+        437138, --revive r1
     },
     [16] = {
         779, -- swipe
@@ -147,7 +148,8 @@ s["DRUID"] = {
         8941, -- regrowth r5
         9493, -- rip
         6793, -- tigers fury r2
-        22842 -- frenzied regeneration
+        22842, -- frenzied regeneration
+        1238069, --primal bite r2
     },
     [38] = {
         5201, -- claw r3
@@ -157,7 +159,7 @@ s["DRUID"] = {
     [40] = {
         20719, -- feline grace
         22827, -- ferocious bite r2
-        29166, -- inntervate
+        29166, -- innervate
         8907, -- mark of the wild r5
         8910, -- rejuvenation r7
         6783, -- prowl r2
@@ -167,7 +169,8 @@ s["DRUID"] = {
         17391, -- faerie fire feral r3
         9749, -- faerie fire r3
         6787, -- ravage r2
-        9750 -- regrowth r6
+        9750, -- regrowth r6
+        414644, --Lacerate
     },
     [44] = {
         22812, -- barkskin
@@ -188,12 +191,14 @@ s["DRUID"] = {
         22828, -- ferocious bite r3
         9856, -- regrowth r7
         9845, -- tigers fury r3
-        9852 -- entangling roots r5
+        9852, -- entangling roots r5
+        1238070, --primal bite r3
     },
     [50] = {
         9888, -- healing touch r9
         9884, -- mark of the wild r6
-        9866 -- ravage r3
+        9866, -- ravage r3
+        1235826, --lacerate r2
     },
     [52] = {
         9840, -- rejuvenation r9
@@ -203,7 +208,7 @@ s["DRUID"] = {
         17392, -- faerie fire feral r4
         9907, -- faerie fire f4
         9857, -- regrowth r8
-        9910 -- throns r6
+        9910, -- throns r6
     },
     [56] = {
         22829, -- ferocious bite r4
@@ -215,7 +220,8 @@ s["DRUID"] = {
         9857, -- ravage r4
         9841, -- rejuvenation r10
         33982, -- mangle r2
-        9853 -- entangling roots r6
+        9853, -- entangling roots r6
+        1235827, --lacerate r3
     },
     [60] = {
         31018, -- ferocious bite r5
@@ -225,7 +231,8 @@ s["DRUID"] = {
         9858, -- regrowth r9
         25299, -- rejuvenation r11
         9868, -- rip r6
-        9846 -- tigers fury r4
+        9846, -- tigers fury r4
+        1238073, --primal bite r4
     }
 }
 
