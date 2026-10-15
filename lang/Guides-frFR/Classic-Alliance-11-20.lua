@@ -5086,7 +5086,7 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     .goto 1433,51.846,45.116
-    >>Vous DEVEZ le faire pour votre de quête de [Poisons] plus tard
+    >>Vous DEVEZ le faire pour votre quête de [Poisons] plus tard
     >>|cRXP_WARN_Restez sur la location du point de repère. Positionnez votre caméra et votre curseur jusqu'à ce que vous puissiez cliquer sur 3 |cRXP_PICK_Practice Lockboxes|r en même temps et sans avoir à bouger|r
     .skill lockpicking,80 >>|cRXP_WARN_Ouvrez les |cRXP_PICK_Practice Lockboxes|r sur le sol dans la scierie d'Alther jusqu'à ce que votre score de|r [Crochetage] soit de 80|r
     .dungeon !DM
@@ -5195,7 +5195,7 @@ step << Rogue
     #xprate >1.59
     .goto Westfall,68.50,70.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Agent Kearnen|r
-    >>Vous DEVEZ faire cette quête pour vos [Poisons]
+    >>Vous DEVEZ le faire pour votre de quête de [Poisons]
     .turnin 2360 >> Rendez la quête Mathias et les Défias
     .accept 2359 >> Acceptez la quête La Tour de Klaven
     .target Agent Kearnen
@@ -5213,7 +5213,7 @@ step << Rogue
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
     >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
-    >>Faites attention, il tape TRÈS fort. Si vous perdez votre [Camouflage], utilisez rapidement votre [Sprint] et enfuyez-vous
+    >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Cliquez ICI pour un guide vidéo
     .mob Malformed Defias Drone
@@ -5222,7 +5222,7 @@ step << Rogue
     #xprate >1.59
     #optional
     #completewith Mortwake
-    +Équipez la [Dague de Curvewood] pour cette quête si vous n'avez pas déjà de [Dagues] équipée
+    +Équipez la [Dague de Curvewood] pour cette quête si vous n'avez pas déjà de [Dague] équipée
     .use 15396
     .itemcount 15396,1
     .dungeon !DM
@@ -5232,7 +5232,7 @@ step << Rogue
     .goto 1436,70.421,74.031
     >>Allez jusqu'à l'avant dernier étage de la tour. Lorsque vous êtes en [Camouflage] |cRXP_WARN_et que les |cRXP_ENEMY_Defias Tower Sentries|r ne sont pas proches de vous, sautez sur la chaise, puis sur la lampe, et ensuite sur la bibliothèque au-dessus du point de repère|r
     >>Enlevez votre [Camouflage] manuellement|cRXP_WARN_, puis appuyez sur votre touche "Interagir avec la cible" pour ouvrir le |cRXP_PICK_Duskwood Chest|r. Récupérez le|r |cRXP_LOOT_Klaven Mortwake's Journal|r
-    >>NOTE: Votre [Camouflage] ne marchera pas plus temporairement après avoir récupéré le |cRXP_LOOT_Klaven Mortwake's Journal|r
+    >>NOTE: Votre [Camouflage] ne fonctionnera pas un moment après avoir récupéré le |cRXP_LOOT_Klaven Mortwake's Journal|r
     >>|cRXP_WARN_Soyez prêt à courir si vous ne voulez pas tuer les |cRXP_ENEMY_Defias Tower Sentries|r au deuxième étage. Ils vont sûrement vous aggro de manière permanente (mais sans vous attaquer) lorsque vous êtes en haut de la bibliothèque comme il s'agit d'un evade spot|r
     >>Si vous avez une [Dague] dans vos sacs ou déjà équipée, vous pouvez lancez [Embuscade] |cRXP_WARN_sur le |cRXP_ENEMY_Defias Tower Patrollers|r et sur les |cRXP_ENEMY_Defias Tower Sentries|r à l'intérieur pour les tuer instantanément. Soyez prêt à vous enfuir après avoir tué le premier|cRXP_ENEMY_Defias Tower Sentry|r  et n'oubliez pas que vous pouvez être touché d'en dessous. Cette technique est plus lente, mais BEAUCOUP plus sure|r
     >>|cRXP_WARN_Faites attention car les |cRXP_ENEMY_Malformed Defias Drone|r et les |cRXP_ENEMY_Defias Drones|r peuvent se trouver à l'entrée de la tour si vous devez vous enfuir de celle-ci|r
@@ -5294,7 +5294,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>Si vous avez un ami |cFFF48CBAPaladin|r ou |cFFFF7C0ADruid|r demandez-leur de vous enlever le debuff [Toucher de Zanzil]
-    .skill firstaid,80 >> Montez votre niveau de compétence en [Premiers soins] jusqu'à 80
+    .skill firstaid,80 >> Montez vos [Premier soins] à un niveau de compétence de 80
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .dungeon !DM
@@ -7065,7 +7065,7 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     .goto 1433,51.846,45.116
-    >>Vous DEVEZ le faire pour votre de quête de [Poisons] plus tard
+    >>Vous DEVEZ le faire pour votre quête de [Poisons] plus tard
     >>|cRXP_WARN_Restez sur la location du point de repère. Positionnez votre caméra et votre curseur jusqu'à ce que vous puissiez cliquer sur 3 |cRXP_PICK_Practice Lockboxes|r en même temps et sans avoir à bouger|r
     .skill lockpicking,80 >>|cRXP_WARN_Ouvrez les |cRXP_PICK_Practice Lockboxes|r sur le sol dans la scierie d'Alther jusqu'à ce que votre score de|r [Crochetage] soit de 80|r
     .dungeon DM
@@ -7147,7 +7147,7 @@ step << Rogue
     #xprate >1.59
     .goto Westfall,68.50,70.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Agent Kearnen|r
-    >>Vous DEVEZ faire cette quête pour vos [Poisons]
+    >>Vous DEVEZ le faire pour votre de quête de [Poisons]
     .turnin 2360 >> Rendez la quête Mathias et les Défias
     .accept 2359 >> Acceptez la quête La Tour de Klaven
     .target Agent Kearnen
@@ -7165,7 +7165,7 @@ step << Rogue
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
     >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
-    >>Faites attention, il tape TRÈS fort. Si vous perdez votre [Camouflage], utilisez rapidement votre [Sprint] et enfuyez-vous
+    >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Cliquez ICI pour un guide vidéo
     .mob Malformed Defias Drone
@@ -7174,7 +7174,7 @@ step << Rogue
     #xprate >1.59
     #optional
     #completewith Mortwake
-    +Équipez la [Dague de Curvewood] pour cette quête si vous n'avez pas déjà de [Dagues] équipée
+    +Équipez la [Dague de Curvewood] pour cette quête si vous n'avez pas déjà de [Dague] équipée
     .use 15396
     .itemcount 15396,1
     .dungeon DM
@@ -7184,7 +7184,7 @@ step << Rogue
     .goto 1436,70.421,74.031
     >>Allez jusqu'à l'avant dernier étage de la tour. Lorsque vous êtes en [Camouflage] |cRXP_WARN_et que les |cRXP_ENEMY_Defias Tower Sentries|r ne sont pas proches de vous, sautez sur la chaise, puis sur la lampe, et ensuite sur la bibliothèque au-dessus du point de repère|r
     >>Enlevez votre [Camouflage] manuellement|cRXP_WARN_, puis appuyez sur votre touche "Interagir avec la cible" pour ouvrir le |cRXP_PICK_Duskwood Chest|r. Récupérez le|r |cRXP_LOOT_Klaven Mortwake's Journal|r
-    >>NOTE: Votre [Camouflage] ne marchera pas plus temporairement après avoir récupéré le |cRXP_LOOT_Klaven Mortwake's Journal|r
+    >>NOTE: Votre [Camouflage] ne fonctionnera pas un moment après avoir récupéré le |cRXP_LOOT_Klaven Mortwake's Journal|r
     >>|cRXP_WARN_Soyez prêt à courir si vous ne voulez pas tuer les |cRXP_ENEMY_Defias Tower Sentries|r au deuxième étage. Ils vont sûrement vous aggro de manière permanente (mais sans vous attaquer) lorsque vous êtes en haut de la bibliothèque comme il s'agit d'un evade spot|r
     >>Si vous avez une [Dague] dans vos sacs ou déjà équipée, vous pouvez lancez [Embuscade] |cRXP_WARN_sur le |cRXP_ENEMY_Defias Tower Patrollers|r et sur les |cRXP_ENEMY_Defias Tower Sentries|r à l'intérieur pour les tuer instantanément. Soyez prêt à vous enfuir après avoir tué le premier|cRXP_ENEMY_Defias Tower Sentry|r  et n'oubliez pas que vous pouvez être touché d'en dessous. Cette technique est plus lente, mais BEAUCOUP plus sure|r
     >>|cRXP_WARN_Faites attention car les |cRXP_ENEMY_Malformed Defias Drone|r et les |cRXP_ENEMY_Defias Drones|r peuvent se trouver à l'entrée de la tour si vous devez vous enfuir de celle-ci|r
@@ -7246,7 +7246,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>Si vous avez un ami |cFFF48CBAPaladin|r ou |cFFFF7C0ADruid|r demandez-leur de vous enlever le debuff [Toucher de Zanzil]
-    .skill firstaid,80 >> Montez votre niveau de compétence en [Premiers soins] jusqu'à 80
+    .skill firstaid,80 >> Montez vos [Premier soins] à un niveau de compétence de 80
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .dungeon DM
@@ -9362,7 +9362,7 @@ step << Rogue
     .subzone 97 >> Voyagez vers La scierie d'Alther
 step << Rogue
     .goto 1433,51.846,45.116
-    >>Vous DEVEZ le faire pour votre de quête de [Poisons] plus tard
+    >>Vous DEVEZ le faire pour votre quête de [Poisons] plus tard
     >>|cRXP_WARN_Restez sur la location du point de repère. Positionnez votre caméra et votre curseur jusqu'à ce que vous puissiez cliquer sur 3 |cRXP_PICK_Practice Lockboxes|r en même temps et sans avoir à bouger|r
     .skill lockpicking,80 >>|cRXP_WARN_Ouvrez les |cRXP_PICK_Practice Lockboxes|r sur le sol dans la scierie d'Alther jusqu'à ce que votre score de|r [Crochetage] soit de 80|r
 step << Rogue
@@ -9678,7 +9678,7 @@ step << Rogue
 step << Rogue
     .goto Westfall,68.50,70.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Agent Kearnen|r
-    >>Vous DEVEZ faire cette quête pour vos [Poisons]
+    >>Vous DEVEZ le faire pour votre de quête de [Poisons]
     .turnin 2360 >> Rendez la quête Mathias et les Défias
     .accept 2359 >> Acceptez la quête La Tour de Klaven
     .target Agent Kearnen
@@ -9694,14 +9694,14 @@ step << Rogue
     >>|T133644:0|tUtilisez [Vol à la tire] sur le |cRXP_ENEMY_Malformed Defias Drone|r. Volez-lui la |cRXP_LOOT_Defias Tower Key|r
     >>Vous devez être en [Camouflage] pour utiliser votre [Vol à la tire]
     >>|cRXP_WARN_Le |cRXP_ENEMY_Malformed Defias Drone|r apparaissent à l'entrée de la tour, puis font le tour de celle-ci|r
-    >>Faites attention, il tape TRÈS fort. Si vous perdez votre [Camouflage], utilisez rapidement votre [Sprint] et enfuyez-vous
+    >>Faites attention car il fait BEAUCOUP de dégâts. Si vous perdez votre [Camouflage], utilisez vite votre [Sprint] pour vous enfuir
     .complete 2359,2 --Collect Defias Tower Key (x1)
     .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Cliquez ICI pour un guide vidéo
     .mob Malformed Defias Drone
 step << Rogue
     #optional
     #completewith Mortwake
-    +Équipez la [Dague de Curvewood] pour cette quête si vous n'avez pas déjà de [Dagues] équipée
+    +Équipez la [Dague de Curvewood] pour cette quête si vous n'avez pas déjà de [Dague] équipée
     .use 15396
     .itemcount 15396,1
 step << Rogue
@@ -9709,7 +9709,7 @@ step << Rogue
     .goto 1436,70.421,74.031
     >>Allez jusqu'à l'avant dernier étage de la tour. Lorsque vous êtes en [Camouflage] |cRXP_WARN_et que les |cRXP_ENEMY_Defias Tower Sentries|r ne sont pas proches de vous, sautez sur la chaise, puis sur la lampe, et ensuite sur la bibliothèque au-dessus du point de repère|r
     >>Enlevez votre [Camouflage] manuellement|cRXP_WARN_, puis appuyez sur votre touche "Interagir avec la cible" pour ouvrir le |cRXP_PICK_Duskwood Chest|r. Récupérez le|r |cRXP_LOOT_Klaven Mortwake's Journal|r
-    >>NOTE: Votre [Camouflage] ne marchera pas plus temporairement après avoir récupéré le |cRXP_LOOT_Klaven Mortwake's Journal|r
+    >>NOTE: Votre [Camouflage] ne fonctionnera pas un moment après avoir récupéré le |cRXP_LOOT_Klaven Mortwake's Journal|r
     >>|cRXP_WARN_Soyez prêt à courir si vous ne voulez pas tuer les |cRXP_ENEMY_Defias Tower Sentries|r au deuxième étage. Ils vont sûrement vous aggro de manière permanente (mais sans vous attaquer) lorsque vous êtes en haut de la bibliothèque comme il s'agit d'un evade spot|r
     >>Si vous avez une [Dague] dans vos sacs ou déjà équipée, vous pouvez lancez [Embuscade] |cRXP_WARN_sur le |cRXP_ENEMY_Defias Tower Patrollers|r et sur les |cRXP_ENEMY_Defias Tower Sentries|r à l'intérieur pour les tuer instantanément. Soyez prêt à vous enfuir après avoir tué le premier|cRXP_ENEMY_Defias Tower Sentry|r  et n'oubliez pas que vous pouvez être touché d'en dessous. Cette technique est plus lente, mais BEAUCOUP plus sure|r
     >>|cRXP_WARN_Faites attention car les |cRXP_ENEMY_Malformed Defias Drone|r et les |cRXP_ENEMY_Defias Drones|r peuvent se trouver à l'entrée de la tour si vous devez vous enfuir de celle-ci|r
@@ -9759,7 +9759,7 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Shaina Fuller|r
     >>Si vous avez un ami |cFFF48CBAPaladin|r ou |cFFFF7C0ADruid|r demandez-leur de vous enlever le debuff [Toucher de Zanzil]
-    .skill firstaid,80 >> Montez votre niveau de compétence en [Premiers soins] jusqu'à 80
+    .skill firstaid,80 >> Montez vos [Premier soins] à un niveau de compétence de 80
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
 step << !Dwarf Rogue

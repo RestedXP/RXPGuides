@@ -1605,7 +1605,7 @@ step
     .goto 1411/1,-4715.200,140.100
     >>|cRXP_WARN_Tapez /assis près du feu de camp et attendez une minute jusqu'à ce que vous obteniez le buff "Avantages du camp"|r
     .complete 96604,1 --|1/1 Use the /sit emote near the campfire
-    .macro Sit,134400 >>Asseyez-vous
+    .macro Sit,134400 >>Asseyez-vous 
     .timer 59, RP
     .complete 96604,2 --|Gain the Boosted Rest buff
 step
@@ -1884,7 +1884,7 @@ step
     .goto 1411/1,-4715.200,140.100
     >>|cRXP_WARN_Tapez /assis près du feu de camp et attendez une minute jusqu'à ce que vous obteniez le buff "Avantages du camp"|r
     .complete 96604,1 --|1/1 Use the /sit emote near the campfire
-    .macro Sit,134400 >>Asseyez-vous
+    .macro Sit,134400 >>Asseyez-vous 
     .timer 59, RP
     .complete 96604,2 --|Gain the Boosted Rest buff
 step
@@ -3744,7 +3744,7 @@ step << Warrior
     .isQuestAvailable 1498
 step << Warrior
     .goto 1420/0,360.04,2376.14
-    >>|cRXP_WARN_Cliquez sur le|r |cRXP_WARN_Déclencheur du mausolée|r |cRXP_WARN_au sol. Cela va invoquer|r |cRXP_ENEMY_Ulag.|r |cRXP_WARN_Tuez-le|r
+    >>Cliquez sur le Déclencheur du mausolée sur le sol. Cela va invoquer |cRXP_ENEMY_Ulag.|r. Tuez-le
     .complete 1819,1 --Ulag the Cleaver (1)
     .mob Ulag the Cleaver
     .isQuestAvailable 1498

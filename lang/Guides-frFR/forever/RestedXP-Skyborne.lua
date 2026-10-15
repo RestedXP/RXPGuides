@@ -807,7 +807,7 @@ step
     .goto 2521,35.71,25.7,30,0
     .subzone 16635 >>Mourez et ressuscitez au cimetière.
     *|cRXP_WARN_Utilisez la macro pour s’asseoir afin de mourir plus vite|r.
-    .macro Sit, >>Asseyez-vous
+    .macro Sit, >>Asseyez-vous 
     .target Spirit Healer::6491
 step
     #completewith next
@@ -1240,7 +1240,7 @@ step
     .collect 1179,5 >>|cRXP_BUY_Achetez 5|r |T132815:0|t[Lait glacé], |cRXP_BUY_ou 10 si vous pouvez vous les permettre|r << Druid/Priest/Warlock
     *Ne vendez pas la |T133970:0|t[Viande filandreuse], les |T132832:0|t[Petits œufs], ou la |T133972:0|t[Viande de trotteur]. << Alliance
     *Ne vendez pas les |T132832:0|t[Petits œufs] et la |T133972:0|t[Viande de trotteur]. << Horde
-    *|cRXP_WARN_Nous en avons besoin pour la Cuisine plus tard|r.
+    *|cRXP_WARN_ Nous en aurons besoin pour notre Cuisine ultérieurement.|r
     .money <0.0125
 step
     .goto 2521,44.47,44.98
@@ -1337,7 +1337,7 @@ step
     .itemcount 6889,1 -- Small Egg
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,43.86,43.85
-    +Utilisez la |T132834:0|t[Oeufs aux herbes] macro ci-dessous pour créer autant que possible.
+    +Utilisez la macro |T132834:0|t[Oeufs aux herbes] ci-dessous pour en cuisiner autant que possible.
     *|cRXP_WARN_La plupart des aliments buff accordent 5% d'expérience supplémentaire des tués pendant 15 minutes. Essayez de conserver ce buff actif pendant que vous montez en niveau|r.
     .collect 2678,5 >>achetez 5 |T134059:0|t[Epices douces].
     .disablecheckbox
@@ -1728,7 +1728,7 @@ step
     >>Cliquez sur la macro dans le cadre des Objets actifs pour vous asseoir.
     .complete 96101,1 --1/1 Use the /sit emote near the campfire
     -- .emote SIT,263664 -- Feels like this is breaking the quest completion 50% of the time
-    .macro Sit,134400 >>Asseyez-vous
+    .macro Sit,134400 >>Asseyez-vous 
     .timer 59, RP
     .target Raan Wildwind::263664
 step
@@ -2013,7 +2013,7 @@ step
     .vendor 251905 >>Vendez tout ce dont nous n'avez pas besoin
     *Ne vendez pas la |T133970:0|t[Viande filandreuse], les |T132832:0|t[Petits œufs], ou la |T133972:0|t[Viande de trotteur]. << Alliance
     *Ne vendez pas les |T132832:0|t[Petits œufs] et la |T133972:0|t[Viande de trotteur]. << Horde
-    *|cRXP_WARN_Nous en avons besoin pour la Cuisine plus tard|r.
+    *|cRXP_WARN_ Nous en aurons besoin pour notre Cuisine ultérieurement.|r
     .collect 2678,5 -- Mild Spices
     .skipgossipid 137550
     .target Zerril Softbreeze::251905
@@ -2022,14 +2022,14 @@ step
     .isQuestComplete 92553 -- Restocking the Larders
     .goto 2521,43.851,43.848
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Zerril Douce-Brise::251905|r
-    .turnin 92553 >>Rendez la quête Ravitaillement the Larders
+    .turnin 92553 >>Rendez la quête Remplir les garde-manger
     .target Zerril Softbreeze::251905
 step
     .train 2550,3 -- Cooking Trained
     .isQuestComplete 96646 -- Camping 101: Cooking
     .isQuestComplete 92516 -- Hippogryph Harassment
     .goto 2521,43.851,43.848
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Zerril Douce-Brise::251905|r
     .turnin 96646 >>Rendez la quête Introduction au camping : la cuisine
     .target Zerril Softbreeze::251905
 step
@@ -2216,7 +2216,7 @@ step << Alliance/Horde !Shaman
     .isQuestAvailable 92529 << Horde -- Falaath Village
     .goto 2521,44.71,45.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Veena Vérinuage::254358|r
-    .vendor 254358 >>|cRXP_BUY_Achetez jusqu'à trois|r |T133634:0|t[Petite sacoche marron] |cRXP_BUY_au besoin|r.
+    .vendor 254358 >>|cRXP_BUY_Achetez jusqu'à trois|r |T133634:0|t[Petites sacoches marrons] |cRXP_BUY_si nécessaire|r.
     >>|cRXP_BUY_Achetez jusqu'à 10|r |T132815:0|t[Lait glacé] |cRXP_BUY_de lui|r << Druid/Mage/Priest/Warlock/Paladin
     *|cRXP_WARN_En équipant des sacs, assurez-vous que votre Reagent Sac se trouve dans l'emplacement dédié du Reagent Sac|r.
     *Ne vendez pas la |T133970:0|t[Viande filandreuse], les |T132832:0|t[Petits œufs], ou la |T133972:0|t[Viande de trotteur]. << Alliance
@@ -2403,7 +2403,7 @@ step
     .goto 2521,44.05,49.98,30,0
     .goto 2521,43.02,49.86
     .subzone 17674 >>Mourez au sud-ouest de Shen'da et ressuscitez au |cRXP_FRIENDLY_Gardien des âmes::6491|r.
-    .macro Sit,134400 >>Asseyez-vous
+    .macro Sit,134400 >>Asseyez-vous 
 step
     #completewith next
     #label Western Watchtower
@@ -2656,7 +2656,7 @@ step
     .vendor 251905 >>Vendez tout ce dont nous n'avez pas besoin
     *Ne vendez pas la |T133970:0|t[Viande filandreuse], les |T132832:0|t[Petits œufs], ou la |T133972:0|t[Viande de trotteur]. << Alliance
     *Ne vendez pas les |T132832:0|t[Petits œufs] et la |T133972:0|t[Viande de trotteur]. << Horde
-    *|cRXP_WARN_Nous en aurons besoin pour Cuisine plus tard|r.
+    *|cRXP_WARN_ Nous en aurons besoin pour notre Cuisine ultérieurement.|r
     .skipgossipid 137550 -- I would like to buy from you.
     .target Zerril Softbreeze::251905
 step
@@ -2668,7 +2668,7 @@ step
     .vendor 251905 >>Vendez tout ce dont nous n'avez pas besoin
     *Ne vendez pas la |T133970:0|t[Viande filandreuse], les |T132832:0|t[Petits œufs], ou la |T133972:0|t[Viande de trotteur]. << Alliance
     *Ne vendez pas les |T132832:0|t[Petits œufs] et la |T133972:0|t[Viande de trotteur]. << Horde
-    *|cRXP_WARN_Nous en aurons besoin pour Cuisine plus tard|r.
+    *|cRXP_WARN_ Nous en aurons besoin pour notre Cuisine ultérieurement.|r
     .skipgossipid 137550 -- I would like to buy from you.
     .target Zerril Softbreeze::251905
 step
@@ -2678,7 +2678,7 @@ step
     .vendor 251905 >>Vendez tout ce dont nous n'avez pas besoin
     *Ne vendez pas la |T133970:0|t[Viande filandreuse], les |T132832:0|t[Petits œufs], ou la |T133972:0|t[Viande de trotteur]. << Alliance
     *Ne vendez pas les |T132832:0|t[Petits œufs] et la |T133972:0|t[Viande de trotteur]. << Horde
-    *|cRXP_WARN_Nous en aurons besoin pour Cuisine plus tard|r.
+    *|cRXP_WARN_ Nous en aurons besoin pour notre Cuisine ultérieurement.|r
     .collect 2678,5 -- Mild Spices
     .itemcount 2678,<5 -- Mild Spices
     .skipgossipid 137550 -- I would like to buy from you.
@@ -2686,8 +2686,8 @@ step
 step
     .isQuestComplete 92553 -- Restocking the Larders
     .goto 2521,43.851,43.848
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
-    .turnin 92553 >>Rendez la quête Ravitaillement the Larders
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Zerril Douce-Brise::251905|r
+    .turnin 92553 >>Rendez la quête Remplir les garde-manger
     .target Zerril Softbreeze::251905
 step
     .isQuestTurnedIn 92553 -- Restocking the Larders
@@ -2695,7 +2695,7 @@ step
     .itemcount 6889,1 -- Small Egg
     .train 2550,3 -- Cooking Trained
     .goto 2521,43.86,43.85
-    +Utilisez la |T132834:0|t[Oeufs aux herbes] macro ci-dessous pour fabriquer autant que possible.
+    +Utilisez la macro |T132834:0|t[Oeufs aux herbes] ci-dessous pour en cuisiner autant que possible.
     *|cRXP_WARN_La plupart des aliments de buff accordent 5% d'expérience accrue des monstres tués pendant 15 minutes. Essayez de maintenir une durée d'activité élevée sur ce buff en montant de niveau|r.
     .macro Herb Baked Egg,132834 >>Oeufs aux herbes
 step
@@ -2703,7 +2703,7 @@ step
     .isQuestComplete 96646 -- Camping 101: Cooking
     .isQuestComplete 92550 -- Havoc in the Highlands
     .goto 2521,43.851,43.848
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Zerril Douce-Brise::251905|r
     .turnin 96646 >>Rendez la quête Introduction au camping : la cuisine
     .target Zerril Softbreeze::251905
 step
@@ -2756,14 +2756,14 @@ step
     .subzoneskip 16624,1 -- Shen'dar Village
     .isQuestComplete 92550 -- Havoc in the Highlands
     .goto 2521,44.71,45.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Veena Vericloud::254358|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Veena Vérinuage::254358|r
     .vendor 254358 >>Objet à vendre. |cRXP_BUY_Achetez jusqu'à trois|r |T133634:0|t[Petite sacoche marron] |cRXP_BUY_au besoin|r.
     -- *|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Druid/Mage/Priest/Warlock/Paladin
     *|cRXP_BUY_Achetez des|r |T132382:0|t[Flèches grossières] et des |T132382:0|t[Flèches pointues] << Hunter
     *|cRXP_BUY_Achetez des|r [Flèche pointue] << Alliance Rogue
     *|cRXP_WARN_En équipant des sacs, assurez-vous que votre Reagent Sac se trouve dans l'emplacement dédié du Reagent Sac|r.
     *Ne vendez pas la |T133970:0|t[Viande filandreuse], les |T132832:0|t[Petits œufs], ou la |T133972:0|t[Viande de trotteur]. << Alliance
-    *Ne vendez pas |T132832:0|t[Petit Eggs] et |T133972:0|t[Strider Viande]. << Horde
+    *Ne vendez pas les |T132832:0|t[Petits œufs] et la |T133972:0|t[Viande de trotteur]. << Horde
     .collect 2512,600 << Hunter --Rough Arrow (600)
     .collect 2515,1000 << Hunter --Sharp Arrows (1000)
     .collect 2515,600 << Alliance Rogue --Sharp Arrows (600)
@@ -2799,7 +2799,7 @@ step
     .goto 2521,49.4,58.76
     .subzone 16626 >>Mourez à la position exacte du point de repère
     *|cRXP_WARN_Dans le cas échéant, vous pourriez être envoyé à un autre cimetière|r.
-    .macro Sit,134400 >>Asseyez-vous
+    .macro Sit,134400 >>Asseyez-vous 
 step
     #ignorecorpse
     .subzoneskip 16626,1 -- Gustberry Lowlands
@@ -2820,8 +2820,8 @@ step << Hunter
     .collect 277110,1 --Collect Zephrali Bow
     .vendor 271465 >>Vendez votre camelote et réparez si vous en avez besoin
     *Ne vendez pas la |T133970:0|t[Viande filandreuse], les |T132832:0|t[Petits œufs], ou la |T133972:0|t[Viande de trotteur]. << Alliance
-    *Ne vendez pas |T132832:0|t[Petit Eggs] et |T133972:0|t[Strider Viande]. << Horde
-    *|cRXP_WARN_Nous en aurons besoin pour Cuisine plus tard|r.
+    *Ne vendez pas les |T132832:0|t[Petits œufs] et la |T133972:0|t[Viande de trotteur]. << Horde
+    *|cRXP_WARN_ Nous en aurons besoin pour notre Cuisine ultérieurement.|r
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
     .money <0.1345
@@ -2841,7 +2841,7 @@ step
     .itemcount 6889,1 -- Small Egg
     .itemcount 2678,1 -- Mild Spices
     .goto 2521,60.640,72.664
-    +Utilisez la |T132834:0|t[Oeufs aux herbes] macro ci-dessous pour fabriquer autant que possible.
+    +Utilisez la macro |T132834:0|t[Oeufs aux herbes] ci-dessous pour en cuisiner autant que possible.
     *|cRXP_WARN_La plupart des aliments de buff accordent 5% d'expérience accrue des monstres tués pendant 15 minutes. Essayez de maintenir une durée d'activité élevée sur ce buff en montant de niveau|r.
     .macro Herb Baked Egg,132834 >>Oeufs aux herbes
 step
@@ -2860,7 +2860,7 @@ step
     .vendor 255940 >>Vendez tout ce dont nous n'avez pas besoin
     *Ne vendez pas la |T133970:0|t[Viande filandreuse], les |T132832:0|t[Petits œufs], ou la |T133972:0|t[Viande de trotteur]. << Alliance
     *Ne vendez pas les |T132832:0|t[Petits œufs] et la |T133972:0|t[Viande de trotteur]. << Horde
-    *|cRXP_WARN_Nous en aurons besoin pour Cuisine plus tard|r.
+    *|cRXP_WARN_ Nous en aurons besoin pour notre Cuisine ultérieurement.|r
     .target Donaal Downbreeze::255940
     .goto 2521,62.180,72.616
     .skipgossipid 137078
@@ -2956,7 +2956,7 @@ step << Alliance
     .macro Cancel Walk on Air,132845 >>Annulez Marche sur l'air
 step << Alliance
     #completewith Unwelcome Visitors
-    >>Tuez |cRXP_ENEMY_Skyhopper::251314|r.
+    >>Tuez |cRXP_ENEMY_Sauteciel::251314|r.
     *|cRXP_WARN_Pendant que le buff de vitesse Tornade est actif, évitez de les tuer|r.
     .complete 93949,1 --8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
@@ -3005,7 +3005,7 @@ step << Horde
     .turnin 92700 >>Rendez la quête La grande oracle des cieux
     .accept 92708 >>Acceptez la quête Une grande aventure
     .timer 75,Durée du RP
-    .accept 93735 >>Acceptez la quête The Roué Assemblage
+    .accept 93735 >>Acceptez la quête L’assemblage brisé
     .target Ayessa Dawnsinger::251968
 step << Horde
     .isOnQuest 92708 -- A Grand Adventure

@@ -532,7 +532,7 @@ step
     #completewith next
     >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Dépouillez-les pour leur |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
     >>Si vous récupérez les moindres |cRXP_LOOT_[Rough Stones]|r transformez-les en [Pierre à aiguiser brute] << Warrior/Rogue
-    >>Si vous récupérez les moindres |cRXP_LOOT_[Rough Stones]|r transformez-les en [Caillou brute] << Paladin
+    >>Si vous ramassez la moindre |cRXP_LOOT_[Rough Stones]|r  transformez-les en [Pierre à aiguiser brute] << Paladin
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -559,7 +559,7 @@ step
     #completewith next
     >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Dépouillez-les pour leur |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
     >>Si vous récupérez les moindres |cRXP_LOOT_[Rough Stones]|r transformez-les en [Pierre à aiguiser brute] << Warrior/Rogue
-    >>Si vous récupérez les moindres |cRXP_LOOT_[Rough Stones]|r transformez-les en [Caillou brute] << Paladin
+    >>Si vous ramassez la moindre |cRXP_LOOT_[Rough Stones]|r  transformez-les en [Pierre à aiguiser brute] << Paladin
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -592,7 +592,7 @@ step
     #completewith next
     >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Dépouillez-les pour leur |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
     >>Si vous récupérez les moindres |cRXP_LOOT_[Rough Stones]|r transformez-les en [Pierre à aiguiser brute] << Warrior/Rogue
-    >>Si vous récupérez les moindres |cRXP_LOOT_[Rough Stones]|r transformez-les en [Caillou brute] << Paladin
+    >>Si vous ramassez la moindre |cRXP_LOOT_[Rough Stones]|r  transformez-les en [Pierre à aiguiser brute] << Paladin
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -607,7 +607,7 @@ step
     #completewith KillGoldtooth
     >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Dépouillez-les pour leur |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
     >>Si vous récupérez les moindres |cRXP_LOOT_[Rough Stones]|r transformez-les en [Pierre à aiguiser brute] << Warrior/Rogue
-    >>Si vous récupérez les moindres |cRXP_LOOT_[Rough Stones]|r transformez-les en [Caillou brute] << Paladin
+    >>Si vous ramassez la moindre |cRXP_LOOT_[Rough Stones]|r  transformez-les en [Pierre à aiguiser brute] << Paladin
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -628,7 +628,7 @@ step
     #completewith next
     >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Dépouillez-les pour leur |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
     >>Si vous récupérez les moindres |cRXP_LOOT_[Rough Stones]|r transformez-les en [Pierre à aiguiser brute] << Warrior/Rogue
-    >>Si vous récupérez les moindres |cRXP_LOOT_[Rough Stones]|r transformez-les en [Caillou brute] << Paladin
+    >>Si vous ramassez la moindre |cRXP_LOOT_[Rough Stones]|r  transformez-les en [Pierre à aiguiser brute] << Paladin
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -645,7 +645,7 @@ step
     .goto Elwynn Forest,40.5,82.3
     >>Tuez les |cRXP_ENEMY_Kobold Tunnelers|r et les |cRXP_ENEMY_Kobold Miners|r. Dépouillez-les pour leur |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
     >>Si vous récupérez les moindres |cRXP_LOOT_[Rough Stones]|r transformez-les en [Pierre à aiguiser brute] << Warrior/Rogue
-    >>Si vous récupérez les moindres |cRXP_LOOT_[Rough Stones]|r transformez-les en [Caillou brute] << Paladin
+    >>Si vous ramassez la moindre |cRXP_LOOT_[Rough Stones]|r  transformez-les en [Pierre à aiguiser brute] << Paladin
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -1390,7 +1390,7 @@ step << Warlock
     .target Marshal Dughan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 176 >> Rendez la quête On recherche : "Lardeur"
-    >>Choisissez le  [|cRXP_FRIENDLY_Bâton de combat équilibrée|r] comme récompense. Équipez-le
+    >>Choisissez le [|cRXP_FRIENDLY_Bâton de combat équilibré|r] comme récompense. Équipez-le
     .turnin 123 >> Rendez la quête Le collecteur
     .accept 147 >> Acceptez la quête Chasse à l'homme
 step << Warlock
@@ -1398,7 +1398,7 @@ step << Warlock
     .target Marshal Dughan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 176 >> Rendez la quête On recherche : "Lardeur"
-    >>Choisissez le  [|cRXP_FRIENDLY_Bâton de combat équilibrée|r] comme récompense. Équipez-le
+    >>Choisissez le [|cRXP_FRIENDLY_Bâton de combat équilibré|r] comme récompense. Équipez-le
 step << Warlock
     .isQuestTurnedIn 123
     .goto Elwynn Forest,42.105,65.927

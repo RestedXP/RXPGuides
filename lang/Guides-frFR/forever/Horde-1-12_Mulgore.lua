@@ -487,7 +487,7 @@ step
     .goto 1412/1,-363.000,-2490.700
     >>|cRXP_WARN_Tapez /assis près du feu de camp et attendez une minute jusqu'à ce que vous obteniez le buff "Avantages du camp"|r
     .complete 96605,1 --|1/1 Use the /sit emote near the campfire
-    .macro Sit,134400 >>Asseyez-vous
+    .macro Sit,134400 >>Asseyez-vous 
     .timer 59, RP
     .complete 96605,2 --|Gain the Boosted Rest buff
 step
@@ -688,7 +688,7 @@ step
     .goto 1412/1,-363.000,-2490.700
     >>|cRXP_WARN_Tapez /assis près du feu de camp et attendez une minute jusqu'à ce que vous obteniez le buff "Avantages du camp"|r
     .complete 96605,1 --|1/1 Use the /sit emote near the campfire
-    .macro Sit,134400 >>Asseyez-vous
+    .macro Sit,134400 >>Asseyez-vous 
     .timer 59, RP
     .complete 96605,2 --|Gain the Boosted Rest buff
 step

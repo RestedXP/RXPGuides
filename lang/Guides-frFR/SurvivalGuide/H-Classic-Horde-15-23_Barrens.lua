@@ -1046,7 +1046,7 @@ step
     .goto The Barrens,52.63,38.07,80,0
     .goto The Barrens,49.49,37.20,80,0
     .goto The Barrens,48.33,36.75,80,0
-    >>Tuez tous les |cRXP_ENEMY_Zhevra|r que vous croisez. Dépouillez-les pour leur |cRXP_LOOT_Hooves|r
+    >>Terminez de tuer tous les |cRXP_ENEMY_Zhévras|r que vous croisez. Dépouillez-les pour leur |cRXP_LOOT_Sabots|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
 step
@@ -1429,14 +1429,14 @@ step << Warlock
     .xp <18,1
 step << Warlock
     .goto Orgrimmar,47.54,46.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kurgul|r et achetez un [Grimoire de Sacrifice]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kurgul|r et achetez le [Grimoire de Sacrifice]
     .collect 16351,1,896,1 --Grimoire of Sacrifice (Rank 1) (1)
     .target Kurgul
     .xp <16,1
     .xp >18,1
 step << Warlock
     .goto Orgrimmar,47.54,46.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kurgul|r et achetez un [Grimoire d’Éclair de feu(Rang 3)]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kurgul|r et achetez le [Grimoire d’Éclair de feu (Rang 3)]
     .collect 16316,1,896,1 --Grimoire of Firebolt (Rank 3) (Rank 1) (1)
     .target Kurgul
     .xp <18,1

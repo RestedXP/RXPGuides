@@ -3063,7 +3063,7 @@ step
 step
     #completewith next
     .goto 1437/0,-836.21,-3796.15,10,0
-    .goto 1437/0,-829.18,-3804.420,10 >>Entrez à l'intérieur de l'auberge
+    .goto 1437/0,-829.18,-3804.420,10 >>Entrez dans l'auberge
 step
     .goto 1437/0,-823.8,-3807.180
     >>Sautez sur le lustre en bas des escaliers
@@ -3618,7 +3618,7 @@ step
 step
     #completewith next
     .goto 1437/0,-836.21,-3796.15,10,0
-    .goto 1437/0,-829.18,-3804.420,10 >>Entrez à l'intérieur de l'auberge
+    .goto 1437/0,-829.18,-3804.420,10 >>Entrez dans l'auberge
 step
     .goto 1437/0,-823.8,-3807.180
     >>Sautez sur le lustre en bas des escaliers
@@ -4604,7 +4604,7 @@ step
     #completewith next
     .goto 1432/0,-2966.06,-5365.72,12,0
     .goto 1432/0,-2969.92,-5377.12,12,0
-    >>Entrez à l'intérieur de l'auberge
+    >>Entrez dans l'auberge
     .goto 1432/0,-2954.42,-5394.10,10 >>Voyagez vers |cRXP_FRIENDLY_Vidra Poêlâtre|r
 step
     .goto 1432/0,-2954.42,-5394.10

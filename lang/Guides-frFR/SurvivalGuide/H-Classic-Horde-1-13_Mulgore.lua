@@ -1520,7 +1520,7 @@ step
     .subzone 380 >>Voyagez au nord vers la Croisée
     >>|cRXP_WARN_Faites en sorte de rester sur la route. Sinon, vous risquez d'engager des créatures de haut niveau|r
  step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tonga|r, |cRXP_FRIENDLY_Sergra|r, |cRXP_FRIENDLY_Gazrog|r |cRXP_FRIENDLY_Thork|r et |cRXP_FRIENDLY_Jahan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Tonga|r, à |cRXP_FRIENDLY_Sergra|r, à |cRXP_FRIENDLY_Gazrog|r à |cRXP_FRIENDLY_Thork|r et à |cRXP_FRIENDLY_Jahan|r
     .accept 870 >>Acceptez la quête Les Bassins oubliés
     .target +Tonga Runetotem
     .goto The Barrens,52.26,31.93
@@ -1743,7 +1743,7 @@ step << Shaman/Druid
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.4
 step << Warrior
     .goto The Barrens,51.24,29.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Nargal|r|cRXP_BUY_. Achetez une|r [Masse géante] |cRXP_BUY_à Nargal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Parlez à|r |cRXP_FRIENDLY_Nargal|r|cRXP_BUY_. Achetez une|r |T133477:0|t[Masse géante] |cRXP_BUY_à Nargal|r
     .collect 1197,1,784,1 --Collect Giant Mace (1)
     .money <0.2666
     .target Nargal Deatheye
@@ -2082,7 +2082,7 @@ step
     #completewith next
     >>Tuez |cRXP_ENEMY_Pygmy Surf Crawlers|r et les |cRXP_ENEMY_Surf Crawlers|r. Dépouillez-les pour leur |cRXP_LOOT_Mucus|r
     >>Tuez les |cRXP_ENEMY_Coquillards makrura|r et les |cRXP_ENEMY_Claqueur makrura|r. Dépouillez-les pour leurs |cRXP_LOOT_Yeux|r
-    >>Allez aux îles du sud si vous n'avez pas encore bientôt terminé cette quête à ce moment. De nombreux |cRXP_ENEMY_Crawlers|r et de |cRXP_ENEMY_Makruras|r peuvent être trouvé ici
+    >>|cRXP_WARN_Allez aux îles du sud si vous n'avez pas encore bientôt terminé cette quête à ce moment. De nombreux|r |cRXP_ENEMY_Clampants|r |cRXP_WARN_et de|r |cRXP_ENEMY_Makruras|r |cRXP_WARN_peuvent être trouvé ici|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
     .mob +Surf Crawler

@@ -1419,7 +1419,7 @@ step
     .goto 1413/1,-2710.26,-959.6,80,0
     .goto 1413/1,-2392.07,-900.83,80,0
     .goto 1413/1,-2274.52,-870.42,80,0
-    >>Tuez tous les |cRXP_ENEMY_Zhevra|r que vous croisez. Dépouillez-les pour leur |cRXP_LOOT_Hooves|r
+    >>Terminez de tuer tous les |cRXP_ENEMY_Zhévras|r que vous croisez. Dépouillez-les pour leur |cRXP_LOOT_Sabots|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
 step
@@ -2149,14 +2149,14 @@ step << Warlock
     .xp <18,1
 step << Warlock
     .goto 1454/1,-4347.4,1836.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kurgul|r et achetez un [Grimoire de Sacrifice]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kurgul|r et achetez le [Grimoire de Sacrifice]
     .collect 16351,1,896,1 --Grimoire of Sacrifice (Rank 1) (1)
     .target Kurgul
     .xp <16,1
     .xp >18,1
 step << Warlock
     .goto 1454/1,-4347.4,1836.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kurgul|r et achetez un [Grimoire d’Éclair de feu(Rang 3)]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kurgul|r et achetez le [Grimoire d’Éclair de feu (Rang 3)]
     .collect 16316,1,896,1 --Grimoire of Firebolt (Rank 3) (1)
     .target Kurgul
     .xp <18,1
@@ -8432,7 +8432,7 @@ step
     .goto 1413/1,-2710.26,-959.6,80,0
     .goto 1413/1,-2392.07,-900.83,80,0
     .goto 1413/1,-2274.52,-870.42,80,0
-    >>Tuez tous les |cRXP_ENEMY_Zhevra|r que vous croisez. Dépouillez-les pour leur |cRXP_LOOT_Hooves|r
+    >>Terminez de tuer tous les |cRXP_ENEMY_Zhévras|r que vous croisez. Dépouillez-les pour leur |cRXP_LOOT_Sabots|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
 step
@@ -9347,14 +9347,14 @@ step << Warlock
     .xp <18,1
 step << Warlock
     .goto 1454/1,-4347.4,1836.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kurgul|r et achetez un [Grimoire de Sacrifice]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kurgul|r et achetez le [Grimoire de Sacrifice]
     .collect 16351,1,881,1 --Grimoire of Sacrifice (Rank 1) (1)
     .target Kurgul
     .xp <16,1
     .xp >18,1
 step << Warlock
     .goto 1454/1,-4347.4,1836.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kurgul|r et achetez un [Grimoire d’Éclair de feu(Rang 3)]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Kurgul|r et achetez le [Grimoire d’Éclair de feu (Rang 3)]
     .collect 16316,1,881,1 --Grimoire of Firebolt (Rank 3) (1)
     .target Kurgul
     .xp <18,1
