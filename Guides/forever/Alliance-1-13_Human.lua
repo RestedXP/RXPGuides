@@ -4634,10 +4634,9 @@ step << Warlock/Mage/Rogue/Priest/Warrior/Paladin
     #optional
     .goto 1453/0,613.0,-8796.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
-    .trainer >>Train 1h Swords and Staves << Warlock/Mage
-    .trainer >>Train 1h Swords << Rogue
-    .trainer >>Train Staves << Priest
-    .trainer >>Train 2h Swords << Warrior/Paladin
+    .train 201 >>Train 1h Swords << Warlock/Mage/Rogue
+    .train 227 >>Train Staves << Warlock/Mage/Priest
+    .train 202 >>Train 2h Swords << Warrior/Paladin
     .target Woo Ping
 step
     .isOnQuest 6261
