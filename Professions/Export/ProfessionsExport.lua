@@ -7,6 +7,8 @@ addon.professions = addon.professions or {}
 local export = {}
 addon.professions.export = export
 
+local RECIPES = addon.professions.recipeIds
+
 local SCHEMA_VERSION = 2
 
 local _G = _G
@@ -131,9 +133,10 @@ end
 
 local function knownRecipes(skills)
     local known = array()
-    for key, recipeIds in pairs(addon.professions.professionSnapshotRecipeIds or {}) do
+    local lookup = (addon.professions.session.isClassic and RECIPES.classic) or RECIPES.forever
+    for key, recipeIds in pairs(lookup or {}) do
         if skills[key] then
-            for _, spellId in ipairs(recipeIds) do
+            for spellId, _ in pairs(recipeIds) do
                 if addon.IsPlayerSpell(spellId) then
                     known[#known + 1] = spellId
                 end
@@ -142,17 +145,6 @@ local function knownRecipes(skills)
     end
     tsort(known)
     return known
-end
-
-local function bagCounts()
-    local counts = {}
-    for _, itemId in ipairs(addon.professions.professionSnapshotReagentIds or {}) do
-        local count = GetItemCount(itemId)
-        if count and count > 0 then
-            counts[itemId] = count
-        end
-    end
-    return counts
 end
 
 local function isoTime(t)
@@ -237,7 +229,7 @@ local function buildPayload(opts)
         hardcore = addon.player.hardcore == true,
         capturedAt = isoTime(now),
         knownRecipes = knownRecipes(skills),
-        bags = bagCounts(),
+        bags = RXPCData.craftedItems,
         debugOverrides = useOverrides and true or false,
     }
 end

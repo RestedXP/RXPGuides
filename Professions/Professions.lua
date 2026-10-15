@@ -272,6 +272,24 @@ function addon.professions:PLAYER_MONEY(...)
     RXPCData.money = GetMoney()
 end
 
+--Helper function to set up RXPCData
+local function setUpRXPCData()
+    RXPCData.professions = RXPCData.professions or {}
+    RXPCData.professions.faction = RXPCData.professions.faction or ""
+    RXPCData.professions.money = RXPCData.money or 0
+    RXPCData.professions.scannedAt = RXPCData.professions.scannedAt or ""
+    RXPCData.professions.foundItems = RXPCData.professions.foundItems or {}
+
+    RXPCData.professions.profession1 = RXPCData.professions.profession1 or {}
+    RXPCData.professions.profession1.name = RXPCData.professions.profession1.name or ""
+    RXPCData.professions.profession1.skillLevel = RXPCData.professions.profession1.skillLevel or 0
+    RXPCData.professions.profession1.skillMaxLevel = RXPCData.professions.profession1.skillMaxLevel or 0
+
+    RXPCData.professions.profession2 = RXPCData.professions.profession2 or {}
+    RXPCData.professions.profession2.name = RXPCData.professions.profession2.name or ""
+    RXPCData.professions.profession2.skillLevel = RXPCData.professions.profession2.skillLevel or 0
+    RXPCData.professions.profession2.skillMaxLevel = RXPCData.professions.profession2.skillMaxLevel or 0
+end
 
 --Setup
 function addon.professions:Setup()
@@ -288,6 +306,7 @@ function addon.professions:Setup()
         --self:RegisterEvent(event)
     end
     RXPCData.professions.isInitialScanned = RXPCData.professions.isInitialScanned or false
+    setUpRXPCData()
     self.AH:Setup()
     self.session.isInitialized = true
 end

@@ -3,6 +3,7 @@ local L = addon.locale.Get
 
 addon.professions = addon.professions or {}
 addon.professions.materialIds = addon.professions.materialIds or {}
+addon.professions.recipeIds = addon.professions.recipeIds or {}
 addon.professions.PROFESSIONS = addon.professions.PROFESSIONS or {}
 
 -- Localize globals
@@ -25,10 +26,11 @@ local GetNumSkillLines, GetSkillLineInfo = _G.GetNumSkillLines, _G.GetSkillLineI
 local GetNumFactions, GetFactionInfo = _G.GetNumFactions, _G.GetFactionInfo
 local GetMoney, CopyTable = _G.GetMoney, _G.CopyTable
 local GetItemNameByID, GetItemInfo = _G.C_Item.GetItemNameByID, _G.C_Item.GetItemInfo
+local GetItemCount = _G.C_Item and _G.C_Item.GetItemCount
 
 -- Local renaming
+local RECIPES = addon.professions.recipeIds
 local MATERIALS = addon.professions.materialIds
-local PROFESSIONS = addon.professions.PROFESSIONS
 
 --local enums
 local EVENTS_TO_REGISTER_AH = {
@@ -64,7 +66,6 @@ addon.professions.AH.session = {
     ahIsShowing = false,
     sentQuery = false,
     isScanning = false,
-    isClassic = false,
 }
 
 --Setup
@@ -72,16 +73,12 @@ function addon.professions.AH:Setup()
     if addon.game ~= "CLASSIC" and addon.game ~= "TBC" and addon.game ~= "MOP" and addon.game ~= "FOREVER" then return end
     if self.session.isInitialized then return end
 
-    if addon.game ~= "MOP" and addon.game ~= "FOREVER" then
-        self.session.isClassic = true
-    end
-
     --Set the flag to check the players inventory for lingering items
     RXPCData.professions.isInitialScanned = false
 
     --Register events
     for version, events in pairs(EVENTS_TO_REGISTER_AH) do
-        if version == "universal" or (version == "classic" and self.session.isClassic) or (version == "forever" and not self.session.isClassic) then
+        if version == "universal" or (version == "classic" and addon.professions.session.isClassic) or (version == "forever" and not addon.professions.session.isClassic) then
             for _, event in ipairs(events) do
                 self:RegisterEvent(event)
             end
@@ -101,14 +98,32 @@ function addon.professions.AH.session:Reset()
     self.isScanning = false
 end
 
+-- Local renaming
+local session = addon.professions.AH.session
+
 
 --Local functions
+
+--Helper function to determine if itemID is part of a profession
+local function isRecipeOrMaterial(itemID, professionName)
+    if not professionName then return end
+    if not type(itemID) == "number" then return end
+    if addon.professions.session.isClassic then
+        if not RECIPES.classic[professionName] and not MATERIALS.classic[professionName] then return end
+        return RECIPES.classic[professionName][itemID] or MATERIALS.classic[professionName][itemID]
+    else
+        if not RECIPES.forever[professionName] and not MATERIALS.forever[professionName] then return end
+        return RECIPES.forever[professionName][itemID] or MATERIALS.forever[professionName][itemID]
+    end
+end
 
 --Scans backpacks for items created by recipes in backpacks for
 --given profession names and updates the RXPCData accordingly
 --Because of problems stated in: https://warcraft.wiki.gg/wiki/API_GetContainerNumSlots
 --we call this function when AH is opened for the first time, per player character
 local function initialScanInventoryForCraftedItems(prof1Name, prof2Name)
+    --Reset RXPCData.craftedItems so the new scan will not be added to old scan
+    RXPCData.craftedItems = {}
     local numberOfSlots, itemName, itemID, itemCount
     for bagID = 0, NUM_BAG_SLOTS do
         numberOfSlots = GetContainerNumSlots(bagID)
@@ -117,7 +132,7 @@ local function initialScanInventoryForCraftedItems(prof1Name, prof2Name)
         end
         for slot = 1, numberOfSlots do
             local containerInfo = GetContainerItemInfo(bagID, slot)
-            if containerInfo then
+            if containerInfo and (isRecipeOrMaterial(containerInfo.itemID, prof1Name) or isRecipeOrMaterial(containerInfo.itemID, prof2Name)) then
                 itemID = containerInfo.itemID
                 itemCount = containerInfo.stackCount
                 RXPCData.craftedItems[itemID] = (RXPCData.craftedItems[itemID] or 0) + itemCount
@@ -128,14 +143,14 @@ end
 
 
 function addon.professions.AH:gatherMaterialsToScan(professionName)
-    if self.session.isClassic or true then
+    if addon.professions.session.isClassic then
         if not MATERIALS.classic[professionName] then return end
-        for _, materialId in ipairs(MATERIALS.classic[professionName]) do
+        for materialId, _ in pairs(MATERIALS.classic[professionName]) do
             tinsert(self.session.materialsToScan, materialId)
         end
     else
         if not MATERIALS.forever[professionName] then return end
-        for _, materialId in ipairs(MATERIALS.forever[professionName]) do
+        for materialId, _ in pairs(MATERIALS.forever[professionName]) do
             tinsert(self.session.materialsToScan, materialId)
         end
     end
@@ -145,7 +160,7 @@ end
 
 --Scan for classic versions
 local function classicScan(itemID)
-    if not addon.professions.AH.session.isClassic then return end
+    if not addon.professions.session.isClassic then return end
 
     if addon.professions.AH.session.sentQuery then return end
     if not CanSendAuctionQuery() then
@@ -167,7 +182,7 @@ end
 
 --Scan for forever version
 local function foreverScan(itemID)
-    if addon.professions.AH.session.isClassic then return end
+    if addon.professions.session.isClassic then return end
 
     if addon.professions.AH.session.sentQuery then return end
 
@@ -193,7 +208,7 @@ function addon.professions.AH:Scan()
     if not self.session.ahIsShowing then return end
 
     self.session.materialIndex = 1
-    if self.session.isClassic then
+    if addon.professions.session.isClassic then
         classicScan(self.session.materialsToScan[self.session.materialIndex])
     else
         foreverScan(self.session.materialsToScan[self.session.materialIndex])
@@ -317,13 +332,13 @@ local function gatherPlayerProfessionInfo()
     if not RXPCData.professions.profession1 then RXPCData.professions.profession1 = {} end
     if not RXPCData.professions.profession2 then RXPCData.professions.profession2 = {} end
 
-    if addon.professions.AH.session.isClassic then --TODO: check if even needed
+    if addon.professions.session.isClassic then
         --skillName, header, isExpanded, skillRank, numTempPoints, skillModifier,
         --skillMaxRank, isAbandonable, stepCost, rankCost, minLevel, skillCostType,
         --skillDescription = GetSkillLineInfo(index)
         local skillName, isHeader, skillRank, skillMaxRank
         local foundFirst = false
-        for i = 1, GetNumSkillLines() do
+        for i = 1, GetNumSkillLines() do --TODO: Proveri da li ovde nastaje problem u Forever-u!!!!
             skillName, isHeader, _, skillRank, _, _, skillMaxRank, _, _, _, _, _, _ = GetSkillLineInfo(i)
             if skillName and not isHeader and addon.professions.locale.PROFESSION_NAMES[skillName] then
                 if not foundFirst then
@@ -350,12 +365,22 @@ local function gatherPlayerProfessionInfo()
             _, _, skillLine,
             _, specializationIndex,
             specializationOffset, skillLineName = GetProfessionInfo(prof1Index)
+            RXPCData.professions.profession1 = {
+                name = name,
+                skillLevel = skillLevel,
+                skillMaxLevel = maxSkillLevel
+            }
         end
         if prof2Index then
             name, _, skillLevel, maxSkillLevel,
             _, _, skillLine,
             _, specializationIndex,
             specializationOffset, skillLineName = GetProfessionInfo(prof2Index)
+            RXPCData.professions.profession2 = {
+                name = name,
+                skillLevel = skillLevel,
+                skillMaxLevel = maxSkillLevel
+            }
         end
     end
 end
@@ -381,6 +406,8 @@ end
 
 function addon.professions.AH:fullScan()
     gatherPlayerProfessionInfo()
+    gatherPlayerMoneyInfo()
+    gatherPlayerFactionInfo()
     if not RXPCData.professions.profession1.name then
         print("No profession detected")
         return
@@ -459,7 +486,7 @@ function debug.SetProfessions(name1, skillLevel1, name2, skillLevel2)
     RXPCData.professions.profession1.skillLevel = tonumber(skillLevel1)
     RXPCData.professions.profession1.skillMaxLevel = 300
 
-    if not name2 or not tonumber(skillLevel2) then print("no prof2 - done set") return end
+    if not name2 or not tonumber(skillLevel2) then print("no prof2 - removing prof2") RXPCData.professions.profession2 = {} return end
     RXPCData.professions.profession2 = RXPCData.professions.profession2 or {}
     RXPCData.professions.profession2.name = lower(name2)
     RXPCData.professions.profession2.skillLevel = tonumber(skillLevel2)
@@ -572,6 +599,15 @@ SlashCmdList['tt'] = function()
     local roughStone = 2835
     local felIronHammer = 23498
     local weakFlux = 2880
+
+    gatherPlayerProfessionInfo()
+    gatherPlayerFactionInfo()
+    gatherPlayerMoneyInfo()
+
+    for k, v in pairs(RXPCData.craftedItems) do
+        local name = GetItemNameByID(k)
+        print(name, " -> ", tostring(v))
+    end
 
     if true then return end
 
