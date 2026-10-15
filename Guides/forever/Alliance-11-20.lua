@@ -5473,10 +5473,10 @@ step << Druid
     .target Dendrite Starblaze::11802
     .turnin 98393 >>Turn in The Great Cat Spirit
     .accept 98341 >>Accept The Great Windborne Cat Spirit << Skyborne
-    .accept 98341 >>Accept The Great Cat Spirit << !Skyborne
+    .accept 98394 >>Accept The Great Cat Spirit << !Skyborne
 step << Druid !Skyborne
     .goto 1450/1,-2640.000,7338.900
-     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Great Cat Spirit|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Great Cat Spirit|r
     .turnin 98394 >>Turn in The Great Cat Spirit
     .accept 98396 >>Accept The Great Cat Spirit
     .target Great Cat Spirit
