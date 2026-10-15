@@ -101,7 +101,7 @@ step << Undead
 step
     #season 2
     .goto Tirisfal Glades,24.60,59.45
-    >>在洞穴内拾取 |cRXP_PICK_Lost Stash|r 中的战利品 |T134419:0|t[|cRXP_FRIENDLY_鬼影缠身符文|r]
+    >>在洞穴内拾取 |cRXP_PICK_遗失的储物箱|r 中的战利品 |T134419:0|t[|cRXP_FRIENDLY_鬼影缠身符文|r]
     .collect 205230,1 --Rune of Haunting (1)
     .train 403919,1
 step
@@ -691,7 +691,7 @@ step
     +|cRXP_WARN_你必须至少达到30级才能获得|r |T133738:0|t[协同魔典] |cRXP_WARN_符文|r
     .xp >30,1
 step
-    .train 403938 >>|cRXP_WARN_你必须先获得|r |T237558:0|t[恶魔变形] |cRXP_WARN_符文才能获得|r |T133738:0|t[协同魔典] |cRXP_WARN_符文|r
+    .train 403938 >> |cRXP_WARN_你必须先获得|r |T237558:0|t[恶魔变形] |cRXP_WARN_符文才能获得|r |T133738:0|t[协同魔典] |cRXP_WARN_符文|r
 step
     #optional
     .train 426445,1
@@ -706,28 +706,28 @@ step
     .goto The Barrens,49.271,57.239
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉斯泽尔·安德r|r 对话
     >>|cRXP_WARN_你必须处于|r |T237558:0|t[恶魔变形] |cRXP_WARN_形态下才能看到|r |cRXP_FRIENDLY_拉斯泽尔·安德|r
-    .accept 78994 >>接受任务 坚实的基础
+    .accept 78994 >> 接受任务 坚实的基础
     .target Raszel Ander
 step << Alliance
     .train 426445,1
     .isOnQuest 78994
     .goto The Barrens,62.05,39.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板维尔雷|r 对话
-    .home >>将你的炉石设置到棘齿城
+    .home >> 将你的炉石设置到棘齿城
     .target 旅店老板维尔雷
 step << Horde
     .train 426445,1
     .isOnQuest 78994
     .goto The Barrens,45.58,59.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比鲁拉|r 对话
-    .home >>将你的炉石设置到陶拉祖营地
+    .home >> 将你的炉石设置到陶拉祖营地
     .target 比鲁拉
 step << Alliance
     .train 426445,1
     .isOnQuest 78994
     .goto The Barrens,63.084,37.163
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉高克|r 对话
-    .fly Azshara >>飞往艾萨拉
+    .fly Azshara >> 飞往艾萨拉
     .target 布拉高克
 step << Horde
     .train 426445,1
@@ -742,13 +742,13 @@ step
     .isOnQuest 78994
     .goto Ashenvale,88.82,41.52
     >>|cRXP_WARN_前往灰谷的箭头所在地区|r
-    .cast 126 >>|cRXP_WARN_施放|r |T136155:0|t[基尔罗格之眼] |cRXP_WARN_并控制它前往林荫墓地（那个全是60级以上精英怪的区域），寻找一棵|cRXP_PICK_ 暗影枝桠|r 树。林荫墓地各处可能有多个刷新点，理想情况下你需要找到一个附近没有太多精英怪的刷新点，以便你前去拾取|r
+    .cast 126 >> |cRXP_WARN_施放|r |T136155:0|t[基尔罗格之眼] |cRXP_WARN_并控制它前往林荫墓地（那个全是60级以上精英怪的区域），寻找一棵|cRXP_PICK_ 暗影枝桠|r 树。林荫墓地各处可能有多个刷新点，理想情况下你需要找到一个附近没有太多精英怪的刷新点，以便你前去拾取|r
 step
     .train 426445,1
     .isOnQuest 78994
     #completewith next
     .goto Ashenvale,88.82,41.52
-    .cast 440505 >>|cRXP_WARN_使用|r |T236874:0|t[隐形药水] |cRXP_WARN_并在大树荫中寻找一颗 |cRXP_PICK_暗影枝桠|r 树。该区域有很多60+级的精英巡逻怪|r
+    .cast 440505 >> |cRXP_WARN_使用|r |T236874:0|t[隐形药水] |cRXP_WARN_并在大树荫中寻找一颗 |cRXP_PICK_暗影枝桠|r 树。该区域有很多60+级的精英巡逻怪|r
     .use 217693
 step
     .train 426445,1
@@ -762,16 +762,16 @@ step
     #completewith next
     .train 426445,1
     .isOnQuest 78994
-    .hs >>炉石返回棘齿城 << Alliance
-    .hs >>使用炉石返回陶拉祖营地 << Horde
+    .hs >> 炉石返回棘齿城 << Alliance
+    .hs >> 使用炉石返回陶拉祖营地 << Horde
     .zoneskip The Barrens
 step
     .train 426445,1
     .goto The Barrens,49.271,57.239
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉斯泽尔·安德r|r 对话
     >>|cRXP_WARN_你必须处于|r |T237558:0|t[恶魔变形] |cRXP_WARN_形态下才能看到|r |cRXP_FRIENDLY_拉斯泽尔·安德|r
-    .turnin 78994 >>交任务 坚实的基础
-    .accept 78914 >>接受任务 灵魂之器
+    .turnin 78994 >> 交任务 坚实的基础
+    .accept 78914 >> 接受任务 灵魂之器
     .target Raszel Ander
 step
     .train 426445,1
@@ -784,19 +784,19 @@ step
 step
     #completewith next
     .train 426445,1
-    .zone Desolace >>前往凄凉之地
+    .zone Desolace >> 前往凄凉之地
 step
     .train 426445,1
     .goto Desolace,51.171,82.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉斯泽尔·安德r|r 对话
     >>|cRXP_WARN_你必须处于|r |T237558:0|t[恶魔变形] |cRXP_WARN_形态下才能看到|r |cRXP_FRIENDLY_拉斯泽尔·安德|r
-    .turnin 78914 >>交任务 灵魂之器
-    .accept 79298 >>接受任务 挑战命运
+    .turnin 78914 >> 交任务 灵魂之器
+    .accept 79298 >> 接受任务 挑战命运
     .target Raszel Ander
 step
     .train 426445,1
     .goto Desolace,51.171,82.425
-    .gossip 215850,1 >>与 |cRXP_FRIENDLY_拉斯泽尔·安德|r 对话以开始仪式
+    .gossip 215850,1 >> 与 |cRXP_FRIENDLY_拉斯泽尔·安德|r 对话以开始仪式
     .timer 14,挑战命运 剧情演出
     .skipgossip
 step
@@ -812,10 +812,10 @@ step
     .goto Desolace,51.171,82.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉斯泽尔·安德r|r 对话
     >>|cRXP_WARN_你必须处于|r |T237558:0|t[恶魔变形] |cRXP_WARN_形态下才能看到|r |cRXP_FRIENDLY_拉斯泽尔·安德|r
-    .turnin 79298 >>交任务 挑战命运
+    .turnin 79298 >> 交任务 挑战命运
     .target Raszel Ander
 step
-    .train 426445 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_协同符文|r] |cRXP_WARN_来学习|r |T133738:0|t[协同魔典]
+    .train 426445 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_协同符文|r] |cRXP_WARN_来学习|r |T133738:0|t[协同魔典]
     .use 213090
 ]])
 
@@ -1009,12 +1009,12 @@ step << Warlock
     .train 416009,1
 step << Warlock
     #completewith next
-    .zone Stormwind City >>前往暴风城
+    .zone Stormwind City >> 前往暴风城
     .train 416009,1
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >>前往屠宰场，进入地下室
+    .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
     .train 416009,1
 step << Warlock
     .goto StormwindClassic,25.25,78.59
@@ -1073,12 +1073,12 @@ step << Warlock
     .train 425477,1
 step << Warlock
     #completewith next
-    .zone Stormwind City >>前往暴风城
+    .zone Stormwind City >> 前往暴风城
     .train 425477,1
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >>前往屠宰场，进入地下室
+    .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
     .train 425477,1
 step << Warlock
     #completewith next
@@ -1087,12 +1087,12 @@ step << Warlock
     .goto StormwindClassic,26.3,79.5,18,0
     .goto StormwindClassic,25.154,77.406
     >>|cRXP_WARN_前往屠宰场的最底层|r
-    .cast 418065 >>|cRXP_WARN_使用|r |T133733:0|t[|cRXP_LOOT_不祥魔典|r] |cRXP_WARN_来召唤|r |cRXP_ENEMY_索波兹|r
+    .cast 418065 >> |cRXP_WARN_使用|r |T133733:0|t[|cRXP_LOOT_不祥魔典|r] |cRXP_WARN_来召唤|r |cRXP_ENEMY_索波兹|r
     .use 204905
     .train 425477,1
 step << Warlock
     .goto StormwindClassic,25.154,77.406
-    .use 204905 >>击杀 |cRXP_ENEMY_索波兹|r。拾取他的 |T134419:0|t[|cRXP_FRIENDLY_优雅符文|r]
+    .use 204905 >> 击杀 |cRXP_ENEMY_索波兹|r。拾取他的 |T134419:0|t[|cRXP_FRIENDLY_优雅符文|r]
     .collect 204912,1 -- Rune of Grace (1)
     .mob Soboz
     .train 425477,1
@@ -1143,12 +1143,12 @@ step << Warlock
     .train 425477,1
 step << Warlock
     .goto Dun Morogh,42.23,35.40
-    .cast 418065 >>|cRXP_WARN_使用|r |T133733:0|t[|cRXP_LOOT_不祥魔典|r] |cRXP_WARN_来召唤|r |cRXP_ENEMY_索波兹|r
+    .cast 418065 >> |cRXP_WARN_使用|r |T133733:0|t[|cRXP_LOOT_不祥魔典|r] |cRXP_WARN_来召唤|r |cRXP_ENEMY_索波兹|r
     .use 208139
     .train 425477,1
 step << Warlock
     .goto Dun Morogh,42.23,35.40
-    .use 204905 >>击杀 |cRXP_ENEMY_索波兹|r。拾取他的 |T134419:0|t[|cRXP_FRIENDLY_优雅符文|r]
+    .use 204905 >> 击杀 |cRXP_ENEMY_索波兹|r。拾取他的 |T134419:0|t[|cRXP_FRIENDLY_优雅符文|r]
     .collect 204912,1 -- Rune of Grace (1)
     .mob Soboz
     .train 425477,1
@@ -1239,11 +1239,11 @@ step
     +|cRXP_WARN_建议你额外找些队友来获取|r |T134419:0|t[|cRXP_LOOT_祈告符文|r] |cRXP_WARN_，因为需要在激流堡击杀精英怪|r
 step
     .train 426443,1
-    .zone Arathi Highlands >>前往阿拉希高地
+    .zone Arathi Highlands >> 前往阿拉希高地
 step
     .train 426443,1
     #completewith next
-    .subzone 324 >>前往斯托姆加德要塞
+    .subzone 324 >> 前往斯托姆加德要塞
 step
     #label SyndicateConjuror
     .train 426443,1
@@ -1260,12 +1260,12 @@ step
 step
     #completewith next
     .train 426443,1
-    .goto Arathi Highlands,29.292,62.283,10 >>|cRXP_WARN_进入暴风城要塞下层的大房子，上到二楼|r
+    .goto Arathi Highlands,29.292,62.283,10 >> |cRXP_WARN_进入暴风城要塞下层的大房子，上到二楼|r
 step
     #completewith next
     .train 426443,1
     .goto Arathi Highlands,29.077,63.079
-    .cast 434994 >>|cRXP_WARN_在楼梯上漂浮的|r |cRXP_LOOT_虚空棱镜|r 旁边 |cRXP_WARN_使用|r |T348282:0|t[|cRXP_PICK_咒术师的挂坠|r] |cRXP_WARN_，会召唤一只36级精英|cRXP_ENEMY_虚空探索者|r
+    .cast 434994 >> |cRXP_WARN_在楼梯上漂浮的|r |cRXP_LOOT_虚空棱镜|r 旁边 |cRXP_WARN_使用|r |T348282:0|t[|cRXP_PICK_咒术师的挂坠|r] |cRXP_WARN_，会召唤一只36级精英|cRXP_ENEMY_虚空探索者|r
     .use 213573
 step
     .train 426443,1
@@ -1274,7 +1274,7 @@ step
     .collect 213098,1
     .mob Void Seeker
 step
-    .train 426443 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_LOOT_祈告符文|r] |cRXP_WARN_来学习|r |T136133:0|t[祈告]
+    .train 426443 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_LOOT_祈告符文|r] |cRXP_WARN_来学习|r |T136133:0|t[祈告]
     .use 213098
 ]])
 
@@ -1359,12 +1359,12 @@ step
     .train 426467,1
     .train 19028,3 --Soul Link
     .goto Desolace,81.2,79.7
-    .cast 434869 >>|cRXP_WARN_点击祭坛以召唤|r |cRXP_ENEMY_女魅魔塞娜|r|cRXP_WARN_，但请务必提前使用|r |T136121:0|t[防护暗影结界]|cRXP_WARN_，|r |T136190:0|t[牺牲]|cRXP_WARN_和|r |T136160:0|t[灵魂链接]|r |cRXP_WARN_|r |cFFFF0000，因为你在引导过程中会受到大量伤害，且该伤害无法被治疗|r
+    .cast 434869 >> |cRXP_WARN_点击祭坛以召唤|r |cRXP_ENEMY_女魅魔塞娜|r|cRXP_WARN_，但请务必提前使用|r |T136121:0|t[防护暗影结界]|cRXP_WARN_，|r |T136190:0|t[牺牲]|cRXP_WARN_和|r |T136160:0|t[灵魂链接]|r |cRXP_WARN_|r |cFFFF0000，因为你在引导过程中会受到大量伤害，且该伤害无法被治疗|r
 step
     .train 426467,1
     .train 19028,1 --Soul Link
     .goto Desolace,81.2,79.7
-    .cast 434869 >>|cRXP_WARN_点击祭坛以召唤|r |cRXP_ENEMY_女魅魔塞娜|r|cRXP_WARN_，但请务必提前使用|r |T136121:0|t[防护暗影结界]|cRXP_WARN_和|r |T136190:0|t[牺牲] |cRXP_WARN_|r |cFFFF0000，因为你在引导过程中会受到大量伤害，且该伤害无法被治疗|r
+    .cast 434869 >> |cRXP_WARN_点击祭坛以召唤|r |cRXP_ENEMY_女魅魔塞娜|r|cRXP_WARN_，但请务必提前使用|r |T136121:0|t[防护暗影结界]|cRXP_WARN_和|r |T136190:0|t[牺牲] |cRXP_WARN_|r |cFFFF0000，因为你在引导过程中会受到大量伤害，且该伤害无法被治疗|r
 step
     .train 426467,1
     .goto Desolace,81.2,79.7
@@ -1386,9 +1386,9 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Ashenvale >>前往灰谷
+    .zone Ashenvale >> 前往灰谷
 step
-    .goto Ashenvale,93.5,38.0,100 >>前往你的地图上标记的灰谷梦魇进犯区域
+    .goto Ashenvale,93.5,38.0,100 >> 前往你的地图上标记的灰谷梦魇进犯区域
     .train 431758,1
 step
     >>击杀传送门外的恶魔，直到获得下方列出的所有三个物品
@@ -1400,7 +1400,7 @@ step
     .mob Dreamhunter Hound
     .train 431758,1
 step
-    .cast 447537 >>右键点击来自你的背包的任何物品以将其组合，并获得 |T134419:0|t[|cRXP_FRIENDLY_献祭光环符文|r]
+    .cast 447537 >> 右键点击来自你的背包的任何物品以将其组合，并获得 |T134419:0|t[|cRXP_FRIENDLY_献祭光环符文|r]
     .collect 220618,1 --Rune of Immolation Aura
     .use 221972
     .train 431758,1
@@ -1619,7 +1619,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Feralas >>前往菲拉斯
+    .zone Feralas >> 前往菲拉斯
 step
     .goto Feralas,69.6,43.3
     >>前往莫沙彻营地以西的标记所在地区。寻找一名躺在树旁的 |cRXP_ENEMY_病死的恐怖图腾萨满祭司|r。在尸体旁边你会发现一个 |cRXP_PICK_恐怖图腾箱子|r。拾取以获得 |T133291:0|t|cRXP_LOOT_恐怖图腾项链|r
@@ -1664,7 +1664,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Burning Steppes >>前往燃烧平原
+    .zone Burning Steppes >> 前往燃烧平原
 step
     #loop
     .goto Burning Steppes,93.2,59.0,55,0
@@ -1682,7 +1682,7 @@ step
     .skipgossip
 step
     #completewith next
-    .zone Blasted Lands >>前往诅咒之地
+    .zone Blasted Lands >> 前往诅咒之地
 step
     #loop
     .goto Blasted Lands,43.6,25.6,50,0
@@ -1692,14 +1692,14 @@ step
     .goto Blasted Lands,60.6,46.2,50,0
     .goto Blasted Lands,62.0,39.2,50,0
     .goto Blasted Lands,56.2,36.8,50,0
-    .use 224806 >>|cRXP_WARN_在一个 |r邪能之疤|cRXP_LOOT_ 上 |r使用|cRXP_WARN_ |T135222:0|t[|cRXP_PICK_军团传送门调谐器|r] ，这将把它变成|r |cRXP_PICK_异界之门|r
+    .use 224806 >> |cRXP_WARN_在一个 |r邪能之疤|cRXP_LOOT_ 上 |r使用|cRXP_WARN_ |T135222:0|t[|cRXP_PICK_军团传送门调谐器|r] ，这将把它变成|r |cRXP_PICK_异界之门|r
     >>|cRXP_WARN_与 |cRXP_PICK_异界之门|r 对话并让你的 |cRXP_FRIENDLY_探险小鬼|r 穿过它，等待它返回并带来|r |T134429:0|t[|cRXP_LOOT_传送门调谐器调谐器|r]
     >>|cRXP_WARN_你可能需要重复几次，直到它返回并带来|r |T134429:0|t[|cRXP_LOOT_传送门调谐器调谐器|r]
     .collect 224912,1
     .train 440922,1
     .skipgossip
 step
-    .use 224912 >>|cRXP_WARN_使用|r |T134429:0|t[|cRXP_LOOT_传送门调谐器调谐器|r] |cRXP_WARN_将其变成|r |T135224:0|t[|cRXP_LOOT_超载的传送门调谐器|r]
+    .use 224912 >> |cRXP_WARN_使用|r |T134429:0|t[|cRXP_LOOT_传送门调谐器调谐器|r] |cRXP_WARN_将其变成|r |T135224:0|t[|cRXP_LOOT_超载的传送门调谐器|r]
     .collect 224893,1
     .train 440922,1
 step
@@ -1711,7 +1711,7 @@ step
     .goto Blasted Lands,60.6,46.2,50,0
     .goto Blasted Lands,62.0,39.2,50,0
     .goto Blasted Lands,56.2,36.8,50,0
-    .use 224893 >>|cRXP_WARN_在一个 |r邪能之疤|cRXP_LOOT_ 上 |r使用|cRXP_WARN_ |T135224:0|t[|cRXP_PICK_超载的传送门调谐器|r] ，这将使其变红|r
+    .use 224893 >> |cRXP_WARN_在一个 |r邪能之疤|cRXP_LOOT_ 上 |r使用|cRXP_WARN_ |T135224:0|t[|cRXP_PICK_超载的传送门调谐器|r] ，这将使其变红|r
     >>|cRXP_WARN_与其对话并让你的 |cRXP_FRIENDLY_探险小鬼|r 穿过它，等待它带回来|r |T134419:0|t[|cRXP_FRIENDLY_屠戮符文|r]
     .collect 225686,1
     .train 440922,1
@@ -1731,7 +1731,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Western Plaguelands >>前往 西瘟疫之地
+    .zone Western Plaguelands >> 前往 西瘟疫之地
 step
     #loop
     .goto Western Plaguelands,50.6,77.6
@@ -1763,7 +1763,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Blasted Lands >>前往诅咒之地
+    .zone Blasted Lands >> 前往诅咒之地
     >>|cRXP_WARN_请确保你已经训练了以下技能，并考虑组织一个治疗者，因为你需要击杀一个56级精英怪|r
     >>|T134131:0|t[强效法术石]
     >>|T136121:0|t[防护暗影结界]

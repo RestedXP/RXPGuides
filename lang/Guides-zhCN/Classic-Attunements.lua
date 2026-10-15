@@ -15,7 +15,7 @@ step
 step
     .goto Burning Steppes,85.820,68.948
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫林迪斯·河角|r 对话
-    .accept 4182 >>接任务 黑龙的威胁
+    .accept 4182 >> 接任务 黑龙的威胁
     .target 赫林迪斯·河角
 step
     #loop
@@ -42,42 +42,42 @@ step
     .isQuestComplete 4182
     .goto Burning Steppes,85.820,68.948
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫林迪斯·河角|r 对话
-    .turnin 4182 >>交任务 黑龙的威胁
-    .accept 4183 >>接任务 真正的主人
+    .turnin 4182 >> 交任务 黑龙的威胁
+    .accept 4183 >> 接任务 真正的主人
     .target 赫林迪斯·河角
 step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,85.820,68.948
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫林迪斯·河角|r 对话
-    .accept 4183 >>接任务 真正的主人
+    .accept 4183 >> 接任务 真正的主人
     .target 赫林迪斯·河角
 step
     .isQuestTurnedIn 4182
     #completewith next
     .goto Burning Steppes,84.333,68.328
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_博古斯·粗臂|r 对话
-    .fly Redridge >>飞往赤脊山
+    .fly Redridge >> 飞往赤脊山
     .target 博古斯·粗臂
 step
     .isQuestTurnedIn 4182
     .goto Redridge Mountains,29.98,44.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_所罗门镇长|r 对话
-    .turnin 4183 >>交任务 真正的主人
-    .accept 4184 >>接任务 真正的主人
+    .turnin 4183 >> 交任务 真正的主人
+    .accept 4184 >> 接任务 真正的主人
     .target 所罗门镇长
 step
     .isQuestTurnedIn 4182
     .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
-    .fly Stormwind >>飞往暴风城
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    .fly Stormwind >> 飞往暴风城
     .target 艾蕾娜·斯托姆法瑟
     .zoneskip Redridge Mountains,1
 step
     .isQuestTurnedIn 4182
     .goto Stormwind City,78.213,17.980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大领主伯瓦尔·弗塔根|r 对话
-    .turnin 4184 >>交任务 真正的主人
-    .accept 4185 >>接任务 真正的主人
+    .turnin 4184 >> 交任务 真正的主人
+    .accept 4185 >> 接任务 真正的主人
     .target 大领主伯瓦尔·弗塔根
 step
     .isQuestTurnedIn 4182
@@ -90,42 +90,42 @@ step
     .isQuestTurnedIn 4182
     .goto Stormwind City,78.213,17.980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大领主伯瓦尔·弗塔根|r 对话
-    .turnin 4185 >>交任务 真正的主人
-    .accept 4186 >>接任务 真正的主人
+    .turnin 4185 >> 交任务 真正的主人
+    .accept 4186 >> 接任务 真正的主人
     .target 大领主伯瓦尔·弗塔根
 step
     .isQuestTurnedIn 4182
     #completewith next
     .goto Stormwind City,66.277,62.137
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
-    .fly Redridge>>飞往赤脊山
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    .fly Redridge>> 飞往赤脊山
     .target 杜加尔·朗德瑞克
 step
     .isQuestTurnedIn 4182
     .goto Redridge Mountains,29.98,44.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_所罗门镇长|r 对话
-    .turnin 4186 >>交任务 真正的主人
-    .accept 4223 >>接任务 真正的主人
+    .turnin 4186 >> 交任务 真正的主人
+    .accept 4223 >> 接任务 真正的主人
     .target 所罗门镇长
 step
     .isQuestTurnedIn 4182
     #completewith next
     .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
-    .fly Burning Steppes >>飞往燃烧平原
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    .fly Burning Steppes >> 飞往燃烧平原
     .target 艾蕾娜·斯托姆法瑟
 step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,84.744,69.015
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克斯韦尔元帅|r 对话
-    .turnin 4223 >>交任务 真正的主人
-    .accept 4224 >>接任务 真正的主人
+    .turnin 4223 >> 交任务 真正的主人
+    .accept 4224 >> 接任务 真正的主人
     .target 麦克斯韦尔元帅
 step
     .isQuestTurnedIn 4182
     #completewith WindsorPickup
     .goto Burning Steppes,65.236,24.007
-    .subzone 251 >>前往火焰峰
+    .subzone 251 >> 前往火焰峰
 step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,65.012,23.757
@@ -138,8 +138,8 @@ step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,84.744,69.015
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克斯韦尔元帅|r 对话
-    .turnin 4224 >>交任务 真正的主人
-    .accept 4241 >>接受任务 温德索尔元帅
+    .turnin 4224 >> 交任务 真正的主人
+    .accept 4241 >> 接受任务 温德索尔元帅
     .target 麦克斯韦尔元帅
 step
     #completewith next
@@ -154,8 +154,8 @@ step
     .isQuestTurnedIn 4182
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_温德索尔元帅|r 对话
     >>|cRXP_WARN_如果你的队伍中没有盗贼，你可能需要击杀|r |cRXP_ENEMY_审讯官格斯塔恩|r |cRXP_WARN_来获取|r |cRXP_LOOT_监狱牢房钥匙|r |cRXP_WARN_以打开牢门|r
-    .turnin 4241 >>交任务 温德索尔元帅
-    .accept 4242 >>接受任务 被遗弃的希望
+    .turnin 4241 >> 交任务 温德索尔元帅
+    .accept 4242 >> 接受任务 被遗弃的希望
 step
     .isQuestTurnedIn 4182
     #completewith next
@@ -165,7 +165,7 @@ step
     .goto Burning Steppes,84.744,69.015
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克斯韦尔元帅|r 对话
     >>|cRXP_WARN_直到你在黑石深渊里找到|r |T134331:0|t[弄皱的便笺] |cRXP_WARN_该任务链将在此中断|r
-    .turnin 4242 >>交任务 被遗弃的希望
+    .turnin 4242 >> 交任务 被遗弃的希望
     .target 麦克斯韦尔元帅
 step
     #completewith next
@@ -178,20 +178,20 @@ step
 step
     .isQuestTurnedIn 4242
     >>击杀黑石深渊的 |cRXP_ENEMY_矮人|r。拾取他们的 |T134331:0|t[弄皱的便笺]
-    .use 11446 >>|cRXP_WARN_使用|r |T134331:0|t[弄皱的便笺] |cRXP_WARN_来开始该任务|r
+    .use 11446 >> |cRXP_WARN_使用|r |T134331:0|t[弄皱的便笺] |cRXP_WARN_来开始该任务|r
     >>|cRXP_WARN_请务必在击杀首领 |cRXP_ENEMY_安格弗将军|r 和 |r傀儡统帅阿格曼奇|cRXP_ENEMY_ 之前完成此操作|r
     >>|cRXP_WARN_如果你到现在还没有找到它，就在禁闭室附近清理怪物，直到它掉落为止|r
     .collect 11446,1,4264,1 -- A Crumpled Up Note (1)
-    .accept 4264 >>接受任务 弄皱的便笺
+    .accept 4264 >> 接受任务 弄皱的便笺
 step
     .isOnQuest 4264
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_温德索尔元帅|r 对话
-    .turnin 4264 >>交任务 弄皱的便笺
-    .accept 4282 >>接受任务 一丝希望
+    .turnin 4264 >> 交任务 弄皱的便笺
+    .accept 4282 >> 接受任务 一丝希望
 step
     .isQuestTurnedIn 4264
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_温德索尔元帅|r 对话
-    .accept 4282 >>接受任务 一丝希望
+    .accept 4282 >> 接受任务 一丝希望
 step
     .isOnQuest 4282
     >>击杀 |cRXP_ENEMY_安格弗将军|r 和 |cRXP_ENEMY_傀儡统帅阿格曼奇|r。拾取他们的 |cRXP_LOOT_温德索尔元帅遗失的情报|r
@@ -202,8 +202,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_温德索尔元帅|r 对话
     >>|cRXP_WARN_确保所有队友在这一步都关闭了自动接取任务！RestedXP已在这一步默认关闭自动接取|r
     >>|cRXP_WARN_接受任务之后会开启冲破牢笼的护送任务。请确保你已清理干净监狱区域的所有怪物，以便更轻松地完成护送|r |cRXP_FRIENDLY_温德索尔元帅|r
-    .turnin 4282 >>交任务 一线希望
-    .accept 4322,1 >>接受任务 冲破牢笼！
+    .turnin 4282 >> 交任务 一线希望
+    .accept 4322,1 >> 接受任务 冲破牢笼！
 step
     .isOnQuest 4322
     >>护送 |cRXP_FRIENDLY_温德索尔元帅|r 通过黑石深渊
@@ -215,15 +215,15 @@ step
     .isQuestComplete 4322
     .goto Burning Steppes,84.744,69.015
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克斯韦尔元帅|r 对话
-    .turnin 4322 >>交任务 冲破牢笼！
-    .accept 6402 >>接受任务 集合在暴风城
+    .turnin 4322 >> 交任务 冲破牢笼！
+    .accept 6402 >> 接受任务 集合在暴风城
     .target 麦克斯韦尔元帅
 step
     .isQuestTurnedIn 4322
     #label Rendezvoes
     .goto Burning Steppes,84.744,69.015
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克斯韦尔元帅|r 对话
-    .accept 6402 >>接受任务 集合在暴风城
+    .accept 6402 >> 接受任务 集合在暴风城
     .target 麦克斯韦尔元帅
 step
     .isQuestTurnedIn 4322
@@ -233,8 +233,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_侍卫洛文|r 和 |cRXP_FRIENDLY_雷吉纳德·温德索尔|r 对话
     >>在暴风城大门口与 |cRXP_FRIENDLY_侍卫洛文|r 对话后，他会唤来 |cRXP_FRIENDLY_雷吉纳德·温德索尔|r
     >>|cRXP_WARN_如果你在队伍中，请确保没人自动接受了潜藏者任务。为此，插件已暂时关闭了自动接取任务功能|r
-    .turnin 6402 >>交任务 集合在暴风城
-    .accept 6403,1 >>接受任务 潜藏者
+    .turnin 6402 >> 交任务 集合在暴风城
+    .accept 6403,1 >> 接受任务 潜藏者
     .skipgossip
     .target Squire Rowe
     .target Reginald Windsor
@@ -250,14 +250,14 @@ step
     .isQuestComplete 6403
     .goto StormwindClassic,77.569,18.864
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大领主伯瓦尔·弗塔根|r 对话
-    .turnin 6403 >>交任务 潜藏者
-    .accept 6501 >>接受任务 巨龙之眼
+    .turnin 6403 >> 交任务 潜藏者
+    .accept 6501 >> 接受任务 巨龙之眼
     .target 大领主伯瓦尔·弗塔根
 step
     .isQuestTurnedIn 6403
     .goto StormwindClassic,77.569,18.864
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大领主伯瓦尔·弗塔根|r 对话
-    .accept 6501 >>接受任务 巨龙之眼
+    .accept 6501 >> 接受任务 巨龙之眼
     .target 大领主伯瓦尔·弗塔根
 step
     #completewith next
@@ -278,7 +278,7 @@ step
     >>|cRXP_WARN_如果你有|r |T134863:0|t[诺格弗格药剂]|cRXP_WARN_，你可以使用它们来获得|r |T135992:0|t[缓落术] |cRXP_WARN_效果，使跳跃变得更容易|r << !Priest !Mage
     >>|cRXP_WARN_如果你有|r |T134863:0|t[诺格弗格药剂]|cRXP_WARN_或者|r |T132917:0|t[轻羽毛]|cRXP_WARN_，你可以使用它们来获得|r |T135992:0|t[缓落术] |cRXP_WARN_效果，使跳跃变得更容易|r << Mage
     >>|cRXP_WARN_如果你有|r |T134863:0|t[诺格弗格药剂]|cRXP_WARN_或者|r |T132917:0|t[轻羽毛]|cRXP_WARN_，你可以使用它们来获得|r |T135992:0|t[缓落术] |cRXP_WARN_或者|r |T135928:0|t[漂浮]|cRXP_WARN_效果，使跳跃变得更容易|r << Priest
-    .link https://www.youtube.com/watch?v=qjmkIzbfBbQ&ab_channel=RestedXP >>https://www.youtube.com/watch?v=qjmkIzbfBbQ&ab_channel=RestedXP >> |cRXP_WARN_点击此处查看视频参考|r
+    .link https://www.youtube.com/watch?v=qjmkIzbfBbQ&ab_channel=RestedXP >> |cRXP_WARN_点击此处查看视频参考|r
 step
     .isQuestTurnedIn 6403
     .goto Winterspring,54.54,51.21
@@ -317,7 +317,7 @@ step
     >>|cRXP_WARN_如果你有|r |T134863:0|t[诺格弗格药剂]|cRXP_WARN_，你可以使用它们来获得|r |T135992:0|t[缓落术] |cRXP_WARN_效果，使跳跃变得更容易|r << !Priest !Mage
     >>|cRXP_WARN_如果你有|r |T134863:0|t[诺格弗格药剂]|cRXP_WARN_或者|r |T132917:0|t[轻羽毛]|cRXP_WARN_，你可以使用它们来获得|r |T135992:0|t[缓落术] |cRXP_WARN_效果，使跳跃变得更容易|r << Mage
     >>|cRXP_WARN_如果你有|r |T134863:0|t[诺格弗格药剂]|cRXP_WARN_或者|r |T132917:0|t[轻羽毛]|cRXP_WARN_，你可以使用它们来获得|r |T135992:0|t[缓落术] |cRXP_WARN_或者|r |T135928:0|t[漂浮]|cRXP_WARN_效果，使跳跃变得更容易|r << Priest
-    .link https://www.youtube.com/watch?v=qjmkIzbfBbQ&ab_channel=RestedXP >>https://www.youtube.com/watch?v=qjmkIzbfBbQ&ab_channel=RestedXP >> |cRXP_WARN_点击此处查看视频参考|r
+    .link https://www.youtube.com/watch?v=qjmkIzbfBbQ&ab_channel=RestedXP >> |cRXP_WARN_点击此处查看视频参考|r
 step
     #softcore
     .isQuestTurnedIn 6403
@@ -440,7 +440,7 @@ step
     #completewith next
     .goto Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_多拉斯|r 对话
-    .fly Sun Rock Retreat >>飞往烈日石居
+    .fly Sun Rock Retreat >> 飞往烈日石居
     .target 多拉斯
     .zoneskip Stonetalon Mountains
     .zoneskip Desolace
@@ -985,7 +985,7 @@ step
     .collect 12359,2,5801,1 --Thorium Bar x2
 step
     #completewith next
-	.zone Ironforge >>前往 |cFFfa9602铁炉堡|r
+	.zone Ironforge >> 前往 |cFFfa9602铁炉堡|r
 step
     #loop
     .goto Ironforge,33.4,20.0,0
@@ -1003,7 +1003,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_信使考雷·落锤|r 对话
     >>|cRXP_FRIENDLY_信使考雷·落锤|r |cRXP_WARN_在整个铁炉堡巡逻|r
     >>|cRXP_WARN_此任务也可在|r |cFFfa9602暴风城|r |cRXP_WARN_或者|r |cFFfa9602达纳苏斯|r 接取
-    .acceptmultiple 5091,5090,5066 >>接受任务 战斗的号角：瘟疫之地！
+    .acceptmultiple 5091,5090,5066 >> 接受任务战斗的号角：瘟疫之地！
     .unitscan Courier Hammerfall --IF
     .unitscan Herald Moonstalker --DARN
     .unitscan Crier Goodman --SW
@@ -1018,8 +1018,8 @@ step
     .isOnQuest 5066
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官阿什拉姆·瓦罗菲斯特|r 对话
-    .turnin 5066 >>交任务战斗的号角：瘟疫之地！
-    .accept 5092 >>接任务 扫清道路
+    .turnin 5066 >> 交任务战斗的号角：瘟疫之地！
+    .accept 5092 >> 接任务 扫清道路
     .target 指挥官阿什拉姆·瓦罗菲斯特
 step
     #requires ThoriumBars
@@ -1027,7 +1027,7 @@ step
     .isQuestTurnedIn 5066
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官阿什拉姆·瓦罗菲斯特|r 对话
-    .accept 5092 >>接任务 扫清道路
+    .accept 5092 >> 接任务 扫清道路
     .target 指挥官阿什拉姆·瓦罗菲斯特
 step
     #requires ThoriumBars
@@ -1035,8 +1035,8 @@ step
     .isOnQuest 5091
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官阿什拉姆·瓦罗菲斯特|r 对话
-    .turnin 5091 >>交任务战斗的号角：瘟疫之地！
-    .accept 5092 >>接任务 扫清道路
+    .turnin 5091 >> 交任务战斗的号角：瘟疫之地！
+    .accept 5092 >> 接任务 扫清道路
     .target 指挥官阿什拉姆·瓦罗菲斯特
 step
     #requires ThoriumBars
@@ -1044,15 +1044,15 @@ step
     .isQuestTurnedIn 5091
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官阿什拉姆·瓦罗菲斯特|r 对话
-    .accept 5092 >>接任务 扫清道路
+    .accept 5092 >> 接任务 扫清道路
     .target 指挥官阿什拉姆·瓦罗菲斯特
 step
     #requires ThoriumBars
     .isOnQuest 5090
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官阿什拉姆·瓦罗菲斯特|r 对话
-    .turnin 5090 >>交任务战斗的号角：瘟疫之地！
-    .accept 5092 >>接任务 扫清道路
+    .turnin 5090 >> 交任务战斗的号角：瘟疫之地！
+    .accept 5092 >> 接任务 扫清道路
     .target 指挥官阿什拉姆·瓦罗菲斯特
 step
     #requires ThoriumBars
@@ -1060,7 +1060,7 @@ step
     .isQuestTurnedIn 5090
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官阿什拉姆·瓦罗菲斯特|r 对话
-    .accept 5092 >>接任务 扫清道路
+    .accept 5092 >> 接任务 扫清道路
     .target 指挥官阿什拉姆·瓦罗菲斯特
 step
     #loop
@@ -1077,38 +1077,38 @@ step
 step
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官阿什拉姆·瓦罗菲斯特|r 对话
-    .accept 5098 >>接受任务 标记哨塔
+    .accept 5098 >> 接受任务 标记哨塔
     .target 指挥官阿什拉姆·瓦罗菲斯特
 step
     .goto Western Plaguelands,46.681,71.135,-1
     .goto Western Plaguelands,46.558,71.156,-1
-    .use 12815 >>|cRXP_WARN_在哨塔入口旁使用|r |T135432:0|t[信号火炬] |cRXP_WARN_。你可以在不引到里面精英|cRXP_ENEMY_ 骷髅军官|r 的情况下完成此操作|r
+    .use 12815 >> |cRXP_WARN_在哨塔入口旁使用|r |T135432:0|t[信号火炬] |cRXP_WARN_。你可以在不引到里面精英|cRXP_ENEMY_ 骷髅军官|r 的情况下完成此操作|r
     .complete 5098,4 --Tower Four marked
 step
     .goto Western Plaguelands,44.217,63.319,-1
     .goto Western Plaguelands,44.247,63.131,-1
-    .use 12815 >>|cRXP_WARN_在哨塔入口旁使用|r |T135432:0|t[信号火炬] |cRXP_WARN_。你可以在不引到里面精英|cRXP_ENEMY_ 骷髅军官|r 的情况下完成此操作|r
+    .use 12815 >> |cRXP_WARN_在哨塔入口旁使用|r |T135432:0|t[信号火炬] |cRXP_WARN_。你可以在不引到里面精英|cRXP_ENEMY_ 骷髅军官|r 的情况下完成此操作|r
     .complete 5098,3 --Tower Three marked
 step
     .goto Western Plaguelands,42.326,66.105,-1
     .goto Western Plaguelands,42.422,66.222,-1
-    .use 12815 >>|cRXP_WARN_在哨塔入口旁使用|r |T135432:0|t[信号火炬] |cRXP_WARN_。你可以在不引到里面精英|cRXP_ENEMY_ 骷髅军官|r 的情况下完成此操作|r
+    .use 12815 >> |cRXP_WARN_在哨塔入口旁使用|r |T135432:0|t[信号火炬] |cRXP_WARN_。你可以在不引到里面精英|cRXP_ENEMY_ 骷髅军官|r 的情况下完成此操作|r
     .complete 5098,2 --Tower Two marked
 step
     .goto Western Plaguelands,40.116,71.561,-1
     .goto Western Plaguelands,40.038,71.713,-1
-    .use 12815 >>|cRXP_WARN_在哨塔入口旁使用|r |T135432:0|t[信号火炬] |cRXP_WARN_。你可以在不引到里面精英|cRXP_ENEMY_ 骷髅军官|r 的情况下完成此操作|r
+    .use 12815 >> |cRXP_WARN_在哨塔入口旁使用|r |T135432:0|t[信号火炬] |cRXP_WARN_。你可以在不引到里面精英|cRXP_ENEMY_ 骷髅军官|r 的情况下完成此操作|r
     .complete 5098,1 --Tower One marked
 step
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官阿什拉姆·瓦罗菲斯特|r 对话
-    .turnin 5098 >>交任务 标记哨塔
-    .accept 5533 >>接受任务 通灵学院
+    .turnin 5098 >> 交任务 标记哨塔
+    .accept 5533 >> 接受任务 通灵学院
     .target 指挥官阿什拉姆·瓦罗菲斯特
 step
     #completewith SkeletalFragments
     .isQuestTurnedIn 5098
-    .destroy 12815 >>摧毁 |T135432:0|t[信号火炬]
+    .destroy 12815 >> 摧毁 |T135432:0|t[信号火炬]
 step
     .goto Western Plaguelands,42.665,83.774
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_化学家阿尔比顿|r 对话
@@ -1157,7 +1157,7 @@ step
     #completewith next
     .goto Tanaris,51.006,29.345
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_博拉·石锤|r 对话
-    .fly Un'Goro >>飞往安戈洛环形山
+    .fly Un'Goro >> 飞往安戈洛环形山
     .target 博拉·石锤
     .zoneskip Un'Goro Crater
 step
@@ -1260,7 +1260,7 @@ step
     .goto Undercity,66.07,54.64,50,0
     .goto Undercity,70.81,51.49,50,0
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_预言者巴萨扎德|r 对话
-    .acceptmultiple 5093,5094,5095 >>接受任务 战斗的号角：瘟疫之地！
+    .acceptmultiple 5093,5094,5095 >>接受任务战斗的号角：瘟疫之地！
     >>|cRXP_WARN_此任务也可在|r |cFFfa9602奥格瑞玛|r |cRXP_WARN_或者|r |cFFfa9602雷霆崖|r 接取
     .unitscan 公告员高拉克 --ORG
     .unitscan Harbinger Balthazadd --UC
@@ -1270,7 +1270,7 @@ step
 step
     #requires ThoriumBars
 	#completewith ScarletDiversionsPU
-	.subzone 152 >>前往|cFFfa9602提瑞斯法林地|r 的亡灵壁垒
+	.subzone 152 >> 前往|cFFfa9602提瑞斯法林地|r 的亡灵壁垒
 step
     #optional
     #requires ThoriumBars
@@ -1340,22 +1340,22 @@ step
 step
     .goto Western Plaguelands,46.681,71.135,-1
     .goto Western Plaguelands,46.558,71.156,-1
-    .use 12815 >>|cRXP_WARN_在哨塔入口旁使用|r |T135432:0|t[信号火炬] |cRXP_WARN_。你可以在不引到里面精英|cRXP_ENEMY_ 骷髅军官|r 的情况下完成此操作|r
+    .use 12815 >> |cRXP_WARN_在哨塔入口旁使用|r |T135432:0|t[信号火炬] |cRXP_WARN_。你可以在不引到里面精英|cRXP_ENEMY_ 骷髅军官|r 的情况下完成此操作|r
     .complete 5098,4 --Tower Four marked
 step
     .goto Western Plaguelands,44.217,63.319,-1
     .goto Western Plaguelands,44.247,63.131,-1
-    .use 12815 >>|cRXP_WARN_在哨塔入口旁使用|r |T135432:0|t[信号火炬] |cRXP_WARN_。你可以在不引到里面精英|cRXP_ENEMY_ 骷髅军官|r 的情况下完成此操作|r
+    .use 12815 >> |cRXP_WARN_在哨塔入口旁使用|r |T135432:0|t[信号火炬] |cRXP_WARN_。你可以在不引到里面精英|cRXP_ENEMY_ 骷髅军官|r 的情况下完成此操作|r
     .complete 5098,3 --Tower Three marked
 step
     .goto Western Plaguelands,42.326,66.105,-1
     .goto Western Plaguelands,42.422,66.222,-1
-    .use 12815 >>|cRXP_WARN_在哨塔入口旁使用|r |T135432:0|t[信号火炬] |cRXP_WARN_。你可以在不引到里面精英|cRXP_ENEMY_ 骷髅军官|r 的情况下完成此操作|r
+    .use 12815 >> |cRXP_WARN_在哨塔入口旁使用|r |T135432:0|t[信号火炬] |cRXP_WARN_。你可以在不引到里面精英|cRXP_ENEMY_ 骷髅军官|r 的情况下完成此操作|r
     .complete 5098,2 --Tower Two marked
 step
     .goto Western Plaguelands,40.116,71.561,-1
     .goto Western Plaguelands,40.038,71.713,-1
-    .use 12815 >>|cRXP_WARN_在哨塔入口旁使用|r |T135432:0|t[信号火炬] |cRXP_WARN_。你可以在不引到里面精英|cRXP_ENEMY_ 骷髅军官|r 的情况下完成此操作|r
+    .use 12815 >> |cRXP_WARN_在哨塔入口旁使用|r |T135432:0|t[信号火炬] |cRXP_WARN_。你可以在不引到里面精英|cRXP_ENEMY_ 骷髅军官|r 的情况下完成此操作|r
     .complete 5098,1 --Tower One marked
 step
     .goto Tirisfal Glades,83.15,68.92
@@ -1366,7 +1366,7 @@ step
  step
     #completewith SkeletalFragments
     .isQuestTurnedIn 5098
-    .destroy 12815 >>摧毁 |T135432:0|t[信号火炬]
+    .destroy 12815 >> 摧毁 |T135432:0|t[信号火炬]
 step
  	#era/som
     .goto Tirisfal Glades,83.28,69.23
@@ -1428,7 +1428,7 @@ step
     .complete 5802,1 --Unfinished Skeleton Key (1)
 step
     #completewith next
-	.subzone 152 >>前往|cFFfa9602提瑞斯法林地|r 的亡灵壁垒
+	.subzone 152 >> 前往|cFFfa9602提瑞斯法林地|r 的亡灵壁垒
 step
     .goto Tirisfal Glades,83.28,69.23
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪瑟斯|r 对话
@@ -1504,9 +1504,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗兰克罗恩·铸铁|r 对话
     >>|cRXP_WARN_你必须处于|r |T132331:0|t[灵魂状态] |cRXP_WARN_才能与|r |cRXP_FRIENDLY_弗兰克罗恩·铸铁|r 对话
     >>|cRXP_WARN_跳进黑石山的岩浆中送死，最好是在熔火之心传送门入口附近|r
-    .accept 3801 >>接受任务 黑铁的遗产
-    .turnin 3801 >>交任务 黑铁的遗产
-    .accept 3802 >>接受任务 黑铁的遗产
+    .accept 3801 >> 接受任务 黑铁的遗产
+    .turnin 3801 >> 交任务 黑铁的遗产
+    .accept 3802 >> 接受任务 黑铁的遗产
     .target Franclorn Forgewright
 step
     #hardcoreserver
@@ -1518,9 +1518,9 @@ step
     .goto 1415,48.624,64.186
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_弗兰克罗恩·铸铁|r 对话
     >>|cRXP_WARN_你必须拥有|r |T136215:0|t[烬辉视界] |cRXP_WARN_debuff才能看到他|r
-    .accept 3801 >>接受任务 黑铁的遗产
-    .turnin 3801 >>交任务 黑铁的遗产
-    .accept 3802 >>接受任务 黑铁的遗产
+    .accept 3801 >> 接受任务 黑铁的遗产
+    .turnin 3801 >> 交任务 黑铁的遗产
+    .accept 3802 >> 接受任务 黑铁的遗产
     .target Franclorn Forgewright
 step
     #softcore
@@ -1543,7 +1543,7 @@ step
 step
     >>跑回到秩序竞技场上方的区域附近
     >>点击 |cRXP_PICK_弗兰克罗恩·铸铁的雕像|r
-    .turnin 3802 >>交任务 黑铁的遗产
+    .turnin 3802 >> 交任务 黑铁的遗产
     .isQuestComplete 3802
 
     ]])
@@ -1667,12 +1667,12 @@ step
 step
     .goto Felwood,51.4,82.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_影齿大使|r对话
-    .accept 84384 >>接受任务 恶魔骗术
+    .accept 84384 >> 接受任务 恶魔骗术
     .target Shadowtooth Emissary
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
     #completewith next
-    .zone Winterspring >>前往 |cFFfa9602冬泉谷|r
+    .zone Winterspring >> 前往 |cFFfa9602冬泉谷|r
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
 	.line Winterspring,64.0,22.6,65.6,23.2,67.6,22.6,65.6,19.6,63.6,16.2,65.6,19.6,64.0,20.8,64.0,22.6
@@ -1695,7 +1695,7 @@ step
 step
     .goto Felwood,51.4,82.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_影齿大使|r对话
-    .turnin 84384 >>交任务 恶魔骗术
+    .turnin 84384 >> 交任务 恶魔骗术
     .target Shadowtooth Emissary
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 

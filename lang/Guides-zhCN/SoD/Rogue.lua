@@ -32,14 +32,14 @@ step
     #optional
     #label FrostMCave1
     #completewith Rune
-    .goto 1426,27.098,80.707,20 >>进入霜鬃巨魔洞穴
+    .goto 1426,27.098,80.707,20 >> 进入霜鬃巨魔洞穴
 step
     #optional
     #requires FrostMCave1
     #completewith Rune
     .goto 1426,28.298,79.836,15,0
     .goto 1426,29.252,79.043,15,0
-    .goto 1426,30.489,80.165,50 >>前去找里面的|cRXP_PICK_霜鬃战利品箱|r
+    .goto 1426,30.489,80.165,50 >> 前去找里面的|cRXP_PICK_霜鬃战利品箱|r
 step
     .goto Dun Morogh,30.773,80.063
     >>打开地面上的|cRXP_PICK_霜鬃掠夺者宝箱|r，获得|T134419:0|t|T134419:0|t|cRXP_LOOT_[暗影打击符文]|r
@@ -162,7 +162,7 @@ step << Rogue
     .train 398196,1
 step << Rogue
     #season 2
-    .train 400095 >>|cRXP_WARN_使用|r |T134419:0|t|T134536:0|t[|cRXP_FRIENDLY_速射符文|r] |cRXP_WARN_来训练|r |T134536:0|t|T134536:0|t[速射]
+    .train 400095 >> |cRXP_WARN_使用|r |T134419:0|t|T134536:0|t[|cRXP_FRIENDLY_速射符文|r] |cRXP_WARN_来训练|r |T134536:0|t|T134536:0|t[速射]
     .use 203991
     .itemcount 203991,1
 ]])
@@ -238,7 +238,7 @@ step << Rogue
     .train 398196,1
 step << Rogue
     #season 2
-    .train 400095 >>|cRXP_WARN_使用|r |T134419:0|t|T134536:0|t[|cRXP_FRIENDLY_速射符文|r] |cRXP_WARN_来训练|r |T134536:0|t|T134536:0|t[速射]
+    .train 400095 >> |cRXP_WARN_使用|r |T134419:0|t|T134536:0|t[|cRXP_FRIENDLY_速射符文|r] |cRXP_WARN_来训练|r |T134536:0|t|T134536:0|t[速射]
     .use 203991
     .itemcount 203991,1
 ]])
@@ -255,7 +255,7 @@ step << Rogue
     #season 2
     #completewith next
     .goto Teldrassil,54.68,52.84,20,0
-    .goto Teldrassil,54.42,51.19,15 >>前往邪石山
+    .goto Teldrassil,54.42,51.19,15 >> 前往邪石山
     .train 398196,1
 step << Rogue
     #season 2
@@ -320,7 +320,7 @@ step << Rogue
     #season 2
     #completewith next
     .goto Darnassus,29.466,41.405
-    .zone Teldrassil >>通过紫色传送门前往鲁瑟兰村
+    .zone Teldrassil >> 通过紫色传送门前往鲁瑟兰村
     .train 398196,1
 step << Rogue
     #season 2
@@ -337,7 +337,7 @@ step << Rogue
     .train 398196,1
 step << Rogue
     #season 2
-    .train 400095 >>|cRXP_WARN_使用|r |T134419:0|t|T134536:0|t[|cRXP_FRIENDLY_速射符文|r] |cRXP_WARN_来训练|r |T134536:0|t|T134536:0|t[速射]
+    .train 400095 >> |cRXP_WARN_使用|r |T134419:0|t|T134536:0|t[|cRXP_FRIENDLY_速射符文|r] |cRXP_WARN_来训练|r |T134536:0|t|T134536:0|t[速射]
     .use 203991
     .itemcount 203991,1
 ]])
@@ -401,7 +401,7 @@ step << Rogue
     #season 2
     #completewith next
     .goto Stormwind City,56.93,29.54,8,0
-    .goto Stormwind City,58.65,27.56,10 >>进入暴风城矮人区的屠夫巷
+    .goto Stormwind City,58.65,27.56,10 >> 进入暴风城矮人区的屠夫巷
     .train 400081,1
 step << Rogue
     #season 2
@@ -556,7 +556,7 @@ RXPGuides.RegisterGuide([[
 step << Rogue
     #season 2
     #completewith learnBD
-    .goto Darkshore,55.106,33.621,30 >>进入悬崖泉的纳迦洞穴
+    .goto Darkshore,55.106,33.621,30 >> 进入悬崖泉的纳迦洞穴
     .train 400099,1
 step << Rogue
     #season 2
@@ -606,7 +606,7 @@ step << Rogue
     .train 400094,1
 step << Rogue
     #season 2
-    .cast 402265 >>|cRXP_WARN_使用|r |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_毁伤符文|r]
+    .cast 402265 >> |cRXP_WARN_使用|r |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_毁伤符文|r]
     .use 203990 -- Rune of Mutilation (1)
     .target Cutty
     .train 400094,1
@@ -637,7 +637,7 @@ step << Rogue
     .train 400094,1
 step << Rogue
     #season 2
-    .cast 402265 >>|cRXP_WARN_使用|r |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_毁伤符文|r]
+    .cast 402265 >> |cRXP_WARN_使用|r |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_毁伤符文|r]
     .use 203990 -- Rune of Mutilation (1)
     .train 400094,1
 ]])
@@ -663,7 +663,7 @@ step << Rogue
     .train 424785,1
 step << Rogue
     #season 2
-    .cast 402265 >>|cRXP_WARN_使用|r |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_军刀猛刺符文|r]
+    .cast 402265 >> |cRXP_WARN_使用|r |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_军刀猛刺符文|r]
     .use 208772 -- Rune of Saber Slash (1)
     .train 424785,1
 ]])
@@ -681,7 +681,7 @@ step << Rogue
     #completewith next
     .goto Loch Modan,41.01,12.60,50,0
     .goto Loch Modan,42.86,10.36,60,0
-    .goto Loch Modan,46.20,13.15,10 >>|cRXP_WARN_前往洛克莫丹大坝墙体，小心地掉到大坝中心的突出处，跟随箭头|r
+    .goto Loch Modan,46.20,13.15,10 >> |cRXP_WARN_前往洛克莫丹大坝墙体，小心地掉到大坝中心的突出处，跟随箭头|r
     .train 424785,1
 step << Rogue
     #season 2
@@ -691,13 +691,13 @@ step << Rogue
     .train 424785,1
 step << Rogue
     #season 2
-    .cast 402265 >>|cRXP_WARN_使用|r |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_军刀猛刺符文|r]
+    .cast 402265 >> |cRXP_WARN_使用|r |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_军刀猛刺符文|r]
     .use 208772 -- Rune of Saber Slash (1)
     .train 424785,1
 step << Rogue
     #season 2
     .goto Loch Modan,45.823,12.652
-    .cast 6477 >>点击 |cRXP_PICK_逃生绳|r 返回顶部
+    .cast 6477 >> 点击 |cRXP_PICK_逃生绳|r 返回顶部
     .subzoneskip 146,1
 ]])
 
@@ -712,7 +712,7 @@ RXPGuides.RegisterGuide([[
 step << Rogue
     #season 2
     #completewith next
-    .goto Darkshore,32.80,37.72,20 >>游到有灯塔的小岛
+    .goto Darkshore,32.80,37.72,20 >> 游到有灯塔的小岛
     .train 424785,1
 step << Rogue
     #season 2
@@ -722,7 +722,7 @@ step << Rogue
     .train 424785,1
 step << Rogue
     #season 2
-    .cast 402265 >>|cRXP_WARN_使用|r |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_军刀猛刺符文|r]
+    .cast 402265 >> |cRXP_WARN_使用|r |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_军刀猛刺符文|r]
     .use 208772 -- Rune of Saber Slash (1)
     .train 424785,1
 ]])
@@ -837,11 +837,11 @@ step
     #season 2
     .goto Silverpine Forest,47.12,71.01
     >>在银松森林点击 |cRXP_PICK_秘密投放点|r
-    .accept 78261 >>接受任务 谢尔索斯号角
+    .accept 78261 >> 接受任务 谢尔索斯号角
 step
     #season 2
     #completewith next
-    .zone 209 >>进入影牙城堡
+    .zone 209 >> 进入影牙城堡
     >>|cRXP_WARN_你必须独自完成下一部分！组队会阻止你获得所需的钥匙|r
 step << Horde
     #season 2
@@ -887,7 +887,7 @@ step
     #season 2
     .goto Silverpine Forest,47.114,70.974
     >>点击银松森林的 |cRXP_PICK_秘密投放点|r
-    .turnin 78261 >>交任务 谢尔索斯号角
+    .turnin 78261 >> 交任务 谢尔索斯号角
 step
     #season 2
     #completewith next
@@ -897,7 +897,7 @@ step << Horde
     #season 2
     .goto Silverpine Forest,45.62,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡鲁斯|r 对话
-    .fly Undercity >>飞往幽暗城
+    .fly Undercity >> 飞往幽暗城
     .target 卡洛斯·拉佐克
     .zoneskip Undercity
     .train 400080,1
@@ -905,12 +905,12 @@ step << Alliance
     >>前往南海镇
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达尔拉·哈瑞斯|r 对话
     .goto Hillsbrad Foothills,49.338,52.272
-    .fly Ironforge >>飞往铁炉堡
+    .fly Ironforge >> 飞往铁炉堡
     .target 达尔拉·哈瑞斯
     .train 400080,1
 step
-    .goto Undercity,68.290,38.043,5 >>|cRXP_WARN_进入幽暗城。检查你的邮箱，查看来自*C*的信件|r << Horde
-    .goto Ironforge,71.485,72.280,5 >>|cRXP_WARN_进入铁炉堡。检查你的邮箱中来自 *C* 的信件。如果你在另一个主城执行，跳过此步骤|r << Alliance
+    .goto Undercity,68.290,38.043,5 >> |cRXP_WARN_进入幽暗城。检查你的邮箱，查看来自*C*的信件|r << Horde
+    .goto Ironforge,71.485,72.280,5 >> |cRXP_WARN_进入铁炉堡。检查你的邮箱中来自 *C* 的信件。如果你在另一个主城执行，跳过此步骤|r << Alliance
     .train 400080,1
 step
     #season 2
@@ -920,21 +920,21 @@ step
 step << Horde
     #season 2
     .goto Undercity,63.27,48.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
-    .fly The Sepulcher>>飞往瑟伯切尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    .fly The Sepulcher>> 飞往瑟伯切尔
     .target 迈克尔·加勒特
     .zoneskip Silverpine Forest
     .train 400080,1
 step << Alliance
     .goto Ironforge,55.501,47.742
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
-    .fly Southshore >>飞往南海镇
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    .fly Southshore >> 飞往南海镇
     .target 格莱斯·瑟登
     .zoneskip Silverpine Forest
     .train 400080,1
 step << Alliance
     #completewith next
-    .zone Silverpine Forest >>前往银松森林
+    .zone Silverpine Forest >> 前往银松森林
     .train 400080,1
 step
     #season 2
@@ -1012,7 +1012,7 @@ step
     .train 400095,1
 step
     #completewith next
-    .goto Durotar,55.12,10.10,60 >>前往骷髅石
+    .goto Durotar,55.12,10.10,60 >> 前往骷髅石
 step
     #season 2
     .goto Durotar,54.72,8.78,15,0
@@ -1193,7 +1193,7 @@ step
     #season 2
     .goto Tirisfal Glades,47.39,43.64,150,0
     .goto Tirisfal Glades,52.23,26.91,20,0
-    .goto Tirisfal Glades,52.29,26.40,8 >>前往阿加曼德磨坊的地下室
+    .goto Tirisfal Glades,52.29,26.40,8 >> 前往阿加曼德磨坊的地下室
 step
     #season 2
 #loop
@@ -1281,7 +1281,7 @@ RXPGuides.RegisterGuide([[
 step
     #season 2
     #completewith next
-    .goto Durotar,53.18,29.15,50 >>前往尘风洞
+    .goto Durotar,53.18,29.15,50 >> 前往尘风洞
 step
     #season 2
     .goto Durotar,53.18,29.15,20,0
@@ -1368,7 +1368,7 @@ RXPGuides.RegisterGuide([[
 step
     #season 2
     .goto Orgrimmar,55.87,44.89
-    >>打开|cRXP_PICK_布满灰尘的箱子|r获取|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_精准符文|r]
+    >>打开|cRXP_PICK_布满灰尘的箱子|r 获取 |T134419:0|t[|cRXP_FRIENDLY_精准符文|r]
     >>|cRXP_WARN_它位于暗影裂口的二楼|r
     .collect 204174,1 --Rune of Precision (1)
     .train 400081,1
@@ -1498,7 +1498,7 @@ step
 step
     #completewith next
     .goto Eastern Kingdoms,47.44,19.69,10,0
-    .goto Eastern Kingdoms,47.73,19.39,5 >>进入血色修道院：|cRXP_WARN_墓地|r 地下城 |cRXP_WARN_独自一人|r
+    .goto Eastern Kingdoms,47.73,19.39,5 >> 进入血色修道院：|cRXP_WARN_墓地|r 地下城 |cRXP_WARN_独自一人|r
 step
     >>对 |cRXP_ENEMY_血色占卜师|r 使用 |T133644:0|t[搜索] 以获得 |T134241:0|t[占卜师的秘钥]
     >>|cRXP_WARN_利用|r |T132289:0|t[扰乱] |cRXP_WARN_来避免被发现|r
@@ -1508,7 +1508,7 @@ step
     .train 400101,1
 step
     #completewith next
-    .goto Eastern Kingdoms,47.79,19.59,5 >>进入血色修道院: |cRXP_WARN_图书馆|r 地下城 |cRXP_WARN_独自一人|r
+    .goto Eastern Kingdoms,47.79,19.59,5 >> 进入血色修道院: |cRXP_WARN_图书馆|r 地下城 |cRXP_WARN_独自一人|r
 step
     #completewith next
     +|cRXP_WARN_跑向最后一个Boss前的走廊|r
@@ -1520,7 +1520,7 @@ step
     .train 400101,1
 step
     #completewith next
-    .goto Eastern Kingdoms,47.73,19.39,5 >>进入血色修道院：|cRXP_WARN_墓地|r 地下城 |cRXP_WARN_独自一人|r
+    .goto Eastern Kingdoms,47.73,19.39,5 >> 进入血色修道院：|cRXP_WARN_墓地|r 地下城 |cRXP_WARN_独自一人|r
 step
     >>|cRXP_WARN_前往地下城内的室外区域，寻找一张在左右两侧墙壁上的两尊雕像之间的长椅|r
     *|cRXP_WARN_在两侧的长椅上|r使用 /sit 命令（可以在潜行状态下完成），直到聊天框中出现表情信息：|cRXP_WARN_“你听到石头移动的声音”|r。
@@ -1530,7 +1530,7 @@ step
     .train 400101,1
 step
     #completewith next
-    .goto Eastern Kingdoms,47.79,19.59,5 >>进入血色修道院: |cRXP_WARN_图书馆|r 地下城 |cRXP_WARN_独自一人|r
+    .goto Eastern Kingdoms,47.79,19.59,5 >> 进入血色修道院: |cRXP_WARN_图书馆|r 地下城 |cRXP_WARN_独自一人|r
 step
     #completewith next
     +|cRXP_WARN_跑向 "宝藏画廊"|r
@@ -1555,7 +1555,7 @@ step
 step << Horde
     .goto Silverpine Forest,45.62,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡鲁斯|r 对话
-    .fly Undercity >>飞往幽暗城
+    .fly Undercity >> 飞往幽暗城
     .target 卡洛斯·拉佐克
     .zoneskip Undercity
     .train 400101,1
@@ -1563,12 +1563,12 @@ step << Alliance
     >>前往南海镇
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_达尔拉·哈瑞斯|r 对话
     .goto Hillsbrad Foothills,49.338,52.272
-    .fly Ironforge >>飞往铁炉堡
+    .fly Ironforge >> 飞往铁炉堡
     .target 达尔拉·哈瑞斯
     .train 400101,1
 step
-    .goto Undercity,68.290,38.043,5 >>|cRXP_WARN_进入幽暗城，检查你的邮箱，查看来自*C*的信件|r << Horde
-    .goto Ironforge,71.485,72.280,5 >>|cRXP_WARN_进入铁炉堡。检查你的邮箱中来自 *C* 的信件。如果你在另一个主城执行，跳过此步骤|r << Alliance
+    .goto Undercity,68.290,38.043,5 >> |cRXP_WARN_进入幽暗城，检查你的邮箱，查看来自*C*的信件|r << Horde
+    .goto Ironforge,71.485,72.280,5 >> |cRXP_WARN_进入铁炉堡。检查你的邮箱中来自 *C* 的信件。如果你在另一个主城执行，跳过此步骤|r << Alliance
     .train 400101,1
 step
     #completewith next
@@ -1576,21 +1576,21 @@ step
     +|cRXP_WARN_打开邮箱，阅读*C*寄来的信件。准备好后飞回南海镇然后前往银松森林|r << Alliance
 step << Horde
     .goto Undercity,63.27,48.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦克尔|r 对话
-    .fly The Sepulcher>>飞往瑟伯切尔
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈克尔 |r 对话
+    .fly The Sepulcher>> 飞往瑟伯切尔
     .target 迈克尔·加勒特
     .zoneskip Silverpine Forest
     .train 400101,1
 step << Alliance
     .goto Ironforge,55.501,47.742
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
-    .fly Southshore >>飞往南海镇
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    .fly Southshore >> 飞往南海镇
     .target 格莱斯·瑟登
     .zoneskip Silverpine Forest
     .train 400101,1
 step << Alliance
     #completewith next
-    .zone Silverpine Forest >>前往银松森林
+    .zone Silverpine Forest >> 前往银松森林
     .train 400101,1
 step
     .goto Silverpine Forest,47.114,70.974
@@ -1650,7 +1650,7 @@ step
 step
     .train 425103,1
     #completewith Uniform
-    .goto Stranglethorn Vale,46.30,7.61,30 >>进入库存仓库 (库尔森的洞窟)
+    .goto Stranglethorn Vale,46.30,7.61,30 >> 进入库存仓库 (库尔森的洞窟)
 step
     .train 425103,1
     #completewith next
@@ -1676,14 +1676,14 @@ step
 step
     .train 425103,1
     #completewith next
-    .goto Stranglethorn Vale,44.261,7.908,60 >>走出洞穴。前往塔楼外的|cRXP_FRIENDLY_温德尔·玛瑟斯|r
+    .goto Stranglethorn Vale,44.261,7.908,60 >> 走出洞穴。前往塔楼外的|cRXP_FRIENDLY_温德尔·玛瑟斯|r
 step
     .train 425103,1
     .goto Stranglethorn Vale,44.261,7.908
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与塔楼里的 |cRXP_FRIENDLY_温德尔·玛瑟斯|r 对话
     >>|cRXP_WARN_他的刷新时间大约为3分钟|r
-    .destroy 216616 >>将|cRXP_LOOT_营地囚笼钥匙|r 交给他
-    .destroy 216617 >>将|cRXP_LOOT_库尔森斗士制服|r 交给他
+    .destroy 216616 >> 将|cRXP_LOOT_营地囚笼钥匙|r 交给他
+    .destroy 216617 >> 将|cRXP_LOOT_库尔森斗士制服|r 交给他
     .skipgossip 218230,1
     .target Wendel Mathers
 step
@@ -1729,7 +1729,7 @@ step
 step
     .train 400093,1
     #completewith next
-    .goto Thousand Needles,18.44,21.58,10 >>进入伊索克营地的大帐篷
+    .goto Thousand Needles,18.44,21.58,10 >> 进入伊索克营地的大帐篷
 step
     .train 400093,1
     .goto Thousand Needles,18.686,21.126
@@ -1742,7 +1742,7 @@ step
     .use 215451
 step
     .train 400093,1
-    .use 215451 >>打开|T132597:0|t[|cRXP_LOOT_大型保险箱|r]。拾取|T132597:0|t[|cRXP_LOOT_中型保险箱|r]
+    .use 215451 >> 打开|T132597:0|t[|cRXP_LOOT_大型保险箱|r]。拾取|T132597:0|t[|cRXP_LOOT_中型保险箱|r]
     .collect 215452,1
 step
     .train 400093,1
@@ -1751,7 +1751,7 @@ step
     .use 215452
 step
     .train 400093,1
-    .use 215452 >>打开|T132597:0|t[|cRXP_LOOT_中型保险箱|r]。拾取|T132597:0|t[|cRXP_LOOT_小型保险箱|r]
+    .use 215452 >> 打开|T132597:0|t[|cRXP_LOOT_中型保险箱|r]。拾取|T132597:0|t[|cRXP_LOOT_小型保险箱|r]
     .collect 215453,1
 step
     .train 400093,1
@@ -1760,7 +1760,7 @@ step
     .use 215453
 step
     .train 400093,1
-    .use 215453 >>打开|T132597:0|t[|cRXP_LOOT_小型保险箱|r]。拾取|T134419:0|t[|cRXP_FRIENDLY_左拳符文|r]
+    .use 215453 >> 打开|T132597:0|t[|cRXP_LOOT_小型保险箱|r]。拾取|T134419:0|t[|cRXP_FRIENDLY_左拳符文|r]
     .collect 213138,1
 step
     .itemcount 213138,1
@@ -1936,7 +1936,7 @@ step
     .goto Alterac Mountains,86.11,80.22,10,0
     .goto Alterac Mountains,84.45,80.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_法拉德|r 对话
-    .turnin 6681 >>交任务 拉文霍德庄园
+    .turnin 6681 >> 交任务 拉文霍德庄园
     .target Fahrad
     .isOnQuest 6681
 step << Alliance
@@ -2108,7 +2108,7 @@ step
 step
     .train 415918,1
     #completewith next
-    .subzone 190 >>前往壁炉谷
+    .subzone 190 >> 前往壁炉谷
 step
     #label ToolboxKey
     .train 415918,1

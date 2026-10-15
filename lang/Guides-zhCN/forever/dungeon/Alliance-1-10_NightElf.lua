@@ -16,7 +16,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor NightElf
 #next 6-11 泰达希尔
 step
-#include RestedXP Forever Guide (A)\1-6 Shadowglen
+#include RestedXP 无限指南 (联盟)\1-6 幽影谷
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -34,5 +34,5 @@ RXPGuides.RegisterGuide([[
 #next 14-16级 黑海岸
 
 step
-#include RestedXP Forever Guide (A)\6-11 Teldrassil
+#include RestedXP 无限指南 (联盟)\6-11 泰达希尔
 ]])

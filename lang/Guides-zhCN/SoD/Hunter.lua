@@ -15,14 +15,14 @@ step
 step
     #completewith Rune
     #label Dun1
-    .zone Dun Morogh >>前往 丹莫罗
+    .zone Dun Morogh >> 前往 丹莫罗
     .train 410121,1
 step
     #optional
     #requires Dun1
     #label FrostMCave1
     #completewith Rune
-    .goto 1426,27.098,80.707,20 >>进入霜鬃巨魔洞穴
+    .goto 1426,27.098,80.707,20 >> 进入霜鬃巨魔洞穴
     .train 410121,1
 step
     #optional
@@ -30,7 +30,7 @@ step
     #completewith Rune
     .goto 1426,28.298,79.836,15,0
     .goto 1426,29.252,79.043,15,0
-    .goto 1426,30.489,80.165,50 >>前去找里面的|cRXP_PICK_霜鬃战利品箱|r
+    .goto 1426,30.489,80.165,50 >> 前去找里面的|cRXP_PICK_霜鬃战利品箱|r
     .train 410121,1
 step
     #label Rune
@@ -59,7 +59,7 @@ step
 step
     #completewith Rune
     #label Teld1
-    .zone Teldrassil >>前往泰达希尔
+    .zone Teldrassil >> 前往泰达希尔
     .train 410121,1
 step
     #optional
@@ -67,7 +67,7 @@ step
     #label ShadowCave1
     #completewith Rune
     .goto 1438,56.694,31.485
-    .subzone 25 >>进入暗丝洞穴
+    .subzone 25 >> 进入暗丝洞穴
     .train 410121,1
 step
     #optional
@@ -78,7 +78,7 @@ step
     .goto 1438,56.137,24.971,15,0
     .goto 1438,56.358,25.242,20,0
     .goto 1438,56.654,26.430,50,0
-    .goto 1438,56.874,26.323,10 >>前去找里面的 |cRXP_ENEMY_邪恶的基塞伊斯|r
+    .goto 1438,56.874,26.323,10 >> 前去找里面的 |cRXP_ENEMY_邪恶的基塞伊斯|r
     .train 410121,1
 step
     #label Rune
@@ -88,7 +88,7 @@ step
     .mob Githyiss the Vile
     .train 410121,1
 step
-    .train 410121 >>|cRXP_WARN_使用|r |T134419:0|t|T133816:0|t|cRXP_LOOT_[奇美拉符文]|r |cRXP_WARN_学习|r |T133816:0|t|T133816:0|t[铭刻手套 - 奇美拉射击]
+    .train 410121 >>|cRXP_WARN_使用|r |T134419:0|t|cRXP_LOOT_[奇美拉符文]|r |cRXP_WARN_来学习|r |T133816:0|t[铭刻手套 - 奇美拉射击]
     .use 206168
     .itemcount 206168,1
 ]])
@@ -139,7 +139,7 @@ step
     .train 410123,1
     .xp <10,1
 step
-    .train 410123 >>|cRXP_WARN_使用|r |T134419:0|t|cRXP_LOOT_[爆炸射击符文]|r |cRXP_WARN_来学习|r |T133816:0|t[铭刻手套 - 爆炸射击]
+    .train 410123 >> |cRXP_WARN_使用|r |T134419:0|t|cRXP_LOOT_[爆炸射击符文]|r |cRXP_WARN_来学习|r |T133816:0|t[铭刻手套 - 爆炸射击]
     .use 206169
     .itemcount 206169,1
 ]])
@@ -1003,7 +1003,7 @@ step
     >>|cRXP_WARN_使用|r |T237388:0|t[|cRXP_LOOT_粗糙的绘画|r] |cRXP_WARN_来开启任务|r
     >>|cRXP_WARN_它们的位置被标记在你的地图上|r
     .collect 211269,1,78823,1 --Primitive Drawing
-    .accept 78823 >>接受任务 沙海的苍穹灾星
+    .accept 78823 >> 接受任务 沙海的苍穹灾星
     .mob Dustbelcher Ogre
     .mob Dustbelcher Brute
     .mob 火烟虐待者
@@ -1022,8 +1022,8 @@ step
 step
     .goto Stranglethorn Vale,35.658,10.808
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫米特·奈辛瓦里|r 对话
-    .turnin 78823 >>交任务 沙海的苍穹灾星
-    .accept 78830 >>接受任务 沙海的苍穹灾星
+    .turnin 78823 >> 交任务 沙海的苍穹灾星
+    .accept 78830 >> 接受任务 沙海的苍穹灾星
     .target 赫米特·奈辛瓦里
     .train 410114,1
 step
@@ -1062,7 +1062,7 @@ step
 step
     .goto Stranglethorn Vale,35.658,10.808
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫米特·奈辛瓦里|r 对话
-    .turnin 78830 >>交任务 沙海的苍穹灾星
+    .turnin 78830 >> 交任务 沙海的苍穹灾星
     .target 赫米特·奈辛瓦里
     .train 410114,1
 step
@@ -1261,7 +1261,7 @@ step
     .goto Searing Gorge,14.5,36.5
     >>进入洞穴时走右边的通道。你很快会看到一个大平板，叫做|cRXP_WARN_风蚀雕刻|cRXP_FRIENDLY_，在洞穴中间部分的高地上。跑到它那里并接受任务|r。
     >>提示：如果单独行动，尝试使用陷阱和你的宠物尽可能走远，然后使用|T132293:0|t[|cRXP_FRIENDLY_假死|r]来掉落小怪的仇恨。或者你也可以尸体跑到物品。
-    .accept 81900 >>接受任务 烈燃猛兽
+    .accept 81900 >> 接受任务 烈燃猛兽
 step
     #completewith next
     .zone Blasted Lands >>前往诅咒之地
@@ -1407,6 +1407,6 @@ step
     .collect 226587,1 --rune of shelling
     .mob Sandworm
 step
-    .train 440560 >>使用 |T134419:0|t[|cRXP_FRIENDLY_炮轰符文|r] 来学习 |T236179:0|t[|cRXP_FRIENDLY_强化乱射|r]
+    .train 440560 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_炮轰符文|r] 来学习 |T236179:0|t[|cRXP_FRIENDLY_强化乱射|r]
     .use 226587
 ]])

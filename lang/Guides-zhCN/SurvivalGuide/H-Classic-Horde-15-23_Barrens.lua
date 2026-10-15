@@ -23,7 +23,7 @@ step << !Tauren !Hunter !Shaman
 step << Priest
     .goto Durotar,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰金|r 对话
-	.train 6074 >>训练你的职业技能
+	.train 6074 >> 训练你的职业技能
     .target 泰金
     .xp <14,1
     .xp >16,1
@@ -31,13 +31,13 @@ step << Priest
     #optional
     .goto Durotar,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_泰金|r 对话
-	.train 8102 >>训练你的职业技能
+	.train 8102 >> 训练你的职业技能
     .target 泰金
     .xp <16,1
 step << Orc Warrior/Troll Warrior
     .goto Durotar,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔绍尔·锯痕|r 对话
-    .train 1160 >>训练你的职业技能
+    .train 1160 >> 训练你的职业技能
     .target 塔绍尔·锯痕
     .xp <14,1
     .xp >16,1
@@ -45,13 +45,13 @@ step << Orc Warrior/Troll Warrior
     #optional
     .goto Durotar,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔绍尔·锯痕|r 对话
-    .train 285 >>训练你的职业技能
+    .train 285 >> 训练你的职业技能
     .target 塔绍尔·锯痕
     .xp <16,1
 step << Rogue
     .goto Durotar,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡普拉克|r 对话
-    .train 1758 >>训练你的职业技能
+    .train 1758 >> 训练你的职业技能
     .target 卡普拉克
     .xp <14,1
     .xp >16,1
@@ -59,13 +59,13 @@ step << Rogue
     #optional
     .goto Durotar,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡普拉克|r 对话
-    .train 6761 >>训练你的职业技能
+    .train 6761 >> 训练你的职业技能
     .target 卡普拉克
     .xp <16,1
 step << Warlock
     .goto Durotar,54.37,41.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜格鲁|r 对话
-    .train 6222 >>训练你的职业技能
+    .train 6222 >> 训练你的职业技能
     .target 杜格鲁·血怒
     .xp <14,1
     .xp >16,1
@@ -79,7 +79,7 @@ step << Warlock
     #optional
     .goto Durotar,54.37,41.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜格鲁|r 对话
-    .train 1455 >>训练你的职业技能
+    .train 1455 >> 训练你的职业技能
     .target 杜格鲁·血怒
     .xp <16,1
 step << !Tauren !Hunter !Shaman
@@ -90,11 +90,11 @@ step << !Tauren !Hunter !Shaman
     .isQuestAvailable 840
 step
     #optional
-    .abandon 480 >>放弃任务 法师的头领，以避免任务日志问题，稍后你会重新接取
+    .abandon 480 >> 放弃任务 法师的头领，以避免任务日志问题，稍后你会重新接取
     .isOnQuest 480
 step
     #completewith next
-    .zone The Barrens >>前往贫瘠之地
+    .zone The Barrens >> 前往贫瘠之地
     .zoneskip The Barrens
 step << !Tauren !Hunter !Shaman
     .goto The Barrens,62.27,19.38
@@ -120,7 +120,7 @@ step << !Tauren !Hunter !Shaman
     .group
 step << !Tauren !Hunter !Shaman
     #completewith next
-    .goto The Barrens,52.34,29.27,150 >>前往十字路口
+    .goto The Barrens,52.34,29.27,150 >> 前往十字路口
     .subzoneskip 380
 step << !Undead !Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎尔夫|r、|cRXP_FRIENDLY_加兹罗格|r、|cRXP_FRIENDLY_瑟格拉|r、|cRXP_FRIENDLY_图加|r、|cRXP_FRIENDLY_曼科里克|r 和 |cRXP_FRIENDLY_索克|r 对话
@@ -222,7 +222,7 @@ step
 step
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫布瑞姆|r 对话
-    .accept 848 >>接受任务 菌类孢子
+    .accept 848 >>接受任务菌类孢子
     .accept 1492 >>接受任务码头管理员迪兹维格
 	.turnin 1358 >>交任务 给赫布瑞姆的样本
     .target 药剂师赫布瑞姆
@@ -237,7 +237,7 @@ step
     .goto The Barrens,51.09,22.68,40,0
     .goto The Barrens,50.33,21.85,40,0
     .goto The Barrens,49.21,20.42,40,0
-    .goto The Barrens,47.58,19.38,100 >>前往山顶
+    .goto The Barrens,47.58,19.38,100 >> 前往山顶
     .isOnQuest 924
 step
     .group
@@ -254,7 +254,7 @@ step
     .goto The Barrens,47.58,19.38,40,0
     .goto The Barrens,49.21,20.42,40,0
     .goto The Barrens,50.33,21.85,40,0
-    .goto The Barrens,51.09,22.68,100 >>沿原路下山
+    .goto The Barrens,51.09,22.68,100 >> 沿原路下山
     .isOnQuest 924
 step
     #completewith DisruptTheAttacks
@@ -274,10 +274,10 @@ step
     .isOnQuest 871
 step
     .goto The Barrens,55.70,27.30
-    .use 4926 >>拾取地上的 |cRXP_PICK_老陈的空酒桶|r，并使用它来开始任务
+    .use 4926 >> 拾取地上的 |cRXP_PICK_老陈的空酒桶|r，并使用它来开始任务
     >>|cRXP_WARN_如果现在没有刷新，之后再来获取即可|r
     .collect 4926,1,819 --Collect Chen's Empty Keg
-    .accept 819 >>接受任务 老陈的空酒桶
+    .accept 819 >> 接受任务 老陈的空酒桶
 step << !Tauren !Hunter !Shaman
     #label DisruptTheAttacks
     #loop
@@ -345,35 +345,35 @@ step << !Tauren !Undead
 step
     #sticky
     #completewith EnterRFC
-    .subzone 2437 >>现在你应该找个队伍去怒焰裂谷了
+    .subzone 2437 >> 现在你应该找个队伍去怒焰裂谷了
     .dungeon RFC
 step
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板伯兰德|r 对话
-    .home >>将你的炉石设置到十字路口
+    .home >> 将你的炉石设置到十字路口
     .target 旅店老板伯兰德·草风
     .bindlocation 380
     .isQuestAvailable 845
     .dungeon RFC
 step << skip --!Tauren
     #completewith next
-    .zone Stonetalon Mountains >>前往石爪山脉
+    .zone Stonetalon Mountains >> 前往石爪山脉
     .zoneskip Stonetalon Mountains
     .dungeon RFC
 step << skip --!Tauren
     #completewith next
     .goto Stonetalon Mountains,82.57,98.63,60,0
     .goto Stonetalon Mountains,80.10,98.20,40,0
-    .goto Stonetalon Mountains,77.17,98.61,40 >>沿着左侧的道路向上前进
+    .goto Stonetalon Mountains,77.17,98.61,40 >> 沿着左侧的道路向上前进
     .dungeon RFC
 step << skip --!Tauren
     .goto Stonetalon Mountains,74.69,98.10
     .goto Thunder Bluff,56.65,18.96,30 >>|cRXP_WARN_跳跃到笼子上，通过登出并重新登入来执行返回角色选择跳过|r
-    .link https://www.youtube.com/watch?v=cp2YI86AO4Y&ab >>https://www.youtube.com/watch?v=cp2YI86AO4Y&ab >> |cRXP_WARN_点击此处查看示例|r
+    .link https://www.youtube.com/watch?v=cp2YI86AO4Y&ab >> |cRXP_WARN_点击此处查看示例|r
     .dungeon RFC
 step << skip --!Tauren
     #completewith RFCPickups
-    .goto Thunder Bluff,50.75,37.07,40 >>乘电梯进入雷霆崖
+    .goto Thunder Bluff,50.75,37.07,40 >> 乘电梯进入雷霆崖
     .dungeon RFC
 step << Tauren
     #completewith RFCPickups
@@ -390,22 +390,22 @@ step << !Tauren
     .dungeon RFC
 step
     #completewith next
-    .goto Thunder Bluff,69.88,30.90,80 >>前往长者高地
+    .goto Thunder Bluff,69.88,30.90,80 >> 前往长者高地
     .dungeon RFC
 step
     #label RFCPickups
     .goto Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拉哈罗|r 对话
-    .accept 5722 >>接受任务 寻找背包
-    .accept 5723 >>接受任务 试探敌人
+    .accept 5722 >> 接受任务 寻找背包
+    .accept 5723 >> 接受任务 试探敌人
     .target Rahauro
     .dungeon RFC
 step
     #completewith next
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔尔|r 对话
-    .fp Thunder Bluff >>开启雷霆崖飞行点 << !Tauren
-    .fly Orgrimmar >>飞往奥格瑞玛
+    .fp Thunder Bluff >> 开启雷霆崖飞行点 << !Tauren
+    .fly Orgrimmar >> 飞往奥格瑞玛
     .zoneskip Orgrimmar
     .target 塔尔
     .dungeon RFC
@@ -423,8 +423,8 @@ step
 step
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r 对话
-    .turnin 5726 >>交任务 隐藏的敌人
-    .accept 5727 >>接受任务 隐藏的敌人
+    .turnin 5726 >> 交任务 隐藏的敌人
+    .accept 5727 >> 接受任务 隐藏的敌人
     .target 萨尔
     .dungeon RFC
 step
@@ -443,8 +443,8 @@ step
 step
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r 对话
-    .turnin 5727 >>交任务 隐藏的敌人
-    .accept 5728 >>接受任务 隐藏的敌人
+    .turnin 5727 >> 交任务 隐藏的敌人
+    .accept 5728 >> 接受任务 隐藏的敌人
     .target 萨尔
     .dungeon RFC
 step
@@ -454,7 +454,7 @@ step
 step
     #label EnterRFC
     .goto Orgrimmar,52.77,48.97
-    .subzone 2437 >>进入 RFC Instance portal. Zone in
+    .subzone 2437 >> 进入 RFC Instance portal. Zone in
     .dungeon RFC
 step
     #completewith next
@@ -467,15 +467,15 @@ step
     .dungeon RFC
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_茂尔|r 对话
-    .turnin 5722 >>交任务 寻找背包
-    .accept 5724 >>接受任务 归还背包
+    .turnin 5722 >> 交任务 寻找背包
+    .accept 5724 >> 接受任务 归还背包
     .target Maur Grimtotem
     .isOnQuest 5722
     .dungeon RFC
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_茂尔|r 对话
-    .accept 5724 >>接受任务 归还背包
+    .accept 5724 >> 接受任务 归还背包
     .target Maur Grimtotem
     .isQuestTurnedIn 5722
     .dungeon RFC
@@ -531,36 +531,36 @@ step
 step
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r 对话
-    .turnin 5728 >>交任务 隐藏的敌人
-    .accept 5729 >>接受任务 隐藏的敌人
+    .turnin 5728 >> 交任务 隐藏的敌人
+    .accept 5729 >> 接受任务 隐藏的敌人
     .target 萨尔
     .isQuestComplete 5728
     .dungeon RFC
 step
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r 对话
-    .accept 5729 >>接受任务 隐藏的敌人
+    .accept 5729 >> 接受任务 隐藏的敌人
     .target 萨尔
     .isQuestTurnedIn 5728
     .dungeon RFC
 step
     .goto Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_尼尔鲁·火刃|r 对话
-    .turnin 5729 >>交任务 隐藏的敌人
-    .accept 5730 >>接受任务 隐藏的敌人
+    .turnin 5729 >> 交任务 隐藏的敌人
+    .accept 5730 >> 接受任务 隐藏的敌人
     .target 尼尔鲁·火刃
     .dungeon RFC
     .isQuestTurnedIn 5728
 step
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔|r 对话
-    .turnin 5730 >>交任务 隐藏的敌人
+    .turnin 5730 >> 交任务 隐藏的敌人
     .target 萨尔
     .isQuestTurnedIn 5728
     .dungeon RFC
 step
     #completewith next
-    .zone Durotar >>离开 奥格瑞玛
+    .zone Durotar >> 离开 奥格瑞玛
     .zoneskip Durotar
     .dungeon RFC
 step
@@ -572,7 +572,7 @@ step
 step
     #completewith Varimathras
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >>进入幽暗城
+    .zone Undercity >> 进入幽暗城
     .zoneskip Undercity
     .dungeon RFC
 step
@@ -582,7 +582,7 @@ step
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >>乘电梯下去到幽暗城
+    .goto Undercity,65.53,43.62,15 >> 乘电梯下去到幽暗城
     .goto Undercity,56.2,96.2
     .dungeon RFC
 step
@@ -594,7 +594,7 @@ step
     .dungeon RFC
 step
     #completewith next
-    .hs >>炉石返回十字路口，北贫瘠之地
+    .hs >> 炉石返回十字路口，北贫瘠之地
     .use 6948
     .bindlocation 380,1
     .subzoneskip 380
@@ -603,15 +603,15 @@ step
     #completewith FinalRFCTurnin
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪弗拉克|r 对话
-    .fly Thunder Bluff >>飞往雷霆崖
+    .fly Thunder Bluff >> 飞往雷霆崖
     .target 迪弗拉克
     .zoneskip Thunder Bluff
     .dungeon RFC
 step
     .goto Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拉哈罗|r 对话
-    .turnin 5724 >>交任务 归还背包
-    .turnin 5723 >>交任务 试探敌人
+    .turnin 5724 >> 交任务 归还背包
+    .turnin 5723 >> 交任务 试探敌人
     .target Rahauro
     .dungeon RFC
     .isOnQuest 5724
@@ -619,7 +619,7 @@ step
 step
     .goto Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拉哈罗|r 对话
-    .turnin 5724 >>交任务 归还背包
+    .turnin 5724 >> 交任务 归还背包
     .target Rahauro
     .dungeon RFC
     .isOnQuest 5724
@@ -627,13 +627,13 @@ step
     #label FinalRFCTurnin
     .goto Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拉哈罗|r 对话
-    .turnin 5723 >>交任务 试探敌人
+    .turnin 5723 >> 交任务 试探敌人
     .target Rahauro
     .dungeon RFC
     .isQuestComplete 5723
 step
     #completewith RatchetArrive
-    .hs >>炉石返回十字路口，北贫瘠之地
+    .hs >> 炉石返回十字路口，北贫瘠之地
     .cooldown item,6948,>0
     .use 6948
     .dungeon RFC
@@ -649,26 +649,26 @@ step
     .dungeon RFC
 step
     #optional
-    .abandon 5723 >>放弃任务 试探敌人
+    .abandon 5723 >> 放弃任务 试探敌人
     .dungeon RFC
 step
     #optional
-    .abandon 5725 >>放弃任务 毁灭之力
+    .abandon 5725 >> 放弃任务 毁灭之力
     .dungeon RFC
 step
     #optional
-    .abandon 5728 >>放弃任务 隐藏的敌人
+    .abandon 5728 >> 放弃任务 隐藏的敌人
     .dungeon RFC
 step
     #optional
-    .abandon 5761 >>放弃任务 饥饿者塔拉加曼
+    .abandon 5761 >> 放弃任务 饥饿者塔拉加曼
     .dungeon RFC
 step
     .goto The Barrens,55.70,27.30,20,0
     .goto The Barrens,55.78,20.00
-    .use 4926 >>拾取地上的 |cRXP_PICK_老陈的空酒桶|r，并使用它来开始任务
+    .use 4926 >> 拾取地上的 |cRXP_PICK_老陈的空酒桶|r，并使用它来开始任务
     .collect 4926,1,819 --Collect Chen's Empty Keg
-    .accept 819 >>接受任务 老陈的空酒桶
+    .accept 819 >> 接受任务 老陈的空酒桶
 step
     #completewith KreenigSnarlsnout
     .goto The Barrens,56.75,24.69,50,0
@@ -749,7 +749,7 @@ step
     .complete 845,1 --Zhevra Hooves (4)
     .mob 快步斑马
 step
-    .goto The Barrens,63.08,36.56,120 >>前往 棘齿城
+    .goto The Barrens,63.08,36.56,120 >> 前往 棘齿城
     .subzoneskip 392
 step
     #label RatchetArrive
@@ -761,7 +761,7 @@ step
     #completewith next
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉高克|r 对话
-    .fp Ratchet >>获取棘齿城飞行路径
+    .fp Ratchet >> 获取棘齿城飞行路径
     .target 布拉高克
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_斯布特瓦夫|r 和 |cRXP_FRIENDLY_通缉布告|r 对话
@@ -861,7 +861,7 @@ step
     >>|cRXP_BUY_从他那里购买|r |T133918:0|t[长嘴泥鳅] |cRXP_BUY_|r
     >>|cRXP_BUY_从他那里|r购买|cRXP_BUY_ |T132796:0|t[果汁]|r << Mage/Warlock/Priest/Shaman/Druid
     >>|cRXP_WARN_它们非常便宜，想买多少买多少|r
-    .vendor >>把垃圾物品卖给商人
+    .vendor >> 把垃圾物品卖给商人
     .collect 4592,40,895,1 --Longjaw Mud Snapper (40)
     .collect 1205,20,895,1 << Mage/Warlock/Priest/Shaman/Druid --Melon Juice (20)
     .home >>将你的炉石设置到棘齿城
@@ -870,7 +870,7 @@ step
     .isQuestAvailable 887
 step
     #completewith BaronLongshore
-    .destroy 5088 >>|cRXP_WARN_从背包中删除|r |T133735:0|t[控制台操作手册]|cRXP_WARN_，因为已不再需要|r
+    .destroy 5088 >> |cRXP_WARN_从背包中删除|r |T133735:0|t[控制台操作手册]|cRXP_WARN_，因为已不再需要|r
 step
     #completewith BaronLongshore
     >>击杀 |cRXP_ENEMY_南海歹徒|r 和 |cRXP_ENEMY_南海炮兵|r
@@ -1027,7 +1027,7 @@ step
     #completewith XroadsTurnins3
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉高克|r 对话
-    .fly Crossroads >>飞往十字路口
+    .fly Crossroads >> 飞往十字路口
     .target 布拉高克
     .subzoneskip 380
     .isQuestComplete 845
@@ -1185,7 +1185,7 @@ step
 step
     .goto The Barrens,43.80,12.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r 对话
-	.vendor	>>出售垃圾物品并修理装备
+	.vendor	>> 出售垃圾物品并修理装备
     .target 弗朗恩·凝血
 step
 	#label Samophlange
@@ -1230,7 +1230,7 @@ step << Druid
     #optional
     .goto Moonglade,52.53,40.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洛甘纳尔|r 对话
-    .train 5211 >>训练你的职业技能
+    .train 5211 >> 训练你的职业技能
     .target 洛甘纳尔
     .xp <16,1
     .xp >18,1
@@ -1238,7 +1238,7 @@ step << Druid
     #label DruidTraining1
     .goto Moonglade,52.53,40.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洛甘纳尔|r 对话
-    .train 1430 >>训练你的职业技能
+    .train 1430 >> 训练你的职业技能
     .target 洛甘纳尔
     .xp <18,1
 step
@@ -1253,7 +1253,7 @@ step
     >>|cRXP_BUY_从他那里购买|r |T133918:0|t[长嘴泥鳅] |cRXP_BUY_|r
     >>|cRXP_BUY_从他那里|r购买|cRXP_BUY_ |T132796:0|t[果汁]|r << Mage/Warlock/Priest/Shaman/Druid
     >>|cRXP_WARN_它们非常便宜，想买多少买多少|r
-    .vendor >>把垃圾物品卖给商人
+    .vendor >> 把垃圾物品卖给商人
     .collect 4592,40,896,1 --Longjaw Mud Snapper (40)
     .collect 1205,40,896,1 << Mage/Warlock/Priest/Shaman/Druid --Melon Juice (40)
     .target 旅店老板维尔雷
@@ -1263,19 +1263,19 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯布特瓦夫|r 对话
     .turnin 902 >>交任务  什么什么平衡器
     .accept 3921 >>接受任务 维妮·布特巴克
-    .accept 1483 >>接受任务菲兹克斯
+    .accept 1483 >> 接受任务菲兹克斯
     .target 斯布特瓦夫
 step
     #completewith Crossroadsturnins2
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉高克|r 对话
-    .fly Crossroads >>飞往十字路口
+    .fly Crossroads >> 飞往十字路口
     .target 布拉高克
     .subzoneskip 380
 step
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫布瑞姆|r 对话
-    .turnin 848 >>交任务 菌类孢子
+    .turnin 848 >> 交任务  菌类孢子
     .target 药剂师赫布瑞姆
     .isQuestComplete 848
 step
@@ -1285,8 +1285,8 @@ step
     .accept 875 >>接受任务 鹰身人首领
     .target +Darsok Swiftdagger
     .goto The Barrens,51.62,30.90
-    .turnin 870 >>交任务  遗忘之池
-    .accept 877 >>接受任务 死水绿洲
+    .turnin 870 >> 交任务  遗忘之池
+    .accept 877 >> 接受任务 死水绿洲
     .target 图加·符文图腾
     .goto The Barrens,52.26,31.93
     .turnin 903 >>交任务  猎杀雌狮
@@ -1305,8 +1305,8 @@ step
     .accept 875 >>接受任务 鹰身人首领
     .target +Darsok Swiftdagger
     .goto The Barrens,51.62,30.90
-    .turnin 870 >>交任务  遗忘之池
-    .accept 877 >>接受任务 死水绿洲
+    .turnin 870 >> 交任务  遗忘之池
+    .accept 877 >> 接受任务 死水绿洲
     .target 图加·符文图腾
     .goto The Barrens,52.26,31.93
     .turnin 903 >>交任务  猎杀雌狮
@@ -1330,7 +1330,7 @@ step
     #completewith CatsEye
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪弗拉克|r 对话
-    .fly Orgrimmar >>飞往奥格瑞玛
+    .fly Orgrimmar >> 飞往奥格瑞玛
     .zoneskip Orgrimmar
     .target 迪弗拉克
 step << !Tauren !Undead
@@ -1343,14 +1343,14 @@ step << !Tauren !Undead
 step << !Tauren !Undead
     .goto Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_多拉斯|r 对话
-    .turnin 6385 >>交任务 双足飞龙驭手多拉斯
-    .accept 6386 >>接受任务 返回十字路口
+    .turnin 6385 >> 交任务 双足飞龙驭手多拉斯
+    .accept 6386 >> 接受任务 返回十字路口
     .target 多拉斯
     .isOnQuest 6385
 step << Shaman
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .train 8019 >>训练你的职业技能
+    .train 8019 >> 训练你的职业技能
     .target 卡德里斯
     .xp <16,1
     .xp >18,1
@@ -1358,7 +1358,7 @@ step << Shaman
     #optional
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .train 913 >>训练你的职业技能
+    .train 913 >> 训练你的职业技能
     .target 卡德里斯
     .xp <18,1
 step
@@ -1369,15 +1369,15 @@ step
 step << Rogue
     .goto Orgrimmar,43.05,53.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_申苏尔|r 对话
-    .train 1804 >>学习 |T136058:0|t[开锁]
-    .train 921 >>学习 |T133644:0|t[偷窃技能]
-    .accept 2379 >>接受任务 赞杜沙
+    .train 1804 >> 学习 |T136058:0|t[开锁]
+    .train 921 >> 学习 |T133644:0|t[偷窃技能]
+    .accept 2379 >> 接受任务 赞杜沙
     .target 申苏尔
 step << Orc Rogue/Troll Rogue
     .goto Orgrimmar,42.74,53.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_瑟祖克|r 对话
-    .turnin 1963 >>交任务 碎手氏族
-    .accept 1858 >>接受任务 碎手氏族
+    .turnin 1963 >> 交任务 碎手氏族
+    .accept 1858 >> 接受任务 碎手氏族
     .target Therzok
 step << Rogue
     .goto Orgrimmar,42.72,52.95
@@ -1416,7 +1416,7 @@ step << Orc Rogue/Troll Rogue
 step << Warlock
     .goto Orgrimmar,48.62,46.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米尔科特|r 对话
-    .train 1455 >>训练你的职业技能
+    .train 1455 >> 训练你的职业技能
     .target 米尔科特
     .xp <16,1
     .xp >18,1
@@ -1424,7 +1424,7 @@ step << Warlock
     #optional
     .goto Orgrimmar,48.62,46.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米尔科特|r 对话
-    .train 1014 >>训练你的职业技能
+    .train 1014 >> 训练你的职业技能
     .target 米尔科特
     .xp <18,1
 step << Warlock
@@ -1443,7 +1443,7 @@ step << Warlock
 step << Warrior
     .goto Orgrimmar,79.91,31.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷兹|r 对话
-    .train 285 >>训练你的职业技能
+    .train 285 >> 训练你的职业技能
     .target 格雷兹·怒拳
     .xp <16,1
     .xp >18,1
@@ -1451,13 +1451,13 @@ step << Warrior
     #optional
     .goto Orgrimmar,79.91,31.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷兹|r 对话
-    .train 8198 >>训练你的职业技能
+    .train 8198 >> 训练你的职业技能
     .target 格雷兹·怒拳
     .xp <18,1
 step << Hunter
     .goto Orgrimmar,66.05,18.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥玛克|r 对话
-    .train 13795 >>训练你的职业技能
+    .train 13795 >> 训练你的职业技能
     .target 奥玛克
     .xp <16,1
     .xp >18,1
@@ -1465,13 +1465,13 @@ step << Hunter
     #optional
     .goto Orgrimmar,66.05,18.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥玛克|r 对话
-    .train 2643 >>训练你的职业技能
+    .train 2643 >> 训练你的职业技能
     .target 奥玛克
     .xp <18,1
 step << Hunter
     .goto Orgrimmar,66.34,14.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_肖祖|r 对话
-    .train 24557 >>训练你的宠物技能
+    .train 24557 >> 训练你的宠物技能
     .target 肖祖
     .xp <18,1
 step << Hunter
@@ -1482,7 +1482,7 @@ step << Hunter
 step << Priest
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_乌尔库|r 对话
-    .train 8102 >>训练你的职业技能
+    .train 8102 >> 训练你的职业技能
     .target 乌尔库
     .xp <16,1
     .xp >18,1
@@ -1490,13 +1490,13 @@ step << Priest
     #optional
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_乌尔库|r 对话
-    .train 970 >>训练你的职业技能
+    .train 970 >> 训练你的职业技能
     .target 乌尔库
     .xp <18,1
 step << Mage
     .goto Orgrimmar,38.36,85.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_皮菲瑞多|r 对话
-    .train 2120 >>训练你的职业技能
+    .train 2120 >> 训练你的职业技能
     .target 皮菲瑞多
     .xp <16,1
     .xp >18,1
@@ -1504,33 +1504,33 @@ step << Mage
     #optional
     .goto Orgrimmar,38.36,85.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_皮菲瑞多|r 对话
-    .train 3140 >>训练你的职业技能
+    .train 3140 >> 训练你的职业技能
     .target 皮菲瑞多
     .xp <18,1
 step
     #completewith next
-    .skill firstaid,40 >>|cRXP_WARN_制作|r |T133685:0|t[亚麻绷带]|cRXP_WARN_直到你的急救技能达到 40 或更高|r
+    .skill firstaid,40 >> |cRXP_WARN_制作|r |T133685:0|t[亚麻绷带]|cRXP_WARN_直到你的急救技能达到 40 或更高|r
     .skill firstaid,<1,1
 step
     .goto Orgrimmar,34.18,84.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_阿诺克|r 对话
-    .train 3276 >>学习 |T133688:0|t[厚亚麻绷带]
+    .train 3276 >> 学习 |T133688:0|t[厚亚麻绷带]
     .target 阿诺克
     .skill firstaid,<1,1
 step
     #completewith next
-    .skill firstaid,50 >>|cRXP_WARN_制造|r |T133688:0|t[厚亚麻绷带] |cRXP_WARN_直至你的技能达到50或更高|r
+    .skill firstaid,50 >> |cRXP_WARN_制造|r |T133688:0|t[厚亚麻绷带] |cRXP_WARN_直至你的技能达到50或更高|r
     .skill firstaid,<1,1
 step
     .goto Orgrimmar,34.18,84.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_阿诺克|r 对话
-    .train 3274 >>学习 中级急救
+    .train 3274 >> 学习 中级急救
     .target 阿诺克
     .skill firstaid,<1,1
 step
     .goto Orgrimmar,26.22,61.58,80,0
     .goto Orgrimmar,15.66,63.33,30,0
-    .goto Orgrimmar,18.03,60.51,50 >>从西侧出口进入贫瘠之地
+    .goto Orgrimmar,18.03,60.51,50 >> 从西侧出口进入贫瘠之地
     .zoneskip The Barrens
     .isOnQuest 896
 step
@@ -1750,7 +1750,7 @@ step
     .mob 巫翼伏击者
 step
     #completewith FoodandWater1
-    .hs >>炉石返回十字路口，北贫瘠之地
+    .hs >> 炉石返回十字路口，北贫瘠之地
     .use 6948
     .cooldown item,6948,>0
     .bindlocation 380,1
@@ -1780,15 +1780,15 @@ step << !Tauren !Undead
     .accept 3281 >>接受任务 被偷走的银币
     .target 加兹罗格
     .goto The Barrens,51.93,30.32
-    .turnin 6386 >>交任务 返回十字路口
+    .turnin 6386 >> 交任务 返回十字路口
     .target +Zargh
     .goto The Barrens,52.62,29.84
     .turnin 881 >>交任务  埃其亚基
     .accept 905 >>接受任务 在迅猛龙的巢穴里
     .target 瑟格拉·黑棘
     .goto The Barrens,52.23,31.00
-    .turnin 875 >>交任务  鹰身人首领
-    .accept 876 >>接受任务 塞瑞娜·血羽
+    .turnin 875 >> 交任务  鹰身人首领
+    .accept 876 >> 接受任务 塞瑞娜·血羽
     .target +Darsok Swiftdagger
     .goto The Barrens,51.62,30.90
     .isOnQuest 6386
@@ -1803,8 +1803,8 @@ step
     .accept 905 >>接受任务 在迅猛龙的巢穴里
     .target 瑟格拉·黑棘
     .goto The Barrens,52.23,31.00
-    .turnin 875 >>交任务  鹰身人首领
-    .accept 876 >>接受任务 塞瑞娜·血羽
+    .turnin 875 >> 交任务  鹰身人首领
+    .accept 876 >> 接受任务 塞瑞娜·血羽
     .target +Darsok Swiftdagger
     .goto The Barrens,51.62,30.90
 step
@@ -1819,7 +1819,7 @@ step
     #completewith TheEscapeTurnIn
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪弗拉克|r 对话
-    .fly Ratchet >>飞往棘齿城
+    .fly Ratchet >> 飞往棘齿城
     .target 迪弗拉克
     .subzoneskip 392
 step << Rogue
@@ -1836,11 +1836,11 @@ step << Rogue
     .collect 5060,1,888,1 --Thieves' Tools (1)
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯布特瓦夫|r 和 |cRXP_FRIENDLY_迪兹维格|r 对话
-    .turnin 863 >>交任务 梅贝尔的隐形水
-    .accept 1483 >>接受任务菲兹克斯
+    .turnin 863 >> 交任务 梅贝尔的隐形水
+    .accept 1483 >> 接受任务菲兹克斯
     .target 斯布特瓦夫
     .goto The Barrens,62.98,37.22
-    .turnin 896 >>交任务  矿工的宝贝
+    .turnin 896 >> 交任务  矿工的宝贝
     .target 码头管理员迪兹维格
     .goto The Barrens,63.35,38.45
     .isQuestComplete 896
@@ -1848,8 +1848,8 @@ step
     #label TheEscapeTurnIn
     .goto The Barrens,62.98,37.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯布特瓦夫|r 对话
-    .turnin 863 >>交任务 梅贝尔的隐形水
-    .accept 1483 >>接受任务菲兹克斯
+    .turnin 863 >> 交任务 梅贝尔的隐形水
+    .accept 1483 >> 接受任务菲兹克斯
     .target 斯布特瓦夫
 step
     .goto The Barrens,62.37,37.62
@@ -1863,7 +1863,7 @@ step
     >>|cRXP_BUY_从他那里购买|r |T133918:0|t[长嘴泥鳅] |cRXP_BUY_|r
     >>|cRXP_BUY_从他那里|r购买|cRXP_BUY_ |T132796:0|t[果汁]|r << Mage/Warlock/Priest/Shaman/Druid
     >>|cRXP_WARN_它们非常便宜，想买多少买多少|r
-    .vendor >>把垃圾物品卖给商人
+    .vendor >> 把垃圾物品卖给商人
     .collect 4592,40,888,1 --Longjaw Mud Snapper (40)
     .collect 1205,20,888,1 << Mage/Warlock/Priest/Shaman/Druid --Melon Juice (20)
     .target 旅店老板维尔雷
@@ -2019,7 +2019,7 @@ step
     .mob 雷角蜥蜴
 step
     #completewith next
-    .goto The Barrens,45.23,58.41,120 >>前往陶拉祖营地
+    .goto The Barrens,45.23,58.41,120 >> 前往陶拉祖营地
     .subzoneskip 378
 step
     #label SetCampTaurajoHS
@@ -2038,14 +2038,14 @@ step
     #completewith Xroadsturnins2
     .goto The Barrens,44.45,59.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_欧姆萨|r 对话
-    .fp Camp Taurajo >>获得陶拉祖营地的飞行点 << !Tauren
+    .fp Camp Taurajo >> 获得陶拉祖营地的飞行点 << !Tauren
     .fly Crossroads >>飞往十字路口
     .subzoneskip 380
     .target 欧姆萨·雷角
 step
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫布瑞姆|r 对话
-    .turnin 848 >>交任务 菌类孢子
+    .turnin 848 >> 交任务  菌类孢子
     .target 药剂师赫布瑞姆
     .isQuestComplete 848
 step
@@ -2055,7 +2055,7 @@ step
     .target 曼科里克
     .goto The Barrens,52.00,31.60
     .turnin 877 >>交任务  死水绿洲
-    .accept 880 >>接受任务 变异的生物
+    .accept 880 >>接受任务变异的生物
     .target 图加·符文图腾
     .goto The Barrens,52.26,31.93
     .turnin 905 >>交任务  在迅猛龙的巢穴里
@@ -2094,16 +2094,16 @@ step
     .isQuestTurnedIn 851
 step
     #completewith next
-    .goto The Barrens,35.26,27.88,100 >>前往石爪山脉
+    .goto The Barrens,35.26,27.88,100 >> 前往石爪山脉
     .zoneskip Stonetalon Mountains
 step
     #map Stonetalon Mountains
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希雷斯|r 和 |cRXP_FRIENDLY_玛卡巴|r 对话
-    .turnin 1061 >>交任务石爪之灵
-    .accept 1062 >>接受任务 地精侵略者
+    .turnin 1061 >> 交任务  石爪之灵
+    .accept 1062 >> 接受任务地精侵略者
     .target 希雷斯·碎石
     .goto The Barrens,35.26,27.88
-    .accept 6548 >>接受任务 为我的村庄复仇
+    .accept 6548 >> 接受任务 为我的村庄复仇
     .target 玛卡巴·扁蹄
     .goto The Barrens,35.19,27.79
 
@@ -2124,7 +2124,7 @@ step
     #optional
     #completewith next
     >>放弃任务 向卡德拉克报到，以避免任务日志问题，稍后你会重新接取
-    .abandon 6541 >>放弃任务 向卡德拉克报到
+    .abandon 6541 >> 放弃任务 向卡德拉克报到
     .isOnQuest 6541
 step
     #loop
@@ -2151,8 +2151,8 @@ step
     #map Stonetalon Mountains
     .goto The Barrens,35.19,27.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛卡巴|r 对话
-    .turnin 6548 >>交任务  为我的村庄复仇
-    .accept 6629 >>接受任务杀死格鲁迪格·黑云
+    .turnin 6548 >> 交任务  为我的村庄复仇
+    .accept 6629 >> 接受任务杀死格鲁迪格·黑云
     .target 玛卡巴·扁蹄
 step
     #completewith next
@@ -2168,7 +2168,7 @@ step
 step
     .goto Stonetalon Mountains,73.48,85.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡雅|r对话
-    .accept 6523,1 >>接受任务 保护卡雅
+    .accept 6523,1 >> 接受任务 保护卡雅
     .target 卡雅·扁蹄
 step
     .goto Stonetalon Mountains,71.82,86.79,40,0
@@ -2181,7 +2181,7 @@ step
 step
     .goto Stonetalon Mountains,71.25,95.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_辛吉拉|r 对话
-    .accept 6461 >>接受任务盗窃的蜘蛛
+    .accept 6461 >> 接受任务盗窃的蜘蛛
     .target 辛吉拉
 step
     #completewith InDeepTrouble
@@ -2204,7 +2204,7 @@ step
     .goto Stonetalon Mountains,49.38,61.68,20,0
     .goto Stonetalon Mountains,48.92,62.71,30,0
     .goto Stonetalon Mountains,48.11,63.88,30,0
-    .goto Stonetalon Mountains,47.21,64.05,30 >>沿左侧小路向上跑
+    .goto Stonetalon Mountains,47.21,64.05,30 >> 沿左侧小路向上跑
     .group
 step
     #label InDeepTrouble
@@ -2224,24 +2224,24 @@ step
 step
     .goto Stonetalon Mountains,47.61,61.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在旅店二楼与 |cRXP_FRIENDLY_基达|r 对话
-    .vendor >>如果有出售的话，|cRXP_BUY_从她那里|r购买|cRXP_BUY_ |T134831:0|t[治疗药水]|r << !Warrior
-    .vendor >>|cRXP_BUY_购买|r |T134831:0|t[治疗药水]|cRXP_BUY_和|r |T134413:0|t[活根草] |cRXP_BUY_如果有的话从她那里购买|r << Warrior
+    .vendor >> 如果有出售的话，|cRXP_BUY_从她那里|r购买|cRXP_BUY_ |T134831:0|t[治疗药水]|r << !Warrior
+    .vendor >> |cRXP_BUY_购买|r |T134831:0|t[治疗药水]|cRXP_BUY_和|r |T134413:0|t[活根草] |cRXP_BUY_如果有的话从她那里购买|r << Warrior
     .target 基达
     .isQuestAvailable 1093
 step
     .goto Stonetalon Mountains,45.13,59.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔姆|r 对话
-    .fp Sun Rock Retreat >>开启烈日石居飞行点
+    .fp Sun Rock Retreat >> 开启烈日石居飞行点
     .target 萨尔姆
     .subzoneskip 460,1
 step
     #completewith next
-    .goto Stonetalon Mountains,58.99,62.60,100 >>前往狂风峭壁
+    .goto Stonetalon Mountains,58.99,62.60,100 >> 前往狂风峭壁
 step
     .goto Stonetalon Mountains,58.99,62.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_其兹|r 对话
-    .turnin 1483 >>交任务  菲兹克斯
-    .accept 1093 >>接受任务 超级收割机6000
+    .turnin 1483 >> 交任务  菲兹克斯
+    .accept 1093 >> 接受任务超级收割机6000
     .target 菲兹克斯
 step
     #completewith next
@@ -2309,7 +2309,7 @@ step << Troll Warrior/Undead Warrior
     .xp <20,1
 step << Orc Warrior
     .goto Stonetalon Mountains,58.22,51.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_维尼克斯|r |cRXP_BUY_对话。购买一把|r |T135423:0|t[大型战斧] |cRXP_BUY_从他那里|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_维尼克斯|r |cRXP_BUY_交谈。购买一把|r |T135423:0|t[大型战斧] |cRXP_BUY_从他那里|r
     .collect 926,1,899,1 --Collect Battle Axe (1)
     .money <0.9784
     .target 维尼克斯
@@ -2421,8 +2421,8 @@ step
 step
     .goto Stonetalon Mountains,58.99,62.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_其兹|r 对话
-    .turnin 1093 >>交任务超级收割机6000
-    .accept 1094 >>接受任务 新的指示
+    .turnin 1093 >> 交任务超级收割机6000
+    .accept 1094 >> 接受任务 新的指示
     .target 菲兹克斯
 step
     #loop
@@ -2444,7 +2444,7 @@ step << Druid
     #optional
     .goto Moonglade,52.53,40.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洛甘纳尔|r 对话
-    .train 1430 >>训练你的职业技能
+    .train 1430 >> 训练你的职业技能
     .target 洛甘纳尔
     .xp <18,1
     .xp >20,1
@@ -2452,12 +2452,12 @@ step << Druid
     #label DruidTraining2
     .goto Moonglade,52.53,40.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洛甘纳尔|r 对话
-    .train 768 >>训练你的职业技能
+    .train 768 >> 训练你的职业技能
     .target 洛甘纳尔
     .xp <20,1
 step
     #completewith next
-    .hs >>使用炉石返回陶拉祖营地
+    .hs >> 使用炉石返回陶拉祖营地
     .use 6948
     .bindlocation 378,1
     .subzoneskip 378
@@ -2615,7 +2615,7 @@ step
     .mob 伊沙姆哈尔
 step
     #completewith BootyTurnin
-    .subzone 392 >>前往棘齿城
+    .subzone 392 >> 前往棘齿城
 step << Rogue
     .goto The Barrens,63.07,36.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维尼克斯|r 对话
@@ -2629,7 +2629,7 @@ step
     .target 加兹鲁维
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯布特瓦夫|r, |cRXP_FRIENDLY_麦伯克|r 和 |cRXP_FRIENDLY_德罗恩|r 对话
-    .turnin 1094 >>交任务 新的指示
+    .turnin 1094 >>交任务新的指示
     .accept 1095 >>接受任务 新的指示
     .target 斯布特瓦夫
     .goto The Barrens,62.98,37.22
@@ -2645,7 +2645,7 @@ step
     .dungeon WC
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯布特瓦夫|r, |cRXP_FRIENDLY_麦伯克|r 和 |cRXP_FRIENDLY_德罗恩|r 对话
-    .turnin 1094 >>交任务 新的指示
+    .turnin 1094 >>交任务新的指示
     .accept 1095 >>接受任务 新的指示
     .target 斯布特瓦夫
     .goto The Barrens,62.98,37.22
@@ -2668,7 +2668,7 @@ step << Warrior
 step << Rogue/Hunter/Warrior/Shaman/Druid
     .goto The Barrens,62.16,38.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维克斯宾德|r 对话
-    .vendor >>如果他有出售的话，从他那里购买 |T132603:0|t[|cRXP_FRIENDLY_野狼护腕|r]
+    .vendor >> 如果他有出售的话，从他那里购买 |T132603:0|t[|cRXP_FRIENDLY_野狼护腕|r]
     .target 维克斯宾德
     .money <0.3515
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
@@ -2700,7 +2700,7 @@ step << Rogue/Hunter/Warrior/Shaman/Druid
 step
     .goto The Barrens,63.09,37.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比戈弗兹|r 对话
-    .accept 959 >>接受任务 港口的麻烦
+    .accept 959 >> 接受任务 港口的麻烦
     .target 起重机操作员比戈弗兹
     .dungeon WC
 step
@@ -2708,7 +2708,7 @@ step
     #completewith XroadsHS2
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉高克|r 对话
-    .fly Crossroads >>飞往十字路口
+    .fly Crossroads >> 飞往十字路口
     .target 布拉高克
     .subzoneskip 380
 step
@@ -2717,7 +2717,7 @@ step
     .target 曼科里克
     .goto The Barrens,51.95,31.58
     .turnin 880 >>交任务  变异的生物
-    .accept 1489 >>接受任务 哈缪尔·符文图腾
+    .accept 1489 >>接受任务哈缪尔·符文图腾
     .accept 3301 >>接受任务茉拉·符文图腾
     .target 图加·符文图腾
     .goto The Barrens,52.26,31.93
@@ -2738,30 +2738,30 @@ step << Shaman
     #completewith next
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪弗拉克|r 对话
-    .fly Orgrimmar >>飞往奥格瑞玛
+    .fly Orgrimmar >> 飞往奥格瑞玛
     .zoneskip Orgrimmar
     .target 迪弗拉克
 step << Shaman
     .goto Orgrimmar,37.96,37.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希尔恩|r 对话
-	.accept 1528 >>接受任务 水之召唤
+	.accept 1528 >> 接受任务水之召唤
     .target 希尔恩·火结
 step << Shaman
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .train 2645 >>训练你的职业技能
+    .train 2645 >> 训练你的职业技能
     .target 卡德里斯
 step << Warlock
     #completewith next
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪弗拉克|r 对话
-    .fly Orgrimmar >>飞往奥格瑞玛
+    .fly Orgrimmar >> 飞往奥格瑞玛
     .zoneskip Orgrimmar
     .target 迪弗拉克
 step << Warlock
     .goto Orgrimmar,48.25,45.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_甘鲁尔|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .accept 1507 >>接受任务 噬魂者
     .target 甘鲁尔·血眼
 step << Warlock
@@ -2772,7 +2772,7 @@ step << Warlock
 step << Warlock
     .goto Orgrimmar,47.05,46.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡祖尔|r 对话
-    .turnin 1507 >>交任务  噬魂者
+    .turnin 1507 >>交任务 噬魂者
     .accept 1508 >>接受任务 盲眼卡祖尔
     .target 卡祖尔
 step << Warlock
@@ -2786,24 +2786,24 @@ step << Warlock
 step << Warlock
     .goto Orgrimmar,37.03,59.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赞卡沙|r 对话
-    .turnin 1508 >>交任务  盲眼卡祖尔
+    .turnin 1508 >>交任务盲眼卡祖尔
     .accept 1509 >>接受任务多格兰的消息
     .target 赞卡沙
 step
     #completewith EnterDM
-    .subzone 1581 >>现在你应该开始寻找前往死亡矿井的小队
+    .subzone 1581 >> 现在你应该开始寻找前往死亡矿井的小队
     .dungeon DM
 step
     #completewith ZepptoSTVforDM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪弗拉克|r 对话
-    .fly Orgrimmar >>飞往奥格瑞玛
+    .fly Orgrimmar >> 飞往奥格瑞玛
     .zoneskip Orgrimmar
     .target 迪弗拉克
     .dungeon DM
 step << Shaman
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .train 8052 >>训练你的职业技能
+    .train 8052 >> 训练你的职业技能
     .target 卡德里斯
     .xp <18,1
     .xp >20,1
@@ -2812,7 +2812,7 @@ step << Shaman
     #optional
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .train 2645 >>训练你的职业技能
+    .train 2645 >> 训练你的职业技能
     .target 卡德里斯
     .xp <20,1
     .dungeon DM
@@ -2851,21 +2851,21 @@ step << Warrior
     #optional
     .goto Orgrimmar,79.91,31.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷兹|r 对话
-    .train 845 >>训练你的职业技能
+    .train 845 >> 训练你的职业技能
     .target 格雷兹·怒拳
     .xp <20,1
     .dungeon DM
 step << Rogue
     .goto Orgrimmar,43.90,54.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥莫克|r 对话
-    .train 1943 >>训练你的职业技能
+    .train 1943 >> 训练你的职业技能
     .target 奥莫克
     .xp <20,1
     .dungeon DM
 step << Warlock
     .goto Undercity,48.47,45.42
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_泽弗洛斯特|r 对话
-    .train 1014 >>训练你的职业技能
+    .train 1014 >> 训练你的职业技能
 	.target Zevrost
     .xp <18,1
     .xp >20,1
@@ -2874,14 +2874,14 @@ step << Warlock
     #optional
     .goto Undercity,48.47,45.42
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_泽弗洛斯特|r 对话
-    .train 706 >>训练你的职业技能
+    .train 706 >> 训练你的职业技能
 	.target Zevrost
     .xp <20,1
     .dungeon DM
 step << Mage
     .goto Orgrimmar,38.36,85.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_皮菲瑞多|r 对话
-    .train 3140 >>训练你的职业技能
+    .train 3140 >> 训练你的职业技能
     .target 皮菲瑞多
     .xp <18,1
     .xp >20,1
@@ -2890,14 +2890,14 @@ step << Mage
     #optional
     .goto Orgrimmar,38.36,85.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_皮菲瑞多|r 对话
-    .train 1953 >>训练你的职业技能
+    .train 1953 >> 训练你的职业技能
     .target 皮菲瑞多
     .xp <20,1
     .dungeon DM
 step << Priest
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_乌尔库|r 对话
-    .train 970 >>训练你的职业技能
+    .train 970 >> 训练你的职业技能
     .target 乌尔库
     .xp <18,1
     .xp >20,1
@@ -2906,7 +2906,7 @@ step << Priest
     #optional
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_乌尔库|r 对话
-    .train 14914 >>训练你的职业技能
+    .train 14914 >> 训练你的职业技能
     .target 乌尔库
     .xp <20,1
     .dungeon DM
@@ -2920,7 +2920,7 @@ step
     .dungeon DM
 step
     #completewith next
-    .zone Durotar >>离开 奥格瑞玛
+    .zone Durotar >> 离开 奥格瑞玛
     .zoneskip Durotar
     .dungeon DM
 step
@@ -2938,31 +2938,31 @@ step
     .goto Stranglethorn Vale,13.49,19.04,60,0
     .goto Westfall,41.08,98.55,60,0
     .goto Westfall,37.10,89.16,40,0
-    .goto Westfall,30.01,86.02,200 >>从格罗姆高营地向西直接游向劣尸维尔暗礁，然后向北游向西部荒野
+    .goto Westfall,30.01,86.02,200 >> 从格罗姆高营地向西直接游向劣尸维尔暗礁，然后向北游向西部荒野
     >>|cRXP_WARN_避开岛屿。为了安全，请跟随路径点!|r
     .dungeon DM
 step
     #completewith next
-    .goto Westfall,30.01,86.02,40 >>前往西部荒野灯塔
+    .goto Westfall,30.01,86.02,40 >> 前往西部荒野灯塔
     .dungeon DM
 step
     .goto Westfall,30.01,86.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_葛瑞森船长|r对话
-    .accept 103 >>接受任务 长明的灯塔
+    .accept 103 >> 接受任务 长明的灯塔
     .target Captain Grayson
     .itemcount 814,5 -- Flask of Oil (5)
     .dungeon DM
 step
     .goto Westfall,30.01,86.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_葛瑞森船长|r对话
-    .turnin 103 >>交任务 长明的灯塔
+    .turnin 103 >> 交任务 长明的灯塔
     .itemcount 814,5 -- Flask of Oil (5)
     .target Captain Grayson
     .dungeon DM
 step
     .goto Westfall,30.01,86.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_葛瑞森船长|r对话
-    .accept 104 >>接受任务 海岸上的威胁
+    .accept 104 >> 接受任务 海岸上的威胁
     .target Captain Grayson
     .dungeon DM
 step
@@ -2976,12 +2976,12 @@ step
 step
     .goto Westfall,30.01,86.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_葛瑞森船长|r对话
-    .turnin 104 >>交任务 海岸上的威胁
+    .turnin 104 >> 交任务 海岸上的威胁
     .target Captain Grayson
     .dungeon DM
 step
     #optional
-    .abandon 103 >>放弃任务 长明的灯塔
+    .abandon 103 >> 放弃任务 长明的灯塔
     .dungeon DM
 step
     #label EnterDM
@@ -2995,11 +2995,11 @@ step
     .goto Eastern Kingdoms,40.74,82.61,15,0
     .goto Eastern Kingdoms,40.63,82.49,15,0
     .goto Eastern Kingdoms,40.50,82.45
-    .zone 291 >>进入死亡矿井副本的传送门。进入副本
+    .zone 291 >> 进入死亡矿井副本的传送门。进入副本
     .dungeon DM
 step
-    .hs >>完成死亡矿井后，炉石回到贫瘠之地
-    .zone The Barrens >>抵达贫瘠之地
+    .hs >> 完成死亡矿井后，炉石回到贫瘠之地
+    .zone The Barrens >> 抵达贫瘠之地
     .use 6948
     .dungeon DM
 step
@@ -3025,7 +3025,7 @@ step << Warlock
     #completewith TurninDogran
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉高克|r 对话
-    .fly Crossroads >>飞往十字路口
+    .fly Crossroads >> 飞往十字路口
     .target 布拉高克
     .subzoneskip 392,1
     .dungeon WC
@@ -3033,7 +3033,7 @@ step << Warlock
     #completewith TurninDogran
     .goto Orgrimmar,45.13,63.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多拉斯|r 对话
-	.fly Crossroads >>飞往十字路口
+	.fly Crossroads >> 飞往十字路口
     .zoneskip Orgrimmar,1
     .target 多拉斯
 step << Warlock
@@ -3048,7 +3048,7 @@ step << Shaman
     #completewith CallofWater01
     .goto Orgrimmar,45.13,63.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多拉斯|r 对话
-    .fly Ratchet >>飞往棘齿城
+    .fly Ratchet >> 飞往棘齿城
     .target 多拉斯
     .zoneskip Orgrimmar,1
 step << Shaman
@@ -3056,7 +3056,7 @@ step << Shaman
     #completewith CallofWater01
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉高克|r 对话
-    .fly Ratchet >>飞往棘齿城
+    .fly Ratchet >> 飞往棘齿城
     .target 布拉高克
     .subzoneskip 392,1
     .dungeon DM
@@ -3065,27 +3065,27 @@ step << Shaman
     .goto The Barrens,65.83,43.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊斯伦|r 对话
     .turnin 1528 >>交任务水之召唤
-    .accept 1530 >>接受任务 水之召唤
+    .accept 1530 >>接受任务水之召唤
     .target 水之先知伊斯伦
 step << Shaman
     #completewith next
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉高克|r 对话
-    .fly Crossroads >>飞往十字路口
+    .fly Crossroads >> 飞往十字路口
     .target 布拉高克
     .subzoneskip 380
 step << !Shaman
     #completewith next
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉高克|r 对话
-    .fly Crossroads >>飞往十字路口
+    .fly Crossroads >> 飞往十字路口
     .target 布拉高克
     .subzoneskip 392,1
 step
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫布瑞姆|r 对话
     >>|cRXP_FRIENDLY_赫布瑞姆|r |cRXP_WARN_会开启一个 45 分钟的限时任务|r
-    .accept 853 >>接受任务 药剂师扎玛
+    .accept 853 >> 接受任务 药剂师扎玛
     .target 药剂师赫布瑞姆
     .isQuestTurnedIn 848
     .isQuestAvailable 853
@@ -3098,7 +3098,7 @@ step << !Warlock !Shaman
     #completewith TribesTurnin
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉高克|r 对话
-    .fly Camp Taurajo >>飞往陶拉祖营地
+    .fly Camp Taurajo >> 飞往陶拉祖营地
     .target 布拉高克
     .subzoneskip 392,1
     .dungeon WC
@@ -3106,19 +3106,20 @@ step << Shaman
     #completewith TribesTurnin
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉高克|r 对话
-    .fly Camp Taurajo >>飞往陶拉祖营地
+    .fly Camp Taurajo >> 飞往陶拉祖营地
     .subzoneskip 378
     .target 布拉高克
 step << !Shaman
     #completewith TribesTurnin
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪弗拉克|r 对话
-    .fly Camp Taurajo >>飞往陶拉祖营地
+    .fly Camp Taurajo >> 飞往陶拉祖营地
     .target 迪弗拉克
     .subzoneskip 380,1
 step
     .goto The Barrens,44.55,59.27
-    >>击杀 |cRXP_ENEMY_刺背野猪人|r。并拾取它们的 |T134128:0|t[|cRXP_LOOT_血岩碎片|r] Shard (1)
+    >>击杀 |cRXP_ENEMY_刺背野猪人|r。并拾取它们的 |T134128:0|t[|cRXP_LOOT_血岩碎片|r]
+    .collect 5075,1,5052,1 --Blood Shard (1)
     .mob 刺背寻水者
     .mob 刺背织棘者
     .mob 刺背地卜师
@@ -3126,8 +3127,8 @@ step
     #label TribesTurnin
     .goto The Barrens,44.55,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_碎牙|r 对话
-    .turnin 878 >>交任务野猪人的内战
-    .accept 5052 >>接受任务阿迦玛甘的血岩碎片
+    .turnin 878 >>交任务  野猪人的内战
+    .accept 5052 >>接受任务 阿迦玛甘的血岩碎片
     .turnin 5052 >>交任务阿迦玛甘的血岩碎片
     .target 碎牙
     .addquestitem 5075,5052
@@ -3183,7 +3184,7 @@ step
     .target 乔恩·星眼
 step << Shaman
     #completewith CallofWater2
-    .goto The Barrens,43.42,77.41,60>>向南前往 |cRXP_FRIENDLY_布瑞恩|r
+    .goto The Barrens,43.42,77.41,60>> 向南前往 |cRXP_FRIENDLY_布瑞恩|r
 step << Shaman
     #completewith next
     >>击杀一只 |cRXP_ENEMY_雷鹰|r。拾取它的 |cRXP_LOOT_翅膀|r
@@ -3196,17 +3197,17 @@ step << Shaman
     .goto The Barrens,43.42,77.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布瑞恩|r 对话
     .turnin 1530 >>交任务水之召唤
-    .accept 1535 >>接受任务 水之召唤
+    .accept 1535 >>接受任务水之召唤
     .target 布瑞恩
 step << Shaman
     .goto The Barrens,44.22,76.75
-    .use 7766 >>|cRXP_WARN_在布瑞恩的小屋下方的水坑中填满你的|r |T132825:0|t[空的棕色水囊] |cRXP_WARN_|r
+    .use 7766 >> |cRXP_WARN_在布瑞恩的小屋下方的水坑中填满你的|r |T132825:0|t[空的棕色水囊] |cRXP_WARN_|r
     .complete 1535,1 --Filled Brown Waterskin (1)
 step << Shaman
     .goto The Barrens,43.42,77.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布瑞恩|r 对话
     .turnin 1535 >>交任务水之召唤
-    .accept 1536 >>接受任务 水之召唤
+    .accept 1536 >>接受任务水之召唤
     .target 布瑞恩
 step << Shaman
     #completewith ThunderhawkTurnin
@@ -3275,7 +3276,7 @@ step << Rogue
 step
     .goto Thunder Bluff,47.12,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_彻斯姆|r 对话
-    .bankdeposit 5075 >>存入你的 |T134128:0|t[血岩碎片]
+    .bankdeposit 5075 >> 存入你的 |T134128:0|t[血岩碎片]
     .target 彻斯姆
 step
     .goto Thunder Bluff,45.83,64.74
@@ -3287,20 +3288,20 @@ step
 step
     #completewith next
     .goto Thunder Bluff,28.14,32.97,40,0
-    .goto Thunder Bluff,28.51,28.95,10 >>前往灵魂高地，然后进入幻象之池
+    .goto Thunder Bluff,28.51,28.95,10 >> 前往灵魂高地，然后进入幻象之池
 step
     #sticky
     #completewith DeathDUPpickup
     .goto Thunder Bluff,28.55,25.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克拉莉斯|r 对话
-    .accept 264 >>接受任务 至死方休
+    .accept 264 >> 接受任务 至死方休
     .target 克拉莉斯·弗斯特
     .dungeon !WC
 step
     .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_药剂师扎玛|r 对话
-    .turnin 853 >>交任务药剂师扎玛
-    .accept 962 >>接受任务 毒蛇花
+    .turnin 853 >> 交任务药剂师扎玛
+    .accept 962 >> 接受任务 毒蛇花
     .target 药剂师扎玛
     .isOnQuest 853
     .dungeon WC
@@ -3308,7 +3309,7 @@ step
     #optional
     .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_药剂师扎玛|r 对话
-    .accept 962 >>接受任务 毒蛇花
+    .accept 962 >> 接受任务 毒蛇花
     .target 药剂师扎玛
     .dungeon WC
 step
@@ -3316,20 +3317,20 @@ step
     #label ZamahTurnin
     .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_药剂师扎玛|r 对话
-    .turnin 853 >>交任务药剂师扎玛
+    .turnin 853 >> 交任务药剂师扎玛
     .target 药剂师扎玛
     .isOnQuest 853
 step << Priest
     .goto Thunder Bluff,25.31,15.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦尔斯|r 对话
-    .accept 5644 >>接受任务 噬灵瘟疫 << Undead Priest
-    .accept 5642 >>接受任务 暗影守卫 << Troll Priest
-    .trainer >>训练你的职业技能
+    .accept 5644 >> 接受任务 噬灵瘟疫 << Undead Priest
+    .accept 5642 >> 接受任务 暗影守卫 << Troll Priest
+    .trainer >> 训练你的职业技能
     .target 麦尔斯·威尔什
 step << Mage
     .goto Thunder Bluff,22.74,14.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大法师山姆|r 对话
-    .train 12051 >>训练你的职业技能
+    .train 12051 >> 训练你的职业技能
     .target 大法师山姆
     .xp <20,1
     .xp >22,1
@@ -3337,7 +3338,7 @@ step << Mage
     #optional
     .goto Thunder Bluff,22.74,14.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_大法师山姆|r 对话
-    .train 2138 >>训练你的职业技能
+    .train 2138 >> 训练你的职业技能
     .target 大法师山姆
     .xp <22,1
 step
@@ -3346,7 +3347,7 @@ step
 step << Shaman
     .goto Thunder Bluff,23.64,18.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_提戈尔|r 对话
-    .train 2645 >>训练你的职业技能
+    .train 2645 >> 训练你的职业技能
     .target 提戈尔·逐星
     .xp <20,1
     .xp >22,1
@@ -3354,19 +3355,19 @@ step << Shaman
     #optional
     .goto Thunder Bluff,23.64,18.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_提戈尔|r 对话
-    .train 8498 >>训练你的职业技能
+    .train 8498 >> 训练你的职业技能
     .target 提戈尔·逐星
     .xp <22,1
 step
     #completewith next
-    .skill firstaid,80 >>|cRXP_WARN_制造|r |T133688:0|t[厚亚麻绷带] |cRXP_WARN_直至你的技能达到80或更高|r
+    .skill firstaid,80 >> |cRXP_WARN_制造|r |T133688:0|t[厚亚麻绷带] |cRXP_WARN_直至你的技能达到80或更高|r
     .skill firstaid,<1,1
 step
     .goto Thunder Bluff,29.68,21.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_潘德|r 对话
     >>|cRXP_WARN_如果你没有足够的|r |T132889:0|t[亚麻布] |cRXP_WARN_将技能提升到 80，请跳过此步骤|r
-    .train 3277 >>学习 |T133684:0|t[绒线绷带]
-    .train 7934 >>学习 |T134437:0|t[抗毒药剂] << Rogue
+    .train 3277 >> 学习 |T133684:0|t[绒线绷带]
+    .train 7934 >> 学习 |T134437:0|t[抗毒药剂] << Rogue
     .target 潘德·缚石
     .skill firstaid,<1,1
 step << Rogue
@@ -3376,30 +3377,30 @@ step << Rogue
     .itemcount 1475,1
 step
     #completewith next
-    .goto Thunder Bluff,69.88,30.90,80 >>前往长者高地
+    .goto Thunder Bluff,69.88,30.90,80 >> 前往长者高地
 step
     .goto Thunder Bluff,78.61,28.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈缪尔|r 对话
-    .turnin 1489 >>交任务  哈缪尔·符文图腾
-    .accept 1490 >>接受任务纳拉·蛮鬃
+    .turnin 1489 >> 交任务  哈缪尔·符文图腾
+    .accept 1490 >> 接受任务 纳拉·蛮鬃
     .target 大德鲁伊哈缪尔·符文图腾
 step
     .goto Thunder Bluff,75.65,31.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳拉|r 对话
-    .turnin 1490 >>交任务  纳拉·蛮鬃
-    .accept 914 >>接受任务 尖牙德鲁伊
+    .turnin 1490 >> 交任务  纳拉·蛮鬃
+    .accept 914 >> 接受任务 尖牙德鲁伊
     .target 纳拉·蛮鬃
     .dungeon WC
 step
     .goto Thunder Bluff,75.65,31.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳拉|r 对话
-    .turnin 1490 >>交任务  纳拉·蛮鬃
+    .turnin 1490 >> 交任务  纳拉·蛮鬃
     .target 纳拉·蛮鬃
 step << Druid
     .goto Thunder Bluff,76.48,27.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图拉克|r 对话
-    .trainer >>训练你的职业技能
-    .accept 27 >>接受任务必修的课程
+    .trainer >> 训练你的职业技能
+    .accept 27 >> 接受任务必修的课程
     .target 图拉克·符文图腾
 step << Druid
     #completewith next
@@ -3408,8 +3409,8 @@ step << Druid
 step << Druid
     .goto Moonglade,56.21,30.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特|r 对话
-    .turnin 27 >>交任务 必修的课程
-    .accept 28 >>接受任务 湖中试炼
+    .turnin 27 >> 交任务必修的课程
+    .accept 28 >> 接受任务湖中试炼
     .target 德迪利特·星焰
 step << Druid
     #completewith next
@@ -3418,18 +3419,18 @@ step << Druid
     >>|cRXP_WARN_在到达饰品正上方之前不要下水|r
 step << Druid
     .goto Moonglade,36.40,42.01
-    .cast 19719 >>|cRXP_WARN_在雷姆洛斯神殿使用|r |T134125:0|t[神殿灵珠] |cRXP_WARN_|r
+    .cast 19719 >> |cRXP_WARN_在雷姆洛斯神殿使用|r |T134125:0|t[神殿灵珠] |cRXP_WARN_|r
     .complete 28,1 -- Complete the Trial of the Lake
     .use 15877
 step << Druid
     .goto Moonglade,36.52,40.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔加里|r 对话
-    .turnin 28 >>交任务 湖中试炼
-    .accept 30 >>接受任务 海狮试炼
+    .turnin 28 >> 交任务 湖中试炼
+    .accept 30 >> 接受任务 海狮试炼
     .target 塔加里
 step << Druid
     #completewith FlyXroads2
-    .hs >>使用炉石返回雷霆崖
+    .hs >> 使用炉石返回雷霆崖
     .use 6948
     .cooldown item,6948,>0
     .dungeon !WC
@@ -3437,7 +3438,7 @@ step << Druid
     #completewith FlyXroads2
     .goto Moonglade,44.29,45.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布瑟恩|r 对话
-    .fly Thunder Bluff >>飞往雷霆崖
+    .fly Thunder Bluff >> 飞往雷霆崖
     .target 布瑟恩·草风
     .zoneskip Thunder Bluff
     .dungeon WC
@@ -3445,18 +3446,18 @@ step << Druid
     #completewith FlyXroads2
     .goto Moonglade,44.29,45.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布瑟恩|r 对话
-    .fly Thunder Bluff >>飞往雷霆崖
+    .fly Thunder Bluff >> 飞往雷霆崖
     .target 布瑟恩·草风
     .cooldown item,6948,<0
     .zoneskip Thunder Bluff
     .dungeon !WC
 step << Hunter
     #completewith HunterTraining2
-    .goto Thunder Bluff,61.31,78.25,60 >>前往猎人高地
+    .goto Thunder Bluff,61.31,78.25,60 >> 前往猎人高地
 step << Hunter
     .goto Thunder Bluff,59.13,86.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乌瑞克|r 对话
-    .train 5118 >>训练你的职业技能
+    .train 5118 >> 训练你的职业技能
     .target 乌瑞克·雷角
     .xp <20,1
     .xp >22,1
@@ -3465,21 +3466,21 @@ step << Hunter
     #optional
     .goto Thunder Bluff,59.13,86.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乌瑞克|r 对话
-    .train 5118 >>训练你的职业技能
+    .train 5118 >> 训练你的职业技能
     .target 乌瑞克·雷角
     .xp <22,1
 step << Hunter
     .goto Thunder Bluff,54.07,84.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫苏瓦|r 对话
-    .train 24494 >>训练你的宠物技能
+    .train 24494 >> 训练你的宠物技能
     .target 赫苏瓦·雷角
 step << Warrior
     #completewith next
-    .goto Thunder Bluff,61.31,78.25,60 >>前往猎人高地
+    .goto Thunder Bluff,61.31,78.25,60 >> 前往猎人高地
 step << Warrior
     .goto Thunder Bluff,57.27,87.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托姆|r 对话
-    .train 845 >>训练你的职业技能
+    .train 845 >> 训练你的职业技能
     .accept 1823 >>接受任务 和鲁迦对话
     .target 托姆·暴怒图腾
 step << Rogue
@@ -3578,7 +3579,7 @@ step << Hunter
 step
     #sticky
     #completewith EnterWC
-    .subzone 718 >>现在你应该开始寻找哀嚎洞穴的小队
+    .subzone 718 >> 现在你应该开始寻找哀嚎洞穴的小队
     .dungeon WC
 step
     #label FlyXroads2
@@ -3589,7 +3590,7 @@ step
     .zoneskip The Barrens
 step
     #completewith next
-    .goto The Barrens,45.66,40.34,120 >>前往甜水绿洲
+    .goto The Barrens,45.66,40.34,120 >> 前往甜水绿洲
     .isQuestTurnedIn 851
 step
     #loop
@@ -3633,7 +3634,7 @@ step
     .unitscan 赫兹鲁尔·血印
     .isQuestTurnedIn 851
 step
-    .goto The Barrens,46.15,36.93,100 >>前往哀嚎洞穴
+    .goto The Barrens,46.15,36.93,100 >> 前往哀嚎洞穴
     .isOnQuest 914
     .dungeon WC
 step
@@ -3649,10 +3650,10 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳尔帕克|r 和 |cRXP_FRIENDLY_厄布鲁|r 对话
     >>|cRXP_WARN_他们位于哀嚎洞穴入口上方|r
-    .accept 1486 >>接受任务 变异皮革
+    .accept 1486 >> 接受任务 变异皮革
     .target 纳尔帕克
     .goto Kalimdor,51.91,55.42
-    .accept 1487 >>接受任务 清除变异者
+    .accept 1487 >> 接受任务 清除变异者
     .goto Kalimdor,51.92,55.44
     .target 厄布鲁
     .dungeon WC
@@ -3710,7 +3711,7 @@ step
     .goto Kalimdor,51.89,54.77,20,0
     .goto Kalimdor,51.95,54.56,20,0
     .goto Kalimdor,52.27,54.65,30,0
-    .goto Kalimdor,52.40,55.20,30 >>进入哀嚎洞穴副本传送门，并进入副本
+    .goto Kalimdor,52.40,55.20,30 >> 进入哀嚎洞穴副本传送门，并进入副本
     .dungeon WC
 step
     #optional
@@ -3778,7 +3779,7 @@ step
     >>一旦到达 |cRXP_FRIENDLY_纳拉雷克斯|r，你将遭遇两波敌人攻击，最终面对 |cRXP_ENEMY_吞噬者穆塔努斯|r
     >>击杀他并拾取 |T135229:0|t[|cRXP_LOOT_发光的碎片|r]，用它来开始任务
     .collect 10441,1 --Collect Glowing Shard (x1)
-    .accept 6981 >>接受任务 发光的碎片
+    .accept 6981 >> 接受任务 发光的碎片
     .use 10441
     .mob 吞噬者穆坦努斯
     .dungeon WC
@@ -3891,7 +3892,7 @@ step
     .dungeon WC
 step
     #completewith GlowingShardRP
-    .hs >>炉石返回棘齿城
+    .hs >> 炉石返回棘齿城
     .bindlocation 392,1
     .subzoneskip 392
     .use 6948
@@ -3899,7 +3900,7 @@ step
 step
     .goto The Barrens,63.09,37.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比戈弗兹|r 对话
-    .turnin 959 >>交任务 港口的麻烦
+    .turnin 959 >> 交任务 港口的麻烦
     .target 起重机操作员比戈弗兹
     .isQuestComplete 959
     .dungeon WC
@@ -3912,7 +3913,7 @@ step
     .dungeon WC
 step
     .use 10441 >>使用 |T135229:0|t[发光的碎片|cRXP_LOOT_] 来激发任务|r
-    .accept 6981 >>接受任务 发光的碎片
+    .accept 6981 >> 接受任务 发光的碎片
     .itemcount 10441,1
     .dungeon WC
 step
@@ -3927,7 +3928,7 @@ step
 step
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉高克|r 对话
-    .fly Crossroads >>飞往十字路口
+    .fly Crossroads >> 飞往十字路口
     .target 布拉高克
     .subzoneskip 380
     .isOnQuest 6981
@@ -3937,30 +3938,30 @@ step
     .goto The Barrens,50.49,34.36,20,0
     .goto The Barrens,49.61,34.54,20,0
     .goto The Barrens,49.14,34.02,20,0
-    .goto The Barrens,48.18,32.78,50 >>沿着山路向上前进
+    .goto The Barrens,48.18,32.78,50 >> 沿着山路向上前进
     .dungeon WC
 step
     .goto The Barrens,48.18,32.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲拉|r 对话
-    .turnin 6981 >>交任务 发光的碎片
-    .accept 3369 >>接受任务 在噩梦中
+    .turnin 6981 >> 交任务 发光的碎片
+    .accept 3369 >> 接受任务 在噩梦中
     .target 菲拉·古风
     .isOnQuest 6981
     .dungeon WC
 step
     .goto The Barrens,48.18,32.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲拉|r 对话
-    .accept 3369 >>接受任务 在噩梦中
+    .accept 3369 >> 接受任务 在噩梦中
     .target 菲拉·古风
     .isQuestTurnedIn 6981
     .dungeon WC
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳尔帕克|r 和 |cRXP_FRIENDLY_厄布鲁|r 对话
     >>|cRXP_WARN_他们位于哀嚎洞穴入口上方|r
-    .turnin 1486 >>交任务 变异皮革
+    .turnin 1486 >> 交任务 变异皮革
     .target 纳尔帕克
     .goto Kalimdor,51.91,55.42
-    .turnin 1487 >>交任务 清除变异者
+    .turnin 1487 >> 交任务 清除变异者
     .target 厄布鲁
     .goto Kalimdor,51.92,55.44
     .isQuestComplete 1487
@@ -3970,7 +3971,7 @@ step
     .goto Kalimdor,51.92,55.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄布鲁|r 对话
     >>|cRXP_WARN_他位于哀嚎洞穴入口上方|r
-    .turnin 1487 >>交任务 清除变异者
+    .turnin 1487 >> 交任务 清除变异者
     .target 厄布鲁
     .isQuestComplete 1487
     .dungeon WC
@@ -3978,7 +3979,7 @@ step
     .goto Kalimdor,51.91,55.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_纳尔帕克|r 对话
     >>|cRXP_WARN_他位于哀嚎洞穴入口上方|r
-    .turnin 1486 >>交任务 变异皮革
+    .turnin 1486 >> 交任务 变异皮革
     .target 纳尔帕克
     .isQuestComplete 1486
     .dungeon WC
@@ -4000,7 +4001,7 @@ step
 step
     .goto Thunder Bluff,78.61,28.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈缪尔|r 对话
-    .turnin 3369 >>交任务  在噩梦中
+    .turnin 3369 >> 交任务  在噩梦中
     .target 大德鲁伊哈缪尔·符文图腾
     .isOnQuest 3369
     .dungeon WC
@@ -4014,7 +4015,7 @@ step
 step
     .goto Thunder Bluff,28.55,25.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_克拉莉斯|r 对话
-    .accept 264 >>接受任务 至死方休
+    .accept 264 >> 接受任务 至死方休
     .target 克拉莉斯·弗斯特
     .dungeon WC
 step
@@ -4081,7 +4082,7 @@ step
 step
     #optional
     >>如果你此时还没有完成 半人马护腕任务 ，放弃该任务
-    .abandon 855 >>放弃任务 半人马护腕
+    .abandon 855 >> 放弃任务 半人马护腕
     .isOnQuest 855
 step
     #label SerenaKill
@@ -4095,16 +4096,16 @@ step
 step
     #label ApothecaryPickup
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索克|r 和 |cRXP_FRIENDLY_科兰|r 对话
-    .turnin 876 >>交任务 塞瑞娜·血羽
-    .accept 1060 >>接受任务 写给金吉尔的信
+    .turnin 876 >> 交任务 塞瑞娜·血羽
+    .accept 1060 >> 接受任务 写给金吉尔的信
     .target +Darsok Swiftdagger
     .goto The Barrens,51.62,30.90
-    .accept 868 >>接受任务 蝎卵
+    .accept 868 >> 接受任务 蝎卵
     .target +Korran
     .goto The Barrens,51.10,29.60
 step
     #completewith next
-    .zone Stonetalon Mountains >>前往石爪山脉
+    .zone Stonetalon Mountains >> 前往石爪山脉
     .zoneskip Stonetalon Mountains
 step
     #map Stonetalon Mountains
@@ -4112,10 +4113,10 @@ step
     .turnin 1062 >>交任务地精侵略者
     .timer 4,地精侵略者 剧情
     .accept 1063 >>接受任务 巫婆长老
-    .accept 1068 >>接受任务伐木机
+    .accept 1068 >> 接受任务伐木机
     .target 希雷斯·碎石
     .goto The Barrens,35.26,27.88
-    .turnin 6629 >>交任务杀死格鲁迪格·黑云
+    .turnin 6629 >>交任务  杀死格鲁迪格·黑云
     .turnin 6523 >>交任务保护卡雅
     .accept 6401 >>接受任务卡雅还活着
     .target 玛卡巴·扁蹄
@@ -4124,35 +4125,35 @@ step
     #completewith next
     .goto Stonetalon Mountains,82.57,98.63,60,0
     .goto Stonetalon Mountains,80.10,98.20,40,0
-    .goto Stonetalon Mountains,77.17,98.61,40 >>沿着左侧的道路向上前进
+    .goto Stonetalon Mountains,77.17,98.61,40 >> 沿着左侧的道路向上前进
 step
     .goto Stonetalon Mountains,74.54,97.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_金吉尔|r 对话
-    .turnin 1060 >>交任务  写给金吉尔的信
-    .accept 1058 >>接受任务 金吉尔的森林魔法
+    .turnin 1060 >> 交任务  写给金吉尔的信
+    .accept 1058 >> 接受任务 金吉尔的森林魔法
     .target 巫医金吉尔
 step << Warlock
     .goto Stonetalon Mountains,73.25,95.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_肯兹格拉|r 对话
     .turnin 1510 >>交任务  多格兰的消息
-    .accept 1511 >>接受任务肯兹格拉的伤药
+    .accept 1511 >>接受任务 肯兹格拉的伤药
     .target 肯兹格拉
 step
     .goto Stonetalon Mountains,71.25,95.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_辛吉拉|r 对话
-    .turnin 6461 >>交任务  盗窃的蜘蛛
+    .turnin 6461 >>交任务盗窃的蜘蛛
     .target 辛吉拉
 step << skip
     .goto Stonetalon Mountains,74.69,98.10
     .goto Thunder Bluff,56.65,18.96,30 >>|cRXP_WARN_跳跃到笼子上，通过登出并重新登入来执行返回角色选择跳过|r
-    .link https://www.youtube.com/watch?v=cp2YI86AO4Y&ab >>https://www.youtube.com/watch?v=cp2YI86AO4Y&ab >> |cRXP_WARN_点击此处查看示例|r
+    .link https://www.youtube.com/watch?v=cp2YI86AO4Y&ab >> |cRXP_WARN_点击此处查看示例|r
     .solo
 step
     #completewith next
     .goto Stonetalon Mountains,67.41,87.92,60,0
     .goto Stonetalon Mountains,65.93,89.87,40,0
     .goto Stonetalon Mountains,63.66,93.80,40,0
-    .goto Stonetalon Mountains,61.75,93.06,40 >>进入滚岩峡谷，然后进入北边的洞穴
+    .goto Stonetalon Mountains,61.75,93.06,40 >> 进入滚岩峡谷，然后进入北边的洞穴
     .group
 step
     .goto Stonetalon Mountains,60.16,90.92,30,0
@@ -4167,12 +4168,12 @@ step << skip
     #completewith next
     .goto Stonetalon Mountains,64.62,93.86,25,0
     .goto Stonetalon Mountains,64.80,95.27,20,0
-    .goto Stonetalon Mountains,64.32,95.84,15 >>进入滚岩峡谷的南方洞穴
+    .goto Stonetalon Mountains,64.32,95.84,15 >> 进入滚岩峡谷的南方洞穴
     .group
 step << skip
     .goto Stonetalon Mountains,64.28,96.60
     .goto Thunder Bluff,56.65,18.96,30 >>|cRXP_WARN_跳上右边的岩石。通过调整角色位置使其看起来像在漂浮，然后登出再登入，执行登出跳过|r
-    .link https://www.youtube.com/watch?v=j_DRDkqWeuE&ab >>https://www.youtube.com/watch?v=j_DRDkqWeuE&ab >> |cRXP_WARN_点击此处查看示例|r
+    .link https://www.youtube.com/watch?v=j_DRDkqWeuE&ab >> |cRXP_WARN_点击此处查看示例|r
     .group
 step
     #completewith next
@@ -4181,7 +4182,7 @@ step
     #label KayaLives
     .goto Stonetalon Mountains,47.46,58.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔姆拉|r 对话
-    .turnin 6401 >>交任务 卡雅还活着
+    .turnin 6401 >>交任务  卡雅还活着
     .target 塔姆拉·荒原
 step
     .goto Stonetalon Mountains,47.47,62.13
@@ -4194,8 +4195,8 @@ step
 step
     .goto Stonetalon Mountains,47.61,61.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在旅店二楼与 |cRXP_FRIENDLY_基达|r 对话
-    .vendor >>如果有出售的话，|cRXP_BUY_从她那里|r购买|cRXP_BUY_ |T134831:0|t[治疗药水]|r << !Warrior
-    .vendor >>|cRXP_BUY_购买|r |T134831:0|t[治疗药水]|cRXP_BUY_和|r |T134413:0|t[活根草] |cRXP_BUY_如果有的话从她那里购买|r << Warrior
+    .vendor >> 如果有出售的话，|cRXP_BUY_从她那里|r购买|cRXP_BUY_ |T134831:0|t[治疗药水]|r << !Warrior
+    .vendor >> |cRXP_BUY_购买|r |T134831:0|t[治疗药水]|cRXP_BUY_和|r |T134413:0|t[活根草] |cRXP_BUY_如果有的话从她那里购买|r << Warrior
     .target 基达
     .isQuestAvailable 6442
 step
@@ -4203,7 +4204,7 @@ step
     .goto Stonetalon Mountains,49.38,61.68,30,0
     .goto Stonetalon Mountains,48.92,62.71,30,0
     .goto Stonetalon Mountains,48.11,63.88,30,0
-    .goto Stonetalon Mountains,47.21,64.05,30 >>沿右侧小路向上跑
+    .goto Stonetalon Mountains,47.21,64.05,30 >> 沿右侧小路向上跑
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_苏纳曼|r 和 |cRXP_FRIENDLY_摩罗加尔|r 对话
     .accept 6562 >>接受任务 帮助耶努萨克雷
@@ -4251,7 +4252,7 @@ step
     .goto Stonetalon Mountains,67.41,87.92,60,0
     .goto Stonetalon Mountains,65.93,89.87,40,0
     .goto Stonetalon Mountains,63.66,93.80,40,0
-    .goto Stonetalon Mountains,61.75,93.06,40 >>进入滚岩峡谷，然后进入北边的洞穴
+    .goto Stonetalon Mountains,61.75,93.06,40 >> 进入滚岩峡谷，然后进入北边的洞穴
     .group
     .isOnQuest 6481
 step
@@ -4265,13 +4266,13 @@ step
 step << skip
     .goto Stonetalon Mountains,58.24,89.81
     .goto Stonetalon Mountains,57.57,61.99,30 >>|cRXP_WARN_跳跃到一个黄色蘑菇上，通过登出再登入执行返回角色选择跳过。如果你没有成功就跑回烈日石居|r
-    .link https://www.youtube.com/watch?v=DGsL3FX9_TE&ab >>https://www.youtube.com/watch?v=DGsL3FX9_TE&ab >> |cRXP_WARN_点击此处查看示例|r
+    .link https://www.youtube.com/watch?v=DGsL3FX9_TE&ab >> |cRXP_WARN_点击此处查看示例|r
     .group
     .isQuestComplete 6481
     --VV Jump logout required for it to work, remove if it doesn't work on new servers
 step
     #completewith EarthenAriseTurnin
-    .goto Stonetalon Mountains,49.38,61.68,50 >>前往烈日石居
+    .goto Stonetalon Mountains,49.38,61.68,50 >> 前往烈日石居
     .group
     .isQuestComplete 6481
 step
@@ -4279,7 +4280,7 @@ step
     .goto Stonetalon Mountains,49.38,61.68,20,0
     .goto Stonetalon Mountains,48.92,62.71,30,0
     .goto Stonetalon Mountains,48.11,63.88,30,0
-    .goto Stonetalon Mountains,47.21,64.05,30 >>沿左侧小路向上跑
+    .goto Stonetalon Mountains,47.21,64.05,30 >> 沿左侧小路向上跑
     .group
     .isQuestComplete 6481
 step
@@ -4293,17 +4294,17 @@ step
 step
     .goto Stonetalon Mountains,47.20,61.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马格兰|r 对话
-	.turnin 6284 >>交任务  贝瑟莱斯
+	.turnin 6284 >> 交任务  贝瑟莱斯
     .target 马格兰
 	.isQuestComplete 6284
     .group
 step
     #completewith next
-    .goto Stonetalon Mountains,58.99,62.60,100 >>前往狂风峭壁
+    .goto Stonetalon Mountains,58.99,62.60,100 >> 前往狂风峭壁
 step
     .goto Stonetalon Mountains,58.99,62.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_其兹|r 对话
-    .turnin 1095 >>交任务 新的指示
+    .turnin 1095 >>交任务新的指示
     .target 菲兹克斯
 step
     #loop
@@ -4364,12 +4365,12 @@ step
     .unitscan XT:4
 step
     #completewith next
-    .subzone 2160 >>进入狂风矿洞
+    .subzone 2160 >> 进入狂风矿洞
     .group
 step
     .goto Stonetalon Mountains,71.87,60.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_匹兹尼克|r 对话
-    .accept 1090 >>接受任务 格雷苏的要求
+    .accept 1090 >> 接受任务 格雷苏的要求
     .target Piznik
     .group 3
 step
@@ -4381,29 +4382,29 @@ step
 step
     .goto Stonetalon Mountains,71.87,60.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_匹兹尼克|r 对话
-    .turnin 1090 >>交任务 格雷苏的要求
-    .accept 1092 >>接受任务 格雷苏的要求
+    .turnin 1090 >> 交任务 格雷苏的要求
+    .accept 1092 >> 接受任务 格雷苏的要求
     .target Piznik
     .group
 step << skip
     .goto Stonetalon Mountains,71.83,60.34
     .goto Stonetalon Mountains,57.57,61.99,30 >>|cRXP_WARN_跳上木制轮子，通过登出并重新登入来执行登出跳过|r
-    .link https://www.youtube.com/watch?v=8s1SRza7qFg&ab_channel=RestedXP >>https://www.youtube.com/watch?v=8s1SRza7qFg&ab_channel=RestedXP >> |cRXP_WARN_点击此处查看示例|r
+    .link https://www.youtube.com/watch?v=8s1SRza7qFg&ab_channel=RestedXP >> |cRXP_WARN_点击此处查看示例|r
     .group
 step
     .goto Stonetalon Mountains,58.99,62.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_其兹|r 对话
-    .turnin 1092 >>交任务 格雷苏的要求
+    .turnin 1092 >> 交任务 格雷苏的要求
     .target 菲兹克斯
     .isQuestTurnedIn 1090
     .group
 step
     #completewith next
-    .goto Stonetalon Mountains,78.29,42.51,30 >>进入鹰巢小径
+    .goto Stonetalon Mountains,78.29,42.51,30 >> 进入鹰巢小径
 step << skip
     .goto Stonetalon Mountains,78.89,41.24
     .goto Ashenvale,40.40,53.06,30 >>|cRXP_WARN_跳上你右侧的白色石头。通过登出并重新登入来执行登出跳过|r
-    .link https://www.youtube.com/watch?v=h2s4ZjFBLtg&ab_channel=RestedXP >>https://www.youtube.com/watch?v=h2s4ZjFBLtg&ab_channel=RestedXP >> |cRXP_WARN_点击此处查看示例|r
+    .link https://www.youtube.com/watch?v=h2s4ZjFBLtg&ab_channel=RestedXP >> |cRXP_WARN_点击此处查看示例|r
     .zoneskip Ashenvale
 step
 	#completewith ZoramFP
@@ -4446,49 +4447,49 @@ step
 	.goto Ashenvale,11.22,31.04,50,0
 	.goto Ashenvale,10.38,29.60,50,0
 	.goto Ashenvale,11.01,28.57,50,0
-    .xp 21 >>刷怪升级到 21级
+    .xp 21 >> 刷怪升级到 21级
 step
     #label ZoramFP
    .goto Ashenvale,12.24,33.80
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安德鲁克|r 对话
-   .fp Zoram'gar Outpost >>获得佐拉姆加前哨站的飞行点
+   .fp Zoram'gar Outpost >> 获得佐拉姆加前哨站的飞行点
    .target 安德鲁克
    .isQuestAvailable 6442
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_耶努萨克雷|r, |cRXP_FRIENDLY_凯朗|r, |cRXP_FRIENDLY_米苏瓦|r 和 |cRXP_FRIENDLY_玛鲁凯|r 对话
-    .turnin 6562 >>交任务  帮助耶努萨克雷
-    .accept 6563 >>接受任务 阿库麦尔的精华
+    .turnin 6562 >> 交任务  帮助耶努萨克雷
+    .accept 6563 >> 接受任务 阿库麦尔的精华
     .target 耶努萨克雷
     .goto Ashenvale,11.56,34.29
-    .accept 216 >>接受任务 蓟皮熊怪的麻烦
+    .accept 216 >> 接受任务 蓟皮熊怪的麻烦
     .target 卡拉恩·阿玛卡
     .goto Ashenvale,11.90,34.53
-    .accept 6462 >>接受任务巨魔符咒
+    .accept 6462 >> 接受任务巨魔符咒
     .target 米苏瓦
     .goto Ashenvale,11.65,34.85
-    .accept 6442 >>接受任务 佐拉姆海岸的纳迦
+    .accept 6442 >> 接受任务 佐拉姆海岸的纳迦
     .target 玛鲁凯
     .goto Ashenvale,11.69,34.90
     .group
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_耶努萨克雷|r, |cRXP_FRIENDLY_凯朗|r, |cRXP_FRIENDLY_米苏瓦|r 和 |cRXP_FRIENDLY_玛鲁凯|r 对话
-    .turnin 6562 >>交任务  帮助耶努萨克雷
+    .turnin 6562 >> 交任务  帮助耶努萨克雷
     .target 耶努萨克雷
     .goto Ashenvale,11.56,34.29
-    .accept 216 >>接受任务 蓟皮熊怪的麻烦
+    .accept 216 >> 接受任务 蓟皮熊怪的麻烦
     .target 卡拉恩·阿玛卡
     .goto Ashenvale,11.90,34.53
-    .accept 6462 >>接受任务巨魔符咒
+    .accept 6462 >> 接受任务巨魔符咒
     .target 米苏瓦
     .goto Ashenvale,11.65,34.85
-    .accept 6442 >>接受任务 佐拉姆海岸的纳迦
+    .accept 6442 >> 接受任务 佐拉姆海岸的纳迦
     .target 玛鲁凯
     .goto Ashenvale,11.69,34.90
 step
     .goto Ashenvale,12.06,34.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_穆格拉什|r 对话
     >>|cRXP_WARN_这将开始一个护送任务。小心，任务难度较高|r
-    .accept 6641,1 >>接受任务 鞭笞者沃尔沙
+    .accept 6641,1 >> 接受任务 鞭笞者沃尔沙
     .target 穆格拉什
     .group 2
 step
@@ -4538,7 +4539,7 @@ step
     .mob 怒尾侍从
     .mob 薇丝比娅
 step
-    .goto Kalimdor,43.89,35.23,100 >>前往黑暗深渊的入口
+    .goto Kalimdor,43.89,35.23,100 >> 前往黑暗深渊的入口
     .isOnQuest 6563
     .group
 step
@@ -4559,7 +4560,7 @@ step
     .goto Kalimdor,43.94,34.86,20,0
     >>击杀 |cRXP_ENEMY_黑暗深渊海潮祭司|r，并拾取她们的 |T134332:0|t[|cRXP_LOOT_潮湿便笺|r]，使用它来开启任务
     .collect 16790,1,6564 --Collect Damp Note (1)
-    .accept 6564 >>接受任务 上古之神的仆从
+    .accept 6564 >> 接受任务 上古之神的仆从
     .mob 黑暗深渊海潮祭司
     .use 16790
     .group 4
@@ -4605,7 +4606,7 @@ step
 	.goto Ashenvale,11.22,31.04,50,0
 	.goto Ashenvale,10.38,29.60,50,0
 	.goto Ashenvale,11.01,28.57,50,0
-    .xp 23 >>刷怪升级到 23 级
+    .xp 23 >> 刷怪升级到 23 级
 step
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_耶努萨克雷|r 对话
@@ -4631,10 +4632,10 @@ step
     .isQuestComplete 6564
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战歌信使|r 和 |cRXP_FRIENDLY_玛鲁凯|r 对话
-    .turnin 6641 >>交任务  鞭笞者沃尔沙
+    .turnin 6641 >> 交任务鞭笞者沃尔沙
     .target 战歌信使
     .goto Ashenvale,12.22,34.21
-    .turnin 6442 >>交任务  佐拉姆海岸的纳迦
+    .turnin 6442 >> 交任务佐拉姆海岸的纳迦
     .target 玛鲁凯
     .goto Ashenvale,11.69,34.90
     .isQuestComplete 6641
@@ -4642,16 +4643,16 @@ step
 step
     .goto Ashenvale,11.69,34.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛鲁凯|r 对话
-    .turnin 6442 >>交任务  佐拉姆海岸的纳迦
+    .turnin 6442 >> 交任务佐拉姆海岸的纳迦
     .target Marukai
 step
     .goto Ashenvale,11.90,34.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_凯朗|r 对话
-    .accept 216 >>接受任务 蓟皮熊怪的麻烦
+    .accept 216 >> 接受任务 蓟皮熊怪的麻烦
     .target 卡拉恩·阿玛卡
 step
     #completewith flytoORG
-    .hs >>使用炉石返回雷霆崖
+    .hs >> 使用炉石返回雷霆崖
     .use 6948
     .bindlocation 1638,1
     .zoneskip Thunder Bluff
@@ -4661,30 +4662,30 @@ step
     .goto Ashenvale,12.24,33.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安德鲁克|r 对话
     .zoneskip Thunder Bluff
-    .fly Thunder Bluff >>飞往雷霆崖
+    .fly Thunder Bluff >> 飞往雷霆崖
     .target 安德鲁克
     .cooldown item,6948,<0
 step
     .goto Thunder Bluff,47.12,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_彻斯姆|r 对话
-    .bankdeposit 5059 >>存放你的 |T132938:0|t[掘地铲]
+    .bankdeposit 5059 >> 存放你的 |T132938:0|t[掘地铲]
     .target 彻斯姆
 step
     #completewith next
-    .goto Thunder Bluff,69.88,30.90,80 >>前往长者高地
+    .goto Thunder Bluff,69.88,30.90,80 >> 前往长者高地
 step
     .goto Thunder Bluff,69.88,30.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛加萨|r 对话
     >>|cRXP_WARN_等待剧情事件结束|r
-    .turnin 1063 >>交任务巫婆长老
+    .turnin 1063 >> 交任务巫婆长老
     .timer 6,长者 剧情
-    .accept 1064 >>接受任务 被遗忘者的援助
+    .accept 1064 >> 接受任务 被遗忘者的援助
     .target 玛加萨·恐怖图腾
 step
     .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_药剂师扎玛|r 对话
-    .turnin 1064 >>交任务  被遗忘者的援助
-    .accept 1065 >>接受任务 前往塔伦米尔
+    .turnin 1064 >> 交任务  被遗忘者的援助
+    .accept 1065 >> 接受任务 前往塔伦米尔
     .target 药剂师扎玛
 step << Warlock
     #completewith flytoORG
@@ -4702,14 +4703,14 @@ step << !Warlock
 step << Warlock
     .goto The Barrens,44.62,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_劳格玛|r 对话
-    .turnin 1511 >>交任务  肯兹格拉的伤药
+    .turnin 1511 >>交任务肯兹格拉的伤药
     .accept 1515 >>接受任务多格兰之囚
     .target 步兵劳格玛
 step << Warlock
     .goto The Barrens,43.31,47.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_多格兰|r 对话
     .turnin 1515 >>交任务  多格兰之囚
-    .accept 1512 >>接受任务 爱的礼物
+    .accept 1512 >>接受任务爱的礼物
     .target 步兵多格兰
 step << Warlock
     .goto The Barrens,44.45,59.16
@@ -4744,7 +4745,7 @@ step << Warlock
 step << Warlock
     .goto Orgrimmar,48.62,46.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米尔科特|r 对话
-    .train 6202 >>训练你的职业技能
+    .train 6202 >> 训练你的职业技能
     .target 米尔科特
     .xp <22,1
     .xp >24,1
@@ -4752,7 +4753,7 @@ step << Warlock
     #optional
     .goto Orgrimmar,48.62,46.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米尔科特|r 对话
-    .train 6223 >>训练你的职业技能
+    .train 6223 >> 训练你的职业技能
     .target 米尔科特
     .xp <24,1
 step << Rogue
@@ -4764,13 +4765,13 @@ step << Rogue
 step << Rogue
     .goto Orgrimmar,43.05,53.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_申苏尔|r 对话
-    .train 921 >>学习 |T133644:0|t[偷窃技能]
-    .train 8676 >>学习 |T132282:0|t[伏击]
-    .train 1943 >>学习 |T132302:0|t[撕裂]
-    .train 1856 >>学习 |T132331:0|t[消失]
-    .train 1725 >>学习 |T132289:0|t[扰乱]
-    .train 1785 >>学习 |T132320:0|t[潜行 等级2]
-    .accept 2460 >>接受任务碎手军礼
+    .train 921 >> 学习 |T133644:0|t[偷窃技能]
+    .train 8676 >> 学习 |T132282:0|t[伏击]
+    .train 1943 >> 学习 |T132302:0|t[撕裂]
+    .train 1856 >> 学习 |T132331:0|t[消失]
+    .train 1725 >> 学习 |T132289:0|t[扰乱]
+    .train 1785 >> 学习 |T132320:0|t[潜行 等级2]
+    .accept 2460 >>接受任务 碎手军礼
     .target 申苏尔
 step << Rogue
     .goto Orgrimmar,43.05,53.73
@@ -4781,7 +4782,7 @@ step << Rogue
     .goto Orgrimmar,43.05,53.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_申苏尔|r 对话
     .turnin 2460 >>交任务  碎手军礼
-    .accept 2458 >>接受任务 卧底密探
+    .accept 2458 >>接受任务卧底密探
     .target 申苏尔
 step << Rogue
     .goto Orgrimmar,42.10,49.49
@@ -4793,8 +4794,8 @@ step << Rogue
 step
     .goto Orgrimmar,76.50,24.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷里|r 对话
-    .turnin 3923 >>交任务 雷里·格里斯高布
-    .accept 3924 >>接受任务 主动式负载平衡器说明书
+    .turnin 3923 >> 交任务 雷里·格里斯高布
+    .accept 3924 >> 接受任务 主动式负载平衡器说明书
     .target Rilli Greasygob
 step << Priest/Warlock
     .goto Orgrimmar,44.16,48.45
@@ -4807,7 +4808,7 @@ step << Priest/Warlock
 step << Mage
     .goto Orgrimmar,38.36,85.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_皮菲瑞多|r 对话
-    .train 2138 >>训练你的职业技能
+    .train 2138 >> 训练你的职业技能
     .target 皮菲瑞多
     .xp <22,1
     .xp >24,1
@@ -4815,24 +4816,24 @@ step << Mage
     #optional
     .goto Orgrimmar,38.36,85.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_皮菲瑞多|r 对话
-    .train 2121 >>训练你的职业技能
+    .train 2121 >> 训练你的职业技能
     .target 皮菲瑞多
     .xp <24,1
 step << Mage
     .goto Orgrimmar,38.66,85.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与位于小屋顶部的|r |cRXP_FRIENDLY_索乌|r 对话
-    .train 3567 >>训练 |T135759:0|t[传送：奥格瑞玛]
+    .train 3567 >> 训练 |T135759:0|t[传送：奥格瑞玛]
     .target 索乌
 step << Troll Priest
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_乌尔库|r 对话
-    .turnin 5642 >>交任务  暗影守卫
-    .trainer >>训练你的职业技能
+    .turnin 5642 >> 交任务  暗影守卫
+    .trainer >> 训练你的职业技能
     .target 乌尔库
 step << Undead Priest
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_乌尔库|r 对话
-    .train 8103 >>训练你的职业技能
+    .train 8103 >> 训练你的职业技能
     .target 乌尔库
     .xp <22,1
     .xp >24,1
@@ -4840,18 +4841,18 @@ step << Undead Priest
     #optional
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|r |cRXP_FRIENDLY_乌尔库|r 对话
-    .train 3747 >>训练你的职业技能
+    .train 3747 >> 训练你的职业技能
     .target 乌尔库
     .xp <24,1
 step << Rogue/Druid
     #completewith MissionProbable
     .goto Orgrimmar,26.22,61.58,80,0
     .goto Orgrimmar,15.66,63.33,30,0
-    .goto Orgrimmar,18.03,60.51,50 >>从西侧出口进入贫瘠之地
+    .goto Orgrimmar,18.03,60.51,50 >> 从西侧出口进入贫瘠之地
     .zoneskip The Barrens
 step << Rogue/Druid
     #completewith MissionProbable
-    .goto The Barrens,57.63,7.48,120 >>旅行至淤泥沼泽
+    .goto The Barrens,57.63,7.48,120 >> 前往淤泥沼泽
 step << Druid
     .goto The Barrens,56.67,8.32
     >>拾取水中的 奇怪的锁箱|cRXP_PICK_，获取 |T133443:0|t[水性敏捷坠饰]|r
@@ -4866,7 +4867,7 @@ step << Rogue
 step << Rogue
     .goto The Barrens,55.44,5.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |r|cRXP_FRIENDLY_工头费苏勒|r 对话
-    .turnin 2458 >>交任务卧底密探
+    .turnin 2458 >>交任务  卧底密探
     .accept 2478 >>接受任务基本不可能的任务
     .target 工头费苏勒
 step << Rogue/Druid
@@ -4911,7 +4912,7 @@ step << Rogue/Druid
 step << !Rogue/Druid
     .goto Orgrimmar,26.22,61.58,80,0
     .goto Orgrimmar,15.66,63.33,30,0
-    .goto Orgrimmar,18.03,60.51,50 >>从西侧出口进入贫瘠之地
+    .goto Orgrimmar,18.03,60.51,50 >> 从西侧出口进入贫瘠之地
     .zoneskip The Barrens
     .isOnQuest 3924
 step
@@ -4959,12 +4960,12 @@ ste
 step << skip
     .goto The Barrens,60.00,4.09
     .goto Orgrimmar,40.05,68.05,30 >>|cRXP_WARN_跳跃到帐篷上，通过登出再登入执行返回角色选择跳过。如果你没有成功就跑回奥格瑞玛|r
-    .link https://www.youtube.com/watch?v=cOxspH4RcI8&ab >>https://www.youtube.com/watch?v=cOxspH4RcI8&ab >> |cRXP_WARN_点击此处查看示例|r
+    .link https://www.youtube.com/watch?v=cOxspH4RcI8&ab >> |cRXP_WARN_点击此处查看示例|r
 step << Rogue
     .goto Orgrimmar,43.05,53.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_申苏尔|r 对话
-    .turnin 2478 >>交任务  基本不可能的任务
-    .accept 2479 >>接受任务 希诺特的帮助
+    .turnin 2478 >>交任务基本不可能的任务
+    .accept 2479 >>接受任务希诺特的帮助
     .target 申苏尔
 step << Rogue
     .goto Orgrimmar,42.10,49.49
@@ -4975,7 +4976,7 @@ step << Rogue
 step << Shaman
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .train 8498 >>训练你的职业技能
+    .train 8498 >> 训练你的职业技能
     .target 卡德里斯
     .xp <22,1
     .xp >24,1
@@ -4983,13 +4984,13 @@ step << Shaman
     #optional
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .train 905 >>训练你的职业技能
+    .train 905 >> 训练你的职业技能
     .target 卡德里斯
     .xp <24,1
 step
     .goto Orgrimmar,76.50,24.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷里|r 对话
-    .turnin 3924 >>交任务 主动式负载平衡器说明书
+    .turnin 3924 >> 交任务 主动式负载平衡器说明书
     .target Rilli Greasygob
 step << Troll Warrior/Undead Warrior/Tauren Warrior
     .goto Orgrimmar,81.52,19.60
@@ -4999,7 +5000,7 @@ step << Troll Warrior/Undead Warrior/Tauren Warrior
 step << Warrior
     .goto Orgrimmar,79.91,31.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷兹|r 对话
-    .train 6192 >>训练你的职业技能
+    .train 6192 >> 训练你的职业技能
     .target 格雷兹·怒拳
     .xp <22,1
     .xp >24,1
@@ -5007,13 +5008,13 @@ step << Warrior
     #optional
     .goto Orgrimmar,79.91,31.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格雷兹|r 对话
-    .train 5308 >>训练你的职业技能
+    .train 5308 >> 训练你的职业技能
     .target 格雷兹·怒拳
     .xp <24,1
 step << Hunter
     .goto Orgrimmar,66.05,18.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥玛克|r 对话
-    .train 14323 >>训练你的职业技能
+    .train 14323 >> 训练你的职业技能
     .target 奥玛克
     .xp <22,1
     .xp >24,1
@@ -5021,13 +5022,13 @@ step << Hunter
     #optional
     .goto Orgrimmar,66.05,18.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥玛克|r 对话
-    .train 14262 >>训练你的职业技能
+    .train 14262 >> 训练你的职业技能
     .target 奥玛克
     .xp <24,1
 step << Hunter
     .goto Orgrimmar,66.34,14.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_肖祖|r 对话
-    .train 24558 >>训练你的宠物技能
+    .train 24558 >> 训练你的宠物技能
     .target 肖祖
     .xp <24,1
 step << Rogue
@@ -5073,7 +5074,7 @@ step
     .abandon 962 >>放弃任务 毒蛇花
 step
     #completewith next
-    .zone Durotar >>离开 奥格瑞玛
+    .zone Durotar >> 离开 奥格瑞玛
     .zoneskip Durotar
 step
     .goto Durotar,50.8,13.8,40 >>登上飞艇塔

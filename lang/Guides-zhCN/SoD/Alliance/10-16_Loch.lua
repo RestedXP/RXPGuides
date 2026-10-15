@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #season 2
 << Alliance
 #group RestedXP 联盟 1-20 级
-#group14-16级 黑海岸
+#groupid RXP-SRGCE-A1
 #name 12-13 丹莫罗 探索赛季
 #displayname 12-13 丹莫罗
 #next 13-16 洛克莫丹 探索赛季
@@ -42,14 +42,14 @@ step
     #completewith next
     #requires Dirt
     +|cRXP_WARN_ 风筝 |cRXP_ENEMY_瓦加什|r 下行至|r |cRXP_FRIENDLY_鲁德拉·冻石|r
-    .link https://youtu.be/70PX093soq4?si=-cIoU8WWdbC0IdHZ&t=3193 >>https://youtu.be/70PX093soq4?si=-cIoU8WWdbC0IdHZ&t=3193 >> |cRXP_WARN_点击这里查看视频参考|r << Mage
-    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >>https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_点击此处查看视频参考|r << !Mage
+    .link https://youtu.be/70PX093soq4?si=-cIoU8WWdbC0IdHZ&t=3193 >>|cRXP_WARN_点击这里查看视频参考|r << Mage
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_点击此处查看视频参考|r << !Mage
     .mob 瓦加什
 step
     #label Rudra
     .goto Dun Morogh,63.082,49.851
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁德拉·冻石|r 对话
-    .accept 314 >>接受任务 保护牲畜
+    .accept 314 >> 接受任务 保护牲畜
     .target 鲁德拉·冻石
 step << Warrior/Mage
     #season 2
@@ -69,8 +69,8 @@ step
     >>击杀 |cRXP_ENEMY_瓦加什|r。拾取他的 |cRXP_LOOT_利牙|r
     >>|cRXP_WARN_风筝他到农场南边的守卫处。确保对他造成 51% 以上的伤害|r
     >>|cRXP_WARN_请先看以下的短视频，然后再击杀 |cRXP_ENEMY_瓦加什|r。任何职业都可以单刷它|r
-    .link https://youtu.be/70PX093soq4?si=-cIoU8WWdbC0IdHZ&t=3193 >>https://youtu.be/70PX093soq4?si=-cIoU8WWdbC0IdHZ&t=3193 >> |cRXP_WARN_点击这里查看视频参考|r << Mage
-    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >>https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_点击此处查看视频参考|r << !Mage
+    .link https://youtu.be/70PX093soq4?si=-cIoU8WWdbC0IdHZ&t=3193 >> |cRXP_WARN_点击这里查看视频参考|r << Mage
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_点击此处查看视频参考|r << !Mage
     .complete 314,1 --Collect Fang of Vagash (1)
     .mob 瓦加什
 step << Warrior
@@ -92,20 +92,20 @@ step << Mage
 step
     .goto Dun Morogh,63.082,49.851
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁德拉·冻石|r 对话
-    .turnin 314 >>交任务 保护牲畜
+    .turnin 314 >> 交任务 保护牲畜
     .target 鲁德拉·冻石
 step
     #optional
     #completewith next
-    .goto Dun Morogh,68.379,54.492,60 >>前往古博拉采掘场，丹莫罗
+    .goto Dun Morogh,68.379,54.492,60 >> 前往古博拉采掘场，丹莫罗
     .subzoneskip 134
 step << !Hunter
     #optional
     #completewith next
     .goto Dun Morogh,68.6,54.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡杉·莫格什|r 对话
-    .vendor 1237 >>|cRXP_BUY_从他那里购买10片|r |T133968:0|t[刚出炉的面包] |cRXP_BUY_需要多少买多少|r << Warrior/Rogue
-    .vendor 1237 >>|cRXP_BUY_如果需要的话|r|cRXP_BUY_可以从他那里购买5片/杯|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_和|r |T132815:0|t[冰镇牛奶] << !Warrior !Rogue
+    .vendor 1237 >> |cRXP_BUY_从他那里购买10片|r |T133968:0|t[刚出炉的面包] |cRXP_BUY_需要多少买多少|r << Warrior/Rogue
+    .vendor 1237 >> |cRXP_BUY_如果需要的话|r|cRXP_BUY_可以从他那里购买5片/杯|r |T133968:0|t[刚出炉的面包]|cRXP_BUY_和|r |T132815:0|t[冰镇牛奶] << !Warrior !Rogue
     .target 卡杉·莫格什
 --XX Mud slappers instead
 step << Human Warrior/Paladin/Rogue
@@ -117,9 +117,9 @@ step << Human Warrior/Paladin/Rogue
 step
     #label QuarryStart
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_参议员梅尔·圣石|r 和 |cRXP_FRIENDLY_工头乔尼·石眉|r 对话
-    .accept 433 >>接受任务 公众之仆
+    .accept 433 >> 接受任务 公众之仆
     .goto Dun Morogh,68.671,55.969
-    .accept 432 >>接受任务 该死的穴居人！
+    .accept 432 >> 接受任务 该死的穴居人！
     .goto Dun Morogh,69.084,56.330
     .target Senator Mehr Stonehallow
     .target Foreman Stonebrow
@@ -188,7 +188,7 @@ step << !Human Rogue
     #softcore
     #optional
     #completewith next
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
     .train 398196,1
 step <<< !Human Rogue
@@ -206,7 +206,7 @@ step <<< !Human Rogue
     .train 398196,1
 step << !Human Rogue
     #season 2
-    .train 400095 >>|cRXP_WARN_使用|r |T134419:0|t|T134536:0|t[|cRXP_FRIENDLY_速射符文|r] |cRXP_WARN_来训练|r |T134536:0|t|T134536:0|t[速射]
+    .train 400095 >> |cRXP_WARN_使用|r |T134419:0|t|T134536:0|t[|cRXP_FRIENDLY_速射符文|r] |cRXP_WARN_来训练|r |T134536:0|t|T134536:0|t[速射]
     .use 203991
     .itemcount 203991,1
 step << !Human Rogue
@@ -218,7 +218,7 @@ step << !Human Rogue
     .train 400094,1
 step << !Human Rogue
     #season 2
-    .cast 402265 >>|cRXP_WARN_使用|r |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_毁伤符文|r]
+    .cast 402265 >> |cRXP_WARN_使用|r |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_毁伤符文|r]
     .use 203990 -- Rune of Mutilation (1)
     .train 400094,1
 step << Dwarf Paladin
@@ -302,9 +302,9 @@ step
     #label RockjawEnd << !Paladin
     #requires Skullthumpers
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_工头乔尼·石眉|r 和 |cRXP_FRIENDLY_参议员梅尔·圣石|r 对话
-    .turnin 432 >>交任务 该死的穴居人！
+    .turnin 432 >> 交任务 该死的穴居人！
     .goto Dun Morogh,69.084,56.330
-    .turnin 433 >>交任务 公众之仆
+    .turnin 433 >> 交任务 公众之仆
     .goto Dun Morogh,68.671,55.969
     .target Senator Mehr Stonehallow
     .target Foreman Stonebrow
@@ -314,17 +314,17 @@ step
     #label QuarryEnd
     .goto 1426,77.189,48.816,50,0
     .goto 1426,81.252,42.650,50,0
-    .goto Dun Morogh,83.892,39.188,20 >>前去找 |cRXP_FRIENDLY_驾驶员塞克·锤足|r
+    .goto Dun Morogh,83.892,39.188,20 >> 前去找 |cRXP_FRIENDLY_驾驶员塞克·锤足|r
 step
     .goto Dun Morogh,83.892,39.188
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_驾驶员塞克·锤足|r 对话
-    .accept 419 >>接受任务 失踪的驾驶员
+    .accept 419 >> 接受任务 失踪的驾驶员
     .target 驾驶员塞克·锤足
 step
     .goto Dun Morogh,79.672,36.171
     >>点击地上的 |cRXP_PICK_矮人的尸体|r
-    .turnin 419 >>交任务 失踪的驾驶员
-    .accept 417 >>接受任务 驾驶员的复仇
+    .turnin 419 >> 交任务 失踪的驾驶员
+    .accept 417 >> 接受任务 驾驶员的复仇
 step << Warrior/Mage
     #season 2
     #optional
@@ -357,15 +357,15 @@ step
     .goto Dun Morogh,83.892,39.188
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_驾驶员塞克·锤足|r 对话
     >>|cRXP_WARN_选择|r |T135641:0|t|T135641:0|t工匠匕首|cRXP_WARN_，保留备用|r << Rogue
-    .turnin 417 >>交任务 驾驶员的复仇 << !Rogue
-    .turnin 417,1 >>交任务 驾驶员的复仇 << Rogue
+    .turnin 417 >> 交任务 驾驶员的复仇 << !Rogue
+    .turnin 417,1 >> 交任务 驾驶员的复仇 << Rogue
     .target 驾驶员塞克·锤足
 step << Rogue
     #xprate >1.49
     .goto Dun Morogh,83.892,39.188
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_驾驶员塞克·锤足|r 对话
     >>|cRXP_WARN_选择奖励|r |T135641:0|t[工匠匕首]
-    .turnin 417,1 >>交任务 驾驶员的复仇
+    .turnin 417,1 >> 交任务 驾驶员的复仇
     .target 驾驶员塞克·锤足
 step << Rogue
     #xprate >1.49
@@ -435,47 +435,47 @@ step
     #label lochstart1
     #optional
     .goto 1432,34.405,48.276
-    .subzone 144 >>前往塞尔萨玛，洛克莫丹
+    .subzone 144 >> 前往塞尔萨玛，洛克莫丹
 step
     #completewith lochpatrol3
-    .abandon 1338 >>如果你的任务日志中还有 |cRXP_FRIENDLY_巡山人卡尔·雷矛的任务|r，放弃该任务，否则你稍后将无法接受新任务
+    .abandon 1338 >> 如果你的任务日志中还有 |cRXP_FRIENDLY_巡山人卡尔·雷矛的任务|r，放弃该任务，否则你稍后将无法接受新任务
 step
     #label lochpatrol1
     #completewith lochpatrol2
     .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巡山人卡德雷尔|r 对话
     >>|cRXP_FRIENDLY_巡山人卡德雷尔|r |cRXP_WARN_会沿着通往塞尔萨玛的道路巡逻|r
-    .accept 416 >>接受任务 狗头人的耳朵
-    .accept 1339 >>接受任务 巡山人雷矛的任务
+    .accept 416 >> 接受任务 狗头人的耳朵
+    .accept 1339 >> 接受任务 巡山人雷矛的任务
     .target 巡山人卡德雷尔
 step
     #optional
     #completewith next
     .goto 1432,35.273,47.750,10,0
-    .goto 1432,35.433,48.243,12 >>进入烈酒旅店
+    .goto 1432,35.433,48.243,12 >> 进入烈酒旅店
     .subzoneskip 2101
 step
     .goto Loch Modan,34.828,49.283
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_维德拉·壁炉|r 对话
-    .accept 418 >>接受任务 塞尔萨玛血肠
+    .accept 418 >> 接受任务 塞尔萨玛血肠
     .target 维德拉·壁炉
 step << Human
     .goto Loch Modan,34.8,48.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与里面的 |cRXP_FRIENDLY_雅尼·铁心|r 对话
-    .vendor >>|cRXP_BUY_商人垃圾物品，购买最多四个|r |T133634:0|t[棕色小袋] |cRXP_BUY_如果你还需要|r
+    .vendor >> |cRXP_BUY_商人垃圾物品，购买最多四个|r |T133634:0|t[棕色小袋] |cRXP_BUY_如果你还需要|r
     .target 雅尼·铁心
 step << Dwarf/Gnome
     #label ThelsaHS
     .goto Loch Modan,35.534,48.404
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板纳克罗·壁炉|r 对话，NPC在里面
-    .home >>将你的炉石设置为塞尔萨玛
+    .home >> 将你的炉石设置为塞尔萨玛
     .target 旅店老板纳克罗·壁炉
 step << Dwarf/Gnome
     #label HonorStudents
     .goto Loch Modan,37.17,47.94,8,0
     .goto Loch Modan,37.019,47.806
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布洛克·寻石者|r 对话
-    .accept 6387 >>接受任务 荣誉学员
+    .accept 6387 >> 接受任务 荣誉学员
     .target 布洛克·寻石者
 step
     #optional
@@ -492,39 +492,39 @@ step
     .goto Loch Modan,36.77,46.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巡山人卡德雷尔|r 对话
     >>|cRXP_FRIENDLY_巡山人卡德雷尔|r |cRXP_WARN_会沿着通往塞尔萨玛的道路巡逻|r
-    .accept 416 >>接受任务 狗头人的耳朵
-    .accept 1339 >>接受任务 巡山人雷矛的任务
+    .accept 416 >> 接受任务 狗头人的耳朵
+    .accept 1339 >> 接受任务 巡山人雷矛的任务
     .target 巡山人卡德雷尔
 
 step << Dwarf/Gnome
     .goto Loch Modan,33.938,50.954
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
-    .turnin 6387 >>交任务 荣誉学员
-    .accept 6391 >>接受任务 飞往铁炉堡
+    .turnin 6387 >> 交任务 荣誉学员
+    .accept 6391 >> 接受任务 飞往铁炉堡
     .target 索格拉姆·伯雷森
 step << Hunter
     #sticky
 	.goto Loch Modan,33.9,54.0
     .goto Loch Modan,36.6,53.2,0
     .goto Loch Modan,30.0,53.5,0
-    .train 172551 >>驯服一只森林潜伏者
+    .train 172551 >> 驯服一只森林潜伏者
     >>|cRXP_WARN_这是矮人猎人最容易获得的高DPS宠物，你最终的目标是用湿地的迅猛龙替换它。|r
     .unitscan 森林潜伏者
 step << Human
     .goto Loch Modan,33.938,50.954
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
-    .fp Thelsamar >>获取塞尔萨玛的飞行路径
+    .fp Thelsamar >> 获取塞尔萨玛的飞行路径
 step << Dwarf/Gnome
     #label flyIF
     .goto Loch Modan,33.938,50.954
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
-    .fly Ironforge >>飞往铁炉堡
+    .fly Ironforge >> 飞往铁炉堡
     .target 索格拉姆·伯雷森
     .zoneskip Ironforge
 step << Priest Dwarf
     #season 2
     #completewith end
-    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_遭渎城堡的预言|r]
+    .train 402852 >> |cRXP_WARN_使用|r |T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_遭渎城堡的预言|r]
     >>|cRXP_WARN_你必须在暴风城大教堂、洛克莫丹或铁炉堡的神秘之地的光明祭坛旁输入/pray，获得2层|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_增益效果|r
     >>|cRXP_WARN_|T136057:0|t|cRXP_PICK_艾露恩的冥想|r增益效果需要由另一位牧师玩家提供，方法是当你使用/kneel跪下时，对方对你使用/pray表情。如果你看到其他牧师带有不同的冥想BUFF，可以请他们为你施加|r
     --.use 205947
@@ -545,7 +545,7 @@ step << Rogue !Human
 step << Rogue !Human
     .goto Ironforge,51.958,14.838
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼下的 |cRXP_FRIENDLY_霍夫丹·黑须|r 对话
-    .turnin 2218 >>交任务 救赎之路
+    .turnin 2218 >> 交任务 救赎之路
     .target 霍夫丹·黑须
 step << Rogue !Human
     #season 2
@@ -570,7 +570,7 @@ step << Dwarf/Gnome
 step << Dwarf/Gnome
     .goto Ironforge,39.550,57.490
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_参议员巴林·红石|r 对话
-    .turnin 291 >>交任务 森内尔的报告
+    .turnin 291 >> 交任务 森内尔的报告
     .target 参议员巴林·红石
 step << !Human Rogue
     .goto Ironforge,62.375,88.679
@@ -583,15 +583,15 @@ step << Dwarf/Gnome
     #label Ride
     .goto Ironforge,51.521,26.311
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_高尼尔·石趾|r 对话
-    .turnin 6391 >>交任务 飞往铁炉堡
-    .accept 6388 >>接受任务 格莱斯·瑟登
+    .turnin 6391 >> 交任务 飞往铁炉堡
+    .accept 6388 >> 接受任务 格莱斯·瑟登
     .target 高尼尔·石趾
 step << Dwarf/Gnome
     .goto Ironforge,55.501,47.742
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     >>|cRXP_WARN_不要飞到任何地方|r
-    .turnin 6388 >>交任务 格莱斯·瑟登
-    .accept 6392 >>接受任务 向格雷姆罗克回复
+    .turnin 6388 >> 交任务 格莱斯·瑟登
+    .accept 6392 >> 接受任务 向格雷姆罗克回复
     .target 格莱斯·瑟登
 step << Dwarf Paladin
     #optional
@@ -604,7 +604,7 @@ step << Dwarf Paladin
     .goto Ironforge,23.131,6.143
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
     .accept 2999 >>接受任务圣洁之书
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 布兰度尔·铁锤
 step << Dwarf Paladin
     #optional
@@ -614,7 +614,7 @@ step << Dwarf Paladin
     .goto 1455,22.014,4.533,10,0
     .goto 1455,21.831,7.651,10,0
     .goto 1455,23.766,11.636,10,0
-    .goto 1455,27.622,12.177,12 >>前往楼上，前去找 |cRXP_FRIENDLY_蒂萨·热炉|r
+    .goto 1455,27.622,12.177,12 >> 前往楼上，前去找 |cRXP_FRIENDLY_蒂萨·热炉|r
 step << Dwarf Paladin
     .goto 1455,27.622,12.177
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在楼上与 |cRXP_FRIENDLY_蒂萨·热炉|r 对话
@@ -660,7 +660,7 @@ step << Dwarf Paladin
 step << Gnome Mage
     .goto Ironforge,27.0,8.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_彬克|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Bink
 step << Gnome Mage
     #season 2
@@ -693,9 +693,9 @@ step << Dwarf/Gnome
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比克斯|r 和 |cRXP_FRIENDLY_布里维夫·石手|r 对话
     >>如果你之前没有练过，就训练投掷和双手锤
-    .train 2567 >>训练 投掷武器
+    .train 2567 >> 训练 投掷武器
     .goto Ironforge,62.237,89.628
-    .train 199 >>学习双手锤
+    .train 199 >> 学习双手锤
     .goto Ironforge,61.177,89.508
     .target 比克斯
     .target 布里维夫·石拳
@@ -777,7 +777,7 @@ step << Hunter
 step << Hunter
     .goto Ironforge,70.86,85.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_贝莉亚·雷岩|r 对话
-    .turnin 6086 >>交任务 训练野兽
+    .turnin 6086 >> 交任务 训练野兽
     .target 贝莉亚·雷岩
 step << Paladin Dwarf
     #season 2
@@ -815,7 +815,7 @@ step << Paladin Dwarf
     >>击败|cRXP_ENEMY_布鲁阿特|r
     >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r
-    >>|cRXP_WARN_不要意外对他施放|r |T135906:0|t|T135906:0|t[力量祝福] |cRXP_WARN_ |r
+    >>|cRXP_WARN_千万不要不小心对他施放|r|T135906:0|t[力量祝福] |cRXP_WARN_|r
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r
     >>|cRXP_WARN_击败|cRXP_ENEMY_布鲁阿尔特|r后：|r
     >>再次与|cRXP_FRIENDLY_布鲁克·麦须|r对话，领取|T134419:0|t|T134419:0|t[责难符文]
@@ -851,7 +851,7 @@ step << Dwarf/Gnome
     .subzone 2257 >>进入矿道地铁
 step << Dwarf/Gnome
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
-    .accept 6661 >>接受任务 捕捉矿道老鼠
+    .accept 6661 >> 接受任务 捕捉矿道老鼠
     .target 蒙提
 step << Dwarf/Gnome
     >>在矿道地铁中对|cRXP_FRIENDLY_矿道老鼠|r使用|T133942:0|t|T133942:0|t[捕鼠者之笛]
@@ -861,9 +861,9 @@ step << Dwarf/Gnome
 step << Dwarf/Gnome
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在矿道地铁的中间平台上与 |cRXP_FRIENDLY_蒙提|r 对话
     >>他会在交完第一个任务后进行几秒钟的剧情演出。|cRXP_WARN_如果等待会导致你错过电车，就跳过跟随部分|r
-    .turnin 6661 >>交任务 捕捉矿道老鼠
+    .turnin 6661 >> 交任务 捕捉矿道老鼠
     .timer 11,捕捉矿道老鼠剧情表演
-    .accept 6662 >>接受任务 我的兄弟，尼普希
+    .accept 6662 >> 接受任务 我的兄弟，尼普希
     .target 蒙提
 step << Dwarf/Gnome
     #label TramEnd
@@ -871,59 +871,59 @@ step << Dwarf/Gnome
     >>|cRXP_WARN_在等待前往暴风城的地铁时，如有需要可提升|r |T135966:0|t|T135966:0|t[急救] |cRXP_WARN_技能等级|r << Rogue/Warrior/Paladin
     >>|cRXP_WARN_你需要将|r |T135966:0|t[急救]|cRXP_WARN_ 提升至 80，以完成 24 级的一个任务|r << Rogue !Dwarf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_尼普希|r 在矿道地铁暴风城一侧的中央平台对话
-    .turnin 6662 >>交任务 我的兄弟，尼普希
+    .turnin 6662 >> 交任务 我的兄弟，尼普希
     .isOnQuest 6662
     .target 尼普希
     .subzoneskip 2257,1 --Deeprun Tram
 step << Dwarf/Gnome
     #optional
     #completewith Order
-    .zone Stormwind City >>进入暴风城
+    .zone Stormwind City >> 进入暴风城
     .isOnQuest 1338
 step << !Human
     .goto StormwindClassic,51.757,12.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格瑞曼德·艾尔默|r 对话
-    .accept 353 >>接受任务 雷矛的包裹
+    .accept 353 >> 接受任务 雷矛的包裹
     .target 格瑞曼德·艾尔默
 step << Dwarf Priest
     #optional
     #completewith next
-    .goto StormwindClassic,42.51,33.51,20 >>前往暴风城大教堂
+    .goto StormwindClassic,42.51,33.51,20 >> 前往暴风城大教堂
 step << Priest Dwarf
     .goto StormwindClassic,38.54,26.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r 对话
-    .trainer >>训练你的职业技能
-    .turnin 5634 >>交任务 绝望祷言
+    .trainer >> 训练你的职业技能
+    .turnin 5634 >> 交任务 绝望祷言
     .target 高阶牧师劳瑞娜
 step << Priest Dwarf
     .goto StormwindClassic,38.62,26.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r 对话
-    .train 13908 >>训练绝望祷言
+    .train 13908 >> 训练绝望祷言
     .target 高阶牧师劳瑞娜
 step << Warrior !Human
     .goto StormwindClassic,76.08,50.14,15,0
     .goto StormwindClassic,80.22,45.37,15,0
 	.goto StormwindClassic,78.503,45.712
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_伊尔萨·考宾|r 对话
-    .trainer >>训练你的职业技能
-    .accept 1638 >>接受任务 战士的训练
+    .trainer >> 训练你的职业技能
+    .accept 1638 >> 接受任务 战士的训练
     .target 伊尔萨·考宾
 step << Warrior !Human
     #optional
     #completewith next
     .goto StormwindClassic,72.878,51.582,17,0
-    .goto StormwindClassic,71.7,39.9,12 >>进入酒馆
+    .goto StormwindClassic,71.7,39.9,12 >> 进入酒馆
 step << Warrior !Human
     .goto StormwindClassic,74.249,37.244
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈里·伯加德|r 对话
-    .turnin 1638 >>交任务 战士的训练
-    .accept 1639 >>接受任务 醉鬼巴特莱比
+    .turnin 1638 >> 交任务 战士的训练
+    .accept 1639 >> 接受任务 醉鬼巴特莱比
     .target 哈里·伯加德
 step << Warrior !Human
     .goto StormwindClassic,73.787,36.323
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴特莱比|r 对话
-    .turnin 1639 >>交任务 醉鬼巴特莱比
-    .accept 1640 >>接受任务 击败巴特莱比
+    .turnin 1639 >> 交任务 醉鬼巴特莱比
+    .accept 1640 >> 接受任务 击败巴特莱比
     .target 巴特莱比
 step << Warrior !Human
     .goto StormwindClassic,73.787,36.323
@@ -933,37 +933,37 @@ step << Warrior !Human
 step << Warrior !Human
     .goto StormwindClassic,73.787,36.323
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴特莱比|r 对话
-    .turnin 1640 >>交任务 击败巴特莱比
-    .accept 1665 >>接受任务 巴特莱比的酒杯
+    .turnin 1640 >> 交任务 击败巴特莱比
+    .accept 1665 >> 接受任务 巴特莱比的酒杯
     .target 巴特莱比
 step << Warrior !Human
     .goto StormwindClassic,74.249,37.244
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈里·伯加德|r 对话
-    .turnin 1665 >>交任务 巴特莱比的酒杯
+    .turnin 1665 >> 交任务 巴特莱比的酒杯
     .target 哈里·伯加德
 step << Warlock !Human
     #optional
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >>前往屠宰场，进入地下室
+    .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
 step << Warlock !Human
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
-    .trainer >>训练你的职业技能
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock !Human
     .goto StormwindClassic,25.25,78.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
-    .accept 1688 >>接受任务 苏伦娜·凯尔东
+    .accept 1688 >> 接受任务 苏伦娜·凯尔东
     .target 黑暗缚灵者加科因
 step << Warlock !Human
     #softcore
-    .deathskip >>使用 |T136126:0|t[生命分流] 并站在你旁边的篝火上自杀，然后在 灵魂医者处复活
+    .deathskip >> 使用 |T136126:0|t[生命分流] 并站在你旁边的篝火上自杀，然后在 灵魂医者处复活
     .target 灵魂医者
     .isOnQuest 1688
 step << Warlock !Human
     .goto Elwynn Forest,42.105,65.927
-    .zone Elwynn Forest >>前往艾尔文森林
+    .zone Elwynn Forest >> 前往艾尔文森林
     .isOnQuest 1688
 step << Warlock !Human
     #label SChoker
@@ -978,31 +978,31 @@ step << Warlock !Human
     #label WlockRedridge
     #completewith next
     .goto Redridge Mountains,17.4,69.6
-    .zone Redridge Mountains >>前往赤脊山
+    .zone Redridge Mountains >> 前往赤脊山
 step << Warlock !Human
     .goto Redridge Mountains,17.4,69.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守卫帕克|r 对话
-    .accept 244 >>接受任务 豺狼人的入侵
+    .accept 244 >> 接受任务 豺狼人的入侵
     .target 卫兵帕克
 step << Warlock !Human
     .goto Redridge Mountains,30.733,59.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
     >>|cRXP_WARN_小心前进，途中有高等级怪物|r
-    .turnin 244 >>交任务豺狼人的入侵
+    .turnin 244 >> 交任务豺狼人的入侵
     .target 菲尔顿副队长
 step << Warlock !Human
     .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
-    .fp Redridge Mountains >>获取赤脊山的飞行路径
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    .fp Redridge Mountains >> 获取赤脊山的飞行路径
     .target 艾蕾娜·斯托姆法瑟
 step << !Human
-    .hs >>炉石返回洛克莫丹
+    .hs >> 炉石返回洛克莫丹
     .cooldown item,6948,>0,1 << !Warlock
 step << !Warlock !Human
     #label end
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
     .goto Ironforge,55.501,47.742
-    .fly Loch Modan >>飞往 洛克莫丹
+    .fly Loch Modan >> 飞往 洛克莫丹
     .target 格莱斯·瑟登
     .zoneskip Loch Modan
     .zoneskip Dun Morogh
@@ -1026,7 +1026,7 @@ step << Dwarf Paladin/Dwarf Hunter
 step << !Human
     .goto Loch Modan,34.8,48.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与里面的 |cRXP_FRIENDLY_雅尼·铁心|r 对话
-    .vendor >>|cRXP_BUY_商人垃圾物品，购买最多四个|r |T133634:0|t[棕色小袋] |cRXP_BUY_如果你还需要|r
+    .vendor >> |cRXP_BUY_商人垃圾物品，购买最多四个|r |T133634:0|t[棕色小袋] |cRXP_BUY_如果你还需要|r
     .target 雅尼·铁心
 ]])
 
@@ -1036,10 +1036,10 @@ RXPGuides.RegisterGuide([[
 #season 2
 << Alliance
 #group RestedXP 联盟 1-20 级
-#group14-16级 黑海岸
+#groupid RXP-SRGCE-A1
 #name 13-16 洛克莫丹 探索赛季
 #displayname 13-16 洛克莫丹
-#next 16-17 西部荒野 探索赛季
+#next 16-17级 西部荒野 探索赛季
 #defaultfor !NightElf
 
 step << Hunter
@@ -1055,29 +1055,29 @@ step << Dwarf/Gnome
     .goto Loch Modan,37.17,47.94,8,0
     .goto Loch Modan,37.019,47.806
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布洛克·寻石者|r 对话
-    .turnin 6392 >>交任务 向格雷姆罗克回复
+    .turnin 6392 >> 交任务 向格雷姆罗克回复
     .target 布洛克·寻石者
 step
     .goto Loch Modan,22.071,73.127
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巡山人库伯弗林特|r 对话
-    .accept 224 >>接受任务 为了保卫国王的领土
+    .accept 224 >> 接受任务 为了保卫国王的领土
     .target 巡山人库伯弗林特
 step
     #optional
     #completewith next
     .goto Loch Modan,23.27,75.65,12,0
     .goto Loch Modan,23.62,75.42,12,0
-    .goto Loch Modan,23.12,73.93,12 >>进入地堡。登上顶楼
+    .goto Loch Modan,23.12,73.93,12 >> 进入地堡。登上顶楼
 step
     .goto Loch Modan,23.233,73.675
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在地堡里与 |cRXP_FRIENDLY_拉格弗斯上尉|r 对话
-    .accept 267 >>接受任务 穴居人的威胁
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与地堡里的 |cRXP_FRIENDLY_拉格弗斯上尉|r 对话
+    .accept 267 >> 接受任务 穴居人的威胁
     .target 拉格弗斯上尉
 
 step
 #completewith next
     .goto Loch Modan,30.0,68.4,0
-    .goto Loch Modan,30.0,68.4,30,0 >>前往碎石怪之谷
+    .goto Loch Modan,30.0,68.4,30,0 >> 前往碎石怪之谷
     .subzoneskip 923
 step << Warrior
     #season 2
@@ -1178,17 +1178,17 @@ step
 step
     #requires geode2 << Warrior
     .goto Loch Modan,23.233,73.675
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在地堡里与 |cRXP_FRIENDLY_拉格弗斯上尉|r 对话
-    .turnin 267 >>交任务 穴居人的威胁
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与地堡里的 |cRXP_FRIENDLY_拉格弗斯上尉|r 对话
+    .turnin 267 >> 交任务 穴居人的威胁
     .target 拉格弗斯上尉
 step
     .goto Loch Modan,22.071,73.127
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巡山人库伯弗林特|r 对话
-    .turnin 224 >>交任务 为了保卫国王的领土
+    .turnin 224 >> 交任务 为了保卫国王的领土
     .target 巡山人库伯弗林特
 step << !Human
     #completewith Algaz
-    .hs >>炉石到塞尔萨玛
+    .hs >> 炉石到塞尔萨玛
     .cooldown item,6948,>0
     .subzoneskip 924,1--valley of kings
 
@@ -1222,20 +1222,20 @@ step
     #requires Algaz
     #completewith Stormpike1
     .goto 1432,23.490,18.008,15,0
-    .goto 1432,24.279,17.959,12 >>进入地堡。登上顶楼
+    .goto 1432,24.279,17.959,12 >> 进入地堡。登上顶楼
 step
     #label Stormpike1
     .goto Loch Modan,24.77,18.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与地堡里的 |cRXP_FRIENDLY_巡山人雷矛|r 对话
-    .turnin -353 >>交任务 雷矛的包裹
-    .turnin 1339 >>交任务 巡山人雷矛的任务
-    .accept 1338 >>接受任务 卡尔·雷矛的订单
-    .accept 307 >>接受任务 污秽的爪子
+    .turnin -353 >> 交任务 雷矛的包裹
+    .turnin 1339 >> 交任务 巡山人雷矛的任务
+    .accept 1338 >> 接受任务 卡尔·雷矛的订单
+    .accept 307 >> 接受任务 污秽的爪子
     .target 巡山人雷矛
 step
     #label Algaz2
     #completewith next
-    .goto Loch Modan,35.50,18.97,20 >>进入银溪矿洞
+    .goto Loch Modan,35.50,18.97,20 >> 进入银溪矿洞
 step
     .goto Loch Modan,35.93,22.55
     >>打开 |cRXP_PICK_矿工联盟的储物箱|r。拾取里面的 |cRXP_LOOT_矿工装备|r
@@ -1268,7 +1268,7 @@ step
 step
     .goto Loch Modan,24.77,18.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巡山人雷矛|r 对话
-    .turnin 307 >>交任务 污秽的爪子
+    .turnin 307 >> 交任务 污秽的爪子
     .target 巡山人雷矛
 step << Mage
     #season 2
@@ -1300,7 +1300,7 @@ step << Mage
     #season 2
     #optional
     #completewith next
-    .goto 1432,54.33,26.82,5 >>进入岛屿东侧的帐篷
+    .goto 1432,54.33,26.82,5 >> 进入岛屿东侧的帐篷
     .train 401767,1
 step << Mage
     #season 2
@@ -1399,7 +1399,7 @@ step
     .xp 16-4650
 step
     #completewith next
-    .deathskip >>死亡并在灵魂医者处复活
+    .deathskip >> 死亡并在灵魂医者处复活
     .target 灵魂医者
 step
     #label ratcatching
@@ -1416,27 +1416,27 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巡山人卡德雷尔|r 对话
     >>|cRXP_FRIENDLY_巡山人卡德雷尔|r |cRXP_WARN_会沿着通往塞尔萨玛的道路巡逻|r
     .target 巡山人卡德雷尔
-    .turnin 416 >>交任务 狗头人的耳朵
+    .turnin 416 >> 交任务 狗头人的耳朵
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维德拉·壁炉|r 对话
     .target 维德拉·壁炉
     .goto Loch Modan,34.828,49.283
-    .turnin 418 >>交任务 塞尔萨玛血肠
+    .turnin 418 >> 交任务 塞尔萨玛血肠
 step << Human
     #requires ratcatching
-    .hs >>将炉石使用回暴风城
+    .hs >> 将炉石使用回暴风城
 step << !Human
     #requires ratcatching
     .goto Loch Modan,33.938,50.954
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索格拉姆|r 对话
-    .fly Ironforge >>飞往铁炉堡
+    .fly Ironforge >> 飞往铁炉堡
     .target 索格拉姆·伯雷森
 step << Warrior/Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷格努斯·雷石|r 对话 << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话 << Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_雷格努斯·雷石|r 对话 << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话 << Warrior
     .goto Ironforge,69.872,82.890 << Hunter
     .goto Ironforge,65.905,88.405 << Warrior
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 雷格努斯·雷石 << Hunter
     .target 比尔班·飞钳 << Warrior
 step << Warrior !Human
@@ -1503,9 +1503,9 @@ step << !Human
     .goto Ironforge,78.00,51.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_蒙提|r 在地铁铁炉堡一侧对话，然后和 |cRXP_FRIENDLY_尼普希|r 在暴风城一侧对话
     .zone Stormwind City >>进入矿道地铁，乘坐地铁前往暴风城
-    .accept 6662 >>接受任务 我的兄弟，尼普希
+    .accept 6662 >> 接受任务 我的兄弟，尼普希
     >>乘坐地铁前
-    .turnin 6662 >>交任务 我的兄弟，尼普希
+    .turnin 6662 >> 交任务 我的兄弟，尼普希
     >>乘坐地铁后
     .isQuestAvailable 6662
     .target 蒙提

@@ -184,7 +184,7 @@ RXPGuides.RegisterGuide([[
 step << Warrior
     #season 2
     #completewith next
-    .goto Elwynn Forest,38.34,81.54,20 >>进入法戈第矿洞
+    .goto Elwynn Forest,38.34,81.54,20 >> 进入法戈第矿洞
     .train 403476,1
 step << Warrior
     #season 2
@@ -255,15 +255,15 @@ RXPGuides.RegisterGuide([[
 
 step << Warrior
     #season 2
-    .gossipoption 109045 >>与公园旅店内的|cRXP_FRIENDLY_丽芙·布拉德福德|r交谈
+    .gossipoption 109045 >> 与公园旅店内的|cRXP_FRIENDLY_丽芙·布拉德福德|r交谈
     .gossipoption 109047
     .goto Stormwind City,22.608,64.621
-    .gossipoption 109084 >>与|cRXP_ENEMY_斯图阿特|r对话，然后击败他。他会在生命值降至0%时昏倒
+    .gossipoption 109084 >> 与|cRXP_ENEMY_斯图阿特|r对话，然后击败他。他会在生命值降至0%时昏倒
     .goto Stormwind City,21.213,62.781
     >>如果|cRXP_ENEMY_斯图阿特|r不在那里，等待他刷新
-    .gossipoption 109044 >>击倒|cRXP_FRIENDLY_斯图阿特|r后，再次与|cRXP_ENEMY_莉芙·布拉德福德|r对话，即可获得 |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    .gossipoption 109044 >> 击倒|cRXP_FRIENDLY_斯图阿特|r后，再次与|cRXP_ENEMY_莉芙·布拉德福德|r对话，即可获得 |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .goto Stormwind City,22.608,64.621
-    .train 425447,1 >>|cRXP_WARN_使用|r |T134419:0|t|T236317:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r] |cRXP_WARN_训练|r |T236317:0|t|T236317:0|t[狂乱攻击]
+    .train 425447,1 >> |cRXP_WARN_使用|r |T134419:0|t|T236317:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r] |cRXP_WARN_训练|r |T236317:0|t|T236317:0|t[狂乱攻击]
     >>|cRXP_WARN_注意：根据你的等级，这个任务单刷可能会相当困难。如果需要的话，可以找些帮手。|r
     .use 204716
     .target Liv Bradford
@@ -285,7 +285,7 @@ step << Warrior
     >>在门口与 |cRXP_ENEMY_布鲁阿特|r 对话，然后击败他。他会在生命值降至0%时昏倒
     >>如果|cRXP_ENEMY_布鲁阿特|r不在那里，等待他刷新
     >>击倒 |cRXP_FRIENDLY_布鲁阿特|r 后，再次与 |cRXP_ENEMY_布鲁克·麦须|r 对话，即可获得 |T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
-    .train 425447,1 >>|cRXP_WARN_使用|r |T134419:0|t|T236317:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r] |cRXP_WARN_训练|r |T236317:0|t|T236317:0|t[狂乱攻击]
+    .train 425447,1 >> |cRXP_WARN_使用|r |T134419:0|t|T236317:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r] |cRXP_WARN_训练|r |T236317:0|t|T236317:0|t[狂乱攻击]
     >>|cRXP_WARN_注意：根据你的等级，这个任务单刷可能会相当困难。如果需要的话，可以找些帮手。|r
     .use 204716
     .target Bruuk Barleybeard
@@ -307,7 +307,7 @@ step << Warrior
     >>在楼上与 |cRXP_ENEMY_西拉尔特|r 对话，然后击败他，他会在0%血量时昏迷
     >>如果 |cRXP_ENEMY_西拉尔特|r 不在那里，等待他刷新
     >>在击败 |cRXP_FRIENDLY_西拉尔特|r 后，再次与 |cRXP_ENEMY_旅店老板凯达米尔|r 对话以获得 |T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
-    .train 425447,1 >>|cRXP_WARN_使用|r |T134419:0|t|T236317:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r] |cRXP_WARN_训练|r |T236317:0|t|T236317:0|t[狂乱攻击]
+    .train 425447,1 >> |cRXP_WARN_使用|r |T134419:0|t|T236317:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r] |cRXP_WARN_训练|r |T236317:0|t|T236317:0|t[狂乱攻击]
     >>|cRXP_WARN_注意：根据你的等级，这个任务单刷可能会相当困难。如果需要的话，可以找些帮手。|r
     .use 204716
     .target 旅店老板凯达米尔
@@ -353,7 +353,7 @@ RXPGuides.RegisterGuide([[
 step << Warrior
     #season 2
     #completewith next
-    .goto Darkshore,55.106,33.621,30 >>进入悬崖泉的纳迦洞穴
+    .goto Darkshore,55.106,33.621,30 >> 进入悬崖泉的纳迦洞穴
     .train 403489,1
 step << Warrior
     #season 2
@@ -409,7 +409,7 @@ step << Warrior
     .train 403475,1
 step << Warrior
     #completewith RoDSW
-    .zone Stormwind City >>前往暴风城
+    .zone Stormwind City >> 前往暴风城
 step << Warrior
     #season 2
     #completewith RoDSW
@@ -442,7 +442,7 @@ step << Warrior
     #season 2
     #label RoDSW
     #requires GnollHead
-    .cast 406651 >>|cRXP_WARN_使用任意|r |T134455:0|t[怪物猎人符文碎片] |cRXP_WARN_来制作|r |T134419:0|t[|cRXP_FRIENDLY_毁灭打击符文|r]
+    .cast 406651 >> |cRXP_WARN_使用任意|r |T134455:0|t[怪物猎人符文碎片] |cRXP_WARN_来制作|r |T134419:0|t[|cRXP_FRIENDLY_毁灭打击符文|r]
     .collect 204703,1 -- Rune of Devastate (1)
     .use 204690
     .use 204689
@@ -486,7 +486,7 @@ step << Warrior
     .train 403475,1
 step << Warrior
     #completewith next
-    .zone Darnassus >>前往达纳苏斯
+    .zone Darnassus >> 前往达纳苏斯
 step << Warrior
     #season 2
     .goto Darnassus,63.108,21.858
@@ -594,7 +594,7 @@ step << Tauren
     #season 2
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈鲁特|r 对话
-    .accept 77651 >>接受任务 深入荆棘
+    .accept 77651 >>Accept 深入荆棘
     .target 哈鲁特·雷角
 step
     #season 2
@@ -636,7 +636,7 @@ step << Undead
 step
     #season 2
     .goto Tirisfal Glades,24.60,59.45
-    >>在洞穴内从 |cRXP_PICK_Lost Stash|r 拾取战利品，以获得 |T134419:0|t[|cRXP_FRIENDLY_乘胜追击符文|r]
+    >>拾取洞穴内的|cRXP_PICK_失落宝箱|r，以获得 |T134419:0|t[|cRXP_FRIENDLY_乘胜追击符文|r]
     .collect 204806,1 --Rune of Victory Rush (1)
     .train 403470,1
 step
@@ -722,7 +722,7 @@ step
     .goto Orgrimmar,57.40,53.93,-1
     .goto Orgrimmar,58.05,51.40,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_扎姆沙|r 和 |cRXP_FRIENDLY_格鲁阿克|r 对话
-    +当|cRXP_ENEMY_格鲁阿克|r 变为敌对状态时将其击杀
+    +当|cRXP_ENEMY_格鲁阿克|r变为敌对状态时将其击杀
     .target Zamja
     .target Gru'ark
     .skipgossip
@@ -731,7 +731,7 @@ step
     #season 2
     .goto Orgrimmar,58.52,52.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_扎姆沙|r 对话
-    >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Zamja
     .train 425447,1
@@ -770,7 +770,7 @@ step
     #season 2
     .goto Thunder Bluff,28.73,18.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奈塔里|r 对话
-    >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .train 425447,1
@@ -808,7 +808,7 @@ step
     #season 2
     .goto Tirisfal Glades,61.72,51.91
     >>击杀 |cRXP_ENEMY_蓝心|r，然后与楼上的 |cRXP_FRIENDLY_本尼|r 对话
-    .gossipoption 110751 >>从她那里获得|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
+    .gossipoption 110751 >>从她那里获得|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
     .mob Blueheart
@@ -853,7 +853,7 @@ step
     .goto Durotar,52.13,20.77,40,0
     .goto Durotar,51.26,19.19,40,0
     .goto Durotar,53.98,23.70
-    >>击杀|cRXP_ENEMY_尘风鹰身人|r。拾取他们的|cRXP_LOOT_被砍下的鹰身人的头|r
+    >>击杀|cRXP_ENEMY_尘风鹰身人|r，并从它们身上拾取|cRXP_LOOT_被砍下的鹰身人的头|r
     .collect 206995,1 ---Severed Harpy Head (1)
     .mob Dustwind Savage
     .mob Dustwind Storm Witch
@@ -1195,7 +1195,7 @@ step << Warrior
     .collect 208778,1 -- Rune of Quick Strike (1)
     .train 425443,1
 step << Warrior
-    .train 425443 >>|cRXP_WARN_使用|r |T134419:0|t|T132394:0|t[|cRXP_FRIENDLY_迅捷打击符文|r] |cRXP_WARN_训练|r |T132394:0|t|T132394:0|t[迅捷打击]
+    .train 425443 >> |cRXP_WARN_使用|r |T134419:0|t|T132394:0|t[|cRXP_FRIENDLY_迅捷打击符文|r] |cRXP_WARN_训练|r |T132394:0|t|T132394:0|t[迅捷打击]
     .use 208778
     .itemcount 208778,1
 ]])
@@ -1221,7 +1221,7 @@ step
     #completewith next
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迪弗拉克|r 对话
-    .fly Ratchet >>飞往棘齿城
+    .fly Ratchet >> 飞往棘齿城
     .target 迪弗拉克
 step
     #completewith next
@@ -1309,7 +1309,7 @@ step << Warrior
     .use 209047
     .train 425443,1
 step << Warrior
-    .train 425443 >>|cRXP_WARN_使用|r |T134419:0|t|T132394:0|t[|cRXP_FRIENDLY_迅捷打击符文|r] |cRXP_WARN_训练|r |T132394:0|t|T132394:0|t[迅捷打击]
+    .train 425443 >> |cRXP_WARN_使用|r |T134419:0|t|T132394:0|t[|cRXP_FRIENDLY_迅捷打击符文|r] |cRXP_WARN_训练|r |T132394:0|t|T132394:0|t[迅捷打击]
     .use 208778
     .itemcount 208778,1
 ]])
@@ -1354,7 +1354,7 @@ step
     .mob 破碎岭好战者
 step
     #completewith next
-    .goto Arathi Highlands,57.587,72.499,10 >>上山去找 |cRXP_FRIENDLY_斯康克|r
+    .goto Arathi Highlands,57.587,72.499,10 >> 上山去找 |cRXP_FRIENDLY_斯康克|r
 step
     .train 416004,1
     .goto Arathi Highlands,57.68,74.66
@@ -1367,7 +1367,7 @@ step
     .goto Arathi Highlands,30.74,66.94,60,0
     .goto Arathi Highlands,22.72,71.98,50,0
     .goto Arathi Highlands,21.50,75.91,40,0
-    .goto Arathi Highlands,21.98,79.96,30 >>前往法迪尔海湾
+    .goto Arathi Highlands,21.98,79.96,30 >> 前往法迪尔海湾
 step
     #label SpiceBlend
     .train 416004,1
@@ -1398,7 +1398,7 @@ step
     .zone Badlands >>前往荒芜之地
 step
     #completewith next
-    .goto Badlands,42.87,29.77,60 >>进入安戈洛要塞
+    .goto Badlands,42.87,29.77,60 >> 进入安戈洛要塞
 step
     .train 416004,1
     .goto Badlands,41.92,26.26,20,0
@@ -1433,7 +1433,7 @@ step
     .zone Arathi Highlands >>前往阿拉希高地
 step
     #completewith next
-    .goto Arathi Highlands,57.587,72.499,10 >>上山去找 |cRXP_FRIENDLY_斯康克|r
+    .goto Arathi Highlands,57.587,72.499,10 >> 上山去找 |cRXP_FRIENDLY_斯康克|r
 step
     #label GroceryRun
     .train 416004,1
@@ -1477,7 +1477,7 @@ step
 step
     .train 409163,1
     #completewith WitherbarkCave
-    .zone Arathi Highlands >>前往 |cFFfa9602阿拉希高地|r
+    .zone Arathi Highlands >> 前往 |cFFfa9602阿拉希高地|r
 step
     .train 409163,1
     .goto Arathi Highlands,72.51,65.67,70,0
@@ -1501,7 +1501,7 @@ step
     .train 409163,1
     #completewith next
     .goto Arathi Highlands,69.502,81.924
-    .cast 436278 >>|cRXP_WARN_在洞穴内使用|r |T133057:0|t[|cRXP_LOOT_枯木锤|r] |cRXP_WARN_敲击|cRXP_PICK_铜锣|r|r
+    .cast 436278 >> |cRXP_WARN_在洞穴内使用|r |T133057:0|t[|cRXP_LOOT_枯木锤|r] |cRXP_WARN_敲击|cRXP_PICK_铜锣|r|r
     .use 216483 >>|cRXP_WARN_这会召唤一个|cRXP_ENEMY_枯木巨魔|r（35级精英）以及2个额外的怪物|r
 step
     .train 409163,1
@@ -1510,7 +1510,7 @@ step
     .collect 213109,1
     .mob Witherbark Goliath
 step
-    .train 409163 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_LOOT_怒火聚焦符文|r] |cRXP_WARN_训练|r |T132345:0|t[怒火聚焦]
+    .train 409163 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_LOOT_怒火聚焦符文|r] |cRXP_WARN_训练|r |T132345:0|t[怒火聚焦]
     .use 213109
 ]])
 
@@ -1559,7 +1559,7 @@ step
     +盾牌
 step
     .train 403472,1
-    .goto Thousand Needles,67.84,89.50,100 >>前往|cFFfa9602千针石林|r 的锈槌挖掘场
+    .goto Thousand Needles,67.84,89.50,100 >> 前往|cFFfa9602千针石林|r 的锈槌挖掘场
 step
     #completewith next
     +|cRXP_WARN_确保你已装备好单手武器和盾牌|r
@@ -1628,7 +1628,7 @@ step
     .unitscan Wandering Swordsman
     .skipgossip
 step
-    .train 426491 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_统领符文|r] |cRXP_WARN_来学习|r |T132339:0|t[集结呐喊]
+    .train 426491 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_统领符文|r] |cRXP_WARN_来学习|r |T132339:0|t[集结呐喊]
     .use 213110
 ]])
 
@@ -1655,7 +1655,7 @@ step
     .unitscan Ohk'zi
     .train 427081,1
 step
-    .train 427081 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_狂放符文|r] |cRXP_WARN_来学习|r |T132352:0|t[暴怒]
+    .train 427081 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_狂放符文|r] |cRXP_WARN_来学习|r |T132352:0|t[暴怒]
     .use 220682
 
 ]])
@@ -1693,7 +1693,7 @@ step
     .collect 220913,1 --Rune of Demolition
     .train 427084,1
 step
-    .train 427084 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_毁灭符文|r] |cRXP_WARN_来学习|r |T132364:0|t[破坏能手]
+    .train 427084 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_毁灭符文|r] |cRXP_WARN_来学习|r |T132364:0|t[破坏能手]
     .use 220913
 ]])
 
@@ -1752,7 +1752,7 @@ step
 step
 	#completewith next
 	+通过跳到脚部后面的岩石上并下线，来进行下线传送
-	.link https://youtu.be/oBnDG1AWcxU >>https://youtu.be/oBnDG1AWcxU >> 点击这里参考
+	.link https://youtu.be/oBnDG1AWcxU >> 点击这里参考
 step
     #label summonIodax
     #optional
@@ -1889,8 +1889,8 @@ step
     >>|cRXP_WARN_前往|r|cRXP_PICK_崇尊祭坛|r
     >>|cRXP_WARN_到达后，在聊天框输入"/敬礼"。这将召唤一个|r |cRXP_ENEMY_崇尊勇士|r
     >>击杀 |cRXP_ENEMY_崇尊勇士 |r，然后点击 |cRXP_PICK_崇尊祭坛|r
-    .accept 84124 >>接受任务 勇气的传承
-    .turnin 84124 >>交任务 勇气的传承
+    .accept 84124 >> 接受任务 勇气的传承
+    .turnin 84124 >> 交任务 勇气的传承
     .mob Revered Champion
 step
     .train 440492 >>|cRXP_WARN_使用|r |T133747:0|t[|cRXP_LOOT_第一勇士符文|r] |cRXP_WARN_来学习|r |T237516:0|t[新鲜血肉]
@@ -1932,8 +1932,8 @@ step
     >>|cRXP_WARN_它将施放看起来像[顺劈]的技能。当你看到那些动画时快速远离它们|r
     >>|cRXP_WARN_当他施放雷霆践踏时，你必须移动到平台边缘的小突起处，否则你会被击飞|r
     >>|cRXP_WARN_一旦你成功了，接受并交任务|r
-    .accept 84317 >>接受任务 午夜无明
-    .turnin 84317 >>交任务 午夜无明
+    .accept 84317 >> 接受任务 午夜无明
+    .turnin 84317 >> 交任务 午夜无明
     .mob Titanic Watcher
 step
     .train 440494 >>|cRXP_WARN_使用|r |T133739:0|t[|cRXP_LOOT_永恒流浪者的洞见|r] |cRXP_WARN_来学习|r |T132346:0|t[猝死]
@@ -1956,20 +1956,20 @@ step
     .goto Tanaris,59.2,91.5
     >>|cRXP_WARN_沿着海岸线前往塔纳利斯南部|r
     >>点击地上的 |cRXP_PICK_半埋的机甲|r 和 |cRXP_PICK_暗门|r
-    .accept 84135 >>接受任务 迷滩机器人
-    .turnin 84135 >>交任务 迷滩机器人
-    .accept 84137 >>接受任务 机械罗曼史
+    .accept 84135 >> 接受任务 迷滩机器人
+    .turnin 84135 >> 交任务 迷滩机器人
+    .accept 84137 >> 接受任务 机械罗曼史
 step
     .train 440496,1
     #completewith next
-    .cast 459613 >>|cRXP_WARN_使用|r |T134731:0|t[制导浮力加速器] |cRXP_WARN_来提升游泳速度，持续4分钟。|r
+    .cast 459613 >> |cRXP_WARN_使用|r |T134731:0|t[制导浮力加速器] |cRXP_WARN_来提升游泳速度，持续4分钟。|r
     .use 226856
 step
     .train 440496,1
     >>|cRXP_WARN_注释：此步骤没有箭头！|r
     >>|cRXP_WARN_你现在必须向南游到那座偏远的小岛并与|cRXP_FRIENDLY_ 塞巴斯蒂安·尤尔根斯|r 对话。你必须游过疲劳水域才能到达他身边。朝岛上的钻井平台方向游去即可找到他|r
-    .turnin 84137 >>交任务 机械罗曼史
-    .accept 84138 >>接受任务 冷淡之谊
+    .turnin 84137 >> 交任务 机械罗曼史
+    .accept 84138 >> 接受任务 冷淡之谊
     .target Sebastian Jurgens
 step
     .train 440496,1
@@ -1979,18 +1979,18 @@ step
     .train 440496,1
     .goto Winterspring,61.2,37.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_努米|r 对话
-    .turnin 84138 >>交任务 冷淡之谊
-    .accept 84146 >>接受任务 红口袋，蓝受心
+    .turnin 84138 >> 交任务 冷淡之谊
+    .accept 84146 >> 接受任务 红口袋，蓝受心
     .target Numi
 step
     #completewith next
-    .zone Burning Steppes >>前往燃烧平原
+    .zone Burning Steppes >> 前往燃烧平原
 step
     .train 440496,1
     .goto Burning Steppes,52.955,24.374
     >>点击地上的 |cRXP_PICK_大红口袋|r
-    .turnin 84146 >>交任务 红口袋，蓝受心
-    .accept 84211 >>接受任务 偷猎者窝点
+    .turnin 84146 >> 交任务 红口袋，蓝受心
+    .accept 84211 >> 接受任务 偷猎者窝点
     .target Red Bag
 step
     .train 440496,1
@@ -2011,8 +2011,8 @@ step
     .train 440496,1
     .goto Winterspring,61.2,37.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_努米|r 对话
-    .turnin 84211 >>交任务 偷猎者窝点
-    .accept 84212 >>接受任务 返程长票
+    .turnin 84211 >> 交任务 偷猎者窝点
+    .accept 84212 >> 接受任务 返程长票
     .target Numi
 step
     #completewith next
@@ -2020,13 +2020,13 @@ step
 step
     .train 440496,1
     >>|cRXP_WARN_再次返回南方远岛找 |cRXP_FRIENDLY_塞巴斯迪安·尤根斯|r|r
-    .turnin 84212 >>交任务 返程长票
-    .accept 84213 >>接受任务 朝来隙往
+    .turnin 84212 >> 交任务 返程长票
+    .accept 84213 >> 接受任务 朝来隙往
     .target Sebastian Jurgens
 step
     .train 440496,1
-    .zone Westfall >>|cRXP_WARN_跟随 |cRXP_FRIENDLY_塞巴斯迪安·尤根斯|r 到传送器。他会将你传送到西部荒野|r << Alliance
-    .zone Tirisfal Glades >>|cRXP_WARN_跟随 |cRXP_FRIENDLY_塞巴斯迪安·尤根斯|r 到传送器。他会将你传送到提瑞斯法林地|r << Horde
+    .zone Westfall >> |cRXP_WARN_跟随 |cRXP_FRIENDLY_塞巴斯迪安·尤根斯|r 到传送器。他会将你传送到西部荒野|r << Alliance
+    .zone Tirisfal Glades >> |cRXP_WARN_跟随 |cRXP_FRIENDLY_塞巴斯迪安·尤根斯|r 到传送器。他会将你传送到提瑞斯法林地|r << Horde
     .target Sebastian Jurgens
 step
     .train 440496,1
@@ -2038,7 +2038,7 @@ step
 step
     .train 440496,1
     >>点击地上的 |cRXP_PICK_机械臂|r
-    .turnin 84213 >>交任务 朝来隙往
+    .turnin 84213 >> 交任务 朝来隙往
 step
     .train 440496 >>|cRXP_WARN_使用|r |T133738:0|t[|cRXP_LOOT_预感与战斗远见|r] |cRXP_WARN_来学习|r |T236312:0|t[震荡波]
     .use 226678

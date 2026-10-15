@@ -2,46 +2,46 @@ if GetLocale() ~= "zhCN" then return end
 RXPGuides.RegisterGuide([[
 #classic
 #season 2
-#group RestedXP 终局指南
+#group RestedXP 满级指南
 #subgroup 开门任务
 #name 卡拉赞地穴开门任务
 
 step
     #completewith next
-    .subzone 2268 >>前往位于 |cRXP_LOOT_东瘟疫之地|r 的 |cRXP_PICK_圣光之愿礼拜堂|r
+    .subzone 2268 >> 前往位于 |cRXP_LOOT_东瘟疫之地|r 的 |cRXP_PICK_圣光之愿礼拜堂|r
 step
     .goto Eastern Plaguelands,81.3,58.75
     >>点击礼拜堂入口右侧标题为 |cRXP_FRIENDLY_寻找干练冒险者|r 的告示板
-    .accept 86964 >>接受任务 为了财富与荣耀！
+    .accept 86964 >> 接受任务 为了财富与荣耀！
 step
     .goto Deadwind Pass,43.08,34.22 << Alliance
     .goto Deadwind Pass,51.01,42.19 << Horde
-    .zone Deadwind Pass >>前往 |cRXP_PICK_逆风小径|r
+    .zone Deadwind Pass >> 前往 |cRXP_PICK_逆风小径|r
     .isOnQuest 86964
 step
-    .goto Deadwind Pass,47.36,75.60,100 >>向南前往 |cRXP_LOOT_卡拉赞|r
+    .goto Deadwind Pass,47.36,75.60,100 >> 向南前往 |cRXP_LOOT_卡拉赞|r
     .isOnQuest 86964
 step
     .goto Deadwind Pass,39,74
     >>寻找一具 |cRXP_FRIENDLY_身亡的冒险者|r 的尸体
-    .turnin 86964 >>交任务 为了财富与荣耀！
-    .accept 86965 >>接受任务 非凡暗影
+    .turnin 86964 >> 交任务 为了财富与荣耀！
+    .accept 86965 >> 接受任务 非凡暗影
     .target Deceased Adventurer
 step
     .goto Deadwind Pass,51.28,39.91,20,0
     .goto Deadwind Pass,52.09,34.10
     >>向北前往达拉然特工营地
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_密探金娜 |r 对话
-    .turnin 86965 >>交任务 非凡暗影
-    .accept 86966 >>接受任务 寻找幸存者
+    .turnin 86965 >> 交任务 非凡暗影
+    .accept 86966 >> 接受任务 寻找幸存者
 step
-    .goto Deadwind Pass,59.2,73.4,30 >>向南前往食人魔洞穴的入口
+    .goto Deadwind Pass,59.2,73.4,30 >> 向南前往食人魔洞穴的入口
     .isOnQuest 86966
 step
     .goto Deadwind Pass,65.0,78.0
     >>进入洞穴，寻找 |cRXP_FRIENDLY_受伤的冒险者|r，他被锁在笼子里
-    .turnin 86966 >>交任务 寻找幸存者
-    .accept 86967 >>接受任务 实施营救
+    .turnin 86966 >> 交任务 寻找幸存者
+    .accept 86967 >> 接受任务 实施营救
     .target Injured Adventurer
 step
     .goto Deadwind Pass,65.0,78.0
@@ -59,27 +59,27 @@ step
     .goto Deadwind Pass,52.32,34.09
     >>回到北方的达拉然特工营地
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈里森·琼斯|r对话
-    .turnin 86967 >>交任务 实施营救
-    .accept 86968 >>接受任务 你怕黑吗？
+    .turnin 86967 >> 交任务 实施营救
+    .accept 86968 >> 接受任务 你怕黑吗？
     .target 哈里森·琼斯
 step
     .goto Deadwind Pass,52.09,34.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_密探金娜|r 对话
-    .turnin 86968 >>交任务 你怕黑吗？
-    .accept 86969 >>接受任务 魔法假说
+    .turnin 86968 >> 交任务 你怕黑吗？
+    .accept 86969 >> 接受任务 魔法假说
     .target Agent Keanna
 step
     #optional
     #completewith Hypothesis
     #label Wetlands
-    .zone Wetlands >>前往 |cRXP_PICK_湿地|r 寻找 |T132839:0|t[生命之焰]
+    .zone Wetlands >> 前往 |cRXP_PICK_湿地|r 寻找 |T132839:0|t[生命之焰]
     .isOnQuest 86969
 step
     #optional
     #completewith Hypothesis
     #requires Wetlands
     #label GrimBatol
-    .goto 1437/0,-3451.700,-3450.800,40 >>前往通往 |cRXP_LOOT_格瑞姆巴托|r 道路的起点
+    .goto 1437/0,-3451.700,-3450.800,40 >> 前往通往 |cRXP_LOOT_格瑞姆巴托|r 道路的起点
     .isOnQuest 86969
 step
     #optional
@@ -128,7 +128,7 @@ step
     #optional
     #completewith Hypothesis
     #label Winterspring
-    .zone Winterspring >>前往 |cRXP_PICK_冬泉谷|r 寻找 |T136116:0|t[热切的小精灵]
+    .zone Winterspring >> 前往 |cRXP_PICK_冬泉谷|r 寻找 |T136116:0|t[热切的小精灵]
     .isOnQuest 86969
     .itemcount 235788,<1
 step
@@ -136,7 +136,7 @@ step
     #completewith Hypothesis
     #requires Winterspring
     #label Darkwhisper
-    .goto Winterspring,60.39,73.95,50 >>前往 |cRXP_LOOT_暗语峡谷|r
+    .goto Winterspring,60.39,73.95,50 >> 前往 |cRXP_LOOT_暗语峡谷|r
     .isOnQuest 86969
     .itemcount 235788,<1
 step
@@ -177,15 +177,15 @@ step
 step
     .goto Deadwind Pass,43.08,34.22 << Alliance
     .goto Deadwind Pass,51.01,42.19 << Horde
-    .zone Deadwind Pass >>返回 |cRXP_PICK_D逆风小径|r
+    .zone Deadwind Pass >> 返回 |cRXP_PICK_D逆风小径|r
     .isQuestComplete 86969
 step
     .goto Deadwind Pass,51.28,39.91,20,0
     .goto Deadwind Pass,52.09,34.10
     >>前往达拉然特工营地
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_密探金娜|r 对话
-    .turnin 86969 >>交任务 魔法假说
-    .accept 86970 >>接受任务 验证假说
+    .turnin 86969 >> 交任务 魔法假说
+    .accept 86970 >> 接受任务 验证假说
 step
     .goto Deadwind Pass,45.10,77.96,20,0
     .goto Deadwind Pass,42.20,77.41,20,0
@@ -202,12 +202,12 @@ step
     .goto Deadwind Pass,52.32,34.09
     >>向北返回达拉然特工营地
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_密探金娜|r 对话
-    .turnin 86970 >>交任务 验证假说
+    .turnin 86970 >> 交任务 验证假说
     .target Agent Keanna
 step
     >>|cRXP_WARN_恭喜，你现在已经完成了卡拉赞地穴的开门任务！|r
     >>你可以 |Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈里森·琼斯|r 对话，从他那里接取一个可以在副本内完成的任务
-    .accept 86971 >>接受任务 珍奇卡拉赞珍玩！
+    .accept 86971 >> 接受任务 珍奇卡拉赞珍玩！
     .target 哈里森·琼斯
 ]])
 
@@ -220,37 +220,37 @@ RXPGuides.RegisterGuide([[
 
 step
    #completewith next
-   .subzone 2268 >>前往位于 |cRXP_LOOT_东瘟疫之地|r 的 |cRXP_PICK_圣光之愿礼拜堂|r
+   .subzone 2268 >> 前往位于 |cRXP_LOOT_东瘟疫之地|r 的 |cRXP_PICK_圣光之愿礼拜堂|r
 step
    .goto Eastern Plaguelands,81.73,57.84
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与礼拜堂内的 |cRXP_FRIENDLY_莱尼德·巴萨罗梅|r 对话
-   .accept 87459 >>接受任务 血色活动
+   .accept 87459 >> 接受任务 血色活动
    .target Leonid Barthalomew the Revered
 step
     #optional
     #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杰希卡·查伯斯|r 对话
-    .home >>如果你愿意|cRXP_WARN_，你可以把炉石绑在这里|r。这将帮助你更快地从提瑞斯法林地返回
+    .home >> 如果你愿意|cRXP_WARN_，你可以把炉石绑在这里|r。这将帮助你更快地从提瑞斯法林地返回
     .target Jessica Chambers
 step << Alliance
     .goto Eastern Plaguelands,81.64,59.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与外面的 |cRXP_FRIENDLY_凯琳·斯蒂文|r 对话
-    .fly Chillwind >>飞往西瘟疫之地
+    .fly Chillwind >> 飞往西瘟疫之地
     .target Khaelyn Steelwing
     .isOnQuest 87459
 step << Horde
     .goto Eastern Plaguelands,80.23,57.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与外面的 |cRXP_FRIENDLY_乔吉亚|r 对话
     .target Georgia
-    .fly Undercity >>飞往幽暗城
+    .fly Undercity >> 飞往幽暗城
     .isOnQuest 87459
 step << Horde
-    .goto Tirisfal Glades,61.85,66.59,60 >>离开幽暗城
+    .goto Tirisfal Glades,61.85,66.59,60 >> 离开幽暗城
     .isOnQuest 87459
 step << Alliance
    #completewith next
    .goto Tirisfal Glades,84.85,70.57
-   .zone Tirisfal Glades >>前往提瑞斯法林地
+   .zone Tirisfal Glades >> 前往提瑞斯法林地
    .isOnQuest 87459
 step
    .goto Tirisfal Glades,81.76,58.06
@@ -263,20 +263,20 @@ step
    .isOnQuest 87459
 step
    #completewith next
-   .subzone 2268 >>返回 |cRXP_LOOT_东瘟疫之地|r 的 |cRXP_PICK_圣光之愿礼拜堂|r
+   .subzone 2268 >> 返回 |cRXP_LOOT_东瘟疫之地|r 的 |cRXP_PICK_圣光之愿礼拜堂|r
    .isOnQuest 87459
 step
    .goto Eastern Plaguelands,81.73,57.84
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与礼拜堂内的 |cRXP_FRIENDLY_莱尼德·巴萨罗梅|r 对话
-    .turnin 87459 >>交任务 血色活动
-    .accept 87493 >>接受任务 提尔之手的骚乱
+    .turnin 87459 >> 交任务 血色活动
+    .accept 87493 >> 接受任务 提尔之手的骚乱
     .target Leonid Barthalomew the Revered
 step
     .goto Eastern Plaguelands,67.8,83.2
     >>向南前往血色十字军营地
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官碧阿崔克丝|r 对话
-    .turnin 87493 >>交任务 提尔之手的骚乱
-    .accept 87497 >>接受任务 分裂
+    .turnin 87493 >> 交任务 提尔之手的骚乱
+    .accept 87497 >> 接受任务 分裂
     .target Commander Beatrix
 step
     .goto Eastern Plaguelands,67.8,83.2
@@ -288,19 +288,19 @@ step
    .goto Eastern Plaguelands,81.73,57.84
    >>返回圣光之愿礼拜堂
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_莱尼德·巴萨罗梅|r 对话
-    .turnin 87497 >>交任务 分裂
-    .accept 87498 >>接受任务 血色光复军
+    .turnin 87497 >> 交任务 分裂
+    .accept 87498 >> 接受任务 血色光复军
     .target Leonid Barthalomew the Revered
 step
     .goto Eastern Plaguelands,67.8,83.2
     >>返回血色十字军营地
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官碧阿崔克丝|r 对话
-    .turnin 87498 >>交任务 血色光复军
+    .turnin 87498 >> 交任务 血色光复军
     .target Commander Beatrix
 step
     .goto Eastern Plaguelands,68.25,82.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_血色审判官凯尔多兰|r 对话
-    .accept 87502 >>接受任务 收集情报
+    .accept 87502 >> 接受任务 收集情报
     .target Scarlet Inquisitor Caldoran
 step
     .goto Eastern Plaguelands,68.18,82.43
@@ -332,8 +332,8 @@ step
     >>返回血色十字军营地
     .goto Eastern Plaguelands,68.25,82.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_血色审判官凯尔多兰|r 对话
-    .turnin 87502 >>交任务 收集情报
-    .accept 87506 >>接受任务 瓦解城防
+    .turnin 87502 >> 交任务 收集情报
+    .accept 87506 >> 接受任务 瓦解城防
     .target Scarlet Inquisitor Caldoran
     .unitscan Sarlet Bloodhound
 step
@@ -342,7 +342,7 @@ step
     >>你现在可以通过收集4件可制作的血色套装，然后使用提供的 |T134503:0|t[|cRXP_WARN_血色徽记|r] |cFF0070FF来解锁永久的血色伪装|r
     >>你应该可以在拍卖行找到这些。这不是强制性的，但会让以后穿梭新阿瓦隆变得轻松得多
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_审判官乔瑟芬妮|r 对话
-    .accept 90510 >>接受任务 新阿瓦隆
+    .accept 90510 >> 接受任务 新阿瓦隆
     .use 237020 --Scarlet Insignia
 step
     >>进入提尔之手并寻找 |cRXP_ENEMY_血色围城指挥官|r
@@ -353,18 +353,18 @@ step
     .goto Eastern Plaguelands,67.8,83.2
     >>返回血色十字军营地
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官碧阿崔克丝|r 对话
-    .turnin 87506 >>交任务 瓦解城防
+    .turnin 87506 >> 交任务 瓦解城防
     .target Commander Beatrix
 step
     .goto Eastern Plaguelands,67.8,83.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_银色特使|r 对话
-    .accept 87508 >>接受任务 向泰罗索斯男爵报告
+    .accept 87508 >> 接受任务 向泰罗索斯男爵报告
 step
     >>返回圣光之愿礼拜堂
     .goto Eastern Plaguelands,81.74,57.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的|cRXP_FRIENDLY_玛克斯韦尔·泰罗索斯男爵|r 对话
-    .turnin 87508 >>交任务 向泰罗索斯男爵报告
-    .accept 87509 >>接受任务 黎明之怒
+    .turnin 87508 >> 交任务 向泰罗索斯男爵报告
+    .accept 87509 >> 接受任务 黎明之怒
     .target Lord Maxwell Tyrosus
 step
     .goto Eastern Plaguelands,67.8,83.2
@@ -375,8 +375,8 @@ step
 step
     .goto Eastern Plaguelands,67.8,83.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_指挥官碧阿崔克丝|r 对话
-    .turnin 87509 >>交任务 黎明之怒
-    .accept 87516 >>接受任务 斩首行动
+    .turnin 87509 >> 交任务 黎明之怒
+    .accept 87516 >> 接受任务 斩首行动
     .target Commander Beatrix
 step
     .goto Eastern Plaguelands,68.36,87.58
@@ -385,7 +385,7 @@ step
     .complete 87516,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_领主麦克斯韦尔·泰罗索斯|r 对话，他位于你在团队副本中击败巴纳扎尔后被传送到的监狱里
-    .turnin 87516 >>交任务 斩首行动
+    .turnin 87516 >> 交任务 斩首行动
     .target Lord Maxwell Tyrosus
 step
     +|cRXP_WARN_恭喜！你已完成血色领地的序章任务线！|r

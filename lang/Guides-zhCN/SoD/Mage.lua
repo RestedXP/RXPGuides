@@ -15,7 +15,7 @@ step
     .xp >2,1
 step
     #completewith next
-    .zone Elwynn Forest >>前往艾尔文森林
+    .zone Elwynn Forest >> 前往艾尔文森林
     .train 401760,1
     .xp <2,1
 step
@@ -44,7 +44,7 @@ step
     #label Research
     .goto Elwynn Forest,49.661,39.402
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_凯尔登·布雷门|r 对话
-    .accept 77620 >>接受任务 法术研究
+    .accept 77620 >> 接受任务 法术研究
     .target 凯尔登·布雷门
     .train 401760,1
     .xp <2,1
@@ -99,7 +99,7 @@ step
     #label Research2
     .goto Elwynn Forest,49.661,39.402
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_凯尔登·布雷门|r 对话
-    .turnin 77620 >>交任务 法术研究
+    .turnin 77620 >> 交任务 法术研究
     .target 凯尔登·布雷门
     .isQuestComplete 77620
     .xp <2,1
@@ -122,7 +122,7 @@ step
     .xp >2,1
 step
     #completewith next
-    .zone Dun Morogh >>前往 丹莫罗
+    .zone Dun Morogh >> 前往 丹莫罗
     .train 401760,1
     .xp <2,1
 step
@@ -131,13 +131,13 @@ step
     .goto 1426,28.910,69.703,15,0
     .goto 1426,28.835,69.050,10,0
     .goto 1426,28.835,68.702,10,0
-    .goto 1426,28.939,68.387,12 >>进入安威玛尔
+    .goto 1426,28.939,68.387,12 >> 进入安威玛尔
     .train 401760,1
     .xp <2,1
 step
     .goto Dun Morogh,28.709,66.366
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛瑞克·斯托纳尔|r 对话，NPC在里面
-    .accept 77667 >>接受任务 法术研究
+    .accept 77667 >> 接受任务 法术研究
     .target 玛瑞克·斯托纳尔
     .train 401760,1
     .xp <2,1
@@ -145,7 +145,7 @@ step
     #optional
     #completewith next
     .goto 1426,28.751,69.058,12,0
-    .goto 1426,28.676,69.669,15 >>离开安威玛尔
+    .goto 1426,28.676,69.669,15 >> 离开安威玛尔
     .train 401760,1
     .xp <2,1
 step
@@ -165,13 +165,13 @@ step
     .goto 1426,28.676,69.669,15,0
     .goto 1426,28.751,69.058,10,0
     .goto 1426,28.758,68.721,10,0
-    .goto 1426,28.645,68.364,12 >>进入安威玛尔
+    .goto 1426,28.645,68.364,12 >> 进入安威玛尔
     .isQuestComplete 77667
     .xp <2,1
 step
     .goto Dun Morogh,28.709,66.366
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛瑞克·斯托纳尔|r对话
-    .turnin 77667 >>交任务 法术研究
+    .turnin 77667 >> 交任务 法术研究
     .target 玛瑞克·斯托纳尔
     .isQuestComplete 77667
     .xp <2,1
@@ -194,7 +194,7 @@ step
     .xp >2,1
 step
     #completewith next
-    .zone Durotar >>前往杜隆塔尔
+    .zone Durotar >> 前往杜隆塔尔
     .train 401760,1
     .xp <2,1
 step
@@ -247,7 +247,7 @@ step
 step
     .goto Durotar,42.51,69.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_迈安|r 对话
-    .turnin 77643 >>交任务 法术研究
+    .turnin 77643 >> 交任务 法术研究
     .target 迈安
     .isQuestComplete 77643
     .xp <2,1
@@ -270,7 +270,7 @@ step
 step
     #optional
     #completewith next
-    .zone Tirisfal Glades >>前往提瑞斯法林地
+    .zone Tirisfal Glades >> 前往提瑞斯法林地
     .train 401760,1
     .xp <2,1
 step
@@ -349,7 +349,7 @@ step
     #optional
     #label Charm
     #completewith Comprehension
-    .zone Stormwind City >>前往暴风城
+    .zone Stormwind City >> 前往暴风城
     .train 401767,1
 step
     #optional
@@ -423,7 +423,7 @@ step
     #optional
     #label Charm
     #completewith Comprehension
-    .zone Ironforge >>前往铁炉堡
+    .zone Ironforge >> 前往铁炉堡
     .train 401767,1
 step
     #optional
@@ -449,7 +449,7 @@ step
     #optional
     #requires Loch1
     #completewith next
-    .goto 1432,54.33,26.82,5 >>进入帐篷
+    .goto 1432,54.33,26.82,5 >> 进入帐篷
     .train 401767,1
 step
     #label Tengi
@@ -561,7 +561,7 @@ step
     #optional
     #label Charm
     #completewith next
-    .zone Undercity >>前往幽暗城
+    .zone Undercity >> 前往幽暗城
     .train 401767,1
 step
     #label Comprehension
@@ -625,7 +625,7 @@ step
     #optional
     #label Charm
     #completewith Comprehension
-    .zone Stormwind City >>前往暴风城
+    .zone Stormwind City >> 前往暴风城
     .train 401765,1
 step
     #optional
@@ -682,7 +682,7 @@ step
     #optional
     #label Charm
     #completewith Comprehension
-    .zone Ironforge >>前往铁炉堡
+    .zone Ironforge >> 前往铁炉堡
     .train 401765,1
 step
     #optional
@@ -754,7 +754,7 @@ step
     #optional
     #label Charm
     #completewith next
-    .zone Undercity >>前往幽暗城
+    .zone Undercity >> 前往幽暗城
     .train 401765,1
 step
     #label Comprehension
@@ -804,7 +804,7 @@ step
 step
     #optional
     #completewith next
-    .zone Orgrimmar >>前往奥格瑞玛
+    .zone Orgrimmar >> 前往奥格瑞玛
     .train 401765,1
 step
     #label Comprehension
@@ -995,7 +995,7 @@ step
 step
     .goto 1429,43.248,66.192
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎尔迪玛·维夫希尔特|r 对话
-    .train 118 >>学习 |T136071:0|t[变形术]
+    .train 118 >> 学习 |T136071:0|t[变形术]
     .target 扎尔迪玛·维夫希尔特
     .train 415942,1
     .xp <8,1
@@ -1082,7 +1082,7 @@ step
 step
     .goto 1420,61.972,52.476
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_凯恩·火歌|r对话
-    .train 118 >>学习 |T136071:0|t[变形术]
+    .train 118 >> 学习 |T136071:0|t[变形术]
     .target 凯恩·火歌
     .train 415942,1
     .xp <8,1
@@ -1133,20 +1133,20 @@ RXPGuides.RegisterGuide[[
 --QQQ WIP to here
 
 step
-    .zone Stormwind City >>前往 |cFFfa9602暴风城|r
+    .zone Stormwind City >> 前往 |cFFfa9602暴风城|r
     .cast 3561 >>|cRXP_WARN_如果你有|r |T134419:0|t[传送符文] 使用 [传送：暴风城]
     .disablecheckbox
 step
     .money <0.20
     .goto Stormwind City,55.8,65.2
-    .collect 17031,10 >>从 |cRXP_FRIENDLY_施法材料、魔法货物、卷轴与药水商人|r 处购买 |T134419:0|t[传送符文]。|cRXP_WARN_ 这将大大缩短你的赶路时间。|r
+    .collect 17031,10 >> 从 |cRXP_FRIENDLY_施法材料、魔法货物、卷轴与药水商人|r 处购买 |T134419:0|t[传送符文]。|cRXP_WARN_ 这将大大缩短你的赶路时间。|r
     >>|cRXP_WARN_如果你不需要，可以手动跳过此步骤。|r
 step
     .goto Stormwind City,56.4,73.2
-    .bankwithdraw 209850,203755,208860,209845,209849,203754,208860,209848,209843,209851,209844,215817,215822,215683,215815,215816,215820,213165,215824,216523,209846 >>|cRXP_WARN_检查一下你的银行，看看有没有之前存进去的书籍。|r
+    .bankwithdraw 209850,203755,208860,209845,209849,203754,208860,209848,209843,209851,209844,215817,215822,215683,215815,215816,215820,213165,215824,216523,209846 >> |cRXP_WARN_检查一下你的银行，看看有没有之前存进去的书籍。|r
 step
     .goto Stormwind City,57.2,57.2
-    .vendor >>|cRXP_WARN_强烈建议维修装备，因为我们将会死过去|r
+    .vendor >> |cRXP_WARN_强烈建议维修装备，因为我们将会死过去|r
     >>|cFFFF0000如果你不想死过去，可以手动跳过此步骤|r
 step
     .goto 1429,64.41,69.08,10,0
@@ -1288,7 +1288,7 @@ step
     .disablecheckbox
 step
     .goto 1455,31.96,57.93
-    .vendor >>|cRXP_WARN_强烈建议维修装备，因为我们将会死过去|r
+    .vendor >> |cRXP_WARN_强烈建议维修装备，因为我们将会死过去|r
     >>|cFFFF0000如果你不想死过去，可以手动跳过此步骤|r
 step
     .goto 1455,69.76,24.39,10,0
@@ -1337,7 +1337,7 @@ step
 step
     #completewith Goaz Scrolls
     .zone Badlands >>前往 |cFFfa9602荒芜之地|r
-    .fly >>如果你已解锁了飞行点，就坐飞机去 |cFFfa9602荒芜之地|r |cRXP_WARN_|r
+    .fly >> 如果你已解锁了飞行点，就坐飞机去 |cFFfa9602荒芜之地|r |cRXP_WARN_|r
     .disablecheckbox
     .isQuestAvailable 79951
 step
@@ -1368,7 +1368,7 @@ step
 step
     .zoneskip Ironforge
     .goto Wetlands,8.0,55.8
-    .vendor >>|cRXP_WARN_强烈建议维修装备，因为我们将会死过去|r
+    .vendor >> |cRXP_WARN_强烈建议维修装备，因为我们将会死过去|r
     >>|cFFFF0000如果你不想死过去，可以手动跳过此步骤|r
 step
     #completewith next
@@ -1509,9 +1509,9 @@ step
     -- .zone Silverpine Forest >>Travel to |cFFfa9602Silverpine Forest|r primarily on foot.
     -- .fly Hillsbrad Foothills >> |cRXP_WARN_Fly to Hillsbrad Foothills if you have the flight path unlocked.|r
     -- .disablecheckbox
-    .fly Arathi Highlands >>|cRXP_WARN_如果你没有解锁希尔斯布莱德丘陵的飞行路线，请飞往阿拉希高地。|r
+    .fly Arathi Highlands >> |cRXP_WARN_如果你没有解锁希尔斯布莱德丘陵的飞行路线，请飞往阿拉希高地。|r
     .disablecheckbox
-    .fly Wetlands >>|cRXP_WARN_如果你没有解锁阿拉希高地，请飞往湿地。|r
+    .fly Wetlands >> |cRXP_WARN_如果你没有解锁阿拉希高地，请飞往湿地。|r
     .disablecheckbox
 step
     #completewith next
@@ -1601,7 +1601,7 @@ step
 step
     .goto Stormwind City,56.4,73.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_牛顿·伯恩赛德|r 对话。
-    .bankdeposit 209850,203755,208860,209845,209849,203754,208860,209848,209843,209851,209844,215817,215822,215683,215815,215816,215820,213165,215824,216523 >>|cRXP_WARN_存入剩余的书籍。|r
+    .bankdeposit 209850,203755,208860,209845,209849,203754,208860,209848,209843,209851,209844,215817,215822,215683,215815,215816,215820,213165,215824,216523 >> |cRXP_WARN_存入剩余的书籍。|r
     .target 牛顿·伯恩赛德
 ]]
 
@@ -1628,18 +1628,18 @@ step
 step
     .money <0.20
     .goto Orgrimmar,45.6,56.8
-    .collect 17031,10 >>从 |cRXP_FRIENDLY_施法材料、魔法货物、卷轴与药水商人|r 处购买 |T134419:0|t[传送符文]。|cRXP_WARN_ 这将大大缩短你的赶路时间。|r
+    .collect 17031,10 >> 从 |cRXP_FRIENDLY_施法材料、魔法货物、卷轴与药水商人|r 处购买 |T134419:0|t[传送符文]。|cRXP_WARN_ 这将大大缩短你的赶路时间。|r
     >>|cRXP_WARN_如果你不需要，可以手动跳过此步骤。|r
 step
     .goto Orgrimmar,50.0,68.8
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_银行职员|r 对话
-    .bankwithdraw 209850,208185,208860,209845,209849,207972,210177,209848,209843,209851,209844,215817,215822,215683,215815,215816,215820,213165,215824,216523 >>|cRXP_WARN_检查一下你的银行，看看有没有之前存进去的书籍。|r
+    .bankwithdraw 209850,208185,208860,209845,209849,207972,210177,209848,209843,209851,209844,215817,215822,215683,215815,215816,215820,213165,215824,216523 >> |cRXP_WARN_检查一下你的银行，看看有没有之前存进去的书籍。|r
     .target 卡鲁斯
     .target Komawa
     .target Soran
 step
     .goto Orgrimmar,55.8,73.0
-    .vendor >>|cRXP_WARN_强烈建议维修装备，因为我们将会死过去|r
+    .vendor >> |cRXP_WARN_强烈建议维修装备，因为我们将会死过去|r
     >>|cFFFF0000如果你不想死过去，可以手动跳过此步骤|r
 step
     .goto 1454,38.66,78.43
@@ -1787,7 +1787,7 @@ step
     .disablecheckbox
 step
     .goto Undercity,69.8,27.6
-    .vendor >>|cRXP_WARN_强烈建议维修装备，因为我们将使用死亡跳跃|r
+    .vendor >> |cRXP_WARN_强烈建议维修装备，因为我们将使用死亡跳跃|r
     >>|cFFFF0000如果你不想使用死亡跳跃，可以手动跳过此步骤|r
 step
     .goto 1420,59.62,52.05,5,0
@@ -1859,7 +1859,7 @@ step
 step
     #completewith next
     .zone Badlands >>前往 |cFFfa9602荒芜之地|r
-    .fly >>如果你已解锁了飞行点，就坐飞机去 |cFFfa9602荒芜之地|r |cRXP_WARN_|r
+    .fly >> 如果你已解锁了飞行点，就坐飞机去 |cFFfa9602荒芜之地|r |cRXP_WARN_|r
     .disablecheckbox
     .isQuestAvailable 79951
 step
@@ -2026,7 +2026,7 @@ step
 step
     .goto Orgrimmar,50.0,68.8
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_银行职员|r 对话
-    .bankdeposit 209850,208185,208860,209845,209849,207972,210177,209848,209843,209851,209844,215817,215822,215683,215815,215816,215820,213165,215824,216523 >>|cRXP_WARN_存入剩余的书籍。|r
+    .bankdeposit 209850,208185,208860,209845,209849,207972,210177,209848,209843,209851,209844,215817,215822,215683,215815,215816,215820,213165,215824,216523 >> |cRXP_WARN_存入剩余的书籍。|r
     .target 卡鲁斯
     .target Komawa
     .target Soran
@@ -2301,7 +2301,7 @@ step
     .use 211691
 step
     #optional
-    .destroy 211777 >>摧毁 |T133737:0|t[纳迦手稿]。你不再需要它了
+    .destroy 211777 >> 摧毁 |T133737:0|t[纳迦手稿]。你不再需要它了
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2322,7 +2322,7 @@ step
     #optional
     #label Charm
     #completewith Comprehension
-    .zone Ironforge >>前往铁炉堡
+    .zone Ironforge >> 前往铁炉堡
     .train 415936,1
 step
     #optional
@@ -2637,8 +2637,8 @@ step << Horde
     >>|cRXP_BUY_从 |r |cRXP_BUY_材料商人|cRXP_FRIENDLY_ |r购买一个或者多个 |T135933:0|t[理解魔符] 来解读符文 |r
     .collect 211779,1
 step
-    .train 415948 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_LOOT_法术笔记：NFASHBHIGSAUAGJINUN|r] |cRXP_WARN_来训练|r |T135780:0|t[法术冰霜箭]
-    .train 401762 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_LOOT_法术笔记：JSHHUZUAAHOIINNG|r] |cRXP_WARN_来训练|r |T236217:0|t[霜火之箭]
+    .train 415948 >> |cRXP_WARN_使用|r |T134939:0|t[|cRXP_LOOT_法术笔记：NFASHBHIGSAUAGJINUN|r] |cRXP_WARN_来训练|r |T135780:0|t[法术冰霜箭]
+    .train 401762 >> |cRXP_WARN_使用|r |T134939:0|t[|cRXP_LOOT_法术笔记：JSHHUZUAAHOIINNG|r] |cRXP_WARN_来训练|r |T236217:0|t[霜火之箭]
     .use 213127
     .use 217161
 ]])
@@ -2659,11 +2659,11 @@ step
     .train 2121,1 -- flamestrike r2
     .train 8422,1 -- flamestrike r3
     .train 8423,1 -- flamestrike r4
-    .train 2120 >>|cRXP_WARN_你必须先学会|r |T135826:0|t[烈焰风暴] |cRXP_WARN_才能获得|r |T236218:0|t[炽热连击] |cRXP_WARN_符文|r
+    .train 2120 >> |cRXP_WARN_你必须先学会|r |T135826:0|t[烈焰风暴] |cRXP_WARN_才能获得|r |T236218:0|t[炽热连击] |cRXP_WARN_符文|r
 step
     .train 401749,1
     .goto Alterac Mountains,60.510,46.286
-    .zone Alterac Mountains >>前往奥特兰克山脉
+    .zone Alterac Mountains >> 前往奥特兰克山脉
 step
     .train 401749,1
     .goto Alterac Mountains,60.510,46.286,-1
@@ -2673,7 +2673,7 @@ step
     .collect 213113,1
     .mob Ancient Fire Elemental
 step
-    .train 401749 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_LOOT_法术笔记：炽热连击|r] |cRXP_WARN_来训练|r |T236218:0|t[炽热连击]
+    .train 401749 >> |cRXP_WARN_使用|r |T134939:0|t[|cRXP_LOOT_法术笔记：炽热连击|r] |cRXP_WARN_来训练|r |T236218:0|t[炽热连击]
     .use 213113
 ]])
 
@@ -2690,7 +2690,7 @@ RXPGuides.RegisterGuide([[
 step
     .train 401749,1
     #completewith next
-    .zone Arathi Highlands >>前往阿拉希高地
+    .zone Arathi Highlands >> 前往阿拉希高地
 step
     .train 401749,1
     .goto Arathi Highlands,67.46,28.79,40,0
@@ -2703,7 +2703,7 @@ step
     .collect 213113,1
     .mob 烈焰流放者
 step
-    .train 401749 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_LOOT_法术笔记：炽热连击|r] |cRXP_WARN_来训练|r |T236218:0|t[炽热连击]
+    .train 401749 >> |cRXP_WARN_使用|r |T134939:0|t[|cRXP_LOOT_法术笔记：炽热连击|r] |cRXP_WARN_来训练|r |T236218:0|t[炽热连击]
     .use 213113
 ]])
 
@@ -2841,11 +2841,11 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Stormwind City >>前往暴风城
+    .zone Stormwind City >> 前往暴风城
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Undercity >>前往幽暗城
+    .zone Undercity >> 前往幽暗城
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -2854,7 +2854,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Westfall >>前往西部荒野
+    .zone Westfall >> 前往西部荒野
 step
     .train 429311,1
     #loop
@@ -2907,11 +2907,11 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Darnassus >>前往达纳苏斯
+    .zone Darnassus >> 前往达纳苏斯
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Orgrimmar >>前往奥格瑞玛
+    .zone Orgrimmar >> 前往奥格瑞玛
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -2920,7 +2920,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Desolace >>前往凄凉之地
+    .zone Desolace >> 前往凄凉之地
 step
     .train 429311,1
     #loop
@@ -2960,11 +2960,11 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Darnassus >>前往达纳苏斯
+    .zone Darnassus >> 前往达纳苏斯
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Orgrimmar >>前往奥格瑞玛
+    .zone Orgrimmar >> 前往奥格瑞玛
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -2973,7 +2973,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Feralas >>前往菲拉斯
+    .zone Feralas >> 前往菲拉斯
 step
     .train 429311,1
     #loop
@@ -3013,11 +3013,11 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Darnassus >>前往达纳苏斯
+    .zone Darnassus >> 前往达纳苏斯
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Orgrimmar >>前往奥格瑞玛
+    .zone Orgrimmar >> 前往奥格瑞玛
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3026,7 +3026,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Azshara >>前往艾萨拉
+    .zone Azshara >> 前往艾萨拉
 step
     .train 429311,1
     #loop
@@ -3064,11 +3064,11 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Stormwind City>>前往暴风城
+    .zone Stormwind City>> 前往暴风城
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Undercity >>前往幽暗城
+    .zone Undercity >> 前往幽暗城
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3077,7 +3077,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Blasted Lands >>前往诅咒之地
+    .zone Blasted Lands >> 前往诅咒之地
 step
     .train 429311,1
     #loop
@@ -3115,11 +3115,11 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Darnassus >>前往达纳苏斯
+    .zone Darnassus >> 前往达纳苏斯
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Orgrimmar >>前往奥格瑞玛
+    .zone Orgrimmar >> 前往奥格瑞玛
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3128,7 +3128,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Westfall >>前往西部荒野
+    .zone Westfall >> 前往西部荒野
 step
     .train 429311,1
     #loop
@@ -3174,11 +3174,11 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Darnassus >>前往达纳苏斯
+    .zone Darnassus >> 前往达纳苏斯
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Orgrimmar >>前往奥格瑞玛
+    .zone Orgrimmar >> 前往奥格瑞玛
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3187,7 +3187,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Darkshore >>前往黑海岸
+    .zone Darkshore >> 前往黑海岸
 step
     .train 429311,1
     #loop
@@ -3225,11 +3225,11 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Ironforge >>前往铁炉堡
+    .zone Ironforge >> 前往铁炉堡
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Undercity >>前往幽暗城
+    .zone Undercity >> 前往幽暗城
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3238,7 +3238,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Westfall >>前往西部荒野
+    .zone Westfall >> 前往西部荒野
 step
     .train 429311,1
     #loop
@@ -3276,11 +3276,11 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Stormwind City >>前往暴风城
+    .zone Stormwind City >> 前往暴风城
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Undercity >>前往幽暗城
+    .zone Undercity >> 前往幽暗城
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3289,7 +3289,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Swamp of Sorrows >>前往悲伤沼泽
+    .zone Swamp of Sorrows >> 前往悲伤沼泽
 step
     .train 429311,1
     #loop
@@ -3340,11 +3340,11 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Stormwind City >>前往暴风城
+    .zone Stormwind City >> 前往暴风城
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Undercity >>前往幽暗城
+    .zone Undercity >> 前往幽暗城
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3353,7 +3353,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Redridge Mountains >>前往赤脊山
+    .zone Redridge Mountains >> 前往赤脊山
 step
     .train 429311,1
     #loop
@@ -3389,7 +3389,7 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401764,1
-    .zone Western Plaguelands >>前往 西瘟疫之地
+    .zone Western Plaguelands >> 前往 西瘟疫之地
 step
     .train 401764,1
     #loop -- not sure which coord is tied to which itemid, update in future
@@ -3408,13 +3408,13 @@ step
     .skipgossip
 step
     .train 401764,1
-    .use 225938 >>|cRXP_WARN_使用任意|r|T134937:0|t|T134938:0|t|T134943:0|t|T134945:0|t|cRXP_LOOT_撕碎的法术笔记|r|cRXP_WARN_将其组合成|r|T134939:0|t|cRXP_LOOT_法术笔记：过热|r
+    .use 225938 >> |cRXP_WARN_使用任意|r|T134937:0|t|T134938:0|t|T134943:0|t|T134945:0|t|cRXP_LOOT_撕碎的法术笔记|r|cRXP_WARN_将其组合成|r|T134939:0|t|cRXP_LOOT_法术笔记：过热|r
     .use 225939
     .use 225940
     .use 225941
     .collect 225691,1
 step
-    .train 401764 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_LOOT_法术笔记：过热|r] |cRXP_WARN_来训练|r |T135813:0|t[过热]
+    .train 401764 >> |cRXP_WARN_使用|r |T134939:0|t[|cRXP_LOOT_法术笔记：过热|r] |cRXP_WARN_来训练|r |T135813:0|t[过热]
     .use 225691
 ]])
 
@@ -3429,7 +3429,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     .train 440858,1
-    .zone Felwood >>前往费伍德森林
+    .zone Felwood >> 前往费伍德森林
 step
     .train 440858,1
     .goto Felwood,63.0,9.0
@@ -3448,7 +3448,7 @@ step
     .goto Felwood,61.0,12.0
     .use 227797 >>|cRXP_WARN_对|r 卡利克斯·暗绿|cRXP_LOOT_ 使用|r |T134937:0|t[|cRXP_WARN_破译的达纳苏斯卷轴|cRXP_FRIENDLY_]，|r并接受他的任务|r
     >>|cRXP_FRIENDLY_卡利克斯·暗绿|r |cRXP_WARN_会在附近活动|r
-    .accept 84369 >>接受任务 治疗治疗者
+    .accept 84369 >> 接受任务 治疗治疗者
     .unitscan Calyx Greenglow
 step
     .train 440858,1
@@ -3459,13 +3459,13 @@ step
 step
     .train 440858,1
     #completewith next
-    .zone Winterspring >>前往冬泉谷
+    .zone Winterspring >> 前往冬泉谷
 step
     .train 440858,1
     .goto Winterspring,29.0,35.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡利克斯·暗绿|r 对话
     >>|cRXP_WARN_交任务后需要击杀 |cRXP_ENEMY_卡利克斯·暗绿|r|r
-    .turnin 84369 >>交任务 治疗治疗者
+    .turnin 84369 >> 交任务 治疗治疗者
     .unitscan Calyx Greenglow
 step
     .train 440858,1
@@ -3473,7 +3473,7 @@ step
     .collect 225690,1 -- Spell Notes: Frozen Orb 1/1
     .mob Enraged Shade
 step
-    .train 440858 >>|cRXP_WARN_使用|r |T134939:0|t[|cRXP_LOOT_法术笔记：寒冰宝珠|r] |cRXP_WARN_来训练|r |T135851:0|t[寒冰宝珠]
+    .train 440858 >> |cRXP_WARN_使用|r |T134939:0|t[|cRXP_LOOT_法术笔记：寒冰宝珠|r] |cRXP_WARN_来训练|r |T135851:0|t[寒冰宝珠]
     .use 225690
 ]])
 
@@ -3489,7 +3489,7 @@ RXPGuides.RegisterGuide([[
 step
     .train 401722,1
     #completewith Necromancy101
-    .zone Western Plaguelands >>前往 西瘟疫之地
+    .zone Western Plaguelands >> 前往 西瘟疫之地
 step
     .train 401722,1
     .goto Western Plaguelands,38.3,54.6
@@ -3506,7 +3506,7 @@ step
 step
     .train 401722,1
     #completewith UndeadMenace
-    .zone Eastern Plaguelands >>前往 西瘟疫之地
+    .zone Eastern Plaguelands >> 前往 西瘟疫之地
 step
     .train 401722,1
     .goto Eastern Plaguelands,81.7,57.8
@@ -3529,7 +3529,7 @@ step
 step
     .train 401722,1
     #completewith next
-    .subzone 1445 >>前往灼热峡谷或燃烧平原并进入黑石山
+    .subzone 1445 >> 前往灼热峡谷或燃烧平原并进入黑石山
 step
     .train 401722,1
     .goto 1415,48.388,63.626
@@ -3540,7 +3540,7 @@ step
 step
     .train 401722,1
     #completewith next
-    .zone Winterspring >>前往冬泉谷
+    .zone Winterspring >> 前往冬泉谷
 step
     .train 401722,1
     .goto Winterspring,60.7,37.7
@@ -3550,7 +3550,7 @@ step
 step
     .train 401722,1
     #completewith next
-    .zone Felwood >>前往费伍德森林
+    .zone Felwood >> 前往费伍德森林
     .subzoneskip 1216
 step
     .train 401722,1
@@ -3565,14 +3565,14 @@ step
     .goto 1458,73.6,32.6 << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_詹妮亚·坎农|r 对话 << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥兰·斯内克威瑟|r 对话  << Horde
-    .accept 84395 >>交任务 亡灵马铃薯
-    .accept 84402 >>交任务 通灵术基础入门
-    .accept 84398 >>交任务 圣光研究录
-    .accept 84400 >>交任务 骑士与女士
-    .accept 84401 >>交任务 《天灾：亡灵祸害还是误解所致？》
-    .accept 84396 >>交任务 《岩浆还是熔岩？》
-    .accept 84399 >>交任务 《炸他个稀巴烂！》
-    .accept 84397 >>交任务 《北卡利姆多——全方位指南》
+    .accept 84395 >> 交任务 亡灵马铃薯
+    .accept 84402 >> 交任务 通灵术基础入门
+    .accept 84398 >> 交任务 圣光研究录
+    .accept 84400 >> 交任务 骑士与女士
+    .accept 84401 >> 交任务 《天灾：亡灵祸害还是误解所致？》
+    .accept 84396 >> 交任务 《岩浆还是熔岩？》
+    .accept 84399 >> 交任务 《炸他个稀巴烂！》
+    .accept 84397 >> 交任务 《北卡利姆多——全方位指南》
     .target 詹妮亚·坎农 << Alliance
     .target 奥兰·斯内克威瑟 << Horde
 step
@@ -3582,8 +3582,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_詹妮亚·坎农|r 对话 << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥兰·斯内克威瑟|r 对话 << Horde
     >>|cRXP_WARN_如果你无法接受此任务，请确保你已获得Icy Veins/法术强度/深度冻结的符文，因为这是那些符文的延续且是必需的|r
-    .accept 84394 >>接受任务 高级图书馆之友
-    .turnin 84394 >>交任务 高级图书馆之友
+    .accept 84394 >> 接受任务 高级图书馆之友
+    .turnin 84394 >> 交任务 高级图书馆之友
     .target 詹妮亚·坎农 << Alliance
     .target 奥兰·斯内克威瑟 << Horde
 ]])

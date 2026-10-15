@@ -16,7 +16,7 @@ RXPGuides.RegisterGuide([[
 step
     .goto Wetlands,7.95,56.38
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_德温·晨光|r对话
-    .vendor >>|cRXP_BUY_尽可能多地购买|r |T134831:0|t[治疗药水] |cRXP_BUY_（如果有售）|r
+    .vendor >> |cRXP_BUY_尽可能多地购买|r |T134831:0|t[治疗药水] |cRXP_BUY_（如果有售）|r
     >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_德温·晨光|r 没有库存，请跳过此步骤|r
     .target 德温·晨光
 step
@@ -25,14 +25,14 @@ step
     .goto Wetlands,10.6,57.2,25,0
     .goto Wetlands,10.761,56.737
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_尼尔·奥雷|r 对话
-    .vendor >>|cRXP_BUY_买一个|r |T133024:0|t[青铜管]
+    .vendor >> |cRXP_BUY_买一个|r |T133024:0|t[青铜管]
     >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_尼尔·奥雷|r 没有库存，请跳过此步骤|r
 	.target 尼尔·奥雷
     .bronzetube
 step << Hunter
     .goto Wetlands,11.113,58.316
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾德温娜·蒙佐尔|r 对话
-    .vendor >>|cRXP_BUY_购买 |T134410:0|t[中型箭袋]|r和|cRXP_BUY_ |T132382:0|t[锋利的箭]|r
+    .vendor >> |cRXP_BUY_购买 |T134410:0|t[中型箭袋]|r和|cRXP_BUY_ |T132382:0|t[锋利的箭]|r
     .collect 11362,1 --Medium Quiver (1)
     .collect 2515,1800 --Sharp Arrow (1800)
     .target 艾德温娜·蒙佐尔
@@ -40,18 +40,18 @@ step
     .goto Wetlands,10.43,61.01,10,0
     .goto Wetlands,10.496,60.201
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_萨莫尔·菲斯蒂沃斯|r 对话
-    .vendor >>|cRXP_BUY_尽可能多地购买|r |T134831:0|t[治疗药水] |cRXP_BUY_（如果有售）|r
+    .vendor >> |cRXP_BUY_尽可能多地购买|r |T134831:0|t[治疗药水] |cRXP_BUY_（如果有售）|r
     >>|cRXP_WARN_这是限量供应物品，如果 |cRXP_FRIENDLY_萨莫尔·菲斯蒂沃斯|r 没有库存，请跳过此步骤|r
     .target 萨莫尔·菲斯蒂沃斯
 step << !Druid !Hunter
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
-    .fly Ironforge >>飞往铁炉堡
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
+    .fly Ironforge >> 飞往铁炉堡
     .target 谢尔雷·布隆迪尔
     .zoneskip Wetlands,1
     .xp <18,1
 step << !Druid !Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话 << Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话 << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布瑞尔索恩|r 对话 << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_芬斯维克|r 对话 << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话 << Priest
@@ -64,7 +64,7 @@ step << !Druid !Hunter
     .goto Ironforge,25.207,10.756 << Priest
     .goto Ironforge,27.18,8.60 << Mage
     .goto Ironforge,23.141,6.149 << Paladin
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 比尔班·飞钳 << Warrior
     .target 布瑞尔索恩 << Warlock
     .target 芬斯维克 << Rogue
@@ -74,14 +74,14 @@ step << !Druid !Hunter
     .xp <18,1
 step << !Druid !Hunter
     .goto Ironforge,55.501,47.742
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
-    .fly Loch Modan >>飞往 洛克莫丹
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    .fly Loch Modan >> 飞往 洛克莫丹
     .target 格莱斯·瑟登
     .zoneskip Ironforge,1
 step
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
-    .fly Loch Modan >>飞往 洛克莫丹
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
+    .fly Loch Modan >> 飞往 洛克莫丹
     .target 谢尔雷·布隆迪尔
     .zoneskip Wetlands,1
 step
@@ -89,27 +89,27 @@ step
     .goto Loch Modan,34.53,43.72,10,0
     .goto Loch Modan,34.69,43.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_镇长埃罗恩·钝鼻|r 对话
-    .accept 255 >>接受任务 雇佣兵
+    .accept 255 >> 接受任务 雇佣兵
     .target Magistrate Bluntnose
 step
     .goto Loch Modan,37.17,47.94,8,0
     .goto Loch Modan,37.24,47.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_吉恩·角盔|r 对话
-    .accept 436 >>接受任务 铁环挖掘场
+    .accept 436 >> 接受任务 铁环挖掘场
     .target Jern Hornhelm
 step
     #completewith next
-    .goto Loch Modan,23.85,17.92,100 >>向北前往奥加兹岗哨
+    .goto Loch Modan,23.85,17.92,100 >> 向北前往奥加兹岗哨
 step
     .goto Loch Modan,23.85,17.92,10,0
     .goto Loch Modan,24.77,18.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巡山人雷矛|r 对话
-    .turnin 353 >>交任务 雷矛的包裹 << NightElf
-    .accept 307 >>接受任务 污秽的爪子
+    .turnin 353 >> 交任务 雷矛的包裹 << NightElf
+    .accept 307 >> 接受任务 污秽的爪子
     .target 巡山人雷矛
 step
     #completewith next
-   .goto Loch Modan,35.50,18.97,20 >>进入银溪矿洞
+   .goto Loch Modan,35.50,18.97,20 >> 进入银溪矿洞
 step
     .goto Loch Modan,35.93,22.55
     >>打开 |cRXP_PICK_矿工联盟的储物箱|r。拾取里面的 |cRXP_LOOT_矿工装备|r
@@ -119,25 +119,25 @@ step
     .goto Loch Modan,23.85,17.92,10,0
     .goto Loch Modan,24.77,18.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巡山人雷矛|r 对话
-    .turnin 307 >>交任务 污秽的爪子
+    .turnin 307 >> 交任务 污秽的爪子
     .target 巡山人雷矛
 step
     #completewith next
-    .goto Loch Modan,43.43,10.14,50 >>前往巨石水坝
+    .goto Loch Modan,43.43,10.14,50 >> 前往巨石水坝
 step
     .goto Loch Modan,46.05,13.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_主工程师辛德维尔七世|r 对话
-    .accept 250 >>接受任务 水坝危机
+    .accept 250 >> 接受任务 水坝危机
     .target Chief Engineer Hinderweir VII
 step
     .goto Loch Modan,56.05,13.24
     >>点击 |cRXP_PICK_可疑的木桶|r
-    .turnin 250 >>交任务 水坝危机
-    .accept 199 >>接受任务 水坝危机
+    .turnin 250 >> 交任务 水坝危机
+    .accept 199 >> 接受任务 水坝危机
 step
     .goto Loch Modan,46.05,13.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_主工程师辛德维尔七世|r 对话
-    .turnin 199 >>交任务 水坝危机
+    .turnin 199 >> 交任务 水坝危机
     .target Chief Engineer Hinderweir VII
 step
     #completewith next
@@ -149,25 +149,25 @@ step
 step
     #completewith next
     .goto Loch Modan,82.92,59.37,80,0
-    .goto Loch Modan,83.28,62.97,25 >>前往旅行者营地
+    .goto Loch Modan,83.28,62.97,25 >> 前往旅行者营地
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_年轻的达瑞尔|r 对话
-    .accept 257 >>接受任务 自豪的猎人
+    .accept 257 >> 接受任务 自豪的猎人
     .goto Loch Modan,83.49,65.40
     .target Daryl the Youngling
 step << Hunter
     .goto Loch Modan,82.225,62.842
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_克劳德·艾尔克辛|r 对话
-    .trainer >>训练你的宠物技能
+    .trainer >> 训练你的宠物技能
     .target Claude Erksine
 step << Hunter
     .goto Loch Modan,82.391,62.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_达恩·准星|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target Dargh Trueaim
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_马雷克·铁心|r 对话
-    .accept 385 >>接受任务 捕猎鳄鱼
+    .accept 385 >> 接受任务 捕猎鳄鱼
     .goto Loch Modan,81.76,61.66
     .target Marek Ironheart
 step
@@ -189,12 +189,12 @@ step
 step
     #completewith next
     .goto Loch Modan,82.92,59.37,80,0
-    .goto Loch Modan,83.28,62.97,25 >>前往 |cRXP_FRIENDLY_年轻的达瑞尔|r
+    .goto Loch Modan,83.28,62.97,25 >> 前往 |cRXP_FRIENDLY_年轻的达瑞尔|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_年轻的达瑞尔|r 对话
     .goto Loch Modan,83.49,65.40
-    .turnin 257 >>交任务 自豪的猎人
-    .accept 258 >>接受任务 猎人的挑战
+    .turnin 257 >> 交任务 自豪的猎人
+    .accept 258 >> 接受任务 猎人的挑战
     .target Daryl the Youngling
 step
     .goto Loch Modan,74.65,49.60,70,0
@@ -212,17 +212,17 @@ step
 step
     #completewith next
     .goto Loch Modan,82.92,59.37,80,0
-    .goto Loch Modan,83.28,62.97,25 >>前往 |cRXP_FRIENDLY_年轻的达瑞尔|r
+    .goto Loch Modan,83.28,62.97,25 >> 前往 |cRXP_FRIENDLY_年轻的达瑞尔|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_年轻的达瑞尔|r 对话
     .goto Loch Modan,83.49,65.40
-    .turnin 258 >>交任务 猎人的挑战
+    .turnin 258 >> 交任务 猎人的挑战
     .target Daryl the Youngling
 step
     .group
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_维林·疾风|r 对话
     .goto Loch Modan,81.73,64.15
-    .accept 271 >>接受任务 维林的报复
+    .accept 271 >> 接受任务 维林的报复
     .target Vyrin Swiftwind
 step
     #completewith next
@@ -233,7 +233,7 @@ step
     .unitscan Thragomm
 step
     #completewith next
-    .goto Loch Modan,54.7,38.3,200 >>前往位于洛克湖中间的岛屿
+    .goto Loch Modan,54.7,38.3,200 >> 前往位于洛克湖中间的岛屿
 step
     .goto Loch Modan,58.86,38.32,80,0
     .goto Loch Modan,54.80,40.02,60,0
@@ -252,17 +252,17 @@ step
     .unitscan Thragomm
 step
     #completewith next
-    .goto Loch Modan,64.89,66.66,80 >>前往铁环挖掘场
+    .goto Loch Modan,64.89,66.66,80 >> 前往铁环挖掘场
 step
     .goto Loch Modan,64.89,66.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_麦格玛尔·落斧|r 对话
-    .turnin 436 >>交任务 铁环挖掘场
-    .accept 297 >>接受任务 收集石像
+    .turnin 436 >> 交任务 铁环挖掘场
+    .accept 297 >> 接受任务 收集石像
     .target Magmar Fellhew
 step
     .goto Loch Modan,65.934,65.622
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勘察员基恩萨·铁环|r 对话
-    .accept 298 >>接受任务 挖掘进度报告
+    .accept 298 >> 接受任务 挖掘进度报告
     .target 勘察员基恩萨·铁环
 step
     .goto Loch Modan,66.92,59.89,30,0
@@ -278,12 +278,12 @@ step
 step
     .goto Loch Modan,64.89,66.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_麦格玛尔·落斧|r 对话
-    .turnin 297 >>交任务 收集石像
+    .turnin 297 >> 交任务 收集石像
     .target Magmar Fellhew
 step
     .group
     #completewith next
-    .goto Loch Modan,41.21,64.33,100 >>前往灰爪山
+    .goto Loch Modan,41.21,64.33,100 >> 前往灰爪山
     .isOnQuest 271
 step
     .group 3
@@ -301,39 +301,39 @@ step
 step
     #completewith next
     .goto Loch Modan,82.92,59.37,80,0
-    .goto Loch Modan,83.28,62.97,25 >>前往旅行者营地
+    .goto Loch Modan,83.28,62.97,25 >> 前往旅行者营地
 step
     .goto Loch Modan,81.76,61.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_马雷克·铁心|r 对话
-    .turnin 385 >>交任务 捕猎鳄鱼
+    .turnin 385 >> 交任务 捕猎鳄鱼
     .target Marek Ironheart
 step
     .group
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_年轻的达瑞尔|r 对话
     .goto Loch Modan,83.49,65.40
-    .turnin 271 >>交任务 维林的报复
+    .turnin 271 >> 交任务 维林的报复
     .target Daryl the Youngling
     .isQuestComplete 271
 step
     .group
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_年轻的达瑞尔|r 对话
     .goto Loch Modan,83.49,65.40
-    .accept 531 >>接受任务 维林的报复
+    .accept 531 >> 接受任务 维林的报复
     .target Daryl the Youngling
     .isQuestTurnedIn 271
 step
     .group
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_维林·疾风|r 对话
     .goto Loch Modan,81.73,64.15
-    .turnin 531 >>交任务 维林的报复
+    .turnin 531 >> 交任务 维林的报复
     .target Vyrin Swiftwind
     .isOnQuest 531
 step
     .group
-    .abandon 271 >>放弃任务 维林的报复
+    .abandon 271 >> 放弃任务 维林的报复
 step
     .group
-    .goto Loch Modan,73.87,29.64,100 >>前往莫格罗什要塞
+    .goto Loch Modan,73.87,29.64,100 >> 前往莫格罗什要塞
     .isOnQuest 255
 step
     .group 3
@@ -371,55 +371,55 @@ step
     .unitscan Thragomm
 step
     #completewith FINISHED
-    .goto Loch Modan,36.77,46.20,150 >>前往塞尔萨玛，洛克莫丹
+    .goto Loch Modan,36.77,46.20,150 >> 前往塞尔萨玛，洛克莫丹
 step
     .goto Loch Modan,37.17,47.94,8,0
     .goto Loch Modan,37.24,47.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_吉恩·角盔|r 对话
-    .turnin 298 >>交任务 挖掘进度报告
-    .accept 301 >>接受任务 向铁炉堡报告
+    .turnin 298 >> 交任务 挖掘进度报告
+    .accept 301 >> 接受任务 向铁炉堡报告
     .target Jern Hornhelm
 step
     .group
     .goto Loch Modan,34.53,43.72,10,0
     .goto Loch Modan,34.69,43.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_镇长埃罗恩·钝鼻|r 对话
-    .turnin 255 >>交任务 雇佣兵
+    .turnin 255 >> 交任务 雇佣兵
     .target Magistrate Bluntnose
     .isQuestComplete 255
 step
     .group
-    .abandon 255 >>放弃任务 雇佣兵
+    .abandon 255 >> 放弃任务 雇佣兵
 step
     #label FINISHED
     .goto Loch Modan,33.938,50.954
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索格拉姆|r 对话
-    .fly Ironforge >>飞往铁炉堡
+    .fly Ironforge >> 飞往铁炉堡
     .target 索格拉姆·伯雷森
 step
     .goto Ironforge,74.645,11.742
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_勘察员塔伯斯·雷矛|r 对话
-    .turnin 301 >>交任务 向铁炉堡报告
+    .turnin 301 >> 交任务 向铁炉堡报告
     .target 勘察员塔伯斯·雷矛
 step
     .isQuestTurnedIn 2078
     .goto Ironforge,35.90,60.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拜雷·石衣|r 对话
-    .bankdeposit 5996 >>将以下物品存入你的银行：
+    .bankdeposit 5996 >> 将以下物品存入你的银行：
     >>|T134797:0|t[水下呼吸药剂]（如果你有的话） -- 5996
     .target 拜雷·石衣
 step
     #completewith next
     .goto Ironforge,67.84,42.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_考格斯宾|r 对话
-    .vendor >>|cRXP_BUY_买一个|r |T133024:0|t[青铜管]
+    .vendor >> |cRXP_BUY_买一个|r |T133024:0|t[青铜管]
     >>|cRXP_WARN_这是限量供应物品。如果 |cRXP_FRIENDLY_考格斯宾|r 没有库存，请跳过此步骤|r
 --  >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
     .target 考格斯宾
 step
     .goto Ironforge,78.00,52.00,5,0
-    .zone Stormwind City >>进入矿道地铁，乘坐地铁前往暴风城
+    .zone Stormwind City >> 进入矿道地铁，乘坐地铁前往暴风城
     >>|cRXP_WARN_在等待地铁期间，如有需要可提升你的 |r|T135966:0|t[急救]|cRXP_WARN_ 和 |r|T133971:0|t[烹饪] |cRXP_WARN_技能|r
     >>|cRXP_WARN_你需要将|r |T135966:0|t[急救]|cRXP_WARN_ 提升至 80，以完成 24 级的一个任务|r << Rogue !Dwarf
     --.link https://www.youtube.com/watch?v=M_tXROi9nMQ >> |cRXP_WARN_Click here for a video guide for a logout skip on the tram|r

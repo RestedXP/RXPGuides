@@ -14,10 +14,10 @@ RXPGuides.RegisterGuide([[
 #subgroup （制作中）地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Tauren
-#next 6-12级 莫高雷；6-13级 莫高雷
+#next 6-12级 莫高雷;6-13 Mulgore
 
 step
-#include RestedXP Forever Guide (A)\1-6 Mulgore
+#include RestedXP魔兽世界无限升级指南（联盟版）\1-6级 莫高雷
 ]])
 
 
@@ -36,5 +36,5 @@ RXPGuides.RegisterGuide([[
 
 
 step
-#include RestedXP Forever Guide (A)\6-12 Mulgore
+#include RestedXP魔兽世界无限升级指南（联盟版）\6-12级 莫高雷
 ]])

@@ -19,7 +19,7 @@ step << Priest
     .goto Elwynn Forest,49.808,39.489
     >>|cRXP_WARN_在北郡修道院内时，在你的聊天框中输入 /跪下|r
     >>|cRXP_WARN_你将获得|r |T135934:0|t[圣光之思] |cRXP_WARN_buff|r
-    .cast 410958 >>|cRXP_WARN_在你拥有|r |T136222:0|t[圣光之思] |cRXP_FRIENDLY_增益效果时，|r|cRXP_WARN_使用|r |T135934:0|t[|cRXP_WARN_忧虑助祭的回忆|r]
+    .cast 410958 >> |cRXP_WARN_在你拥有|r |T136222:0|t[圣光之思] |cRXP_FRIENDLY_增益效果时，|r|cRXP_WARN_使用|r |T135934:0|t[|cRXP_WARN_忧虑助祭的回忆|r]
     .use 205951
     .itemcount 205951,1
     .train 402862,1
@@ -50,7 +50,7 @@ step << Priest
     .train 402862,1
 step << Priest
     #season 2
-    .train 402862 >>|cRXP_WARN_使用|r |T136222:0|t|cRXP_LOOT_[忧虑助祭的回忆]|r |cRXP_WARN_来学习|r |T133816:0|t[铭刻手套 - 苦修]
+    .train 402862 >> |cRXP_WARN_使用|r |T136222:0|t|cRXP_LOOT_[忧虑助祭的回忆]|r |cRXP_WARN_来学习|r |T133816:0|t[铭刻手套 - 苦修]
     .aura -410935
     .use 205951
 ]])
@@ -68,14 +68,14 @@ step << NightElf Priest
     .goto Teldrassil,59.92,41.74,20,0
     .goto Teldrassil,59.174,40.442
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在楼上与 |cRXP_FRIENDLY_珊达|r 对话
-    .accept 77574 >>接受任务 艾露恩之思
+    .accept 77574 >> 接受任务 艾露恩之思
     .target 珊达
     .train 402862,1
 step << NightElf Priest
     #season 2
     #completewith next
     .isOnQuest 77574
-    .goto Teldrassil,59.940,33.052,10 >>前往幽影谷的月井
+    .goto Teldrassil,59.940,33.052,10 >> 前往幽影谷的月井
     .train 402862,1
 step << NightElf Priest
     #season 2
@@ -88,7 +88,7 @@ step << NightElf Priest
     #season 2
     #label PenanceRune
     .isOnQuest 77574
-    .use 205951 >>|cRXP_WARN_在你拥有|r |T136222:0|t[艾露恩之思] |cRXP_FRIENDLY_增益效果时，|r|cRXP_WARN_使用|r |T136057:0|t[|cRXP_WARN_忧虑助祭的回忆|r]
+    .use 205951 >> |cRXP_WARN_在你拥有|r |T136222:0|t[艾露恩之思] |cRXP_FRIENDLY_增益效果时，|r|cRXP_WARN_使用|r |T136057:0|t[|cRXP_WARN_忧虑助祭的回忆|r]
     .complete 77574,1 -- Learn: Engrave Gloves - Penance
     .target Altar of the Light
     .train 402862,1
@@ -97,7 +97,7 @@ step << NightElf Priest
     .goto Teldrassil,59.92,41.74,20,0
     .goto Teldrassil,59.174,40.442
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与楼上的 |cRXP_FRIENDLY_珊达|r 对话
-    .turnin 77574 >>交任务 艾露恩之思
+    .turnin 77574 >> 交任务 艾露恩之思
     .target 珊达
     .train 402862,1
 ]])
@@ -461,7 +461,7 @@ RXPGuides.RegisterGuide([[
 
 step << Priest
     #completewith MinerGear
-    .goto Loch Modan,35.50,18.97,20 >>进入银溪矿洞
+    .goto Loch Modan,35.50,18.97,20 >> 进入银溪矿洞
     .train 425215,1
 step << Priest
     .goto Loch Modan,35.6,20.6
@@ -472,11 +472,11 @@ step << Priest
     .train 425215,1
 step << Priest
     .goto Loch Modan,36.689,20.964
-    .use 208823 >>|cRXP_WARN_在银溪矿洞内的水井处使用|r |T237281:0|t[|cRXP_LOOT_供品硬币|r] |cRXP_WARN_|r |cRXP_WARN_，以获得|r |T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r]
+    .use 208823 >> |cRXP_WARN_在银溪矿洞内的水井处使用|r |T237281:0|t[|cRXP_LOOT_供品硬币|r] |cRXP_WARN_|r |cRXP_WARN_，以获得|r |T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r]
     .collect 205905,1 -- Memory of a Devout Champion (1)
     .train 425215,1
 step << Priest
-    .train 425215 >>|cRXP_WARN_使用|r |T136222:0|t|T237566:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r] |cRXP_WARN_来训练|r |T237566:0|t|T237566:0|t[扭曲信仰]
+    .train 425215 >> |cRXP_WARN_使用|r |T136222:0|t|T237566:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r] |cRXP_WARN_来训练|r |T237566:0|t|T237566:0|t[扭曲信仰]
     >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel以获得|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_buff|r
     .use 205905
     .itemcount 205905,1
@@ -502,7 +502,7 @@ step << Priest
     .unitscan Undying Laborer
     .train 425215,1
 step << Priest
-    .train 425215 >>|cRXP_WARN_使用|r |T136222:0|t|T237566:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r] |cRXP_WARN_来训练|r |T237566:0|t|T237566:0|t[扭曲信仰]
+    .train 425215 >> |cRXP_WARN_使用|r |T136222:0|t|T237566:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r] |cRXP_WARN_来训练|r |T237566:0|t|T237566:0|t[扭曲信仰]
     >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel以获得|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_buff|r
     .use 205905
     .itemcount 205905,1
@@ -527,11 +527,11 @@ step << Priest
     .train 425215,1
 step << Priest
     .goto Darkshore,59.2,22.6
-    .use 211482 >>|cRXP_WARN_在水下的碎矛神像处使用|r |T236364:0|t|T136222:0|t[|cRXP_LOOT_碎矛供品|r] |cRXP_WARN_，即可获得|r |T136222:0|t|T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r]
+    .use 211482 >> |cRXP_WARN_在水下的碎矛神像处使用|r |T236364:0|t|T136222:0|t[|cRXP_LOOT_碎矛供品|r] |cRXP_WARN_，即可获得|r |T136222:0|t|T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r]
     .collect 205905,1 -- Memory of a Devout Champion (1)
     .train 425215,1
 step << Priest
-    .train 425215 >>|cRXP_WARN_使用|r |T136222:0|t|T237566:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r] |cRXP_WARN_来训练|r |T237566:0|t|T237566:0|t[扭曲信仰]
+    .train 425215 >> |cRXP_WARN_使用|r |T136222:0|t|T237566:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆|r] |cRXP_WARN_来训练|r |T237566:0|t|T237566:0|t[扭曲信仰]
     >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel以获得|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_增益效果|r
     .use 205905
     .itemcount 205905,1
@@ -552,7 +552,7 @@ step << Priest
     .mob Captain Beld
     .train 402854,1
 step << Priest
-    .train 402854 >>|cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_落难救世主的回忆|r] |cRXP_WARN_来学习|r |T136160:0|t[分担痛苦]
+    .train 402854 >> |cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_落难救世主的回忆|r] |cRXP_WARN_来学习|r |T136160:0|t[分担痛苦]
     >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel以获得|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_buff|r
     .use 205945
     .itemcount 205945,1
@@ -573,7 +573,7 @@ step << Priest
     .mob 狗头人矿工
     .train 402854,1
 step << Priest
-    .train 402854 >>|cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_落难救世主的回忆|r] |cRXP_WARN_来学习|r |T136160:0|t[分担痛苦]
+    .train 402854 >> |cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_落难救世主的回忆|r] |cRXP_WARN_来学习|r |T136160:0|t[分担痛苦]
     >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel以获得|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_buff|r
     .use 205945
     .itemcount 205945,1
@@ -595,7 +595,7 @@ step << Priest
     .mob 霜鬃先知
     .train 402852,1
 step << Priest
-    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|cRXP_FRIENDLY_遭渎城堡的预言|r |cRXP_WARN_来训练|r |T237570:0|t[裂魂魔]
+    .train 402852 >> |cRXP_WARN_使用|r |T135975:0|t|cRXP_FRIENDLY_遭渎城堡的预言|r |cRXP_WARN_来训练|r |T237570:0|t[裂魂魔]
     >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光明祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel，以获得2层|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_增益效果|r
     .use 205947
     .itemcount 205947,1
@@ -616,7 +616,7 @@ step << Priest
     .mob Defias Rogue Wizard
     .train 402852,1
 step << Priest
-    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|cRXP_FRIENDLY_遭渎城堡的预言|r |cRXP_WARN_来训练|r |T237570:0|t[裂魂魔]
+    .train 402852 >> |cRXP_WARN_使用|r |T135975:0|t|cRXP_FRIENDLY_遭渎城堡的预言|r |cRXP_WARN_来训练|r |T237570:0|t[裂魂魔]
     >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光明祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel，以获得2层|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_增益效果|r
     .use 205947
     .itemcount 205947,1
@@ -633,7 +633,7 @@ RXPGuides.RegisterGuide([[
 step << Priest
     #completewith next
     .goto Teldrassil,54.68,52.84,20,0
-    .goto Teldrassil,54.42,51.19,15 >>前往邪石山
+    .goto Teldrassil,54.42,51.19,15 >> 前往邪石山
     .train 402852,1
 step << Priest
     .goto Teldrassil,77.86,61.66
@@ -644,7 +644,7 @@ step << Priest
     .mob Shadow Sprite
     .train 402852,1
 step << Priest
-    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|cRXP_FRIENDLY_遭渎城堡的预言|r |cRXP_WARN_来训练|r |T237570:0|t[裂魂魔]
+    .train 402852 >> |cRXP_WARN_使用|r |T135975:0|t|cRXP_FRIENDLY_遭渎城堡的预言|r |cRXP_WARN_来训练|r |T237570:0|t[裂魂魔]
     >>|cRXP_WARN_你必须在圣洁区域（如一座月亮井、北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/下跪以获得2层|r |T135934:0|t|T136057:0|t[冥想] |cRXP_WARN_buff|r
     .use 205947
     .itemcount 205947,1
@@ -730,7 +730,7 @@ step << Priest
     >>你现在必须获得2个|T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想]BUFF
     >>你必须在以下地点之一使用/kneel命令：月井、北郡修道院、暴风城大教堂、安威玛尔的光明祭坛、洛克莫丹或铁炉堡的神秘结界
     >>为了获得第二个|T135934:0|t|T136057:0|t|T135934:0|t|T136057:0|t[冥想]增益效果，你需要跪在一位与你拥有不同|T135934:0|t|T135934:0|t|T136057:0|t|T136057:0|t[冥想]的牧师面前，并且该牧师必须以你为目标进行/pray
-    .train 402849 >>|cRXP_WARN_一旦你同时拥有|r |T135934:0|t|T136057:0|t|T135975:0|t|T136149:0|t[冥想] |cRXP_WARN_增益效果，使用|r |T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_国王陨落预言]|r |cRXP_WARN_来学习|r |T136149:0|t|T136149:0|t[暗言术：灭]
+    .train 402849 >> |cRXP_WARN_一旦你同时拥有|r |T135934:0|t|T136057:0|t|T135975:0|t|T136149:0|t[冥想] |cRXP_WARN_增益效果，使用|r |T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_国王陨落预言]|r |cRXP_WARN_来学习|r |T136149:0|t|T136149:0|t[暗言术：灭]
     .use 205932
     .itemcount 205932,1
 ]])
@@ -746,7 +746,7 @@ RXPGuides.RegisterGuide([[
 step << Priest
     #completewith next
     .goto Loch Modan,71.8,27.6
-    .subzone 143 >>前往洛克莫丹的莫格罗什要塞
+    .subzone 143 >> 前往洛克莫丹的莫格罗什要塞
 step << Priest
     #season 2
     .goto Loch Modan,71.8,27.6
@@ -759,7 +759,7 @@ step << Priest
     >>你现在必须获得两个 |T135934:0|t|T136057:0|t[冥想] buff
     >>你必须在以下地点之一使用/kneel命令：月井、北郡修道院、暴风城大教堂、安威玛尔的光明祭坛、洛克莫丹或铁炉堡的神秘结界
     >>为了获得第二个|T135934:0|t|T136057:0|t|T135934:0|t|T136057:0|t[冥想]增益效果，你需要跪在一位与你拥有不同|T135934:0|t|T135934:0|t|T136057:0|t|T136057:0|t[冥想]的牧师面前，并且该牧师必须以你为目标进行/pray
-    .train 402849 >>|cRXP_WARN_一旦你同时拥有|r |T135934:0|t|T136057:0|t|T135975:0|t|T136149:0|t[冥想] |cRXP_WARN_增益效果，使用|r |T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_国王陨落预言]|r |cRXP_WARN_来学习|r |T136149:0|t|T136149:0|t[暗言术：灭]
+    .train 402849 >> |cRXP_WARN_一旦你同时拥有|r |T135934:0|t|T136057:0|t|T135975:0|t|T136149:0|t[冥想] |cRXP_WARN_增益效果，使用|r |T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_国王陨落预言]|r |cRXP_WARN_来学习|r |T136149:0|t|T136149:0|t[暗言术：灭]
     .use 205932
     .itemcount 205932,1
 ]])
@@ -774,7 +774,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone The Barrens >>前往贫瘠之地
+    .zone The Barrens >> 前往贫瘠之地
 step
     #loop
     .goto The Barrens,54.8,35.6,40,0
@@ -791,7 +791,7 @@ step << Troll
     .goto Durotar,55.32,72.66,0
     .goto The Barrens,51.5,29.5,0
     >>要获得第二个|T237569:0|t|T136077:0|t|T237569:0|t|T136077:0|t[冥想]增益效果，你需要/kneel跪在一位拥有|T237569:0|t|T237569:0|t[亡灵之思]的不死族牧师面前，并且该牧师必须在你为目标时使用|cRXP_WARN_/pray|r
-    .train 402849 >>|cRXP_WARN_一旦你同时获得|r |T237569:0|t|T136077:0|t|T135975:0|t|T136149:0|t[冥想] |cRXP_WARN_增益效果后，使用|r |T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_王者陨落预言]|r |cRXP_WARN_来学习|r |T136149:0|t|T136149:0|t[暗言术：灭]
+    .train 402849 >> |cRXP_WARN_一旦你同时获得|r |T237569:0|t|T136077:0|t|T135975:0|t|T136149:0|t[冥想] |cRXP_WARN_增益效果后，使用|r |T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_王者陨落预言]|r |cRXP_WARN_来学习|r |T136149:0|t|T136149:0|t[暗言术：灭]
     .use 205932
     .itemcount 205932,1
 step << Undead
@@ -801,7 +801,7 @@ step << Undead
     .goto The Barrens,51.5,29.5,0
     .goto The Barrens,50.7,32.7,0
     >>为了获得第二个|T237569:0|t|T136077:0|t|T237569:0|t|T136077:0|t[冥想]增益效果，请在墓地使用|cRXP_WARN_/kneel|r来获取|T237569:0|t|T237569:0|t[亡灵之思]增益|cRXP_WARN_（圣坛和墓地在你的地图上已标记，你也可以找任何拥有该增益的牧师，让他们复制给你）|r
-    .train 402849 >>|cRXP_WARN_一旦你同时获得|r |T237569:0|t|T136077:0|t|T135975:0|t|T136149:0|t[冥想] |cRXP_WARN_增益效果后，使用|r |T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_王者陨落预言]|r |cRXP_WARN_来学习|r |T136149:0|t|T136149:0|t[暗言术：灭]
+    .train 402849 >> |cRXP_WARN_一旦你同时获得|r |T237569:0|t|T136077:0|t|T135975:0|t|T136149:0|t[冥想] |cRXP_WARN_增益效果后，使用|r |T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_王者陨落预言]|r |cRXP_WARN_来学习|r |T136149:0|t|T136149:0|t[暗言术：灭]
     .use 205932
     .itemcount 205932,1
 ]])
@@ -816,7 +816,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Silverpine Forest >>前往银松森林
+    .zone Silverpine Forest >> 前往银松森林
 step
     .goto Silverpine Forest,65.8,23.6
     >>在 |cRXP_PICK_图勒·鸦爪|r（24级精英）身后拾取|cRXP_ENEMY_卷轴|r，以获取|T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_帝王消陨的预言|r]
@@ -830,7 +830,7 @@ step << Troll
     .goto Durotar,55.32,72.66,0
     .goto The Barrens,51.5,29.5,0
     >>要获得第二个|T237569:0|t|T136077:0|t|T237569:0|t|T136077:0|t[冥想]增益效果，你需要/kneel跪在一位拥有|T237569:0|t|T237569:0|t[亡灵之思]的不死族牧师面前，并且该牧师必须在你为目标时使用|cRXP_WARN_/pray|r
-    .train 402849 >>|cRXP_WARN_一旦你同时获得|r |T237569:0|t|T136077:0|t|T135975:0|t|T136149:0|t[冥想] |cRXP_WARN_增益效果后，使用|r |T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_王者陨落预言]|r |cRXP_WARN_来学习|r |T136149:0|t|T136149:0|t[暗言术：灭]
+    .train 402849 >> |cRXP_WARN_一旦你同时获得|r |T237569:0|t|T136077:0|t|T135975:0|t|T136149:0|t[冥想] |cRXP_WARN_增益效果后，使用|r |T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_王者陨落预言]|r |cRXP_WARN_来学习|r |T136149:0|t|T136149:0|t[暗言术：灭]
     .use 205932
     .itemcount 205932,1
 step << Undead
@@ -841,7 +841,7 @@ step << Undead
     .goto The Barrens,51.5,29.5,0
     .goto Silverpine Forest,44.2,42.7,0
     >>为了获得第二个|T237569:0|t|T136077:0|t|T237569:0|t|T136077:0|t[冥想]增益效果，请在墓地使用|cRXP_WARN_/kneel|r来获取|T237569:0|t|T237569:0|t[亡灵之思]增益|cRXP_WARN_（圣坛和墓地在你的地图上已标记，你也可以找任何拥有该增益的牧师，让他们复制给你）|r
-    .train 402849 >>|cRXP_WARN_一旦你同时获得|r |T237569:0|t|T136077:0|t|T135975:0|t|T136149:0|t[冥想] |cRXP_WARN_增益效果后，使用|r |T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_王者陨落预言]|r |cRXP_WARN_来学习|r |T136149:0|t|T136149:0|t[暗言术：灭]
+    .train 402849 >> |cRXP_WARN_一旦你同时获得|r |T237569:0|t|T136077:0|t|T135975:0|t|T136149:0|t[冥想] |cRXP_WARN_增益效果后，使用|r |T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_王者陨落预言]|r |cRXP_WARN_来学习|r |T136149:0|t|T136149:0|t[暗言术：灭]
     .use 205932
     .itemcount 205932,1
 ]])
@@ -856,7 +856,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Silverpine Forest >>前往银松森林
+    .zone Silverpine Forest >> 前往银松森林
 step
     .train 425215,1
     >>击杀|cRXP_ENEMY_恸哭之灵|r。拾取|T136222:0|t|T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的记忆]
@@ -864,7 +864,7 @@ step
     .collect 205905,1
     .mob Wailing Spirit
 step
-    .train 425215 >>|cRXP_WARN_使用|r|T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆] |cRXP_WARN_来训练|r |T237566:0|t[扭曲信仰]
+    .train 425215 >> |cRXP_WARN_使用|r|T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆] |cRXP_WARN_来训练|r |T237566:0|t[扭曲信仰]
     >>|cRXP_WARN_你必须拥有一个|r |T237569:0|t|T136077:0|t|T136077:0|t|T136077:0|t[冥想] |cRXP_WARN_增益效果，通过在|rLoa Shrine|cRXP_WARN_（位于杜隆塔尔或贫瘠之地）前输入|cRXP_PICK_ /kneel |r来获得，或者当其他拥有该增益的牧师对你使用/pray时，在他们面前跪下也可获得|r << Troll
     >>|cRXP_WARN_你必须拥有一个|r |T237569:0|t|T136077:0|t|T136077:0|t|T136077:0|t[冥想] |cRXP_WARN_增益效果，通过在墓地输入|r /kneel |cRXP_WARN_或跪在另一位拥有该增益的牧师面前，当他们对你使用/pray时获得|r << Undead
     .goto Durotar,55.32,72.66,0
@@ -884,7 +884,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone The Barrens >>前往贫瘠之地
+    .zone The Barrens >> 前往贫瘠之地
 step
     .train 425215,1
     >>击杀|cRXP_ENEMY_刺鬃兽|r，并从它们身上拾取|T236248:0|t|T236248:0|t[|cRXP_FRIENDLY_援手]
@@ -899,7 +899,7 @@ step
     >>|cRXP_WARN_找到一个可以复活的死亡玩家或宠物（使用|T135955:0|t[复活术]），以获得|r |T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的记忆]
     .collect 205905,1
 step
-    .train 425215 >>|cRXP_WARN_使用|r|T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆] |cRXP_WARN_来训练|r |T237566:0|t[扭曲信仰]
+    .train 425215 >> |cRXP_WARN_使用|r|T136222:0|t[|cRXP_FRIENDLY_虔诚勇士的回忆] |cRXP_WARN_来训练|r |T237566:0|t[扭曲信仰]
     >>|cRXP_WARN_你必须拥有一个|r |T237569:0|t|T136077:0|t|T136077:0|t|T136077:0|t[冥想] |cRXP_WARN_增益效果，通过在|rLoa Shrine|cRXP_WARN_（位于杜隆塔尔或贫瘠之地）前输入|cRXP_PICK_ /kneel |r来获得，或者当其他拥有该增益的牧师对你使用/pray时，在他们面前跪下也可获得|r << Troll
     >>|cRXP_WARN_你必须拥有一个|r |T237569:0|t|T136077:0|t|T136077:0|t|T136077:0|t[冥想] |cRXP_WARN_增益效果，通过在墓地输入|r /kneel |cRXP_WARN_或跪在另一位拥有该增益的牧师面前，当他们对你使用/pray时获得|r << Undead
     .goto Durotar,55.32,72.66,0
@@ -920,7 +920,7 @@ RXPGuides.RegisterGuide([[
 step << Priest
     #season 2
     #completewith next
-    .goto Elwynn Forest,38.34,81.54,20 >>进入法戈第矿洞
+    .goto Elwynn Forest,38.34,81.54,20 >> 进入法戈第矿洞
     .train 425216,1
 step << Priest
     #season 2
@@ -1038,7 +1038,7 @@ RXPGuides.RegisterGuide([[
 step
     #optional
     .train 425310,1
-    .train 605 >>|cRXP_WARN_你必须先学会|r |T136206:0|t[精神控制] |cRXP_WARN_才能获得|r |T135923:0|t[新生希望] |cRXP_WARN_符文|r
+    .train 605 >> |cRXP_WARN_你必须先学会|r |T136206:0|t[精神控制] |cRXP_WARN_才能获得|r |T135923:0|t[新生希望] |cRXP_WARN_符文|r
 step
     #optional
     .train 425310,1
@@ -1076,13 +1076,13 @@ step
     .goto Desolace,38.8,24.0,60,0
     .goto Desolace,34.6,30.0,60,0
     .goto Desolace,34.6,20.2,60,0
-    .aura 435117 >>|cRXP_WARN_施放|r |T136206:0|t|T136206:0|t[精神控制] |cRXP_WARN_对一个|r |cRXP_ENEMY_滑刃潮汐女祭司|r
+    .aura 435117 >> |cRXP_WARN_施放|r |T136206:0|t|T136206:0|t[精神控制] |cRXP_WARN_对一个|r |cRXP_ENEMY_滑刃潮汐女祭司|r
     >>|cRXP_WARN_在受到|r |T136206:0|t|T136077:0|t[精神控制]|cRXP_WARN_效果影响时，将目标选为自己，并从宠物动作条上施放|r |T136077:0|t|T136077:0|t[深渊之思] |cRXP_WARN_|r
     >>|cRXP_WARN_随后按下ESC键取消|r |T136206:0|t|T136206:0|t[精神控制] |cRXP_WARN_并击杀|r |cRXP_ENEMY_滑刃潮汐女祭司|r
     .mob Slitherblade Tide Priestess
     .train 425310,1
 step
-    .train 425310 >>|cRXP_WARN_使用|r |T136222:0|t|T135923:0|t[|cRXP_LOOT_不安的幻象|r] |cRXP_WARN_训练|r |T135923:0|t|T135923:0|t[新生希望]
+    .train 425310 >> |cRXP_WARN_使用|r |T136222:0|t|T135923:0|t[|cRXP_LOOT_不安的幻象|r] |cRXP_WARN_训练|r |T135923:0|t|T135923:0|t[新生希望]
     .use 213599
 ]])
 
@@ -1104,7 +1104,7 @@ step
     >>|cRXP_WARN_你也可以找一名牧师与你分享该任务|r
     .collect 216880,1
     .disablecheckbox
-    .accept 79731 >>接受任务 巨魔卷轴
+    .accept 79731 >> 接受任务 巨魔卷轴
 step
     .train 425314,1
     #completewith next
@@ -1119,11 +1119,11 @@ step
     .mob Lord Sakrasis
 step
     #completewith next
-    .subzone 102 >>前往祖昆达废墟
+    .subzone 102 >> 前往祖昆达废墟
 step
     .train 425314,1
     .goto Stranglethorn Vale,23.569,7.955
-    .cast 3591 >>|cRXP_WARN_在|r小喷泉处|T134712:0|t使用[|cRXP_LOOT_圣泉之水|r]|cRXP_WARN_|r
+    .cast 3591 >> |cRXP_WARN_在|r小喷泉处|T134712:0|t使用[|cRXP_LOOT_圣泉之水|r]|cRXP_WARN_|r
     >>|cRXP_WARN_你可能需要击杀|cRXP_ENEMY_甘祖拉恩|r（等级41）和他周围的一小群|cRXP_ENEMY_巨魔|r才能到达那个小喷泉|r
     .use 737
     .mob 甘祖拉恩
@@ -1133,13 +1133,13 @@ step
     >>点击出现的|cRXP_PICK_喷泉|r，拾取其中的|T135975:0|t|T135975:0|t|cRXP_LOOT_[囚禁憎怨的预言]|r
     .collect 213142,1
 step
-    .train 425314 >>|cRXP_WARN_使用|r |T135975:0|t|T237563:0|t|cRXP_LOOT_[囚禁憎怨的预言]|r |cRXP_WARN_来训练|r |T237563:0|t|T237563:0|t[消散]
+    .train 425314 >> |cRXP_WARN_使用|r |T135975:0|t|T237563:0|t|cRXP_LOOT_[囚禁憎怨的预言]|r |cRXP_WARN_来训练|r |T237563:0|t|T237563:0|t[消散]
     .use 213142
 step
     .isQuestComplete 79731
     .goto Stranglethorn Vale,35.658,10.808
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫米特·奈辛瓦里|r 对话
-    .turnin 79731 >>交任务 巨魔卷轴
+    .turnin 79731 >> 交任务 巨魔卷轴
     .target 赫米特·奈辛瓦里
 ]])
 
@@ -1161,10 +1161,10 @@ step
     .goto 1415,47.44,19.75,10,0
     .goto 1415,47.45,19.69,5,0
     .goto 1415,47.62,19.59,10,0
-    .goto 1415,47.73,19.39,5 >>进入血色修道院地下城：墓地
+    .goto 1415,47.73,19.39,5 >> 进入血色修道院地下城：墓地
 step
     >>点击无头骑士刷新点附近的|cRXP_PICK_墓碑|r，收集|cRXP_LOOT_|T136222:0|t|T136222:0|t[墓地的回响]|r |cRXP_WARN_强烈建议组满5人队伍来完成此步骤。|r
-    .link https://imgur.com/a/lqRc0i6 >>https://media.restedxp.com/u/jiiUja.png >> |cRXP_WARN_点击此处查看图片参考。|r
+    .link https://imgur.com/a/lqRc0i6 >> |cRXP_WARN_点击此处查看图片参考。|r
     .collect 215426,1
 step
     #optional
@@ -1198,7 +1198,7 @@ step
     .train 402855,1
     .goto 1415,47.44,19.75,10,0
     .goto 1415,47.45,19.69,5,0
-    .goto 1415,47.62,19.59,10 >>进入血色修道院副本：图书馆 |cRXP_WARN_强烈建议组满5人队伍进行后续步骤。|r
+    .goto 1415,47.62,19.59,10 >> 进入血色修道院副本：图书馆 |cRXP_WARN_强烈建议组满5人队伍进行后续步骤。|r
 step
     .train 402855,1
     .cast 437054 >>在战士雕像前使用|T136222:0|t|T136222:0|t[沼泽的回响]。
@@ -1476,29 +1476,29 @@ RXPGuides.RegisterGuide([[
 #subgroup 披风
 #title 联结治疗
 #name 联结治疗 - 58 级(西瘟疫之地和东瘟疫之地)
-#next 牧师种族天赋 - 60级 (艾泽拉斯)
+#next 牧师种族天赋 - 60 级(艾泽拉斯)
 
 step << Alliance
     #completewith next
-    .zone Stormwind City >>前往暴风城
+    .zone Stormwind City >> 前往暴风城
 step << Alliance
     .goto Stormwind City,38.8,26.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在暴风城大教堂与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r对话
-    .accept 84320 >>接受任务 遗失的传家宝
+    .accept 84320 >> 接受任务 遗失的传家宝
     .target 高阶牧师劳瑞娜
 step << Horde
     #completewith next
-    .zone Orgrimmar >>前往奥格瑞玛
+    .zone Orgrimmar >> 前往奥格瑞玛
 step << Horde
     .goto Orgrimmar,35.8,87.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在精神谷与 |cRXP_FRIENDLY_迪特里希·普雷斯|r对话
-    .accept 84405 >>接受任务 遗失的传家宝
+    .accept 84405 >> 接受任务 遗失的传家宝
     .target Dietrich Praice
 step
     #completewith next
-    .zone Western Plaguelands >>前往 西瘟疫之地
+    .zone Western Plaguelands >> 前往 西瘟疫之地
 step
-    .goto Western Plaguelands,51.9,82.4,50 >>前往悔恨岭旁边的大型地穴
+    .goto Western Plaguelands,51.9,82.4,50 >> 前往悔恨岭旁边的大型地穴
 step
     .goto Western Plaguelands,54.8,81.2
     >>|cRXP_WARN_进入地下墓穴并向左走，向下走并在你的右边小壁龛中寻找一个小木箱。从中拾取战利品来获得|r |T133299:0|t[|cRXP_PICK_传家宝|r]
@@ -1510,40 +1510,40 @@ step
     .collect 227748,1 --Survivor Journal
 step << Alliance
     #completewith next
-    .zone Stormwind City >>返回暴风城
+    .zone Stormwind City >> 返回暴风城
 step << Alliance
     .goto Stormwind City,38.8,26.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在暴风城大教堂与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r对话
-    .turnin 84320 >>交任务 遗失的传家宝
-    .accept 84321 >>接受任务 圣光的圣物
+    .turnin 84320 >> 交任务 遗失的传家宝
+    .accept 84321 >> 接受任务 圣光的圣物
     .target 高阶牧师劳瑞娜
 step << Horde
     #completewith next
-    .zone Orgrimmar >>返回奥格瑞玛
+    .zone Orgrimmar >> 返回奥格瑞玛
 step << Horde
     .goto Orgrimmar,35.8,87.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在精神谷与 |cRXP_FRIENDLY_迪特里希·普雷斯|r对话
-    .turnin 84405 >>交任务 遗失的传家宝
-    .accept 84406 >>接受任务 圣光的圣物
+    .turnin 84405 >> 交任务 遗失的传家宝
+    .accept 84406 >> 接受任务 圣光的圣物
     .target Dietrich Praice
 step
     #completewith next
     >>|cRXP_WARN_下一个任务需要你从一个精英区域拾取一件物品。单人完成是可行的，但如果你等级较低或装备不够好，建议找人帮忙。|r
-    .zone Western Plaguelands >>返回西瘟疫之地
+    .zone Western Plaguelands >> 返回西瘟疫之地
 step
-    .goto Western Plaguelands,48.2,21.7,50 >>前往壁炉谷，|cRXP_WARN_请注意这是精英区域|r
+    .goto Western Plaguelands,48.2,21.7,50 >> 前往壁炉谷，|cRXP_WARN_请注意这是精英区域|r
 step
     .goto Western Plaguelands,42.2,18.1
     >>|cRXP_WARN_进入壁炉谷的市政厅，与讲台上的|r |cRXP_PICK_血色账簿|r |cRXP_WARN_互动。注意该区域遍布精英怪物|r
-    .turnin 84406 >>交任务 圣光遗物 << Horde
-    .turnin 84321 >>交任务 圣光遗物 << Alliance
-    .accept 84322 >>接受任务 血色研究
+    .turnin 84406 >> 交任务 圣光遗物 << Horde
+    .turnin 84321 >> 交任务 圣光遗物 << Alliance
+    .accept 84322 >> 接受任务 血色研究
 step
     #completewith next
     >>|cRXP_WARN_下一个任务需要你从一个精英区域拾取一件物品。单人完成是可行的，但如果你等级较低或装备不够好，建议找人帮忙。|r
-    .zone Eastern Plaguelands >>前往东瘟疫之地
+    .zone Eastern Plaguelands >> 前往东瘟疫之地
 step
-    .goto Eastern Plaguelands,77.5,81.7,50 >>前往提尔之手，|cRXP_WARN_请注意这是精英区域|r
+    .goto Eastern Plaguelands,77.5,81.7,50 >> 前往提尔之手，|cRXP_WARN_请注意这是精英区域|r
 step
     .goto Eastern Plaguelands,83.6,78.2
     >>|cRXP_WARN_符文|r |T237537:0|t|T237537:0|t[神圣专精] |cRXP_WARN_同样位于提尔之手，如果现在不想获取可以跳过此步骤|r
@@ -1553,14 +1553,14 @@ step
     .train 453702,1
 step
     #completewith next
-    .train 453702 >>使用|T134419:0|t|T237537:0|t[|cRXP_FRIENDLY_神圣专精符文|r]来训练|T237537:0|t|T237537:0|t[神圣专精]
+    .train 453702 >> 使用|T134419:0|t|T237537:0|t[|cRXP_FRIENDLY_神圣专精符文|r]来训练|T237537:0|t|T237537:0|t[神圣专精]
     .train 453702,1
     .itemcount 226418,1
 step
     .goto Eastern Plaguelands,83.6,78.2
     >>|cRXP_WARN_进入钟楼并前往顶层。与那里的上锁箱子互动|r
-    .turnin 84322 >>交任务 血色研究
-    .accept 84323 >>接受任务 匣中珍宝
+    .turnin 84322 >> 交任务 血色研究
+    .accept 84323 >> 接受任务 匣中珍宝
 step
     .goto Eastern Plaguelands,83.6,78.2
     >>击杀提尔之手的所有血色怪物。从它们身上拾取|T134245:0|t|T134245:0|t[|cRXP_LOOT_神器仓库钥匙|r]
@@ -1572,22 +1572,22 @@ step
     .collect 227938,1 --Shard of Light(1)
 step << Alliance
     #completewith next
-    .zone Stormwind City >>返回暴风城
+    .zone Stormwind City >> 返回暴风城
 step << Alliance
     .goto Stormwind City,38.8,26.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在暴风城大教堂与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r对话
-    .turnin 84323 >>交任务 匣中珍宝
+    .turnin 84323 >> 交任务 匣中珍宝
     .target 高阶牧师劳瑞娜
 step << Horde
     #completewith next
-    .zone Orgrimmar >>返回奥格瑞玛
+    .zone Orgrimmar >> 返回奥格瑞玛
 step << Horde
     .goto Orgrimmar,35.8,87.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在精神谷与 |cRXP_FRIENDLY_迪特里希·普雷斯|r对话
-    .turnin 84323 >>交任务 匣中珍宝
+    .turnin 84323 >> 交任务 匣中珍宝
     .target Dietrich Praice
 step
-    .train 402853 >>使用|T135791:0|t|T135883:0|t[|cRXP_FRIENDLY_欣悦顿悟|r]训练|T135883:0|t|T135883:0|t[|cRXP_FRIENDLY_联结治疗|r]
+    .train 402853 >> 使用|T135791:0|t|T135883:0|t[|cRXP_FRIENDLY_欣悦顿悟|r]训练|T135883:0|t|T135883:0|t[|cRXP_FRIENDLY_联结治疗|r]
     .use 228123
 ]])
 
@@ -1602,17 +1602,17 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     >>|T135978:0|t[|cRXP_FRIENDLY_吸血鬼之触符文|r] 由探索赛季新增地下城恶魔之陨峡谷的最终首领掉落
-    .zone Felwood >>|cRXP_WARN_要进入此地下城，你需要先完成一个短任务来获得饰品，前往费伍德森林来开始该任务|r
+    .zone Felwood >> |cRXP_WARN_要进入此地下城，你需要先完成一个短任务来获得饰品，前往费伍德森林来开始该任务|r
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
     .goto Felwood,51.4,82.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_影齿大使|r对话
-    .accept 84384 >>接受任务 恶魔骗术
+    .accept 84384 >> 接受任务 恶魔骗术
     .target Shadowtooth Emissary
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
     #completewith next
-    .zone Winterspring >>前往冬泉谷
+    .zone Winterspring >> 前往冬泉谷
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
     .goto Winterspring,65.6,21.4
@@ -1622,12 +1622,12 @@ step
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
     #completewith next
-    .zone Felwood >>返回费伍德森林
+    .zone Felwood >> 返回费伍德森林
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
     .goto Felwood,51.4,82.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_影齿大使|r对话
-    .turnin 84384 >>交任务 恶魔骗术
+    .turnin 84384 >> 交任务 恶魔骗术
     .target Shadowtooth Emissary
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
@@ -1638,15 +1638,15 @@ step
 step
     >>|cRXP_WARN_|T135978:0|t[|r吸血鬼之触|cRXP_FRIENDLY_] |r符文|cRXP_WARN_ 由探索赛季新增地下城恶魔之陨峡谷的最终首领掉落。在你前往灰谷时，就可以开始寻找该副本的队伍了|r
     >>如果你在飞行，请直接飞往艾萨拉的塔伦迪斯据点，而不是阿斯特兰纳。那里离副本入口更近 << Alliance
-    .zone Ashenvale >>前往灰谷
+    .zone Ashenvale >> 前往灰谷
 step
-    .goto Ashenvale,84.5,75.0,50 >>前往屠魔峡谷地下城的入口
+    .goto Ashenvale,84.5,75.0,50 >> 前往屠魔峡谷地下城的入口
 step
     >>通关副本。|T135791:0|t|T135978:0|t[|cRXP_FRIENDLY_畅导顿悟|r] 可习得|T135978:0|t|T135978:0|t[|cRXP_FRIENDLY_吸血鬼之触|r]，由副本最终首领|cRXP_ENEMY_地狱咆哮的幻影|r掉落。|cRXP_WARN_记得拾取他身上的符文！|r
     .collect 228126,1 --Apperitive Epiphany
     .mob Hellscream's Phantom
 step
-    .train 402857 >>使用|T135791:0|t|T135978:0|t[|cRXP_FRIENDLY_畅导顿悟|r]训练|T135978:0|t|T135978:0|t[|cRXP_FRIENDLY_吸血鬼之触|r]
+    .train 402857 >> 使用|T135791:0|t|T135978:0|t[|cRXP_FRIENDLY_畅导顿悟|r]训练|T135978:0|t|T135978:0|t[|cRXP_FRIENDLY_吸血鬼之触|r]
     .use 228126
 ]])
 
@@ -1662,7 +1662,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     >>|cRXP_WARN_额外的牧师能力是服务器级解锁，这意味着如果有人已经在你的服务器上完成了，你可以跳过整个任务链并直接前往卡拉赞来学习你的新种族能力。如果不是这样，你可以使用下面的指南成为为你的服务器解锁它的人！|r
-    .zone Deadwind Pass >>前往逆风小径
+    .zone Deadwind Pass >> 前往逆风小径
 step
     .goto Deadwind Pass,40.8,78.4
     >>前往卡拉赞附近的小神殿
@@ -1683,10 +1683,10 @@ step
     .collect 13180,4 --Stratholme Holy Water(4)
 step << Alliance
     #completewith next
-    .zone Stormwind City >>前往暴风城
+    .zone Stormwind City >> 前往暴风城
 step << Alliance
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>从拍卖行购买6 |T133682:0|t|T134834:0|t[|cRXP_LOOT_厚符文布绷带|r]、4 |T132834:0|t|T134855:0|t[|cRXP_LOOT_特效治疗药水|r]和8 |T132834:0|t|T132834:0|t[|cRXP_LOOT_巨蛋|r]。这些物品将与你已收集的|T134855:0|t|T134855:0|t[|cRXP_LOOT_斯坦索姆圣水|r]一起，用于该任务链的第一个任务
     .collect 14530,6 --Heavy runecloth bandage (6)
     .collect 13446,4 --Major Healing Potion (4)
@@ -1697,12 +1697,12 @@ step << Alliance
     #label QStart
     .goto Stormwind City,38.8,26.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在暴风城大教堂与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r对话
-    .accept 84324 >>接受任务 外交手段
-    .turnin 84324 >>交任务 外交手段
+    .accept 84324 >> 接受任务 外交手段
+    .turnin 84324 >> 交任务 外交手段
     .target 高阶牧师劳瑞娜
 step << Horde
     #completewith next
-    .zone Orgrimmar >>前往奥格瑞玛
+    .zone Orgrimmar >> 前往奥格瑞玛
 step << Horde
     .goto Orgrimmar,55.59,62.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨苏恩|r 对话
@@ -1716,26 +1716,26 @@ step << Horde
     #label QStart
     .goto Orgrimmar,35.8,87.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在精神谷与 |cRXP_FRIENDLY_迪特里希·普雷斯|r对话
-    .accept 84408 >>接受任务 外交手段
-    .turnin 84408 >>交任务 外交手段
+    .accept 84408 >> 接受任务 外交手段
+    .turnin 84408 >> 交任务 外交手段
     .target Dietrich Praice
 step
     #completewith next
     >>|cRXP_WARN_对于任务的下一部分，你需要找到一个也在此任务链中的对立阵营牧师来推进进度|r
-    .zone Eastern Plaguelands >>前往东瘟疫之地
+    .zone Eastern Plaguelands >> 前往东瘟疫之地
 step
     .goto Eastern Plaguelands,47,58
     >>|cRXP_WARN_前往位于东瘟疫之地的|r |cRXP_FRIENDLY_合作神殿|r|cRXP_WARN_。与对立阵营的牧师互相造成伤害，然后使用|r |T134918:0|t|T134918:0|t[|cRXP_FRIENDLY_利众结界|r] |cRXP_WARN_（通过提交上一个任务获得的物品）来治疗彼此|r
     >>如果操作正确，|cRXP_FRIENDLY_合作神殿|r会提供一个任务，接受它
-    .accept 84325 >>接受任务 合作神龛 << Alliance
-    .accept 84410 >>接受任务 合作神龛 << Horde
+    .accept 84325 >> 接受任务 合作神龛 << Alliance
+    .accept 84410 >> 接受任务 合作神龛 << Horde
     .use 228130
 step << Alliance
     #completewith next
-    .zone Stormwind City >>返回暴风城
+    .zone Stormwind City >> 返回暴风城
 step << Alliance
     .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_拍卖师亚克森|r 对话
     >>从拍卖行购买2个|T134459:0|t|T134086:0|t[|cRXP_LOOT_奥金锭|r]、2个|T134132:0|t|T134086:0|t[|cRXP_LOOT_山脉之血|r]和3个|T134132:0|t|T134132:0|t[|cRXP_LOOT_蓝宝石|r]。你很快需要这些物品来交任务，它们可能价格不菲
     .collect 12360,2 --Arcanite Bar(2)
     .collect 11382,2 --Blood of the Mountain(2)
@@ -1744,14 +1744,14 @@ step << Alliance
 step << Alliance
     .goto Stormwind City,38.8,26.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在暴风城大教堂与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r对话
-    .turnin 84325 >>交任务 合作神龛
-    .accept 84326 >>接受任务 外交之戒
-    .turnin 84326 >>交任务 外交之戒
-    .accept 84327 >>接受任务 外交任务
+    .turnin 84325 >> 交任务 合作神龛
+    .accept 84326 >> 接受任务 外交之戒
+    .turnin 84326 >> 交任务 外交之戒
+    .accept 84327 >> 接受任务 外交任务
     .target 高阶牧师劳瑞娜
 step << Horde
     #completewith next
-    .zone Orgrimmar >>返回至奥格瑞玛
+    .zone Orgrimmar >> 返回至奥格瑞玛
 step << Horde
     .goto Orgrimmar,55.59,62.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨苏恩|r 对话
@@ -1763,43 +1763,43 @@ step << Horde
 step << Horde
     .goto Orgrimmar,35.8,87.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在精神谷与 |cRXP_FRIENDLY_迪特里希·普雷斯|r对话
-    .turnin 84410 >>交任务 合作神龛
-    .accept 84411 >>接受任务 外交之戒
-    .turnin 84411 >>交任务 外交之戒
-    .accept 84412 >>接受任务 外交任务
+    .turnin 84410 >> 交任务 合作神龛
+    .accept 84411 >> 接受任务 外交之戒
+    .turnin 84411 >> 交任务 外交之戒
+    .accept 84412 >> 接受任务 外交任务
     .target Dietrich Praice
 step << Horde
     #completewith next
     >>|cRXP_WARN_要完成此任务，你需要再次找到一名对立阵营的牧师，让他在你站在暴风城城门旁时，对你使用|r |T133396:0|t|T133396:0|t[|cFF0070FF外交官之戒|r] |cRXP_WARN_。这样城市卫兵就不会再攻击你，让你安全进入敌方主城|r
     >>|cRXP_WARN_请记住，在PvP服务器上，敌对阵营玩家仍然可以攻击你！|r
-    .zone Elwynn Forest >>前往暴风城的大门
+    .zone Elwynn Forest >> 前往暴风城的大门
 step << Horde
     .goto Stormwind City,38.8,26.6
     >>让对立阵营的牧师对你使用|T133396:0|t|T133396:0|t[|cFF0070FF外交官之戒|r]，这样城市卫兵就不会攻击你，然后前往暴风城大教堂。|cRXP_WARN_你仍然可能被其他玩家攻击！|r
     >>|cRXP_WARN_敌对阵营的牧师必须护送你去任务给予者，否则你将失去外交豁免权加成|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在暴风城大教堂与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r对话
-    .turnin 84412 >>交任务 外交任务
-    .accept 84413 >>接受任务 修复碎片
+    .turnin 84412 >> 交任务 外交任务
+    .accept 84413 >> 接受任务 修复碎片
     .target 高阶牧师劳瑞娜
 step << Alliance
     #completewith next
     >>|cRXP_WARN_要完成此任务，你需要再次找到一名对立阵营的牧师，让他在你站在奥格瑞玛城门旁时，对你使用|r |T133396:0|t|T133396:0|t[|cFF0070FF外交官之戒|r] |cRXP_WARN_。这样城市卫兵就不会再攻击你，让你安全进入敌方主城|r
     >>|cRXP_WARN_请记住，在PvP服务器上，敌对阵营玩家仍然可以攻击你！|r
-    .zone Durotar >>前往奧格瑞玛的大门
+    .zone Durotar >> 前往奧格瑞玛的大门
 step << Alliance
     .goto Orgrimmar,35.8,87.2
     >>让对立阵营的牧师对你使用|T133396:0|t|T133396:0|t[|cFF0070FF外交官之戒|r]，这样城市卫兵就不会攻击你，然后前往灵魂之谷。|cRXP_WARN_你仍可能被其他玩家攻击！|r
     >>|cRXP_WARN_敌对阵营的牧师必须护送你去任务给予者，否则你将失去外交豁免权加成|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在精神谷与 |cRXP_FRIENDLY_迪特里希·普雷斯|r对话
-    .turnin 84327 >>交任务 外交任务
-    .accept 84328 >>接受任务 修复碎片
+    .turnin 84327 >> 交任务 外交任务
+    .accept 84328 >> 接受任务 修复碎片
     .target Dietrich Praice
 step
     #completewith next
     >>|cRXP_WARN_开始为厄运之槌西副本寻找队伍，因为下一个任务需要击杀|r |cRXP_ENEMY_卡兰德里斯的魔法师|r |cRXP_WARN_副本中的一个首领|r
-    .zone Feralas >>前往菲拉斯
+    .zone Feralas >> 前往菲拉斯
 step
-    .goto Feralas,59.1,43.2,100 >>前往厄运之槌地区
+    .goto Feralas,59.1,43.2,100 >> 前往厄运之槌地区
 step
     .goto Feralas,60.4,30.2
     >>进入厄运之槌西区，击杀|cRXP_ENEMY_卡兰德里斯的魔导师|r。从他身上拾取书籍|T133737:0|t|T133737:0|t[|cRXP_LOOT_应用神学|r]。他位于副本的幽灵区域
@@ -1808,36 +1808,36 @@ step << Horde
     #completewith next
     >>|cRXP_WARN_要完成此任务，你需要再次找到一名对立阵营的牧师，让他在你站在暴风城城门旁时，对你使用|r |T133396:0|t|T133396:0|t[|cFF0070FF外交官之戒|r] |cRXP_WARN_。这样城市卫兵就不会再攻击你，让你安全进入敌方主城|r
     >>|cRXP_WARN_请记住，在PvP服务器上，敌对阵营玩家仍然可以攻击你！|r
-    .zone Elwynn Forest >>前往暴风城的大门
+    .zone Elwynn Forest >> 前往暴风城的大门
 step << Horde
     .goto Stormwind City,38.8,26.6
     >>让对立阵营的牧师对你使用|T133396:0|t|T133396:0|t[|cFF0070FF外交官之戒|r]，这样城市卫兵就不会攻击你，然后前往暴风城大教堂。|cRXP_WARN_你仍然可能被其他玩家攻击！|r
     >>|cRXP_WARN_敌对阵营的牧师必须护送你去任务给予者，否则你将失去外交豁免权加成|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在暴风城大教堂与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r对话
-    .turnin 84413 >>交任务 修复碎片
-    .accept 84329 >>接受任务 集会召集
+    .turnin 84413 >> 交任务 修复碎片
+    .accept 84329 >> 接受任务 集会召集
     .target 高阶牧师劳瑞娜
 step << Alliance
     #completewith next
     >>|cRXP_WARN_要完成此任务，你需要再次找到一名对立阵营的牧师，让他在你站在奥格瑞玛城门旁时，对你使用|r |T133396:0|t|T133396:0|t[|cFF0070FF外交官之戒|r] |cRXP_WARN_。这样城市卫兵就不会再攻击你，让你安全进入敌方主城|r
     >>|cRXP_WARN_请记住，在PvP服务器上，敌对阵营玩家仍然可以攻击你！|r
-    .zone Durotar >>前往奥格瑞玛的大门
+    .zone Durotar >> 前往奥格瑞玛的大门
 step << Alliance
     .goto Orgrimmar,35.8,87.2
     >>让对立阵营的牧师对你使用|T133396:0|t|T133396:0|t[|cFF0070FF外交官之戒|r]，这样城市卫兵就不会攻击你，然后前往灵魂之谷。|cRXP_WARN_你仍可能被其他玩家攻击！|r
     >>|cRXP_WARN_敌对阵营的牧师必须护送你去任务给予者，否则你将失去外交豁免权加成|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在精神谷与 |cRXP_FRIENDLY_迪特里希·普雷斯|r对话
-    .turnin 84328 >>交任务 修复碎片
-    .accept 84329 >>接受任务 议会集结
+    .turnin 84328 >> 交任务 修复碎片
+    .accept 84329 >> 接受任务 议会集结
     .target Dietrich Praice
 step
     #completewith next
-    .zone Deadwind Pass >>前往逆风小径
+    .zone Deadwind Pass >> 前往逆风小径
 step
     .goto Deadwind Pass,40.8,78.4
     >>前往位于卡拉赞旁边的小神殿
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_麦丝拉·炉心|r 在卡拉赞旁边的小神殿对话
-    .turnin 84329 >>交任务 议会集结
+    .turnin 84329 >> 交任务 议会集结
 step
     +完成上述任务应该完成此任务线，并在全服范围内解锁训练来自其他种族的种族牧师能力
 ]])
@@ -1853,7 +1853,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     >>|cRXP_WARN_为了完成这个符文，你需要在斯坦索姆地下城内完成几个任务（包括生存和死亡的方面）。开始寻找一个队伍|r
-    .zone Eastern Plaguelands >>前往东瘟疫之地
+    .zone Eastern Plaguelands >> 前往东瘟疫之地
 step
     .goto Eastern Plaguelands,47.8,24.2
     >>进入斯坦索姆
@@ -1883,6 +1883,6 @@ step
     >>6. 拾取生成的球体来获得你的符文
     .collect 228124,1 --Oneiric Epiphany
 step
-    .train 402850 >>使用|T135791:0|t|T135948:0|t[|cRXP_FRIENDLY_梦谵顿悟|r]来训练|T135948:0|t|T135948:0|t[|cRXP_FRIENDLY_灵魂守护|r]
+    .train 402850 >> 使用|T135791:0|t|T135948:0|t[|cRXP_FRIENDLY_梦谵顿悟|r]来训练|T135948:0|t|T135948:0|t[|cRXP_FRIENDLY_灵魂守护|r]
     .use 228124
 ]])

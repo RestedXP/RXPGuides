@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #subgroup 手套
 #name 熔火爆裂 - 8 (莫高雷)
 #title 熔火爆裂
-#next 熔岩猛击 - 10 (莫高雷)
+#next 熔岩猛击 - 10级 (莫高雷)
 
 
 step
@@ -45,7 +45,7 @@ step
     .train 425344,1
     .xp <3,1
 step
-    .equip 18,206388 >>|cRXP_WARN_装备|r |T134918:0|t|cRXP_LOOT_[硫息圣像]|r
+    .equip 18,206388 >> |cRXP_WARN_装备|r |T134918:0|t|cRXP_LOOT_[硫息圣像]|r
     .use 206388
     .itemcount 206388,1 --Sulfurous Icon (1)
     .train 425344,1
@@ -70,7 +70,7 @@ step
     .xp >13,1
 step
     #completewith Barrens
-    .zone The Barrens >>前往贫瘠之地
+    .zone The Barrens >> 前往贫瘠之地
     .train 425344,1
     .xp <13,1
 step
@@ -138,7 +138,7 @@ step
     .xp >22,1
 step
     #completewith next
-    .zone Stonetalon Mountains >>前往石爪山脉
+    .zone Stonetalon Mountains >> 前往石爪山脉
     .train 425344,1
     .xp <3,1
 step
@@ -193,7 +193,7 @@ step
 step
     #completewith IconS
     #label Durotar1
-    .zone Durotar >>前往杜隆塔尔
+    .zone Durotar >> 前往杜隆塔尔
     .train 425344,1
     .xp <10,1
 step
@@ -207,7 +207,7 @@ step
 step
     .goto Durotar,54.42,42.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯瓦特|r 对话
-    .train 8050 >>训练 |T135813:0|t[烈焰震击]
+    .train 8050 >> 训练 |T135813:0|t[烈焰震击]
     .target 斯瓦特
     .train 425344,1
     .xp <10,1
@@ -241,7 +241,7 @@ step
     .xp <12,1
 --XX Flametongue and Fire Nova doesn't seem to work
 step
-    .equip 18,206388 >>|cRXP_WARN_装备|r |T134918:0|t|cRXP_LOOT_[硫息圣像]|r
+    .equip 18,206388 >> |cRXP_WARN_装备|r |T134918:0|t|cRXP_LOOT_[硫息圣像]|r
     .use 206388
     .itemcount 206388,1 --Sulfurous Icon (1)
     .train 425344,1
@@ -264,7 +264,7 @@ step
     .xp >11,1
 step
     #completewith Barrens
-    .zone The Barrens >>前往贫瘠之地
+    .zone The Barrens >> 前往贫瘠之地
     .train 425344,1
     .xp <10,1
 step
@@ -332,7 +332,7 @@ step
     .xp >22,1
 step
     #completewith next
-    .zone Stonetalon Mountains >>前往石爪山脉
+    .zone Stonetalon Mountains >> 前往石爪山脉
     .train 425344,1
     .xp <10,1
 step
@@ -395,12 +395,12 @@ step
 --XX WIP to here
 step
     #completewith next
-    .zone Thunder Bluff >>前往雷霆崖
+    .zone Thunder Bluff >> 前往雷霆崖
     .train 410104,1
     .xp <4,1
 step
     .goto Thunder Bluff,39.45,65.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
     >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态
     .accept 76156 >>接受任务 大地母亲与匿同在
     .target Boarton Shadetotem
@@ -463,13 +463,13 @@ step
     .xp <4,1
 step
     #completewith next
-    .zone Thunder Bluff >>前往雷霆崖
+    .zone Thunder Bluff >> 前往雷霆崖
     .train 410104,1
     .xp <4,1
 --XX Logout skips take you to Bloodhoof, not worth doing
 step
     .goto Thunder Bluff,39.45,65.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
     >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态
     .turnin 76156 >>交任务 大地母亲与匿同在
     .accept 76160 >>接受任务 大地母亲与匿同在
@@ -509,7 +509,7 @@ step
     .xp <4,1
 step
     .goto Thunder Bluff,39.45,65.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
     >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态
     .turnin 76160 >>交任务 大地母亲与匿同在
     .accept 76240 >>接受任务 大地母亲与匿同在
@@ -563,7 +563,7 @@ step
     #completewith Fish
     #requires Kah
     #label Pole
-    .equip 16,6256 >>|cRXP_WARN_装备|r |T132932:0|t[鱼竿]
+    .equip 16,6256 >> |cRXP_WARN_装备|r |T132932:0|t[鱼竿]
     .use 6256
     .train 410104,1
     .xp <4,1
@@ -571,7 +571,7 @@ step
     #ssf
     #completewith Fish
     #requires Pole
-    .aura 8087 >>|cRXP_WARN_将|r |T134335:0|t[闪光的小珠] |cRXP_WARN_装在你的|r |T132932:0|t[鱼竿]
+    .aura 8087 >> |cRXP_WARN_将|r |T134335:0|t[闪光的小珠] |cRXP_WARN_装在你的|r |T132932:0|t[鱼竿]
     .use 6529
     .train 410104,1
     .xp <4,1
@@ -580,7 +580,7 @@ step
     #label Fish
     #requires Kah
     .goto Thunder Bluff,40.42,58.55
-    >>在池塘里钓鱼，直到获得一条|T133894:0|t[|cRXP_LOOT_新鲜的美味小鱼|r]
+    >>在池塘里钓鱼，直到获得一条|T133894:0|t|T133894:0|t[|cRXP_LOOT_新鲜的美味小鱼|r]
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
     .train 410104,1
     .xp <4,1
@@ -592,7 +592,7 @@ step
     .xp <4,1
 step
     .goto Thunder Bluff,39.45,65.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_巴通·阴影图腾|r 对话
     >>|cRXP_WARN_他处于|r |T132320:0|t[潜行] 状态
     .turnin 76240 >>交任务 大地母亲与匿同在
 -- .train 410104 >>|cRXP_WARN_You will train|r |T236289:0|t[Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield] |cRXP_WARN_upon turnin|r
@@ -636,8 +636,8 @@ step
 step
     .goto Orgrimmar,38.81,36.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .train 8050 >>训练 |T135813:0|t[烈焰震击]
-    .train 8056 >>训练|T135849:0|t[冰霜震击]
+    .train 8050 >> 训练 |T135813:0|t[烈焰震击]
+    .train 8056 >> 训练|T135849:0|t[冰霜震击]
     .target 卡德里斯
     .zoneskip Thunder Bluff
     .train 8050,1
@@ -646,7 +646,7 @@ step
 step
     .goto Orgrimmar,38.81,36.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .train 8050 >>训练 |T135813:0|t[烈焰震击]
+    .train 8050 >> 训练 |T135813:0|t[烈焰震击]
     .target 卡德里斯
     .zoneskip Thunder Bluff
     .train 410097,1
@@ -655,7 +655,7 @@ step
     #label OrgTrain
     .goto Orgrimmar,38.81,36.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .train 8056 >>训练|T135849:0|t[冰霜震击]
+    .train 8056 >> 训练|T135849:0|t[冰霜震击]
     .target 卡德里斯
     .zoneskip Thunder Bluff
     .train 410097,1
@@ -682,8 +682,8 @@ step
 step
     .goto Thunder Bluff,22.82,21.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希恩|r 对话
-    .train 8050 >>训练 |T135813:0|t[烈焰震击]
-    .train 8056 >>学习 |T135849:0|t[冰霜震击]
+    .train 8050 >> 训练 |T135813:0|t[烈焰震击]
+    .train 8056 >> 学习 |T135849:0|t[冰霜震击]
     .target Siln Skychaser
     .zoneskip Orgrimmar
     .train 8050,1
@@ -692,7 +692,7 @@ step
 step
     .goto Thunder Bluff,22.82,21.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希恩|r 对话
-    .train 8050 >>训练 |T135813:0|t[烈焰震击]
+    .train 8050 >> 训练 |T135813:0|t[烈焰震击]
     .target Siln Skychaser
     .zoneskip Orgrimmar
     .train 410097,1
@@ -701,7 +701,7 @@ step
     #label TBTrain
     .goto Thunder Bluff,22.82,21.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希恩|r 对话
-    .train 8056 >>学习 |T135849:0|t[冰霜震击]
+    .train 8056 >> 学习 |T135849:0|t[冰霜震击]
     .target Siln Skychaser
     .zoneskip Orgrimmar
     .train 410097,1
@@ -751,7 +751,7 @@ step
     .train 410097,1
     .xp <20,1
 step
-    .equip 18,206382 >>|cRXP_WARN_装备这个|r |T135832:0|t|cRXP_LOOT_[风暴圣像]|r
+    .equip 18,206382 >> |cRXP_WARN_装备这个|r |T135832:0|t|cRXP_LOOT_[风暴圣像]|r
     .use 206382
     .itemcount 206382,1 --Tempest Icon (1)
     .train 410097,1
@@ -779,7 +779,7 @@ step
     .xp >22,1
 step
     #completewith next
-    .zone Stonetalon Mountains >>前往石爪山脉
+    .zone Stonetalon Mountains >> 前往石爪山脉
     .train 410097,1
     .xp <22,1
 step
@@ -848,8 +848,8 @@ step
 step
     .goto Orgrimmar,38.81,36.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .train 8050 >>训练 |T135813:0|t[烈焰震击]
-    .train 8056 >>学习 |T135849:0|t[冰霜震击]
+    .train 8050 >> 训练 |T135813:0|t[烈焰震击]
+    .train 8056 >> 学习 |T135849:0|t[冰霜震击]
     .target 卡德里斯
     .zoneskip Thunder Bluff
     .train 8050,1
@@ -858,7 +858,7 @@ step
 step
     .goto Orgrimmar,38.81,36.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .train 8050 >>训练 |T135813:0|t[烈焰震击]
+    .train 8050 >> 训练 |T135813:0|t[烈焰震击]
     .target 卡德里斯
     .zoneskip Thunder Bluff
     .train 410097,1
@@ -867,7 +867,7 @@ step
     #label OrgTrain
     .goto Orgrimmar,38.81,36.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .train 8056 >>训练|T135849:0|t[冰霜震击]
+    .train 8056 >> 训练|T135849:0|t[冰霜震击]
     .target 卡德里斯
     .zoneskip Thunder Bluff
     .train 410097,1
@@ -881,8 +881,8 @@ step
 step
     .goto Thunder Bluff,22.82,21.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希恩|r 对话
-    .train 8050 >>训练 |T135813:0|t[烈焰震击]
-    .train 8056 >>训练|T135849:0|t[冰霜震击]
+    .train 8050 >> 训练 |T135813:0|t[烈焰震击]
+    .train 8056 >> 训练|T135849:0|t[冰霜震击]
     .target Siln Skychaser
     .zoneskip Orgrimmar
     .train 8050,1
@@ -891,7 +891,7 @@ step
 step
     .goto Thunder Bluff,22.82,21.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希恩|r 对话
-    .train 8050 >>训练 |T135813:0|t[烈焰震击]
+    .train 8050 >> 训练 |T135813:0|t[烈焰震击]
     .target Siln Skychaser
     .zoneskip Orgrimmar
     .train 410097,1
@@ -900,7 +900,7 @@ step
     #label TBTrain
     .goto Thunder Bluff,22.82,21.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希恩|r 对话
-    .train 8056 >>训练|T135849:0|t[冰霜震击]
+    .train 8056 >> 训练|T135849:0|t[冰霜震击]
     .target Siln Skychaser
     .zoneskip Orgrimmar
     .train 410097,1
@@ -935,7 +935,7 @@ step
     .train 410097,1
     .xp <20,1
 step
-    .equip 18,206382 >>|cRXP_WARN_装备这个|r |T135832:0|t|cRXP_LOOT_[风暴圣像]|r
+    .equip 18,206382 >> |cRXP_WARN_装备这个|r |T135832:0|t|cRXP_LOOT_[风暴圣像]|r
     .use 206382
     .itemcount 206382,1 --Tempest Icon (1)
     .train 410097,1
@@ -987,19 +987,19 @@ step
     .train 410095,1
     .xp <25,1
 step
-    .equip 18,206387 >>|cRXP_WARN_装备|r |T134920:0|t|cRXP_LOOT_[卡亚圣像]|r
+    .equip 18,206387 >> |cRXP_WARN_装备|r |T134920:0|t|cRXP_LOOT_[卡亚圣像]|r
     .use 206387
     .itemcount 206387,1 --Kajaric Icon (1)
     .train 410095,1
     .xp <25,1
 step
     #completewith next
-    .zone Orgrimmar >>前往奥格瑞玛
+    .zone Orgrimmar >> 前往奥格瑞玛
     .train 410095,1
     .xp <25,1
 step
     .goto Orgrimmar,52.77,48.97
-    .subzone 2437 >>进入暗影裂口内的怒焰裂谷
+    .subzone 2437 >> 进入暗影裂口内的怒焰裂谷
     .itemStat 18,QUALITY,2
     .train 410095,1
     .xp <25,1
@@ -1052,17 +1052,17 @@ step
     .mob Mudsnout Shaman
     .train 410095,1
 step
-    .equip 18,206387 >>|cRXP_WARN_装备|r |T134920:0|t|cRXP_LOOT_[卡亚圣像]|r
+    .equip 18,206387 >> |cRXP_WARN_装备|r |T134920:0|t|cRXP_LOOT_[卡亚圣像]|r
     .use 206387
     .itemcount 206387,1 --Kajaric Icon (1)
     .train 410095,1
 step
     #completewith next
-    .zone Orgrimmar >>前往奥格瑞玛
+    .zone Orgrimmar >> 前往奥格瑞玛
     .train 410095,1
 step
     .goto Orgrimmar,52.77,48.97
-    .subzone 2437 >>进入暗影裂口内的怒焰裂谷
+    .subzone 2437 >> 进入暗影裂口内的怒焰裂谷
     .itemStat 18,QUALITY,2
     .train 410095,1
 step
@@ -1097,7 +1097,7 @@ step
     .xp >3,1
 step
     #completewith IconS
-    .zone Durotar >>前往杜隆塔尔
+    .zone Durotar >> 前往杜隆塔尔
     .train 410094,1
     .xp <3,1
 step << !Tauren skip
@@ -1166,7 +1166,7 @@ step
     .train 410094,1
     .xp <3,1
 step
-    .equip 18,206381 >>|cRXP_WARN_装备|r |T134918:0|t|cRXP_LOOT_[二价圣像]|r
+    .equip 18,206381 >> |cRXP_WARN_装备|r |T134918:0|t|cRXP_LOOT_[二价圣像]|r
     .use 206381
     .itemcount 206381,1 --Dyadic Icon (1)
     .train 410094,1
@@ -1261,7 +1261,7 @@ step
     .xp >3,1
 step
     #completewith IconS
-    .zone Mulgore >>前往莫高雷
+    .zone Mulgore >> 前往莫高雷
     .train 410094,1
     .xp <3,1
 step << Tauren skip
@@ -1285,7 +1285,7 @@ step
     .train 410094,1
     .xp <3,1
 step
-    .equip 18,206381 >>|cRXP_WARN_装备|r |T134918:0|t|cRXP_LOOT_[二价圣像]|r
+    .equip 18,206381 >> |cRXP_WARN_装备|r |T134918:0|t|cRXP_LOOT_[二价圣像]|r
     .use 206381
     .itemcount 206381,1 --Dyadic Icon (1)
     .train 410094,1
@@ -1341,7 +1341,7 @@ step
     .xp >6,1
 step
     #completewith IconS
-    .zone Durotar >>前往杜隆塔尔
+    .zone Durotar >> 前往杜隆塔尔
     .train 410098,1
     .xp <3,1
 step
@@ -1365,7 +1365,7 @@ step
     .xp <3,1
 --XX Need to check for more locations
 step
-    .equip 18,206386 >>|cRXP_WARN_装备|r |T134918:0|t|T134918:0|t|cRXP_LOOT_[镀电圣像]|r
+    .equip 18,206386 >> |cRXP_WARN_装备|r |T134918:0|t|T134918:0|t|cRXP_LOOT_[镀电圣像]|r
     .use 206386
     .itemcount 206386,1 --Galvanic Icon (1)
     .train 410098,1
@@ -1388,7 +1388,7 @@ step
     .xp >11,1
 step
     #completewith Barrens
-    .zone The Barrens >>前往贫瘠之地
+    .zone The Barrens >> 前往贫瘠之地
     .train 410098,1
     .xp <3,1
 step
@@ -1456,7 +1456,7 @@ step
     .xp >22,1
 step
     #completewith next
-    .zone Stonetalon Mountains >>前往石爪山脉
+    .zone Stonetalon Mountains >> 前往石爪山脉
     .train 410098,1
     .xp <3,1
 step
@@ -1499,7 +1499,7 @@ RXPGuides.RegisterGuide([[
 #subgroup 胸部
 #name 盾牌掌握 - 6级 (莫高雷)
 #title 盾牌掌握
-#next 熔火爆裂 - 8级 (莫高雷)
+#next 熔火爆裂 - 8 (莫高雷)
 
 
     --Rune of Shield Mastery
@@ -1516,7 +1516,7 @@ step
     .xp >6,1
 step
     #completewith IconS
-    .zone Mulgore >>前往莫高雷
+    .zone Mulgore >> 前往莫高雷
     .train 410098,1
     .xp <3,1
 step
@@ -1560,7 +1560,7 @@ step
     .train 410098,1
     .xp <3,1
 step
-    .equip 18,206386 >>|cRXP_WARN_装备|r |T134918:0|t|T134918:0|t|cRXP_LOOT_[镀电圣像]|r
+    .equip 18,206386 >> |cRXP_WARN_装备|r |T134918:0|t|T134918:0|t|cRXP_LOOT_[镀电圣像]|r
     .use 206386
     .itemcount 206386,1 --Galvanic Icon (1)
     .train 410098,1
@@ -1598,7 +1598,7 @@ step
     .xp >14,1
 step
     #completewith Barrens
-    .zone The Barrens >>前往贫瘠之地
+    .zone The Barrens >> 前往贫瘠之地
     .train 410098,1
     .xp <3,1
 step
@@ -1666,7 +1666,7 @@ step
     .xp >22,1
 step
     #completewith next
-    .zone Stonetalon Mountains >>前往石爪山脉
+    .zone Stonetalon Mountains >> 前往石爪山脉
     .train 410098,1
     .xp <3,1
 step
@@ -1709,7 +1709,7 @@ RXPGuides.RegisterGuide([[
 #subgroup 腿部
 #name 先祖指引 - 6 (杜隆塔尔)
 #title 先祖指引
-#next 熔火爆裂 - 10 (杜隆塔尔)
+#next 熔火爆裂 - 10 级(杜隆塔尔)
 
     --Rune of Ancestral Guidance
 step
@@ -1725,7 +1725,7 @@ step
 step
     #completewith next
     #label Durotar1
-    .zone Durotar >>前往杜隆塔尔
+    .zone Durotar >> 前往杜隆塔尔
     .train 410099,1
     .xp <3,1
 step
@@ -1780,7 +1780,7 @@ step
 step
     #completewith next
     #label Mulgore1
-    .zone Mulgore >>前往莫高雷
+    .zone Mulgore >> 前往莫高雷
     .train 410099,1
     .xp <3,1
 step
@@ -1862,7 +1862,7 @@ step
 step
     .goto Orgrimmar,38.81,36.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_卡德里斯|r 对话
-    .train 370 >>训练 |T136075:0|t[净化术]
+    .train 370 >> 训练 |T136075:0|t[净化术]
     .target 卡德里斯
     .zoneskip Thunder Bluff
     .train 410107,1
@@ -1876,7 +1876,7 @@ step
 step
     .goto Thunder Bluff,22.82,21.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_希恩|r 对话
-    .train 370 >>训练 |T136075:0|t[净化术]
+    .train 370 >> 训练 |T136075:0|t[净化术]
     .target Siln Skychaser
     .zoneskip Orgrimmar
     .train 410107,1
@@ -1951,14 +1951,14 @@ step
     .train 410107,1
 step
     #completewith Rune
-    .cast 425285 >>|cRXP_WARN_使用|r |T136008:0|t|T136008:0|t|cRXP_LOOT_[腐化图腾]|r |cRXP_WARN_来召唤|cRXP_ENEMY_腐朽的元素生物|r
+    .cast 425285 >> |cRXP_WARN_使用|r |T136008:0|t|T136008:0|t|cRXP_LOOT_[腐化图腾]|r |cRXP_WARN_来召唤|cRXP_ENEMY_腐朽的元素生物|r
     .use 210253 --Rot Hide Totem (1)
     .itemcount 210253,1 --Rot Hide Totem (1)
     .train 410107,1
     .xp <14,1
 step
     #completewith next
-    .cast 425285 >>|cRXP_WARN_使用|r |T136008:0|t|T136008:0|t|cRXP_LOOT_[腐化图腾]|r |cRXP_WARN_来召唤|cRXP_ENEMY_腐朽的元素生物|r
+    .cast 425285 >> |cRXP_WARN_使用|r |T136008:0|t|T136008:0|t|cRXP_LOOT_[腐化图腾]|r |cRXP_WARN_来召唤|cRXP_ENEMY_腐朽的元素生物|r
     >>|cRXP_WARN_小心，它会施放|r |T135848:0|t|T135848:0|t[冰霜新星] |cRXP_WARN_（远程瞬发：造成约50点伤害并定身8秒），且等级为15|r
     .use 210253 --Rot Hide Totem (1)
     .itemcount 210253,1 --Rot Hide Totem (1)
@@ -2094,14 +2094,14 @@ step
     .xp <25,1
 step
     #completewith next
-    .zone Ashenvale >>前往灰谷
+    .zone Ashenvale >> 前往灰谷
     .train 410101,1
     .xp <25,1
 step
     #completewith next
     .goto Kalimdor,44.36,34.86
     >>|cRXP_WARN_加入或创建新的(0/7)团队(10人)以进入黑暗深渊|r
-    .subzone 2797,2 >>前往黑暗深渊副本入口并进入副本
+    .subzone 2797,2 >> 前往黑暗深渊副本入口并进入副本
     .train 410101,1
     .xp <25,1
 step
@@ -2120,13 +2120,13 @@ step
 step
     #completewith Baron
     >>|cRXP_WARN_完成这个副本（如果你想的话），然后离开黑暗深渊|r
-    .zone Ashenvale >>前往灰谷
+    .zone Ashenvale >> 前往灰谷
     .zoneskip 221,1
     .train 410101,1
     .xp <25,1
 step
     #completewith next
-    .zone Ashenvale >>前往灰谷
+    .zone Ashenvale >> 前往灰谷
     .train 410101,1
     .xp <25,1
 step
@@ -2437,7 +2437,7 @@ step
     .goto The Barrens,43.46,90.18,0
     .goto The Barrens,43.46,90.18,40,0
     .goto 1414,50.877,70.339
-    .subzone 491,2 >>进入剃刀沼泽
+    .subzone 491,2 >> 进入剃刀沼泽
 step
     .train 410100,1
     >>击杀 |cRXP_ENEMY_卡尔加·刺肋|r。拾取他的 |T134944:0|t|cRXP_LOOT_破烂的笔记|r。使用它来接受任务
@@ -2580,7 +2580,7 @@ step
     .mob Ravaging Tempest
 step
     .train 410100,1
-    .vehicle >>与 |cRXP_FRIENDLY_乱风岗双足飞龙|r 互动
+    .vehicle >> 与 |cRXP_FRIENDLY_乱风岗双足飞龙|r 互动
     .timer 9,飞行 剧情BP
 step
     .train 410100,1
@@ -2699,7 +2699,7 @@ step
     .use 213709 >>|cRXP_WARN_使用|r 你的 |T133723:0|t[风蛇利齿] |cRXP_WARN_来制作|r |T133291:0|t[风灵供品]
     .collect 213737,1 --Offering to the Wind Spirit (1x)
 step
-    .goto Thousand Needles,31.47,36.71,30 >>前往黑云峰
+    .goto Thousand Needles,31.47,36.71,30 >> 前往黑云峰
 step
     #completewith next
     .goto Thousand Needles,33.08,35.33,20,0
@@ -2709,7 +2709,7 @@ step
     .goto Thousand Needles,32.60,27.51,20,0
     .goto Thousand Needles,34.87,31.76,20,0
     .goto Thousand Needles,34.15,35.77,20,0
-    .goto Thousand Needles,33.32,36.24,20 >>沿着黑云峰向上前进
+    .goto Thousand Needles,33.32,36.24,20 >> 沿着黑云峰向上前进
 step
     .train 425882,1
     .goto Thousand Needles,39.44,41.98
@@ -3027,7 +3027,7 @@ step
 step
     .goto Feralas,36.0,32.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_温和的大地之灵|r交谈
-    .turnin 82075 >>响应大地的召唤
+    .turnin 82075 >> 响应大地的召唤
     .target Moderate Manifestation of Earth
     .train 432241,1
 step
@@ -3046,7 +3046,7 @@ step
 step
     .goto Feralas,36.0,32.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_温和的大地之灵|r交谈
-    .turnin 82075 >>响应大地的召唤
+    .turnin 82075 >> 响应大地的召唤
     .target Moderate Manifestation of Earth
     .train 432241,1
 step
@@ -3065,7 +3065,7 @@ step
 step
     .goto Feralas,36.0,32.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_温和的大地之灵|r交谈
-    .turnin 82075 >>响应大地的召唤
+    .turnin 82075 >> 响应大地的召唤
     .target Moderate Manifestation of Earth
     .train 432241,1
 step
@@ -3084,7 +3084,7 @@ step
 step
     .goto Feralas,36.0,32.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_温和的大地之灵|r交谈
-    .turnin 82075 >>响应大地的召唤
+    .turnin 82075 >> 响应大地的召唤
     .target Moderate Manifestation of Earth
     .train 432241,1
 step
@@ -3092,7 +3092,7 @@ step
     .collect 220616,1 --1/1 Rune of Overcharged
     .train 432241,1
 step
-    .train 432241 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_能量超载符文|r] |cRXP_WARN_来训练|r |T132213:0|t[能量超载]
+    .train 432241 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_能量超载符文|r] |cRXP_WARN_来训练|r |T132213:0|t[能量超载]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -3118,7 +3118,7 @@ step
     .mob Deadwood Den Watcher
 step
     .train 440634,1
-    .equip 18,225838 >>|cRXP_WARN_装备|r |T134918:0|t[|cRXP_LOOT_流电圣像|r]
+    .equip 18,225838 >> |cRXP_WARN_装备|r |T134918:0|t[|cRXP_LOOT_流电圣像|r]
     .use 225838
 step
     .train 440634,1
@@ -3166,7 +3166,7 @@ step
     .collect 225675,1
 step
     .train 416062,1
-    .use 225675 >>|cRXP_WARN_打开|r |T237477:0|t[|cRXP_LOOT_蒙灰黑曜石之核|r] |cRXP_WARN_来获得|r |T134419:0|t[|cRXP_LOOT_沉着符文|r]
+    .use 225675 >> |cRXP_WARN_打开|r |T237477:0|t[|cRXP_LOOT_蒙灰黑曜石之核|r] |cRXP_WARN_来获得|r |T134419:0|t[|cRXP_LOOT_沉着符文|r]
     .collect 225740,1
 step
     .itemcount 225740,1
@@ -3189,7 +3189,7 @@ step
     >>|cRXP_WARN_记住你必须击杀一个60级精英。考虑带上一个朋友|r
 step
     #completewith next
-    .goto Winterspring,67.93,41.44,50 >>进入雪人洞穴
+    .goto Winterspring,67.93,41.44,50 >> 进入雪人洞穴
 step
     .goto Winterspring,69.87,37.92
     >>|cRXP_WARN_前往雪人洞穴后部|r 与 |cRXP_FRIENDLY_弗里吉达尔|r 对话

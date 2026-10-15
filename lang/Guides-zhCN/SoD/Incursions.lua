@@ -22,14 +22,14 @@ step
     .maxlevel 53
 step
 #completewith next
-.zone Duskwood >>|cRXP_WARN_前往暮色森林。请确保你的任务日志有足够的空间。你需要在任务日志中同时保留来自侵入区的12到15个任务。|r
+.zone Duskwood >> |cRXP_WARN_前往暮色森林。请确保你的任务日志有足够的空间。你需要在任务日志中同时保留来自侵入区的12到15个任务。|r
 .maxlevel 53
 step
     #label travel
-  .goto 1431/0,-438.800,-10793.400,30 >>前往通往黎明森林的小路
+  .goto 1431/0,-438.800,-10793.400,30 >> 前往通往黎明森林的小路
   .maxlevel 53
 step
-    .goto 1431/0,-376.600,-10768.500,30 >>沿路向上走
+    .goto 1431/0,-376.600,-10768.500,30 >> 沿路向上走
     .maxlevel 53
 step
     >>在所在地区寻找 |cRXP_FRIENDLY_翡翠卫士|r 的军需官，并从其处购买你的符文
@@ -85,14 +85,14 @@ step
 step
     .goto Duskwood,45.6,51.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_军需官法里纳尔|r 对话
-    .vendor >>|cRXP_BUY_最多从他那里买5个|r |T134718:0|t[强效治疗药水] |cRXP_BUY_，如果你想要的话。|r |cRXP_WARN_这些只能在入侵区域内使用|r
+    .vendor >> |cRXP_BUY_最多从他那里买5个|r |T134718:0|t[强效治疗药水] |cRXP_BUY_，如果你想要的话。|r |cRXP_WARN_这些只能在入侵区域内使用|r
     .target Quartermaster Falinar
     .xp >40,1
     .maxlevel 53
 step
     .goto Duskwood,45.6,51.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_军需官法里纳尔|r 对话
-    .vendor >>如果需要，可以从他那里购买最多5瓶|cRXP_BUY_|T236885:0|t[|r特效治疗药水|cRXP_BUY_] |r。 |cRXP_WARN_这些药水只能在梦魇入侵区域内使用|r
+    .vendor >> 如果需要，可以从他那里购买最多5瓶|cRXP_BUY_|T236885:0|t[|r特效治疗药水|cRXP_BUY_] |r。 |cRXP_WARN_这些药水只能在梦魇入侵区域内使用|r
     .target Quartermaster Falinar
     .xp <40,1
     .maxlevel 53
@@ -100,9 +100,9 @@ step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长帕兰达尔|r 对话
     .goto Duskwood,45.6,51.2
-    .accept 81739 >>接受任务 暮色森林使命X：梦魇苔
-    .accept 81740 >>接受任务 暮色森林使命XI：冷铁矿石
-    .accept 81741 >>接受任务 暮色森林使命XII：梦触龙鳞
+    .accept 81739 >> 接受任务 暮色森林使命X：梦魇苔
+    .accept 81740 >> 接受任务 暮色森林使命XI：冷铁矿石
+    .accept 81741 >> 接受任务 暮色森林使命XII：梦触龙鳞
     .itemcount 219399,10 --Nightmare Moss
     .itemcount 219401,10 --Cold Iron Ore
     .itemcount 219402,10 --Dream-Touched Dragonscale
@@ -111,30 +111,30 @@ step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长帕兰达尔|r 对话
     .goto Duskwood,45.6,51.2
-    .accept 81739 >>接受任务 暮色森林使命X：梦魇苔
+    .accept 81739 >> 接受任务 暮色森林使命X：梦魇苔
     .itemcount 219399,10 --Nightmare Moss
     .maxlevel 53
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长帕兰达尔|r 对话
     .goto Duskwood,45.6,51.2
-    .accept 81740 >>接受任务 暮色森林使命XI：冷铁矿石
+    .accept 81740 >> 接受任务 暮色森林使命XI：冷铁矿石
     .itemcount 219401,10 --Cold Iron Ore
     .maxlevel 53
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长帕兰达尔|r 对话
     .goto Duskwood,45.6,51.2
-    .accept 81741 >>接受任务 暮色森林使命XII：梦触龙鳞
+    .accept 81741 >> 接受任务 暮色森林使命XII：梦触龙鳞
     .itemcount 219402,10 --Dream-Touched Dragonscale
     .maxlevel 53
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长帕兰达尔|r 对话
     .goto Duskwood,45.6,51.2
-    .turnin -81739 >>交任务 暮色森林使命X：梦魇苔
-    .turnin -81740 >>交任务 暮色森林使命XI：冷铁矿石
-    .turnin -81741 >>交任务 暮色森林使命XII：梦触龙鳞
+    .turnin -81739 >> 交任务 暮色森林使命X：梦魇苔
+    .turnin -81740 >> 交任务 暮色森林使命XI：冷铁矿石
+    .turnin -81741 >> 交任务 暮色森林使命XII：梦触龙鳞
     .isOnQuest 81739
     .isOnQuest 81740
     .maxlevel 53
@@ -143,34 +143,34 @@ step
     >>|cRXP_WARN_你现在要开始做一轮梦魇进犯任务。所有这些任务都可以在队伍中完成，这会让效率变得更高。如果你在任务发放人附近看到任何玩家，尝试组个队。如果你找到了几个队友，你还可以顺便把那些无法单挑的Boss任务也一起做了|r
     .goto Duskwood,45.6,51.2
     .target Field Captain Palandar
-    .accept 81730 >>接受任务 暮色森林使命I：击败狼人
-    .accept 81731 >>接受任务 暮色森林使命II：击败食人魔
-    .accept 81732 >>接受任务 暮色森林使命III：击败龙类
-    .accept 81733 >>接受任务 暮色森林使命IV：食人魔情报
-    .accept 81734 >>接受任务 暮色森林使命V：狼人情报
-    .accept 81735 >>接受任务 暮色森林使命VI：巨龙情报
-    .accept 81736 >>接受任务 暮色森林使命VII：取回暗影之镰
-    .accept 81737 >>接受任务 暮色森林使命VIII：取回食人魔法师手记
-    .accept 81738 >>接受任务 暮色森林使命IX：取回龙蛋
-    .accept 81745 >>接受任务 暮色森林使命XVI：营救克洛尔·丘影
-    .accept 81746 >>接受任务 暮色森林使命XVII：营救阿拉菈·愈林
-    .accept 81747 >>接受任务 暮色森林使命XVIII：营救艾乐诺拉·涉沼
+    .accept 81730 >> 接受任务 暮色森林使命I：击败狼人
+    .accept 81731 >> 接受任务 暮色森林使命II：击败食人魔
+    .accept 81732 >> 接受任务 暮色森林使命III：击败龙类
+    .accept 81733 >> 接受任务 暮色森林使命IV：食人魔情报
+    .accept 81734 >> 接受任务 暮色森林使命V：狼人情报
+    .accept 81735 >> 接受任务 暮色森林使命VI：巨龙情报
+    .accept 81736 >> 接受任务 暮色森林使命VII：取回暗影之镰
+    .accept 81737 >> 接受任务 暮色森林使命VIII：取回食人魔法师手记
+    .accept 81738 >> 接受任务 暮色森林使命IX：取回龙蛋
+    .accept 81745 >> 接受任务 暮色森林使命XVI：营救克洛尔·丘影
+    .accept 81746 >> 接受任务 暮色森林使命XVII：营救阿拉菈·愈林
+    .accept 81747 >> 接受任务 暮色森林使命XVIII：营救艾乐诺拉·涉沼
     .maxlevel 53
 step
 .group 3
     .goto Duskwood,45.6,51.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长帕兰达尔|r 对话
     >>|cRXP_WARN_如果你在队伍中，可以考虑把击杀精英的任务也接了。这些任务需要击杀的首领拥有极高的生命值，根据你队伍的配置，挑战起来可能会有一定难度。|r
-    .accept 81742 >>接受任务 暮色森林使命XIII：击败伊兰希乌斯
-    .accept 81743 >>接受任务 暮色森林使命XIV：击败瓦阿克祖
-    .accept 81744 >>接受任务 暮色森林使命XV：击败阿莫卡洛克
+    .accept 81742 >> 接受任务 暮色森林使命XIII：击败伊兰希乌斯
+    .accept 81743 >> 接受任务 暮色森林使命XIV：击败瓦阿克祖
+    .accept 81744 >> 接受任务 暮色森林使命XV：击败阿莫卡洛克
     .maxlevel 53
 step
     #completewith next
     +|cRXP_WARN_点击接任务的NPC旁边的传送门|r，进入翡翠梦境位面
     .maxlevel 53
 step
-    .goto Duskwood,47.07,49.64,10 >>|cRXP_WARN_进入翡翠梦境后|r 离开黎明森林
+    .goto Duskwood,47.07,49.64,10 >> |cRXP_WARN_进入翡翠梦境后|r 离开黎明森林
     .maxlevel 53
 step
     #sticky
@@ -183,7 +183,7 @@ step
     .maxlevel 53
 step
     .goto Duskwood,32.48,69.60
-    .gossipoption 122140 >>与躺在地上的 |cRXP_FRIENDLY_艾乐诺拉·涉沼|r 对话。她应该会开始跟随你
+    .gossipoption 122140 >> 与躺在地上的 |cRXP_FRIENDLY_艾乐诺拉·涉沼|r 对话。她应该会开始跟随你
     >>|cRXP_WARN_如果她不在那里，说明有其他人正在护送她，找不到她的话就跳过这一步|r
     .target Elenora Marshwalker
     .maxlevel 53
@@ -230,7 +230,7 @@ step
     .maxlevel 53
 step
     .goto Duskwood,49.13,77.41
-    .gossipoption 122136 >>与躺在地上的 |cRXP_FRIENDLY_阿拉菈·愈林|r 对话。她应该会开始跟随你
+    .gossipoption 122136 >> 与躺在地上的 |cRXP_FRIENDLY_阿拉菈·愈林|r 对话。她应该会开始跟随你
     >>|cRXP_WARN_如果她不在那里，说明有其他人正在护送她，找不到她的话就跳过这一步|r
     .target Alara Grovemender
     .maxlevel 53
@@ -277,7 +277,7 @@ step
     .group 3
 step
     .goto Duskwood,65.99,69.36
-    .gossipoption 122146 >>与躺在地上的 |cRXP_FRIENDLY_克洛尔·丘影|r 对话。她应该会开始跟随你
+    .gossipoption 122146 >> 与躺在地上的 |cRXP_FRIENDLY_克洛尔·丘影|r 对话。她应该会开始跟随你
     >>|cRXP_WARN_如果他不在那里，说明有其他人正在护送他，找不到他的话就跳过这一步|r
     .target Kroll Mountainshade
     .maxlevel 53
@@ -289,11 +289,11 @@ step
 step
     #requires Worgen
     .goto Duskwood,70.93,65.90
-    .goto Duskwood,44.60,65.80,50 >>一路向西走，直到你到达梦境的边界区域。你的屏幕会开始泛起绿光，随后你会被传送回入口附近。|cRXP_WARN_不用担心，你护送的NPC会跟着你一起传送回来|r
+    .goto Duskwood,44.60,65.80,50 >> 一路向西走，直到你到达梦境的边界区域。你的屏幕会开始泛起绿光，随后你会被传送回入口附近。|cRXP_WARN_不用担心，你护送的NPC会跟着你一起传送回来|r
     .maxlevel 53
 step
     #completewith next
-    .goto 1431/0,-421.400,-10360.601,5 >>回到梦魇传送门。|cRXP_WARN_千万不要死在半路上，否则护送任务会失败！如果你安全抵达传送门，所有三个任务应该都会完成|r
+    .goto 1431/0,-421.400,-10360.601,5 >> 回到梦魇传送门。|cRXP_WARN_千万不要死在半路上，否则护送任务会失败！如果你安全抵达传送门，所有三个任务应该都会完成|r
     .maxlevel 53
 step
     .goto 1431/0,-421.400,-10360.601
@@ -303,33 +303,33 @@ step
     .complete 81747,1
     .maxlevel 53
 step
-    .goto Duskwood,46.63,47.90,5 >>返回你之前用来进入翡翠梦境的那个传送门，然后|cRXP_WARN_点击它以传送回现实世界|r
+    .goto Duskwood,46.63,47.90,5 >> 返回你之前用来进入翡翠梦境的那个传送门，然后|cRXP_WARN_点击它以传送回现实世界|r
     .maxlevel 53
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长帕兰达尔|r 对话
     .goto Duskwood,45.6,51.2
     .target Field Captain Palandar
-    .turnin 81730 >>交任务 暮色森林使命I：击败狼人
-    .turnin 81731 >>交任务 暮色森林使命II：击败食人魔
-    .turnin 81732 >>交任务 暮色森林使命III：击败龙类
-    .turnin 81733 >>交任务 暮色森林使命IV：食人魔情报
-    .turnin 81734 >>交任务 暮色森林使命V：狼人情报
-    .turnin 81735 >>交任务 暮色森林使命VI：巨龙情报
-    .turnin 81736 >>交任务 暮色森林使命VII：取回暗影之镰
-    .turnin 81737 >>交任务 暮色森林使命VIII：取回食人魔法师手记
-    .turnin 81738 >>交任务 暮色森林使命IX：取回龙蛋
-    .turnin 81745 >>交任务 暮色森林使命XVI：营救克洛尔·丘影
-    .turnin 81746 >>交任务 暮色森林使命XVII：营救阿拉菈·愈林
-    .turnin 81747 >>交任务 暮色森林使命XVIII：营救艾乐诺拉·涉沼
+    .turnin 81730 >> 交任务 暮色森林使命I：击败狼人
+    .turnin 81731 >> 交任务 暮色森林使命II：击败食人魔
+    .turnin 81732 >> 交任务 暮色森林使命III：击败龙类
+    .turnin 81733 >> 交任务 暮色森林使命IV：食人魔情报
+    .turnin 81734 >> 交任务 暮色森林使命V：狼人情报
+    .turnin 81735 >> 交任务 暮色森林使命VI：巨龙情报
+    .turnin 81736 >> 交任务 暮色森林使命VII：取回暗影之镰
+    .turnin 81737 >> 交任务 暮色森林使命VIII：取回食人魔法师手记
+    .turnin 81738 >> 交任务 暮色森林使命IX：取回龙蛋
+    .turnin 81745 >> 交任务 暮色森林使命XVI：营救克洛尔·丘影
+    .turnin 81746 >> 交任务 暮色森林使命XVII：营救阿拉菈·愈林
+    .turnin 81747 >> 交任务 暮色森林使命XVIII：营救艾乐诺拉·涉沼
     .maxlevel 53
 step
     #optional
     .goto Duskwood,45.6,51.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长帕兰达尔|r 对话
     >>|cRXP_WARN_如果你在队伍中，可以考虑把击杀精英的任务也接了。这些任务需要击杀的首领拥有极高的生命值，根据你队伍的配置，挑战起来可能会有一定难度。|r
-    .turnin -81742 >>交任务 暮色森林使命XIII：击败伊兰希乌斯
-    .turnin -81743 >>交任务 暮色森林使命XIV：击败瓦阿克祖
-    .turnin -81744 >>交任务 暮色森林使命XV：击败阿莫卡洛克
+    .turnin -81742 >> 交任务 暮色森林使命XIII：击败伊兰希乌斯
+    .turnin -81743 >> 交任务 暮色森林使命XIV：击败瓦阿克祖
+    .turnin -81744 >> 交任务 暮色森林使命XV：击败阿莫卡洛克
     .maxlevel 53
     .target Field Captain Palandar
 step
@@ -367,7 +367,7 @@ step
 step
     #season 2
     #label travel
-    .zone Ashenvale >>前往灰谷。|cRXP_WARN_请确保你的任务日志有足够的空间。你需要在任务日志中同时保留来自侵入区的12到15个任务。|r
+    .zone Ashenvale >> 前往灰谷。|cRXP_WARN_请确保你的任务日志有足够的空间。你需要在任务日志中同时保留来自侵入区的12到15个任务。|r
     >>如果你已经开启了艾萨拉的飞行点，飞到那里再跑到灰谷会比直接飞到阿斯特兰纳更快 << Alliance
     .maxlevel 53
 step
@@ -429,9 +429,9 @@ step
     #optional
     .goto Ashenvale,89.53,40.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长汉娜拉|r 对话
-    .accept 81777 >>接受任务 灰谷使命X：梦之根
-    .accept 81778 >>接受任务 灰谷使命XI：愚人金砂
-    .accept 81779 >>接受任务 灰谷使命XII：梦注龙鳞
+    .accept 81777 >> 接受任务 灰谷使命X：梦之根
+    .accept 81778 >> 接受任务 灰谷使命XI：愚人金砂
+    .accept 81779 >> 接受任务 灰谷使命XII：梦注龙鳞
     .itemcount 219444,10 --Dreamroot
     .itemcount 219446,10 --Dream-Infused Dragonscale
     .itemcount 219445,10 --Fool's Gold Dust
@@ -441,7 +441,7 @@ step
     #optional
     .goto Ashenvale,89.53,40.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长汉娜拉|r 对话
-    .accept 81777 >>接受任务 灰谷使命X：梦之根
+    .accept 81777 >> 接受任务 灰谷使命X：梦之根
     .itemcount 219444,10 --Dreamroot
     .maxlevel 53
 step
@@ -449,7 +449,7 @@ step
     #optional
     .goto Ashenvale,89.53,40.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长汉娜拉|r 对话
-    .accept 81778 >>接受任务 灰谷使命XI：愚人金砂
+    .accept 81778 >> 接受任务 灰谷使命XI：愚人金砂
     .itemcount 219445,10 --Fool's Gold Dust
     .maxlevel 53
 step
@@ -457,7 +457,7 @@ step
     #optional
     .goto Ashenvale,89.53,40.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长汉娜拉|r 对话
-    .accept 81779 >>接受任务 灰谷使命XII：梦注龙鳞
+    .accept 81779 >> 接受任务 灰谷使命XII：梦注龙鳞
     .itemcount 219446,10 --Dream-Infused Dragonscale
     .maxlevel 53
 step
@@ -465,9 +465,9 @@ step
     #optional
     .goto Ashenvale,89.53,40.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长汉娜拉|r 对话
-    .turnin -81777 >>交任务 灰谷使命X：梦之根
-    .turnin -81778 >>交任务 灰谷使命XI：愚人金砂
-    .turnin -81779 >>交任务 灰谷使命XII：梦注龙鳞
+    .turnin -81777 >> 交任务 灰谷使命X：梦之根
+    .turnin -81778 >> 交任务 灰谷使命XI：愚人金砂
+    .turnin -81779 >> 交任务 灰谷使命XII：梦注龙鳞
     .maxlevel 53
 step
     #season 2
@@ -494,9 +494,9 @@ step
     .goto Ashenvale,89.53,40.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长汉娜拉|r 对话
     >>|cRXP_WARN_如果你在队伍中，可以考虑把击杀精英的任务也接了。这些任务需要击杀的首领拥有极高的生命值，根据你队伍的配置，挑战起来可能会有一定难度。|r
-    .accept 81780 >>接受任务 灰谷使命XIII：击败拉尔瑟拉
-    .accept 81781 >>接受任务 灰谷使命XIV：击败查利乌斯
-    .accept 81782 >>接受任务 灰谷使命XV：击败伐木机9000型
+    .accept 81780 >> 接受任务 灰谷使命XIII：击败拉尔瑟拉
+    .accept 81781 >> 接受任务 灰谷使命XIV：击败查利乌斯
+    .accept 81782 >> 接受任务 灰谷使命XV：击败伐木机9000型
     .maxlevel 53
 step
     #season 2
@@ -740,9 +740,9 @@ step
     #optional
     .goto Ashenvale,89.53,40.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长汉娜拉|r 对话
-    .turnin -81780 >>交任务 灰谷使命XIII：击败拉尔瑟拉
-    .turnin -81781 >>交任务 灰谷使命XIV：击败查利乌斯
-    .turnin -81782 >>交任务 灰谷使命XV：切割机9000
+    .turnin -81780 >> 交任务 灰谷使命XIII：击败拉尔瑟拉
+    .turnin -81781 >> 交任务 灰谷使命XIV：击败查利乌斯
+    .turnin -81782 >> 交任务 灰谷使命XV：切割机9000
     .target Field Captain Hannalah
     .maxlevel 53
 step
@@ -774,10 +774,10 @@ step
 step
     #completewith next
     #label travel
-    .zone The Hinterlands >>前往辛特兰
+    .zone The Hinterlands >> 前往辛特兰
     .maxlevel 53
 step
-    .goto The Hinterlands,60.81,37.86,20 >>前往通向瑟拉丹的大桥
+    .goto The Hinterlands,60.81,37.86,20 >> 前往通向瑟拉丹的大桥
     .maxlevel 53
 step
     .goto The Hinterlands,61.4,34.6
@@ -834,9 +834,9 @@ step
     #optional
     >>过桥并|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_战地队长科尔里安|r 对话
     .goto The Hinterlands,61.4,34.6
-    .accept 81833 >>接受任务 辛特兰使命X：星辉莲
-    .accept 81834 >>接受任务 辛特兰使命XI：星银矿石
-    .accept 81835 >>接受任务 辛特兰使命XII：星之壳
+    .accept 81833 >> 接受任务 辛特兰使命X：星辉莲
+    .accept 81834 >> 接受任务 辛特兰使命XI：星银矿石
+    .accept 81835 >> 接受任务 辛特兰使命XII：星之壳
     .itemcount 219454,10 --Star Lotus
     .itemcount 219487,10 --Starshell
     .itemcount 219486,10 --Starsilver Ore
@@ -846,7 +846,7 @@ step
     #optional
     >>过桥并|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_战地队长科尔里安|r 对话
     .goto The Hinterlands,61.4,34.6
-    .accept 81833 >>接受任务 辛特兰使命X：星辉莲
+    .accept 81833 >> 接受任务 辛特兰使命X：星辉莲
     .itemcount 219454,10 --Star Lotus
     .target Field Captain Korlian
     .maxlevel 53
@@ -854,7 +854,7 @@ step
     #optional
     >>过桥并|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_战地队长科尔里安|r 对话
     .goto The Hinterlands,61.4,34.6
-    .accept 81834 >>接受任务 辛特兰使命XI：星银矿石
+    .accept 81834 >> 接受任务 辛特兰使命XI：星银矿石
     .itemcount 219486,10 --Starsilver Ore
     .target Field Captain Korlian
     .maxlevel 53
@@ -862,7 +862,7 @@ step
     #optional
     >>过桥并|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_战地队长科尔里安|r 对话
     .goto The Hinterlands,61.4,34.6
-    .accept 81835 >>接受任务 辛特兰使命XII：星之壳
+    .accept 81835 >> 接受任务 辛特兰使命XII：星之壳
     .itemcount 219487,10 --Starshell
     .target Field Captain Korlian
     .maxlevel 53
@@ -870,26 +870,26 @@ step
     #optional
     >>过桥并|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_战地队长科尔里安|r 对话
     .goto The Hinterlands,61.4,34.6
-    .turnin -81833 >>交任务 辛特兰使命X：星辉莲
-    .turnin -81834 >>交任务 辛特兰使命XI：星银矿石
-    .turnin -81835 >>交任务 辛特兰使命XII：星之壳
+    .turnin -81833 >> 交任务 辛特兰使命X：星辉莲
+    .turnin -81834 >> 交任务 辛特兰使命XI：星银矿石
+    .turnin -81835 >> 交任务 辛特兰使命XII：星之壳
     .target Field Captain Korlian
 step
     >>过桥并|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_战地队长科尔里安|r 对话
     .goto The Hinterlands,61.4,34.6
-    .accept 82068 >>接受任务 抗击梦魇进犯
-    .accept 81786 >>接受任务 辛特兰使命I：击败枭兽
-    .accept 81787 >>接受任务 辛特兰使命II：击败巨龟
-    .accept 81788 >>接受任务 辛特兰使命III：击败龙类
-    .accept 81789 >>接受任务 辛特兰使命IV：巨龙情报
-    .accept 81817 >>接受任务 辛特兰使命V：巨龟情报
-    .accept 81820 >>接受任务 辛特兰使命VI：枭兽情报
-    .accept 81826 >>接受任务 辛特兰使命VII：取回星触龙蛋
-    .accept 81830 >>接受任务 辛特兰使命VIII：取回艾露纳圣物
-    .accept 81832 >>接受任务 辛特兰使命IX：取回梦境珍珠
-    .accept 81850 >>接受任务 辛特兰使命XVI：营救伊利阿纳尔·啜影者
-    .accept 81851 >>接受任务 辛特兰使命XVII：营救瑟丽娜·星辉
-    .accept 81852 >>接受任务 辛特兰使命XVIII：营救维阿娜·云梦
+    .accept 82068 >> 接受任务 抗击梦魇进犯
+    .accept 81786 >> 接受任务 辛特兰使命I：击败枭兽
+    .accept 81787 >> 接受任务 辛特兰使命II：击败巨龟
+    .accept 81788 >> 接受任务 辛特兰使命III：击败龙类
+    .accept 81789 >> 接受任务 辛特兰使命IV：巨龙情报
+    .accept 81817 >> 接受任务 辛特兰使命V：巨龟情报
+    .accept 81820 >> 接受任务 辛特兰使命VI：枭兽情报
+    .accept 81826 >> 接受任务 辛特兰使命VII：取回星触龙蛋
+    .accept 81830 >> 接受任务 辛特兰使命VIII：取回艾露纳圣物
+    .accept 81832 >> 接受任务 辛特兰使命IX：取回梦境珍珠
+    .accept 81850 >> 接受任务 辛特兰使命XVI：营救伊利阿纳尔·啜影者
+    .accept 81851 >> 接受任务 辛特兰使命XVII：营救瑟丽娜·星辉
+    .accept 81852 >> 接受任务 辛特兰使命XVIII：营救维阿娜·云梦
     .target Field Captain Korlian
     .maxlevel 53
 step
@@ -897,23 +897,23 @@ step
     .group 3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长帕考利安|r 对话
     >>|cRXP_WARN_如果你在队伍中，可以考虑把击杀精英的任务也接了。这些任务需要击杀的首领拥有极高的生命值，根据你队伍的配置，挑战起来可能会有一定难度。|r
-    .accept 81837 >>接受任务 辛特兰使命XIII：击败弗洛里斯
-    .accept 81838 >>接受任务 辛特兰使命XIV：击败末日枭兽
-    .accept 81839 >>接受任务 辛特兰使命XV：击败加摩拉伽
+    .accept 81837 >> 接受任务 辛特兰使命XIII：击败弗洛里斯
+    .accept 81838 >> 接受任务 辛特兰使命XIV：击败末日枭兽
+    .accept 81839 >> 接受任务 辛特兰使命XV：击败加摩拉伽
     .goto The Hinterlands,61.4,34.6
     .target Field Captain Korlian
     .maxlevel 53
 step
     .goto The Hinterlands,61.4,34.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_军需官阿兰德拉|r 对话
-    .vendor >>如果需要，可以从她那里购买最多5瓶|cRXP_BUY_|T236885:0|t[|r特效治疗药水|cRXP_BUY_] |r。 |cRXP_WARN_这些药水只能在梦魇进犯区域内使用|r
+    .vendor >> 如果需要，可以从她那里购买最多5瓶|cRXP_BUY_|T236885:0|t[|r特效治疗药水|cRXP_BUY_] |r。 |cRXP_WARN_这些药水只能在梦魇进犯区域内使用|r
     .target Quartermaster Alandra
     .maxlevel 53
 step
     #completewith next
     +|cRXP_WARN_点击接任务的NPC旁边的传送门|r，进入翡翠梦境位面
 step
-    .goto 1425/0,-3788.100,468.800,20 >>前往隐匿石。避开|cRXP_WARN_ 不稳定的幽灵|cRXP_ENEMY_，|r否则它们会自爆并对你造成大约700点伤害|r
+    .goto 1425/0,-3788.100,468.800,20 >> 前往隐匿石。避开|cRXP_WARN_ 不稳定的幽灵|cRXP_ENEMY_，|r否则它们会自爆并对你造成大约700点伤害|r
     .maxlevel 53
 step
     #sticky
@@ -962,7 +962,7 @@ step
     #requires Moonkin
     #requires groupSkulk
     .goto The Hinterlands,53.58,39.10
-    .gossipoption 122141 >>与躺在地上的 |cRXP_FRIENDLY_伊利阿纳尔·啜影者|r 对话，他应该会开始跟着你
+    .gossipoption 122141 >> 与躺在地上的 |cRXP_FRIENDLY_伊利阿纳尔·啜影者|r 对话，他应该会开始跟着你
     >>|cRXP_WARN_你可以从木栅栏背面与他对话，无需进入里面|r
     >>|cRXP_WARN_如果他不在那里，说明有其他人正在护送他，找不到他的话就跳过这一步|r
     .target Elianar Shadowdrinker
@@ -1008,7 +1008,7 @@ step
 step
     #requires Dragonkin
     .goto The Hinterlands,42.31,31.43
-    .goto The Hinterlands,60.67,38.32,150 >>向西走入山脉，直到屏幕开始发出绿光，你将被传送至靠近起始位置的地方
+    .goto The Hinterlands,60.67,38.32,150 >> 向西走入山脉，直到屏幕开始发出绿光，你将被传送至靠近起始位置的地方
     >>|cRXP_WARN_别担心，所有护送NPC最终都会跟随你的|r
     .maxlevel 53
 step
@@ -1034,7 +1034,7 @@ step
     .maxlevel 53
 step
     .goto The Hinterlands,71.09,48.14
-    .gossipoption 122149 >>进入小木堡，与躺在地上的 |cRXP_FRIENDLY_瑟丽娜·星辉|r 对话。她应该会开始跟随你
+    .gossipoption 122149 >> 进入小木堡，与躺在地上的 |cRXP_FRIENDLY_瑟丽娜·星辉|r 对话。她应该会开始跟随你
     >>|cRXP_WARN_如果她不在那里，说明有其他人正在护送她，找不到她的话就跳过这一步|r
     .target Serlina Starbright
     .maxlevel 53
@@ -1060,7 +1060,7 @@ step
     .maxlevel 53
 step
     .goto The Hinterlands,77.13,54.35
-    .goto The Hinterlands,60.67,38.32,150 >>向东走，直到屏幕开始泛绿光。你会被传送到更靠近起始位置的地方
+    .goto The Hinterlands,60.67,38.32,150 >> 向东走，直到屏幕开始泛绿光。你会被传送到更靠近起始位置的地方
     >>|cRXP_WARN_别担心，所有护送NPC最终都会跟随你的|r
     .maxlevel 53
 step
@@ -1074,32 +1074,32 @@ step
     .complete 81852,1
     .maxlevel 53
 step
-    .goto The Hinterlands,61.35,34.58,5 >>穿过传送门返回现实世界中的辛特兰
+    .goto The Hinterlands,61.35,34.58,5 >> 穿过传送门返回现实世界中的辛特兰
     .maxlevel 53
 step
     >>与|cRXP_FRIENDLY_战地队长科尔里安|r对话
     .goto The Hinterlands,61.4,34.6
-    .turnin 82068 >>交任务 抗击梦魇进犯
-    .turnin 81786 >>交任务 辛特兰使命I：击败枭兽
-    .turnin 81787 >>交任务 辛特兰使命II：击败巨龟
-    .turnin 81788 >>交任务 辛特兰使命III：击败龙类
-    .turnin 81789 >>交任务 辛特兰使命IV：巨龙情报
-    .turnin 81817 >>交任务 辛特兰使命V：巨龟情报
-    .turnin 81820 >>交任务 辛特兰使命VI：枭兽情报
-    .turnin 81826 >>交任务 辛特兰使命VII：取回星触龙蛋
-    .turnin 81830 >>交任务 辛特兰使命VIII：取回艾露纳圣物
-    .turnin 81832 >>交任务 辛特兰使命IX：取回梦境珍珠
-    .turnin 81850 >>交任务 辛特兰使命XVI：营救伊利阿纳尔·啜影者
-    .turnin 81851 >>交任务 辛特兰使命XVII：营救瑟丽娜·星辉
-    .turnin 81852 >>交任务 辛特兰使命XVIII：营救维阿娜·云梦
+    .turnin 82068 >> 交任务 抗击梦魇进犯
+    .turnin 81786 >> 交任务 辛特兰使命I：击败枭兽
+    .turnin 81787 >> 交任务 辛特兰使命II：击败巨龟
+    .turnin 81788 >> 交任务 辛特兰使命III：击败龙类
+    .turnin 81789 >> 交任务 辛特兰使命IV：巨龙情报
+    .turnin 81817 >> 交任务 辛特兰使命V：巨龟情报
+    .turnin 81820 >> 交任务 辛特兰使命VI：枭兽情报
+    .turnin 81826 >> 交任务 辛特兰使命VII：取回星触龙蛋
+    .turnin 81830 >> 交任务 辛特兰使命VIII：取回艾露纳圣物
+    .turnin 81832 >> 交任务 辛特兰使命IX：取回梦境珍珠
+    .turnin 81850 >> 交任务 辛特兰使命XVI：营救伊利阿纳尔·啜影者
+    .turnin 81851 >> 交任务 辛特兰使命XVII：营救瑟丽娜·星辉
+    .turnin 81852 >> 交任务 辛特兰使命XVIII：营救维阿娜·云梦
     .target Field Captain Korlian
     .maxlevel 53
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长帕考利安|r 对话
-    .turnin -81837 >>交任务 辛特兰使命XIII：击败弗洛留斯
-    .turnin -81838 >>交任务 辛特兰使命XIV：击败末日枭兽
-    .turnin -81839 >>交任务 辛特兰使命XV：击败加摩拉伽
+    .turnin -81837 >> 交任务 辛特兰使命XIII：击败弗洛留斯
+    .turnin -81838 >> 交任务 辛特兰使命XIV：击败末日枭兽
+    .turnin -81839 >> 交任务 辛特兰使命XV：击败加摩拉伽
     .goto The Hinterlands,61.4,34.6
     .target Field Captain Korlian
     .maxlevel 53
@@ -1131,10 +1131,10 @@ step
     .collect 219515,10 --Greater Moonstone
 step
     #completewith next
-    .zone Feralas >>前往菲拉斯
+    .zone Feralas >> 前往菲拉斯
     .maxlevel 53
 step
-    .goto Feralas,48.0,13.2,50 >>前往菲拉斯西北部的翡翠噩梦传送门区域
+    .goto Feralas,48.0,13.2,50 >> 前往菲拉斯西北部的翡翠噩梦传送门区域
     .maxlevel 53
 step
     .goto Feralas,48.6,12.6
@@ -1192,9 +1192,9 @@ step
     #optional
     .goto Feralas,48.49,12.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长阿伦奈尔|r 对话
-    .accept 81865 >>接受任务 菲拉斯使命X：月之根
-    .accept 81866 >>接受任务 菲拉斯使命XI：强效月亮石
-    .accept 81867 >>接受任务 菲拉斯使命XII：强效月龙之鳞
+    .accept 81865 >> 接受任务 菲拉斯使命X：月之根
+    .accept 81866 >> 接受任务 菲拉斯使命XI：强效月亮石
+    .accept 81867 >> 接受任务 菲拉斯使命XII：强效月龙之鳞
     .itemcount 219514,10 --Moonroot
     .itemcount 219517,10 --Moondragon Scale
     .itemcount 219515,10 --Greater Moonstone
@@ -1205,7 +1205,7 @@ step
     #optional
     .goto Feralas,48.49,12.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长阿伦奈尔|r 对话
-    .accept 81865 >>接受任务 菲拉斯使命X：月之根
+    .accept 81865 >> 接受任务 菲拉斯使命X：月之根
     .itemcount 219514,10 --Moonroot
     .target Field Captain Arunnel
     .maxlevel 53
@@ -1214,7 +1214,7 @@ step
     #optional
     .goto Feralas,48.49,12.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长阿伦奈尔|r 对话
-    .accept 81866 >>接受任务 菲拉斯使命XI：强效月亮石
+    .accept 81866 >> 接受任务 菲拉斯使命XI：强效月亮石
     .itemcount 219515,10 --Greater Moonstone
     .target Field Captain Arunnel
     .maxlevel 53
@@ -1223,7 +1223,7 @@ step
     #optional
     .goto Feralas,48.49,12.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长阿伦奈尔|r 对话
-    .accept 81867 >>接受任务 菲拉斯使命XII：强效月龙之鳞
+    .accept 81867 >> 接受任务 菲拉斯使命XII：强效月龙之鳞
     .itemcount 219517,10 --Moondragon Scale
     .target Field Captain Arunnel
     .maxlevel 53
@@ -1232,9 +1232,9 @@ step
     #optional
     .goto Feralas,48.49,12.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长阿伦奈尔|r 对话
-    .turnin -81865 >>交任务 菲拉斯使命X：月之根
-    .turnin -81866 >>交任务 菲拉斯使命XI：强效月亮石
-    .turnin -81867 >>交任务 菲拉斯使命XII：强效月龙之鳞
+    .turnin -81865 >> 交任务 菲拉斯使命X：月之根
+    .turnin -81866 >> 交任务 菲拉斯使命XI：强效月亮石
+    .turnin -81867 >> 交任务 菲拉斯使命XII：强效月龙之鳞
     .target Field Captain Arunnel
     .maxlevel 53
 step
@@ -1262,9 +1262,9 @@ step
     .goto Feralas,48.49,12.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长阿伦奈尔|r 对话
     >>|cRXP_WARN_如果你在队伍中，可以考虑把击杀精英的任务也接了。这些任务需要击杀的首领拥有极高的生命值，根据你队伍的配置，挑战起来可能会有一定难度。|r
-    .accept 81868 >>接受任务 菲拉斯使命XIII：击败泰兰尼库斯
-    .accept 81870 >>接受任务 菲拉斯使命XIV：击败阿隆迪乌斯
-    .accept 81871 >>接受任务 菲拉斯使命XV：击败斯蕾娜
+    .accept 81868 >> 接受任务 菲拉斯使命XIII：击败泰兰尼库斯
+    .accept 81870 >> 接受任务 菲拉斯使命XIV：击败阿隆迪乌斯
+    .accept 81871 >> 接受任务 菲拉斯使命XV：击败斯蕾娜
     .target Field Captain Arunnel
     .maxlevel 53
 step
@@ -1522,9 +1522,9 @@ step
     .goto Feralas,48.49,12.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_战地队长阿伦奈尔|r 对话
     >>|cRXP_WARN_如果你处于组队状态，可以考虑把精英击杀任务也一起接了。这些任务需要击杀的首领拥有极高的生命值，根据你队伍的配置，挑战可能会有一定难度|r
-    .turnin -81868 >>交任务 菲拉斯使命XIII：击败泰兰尼库斯
-    .turnin -81870 >>交任务 菲拉斯使命XIV：击败阿隆德留斯
-    .turnin -81871 >>交任务 菲拉斯使命XV：击败斯蕾娜
+    .turnin -81868 >> 交任务 菲拉斯使命XIII：击败泰兰尼库斯
+    .turnin -81870 >> 交任务 菲拉斯使命XIV：击败阿隆德留斯
+    .turnin -81871 >> 交任务 菲拉斯使命XV：击败斯蕾娜
     .target Field Captain Arunnel
     .maxlevel 53
 step

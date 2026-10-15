@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #season 2
 << Alliance
 #group RestedXP 联盟 1-20 级
-#group14-16级 黑海岸
+#groupid RXP-SRGCE-A1
 #name 1-7级 寒脊山谷
 #next 6-11级 丹莫罗 探索赛季
 #displayname 1-7级 寒脊山谷
@@ -20,20 +20,20 @@ step << !Gnome !Dwarf
 step
     .goto Dun Morogh,29.927,71.201
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯登·粗臂|r 对话
-    .accept 179 >>接受任务 矮人的交易
+    .accept 179 >> 接受任务 矮人的交易
     .target 斯登·粗臂
 step << Mage/Hunter/Priest/Paladin/Warrior/Warlock
     .goto Dun Morogh,29.47,72.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_符文贩子|r 对话
-    >>|cRXP_WARN_千万不要把能穿的装备卖给商人|r
-    >>|cRXP_BUY_卖掉你的|r |T135005:0|t|T135975:0|t[衬衣] |cRXP_BUY_，然后从他那里购买|T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_遭渎城堡的预言|r]|r << Priest
+    >> |Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_符文贩子|r 对话
+    >> |cRXP_WARN_千万不要把能穿的装备卖给商人|r
+    >> |cRXP_BUY_卖掉你的|r |T135005:0|t|T135975:0|t[衬衣] |cRXP_BUY_，然后从他那里购买|T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_遭渎城堡的预言|r]|r << Priest
     >>|cRXP_BUY_卖掉你的|r |T135005:0|t|T132540:0|t[衬衣] 和 |T133745:0|t|T134916:0|t[靴子] |cRXP_WARN_（它们无法铭刻）|r |cRXP_BUY_，然后从他那里购买|T133745:0|t|T133745:0|t[|cRXP_FRIENDLY_论述：殉道|r] 和 |T134916:0|t|T134916:0|t[|cRXP_FRIENDLY_审判圣契|r]|r << Paladin
-    >>|cRXP_BUY_卖掉你的|r |T135005:0|t|T134419:0|t[衬衣] |cRXP_BUY_，然后从他那里购买|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]|r << Warrior
-    >>|cRXP_BUY_出售你的|r |T135005:0|t[衬衣] |cRXP_BUY_，并从他那里购买 |T133733:0|t[|cRXP_FRIENDLY_魔典：邪甲术|r]|r << Warlock
-    >>|cRXP_BUY_将垃圾卖给商人，并购买|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_暗影打击符文|r]|r << Rogue
-    >>|cRXP_BUY_出售你的|r |T135005:0|t[衬衣] |cRXP_BUY_，并从他那里购买 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：活化烈焰|r]|r << Mage
-    >>|cRXP_BUY_卖掉你的|r |T135005:0|t|T132540:0|t[衬衣]和|T134419:0|t|T133739:0|t[靴子] |cRXP_WARN_（它们无法铭刻）|r |cRXP_BUY_，然后从他那里购买|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_杀戮命令符文|r]和|T133739:0|t|T133739:0|t[|cRXP_FRIENDLY_论述：雄狮之心|r]|r << Hunter
-    >>|cRXP_BUY_垃圾卖店并购买以下的所有AoE符文|r << Warlock
+    >> |cRXP_BUY_卖掉你的|r |T135005:0|t|T134419:0|t[衬衣] |cRXP_BUY_，然后从他那里购买|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r]|r << Warrior
+    >> |cRXP_BUY_出售你的|r |T135005:0|t[衬衣] |cRXP_BUY_，并从他那里购买 |T133733:0|t[|cRXP_FRIENDLY_魔典：邪甲术|r]|r << Warlock
+    >> |cRXP_BUY_将垃圾卖给商人，并购买|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_暗影打击符文|r]|r << Rogue
+    >> |cRXP_BUY_出售你的|r |T135005:0|t[衬衣] |cRXP_BUY_，并从他那里购买 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：活化烈焰|r]|r << Mage
+    >> |cRXP_BUY_卖掉你的|r |T135005:0|t|T132540:0|t[衬衣]和|T134419:0|t|T133739:0|t[靴子] |cRXP_WARN_（它们无法铭刻）|r |cRXP_BUY_，然后从他那里购买|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_杀戮命令符文|r]和|T133739:0|t|T133739:0|t[|cRXP_FRIENDLY_论述：雄狮之心|r]|r << Hunter
+    >> |cRXP_BUY_垃圾卖店并购买以下的所有AoE符文|r << Warlock
     .collect 205947,1 << Priest --Prophecy of a Desecrated Citadel
     .collect 226398,1  << Paladin --Testament of Martyrdom
     .collect 205420,1 << Paladin --Libram of Judgement
@@ -54,7 +54,7 @@ step << Mage/Hunter/Priest/Paladin/Warrior/Warlock
     #sticky
     #optional
     #label Libram << Paladin
-    .equip 18 >>装备|T134916:0|t|T135891:0|t[|cRXP_FRIENDLY_审判圣契|r]，30秒后可使用它来学习|T135891:0|t|T135891:0|t[十字军打击] << Paladin
+    .equip 18 >> 装备|T134916:0|t|T135891:0|t[|cRXP_FRIENDLY_审判圣契|r]，30秒后可使用它来学习|T135891:0|t|T135891:0|t[十字军打击] << Paladin
     .use 205947 << Priest --Prophecy of a Desecrated Citadel
     .use 226398 << Paladin --Testament of martyrdom
     .use 205420 << Paladin --Libram of Judgement
@@ -63,36 +63,36 @@ step << Mage/Hunter/Priest/Paladin/Warrior/Warlock
     .use 209852 << Hunter --Rune of Kill Command
     .use 226401 << Hunter --Treatise on the Heart of the Lion
     .use 228797 << Warlock --Grimoire of Fel Armor
-    .train 402852 >>使用 |T135975:0|t[|cRXP_FRIENDLY_遭渎城堡的预言|r] 来训练 |T237570:0|t[裂魂魔] << Priest
-    .train 407798 >>使用|T133745:0|t|T135961:0|t[|cRXP_FRIENDLY_论述：殉道|r]来训练|T135961:0|t|T135961:0|t[殉道圣印]，|cRXP_WARN_并将其作为你的主要圣印使用|r << Paladin
-    .train 425447 >>使用 |T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r] << Warrior
-    .train 401768 >>使用|T134939:0|t|T134939:0|t[|cRXP_FRIENDLY_法术笔记：活体烈焰|r] << Mage
-    .train 410111 >>使用|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_杀戮命令符文|r] << Hunter
-    .train 409580 >>使用 |T133739:0|t[|cRXP_FRIENDLY_论述：雄狮之心|r] 来学习 |T132185:0|t[雄狮之心] << Hunter
-    .train 403619 >>使用 |T133733:0|t[|cRXP_FRIENDLY_魔典：邪甲术|r] 来学习 |T136156:0|t[邪甲术] << Warlock
-    .engrave 7 >>在你的裤子上铭刻 |T236174:0|t[夺命射击] << Hunter
-    .engrave 7 >>在裤子上铭刻|T135820:0|t|T135820:0|t[活化烈焰] << Mage
-    .engrave 7 >>在你的裤子上铭刻 |T237570:0|t[裂魂魔] << Priest
-    .engrave 7 >>在你的裤子上铭刻 |T236317:0|t[狂乱攻击] << Warrior
+    .train 402852 >> 使用 |T135975:0|t[|cRXP_FRIENDLY_遭渎城堡的预言|r] 来训练 |T237570:0|t[裂魂魔] << Priest
+    .train 407798 >> 使用|T133745:0|t|T135961:0|t[|cRXP_FRIENDLY_论述：殉道|r]来训练|T135961:0|t|T135961:0|t[殉道圣印]，|cRXP_WARN_并将其作为你的主要圣印使用|r << Paladin
+    .train 425447 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_狂乱攻击符文|r] << Warrior
+    .train 401768 >> 使用|T134939:0|t|T134939:0|t[|cRXP_FRIENDLY_法术笔记：活体烈焰|r] << Mage
+    .train 410111 >> 使用|T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_杀戮命令符文|r] << Hunter
+    .train 409580 >> 使用 |T133739:0|t[|cRXP_FRIENDLY_论述：雄狮之心|r] 来学习 |T132185:0|t[雄狮之心] << Hunter
+    .train 403619 >> 使用 |T133733:0|t[|cRXP_FRIENDLY_魔典：邪甲术|r] 来学习 |T136156:0|t[邪甲术] << Warlock
+    .engrave 7 >> 在你的裤子上铭刻 |T236174:0|t[夺命射击] << Hunter
+    .engrave 7 >> 在裤子上铭刻|T135820:0|t|T135820:0|t[活化烈焰] << Mage
+    .engrave 7 >> 在你的裤子上铭刻 |T237570:0|t[裂魂魔] << Priest
+    .engrave 7 >> 在你的裤子上铭刻 |T236317:0|t[狂乱攻击] << Warrior
     >>|cRXP_WARN_提示：|r 你可以用|T135812:0|t|T135820:0|t[火球术]拉多只|cRXP_ENEMY_霜狼|r，然后用|T135820:0|t|T135820:0|t[活体烈焰]进行AOE击杀 << Mage
 step << Paladin
     #sticky
     #optional
     #requires Libram
     #label LibramLearn
-    .train 410002 >>使用|T134916:0|t|T135891:0|t[|cRXP_FRIENDLY_审判圣契|r]学习|T135891:0|t|T135891:0|t[十字军打击]
+    .train 410002 >> 使用|T134916:0|t|T135891:0|t[|cRXP_FRIENDLY_审判圣契|r]学习|T135891:0|t|T135891:0|t[十字军打击]
 step << Hunter
     #optional
     #sticky
-    .aura 409583 >>记住激活你的 |T132185:0|t[雄狮之心]
+    .aura 409583 >> 记住激活你的 |T132185:0|t[雄狮之心]
 step << Warlock
     #optional
     #sticky
-    .aura 403619 >>|cRXP_WARN_请记得激活你的|r |T136156:0|t|T136156:0|t[邪甲术]
+    .aura 403619 >> |cRXP_WARN_请记得激活你的|r |T136156:0|t|T136156:0|t[邪甲术]
 step << Paladin
     #optional
     #completewith next
-    .aura 407798 >>请记得使用|T135961:0|t|T135961:0|t[殉道圣印]作为你的圣印
+    .aura 407798 >> 请记得使用|T135961:0|t|T135961:0|t[殉道圣印]作为你的圣印
 step
     #label WolfMeat
     .goto 1426,29.529,73.286,0
@@ -120,7 +120,7 @@ step
     .goto 1426,27.562,74.331,60,0
     .goto 1426,27.793,73.123,60,0
     .goto 1426,28.557,72.487,60,0
-    .xp 2 >>刷怪升级到 2 级
+    .xp 2 >> 刷怪升级到 2 级
     .mob 蓬毛幼狼
 step << Warrior/Mage/Warlock/Hunter
     .goto Dun Morogh,29.47,72.06
@@ -143,25 +143,25 @@ step << Warrior/Mage/Warlock/Hunter
     .collect 210824,1 << Warlock --Rune of the Pact
     .collect 211477,1 << Warlock --Rune of Incinerate
     .collect 205230,1 << Warlock --Rune of Haunting
-    >>冰枪术的唯一作用是让你稍后可以交任务 << Mage
+    >> 冰枪术的唯一作用是让你稍后可以交任务 << Mage
     >>|cRXP_WARN_你将在稍后获得剩余的符文|r
     .target Rune Broker
     .skipgossip
 step << Warrior/Mage/Hunter
-    .train 403470 >>使用|T134419:0|t[|cRXP_FRIENDLY_乘胜追击符文|r]来学习|T132342:0|t[乘胜追击]，你很快就会铭刻它 << Warrior
-    .train 415936 >>使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：活动炸弹|r] 来学习 |T236220:0|t[活动炸弹] << Mage
-    .train 401759 >>使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：燃尽|r] 来学习 |T236207:0|t[燃尽] << Mage
-    .train 440858 >>使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：寒冰宝珠|r] 来学习 |T135851:0|t[寒冰宝珠] << Mage
-    .train 401760 >>使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：冰枪术|r] 来学习 |T135844:0|t[冰枪术] << Mage
-    .train 410121 >>使用 |T134419:0|t[|cRXP_FRIENDLY_奇美拉符文|r] 来学习 |T236176:0|t[奇美拉射击] << Hunter
-    .train 410122 >>使用 |T134419:0|t[|cRXP_FRIENDLY_独来独往符文|r] 来学习 |T132266:0|t[独来独往] << Hunter
-    .train 416086 >>使用 |T134419:0|t[|cRXP_FRIENDLY_短兵相接符文|r] 来学习 |T132394:0|t[近战专家] << Hunter
-    .train 440563 >>使用 |T134419:0|t[|cRXP_FRIENDLY_游击符文|r] 来学习 |T132171:0|t[一击脱离] << Hunter
-    .train 415423 >>使用 |T133739:0|t[论述：蝰蛇守护|cRXP_FRIENDLY_] 来学习 |T132160:0|t[蝰蛇守护]|r] << Hunter
-    .train 416009 >>使用 |T134419:0|t[|cRXP_FRIENDLY_战术符文|r] 来学习 |T136150:0|t[恶魔战术] << Warlock
-    .train 425476 >>使用 |T134419:0|t[|cRXP_FRIENDLY_契约符文|r] 来训练 |T237562:0|t[恶魔契约] << Warlock
-    .train 416015 >>使用 |T134419:0|t[|cRXP_FRIENDLY_烧尽符文|r] 来训练 |T135789:0|t[烧尽] << Warlock
-    .train 403919 >>使用 |T134419:0|t[|cRXP_FRIENDLY_鬼影缠身符文|r] 来训练 |T236298:0|t[鬼影缠身] << Warlock
+    .train 403470 >> 使用|T134419:0|t[|cRXP_FRIENDLY_乘胜追击符文|r]来学习|T132342:0|t[乘胜追击]，你很快就会铭刻它 << Warrior
+    .train 415936 >> 使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：活动炸弹|r] 来学习 |T236220:0|t[活动炸弹] << Mage
+    .train 401759 >> 使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：燃尽|r] 来学习 |T236207:0|t[燃尽] << Mage
+    .train 440858 >> 使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：寒冰宝珠|r] 来学习 |T135851:0|t[寒冰宝珠] << Mage
+    .train 401760 >> 使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：冰枪术|r] 来学习 |T135844:0|t[冰枪术] << Mage
+    .train 410121 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_奇美拉符文|r] 来学习 |T236176:0|t[奇美拉射击] << Hunter
+    .train 410122 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_独来独往符文|r] 来学习 |T132266:0|t[独来独往] << Hunter
+    .train 416086 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_短兵相接符文|r] 来学习 |T132394:0|t[近战专家] << Hunter
+    .train 440563 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_游击符文|r] 来学习 |T132171:0|t[一击脱离] << Hunter
+    .train 415423 >> 使用 |T133739:0|t[论述：蝰蛇守护|cRXP_FRIENDLY_] 来学习 |T132160:0|t[蝰蛇守护]|r] << Hunter
+    .train 416009 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_战术符文|r] 来学习 |T136150:0|t[恶魔战术] << Warlock
+    .train 425476 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_契约符文|r] 来训练 |T237562:0|t[恶魔契约] << Warlock
+    .train 416015 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_烧尽符文|r] 来训练 |T135789:0|t[烧尽] << Warlock
+    .train 403919 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_鬼影缠身符文|r] 来训练 |T236298:0|t[鬼影缠身] << Warlock
     .use 208799 << Mage --Spell Notes: Living Bomb
     .use 203748 << Mage --Spell Notes: Burnout
     .use 225690 << Mage --Spell Notes: Frozen Orb
@@ -192,7 +192,7 @@ step << !Priest !Mage !Warlock !Warrior !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾德林·怒流|r 对话
     >>把垃圾物品卖给商人 << Hunter
     >>|cRXP_BUY_从他那里|r|cRXP_BUY_购买 600发|r |T132384:0|t[轻弹丸] << Hunter
-    .vendor >>|cRXP_WARN_出售垃圾物品|r << !Hunter
+    .vendor >> 出售垃圾物品 << !Hunter
     .collect 2516,600 << Hunter --Light Shot (600)
     .target 艾德林·怒流
     .xp >6,1
@@ -200,17 +200,17 @@ step
     .goto Dun Morogh,29.927,71.201
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯登·粗臂|r 对话
     >>|cRXP_WARN_记得装备这个任务获得的护手，这样你就可以在上面铭刻符文了|r
-    .turnin 179 >>交任务 矮人的交易
-    .accept 233 >>接受任务 寒脊山谷的送信任务
-    .accept 3106 >>接受任务 简易符文 << Dwarf Warrior
-    .accept 3107 >>接受任务 神圣符文 << Dwarf Paladin
-    .accept 3108 >>接受任务 风蚀符文 << Dwarf Hunter
-    .accept 3109 >>接受任务 密文符文 << Dwarf Rogue
-    .accept 3110 >>接受任务 神圣符文 << Dwarf Priest
-    .accept 3112 >>接受任务 简易备忘录 << Gnome Warrior
-    .accept 3113 >>接受任务 密文备忘录 << Gnome Rogue
-    .accept 3114 >>接受任务 雕文备忘录 << Gnome Mage
-    .accept 3115 >>接受任务 被污染的备忘录 << Gnome Warlock
+    .turnin 179 >> 交任务 矮人的交易
+    .accept 233 >> 接受任务 寒脊山谷的送信任务
+    .accept 3106 >> 接受任务 简易符文 << Dwarf Warrior
+    .accept 3107 >> 接受任务 神圣符文 << Dwarf Paladin
+    .accept 3108 >> 接受任务 风蚀符文 << Dwarf Hunter
+    .accept 3109 >> 接受任务 密文符文 << Dwarf Rogue
+    .accept 3110 >> 接受任务 神圣符文 << Dwarf Priest
+    .accept 3112 >> 接受任务 简易备忘录 << Gnome Warrior
+    .accept 3113 >> 接受任务 密文备忘录 << Gnome Rogue
+    .accept 3114 >> 接受任务 雕文备忘录 << Gnome Mage
+    .accept 3115 >> 接受任务 被污染的备忘录 << Gnome Warlock
     .target 斯登·粗臂
 step << Priest/Paladin/Rogue
     .goto Dun Morogh,29.47,72.06
@@ -234,19 +234,19 @@ step << Priest/Paladin/Rogue
     .target Rune Broker
     .skipgossip
 step << Priest/Paladin/Rogue
-    .train 400101 >>使用 |T134419:0|t[|cRXP_FRIENDLY_暗影步符文|r] 来训练 |T132303:0|t[暗影步] << Rogue
-    .train 432301 >>使用 |T134419:0|t[|cRXP_FRIENDLY_犯禁符文|r] 来训练 |T236285:0|t[压倒优势] << Rogue
-    .train 400105 >>使用 |T134419:0|t[|cRXP_FRIENDLY_暗影打击符文|r] 来训练 |T132323:0|t[暗影打击] << Rogue
-    .train 424984 >>使用 |T134419:0|t[|cRXP_FRIENDLY_军刀猛刺符文|r] 来训练 |T132375:0|t[军刀猛刺] << Rogue
-    .train 415922 >>使用 |T134419:0|t[|cRXP_FRIENDLY_豪侠符文|r] 来训练 |T134538:0|t[短枪射击] << Rogue
-    .train 431663 >>使用 |T135791:0|t[|cRXP_FRIENDLY_灵智顿悟|r] 来训练 |T136181:0|t[心灵尖刺] << Priest
-    .train 425216 >>使用 |T136222:0|t[|cRXP_FRIENDLY_黑暗意图的回忆|r] 训练 |T237514:0|t[虚空疫病] << Priest
-    .train 402862 >>使用 |T136222:0|t[|cRXP_FRIENDLY_忧虑助祭的回忆|r] 来训练 |T237545:0|t[苦修] << Priest
-    .train 402849 >>使用 |T135975:0|t[|cRXP_FRIENDLY_帝王消陨的预言|r] 来训练 |T136149:0|t[暗言术：灭] << Priest
-    .train 410014 >>使用 |T134419:0|t[|cRXP_FRIENDLY_神圣风暴符文|r] 来训练 |T236250:0|t[神圣风暴] << Paladin
-    .train 410008 >>使用|T134419:0|t|T135874:0|t[|cRXP_FRIENDLY_复仇者符文|r]学习|T135874:0|t|T135874:0|t[复仇者之盾] << Paladin
-    .train 410013 >>使用 |T134419:0|t[|cRXP_FRIENDLY_正义之锤符文|r] 来学习 |T236253:0|t[正义之锤] << Paladin
-    .train 440788 >>使用|T134419:0|t|T236265:0|t[|cRXP_FRIENDLY_正义盾击符文|r]来学习|T236265:0|t|T236265:0|t[正义盾击] << Paladin
+    .train 400101 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_暗影步符文|r] 来训练 |T132303:0|t[暗影步] << Rogue
+    .train 432301 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_犯禁符文|r] 来训练 |T236285:0|t[压倒优势] << Rogue
+    .train 400105 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_暗影打击符文|r] 来训练 |T132323:0|t[暗影打击] << Rogue
+    .train 424984 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_军刀猛刺符文|r] 来训练 |T132375:0|t[军刀猛刺] << Rogue
+    .train 415922 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_豪侠符文|r] 来训练 |T134538:0|t[短枪射击] << Rogue
+    .train 431663 >> 使用 |T135791:0|t[|cRXP_FRIENDLY_灵智顿悟|r] 来训练 |T136181:0|t[心灵尖刺] << Priest
+    .train 425216 >> 使用 |T136222:0|t[|cRXP_FRIENDLY_黑暗意图的回忆|r] 训练 |T237514:0|t[虚空疫病] << Priest
+    .train 402862 >> 使用 |T136222:0|t[|cRXP_FRIENDLY_忧虑助祭的回忆|r] 来训练 |T237545:0|t[苦修] << Priest
+    .train 402849 >> 使用 |T135975:0|t[|cRXP_FRIENDLY_帝王消陨的预言|r] 来训练 |T136149:0|t[暗言术：灭] << Priest
+    .train 410014 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_神圣风暴符文|r] 来训练 |T236250:0|t[神圣风暴] << Paladin
+    .train 410008 >> 使用|T134419:0|t|T135874:0|t[|cRXP_FRIENDLY_复仇者符文|r]学习|T135874:0|t|T135874:0|t[复仇者之盾] << Paladin
+    .train 410013 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_正义之锤符文|r] 来学习 |T236253:0|t[正义之锤] << Paladin
+    .train 440788 >> 使用|T134419:0|t|T236265:0|t[|cRXP_FRIENDLY_正义盾击符文|r]来学习|T236265:0|t|T236265:0|t[正义盾击] << Paladin
     .use 210979 << Rogue --Rune of Shadowstep
     .use 221428 << Rogue --Rune of Foul Play
     .use 204795 << Rogue --Rune of Shadowstrike
@@ -263,17 +263,17 @@ step << Priest/Paladin/Rogue
 step << Mage
     #optional
     #sticky
-    .engrave 15 >>留意是否有披风掉落。一旦拿到就在上面铭刻|T135851:0|t[寒冰宝珠]
+    .engrave 15 >> 留意是否有披风掉落。一旦拿到就在上面铭刻|T135851:0|t[寒冰宝珠]
     >>|cRXP_WARN_这个技能过于逆天|r
 step << Mage/Hunter/Priest
-    .equip 10 >>装备 |T132939:0|t[驯狼手套] << Hunter
-    .equip 10 >>装备上|T132940:0|t|T132940:0|t[驯兔手套] << Mage
+    .equip 10 >> 装备 |T132939:0|t[驯狼手套] << Hunter
+    .equip 10 >> 装备上|T132940:0|t|T132940:0|t[驯兔手套] << Mage
     .use 6171 << Hunter --Wolf Handler Gloves
     .use 719 << Mage --Rabbit Handler Gloves
-    .engrave 10 >>在你的手套上铭刻 |T236176:0|t[奇美拉射击] << Hunter
-    .engrave 7 >>在裤子上铭刻|T135820:0|t|T135820:0|t[活化烈焰] << Mage
-    .engrave 10 >>在你的手套上铭刻|T236220:0|t|T236220:0|t[活动炸弹] << Mage
-    .engrave 5 >>在你的胸甲上铭刻 |T236207:0|t[燃尽] << Mage
+    .engrave 10 >> 在你的手套上铭刻 |T236176:0|t[奇美拉射击] << Hunter
+    .engrave 7 >> 在裤子上铭刻|T135820:0|t|T135820:0|t[活化烈焰] << Mage
+    .engrave 10 >> 在你的手套上铭刻|T236220:0|t|T236220:0|t[活动炸弹] << Mage
+    .engrave 5 >> 在你的胸甲上铭刻 |T236207:0|t[燃尽] << Mage
 step << Priest/Mage/Warlock
     #season 2
     #xprate <1.1
@@ -295,10 +295,10 @@ step << Priest/Mage/Warlock
 step << Hunter
     #sticky
     #optional
-    >>|cRXP_WARN_留意是否有任何|r胸甲/腰带/披风|cRXP_WARN_掉落|r|cRXP_WARN_。装备它们并铭刻相应的符文|r
-    .engrave 5 >>在你的 |T132266:0|t[胸甲] 上铭刻 |T132724:0|t[独来独往]
-    .engrave 6 >>在你的 |T132394:0|t[腰带] 上铭刻 |T132513:0|t[近战专家]
-    .engrave 15 >>在你的 |T132171:0|t[披风] 上铭刻 |T133771:0|t[一击脱离]
+    >> |cRXP_WARN_留意是否有任何|r胸甲/腰带/披风|cRXP_WARN_掉落|r|cRXP_WARN_。装备它们并铭刻相应的符文|r
+    .engrave 5 >> 在你的 |T132266:0|t[胸甲] 上铭刻 |T132724:0|t[独来独往]
+    .engrave 6 >> 在你的 |T132394:0|t[腰带] 上铭刻 |T132513:0|t[近战专家]
+    .engrave 15 >> 在你的 |T132171:0|t[披风] 上铭刻 |T133771:0|t[一击脱离]
 step << Paladin
     #completewith next
     +击杀更多|cRXP_ENEMY_霜狼|r或|cRXP_ENEMY_穴居怪|r，直到你拥有价值88铜币的垃圾物品。|cRXP_WARN_你很快需要用这些钱购买武器|r
@@ -319,41 +319,41 @@ step << !Hunter !Mage
     #optional
     #completewith next
     .goto 1426,28.792,68.804,12,0
-    .goto 1426,28.642,68.375,12 >>进入安威玛尔 << Rogue/Warlock/Paladin
-    .goto 1426,28.939,68.387,12 >>进入安威玛尔 << !Rogue !Warlock !Paladin
+    .goto 1426,28.642,68.375,12 >> 进入安威玛尔 << Rogue/Warlock/Paladin
+    .goto 1426,28.939,68.387,12 >> 进入安威玛尔 << !Rogue !Warlock !Paladin
 step << Paladin
     #season 2
     .goto Dun Morogh,28.833,68.332
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布罗莫斯·格鲁诺尔|r 对话，NPC在里面
-    .turnin 3107 >>交任务 神圣符文 << Dwarf
-    .accept 77657 >>接受任务 圣光的圣物 << Dwarf
-    .turnin 77657 >>交任务 圣光的圣物 << Dwarf
+    .turnin 3107 >> 交任务 神圣符文 << Dwarf
+    .accept 77657 >> 接受任务 圣光的圣物 << Dwarf
+    .turnin 77657 >> 交任务 圣光的圣物 << Dwarf
     .target 布罗莫斯·格鲁诺尔
 step << Paladin
     .goto Dun Morogh,28.79,67.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格伦德尔·哈金|r对话
     >>|cRXP_WARN_早期使用盾牌加单手武器升级会快得多，因为前期盾牌符文非常强力。|r
-    >>|cRXP_BUY_向商人出售垃圾，并购买|r |T134955:0|t[小盾牌]
+    >> |cRXP_BUY_向商人出售垃圾，并购买|r |T134955:0|t[小盾牌]
     .collect 17184,1 --Small Shield (1)
     .target 格伦德尔·哈金
 step << Paladin
     .goto Dun Morogh,28.66,67.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_雷布莱德·寒椅|r 对话
     >>|cRXP_WARN_早期使用盾牌加单手武器升级会快得多，因为前期盾牌符文非常强力。|r
-    >>|cRXP_BUY_向商人出售垃圾，并购买|r |T133485:0|t[短棍]
+    >> |cRXP_BUY_向商人出售垃圾，并购买|r |T133485:0|t[短棍]
     .collect 2130,1 --Club (1)
     .target Rybrad Coldbank
 step << Paladin
     #sticky
     >>|cRXP_WARN_留意任何你能装备的|r |T132624:0|t|T132602:0|t[胸甲]|cRXP_WARN_、|r |T133762:0|t|T132602:0|t[护腕] |cRXP_WARN_或|r |T133762:0|t|T133762:0|t[披风] |cRXP_WARN_装备|r
-    .engrave 5 >>将|T236250:0|t|T236250:0|t[神圣风暴]铭刻在你的胸部装备上
-    .engrave 9 >>在你的护腕上铭刻|T236253:0|t|T236253:0|t[正义之锤]
-    .engrave 15 >>将|T236265:0|t|T236265:0|t[正义盾击]附魔到你的披风上
+    .engrave 5 >> 将|T236250:0|t|T236250:0|t[神圣风暴]铭刻在你的胸部装备上
+    .engrave 9 >> 在你的护腕上铭刻|T236253:0|t|T236253:0|t[正义之锤]
+    .engrave 15 >> 将|T236265:0|t|T236265:0|t[正义盾击]附魔到你的披风上
 step << Paladin
     #optional
     #completewith next
-    .equip 16,2130 >>装备 |T133485:0|t[短棍]
-    .equip 17,17184 >>装备 |T134955:0|t[小盾牌]
+    .equip 16,2130 >> 装备 |T133485:0|t[短棍]
+    .equip 17,17184 >> 装备 |T134955:0|t[小盾牌]
     .use 2130 --Club
     .use 17184 --Small Shield
 step << Warlock
@@ -361,33 +361,33 @@ step << Warlock
     .goto Dun Morogh,28.650,66.145
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在楼上与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话
     >>|cRXP_WARN_你现在还不需要训练法术，它们的效果不如符文|r
-    .accept 1599 >>接受任务 开端
-    .turnin 3115 >>交任务 被污染的备忘录 << Gnome
-    .accept 77666 >>接受任务 失窃的力量 << Gnome
-    .turnin 77666 >>交任务 失窃的力量 << Gnome
+    .accept 1599 >> 接受任务 开端
+    .turnin 3115 >> 交任务 被污染的备忘录 << Gnome
+    .accept 77666 >> 接受任务 失窃的力量 << Gnome
+    .turnin 77666 >> 交任务 失窃的力量 << Gnome
     .target 阿拉玛尔·格里姆
 step << Warrior
     #season 2
     .goto Dun Morogh,28.832,67.242
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯兰·库尔曼|r 对话，NPC在里面
-    .turnin 3106 >>交任务 简易符文 << Dwarf
-    .turnin 3112 >>交任务 简易备忘录 << Gnome
-    .accept 77655 >>接受任务 失落的符文 << Dwarf
-    .turnin 77655 >>交任务 失落的符文 << Dwarf
-    .accept 77656 >>接受任务 失落的符文 << Gnome
-    .turnin 77656 >>交任务 失落的符文 << Gnome
+    .turnin 3106 >> 交任务 简易符文 << Dwarf
+    .turnin 3112 >> 交任务 简易备忘录 << Gnome
+    .accept 77655 >> 接受任务 失落的符文 << Dwarf
+    .turnin 77655 >> 交任务 失落的符文 << Dwarf
+    .accept 77656 >> 接受任务 失落的符文 << Gnome
+    .turnin 77656 >> 交任务 失落的符文 << Gnome
     .train 6673 >>学习 |T132333:0|t[战斗怒吼]
     .target 斯兰·库尔曼
 step << Rogue
     #season 2
     .goto Dun Morogh,28.369,67.513
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_索姆·哈格林|r 对话
-    .turnin 3109 >>交任务 密文符文 << Dwarf
-    .turnin 3113 >>交任务 密文备忘录 << Gnome
-    .accept 77658 >>接受任务 三度失窃 << Dwarf
-    .turn in 77658 >>in 77658 >> 交任务 三度失窃 << Dwarf
-    .accept 77659 >>接受任务 三度失窃 << Gnome
-    .turnin 77659 >>交任务 三度失窃 << Gnome
+    .turnin 3109 >> 交任务 密文符文 << Dwarf
+    .turnin 3113 >> 交任务 密文备忘录 << Gnome
+    .accept 77658 >> 接受任务 三度失窃 << Dwarf
+    .turn in 77658 >> 交任务 三度失窃 << Dwarf
+    .accept 77659 >> 接受任务 三度失窃 << Gnome
+    .turnin 77659 >> 交任务 三度失窃 << Gnome
     .train 1784 >>学习 |T132320:0|t[潜行]
     .target 索姆·哈格林
 step << Priest/Rogue
@@ -402,34 +402,34 @@ step << Priest/Rogue
     .collect 3600,1 << Rogue --Thin Cloth Bracers (1)
     .target 德南·弗卡特
 step << Rogue
-    .equip 6 >>装备 |T132495:0|t[薄布腰带]
-    .equip 9 >>装备 |T132602:0|t[薄布护腕]
-    .equip 10 >>装备 |T132952:0|t[破损的皮手套]
-    .engrave 6 >>在你的腰带上铭刻|T132303:0|t|T132303:0|t[暗影步]
-    .engrave 9 >>在你的护腕上铭刻|T236285:0|t|T236285:0|t[压倒优势]
-    .engrave 10 >>在你的手套上铭刻 |T132375:0|t[军刀猛刺]
+    .equip 6 >> 装备 |T132495:0|t[薄布腰带]
+    .equip 9 >> 装备 |T132602:0|t[薄布护腕]
+    .equip 10 >> 装备 |T132952:0|t[破损的皮手套]
+    .engrave 6 >> 在你的腰带上铭刻|T132303:0|t|T132303:0|t[暗影步]
+    .engrave 9 >> 在你的护腕上铭刻|T236285:0|t|T236285:0|t[压倒优势]
+    .engrave 10 >> 在你的手套上铭刻 |T132375:0|t[军刀猛刺]
     .use 3599 --Thin Cloth Belt
     .use 3600 --Thin Cloth Bracers
     .use 2125 --Cracked Leather Gloves
 step << Rogue
     #optional
     #sticky
-    .engrave 15 >>留意任何披风掉落。一旦获得，就在上面铭刻|T134538:0|t|T134538:0|t[短枪射击]
+    .engrave 15 >> 留意任何披风掉落。一旦获得，就在上面铭刻|T134538:0|t|T134538:0|t[短枪射击]
     >>|cRXP_WARN_这是非常强大的斩击能力|r
 step << Priest
     #season 2
     .goto Dun Morogh,28.600,66.385
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与在里面的 |cRXP_FRIENDLY_布兰斯托克·卡德尔|r 对话
     >>|cRXP_WARN_训练|r |T135987:0|t|T135987:0|t[真言术：韧] |cRXP_WARN_因为你很快会在职业任务中用到它|r << Dwarf
-    .turnin 3110 >>交任务 神圣符文 << Dwarf
-    .accept 77661 >>接受任务 圣光之思 << Dwarf
-    .turnin 77661 >>交任务 圣光之思 << Dwarf
+    .turnin 3110 >> 交任务 神圣符文 << Dwarf
+    .accept 77661 >> 接受任务 圣光之思 << Dwarf
+    .turnin 77661 >> 交任务 圣光之思 << Dwarf
     .target 布兰斯托克·卡德尔
 step << Gnome Warlock/Dwarf Priest
     #season 2
     #label GlovesEquip
     #completewith Observations
-    .equip 10,711 >>|cRXP_WARN_装备|r |T132961:0|t|T132961:0|t[破布手套]
+    .equip 10,711 >> |cRXP_WARN_装备|r |T132961:0|t|T132961:0|t[破布手套]
     .use 711
     .train 402862,3 << Priest
     .train 403919,3 << Warlock
@@ -440,11 +440,11 @@ step << Gnome Warlock
     .engrave 10 >>|cRXP_WARN_为你的|r |T132961:0|t|T133816:0|t[破布手套]铭刻|r |T133816:0|t|T133816:0|t[铭刻手套 - 鬼影缠身] << Warlock
     .train 403919,3 << Warlock
 step << Priest/Paladin
-    .engrave 6 >>在你的腰带上铭刻 |T136181:0|t[心灵尖刺] << Priest
-    .engrave 8 >>在你的靴子上铭刻|T237514:0|t|T237514:0|t[虚空疫病] << Priest
-    .engrave 10 >>在你的手套上铭刻 |T136149:0|t[暗言术：灭] << Priest
-    .engrave 7 >>在裤子上铭刻|T135874:0|t|T135874:0|t[复仇者之盾] << Paladin
-    .engrave 10 >>在你的手套上铭刻 |T135891:0|t[十字军打击] << Paladin
+    .engrave 6 >> 在你的腰带上铭刻 |T136181:0|t[心灵尖刺] << Priest
+    .engrave 8 >> 在你的靴子上铭刻|T237514:0|t|T237514:0|t[虚空疫病] << Priest
+    .engrave 10 >> 在你的手套上铭刻 |T136149:0|t[暗言术：灭] << Priest
+    .engrave 7 >> 在裤子上铭刻|T135874:0|t|T135874:0|t[复仇者之盾] << Paladin
+    .engrave 10 >> 在你的手套上铭刻 |T135891:0|t[十字军打击] << Paladin
 step << Warlock
     .goto Dun Morogh,28.77,66.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德南·弗卡特|r 对话
@@ -454,23 +454,23 @@ step << Warlock
     .collect 2117,1 << Warlock --Thin Cloth Shoes (1)
     .target 德南·弗卡特
 step << Warrior/Warlock
-    .equip 10 >>装备 |T132938:0|t[无光泽的链甲手套] << Warrior
-    .engrave 10 >>在你的手套上铭刻 |T132342:0|t[乘胜追击] << Warrior
+    .equip 10 >> 装备 |T132938:0|t[无光泽的链甲手套] << Warrior
+    .engrave 10 >> 在你的手套上铭刻 |T132342:0|t[乘胜追击] << Warrior
     .use 2385 << Warrior -- Tarnished Chain Gloves
     .use 2125 << Rogue --Cracked Leather Gloves
-    .equip 9 >>装备 |T132602:0|t[薄布护腕] << Warlock
-    .equip 10 >>装备 |T132543:0|t[薄布靴] << Warlock
+    .equip 9 >> 装备 |T132602:0|t[薄布护腕] << Warlock
+    .equip 10 >> 装备 |T132543:0|t[薄布靴] << Warlock
     .use 3600 << Warlock --Thin Cloth Bracers
     .use 2117 << Warlock --Thin Cloth Shoes
-    .engrave 5 >>在你的胸甲上铭刻|T136150:0|t[恶魔战术] << Warlock
-    .engrave 7 >>在你的裤子上铭刻|T237562:0|t|T237562:0|t[恶魔契约] << Warlock
-    .engrave 9 >>在你的护腕上铭刻|T135789:0|t|T135789:0|t[烧尽] << Warlock
-    .engrave 8 >>在你的靴子上铭刻|T236302:0|t|T236302:0|t[暗影烈焰] << Warlock
+    .engrave 5 >> 在你的胸甲上铭刻|T136150:0|t[恶魔战术] << Warlock
+    .engrave 7 >> 在你的裤子上铭刻|T237562:0|t|T237562:0|t[恶魔契约] << Warlock
+    .engrave 9 >> 在你的护腕上铭刻|T135789:0|t|T135789:0|t[烧尽] << Warlock
+    .engrave 8 >> 在你的靴子上铭刻|T236302:0|t|T236302:0|t[暗影烈焰] << Warlock
 step << !Paladin !Hunter
     #season 2 << !Warlock --Only Warlock is inside Anvilmar in Era at this step
     #optional
     #completewith Talin
-    .goto 1426,28.792,68.804,12 >>离开安威玛尔
+    .goto 1426,28.792,68.804,12 >> 离开安威玛尔
     .subzoneskip 77,1
 step
     #xprate <1.1
@@ -494,8 +494,8 @@ step
     #label Talin
     .goto Dun Morogh,22.601,71.433
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔林·锐眼|r 对话
-    .turnin 233 >>交任务 寒脊山谷的送信任务
-    .accept 234 >>接受任务 寒脊山谷的送信任务
+    .turnin 233 >> 交任务 寒脊山谷的送信任务
+    .accept 234 >> 接受任务 寒脊山谷的送信任务
     .target 塔林·锐眼
 step << Paladin/Warlock/Hunter
     #xprate <1.1
@@ -528,7 +528,7 @@ step << Paladin/Warlock
     .goto 1426,26.117,74.469,50,0
     .goto 1426,26.832,74.649,50,0
     .goto 1426,26.884,72.733,50,0
-    .xp 3+1130 >>刷怪达到 1130+／1400 经验
+    .xp 3+1130 >> 刷怪达到 1130+／1400 经验
 step << Paladin/Warlock
     #xprate >1.49
     #loop
@@ -542,19 +542,19 @@ step << Paladin/Warlock
     .goto 1426,26.117,74.469,50,0
     .goto 1426,26.832,74.649,50,0
     .goto 1426,26.884,72.733,50,0
-    .xp 3+995 >>刷怪达到995+/1400经验
+    .xp 3+995 >> 刷怪达到995+/1400经验
 step
     #label Rockjaw
     .goto 1426,25.077,75.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格瑞林·白须|r 对话
-    .turnin 234 >>交任务 寒脊山谷的送信任务
-    .accept 182 >>接受任务 巨魔洞穴
+    .turnin 234 >> 交任务 寒脊山谷的送信任务
+    .accept 182 >> 接受任务 巨魔洞穴
     .target 格瑞林·白须
 step << Paladin/Warlock/Hunter
     .goto Dun Morogh,24.980,75.963
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺里斯·激流|r 对话
     >>|cRXP_WARN_这将为该任务开始一个 5 分钟倒计时。在接下来的 5 分钟内请不要离开（AFK）或退出游戏|r
-    .accept 3364 >>接受任务 热酒快递
+    .accept 3364 >> 接受任务 热酒快递
     .target 诺里斯·激流
 step << Hunter/Paladin
     .goto 1426,25.861,78.197,0
@@ -575,11 +575,11 @@ step << Hunter
     .goto 1426,25.861,78.197,0
     .goto 1426,23.716,80.257,0
     .goto 1426,20.671,75.838,0
-    .xp 4 >>刷怪升级到 4 级
+    .xp 4 >> 刷怪升级到 4 级
 step << Warlock
 #season 2
 #completewith next
-    .goto Dun Morogh,26.85,79.83,20 >>进入巨魔洞穴
+    .goto Dun Morogh,26.85,79.83,20 >> 进入巨魔洞穴
 step << Warlock
 #loop
 #season 2
@@ -601,14 +601,14 @@ step << Warlock/Hunter/Paladin
     #season 2
     #completewith next
     >>|cRXP_WARN_确保你在卖东西后至少留1银币，因为你需要用它来学习|r |T132204:0|t|T132204:0|t[毒蛇钉刺] << Hunter
-    .hs >>炉石回安威玛尔
+    .hs >> 炉石回安威玛尔
 step << Paladin/Warlock/Hunter
     #optional
     #completewith next
     #label EnterAnvilmar
     .goto 1426,28.792,68.804,12,0
     >>|cRXP_WARN_你有5分钟时间返回安威玛尔，在|r |T132791:0|t[德南的热酒] |cRXP_WARN_失效之前|r
-    .goto 1426,28.939,68.387,20 >>进入安威玛尔
+    .goto 1426,28.939,68.387,20 >> 进入安威玛尔
 step << Hunter
     #optional
     #completewith HTraining
@@ -618,9 +618,9 @@ step << Hunter
 step << Paladin/Warlock/Hunter
     .goto Dun Morogh,28.769,66.377
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德南·弗卡特|r 对话，NPC在里面
-    .turnin 3364 >>交任务 热酒快递
-    .accept 3365 >>接受任务 归还酒杯
-    .vendor >>把垃圾物品卖给商人
+    .turnin 3364 >> 交任务 热酒快递
+    .accept 3365 >> 接受任务 归还酒杯
+    .vendor >> 把垃圾物品卖给商人
     .target 德南·弗卡特
     .isQuestAvailable 317
 step << Hunter
@@ -630,33 +630,33 @@ step << Hunter
     .target 索加斯·格瑞姆森
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索加斯·格瑞姆森|r 对话
     .turnin 3108 >>交任务 风蚀符文 << Dwarf
-    .accept 77660 >>接受任务 穿越洞穴 << Dwarf
-    .turnin 77660 >>交任务 穿越洞穴 << Dwarf
-    .train 1978 >>学习 |T132204:0|t[毒蛇钉刺]
+    .accept 77660 >> 接受任务 穿越洞穴 << Dwarf
+    .turnin 77660 >> 交任务 穿越洞穴 << Dwarf
+    .train 1978 >> 学习 |T132204:0|t[毒蛇钉刺]
 step << Paladin
     #season 2
     .goto Dun Morogh,28.833,68.332
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布罗莫斯·格鲁诺尔|r 对话，NPC在里面
     >>|cRXP_WARN_如果你还没找到|r |T132624:0|t|T132602:0|t[胸甲]|cRXP_WARN_或|r |T132602:0|t|T132602:0|t[护腕] |cRXP_WARN_，就去安威玛尔里的商人那里买，别把钱花在训练技能上。符文比你能买到的技能更强|r
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 布罗莫斯·格鲁诺尔
 step << Warlock
     #season 2
     .goto Dun Morogh,28.650,66.145
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在楼上与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话
-    .turnin 1599 >>交任务 开端
+    .turnin 1599 >> 交任务 开端
     .target 阿拉玛尔·格里姆
 step << Paladin/Warlock/Hunter
     #hardcore
     #optional
     #completewith next
-    .goto 1426,28.792,68.804,12 >>离开安威玛尔
+    .goto 1426,28.792,68.804,12 >> 离开安威玛尔
     .subzoneskip 77,1
 step << Paladin/Warlock/Hunter
     #xprate <1.1
     .goto Dun Morogh,29.709,71.255
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴尔林·霜锤|r 对话
-    .turnin 170 >>交任务 新的威胁
+    .turnin 170 >> 交任务 新的威胁
     .target 巴尔林·霜锤
 step << !Paladin !Warlock !Hunter
     #xprate <1.1
@@ -703,20 +703,20 @@ step
     #requires TroggEnd << !Paladin !Warlock !Hunter
     .goto Dun Morogh,25.076,75.713
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格瑞林·白须|r 对话
-    .turnin 182 >>交任务 巨魔洞穴
-    .accept 218 >>接受任务 被窃取的日记
+    .turnin 182 >> 交任务 巨魔洞穴
+    .accept 218 >> 接受任务 被窃取的日记
     .target 格瑞林·白须
 step << Paladin/Warlock/Hunter
     .goto Dun Morogh,24.980,75.963
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺里斯·激流|r 对话
-    .turnin 3365 >>交任务 归还酒杯
+    .turnin 3365 >> 交任务 归还酒杯
     .target 诺里斯·激流
 step << !Paladin !Warlock !Hunter
     #softcore
     .goto Dun Morogh,24.980,75.963
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺里斯·激流|r 对话
     >>|cRXP_WARN_这将为该任务开始一个 5 分钟倒计时。在接下来的 5 分钟内请不要离开（AFK）或退出游戏|r
-    .accept 3364 >>接受任务 热酒快递
+    .accept 3364 >> 接受任务 热酒快递
     .target 诺里斯·激流
 step << !Paladin !Warlock !Hunter
     #softcore
@@ -727,14 +727,14 @@ step
     #optional
     #label FrostMCave1
     #completewith Grelin
-    .goto 1426,27.098,80.707,20 >>进入霜鬃巨魔洞穴
+    .goto 1426,27.098,80.707,20 >> 进入霜鬃巨魔洞穴
 step
     #optional
     #requires FrostMCave1
     #completewith Grelin
     .goto 1426,28.298,79.836,15,0
     .goto 1426,29.252,79.043,15,0
-    .goto 1426,30.489,80.165,50 >>往里走，与|cRXP_ENEMY_冷酷的格瑞克尼尔|r对话
+    .goto 1426,30.489,80.165,50 >> 往里走，与|cRXP_ENEMY_冷酷的格瑞克尼尔|r对话
 step
     #sticky << Rogue/Hunter
     #label Grelin
@@ -756,7 +756,7 @@ step << !Paladin !Warlock !Hunter
     #requires Grelin << Rogue
     #completewith next
     >|cRXP_WARN_>Make sure you will have two silver after vendoring to be able to train level 4 spells|r << Warrior
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
 step
     #hardcore << !Paladin !Warlock !Hunter
@@ -765,7 +765,7 @@ step
     #completewith Stolen
     .goto 1426,29.252,79.043,15,0
     .goto 1426,28.298,79.836,15,0
-    .goto 1426,27.098,80.707,20 >>离开霜鬃巨魔洞穴
+    .goto 1426,27.098,80.707,20 >> 离开霜鬃巨魔洞穴
     .subzoneskip 132
 --XX HC only unless you're a Paladin, Warlock, or Hunter
 step << !Paladin !Warlock !Hunter
@@ -773,7 +773,7 @@ step << !Paladin !Warlock !Hunter
     #requires Grelin << Rogue
     .goto Dun Morogh,24.980,75.963
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺里斯·激流|r 对话
-    .accept 3364 >>接受任务 热酒快递
+    .accept 3364 >> 接受任务 热酒快递
     .target 诺里斯·激流
 step
     #hardcore << !Paladin !Warlock !Hunter
@@ -781,8 +781,8 @@ step
     #label Stolen
     .goto Dun Morogh,25.075,75.715
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格瑞林·白须|r 对话
-    .turnin 218 >>交任务 被窃取的日记
-    .accept 282 >>接受任务 森内尔的观察站
+    .turnin 218 >> 交任务 被窃取的日记
+    .accept 282 >> 接受任务 森内尔的观察站
     .target 格瑞林·白须
 step << !Paladin !Warlock !Hunter
     #softcore
@@ -790,9 +790,9 @@ step << !Paladin !Warlock !Hunter
     .goto Dun Morogh,28.769,66.377
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德南·弗卡特|r 对话
     >>|cRXP_WARN_如果任务失败，请跳过此步骤|r
-    .turnin 3364 >>交任务 热酒快递
-    .accept 3365 >>接受任务 归还酒杯
-    .vendor >>把垃圾物品卖给商人
+    .turnin 3364 >> 交任务 热酒快递
+    .accept 3365 >> 接受任务 归还酒杯
+    .vendor >> 把垃圾物品卖给商人
     .target 德南·弗卡特
     .isOnQuest 3364
 step << !Paladin !Warlock !Hunter
@@ -800,15 +800,15 @@ step << !Paladin !Warlock !Hunter
     #softcore
     .goto Dun Morogh,28.769,66.377
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德南·弗卡特|r 对话
-    .accept 3365 >>接受任务 归还酒杯
-    .vendor >>把垃圾物品卖给商人
+    .accept 3365 >> 接受任务 归还酒杯
+    .vendor >> 把垃圾物品卖给商人
     .target 德南·弗卡特
     .isQuestTurnedIn 3364
     .isQuestAvailable 317
 step << !Paladin !Warlock !Hunter
     #softcore
     #requires Grelin << Rogue
-    .abandon 3364 >>放弃任务 热酒快递. 你很快会重新接受它
+    .abandon 3364 >> 放弃任务 热酒快递. 你很快会重新接受它
 step << Rogue
     #season 2
     #softcore
@@ -833,11 +833,11 @@ step << !Paladin !Warlock !Hunter
     #softcore
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺里斯·激流|r 和 |cRXP_FRIENDLY_格瑞林·白须|r 对话
-    .accept 3364 >>接受任务 热酒快递
+    .accept 3364 >> 接受任务 热酒快递
     .goto Dun Morogh,24.980,75.963
     .target 诺里斯·激流
-    .turnin 218 >>交任务 被窃取的日记
-    .accept 282 >>接受任务 森内尔的观察站
+    .turnin 218 >> 交任务 被窃取的日记
+    .accept 282 >> 接受任务 森内尔的观察站
     .goto Dun Morogh,25.075,75.715
     .target 格瑞林·白须
     .isQuestAvailable 3364
@@ -846,15 +846,15 @@ step << !Paladin !Warlock !Hunter
     #optional
     .goto Dun Morogh,28.769,66.377
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德南·弗卡特|r 对话
-    .turnin 3364 >>交任务 热酒快递
-    .accept 3365 >>接受任务 归还酒杯
+    .turnin 3364 >> 交任务 热酒快递
+    .accept 3365 >> 接受任务 归还酒杯
     .target 德南·弗卡特
 step << !Paladin !Warlock !Hunter
     #hardcore
     .goto Dun Morogh,28.769,66.377
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德南·弗卡特|r 对话
-    .turnin 3364 >>交任务 热酒快递
-    .accept 3365 >>接受任务 归还酒杯
+    .turnin 3364 >> 交任务 热酒快递
+    .accept 3365 >> 接受任务 归还酒杯
 --  .vendor >> Vendor Trash
     .target 德南·弗卡特
     .isQuestAvailable 317
@@ -872,26 +872,26 @@ step << Mage
     #season 0,1
     .goto Dun Morogh,28.709,66.366
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛瑞克·斯托纳尔|r 对话，NPC在里面
-    .turnin 3114 >>交任务 雕文备忘录 << Gnome
-    .trainer >>训练你的职业技能
+    .turnin 3114 >> 交任务 雕文备忘录 << Gnome
+    .trainer >> 训练你的职业技能
     .target 玛瑞克·斯托纳尔
 step << Mage
     #xprate >1.59
     #season 2
     .goto Dun Morogh,28.709,66.366
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛瑞克·斯托纳尔|r 对话，NPC在里面
-    .turnin 3114 >>交任务 雕文备忘录 << Gnome
-    .accept 77667 >>接受任务 法术研究 << Gnome
-    .turnin 77667 >>交任务 法术研究 << Gnome
-    .trainer >>训练你的职业技能
+    .turnin 3114 >> 交任务 雕文备忘录 << Gnome
+    .accept 77667 >> 接受任务 法术研究 << Gnome
+    .turnin 77667 >> 交任务 法术研究 << Gnome
+    .trainer >> 训练你的职业技能
     .target 玛瑞克·斯托纳尔
 step << Rogue
     #xprate >1.59
     #season 0,1
     .goto Dun Morogh,28.369,67.513
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索姆·哈格林|r 对话
-    .turnin 3113 >>交任务 密文备忘录 << Gnome
-    .turnin 3109 >>交任务 密文符文 << Dwarf
+    .turnin 3113 >> 交任务 密文备忘录 << Gnome
+    .turnin 3109 >> 交任务 密文符文 << Dwarf
     .train 1784 >>学习 |T132320:0|t[潜行]
     .trainer >>训练你的职业技能
     .target 索姆·哈格林
@@ -900,16 +900,16 @@ step << Priest
     #season 2
     .goto Dun Morogh,28.600,66.385
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰斯托克·卡德尔|r 对话
-    .accept 5626 >>接受任务 圣光的恩赐 << Dwarf
+    .accept 5626 >> 接受任务 圣光的恩赐 << Dwarf
     .target 布兰斯托克·卡德尔
 step << Warrior
     #xprate >1.59
     #season 0,1
     .goto Dun Morogh,28.832,67.242
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯兰·库尔曼|r 对话
-    .turnin 3106 >>交任务 简易符文 << Dwarf
-    .turnin 3112 >>交任务 简易备忘录 << Gnome
-    .trainer >>训练你的职业技能
+    .turnin 3106 >> 交任务 简易符文 << Dwarf
+    .turnin 3112 >> 交任务 简易备忘录 << Gnome
+    .trainer >> 训练你的职业技能
     .target 斯兰·库尔曼
 step << Warrior
     #xprate >1.59
@@ -936,19 +936,19 @@ step << Mage
     #season 0,1
     .goto Dun Morogh,28.709,66.366
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛瑞克·斯托纳尔|r 对话，NPC在里面
-    .turnin 3114 >>交任务 雕文备忘录 << Gnome
-    .train 1459 >>学习 |T135932:0|t[奥术智慧]
-    .train 116 >>学习 |T135846:0|t[寒冰箭]
+    .turnin 3114 >> 交任务 雕文备忘录 << Gnome
+    .train 1459 >> 学习 |T135932:0|t[奥术智慧]
+    .train 116 >> 学习 |T135846:0|t[寒冰箭]
     .target 玛瑞克·斯托纳尔
 step << Mage
     #xprate <1.59
     #season 2
     .goto Dun Morogh,28.709,66.366
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛瑞克·斯托纳尔|r 对话，NPC在里面
-    .turnin 3114 >>交任务 雕文备忘录 << Gnome
-    .accept 77667 >>接受任务 法术研究 << Gnome
-    .train 1459 >>学习 |T135932:0|t[奥术智慧]
-    .train 116 >>学习 |T135846:0|t[寒冰箭]
+    .turnin 3114 >> 交任务 雕文备忘录 << Gnome
+    .accept 77667 >> 接受任务 法术研究 << Gnome
+    .train 1459 >> 学习 |T135932:0|t[奥术智慧]
+    .train 116 >> 学习 |T135846:0|t[寒冰箭]
     .target 玛瑞克·斯托纳尔
 step << Gnome Mage
     #xprate <1.59
@@ -962,14 +962,14 @@ step << Gnome Mage
     #season 2
     .goto Dun Morogh,28.709,66.366
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛瑞克·斯托纳尔|r 对话，NPC在里面
-    .turnin 77667 >>交任务 法术研究
+    .turnin 77667 >> 交任务 法术研究
     .target 玛瑞克·斯托纳尔
 step << Gnome Mage
     #xprate <1.59
     #season 2
     #label GlovesEquip
     #completewith Observations
-    .equip 10,711 >>|cRXP_WARN_装备|r |T132961:0|t|T132961:0|t[破布手套]
+    .equip 10,711 >> |cRXP_WARN_装备|r |T132961:0|t|T132961:0|t[破布手套]
     .use 711
     .train 401760,3
 step << Gnome Mage
@@ -984,8 +984,8 @@ step << Rogue
     #season 0,1
     .goto Dun Morogh,28.369,67.513
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索姆·哈格林|r 对话
-    .turnin 3113 >>交任务 密文备忘录 << Gnome
-    .turnin 3109 >>交任务 密文符文 << Dwarf
+    .turnin 3113 >> 交任务 密文备忘录 << Gnome
+    .turnin 3109 >> 交任务 密文符文 << Dwarf
     .train 1784 >>学习 |T132320:0|t[潜行]
     .target 索姆·哈格林
 step << Priest
@@ -993,27 +993,27 @@ step << Priest
     #season 2
     .goto Dun Morogh,28.600,66.385
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰斯托克·卡德尔|r 对话
-    .train 589 >>训练 |T136207:0|t[暗言术：痛]
+    .train 589 >> 训练 |T136207:0|t[暗言术：痛]
     .target 布兰斯托克·卡德尔
 step << Warrior
     #xprate <1.59
     #season 0,1
     .goto Dun Morogh,28.832,67.242
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯兰·库尔曼|r 对话
-    .turnin 3106 >>交任务 简易符文 << Dwarf
-    .turnin 3112 >>交任务 简易备忘录 << Gnome
-    .train 100 >>学习 |T132337:0|t[冲锋]
-    .train 772 >>学习 |T132155:0|t[撕裂]
+    .turnin 3106 >> 交任务 简易符文 << Dwarf
+    .turnin 3112 >> 交任务 简易备忘录 << Gnome
+    .train 100 >> 学习 |T132337:0|t[冲锋]
+    .train 772 >> 学习 |T132155:0|t[撕裂]
     .target 斯兰·库尔曼
 step << Warrior
     #xprate <1.59
     #season 2
     .goto Dun Morogh,28.832,67.242
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_斯兰·库尔曼|r 对话
-    .turnin 77655 >>交任务 失落的符文 << Dwarf
-    .turnin 77656 >>交任务 失落的符文 << Gnome
-    .train 100 >>学习 |T132337:0|t[冲锋]
-    .train 772 >>学习 |T132155:0|t[撕裂]
+    .turnin 77655 >> 交任务 失落的符文 << Dwarf
+    .turnin 77656 >> 交任务 失落的符文 << Gnome
+    .train 100 >> 学习 |T132337:0|t[冲锋]
+    .train 772 >> 学习 |T132155:0|t[撕裂]
     .target 斯兰·库尔曼
 
 
@@ -1028,42 +1028,42 @@ step << Warrior
 step << !Paladin !Warlock !Hunter
     #optional
     #completewith Stolen
-    .goto 1426,28.831,68.698,12 >>离开安威玛尔
+    .goto 1426,28.831,68.698,12 >> 离开安威玛尔
     .subzoneskip 77,1
 step << !Paladin !Warlock !Hunter
     #xprate <1.1
     .goto Dun Morogh,29.709,71.255
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴尔林·霜锤|r 对话
-    .turnin 170 >>交任务 新的威胁
+    .turnin 170 >> 交任务 新的威胁
     .target 巴尔林·霜锤
 step << !Paladin !Warlock !Hunter
     #softcore
     #label Stolen
     .goto Dun Morogh,25.075,75.715
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格瑞林·白须|r 对话
-    .turnin 218 >>交任务 被窃取的日记
-    .accept 282 >>接受任务 森内尔的观察站
+    .turnin 218 >> 交任务 被窃取的日记
+    .accept 282 >> 接受任务 森内尔的观察站
     .target 格瑞林·白须
 step << !Paladin !Warlock !Hunter
     .goto Dun Morogh,24.980,75.963
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_诺里斯·激流|r 对话
-    .turnin 3365 >>交任务 归还酒杯
+    .turnin 3365 >> 交任务 归还酒杯
     .target 诺里斯·激流
 step << Mage
     #completewith next
-    .hs >>使用你的炉石
+    .hs >> 使用你的炉石
 step << Dwarf Paladin/Dwarf Hunter
     #season 2
     #optional
     #completewith next
     .goto 1426,28.792,68.804,12,0
-    .goto 1426,28.939,68.387,12 >>进入安威玛尔
+    .goto 1426,28.939,68.387,12 >> 进入安威玛尔
 step << Dwarf Paladin
     #season 2
     #optional
     .goto Dun Morogh,28.833,68.332
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布罗莫斯·格鲁诺尔|r对话
-    .turnin 77657 >>交任务 圣光的圣物
+    .turnin 77657 >> 交任务 圣光的圣物
     .target 布罗莫斯·格鲁诺尔
     .isQuestComplete 77657
     .equip 10 --Show step if you don't have gloves
@@ -1072,7 +1072,7 @@ step << Dwarf Hunter
     #optional
     .goto Dun Morogh,29.175,67.455
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索加斯·格瑞姆森|r 对话
-    .turnin 77660 >>交任务 穿越洞穴
+    .turnin 77660 >> 交任务 穿越洞穴
     .target 索加斯·格瑞姆森
     .isQuestComplete 77660
     .equip 10 --Show step if you don't have gloves
@@ -1080,29 +1080,29 @@ step << Dwarf Paladin/Dwarf Hunter
     #season 2
     #optional
     #completewith ColdridgePass
-    .abandon 77657 >>放弃任务圣光的圣物，因为你已经装备了一双|T132938:0|t[手套] << Paladin
-    .abandon 77660 >>放弃任务穿越洞穴，因为你已经装备了一双|T132952:0|t[手套] << Hunter
+    .abandon 77657 >> 放弃任务圣光的圣物，因为你已经装备了一双|T132938:0|t[手套] << Paladin
+    .abandon 77660 >> 放弃任务穿越洞穴，因为你已经装备了一双|T132952:0|t[手套] << Hunter
 step
     .goto Dun Morogh,29.47,72.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_符文贩子|r 对话
     >>|cRXP_WARN_千万不要把能穿的装备卖给商人|r
-    .vendor >>|cRXP_BUY_向商人贩卖垃圾物品并购买你需要的所有 |T134419:0|t|cRXP_WARN_[符文]|r|r
+    .vendor >> |cRXP_BUY_向商人贩卖垃圾物品并购买你需要的所有 |T134419:0|t|cRXP_WARN_[符文]|r|r
     .target Rune Broker
     .skipgossip
 step
     #label Observations
     >>与|cRXP_FRIENDLY_巡山人泰洛斯|r和|cRXP_FRIENDLY_汉兹·跳链|r交谈
-    .turnin 282 >>交任务 森内尔的观察站
-    .accept 420 >>接受任务 森内尔的观察站
+    .turnin 282 >> 交任务 森内尔的观察站
+    .accept 420 >> 接受任务 森内尔的观察站
     .goto Dun Morogh,33.484,71.841
     .target 巡山人萨鲁斯
-    .accept 2160 >>接受任务 塔诺克的补给品
+    .accept 2160 >> 接受任务 塔诺克的补给品
     .goto Dun Morogh,33.85,72.24
     .target 汉兹·跳链
 step
     #label ColdridgePass
     .goto Dun Morogh,34.32,70.95,15,0
-    .goto Dun Morogh,35.65,65.79,15 >>穿过寒脊山小径
+    .goto Dun Morogh,35.65,65.79,15 >> 穿过寒脊山小径
     .subzoneskip 800,1
     .isOnQuest 2160
 ]])
@@ -1113,10 +1113,10 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance --!Hunter
 #group RestedXP 联盟 1-20 级
-#group14-16级 黑海岸
+#groupid RXP-SRGCE-A1
 #name 6-11级 丹莫罗 探索赛季
 #displayname 7-12级 丹莫罗
-#next 12-13级 丹莫罗 探索赛季
+#next 12-13 丹莫罗 探索赛季
 #defaultfor Dwarf/Gnome
 
 step
@@ -1135,29 +1135,29 @@ step
     #label SenirEnd
     .goto Dun Morogh,46.726,53.826
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_森内尔·白须|r 对话
-    .turnin 420 >>交任务 森内尔的观察站
-    .accept 287 >>接受任务 霜鬃巨魔要塞--2.5x xp, should be lvl7 here
+    .turnin 420 >> 交任务 森内尔的观察站
+    .accept 287 >> 接受任务 霜鬃巨魔要塞--2.5x xp, should be lvl7 here
     .target 森内尔·白须
 step << Warlock
     .goto Dun Morogh,47.329,53.693
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉姆瑞兹·黑轮|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 吉姆瑞兹·黑轮
 step
     .goto Dun Morogh,46.825,52.361
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉格纳·雷酒|r 对话
-    .accept 384 >>接受任务 啤酒烤猪排
+    .accept 384 >> 接受任务 啤酒烤猪排
     .target 拉格纳·雷酒
 step
     #optional
     #completewith next
     .goto 1426,46.952,52.050,8,0
-    .goto 1426,47.153,51.939,8 >>进入雷酒酿制厂
+    .goto 1426,47.153,51.939,8 >> 进入雷酒酿制厂
 step
     .goto Dun Morogh,47.217,52.195
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塔诺克·霜锤|r 对话
-    .turnin 2160,1 >>交任务 塔诺克的补给品 << Warrior/Rogue
-    .turnin 2160,2 >>交任务 塔诺克的补给品 << !Warrior !Rogue
+    .turnin 2160,1 >> 交任务 塔诺克的补给品 << Warrior/Rogue
+    .turnin 2160,2 >> 交任务 塔诺克的补给品 << !Warrior !Rogue
     .target 塔诺克·霜锤
 step << Rogue
     .goto Dun Morogh,47.189,52.403
@@ -1179,27 +1179,27 @@ step << Rogue
     #sticky
     #requires BalancedDaggers1
     #label DeleteOldDaggers
-    .destroy 2947 >>删除包里的|T135426:0|t[小飞刀] 你已不再需要它了
+    .destroy 2947 >> 删除包里的|T135426:0|t[小飞刀] 你已不再需要它了
 step << Rogue
     .goto Dun Morogh,47.563,52.608
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在后室与 |cRXP_FRIENDLY_霍格拉尔·巴坎|r 对话
-    .trainer >>训练你的职业技能
-    .train 921 >>务必训练|T133644:0|t|T133644:0|t|cRXP_PICK_搜索|r，之后获取符文时会用到
+    .trainer >> 训练你的职业技能
+    .train 921 >> 务必训练|T133644:0|t|T133644:0|t|cRXP_PICK_搜索|r，之后获取符文时会用到
     .target 霍格拉尔·巴坎
 step << Mage
     .goto Dun Morogh,47.498,52.076
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼上与 |cRXP_FRIENDLY_玛济斯·石衣|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 玛济斯·石衣
 step << Paladin
     .goto Dun Morogh,47.597,52.070
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼上与 |cRXP_FRIENDLY_阿扎尔·战锤|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 阿扎尔·战锤
 step << Priest
     .goto Dun Morogh,47.342,52.190
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马克萨恩·安沃尔|r 对话，NPC在里面
-    .accept 5625 >>接受任务 圣光之衣
+    .accept 5625 >> 接受任务 圣光之衣
     .target 马克萨恩·安沃尔
 step << Priest
     .goto Dun Morogh,45.805,54.568
@@ -1209,14 +1209,14 @@ step << Priest
 step << Priest
     .goto Dun Morogh,47.342,52.190
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马克萨恩·安沃尔|r 对话，NPC在里面
-    .turnin 5625 >>交任务 圣光之衣
-    .trainer >>训练你的职业技能
+    .turnin 5625 >> 交任务 圣光之衣
+    .trainer >> 训练你的职业技能
     .target 马克萨恩·安沃尔
 step
     .goto Dun Morogh,47.377,52.523
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话，NPC在里面
-    .home >>将你的炉石设置到雷酒酿制厂
-    .vendor >>|cRXP_BUY_能买多少|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_就买多少|r << Mage
+    .home >> 将你的炉石设置到雷酒酿制厂
+    .vendor >> |cRXP_BUY_能买多少|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_就买多少|r << Mage
     .target 旅店老板贝尔姆
 step
     .goto Dun Morogh,47.377,52.523
@@ -1227,18 +1227,18 @@ step
 step
     .goto Dun Morogh,46.825,52.361
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉格纳·雷酒|r 对话
-    .turnin 384 >>交任务 啤酒烤猪排
+    .turnin 384 >> 交任务 啤酒烤猪排
     .target 拉格纳·雷酒
     .isQuestComplete 384
 step << Warrior
     .goto Dun Morogh,47.360,52.646
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格兰尼斯·快斧|r 对话，NPC在里面
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 格兰尼斯·快斧
 step << Paladin/Warrior/Rogue
     #optional
     #completewith Blacksmithing1
-    .goto 1426,45.695,51.911,20 >>进入铁匠楼
+    .goto 1426,45.695,51.911,20 >> 进入铁匠楼
 step << Gnome Warrior
     .goto 1426,45.288,52.193
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格劳恩·索姆温|r 对话
@@ -1303,13 +1303,13 @@ step << Warrior/Rogue/Paladin
     >>|cRXP_WARN_这能让你制作|r |T135248:0|t[劣质磨刀石] |cRXP_WARN_使你的近战伤害增加 2|r << Warrior/Rogue
     >>|cRXP_WARN_这能让你制作|r |T135255:0|t[劣质平衡石] |cRXP_WARN_使你的近战伤害增加 2|r << Paladin
     >>|cRXP_WARN_如果不愿完成，可跳过此步骤|r
-    .train 2018 >>学习 |T136241:0|t[锻造]
+    .train 2018 >> 学习 |T136241:0|t[锻造]
     .target 托格努斯·燧火
 step
     #requires DeleteOldDaggers << Rogue
     .goto Dun Morogh,46.021,51.676
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨雷克·暗岩|r 对话
-    .accept 400 >>接受任务 贝尔丁的工具
+    .accept 400 >> 接受任务 贝尔丁的工具
     .target 萨雷克·暗岩
 step << Rogue
     #season 2
@@ -1338,19 +1338,19 @@ step
     .goto Dun Morogh,49.426,48.410
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
     >>|cRXP_WARN_在途中请勿击杀任何 |cRXP_ENEMY_黑熊幼崽|r |r
-    .accept 317 >>接受任务 贝尔丁的补给
+    .accept 317 >> 接受任务 贝尔丁的补给
     .target 驾驶员贝隆·风箱
 step
     .goto Dun Morogh,49.622,48.612
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_驾驶员迪恩·石轮|r 对话
-    .accept 313 >>接受任务 灰色洞穴
+    .accept 313 >> 接受任务 灰色洞穴
     .target 驾驶员迪恩·石轮
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_贝尔丁·钢架|r 和 |cRXP_FRIENDLY_罗斯洛·鲁治|r 对话
-    .turnin 400 >>交任务 贝尔丁的工具
+    .turnin 400 >> 交任务 贝尔丁的工具
     .goto Dun Morogh,50.443,49.092
     .target 贝尔丁·钢架
-    .accept 5541 >>接受任务 海格纳的弹药
+    .accept 5541 >> 接受任务 海格纳的弹药
     .goto Dun Morogh,50.084,49.420
     .target 罗斯洛·鲁治
 step << Warrior/Paladin/Rogue
@@ -1364,7 +1364,7 @@ step << Warrior/Paladin/Rogue
 step << Warrior/Paladin/Rogue
     #optional
     #completewith QuarryEnd
-    .cast 2580 >>|cRXP_WARN_施放|r |T136025:0|t[寻找矿物]
+    .cast 2580 >> |cRXP_WARN_施放|r |T136025:0|t[寻找矿物]
     .usespell 2580
     .train 2575,3 --Mining
 step << Hunter
@@ -1408,19 +1408,19 @@ step
 step
     .goto Dun Morogh,49.426,48.410
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_驾驶员贝隆·风箱|r 对话
-    .turnin 317 >>交任务 贝尔丁的补给
-    .accept 318 >>接受任务 艾沃沙酒
+    .turnin 317 >> 交任务 贝尔丁的补给
+    .accept 318 >> 接受任务 艾沃沙酒
     .target 驾驶员贝隆·风箱
 step << Mage
     #optional
     #completewith next
     .goto 1426,46.952,52.050,8,0
-    .goto 1426,47.153,51.939,8 >>进入雷酒酿制厂
+    .goto 1426,47.153,51.939,8 >> 进入雷酒酿制厂
 step << Mage
     #completewith next
     .goto Dun Morogh,47.377,52.523
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话，NPC在里面
-    .vendor 1247 >>|cRXP_BUY_从他那里买|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_能买多少就买多少|r
+    .vendor 1247 >> |cRXP_BUY_从他那里买|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_能买多少就买多少|r
     .target 旅店老板贝尔姆
     .money <0.0125
     .itemcount 1179,<1 --Ice Cold Milk (1)
@@ -1431,12 +1431,12 @@ step << Warlock
 step << Warlock
     .goto Dun Morogh,47.327,53.693
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_吉姆瑞兹·黑轮|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 吉姆瑞兹·黑轮
 step << Warlock
     .goto Dun Morogh,47.273,53.658
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_丹尼·血泡|r 对话
-    .vendor 6328 >>|cRXP_BUY_如果买得起，就购买|r |T133738:0|t|T133738:0|t[魔典：火球术（等级2）] |cRXP_BUY_；如果暂时买不起，可以以后再买|r
+    .vendor 6328 >> |cRXP_BUY_如果买得起，就购买|r |T133738:0|t|T133738:0|t[魔典：火球术（等级2）] |cRXP_BUY_；如果暂时买不起，可以以后再买|r
     .target 吉姆瑞兹·黑轮
     .money <0.100
 step << Priest
@@ -1458,7 +1458,7 @@ step << Priest
 step << Priest !NightElf
     #season 2
     #completewith end
-    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_遭渎城堡的预言|r]
+    .train 402852 >> |cRXP_WARN_使用|r |T135975:0|t|T135975:0|t[|cRXP_FRIENDLY_遭渎城堡的预言|r]
     >>|cRXP_WARN_你必须在暴风城大教堂、洛克莫丹或铁炉堡的神秘之地的光明祭坛旁输入/pray，获得2层|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_增益效果|r
     >>|cRXP_WARN_|T136057:0|t|T136057:0|t|cRXP_PICK_艾露恩的冥想|r增益效果需要由另一位牧师玩家提供，方法是当你使用/kneel跪下时，对方对你使用/pray表情。如果你看到其他牧师带有不同的冥想BUFF，可以请他们为你施加|r
     --.use 205947
@@ -1504,7 +1504,7 @@ step
     #optional
     #completewith next
     .goto 1426,46.952,52.050,8,0
-    .goto 1426,47.153,51.939,8 >>进入雷酒酿制厂
+    .goto 1426,47.153,51.939,8 >> 进入雷酒酿制厂
 step
     .goto Dun Morogh,47.377,52.523
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板贝尔姆|r 对话，NPC在里面
@@ -1514,14 +1514,14 @@ step
     .itemcount 2886,6 --Crag Boar Rib (6)
 step
     .goto Dun Morogh,46.825,52.361
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与外面的 |cRXP_FRIENDLY_拉格纳·雷酒|r 对话
-    .turnin 384 >>交任务 啤酒烤猪排
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在外面与 |cRXP_FRIENDLY_拉格纳·雷酒|r 对话
+    .turnin 384 >> 交任务 啤酒烤猪排
     .target 拉格纳·雷酒
     .isQuestComplete 384
 step << Paladin/Warrior/Rogue
     #optional
     #completewith Blacksmithing1
-    .goto 1426,45.695,51.911,20 >>进入铁匠楼
+    .goto 1426,45.695,51.911,20 >> 进入铁匠楼
 step << Gnome Warrior
 #optional
     .goto 1426,45.288,52.193
@@ -1589,12 +1589,12 @@ step << Paladin
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.99
 step << Hunter
     #optional
-    .xp 6 >>刷怪升级到6级
+    .xp 6 >> 刷怪升级到6级
 step << Hunter
     #season 2
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格瑞夫|r 对话
-    .train 1130 >>训练 |T132212:0|t[猎人印记]
+    .train 1130 >> 训练 |T132212:0|t[猎人印记]
     >>|cRXP_WARN_如果钱不够，在卡拉诺斯周围刷怪赚钱。这个法术后面做符文时会用到。|r
     .target 格瑞夫
 
@@ -1602,7 +1602,7 @@ step
     #optional
     #completewith next
     .goto 1426,42.982,54.755
-    .subzone 136 >>前往灰色洞穴
+    .subzone 136 >> 前往灰色洞穴
     .isOnQuest 313
 step
     #loop
@@ -1633,7 +1633,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海格纳·重枪|r 对话
     >>|cRXP_BUY_从他那里购买一把|r |T135611:0|t|T135611:0|t[精制短枪]|cRXP_BUY_|r
     >>|cRXP_WARN_如果钱不够，可以跳过此步骤|r
-    .turnin 5541 >>交任务 海格纳的弹药
+    .turnin 5541 >> 交任务 海格纳的弹药
     .collect 2509,1 -- Ornate Blunderbuss (1)
     .target 海格纳·重枪
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.95
@@ -1641,19 +1641,19 @@ step
     #label BearFur
     .goto Dun Morogh,40.682,65.130
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_海格纳·重枪|r 对话
-    .turnin 5541 >>交任务 海格纳的弹药
+    .turnin 5541 >> 交任务 海格纳的弹药
     .target 海格纳·重枪
 step
     #label Tundra
     .goto Dun Morogh,34.577,51.652
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图德拉·马克格拉恩|r 对话
-    .accept 312 >>接受任务 马克格拉恩的干肉
+    .accept 312 >> 接受任务 马克格拉恩的干肉
     .target 图德拉·马克格拉恩
 step
     .goto Dun Morogh,38.517,53.927
     >>打开 |cRXP_PICK_马克格拉恩的储肉柜|r。拾取里面的 |cRXP_LOOT_马克格拉恩的干肉|r
     >>|cRXP_WARN_等|cRXP_ENEMY_冰须|r 巡逻出洞穴。一旦他离开洞穴， 你就可以偷偷进入并打开|r |cRXP_PICK_马克格拉恩的储肉柜|r
-    .link https://www.youtube.com/watch?v=o55Y3LjgKoE >>https://www.youtube.com/watch?v=o55Y3LjgKoE >> |cRXP_WARN_点击此处查看视频参考|r
+    .link https://www.youtube.com/watch?v=o55Y3LjgKoE >> |cRXP_WARN_点击此处查看视频参考|r
     .complete 312,1 --MacGrann's Dried Meats (1)
 step
     .goto Dun Morogh,36.4,52.8
@@ -1664,7 +1664,7 @@ step
 step
     .goto Dun Morogh,34.577,51.652
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_图德拉·马克格拉恩|r 对话
-    .turnin 312 >>交任务 马克格拉恩的干肉
+    .turnin 312 >> 交任务 马克格拉恩的干肉
     .target 图德拉·马克格拉恩
 step << Hunter
     #season 2
@@ -1684,7 +1684,7 @@ step << Hunter
 step
     #completewith next
     .goto Dun Morogh,30.453,46.005
-    .subzone 137 >>前往烈酒村
+    .subzone 137 >> 前往烈酒村
 step << Mage
     #completewith next
     .goto Dun Morogh,30.453,46.005
@@ -1696,7 +1696,7 @@ step << Mage
 step
     #label EvershineEnd
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷杰德·麦酒|r 对话
-    .turnin 318 >>交任务 艾沃沙酒
+    .turnin 318 >> 交任务 艾沃沙酒
     .goto Dun Morogh,30.190,45.726
     .target 雷杰德·麦酒
 step << Hunter
@@ -1780,7 +1780,7 @@ step
 step
     #optional
     .goto 1426,24.975,50.473,20,0
-    .goto 1426,24.682,50.836,20 >>沿着洞口坡道上行，然后跳入霜鬃巨魔要塞
+    .goto 1426,24.682,50.836,20 >> 沿着洞口坡道上行，然后跳入霜鬃巨魔要塞
     .isOnQuest 287
 step
     #sticky
@@ -1829,7 +1829,7 @@ step
     .complete 287,2 --Fully explore Frostmane Hold
 step
     #completewith dm10end
-    .deathskip >>在卡拉诺斯死亡并复活
+    .deathskip >> 在卡拉诺斯死亡并复活
     .subzoneskip 131
 step
     .goto Dun Morogh,47.377,52.523
@@ -1840,22 +1840,22 @@ step
     .target 旅店老板贝尔姆
 step
     .goto Dun Morogh,46.825,52.361
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与外面的 |cRXP_FRIENDLY_拉格纳·雷酒|r 对话
-    .turnin 384 >>交任务 啤酒烤猪排
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在外面与 |cRXP_FRIENDLY_拉格纳·雷酒|r 对话
+    .turnin 384 >> 交任务 啤酒烤猪排
     .target 拉格纳·雷酒
     .isQuestComplete 384
 step
     #label dm10end
     .goto Dun Morogh,46.726,53.826
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_森内尔·白须|r 对话
-    .turnin 287 >>交任务 霜鬃巨魔要塞
-    .accept 291 >>接受任务 森内尔的报告
+    .turnin 287 >> 交任务 霜鬃巨魔要塞
+    .accept 291 >> 接受任务 森内尔的报告
     .target 森内尔·白须
 step << Hunter
     #label dm10end
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格瑞夫|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .accept 6064 >>接受任务 驯服野兽 << Dwarf
     .target 格瑞夫
 step << Dwarf Hunter
@@ -1898,40 +1898,40 @@ step << Rogue
     .goto Dun Morogh,47.563,52.608
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在后室与 |cRXP_FRIENDLY_霍格拉尔·巴坎|r 对话
     >>|cRXP_WARN_只学习|r |T132147:0|t[双持] |cRXP_WARN_和|r |T132307:0|t[疾跑]|cRXP_WARN_。不要学习其他技能，把金币留到后面使用|r
-    .train 674 >>训练 |T132147:0|t[双武器]
-    .train 2983 >>训练 |T132307:0|t[疾跑]
-    .accept 2218 >>接受任务 救赎之路
+    .train 674 >> 训练 |T132147:0|t[双武器]
+    .train 2983 >> 训练 |T132307:0|t[疾跑]
+    .accept 2218 >> 接受任务 救赎之路
     .target 霍格拉尔·巴坎
 step << Paladin
     .goto Dun Morogh,47.597,52.070
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼上与 |cRXP_FRIENDLY_阿扎尔·战锤|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 阿扎尔·战锤
 step << Warrior
     .goto Dun Morogh,47.360,52.646
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格兰尼斯·快斧|r 对话，NPC在里面
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 格兰尼斯·快斧
 step << Mage
     .goto Dun Morogh,47.498,52.076
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼上与 |cRXP_FRIENDLY_玛济斯·石衣|r 对话
-    .train 118 >>学习 |T136071:0|t[变形术]
+    .train 118 >> 学习 |T136071:0|t[变形术]
     .target 玛济斯·石衣
 step << Priest
     .goto Dun Morogh,47.342,52.190
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_马克萨恩·安沃尔|r 对话，NPC在里面
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 马克萨恩·安沃尔
 step << Warrior/Rogue/Paladin
     .goto Dun Morogh,47.180,52.610
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨姆诺·普尔|r 对话
-    .train 3273 >>训练 |T135966:0|t[急救]
+    .train 3273 >> 训练 |T135966:0|t[急救]
     .target 萨姆诺·普尔
     .money <0.01
 step
     .goto Dun Morogh,49.622,48.612
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_驾驶员迪恩·石轮|r 对话
-    .turnin 313 >>交任务 灰色洞穴
+    .turnin 313 >> 交任务 灰色洞穴
     .target 驾驶员迪恩·石轮
 step << Warrior
     #optional
@@ -1941,11 +1941,11 @@ step << Warrior
 step << Warrior
     .goto Dun Morogh,47.58,41.58,40,0
     .goto Dun Morogh,50.19,40.79,20,0
-    .goto Ironforge,14.90,87.10,40 >>前往铁炉堡
+    .goto Ironforge,14.90,87.10,40 >> 前往铁炉堡
 step << Warrior
     .goto Ironforge,62.237,89.628
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比克斯|r 或 |cRXP_FRIENDLY_布里维夫·石手|r 对话
-    .trainer >>如果你已主队，或有人帮忙，现在就击杀 |cRXP_ENEMY_瓦加什|r。然后找 |cRXP_FRIENDLY_布里维夫·石拳|r 学习双手锤。要不然的话找 |cRXP_FRIENDLY_比克斯|r 学习投掷。如果你不确定需要学习哪一个的话就选择投掷
+    .trainer >> 如果你已主队，或有人帮忙，现在就击杀 |cRXP_ENEMY_瓦加什|r。然后找 |cRXP_FRIENDLY_布里维夫·石拳|r 学习双手锤。要不然的话找 |cRXP_FRIENDLY_比克斯|r 学习投掷。如果你不确定需要学习哪一个的话就选择投掷
     .target 比克斯
     .target 布里维夫·石拳
 step << Warrior

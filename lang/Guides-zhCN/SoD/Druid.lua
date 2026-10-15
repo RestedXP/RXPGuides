@@ -13,8 +13,8 @@ step << Druid
     .goto Teldrassil,58.626,40.287
     >>爬上奥达希尔之树
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛丹特·硬木|r 对话
-    .accept 77571 >>接受任务 卡多雷的圣物
-    .trainer >>训练你的职业法术。确保你学会 |T136096:0|t[月火术]
+    .accept 77571 >> 接受任务 卡多雷的圣物
+    .trainer >> 训练你的职业法术。确保你学会 |T136096:0|t[月火术]
     .target 玛丹特·硬木
     .train 410061,1
 step << Druid
@@ -27,7 +27,7 @@ step << Druid
     .train 410061,1
 step << Druid
     #season 2
-    .equip 18,208414 >>|cRXP_WARN_装备|r |T134903:0|t[|cRXP_FRIENDLY_月光神像|r]
+    .equip 18,208414 >> |cRXP_WARN_装备|r |T134903:0|t[|cRXP_FRIENDLY_月光神像|r]
     .use 208414
     .train 410061,1
 step << Druid
@@ -42,7 +42,7 @@ step << Druid
     .goto Teldrassil,58.626,40.287
     >>爬上奥达希尔之树
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛丹特·硬木|r 对话
-    .turnin 77571 >>交任务 卡多雷的圣物
+    .turnin 77571 >> 交任务 卡多雷的圣物
     .target 玛丹特·硬木
     .train 410061,1
 ]])
@@ -73,7 +73,7 @@ step << Druid
     .train 416050,1
 step << Druid
     #completewith NatureSpirit
-    .subzone 260 >>前往星风村
+    .subzone 260 >> 前往星风村
     .train 416050,1
 step << Druid
     #completewith next
@@ -92,7 +92,7 @@ step << Druid
     .mob Unleashed Nature Spirit
     .train 416050,1
 step << Druid
-    .train 416050 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_自然潜能符文|r] |cRXP_WARN_来训练|r |T136152:0|t[生命之种]
+    .train 416050 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_自然潜能符文|r] |cRXP_WARN_来训练|r |T136152:0|t[生命之种]
     .use 206963
     .itemcount 206963,1
 ]])
@@ -119,7 +119,7 @@ step << Druid
     .target Adventurer's Remains
     .train 410033,1
 step << Druid
-    .train 410033 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_生命符文|r] |cRXP_WARN_来学习|r |T134206:0|t[生命绽放]
+    .train 410033 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_生命符文|r] |cRXP_WARN_来学习|r |T134206:0|t[生命绽放]
     .use 206970
     .itemcount 206970,1
 ]])
@@ -149,7 +149,7 @@ step << Druid
     .train 407988,1
 step << Druid
     #season 2
-    .equip 18,208689 >>|cRXP_WARN_装备|r |T132942:0|t[|cRXP_FRIENDLY_野性神像|r]
+    .equip 18,208689 >> |cRXP_WARN_装备|r |T132942:0|t[|cRXP_FRIENDLY_野性神像|r]
     .use 208689
     .itemcount 208689,1
     .train 407988,1
@@ -189,7 +189,7 @@ step << Druid
     .train 407988,1
 step << Druid
     #season 2
-    .equip 18,208689 >>|cRXP_WARN_装备|r |T132942:0|t[|cRXP_FRIENDLY_野性神像|r]
+    .equip 18,208689 >> |cRXP_WARN_装备|r |T132942:0|t[|cRXP_FRIENDLY_野性神像|r]
     .use 208689
     .itemcount 208689,1
     .train 407988,1
@@ -220,7 +220,7 @@ step << Druid
     .train 416044,1
 step << Druid
     #season 2
-    .train 416044 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_日灼符文|r] |cRXP_WARN_来训练|r |T236216:0|t[阳炎术]
+    .train 416044 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_日灼符文|r] |cRXP_WARN_来训练|r |T236216:0|t[阳炎术]
     .use 206989
     .itemcount 206989,1
 ]])
@@ -245,13 +245,13 @@ step << Druid
 step << Druid
     #season 2
     .goto Loch Modan,46.6,35.6
-    .use 208855 >>|cRXP_WARN_对|r 幼年蛇颈龙| |cRXP_WARN_使用|cRXP_ENEMY_ |T237270:0|t[彩鳍鱼食] r |r来获得|r |T134419:0|t[|cRXP_FRIENDLY_割伤符文|r]
+    .use 208855 >> |cRXP_WARN_对|r 幼年蛇颈龙| |cRXP_WARN_使用|cRXP_ENEMY_ |T237270:0|t[彩鳍鱼食] r |r来获得|r |T134419:0|t[|cRXP_FRIENDLY_割伤符文|r]
     .collect 208687,1 -- Rune of Lacerate (1)
     .target Young Threshadon
     .train 416049,1
 step << Druid
     #season 2
-    .train 416049 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_割伤符文|r] |cRXP_WARN_来学习|r |T132131:0|t[割伤]
+    .train 416049 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_割伤符文|r] |cRXP_WARN_来学习|r |T132131:0|t[割伤]
     .use 208687
     .itemcount 208687,1
 ]])
@@ -272,7 +272,7 @@ step << Druid
     .goto Mulgore,45.09,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_加尔特|r 对话
     .accept 77648 >>接受任务 牛头人的圣物
-    .trainer >>训练你的职业法术。确保你学会 |T136096:0|t[月火术]
+    .trainer >> 训练你的职业法术。确保你学会 |T136096:0|t[月火术]
     .target 加尔特·迷雾行者
 step << Druid
     #season 2
@@ -283,7 +283,7 @@ step << Druid
     .train 410061,1
 step << Druid
     #season 2
-    .equip 18,208414 >>|cRXP_WARN_装备|r |T134903:0|t[|cRXP_FRIENDLY_月光神像|r]
+    .equip 18,208414 >> |cRXP_WARN_装备|r |T134903:0|t[|cRXP_FRIENDLY_月光神像|r]
     .use 208414
     .train 410061,1
 step << Druid
@@ -327,7 +327,7 @@ step
     .train 410025,1
 step
     #season 2
-    .equip 18,206954 >>|cRXP_WARN_装备|r |T134903:0|t[|cRXP_FRIENDLY_怒熊神像|r]
+    .equip 18,206954 >> |cRXP_WARN_装备|r |T134903:0|t[|cRXP_FRIENDLY_怒熊神像|r]
     .use 206954
     .train 410025,1
 step
@@ -335,7 +335,7 @@ step
     +|cRXP_WARN_保持50点以上的怒气至少60秒，以学习|r |T132135:0|t[割碎]
 step
     #season 2
-    .train 410025 >>|cRXP_WARN_使用|r |T134903:0|t[|cRXP_FRIENDLY_怒熊神像|r] |cRXP_WARN_来学习|r |T132135:0|t[割碎]
+    .train 410025 >> |cRXP_WARN_使用|r |T134903:0|t[|cRXP_FRIENDLY_怒熊神像|r] |cRXP_WARN_来学习|r |T132135:0|t[割碎]
     .use 206954
     .itemcount 206954,1
 
@@ -362,7 +362,7 @@ step
     .train 416044,1
 step
     #season 2
-    .train 416044 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_日灼符文|r] |cRXP_WARN_来训练|r |T236216:0|t[阳炎术]
+    .train 416044 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_日灼符文|r] |cRXP_WARN_来训练|r |T236216:0|t[阳炎术]
     .use 206989
     .itemcount 206989,1
 
@@ -389,7 +389,7 @@ step
     .train 410033,1
 step << Druid
     #season 2
-    .train 410033 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_生命符文|r] |cRXP_WARN_来学习|r |T134206:0|t[生命绽放]
+    .train 410033 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_生命符文|r] |cRXP_WARN_来学习|r |T134206:0|t[生命绽放]
     .use 206970
     .itemcount 206970,1
 
@@ -440,7 +440,7 @@ step
     .train 416050,1
 step
     #season 2
-    .train 416050 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_自然潜能符文|r] |cRXP_WARN_来训练|r |T136152:0|t[生命之种]
+    .train 416050 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_自然潜能符文|r] |cRXP_WARN_来训练|r |T136152:0|t[生命之种]
     .use 206963
     .itemcount 206963,1
 
@@ -479,7 +479,7 @@ step
     .train 416049,1
 step
     #season 2
-    .train 416049 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_割伤符文|r] |cRXP_WARN_来学习|r |T132131:0|t[割伤]
+    .train 416049 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_割伤符文|r] |cRXP_WARN_来学习|r |T132131:0|t[割伤]
     .use 208687 --Rune of Lacerate (1)
     .itemcount 208687,1
 ]])
@@ -531,7 +531,7 @@ step
     .train 407988,1
 step
     #season 2
-    .equip 18,208689 >>|cRXP_WARN_装备|r |T132942:0|t[|cRXP_FRIENDLY_野性神像|r]
+    .equip 18,208689 >> |cRXP_WARN_装备|r |T132942:0|t[|cRXP_FRIENDLY_野性神像|r]
     .use 208689
     .itemcount 208689,1
     .train 407988,1
@@ -559,7 +559,7 @@ step
 step
     #optional
     .train 424760,1
-    .train 5209 >>|cRXP_WARN_你必须先学会|r |T132117:0|t[挑战咆哮] |cRXP_WARN_才能获得|r |T236149:0|t[狂暴] |cRXP_WARN_符文|r
+    .train 5209 >> |cRXP_WARN_你必须先学会|r |T132117:0|t[挑战咆哮] |cRXP_WARN_才能获得|r |T236149:0|t[狂暴] |cRXP_WARN_符文|r
 step
     #completewith next
     .train 424760,1
@@ -567,12 +567,12 @@ step
 step
     .train 424760,1
     .goto Thousand Needles,68.690,55.155
-    .aura 435081 >>|cRXP_WARN_站在|cRXP_PICK_野蛮塑像|r 雕像旁可获得|r |T134912:0|t[野蛮塑像] |cRXP_WARN_buff|r
+    .aura 435081 >> |cRXP_WARN_站在|cRXP_PICK_野蛮塑像|r 雕像旁可获得|r |T134912:0|t[野蛮塑像] |cRXP_WARN_buff|r
 step
     #completewith next
     .train 424760,1
     .goto Thousand Needles,68.690,55.155
-    .cast 5209 >>|cRXP_WARN_进入|r |T132276:0|t[熊形态] |cRXP_WARN_并施放|r |T132117:0|t[挑战咆哮] |cRXP_WARN_以召唤|r |cRXP_ENEMY_扎恩基|r |cRXP_WARN_（28级精英）|r
+    .cast 5209 >> |cRXP_WARN_进入|r |T132276:0|t[熊形态] |cRXP_WARN_并施放|r |T132117:0|t[挑战咆哮] |cRXP_WARN_以召唤|r |cRXP_ENEMY_扎恩基|r |cRXP_WARN_（28级精英）|r
 step
     .train 424760,1
     .goto Thousand Needles,68.690,55.155
@@ -581,18 +581,18 @@ step
     .mob Zai'enki
 step
     .train 424760,1
-    .equip 18,213594 >>装备 |T134912:0|t[|cRXP_FRIENDLY_非难神像|r]
+    .equip 18,213594 >> 装备 |T134912:0|t[|cRXP_FRIENDLY_非难神像|r]
     .use 213594
 step
     #title 获得5层 |T237556:0|t[积累灵感]
     .itemcount 213594,1
     .train 424760,1
-    .aura 408828 >>|cRXP_WARN_施放|r |T132117:0|t[挑战咆哮] |cRXP_WARN_嘲讽至少 2 个敌人，并在它们带有|r |T132117:0|t[挑战咆哮] |cRXP_WARN_debuff 时击杀其中一个。这将使你获得一层|r |T237556:0|t[积累灵感] |cRXP_WARN_buff。重复此操作 5 次，直到你获得|r |T136116:0|t[灵感勃发] |cRXP_WARN_buff|r
+    .aura 408828 >> |cRXP_WARN_施放|r |T132117:0|t[挑战咆哮] |cRXP_WARN_嘲讽至少 2 个敌人，并在它们带有|r |T132117:0|t[挑战咆哮] |cRXP_WARN_debuff 时击杀其中一个。这将使你获得一层|r |T237556:0|t[积累灵感] |cRXP_WARN_buff。重复此操作 5 次，直到你获得|r |T136116:0|t[灵感勃发] |cRXP_WARN_buff|r
     *|cRXP_WARN_建议你先与一个小怪战斗并将其打到即将死亡，然后拉来第二个并施放|r |T132117:0|t[挑战咆哮]|cRXP_WARN_，然后击杀低生命值的小怪。如果你死亡，你将失去所有|r |T237556:0|t[积累灵感] |cRXP_WARN_的层数|r
 step
     .itemcount 213594,1
     .use 213594
-    .train 424760 >>|cRXP_WARN_使用|r |T134912:0|t[|cRXP_FRIENDLY_非难神像|r] |cRXP_WARN_来训练|r |T236149:0|t[狂暴]
+    .train 424760 >> |cRXP_WARN_使用|r |T134912:0|t[|cRXP_FRIENDLY_非难神像|r] |cRXP_WARN_来训练|r |T236149:0|t[狂暴]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -652,12 +652,12 @@ step
     .goto Dustwallow Marsh,43.6,41.0,40,0
     .goto Dustwallow Marsh,40.91,43.52,40,0
     .collect 212693,1
-    .accept 79348 >>接受任务 失落的古树
+    .accept 79348 >> 接受任务 失落的古树
     .mob Rotting Ancient
 step
     #completewith next
     .train 410059,1
-    .zone Moonglade >>使用 |T135758:0|t[传送：月光林地]
+    .zone Moonglade >> 使用 |T135758:0|t[传送：月光林地]
 step
     #completewith next
     +|cRXP_WARN_你必须严格遵守接下来的每一项指引。死亡、切换位面、接受召唤、使用传送或获得“无荣誉目标”buff都可能导致任务失败（你会失去该Buff），因此请勿使用任何前往争夺中地区的飞行点。|r
@@ -674,7 +674,7 @@ step << Alliance
     .train 410059,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_辛德拉尔|r 对话
     .goto Moonglade,48.11,67.37
-    .fly Auberdine >>飞往奥伯丁
+    .fly Auberdine >>飞往奥伯丁，黑海岸
     .target 辛德拉尔
 step << Alliance
     .train 410059,1
@@ -754,7 +754,7 @@ step << Horde
     .target 塔尔
 step << Horde
     .goto The Barrens,63.677,38.618
-    .zone Stranglethorn Vale >>乘船前往藏宝海湾。|cRXP_WARN_在船开始移动后小退，等待40秒后再重新登录|r
+    .zone Stranglethorn Vale >> 乘船前往藏宝海湾。|cRXP_WARN_在船开始移动后小退，等待40秒后再重新登录|r
 step << Horde
     .train 410059,1
     >>在 |cRXP_FRIENDLY_古树树苗|r 上使用 |T132852:0|t[艾露恩之水]
@@ -806,7 +806,7 @@ step << Horde
 step
     #completewith next
     .train 410059,1
-    .zone Moonglade >>使用 |T135758:0|t[传送：月光林地]
+    .zone Moonglade >> 使用 |T135758:0|t[传送：月光林地]
 step
     .train 410059,1
     .goto Moonglade,41.48,43.64
@@ -829,23 +829,23 @@ RXPGuides.RegisterGuide([[
 step
     #optional
     .train 431468,1
-    .train 2728 >>|cRXP_WARN_你必须先学会|r |T135952:0|t[解除诅咒] |cRXP_WARN_才能获得|r |T134222:0|t[百花齐放] |cRXP_WARN_符文|r
+    .train 2728 >> |cRXP_WARN_你必须先学会|r |T135952:0|t[解除诅咒] |cRXP_WARN_才能获得|r |T134222:0|t[百花齐放] |cRXP_WARN_符文|r
 step
     #optional
     .train 431468,1
-    .train 8946 >>|cRXP_WARN_你必须先学会|r |T136067:0|t[疗毒] |cRXP_WARN_才能获得|r |T134222:0|t[百花齐放] |cRXP_WARN_符文|r
+    .train 8946 >> |cRXP_WARN_你必须先学会|r |T136067:0|t[疗毒] |cRXP_WARN_才能获得|r |T134222:0|t[百花齐放] |cRXP_WARN_符文|r
 step
     #optional
     .train 431468,1
-    .train 16914 >>|cRXP_WARN_你必须先学会|r |T136018:0|t[飓风] |cRXP_WARN_才能获得|r |T134222:0|t[百花齐放] |cRXP_WARN_符文|r
+    .train 16914 >> |cRXP_WARN_你必须先学会|r |T136018:0|t[飓风] |cRXP_WARN_才能获得|r |T134222:0|t[百花齐放] |cRXP_WARN_符文|r
 step
     #optional
     .train 431468,1
-    .train 740 >>|cRXP_WARN_你必须先学会|r |T136107:0|t[宁静] |cRXP_WARN_才能获得|r |T134222:0|t[百花齐放] |cRXP_WARN_符文|r
+    .train 740 >> |cRXP_WARN_你必须先学会|r |T136107:0|t[宁静] |cRXP_WARN_才能获得|r |T134222:0|t[百花齐放] |cRXP_WARN_符文|r
 step
     #optional
     .train 431468,1
-    .train 768 >>|cRXP_WARN_你必须先学会|r |T132115:0|t[猎豹形态] |cRXP_WARN_才能获得|r |T134222:0|t[百花齐放] |cRXP_WARN_符文|r
+    .train 768 >> |cRXP_WARN_你必须先学会|r |T132115:0|t[猎豹形态] |cRXP_WARN_才能获得|r |T134222:0|t[百花齐放] |cRXP_WARN_符文|r
 step
     #completewith next
     .zone Feralas >>前往菲拉斯
@@ -985,7 +985,7 @@ step
 step
     .itemcount 220754,1
     .use 220754
-    .train 431451 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_疾风狂岚符文|r] |cRXP_WARN_来训练|r |T236154:0|t[烈风]
+    .train 431451 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_疾风狂岚符文|r] |cRXP_WARN_来训练|r |T236154:0|t[烈风]
 
 ]])
 
@@ -1039,7 +1039,7 @@ step
 step
     .itemcount 221020,1
     .use 221020
-    .train 416051 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_疾风狂岚符文|r] |cRXP_WARN_来训练|r |T236154:0|t[烈风]
+    .train 416051 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_疾风狂岚符文|r] |cRXP_WARN_来训练|r |T236154:0|t[烈风]
 ]])
 
 -- RXPGuides.RegisterGuide([[
@@ -1063,7 +1063,7 @@ RXPGuides.RegisterGuide([[
 step
     #optional
     .train 431449,1
-    .train 22812 >>|cRXP_WARN_你必须先学会|r |T136097:0|t[树皮术] |cRXP_WARN_才能获得|r |T136097:0|t[强化树皮术] |cRXP_WARN_符文|r
+    .train 22812 >> |cRXP_WARN_你必须先学会|r |T136097:0|t[树皮术] |cRXP_WARN_才能获得|r |T136097:0|t[强化树皮术] |cRXP_WARN_符文|r
 step
     #completewith next
     .zone Tanaris >>前往塔纳利斯
@@ -1088,7 +1088,7 @@ step
 step
     .itemcount 221020,1
     .use 221020
-    .train 431449 >>|cRXP_WARN_使用|r |T136061:0|t[|cRXP_FRIENDLY_狂怒蹒跚者神像|r] |cRXP_WARN_来学习|r |T136097:0|t[强化树皮术]
+    .train 431449 >> |cRXP_WARN_使用|r |T136061:0|t[|cRXP_FRIENDLY_狂怒蹒跚者神像|r] |cRXP_WARN_来学习|r |T136097:0|t[强化树皮术]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1113,14 +1113,14 @@ step
     .mob Ravasaur
 step
     .train 439765,1
-    .equip 18,227444 >>装备 |T134912:0|t[|cRXP_FRIENDLY_女猎手神像|r]
+    .equip 18,227444 >> 装备 |T134912:0|t[|cRXP_FRIENDLY_女猎手神像|r]
     .use 227444
 step
     .goto Un'Goro Crater,68.0,51.4
     #title 获得5层 |T237556:0|t[积累灵感]
     .itemcount 227444,1
     .train 439765,1
-    .aura 408828 >>|cRXP_WARN_攻击|cRXP_ENEMY_暴掠龙|r，将其血量削减至约5-10%，并确保对其叠满5星连击点数|r
+    .aura 408828 >> |cRXP_WARN_攻击|cRXP_ENEMY_暴掠龙|r，将其血量削减至约5-10%，并确保对其叠满5星连击点数|r
     >>|cRXP_WARN_一旦它们的血量降至 5-10%，施放|r|T136090:0|t[休眠]|cRXP_WARN_，然后变形为|r|T132115:0|t[猎豹形态]|cRXP_WARN_并施放|r|T132127:0|t[凶猛撕咬]|cRXP_WARN_将其击杀，以此获得一层|r|T237556:0|t[积累灵感]
     >>|cRXP_WARN_重复此过程5次|r
     .mob Venomhide Ravasaur
@@ -1129,7 +1129,7 @@ step
 step
     .itemcount 227444,1
     .use 227444
-    .train 439765 >>|cRXP_WARN_使用 |r |T134912:0|t[|cRXP_FRIENDLY_女猎手神像|r] |cRXP_WARN_来训练 |r |T134296:0|t[强化横扫]
+    .train 439765 >> |cRXP_WARN_使用 |r |T134912:0|t[|cRXP_FRIENDLY_女猎手神像|r] |cRXP_WARN_来训练 |r |T134296:0|t[强化横扫]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1159,7 +1159,7 @@ step
 step
     .itemcount 227746,1
     .use 227746
-    .train 439767 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_世界之树符文|r] |cRXP_WARN_来学习|r |T132145:0|t[生命之树]
+    .train 439767 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_世界之树符文|r] |cRXP_WARN_来学习|r |T132145:0|t[生命之树]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1187,5 +1187,5 @@ step
 step
     .itemcount 227749,1
     .use 227749
-    .train 439770 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_坠落星辰符文|r] |cRXP_WARN_来学习|r |T236168:0|t[星辰坠落]
+    .train 439770 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_坠落星辰符文|r] |cRXP_WARN_来学习|r |T236168:0|t[星辰坠落]
 ]])

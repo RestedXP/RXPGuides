@@ -18,7 +18,7 @@ step
 step
     #completewith LibramS
     #label Elwynn1
-    .zone Elwynn Forest >>前往艾尔文森林
+    .zone Elwynn Forest >> 前往艾尔文森林
     .train 410002,1
     .xp <4,1
 step
@@ -33,7 +33,7 @@ step
 step
     .goto Elwynn Forest,50.433,42.124
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨缪尔修士|r 对话
-    .train 20271 >>学习 |T135959:0|t[审判]
+    .train 20271 >> 学习 |T135959:0|t[审判]
     .target 萨缪尔修士
     .train 410002,1
     .xp <4,1
@@ -53,7 +53,7 @@ step
     .train 410002,1
     .xp <4,1
 step
-    .equip 18,205420 >>|cRXP_WARN_装备|r|T134916:0|t|cRXP_LOOT_[审判圣契]|r
+    .equip 18,205420 >> |cRXP_WARN_装备|r|T134916:0|t|cRXP_LOOT_[审判圣契]|r
     .use 205420
     .itemcount 205420,1 --Libram of Judgement (1)
 --XX  .itemStat 18,QUALITY,<2 would bug it if someone has a Libram in the slot already
@@ -97,7 +97,7 @@ step
 step
     #completewith LibramS
     #label Dun1
-    .zone Dun Morogh >>前往 丹莫罗
+    .zone Dun Morogh >> 前往 丹莫罗
     .train 410002,1
     .xp <4,1
 step
@@ -112,7 +112,7 @@ step
 step
     .goto Dun Morogh,28.833,68.332
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布罗莫斯·格鲁诺尔|r对话
-    .train 20271 >>学习 |T135959:0|t[审判]
+    .train 20271 >> 学习 |T135959:0|t[审判]
     .target 布罗莫斯·格鲁诺尔
     .train 410002,1
     .xp <4,1
@@ -131,7 +131,7 @@ step
     .train 410002,1
     .xp <4,1
 step
-    .equip 18,205420 >>|cRXP_WARN_装备|r|T134916:0|t|cRXP_LOOT_[审判圣契]|r
+    .equip 18,205420 >> |cRXP_WARN_装备|r|T134916:0|t|cRXP_LOOT_[审判圣契]|r
     .use 205420
     .itemcount 205420,1 --Libram of Judgement (1)
     .train 410002,1
@@ -185,14 +185,14 @@ step
 step
     .goto Ironforge,23.131,6.143
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
-    .train 853 >>训练 |T135963:0|t[正义之锤号]
+    .train 853 >> 训练 |T135963:0|t[正义之锤号]
     .target 布兰度尔·铁锤
     .train 410001,1
     .xp <8,1
 step
     #completewith LibramS
     #label Loch1
-    .zone Loch Modan >>前往洛克莫丹
+    .zone Loch Modan >> 前往洛克莫丹
     .train 410001,1
     .xp <8,1
 step
@@ -221,7 +221,7 @@ step
     .train 410001,1
     .xp <8,1
 step
-    .equip 18,205420 >>|cRXP_WARN_装备|r |T134916:0|t|cRXP_LOOT_[公正圣契]|r
+    .equip 18,205420 >> |cRXP_WARN_装备|r |T134916:0|t|cRXP_LOOT_[公正圣契]|r
     .use 208851
     .itemcount 208851,1 --Libram of Justice (1)
     .train 410001,1
@@ -294,7 +294,7 @@ step
     .xp >22,1
 step
     #completewith next
-    .zone Wetlands >>前往湿地
+    .zone Wetlands >> 前往湿地
     .itemStat 18,QUALITY,2
     .aura 408828
     .train 410001,1
@@ -361,13 +361,13 @@ step
 step
     .goto StormwindClassic,38.67,32.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
-    .train 853 >>训练 |T135963:0|t[制裁之锤]
+    .train 853 >> 训练 |T135963:0|t[制裁之锤]
     .target 虔诚的亚瑟
     .train 410001,1
     .xp <8,1
 step
     #completewith next
-    .zone Westfall >>前往西部荒野
+    .zone Westfall >> 前往西部荒野
     .train 410001,1
     .xp <8,1
 step
@@ -385,7 +385,7 @@ step
     .xp <8,1
 --XX Venture Co. Drones drop it too?
 step
-    .equip 18,205420 >>|cRXP_WARN_装备|r |T134916:0|t|cRXP_LOOT_[公正圣契]|r
+    .equip 18,205420 >> |cRXP_WARN_装备|r |T134916:0|t|cRXP_LOOT_[公正圣契]|r
     .use 208851
     .itemcount 208851,1 --Libram of Justice (1)
     .train 410001,1
@@ -477,14 +477,14 @@ step
 step
     .goto Ironforge,23.131,6.143
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
-    .train 19740 >>学习 |T135906:0|t[力量祝福]
+    .train 19740 >> 学习 |T135906:0|t[力量祝福]
     .target 布兰度尔·铁锤
     .train 425618,1
     .xp <4,1
 step
     #completewith next
     #label Loch1
-    .zone Loch Modan >>前往洛克莫丹
+    .zone Loch Modan >> 前往洛克莫丹
     .train 425618,1
     .xp <4,1
 step
@@ -513,7 +513,7 @@ step
     .train 425618,1
     .xp <4,1
 step
-    .equip 18,208849 >>|cRXP_WARN_装备|r |T134916:0|t|cRXP_LOOT_[祝福圣契]|r
+    .equip 18,208849 >> |cRXP_WARN_装备|r |T134916:0|t|cRXP_LOOT_[祝福圣契]|r
     .use 208849
     .itemcount 208849,1 --Libram of Blessings (1)
     .train 425618,1
@@ -572,8 +572,8 @@ step
 step
     .goto StormwindClassic,38.67,32.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
-    .train 20271 >>学习 |T135959:0|t[审判]
-    .train 19740 >>学习 |T135906:0|t[力量祝福]
+    .train 20271 >> 学习 |T135959:0|t[审判]
+    .train 19740 >> 学习 |T135906:0|t[力量祝福]
     .target 虔诚的亚瑟
     .train 425618,1
     .xp <4,1
@@ -618,7 +618,7 @@ step
     .train 425618,1
     .xp <4,1
 step
-    .equip 18,208849 >>|cRXP_WARN_装备|r |T134916:0|t|cRXP_LOOT_[祝福圣契]|r
+    .equip 18,208849 >> |cRXP_WARN_装备|r |T134916:0|t|cRXP_LOOT_[祝福圣契]|r
     .use 208849
     .itemcount 208849,1 --Libram of Blessings (1)
     .train 425618,1
@@ -669,14 +669,14 @@ step
 step
     .goto StormwindClassic,38.67,32.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
-    .train 1152 >>训练 |T135949:0|t[纯净术]
+    .train 1152 >> 训练 |T135949:0|t[纯净术]
     .target 虔诚的亚瑟
     .train 425619,1
     .xp <8,1
 step
     #completewith next
     #label Elwynn1
-    .zone Elwynn Forest >>前往艾尔文森林
+    .zone Elwynn Forest >> 前往艾尔文森林
     .train 425619,1
     .xp <8,1
 step
@@ -694,7 +694,7 @@ step
     .goto Elwynn Forest,60.73,50.83,8,0
     .goto Elwynn Forest,61.22,51.51,8,0
     .goto Elwynn Forest,61.44,52.64,8,0
-    .goto Elwynn Forest,61.97,47.31,12 >>去找在洞穴地面的 |cRXP_FRIENDLY_受伤的冒险者|r
+    .goto Elwynn Forest,61.97,47.31,12 >> 去找在洞穴地面的 |cRXP_FRIENDLY_受伤的冒险者|r
     .target Wounded Adventurer
     .train 425619,1
     .xp <8,1
@@ -747,18 +747,18 @@ step
 step
     .goto Ironforge,23.131,6.143
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
-    .train 1152 >>训练 |T135949:0|t[纯净术]
+    .train 1152 >> 训练 |T135949:0|t[纯净术]
     .target 布兰度尔·铁锤
     .train 425619,1
     .xp <8,1
 step
     #completewith next
-    .zone Dun Morogh >>前往 丹莫罗
+    .zone Dun Morogh >> 前往 丹莫罗
     .train 425619,1
     .xp <8,1
 step
     #label LibramS
-    .goto Dun Morogh,25.57,43.37,40 >>去找地上 |cRXP_FRIENDLY_受伤的冒险者|r
+    .goto Dun Morogh,25.57,43.37,40 >> 去找地上 |cRXP_FRIENDLY_受伤的冒险者|r
     .target Wounded Adventurer
     .train 425619,1
     .xp <8,1
@@ -871,7 +871,7 @@ step
 --XX Must have had the Charred Note to unlock the dialogue
 step
     #sticky
-    .destroy 205864 >>从背包中摧毁|T134939:0|t[烧焦的笔记]，因为不再需要了
+    .destroy 205864 >> 从背包中摧毁|T134939:0|t[烧焦的笔记]，因为不再需要了
 step
     .train 410015 >>|cRXP_WARN_使用|r |T134419:0|t[神圣之光符文] |cRXP_WARN_学习|r |T133815:0|t[铭刻胸甲 - 神圣之光]
     .use 205897
@@ -895,7 +895,7 @@ step
 step
     #completewith LibramS
     #label DarkshoreT
-    .zone Darkshore >>前往黑海岸
+    .zone Darkshore >> 前往黑海岸
     .train 410014,1
 step
     #completewith next
@@ -913,7 +913,7 @@ step
 step
     #completewith Delgren1
     #label AshenvaleT
-    .zone Ashenvale >>前往灰谷
+    .zone Ashenvale >> 前往灰谷
     .train 410014,1
 step
     #completewith next
@@ -923,8 +923,8 @@ step
 step
     .goto Ashenvale,26.19,38.69
     >>与|cRXP_FRIENDLY_净化者德尔格伦|r 对话
-    .turnin 78088 >>交任务 奇怪的神器
-    .accept 78089 >>接受任务 暴风城的建议
+    .turnin 78088 >> 交任务 奇怪的神器
+    .accept 78089 >> 接受任务 暴风城的建议
     .target 净化者德尔格伦
     .train 410014,1
     .itemcount 209836,1 --Athalaxx Orb (1)
@@ -932,14 +932,14 @@ step
     #label Delgren1
     .goto Ashenvale,26.19,38.69
     >>与|cRXP_FRIENDLY_净化者德尔格伦|r 对话
-    .accept 78089 >>接受任务 暴风城的建议
+    .accept 78089 >> 接受任务 暴风城的建议
     .target 净化者德尔格伦
     .train 410014,1
     .isQuestTurnedIn 78088
 step
     #completewith Katherine1
     #label StormwindT1
-    .zone Stormwind City >>前往暴风城
+    .zone Stormwind City >> 前往暴风城
     .train 410014,1
 step
     #completewith next
@@ -953,8 +953,8 @@ step
     #label Katherine1
     .goto StormwindClassic,37.23,31.87
     >>与|cRXP_FRIENDLY_纯洁的凯萨琳|r 对话
-    .turnin 78089 >>交任务 来自暴风城的建议
-    .accept 78090 >>接受任务 第二意见
+    .turnin 78089 >> 交任务 来自暴风城的建议
+    .accept 78090 >> 接受任务 第二意见
     .target Katherine the Pure
     .train 410014,1
 step
@@ -967,15 +967,15 @@ step
 step
     .goto StormwindClassic,26.12,77.23
     >>与|cRXP_FRIENDLY_厄苏拉·德林|r 对话
-    .turnin 78090 >>交任务 第二意见
-    .accept 78091 >>接受任务 赚取你的盐分
+    .turnin 78090 >> 交任务 第二意见
+    .accept 78091 >> 接受任务 赚取你的盐分
     .target 厄苏拉·德林
     .train 410014,1
 step
     #completewith theairissalt
     .goto StormwindClassic,66.28,62.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
-    .fly Redridge >>飞往赤脊山
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_杜加尔·朗德瑞克|r 对话
+    .fly Redridge >> 飞往赤脊山
     .zoneskip Redridge Mountains
     .target 杜加尔·朗德瑞克
     .train 410014,1
@@ -1030,7 +1030,7 @@ step
 step
     #completewith Ursula1
     #label StormwindT2
-    .zone Stormwind City >>前往暴风城
+    .zone Stormwind City >> 前往暴风城
     .train 410014,1
 step
     #completewith next
@@ -1044,14 +1044,14 @@ step
     #label Ursula1
     .goto StormwindClassic,26.12,77.23
     >>与|cRXP_FRIENDLY_厄苏拉·德林|r 对话
-    .turnin 78091 >>交任务 赚取盐分
-    .accept 78092 >>接受任务 它必须被销毁
+    .turnin 78091 >> 交任务 赚取盐分
+    .accept 78092 >> 接受任务 它必须被销毁
     .target 厄苏拉·德林
     .train 410014,1
 step
     #completewith Motes
     #label AshenvaleT
-    .zone Ashenvale >>前往灰谷
+    .zone Ashenvale >> 前往灰谷
     .train 410014,1
 step
     #completewith next
@@ -1086,9 +1086,9 @@ step
     .train 410014,1
 step
     >>点击空中的 |cRXP_PICK_玛诺洛斯之矛|r，然后点击地上的 |cRXP_PICK_碎裂的宝珠|r
-    .turnin 78092 >>交任务 必毁无疑
+    .turnin 78092 >> 交任务 必毁无疑
     .goto Ashenvale,89.48,77.03
-    .accept 78093 >>接受任务 回到德格伦
+    .accept 78093 >> 接受任务 回到德格伦
     .goto Ashenvale,89.44,77.01
     .train 410014,1
 step
@@ -1098,8 +1098,8 @@ step
 step
     .goto Ashenvale,26.19,38.69
     >>与|cRXP_FRIENDLY_净化者德尔格伦|r 对话
-    .turnin 78093 >>交任务 回到德格伦
-    .train 410014 >>这将教会你 |T133815:0|t[铭刻胸甲 - 神圣风暴]
+    .turnin 78093 >> 交任务 回到德格伦
+    .train 410014 >> 这将教会你 |T133815:0|t[铭刻胸甲 - 神圣风暴]
     .target 净化者德尔格伦
     .train 410014,1
 ]])
@@ -1121,7 +1121,7 @@ step
 step
     #completewith next
     #label Elwynn1
-    .zone Elwynn Forest >>前往艾尔文森林
+    .zone Elwynn Forest >> 前往艾尔文森林
     .train 410011,1
 step
     #completewith next
@@ -1163,7 +1163,7 @@ step
 step
     #completewith LibramS
     #label Dun1
-    .zone Dun Morogh >>前往 丹莫罗
+    .zone Dun Morogh >> 前往 丹莫罗
     .train 410011,1
 step
     #completewith next
@@ -1365,13 +1365,13 @@ step
 step
     .goto StormwindClassic,38.67,32.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
-    .train 2878 >>训练 |T135983:0|t[超度亡灵]
+    .train 2878 >> 训练 |T135983:0|t[超度亡灵]
     .target 虔诚的亚瑟
     .train 416037,1
     .xp <24,1
 step
     #completewith next
-    .zone Duskwood >>前往暮色森林
+    .zone Duskwood >> 前往暮色森林
     .train 416037,1
     .xp <24,1
 step
@@ -1391,7 +1391,7 @@ step
     .train 416037,1
     .xp <24,1
 step
-    .equip 18,211472 >>|cRXP_WARN_装备|r |T134916:0|t|cRXP_LOOT_[逐魔圣契]|r
+    .equip 18,211472 >> |cRXP_WARN_装备|r |T134916:0|t|cRXP_LOOT_[逐魔圣契]|r
     .use 211472
     .itemcount 211472,1 -- Libram of Banishment (1)
     .train 416037,1
@@ -1434,7 +1434,7 @@ step
     .xp >25,1
 step
     #completewith next
-    .zone Redridge Mountains >>前往赤脊山
+    .zone Redridge Mountains >> 前往赤脊山
     .train 410008,1
 step
     #label LibramS
@@ -1663,7 +1663,7 @@ step
     .zone Stormwind City >>前往暴风城
 step
     #completewith Katherine
-    .goto StormwindClassic,42.51,33.51,20 >>前往暴风城大教堂
+    .goto StormwindClassic,42.51,33.51,20 >> 前往暴风城大教堂
 step
     .train 426178,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_纯洁的凯瑟琳|r对话
@@ -1687,16 +1687,16 @@ step
     .isQuestTurnedIn 79940
     .train 426178,1
     .goto Wetlands,8.086,58.592
-    .gossip 3179,4 >>与|cRXP_FRIENDLY_哈洛德·李格斯|r 对话。确保点完他所有的对话选项
+    .gossip 3179,4 >> 与|cRXP_FRIENDLY_哈洛德·李格斯|r 对话。确保点完他所有的对话选项
     .skipgossip 3179,2
     .target Harold Riggs
 step
     #completewith next
-    .goto 1415,41.937,58.932,40 >>|cRXP_WARN_向南游，一路绕行到丹莫罗。你很快就需要击杀一只40级的精英怪。建议组个队友一起完成这一步！|r
+    .goto 1415,41.937,58.932,40 >> |cRXP_WARN_向南游，一路绕行到丹莫罗。你很快就需要击杀一只40级的精英怪。建议组个队友一起完成这一步！|r
 step
     .train 426178,1
     .goto 1415,41.937,58.932
-    .gossip 217957 >>与建筑内的|cRXP_FRIENDLY_被害的血色十字军战士|r 对话
+    .gossip 217957 >> 与建筑内的|cRXP_FRIENDLY_被害的血色十字军战士|r 对话
     >>|cRXP_WARN_这会召唤出一只40级的精英|r|cRXP_ENEMY_血色十字军刺客|r
     .target Slain Scarlet Crusader
 step
@@ -1712,7 +1712,7 @@ step
     .zone Stormwind City >>前往暴风城
 step
     #completewith Katherine2
-    .goto StormwindClassic,42.51,33.51,20 >>前往暴风城大教堂
+    .goto StormwindClassic,42.51,33.51,20 >> 前往暴风城大教堂
 step
     .train 426178,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_纯洁的凯瑟琳|r 对话
@@ -1752,13 +1752,13 @@ step
     .zone Stormwind City >>前往暴风城
 step
     #completewith Aeonas
-    .goto StormwindClassic,42.51,33.51,20 >>前往暴风城大教堂
+    .goto StormwindClassic,42.51,33.51,20 >> 前往暴风城大教堂
 step
     #label Aeonas
     .goto Stormwind City,37.355,31.708
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_洗冤者埃欧纳斯|r 对话
-    .turnin 79970 >>交任务 洗刷冤屈的艾奥纳斯
-    .train 426178 >>训练 |T236263:0|t[圣光出鞘]
+    .turnin 79970 >> 交任务 洗刷冤屈的艾奥纳斯
+    .train 426178 >> 训练 |T236263:0|t[圣光出鞘]
     .target Aeonas the Vindicated
 ]])
 
@@ -1777,7 +1777,7 @@ step
     .xp >30,1
 step
     .train 416035,1
-    .train 19752 >>|cRXP_WARN_你必须学习|r |T136106:0|t[神圣干涉] |cRXP_WARN_才能获得|r |T134419:0|t[|cRXP_FRIENDLY_守护者符文|r]
+    .train 19752 >> |cRXP_WARN_你必须学习|r |T136106:0|t[神圣干涉] |cRXP_WARN_才能获得|r |T134419:0|t[|cRXP_FRIENDLY_守护者符文|r]
 step
     .train 416035,1
     .collect 17033,1 >>|cRXP_BUY_从任意施法材料商|r |cRXP_BUY_购买至少一个|r |T135259:0|t[神圣符印]
@@ -1799,7 +1799,7 @@ step
     .collect 213452,1
 step
     .train 416035,1
-    .cast 19752 >>|cRXP_WARN_对一直陪伴你的朋友施放|r |T136106:0|t[神圣干涉]
+    .cast 19752 >> |cRXP_WARN_对一直陪伴你的朋友施放|r |T136106:0|t[神圣干涉]
     .usespell 19752
 step
     .train 416035,1
@@ -1827,7 +1827,7 @@ step
     .xp >18,1
 step
     .train 416028,1
-    .train 1044 >>|cRXP_WARN_你必须学习|r |T135968:0|t[自由祝福] |cRXP_WARN_才能获得|r |T236249:0|t[圣洁护盾] |cRXP_WARN_符文|r
+    .train 1044 >> |cRXP_WARN_你必须学习|r |T135968:0|t[自由祝福] |cRXP_WARN_才能获得|r |T236249:0|t[圣洁护盾] |cRXP_WARN_符文|r
 step
     .train 416028,1
     #completewith Deliverance
@@ -1844,7 +1844,7 @@ step
     .collect 213513,1
 step
     .train 416028,1
-    .equip 18,213513 >>|cRXP_WARN_装备|r |T134916:0|t[|cRXP_FRIENDLY_解脱圣契|r]
+    .equip 18,213513 >> |cRXP_WARN_装备|r |T134916:0|t[|cRXP_FRIENDLY_解脱圣契|r]
     .use 213513
 step
     .train 416028,1
@@ -1853,7 +1853,7 @@ step
     .goto Desolace,33.44,54.17,60,0
     .goto Desolace,30.33,58.26,60,0
     .goto Desolace,31.79,61.28
-    .aura 408828 >>|cRXP_WARN_当其他玩家移动受阻时|r ，对其施放|cRXP_WARN_ |T135968:0|t[自由祝福] 5次。每次成功施放，你都会获得一层|r |T237556:0|t[积累灵感] |cRXP_WARN_效果|r
+    .aura 408828 >> |cRXP_WARN_当其他玩家移动受阻时|r ，对其施放|cRXP_WARN_ |T135968:0|t[自由祝福] 5次。每次成功施放，你都会获得一层|r |T237556:0|t[积累灵感] |cRXP_WARN_效果|r
     >>|cRXP_WARN_一旦你有5层|r |T237556:0|t[积累灵感]|cRXP_WARN_，你将获得|r |T136116:0|t[灵感勃发] |cRXP_WARN_buff|r
     >>|cRXP_WARN_在玛拉顿外完成这个任务。|r |cRXP_ENEMY_玛洛迪争斗者|r |cRXP_WARN_在那里施放|r |T132149:0|t[投网]
     .mob Maraudine Wrangler
@@ -2196,12 +2196,12 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     >>|cRXP_WARN_如果你想解锁此符文，将需要击杀斯坦索姆（亡灵区）内的一个首领。现在就可以开始寻找队伍了|r
-    .zone Eastern Plaguelands >>前往东瘟疫之地
+    .zone Eastern Plaguelands >> 前往东瘟疫之地
 step
     .line Eastern Plaguelands,28.6,84.2,33.2,83.0,35.30,82.55,41.19,81.68,45.42,80.68,48.8,79.9,51.5,78.3,55.1,76.4
     >>寻找一只 |cRXP_ENEMY_错颚的食尸鬼|r。击杀他并与出现的一只矮人灵魂 |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_奥尔塔兹|r 对话。开始这个任务
     >>|cRXP_WARN_|r错颚的食尸鬼|cRXP_ENEMY_|r |cRXP_WARN_在墓穴与科林路口之间的道路以南区域巡逻|r
-    .accept 84318 >>接受任务 喂！
+    .accept 84318 >> 接受任务 喂！
     .unitscan Slack-Jawed Ghoul
     .target Orthas
 step
@@ -2211,8 +2211,8 @@ step
 step
     .goto Eastern Plaguelands,61.3,69.3
     >>使用|T134566:0|t[奥尔塔兹最爱的金牙]再次召唤|cRXP_FRIENDLY_奥尔塔兹|r。与他对话交任务并接取后续任务
-    .turnin 84318 >>交任务 喂！
-    .accept 84319 >>接受任务 想都别想
+    .turnin 84318 >> 交任务 喂！
+    .accept 84319 >> 接受任务 想都别想
     .use 227687
 step
     .goto Eastern Plaguelands,59.7,68.7
@@ -2221,8 +2221,8 @@ step
     .mob Stitched Horror
 step
     >>使用|T134566:0|t[奥尔塔兹最爱的金牙]再次召唤|cRXP_FRIENDLY_奥尔塔兹|r。与他对话交任务并接取后续任务
-    .turnin 84319 >>交任务 想都别想
-    .accept 84330 >>接受任务 一点点通灵术
+    .turnin 84319 >> 交任务 想都别想
+    .accept 84330 >> 接受任务 一点点通灵术
 step
     >>寻找一个斯坦索姆的队伍（亡灵区）
     >>击杀 |cRXP_ENEMY_苍白的玛勒基|r，他是地下城亡灵侧的首领之一，并从中拾取 |T134415:0|t[通灵符石]
@@ -2231,12 +2231,12 @@ step
 step
     .goto Eastern Plaguelands,22.7,86.1
     >>返回地下墓室，寻找|cRXP_FRIENDLY_腐败的矮人遗骨|r。与其互动以交付任务
-    .turnin 84330 >>交任务 一点点通灵术
+    .turnin 84330 >> 交任务 一点点通灵术
 step
     >>从尸体处接受任务后续任务。这是一个可以立即交付的任务，会教会你如何刻印|T236265:0|t[|cRXP_FRIENDLY_正义盾击|r]
     .goto Eastern Plaguelands,22.7,86.1
-    .accept 84332 >>接受任务 领主的感激
-    .turnin 84332 >>交任务 领主的感激
+    .accept 84332 >> 接受任务 领主的感激
+    .turnin 84332 >> 交任务 领主的感激
 
 ]])
 
@@ -2251,17 +2251,17 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Western Plaguelands >>前往西瘟疫之地
+    .zone Western Plaguelands >> 前往西瘟疫之地
 step
     .goto Western Plaguelands,44.6,46.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_堕落骑士|r 对话
-    .gossip 227519,1 >>完成他的对话
+    .gossip 227519,1 >> 完成他的对话
     .target Fallen Knight
 --Not entirely sure if you even need to talk to him or if you do how deep the dialogue is
 step
     .goto Western Plaguelands,47.5,50.4
     >>进入|cRXP_FRIENDLY_堕落骑士|r旁边的谷仓，|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_侍从库斯伯特|r 对话
-    .accept 83808 >>接受任务 陷入困境
+    .accept 83808 >> 接受任务 陷入困境
     .target Squire Cuthbert
 step
     .goto Western Plaguelands,47.5,50.4
@@ -2270,8 +2270,8 @@ step
     .complete 83808,1
 step
     >>返回谷仓并|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_侍从库斯伯特|r 对话
-    .turnin 83808 >>交任务 陷入困境
-    .accept 83935 >>接受任务 扫清道路
+    .turnin 83808 >> 交任务 陷入困境
+    .accept 83935 >> 接受任务 扫清道路
     .target Squire Cuthbert
 step
     .goto Western Plaguelands,45.7,53.9
@@ -2285,8 +2285,8 @@ step
 step
     .goto Western Plaguelands,47.5,50.4
     >>返回谷仓并|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_侍从库斯伯特|r 对话
-    .turnin 83935 >>交任务 扫清道路
-    .accept 83822,1 >>接受任务 堕落的骑士
+    .turnin 83935 >> 交任务 扫清道路
+    .accept 83822,1 >> 接受任务 堕落的骑士
     >>|cRXP_WARN_这是一个护送任务|r
     .target Squire Cuthbert
 step
@@ -2296,8 +2296,8 @@ step
 step
     .goto Western Plaguelands,44.6,46.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_侍从库斯伯特|r 对话
-    .turnin 83822 >>交任务 堕落的骑士
-    .accept 83936 >>接受任务 道尔顿的任务
+    .turnin 83822 >> 交任务 堕落的骑士
+    .accept 83936 >> 接受任务 道尔顿的任务
     .target Squire Cuthbert
 step
     .goto Western Plaguelands,44.6,46.6
@@ -2308,7 +2308,7 @@ step
     .goto Western Plaguelands,44.6,46.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与|cRXP_FRIENDLY_侍从库斯伯特|r 对话并完成他的所有对话。交任务之后，你将学会如何刻印|T236260:0|t[|cRXP_FRIENDLY_正义复仇|r]
     >>为了解锁|T237377:0|t[|cFF0070FF震慑|r] 符文，你还将获得你所需要的|T252188:0|t[|cRXP_FRIENDLY_达尔顿的号角|r]
-    .turnin 83936 >>交任务 道尔顿的任务
+    .turnin 83936 >> 交任务 道尔顿的任务
     .target Squire Cuthbert
 ]])
 
@@ -2327,21 +2327,21 @@ step
 step
     .goto Eastern Plaguelands,78.6,47.6
     >>|cRXP_WARN_使用|r |T237377:0|t[|cFF0070FF道尔顿的号角|r] |cRXP_WARN_来召唤|r |cRXP_FRIENDLY_侍从库斯伯特|r |cRXP_WARN_并击杀小怪直到他升级。升级后他会给你一个免费的交任务|r
-    .accept 83823 >>接受任务 暴力一课
-    .turnin 83823 >>交任务 暴力一课
+    .accept 83823 >> 接受任务 暴力一课
+    .turnin 83823 >> 交任务 暴力一课
     .use 226122
 step
     .goto Eastern Plaguelands,78.6,47.6
     >>|cRXP_WARN_使用|r |T237377:0|t[|cFF0070FFDalton's 角力|r] |cRXP_WARN_来召唤|r |cRXP_FRIENDLY_侍从库斯伯特|r |cRXP_WARN_并继续击杀怪物直到他再次升级。他再次升级后，会给你另一个免费的交任务，以及寻找名为|r |cRXP_ENEMY_承诅者阿寇诺斯|r 的任务
-    .accept 84008 >>接受任务 优雅一课
-    .turnin 84008 >>交任务 优雅一课
-    .accept 84017 >>接受任务 杀戮时刻
+    .accept 84008 >> 接受任务 优雅一课
+    .turnin 84008 >> 交任务 优雅一课
+    .accept 84017 >> 接受任务 杀戮时刻
     .use 226523
 step
     .goto Eastern Plaguelands,78.6,47.6
     >>|cRXP_WARN_前往毒雾林，就在圣光之愿礼拜堂北边。到达后再次召唤你的侍从。寻找阿科诺斯的任务应该会完成，随后你会接到新任务，接受它|r
-    .turnin 84017 >>交任务 杀戮时刻
-    .accept 84125 >>接受任务 触手可及
+    .turnin 84017 >> 交任务 杀戮时刻
+    .accept 84125 >> 接受任务 触手可及
     .use 226545
 step
     .goto Eastern Plaguelands,83.7,41.9
@@ -2351,8 +2351,8 @@ step
     .mob Dread Weaver
 step
     >>使用|T237377:0|t[|cFF0070FF道尔顿的号角|r]召唤|cRXP_FRIENDLY_侍从库斯伯特|r 如果你弄丢了他，与他对话
-    .turnin 84125 >>交任务 触手可及
-    .accept 84126 >>接受任务 结束战斗
+    .turnin 84125 >> 交任务 触手可及
+    .accept 84126 >> 接受任务 结束战斗
     .use 226122
     .target Squire Cuthbert
 step
@@ -2363,10 +2363,10 @@ step
 step
     >>使用|T237377:0|t[|cFF0070FF道尔顿的号角|r] 召唤 |cRXP_FRIENDLY_侍从库斯伯特|r 如果你弄丢了他，与他对话
     >>交付此任务后，你将学会如何刻印|T252188:0|t[震慑]符文，同时还将获得可以教会你|T133745:0|t[复仇之怒]的|T135875:0|t[|cRXP_FRIENDLY_论述：复仇之怒|r]
-    .turnin 84126 >>交任务 结束战斗
+    .turnin 84126 >> 交任务 结束战斗
     .use 226122
     .target Squire Cuthbert
 step
-    .train 407788 >>使用|T133745:0|t[|cRXP_FRIENDLY_论述：复仇之怒|r]来训练|T135875:0|t[复仇之怒]
+    .train 407788 >> 使用|T133745:0|t[|cRXP_FRIENDLY_论述：复仇之怒|r]来训练|T135875:0|t[复仇之怒]
     .use 226399
 ]])

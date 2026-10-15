@@ -4,9 +4,9 @@ RXPGuides.RegisterGuide([[
 #forever
 #version 1
 #beta
-#name 1-14 泽风岛
-#displayname 1-13 天裔 << Alliance
-#displayname 1-12 天裔 << Horde
+#name 1-14级 泽风岛
+#displayname 1-13级 天裔 << Alliance
+#displayname 1-12级 天裔 << Horde
 #group RestedXP魔兽世界无限地下城指南（联盟版） << Alliance
 #group RestedXP魔兽世界无限地下城指南（部落版） << Horde
 #subgroup （制作中）地下城指南 1-20级 << Alliance
@@ -15,7 +15,7 @@ RXPGuides.RegisterGuide([[
 #next “正确的西部荒野指南” << Alliance
 
 step
-#include RestedXP Forever Guide (A)\1-14 Zephras Isle
+#include RestedXP魔兽世界无限升级指南（联盟版）\1-14 泽风岛
 ]])
 
 
@@ -30,7 +30,7 @@ RXPGuides.RegisterGuide([[
 #internal
 
 step
-#include RestedXP Forever Guide (A)\Skyborne Hunter Class Quests
+#include RestedXP魔兽世界无限升级指南（联盟版）\天裔猎人职业任务
 ]])
 --Druid class quest chain
 RXPGuides.RegisterGuide([[
@@ -46,7 +46,7 @@ RXPGuides.RegisterGuide([[
 
 -- The Great Ursera Spirit (94006) is accepted from the Druid trainer in Valanaar.
 step
-#include RestedXP Forever Guide (A)\Skyborne Druid Class Quests
+#include RestedXP魔兽世界无限升级指南（联盟版）\天裔德鲁伊职业任务
 ]])
 --Random Stuff
 RXPGuides.RegisterGuide([[
@@ -62,5 +62,5 @@ RXPGuides.RegisterGuide([[
     .goto 2521,40.23,63.82 --watchtower
     .goto 2521,55.01,68.16 --gustberry highlands
 -- step
-#include RestedXP Forever Guide (A)\Random Stuff
+#include RestedXP魔兽世界无限升级指南（联盟版）\杂项
 ]])

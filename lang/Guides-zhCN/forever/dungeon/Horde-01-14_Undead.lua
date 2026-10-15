@@ -15,7 +15,7 @@ RXPGuides.RegisterGuide([[
 #next 6-12级 提瑞斯法林地
 
 step
-#include RestedXP Forever Guide (A)\1-6 Tirisfal Glades
+#include RestedXP魔兽世界无限升级指南（联盟版）\1-6级 提瑞斯法林地
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -29,10 +29,10 @@ RXPGuides.RegisterGuide([[
 #subgroup （制作中）地下城指南 1-22级
 --#groupid RXP-SRGCE-H1
 #defaultfor Undead
-#next 12-14 银松森林；12-17 贫瘠之地
+#next 12-14级 银松森林; 12-17级 贫瘠之地
 
 step
-#include RestedXP Forever Guide (A)\6-12 Tirisfal Glades
+#include RestedXP魔兽世界无限升级指南（联盟版）\6-12级 提瑞斯法林地
 ]])
 
 
@@ -52,5 +52,5 @@ RXPGuides.RegisterGuide([[
 
 
 step
-#include RestedXP Forever Guide (A)\12-14 Silverpine Forest
+#include RestedXP魔兽世界无限升级指南（联盟版）\12-14级 银松森林
 ]])

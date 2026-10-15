@@ -16,7 +16,7 @@ RXPGuides.RegisterGuide([[
 
 
 step
-#include RestedXP Forever Guide (A)\1-6 Durotar
+#include RestedXP魔兽世界无限升级指南（联盟版）\1-6级 杜隆塔尔
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -32,7 +32,7 @@ RXPGuides.RegisterGuide([[
 #next 10-12级 杜隆塔尔
 
 step
-#include RestedXP Forever Guide (A)\6-10 Durotar
+#include RestedXP魔兽世界无限升级指南（联盟版）\6-10级 杜隆塔尔
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -50,7 +50,7 @@ RXPGuides.RegisterGuide([[
 
 
 step
-#include RestedXP Forever Guide (A)\10-12 Durotar
+#include RestedXP魔兽世界无限升级指南（联盟版）\10-12级 杜隆塔尔
 ]])
 
 
@@ -67,5 +67,5 @@ RXPGuides.RegisterGuide([[
 #next 12-14级 银松森林 << !Hunter !Shaman !Tauren !Skyborne !Undead
 
 step
-#include RestedXP Forever Guide (A)\10-12 Tirisfal (Orc/Troll)
+#include RestedXP魔兽世界无限升级指南（联盟版）\10-12级 提瑞斯法 （兽人/巨魔）
 ]])

@@ -22,18 +22,18 @@ step << Druid/Hunter
     .train 410110,1 << Hunter
 step << Druid/Hunter
     .goto Darkshore,35.8,55.6
-    .use 209027 >>|cRXP_WARN_对 |r |T237270:0|t[|cRXP_LOOT_暗礁蟹幼崽|r] |cRXP_WARN_使用 |cRXP_ENEMY_螃蟹点心|r 来获得|r |T134419:0|t[|cRXP_FRIENDLY_割伤符文|r] << Druid
-    .use 209027 >>|cRXP_WARN_对 |r |T237270:0|t[|cRXP_LOOT_暗礁蟹幼崽|r] |cRXP_WARN_使用 |cRXP_ENEMY_螃蟹点心|r 来获得|r |T134419:0|t[|cRXP_FRIENDLY_野兽控制符文|r] << Hunter
+    .use 209027 >> |cRXP_WARN_对 |r |T237270:0|t[|cRXP_LOOT_暗礁蟹幼崽|r] |cRXP_WARN_使用 |cRXP_ENEMY_螃蟹点心|r 来获得|r |T134419:0|t[|cRXP_FRIENDLY_割伤符文|r] << Druid
+    .use 209027 >> |cRXP_WARN_对 |r |T237270:0|t[|cRXP_LOOT_暗礁蟹幼崽|r] |cRXP_WARN_使用 |cRXP_ENEMY_螃蟹点心|r 来获得|r |T134419:0|t[|cRXP_FRIENDLY_野兽控制符文|r] << Hunter
     .collect 208687,1 << Druid -- Rune of Lacerate (1)
     .collect 208701,1 << Hunter -- Beast Mastery (1)
     .target 暗礁蟹幼崽
     .train 416049,1 << Druid
     .train 410110,1 << Hunter
 step << Druid/Hunter
-    .train 416049 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_割伤符文|r] |cRXP_WARN_来学习|r |T132131:0|t[割伤] << Druid
+    .train 416049 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_割伤符文|r] |cRXP_WARN_来学习|r |T132131:0|t[割伤] << Druid
     .use 208687 << Druid
     .itemcount 208687,1 << Druid
-    .train 410110 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_野兽控制符文|r] |cRXP_WARN_来训练|r |T132270:0|t[野兽控制] << Hunter
+    .train 410110 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_野兽控制符文|r] |cRXP_WARN_来训练|r |T132270:0|t[野兽控制] << Hunter
     .use 208701 << Hunter
     .itemcount 208701,1 << Hunter
 ]])
@@ -57,7 +57,7 @@ step
 step
     #completewith Rune
     #label Teld1
-    .zone Teldrassil >>前往泰达希尔
+    .zone Teldrassil >> 前往泰达希尔
     .subzoneskip 262
     .train 410025,1 << Druid
     .train 410123,1 << Hunter
@@ -67,7 +67,7 @@ step
     #label ShadowCave1
     #completewith Rune
     .goto 1438,44.197,58.040
-    .subzone 262 >>进入班奈希尔兽穴
+    .subzone 262 >> 进入班奈希尔兽穴
     .train 410025,1 << Druid
     .train 410123,1 << Hunter
 step
@@ -86,7 +86,7 @@ step
     .goto 1438,43.944,57.918,15,0
     .goto 1438,43.947,57.297,15,0
     .goto 1438,44.731,57.355,15,0
-    .goto 1438,45.118,57.701,20 >>去找里面的 |cRXP_ENEMY_怒爪|r
+    .goto 1438,45.118,57.701,20 >> 去找里面的 |cRXP_ENEMY_怒爪|r
     .train 410025,1 << Druid
     .train 410123,1 << Hunter
 step
@@ -112,11 +112,11 @@ step
     .train 410123,1 << Hunter
     .unitscan Rageclaw
 step << Hunter
-    .train 410123 >>|cRXP_WARN_使用|r |T134419:0|t|cRXP_LOOT_[爆炸射击符文]|r |cRXP_WARN_学习|r |T133816:0|t[铭刻手套 - 爆炸射击]
+    .train 410123 >> |cRXP_WARN_使用|r |T134419:0|t|cRXP_LOOT_[爆炸射击符文]|r |cRXP_WARN_学习|r |T133816:0|t[铭刻手套 - 爆炸射击]
     .use 206169
     .itemcount 206169,1
 step << Druid
-    .equip 18,206954 >>|cRXP_WARN_装备|r |T136061:0|t|cRXP_LOOT_[怒熊神像]|r
+    .equip 18,206954 >> |cRXP_WARN_装备|r |T136061:0|t|cRXP_LOOT_[怒熊神像]|r
     .use 206954
     .itemcount 206954,1
     .train 410025,1
@@ -163,7 +163,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     .goto Teldrassil,44.18,58.19
-    .subzone 262 >>进入班奈希尔兽穴
+    .subzone 262 >> 进入班奈希尔兽穴
     .train 424992,1 << Rogue
     .train 403476,1 << Warrior
     .train 425216,1 << Priest
@@ -204,7 +204,7 @@ RXPGuides.RegisterGuide([[
 step << Rogue/Priest
     #completewith next
     .goto Teldrassil,54.68,52.84,20,0
-    .goto Teldrassil,54.42,51.19,15 >>前往邪石山
+    .goto Teldrassil,54.42,51.19,15 >> 前往邪石山
     .train 400094,1 << Rogue
     .train 402854,1 << Priest
 step << Rogue/Priest
@@ -218,11 +218,11 @@ step << Rogue/Priest
     .train 400094,1 << Rogue
     .train 402854,1 << Priest
 step << Rogue
-    .train 400094 >>|cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_毁伤符文|r] |cRXP_WARN_来学习|r |T132304:0|t[毁伤]
+    .train 400094 >> |cRXP_WARN_使用|r |T134419:0|t[|cRXP_FRIENDLY_毁伤符文|r] |cRXP_WARN_来学习|r |T132304:0|t[毁伤]
     .use 203990
     .itemcount 203990,1
 step << Priest
-    .train 402854 >>|cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_落难救世主的回忆|r] |cRXP_WARN_来学习|r |T136160:0|t[分担痛苦]
+    .train 402854 >> |cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_落难救世主的回忆|r] |cRXP_WARN_来学习|r |T136160:0|t[分担痛苦]
     >>|cRXP_WARN_你必须在圣洁区域（如一座月亮井、北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/下跪以获得|r |T135934:0|t|T136057:0|t[冥想] |cRXP_WARN_buff|r
     .use 205945
     .itemcount 205945,1

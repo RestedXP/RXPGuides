@@ -10,7 +10,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP 部落法师 AOE攻略
 #defaultfor Horde Mage
-#next 17-21级 石爪山脉/荒芜之地 AoE
+#next 17-21级 石爪山脉/荒芜之地 AoE指南
 
 step << Mage
 	#era/som
@@ -45,7 +45,7 @@ step
 step
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板伯兰德|r 对话
-    .home >>将你的炉石设置到十字路口
+    .home >> 将你的炉石设置到十字路口
     .target 旅店老板伯兰德·草风
 step
     .goto The Barrens,51.5,30.8
@@ -55,7 +55,7 @@ step
     .accept 5041 >>接受任务 十字路口的补给品
 step
     .goto The Barrens,51.5,30.4
-    .fp The Crossroads >>获得十字路口的飞行点
+    .fp The Crossroads >> 获得十字路口的飞行点
 step << Troll Mage
     >>不要去奥格瑞玛
     .goto The Barrens,51.5,30.3
@@ -67,7 +67,7 @@ step
     .goto The Barrens,51.5,30.1
 .target 药剂师赫布瑞姆
 >>与 |cRXP_FRIENDLY_药剂师赫布瑞姆|r 对话
-    .accept 848 >>接受任务 菌类孢子
+    .accept 848 >>接受任务菌类孢子
     .accept 1492 >>接受任务码头管理员迪兹维格
 step
     #sticky
@@ -75,7 +75,7 @@ step
     >>在此位置寻找[陈的空酒桶]。拾取它并接取任务，否则你稍后再来拿它
     .goto The Barrens,55.7,27.3
     .collect 4926,1,819 --Collect Chen's Empty Keg
-    .accept 819 >>接受任务 老陈的空酒桶
+    .accept 819 >> 接受任务 老陈的空酒桶
 step
     .goto The Barrens,55.6,26.6
     >>击杀该区域内的野猪人
@@ -179,7 +179,7 @@ step
     .accept 887 >>接受任务 南海海盗
 step
     .goto The Barrens,63.1,37.1
-    .fp Ratchet >>获取棘齿城飞行路径
+    .fp Ratchet >> 获取棘齿城飞行路径
 step
     .goto The Barrens,63.0,37.2
 .target 斯布特瓦夫
@@ -242,7 +242,7 @@ step
     .accept 888 >>接受任务 被窃的货物
 step
     .goto The Barrens,63.08,37.16
-    .fly Crossroads >>飞往十字路口
+    .fly Crossroads >> 飞往十字路口
 step
     .goto The Barrens,51.5,30.8
 .target 索克
@@ -265,7 +265,7 @@ step
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷戈萨|r 对话
     .accept 850 >>接受任务 科卡尔首领
-    .accept 855 >>接受任务 半人马护腕
+    .accept 855 >> 接受任务 半人马护腕
     .target 雷戈萨·死门
 step
     #completewith KodobaneTurnin
@@ -336,8 +336,8 @@ step
 step
     #completewith next
     .goto The Barrens,43.8,12.2
-    >>如果你还没有拿到重型尖刺钉锤，可以考虑尝试从弗朗恩·凝血处购买 << Druid/Warrior
-    .vendor >>如果需要的话，去这家伙这里卖垃圾
+    >> 如果你还没有拿到重型尖刺钉锤，可以考虑尝试从弗朗恩·凝血处购买 << Druid/Warrior
+    .vendor >> 如果需要的话，去这家伙这里卖垃圾
 step
     #sticky
     #completewith next
@@ -388,7 +388,7 @@ step
     .accept 858 >>接受任务 点火
 step
     >>在这里升级到16级很重要，因为接下来的3个任务相当难。
-	.xp 16 >>刷怪到16级
+	.xp 16 >> 刷怪到16级
 step
     >>击杀鲁格维兹主管（他在塔周围巡逻）。拾取他的打火钥匙
 	.goto The Barrens,56.3,8.6
@@ -414,7 +414,7 @@ step
 	.goto Orgrimmar,11.5,67.0,40 >>跑到奥格瑞玛的西门
 step
     .goto Orgrimmar,38.79,85.68
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
 step << Troll Mage
     .goto Orgrimmar,54.2,68.6
 >>与 |cRXP_FRIENDLY_旅店老板格雷什卡|r 对话
@@ -424,7 +424,7 @@ step << Troll Mage
 step
     >>跑到飞行管理员那里。不要飞往任何地方
     .goto Orgrimmar,45.120,63.889
-    .fp Orgrimmar >>获取奥格瑞玛飞行点 << Undead
+    .fp Orgrimmar >> 获取奥格瑞玛飞行点 << Undead
 >>与 |cRXP_FRIENDLY_多拉斯|r 对话
     .turnin 6385 >>交任务 双足飞龙驭手多拉斯 << Troll Mage
 .target 多拉斯
@@ -468,15 +468,15 @@ step
 step
     .goto The Barrens,52.20,31.90
 >>与 |cRXP_FRIENDLY_图加·符文图腾|r 对话
-    .turnin 870 >>交任务  遗忘之池
+    .turnin 870 >> 交任务  遗忘之池
 .target 图加·符文图腾
-    .accept 877 >>接受任务 死水绿洲
+    .accept 877 >> 接受任务 死水绿洲
 step
     .goto The Barrens,52.00,31.60
 .target 曼科里克
 >>与 |cRXP_FRIENDLY_曼科里克|r 对话
-    .accept 899 >>接受任务 复仇的怒火
-    .accept 4921 >>接受任务 在战斗中失踪
+    .accept 899 >> 接受任务 复仇的怒火
+    .accept 4921 >> 接受任务 在战斗中失踪
 step
     >>塔顶
     .goto The Barrens,51.6,30.9
@@ -488,7 +488,7 @@ step
     .goto The Barrens,51.50,30.20
 .target 药剂师赫布瑞姆
 >>与 |cRXP_FRIENDLY_药剂师赫布瑞姆|r 对话
-    .turnin 848 >>交任务 菌类孢子
+    .turnin 848 >> 交任务  菌类孢子
 step
     .goto The Barrens,51.5,30.3
     .fly Ratchet >>飞往棘齿城
@@ -496,19 +496,19 @@ step
     .goto The Barrens,63.0,37.2
 >>与 |cRXP_FRIENDLY_斯布特瓦夫|r 对话
     .turnin 902 >>交任务  什么什么平衡器
-    .turnin 863 >>交任务 梅贝尔的隐形水
+    .turnin 863 >> 交任务 梅贝尔的隐形水
 .target 斯布特瓦夫
-    .accept 1483 >>接受任务菲兹克斯
+    .accept 1483 >> 接受任务菲兹克斯
 step
     .goto The Barrens,63.30,38.40
 .target 码头管理员迪兹维格
 >>与 |cRXP_FRIENDLY_码头管理员迪兹维格|r 对话
-    .turnin 896 >>交任务  矿工的宝贝
+    .turnin 896 >> 交任务  矿工的宝贝
 step
     .goto The Barrens,62.40,37.70
 .target 麦伯克·米希瑞克斯
 >>与 |cRXP_FRIENDLY_麦伯克·米希瑞克斯|r 对话
-    .accept 1069 >>接受任务深苔蜘蛛的卵
+    .accept 1069 >> 接受任务深苔蜘蛛的卵
 step
     >>拾取箱子
     .goto The Barrens,63.6,49.2
@@ -542,7 +542,7 @@ step
     .complete 855,1 --Centaur Bracers (15)
 step
     #label Verog
-    >>击杀湖边的任意半人马，直到他们刷出维罗格（他刷新时你会在聊天框看到喊话）
+    >> 击杀湖边的任意半人马，直到他们刷出维罗格（他刷新时你会在聊天框看到喊话）
     .goto The Barrens,52.95,41.77
     .complete 851,1 --Verog's Head (1)
 step
@@ -597,7 +597,7 @@ step
     .accept 878 >>接受任务野猪人的内战
 step
     .goto The Barrens,44.5,59.2
-    .fp Camp Taurajo >>获得陶拉祖营地的飞行点
+    .fp Camp Taurajo >> 获得陶拉祖营地的飞行点
     .fly Crossroads >>飞往十字路口
 step
     .goto The Barrens,51.9,30.3
@@ -615,7 +615,7 @@ step
 >>与 |cRXP_FRIENDLY_图加·符文图腾|r 对话
     .turnin 877 >>交任务  死水绿洲
 .target 图加·符文图腾
-    .accept 880 >>接受任务 变异的生物
+    .accept 880 >>接受任务变异的生物
 step
     .goto The Barrens,52.0,31.6
 .target 曼科里克
@@ -636,7 +636,7 @@ step
     .goto The Barrens,45.39,28.43
 .target 雷戈萨·死门
 >>与 |cRXP_FRIENDLY_雷戈萨·死门|r 对话
-    .turnin 855 >>交任务  半人马护腕
+    .turnin 855 >> 交任务  半人马护腕
     .isQuestComplete 855
 step
     .goto The Barrens,45.39,28.43
@@ -651,7 +651,7 @@ step
     .complete 855,1 --Centaur Bracers (15)
 step
     .goto The Barrens,45.87,40.80
-    >>赫兹鲁尔在哀嚎洞穴的大湖附近巡逻
+    >> 赫兹鲁尔在哀嚎洞穴的大湖附近巡逻
     .complete 852,1 --Hezrul's Head (1)
 step
 	#requires CeBracers
@@ -659,15 +659,15 @@ step
 .target 雷戈萨·死门
 >>与 |cRXP_FRIENDLY_雷戈萨·死门|r 对话
     .turnin 852 >>交任务  赫兹鲁尔·血印
-    .turnin 855 >>交任务  半人马护腕
+    .turnin 855 >> 交任务  半人马护腕
 step
     .goto The Barrens,45.37,28.43
 .target 雷戈萨·死门
 >>与 |cRXP_FRIENDLY_雷戈萨·死门|r 对话
     .accept 4021 >>接受任务 人马无双！
 step
-    >>这个任务很难单独完成。可以考虑找人组队，或者把它风筝到任务NPC所在的建筑附近击杀。
-    >>如果太难就跳过
+    >> 这个任务很难单独完成。可以考虑找人组队，或者把它风筝到任务NPC所在的建筑附近击杀。
+    >> 如果太难就跳过
     .goto The Barrens,44.33,28.14
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
 --N Link to safespot abuse
@@ -697,23 +697,23 @@ step
 step
     .goto The Barrens,35.3,27.9
 >>与 |cRXP_FRIENDLY_希雷斯·碎石|r 对话
-    .turnin 1061 >>交任务石爪之灵
+    .turnin 1061 >> 交任务  石爪之灵
 .target 希雷斯·碎石
-    .accept 1062 >>接受任务 地精侵略者
+    .accept 1062 >> 接受任务地精侵略者
 .target 玛卡巴·扁蹄
 >>与 |cRXP_FRIENDLY_玛卡巴·扁蹄|r 对话
-    .accept 6548 >>接受任务 为我的村庄复仇
+    .accept 6548 >> 接受任务 为我的村庄复仇
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 #tbc
 << Horde Mage
-#name 17-21级 石爪山脉/荒芜之地 AoE
+#name 17-21级 石爪山脉/荒芜之地 AoE指南
 #version 1
 #group RestedXP 部落法师 AOE攻略
 #defaultfor Horde Mage
-#next 21-30级 银松森林/希尔斯布莱德 AoE
+#next 21-30 银松森林/希尔斯布莱德 AoE
 
 step
     .goto Stonetalon Mountains,80.7,89.2,50,0
@@ -730,9 +730,9 @@ step
 step
     .goto The Barrens,35.191,27.791
 >>与 |cRXP_FRIENDLY_玛卡巴·扁蹄|r 对话
-    .turnin 6548 >>交任务  为我的村庄复仇
+    .turnin 6548 >> 交任务  为我的村庄复仇
 .target 玛卡巴·扁蹄
-    .accept 6629 >>接受任务杀死格鲁迪格·黑云
+    .accept 6629 >> 接受任务杀死格鲁迪格·黑云
 step
     >>从西侧的小路进入村庄。在开始里面的任务之前，确保先击杀全部6个蛮兵。击杀主帐篷前的格鲁迪格
     .goto Stonetalon Mountains,71.7,86.7,60,0
@@ -744,7 +744,7 @@ step
     .goto Stonetalon Mountains,73.5,85.8
 .target 卡雅·扁蹄
 >>与 |cRXP_FRIENDLY_卡雅·扁蹄|r 对话
-    .accept 6523 >>接受任务 保护卡雅
+    .accept 6523 >> 接受任务 保护卡雅
 step
      >>护送卡雅并紧跟在她身边。篝火处会刷出3个恐怖图腾。在她到达营地之前，先吃喝恢复好状态
     .goto Stonetalon Mountains,75.8,91.4
@@ -753,7 +753,7 @@ step
     .goto Stonetalon Mountains,71.4,95.1
 .target 辛吉拉
 >>与 |cRXP_FRIENDLY_辛吉拉|r 对话
-    .accept 6461 >>接受任务盗窃的蜘蛛
+    .accept 6461 >> 接受任务盗窃的蜘蛛
 step
     #sticky
     #label deepmossegg
@@ -776,9 +776,9 @@ step
 step
     .goto Stonetalon Mountains,58.989,62.599
 >>与 |cRXP_FRIENDLY_菲兹克斯|r 对话
-    .turnin 1483 >>交任务  菲兹克斯
+    .turnin 1483 >> 交任务  菲兹克斯
 .target 菲兹克斯
-    .accept 1093 >>接受任务 超级收割机6000
+    .accept 1093 >> 接受任务超级收割机6000
 step
     #sticky
     #requires deepmossegg
@@ -809,11 +809,11 @@ step
 step
     .goto Stonetalon Mountains,58.989,62.599
 >>与 |cRXP_FRIENDLY_菲兹克斯|r 对话
-    .turnin 1093 >>交任务超级收割机6000
+    .turnin 1093 >> 交任务超级收割机6000
 .target 菲兹克斯
-    .accept 1094 >>接受任务 新的指示
+    .accept 1094 >> 接受任务 新的指示
 step
-    .hs >>使用炉石返回陶拉祖营地
+    .hs >> 使用炉石返回陶拉祖营地
 step
     .goto The Barrens,44.9,59.1
 >>与 |cRXP_FRIENDLY_乔恩·星眼|r 对话
@@ -886,7 +886,7 @@ step
 step
     .goto The Barrens,63.0,37.2
 >>与 |cRXP_FRIENDLY_斯布特瓦夫|r 对话
-    .turnin 1094 >>交任务 新的指示
+    .turnin 1094 >>交任务新的指示
 .target 斯布特瓦夫
     .accept 1095 >>接受任务 新的指示
 step
@@ -908,7 +908,7 @@ step
 >>与 |cRXP_FRIENDLY_图加·符文图腾|r 对话
     .turnin 880 >>交任务  变异的生物
 .target 图加·符文图腾
-    .accept 1489 >>接受任务 哈缪尔·符文图腾
+    .accept 1489 >>接受任务哈缪尔·符文图腾
     .accept 3301 >>接受任务茉拉·符文图腾
 step
     .goto The Barrens,52.0,31.6
@@ -919,14 +919,14 @@ step
     >>塔顶
     .goto The Barrens,51.60,30.90
 >>与 |cRXP_FRIENDLY_达索克·快刀|r 对话
-    .turnin 875 >>交任务  鹰身人首领
+    .turnin 875 >> 交任务  鹰身人首领
 .target 达索克·快刀
-    .accept 876 >>接受任务 塞瑞娜·血羽
+    .accept 876 >> 接受任务 塞瑞娜·血羽
 step
     >>这会开启一个限时任务
     .goto The Barrens,51.4,30.2
 >>与 |cRXP_FRIENDLY_药剂师赫布瑞姆|r 对话
-    .turnin 848 >>交任务 菌类孢子
+    .turnin 848 >>交任务  菌类孢子
 .target 药剂师赫布瑞姆
     .accept 853 >>接受任务 药剂师扎玛
 step
@@ -939,9 +939,9 @@ step
 step
     .goto The Barrens,44.6,59.2
 >>与 |cRXP_FRIENDLY_碎牙|r 对话
-    .turnin 878 >>交任务野猪人的内战
+    .turnin 878 >>交任务  野猪人的内战
 .target 碎牙
-    .accept 5052 >>接受任务阿迦玛甘的血岩碎片
+    .accept 5052 >>接受任务 阿迦玛甘的血岩碎片
     .turnin 5052 >>交任务阿迦玛甘的血岩碎片
 --N Different classes needing different buffs, e.g. need speed buff later for Mulgore run for classes that didnt get FP earlier
 step
@@ -1019,7 +1019,7 @@ step
     >>交出你的血岩碎片，获取碎牙的风之魂的buff。如果你不小心卖掉了碎片，请跳过这一步
 .target 碎牙
 >>与 |cRXP_FRIENDLY_碎牙|r 对话
-    .turnin 889 >>交任务 风之魂
+    .turnin 889 >> 交任务 风之魂
 step
     .goto Thunder Bluff,32.0,66.9,60 >>跑向电梯并乘坐它去雷霆崖
 step
@@ -1030,17 +1030,17 @@ step
 >>与 |cRXP_FRIENDLY_梅洛·石蹄|r 对话
     .turnin 1130 >>交任务 梅洛的关注
 .target 梅洛·石蹄
-    .accept 1131 >>接受任务 钢齿土狼
+    .accept 1131 >>接受任务钢齿土狼
 step
  	>>进入幻象之池
 	.goto Thunder Bluff,30.1,30.0,30,0
 	.goto Thunder Bluff,23.00,21.00
 .target 药剂师扎玛
 >>与 |cRXP_FRIENDLY_药剂师扎玛|r 对话
-    .turnin 853 >>交任务药剂师扎玛
+    .turnin 853 >> 交任务药剂师扎玛
 step
     .goto Thunder Bluff,25.16,20.95
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
 	>>先要洗成AoE天赋（如果你已经点了火法）
 step
     .goto Thunder Bluff,28.4,27.7
@@ -1049,7 +1049,7 @@ step
     .accept 264 >>接受任务 至死方休
 step
 	.goto Thunder Bluff,47.003,49.832
-    .fp Thunder Bluff >>开启雷霆崖飞行点
+    .fp Thunder Bluff >> 开启雷霆崖飞行点
     .fly Crossroads >>飞往十字路口
 step
     >>击杀塞瑞娜·血羽。拾取她的头颅
@@ -1060,7 +1060,7 @@ step
 >>与 |cRXP_FRIENDLY_希雷斯·碎石|r 对话
     .turnin 1062 >>交任务地精侵略者
 >>与 |cRXP_FRIENDLY_玛卡巴·扁蹄|r 对话
-    .turnin 6629 >>交任务杀死格鲁迪格·黑云
+    .turnin 6629 >>交任务  杀死格鲁迪格·黑云
     .turnin 6523 >>交任务保护卡雅
 .target 玛卡巴·扁蹄
     .accept 6401 >>接受任务卡雅还活着
@@ -1071,49 +1071,49 @@ step
     .goto Stonetalon Mountains,71.3,95.1
 .target 辛吉拉
 >>与 |cRXP_FRIENDLY_辛吉拉|r 对话
-    .turnin 6461 >>交任务  盗窃的蜘蛛
+    .turnin 6461 >>交任务盗窃的蜘蛛
 step
     .goto Stonetalon Mountains,58.989,62.599
 .target 菲兹克斯
 >>与 |cRXP_FRIENDLY_菲兹克斯|r 对话
-    .turnin 1095 >>交任务 新的指示
+    .turnin 1095 >>交任务新的指示
 step
     .goto Stonetalon Mountains,47.5,58.4
 .target 塔姆拉·荒原
 >>与 |cRXP_FRIENDLY_塔姆拉·荒原|r 对话
-    .turnin 6401 >>交任务 卡雅还活着
+    .turnin 6401 >>交任务  卡雅还活着
 step
     .goto Stonetalon Mountains,45.12,59.84
-    .fp Sun Rock>>开启烈日石居飞行点
+    .fp Sun Rock>> 开启烈日石居飞行点
 step
     #completewith next
-    .hs >>使用炉石返回雷霆崖
+    .hs >> 使用炉石返回雷霆崖
 step
     .goto Thunder Bluff,70.00,30.90
 >>与 |cRXP_FRIENDLY_玛加萨·恐怖图腾|r 对话
-    .turnin 1063 >>交任务巫婆长老
+    .turnin 1063 >> 交任务巫婆长老
 .target 玛加萨·恐怖图腾
-    .accept 1064 >>接受任务 被遗忘者的援助
+    .accept 1064 >> 接受任务 被遗忘者的援助
 step
     .goto Thunder Bluff,78.62,28.56
 >>与 |cRXP_FRIENDLY_大德鲁伊哈缪尔·符文图腾|r 对话
-    .turnin 1489 >>交任务  哈缪尔·符文图腾
+    .turnin 1489 >> 交任务  哈缪尔·符文图腾
 .target 大德鲁伊哈缪尔·符文图腾
-    .accept 1490 >>接受任务纳拉·蛮鬃
+    .accept 1490 >> 接受任务 纳拉·蛮鬃
 step
     .goto Thunder Bluff,75.65,31.62
 .target 纳拉·蛮鬃
 >>与|cRXP_FRIENDLY_纳拉·蛮鬃|r 对话
-    .turnin 1490 >>交任务  纳拉·蛮鬃
+    .turnin 1490 >> 交任务  纳拉·蛮鬃
 step
     .goto Thunder Bluff,23.00,21.0
 >>与 |cRXP_FRIENDLY_药剂师扎玛|r 对话
-    .turnin 1064 >>交任务  被遗忘者的援助
+    .turnin 1064 >> 交任务  被遗忘者的援助
 .target 药剂师扎玛
-    .accept 1065 >>接受任务 前往塔伦米尔
+    .accept 1065 >> 接受任务 前往塔伦米尔
 step
     .goto Thunder Bluff,25.16,20.95
-    .trainer >>如果需要的话，训练你的职业法术
+    .trainer >> 如果需要的话，训练你的职业法术
 	>>如果你还没有洗天赋，请洗成冰法AOE天赋
 step
     .goto Thunder Bluff,46.8,50.0
@@ -1123,8 +1123,8 @@ step
 	>>上楼
 .target 达索克·快刀
 >>与 |cRXP_FRIENDLY_达索克·快刀|r 对话
-    .turnin 876 >>交任务 塞瑞娜·血羽
+    .turnin 876 >> 交任务 塞瑞娜·血羽
 step
     .goto The Barrens,51.50,30.34
-    .fly Orgrimmar >>飞往奥格瑞玛
+    .fly Orgrimmar >> 飞往奥格瑞玛
 ]])

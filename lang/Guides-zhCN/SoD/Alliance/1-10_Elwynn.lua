@@ -5,11 +5,11 @@ if faction == "Horde" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance
-#name 1-6 北郡 探索赛季
+#name 1-6级 北郡 探索赛季
 #displayname 1-6级 北郡
 #version 1
 #group RestedXP 联盟 1-20 级
-#group14-16级 黑海岸
+#groupid RXP-SRGCE-A1
 #defaultfor Human
 #next 6-12 艾尔文森林 探索赛季
 #season 2
@@ -22,11 +22,11 @@ step
     #softcore << Warlock
     #optional
     #completewith Within
-    .destroy 6948 >>删除包里的 |T134414:0|t[炉石] 你已不再需要它了
+    .destroy 6948 >> 删除包里的 |T134414:0|t[炉石] 你已不再需要它了
 step
     .goto Elwynn Forest,48.17,42.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维里副队长|r 对话
-    .accept 783 >>接受任务 身边的危机
+    .accept 783 >> 接受任务 身边的危机
     .target 维里副队长
 step << Warrior/Rogue/Mage/Warlock
     .goto Elwynn Forest,46.4,40.3
@@ -68,17 +68,17 @@ step << Warrior/Rogue/Mage/Warlock
     .target Rune Broker
     .skipgossip
 step << Warrior/Rogue/Mage
-    .train 400105 >>使用|T134419:0|t|T132323:0|t[|cRXP_FRIENDLY_暗影打击符文|r]训练|T132323:0|t|T132323:0|t[暗影打击]，你很快就能铭刻它 << Rogue
-    .train 403470 >>使用|T134419:0|t[|cRXP_FRIENDLY_乘胜追击符文|r]来学习|T132342:0|t[乘胜追击]，你很快就会铭刻它 << Warrior
-    .train 401768 >>使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：活化烈焰|r] 来学习 |T135820:0|t[活化烈焰] << Mage
-    .train 415936 >>使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：活动炸弹|r] 来学习 |T236220:0|t[活动炸弹] << Mage
-    .train 401759 >>使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：燃尽|r] 来学习 |T236207:0|t[燃尽] << Mage
-    .train 440858 >>使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：寒冰宝珠|r] 来学习 |T135851:0|t[寒冰宝珠] << Mage
-    .train 416009 >>使用 |T134419:0|t[|cRXP_FRIENDLY_战术符文|r] 来学习 |T136150:0|t[恶魔战术] << Warlock
-    .train 425476 >>使用 |T134419:0|t[|cRXP_FRIENDLY_契约符文|r] 来训练 |T237562:0|t[恶魔契约] << Warlock
-    .train 211477 >>使用 |T134419:0|t[|cRXP_FRIENDLY_烧尽符文|r] 来训练 |T135789:0|t[烧尽] << Warlock
-    .train 403919 >>使用 |T134419:0|t[|cRXP_FRIENDLY_鬼影缠身符文|r] 来训练 |T236298:0|t[鬼影缠身] << Warlock
-    .train 403619 >>使用|T133733:0|t[邪甲术魔典]来学习|T136156:0|t[邪甲术] |cRXP_WARN_并将其作为你的主要护甲法术使用|r << Warlock
+    .train 400105 >> 使用|T134419:0|t|T132323:0|t[|cRXP_FRIENDLY_暗影打击符文|r]训练|T132323:0|t|T132323:0|t[暗影打击]，你很快就能铭刻它 << Rogue
+    .train 403470 >> 使用|T134419:0|t[|cRXP_FRIENDLY_乘胜追击符文|r]来学习|T132342:0|t[乘胜追击]，你很快就会铭刻它 << Warrior
+    .train 401768 >> 使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：活化烈焰|r] 来学习 |T135820:0|t[活化烈焰] << Mage
+    .train 415936 >> 使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：活动炸弹|r] 来学习 |T236220:0|t[活动炸弹] << Mage
+    .train 401759 >> 使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：燃尽|r] 来学习 |T236207:0|t[燃尽] << Mage
+    .train 440858 >> 使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：寒冰宝珠|r] 来学习 |T135851:0|t[寒冰宝珠] << Mage
+    .train 416009 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_战术符文|r] 来学习 |T136150:0|t[恶魔战术] << Warlock
+    .train 425476 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_契约符文|r] 来训练 |T237562:0|t[恶魔契约] << Warlock
+    .train 211477 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_烧尽符文|r] 来训练 |T135789:0|t[烧尽] << Warlock
+    .train 403919 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_鬼影缠身符文|r] 来训练 |T236298:0|t[鬼影缠身] << Warlock
+    .train 403619 >> 使用|T133733:0|t[邪甲术魔典]来学习|T136156:0|t[邪甲术] |cRXP_WARN_并将其作为你的主要护甲法术使用|r << Warlock
     .use 203746 << Mage --Spell Notes: Living Flame
     .use 208799 << Mage --Spell Notes: Living Bomb
     .use 203748 << Mage --Spell Notes: Burnout
@@ -93,59 +93,59 @@ step << Warrior/Rogue/Mage
 step << Warlock
     #optional
     #sticky
-    .aura 403619 >>|cRXP_WARN_请记得激活你的|r |T136156:0|t|T136156:0|t[邪甲术]
+    .aura 403619 >> |cRXP_WARN_请记得激活你的|r |T136156:0|t|T136156:0|t[邪甲术]
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在屋内的楼下与 |cRXP_FRIENDLY_莱尼·拜舍尔|r 对话
     .train 6673 >>学习 |T132333:0|t[战斗怒吼]
-    .accept 77616 >>接受任务 失落的符文
-    .turnin 77616 >>交任务 失落的符文
+    .accept 77616 >> 接受任务 失落的符文
+    .turnin 77616 >> 交任务 失落的符文
     .goto Elwynn Forest,50.242,42.287
     .mob 幼狼
     .target 莱尼·拜舍尔
 step << Warrior/Rogue/Mage/Warlock
-    .equip 10 >>装备|T132952:0|t[薄布手套] << Mage
+    .equip 10 >> 装备|T132952:0|t[薄布手套] << Mage
     .use 2119 << Mage --Thin Cloth Gloves
-    .engrave 7 >>在裤子上铭刻|T135820:0|t|T135820:0|t[活化烈焰] << Mage
-    .engrave 10 >>在你的手套上铭刻|T236220:0|t|T236220:0|t[活动炸弹] << Mage
-    .engrave 5 >>在你的胸甲上铭刻 |T236207:0|t[燃尽] << Mage
-    .equip 10 >>装备 |T132938:0|t[无光泽的链甲手套] << Warrior
-    .engrave 10 >>在你的手套上铭刻 |T132342:0|t[乘胜追击] << Warrior
+    .engrave 7 >> 在裤子上铭刻|T135820:0|t|T135820:0|t[活化烈焰] << Mage
+    .engrave 10 >> 在你的手套上铭刻|T236220:0|t|T236220:0|t[活动炸弹] << Mage
+    .engrave 5 >> 在你的胸甲上铭刻 |T236207:0|t[燃尽] << Mage
+    .equip 10 >> 装备 |T132938:0|t[无光泽的链甲手套] << Warrior
+    .engrave 10 >> 在你的手套上铭刻 |T132342:0|t[乘胜追击] << Warrior
     .use 2385 << Warrior -- Tarnished Chain Gloves
-    .equip 10 >>装备 |T132952:0|t[破损的皮手套] << Rogue
-    .engrave 10 >>在你的手套上铭刻|T132323:0|t|T132323:0|t[暗影打击] << Rogue
+    .equip 10 >> 装备 |T132952:0|t[破损的皮手套] << Rogue
+    .engrave 10 >> 在你的手套上铭刻|T132323:0|t|T132323:0|t[暗影打击] << Rogue
     .use 2125 << Rogue --Cracked Leather Gloves
-    .equip 9 >>装备 |T132602:0|t[薄布护腕] << Warlock
+    .equip 9 >> 装备 |T132602:0|t[薄布护腕] << Warlock
     .use 3600 << Warlock --Thin Cloth Bracers
-    .engrave 5 >>在你的胸甲上铭刻|T136150:0|t[恶魔战术] << Warlock
-    .engrave 7 >>在你的裤子上铭刻|T237562:0|t|T237562:0|t[恶魔契约] << Warlock
-    .engrave 9 >>在你的护腕上铭刻|T135789:0|t|T135789:0|t[烧尽] << Warlock
+    .engrave 5 >> 在你的胸甲上铭刻|T136150:0|t[恶魔战术] << Warlock
+    .engrave 7 >> 在你的裤子上铭刻|T237562:0|t|T237562:0|t[恶魔契约] << Warlock
+    .engrave 9 >> 在你的护腕上铭刻|T135789:0|t|T135789:0|t[烧尽] << Warlock
 step
     #label Within
     .goto Elwynn Forest,48.923,41.606
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官玛克布莱德|r 对话
-    .turnin 783 >>交任务 身边的危机
-    .accept 7 >>接受任务 狗头人的蜡烛
+    .turnin 783 >> 交任务 身边的危机
+    .accept 7 >> 接受任务 狗头人的蜡烛
     .target 治安官玛克布莱德
 step
     .goto Elwynn Forest,48.171,42.943
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维里副队长|r 对话
-    .accept 5261 >>接受任务 伊根·派特斯金纳
-    .accept 18 >>接受任务 盗贼兄弟会 << Warlock
+    .accept 5261 >> 接受任务 伊根·派特斯金纳
+    .accept 18 >> 接受任务 盗贼兄弟会 << Warlock
     .target 维里副队长
 step << Warlock
     #season 2
     .goto Elwynn Forest,49.873,42.649
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜希拉·拉萨雷|r 对话
-    .accept 1598 >>接受任务 失窃的典籍
-    .accept 77621 >>接受任务 失窃的力量 << Human
-    .turnin 77621 >>交任务 失窃的力量 << Human
-    .train 348 >>学习 |T135817:0|t[献祭]
+    .accept 1598 >> 接受任务 失窃的典籍
+    .accept 77621 >> 接受任务 失窃的力量 << Human
+    .turnin 77621 >> 交任务 失窃的力量 << Human
+    .train 348 >> 学习 |T135817:0|t[献祭]
     .target 杜希拉·拉萨雷
 step << Human Warlock
     #season 2
     #label GlovesEquip
     #completewith RestandR
-    .equip 10,711 >>|cRXP_WARN_装备|r |T132961:0|t|T132961:0|t[破布手套]
+    .equip 10,711 >> |cRXP_WARN_装备|r |T132961:0|t|T132961:0|t[破布手套]
     .use 711
     .itemcount 711,1 --Tattered Cloth Gloves (1)
     .train 403919,3
@@ -181,32 +181,32 @@ step << Warlock
     #hardcore
     #completewith next
     .goto Elwynn Forest,56.828,43.734
-    .hs >>炉石返回到北郡山谷
+    .hs >> 炉石返回到北郡山谷
 step << Warlock
     #softcore
     #completewith next
     .goto 1429,49.527,43.491,0
-    .deathskip >>死亡并在灵魂医者处复活
+    .deathskip >> 死亡并在灵魂医者处复活
     .target 灵魂医者
 step << Warlock
     .goto Elwynn Forest,49.873,42.649
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜希拉·拉萨雷|r 对话
-    .turnin 1598 >>交任务 失窃的典籍
+    .turnin 1598 >> 交任务 失窃的典籍
     .target 杜希拉·拉萨雷
 step << Warlock
     #optional
     #completewith next
-    .cast 688 >>|cRXP_WARN_施放|r |T136218:0|t[召唤小鬼]
+    .cast 688 >> |cRXP_WARN_施放|r |T136218:0|t[召唤小鬼]
     .usespell 688
 step << Warlock
     .goto Elwynn Forest,48.17,42.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维里副队长|r 对话
-    .turnin 18,1 >>交任务 盗贼兄弟会
+    .turnin 18,1 >> 交任务 盗贼兄弟会
     .target 维里副队长
 step << Warlock
     #optional
     #completewith next
-    .equip 16,2224 >>装备 |T135641:0|t[民兵匕首]
+    .equip 16,2224 >> 装备 |T135641:0|t[民兵匕首]
     .use 2224
     .itemcount 2224,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.0
@@ -227,32 +227,32 @@ step << Priest/Paladin
     .use 205947 << Priest --Prophecy of a Desecrated Citadel
     .use 226398 << Paladin --Testament of martyrdom
     .use 205420 << Paladin --Libram of Judgement
-    .train 402852 >>使用 |T135975:0|t[|cRXP_FRIENDLY_遭渎城堡的预言|r] 来训练 |T237570:0|t[裂魂魔] << Priest
-    .train 407798 >>使用|T133745:0|t|T135961:0|t[|cRXP_FRIENDLY_论述：殉道|r]来训练|T135961:0|t|T135961:0|t[殉道圣印]，|cRXP_WARN_并将其作为你的主要圣印使用|r << Paladin
-    .equip 18 >>装备|T134916:0|t|T135891:0|t[|cRXP_FRIENDLY_审判圣契|r]，30秒后可使用它来学习|T135891:0|t|T135891:0|t[十字军打击] << Paladin
-    .engrave 7 >>在你的裤子上铭刻 |T237570:0|t[裂魂魔] << Priest
+    .train 402852 >> 使用 |T135975:0|t[|cRXP_FRIENDLY_遭渎城堡的预言|r] 来训练 |T237570:0|t[裂魂魔] << Priest
+    .train 407798 >> 使用|T133745:0|t|T135961:0|t[|cRXP_FRIENDLY_论述：殉道|r]来训练|T135961:0|t|T135961:0|t[殉道圣印]，|cRXP_WARN_并将其作为你的主要圣印使用|r << Paladin
+    .equip 18 >> 装备|T134916:0|t|T135891:0|t[|cRXP_FRIENDLY_审判圣契|r]，30秒后可使用它来学习|T135891:0|t|T135891:0|t[十字军打击] << Paladin
+    .engrave 7 >> 在你的裤子上铭刻 |T237570:0|t[裂魂魔] << Priest
 step << Paladin
     #optional
     #completewith Vermin
-    .aura 407798 >>请记得使用|T135961:0|t|T135961:0|t[殉道圣印]作为你的圣印
+    .aura 407798 >> 请记得使用|T135961:0|t|T135961:0|t[殉道圣印]作为你的圣印
 step << Paladin
     #sticky
     #optional
     #requires Libram
     #label LibramLearn
-    .train 410002 >>使用|T134916:0|t|T135891:0|t[|cRXP_FRIENDLY_审判圣契|r]学习|T135891:0|t|T135891:0|t[十字军打击]
+    .train 410002 >> 使用|T134916:0|t|T135891:0|t[|cRXP_FRIENDLY_审判圣契|r]学习|T135891:0|t|T135891:0|t[十字军打击]
 step << Paladin
     #optional
     #requires LibramLearn
     #completewith PalaQ
-    .engrave 10 >>|cRXP_WARN_留意是否有|r |T132952:0|t|T135891:0|t[手套] |cRXP_WARN_掉落。|r |cRXP_WARN_为其铭刻|r |T135891:0|t|T135891:0|t[十字军打击]
+    .engrave 10 >> |cRXP_WARN_留意是否有|r |T132952:0|t|T135891:0|t[手套] |cRXP_WARN_掉落。|r |cRXP_WARN_为其铭刻|r |T135891:0|t|T135891:0|t[十字军打击]
     >>如果你没找到，最终会通过职业任务获得它们
 step
     #label EaganWolves
     .goto Elwynn Forest,48.941,40.166
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊根·派特斯金纳|r 对话
-    .turnin 5261 >>交任务 伊根·派特斯金纳
-    .accept 33 >>接受任务 林中的群狼
+    .turnin 5261 >> 交任务 伊根·派特斯金纳
+    .accept 33 >> 接受任务 林中的群狼
     .target 伊根·派特斯金纳
 step << Rogue
     #completewith next
@@ -265,14 +265,14 @@ step << Rogue
 step << Rogue
     .goto Elwynn Forest,50.6,40.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔里克·克里丹|r 对话
-    .accept 77618 >>接受任务 三度失窃
-    .turnin 77618 >>交任务 三度失窃
-    .train 1784 >>训练|T132320:0|t|T135131:0|t[潜行]，你需要用它来使用|T135131:0|t|T135131:0|t[暗影打击]
+    .accept 77618 >> 接受任务 三度失窃
+    .turnin 77618 >> 交任务 三度失窃
+    .train 1784 >> 训练|T132320:0|t|T135131:0|t[潜行]，你需要用它来使用|T135131:0|t|T135131:0|t[暗影打击]
     .target 乔里克·克里丹
 step << Mage
     #optional
     #sticky
-    .engrave 15 >>留意是否有披风掉落。一旦拿到就在上面铭刻|T135851:0|t[寒冰宝珠]
+    .engrave 15 >> 留意是否有披风掉落。一旦拿到就在上面铭刻|T135851:0|t[寒冰宝珠]
     >>|cRXP_WARN_这个技能过于逆天|r
 step << Mage/Warlock
     #completewith next
@@ -338,15 +338,15 @@ step << !Priest !Paladin
     #optional
     #completewith next
     .goto 1429,45.718,40.733,0
-    .xp 3+720 >>刷怪达到 720+/1400经验
+    .xp 3+720 >> 刷怪达到 720+/1400经验
     .mob 幼狼
 	.mob Timber Wolf
 step
     #requires WolfMeatEnd
     .goto Elwynn Forest,48.941,40.166
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_伊根·派特斯金纳|r 对话
-    .turnin 33,2 >>交任务 林中的群狼 << Warrior/Paladin/Rogue
-    .turnin 33,1 >>交任务 林中的群狼 << !Warrior !Paladin !Rogue
+    .turnin 33,2 >> 交任务 林中的群狼 << Warrior/Paladin/Rogue
+    .turnin 33,1 >> 交任务 林中的群狼 << !Warrior !Paladin !Rogue
     .target 伊根·派特斯金纳
 step << Paladin
     #optional
@@ -369,7 +369,7 @@ step << !Priest !Paladin
     .goto 1429,46.302,39.994,45,0
     .goto 1429,45.708,38.720,45,0
     .goto 1429,45.896,38.013,45,0
-    .xp 3+1060 >>刷怪达到1060+/1400经验
+    .xp 3+1060 >> 刷怪达到1060+/1400经验
     .mob 幼狼
 	.mob Timber Wolf
 step << Paladin
@@ -387,8 +387,8 @@ step << Paladin
     .collect 2130,1 --Club (1)
     .target 亚努斯·哈默纳克
 step << Paladin
-    .equip 16,2130 >>装备 |T133485:0|t[短棍]
-    .equip 17,17184 >>装备 |T134955:0|t[小盾牌]
+    .equip 16,2130 >> 装备 |T133485:0|t[短棍]
+    .equip 17,17184 >> 装备 |T134955:0|t[小盾牌]
     .use 2130 --Club
     .use 17184 --Small Shield
 step << Warrior
@@ -404,7 +404,7 @@ step << Warrior
 step << Priest
     #optional
     #completewith next
-    .equip 8,80 >>|cRXP_WARN_装备|r |T132543:0|t|T132543:0|t[柔软的毛边鞋]，稍后你将用它来铭刻符文
+    .equip 8,80 >> |cRXP_WARN_装备|r |T132543:0|t|T132543:0|t[柔软的毛边鞋]，稍后你将用它来铭刻符文
 step << Priest
     .goto Elwynn Forest,47.57,41.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_德尔莫特·约翰斯|r 对话
@@ -439,14 +439,14 @@ step << Priest/Paladin
     .target Rune Broker
     .skipgossip
 step << Priest/Paladin
-    .train 431663 >>使用 |T135791:0|t[|cRXP_FRIENDLY_灵智顿悟|r] 来训练 |T136181:0|t[心灵尖刺] << Priest
-    .train 425216 >>使用 |T136222:0|t[|cRXP_FRIENDLY_黑暗意图的回忆|r] 训练 |T237514:0|t[虚空疫病] << Priest
-    .train 402862 >>使用 |T136222:0|t[|cRXP_FRIENDLY_忧虑助祭的回忆|r] 来训练 |T237545:0|t[苦修] << Priest
-    .train 402849 >>使用 |T135975:0|t[|cRXP_FRIENDLY_帝王消陨的预言|r] 来训练 |T136149:0|t[暗言术：灭] << Priest
-    .train 410014 >>使用 |T134419:0|t[|cRXP_FRIENDLY_神圣风暴符文|r] 来训练 |T236250:0|t[神圣风暴] << Paladin
-    .train 410008 >>使用|T134419:0|t|T135874:0|t[|cRXP_FRIENDLY_复仇者符文|r]学习|T135874:0|t|T135874:0|t[复仇者之盾] << Paladin
-    .train 410013 >>使用 |T134419:0|t[|cRXP_FRIENDLY_正义之锤符文|r] 来学习 |T236253:0|t[正义之锤] << Paladin
-    .train 440788 >>使用|T134419:0|t|T236265:0|t[|cRXP_FRIENDLY_正义盾击符文|r]来学习|T236265:0|t|T236265:0|t[正义盾击] << Paladin
+    .train 431663 >> 使用 |T135791:0|t[|cRXP_FRIENDLY_灵智顿悟|r] 来训练 |T136181:0|t[心灵尖刺] << Priest
+    .train 425216 >> 使用 |T136222:0|t[|cRXP_FRIENDLY_黑暗意图的回忆|r] 训练 |T237514:0|t[虚空疫病] << Priest
+    .train 402862 >> 使用 |T136222:0|t[|cRXP_FRIENDLY_忧虑助祭的回忆|r] 来训练 |T237545:0|t[苦修] << Priest
+    .train 402849 >> 使用 |T135975:0|t[|cRXP_FRIENDLY_帝王消陨的预言|r] 来训练 |T136149:0|t[暗言术：灭] << Priest
+    .train 410014 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_神圣风暴符文|r] 来训练 |T236250:0|t[神圣风暴] << Paladin
+    .train 410008 >> 使用|T134419:0|t|T135874:0|t[|cRXP_FRIENDLY_复仇者符文|r]学习|T135874:0|t|T135874:0|t[复仇者之盾] << Paladin
+    .train 410013 >> 使用 |T134419:0|t[|cRXP_FRIENDLY_正义之锤符文|r] 来学习 |T236253:0|t[正义之锤] << Paladin
+    .train 440788 >> 使用|T134419:0|t|T236265:0|t[|cRXP_FRIENDLY_正义盾击符文|r]来学习|T236265:0|t|T236265:0|t[正义盾击] << Paladin
     .use 212552 << Priest --Psychosophic Epiphany
     .use 205940 << Priest --Memory of a Dark Purpose
     .use 205951 << Priest --Memory of a Troubled Acolyte
@@ -458,16 +458,16 @@ step << Priest/Paladin
 step << Paladin
     #sticky
     >>|cRXP_WARN_留意任何可以装备的|r |T132624:0|t|T133762:0|t[胸甲]|cRXP_WARN_、|r |cRXP_WARN_或|r |T133762:0|t|T133762:0|t[披风] |cRXP_WARN_|r
-    .engrave 5 >>将|T236250:0|t|T236250:0|t[神圣风暴]铭刻在你的胸部装备上
-    .engrave 15 >>将|T236265:0|t|T236265:0|t[正义盾击]附魔到你的披风上
+    .engrave 5 >> 将|T236250:0|t|T236250:0|t[神圣风暴]铭刻在你的胸部装备上
+    .engrave 15 >> 将|T236265:0|t|T236265:0|t[正义盾击]附魔到你的披风上
 step << Priest/Paladin
     .use 6070 << Paladin --Wolfskin Bracers
-    .equip 9 >>装备上|T132604:0|t|T132604:0|t[狼皮护腕] << Paladin
-    .engrave 6 >>在你的腰带上铭刻 |T136181:0|t[心灵尖刺] << Priest
-    .engrave 8 >>在你的靴子上铭刻|T237514:0|t|T237514:0|t[虚空疫病] << Priest
-    .engrave 10 >>在你的手套上铭刻 |T136149:0|t[暗言术：灭] << Priest
-    .engrave 7 >>在裤子上铭刻|T135874:0|t|T135874:0|t[复仇者之盾] << Paladin
-    .engrave 9 >>在你的护腕上铭刻|T236253:0|t|T236253:0|t[正义之锤] << Paladin
+    .equip 9 >> 装备上|T132604:0|t|T132604:0|t[狼皮护腕] << Paladin
+    .engrave 6 >> 在你的腰带上铭刻 |T136181:0|t[心灵尖刺] << Priest
+    .engrave 8 >> 在你的靴子上铭刻|T237514:0|t|T237514:0|t[虚空疫病] << Priest
+    .engrave 10 >> 在你的手套上铭刻 |T136149:0|t[暗言术：灭] << Priest
+    .engrave 7 >> 在裤子上铭刻|T135874:0|t|T135874:0|t[复仇者之盾] << Paladin
+    .engrave 9 >> 在你的护腕上铭刻|T236253:0|t|T236253:0|t[正义之锤] << Paladin
 step << Priest/Paladin
     #loop
     .goto 1429,47.601,36.720,0
@@ -492,7 +492,7 @@ step << Priest/Paladin
     #optional
     #completewith next
     .goto 1429,45.718,40.733,0
-    .xp 3+720 >>刷怪达到 720+/1400经验
+    .xp 3+720 >> 刷怪达到 720+/1400经验
     .mob 幼狼
 	.mob Timber Wolf
 step << !Priest !Mage !Warlock !Rogue !Paladin
@@ -504,7 +504,7 @@ step << Mage
     .goto Elwynn Forest,48.22,41.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_符文贩子|r 对话
     >>|cRXP_WARN_千万不要把能穿的装备卖给商人|r
-    .vendor >>|cRXP_BUY_向商人贩卖垃圾物品并购买你需要的所有 |T134419:0|t|cRXP_WARN_[符文]|r|r
+    .vendor >> |cRXP_BUY_向商人贩卖垃圾物品并购买你需要的所有 |T134419:0|t|cRXP_WARN_[符文]|r|r
     >>确保你已经购买了|T134939:0|t|T134939:0|t[|cRXP_FRIENDLY_法术笔记：冰枪术|r]，你将用它来交一个额外的任务
     .collect 203745,1 --Spell Notes: Ice Lance
     .target Rune Broker
@@ -513,19 +513,19 @@ step << Mage
     #sticky
     #optional
     #label IceLance
-    .train 401760 >>使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：冰枪术|r] 来学习 |T135844:0|t[冰枪术]
+    .train 401760 >> 使用 |T134939:0|t[|cRXP_FRIENDLY_法术笔记：冰枪术|r] 来学习 |T135844:0|t[冰枪术]
 step
     #label CleanupEnd
     .goto Elwynn Forest,48.923,41.606
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官玛克布莱德|r 对话
-    .turnin 7 >>交任务 狗头人的蜡烛
-    .accept 15 >>接受任务 回音山调查行动
-    .accept 3100 >>接受任务 简要的信件 << Warrior
-    .accept 3101 >>接受任务 圣洁信件 << Paladin
-    .accept 3102 >>接受任务密文信件 << Rogue
-    .accept 3103 >>接受任务 神圣信件 << Priest
-    .accept 3104 >>接受任务 雕文信件 << Mage
-    .accept 3105 >>接受任务 被污染的信件 << Warlock
+    .turnin 7 >> 交任务 狗头人的蜡烛
+    .accept 15 >> 接受任务 回音山调查行动
+    .accept 3100 >> 接受任务 简要的信件 << Warrior
+    .accept 3101 >> 接受任务 圣洁信件 << Paladin
+    .accept 3102 >> 接受任务密文信件 << Rogue
+    .accept 3103 >> 接受任务 神圣信件 << Priest
+    .accept 3104 >> 接受任务 雕文信件 << Mage
+    .accept 3105 >> 接受任务 被污染的信件 << Warlock
     .target 治安官玛克布莱德
 
 
@@ -555,43 +555,43 @@ step << Mage
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在楼上与 |cRXP_FRIENDLY_凯尔登·布雷门|r 对话
     .goto Elwynn Forest,49.661,39.402
-    .turnin 3104 >>交任务 雕文信件
-    .accept 77620 >>接受任务 法术研究 << Human
-    .turnin 77620 >>交任务 法术研究 << Human
-    .trainer >>训练你的职业技能
+    .turnin 3104 >> 交任务 雕文信件
+    .accept 77620 >> 接受任务 法术研究 << Human
+    .turnin 77620 >> 交任务 法术研究 << Human
+    .trainer >> 训练你的职业技能
     .target 凯尔登·布雷门
 step << Priest
     #xprate >1.59
     #optional
     #completewith next
     .goto Elwynn Forest,49.3,40.7,15,0
-    .goto Elwynn Forest,49.8,40.2,10 >>进屋并下楼去找 |cRXP_FRIENDLY_女牧师安妮塔|r
+    .goto Elwynn Forest,49.8,40.2,10 >> 进屋并下楼去找 |cRXP_FRIENDLY_女牧师安妮塔|r
 step << Priest
     #xprate >1.59
     #season 2
     .goto Elwynn Forest,49.808,39.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在屋内的楼下与 |cRXP_FRIENDLY_女牧师安妮塔|r 对话
-    .turnin 3103 >>交任务 神圣信件
-    .accept 77619 >>接受任务 圣光之思 << Human
-    .turnin 77619 >>交任务 圣光之思 << Human
-    .trainer >>训练你的职业技能，|cRXP_WARN_如果学不起就跳过，反正你主要会使用符文技能|r
+    .turnin 3103 >> 交任务 神圣信件
+    .accept 77619 >> 接受任务 圣光之思 << Human
+    .turnin 77619 >> 交任务 圣光之思 << Human
+    .trainer >> 训练你的职业技能，|cRXP_WARN_如果学不起就跳过，反正你主要会使用符文技能|r
     .target 女牧师安妮塔
 step << Warrior/Paladin
     #xprate >1.59
     #optional
     #completewith next
     .goto Elwynn Forest,48.85,41.76,15,0
-    .goto Elwynn Forest,49.6,41.8,15 >>进屋并下楼去找 |cRXP_FRIENDLY_莱尼·拜舍尔|r << Warrior
-    .goto Elwynn Forest,49.6,41.8,15 >>进屋并下楼去找 |cRXP_FRIENDLY_萨缪尔修士|r << Paladin
+    .goto Elwynn Forest,49.6,41.8,15 >> 进屋并下楼去找 |cRXP_FRIENDLY_莱尼·拜舍尔|r << Warrior
+    .goto Elwynn Forest,49.6,41.8,15 >> 进屋并下楼去找 |cRXP_FRIENDLY_萨缪尔修士|r << Paladin
 step << Warrior
     #xprate >1.59
     #season 2
     .goto Elwynn Forest,50.242,42.287
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t在屋内的楼下与 |cRXP_FRIENDLY_莱尼·拜舍尔|r 对话
-    .turnin 3100 >>交任务 简要的信件
-    .accept 77616 >>接受任务 失落的符文 << Human
-    .turnin 77616 >>交任务 失落的符文 << Human
-    .train 100 >>学习 |T132337:0|t[冲锋]
+    .turnin 3100 >> 交任务 简要的信件
+    .accept 77616 >> 接受任务 失落的符文 << Human
+    .turnin 77616 >> 交任务 失落的符文 << Human
+    .train 100 >> 学习 |T132337:0|t[冲锋]
     .target 莱尼·拜舍尔
 step << Paladin
     #xprate >1.59
@@ -599,35 +599,35 @@ step << Paladin
     #label PalaQ
     .goto Elwynn Forest,50.433,42.124
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨缪尔修士|r 对话
-    .turnin 3101 >>交任务 圣洁信件
-    .accept 77617 >>接受任务 圣光的圣物 << Human
-    .turnin 77617 >>交任务 圣光的圣物 << Human
+    .turnin 3101 >> 交任务 圣洁信件
+    .accept 77617 >> 接受任务 圣光的圣物 << Human
+    .turnin 77617 >> 交任务 圣光的圣物 << Human
     >>|cRXP_WARN_如果有多余的钱，可以花在|r |T135906:0|t|T135959:0|t[力量祝福]、|T135029:0|t|T135959:0|t[审判] |cRXP_WARN_或者|r |T135029:0|t|T135029:0|t[胸甲] |cRXP_WARN_上（如果还没学会的话）。建议优先购买胸甲|r
     .target 萨缪尔修士
 step << Paladin
     #optional
     #completewith RestandR
     .use 2385 --Tarnished Chain Gloves
-    .equip 10 >>装备|T132938:0|t|T132938:0|t|cRXP_LOOT_[无光泽的链甲手套]|r，如果你还没找到其他手套的话
-    .engrave 10 >>|cRXP_WARN_铭刻|r |T132938:0|t|T135891:0|t|cRXP_LOOT_[无光泽的链甲手套]|r |cRXP_WARN_上|r |T135891:0|t|T135891:0|t[十字军打击] << Paladin
+    .equip 10 >> 装备|T132938:0|t|T132938:0|t|cRXP_LOOT_[无光泽的链甲手套]|r，如果你还没找到其他手套的话
+    .engrave 10 >> |cRXP_WARN_铭刻|r |T132938:0|t|T135891:0|t|cRXP_LOOT_[无光泽的链甲手套]|r |cRXP_WARN_上|r |T135891:0|t|T135891:0|t[十字军打击] << Paladin
 step << Priest/Warrior/Paladin
     #xprate >1.59
     #season 2
     #optional
     #completewith RuneWorkers
-    .goto 1429,48.198,41.890,12 >>离开北郡修道院
+    .goto 1429,48.198,41.890,12 >> 离开北郡修道院
 step
     #xprate >1.59
     #season 2
     .goto Elwynn Forest,48.171,42.943
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维里副队长|r 对话
-    .accept 18 >>接受任务 盗贼兄弟会
+    .accept 18 >> 接受任务 盗贼兄弟会
     .target 维里副队长
 step << !Mage !Priest !Paladin
     .goto Elwynn Forest,48.22,41.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_符文贩子|r 对话
     >>|cRXP_WARN_千万不要把能穿的装备卖给商人|r
-    .vendor >>|cRXP_BUY_向商人贩卖垃圾物品并购买你需要的所有 |T134419:0|t|cRXP_WARN_[符文]|r|r
+    .vendor >> |cRXP_BUY_向商人贩卖垃圾物品并购买你需要的所有 |T134419:0|t|cRXP_WARN_[符文]|r|r
     .target Rune Broker
     .skipgossip
 step
@@ -662,7 +662,7 @@ step << Rogue
     #requires Shadowstrike2
     .goto Elwynn Forest,50.314,39.916
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔里克·克里丹|r 对话
-    .turnin 3102 >>交任务密文信件
+    .turnin 3102 >> 交任务密文信件
     .target 乔里克·克里丹
 step << !Warlock
     #xprate >1.59
@@ -683,7 +683,7 @@ step
     #optional
     #softcore
     #completewith next
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
 step << !Warlock
     #xprate >1.59
@@ -692,18 +692,18 @@ step << !Warlock
     #requires EarlyLibram4 << Paladin
     .goto Elwynn Forest,48.17,42.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_维里副队长|r 对话
-    .turnin 18,1 >>交任务 盗贼兄弟会 << Rogue
-    .turnin 18,2 >>交任务 盗贼兄弟会 << Paladin
-    .turnin 18,2 >>交任务 盗贼兄弟会 << Priest
-    .turnin 18,3 >>交任务 盗贼兄弟会 << Warrior
-    .turnin 18,5 >>交任务 盗贼兄弟会 << Mage
-    .turnin 18 >>交任务 盗贼兄弟会 << !Warrior !Priest !Mage !Rogue !Warlock !Paladin
+    .turnin 18,1 >> 交任务 盗贼兄弟会 << Rogue
+    .turnin 18,2 >> 交任务 盗贼兄弟会 << Paladin
+    .turnin 18,2 >> 交任务 盗贼兄弟会 << Priest
+    .turnin 18,3 >> 交任务 盗贼兄弟会 << Warrior
+    .turnin 18,5 >> 交任务 盗贼兄弟会 << Mage
+    .turnin 18 >> 交任务 盗贼兄弟会 << !Warrior !Priest !Mage !Rogue !Warlock !Paladin
     .target 维里副队长
 step << Rogue
     #xprate >1.59
     #season 2
     #completewith RestandR
-    .equip 16,2224 >>装备 |T135641:0|t[民兵匕首]
+    .equip 16,2224 >> 装备 |T135641:0|t[民兵匕首]
     .use 2224
     .itemcount 2224,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.01
@@ -711,13 +711,13 @@ step << Paladin
     #xprate >1.59
     #season 2
     #completewith RestandR
-    .equip 16,5580 >>装备|T133052:0|t|T133052:0|t[民兵之锤]
+    .equip 16,5580 >> 装备|T133052:0|t|T133052:0|t[民兵之锤]
     .use 5580
     .itemcount 5580,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.97
 step << Warrior
     #completewith RestandR
-    .equip 16,1161 >>装备 |T135274:0|t[民兵短剑]
+    .equip 16,1161 >> 装备 |T135274:0|t[民兵短剑]
     .use 1161
     .itemcount 1161,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.01
@@ -726,13 +726,13 @@ step << Human Priest
     #optional
     #completewith next
     .goto Elwynn Forest,49.3,40.7,15,0
-    .goto Elwynn Forest,49.8,40.2,10 >>进屋并下楼去找 |cRXP_FRIENDLY_女牧师安妮塔|r
+    .goto Elwynn Forest,49.8,40.2,10 >> 进屋并下楼去找 |cRXP_FRIENDLY_女牧师安妮塔|r
 step << Human Priest
     #xprate >1.59
     #season 2
     .goto Elwynn Forest,49.808,39.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_女牧师安妮塔|r 对话
-    .accept 5623 >>接受任务 圣光的恩赐
+    .accept 5623 >> 接受任务 圣光的恩赐
     .target 女牧师安妮塔
     .isOnQuest 77619
     .xp <5,1
@@ -742,15 +742,15 @@ step << Human Warrior/Human Paladin
     #optional
     #completewith next
     .goto Elwynn Forest,48.85,41.76,15,0
-    .goto Elwynn Forest,49.6,41.8,15 >>进屋并下楼去找 |cRXP_FRIENDLY_莱尼·拜舍尔|r << Warrior
-    .goto Elwynn Forest,49.6,41.8,15 >>进屋并下楼去找 |cRXP_FRIENDLY_萨缪尔修士|r << Paladin
+    .goto Elwynn Forest,49.6,41.8,15 >> 进屋并下楼去找 |cRXP_FRIENDLY_莱尼·拜舍尔|r << Warrior
+    .goto Elwynn Forest,49.6,41.8,15 >> 进屋并下楼去找 |cRXP_FRIENDLY_萨缪尔修士|r << Paladin
 step << Human Paladin
     #xprate >1.59
     #season 2
     .goto Elwynn Forest,50.433,42.124
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_萨缪尔修士|r 在楼下对话
-    .turnin 77617 >>交任务 圣光的圣物
-    .trainer >>训练你的职业技能
+    .turnin 77617 >> 交任务 圣光的圣物
+    .trainer >> 训练你的职业技能
     .target 萨缪尔修士
     .isOnQuest 77617
 step << Human Paladin
@@ -758,7 +758,7 @@ step << Human Paladin
     #season 2
     #completewith RestandR
     #label GlovesEquip
-    .equip 10,2385 >>|cRXP_WARN_装备|r |T132938:0|t|T132938:0|t|cRXP_LOOT_[无光泽的链甲手套]|r
+    .equip 10,2385 >> |cRXP_WARN_装备|r |T132938:0|t|T132938:0|t|cRXP_LOOT_[无光泽的链甲手套]|r
     .use 2385
     .itemcount 2385,1
     .train 403470,3 << Warrior
@@ -768,8 +768,8 @@ step
     #xprate >1.59
     .goto Elwynn Forest,48.923,41.606
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官玛克布莱德|r 对话
-    .turnin 15 >>交任务 调查营地
-    .accept 21 >>接受任务 回音山清剿行动
+    .turnin 15 >> 交任务 调查营地
+    .accept 21 >> 接受任务 回音山清剿行动
     .target 治安官玛克布莱德
 step << Human Paladin/Warrior/Priest
     #xprate >1.59
@@ -783,7 +783,7 @@ step << Warlock
     #xprate >1.59
     .goto Elwynn Forest,49.873,42.649
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_杜希拉·拉萨雷|r 对话
-    .turnin 3105 >>交任务 被污染的信件
+    .turnin 3105 >> 交任务 被污染的信件
     .train 172 >>学习 |T136118:0|t[腐蚀术]
     .target 杜希拉·拉萨雷
 
@@ -796,13 +796,13 @@ step << Priest/Paladin
     .goto Elwynn Forest,48.22,41.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_符文贩子|r 对话
     >>|cRXP_WARN_千万不要把能穿的装备卖给商人|r
-    .vendor >>|cRXP_BUY_向商人贩卖垃圾物品并购买你想要的所有 |T134419:0|t|cRXP_WARN_[符文]|r|r
+    .vendor >> |cRXP_BUY_向商人贩卖垃圾物品并购买你想要的所有 |T134419:0|t|cRXP_WARN_[符文]|r|r
     .target Rune Broker
     .skipgossip
 step
     #optional
     #completewith next
-    .goto Elwynn Forest,47.63,32.07,20 >>进入回音山矿洞
+    .goto Elwynn Forest,47.63,32.07,20 >> 进入回音山矿洞
 step
     #loop
     .goto 1429,47.784,31.540,0
@@ -825,13 +825,13 @@ step
 step
 	#softcore
     #completewith next
-    .deathskip >>死亡并在北郡的灵魂医者处复活
+    .deathskip >> 死亡并在北郡的灵魂医者处复活
     .target 灵魂医者
 step
     #xprate >1.49
     #optional
     #completewith RestandR
-    .abandon 3904 >>放弃任务 米莉的葡萄
+    .abandon 3904 >> 放弃任务 米莉的葡萄
 step
     #xprate >1.49
     #optional
@@ -843,37 +843,37 @@ step
     .goto Elwynn Forest,55.09,49.00,30,0
     .goto Elwynn Forest,55.43,45.87,30,0
     .goto Elwynn Forest,53.86,47.05,30,0
-    .xp 5+1205 >>刷怪达到1205+/2800经验 << Paladin/Warrior
-    .xp 5+1040 >>刷怪达到1040+/2800经验 << !Paladin !Warrior !Priest
-    .xp 5+875 >>刷怪达到 875+/2800 经验 << Priest
+    .xp 5+1205 >> 刷怪达到1205+/2800经验 << Paladin/Warrior
+    .xp 5+1040 >> 刷怪达到1040+/2800经验 << !Paladin !Warrior !Priest
+    .xp 5+875 >> 刷怪达到 875+/2800 经验 << Priest
     .mob 迪菲亚暴徒
 step
     #optional
     #softcore
     #completewith #label RestandR
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
     .subzoneskip 59,1
 step
     #label RestandR
     .goto Elwynn Forest,48.923,41.606
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官玛克布莱德|r 对话，NPC在里面
-    .turnin 21,1 >>交任务 回音山清剿行动 << Rogue
-    .turnin 21,2 >>交任务 回音山清剿行动 << Warrior/Paladin
-    .turnin 21,3 >>交任务 回音山清剿行动 << !Warrior !Paladin !Rogue
-    .accept 54 >>接受任务 去闪金镇报到
+    .turnin 21,1 >> 交任务 回音山清剿行动 << Rogue
+    .turnin 21,2 >> 交任务 回音山清剿行动 << Warrior/Paladin
+    .turnin 21,3 >> 交任务 回音山清剿行动 << !Warrior !Paladin !Rogue
+    .accept 54 >> 接受任务 去闪金镇报到
     .target 治安官玛克布莱德
 step << Priest
     #optional
     #season 2
     .goto Elwynn Forest,49.808,39.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_女牧师安妮塔|r 对话
-    .accept 5623 >>接受任务 圣光的恩赐
+    .accept 5623 >> 接受任务 圣光的恩赐
     .target 女牧师安妮塔
 step
     .goto Elwynn Forest,45.563,47.742
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_法尔坎·伊森斯泰德|r 对话
-    .accept 2158 >>接受任务 休息和放松
+    .accept 2158 >> 接受任务 休息和放松
     .target 法尔坎·伊森斯泰德
 ]])
 
@@ -884,7 +884,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance
 #group RestedXP 联盟 1-20 级
-#group14-16级 黑海岸
+#groupid RXP-SRGCE-A1
 #name 6-12 艾尔文森林 探索赛季
 #displayname 6-12 艾尔文森林
 #next 12-13 丹莫罗 探索赛季
@@ -894,27 +894,27 @@ step
     #season 0,1 << Rogue
     #hardcore
     #completewith next
-    .subzone 87 >>前往金雾村
+    .subzone 87 >> 前往金雾村
 step
     #hardcore
     .goto Elwynn Forest,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话
-    .turnin 54 >>交任务 去闪金镇报到
-    .accept 62 >>接受任务 法戈第矿洞
+    .turnin 54 >> 交任务 去闪金镇报到
+    .accept 62 >> 接受任务 法戈第矿洞
     .target 治安官杜汉
 step
     #season 0,1 << Rogue
     #softcore
     #completewith Goldshire
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
     .subzoneskip 87
 step
     #softcore
     .goto Elwynn Forest,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话
-    .turnin 54 >>交任务 去闪金镇报到
-    .accept 62 >>接受任务 法戈第矿洞
+    .turnin 54 >> 交任务 去闪金镇报到
+    .accept 62 >> 接受任务 法戈第矿洞
     .target 治安官杜汉
 step << Warrior
     .goto Elwynn Forest,41.529,65.900
@@ -967,32 +967,32 @@ step << Warrior/Rogue/Paladin
     >>|cRXP_WARN_这能让你制作|r |T135248:0|t[劣质磨刀石] |cRXP_WARN_使你的近战伤害增加 2|r << Warrior/Rogue
     >>|cRXP_WARN_这能让你制作|r |T135255:0|t[劣质平衡石] |cRXP_WARN_使你的近战伤害增加 2|r << Paladin
     >>|cRXP_WARN_如果不愿完成，可跳过此步骤|r
-    .train 2018 >>学习 |T136241:0|t[锻造]
+    .train 2018 >> 学习 |T136241:0|t[锻造]
     .target 铁匠阿古斯
 step << Mage/Priest/Warlock
     #optional
     #completewith next
     .goto Elwynn Forest,41.706,65.786
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_安德温·克里顿|r 对话
-    .vendor >>把垃圾物品卖给商人
+    .vendor >> 把垃圾物品卖给商人
     .target 安德温·克里顿
 --  .money >1.0
 step
     .goto Elwynn Forest,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_威廉·匹斯特|r 对话
-    .accept 60 >>接受任务 狗头人的蜡烛
+    .accept 60 >> 接受任务 狗头人的蜡烛
     .target 威廉·匹斯特
 step
     #label GSHS
     .goto Elwynn Forest,43.771,65.803
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板法雷|r 对话
-    .turnin 2158,1 >>交任务 休息和放松 << Rogue/Warrior
-    .turnin 2158,2 >>交任务 休息和放松 << !Rogue !Warrior
-    .home >>将你的炉石设置为闪金镇
+    .turnin 2158,1 >> 交任务 休息和放松 << Rogue/Warrior
+    .turnin 2158,2 >> 交任务 休息和放松 << !Rogue !Warrior
+    .home >> 将你的炉石设置为闪金镇
     .target 旅店老板法雷
 step
     #optional
-    .xp 6 >>刷怪到6级
+    .xp 6 >> 刷怪到6级
 step << Rogue
     .goto Elwynn Forest,43.96,65.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布洛葛·哈姆菲斯特|r 对话
@@ -1014,20 +1014,20 @@ step << Rogue
     #sticky
     #requires BalancedDaggers1
     #label DeleteOldDaggers
-    .destroy 2947 >>删除包里的|T135426:0|t[小飞刀] 你已不再需要它了
+    .destroy 2947 >> 删除包里的|T135426:0|t[小飞刀] 你已不再需要它了
 step << Warlock
     #optional
     #completewith next
-    .goto Elwynn Forest,44.1,66.0,10 >>下楼
+    .goto Elwynn Forest,44.1,66.0,10 >> 下楼
 step << Warlock
     .goto Elwynn Forest,44.392,66.240
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛克西米利安·克洛文|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 玛克西米利安·克洛文
 step << Warlock
     .goto Elwynn Forest,44.397,65.989
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞琳娜·达克哈特|r 对话
-    .vendor 6374 >>|cRXP_BUY_如果钱够，就从她那里购买一本|r |T133738:0|t[魔典：血契(等级 1)] |cRXP_BUY_如果钱不够，可以今后再来买|r
+    .vendor 6374 >> |cRXP_BUY_如果钱够，从她那里购买一本|r |T133738:0|t[魔典：血契(等级 1)] |cRXP_BUY_如果钱不够，可以今后再来买|r
     .target 塞琳娜·达克哈特
     .money <0.0100
     .itemcount 16321,<1 --Grimoire of Blood Pact (Rank 1)
@@ -1035,37 +1035,37 @@ step << Warlock
 step << Mage/Rogue/Priest
     #optional
     #completewith next
-    .goto Elwynn Forest,43.877,66.546,9 >>前往旅店楼上
+    .goto Elwynn Forest,43.877,66.546,9 >> 前往旅店楼上
 step << Mage
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎尔迪玛·维夫希尔特|r 对话
 	.target 扎尔迪玛·维夫希尔特
     .goto Elwynn Forest,43.25,66.19
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
 step << Priest
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女牧师洁塞塔|r 对话
 	.target 女牧师洁塞塔
     .goto Elwynn Forest,43.283,65.721
-    .turnin 5623 >>交任务 圣光的恩赐
-    .accept 5624 >>接受任务 圣光之衣
-    .trainer >>训练你的职业技能
+    .turnin 5623 >> 交任务 圣光的恩赐
+    .accept 5624 >> 接受任务 圣光之衣
+    .trainer >> 训练你的职业技能
 step << Rogue
     .money <0.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞恩·塞尔留斯|r 对话
     .target 科瑞恩·塞尔留斯
     .goto Elwynn Forest,43.872,65.937
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
 step << Rogue/Warrior
     .money <0.01
     .goto Elwynn Forest,43.877,66.546,9,0 << Warrior
     .goto Elwynn Forest,43.392,65.550
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 在楼上与 |cRXP_FRIENDLY_米歇尔·贝利|r 对话
     .target 米歇尔·贝利
-    .train 3273 >>训练 |T135966:0|t[急救]
+    .train 3273 >> 训练 |T135966:0|t[急救]
 step << Warrior/Rogue
     .goto Elwynn Forest,43.771,65.803
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板法雷|r 对话
-    .vendor 295 >>|cRXP_BUY_购买|r |T133995:0|t[达拉然奶酪]|cRXP_BUY_从他那里。直到你的钱剩下 1 银币为止|r << Warrior
-    .vendor 295 >>|cRXP_BUY_买够20个|r |T133995:0|t[达拉然奶酪]|cRXP_BUY_从他那里|r << Rogue
+    .vendor 295 >> |cRXP_BUY_购买|r |T133995:0|t[达拉然奶酪]|cRXP_BUY_从他那里。直到你的钱剩下 1 银币为止|r << Warrior
+    .vendor 295 >> |cRXP_BUY_买够20个|r |T133995:0|t[达拉然奶酪]|cRXP_BUY_从他那里|r << Rogue
     .collect 414,20 --Dalaran Sharp (20)
     .disablecheckbox
     .target 旅店老板法雷
@@ -1074,18 +1074,18 @@ step << Warrior/Rogue
 step << Warrior
     .goto Elwynn Forest,41.087,65.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_里瑞亚·杜拉克|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 里瑞亚·杜拉克
 step << Paladin
     .goto Elwynn Forest,41.096,66.041
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_威尔海姆修士|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 威尔海姆修士
 step
     #requires DeleteOldDaggers << Rogue
     .goto Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷米|r 对话
-    .accept 47 >>接受任务 金砂交易
+    .accept 47 >> 接受任务 金砂交易
     .target 雷米
 step << Priest
     .goto Elwynn Forest,48.148,68.046
@@ -1122,10 +1122,10 @@ step << Warrior
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_波尼斯·斯通菲尔德姑妈|r 和 |cRXP_FRIENDLY_斯通菲尔德妈妈|r 对话 << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_波尼斯·斯通菲尔德姑妈|r 对话 << !Rogue
-    .accept 85 >>接受任务 丢失的项链
+    .accept 85 >> 接受任务 丢失的项链
     .goto Elwynn Forest,34.486,84.253
     .target 波尼斯·斯通菲尔德姑妈
-    .accept 88 >>接受任务 公主必须死！ << Rogue
+    .accept 88 >> 接受任务 公主必须死！ << Rogue
 	.goto Elwynn Forest,34.660,84.482 << Rogue
     .target 斯通菲尔德妈妈 << Rogue
 step << Warrior/Paladin/Rogue
@@ -1184,13 +1184,13 @@ step
     #label NecklaceStart
     .goto Elwynn Forest,43.131,85.722
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比利·马科伦|r 对话
-    .turnin 85 >>交任务 丢失的项链
-    .accept 86 >>接受任务 比利的馅饼
+    .turnin 85 >> 交任务 丢失的项链
+    .accept 86 >> 接受任务 比利的馅饼
     .target 比利·马科伦
 step
     .goto Elwynn Forest,43.154,89.625
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅贝尔·马科伦|r 对话
-    .accept 106 >>接受任务 年轻的恋人
+    .accept 106 >> 接受任务 年轻的恋人
     .target 梅贝尔·马科伦
 step
     #optional
@@ -1198,7 +1198,7 @@ step
     .goto Elwynn Forest,42.357,89.373
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔舒·马科伦|r 对话
     .vendor >>|cRXP_BUY_能买多少|r |T132815:0|t[冰镇牛奶] |cRXP_WARN_就买多少|r << Priest/Warlock/Mage
-    .vendor >>|cRXP_WARN_出售垃圾物品|r << !Priest !Warlock !Mage
+    .vendor >>出售垃圾物品 << !Priest !Warlock !Mage
     .target 乔舒·马科伦
     .subzoneskip 64,1 --The Maclure Vineyards
 step << Warrior/Paladin/Rogue
@@ -1257,22 +1257,22 @@ step
     #label Lovers
     .goto Elwynn Forest,29.840,85.997
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_托米·乔·斯通菲尔德|r 对话
-    .turnin 106 >>交任务 年轻的恋人
-    .accept 111 >>接受任务 托米的祖母
+    .turnin 106 >> 交任务 年轻的恋人
+    .accept 111 >> 接受任务 托米的祖母
     .target 托米·乔·斯通菲尔德
 step
     #requires BoarMeatQuest
     #label Pie
     .goto Elwynn Forest,34.486,84.253
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_波尼斯·斯通菲尔德姑妈|r 对话
-    .turnin 86 >>交任务 比利的馅饼
-    .accept 84 >>接受任务 比利的馅饼
+    .turnin 86 >> 交任务 比利的馅饼
+    .accept 84 >> 接受任务 比利的馅饼
     .target 波尼斯·斯通菲尔德姑妈
 step
     .goto 1429,34.945,83.855
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米莱德·斯通菲尔德|r 对话，NPC在里面
-    .turnin 111 >>交任务 托米的祖母
-    .accept 107 >>接受任务 给威廉·匹斯特的信
+    .turnin 111 >> 交任务 托米的祖母
+    .accept 107 >> 接受任务 给威廉·匹斯特的信
     .target 米莱德·斯通菲尔德
 step << Warrior/Paladin/Rogue
     #optional
@@ -1376,8 +1376,8 @@ step
 step
     .goto Elwynn Forest,43.131,85.722
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比利·马科伦|r 对话
-    .turnin 84 >>交任务 比利的馅饼
-    .accept 87 >>接受任务 金牙
+    .turnin 84 >> 交任务 比利的馅饼
+    .accept 87 >> 接受任务 金牙
     .target 比利·马科伦
 step << Priest
     #sticky
@@ -1393,7 +1393,7 @@ step << Priest
     #sticky
     #requires SharedPain
     #completewith BernicesNecklace
-    .train 402854 >>|cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_落难救世主的回忆|r] |cRXP_WARN_来学习|r |T136160:0|t[分担痛苦]
+    .train 402854 >> |cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_落难救世主的回忆|r] |cRXP_WARN_来学习|r |T136160:0|t[分担痛苦]
     >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel以获得|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_增益效果|r
     .use 205945
     .itemcount 205945,1
@@ -1437,8 +1437,8 @@ step << Rogue
     .waypoint Elwynn Forest,37.81,85.40,35,0
     .waypoint Elwynn Forest,36.76,83.19,35,0
     .waypoint Elwynn Forest,38.02,81.70,35,0
-    .xp 9+2000 >>击杀狗头人直到你达到9级并拥有2000点经验值。
-    >>|cRXP_WARN_如果你离得不远，可以先交金牙任务，但刷怪效率更高|r
+    .xp 9+2000 >> 击杀狗头人直到你达到9级并拥有2000点经验值。
+    >> |cRXP_WARN_如果你离得不远，可以先交金牙任务，但刷怪效率更高|r
 step << Warrior
     #season 2
     #sticky
@@ -1461,7 +1461,7 @@ step << Warrior
 step
 	#softcore
     #completewith next
-    .deathskip >>死亡并在闪金镇的灵魂医者处复活
+    .deathskip >> 死亡并在闪金镇的灵魂医者处复活
     .target 灵魂医者
 step << skip --logout skip
     #xprate >1.49
@@ -1481,20 +1481,20 @@ step
     #hardcore
     #optional
     #completewith Exchange
-    .goto Elwynn Forest,42.140,67.254,125 >>返回闪金镇
+    .goto Elwynn Forest,42.140,67.254,125 >> 返回闪金镇
     .subzoneskip 87 --Goldshire
 step
     #softcore
     #completewith Exchange
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
 step
     #label Exchange
     .goto Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷米|r 对话
     >>|cRXP_WARN_不要出售|r |T133581:0|t[弹珠袋] |cRXP_WARN_这个任务奖励是一件非常有价值的道具，一直到 60 级都很有用|r
-    .turnin 47 >>交任务 金砂交易
-    .accept 40 >>接受任务 鱼人的威胁
+    .turnin 47 >> 交任务 金砂交易
+    .accept 40 >> 接受任务 鱼人的威胁
     .target 雷米
 step << Priest
     #season 2
@@ -1505,9 +1505,9 @@ step << Priest
 step
     .goto Elwynn Forest,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话
-    .turnin 62 >>交任务 法戈第矿洞
-    .accept 76 >>接受任务 玉石矿洞
-    .turnin 40 >>交任务 鱼人的威胁
+    .turnin 62 >> 交任务 法戈第矿洞
+    .accept 76 >> 接受任务 玉石矿洞
+    .turnin 40 >> 交任务 鱼人的威胁
     .target 治安官杜汉
 step
     #optional << Warrior/Rogue/Paladin
@@ -1552,7 +1552,7 @@ step << Rogue
 step << Rogue
     #optional
     #completewith next
-    .engrave 10,399960 >>打开角色面板，在手套上铭刻|T132304:0|t|T132304:0|t[|cRXP_FRIENDLY_毁伤|r]。这是目前打怪最强的符文。
+    .engrave 10,399960 >> 打开角色面板，在手套上铭刻|T132304:0|t|T132304:0|t[|cRXP_FRIENDLY_毁伤|r]。这是目前打怪最强的符文。
 step << Paladin
     .goto Elwynn Forest,41.529,65.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞娜·斯蒂利|r 对话
@@ -1575,50 +1575,50 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_威尔海姆修士|r 对话
     >>|cRXP_WARN_训练|r |T135949:0|t|T133815:0|t[纯净术] |cRXP_WARN_以尽快获得|r |T133815:0|t|T133815:0|t[铭刻胸甲 - 神盾] |cRXP_WARN_尽快|r
     .train 1152 >>训练 |T135949:0|t|T135949:0|t[纯净术]
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 威尔海姆修士
 step << Paladin
     #season 0,1
     #xprate >1.59
     .goto Elwynn Forest,41.096,66.041
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_威尔海姆修士|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 威尔海姆修士
 step << Warrior
     #xprate >1.59
     .goto Elwynn Forest,41.087,65.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_里瑞亚·杜拉克|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 里瑞亚·杜拉克
 step
     #label CandlesEnd
     #requires GoldtoothRune << Warrior/Priest --Season 2
     .goto Elwynn Forest,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_威廉·匹斯特|r 对话
-    .turnin 60 >>交任务 狗头人的蜡烛
-    .accept 61 >>接受任务 送往暴风城的货物
-    .turnin 107 >>交任务 给威廉·匹斯特的信
-    .accept 112 >>接受任务 收集海藻
+    .turnin 60 >> 交任务 狗头人的蜡烛
+    .accept 61 >> 接受任务 送往暴风城的货物
+    .turnin 107 >> 交任务 给威廉·匹斯特的信
+    .accept 112 >> 接受任务 收集海藻
     .target 威廉·匹斯特
 step << Warrior
     #xprate <1.59
     .goto Elwynn Forest,41.087,65.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_里瑞亚·杜拉克|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 里瑞亚·杜拉克
 step << Warlock
     #optional
     #completewith next
-    .goto Elwynn Forest,44.1,66.0,10 >>前往旅店楼下
+    .goto Elwynn Forest,44.1,66.0,10 >> 前往旅店楼下
 step << Warlock
     .goto Elwynn Forest,44.392,66.240
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛克西米利安·克洛文|r 对话
     .target 玛克西米利安·克洛文
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
 step << Warlock
     .goto Elwynn Forest,44.397,65.989
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞琳娜·达克哈特|r 对话
-    .vendor >>|cRXP_BUY_如果钱够，就从她那里购买一本|r |T133738:0|t[魔典：火焰箭(等级 2)] |cRXP_BUY_如果钱不够，可以今后再来买|r
+    .vendor >> |cRXP_BUY_如果钱够，就从她那里购买一本|r |T133738:0|t[魔典：火焰箭(等级 2)] |cRXP_BUY_如果钱不够，可以今后再来买|r
     .target 塞琳娜·达克哈特
     .money <0.100
     .itemcount 16302,<1 --Grimoire of Blood Pact (Rank 1)
@@ -1626,43 +1626,43 @@ step << Warlock
 step << Mage/Priest/Rogue/Warrior/Paladin
     #optional
     #completewith next
-    .goto Elwynn Forest,43.877,66.546,9 >>前往旅店楼上
+    .goto Elwynn Forest,43.877,66.546,9 >> 前往旅店楼上
 step << Mage
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎尔迪玛·维夫希尔特|r 对话
 	.target 扎尔迪玛·维夫希尔特
     .goto Elwynn Forest,43.25,66.19
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
 step << Priest
     .goto Elwynn Forest,43.283,65.721
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女牧师洁塞塔|r 对话
 	.target 女牧师洁塞塔
-    .turnin 5624 >>交任务 圣光之衣
-    .trainer >>训练你的职业技能
+    .turnin 5624 >> 交任务 圣光之衣
+    .trainer >> 训练你的职业技能
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞恩·塞尔留斯|r 对话
     .target 科瑞恩·塞尔留斯
     .goto Elwynn Forest,43.872,65.937
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
 step << Rogue/Warrior/Paladin
     .money <0.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米歇尔·贝利|r 对话
     .target 米歇尔·贝利
     .goto Elwynn Forest,43.392,65.550
-    .train 3273 >>训练 |T135966:0|t[急救]
+    .train 3273 >> 训练 |T135966:0|t[急救]
 step
     #label GoldshireEnd << Priest --Season 2
     .goto Elwynn Forest,43.96,65.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布洛葛·哈姆菲斯特|r 对话
-    .vendor >>|cRXP_WARN_如有需要，购买一个|r |T133634:0|t[棕色小包] |cRXP_WARN_|r
+    .vendor >> |cRXP_WARN_如有需要，购买一个|r |T133634:0|t[棕色小包] |cRXP_WARN_|r
 	.target 布洛葛·哈姆菲斯特
     .money <0.2
 step
     #completewith next
     .goto Elwynn Forest,43.771,65.803
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_旅店老板法雷|r 对话
-    .vendor >>|cRXP_BUY_从他那里购买20杯|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_能买多少买多少|r << !Warrior !Rogue !Paladin
-    .vendor >>|cRXP_BUY_买够20个|r |T133995:0|t[达拉然奶酪]|cRXP_BUY_从他那里。如果钱够|r << Warrior/Rogue
-    .vendor >>|cRXP_BUY_如果钱够，就从他那里|r|cRXP_BUY_购买10块|r |T133995:0|t[达拉然奶酪] |cRXP_BUY_与10杯|r |T132815:0|t[冰镇牛奶] << Paladin
+    .vendor >> |cRXP_BUY_从他那里购买20杯|r |T132815:0|t[冰镇牛奶] |cRXP_BUY_能买多少买多少|r << !Warrior !Rogue !Paladin
+    .vendor >> |cRXP_BUY_买够20个|r |T133995:0|t[达拉然奶酪]|cRXP_BUY_从他那里。如果钱够|r << Warrior/Rogue
+    .vendor >> |cRXP_BUY_如果钱够，就从他那里|r|cRXP_BUY_购买10块|r |T133995:0|t[达拉然奶酪] |cRXP_BUY_与10杯|r |T132815:0|t[冰镇牛奶] << Paladin
     .target 旅店老板法雷
     .money < 0.1
 step << Warrior
@@ -1796,7 +1796,7 @@ step << Priest
     #sticky
     #requires SharedPainTwo
     #completewith JasperlodeExplore
-    .train 402854 >>|cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_落难救世主的回忆|r] |cRXP_WARN_来学习|r |T136160:0|t[分担痛苦]
+    .train 402854 >> |cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_落难救世主的回忆|r] |cRXP_WARN_来学习|r |T136160:0|t[分担痛苦]
     >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel以获得|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_增益效果|r
     .use 205945
     .itemcount 205945,1
@@ -1805,7 +1805,7 @@ step
     #requires MurlocRune << Warrior/Rogue --Season 2
     #label Jasperlode
     #completewith JasperlodeExplore
-    .goto Elwynn Forest,61.654,53.608,15 >>进入玉石矿洞
+    .goto Elwynn Forest,61.654,53.608,15 >> 进入玉石矿洞
 step << Mage
     #season 2
     #sticky
@@ -1843,7 +1843,7 @@ step << Priest
 step << Priest
     #optional
     #completewith next
-    .train 402854 >>|cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_落难救世主的回忆|r] |cRXP_WARN_来学习|r |T136160:0|t[分担痛苦]
+    .train 402854 >> |cRXP_WARN_使用|r |T136222:0|t[|cRXP_FRIENDLY_落难救世主的回忆|r] |cRXP_WARN_来学习|r |T136160:0|t[分担痛苦]
     >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光线祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel以获得|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_增益效果|r
     .use 205945
     .itemcount 205945,1
@@ -1930,7 +1930,7 @@ step << Priest
     #optional
     #label ExitJasperlode
     #completewith Find
-    .goto 1429,61.820,53.871,15 >>离开玉石矿洞
+    .goto 1429,61.820,53.871,15 >> 离开玉石矿洞
     .subzoneskip 54,1
 step << Priest
     #season 2
@@ -1950,7 +1950,7 @@ step << Priest
     #season 2
     #optional
     #completewith BundleOT
-    .train 402852 >>|cRXP_WARN_使用|r |T135975:0|t|T237570:0|t|cRXP_LOOT_[遭渎城堡的预言]|r |cRXP_WARN_学习|r |T237570:0|t|T237570:0|t[裂魂魔]
+    .train 402852 >> |cRXP_WARN_使用|r |T135975:0|t|T237570:0|t|cRXP_LOOT_[遭渎城堡的预言]|r |cRXP_WARN_学习|r |T237570:0|t|T237570:0|t[裂魂魔]
     >>|cRXP_WARN_你必须在圣洁区域（如北郡修道院、暴风城大教堂、安威玛尔的光明祭坛、洛克莫丹或铁炉堡的神秘结界）输入/kneel，以获得2层|r |T135934:0|t|T136057:0|t|T136057:0|t|T136057:0|t[冥想] |cRXP_WARN_增益效果|r
     .use 205947
     .itemcount 205947,1
@@ -1973,7 +1973,7 @@ step << Rogue
     #season 2
     #softcore
     #completewith AcceptBundle
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
     .train 398196,1
     .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
@@ -1983,7 +1983,7 @@ step << Rogue
     #optional
     .goto Elwynn Forest,83.283,66.089
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_拉里克·费恩|r 对话
-    .vendor >>出售垃圾物品并修理装备
+    .vendor >> 出售垃圾物品并修理装备
     .target 拉里克·费恩
     .train 398196,1
     .isQuestAvailable 5545
@@ -2032,7 +2032,7 @@ step << Rogue
     .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
 step << Rogue
     #season 2
-    .train 400095 >>|cRXP_WARN_使用|r |T134419:0|t|T134536:0|t[|cRXP_FRIENDLY_速射符文|r] |cRXP_WARN_来训练|r |T134536:0|t|T134536:0|t[速射]
+    .train 400095 >> |cRXP_WARN_使用|r |T134419:0|t|T134536:0|t[|cRXP_FRIENDLY_速射符文|r] |cRXP_WARN_来训练|r |T134536:0|t|T134536:0|t[速射]
     .use 203991
     .itemcount 203991,1
     .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
@@ -2040,27 +2040,27 @@ step << Priest
     #softcore
     #label EVDeathskip
     #completewith RedridgeS
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
     .zoneskip Redridge Mountains
 --XX not worth deathskipping as a warlock due to having to resumm pet
 step << Priest/Rogue
     #label RedridgeS
     .goto Redridge Mountains,17.4,69.6
-    .zone Redridge Mountains >>前往赤脊山
+    .zone Redridge Mountains >> 前往赤脊山
     .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
 step << Priest/Rogue
     #optional
     .goto Redridge Mountains,17.4,69.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守卫帕克|r 对话
-    .accept 244 >>接受任务 豺狼人的入侵
+    .accept 244 >> 接受任务 豺狼人的入侵
     .target 卫兵帕克
     .xp <11,1
     .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
 step << Priest/Rogue
     #softcore
     #completewith RRFP
-    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
+    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
     .target 灵魂医者
     .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
 step << Priest/Rogue
@@ -2076,7 +2076,7 @@ step << Priest/Rogue
     #optional
     .goto Redridge Mountains,30.73,59.99
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
-    .turnin 244 >>交任务豺狼人的入侵
+    .turnin 244 >> 交任务豺狼人的入侵
     .target 菲尔顿副队长
     .isOnQuest 244
     .xp <11,1
@@ -2084,32 +2084,32 @@ step << Priest/Rogue
 step << Priest/Rogue
     #label RRFP
     .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
-    .fp Redridge Mountains >>获取赤脊山的飞行路径
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    .fp Redridge Mountains >> 获取赤脊山的飞行路径
     .target 艾蕾娜·斯托姆法瑟
     .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
 step
     #optional
     #completewith CollectKelp
-    .hs >>使用炉石返回闪金镇
+    .hs >> 使用炉石返回闪金镇
     .subzoneskip 87
 step
     #label CollectKelp
     .goto Elwynn Forest,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_威廉·匹斯特|r 对话
-    .turnin 112 >>交任务 收集海藻
+    .turnin 112 >> 交任务 收集海藻
     .timer 9,收集海藻 剧情
-    .accept 114 >>接受任务 梅贝尔的隐形水
+    .accept 114 >> 接受任务 梅贝尔的隐形水
     .target 威廉·匹斯特
 step << Warrior/Rogue
     #optional
     #completewith next << Warrior
     #completewith RogueOptTrain << Rogue
-    .goto Elwynn Forest,43.877,66.546,9 >>前往旅店楼上
+    .goto Elwynn Forest,43.877,66.546,9 >> 前往旅店楼上
 step << Warrior/Rogue
     .goto Elwynn Forest,43.392,65.550
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米歇尔·贝利|r 对话
-    .train 3273 >>训练 |T135966:0|t[急救]
+    .train 3273 >> 训练 |T135966:0|t[急救]
     .target 米歇尔·贝利
 step << Rogue
     #optional
@@ -2117,46 +2117,46 @@ step << Rogue
     .goto Elwynn Forest,43.872,65.937
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞恩·塞尔留斯|r 对话
     >>|cRXP_WARN_只学习|r |T132147:0|t[双持] |cRXP_WARN_和|r |T132307:0|t[疾跑]|cRXP_WARN_。不要学习其他技能，把金币留到后面使用|r
-    .train 674 >>训练 |T132147:0|t[双武器]
-    .train 2983 >>训练 |T132307:0|t[疾跑]
+    .train 674 >> 训练 |T132147:0|t[双武器]
+    .train 2983 >> 训练 |T132307:0|t[疾跑]
     .target 科瑞恩·塞尔留斯
     .xp <10,1
 step
     .goto Elwynn Forest,42.105,65.927
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话
-    .turnin 76 >>交任务 玉石矿洞
-    .accept 239 >>接受任务 西泉要塞
-    .accept 109 >>接受任务 向格里安·斯托曼报到
+    .turnin 76 >> 交任务 玉石矿洞
+    .accept 239 >> 接受任务 西泉要塞
+    .accept 109 >> 接受任务 向格里安·斯托曼报到
     .target 治安官杜汉
 step
     #sticky
     #label GoldshireVendor
     .goto Elwynn Forest,41.529,65.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞娜·斯蒂利|r 对话
-    .vendor >>把垃圾物品卖给商人
+    .vendor >> 把垃圾物品卖给商人
     .target 科瑞娜·斯蒂利
     .money >0.75
 step
     .goto Elwynn Forest,41.706,65.544
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_铁匠阿古斯|r 对话
-    .accept 1097 >>接受任务 艾尔默的任务
+    .accept 1097 >> 接受任务 艾尔默的任务
     .target 铁匠阿古斯
 step << Warlock/Warrior
     #requires GoldshireVendor
     #optional
-    .xp 10 >>刷怪到10级
+    .xp 10 >> 刷怪到10级
 step << Warrior
     .goto Elwynn Forest,41.087,65.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_里瑞亚·杜拉克|r 对话
     >>|cRXP_WARN_不要学技能，因为你需要为后续存钱|r
-    .accept 1638 >>接受任务 战士的训练
+    .accept 1638 >> 接受任务 战士的训练
     .target 里瑞亚·杜拉克
 step << Paladin
     #optional
     #requires GoldshireVendor
     .goto Elwynn Forest,41.096,66.041
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_威尔海姆修士|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 威尔海姆修士
     .xp <10,1
     .xp >12,1
@@ -2165,20 +2165,20 @@ step << Paladin
     #requires GoldshireVendor
     .goto Elwynn Forest,41.096,66.041
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_威尔海姆修士|r 对话
-    .accept 2998 >>接受任务圣洁之书
-    .trainer >>训练你的职业技能
+    .accept 2998 >> 接受任务圣洁之书
+    .trainer >> 训练你的职业技能
     .target 威尔海姆修士
     .xp <12,1
 step << Warlock
     #optional
     #completewith next
-    .goto Elwynn Forest,44.1,66.0,10 >>前往旅店楼下
+    .goto Elwynn Forest,44.1,66.0,10 >> 前往旅店楼下
 step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛克西米利安·克洛文|r 和 |cRXP_FRIENDLY_雷门·玛考特|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .goto Elwynn Forest,44.392,66.240
     .target 玛克西米利安·克洛文
-    .accept 1685 >>接受任务 加科因的召唤
+    .accept 1685 >> 接受任务 加科因的召唤
     .goto Elwynn Forest,44.485,66.268
     .target 雷门·玛考特
 step << Mage/Priest
@@ -2192,8 +2192,8 @@ step << Priest
     #requires GoldshireVendor
     .goto Elwynn Forest,43.283,65.721
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_女牧师洁塞塔|r 对话
-    .accept 5635 >>接受任务 绝望祷言
-    .trainer >>训练你的职业技能
+    .accept 5635 >> 接受任务 绝望祷言
+    .trainer >> 训练你的职业技能
     .target 女牧师洁塞塔
     .xp <10,1
 step << Mage
@@ -2201,7 +2201,7 @@ step << Mage
     #requires GoldshireVendor
     .goto Elwynn Forest,43.25,66.19
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_扎尔迪玛·维夫希尔特|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 扎尔迪玛·维夫希尔特
     .xp <10,1
 step << skip --Rogue
@@ -2210,14 +2210,14 @@ step << skip --Rogue
     .goto Elwynn Forest,43.872,65.937
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_科瑞恩·塞尔留斯|r 对话
     >>|cRXP_WARN_只学习|r |T132147:0|t[双持] |cRXP_WARN_和|r |T132307:0|t[疾跑]|cRXP_WARN_。不要学习其他技能，把金币留到后面使用|r
-    .train 674 >>训练 |T132147:0|t[双武器]
-    .train 2983 >>训练 |T132307:0|t[疾跑]
+    .train 674 >> 训练 |T132147:0|t[双武器]
+    .train 2983 >> 训练 |T132307:0|t[疾跑]
     .target 科瑞恩·塞尔留斯
 --XX skip quest, not worth going inside for
 step
     #completewith PrincessFinish
     #optional
-    .abandon 59 >>放弃任务 布甲和皮甲
+    .abandon 59 >> 放弃任务 布甲和皮甲
 step << Warrior
     #season 2
     #sticky
@@ -2231,25 +2231,25 @@ step
     #optional
     #requires GoldshireVendor
     #completewith next
-    .goto Elwynn Forest,43.154,89.625,50 >>前往马科伦农场
+    .goto Elwynn Forest,43.154,89.625,50 >> 前往马科伦农场
 step
     #label Escape
     #requires GoldshireVendor
     .goto Elwynn Forest,43.154,89.625
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅贝尔·马科伦|r 对话
-    .turnin 114 >>交任务 梅贝尔的隐形水
+    .turnin 114 >> 交任务 梅贝尔的隐形水
     .target 梅贝尔·马科伦
 step
     #label GoldtoothEnd
     .goto Elwynn Forest,34.486,84.253
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_波尼斯·斯通菲尔德姑妈|r 对话
-    .turnin 87 >>交任务 金牙
-    .turnin 88 >>交任务 公主必须死！ << Rogue
+    .turnin 87 >> 交任务 金牙
+    .turnin 88 >> 交任务 公主必须死！ << Rogue
     .target 波尼斯·斯通菲尔德姑妈
 step
     #optional
     #completewith next
-    .abandon 88 >>放弃任务 公主必须死！ 因为你还没有完成任务
+    .abandon 88 >> 放弃任务 公主必须死！ 因为你还没有完成任务
 step << Warrior
     #season 2
     .goto Elwynn Forest,30.0,73.4
@@ -2261,7 +2261,7 @@ step << Warrior
 step
     #optional
     #completewith Garrison
-    .goto Elwynn Forest,24.82,76.25,80 >>前往西泉要塞
+    .goto Elwynn Forest,24.82,76.25,80 >> 前往西泉要塞
 
 
 ----Start of Paladin 1.5x Martyrdom Rune section----
@@ -2273,7 +2273,7 @@ step << Paladin
     #optional
     .goto Elwynn Forest,24.234,74.450
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瑞尼尔副队长|r 对话
-    .turnin 239 >>交任务 西泉要塞
+    .turnin 239 >> 交任务 西泉要塞
     .target 瑞尼尔副队长
 step << Paladin
     #xprate >1.59
@@ -2302,7 +2302,7 @@ step << Warrior
     #label Garrison
     .goto Elwynn Forest,24.234,74.450
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瑞尼尔副队长|r 对话
-    .turnin 239 >>交任务 西泉要塞
+    .turnin 239 >> 交任务 西泉要塞
     .target 瑞尼尔副队长
 step << Warrior
     #season 2
@@ -2346,11 +2346,11 @@ step
     #label Garrison
     #season 0,1 << Warrior/Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_瑞尼尔副队长|r 对话
-    .turnin 239 >>交任务 西泉要塞
+    .turnin 239 >> 交任务 西泉要塞
     .goto Elwynn Forest,24.234,74.450
     .target 瑞尼尔副队长
     >>点击 |cRXP_PICK_通缉布告|r << Warlock
-    .accept 176 >>接受任务 通缉：霍格 << Warlock
+    .accept 176 >> 接受任务 通缉：霍格 << Warlock
     .goto Elwynn Forest,24.548,74.672 << Warlock
 step << Warlock
     #completewith GnollEnd
@@ -2359,7 +2359,7 @@ step << Warlock
     >>|cRXP_WARN_这个|r|T134939:0|t[|cRXP_LOOT_采金日程表|r] |cRXP_WARN_掉率非常低。如果没有获得，可忽略此步骤|r
     >>|cRXP_ENEMY_格拉夫·疾齿|r |cRXP_WARN_为稀有刷新怪，但掉落率为 100%|r
     .collect 1307,1,123 --Collect Gold Pickup Schedule (x1)
-    .accept 123 >>接受任务 收货人
+    .accept 123 >> 接受任务 收货人
     .unitscan 格拉夫·疾齿
 step << Warlock
     .goto Elwynn Forest,27.0,86.7,70,0
@@ -2387,20 +2387,20 @@ step << Warlock
 step << !Warlock
     #optional
     #completewith WestEntry
-    .abandon 123 >>放弃任务 收货人
+    .abandon 123 >> 放弃任务 收货人
 step
     #completewith WestEntry
     .goto Westfall,59.95,19.35
-    .zone Westfall >>前往西部荒野
+    .zone Westfall >> 前往西部荒野
 step
     #xprate >1.49
     #optional
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_农夫法布隆|r 和 |cRXP_FRIENDLY_弗娜·法布隆|r 对话
     >>|cRXP_WARN_暂时不要接受其他任务|r
-    .turnin 184 >>交任务 法布隆的地契
+    .turnin 184 >> 交任务 法布隆的地契
     .goto Westfall,59.95,19.35
     .target 农夫法布隆
-    .accept 36 >>接受任务 杂味炖肉
+    .accept 36 >> 接受任务 杂味炖肉
     .goto Westfall,59.92,19.42
 	.target 弗娜·法布隆
     .isOnQuest 184
@@ -2409,7 +2409,7 @@ step << !Paladin !Warlock
     #label WestEntry
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗娜·法布隆|r 对话
     >>|cRXP_WARN_暂时不要接受其他任务|r
-    .accept 36 >>接受任务 杂味炖肉
+    .accept 36 >> 接受任务 杂味炖肉
     .goto Westfall,59.92,19.42
 	.target 弗娜·法布隆
 step << Paladin
@@ -2424,46 +2424,46 @@ step << !Paladin !Warlock
     .goto Westfall,56.416,30.519
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_萨尔玛·萨丁|r 对话，NPC在里面
     >>|cRXP_WARN_暂时不要接受其他任务|r
-    .turnin 36 >>交任务 杂味炖肉
+    .turnin 36 >> 交任务 杂味炖肉
     .target 萨尔玛·萨丁
 step << !Paladin !Warlock
     .goto Westfall,56.04,31.23
     .target Farmer Saldean
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_农夫萨丁|r 对话
-    .accept 9 >>接受任务 清理荒野
+    .accept 9 >> 接受任务 清理荒野
 step
     #xprate >1.49 << !Paladin
     #xprate 1.49-1.59 << Paladin
     #optional
     #requires Fields
     .goto Westfall,56.327,47.520
-    .xp 9+5410 >>刷怪达到5410+/6500经验
+    .xp 9+5410 >> 刷怪达到5410+/6500经验
     .subzoneskip 108
 step << Paladin
     #xprate >1.59
     #optional
     .goto 1436,48.249,46.729
-    .xp 11+5360 >>刷怪到5360+/8800经验
+    .xp 11+5360 >> 刷怪到5360+/8800经验
 --XX 625+210+85+800 = 1720 x2 = 3440
 step << Paladin/Warlock
     .goto Westfall,62.3,35.4
-    .zone Westfall >>游过河到西部荒野
+    .zone Westfall >> 游过河到西部荒野
 step
     #softcore
     #completewith next
-    .deathskip >>死亡并在灵魂医者处复活
+    .deathskip >> 死亡并在灵魂医者处复活
     .target 灵魂医者
 -- .subzoneskip 108
 step
     #xprate >1.49
     .goto Westfall,56.327,47.520
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格里安·斯托曼|r 对话
-    .turnin 109 >>交任务 向格里安·斯托曼报到
+    .turnin 109 >> 交任务 向格里安·斯托曼报到
     .target 格里安·斯托曼
 step
     .goto Westfall,57.002,47.169
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_军需官刘易斯|r 对话
-    .accept 6181 >>接受任务 快捷的消息 << Human
+    .accept 6181 >> 接受任务 快捷的消息 << Human
     .target 军需官刘易斯
     .isQuestAvailable 6181 << Human
 step
@@ -2476,12 +2476,12 @@ step
     .goto Westfall,54.00,53.00
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哨兵加里安|r 对话
     .target Scout Galiaan
-    .accept 153 >>接受任务 红色皮质面罩
+    .accept 153 >> 接受任务 红色皮质面罩
 step << Human
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索尔|r 对话
-    .turnin 6181 >>交任务 快捷的消息
-    .accept 6281 >>接受任务 前往暴风城
+    .turnin 6181 >> 交任务 快捷的消息
+    .accept 6281 >> 接受任务 前往暴风城
     .target 索尔
 step << skip --Rogue
     #season 2
@@ -2504,7 +2504,7 @@ step << skip --Rogue
     #season 2
     #completewith next
     #requires RoSS
-    .cast 402265 >>|cRXP_WARN_使用|r |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_军刀猛刺符文|r]
+    .cast 402265 >> |cRXP_WARN_使用|r |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_军刀猛刺符文|r]
     .use 208772 -- Rune of Saber Slash (1)
     .itemcount 208772,1
     .train 424785,1
@@ -2512,16 +2512,16 @@ step
     #label FlySW
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索尔|r 对话
-    .fly Stormwind >>飞往暴风城
+    .fly Stormwind >> 飞往暴风城
     .target 索尔
 step << skip --Human Paladin
     #season 2
     #xprate >1.59
     .goto StormwindClassic,57.08,61.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_斯蒂芬妮·特纳|r 对话
-    .turnin 1643 >>交任务圣洁之书
-    .accept 1644 >>接受任务圣洁之书
-    .turnin 1644 >>交任务圣洁之书
+    .turnin 1643 >> 交任务圣洁之书
+    .accept 1644 >> 接受任务圣洁之书
+    .turnin 1644 >> 交任务圣洁之书
     --.accept 1780 >> Accept The Tome of Divinity
     .target Stephanie Turner
     .isQuestTurnedIn 1643
@@ -2532,9 +2532,9 @@ step
     #optional
     .goto StormwindClassic,56.201,64.585
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_摩根·匹斯特|r 对话
-    .turnin 61,1 >>交任务 送往暴风城的货物
+    .turnin 61,1 >> 交任务 送往暴风城的货物
     >>|cRXP_WARN_选择|r |T132383:0|t[爆破火箭] 作为奖励。|cRXP_WARN_它能造成不错的伤害，还可以用于"仇恨分离"，非常实用|r
-    .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >>https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_点击此处查看"仇恨分离"技巧的视频参考。这是一个简短却非常有价值的教学视频|r
+    .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_点击此处查看"仇恨分离"技巧的视频参考。这是一个简短却非常有价值的教学视频|r
     .target 摩根·匹斯特
     .isQuestComplete 61
 step << !Rogue
@@ -2555,24 +2555,24 @@ step << Warlock
 step
     .goto StormwindClassic,52.623,65.701
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_旅店老板奥里森|r 对话
-    .home >>将你的炉石设置为暴风城
+    .home >> 将你的炉石设置为暴风城
     .target 旅店老板奥里森
 step << Human Paladin
     #xprate >1.59
     #optional
     .goto StormwindClassic,39.80,29.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
-    .turnin 2998 >>交任务圣洁之书
-    .accept 1641 >>接受任务圣洁之书
-    .turnin 1641 >>交任务圣洁之书
+    .turnin 2998 >> 交任务圣洁之书
+    .accept 1641 >> 接受任务圣洁之书
+    .turnin 1641 >> 交任务圣洁之书
     .target 达索瑞恩·拉尔
     .isOnQuest 2998
 step << Human Paladin
     #xprate >1.59
     .goto StormwindClassic,39.80,29.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_达索瑞恩·拉尔|r 对话
-    .accept 1641 >>接受任务圣洁之书
-    .turnin 1641 >>交任务圣洁之书
+    .accept 1641 >> 接受任务圣洁之书
+    .turnin 1641 >> 交任务圣洁之书
     .target 达索瑞恩·拉尔
 step << Human Paladin
     #xprate >1.59
@@ -2591,7 +2591,7 @@ step << Human Paladin
     #xprate >1.59
     .goto StormwindClassic,38.67,32.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
-    .train 19834 >>训练你的职业技能
+    .train 19834 >> 训练你的职业技能
     .target 虔诚的亚瑟
     .xp <12,1
     .xp >14,1
@@ -2600,16 +2600,16 @@ step << Human Paladin
     #optional
     .goto StormwindClassic,38.67,32.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
-    .train 647 >>训练你的职业技能
+    .train 647 >> 训练你的职业技能
     .target 虔诚的亚瑟
     .xp <14,1
 step << Human Paladin
     #xprate >1.59
     .goto StormwindClassic,57.08,61.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_斯蒂芬妮·特纳|r 对话
-    .turnin 1643 >>交任务圣洁之书
-    .accept 1644 >>接受任务圣洁之书
-    .turnin 1644 >>交任务圣洁之书
+    .turnin 1643 >> 交任务圣洁之书
+    .accept 1644 >> 接受任务圣洁之书
+    .turnin 1644 >> 交任务圣洁之书
     --.accept 1780 >> Accept The Tome of Divinity
     .target Stephanie Turner
 ----XX if ever in the future, add Level 12 xp grind for 1.5x Tome of Divinity
@@ -2626,12 +2626,12 @@ step << Warlock
     #optional
     #completewith GakinStart
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >>前往屠宰场，进入地下室
+    .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
 step << Warlock
     #xprate >1.59
     .goto StormwindClassic,26.11,77.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
-    .train 705 >>训练你的职业技能
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    .train 705 >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <12,1
     .xp >14,1
@@ -2639,31 +2639,31 @@ step << Warlock
     #xprate >1.59
     #optional
     .goto StormwindClassic,26.11,77.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
-    .train 689 >>训练你的职业技能
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    .train 689 >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <14,1
 step << Warlock
     #label GakinStart
     .goto StormwindClassic,25.25,78.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
-    .turnin 1685 >>交任务 加科因的召唤
-    .accept 1688 >>接受任务 苏伦娜·凯尔东
+    .turnin 1685 >> 交任务 加科因的召唤
+    .accept 1688 >> 接受任务 苏伦娜·凯尔东
     .target 黑暗缚灵者加科因
 step << Warlock
     #softcore
-    .deathskip >>使用 |T136126:0|t[生命分流] 并站在你旁边的篝火上自杀，然后在 |cRXP_FRIENDLY_灵魂医者|r 处复活
+    .deathskip >> 使用 |T136126:0|t[生命分流] 并站在你旁边的篝火上自杀，然后在 |cRXP_FRIENDLY_灵魂医者|r 处复活
     .target 灵魂医者
 --  .subzoneskip 87
 step << Warlock
     #hardcore
     #completewith WLHoggerEnd
     .goto Elwynn Forest,42.105,65.927
-    .zone Elwynn Forest >>离开暴风城
+    .zone Elwynn Forest >> 离开暴风城
 step << Warlock
     #completewith WLHoggerEnd
     .goto Elwynn Forest,42.105,65.927
-    .subzone 87 >>前往金雾村
+    .subzone 87 >> 前往金雾村
 step << Warlock
     #optional
     #completewith LockGoldshireEnd
@@ -2675,8 +2675,8 @@ step << Warlock
     .goto Elwynn Forest,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话
     >>|cRXP_WARN_选择|r |T135145:0|t[平衡长棍]
-    .turnin 176 >>交任务 通缉：霍格
-    .turnin 123 >>交任务 收货人
+    .turnin 176 >> 交任务 通缉：霍格
+    .turnin 123 >> 交任务 收货人
     .target 治安官杜汉
     .isOnQuest 123
 step << Warlock
@@ -2684,7 +2684,7 @@ step << Warlock
     .goto Elwynn Forest,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_治安官杜汉|r 对话
     >>|cRXP_WARN_选择|r |T135145:0|t[平衡长棍]
-    .turnin 176 >>交任务 通缉：霍格
+    .turnin 176 >> 交任务 通缉：霍格
     .target 治安官杜汉
 step << Warlock
     #label SoulSiphon
@@ -2699,7 +2699,7 @@ step << Warlock
     #optional
     #requires SoulSiphon
     #completewith next
-    .train 403920 >>使用 |T134419:0|t[灵魂虹吸符文] 来学习 |T136169:0|t[灵魂虹吸]
+    .train 403920 >> 使用 |T134419:0|t[灵魂虹吸符文] 来学习 |T136169:0|t[灵魂虹吸]
     .use 205022
     .train 403920,1
     .itemcount 205022,1
@@ -2716,7 +2716,7 @@ step << Warlock
 step << Warlock
     #optional
     >>|cRXP_WARN_沿途刷怪升级。尝试提升你的|r |T135145:0|t|T135145:0|t[平衡长棍] |cRXP_WARN_技能等级|r
-    .subzone 62 >>前往布莱克威尔南瓜地
+    .subzone 62 >> 前往布莱克威尔南瓜地
     .isOnQuest 1688
 step << Warlock
     #xprate <1.5
@@ -2726,7 +2726,7 @@ step << Warlock
     .use 1972>>|cRXP_WARN_使用 |T134939:0|t[|cRXP_LOOT_西部荒野地契|r] 来激发任务|r
     >>|cRXP_WARN_这个|r|T134939:0|t[|cRXP_LOOT_西部荒野地契|r] |cRXP_WARN_的掉率非常低。如果没有获得，可忽略此步骤|r
     .collect 1972,1,184 --Collect Westfall Deed (x1)
-    .accept 184 >>接受任务 法布隆的地契
+    .accept 184 >> 接受任务 法布隆的地契
 step << Warlock
     #label SChoker
     .goto Elwynn Forest,71.10,80.66
@@ -2740,20 +2740,20 @@ step << Warlock
     #label WlockRedridge
     #completewith next
     .goto Redridge Mountains,17.4,69.6
-    .zone Redridge Mountains >>前往赤脊山
+    .zone Redridge Mountains >> 前往赤脊山
     >>|cRXP_WARN_沿途刷怪。通过施放|r |T134075:0|t[吸取灵魂]，确保你至少拥有 2 个 |T136163:0|t[灵魂碎片]|cRXP_WARN_|r
     .collect 6265,2 --Soul Shard (2)
 step << Warlock
     .goto Redridge Mountains,17.4,69.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_守卫帕克|r 对话
-    .accept 244 >>接受任务 豺狼人的入侵
+    .accept 244 >> 接受任务 豺狼人的入侵
     .target 卫兵帕克
 step << Warlock
     #softcore
     .goto Redridge Mountains,30.733,59.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
     >>|cRXP_WARN_途中注意躲避怪物|r
-    .turnin 244 >>交任务豺狼人的入侵
+    .turnin 244 >> 交任务豺狼人的入侵
     .target 菲尔顿副队长
 step << Warlock
     #hardcore
@@ -2763,35 +2763,35 @@ step << Warlock
     .goto Redridge Mountains,30.733,59.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_菲尔顿副队长|r 对话
     >>|cRXP_WARN_沿主路行进，避开沿途的近距离怪物|r
-    .turnin 244 >>交任务豺狼人的入侵
+    .turnin 244 >> 交任务豺狼人的入侵
     .target 菲尔顿副队长
 step << Warlock
     .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
-    .fp Redridge Mountains >>获取赤脊山的飞行路径
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    .fp Redridge Mountains >> 获取赤脊山的飞行路径
     .target 艾蕾娜·斯托姆法瑟
 step << Warlock
-    .hs >>将炉石设为暴风城，如果技能在冷却中则跳过此步骤，直接使用飞行路线
+    .hs >> 将炉石设为暴风城，如果技能在冷却中则跳过此步骤，直接使用飞行路线
 step << Warlock
     .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
-    .fly Stormwind >>飞往暴风城
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_艾蕾娜·斯托姆法瑟|r 对话
+    .fly Stormwind >> 飞往暴风城
     .target 艾蕾娜·斯托姆法瑟
     .zoneskip Stormwind City
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >>前往屠宰场，进入地下室
+    .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
-    .trainer >>训练你的职业技能
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
     .goto StormwindClassic,25.25,78.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
-    .turnin 1688 >>交任务 苏伦娜·凯尔东
-    .accept 1689 >>接受任务誓缚
+    .turnin 1688 >> 交任务 苏伦娜·凯尔东
+    .accept 1689 >> 接受任务誓缚
     .target 黑暗缚灵者加科因
 step << Warlock
     #completewith next
@@ -2800,18 +2800,18 @@ step << Warlock
     .goto StormwindClassic,26.3,79.5,18,0
     .goto StormwindClassic,25.154,77.406
     >>|cRXP_WARN_前往屠宰场的最底层|r
-    .cast 7728 >>|cRXP_WARN_使用|r |T133292:0|t[血石颈环] |cRXP_WARN_召唤 |r虚空行者|cRXP_ENEMY_|r
+    .cast 7728 >> |cRXP_WARN_使用|r |T133292:0|t[血石颈环] |cRXP_WARN_召唤 |r虚空行者|cRXP_ENEMY_|r
     .use 6928
 step << Warlock
     .goto StormwindClassic,25.154,77.406
-    .use 6928 >>消灭那些|cRXP_ENEMY_虚空行者|r
+    .use 6928 >> 消灭那些|cRXP_ENEMY_虚空行者|r
     .complete 1689,1 --Kill Summoned Voidwalker (x1)
     .mob 虚空行者
 step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_黑暗缚灵者加科因|r 对话
     .target 黑暗缚灵者加科因
     .goto StormwindClassic,25.25,78.59
-    .turnin 1689 >>交任务誓缚
+    .turnin 1689 >> 交任务誓缚
 
 
 ----Warlock Elwynn Voidwalker Section End----
@@ -2849,7 +2849,7 @@ step << Warrior
     #season 2
     #label RoDSW
     #requires GnollHead
-    .cast 406651 >>|cRXP_WARN_使用任意|r |T134455:0|t|T134419:0|t[怪物猎人符文碎片] |cRXP_WARN_来制作|r |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_毁灭打击符文|r]
+    .cast 406651 >> |cRXP_WARN_使用任意|r |T134455:0|t|T134419:0|t[怪物猎人符文碎片] |cRXP_WARN_来制作|r |T134419:0|t|T134419:0|t[|cRXP_FRIENDLY_毁灭打击符文|r]
     .collect 204703,1 -- Rune of Devastate (1)
     .use 204690
     .use 204689
@@ -2868,16 +2868,16 @@ step << Human
     #label Continue
     .goto StormwindClassic,74.312,47.240
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_奥斯瑞克·斯图恩|r 对话
-    .turnin 6281 >>交任务 前往暴风城
-    .accept 6261 >>接受任务 杜加尔·朗德瑞克
+    .turnin 6281 >> 交任务 前往暴风城
+    .accept 6261 >> 接受任务 杜加尔·朗德瑞克
     .target 奥斯瑞克·斯图恩
 step << Rogue
     #xprate >1.59
     .goto 1453,74.645,52.818
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     >>|cRXP_WARN_确保训练后身上至少还剩24银。你需要这些钱在铁炉堡买一把枪，才能使用你的符文。|r
-    .train 674 >>训练 |T132147:0|t[双武器]
-    .train 2983 >>训练 |T132307:0|t[疾跑]
+    .train 674 >> 训练 |T132147:0|t[双武器]
+    .train 2983 >> 训练 |T132307:0|t[疾跑]
     .target 夜行者奥斯伯
     .xp <10,1
     .xp >12,1
@@ -2886,20 +2886,20 @@ step << Rogue
     .goto 1453,74.645,52.818
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_夜行者奥斯伯|r 对话
     >>|cRXP_WARN_确保训练后身上至少还剩24银。你需要这些钱在铁炉堡买一把枪，才能使用你的符文。|r
-    .train 1766 >>训练你的职业技能
+    .train 1766 >> 训练你的职业技能
     .target 夜行者奥斯伯
     .xp <12,1
 step << Warrior
     .goto StormwindClassic,74.249,37.244
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈里·伯加德|r 对话
-    .turnin 1638 >>交任务 战士的训练
-    .accept 1639 >>接受任务 醉鬼巴特莱比
+    .turnin 1638 >> 交任务 战士的训练
+    .accept 1639 >> 接受任务 醉鬼巴特莱比
     .target 哈里·伯加德
 step << Warrior
     .goto StormwindClassic,73.787,36.323
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴特莱比|r 对话
-    .turnin 1639 >>交任务 醉鬼巴特莱比
-    .accept 1640 >>接受任务 击败巴特莱比
+    .turnin 1639 >> 交任务 醉鬼巴特莱比
+    .accept 1640 >> 接受任务 击败巴特莱比
     .target 巴特莱比
 step << Warrior
     .goto StormwindClassic,73.787,36.323
@@ -2910,30 +2910,30 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_巴特莱比|r 对话
     .target 巴特莱比
     .goto StormwindClassic,73.787,36.323
-    .turnin 1640 >>交任务 击败巴特莱比
-    .accept 1665 >>接受任务 巴特莱比的酒杯
+    .turnin 1640 >> 交任务 击败巴特莱比
+    .accept 1665 >> 接受任务 巴特莱比的酒杯
 step << Warrior
     .goto StormwindClassic,74.249,37.244
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_哈里·伯加德|r 对话
-    .turnin 1665 >>交任务 巴特莱比的酒杯
+    .turnin 1665 >> 交任务 巴特莱比的酒杯
     .target 哈里·伯加德
 step << Priest
     #optional
     #completewith Prayer
-    .goto StormwindClassic,42.51,33.51,20 >>进入暴风城大教堂
+    .goto StormwindClassic,42.51,33.51,20 >> 进入暴风城大教堂
 step << Priest
     #optional
     .goto StormwindClassic,38.54,26.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r 对话
-    .turnin 5635 >>交任务 绝望祷言
-    .train 8092 >>训练你的职业技能
+    .turnin 5635 >> 交任务 绝望祷言
+    .train 8092 >> 训练你的职业技能
     .target 高阶牧师劳瑞娜
     .isOnQuest 5635
 step << Priest
     .goto StormwindClassic,38.54,26.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r 对话
-    .turnin 5634 >>交任务 绝望祷言
-    .train 8092 >>训练你的职业技能
+    .turnin 5634 >> 交任务 绝望祷言
+    .train 8092 >> 训练你的职业技能
     .target 高阶牧师劳瑞娜
     .train 13908,1
 step << Priest
@@ -2941,7 +2941,7 @@ step << Priest
     #label Prayer
     .goto StormwindClassic,38.54,26.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_高阶牧师劳瑞娜|r 对话
-    .trainer >>训练你的职业技能
+    .trainer >> 训练你的职业技能
     .target 高阶牧师劳瑞娜
     .train 13908,3
 step << Rogue
@@ -2949,7 +2949,7 @@ step << Rogue
     #optional
     #completewith next
     .goto Stormwind City,56.93,29.54,8,0
-    .goto Stormwind City,58.65,27.56,10 >>进入暴风城矮人区的屠夫巷
+    .goto Stormwind City,58.65,27.56,10 >> 进入暴风城矮人区的屠夫巷
     .train 400081,1
 step << Rogue
     #season 2
@@ -2983,8 +2983,8 @@ step << Paladin
 step
     .goto StormwindClassic,51.757,12.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格瑞曼德·艾尔默|r 对话
-    .turnin 1097 >>交任务 艾尔默的任务
-    .accept 353 >>接受任务 雷矛的包裹
+    .turnin 1097 >> 交任务 艾尔默的任务
+    .accept 353 >> 接受任务 雷矛的包裹
     .target 格瑞曼德·艾尔默
 step << Warrior/Paladin/Rogue
     #optional
@@ -3010,7 +3010,7 @@ step
     >>|cRXP_WARN_你需要将|r |T135966:0|t[急救]|cRXP_WARN_ 提升至 80，以完成 24 级的一个任务|r << Rogue !Dwarf
     >>|cRXP_WARN_在等待前往铁炉堡的地铁时，如有需要可施放|r |T136221:0|t[召唤虚空行者]|cRXP_WARN_ 并制作 |r|T135230:0|t[治疗石]|cRXP_WARN_|r << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_蒙提|r 对话，你可在地深矿道铁炉堡站台的中央平台上找到他
-    .accept 6661 >>接受任务 捕捉矿道老鼠
+    .accept 6661 >> 接受任务 捕捉矿道老鼠
     .target 蒙提
 step
     #xprate <1.59
@@ -3021,7 +3021,7 @@ step
 step
     #xprate <1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_蒙提|r 对话，在地深矿道内
-    .turnin 6661 >>交任务 捕捉矿道老鼠
+    .turnin 6661 >> 交任务 捕捉矿道老鼠
     .target 蒙提
 step
     #xprate >1.59
@@ -3032,7 +3032,7 @@ step
     >>|cRXP_WARN_你需要将|r |T135966:0|t[急救]|cRXP_WARN_ 提升至 80，以完成 24 级的一个任务|r << Rogue !Dwarf
     >>|cRXP_WARN_在等待前往铁炉堡的地铁时，如有需要可施放|r |T136221:0|t[召唤虚空行者]|cRXP_WARN_ 并制作 |r|T135230:0|t[治疗石]|cRXP_WARN_|r << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_蒙提|r 对话，你可在地深矿道铁炉堡站台的中央平台上找到他
-    .accept 6661 >>接受任务 捕捉矿道老鼠
+    .accept 6661 >> 接受任务 捕捉矿道老鼠
     .target 蒙提
     .zoneskip Ironforge
 step
@@ -3045,7 +3045,7 @@ step
 step
     #xprate >1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_蒙提|r 对话，在地深矿道内
-    .turnin 6661 >>交任务 捕捉矿道老鼠
+    .turnin 6661 >> 交任务 捕捉矿道老鼠
     .target 蒙提
     .zoneskip Ironforge
 step
@@ -3061,12 +3061,12 @@ step << Warrior
     #optional
     #completewith WarriorTrain
     .goto 1455,67.400,84.909,15,0
-    .goto Ironforge,65.905,88.405,12 >>前往 |cRXP_FRIENDLY_比尔班·飞钳|r
+    .goto Ironforge,65.905,88.405,12 >> 前往 |cRXP_FRIENDLY_比尔班·飞钳|r
 step << Warrior
     .goto Ironforge,65.905,88.405
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
     >>|cRXP_WARN_确保你保留20银70铜以备后用|r
-    .train 2687 >>训练你的职业技能
+    .train 2687 >> 训练你的职业技能
     .target 比尔班·飞钳
     .xp <10,1
     .xp >12,1
@@ -3075,23 +3075,23 @@ step << Warrior
     #optional
     #label WarriorTrain
     .goto Ironforge,65.905,88.405
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_比尔班·飞钳|r 对话
     >>|cRXP_WARN_确保你保留20银70铜以备后用|r
-    .train 5242 >>训练你的职业技能
+    .train 5242 >> 训练你的职业技能
     .target 比尔班·飞钳
     .xp <12,1
 step << Warrior/Rogue
     #optional
     #completewith next
     .goto 1455,61.552,85.636,10,0
-    .goto 1455,61.356,88.398,6 >>进入木材线武器店建筑
+    .goto 1455,61.356,88.398,6 >> 进入木材线武器店建筑
 step << Warrior/Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_比克斯|r 和 |cRXP_FRIENDLY_布里维夫·石手|r 对话
-    .train 2567 >>训练 投掷武器 << Warrior
+    .train 2567 >> 训练 投掷武器 << Warrior
     .goto Ironforge,62.237,89.628
     .target 比克斯
-    .train 199 >>学习双手锤 << Warrior
-    .train 266 >>学习枪械 << Rogue
+    .train 199 >> 学习双手锤 << Warrior
+    .train 266 >> 学习枪械 << Rogue
     .goto Ironforge,61.177,89.508
     .target 布里维夫·石拳
 step << Warrior
@@ -3149,7 +3149,7 @@ step << Warrior
 step << Warrior
     #optional
     #completewith next
-    .goto 1455,61.356,88.398,6 >>离开木材线武器店建筑
+    .goto 1455,61.356,88.398,6 >> 离开木材线武器店建筑
 step << Paladin/Warrior
     #season 2
     #optional
@@ -3175,7 +3175,7 @@ step << Paladin/Warrior
     >>击败|cRXP_ENEMY_布鲁阿特|r
     >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r << Paladin
-    >>|cRXP_WARN_不要意外对他施放|r |T135906:0|t|T135906:0|t[力量祝福] |cRXP_WARN_ |r << Paladin
+    >>|cRXP_WARN_千万不要不小心对他施放|r|T135906:0|t[力量祝福] |cRXP_WARN_|r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，如果有/需要的话使用|r |T133688:0|t|T133688:0|t[绷带]|cRXP_WARN_ |r << Warrior
     >>|cRXP_WARN_尝试使用|r |T132316:0|t|T132324:0|t[|cRXP_FRIENDLY_断筋|r] |cRXP_WARN_和|r |T132324:0|t|T132324:0|t[|cRXP_FRIENDLY_投掷|r]来风筝他 << Warrior
@@ -3193,7 +3193,7 @@ step << Paladin/Warrior
     >>击败|cRXP_ENEMY_布鲁阿特|r
     >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r << Paladin
-    >>|cRXP_WARN_不要意外对他施放|r |T135906:0|t|T135906:0|t[力量祝福] |cRXP_WARN_ |r << Paladin
+    >>|cRXP_WARN_千万不要不小心对他施放|r|T135906:0|t[力量祝福] |cRXP_WARN_|r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r << Paladin
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，如果有/需要的话使用|r |T133688:0|t|T133688:0|t[绷带]|cRXP_WARN_ |r << Warrior
     >>|cRXP_WARN_击败|cRXP_ENEMY_布鲁阿尔特|r后：|r
@@ -3232,8 +3232,8 @@ step << Warrior
     .train 425447,3
 step
     .goto Ironforge,55.501,47.742
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
-    .fp Ironforge >>获取铁炉堡的飞行路径
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_格莱斯·瑟登|r 对话
+    .fp Ironforge >> 获取铁炉堡的飞行路径
     .target 格莱斯·瑟登
 step << Mage/Paladin
     #xprate >1.49
@@ -3252,7 +3252,7 @@ step << Mage
     #xprate >1.49
     .goto Ironforge,26.8,8.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_丁克|r 对话
-    .train 122 >>训练你的职业技能
+    .train 122 >> 训练你的职业技能
     .target 丁克
     .xp <10,1
     .xp >12,1
@@ -3260,7 +3260,7 @@ step << Mage
     #xprate >1.49
     .goto Ironforge,26.8,8.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_丁克|r 对话
-    .train 145 >>训练你的职业技能
+    .train 145 >> 训练你的职业技能
     .target 丁克
     .xp <12,1
     .xp >14,1
@@ -3269,14 +3269,14 @@ step << Mage
     #label MageIFTrain
     .goto Ironforge,26.8,8.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与里面的 |cRXP_FRIENDLY_丁克|r 对话
-    .train 1460 >>训练你的职业技能
+    .train 1460 >> 训练你的职业技能
     .target 丁克
     .xp <14,1
 step << Paladin
     #xprate >1.49
     .goto Ironforge,23.131,6.143
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话，NPC在里面
-    .train 633 >>训练你的职业技能
+    .train 633 >> 训练你的职业技能
     .target 布兰度尔·铁锤
     .xp <10,1
     .xp >12,1
@@ -3284,7 +3284,7 @@ step << Paladin
     #xprate >1.49
     .goto StormwindClassic,38.67,32.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
-    .train 19834 >>训练你的职业技能
+    .train 19834 >> 训练你的职业技能
     .target 虔诚的亚瑟
     .xp <12,1
     .xp >14,1
@@ -3294,7 +3294,7 @@ step << Paladin
     #label PaladinIFTrain
     .goto StormwindClassic,38.67,32.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_虔诚的亚瑟|r 对话
-    .train 647 >>训练你的职业技能
+    .train 647 >> 训练你的职业技能
     .target 虔诚的亚瑟
     .xp <14,1
 --XX Alternative paladin train if they didn't get 10 in Goldshire
