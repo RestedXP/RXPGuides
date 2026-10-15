@@ -13,8 +13,8 @@ step << Druid
     .goto Teldrassil,58.626,40.287
     >>Suba a Árvore Aldrassil
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mardant Carvalhaço|r
-    .accept 77571 >>Aceite Relíquias dos Kaldorei
-    .trainer >>Treine seus feitiços de classe. Aprenda |T136096:0|t[Fogo Lunar]
+    .accept 77571 >> Aceite Relíquias dos Kaldorei
+    .trainer >> Treine seus feitiços de classe. Aprenda |T136096:0|t[Fogo Lunar]
     .target Mardant Strongoak
     .train 410061,1
 step << Druid
@@ -27,7 +27,7 @@ step << Druid
     .train 410061,1
 step << Druid
     #season 2
-    .equip 18,208414 >>|cRXP_WARN_Equipe o|r |T134903:0|t[|cRXP_FRIENDLY_Lunar Ídolo|r]
+    .equip 18,208414 >> |cRXP_WARN_Equipe o|r |T134903:0|t[|cRXP_FRIENDLY_Lunar Ídolo|r]
     .use 208414
     .train 410061,1
 step << Druid
@@ -42,7 +42,7 @@ step << Druid
     .goto Teldrassil,58.626,40.287
     >>Suba a Árvore Aldrassil
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mardant Carvalhaço|r
-    .turnin 77571 >>Entregue Relíquias dos Kaldorei
+    .turnin 77571 >> Entregue Relíquias dos Kaldorei
     .target Mardant Strongoak
     .train 410061,1
 ]])
@@ -73,7 +73,7 @@ step << Druid
     .train 416050,1
 step << Druid
     #completewith NatureSpirit
-    .subzone 260 >>Vá para Starbreeze Village
+    .subzone 260 >> Vá para Starbreeze Village
     .train 416050,1
 step << Druid
     #completewith next
@@ -92,7 +92,7 @@ step << Druid
     .mob Unleashed Nature Spirit
     .train 416050,1
 step << Druid
-    .train 416050 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Potencial Natural|r] |cRXP_WARN_para treinar|r |T136152:0|t[Semente Viva]
+    .train 416050 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Potencial Natural|r] |cRXP_WARN_para treinar|r |T136152:0|t[Semente Viva]
     .use 206963
     .itemcount 206963,1
 ]])
@@ -119,7 +119,7 @@ step << Druid
     .target Adventurer's Remains
     .train 410033,1
 step << Druid
-    .train 410033 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Vida|r] |cRXP_WARN_para treinar|r |T134206:0|t[Brotar da Vida]
+    .train 410033 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Vida|r] |cRXP_WARN_para treinar|r |T134206:0|t[Brotar da Vida]
     .use 206970
     .itemcount 206970,1
 ]])
@@ -149,13 +149,13 @@ step << Druid
     .train 407988,1
 step << Druid
     #season 2
-    .equip 18,208689 >>|cRXP_WARN_Equipe o|r |T132942:0|t[|cRXP_FRIENDLY_Ídolo Feroz|r]
+    .equip 18,208689 >> |cRXP_WARN_Equipe o|r |T132942:0|t[|cRXP_FRIENDLY_Ídolo Feroz|r]
     .use 208689
     .itemcount 208689,1
     .train 407988,1
 step << Druid
     #season 2
-    .train 407988 >>|cRXP_WARN_Inflija 20 instâncias de dano de sangramento com|r |T132152:0|t[Rasgar] |cRXP_WARN_ou|r |T132122:0|t[Estraçalhar] |cRXP_WARN_em humanoides, depois use o|r |T132942:0|t[|cRXP_FRIENDLY_Ídolo Feroz|r] |cRXP_WARN_novamente para aprender|r |T236167:0|t[Rugido Selvagem]
+    .train 407988 >>|cRXP_WARN_Cause dano de sangramento 20 vezes a humanoides com|r |T132152:0|t[Rasgar] |cRXP_WARN_ou|r |T132122:0|t[Estraçalhar] |cRXP_WARN_e então use o|r |T132942:0|t[|cRXP_FRIENDLY_Ídolo Feroz|r] |cRXP_WARN_novamente para aprender|r |T236167:0|t[Rugido Selvagem]
     .use 208689
     .itemcount 208689,1
 ]])
@@ -189,13 +189,13 @@ step << Druid
     .train 407988,1
 step << Druid
     #season 2
-    .equip 18,208689 >>|cRXP_WARN_Equipe o|r |T132942:0|t[|cRXP_FRIENDLY_Ídolo Feroz|r]
+    .equip 18,208689 >> |cRXP_WARN_Equipe o|r |T132942:0|t[|cRXP_FRIENDLY_Ídolo Feroz|r]
     .use 208689
     .itemcount 208689,1
     .train 407988,1
 step << Druid
     #season 2
-    .train 407988 >>|cRXP_WARN_Inflija 20 instâncias de dano de sangramento com|r |T132152:0|t[Rasgar] |cRXP_WARN_ou|r |T132122:0|t[Estraçalhar] |cRXP_WARN_em humanoides, depois use o|r |T132942:0|t[|cRXP_FRIENDLY_Ídolo Feroz|r] |cRXP_WARN_novamente para aprender|r |T236167:0|t[Rugido Selvagem]
+    .train 407988 >>|cRXP_WARN_Cause dano de sangramento 20 vezes a humanoides com|r |T132152:0|t[Rasgar] |cRXP_WARN_ou|r |T132122:0|t[Estraçalhar] |cRXP_WARN_e então use o|r |T132942:0|t[|cRXP_FRIENDLY_Ídolo Feroz|r] |cRXP_WARN_novamente para aprender|r |T236167:0|t[Rugido Selvagem]
     .use 208689
     .itemcount 208689,1
 ]])
@@ -220,7 +220,7 @@ step << Druid
     .train 416044,1
 step << Druid
     #season 2
-    .train 416044 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Sol|r] |cRXP_WARN_para treinar|r |T236216:0|t[Fogo Solar]
+    .train 416044 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Sol|r] |cRXP_WARN_para treinar|r |T236216:0|t[Fogo Solar]
     .use 206989
     .itemcount 206989,1
 ]])
@@ -245,13 +245,13 @@ step << Druid
 step << Druid
     #season 2
     .goto Loch Modan,46.6,35.6
-    .use 208855 >>|cRXP_WARN_Use a|r |T237270:0|t[Albacora Arco-íris Isquinha] |cRXP_WARN_em um |cRXP_ENEMY_Manguadonte Jovem|r para receber a|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Lacerar|r]
+    .use 208855 >> |cRXP_WARN_Use a|r |T237270:0|t[Albacora Arco-íris Isquinha] |cRXP_WARN_em um |cRXP_ENEMY_Manguadonte Jovem|r para receber a|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Lacerar|r]
     .collect 208687,1 -- Rune of Lacerate (1)
     .target Young Threshadon
     .train 416049,1
 step << Druid
     #season 2
-    .train 416049 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Lacerar|r] |cRXP_WARN_para treinar|r |T132131:0|t[Lacerar]
+    .train 416049 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Lacerar|r] |cRXP_WARN_para treinar|r |T132131:0|t[Lacerar]
     .use 208687
     .itemcount 208687,1
 ]])
@@ -272,7 +272,7 @@ step << Druid
     .goto Mulgore,45.09,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gart|r
     .accept 77648 >>Aceite Relíquias dos Taurens
-    .trainer >>Treine seus feitiços de classe. Aprenda |T136096:0|t[Fogo Lunar]
+    .trainer >> Treine seus feitiços de classe. Aprenda |T136096:0|t[Fogo Lunar]
     .target Gart Mistrunner
 step << Druid
     #season 2
@@ -283,7 +283,7 @@ step << Druid
     .train 410061,1
 step << Druid
     #season 2
-    .equip 18,208414 >>|cRXP_WARN_Equipe o|r |T134903:0|t[|cRXP_FRIENDLY_Lunar Ídolo|r]
+    .equip 18,208414 >> |cRXP_WARN_Equipe o|r |T134903:0|t[|cRXP_FRIENDLY_Lunar Ídolo|r]
     .use 208414
     .train 410061,1
 step << Druid
@@ -327,7 +327,7 @@ step
     .train 410025,1
 step
     #season 2
-    .equip 18,206954 >>|cRXP_WARN_Equipe o|r |T134903:0|t[|cRXP_FRIENDLY_Ídolo de Raiva Ursina|r]
+    .equip 18,206954 >> |cRXP_WARN_Equipe o|r |T134903:0|t[|cRXP_FRIENDLY_Ídolo de Raiva Ursina|r]
     .use 206954
     .train 410025,1
 step
@@ -335,7 +335,7 @@ step
     +|cRXP_WARN_Mantenha 50+ de Fúria por pelo menos 60 segundos para conseguir aprender|r |T132135:0|t[Destroçar]
 step
     #season 2
-    .train 410025 >>|cRXP_WARN_Use o|r |T134903:0|t[|cRXP_FRIENDLY_Ídolo de Raiva Ursina|r] |cRXP_WARN_para treinar|r |T132135:0|t[Destroçar]
+    .train 410025 >> |cRXP_WARN_Use o|r |T134903:0|t[|cRXP_FRIENDLY_Ídolo de Raiva Ursina|r] |cRXP_WARN_para treinar|r |T132135:0|t[Destroçar]
     .use 206954
     .itemcount 206954,1
 
@@ -362,7 +362,7 @@ step
     .train 416044,1
 step
     #season 2
-    .train 416044 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Sol|r] |cRXP_WARN_para treinar|r |T236216:0|t[Fogo Solar]
+    .train 416044 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Sol|r] |cRXP_WARN_para treinar|r |T236216:0|t[Fogo Solar]
     .use 206989
     .itemcount 206989,1
 
@@ -389,7 +389,7 @@ step
     .train 410033,1
 step << Druid
     #season 2
-    .train 410033 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Vida|r] |cRXP_WARN_para treinar|r |T134206:0|t[Brotar da Vida]
+    .train 410033 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Vida|r] |cRXP_WARN_para treinar|r |T134206:0|t[Brotar da Vida]
     .use 206970
     .itemcount 206970,1
 
@@ -440,7 +440,7 @@ step
     .train 416050,1
 step
     #season 2
-    .train 416050 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Potencial Natural|r] |cRXP_WARN_para treinar|r |T136152:0|t[Semente Viva]
+    .train 416050 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Potencial Natural|r] |cRXP_WARN_para treinar|r |T136152:0|t[Semente Viva]
     .use 206963
     .itemcount 206963,1
 
@@ -460,7 +460,7 @@ RXPGuides.RegisterGuide([[
 step
     #season 2
     #completewith next
-    .subzone 386 >>Voe para as Poças Esquecidas
+    .subzone 386 >>Vá aos Charcos Esquecidos
 step
     #season 2
     .goto The Barrens,44.73,22.18
@@ -479,7 +479,7 @@ step
     .train 416049,1
 step
     #season 2
-    .train 416049 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Lacerar|r] |cRXP_WARN_para treinar|r |T132131:0|t[Lacerar]
+    .train 416049 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Lacerar|r] |cRXP_WARN_para treinar|r |T132131:0|t[Lacerar]
     .use 208687 --Rune of Lacerate (1)
     .itemcount 208687,1
 ]])
@@ -531,13 +531,13 @@ step
     .train 407988,1
 step
     #season 2
-    .equip 18,208689 >>|cRXP_WARN_Equipe o|r |T132942:0|t[|cRXP_FRIENDLY_Ídolo Feroz|r]
+    .equip 18,208689 >> |cRXP_WARN_Equipe o|r |T132942:0|t[|cRXP_FRIENDLY_Ídolo Feroz|r]
     .use 208689
     .itemcount 208689,1
     .train 407988,1
 step
     #season 2
-    .train 407988 >>|cRXP_WARN_Inflija 20 instâncias de dano de sangramento com|r |T132152:0|t[Rasgar] |cRXP_WARN_ou|r |T132122:0|t[Estraçalhar] |cRXP_WARN_em humanoides, depois use o|r |T132942:0|t[|cRXP_FRIENDLY_Ídolo Feroz|r] |cRXP_WARN_novamente para aprender|r |T236167:0|t[Rugido Selvagem]
+    .train 407988 >>|cRXP_WARN_Cause dano de sangramento 20 vezes a humanoides com|r |T132152:0|t[Rasgar] |cRXP_WARN_ou|r |T132122:0|t[Estraçalhar] |cRXP_WARN_e então use o|r |T132942:0|t[|cRXP_FRIENDLY_Ídolo Feroz|r] |cRXP_WARN_novamente para aprender|r |T236167:0|t[Rugido Selvagem]
     .use 208689
     .itemcount 208689,1
 
@@ -559,7 +559,7 @@ step
 step
     #optional
     .train 424760,1
-    .train 5209 >>|cRXP_WARN_Você deve ter|r |T132117:0|t[Rugido Desafiador] |cRXP_WARN_treinado para adquirir a|r |T236149:0|t[Berserk - Feitiço - Feitiço] |cRXP_WARN_runa|r
+    .train 5209 >> |cRXP_WARN_Você deve ter|r |T132117:0|t[Rugido Desafiador] |cRXP_WARN_treinado para adquirir a|r |T236149:0|t[Berserk - Feitiço - Feitiço] |cRXP_WARN_runa|r
 step
     #completewith next
     .train 424760,1
@@ -567,12 +567,12 @@ step
 step
     .train 424760,1
     .goto Thousand Needles,68.690,55.155
-    .aura 435081 >>|cRXP_WARN_Fique ao lado da estátua |cRXP_PICK_Efígie Bestial|r para receber o|r |T134912:0|t[Efígie Bestial] |cRXP_WARN_buff|r
+    .aura 435081 >> |cRXP_WARN_Fique ao lado da estátua |cRXP_PICK_Efígie Bestial|r para receber o|r |T134912:0|t[Efígie Bestial] |cRXP_WARN_buff|r
 step
     #completewith next
     .train 424760,1
     .goto Thousand Needles,68.690,55.155
-    .cast 5209 >>|cRXP_WARN_Entre em|r |T132276:0|t[Forma de Urso] |cRXP_WARN_e lance|r |T132117:0|t[Rugido Desafiador] |cRXP_WARN_para invocar|r |cRXP_ENEMY_Zai'enki|r |cRXP_WARN_(nível 28 élite)|r
+    .cast 5209 >> |cRXP_WARN_Entre em|r |T132276:0|t[Forma de Urso] |cRXP_WARN_e lance|r |T132117:0|t[Rugido Desafiador] |cRXP_WARN_para invocar|r |cRXP_ENEMY_Zai'enki|r |cRXP_WARN_(nível 28 élite)|r
 step
     .train 424760,1
     .goto Thousand Needles,68.690,55.155
@@ -581,18 +581,18 @@ step
     .mob Zai'enki
 step
     .train 424760,1
-    .equip 18,213594 >>Equipe o |T134912:0|t[|cRXP_FRIENDLY_Ídolo da Interpelação|r]
+    .equip 18,213594 >> Equipe o |T134912:0|t[|cRXP_FRIENDLY_Ídolo da Interpelação|r]
     .use 213594
 step
     #title Ganhe 5x |T237556:0|t[Inspiração para Construir]
     .itemcount 213594,1
     .train 424760,1
-    .aura 408828 >>|cRXP_WARN_Lance|r |T132117:0|t[Rugido Desafiador] |cRXP_WARN_para intimidar pelo menos 2 inimigos e mate um deles enquanto eles têm o|r |T132117:0|t[Rugido Desafiador] |cRXP_WARN_debuff. Isto lhe dará uma carga do|r |T237556:0|t[Inspiração para Construir] |cRXP_WARN_Bônus. Repita isto 5 vezes até você obter o|r |T136116:0|t[Inspirado] |cRXP_WARN_Bônus|r
+    .aura 408828 >> |cRXP_WARN_Lance|r |T132117:0|t[Rugido Desafiador] |cRXP_WARN_para intimidar pelo menos 2 inimigos e mate um deles enquanto eles têm o|r |T132117:0|t[Rugido Desafiador] |cRXP_WARN_debuff. Isto lhe dará uma carga do|r |T237556:0|t[Inspiração para Construir] |cRXP_WARN_Bônus. Repita isto 5 vezes até você obter o|r |T136116:0|t[Inspirado] |cRXP_WARN_Bônus|r
     *|cRXP_WARN_É recomendado que você lute contra um inimigo e quase o mate, depois puxe um 2º e lance|r |T132117:0|t[Rugido Desafiador]|cRXP_WARN_, depois mate o inimigo com pouca vida. Você perderá todas as cargas de|r |T237556:0|t[Inspiração para Construir] |cRXP_WARN_se você morrer|r
 step
     .itemcount 213594,1
     .use 213594
-    .train 424760 >>|cRXP_WARN_Use o|r |T134912:0|t[|cRXP_FRIENDLY_Ídolo da Interpelação|r] |cRXP_WARN_para treinar|r |T236149:0|t[Berserk - Feitiço - Feitiço]
+    .train 424760 >> |cRXP_WARN_Use o|r |T134912:0|t[|cRXP_FRIENDLY_Ídolo da Interpelação|r] |cRXP_WARN_para treinar|r |T236149:0|t[Berserk - Feitiço - Feitiço]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -652,12 +652,12 @@ step
     .goto Dustwallow Marsh,43.6,41.0,40,0
     .goto Dustwallow Marsh,40.91,43.52,40,0
     .collect 212693,1
-    .accept 79348 >>Aceite O Anciente Perdido
+    .accept 79348 >> Aceite O Anciente Perdido
     .mob Rotting Ancient
 step
     #completewith next
     .train 410059,1
-    .zone Moonglade >>Usar |T135758:0|t[Teleporte Moonglade]
+    .zone Moonglade >> Usar |T135758:0|t[Teleporte Moonglade]
 step
     #completewith next
     +|cRXP_WARN_Você tem que seguir rigorosamente cada instrução a seguir. Morrer, ser refasado, ser convocado, usar teleportação ou obter o efeito "Alvo Sem Honra" pode falhar a missão (você perde o efeito), então não use qualquer Ponto de Voo em áreas contestadas.|r
@@ -754,7 +754,7 @@ step << Horde
     .target Tal
 step << Horde
     .goto The Barrens,63.677,38.618
-    .zone Stranglethorn Vale >>Pegue o barco para Booty Bay. |cRXP_WARN_SAIA DO JOGO APÓS O BARCO COMEÇAR A SE MOVER. ESPERE 40 SEGUNDOS E DEPOIS FAÇA LOGIN NOVAMENTE.|r
+    .zone Stranglethorn Vale >> Pegue o barco para Booty Bay. |cRXP_WARN_SAIA DO JOGO APÓS O BARCO COMEÇAR A SE MOVER. ESPERE 40 SEGUNDOS E DEPOIS FAÇA LOGIN NOVAMENTE.|r
 step << Horde
     .train 410059,1
     >>Usar a |T132852:0|t[Água of Elun'ara] no |cRXP_FRIENDLY_Broto Ancestral|r
@@ -806,7 +806,7 @@ step << Horde
 step
     #completewith next
     .train 410059,1
-    .zone Moonglade >>Usar |T135758:0|t[Teleporte Moonglade]
+    .zone Moonglade >> Usar |T135758:0|t[Teleporte Moonglade]
 step
     .train 410059,1
     .goto Moonglade,41.48,43.64
@@ -829,23 +829,23 @@ RXPGuides.RegisterGuide([[
 step
     #optional
     .train 431468,1
-    .train 2728 >>|cRXP_WARN_Você deve ter|r |T135952:0|t[Remover Maldição] |cRXP_WARN_treinado para adquirir a|r |T134222:0|t[Eflorescência] |cRXP_WARN_runa|r
+    .train 2728 >> |cRXP_WARN_Você deve ter|r |T135952:0|t[Remover Maldição] |cRXP_WARN_treinado para adquirir a|r |T134222:0|t[Eflorescência] |cRXP_WARN_runa|r
 step
     #optional
     .train 431468,1
-    .train 8946 >>|cRXP_WARN_Você deve ter|r |T136067:0|t[Curar Veneno] |cRXP_WARN_treinado para adquirir a|r |T134222:0|t[Eflorescência] |cRXP_WARN_runa|r
+    .train 8946 >> |cRXP_WARN_Você deve ter|r |T136067:0|t[Curar Veneno] |cRXP_WARN_treinado para adquirir a|r |T134222:0|t[Eflorescência] |cRXP_WARN_runa|r
 step
     #optional
     .train 431468,1
-    .train 16914 >>|cRXP_WARN_Você deve ter|r |T136018:0|t[Furacão] |cRXP_WARN_treinado para adquirir a|r |T134222:0|t[Eflorescência] |cRXP_WARN_runa|r
+    .train 16914 >> |cRXP_WARN_Você deve ter|r |T136018:0|t[Furacão] |cRXP_WARN_treinado para adquirir a|r |T134222:0|t[Eflorescência] |cRXP_WARN_runa|r
 step
     #optional
     .train 431468,1
-    .train 740 >>|cRXP_WARN_Você deve ter|r |T136107:0|t[Tranquilidade] |cRXP_WARN_treinado para adquirir a|r |T134222:0|t[Eflorescência] |cRXP_WARN_runa|r
+    .train 740 >> |cRXP_WARN_Você deve ter|r |T136107:0|t[Tranquilidade] |cRXP_WARN_treinado para adquirir a|r |T134222:0|t[Eflorescência] |cRXP_WARN_runa|r
 step
     #optional
     .train 431468,1
-    .train 768 >>|cRXP_WARN_Você deve ter|r |T132115:0|t[Forma de Felino] |cRXP_WARN_treinado para adquirir a|r |T134222:0|t[Eflorescência] |cRXP_WARN_runa|r
+    .train 768 >> |cRXP_WARN_Você deve ter|r |T132115:0|t[Forma de Felino] |cRXP_WARN_treinado para adquirir a|r |T134222:0|t[Eflorescência] |cRXP_WARN_runa|r
 step
     #completewith next
     .zone Feralas >>Viaje para Feralas
@@ -985,7 +985,7 @@ step
 step
     .itemcount 220754,1
     .use 220754
-    .train 431451 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Vendaval|r] |cRXP_WARN_para treinar|r |T236154:0|t[Ventos Tormentosos]
+    .train 431451 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Vendaval|r] |cRXP_WARN_para treinar|r |T236154:0|t[Ventos Tormentosos]
 
 ]])
 
@@ -1039,7 +1039,7 @@ step
 step
     .itemcount 221020,1
     .use 221020
-    .train 416051 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Vendaval|r] |cRXP_WARN_para treinar|r |T236154:0|t[Ventos Tormentosos]
+    .train 416051 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Vendaval|r] |cRXP_WARN_para treinar|r |T236154:0|t[Ventos Tormentosos]
 ]])
 
 -- RXPGuides.RegisterGuide([[
@@ -1063,7 +1063,7 @@ RXPGuides.RegisterGuide([[
 step
     #optional
     .train 431449,1
-    .train 22812 >>|cRXP_WARN_Você deve ter|r |T136097:0|t[Pele de Árvore] |cRXP_WARN_treinado para adquirir a|r |T136097:0|t[Pele de Árvore Aprimorada] |cRXP_WARN_runa|r
+    .train 22812 >> |cRXP_WARN_Você deve ter|r |T136097:0|t[Pele de Árvore] |cRXP_WARN_treinado para adquirir a|r |T136097:0|t[Pele de Árvore Aprimorada] |cRXP_WARN_runa|r
 step
     #completewith next
     .zone Tanaris >>Viaje para Tanaris
@@ -1088,7 +1088,7 @@ step
 step
     .itemcount 221020,1
     .use 221020
-    .train 431449 >>|cRXP_WARN_Use o|r |T136061:0|t[|cRXP_FRIENDLY_Ídolo do Trôpego Enraivecido|r] |cRXP_WARN_para treinar|r |T136097:0|t[Pele de Árvore Aprimorada]
+    .train 431449 >> |cRXP_WARN_Use o|r |T136061:0|t[|cRXP_FRIENDLY_Ídolo do Trôpego Enraivecido|r] |cRXP_WARN_para treinar|r |T136097:0|t[Pele de Árvore Aprimorada]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1113,14 +1113,14 @@ step
     .mob Ravasaur
 step
     .train 439765,1
-    .equip 18,227444 >>Equipe o |T134912:0|t[|cRXP_FRIENDLY_Ídolo da Caçadora|r]
+    .equip 18,227444 >> Equipe o |T134912:0|t[|cRXP_FRIENDLY_Ídolo da Caçadora|r]
     .use 227444
 step
     .goto Un'Goro Crater,68.0,51.4
     #title Ganhe 5x |T237556:0|t[Inspiração para Construir]
     .itemcount 227444,1
     .train 439765,1
-    .aura 408828 >>|cRXP_WARN_Atacar um |cRXP_ENEMY_Ravassauro|r até que esteja com aproximadamente 5-10% de vida e garanta que você tem 5 pontos de combo nele|r
+    .aura 408828 >> |cRXP_WARN_Atacar um |cRXP_ENEMY_Ravassauro|r até que esteja com aproximadamente 5-10% de vida e garanta que você tem 5 pontos de combo nele|r
     >>|cRXP_WARN_Quando estiverem com 5-10% de vida, lance|r |T136090:0|t[Hibernar] |cRXP_WARN_depois mude para|r |T132115:0|t[Forma de Felino] |cRXP_WARN_e lance|r |T132127:0|t[Mordida Feroz] |cRXP_WARN_para derrotá-los e ganhar um acúmulo de|r |T237556:0|t[Inspiração para Construir]
     >>|cRXP_WARN_Repita este processo 5 vezes|r
     .mob Venomhide Ravasaur
@@ -1129,7 +1129,7 @@ step
 step
     .itemcount 227444,1
     .use 227444
-    .train 439765 >>|cRXP_WARN_Use o|r |T134912:0|t[|cRXP_FRIENDLY_Ídolo da Caçadora|r] |cRXP_WARN_para treinar|r |T134296:0|t[Patada Aprimorada]
+    .train 439765 >> |cRXP_WARN_Use o|r |T134912:0|t[|cRXP_FRIENDLY_Ídolo da Caçadora|r] |cRXP_WARN_para treinar|r |T134296:0|t[Patada Aprimorada]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1159,7 +1159,7 @@ step
 step
     .itemcount 227746,1
     .use 227746
-    .train 439767 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa da Árvore do Mundo|r] |cRXP_WARN_para treinar|r |T132145:0|t[Árvore da Vida]
+    .train 439767 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa da Árvore do Mundo|r] |cRXP_WARN_para treinar|r |T132145:0|t[Árvore da Vida]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1187,5 +1187,5 @@ step
 step
     .itemcount 227749,1
     .use 227749
-    .train 439770 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa da Estrela Cadente|r] |cRXP_WARN_para treinar|r |T236168:0|t[Chuva Estelar]
+    .train 439770 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa da Estrela Cadente|r] |cRXP_WARN_para treinar|r |T236168:0|t[Chuva Estelar]
 ]])

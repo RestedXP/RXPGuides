@@ -16,7 +16,7 @@ RXPGuides.RegisterGuide([[
 
 step << !Orc !Troll
     #completewith next
-    +|cRXP_WARN_Você selecionou um guia destinado a Orcs e Trolls. Você deve escolher a mesma zona inicial em que você começa|r
+    +|cRXP_WARN_Você selecionou um guia destinado a Orcs e Trolls. Escolha o guia correspondente à zona inicial do seu personagem|r
 step
     .goto Durotar,43.29,68.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kaltunk|r
@@ -38,7 +38,7 @@ step << Warlock
 step << Warrior/Shaman
     .goto Durotar,42.59,67.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duokna|r
-    .vendor >>Lixo de Mercador
+    .vendor >> Venda os itens de lixo
     .target Duokna
     .money >0.01
 step
@@ -56,7 +56,7 @@ step << Warrior/Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Frang|r << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shikrik|r << Shaman
     .train 6673 >>Treine |T132333:0|t[Brado de Batalha] << Warrior
-    .train 8017 >>Treine |T136086:0|t[Arma Trinca-pedra] << Shaman
+    .train 8017 >>Aprenda |T136086:0|t[Arma Trinca-pedra] << Shaman
     .target Frang << Warrior
     .target Shikrik << Shaman
 step << Warlock
@@ -68,13 +68,13 @@ step << Warlock
 step << Warlock
     .goto Durotar,40.56,68.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hraug|r
-    .vendor >>Lixo de Mercador
+    .vendor >>Venda os itens de lixo
     .target Hraug
 step << Warlock
     #label Nartok
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nartok|r
-    .train 348 >>Treine |T135817:0|t[Imolação]
+    .train 348 >>Treine |T135817:0|t [Imolar]
     .target Nartok
 step << !Warrior !Rogue
     .goto Durotar,42.59,67.34
@@ -96,12 +96,12 @@ step << Warlock
 step << Warlock
     #completewith next
     .goto Durotar,43.57,67.28,25,0
-    >>Mate os |cRXP_ENEMY_Mottled Boars|r a caminho do Convento da Lâmina Ardente
+    >>Mate |cRXP_ENEMY_Mosquetuscos|r a caminho do Covil da Lâmina Ardente
     >>|cRXP_WARN_Tente atingir o nível 2 antes de chegar lá|r
     .complete 788,1 --Mottled Boar (10)
     .mob Mottled Boar
 step << Warlock
-    .goto Durotar,45.30,56.42,100 >>Vá para o Covil da Lâmina Ardente
+    .goto Durotar,45.30,56.42,100 >> Vá para o Covil da Lâmina Ardente
     .isOnQuest 1485
 step << Warlock
     #loop
@@ -201,7 +201,7 @@ step << !Warlock !Rogue !Mage
     .goto Durotar,42.02,62.15,40,0
     .goto Durotar,42.00,62.92,40,0
     .goto Durotar,41.99,64.03,40,0
-    .xp 3+1120 >>Triturar até 1120+/1400 XP
+    .xp 3+1120 >> Triturar até 1120+/1400 XP
     .mob Mottled Boar
 step << Warlock
     #loop
@@ -228,7 +228,7 @@ step << Warlock
     .goto Durotar,42.02,62.15,40,0
     .goto Durotar,42.00,62.92,40,0
     .goto Durotar,41.99,64.03,40,0
-    .xp 3+760 >>Triturar até 760+/1400 XP
+    .xp 3+760 >> Triturar até 760+/1400 XP
     .mob Mottled Boar
 step << Warlock
     #completewith Ruzan2
@@ -250,13 +250,13 @@ step << Rogue
     #label Duokna2
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duokna|r
-    .vendor >>Lixo de Mercador
+    .vendor >> Venda os itens de lixo
     .target Duokna
 step << Warlock
     #label Ruzan2
     .goto Durotar,42.59,69.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ruzan|r
-    .turnin 1485 >>Entregue Familiares Torpes
+    .turnin 1485 >>Entregue Familiares torpes
     .accept 1499 >>Aceite Familiares torpes
     .target Ruzan
 step << Warlock
@@ -265,7 +265,7 @@ step << Warlock
 step << Warlock
 	.goto Durotar,42.85,69.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zureta Vista-longa|r
-    .turnin 1499 >>Entregue Familiares Torpes
+    .turnin 1499 >>Entregue Familiares torpes
     .accept 794 >>Aceite Medalhão da Lâmina Ardente
     .target Zureetha Fargaze
 step
@@ -300,7 +300,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rwag|r
     .turnin 3083 >>Entregue Tabuleta cifrada << Troll Rogue
     .turnin 3088 >>Entregue Pergaminho Cifrado << Orc Rogue
-    .train 53 >>Aprenda |T132090:0|t[Punhalada pelas Costas]
+    .train 53 >> Aprenda |T132090:0|t[Punhalada pelas Costas]
     .target Rwag
     .money <0.04
     .xp <4,1
@@ -328,14 +328,14 @@ step << Warlock
 step << Warlock
     .goto Durotar,40.56,68.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hraug|r
-    .vendor >>Lixo de Mercador
+    .vendor >>Venda os itens de lixo
     .target Hraug
     .money >0.01
 step << Warlock
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nartok|r
     .turnin 3090 >>Entregue Pergaminho Maculado
-    .train 172 >>Treine |T136118:0|t[Corrupção]
+    .train 172 >> Treine |T136118:0|t[Corrupção]
     .target Nartok
 step
     #label Galgar
@@ -350,14 +350,14 @@ step << !Rogue
     >>|cRXP_BUY_Compre|r |T132382:0|t[Flechas Rústicas] |cRXP_BUY_dela|r << Hunter
     .collect 159,15,6394,1 << !Rogue !Warrior !Hunter --Refreshing Spring Water (15)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
-    .vendor >>Lixo de Mercador
+    .vendor >> Venda os itens de lixo
     .target Duokna
     .money >0.1 << Warrior
     .itemcount 159,<15 << !Warrior !Hunter
 step << Shaman
     #requires Galgar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Shikrik|r e |cRXP_FRIENDLY_Canaga|r
-    .turnin 3084 >>Entregue Tabuleta Inscrita em Runas - Missão << Troll
+    .turnin 3084 >>Entregue Tabuleta inscrita em runas << Troll
     .turnin 3089 >>Entregue Pergaminho inscrito em runas << Orc
     .train 8042 >>Aprenda |T136026:0|t[Choque Terreno]
     .goto Durotar,42.39,69.00
@@ -370,7 +370,7 @@ step << Shaman
     #requires Galgar
     .goto Durotar,42.39,69.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shikrik|r
-    .turnin 3084 >>Entregue Tabuleta Inscrita em Runas - Missão << Troll
+    .turnin 3084 >>Entregue Tabuleta inscrita em runas << Troll
     .turnin 3089 >>Entregue Pergaminho inscrito em runas << Orc
     .target Shikrik
 step << Mage
@@ -378,7 +378,7 @@ step << Mage
     .goto Durotar,42.51,69.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mai'ah|r
     .turnin 3086 >>Entregue Tabuleta glífica << Troll
-    .train 1459 >>Aprenda |T135932:0|t[Inteligência Arcana]
+    .train 1459 >> Aprenda |T135932:0|t[Inteligência Arcana]
     .target Mai'ah
 step << !Warlock
     #requires Galgar
@@ -391,7 +391,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jen'shan|r
     .turnin 3082 >>Entregue Tábua Cinzelada << Troll
     .turnin 3087 >>Entregue Pergaminho cinzelado << Orc
-    .train 1978 >>Treine |T132204:0|t[Picada de Serpente]
+    .train 1978 >> Treine |T132204:0|t[Picada de Serpente]
     .target Jen'shan
     .xp <4,1
 step << Hunter
@@ -403,31 +403,31 @@ step << Hunter
 step << Warrior
     .goto Durotar,42.89,69.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Frang|r
-    .turnin 2383 >>Entregue Pergaminho Simples << Orc
+    .turnin 2383 >>Entregue Pergaminho simples << Orc
     .turnin 3065 >>Entregue Tabuleta Simples << Troll
-    .train 100 >>Treine |T132337:0|t[Carga]
-    .train 772 >>Treine |T132155:0|t[Dilacerar]
+    .train 100 >> Treine |T132337:0|t[Carga]
+    .train 772 >> Aprenda |T132155:0|t[Dilacerar]
     .target Frang
     .money <0.02
     .xp <4,1
 step << Warrior
     .goto Durotar,42.89,69.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Frang|r
-    .turnin 2383 >>Entregue Pergaminho Simples << Orc
+    .turnin 2383 >>Entregue Pergaminho simples << Orc
     .turnin 3065 >>Entregue Tabuleta Simples << Troll
-    .train 772 >>Treine |T132155:0|t[Dilacerar]
+    .train 772 >> Aprenda |T132155:0|t[Dilacerar]
     .target Frang
     .xp <4,1
 step << Warrior
     .goto Durotar,42.89,69.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Frang|r
-    .turnin 2383 >>Entregue Pergaminho Simples << Orc
+    .turnin 2383 >>Entregue Pergaminho simples << Orc
     .turnin 3065 >>Entregue Tabuleta Simples << Troll
     .target Frang
 step
     #requires Galgar << Warlock
     .goto Durotar,44.63,68.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Thazz'ril|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Encarregado Thazz'ril|r
     .accept 5441 >>Aceite Peões preguiçosos
     .target Foreman Thazz'ril
 step
@@ -467,7 +467,7 @@ step << !Warlock
     .goto Durotar,44.58,56.10,40,0
     .goto Durotar,44.27,56.59,40,0
     .goto Durotar,43.85,55.52,40,0
-    >>Mate os |cRXP_ENEMY_Familiares Torpes|r
+    >>Mate |cRXP_ENEMY_Familiares Torpes|r
     .complete 792,1 --Vile Familiar (12)
     .mob Vile Familiar
 step
@@ -566,7 +566,7 @@ step
     .goto Durotar,42.02,62.15,40,0
     .goto Durotar,42.00,62.92,40,0
     .goto Durotar,41.99,64.03,40,0
-    .xp 4 >>Farme até o nível 4
+    .xp 4 >> Farme até o nível 4
     .mob Mottled Boar
     .mob Scorpid Worker
     .mob Vile Familiar
@@ -583,7 +583,7 @@ step
     >>|cRXP_BUY_Compre|r |T132382:0|t[Flechas Rústicas] |cRXP_BUY_dela|r << Hunter
     .collect 159,5,6394,1 << !Rogue !Warrior !Hunter --Refreshing Spring Water (5)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
-    .vendor >>Lixo de Mercador
+    .vendor >> Venda os itens de lixo
     .target Duokna
     .money >0.1 << Rogue/Warrior
     .itemcount 159,<5 << !Rogue !Warrior !Hunter
@@ -598,7 +598,7 @@ step
     .target Gornek
 step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Shikrik|r e |cRXP_FRIENDLY_Canaga|r
-    .train 8042 >>Aprenda |T136026:0|t[Choque Terreno]
+    .train 8042 >> Aprenda |T136026:0|t[Choque Terreno]
     .goto Durotar,42.39,69.00
     .accept 1516 >>Aceite Clamor da Terra
     .goto Durotar,42.40,69.17
@@ -607,65 +607,65 @@ step << Shaman
 step << Mage
     .goto Durotar,42.51,69.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mai'ah|r
-    .train 116,1 >>Treine |T135846:0|t[Seta de Gelo]
+    .train 116,1 >> Treine |T135846:0|t[Seta de Gelo]
     .target Mai'ah
 step << Priest
     .goto Durotar,42.36,68.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ken'jai|r
-    .train 589 >>Treine suas magias de classe
+    .train 589 >> Treine suas magias de classe
     .money <0.021
     .target Ken'jai
 step << Priest
     .goto Durotar,42.36,68.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ken'jai|r
-    .train 1243 >>Aprenda |T135987:0|t[Palavra de Poder: Fortitude]
-    .train 589 >>Aprenda |T136207:0|t[Palavra Sombria: Dor]
+    .train 1243 >> Aprenda |T135987:0|t[Palavra de Poder: Fortitude]
+    .train 589 >> Aprenda |T136207:0|t[Palavra Sombria: Dor]
     .money <0.011
     .target Ken'jai
 step << Priest
     .goto Durotar,42.36,68.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ken'jai|r
-    .train 589,1 >>Aprenda |T136207:0|t[Palavra Sombria: Dor]
+    .train 589,1 >> Aprenda |T136207:0|t[Palavra Sombria: Dor]
     .money <0.01
     .target Ken'jai
 step << !Warlock
 	.goto Durotar,42.85,69.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zureta Vista-longa|r
-    .turnin 792 >>Entregue Familiares Torpes
+    .turnin 792 >>Entregue Familiares torpes
     .accept 794 >>Aceite Medalhão da Lâmina Ardente
     .target Zureetha Fargaze
 step << Hunter
     .goto Durotar,42.84,69.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jen'shan|r
-    .train 1978,1 >>Treine |T132204:0|t[Picada de Serpente]
+    .train 1978,1 >> Treine |T132204:0|t[Picada de Serpente]
     .target Jen'shan
 step << Warrior
     .goto Durotar,42.89,69.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Frang|r
-    .train 100 >>Treine |T132337:0|t[Carga]
-    .train 772 >>Treine |T132155:0|t[Dilacerar]
+    .train 100 >> Treine |T132337:0|t[Carga]
+    .train 772 >> Aprenda |T132155:0|t[Dilacerar]
     .target Frang
     .money <0.02
 step << Warrior
     .goto Durotar,42.89,69.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Frang|r
-    .train 772 >>Treine |T132155:0|t[Dilacerar]
+    .train 772 >> Aprenda |T132155:0|t[Dilacerar]
     .target Frang
 step << Warrior
     .goto Durotar,42.89,69.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Frang|r
-    .train 100 >>Treine |T132337:0|t[Carga]
+    .train 100 >> Treine |T132337:0|t[Carga]
     .target Frang
     .money <0.01
 step
     .goto Durotar,44.63,68.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Thazz'ril|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Encarregado Thazz'ril|r
     .turnin 5441 >>Entregue Peões preguiçosos
     .accept 6394 >>Aceite A picareta de Thazz'ril
     .target Foreman Thazz'ril
 step
     #completewith next
-    .xp 4+1720 >>Mate inimigos até atingir 1720+/2100 de xp
+    .xp 4+1720 >> Mate inimigos até atingir 1720+/2100 de xp
     .mob Mottled Boar
     .mob Scorpid Worker
     .mob Vile Familiar
@@ -704,7 +704,7 @@ step << !Warrior !Rogue !Shaman
     .goto Durotar,44.58,56.10,40,0
     .goto Durotar,44.27,56.59,40,0
     .goto Durotar,43.85,55.52,40,0
-    .xp 4+1720 >>Mate inimigos até atingir 1720+/2100 de xp
+    .xp 4+1720 >> Mate inimigos até atingir 1720+/2100 de xp
     .mob Vile Familiar
     .isOnQuest 4402
 step << !Warrior !Rogue !Shaman
@@ -724,7 +724,7 @@ step << !Warrior !Rogue !Shaman
     .goto Durotar,44.58,56.10,40,0
     .goto Durotar,44.27,56.59,40,0
     .goto Durotar,43.85,55.52,40,0
-    .xp 5 >>Farme até o nível 5
+    .xp 5 >> Mate inimigos até atingir o nível 5
     .mob Vile Familiar
     .isQuestTurnedIn 4402
 step
@@ -735,7 +735,7 @@ step
 step << Shaman
     #completewith Yarrog
     #requires Cave
-    >>Mate os |cRXP_ENEMY_Espreitadores Vis|r. Saqueie-os para obter |cRXP_LOOT_Felstalker Hooves|r
+    >>Mate |cRXP_ENEMY_Espreitadores Vis|r. Saqueie-os para pegar |cRXP_LOOT_Casco de Espreitador Vil|r
     .complete 1516,1 --Felstalker Hoof (2)
     .mob Felstalker
 step
@@ -780,7 +780,7 @@ step << Shaman
 	.goto Durotar,42.38,54.22,25,0
 	.goto Durotar,42.53,53.48,25,0
 	.goto Durotar,43.27,53.82,25,0
-    >>Mate os |cRXP_ENEMY_Espreitadores Vis|r. Saqueie-os para obter |cRXP_LOOT_Felstalker Hooves|r
+    >>Mate |cRXP_ENEMY_Espreitadores Vis|r. Saqueie-os para pegar |cRXP_LOOT_Casco de Espreitador Vil|r
     .complete 1516,1 --Felstalker Hoof (2)
     .mob Felstalker
 step
@@ -806,8 +806,8 @@ step
 	.goto Durotar,42.38,54.22,25,0
 	.goto Durotar,42.53,53.48,25,0
 	.goto Durotar,43.27,53.82,25,0
-    .xp 6 >>Suba até o nível 6 << !Shaman
-    .xp 5+1810 >>Farme até 1810+/2800xp << Shaman
+    .xp 6 >> Suba até o nível 6 << !Shaman
+    .xp 5+1810 >> Farme até 1810+/2800xp << Shaman
     .isQuestTurnedIn 4402
 step
     #optional
@@ -832,13 +832,13 @@ step
 	.goto Durotar,42.38,54.22,25,0
 	.goto Durotar,42.53,53.48,25,0
 	.goto Durotar,43.27,53.82,25,0
-    .xp 6 >>Suba até o nível 6 << !Shaman
-    .xp 5+1430 >>Farme até 1430+/2800xp << Shaman
+    .xp 6 >> Suba até o nível 6 << !Shaman
+    .xp 5+1430 >> Farme até 1430+/2800xp << Shaman
     .isQuestComplete 4402
 step << skip
 	#completewith next
     .goto Durotar,44.70,52.47
-    .goto Durotar,53.55,44.68,30 >>|cRXP_WARN_Faça um Logout Pular posicionando seu personagem na borda da rocha até parecer que está flutuando, depois deslogue e entre novamente|r
+    .goto Durotar,53.55,44.68,30 >>|cRXP_WARN_Faça um Atalho por Logout posicionando seu personagem na borda da pedra até parecer que está flutuando, depois desconecte-se e entre novamente|r
 	.link https://www.youtube.com/watch?v=7vmnvdjbUnM >> |cRXP_WARN_CLICK HERE for an example|r
 step << skip
     #label Betrayers
@@ -851,7 +851,7 @@ step << skip --Hunter
     #completewith next
     .goto Durotar,51.13,42.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grimtak|r
-    .vendor >>Lixo de Mercador
+    .vendor >> Venda os itens de lixo
     .target Grimtak
 step << skip
     #completewith next
@@ -868,7 +868,7 @@ step << skip
     .goto Durotar,49.68,40.30,6,0
     .goto Durotar,49.78,40.34,6,0
     .goto Durotar,49.79,39.96,6,0
-    .goto Durotar,49.60,40.04,8 >>Viaje para cima da torre em direção a Furl
+    .goto Durotar,49.60,40.04,8 >>Viaje para cima da torre em direção a Férrano Escarnecenho
 step << skip
     .goto Durotar,49.89,40.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Furl|r
@@ -877,7 +877,7 @@ step << skip
 step << skip --Warrior/Rogue
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Krunn|r
-    .train 2575 >>Treine |T136248:0|t[Mineração]
+    .train 2575 >> Treine |T136248:0|t[Mineração]
     >>|cRXP_WARN_Isto permitirá que você encontre|r |T135232:0|t|cRXP_LOOT_[Pedra Rústica]|r |cRXP_WARN_de depósitos de minérios para fabricar|r |T135248:0|t[Pedra de Afiar Rústica] |cRXP_WARN_(+2 Dano da Arma por 30 minutos)|r
     .target Krunn
 step << skip --Warrior/Rogue
@@ -888,13 +888,13 @@ step << skip --Warrior/Rogue
     .target Wuark
 step << skip --Warrior/Rogue
     .goto Durotar,52.05,40.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Dwukk|r
-    .train 2018 >>Treine |T136241:0|t [Ferraria]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dwukk|r
+    .train 2018 >> Treine |T136241:0|t [Ferraria]
     .target Dwukk
     .skill blacksmithing,1,1
 step
     #completewith next
-    .hs >>Use a Pedra do Lar para voltar ao Vale dos Testes
+    .hs >>Use a Pedra do Regresso para voltar ao Vale das Provações
     .use 6948
 step
     .goto Durotar,42.85,69.15
@@ -910,20 +910,20 @@ step
 step
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Duokna|r
-    .vendor >>Lixo de Mercador
+    .vendor >> Venda os itens de lixo
     .target Duokna
     .money >0.03
 step << Priest
     .goto Durotar,42.36,68.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ken'jai|r
-	.accept 5649 >>Aceite Em favor da espiritualidade << Troll Priest
+	.accept 5649 >> Aceite Em favor da espiritualidade << Troll Priest
 	.train 591 >>Aprenda |T135924:0|t[Punição]
     .train 17 >>Aprenda |T135940:0|t[Palavra de Poder: Escudo]
     .target Ken'jai
 step << Mage
     .goto Durotar,42.51,69.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mai'ah|r
-    .train 143 >>Aprenda |T135812:0|t[Bola de Fogo]
+    .train 143 >> Aprenda |T135812:0|t[Bola de Fogo]
     .train 2136 >>Aprenda |T135807:0|t[Impacto de Fogo]
     .target Mai'ah
 step << Shaman
@@ -931,7 +931,7 @@ step << Shaman
     .train 332 >>Aprenda |T136052:0|t[Onda Curativa]
     .target +Shikrik
     .goto Durotar,42.39,69.00
-    .turnin 1516 >>Entregue Call of Terra - Missão
+    .turnin 1516 >>Entregue Clamor da Terra
     .accept 1517 >>Aceite Clamor da Terra
     .target +Canaga Earthcaller
     .goto Durotar,42.40,69.17
@@ -939,32 +939,32 @@ step << Shaman
 step << Shaman
     .goto Durotar,42.40,69.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ranago Arauto da Terra|r
-    .turnin 1516 >>Entregue Call of Terra - Missão
+    .turnin 1516 >>Entregue Clamor da Terra
     .accept 1517 >>Aceite Clamor da Terra
     .target Canaga Earthcaller
 step << Hunter
     .goto Durotar,42.84,69.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jen'shan|r
     .train 1130 >>Aprenda |T132212:0|t[Marca do Caçador]
-    .train 3044 >>Treine |T132218:0|t[Tiro Arcano]
+    .train 3044 >>Aprenda |T132218:0|t[Tiro Arcano]
     .target Jen'shan
     .money <0.02
 step << Hunter
     .goto Durotar,42.84,69.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jen'shan|r
-    .train 3044 >>Treine |T132218:0|t[Tiro Arcano]
+    .train 3044 >>Aprenda |T132218:0|t[Tiro Arcano]
     .target Jen'shan
 step << Warrior
     .goto Durotar,42.89,69.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Frang|r
-    .train 3127 >>Treine |T132269:0|t[Aparar]
-    .train 6343 >>Treine |T136105:0|t[Trovoada]
+    .train 3127 >>Aprenda |T132269:0|t[Aparar]
+    .train 6343 >>Aprenda |T136105:0|t[Trovoada]
     .target Frang
     .money <0.02
 step << Warrior
     .goto Durotar,42.89,69.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Frang|r
-    .train 3127 >>Treine |T132269:0|t[Aparar]
+    .train 3127 >>Aprenda |T132269:0|t[Aparar]
     .target Frang
 step << Rogue
     #completewith Rwag2
@@ -974,14 +974,14 @@ step << Rogue
 step << Rogue
     .goto Durotar,41.27,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rwag|r
-    .train 1757 >>Aprenda |T136189:0|t[Golpe Sinistro]
-    .train 1776 >>Treine |T132155:0|t[Esfaquear].
+    .train 1757 >> Aprenda |T136189:0|t[Golpe Sinistro]
+    .train 1776 >> Aprenda |T132155:0|t[Esfaquear]
     .target Rwag
     .money <0.02
 step << Rogue
     .goto Durotar,41.27,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rwag|r
-    .train 1757 >>Aprenda |T136189:0|t[Golpe Sinistro]
+    .train 1757 >> Aprenda |T136189:0|t[Golpe Sinistro]
     .target Rwag
 step << Warlock
     #completewith Hraug3
@@ -996,21 +996,21 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hraug|r
     >>|cRXP_BUY_Compre o|r |T133738:0|t[Grimório of Pacto de Sangue] |cRXP_BUY_dele|r
     .collect 16321,1,817,1 --Grimoire of Blood Pact
-    .vendor >>Lixo de Mercador
+    .vendor >>Venda os itens de lixo
     .target Hraug
     .money <0.03
     .train 6307,1 --Blood Pact (Rank 1)
 step << Warlock
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nartok|r
-    .train 695 >>Aprenda |T136197:0|t[Seta Sombria]
-    .train 1454 >>Aprenda |T136126:0|t[Conversão de Vida]
+    .train 695 >> Aprenda |T136197:0|t[Seta Sombria]
+    .train 1454 >> Aprenda |T136126:0|t[Conversão de Vida]
     .target Nartok
     .money <0.02
 step << Warlock
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nartok|r
-    .train 695 >>Aprenda |T136197:0|t[Seta Sombria]
+    .train 695 >> Aprenda |T136197:0|t[Seta Sombria]
     .target Nartok
 step << Shaman
     #completewith CallOE1
@@ -1021,7 +1021,7 @@ step << Shaman
     .goto Durotar,40.82,74.37,8,0
     .goto Durotar,42.71,75.18,10,0
     .goto Durotar,43.57,75.51,15,0
-    .goto Durotar,44.13,76.36,25 >>Vá para o |cRXP_PICK_Altar do Xamã|r
+    .goto Durotar,44.13,76.36,25 >>Siga em direção ao |cRXP_PICK_Santuário Xamânico|r
     .isOnQuest 1517
 step << Shaman
     #completewith next
@@ -1032,13 +1032,13 @@ step << Shaman
     #label CallOE1
     .goto Durotar,44.03,76.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Manifestação|r
-    .turnin 1517 >>Entregue Call of Terra - Missão
+    .turnin 1517 >>Entregue Clamor da Terra
     .accept 1518 >>Aceite Clamor da Terra
     .target Minor Manifestation of Earth
 step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ranago Arauto da Terra|r
     .goto Durotar,42.40,69.17
-    .turnin 1518 >>Entregue Call of Terra - Missão
+    .turnin 1518 >>Entregue Clamor da Terra
     .target Canaga Earthcaller
 step << Shaman
     .goto Durotar,42.39,69.00
@@ -1047,7 +1047,7 @@ step << Shaman
     .target Shikrik
 step
     .goto Durotar,44.63,68.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Thazz'ril|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Encarregado Thazz'ril|r
     .turnin 6394 >>Entregue A picareta de Thazz'ril
     .target Foreman Thazz'ril
 step
@@ -1103,7 +1103,7 @@ step
 step
     #completewith next
     .goto Durotar,56.16,74.43,8,0
-    .goto Durotar,56.31,73.8,8 >>Entre na cabana grande
+    .goto Durotar,56.31,73.8,8 >> Entre na cabana grande
 step << Rogue
     .goto Durotar,56.29,73.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_K'waii|r|cRXP_BUY_. Compre |r |T135421:0|t[Machado de Arremesso Pesado] |cRXP_BUY_dela|r
@@ -1113,14 +1113,14 @@ step << Rogue
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.9
 step << Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_K'waii|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_K'waii|r
     >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dela|r --Refreshing Spring Water (20)
     .collect 159,20,786,1
     .target K'waii
     .money <0.010
 step << Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_K'waii|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_K'waii|r
     >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dela|r --Refreshing Spring Water (10)
     .collect 159,10,786,1
     .target K'waii
@@ -1129,7 +1129,7 @@ step << Warlock/Mage/Priest
 step << Shaman
     .goto Durotar,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Trayexir|r
-    .vendor >>Lixo de vendedor. Venda sua arma se ela render dinheiro suficiente para uma |T135145:0|t[Bengala] (5s 04c). Volte depois se ainda não tiver o suficiente
+    .vendor >> Venda os itens sem utilidade. Venda sua arma se isso lhe der dinheiro suficiente para comprar uma|T135145:0|t[Bengala] (5p 04c). Você voltará mais tarde se ainda não tiver dinheiro suficiente
     .target Trayexir
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -1143,7 +1143,7 @@ step << Shaman
 step << Rogue
     .goto Durotar,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Trayexir|r
-    .vendor >>Comerciante. Venda sua arma se você receber dinheiro suficiente para um |T135641:0|t[Estilete] (4s 01c). Você voltará depois se não tiver o suficiente ainda.
+    .vendor >> Comerciante. Venda sua arma se você receber dinheiro suficiente para um |T135641:0|t[Estilete] (4s 01c). Você voltará depois se não tiver o suficiente ainda.
     .target Trayexir
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
@@ -1157,7 +1157,7 @@ step << Rogue
 step << Orc Warrior
     .goto Durotar,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Trayexir|r
-    .vendor >>Comerciante. Venda sua arma se você receber dinheiro suficiente para um |T132401:0|t[Machado Largo] (4s 84c). Você voltará depois se não tiver o suficiente ainda.
+    .vendor >> Comerciante. Venda sua arma se você receber dinheiro suficiente para um |T132401:0|t[Machado Largo] (4s 84c). Você voltará depois se não tiver o suficiente ainda.
     .target Trayexir
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -1171,13 +1171,13 @@ step << Orc Warrior
 step << Troll Warrior
     .goto Durotar,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Trayexir|r
-    .vendor >>Comerciante. Venda sua arma se você receber dinheiro suficiente para uma |T135421:0|t[Machadinha] (5s 40c). Você voltará depois se não tiver o suficiente ainda.
+    .vendor >> Comerciante. Venda sua arma se você receber dinheiro suficiente para uma |T135421:0|t[Machadinha] (5s 40c). Você voltará depois se não tiver o suficiente ainda.
     .target Trayexir
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Troll Warrior
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Converse com|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Compre uma|r |T135421:0|t[Machadinha] |cRXP_BUY_dela|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Compre uma|r |T135421:0|t[Machadinha] |cRXP_BUY_dele|r
     .collect 2490,1,786,1 --Collect Tomahawk (1)
     .money <0.0540
     .itemStat 16,QUALITY,<7
@@ -1185,7 +1185,7 @@ step << Troll Warrior
 step << Hunter
     .goto Durotar,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Trayexir|r
-    .vendor >>Comerciante lixo. Venda sua arma se isso der dinheiro suficiente para um |T135499:0|t[Arco Recurvo de Pau-de-chifre] (2s 83c). Você voltará depois se ainda não tiver o bastante
+    .vendor >> Comerciante lixo. Venda sua arma se isso der dinheiro suficiente para um |T135499:0|t[Arco Recurvo de Pau-de-chifre] (2s 83c). Você voltará depois se ainda não tiver o bastante
     .target Trayexir
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
@@ -1247,7 +1247,7 @@ step << Hunter
 step << Mage
     .goto Durotar,56.30,75.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Un'Thuwa|r
-    .train 143 >>Aprenda |T135812:0|t[Bola de Fogo]
+    .train 143 >> Aprenda |T135812:0|t[Bola de Fogo]
     .train 2136 >>Aprenda |T135807:0|t[Impacto de Fogo]
     .target Un'Thuwa
 step
@@ -1257,7 +1257,7 @@ step
     .goto Durotar,55.72,79.62,40,0
     .goto Durotar,54.23,82.26,40,0
     .goto Durotar,52.20,83.00,40,0
-    >>Corra pela praia. Mate os |cRXP_ENEMY_Crawlers|r e os |cRXP_ENEMY_Makruras|r. Saqueie-os para obter o |cRXP_LOOT_Mucus|r e os |cRXP_LOOT_Olhos|r. Você não precisa terminar este passo aqui.
+    >>Percorra pela praia. Mate |cRXP_ENEMY_Rastejantes|r e |cRXP_ENEMY_Makruras|r. Saqueie-os para pegar |cRXP_LOOT_Muco|r e |cRXP_LOOT_Olhos|r. Você não precisa concluir esta etapa aqui.
     .complete 818,2,4 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
     .mob +Surf Crawler
@@ -1265,7 +1265,7 @@ step
     .mob +Makrura Shellhide
     .mob +Makrura Clacker
 step
-    .goto Durotar,52.20,83.00,75 >>Chegue ao final da praia
+    .goto Durotar,52.20,83.00,75 >> Vá até o fim da praia
     .isOnQuest 818
 step
     .goto Durotar,50.9,79.2,40 >>Entre na base dos Kolkar
@@ -1317,14 +1317,14 @@ step
     .isQuestComplete 818
 step << Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_K'waii|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_K'waii|r
     >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dela|r --Refreshing Spring Water (20)
     .collect 159,20,784,1
     .target K'waii
     .money <0.010
 step << Warlock/Mage/Priest
     .goto Durotar,56.29,73.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Conversar com|r |cRXP_FRIENDLY_K'waii|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_K'waii|r
     >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dela|r --Refreshing Spring Water (10)
     .collect 159,10,784,1
     .target K'waii
@@ -1333,14 +1333,14 @@ step << Warrior/Rogue/Shaman
     .goto Durotar,55.62,73.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hai'zan|r
     >>|cRXP_BUY_Compre|r |T133974:0|t[Pernil de Carne] |cRXP_BUY_dele|r
-    .vendor >>Lixo de vendedor
+    .vendor >> Lixo de vendedor
     .collect 2287,10,823,1 --Haunch of Meat (10)
     .money <0.025
     .target Hai'zan
 step << Shaman
     .goto Durotar,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Trayexir|r
-    .vendor >>Lixo de vendedor. Venda sua arma se ela render dinheiro suficiente para uma |T135145:0|t[Bengala] (5s 04c). Volte depois se ainda não tiver o suficiente
+    .vendor >> Venda os itens sem utilidade. Venda sua arma se isso lhe der dinheiro suficiente para comprar uma|T135145:0|t[Bengala] (5p 04c). Você voltará mais tarde se ainda não tiver dinheiro suficiente
     .target Trayexir
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -1354,7 +1354,7 @@ step << Shaman
 step << Rogue
     .goto Durotar,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Trayexir|r
-    .vendor >>Comerciante. Venda sua arma se você receber dinheiro suficiente para um |T135641:0|t[Estilete] (4s 01c). Você voltará depois se não tiver o suficiente ainda.
+    .vendor >> Comerciante. Venda sua arma se você receber dinheiro suficiente para um |T135641:0|t[Estilete] (4s 01c). Você voltará depois se não tiver o suficiente ainda.
     .target Trayexir
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
@@ -1368,7 +1368,7 @@ step << Rogue
 step << Orc Warrior
     .goto Durotar,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Trayexir|r
-    .vendor >>Comerciante. Venda sua arma se você receber dinheiro suficiente para um |T132401:0|t[Machado Largo] (4s 84c). Você voltará depois se não tiver o suficiente ainda.
+    .vendor >> Comerciante. Venda sua arma se você receber dinheiro suficiente para um |T132401:0|t[Machado Largo] (4s 84c). Você voltará depois se não tiver o suficiente ainda.
     .target Trayexir
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -1382,13 +1382,13 @@ step << Orc Warrior
 step << Troll Warrior
     .goto Durotar,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Trayexir|r
-    .vendor >>Comerciante. Venda sua arma se você receber dinheiro suficiente para uma |T135421:0|t[Machadinha] (5s 40c). Você voltará depois se não tiver o suficiente ainda.
+    .vendor >> Comerciante. Venda sua arma se você receber dinheiro suficiente para uma |T135421:0|t[Machadinha] (5s 40c). Você voltará depois se não tiver o suficiente ainda.
     .target Trayexir
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Troll Warrior
     .goto Durotar,56.47,73.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Converse com|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Compre uma|r |T135421:0|t[Machadinha] |cRXP_BUY_dela|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Trayexir|r|cRXP_BUY_. Compre uma|r |T135421:0|t[Machadinha] |cRXP_BUY_dele|r
     .collect 2490,1,823,1 --Collect Tomahawk (1)
     .money <0.0540
     .itemStat 16,QUALITY,<7
@@ -1396,7 +1396,7 @@ step << Troll Warrior
 step << Hunter
     .goto Durotar,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Trayexir|r
-    .vendor >>Comerciante lixo. Venda sua arma se isso der dinheiro suficiente para um |T135499:0|t[Arco Recurvo de Pau-de-chifre] (2s 83c). Você voltará depois se ainda não tiver o bastante
+    .vendor >> Comerciante lixo. Venda sua arma se isso der dinheiro suficiente para um |T135499:0|t[Arco Recurvo de Pau-de-chifre] (2s 83c). Você voltará depois se ainda não tiver o bastante
     .target Trayexir
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
@@ -1469,7 +1469,7 @@ step << Hunter
     #completewith next
     .goto Durotar,51.13,42.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grimtak|r
-    .vendor >>Lixo de Mercador
+    .vendor >> Venda os itens de lixo
     .target Grimtak
 step
     #completewith next
@@ -1486,7 +1486,7 @@ step
     .goto Durotar,49.68,40.30,6,0
     .goto Durotar,49.78,40.34,6,0
     .goto Durotar,49.79,39.96,6,0
-    .goto Durotar,49.60,40.04,8 >>Viaje para cima da torre em direção a Furl
+    .goto Durotar,49.60,40.04,8 >>Viaje para cima da torre em direção a Férrano Escarnecenho
 step
     .goto Durotar,49.89,40.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Furl|r
@@ -1505,8 +1505,8 @@ step << Warrior/Rogue
     .target Wuark
 step << Warrior/Rogue
     .goto Durotar,52.05,40.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Dwukk|r
-    .train 2018 >>Treine |T136241:0|t [Ferraria]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dwukk|r
+    .train 2018 >> Treine |T136241:0|t [Ferraria]
     .target Dwukk
     .skill blacksmithing,1,1
 step << Warrior/Rogue
@@ -1518,13 +1518,13 @@ step << Warrior/Rogue
 step
     #label TravelToTiragarde
     .goto Durotar,57.26,54.69,60,0
-    .subzone 372 >>Vá para Bastilha Tiragarde
+    .subzone 372 >> Vá para Bastilha Tiragarde
     >>|cRXP_WARN_Triture inimigos no caminho|r
     .isOnQuest 784
 step
     #sticky
     #completewith AgedEnvelope
-    +|cRXP_WARN_Tenha cuidado se|r |cRXP_ENEMY_Sargento Carlos|r |cRXP_WARN_está ativo, pois é um raro nível 9. Você pode precisar usar uma|r |T134829:0|t[Poção Menor de Cura] |cRXP_WARN_se você tiver uma|r
+    +|cRXP_WARN_Tome cuidado se|r |cRXP_ENEMY_Comandante da Vigia Zalaphil|r |cRXP_WARN_estiver por perto, ele é um inimigo raro de nível 9. Talvez você precise usar uma |r |T134829:0|t[Poção Menor de Cura] |cRXP_WARN_se tiver uma|r
     .unitscan Watch Commander Zalaphil
 step
     #completewith Benedict
@@ -1532,7 +1532,7 @@ step
     .goto Durotar,59.81,58.22,8,0
     .goto Durotar,59.64,58.44,8,0
     .goto Durotar,59.55,57.89,8,0
-    .goto Durotar,59.29,57.89,8 >>Siga em direção ao segundo andar da fortaleza
+    .goto Durotar,59.29,57.89,8 >> Siga em direção ao segundo andar da fortaleza
 step
     #completewith AgedEnvelope
     >>Mate |cRXP_ENEMY_Marinheiros de Kul Tiraz|r e |cRXP_ENEMY_Fuzileiros de Kul Tiraz|r
@@ -1622,7 +1622,7 @@ step << !Priest !Mage
     .goto Durotar,57.96,42.46,50,0
     .goto Durotar,56.47,43.45,50,0
     .goto Durotar,55.50,48.97,50,0
-    .xp 7+2200 >>Mate inimigos até atingir 2200+/4500 de xp
+    .xp 7+2200 >> Mate inimigos até atingir 2200+/4500 de xp
 step << Priest
     #loop
     .goto Durotar,59.02,50.24,50,0
@@ -1631,7 +1631,7 @@ step << Priest
     .goto Durotar,57.96,42.46,50,0
     .goto Durotar,56.47,43.45,50,0
     .goto Durotar,55.50,48.97,50,0
-    .xp 7+1750 >>Farme até 1750+/4500 XP
+    .xp 7+1750 >> Farme até 1750+/4500 XP
 step
     #completewith next
     .subzone 362 >>Vá para Monte Navalha
@@ -1642,7 +1642,7 @@ step
     .target +Orgnil Soulscar
     .goto Durotar,52.24,43.15
     .turnin 784 >>Entregue Subjuguem os Traidores
-    .turnin 830 >>Entregue As Ordens do Almirante
+    .turnin 830 >>Entregue As ordens do almirante
     .accept 825 >>Aceite Dos destroços...
     .accept 831 >>Aceite As Ordens do Almirante
     .accept 837 >>Aceite Invasão
@@ -1658,7 +1658,7 @@ step
     .target +Orgnil Soulscar
     .goto Durotar,52.24,43.15
     .turnin 784 >>Entregue Subjuguem os Traidores
-    .turnin 830 >>Entregue As Ordens do Almirante
+    .turnin 830 >>Entregue As ordens do almirante
     .accept 825 >>Aceite Dos destroços...
     .accept 831 >>Aceite As Ordens do Almirante
     .accept 837 >>Aceite Invasão
@@ -1682,7 +1682,7 @@ step
     .goto Durotar,49.68,40.30,6,0
     .goto Durotar,49.78,40.34,6,0
     .goto Durotar,49.79,39.96,6,0
-    .goto Durotar,49.60,40.04,8 >>Viaje para cima da torre em direção a Furl
+    .goto Durotar,49.60,40.04,8 >>Viaje para cima da torre em direção a Férrano Escarnecenho
 step
     .goto Durotar,49.89,40.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Furl|r
@@ -1691,7 +1691,7 @@ step
 step << Warrior/Rogue
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Krunn|r
-    .train 2575 >>Treine |T136248:0|t[Mineração]
+    .train 2575 >> Treine |T136248:0|t[Mineração]
     >>|cRXP_WARN_Isto permitirá que você encontre|r |T135232:0|t|cRXP_LOOT_[Pedra Rústica]|r |cRXP_WARN_de depósitos de minérios para fabricar|r |T135248:0|t[Pedra de Afiar Rústica] |cRXP_WARN_(+2 Dano da Arma por 30 minutos)|r
     .target Krunn
 step << Warrior/Rogue
@@ -1702,14 +1702,14 @@ step << Warrior/Rogue
     .target Wuark
 step << Warrior/Rogue
     .goto Durotar,52.05,40.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConversar com |cRXP_FRIENDLY_Dwukk|r
-    .train 2018 >>Treine |T136241:0|t [Ferraria]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dwukk|r
+    .train 2018 >> Treine |T136241:0|t [Ferraria]
     .target Dwukk
     .skill blacksmithing,1,1
 step << Shaman
     .goto Durotar,52.02,40.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Uhgar|r
-    .vendor >>Lixo de vendedor. Venda sua arma se ela render dinheiro suficiente para uma |T135145:0|t[Bengala] (5s 04c). Volte depois se ainda não tiver o suficiente
+    .vendor >> Venda os itens sem utilidade. Venda sua arma se isso lhe der dinheiro suficiente para comprar uma|T135145:0|t[Bengala] (5p 04c). Você voltará mais tarde se ainda não tiver dinheiro suficiente
     .target Uhgar
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
@@ -1723,13 +1723,13 @@ step << Shaman
 step << Rogue
     .goto Durotar,52.02,40.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Uhgar|r
-    .vendor >>Comerciante. Venda sua arma se você receber dinheiro suficiente para um |T135641:0|t[Estilete] (4s 01c). Você voltará depois se não tiver o suficiente ainda.
+    .vendor >> Comerciante. Venda sua arma se você receber dinheiro suficiente para um |T135641:0|t[Estilete] (4s 01c). Você voltará depois se não tiver o suficiente ainda.
     .target Uhgar
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     .goto Durotar,52.02,40.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Converse com|r |cRXP_FRIENDLY_Uhgar|r|cRXP_BUY_. Compre|r |T135641:0|t[Estilete] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Uhgar|r|cRXP_BUY_. Compre um|r |T135641:0|t[Estilete] |cRXP_BUY_dele|r
     .collect 2494,1,818,1 --Collect Stiletto (1)
     .money <0.0401
     .itemStat 16,QUALITY,<7
@@ -1737,13 +1737,13 @@ step << Rogue
 step << Orc Warrior
     .goto Durotar,52.02,40.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Uhgar|r
-    .vendor >>Comerciante. Venda sua arma se você receber dinheiro suficiente para um |T132401:0|t[Machado Largo] (4s 84c). Você voltará depois se não tiver o suficiente ainda.
+    .vendor >> Comerciante. Venda sua arma se você receber dinheiro suficiente para um |T132401:0|t[Machado Largo] (4s 84c). Você voltará depois se não tiver o suficiente ainda.
     .target Uhgar
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Orc Warrior
     .goto Durotar,52.02,40.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Uhgar|r|cRXP_BUY_. Compre|r |T132401:0|t[Machado Grande] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Uhgar|r|cRXP_BUY_. Compre um|r |T132401:0|t[Machado Largo] |cRXP_BUY_dele|r
     .collect 2491,1,818,1 --Collect Large Axe (1)
     .money <0.0484
     .itemStat 16,QUALITY,<7
@@ -1751,7 +1751,7 @@ step << Orc Warrior
 step << Troll Warrior
     .goto Durotar,52.02,40.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Uhgar|r
-    .vendor >>Comerciante. Venda sua arma se você receber dinheiro suficiente para uma |T135421:0|t[Machadinha] (5s 40c). Você voltará depois se não tiver o suficiente ainda.
+    .vendor >> Comerciante. Venda sua arma se você receber dinheiro suficiente para uma |T135421:0|t[Machadinha] (5s 40c). Você voltará depois se não tiver o suficiente ainda.
     .target Uhgar
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
@@ -1805,7 +1805,7 @@ step << Troll Warrior
 step << Hunter
     .goto Durotar,52.97,41.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ghrawt|r
-    .vendor >>Comerciante lixo. Venda sua arma se isso der dinheiro suficiente para um |T135499:0|t[Arco Recurvo de Pau-de-chifre] (2s 83c). Você voltará depois se ainda não tiver o bastante
+    .vendor >> Comerciante lixo. Venda sua arma se isso der dinheiro suficiente para um |T135499:0|t[Arco Recurvo de Pau-de-chifre] (2s 83c). Você voltará depois se ainda não tiver o bastante
     .target Ghrawt
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.3
@@ -1836,9 +1836,9 @@ step
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r << Mage/Warlock/Priest/Shaman/Druid
     >>|cRXP_BUY_Compre|r |T133974:0|t[Pernil de Carne] |cRXP_BUY_dele|r << Rogue/Warrior
     >>|cRXP_WARN_Guarde 4 de prata para seus feitiços de classe!|r << Rogue/Warrior/Shaman/Warlock
-    >>|cRXP_WARN_Guarde 2 moedas de prata para seus feitiços de classe!|r << Priest
-    .vendor >>Lixo de Mercador
-    .home >>Defina sua Pedra de Retorno em Razor Hill
+    >>|cRXP_WARN_Guarde 2 de prata para os feitiços da sua classe!|r << Priest
+    .vendor >> Venda os itens de lixo
+    .home >> Defina sua Pedra de Retorno em Razor Hill
     .turnin 2161 >>Entregue O Fardo do Peão
     .target Innkeeper Grosk
     .train 6760,1 << Rogue
@@ -1853,8 +1853,8 @@ step << !Mage !Hunter !Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Grosk|r
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r << Mage/Warlock/Priest/Shaman/Druid
     >>|cRXP_BUY_Compre|r |T133974:0|t[Pernil de Carne] |cRXP_BUY_dele|r << Rogue/Warrior
-    .vendor >>Lixo de Mercador
-    .home >>Defina sua Pedra de Retorno em Razor Hill
+    .vendor >> Venda os itens de lixo
+    .home >> Defina sua Pedra de Retorno em Razor Hill
     .turnin 2161 >>Entregue O Fardo do Peão
     .target Innkeeper Grosk
     .train 6760,3 << Rogue
@@ -1865,17 +1865,17 @@ step << !Mage !Hunter !Druid
     .bindlocation 362
 step << Warrior
     .goto Durotar,54.18,42.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tarshaw|r
-    .train 284 >>Treine suas magias de classe
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tarshaw Zigatriz|r
+    .train 284 >> Treine suas magias de classe
     .target Tarshaw Jaggedscar
 step << Shaman
     .goto Durotar,54.42,42.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Swart|r
-    .train 8044 >>Treine suas magias de classe
+    .train 8044 >> Treine suas magias de classe
     .target Swart
 step << Warlock
     .goto Durotar,54.70,41.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kitha|r e compre |T133738:0|t[Seta de Fogo Rank 2]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kitha|r e aprenda |T133738:0|t[Seta de Fogo Grau 2]
     .collect 16302,1,818,1 --Grimoire of Firebolt (Rank 2) (1)
     .target Kitha
     .money <0.01
@@ -1883,19 +1883,19 @@ step << Warlock
 step << Hunter
     .goto Durotar,51.85,43.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Thotar|r
-    .train 5116 >>Treine suas magias de classe
+    .train 5116 >> Treine suas magias de classe
     .target Thotar
 step << Rogue
     .goto Durotar,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kaplak|r
-    .train 6760 >>Treine suas magias de classe
+    .train 6760 >> Treine suas magias de classe
     .target Kaplak
 step << Troll Priest
     .goto Durotar,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tai'jin|r
-    .turnin 5649 >>Entregue Em Simpatia da Espiritualidade
-    .accept 5648 >>Aceite Garments of Spirituality
-    .train 2052 >>Aprenda |T135929:0|t[Cura Inferior Grau 2]
+    .turnin 5649 >> Entregue Em Simpatia da Espiritualidade
+    .accept 5648 >> Aceite Garments of Spirituality
+    .train 2052 >> Aprenda |T135929:0|t[Cura Inferior Grau 2]
     .target Tai'jin
 step << Troll Priest
     .goto Durotar,53.10,46.46
@@ -1906,7 +1906,7 @@ step << Priest
     .goto Durotar,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tai'jin|r
     .turnin 5648 >>Entregue Garments of Spirituality << Troll Priest
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Tai'jin
 step
     .goto Durotar,54.17,41.93
@@ -1945,7 +1945,7 @@ step
     .complete 825,1 --Gnomish Tools (3)
 step
     #completewith TaillasherEggs
-    .goto Durotar,67.10,69.29,100 >>Nade para a Ilha
+    .goto Durotar,67.10,69.29,100 >> Nade para a Ilha
 step
     #completewith MinshinasSkull
     >>Mate os |cRXP_ENEMY_Tigers|r. Saqueie-os para obter seu |cRXP_LOOT_Fur|r. Isto não precisa ser terminado agora
@@ -1954,7 +1954,7 @@ step
 step
     #completewith next
     >>Mate os |cRXP_ENEMY_Pygmy Surf Crawlers|r e os |cRXP_ENEMY_Surf Crawlers|r. Saqueie-os por seu |cRXP_LOOT_Mucus|r
-    >>Mate os |cRXP_ENEMY_Makrura Shellhides|r e os |cRXP_ENEMY_Makrura Clackers|r. Saque-os por seus |cRXP_LOOT_Olhos|r
+    >>Mate |cRXP_ENEMY_Conchacouros Makrura|r e |cRXP_ENEMY_Estaladores Makrura|r. Saqueie-os para pegar |cRXP_LOOT_Olhos|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
     .mob +Surf Crawler
@@ -1982,7 +1982,7 @@ step
 step
     #completewith next
     >>Mate os |cRXP_ENEMY_Pygmy Surf Crawlers|r e os |cRXP_ENEMY_Surf Crawlers|r. Saqueie-os por seu |cRXP_LOOT_Mucus|r
-    >>Mate os |cRXP_ENEMY_Makrura Shellhides|r e os |cRXP_ENEMY_Makrura Clackers|r. Saque-os por seus |cRXP_LOOT_Olhos|r
+    >>Mate |cRXP_ENEMY_Conchacouros Makrura|r e |cRXP_ENEMY_Estaladores Makrura|r. Saqueie-os para pegar |cRXP_LOOT_Olhos|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
     .mob +Surf Crawler
@@ -2001,7 +2001,7 @@ step
     .mob +Voodoo Troll
 step
     #completewith next
-    >>Mate |cRXP_ENEMY_Zalazane|r. Saque-o por sua |cRXP_LOOT_Cabeça|r
+    >>Mate |cRXP_ENEMY_Zalazane|r. Saqueie-o para pegar sua |cRXP_LOOT_Cabeça|r
     >>|cRXP_WARN_Guarde seu|r |T136026:0|t[Choque Terreno] |cRXP_WARN_para quando ele lançar|r |T136052:0|t[Onda Curativa] << Shaman
     >>|cRXP_WARN_Guarde seu|r |T132155:0|t[Esfaquear] |cRXP_WARN_para quando ele lançar|r |T136052:0|t[Onda Curativa] << Rogue
     >>|cRXP_WARN_Cuidado. Ele pode conjurar|r |T136052:0|t[Onda Curativa]|cRXP_WARN_. Usar seu|r |T134829:0|t[Poção] |cRXP_WARN_se necessário|r << !Shaman !Rogue
@@ -2015,7 +2015,7 @@ step
 step
     #label ZalazaneKill
     .goto Durotar,67.4,87.8
-    >>Mate |cRXP_ENEMY_Zalazane|r. Saque-o por sua |cRXP_LOOT_Cabeça|r
+    >>Mate |cRXP_ENEMY_Zalazane|r. Saqueie-o para pegar sua |cRXP_LOOT_Cabeça|r
     >>|cRXP_WARN_Guarde seu|r |T136026:0|t[Choque Terreno] |cRXP_WARN_para quando ele lançar|r |T136052:0|t[Onda Curativa] << Shaman
     >>|cRXP_WARN_Guarde seu|r |T132155:0|t[Esfaquear] |cRXP_WARN_para quando ele lançar|r |T136052:0|t[Onda Curativa] << Rogue
     >>|cRXP_WARN_Cuidado. Ele pode conjurar|r |T136052:0|t[Onda Curativa]|cRXP_WARN_. Usar seu|r |T134829:0|t[Poção] |cRXP_WARN_se necessário|r << !Shaman !Rogue
@@ -2049,7 +2049,7 @@ step
 step
     #completewith next
     >>Mate os |cRXP_ENEMY_Pygmy Surf Crawlers|r e os |cRXP_ENEMY_Surf Crawlers|r. Saqueie-os por seu |cRXP_LOOT_Mucus|r
-    >>Mate os |cRXP_ENEMY_Makrura Shellhides|r e os |cRXP_ENEMY_Makrura Clackers|r. Saque-os por seus |cRXP_LOOT_Olhos|r
+    >>Mate |cRXP_ENEMY_Conchacouros Makrura|r e |cRXP_ENEMY_Estaladores Makrura|r. Saqueie-os para pegar |cRXP_LOOT_Olhos|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
     .mob +Surf Crawler
@@ -2087,7 +2087,7 @@ step
     .goto Durotar,55.66,80.47,60,0
     .goto Durotar,53.8,83.14,60,0
     >>Mate os |cRXP_ENEMY_Pygmy Surf Crawlers|r e os |cRXP_ENEMY_Surf Crawlers|r. Saqueie-os por seu |cRXP_LOOT_Mucus|r
-    >>Mate os |cRXP_ENEMY_Makrura Shellhides|r e os |cRXP_ENEMY_Makrura Clackers|r. Saque-os por seus |cRXP_LOOT_Olhos|r
+    >>Mate |cRXP_ENEMY_Conchacouros Makrura|r e |cRXP_ENEMY_Estaladores Makrura|r. Saqueie-os para pegar |cRXP_LOOT_Olhos|r
     .complete 818,2 --Crawler Mucus (8)
     .mob +Pygmy Surf Crawler
     .mob +Surf Crawler
@@ -2096,18 +2096,18 @@ step
     .mob +Makrura Clacker
 step
     #completewith Zalazaneturnin
-    .goto Durotar,56.06,74.72,150 >>Vá para Sen'Jin Village
+    .goto Durotar,56.06,74.72,150 >> Vá para Sen'Jin Village
     .subzoneskip 367
 step
     .goto Durotar,56.48,73.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Trayexir|r
-    .vendor >>Venda itens e repare. Você pode falar com ele de fora da cabana
+    .vendor >> Venda itens e repare. Você pode falar com ele de fora da cabana
     .target Trayexir
     .isQuestAvailable 837
 step << Mage
     .goto Durotar,56.3,75.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Un'Thuwa|r
-    .train 118 >>Treine suas magias de classe
+    .train 118 >> Treine suas magias de classe
     .target Un'Thuwa
 step
     #label Zalazaneturnin
@@ -2120,12 +2120,12 @@ step
     .turnin 818 >>Entregue Um espírito solvente
     .target +Master Vornal
     .goto Durotar,55.95,74.39
-    .turnin 817 >>Entregue Presa Prática
+    .turnin 817 >>Entregue Presa prática
     .target +Vel'rin Fang
     .goto Durotar,55.95,73.93
 step
     #completewith Stolensupplies
-    +|cRXP_WARN_Vincule seus|r |T133728:0|t[Faintly Glowing Crânio] |cRXP_WARN_e|r |T134712:0|t[Cola Grudenta à Beça]|cRXP_WARN_. Guarde-os para situações de emergência|r
+    +|cRXP_WARN_Coloque seu|r |T133728:0|t[Crânio Levemente Faiscante] |cRXP_WARN_e|r |T134712:0|t[Cola Grudenta à Beça] nas barras de ações|cRXP_WARN_. Guarde-os para situações de emergência|r
 step
     #loop
     .goto Durotar,49.22,48.96,0
@@ -2139,7 +2139,7 @@ step
     .goto Durotar,47.06,49.53,30,0
     .goto Durotar,46.90,48.11,30,0
     .goto Durotar,49.22,48.96,30,0
-    >>Mate os |cRXP_ENEMY_Razormane Quilboars|r e os |cRXP_ENEMY_Razormane Batedores|r
+    >>Mate |cRXP_ENEMY_Javatuscos Crinavalha|r e |cRXP_ENEMY_Batedores Crinavalha|r
     .complete 837,1 --Razormane Quilboar (4)
     .mob +Razormane Quilboar
     .complete 837,2 --Razormane Scout (4)
@@ -2171,12 +2171,12 @@ step << Shaman/Hunter
 	.goto Durotar,42.47,48.50,50,0
 	.goto Durotar,44.21,49.68,50,0
 	.goto Durotar,47.17,49.44,50,0
-    .xp 9+4470 >>Farme até 4470+/6500 XP
+    .xp 9+4470 >> Farme até 4470+/6500 XP
 step
     #completewith next
-    .goto Durotar,51.12,42.46,150 >>Corra para Razor Hill
+    .goto Durotar,51.12,42.46,150 >> Corra para Razor Hill
 step << Shaman/Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com|r |cRXP_FRIENDLY_Torka|r e |cRXP_FRIENDLY_Gar'Thok|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Cozinheiro Torka|r e |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 815 >>Entregue Quebre Alguns Ovos
     .target +Cook Torka
     .goto Durotar,51.12,42.46
@@ -2185,7 +2185,7 @@ step << Shaman/Hunter
     .target +Gar'Thok
     .goto Durotar,51.95,43.50
 step << !Shaman !Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com|r |cRXP_FRIENDLY_Torka|r e |cRXP_FRIENDLY_Gar'Thok|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Cozinheiro Torka|r e |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 815 >>Entregue Quebre Alguns Ovos
     .target +Cook Torka
     .goto Durotar,51.12,42.46
@@ -2196,7 +2196,7 @@ step << Hunter
     .goto Durotar,51.85,43.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Thotar|r
     .accept 6062 >>Aceite Adestramento da Fera - Missão
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Thotar
 step << Hunter
     .goto Durotar,52.97,41.04
@@ -2211,31 +2211,31 @@ step
     .target Rawrk
 step << Warrior
     .goto Durotar,54.18,42.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tarshaw|r
-    .train 6546 >>Treine suas magias de classe
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tarshaw Zigatriz|r
+    .train 6546 >> Treine suas magias de classe
     .target Tarshaw Jaggedscar
     .xp <10,1
 step << Shaman
     .goto Durotar,54.42,42.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Swart|r
-    .train 8050 >>Treine suas magias de classe
-    .accept 2983 >>Aceite Chamado do Fogo
+    .train 8050 >> Treine suas magias de classe
+    .accept 2983 >>Aceite Clamor do Fogo
     .target Swart
     .isNotOnQuest 1522
 step << Shaman
     .goto Durotar,54.42,42.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Swart|r
-    .train 8050 >>Treine suas magias de classe
+    .train 8050 >> Treine suas magias de classe
     .target Swart
 step << Warlock
     .goto Durotar,54.37,41.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dhugru|r
-    .train 1120 >>Treine suas magias de classe
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dhugru Gostassangue|r
+    .train 1120 >> Treine suas magias de classe
     .target Dhugru Gorelust
     .xp <10,1
 step << Warlock
     .goto Durotar,54.70,41.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kitha|r e compre |T133738:0|t[Seta de Fogo Rank 2]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kitha|r e aprenda |T133738:0|t[Seta de Fogo Grau 2]
     .collect 16302,1,837,1 --Grimoire of Firebolt (Rank 2) (1)
     .target Kitha
     .money <0.01
@@ -2243,15 +2243,15 @@ step << Warlock
 step << Rogue
     .goto Durotar,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kaplak|r
-    .train 674 >>Treine suas magias de classe
+    .train 674 >> Treine suas magias de classe
     .target Kaplak
     .xp <10,1
 step << Priest
     .goto Durotar,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tai'jin|r
-    .accept 5654 >>Aceite Bagata da Fraqueza << Troll
-    .accept 5660 >>Aceite Toque de Fraqueza << Undead
-    .trainer >>Treine suas magias de classe
+    .accept 5654 >> Aceite Bagata da Fraqueza << Troll
+    .accept 5660 >> Aceite Toque de Fraqueza << Undead
+    .trainer >> Treine suas magias de classe
     .target Tai'jin
     .xp <10,1
 step << Hunter
@@ -2262,7 +2262,7 @@ step << Hunter
     .goto Durotar,51.65,51.34,40,0
     .goto Durotar,51.80,53.18,40,0
     .goto Durotar,50.82,53.65,40,0
-    .use 15917 >>|cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Mosquetusco Hediondo|r |cRXP_WARN_no alcance máximo|r
+    .use 15917 >> |cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Mosquetusco Hediondo|r |cRXP_WARN_na distância máxima|r
     .complete 6062,1 --Tame a Dire Mottled Boar
     .mob Dire Mottled Boar
 step << Hunter
@@ -2278,7 +2278,7 @@ step << Hunter
     .goto Durotar,59.89,26.42,40,0
     .goto Durotar,60.04,24.79,40,0
     >>|cRXP_WARN_Não mate os|r |cRXP_ENEMY_Escorpídeos Encouraçados|r |cRXP_WARN_que encontrar. Você precisará deles mais adiante|r
-    .use 15919 >>|cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Surfatisco|r |cRXP_WARN_na distância máxima|r
+    .use 15919 >> |cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Surfatisco|r |cRXP_WARN_na distância máxima|r
     .complete 6083,1 --Tame a Surf Crawler
     .mob Surf Crawler
 step << Hunter
@@ -2297,7 +2297,7 @@ step << Hunter
     .goto Durotar,56.19,29.28,40,0
     .goto Durotar,56.95,27.28,40,0
     .goto Durotar,57.15,25.59,40,0
-    .use 15920 >>|cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Escorpídeo Encouraçado|r |cRXP_WARN_na distância máxima|r
+    .use 15920 >> |cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Escorpídeo Encouraçado|r |cRXP_WARN_na distância máxima|r
     .complete 6082,1 --Tame an Armored Scorpid
     .mob Armored Scorpid
 step << Hunter
@@ -2310,7 +2310,7 @@ step << Hunter
     .goto Durotar,51.13,42.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grimtak|r
     >>|cRXP_BUY_Compre|r |T133972:0|t[Carne-seca Dura] |cRXP_BUY_dele|r. |cRXP_BUY_Você usará isso para alimentar seu ajudante mais adiante|r
-    .vendor >>Lixo de Mercador
+    .vendor >> Venda os itens de lixo
     .collect 117,5,828,1 --Tough Jerky (5)
     .target Grimtak
 step
@@ -2338,23 +2338,23 @@ step
     .mob +Razormane Battleguard
 step << Shaman
     #completewith next
-    .zone The Barrens >>Viaje para os Sertões
+    .zone The Barrens >> Viaje para os Sertões
     .zoneskip The Barrens
 step << Shaman
     .goto The Barrens,62.27,19.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kargal|r
     .turnin 840 >>Entregue Recruta da Horda
-    .accept 842 >>Aceite Conscrição da Encruzilhada
+    .accept 842 >>Aceite Recrutamento na Encruzilhada
     .target Kargal Battlescar
 step << Shaman
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kranal|r
     .turnin 2983 >>Entregue Call of Fogo
-    .accept 1524 >>Aceite Chamado do Fogo
+    .accept 1524 >>Aceite Clamor do Fogo
     .target Kranal Fiss
 step << Shaman
     #completewith CallofFire2
-    .zone Durotar >>Vá para Durotar
+    .zone Durotar >> Vá para Durotar
     .zoneskip Durotar
 step << Shaman
     #completewith next
@@ -2368,14 +2368,14 @@ step << Shaman
     .goto Durotar,38.05,57.79,8,0
     .goto Durotar,38.93,57.54,8,0
     .goto Durotar,39.19,57.90,8,0
-    .goto Durotar,39.16,58.56,10 >>Siga o caminho montanha acima até |cRXP_FRIENDLY_Telf|r
+    .goto Durotar,39.16,58.56,10 >> Siga o caminho montanha acima até |cRXP_FRIENDLY_Telf|r
     >>|cRXP_WARN_Tome cuidado para não cair da montanha, pois o caminho é muito estreito. Você pode morrer se cair|r
 step << Shaman
     #label CallofFire2
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Telf|r
     .turnin 1524 >>Entregue Call of Fogo
-    .accept 1525 >>Aceite Chamado do Fogo
+    .accept 1525 >>Aceite Clamor do Fogo
     .target Telf Joolam
 step << Shaman
     #completewith next
@@ -2385,11 +2385,11 @@ step << Shaman
     .goto Durotar,38.61,57.67,8,0
     .goto Durotar,38.06,57.78,8,0
     .goto Durotar,37.76,58.19,8,0
-    .goto Durotar,36.96,58.07,15 >>Siga o caminho descendo a montanha
+    .goto Durotar,36.96,58.07,15 >> Siga o caminho descendo a montanha
     >>|cRXP_WARN_Tome cuidado para não cair da montanha, pois o caminho é muito estreito. Você pode morrer se cair|r
 step << Shaman
     #completewith next
-    .zone The Barrens >>Vá para As Savanas
+    .zone The Barrens >> Vá para As Savanas
     .zoneskip The Barrens
 step << Shaman
     #loop
@@ -2397,19 +2397,19 @@ step << Shaman
     .goto The Barrens,54.97,25.23,50,0
     .goto The Barrens,54.2,24.60,50,0
     .goto The Barrens,53.57,25.51,50,0
-    >>Abate o |cRXP_ENEMY_Ladravaz Crinavalha|r ou o |cRXP_ENEMY_Tecespinho Crinavalha|r. Saqueie-os para obter um |cRXP_LOOT_Fire Piche|r
+    >>Mate um |cRXP_ENEMY_Rabdomante Crinavalha|r ou |cRXP_ENEMY_Tecespinho Crinavalha|r. Pegue um |cRXP_LOOT_Piche Ígneo|r
     .complete 1525,1 --Fire Tar (1)
     .mob Razormane Water Seeker
     .mob Razormane Thornweaver
 step << Shaman
     #completewith next
-    .goto The Barrens,52.34,29.27,150 >>Vá para a Encruzilhada
+    .goto The Barrens,52.34,29.27,150 >> Vá para A Encruzilhada
 step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zargh|r, |cRXP_FRIENDLY_Sergra|r, |cRXP_FRIENDLY_Thork|r e |cRXP_FRIENDLY_Gazrog|r
     .accept 6365 >>Aceite Encomenda para Gryshka
     .target +Zargh
     .goto The Barrens,52.62,29.84
-    .turnin 842 >>Entregue Encruzilhada Conscription
+    .turnin 842 >>Entregue Recrutamento na Encruzilhada
     .accept 844 >>Aceite A Ameaça Pinote
     .target +Sergra Darkthorn
     .goto The Barrens,52.23,31.00
@@ -2417,7 +2417,7 @@ step << Shaman
     .accept 5041 >>Aceite Suprimentos para a Encruzilhada
     .target +Thork
     .goto The Barrens,51.50,30.87
-    .accept 869 >>Aceite Na Cola dos Larápios
+    .accept 869 >>Aceite Raptores ladrões
     .target +Gazrog
     .goto The Barrens,51.93,30.32
 step << Shaman
@@ -2430,7 +2430,7 @@ step << Shaman
     #completewith NeedforaCureAccept
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Devrak|r
-    .fly Orgrimmar >>Voe para Orgrimmar
+    .fly Orgrimmar >> Voe para Orgrimmar
     .target Devrak
     .zoneskip Orgrimmar
 step << Shaman
@@ -2454,18 +2454,18 @@ step << Shaman
     .goto Orgrimmar,54.097,68.407
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gryshka|r
     .turnin 6384 >>Entregue Carona para Orgrimmar
-    .accept 6385 >>Aceite Doraso, o Mestre de Mantícoras
+    .accept 6385 >>Aceite Doraso, o mestre de mantícoras
     .target Innkeeper Gryshka
 step << Shaman
     .goto Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Doraso|r
-    .turnin 6385 >>Entregue Doraso, o Mestre de Mantícoras
-    .accept 6386 >>Aceite Voltar para a Encruzilhada
+    .turnin 6385 >> Entregue Doraso, o mestre de mantícoras
+    .accept 6386 >> Aceite Retorno à Encruzilhada
     .target Doras
 step << Shaman
     #label LeaveOrg
     #completewith next
-    .zone Durotar >>Saia de Orgrimmar
+    .zone Durotar >> Saia de Orgrimmar
     .zoneskip Durotar
 step << Shaman
     #label NeedforaCureAccept
@@ -2500,7 +2500,7 @@ step
     .isOnQuest 834
 step << !Hunter
     #completewith next
-    .goto Durotar,46.37,22.94,50 >>Vá até Rezlak
+    .goto Durotar,46.37,22.94,50 >> Vá até Rezlak
 step << !Hunter
     .goto Durotar,46.37,22.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rezlak|r
@@ -2537,12 +2537,12 @@ step << Hunter
 step << Hunter
     #completewith BeastTraining
     .goto Orgrimmar,48.97,92.84,50,0
-    .zone Orgrimmar >>Entre em Orgrimmar
+    .zone Orgrimmar >> Entre em Orgrimmar
     .zoneskip Orgrimmar
 step << Hunter
     .goto Orgrimmar,32.28,35.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nazgrel|r
-    .turnin 831 >>Entregue As Ordens do Almirante
+    .turnin 831 >>Entregue As ordens do almirante
     .target Nazgrel
 step << Hunter
     .goto Orgrimmar,47.24,53.58
@@ -2557,7 +2557,7 @@ step << Hunter
     .isOnQuest 812
 step << Hunter
     #completewith next
-    .goto Orgrimmar,68.02,38.69,30 >>Vá para o Vale de Honra
+    .goto Orgrimmar,68.02,38.69,30 >> Vá para o Vale de Honra
 step << Hunter
     #label BeastTraining
     .goto Orgrimmar,66.05,18.52
@@ -2591,7 +2591,7 @@ step << Hunter
 step << Hunter
     #label HuntLeaveOrg
     #completewith next
-    .zone Durotar >>Saia de Orgrimmar
+    .zone Durotar >> Saia de Orgrimmar
     .zoneskip Durotar
 step << Hunter
     #completewith Rezlak
@@ -2606,7 +2606,7 @@ step << Hunter
     .mob Bloodtalon Scythemaw
 step << Hunter
     #completewith next
-    .goto Durotar,46.37,22.94,50 >>Vá até Rezlak
+    .goto Durotar,46.37,22.94,50 >> Vá até Rezlak
 step << Hunter
     #label Rezlak
     .goto Durotar,46.37,22.94
@@ -2637,7 +2637,7 @@ step << Hunter
     .target Rezlak
 step
     #completewith next
-    .goto Durotar,53.41,27.81,15 >>Atravesse a caverna
+    .goto Durotar,53.41,27.81,15 >> Atravesse a caverna
     .solo
 step
     #loop
@@ -2663,7 +2663,7 @@ step << Troll Warrior/Undead Warrior
 step
     .goto Durotar,46.37,22.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rezlak|r
-    .turnin 835 >>Entregue Faça o que Eu Digo
+    .turnin 835 >>Entregue Faça o que eu digo...
     .target Rezlak
     .solo
 step << Shaman
@@ -2684,7 +2684,7 @@ step
     >>Mate |cRXP_ENEMY_Bulho Tempesnigra|r e saqueie-o para pegar a |cRXP_LOOT_Garra|r dele
     >>|cRXP_WARN_Tenha muito cuidado. Mate o|r |cRXP_ENEMY_Burning Blade Fanatic|r |cRXP_WARN_e o|r |cRXP_ENEMY_Lightning Hides|r |cRXP_WARN_nas costas antes de puxá-lo|r
     >>|cRXP_WARN_Puxe-o para trás em direção ao|r |cRXP_ENEMY_Lightning Hides|r |cRXP_WARN_que você acabou de matar. Caso contrário, você pode atrair burning blade mobs adicionais|r
-    >>|cRXP_WARN_Abate o diabrete primeiro. Usar|r |T132155:0|t[Esfaquear] |cRXP_WARN_quando ele lançar|r |T136169:0|t[Sifão da Alma] << Rogue
+    >>|cRXP_WARN_Mate o diabrete primeiro. Use|r |T132155:0|t[Esfaquear] |cRXP_WARN_quando ele lançar|r |T136169:0|t[Sifão da Alma] << Rogue
     >>|cRXP_WARN_Abate o diabrete primeiro. Usar|r |T136026:0|t[Choque Terreno] |cRXP_WARN_quando ele lançar|r |T136169:0|t[Sifão da Alma] << Shaman
     >>|cRXP_WARN_Você pode lançar|r |T136071:0|t[Polimorfia] |cRXP_WARN_em|r |cRXP_ENEMY_Bulho Tempesnigra|r |cRXP_WARN_e matar o|r |cRXP_ENEMY_Diabrete|r |cRXP_WARN_primeiro|r << Mage
     >>|cRXP_WARN_Mate o diabrete primeiro.|r << Warrior/Warlock/Priest
@@ -2698,14 +2698,14 @@ step
     .group 2
     --VV Add video / description for Druid / tell priest/lock to fear if pulled back and area is clear?
 step
-    .hs >>Use a Pedra Lunar para voltar a Razor Hill
+    .hs >> Use sua Pedra de Regresso para ir a Monte Navalha
     .isQuestComplete 806
     .use 6948
     .subzoneskip 362
     .bindlocation 362,1
     .group
 step << Shaman
-    .hs >>Use a Pedra Lunar para voltar a Razor Hill
+    .hs >> Use sua Pedra de Regresso para ir a Monte Navalha
     .use 6948
     .subzoneskip 362
     .bindlocation 362,1
@@ -2713,7 +2713,7 @@ step << Shaman
 step
     .goto Durotar,51.51,41.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Grosk|r
-    .vendor >>Lixo de Mercador
+    .vendor >> Venda os itens de lixo
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r << Mage/Warlock/Priest/Shaman
     >>|cRXP_BUY_Compre|r |T133974:0|t[Pernil de Carne] |cRXP_BUY_dele|r << Rogue/Warrior
     .collect 1179,15,818,1 << Mage/Warlock/Priest/Shaman --Ice Cold Milk (15)
@@ -2724,7 +2724,7 @@ step
 step << Shaman
     .goto Durotar,51.51,41.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Grosk|r
-    .vendor >>Lixo de Mercador
+    .vendor >> Venda os itens de lixo
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r << Mage/Warlock/Priest/Shaman
     >>|cRXP_BUY_Compre|r |T133974:0|t[Pernil de Carne] |cRXP_BUY_dele|r << Rogue/Warrior
     .collect 1179,15,818,1 << Mage/Warlock/Priest/Shaman --Ice Cold Milk (15)
@@ -2734,7 +2734,7 @@ step << Shaman
 step
     .goto Durotar,52.24,43.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Orgnil|r
-    .turnin 806 >>Entregar em Tempestades Sombrias
+    .turnin 806 >>Entregue Tempestades sombrias
     .accept 828 >>Aceite Margoz
     .target Orgnil Soulscar
     .isQuestComplete 806
@@ -2760,43 +2760,43 @@ step << Shaman
     .target Gar'Thok
 step << Warrior
     .goto Durotar,54.18,42.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tarshaw|r
-    .train 6546 >>Treine suas magias de classe
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tarshaw Zigatriz|r
+    .train 6546 >> Treine suas magias de classe
     .target Tarshaw Jaggedscar
     .group
 step << Shaman
     .goto Durotar,54.42,42.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Swart|r
-    .train 8050 >>Treine suas magias de classe
+    .train 8050 >> Treine suas magias de classe
     .target Swart
 step << Warlock
     .goto Durotar,54.37,41.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dhugru|r
-    .train 1120 >>Treine suas magias de classe
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dhugru Gostassangue|r
+    .train 1120 >> Treine suas magias de classe
     .target Dhugru Gorelust
     .group
 step << Hunter
     .goto Durotar,51.85,43.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Thotar|r
-    .train 13549 >>Treine suas magias de classe
+    .train 13549 >> Treine suas magias de classe
     .target Thotar
     .group
 step << Rogue
     .goto Durotar,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kaplak|r
-    .train 674 >>Treine suas magias de classe
+    .train 674 >> Treine suas magias de classe
     .target Kaplak
     .group
 step << Priest
     .goto Durotar,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tai'jin|r
-    .train 8092 >>Treine suas magias de classe
+    .train 8092 >> Treine suas magias de classe
     .target Tai'jin
     .group
 step << Hunter
     .goto Durotar,52.97,41.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ghrawt|r
-    .vendor >>Comerciante genérico. Venda sua arma se ela der dinheiro suficiente para um |T135489:0|t[Arco Recurvo Laminado] (17s 51c). Você voltará mais tarde se ainda não tiver dinheiro suficiente
+    .vendor >> Comerciante genérico. Venda sua arma se ela der dinheiro suficiente para um |T135489:0|t[Arco Recurvo Laminado] (17s 51c). Você voltará mais tarde se ainda não tiver dinheiro suficiente
     .target Ghrawt
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
@@ -2829,7 +2829,7 @@ step
     #completewith next
     .goto Durotar,55.40,36.73,80,0
     .goto Durotar,56.07,30.05,80,0
-    .goto Durotar,56.41,20.04,50 >>Vá até |cRXP_FRIENDLY_Margoz|r
+    .goto Durotar,56.41,20.04,50 >> Vá até |cRXP_FRIENDLY_Margoz|r
     .isQuestTurnedIn 806
     .group
 step
@@ -2843,12 +2843,12 @@ step
     .group
 step << Shaman
     #completewith Collars1
-    .goto Durotar,53.18,29.15,50 >>Vá para a Caverna Sopravento
+    .goto Durotar,53.18,29.15,50 >> Vá para a Caverna Sopravento
 step << !Shaman
     #completewith next
     .goto Durotar,56.49,25.04,50,0
     .goto Durotar,56.11,27.94,50,0
-    .goto Durotar,53.18,29.15,50 >>Vá para a Caverna Sopravento
+    .goto Durotar,53.18,29.15,50 >> Vá para a Caverna Sopravento
     .isQuestTurnedIn 806
     .group
 step << !Shaman
@@ -2879,7 +2879,7 @@ step << Shaman
     .goto Durotar,52.07,26.85,12,0
     .goto Durotar,52.70,27.97,12,0
     >>Mate os |cRXP_ENEMY_Thugs|r e os |cRXP_ENEMY_Neophytes|r. Saque-os para obter os |cRXP_LOOT_Collars|r
-    >>Mate os |cRXP_ENEMY_Cultists|r. Saqueie-os para obter uma |cRXP_LOOT_Reagent Pouch|r
+    >>Mate |cRXP_ENEMY_Sectários|r. Para pegar um |cRXP_LOOT_Bornal de Reagentes|r
     .complete 827,1 --Searing Collar (6)
     .mob +Burning Blade Thug
     .mob +Burning Blade Neophyte
@@ -2898,7 +2898,7 @@ step << Shaman
     .goto Durotar,52.84,26.80,12,0
     .goto Durotar,52.07,26.85,12,0
     .goto Durotar,52.70,27.97,12,0
-    >>Mate os |cRXP_ENEMY_Cultists|r. Saqueie-os para obter uma |cRXP_LOOT_Reagent Pouch|r
+    >>Mate |cRXP_ENEMY_Sectários|r. Para pegar um |cRXP_LOOT_Bornal de Reagentes|r
     .complete 1525,2 --Reagent Pouch (1)
     .mob Burning Blade Cultist
     .solo
@@ -2913,7 +2913,7 @@ step << skip --Shaman
 step
     #completewith next
     .goto Durotar,56.30,27.91,80,0
-    .goto Durotar,56.41,20.04,50 >>Vá até |cRXP_FRIENDLY_Margoz|r
+    .goto Durotar,56.41,20.04,50 >> Vá até |cRXP_FRIENDLY_Margoz|r
     .isQuestTurnedIn 806
     .group
 step
@@ -2926,7 +2926,7 @@ step
     .group
 step
     #completewith next
-    .goto Durotar,53.41,27.81,15 >>Atravesse a caverna
+    .goto Durotar,53.41,27.81,15 >> Atravesse a caverna
     .group
 step
     #loop
@@ -2952,35 +2952,35 @@ step << Troll Warrior/Undead Warrior
 step
     .goto Durotar,46.37,22.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rezlak|r
-    .turnin 835 >>Entregue Faça o que Eu Digo
+    .turnin 835 >>Entregue Faça o que eu digo...
     .target Rezlak
     .group
 step
 --    .loop
-    .xp 10 >>Suba até o nível 10
+    .xp 10 >> Suba até o nível 10
     --VV Enter loop coords
 step << Hunter
     #completewith Admiralorders1
     .goto Orgrimmar,48.97,92.84,50,0
-    .zone Orgrimmar >>Entre em Orgrimmar
+    .zone Orgrimmar >> Entre em Orgrimmar
     .zoneskip Orgrimmar
     .isOnQuest 829
     .group
 step << !Hunter
     #completewith Admiralorders1
     .goto Orgrimmar,48.97,92.84,50,0
-    .zone Orgrimmar >>Entre em Orgrimmar
+    .zone Orgrimmar >> Entre em Orgrimmar
     .zoneskip Orgrimmar
 step << !Rogue
     .goto Orgrimmar,48.12,80.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Trak'gen|r
-    .vendor >>Venda os lixos
+    .vendor >> Venda os lixos
     .target Trak'gen
 step << Rogue
     .goto Orgrimmar,48.12,80.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Converse com|r Trak'gen|cRXP_FRIENDLY_|r. Compre|cRXP_BUY_ |T135419:0|t[Machado de Arremesso Afiado]|r |cRXP_BUY_dele|r
     .collect 3135,200,354,1 --Sharp Throwing Axe (200)
-    .vendor >>Venda os lixos
+    .vendor >> Venda os lixos
     .target Trak'gen
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
@@ -2995,40 +2995,40 @@ step << Rogue
 step << Shaman
     .goto Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Doraso|r
-    .turnin 6385 >>Entregue Doraso, o Mestre de Mantícoras
-    .accept 6386 >>Aceite Voltar para a Encruzilhada
+    .turnin 6385 >> Entregue Doraso, o mestre de mantícoras
+    .accept 6386 >> Aceite Retorno à Encruzilhada
     .target Doras
     .isOnQuest 6385
 step << Troll Priest
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Ur'kyo|r
-    .turnin 5654 >>Entregue Bagata da Fraqueza
-    .trainer >>Treine suas magias de classe
+    .turnin 5654 >> Entregue Bagata da Fraqueza
+    .trainer >> Treine suas magias de classe
     .target Ur'kyo
     .isOnQuest 5654
 step << Troll Priest
     #optional
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Ur'kyo|r
-    .turnin 5652 >>Entregue Bagata da Fraqueza
-    .trainer >>Treine suas magias de classe
+    .turnin 5652 >> Entregue Bagata da Fraqueza
+    .trainer >> Treine suas magias de classe
     .target Ur'kyo
 step << Mage
     .goto Orgrimmar,38.33,85.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Pefreda|r
-    .train 122 >>Treine suas magias de classe
+    .train 122 >> Treine suas magias de classe
     .target Pephredo
 step
     #label Admiralorders1
     .goto Orgrimmar,32.29,35.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nazgrel|r
-    .turnin 831 >>Entregue As Ordens do Almirante
+    .turnin 831 >>Entregue As ordens do almirante
     .target Nazgrel
 step << Rogue
     .goto Orgrimmar,42.75,53.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Therzok|r
-	.accept 1963 >>Aceite The Estilhaçada Hand - Missão - Missão << Orc Rogue/Troll Rogue
-    .trainer >>Treine suas magias de classe
+	.accept 1963 >> Aceite The Estilhaçada Hand - Missão - Missão << Orc Rogue/Troll Rogue
+    .trainer >> Treine suas magias de classe
     .target Therzok
 step << Shaman
     .goto Orgrimmar,47.24,53.58
@@ -3053,15 +3053,15 @@ step
 step << Warlock
     .goto Orgrimmar,48.59,46.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mirket|r
-    .train 1120 >>Treine suas magias de classe
+    .train 1120 >> Treine suas magias de classe
     .target Mirket
 step << Troll Warrior/Undead Warrior
     #completewith StaveTraining1
-    .goto Orgrimmar,68.02,38.69,30 >>Vá para o Vale de Honra
+    .goto Orgrimmar,68.02,38.69,30 >> Vá para o Vale de Honra
 step << Warrior
     .goto Orgrimmar,79.93,31.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grezz|r
-    .train 6546 >>Treine suas magias de classe
+    .train 6546 >> Treine suas magias de classe
     .target Grezz Ragefist
 step << Troll Warrior/Undead Warrior
     #label StaveTraining1
@@ -3088,7 +3088,7 @@ step << Troll Warrior/Undead Warrior
 step << Orc Warrior
     .goto Orgrimmar,47.54,68.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Urtharo|r
-    .vendor >>Venda seu lixo. Venda sua arma se lhe der dinheiro suficiente para |T132395:0|t[Tabar] (22s 14c). Você voltará mais tarde se ainda não tiver dinheiro suficiente
+    .vendor >> Venda seu lixo. Venda sua arma se lhe der dinheiro suficiente para |T132395:0|t[Tabar] (22s 14c). Você voltará mais tarde se ainda não tiver dinheiro suficiente
     .target Urtharo
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.2
@@ -3126,11 +3126,11 @@ step << Shaman
 step << !Hunter !Shaman
     #label LeaveOrg2
     #completewith ZeptoUC1
-    .zone Durotar >>Saia de Orgrimmar
+    .zone Durotar >> Saia de Orgrimmar
     .zoneskip Durotar
 step << Hunter
     #completewith HunterCrossRoadsVisit1
-    .zone Durotar >>Saia de Orgrimmar
+    .zone Durotar >> Saia de Orgrimmar
     .zoneskip Durotar
     .group
 step << Shaman/Hunter
@@ -3156,7 +3156,7 @@ step << Hunter
     .goto Durotar,34.44,44.53,50,0
     .goto Durotar,34.27,47.02,50,0
     .goto Durotar,34.71,42.30
-    >>Vá ao sul ao longo do rio em direção ao Far Vigiar Post
+    >>Siga para o sul pela margem do rio em direção ao Posto Remoto
     >>Mate |cRXP_ENEMY_Crocolisco Bocarrão|r no caminho. Saqueie-os para pegar |cRXP_LOOT_Amuleto de Kron|r
     >>|cRXP_WARN_Pule e abandone esta missão se o item não cair|r
     .complete 816,1 --Kron's Amulet (1)
@@ -3184,14 +3184,14 @@ step << Shaman
     .goto Durotar,38.05,57.79,8,0
     .goto Durotar,38.93,57.54,8,0
     .goto Durotar,39.19,57.90,8,0
-    .goto Durotar,39.16,58.56,10 >>Siga pelo caminho que sobe a montanha em direção a |cRXP_FRIENDLY_Telf Joolam|r
+    .goto Durotar,39.16,58.56,10 >> Siga pelo caminho que sobe a montanha em direção a |cRXP_FRIENDLY_Telf Joolam|r
     >>|cRXP_WARN_Tome cuidado para não cair da montanha, pois o caminho é muito estreito. Você pode morrer se cair|r
 step << Shaman
     #label CallofFire3
     .goto Durotar,38.52,58.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Telf|r
     .turnin 1525 >>Entregue Call of Fogo
-    .accept 1526 >>Aceite Chamado do Fogo
+    .accept 1526 >>Aceite Clamor do Fogo
     .target Telf Joolam
 step << Shaman
     #completewith next
@@ -3200,14 +3200,14 @@ step << Shaman
     .use 6636
 step << Shaman
     .goto Durotar,38.96,58.22
-    >>Mate a |cRXP_ENEMY_Manifestação Menor do Fogo|r. Saqueie-o para obter uma |cRXP_LOOT_Brasa Brilhante|r
+    >>Mate a |cRXP_ENEMY_Manifestação Menor do Fogo|r. Pegue uma |cRXP_LOOT_Brasa Faiscante|r
     .complete 1526,1 --Glowing Ember (1)
     .mob Minor Manifestation of Fire
 step << Shaman
     .goto Durotar,38.96,58.22
-    >>Clique em |cRXP_PICK_Braseiro|r no chão
+    >>Clique no |cRXP_PICK_Braseiro|r no chão
     .turnin 1526 >>Entregue Call of Fogo
-    .accept 1527 >>Aceite Chamado do Fogo
+    .accept 1527 >>Aceite Clamor do Fogo
 step << Shaman
     #completewith next
     .goto Durotar,39.13,58.63,10,0
@@ -3216,7 +3216,7 @@ step << Shaman
     .goto Durotar,38.61,57.67,8,0
     .goto Durotar,38.06,57.78,8,0
     .goto Durotar,37.76,58.19,8,0
-    .goto Durotar,36.96,58.07,15 >>Siga o caminho descendo a montanha
+    .goto Durotar,36.96,58.07,15 >> Siga o caminho descendo a montanha
     >>|cRXP_WARN_Tome cuidado para não cair da montanha, pois o caminho é muito estreito. Você pode morrer se cair|r
 step << Shaman
     .goto Durotar,34.92,54.87,50,0
@@ -3235,13 +3235,13 @@ step << Shaman/Hunter
     .isQuestComplete 816
 step << Shaman/Hunter
     #label FarWatchPost
-    .goto The Barrens,62.26,19.38,40 >>Vá para Far Vigiar Post
+    .goto The Barrens,62.26,19.38,40 >> Vá para Far Vigiar Post
     .zoneskip The Barrens
 step << Shaman/Hunter
     .goto The Barrens,62.27,19.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kargal|r
     .turnin 840 >>Entregue Recruta da Horda
-    .accept 842 >>Aceite Conscrição da Encruzilhada
+    .accept 842 >>Aceite Recrutamento na Encruzilhada
     .target Kargal Battlescar
 step << Shaman/Hunter
     #label Akzeloth
@@ -3265,14 +3265,14 @@ step << Shaman
     .target Kranal Fiss
 step << Hunter
     #completewith next
-    .goto The Barrens,52.34,29.27,150 >>Vá para a Encruzilhada
+    .goto The Barrens,52.34,29.27,150 >> Vá para A Encruzilhada
 step << Hunter
     #label HunterCrossRoadsVisit1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zargh|r, |cRXP_FRIENDLY_Sergra|r, |cRXP_FRIENDLY_Thork|r e |cRXP_FRIENDLY_Gazrog|r
     .accept 6365 >>Aceite Encomenda para Gryshka
     .target +Zargh
     .goto The Barrens,52.62,29.84
-    .turnin 842 >>Entregue Encruzilhada Conscription
+    .turnin 842 >>Entregue Recrutamento na Encruzilhada
     .accept 844 >>Aceite A Ameaça Pinote
     .target +Sergra Darkthorn
     .goto The Barrens,52.23,31.00
@@ -3280,12 +3280,12 @@ step << Hunter
     .accept 5041 >>Aceite Suprimentos para a Encruzilhada
     .target +Thork
     .goto The Barrens,51.50,30.87
-    .accept 869 >>Aceite Na Cola dos Larápios
+    .accept 869 >>Aceite Raptores ladrões
     .target +Gazrog
     .goto The Barrens,51.93,30.32
 step << Hunter
     .goto The Barrens,51.11,29.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Converse|r com |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Compre um|r |T135499:0|t[Arco Recurvo Laminado] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Compre um|r |T135499:0|t[Arco Recurvo Laminado] |cRXP_BUY_dele|r
     .collect 2507,1,871,1 --Collect Laminated Recurve Bow (1)
     .money <0.1751
     .itemStat 18,QUALITY,<7
@@ -3301,12 +3301,12 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
 step << Shaman
     .goto The Barrens,55.78,20.00
-    .use 4926 >>Saqueie |cRXP_PICK_Barril Vazio de Chen|r do chão e comece a missão. Se não estiver disponível, você o obterá mais tarde
+    .use 4926 >> Saqueie |cRXP_PICK_Barril Vazio de Chen|r do chão e comece a missão. Se não estiver disponível, você o obterá mais tarde
     .collect 4926,1,819 --Collect Chen's Empty Keg
-    .accept 819 >>Aceite Barril Vazio do Chen
+    .accept 819 >> Aceite Barril Vazio do Chen
 step << Shaman/Hunter
     #completewith DemonSeed
-    >>Abate os |cRXP_ENEMY_Plainstriders|r. Saqueie-os pelos |cRXP_LOOT_Beaks|r
+    >>Mate |cRXP_ENEMY_Pinotes|r. Pegue seus |cRXP_LOOT_Bicos|r
     .complete 844,1 --Plainstrider Beak (7)
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
@@ -3314,7 +3314,7 @@ step << Shaman/Hunter
     .goto The Barrens,51.09,22.68,40,0
     .goto The Barrens,50.33,21.85,40,0
     .goto The Barrens,49.21,20.42,40,0
-    .goto The Barrens,47.58,19.38,100 >>Vá ao topo da montanha
+    .goto The Barrens,47.58,19.38,100 >> Vá ao topo da montanha
     .isOnQuest 924
 step << Shaman/Hunter
     #completewith next
@@ -3324,7 +3324,7 @@ step << Shaman/Hunter
     #label DemonSeed
     .goto The Barrens,47.98,19.08
     >>Clique com o botão direito no |cRXP_PICK_Altar|r
-    >>|cRXP_WARN_Certifique-se de que tem um|r |T134095:0|t[Pedra do Poder Defeituosa] |cRXP_WARN_(30 minutos de duração) consigo|r
+    >>|cRXP_WARN_Certifique-se de ter uma|r |T134095:0|t[Pedra do Poder Defeituosa] |cRXP_WARN_(duração de 30 minutos) com você|r
     .collect 4986,1,924 --Collect Flawed Power Stone
     .complete 924,1 --Destroy the Demon Seed (1)
     .isOnQuest 924
@@ -3333,7 +3333,7 @@ step << Shaman/Hunter
     .goto The Barrens,47.58,19.38,40,0
     .goto The Barrens,49.21,20.42,40,0
     .goto The Barrens,50.33,21.85,40,0
-    .goto The Barrens,51.09,22.68,40 >>Desça a montanha de onde veio
+    .goto The Barrens,51.09,22.68,40 >> Desça a montanha de onde veio
     .isOnQuest 924
 step << Shaman/Hunter
     #completewith DisruptTheAttacks
@@ -3352,9 +3352,9 @@ step << Hunter
     .mob +Razormane Hunter
 step << Hunter
     .goto The Barrens,55.70,27.30
-    .use 4926 >>Saqueie |cRXP_PICK_Barril Vazio de Chen|r do chão e comece a missão. Se não estiver disponível, você o obterá mais tarde
+    .use 4926 >> Saqueie |cRXP_PICK_Barril Vazio de Chen|r do chão e comece a missão. Se não estiver disponível, você o obterá mais tarde
     .collect 4926,1,819 --Collect Chen's Empty Keg
-    .accept 819 >>Aceite Barril Vazio do Chen
+    .accept 819 >> Aceite Barril Vazio do Chen
 step << Shaman/Hunter
     #label DisruptTheAttacks
     #loop
@@ -3389,7 +3389,7 @@ step << Shaman/Hunter
     .goto The Barrens,50.93,27.72,80,0
     .goto The Barrens,52.83,27.91,80,0
     .goto The Barrens,53.71,29.19,80,0
-    >>Abate os |cRXP_ENEMY_Plainstriders|r. Saqueie-os pelos |cRXP_LOOT_Beaks|r
+    >>Mate |cRXP_ENEMY_Pinotes|r. Pegue seus |cRXP_LOOT_Bicos|r
     .complete 844,1 --Plainstrider Beak (7)
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
@@ -3406,34 +3406,34 @@ step << Hunter
 	.goto The Barrens,53.74,23.66,60,0
 	.goto The Barrens,53.35,25.16,60,0
 	.goto The Barrens,52.99,26.88,60,0
-    .xp 11+6980 >>Farme até 6980/8800 xp
+    .xp 11+6980 >> Farme até 6980/8800 xp
 step << Shaman/Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zargh|r, |cRXP_FRIENDLY_Sergra|r e |cRXP_FRIENDLY_Thork|r
-    .turnin 6386 >>Entregue Devolver a Encruzilhada
+    .turnin 6386 >> Entregue Retorno à Encruzilhada
     .target +Zargh
     .goto The Barrens,52.62,29.84
-    .turnin 844 >>Entregue A Ameaça Pinote
-    .accept 845 >>Aceite As Zevras
+    .turnin 844 >>Entregue A ameaça pinote
+    .accept 845 >>Aceite As zevras
     .target +Sergra Darkthorn
     .goto The Barrens,52.23,31.00
-    .turnin 871 >>Entregue A Ofensiva do Posto Remoto
+    .turnin 871 >>Entregue Adeus aos ataques
     .accept 872 >>Aceite Em Defesa do Posto Remoto
     .target +Thork
     .goto The Barrens,51.50,30.87
     .isOnQuest 6386
 step << Shaman/Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sergra|r e |cRXP_FRIENDLY_Thork|r
-    .turnin 844 >>Entregue A Ameaça Pinote
-    .accept 845 >>Aceite As Zevras
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sergra Espinhonegro|r e |cRXP_FRIENDLY_Thork|r
+    .turnin 844 >>Entregue A ameaça pinote
+    .accept 845 >>Aceite As zevras
     .target +Sergra Darkthorn
     .goto The Barrens,52.23,31.00
-    .turnin 871 >>Entregue A Ofensiva do Posto Remoto
+    .turnin 871 >>Entregue Adeus aos ataques
     .accept 872 >>Aceite Em Defesa do Posto Remoto
     .target +Thork
     .goto The Barrens,51.50,30.87
 step << Shaman/Hunter
     .goto The Barrens,51.99,29.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Boorand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeiro Boorand Vento das Planícies|r
     .home >>Defina sua Pedra de Retorno em Encruzilhada
     .target Innkeeper Boorand Plainswind
     .bindlocation 380
@@ -3454,14 +3454,14 @@ step << Hunter
     #completewith ZeptoUC1
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Devrak|r
-    .fly Orgrimmar >>Voe para Orgrimmar
+    .fly Orgrimmar >> Voe para Orgrimmar
     .target Devrak
     .zoneskip Orgrimmar
 step << Shaman
     #completewith ZeptoUC1
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Devrak|r
-    .fly Orgrimmar >>Voe para Orgrimmar
+    .fly Orgrimmar >> Voe para Orgrimmar
     .target Devrak
     .zoneskip Orgrimmar
 step << Hunter
@@ -3469,13 +3469,13 @@ step << Hunter
     .goto Orgrimmar,54.097,68.407
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gryshka|r
     .turnin 6384 >>Entregue Carona para Orgrimmar
-    .accept 6385 >>Aceite Doraso, o Mestre de Mantícoras
+    .accept 6385 >>Aceite Doraso, o mestre de mantícoras
     .target Innkeeper Gryshka
 step << Hunter
     .goto Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Doraso|r
-    .turnin 6385 >>Entregue Doraso, o Mestre de Mantícoras
-    .accept 6386 >>Aceite Voltar para a Encruzilhada
+    .turnin 6385 >> Entregue Doraso, o mestre de mantícoras
+    .accept 6386 >> Aceite Retorno à Encruzilhada
     .target Doras
 step << Shaman/Hunter
     #label FindingAntidoteTurnin
@@ -3489,13 +3489,13 @@ step << Shaman
     #label Shaman12training
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kardris|r
-    .train 547 >>Treine suas magias de classe
+    .train 547 >> Treine suas magias de classe
     .target Kardris Dreamseeker
     .xp <12,1
 step << Shaman
     .goto Orgrimmar,47.54,68.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Urtharo|r
-    .vendor >>Vendedor. Venda sua arma se der dinheiro suficiente para um |T135154:0|t[Cajado de Combate] (30s 22c). Você o receberá depois se ainda não tiver o suficiente
+    .vendor >> Vendedor. Venda sua arma se der dinheiro suficiente para um |T135154:0|t[Cajado de Combate] (30s 22c). Você o receberá depois se ainda não tiver o suficiente
     .target Urtharo
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.4
@@ -3517,11 +3517,11 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.4
 step << Hunter
     #completewith next
-    .goto Orgrimmar,68.02,38.69,30 >>Vá para o Vale de Honra
+    .goto Orgrimmar,68.02,38.69,30 >> Vá para o Vale de Honra
 step << Hunter
     .goto Orgrimmar,66.06,18.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ormak|r
-    .train 14281 >>Treine suas magias de classe
+    .train 14281 >> Treine suas magias de classe
     .target Ormak Grimshot
     .xp <12,1
 step << Hunter
@@ -3548,25 +3548,25 @@ step << Hunter
 step << Shaman/Hunter
     #label Leaveorg2
     #completewith next
-    .zone Durotar >>Saia de Orgrimmar
+    .zone Durotar >> Saia de Orgrimmar
     .zoneskip Durotar
 step << Shaman/Hunter
     .goto Durotar,41.54,18.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rhinag|r
     .accept 812 >>Aceite Busca da cura
-    .turnin 812 >>Entregue Necessidade de uma Cura
+    .turnin 812 >>Entregue Busca da cura
     .target Rhinag
 step
     #label ZeptoUC1
-    .goto Durotar,50.8,13.8,40 >>Suba a Torre Zepelim
-    .zone Tirisfal Glades >>Pegue o Zepelim para Tirisfal Glades
+    .goto Durotar,50.8,13.8,40 >>Suba a Torre do Zepelim
+    .zone Tirisfal Glades >>Pegue o Zepelim para Clareiras de Tirisfal
     >>|cRXP_WARN_Conjure água enquanto espera|r << Mage
     .zoneskip Tirisfal Glades
 step << Orc Rogue/Troll Rogue
     #optional
     #completewith Swordtraining1
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >>Entre em Cidade Baixa
+    .zone Undercity >> Entre em Cidade Baixa
     .zoneskip Undercity
     .money <0.3023
 step << Orc Rogue/Troll Rogue
@@ -3577,13 +3577,13 @@ step << Orc Rogue/Troll Rogue
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >>Pegue o elevador até Cidade Baixa
+    .goto Undercity,65.53,43.62,15 >> Pegue o elevador até Cidade Baixa
     .money <0.3023
 step << Orc Rogue/Troll Rogue
     #optional
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel|r
-    .fp Undercity >>Aprenda a rota de voo de Undercity
+    .fp Undercity >> Aprenda a rota de voo de Cidade Baixa
     .target Michael Garrett
     .money <0.3023
 step << Orc Rogue/Troll Rogue
@@ -3641,7 +3641,7 @@ step << skip --Orc Rogue/Troll Rogue
     #optional
     .goto Undercity,84.86,20.34
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Execute um Logout Pular na Magic Quarter posicionando seu personagem na parte mais alta do degrau mais baixo até parecer flutuante, depois faça logout e acesse novamente|r
-    .link https://www.youtube.com/watch?v=-Bi95bCN8dM >>https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_Clique aqui para ver um exemplo|r
+    .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_CLIQUE AQUI para ver um exemplo|r
     >>|cRXP_WARN_Se você não conseguir fazer isso, apenas saia de Cidade Baixa normalmente|r
     .zoneskip Tirisfal Glades
 step << Orc Rogue/Troll Rogue
@@ -3650,7 +3650,7 @@ step << Orc Rogue/Troll Rogue
     .zoneskip Undercity,1
 step
     #completewith next
-    .goto Tirisfal Glades,61.52,53.20,80 >>Viaje para Brill
+    .goto Tirisfal Glades,61.52,53.20,80 >> Viaje para Brill
     .subzoneskip 159
 step
     #optional
@@ -3670,19 +3670,19 @@ step << Warrior
     .isOnQuest 1505
 step << Warrior
     #optional
-    .abandon 1498 >>Abandone Caminho da Defesa
+    .abandon 1498 >>Abandone Caminho da defesa
     .isOnQuest 1498
 step << Warrior
     .goto Tirisfal Glades,61.85,52.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil|r
-    .accept 1818 >>Aceite Uma conversa com Dinis
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil de Mon|r
+    .accept 1818 >> Aceite Uma conversa com Dinis
     .target Austil de Mon
     .xp <10,1
     .isQuestAvailable 1498
 step << Warlock
     .goto Tirisfal Glades,61.62,52.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ageron|r dentro da estalagem
-    .accept 1478 >>Aceite Convocação de Hidalgo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ageron Karhal|r dentro da estalagem
+    .accept 1478 >> Aceite Convocação de Hidalgo
     .target Ageron Kargal
     .isQuestAvailable 1504
     .xp <10,1
@@ -3695,7 +3695,7 @@ step << Undead Rogue
 step << Mage
     .goto Tirisfal Glades,61.96,52.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caio Cantígnea|r dentro da estalagem
-    .accept 1881 >>Aceite Falar com Anastasia
+    .accept 1881 >> Aceite Fale com Anastácia Cordato
     .target Cain Firesong
     .xp <10,1
 step << !Mage
@@ -3703,8 +3703,8 @@ step << !Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Geni|r
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r << Mage/Priest/Shaman
     >>|cRXP_BUY_Compre|r |T134532:0|t[Cogumelo de Bolinhas Vermelhas] |cRXP_BUY_dela|r <<Warrior/Rogue
-    >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_e|r |T134532:0|t[Vermelho-speckled Mushrooms] |cRXP_BUY_dela|r << Warlock
-    .vendor >>Lixo de Mercador
+    >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_e|r |T134532:0|t[Cogumelo de Bolinhas Vermelhas] |cRXP_BUY_dela|r << Warlock
+    .vendor >> Venda os itens de lixo
     .collect 1179,20,367,1 << Mage/Priest/Shaman --Ice Cold Milk (20)
     .collect 4605,20,367,1 << Rogue/Warrior --Red-speckled Mushroom (20)
     .collect 1179,15,367,1 << Warlock --Ice Cold Milk (15)
@@ -3739,9 +3739,9 @@ step
     .maxlevel 12
 step
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Johaan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joaquino|r
     .accept 445 >>Aceite Entrega na Floresta de Pinhaprata
-    .accept 367 >>Aceite Uma Nova Peste
+    .accept 367 >>Aceite Uma nova peste
     .target Apothecary Johaan
 step
     #optional
@@ -3753,8 +3753,8 @@ step
 step << Warrior
     .goto Tirisfal Glades,58.19,51.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
-    .turnin 1818 >>Entregue Uma conversa com Dinis
-    .accept 1819 >>Aceite Ulag, o Cutelo
+    .turnin 1818 >> Entregue Uma conversa com Dinis
+    .accept 1819 >> Aceite Ulag, o Cutelo
     .target Deathguard Dillinger
     .isOnQuest 1818
 step << Warrior
@@ -3766,8 +3766,8 @@ step << Warrior
 step << Warrior
     .goto Tirisfal Glades,58.19,51.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
-    .turnin 1819 >>Entregue Ulag, O Cutelo
-    .accept 1820 >>Aceite Encontrando Eurico
+    .turnin 1819 >> Entregue Ulag, O Cutelo
+    .accept 1820 >> Aceite Encontrando Eurico
     .target Deathguard Dillinger
     .isQuestTurnedIn 1818
 step
@@ -3865,7 +3865,7 @@ step
     .mob Cursed Darkhound
 step
     #completewith Brillturnins2
-    .subzone 159 >>Volte para Montalvo
+    .subzone 159 >> Volte para Montalvo
 step
     .goto Tirisfal Glades,58.20,51.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
@@ -3882,26 +3882,26 @@ step
     .isQuestTurnedIn 404
 step
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Johaan|r
-    .turnin 367 >>Entregue Uma Nova Peste
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joaquino|r
+    .turnin 367 >>Entregue Uma nova peste
     .turnin 365 >>Entregue Campos de mágoa
-    .accept 368 >>Aceite Uma Nova Peste
+    .accept 368 >>Aceite Uma nova peste
     .accept 407 >>Aceite Campos de mágoa
     .target Apothecary Johaan
     .isQuestComplete 365
 step
     #optional
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Johaan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joaquino|r
     .accept 407 >>Aceite Campos de mágoa
     .target Apothecary Johaan
     .isQuestTurnedIn 365
 step
     #optional
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Johaan|r
-    .turnin 367 >>Entregue Uma Nova Peste
-    .accept 368 >>Aceite Uma Nova Peste
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joaquino|r
+    .turnin 367 >>Entregue Uma nova peste
+    .accept 368 >>Aceite Uma nova peste
     .target Apothecary Johaan
 step
     .goto Tirisfal Glades,60.58,51.77
@@ -3920,7 +3920,7 @@ step
 step
     #optional
     .goto Tirisfal Glades,60.93,52.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Burgess|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Belchior|r
     .accept 374 >>Aceite Prova da morte
     .target Deathguard Burgess
     .isQuestTurnedIn 427
@@ -3933,19 +3933,19 @@ step << Warrior
     .isOnQuest 1505
 step << Warrior
     #optional
-    .abandon 1498 >>Abandone Caminho da Defesa
+    .abandon 1498 >>Abandone Caminho da defesa
     .isOnQuest 1498
 step << Warrior
     .goto Tirisfal Glades,61.85,52.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil|r
-    .accept 1818 >>Aceite Uma conversa com Dinis
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil de Mon|r
+    .accept 1818 >> Aceite Uma conversa com Dinis
     .target Austil de Mon
     .isQuestAvailable 1498
 step << Warrior
     .goto Tirisfal Glades,58.19,51.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
-    .turnin 1818 >>Entregue Uma conversa com Dinis
-    .accept 1819 >>Aceite Ulag, o Cutelo
+    .turnin 1818 >> Entregue Uma conversa com Dinis
+    .accept 1819 >> Aceite Ulag, o Cutelo
     .target Deathguard Dillinger
     .isQuestAvailable 1498
 step << Warrior
@@ -3957,14 +3957,14 @@ step << Warrior
 step << Warrior
     .goto Tirisfal Glades,58.19,51.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Necroguarda Dinis|r
-    .turnin 1819 >>Entregue Ulag, O Cutelo
-    .accept 1820 >>Aceite Encontrando Eurico
+    .turnin 1819 >> Entregue Ulag, O Cutelo
+    .accept 1820 >> Aceite Encontrando Eurico
     .target Deathguard Dillinger
     .isQuestAvailable 1498
 step << Warlock
     .goto Tirisfal Glades,61.62,52.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ageron|r dentro da estalagem
-    .accept 1478 >>Aceite Convocação de Hidalgo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ageron Karhal|r dentro da estalagem
+    .accept 1478 >> Aceite Convocação de Hidalgo
     .target Ageron Kargal
     .isQuestAvailable 1504
 step << Undead Rogue
@@ -3975,12 +3975,12 @@ step << Undead Rogue
 step << Mage
     .goto Tirisfal Glades,61.96,52.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caio Cantígnea|r dentro da estalagem
-    .accept 1881 >>Aceite Falar com Anastasia
+    .accept 1881 >> Aceite Fale com Anastácia Cordato
     .target Cain Firesong
 step << Warlock/Mage
     #completewith UCflightpath1
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >>Entre em Cidade Baixa
+    .zone Undercity >> Entre em Cidade Baixa
     .zoneskip Undercity
 step << Warlock/Mage
     #completewith UCflightpath1
@@ -3989,12 +3989,12 @@ step << Warlock/Mage
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >>Pegue o elevador até Cidade Baixa
+    .goto Undercity,65.53,43.62,15 >> Pegue o elevador até Cidade Baixa
 step << Warlock/Mage
     #label UCflightpath1
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel|r
-    .fp Undercity >>Aprenda a rota de voo de Undercity
+    .fp Undercity >> Aprenda a rota de voo de Cidade Baixa
     .target Michael Garrett
 step << Warlock/Mage
     #optional
@@ -4009,23 +4009,23 @@ step << Warlock/Mage
 step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Silvério Hidalgo|r no Distrito da Magia
-    .turnin 1478 >>Entregue Convocação de Hidalgo
-    .accept 1473 >>Aceite Criatura do caos
+    .turnin 1478 >> Entregue Convocação de Hidalgo
+    .accept 1473 >> Aceite Criatura do caos
     .isQuestAvailable 1504
 step << Mage
     #optional
-    .abandon 1883 >>Abandone Fale com Un'Thuwa, caso contrário você não conseguirá aceitar a próxima missão
+    .abandon 1883 >> Abandone Fale com Un'Thuwa, caso contrário você não conseguirá aceitar a próxima missão
     .isOnQuest 1883
 step << Mage
     .goto Undercity,85.12,10.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anastasia|r no Bairro da Magia
-    .turnin 1881 >>Entregue Falar com Anastasia
-    .accept 1882 >>Aceite A Fazenda dos Balnir
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anastácia Cordato|r no Distrito da Magia
+    .turnin 1881 >> Entregue Fale com Anastácia Cordato
+    .accept 1882 >> Aceite A Fazenda dos Balnir
     .target Anastasia Hartwell
 step << Undead Priest
     #completewith TouchofWeakness
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >>Entre em Cidade Baixa
+    .zone Undercity >> Entre em Cidade Baixa
     .zoneskip Undercity
 step << Undead Priest
     #completewith TouchofWeakness
@@ -4034,7 +4034,7 @@ step << Undead Priest
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >>Pegue o elevador até Cidade Baixa
+    .goto Undercity,65.53,43.62,15 >> Pegue o elevador até Cidade Baixa
 step << Undead Priest
     #optional
     #ah
@@ -4049,20 +4049,20 @@ step << Undead Priest
     #optional
     .goto Undercity,48.98,18.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aelthalyste|r
-    .turnin 5660 >>Entregue Toque de Fraqueza
+    .turnin 5660 >> Entregue Toque de Fraqueza
     .target Aelthalyste
     .isOnQuest 5660
 step << Undead Priest
     #label TouchofWeakness
     .goto Undercity,48.98,18.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aelthalyste|r
-    .accept 5658 >>Aceite Toque de Fraqueza
-    .turnin 5658 >>Entregue Toque de Fraqueza
+    .accept 5658 >> Aceite Toque de Fraqueza
+    .turnin 5658 >> Entregue Toque de Fraqueza
     .target Aelthalyste
 step << Rogue
     #completewith Swordtraining2
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >>Entre em Cidade Baixa
+    .zone Undercity >> Entre em Cidade Baixa
     .zoneskip Undercity
     .money <0.3023
     .itemStat 16,QUALITY,<7
@@ -4075,14 +4075,14 @@ step << Rogue
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >>Pegue o elevador até Cidade Baixa
+    .goto Undercity,65.53,43.62,15 >> Pegue o elevador até Cidade Baixa
     .money <0.3023
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
     #optional
     .goto Undercity,63.25,48.56
-    .fp Undercity >>Aprenda a rota de voo de Undercity
+    .fp Undercity >> Aprenda a rota de voo de Cidade Baixa
     .target Michael Garrett
     .money <0.3023
     .itemStat 16,QUALITY,<7
@@ -4162,7 +4162,7 @@ step << Warlock/Mage/Rogue
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >>Saia de Cidade Baixa pelos Esgotos
+    .zone Tirisfal Glades >> Saia de Cidade Baixa pelos Esgotos
     .zoneskip Tirisfal Glades
 step << Undead Priest
     #optional
@@ -4175,7 +4175,7 @@ step << Undead Priest
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >>Saia de Cidade Baixa pelos Esgotos
+    .zone Tirisfal Glades >> Saia de Cidade Baixa pelos Esgotos
     .zoneskip Tirisfal Glades
 step
     #optional
@@ -4226,12 +4226,12 @@ step << Warlock
     .goto Undercity,41.35,38.40,10,0
     .goto Undercity,45.25,39.20,10,0
     .goto Undercity,45.67,43.60,10,0
-    .zone Undercity >>Volte para a Cidade Baixa pelos esgotos
+    .zone Undercity >> Volte para a Cidade Baixa pelos esgotos
 step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Silvério Hidalgo|r no Distrito da Magia
-    .turnin 1473 >>Entregue Criatura do caos
-    .accept 1471 >>Aceite A vinculação
+    .turnin 1473 >> Entregue Criatura do caos
+    .accept 1471 >> Aceite A vinculação
     .target Carendin Halgar
     .isQuestAvailable 1504
 step << Warlock
@@ -4255,12 +4255,12 @@ step << Warlock
 step << skip --Warlock
     .goto Undercity,84.86,20.34
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_realize um Logout Pular posicionando seu personagem na parte mais alta da escada mais baixa até parecer que está flutuando, depois saia e entre novamente|r
-    .link https://www.youtube.com/watch?v=-Bi95bCN8dM >>https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_Clique aqui para ver um exemplo|r
+    .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_CLIQUE AQUI para ver um exemplo|r
     >>|cRXP_WARN_Se você não conseguir fazer isso, apenas saia de Cidade Baixa normalmente|r
 step << Warlock
     #completewith next
     .goto Tirisfal Glades,61.92,64.85,50,0
-    .zone Tirisfal Glades >>Saia de Undercity
+    .zone Tirisfal Glades >> Saia de Undercity
     .zoneskip Tirisfal Glades
 step
     #optional
@@ -4272,14 +4272,14 @@ step
     .isOnQuest 375
 step
     #optional
-    .goto Tirisfal Glades,47.60,44.03,150 >>Vá para o noroeste em direção a Agamand Mills
+    .goto Tirisfal Glades,47.60,44.03,150 >> Vá para o noroeste em direção a Agamand Mills
     .isOnQuest 362
 step
     #optional
     #completewith MillsOverun
     >>|T134939:0|t[|cRXP_LOOT_Carta de Timóteo|r] |cRXP_WARN_Pode cair desses inimigos. Aceite a missão se cair.|r
     .collect 2839,1,361 --Collect A Letter to Yvette (1)
-    .accept 361 >>Aceite A carta que nunca chegou
+    .accept 361 >> Aceite A carta que nunca chegou
     .use 2839
     .isOnQuest 362
 step
@@ -4349,7 +4349,7 @@ step
     .goto Tirisfal Glades,54.78,32.75,15,0
     .goto Tirisfal Glades,55.84,32.28,15,0
     .goto Tirisfal Glades,56.55,32.43,40,0
-    .goto Tirisfal Glades,57.77,31.69,50 >>Desça pelos morros.
+    .goto Tirisfal Glades,57.77,31.69,50 >> Desça pelos morros.
     >>|cRXP_WARN_Tenha cuidado. Não sofra muito dano de queda. Siga o ponto de referência para segurança|r
     .isQuestComplete 354
 step
@@ -4426,15 +4426,15 @@ step
     .isQuestComplete 426
 step
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Johaan|r
-    .turnin 368 >>Entregue Uma Nova Peste
-    .accept 369 >>Aceite Uma Nova Peste
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joaquino|r
+    .turnin 368 >>Entregue Uma nova peste
+    .accept 369 >>Aceite Uma nova peste
     .target Apothecary Johaan
 step
     #optional
     .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Johaan|r
-    .accept 369 >>Aceite Uma Nova Peste
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joaquino|r
+    .accept 369 >>Aceite Uma nova peste
     .target Apothecary Johaan
     .isQuestTurnedIn 368
 step
@@ -4491,7 +4491,7 @@ step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yvette|r, |cRXP_FRIENDLY_Coleman|r e |cRXP_FRIENDLY_Gretchen|r dentro da estalagem
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_está no segundo andar|r
-    .turnin 361 >>Entregue A Carta Undelivered
+    .turnin 361 >>Entregue A carta que nunca chegou
     .target +Yvette Farthing
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Entregue Mortes na família
@@ -4523,7 +4523,7 @@ step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yvette|r e |cRXP_FRIENDLY_Coleman|r na estalagem
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_está no segundo andar|r
-    .turnin 361 >>Entregue A Carta Undelivered
+    .turnin 361 >>Entregue A carta que nunca chegou
     .target +Yvette Farthing
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Entregue Mortes na família
@@ -4547,7 +4547,7 @@ step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yvette|r, |cRXP_FRIENDLY_Coleman|r e |cRXP_FRIENDLY_Gretchen|r dentro da estalagem
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_está no segundo andar|r
-    .turnin 361 >>Entregue A Carta Undelivered
+    .turnin 361 >>Entregue A carta que nunca chegou
     .target +Yvette Farthing
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Entregue Mortes na família
@@ -4577,7 +4577,7 @@ step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yvette|r e |cRXP_FRIENDLY_Coleman|r na estalagem
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_está no segundo andar|r
-    .turnin 361 >>Entregue A Carta Undelivered
+    .turnin 361 >>Entregue A carta que nunca chegou
     .target +Yvette Farthing
     .goto Tirisfal Glades,61.58,52.60
     .turnin 354 >>Entregue Mortes na família
@@ -4598,44 +4598,44 @@ step
 step << Warrior
     .goto Tirisfal Glades,61.72,52.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Coleman|r na estalagem
-    .turnin 1820 >>Entregue Falar com Coleman
+    .turnin 1820 >>Entregue Encontrando Eurico
     .accept 1821 >>Aceite Agamand Heranças
     .group
     .isQuestTurnedIn 1819
 step << Warrior
     .goto Tirisfal Glades,61.72,52.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Coleman|r na estalagem
-    .turnin 1820 >>Entregue Falar com Coleman
+    .turnin 1820 >>Entregue Encontrando Eurico
     .solo
     .isQuestTurnedIn 1819
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
-	.train 588 >>Treine |T135926:0|t[Fogo Interior]
+	.train 588 >>Aprenda |T135926:0|t[Fogo Interior]
     .target Dark Cleric Beryl
     .xp <12,1
 step << Mage
     .goto Tirisfal Glades,61.97,52.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cain|r no segundo andar
-    .train 145 >>Treine |T135812:0|t[Bola de Fogo Rank 3]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caio Cantígnea|r no segundo andar
+    .train 145 >> Aprenda |T135812:0|t[Bola de Fogo Grau 3]
     .target Cain Firesong
     .xp <12,1
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil de Mon|r
     .train 7384 >>Aprenda |T132223:0|t[Subjugar]
     .target Austil de Mon
     .xp <12,1
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r no segundo andar
-    .train 1766 >>Aprenda |T132219:0|t[Chute]
+    .train 1766 >> Aprenda |T132219:0|t[Chute]
     .target Marion Call
     .xp <12,1
 step << Warlock
     .goto Tirisfal Glades,61.59,52.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rupertino Boch|r
-    .train 755 >>Treine |T136168:0|t[Funil de Vida]
+    .train 755 >> Treine |T136168:0|t[Funil de Vida]
     .target Rupert Boch
     .xp <12,1
 step << !Mage
@@ -4644,7 +4644,7 @@ step << !Mage
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r << Mage/Priest/Shaman
     >>|cRXP_BUY_Compre|r |T134532:0|t[Cogumelo de Bolinhas Vermelhas] |cRXP_BUY_dela|r <<Warrior/Rogue
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_e|r |T134532:0|t[Cogumelo de Bolinhas Vermelhas] |cRXP_BUY_dela|r << Warlock/Hunter
-    .vendor >>Lixo de Mercador
+    .vendor >> Venda os itens de lixo
     .collect 1179,20,359,1 << Mage/Priest/Shaman --Ice Cold Milk (20)
     .collect 4605,20,359,1 << Rogue/Warrior --Red-speckled Mushroom (20)
     .collect 1179,15,359,1 << Warlock/Hunter --Ice Cold Milk (15)
@@ -4688,7 +4688,7 @@ step << Mage
     .isOnQuest 356
 step << Mage
     .goto Tirisfal Glades,77.48,62.00
-    >>Saque qualquer planta no chão para obter uma |cRXP_PICK_Balnir Snapdragon|r
+    >>Saque qualquer planta no chão para obter uma |cRXP_PICK_Boca-de-leão de Balnir|r
     .complete 1882,1 --Balnir Snapdragons (1)
 step
     #optional
@@ -4804,14 +4804,14 @@ step
     .goto Tirisfal Glades,85.04,46.68,30,0
     .goto Tirisfal Glades,84.52,49.29,30,0
     .goto Tirisfal Glades,83.46,52.09,30,0
-    >>Mate os |cRXP_ENEMY_Vicious Noite Teia Aranhas|r. Saqueie-os pelo |cRXP_LOOT_Venenom|r
+    >>Mate |cRXP_ENEMY_Trevateia Malévola|r. Saqueie-as para pegar |cRXP_LOOT_Peçonha de Trevateia Malévola|r
     .complete 369,1 --Vicious Night Web Spider Venom (4)
     .mob Vicious Night Web Spider
     .isOnQuest 369
 step
     #optional
     #completewith LinneaTurnin
-    .goto Tirisfal Glades,65.49,60.25,60 >>Viaje de volta para |cRXP_FRIENDLY_Linnea|r
+    .goto Tirisfal Glades,65.49,60.25,60 >> Viaje de volta para |cRXP_FRIENDLY_Linnea|r
     .isQuestComplete 356
 step
     #optional
@@ -4848,13 +4848,13 @@ step
     .turnin 371 >>Entregue Em Guerra com a Cruzada Escarlate
     .target +Executor Zygand
     .goto Tirisfal Glades,60.58,51.77
-    .turnin 360 >>Entregue Retornar ao Magistrado
+    .turnin 360 >>Entregue De volta ao Magistrado
     .turnin 355 >>Entregue Falar com Sevren
     .accept 408 >>Aceite A Cripta da Família
     .target +Magistrate Sevren
     .goto Tirisfal Glades,61.26,50.84
-    .turnin 369 >>Entregue Uma Nova Peste
-    .accept 492 >>Aceite Uma Nova Peste
+    .turnin 369 >>Entregue Uma nova peste
+    .accept 492 >>Aceite Uma nova peste
     .accept 445 >>Aceite Entrega na Floresta de Pinhaprata
     .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.39
@@ -4870,12 +4870,12 @@ step
     .turnin 371 >>Entregue Em Guerra com a Cruzada Escarlate
     .target +Executor Zygand
     .goto Tirisfal Glades,60.58,51.77
-    .turnin 360 >>Entregue Retornar ao Magistrado
+    .turnin 360 >>Entregue De volta ao Magistrado
     .turnin 355 >>Entregue Falar com Sevren
     .target +Magistrate Sevren
     .goto Tirisfal Glades,61.26,50.84
-    .turnin 369 >>Entregue Uma Nova Peste
-    .accept 492 >>Aceite Uma Nova Peste
+    .turnin 369 >>Entregue Uma nova peste
+    .accept 492 >>Aceite Uma nova peste
     .accept 445 >>Aceite Entrega na Floresta de Pinhaprata
     .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.39
@@ -4884,13 +4884,13 @@ step
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sevren|r e |cRXP_FRIENDLY_Johaan|r
-    .turnin 360 >>Entregue Retornar ao Magistrado
+    .turnin 360 >>Entregue De volta ao Magistrado
     .turnin 355 >>Entregue Falar com Sevren
     .accept 408 >>Aceite A Cripta da Família
     .target +Magistrate Sevren
     .goto Tirisfal Glades,61.26,50.84
-    .turnin 369 >>Entregue Uma Nova Peste
-    .accept 492 >>Aceite Uma Nova Peste
+    .turnin 369 >>Entregue Uma nova peste
+    .accept 492 >>Aceite Uma nova peste
     .accept 445 >>Aceite Entrega na Floresta de Pinhaprata
     .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.39
@@ -4900,12 +4900,12 @@ step
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sevren|r e |cRXP_FRIENDLY_Johaan|r
-    .turnin 360 >>Entregue Retornar ao Magistrado
+    .turnin 360 >>Entregue De volta ao Magistrado
     .turnin 355 >>Entregue Falar com Sevren
     .target +Magistrate Sevren
     .goto Tirisfal Glades,61.26,50.84
-    .turnin 369 >>Entregue Uma Nova Peste
-    .accept 492 >>Aceite Uma Nova Peste
+    .turnin 369 >>Entregue Uma nova peste
+    .accept 492 >>Aceite Uma nova peste
     .accept 445 >>Aceite Entrega na Floresta de Pinhaprata
     .target +Apothecary Johaan
     .goto Tirisfal Glades,59.45,52.39
@@ -4913,9 +4913,9 @@ step
     .isQuestComplete 369
 step
     .goto Tirisfal Glades,59.45,52.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Johaan|r
-    .turnin 369 >>Entregue Uma Nova Peste
-    .accept 492 >>Aceite Uma Nova Peste
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Joaquino|r
+    .turnin 369 >>Entregue Uma nova peste
+    .accept 492 >>Aceite Uma nova peste
     .accept 445 >>Aceite Entrega na Floresta de Pinhaprata
     .target Apothecary Johaan
 step
@@ -4928,37 +4928,37 @@ step
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
-	.train 588,1 >>Treine |T135926:0|t[Fogo Interior]
+	.train 588,1 >>Aprenda |T135926:0|t[Fogo Interior]
     .target Dark Cleric Beryl
     .xp <12,1
 step << Mage
     .goto Tirisfal Glades,61.97,52.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cain|r no segundo andar
-    .train 145,1 >>Treine |T135812:0|t[Bola de Fogo Rank 3]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caio Cantígnea|r no segundo andar
+    .train 145,1 >> Aprenda |T135812:0|t[Bola de Fogo Grau 3]
     .target Cain Firesong
     .xp <12,1
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil de Mon|r
     .train 7384,1 >>Aprenda |T132223:0|t[Subjugar]
     .target Austil de Mon
     .xp <12,1
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r no segundo andar
-    .train 1766,1 >>Aprenda |T132219:0|t[Chute]
+    .train 1766,1 >> Aprenda |T132219:0|t[Chute]
     .target Marion Call
     .xp <12,1
 step << Warlock
     .goto Tirisfal Glades,61.59,52.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rupertino Boch|r
-    .train 755,1 >>Treine |T136168:0|t[Funil de Vida]
+    .train 755,1 >> Treine |T136168:0|t[Funil de Vida]
     .target Rupert Boch
     .xp <12,1
 step
     .goto Tirisfal Glades,47.39,43.64,150,0
     .goto Tirisfal Glades,52.23,26.91,20,0
-    .goto Tirisfal Glades,52.29,26.40,8 >>Vá para a cripta em Agamand Mills
+    .goto Tirisfal Glades,52.29,26.40,8 >> Vá para a cripta em Agamand Mills
     .isOnQuest 408
     .group
 step << Warrior
@@ -5033,7 +5033,7 @@ step << Warrior
 step << skip
     .goto Tirisfal Glades,51.68,25.67
     .goto Tirisfal Glades,56.24,49.42,30 >>|cRXP_WARN_Pule em uma das estantes de armas. Faça um Logout Pular desconectando e reconectando|r
-    .link https://www.youtube.com/watch?v=bH_NYmWf8Lc&ab >>https://www.youtube.com/watch?v=bH_NYmWf8Lc&ab >> |cRXP_WARN_CLIQUE AQUI para ver um exemplo|r
+    .link https://www.youtube.com/watch?v=bH_NYmWf8Lc&ab >> |cRXP_WARN_CLIQUE AQUI para ver um exemplo|r
     .isQuestComplete 408
     .group
 step
@@ -5073,13 +5073,13 @@ step
     #optional
     .goto Tirisfal Glades,61.94,51.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Capturado|r no andar de baixo, nos fundos da estalagem
-    .turnin 492 >>Entregue Uma Nova Peste
+    .turnin 492 >> Entregue Uma nova peste
     .target Captured Mountaineer
     .isOnQuest 492
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
-	.train 588,1 >>Treine |T135926:0|t[Fogo Interior]
+	.train 588,1 >>Aprenda |T135926:0|t[Fogo Interior]
     .target Dark Cleric Beryl
     .xp <12,1
     .xp >14,1
@@ -5087,26 +5087,26 @@ step << Priest
     #optional
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Clérigo das Trevas Beryl|r no segundo andar
-	.train 6074 >>Treine suas magias de classe
+	.train 6074 >> Treine suas magias de classe
     .target Dark Cleric Beryl
     .xp <14,1
 step << Mage
     .goto Tirisfal Glades,61.97,52.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cain|r no segundo andar
-    .train 145,1 >>Treine |T135812:0|t[Bola de Fogo Rank 3]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caio Cantígnea|r no segundo andar
+    .train 145,1 >> Aprenda |T135812:0|t[Bola de Fogo Grau 3]
     .target Cain Firesong
     .xp <12,1
     .xp >14,1
 step << Mage
     #optional
     .goto Tirisfal Glades,61.97,52.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cain|r no segundo andar
-    .train 2137 >>Treine suas magias de classe
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caio Cantígnea|r no segundo andar
+    .train 2137 >> Treine suas magias de classe
     .target Cain Firesong
     .xp <14,1
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil de Mon|r
     .train 7384,1 >>Aprenda |T132223:0|t[Subjugar]
     .target Austil de Mon
     .xp <12,1
@@ -5114,14 +5114,14 @@ step << Warrior
 step << Warrior
     #optional
     .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil|r
-    .train 1160 >>Treine suas magias de classe
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Austil de Mon|r
+    .train 1160 >> Treine suas magias de classe
     .target Austil de Mon
     .xp <14,1
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r no segundo andar
-    .train 1766,1 >>Aprenda |T132219:0|t[Chute]
+    .train 1766,1 >> Aprenda |T132219:0|t[Chute]
     .target Marion Call
     .xp <12,1
     .xp >14,1
@@ -5129,13 +5129,13 @@ step << Rogue
     #optional
     .goto Tirisfal Glades,61.75,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marion Calder|r no segundo andar
-    .train 1758 >>Treine suas magias de classe
+    .train 1758 >> Treine suas magias de classe
     .target Marion Call
     .xp <14,1
 step << Warlock
     .goto Tirisfal Glades,61.59,52.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rupertino Boch|r
-    .train 755,1 >>Treine |T136168:0|t[Funil de Vida]
+    .train 755,1 >> Treine |T136168:0|t[Funil de Vida]
     .target Rupert Boch
     .xp <12,1
     .xp >14,1
@@ -5143,13 +5143,13 @@ step << Warlock
     #optional
     .goto Tirisfal Glades,61.59,52.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rupertino Boch|r
-    .train 6222 >>Treine suas magias de classe
+    .train 6222 >> Treine suas magias de classe
     .target Rupert Boch
     .xp <14,1
 step << Mage
     #completewith next
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >>Entre em Cidade Baixa
+    .zone Undercity >> Entre em Cidade Baixa
     .zoneskip Undercity
 step << Mage
     #completewith next
@@ -5158,16 +5158,16 @@ step << Mage
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >>Pegue o elevador até Cidade Baixa
+    .goto Undercity,65.53,43.62,15 >> Pegue o elevador até Cidade Baixa
 step << Mage
     .goto Undercity,85.12,10.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anastasia|r no Bairro da Magia
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anastácia Cordato|r no Distrito da Magia
     .turnin 1882 >>Entregue A Fazenda dos Balnir
     .target Anastasia Hartwell
 step << Rogue
     #completewith Swordtraining3
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >>Entre em Cidade Baixa
+    .zone Undercity >> Entre em Cidade Baixa
     .zoneskip Undercity
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
@@ -5178,13 +5178,13 @@ step << Rogue
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >>Pegue o elevador até Cidade Baixa
+    .goto Undercity,65.53,43.62,15 >> Pegue o elevador até Cidade Baixa
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << !Undead
     #completewith UCflightpath3
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >>Entre em Cidade Baixa
+    .zone Undercity >> Entre em Cidade Baixa
     .zoneskip Undercity
 step << !Undead
     #completewith UCflightpath3
@@ -5193,12 +5193,12 @@ step << !Undead
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >>Pegue o elevador até Cidade Baixa
+    .goto Undercity,65.53,43.62,15 >> Pegue o elevador até Cidade Baixa
 step << !Undead
     #label UCflightpath3
     .goto Undercity,63.25,48.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel|r
-    .fp Undercity >>Aprenda a rota de voo de Undercity
+    .fp Undercity >> Aprenda a rota de voo de Cidade Baixa
     >>|cRXP_WARN_Pule este passo se você já pegou o voo!|r
     .target Michael Garrett
 step << Orc Rogue/Troll Rogue
@@ -5254,7 +5254,7 @@ step << Rogue
 step << Undead Warrior
     #completewith Entersilverpine
     .goto Tirisfal Glades,61.80,65.06,20,0
-    .zone Undercity >>Entre em Cidade Baixa
+    .zone Undercity >> Entre em Cidade Baixa
     .zoneskip Undercity
     .money <0.3022
     .itemStat 16,QUALITY,<7
@@ -5266,13 +5266,13 @@ step << Undead Warrior
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
-    .goto Undercity,65.53,43.62,15 >>Pegue o elevador até Cidade Baixa
+    .goto Undercity,65.53,43.62,15 >> Pegue o elevador até Cidade Baixa
     .money <0.3022
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
 step << Troll Warrior/Undead Warrior/Tauren Shaman/Troll Shaman/Orc Shaman
     .goto Undercity,58.82,32.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Benijah|r|cRXP_BUY_. Compre um|r |T135154:0|t[Cajado de Combate] |cRXP_BUY_dele|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Breno Pugna|r|cRXP_BUY_. Compre um|r |T135154:0|t[Cajado de Combate] |cRXP_BUY_dele|r
     .collect 854,1,435,1 --Collect Quarter Staff (1)
     .money <0.3022
     .target Breno Pugna
@@ -5299,14 +5299,14 @@ step
 step << Priest
     .goto Undercity,62.47,61.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lavínia Queiroz|r
-    .train 7411 >>Aprenda |T136244:0|t[Encantamento]
+    .train 7411 >> Aprenda |T136244:0|t[Encantamento]
     .target Lavinia Crowe
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step << Priest/Warlock
     .goto Undercity,70.06,29.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Victor|r
-    .train 3908 >>Aprenda |T136249:0|t[Alfaiataria]
+    .train 3908 >> Aprenda |T136249:0|t[Alfaiataria]
     .target Victor Ward
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
@@ -5319,7 +5319,7 @@ step << Priest/Warlock
 step << Priest/Warlock
     .goto Undercity,70.06,29.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Victor|r
-    .train 7623 >>Aprenda |T132662:0|t[Veste de Linho Marrom]
+    .train 7623 >> Aprenda |T132662:0|t[Veste de Linho Marrom]
     .target Victor Ward
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
@@ -5340,7 +5340,7 @@ step << Priest/Warlock
     .goto Undercity,62.35,60.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Fale com|r |cRXP_FRIENDLY_Tadeu Uchoa|r|cRXP_BUY_. Compre um|r |T133942:0|t[Bastão de Cobre] |cRXP_BUY_e|r |T135435:0|t[Madeira Simples] |cRXP_BUY_dele|r
     >>|cRXP_WARN_Desencante todas as|r |T132662:0|t[Vestes de Linho Marrom] |cRXP_WARN_que você fez e crie um|r |T135225:0|t[Bastão Rúnico de Cobre]
-    >>|cRXP_WARN_Se você não obteve um|r |T132867:0|t[Essência Mágica Inferior] |cRXP_WARN_então compre um de|r |cRXP_FRIENDLY_Thaddeus|r |cRXP_WARN_se houver um disponível. Caso contrário, termine este passo depois|r
+    >>|cRXP_WARN_Se você não conseguiu uma|r |T132867:0|t[Essência Mágica Inferior] |cRXP_WARN_compre uma de|r |cRXP_FRIENDLY_Tadeu Uchoa|r |cRXP_WARN_se houver alguma disponível. Caso contrário, conclua esta etapa mais tarde|r
     .collect 6218,1,435,1 --Runed Copper Rod (1)
     .collect 4470,1,435,1 --Simple Wood (1)
     .target Thaddeus Webb
@@ -5349,13 +5349,13 @@ step << Priest/Warlock
 step << Priest/Warlock
     .goto Undercity,62.54,60.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Augusto Incantum|r
-    .train 14293 >>Aprenda |T135139:0|t[Varinha Mágica Inferior]
+    .train 14293 >> Aprenda |T135139:0|t[Varinha Mágica Inferior]
     .target Malcomb Wynn
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step << Priest/Warlock
     >>|cRXP_WARN_Crie uma|r |T135139:0|t[Varinha Mágica Inferior]
-    >>|cRXP_WARN_Se você não obteve um|r |T132867:0|t[Essência Mágica Inferior] |cRXP_WARN_então compre um de|r |cRXP_FRIENDLY_Thaddeus|r |cRXP_WARN_se houver um disponível. Caso contrário, termine este passo depois|r
+    >>|cRXP_WARN_Se você não conseguiu uma|r |T132867:0|t[Essência Mágica Inferior] |cRXP_WARN_compre uma de|r |cRXP_FRIENDLY_Tadeu Uchoa|r |cRXP_WARN_se houver alguma disponível. Caso contrário, conclua esta etapa mais tarde|r
     .collect 11287,1,435,1 --Lesser Magic Wand (1)
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
@@ -5369,15 +5369,15 @@ step << Priest/Warlock
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step
     #optional
-    .abandon 806 >>Abandone Tempestades sombrias
+    .abandon 806 >> Abandone Tempestades sombrias
     .isOnQuest 806
 step
     #optional
-    .abandon 408 >>Abandone A Cripta da Família
+    .abandon 408 >> Abandone A cripta da família
     .isOnQuest 408
 step << Warrior
     #optional
-    .abandon 1821 >>Abandone Agamand Heirlooms
+    .abandon 1821 >> Abandone A herança dos Agamand
     .isOnQuest 1821
 step << Shaman/Hunter
     #optional
@@ -5393,11 +5393,11 @@ step
     .goto Undercity,27.39,30.23,35,0
     .goto Undercity,21.89,43.35,35,0
     .goto Tirisfal Glades,51.10,71.53,50,0
-    .zone Tirisfal Glades >>Saia de Cidade Baixa pelos Esgotos
+    .zone Tirisfal Glades >> Saia de Cidade Baixa pelos Esgotos
     .zoneskip Tirisfal Glades
     .zoneskip Silverpine Forest
 step
     #label Entersilverpine
-    .zone Silverpine Forest >>Vá para Floresta de Pinhaprata
+    .zone Silverpine Forest >> Vá para Floresta de Pinhaprata
     .zoneskip Silverpine Forest
 ]])

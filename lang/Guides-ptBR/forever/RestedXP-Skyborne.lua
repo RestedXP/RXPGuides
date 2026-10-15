@@ -3,11 +3,11 @@ if GetLocale() ~= "ptBR" then return end
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
-#name 1-14 Zephras Isle
-#displayname 1-13 Skyborne << Alliance
-#displayname 1-12 Skyborne << Horde
-#group Guia Forever (A) << Alliance
-#group Guia Forever (H) << Horde
+#name 1-14 Ilha de Zefras
+#displayname 1-13 Celonato << Alliance
+#displayname 1-12 Celonato << Horde
+#group Guia RestedXP Forever (A) << Alliance
+#group Guia RestedXP Forever (H) << Horde
 #subgroup Guia Speedrun 1-20 << Alliance
 #subgroup Guia Speedrun 1-22 << Horde
 #defaultfor Skyborne
@@ -18,19 +18,19 @@ RXPGuides.RegisterGuide([[
 
 step
     .goto 2521,42.82,23.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ailee Farheart::251362|r.
-    .accept 92460 >>Aceite A Maturidade
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ailee Coralonge::251362|r.
+    .accept 92460 >>Aceite A maturidade
     .target Ailee Farheart::251362
 step
     .goto 2521,42.07,23.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rorian the Dayseeker::251361|r.
-    .turnin 92460 >>Entregue A Maturidade
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rorian, o Caça-alva::251361|r.
+    .turnin 92460 >>Entregue A maturidade
     .target Rorian the Dayseeker::251361
-    .accept 92461 >>Aceite Harmonia no Equilíbrio
+    .accept 92461 >>Aceite Harmonia em equilíbrio
 step
     .goto 2521,43.44,24.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elatrell Muito leve::251368|r.
-    .accept 92462 >>Aceite Investigação de Infestação
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elatrell Penaleve::251368|r.
+    .accept 92462 >>Aceite Investigação da infestação
     .target Elatrell Featherlight::251368
 step << Alliance/!Shaman
     #hidewindow
@@ -58,66 +58,65 @@ step << Horde Shaman
     +1
 step
     #completewith next
-    >>Mate |cRXP_ENEMY_Juvenile Vuldren::250873|r.
+    >>Mate |cRXP_ENEMY_Vuldren Juvenil::250873|r.
     .complete 92461,1 --8/8 Juvenile Vuldren slain
     .mob Juvenile Vuldren::250873
 step
-    >>Mate |cRXP_ENEMY_Pesky Cirrusfly::251169|r.
-    *|cRXP_WARN_Priotize them|r
+    >>Mate |cRXP_ENEMY_Cirromosca Irritante::251169|r.
+    *|cRXP_WARN_Priorize-os|r
     .complete 92462,1 --8/8 Pesky Cirrusfly slain
     .mob Pesky Cirrusfly::251169
 step
     #label Juvenile Vuldren
-    >>Mate |cRXP_ENEMY_Juvenile Vuldren::250873|r.
+    >>Mate |cRXP_ENEMY_Vuldren Juvenil::250873|r.
     .complete 92461,1 --8/8 Juvenile Vuldren slain
     .mob Juvenile Vuldren::250873
 step << Horde Shaman
     #label Juvenile Vuldren Grind
-    .xp 2+480 >>Farme até 480+/900 XP para alcançar o nível 3 após entregar as missões do totem.
+    .xp 2+480 >>Farme até atingir 480+/900 de EXP para chegar ao nível 3 após entregar as missões do totem.
 step
     .goto 2521,43.44,24.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elatrell Muito leve::251368|r.
-    *|cRXP_WARN_Não use |r|T132845:0|t[Passo on Ar] |cRXP_WARN_pois precisaremos dele em breve|r.
-    .turnin 92462 >>Entregue Investigação de Infestação
-    .accept 92463 >>Aceite A Rainha dos Cirrusfly
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elatrell Penaleve::251368|r.
+    *|cRXP_WARN_Não use |r|T132845:0|t[Andar no Ar] |cRXP_WARN_pois precisaremos dele em breve|r.
+    .turnin 92462 >>Entregue Investigação da infestação
+    .accept 92463 >>Aceite A rainha cirromosca
     .target Elatrell Featherlight::251368
 step << Warrior
     .goto 2521,43.66,24.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Blademaster Ren::251964|r.
-    .train 6673 >>Treine |T132333:0|t[Brado de Batalha]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre de Espadas Ren::251964|r.
+    .train 6673 >>Aprenda |T132333:0|t[Brado de Batalha]
     .skipgossipid 136813,1
     .target Blademaster Ren::251964
     .money <0.0010
     .xp <1,1
     .train 5242,1 -- Battle Shout (Rank 2) Not Trained
---Quest Bugged readd next week
--- step
---     .goto 2521,43.53,24.34,20,0
---     .goto 2521,43.83,24.13,10,0
---     .goto 2521,43.78,24.38,5,0
---     .goto 2521,43.66,24.25,5,0
---     .goto 2521,43.75,24.09,5,0
---     .goto 2521,43.84,24.3,5,0
---     .goto 2521,43.66,24.23,5,0
---     .goto 2521,43.83,24.18,5,0
---     .goto 2521,43.83,24.32,8,0
---     .goto 2521,43.80,24.05
---     >>Climb the spiral staircase, then |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye::257554|r at the top of the tower.
---     .accept 94414 >>Accept The Anchors of Zephras
---     .target Halaan Hawk-Eye::257554
--- step
---     .goto 2521,43.80,24.05
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye::257554|r.
---     *Move or press ESC to cancel.
---     .complete 94414,1 --View the Anchor Pylon
---     .skipgossipid 137720,1
---     .target Halaan Hawk-Eye::257554
--- step
---     .goto 2521,43.80,24.05
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halaan Hawk-Eye::257554|r.
---     *Move or press ESC to cancel.
---     .turnin 94414 >>Turn in The Anchors of Zephras
---     .target Halaan Hawk-Eye::257554
+step
+    .goto 2521,43.53,24.34,20,0
+    .goto 2521,43.83,24.13,10,0
+    .goto 2521,43.78,24.38,5,0
+    .goto 2521,43.66,24.25,5,0
+    .goto 2521,43.75,24.09,5,0
+    .goto 2521,43.84,24.3,5,0
+    .goto 2521,43.66,24.23,5,0
+    .goto 2521,43.83,24.18,5,0
+    .goto 2521,43.83,24.32,8,0
+    .goto 2521,43.80,24.05
+    >>Suba a escada em espiral e então |Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Halaan Olho-de-Falcão::257554|r no topo da torre.
+    .accept 94414 >>Aceite As âncoras de Zefras
+    .target Halaan Hawk-Eye::257554
+step
+    .goto 2521,43.80,24.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Halaan Olho-de-Falcão::257554|r.
+    *|cRXP_WARN_Mova-se ou pressione ESC para cancelar|r.
+    .complete 94414,1 --View the Anchor Pylon
+    .skipgossipid 137720,1
+    .target Halaan Hawk-Eye::257554
+step
+    .goto 2521,43.80,24.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Halaan Olho-de-Falcão::257554|r.
+    *|cRXP_WARN_Mova-se ou pressione ESC para cancelar|r.
+    .turnin 94414 >>Entregue As âncoras de Zefras
+    .target Halaan Hawk-Eye::257554
 step << Skyborne
     .goto 2521,43.53,24.34,20,0
     .goto 2521,43.83,24.13,10,0
@@ -129,70 +128,70 @@ step << Skyborne
     .goto 2521,43.83,24.18,5,0
     .goto 2521,43.83,24.32,8,0
     .goto 2521,43.64,24.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Myriaal Mistwake::263113|r.
-    .accept 92474 >>Aceite Queda com Estilo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Myriaal Brumanhã::263113|r.
+    .accept 92474 >>Aceite Caindo com estilo
     .target Myriaal Mistwake::263113
 step << Skyborne
     #completewith next
     #label Harmony in Balance
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rorian the Dayseeker::251361|r.
-    .turnin 92461,1 >>Entregue Harmonia em Equilíbrio
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rorian, o Caça-alva::251361|r.
+    .turnin 92461,1 >>Entregue Harmonia em equilíbrio
     .target Rorian the Dayseeker::251361
 step << Skyborne
     #completewith Harmony in Balance
     .goto 2521,42.06,23.48
-    >>Enquanto cai da torre, use |T132845:0|t[Passo on Ar] e mire no fornecedor da missão.
-    *Você também pode apenas pular e clicar o botão várias vezes.
+    >>Ao cair da torre, use |T132845:0|t[Andar no Ar] e vá em direção ao PNJ que oferece a missão.
+    *Você também pode simplesmente pular e apertar o botão repetidamente no chão.
     .complete 92474,1 --Use Walk on Air
-    .macro Walk on Air, 132845 >>Step on Ar
+    .macro Walk on Air, 132845 >>Andar no Ar
     -- .macro Cancel Walk on Air,132745 >>/cancelaura Walk on Air
 step << Skyborne
     #requires Harmony in Balance
     .goto 2521,42.06,23.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rorian the Dayseeker::251361|r.
-    .turnin 92461,1 >>Entregue Harmonia em Equilíbrio
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rorian, o Caça-alva::251361|r.
+    .turnin 92461,1 >>Entregue Harmonia em equilíbrio
     .target Rorian the Dayseeker::251361
-    .turnin 92474 >>Entregue Queda com Estilo
-    .accept 92464 >>Aceite Elemental Unrest
-    .accept 92481 >>Aceite Um Estudante do Arcano << Mage
-    .accept 92483 >>Aceite Em Casa nas Sombras << Rogue
-    .accept 92482 >>Aceite O Caminho do Caçador << Hunter
+    .turnin 92474 >>Entregue Caindo com estilo
+    .accept 92464 >>Aceite Agitação elemental
+    .accept 92481 >>Aceite Estudante do arcano << Mage
+    .accept 92483 >>Aceite Um lar nas sombras << Rogue
+    .accept 92482 >>Aceite A senda do caçador << Hunter
     .accept 92484 >>Aceite Embracing the Elements << Shaman
     .accept 92532 >>Aceite A Trajetória do Guerreiro << Warrior
-    .accept 92485 >>Aceite A Student of Nature << Druid
+    .accept 92485 >>Aceite Estudante da natureza << Druid
 step << !Skyborne
     .goto 2521,42.06,23.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rorian the Dayseeker::251361|r.
-    .turnin 92461,1 >>Entregue Harmonia em Equilíbrio
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rorian, o Caça-alva::251361|r.
+    .turnin 92461,1 >>Entregue Harmonia em equilíbrio
     .target Rorian the Dayseeker::251361
-    .accept 92464 >>Aceite Elemental Unrest
-    .accept 92481 >>Aceite Um Estudante do Arcano << Alliance Mage
-    .accept 92483 >>Aceite Em Casa nas Sombras << Rogue
-    .accept 92482 >>Aceite O Caminho do Caçador << Hunter
+    .accept 92464 >>Aceite Agitação elemental
+    .accept 92481 >>Aceite Estudante do arcano << Alliance Mage
+    .accept 92483 >>Aceite Um lar nas sombras << Rogue
+    .accept 92482 >>Aceite A senda do caçador << Hunter
     .accept 92484 >>Aceite Embracing the Elements << Horde Shaman
     .accept 92532 >>Aceite A Trajetória do Guerreiro << Warrior
-    .accept 92485 >>Aceite A Student of Nature << Druid
+    .accept 92485 >>Aceite Estudante da natureza << Druid
 step << Druid
     .goto 2521,41.653,23.337
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Xyton Silverwind::251373|r.
-    .turnin 92485 >>Entregue Um Estudante da Natureza
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Xyton Brisaprata::251373|r.
+    .turnin 92485 >>Entregue Estudante da natureza
     .target Xyton Silverwind::251373
 step << Druid
     .goto 2521,41.653,23.337
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Xyton Silverwind::251373|r.
-    .train 1126 >>Treine |T136078:0|t[Marca do Indomado]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Xyton Brisaprata::251373|r.
+    .train 1126 >>Aprenda |T136078:0|t[Marca do Indomado]
     .skipgossipid 136805
     .target Xyton Silverwind::251373
     .money <0.0010
     .xp <1,1
 step << Alliance Mage
     .goto 2521,41.55,23.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dorii Brightwhisper::251379|r.
-    .turnin 92481 >>Entregue A Student of the Arcano
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dorii Soproluz::251379|r.
+    .turnin 92481 >>Entregue Estudante do arcano
     .target Dorii Brightwhisper::251379
 step << Alliance Mage
     .goto 2521,41.55,23.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dorii Brightwhisper::251379|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dorii Soproluz::251379|r.
     .train 1459 >>Aprenda |T135932:0|t[Inteligência Arcana]
     .skipgossipid 136807,1
     .target Dorii Brightwhisper::251379
@@ -200,37 +199,37 @@ step << Alliance Mage
     .xp <1,1
 step << Horde Shaman
     .goto 2521,42.790,23.566
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Windshaper Boro::251374|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Moldavento::251374|r
     .target Windshaper Boro::251374
     .turnin 92484 >>Entregue Embracing the Elements
     .accept 92466 >>Aceite Clamor da Terra
 step << Horde Shaman
     .goto 2521,42.79,23.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Windshaper Boro::251374|r.
-    .train 8017 >>Treine |T136086:0|t[Arma Trinca-pedra]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Moldavento::251374|r.
+    .train 8017 >>Aprenda |T136086:0|t[Arma Trinca-pedra]
     .target Windshaper Boro::251374
     .money <0.0010
     .skipgossipid 136811
     .xp <1,1
 step << Hunter
     .goto 2521,42.47,23.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tai'ree Visão Distante::251376|r.
-    .turnin 92482 >>Entregue The Way of the Caçador
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tai'ree Fitalonge::251376|r.
+    .turnin 92482 >>Entregue A senda do caçador
     .target Tai'ree Farsight::251376
 step << Horde
     .goto 2521,42.60,24.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ventaari Brightwish::251487|r.
-    .accept 92598 >>Aceite The Gift of Skysight
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ventaari Desebrilho::251487|r.
+    .accept 92598 >>Aceite O dom da visão do céu
     .target Ventaari Brightwish::251487
 step << !Warrior !Rogue 
     .itemcount 159,<20 << Mage/Shaman/Priest/Warlock/Paladin -- Refreshing Spring Water
     .itemcount 2512,<1000 << Hunter -- Rough Arrow
     .goto 2521,42.749,24.496
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Uualia Suncrest::251537|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Uualia Cristassol::251537|r
     >>|cRXP_BUY_Compre|r |T132794:0|t[Água Refrescante da Fonte] |cRXP_BUY_dela|r << !Hunter !Shaman
     >>|cRXP_BUY_Compre|r |T132382:0|t[Flechas Rústicas] |cRXP_BUY_dela|r << Hunter
-    .vendor 251537 >>|cRXP_WARN_Venda lixo|r
-    *Não venda |T133970:0|t[Stringy Carne] << Alliance
+    .vendor 251537 >>|cRXP_WARN_Venda os lixos|r
+    *Não venda |T133970:0|t[Acém] << Alliance
     .collect 159,20 << !Hunter !Shaman --Refreshing Spring Water (20)
     .collect 2512,1000 << Hunter --Rough Arrow (1000)
     .target Uualia Suncrest::251537
@@ -241,8 +240,8 @@ step << !Warrior !Rogue
     .isQuestAvailable 93552 -- Harvesting Windstones
 step << Horde
     .goto 2521,43.37,23.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalia the Collector::251363|r.
-    .accept 93552 >>Aceite Colhendo Windstones
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalia, a Colecionadora::251363|r.
+    .accept 93552 >>Aceite Coleta de pedras eólicas
     .target Dalia the Collector::251363
 step << Horde
     #completewith next
@@ -254,8 +253,8 @@ step << Horde Rogue/Horde Warrior
     .isOnQuest 92463 -- The Cirrusfly Queen
     .isQuestNotComplete 92463 -- The Cirrusfly Queen
     .goto 2521,43.41,23.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalia the Collector::251363|r.
-    *|cRXP_WARN_Pular se você não pode pagar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalia, a Colecionadora::251363|r.
+    *|cRXP_WARN_Pule se não puder pagar|r
     .collect 2131,1 >>Compre e equipe uma |T135274:0|t[Espada Curta] << Rogue
     .collect 1194,1 >>Compre e equipe uma |T135276:0|t[Espada Bastarda] << Warrior
     .target Dalia the Collector::251363
@@ -264,8 +263,8 @@ step << Horde Rogue/Horde Warrior
 step << Alliance !Hunter !Mage !Druid
     #completewith next
     #label Harvesting Windstones
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalia the Collector::251363|r.
-    .accept 93552 >>Aceite Colhendo Windstones
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalia, a Colecionadora::251363|r.
+    .accept 93552 >>Aceite Coleta de pedras eólicas
     .target Dalia the Collector::251363
 step << Alliance Rogue/Alliance Warrior
     .goto 2521,43.41,23.51
@@ -277,19 +276,19 @@ step << Alliance Rogue/Alliance Warrior
 step << Alliance !Hunter !Mage !Druid
     #completewith Harvesting Windstones
     .goto 2521,43.41,23.51
-    .vendor 251364 >>|cRXP_WARN_Venda lixo|r
-    *Não venda |T133970:0|t[Stringy Carne]. << Alliance
+    .vendor 251364 >>|cRXP_WARN_Venda os lixos|r
+    *Não venda |T133970:0|t[Acém]. << Alliance
     .target Destin Thriceforged::251364
 step << Alliance !Hunter !Mage !Druid
     #requires Harvesting Windstones
     .goto 2521,43.37,23.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalia the Collector::251363|r.
-    .accept 93552 >>Aceite Colhendo Windstones
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalia, a Colecionadora::251363|r.
+    .accept 93552 >>Aceite Coleta de pedras eólicas
     .target Dalia the Collector::251363
 step << Alliance Hunter/Alliance Mage/Alliance Druid
     .goto 2521,43.37,23.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalia the Collector::251363|r.
-    .accept 93552 >>Aceite Colhendo Windstones
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalia, a Colecionadora::251363|r.
+    .accept 93552 >>Aceite Coleta de pedras eólicas
     .target Dalia the Collector::251363
 step << Alliance
     #completewith next
@@ -298,8 +297,8 @@ step << Alliance
     .complete 93552,1 --15/15 Windstone Cluster
 step << Alliance
     .goto 2521,43.33,24.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Falorne Fallwind::251371|r.
-    .accept 92597 >>Aceite Lendo the Ley Lines
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Falorne Ventoutono::251371|r.
+    .accept 92597 >>Aceite Leitura dos meridianos
     .target Falorne Fallwind::251371
 step << Horde Shaman
     #completewith next
@@ -307,29 +306,29 @@ step << Horde Shaman
     .complete 93552,1 --15/15 Windstone Cluster
 step << Horde Shaman
     .goto 2521,47.29,21.90
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yala Windwatcher::249363|r.
-    .turnin 92464 >>Entregue Elemental Unrest
-    .accept 92465 >>Aceite Agitators
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yala Vigivento::249363|r.
+    .turnin 92464 >>Entregue Agitação elemental
+    .accept 92465 >>Aceite Agitadores
     .target Yala Windwatcher::249363
 step << Horde Shaman
     #completewith next
-    >>Mate |cRXP_ENEMY_Al'Aketh Converter::251160|r e |cRXP_ENEMY_Roiling Ventos::251143|r.
-    *|cRXP_WARN_Priorize |cRXP_ENEMY_Roiling Ventos::251143|r|r
+    >>Mate |cRXP_ENEMY_Convertidos Al'Aketh::251160|r e |cRXP_ENEMY_Ventos Turbulentos::251143|r.
+    *|cRXP_WARN_Priorize |cRXP_ENEMY_Ventos Turbulentos::251143|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
     .mob +Al'Aketh Convert::251160
     .complete 92465,2 --6/6 Roiling Winds destroyed
     .mob +Roiling Winds::251143
 step << Horde Shaman
     .goto 2521,48.4,20.4
-    >>Usar |T1029587:0|t[Skysight] perto de um |cRXP_PICK_Elemental Convergência|r.
-    *|cRXP_WARN_Encontrado em toda a zona. Usar |T1029587:0|t[Visão do Céu] perto de um para ganhar 10% de velocidade de movimento por 15 min em vez de 15 seg|r.
+    >>Use |T1029587:0|t[Visão do Céu] perto da |cRXP_PICK_Convergência Elemental|r.
+    *|cRXP_WARN_Encontradas por toda a área. Use |T1029587:0|t[Visão do Céu] perto de uma para ganhar 10% de velocidade de movimento por 15 min em vez de 15 s|r.
     .complete 92598,1 --Use your Skysight ability near the Elemental Convergence
-    .macro Skysight,1029587 >>/use spell:1259686
+    .macro Skysight,1029587 >>Visão do Céu
 step << Horde Shaman
     #completewith next
     >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Cristal|r
-    *|cRXP_WARN_Espere quebrar cerca de 10 pedras, mas você pode precisar de até 15.|r
-    *|cRXP_WARN_Se a área está anormalmente lotada, fique em um ponto de reaparecimento ou alterne entre as pedras próximas.|r
+    *|cRXP_WARN_Pegue pelo menos 10 pedras, mas esteja preparado para pegar até 15|r.
+    *|cRXP_WARN_Se a área estiver muito lotada, espere em um ponto de surgimento ou alterne entre pedras próximas|r.
     .complete 93552,1 --15/15 Windstone Cluster
 step << Horde Shaman
     #loop
@@ -343,9 +342,9 @@ step << Horde Shaman
     .goto 2521,45.82,19.09,40,0
     .goto 2521,47.19,23.55,30,0
     .goto 2521,46.6,24.62,30,0
-    >>Mate os |cRXP_ENEMY_Al'Aketh Converter::251160|r e os |cRXP_ENEMY_Roiling Ventos::251143|r.
-    *Saque os para o |T1020384:0|t[Signet of Akir] << Shaman
-    *|cRXP_WARN_Priorize |cRXP_ENEMY_Roiling Ventos::251143|r|r
+    >>Mate |cRXP_ENEMY_Convertidos Al'Aketh::251160|r e |cRXP_ENEMY_Ventos Turbulentos::251143|r.
+    *Pegue deles o |T1020384:0|t[Sinete de Akir] << Shaman
+    *|cRXP_WARN_Priorize |cRXP_ENEMY_Ventos Turbulentos::251143|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
     .mob +Al'Aketh Convert::251160
     .complete 92465,2 --6/6 Roiling Winds destroyed
@@ -353,18 +352,18 @@ step << Horde Shaman
     .complete 92466,1 --|1/1 Signet of Akir
 step << Horde Shaman
     .goto 2521,47.29,21.90
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yala Windwatcher::249363|r.
-    .turnin 92465 >>Entregue Agitators
-    .accept 92469 >>Aceite Devolver to Rorian
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yala Vigivento::249363|r.
+    .turnin 92465 >>Entregue Agitadores
+    .accept 92469 >>Aceite Fale novamente com Rorian
     .target Yala Windwatcher::249363
 step << Horde Shaman
     #completewith next
     .subzoneskip 16622,1 -- Thendal Grove
-    .hs >>Use sua Pedra de Retorno para ir a Thendal Village
+    .hs >>Use a Pedra de Regresso para voltar à Aldeia Thendal
 step << Horde Shaman
     .goto 2521,42.788,23.566
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Windshaper Boro::251374|r
-    .turnin 92466 >>Entregue Call of Terra - Missão
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Moldavento::251374|r
+    .turnin 92466 >>Entregue Clamor da Terra
     .accept 92467 >>Aceite Clamor da Terra
     .target Windshaper Boro::251374
 step
@@ -376,12 +375,12 @@ step
     .goto 2521,46.77,27.96,30,0
     .goto 2521,48.14,29.31,30,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Cristal|r
-    *|cRXP_WARN_Espere quebrar cerca de 10 pedras, mas pode precisar de até 15|r.
-    *|cRXP_WARN_Se a área está anormalmente cheia de gente, acampe em um ponto de reaparição ou alterne entre pedras próximas|r.
+    *|cRXP_WARN_Pegue pelo menos 10 pedras, mas esteja preparado para pegar até 15|r.
+    *|cRXP_WARN_Se a área estiver muito lotada, espere em um ponto de surgimento ou alterne entre pedras próximas|r.
     .complete 93552,1 --15/15 Windstone Cluster
 step
     .goto 2521,48.41,28.37
-    >>Mate |cRXP_ENEMY_Cirrusfly Rainha::251404|r.
+    >>Mate |cRXP_ENEMY_Rainha Cirromosca::251404|r.
     .complete 92463,1 --1/1 Cirrusfly Queen slain
     .mob Cirrusfly Queen::251404
 step << Alliance/!Shaman
@@ -391,25 +390,25 @@ step << Alliance/!Shaman
     .goto 2521,48.3,25.67,30,0
     .goto 2521,47.19,23.57,30,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Cristal|r
-    *|cRXP_WARN_Espere quebrar cerca de 10 pedras, mas pode precisar de até 15|r.
-    *|cRXP_WARN_Se a área está anormalmente cheia de gente, acampe em um ponto de reaparição ou alterne entre pedras próximas|r.
+    *|cRXP_WARN_Pegue pelo menos 10 pedras, mas esteja preparado para pegar até 15|r.
+    *|cRXP_WARN_Se a área estiver muito lotada, espere em um ponto de surgimento ou alterne entre pedras próximas|r.
     .complete 93552,1 --15/15 Windstone Cluster
 step << Alliance/!Shaman
     .goto 2521,47.29,21.90
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yala Windwatcher::249363|r.
-    .turnin 92464 >>Entregue Elemental Unrest
-    .accept 92465 >>Aceite Agitators
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yala Vigivento::249363|r.
+    .turnin 92464 >>Entregue Agitação elemental
+    .accept 92465 >>Aceite Agitadores
     .target Yala Windwatcher::249363
 step << Alliance/!Shaman
     #completewith UseRacialAbility
     >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Cristal|r
-    *|cRXP_WARN_Espere quebrar cerca de 10 pedras, mas pode precisar de até 15|r.
-    *|cRXP_WARN_Se a área está anormalmente cheia de gente, acampe em um ponto de reaparição ou alterne entre pedras próximas|r.
+    *|cRXP_WARN_Pegue pelo menos 10 pedras, mas esteja preparado para pegar até 15|r.
+    *|cRXP_WARN_Se a área estiver muito lotada, espere em um ponto de surgimento ou alterne entre pedras próximas|r.
     .complete 93552,1 --15/15 Windstone Cluster
 step << Alliance/!Shaman
     #completewith UseRacialAbility
-    >>Mate os |cRXP_ENEMY_Al'Aketh Converter::251160|r e os |cRXP_ENEMY_Roiling Ventos::251143|r.
-    *|cRXP_WARN_Priorize |cRXP_ENEMY_Roiling Ventos::251143|r|r
+    >>Mate |cRXP_ENEMY_Convertidos Al'Aketh::251160|r e |cRXP_ENEMY_Ventos Turbulentos::251143|r.
+    *|cRXP_WARN_Priorize |cRXP_ENEMY_Ventos Turbulentos::251143|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
     .mob +Al'Aketh Convert::251160
     .complete 92465,2 --6/6 Roiling Winds destroyed
@@ -419,24 +418,24 @@ step << Alliance
     .goto 2521,47.8,21.02,30,0
     .goto 2521,46.9,20.82,30,0
     .goto 2521,46.41,18.21
-    >>Usar |T236219:0|t[Ler Meridiano] perto do |cRXP_WARN_Blue Rift|r no chão
-    *|cRXP_WARN_Encontrado em toda a zona|r |cRXP_WARN_Usar|r |T236219:0|t[Ler Meridiano] |cRXP_WARN_perto de um para ganhar 100% de Mana e Regeneração de Comida por 15 min em vez de 15 seg|r.
+    >>Use |T236219:0|t[Ler Mediridano] perto da |cRXP_WARN_Linha de Meridiano|r no chão
+    *|cRXP_WARN_Encontradas por toda a área|r |cRXP_WARN_Use|r |T236219:0|t[Ler Meridiano] |cRXP_WARN_perto de uma para aumentar em 100% a regeneração de mana e vida por 15 min em vez de 15 s|r.
     .complete 92597,1 --Use your Read Ley Line ability near the Thendal Grove Ley Line
     .usespell 1259705 << Alliance
 step << Horde !Shaman
     #label UseRacialAbility
     .goto 2521,48.4,20.4
-    >>Usar |T1029587:0|t[Skysight] perto do |cRXP_PICK_Elemental Convergência|r.
-    *|cRXP_WARN_Encontrado em toda a zona. Usar |T1029587:0|t[Visão do Céu] perto de um para ganhar 10% de velocidade de movimento por 15 min em vez de 15 seg|r.
+    >>Use |T1029587:0|t[Visão do Céu] perto da |cRXP_PICK_Convergência Elemental|r.
+    *|cRXP_WARN_Encontradas por toda a área. Use |T1029587:0|t[Visão do Céu] perto de uma para ganhar 10% de velocidade de movimento por 15 min em vez de 15 s|r.
     .complete 92598,1 --Use your Skysight ability near the Elemental Convergence
-    .macro Skysight,1029587 >>/use spell:1259686
+    .macro Skysight,1029587 >>Visão do Céu
 step << Horde Shaman
     .goto 2521,47.241,25.244,25,0
     .goto 2521,48.802,25.869,30,0
     .goto 2521,49.677,23.806
-    >>Usar o |T134743:0|t[Sapta da Terra].
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Minor Manifestação of Terra::251166|r
-    .turnin 92467 >>Entregue Call of Terra - Missão
+    >>Use o |T134743:0|t[Sapta da Terra].
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Manifestação Menor de Terra::251166|r
+    .turnin 92467 >>Entregue Clamor da Terra
     .accept 92468 >>Aceite Clamor da Terra
     .target Minor Manifestation of Earth::251166
     .use 6635
@@ -444,14 +443,14 @@ step << Horde Shaman
     .isQuestComplete 93552 -- Harvesting Windstones
     .goto 2521,49.32,23.18,15,0
     .goto 2521,48.88,21.52
-    .subzone 16635 >>Salte pela montanha e reapareça no Cemitério.
+    .subzone 16635 >>Pule da montanha e ressuscite no cemitério.
 step << Horde Shaman
     #ignorecorpse
     .isQuestComplete 93552 -- Harvesting Windstones
     .subzoneskip 16635,1 -- Thendal Village
     .showwhiledead
     .goto 2521,41.06,22.32
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Espírito Curador::6491|r.
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anjo da Cura::6491|r.
     .target Spirit Healer::6491
 step << Horde Shaman
     #loop
@@ -482,13 +481,13 @@ step << Alliance/!Shaman
 step << Alliance/!Shaman
     #completewith next
     >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Cristal|r
-    *|cRXP_WARN_Espere quebrar cerca de 10 pedras, mas pode precisar de até 15|r.
-    *|cRXP_WARN_Se a área está anormalmente cheia de gente, acampe em um ponto de reaparição ou alterne entre pedras próximas|r.
+    *|cRXP_WARN_Pegue pelo menos 10 pedras, mas esteja preparado para pegar até 15|r.
+    *|cRXP_WARN_Se a área estiver muito lotada, espere em um ponto de surgimento ou alterne entre pedras próximas|r.
     .complete 93552,1 --15/15 Windstone Cluster
 step << Alliance/!Shaman
-    >>Mate |cRXP_ENEMY_Al'Aketh Converter::251160|r e |cRXP_ENEMY_Roiling Ventos::251143|r.
-    *Saque os para o |T1020384:0|t[Signet of Akir] << Shaman
-    *|cRXP_WARN_Priorize |cRXP_ENEMY_Roiling Ventos::251143|r|r
+    >>Mate |cRXP_ENEMY_Convertidos Al'Aketh::251160|r e |cRXP_ENEMY_Ventos Turbulentos::251143|r.
+    *Pegue deles o |T1020384:0|t[Sinete de Akir] << Shaman
+    *|cRXP_WARN_Priorize |cRXP_ENEMY_Ventos Turbulentos::251143|r|r
     .complete 92465,1 --7/7 Al'Aketh Convert slain
     .mob +Al'Aketh Convert::251160
     .complete 92465,2 --6/6 Roiling Winds destroyed
@@ -496,29 +495,29 @@ step << Alliance/!Shaman
     .complete 92466,1 << Shaman --|1/1 Signet of Akir
 step << Alliance/!Shaman
     >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Cristal|r
-    *|cRXP_WARN_Espere quebrar cerca de 10 pedras, mas pode precisar de até 15|r.
-    *|cRXP_WARN_Se a área está anormalmente cheia de gente, acampe em um ponto de reaparição ou alterne entre pedras próximas|r.
+    *|cRXP_WARN_Pegue pelo menos 10 pedras, mas esteja preparado para pegar até 15|r.
+    *|cRXP_WARN_Se a área estiver muito lotada, espere em um ponto de surgimento ou alterne entre pedras próximas|r.
     .complete 93552,1 --15/15 Windstone Cluster
 step << Alliance/!Shaman
     #label Windstone Cluster
-    .xp 3+300 >>Farme até 300+/1400xp
+    .xp 3+300 >>Farme até atingir 300+/1400 de EXP
 step << Alliance/!Shaman
     .goto 2521,47.29,21.90
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yala Windwatcher::249363|r.
-    .turnin 92465 >>Entregue Agitators
-    .accept 92469 >>Aceite Devolver to Rorian
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yala Vigivento::249363|r.
+    .turnin 92465 >>Entregue Agitadores
+    .accept 92469 >>Aceite Fale novamente com Rorian
     .target Yala Windwatcher::249363
 step << Alliance/!Shaman
     #completewith next
-    .hs >>Vá para Thendal Village
+    .hs >>Use a Pedra de Regresso para voltar à Aldeia Thendal
     .cooldown item,6948,>0
 step
     #completewith next
     #label Harvesting Windstones2
     .goto 2521,43.89,22.27,40,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalia the Collector::251363|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalia, a Colecionadora::251363|r.
     *|cRXP_WARN_Escolha entre Mineração, Herborismo ou Esfolamento|r.
-    .turnin 93552 >>Entregue Colhendo Windstones
+    .turnin 93552 >>Entregue Coleta de pedras eólicas
     .target Dalia the Collector::251363
 step
     #completewith Harvesting Windstones2
@@ -527,37 +526,37 @@ step
 step
     #requires Harvesting Windstones2
     .goto 2521,43.37,23.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalia the Collector::251363|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dalia, a Colecionadora::251363|r.
     *|cRXP_WARN_Escolha entre Mineração, Herborismo ou Esfolamento|r.
-    .turnin 93552 >>Entregue Colhendo Windstones
+    .turnin 93552 >>Entregue Coleta de pedras eólicas
     .target Dalia the Collector::251363
 step
     .goto 2521,43.44,24.80
     .itemcount 247840,1 -- Mining for Dummies
-    .train 2575 >>Usar |T4625105:0|t[Mineração for Dummies] |cRXP_WARN_enquanto caminha para o ofertante de missões|r.
+    .train 2575 >>Use |T4625105:0|t[Mineração para Leigos] |cRXP_WARN_enquanto caminha até o PNJ que oferece a missão|r.
     .use 247840
 step
     .goto 2521,43.44,24.80
     .itemcount 247841,1 -- Wild Harvest
-    .train 2366 >>Usar |T4624731:0|t[Selvagem Colher] |cRXP_WARN_enquanto caminha para o ofertante de missões|r.
+    .train 2366 >>Use |T4624731:0|t[Colheita Silvestre] |cRXP_WARN_enquanto caminha até o PNJ que oferece a missão|r.
     .use 247841
 step
     .goto 2521,43.44,24.80
     .itemcount 247846,1 -- Pelt Collecting for Beginners
-    .train 8613 >>Usar |T4624731:0|t[Pelt Coletando for Beginners] |cRXP_WARN_enquanto caminha para o ofertante de missões|r.
+    .train 8613 >>Use |T4624731:0|t[Coleta de Peles para Iniciantes] |cRXP_WARN_enquanto caminha até o PNJ que oferece a missão|r.
     .use 247846
 step << Rogue
     .goto 2521,43.74,24.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Akeri Duskblade::251389|r.
-    .turnin 92483 >>Entregue At Home in the Sombras
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Akeri Gumúmbrio::251389|r.
+    .turnin 92483 >>Entregue Um lar nas sombras
     .target Akeri Duskblade::251389
 step << Warrior
     .train 6546,1 -- Rend (Rank 2) Not Trained
     .goto 2521,43.66,24.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Blademaster Ren::251964|r.
-    .train 100 >>Treine |T132337:0|t[carga]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre de Espadas Ren::251964|r.
+    .train 100 >>Aprenda |T132337:0|t[Investida]
     .train 6178,1 -- Charge (Rank 2) Not Trained
-    .train 772 >>Treine |T132155:0|t[Dilacerar]
+    .train 772 >>Aprenda |T132155:0|t[Dilacerar]
     .skipgossipid 136813,1
     .target Blademaster Ren::251964
     .money <0.02
@@ -565,44 +564,44 @@ step << Warrior
     .isOnQuest 92469 -- Return to Rorian
 step << Warrior
     .goto 2521,43.66,24.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Blademaster Ren::251964|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre de Espadas Ren::251964|r.
     .turnin 92532 >>Entregue A Trajetória do Guerreiro
     .xp <4,1
     .target Blademaster Ren::251964
 step
     .goto 2521,43.44,24.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elatrell Muito leve::251368|r.
-    .turnin 92463,3 >>Entregue A Rainha Cirrusfly
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elatrell Penaleve::251368|r.
+    .turnin 92463,3 >>Entregue A rainha cirromosca
     .target Elatrell Featherlight::251368
 step << Alliance
-    #arrowtext Fale com\n|cRXP_FRIENDLY_Falorne Fallwind::251371|r
+    #arrowtext Fale com\n|cRXP_FRIENDLY_Falorne Ventoutono::251371|r
     .goto 2521,43.33,24.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Falorne Fallwind::251371|r.
-    .turnin 92597 >>Entregue Lendo as Linhas de Ley
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Falorne Ventoutono::251371|r.
+    .turnin 92597 >>Entregue Leitura dos meridianos
     .target Falorne Fallwind::251371
 -- These steps are duplicated because lag can prevent the first batch from appearing.
 step
-    #arrowtext Usar\n|T4625105:0|t[Mineração for Dummies]
+    #arrowtext Use\n|T4625105:0|t[Mineração para Leigos]
     .itemcount 247840,1 -- Mining for Dummies
-    .train 2575 >>Usar |T4625105:0|t[Mineração for Dummies].
+    .train 2575 >>Use |T4625105:0|t[Mineração para Leigos].
     .use 247840
 step
-    #arrowtext Usar\n|T4624731:0|t[Selvagem Colher]
+    #arrowtext Use\n|T4624731:0|t[Colheita Silvestre]
     .itemcount 247841,1 -- Wild Harvest
-    .train 2366 >>Usar |T4624731:0|t[Selvagem Colher].
+    .train 2366 >>Use |T4624731:0|t[Colheita Silvestre].
     .use 247841
 step
-    #arrowtext Usar\n|T4624731:0|t[Pelt Coletando for Beginners]
+    #arrowtext Use\n|T4624731:0|t[Coleta de Peles para Iniciantes]
     .itemcount 247846,1 -- Pelt Collecting for Beginners
-    .train 8613 >>Usar |T4624731:0|t[Pelt Coletando for Beginners].
+    .train 8613 >>Use |T4624731:0|t[Coleta de Peles para Iniciantes].
     .use 247846
 step << Warrior
     .train 6546,1 -- Rend (Rank 2) Not Trained
     .goto 2521,43.66,24.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Blademaster Ren::251964|r.
-    .train 100 >>Treine |T132337:0|t[Carga]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre de Espadas Ren::251964|r.
+    .train 100 >>Aprenda |T132337:0|t[Investida]
     .train 6178,1 -- Charge (Rank 2) Not Trained
-    .train 772 >>Treine |T132155:0|t[Dilacerar]
+    .train 772 >>Aprenda |T132155:0|t[Dilacerar]
     .skipgossipid 136813,1
     .target Blademaster Ren::251964
     .money <0.02
@@ -610,42 +609,47 @@ step << Warrior
     .isOnQuest 92469 -- Return to Rorian
 step << Warrior
     .goto 2521,43.66,24.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Blademaster Ren::251964|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre de Espadas Ren::251964|r.
     .turnin 92532 >>Entregue A Trajetória do Guerreiro
     .target Blademaster Ren::251964
 step << Hunter Horde
     .goto 2521,42.467,23.731
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tai'ree Visão Distante::251376|r
-    .train 13163 >>Treine |T132159:0|t[Aspecto do Macaco]
-    .train 1978 >>Treine |T132204:0|t[Picada de Serpente]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tai'ree Fitalonge::251376|r
+    .train 13163 >>Aprenda |T132159:0|t[Aspecto do Macaco]
+    .train 1978 >>Aprenda |T132204:0|t[Picada de Serpente]
     .skipgossipid 136808
     .xp <4,1
     .money <0.02
     .target Tai'ree Farsight::251376
 step << Horde
     .goto 2521,42.07,23.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rorian the Dayseeker::251361|r.
-    .turnin 92469,1 >>Entregue Retornar para Rorian
-    .accept 92471 >>Aceite Aetheen of the Gales -- Unlocks at 4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rorian, o Caça-alva::251361|r.
+    .turnin 92469,1 >>Entregue Fale novamente com Rorian
+    .accept 92471 >>Aceite Aetheen das Ventanias -- Unlocks at 4
     .target Rorian the Dayseeker::251361
 step << Druid Horde
     .goto 2521,41.653,23.337
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Xyton Silverwind::251373|r.
-    .train 8921 >>Treine |T136096:0|t[Fogo Lunar]
-    .train 774 >>Treine |T136081:0|t[Rejuvenescer]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Xyton Brisaprata::251373|r.
+    .train 8921 >>Aprenda |T136096:0|t[Fogo Lunar]
+    .train 774 >>Aprenda |T136081:0|t[Rejuvenescer]
     .skipgossipid 136805
     .xp <4,1
     .money <0.02
     .target Xyton Silverwind::251373
 step << Horde
     .goto 2521,42.76,23.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aetheen of the Gales::251366|r.
-    .turnin 92471 >>Entregue Aetheen of the Gales
-    .accept 92470 >>Aceite Matriarca Imunda
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aetheen das Ventanias::251366|r.
+    .turnin 92471 >>Entregue Aetheen das Ventanias
+    .accept 92470 >>Aceite Má-triarca
     .target Aetheen of the Gales::251366
+step << Shaman
+    .goto 2521,42.787,23.564
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Moldavento::251374|r
+    .turnin 92468 >>Entregue Clamor da Terra
+    .target Windshaper Boro::251374
 step << Horde Shaman
     .goto 2521,42.788,23.566
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Windshaper Boro::251374|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Moldavento::251374|r.
     .train 8042 >>Aprenda |T136026:0|t[Choque Terreno]
     .target Windshaper Boro::251374
     .money <0.01
@@ -653,108 +657,108 @@ step << Horde Shaman
     .skipgossipid 136811
 step << Horde
     .goto 2521,42.607,24.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ventaari Brightwish::251487|r
-    .turnin 92598 >>Entregue The Gift of Skysight
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ventaari Desebrilho::251487|r
+    .turnin 92598 >>Entregue O dom da visão do céu
     .target Ventaari Brightwish::251487
 step << Hunter Alliance
     .goto 2521,42.467,23.731
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tai'ree Visão Distante::251376|r
-    .train 13163 >>Treine |T132159:0|t[Aspecto do Macaco]
-    .train 1978 >>Treine |T132204:0|t[Picada de Serpente]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tai'ree Fitalonge::251376|r
+    .train 13163 >>Aprenda |T132159:0|t[Aspecto do Macaco]
+    .train 1978 >>Aprenda |T132204:0|t[Picada de Serpente]
     .skipgossipid 136808
     .xp <4,1
     .money <0.02
     .target Tai'ree Farsight::251376
 step << Alliance
     .goto 2521,42.07,23.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rorian the Dayseeker::251361|r.
-    .turnin 92469,1 >>Entregue Retornar para Rorian
-    .accept 92471 >>Aceite Aetheen of the Gales -- Unlocks at 4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rorian, o Caça-alva::251361|r.
+    .turnin 92469,1 >>Entregue Fale novamente com Rorian
+    .accept 92471 >>Aceite Aetheen das Ventanias -- Unlocks at 4
     .target Rorian the Dayseeker::251361
 step << Druid Alliance
     .goto 2521,41.653,23.337
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Xyton Silverwind::251373|r.
-    .train 8921 >>Treine |T136096:0|t[Fogo Lunar]
-    .train 774 >>Treine |T136081:0|t[Rejuvenescer]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Xyton Brisaprata::251373|r.
+    .train 8921 >>Aprenda |T136096:0|t[Fogo Lunar]
+    .train 774 >>Aprenda |T136081:0|t[Rejuvenescer]
     .skipgossipid 136805
     .xp <4,1
     .money <0.02
     .target Xyton Silverwind::251373
 step << Alliance Mage
     .goto 2521,41.55,23.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dorii Brightwhisper::251379|r.
-    .train 116 >>Treine |T135846:0|t[Seta de Gelo]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dorii Soproluz::251379|r.
+    .train 116 >>Aprenda |T135846:0|t[Seta de Gelo]
     .skipgossipid 136807,1
     .target Dorii Brightwhisper::251379
     .money <0.01
     .xp <4,1
 step << Alliance
     .goto 2521,42.76,23.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aetheen of the Gales::251366|r.
-    .turnin 92471 >>Entregue Aetheen of the Gales
-    .accept 92470 >>Aceite Matriarca Imunda
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aetheen das Ventanias::251366|r.
+    .turnin 92471 >>Entregue Aetheen das Ventanias
+    .accept 92470 >>Aceite Má-triarca
     .target Aetheen of the Gales::251366
 step
     #completewith AggressiveVendor
     #label Aggressive Encroachment
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valreaa Valewind::257551|r.
-    .accept 92473 >>Aceite Investida Agressiva
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valreaa Ventoval::257551|r.
+    .accept 92473 >>Aceite Ocupação agressiva
     .target Valreaa Valewind::257551
 step
     #completewith Aggressive Encroachment
     .train 2366,3 -- Herbalism Trained
     .goto 2521,42.76,24.5
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Uualia Suncrest::251537|r
-    .collect 277113,1 >>Compre uma |T133637:0|t[Aprendiz's Herb Pouch]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Uualia Cristassol::251537|r
+    .collect 277113,1 >>Compre uma |T133637:0|t[Bolsa de Herborismo do Aprendiz]
     .target Uualia Suncrest::251537
 step
     #completewith Aggressive Encroachment
     .train 2575,3 -- Mining Trained
     .goto 2521,42.76,24.5
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Uualia Suncrest::251537|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Uualia Cristassol::251537|r
     .collect 2901,1 >>Compre uma |T134708:0|t[Picareta de Mineração]
-    .collect 277115,1 >>Compre uma |T133635:0|t[Aprendiz's Mineração Pack]
+    .collect 277115,1 >>Compre uma |T133635:0|t[Mochila de Mineração do Aprendiz]
     .target Uualia Suncrest::251537
 step
     #completewith Aggressive Encroachment
     .train 8613,3 -- Skinning Trained
     .goto 2521,42.76,24.5
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Uualia Suncrest::251537|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Uualia Cristassol::251537|r
     .collect 7005,1 >>Compre uma |T135637:0|t[Faca de Esfolamento]
-    .collect 277114,1 >>Compre uma |T133634:0|t[Aprendiz's Esfolamento Satchel]
+    .collect 277114,1 >>Compre uma |T133634:0|t[Algibeira de Esfolamento do Aprendiz]
     .target Uualia Suncrest::251537
 step
     #label AggressiveVendor
     #completewith Aggressive Encroachment
     .goto 2521,42.76,24.5
-    .vendor 251537 >>|cRXP_WARN_Venda lixo|r
-    *Não venda |T133970:0|t[Stringy Carne] << Alliance
+    .vendor 251537 >>|cRXP_WARN_Venda os lixos|r
+    *Não venda |T133970:0|t[Acém] << Alliance
     .collect 159,20 >>Compre |T132794:0|t[Água Refrescante da Fonte] << Druid/Mage/Priest/Warlock/Paladin
 step
     #requires Aggressive Encroachment
     .goto 2521,42.41,25.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valreaa Valewind::257551|r.
-    .accept 92473 >>Aceite Aggressive Encroachment
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valreaa Ventoval::257551|r.
+    .accept 92473 >>Aceite Ocupação agressiva
     .target Valreaa Valewind::257551
 step
     #completewith Scrawny Usera
-    +Arraste manualmente a bolsa de reagentes para o slot da bolsa de reagentes. Clique com o botão direito nela para colocá-la em um slot vago de bolsa geral.
+    +Arraste manualmente a bolsa de reagentes para o espaço de bolsa de reagentes. Clicar nela com o botão direito a colocará em um espaço vazio de bolsa comum
 step
     #completewith Scrawny Usera
     .train 2366,3 -- Herbalism Trained
     .cast 2383 >>Use |T133939:0|t[Localizar Plantas] para rastrear ervas próximas
-    *|cRXP_WARN_Você pode coletar ervas pelo caminho para começar a trabalhar em direção a 20 Herborismo para uma missão posterior. Isso é opcional, especialmente no lançamento, então faça por sua própria conta|r
+    *|cRXP_WARN_Você pode coletar ervas pelo caminho para começar a subir Herborismo até 20 para uma missão futura. Isso é opcional, especialmente no lançamento, então faça por sua conta e risco|r
     .usespell 2383
 step
     #completewith Scrawny Usera
     .train 2656,3 -- Smelting Trained
     .cast 2580 >>Use |T136025:0|t[Localizar Minérios] para rastrear depósitos de minério próximos
-    *|cRXP_WARN_Você pode minerar pelo caminho para começar a trabalhar em direção a 20 Mineração para uma missão posterior. Isso é opcional, especialmente no lançamento, então faça por sua própria conta|r
+    *|cRXP_WARN_Você pode minerar pelo caminho para começar a subir Mineração até 20 para uma missão futura. Isso é opcional, especialmente no lançamento, então faça por sua conta e risco|r
     .usespell 2580
 step
     #completewith Scrawny Usera
     .train 8613,3 -- Skinning Trained
-    +|cRXP_WARN_Você pode fazer esfolamento pelo caminho para começar a trabalhar em direção a 20 Esfolamento para uma missão posterior. Isso é opcional, especialmente no lançamento, então faça por sua própria conta|r
+    +|cRXP_WARN_Você pode esfolar pelo caminho para começar a subir Esfolamento até 20 para uma missão futura. Isso é opcional, especialmente no lançamento, então faça por sua conta e risco|r
 step
     #label Scrawny Usera
     #loop
@@ -765,12 +769,12 @@ step
     .goto 2521,38.17,27.84,30,0
     .goto 2521,37.67,26.31,30,0
     .goto 2521,38.44,27.35,30,0
-    >>Mate os |cRXP_ENEMY_Bears::250926|r. Saqueie-os para |T132136:0|t[|cRXP_LOOT_Scrawny Ursera Garra|r].
+    >>Mate |cRXP_ENEMY_Ursos::250926|r. Pegue deles |T132136:0|t[|cRXP_LOOT_Garra de Ursera Delgada|r].
     .complete 92473,1 --6/6 Scrawny Ursera Claw
     .mob Scrawny Ursera::250926
 step
     #completewith next
-    >>Mate |cRXP_ENEMY_Ursera Scavenger::250937|r.
+    >>Mate |cRXP_ENEMY_Catador Ursera::250937|r.
     .complete 92470,1 --8/8 Ursera Scavenger slain
     .mob Ursera Scavenger::250937
 step
@@ -791,7 +795,7 @@ step
     .goto 2521,38.12,27.71,30,0
     .goto 2521,37.7,29.46,30,0
     .goto 2521,40.79,26.64,30,0
-    >>Mate |cRXP_ENEMY_Ursera Scavenger::250937|r.
+    >>Mate |cRXP_ENEMY_Catador Ursera::250937|r.
     .complete 92470,1 --8/8 Ursera Scavenger slain
     .mob Ursera Scavenger::250937
 step
@@ -801,21 +805,21 @@ step
     .goto 2521,36.47,23.67,30,0
     .goto 2521,35.88,23.79,30,0
     .goto 2521,35.71,25.7,30,0
-    .subzone 16635 >>Morra e reapareça no Cemitério.
-    *|cRXP_WARN_Use a macro de sentado em combate para morrer mais rápido|r.
-    .macro Sit, >>Sente-se
+    .subzone 16635 >>Morra e ressuscite no cemitério.
+    *|cRXP_WARN_Use a macro de sentar em combate para morrer mais rápido|r.
+    .macro Sit, >>Sente-se (/sit)
     .target Spirit Healer::6491
 step
     #completewith next
     #label Turn in Foul Matriarch
     .subzoneskip 16635,1 -- Thendal Village
     .isQuestComplete 92470 -- Foul Matriarch
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aetheen of the Gales::251366|r.
-    .turnin 92470,1 >>Entregue Imundo Matriarch << Warrior/Paladin
-    .turnin 92470,2 >>Entregue Imundo Matriarch << Druid/Shaman/Priest/Warlock
-    .turnin 92470,3 >>Entregue Imundo Matriarch << Mage
-    .turnin 92470,4 >>Entregue Imundo Matriarch << Rogue
-    .turnin 92470,5 >>Entregue Imundo Matriarch << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aetheen das Ventanias::251366|r.
+    .turnin 92470,1 >>Entregue Má-triarca << Warrior/Paladin
+    .turnin 92470,2 >>Entregue Má-triarca << Druid/Shaman/Priest/Warlock
+    .turnin 92470,3 >>Entregue Má-triarca << Mage
+    .turnin 92470,4 >>Entregue Má-triarca << Rogue
+    .turnin 92470,5 >>Entregue Má-triarca << Hunter
 step
     #completewith Turn in Foul Matriarch
     #ignorecorpse
@@ -823,64 +827,64 @@ step
     .isQuestComplete 92470 -- Foul Matriarch
     .goto 2521,41.06,22.31
     .showwhiledead
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Espírito Curador::6491|r.
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anjo da Cura::6491|r.
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer::6491
 step
     #requires Turn in Foul Matriarch
     .goto 2521,42.76,23.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aetheen of the Gales::251366|r.
-    .turnin 92470,1 >>Entregue Imundo Matriarch << Warrior/Paladin
-    .turnin 92470,2 >>Entregue Imundo Matriarch << Druid/Shaman/Priest/Warlock
-    .turnin 92470,3 >>Entregue Imundo Matriarch << Mage
-    .turnin 92470,4 >>Entregue Imundo Matriarch << Rogue
-    .turnin 92470,5 >>Entregue Imundo Matriarch << Hunter
-    .accept 92472 >>Aceite The Next Step
-    .accept 96638 >>Aceite O Aventureiro
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aetheen das Ventanias::251366|r.
+    .turnin 92470,1 >>Entregue Má-triarca << Warrior/Paladin
+    .turnin 92470,2 >>Entregue Má-triarca << Druid/Shaman/Priest/Warlock
+    .turnin 92470,3 >>Entregue Má-triarca << Mage
+    .turnin 92470,4 >>Entregue Má-triarca << Rogue
+    .turnin 92470,5 >>Entregue Má-triarca << Hunter
+    .accept 92472 >>Aceite O próximo passo
+    .accept 96638 >>Aceite O aventureiro
     .target Aetheen of the Gales::251366
 step
     #completewith next
     #label Aggressive Encroachment2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valreaa Valewind::257551|r.
-    .turnin 92473,1 >>Entregue Aggressive Encroachment
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valreaa Ventoval::257551|r.
+    .turnin 92473,1 >>Entregue Ocupação agressiva
     .target Valreaa Valewind::257551
 step
     #completewith Aggressive Encroachment2
     .goto 2521,42.76,24.52
-    .vendor 251537 >>|cRXP_WARN_Venda lixo|r
-    *Não venda |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeno Eggs]. << Alliance
-    *Não venda |T132832:0|t[Pequeno Eggs]. << Horde
-    *|cRXP_WARN_Precisamos deles para Culinária depois|r.
+    .vendor 251537 >>|cRXP_WARN_Venda os lixos|r
+    *Não venda |T133970:0|t[Acém], |T132832:0|t[Ovos Pequenos]. << Alliance
+    *Não venda |T132832:0|t[Ovos Pequenos]. << Horde
+    *|cRXP_WARN_Precisaremos deles para Culinária mais tarde|r.
 step
     #requires Aggressive Encroachment2
     .goto 2521,42.41,25.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valreaa Valewind::257551|r.
-    .turnin 92473,1 >>Entregue Aggressive Encroachment
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valreaa Ventoval::257551|r.
+    .turnin 92473,1 >>Entregue Ocupação agressiva
     .target Valreaa Valewind::257551
 step
     #completewith next
     #label Al'Aketh Thugs
     *|cRXP_WARN_Equipe a|r |T135335:0|t[Montante Usada] << Warrior/Paladin
-    *|cRXP_WARN_Equipe o|r |T135145:0|t[Novice's Quarterstaff] << Druid/Shaman/Priest/Warlock
-    *|cRXP_WARN_Equipe a|r |T135650:0|t[Batedor Ranger's Dagger] << Mage
-    *|cRXP_WARN_Equipe o|r |T133057:0|t[Peacekeeper's Pickhammer] << Rogue
-    *|cRXP_WARN_Equipe o|r |T135503:0|t[Refined Shortbow] << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hanaa Nightwind::252095|r.
-    .accept 92544 >>Aceite Al'Aketh Thugs
+    *|cRXP_WARN_Equipe o|r |T135145:0|t[Varapau do Noviço] << Druid/Shaman/Priest/Warlock
+    *|cRXP_WARN_Equipe a|r |T135650:0|t[Adaga do Patrulheiro Batedor] << Mage
+    *|cRXP_WARN_Equipe o|r |T133057:0|t[Martelo com Picareta do Pacificador] << Rogue
+    *|cRXP_WARN_Equipe o|r |T135503:0|t[Arco Curto Refinado] << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hanaa Noctéolas::252095|r.
+    .accept 92544 >>Aceite Bandido Al'Aketh
     .target Hanaa Nightwind::252095
 step
     #completewith Al'Aketh Thugs
-    .goto 2521,38.31,30.17,100 >>Mate inimigos pelo caminho se conseguir sem perder tempo.
+    .goto 2521,38.31,30.17,100 >>Mate inimigos pelo caminho se puder fazer isso sem perder tempo.
 step
     #requires Al'Aketh Thugs
     .goto 2521,38.31,30.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hanaa Nightwind::252095|r.
-    .accept 92544 >>Aceite Al'Aketh Thugs
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hanaa Noctéolas::252095|r.
+    .accept 92544 >>Aceite Bandido Al'Aketh
     .target Hanaa Nightwind::252095
 step
     #completewith next
-    >>Mate |cRXP_ENEMY_Al'Aketh Brutamontes::251145|r e |cRXP_ENEMY_Al'Aketh Neophyte::251448|r.
+    >>Mate |cRXP_ENEMY_Brutamontes Al'Aketh::251145|r e |cRXP_ENEMY_Neófito Al'Aketh::251448|r.
     .complete 92544,1 --|6/6 Al'Aketh Brute slain
     .mob +Al'Aketh Brute::251145
     .complete 92544,2 --|4/4 Al'Aketh Neophyte slain
@@ -889,27 +893,27 @@ step
     #completewith next
     #label Malduko Cloudcrush
     .goto 2521,37.04,32.93,20,0
-    >>Mate |cRXP_ENEMY_Malduko Cloudcrush::256935|r.
+    >>Mate |cRXP_ENEMY_Malduko Nubismaga::256935|r.
     .complete 92544,3 --|1/1 Malduko Cloudcrush slain
     .mob Malduko Cloudcrush::256935
 step
     #completewith Malduko Cloudcrush
-    .goto 2521,36.032,33.545,50 >>Vá para o andar superior do templo
+    .goto 2521,36.032,33.545,50 >>Vá até o andar superior do templo
 step
     #requires Malduko Cloudcrush
     .goto 2521,36.032,33.545
-    >>Mate |cRXP_ENEMY_Malduko Cloudcrush::256935|r no topo do templo.
+    >>Mate |cRXP_ENEMY_Malduko Nubismaga::256935|r no topo do templo.
     .complete 92544,3 --|1/1 Malduko Cloudcrush slain
     .mob Malduko Cloudcrush::256935
 step << Horde
     .isOnQuest 92544 -- Al'Aketh Thugs
     .goto 2521,35.910,33.605
-    .cast 1259686 >>Usar |T1029587:0|t[Skysight] para o buff de 10% de velocidade de movimento.
+    .cast 1259686 >>Use |T1029587:0|t[Visão do Céu] para obter o bônus de 10% de velocidade de movimento.
     .cooldown spell,1259686,>0,1
 step << Alliance
     .isOnQuest 92544 -- Al'Aketh Thugs
     .goto 2521,35.57,33.84
-    .cast 1259705 >>Usar |T236219:0|t[Ler Meridianos] para aumento de 100% na regeneração passiva de Mana e Pontos de Vida.
+    .cast 1259705 >>Use |T236219:0|t[Ler Meridianos] para aumentar em 100% a regeneração passiva de mana e vida.
     .cooldown spell,1259705,>0,1
     .usespell 1259705
 step
@@ -929,8 +933,8 @@ step
     .goto 2521,37.3,32.89,40,0
     .goto 2521,37.16,34.72,40,0
     .goto 2521,38.08,35.01,40,0
-    >>Mate |cRXP_ENEMY_Al'Aketh Brutamontes::251145|r e |cRXP_ENEMY_Al'Aketh Neophyte::251448|r.
-    *|cRXP_WARN_Atualizar|r |T236219:0|t[Ler Meridiano] |cRXP_WARN_near the Linha de Meridiano|r << Alliance
+    >>Mate |cRXP_ENEMY_Brutamontes Al'Aketh::251145|r e |cRXP_ENEMY_Neófito Al'Aketh::251448|r.
+    *|cRXP_WARN_Renove|r |T236219:0|t[Ler Meridianos] |cRXP_WARN_perto da Linha de Meridiano|r << Alliance
     .usespell 1259705
     .complete 92544,1 --|6/6 Al'Aketh Brute slain
     .mob +Al'Aketh Brute::251145
@@ -939,28 +943,28 @@ step
     .mob +Al'Aketh Ambusher::251451
 step
     #label Grind6
-    .xp 5+1740 >>Farme até o nível 5 [1740+/2800xp] para alcançar o nível 6 depois de entregar as missões na próxima aldeia para poder treinar novos feitiços.
+    .xp 5+1740 >>Farme até atingir 1740+/2800 de EXP no nível 5 para chegar ao nível 6 após entregar as missões na próxima aldeia e poder aprender novos feitiços.
     -- Maybe only grind here if little XP is needed; otherwise, train abilities after the cave.
 step
     .goto 2521,38.32,30.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hanaa Nightwind::252095|r.
-    .turnin 92544 >>Entregue Al'Aketh Thugs.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Hanaa Noctéolas::252095|r.
+    .turnin 92544 >>Entregue Bandido Al'Aketh
     .target Hanaa Nightwind::252095
 step << !Mage
     #completewith next
-    +|TInterface/cursor/crosshair/interact.blp:20|tClique em |cRXP_PICK_Windstone crystals|r durante o caminho para restaurativos de saúde e mana.
-    *Toque nos Tornadoes para aumento de 40% de velocidade de movimento. O dano remove o efeito.
+    +|TInterface/cursor/crosshair/interact.blp:20|tClique nos |cRXP_PICK_Cristais de Pedra Eólica|r pelo caminho para obter itens que restauram vida e mana
+    *|cRXP_WARN_Se vir um tornado, toque nele para ganhar 40% de velocidade de movimento. Causar dano remove o efeito|r.
 step
     .isOnQuest 92472 -- The Next Step
     #completewith VendorStep
     #label The Next Step
     #hidewindow
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Constable Aonda::251523|r.
-    .turnin 92472 >>Entregue O Próximo Passo.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Aonda::251523|r.
+    .turnin 92472 >>Entregue O Próximo Passo
     .target Constable Aonda::251523
 step
     #completewith The Next Step
-    >>Mate os |cRXP_ENEMY_Galestriders::251661|r durante o caminho. Saqueie-os para |T133972:0|t[|cRXP_LOOT_Strider Carne|r] e |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Mate |cRXP_ENEMY_Vagaventos::251661|r pelo caminho. Pegue deles |T133972:0|t[|cRXP_LOOT_Carne de Moa|r] e |T132832:0|t[|cRXP_LOOT_Ovos Pequenos|r]
     .collect 5469,8 -- Strider Meat
     .collect 6889,3 -- Small Egg
     -- .complete 92553,2 --8/8 Strider Meat
@@ -970,52 +974,53 @@ step << !Rogue !Warrior
     #completewith The Next Step
     #label VendorStep
     .goto 2521,44.72,45.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Veena Vericloud::254358|r.
-    >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r << Shaman/Druid/Priest/Warlock/Paladin
-    >>|cRXP_WARN_Guarde 2 moedas de prata para seus feitiços de classe!|r << Shaman/Druid
-    >>|cRXP_WARN_Guarde 3 prata para seus feitiços de classe!|r << Mage
-    .vendor 254358 >>|cRXP_WARN_Lixo de Comerciante|r.
-    *Não venda |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeno Eggs] ou |T133972:0|t[Strider Carne]. << Alliance
-    *Não venda |T132832:0|t[Pequeno Eggs] nem |T133972:0|t[Strider Carne]. << Horde
-    *|cRXP_WARN_Precisamos deles para Culinária depois|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Veena Verinuvem::254358|r.
+    >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r << Shaman/Druid/Priest/Warlock/Paladin/Mage
+    >>|cRXP_WARN_Guarde 2 de prata para os feitiços da sua classe!|r << Shaman/Druid
+    >>|cRXP_WARN_Guarde 2 de prata para os feitiços da sua classe!|r << Mage
+    .vendor 254358 >>|cRXP_WARN_Venda os lixos|r.
+    *Não venda |T133970:0|t[Acém], |T132832:0|t[Ovos Pequenos] ou |T133972:0|t[Carne de Moa]. << Alliance
+    *Não venda |T132832:0|t[Ovos Pequenos] e |T133972:0|t[Carne de Moa]. << Horde
+    *|cRXP_WARN_Precisaremos deles para Culinária mais tarde|r.
 step << Rogue/Warrior
     #completewith The Next Step
     #label VendorStep
     .goto 2521,44.67,45.19,10,0
     .goto 2521,44.78,45.05
-    .vendor 254360 >>|cRXP_WARN_Lixo de Comerciante|r.
-    *Não venda |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeno Eggs] ou |T133972:0|t[Strider Carne]. << Alliance
-    *Não venda |T132832:0|t[Pequeno Eggs] nem |T133972:0|t[Strider Carne]. << Horde
-    *|cRXP_WARN_Precisamos deles para Culinária depois|r.
+    .vendor 254360 >>|cRXP_WARN_Venda os lixos|r.
+    *Não venda |T133970:0|t[Acém], |T132832:0|t[Ovos Pequenos] ou |T133972:0|t[Carne de Moa]. << Alliance
+    *Não venda |T132832:0|t[Ovos Pequenos] e |T133972:0|t[Carne de Moa]. << Horde
+    *|cRXP_WARN_Precisaremos deles para Culinária mais tarde|r.
     .target Belandiel Farflight::254360
 step
     #requires The Next Step
     .isOnQuest 92472 -- The Next Step
     .goto 2521,45.67,45.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Constable Aonda::251523|r.
-    .turnin 92472 >>Entregue O Próximo Passo.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Aonda::251523|r.
+    .turnin 92472 >>Entregue O Próximo Passo
     .target Constable Aonda::251523
 step
     .goto 2521,45.67,45.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Constable Aonda::251523|r.
-    .accept 93461 >>Aceite Bem-vindo a Shen'dar Village. << Alliance
-    .accept 92514 >>Aceite Bem-vindo a Shen'dar Village. << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Aonda::251523|r.
+    .accept 93461 >>Aceite Boas-vindas à Aldeia de Shen'dar << Alliance
+    .accept 92514 >>Aceite Boas-vindas à Aldeia de Shen'dar << Horde
     .target Constable Aonda::251523
 -- Level 6 class training is intentionally repeated during later Shen'dar Village visits for players who reach level 6 later.
 step << Mage
     .goto 2521,45.1,45.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dorii Brightwhisper::251379|r.
-    .train 143 >>Treine |T135812:0|t[Bola de Fogo (Rank 2)]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dorii Soproluz::251379|r.
+    .train 143 >>Aprenda |T135812:0|t[Bola de Fogo (Grau 2)]
     .train 2136 >>Aprenda |T135807:0|t[Impacto de Fogo]
-    .train 1296017 >>Treine |T8188276:0|t[Comprehend Pergaminho].
+    -- .train 1296017 >>Train |T8188276:0|t[Comprehend Scroll]
+    --  Comprehend Scroll early can be good,if you get scrolls and don't go polymorphed
     .skipgossipid 136807,1
     .target Dorii Brightwhisper::251379
     .money <0.03
     .xp <6,1
 step << Mage
     .goto 2521,45.1,45.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dorii Brightwhisper::251379|r.
-    .train 143 >>Treine |T135812:0|t[Bola de Fogo (Rank 2)]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dorii Soproluz::251379|r.
+    .train 143 >>Aprenda |T135812:0|t[Bola de Fogo (Grau 2)]
     .train 2136 >>Aprenda |T135807:0|t[Impacto de Fogo]
     .skipgossipid 136807,1
     .target Dorii Brightwhisper::251379
@@ -1023,13 +1028,13 @@ step << Mage
     .xp <6,1
 step << Alliance
     .goto 2521,45.04,46.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rathiril Sunlance::251903|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rathiril Arrebol::251903|r.
     .complete 93461,1 --1/1 Speak with Rathiril Sunlance
-    .accept 92596 >>Aceite A Ordem Suprema.
+    .accept 92596 >>Aceite A Alta Ordem
     .target Rathiril Sunlance::251903
 step << Alliance
     .goto 2521,45.04,46.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rathiril Sunlance::251903|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rathiril Arrebol::251903|r.
     .complete 92596,1 --1/1 Listen to Rathiril Sunlance
     .skipgossipid 136139 -- Can you tell me what is happening on Zephras Isle?
     .skipgossipid 136138 -- Do we know why..?
@@ -1040,19 +1045,19 @@ step << Alliance
     .skipgossipid 136133 -- <Remain Silent>
 step << Alliance
     .goto 2521,44.98,46.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rathiril Sunlance::251903|r.
-    .turnin 92596 >>Entregue A Ordem Suprema.
-    .accept 94413 >>Aceite Uma Afronta Mágica.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rathiril Arrebol::251903|r.
+    .turnin 92596 >>Entregue A Alta Ordem
+    .accept 94413 >>Aceite Uma afronta mágica
     .target Rathiril Sunlance::251903
 step << Horde
     .goto 2521,43.52,44.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Illaya Amberwind::251902|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Illaya Ventâmbar::251902|r.
     .complete 92514,1 --1/1 Speak with Illaya Amberwind
-    .accept 92595 >>Aceite Os Moldeventos.
+    .accept 92595 >>Aceite Os Moldevento
     .target Illaya Amberwind::251902
 step << Horde
     .goto 2521,43.52,44.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Illaya Amberwind::251902|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Illaya Ventâmbar::251902|r.
     .complete 92595,1 --1/1 Listen to Illaya
     .target Illaya Amberwind::251902
     .skipgossipid 135864
@@ -1064,13 +1069,13 @@ step << Horde
     .skipgossipid 135858
 step << Horde
     .goto 2521,43.52,44.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Illaya Amberwind::251902|r.
-    .turnin 92595 >>Entregue Os Moldeventos.
-    .accept 94411 >>Aceite Magos Entrometidos.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Illaya Ventâmbar::251902|r.
+    .turnin 92595 >>Entregue Os Moldevento
+    .accept 94411 >>Aceite Magos metidos
     .target Illaya Amberwind::251902
 step << Horde Shaman
     .goto 2521,43.454,44.872
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aarnor Galestrike::254082|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aarnor Ventataque::254082|r
     .trainer >>Treine suas magias de classe
     .target Aarnor Galestrike::254082
     .money <0.01
@@ -1078,20 +1083,20 @@ step << Horde Shaman
     .skipgossipid 136811
 step
     .goto 2521,43.02,43.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Coriella Calmbreeze::254089|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Coriella Ventocalmo::254089|r.
     .complete 92514,2 << Horde --1/1 Speak with the Innkeeper
     .target Coriella Calmbreeze::254089
 step << Horde
     .goto 2521,43.02,43.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Coriella Calmbreeze::254089|r.
-    .home >>Defina sua Pedra de Retorno em Shen'dar Village.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Coriella Ventocalmo::254089|r.
+    .home >>Defina sua Pedra de Regresso para a Aldeia de Shen'dar
     .bindlocation 16624
     .target Coriella Calmbreeze::254089
 step << Horde Rogue
     .goto 2521,43.16,43.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Mistblade::254087|r.
-    .train 1757 >>Treine |T136189:0|t[Golpe Sinistro (Rank 2)]
-    .train 1776 >>Treine |T132155:0|t[Esfaquear].
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Laminévoa::254087|r
+    .train 1757 >>Aprenda |T136189:0|t[Golpe Sinistro (Grau 2)]
+    .train 1776 >>Aprenda |T132155:0|t[Esfaquear]
     .train 1777,1 -- Gouge (Rank 2) Not Trained
     .skipgossipid 136810
     .target Miriaan Mistblade::254087
@@ -1099,17 +1104,17 @@ step << Horde Rogue
     .xp <6,1
 step << Horde Rogue
     .goto 2521,43.16,43.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Mistblade::254087|r.
-    .train 1757 >>Treine |T136189:0|t[Golpe Sinistro (Rank 2)].
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Laminévoa::254087|r
+    .train 1757 >> Aprenda |T136189:0|t[Golpe Sinistro (Grau 2)]
     .skipgossipid 136810
     .target Miriaan Mistblade::254087
     .money <0.01
     .xp <6,1
 step << Alliance Rogue
     .goto 2521,43.16,43.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Mistblade::254087|r.
-    .train 1757 >>Treine |T136189:0|t[Golpe Sinistro (Rank 2)]
-    .train 1776 >>Treine |T132155:0|t[Esfaquear]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Laminévoa::254087|r
+    .train 1757 >>Aprenda |T136189:0|t[Golpe Sinistro (Grau 2)]
+    .train 1776 >>Aprenda |T132155:0|t[Esfaquear]
     .train 1777,1 -- Gouge (Rank 2) Not Trained
     .skipgossipid 136810
     .target Miriaan Mistblade::254087
@@ -1117,62 +1122,62 @@ step << Alliance Rogue
     .xp <6,1
 step << Alliance Rogue
     .goto 2521,43.16,43.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Mistblade::254087|r.
-    .train 1757 >>Treine |T136189:0|t[Golpe Sinistro (Rank 2)].
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Laminévoa::254087|r
+    .train 1757 >> Aprenda |T136189:0|t[Golpe Sinistro (Grau 2)]
     .skipgossipid 136810
     .target Miriaan Mistblade::254087
     .money <0.01
     .xp <6,1
-step << Mage
-    .isOnQuest 93461 << Alliance -- Welcome to Shen'dar Village
-    .isOnQuest 92514 << Horde -- Welcome to Shen'dar Village
-    .subzoneskip 16624,1 -- Shen'dar Village
-    .goto 2521,43.24,43.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r e compre qualquer material faltante: |T133942:0|t[Copper Rod], |T132841:0|t[Mote of Magic] e |T135435:0|t[Simple Madeira].
-    .collect 6217,1 -- Copper Rod
-    .collect 247786,3 -- Mote of Magic
-    .collect 4470,1 -- Simple Wood
-    .skipgossipid 137558
-    .target Nasalanna Windsinger::257020
-    .money <0.0172
-step << Mage
-    .isOnQuest 93461 << Alliance -- Welcome to Shen'dar Village
-    .isOnQuest 92514 << Horde -- Welcome to Shen'dar Village
-    .subzoneskip 16624,1 -- Shen'dar Village
-    .goto 2521,43.24,43.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r.
-    .train 7411 >>Treine |T136189:0|t[Encantamento] |cRXP_WARN_para varinha imediata|r
-    .skipgossipid 137559
-    .target Nasalanna Windsinger::257020
-step << Mage
-    .isOnQuest 93461 << Alliance -- Welcome to Shen'dar Village
-    .isOnQuest 92514 << Horde -- Welcome to Shen'dar Village
-    .train 7411,3 -- Enchanting Trained
-    >>Usar o macro do |T135225:0|t[Bastão Rúnico de Cobre] abaixo, depois use o macro do |T135645:0|t[Novice's Prática Varinha]
-    *|cRXP_WARN_Depois, encante seus pulsos com Vigor se você tem um par equipado|r
-    .collect 6218,1 -- Runed Copper Rod
-    .collect 247789,1 -- Novice's Practice Wand
-    .macro Runed Copper Rod,135225 >>Bastão Rúnico de Cobre
-    .macro Novice's Practice Wand,135645 >>Novice's Prática Varinha
-step << Mage
-    #completewith MageEnchanting
-    .train 7411,3 -- Enchanting Trained
-    +Abandone Encantamento ou continue com isso
+-- step << Mage
+--     .isOnQuest 93461 << Alliance -- Welcome to Shen'dar Village
+--     .isOnQuest 92514 << Horde -- Welcome to Shen'dar Village
+--     .subzoneskip 16624,1 -- Shen'dar Village
+--     .goto 2521,43.24,43.18
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r and buy any missing materials: |T133942:0|t[Copper Rod], |T132841:0|t[Mote of Magic] and |T135435:0|t[Simple Wood].
+--     .collect 6217,1 -- Copper Rod
+--     .collect 247786,3 -- Mote of Magic
+--     .collect 4470,1 -- Simple Wood
+--     .skipgossipid 137558
+--     .target Nasalanna Windsinger::257020
+--     .money <0.0172
+-- step << Mage
+--     .isOnQuest 93461 << Alliance -- Welcome to Shen'dar Village
+--     .isOnQuest 92514 << Horde -- Welcome to Shen'dar Village
+--     .subzoneskip 16624,1 -- Shen'dar Village
+--     .goto 2521,43.24,43.18
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r
+--     .train 7411 >>Train |T136189:0|t[Enchanting] |cRXP_WARN_for immediate wand|r
+--     .skipgossipid 137559
+--     .target Nasalanna Windsinger::257020
+-- step << Mage
+--     .isOnQuest 93461 << Alliance -- Welcome to Shen'dar Village
+--     .isOnQuest 92514 << Horde -- Welcome to Shen'dar Village
+--     .train 7411,3 -- Enchanting Trained
+--     >>Use the |T135225:0|t[Runed Copper Rod] macro below, then use the |T135645:0|t[Novice's Practice Wand] macro
+--     *|cRXP_WARN_Afterward, enchant your bracers with Stamina if you have a pair equipped|r
+--     .collect 6218,1 -- Runed Copper Rod
+--     .collect 247789,1 -- Novice's Practice Wand
+--     .macro Runed Copper Rod,135225 >>/cast Enchanting\n/run C_TradeSkillUI.CraftRecipe(7421,1)
+--     .macro Novice's Practice Wand,135645 >>/run C_TradeSkillUI.CraftRecipe(1245321,1)
+-- step << Mage
+--     #completewith MageEnchanting
+--     .train 7411,3 -- Enchanting Trained
+--     +Abandon Enchanting or continue with it.
 step << Alliance
     .goto 2521,43.02,43.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Coriella Calmbreeze::254089|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Coriella Ventocalmo::254089|r.
     .complete 93461,2 << Alliance --1/1 Speak with the Innkeeper
     .target Coriella Calmbreeze::254089
 step << Alliance
     .goto 2521,43.02,43.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Coriella Calmbreeze::254089|r.
-    .home >>Defina sua Pedra de Retorno em Shen'dar Village
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Coriella Ventocalmo::254089|r.
+    .home >>Defina sua Pedra de Regresso para a Aldeia de Shen'dar
     .bindlocation 16624
     .target Coriella Calmbreeze::254089
 step << Warrior
     .goto 2521,44.95,45.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Corsan Earthrazer::254088|r
-    .train 3127 >>Treine |T132269:0|t[Aparar]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Corsan Destruterra::254088|r
+    .train 3127 >>Aprenda |T132269:0|t[Aparar]
     .skipgossipid 136813
     .target Corsan Earthrazer::254088
     .money <0.01
@@ -1180,8 +1185,8 @@ step << Warrior
 step << Hunter
     .goto 2521,45.07,45.27,25,0
     .goto 2521,45.263,44.236
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elayaa Easewind::254084|r dentro da casa.
-    .train 3044 >>Treine |T132218:0|t[Tiro Arcano]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elayaa Ventofácil::254084|r dentro da casa.
+    .train 3044 >>Aprenda |T132218:0|t[Tiro Arcano]
     .train 1130 >>Aprenda |T132212:0|t[Marca do Caçador]
     .skipgossipid 136808
     .target Elayaa Easewind::254084
@@ -1190,9 +1195,9 @@ step << Hunter
 step << Druid
     .goto 2521,45.07,45.27,25,0
     .goto 2521,45.154,44.217
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Naeluna Recomposição Rápida::254081|r dentro da casa.
-    .train 467 >>Treine |T136104:0|t[Espinhos]
-    .train 5177 >>Treine |T136006:0|t[Ira (Rank 2)]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Naeluna Ajudágil::254081|r dentro da casa.
+    .train 467 >>Aprenda |T136104:0|t[Espinhos]
+    .train 5177 >>Aprenda |T136006:0|t[Ira (Grau 2)]
     .skipgossipid 136805
     .xp <6,1
     .money <0.02
@@ -1200,17 +1205,17 @@ step << Druid
 step
     #label MageEnchanting
     .goto 2521,45.67,45.50
-    *|cRXP_WARN_Equipe a|r |T135645:0|t[Novice's Prática Varinha] << Mage
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Constable Aonda::251523|r.
-    .turnin 93461 >>Entregue Bem-vindo à Vila Shen'dar << Alliance
-    .turnin 92514 >>Entregue Bem-vindo à Vila Shen'dar << Horde
-    .accept 92517 >>Aceite O Elemento Criminoso
+    -- *|cRXP_WARN_Equip the|r |T135645:0|t[Novice's Practice Wand] << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Aonda::251523|r.
+    .turnin 93461 >>Entregue Boas-vindas à Aldeia de Shen'dar << Alliance
+    .turnin 92514 >>Entregue Boas-vindas à Aldeia de Shen'dar << Horde
+    .accept 92517 >>Aceite O elemento criminoso
     .target Constable Aonda::251523
 -- Intentional repeat of level 6 class training for players who reached level 6 after the earlier trainer visit.
 step << Hunter
     .goto 2521,45.263,44.236
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elayaa Easewind::254084|r.
-    .train 3044 >>Treine |T132218:0|t[Tiro Arcano]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elayaa Ventofácil::254084|r.
+    .train 3044 >>Aprenda |T132218:0|t[Tiro Arcano]
     .train 1130 >>Aprenda |T132212:0|t[Marca do Caçador]
     .skipgossipid 136808
     .target Elayaa Easewind::254084
@@ -1218,9 +1223,9 @@ step << Hunter
     .xp <6,1
 step << Druid
     .goto 2521,45.154,44.217
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Naeluna Recomposição Rápida::254081|r
-    .train 467 >>Treine |T136104:0|t[Espinhos]
-    .train 5177 >>Treine |T136006:0|t[Ira (Rank 2)]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Naeluna Ajudágil::254081|r
+    .train 467 >>Aprenda |T136104:0|t[Espinhos]
+    .train 5177 >>Aprenda |T136006:0|t[Ira (Grau 2)]
     .skipgossipid 136805
     .xp <6,1
     .money <0.02
@@ -1231,34 +1236,34 @@ step
     .isQuestAvailable 92516 -- Hippogryph Harassment
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,44.72,45.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Veena Vericloud::254358|r.
-    .collect 1179,5 >>|cRXP_BUY_Compre 5|r |T132815:0|t[Leite Gelado], |cRXP_BUY_ou 10 se puder pagá-los|r << Druid/Priest/Warlock
-    *Não venda |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeno Eggs] ou |T133972:0|t[Strider Carne]. << Alliance
-    *Não venda |T132832:0|t[Pequeno Eggs] nem |T133972:0|t[Strider Carne]. << Horde
-    *|cRXP_WARN_Precisamos deles para Culinária depois|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Veena Verinuvem::254358|r.
+    .collect 1179,5 >>|cRXP_BUY_Compre 5|r |T132815:0|t[Leite Gelado], |cRXP_BUY_ou 10 se puder pagar|r << Druid/Priest/Warlock
+    *Não venda |T133970:0|t[Acém], |T132832:0|t[Ovos Pequenos] ou |T133972:0|t[Carne de Moa]. << Alliance
+    *Não venda |T132832:0|t[Ovos Pequenos] e |T133972:0|t[Carne de Moa]. << Horde
+    *|cRXP_WARN_Precisaremos deles para Culinária mais tarde|r.
     .money <0.0125
 step
     .goto 2521,44.47,44.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Teeri Wellwind::251906|r.
-    .accept 93319 >>Aceite Pedras do Vento Furtadas
-    .accept 92516 >>Aceite Assédio dos Hipogrifos
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Teeri Benvento::251906|r.
+    .accept 93319 >>Aceite Pedras eólicas roubadas
+    .accept 92516 >>Aceite Hipogrifos hostis
     .target Teeri Wellwind::251906
 step
     .goto 2521,44.68,44.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Indari Sunseam::251993|r.
-    .accept 92515 >>Aceite O Problema Com as Garras do Orgulho
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Indari Tramassol::251993|r.
+    .accept 92515 >>Aceite O gargalo das garraltivas
     .target Indari Sunseam::251993
 step
     .goto 2521,44.88,44.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Taleen Shimmerthread::251991|r.
-    .accept 93951 >>Aceite A Little Bela
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Taleen Cintilinha::251991|r.
+    .accept 93951 >>Aceite Leve beleza
     .target Taleen Shimmerthread::251991
 step << Shaman
     .isOnQuest 92517 -- The Criminal Element
     .isQuestNotComplete 92517 -- The Criminal Element
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,44.790,44.168
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Tephri Thriceforged::257421|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tephri Triforjado::257421|r
     >>|cRXP_BUY_Compre e equipe uma|r |T135145:0|t[Bengala]
     .collect 2495,1 --Collect Walking Stick (1)
     .target Tephri Thriceforged::257421
@@ -1267,9 +1272,9 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
 step << Hunter
     .goto 2521,44.790,44.168
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Tephri Thriceforged::257421|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tephri Triforjado::257421|r
     >>|cRXP_BUY_Compre e equipe um|r |T135499:0|t[Arco Recurvo de Pau-de-chifre]
-    >>|cRXP_BUY_Compre|r |T132382:0|t[Rough Flechas] |cRXP_BUY_até sua Aljava estar cheia|r
+    >>|cRXP_BUY_Compre|r |T132382:0|t[Flechas Rústicas] |cRXP_BUY_até encher sua aljava|r
     .collect 2506,1 --Collect Hornwood Recurve Bow
     .target Tephri Thriceforged::257421
     .money <0.0285
@@ -1279,8 +1284,8 @@ step << Warrior/Paladin
     .isQuestNotComplete 92517 -- The Criminal Element
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,44.8,44.18
-    #arrowtext Fale com\n|cRXP_FRIENDLY_Tephri Thriceforged::257421|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tephri Thriceforged::257421|r e compre e equipe uma |T133053:0|t[Marreta de Madeira].
+    #arrowtext Fale com\n|cRXP_FRIENDLY_Tephri Triforjado::257421|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tephri Triforjado::257421|r e compre e equipe uma |T133053:0|t[Marreta de Madeira].
     .collect 2493,1 -- Wooden Mallet
     .money <0.0701
     .target Tephri Thriceforged::257421
@@ -1289,14 +1294,18 @@ step << Rogue
     .isQuestNotComplete 92517 -- The Criminal Element
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,44.8,44.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tephri Thriceforged::257421|r e compre e equipe um |T135321:0|t[Gládio].
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tephri Triforjado::257421|r e compre e equipe um |T135321:0|t[Gládio].
     .collect 2488,1 -- Gladius
     .target Tephri Thriceforged::257421
     .money <0.0536
+
+--here add thrwing Knife
+--here add sharpening stone rogue
+    
 step
     .goto 2521,43.850,43.840
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
-    .accept 92553 >>Aceite Reabastecimento the Larders
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zerril Brisabranda::251905|r
+    .accept 92553 >>Aceite Reabastecendo a despensa
     .addquestitem 6889,92553
     .addquestitem 5469,92553
     .target Zerril Softbreeze::251905
@@ -1306,9 +1315,20 @@ step -- for people who send the items over
     .isQuestNotComplete 92517 -- The Criminal Element
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,43.851,43.848
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
-    .turnin 92553 >>Entregue Reabastecimento das Despensas
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zerril Brisabranda::251905|r
+    .turnin 92553 >>Entregue Reabastecendo a despensa
     .target Zerril Softbreeze::251905
+step
+    .isQuestTurnedIn 92553 -- Restocking the Larders
+    .isOnQuest 92517 -- The Criminal Element
+    .isQuestNotComplete 92517 -- The Criminal Element
+    .itemcount 6889,1 -- Small Egg
+    .subzoneskip 16624,1 -- Shen'dar Village
+    .goto 2521,43.851,43.848
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zerril Brisabranda::251905|r
+    .train 2550 >>Aprenda |T133971:0|t[Culinária]
+    .target Zerril Softbreeze::251905
+    .money <0.01
 step
     .isQuestTurnedIn 92553 -- Restocking the Larders
     .isOnQuest 92517 -- The Criminal Element
@@ -1317,9 +1337,9 @@ step
     .itemcount 6889,1 -- Small Egg
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,43.86,43.85
-    +Usar a |T132834:0|t[Ovo Assado com Ervas] macro abaixo para criar o máximo possível.
-    *|cRXP_WARN_A maioria dos alimentos buff concede 5% de experiência aumentada de mortes por 15 minutos. Procure manter este buff ativo enquanto sobe de nível|r.
-    .collect 2678,5 >>Compre 5 |T134059:0|t[Temperos Suaves].
+    +Use a macro de |T132834:0|t[Ovo Assado com Ervas] abaixo para preparar o máximo possível.
+    *|cRXP_WARN_A maioria das comidas com bônus aumenta em 5% a experiência obtida com abates por 15 minutos. Tente manter esse bônus ativo pelo máximo de tempo possível enquanto sobe de nível|r.
+    .collect 2678,5 >>compre 5 |T134059:0|t[Temperos Suaves].
     .disablecheckbox
     .macro Herb Baked Egg,132834 >>Ovo Assado com Ervas
 step
@@ -1332,9 +1352,9 @@ step
     .itemcount 6889,1 -- Small Egg
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,43.86,43.85
-    +Usar a |T132834:0|t[Ovo Assado com Ervas] macro abaixo para criar 1 para o bônus de experiência.
-    *|cRXP_WARN_A maioria dos alimentos buff concede 5% de experiência aumentada de mortes por 15 minutos. Procure manter este buff ativo enquanto sobe de nível|r.
-    .collect 2678,5 >>Compre 5 |T134059:0|t[Temperos Suaves].
+    +Use a macro de |T132834:0|t[Ovo Assado com Ervas] abaixo para preparar 1 e obter o bônus de experiência.
+    *|cRXP_WARN_A maioria das comidas com bônus aumenta em 5% a experiência obtida com abates por 15 minutos. Tente manter esse bônus ativo pelo máximo de tempo possível enquanto sobe de nível|r.
+    .collect 2678,5 >>compre 5 |T134059:0|t[Temperos Suaves].
     .disablecheckbox
     .macro Herb Baked Egg,132834 >>Ovo Assado com Ervas
 step
@@ -1346,18 +1366,18 @@ step
     .train 2550,3 -- Cooking Trained
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,43.86,43.85
-    +Usar a |T132834:0|t[Ovo Assado com Ervas] macro abaixo para criar todos os Ovos Pequenos além dos 3 reservados para Reabastecimento dos Larders.
-    *|cRXP_WARN_Guarde pelo menos 3 Ovos Pequenos para uma missão posterior|r
-    *|cRXP_WARN_A maioria dos alimentos buff concede 5% de experiência aumentada de mortes por 15 minutos. Procure manter este buff ativo enquanto sobe de nível|r.
-    .collect 2678,5 >>Compre 5 |T134059:0|t[Temperos Suaves].
+    +Use a macro de |T132834:0|t[Ovo Assado com Ervas] abaixo para preparar todos os Ovos Pequenos, exceto os 3 reservados para Reabastecendo a despensa.
+    *|cRXP_WARN_Guarde pelo menos 3 Ovos Pequenos para uma missão futura|r
+    *|cRXP_WARN_A maioria das comidas com bônus aumenta em 5% a experiência obtida com abates por 15 minutos. Tente manter esse bônus ativo pelo máximo de tempo possível enquanto sobe de nível|r.
+    .collect 2678,5 >>compre 5 |T134059:0|t[Temperos Suaves].
     .disablecheckbox
     .macro Herb Baked Egg,132834 >>Ovo Assado com Ervas
 -- Intentional repeat of level 6 Rogue training for players who reached level 6 after the earlier trainer visit.
 step << Horde Rogue
     .goto 2521,43.16,43.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Mistblade::254087|r.
-    .train 1757 >>Treine |T136189:0|t[Golpe Sinistro (Rank 2)]
-    .train 1776 >>Treine |T132155:0|t[Esfaquear]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Laminévoa::254087|r
+    .train 1757 >>Aprenda |T136189:0|t[Golpe Sinistro (Grau 2)]
+    .train 1776 >>Aprenda |T132155:0|t[Esfaquear]
     .train 1777,1 -- Gouge (Rank 2) Not Trained
     .skipgossipid 136810
     .target Miriaan Mistblade::254087
@@ -1365,17 +1385,17 @@ step << Horde Rogue
     .xp <6,1
 step << Horde Rogue
     .goto 2521,43.16,43.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Mistblade::254087|r.
-    .train 1757 >>Treine |T136189:0|t[Golpe Sinistro (Rank 2)]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Laminévoa::254087|r
+    .train 1757 >>Aprenda |T136189:0|t[Golpe Sinistro (Grau 2)]
     .skipgossipid 136810
     .target Miriaan Mistblade::254087
     .money <0.01
     .xp <6,1
 step << Alliance Rogue
     .goto 2521,43.16,43.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Mistblade::254087|r.
-    .train 1757 >>Treine |T136189:0|t[Golpe Sinistro (Rank 2)]
-    .train 1776 >>Treine |T132155:0|t[Esfaquear]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Laminévoa::254087|r
+    .train 1757 >>Aprenda |T136189:0|t[Golpe Sinistro (Grau 2)]
+    .train 1776 >>Aprenda |T132155:0|t[Esfaquear]
     .train 1777,1 -- Gouge (Rank 2) Not Trained
     .skipgossipid 136810
     .target Miriaan Mistblade::254087
@@ -1383,21 +1403,21 @@ step << Alliance Rogue
     .xp <6,1
 step << Alliance Rogue
     .goto 2521,43.16,43.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Mistblade::254087|r.
-    .train 1757 >>Treine |T136189:0|t[Golpe Sinistro (Rank 2)].
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Laminévoa::254087|r
+    .train 1757 >>Aprenda |T136189:0|t[Golpe Sinistro (Grau 2)]
     .skipgossipid 136810
     .target Miriaan Mistblade::254087
     .money <0.01
     .xp <6,1
 step
     #completewith BadwindBennicA
-    >>Mate os |cRXP_ENEMY_Prideclaws::251245|r. Saque-os para os |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
+    >>Mate |cRXP_ENEMY_Garraltivas::251245|r. Pegue deles as |T237416:0|t[|cRXP_LOOT_Pelagens de Garraltiva|r].
     *|cRXP_WARN_Priorize-os|r
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step
     #completewith BadwindBennicA
-    >>Abate |cRXP_ENEMY_Galestrider::251661|r. Saqueie-os para obter |T133972:0|t[|cRXP_LOOT_Strider Carne|r] e |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Mate |cRXP_ENEMY_Vagaventos::251661|r. Pegue deles |T133972:0|t[|cRXP_LOOT_Carne de Moa|r] e |T132832:0|t[|cRXP_LOOT_Ovos Pequenos|r].
     *|cRXP_WARN_Priorize-os|r
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
@@ -1408,25 +1428,25 @@ step << Horde
     .goto 2521,46.9,38.84,25,0
     .goto 2521,46.37,37.85,25,0
     .goto 2521,45.76,39.31,25,0
-    >>Abata |cRXP_ENEMY_High Order Apprentices::257521|r.
+    >>Mate |cRXP_ENEMY_Aprendizes da Alta Ordem::257521|r.
     .complete 94411,1 --|6/6 High Order Apprentice defeated
     .mob High Order Apprentice::257521
 step << Horde
     .isOnQuest 92517 -- The Criminal Element
     .isQuestNotComplete 92517 -- The Criminal Element
     .goto 2521,46.597,38.121
-    .cast 1259686 >>Usar |T1029587:0|t[Skysight] para o buff de 10% de velocidade de movimento.
+    .cast 1259686 >>Use |T1029587:0|t[Visão do Céu] para obter o bônus de 10% de velocidade de movimento.
     .cooldown spell,1259686,>0,1
 step
     #completewith BadwindBennicB
-    >>Abate |cRXP_ENEMY_Highlands Bandits::251918|r. Saqueie-os para obter |T5172975:0|t[|cRXP_LOOT_Pilfered Windstone|r].
+    >>Mate |cRXP_ENEMY_Bandidos do Planalto::251918|r. Pegue deles a |T5172975:0|t[|cRXP_LOOT_Pedra Eólica Roubada|r].
     .complete 92517,1 --|10/10 Highlands Bandit slain
     .complete 93319,1 --|10/10 Pilfered Windstone
     .mob +Highlands Bandit::251918
 step
     #completewith next
     #label BadwindBennicA
-    >>Abate |cRXP_ENEMY_"Badwind" Bennic::255534|r.
+    >>Mate |cRXP_ENEMY_Bennic "Malevento"::255534|r.
     .complete 92517,2 --|1/1 "Badwind" Bennic slain
     .mob "Badwind" Bennic::255534
 step
@@ -1442,27 +1462,27 @@ step
     .goto 2521,49.59,34.3,20,0
     .goto 2521,50.4,33.49,30,0
     .goto 2521,50.680,34.214
-    >>Abate |cRXP_ENEMY_"Badwind" Bennic::255534|r.
+    >>Mate |cRXP_ENEMY_Bennic "Malevento"::255534|r.
     .usespell 1259705
     .complete 92517,2 --|1/1 "Badwind" Bennic slain
     .mob "Badwind" Bennic::255534
 step << Alliance
     .isOnQuest 92517 -- The Criminal Element
     .subzoneskip 16674,1 -- Bandit Hideout
-    #arrowtext Usar |T236219:0|t[Ler Meridiano]\nperto do Meridiano
+    #arrowtext Use |T236219:0|t[Ler Meridianos]\nperto da Linha de Meridiano
     .goto 2521,50.59,33.51
-    .cast 1259705 >>Usar |T236219:0|t[Ler Meridianos] para aumento de 100% na regeneração passiva de Mana e Pontos de Vida.
+    .cast 1259705 >>Use |T236219:0|t[Ler Meridianos] para aumentar em 100% a regeneração passiva de mana e vida.
     .cooldown spell,1259705,>0,1
     .usespell 1259705
 step
     #completewith OutCave
-    >>Abate |cRXP_ENEMY_Galestrider::251661|r. Saqueie-os para obter |T133972:0|t[|cRXP_LOOT_Strider Carne|r] e |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Mate |cRXP_ENEMY_Vagaventos::251661|r. Pegue deles |T133972:0|t[|cRXP_LOOT_Carne de Moa|r] e |T132832:0|t[|cRXP_LOOT_Ovos Pequenos|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
 step
     #completewith OutCave
-    >>Mate os |cRXP_ENEMY_Prideclaws::251245|r. Saque-os para os |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
+    >>Mate |cRXP_ENEMY_Garraltivas::251245|r. Pegue deles as |T237416:0|t[|cRXP_LOOT_Pelagens de Garraltiva|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step
@@ -1479,21 +1499,21 @@ step
     .goto 2521,48.02,38.41,40,0
     .goto 2521,47.75,36.19,40,0
     .goto 2521,48.93,36.38,40,0
-    >>Mate |cRXP_ENEMY_Highlands Bandits::251918|r. Saqueie os |T5172975:0|t[|cRXP_LOOT_Pilfered Windstone|r].
+    >>Mate |cRXP_ENEMY_Bandidos do Planalto::251918|r. Pegue deles |T5172975:0|t[|cRXP_LOOT_Pedra Eólica Roubada|r].
     .complete 92517,1 --|10/10 Highlands Bandit slain
     .complete 93319,1 --|10/10 Pilfered Windstone
     .mob +Highlands Bandit::251918
 step
     #completewith To Shendalar
-    >>Mate os |cRXP_ENEMY_Galestrider::251661|r |cRXP_WARN_ao longo do caminho|r.
-    *Saqueie-os para |T133972:0|t[|cRXP_LOOT_Strider Carne|r] e |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Mate |cRXP_ENEMY_Vagaventos::251661|r |cRXP_WARN_pelo caminho|r.
+    *Pegue deles |T133972:0|t[|cRXP_LOOT_Carne de Moa|r] e |T132832:0|t[|cRXP_LOOT_Ovos Pequenos|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
 step
     #completewith To Shendalar
-    >>Mate os |cRXP_ENEMY_Prideclaws::251245|r |cRXP_WARN_ao longo do caminho|r.
-    *Saque os |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
+    >>Mate |cRXP_ENEMY_Garraltivas::251245|r |cRXP_WARN_pelo caminho|r.
+    *Pegue deles |T237416:0|t[|cRXP_LOOT_Pelagem de Garraltiva|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step
@@ -1502,17 +1522,17 @@ step
     .isOnQuest 94413 << Alliance -- A Magical Affront
     .isQuestNotComplete 94413 << Alliance -- A Magical Affront
     .goto 2521,43.86,43.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zerril Softbreeze::251905|r e compre 5 |T134059:0|t[Temperos Suaves].
-    .vendor 251905 >>Lixo de Mercador
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zerril Brisabranda::251905|r e compre 5 |T134059:0|t[Temperos Suaves].
+    .vendor 251905 >>Venda os lixos
     .collect 2678,5 -- Mild Spices
-    *Não venda |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeno Eggs] ou |T133972:0|t[Strider Carne]. << Alliance
-    *Não venda |T132832:0|t[Pequeno Eggs] nem |T133972:0|t[Strider Carne]. << Horde
-    *|cRXP_WARN_Precisamos deles para Culinária depois|r.
+    *Não venda |T133970:0|t[Acém], |T132832:0|t[Ovos Pequenos] ou |T133972:0|t[Carne de Moa]. << Alliance
+    *Não venda |T132832:0|t[Ovos Pequenos] e |T133972:0|t[Carne de Moa]. << Horde
+    *|cRXP_WARN_Precisaremos deles para Culinária mais tarde|r.
     .target Zerril Softbreeze::251905
     .skipgossipid 137550
 step
     .goto 2521,43.850,43.840
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Zerril Softbreeze::251905|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zerril Brisabranda::251905|r 
     .train 2550 >>Aprenda |T133971:0|t[Cozinheiro Aprendiz]
     .skipgossipid 137551
     .target Zerril Softbreeze::251905
@@ -1523,8 +1543,8 @@ step -- for people who send the items over
     .isQuestComplete 94411 << Horde -- Meddlesome Mages
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,43.851,43.848
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
-    .turnin 92553 >>Entregue Reabastecimento das Despensas
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zerril Brisabranda::251905|r
+    .turnin 92553 >>Entregue Reabastecendo a despensa
     .target Zerril Softbreeze::251905
 step
     .isQuestTurnedIn 92553 -- Restocking the Larders
@@ -1534,9 +1554,9 @@ step
     .train 2550,3 -- Cooking Trained
     .itemcount 6889,1 -- Small Egg
     .goto 2521,43.86,43.85
-    +Usar a |T132834:0|t[Ovo Assado com Ervas] macro abaixo para criar o máximo possível.
-    *|cRXP_WARN_A maioria dos alimentos buff concede 5% de experiência aumentada de mortes por 15 minutos. Procure manter este buff ativo enquanto sobe de nível|r.
-    .collect 2678,10 >>Compre 10 |T134059:0|t[Temperos Suaves].
+    +Use a macro de |T132834:0|t[Ovo Assado com Ervas] abaixo para preparar o máximo possível.
+    *|cRXP_WARN_A maioria das comidas com bônus aumenta em 5% a experiência obtida com abates por 15 minutos. Tente manter esse bônus ativo pelo máximo de tempo possível enquanto sobe de nível|r.
+    .collect 2678,10 >>compre 10 |T134059:0|t[Temperos Suaves].
     .disablecheckbox
     .macro Herb Baked Egg,132834 >>Ovo Assado com Ervas
 step
@@ -1550,9 +1570,9 @@ step
     .itemcount 6889,1 -- Small Egg
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,43.86,43.85
-    +Usar a |T132834:0|t[Ovo Assado com Ervas] macro abaixo para criar 1 para o bônus de experiência.
-    *|cRXP_WARN_A maioria dos alimentos buff concede 5% de experiência aumentada de mortes por 15 minutos. Procure manter este buff ativo enquanto sobe de nível|r.
-    .collect 2678,10 >>Compre 10 |T134059:0|t[Temperos Suaves].
+    +Use a macro de |T132834:0|t[Ovo Assado com Ervas] abaixo para preparar 1 e obter o bônus de experiência.
+    *|cRXP_WARN_A maioria das comidas com bônus aumenta em 5% a experiência obtida com abates por 15 minutos. Tente manter esse bônus ativo pelo máximo de tempo possível enquanto sobe de nível|r.
+    .collect 2678,10 >>compre 10 |T134059:0|t[Temperos Suaves].
     .disablecheckbox
     .macro Herb Baked Egg,132834 >>Ovo Assado com Ervas
 step
@@ -1565,35 +1585,35 @@ step
     .train 2550,3 -- Cooking Trained
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,43.86,43.85
-    +Usar a |T132834:0|t[Ovo Assado com Ervas] macro abaixo para criar todos os Ovos Pequenos além dos 3 reservados para Reabastecimento dos Larders.
-    *|cRXP_WARN_Guarde pelo menos 3 Ovos Pequenos para uma missão posterior|r
-    *|cRXP_WARN_A maioria dos alimentos buff concede 5% de experiência aumentada de mortes por 15 minutos. Procure manter este buff ativo enquanto sobe de nível|r.
-    .collect 2678,10 >>Compre 10 |T134059:0|t[Temperos Suaves].
+    +Use a macro de |T132834:0|t[Ovo Assado com Ervas] abaixo para preparar todos os Ovos Pequenos, exceto os 3 reservados para Reabastecendo a despensa.
+    *|cRXP_WARN_Guarde pelo menos 3 Ovos Pequenos para uma missão futura|r
+    *|cRXP_WARN_A maioria das comidas com bônus aumenta em 5% a experiência obtida com abates por 15 minutos. Tente manter esse bônus ativo pelo máximo de tempo possível enquanto sobe de nível|r.
+    .collect 2678,10 >>compre 10 |T134059:0|t[Temperos Suaves].
     .disablecheckbox
     .macro Herb Baked Egg,132834 >>Ovo Assado com Ervas
 -- Intentional repeat of level 6 class training for players who reached level 6 after the earlier trainer visit.
 step << Mage
     .goto 2521,45.1,45.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dorii Brightwhisper::251379|r.
-    .train 143 >>Treine |T135812:0|t[Bola de Fogo (Rank 2)]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dorii Soproluz::251379|r.
+    .train 143 >>Aprenda |T135812:0|t[Bola de Fogo (Grau 2)]
     .train 2136 >>Aprenda |T135807:0|t[Impacto de Fogo]
-    .train 1296017 >>Aprenda |T8188276:0|t[Comprehend Pergaminho]
+    .train 1296017 >>Aprenda |T8188276:0|t[Compreender Pergaminho]
     .skipgossipid 136807,1
     .target Dorii Brightwhisper::251379
     .money <0.03
     .xp <6,1
 step << Horde Shaman
     .goto 2521,43.454,44.872
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aarnor Galestrike::254082|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aarnor Ventataque::254082|r
     .trainer >>Treine suas magias de classe
     .target Aarnor Galestrike::254082
     .money <0.01
     .xp <6,1
 step << Rogue
     .goto 2521,43.16,43.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Mistblade::254087|r.
-    .train 1757 >>Treine |T136189:0|t[Golpe Sinistro (Rank 2)].
-    .train 1776 >>Treine |T132155:0|t[Esfaquear].
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Laminévoa::254087|r
+    .train 1757 >>Aprenda |T136189:0|t[Golpe Sinistro (Grau 2)]
+    .train 1776 >>Aprenda |T132155:0|t[Esfaquear]
     .train 1777,1 -- Gouge (Rank 2) Not Trained
     .skipgossipid 136810
     .target Miriaan Mistblade::254087
@@ -1601,24 +1621,24 @@ step << Rogue
     .xp <6,1
 step << Rogue
     .goto 2521,43.16,43.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Mistblade::254087|r.
-    .train 1757 >>Treine |T136189:0|t[Golpe Sinistro (Rank 2)]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Laminévoa::254087|r
+    .train 1757 >> Aprenda |T136189:0|t[Golpe Sinistro (Grau 2)]
     .skipgossipid 136810
     .target Miriaan Mistblade::254087
     .money <0.01
     .xp <6,1
 step << Warrior
     .goto 2521,44.95,45.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Corsan Earthrazer::254088|r
-    .train 3127 >>Treine |T132269:0|t[Aparar]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Corsan Destruterra::254088|r
+    .train 3127 >> Aprenda |T132269:0|t[Aparar]
     .skipgossipid 136813
     .target Corsan Earthrazer::254088
     .money <0.01
     .xp <6,1
 step << Hunter
     .goto 2521,45.263,44.236
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elayaa Easewind::254084|r.
-    .train 3044 >>Treine |T132218:0|t[Tiro Arcano]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elayaa Ventofácil::254084|r.
+    .train 3044 >>Aprenda |T132218:0|t[Tiro Arcano]
     .train 1130 >>Aprenda |T132212:0|t[Marca do Caçador]
     .skipgossipid 136808
     .target Elayaa Easewind::254084
@@ -1626,156 +1646,185 @@ step << Hunter
     .xp <6,1
 step << Druid
     .goto 2521,45.154,44.217
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Naeluna Recomposição Rápida::254081|r
-    .train 467 >>Treine |T136104:0|t[Espinhos]
-    .train 5177 >>Treine |T136006:0|t[Ira (Rank 2)]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Naeluna Ajudágil::254081|r
+    .train 467 >>Aprenda |T136104:0|t[Espinhos]
+    .train 5177 >>Aprenda |T136006:0|t[Ira (Grau 2)]
     .skipgossipid 136805
     .xp <6,1
     .money <0.02
     .target Naeluna Swiftmend::254081
-step << Mage/Druid/Shaman/Priest/Warlock/Paladin
+step << Rogue/Warrior/Paladin/Shaman
+    #optional
+    .itemcount 2835,1 -- Rough Stone
+    .goto 2521,44.89,44.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aedi Triforjado::251913|r.
+    *|cRXP_WARN_Pule esta etapa se já tiver duas profissões|r.
+    .train 2018 >>Aprenda |T136241:0|t[Ferraria]
+    .target Aedi Thriceforged::251913
+step << Rogue/Warrior/Paladin/Shaman
+    #optional
+    .itemcount 2835,1 -- Rough Stone
+    .train 2018,3 -- Blacksmithing Trained
+    #completewith next
+    +Abra |T136241:0|t[Ferraria], faça uma |T135248:0|t[Pedra de Afiar Rústica] e aplique-a na sua arma de corte. << Rogue
+    +Abra |T136241:0|t[Ferraria], faça um |T135255:0|t[Contrapeso Rústico] e aplique-o na sua arma contundente.  << Warrior/Paladin/Shaman
+    .usespell 2018
+step << Rogue/Warrior/Paladin/Shaman
+    #completewith Turn in The Adventurer
+    +Abandone Ferraria ou continue com ela.
+step << Mage/Druid/Shaman/Priest/Warlock/Paladin/Rogue/Warrior
     .goto 2521,44.465,44.966
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Teeri Wellwind::251906|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Teeri Benvento::251906|r
     .target Teeri Wellwind::251906
-    .turnin 93319 >>Entregue as Pedras do Vento Furtadas
+    .turnin 93319 >>Entregue Pedras eólicas roubadas
 step << Shaman
     .isQuestComplete 94411 -- Meddlesome Mages
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,44.790,44.168
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Tephri Thriceforged::257421|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tephri Triforjado::257421|r
     >>|cRXP_BUY_Compre e equipe uma|r |T135145:0|t[Bengala]
     .collect 2495,1 --Collect Walking Stick (1)
     .target Tephri Thriceforged::257421
     .money <0.0504
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.2
-step << Mage/Druid/Shaman/Priest/Warlock/Paladin
+step << Mage/Druid/Shaman/Priest/Warlock/Paladin/Rogue/Warrior
     .subzoneskip 16624,1 -- Shen'dar Village
     .isQuestAvailable 96638 -- The Adventurer
     .goto 2521,44.71,45.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Veena Vericloud::254358|r
-    .vendor 254358 >>|cRXP_BUY_Compre um|r |T133634:0|t[Pequeno Brown Pouch].
-    *|cRXP_BUY_Compre no máximo 10|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r
-    *|cRXP_WARN_Ao equipar mochilas, certifique-se de que sua Bolsa de Reagentes está no slot dedicado da Bolsa de Reagentes|r.
-    *Não venda |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeno Eggs] ou |T133972:0|t[Strider Carne]. << Alliance
-    *Não venda |T132832:0|t[Pequeno Eggs] nem |T133972:0|t[Strider Carne]. << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Veena Verinuvem::254358|r
+    .vendor 254358 >>|cRXP_BUY_Compre uma|r |T133634:0|t[Bolsa Marrom Pequena].
+    *|cRXP_BUY_Compre no máximo 10|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dela|r << Mage/Druid/Shaman/Priest/Warlock/Paladin
+    *|cRXP_WARN_Ao equipar bolsas, certifique-se de colocar sua Bolsa de Reagentes no espaço exclusivo para ela|r.
+    .collect 2946,1 >>|cRXP_BUY_Compre uma|r |T135641:0|t[Adaga de Arremesso Equilibrada]. << Rogue/Warrior
+    *Não venda |T133970:0|t[Acém], |T132832:0|t[Ovos Pequenos] ou |T133972:0|t[Carne de Moa]. << Alliance
+    *Não venda |T132832:0|t[Ovos Pequenos] e |T133972:0|t[Carne de Moa]. << Horde
     .target Veena Vericloud::254358
 step << Horde
     .goto 2521,43.518,44.783
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Illaya Amberwind::251902|r.
-    .turnin 94411 >>Entregue Meddlesome Mages
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Illaya Ventâmbar::251902|r.
+    .turnin 94411 >>Entregue Magos metidos
     .target Illaya Amberwind::251902
 step
     .goto 2521,43.37,45.86
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Contrato Disponível: Vulgara the Insaciável!|r
-    .accept 93318 >>Aceite WANTED: Vulgara the Insaciável
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClique na |cRXP_PICK_Recompensa: Vulgara, Insaciável!|r
+    .accept 93318 >>Aceite PROCURA-SE: Vulgara, a Insaciável
     .target Bounty Available: Vulgara the Insatiable!
 step << Warrior/Rogue
     .goto 2521,43.073,46.306
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Naleeia Tattermend::257018|r.
-    .train 3273 >>Treine Primeiros Socorros
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Naleeia Emendarrapo::257018|r.
+    .train 3273 >>Aprenda Primeiros Socorros
     .skipgossipid 137555
     .target Naleeia Tattermend::257018
 step
+    #label Turn in The Adventurer
     .goto 2521,41.67,44.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Wildwind::263664|r.
-    .turnin 96638 >>Entregue O Aventureiro
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Ventoferoz::263664|r.
+    .turnin 96638 >>Entregue O aventureiro
     .target Raan Wildwind::263664
-    .accept 96101 >>Aceite Os Territórios Selvagens
+    .accept 96101 >>Aceite Vida ao ar livre
 step
     .goto 2521,41.67,44.79
-    >>Clique na macro no painel Ativo Itens para se sentar.
+    >>Clique na macro no painel de Itens Ativos para sentar.
     .complete 96101,1 --1/1 Use the /sit emote near the campfire
     -- .emote SIT,263664 -- Feels like this is breaking the quest completion 50% of the time
     .macro Sit,134400 >>Sente-se
     .timer 59,Aguarde o RP
     .target Raan Wildwind::263664
 step
-    >>|cRXP_WARN_Permaneça sentado até ganhar o buff Melhorado Descansar|r.
-    *|cRXP_WARN_Você pode criar enquanto espera sem interromper o processo.|r
-    *|cRXP_WARN_Crie|r |T133974:0|t[Carne Tostada de Lobo] |cRXP_WARN_para aumentar sua habilidade de Culinária. Não use|r |T132832:0|t[Pequeno Eggs] << Alliance
-    *Se você não receber o efeito, saia do jogo e entre novamente, depois tente de novo.
+    .train 3273,3 -- First Aid Trained
+    .itemcount 2589,1 -- Linen Cloth
+    >>|cRXP_WARN_Permaneça sentado até receber o bônus Descanso Melhorado|r.
+    *|cRXP_WARN_Aproveite esse tempo para fazer|r |T133685:0|t[Bandagens de Linho].
+    *|cRXP_WARN_Você também pode renovar seus bônus enquanto espera|r.
+    .complete 96101,2 --Gain the Boosted Rest buff
+step
+    >>|cRXP_WARN_Permaneça sentado até receber o bônus Descanso Melhorado|r.
+    *|cRXP_WARN_Você pode fabricar itens enquanto espera sem interromper o processo|r.
+    *|cRXP_WARN_Você também pode renovar seus bônus enquanto espera|r.
+    *|cRXP_WARN_Prepare|r |T133974:0|t[Carne Tostada de Lobo] |cRXP_WARN_para aumentar sua habilidade em Culinária. Não use|r |T132832:0|t[Ovos Pequenos] << Alliance
+    *|cRXP_WARN_Se não receber o bônus, desconecte-se e entre novamente, depois tente outra vez|r.
     .complete 96101,2 --Gain the Boosted Rest buff
 step
     .goto 2521,41.67,44.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Wildwind::263664|r.
-    .turnin 96101 >>Entregue Os Territórios Selvagens
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Ventoferoz::263664|r.
+    .turnin 96101 >>Entregue Vida ao ar livre
     .target Raan Wildwind::263664
 step
     .subzoneskip 16624,1 -- Shen'dar Village
     .train 2575,3 -- Mining Trained
     .goto 2521,41.658,44.784
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Wildwind::263664|r
-    .accept 97970 >>Aceite Acampamento 101: Mineração
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Ventoferoz::263664|r
+    .accept 97970 >>Aceite Introdução ao Acampamento: Mineração
     .target Raan Wildwind::263664
 step
     .subzoneskip 16624,1 -- Shen'dar Village
     .train 8613,3 -- Skinning Trained
     .goto 2521,41.658,44.784
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Wildwind::263664|r
-    .accept 97971 >>Aceite Acampamento 101: Esfolamento
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Ventoferoz::263664|r
+    .accept 97971 >>Aceite Introdução ao Acampamento: Esfolamento
     .target Raan Wildwind::263664
 step
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,41.658,44.784
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Wildwind::263664|r
-    .accept 96646 >>Aceite Acampamento 101: Culinária
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Ventoferoz::263664|r
+    .accept 96646 >>Aceite Introdução ao Acampamento: Cozinha
     .target Raan Wildwind::263664
 step
     .subzoneskip 16624,1 -- Shen'dar Village
     .train 2366,3 -- Herbalism Trained
     .goto 2521,41.658,44.784
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Wildwind::263664|r
-    .accept 97968 >>Aceite Acampamento 101: Herborismo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Ventoferoz::263664|r
+    .accept 97968 >>Aceite Introdução ao Acampamento: Herborismo
     .target Raan Wildwind::263664
 step
     .subzoneskip 16624,1 -- Shen'dar Village
     .train 3273,3 -- First Aid Trained
     .goto 2521,41.658,44.784
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Wildwind::263664|r
-    .accept 97965 >>Aceite Acampamento 101: Primeiros Socorros
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Ventoferoz::263664|r
+    .accept 97965 >>Aceite Introdução ao Acampamento: Primeiros Socorros
     .target Raan Wildwind::263664
 step
     .subzoneskip 16624,1 -- Shen'dar Village
     .train 7620,3 -- Fishing Trained
     .goto 2521,41.658,44.784
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Wildwind::263664|r
-    .accept 97967 >>Aceite Acampamento 101: Pesca
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Ventoferoz::263664|r
+    .accept 97967 >>Aceite Introdução ao Acampamento: Pesca
     .target Raan Wildwind::263664
 step
     .subzoneskip 16624,1 -- Shen'dar Village
     .train 2259,3 -- Alchemy Trained
     .goto 2521,41.658,44.784
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Wildwind::263664|r
-    .accept 97963 >>Aceite Acampamento 101: Alquimia
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Ventoferoz::263664|r
+    .accept 97963 >>Aceite Introdução ao Acampamento: Alquimia
     .target Raan Wildwind::263664
 step
     .subzoneskip 16624,1 -- Shen'dar Village
     .train 2018,3 -- Blacksmithing Trained
     .goto 2521,41.658,44.784
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Wildwind::263664|r
-    .accept 97964 >>Aceite Acampamento 101: Ferraria
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Ventoferoz::263664|r
+    .accept 97964 >>Aceite Introdução ao Acampamento: Ferraria
     .target Raan Wildwind::263664
 step
     .subzoneskip 16624,1 -- Shen'dar Village
     .train 3908,3 -- Tailoring Trained
     .goto 2521,41.658,44.784
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Wildwind::263664|r
-    .accept 97973 >>Aceite Acampamento 101: Alfaiataria
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Ventoferoz::263664|r
+    .accept 97973 >>Aceite Introdução ao Acampamento: Alfaiataria
     .target Raan Wildwind::263664
 step
     .subzoneskip 16624,1 -- Shen'dar Village
     .train 7411,3 -- Enchanting Trained
     .goto 2521,41.658,44.784
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Wildwind::263664|r
-    .accept 98286 >>Aceite Acampamento 101: Encantamento
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Ventoferoz::263664|r
+    .accept 98286 >>Aceite Introdução ao Acampamento: Encantamento
     .target Raan Wildwind::263664
 step
     .train 2108,3 -- Leatherworking Trained
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,41.658,44.784
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Wildwind::263664|r
-    .accept 97969 >>Aceite Acampamento 101: Couraria
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raan Ventoferoz::263664|r
+    .accept 97969 >>Aceite Introdução ao Acampamento: Couraria
     .target Raan Wildwind::263664
 step << Horde
     #completewith HippogryphHarassmentA
@@ -1803,19 +1852,19 @@ step << Horde
     +1
 step
     #completewith HippogryphHarassmentA
-    >>Mate os |cRXP_ENEMY_Prideclaws::251245|r. Saque-os para os |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
-    *|cRXP_WARN_Toque um Tornado próximo para aumentar sua velocidade de movimento em 40% por 5 minutos. Infligir dano remove o efeito.|r
+    >>Mate |cRXP_ENEMY_Garraltivas::251245|r. Pegue deles as |T237416:0|t[|cRXP_LOOT_Pelagens de Garraltiva|r].
+    *|cRXP_WARN_Se houver um tornado por perto, toque nele para ganhar 40% de velocidade de movimento por 5 minutos. Causar dano remove o efeito|r.
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step
     #completewith HippogryphHarassmentA
-    >>Abate |cRXP_ENEMY_Galestrider::251661|r. Saqueie-os para obter |T133972:0|t[|cRXP_LOOT_Strider Carne|r] e |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Mate |cRXP_ENEMY_Vagaventos::251661|r. Pegue deles |T133972:0|t[|cRXP_LOOT_Carne de Moa|r] e |T132832:0|t[|cRXP_LOOT_Ovos Pequenos|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
 step << Alliance
     #completewith next
-    >>Abata |cRXP_ENEMY_Windshaper Novice Seer::257532|r.
+    >>Mate |cRXP_ENEMY_Vidente Noviço Moldavento::257532|r.
     .usespell 1259705
     .complete 94413,1 --6/6 Windshaper Novice Seer defeated
     .mob Windshaper Novice Seer::257532
@@ -1823,7 +1872,7 @@ step << Alliance
     .isOnQuest 94413 -- A Magical Affront
     .isQuestNotComplete 94413 -- A Magical Affront
     .goto 2521,39,47.37
-    .cast 1259705 >>Usar |T236219:0|t[Ler Meridianos] para aumento de 100% na regeneração passiva de Mana e Pontos de Vida.
+    .cast 1259705 >>Use |T236219:0|t[Ler Meridianos] para aumentar em 100% a regeneração passiva de mana e vida.
     .cooldown spell,1259705,>0,1
     .usespell 1259705
 step << Alliance
@@ -1831,8 +1880,8 @@ step << Alliance
     .goto 2521,37.96,46.86,40,0
     .goto 2521,38.75,48.72,40,0
     .goto 2521,38.99,47.24,40,0
-    >>Mate o |cRXP_ENEMY_Windshaper Novice Seer::257532|r.
-    *|cRXP_WARN_Atualizar|r |T236219:0|t[Ler Meridiano] |cRXP_WARN_near the Linha de Meridiano|r << Alliance
+    >>Mate |cRXP_ENEMY_Vidente Noviço Moldavento::257532|r.
+    *|cRXP_WARN_Renove|r |T236219:0|t[Ler Meridianos] |cRXP_WARN_perto da Linha de Meridiano|r << Alliance
     .usespell 1259705
     .complete 94413,1 --6/6 Windshaper Novice Seer defeated
     .mob Windshaper Novice Seer::257532
@@ -1840,9 +1889,9 @@ step
     .isOnQuest 92516 -- Hippogryph Harassment
     .isQuestNotComplete 92516 -- Hippogryph Harassment
     .subzoneskip 16623,1 -- Shen'dar Highlands
-    #arrowtext Pule da montanha\nUse |T132845:0|t[Passo on Ar]
+    #arrowtext Pule da montanha\nUse |T132845:0|t[Andar no Ar]
     .goto 2521,36.44,50.93
-    .cast 1259416 >>Pule da montanha e use |T132845:0|t[Passo on Ar] para voar em direção ao waypoint.
+    .cast 1259416 >>Pule da montanha e use |T132845:0|t[Andar no Ar] para planar em direção ao ponto indicado.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 step << Alliance
@@ -1851,7 +1900,7 @@ step << Alliance
     #loop
     .goto 2521,36.44,50.93,40,0
     .goto 2521,35.16,51.07,35,0
-    .goto 2521,34.12,51.6,37,0
+    .goto 2521,34.12,51.6,45,0
     .goto 2521,34.52,52.76,40,0
     .goto 2521,35.12,54.08,38,0
     .goto 2521,35.86,53.01,40,0
@@ -1871,9 +1920,9 @@ step << Alliance
     +1
 step
     #completewith next
-    >>Mate |cRXP_ENEMY_Hippogryph Youth::251291|r, |cRXP_ENEMY_Hippogryph Protector::251284|r e o |cRXP_ENEMY_Hippogryph Matriarch::251261|r.
-    *|cRXP_WARN_Fique atento para Windstones para se recuperar e Tornadoes para aumento de velocidade de movimento|r
-    *|cRXP_WARN_Priorize a |cRXP_ENEMY_Matriarch::251261|r|r
+    >>Mate |cRXP_ENEMY_Jovem Hipogrifo::251291|r, |cRXP_ENEMY_Protetor Hipogrifo::251284|r e o |cRXP_ENEMY_Matriarca Hipogrifo::251261|r.
+    *|cRXP_WARN_Fique atento às Pedras Eólicas para recuperar vida e mana e aos Tornados para ganhar um bônus de velocidade de movimento|r
+    *|cRXP_WARN_Priorize a |cRXP_ENEMY_Matriarca::251261|r|r
     .complete 92516,1 --|8/8 Hippogryph Youth slain
     .mob +Hippogryph Youth::251291
     .complete 92516,2 --|6/6 Hippogryph Protector slain
@@ -1881,12 +1930,12 @@ step
     .complete 92516,3 --|1/1 Hippogryph Matriarch slain
     .mob +Hippogryph Matriarch::251261
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Hipogrifo Downs|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClique nas |cRXP_PICK_Plumas de Hipogrifo|r.
     .complete 93951,1 --|8/8 Hippogryph Down
 step
     #label HippogryphHarassmentA
-    >>Mate |cRXP_ENEMY_Hippogryph Youth::251291|r, |cRXP_ENEMY_Hippogryph Protector::251284|r e o |cRXP_ENEMY_Hippogryph Matriarch::251261|r.
-    *|cRXP_WARN_Priorize a |cRXP_ENEMY_Matriarch::251261|r|r
+    >>Mate |cRXP_ENEMY_Jovem Hipogrifo::251291|r, |cRXP_ENEMY_Protetor Hipogrifo::251284|r e o |cRXP_ENEMY_Matriarca Hipogrifo::251261|r.
+    *|cRXP_WARN_Priorize a |cRXP_ENEMY_Matriarca::251261|r|r
     .complete 92516,1 --|8/8 Hippogryph Youth slain
     .mob +Hippogryph Youth::251291
     .complete 92516,2 --|6/6 Hippogryph Protector slain
@@ -1895,13 +1944,13 @@ step
     .mob +Hippogryph Matriarch::251261
 step
     #completewith VulgarasHeadA
-    >>Abate |cRXP_ENEMY_Galestrider::251661|r. Saqueie-os para obter |T133972:0|t[|cRXP_LOOT_Strider Carne|r] e |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Mate |cRXP_ENEMY_Vagaventos::251661|r. Pegue deles |T133972:0|t[|cRXP_LOOT_Carne de Moa|r] e |T132832:0|t[|cRXP_LOOT_Ovos Pequenos|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
 step
     #completewith VulgarasHeadA
-    >>Mate os |cRXP_ENEMY_Prideclaws::251245|r. Saque-os para os |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
+    >>Mate |cRXP_ENEMY_Garraltivas::251245|r. Pegue deles as |T237416:0|t[|cRXP_LOOT_Pelagens de Garraltiva|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step
@@ -1909,13 +1958,13 @@ step
     .goto 2521,43.079,51.028,15,0
     .goto 2521,42.978,51.803,15,0
     .goto 2521,42.75,52.68
-    >>Mate |cRXP_ENEMY_Vulgara::254589|r |cRXP_WARN_(nível 8 Élite)|r na montanha. Saque-o para |T4218759:0|t[|cRXP_LOOT_Cabeça de Vulgara|r].
-    *|cRXP_WARN_Procure um grupo para matá-lo ou pule a missão; as reaparições são longas|r
+    >>Mate |cRXP_ENEMY_Vulgara::254589|r |cRXP_WARN_(elite de nível 8)|r na montanha. Pegue a |T4218759:0|t[|cRXP_LOOT_Cabeça de Vulgara|r].
+    *|cRXP_WARN_Procure um grupo para matá-la ou pule a missão; ela demora para reaparecer|r.
     .complete 93318,1 --1/1 Vulgara's Head
     .mob Vulgara::254589
 step
     #completewith A Little Beauty
-    >>Abate |cRXP_ENEMY_Galestrider::251661|r. Saqueie-os para obter |T133972:0|t[|cRXP_LOOT_Strider Carne|r] e |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Mate |cRXP_ENEMY_Vagaventos::251661|r. Pegue deles |T133972:0|t[|cRXP_LOOT_Carne de Moa|r] e |T132832:0|t[|cRXP_LOOT_Ovos Pequenos|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
@@ -1929,7 +1978,7 @@ step
 --     .mob Prideclaw::251245
 step
     #completewith A Little Beauty
-    >>Mate os |cRXP_ENEMY_Prideclaws::251245|r. Saque-os para os |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
+    >>Mate |cRXP_ENEMY_Garraltivas::251245|r. Pegue deles as |T237416:0|t[|cRXP_LOOT_Pelagens de Garraltiva|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step
@@ -1937,34 +1986,34 @@ step
     .isQuestComplete 97965 -- Camping 101: First Aid
     .isQuestComplete 92516 -- Hippogryph Harassment
     .goto 2521,43.08,46.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Naleeia Tattermend::257018|r
-    .turnin 97965 >>Entregue Acampamento 101: Primeiros Socorros
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Naleeia Emendarrapo::257018|r
+    .turnin 97965 >>Entregue Introdução ao Acampamento: Primeiros Socorros
     .target Naleeia Tattermend::257018
 step
     .train 7411,3 -- Enchanting Trained
     .isQuestComplete 98286 -- Camping 101: Enchanting
     .isQuestComplete 92516 -- Hippogryph Harassment
     .goto 2521,43.25,43.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r.
-    .turnin 98286 >>Entregue Acampamento 101: Encantamento
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nasalanna Cantavento::257020|r
+    .turnin 98286 >>Entregue Introdução ao Acampamento: Encantamento
     .target Nasalanna Windsinger::257020
 step
     .train 8613,3 -- Skinning Trained
     .isQuestComplete 97971 -- Camping 101: Skinning
     .isQuestComplete 92516 -- Hippogryph Harassment
     .goto 2521,43.3,43.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mendalass Tattermend::257024|r
-    .turnin 97971 >>Entregue Acampamento 101: Esfolamento
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mendalass Emendarrapo::257024|r
+    .turnin 97971 >>Entregue Introdução ao Acampamento: Esfolamento
     .target Mendalass Tattermend::257024
 step
     .isQuestComplete 92516 -- Hippogryph Harassment
     .isQuestComplete 92553 -- Restocking the Larders
     .goto 2521,43.851,43.848
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zerril Softbreeze::251905|r e compre 5 |T134059:0|t[Temperos Suaves]
-    .vendor 251905 >>Lixo de Mercador
-    *Não venda |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeno Eggs] ou |T133972:0|t[Strider Carne]. << Alliance
-    *Não venda |T132832:0|t[Pequeno Eggs] nem |T133972:0|t[Strider Carne]. << Horde
-    *|cRXP_WARN_Precisamos deles para Culinária depois|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zerril Brisabranda::251905|r e compre 5 |T134059:0|t[Temperos Suaves]
+    .vendor 251905 >>Venda os lixos
+    *Não venda |T133970:0|t[Acém], |T132832:0|t[Ovos Pequenos] ou |T133972:0|t[Carne de Moa]. << Alliance
+    *Não venda |T132832:0|t[Ovos Pequenos] e |T133972:0|t[Carne de Moa]. << Horde
+    *|cRXP_WARN_Precisaremos deles para Culinária mais tarde|r.
     .collect 2678,5 -- Mild Spices
     .skipgossipid 137550
     .target Zerril Softbreeze::251905
@@ -1972,16 +2021,16 @@ step
     .isQuestComplete 92516 -- Hippogryph Harassment
     .isQuestComplete 92553 -- Restocking the Larders
     .goto 2521,43.851,43.848
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
-    .turnin 92553 >>Entregue Reabastecimento dos Larders
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zerril Brisabranda::251905|r
+    .turnin 92553 >>Entregue Reabastecendo a despensa
     .target Zerril Softbreeze::251905
 step
     .train 2550,3 -- Cooking Trained
     .isQuestComplete 96646 -- Camping 101: Cooking
     .isQuestComplete 92516 -- Hippogryph Harassment
     .goto 2521,43.851,43.848
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
-    .turnin 96646 >>Entregue Acampamento 101: Culinária
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zerril Brisabranda::251905|r
+    .turnin 96646 >>Entregue Introdução ao Acampamento: Cozinha
     .target Zerril Softbreeze::251905
 step
     .isQuestTurnedIn 92553 -- Restocking the Larders
@@ -1989,9 +2038,9 @@ step
     .train 2550,3 -- Cooking Trained
     .itemcount 6889,1 -- Small Egg
     .goto 2521,43.86,43.85
-    +Usar a |T132834:0|t[Ovo Assado com Ervas] macro abaixo para criar o máximo possível.
-    *|cRXP_WARN_A maioria dos alimentos buff concede 5% de experiência aumentada de mortes por 15 minutos. Procure manter este buff ativo enquanto sobe de nível|r.
-    .collect 2678,20 >>Compre 20 |T134059:0|t[Temperos Suaves].
+    +Use a macro de |T132834:0|t[Ovo Assado com Ervas] abaixo para preparar o máximo possível.
+    *|cRXP_WARN_A maioria das comidas com bônus aumenta em 5% a experiência obtida com abates por 15 minutos. Tente manter esse bônus ativo pelo máximo de tempo possível enquanto sobe de nível|r.
+    .collect 2678,20 >>compre 20 |T134059:0|t[Temperos Suaves].
     .disablecheckbox
     .macro Herb Baked Egg,132834 >>Ovo Assado com Ervas
 step
@@ -2002,9 +2051,9 @@ step
     .itemcount 6888,<1 -- Herb Baked Egg
     .itemcount 6889,1 -- Small Egg
     .goto 2521,43.86,43.85
-    +Usar a |T132834:0|t[Ovo Assado com Ervas] macro abaixo para criar 1 para o bônus de experiência.
-    *|cRXP_WARN_A maioria dos alimentos buff concede 5% de experiência aumentada de mortes por 15 minutos. Procure manter este buff ativo enquanto sobe de nível|r.
-    .collect 2678,20 >>Compre 20 |T134059:0|t[Temperos Suaves].
+    +Use a macro de |T132834:0|t[Ovo Assado com Ervas] abaixo para preparar 1 e obter o bônus de experiência.
+    *|cRXP_WARN_A maioria das comidas com bônus aumenta em 5% a experiência obtida com abates por 15 minutos. Tente manter esse bônus ativo pelo máximo de tempo possível enquanto sobe de nível|r.
+    .collect 2678,20 >>compre 20 |T134059:0|t[Temperos Suaves].
     .disablecheckbox
     .macro Herb Baked Egg,132834 >>Ovo Assado com Ervas
 step
@@ -2013,9 +2062,9 @@ step
     .train 2550,3 -- Cooking Trained
     .itemcount 6889,>3 -- Small Egg
     .goto 2521,43.86,43.85
-    +Usar a |T132834:0|t[Ovo Assado com Ervas] macro abaixo para criar todos os Ovos Pequenos além dos 3 reservados para Reabastecimento dos Larders.
-    *|cRXP_WARN_Guarde pelo menos 3 Ovos Pequenos para uma missão posterior|r
-    *|cRXP_WARN_A maioria dos alimentos com buff concede 5% de experiência aumentada de eliminações durante 15 minutos. Tente manter um tempo ativo elevado com este buff enquanto sobe de nível|r.
+    +Use a macro de |T132834:0|t[Ovo Assado com Ervas] abaixo para preparar todos os Ovos Pequenos, exceto os 3 reservados para Reabastecendo a despensa.
+    *|cRXP_WARN_Guarde pelo menos 3 Ovos Pequenos para uma missão futura|r
+    *|cRXP_WARN_A maioria das comidas com bônus aumenta em 5% a experiência obtida com abates por 15 minutos. Tente manter esse bônus ativo pelo máximo de tempo possível enquanto sobe de nível|r.
     .collect 2678,20 >>compre 20 |T134059:0|t[Temperos Suaves].
     .disablecheckbox
     .macro Herb Baked Egg,132834 >>Ovo Assado com Ervas
@@ -2024,67 +2073,67 @@ step
     .isQuestComplete 97963 -- Camping 101: Alchemy
     .isQuestComplete 92516 -- Hippogryph Harassment
     .goto 2521,43.7,43.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nyassa Swiftdraught::257019|r
-    .turnin 97963 >>Entregue Acampamento 101: Alquimia
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nyassa Estiágil::257019|r
+    .turnin 97963 >>Entregue Introdução ao Acampamento: Alquimia
     .target Nyassa Swiftdraught::257019
 step
     #label A Little Beauty
     .goto 2521,44.873,44.187
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Taleen Shimmerthread::251991|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Taleen Cintilinha::251991|r
     .target Taleen Shimmerthread::251991
-    .turnin 93951 >>Entregue A Little Bela
+    .turnin 93951 >>Entregue Leve beleza
 step
     .train 3908,3 -- Tailoring Trained
     .isQuestComplete 97973 -- Camping 101: Tailoring
     .isQuestComplete 92516 -- Hippogryph Harassment
     .goto 2521,44.88,44.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Taleen Shimmerthread::251991|r
-    .turnin 97973 >>Entregue Acampamento 101: Alfaiataria
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Taleen Cintilinha::251991|r
+    .turnin 97973 >>Entregue Introdução ao Acampamento: Alfaiataria
     .target Taleen Shimmerthread::251991
 step
     .train 2018,3 -- Blacksmithing Trained
     .isQuestComplete 97964 -- Camping 101: Blacksmithing
     .isQuestComplete 92516 -- Hippogryph Harassment
     .goto 2521,44.89,44.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aedi Thriceforged::251913|r
-    .turnin 97964 >>Entregue Acampamento 101: Ferraria
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aedi Triforjado::251913|r
+    .turnin 97964 >>Entregue Introdução ao Acampamento: Ferraria
     .target Aedi Thriceforged::251913
 step
     .train 2575,3 -- Mining Trained
     .isQuestComplete 97970 -- Camping 101: Mining
     .isQuestComplete 92516 -- Hippogryph Harassment
     .goto 2521,44.77,44.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Messana Crestwind::257022|r
-    .turnin 97970 >>Entregue Acampamento 101: Mineração
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Messana Ventauge::257022|r
+    .turnin 97970 >>Entregue Introdução ao Acampamento: Mineração
     .target Messana Crestwind::257022
 step
     .isQuestComplete 92515 -- The Problem With Prideclaws
     .isQuestAvailable 92516 -- Hippogryph Harassment
     .isQuestAvailable 93319 -- Pilfered Windstones
     .goto 2521,44.686,44.518
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Indari Sunseam::251993|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Indari Tramassol::251993|r
     .target Indari Sunseam::251993
-    .turnin 92515 >>Entregue The Problem With Prideclaws
+    .turnin 92515 >>Entregue O gargalo das garraltivas
 step
     .train 2108,3 -- Leatherworking Trained
     .isQuestComplete 97969 -- Camping 101: Leatherworking
     .isQuestComplete 92516 -- Hippogryph Harassment
     .goto 2521,44.69,44.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Indari Sunseam::251993|r
-    .turnin 97969 >>Entregue Acampamento 101: Couraria
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Indari Tramassol::251993|r
+    .turnin 97969 >>Entregue Introdução ao Acampamento: Couraria
     .target Indari Sunseam::251993
 step
     .goto 2521,44.465,44.966
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Teeri Wellwind::251906|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Teeri Benvento::251906|r
     .target Teeri Wellwind::251906
-    .turnin 92516 >>Entregue Assédio do Hipogrifo
-    .turnin 93319 >>Entregue as Pedras do Vento Furtadas
+    .turnin 92516 >>Entregue Hipogrifos hostis
+    .turnin 93319 >>Entregue Pedras eólicas roubadas
 step << Shaman/Druid
     .isQuestTurnedIn 92516 -- Hippogryph Harassment
     .isQuestTurnedIn 93319 -- Pilfered Windstones
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,44.790,44.168
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Tephri Thriceforged::257421|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tephri Triforjado::257421|r
     >>|cRXP_BUY_Compre e equipe uma|r |T135145:0|t[Bengala]
     .collect 2495,1 --Collect Walking Stick (1)
     .target Tephri Thriceforged::257421
@@ -2094,11 +2143,11 @@ step << Shaman/Druid
 step << Warrior
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,44.95,45.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Corsan Earthrazer::254088|r
-    .train 284 >>Treine |T132282:0|t[Golpe Heroico (Nível 2)]
-    .train 1715 >>Treine |T132316:0|t[Cortar Tendão]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Corsan Destruterra::254088|r
+    .train 284 >> Aprenda |T132282:0|t[Golpe Heroico (Grau 2)]
+    .train 1715 >> Aprenda |T132316:0|t[Cortar Tendão]
     .train 7372,1 -- Hamstring (Rank 2) Not Trained
-    .train 6343 >>Treine |T136105:0|t[Trovoada]
+    .train 6343 >> Aprenda |T136105:0|t[Trovoada]
     .train 8198,1 -- Thunder Clap (Rank 2) Not Trained
     .skipgossipid 136813
     .target Corsan Earthrazer::254088
@@ -2107,35 +2156,35 @@ step << Warrior
 step
     .isQuestComplete 93318 -- WANTED: Vulgara the Insatiable
     .goto 2521,45.234,45.186
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Danarii Bellowveil::252172|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Danarii Bramivéu::252172|r
     .target Danarii Bellowveil::252172
-    .turnin 93318 >>Entregue WANTED: Vulgara, a Insaciável
+    .turnin 93318 >>Entregue PROCURA-SE: Vulgara, a Insaciável
 step << Druid
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,45.153,44.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Naeluna Recomposição Rápida::254081|r.
-    .train 339 >>Treine |T136100:0|t[Raízes Enredantes]
-    .train 5186 >>Treine |T136041:0|t[Toque de Cura (Nível 2)]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Naeluna Ajudágil::254081|r.
+    .train 339 >>Aprenda |T136100:0|t[Raízes Enredantes]
+    .train 5186 >>Aprenda |T136041:0|t[Toque de Cura (Grau 2)]
     .skipgossipid 136805
     .xp <8,1
     .money <0.04
     .target Naeluna Swiftmend::254081
 step << Hunter
     .goto 2521,45.263,44.236
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elayaa Easewind::254084|r.
-    .train 5116 >>Treine |T135860:0|t[Tiro de Concussão]
-    .train 3127 >>Treine |T132269:0|t[Aparar]
-    .train 14260 >>Treine |T132223:0|t[Golpe do Raptor (Nível 2)]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elayaa Ventofácil::254084|r.
+    .train 5116 >>Aprenda |T135860:0|t[Tiro de Concussão]
+    .train 3127 >>Aprenda |T132269:0|t[Aparar]
+    .train 14260 >>Aprenda |T132223:0|t[Golpe do Raptor (Grau 2)]
     .skipgossipid 136808
     .target Elayaa Easewind::254084
     .money <0.04
     .xp <8,1
 step
     .goto 2521,45.667,45.500
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Constable Aonda::251523|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Aonda::251523|r
     .target Constable Aonda::251523
-    .turnin 92517,3 >>Entregue The Criminal Element
-    .accept 93036 >>Aceite Infiltrando o Culto
+    .turnin 92517,3 >>Entregue O elemento criminoso
+    .accept 93036 >>Aceite Infiltrando-se na seita
 -- step << Hunter
 --     .subzoneskip 16624,1 -- Shen'dar Village
 --     .goto 2521,45.263,44.236
@@ -2157,39 +2206,39 @@ step
 --     .xp <8,1
 step
     .goto 2521,44.831,45.515
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sania Silverstream::251904|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sania Fluviprata::251904|r
     .target Sania Silverstream::251904
-    .turnin 93036 >>Entregue Infiltrando o Culto
-    .accept 92529 >>Aceite Falaath Village
+    .turnin 93036 >>Entregue Infiltrando-se na seita
+    .accept 92529 >>Aceite Aldeia de Falaath
 step << Alliance/Horde !Shaman
     .subzoneskip 16624,1 -- Shen'dar Village
     .isOnQuest 94413 << Alliance -- Magical Affront
     .isQuestAvailable 92529 << Horde -- Falaath Village
     .goto 2521,44.71,45.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Veena Vericloud::254358|r
-    .vendor 254358 >>|cRXP_BUY_Compre até três|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_conforme necessário|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Veena Verinuvem::254358|r
+    .vendor 254358 >>|cRXP_BUY_Compre até três|r |T133634:0|t[Bolsas Marrons Pequenas] |cRXP_BUY_conforme necessário|r.
     >>|cRXP_BUY_Compre até 10|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r << Druid/Mage/Priest/Warlock/Paladin
-    *|cRXP_WARN_Ao equipar bolsas, certifique-se de que sua Bolsa de Reagentes está no espaço dedicado à Bolsa de Reagentes|r.
-    *Não venda |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeno Eggs] ou |T133972:0|t[Strider Carne]. << Alliance
-    *Não venda |T132832:0|t[Pequeno Eggs] nem |T133972:0|t[Strider Carne]. << Horde
+    *|cRXP_WARN_Ao equipar bolsas, certifique-se de colocar sua Bolsa de Reagentes no espaço exclusivo para ela|r.
+    *Não venda |T133970:0|t[Acém], |T132832:0|t[Ovos Pequenos] ou |T133972:0|t[Carne de Moa]. << Alliance
+    *Não venda |T132832:0|t[Ovos Pequenos] e |T133972:0|t[Carne de Moa]. << Horde
     .target Veena Vericloud::254358
 step
     .isOnQuest 92529 -- Falaath Village
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,44.831,45.515
     .target Sania Silverstream::251904
-    .aura 1254832 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sania Silverstream::251904|r
+    .aura 1254832 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sania Fluviprata::251904|r
     .skipgossipid 135874
 step << Horde Shaman
     .goto 2521,43.454,44.872
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aarnor Galestrike::254082|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aarnor Ventataque::254082|r
     .trainer >>Treine suas magias de classe
     .target Aarnor Galestrike::254082
     .money <0.10
     .xp <8,1
 step << Shaman/Druid
     .goto 2521,44.790,44.168
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Tephri Thriceforged::257421|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tephri Triforjado::257421|r
     >>|cRXP_BUY_Compre e equipe uma|r |T135145:0|t[Bengala]
     .collect 2495,1 --Collect Walking Stick (1)
     .target Tephri Thriceforged::257421
@@ -2200,26 +2249,26 @@ step << Horde Shaman
     .subzoneskip 16624,1 -- Shen'dar Village
     .isQuestAvailable 92529 << Horde -- Falaath Village
     .goto 2521,44.71,45.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Veena Vericloud::254358|r
-    .vendor 254358 >>|cRXP_BUY_Compre até três|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_conforme necessário|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Veena Verinuvem::254358|r
+    .vendor 254358 >>|cRXP_BUY_Compre até três|r |T133634:0|t[Bolsas Marrons Pequenas] |cRXP_BUY_conforme necessário|r.
     >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r << Druid/Mage/Priest/Warlock/Paladin
-    *|cRXP_WARN_Ao equipar bolsas, certifique-se de que sua Bolsa de Reagentes está no espaço dedicado à Bolsa de Reagentes|r.
-    *Não venda |T132832:0|t[Pequeno Eggs] nem |T133972:0|t[Strider Carne]. << Horde
+    *|cRXP_WARN_Ao equipar bolsas, certifique-se de colocar sua Bolsa de Reagentes no espaço exclusivo para ela|r.
+    *Não venda |T132832:0|t[Ovos Pequenos] e |T133972:0|t[Carne de Moa]. << Horde
     .target Veena Vericloud::254358
 step << Mage
     .goto 2521,45.1,45.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Shenaan Spellwind::254086|r
-    .train 5143 >>Treine |T136096:0|t[Mísseis Arcanos]
-    .train 205 >>Treine |T135846:0|t[Seta de Gelo (Nível 2)]
-    .train 118 >>Treine |T136071:0|t[Polimorfia]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shenaan Feitivento::254086|r
+    .train 5143 >> Aprenda |T136096:0|t[Mísseis Arcanos]
+    .train 205 >> Aprenda |T135846:0|t[Seta de Gelo (Grau 2)]
+    .train 118 >> Aprenda |T136071:0|t[Polimorfia]
     .skipgossipid 136807
     .target Shenaan Spellwind::254086
     .money <0.06
     .xp <8,1
 step << Mage
     .goto 2521,45.1,45.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Shenaan Spellwind::254086|r
-    .train 5143 >>Treine |T136096:0|t[Mísseis Arcanos]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shenaan Feitivento::254086|r
+    .train 5143 >> Aprenda |T136096:0|t[Mísseis Arcanos]
     -- .train 205 >> Train |T135846:0|t[Frostbolt (Rank 2)]
     -- .train 118 >> Train |T136071:0|t[Polymorph]
     .skipgossipid 136807
@@ -2228,31 +2277,31 @@ step << Mage
     .xp <8,1
 step << Alliance
     .goto 2521,44.979,46.365
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rathiril Sunlance::251903|r.
-    .turnin 94413 >>Entregue A Magical Affront
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rathiril Arrebol::251903|r.
+    .turnin 94413 >>Entregue Uma afronta mágica
     .target Rathiril Sunlance::251903
 step
     .train 7620,3 -- Fishing Trained
     .isQuestComplete 97967 -- Camping 101: Fishing
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,45.03,48.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Fenn Fairweather::251992|r
-    .turnin 97967 >>Entregue Acampamento 101: Pesca
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Fenn Bontempo::251992|r
+    .turnin 97967 >>Entregue Introdução ao Acampamento: Pesca
     .target Fenn Fairweather::251992
 step
     #completewith LivingLightningA
-    >>Abate |cRXP_ENEMY_Galestrider::251661|r. Saqueie-os para obter |T133972:0|t[|cRXP_LOOT_Strider Carne|r] e |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Mate |cRXP_ENEMY_Vagaventos::251661|r. Pegue deles |T133972:0|t[|cRXP_LOOT_Carne de Moa|r] e |T132832:0|t[|cRXP_LOOT_Ovos Pequenos|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
 step << Horde
     #completewith LivingLightningA
-    >>Mate os |cRXP_ENEMY_Prideclaws::251245|r. Saque-os para os |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
+    >>Mate |cRXP_ENEMY_Garraltivas::251245|r. Pegue deles as |T237416:0|t[|cRXP_LOOT_Pelagens de Garraltiva|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step << Alliance
     #completewith Skypriest Aanders
-    >>Mate os |cRXP_ENEMY_Prideclaws::251245|r. Saque-os para os |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
+    >>Mate |cRXP_ENEMY_Garraltivas::251245|r. Pegue deles as |T237416:0|t[|cRXP_LOOT_Pelagens de Garraltiva|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step
@@ -2260,28 +2309,28 @@ step
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,45.374,53.512,25,0
     .goto 2521,46.880,56.242
-    .cast 1259416 >>Pule da montanha e use |T132845:0|t[Passo on Ar] para voar até o mestre da missão.
+    .cast 1259416 >>Pule da montanha e use |T132845:0|t[Andar no Ar] para planar até o PNJ que oferece a missão.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 step
     .goto 2521,45.412,53.485,20,0
     .goto 2521,46.880,56.242
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Missionary Jasaan::257065|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Missionário Jasaan::257065|r
     .target Missionary Jasaan::257065
-    .turnin 92529 >>Vire em Falaath Village
-    .accept 92528 >>Aceite Among the Faithful
+    .turnin 92529 >>Entregue Aldeia de Falaath
+    .accept 92528 >>Aceite Entre os fiéis
     .use 2454 << Warrior/Rogue
 step
     .isOnQuest 92528 -- Among the Faithful
     .subzoneskip 16636,1 -- Falaath Village
     .goto 2521,46.89,56.24
     .target Sania Silverstream::251904
-    .aura 1254832 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sania Silverstream::251904|r
+    .aura 1254832 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sania Fluviprata::251904|r
     .skipgossipid 137586 -- I seem to have lost my mark of Akir. Would you please bestow it upon me once more?
 step << Horde
     .isOnQuest 92528 -- Among the Faithful
     .goto 2521,48.497,55.827
-    .cast 1259686 >>Usar |T1029587:0|t[Skysight] para o buff de 10% de velocidade de movimento.
+    .cast 1259686 >>Use |T1029587:0|t[Visão do Céu] para obter o bônus de 10% de velocidade de movimento.
     .cooldown spell,1259686,>0,1
 step
     #completewith next
@@ -2289,36 +2338,37 @@ step
     .goto 2521,48.74,53.89,10,0
     .goto 2521,49.06,53.48,10,0
     .goto 2521,48.76,53.68,10,0
-    >>Após clicar no Guarda-roupa, retorne à cidade.
+    >>Após clicar no Guarda-roupa, volte à cidade.
     .complete 92528,1 --1/1 Learn about the cultists' plans
 step
     #completewith plans
     .goto 2521,48.85,53.91
-    .gossipoption 136768 >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Guarda-roupa|r no segundo andar.
-    *|cRXP_WARN_Se alguém já fez, terminará de qualquer forma|r
+    .gossipoption 136768 >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Guarda-roupa|r |cRXP_WARN_no segundo andar|r.
+    *|cRXP_WARN_Se alguém já tiver feito isso, a missão será concluída mesmo assim|r
     .timer 14,Aguarde o RP
     .skipgossipid 136768
 step
     #requires plans
     .goto 2521,48.6,54.69,30,0
     .goto 2521,46.44,51.34,30,0
-    >>Retorne à cidade e espere a encenação.
+    >>Volte à cidade e aguarde a cena.
+    *|cRXP_WARN_Se vir um Tornado, use-o para se deslocar mais rápido|r.
     .complete 92528,1 --1/1 Learn about the cultists' plans
 step
     .isOnQuest 92528 -- Among the Faithful
     .subzoneskip 16624 -- Shen'dar Village
     .goto 2521,46.86,51.54,25,0
     .goto 2521,44.37,46.69
-    .cast 1259416 >>Pule da montanha e use |T132845:0|t[Andar no Ar] para voar em direção ao waypoint.
+    .cast 1259416 >>Pule da montanha e use |T132845:0|t[Andar no Ar] para planar até o ponto indicado.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 step << Rogue
     .isQuestAvailable 92528 -- Among the Faithful
     .goto 2521,44.37,46.69,30,0
     .goto 2521,43.15,43.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Mistblade::254087|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miriaan Laminévoa::254087|r
     .train 5277 >>Aprenda |T136205:0|t[Evasão]
-    .train 6760 >>Aprenda |T132292:0|t[Eviscerar (Rank 2)]
+    .train 6760 >>Aprenda |T132292:0|t[Eviscerar (Grau 2)]
     .skipgossipid 136810
     .target Miriaan Mistblade::254087
     .money <0.04
@@ -2330,20 +2380,20 @@ step
     .goto 2521,45.21,46.63,30,0 << !Rogue
     .goto 2521,45.04,46.23,15,0 << !Rogue
     .goto 2521,45.67,45.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Constable Aonda::251523|r.
-    .turnin 92528,1 >>Vire em Among the Faithful << Mage/Druid/Shaman/Priest/Warlock
-    .turnin 92528,2 >>Vire em Among the Faithful << Warrior/Rogue/Paladin
-    .turnin 92528,3 >>Vire em Among the Faithful << Hunter
-    .accept 92550 >>Aceite Devastação in the Highlands
-    .accept 93926 >>Aceite The Western Vigiar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Aonda::251523|r.
+    .turnin 92528,1 >>Entregue Entre os fiéis << Mage/Druid/Shaman/Priest/Warlock
+    .turnin 92528,2 >>Entregue Entre os fiéis << Warrior/Rogue/Paladin
+    .turnin 92528,3 >>Entregue Entre os fiéis << Hunter
+    .accept 92550 >>Aceite Pânico no planalto
+    .accept 93926 >>Aceite O Posto do Oeste
     .target Constable Aonda::251523
 step
     .goto 2521,45.25,45.18
-    *|cRXP_WARN_Equipe a|r |T454058:0|t[Stained Adaga Ritualística] << Mage/Druid/Shaman/Priest/Warlock
-    *|cRXP_WARN_Equipe a|r |T7789512:0|t[Curved Cimitarra] << Warrior/Rogue/Paladin
-    *|cRXP_WARN_Equipe o|r |T135493:0|t[Levado pelo Vento Shortbow] << Hunter
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Danarii Bellowveil::252172|r.
-    .accept 92551 >>Aceite Suprimentos Roubados
+    *|cRXP_WARN_Equipe a|r |T454058:0|t[Adaga Ritual Manchada] << Mage/Druid/Shaman/Priest/Warlock
+    *|cRXP_WARN_Equipe a|r |T7789512:0|t[Cimitarra Curva] << Warrior/Rogue/Paladin
+    *|cRXP_WARN_Equipe o|r |T135493:0|t[Arco Curto Levado pelo Vento] << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Danarii Bramivéu::252172|r.
+    .accept 92551 >>Aceite Suprimentos roubados
     .target Danarii Bellowveil::252172
 step
 	.isOnQuest 93926 -- The Western Watch
@@ -2352,7 +2402,7 @@ step
     .goto 2521,45.35,46.79,20,0
     .goto 2521,44.05,49.98,30,0
     .goto 2521,43.02,49.86
-    .subzone 17674 >>Morra a sudoeste de Shen'dar Village e reapareça no |cRXP_FRIENDLY_Spirit Curador::6491|r
+    .subzone 17674 >>Morra a sudoeste da Aldeia de Shen'dar e ressuscite no |cRXP_FRIENDLY_Anjo da Cura::6491|r
     .macro Sit,134400 >>Sente-se
 step
     #completewith next
@@ -2360,7 +2410,7 @@ step
     .isOnQuest 93926 -- The Western Watch
     .isQuestNotComplete 93926 -- The Western Watch
     .subzoneskip 17674,1 -- West Pylon Watchtower
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Peacekeeper Vaniel::252155|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Pacificador Vaaniel::252155|r.
     .complete 93926,1 --1/1 Check in on the Western Watchtower in the Shen'dar Highlands
 step
     #completewith Western Watchtower
@@ -2370,36 +2420,36 @@ step
     .subzoneskip 17674,1 -- West Pylon Watchtower
     .showwhiledead
     .goto 2521,40.23,63.83
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Espírito Curador::6491|r.
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anjo da Cura::6491|r.
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer::6491
 step
     #requires Western Watchtower
     .goto 2521,42.32,62.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Peacekeeper Vaaniel::252155|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Pacificador Vaaniel::252155|r.
     .complete 93926,1 --1/1 Check in on the Western Watchtower in the Shen'dar Highlands
     .target Peacekeeper Vaaniel::252155
 step
     .goto 2521,42.33,62.01
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClique em |cRXP_PICK_Peacekeeper Vaaniel::252155|r
-    .turnin 93926 >>Entregue The Western Vigiar
-    .accept 93927 >>Aceite A Último Request
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Pacificador Vaaniel::252155|r
+    .turnin 93926 >>Entregue O Posto do Oeste
+    .accept 93927 >>Aceite Último pedido
     .target Peacekeeper Vaaniel::252155
 step
     .goto 2521,42.38,62.07
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClique na |cRXP_PICK_Bloody Nota|r.
-    *|cRXP_WARN_Mantenha um espaço livre na mochila.|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClique na |cRXP_PICK_Nota sangrenta|r.
+    *|cRXP_WARN_Mantenha um espaço livre nas bolsas|r.
     .complete 93927,1 --1/1 Collect and read the note
 step
     .goto 2521,40.988,64.088
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClique em |cRXP_PICK_Arvensus Shadowsong|r\n de longe.
-    *|cRXP_WARN_Mantenha um espaço livre na mochila.|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Arvensus Cantonegro|r\n |cRXP_WARN_de longe|r.
+    *|cRXP_WARN_Mantenha um espaço livre nas bolsas|r.
     .complete 93927,4 --1/1 Shadowsong Family Signet
 step
     .goto 2521,41.12,64.09
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClique em |cRXP_PICK_Raani Windgazer|r\n de longe.
-    *|cRXP_WARN_Mantenha um espaço de mochila livre.|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClique em |cRXP_PICK_Raani Fitaventos|r\n |cRXP_WARN_de longe|r.
+    *|cRXP_WARN_Mantenha um espaço livre nas bolsas|r.
     .complete 93927,3 --1/1 Raani's Favorite Feather
 step
     #label Skypriest Aanders
@@ -2411,7 +2461,7 @@ step
     .goto 2521,41.08,64.27,4,0
     .goto 2521,40.94,64.2,4,0
     .goto 2521,41.08,64.39
-    >>Suba a escada em espiral, depois mate |cRXP_ENEMY_Skypriest Aanders::256966|r no topo da torre.
+    >>Suba a escada em espiral e mate |cRXP_ENEMY_Sacerdote do Céu Aanders::256966|r no topo da torre.
     .complete 93927,2 --1/1 Skypriest Aanders slain
     .mob Skypriest Aanders::256966
 step
@@ -2419,25 +2469,25 @@ step
     .isOnQuest 92551 -- Stolen Supplies
     .isQuestNotComplete 92551 -- Stolen Supplies
     .goto 2521,50.29,56.95
-    .cast 1259416 >>Salte da torre e use |T132845:0|t[Passo on Ar] para voar em direção ao ponto de encontro.
+    .cast 1259416 >>Pule da torre e use |T132845:0|t[Andar no Ar] para planar até o ponto indicado.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 step  << Alliance
     #completewith NearCommander
-    >>Abata |cRXP_ENEMY_Al'Aketh Tempestário::252068|r e saqueie |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Suprimentos|r].
-    >>|TInterface/cursor/crosshair/interact.blp:16|tClique nos |cRXP_PICK_Baús de Abastecimento|r (pequenas bolsas).
+    >>Mate |cRXP_ENEMY_Tempestário Al'Aketh::252068|r e pegue |T133647:0|t[|cRXP_LOOT_Suprimentos de Shen'dar Roubados|r].
+    >>|TInterface/cursor/crosshair/interact.blp:16|tClique nos |cRXP_PICK_Baús de Suprimentos|r (pequenas bolsas).
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
     .mob +Al'Aketh Stormcaller::252068
 step << Alliance
     #completewith NearCommander
-    >>Abate |cRXP_ENEMY_Galestrider::251661|r. Saqueie-os para obter |T133972:0|t[|cRXP_LOOT_Strider Carne|r] e |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Mate |cRXP_ENEMY_Vagaventos::251661|r. Pegue deles |T133972:0|t[|cRXP_LOOT_Carne de Moa|r] e |T132832:0|t[|cRXP_LOOT_Ovos Pequenos|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
 step << Alliance
     #completewith NearCommander
-    >>Mate os |cRXP_ENEMY_Prideclaws::251245|r. Saque-os para os |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
+    >>Mate |cRXP_ENEMY_Garraltivas::251245|r. Pegue deles as |T237416:0|t[|cRXP_LOOT_Pelagens de Garraltiva|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step << Alliance
@@ -2446,28 +2496,28 @@ step << Alliance
     .isOnQuest 92550 -- Havoc in the Highlands
     .goto 2521,45.48,58.73,30,0
     .goto 2521,48.36,58.49
-    .cast 1259705 >>Usar |T236219:0|t[Ler Meridianos] para aumento de 100% na regeneração passiva de Mana e Pontos de Vida.
+    .cast 1259705 >>Use |T236219:0|t[Ler Meridianos] para aumentar em 100% a regeneração passiva de mana e vida.
     .cooldown spell,1259705,>0,1
     .usespell 1259705
 step << Alliance
     #completewith CommanderCyclasHeadA
-    >>Abate |cRXP_ENEMY_Galestrider::251661|r. Saqueie-os para obter |T133972:0|t[|cRXP_LOOT_Strider Carne|r] e |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Mate |cRXP_ENEMY_Vagaventos::251661|r. Pegue deles |T133972:0|t[|cRXP_LOOT_Carne de Moa|r] e |T132832:0|t[|cRXP_LOOT_Ovos Pequenos|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
 step << Alliance
     #completewith CommanderCyclasHeadA
-    >>Mate os |cRXP_ENEMY_Prideclaws::251245|r. Saque-os para os |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
+    >>Mate |cRXP_ENEMY_Garraltivas::251245|r. Pegue deles as |T237416:0|t[|cRXP_LOOT_Pelagens de Garraltiva|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step
     #completewith CommanderCyclasHeadA
-    >>Abata |cRXP_ENEMY_Living Raio::251662|r.
+    >>Mate |cRXP_ENEMY_Raio Vivo::251662|r.
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning::251662
 step
     #completewith CommanderCyclasHeadA
-    >>Abata |cRXP_ENEMY_Al'Aketh Tempestário::252068|r e saqueie |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Suprimentos|r].
+    >>Mate |cRXP_ENEMY_Tempestário Al'Aketh::252068|r e pegue |T133647:0|t[|cRXP_LOOT_Suprimentos de Shen'dar Roubados|r].
     >>|TInterface/cursor/crosshair/interact.blp:16|tClique nos |cRXP_PICK_Baús de Suprimentos|r.
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
@@ -2477,7 +2527,7 @@ step
     .goto 2521,49.779,57.330,15,0
     .goto 2521,49.886,56.504,20,0
     .goto 2521,50.38,56.93
-    >>Abata |cRXP_ENEMY_Commander Cyclas::251966|r e saqueie |T134161:0|t[|cRXP_LOOT_Commander Cyclas's Cabeça|r].
+    >>Mate |cRXP_ENEMY_Comandante Cyclas::251966|r e pegue |T134161:0|t[|cRXP_LOOT_Cabeça do Comandante Cyclas|r].
     .complete 92550,3 --1/1 Commander Cyclas's Head
     .mob Commander Cyclas::251966
 step
@@ -2496,27 +2546,27 @@ step
     +1
 step
     #completewith next
-    >>Abata |cRXP_ENEMY_Living Raio::251662|r.
+    >>Mate |cRXP_ENEMY_Raio Vivo::251662|r.
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning::251662
 step
-    >>Abata |cRXP_ENEMY_Al'Aketh Tempestário::252068|r e saqueie |T133647:0|t[|cRXP_LOOT_Stolen Shen'dar Suprimentos|r].
+    >>Mate |cRXP_ENEMY_Tempestário Al'Aketh::252068|r e pegue |T133647:0|t[|cRXP_LOOT_Suprimentos de Shen'dar Roubados|r].
     >>|TInterface/cursor/crosshair/interact.blp:16|tClique nos |cRXP_PICK_Baús de Suprimentos|r.
     .complete 92550,1 --6/6 Al'Aketh Stormcaller slain
     .complete 92551,1 --10/10 Stolen Shen'dar Supplies
     .mob +Al'Aketh Stormcaller::252068
 step
     #label LivingLightningA
-    >>Abata |cRXP_ENEMY_Living Raio::251662|r.
+    >>Mate |cRXP_ENEMY_Raio Vivo::251662|r.
     .complete 92550,2 --4/4 Living Lightning slain
     .mob Living Lightning::251662
 step << Horde
     .isOnQuest 92550 -- Havoc in the Highlands
     .goto 2521,48.497,55.827
-    .cast 1259686 >>Usar |T1029587:0|t[Skysight] para o buff de 10% de velocidade de movimento.
+    .cast 1259686 >>Use |T1029587:0|t[Visão do Céu] para obter o bônus de 10% de velocidade de movimento.
     .cooldown spell,1259686,>0,1
 step
-    #completewith RestockingTheLaddersA
+    #completewith RestockingTheLardersA
     #hidewindow
     #loop
     .goto 2521,47.34,51.69,35,0
@@ -2536,17 +2586,17 @@ step
     +1
 step
     #completewith next
-    >>Abate |cRXP_ENEMY_Galestrider::251661|r. Saqueie-os para obter |T133972:0|t[|cRXP_LOOT_Strider Carne|r] e |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    >>Mate |cRXP_ENEMY_Vagaventos::251661|r. Pegue deles |T133972:0|t[|cRXP_LOOT_Carne de Moa|r] e |T132832:0|t[|cRXP_LOOT_Ovos Pequenos|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
 step
-    >>Mate os |cRXP_ENEMY_Prideclaws::251245|r. Saque-os para os |T237416:0|t[|cRXP_LOOT_Prideclaw Pelts|r].
+    >>Mate |cRXP_ENEMY_Garraltivas::251245|r. Pegue deles as |T237416:0|t[|cRXP_LOOT_Pelagens de Garraltiva|r].
     .complete 92515,1 --10/10 Prideclaw Pelt
     .mob Prideclaw::251245
 step
-    #label RestockingTheLaddersA
-    >>Abate |cRXP_ENEMY_Galestrider::251661|r. Saqueie-os para obter |T133972:0|t[|cRXP_LOOT_Strider Carne|r] e |T132832:0|t[|cRXP_LOOT_Small Eggs|r].
+    #label RestockingTheLardersA
+    >>Mate |cRXP_ENEMY_Vagaventos::251661|r. Pegue deles |T133972:0|t[|cRXP_LOOT_Carne de Moa|r] e |T132832:0|t[|cRXP_LOOT_Ovos Pequenos|r].
     .complete 92553,2 --8/8 Strider Meat
     .complete 92553,1 --3/3 Small Egg
     .mob +Galestrider::251661
@@ -2555,8 +2605,8 @@ step
     .isQuestComplete 97967 -- Camping 101: Fishing
     .isQuestComplete 92550 -- Havoc in the Highlands
     .goto 2521,45.03,48.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Fenn Fairweather::251992|r
-    .turnin 97967 >>Entregue Acampamento 101: Pesca
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Fenn Bontempo::251992|r
+    .turnin 97967 >>Entregue Introdução ao Acampamento: Pesca
     .target Fenn Fairweather::251992
 -- step
 --     --might cause issues when really unlucky with the pelt or strider quest
@@ -2577,58 +2627,58 @@ step
     .isQuestComplete 97965 -- Camping 101: First Aid
     .isQuestComplete 92550 -- Havoc in the Highlands
     .goto 2521,43.08,46.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Naleeia Tattermend::257018|r
-    .turnin 97965 >>Entregue Acampamento 101: Primeiros Socorros
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Naleeia Emendarrapo::257018|r
+    .turnin 97965 >>Entregue Introdução ao Acampamento: Primeiros Socorros
     .target Naleeia Tattermend::257018
 step
     .train 7411,3 -- Enchanting Trained
     .isQuestComplete 98286 -- Camping 101: Enchanting
     .isQuestComplete 92550 -- Havoc in the Highlands
     .goto 2521,43.25,43.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nasalanna Windsinger::257020|r.
-    .turnin 98286 >>Entregue Acampamento 101: Encantamento
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nasalanna Cantavento::257020|r
+    .turnin 98286 >>Entregue Introdução ao Acampamento: Encantamento
     .target Nasalanna Windsinger::257020
 step
     .train 8613,3 -- Skinning Trained
     .isQuestComplete 97971 -- Camping 101: Skinning
     .isQuestComplete 92550 -- Havoc in the Highlands
     .goto 2521,43.3,43.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mendalass Tattermend::257024|r
-    .turnin 97971 >>Entregue Acampamento 101: Esfolamento
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mendalass Emendarrapo::257024|r
+    .turnin 97971 >>Entregue Introdução ao Acampamento: Esfolamento
     .target Mendalass Tattermend::257024
 step
     .isQuestComplete 92550 -- Havoc in the Highlands
     .goto 2521,43.86,43.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zerril Softbreeze::251905|r e compre |T135237:0|t[Pederneira e Lenha].
-    *|cRXP_WARN_Você o usará com Madeira Simples para criar Fogueiras de Acampamento para Culinária depois|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zerril Brisabranda::251905|r e compre |T135237:0|t[Pederneira e Lenha].
+    *|cRXP_WARN_Você usará esse item com Madeira Simples para criar Fogueiras Básicas e cozinhar mais tarde|r.
     .collect 4471,1 -- Flint and Tinder
     .itemcount 4471,<1 -- Flint and Tinder
-    .vendor 251905 >>Lixo de Mercador
-    *Não venda |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeno Eggs] ou |T133972:0|t[Strider Carne]. << Alliance
-    *Não venda |T132832:0|t[Pequeno Eggs] nem |T133972:0|t[Strider Carne]. << Horde
-    *|cRXP_WARN_Precisamos deles para Culinária depois|r.
+    .vendor 251905 >>Venda os lixos
+    *Não venda |T133970:0|t[Acém], |T132832:0|t[Ovos Pequenos] ou |T133972:0|t[Carne de Moa]. << Alliance
+    *Não venda |T132832:0|t[Ovos Pequenos] e |T133972:0|t[Carne de Moa]. << Horde
+    *|cRXP_WARN_Precisaremos deles para Culinária mais tarde|r.
     .skipgossipid 137550 -- I would like to buy from you.
     .target Zerril Softbreeze::251905
 step
     .isQuestComplete 92550 -- Havoc in the Highlands
     .goto 2521,43.86,43.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zerril Softbreeze::251905|r e compre 5 |T135435:0|t[Madeira Simples].
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_ZZerril Brisabranda::251905|r e compre 5 |T135435:0|t[Madeira Simples].
     .collect 4470,5 -- Simple Wood
     .itemcount 4470,<5 -- Simple Wood
-    .vendor 251905 >>Lixo de Mercador
-    *Não venda |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeno Eggs] ou |T133972:0|t[Strider Carne]. << Alliance
-    *Não venda |T132832:0|t[Pequeno Eggs] nem |T133972:0|t[Strider Carne]. << Horde
-    *|cRXP_WARN_Precisamos deles para Culinária depois|r.
+    .vendor 251905 >>Venda os lixos
+    *Não venda |T133970:0|t[Acém], |T132832:0|t[Ovos Pequenos] ou |T133972:0|t[Carne de Moa]. << Alliance
+    *Não venda |T132832:0|t[Ovos Pequenos] e |T133972:0|t[Carne de Moa]. << Horde
+    *|cRXP_WARN_Precisaremos deles para Culinária mais tarde|r.
     .skipgossipid 137550 -- I would like to buy from you.
     .target Zerril Softbreeze::251905
 step
     .isQuestComplete 92550 -- Havoc in the Highlands
     .goto 2521,43.86,43.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Zerril Softbreeze::251905|r e compre 5 |T134059:0|t[Temperos Suaves].
-    .vendor 251905 >>Lixo de Mercador
-    *Não venda |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeno Eggs] ou |T133972:0|t[Strider Carne]. << Alliance
-    *Não venda |T132832:0|t[Pequeno Eggs] nem |T133972:0|t[Strider Carne]. << Horde
-    *|cRXP_WARN_Precisamos deles para Culinária depois|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zerril Brisabranda::251905|r e compre 5 |T134059:0|t[Temperos Suaves]
+    .vendor 251905 >>Venda os lixos
+    *Não venda |T133970:0|t[Acém], |T132832:0|t[Ovos Pequenos] ou |T133972:0|t[Carne de Moa]. << Alliance
+    *Não venda |T132832:0|t[Ovos Pequenos] e |T133972:0|t[Carne de Moa]. << Horde
+    *|cRXP_WARN_Precisaremos deles para Culinária mais tarde|r.
     .collect 2678,5 -- Mild Spices
     .itemcount 2678,<5 -- Mild Spices
     .skipgossipid 137550 -- I would like to buy from you.
@@ -2636,8 +2686,8 @@ step
 step
     .isQuestComplete 92553 -- Restocking the Larders
     .goto 2521,43.851,43.848
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
-    .turnin 92553 >>Entregue Reabastecimento das Despensas
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zerril Brisabranda::251905|r
+    .turnin 92553 >>Entregue Reabastecendo a despensa
     .target Zerril Softbreeze::251905
 step
     .isQuestTurnedIn 92553 -- Restocking the Larders
@@ -2645,92 +2695,92 @@ step
     .itemcount 6889,1 -- Small Egg
     .train 2550,3 -- Cooking Trained
     .goto 2521,43.86,43.85
-    +Usar a macro |T132834:0|t[Ovo Assado com Ervas] abaixo para criar o máximo possível.
-    *|cRXP_WARN_A maioria dos alimentos com buff concede 5% de experiência aumentada de eliminações durante 15 minutos. Tente manter um tempo ativo elevado com este buff enquanto sobe de nível|r.
+    +Use a macro de |T132834:0|t[Ovo Assado com Ervas] abaixo para preparar o máximo possível.
+    *|cRXP_WARN_A maioria das comidas com bônus aumenta em 5% a experiência obtida com abates por 15 minutos. Tente manter esse bônus ativo pelo máximo de tempo possível enquanto sobe de nível|r.
     .macro Herb Baked Egg,132834 >>Ovo Assado com Ervas
 step
     .train 2550,3 -- Cooking Trained
     .isQuestComplete 96646 -- Camping 101: Cooking
     .isQuestComplete 92550 -- Havoc in the Highlands
     .goto 2521,43.851,43.848
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Zerril Softbreeze::251905|r
-    .turnin 96646 >>Entregue Acampamento 101: Culinária
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zerril Brisabranda::251905|r
+    .turnin 96646 >>Entregue Introdução ao Acampamento: Cozinha
     .target Zerril Softbreeze::251905
 step
     .train 2259,3 -- Alchemy Trained
     .isQuestComplete 97963 -- Camping 101: Alchemy
     .isQuestComplete 92550 -- Havoc in the Highlands
     .goto 2521,43.7,43.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nyassa Swiftdraught::257019|r
-    .turnin 97963 >>Entregue Acampamento 101: Alquimia
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nyassa Estiágil::257019|r
+    .turnin 97963 >>Entregue Introdução ao Acampamento: Alquimia
     .target Nyassa Swiftdraught::257019
 step
     .train 3908,3 -- Tailoring Trained
     .isQuestComplete 97973 -- Camping 101: Tailoring
     .isQuestComplete 92550 -- Havoc in the Highlands
     .goto 2521,44.88,44.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Taleen Shimmerthread::251991|r
-    .turnin 97973 >>Entregue Acampamento 101: Alfaiataria
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Taleen Cintilinha::251991|r
+    .turnin 97973 >>Entregue Introdução ao Acampamento: Alfaiataria
     .target Taleen Shimmerthread::251991
 step
     .train 2018,3 -- Blacksmithing Trained
     .isQuestComplete 97964 -- Camping 101: Blacksmithing
     .isQuestComplete 92550 -- Havoc in the Highlands
     .goto 2521,44.89,44.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aedi Thriceforged::251913|r
-    .turnin 97964 >>Entregue Acampamento 101: Ferraria
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aedi Triforjado::251913|r
+    .turnin 97964 >>Entregue Introdução ao Acampamento: Ferraria
     .target Aedi Thriceforged::251913
 step
     .train 2575,3 -- Mining Trained
     .isQuestComplete 97970 -- Camping 101: Mining
     .isQuestComplete 92550 -- Havoc in the Highlands
     .goto 2521,44.77,44.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Messana Crestwind::257022|r
-    .turnin 97970 >>Entregue Acampamento 101: Mineração
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Messana Ventauge::257022|r
+    .turnin 97970 >>Entregue Introdução ao Acampamento: Mineração
     .target Messana Crestwind::257022
 step
     .isQuestComplete 92515 -- The Problem With Prideclaws
     .goto 2521,44.686,44.518
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Indari Sunseam::251993|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Indari Tramassol::251993|r
     .target Indari Sunseam::251993
-    .turnin 92515 >>Entregue The Problem With Prideclaws
+    .turnin 92515 >>Entregue O gargalo das garraltivas
 step
     .train 2108,3 -- Leatherworking Trained
     .isQuestComplete 97969 -- Camping 101: Leatherworking
     .isQuestComplete 92550 -- Havoc in the Highlands
     .goto 2521,44.69,44.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Indari Sunseam::251993|r
-    .turnin 97969 >>Entregue Acampamento 101: Couraria
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Indari Tramassol::251993|r
+    .turnin 97969 >>Entregue Introdução ao Acampamento: Couraria
     .target Indari Sunseam::251993
 step
     .subzoneskip 16624,1 -- Shen'dar Village
     .isQuestComplete 92550 -- Havoc in the Highlands
     .goto 2521,44.71,45.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Veena Vericloud::254358|r
-    .vendor 254358 >>Lixo de Mercador. |cRXP_BUY_Compre até três|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_conforme necessário|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Veena Verinuvem::254358|r
+    .vendor 254358 >>Venda o lixo. |cRXP_BUY_Compre até três|r |T133634:0|t[Bolsas Marrons Pequenas] |cRXP_BUY_conforme necessário|r.
     -- *|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Druid/Mage/Priest/Warlock/Paladin
-    *|cRXP_BUY_Compre|r |T132382:0|t[Rough Flechas] e |T132382:0|t[Sharp Flechas] << Hunter
-    *|cRXP_BUY_Compre|r [Flechas Afiadas] << Rogue
-    *|cRXP_WARN_Ao equipar bolsas, certifique-se de que sua Bolsa de Reagentes está no espaço dedicado à Bolsa de Reagentes|r.
-    *Não venda |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeno Eggs] ou |T133972:0|t[Strider Carne]. << Alliance
-    *Não venda |T132832:0|t[Pequeno Eggs] nem |T133972:0|t[Strider Carne]. << Horde
+    *|cRXP_BUY_Compre|r |T132382:0|t[Flechas Rústicas] e |T132382:0|t[Flechas Afiadas] << Hunter
+    *|cRXP_BUY_Compre|r [Flechas Afiadas] << Alliance Rogue
+    *|cRXP_WARN_Ao equipar bolsas, certifique-se de colocar sua Bolsa de Reagentes no espaço exclusivo para ela|r.
+    *Não venda |T133970:0|t[Acém], |T132832:0|t[Ovos Pequenos] ou |T133972:0|t[Carne de Moa]. << Alliance
+    *Não venda |T132832:0|t[Ovos Pequenos] e |T133972:0|t[Carne de Moa]. << Horde
     .collect 2512,600 << Hunter --Rough Arrow (600)
-    .collect 2515,1000 << Hunter --Sharp Arrow (1000)
-    .collect 2515,600 << Rogue --Sharp Arrow (600)
+    .collect 2515,1000 << Hunter --Sharp Arrows (1000)
+    .collect 2515,600 << Alliance Rogue --Sharp Arrows (600)
     .target Veena Vericloud::254358
 step
     .goto 2521,45.24,45.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Danarii Bellowveil::252172|r.
-    .turnin 92551 >>Vá para Suprimentos Roubados.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Danarii Bramivéu::252172|r.
+    .turnin 92551 >>Entregue Suprimentos roubados
     .target Danarii Bellowveil::252172
 step
     .goto 2521,45.67,45.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Constable Aonda::251523|r.
-    .turnin 92550,3 >>Entregue Devastação nas Highlands
-    .turnin 93927 >>Entregue Um Último Pedido
-    .accept 92701 >>Aceite Para Valanaar << Alliance
-    .accept 92579 >>Aceite Para Valanaar << Horde
-    .accept 93948 >>Aceite Entregar o Sinete
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Aonda::251523|r.
+    .turnin 92550,3 >>Entregue Pânico no planalto
+    .turnin 93927 >>Entregue Último pedido
+    .accept 92701 >>Aceite Rumo a Valanaar << Alliance
+    .accept 92579 >>Aceite Rumo a Valanaar << Horde
+    .accept 93948 >>Aceite Entrega de Sinete
     .target Constable Aonda::251523
 --maybe duplicate trainer steps for low silver cases
 
@@ -2739,7 +2789,7 @@ step
     .isNotOnQuest 93317 -- Crab Season
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,49.4,58.76
-    .cast 1259416 >>Pule da montanha e use |T132845:0|t[Andar no Ar] para voar em direção ao waypoint.
+    .cast 1259416 >>Pule da montanha e use |T132845:0|t[Andar no Ar] para planar até o ponto indicado.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 step
@@ -2747,8 +2797,8 @@ step
     .isNotOnQuest 93317 -- Crab Season
     .subzoneskip 16638 -- Valanaar
     .goto 2521,49.4,58.76
-    .subzone 16626 >>Morra na localização exata do ponto de passagem
-    *|cRXP_WARN_Caso contrário, você pode ser enviado para um cemitério diferente|r
+    .subzone 16626 >>Morra exatamente no ponto indicado
+    *|cRXP_WARN_Caso contrário, você poderá ser enviado para outro cemitério|r
     .macro Sit,134400 >>Sente-se
 step
     #ignorecorpse
@@ -2757,7 +2807,7 @@ step
     .isNotOnQuest 93317 -- Crab Season
     .showwhiledead
     .goto 2521,54.99,68.14
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Spirit Curador::6491|r.
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anjo da Cura::6491|r.
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer::6491
@@ -2765,13 +2815,13 @@ step << Hunter
     .isNotOnQuest 92679 -- Blood Tithe
     .isQuestAvailable 92679 -- Blood Tithe
     .goto 2521,59.395,75.730
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Falfaan Halfwind::271465|r dentro da casa.
-    >>|cRXP_BUY_Compre e equipe um|r |T7810733:0|t[Zephrali Arco]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Falfaan Meiovento::271465|r dentro da casa.
+    >>|cRXP_BUY_Compre e equipe um|r |T7810733:0|t[Arco Zefrali]
     .collect 277110,1 --Collect Zephrali Bow
-    .vendor 271465 >>Venda itens e repare se necessário
-    *Não venda |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeno Eggs] ou |T133972:0|t[Strider Carne]. << Alliance
-    *Não venda |T132832:0|t[Pequeno Eggs] nem |T133972:0|t[Strider Carne]. << Horde
-    *|cRXP_WARN_Precisamos deles para Culinária depois|r.
+    .vendor 271465 >>Venda o lixo e repare seus equipamentos se necessário
+    *Não venda |T133970:0|t[Acém], |T132832:0|t[Ovos Pequenos] ou |T133972:0|t[Carne de Moa]. << Alliance
+    *Não venda |T132832:0|t[Ovos Pequenos] e |T133972:0|t[Carne de Moa]. << Horde
+    *|cRXP_WARN_Precisaremos deles para Culinária mais tarde|r.
     .skipgossipid 141556
     .target Falfaan Halfwind::271465
     .money <0.1345
@@ -2779,10 +2829,10 @@ step << Hunter
 step << Alliance
     .goto 2521,60.6,73.16,10,0
     .goto 2521,60.640,72.664
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nyalah Brightfire::257006|r.
-    *|cRXP_WARN_Se você avistar um Tornado, aproxime-se dele para ganhar 40% de aumento de velocidade de movimento por 5 minutos. O efeito termina se você causar dano|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nyalah Chamarrútila::257006|r.
+    *|cRXP_WARN_Se avistar um tornado, aproxime-se para ganhar 40% de velocidade de movimento por 5 minutos. O efeito termina ao causar dano|r.
     .target Nyalah Brightfire::257006
-    .accept 93317 >>Aceite Caranguejo Season
+    .accept 93317 >>Aceite Temporada do caranguejo
     .skipgossipid 96031
     .skipgossipid 98031
 step
@@ -2791,26 +2841,26 @@ step
     .itemcount 6889,1 -- Small Egg
     .itemcount 2678,1 -- Mild Spices
     .goto 2521,60.640,72.664
-    +Usar a macro |T132834:0|t[Ovo Assado com Ervas] abaixo para criar o máximo possível.
-    *|cRXP_WARN_A maioria dos alimentos com buff concede 5% de experiência aumentada de eliminações durante 15 minutos. Tente manter um tempo ativo elevado com este buff enquanto sobe de nível|r.
+    +Use a macro de |T132834:0|t[Ovo Assado com Ervas] abaixo para preparar o máximo possível.
+    *|cRXP_WARN_A maioria das comidas com bônus aumenta em 5% a experiência obtida com abates por 15 minutos. Tente manter esse bônus ativo pelo máximo de tempo possível enquanto sobe de nível|r.
     .macro Herb Baked Egg,132834 >>Ovo Assado com Ervas
 step
     .subzoneskip 16638,1 -- Valanaar
     .isOnQuest 93948 -- Deliver the Signet
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Donaal Brisabaixa::255940|r.
     .target Donaal Downbreeze::255940
     .bindlocation 16638
-    .home >>Defina sua Pedra de Retorno em Valanaar
+    .home >>Defina sua Pedra de Regresso para Valanaar
     .goto 2521,62.180,72.616
 step
     .isNotOnQuest 92679 -- Blood Tithe
     .subzoneskip 16638,1 -- Valanaar
     .isOnQuest 93948 -- Deliver the Signet
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
-    .vendor 255940 >>Lixo de vendedor
-    *Não venda |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeno Eggs] ou |T133972:0|t[Strider Carne]. << Alliance
-    *Não venda |T132832:0|t[Pequeno Eggs] nem |T133972:0|t[Strider Carne]. << Horde
-    *|cRXP_WARN_Precisamos deles para Culinária depois|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Donaal Brisabaixa::255940|r.
+    .vendor 255940 >>Venda os lixos
+    *Não venda |T133970:0|t[Acém], |T132832:0|t[Ovos Pequenos] ou |T133972:0|t[Carne de Moa]. << Alliance
+    *Não venda |T132832:0|t[Ovos Pequenos] e |T133972:0|t[Carne de Moa]. << Horde
+    *|cRXP_WARN_Precisaremos deles para Culinária mais tarde|r.
     .target Donaal Downbreeze::255940
     .goto 2521,62.180,72.616
     .skipgossipid 137078
@@ -2819,18 +2869,18 @@ step
     #completewith next
     #label Accept Blood Tithe
     .goto 2521,61.95,72.84,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alvarion Windfield::252448|r no segundo andar.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Alvarion Campo de Vento::252448|r |cRXP_WARN_no segundo andar|r.
     .target Alvarion Windfield::252448
-    .accept 92679 >>Aceite Dízimo de Sangue
+    .accept 92679 >>Aceite Dízimo de sangue
 step
     #completewith Accept Blood Tithe
     .goto 2521,62.096,73.339,20 >>Suba as escadas
 step
     #requires Accept Blood Tithe
     .goto 2521,62.096,73.339
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alvarion Windfield::252448|r no segundo andar.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Alvarion Campo de Vento::252448|r |cRXP_WARN_no segundo andar|r.
     .target Alvarion Windfield::252448
-    .accept 92679 >>Aceite Dízimo de Sangue
+    .accept 92679 >>Aceite Dízimo de sangue
 -- TODO: Add Walk on Air
 step
     .isNotOnQuest 94484 -- Unnerving Silence
@@ -2840,20 +2890,20 @@ step
     .goto 2521,63.973,75.095,25 >>Atravesse a montanha
 step
     .goto 2521,63.973,75.095
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
-    .accept 94484 >>Aceite Unnerving Silêncio
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lotheluum Brisastral::252359|r.
+    .accept 94484 >>Aceite Silêncio enervante
     .target Lotheluum Starbreeze::252359
 step << Horde
     .goto 2521,65.956,74.309
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ealaane Nimbuswalker::259012|r.
-    .accept 94896 >>Aceite Ajudar for the Refugees
-    .accept 94897 >>Aceite The Sina of a Ente Querido Um
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ealaane Correnimbo::259012|r.
+    .accept 94896 >>Aceite Auxílio aos refugiados
+    .accept 94897 >>Aceite O destino de um amor
     .target Ealaane Nimbuswalker::259012
 step
     #completewith next
     #label DeliverTheSignetA
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Talaanis Shadowsong::252476|r.
-    .turnin 93948 >>Entregue Deliver the Signet
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Talaanis Cantonegro::252476|r.
+    .turnin 93948 >>Entregue Entrega de sinete
     .target Talaanis Shadowsong::252476
 step
     #completewith DeliverTheSignetA
@@ -2868,17 +2918,17 @@ step
 step
     #requires DeliverTheSignetA
     .goto 2521,66.17,76.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Talaanis Shadowsong::252476|r.
-    .turnin 93948 >>Entregue Deliver the Signet
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Talaanis Cantonegro::252476|r.
+    .turnin 93948 >>Entregue Entrega de sinete
     .target Talaanis Shadowsong::252476
 step
     .goto 2521,66.18,76.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valennia Stormfist::252383|r.
-    .turnin 92701 >>Entregue To Valanaar << Alliance
-    .turnin 92579,3 >>Entregue To Valanaar << Horde
-    .accept 92699 >>Aceite The Supreme Magister << Alliance
-    .accept 92700 >>Aceite The Grand Skyseer << Horde
-    .accept 93949 >>Aceite Bugged << Alliance
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valennia Tempespunho::252383|r.
+    .turnin 92701 >>Entregue Rumo a Valanaar << Alliance
+    .turnin 92579,3 >>Entregue Rumo a Valanaar << Horde
+    .accept 92699 >>Aceite O Magíster Supremo << Alliance
+    .accept 92700 >>Aceite A Grande Vidente do Céu << Horde
+    .accept 93949 >>Aceite De antena em pé << Alliance
     .target Valennia Stormfist::252383
 -- step << Horde
 --     #completewith LeavingValanaarA
@@ -2890,76 +2940,77 @@ step << Horde
     .goto 2521,66.488,76.498,6,0
     .goto 2521,63.027,77.807 << Hunter
     .goto 2521,61.491,76.893 << !Hunter
-    .cast 1259416 >>Pule da torre e use |T132845:0|t[Andar no Ar] para voar em direção ao personagem que oferece a missão.
-    *|cRXP_WARN_Se você acertar o tempo, pode cancelá-lo no ar para pousar no edifício|r
+    .cast 1259416 >>Pule da torre e use |T132845:0|t[Andar no Ar] para planar até o PNJ da missão.
+    *|cRXP_WARN_Se calcular bem o momento, pode cancelar o efeito no ar para pousar dentro do prédio|r
     .cooldown spell,1259416,>0,1
     .usespell 1259416
-    .macro Cancel Walk on Air,132845 >>Cancele Passo on Ar
+    .macro Cancel Walk on Air,132845 >>Cancele Andar no Ar
 step << Alliance
     .isOnQuest 92699 -- The Supreme Magister
     .goto 2521,66.47,76.68,10,0
     .goto 2521,66.63,79.94
-    .cast 1259416 >>Pule da montanha e use |T132845:0|t[Passo on Ar] para voar até o mestre da missão.
-    *|cRXP_WARN_Se você acertar o tempo, pode cancelá-lo no ar para pousar no edifício|r
+    .cast 1259416 >>Pule da montanha e use |T132845:0|t[Andar no Ar] para planar até o PNJ que oferece a missão.
+    *|cRXP_WARN_Se calcular bem o momento, pode cancelar o efeito no ar para pousar dentro do prédio|r
     .cooldown spell,1259416,>0,1
     .usespell 1259416
-    .macro Cancel Walk on Air,132845 >>Cancele Passo on Ar
+    .macro Cancel Walk on Air,132845 >>Cancele Andar no Ar
 step << Alliance
     #completewith Unwelcome Visitors
-    >>Abata os |cRXP_ENEMY_Skyhoppers::251314|r.
+    >>Mate |cRXP_ENEMY_Saltacéu::251314|r.
+    *|cRXP_WARN_Enquanto o bônus de velocidade do tornado estiver ativo, evite matá-los|r.
     .complete 93949,1 --8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
 step << Alliance
     .goto 2521,66.63,79.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
-    .turnin 92699 >>Entregue The Supreme Magister
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elaadrin Plenovento::252475|r.
+    .turnin 92699 >>Entregue O Magíster Supremo
     .target Elaadrin Evengale::252475
 step << Alliance
     .goto 2521,66.26,79.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dondallion Murmuréolo::253204|r.
-    .accept 92727 >>Aceite The Missing Scholar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dondalião Murmuréolo::253204|r.
+    .accept 92727 >>Aceite O erudito desaparecido
     .target Dondallion Whisperwind::253204
 step << Alliance
     #label Unwelcome Visitors
     .goto 2521,66.35,79.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Iaadaria Bitterwind::253004|r.
-    .accept 92741 >>Aceite Unwelcome Visitantes
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Iaadaria Ventamargo::253004|r.
+    .accept 92741 >>Aceite Visitantes indesejados
     .target Iaadaria Bitterwind::253004
 step << Alliance
     .isOnQuest 92727 -- The Missing Scholar
     .goto 2521,67.41,80.46
     .subzoneskip 16638,1 -- Valanaar
-    .subzone 16626 >>Salte do penhasco
+    .subzone 16626 >>Pule do penhasco
 step << Alliance
     #ignorecorpse
     .subzoneskip 16626,1 -- Gustberry Lowlands
     .isOnQuest 92727 -- The Missing Scholar
     .showwhiledead
     .goto 2521,54.99,68.14
-    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Spirit Curador::6491|r.
+    .deathskip >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anjo da Cura::6491|r.
     .skipgossipid 96031
     .skipgossipid 98031
     .target Spirit Healer::6491
 step << Horde Hunter
     .goto 2521,63.027,77.807
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Antelariaa Cloudgaze::252390|r.
-    >>|cRXP_BUY_Compre|r 600 |T132382:0|t[Rough Flechas]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Antelariaa Fitanuvem::252390|r.
+    >>|cRXP_BUY_Compre|r 600 |T132382:0|t[Flechas Rústicas]
     .collect 2512,600 << Hunter --Rough Arrow (600)
     .target Antelariaa Cloudgaze::252390
 step << Horde
     .goto 2521,61.491,76.893,15,0
     .goto 2521,59.349,77.930,35,0
     .goto 2521,59.154,79.783
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ayessa Dawnsinger::251968|r.
-    .turnin 92700 >>Entregue The Grand Skyseer
-    .accept 92708 >>Aceite A Grand Adventure
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ayessa Cantalva::251968|r.
+    .turnin 92700 >>Entregue A Grande Vidente do Céu
+    .accept 92708 >>Aceite Uma grande aventura
     .timer 75,Duração da encenação
-    .accept 93735 >>Aceite The Degradado Constructo
+    .accept 93735 >>Aceite O constructo quebrado
     .target Ayessa Dawnsinger::251968
 step << Horde
     .isOnQuest 92708 -- A Grand Adventure
     .goto 2521,59.154,79.783
-    .cast 1259686 >>Usar |T1029587:0|t[Skysight] para o buff de 10% de velocidade de movimento.
+    .cast 1259686 >>Use |T1029587:0|t[Visão do Céu] para obter o bônus de 10% de velocidade de movimento.
     .cooldown spell,1259686,>0,1
 -- step << Horde
 --     .goto 2521,58.128,78.307
@@ -2970,15 +3021,15 @@ step << Horde
     .train 2366,3 -- Herbalism Trained
     .isQuestComplete 97968 -- Camping 101: Herbalism
     .goto 2521,57.890,75.514
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Syriel Nightrain::254345|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Syriel Serenoite::254345|r.
     .target Syriel Nightrain::254345
-    .turnin 97968 >>Entregue Acampamento 101: Herborismo
+    .turnin 97968 >>Entregue Introdução ao Acampamento: Herborismo
 step << Horde
     #label LeavingValanaarA
     .goto 2521,59.064,72.989
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Riaani Nightwind::256083|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Riaani Ventonegro::256083|r.
     .target Riaani Nightwind::256083
-    .turnin 93735 >>Entregue The Degradado Constructo
+    .turnin 93735 >>Entregue O constructo quebrado
 --     .accept 93737 >>Accept The Broken Construct
 --     .complete 93737,1 --|1/1 Listen to what Riaani Nightwind has to say
 -- step << Horde
@@ -3014,10 +3065,10 @@ step << Horde
 --     .complete 93737,2 --|1/1 Obtain Crystallized lightning from the Shriekling Cave
 step << Alliance
     .goto 2521,53.33,72.15
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClique na |cRXP_PICK_Bolsa Ensanguentada|r
-    .turnin 92727 >>Entregue The Missing Scholar
-    .accept 92849 >>Aceite The Missing Scholar
-    .target Bloodstained Satchel
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClique na |cRXP_PICK_Algibeira Manchada de Sangue::581822|r
+    .turnin 92727 >>Entregue O erudito desaparecido
+    .accept 92849 >>Aceite O erudito desaparecido
+    .target Bloodstained Satchel::581822
 step << Alliance
     #label LeavingValanaarA
     .goto 2521,51.11,67.06,30,0
@@ -3025,17 +3076,17 @@ step << Alliance
     .goto 2521,49.9,66.42,30,0
     .goto 2521,49.75,65.9,30,0
     .goto 2521,50.7,65.36
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClique em |cRXP_FRIENDLY_Fillion Flamebreeze::253002|r dentro da caverna.
-    *|cRXP_WARN_Estes pássaros têm um raio de agressão menor que a maioria dos inimigos.|r
-    *Não clique nele enquanto estiver em combate com um pássaro, pois você será teleportado para fora da caverna.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClique em |cRXP_FRIENDLY_Filião Brisardente::253002|r dentro da caverna.
+    *|cRXP_WARN_Essas aves têm um raio de agressão menor que o da maioria dos inimigos|r.
+    *|cRXP_WARN_Não clique nele durante o combate com uma ave, pois isso teleportará você para fora da caverna|r.
     .complete 92849,1 --1/1 Find Fillion Flamebreeze
 step << Alliance
     .subzoneskip 16672,1 -- Shriekling Den
     .isOnQuest 92849 -- The Missing Scholar
     .isQuestNotComplete 92849 -- The Missing Scholar
     .goto 2521,50.7,65.36
-    .aura 1258429 >>|TInterface/cursor/crosshair/interact.blp:20|tClique em |cRXP_FRIENDLY_Fillion Flamebreeze::253002|r dentro da caverna.
-    *|cRXP_WARN_Esses pássaros têm um raio de agressão menor que a maioria dos inimigos|r.
+    .aura 1258429 >>|TInterface/cursor/crosshair/interact.blp:20|tClique em |cRXP_FRIENDLY_Filião Brisardente::253002|r dentro da caverna.
+    *|cRXP_WARN_Essas aves têm um raio de agressão menor que o da maioria dos inimigos|r.
     .skipgossipid 136430
     .target Fillion Flamebreeze::253002
 step << Alliance
@@ -3045,18 +3096,18 @@ step << Alliance
     .goto 2521,51.03,67.15,15,0
     .goto 2521,51.55,69.2,35,0
     .goto 2521,52.08,69.41
-    >>Leve |cRXP_FRIENDLY_Fillion Flamebreeze::253281|r para a segurança. Evite inimigos pelo caminho.
-    *|cRXP_WARN_Esses pássaros têm um raio de agressão menor que a maioria dos inimigos|r.
+    >>Carregue |cRXP_FRIENDLY_Filião Brisardente::253281|r para um local seguro. |cRXP_WARN_Evite inimigos pelo caminho|r.
+    *|cRXP_WARN_Essas aves têm um raio de agressão menor que o da maioria dos inimigos|r.
     .complete 92849,2 --1/1 Carry Fillion Flamebreeze to safety while avoiding enemies
     .skipgossipid 136430
     .mob Shriekling Fledgling::253282
     .target Fillion Flamebreeze::253281
 step << Alliance
     .goto 2521,52.064,69.396
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Fillion Flamebreeze::253284|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Filião Brisardente::253284|r.
     .target Fillion Flamebreeze::253284
-    .turnin 92849 >>Entregue The Missing Scholar
-    .accept 92850 >>Aceite The Missing Scholar
+    .turnin 92849 >>Entregue O erudito desaparecido
+    .accept 92850 >>Aceite O erudito desaparecido
 -- step << Alliance
 --     #completewith next
 --     #label Shriekling Matriarch
@@ -3075,12 +3126,12 @@ step << Alliance
     .isQuestNotComplete 92850 -- The Missing Scholar 2
     .subzoneskip 16672,1 -- Shriekling Den
     .goto 2521,45.73,80.86
-    .cast 1259705 >>Usar |T236219:0|t[Ler Meridianos] para aumento de 100% na regeneração passiva de Mana e Pontos de Vida.
+    .cast 1259705 >>Use |T236219:0|t[Ler Meridianos] para aumentar em 100% a regeneração passiva de mana e vida.
     .cooldown spell,1259705,>0,1
     .usespell 1259705
 step << Alliance
     .goto 2521,52.02,65.51
-    >>Mate |cRXP_ENEMY_Shriekling Matriarch::253283|r. Saque-o para |T6119035:0|t[|cRXP_LOOT_Cabeça do Shriekling Matriarch|r].
+    >>Mate |cRXP_ENEMY_Matriarca Guinchote::253283|r. Pegue a |T6119035:0|t[|cRXP_LOOT_Cabeça da Matriarca Guinchote|r].
     .complete 92850,1 --1/1 Shriekling Matriarch's Head
     .mob Shriekling Matriarch::253283
 step << Alliance
@@ -3092,7 +3143,7 @@ step << Alliance
     .goto 2521,51.5,69.11,25 >>Saia da caverna
 step << Alliance
     #completewith FindAameliaWindfieldA
-    >>Mate |cRXP_ENEMY_Windsong Crawlers::254588|r. Saqueie-os para |T133972:0|t[|cRXP_LOOT_Windsong Rastejante Carne|r].
+    >>Mate |cRXP_ENEMY_Rastejantes Cantéolo::254588|r. Pegue |T133972:0|t[|cRXP_LOOT_Carne de Rastejante Cantéolo|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
     .mob Windsong Crawler::254588
     .skipgossipid 98031
@@ -3111,20 +3162,20 @@ step
     #requires BrokenConstructB << Horde
     #label FindAameliaWindfieldA
     .goto 2521,46.71,81.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
-    *|cRXP_WARN_Ela pode estar se movimentando entre locais durante uma sequência de encenação. Espere no local do ponto de encontro|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aamelia Campo de Vento::252800|r.
+    *|cRXP_WARN_Ela pode se deslocar entre locais durante uma sequência de diálogos e ações. Aguarde no ponto indicado|r.
     .complete 92679,1 --1/1 Find Aamelia Windfield
     .target Aamelia Windfield::252800
 step
     #loop
     .goto 2521,46.71,81.94,10,0
     .goto 2521,47.511,78.490,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
-    *|cRXP_WARN_Ela pode estar se movimentando entre locais durante uma sequência de encenação. Espere no local do ponto de encontro|r.
-    .turnin 92679 >>Entregue Dízimo de Sangue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aamelia Campo de Vento::252800|r.
+    *|cRXP_WARN_Ela pode se deslocar entre locais durante uma sequência de diálogos e ações. Aguarde no ponto indicado|r.
+    .turnin 92679 >>Entregue Dízimo de sangue
     .accept 92682 >>Aceite Faça alguma coisa útil
-    .accept 92684 >>Aceite Ornery Ornery Galestriders
-    .accept 92683 >>Aceite Flutterfly Poeira
+    .accept 92684 >>Aceite Vagaventos turrões turrões
+    .accept 92683 >>Aceite Pó de asaleve
     .target Aamelia Windfield::252800
 
 -- step << Alliance
@@ -3140,28 +3191,28 @@ step
     #loop
     .goto 2521,46.164,78.043,30,0
     .goto 2521,48.920,84.441,30,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClique nas |cRXP_LOOT_Ripe Stormapples|r
-    >>Mate os |cRXP_ENEMY_Hungry Bandits::252802|r |cRXP_WARN_(stealthed)|r.
-    *Dicas de Caçador: Pressione Tab repetidamente para alvo-los rapidamente, use Marca do Caçador neles para que você possa correr para longe e acertá-los de uma distância maior. << Hunter
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClique nas |cRXP_LOOT_Maçãs-dos-raios Madura|r
+    >>Mate os |cRXP_ENEMY_Bandidos Famintos::252802|r |cRXP_WARN_(furtivos)|r.
+    *Dicas para caçadores: pressione Tab repetidamente para selecioná-los logo e use Marca do Caçador neles para poder se afastar e atacá-los de mais longe. << Hunter
     .complete 92682,1 --10/10 Ripe Stormapple
     .complete 92682,2 --5/5 Hungry Bandit slain
     .mob +Hungry Bandit::252802
 step << Horde
     .isOnQuest 92684 -- Ornery Ornery Galestriders
     .goto 2521,48.416,80.537
-    .cast 1259686 >>Usar |T1029587:0|t[Skysight] para o buff de 10% de velocidade de movimento.
+    .cast 1259686 >>Use |T1029587:0|t[Visão do Céu] para obter o bônus de 10% de velocidade de movimento.
     .cooldown spell,1259686,>0,1
 step
     #completewith WhatIsMyPurposeA
-    >>Mate o |cRXP_ENEMY_Ornery Galestrider::251707|r. Saque o |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r] dele.
+    >>Mate |cRXP_ENEMY_Vagavento Turrão::251707|r. Pegue |T2066012:0|t[|cRXP_LOOT_Lombo de Vagaventos das Terras Baixas|r] dele.
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step
     #completewith WhatIsMyPurposeA
-    >>Use o |T537768:0|t[Flutterfly Swatter] repetidamente nos |cRXP_ENEMY_Flutterflies::251622|r.
-    >>|TInterface/cursor/crosshair/interact.blp:16|tClique em |cRXP_PICK_Flutterfly Poeira|r.
-    *|cRXP_WARN_Se um Flutterfly não voar para longe, use o swatter nele novamente|r. <<!Mage
-    *|cRXP_WARN_Você pode lançar repetidamente|r |T136071:0|t[Polimorfia] |cRXP_WARN_no mesmo Flutterfly e usar o mata-mosca para coletar múltiplas pilhas de pó dele|r. << Mage
+    >>Use repetidamente o |T537768:0|t[Mata-asaleves] nas |cRXP_ENEMY_Asaleves::251622|r
+    >>|TInterface/cursor/crosshair/interact.blp:16|tClique no |cRXP_PICK_Pó de Asaleve|r.
+    *|cRXP_WARN_Se uma Asaleve não voar para longe, use o Mata-asaleves nela novamente|r << !Mage
+    *|cRXP_WARN_Você pode lançar|r |T136071:0|t[Polimorfia] |cRXP_WARN_repetidamente na mesma Asaleve e usar o mata-asaleves para coletar vários montes de pó dela|r. << Mage
     .complete 92683,1 --5/5 Flutterfly Dust
     .mob Flutterfly::251622
     .use 253666
@@ -3170,8 +3221,8 @@ step
     #loop
     .goto 2521,49.085,78.358,12,0
     .goto 2521,48.621,78.385,12,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Malfunctioning Ciclone Constructo::250929|r.
-    .accept 92698 >>Aceite What Is My Purpose?
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Construto Ciclônico Defeituoso::250929|r.
+    .accept 92698 >>Aceite Qual é o meu propósito?
     .target Malfunctioning Cyclone Construct::250929
 step << Horde Shaman
     #completewith ShamanLevel10
@@ -3183,62 +3234,65 @@ step << Horde Shaman
     +1
 step << Horde Shaman
     #completewith next
-    >>Mate o |cRXP_ENEMY_Ornery Galestrider::251707|r. Saque o |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r] dele.
+    >>Mate |cRXP_ENEMY_Vagavento Turrão::251707|r. Pegue |T2066012:0|t[|cRXP_LOOT_Lombo de Vagaventos das Terras Baixas|r] dele.
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step << Horde Shaman
     #completewith ShamanLevel10
     #label ShamanFluterflyDustA
-    >>Use o |T537768:0|t[Flutterfly Swatter] repetidamente nos |cRXP_ENEMY_Flutterflies::251622|r.
-    >>|TInterface/cursor/crosshair/interact.blp:16|tClique em |cRXP_PICK_Flutterfly Poeira|r.
-    *|cRXP_WARN_Se um Flutterfly não voar para longe, use o swatter nele novamente|r.
+    >>Use repetidamente o |T537768:0|t[Mata-asaleves] nas |cRXP_ENEMY_Asaleves::251622|r
+    >>|TInterface/cursor/crosshair/interact.blp:16|tClique no |cRXP_PICK_Pó de Asaleve|r.
+    *|cRXP_WARN_Se uma Asaleve não voar para longe, use o Mata-asaleves nela novamente|r
     .complete 92683,1 --5/5 Flutterfly Dust
     .mob Flutterfly::251622
     .use 253666
 step << Horde Shaman
     #requires ShamanFluterflyDustA
     #completewith ShamanLevel10
-    >>Mate o |cRXP_ENEMY_Ornery Galestrider::251707|r. Saque o |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r] dele.
+    >>Mate |cRXP_ENEMY_Vagavento Turrão::251707|r. Pegue |T2066012:0|t[|cRXP_LOOT_Lombo de Vagaventos das Terras Baixas|r] dele.
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step << Horde Shaman
+    #hidewindow
     #label ShamanLevel10
     .xp 10 >>1
 step << Horde Shaman
     #completewith next
-    .hs >>Use sua Pedra de Retorno para ir a Valanaar
+    .hs >>Use a Pedra de Regresso para voltar a Valanaar
 step << Horde Shaman
     .goto 2521,58.313,78.499
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sessaria Skystride::252382|r.
-    .accept 97243 >>Aceite Chamado do Fogo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sessaria Andacéu::252382|r.
+    .accept 97243 >>Aceite Clamor do Fogo
     .target Sessaria Skystride::252382
 step << Horde Shaman
+    .isQuestAvailable 97243
     .goto 2521,58.313,78.499
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sessaria Skystride::252382|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sessaria Andacéu::252382|r.
     .trainer >>Treine suas magias de classe
     .target Sessaria Skystride::252382
     .money <0.12
     .xp <10,1
+    .subzoneskip 16638,1
 step << Horde Shaman
     #completewith CallOfFireA
-    >>Use o |T537768:0|t[Flutterfly Swatter] repetidamente nos |cRXP_ENEMY_Flutterflies::251622|r.
-    >>|TInterface/cursor/crosshair/interact.blp:16|tClique em |cRXP_PICK_Flutterfly Poeira|r.
-    *|cRXP_WARN_Se um Flutterfly não voar para longe, use o swatter nele novamente|r.
+    >>Use repetidamente o |T537768:0|t[Mata-asaleves] nas |cRXP_ENEMY_Asaleves::251622|r
+    >>|TInterface/cursor/crosshair/interact.blp:16|tClique no |cRXP_PICK_Pó de Asaleve|r.
+    *|cRXP_WARN_Se uma Asaleve não voar para longe, use o Mata-asaleves nela novamente|r
     .complete 92683,1 --5/5 Flutterfly Dust
     .mob Flutterfly::251622
     .use 253666
 step << Horde Shaman
     #completewith CallOfFireA
-    >>Mate o |cRXP_ENEMY_Ornery Galestrider::251707|r. Saque o |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r] dele.
+    >>Mate |cRXP_ENEMY_Vagavento Turrão::251707|r. Pegue |T2066012:0|t[|cRXP_LOOT_Lombo de Vagaventos das Terras Baixas|r] dele.
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step << Horde Shaman
     #label CallOfFireA
     .goto 2521,54.402,77.329,30,0
     .goto 2521,51.240,86.187
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Olariaan Swiftburn::268592|r.
-    .turnin 97243 >>Entregue Call of Fogo
-    .accept 97244 >>Aceite Chamado do Fogo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Olariaan Queimabreve::268592|r.
+    .turnin 97243 >>Entregue Clamor do Fogo
+    .accept 97244 >>Aceite Clamor do Fogo
     .target Olariaan Swiftburn::268592
 -- step << Shaman
 --     .isOnQuest 97244
@@ -3264,24 +3318,24 @@ step << Horde Shaman
 --     .target Spirit Healer::6491
 step << Horde Shaman
     #completewith CallOfFireB
-    >>Use o |T537768:0|t[Flutterfly Swatter] repetidamente nos |cRXP_ENEMY_Flutterflies::251622|r.
-    >>|TInterface/cursor/crosshair/interact.blp:16|tClique em |cRXP_PICK_Flutterfly Poeira|r.
-    *|cRXP_WARN_Se um Flutterfly não voar para longe, use o swatter nele novamente|r.
+    >>Use repetidamente o |T537768:0|t[Mata-asaleves] nas |cRXP_ENEMY_Asaleves::251622|r
+    >>|TInterface/cursor/crosshair/interact.blp:16|tClique no |cRXP_PICK_Pó de Asaleve|r.
+    *|cRXP_WARN_Se uma Asaleve não voar para longe, use o Mata-asaleves nela novamente|r
     .complete 92683,1 --5/5 Flutterfly Dust
     .mob Flutterfly::251622
     .use 253666
 step << Horde Shaman
     #completewith CallOfFireB
-    >>Mate o |cRXP_ENEMY_Ornery Galestrider::251707|r. Saque o |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r] dele.
+    >>Mate |cRXP_ENEMY_Vagavento Turrão::251707|r. Pegue |T2066012:0|t[|cRXP_LOOT_Lombo de Vagaventos das Terras Baixas|r] dele.
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step << Horde Shaman
     #label CallOfFireB
     .goto 2521,51.241,86.193
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Olariaan Swiftburn::268592|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Olariaan Queimabreve::268592|r.
     .target Olariaan Swiftburn::268592
-    .turnin 97244 >>Entregue Call of Fogo
-    .accept 97245 >>Aceite Chamado do Fogo
+    .turnin 97244 >>Entregue Clamor do Fogo
+    .accept 97245 >>Aceite Clamor do Fogo
 step
     #completewith GalestriderTenderloinA
     #hidewindow
@@ -3294,101 +3348,78 @@ step
     +1
 step
     #completewith next
-    >>Mate o |cRXP_ENEMY_Ornery Galestrider::251707|r. Saque o |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r] dele.
+    >>Mate |cRXP_ENEMY_Vagavento Turrão::251707|r. Pegue |T2066012:0|t[|cRXP_LOOT_Lombo de Vagaventos das Terras Baixas|r] dele.
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step
-    >>Use o |T537768:0|t[Flutterfly Swatter] repetidamente nos |cRXP_ENEMY_Flutterflies::251622|r.
-    >>|TInterface/cursor/crosshair/interact.blp:16|tClique em |cRXP_PICK_Flutterfly Poeira|r.
-    *|cRXP_WARN_Se um Flutterfly não voar para longe, use o swatter nele novamente|r.
+    >>Use repetidamente o |T537768:0|t[Mata-asaleves] nas |cRXP_ENEMY_Asaleves::251622|r
+    >>|TInterface/cursor/crosshair/interact.blp:16|tClique no |cRXP_PICK_Pó de Asaleve|r.
+    *|cRXP_WARN_Se uma Asaleve não voar para longe, use o Mata-asaleves nela novamente|r
     .complete 92683,1 --5/5 Flutterfly Dust
     .mob Flutterfly::251622
     .use 253666
 step
     #label GalestriderTenderloinA
-    >>Mate o |cRXP_ENEMY_Ornery Galestrider::251707|r. Saque o |T2066012:0|t[|cRXP_LOOT_Lowlands Galestrider Tenderloins|r] dele.
+    >>Mate |cRXP_ENEMY_Vagavento Turrão::251707|r. Pegue |T2066012:0|t[|cRXP_LOOT_Lombo de Vagaventos das Terras Baixas|r] dele.
     .complete 92684,1 --7/7 Lowlands Galestrider Tenderloin
     .mob Ornery Galestrider::251707
 step
     #loop
     .goto 2521,46.71,81.94,40,0
     .goto 2521,47.511,78.490,40,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
-    *|cRXP_WARN_Ela pode estar se movimentando entre locais durante uma sequência de encenação|r.
-    *|cRXP_WARN_Procure por ela de uma distância ou siga seu diálogo; a seta marca apenas uma localização aproximada.|r
-    .turnin 92682 >>Entregue Faça Alguma Coisa Útil
-    .turnin 92684,3 >>Entregue Ornery Ornery Galestriders
-    .turnin 92698 >>Entregue What Is My Purpose?
-    .turnin 92683 >>Entregue Flutterfly Poeira
-    .accept 92685 >>Aceite The Hills Have Olhos << Alliance/Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aamelia Campo de Vento::252800|r.
+    *|cRXP_WARN_Se houver um tornado por perto, use-o para andar mais rápido|r.
+    *|cRXP_WARN_Ela pode se deslocar entre locais durante uma sequência de diálogos e ações|r.
+    *|cRXP_WARN_Procure-a à distância ou acompanhe o diálogo dela; a seta indica apenas uma localização aproximada|r.
+    .turnin 92682 >>Entregue Faça alguma coisa útil
+    .turnin 92684,3 >>Entregue Vagaventos turrões turrões
+    .turnin 92698 >>Entregue Qual é o meu propósito?
+    .turnin 92683 >>Entregue Pó de asaleve
+    .accept 92685 >>Aceite As colinas têm olhos << Alliance/Shaman
     .target Aamelia Windfield::252800
 step << Alliance
-    .isOnQuest 92685 -- Blood-Stained Bandit Mask
-    .isQuestNotComplete 92685 -- Blood-Stained Bandit Mask
+    .isOnQuest 92685 -- The Hills Have Eyes
+    .isQuestNotComplete 92685 -- The Hills Have Eyes
     .subzoneskip 16663,1 -- Windfield Orchard
     .goto 2521,45.73,80.86
-    .cast 1259705 >>Usar |T236219:0|t[Ler Meridianos] para aumento de 100% na regeneração passiva de Mana e Pontos de Vida.
+    .cast 1259705 >>Use |T236219:0|t[Ler Meridianos] para aumentar em 100% a regeneração passiva de mana e vida.
     .cooldown spell,1259705,>0,1
     .usespell 1259705
 step << Alliance/Shaman
     #completewith next
     #label Bandit Highwaymen
-    *|cRXP_WARN_Equipe o|r |T7791298:0|t[Flutterfly Swatter] << Rogue
-    >>Mate os |cRXP_ENEMY_Bandit Highwaymen::252820|r. Saqueie o |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandido Masks|r] deles.
-    *|cRXP_WARN_Fique atento a inimigos furtivos no pomar de maçãs|r.
+    *|cRXP_WARN_Equipe o|r |T7791298:0|t[Mata-asaleves] << Rogue
+    >>Mate |cRXP_ENEMY_Bandoleiros Bandidos::252820|r. Pegue deles as |T133693:0|t[|cRXP_LOOT_Máscaras de Bandido Manchadas de Sangue|r].
+    *|cRXP_WARN_Fique atento aos inimigos furtivos no pomar de maçãs|r.
     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
     .mob Bandit Highwaymen::252820
 step << Alliance/Shaman
     #completewith Bandit Highwaymen
     .goto 2521,44.81,74.4,30 >>Suba a montanha
+    *|cRXP_WARN_Se vir um Tornado, use-o para se deslocar mais rápido|r.
 step << Alliance/Shaman
     #requires Bandit Highwaymen
     #loop
     .goto 2521,45.615,72.361,35,0
     .goto 2521,43.551,74.999,35,0
     -- .goto 2521,45.760,78.419,35,0
-    >>Mate os |cRXP_ENEMY_Bandit Highwaymen::252820|r. Saqueie-os para os |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandido Masks|r].
+    >>Mate |cRXP_ENEMY_Bandoleiros Bandidos::252820|r. Pegue deles as |T133693:0|t[|cRXP_LOOT_Máscaras de Bandido Manchadas de Sangue|r].
     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
     .mob Bandit Highwaymen::252820
--- step << Horde
---     #requires Bandit Highwaymen
---     #completewith BrokenConstructC
---     #hidewindow
---     #loop
---     .goto 2521,45.615,72.361,35,0
---     .goto 2521,43.551,74.999,35,0
---     .goto 2521,45.760,78.419,35,0
---     +1
--- step << Horde
---     --@THIDDI: Not sure if worth it.
---     #requires Bandit Highwaymen
---     #completewith next
---     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
---     .complete 93737,4 --|1/1 Obtain Air Construct Core from the Bandit Camp
--- step << Horde
---     #requires Bandit Highwaymen
---     >>Kill |cRXP_ENEMY_Bandit Highwaymen::252820|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
---     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
---     .mob Bandit Highwaymen::252820
--- step << Horde
---     --@THIDDI: Not sure if worth it.
---     #label BrokenConstructC
---     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Construct Parts|r.
---     .complete 93737,4 --|1/1 Obtain Air Construct Core from the Bandit Camp
 step << Horde Shaman
     .goto 2521,42.393,68.887
     >>|TInterface/cursor/crosshair/interact.blp:20|tClique em |cRXP_PICK_Kuramaa's Stump|r.
     >>Mate |cRXP_ENEMY_Kuramaa::268605|r. Saqueie-a para |T3549050:0|t[|cRXP_LOOT_Máscara de Kuramaa|r].
-    *|cRXP_WARN_Ele o empurra para trás e recebe dano de fogo adicional|r.
+    *|cRXP_WARN_Ele repele você e recebe dano de fogo adicional|r.
     .complete 97245,1 --|1/1 Kuramaa's Mask
     .mob Kuramaa::268605
     .usespell 8024
 step << Alliance
     #completewith next
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
-    *|cRXP_WARN_Ela pode estar se movendo entre as localizações durante uma sequência de encenação. Verifique ambos os locais.|r
-    .turnin 92685 >>Entregue The Hills Have Olhos
-    .accept 92693 >>Aceite Stand Our Ground
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aamelia Campo de Vento::252800|r.
+    *|cRXP_WARN_Ela pode se deslocar entre locais durante uma sequência de diálogos e ações. Confira os dois pontos|r.
+    .turnin 92685 >>Entregue As colinas têm olhos
+    .accept 92693 >>Aceite Defendendo o que é nosso
     .target Aamelia Windfield::252800
 step << Alliance
     .isOnQuest 92685 -- The Hills Have Eyes
@@ -3396,64 +3427,64 @@ step << Alliance
     .goto 2521,43.84,75.53,30,0
     .goto 2521,44.06,76.19,15,0
     .goto 2521,47.511,78.490
-    .cast 1259416 >>Pule da montanha e use |T132845:0|t[Passo on Ar] |cRXP_WARN_no ar|r para voar em direção ao ponto de referência.
+    .cast 1259416 >>Pule da montanha e use |T132845:0|t[Andar no Ar] |cRXP_WARN_em pleno ar|r para voar até o ponto indicado.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 step << Alliance/Shaman
     #loop
     .goto 2521,47.511,78.490,30,0
     .goto 2521,46.71,81.94,30,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
-    *|cRXP_WARN_Ela pode estar se movendo entre as localizações durante uma sequência de encenação. Verifique ambos os locais.|r
-    *Você pode pular da montanha e usar |T132845:0|t[Passo on Ar] |cRXP_WARN_no ar|r para voar em direção ao ponto de referência.
-    .turnin 92685 >>Entregue The Hills Have Olhos
-    .accept 92693 >>Aceite Stand Our Ground
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aamelia Campo de Vento::252800|r.
+    *|cRXP_WARN_Ela pode se deslocar entre locais durante uma sequência de diálogos e ações. Confira os dois pontos|r.
+    *Você pode pular da montanha e usar |T132845:0|t[Andar no Ar] |cRXP_WARN_em pleno ar|r para voar até o ponto indicado.
+    .turnin 92685 >>Entregue As colinas têm olhos
+    .accept 92693 >>Aceite Defendendo o que é nosso
     .target Aamelia Windfield::252800
 step << Alliance/Shaman
     .goto 2521,46.71,81.94
-    >>Volte para a localização principal de |cRXP_FRIENDLY_Aamelia Windfield::252800|r e fale com ela.
+    >>Volte para a localização principal de |cRXP_FRIENDLY_Aamelia Campo de Vento::252800|r e fale com ela.
     .complete 92693,1 --1/1 Speak with Aamelia Windfield
     .timer 75,Duração da encenação
     .target Aamelia Windfield::252800
     .skipgossipid 136302
 step << Alliance/Shaman
     .goto 2521,47.51,78.44
-    >>Siga |cRXP_FRIENDLY_Aamelia Windfield::252800|r. Espere a encenação.
-    *Quando Aamelia para, coloque uma Fogueira de Acampamento se você tiver uma e nenhum estiver próximo. Inicie a Culinária para ganhar pontos de habilidade.
+    >>Siga |cRXP_FRIENDLY_Aamelia Campo de Vento::252800|r. Aguarde a encenação.
+    *Quando Aamelia parar, faça uma fogueira se puder e não houver nenhuma por perto. Comece a cozinhar para aumentar sua perícia.
     .complete 92693,2 --1/1 Follow Aamelia and make your final stand
     .use 279981
 step << Alliance/Shaman
     .goto 2521,47.51,78.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aamelia Windfield::252800|r.
-    .turnin 92693 >>Entregue Parado Our Ground
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aamelia Campo de Vento::252800|r.
+    .turnin 92693 >>Entregue Defendendo o que é nosso
     .accept 92703 >>Aceite Deliver the News
     .target Aamelia Windfield::252800
-step << Horde
-    .isOnQuest 92703 -- Deliver the News
-    .goto 2521,48.445,80.591
-    .cast 1259686 >>Usar |T1029587:0|t[Skysight] para o buff de 10% de velocidade de movimento.
-    .cooldown spell,1259686,>0,1
+-- step << Horde
+--     .isOnQuest 92703 -- Deliver the News
+--     .goto 2521,48.445,80.591
+--     .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
+--     .cooldown spell,1259686,>0,1
 step << Alliance/!Shaman
     .isQuestAvailable 92703 -- Deliver the News
     .subzoneskip 16638 -- Valanaar
-    .hs >>Use sua Pedra de Retorno para ir a Valanaar
+    .hs >>Use a Pedra de Regresso para voltar a Valanaar
 step << Alliance/!Shaman
     .isQuestAvailable 92703 -- Deliver the News
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
-    .vendor 255940 >>Lixo de vendedor
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Donaal Brisabaixa::255940|r.
+    .vendor 255940 >>Venda os lixos
     .collect 1179,20 >>Compre |T132815:0|t[Leite Gelado] << Mage/Druid/Priest/Warlock/Paladin
-    *Não venda |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeno Eggs] ou |T133972:0|t[Strider Carne]. << Alliance
-    *Não venda |T132832:0|t[Pequeno Eggs] nem |T133972:0|t[Strider Carne]. << Horde
-    *|cRXP_WARN_Precisamos deles para Culinária depois|r.
+    *Não venda |T133970:0|t[Acém], |T132832:0|t[Ovos Pequenos] ou |T133972:0|t[Carne de Moa]. << Alliance
+    *Não venda |T132832:0|t[Ovos Pequenos] e |T133972:0|t[Carne de Moa]. << Horde
+    *|cRXP_WARN_Precisaremos deles para Culinária mais tarde|r.
     .target Donaal Downbreeze::255940
     .goto 2521,62.180,72.616
     .skipgossipid 137078
 step << Horde Shaman
     .goto 2521,51.240,86.187
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Olariaan Swiftburn::268592|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Olariaan Queimabreve::268592|r.
     .target Olariaan Swiftburn::268592
-    .turnin 97245 >>Entregue Call of Fogo
-    .accept 97257 >>Aceite Chamado do Fogo
+    .turnin 97245 >>Entregue Clamor do Fogo
+    .accept 97257 >>Aceite Clamor do Fogo
     .timer 35,Duração da encenação
 step << Horde Shaman
     .goto 2521,51.265,85.927
@@ -3464,14 +3495,15 @@ step << Horde Shaman
     .goto 2521,52.400,81.309,25,0
     .goto 2521,54.907,76.598,15,0
     .goto 2521,58.312,78.827
-    >>Você tem aproximadamente 5 minutos para correr de volta.
+    >>Você tem cerca de 5 minutos para voltar correndo.
+    *|cRXP_WARN_Se houver um tornado por perto, use-o para andar mais rápido|r.
     .complete 97257,2 --|1/1 Light the Brazier of Eternal Flame
     .skipgossipid 140778
 step << Horde Shaman
     .goto 2521,58.315,78.512
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sessaria Skystride::252382|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sessaria Andacéu::252382|r.
     .target Sessaria Skystride::252382
-    .turnin 97257 >>Entregue Call of Fogo
+    .turnin 97257 >>Entregue Clamor do Fogo
 -- step << Horde Shaman
 --     #completewith next
 --     >>Kill |cRXP_ENEMY_Skyhopper::251314|r.
@@ -3480,11 +3512,11 @@ step << Horde Shaman
 --     .mob Skyhopper::251314
 step << Horde Shaman
     .isQuestAvailable 92703 -- Deliver the News
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
-    .vendor 255940 >>Lixo de vendedor
-    *Não venda |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeno Eggs] ou |T133972:0|t[Strider Carne]. << Alliance
-    *Não venda |T132832:0|t[Pequeno Eggs] nem |T133972:0|t[Strider Carne]. << Horde
-    *|cRXP_WARN_Precisamos deles para Culinária depois|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Donaal Brisabaixa::255940|r.
+    .vendor 255940 >>Venda os lixos
+    *Não venda |T133970:0|t[Acém], |T132832:0|t[Ovos Pequenos] ou |T133972:0|t[Carne de Moa]. << Alliance
+    *Não venda |T132832:0|t[Ovos Pequenos] e |T133972:0|t[Carne de Moa]. << Horde
+    *|cRXP_WARN_Precisaremos deles para Culinária mais tarde|r.
     .target Donaal Downbreeze::255940
     .goto 2521,62.180,72.616
     .skipgossipid 137078
@@ -3492,8 +3524,8 @@ step << Hunter
     .subzoneskip 16638,1 -- Valanaar
     .isQuestAvailable 92703 -- Deliver the News
     .goto 2521,62.180,72.616
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Donaal Downbreeze::255940|r.
-    >>|cRXP_BUY_Compre|r |T134534:0|t[Forest Cogumelo Cap] |cRXP_BUY_dele|r. |cRXP_BUY_Você usará isto para alimentar seu animal de estimação mais tarde|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Donaal Brisabaixa::255940|r.
+    >>|cRXP_BUY_Compre|r |T134534:0|t[Cogumelo da Floresta] |cRXP_BUY_dele|r. |cRXP_BUY_Você usará isso para alimentar seu ajudante mais tarde|r
     .collect 4604,5 -- Forest Mushroom
     .target Donaal Downbreeze::255940
     .goto 2521,62.180,72.616
@@ -3502,7 +3534,7 @@ step
     .goto 2521,61.94,72.8,10,0
     .goto 2521,62.05,73.09,8,0
     .goto 2521,62.11,73.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Alvarion Windfield::252448|r no segundo andar.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Alvarion Campo de Vento::252448|r |cRXP_WARN_no segundo andar|r.
     .turnin 92703,1 >>Entregue Deliver the News << Warrior/Shaman/Paladin
     .turnin 92703,2 >>Entregue Deliver the News << Druid/Priest
     .turnin 92703,3 >>Entregue Deliver the News << Rogue
@@ -3510,31 +3542,32 @@ step
     .target Alvarion Windfield::252448
 step
     #completewith next
-    *|cRXP_WARN_Equipe a|r |T134435:0|t[Pá Plantada] << Warrior/Shaman/Paladin
-    *|cRXP_WARN_Equipe o|r |T133057:0|t[Roofing Martelo] << Druid/Priest
-    *|cRXP_WARN_Equipe a|r |T134520:0|t[Trusty Chave de Boca] << Rogue
+    *|cRXP_WARN_Equipe a|r |T134435:0|t[Pá para Plantio] << Warrior/Shaman/Paladin
+    *|cRXP_WARN_Equipe o|r |T133057:0|t[Martelo de Telhador] << Druid/Priest
+    *|cRXP_WARN_Equipe a|r |T134520:0|t[Chave de Boca Confiável] << Rogue
 step << Alliance
     #completewith Turn in The Missing Scholar
-    >>Abata os |cRXP_ENEMY_Skyhoppers::251314|r.
+    >>Mate |cRXP_ENEMY_Saltacéu::251314|r.
+    *|cRXP_WARN_Enquanto o bônus de velocidade do tornado estiver ativo, evite matá-los|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
 step << Mage
     .goto 2521,62.887,77.324
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Belann Windwood::256507|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Belann Lenhéolo::256507|r.
     .target Belann Windwood::256507
-    .accept 93791 >>Aceite Falar com Belann
-    .turnin 93791 >>Entregue Falar com Belann
-    .accept 93797 >>Aceite Galhos no Vento
+    .accept 93791 >>Aceite Conversando com Belann
+    .turnin 93791 >>Entregue Conversando com Belann
+    .accept 93797 >>Aceite Ramos ao vento
 step << Warrior
     .goto 2521,59.889,72.869
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Seena Skybreaker::252377|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Seena Rompe-céus::252377|r.
     .target Seena Skybreaker::252377
     .accept 94003 >>Aceite O Rompe-Céus Baluarte
 step << Warrior
     .goto 2521,59.89,72.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Seena Skybreaker::252377|r.
-    .train 6546 >>Treine |T132155:0|t[Dilacerar (Rank 2)]
-    .train 2687 >>Treine |T132277:0|t[Fúria Sanguinária]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Seena Rompe-céus::252377|r.
+    .train 6546 >>Aprenda |T132155:0|t[Dilacerar (Grau 2)]
+    .train 2687 >>Aprenda |T132277:0|t[Fúria Sanguinária]
     .skipgossipid 136813
     .target Seena Skybreaker::252377
     .money <0.12
@@ -3562,30 +3595,32 @@ step << Druid
     .goto 2521,63.973,75.095,25 >>Atravesse a montanha
 step << Druid
     .goto 2521,63.983,75.093
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lotheluum Brisastral::252359|r.
     .accept 94006 >>Aceite O Grande Espírito Ursera
     .target Lotheluum Starbreeze::252359
 step << Druid
     .goto 2521,63.983,75.093
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
-    .train 16689 >>Treine |T136063:0|t[Enredamento]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lotheluum Brisastral::252359|r.
+    .train 16689 >>Aprenda |T136063:0|t[Enredamento]
     -- .train 99 >>Train |TInterface/Icons/Ability_Druid_DemoralizingRoar:0|t[Demoralizing Roar]
-    .train 1058 >>Treine |T136081:0|t[Rejuvenescer (Rank 2)]
-    .train 5232 >>Treine |T136078:0|t[Marca do Indomado (Rank 2)]
-    .train 8924 >>Treine |T136096:0|t[Fogo Lunar (Rank 2)]
+    .train 1058 >>Aprenda |T136081:0|t[Rejuvenescer (Grau 2)]
+    .train 5232 >>Aprenda |T136078:0|t[Marca do Indomado (Grau 2)]
+    .train 8924 >>Aprenda |T136096:0|t[Fogo Lunar (Grau 2)]
     .skipgossipid 140781
     .target Lotheluum Starbreeze::252359
     .money <0.12
     .xp <10,1
 step << Rogue
+    .goto 2521,59.55,73.3,30,0
     .goto 2521,59.9,72.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eltheen Nightbreeze::252379|r.
-    .train 674 >>Treine |T132147:0|t[Empunhar Duas Armas]
-    .train 6770 >>Treine |T132310:0|t[Aturdir]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eltheen Umbrísia::252379|r.
+    -- *|cRXP_WARN_You can interact with him through walls not sure if we want to add it|r
+    .train 674 >>Aprenda |T132147:0|t[Empunhar Duas Armas]
+    .train 6770 >>Aprenda |T132310:0|t[Aturdir]
     .train 2070,1 -- Sap (Rank 2) Not Trained
-    .train 5171 >>Treine |T132306:0|t[Retalhar]
+    .train 5171 >>Aprenda |T132306:0|t[Retalhar]
     .train 6774,1 -- Slice and Dice (Rank 2) Not Trained
-    .train 2983 >>Treine |T132307:0|t[Disparada]
+    .train 2983 >>Aprenda |T132307:0|t[Disparada]
     .train 8696,1 -- Sprint (Rank 2) Not Trained
     .skipgossipid 136810
     .target Eltheen Nightbreeze::252379
@@ -3593,55 +3628,62 @@ step << Rogue
     .xp <10,1
 step << Hunter
     .goto 2521,59.571,72.639
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
-    .train 13165 >>Treine |T136076:0|t[Aspecto do Falcão]
-    .train 13549 >>Treine |T132204:0|t[Picada de Serpente (Rank 2)]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'ana Ventiágil::252389|r.
+    .train 13165 >>Aprenda |T136076:0|t[Aspecto do Falcão]
+    .train 13549 >>Aprenda |T132204:0|t[Picada de Serpente (Grau 2)]
     .skipgossipid 136808
     .target Quel'ana Quickgale::252389
     .money <0.08
     .xp <10,1
 step << Hunter
     .goto 2521,59.572,72.639
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
-    .accept 94978 >>Aceite Domando a Fera
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'ana Ventiágil::252389|r.
+    .accept 94978 >>Aceite Domando a fera
     .target Quel'ana Quickgale::252389
 step << Hunter Alliance
     .goto 2521,63.023,77.803
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Antelariaa Cloudgaze::252390|r.
-    >>|cRXP_BUY_Compre|r |T132382:0|t[Flecha Afiada]
-    .vendor 252390 >>Lixo de vendedor
-    *Não venda |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeno Eggs] ou |T133972:0|t[Strider Carne]. << Alliance
-    *|cRXP_WARN_Precisamos deles para Culinária depois|r.
-    .collect 2515,1000 -- Sharp Arrow
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Antelariaa Fitanuvem::252390|r.
+    >>|cRXP_BUY_Compre|r [Flechas Afiadas]
+    .vendor 252390 >>Venda os lixos
+    *Não venda |T133970:0|t[Acém], |T132832:0|t[Ovos Pequenos] ou |T133972:0|t[Carne de Moa]. << Alliance
+    *|cRXP_WARN_Precisaremos deles para Culinária mais tarde|r.
+    .collect 2515,1000 -- Sharp Arrows
     .target Antelariaa Cloudgaze::252390
 step << Mage
     .goto 2521,65.91,80.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anathamaas Aetherwind::252373|r
-    .train 168 >>Treine |T135843:0|t[Armadura Gélida]
-    .train 122 >>Treine |T135848:0|t[Novane Congelante]
-    .train 5504 >>Treine |T132794:0|t[Conjurar Água]
-    .train 587 >>Treine |T133952:0|t[Conjurar Comida]
-    .train 5505 >>Treine |T132794:0|t[Conjurar Água (Rank 2)]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anathamaas Brisetéria::252373|r
+    .train 168 >>Aprenda |T135843:0|t[Armadura Gélida]
+    .train 122 >>Aprenda |T135848:0|t[Nova Congelante]
+    .train 5504 >>Aprenda |T132794:0|t[Conjurar Água]
+    -- .train 587 >>Train |T133952:0|t[Conjure Food]
+    .train 5505 >>Aprenda |T132794:0|t[Conjurar Água (Grau 2)]
     .skipgossipid 136807
     .money <0.08
     .xp <10,1
     .target Anathamaas Aetherwind::252373
 step << Alliance
     #label Turn in The Missing Scholar
-    *|cRXP_WARN_Empunhe Duas Armas a|r |T134520:0|t[Trusty Chave de Boca] |cRXP_WARN_e o|r |T7791298:0|t[Flutterfly Swatter] << Rogue
+    *|cRXP_WARN_Empunhe a|r |T134520:0|t[Chave de Boca Confiável] |cRXP_WARN_e o|r |T7791298:0|t[Mata-asaleves], um em cada mão << Rogue
     .goto 2521,66.26,79.90
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Fillion Flamebreeze::253284|r.
-    .turnin 92850 >>Entregue The Missing Scholar
-    .accept 99260 >>Aceite Missão de Fillion
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Filião Brisardente::253284|r.
+    .turnin 92850 >>Entregue O erudito desaparecido
+    .accept 99260 >>Aceite O erudito desaparecido
     .target Fillion Flamebreeze::253284
 
---here alliance check sticky for wyrms and hunter steps    
+step << Alliance
+    #completewith Protect the Index
+    .subzone 16638,1 -- Valanaar
+    >>Mate |cRXP_ENEMY_Saltacéu::251314|r.
+    *|cRXP_WARN_Enquanto o bônus de velocidade do tornado estiver ativo, evite matá-los|r.
+    .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
+    .mob Skyhopper::251314
 step << Alliance
     .goto 2521,66.627,79.942
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elaadrin Plenovento::252475|r.
     .target Elaadrin Evengale::252475
-    .turnin 99260 >>Entregue Missão de Fillion
+    .turnin 99260 >>Entregue O erudito desaparecido
     .accept 92840 >>Aceite Pegando Vento
+
 -- Deathskip past 10; might need later
 -- step << Alliance
 --     .isOnQuest 92840
@@ -3654,38 +3696,42 @@ step << Alliance
 --     .skipgossipid 98031
 --     -- .subzoneskip 16638,1 -- Valanaar
 --     .target Spirit Healer::6491
+
 step << Horde Hunter
     #loop
     .goto 2521,54.460,78.811,48,0
     .goto 2521,51.968,73.084,35,0
     .goto 2521,53.126,73.502,20,0
     .goto 2521,51.268,69.758,35,0
-    .use 267272 >>|cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Windsong Rastejante::254588|r |cRXP_WARN_no alcance máximo|r.
+    .use 267272 >>|cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Rastejante Cantéolo::254588|r |cRXP_WARN_no alcance máximo|r.
     .complete 94978,1 --Tame a Windsong Crawler
     .mob Windsong Crawler::254588
 step << Horde Hunter
     .goto 2521,59.571,72.639
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
-    .turnin 94978 >>Entregue Adestramento da Fera - Missão
-    .accept 94979 >>Aceite Adestramento da Fera - Missão
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'ana Ventiágil::252389|r.
+    .turnin 94978 >>Entregue Domando a fera
+    .accept 94979 >>Aceite Domando a fera
     .target Quel'ana Quickgale::252389
 step << Horde Hunter
     #completewith next
-    +|cRXP_WARN_Dispense seu|cRXP_ENEMY_ Windsong Rastejante::254588|r clicando com o botão direito no quadro de unidade dele e clicando em dispensar; caso contrário, você não poderá domesticar um|r |cRXP_ENEMY_Armored Escorpídeo::3126|r
+    +|cRXP_WARN_Dispense seu |cRXP_ENEMY_Rastejante Cantéolo::254588|r clicando com o botão direito no retrato dele e selecionando Dispensar; caso contrário, você não conseguirá domar um|r |cRXP_ENEMY_Vagaventos Turrão::251707|r
 step << Horde Hunter
     #loop
     .goto 2521,60.905,69.414,35,0
     .goto 2521,58.339,68.476,35,0
     .goto 2521,53.799,72.161,35,0
-    .use 267298 >>|cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Ornery Galestrider::251707|r |cRXP_WARN_no alcance máximo|r.
+    .use 267298 >> |cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Vagaventos Turrão::251707|r |cRXP_WARN_no alcance máximo|r.
     .complete 94979,1 --Tame an Ornery Galestrider
     .mob Ornery Galestrider::251707
 step << Horde Hunter
     .goto 2521,59.571,72.639
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
-    .turnin 94979 >>Entregue Domando a Fera
-    .accept 94013 >>Aceite Domando a Fera
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'ana Ventiágil::252389|r.
+    .turnin 94979 >>Entregue Domando a fera
+    .accept 94013 >>Aceite Domando a fera
     .target Quel'ana Quickgale::252389
+step << Horde Hunter
+    #completewith next
+    +|cRXP_WARN_Dispense seu |cRXP_ENEMY_Vagaventos Turrão::251707|r clicando com o botão direito no retrato dele e selecionando Dispensar; caso contrário, você não conseguirá domar um|r |cRXP_ENEMY_Vuldren::250874|r
 step << Horde Hunter
     #loop
     .goto 2521,56.946,67.887,35,0
@@ -3694,33 +3740,23 @@ step << Horde Hunter
     .goto 2521,53.021,81.568,25,0
     .goto 2521,51.647,80.140,25,0
     .goto 2521,48.981,82.669,35,0
-
-    -- .goto 2521,54.23,75,40,0
-    -- .goto 2521,53.45,80.93,40,0
-    -- .goto 2521,52.56,77.82,40,0
-    -- .goto 2521,61.944,68.828,35,0
-    -- .goto 2521,59.516,64.846,35,0
-    -- .goto 2521,57.041,67.729,35,0
-    -- .goto 2521,54.322,75.080,35,0
-    -- .goto 2521,51.925,80.458,35,0
-    -- .goto 2521,52.920,81.509,35,0
-    .use 264163 >>|cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Vuldren::250874|r |cRXP_WARN_no alcance máximo|r.
+    .use 264163 >> |cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Vuldren::250874|r |cRXP_WARN_no alcance máximo|r.
     .complete 94013,1 --Tame a Vuldren
     .mob Vuldren::250874
 step << Horde Hunter
     .goto 2521,59.571,72.639
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
-    .turnin 94013 >>Entregue Adestramento da Fera - Missão
-    .accept 94050 >>Aceite Treinamento da Fera - Missão
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'ana Ventiágil::252389|r.
+    .turnin 94013 >>Entregue Domando a fera
+    .accept 94050 >>Aceite Treinando a fera
     .target Quel'ana Quickgale::252389
 step << Horde Hunter
     .goto 2521,59.605,72.527
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'dora Quickgale::254411|r.
-    .turnin 94050 >>Entregue Treinamento da Fera - Missão
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'dora Ventiágil::254411|r.
+    .turnin 94050 >>Entregue Treinando a fera
     .target Quel'dora Quickgale::254411
 step << Horde Hunter
     .goto 2521,59.605,72.527
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'dora Quickgale::254411|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'dora Ventiágil::254411|r.
     .train 4195 >>Treine [Vigor Maior]
     .train 24547 >>Treine [Armadura Natural]
     .skipgossipid 97876
@@ -3731,10 +3767,10 @@ step << Horde Hunter
     .goto 2521,60.905,69.414,35,0
     .goto 2521,58.339,68.476,35,0
     .goto 2521,53.799,72.161,35,0
-    >>|cRXP_WARN_Use|r |T132164:0|t[Domar Fera] |cRXP_WARN_em um|cRXP_ENEMY_ Windsong Rastejante::254588|r para domesticá-lo|r -- .tame 1997
-    *|cRXP_WARN_NOTA:|r Se todos os caranguejos estiverem mortos, você também pode treinar um |cRXP_ENEMY_Ornery Galestrider::251707|r até encontrar um caranguejo.
-    .train 2981 >>Ataque criaturas com ele para aprender [Garra (Grau 2)]
-    .link https://www.wow-petopia.com/classic/training.php >>Clique no link para mais informações sobre treinamento de pets: https://www.wow-petopia.com/classic/training.php
+    >>|cRXP_WARN_Lance|r |T132164:0|t[Domar Fera] |cRXP_WARN_em um |cRXP_ENEMY_Rastejante Cantéolo::254588|r para domá-lo|r -- .tame 1997
+    *|cRXP_WARN_OBSERVAÇÃO:|r Se todos os caranguejos estiverem mortos, você também pode domar um |cRXP_ENEMY_Vagaventos Turrão::251707|r até encontrar um caranguejo.
+    .train 2981 >> Ataque criaturas com ele para aprender [Garra (Grau 2)]
+    .link https://www.wow-petopia.com/classic/training.php >> Clique no link para mais informações sobre treinamento de pets: https://www.wow-petopia.com/classic/training.php
 	.mob Windsong Crawler::254588
 
 
@@ -3743,18 +3779,16 @@ step << Alliance Hunter
     #completewith next
     .goto 2521,51.56,71.28,40,0
     .goto 2521,50.94,69.46,40,0
-    .use 267272 >>|cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em uma|r |cRXP_ENEMY_Windsong Rastejante::254588|r |cRXP_WARN_no alcance máximo|r.
+    .use 267272 >> |cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Rastejante Cantéolo::254588|r |cRXP_WARN_no alcance máximo|r.
     .complete 94978,1 --Tame a Windsong Crawler
     .mob Windsong Crawler::254588
 step << Alliance !Hunter
     #completewith next
-    >>Mate |cRXP_ENEMY_Windsong Crawlers::254588|r. Saqueie-os para |T133972:0|t[|cRXP_LOOT_Windsong Rastejante Carne|r].
+    >>Mate |cRXP_ENEMY_Rastejantes Cantéolo::254588|r. Pegue |T133972:0|t[|cRXP_LOOT_Carne de Rastejante Cantéolo|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
     .mob Windsong Crawler::254588
     .skipgossipid 98031
     .skipgossipid 96031
-
-
 step << Alliance
     #completewith next
     #label Protect the Index
@@ -3769,8 +3803,8 @@ step << Alliance
     .mob Windshaper Guardian
 step << Alliance
     #completewith Protect the Index
-    .goto 2521,46.52,70.33,30 >>Contorne a Montanha.
-    *|cRXP_WARN_Toque em um Tornado próximo para ganhar 40% de aumento de velocidade de movimento por 5 minutos. Causando dano remove o efeito.|r
+    .goto 2521,46.52,70.33,30 >>Contorne a montanha.
+    *|cRXP_WARN_Se houver um tornado por perto, toque nele para ganhar 40% de velocidade de movimento por 5 minutos. Causar dano remove o efeito|r.
 step << Alliance
     #requires Protect the Index
     #loop
@@ -3786,7 +3820,7 @@ step << Alliance
     .mob Windshaper Guardian
 step << Mage
     .goto 2521,48.59,67.77
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Branch|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClique no |cRXP_PICK_Galho|r.
     .complete 93797,1 --1/1 Wind-Infused Bough
 step << Alliance Hunter
     .isOnQuest 94013 -- Taming the Beast
@@ -3797,7 +3831,7 @@ step << Alliance Hunter
     .goto 2521,52.05,71.71,40,0
     .goto 2521,51.82,72.95,40,0
     .goto 2521,52.81,75.82,40,0
-    .use 267272 >>|cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Windsong Rastejante::254588|r |cRXP_WARN_no alcance máximo|r.
+    .use 267272 >>|cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Rastejante Cantéolo::254588|r |cRXP_WARN_no alcance máximo|r.
     .complete 94978,1 --Tame a Windsong Crawler
     .mob Windsong Crawler::254588
 step << Alliance Hunter
@@ -3807,7 +3841,7 @@ step << Alliance Hunter
     .subzoneskip 16638 -- Valanaar
     .goto 2521,50.57,68.18,30,0
     .goto 2521,52.73,71.12
-    .cast 1259416 >>Pule da montanha e use |T132845:0|t[Passo on Ar] para voar até o mestre da missão.
+    .cast 1259416 >>Pule da montanha e use |T132845:0|t[Andar no Ar] para planar até o PNJ que oferece a missão.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 step << Alliance !Hunter
@@ -3815,7 +3849,7 @@ step << Alliance !Hunter
     .subzoneskip 16638 -- Valanaar
     .goto 2521,49.46,70.12,30,0
     .goto 2521,65.577,76.650
-    .cast 1259416 >>Pule da montanha e use |T132845:0|t[Passo on Ar] para voar até o mestre da missão.
+    .cast 1259416 >>Pule da montanha e use |T132845:0|t[Andar no Ar] para planar até o PNJ que oferece a missão.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 
@@ -3835,38 +3869,38 @@ step << Alliance !Hunter
 
 step << Alliance Hunter
     #completewith next
-    >>Abata os |cRXP_ENEMY_Skyhoppers::251314|r.
+    >>Mate |cRXP_ENEMY_Saltacéu::251314|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
 step << Alliance Hunter
     .goto 2521,59.571,72.639
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
-    .turnin 94978 >>Entregue Domando a Fera
-    .accept 94979 >>Aceite Adestramento da Fera - Missão
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'ana Ventiágil::252389|r.
+    .turnin 94978 >>Entregue Domando a fera
+    .accept 94979 >>Aceite Domando a fera
     .target Quel'ana Quickgale::252389
 step << Alliance
     .train 2366,3 -- Herbalism Trained
     .isQuestComplete 97968 -- Camping 101: Herbalism
     #completewith next
-    >>Abata os |cRXP_ENEMY_Skyhoppers::251314|r.
+    >>Mate |cRXP_ENEMY_Saltacéu::251314|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
 step << Alliance
     .train 2366,3 -- Herbalism Trained
     .isQuestComplete 97968 -- Camping 101: Herbalism
     .goto 2521,57.890,75.514
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Syriel Nightrain::254345|r.
-    .turnin 97968 >>Entregue Acampamento 101: Herborismo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Syriel Serenoite::254345|r.
+    .turnin 97968 >>Entregue Introdução ao Acampamento: Herborismo
     .target Syriel Nightrain::254345
 step << Mage
     #completewith next
-    >>Abata os |cRXP_ENEMY_Skyhoppers::251314|r.
+    >>Mate |cRXP_ENEMY_Saltacéu::251314|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
 step << Mage
     .goto 2521,62.89,77.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Belann Windwood::256507|r.
-    .turnin 93797 >>Entregue Galhos no Vento
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Belann Lenhéolo::256507|r.
+    .turnin 93797 >>Entregue Ramos ao vento
     .target Belann Windwood::256507
 step << Mage
     #loop
@@ -3879,29 +3913,29 @@ step << Mage
     .goto 2521,64.18,78.18,30,0
     .goto 2521,63.19,79.17,30,0
     .goto 2521,64.36,80.69,30,0
-    >>Abata os |cRXP_ENEMY_Skyhoppers::251314|r.
+    >>Mate |cRXP_ENEMY_Saltacéu::251314|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
 step << Alliance Hunter
     #completewith next
-    +|cRXP_WARN_Dispense seu |cRXP_ENEMY_Windsong Rastejante::254588|r clicando com o botão direito no quadro de unidade dele e clicando em dispensar, caso contrário você não conseguirá domar um|r |cRXP_ENEMY_Armored Escorpídeo::3126|r
+    +|cRXP_WARN_Dispense seu |cRXP_ENEMY_Rastejante Cantéolo::254588|r clicando com o botão direito no retrato dele e selecionando Dispensar; caso contrário, você não conseguirá domar um|r |cRXP_ENEMY_Escorpídeo Encouraçado::3126|r
 step << Alliance Hunter
     #loop
     .goto 2521,60.905,69.414,35,0
     .goto 2521,58.339,68.476,35,0
     .goto 2521,53.799,72.161,35,0
-    .use 267298 >>|cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Ornery Galestrider::251707|r |cRXP_WARN_no alcance máximo|r.
+    .use 267298 >> |cRXP_WARN_Use seu|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Vagaventos Turrão::251707|r |cRXP_WARN_no alcance máximo|r.
     .complete 94979,1 --Tame an Ornery Galestrider
     .mob Ornery Galestrider::251707
 step << Alliance Hunter
     .goto 2521,59.571,72.639
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
-    .turnin 94979 >>Entregue Adestramento da Fera - Missão
-    .accept 94013 >>Aceite Domando a Fera
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'ana Ventiágil::252389|r.
+    .turnin 94979 >>Entregue Domando a fera
+    .accept 94013 >>Aceite Domando a fera
     .target Quel'ana Quickgale::252389
 step << Alliance Hunter
     #completewith next
-    >>Abata os |cRXP_ENEMY_Skyhoppers::251314|r.
+    >>Mate |cRXP_ENEMY_Saltacéu::251314|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
 step << Alliance Hunter
@@ -3921,18 +3955,18 @@ step << Alliance Hunter
     .mob Vuldren Alpha::250874
 step << Alliance Hunter
     .goto 2521,59.571,72.639
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'ana Quickgale::252389|r.
-    .turnin 94013 >>Entregue Domando a Fera
-    .accept 94050 >>Aceite Treinamento da Fera
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'ana Ventiágil::252389|r.
+    .turnin 94013 >>Entregue Domando a fera
+    .accept 94050 >>Aceite Treinando a fera
     .target Quel'ana Quickgale::252389
 step << Alliance Hunter
     .goto 2521,59.605,72.527
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'dora Quickgale::254411|r.
-    .turnin 94050 >>Entregue Treinamento da Fera
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'dora Ventiágil::254411|r.
+    .turnin 94050 >>Entregue Treinando a fera
     .target Quel'dora Quickgale::254411
 step << Alliance Hunter
     .goto 2521,59.605,72.527
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'dora Quickgale::254411|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quel'dora Ventiágil::254411|r.
     .train 4195 >>Treine [Vigor Maior]
     .train 24547 >>Treine [Armadura Natural]
     .skipgossipid 97876
@@ -3952,7 +3986,7 @@ step << Alliance !Mage
     .goto 2521,63.8,78.01,30,0
     .goto 2521,63.16,78.97,30,0
     .goto 2521,65.37,78.53,40,0
-    >>Abata os |cRXP_ENEMY_Skyhoppers::251314|r.
+    >>Mate |cRXP_ENEMY_Saltacéu::251314|r.
     .complete 93949,1 --|8/8 Enchanted Skyhopper Exterminated
     .mob Skyhopper::251314
 -- step << Horde
@@ -3975,7 +4009,7 @@ step << Alliance !Mage
 --     .mob Skyhopper::251314
 step << Alliance
     .goto 2521,66.63,79.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elaadrin Plenovento::252475|r.
     .turnin 92840 >>Entregue Pegando Vento
     .accept 92834 >>Aceite Avenged Tenfold
     .accept 92860 >>Aceite A Serviço de Zephras
@@ -3983,10 +4017,10 @@ step << Alliance
 step << Alliance
     #completewith next
     #label Service of Zephras
-    *|cRXP_WARN_Equipe o|r |T7810733:0|t[Arco of Hours] << Rogue
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valennia Stormfist::252383|r.
+    *|cRXP_WARN_Equipe o|r |T7810733:0|t[Laço das Horas] << Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valennia Tempespunho::252383|r.
     .turnin 92860 >>Entregue In Service of Zephras << Alliance
-    .turnin 93949 >>Entregue Bugged
+    .turnin 93949 >>Entregue De antena em pé
     .accept 93320 >>Aceite Defender a Torre  << Alliance
     .disablecheckbox
     .target Valennia Stormfist::252383
@@ -4005,9 +4039,9 @@ step << Alliance
 step << Alliance
     #requires Service of Zephras
     .goto 2521,66.18,76.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valennia Stormfist::252383|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valennia Tempespunho::252383|r.
     .turnin 92860 >>Entregue In Service of Zephras  << Alliance
-    .turnin 93949 >>Entregue Bugged
+    .turnin 93949 >>Entregue De antena em pé
     .accept 93320 >>Aceite Defender a Torre << Alliance
     .target Valennia Stormfist::252383
 step << Alliance !Druid
@@ -4016,26 +4050,26 @@ step << Alliance !Druid
     .subzoneskip 16638,1 -- Valanaar
     .goto 2521,66.47,76.64,10,0
     .goto 2521,65.36,71.79
-    .cast 1259416 >>Pule da montanha e use |T132845:0|t[Andar no Ar] para voar em direção ao waypoint.
+    .cast 1259416 >>Pule da montanha e use |T132845:0|t[Andar no Ar] para planar até o ponto indicado.
     .cooldown spell,1259416,>0,1
     .usespell 1259416
 step << Alliance
     .goto 2521,65.956,74.309
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ealaane Nimbuswalker::259012|r.
-    .accept 94896 >>Aceite Ajudar for the Refugees
-    .accept 94897 >>Aceite The Sina of a Ente Querido Um
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ealaane Correnimbo::259012|r.
+    .accept 94896 >>Aceite Auxílio aos refugiados
+    .accept 94897 >>Aceite O destino de um amor
     .target Ealaane Nimbuswalker::259012
 step << Alliance
     .isOnQuest 94897
     .isOnQuest 93320
     .goto 2521,64,74.06
-    .cast 1259705 >>Usar |T236219:0|t[Ler Meridianos] para aumento de 100% na regeneração passiva de Mana e Pontos de Vida.
+    .cast 1259705 >>Use |T236219:0|t[Ler Meridianos] para aumentar em 100% a regeneração passiva de mana e vida.
     .cooldown spell,1259705,>0,1
     .usespell 1259705
 step << Alliance
     #completewith next
-    >>Mate os |cRXP_ENEMY_Al'Aketh Brawler::270201|r.
-    *Saque os |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
+    >>Mate |cRXP_ENEMY_Brigão Al'Aketh::270201|r.
+    *Pegue deles |T1379232:0|t[|cRXP_LOOT_Patuás da Pedra Eólica de Al'Aketh|r].
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
     .mob Al'Aketh Healer::254596
     .mob Al'Aketh Brawler::270201
@@ -4047,15 +4081,16 @@ step << Alliance
     .goto 2521,65.36,71.79,30,0
     .goto 2521,65.76,68.4,30,0
     .goto 2521,69.64,67.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yorana Windyreed::252378|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yorana Canavento::252378|r.
+    *|cRXP_WARN_Se houver um tornado por perto, use-o para andar mais rápido|r.
     .turnin 93320 >>Entregue Defender a Torre
     .accept 92642 >>Aceite Rompendo a Históricoística
     .accept 92645 >>Aceite Quebrando o Rachador
     .target Yorana Windyreed::252378
 step << Alliance !Druid
     #completewith Commander Belguilos2
-    >>Mate os |cRXP_ENEMY_Al'Aketh Brawlers::270201|r, os |cRXP_ENEMY_Al'Aketh Preachers::253195|r e os |cRXP_ENEMY_Al'Aketh Pillagers::253511|r.
-    *Saque os |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r].
+    >>Mate |cRXP_ENEMY_Brigões Al'Aketh::270201|r, |cRXP_ENEMY_Pregadores Al'Aketh::253195|r e |cRXP_ENEMY_Pilhadores Al'Aketh::253511|r.
+    *Pegue deles |T1379232:0|t[|cRXP_LOOT_Patuás da Pedra Eólica de Al'Aketh|r].
     .complete 92834,1 --10/10 Al'Aketh Windstone Charm
     .mob Al'Aketh Brawler::270201
     .mob Al'Aketh Preacher::253195
@@ -4072,7 +4107,7 @@ step << Alliance !Druid
     .goto 2521,65.71,65.59,30,0
     .goto 2521,65.84,65.02,15,0
     .goto 2521,65.58,65.63
-    >>Mate |cRXP_ENEMY_Commander Belguilos::252666|r no segundo andar dentro da casa.
+    >>Abate |cRXP_ENEMY_Comandante Belguilos::252666|r |cRXP_WARN_no segundo andar|r dentro da casa.
     .complete 92645,1 --1/1 Commander Belguilos slain
     .mob Commander Belguilos::252666
 step << Alliance !Druid
@@ -4132,7 +4167,7 @@ step << Alliance Druid
 step << Alliance Druid
     #completewith next
     #label Commander Belguilos Druid
-    >>Mate |cRXP_ENEMY_Commander Belguilos::252666|r no segundo andar dentro da casa.
+    >>Abate |cRXP_ENEMY_Comandante Belguilos::252666|r |cRXP_WARN_no segundo andar|r dentro da casa.
     .complete 92645,1 --1/1 Commander Belguilos slain
     .mob Commander Belguilos::252666
 step << Alliance Druid
@@ -4142,7 +4177,7 @@ step << Alliance Druid
     #requires Commander Belguilos Druid
     .goto 2521,65.31,65.33,20,0
     .goto 2521,65.58,65.63
-    >>Mate |cRXP_ENEMY_Commander Belguilos::252666|r no segundo andar dentro da casa.
+    >>Abate |cRXP_ENEMY_Comandante Belguilos::252666|r |cRXP_WARN_no segundo andar|r dentro da casa.
     .complete 92645,1 --1/1 Commander Belguilos slain
     .mob Commander Belguilos::252666
 step << Alliance Druid
@@ -4210,7 +4245,7 @@ step << Alliance
     .accept 92643 >>Aceite The Turncoat
     .target Talaanis::252476
 step << Alliance Paladin/Alliance Priest/Alliance Warlock/Alliance Mage/Alliance Rogue
-    #completewith Al'Aketh Assassins Equip Remider
+    #completewith Al'Aketh Assassins Equip Reminder
     +|cRXP_WARN_Equipe o|r |T7792097:0|t[Martelão Apurado] << Paladin
     +|cRXP_WARN_Equipe o|r |T7798447:0|t[Varapau Equilibrado] << Priest/Warlock/Mage
     +|cRXP_WARN_Equipe a|r |TInterface/Icons/inv_knife_1h_skybornec60_b_01:0|t[Adaga da Lâmina Veloz] |cRXP_WARN_na sua mão secundária|r. << Rogue
@@ -4328,11 +4363,11 @@ step << Horde Druid
 --     .goto 2521,62.384,64.393
 --     .deathskip >>|cRXP_WARN_(BETA: Resurrection Sickness is bugged. Skip this step for now.)|r Die and respawn at the |cRXP_FRIENDLY_Spirit Healer::6491|r.
 step << Alliance
-    #label Al'Aketh Assassins Equip Remider
+    #label Al'Aketh Assassins Equip Reminder
     .goto 2521,59.719,67.016,35,0 << Druid --Remove if we add deathskips again
     .goto 2521,56.81,61.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Fendaal Windstone::273017|r.
-    *|cRXP_WARN_Toque em um Tornado próximo para ganhar 40% de aumento de velocidade de movimento por 5 minutos. Causar dano remove o efeito|r.
+    *|cRXP_WARN_Se um Tornado estiver próximo, toque nele para ganhar 40% de velocidade de movimento por 5 minutos. Causar dano remove o efeito|r.
     .accept 98512 >>Aceite Al'Aketh Assassins
     .target Fendaal Windstone::273017
 step << Alliance
@@ -4443,11 +4478,11 @@ step << Alliance
     >>Mate |cRXP_ENEMY_Windsong Crawlers::254588|r. Saqueie-os para |T133972:0|t[|cRXP_LOOT_Windsong Rastejante Carne|r].
     .complete 93317,1 --6/6 Windsong Crawler Meat
     .mob Windsong Crawler::254588
-step << Horde
-    .isQuestAvailable 93159 -- The Strange Hermit
-    .goto 2521,52.790,57.628
-    .cast 1259686 >>Usar |T1029587:0|t[Skysight] para o buff de 10% de velocidade de movimento.
-    .cooldown spell,1259686,>0,1
+-- step << Horde
+--     .isQuestAvailable 93159 -- The Strange Hermit
+--     .goto 2521,52.790,57.628
+--     .cast 1259686 >>Use |T1029587:0|t[Skysight] for the 10% movement speed buff.
+--     .cooldown spell,1259686,>0,1
 -- step << Horde
 --     --@THIDDI: Not sure if worth it.
 --     #loop
@@ -4469,27 +4504,29 @@ step << Alliance
     .goto 2521,57.17,55.26,40,0
     .goto 2521,57.86,54.69,40,0
     .goto 2521,58.61,52.77,30 >>Vá além da cachoeira e ao redor da montanha.
+    *|cRXP_WARN_Se você vir um Tornado, use-o para se deslocar mais rapidamente|r.
 step << Horde
     .isQuestAvailable 93159 -- The Strange Hermit
     #completewith next
-    .goto 2521,59.444,67.060,45,0
+    .goto 2521,59.444,67.060,45,0 << Druid
     .goto 2521,58.72,52.77,30 >>Contorne as montanhas e atravesse a ponte.
-step
-    .isQuestAvailable 93159 -- The Strange Hermit
-    .subzoneskip 16631 -- Shadowgale Forest
-    .goto 2521,58.24,51.21,20,0
-    .goto 2521,57.77,52.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Brother Zendraas::272045|r.
-    .vendor 272045 >>Lixo de vendedor
-    *Não venda |T133970:0|t[Stringy Carne], |T132832:0|t[Pequeno Eggs] ou |T133972:0|t[Strider Carne]. << Alliance
-    *Não venda |T132832:0|t[Pequeno Eggs] e |T133972:0|t[Strider Carne]. << Horde
-    .skipgossip 272045,1,1,1,2
-    .skipgossipid 141672
-    .target Brother Zendraas::272045
-    --1: I haven't met too many cultists that haven't immediately tried to kill me. What's your story?
-    --1: What trade would that be?
-    --1: I'll think about it. (This option returns no gossip ID and unlocks the vendor.)
-    --2: Show me what you have available for trade.
+    *|cRXP_WARN_Se você vir um Tornado, use-o para se deslocar mais rapidamente|r.
+-- step
+--     .isQuestAvailable 93159 -- The Strange Hermit
+--     .subzoneskip 16631 -- Shadowgale Forest
+--     .goto 2521,58.24,51.21,20,0
+--     .goto 2521,57.77,52.06
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Zendraas::272045|r.
+--     .vendor 272045 >>Vendor trash
+--     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
+--     *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
+--     .skipgossip 272045,1,1,1,2
+--     .skipgossipid 141672
+--     .target Brother Zendraas::272045
+--     --1: I haven't met too many cultists that haven't immediately tried to kill me. What's your story?
+--     --1: What trade would that be?
+--     --1: I'll think about it. (This option returns no gossip ID and unlocks the vendor.)
+--     --2: Show me what you have available for trade.
 step << Warrior
     .goto 2521,56.56,50.36
     >>Mate |cRXP_ENEMY_Zaal Escudo Tonante::257196|r. Saqueie-o para o |T134959:0|t[|cRXP_LOOT_Skybreaker Baluarte|r].
@@ -4502,16 +4539,16 @@ step << Warrior
 --     .cast 1259705 >>Use |T236219:0|t[Read Ley Line] for 100% increased passive Mana and Health regeneration.
 --     .cooldown spell,1259705,>0,1
 --     .usespell 1259705
-step
+step << Alliance
     #completewith Learn
-    >>Mate os |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
-    *Saque-os para |T1508517:0|t[|cRXP_LOOT_Shriekling Garras|r].
+    >>Abate |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
+    *Saqueie-os para |T1508517:0|t[|cRXP_LOOT_Shriekling Garras|r].
     .complete 92741,1 --8/8 Shriekling Talons
     .mob Shadowgale Shriekling::256092
 step
     #completewith next
     .goto 2521,58.81,46.74,30,0
-    .goto 2521,58.81,43.57,40,>>Cruze a ponte.
+    .goto 2521,58.81,43.57,40 >>Cruze a ponte.
 step
     #label Learn
     .goto 2521,53.95,38.90
@@ -4575,12 +4612,12 @@ step
     .target Resaan Nimbuswalker::259013
 step << Alliance
     #completewith Abandoned BelongingsZ
-    >>Mate os |cRXP_ENEMY_Wind Hollows::251676|r.
+    >>Abate |cRXP_ENEMY_Wind Hollows::251676|r.
     .complete 93172,1 --10/10 Wind Hollow freed
     .mob Wind Hollow::251676
 step << Alliance
     #completewith Abandoned BelongingsZ
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClique nos |cRXP_PICK_Caixotes|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClique em |cRXP_PICK_Caixotes|r
     .complete 94896,1 --8/8 Abandoned Belongings
 step << Alliance
     #label Abandoned BelongingsZ
@@ -4629,20 +4666,20 @@ step
     -- .complete 93736,1 << Horde--10/10 Wind Hollow Essence
     .mob +Wind Hollow::251676
 step
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClique em |cRXP_PICK_Caixotes|r
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClique nos |cRXP_PICK_Caixotes|r
     .complete 94896,1 --8/8 Abandoned Belongings
 step
     --@THIDDI: Not sure if worth it (Wind Hollow Essence).
     #label Wind Hollow
     -- >>Kill |cRXP_ENEMY_Wind Hollows::251676|r. Loot them for |T2576094:0|t[|cRXP_LOOT_Wind Hollow Essence|r]. << Horde
-    >>Abate |cRXP_ENEMY_Wind Hollows::251676|r.
+    >>Mate os |cRXP_ENEMY_Wind Hollows::251676|r.
     .complete 93172,1 --10/10 Wind Hollow freed
     -- .complete 93736,1 << Horde --10/10 Wind Hollow Essence
     .mob +Wind Hollow::251676
 step << Alliance
     #completewith Unnerving Silence
-    >>Abate |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
-    *Saqueie-os para |T1508517:0|t[|cRXP_LOOT_Shriekling Garras|r].
+    >>Mate os |cRXP_ENEMY_Shadowgale Shrieklings::256092|r.
+    *Saque-os para |T1508517:0|t[|cRXP_LOOT_Shriekling Garras|r].
     .complete 92741,1 --8/8 Shriekling Talons
     .mob Shadowgale Shriekling::256092
 step
@@ -4655,7 +4692,7 @@ step
     .target Elegael Thornpaw::257944
     .turnin 94484 >>Entregue Unnerving Silêncio
     .accept 94485 >>Aceite Lágrimas of the Lady
-    .accept 94486 >>Aceite Peninha for Vinculação << Alliance
+    .accept 94486 >>Aceite Peninha for Vinculação
     .accept 94487 >>Aceite Unwanted and Indigno
 step << Alliance
     #completewith Unnerving Silence
@@ -4671,9 +4708,9 @@ step << Alliance
     .mob Al'Aketh Stormchaser::252664
 step << Alliance
     .goto 2521,63.80,36.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Vayn Moongaze|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vayn Moongaze::254151|r.
     .accept 93165 >>Aceite Misericórdia Falls on Deaf Orelhas
-    .target Vayn Moongaze
+    .target Vayn Moongaze::254151
 step
     #label Unnerving Silence
     #loop
@@ -4687,17 +4724,18 @@ step
     .goto 2521,65.7,36.82,40,0
     .goto 2521,65.63,35.57,40,0
     >>Mate os |cRXP_ENEMY_Al'Aketh Footsoldiers|r e os |cRXP_ENEMY_Al'Aketh Caça-tempestades|r.
-    *Saqueie os |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r], |T133856:0|t[|cRXP_LOOT_Al'Alketh Cultist's Orelhas|r] e |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r]. << Alliance
+    *Saqueie-os para obter |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r], |T133856:0|t[|cRXP_LOOT_Al'Aketh Cultist's Orelhas|r] e |T1379232:0|t[|cRXP_LOOT_Al'Aketh Windstone Charms|r]. << Alliance
     *Saque-os para |T4622283:0|t[|cRXP_LOOT_Bloody Heirlooms|r]. << Horde
     .complete 94487,1 --10/10 Bloody Heirloom
     .complete 92834,1 << Alliance --10/10 Al'Aketh Windstone Charm
-    .complete 93165,1 << Alliance --10/10 Al'Alketh Cultist's Ear
+    .complete 93165,1 << Alliance --10/10 Al'Aketh Cultist's Ear
     .mob Al'Aketh Footsoldier::252665
     .mob Al'Aketh Stormchaser::252664
 step
     #hidewindow
     #completewith ToHermit << Alliance
     #completewith ForestHollowsA << Horde
+    #loop
     .goto 2521,62.83,38.25,35,0
     .goto 2521,62.08,36.7,35,0
     .goto 2521,61.17,35.44,35,0
@@ -4809,7 +4847,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elegael Thornpaw::257944|r.
     .turnin 94485 >>Entregue Lágrimas of the Lady
     .turnin 94487 >>Entregue Unwanted and Indigno
-    .turnin 94486 >>Entregue Peninha for Vinculação << Alliance
+    .turnin 94486 >>Entregue Peninha for Vinculação
     .accept 94488 >>Aceite The Ties That Vincular
     .accept 94489 >>Aceite The Wounds of Traição
     .target Elegael Thornpaw::257944
@@ -4828,9 +4866,9 @@ step
 step << Alliance
     .goto 2521,63.75,36.44,30,0
     .goto 2521,63.80,36.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Vayn Moongaze na entrada da caverna.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vayn Moongaze::254151|r na entrada da caverna.
     .turnin 93165 >>Entregue Misericórdia Falls on Deaf Orelhas
-    .target Vayn Moongaze
+    .target Vayn Moongaze::254151
 step
     #loop
     .goto 2521,63.93,33.76,20,0
@@ -4851,7 +4889,8 @@ step
     .goto 2521,66.13,32.18,15,0
     .goto 2521,65.79,33,15,0
     .goto 2521,65.93,33.55,15,0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClique em |cRXP_PICK_Druidas|r, não se mova enquanto os clica ou isso pode dar bug.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClique nos |cRXP_PICK_Druids|r.
+    *|cRXP_WARN_Não se mova durante a interação ou pode falhar em conceder crédito|r.
     .complete 94489,1,4 --7/7 Injured Druids healed
     .target Mithraless Sterngale::258288
     .target Baeo Sharpstrike::258289
@@ -4940,8 +4979,8 @@ step << Alliance Rogue
     .goto 2521,59.55,73.3,30,0
     .goto 2521,59.91,72.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eltheen Nightbreeze::252379|r.
-    .train 1766 >>Use |T132219:0|t[Chute]
-    .train 3127 >>Treine |T132269:0|t[Aparar]
+    .train 1766 >>Aprenda |T132219:0|t[Chute]
+    .train 3127 >>Aprenda |T132269:0|t[Aparar]
     .skipgossipid 136810
     .target Eltheen Nightbreeze::252379
     .money <0.16
@@ -5064,15 +5103,15 @@ step << Alliance
     .skipgossipid 136541
     .mob Ayessa Dawnsinger::251968
 step << Alliance
+    .goto 2521,59.94,77.92,30,0
+    .goto 2521,61.45,77.15,30,0
+    .goto 2521,62.13,76.85,30,0
+    .goto 2521,63.35,78.58,30,0
     .goto 2521,66.34,79.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Iaadaria Bitterwind::253004|r.
     .turnin 92741 >>Entregue Unwelcome Visitantes
     .target Iaadaria Bitterwind::253004
 step << Alliance
-    .goto 2521,59.94,77.92,30,0
-    .goto 2521,61.45,77.15,30,0
-    .goto 2521,62.13,76.85,30,0
-    .goto 2521,63.35,78.58,30,0
     .goto 2521,66.54,79.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elaadrin Evengale::252475|r.
     .complete 92640,3 --1/1 Recruit the High Order
@@ -5089,7 +5128,7 @@ step << Alliance Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anathamaas Aetherwind::252373|r.
     .train 145 >>Aprenda |T135812:0|t[Bola de Fogo (Rank 3)]
     .train 604 >>Aprenda |T136006:0|t[Atenuar Magia]
-    .train 597 >>Aprenda |T133952:0|t[Conjurar Comida (Rank 2)]
+    -- .train 597 >>Train |T133952:0|t[Conjure Food (Rank 2)]
     .train 130 >>Aprenda |T135992:0|t[Queda Lenta]
     .skipgossipid 136807
     .target Anathamaas Aetherwind::252373
@@ -5143,6 +5182,7 @@ step << Alliance
     .goto 2521,63.99,74.1,40,0
     .goto 2521,61.15,70.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Valennia Stormfist::253844|r.
+    *|cRXP_WARN_Se um Tornado estiver próximo, use-o para se deslocar mais rapidamente|r.
     .complete 93065,1 --|1/1 Find Valennia on the Road
     .turnin 93065 >>Entregue Preparação para a Batalha
     .target Valennia Stormfist::253844
@@ -5326,12 +5366,12 @@ step << Alliance
 --     .cast 1259416 >>Jump off the mountain and use |T132845:0|t[Walk on Air] to fly towards the questgiver.
 --     .cooldown spell,1259416,>0,1
 --     .usespell 1259416
-step << Alliance
-    .goto 2521,66.63,79.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elaadrin Evengale|r.
-    .turnin 93089 >>Entregue What Comes Next
-    .accept 94946 >>Aceite The Magical City of Dalaran
-    .target Elaadrin Evengale
+-- step << Alliance
+--     .goto 2521,66.63,79.95
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaadrin Evengale|r.
+--     .turnin 93089 >>Turn in What Comes Next
+--     .accept 94946 >>Accept The Magical City of Dalaran
+--     .target Elaadrin Evengale
 
 
 -- step << Warrior
@@ -5372,7 +5412,7 @@ step << Alliance
 --     .xp <14,1
 
 step << Horde
-    >>Abandone qualquer missão de 'Acampamento 101' restante.
+    >>Abandone quaisquer "Acampamento 101" restantes.
     *Clique na macro no painel Ativo Itens para abandonar todos de uma vez.
     .abandon 97970 >>Abandone Acampamento 101: Mineração
     .abandon 97971 >>Abandone Acampamento 101: Esfolamento
@@ -5390,7 +5430,7 @@ step << Horde
     .macro Abandon 101,130722 >>Abandone 101
 step << Alliance
     #completewith Magical City of Dalaran
-    >>Abandone qualquer missão de 'Acampamento 101' restante.
+    >>Abandone quaisquer "Acampamento 101" restantes.
     *Clique na macro no painel Ativo Itens para abandonar todos de uma vez.
     .abandon 97970 >>Abandone Acampamento 101: Mineração
     .abandon 97971 >>Abandone Acampamento 101: Esfolamento
@@ -5442,10 +5482,10 @@ step << Alliance
     -- .goto 2521,65.44,80.46,15,0
     -- .goto 2521,65.25,81.64,25,0
     *|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Denaaris Stargale::259084|r.
-    .turnin -94946 >>Entregue The Magical City of Dalaran
+    -- .turnin -94946 >>Turn in The Magical City of Dalaran
     .accept 94947 >>Aceite Bem-vindo a Azeroth
     .skipgossipid 137530
-    .target Halavuul Cragwind::252388
+    .target Denaaris Stargale::259084
 step << Alliance
     #completewith Magical City of Dalaran
     .goto 2521,65.81,83.44
@@ -5454,10 +5494,10 @@ step << Alliance
 step << Alliance
     #requires Magical City of Dalaran
     .goto 1416/0,438.93,448.88
-    >>|cRXP_WARN_Não pule do zepelim cedo, você pode ser empurrado da plataforma|r.
+    >>|cRXP_WARN_Não saia do zepelim cedo, pois pode ser empurrado da plataforma|r.
     *|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Denaaris Stargale::259084|r.
     .target Denaaris Stargale::259084
-    .turnin -94946 >>Entregue The Magical City of Dalaran
+    -- .turnin -94946 >>Turn in The Magical City of Dalaran
     .accept 94947 >>Aceite Bem-vindo a Azeroth
 step << Alliance Druid
     .goto 1416/0,385.700,385.400
@@ -5481,30 +5521,30 @@ step << Alliance
 --     .turnin 94914 >>Turn in Moonglade
 step << Alliance Hunter
     .goto 1453/0,765.700,-8804.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Catarina Gurjão|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Catherine Leland::5494|r
     >>|cRXP_BUY_Compre um|r |T134335:0|t[MIçanga Brilhosa] |cRXP_BUY_e três|r |T134324:0|t[Reptantes] |cRXP_BUY_dela. Isto é para uma missão de 900xp|r
     .collect 6529,1,95065,1 --|1/1 Shiny Bauble
     .collect 6530,3,95065,1 --|3/3 Nightcrawlers
-    .target Catherine Leland
+    .target Catherine Leland::5494
 step << Alliance Hunter
     .goto 1453/0,596.400,-8831.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Túlio Malheiros|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thurman Mullby::1285|r
     >>|cRXP_BUY_Compre um|r [Simple Wood] |cRXP_BUY_and a|r [Flint and Tinder] |cRXP_BUY_from him|r
     >>|cRXP_WARN_Isto é usado para fazer|r |T135805:0|t[Basic Campfires] |cRXP_WARN_em Barcos para aumentar sua|r |T133971:0|t[Culinária] |cRXP_WARN_habilidade sem perder tempo|r
     >>Você precisa de 50 em [Culinária] para uma missão mais tarde na Floresta do Crepúsculo
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
-    .target Thurman Mullby
+    .target Thurman Mullby::1285
     .skill cooking,50,1 --XX Shows if cooking skill is <50
     .skill cooking,<1,1 -- shows if cooking is >1
 step << Alliance Hunter
     #ah
     .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Leiloeira Jasona|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Auctioneer Jaxon::15659|r
     >>|cRXP_BUY_Compre|r |T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r |cRXP_BUY_e/ou|r |T133970:0|t|cRXP_LOOT_[Stringy Lobo Carne]|r |cRXP_BUY_para aumentar sua|r |T133971:0|t[Culinária] |cRXP_BUY_mais tarde|r
     >>|cRXP_WARN_Você precisa de 50|r |T133971:0|t[Culinária] |cRXP_WARN_para uma missão em Darkshire mais tarde|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
-    >>|cRXP_BUY_Compre os itens a seguir para entregas mais rápidas em Cerro Oeste e Costa Negra em breve:|r
+    >>|cRXP_BUY_Compre os itens a seguir para devoluções mais rápidas em Cerro Oeste e Costa Negra:|r
     >>|T133972:0|t[Strider Carne]
     >>|T133912:0|t[Costa Negra Grouper]
     >>|T133970:0|t|cRXP_LOOT_[Naco de Carne de Javali]|r
@@ -5515,20 +5555,20 @@ step << Alliance Hunter
     .disablecheckbox
     .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (1-50)
     .disablecheckbox
-    .target Auctioneer Jaxon
+    .target Auctioneer Jaxon::15659
     .skill cooking,50,1 --XX Shows if cooking skill is <50
 step << Alliance Hunter
     #ah
     #optional
     .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Leiloeira Jasona|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Auctioneer Jaxon::15659|r
     >>Se você não quiser ou não puder fazer isso, pule esta etapa
-    >>|cRXP_BUY_Compre os itens a seguir para entregas mais rápidas em Cerro Oeste e Costa Negra em breve:|r
+    >>|cRXP_BUY_Compre os itens a seguir para devoluções mais rápidas em Cerro Oeste e Costa Negra:|r
     >>|T133972:0|t[Strider Carne]
     >>|T133912:0|t[Costa Negra Grouper]
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
-    .target Auctioneer Jaxon
+    .target Auctioneer Jaxon::15659
     .skill cooking,<50,1 --XX Shows if cooking skill is 50+
 step << Alliance
     .goto 1453,48.1,88.35,10,0
@@ -5643,12 +5683,12 @@ step << Alliance Hunter
     #optional
     .goto 1453/0,1330.100,-8645.400
     >>|cRXP_WARN_Suba de Nível em|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_enquanto espera o barco para Costa Negra se necessário|r
-    .zone Darkshore >>Pegue o barco para Costa Negra
+    .zone Darkshore >> Pegue o barco para Costa Negra
     .skill firstaid,<1,1 -- shows if firstaid is >1
 step << Alliance Hunter
     #label DarkshoreBoat
     .goto 1453/0,1330.100,-8645.400
-    .zone Darkshore >>Pegue o barco para Costa Negra
+    .zone Darkshore >> Pegue o barco para Costa Negra
 step << Horde
     .goto 2521,63.989,75.090
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
@@ -5671,7 +5711,7 @@ step << Warrior Horde
     .goto 2521,59.89,72.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Seena Skybreaker::252377|r.
     .train 5242 >>Use |T132333:0|t[Brado de Batalha (Rank 2)]
-    .train 7384 >>Use |T132223:0|t[Subjugar]
+    .train 7384 >>Aprenda |T132223:0|t[Subjugar]
     .train 7887,1 -- Overpower (Rank 2) Not Trained
     .train 72 >>Use |T132357:0|t[Trombada com Escudo]
     .train 1671,1 -- Shield Bash (Rank 2) Not Trained
@@ -5697,7 +5737,7 @@ step << Horde Rogue
     .goto 2521,59.9,72.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eltheen Nightbreeze::252379|r.
     .train 1766 >>Aprenda |T132219:0|t[Chute]
-    .train 3127 >>Treine |T132269:0|t[Aparar]
+    .train 3127 >>Aprenda |T132269:0|t[Aparar]
     .skipgossipid 136810
     .target Eltheen Nightbreeze::252379
     .money <0.16
@@ -5824,7 +5864,7 @@ step << Horde
 step << Horde
     .goto Orgrimmar,54.10,68.42
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Innkeeper Gryshka::6929|r
-    .home >>Defina sua Pedra de Retorno em Orgrimmar
+    .home >> Defina sua Pedra de Retorno em Orgrimmar
 	.target Innkeeper Gryshka::6929
     .bindlocation 1637
 step << Horde
@@ -5865,18 +5905,18 @@ step << Horde
 step << Horde Hunter
     .goto 1454/1,-4607.02,2100.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ormak Grimshot::3352|r
-    .train 13795 >>Treine suas magias de classe
+    .train 13795 >> Treine suas magias de classe
     .target Ormak Grimshot::3352
     .xp <12,1
 step << Horde Hunter
     .goto 1454/1,-4611.09,2135.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Xao'tsu::10088|r
-    .train 24556 >>Treine as magias do seu mascote
+    .train 24556 >> Treine as magias do seu mascote
     .target Xao'tsu::10088
 step << Horde Warrior
     .goto 1454/1,-4801.42,1980.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grezz Ragefist::3353|r
-    .train 7384 >>Treine suas magias de classe
+    .train 7384 >> Treine suas magias de classe
     .target Grezz Ragefist::3353
     .xp <12,1
     .xp >14,1
@@ -5884,7 +5924,7 @@ step << Horde Warrior
     #optional
     .goto 1454/1,-4801.42,1980.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grezz Ragefist::3353|r
-    .train 1160 >>Treine suas magias de classe
+    .train 1160 >> Treine suas magias de classe
     .target Grezz Ragefist::3353
     .xp <14,1
 step << Horde
@@ -5948,13 +5988,13 @@ step << skip --Horde
 step << Horde
     .goto 1454/1,-4226.78,1914.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zor Lonetree::4047|r
-    .accept 1061 >>Aceite The Espíritos of Stonetalon
+    .accept 1061 >>Aceite Os espíritos das Torres de Pedra
     .target Zor Lonetree::4047
     .xp <13,1
 step << Horde Shaman
     .goto 1454/1,-4225.09,1933.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kardris Dreamseeker::3344|r
-    .train 408341 >>Treine suas magias de classe
+    .train 408341 >> Treine suas magias de classe
     .target Kardris Dreamseeker::3344
     .xp <12,1
     .xp >14,1
@@ -5962,13 +6002,13 @@ step << Horde Shaman
     #optional
     .goto 1454/1,-4225.09,1933.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kardris Dreamseeker::3344|r
-    .train 8045 >>Treine suas magias de classe
+    .train 8045 >> Treine suas magias de classe
     .target Kardris Dreamseeker::3344
     .xp <14,1
 step << Horde Rogue
     .goto 1454/1,-4296.34,1762.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ormok::3328|r
-    .train 1766 >>Treine suas magias de classe
+    .train 1766 >> Treine suas magias de classe
     .target Ormok::3328
     .xp <12,1
     .xp >14,1
@@ -5976,13 +6016,13 @@ step << Horde Rogue
     #optional
     .goto 1454/1,-4296.34,1762.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ormok::3328|r
-    .train 1758 >>Treine suas magias de classe
+    .train 1758 >> Treine suas magias de classe
     .target Ormok::3328
     .xp <14,1
 step << Horde Mage
     .goto 1454/1,-4218.64,1473.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Pephredo::5882|r
-    .train 145 >>Treine suas magias de classe
+    .train 145 >> Treine suas magias de classe
     .target Pephredo::5882
     .xp <12,1
     .xp >14,1
@@ -5990,7 +6030,7 @@ step << Horde Mage
     #optional
     .goto 1454/1,-4218.64,1473.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Pephredo::5882|r
-    .train 1449 >>Treine suas magias de classe
+    .train 1449 >> Treine suas magias de classe
     .target Pephredo::5882
     .xp <14,1
 step << !Hunter
@@ -5998,37 +6038,37 @@ step << !Hunter
     .maxlevel 13,Silverpineskip
 step << Horde
     #completewith next
-    .zone Durotar >>Saia de Orgrimmar
+    .zone Durotar >> Saia de Orgrimmar
     .zoneskip Durotar
     .zoneskip Tirisfal Glades
     .zoneskip Undercity
     .zoneskip Silverpine Forest
 step << Horde Hunter
     #completewith next
-    .subzone 362 >>Vá para Monte Navalha
+    .subzone 362 >> Vá para Monte Navalha
 step << Horde Hunter
     #label Conscript
     .goto 1411/1,-4648.55,271.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Takrin Buscatrilha|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Takrin Pathseeker::3336|r
     .accept 840 >>Aceite Recruta da Horda
-    .target Takrin Pathseeker
+    .target Takrin Pathseeker::3336
 step << Horde Hunter
     #completewith next
-    .subzone 379 >>Vá para Far Vigiar Post
+    .subzone 379 >> Vá para Far Vigiar Post
 step << Horde Hunter
     .goto 1413/1,-3687.11,303.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kargal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kargal Battlescar::3337|r
     .turnin 840 >>Entregue Recruta da Horda
-    .accept 842 >>Aceite Conscrição da Encruzilhada
-    .target Kargal Battlescar
+    .accept 842 >>Aceite Recrutamento na Encruzilhada
+    .target Kargal Battlescar::3337
 step << Horde !Hunter
-    .goto 1411/1,-4648.55,1321.88,40 >>Suba a Torre Zepelim
-    .zone Tirisfal Glades >>Pegue o Zepelim para Tirisfal Glades
+    .goto 1411/1,-4648.55,1321.88,40 >>Suba a Torre do Zepelim
+    .zone Tirisfal Glades >>Pegue o Zepelim para Clareiras de Tirisfal
     >>|cRXP_WARN_Conjure água enquanto espera|r << Mage
     .zoneskip Tirisfal Glades
 step << Horde !Hunter
     #completewith DeliverytoSPF
-    .goto 1420/0,253.4,2234.85,80 >>Viaje para Brill
+    .goto 1420/0,253.4,2234.85,80 >> Viaje para Brill
 step << Horde !Hunter
     .goto 1420/0,254.600,2225.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Deathguard Terrence::1738|r
@@ -6077,18 +6117,18 @@ step << Horde !Hunter
     .goto 1458/0,240.68,1706.97,10,0
     .goto 1458/0,241.06,1660.12,10,0
     .goto 1458/0,257.08,1623.38,10,0
-    .goto 1458/0,244.51,1598.73,15 >>Pegue o elevador até Cidade Baixa
+    .goto 1458/0,244.51,1598.73,15 >> Pegue o elevador até Cidade Baixa
 step << Horde !Hunter
     #label UCflightpath1
     .goto 1458/0,266.39,1567.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Michael Garrett::4551|r
-    .fp Undercity >>Aprenda a rota de voo de Undercity
+    .fp Undercity >> Aprenda a rota de voo de Cidade Baixa
     .target Michael Garrett::4551
 step << Horde !Hunter
     #ah
     .goto 1458/0,224.300,1648.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Auctioneer Cain::15682|r
-    >>|cRXP_BUY_Compre Três|r |T133884:0|t[Murloc Olhos] |cRXP_BUY_na Casa de Leilões|r
+    >>|cRXP_BUY_Compre três|r |T133884:0|t[Murloc Olhos] |cRXP_BUY_no Auction House|r
     >>|cRXP_WARN_Pule isto se você quiser, é apenas uma pequena economia de tempo|r
     .collect 730,3,91920,1 --Collect Murloc Eyes (x3)
     .target Auctioneer Cain::15682
@@ -6103,92 +6143,15 @@ step << Horde !Hunter
     .goto 1458/0,610.42,1684.44,35,0
     .goto 1458/0,663.19,1600.46,35,0
     .goto 1420/0,724.25,1682.66,50,0
-    .zone Tirisfal Glades >>Saia de Cidade Baixa pelos Esgotos
+    .zone Tirisfal Glades >> Saia de Cidade Baixa pelos Esgotos
     .zoneskip Silverpine Forest
 step << Horde !Hunter
     #label Entersilverpine
     .goto 1420/0,629.36,1553.42
-    .zone Silverpine Forest >>Vá para Floresta de Pinhaprata
+    .zone Silverpine Forest >> Vá para Floresta de Pinhaprata
     .zoneskip Silverpine Forest
 step << !Hunter
     #optional
     #label Silverpineskip
 
-]])
-
-RXPGuides.RegisterGuide([[
-#forever
-#version 1
-#name Coisas Aleatórias
-#group Guia Forever (A) << Alliance
-#group Guia Forever (H) << Horde
-#internal
-
-    .goto 2521,41.07,22.33 -- spirit healer thendal village
-    .goto 2521,40.23,63.82 --watchtower
-    .goto 2521,55.01,68.16 --gustberry highlands
--- step
---     .goto 2521,53.96,38.90
---     .accept 98285 >>Accept Camping 101: Engineering
--- step
---     .goto 2521,53.96,38.90
---     .complete 98285,1 --Raise your engineering skill to 20
--- step -- repeatable
---     .goto 2521,63.80,35.99
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vayn Moongaze|r.
---     .turnin 93459 >>Turn in More Al'Aketh Ears
---     .target Vayn Moongaze
-step
-    .goto 2521,59.151,79.778
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ayessa Dawnsinger::251968|r.
-    .target Ayessa Dawnsinger::251968
-    .turnin 93738 >>Entregue The Degradado Constructo
-    .accept 93746 >>Aceite Uma Resposta Firme
-step
-    .goto 2521,59.953,57.182
-    .complete 93746,1 --|1/1 Confront Belathaan Brightwish
-step
-    .goto 2521,59.942,56.938
-    >>137326
-step
-    .goto 2521,59.155,79.787
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ayessa Dawnsinger::251968|r.
-    .target Ayessa Dawnsinger::251968
-    .turnin 93746 >>Entregue Uma Resposta Firme
-    .accept 92871 >>Aceite A Serviço de Zephras
-    .accept 93740 >>Aceite Sangue por Sangue
-
-step
-    .goto 2521,63.983,75.093
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lotheluum Starbreeze::252359|r.
-    .train 5232 >>Treine |T1:0|t[Marca do Indomado (Rank 2)]
-    .train 8924 >>Treine |T1:0|t[Fogo Lunar (Rank 2)]
-    .target Lotheluum Starbreeze::252359
-
-step
-    .goto 2521,51.241,86.193
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Olariaan Swiftburn::268592|r.
-    .target Olariaan Swiftburn::268592
-    .turnin 97244 >>Entregue Call of Fogo
-    .accept 97245 >>Aceite Chamado do Fogo
-step
-    .goto 2521,42.418,69.117
-    .complete 97245,1 --|1/1 Kuramaa's Mask
-step
-    .goto 2521,51.240,86.187
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Olariaan Swiftburn::268592|r.
-    .target Olariaan Swiftburn::268592
-    .turnin 97245 >>Entregue Call of Fogo
-    .accept 97257 >>Aceite Chamado do Fogo
-step
-    .goto 2521,51.265,85.927
-    .complete 97257,1 --|1/1 Complete the Ritual with Olariaan
-step
-    .goto 2521,58.312,78.827
-    .complete 97257,2 --|1/1 Light the Brazier of Eternal Flame
-step
-    .goto 2521,58.315,78.512
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sessaria Skystride::252382|r.
-    .target Sessaria Skystride::252382
-    .turnin 97257 >>Entregue Call of Fogo
 ]])

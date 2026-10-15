@@ -184,7 +184,7 @@ RXPGuides.RegisterGuide([[
 step << Warrior
     #season 2
     #completewith next
-    .goto Elwynn Forest,38.34,81.54,20 >>Entre em Fargodeep Mina
+    .goto Elwynn Forest,38.34,81.54,20 >> Entre em Fargodeep Mina
     .train 403476,1
 step << Warrior
     #season 2
@@ -255,15 +255,15 @@ RXPGuides.RegisterGuide([[
 
 step << Warrior
     #season 2
-    .gossipoption 109045 >>Fale com o |cRXP_FRIENDLY_Lívia Valforte <Garçom>|r dentro da Estalagem do Parque
+    .gossipoption 109045 >> Fale com o |cRXP_FRIENDLY_Lívia Valforte <Garçom>|r dentro da Estalagem do Parque
     .gossipoption 109047
     .goto Stormwind City,22.608,64.621
-    .gossipoption 109084 >>Fale com |cRXP_ENEMY_Estuardo|r, depois derrote-o. Ele ficará inconsciente a 0%
+    .gossipoption 109084 >> Fale com |cRXP_ENEMY_Estuardo|r, depois derrote-o. Ele ficará inconsciente a 0%
     .goto Stormwind City,21.213,62.781
     >>Se |cRXP_ENEMY_Estuardo|r não estiver lá, aguarde o seu reaparecimento
-    .gossipoption 109044 >>Fale com o |cRXP_FRIENDLY_Lívia Valforte <Garçom>|r novamente após derrotar |cRXP_ENEMY_Estuardo|r para receber a |T134419:0|t[|cRXP_FRIENDLY_Runa de Ataque Frenético|r]
+    .gossipoption 109044 >> Fale com o |cRXP_FRIENDLY_Lívia Valforte <Garçom>|r novamente após derrotar |cRXP_ENEMY_Estuardo|r para receber a |T134419:0|t[|cRXP_FRIENDLY_Runa de Ataque Frenético|r]
     .goto Stormwind City,22.608,64.621
-    .train 425447,1 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Ataque Frenético|r] |cRXP_WARN_para treinar|r |T236317:0|t[Ataque Frenético]
+    .train 425447,1 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Ataque Frenético|r] |cRXP_WARN_para treinar|r |T236317:0|t[Ataque Frenético]
     >>|cRXP_WARN_Nota: Isso pode ser bastante difícil em solo dependendo do seu nível. Procure ajuda se necessário|r
     .use 204716
     .target Liv Bradford
@@ -285,7 +285,7 @@ step << Warrior
     >>Fale com |cRXP_ENEMY_Dumalte|r pela porta, depois derrote-o. Ele desmaiará a 0%.
     >>Se |cRXP_ENEMY_Dumalte|r não estiver lá, espere-o reaparecer.
     >>Fale com |cRXP_FRIENDLY_Bruuk Cevabarba|r novamente depois de derrotar |cRXP_ENEMY_Dumalte|r para receber o |T134419:0|t[|cRXP_FRIENDLY_Runa de Ataque Frenético|r]
-    .train 425447,1 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Ataque Frenético|r] |cRXP_WARN_para treinar|r |T236317:0|t[Ataque Frenético]
+    .train 425447,1 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Ataque Frenético|r] |cRXP_WARN_para treinar|r |T236317:0|t[Ataque Frenético]
     >>|cRXP_WARN_Nota: Isso pode ser bastante difícil em solo dependendo do seu nível. Procure ajuda se necessário|r
     .use 204716
     .target Bruuk Barleybeard
@@ -307,7 +307,7 @@ step << Warrior
     >>Fale com |cRXP_ENEMY_Syllart|r no andar de cima, depois o derrote. Ele desmaiará em 0%
     >>Se |cRXP_ENEMY_Syllart|r não estiver lá, espere-o ressurgir
     >>Fale com o |cRXP_FRIENDLY_Estalajadeiro Keldamyr|r novamente após derrotar |cRXP_ENEMY_Syllart|r para receber o |T134419:0|t[|cRXP_FRIENDLY_Runa de Ataque Frenético|r]
-    .train 425447,1 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Ataque Frenético|r] |cRXP_WARN_para treinar|r |T236317:0|t[Ataque Frenético]
+    .train 425447,1 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Ataque Frenético|r] |cRXP_WARN_para treinar|r |T236317:0|t[Ataque Frenético]
     >>|cRXP_WARN_Nota: Isso pode ser bastante difícil em solo dependendo do seu nível. Procure ajuda se necessário|r
     .use 204716
     .target Innkeeper Keldamyr
@@ -353,7 +353,7 @@ RXPGuides.RegisterGuide([[
 step << Warrior
     #season 2
     #completewith next
-    .goto Darkshore,55.106,33.621,30 >>Entre na caverna Naga Cliffspring
+    .goto Darkshore,55.106,33.621,30 >> Entre na caverna Naga Cliffspring
     .train 403489,1
 step << Warrior
     #season 2
@@ -409,7 +409,7 @@ step << Warrior
     .train 403475,1
 step << Warrior
     #completewith RoDSW
-    .zone Stormwind City >>Vá para Ventobravo
+    .zone Stormwind City >> Vá para Ventobravo
 step << Warrior
     #season 2
     #completewith RoDSW
@@ -442,7 +442,7 @@ step << Warrior
     #season 2
     #label RoDSW
     #requires GnollHead
-    .cast 406651 >>|cRXP_WARN_Use qualquer um dos|r |T134455:0|t[Monster Hunter's Runa Fragmentos] |cRXP_WARN_para criar a|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastar|r]
+    .cast 406651 >> |cRXP_WARN_Use qualquer um dos|r |T134455:0|t[Monster Hunter's Runa Fragmentos] |cRXP_WARN_para criar a|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastar|r]
     .collect 204703,1 -- Rune of Devastate (1)
     .use 204690
     .use 204689
@@ -486,7 +486,7 @@ step << Warrior
     .train 403475,1
 step << Warrior
     #completewith next
-    .zone Darnassus >>Viagem para Darnassus
+    .zone Darnassus >> Viagem para Darnassus
 step << Warrior
     #season 2
     .goto Darnassus,63.108,21.858
@@ -1195,7 +1195,7 @@ step << Warrior
     .collect 208778,1 -- Rune of Quick Strike (1)
     .train 425443,1
 step << Warrior
-    .train 425443 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Golpe Rápido|r] |cRXP_WARN_para treinar|r |T132394:0|t[Golpe Rápido]
+    .train 425443 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Golpe Rápido|r] |cRXP_WARN_para treinar|r |T132394:0|t[Golpe Rápido]
     .use 208778
     .itemcount 208778,1
 ]])
@@ -1221,7 +1221,7 @@ step
     #completewith next
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Devrak|r
-    .fly Ratchet >>Voe para Ponto de Ancoragem
+    .fly Ratchet >> Voe para Ponto de Ancoragem
     .target Devrak
 step
     #completewith next
@@ -1236,7 +1236,7 @@ step
     .train 403489,1
 step
     #season 2
-    .train 403489 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Raiva Infinita|r] |cRXP_WARN_para treinar|r |T132347:0|t[Raiva Infinita]
+    .train 403489 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Raiva Infinita|r] |cRXP_WARN_para aprender|r |T132347:0|t[Raiva Infinita]
     .use 208741
     .itemcount 208741,1
 
@@ -1268,7 +1268,7 @@ step
     .train 403489,1
 step
     #season 2
-    .train 403489 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Raiva Infinita|r] |cRXP_WARN_para treinar|r |T132347:0|t[Raiva Infinita]
+    .train 403489 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Raiva Infinita|r] |cRXP_WARN_para aprender|r |T132347:0|t[Raiva Infinita]
     .use 208741
     .itemcount 208741,1
 
@@ -1309,7 +1309,7 @@ step << Warrior
     .use 209047
     .train 425443,1
 step << Warrior
-    .train 425443 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Golpe Rápido|r] |cRXP_WARN_para treinar|r |T132394:0|t[Golpe Rápido]
+    .train 425443 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Golpe Rápido|r] |cRXP_WARN_para treinar|r |T132394:0|t[Golpe Rápido]
     .use 208778
     .itemcount 208778,1
 ]])
@@ -1354,7 +1354,7 @@ step
     .mob Crushridge Warmonger
 step
     #completewith next
-    .goto Arathi Highlands,57.587,72.499,10 >>Suba a montanha para chegar a |cRXP_FRIENDLY_[[Skonk] <[Amateur Chef]>] <[Amateur Chef]>|r
+    .goto Arathi Highlands,57.587,72.499,10 >> Suba a montanha para chegar a |cRXP_FRIENDLY_[[Skonk] <[Amateur Chef]>] <[Amateur Chef]>|r
 step
     .train 416004,1
     .goto Arathi Highlands,57.68,74.66
@@ -1367,7 +1367,7 @@ step
     .goto Arathi Highlands,30.74,66.94,60,0
     .goto Arathi Highlands,22.72,71.98,50,0
     .goto Arathi Highlands,21.50,75.91,40,0
-    .goto Arathi Highlands,21.98,79.96,30 >>Vá para Faldir's Cove
+    .goto Arathi Highlands,21.98,79.96,30 >> Vá para Faldir's Cove
 step
     #label SpiceBlend
     .train 416004,1
@@ -1398,7 +1398,7 @@ step
     .zone Badlands >>Viaje para Ermos
 step
     #completewith next
-    .goto Badlands,42.87,29.77,60 >>Entre em Angor Fortaleza
+    .goto Badlands,42.87,29.77,60 >> Entre em Angor Fortaleza
 step
     .train 416004,1
     .goto Badlands,41.92,26.26,20,0
@@ -1433,7 +1433,7 @@ step
     .zone Arathi Highlands >>Vá para Planalto Arathi
 step
     #completewith next
-    .goto Arathi Highlands,57.587,72.499,10 >>Suba a montanha para chegar a |cRXP_FRIENDLY_[[Skonk] <[Amateur Chef]>] <[Amateur Chef]>|r
+    .goto Arathi Highlands,57.587,72.499,10 >> Suba a montanha para chegar a |cRXP_FRIENDLY_[[Skonk] <[Amateur Chef]>] <[Amateur Chef]>|r
 step
     #label GroceryRun
     .train 416004,1
@@ -1477,7 +1477,7 @@ step
 step
     .train 409163,1
     #completewith WitherbarkCave
-    .zone Arathi Highlands >>Vá para |cFFfa9602Planalto Arathi|r
+    .zone Arathi Highlands >> Vá para |cFFfa9602Planalto Arathi|r
 step
     .train 409163,1
     .goto Arathi Highlands,72.51,65.67,70,0
@@ -1501,7 +1501,7 @@ step
     .train 409163,1
     #completewith next
     .goto Arathi Highlands,69.502,81.924
-    .cast 436278 >>|cRXP_WARN_Use a|r |T133057:0|t[|cRXP_LOOT_Cascasseca Mallet|r] |cRXP_WARN_no |cRXP_PICK_Gongo|r dentro da caverna|r
+    .cast 436278 >> |cRXP_WARN_Use a|r |T133057:0|t[|cRXP_LOOT_Cascasseca Mallet|r] |cRXP_WARN_no |cRXP_PICK_Gongo|r dentro da caverna|r
     .use 216483 >>|cRXP_WARN_Isto desova um |cRXP_ENEMY_Golias Cascasseca|r (nível 35 elite) bem como 2 inimigos adicionais|r
 step
     .train 409163,1
@@ -1510,7 +1510,7 @@ step
     .collect 213109,1
     .mob Witherbark Goliath
 step
-    .train 409163 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_LOOT_Runa de Raiva Concentrada|r] |cRXP_WARN_para aprender|r |T132345:0|t[Raiva Concentrada]
+    .train 409163 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_LOOT_Runa de Raiva Concentrada|r] |cRXP_WARN_para aprender|r |T132345:0|t[Raiva Concentrada]
     .use 213109
 ]])
 
@@ -1559,7 +1559,7 @@ step
     +Um escudo
 step
     .train 403472,1
-    .goto Thousand Needles,67.84,89.50,100 >>Vá para o Rustmaul Digsite em |cFFfa9602Mil Agulhas|r
+    .goto Thousand Needles,67.84,89.50,100 >> Vá para o Rustmaul Digsite em |cFFfa9602Mil Agulhas|r
 step
     #completewith next
     +|cRXP_WARN_Certifique-se de que você equipou sua arma de uma mão e seu escudo|r
@@ -1628,7 +1628,7 @@ step
     .unitscan Wandering Swordsman
     .skipgossip
 step
-    .train 426491 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa da Comandante|r] |cRXP_WARN_para aprender|r |T132339:0|t[Brado de Convocação]
+    .train 426491 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa da Comandante|r] |cRXP_WARN_para aprender|r |T132339:0|t[Brado de Convocação]
     .use 213110
 ]])
 
@@ -1655,7 +1655,7 @@ step
     .unitscan Ohk'zi
     .train 427081,1
 step
-    .train 427081 >>|cRXP_WARN_Usar o|r |T134419:0|t[|cRXP_FRIENDLY_Runa dos Desenfreados|r] |cRXP_WARN_para aprender|r |T132352:0|t[Alvoroço]
+    .train 427081 >> |cRXP_WARN_Usar o|r |T134419:0|t[|cRXP_FRIENDLY_Runa dos Desenfreados|r] |cRXP_WARN_para aprender|r |T132352:0|t[Alvoroço]
     .use 220682
 
 ]])
@@ -1689,11 +1689,11 @@ step
     .collect 220914,1 --Broken Geode Hammer
     .train 427084,1
 step
-    >>Clique com o botão direito no |T133054:0|t|cRXP_LOOT_Martelo de Geodo Quebrado|r para saqueá-lo e obter a |T134419:0|t[|cRXP_FRIENDLY_Rune of Demolição|r]
+    >>Clique com o botão direito no |T133054:0|t|cRXP_LOOT_Degradado Martelo de Geodo|r para obter |T134419:0|t[|cRXP_FRIENDLY_Runa da Demolição|r]
     .collect 220913,1 --Rune of Demolition
     .train 427084,1
 step
-    .train 427084 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Demolição|r] |cRXP_WARN_para aprender|r |T132364:0|t[Violência Gratuita]
+    .train 427084 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa da Demolição|r] |cRXP_WARN_para aprender|r |T132364:0|t[Violência Gratuita]
     .use 220913
 ]])
 
@@ -1752,7 +1752,7 @@ step
 step
 	#completewith next
 	+Para fazer skip, pule na rocha atrás do pé e faça logout
-	.link https://youtu.be/oBnDG1AWcxU >>https://youtu.be/oBnDG1AWcxU >> CLIQUE AQUI para referência
+	.link https://youtu.be/oBnDG1AWcxU >> CLIQUE AQUI para referência
 step
     #label summonIodax
     #optional
@@ -1889,8 +1889,8 @@ step
     >>|cRXP_WARN_Dirija-se ao|r |cRXP_PICK_Altar da Reverência|r
     >>|cRXP_WARN_Uma vez lá, digite "/salute" no seu chat. Isso invocará um|r |cRXP_ENEMY_Campeão Reverenciado|r
     >>Abata o |cRXP_ENEMY_Campeão Reverenciado|r e depois clique no |cRXP_PICK_Altar da Reverência|r
-    .accept 84124 >>Aceite Legado da Bravura
-    .turnin 84124 >>Entregue Legado da Bravura
+    .accept 84124 >> Aceite Legado da Bravura
+    .turnin 84124 >> Entregue Legado da Bravura
     .mob Revered Champion
 step
     .train 440492 >>|cRXP_WARN_Use o|r |T133747:0|t[|cRXP_LOOT_Runa do Primeiro Guerreiro|r] |cRXP_WARN_para aprender|r |T237516:0|t[Carne Fresca]
@@ -1932,8 +1932,8 @@ step
     >>|cRXP_WARN_Ele vai lançar habilidades semelhantes a [Cutilada]. Quando você ver essas animações, afaste-se rapidamente|r
     >>|cRXP_WARN_Quando ele lançar [Pisada Trovejante], você DEVE se mover para uma das pequenas saliências da plataforma, caso contrário será derrubado|r
     >>|cRXP_WARN_Ao ser bem-sucedido, aceite e entregue a missão|r
-    .accept 84317 >>Aceite Meia-noite Infinita
-    .turnin 84317 >>Entregue Meia-noite Infinita
+    .accept 84317 >> Aceite Meia-noite Infinita
+    .turnin 84317 >> Entregue Meia-noite Infinita
     .mob Titanic Watcher
 step
     .train 440494 >>|cRXP_WARN_Use as|r |T133739:0|t[|cRXP_LOOT_Percepções do Errante Atemporal|r] |cRXP_WARN_para aprender|r |T132346:0|t[Morte Súbita]
@@ -1956,20 +1956,20 @@ step
     .goto Tanaris,59.2,91.5
     >>|cRXP_WARN_Vá para o sul de Tanaris ao longo da costa|r
     >>Clique em |cRXP_PICK_Half-Enterrado Mech|r e em |cRXP_PICK_Access Chocar|r no chão
-    .accept 84135 >>Aceite Robô praiano
-    .turnin 84135 >>Entregue Robô praiano
-    .accept 84137 >>Aceite Amor de máquina
+    .accept 84135 >> Aceite Robô praiano
+    .turnin 84135 >> Entregue Robô praiano
+    .accept 84137 >> Aceite Amor de máquina
 step
     .train 440496,1
     #completewith next
-    .cast 459613 >>|cRXP_WARN_Use o|r |T134731:0|t[Acelerador de Flutuação Guiado] |cRXP_WARN_para aumentar sua velocidade de nado pelos próximos 4 min|r
+    .cast 459613 >> |cRXP_WARN_Use o|r |T134731:0|t[Acelerador de Flutuação Guiado] |cRXP_WARN_para aumentar sua velocidade de nado pelos próximos 4 min|r
     .use 226856
 step
     .train 440496,1
     >>|cRXP_WARN_NOTA: NÃO HÁ SETA PARA ESTE PASSO!|r
     >>|cRXP_WARN_Você deve nadar para o sul até a ilha remota e falar com |cRXP_FRIENDLY_[[Sebastian Jurgens] <[Mad Doctor]>] <[Mad Doctor]>|r. Você deve nadar pelas águas de fadiga para alcançá-lo. Vá em direção ao Oilrig localizado na ilha para encontrá-lo|r
-    .turnin 84137 >>Entregue Amor de máquina
-    .accept 84138 >>Aceite Favores gelados
+    .turnin 84137 >> Entregue Amor de máquina
+    .accept 84138 >> Aceite Favores gelados
     .target Sebastian Jurgens
 step
     .train 440496,1
@@ -1979,18 +1979,18 @@ step
     .train 440496,1
     .goto Winterspring,61.2,37.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Numi|r
-    .turnin 84138 >>Entregue Favores gelados
-    .accept 84146 >>Aceite Ao Resgate da Bolsa Vermelha
+    .turnin 84138 >> Entregue Favores gelados
+    .accept 84146 >> Aceite Ao Resgate da Bolsa Vermelha
     .target Numi
 step
     #completewith next
-    .zone Burning Steppes >>Vá para Estepes Ardentes
+    .zone Burning Steppes >> Vá para Estepes Ardentes
 step
     .train 440496,1
     .goto Burning Steppes,52.955,24.374
     >>Clique em |cRXP_PICK_Red Bolsa|r no chão
-    .turnin 84146 >>Entregue Ao Resgate da Bolsa Vermelha
-    .accept 84211 >>Aceite Covil dos Larápios
+    .turnin 84146 >> Entregue Ao Resgate da Bolsa Vermelha
+    .accept 84211 >> Aceite Covil dos Larápios
     .target Red Bag
 step
     .train 440496,1
@@ -2011,8 +2011,8 @@ step
     .train 440496,1
     .goto Winterspring,61.2,37.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Numi|r
-    .turnin 84211 >>Entregue Covil dos Larápios
-    .accept 84212 >>Entregue De Volta à Estante
+    .turnin 84211 >> Entregue Covil dos Larápios
+    .accept 84212 >> Entregue De Volta à Estante
     .target Numi
 step
     #completewith next
@@ -2020,13 +2020,13 @@ step
 step
     .train 440496,1
     >>|cRXP_WARN_Volte para |cRXP_FRIENDLY_[[Sebastian Jurgens] <[Mad Doctor]>] <[Mad Doctor]>|r na ilha remota ao sul novamente|r
-    .turnin 84212 >>Entregue De Volta à Estante
-    .accept 84213 >>Aceite Fenda Afora
+    .turnin 84212 >> Entregue De Volta à Estante
+    .accept 84213 >> Aceite Fenda Afora
     .target Sebastian Jurgens
 step
     .train 440496,1
-    .zone Westfall >>|cRXP_WARN_Siga |cRXP_FRIENDLY_[[Sebastian Jurgens] <[Mad Doctor]>] <[Mad Doctor]>|r para o teletransportador. Ele o teletransportará para Cerro Oeste|r << Alliance
-    .zone Tirisfal Glades >>|cRXP_WARN_Siga |cRXP_FRIENDLY_[[Sebastian Jurgens] <[Mad Doctor]>] <[Mad Doctor]>|r para o teletransportador. Ele o teletransportará para Tirisfal Glades|r << Horde
+    .zone Westfall >> |cRXP_WARN_Siga |cRXP_FRIENDLY_[[Sebastian Jurgens] <[Mad Doctor]>] <[Mad Doctor]>|r para o teletransportador. Ele o teletransportará para Cerro Oeste|r << Alliance
+    .zone Tirisfal Glades >> |cRXP_WARN_Siga |cRXP_FRIENDLY_[[Sebastian Jurgens] <[Mad Doctor]>] <[Mad Doctor]>|r para o teletransportador. Ele o teletransportará para Tirisfal Glades|r << Horde
     .target Sebastian Jurgens
 step
     .train 440496,1
@@ -2038,7 +2038,7 @@ step
 step
     .train 440496,1
     >>Clique em |cRXP_PICK_Mech Arma|r no chão
-    .turnin 84213 >>Entregue Fenda Afora
+    .turnin 84213 >> Entregue Fenda Afora
 step
     .train 440496 >>|cRXP_WARN_Use the|r |T133738:0|t[|cRXP_LOOT_Premonição e Antecipação de Combate|r] |cRXP_WARN_to learn|r |T236312:0|t[Onda de Choque]
     .use 226678

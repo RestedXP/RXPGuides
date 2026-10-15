@@ -15,7 +15,7 @@ step
     .xp >2,1
 step
     #completewith next
-    .zone Elwynn Forest >>Vá para Elwynn Forest
+    .zone Elwynn Forest >> Vá para Elwynn Forest
     .train 401760,1
     .xp <2,1
 step
@@ -44,7 +44,7 @@ step
     #label Research
     .goto Elwynn Forest,49.661,39.402
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gaspar Melchior|r dentro
-    .accept 77620 >>Aceite Pesquisa de Feitiços
+    .accept 77620 >> Aceite Pesquisa de Feitiços
     .target Khelden Bremen
     .train 401760,1
     .xp <2,1
@@ -99,7 +99,7 @@ step
     #label Research2
     .goto Elwynn Forest,49.661,39.402
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gaspar Melchior|r dentro
-    .turnin 77620 >>Entregue Pesquisa de Feitiços
+    .turnin 77620 >> Entregue Pesquisa de Feitiços
     .target Khelden Bremen
     .isQuestComplete 77620
     .xp <2,1
@@ -122,7 +122,7 @@ step
     .xp >2,1
 step
     #completewith next
-    .zone Dun Morogh >>Vá para Dun Morogh
+    .zone Dun Morogh >> Vá para Dun Morogh
     .train 401760,1
     .xp <2,1
 step
@@ -131,13 +131,13 @@ step
     .goto 1426,28.910,69.703,15,0
     .goto 1426,28.835,69.050,10,0
     .goto 1426,28.835,68.702,10,0
-    .goto 1426,28.939,68.387,12 >>Entre em Anvilmar
+    .goto 1426,28.939,68.387,12 >> Entre em Anvilmar
     .train 401760,1
     .xp <2,1
 step
     .goto Dun Morogh,28.709,66.366
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marryk Nurribit|r dentro
-    .accept 77667 >>Aceite Pesquisa de Feitiços
+    .accept 77667 >> Aceite Pesquisa de Feitiços
     .target Marryk Nurribit
     .train 401760,1
     .xp <2,1
@@ -145,7 +145,7 @@ step
     #optional
     #completewith next
     .goto 1426,28.751,69.058,12,0
-    .goto 1426,28.676,69.669,15 >>Saia de Anvilmar
+    .goto 1426,28.676,69.669,15 >> Saia de Anvilmar
     .train 401760,1
     .xp <2,1
 step
@@ -165,13 +165,13 @@ step
     .goto 1426,28.676,69.669,15,0
     .goto 1426,28.751,69.058,10,0
     .goto 1426,28.758,68.721,10,0
-    .goto 1426,28.645,68.364,12 >>Entre em Anvilmar
+    .goto 1426,28.645,68.364,12 >> Entre em Anvilmar
     .isQuestComplete 77667
     .xp <2,1
 step
     .goto Dun Morogh,28.709,66.366
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Marryk Nurribit|r
-    .turnin 77667 >>Entregue Pesquisa de Feitiços
+    .turnin 77667 >> Entregue Pesquisa de Feitiços
     .target Marryk Nurribit
     .isQuestComplete 77667
     .xp <2,1
@@ -194,7 +194,7 @@ step
     .xp >2,1
 step
     #completewith next
-    .zone Durotar >>Vá para Durotar
+    .zone Durotar >> Vá para Durotar
     .train 401760,1
     .xp <2,1
 step
@@ -247,7 +247,7 @@ step
 step
     .goto Durotar,42.51,69.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mai'ah|r
-    .turnin 77643 >>Entregue Pesquisa de Feitiços
+    .turnin 77643 >> Entregue Pesquisa de Feitiços
     .target Mai'ah
     .isQuestComplete 77643
     .xp <2,1
@@ -270,7 +270,7 @@ step
 step
     #optional
     #completewith next
-    .zone Tirisfal Glades >>Vá para Claras da Tirisfal
+    .zone Tirisfal Glades >> Vá para Claras da Tirisfal
     .train 401760,1
     .xp <2,1
 step
@@ -349,7 +349,7 @@ step
     #optional
     #label Charm
     #completewith Comprehension
-    .zone Stormwind City >>Vá para Ventobravo
+    .zone Stormwind City >> Vá para Ventobravo
     .train 401767,1
 step
     #optional
@@ -423,7 +423,7 @@ step
     #optional
     #label Charm
     #completewith Comprehension
-    .zone Ironforge >>Viaje para Ironforge
+    .zone Ironforge >> Viaje para Ironforge
     .train 401767,1
 step
     #optional
@@ -449,7 +449,7 @@ step
     #optional
     #requires Loch1
     #completewith next
-    .goto 1432,54.33,26.82,5 >>Entre na tenda
+    .goto 1432,54.33,26.82,5 >> Entre na tenda
     .train 401767,1
 step
     #label Tengi
@@ -561,7 +561,7 @@ step
     #optional
     #label Charm
     #completewith next
-    .zone Undercity >>Viaje para Undercity
+    .zone Undercity >> Viaje para Undercity
     .train 401767,1
 step
     #label Comprehension
@@ -625,7 +625,7 @@ step
     #optional
     #label Charm
     #completewith Comprehension
-    .zone Stormwind City >>Vá para Ventobravo
+    .zone Stormwind City >> Vá para Ventobravo
     .train 401765,1
 step
     #optional
@@ -682,7 +682,7 @@ step
     #optional
     #label Charm
     #completewith Comprehension
-    .zone Ironforge >>Viaje para Ironforge
+    .zone Ironforge >> Viaje para Ironforge
     .train 401765,1
 step
     #optional
@@ -754,7 +754,7 @@ step
     #optional
     #label Charm
     #completewith next
-    .zone Undercity >>Viaje para Undercity
+    .zone Undercity >> Viaje para Undercity
     .train 401765,1
 step
     #label Comprehension
@@ -804,7 +804,7 @@ step
 step
     #optional
     #completewith next
-    .zone Orgrimmar >>Viaje para Orgrimmar
+    .zone Orgrimmar >> Vá para Orgrimmar
     .train 401765,1
 step
     #label Comprehension
@@ -995,7 +995,7 @@ step
 step
     .goto 1429,43.248,66.192
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zaldimar Wefhellt|r
-    .train 118 >>Treine |T136071:0|t[Polimorfia]
+    .train 118 >> Treine |T136071:0|t[Polimorfia]
     .target Zaldimar Wefhellt
     .train 415942,1
     .xp <8,1
@@ -1082,7 +1082,7 @@ step
 step
     .goto 1420,61.972,52.476
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Caio Cantígnea|r
-    .train 118 >>Treine |T136071:0|t[Polimorfia]
+    .train 118 >> Treine |T136071:0|t[Polimorfia]
     .target Cain Firesong
     .train 415942,1
     .xp <8,1
@@ -1133,20 +1133,20 @@ RXPGuides.RegisterGuide[[
 --QQQ WIP to here
 
 step
-    .zone Stormwind City >>Vá para |cFFfa9602Stormwind.|r
+    .zone Stormwind City >> Vá para |cFFfa9602Stormwind.|r
     .cast 3561 >>Usar [Teleportar Ventobravo] |cRXP_WARN_Se você tiver|r |T134419:0|t[Runa de Teleporte]
     .disablecheckbox
 step
     .money <0.20
     .goto Stormwind City,55.8,65.2
-    .collect 17031,10 >>Compre |T134419:0|t[Runa of Teleportations] de um |cRXP_FRIENDLY_Reagente, Mercadorias Arcanas, Pergaminhos & Poção Comerciante.|r |cRXP_WARN_Isso reduzirá muito o tempo de viagem.|r
+    .collect 17031,10 >> Compre |T134419:0|t[Runa of Teleportations] de um |cRXP_FRIENDLY_Reagente, Mercadorias Arcanas, Pergaminhos & Poção Comerciante.|r |cRXP_WARN_Isso reduzirá muito o tempo de viagem.|r
     >>|cRXP_WARN_Pule manualmente este passo se quiser prosseguir sem.|r
 step
     .goto Stormwind City,56.4,73.2
-    .bankwithdraw 209850,203755,208860,209845,209849,203754,208860,209848,209843,209851,209844,215817,215822,215683,215815,215816,215820,213165,215824,216523,209846 >>|cRXP_WARN_Verifique seu banco para qualquer livro que possa ter sido depositado.|r
+    .bankwithdraw 209850,203755,208860,209845,209849,203754,208860,209848,209843,209851,209844,215817,215822,215683,215815,215816,215820,213165,215824,216523,209846 >> |cRXP_WARN_Verifique seu banco para qualquer livro que possa ter sido depositado.|r
 step
     .goto Stormwind City,57.2,57.2
-    .vendor >>|cRXP_WARN_É altamente recomendado reparar, pois usaremos pulos de morte.|r
+    .vendor >> |cRXP_WARN_É altamente recomendado reparar, pois usaremos pulos de morte.|r
     >>|cFFFF0000Se você preferir não usar pulos de morte, pule este passo manualmente.|r
 step
     .goto 1429,64.41,69.08,10,0
@@ -1240,7 +1240,7 @@ step
     .isQuestAvailable 81947
 step
     #completewith next
-    .zone Blasted Lands >>Vá para |cFFfa9602Barreira do Inferno|r
+    .zone Blasted Lands >>Vá à |cFFfa9602Barreira do Inferno|r
     .fly Blasted Lands >>Pegue a rota de voo para |cFFfa9602Barreira do Inferno|r |cRXP_WARN_se você a tem desbloqueada e ainda não está lá.|r
     .disablecheckbox
     .isQuestAvailable 81955
@@ -1288,7 +1288,7 @@ step
     .disablecheckbox
 step
     .goto 1455,31.96,57.93
-    .vendor >>|cRXP_WARN_É altamente recomendado reparar, pois estaremos utilizando pulos de morte.|r
+    .vendor >> |cRXP_WARN_É altamente recomendado reparar, pois estaremos utilizando pulos de morte.|r
     >>|cFFFF0000Se você preferir não usar pulos de morte, pule este passo manualmente.|r
 step
     .goto 1455,69.76,24.39,10,0
@@ -1336,8 +1336,8 @@ step
     .isQuestAvailable 78148
 step
     #completewith Goaz Scrolls
-    .zone Badlands >>Voe para |cFFfa9602Ermos|r
-    .fly >>Usar a rota de voo para |cFFfa9602Ermos|r |cRXP_WARN_se você a tem desbloqueada.|r
+    .zone Badlands >>Vá aos |cFFfa9602Ermos|r
+    .fly >> Usar a rota de voo para |cFFfa9602Ermos|r |cRXP_WARN_se você a tem desbloqueada.|r
     .disablecheckbox
     .isQuestAvailable 79951
 step
@@ -1368,7 +1368,7 @@ step
 step
     .zoneskip Ironforge
     .goto Wetlands,8.0,55.8
-    .vendor >>|cRXP_WARN_É altamente recomendado reparar, pois usaremos pulos de morte.|r
+    .vendor >> |cRXP_WARN_É altamente recomendado reparar, pois usaremos pulos de morte.|r
     >>|cFFFF0000Se você preferir não usar pulos de morte, pule este passo manualmente.|r
 step
     #completewith next
@@ -1509,9 +1509,9 @@ step
     -- .zone Silverpine Forest >>Travel to |cFFfa9602Silverpine Forest|r primarily on foot.
     -- .fly Hillsbrad Foothills >> |cRXP_WARN_Fly to Hillsbrad Foothills if you have the flight path unlocked.|r
     -- .disablecheckbox
-    .fly Arathi Highlands >>|cRXP_WARN_Voe para Planalto Arathi se você não tem a rota de voo de Hillsbrad Foothills desbloqueada.|r
+    .fly Arathi Highlands >> |cRXP_WARN_Voe para Planalto Arathi se você não tem a rota de voo de Hillsbrad Foothills desbloqueada.|r
     .disablecheckbox
-    .fly Wetlands >>|cRXP_WARN_Voe para Pantano se você não tem Planalto Arathi desbloqueada.|r
+    .fly Wetlands >> |cRXP_WARN_Voe para Pantano se você não tem Planalto Arathi desbloqueada.|r
     .disablecheckbox
 step
     #completewith next
@@ -1537,7 +1537,7 @@ step
     .isQuestAvailable 81954
 step
     #completewith next
-    .zone Alterac Mountains >>Vá para |cFFfa9602Alterac Mountains|r
+    .zone Alterac Mountains >>Vá às |cFFfa9602Montanhas de Alterac|r
     .fly Alterac Mountains >>Aprenda a rota de voo para |cFFfa9602Alterac Mountains|r |cRXP_WARN_se você a tiver desbloqueado.|r
     .disablecheckbox
     .isQuestAvailable 79948
@@ -1601,7 +1601,7 @@ step
 step
     .goto Stormwind City,56.4,73.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mumu Ardelado|r.
-    .bankdeposit 209850,203755,208860,209845,209849,203754,208860,209848,209843,209851,209844,215817,215822,215683,215815,215816,215820,213165,215824,216523 >>|cRXP_WARN_Deposite os livros restantes.|r
+    .bankdeposit 209850,203755,208860,209845,209849,203754,208860,209848,209843,209851,209844,215817,215822,215683,215815,215816,215820,213165,215824,216523 >> |cRXP_WARN_Deposite os livros restantes.|r
     .target Newton Burnside
 ]]
 
@@ -1628,18 +1628,18 @@ step
 step
     .money <0.20
     .goto Orgrimmar,45.6,56.8
-    .collect 17031,10 >>Compre |T134419:0|t[Runa of Teleportations] de um |cRXP_FRIENDLY_Reagente, Mercadorias Arcanas, Pergaminhos & Poção Comerciante.|r |cRXP_WARN_Isso reduzirá muito o tempo de viagem.|r
+    .collect 17031,10 >> Compre |T134419:0|t[Runa of Teleportations] de um |cRXP_FRIENDLY_Reagente, Mercadorias Arcanas, Pergaminhos & Poção Comerciante.|r |cRXP_WARN_Isso reduzirá muito o tempo de viagem.|r
     >>|cRXP_WARN_Pule manualmente este passo se quiser prosseguir sem.|r
 step
     .goto Orgrimmar,50.0,68.8
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_banqueiro|r
-    .bankwithdraw 209850,208185,208860,209845,209849,207972,210177,209848,209843,209851,209844,215817,215822,215683,215815,215816,215820,213165,215824,216523 >>|cRXP_WARN_Verifique o banco por qualquer livro depositado.|r
+    .bankwithdraw 209850,208185,208860,209845,209849,207972,210177,209848,209843,209851,209844,215817,215822,215683,215815,215816,215820,213165,215824,216523 >> |cRXP_WARN_Verifique o banco por qualquer livro depositado.|r
     .target Karus
     .target Komawa
     .target Soran
 step
     .goto Orgrimmar,55.8,73.0
-    .vendor >>|cRXP_WARN_É altamente recomendado reparar, pois usaremos pulos de morte.|r
+    .vendor >> |cRXP_WARN_É altamente recomendado reparar, pois usaremos pulos de morte.|r
     >>|cFFFF0000Se você preferir não usar pulos de morte, pule este passo manualmente.|r
 step
     .goto 1454,38.66,78.43
@@ -1782,12 +1782,12 @@ step
     .collect 220346,1
     .isQuestAvailable 81949
 step
-    .zone Undercity >>Voe para |cFFfa9602Undercity|r
+    .zone Undercity >>Vá para |cFFfa9602Cidade Baixa|r
     .cast 3563 >>Usar [Teleporte Undercity] |cRXP_WARN_Se você tem|r |T134419:0|t[Runa de Teleporte]
     .disablecheckbox
 step
     .goto Undercity,69.8,27.6
-    .vendor >>|cRXP_WARN_É altamente recomendado reparar, pois usaremos pulos de morte.|r
+    .vendor >> |cRXP_WARN_É altamente recomendado reparar, pois usaremos pulos de morte.|r
     >>|cFFFF0000Se você preferir não usar pulos de morte, pule este passo manualmente.|r
 step
     .goto 1420,59.62,52.05,5,0
@@ -1825,7 +1825,7 @@ step
     .isQuestAvailable 78127
 step
     #completewith next
-    .zone Alterac Mountains >>Vá para |cFFfa9602Alterac Mountains|r
+    .zone Alterac Mountains >>Vá às |cFFfa9602Montanhas de Alterac|r
     .fly Alterac Mountains >>Aprenda a rota de voo para |cFFfa9602Alterac Mountains|r |cRXP_WARN_se você a tiver desbloqueado.|r
     .disablecheckbox
     .isQuestAvailable 79948
@@ -1858,8 +1858,8 @@ step
     .isQuestAvailable 79949
 step
     #completewith next
-    .zone Badlands >>Voe para |cFFfa9602Ermos|r
-    .fly >>Usar a rota de voo para |cFFfa9602Ermos|r |cRXP_WARN_se você a tem desbloqueada.|r
+    .zone Badlands >>Vá aos |cFFfa9602Ermos|r
+    .fly >> Usar a rota de voo para |cFFfa9602Ermos|r |cRXP_WARN_se você a tem desbloqueada.|r
     .disablecheckbox
     .isQuestAvailable 79951
 step
@@ -1938,7 +1938,7 @@ step
     .isQuestAvailable 81947
 step
     #completewith next
-    .zone Blasted Lands >>Vá para |cFFfa9602Barreira do Inferno|r
+    .zone Blasted Lands >>Vá à |cFFfa9602Barreira do Inferno|r
     .fly Blasted Lands >>Pegue a rota de voo para |cFFfa9602Barreira do Inferno|r |cRXP_WARN_se você a tem desbloqueada e ainda não está lá.|r
     .disablecheckbox
     .isQuestAvailable 81955
@@ -1982,7 +1982,7 @@ step
     .isQuestAvailable 81953
 step
     #completewith next
-    .zone Undercity >>Voe para |cFFfa9602Undercity|r
+    .zone Undercity >>Vá para |cFFfa9602Cidade Baixa|r
     .cast 3563 >>Usar |T135766:0|t[Teleporte Undercity] |cRXP_WARN_Se você tem|r |T134419:0|t[Runa de Teleporte]
     .disablecheckbox
 step
@@ -2026,7 +2026,7 @@ step
 step
     .goto Orgrimmar,50.0,68.8
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_The Banker|r
-    .bankdeposit 209850,208185,208860,209845,209849,207972,210177,209848,209843,209851,209844,215817,215822,215683,215815,215816,215820,213165,215824,216523 >>|cRXP_WARN_Deposite os livros restantes.|r
+    .bankdeposit 209850,208185,208860,209845,209849,207972,210177,209848,209843,209851,209844,215817,215822,215683,215815,215816,215820,213165,215824,216523 >> |cRXP_WARN_Deposite os livros restantes.|r
     .target Karus
     .target Komawa
     .target Soran
@@ -2301,7 +2301,7 @@ step
     .use 211691
 step
     #optional
-    .destroy 211777 >>Destrua o |T133737:0|t[Naga Manuscript]. Você não o precisa mais
+    .destroy 211777 >> Destrua o |T133737:0|t[Naga Manuscript]. Você não o precisa mais
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2322,7 +2322,7 @@ step
     #optional
     #label Charm
     #completewith Comprehension
-    .zone Ironforge >>Viaje para Ironforge
+    .zone Ironforge >> Viaje para Ironforge
     .train 415936,1
 step
     #optional
@@ -2637,8 +2637,8 @@ step << Horde
     >>|cRXP_BUY_Compre um ou mais|r |T135933:0|t[Compreensão Da Sorte] |cRXP_BUY_de um |cRXP_FRIENDLY_Reagent Comerciante|r para decifrar a runa|r
     .collect 211779,1
 step
-    .train 415948 >>|cRXP_WARN_Use o|r |T134939:0|t[|cRXP_LOOT_Feitiço Anotações de Feitiços: TCOESGIE LAOMDEÁG|r] |cRXP_WARN_para treinar|r |T135780:0|t[Seta de Gelo Mágico]
-    .train 401762 >>|cRXP_WARN_Use o|r |T134939:0|t[|cRXP_LOOT_Feitiço Anotações de Feitiços: ETAF ED GOROIFROF|r] |cRXP_WARN_para treinar|r |T236217:0|t[Seta de Fogofrio]
+    .train 415948 >> |cRXP_WARN_Use o|r |T134939:0|t[|cRXP_LOOT_Feitiço Anotações de Feitiços: TCOESGIE LAOMDEÁG|r] |cRXP_WARN_para treinar|r |T135780:0|t[Seta de Gelo Mágico]
+    .train 401762 >> |cRXP_WARN_Use o|r |T134939:0|t[|cRXP_LOOT_Feitiço Anotações de Feitiços: ETAF ED GOROIFROF|r] |cRXP_WARN_para treinar|r |T236217:0|t[Seta de Fogofrio]
     .use 213127
     .use 217161
 ]])
@@ -2659,11 +2659,11 @@ step
     .train 2121,1 -- flamestrike r2
     .train 8422,1 -- flamestrike r3
     .train 8423,1 -- flamestrike r4
-    .train 2120 >>|cRXP_WARN_Você deve ter|r |T135826:0|t[Golpe Flamejante] |cRXP_WARN_treinado para adquirir a|r |T236218:0|t[Embalo de Fogo] |cRXP_WARN_runa|r
+    .train 2120 >> |cRXP_WARN_Você deve ter|r |T135826:0|t[Golpe Flamejante] |cRXP_WARN_treinado para adquirir a|r |T236218:0|t[Embalo de Fogo] |cRXP_WARN_runa|r
 step
     .train 401749,1
     .goto Alterac Mountains,60.510,46.286
-    .zone Alterac Mountains >>Viagem para Alterac Mountains
+    .zone Alterac Mountains >> Viagem para Alterac Mountains
 step
     .train 401749,1
     .goto Alterac Mountains,60.510,46.286,-1
@@ -2673,7 +2673,7 @@ step
     .collect 213113,1
     .mob Ancient Fire Elemental
 step
-    .train 401749 >>|cRXP_WARN_Use o|r |T134939:0|t[|cRXP_LOOT_Spell Notes: Embalo de Fogo|r] |cRXP_WARN_para treinar|r |T236218:0|t[Embalo de Fogo]
+    .train 401749 >> |cRXP_WARN_Use o|r |T134939:0|t[|cRXP_LOOT_Spell Notes: Embalo de Fogo|r] |cRXP_WARN_para treinar|r |T236218:0|t[Embalo de Fogo]
     .use 213113
 ]])
 
@@ -2690,7 +2690,7 @@ RXPGuides.RegisterGuide([[
 step
     .train 401749,1
     #completewith next
-    .zone Arathi Highlands >>Vá para Planalto Arathi
+    .zone Arathi Highlands >> Vá para Planalto Arathi
 step
     .train 401749,1
     .goto Arathi Highlands,67.46,28.79,40,0
@@ -2703,7 +2703,7 @@ step
     .collect 213113,1
     .mob Burning Exile
 step
-    .train 401749 >>|cRXP_WARN_Use o|r |T134939:0|t[|cRXP_LOOT_Spell Notes: Embalo de Fogo|r] |cRXP_WARN_para treinar|r |T236218:0|t[Embalo de Fogo]
+    .train 401749 >> |cRXP_WARN_Use o|r |T134939:0|t[|cRXP_LOOT_Spell Notes: Embalo de Fogo|r] |cRXP_WARN_para treinar|r |T236218:0|t[Embalo de Fogo]
     .use 213113
 ]])
 
@@ -2841,11 +2841,11 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Stormwind City >>Vá para Ventobravo
+    .zone Stormwind City >> Vá para Ventobravo
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Undercity >>Vá para Undercity
+    .zone Undercity >> Vá para Undercity
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -2854,7 +2854,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Westfall >>Viaje até Cerro Oeste
+    .zone Westfall >> Viaje até Cerro Oeste
 step
     .train 429311,1
     #loop
@@ -2892,7 +2892,7 @@ step
     .collect 223147,1 --Spell Notes: Balefire Bolt
     .mob Fel Interloper
 step
-    .train 429311 >>|cRXP_WARN_Use as|r |T134939:0|t[|cRXP_FRIENDLY_Notas de Feitiço: Seta Incendiária|r |cRXP_WARN_para treinar|r |T135809:0|t[Seta Incendiária]
+    .train 429311 >>|cRXP_WARN_Use as|r |T134939:0|t[|cRXP_FRIENDLY_Anotações de Feitiços: Seta Incendiária|r] |cRXP_WARN_para aprender|r |T135809:0|t[Seta Incendiária]
     .use 223147
 ]])
 
@@ -2907,11 +2907,11 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Darnassus >>Viagem para Darnassus
+    .zone Darnassus >> Viagem para Darnassus
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Orgrimmar >>Viaje para Orgrimmar
+    .zone Orgrimmar >> Vá para Orgrimmar
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -2920,7 +2920,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Desolace >>Viaje para a Desolação
+    .zone Desolace >> Viaje para a Desolação
 step
     .train 429311,1
     #loop
@@ -2960,11 +2960,11 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Darnassus >>Viagem para Darnassus
+    .zone Darnassus >> Viagem para Darnassus
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Orgrimmar >>Viaje para Orgrimmar
+    .zone Orgrimmar >> Vá para Orgrimmar
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -2973,7 +2973,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Feralas >>Viaje para Feralas
+    .zone Feralas >> Viaje para Feralas
 step
     .train 429311,1
     #loop
@@ -3013,11 +3013,11 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Darnassus >>Viagem para Darnassus
+    .zone Darnassus >> Viagem para Darnassus
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Orgrimmar >>Viaje para Orgrimmar
+    .zone Orgrimmar >> Vá para Orgrimmar
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3026,7 +3026,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Azshara >>Voe para Azshara
+    .zone Azshara >> Voe para Azshara
 step
     .train 429311,1
     #loop
@@ -3064,11 +3064,11 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Stormwind City>>Vá para Ventobravo
+    .zone Stormwind City>> Vá para Ventobravo
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Undercity >>Vá para Undercity
+    .zone Undercity >> Vá para Undercity
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3077,7 +3077,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Blasted Lands >>Viaje para as Terras Devastadas
+    .zone Blasted Lands >> Viaje para as Terras Devastadas
 step
     .train 429311,1
     #loop
@@ -3115,11 +3115,11 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Darnassus >>Viagem para Darnassus
+    .zone Darnassus >> Viagem para Darnassus
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Orgrimmar >>Viaje para Orgrimmar
+    .zone Orgrimmar >> Vá para Orgrimmar
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3128,7 +3128,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Westfall >>Viaje até Cerro Oeste
+    .zone Westfall >> Viaje até Cerro Oeste
 step
     .train 429311,1
     #loop
@@ -3174,11 +3174,11 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Darnassus >>Viagem para Darnassus
+    .zone Darnassus >> Viagem para Darnassus
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Orgrimmar >>Viaje para Orgrimmar
+    .zone Orgrimmar >> Vá para Orgrimmar
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3187,7 +3187,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Darkshore >>Vá para a Costa Negra
+    .zone Darkshore >> Vá para a Costa Negra
 step
     .train 429311,1
     #loop
@@ -3225,11 +3225,11 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Ironforge >>Viaje para Ironforge
+    .zone Ironforge >> Viaje para Ironforge
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Undercity >>Vá para Undercity
+    .zone Undercity >> Vá para Undercity
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3238,7 +3238,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Westfall >>Viaje até Cerro Oeste
+    .zone Westfall >> Viaje até Cerro Oeste
 step
     .train 429311,1
     #loop
@@ -3276,11 +3276,11 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Stormwind City >>Vá para Ventobravo
+    .zone Stormwind City >> Vá para Ventobravo
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Undercity >>Vá para Undercity
+    .zone Undercity >> Vá para Undercity
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3289,7 +3289,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Swamp of Sorrows >>Vá para Pântano das Mágoas
+    .zone Swamp of Sorrows >> Vá para Pântano das Mágoas
 step
     .train 429311,1
     #loop
@@ -3340,11 +3340,11 @@ RXPGuides.RegisterGuide([[
 step << Alliance
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Stormwind City >>Vá para Ventobravo
+    .zone Stormwind City >> Vá para Ventobravo
 step << Horde
     .train 429311,1
     #completewith Scroll of Spatial Mending
-    .zone Undercity >>Vá para Undercity
+    .zone Undercity >> Vá para Undercity
 step
     .train 429311,1
     #label Scroll of Spatial Mending
@@ -3353,7 +3353,7 @@ step
 step
     .train 429311,1
     #completewith next
-    .zone Redridge Mountains >>Viaje para as Montanhas Cristarrubra
+    .zone Redridge Mountains >> Viaje para as Montanhas Cristarrubra
 step
     .train 429311,1
     #loop
@@ -3389,7 +3389,7 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401764,1
-    .zone Western Plaguelands >>Vá para Terras Pestilentas Ocidentais
+    .zone Western Plaguelands >> Vá para Terras Pestilentas Ocidentais
 step
     .train 401764,1
     #loop -- not sure which coord is tied to which itemid, update in future
@@ -3408,13 +3408,13 @@ step
     .skipgossip
 step
     .train 401764,1
-    .use 225938 >>|cRXP_WARN_use qualquer uma dessas|r |T134937:0|t|T134938:0|t|T134943:0|t|T134945:0|t[|cRXP_LOOT_Anotações de Feitiços Rasgadas|r] |cRXP_WARN_para combiná-las em|r |T134939:0|t[|cRXP_LOOT_Anotações de Feitiços: Superaquecimento|r]
+    .use 225938 >> |cRXP_WARN_use qualquer uma dessas|r |T134937:0|t|T134938:0|t|T134943:0|t|T134945:0|t[|cRXP_LOOT_Anotações de Feitiços Rasgadas|r] |cRXP_WARN_para combiná-las em|r |T134939:0|t[|cRXP_LOOT_Anotações de Feitiços: Superaquecimento|r]
     .use 225939
     .use 225940
     .use 225941
     .collect 225691,1
 step
-    .train 401764 >>|cRXP_WARN_use a|r |T134939:0|t[|cRXP_LOOT_Anotações de Feitiços: Superaquecimento|r] |cRXP_WARN_para aprender|r |T135813:0|t[Superaquecimento]
+    .train 401764 >> |cRXP_WARN_use a|r |T134939:0|t[|cRXP_LOOT_Anotações de Feitiços: Superaquecimento|r] |cRXP_WARN_para aprender|r |T135813:0|t[Superaquecimento]
     .use 225691
 ]])
 
@@ -3429,7 +3429,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     .train 440858,1
-    .zone Felwood >>Voe para Selva Maleva
+    .zone Felwood >> Voe para Selva Maleva
 step
     .train 440858,1
     .goto Felwood,63.0,9.0
@@ -3448,7 +3448,7 @@ step
     .goto Felwood,61.0,12.0
     .use 227797 >>|cRXP_WARN_use o|r |T134937:0|t[|cRXP_LOOT_Pergaminho Darnassiano Decifrado|r] |cRXP_WARN_em |cRXP_FRIENDLY_Calyx Greenglow|r e aceite a missão dele|r
     >>|cRXP_FRIENDLY_Calyx Greenglow|r |cRXP_WARN_patrulha em volta ligeiramente|r
-    .accept 84369 >>Aceite Curando o Curandeiro
+    .accept 84369 >> Aceite Curando o Curandeiro
     .unitscan Calyx Greenglow
 step
     .train 440858,1
@@ -3459,13 +3459,13 @@ step
 step
     .train 440858,1
     #completewith next
-    .zone Winterspring >>Vá para Hibérnia
+    .zone Winterspring >> Vá para Hibérnia
 step
     .train 440858,1
     .goto Winterspring,29.0,35.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Calyx Greenglow|r
     >>|cRXP_WARN_você precisará matar |cRXP_ENEMY_Calyx Greenglow|r após entregar esta missão|r
-    .turnin 84369 >>Entregue Curando o Curandeiro
+    .turnin 84369 >> Entregue Curando o Curandeiro
     .unitscan Calyx Greenglow
 step
     .train 440858,1
@@ -3473,7 +3473,7 @@ step
     .collect 225690,1 -- Spell Notes: Frozen Orb 1/1
     .mob Enraged Shade
 step
-    .train 440858 >>|cRXP_WARN_use o|r |T134939:0|t[|cRXP_LOOT_Anotações de Feitiços: Orbe Congelado|r] |cRXP_WARN_para aprender|r |T135851:0|t[Orbe Congelado]
+    .train 440858 >> |cRXP_WARN_use o|r |T134939:0|t[|cRXP_LOOT_Anotações de Feitiços: Orbe Congelado|r] |cRXP_WARN_para aprender|r |T135851:0|t[Orbe Congelado]
     .use 225690
 ]])
 
@@ -3489,7 +3489,7 @@ RXPGuides.RegisterGuide([[
 step
     .train 401722,1
     #completewith Necromancy101
-    .zone Western Plaguelands >>Vá para Terras Pestilentas Ocidentais
+    .zone Western Plaguelands >> Vá para Terras Pestilentas Ocidentais
 step
     .train 401722,1
     .goto Western Plaguelands,38.3,54.6
@@ -3506,7 +3506,7 @@ step
 step
     .train 401722,1
     #completewith UndeadMenace
-    .zone Eastern Plaguelands >>Vá para Terras Pestilentas Ocidentais
+    .zone Eastern Plaguelands >> Vá para Terras Pestilentas Ocidentais
 step
     .train 401722,1
     .goto Eastern Plaguelands,81.7,57.8
@@ -3529,7 +3529,7 @@ step
 step
     .train 401722,1
     #completewith next
-    .subzone 1445 >>Viagem para Garganta Abrasadora ou Estepes Ardentes e dirija-se para a Montanha Blackrock
+    .subzone 1445 >> Viagem para Garganta Abrasadora ou Estepes Ardentes e dirija-se para a Montanha Blackrock
 step
     .train 401722,1
     .goto 1415,48.388,63.626
@@ -3540,7 +3540,7 @@ step
 step
     .train 401722,1
     #completewith next
-    .zone Winterspring >>Vá para Hibérnia
+    .zone Winterspring >> Vá para Hibérnia
 step
     .train 401722,1
     .goto Winterspring,60.7,37.7
@@ -3550,7 +3550,7 @@ step
 step
     .train 401722,1
     #completewith next
-    .zone Felwood >>Voe para Selva Maleva
+    .zone Felwood >> Voe para Selva Maleva
     .subzoneskip 1216
 step
     .train 401722,1
@@ -3565,14 +3565,14 @@ step
     .goto 1458,73.6,32.6 << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jana Catão|r << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Urraca Convulserpe|r  << Horde
-    .accept 84395 >>Entregue Batata de Morto-vivo
-    .accept 84402 >>Entregue Introdução à Necromancia
-    .accept 84398 >>Entregue A Luz: um estudo
-    .accept 84400 >>Entregue O cavaleiro e a senhora
-    .accept 84401 >>Entregue Flagelo: ameaça morta-viva ou sociedade incompreendida?
-    .accept 84396 >>Entregue Magmático ou lava?
-    .accept 84399 >>Entregue Ka-Cabum!
-    .accept 84397 >>Entregue Atlas de Kalimdor Setentrional
+    .accept 84395 >> Entregue Batata de Morto-vivo
+    .accept 84402 >> Entregue Introdução à Necromancia
+    .accept 84398 >> Entregue A Luz: um estudo
+    .accept 84400 >> Entregue O cavaleiro e a senhora
+    .accept 84401 >> Entregue Flagelo: ameaça morta-viva ou sociedade incompreendida?
+    .accept 84396 >> Entregue Magmático ou lava?
+    .accept 84399 >> Entregue Ka-Cabum!
+    .accept 84397 >> Entregue Atlas de Kalimdor Setentrional
     .target Jennea Cannon << Alliance
     .target Oran Snakewrithe << Horde
 step
@@ -3582,8 +3582,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jana Catão|r << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Urraca Convulserpe|r << Horde
     >>|cRXP_WARN_Se você não conseguir aceitar esta missão, certifique-se de que adquiriu as runas para Veias Gélidas/Poder Mágico/Congelamento Profundo, pois esta é uma continuação dessas runas e é necessária.|r
-    .accept 84394 >>Aceite Rato de biblioteca mor
-    .turnin 84394 >>Virar para Rato de Biblioteca Mór
+    .accept 84394 >> Aceite Rato de biblioteca mor
+    .turnin 84394 >> Virar para Rato de Biblioteca Mór
     .target Jennea Cannon << Alliance
     .target Oran Snakewrithe << Horde
 ]])

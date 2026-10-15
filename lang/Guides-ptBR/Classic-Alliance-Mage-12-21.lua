@@ -15,7 +15,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     .goto Darkshore,36.77,44.28
-    .vendor >>Você pode comprar comida de nível 5 extremamente barata de Laird (vendedor de peixe)
+    .vendor >> Você pode comprar comida de nível 5 extremamente barata de Laird (vendedor de peixe)
 step
     >>Suba até o andar superior
     .goto Darkshore,36.98,44.14
@@ -25,7 +25,7 @@ step
 step
     >>Salte para o primeiro andar
     .goto Darkshore,37.04,44.13
-    .home >>Defina sua Pedra de Regresso para Auberdine
+    .home >> Defina sua Pedra de Regresso para Auberdine
 step
     .goto Darkshore,37.32,43.64
 .target Barithras Moonshade
@@ -53,38 +53,38 @@ step
     .accept 3524 >>Aceite Deixa a água me levar
 step
     .goto Darkshore,36.34,45.58
-    .fp Auberdine >>Pegue o ponto de voo de Auberdine
+    .fp Auberdine >> Pegue o ponto de voo de Auberdine
 step
     #completewith Bear
-     >>Mate os Crawlers ao longo da costa
+     >> Mate os Crawlers ao longo da costa
     .complete 983,1 --Crawler Leg (6)
 step
     .goto Darkshore,36.38,50.88
-     >>Saque a criatura marinha
+     >> Saque a criatura marinha
     .complete 3524,1 --Sea Creature Bones (1)
 step
     #sticky
     #completewith next
-    >>Encontre um Ursocardo Raivoso. Agro um e use Esperança de Tharnariun em sua mochila (orbe púrpura)
+    >> Encontre um Ursocardo Raivoso. Agro um e use Esperança de Tharnariun em sua mochila (orbe púrpura)
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
 step
     .goto Darkshore,39.01,53.70
-     >>Vá em direção ao acampamento furbolg nas proximidades
+     >> Vá em direção ao acampamento furbolg nas proximidades
     .complete 984,1 --Find a corrupt furbolg camp (1)
 step
     #label Bear
-    >>Encontre um Ursocardo Raivoso. Agro um e use Esperança de Tharnariun em sua mochila (orbe púrpura)
+    >> Encontre um Ursocardo Raivoso. Agro um e use Esperança de Tharnariun em sua mochila (orbe púrpura)
     .goto Darkshore,38.47,57.92
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
 step
     .goto Darkshore,36.61,54.29,150,0
     .goto Darkshore,36.10,44.42
-    >>Mate os Crawlers ao longo da costa
+    >> Mate os Crawlers ao longo da costa
     .complete 983,1 --Crawler Leg (6)
 step
     #sticky
     #completewith ReadAndy
-     >>Guarde Carne de Strider x5 para depois
+     >> Guarde Carne de Strider x5 para depois
     .collect 5469,5,2178,1
 step
     .goto Darkshore,36.66,46.26
@@ -106,11 +106,11 @@ step
 step
     #sticky
     #completewith Thundris
-     >>Mate os ceifadores de Darkshore no mar
+     >> Mate os ceifadores de Darkshore no mar
     .complete 1001,1 --Thresher Eye (3)
 step
     #completewith next
-    .goto Darkshore,33.70,42.45,60 >>Corra até o cais, depois pule na água na interseção
+    .goto Darkshore,33.70,42.45,60 >> Corra até o cais, depois pule na água na interseção
 step
     .goto Darkshore,31.86,46.33
     >>Clique na cabeça da tartaruga marinha embaixo da água
@@ -120,22 +120,22 @@ step
     >>Mate os Threshers a caminho de volta para a costa
 .target Gwennyth Bly'Leggonde
 >>Fale com |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
-    .turnin 4681 >>Entregue Deixa a água me levar
+    .turnin 4681 >> Entregue Deixa a água me levar
 step
     .goto Darkshore,38.84,43.41
 >>Fale com o |cRXP_FRIENDLY_Tharnariun Tratárvore|r
-    .turnin 2118 >>Entregue Terras Pestilentas
+    .turnin 2118 >> Entregue Terras Pestilentas
 .target Tharnariun Treetender
-    .accept 2138 >>Aceite Purificação dos infectados
+    .accept 2138 >> Aceite Purificação dos infectados
 step
     .goto Darkshore,39.37,43.49
 >>Fale com |cRXP_FRIENDLY_Terenthis|r
-    .turnin 984 >>Entregue Uma grande ameaça?
+    .turnin 984 >> Entregue Uma grande ameaça?
 .target Terenthis
-    .accept 985 >>Aceite Uma grande ameaça?
-    .accept 4761 >>Aceite Trovejius Tecevento
+    .accept 985 >> Aceite Uma grande ameaça?
+    .accept 4761 >> Aceite Trovejius Tecevento
 step
-    >>Mate os Furbolgs
+    >> Mate os Furbolgs
     .goto Darkshore,39.83,56.11
     .goto Darkshore,39.74,53.76,0
     .complete 985,1 --Blackwood Pathfinder (8)
@@ -151,74 +151,74 @@ step
     .goto Darkshore,39.04,43.55
 .target Sentinel Elissa Starbreeze
 >>Fale com a |cRXP_FRIENDLY_Sentinela Elissa Brisastral|r
-    .accept 965 >>Aceite The Torre of Althalaxx
+    .accept 965 >>Aceite A Torre de Althalaxx
 step
     .goto Darkshore,38.11,41.16
 .target Gorbold Steelhand
 >>Fale com o |cRXP_FRIENDLY_Gorbold Manácero|r
-    .accept 982 >>Aceite Oceano Profundo, Mar Vasto
+    .accept 982 >> Aceite Oceano Profundo, Mar Vasto
 step
     #label Thundris
     .goto Darkshore,37.39,40.13
 >>Fale com |cRXP_FRIENDLY_Trovejius Tecevento|r
-    .turnin 4761 >>Entregue Trovejius Tecevento
+    .turnin 4761 >> Entregue Trovejius Tecevento
 .target Thundris Windweaver
-    .accept 4762 >>Aceite Rio Fontescarpa
+    .accept 4762 >> Aceite Rio Fontescarpa
     .accept 954 >>Aceite Bashal'Aran
     .accept 958 >>Aceite Ferramentas dos Altaneiros
 step
      #label Threshers
      #sticky
-     >>Nade ao longo da costa, matando os Threshers
+     >> Nade ao longo da costa, matando os Threshers
     .complete 1001,1 --Thresher Eye (3)
 step
     .goto Darkshore,38.93,29.33,40,0
     .goto Darkshore,38.23,28.79
-     >>Entre no primeiro navio pelo buraco no casco, depois vá para a popa do andar mais baixo
+     >> Entre no primeiro navio pelo buraco no casco, depois vá para a popa do andar mais baixo
     .complete 982,1 --Silver Dawning's Lockbox (1)
 step
     #requires Threshers
     .goto Darkshore,40.30,27.69,40,0
     .goto Darkshore,39.63,27.45
-     >>Entre no segundo navio pelo buraco no casco, depois vá para a popa do andar mais baixo
+     >> Entre no segundo navio pelo buraco no casco, depois vá para a popa do andar mais baixo
     .complete 982,2 --Mist Veil's Lockbox (1)
 step
     .goto Darkshore,41.96,28.64
-    .turnin 1001 >>Entregue Buzzbox 411
-    .accept 1002 >>Aceite NO TRANSLATION FOUND TO THIS ELEMENT
+    .turnin 1001 >> Entregue Buzzbox 411
+    .accept 1002 >> Aceite NO TRANSLATION FOUND TO THIS ELEMENT
 step
     .goto Darkshore,41.94,31.47
-    .accept 4723 >>Aceite Criatura Marinha Encalhada
+    .accept 4723 >> Aceite Criatura Marinha Encalhada
 step
     .goto Felwood,27.70,10.03
 >>Fale com |cRXP_FRIENDLY_Astérion|r
-    .turnin 954 >>Entregue Bashal'Aran
+    .turnin 954 >> Entregue Bashal'Aran
 .target Asterion
-    .accept 955 >>Aceite Bashal'Aran
+    .accept 955 >> Aceite Bashal'Aran
 step
     .goto Felwood,29.13,12.34
-     >>Mate os Grellkins. Saque-os pelos Brincos
+     >> Mate os Grellkins. Saque-os pelos Brincos
     .complete 955,1 --Grell Earring (8)
 step
     .goto Felwood,27.70,10.03
 >>Fale com |cRXP_FRIENDLY_Astérion|r
-    .turnin 955 >>Entregue Bashal'Aran
+    .turnin 955 >> Entregue Bashal'Aran
 .target Asterion
-    .accept 956 >>Aceite Bashal'Aran
+    .accept 956 >> Aceite Bashal'Aran
 step
     .goto Felwood,29.60,12.52
-     >>Mate os Satyrs. Saque-os pelo Selo
+     >> Mate os Satyrs. Saque-os pelo Selo
     .complete 956,1 --Ancient Moonstone Seal (1)
 step
     .goto Felwood,27.70,10.03
 >>Fale com |cRXP_FRIENDLY_Astérion|r
-    .turnin 956 >>Entregue Bashal'Aran
+    .turnin 956 >> Entregue Bashal'Aran
 .target Asterion
-    .accept 957 >>Aceite Bashal'Aran
+    .accept 957 >> Aceite Bashal'Aran
 step
     #sticky
     #completewith ReadAndy
-     >>Mate qualquer tipo de Espreitaluna. Saque-os pelos dentes
+     >> Mate qualquer tipo de Espreitaluna. Saque-os pelos dentes
     .complete 1002,1 --Moonstalker Fang (6)
 --N don't think unitscan is needed
 step
@@ -236,7 +236,7 @@ step
     +Guarde os Ovos Pequenos que pegar para subir culinária depois. Guarde TODAS as penas leves que conseguir para depois
 step
     .goto Darkshore,47.11,48.63
-     >>Corra até O Cristal Vermelho nas montanhas
+     >> Corra até O Cristal Vermelho nas montanhas
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range (1)
 step
     #label ReadAndy
@@ -248,26 +248,26 @@ step
     #sticky
     #label anaya
     .goto Darkshore,42.29,60.46,0
-     >>Mate Anaya Correalba. Ela patrulha no meio de Ameth'Aran
+     >> Mate Anaya Correalba. Ela patrulha no meio de Ameth'Aran
     .complete 963,1
     .unitscan ANAYA DAWNRUNNER
 step
     #label ghosts
     #sticky
     .goto Darkshore,42.66,61.90,0
-     >>Mate fantasmas. Saque-os pelas relíquias
+     >> Mate fantasmas. Saque-os pelas relíquias
     .complete 958,1 --Highborne Relic (7)
 step
     .goto Felwood,25.98,40.62
-     >>Clique na tabuleta no chão
+     >> Clique na tabuleta no chão
     .complete 953,2 --Read the Fall of Ameth'Aran (1)
 step
     .goto Felwood,25.66,39.11
-     >>Clique na tocha verde no gazebo
+     >> Clique na tocha verde no gazebo
     .complete 957,1 --Destroy the seal at the ancient flame (1)
 step
     .goto Felwood,26.71,35.53
-     >>Clique na tabuleta no chão
+     >> Clique na tabuleta no chão
     .complete 953,1 --Read the Lay of Ameth'Aran (1)
 step
 #hidewindow
@@ -277,7 +277,7 @@ step
     .goto Darkshore,40.30,59.73
 .target Sentinel Tysha Moonblade
 >>Fale com a |cRXP_FRIENDLY_Sentinela Tysha Lamiluna|r
-    .turnin 953 >>Entregue A queda de Ameth’Aran
+    .turnin 953 >> Entregue A queda de Ameth’Aran
 step
     .goto Darkshore,38.83,60.82
     >>Termine de matar os Ursos Cardo Raiva e obter a Carne de Andarilha
@@ -292,7 +292,7 @@ step
     .goto Darkshore,36.02,70.79
     .accept 4728 >>Aceite Criatura Marinha Encalhada
 step
-    .hs >>Use a Pedra de Regresso para Auberdine
+    .hs >> Use a Pedra de Regresso para Auberdine
 step
     .goto Darkshore,38.84,43.42
 >>Fale com o |cRXP_FRIENDLY_Tharnariun Tratárvore|r
@@ -304,7 +304,7 @@ step
 .target Gorbold Steelhand
 >>Fale com o |cRXP_FRIENDLY_Gorbold Manácero|r
     .turnin 982 >>Entregue Oceano Profundo, Vasto Mar
-    .vendor >>Compre alguns Temperos Suaves de Gorbold até ter o suficiente para cozinhar todos os ovos
+    .vendor >> Compre alguns Temperos Suaves de Gorbold até ter o suficiente para cozinhar todos os ovos
 step
     .goto Darkshore,37.69,40.66
     >>Tenha 10 pontos em culinária ou você não poderá aceitar/entregar a missão
@@ -327,30 +327,30 @@ step
 step
     .goto Darkshore,37.71,43.36
 >>Fale com a |cRXP_FRIENDLY_Sentinela Glynda Nal'Shea|r
-    .turnin 4811 >>Entregue O Cristal Vermelho
+    .turnin 4811 >> Entregue O Cristal Vermelho
 .target Sentinel Glynda Nal'Shea
-    .accept 4812 >>Aceite Como cascatas
+    .accept 4812 >> Aceite Como cascatas
 step
     .goto Darkshore,37.78,44.06
-     >>Encha o Tubo de Água Vazio no Poço Lunar
+     >> Encha o Tubo de Água Vazio no Poço Lunar
     .complete 4812,1
-     >>Encha a Tigela Vazia no Poço Lunar
+     >> Encha a Tigela Vazia no Poço Lunar
     .collect 12347,1,4763,1
 step
     #completewith next
     .goto Darkshore,36.83,43.91
-    .vendor >>Compre bebida nível 15 de Taldan
+    .vendor >> Compre bebida nível 15 de Taldan
 step
     >>Volte para o cais
     .goto Felwood,18.10,18.48
 .target Cerellean Whiteclaw
 >>Fale com |cRXP_FRIENDLY_Cerellean Garralva|r
-    .turnin 963 >>Entregue Amor Eterno
+    .turnin 963 >> Entregue Amor Eterno
 step
     .goto Darkshore,36.09,44.93
 .target Gubber Blump
 >>Fale com |cRXP_FRIENDLY_Gubber Blump|r
-    .accept 1138 >>Aceite Fruit of the Sea
+    .accept 1138 >> Aceite Fruit of the Sea
 step
     .goto Darkshore,36.62,45.59
 .target Gwennyth Bly'Leggonde
@@ -360,13 +360,13 @@ step
     .turnin 4728 >>Entregue a Criatura Marinha Encalhada << Gnome
 step
     .goto Darkshore,47.32,48.70
-     >>Clique no cristal vermelho
-    .turnin 4812 >>Entregue Como cascatas
-    .accept 4813 >>Aceite Fragmentos incrustados
+     >> Clique no cristal vermelho
+    .turnin 4812 >> Entregue Como cascatas
+    .accept 4813 >> Aceite Fragmentos incrustados
 step
     #sticky
     #label MoonstalkersF
-     >>Mate qualquer tipo de Espreitaluna. Saque-os pelos dentes
+     >> Mate qualquer tipo de Espreitaluna. Saque-os pelos dentes
     .complete 1002,1 --Moonstalker Fang (6)
     .unitscan Moonstalker;Moonstalker Runt
 step
@@ -400,11 +400,11 @@ step
     .complete 4763,1 --Talisman of Corruption (1)
 step
     #completewith next
-    .goto Darkshore,54.98,32.79,35 >>Vá para a caverna acima da cachoeira
+    .goto Darkshore,54.98,32.79,35 >> Vá para a caverna acima da cachoeira
 step
     .goto Darkshore,55.66,34.89
-     >>Fique na parte superior da caverna. Se não houver um Chapéu da Morte no final do lado superior, desça e pegue um embaixo
-     >>O primeiro azul na entrada da caverna deve ter reaparecido quando você coletar o Chapéu da Morte
+     >> Fique na parte superior da caverna. Se não houver um Chapéu da Morte no final do lado superior, desça e pegue um embaixo
+     >> O primeiro azul na entrada da caverna deve ter reaparecido quando você coletar o Chapéu da Morte
     .complete 947,1 --Scaber Stalk (5)
     .complete 947,2 --Death Cap (1)
 step
@@ -412,7 +412,7 @@ step
 >>Fale com |cRXP_FRIENDLY_Balthule Umbrataque|r
     .turnin 965 >>Entregue A Torre de Althalaxx
 .target Balthule Shadowstrike
-    .accept 966 >>Aceite The Torre of Althalaxx
+    .accept 966 >>Aceite A Torre de Althalaxx
 step
     >>Mate Fanáticos do Filo Escuro. Saqueie-os por Pergaminhos
     .goto Darkshore,55.36,26.84
@@ -422,7 +422,7 @@ step
 >>Fale com |cRXP_FRIENDLY_Balthule Umbrataque|r
     .turnin 966 >>Entregue A Torre de Althalaxx
 .target Balthule Shadowstrike
-    .accept 967 >>Aceite The Torre of Althalaxx
+    .accept 967 >>Aceite A Torre de Althalaxx
 step
     #requires MoonstalkersF
     .goto Darkshore,53.11,18.16
@@ -430,33 +430,33 @@ step
 step
     #sticky
     #completewith Turtles
-     >>Mate Rastejantes do Recife ao longo da costa, não se esforce para completar esta missão - Não mate inimigos 4 níveis ou mais acima
+     >> Mate Rastejantes do Recife ao longo da costa, não se esforce para completar esta missão - Não mate inimigos 4 níveis ou mais acima
     .complete 1138,1 --Fine Crab Chunks (6)
 step
     .goto Darkshore,51.38,24.19,25,0
     .goto Darkshore,51.29,24.53
-    .turnin 1002 >>Entregue NO TRANSLATION FOUND TO THIS ELEMENT
-    .accept 1003 >>Aceite Buzzbox 525
+    .turnin 1002 >> Entregue NO TRANSLATION FOUND TO THIS ELEMENT
+    .accept 1003 >> Aceite Buzzbox 525
 step
     #softcore
     #label Turtles
     >>Deixe alguns dos Murlocs próximos vivos, você vai morrer para eles depois de aceitar esta missão
     .goto Darkshore,44.18,20.60
-    .accept 4725 >>Aceite Tartaruga Marinha Encalhada
+    .accept 4725 >> Aceite Tartaruga Marinha Encalhada
 step
     #hardcore
     #label Turtles
     .goto Darkshore,44.18,20.60
-    .accept 4725 >>Aceite Tartaruga Marinha Encalhada
+    .accept 4725 >> Aceite Tartaruga Marinha Encalhada
 step
     #softcore
-    .deathskip >>Morra e reapareça em Auberdine
+    .deathskip >> Morra e reapareça em Auberdine
 step
     .goto Darkshore,37.40,40.13
     >>Equipe seu novo cajado
 .target Thundris Windweaver
 >>Fale com |cRXP_FRIENDLY_Trovejius Tecevento|r
-    .turnin 4763 >>Entregue O Bosque Negro Corrompido
+    .turnin 4763 >> Entregue O Bosque Negro Corrompido
 step
     .goto Darkshore,38.84,43.42
 .target Tharnariun Treetender
@@ -470,13 +470,13 @@ step
 step
     .goto Darkshore,37.32,43.64
 >>Fale com |cRXP_FRIENDLY_Barithras Sombraluna|r
-    .turnin 947 >>Entregue Cogumelos da Caverna
+    .turnin 947 >> Entregue Cogumelos da Caverna
 .target Barithras Moonshade
-    .accept 948 >>Aceite Onu
+    .accept 948 >> Aceite Onu
 step
     .goto Darkshore,37.23,44.23
-     >>Clique no cartaz de procurado fora da estalagem
-    .accept 4740 >>Aceite WANTED: Lodofundo!
+     >> Clique no cartaz de procurado fora da estalagem
+    .accept 4740 >> Aceite WANTED: Lodofundo!
 step
     .isQuestComplete 1138
     .goto Darkshore,36.09,44.93
@@ -489,28 +489,28 @@ step
     .goto Felwood,19.10,20.63
 .target Gwennyth Bly'Leggonde
 >>Fale com |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
-    .turnin 4727 >>Entregue a Criatura Marinha Encalhada
-    .turnin 4725 >>Entregue Tartaruga Marinha Encalhada
+    .turnin 4727 >> Entregue a Criatura Marinha Encalhada
+    .turnin 4725 >> Entregue Tartaruga Marinha Encalhada
 step
      #completewith Murkdeep
-     >>Mate qualquer Urso Cardo Ansioso Macho que encontrar e Matriarcas se estiver confortável. Saqueie-os por Peles. Eles compartilham locais de aparição com Ursos Cardo Ansosos Maduros.
+     >> Mate qualquer Urso Cardo Ansioso Macho que encontrar e Matriarcas se estiver confortável. Saqueie-os por Peles. Eles compartilham locais de aparição com Ursos Cardo Ansosos Maduros.
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .unitscan Moonstalker Sire;Moonstalker Matriarch
 step
      #completewith Murkdeep
     .goto Darkshore,38.60,80.50,0
-     >>Mate os Ursos Cardo Grisalhos. Saqueie-os para obter Couro Cabeludo.
+     >> Mate os Ursos Cardo Grisalhos. Saqueie-os para obter Couro Cabeludo.
     .complete 1003,1 --Grizzled Scalp (4)
 step
     .goto Darkshore,43.55,76.29
 >>Fale com |cRXP_FRIENDLY_Onu|r
-    .turnin 948 >>Entregue Onu
+    .turnin 948 >> Entregue Onu
 .target Onu
-    .accept 944 >>Aceite A Alameda do Mestre
+    .accept 944 >> Aceite A Alameda do Mestre
 step
     #completewith next
     .goto Darkshore,43.69,76.64
-    .vendor >>Compre água de nível 15 de Tiyani
+    .vendor >> Compre água de nível 15 de Tiyani
 step << Human
     >>Saque os restos
     .goto Darkshore,35.97,70.90
@@ -518,12 +518,12 @@ step << Human
 step
     #label Murkdeep
     .goto Darkshore,36.52,76.55
-    >>Limpe o acampamento Murloc, fique longe da fogueira no centro
-    >>Quando limpar tudo, mova-se para o centro do acampamento para invocar Lodofundo
-    >>Se você tiver sorte, Lodofundo pode estar já acordado em cerca de 30 metros da costa para o oeste (se alguém morreu nele antes).
+    >> Limpe o acampamento Murloc, fique longe da fogueira no centro
+    >> Quando limpar tudo, mova-se para o centro do acampamento para invocar Lodofundo
+    >> Se você tiver sorte, Lodofundo pode estar já acordado em cerca de 30 metros da costa para o oeste (se alguém morreu nele antes).
     .complete 4740,1 --Murkdeep (1)
 step
-     >>Mate caranguejos ao longo da costa para Pedaços Finos de Caranguejo
+     >> Mate caranguejos ao longo da costa para Pedaços Finos de Caranguejo
     .complete 1138,1 --Fine Crab Chunks (6)
 step
     >>Saque os restos
@@ -547,14 +547,14 @@ step
     .goto Darkshore,35.72,83.69
 .target Prospector Remtravel
 >>Fale com o |cRXP_FRIENDLY_Prospector Trilheiro|r
-    .turnin 729 >>Entregue The Absent Minded Prospector
+    .turnin 729 >> Entregue O Prospector Distraído
 step
     .goto Darkshore,35.72,83.69
      >>Esta missão é MUITO difícil. Faça-a com outro jogador se puder.
-     >>Inicie a missão de escolta
+     >> Inicie a missão de escolta
 .target Prospector Remtravel
 >>Fale com o |cRXP_FRIENDLY_Prospector Trilheiro|r
-    .accept 731,1 >>Aceite O Prospector Distraído
+    .accept 731,1 >> Aceite O Prospector Distraído
 step
      >>Escolte o Prospector Trilheiro
      >>Deixe Remtravel atrair tudo (os inimigos precisam acertá-lo para gerar agro nele) e depois dispare projéteis de fogo no inimigo
@@ -564,7 +564,7 @@ step
      .complete 731,1 --Escort Prospector Remtravel (1)
 step
      #completewith Glaive
-     >>Mate qualquer Urso Cardo Ansioso Macho que encontrar e Matriarcas se estiver confortável. Saqueie-os por Peles. Eles compartilham locais de aparição com Ursos Cardo Ansosos Maduros.
+     >> Mate qualquer Urso Cardo Ansioso Macho que encontrar e Matriarcas se estiver confortável. Saqueie-os por Peles. Eles compartilham locais de aparição com Ursos Cardo Ansosos Maduros.
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .unitscan Moonstalker Sire;Moonstalker Matriarch
 step
@@ -573,18 +573,18 @@ step
 step
      #completewith next
     .goto Darkshore,38.60,80.50,0
-     >>Mate os Ursos Cardo Grisalhos. Saqueie-os para obter Couro Cabeludo.
+     >> Mate os Ursos Cardo Grisalhos. Saqueie-os para obter Couro Cabeludo.
     .complete 1003,1 --Grizzled Scalp (4)
 step
     #sticky
     #completewith Therylune
     >>Fique atento a The Powers Below. Tem baixa taxa de queda e é uma missão gratuita.
     .collect 5352,1,968 --Book: The Powers Below (1)
-    .accept 968 >>Aceite Os Poderes de Baixo
+    .accept 968 >> Aceite Os Poderes de Baixo
 step
     #label Glaive
     .goto Darkshore,38.30,87.12
-     >>Entre em The Master's Glaive e elimine os inimigos em torno do altar no centro
+     >> Entre em The Master's Glaive e elimine os inimigos em torno do altar no centro
     .complete 944,1
 step
     #sticky
@@ -592,22 +592,22 @@ step
     .goto Darkshore,38.65,87.34
 .target Therylune
 >>Fale com |cRXP_FRIENDLY_Therylune|r
-    .accept 945 >>Aceite A Fuga de Therylune
+    .accept 945 >> Aceite A Fuga de Therylune
 step
-     >>Largue o caldeirão de adivinhação do seu inventário no chão
-    .turnin 944 >>Entregue The Master's Glaive
-    .accept 949 >>Aceite O Acampamento Crepuscular
+     >> Largue o caldeirão de adivinhação do seu inventário no chão
+    .turnin 944 >> Entregue The Master's Glaive
+    .accept 949 >> Aceite O Acampamento Crepuscular
 step
     .goto Darkshore,38.55,86.03
-     >>Clique no livro no topo do pedestal. Cuidado para que Therylune não corra se você já começou
-    .turnin 949 >>Entregue O Acampamento Crepuscular
-    .accept 950 >>Aceite Devolver a Onu
+     >> Clique no livro no topo do pedestal. Cuidado para que Therylune não corra se você já começou
+    .turnin 949 >> Entregue O Acampamento Crepuscular
+    .accept 950 >> Aceite Devolver a Onu
 step
     #label Therylune
     #requires TheryluneE
-    >>Conclua a missão de escolta
-    >>Quando você matar o último inimigo saindo da lâmina, acenda uma fogueira e cozinhe toda a carne/ovos que você ainda tem para aumentar sua habilidade de culinária
-    >>Você precisa de 50 de habilidade de culinária para uma missão gratuita em Darkshire
+    >> Conclua a missão de escolta
+    >> Quando você matar o último inimigo saindo da lâmina, acenda uma fogueira e cozinhe toda a carne/ovos que você ainda tem para aumentar sua habilidade de culinária
+    >> Você precisa de 50 de habilidade de culinária para uma missão gratuita em Darkshire
     .complete 945,1 --Escort Therylune away from the Master's Glaive (1)
 step
      #sticky
@@ -616,27 +616,27 @@ step
     .goto Darkshore,38.96,80.07,100,0
     .goto Darkshore,43.82,82.08,100,0
     .goto Darkshore,38.96,80.07,0
-     >>Mate qualquer Espreitaluna Patriarca que encontrar e as Matriarcas se estiver confortável. Saqueie-os para Peles. Eles compartilham áreas de spawn com os Ursos Cardo Grisalhos.
-     >>Se você está tendo extremamente azar com spawns e taxas de queda, pode pular esta missão
+     >> Mate qualquer Espreitaluna Patriarca que encontrar e as Matriarcas se estiver confortável. Saqueie-os para Peles. Eles compartilham áreas de spawn com os Ursos Cardo Grisalhos.
+     >> Se você está tendo extremamente azar com spawns e taxas de queda, pode pular esta missão
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .unitscan Moonstalker Sire;Moonstalker Matriarch
 step
     .goto Darkshore,38.60,80.50
-     >>Mate os Ursos Cardo Grisalhos por toda a área sul de Costa Negra. Saqueie-os para obter Couro Cabeludo.
+     >> Mate os Ursos Cardo Grisalhos por toda a área sul de Costa Negra. Saqueie-os para obter Couro Cabeludo.
     .complete 1003,1 --Grizzled Scalp (4)
 step
     .goto Darkshore,41.40,80.56
-    .turnin 1003 >>Entregue Buzzbox 525
+    .turnin 1003 >> Entregue Buzzbox 525
 step
     #requires MoonstalkerP
     .goto Darkshore,43.55,76.29
 .target Onu
 >>Fale com |cRXP_FRIENDLY_Onu|r
-    .turnin 950 >>Entregue Devolver a Onu
+    .turnin 950 >> Entregue Devolver a Onu
 step
     #completewith next
     .goto Darkshore,43.69,76.63
-    .vendor >>Compre comida/bebida de Tiyani se necessário
+    .vendor >> Compre comida/bebida de Tiyani se necessário
 step
     >>Aceite a missão de escolta Kerlonian. Se ele não estiver lá, pule este passo
     .goto Darkshore,44.40,76.42
@@ -680,7 +680,7 @@ step
 >>Fale com |cRXP_FRIENDLY_Therysil|r
     .turnin 945 >>Entregue A fuga de Therylune
 step
-    .hs >>Use a Pedra de Regresso para Auberdine
+    .hs >> Use a Pedra de Regresso para Auberdine
 step
     .goto Darkshore,36.09,44.93
 .target Gubber Blump
@@ -711,13 +711,13 @@ step
     .goto Darkshore,37.44,41.84
 .target Archaeologist Hollee
 >>Fale com a |cRXP_FRIENDLY_Arqueóloga Hollee|r
-    .turnin 731 >>Entregue The Absent Minded Prospector
+    .turnin 731 >> Entregue O Prospector Distraído
     .isQuestComplete 731
 step
     .goto Darkshore,37.44,41.84
 .target Archaeologist Hollee
 >>Fale com a |cRXP_FRIENDLY_Arqueóloga Hollee|r
-    .accept 741 >>Aceite O Prospector Distraído
+    .accept 741 >> Aceite O Prospector Distraído
     .isQuestTurnedIn 731
 step
     #completewith next
@@ -727,24 +727,24 @@ step
     .goto Darkshore,33.17,40.17,40
 step
     .isOnQuest 741
-    .zone Teldrassil >>Pegue o barco para Darnassus
+    .zone Teldrassil >> Pegue o barco para Darnassus
 step
     .isOnQuest 741
-    .goto Teldrassil,55.95,89.86,30 >>Atravesse o portal roxo
+    .goto Teldrassil,55.95,89.86,30 >> Atravesse o portal roxo
 step
     .isOnQuest 741
     .goto Darnassus,31.24,84.49
 >>Fale com |cRXP_FRIENDLY_Arqueólogo-chefe Suiçagris|r
-    .turnin 741 >>Entregue The Absent Minded Prospector
+    .turnin 741 >>Entregue O Prospector Distraído
 .target Chief Archaeologist Greywhisker
     .accept 942 >>Aceite O Prospector Distraído
 step
     .goto Teldrassil,58.40,94.02
-    .fp Teldrassil >>Aprenda a rota de voo para Teldrassil
-    .fly Auberdine >>Voe para Auberdine
+    .fp Teldrassil >> Aprenda a rota de voo para Teldrassil
+    .fly Auberdine >> Voe para Auberdine
 step
     .goto Darkshore,32.42,43.75,50,0
-    .zone Wetlands >>Pegue o barco para Menethil
+    .zone Wetlands >> Pegue o barco para Menethil
 step
     #completewith next
     .money <0.08
@@ -752,49 +752,49 @@ step
     .goto Wetlands,10.1,56.9,15,0
     .goto Wetlands,10.6,57.2,15,0
     .goto 1437,10.760,56.721
-    >>Se você tem 8s, verifique o Tubo de Bronze com Nélio Allen e compre se estiver disponível. Caso contrário, pule este passo.
+    >> Se você tem 8s, verifique o Tubo de Bronze com Nélio Allen e compre se estiver disponível. Caso contrário, pule este passo.
     .collect 4371,1,175,1
 step
     .goto Wetlands,9.49,59.69
-    .fly Ironforge >>Voe para Altaforja
+    .fly Ironforge >> Voe para Altaforja
 step << skip --logout skip
     #completewith next
     .goto Ironforge,56.23,46.83,0
     +Execute um skip de logout pulando no topo de uma das cabeças do Grifo, depois desconectando e reconectando
-    .link https://www.youtube.com/watch?v=PWMJhodh6Bw >>https://www.youtube.com/watch?v=PWMJhodh6Bw >> CLIQUE AQUI
+    .link https://www.youtube.com/watch?v=PWMJhodh6Bw >> CLIQUE AQUI
 step
-    .zone Stormwind City >>Pegue o bonde para Ventobravo.
+    .zone Stormwind City >> Pegue o bonde para Ventobravo.
 step
     #completewith FlyAndy
     .goto StormwindClassic,55.21,7.04
-    .vendor >>Compre um Tubo de Bronze se você não tiver um
+    .vendor >> Compre um Tubo de Bronze se você não tiver um
     >>Este é um item de suprimento limitado, pule este passo se o NPC não tiver
     .bronzetube
 step << Human
     #label FlyAndy
     .goto Elwynn Forest,32.45,50.16
-    .zone Elwynn Forest >>Vá para Elwynn Forest
+    .zone Elwynn Forest >> Vá para Elwynn Forest
 step << Gnome
     .goto Elwynn Forest,26.29,38.50
-    .zone Stormwind City >>Vá para Ventobravo
+    .zone Stormwind City >> Vá para Ventobravo
 step << Gnome
     #label FlyAndy
     >>Corra para Ventobravo e obtenha a Rota de Voo
     .goto StormwindClassic,57.62,59.48,50,0
     .goto StormwindClassic,66.27,62.13
-    .fp Stormwind City >>Aprenda a rota de voo para a Cidade de Ventobravo
+    .fp Stormwind City >> Pegue o ponto de voo de Ventobravo
 step << Gnome
     .goto StormwindClassic,66.05,65.64,12,0
-    .goto StormwindClassic,64.97,67.69,18 >>Salte para o pequeno nicho correndo contra a parede branca. Cuidado. Corra ao longo dele em direção à saída de Ventobravo
+    .goto StormwindClassic,64.97,67.69,18 >> Salte para o pequeno nicho correndo contra a parede branca. Cuidado. Corra ao longo dele em direção à saída de Ventobravo
 step
-    >>Corra para o andar superior da Estalagem de Goldshire
+    >> Corra para o andar superior da Estalagem de Goldshire
     .goto Elwynn Forest,42.97,65.65,15,0
     .goto Elwynn Forest,43.81,66.46,15,0
     .goto Elwynn Forest,43.25,66.19
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
 step
     .goto Elwynn Forest,91.42,73.59,125,0
-    .zone Redridge Mountains >>Corra totalmente para o leste até Montanhas Cristarrubra. Organize seus atalhos de teclado no caminho, certificando-se de que você tem seus feitiços confortavelmente em suas barras
+    .zone Redridge Mountains >> Corra totalmente para o leste até Montanhas Cristarrubra. Organize seus atalhos de teclado no caminho, certificando-se de que você tem seus feitiços confortavelmente em suas barras
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -812,7 +812,7 @@ step
     #completewith Gnolls
     +Comece a fazer AdE nos inimigos de missão em grupos de 3 ou mais que você encontrar.
     >>Mantenha este tutorial aberto em outra aba para a Seção AdE de Redridge se necessário:
-    .link https://youtu.be/SxMc2GoP33c?t=56 >>https://youtu.be/SxMc2GoP33c?t=56 >> CLIQUE AQUI
+    .link https://youtu.be/SxMc2GoP33c?t=56 >> CLIQUE AQUI
 step
     >>Fale com o Capitão da Guarda Florestan. Ele patrulha perto das encruzilhadas um pouco
     .goto Elwynn Forest,99.05,72.15
@@ -829,13 +829,13 @@ step
     .accept 246 >>Aceite Avaliando a Ameaça
 step
     .goto Redridge Mountains,30.59,59.40
-    .fp Redridge Mountains >>Aprenda a rota de voo para Montanhas Cristarrubra
+    .fp Redridge Mountains >> Aprenda a rota de voo para Montanhas Cristarrubra
 step
     #requires Gnolls
     .goto Redridge Mountains,33.51,48.96
 .target Marshal Marris
 >>Fale com o |cRXP_FRIENDLY_Oficial Marris|r
-    .accept 20 >>Aceite A Ameaça de Rocha Negra
+    .accept 20 >>Aceite Ameaça dos Rochas Negras
 step
     .goto Redridge Mountains,32.14,48.64
 .target Foreman Oslow
@@ -874,7 +874,7 @@ step
     .accept 129 >>Aceite Um Almoço Grátis
 step
     .goto Redridge Mountains,27.01,44.82
-    .home >>Defina seu Lar em Lakeshire
+    .home >> Defina seu Lar em Lakeshire
 step
     .goto Redridge Mountains,29.32,53.64
 .target Shawn
@@ -902,11 +902,11 @@ step
     .accept 130 >>Aceite Visite a Herbalista
 step
     .goto Redridge Mountains,30.59,59.41
-    .fly Stormwind >>Voe para Ventobravo
+    .fly Stormwind >> Voe para Ventobravo
 step
     >>Entre em Ventobravo. Vá para o treinador de armas
    .goto StormwindClassic,57.13,57.71
-   .trainer >>Treine Espadas de uma mão e Adagas
+   .trainer >> Treine Espadas de uma mão e Adagas
 step
     #softcore
     .goto StormwindClassic,53.62,59.76,30,0
@@ -919,7 +919,7 @@ step
     #hardcore
     .goto StormwindClassic,53.62,59.76,30,0
     .goto StormwindClassic,55.25,7.08
-    .vendor >>Verifique Billibub no Distrito Enânico por um Tubo de Bronze. Compre um se estiver disponível
+    .vendor >> Verifique Billibub no Distrito Enânico por um Tubo de Bronze. Compre um se estiver disponível
     .bronzetube
 step
     .goto StormwindClassic,63.99,75.34
@@ -943,13 +943,13 @@ step
 step
     #completewith next
     #label hsLakeshire
-    .hs Lakeshire >>Lakeshire >> Use sua Pedra de Retorno para ir a Lakeshire se estiver disponível
+    .hs Lakeshire >> Use sua Pedra de Retorno para ir a Lakeshire se estiver disponível
 step
     #completewith hsLakeshire
     #label WFFP
     .goto Westfall,56.55,52.65
-    .fp Westfall >>Aprenda a rota de voo para Cerro Oeste << Gnome
-    .fly Redridge >>Voe para Redridge
+    .fp Westfall >> Aprenda a rota de voo para Cerro Oeste << Gnome
+    .fly Redridge >> Voe para Redridge
 step
     #requires WFFP
     .goto Redridge Mountains,30.97,47.27
@@ -1051,7 +1051,7 @@ step
     .goto Redridge Mountains,33.50,48.96
 .target Marshal Marris
 >>Fale com o |cRXP_FRIENDLY_Oficial Marris|r
-    .turnin 20 >>Entregue Blackrock Ameaça
+    .turnin 20 >>Entregue Ameaça dos Rochas Negras
 step
     .goto Redridge Mountains,32.14,48.63
 >>Fale com o |cRXP_FRIENDLY_Encarregado Oslow|r
@@ -1120,7 +1120,7 @@ step
 step
     #era/som
     #completewith next
-    .goto Redridge Mountains,49.25,39.66,150 >>Corra em direção às aranhas
+    .goto Redridge Mountains,49.25,39.66,150 >> Corra em direção às aranhas
 step
     #era/som
     >>Abata Aranhas. Saque-as pela carne
@@ -1136,7 +1136,7 @@ step
     .goto Redridge Mountains,33.50,48.96
 .target Marshal Marris
 >>Fale com o |cRXP_FRIENDLY_Oficial Marris|r
-    .turnin 20 >>Entregue Blackrock Ameaça
+    .turnin 20 >>Entregue Ameaça dos Rochas Negras
 step
     .goto Redridge Mountains,32.15,48.64
 .target Foreman Oslow
@@ -1152,18 +1152,18 @@ step
     .goto Redridge Mountains,27.09,45.65
 .target Darcy
 >>Fale com |cRXP_FRIENDLY_Darcy|r
-    .turnin 131 >>Entregue Entregando Daffodilss
+    .turnin 131 >>Entregue Entregando Daffodils
 step
     .goto Redridge Mountains,27.01,44.81
-    .vendor >>Compre uma bebida de nível 15
+    .vendor >> Compre uma bebida de nível 15
 step
     #era/som
     .goto Redridge Mountains,22.70,44.00
     >>Saia da estalagem. Vá para o oeste, depois entre no edifício
 .target Chef Breanna
 >>Fale com o |cRXP_FRIENDLY_Mestre-cuca Breanna|r
-    .accept 92 >>Aceite Gulache de Cristarrubra
-    .turnin 92 >>Entregue Gulache de Cristarrubra
+    .accept 92 >> Aceite Gulache de Cristarrubra
+    .turnin 92 >> Entregue Gulache de Cristarrubra
 step
     #era/som
     #completewith next
@@ -1172,5 +1172,5 @@ step
     >>Se você não tem carne suficiente, farme alguns javalis a caminho de Darkshire
 step
     .goto Redridge Mountains,6.50,91.18,90,0
-    .zone Duskwood >>Voe para Floresta do Crepúsculo
+    .zone Duskwood >> Voe para Floresta do Crepúsculo
 ]])

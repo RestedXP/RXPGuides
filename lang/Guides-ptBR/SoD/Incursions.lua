@@ -22,14 +22,14 @@ step
     .maxlevel 53
 step
 #completewith next
-.zone Duskwood >>|cRXP_WARN_Viaje para Floresta do Crepúsculo. Certifique-se de que você tem bastante espaço no seu Registro de Missões. Você precisará manter de 12 a 15 missões ao mesmo tempo da incursão no registro|r
+.zone Duskwood >> |cRXP_WARN_Viaje para Floresta do Crepúsculo. Certifique-se de que você tem bastante espaço no seu Registro de Missões. Você precisará manter de 12 a 15 missões ao mesmo tempo da incursão no registro|r
 .maxlevel 53
 step
     #label travel
-  .goto 1431/0,-438.800,-10793.400,30 >>Vá para o caminho que leva ao Bosque do Crepúsculo
+  .goto 1431/0,-438.800,-10793.400,30 >> Vá para o caminho que leva ao Bosque do Crepúsculo
   .maxlevel 53
 step
-    .goto 1431/0,-376.600,-10768.500,30 >>Suba o caminho
+    .goto 1431/0,-376.600,-10768.500,30 >> Suba o caminho
     .maxlevel 53
 step
     >>Procure um Quartermaster dos |cRXP_FRIENDLY_The Emerald Wardens|r no local marcado e compre sua runa deles
@@ -85,14 +85,14 @@ step
 step
     .goto Duskwood,45.6,51.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Intendente Falinar|r
-    .vendor >>|cRXP_BUY_Compre até 5|r |T134718:0|t[Greater Cura Potions] |cRXP_BUY_dele se quiser.|r |cRXP_WARN_Estas podem ser usadas apenas nas zonas de incursão|r
+    .vendor >> |cRXP_BUY_Compre até 5|r |T134718:0|t[Greater Cura Potions] |cRXP_BUY_dele se quiser.|r |cRXP_WARN_Estas podem ser usadas apenas nas zonas de incursão|r
     .target Quartermaster Falinar
     .xp >40,1
     .maxlevel 53
 step
     .goto Duskwood,45.6,51.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Intendente Falinar|r
-    .vendor >>|cRXP_BUY_Compre até 5|r |T236885:0|t[Elevado de Cura Potions] |cRXP_BUY_dele se quiser.|r |cRXP_WARN_Estas podem ser usadas apenas nas zonas de incursão|r
+    .vendor >> |cRXP_BUY_Compre até 5|r |T236885:0|t[Elevado de Cura Potions] |cRXP_BUY_dele se quiser.|r |cRXP_WARN_Estas podem ser usadas apenas nas zonas de incursão|r
     .target Quartermaster Falinar
     .xp <40,1
     .maxlevel 53
@@ -100,9 +100,9 @@ step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitão Avançado Palandar|r
     .goto Duskwood,45.6,51.2
-    .accept 81739 >>Aceite Missão X da Floresta do Crepúsculo: Musgo do Pesadelo
-    .accept 81740 >>Aceite Missão XI da Floresta do Crepúsculo: Minério de Ferro Frio
-    .accept 81741 >>Aceite Missão XII da Floresta do Crepúsculo: Escama de Dragão Tocada pelo Sonho
+    .accept 81739 >> Aceite Missão X da Floresta do Crepúsculo: Musgo do Pesadelo
+    .accept 81740 >> Aceite Missão XI da Floresta do Crepúsculo: Minério de Ferro Frio
+    .accept 81741 >> Aceite Missão XII da Floresta do Crepúsculo: Escama de Dragão Tocada pelo Sonho
     .itemcount 219399,10 --Nightmare Moss
     .itemcount 219401,10 --Cold Iron Ore
     .itemcount 219402,10 --Dream-Touched Dragonscale
@@ -111,30 +111,30 @@ step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitão Avançado Palandar|r
     .goto Duskwood,45.6,51.2
-    .accept 81739 >>Aceite Missão X da Floresta do Crepúsculo: Musgo do Pesadelo
+    .accept 81739 >> Aceite Missão X da Floresta do Crepúsculo: Musgo do Pesadelo
     .itemcount 219399,10 --Nightmare Moss
     .maxlevel 53
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitão Avançado Palandar|r
     .goto Duskwood,45.6,51.2
-    .accept 81740 >>Aceite Missão XI da Floresta do Crepúsculo: Minério de Ferro Frio
+    .accept 81740 >> Aceite Missão XI da Floresta do Crepúsculo: Minério de Ferro Frio
     .itemcount 219401,10 --Cold Iron Ore
     .maxlevel 53
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitão Avançado Palandar|r
     .goto Duskwood,45.6,51.2
-    .accept 81741 >>Aceite Missão XII da Floresta do Crepúsculo: Escama de Dragão Tocada pelo Sonho
+    .accept 81741 >> Aceite Missão XII da Floresta do Crepúsculo: Escama de Dragão Tocada pelo Sonho
     .itemcount 219402,10 --Dream-Touched Dragonscale
     .maxlevel 53
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitão Avançado Palandar|r
     .goto Duskwood,45.6,51.2
-    .turnin -81739 >>Entregue Missão X da Floresta do Crepúsculo: Musgo do Pesadelo
-    .turnin -81740 >>Entregue Missão XI da Floresta do Crepúsculo: Minério de Ferro Frio
-    .turnin -81741 >>Entregue Missão XII da Floresta do Crepúsculo: Escama de Dragão Tocada pelo Sonho
+    .turnin -81739 >> Entregue Missão X da Floresta do Crepúsculo: Musgo do Pesadelo
+    .turnin -81740 >> Entregue Missão XI da Floresta do Crepúsculo: Minério de Ferro Frio
+    .turnin -81741 >> Entregue Missão XII da Floresta do Crepúsculo: Escama de Dragão Tocada pelo Sonho
     .isOnQuest 81739
     .isOnQuest 81740
     .maxlevel 53
@@ -143,34 +143,34 @@ step
     >>|cRXP_WARN_Você agora fará um looping de missão de incursão. Todas essas missões podem ser completadas em um grupo, tornando-as ainda mais eficientes. Se você vir algum jogador perto do dador de missão, tente formar um grupo. Se você encontrar alguns jogadores, você também pode fazer as missões de chefe que não seriam possíveis de fazer sozinho|r
     .goto Duskwood,45.6,51.2
     .target Field Captain Palandar
-    .accept 81730 >>Aceite Missão I da Floresta do Crepúsculo: Derrotar Worgens
-    .accept 81731 >>Aceite Missão II da Floresta do Crepúsculo: Derrotar Ogros
-    .accept 81732 >>Aceite Missão III da Floresta do Crepúsculo: Derrotar Draconianos
-    .accept 81733 >>Aceite Missão IV da Floresta do Crepúsculo: Inteligência sobre Ogros
-    .accept 81734 >>Aceite Missão V da Floresta do Crepúsculo: Inteligência sobre Worgens
-    .accept 81735 >>Aceite Missão VI da Floresta do Crepúsculo: Inteligência sobre Dragões
-    .accept 81736 >>Aceite Missão VII da Floresta do Crepúsculo: Recuperar a Foice das Sombras
-    .accept 81737 >>Aceite Missão VIII da Floresta do Crepúsculo: Recuperar Ogro Mago Text
-    .accept 81738 >>Aceite Missão IX da Floresta do Crepúsculo: Recuperar Ovo de Dragão
-    .accept 81745 >>Aceite Missão XVI da Floresta do Crepúsculo: Resgatar Kroll Sombramonte
-    .accept 81746 >>Aceite Missão XVII da Floresta do Crepúsculo: Resgatar Alara Curabosque
-    .accept 81747 >>Aceite Missão XVII da Floresta do Crepúsculo: Resgatar Elenora Andacharco <Druidesa da Garra>
+    .accept 81730 >> Aceite Missão I da Floresta do Crepúsculo: Derrotar Worgens
+    .accept 81731 >> Aceite Missão II da Floresta do Crepúsculo: Derrotar Ogros
+    .accept 81732 >> Aceite Missão III da Floresta do Crepúsculo: Derrotar Draconianos
+    .accept 81733 >> Aceite Missão IV da Floresta do Crepúsculo: Inteligência sobre Ogros
+    .accept 81734 >> Aceite Missão V da Floresta do Crepúsculo: Inteligência sobre Worgens
+    .accept 81735 >> Aceite Missão VI da Floresta do Crepúsculo: Inteligência sobre Dragões
+    .accept 81736 >> Aceite Missão VII da Floresta do Crepúsculo: Recuperar a Foice das Sombras
+    .accept 81737 >> Aceite Missão VIII da Floresta do Crepúsculo: Recuperar Ogro Mago Text
+    .accept 81738 >> Aceite Missão IX da Floresta do Crepúsculo: Recuperar Ovo de Dragão
+    .accept 81745 >> Aceite Missão XVI da Floresta do Crepúsculo: Resgatar Kroll Sombramonte
+    .accept 81746 >> Aceite Missão XVII da Floresta do Crepúsculo: Resgatar Alara Curabosque
+    .accept 81747 >> Aceite Missão XVII da Floresta do Crepúsculo: Resgatar Elenora Andacharco <Druidesa da Garra>
     .maxlevel 53
 step
 .group 3
     .goto Duskwood,45.6,51.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitão Avançado Palandar|r
     >>|cRXP_WARN_Se você está em um grupo, considere aceitar também as missões de morte de élites. Os chefes que você precisará matar para essas missões têm quantidades massivas de saúde e podem ser desafiadores dependendo do seu grupo|r
-    .accept 81742 >>Aceite Missão XIII da Floresta do Crepúsculo: Derrotar Ylanthrius
-    .accept 81743 >>Aceite Missão XIV da Floresta do Crepúsculo: Derrotar Vvarc'zul
-    .accept 81744 >>Aceite Missão XV da Floresta do Crepúsculo: Derrotar Amokarok
+    .accept 81742 >> Aceite Missão XIII da Floresta do Crepúsculo: Derrotar Ylanthrius
+    .accept 81743 >> Aceite Missão XIV da Floresta do Crepúsculo: Derrotar Vvarc'zul
+    .accept 81744 >> Aceite Missão XV da Floresta do Crepúsculo: Derrotar Amokarok
     .maxlevel 53
 step
     #completewith next
     +|cRXP_WARN_Clique no portal ao lado do doador de missões|r para ser transportado para Sonho Esmeralda
     .maxlevel 53
 step
-    .goto Duskwood,47.07,49.64,10 >>Saia da Floresta do Crepúsculo |cRXP_WARN_quando estiver dentro de Sonho Esmeralda|r
+    .goto Duskwood,47.07,49.64,10 >> Saia da Floresta do Crepúsculo |cRXP_WARN_quando estiver dentro de Sonho Esmeralda|r
     .maxlevel 53
 step
     #sticky
@@ -183,7 +183,7 @@ step
     .maxlevel 53
 step
     .goto Duskwood,32.48,69.60
-    .gossipoption 122140 >>Fale com |cRXP_FRIENDLY_Elenora Andacharco <Druidesa da Garra>|r deitada no chão. Ela deve começar a te seguir
+    .gossipoption 122140 >> Fale com |cRXP_FRIENDLY_Elenora Andacharco <Druidesa da Garra>|r deitada no chão. Ela deve começar a te seguir
     >>|cRXP_WARN_Se ela não estiver lá, isso significa que outra pessoa está escoltando-a, pule este passo se você não conseguir encontrá-la|r
     .target Elenora Marshwalker
     .maxlevel 53
@@ -230,7 +230,7 @@ step
     .maxlevel 53
 step
     .goto Duskwood,49.13,77.41
-    .gossipoption 122136 >>Fale com |cRXP_FRIENDLY_Alara Curabosque <Druidesa da Garra>|r deitada no chão. Ela deve começar a te seguir
+    .gossipoption 122136 >> Fale com |cRXP_FRIENDLY_Alara Curabosque <Druidesa da Garra>|r deitada no chão. Ela deve começar a te seguir
     >>|cRXP_WARN_Se ela não estiver lá, isso significa que outra pessoa está escoltando-a, pule este passo se você não conseguir encontrá-la|r
     .target Alara Grovemender
     .maxlevel 53
@@ -277,7 +277,7 @@ step
     .group 3
 step
     .goto Duskwood,65.99,69.36
-    .gossipoption 122146 >>Fale com |cRXP_FRIENDLY_Kroll Sombramonte <Druida da Garra>|r deitado no chão. Ele deve começar a te seguir
+    .gossipoption 122146 >> Fale com |cRXP_FRIENDLY_Kroll Sombramonte <Druida da Garra>|r deitado no chão. Ele deve começar a te seguir
     >>|cRXP_WARN_Se ele não estiver lá, isso significa que alguém está a escoltando, pule este passo se você não conseguir encontrá-lo|r
     .target Kroll Mountainshade
     .maxlevel 53
@@ -289,11 +289,11 @@ step
 step
     #requires Worgen
     .goto Duskwood,70.93,65.90
-    .goto Duskwood,44.60,65.80,50 >>Vá para oeste até chegar a uma área fora dos limites do pesadelo. Sua tela começará a brilhar em verde e você será teleportado de volta perto da entrada. |cRXP_WARN_Não se preocupe, os NPCs que você está escoltando o seguirão de volta|r
+    .goto Duskwood,44.60,65.80,50 >> Vá para oeste até chegar a uma área fora dos limites do pesadelo. Sua tela começará a brilhar em verde e você será teleportado de volta perto da entrada. |cRXP_WARN_Não se preocupe, os NPCs que você está escoltando o seguirão de volta|r
     .maxlevel 53
 step
     #completewith next
-    .goto 1431/0,-421.400,-10360.601,5 >>Volte para o portal do pesadelo. |cRXP_WARN_Não morra no caminho ou as missões de escolta falharão! Se você atingir o portal com segurança, todas as três missões devem ser completadas|r
+    .goto 1431/0,-421.400,-10360.601,5 >> Volte para o portal do pesadelo. |cRXP_WARN_Não morra no caminho ou as missões de escolta falharão! Se você atingir o portal com segurança, todas as três missões devem ser completadas|r
     .maxlevel 53
 step
     .goto 1431/0,-421.400,-10360.601
@@ -303,33 +303,33 @@ step
     .complete 81747,1
     .maxlevel 53
 step
-    .goto Duskwood,46.63,47.90,5 >>Volte para o portal que você usou para entrar no Emerald Dream e |cRXP_WARN_Clique nele para voltar para o mundo Normal|r
+    .goto Duskwood,46.63,47.90,5 >> Volte para o portal que você usou para entrar no Emerald Dream e |cRXP_WARN_Clique nele para voltar para o mundo Normal|r
     .maxlevel 53
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitão Avançado Palandar|r
     .goto Duskwood,45.6,51.2
     .target Field Captain Palandar
-    .turnin 81730 >>Entregue Missão I da Floresta do Crepúsculo: Derrotar Worgens
-    .turnin 81731 >>Entregue Missão II da Floresta do Crepúsculo: Derrotar Ogros
-    .turnin 81732 >>Entregue Missão III da Floresta do Crepúsculo: Derrotar Draconianos
-    .turnin 81733 >>Entregue Missão IV da Floresta do Crepúsculo: Inteligência sobre Ogros
-    .turnin 81734 >>Entregue Missão V da Floresta do Crepúsculo: Inteligência sobre Worgens
-    .turnin 81735 >>Entregue Missão VI da Floresta do Crepúsculo: Inteligência sobre Dragões
-    .turnin 81736 >>Entregue Missão VII da Floresta do Crepúsculo: Recuperar a Foice das Sombras
-    .turnin 81737 >>Entregue Missão VIII da Floresta do Crepúsculo: Recuperar Ogro Mago Texto
-    .turnin 81738 >>Entregue Missão IX da Floresta do Crepúsculo: Recuperar Ovo de Dragão
-    .turnin 81745 >>Entregue Missão XVI da Floresta do Crepúsculo: Resgatar Kroll Sombramonte
-    .turnin 81746 >>Entregue Missão XVII da Floresta do Crepúsculo: Resgatar Alara Curabosque
-    .turnin 81747 >>Entregue Missão XVII da Floresta do Crepúsculo: Resgatar Elenora Andacharco <Druidesa da Garra>
+    .turnin 81730 >> Entregue Missão I da Floresta do Crepúsculo: Derrotar Worgens
+    .turnin 81731 >> Entregue Missão II da Floresta do Crepúsculo: Derrotar Ogros
+    .turnin 81732 >> Entregue Missão III da Floresta do Crepúsculo: Derrotar Draconianos
+    .turnin 81733 >> Entregue Missão IV da Floresta do Crepúsculo: Inteligência sobre Ogros
+    .turnin 81734 >> Entregue Missão V da Floresta do Crepúsculo: Inteligência sobre Worgens
+    .turnin 81735 >> Entregue Missão VI da Floresta do Crepúsculo: Inteligência sobre Dragões
+    .turnin 81736 >> Entregue Missão VII da Floresta do Crepúsculo: Recuperar a Foice das Sombras
+    .turnin 81737 >> Entregue Missão VIII da Floresta do Crepúsculo: Recuperar Ogro Mago Texto
+    .turnin 81738 >> Entregue Missão IX da Floresta do Crepúsculo: Recuperar Ovo de Dragão
+    .turnin 81745 >> Entregue Missão XVI da Floresta do Crepúsculo: Resgatar Kroll Sombramonte
+    .turnin 81746 >> Entregue Missão XVII da Floresta do Crepúsculo: Resgatar Alara Curabosque
+    .turnin 81747 >> Entregue Missão XVII da Floresta do Crepúsculo: Resgatar Elenora Andacharco <Druidesa da Garra>
     .maxlevel 53
 step
     #optional
     .goto Duskwood,45.6,51.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Capitão Avançado Palandar|r
     >>|cRXP_WARN_Se você está em um grupo, considere aceitar também as missões de morte de élites. Os chefes que você precisará matar para essas missões têm quantidades massivas de saúde e podem ser desafiadores dependendo do seu grupo|r
-    .turnin -81742 >>Entregue Missão XIII da Floresta do Crepúsculo: Derrotar Ylanthrius
-    .turnin -81743 >>Entregue Missão XIV da Floresta do Crepúsculo: Derrotar Vvarc'zul
-    .turnin -81744 >>Entregue Missão XV da Floresta do Crepúsculo: Derrotar Amokarok
+    .turnin -81742 >> Entregue Missão XIII da Floresta do Crepúsculo: Derrotar Ylanthrius
+    .turnin -81743 >> Entregue Missão XIV da Floresta do Crepúsculo: Derrotar Vvarc'zul
+    .turnin -81744 >> Entregue Missão XV da Floresta do Crepúsculo: Derrotar Amokarok
     .maxlevel 53
     .target Field Captain Palandar
 step
@@ -367,7 +367,7 @@ step
 step
     #season 2
     #label travel
-    .zone Ashenvale >>Vá para Vale Gris. |cRXP_WARN_Certifique-se de ter bastante espaço no Registro de Missões. Você precisará manter de 12 a 15 missões simultaneamente da incursão no seu registro|r
+    .zone Ashenvale >> Vá para Vale Gris. |cRXP_WARN_Certifique-se de ter bastante espaço no Registro de Missões. Você precisará manter de 12 a 15 missões simultaneamente da incursão no seu registro|r
     >>Se você tem a rota de voo de Azshara, é mais rápido voar para lá e depois correr para Vale Gris do que voar para Astranaar << Alliance
     .maxlevel 53
 step
@@ -429,9 +429,9 @@ step
     #optional
     .goto Ashenvale,89.53,40.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Capitã Avançada Hannalah|r
-    .accept 81777 >>Aceite Missão X do Vale Gris: Raiz-de-Sonho
-    .accept 81778 >>Aceite Missão XI do Vale Gris: Pó de Ouro de Tolo
-    .accept 81779 >>Aceite Missão XII do Vale Gris: Escama de Dragão Infusa pelo Sonho
+    .accept 81777 >> Aceite Missão X do Vale Gris: Raiz-de-Sonho
+    .accept 81778 >> Aceite Missão XI do Vale Gris: Pó de Ouro de Tolo
+    .accept 81779 >> Aceite Missão XII do Vale Gris: Escama de Dragão Infusa pelo Sonho
     .itemcount 219444,10 --Dreamroot
     .itemcount 219446,10 --Dream-Infused Dragonscale
     .itemcount 219445,10 --Fool's Gold Dust
@@ -441,7 +441,7 @@ step
     #optional
     .goto Ashenvale,89.53,40.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Capitã Avançada Hannalah|r
-    .accept 81777 >>Aceite Missão X do Vale Gris: Raiz-de-Sonho
+    .accept 81777 >> Aceite Missão X do Vale Gris: Raiz-de-Sonho
     .itemcount 219444,10 --Dreamroot
     .maxlevel 53
 step
@@ -449,7 +449,7 @@ step
     #optional
     .goto Ashenvale,89.53,40.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Capitã Avançada Hannalah|r
-    .accept 81778 >>Aceite Missão XI do Vale Gris: Pó de Ouro de Tolo
+    .accept 81778 >> Aceite Missão XI do Vale Gris: Pó de Ouro de Tolo
     .itemcount 219445,10 --Fool's Gold Dust
     .maxlevel 53
 step
@@ -457,7 +457,7 @@ step
     #optional
     .goto Ashenvale,89.53,40.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Capitã Avançada Hannalah|r
-    .accept 81779 >>Aceite Missão XII do Vale Gris: Escama de Dragão Infusa pelo Sonho
+    .accept 81779 >> Aceite Missão XII do Vale Gris: Escama de Dragão Infusa pelo Sonho
     .itemcount 219446,10 --Dream-Infused Dragonscale
     .maxlevel 53
 step
@@ -465,9 +465,9 @@ step
     #optional
     .goto Ashenvale,89.53,40.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Capitã Avançada Hannalah|r
-    .turnin -81777 >>Entregue Missão X do Vale Gris: Raiz-de-Sonho
-    .turnin -81778 >>Entregue Missão XI do Vale Gris: Pó de Ouro de Tolo
-    .turnin -81779 >>Entregue Missão XII do Vale Gris: Escama de Dragão Infusa pelo Sonho
+    .turnin -81777 >> Entregue Missão X do Vale Gris: Raiz-de-Sonho
+    .turnin -81778 >> Entregue Missão XI do Vale Gris: Pó de Ouro de Tolo
+    .turnin -81779 >> Entregue Missão XII do Vale Gris: Escama de Dragão Infusa pelo Sonho
     .maxlevel 53
 step
     #season 2
@@ -494,9 +494,9 @@ step
     .goto Ashenvale,89.53,40.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Capitã Avançada Hannalah|r
     >>|cRXP_WARN_Se você está em um grupo, considere aceitar também as missões de morte de élites. Os chefes que você precisará matar para essas missões têm quantidades massivas de saúde e podem ser desafiadores dependendo do seu grupo|r
-    .accept 81780 >>Aceite Missão XIII do Vale Gris: Derrotar Larsera
-    .accept 81781 >>Aceite Missão XIV do Vale Gris: Derrotar Zalius
-    .accept 81782 >>Aceite Missão XV do Vale Gris: Retalhador 9000
+    .accept 81780 >> Aceite Missão XIII do Vale Gris: Derrotar Larsera
+    .accept 81781 >> Aceite Missão XIV do Vale Gris: Derrotar Zalius
+    .accept 81782 >> Aceite Missão XV do Vale Gris: Retalhador 9000
     .maxlevel 53
 step
     #season 2
@@ -511,7 +511,7 @@ step
     #completewith IncursionsComplete
     .goto Ashenvale,93.94,38.21,25,0
     .goto Ashenvale,94.27,35.13,20 >>Entre no |cRXP_PICK_Portal Esmeralda Onírico|r
-    >>|cRXP_WARN_Corra diretamente passando pelos |cRXP_ENEMY_Satyrs|r, os |cRXP_ENEMY_Felhounds|r e os |cRXP_ENEMY_Imps|r. Eles resetarão a agressão quando você entrar no portal|r
+    >>|cRXP_WARN_Corra direto passando pelos |cRXP_ENEMY_Satyrs|r, |cRXP_ENEMY_Felhounds|r e |cRXP_ENEMY_Imps|r. Eles resetarão a agressão ao entrar no portal|r
     .aura 444759
     .maxlevel 53
 step
@@ -740,9 +740,9 @@ step
     #optional
     .goto Ashenvale,89.53,40.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Capitã Avançada Hannalah|r
-    .turnin -81780 >>Entregue Missão XIII do Vale Gris: Derrotar Larsera
-    .turnin -81781 >>Entregue Missão XIV do Vale Gris: Derrotar Zalius
-    .turnin -81782 >>Entregue Missão XV do Vale Gris: Retalhador 9000
+    .turnin -81780 >> Entregue Missão XIII do Vale Gris: Derrotar Larsera
+    .turnin -81781 >> Entregue Missão XIV do Vale Gris: Derrotar Zalius
+    .turnin -81782 >> Entregue Missão XV do Vale Gris: Retalhador 9000
     .target Field Captain Hannalah
     .maxlevel 53
 step
@@ -774,10 +774,10 @@ step
 step
     #completewith next
     #label travel
-    .zone The Hinterlands >>Vá para as Terras Agrestes
+    .zone The Hinterlands >> Vá para as Terras Agrestes
     .maxlevel 53
 step
-    .goto The Hinterlands,60.81,37.86,20 >>Vá para a ponte que leva a Seradane
+    .goto The Hinterlands,60.81,37.86,20 >> Vá para a ponte que leva a Seradane
     .maxlevel 53
 step
     .goto The Hinterlands,61.4,34.6
@@ -834,9 +834,9 @@ step
     #optional
     >>Cruze a ponte e |Tinterface/worldmap/chatbubble_64grey.blp:20|tfale com |cRXP_FRIENDLY_Field Captain Korlian|r
     .goto The Hinterlands,61.4,34.6
-    .accept 81833 >>Aceite Missão X das Terras Agrestes: Estrela Lotus
-    .accept 81834 >>Aceite Missão XI das Terras Agrestes: Starsilver Ore
-    .accept 81835 >>Aceite Missão XII das Terras Agrestes: Starshells
+    .accept 81833 >> Aceite Missão X das Terras Agrestes: Estrela Lotus
+    .accept 81834 >> Aceite Missão XI das Terras Agrestes: Starsilver Ore
+    .accept 81835 >> Aceite Missão XII das Terras Agrestes: Starshells
     .itemcount 219454,10 --Star Lotus
     .itemcount 219487,10 --Starshell
     .itemcount 219486,10 --Starsilver Ore
@@ -846,7 +846,7 @@ step
     #optional
     >>Cruze a ponte e |Tinterface/worldmap/chatbubble_64grey.blp:20|tfale com |cRXP_FRIENDLY_Field Captain Korlian|r
     .goto The Hinterlands,61.4,34.6
-    .accept 81833 >>Aceite Missão X das Terras Agrestes: Estrela Lotus
+    .accept 81833 >> Aceite Missão X das Terras Agrestes: Estrela Lotus
     .itemcount 219454,10 --Star Lotus
     .target Field Captain Korlian
     .maxlevel 53
@@ -854,7 +854,7 @@ step
     #optional
     >>Cruze a ponte e |Tinterface/worldmap/chatbubble_64grey.blp:20|tfale com |cRXP_FRIENDLY_Field Captain Korlian|r
     .goto The Hinterlands,61.4,34.6
-    .accept 81834 >>Aceite Missão XI das Terras Agrestes: Starsilver Ore
+    .accept 81834 >> Aceite Missão XI das Terras Agrestes: Starsilver Ore
     .itemcount 219486,10 --Starsilver Ore
     .target Field Captain Korlian
     .maxlevel 53
@@ -862,7 +862,7 @@ step
     #optional
     >>Cruze a ponte e |Tinterface/worldmap/chatbubble_64grey.blp:20|tfale com |cRXP_FRIENDLY_Field Captain Korlian|r
     .goto The Hinterlands,61.4,34.6
-    .accept 81835 >>Aceite Missão XII das Terras Agrestes: Starshells
+    .accept 81835 >> Aceite Missão XII das Terras Agrestes: Starshells
     .itemcount 219487,10 --Starshell
     .target Field Captain Korlian
     .maxlevel 53
@@ -870,26 +870,26 @@ step
     #optional
     >>Cruze a ponte e |Tinterface/worldmap/chatbubble_64grey.blp:20|tfale com |cRXP_FRIENDLY_Field Captain Korlian|r
     .goto The Hinterlands,61.4,34.6
-    .turnin -81833 >>Entregue Missão X das Terras Agrestes: Estrela Lotus
-    .turnin -81834 >>Entregue Missão XI das Terras Agrestes: Starsilver Ore
-    .turnin -81835 >>Entregue Missão XII das Terras Agrestes: Starshells
+    .turnin -81833 >> Entregue Missão X das Terras Agrestes: Estrela Lotus
+    .turnin -81834 >> Entregue Missão XI das Terras Agrestes: Starsilver Ore
+    .turnin -81835 >> Entregue Missão XII das Terras Agrestes: Starshells
     .target Field Captain Korlian
 step
     >>Cruze a ponte e |Tinterface/worldmap/chatbubble_64grey.blp:20|tfale com |cRXP_FRIENDLY_Field Captain Korlian|r
     .goto The Hinterlands,61.4,34.6
-    .accept 82068 >>Aceite Enfrente as Incursões Pesadelares
-    .accept 81786 >>Aceite Missão I das Terras Agrestes: Derrotar Luniscantes
-    .accept 81787 >>Aceite Missão II das Terras Agrestes: Derrotar Tartarugas Gigantes
-    .accept 81788 >>Aceite Missão III das Terras Agrestes: Derrotar Draconianos
-    .accept 81789 >>Aceite Missão IV das Terras Agrestes: inteligência draconiana
-    .accept 81817 >>Aceite Missão V das Terras Agrestes: inteligência quelônia
-    .accept 81820 >>Aceite Missão VI das Terras Agrestes: inteligência luniscante
-    .accept 81826 >>Aceite Missão VII das Terras Agrestes: recuperar ovo de dragão tocado pelas estrelas
-    .accept 81830 >>Aceite Missão VIII das Terras Agrestes: recuperar relíquia elunar
-    .accept 81832 >>Aceite Missão IX das Terras Agrestes: obter pérola onírica
-    .accept 81850 >>Aceite Missão XVI das Terras Agrestes: resgatar Elianar Sorvessombra
-    .accept 81851 >>Aceite Missão XVII das Terras Agrestes: resgatar Serlina Luminastra
-    .accept 81852 >>Aceite Missão XVIII das Terras Agrestes: Resgatar Veanna Dormenuvem
+    .accept 82068 >> Aceite Enfrente as Incursões Pesadelares
+    .accept 81786 >> Aceite Missão I das Terras Agrestes: Derrotar Luniscantes
+    .accept 81787 >> Aceite Missão II das Terras Agrestes: Derrotar Tartarugas Gigantes
+    .accept 81788 >> Aceite Missão III das Terras Agrestes: Derrotar Draconianos
+    .accept 81789 >> Aceite Missão IV das Terras Agrestes: inteligência draconiana
+    .accept 81817 >> Aceite Missão V das Terras Agrestes: inteligência quelônia
+    .accept 81820 >> Aceite Missão VI das Terras Agrestes: inteligência luniscante
+    .accept 81826 >> Aceite Missão VII das Terras Agrestes: recuperar ovo de dragão tocado pelas estrelas
+    .accept 81830 >> Aceite Missão VIII das Terras Agrestes: recuperar relíquia elunar
+    .accept 81832 >> Aceite Missão IX das Terras Agrestes: obter pérola onírica
+    .accept 81850 >> Aceite Missão XVI das Terras Agrestes: resgatar Elianar Sorvessombra
+    .accept 81851 >> Aceite Missão XVII das Terras Agrestes: resgatar Serlina Luminastra
+    .accept 81852 >> Aceite Missão XVIII das Terras Agrestes: Resgatar Veanna Dormenuvem
     .target Field Captain Korlian
     .maxlevel 53
 step
@@ -897,23 +897,23 @@ step
     .group 3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão de Campo Korlian|r
     >>|cRXP_WARN_Se você está em um grupo, considere aceitar também as missões de morte de élites. Os chefes que você precisará matar para essas missões têm quantidades massivas de saúde e podem ser desafiadores dependendo do seu grupo|r
-    .accept 81837 >>Aceite Missão XIII das Terras Agrestes: derrotar Flórius
-    .accept 81838 >>Aceite Missão XIV das Terras Agrestes: derrotar Ruiniscante
-    .accept 81839 >>Aceite Missão XV das Terras Agrestes: derrotar Ghamoo-Raja
+    .accept 81837 >> Aceite Missão XIII das Terras Agrestes: derrotar Flórius
+    .accept 81838 >> Aceite Missão XIV das Terras Agrestes: derrotar Ruiniscante
+    .accept 81839 >> Aceite Missão XV das Terras Agrestes: derrotar Ghamoo-Raja
     .goto The Hinterlands,61.4,34.6
     .target Field Captain Korlian
     .maxlevel 53
 step
     .goto The Hinterlands,61.4,34.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Quartermaster Alandra|r
-    .vendor >>|cRXP_BUY_Compre até 5|r |T236885:0|t[Elevado de Cura Potions] |cRXP_BUY_dela se você quiser.|r |cRXP_WARN_Estas podem ser usadas apenas nas zonas de incursão|r
+    .vendor >> |cRXP_BUY_Compre até 5|r |T236885:0|t[Elevado de Cura Potions] |cRXP_BUY_dela se você quiser.|r |cRXP_WARN_Estas podem ser usadas apenas nas zonas de incursão|r
     .target Quartermaster Alandra
     .maxlevel 53
 step
     #completewith next
     +|cRXP_WARN_Clique no portal ao lado do doador de missões|r para ser transportado para Sonho Esmeralda
 step
-    .goto 1425/0,-3788.100,468.800,20 >>Vá para Skulk Pedra. |cRXP_WARN_Evite correr para dentro dos |cRXP_ENEMY_Wisps Instáveis|r ou eles explodirão causando aproximadamente 700 de dano a você|r
+    .goto 1425/0,-3788.100,468.800,20 >> Vá para Skulk Pedra. |cRXP_WARN_Evite correr para dentro dos |cRXP_ENEMY_Wisps Instáveis|r ou eles explodirão causando aproximadamente 700 de dano a você|r
     .maxlevel 53
 step
     #sticky
@@ -962,7 +962,7 @@ step
     #requires Moonkin
     #requires groupSkulk
     .goto The Hinterlands,53.58,39.10
-    .gossipoption 122141 >>Fale com |cRXP_FRIENDLY_[[Elianar Shadowdrinker] <[Druid of the Claw]>] <[Druid of the Claw]>|r deitado no chão. Ele deveria começar a te seguir
+    .gossipoption 122141 >> Fale com |cRXP_FRIENDLY_[[Elianar Shadowdrinker] <[Druid of the Claw]>] <[Druid of the Claw]>|r deitado no chão. Ele deveria começar a te seguir
     >>|cRXP_WARN_Você pode falar com ele através da parte traseira da cerca de madeira sem ter que entrar|r
     >>|cRXP_WARN_Se ele não estiver lá, isso significa que alguém está a escoltando, pule este passo se você não conseguir encontrá-lo|r
     .target Elianar Shadowdrinker
@@ -1008,7 +1008,7 @@ step
 step
     #requires Dragonkin
     .goto The Hinterlands,42.31,31.43
-    .goto The Hinterlands,60.67,38.32,150 >>Dirija-se para oeste nas montanhas até sua tela começar a brilhar em verde. Você será teletransportado mais perto da localização inicial
+    .goto The Hinterlands,60.67,38.32,150 >> Dirija-se para oeste nas montanhas até sua tela começar a brilhar em verde. Você será teletransportado mais perto da localização inicial
     >>|cRXP_WARN_Não se preocupe, todos os NPCs de escolta o seguirão eventualmente|r
     .maxlevel 53
 step
@@ -1034,7 +1034,7 @@ step
     .maxlevel 53
 step
     .goto The Hinterlands,71.09,48.14
-    .gossipoption 122149 >>Entre no pequeno forte de madeira. Fale com |cRXP_FRIENDLY_[[Serlina Starbright] <[Druid of the Claw]>] <[Druid of the Claw]>|r deitada no chão. Ela deve começar a acompanhá-o.
+    .gossipoption 122149 >> Entre no pequeno forte de madeira. Fale com |cRXP_FRIENDLY_[[Serlina Starbright] <[Druid of the Claw]>] <[Druid of the Claw]>|r deitada no chão. Ela deve começar a acompanhá-o.
     >>|cRXP_WARN_Se ela não estiver lá, isso significa que outra pessoa está escoltando-a, pule este passo se você não conseguir encontrá-la|r
     .target Serlina Starbright
     .maxlevel 53
@@ -1060,7 +1060,7 @@ step
     .maxlevel 53
 step
     .goto The Hinterlands,77.13,54.35
-    .goto The Hinterlands,60.67,38.32,150 >>Vá para o leste até sua tela começar a brilhar em verde. Você será teleportado mais perto do local de início.
+    .goto The Hinterlands,60.67,38.32,150 >> Vá para o leste até sua tela começar a brilhar em verde. Você será teleportado mais perto do local de início.
     >>|cRXP_WARN_Não se preocupe, todos os NPCs de escolta o seguirão eventualmente|r
     .maxlevel 53
 step
@@ -1074,32 +1074,32 @@ step
     .complete 81852,1
     .maxlevel 53
 step
-    .goto The Hinterlands,61.35,34.58,5 >>Volte através do portal para a versão do mundo real de Terras Agrestes
+    .goto The Hinterlands,61.35,34.58,5 >> Volte através do portal para a versão do mundo real de Terras Agrestes
     .maxlevel 53
 step
     >>Fale com o |cRXP_FRIENDLY_Field Captain Korlian|r
     .goto The Hinterlands,61.4,34.6
-    .turnin 82068 >>Entregue Enfrente as Incursões Pesadelares
-    .turnin 81786 >>Missão I das Terras Agrestes: Derrotar Luniscantes
-    .turnin 81787 >>Missão II das Terras Agrestes: Derrotar Tartarugas Gigantes
-    .turnin 81788 >>Missão III das Terras Agrestes: Derrotar Draconianos
-    .turnin 81789 >>Entregue Missão IV das Terras Agrestes: Inteligência Draconiana
-    .turnin 81817 >>Entregue Missão V das Terras Agrestes: Inteligência Quelônia
-    .turnin 81820 >>Entregue Missão VI das Terras Agrestes: Inteligência Luniscante
-    .turnin 81826 >>Entregue Missão VII das Terras Agrestes: Recuperar Ovo de Arrastarão Tocado pelas Estrelas
-    .turnin 81830 >>Entregue Missão VIII das Terras Agrestes: Recuperar Relíquia Elunar
-    .turnin 81832 >>Entregue Missão IX das Terras Agrestes: Obter Pérola Onírica
-    .turnin 81850 >>Entregue Missão XVI das Terras Agrestes: Resgatar Elianar Sorvessombra
-    .turnin 81851 >>Entregue Missão XVII das Terras Agrestes: Resgatar Serlina Luminastra
-    .turnin 81852 >>Entregue Missão XVII das Terras Agrestes: Resgatar [Veanna Cloudsleeper] <[Druid of the Claw]>
+    .turnin 82068 >> Entregue Enfrente as Incursões Pesadelares
+    .turnin 81786 >> Missão I das Terras Agrestes: Derrotar Luniscantes
+    .turnin 81787 >> Missão II das Terras Agrestes: Derrotar Tartarugas Gigantes
+    .turnin 81788 >> Missão III das Terras Agrestes: Derrotar Draconianos
+    .turnin 81789 >> Entregue Missão IV das Terras Agrestes: Inteligência Draconiana
+    .turnin 81817 >> Entregue Missão V das Terras Agrestes: Inteligência Quelônia
+    .turnin 81820 >> Entregue Missão VI das Terras Agrestes: Inteligência Luniscante
+    .turnin 81826 >> Entregue Missão VII das Terras Agrestes: Recuperar Ovo de Arrastarão Tocado pelas Estrelas
+    .turnin 81830 >> Entregue Missão VIII das Terras Agrestes: Recuperar Relíquia Elunar
+    .turnin 81832 >> Entregue Missão IX das Terras Agrestes: Obter Pérola Onírica
+    .turnin 81850 >> Entregue Missão XVI das Terras Agrestes: Resgatar Elianar Sorvessombra
+    .turnin 81851 >> Entregue Missão XVII das Terras Agrestes: Resgatar Serlina Luminastra
+    .turnin 81852 >> Entregue Missão XVII das Terras Agrestes: Resgatar [Veanna Cloudsleeper] <[Druid of the Claw]>
     .target Field Captain Korlian
     .maxlevel 53
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão de Campo Korlian|r
-    .turnin -81837 >>Missão XIII das Terras Agrestes: Derrotar Flórius
-    .turnin -81838 >>Missão XIV das Terras Agrestes: Derrotar Ruiniscante
-    .turnin -81839 >>Missão XV das Terras Agrestes: Derrotar Ghamoo-Raja
+    .turnin -81837 >> Missão XIII das Terras Agrestes: Derrotar Flórius
+    .turnin -81838 >> Missão XIV das Terras Agrestes: Derrotar Ruiniscante
+    .turnin -81839 >> Missão XV das Terras Agrestes: Derrotar Ghamoo-Raja
     .goto The Hinterlands,61.4,34.6
     .target Field Captain Korlian
     .maxlevel 53
@@ -1131,10 +1131,10 @@ step
     .collect 219515,10 --Greater Moonstone
 step
     #completewith next
-    .zone Feralas >>Viaje para Feralas
+    .zone Feralas >> Viaje para Feralas
     .maxlevel 53
 step
-    .goto Feralas,48.0,13.2,50 >>Vá para a área do portal Pesadelo Esmeralda no noroeste de Feralas
+    .goto Feralas,48.0,13.2,50 >> Vá para a área do portal Pesadelo Esmeralda no noroeste de Feralas
     .maxlevel 53
 step
     .goto Feralas,48.6,12.6
@@ -1192,9 +1192,9 @@ step
     #optional
     .goto Feralas,48.49,12.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Capitã Avançada Arunnel|r
-    .accept 81865 >>Aceite Missão X de Feralas: Moonroot
-    .accept 81866 >>Aceite Missão XI de Feralas: Pedra-da-Lua Maior
-    .accept 81867 >>Aceite Missão XII de Feralas: Escamas de Dragão Lunar Maiores
+    .accept 81865 >> Aceite Missão X de Feralas: Moonroot
+    .accept 81866 >> Aceite Missão XI de Feralas: Pedra-da-Lua Maior
+    .accept 81867 >> Aceite Missão XII de Feralas: Escamas de Dragão Lunar Maiores
     .itemcount 219514,10 --Moonroot
     .itemcount 219517,10 --Moondragon Scale
     .itemcount 219515,10 --Greater Moonstone
@@ -1205,7 +1205,7 @@ step
     #optional
     .goto Feralas,48.49,12.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Capitã Avançada Arunnel|r
-    .accept 81865 >>Aceite Missão X de Feralas: Moonroot
+    .accept 81865 >> Aceite Missão X de Feralas: Moonroot
     .itemcount 219514,10 --Moonroot
     .target Field Captain Arunnel
     .maxlevel 53
@@ -1214,7 +1214,7 @@ step
     #optional
     .goto Feralas,48.49,12.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Capitã Avançada Arunnel|r
-    .accept 81866 >>Aceite Missão XI de Feralas: Pedra-da-Lua Maior
+    .accept 81866 >> Aceite Missão XI de Feralas: Pedra-da-Lua Maior
     .itemcount 219515,10 --Greater Moonstone
     .target Field Captain Arunnel
     .maxlevel 53
@@ -1223,7 +1223,7 @@ step
     #optional
     .goto Feralas,48.49,12.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Capitã Avançada Arunnel|r
-    .accept 81867 >>Aceite Missão XII de Feralas: Escamas de Dragão Lunar Maiores
+    .accept 81867 >> Aceite Missão XII de Feralas: Escamas de Dragão Lunar Maiores
     .itemcount 219517,10 --Moondragon Scale
     .target Field Captain Arunnel
     .maxlevel 53
@@ -1232,9 +1232,9 @@ step
     #optional
     .goto Feralas,48.49,12.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Capitã Avançada Arunnel|r
-    .turnin -81865 >>Entregue Missão X de Feralas: Moonroot
-    .turnin -81866 >>Entregue Missão XI de Feralas: Pedra-da-Lua Maior
-    .turnin -81867 >>Entregue Missão XII de Feralas: Escamas de Dragão Lunar Maiores
+    .turnin -81865 >> Entregue Missão X de Feralas: Moonroot
+    .turnin -81866 >> Entregue Missão XI de Feralas: Pedra-da-Lua Maior
+    .turnin -81867 >> Entregue Missão XII de Feralas: Escamas de Dragão Lunar Maiores
     .target Field Captain Arunnel
     .maxlevel 53
 step
@@ -1262,9 +1262,9 @@ step
     .goto Feralas,48.49,12.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Capitã Avançada Arunnel|r
     >>|cRXP_WARN_Se você está em um grupo, considere aceitar também as missões de morte de élites. Os chefes que você precisará matar para essas missões têm quantidades massivas de saúde e podem ser desafiadores dependendo do seu grupo|r
-    .accept 81868 >>Aceite Missão XIII de Feralas: Derrotar Tirânikos
-    .accept 81870 >>Aceite Missão de Feralas XIV: Derrote Alondrius <Guardião do Pesadelo> <Guardião do Pesadelo>
-    .accept 81871 >>Aceite Missão XV de Feralas: Derrotar Slirena <Rainha das Harpias> <Rainha das Harpias>
+    .accept 81868 >> Aceite Missão XIII de Feralas: Derrotar Tirânikos
+    .accept 81870 >> Aceite Missão de Feralas XIV: Derrote Alondrius <Guardião do Pesadelo> <Guardião do Pesadelo>
+    .accept 81871 >> Aceite Missão XV de Feralas: Derrotar Slirena <Rainha das Harpias> <Rainha das Harpias>
     .target Field Captain Arunnel
     .maxlevel 53
 step
@@ -1272,7 +1272,7 @@ step
     #completewith IncursionsComplete3
     .goto Feralas,50.95,11.67,30,0
     .goto Feralas,51.28,10.64,20 >>Entre no |cRXP_PICK_Portal Esmeralda Onírico|r
-    >>|cRXP_WARN_Corra diretamente passando pelos |cRXP_ENEMY_Satyrs|r, os |cRXP_ENEMY_Felhounds|r e os |cRXP_ENEMY_Imps|r. Eles resetarão a agressão quando você entrar no portal|r
+    >>|cRXP_WARN_Corra direto passando pelos |cRXP_ENEMY_Satyrs|r, |cRXP_ENEMY_Felhounds|r e |cRXP_ENEMY_Imps|r. Eles resetarão a agressão ao entrar no portal|r
     .aura 444762
     .maxlevel 53
 step
@@ -1522,9 +1522,9 @@ step
     .goto Feralas,48.49,12.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Capitã Avançada Arunnel|r
     >>|cRXP_WARN_Se você está em um grupo, considere aceitar também as missões de morte de élites. Os chefes que você precisará matar para essas missões têm quantidades massivas de saúde e podem ser desafiadores dependendo do seu grupo|r
-    .turnin -81868 >>Missão XIII de Feralas: Derrote Tirânikos
-    .turnin -81870 >>Missão XIV de Feralas: Derrote Alondrius <Guardião do Pesadelo>
-    .turnin -81871 >>Missão XV de Feralas: Derrote Slirena <Rainha das Harpias>
+    .turnin -81868 >> Missão XIII de Feralas: Derrote Tirânikos
+    .turnin -81870 >> Missão XIV de Feralas: Derrote Alondrius <Guardião do Pesadelo>
+    .turnin -81871 >> Missão XV de Feralas: Derrote Slirena <Rainha das Harpias>
     .target Field Captain Arunnel
     .maxlevel 53
 step

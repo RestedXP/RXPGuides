@@ -21,27 +21,27 @@ step << Paladin
 step
     .goto StormwindClassic,58.08,16.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Furen Barbalonga|r
-    .turnin 1338 >>Entregue Pedidos de Pico da Tempestade
+    .turnin 1338 >> Entregue Pedidos de Pico da Tempestade
     .target Furen Longbeard
 step << Priest !NightElf
     #season 2
     .goto StormwindClassic,20.8,50.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nara Midaras|r
     .target Nara Meideros
-    .accept 78195 >>Aceite Segredos de Eluna
+    .accept 78195 >> Aceite Segredos de Eluna
 step << Human Paladin
     #optional
     .goto StormwindClassic,39.80,29.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Benedito Brião|r
-    .turnin -2998 >>Entregue Tomo de Divindade
-    .accept 1641 >>Aceite Tomo de Divindade
-    .turnin 1641 >>Entregue Tomo de Divindade
+    .turnin -2998 >> Entregue Tomo de Divindade
+    .accept 1641 >> Aceite Tomo de Divindade
+    .turnin 1641 >> Entregue Tomo de Divindade
     .target Duthorian Rall
 step << Human Paladin
     .goto StormwindClassic,39.80,29.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Benedito Brião|r
-    .accept 1641 >>Aceite Tomo de Divindade
-    .turnin 1641 >>Entregue Tomo de Divindade
+    .accept 1641 >> Aceite Tomo de Divindade
+    .turnin 1641 >> Entregue Tomo de Divindade
     .target Duthorian Rall
 step << Human Paladin
     .goto StormwindClassic,39.80,29.77
@@ -57,15 +57,15 @@ step << Human Paladin
 step << Paladin
     .goto StormwindClassic,38.67,32.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Artur, o Fiel|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Arthur the Faithful
 step << Human Paladin
     .goto StormwindClassic,57.08,61.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Stephanie Turner|r
-    .turnin 1643 >>Entregue Tomo de Divindade
-    .accept 1644 >>Aceite Tomo de Divindade
-    .turnin 1644 >>Entregue Tomo de Divindade
-    .accept 1780 >>Aceite Tomo de Divindade
+    .turnin 1643 >> Entregue Tomo de Divindade
+    .accept 1644 >> Aceite Tomo de Divindade
+    .turnin 1644 >> Entregue Tomo de Divindade
+    .accept 1780 >> Aceite Tomo de Divindade
     .target Stephanie Turner
 step << Human Paladin
     .goto StormwindClassic,40.1,29.9
@@ -84,28 +84,28 @@ step << Priest !NightElf
     .goto StormwindClassic,20.8,50.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nara Midaras|r
     .target Nara Meideros
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >>Vá para The Slaughtered Lamb e desça
+    .goto StormwindClassic,27.2,78.1,15 >> Vá para The Slaughtered Lamb e desça
 step << Warlock
     .goto StormwindClassic,26.117,77.225
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ursula Deline|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Ursula Deline
 step << Warlock
     .goto Elwynn Forest,44.397,65.989
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Spackle Cardopomo|r
-    >>|cRXP_BUY_Compre o |T133738:0|t[Grimório de Consumir Sombras (Rank 1)]|r
+    >> |cRXP_BUY_Compre o |T133738:0|t[Grimório de Consumir Sombras (Rank 1)]|r
     .collect 16357,1
     .target Spackle Thornberry
     .train 20387,1
 step << Warlock
     .goto StormwindClassic,25.25,78.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gakin, o Neromante|r
-    .turnin 1688 >>Entregue Surena Caledon
-    .accept 1689 >>Aceite A vinculação
+    .turnin 1688 >> Entregue Surena Caledon
+    .accept 1689 >> Aceite A vinculação
     .target Gakin the Darkbinder
 step << Warlock
     #completewith next
@@ -114,18 +114,18 @@ step << Warlock
     .goto StormwindClassic,26.3,79.5,18,0
     .goto StormwindClassic,25.154,77.406
     >>Viaje até o subsolo de O Cordeiro Degolado
-    .cast 7728 >>|cRXP_WARN_Use a|r |T133292:0|t[Gargantilha de Pedra-sangrenta] |cRXP_WARN_para invocar um|r |cRXP_ENEMY_Invocado Emissário do Caos|r
+    .cast 7728 >> |cRXP_WARN_Use a|r |T133292:0|t[Gargantilha de Pedra-sangrenta] |cRXP_WARN_para invocar um|r |cRXP_ENEMY_Invocado Emissário do Caos|r
     .use 6928
 step << Warlock
     .goto StormwindClassic,25.154,77.406
-    .use 6928 >>Abate o |cRXP_ENEMY_Invocado Emissário do Caos|r
+    .use 6928 >> Abate o |cRXP_ENEMY_Invocado Emissário do Caos|r
     .complete 1689,1 --Kill Summoned Voidwalker (x1)
     .mob Summoned Voidwalker
 step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gakin, o Neromante|r
     .target Gakin the Darkbinder
     .goto StormwindClassic,25.25,78.59
-    .turnin 1689 >>Entregue A Vinculação
+    .turnin 1689 >> Entregue A Vinculação
 step << Priest/Mage/Warlock
     .goto StormwindClassic,42.65,67.16,14,0
     .goto StormwindClassic,42.88,65.11
@@ -141,25 +141,25 @@ step << Rogue
     .goto StormwindClassic,74.64,52.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Osborne|r
     >>|cRXP_WARN_certifique-se de treinar|r |T136058:0|t[Arrombamento] |cRXP_WARN_pois precisará dela para sua missão de classe Ladino em breve|r
-    .trainer >>Treine suas magias de classe
-    .train 1804 >>Treine [Abrir Fechadura]
+    .trainer >> Treine suas magias de classe
+    .train 1804 >> Treine [Abrir Fechadura]
     .target Osborne the Night Man
 step << Rogue
     #completewith next
     .goto StormwindClassic,74.90,54.00,20,0
     .goto StormwindClassic,78.43,60.15,20,0
-    .goto StormwindClassic,78.67,60.13,5 >>Entre na Sede da SI:7. Suba as escadas em direção a |cRXP_FRIENDLY_Renzik, "O Bicudo"|r
+    .goto StormwindClassic,78.67,60.13,5 >> Entre na Sede da SI:7. Suba as escadas em direção a |cRXP_FRIENDLY_Renzik, "O Bicudo"|r
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Renzik, "O Bicudo"|r
-    .accept 2281 >>Aceite Encontro em Cristarrubra
+    .accept 2281 >> Aceite Encontro em Cristarrubra
     .goto StormwindClassic,75.76,60.35
     .target Renzik "The Shiv"
 step << Warrior
     #season 2
     #completewith next
-    .gossipoption 109045 >>Fale com o |cRXP_FRIENDLY_Lívia Valforte <Garçom>|r dentro da Estalagem do Parque
+    .gossipoption 109045 >> Fale com o |cRXP_FRIENDLY_Lívia Valforte <Garçom>|r dentro da Estalagem do Parque
     .goto Stormwind City,22.608,64.621
-    .gossipoption 109084 >>Fale com |cRXP_ENEMY_Estuardo|r, depois derrote-o. Ele ficará inconsciente a 0%
+    .gossipoption 109084 >> Fale com |cRXP_ENEMY_Estuardo|r, depois derrote-o. Ele ficará inconsciente a 0%
     .goto Stormwind City,21.213,62.781
     >>Se |cRXP_ENEMY_Estuardo|r não estiver lá, aguarde o seu reaparecimento
     .skipgossipid 109047
@@ -169,9 +169,9 @@ step << Warrior
 step << Warrior
     #season 2
     .goto Stormwind City,22.608,64.621
-    .use 204716 >>Fale com o |cRXP_FRIENDLY_Lívia Valforte <Garçom>|r novamente após derrotar |cRXP_ENEMY_Estuardo|r para receber a |T134419:0|t[|cRXP_FRIENDLY_Runa de Ataque Frenético|r]
+    .use 204716 >> Fale com o |cRXP_FRIENDLY_Lívia Valforte <Garçom>|r novamente após derrotar |cRXP_ENEMY_Estuardo|r para receber a |T134419:0|t[|cRXP_FRIENDLY_Runa de Ataque Frenético|r]
     .collect 204716,1
-    .train 425447,1 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Ataque Frenético|r] |cRXP_WARN_para treinar|r |T236317:0|t[Ataque Frenético]
+    .train 425447,1 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Ataque Frenético|r] |cRXP_WARN_para treinar|r |T236317:0|t[Ataque Frenético]
     >>|cRXP_WARN_Nota: Isso pode ser bastante difícil em solo dependendo do seu nível. Procure ajuda se necessário|r
     .skipgossip 203478,1
     .target Liv Bradford
@@ -225,50 +225,50 @@ step << Mage
     .goto StormwindClassic,55.8,65.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Orlande Bórgia|r
     >>Verifique se ele tem |T134830:0|t[|cRXP_LOOT_Lesser Cura Potions|r], compre-os se estiverem disponíveis
-    .collect 211779,3 >>Compre um par |T135933:0|t[|cRXP_LOOT_Patuá da Compreensão|r] dele
+    .collect 211779,3 >> Compre um par |T135933:0|t[|cRXP_LOOT_Patuá da Compreensão|r] dele
     .target Orlande Bórgia
 step << Human
     .goto StormwindClassic,66.28,62.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
-    .turnin 6261 >>Entregue Dungar Tragolongo
-    .accept 6285 >>Aceite Retornar a Lewis
+    .turnin 6261 >> Entregue Dungar Tragolongo
+    .accept 6285 >> Aceite Retornar a Lewis
     .target Dungar Longdrink
     .isQuestTurnedIn 6281
 step << !Human/Warlock
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thor|r
-    .fp Stormwind >>Aprenda a rota de voo para a Cidade de Ventobravo << !Human
-    .fly Redridge >>Voe para Montanhas Cristarrubra << Warlock
+    .fp Stormwind >> Pegue o ponto de voo de Ventobravo << !Human
+    .fly Redridge >> Voe para Montanhas Cristarrubra << Warlock
     .target Thor
 step << !Warlock
     .goto Elwynn Forest,32.45,50.16
-    .zone Elwynn Forest >>Vá para Elwynn Forest
+    .zone Elwynn Forest >> Vá para Elwynn Forest
     .zoneskip Westfall
     .zoneskip Redridge Mountains
 step << Warrior
     .goto Elwynn Forest,41.087,65.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lyria Du Lac|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Lyria Du Lac
 step << Paladin
     .goto Elwynn Forest,41.096,66.041
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Irmão Guilhermino|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Brother Wilhelm
 step << !Human !Warlock
     .goto Elwynn Forest,43.771,65.803
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Estalajadeiro Fábio|r
-    .home >>Defina sua Pedra de Regresso para Vila Dourada
+    .home >> Defina sua Pedra de Regresso para Vila Dourada
     .target Innkeeper Farley
 step << Mage
     #optional
     #completewith next
-    .goto Elwynn Forest,43.877,66.546,9 >>Suba na Estalagem
+    .goto Elwynn Forest,43.877,66.546,9 >> Suba na Estalagem
 step << Mage
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zaldimar Wefhellt|r
 	.target Zaldimar Wefhellt
     .goto Elwynn Forest,43.25,66.19
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
 step << !Warlock
     .goto 1429/0,73.800,-9465.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Delegado Durão|r
@@ -290,78 +290,78 @@ step << Human Paladin
 step << !Warlock
     #label RedridgeS
     .goto Redridge Mountains,17.4,69.6
-    .zone Redridge Mountains >>Viaje para as Montanhas Cristarrubra
+    .zone Redridge Mountains >> Viaje para as Montanhas Cristarrubra
 step
     .goto Redridge Mountains,17.4,69.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Guarda Capitão da Guarda Florestan|r
-    .accept 244 >>Aceite Gnolls Invasores
+    .accept 244 >> Aceite Gnolls Invasores
     .target Guard Parker
 step
     .goto Redridge Mountains,30.73,59.99
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
-    .turnin 244 >>Entregue Gnolls Invasores
-    .accept 246 >>Aceite Avaliando a Ameaça
+    .turnin 244 >> Entregue Gnolls Invasores
+    .accept 246 >> Aceite Avaliando a Ameaça
     .target Deputy Feldon
 step << !Warlock
     .goto Redridge Mountains,30.590,59.410
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena Penafúria|r
-    .fp Redridge Mountains >>Aprenda a rota de voo para Montanhas Cristarrubra
+    .fp Redridge Mountains >> Aprenda a rota de voo para Montanhas Cristarrubra
     .target Ariena Stormfeather
 step << !Human
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vervo Obom|r
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
-    .accept 118 >>Aceite O Preço dos Sapatos
+    .accept 118 >> Aceite O Preço dos Sapatos
 step << Human/Dwarf Paladin
     .goto Redridge Mountains,30.590,59.410
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena Penafúria|r
-    .fly Westfall >>Voe para Cerro Oeste
+    .fly Westfall >> Voe para Cerro Oeste
     .target Ariena Stormfeather
 step << Gnome Warlock
     .goto Redridge Mountains,30.590,59.410
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena Penafúria|r
-    .fly Stormwind >>Voe para Ventobravo
+    .fly Stormwind >> Voe para Ventobravo
     .target Ariena Stormfeather
 step << Gnome Warlock
     .goto Elwynn Forest,32.45,50.16
-    .zone Elwynn Forest >>Vá para Elwynn Forest
+    .zone Elwynn Forest >> Vá para Elwynn Forest
     .zoneskip Westfall
     .isQuestAvailable 153
 step << !Human !Paladin !Warlock
     #completewith next
-    .hs >>Use sua Pedra de Retorno para Goldshire
+    .hs >> Use sua Pedra de Retorno para Goldshire
 step << !Human !Paladin
     .goto Elwynn Forest,41.71,65.55
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Ferreiro Argus|r
 	.target Smith Argus
-    .turnin 118 >>Entregue O Preço dos Sapatos
-    .accept 119 >>Aceite Retornar a Verner
+    .turnin 118 >> Entregue O Preço dos Sapatos
+    .accept 119 >> Aceite Retornar a Verner
 step << !Human !Paladin
     #completewith next
-    .zone Westfall >>Viaje até Cerro Oeste
+    .zone Westfall >> Viaje até Cerro Oeste
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel Mantoforte|r e o |cRXP_FRIENDLY_Capitão Danuvin|r
     .goto Westfall,56.327,47.520
-    .turnin -109 >>Entregue Miguel Mantoforte
-    .accept 12 >>Aceite A Milícia do Povo
+    .turnin -109 >> Entregue Miguel Mantoforte
+    .accept 12 >> Aceite A Milícia do Povo
     .target Gryan Stoutmantle
 step << Human
     #label Lewis
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Intendente Ludovico|r
     .target Quartermaster Lewis
     .goto Westfall,57.00,47.17
-    .turnin 6285 >>Entregue Volte para Lewis
+    .turnin 6285 >> Entregue Volte para Lewis
     .isOnQuest 6285
 step
     .goto Westfall,54.00,53.00
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Batedor Galiaan|r
     .target Scout Galiaan
-    .accept 153 >>Aceite Bandanas de Couro Vermelho
+    .accept 153 >> Aceite Bandanas de Couro Vermelho
 step << Rogue
     .goto Westfall,52.8,53.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Érica|r
     .target Innkeeper Heather
-    .home >>Defina sua Pedra de Retorno em Cerro Oeste
+    .home >> Defina sua Pedra de Retorno em Cerro Oeste
 step
     >>Mate os |cRXP_ENEMY_Defias Trappers|r e os |cRXP_ENEMY_Defias Smugglers|r. Saqueie-os pelas suas |cRXP_LOOT_Red Couro Bandanas|r
     .goto Westfall,48.21,46.70,60,0
@@ -415,7 +415,7 @@ step
     .goto Westfall,56.04,31.23
     .target Farmer Saldean
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Fazendeiro Saldanha|r
-    .accept 9 >>Aceite Os Campos da Morte
+    .accept 9 >> Aceite Os Campos da Morte
 step
 #loop
     .goto Westfall,37.4,50.6,0
@@ -440,22 +440,22 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Fazendeiro Saldanha|r
 	.target Farmer Saldean
     .goto Westfall,56.04,31.23
-    .turnin 9 >>Entregue Campos de Matança
+    .turnin 9 >> Entregue Campos de Matança
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Batedor Galiaan|r
 	.target Scout Galiaan
     .goto Westfall,54.00,53.00
-    .turnin 153 >>Entregue Bandanas de Couro Vermelho
+    .turnin 153 >> Entregue Bandanas de Couro Vermelho
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel Mantoforte|r
 	.target Gryan Stoutmantle
     .goto Westfall,56.33,47.52
-    .turnin 12 >>Entregue The People's Militia
-    .accept 65 >>Aceitar A Irmandade Défias
+    .turnin 12 >> Entregue The People's Militia
+    .accept 65 >> Aceitar A Irmandade Défias
 step
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thor|r
-    .fly Redridge >>Voe para Redridge
+    .fly Redridge >> Voe para Redridge
     .target Thor
 
 ]])
@@ -477,33 +477,33 @@ step
     #label BMenace
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Marris|r
     .goto Redridge Mountains,33.50,48.97
-    .accept 20 >>Aceite A Ameaça de Rocha Negra
+    .accept 20 >> Aceite Ameaça dos Rochas Negras
     .target Marshal Marris
     .xp <18,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Encarregado Oslow|r
     .goto Redridge Mountains,32.13,48.63
-    .accept 125 >>Aceite As Ferramentas Perdidas
+    .accept 125 >> Aceite As Ferramentas Perdidas
     .target Foreman Oslow
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vervo Obom|r
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
-    .accept 118 >>Aceite O Preço dos Sapatos
+    .accept 118 >> Aceite O Preço dos Sapatos
 step
 #optional
     .goto Redridge Mountains,30.97,47.27
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vervo Obom|r
 	.target Verner Osgood
-    .turnin 119 >>Entregue Devolver to Verner
+    .turnin 119 >> Entregue Devolver to Verner
     .isOnQuest 119
 step
 #optional
     .goto Redridge Mountains,30.97,47.27
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vervo Obom|r
 	.target Verner Osgood
-    .accept 124 >>Aceite A Baying of Gnolls
-    .accept 122 >>Aceite Underbelly Escamoso
+    .accept 124 >> Aceite A Baying of Gnolls
+    .accept 122 >> Aceite Underbelly Escamoso
     .isQuestTurnedIn 119
 
 step
@@ -511,44 +511,44 @@ step
     .goto Redridge Mountains,29.98,44.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magistrado Salomão|r
 	.target Magistrate Solomon
-    .accept 120 >>Aceite Mensageiro para Ventobravo
+    .accept 120 >> Aceite Mensageiro para Ventobravo
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre de Doca Baren|r
 	.target Dockmaster Baren
     .goto Redridge Mountains,27.70,47.40
-    .accept 127 >>Aceite O lago está para peixe
+    .accept 127 >> Aceite O lago está para peixe
 step
     .goto Redridge Mountains,26.80,44.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Darcy|r
     >>|cRXP_FRIENDLY_Darcy|r |cRXP_WARN_anda ao redor dentro da Estalagem|r
 	.target Darcy
-    .accept 129 >>Aceite Um Almoço Grátis
+    .accept 129 >> Aceite Um Almoço Grátis
 step << !Rogue
     .goto Redridge Mountains,27.0,44.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com a |cRXP_FRIENDLY_Estalajadeira Briana|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Briana|r
     .target Innkeeper Brianna
-    .home >>Defina sua Pedra de Regresso para Vila Plácida
+    .home >> Defina sua Pedra de Regresso para Vila Plácida
     .isQuestAvailable 20
 step
     .goto Redridge Mountains,27.35,44.07,8,0
     .goto Redridge Mountains,26.48,45.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Wiley, o Negro|r no andar de cima
 	.target Wiley the Black
-    .turnin 65 >>Entregue A Irmandade Défias
+    .turnin 65 >> Entregue A Irmandade Défias
     .isOnQuest 65
 step
     .goto Redridge Mountains,27.35,44.07,8,0
     .goto Redridge Mountains,26.48,45.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Wiley, o Negro|r ao subir as escadas
-    .turnin 65 >>Entregue A Irmandade Défias
-    .accept 132 >>Aceitar A Irmandade Défias
+    .turnin 65 >> Entregue A Irmandade Défias
+    .accept 132 >> Aceitar A Irmandade Défias
 	.target Wiley the Black
 step
 #optional
     .goto Redridge Mountains,22.67,43.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre-cuca Breanna|r
-    .accept 92 >>Aceite Gulache de Cristarrubra
-    .turnin 92 >>Entregue Gulache de Cristarrubra
+    .accept 92 >> Aceite Gulache de Cristarrubra
+    .turnin 92 >> Entregue Gulache de Cristarrubra
     .itemcount 2296,5 -- Great Goretusk Snout (5)
     .itemcount 1080,5 -- Tough Condor Meat (5)
     .itemcount 1081,5 -- Crisp Spider Meat (5)
@@ -556,14 +556,14 @@ step
 step << Rogue
     .goto Redridge Mountains,28.07,52.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lucius|r
-    .turnin 2281 >>Entregue Redridge Encontro marcado
-    .accept 2282 >>Aceite Moinho de Alther
+    .turnin 2281 >> Entregue Redridge Encontro marcado
+    .accept 2282 >> Aceite Moinho de Alther
     .target Lucius
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shawn|r
 	.target Shawn
     .goto Redridge Mountains,29.31,53.63
-    .accept 3741 >>Aceite Nida's Colar
+    .accept 3741 >> Aceite Nida's Colar
 step
 #loop
     >>|cRXP_WARN_Pule no lago|r
@@ -587,20 +587,20 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Encarregado Oslow|r
 	.target Foreman Oslow
     .goto Redridge Mountains,32.13,48.63
-    .turnin 125 >>Entregue The Perdida Ferramentas
-    .accept 89 >>Aceite The Everstill Ponte
+    .turnin 125 >> Entregue The Perdida Ferramentas
+    .accept 89 >> Aceite The Everstill Ponte
 step
     #label BMenace
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Marris|r
     .goto Redridge Mountains,33.50,48.97
-    .accept 20 >>Aceite A Ameaça de Rocha Negra
+    .accept 20 >> Aceite Ameaça dos Rochas Negras
     .target Marshal Marris
     .xp <18,1
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nida|r
 	.target Hilary
     .goto Redridge Mountains,29.24,53.63
-    .turnin 3741 >>Entregue Nida's Colar
+    .turnin 3741 >> Entregue Nida's Colar
 step
     #optional
 	#completewith threat1
@@ -618,8 +618,8 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Guarda Capitão da Guarda Florestan|r
 	.target Guard Parker
     .goto Redridge Mountains,15.27,71.45
-    .turnin 129 >>Entregue Um Almoço Grátis
-    .accept 130 >>Aceite Visite a Herbalista
+    .turnin 129 >> Entregue Um Almoço Grátis
+    .accept 130 >> Aceite Visite a Herbalista
 step
     .goto Redridge Mountains,21.22,67.77,45,0
     .goto Redridge Mountains,17.70,73.39,45,0
@@ -649,26 +649,26 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
 	.target Deputy Feldon
     .goto Redridge Mountains,30.73,59.99
-    .turnin 246 >>Entregue Assessing the Ameaça
+    .turnin 246 >> Entregue Assessing the Ameaça
 step
     #completewith db1
     .goto Redridge Mountains,30.59,59.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena Penafúria|r
-    .fly Stormwind >>Voe para Ventobravo
+    .fly Stormwind >> Voe para Ventobravo
     .target Ariena Stormfeather
     .dungeon DM << !Human
 step
     #optional
     .goto StormwindClassic,63.982,75.338
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_General Marcus Jonas|r
-    .turnin 120 >>Entregue Messenger to Objetos de TBC
-    .accept 121 >>Aceite Mensageiro para Ventobravo
+    .turnin 120 >> Entregue Messenger to Objetos de TBC
+    .accept 121 >> Aceite Mensageiro para Ventobravo
     .target General Marcus Jonathan
     .isQuestTurnedIn 118
     .dungeon DM << !Human
 step
-    .accept 167 >>Aceite Oh, Irmão...
-    .accept 168 >>Aceite Coletando Memórias
+    .accept 167 >> Aceite Oh, Irmão...
+    .accept 168 >> Aceite Coletando Memórias
     .goto StormwindClassic,65.438,21.175
     .target Wilder Thistlenettle
     .target Shoni the Shilent
@@ -687,7 +687,7 @@ step << Human Paladin
 step
     .goto StormwindClassic,55.510,12.504
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shoni, a Shilenchiosa|r
-    .accept 2040 >>Aceite Ataque Subterrâneo
+    .accept 2040 >> Aceite Ataque Subterrâneo
     .target Shoni the Shilent
     .dungeon DM
 step << Hunter
@@ -734,70 +734,70 @@ step << Warlock/Priest
 step
     .goto StormwindClassic,63.982,75.338
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_General Marcus Jonas|r
-    .turnin 120 >>Entregue Messenger to Objetos de TBC
-    .accept 121 >>Aceite Mensageiro para Ventobravo
+    .turnin 120 >> Entregue Messenger to Objetos de TBC
+    .accept 121 >> Aceite Mensageiro para Ventobravo
     .target General Marcus Jonathan
     .dungeon DM << !Human
 step
     .goto Elwynn Forest,41.71,65.55
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Ferreiro Argus|r
 	.target Smith Argus
-    .turnin 118 >>Entregue O Preço dos Sapatos
-    .accept 119 >>Aceite Retornar a Verner
+    .turnin 118 >> Entregue O Preço dos Sapatos
+    .accept 119 >> Aceite Retornar a Verner
     .dungeon DM << !Human
 step << Human
     .dungeon !DM
     .cooldown item,6948,>120,1
-    .hs >>Use sua Pedra de Retorno em Lakeshire
+    .hs >> Use sua Pedra de Retorno em Lakeshire
     .zoneskip Redridge Mountains
 step << Human
 #optional
 .dungeon !DM
     .goto StormwindClassic,66.277,62.137
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
-    .fly Redridge >>Voe para Redridge
+    .fly Redridge >> Voe para Redridge
     .target Dungar Longdrink
     .zoneskip Redridge Mountains
 step
     #label BMenace
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Marris|r
     .goto Redridge Mountains,33.50,48.97
-    .accept 20 >>Aceite A Ameaça de Rocha Negra
+    .accept 20 >> Aceite Ameaça dos Rochas Negras
     .target Marshal Marris
     .xp <18,1
 step
     .goto Redridge Mountains,30.97,47.27
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vervo Obom|r
 	.target Verner Osgood
-    .turnin 119 >>Entregue Devolver to Verner
+    .turnin 119 >> Entregue Devolver to Verner
 step
     .goto Redridge Mountains,30.97,47.27
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vervo Obom|r
 	.target Verner Osgood
-    .accept 124 >>Aceite A Baying of Gnolls
-    .accept 122 >>Aceite Underbelly Escamoso
+    .accept 124 >> Aceite A Baying of Gnolls
+    .accept 122 >> Aceite Underbelly Escamoso
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magistrado Salomão|r
 	.target Magistrate Solomon
     .goto Redridge Mountains,29.31,45.33,15,0
     .goto Redridge Mountains,29.98,44.45
-    .turnin 121 >>Entregue Messenger to Objetos de TBC
+    .turnin 121 >> Entregue Messenger to Objetos de TBC
 step
     .goto Redridge Mountains,29.71,44.26
     .target Bailiff Conacher
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Meirinho Conacher|r
-    .accept 91 >>Aceite Solomon's Law
+    .accept 91 >> Aceite Solomon's Law
 step
     .goto Redridge Mountains,26.75,46.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClique na |cRXP_FRIENDLY_Cartaz Procurado|r
-    .accept 180 >>Aceite Wanted: General Mordente
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClique em |cRXP_FRIENDLY_The Wanted Poster|r
+    .accept 180 >> Aceite Wanted: General Mordente
 step
     .goto Redridge Mountains,21.85,46.32
     .target Martie Jainrose
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Martie Jainrose|r
-    .turnin 130 >>Entregue Visite a Herbalista
-    .accept 131 >>Aceite Entregando Daffodils
-    .accept 34 >>Aceite O Penetra
+    .turnin 130 >> Entregue Visite a Herbalista
+    .accept 131 >> Aceite Entregando Daffodils
+    .accept 34 >> Aceite O Penetra
 step
 #optional
 	#completewith BayingOfGnolls
@@ -871,26 +871,26 @@ step
     >>|cRXP_FRIENDLY_Darcy|r |cRXP_WARN_anda ao redor dentro da Estalagem|r
 	.target Darcy
     .goto Redridge Mountains,26.80,44.30
-    .turnin 131 >>Entregue Entregando Daffodils
+    .turnin 131 >> Entregue Entregando Daffodils
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vervo Obom|r
 	.target Verner Osgood
     .goto Redridge Mountains,31.00,47.30
-    .turnin 124 >>Entregue A Baying of Gnolls
-    .accept 126 >>Aceite Uivando nas Colinas
+    .turnin 124 >> Entregue A Baying of Gnolls
+    .accept 126 >> Aceite Uivando nas Colinas
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Encarregado Oslow|r
 	.target Foreman Oslow
     .goto Redridge Mountains,32.13,48.63
-    .turnin 89 >>Entregue The Everstill Ponte
+    .turnin 89 >> Entregue The Everstill Ponte
 step << Rogue
     .goto Redridge Mountains,28.07,52.02
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lucius|r
-    .turnin 2282 >>Entregue Moinho de Alther
+    .turnin 2282 >> Entregue Moinho de Alther
     .target Lucius
 step << Rogue
 #label xp20
-    >>Você deve estar no nível 20 aqui. Se você não estiver, faça as missões de Murlocs a leste e suba até o nível 20
+    >> Você deve estar no nível 20 aqui. Se você não estiver, faça as missões de Murlocs a leste e suba até o nível 20
     .xp 20
 
 
@@ -899,56 +899,56 @@ step << Rogue
 step << Rogue
     .goto Redridge Mountains,30.6,59.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena Penafúria|r
-    .fly Stormwind >>Voe para Ventobravo
+    .fly Stormwind >> Voe para Ventobravo
     .target Ariena Stormfeather
     .zoneskip Westfall
 step << Rogue
     .goto StormwindClassic,74.64,52.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Osborne|r
     >>|cRXP_WARN_Cuidado com sua administração de dinheiro a partir de agora. Você precisará de 75 prata livre quando chegar aos Wetlands para desbloquear uma runa|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Osborne the Night Man
 step << Rogue
     #completewith next
     .goto StormwindClassic,74.90,54.00,20,0
     .goto StormwindClassic,78.43,60.15,20,0
-    .goto StormwindClassic,78.67,60.13,5 >>Entre na sede da SI:7. Suba as escadas em direção a |cRXP_FRIENDLY_Mestre Mathias Shaw|r
+    .goto StormwindClassic,78.67,60.13,5 >> Entre na sede da SI:7. Suba as escadas em direção a |cRXP_FRIENDLY_Mestre Mathias Shaw|r
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre Mathias Shaw|r
-    .accept 2360 >>Aceite Mathias e os Défias
+    .accept 2360 >> Aceite Mathias e os Défias
     .goto StormwindClassic,75.78,59.84
     .target Master Mathias Shaw
 step << !Rogue
 .dungeon DM
     .goto Redridge Mountains,30.590,59.410
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena Penafúria|r
-    .fly Westfall >>Voe para Cerro Oeste
+    .fly Westfall >> Voe para Cerro Oeste
     .target Ariena Stormfeather
 step << Rogue
 #completewith next
     .goto StormwindClassic,66.277,62.137
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
-    .fly Westfall >>Voe para Cerro Oeste
+    .fly Westfall >> Voe para Cerro Oeste
     .target Dungar Longdrink
     .zoneskip Westfall
 step << Rogue
 .dungeon !DM
     .goto Westfall,56.325,47.519
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel Mantoforte|r
-    .turnin 132 >>Entregue A Irmandade Défias
-    .accept 135 >>Aceitar A Irmandade Défias
+    .turnin 132 >> Entregue A Irmandade Défias
+    .accept 135 >> Aceitar A Irmandade Défias
     .target Gryan Stoutmantle
 step
 .dungeon DM
     .goto Westfall,56.325,47.519
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel Mantoforte|r
-    .turnin 141 >>Entregue A Irmandade Défias
-    .accept 142 >>Aceitar A Irmandade Défias
+    .turnin 141 >> Entregue A Irmandade Défias
+    .accept 142 >> Aceitar A Irmandade Défias
     .target Gryan Stoutmantle
 step
 .dungeon DM
     #completewith next
-    .goto Westfall,44.50,69.62,55 >>Vá para Moonbrook
+    .goto Westfall,44.50,69.62,55 >> Vá para Moonbrook
 step
 .dungeon DM
     .goto Westfall,44.50,69.62
@@ -962,14 +962,14 @@ step
 .dungeon DM
     .goto Westfall,56.33,47.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel Mantoforte|r
-    .turnin 142 >>Entregue A Irmandade Défias
+    .turnin 142 >> Entregue A Irmandade Défias
     .target Gryan Stoutmantle
 step
 .dungeon DM
     .goto Westfall,55.68,47.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Traidor Défias|r
     >>|cRXP_WARN_Você pode precisar esperar pelo |cRXP_FRIENDLY_Traidor Défias|r aparecer se ele não estiver lá|r
-    .accept 155 >>Aceitar A Irmandade Défias
+    .accept 155 >> Aceitar A Irmandade Défias
     .target The Defias Traitor
 step
 .dungeon DM
@@ -982,13 +982,13 @@ step
 .dungeon DM
     .goto Westfall,56.33,47.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel Mantoforte|r
-    .turnin 155 >>Entregue A Irmandade Défias
-    .accept 166 >>Aceitar A Irmandade Défias
+    .turnin 155 >> Entregue A Irmandade Défias
+    .accept 166 >> Aceitar A Irmandade Défias
     .target Gryan Stoutmantle
 step
 .dungeon DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Batedor Riel|r no topo da torre
-    .accept 214 >>Aceite Bandanas de Seda Vermelha
+    .accept 214 >> Aceite Bandanas de Seda Vermelha
     .goto Westfall,56.67,47.35
     .target Scout Riell
 step << Rogue
@@ -996,14 +996,14 @@ step << Rogue
     #completewith TowerKey
     +|cRXP_WARN_==PRESTE ATENÇÃO À PRÓXIMA SEÇÃO==|r
     >>Pressione Escape, depois vá em -> Opções -> Controles
-    >>|cRXP_WARN_Verifique "Ativar Chave Interagir" e vincule a opção "Interagir com Alvo" a uma tecla|r
+    >>Marque "Ativar Tecla de Interação" e vincule a opção "Interagir com o Alvo" a uma tecla
     >>|cRXP_WARN_Além disso, é recomendado que você ative Placas de Nome de Inimigos (Tecla Padrão: V) pois permite que você veja inimigos atrás de alguns dos cantos dentro da torre|r
 step << Rogue
     .goto Westfall,68.50,70.08
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Agente Marta Hari|r
     >>Você DEVE fazer esta missão para [Venenos]
-    .turnin 2360 >>Entregue Mathias e os Défias
-    .accept 2359 >>Aceite A Torre de Klaven
+    .turnin 2360 >> Entregue Mathias e os Défias
+    .accept 2359 >> Aceite A Torre de Klaven
     .target Agent Kearnen
 step << Rogue
     #label TowerKey
@@ -1014,12 +1014,12 @@ step << Rogue
     .goto Westfall,71.49,73.49,30,0
     .goto Westfall,71.01,75.72,30,0
     .goto Westfall,69.58,73.07,30,0
-    >>|T133644:0|t[Bater Carteira] o |cRXP_ENEMY_Parasita Défias Mal Formado|r. Saqueie-o pelo |cRXP_LOOT_Defias Torre Chave|r
+    >>|T133644:0|t[Bater de Carteira] o |cRXP_ENEMY_Drone Défias Malformado|r. Saqueie-o para obter a |cRXP_LOOT_Chave da Torre Défias|r
     >>Você deve estar em [Furtividade] para usar [Bater Carteira]
     >>|cRXP_WARN_O |cRXP_ENEMY_Drone Défias Malformado|r surge na entrada da torre, depois patrulha ao redor da parte externa|r
-    >>|cRXP_WARN_Tenha cuidado, pois ele causa MUITO dano. Se sua|r |T132320:0|t[Furtividade] |cRXP_WARN_acabar, use rapidamente|r |T132307:0|t[Disparada] |cRXP_WARN_e fuja|r
+    >>Tome cuidado, pois ele causa MUITO dano. Se sua [Furtividade] quebrar, use rapidamente [Disparada] e fuja
     .complete 2359,2 --Collect Defias Tower Key (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5slew15IGQ >> Clique AQUI para o guia em vídeo
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Clique AQUI para o guia em vídeo
     .mob Malformed Defias Drone
 step << Rogue
     #optional
@@ -1034,16 +1034,16 @@ step << Rogue
     >>Saia manualmente de [Furtividade]|cRXP_WARN_, depois pressione sua tecla de atalho "Interagir com Alvo" para abrir o |cRXP_PICK_Baú da Floresta do Crepúsculo|r. Saqueie-o para obter |cRXP_LOOT_Diário de Filipe Pinel|r |r
     >>OBS.: Sua [Furtividade] vai parar de funcionar temporariamente após saquear |cRXP_LOOT_Diário de Filipe Pinel|r
     >>|cRXP_WARN_Esteja preparado para correr se você não matar as |cRXP_ENEMY_Sentinelas da Torre Défias|r no 2º andar. Elas provavelmente vão te manter em aggro permanente (mas sem te atacar) quando você estiver em cima da estante pois é um ponto de evade|r
-    >>|cRXP_WARN_Se você tem uma|r |T135641:0|t[Dagger] |cRXP_WARN_na sua mochila ou equipada, você pode lançar|r |T132282:0|t[Emboscar] |cRXP_WARN_nos|cRXP_ENEMY_ Defias Torre Patrollers|r e |cRXP_ENEMY_Defias Torre Sentries|r dentro para matá-los instantaneamente. Esteja preparado para correr depois de matar a primeira |cRXP_ENEMY_Sentinela da Torre Défias|r e lembre-se de que você pode ser atingido de cima. Isso é mais lento, mas MUITO mais seguro|r
+    >>Se você tiver uma [Adaga] na bolsa ou equipada, você pode usar [Emboscada] |cRXP_WARN_nos |cRXP_ENEMY_Patrulheiros da Torre Défias|r e nas |cRXP_ENEMY_Sentinelas da Torre Défias|r lá dentro para matá-los instantaneamente. Esteja pronto para correr depois de matar a primeira |cRXP_ENEMY_Sentinela da Torre Défias|r e lembre-se você pode levar golpes vindos de cima. É mais lento, mas MUITO mais seguro|r
     >>|cRXP_WARN_Tome cuidado, pois |cRXP_ENEMY_Parasita Défias Mal Formado|r e |cRXP_ENEMY_Parasita Défias|r podem ficar na entrada da torre, caso você precise sair correndo dela|r
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
-    .link https://www.youtube.com/watch?v=5sIew15IcG0 >>https://www.youtube.com/watch?v=5slew15IGQ >> Clique AQUI para o guia em vídeo
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Clique AQUI para o guia em vídeo
     .mob Defias Tower Patroller
     .mob Defias Tower Sentry
 step << !Dwarf Rogue
     #sticky
     #label AntiVenomStart
-    .collect 6452,1 >>Crie um [Antipeçonha]
+    .collect 6452,1 >> Crie um [Antipeçonha]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -1066,7 +1066,7 @@ step << Rogue
     #completewith KlavenEnd
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thor|r
-    .fly Stormwind >>Voe para Ventobravo
+    .fly Stormwind >> Voe para Ventobravo
     .target Thor
 step << !Dwarf Rogue
     #optional
@@ -1075,14 +1075,14 @@ step << !Dwarf Rogue
     .goto 1453,42.938,33.878,20,0
     .goto 1453,41.544,31.330,20,0
     .goto 1453,41.688,28.049,20,0
-    .goto 1453,43.070,26.155,15 >>Vá em direção à |cRXP_FRIENDLY_Suzi Lira|r
+    .goto 1453,43.070,26.155,15 >> Vá em direção à |cRXP_FRIENDLY_Suzi Lira|r
     .aura -9991
 step << !Dwarf Rogue
     #requires AntiVenomEnd
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Suzi Lira|r
     >>|cRXP_WARN_Se você tiver um amigo|r |T626003:0|t|cFFF48CBAPaladino|r |cRXP_WARN_ou|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_, peça para ele remover o|r |T136230:0|t[Toque de Zanzil] |cRXP_WARN_por você|r
-    .skill firstaid,80 >>|cRXP_WARN_Eleve seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_até 80|r
+    .skill firstaid,80 >> |cRXP_WARN_Eleve seu|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_até 80|r
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
 step << !Dwarf Rogue
@@ -1090,13 +1090,13 @@ step << !Dwarf Rogue
     .goto 1453,43.070,26.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Suzi Lira|r
     >>|cRXP_WARN_Se você tiver um amigo|r |T626003:0|t|cFFF48CBAPaladino|r |cRXP_WARN_ou|r |T625999:0|t|cFFFF7C0ADruida|r |cRXP_WARN_, peça para ele remover o|r |T136230:0|t[Toque de Zanzil] |cRXP_WARN_por você|r
-    .train 7934 >>|cRXP_WARN_treine|r |T134437:0|t[Antipeçonha]
+    .train 7934 >> |cRXP_WARN_treine|r |T134437:0|t[Antipeçonha]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
 step << !Dwarf Rogue
     #sticky
     #label AntiVenomStart2
-    .collect 6452,1 >>Crie um [Antipeçonha]
+    .collect 6452,1 >> Crie um [Antipeçonha]
     .aura -9991
     .itemcount 6452,<1 --Anti-Venom (<1)
     .train 7934,3 --Anti Venom spell trained
@@ -1114,38 +1114,38 @@ step << Rogue
     #completewith next
     .goto StormwindClassic,74.90,54.00,20,0
     .goto StormwindClassic,78.43,60.15,20,0
-    .goto StormwindClassic,78.67,60.13,10 >>Entre na sede da SI:7. Suba as escadas em direção a |cRXP_FRIENDLY_Mestre Mathias Shaw|r
+    .goto StormwindClassic,78.67,60.13,10 >> Entre na sede da SI:7. Suba as escadas em direção a |cRXP_FRIENDLY_Mestre Mathias Shaw|r
 step << Rogue
     #label KlavenEnd
     #requires AntiVenomEnd2 << Rogue
     .goto StormwindClassic,75.78,59.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre Mathias Shaw|r
     >>|cRXP_WARN_Lembre-se de reequipar sua arma principal se você trocou para uma|r |T135641:0|t[Dagger] |cRXP_WARN_mais cedo|r << Rogue
-    .turnin 2359 >>Entregue A Torre de Klaven
-    .turnin 135 >>Entregue A Irmandade Défias
+    .turnin 2359 >> Entregue A Torre de Klaven
+    .turnin 135 >> Entregue A Irmandade Défias
     .target Master Mathias Shaw
 step << Rogue
 #completewith next
 .dungeon DM
     .goto StormwindClassic,66.277,62.137
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
-    .fly Westfall >>Voe para Cerro Oeste
+    .fly Westfall >> Voe para Cerro Oeste
     .target Dungar Longdrink
     .zoneskip Westfall
 step
 .dungeon DM
     .goto Westfall,60.4,72.2
     .goto Westfall,40.4,71.6
-    .subzone 1581 >>Agora você deve estar procurando um grupo para as Minas Mortas
+    .subzone 1581 >> Agora procure um grupo para as Minas Mortas
     >>Triture Gnolls enquanto monta um grupo para Minas Mortas
 step
 .dungeon DM
     .goto Westfall,42.55,71.69
-    .subzone 1581 >>Vá para Minas Mortas
+    .subzone 1581 >> Vá para Minas Mortas
 step
 .dungeon DM
     #completewith EnterDM
-    >>Mate os |cRXP_ENEMY_Defias|r. Saque-os para as |cRXP_LOOT_Bandanas|r
+    >>Mate os |cRXP_ENEMY_Défias|r. Pegue as |cRXP_LOOT_Bandanas|r deles
     >>|cRXP_WARN_Você pode completar isto depois de entrar na Masmorra|r
     .complete 214,1 -- Red Silk Bandana (10)
     .isOnQuest 214
@@ -1186,7 +1186,7 @@ step
     .goto 1415,40.94,79.76,25,0
     .goto 1415,40.86,79.62,20,0
     .goto 1415,40.678,79.578
-    .subzone 1581,2 >>Entre na Masmorra das Minas Mortas
+    .subzone 1581,2 >> Entre na Masmorra das Minas Mortas
 step
 .dungeon DM
     #completewith DMend
@@ -1203,19 +1203,19 @@ step
     >>|cRXP_WARN_Use [|cRXP_LOOT_Carta Não Enviada|r] para iniciar a missão|r
     .collect 2874,1,373 -- An Unsent Letter (1)
     .complete 166,1 -- Head of VanCleef (1)
-    .accept 373 >>Aceite A Carta Não Enviada
+    .accept 373 >> Aceite A Carta Não Enviada
     .use 2874 -- An Unsent Letter
 step
 .dungeon DM
     #label DMend
     #completewith next
-    .goto Westfall,56.33,47.52,100 >>Viaje até a Colina da Sentinela
+    .goto Westfall,56.33,47.52,100 >> Viaje até a Colina da Sentinela
 step
 .dungeon DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel Mantoforte|r e com a |cRXP_FRIENDLY_Batedora Riell|r no topo da Torre
-    .turnin 166 >>Entregue A Irmandade Défias
+    .turnin 166 >> Entregue A Irmandade Défias
     .goto Westfall,56.33,47.52
-    .turnin -214 >>Entregue Bandanas de Seda Vermelha
+    .turnin -214 >> Entregue Bandanas de Seda Vermelha
     .goto Westfall,56.67,47.35
     .target Gryan Stoutmantle
     .target Scout Riell
@@ -1224,19 +1224,19 @@ step
     #completewith next
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thor|r
-    .fly Stormwind >>Voe para Ventobravo
+    .fly Stormwind >> Voe para Ventobravo
     .target Thor
 step
     .goto StormwindClassic,65.438,21.175
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Wilder Urtigão|r dentro
-    .turnin 167 >>Entregue Oh, Irmão...
-    .turnin 168 >>Entregue Coletando Memórias
+    .turnin 167 >> Entregue Oh, Irmão...
+    .turnin 168 >> Entregue Coletando Memórias
     .target Wilder Thistlenettle
     .dungeon DM
 step
     #label ShoniEnd
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shoni, a Shilenchiosa|r
-    .turnin 2040 >>Entregue Ataque Subterrâneo
+    .turnin 2040 >> Entregue Ataque Subterrâneo
     .goto StormwindClassic,55.510,12.504
     .target Shoni the Shilent
     .dungeon DM
@@ -1244,7 +1244,7 @@ step
     .dungeon DM
     .goto StormwindClassic,66.277,62.137
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
-    .fly Redridge >>Voe para Redridge
+    .fly Redridge >> Voe para Redridge
     .target Dungar Longdrink
     .zoneskip Redridge Mountains
 
@@ -1287,7 +1287,7 @@ step << Warlock
     .unitscan Incinerator Gar'im
 step
     #loop
-    >>Abate |cRXP_ENEMY_Blackrock Grunts|r e |cRXP_ENEMY_Blackrock Outrunners|r. Saqueie-os por seus |cRXP_LOOT_Machados|r
+    >>Mate |cRXP_ENEMY_Brutos Rocha Negra|r e |cRXP_ENEMY_Vanguardeiros Rocha Negra|r. Saqueie-os em busca de seus |cRXP_LOOT_Machados|r
 	>>|cRXP_WARN_Saiba que os |cRXP_ENEMY_Blackrock Outrunners|r vão lançar |T132149:0|t[Rede] em você|r
     .goto Redridge Mountains,74.00,79.00,60,0
     .goto Redridge Mountains,76.18,83.39,60,0
@@ -1314,13 +1314,13 @@ step << Rogue
     .goto Redridge Mountains,70.11,77.34,60,0
     .goto Redridge Mountains,74.00,79.00,60,0
     .goto Redridge Mountains,74.00,79.00,0
-    .xp 22-18500 >>Farme até estar 18500 xp longe do nível 22
+    .xp 22-18500 >> Farme até estar 18500 xp longe do nível 22
     .itemcount 1080,5 --Tough condor meat (5)
     .itemcount 2296,5 --Great goretusk snout (5)
     .itemcount 1221,5 --Underbelly Whelp Scale (6)
 step
     #softcore
-    .deathskip >>Morra e reapareça no Curador Espiritual. Você receberá a doença de ressurreição, então não estará lutando contra inimigos por um tempo
+    .deathskip >> Morra e reapareça no Curador Espiritual. Você receberá a doença de ressurreição, então não estará lutando contra inimigos por um tempo
     .itemcount 1080,5 --Tough condor meat (5)
     .itemcount 2296,5 --Great goretusk snout (5)
     .itemcount 1221,5 --Underbelly Whelp Scale (6)
@@ -1338,49 +1338,49 @@ step
     .collect 2296,5,92,1
     .mob Great Goretusk
 step << Rogue
-    .xp 22-18500 >>Farme inimigos até estar 18500 xp longe do nível 22
+    .xp 22-18500 >> Farme inimigos até estar 18500 xp longe do nível 22
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mestre-cuca Breanna|r
 	.target Chef Breanna
     .goto Redridge Mountains,22.67,43.83
-    .accept 92 >>Aceite Gulache de Cristarrubra
-    .turnin 92 >>Entregue Gulache de Cristarrubra
+    .accept 92 >> Aceite Gulache de Cristarrubra
+    .turnin 92 >> Entregue Gulache de Cristarrubra
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mestre de Doca Baren|r
 	.target Dockmaster Baren
     .goto Redridge Mountains,27.72,47.38
-    .turnin 127 >>Entregue O lago está para peixe
-    .accept 150 >>Aceite Caçadores de murlocs
-    .turnin 150 >>Entregue Murloc Poachers
+    .turnin 127 >> Entregue O lago está para peixe
+    .accept 150 >> Aceite Caçadores de murlocs
+    .turnin 150 >> Entregue Murloc Poachers
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vervo Obom|r
 	.target Verner Osgood
     .goto Redridge Mountains,31.00,47.30
-    .turnin 122 >>Entregue Underbelly Escamoso
+    .turnin 122 >> Entregue Underbelly Escamoso
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Marris|r
 	.target Marshal Marris
     .goto Redridge Mountains,33.50,48.97
-    .turnin 20 >>Entregue Blackrock Ameaça
+    .turnin 20 >> Entregue Ameaça dos Rochas Negras
 step
     .goto Redridge Mountains,30.59,59.42
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena Penafúria|r
 	.target Ariena Stormfeather
-    .fly Stormwind >>Voe para Cidade de Ventobravo
+    .fly Stormwind >> Voe para Cidade de Ventobravo
 step << !Mage/Paladin/Warlock
     .goto StormwindClassic,52.623,65.701
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >>Defina sua Pedra de Retorno em Cidade de Ventobravo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Cristine|r
+    .home >> Defina sua Pedra de Retorno em Cidade de Ventobravo
     .target Innkeeper Allison
 step << Mage
     .goto Stormwind City,39.681,79.538
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Larimaine Purdue|r
-    .train 3561 >>Treine [Teleporte: Ventobravo]
+    .train 3561 >> Treine [Teleporte: Ventobravo]
     .target +Larimaine Purdue
 step << Mage
     .goto Stormwind City,36.87,81.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jennea|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Elsharin
 	.target Jennea Cannon
 step << Warrior
@@ -1388,45 +1388,45 @@ step << Warrior
     .goto StormwindClassic,76.08,50.14,15,0
     .goto StormwindClassic,80.22,45.37,15,0
 	.goto StormwindClassic,78.68,45.79
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Wu Shen
     .target Ilsa Corbin
 step << Rogue
     .goto StormwindClassic,74.65,52.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Osborne|r
     >>|cRXP_WARN_Certifique-se de ter 75 moedas de prata restantes após o treinamento. Você precisará delas para desbloquear uma runa em breve. Compre apenas habilidades essenciais se necessário|r
-    .train 1856 >>|cRXP_WARN_Certifique-se de treinar |T132331:0|t[Sumir].|r |cRXP_WARN_Você precisará dela para desbloquear uma runa em breve|r
-    .trainer >>Treine suas magias de classe
+    .train 1856 >> |cRXP_WARN_Certifique-se de treinar |T132331:0|t[Sumir].|r |cRXP_WARN_Você precisará dela para desbloquear uma runa em breve|r
+    .trainer >> Treine suas magias de classe
     .target Osborne the Night Man
 step << Paladin
     .goto StormwindClassic,38.67,32.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Artur, o Fiel|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Arthur the Faithful
 step << Priest
     .goto StormwindClassic,38.54,26.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Alta-sacerdotisa Laurena|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target High Priestess Laurena
 step << Hunter
     .goto StormwindClassic,61.609,15.269
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Einris Setalume|r dentro
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Einris Brightspear
 step
     .goto StormwindClassic,61.149,11.568,25,0
     .goto StormwindClassic,64.0,8.10
-    .zone Ironforge >>Entre no Deeprun Tram. Pegue o Bonde para Ironforge
+    .zone Ironforge >> Entre no Deeprun Tram. Pegue o Bonde para Ironforge
 step << Warlock
     .goto Ironforge,51.1,8.7,15,0
     .goto Ironforge,50.343,5.657
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cravespinho|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Briarthorn
 step << Warlock
     .goto Ironforge,52.701,6.070
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jubahl Catadefunto|r
-    .vendor 6382 >>|cRXP_BUY_Compre um|r |T133738:0|t[Grimório de Tormento (Nível 2)]
+    .vendor 6382 >> |cRXP_BUY_Compre um|r |T133738:0|t[Grimório de Tormento (Nível 2)]
     .collect 16346,1
     .disablecheckbox
     .target Jubahl Corpseseeker
@@ -1434,13 +1434,13 @@ step << Warlock
 step << Mage
     .goto Ironforge,25.50,7.04
     >>Fale com |cRXP_FRIENDLY_Milstaff|r
-    .train 3562 >>Treine [Teleporte: Altaforja]
+    .train 3562 >> Treine [Teleporte: Altaforja]
     .target Milstaff Stormeye
 step
     #completewith next
     .goto Dun Morogh,53.48,37.50,30,0
     .goto Dun Morogh,54.04,38.60,30,0
-    .goto Dun Morogh,59.43,42.85,150 >>Vá para o ponto de salto. Passe rente ao lado esquerdo da montanha durante o trajeto
+    .goto Dun Morogh,59.43,42.85,150 >> Vá para o ponto de salto. Passe rente ao lado esquerdo da montanha durante o trajeto
     .subzoneskip 150 -- Skips if already in menethil
     .subzoneskip 2104 -- Skips if already in menethil inn
 step
@@ -1466,7 +1466,7 @@ step
     .goto Dun Morogh,61.52,12.58,8,0
     >>|cRXP_WARN_Faça o salto Deathless Dun Morogh -> Pantanal|r
     >>|cRXP_WARN_Coma até ficar cheio após cada queda se você não se sente confiante|r
-    .link https://youtu.be/QcEUvwu49KI?t=73 >>https://youtu.be/QcEUvwu49KI?t=73 >> |cRXP_WARN_CLIQUE AQUI para referência (é FORTEMENTE aconselhado que você faça isso)|r
+    .link https://youtu.be/QcEUvwu49KI?t=73 >> |cRXP_WARN_CLIQUE AQUI para referência (é FORTEMENTE aconselhado que você faça isso)|r
     .goto Dun Morogh,60.65,11.38,20 >>Desça cuidadosamente a encosta da montanha
     .isQuestAvailable 983
     .subzoneskip 150 -- Skips if already in menethil
@@ -1486,8 +1486,8 @@ step
     >>|cRXP_WARN_Faça o salto Deathless Dun Morogh -> Pantanal|r
     >>|cRXP_WARN_Cuidado com |cRXP_ENEMY_Lodogã|r (raro) antes de descer em direção à costa (se ele estiver aparecido)|r
     >>|cRXP_WARN_Cuidado com os |cRXP_ENEMY_Bluegill Raiders|r a oeste quando você chegar ao mar|r
-    .link https://youtu.be/QcEUvwu49KI?t=336 >>https://youtu.be/QcEUvwu49KI?t=336 >> |cRXP_WARN_CLIQUE AQUI para referência (é FORTEMENTE aconselhado que você faça isso)|r
-    .goto Wetlands,12.69,60.97,15 >>Vá para Menethil Harbor
+    .link https://youtu.be/QcEUvwu49KI?t=336 >> |cRXP_WARN_CLIQUE AQUI para referência (é FORTEMENTE aconselhado que você faça isso)|r
+    .goto Wetlands,12.69,60.97,15 >> Vá para Menethil Harbor
     .mob Young Wetlands Crocolisk
     .mob Bluegill Raider
     .unitscan Sludginn

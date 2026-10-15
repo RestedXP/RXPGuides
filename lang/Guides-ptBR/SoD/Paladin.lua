@@ -18,7 +18,7 @@ step
 step
     #completewith LibramS
     #label Elwynn1
-    .zone Elwynn Forest >>Vá para Elwynn Forest
+    .zone Elwynn Forest >> Vá para Elwynn Forest
     .train 410002,1
     .xp <4,1
 step
@@ -33,7 +33,7 @@ step
 step
     .goto Elwynn Forest,50.433,42.124
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Irmão Samuel|r
-    .train 20271 >>Aprenda |T135959:0|t[Julgamento]
+    .train 20271 >> Aprenda |T135959:0|t[Julgamento]
     .target Brother Sammuel
     .train 410002,1
     .xp <4,1
@@ -53,7 +53,7 @@ step
     .train 410002,1
     .xp <4,1
 step
-    .equip 18,205420 >>|cRXP_WARN_Equipe o|r |T134916:0|t|cRXP_LOOT_[Incunábulo do Julgamento]|r
+    .equip 18,205420 >> |cRXP_WARN_Equipe o|r |T134916:0|t|cRXP_LOOT_[Incunábulo do Julgamento]|r
     .use 205420
     .itemcount 205420,1 --Libram of Judgement (1)
 --XX  .itemStat 18,QUALITY,<2 would bug it if someone has a Libram in the slot already
@@ -97,7 +97,7 @@ step
 step
     #completewith LibramS
     #label Dun1
-    .zone Dun Morogh >>Vá para Dun Morogh
+    .zone Dun Morogh >> Vá para Dun Morogh
     .train 410002,1
     .xp <4,1
 step
@@ -112,7 +112,7 @@ step
 step
     .goto Dun Morogh,28.833,68.332
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bromos Grummner|r
-    .train 20271 >>Aprenda |T135959:0|t[Julgamento]
+    .train 20271 >> Aprenda |T135959:0|t[Julgamento]
     .target Bromos Grummner
     .train 410002,1
     .xp <4,1
@@ -131,7 +131,7 @@ step
     .train 410002,1
     .xp <4,1
 step
-    .equip 18,205420 >>|cRXP_WARN_Equipe o|r |T134916:0|t|cRXP_LOOT_[Incunábulo do Julgamento]|r
+    .equip 18,205420 >> |cRXP_WARN_Equipe o|r |T134916:0|t|cRXP_LOOT_[Incunábulo do Julgamento]|r
     .use 205420
     .itemcount 205420,1 --Libram of Judgement (1)
     .train 410002,1
@@ -185,14 +185,14 @@ step
 step
     .goto Ironforge,23.131,6.143
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Brandur Ferromalho|r
-    .train 853 >>Treine |T135963:0|t[Martelo da Justiça]
+    .train 853 >> Treine |T135963:0|t[Martelo da Justiça]
     .target Brandur Ironhammer
     .train 410001,1
     .xp <8,1
 step
     #completewith LibramS
     #label Loch1
-    .zone Loch Modan >>Voe para Loch Modan
+    .zone Loch Modan >> Voe para Loch Modan
     .train 410001,1
     .xp <8,1
 step
@@ -221,7 +221,7 @@ step
     .train 410001,1
     .xp <8,1
 step
-    .equip 18,205420 >>|cRXP_WARN_Equipe o|r |T134916:0|t|cRXP_LOOT_[Incunábulo de Justiça]|r
+    .equip 18,205420 >> |cRXP_WARN_Equipe o|r |T134916:0|t|cRXP_LOOT_[Incunábulo de Justiça]|r
     .use 208851
     .itemcount 208851,1 --Libram of Justice (1)
     .train 410001,1
@@ -294,7 +294,7 @@ step
     .xp >22,1
 step
     #completewith next
-    .zone Wetlands >>Viaje para Terras do Interior
+    .zone Wetlands >> Viaje para Terras do Interior
     .itemStat 18,QUALITY,2
     .aura 408828
     .train 410001,1
@@ -361,13 +361,13 @@ step
 step
     .goto StormwindClassic,38.67,32.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Artur, o Fiel|r
-    .train 853 >>Treine |T135963:0|t[Martelo da Justiça]
+    .train 853 >> Treine |T135963:0|t[Martelo da Justiça]
     .target Arthur the Faithful
     .train 410001,1
     .xp <8,1
 step
     #completewith next
-    .zone Westfall >>Viaje até Cerro Oeste
+    .zone Westfall >> Viaje até Cerro Oeste
     .train 410001,1
     .xp <8,1
 step
@@ -385,7 +385,7 @@ step
     .xp <8,1
 --XX Venture Co. Drones drop it too?
 step
-    .equip 18,205420 >>|cRXP_WARN_Equipe o|r |T134916:0|t|cRXP_LOOT_[Incunábulo de Justiça]|r
+    .equip 18,205420 >> |cRXP_WARN_Equipe o|r |T134916:0|t|cRXP_LOOT_[Incunábulo de Justiça]|r
     .use 208851
     .itemcount 208851,1 --Libram of Justice (1)
     .train 410001,1
@@ -477,14 +477,14 @@ step
 step
     .goto Ironforge,23.131,6.143
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Brandur Ferromalho|r
-    .train 19740 >>Aprenda |T135906:0|t[Bênção do Poder]
+    .train 19740 >> Aprenda |T135906:0|t[Bênção do Poder]
     .target Brandur Ironhammer
     .train 425618,1
     .xp <4,1
 step
     #completewith next
     #label Loch1
-    .zone Loch Modan >>Voe para Loch Modan
+    .zone Loch Modan >> Voe para Loch Modan
     .train 425618,1
     .xp <4,1
 step
@@ -513,7 +513,7 @@ step
     .train 425618,1
     .xp <4,1
 step
-    .equip 18,208849 >>|cRXP_WARN_Equipe o|r |T134916:0|t|cRXP_LOOT_[Incunábulo das Bênçãos]|r
+    .equip 18,208849 >> |cRXP_WARN_Equipe o|r |T134916:0|t|cRXP_LOOT_[Incunábulo das Bênçãos]|r
     .use 208849
     .itemcount 208849,1 --Libram of Blessings (1)
     .train 425618,1
@@ -572,8 +572,8 @@ step
 step
     .goto StormwindClassic,38.67,32.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Artur, o Fiel|r
-    .train 20271 >>Aprenda |T135959:0|t[Julgamento]
-    .train 19740 >>Aprenda |T135906:0|t[Bênção do Poder]
+    .train 20271 >> Aprenda |T135959:0|t[Julgamento]
+    .train 19740 >> Aprenda |T135906:0|t[Bênção do Poder]
     .target Arthur the Faithful
     .train 425618,1
     .xp <4,1
@@ -618,7 +618,7 @@ step
     .train 425618,1
     .xp <4,1
 step
-    .equip 18,208849 >>|cRXP_WARN_Equipe o|r |T134916:0|t|cRXP_LOOT_[Incunábulo das Bênçãos]|r
+    .equip 18,208849 >> |cRXP_WARN_Equipe o|r |T134916:0|t|cRXP_LOOT_[Incunábulo das Bênçãos]|r
     .use 208849
     .itemcount 208849,1 --Libram of Blessings (1)
     .train 425618,1
@@ -669,14 +669,14 @@ step
 step
     .goto StormwindClassic,38.67,32.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Artur, o Fiel|r
-    .train 1152 >>Treine |T135949:0|t[Purificar]
+    .train 1152 >> Treine |T135949:0|t[Purificar]
     .target Arthur the Faithful
     .train 425619,1
     .xp <8,1
 step
     #completewith next
     #label Elwynn1
-    .zone Elwynn Forest >>Vá para Elwynn Forest
+    .zone Elwynn Forest >> Vá para Elwynn Forest
     .train 425619,1
     .xp <8,1
 step
@@ -694,7 +694,7 @@ step
     .goto Elwynn Forest,60.73,50.83,8,0
     .goto Elwynn Forest,61.22,51.51,8,0
     .goto Elwynn Forest,61.44,52.64,8,0
-    .goto Elwynn Forest,61.97,47.31,12 >>Viagem em direção ao |cRXP_FRIENDLY_Aventureiro Ferido|r no chão dentro da caverna
+    .goto Elwynn Forest,61.97,47.31,12 >> Viagem em direção ao |cRXP_FRIENDLY_Aventureiro Ferido|r no chão dentro da caverna
     .target Wounded Adventurer
     .train 425619,1
     .xp <8,1
@@ -747,18 +747,18 @@ step
 step
     .goto Ironforge,23.131,6.143
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Brandur Ferromalho|r
-    .train 1152 >>Treine |T135949:0|t[Purificar]
+    .train 1152 >> Treine |T135949:0|t[Purificar]
     .target Brandur Ironhammer
     .train 425619,1
     .xp <8,1
 step
     #completewith next
-    .zone Dun Morogh >>Vá para Dun Morogh
+    .zone Dun Morogh >> Vá para Dun Morogh
     .train 425619,1
     .xp <8,1
 step
     #label LibramS
-    .goto Dun Morogh,25.57,43.37,40 >>Viagem em direção ao |cRXP_FRIENDLY_Aventureiro Ferido|r no chão
+    .goto Dun Morogh,25.57,43.37,40 >> Viagem em direção ao |cRXP_FRIENDLY_Aventureiro Ferido|r no chão
     .target Wounded Adventurer
     .train 425619,1
     .xp <8,1
@@ -871,7 +871,7 @@ step
 --XX Must have had the Charred Note to unlock the dialogue
 step
     #sticky
-    .destroy 205864 >>Exclua a |T134939:0|t[Calcinado Nota] da mochila, pois não é mais necessário
+    .destroy 205864 >> Exclua a |T134939:0|t[Calcinado Nota] da mochila, pois não é mais necessário
 step
     .train 410015 >>|cRXP_WARN_Use o|r |T134419:0|t[Runa de Luz Divina] |cRXP_WARN_para aprender|r |T133815:0|t[Engrave Baú - Luz Divina]
     .use 205897
@@ -895,7 +895,7 @@ step
 step
     #completewith LibramS
     #label DarkshoreT
-    .zone Darkshore >>Vá para a Costa Negra
+    .zone Darkshore >> Vá para a Costa Negra
     .train 410014,1
 step
     #completewith next
@@ -913,7 +913,7 @@ step
 step
     #completewith Delgren1
     #label AshenvaleT
-    .zone Ashenvale >>Viaje para Vale Gris
+    .zone Ashenvale >> Viaje para Vale Gris
     .train 410014,1
 step
     #completewith next
@@ -923,8 +923,8 @@ step
 step
     .goto Ashenvale,26.19,38.69
     >>Fale com |cRXP_FRIENDLY_Dinis, o Purificador|r
-    .turnin 78088 >>Entregue o Artefato Estranho
-    .accept 78089 >>Aceite Conselho de Ventobravo
+    .turnin 78088 >> Entregue o Artefato Estranho
+    .accept 78089 >> Aceite Conselho de Ventobravo
     .target Delgren the Purifier
     .train 410014,1
     .itemcount 209836,1 --Athalaxx Orb (1)
@@ -932,14 +932,14 @@ step
     #label Delgren1
     .goto Ashenvale,26.19,38.69
     >>Fale com |cRXP_FRIENDLY_Dinis, o Purificador|r
-    .accept 78089 >>Aceite Conselho de Ventobravo
+    .accept 78089 >> Aceite Conselho de Ventobravo
     .target Delgren the Purifier
     .train 410014,1
     .isQuestTurnedIn 78088
 step
     #completewith Katherine1
     #label StormwindT1
-    .zone Stormwind City >>Vá para Ventobravo
+    .zone Stormwind City >> Vá para Ventobravo
     .train 410014,1
 step
     #completewith next
@@ -953,8 +953,8 @@ step
     #label Katherine1
     .goto StormwindClassic,37.23,31.87
     >>Fale com |cRXP_FRIENDLY_Katherine, a Pura|r
-    .turnin 78089 >>Entregue Conselho de Ventobravo
-    .accept 78090 >>Aceite Segunda Opinião
+    .turnin 78089 >> Entregue Conselho de Ventobravo
+    .accept 78090 >> Aceite Segunda Opinião
     .target Katherine the Pure
     .train 410014,1
 step
@@ -967,15 +967,15 @@ step
 step
     .goto StormwindClassic,26.12,77.23
     >>Fale com |cRXP_FRIENDLY_Úrsula Deline|r
-    .turnin 78090 >>Entregue Segunda Opinião
-    .accept 78091 >>Aceite O Sal de Cada Dia
+    .turnin 78090 >> Entregue Segunda Opinião
+    .accept 78091 >> Aceite O Sal de Cada Dia
     .target Ursula Deline
     .train 410014,1
 step
     #completewith theairissalt
     .goto StormwindClassic,66.28,62.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
-    .fly Redridge >>Voe para Montanhas Cristarrubra
+    .fly Redridge >> Voe para Montanhas Cristarrubra
     .zoneskip Redridge Mountains
     .target Dungar Longdrink
     .train 410014,1
@@ -1030,7 +1030,7 @@ step
 step
     #completewith Ursula1
     #label StormwindT2
-    .zone Stormwind City >>Vá para Ventobravo
+    .zone Stormwind City >> Vá para Ventobravo
     .train 410014,1
 step
     #completewith next
@@ -1044,14 +1044,14 @@ step
     #label Ursula1
     .goto StormwindClassic,26.12,77.23
     >>Fale com |cRXP_FRIENDLY_Úrsula Deline|r
-    .turnin 78091 >>Entregue O Sal de Cada Dia
-    .accept 78092 >>Aceite É Preciso Destruí-lo
+    .turnin 78091 >> Entregue O Sal de Cada Dia
+    .accept 78092 >> Aceite É Preciso Destruí-lo
     .target Ursula Deline
     .train 410014,1
 step
     #completewith Motes
     #label AshenvaleT
-    .zone Ashenvale >>Viaje para Vale Gris
+    .zone Ashenvale >> Viaje para Vale Gris
     .train 410014,1
 step
     #completewith next
@@ -1086,9 +1086,9 @@ step
     .train 410014,1
 step
     >>Clique em |cRXP_PICK_Lança de Mannoroth|r no ar, depois clique em |cRXP_PICK_Orbe Estilhaçado|r no chão
-    .turnin 78092 >>Entregue É Preciso Destruí-lo
+    .turnin 78092 >> Entregue É Preciso Destruí-lo
     .goto Ashenvale,89.48,77.03
-    .accept 78093 >>Aceite De Volta a Dinis
+    .accept 78093 >> Aceite De Volta a Dinis
     .goto Ashenvale,89.44,77.01
     .train 410014,1
 step
@@ -1098,8 +1098,8 @@ step
 step
     .goto Ashenvale,26.19,38.69
     >>Fale com |cRXP_FRIENDLY_Dinis, o Purificador|r
-    .turnin 78093 >>Entregue De Volta a Dinis
-    .train 410014 >>Você aprenderá |T133815:0|t[Gravar Peitoral - Tempestade Divina]
+    .turnin 78093 >> Entregue De Volta a Dinis
+    .train 410014 >> Você aprenderá |T133815:0|t[Gravar Peitoral - Tempestade Divina]
     .target Delgren the Purifier
     .train 410014,1
 ]])
@@ -1121,7 +1121,7 @@ step
 step
     #completewith next
     #label Elwynn1
-    .zone Elwynn Forest >>Vá para Elwynn Forest
+    .zone Elwynn Forest >> Vá para Elwynn Forest
     .train 410011,1
 step
     #completewith next
@@ -1163,7 +1163,7 @@ step
 step
     #completewith LibramS
     #label Dun1
-    .zone Dun Morogh >>Vá para Dun Morogh
+    .zone Dun Morogh >> Vá para Dun Morogh
     .train 410011,1
 step
     #completewith next
@@ -1365,13 +1365,13 @@ step
 step
     .goto StormwindClassic,38.67,32.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Artur, o Fiel|r
-    .train 2878 >>Treine |T135983:0|t[Esconjurar Morto-vivo]
+    .train 2878 >> Treine |T135983:0|t[Esconjurar Morto-vivo]
     .target Arthur the Faithful
     .train 416037,1
     .xp <24,1
 step
     #completewith next
-    .zone Duskwood >>Voe para Floresta do Crepúsculo
+    .zone Duskwood >> Voe para Floresta do Crepúsculo
     .train 416037,1
     .xp <24,1
 step
@@ -1391,7 +1391,7 @@ step
     .train 416037,1
     .xp <24,1
 step
-    .equip 18,211472 >>|cRXP_WARN_Equipe o|r |T134916:0|t|cRXP_LOOT_[Incunábulo do Banimento]|r
+    .equip 18,211472 >> |cRXP_WARN_Equipe o|r |T134916:0|t|cRXP_LOOT_[Incunábulo do Banimento]|r
     .use 211472
     .itemcount 211472,1 -- Libram of Banishment (1)
     .train 416037,1
@@ -1434,7 +1434,7 @@ step
     .xp >25,1
 step
     #completewith next
-    .zone Redridge Mountains >>Viaje para as Montanhas Cristarrubra
+    .zone Redridge Mountains >> Viaje para as Montanhas Cristarrubra
     .train 410008,1
 step
     #label LibramS
@@ -1663,7 +1663,7 @@ step
     .zone Stormwind City >>Vá para Ventobravo
 step
     #completewith Katherine
-    .goto StormwindClassic,42.51,33.51,20 >>Viaje até a Catedral de Ventobravo
+    .goto StormwindClassic,42.51,33.51,20 >> Viaje até a Catedral de Ventobravo
 step
     .train 426178,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Katherine, a Pura|r
@@ -1687,16 +1687,16 @@ step
     .isQuestTurnedIn 79940
     .train 426178,1
     .goto Wetlands,8.086,58.592
-    .gossip 3179,4 >>Fale com |cRXP_FRIENDLY_Haroldo Reis|r. Passe por todos os seus diálogos de conversa
+    .gossip 3179,4 >> Fale com |cRXP_FRIENDLY_Haroldo Reis|r. Passe por todos os seus diálogos de conversa
     .skipgossip 3179,2
     .target Harold Riggs
 step
     #completewith next
-    .goto 1415,41.937,58.932,40 >>|cRXP_WARN_Nade para o sul, todo o caminho contornando para Dun Morogh. Você terá que matar um Élite de nível 40 em breve. Considere trazer um amigo para esta parte!|r
+    .goto 1415,41.937,58.932,40 >> |cRXP_WARN_Nade para o sul, todo o caminho contornando para Dun Morogh. Você terá que matar um Élite de nível 40 em breve. Considere trazer um amigo para esta parte!|r
 step
     .train 426178,1
     .goto 1415,41.937,58.932
-    .gossip 217957 >>Fale com o |cRXP_FRIENDLY_Morto Cruzado Escarlate|r dentro do prédio
+    .gossip 217957 >> Fale com o |cRXP_FRIENDLY_Morto Cruzado Escarlate|r dentro do prédio
     >>|cRXP_WARN_Isto irá invocar um élite de nível 40|r |cRXP_ENEMY_Scarlet Cruzada Assassino|r
     .target Slain Scarlet Crusader
 step
@@ -1712,7 +1712,7 @@ step
     .zone Stormwind City >>Vá para Ventobravo
 step
     #completewith Katherine2
-    .goto StormwindClassic,42.51,33.51,20 >>Viaje até a Catedral de Ventobravo
+    .goto StormwindClassic,42.51,33.51,20 >> Viaje até a Catedral de Ventobravo
 step
     .train 426178,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Katherine, a Pura|r
@@ -1752,13 +1752,13 @@ step
     .zone Stormwind City >>Vá para Ventobravo
 step
     #completewith Aeonas
-    .goto StormwindClassic,42.51,33.51,20 >>Viaje até a Catedral de Ventobravo
+    .goto StormwindClassic,42.51,33.51,20 >> Viaje até a Catedral de Ventobravo
 step
     #label Aeonas
     .goto Stormwind City,37.355,31.708
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Aeonas, o Justiçado|r
-    .turnin 79970 >>Entregue [Aeonas] <[Former Paladin of the Silver Hand]>, o Justiçado
-    .train 426178 >>Aprenda |T236263:0|t[Bainha de Luz]
+    .turnin 79970 >> Entregue [Aeonas] <[Former Paladin of the Silver Hand]>, o Justiçado
+    .train 426178 >> Aprenda |T236263:0|t[Bainha de Luz]
     .target Aeonas the Vindicated
 ]])
 
@@ -1777,7 +1777,7 @@ step
     .xp >30,1
 step
     .train 416035,1
-    .train 19752 >>|cRXP_WARN_Você deve treinar|r |T136106:0|t[Intervenção Divina] |cRXP_WARN_para adquirir|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Guardião|r]
+    .train 19752 >> |cRXP_WARN_Você deve treinar|r |T136106:0|t[Intervenção Divina] |cRXP_WARN_para adquirir|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Guardião|r]
 step
     .train 416035,1
     .collect 17033,1 >>|cRXP_BUY_Compre pelo menos um|r |T135259:0|t[Symbol of Divindade] |cRXP_BUY_de qualquer Reagent Comerciante|r
@@ -1799,7 +1799,7 @@ step
     .collect 213452,1
 step
     .train 416035,1
-    .cast 19752 >>|cRXP_WARN_Lance|r |T136106:0|t[Intervenção Divina] |cRXP_WARN_sobre o amigo que o acompanhou|r
+    .cast 19752 >> |cRXP_WARN_Lance|r |T136106:0|t[Intervenção Divina] |cRXP_WARN_sobre o amigo que o acompanhou|r
     .usespell 19752
 step
     .train 416035,1
@@ -1827,7 +1827,7 @@ step
     .xp >18,1
 step
     .train 416028,1
-    .train 1044 >>|cRXP_WARN_Você deve treinar|r |T135968:0|t[Bênção da Liberdade] |cRXP_WARN_para adquirir o|r |T236249:0|t[Escudo Sagrado] |cRXP_WARN_encantamento|r
+    .train 1044 >> |cRXP_WARN_Você deve treinar|r |T135968:0|t[Bênção da Liberdade] |cRXP_WARN_para adquirir o|r |T236249:0|t[Escudo Sagrado] |cRXP_WARN_encantamento|r
 step
     .train 416028,1
     #completewith Deliverance
@@ -1844,7 +1844,7 @@ step
     .collect 213513,1
 step
     .train 416028,1
-    .equip 18,213513 >>|cRXP_WARN_Equipe o|r |T134916:0|t[|cRXP_FRIENDLY_Incunábulo da Libertação|r]
+    .equip 18,213513 >> |cRXP_WARN_Equipe o|r |T134916:0|t[|cRXP_FRIENDLY_Incunábulo da Libertação|r]
     .use 213513
 step
     .train 416028,1
@@ -1853,7 +1853,7 @@ step
     .goto Desolace,33.44,54.17,60,0
     .goto Desolace,30.33,58.26,60,0
     .goto Desolace,31.79,61.28
-    .aura 408828 >>|cRXP_WARN_Lance|r |T135968:0|t[Bênção da Liberdade] |cRXP_WARN_em outro jogador 5 vezes enquanto seu movimento está prejudicado. Você ganhará uma camada de|r |T237556:0|t[Inspiração para Construir] |cRXP_WARN_cada vez que você fizer isso|r
+    .aura 408828 >> |cRXP_WARN_Lance|r |T135968:0|t[Bênção da Liberdade] |cRXP_WARN_em outro jogador 5 vezes enquanto seu movimento está prejudicado. Você ganhará uma camada de|r |T237556:0|t[Inspiração para Construir] |cRXP_WARN_cada vez que você fizer isso|r
     >>|cRXP_WARN_Quando você tiver 5 camadas de|r |T237556:0|t[Inspiração para Construir]|cRXP_WARN_, você receberá|r |T136116:0|t[Inspirado] |cRXP_WARN_efeito|r
     >>|cRXP_WARN_Complete isto apenas fora de Maraudon. Os|r |cRXP_ENEMY_Maraudine Wranglers|r |cRXP_WARN_lá lançam|r |T132149:0|t[Rede]
     .mob Maraudine Wrangler
@@ -2196,12 +2196,12 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     >>|cRXP_WARN_Destrancando esta runa exigirá matar um chefe em Stratholme (não-mortos). Comece a procurar por um grupo para isso se desejar|r
-    .zone Eastern Plaguelands >>Viaje para as Terras Pestilentas Orientais
+    .zone Eastern Plaguelands >> Viaje para as Terras Pestilentas Orientais
 step
     .line Eastern Plaguelands,28.6,84.2,33.2,83.0,35.30,82.55,41.19,81.68,45.42,80.68,48.8,79.9,51.5,78.3,55.1,76.4
     >>Procure por um |cRXP_ENEMY_Carniçal de Queixo Caído|r. Mate-o e |Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Orthas|r um espírito anão que aparecerá. Aceite sua missão
-    >>|cRXP_WARN_O|r |cRXP_ENEMY_Carniçal de Queixo Caído <Carniçal com Tamanho de Anão>|r |cRXP_WARN_patrulha a área ao sul da estrada entre Undercroft e Corrin's Crossing|r
-    .accept 84318 >>Aceite Bah!
+    >>|cRXP_WARN_O|r |cRXP_ENEMY_Carniçal de Queixo Caído <Carniçal com Tamanho de Anão>|r |cRXP_WARN_patrulha a área ao sul da estrada entre o Undercroft e Corrin's Crossing|r
+    .accept 84318 >> Aceite Bah!
     .unitscan Slack-Jawed Ghoul
     .target Orthas
 step
@@ -2211,8 +2211,8 @@ step
 step
     .goto Eastern Plaguelands,61.3,69.3
     >>Usar |T134566:0|t[[Orthas] <[Dwarven Spirit]>' Favourite Ouro Tooth] para invocar |cRXP_FRIENDLY_[[Orthas] <[Dwarven Spirit]>] <[Dwarven Spirit]>|r novamente. Fale com ele para entregar a missão e obter a continuação
-    .turnin 84318 >>Entregue Bah!
-    .accept 84319 >>Aceite Oh No Ye Don't
+    .turnin 84318 >> Entregue Bah!
+    .accept 84319 >> Aceite Oh No Ye Don't
     .use 227687
 step
     .goto Eastern Plaguelands,59.7,68.7
@@ -2221,8 +2221,8 @@ step
     .mob Stitched Horror
 step
     >>Usar |T134566:0|t[[Orthas] <[Dwarven Spirit]>' Favourite Ouro Tooth] para invocar |cRXP_FRIENDLY_[[Orthas] <[Dwarven Spirit]>] <[Dwarven Spirit]>|r novamente. Fale com ele para entregar a missão e obter a continuação
-    .turnin 84319 >>Entregue Oh No Ye Don't
-    .accept 84330 >>Aceite Um Tiquinho de Necromancia
+    .turnin 84319 >> Entregue Oh No Ye Don't
+    .accept 84330 >> Aceite Um Tiquinho de Necromancia
 step
     >>Procure um grupo para Stratholme (não-mortos)
     >>Mate |cRXP_ENEMY_Malaki, o Pálido|r, um dos chefes no lado não-morto da masmorra e saqueie |T134415:0|t[Necrotic Pedra Rúnica]
@@ -2231,12 +2231,12 @@ step
 step
     .goto Eastern Plaguelands,22.7,86.1
     >>Volte para o Cemitério, procure o |cRXP_FRIENDLY_Cadáver Anão em Decomposição|r. Interaja com ele para entregar a missão
-    .turnin 84330 >>Entregue Um Tiquinho de Necromancia
+    .turnin 84330 >> Entregue Um Tiquinho de Necromancia
 step
     >>Aceite a missão de continuação do cadáver. É uma entrega instantânea que ensinará como gravar |T236265:0|t[|cRXP_FRIENDLY_Escudo de Retidão|r]
     .goto Eastern Plaguelands,22.7,86.1
-    .accept 84332 >>Aceite A Gratidão de Thane
-    .turnin 84332 >>Entregue A Gratidão de Thane
+    .accept 84332 >> Aceite A Gratidão de Thane
+    .turnin 84332 >> Entregue A Gratidão de Thane
 
 ]])
 
@@ -2251,17 +2251,17 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Western Plaguelands >>Vá para as Terras Pestilentas Ocidentais
+    .zone Western Plaguelands >> Vá para as Terras Pestilentas Ocidentais
 step
     .goto Western Plaguelands,44.6,46.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Cavaleira Caída|r
-    .gossip 227519,1 >>Siga seu diálogo
+    .gossip 227519,1 >> Siga seu diálogo
     .target Fallen Knight
 --Not entirely sure if you even need to talk to him or if you do how deep the dialogue is
 step
     .goto Western Plaguelands,47.5,50.4
     >>Entre no celeiro ao lado da |cRXP_FRIENDLY_Cavaleira Caída|r e |Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Escudeiro Cuteberto|r
-    .accept 83808 >>Aceite As correntes do coração
+    .accept 83808 >> Aceite As correntes do coração
     .target Squire Cuthbert
 step
     .goto Western Plaguelands,47.5,50.4
@@ -2270,8 +2270,8 @@ step
     .complete 83808,1
 step
     >>Volte para o celeiro e |Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Escudeiro Cuteberto|r
-    .turnin 83808 >>Entregue As correntes do coração
-    .accept 83935 >>Aceite Abrindo o caminho
+    .turnin 83808 >> Entregue As correntes do coração
+    .accept 83935 >> Aceite Abrindo o caminho
     .target Squire Cuthbert
 step
     .goto Western Plaguelands,45.7,53.9
@@ -2285,8 +2285,8 @@ step
 step
     .goto Western Plaguelands,47.5,50.4
     >>Volte para o celeiro e |Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Escudeiro Cuteberto|r
-    .turnin 83935 >>Entregue Abrindo o caminho
-    .accept 83822,1 >>Aceite O cavaleiro tombado
+    .turnin 83935 >> Entregue Abrindo o caminho
+    .accept 83822,1 >> Aceite O cavaleiro tombado
     >>|cRXP_WARN_isto é uma missão de escolta|r
     .target Squire Cuthbert
 step
@@ -2296,8 +2296,8 @@ step
 step
     .goto Western Plaguelands,44.6,46.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Escudeiro Cuteberto|r
-    .turnin 83822 >>Entregue O cavaleiro tombado
-    .accept 83936 >>Aceite A missão de Dalton
+    .turnin 83822 >> Entregue O cavaleiro tombado
+    .accept 83936 >> Aceite A missão de Dalton
     .target Squire Cuthbert
 step
     .goto Western Plaguelands,44.6,46.6
@@ -2308,7 +2308,7 @@ step
     .goto Western Plaguelands,44.6,46.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Escudeiro Cuteberto|r e complete seu diálogo. Ao completar esta missão, você aprenderá a inscrever |T236260:0|t[|cRXP_FRIENDLY_Vingança Íntegra|r]
     >>Você também receberá |T237377:0|t[|cFF0070FFDalton's Chifre|r] que você precisará para desbloquear a runa de |T252188:0|t[|cRXP_FRIENDLY_Choque e Admiração|r]
-    .turnin 83936 >>Entregue A missão de Dalton
+    .turnin 83936 >> Entregue A missão de Dalton
     .target Squire Cuthbert
 ]])
 
@@ -2327,21 +2327,21 @@ step
 step
     .goto Eastern Plaguelands,78.6,47.6
     >>|cRXP_WARN_Use o|r |T237377:0|t[|cFF0070FFDalton's Chifre|r] |cRXP_WARN_para invocar|r |cRXP_FRIENDLY_Escudeiro Cuteberto|r |cRXP_WARN_e mate inimigos até que ele suba de nível. Quando isso acontecer, ele lhe dará uma missão gratuita de entrega|r
-    .accept 83823 >>Aceite Lesson in Violence
-    .turnin 83823 >>Entregue Lesson in Violence
+    .accept 83823 >> Aceite Lesson in Violence
+    .turnin 83823 >> Entregue Lesson in Violence
     .use 226122
 step
     .goto Eastern Plaguelands,78.6,47.6
     >>|cRXP_WARN_Use o|r |T237377:0|t[|cFF0070FFDalton's Chifre|r] |cRXP_WARN_para invocar|r |cRXP_FRIENDLY_Escudeiro Cuteberto|r |cRXP_WARN_e continue matando inimigos até que ele suba de nível novamente. Quando isso acontecer, ele lhe dará outra missão gratuita de entrega e outra missão para encontrar um lich chamado|r |cRXP_ENEMY_Arkonos the Amaldiçoado|r
-    .accept 84008 >>Aceite Lesson in Graça
-    .turnin 84008 >>Entregue Lesson in Graça
-    .accept 84017 >>Aceite Hora de matar
+    .accept 84008 >> Aceite Lesson in Graça
+    .turnin 84008 >> Entregue Lesson in Graça
+    .accept 84017 >> Aceite Hora de matar
     .use 226523
 step
     .goto Eastern Plaguelands,78.6,47.6
     >>|cRXP_WARN_Vá para o Noxious Glade, uma área apenas ao norte da capela Esperança da Luz. Quando você chegar lá, convoque seu escudeiro novamente. A missão para encontrar Arkonos deve ser completada e você receberá outra missão, aceite-a|r
-    .turnin 84017 >>Entregue Hora de matar
-    .accept 84125 >>Aceite Ao alcance da mão
+    .turnin 84017 >> Entregue Hora de matar
+    .accept 84125 >> Aceite Ao alcance da mão
     .use 226545
 step
     .goto Eastern Plaguelands,83.7,41.9
@@ -2351,8 +2351,8 @@ step
     .mob Dread Weaver
 step
     >>Usar o |T237377:0|t[|cFF0070FFDalton's Chifre|r] para convocar |cRXP_FRIENDLY_Escolta Escudeiro Cuteberto|r se você o perdeu. Fale com ele
-    .turnin 84125 >>Entregue Ao alcance da mão
-    .accept 84126 >>Aceite Encerre a luta
+    .turnin 84125 >> Entregue Ao alcance da mão
+    .accept 84126 >> Aceite Encerre a luta
     .use 226122
     .target Squire Cuthbert
 step
@@ -2363,10 +2363,10 @@ step
 step
     >>Usar o |T237377:0|t[|cFF0070FFDalton's Chifre|r] para convocar |cRXP_FRIENDLY_Escolta Escudeiro Cuteberto|r se você o perdeu. Fale com ele
     >>Completar esta missão vai treiná-lo em como gravar |T252188:0|t[Choque e Admiração] e também dar-lhe |T133745:0|t[|cRXP_FRIENDLY_Testament of Ira Vingativa|r] que vai ensiná-lo |T135875:0|t[Ira Vingativa]
-    .turnin 84126 >>Entregue Encerre a luta
+    .turnin 84126 >> Entregue Encerre a luta
     .use 226122
     .target Squire Cuthbert
 step
-    .train 407788 >>Usar o |T133745:0|t[|cRXP_FRIENDLY_Testament of Ira Vingativa|r] para treinar |T135875:0|t[Ira Vingativa]
+    .train 407788 >> Usar o |T133745:0|t[|cRXP_FRIENDLY_Testament of Ira Vingativa|r] para treinar |T135875:0|t[Ira Vingativa]
     .use 226399
 ]])

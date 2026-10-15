@@ -457,8 +457,8 @@ step
     .zone The Barrens >>Viaje para os Sertões
 step
     .train 403932,1
-    >>|cRXP_WARN_Vá ao Altar de Espinhos|r. Use |T136126:0|t[Conversão de Vida] até estar quase morrendo. Então use |T136168:0|t[Funil de Vida] no seu pet para morrer e obter |T134419:0|t[|cRXP_FRIENDLY_Rune of Canalizando|r]
-    *|cRXP_WARN_você será revivido imediatamente ao morrer|r
+    >>|cRXP_WARN_Vá até o Altar de Espinhos|r. Lance |T136126:0|t[Conversão de Vida] até ficar quase sem vida. Depois, lance |T136168:0|t[Funil de Vida] no seu ajudante para morrer e obter |T134419:0|t[|cRXP_FRIENDLY_Runa de Canalização|r]
+    *|cRXP_WARN_Você será ressuscitado imediatamente após morrer|r
     .goto The Barrens,58.2,26.7
     .cast 1454
     .cast 735
@@ -466,7 +466,7 @@ step
 step
     .use 208750
     .itemcount 208750,1
-    .train 403932 >>|cRXP_WARN_use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Canalização|r] |cRXP_WARN_para treinar|r |T136168:0|t[Mestre Canalizador]
+    .train 403932 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Canalização|r] |cRXP_WARN_para aprender|r |T136168:0|t[Mestre Canalizador]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -489,7 +489,7 @@ step
 step
     .use 208750
     .itemcount 208750,1
-    .train 403932 >>|cRXP_WARN_use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Canalização|r] |cRXP_WARN_para treinar|r |T136168:0|t[Mestre Canalizador]
+    .train 403932 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Canalização|r] |cRXP_WARN_para aprender|r |T136168:0|t[Mestre Canalizador]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -691,7 +691,7 @@ step
     +|cRXP_WARN_Você deve estar no mínimo no nível 30 antes de poder adquirir a|r |T133738:0|t[Grimório de Sinergia] |cRXP_WARN_runa|r
     .xp >30,1
 step
-    .train 403938 >>|cRXP_WARN_Você deve primeiro adquirir a runa de|r |T237558:0|t[Metamorfose] |cRXP_WARN_antes de adquirir a|r |T133738:0|t[Grimório de Sinergia] |cRXP_WARN_runa|r
+    .train 403938 >> |cRXP_WARN_Você deve primeiro adquirir a runa de|r |T237558:0|t[Metamorfose] |cRXP_WARN_antes de adquirir a|r |T133738:0|t[Grimório de Sinergia] |cRXP_WARN_runa|r
 step
     #optional
     .train 426445,1
@@ -706,34 +706,34 @@ step
     .goto The Barrens,49.271,57.239
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raszel Ander|r
     >>|cRXP_WARN_Você deve estar em|r |T237558:0|t[Metamorfose] |cRXP_WARN_para ver|r |cRXP_FRIENDLY_Raszel Ander|r
-    .accept 78994 >>Aceite Uma Base Sólida
+    .accept 78994 >> Aceite Uma Base Sólida
     .target Raszel Ander
 step << Alliance
     .train 426445,1
     .isOnQuest 78994
     .goto The Barrens,62.05,39.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Wiley|r
-    .home >>Defina sua Pedra de Retorno em Ratchet
+    .home >> Defina sua Pedra de Retorno em Ratchet
     .target Innkeeper Wiley
 step << Horde
     .train 426445,1
     .isOnQuest 78994
     .goto The Barrens,45.58,59.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Byula <Antigo Estalajadeiro>|r
-    .home >>Defina sua Pedra de Regresso em Camp Taurajo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Byula|r
+    .home >> Defina sua Pedra de Regresso em Camp Taurajo
     .target Innkeeper Byula
 step << Alliance
     .train 426445,1
     .isOnQuest 78994
     .goto The Barrens,63.084,37.163
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bragok|r
-    .fly Azshara >>Voe para Azshara
+    .fly Azshara >> Voe para Azshara
     .target Bragok
 step << Horde
     .train 426445,1
     .isOnQuest 78994
     .goto The Barrens,44.45,59.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Omusa|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Omusa Chifre Troante|r
     .fly Splintertree Post >>Voe para Posto Avançado de Machado
     .target Omusa Thunderhorn
 step
@@ -742,13 +742,13 @@ step
     .isOnQuest 78994
     .goto Ashenvale,88.82,41.52
     >>|cRXP_WARN_Viaje para a localização da seta em Vale Gris|r
-    .cast 126 >>|cRXP_WARN_Lance|r |T136155:0|t[Olho de Kilrogg] |cRXP_WARN_e entre em Bough Sombra com isso (a área com todos os elites de nível 60+) e procure por uma árvore |cRXP_PICK_Bough of Sombras|r. Pode haver múltiplos pontos de aparição em todo Bough Sombra, e idealmente você quer encontrar um que não tenha muitos elites perto dele para que você possa saqueá-lo|r
+    .cast 126 >> |cRXP_WARN_Lance|r |T136155:0|t[Olho de Kilrogg] |cRXP_WARN_e entre em Bough Sombra com isso (a área com todos os elites de nível 60+) e procure por uma árvore |cRXP_PICK_Bough of Sombras|r. Pode haver múltiplos pontos de aparição em todo Bough Sombra, e idealmente você quer encontrar um que não tenha muitos elites perto dele para que você possa saqueá-lo|r
 step
     .train 426445,1
     .isOnQuest 78994
     #completewith next
     .goto Ashenvale,88.82,41.52
-    .cast 440505 >>|cRXP_WARN_Use a|r |T236874:0|t[Poção de Invisibilidade] |cRXP_WARN_e procure por uma das |cRXP_PICK_Bough of Sombras|r árvores em todo Bough Sombra. A área tem muitos elites de nível 60+ patrulhando|r
+    .cast 440505 >> |cRXP_WARN_Use a|r |T236874:0|t[Poção de Invisibilidade] |cRXP_WARN_e procure por uma das |cRXP_PICK_Bough of Sombras|r árvores em todo Bough Sombra. A área tem muitos elites de nível 60+ patrulhando|r
     .use 217693
 step
     .train 426445,1
@@ -762,16 +762,16 @@ step
     #completewith next
     .train 426445,1
     .isOnQuest 78994
-    .hs >>Use sua Pedra de Regresso para ir a Vila Catraca << Alliance
-    .hs >>Use sua Pedra de Retorno para ir a Camp Taurajo << Horde
+    .hs >> Use sua Pedra de Regresso para ir a Vila Catraca << Alliance
+    .hs >> Use a Pedra de Regresso para voltar ao Acampamento Taurajo << Horde
     .zoneskip The Barrens
 step
     .train 426445,1
     .goto The Barrens,49.271,57.239
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raszel Ander|r
     >>|cRXP_WARN_Você deve estar em|r |T237558:0|t[Metamorfose] |cRXP_WARN_para ver|r |cRXP_FRIENDLY_Raszel Ander|r
-    .turnin 78994 >>Entregue Uma Base Sólida
-    .accept 78914 >>Aceite Receptáculo de Alma
+    .turnin 78994 >> Entregue Uma Base Sólida
+    .accept 78914 >> Aceite Receptáculo de Alma
     .target Raszel Ander
 step
     .train 426445,1
@@ -784,19 +784,19 @@ step
 step
     #completewith next
     .train 426445,1
-    .zone Desolace >>Viaje para a Desolação
+    .zone Desolace >> Viaje para a Desolação
 step
     .train 426445,1
     .goto Desolace,51.171,82.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raszel Ander|r
     >>|cRXP_WARN_Você deve estar em|r |T237558:0|t[Metamorfose] |cRXP_WARN_para ver|r |cRXP_FRIENDLY_Raszel Ander|r
-    .turnin 78914 >>Entregue Receptáculo de Alma
-    .accept 79298 >>Aceite Destino Tentador
+    .turnin 78914 >> Entregue Receptáculo de Alma
+    .accept 79298 >> Aceite Destino Tentador
     .target Raszel Ander
 step
     .train 426445,1
     .goto Desolace,51.171,82.425
-    .gossip 215850,1 >>Converse com |cRXP_FRIENDLY_Raszel Ander|r para começar o ritual
+    .gossip 215850,1 >> Converse com |cRXP_FRIENDLY_Raszel Ander|r para começar o ritual
     .timer 14,RP de Destino Tentador
     .skipgossip
 step
@@ -812,10 +812,10 @@ step
     .goto Desolace,51.171,82.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Raszel Ander|r
     >>|cRXP_WARN_Você deve estar em|r |T237558:0|t[Metamorfose] |cRXP_WARN_para ver|r |cRXP_FRIENDLY_Raszel Ander|r
-    .turnin 79298 >>Virar in Destino tentador
+    .turnin 79298 >> Virar in Destino tentador
     .target Raszel Ander
 step
-    .train 426445 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Sinergia|r] |cRXP_WARN_para treinar|r |T133738:0|t[Grimório de Sinergia]
+    .train 426445 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Sinergia|r] |cRXP_WARN_para treinar|r |T133738:0|t[Grimório de Sinergia]
     .use 213090
 ]])
 
@@ -858,7 +858,7 @@ step << Warlock
     .collect 208750,1 -- Rune of Channeling (1)
     .train 403932,1
 step << Warlock
-    .train 403932 >>|cRXP_WARN_use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Canalização|r] |cRXP_WARN_para treinar|r |T136168:0|t[Mestre Canalizador]
+    .train 403932 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Canalização|r] |cRXP_WARN_para aprender|r |T136168:0|t[Mestre Canalizador]
     .use 208750
     .itemcount 208750,1
 ]])
@@ -882,7 +882,7 @@ step << Warlock
     .mob Dark Strand Fanatic
     .train 403932,1
 step << Warlock
-    .train 403932 >>|cRXP_WARN_use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Canalização|r] |cRXP_WARN_para treinar|r |T136168:0|t[Mestre Canalizador]
+    .train 403932 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Canalização|r] |cRXP_WARN_para aprender|r |T136168:0|t[Mestre Canalizador]
     .use 208750
     .itemcount 208750,1
 ]])
@@ -1009,12 +1009,12 @@ step << Warlock
     .train 416009,1
 step << Warlock
     #completewith next
-    .zone Stormwind City >>Vá para Ventobravo
+    .zone Stormwind City >> Vá para Ventobravo
     .train 416009,1
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >>Vá para The Slaughtered Lamb e desça
+    .goto StormwindClassic,27.2,78.1,15 >> Vá para The Slaughtered Lamb e desça
     .train 416009,1
 step << Warlock
     .goto StormwindClassic,25.25,78.59
@@ -1073,12 +1073,12 @@ step << Warlock
     .train 425477,1
 step << Warlock
     #completewith next
-    .zone Stormwind City >>Vá para Ventobravo
+    .zone Stormwind City >> Vá para Ventobravo
     .train 425477,1
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >>Vá para The Slaughtered Lamb e desça
+    .goto StormwindClassic,27.2,78.1,15 >> Vá para The Slaughtered Lamb e desça
     .train 425477,1
 step << Warlock
     #completewith next
@@ -1087,12 +1087,12 @@ step << Warlock
     .goto StormwindClassic,26.3,79.5,18,0
     .goto StormwindClassic,25.154,77.406
     >>Viaje até o subsolo de O Cordeiro Degolado
-    .cast 418065 >>|cRXP_WARN_Use o|r |T133733:0|t[|cRXP_LOOT_Tomo Ominoso|r] |cRXP_WARN_para evocar|r |cRXP_ENEMY_Soboz|r
+    .cast 418065 >> |cRXP_WARN_Use o|r |T133733:0|t[|cRXP_LOOT_Tomo Ominoso|r] |cRXP_WARN_para evocar|r |cRXP_ENEMY_Soboz|r
     .use 204905
     .train 425477,1
 step << Warlock
     .goto StormwindClassic,25.154,77.406
-    .use 204905 >>Abate |cRXP_ENEMY_Soboz|r. Saque-o para a |T134419:0|t[|cRXP_FRIENDLY_Runa de Graça|r]
+    .use 204905 >> Abate |cRXP_ENEMY_Soboz|r. Saque-o para a |T134419:0|t[|cRXP_FRIENDLY_Runa de Graça|r]
     .collect 204912,1 -- Rune of Grace (1)
     .mob Soboz
     .train 425477,1
@@ -1143,12 +1143,12 @@ step << Warlock
     .train 425477,1
 step << Warlock
     .goto Dun Morogh,42.23,35.40
-    .cast 418065 >>|cRXP_WARN_Use o|r |T133733:0|t[|cRXP_LOOT_Tomo Ominoso|r] |cRXP_WARN_para evocar|r |cRXP_ENEMY_Soboz|r
+    .cast 418065 >> |cRXP_WARN_Use o|r |T133733:0|t[|cRXP_LOOT_Tomo Ominoso|r] |cRXP_WARN_para evocar|r |cRXP_ENEMY_Soboz|r
     .use 208139
     .train 425477,1
 step << Warlock
     .goto Dun Morogh,42.23,35.40
-    .use 204905 >>Abate |cRXP_ENEMY_Soboz|r. Saque-o para a |T134419:0|t[|cRXP_FRIENDLY_Runa de Graça|r]
+    .use 204905 >> Abate |cRXP_ENEMY_Soboz|r. Saque-o para a |T134419:0|t[|cRXP_FRIENDLY_Runa de Graça|r]
     .collect 204912,1 -- Rune of Grace (1)
     .mob Soboz
     .train 425477,1
@@ -1239,11 +1239,11 @@ step
     +|cRXP_WARN_Recomenda-se que você encontre membros adicionais do grupo para adquirir o|r |T134419:0|t[|cRXP_LOOT_Runa de Invocação|r] |cRXP_WARN_conforme exige matar élites em Stromgarde Keep|r
 step
     .train 426443,1
-    .zone Arathi Highlands >>Vá para Planalto Arathi
+    .zone Arathi Highlands >> Vá para Planalto Arathi
 step
     .train 426443,1
     #completewith next
-    .subzone 324 >>Vá para Stromgarde Keep
+    .subzone 324 >> Vá para Stromgarde Keep
 step
     #label SyndicateConjuror
     .train 426443,1
@@ -1260,12 +1260,12 @@ step
 step
     #completewith next
     .train 426443,1
-    .goto Arathi Highlands,29.292,62.283,10 >>|cRXP_WARN_Entre na grande casa no nível inferior de Stromgarde Keep, e suba para o 2º andar|r
+    .goto Arathi Highlands,29.292,62.283,10 >> |cRXP_WARN_Entre na grande casa no nível inferior de Stromgarde Keep, e suba para o 2º andar|r
 step
     #completewith next
     .train 426443,1
     .goto Arathi Highlands,29.077,63.079
-    .cast 434994 >>|cRXP_WARN_Use o|r |T348282:0|t[|cRXP_LOOT_Conjuror's Pendants|r] |cRXP_WARN_nas escadas ao lado do|r |cRXP_PICK_Void Prisma|r |cRXP_WARN_flutuante para invocar o elite de nível 36 |cRXP_ENEMY_Perscrutador do Caos|r
+    .cast 434994 >> |cRXP_WARN_Use o|r |T348282:0|t[|cRXP_LOOT_Conjuror's Pendants|r] |cRXP_WARN_nas escadas ao lado do|r |cRXP_PICK_Void Prisma|r |cRXP_WARN_flutuante para invocar o elite de nível 36 |cRXP_ENEMY_Perscrutador do Caos|r
     .use 213573
 step
     .train 426443,1
@@ -1274,7 +1274,7 @@ step
     .collect 213098,1
     .mob Void Seeker
 step
-    .train 426443 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_LOOT_Runa de Invocação|r] |cRXP_WARN_para treinar|r |T136133:0|t[Invocação]
+    .train 426443 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_LOOT_Runa de Invocação|r] |cRXP_WARN_para treinar|r |T136133:0|t[Invocação]
     .use 213098
 ]])
 
@@ -1359,12 +1359,12 @@ step
     .train 426467,1
     .train 19028,3 --Soul Link
     .goto Desolace,81.2,79.7
-    .cast 434869 >>|cRXP_WARN_Clique no Altar para invocar|r |cRXP_ENEMY_[[Seductress Ceeyna] <[Mistress of Desire]>] <[Mistress of Desire]>|r |cRXP_WARN_mas certifique-se de usar|r |T136121:0|t[Proteção contra Sombra]|cRXP_WARN_,|r |T136190:0|t[Sacrificar] |cRXP_WARN_e|r |T136160:0|t[Vínculo Anímico]|r |cRXP_WARN_antecipadamente|r |cFFFF0000pois você receberá muito dano durante o canal e não pode ser curado|r
+    .cast 434869 >> |cRXP_WARN_Clique no Altar para invocar|r |cRXP_ENEMY_[[Seductress Ceeyna] <[Mistress of Desire]>] <[Mistress of Desire]>|r |cRXP_WARN_mas certifique-se de usar|r |T136121:0|t[Proteção contra Sombra]|cRXP_WARN_,|r |T136190:0|t[Sacrificar] |cRXP_WARN_e|r |T136160:0|t[Vínculo Anímico]|r |cRXP_WARN_antecipadamente|r |cFFFF0000pois você receberá muito dano durante o canal e não pode ser curado|r
 step
     .train 426467,1
     .train 19028,1 --Soul Link
     .goto Desolace,81.2,79.7
-    .cast 434869 >>|cRXP_WARN_Clique no Altar para invocar|r |cRXP_ENEMY_[[Seductress Ceeyna] <[Mistress of Desire]>] <[Mistress of Desire]>|r |cRXP_WARN_mas certifique-se de usar|r |T136121:0|t[Proteção contra Sombra] |cRXP_WARN_e|r |T136190:0|t[Sacrificar] |cRXP_WARN_antecipadamente|r |cFFFF0000pois você receberá muito dano durante o canal e não pode ser curado|r
+    .cast 434869 >> |cRXP_WARN_Clique no Altar para invocar|r |cRXP_ENEMY_[[Seductress Ceeyna] <[Mistress of Desire]>] <[Mistress of Desire]>|r |cRXP_WARN_mas certifique-se de usar|r |T136121:0|t[Proteção contra Sombra] |cRXP_WARN_e|r |T136190:0|t[Sacrificar] |cRXP_WARN_antecipadamente|r |cFFFF0000pois você receberá muito dano durante o canal e não pode ser curado|r
 step
     .train 426467,1
     .goto Desolace,81.2,79.7
@@ -1386,9 +1386,9 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Ashenvale >>Viaje para Vale Gris
+    .zone Ashenvale >> Viaje para Vale Gris
 step
-    .goto Ashenvale,93.5,38.0,100 >>Dirija-se para a área de Incursão Pesadelo de Vale Gris marcada no seu mapa
+    .goto Ashenvale,93.5,38.0,100 >> Dirija-se para a área de Incursão Pesadelo de Vale Gris marcada no seu mapa
     .train 431758,1
 step
     >>Abata os demônios fora do portal até obter todos os três itens listados abaixo
@@ -1400,7 +1400,7 @@ step
     .mob Dreamhunter Hound
     .train 431758,1
 step
-    .cast 447537 >>Clique direito em qualquer um dos itens da sua mochila para combiná-los e receba |T134419:0|t[|cRXP_FRIENDLY_Runa de Aura de Imolação|r]
+    .cast 447537 >> Clique direito em qualquer um dos itens da sua mochila para combiná-los e receba |T134419:0|t[|cRXP_FRIENDLY_Runa de Aura de Imolação|r]
     .collect 220618,1 --Rune of Immolation Aura
     .use 221972
     .train 431758,1
@@ -1619,7 +1619,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Feralas >>Viaje para Feralas
+    .zone Feralas >> Viaje para Feralas
 step
     .goto Feralas,69.6,43.3
     >>Dirija-se para o local marcado oeste de Camp Mojache. Procure um |cRXP_ENEMY_Xamã Temível Totem Adoecido Morto|r deitado ao lado de uma árvore. Próximo ao cadáver você encontrará um |cRXP_PICK_Grimtotem Baú|r, saqueie-o para |T133291:0|t|cRXP_LOOT_Grimtotem Colar|r
@@ -1664,7 +1664,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Burning Steppes >>Vá para Estepes Ardentes
+    .zone Burning Steppes >> Vá para Estepes Ardentes
 step
     #loop
     .goto Burning Steppes,93.2,59.0,55,0
@@ -1682,7 +1682,7 @@ step
     .skipgossip
 step
     #completewith next
-    .zone Blasted Lands >>Viaje para as Terras Devastadas
+    .zone Blasted Lands >> Viaje para as Terras Devastadas
 step
     #loop
     .goto Blasted Lands,43.6,25.6,50,0
@@ -1692,14 +1692,14 @@ step
     .goto Blasted Lands,60.6,46.2,50,0
     .goto Blasted Lands,62.0,39.2,50,0
     .goto Blasted Lands,56.2,36.8,50,0
-    .use 224806 >>|cRXP_WARN_Use o|r |T135222:0|t[|cRXP_LOOT_Sintonizador de Portal da Legião|r] |cRXP_WARN_em uma |cRXP_PICK_Cicatriz Vil|r que a transformará em um|r |cRXP_PICK_Otherwordly Portal|r
+    .use 224806 >> |cRXP_WARN_Use o|r |T135222:0|t[|cRXP_LOOT_Sintonizador de Portal da Legião|r] |cRXP_WARN_em uma |cRXP_PICK_Cicatriz Vil|r que a transformará em um|r |cRXP_PICK_Otherwordly Portal|r
     >>|cRXP_WARN_Fale com o |cRXP_PICK_Otherwordly Portal|r e envie seu |cRXP_FRIENDLY_Diabrete Explorador|r por ele e aguarde que retorne com um|r |T134429:0|t[|cRXP_LOOT_Sintonizador de Sintonizador de Portais|r]
     >>|cRXP_WARN_Você pode ter que repetir isto algumas vezes até que retorne com o|r |T134429:0|t[|cRXP_LOOT_Sintonizador de Sintonizador de Portais|r]
     .collect 224912,1
     .train 440922,1
     .skipgossip
 step
-    .use 224912 >>|cRXP_WARN_Use o|r |T134429:0|t[|cRXP_LOOT_Sintonizador de Sintonizador de Portais|r] |cRXP_WARN_para transformá-lo em um|r |T135224:0|t[|cRXP_LOOT_Sintonizador de Portais Sobrecarregado|r]
+    .use 224912 >> |cRXP_WARN_Use o|r |T134429:0|t[|cRXP_LOOT_Sintonizador de Sintonizador de Portais|r] |cRXP_WARN_para transformá-lo em um|r |T135224:0|t[|cRXP_LOOT_Sintonizador de Portais Sobrecarregado|r]
     .collect 224893,1
     .train 440922,1
 step
@@ -1711,7 +1711,7 @@ step
     .goto Blasted Lands,60.6,46.2,50,0
     .goto Blasted Lands,62.0,39.2,50,0
     .goto Blasted Lands,56.2,36.8,50,0
-    .use 224893 >>|cRXP_WARN_Use o|r |T135224:0|t[|cRXP_LOOT_Sintonizador de Portais Sobrecarregado|r] |cRXP_WARN_em uma |cRXP_PICK_Cicatriz Vil|r que a tornará vermelha|r
+    .use 224893 >> |cRXP_WARN_Use o|r |T135224:0|t[|cRXP_LOOT_Sintonizador de Portais Sobrecarregado|r] |cRXP_WARN_em uma |cRXP_PICK_Cicatriz Vil|r que a tornará vermelha|r
     >>|cRXP_WARN_Fale com ela e envie seu |cRXP_FRIENDLY_Diabrete Explorador|r por ela e aguarde que retorne com a|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Dizimação|r]
     .collect 225686,1
     .train 440922,1
@@ -1731,7 +1731,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Western Plaguelands >>Vá para Terras Pestilentas Ocidentais
+    .zone Western Plaguelands >> Vá para Terras Pestilentas Ocidentais
 step
     #loop
     .goto Western Plaguelands,50.6,77.6
@@ -1763,7 +1763,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Blasted Lands >>Viaje para as Terras Devastadas
+    .zone Blasted Lands >> Viaje para as Terras Devastadas
     >>|cRXP_WARN_Certifique-se de que tem as seguintes habilidades treinadas, e considere trazer um curador pois você precisará matar uma Élite de nível 56|r
     >>|T134131:0|t[Pedra Mágica Maior]
     >>|T136121:0|t[Proteção contra Sombra]

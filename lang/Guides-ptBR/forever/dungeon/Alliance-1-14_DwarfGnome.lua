@@ -15,7 +15,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor Dwarf/Gnome
 
 step
-#include RestedXP Forever Guide (A)\1-5 Coldridge Valley
+#include Guia Forever (A)\1-5 Coldridge Valley
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -27,11 +27,11 @@ RXPGuides.RegisterGuide([[
 #subgroup (WIP) Guia de Masmorra 1-20
 --#groupid RXP-SRGCE-A1
 #name 5-11 Dun Morogh
-#next 11-12 Elwynn (Anão/Gnomo);11-12 Missão do Andarilho do Vazio;12-14 Loch Modan (Anão/Gnomo);11-13 Loch Modan (Caçador)
+#next 11-12 Elwynn (Anão/Gnomo);11-12 Missão do Emissário do Caos;12-14 Loch Modan (Anão/Gnomo);11-13 Loch Modan (Caçador)
 #defaultfor Dwarf/Gnome
 
 step
-#include RestedXP Forever Guide (A)\5-11 Dun Morogh
+#include Guia Forever (A)\5-11 Dun Morogh
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -47,7 +47,7 @@ RXPGuides.RegisterGuide([[
 #next 12-14 Loch Modan (Anão/Gnomo)
 
 step
-#include RestedXP Forever Guide (A)\11-12 Elwynn (Dwarf/Gnome)
+#include Guia Forever (A)\11-12 Elwynn (Anão/Gnomo)
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -63,14 +63,14 @@ RXPGuides.RegisterGuide([[
 #defaultfor Gnome/Dwarf
 
 step
-#include RestedXP Forever Guide (A)\12-14 Loch Modan (Dwarf/Gnome)@LochStart-LochEnd
+#include Guia Forever (A)\12-14 Loch Modan (Anão/Gnomo)@LochStart-LochEnd
 
 --Staying Ironforge if 15. Going Stormwind to Westfall if 14 or below.
 step
     #completewith Fly2WF
     .goto 1455,67.842,42.456
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Cortarroda Rodagiros|r
-    .vendor 5175 >>|cRXP_BUY_Compre uma|r |T133024:0|t[Tubo de Bronze] |cRXP_BUY_dela se estiver disponível|r
+    .vendor 5175 >> |cRXP_BUY_Compre uma|r |T133024:0|t[Tubo de Bronze] |cRXP_BUY_dela se estiver disponível|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
     .target Gearcutter Cogspinner
@@ -89,13 +89,13 @@ step
     #label WestfallTramEnd
     >>|cRXP_WARN_Aumente o nível de sua|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_enquanto espera o Tram para a Cidade de Ventobravo, se necessário|r << Rogue/Warrior/Paladin
     >>|cRXP_WARN_Você precisará de sua|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_estar em nível 80 para uma missão do nível 24|r << Rogue !Dwarf
-    .zone Stormwind City >>Pegue o Deeprun Tram até a Cidade de Ventobravo
+    .zone Stormwind City >> Pegue o Deeprun Tram até a Cidade de Ventobravo
     .xp >15,1
 step
     #completewith Fly2WF
     .goto 1453/0,638.8,-8341.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Billibub Rodagiros|r
-    .vendor 5519 >>|cRXP_BUY_Compre uma|r |T133024:0|t[Tubo de Bronze] |cRXP_BUY_dela se estiver disponível|r
+    .vendor 5519 >> |cRXP_BUY_Compre uma|r |T133024:0|t[Tubo de Bronze] |cRXP_BUY_dela se estiver disponível|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
     .target Billibub Cogspinner
@@ -104,7 +104,7 @@ step
     #optional
     .goto 1453/0,719.67,-8550.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Baros Aleixo|r
-    .accept 399 >>Aceite Humildes Começos
+    .accept 399 >> Aceite Humildes Começos
     .target Baros Alexston
     .xp <15,1
     .zoneskip Stormwind City,1
@@ -204,5 +204,5 @@ RXPGuides.RegisterGuide([[
 #defaultfor Dwarf
 
 step
-#include RestedXP Forever Guide (A)\11-13 Loch Modan (Hunter)@NormalRouteStart-NormalRouteEnd
+#include Guia Forever (A)\11-13 Loch Modan (Caçador)@NormalRouteStart-NormalRouteEnd
 ]])

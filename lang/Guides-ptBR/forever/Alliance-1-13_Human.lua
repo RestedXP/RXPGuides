@@ -29,18 +29,18 @@ step
     #softcore << Warlock
     #optional
     #completewith Within
-    .destroy 6948 >>Exclua a |T134414:0|t[Pedra de Regresso] da mochila, pois não é mais necessário
+    .destroy 6948 >> Exclua a |T134414:0|t[Pedra de Regresso] da mochila, pois não é mais necessário
 step
     .goto 1429/0,-136.48,-8933.47
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Cabo Vilém|r
-    .accept 783 >>Aceite Uma Ameaça Interior
+    .accept 783 >> Aceite Uma Ameaça Interior
     .target Deputy Willem
 step << Warrior
     .goto 1429/0,-75.05,-8872.36,35,0
     >>Mate |cRXP_ENEMY_Lobos Jovens|r até ter 10c+ em itens de lixo para vender
     >>|cRXP_WARN_Você irá treinar|r |T132333:0|t [Grito de Guerra] |cRXP_WARN_que aumenta a velocidade de progressão nos níveis iniciais|r
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Irmão Dânio|r
-    .vendor >>|cRXP_WARN_Venda lixo|r
+    .vendor >> |cRXP_WARN_Venda lixo|r
     .target +Brother Danil
     .goto 1429/0,-112.74,-8901.66
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Lane Beshere|r no andar de baixo
@@ -52,20 +52,20 @@ step
     #label Within
     .goto 1429/0,-162.62,-8902.59
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Major Belmonte|r
-    .turnin 783 >>Entregue Uma Ameaça Interior
-    .accept 7 >>Aceite Limpeza do Acampamento Kobold
+    .turnin 783 >> Entregue Uma Ameaça Interior
+    .accept 7 >> Aceite Limpeza do Acampamento Kobold
     .target Marshal McBride
 step
     .goto 1429/0,-136.52,-8933.53
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Cabo Vilém|r
-    .accept 5261 >>Aceite Enzo Peleteiro
+    .accept 5261 >> Aceite Enzo Peleteiro
     .target Deputy Willem
 step
     #label EaganWolves
     .goto 1429/0,-163.24,-8869.26
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Enzo Peleteiro|r
-    .turnin 5261 >>Entregue em Enzo Peleteiro
-    .accept 33 >>Aceite Lobos Além da Fronteira
+    .turnin 5261 >> Entregue em Enzo Peleteiro
+    .accept 33 >> Aceite Lobos Além da Fronteira
     .target Eagan Peltskinner
 step << Priest/Mage/Warlock
     #completewith next
@@ -73,7 +73,7 @@ step << Priest/Mage/Warlock
     .goto 1429/0,-112.74,-8901.66
     >>|cRXP_WARN_Assim que você tiver 50c em itens de lixo para vender|r
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Irmão Dânio|r
-    >>Lixo de Mercador
+    >>Venda os itens de lixo
     >>|cRXP_BUY_Compre 10|r |T132794:0|t [Água de Fonte Refrescante] |cRXP_BUY_com ele|r
     .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target Brother Danil
@@ -118,32 +118,32 @@ step
     .goto 1429,48.845,35.066,45,0
     .goto 1429,47.569,34.967,45,0
     >>Abate |cRXP_ENEMY_Kobold Vermins|r. Saque-os pelo |T133736:0|t[|cRXP_LOOT_Livro Roído|r]
-    .use 247834 >>|cRXP_WARN_Use o|r |T133736:0|t[|cRXP_LOOT_Livro Roído|r] |cRXP_WARN_para começar a missão|r
+    .use 247834 >> |cRXP_WARN_Use o|r |T133736:0|t[|cRXP_LOOT_Livro Roído|r] |cRXP_WARN_para começar a missão|r
     >>|cRXP_WARN_É importante entregar esta missão assim que você obtiver o|r |T133736:0|t[|cRXP_LOOT_Livro Roído|r] |cRXP_WARN_Largar|r
     .collect 247834,1,91741,1 -- Nibbled-On Book (1)
-    .accept 91741 >>Aceite Livro Roído
+    .accept 91741 >> Aceite Livro Roído
     .complete 7,1 --Kill Kobold Vermin (x10)
     .disablecheckbox
     .mob Kobold Vermin
 step
     #completewith next
     .goto 1429/0,-136.900,-8913.800,10,0
-    .goto 1429/0,-176.000,-8880.900,10 >>|cRXP_WARN_Viaje para o |cRXP_FRIENDLY_Irmão Paxeco|r em Northshire Abbey. Não se preocupe em completar |cRXP_ENEMY_Vermins|r ou |cRXP_ENEMY_Wolves|r imediatamente|r
+    .goto 1429/0,-176.000,-8880.900,10 >> |cRXP_WARN_Viaje para o |cRXP_FRIENDLY_Irmão Paxeco|r em Northshire Abbey. Não se preocupe em completar |cRXP_ENEMY_Vermins|r ou |cRXP_ENEMY_Wolves|r imediatamente|r
 step
     .goto 1429/0,-186.12,-8874.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Irmão Paxeco|r
-    .turnin 91741 >>Entregue Livro Roído
-    .accept 92124 >>Aceite Livro do Inventário
+    .turnin 91741 >> Entregue Livro Roído
+    .accept 92124 >> Aceite Livro do Inventário
     .target Brother Paxton
 step
     .goto 1429/0,-182.65,-8881.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Daniel|r
-    .turnin 92124 >>Entregue Livro do Inventário
+    .turnin 92124 >> Entregue Livro do Inventário
     .target Daniel
 step
     .goto 1429/0,-186.12,-8874.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Irmão Paxeco|r
-    .accept 91743 >>Aceite Roedores Marotos
+    .accept 91743 >> Aceite Roedores Marotos
     .target Brother Paxton
 step
     #loop
@@ -171,13 +171,13 @@ step
     #requires WolfMeatEnd
     .goto 1429/0,-163.24,-8869.26
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Enzo Peleteiro|r
-    .turnin 33,2 >>Entregue Lobos Além da Fronteira << Warrior/Paladin/Rogue
-    .turnin 33,1 >>Entregue Lobos Além da Fronteira << !Warrior !Paladin !Rogue
+    .turnin 33,2 >> Entregue Lobos Além da Fronteira << Warrior/Paladin/Rogue
+    .turnin 33,1 >> Entregue Lobos Além da Fronteira << !Warrior !Paladin !Rogue
     .target Eagan Peltskinner
 step << Priest/Mage/Warlock
     .goto 1429/0,-112.74,-8901.66
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Irmão Dânio|r
-    >>Lixo de Mercador
+    >>Venda os itens de lixo
     >>|cRXP_BUY_Compre mais 10|r |T132794:0|t [Água de Fonte Refrescante] |cRXP_BUY_com ele|r
     >>|cRXP_WARN_Certifique-se de guardar 10c ou mais para depois|r << Priest/Mage
     .collect 159,10 --Collect Refreshing Spring Water (x10)
@@ -185,7 +185,7 @@ step << Priest/Mage/Warlock
 step << !Priest !Mage !Warlock !Rogue
     .goto 1429/0,-119.86,-8898.21
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Godrico Rothgar|r
-    .vendor >>Lixo de Mercador
+    .vendor >>Venda os itens de lixo
     .target Godric Rothgar
 step << Rogue
     #season 0,1
@@ -214,28 +214,28 @@ step
     #label CleanupEnd
     .goto 1429/0,-162.62,-8902.59
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Major Belmonte|r
-    .turnin 7 >>Entregue Limpeza do Acampamento Kobold
-    .accept 15 >>Aceite Investigar a Serra do Eco
-    .accept 3100 >>Aceite Carta Simples << Human Warrior
-    .accept 3101 >>Aceite Carta Consagrada << Human Paladin
-    .accept 3102 >>Aceite Carta Criptografada << Human Rogue
-    .accept 3103 >>Aceite Carta Santificada << Human Priest
-    .accept 3104 >>Aceite Carta Glífica << Human Mage
-    .accept 3105 >>Aceite Carta Corrompida << Human Warlock
+    .turnin 7 >> Entregue Limpeza do Acampamento Kobold
+    .accept 15 >> Aceite Investigar a Serra do Eco
+    .accept 3100 >> Aceite Carta Simples << Human Warrior
+    .accept 3101 >> Aceite Carta Consagrada << Human Paladin
+    .accept 3102 >> Aceite Carta Criptografada << Human Rogue
+    .accept 3103 >> Aceite Carta Santificada << Human Priest
+    .accept 3104 >> Aceite Carta Glífica << Human Mage
+    .accept 3105 >> Aceite Carta Corrompida << Human Warlock
     .accept 92479 >>Aceite A Carta Rabiscada << Human Hunter
     .target Marshal McBride
 
 step << Warlock
     .goto 1429/0,-136.52,-8933.53
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Cabo Vilém|r do lado de fora
-    .accept 18 >>Aceite Irmandade de Ladrões
+    .accept 18 >> Aceite Irmandade de Ladrões
     .target Deputy Willem
 step << Warlock
     .goto 1429/0,-195.59,-8926.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Drusilla La Salle|r
-    .turnin 3105 >>Entregue Carta Corrompida
-    .accept 1598 >>Aceite O Tomo Roubado
-    .train 348 >>Treine |T135817:0|t[Imolação]
+    .turnin 3105 >> Entregue Carta Corrompida
+    .accept 1598 >> Aceite O Tomo Roubado
+    .train 348 >> Treine |T135817:0|t [Imolar]
     .target Drusilla La Salle
 
 
@@ -255,19 +255,19 @@ step << Warlock
     #softcore
     #completewith next
     .goto 1429,49.527,43.491,0
-    .deathskip >>Morra e reviva no Anjo da Cura
+    .deathskip >> Morra e reviva no Anjo da Cura
     >>|cRXP_WARN_Se não houver |cRXP_ENEMY_Defias|r próximos, corra de volta|r
     .target Anjo da Cura
 step << Warlock
     #season 0,1
     .goto 1429/0,-195.59,-8926.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Drusilla La Salle|r
-    .turnin 1598 >>Entregue O Tomo Roubado
+    .turnin 1598 >> Entregue O Tomo Roubado
     .target Drusilla La Salle
 step << Warlock
     #optional
     #completewith next
-    .cast 688 >>|cRXP_WARN_Lance|r |T136218:0|t [Invocar Diabrete]
+    .cast 688 >> |cRXP_WARN_Lance|r |T136218:0|t [Invocar Diabrete]
     .usespell 688
 
 step
@@ -335,27 +335,27 @@ step << !Hunter
     #completewith next
     .goto 1429/0,-119.86,-8898.21
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Godrico Rothgar|r
-    .vendor >>|cRXP_WARN_Venda lixo|r
+    .vendor >> |cRXP_WARN_Venda lixo|r
     .target Godric Rothgar
 step << Hunter
     .goto 1429/0,-112.800,-8901.601
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Irmão Dânio|r
-    .vendor >>|cRXP_BUY_Compre 2 pilhas de|r |T132382:0|t[Rough Flechas]
+    .vendor >> |cRXP_BUY_Compre 2 pilhas de|r |T132382:0|t[Rough Flechas]
     .target Brother Danil
 step
     #requires xp3
     #label Investigate
     .goto 1429/0,-162.62,-8902.59
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Major Belmonte|r
-    .turnin 15 >>Entregue Investigar a Serra do Eco
-    .accept 21 >>Aceite Escaramuça na Serra do Eco
+    .turnin 15 >> Entregue Investigar a Serra do Eco
+    .accept 21 >> Aceite Escaramuça na Serra do Eco
     .target Marshal McBride
 
 step
     .isQuestComplete 91743
     .goto 1429/0,-186.12,-8874.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Irmão Paxeco|r
-    .turnin 91743 >>Entregue Roedores Marotos
+    .turnin 91743 >> Entregue Roedores Marotos
     .accept 91745 >>Aceite Consultor de Mineração
     .target Brother Paxton
 step
@@ -381,51 +381,51 @@ step << Mage
     #season 0,1
     .goto 1429/0,-188.23,-8851.58
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Khelden Bremen|r no andar de cima
-    .turnin 3104 >>Entregue Carta Glífica
-    .trainer >>Treine suas magias de classe
+    .turnin 3104 >> Entregue Carta Glífica
+    .trainer >> Treine suas magias de classe
     .target Khelden Bremen
 step << Priest
     #optional
     #completewith next
     .goto 1429/0,-175.70,-8881.62,15,0
-    .goto 1429/0,-193.06,-8870.05,10 >>Vá em direção à |cRXP_FRIENDLY_Sacerdotisa Anetta|r no andar de baixo
+    .goto 1429/0,-193.06,-8870.05,10 >> Vá em direção à |cRXP_FRIENDLY_Sacerdotisa Anetta|r no andar de baixo
 step << Priest
     .goto 1429/0,-193.34,-8853.59
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Sacerdotisa Anetta|r no andar de baixo
-    .turnin 3103 >>Entregue Carta Santificada
-    .trainer >>Treine suas magias de classe
+    .turnin 3103 >> Entregue Carta Santificada
+    .trainer >> Treine suas magias de classe
     .target Priestess Anetta
 step << Warrior/Paladin
     #optional
     #completewith next
-    .goto 1429/0,-186.12,-8907.08,15 >>Vá em direção à |cRXP_FRIENDLY_Lane Beshere|r no andar de baixo << Warrior
-    .goto 1429/0,-186.12,-8907.08,15 >>Vá em direção ao |cRXP_FRIENDLY_Irmão Samuel|r no andar de baixo << Paladin
+    .goto 1429/0,-186.12,-8907.08,15 >> Vá em direção à |cRXP_FRIENDLY_Lane Beshere|r no andar de baixo << Warrior
+    .goto 1429/0,-186.12,-8907.08,15 >> Vá em direção ao |cRXP_FRIENDLY_Irmão Samuel|r no andar de baixo << Paladin
 step << Warrior
     #season 0,1
     .goto 1429/0,-208.40,-8918.35
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Lane Beshere|r no andar de baixo
-    .turnin 3100 >>Entregue Carta Simples
-    .trainer >>Treine suas magias de classe
+    .turnin 3100 >> Entregue Carta Simples
+    .trainer >> Treine suas magias de classe
     .target Llane Beshere
 step << Paladin
     #season 0,1
     .goto 1429/0,-215.03,-8914.58
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Irmão Samuel|r
-    .turnin 3101 >>Entregue Carta Consagrada
-    .trainer >>Treine suas magias de classe
+    .turnin 3101 >> Entregue Carta Consagrada
+    .trainer >> Treine suas magias de classe
     .target Brother Sammuel
 step
     #season 0,1 << Warrior
     .goto 1429/0,-136.52,-8933.53
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Cabo Vilém|r do lado de fora
-    .accept 18 >>Aceite Irmandade de Ladrões
+    .accept 18 >> Aceite Irmandade de Ladrões
     .target Deputy Willem
 step << Hunter
     .goto 1429/0,-242.100,-8884.200
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tordrin Sternblade::248415|r
     .target Tordrin Sternblade::248415
     .turnin 92479 >>Entregue A Carta Rabiscada
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
 step << Warlock
     .goto 1429/0,-195.59,-8926.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Drusilla La Salle|r
@@ -462,37 +462,37 @@ step << Rogue
     .goto 1429/0,-376.67,-9073.73,30,0
     .goto 1429/0,-388.47,-9001.28,30,0
     .goto 1429/0,-333.97,-9028.59,30,0
-    .xp 4 >>Farme até o nível 4
+    .xp 4 >> Farme até o nível 4
 step
     #season 0,1
     .goto 1429/0,-136.48,-8933.47
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Cabo Vilém|r
-    .turnin 18,1 >>Entregue Irmandade de Ladrões << Rogue/Warlock
-    .turnin 18,2 >>Entregue Irmandade de Ladrões << Priest
-    .turnin 18,3 >>Entregue Irmandade de Ladrões << Warrior
-    .turnin 18,4 >>Entregue Irmandade de Ladrões << Paladin
-    .turnin 18,5 >>Entregue Irmandade de Ladrões << Mage
-    .turnin 18 >>Entregue Irmandade de Ladrões << !Warrior !Priest !Mage !Rogue !Warlock !Paladin
-    .accept 3903 >>Aceite Madel Quintana
-    .accept 6 >>Aceite Recompensa por Garrick Patatenra
+    .turnin 18,1 >> Entregue Irmandade de Ladrões << Rogue/Warlock
+    .turnin 18,2 >> Entregue Irmandade de Ladrões << Priest
+    .turnin 18,3 >> Entregue Irmandade de Ladrões << Warrior
+    .turnin 18,4 >> Entregue Irmandade de Ladrões << Paladin
+    .turnin 18,5 >> Entregue Irmandade de Ladrões << Mage
+    .turnin 18 >> Entregue Irmandade de Ladrões << !Warrior !Priest !Mage !Rogue !Warlock !Paladin
+    .accept 3903 >> Aceite Madel Quintana
+    .accept 6 >> Aceite Recompensa por Garrick Patatenra
     .target Deputy Willem
 step << Paladin
     #season 0,1
     #completewith RestandR
-    .equip 16,5579 >>|cRXP_WARN_Equipe o|r |T133052:0|t [Martelo de Guerra da Milícia]
+    .equip 16,5579 >> |cRXP_WARN_Equipe o|r |T133052:0|t [Martelo de Guerra da Milícia]
     .use 5579
     .itemcount 5579,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.6
 step << Rogue
     #season 0,1
     #completewith RestandR
-    .equip 16,2224 >>Equipe o |T135641:0|t [Punhal da Milícia]
+    .equip 16,2224 >> Equipe o |T135641:0|t [Punhal da Milícia]
     .use 2224
     .itemcount 2224,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.0
 step << Warrior
     #completewith RestandR
-    .equip 16,1161 >>Equipe o |T135274:0|t [Espada Curta da Milícia]
+    .equip 16,1161 >> Equipe o |T135274:0|t [Espada Curta da Milícia]
     .use 1161
     .itemcount 1161,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.0
@@ -514,7 +514,7 @@ step
 step
     #optional
     #completewith KoboldLaborers
-    .goto 1429/0,-117.74,-8681.87,20 >>Entre na Mina da Serra do Eco
+    .goto 1429/0,-117.74,-8681.87,20 >> Entre na Mina da Serra do Eco
 step
     #completewith KoboldLaborers
     .isOnQuest 91752
@@ -579,14 +579,14 @@ step
     .goto 1429/0,-224.02,-8850.30
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Madel Quintana|r
     >>|cRXP_WARN_Pule a missão seguinte|r << !Priest !Mage
-    .turnin 3903 >>Entregue Madel Quintana
-    .accept 3904 >>Aceite Colheita da Madel << Priest/Mage
+    .turnin 3903 >> Entregue Madel Quintana
+    .accept 3904 >> Aceite Colheita da Madel << Priest/Mage
     .target Milly Osworth
 step << Rogue
     #season 0,1
     .goto 1429/0,-210.90,-8863.47
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Rufino Raposo|r
-    .turnin 3102 >>Entregue Carta Criptografada
+    .turnin 3102 >> Entregue Carta Criptografada
     .train 1784 >>Treine |T132320:0|t [Furtividade]
     .train 921 >>Treine |T133644:0|t [Bater Carteira]
     .target Jorik Kerridan
@@ -617,14 +617,14 @@ step
     .goto 1429/0,-376.67,-9073.73,30,0
     .goto 1429/0,-388.47,-9001.28,30,0
     .goto 1429/0,-333.97,-9028.59,30,0
-    .xp 5 >>Farme até o nível 5
+    .xp 5 >> Mate inimigos até atingir o nível 5
     .mob Defias Thug
     --no need for extra grinding. being level 5 and doing the kobold quest chain will get you 6 once you arrive in goldshire
 step
     #optional
     #softcore
     #completewith next
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     .target Anjo da Cura
 -- .subzoneskip 59,1
 step << Priest/Mage
@@ -636,8 +636,8 @@ step << Priest/Mage
 step
     .goto 1429/0,-136.48,-8933.47
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Cabo Vilém|r
-    .turnin 6,2 >>Entregue Recompensa por Garrick Patatenra << Warrior/Rogue/Paladin
-    .turnin 6,1 >>Entregue Recompensa por Garrick Patatenra << !Warrior !Rogue !Paladin
+    .turnin 6,2 >> Entregue Recompensa por Garrick Patatenra << Warrior/Rogue/Paladin
+    .turnin 6,1 >> Entregue Recompensa por Garrick Patatenra << !Warrior !Rogue !Paladin
     .target Deputy Willem
 step
     #optional
@@ -658,18 +658,18 @@ step
     #label RestandR
     .goto 1429/0,-162.62,-8902.59
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Major Belmonte|r no interior
-    .turnin 21,1 >>Entregue Escaramuça na Serra do Eco << Rogue
-    .turnin 21,2 >>Entregue Escaramuça na Serra do Eco << Warrior/Paladin
-    .turnin 21,3 >>Entregue Escaramuça na Serra do Eco << !Warrior !Paladin !Rogue
-    .accept 54 >>Aceite Relatório para Vila Dourada
-    .accept 96627 >>Aceite O Aventureiro
+    .turnin 21,1 >> Entregue Escaramuça na Serra do Eco << Rogue
+    .turnin 21,2 >> Entregue Escaramuça na Serra do Eco << Warrior/Paladin
+    .turnin 21,3 >> Entregue Escaramuça na Serra do Eco << !Warrior !Paladin !Rogue
+    .accept 54 >> Aceite Relatório para Vila Dourada
+    .accept 96627 >> Aceite O Aventureiro
     .target Marshal McBride
 step
     #optional
     .isQuestComplete 91743
     .goto 1429/0,-186.12,-8874.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Irmão Paxeco|r
-    .turnin 91743 >>Entregue Rascally Rodents
+    .turnin 91743 >> Entregue Rascally Rodents
     .accept 91745 >>Aceite Mineração Consultant
     .target Brother Paxton
 step
@@ -693,7 +693,7 @@ step << Priest
     #season 0,1
     .goto 1429/0,-193.34,-8853.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Anita|r dentro
-    .accept 5623 >>Aceite In Simpatia of the Luz - Missão
+    .accept 5623 >> Aceite In Simpatia of the Luz - Missão
     .target Priestess Anetta
 step
     #optional
@@ -713,7 +713,7 @@ step
 step
     #optional
     #completewith KoboldLaborers
-    .goto 1429/0,-117.74,-8681.87,20 >>Entre na Mina da Serra do Eco
+    .goto 1429/0,-117.74,-8681.87,20 >> Entre na Mina da Serra do Eco
 step
     .isOnQuest 91752
     .goto 1429/0,-172.700,-8587.601
@@ -722,7 +722,7 @@ step
     .target Shinyfinder Narf
 step
     #completewith next
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     .target Anjo da Cura
 step
     #optional
@@ -754,7 +754,7 @@ step
     .accept 91772 >>Aceite Shhh! We're Caçando Kobolds
 step
     #completewith RnR
-    .cast 1246031 >>|cRXP_WARN_Use o|r |T132995:0|t[Kobold Rastreamento Kit] |cRXP_WARN_para ver o |cRXP_PICK_Kobold Tracks|r no minimapa|r
+    .cast 1246031 >> |cRXP_WARN_Use o|r |T132995:0|t[Kobold Rastreamento Kit] |cRXP_WARN_para ver o |cRXP_PICK_Kobold Tracks|r no minimapa|r
     .use 247970
 step
     #completewith RnR
@@ -767,7 +767,7 @@ step
     #label RnR
     .goto 1429/0,-46.00,-9044.61
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Falcão Lencastre|r
-    .accept 2158 >>Aceite Descanso e Relaxamento
+    .accept 2158 >> Aceite Descanso e Relaxamento
     .target Falkhaan Isenstrider
 ]])
 
@@ -789,7 +789,7 @@ step << skip -- removing for now for camp fire buff/questline
     #season 0,1 << Rogue
     #softcore
     #completewith Goldshire
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     .target Anjo da Cura
     .subzoneskip 87
 
@@ -797,7 +797,7 @@ step
     #completewith CampQuest
     .isOnQuest 91772
     >>Clique nas |cRXP_PICK_Kobold Tracks|r verdes no chão ao viajar em direção a Goldshire
-    .use 247970 >>|cRXP_WARN_Use o|r |T132995:0|t[Kobold Rastreamento Kit] |cRXP_WARN_para rastreá-los no seu minimapa|r
+    .use 247970 >> |cRXP_WARN_Use o|r |T132995:0|t[Kobold Rastreamento Kit] |cRXP_WARN_para rastreá-los no seu minimapa|r
     .complete 91772,1 -- Followed Kobold Tracks 6/6
 step
     --#optional
@@ -822,8 +822,8 @@ step
     #label CampQuest
     .goto 1429/0,-22.99,-9404.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sam Sarsaparilla|r
-    .turnin 96627 >>Entregue O Aventureiro
-    .accept 95998 >>Aceite Os Territórios Selvagens
+    .turnin 96627 >> Entregue O Aventureiro
+    .accept 95998 >> Aceite Os Territórios Selvagens
     .target Sam Sarsaparilla
 step
     .goto 1429/0,-22.99,-9402.40
@@ -834,25 +834,25 @@ step
 step
     .goto 1429/0,-22.99,-9404.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sam Sarsaparilla|r
-    .turnin 95998 >>Entregue Os Territórios Selvagens
-    .accept 96626 >>Aceite Acampamento 101: Culinária
-    .accept 97924 >>Aceite Acampamento 101: Esfolamento
+    .turnin 95998 >> Entregue Os Territórios Selvagens
+    .accept 96626 >> Aceite Acampamento 101: Culinária
+    .accept 97924 >> Aceite Acampamento 101: Esfolamento
     .target Sam Sarsaparilla
     .skill skinning,<1,1 -- shows if skinning is >1
 step
     .goto 1429/0,-22.99,-9404.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sam Sarsaparilla|r
-    .turnin 95998 >>Entregue Os Territórios Selvagens
-    .accept 96626 >>Aceite Acampamento 101: Culinária
-    .accept 97921 >>Aceite Acampamento 101: Herborismo
+    .turnin 95998 >> Entregue Os Territórios Selvagens
+    .accept 96626 >> Aceite Acampamento 101: Culinária
+    .accept 97921 >> Aceite Acampamento 101: Herborismo
     .target Sam Sarsaparilla
     .skill herbalism,<1,1 -- shows if herbalism is >1
 step
     .goto 1429/0,-22.99,-9404.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sam Sarsaparilla|r
-    .turnin 95998 >>Entregue Os Territórios Selvagens
-    .accept 96626 >>Aceite Acampamento 101: Culinária
-    .accept 97923 >>Aceite Acampamento 101: Mineração
+    .turnin 95998 >> Entregue Os Territórios Selvagens
+    .accept 96626 >> Aceite Acampamento 101: Culinária
+    .accept 97923 >> Aceite Acampamento 101: Mineração
     .target Sam Sarsaparilla
     .skill mining,<1,1 -- shows if mining is >1
 
@@ -861,8 +861,8 @@ step
 step
     .goto 1429/0,-22.99,-9404.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sam Sarsaparilla|r
-    .turnin 95998 >>Entregue Os Territórios Selvagens
-    .accept 96626 >>Aceite Acampamento 101: Culinária
+    .turnin 95998 >> Entregue Os Territórios Selvagens
+    .accept 96626 >> Aceite Acampamento 101: Culinária
     .target Sam Sarsaparilla
 
 
@@ -874,7 +874,7 @@ step
     .goto 1429/0,8.800,-9327.900,55,0
     .goto 1429/0,66.000,-9374.000,55,0
     >>Clique nas |cRXP_PICK_Kobold Tracks|r verdes no chão
-    .use 247970 >>|cRXP_WARN_Use o|r |T132995:0|t[Kobold Rastreamento Kit] |cRXP_WARN_para rastreá-los no seu minimapa|r
+    .use 247970 >> |cRXP_WARN_Use o|r |T132995:0|t[Kobold Rastreamento Kit] |cRXP_WARN_para rastreá-los no seu minimapa|r
     .complete 91772,1 -- Followed Kobold Tracks 6/6
 
 step << Warrior/Rogue/Paladin
@@ -883,7 +883,7 @@ step << Warrior/Rogue/Paladin
     >>|cRXP_WARN_Isso permitirá que você crie|r |T135248:0|t [Pedras de Amolar Ásperas] |cRXP_WARN_que aumentam seu dano corpo a corpo em 2|r << Warrior/Rogue
     >>|cRXP_WARN_Isso permitirá que você crie|r |T135255:0|t [Contrapesos Ásperos] |cRXP_WARN_que aumentam seu dano corpo a corpo em 2|r << Paladin
     >>|cRXP_WARN_Se você não quiser fazer isso, pule esta etapa|r
-    .train 2018 >>Treine |T136241:0|t [Ferraria]
+    .train 2018 >> Treine |T136241:0|t [Ferraria]
     .target Smith Argus
 step << Warrior
     .goto 1429/0,94.01,-9464.8900
@@ -940,53 +940,53 @@ step << Mage/Priest/Warlock
     #completewith next
     .goto 1429/0,87.87,-9462.26
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_André Cravo|r
-    .vendor >>Lixo de Mercador
+    .vendor >> Venda os itens de lixo
     .target Andrew Krighton
 --  .money >1.0
 step
     .isOnQuest 91772
     .goto 1429/0,74.02,-9465.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Delegado Durão|r
-    .turnin 54 >>Entregue Relatório para Vila Dourada
+    .turnin 54 >> Entregue Relatório para Vila Dourada
     .turnin 91772 >>Entregue Shhh! We're Caçando Kobolds
-    .accept 62 >>Aceite A Mina Fundaprofunda
+    .accept 62 >> Aceite A Mina Fundaprofunda
     .accept 91775 >>Aceite Devolução de Livro
     .target Marshal Dughan
 step
     .isQuestTurnedIn 91772
     .goto 1429/0,74.02,-9465.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Delegado Durão|r
-    .turnin 54 >>Entregue Relatório para Vila Dourada
-    .accept 62 >>Aceite A Mina Fundaprofunda
+    .turnin 54 >> Entregue Relatório para Vila Dourada
+    .accept 62 >> Aceite A Mina Fundaprofunda
     .accept 91775 >>Aceite Devolução de Livro
     .target Marshal Dughan
 step
     #label Goldshire
     .goto 1429/0,74.02,-9465.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Delegado Durão|r
-    .turnin 54 >>Entregue Relatório para Vila Dourada
-    .accept 62 >>Aceite A Mina Fundaprofunda
+    .turnin 54 >> Entregue Relatório para Vila Dourada
+    .accept 62 >> Aceite A Mina Fundaprofunda
     .target Marshal Dughan
 step
     .goto 1429/0,31.92,-9460.38
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Durval Pilão|r
-    .accept 60 >>Aceite Velas Kobold
+    .accept 60 >> Aceite Velas Kobold
     .target William Pestle
 step
     #label GSHS
     .goto 1429/0,16.20,-9462.65
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Estalajadeiro Fábio|r
-    .turnin 2158,1 >>Entregue Descanso e Relaxamento << Rogue/Warrior
-    .turnin 2158,2 >>Entregue Descanso e Relaxamento << !Rogue !Warrior
-    .home >>Defina sua Pedra de Regresso para Vila Dourada
+    .turnin 2158,1 >> Entregue Descanso e Relaxamento << Rogue/Warrior
+    .turnin 2158,2 >> Entregue Descanso e Relaxamento << !Rogue !Warrior
+    .home >> Defina sua Pedra de Regresso para Vila Dourada
     .target Innkeeper Farley
 
 step
     .goto 1429/0,-5.63,-9467.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tomas|r
     >>|cRXP_WARN_Pule este passo se você não tem 1 prata, ou se você desejar fazê-lo mais tarde|r
-    .train 2550 >>Treine |T133971:0|t[Culinária]
-    .turnin 96626 >>Entregue Acampamento 101: Culinária
+    .train 2550 >> Aprenda |T133971:0|t[Culinária]
+    .turnin 96626 >> Entregue Acampamento 101: Culinária
     .target Tomas
     .money <0.0100
 step
@@ -994,11 +994,11 @@ step
     .isQuestComplete 96626
     .goto 1429/0,-5.63,-9467.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tomas|r
-    .turnin 96626 >>Entregue Acampamento 101: Culinária
+    .turnin 96626 >> Entregue Acampamento 101: Culinária
     .target Tomas
 step
     #optional
-    .xp 6 >>Faça grind até 6
+    .xp 6 >> Faça grind até 6
 step << Rogue
     .goto 1429/0,9.64,-9465.36
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Brog Atolão|r
@@ -1020,21 +1020,21 @@ step << Rogue
     #sticky
     #requires BalancedDaggers1
     #label DeleteOldDaggers
-    .destroy 2947 >>|cRXP_WARN_Remova o|r |T135426:0|t[Pequeno Arremessando Faca] |cRXP_WARN_da mochila, pois não é mais necessário|r
+    .destroy 2947 >> |cRXP_WARN_Remova o|r |T135426:0|t[Pequeno Arremessando Faca] |cRXP_WARN_da mochila, pois não é mais necessário|r
     .itemcount 2946,1
 step << Warlock
     #optional
     #completewith next
-    .goto 1429/0,-5.63,-9460.26,5 >>Vá para o andar de baixo
+    .goto 1429/0,-5.63,-9460.26,5 >> Vá para o andar de baixo
 step << Warlock
     .goto 1429/0,-5.36,-9472.760
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Wagner Nascimento|r no andar de baixo
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Maximillian Crowe
 step << Warlock
     .goto 1429/0,-5.53,-9466.95
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Cylina Corenero|r
-    .vendor 6374 >>|cRXP_BUY_Compre o|r |T133738:0|t [Grimório do Pacto de Sangue (Ranque 1)] |cRXP_BUY_dela se você puder pagar. Caso não, compre depois|r
+    .vendor 6374 >> |cRXP_BUY_Compre o|r |T133738:0|t [Grimório do Pacto de Sangue (Ranque 1)] |cRXP_BUY_dela se você puder pagar. Caso não, compre depois|r
     .target Cylina Darkheart
     .money <0.0100
     .itemcount 16321,<1 --Grimoire of Blood Pact (Rank 1)
@@ -1042,30 +1042,30 @@ step << Warlock
 step << Mage/Rogue/Priest
     #optional
     #completewith next
-    .goto 1429/0,12.52,-9479.85,9 >>Suba na Estalagem
+    .goto 1429/0,12.52,-9479.85,9 >> Suba na Estalagem
 step << Mage
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zaldimar Wefhellt|r
 	.target Zaldimar Wefhellt
     .goto 1429/0,34.28,-9471.61
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
 step << Priest
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Joselita|r
 	.target Priestess Josetta
     .goto 1429/0,33.14,-9460.75
-    .turnin 5623 >>Entregue Em Favor da Luz
-    .accept 5624 >>Aceite Vestimentas da Luz
-    .trainer >>Treine suas magias de classe
+    .turnin 5623 >> Entregue Em Favor da Luz
+    .accept 5624 >> Aceite Vestimentas da Luz
+    .trainer >> Treine suas magias de classe
 step << Rogue
     .money <0.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anabela Cabreira|r
     .target Keryn Sylvius
     .goto 1429/0,12.69,-9465.75
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
 step << Warrior/Rogue
     .goto 1429/0,16.20,-9462.65
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Estalajadeiro Fábio|r
-    .vendor 295 >>|cRXP_BUY_Compre|r |T133995:0|t [Punhal de Dalaran] |cRXP_BUY_dele até ficar com 1 prata|r << Warrior
-    .vendor 295 >>|cRXP_BUY_Compre até 20|r |T133995:0|t[Queijo Azedo de Dalaran] |cRXP_BUY_dele se você puder pagar|r << Rogue
+    .vendor 295 >> |cRXP_BUY_Compre|r |T133995:0|t [Punhal de Dalaran] |cRXP_BUY_dele até ficar com 1 prata|r << Warrior
+    .vendor 295 >> |cRXP_BUY_Compre até 20|r |T133995:0|t[Queijo Azedo de Dalaran] |cRXP_BUY_dele se você puder pagar|r << Rogue
     .collect 414,20 --Dalaran Sharp (20)
     .disablecheckbox
     .target Innkeeper Farley
@@ -1073,18 +1073,18 @@ step << Warrior/Rogue
 step << Warrior
     .goto 1429/0,109.36,-9461.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lyria Du Lac|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Lyria Du Lac
 step << Paladin
     .goto 1429/0,109.04,-9468.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Irmão Guilhermino|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Brother Wilhelm
 step
     #requires DeleteOldDaggers << Rogue
     .goto 1429/0,72.81,-9496.23--c:Elwynn Forest,42.140,67.254
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Remy "Duas Vezes"|r
-    .accept 47 >>Aceite Trocando Pó de Ouro
+    .accept 47 >> Aceite Trocando Pó de Ouro
     .target Remy "Two Times"
 step << Hunter
     .goto 1429/0,75.400,-9480.300
@@ -1102,13 +1102,13 @@ step << Hunter
     .target Jeena Featherbow
 step << Hunter
     #completewith next
-    .equip 18,2506 >>|cRXP_WARN_Equipe o|r |T135499:0|t[Arco Recurvo de Pau-de-chifre]
+    .equip 18,2506 >> |cRXP_WARN_Equipe o|r |T135499:0|t[Arco Recurvo de Pau-de-chifre]
     .use 2506
     .itemcount 2506,1 --Hornwood Recurve Bow (1)
 step << Hunter
     .goto 1429/0,107.200,-9472.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Josephine Carson|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Josephine Carson
 step << Priest
     .goto 1429/0,-135.72,-9514.56
@@ -1169,10 +1169,10 @@ step
     .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_"Titia" Berenice Campedra|r e |cRXP_FRIENDLY_Mama Campedra|r
-    .accept 85 >>Aceite O Colar Perdido
+    .accept 85 >> Aceite O Colar Perdido
     .goto 1429/0,338.47,-9889.69
     .target +"Auntie" Bernice Stonefield
-    .accept 88 >>Aceite Princesa Tem Que Morrer!
+    .accept 88 >> Aceite Princesa Tem Que Morrer!
 	.goto 1429/0,332.43,-9894.99--c:Elwynn Forest,34.660,84.482
     .target +Ma Stonefield
 step << Warrior/Paladin/Rogue
@@ -1243,13 +1243,13 @@ step
     #label NecklaceStart
     .goto 1429/0,38.41,-9923.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Guinho Madruga|r
-    .turnin 85 >>Entregue O Colar Perdido
-    .accept 86 >>Aceite Juntando a Fome...
+    .turnin 85 >> Entregue O Colar Perdido
+    .accept 86 >> Aceite Juntando a Fome...
     .target Billy Maclure
 step
     .goto 1429/0,37.61,-10014.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mabel Madruga|r
-    .accept 106 >>Aceite Jovens Amantes
+    .accept 106 >> Aceite Jovens Amantes
     .target Maybell Maclure
 step
     #optional
@@ -1328,22 +1328,22 @@ step
     #label Lovers
     .goto 1429/0,499.72,-9930.05--c:Elwynn Forest,29.840,85.997
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Tomasino Campedra|r
-    .turnin 106 >>Entregue Jovens Amantes
-    .accept 111 >>Aceite Fale com a Vovó
+    .turnin 106 >> Entregue Jovens Amantes
+    .accept 111 >> Aceite Fale com a Vovó
     .target Tommy Joe Stonefield
 step
     #requires BoarMeatQuest
     #label Pie
     .goto 1429/0,338.47,-9889.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_"Titia" Berenice Campedra|r
-    .turnin 86 >>Entregue Juntando a Fome...
-    .accept 84 >>Aceite ...com a Vontade de Comer
+    .turnin 86 >> Entregue Juntando a Fome...
+    .accept 84 >> Aceite ...com a Vontade de Comer
     .target "Auntie" Bernice Stonefield
 step
     .goto 1429,34.945,83.855
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Vovó Campedra|r lá dentro
-    .turnin 111 >>Entregue Fale com a Vovó
-    .accept 107 >>Aceite Bilhete para Durval
+    .turnin 111 >> Entregue Fale com a Vovó
+    .accept 107 >> Aceite Bilhete para Durval
     .target Gramma Stonefield
 step << Warrior/Paladin/Rogue
     #optional
@@ -1427,8 +1427,8 @@ step
 step
     .goto 1429/0,38.41,-9923.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Guinho Madruga|r
-    .turnin 84 >>Entregue ...com a Vontade de Comer
-    .accept 87 >>Aceite Dentadouro
+    .turnin 84 >> Entregue ...com a Vontade de Comer
+    .accept 87 >> Aceite Dentadouro
     .target Billy Maclure
 step
     .goto 1429/0,181.44,-9842.170,15,0
@@ -1487,7 +1487,7 @@ step
     #label Goldtooth
     .goto 1429/0,338.47,-9889.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_"Titia" Berenice Campedra|r
-    .turnin 87 >>Entregue Dentadouro
+    .turnin 87 >> Entregue Dentadouro
     .target "Auntie" Bernice Stonefield
 step
     #optional
@@ -1525,29 +1525,29 @@ step
     #hardcore
     #optional
     #completewith Exchange
-    .goto 1429/0,72.81,-9496.23,125 >>Retorne para Goldshire--c:Elwynn Forest,42.140,67.254
+    .goto 1429/0,72.81,-9496.23,125 >> Retorne para Goldshire--c:Elwynn Forest,42.140,67.254
     .subzoneskip 87 --Goldshire
 step
     #softcore
     #completewith Exchange
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     .target Anjo da Cura
 step
     #label Exchange
     .goto 1429/0,72.81,-9496.23--c:Elwynn Forest,42.140,67.254
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Remy "Duas Vezes"|r
     >>|cRXP_WARN_NÃO venda o|r |T133581:0|t[Bolsa of Marbles] |cRXP_WARN_recompensa. Este é um item incrivelmente valioso durante todo o percurso até o nível 60|r
-    .turnin 47 >>Entregue Trocando Pó de Ouro
-    .accept 40 >>Aceite Perigo Anfíbio
+    .turnin 47 >> Entregue Trocando Pó de Ouro
+    .accept 40 >> Aceite Perigo Anfíbio
     .target Remy "Two Times"
 step
     .isQuestComplete 91775
     .goto 1429/0,74.02,-9465.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Delegado Durão|r
-    .turnin 62 >>Entregue A Mina Vailafundo
-    .accept 76 >>Aceite A Mina de Jaspe
-    .turnin 40 >>Entregue Perigo Anfíbio
-    .accept 35 >>Aceite Mais Preocupações
+    .turnin 62 >> Entregue A Mina Vailafundo
+    .accept 76 >> Aceite A Mina de Jaspe
+    .turnin 40 >> Entregue Perigo Anfíbio
+    .accept 35 >> Aceite Mais Preocupações
     .turnin 91775 >>Entregue Devolução de Livro
     .accept 91777 >>Aceite Livros Raros
     .target Marshal Dughan
@@ -1560,17 +1560,17 @@ step
 step
     .goto 1429/0,74.02,-9465.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Delegado Durão|r
-    .turnin 62 >>Entregue A Mina Vailafundo
-    .accept 76 >>Aceite A Mina de Jaspe
-    .turnin 40 >>Entregue Perigo Anfíbio
-    .accept 35 >>Aceite Mais Preocupações
+    .turnin 62 >> Entregue A Mina Vailafundo
+    .accept 76 >> Aceite A Mina de Jaspe
+    .turnin 40 >> Entregue Perigo Anfíbio
+    .accept 35 >> Aceite Mais Preocupações
     .target Marshal Dughan
 step
     #optional << Warrior/Rogue/Paladin
     #completewith CandlesEnd
     .goto 1429/0,94.01,-9464.8900
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Corina Ácero|r
-    .vendor >>Lixo de Mercador
+    .vendor >>Venda os itens de lixo
     .target Corina Steele
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,>3.3 << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,>3.8 << Warrior
@@ -1641,43 +1641,43 @@ step
     #requires GoldtoothRune << Warrior/Priest --Season 2
     .goto 1429/0,31.92,-9460.38
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Durval Pilão|r
-    .turnin 60 >>Entregue Velas dos Kobolds
-    .accept 61 >>Aceite Carregamento para Ventobravo
-    .turnin 107 >>Entregue Bilhete para Durval
-    .accept 112 >>Aceite Coletando Algas
+    .turnin 60 >> Entregue Velas dos Kobolds
+    .accept 61 >> Aceite Carregamento para Ventobravo
+    .turnin 107 >> Entregue Bilhete para Durval
+    .accept 112 >> Aceite Coletando Algas
     .target William Pestle
 step
     #optional
-    .xp 8 >>Farme até o nível 8
+    .xp 8 >> Farme até o nível 8
 step << Hunter
     .goto 1429/0,107.200,-9472.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Josephine Carson|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Josephine Carson
 step << Warrior
     .goto 1429/0,109.36,-9461.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lyria Du Lac|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Lyria Du Lac
 step << Paladin
     #season 0,1
     .goto 1429/0,109.04,-9468.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Irmão Guilhermino|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Brother Wilhelm
 step << Warlock
     #optional
     #completewith next
-    .goto 1429/0,4.78,-9467.21,10 >>Vá para baixo na Estalagem
+    .goto 1429/0,4.78,-9467.21,10 >> Vá para baixo na Estalagem
 step << Warlock
     .goto 1429/0,-5.36,-9472.760
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maximillian Crowe|r
     .target Maximillian Crowe
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
 step << Warlock
     .goto 1429/0,-5.53,-9466.95
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Cylina Corenero|r
-    .vendor >>|cRXP_BUY_Compre o|r |T133738:0|t[Grimório of Seta de Fogo (Rank 2)] |cRXP_BUY_dela se você puder pagar. Se não, você pode comprá-lo mais tarde|r
+    .vendor >> |cRXP_BUY_Compre o|r |T133738:0|t[Grimório of Seta de Fogo (Rank 2)] |cRXP_BUY_dela se você puder pagar. Se não, você pode comprá-lo mais tarde|r
     .target Cylina Darkheart
     .money <0.100
     .itemcount 16302,<1 --Grimoire of Blood Pact (Rank 1)
@@ -1685,43 +1685,43 @@ step << Warlock
 step << Mage/Priest/Rogue/Warrior/Paladin
     #optional
     #completewith next
-    .goto 1429/0,12.52,-9479.85,9 >>Suba na Estalagem
+    .goto 1429/0,12.52,-9479.85,9 >> Suba na Estalagem
 step << Mage
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zaldimar Wefhellt|r
 	.target Zaldimar Wefhellt
     .goto 1429/0,34.28,-9471.61
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
 step << Priest
     .goto 1429/0,33.14,-9460.75
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Joselita|r
 	.target Priestess Josetta
-    .turnin 5624 >>Entregue Vestes da Luz
-    .trainer >>Treine suas magias de classe
+    .turnin 5624 >> Entregue Vestes da Luz
+    .trainer >> Treine suas magias de classe
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anabela Cabreira|r
     .target Keryn Sylvius
     .goto 1429/0,12.69,-9465.75
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
 step << Rogue/Warrior/Paladin
     .money <0.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Michelle Belle|r
     .target Michelle Belle
     .goto 1429/0,29.35,-9456.790
-    .train 3273 >>Aprenda |T135966:0|t[Primeiros Socorros]
+    .train 3273 >> Aprenda |T135966:0|t[Primeiros Socorros]
 step
     #label GoldshireEnd << Priest --Season 2
     .goto 1429/0,9.64,-9465.36
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Brog Atolão|r
-    .vendor >>|cRXP_WARN_Compre uma|r |T133634:0|t[Pequeno Brown Pouch] |cRXP_WARN_se necessário|r
+    .vendor >> |cRXP_WARN_Compre uma|r |T133634:0|t[Pequeno Brown Pouch] |cRXP_WARN_se necessário|r
 	.target Brog Hamfist
     .money <0.1250
 step
     #completewith next
     .goto 1429/0,16.20,-9462.65
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Estalajadeiro Fábio|r
-    .vendor >>|cRXP_BUY_Compre até 20|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele se você puder pagar|r << !Warrior !Rogue !Paladin !Hunter
-    .vendor >>|cRXP_BUY_Compre até 20|r |T133995:0|t[Queijo Azedo de Dalaran] |cRXP_BUY_dele se você puder pagar|r << Warrior/Rogue
-    .vendor >>|cRXP_BUY_Compre até 10|r |T133995:0|t[Queijo Azedo de Dalaran] |cRXP_BUY_e 10|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele se você puder pagar|r << Paladin/Hunter
+    .vendor >> |cRXP_BUY_Compre até 20|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele se você puder pagar|r << !Warrior !Rogue !Paladin !Hunter
+    .vendor >> |cRXP_BUY_Compre até 20|r |T133995:0|t[Queijo Azedo de Dalaran] |cRXP_BUY_dele se você puder pagar|r << Warrior/Rogue
+    .vendor >> |cRXP_BUY_Compre até 10|r |T133995:0|t[Queijo Azedo de Dalaran] |cRXP_BUY_e 10|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele se você puder pagar|r << Paladin/Hunter
     .target Innkeeper Farley
 step
     #optional
@@ -1756,13 +1756,13 @@ step
 step
     .goto 1429,47.5,62.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jason Mathers|r
-    .accept 99127 >>Aceite Um Desastre de Rede
+    .accept 99127 >> Aceite Um Desastre de Rede
     .target Jason Mathers
 step
     #softcore
     .goto 1429,47.6,62.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lee Brown|r
-    .accept 99143 >>Aceite Garrafas e Bugigangas
+    .accept 99143 >> Aceite Garrafas e Bugigangas
     .target Lee Brown
 step
     #loop
@@ -1775,8 +1775,8 @@ step
 step
     .goto 1429,47.5,62.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jason Mathers|r
-    .turnin 99127 >>Entregue Um Desastre de Rede
-    .accept 99128 >>Aceite Ameaça Pegajosa
+    .turnin 99127 >> Entregue Um Desastre de Rede
+    .accept 99128 >> Aceite Ameaça Pegajosa
     .target Jason Mathers
 step
     #softcore
@@ -1855,14 +1855,14 @@ step
     .isQuestComplete 99143
     .goto 1429,47.6,62.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lee Brown|r
-    .turnin 99143 >>Entregue Bottles and Baubles
+    .turnin 99143 >> Entregue Bottles and Baubles
     .target Lee Brown
 --xx abandon if didnt complete/check routing for potential later turnin
 step
     .goto 1429,47.5,62.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jason Mathers|r
-    .turnin 99128 >>Entregue Ameaça Pegajosa
-    .accept 99129 >>Aceite A Man About a Murloc
+    .turnin 99128 >> Entregue Ameaça Pegajosa
+    .accept 99129 >> Aceite A Man About a Murloc
     .target Jason Mathers
 
 step << Warrior/Paladin/Rogue
@@ -1914,7 +1914,7 @@ step
     #requires MurlocRune << Warrior/Rogue --Season 2
     #label Jasperlode
     #completewith JasperlodeExplore
-    .goto 1429/0,-604.49,-9180.39,15 >>Entre na Mina de Jasperlode
+    .goto 1429/0,-604.49,-9180.39,15 >> Entre na Mina de Jasperlode
 step
     #label JasperlodeExplore
     .goto 1429/0,-588.73,-9130.67,15,0
@@ -1942,7 +1942,7 @@ step
     .goto 1429/0,-590.300,-9208.101,10,0
     .goto 1429/0,-508.400,-9249.101,10,0
     .goto 1429/0,-493.900,-9208.000,10,0
-    .goto 1429/0,-493.000,-9157.400,18 >>|cRXP_WARN_Siga a seta de perto até Northshire para entregar a missão que você acabou de completar e receber uma recompensa de arma|r
+    .goto 1429/0,-493.000,-9157.400,18 >> |cRXP_WARN_Siga a seta de perto até Northshire para entregar a missão que você acabou de completar e receber uma recompensa de arma|r
 step
     .isQuestComplete 91777
     .goto 1429/0,-135.800,-8913.700,10,0
@@ -2007,7 +2007,7 @@ step
     #optional
     #label ExitJasperlode
     #completewith Find
-    .goto 1429,61.820,53.871,15 >>Saia da Mina de Jasperlode
+    .goto 1429,61.820,53.871,15 >> Saia da Mina de Jasperlode
     .subzoneskip 54,1
 step
     #optional
@@ -2046,9 +2046,9 @@ step
     #requires JasperlodeRune << Mage --Season 2
     .goto 1429/0,-1032.06,-9610.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Guarda Tomás|r
-    .turnin 35 >>Entregue Mais Preocupações
-    .accept 37 >>Aceite Encontre os Guardas Perdidos
-    .accept 52 >>Aceite Proteja a Fronteira
+    .turnin 35 >> Entregue Mais Preocupações
+    .accept 37 >> Aceite Encontre os Guardas Perdidos
+    .accept 52 >> Aceite Proteja a Fronteira
     .target Guard Thomas
 step
     #season 0,1 << Rogue/Priest
@@ -2089,8 +2089,8 @@ step
     #label LostGuards
     .goto 1429/0,-986.35,-9336.06
     >>Clique em um |cRXP_PICK_Corpo Meio Comido|r no chão
-    .turnin 37 >>Entregue Encontre os Guardas Perdidos
-    .accept 45 >>Aceite Descubra o Destino de Rodolfo
+    .turnin 37 >> Entregue Encontre os Guardas Perdidos
+    .accept 45 >> Aceite Descubra o Destino de Rodolfo
 step
     #optional
     #label WolfMeatCooking4
@@ -2121,14 +2121,14 @@ step
     #label AcceptBundle
     .goto 1429/0,-1289.22,-9469.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Supervisora Raquel|r
-    .accept 5545 >>Aceite Um Feixe de Encrenca
+    .accept 5545 >> Aceite Um Feixe de Encrenca
     .target Supervisor Raelen
 step
     #season 0,1 << Rogue
     #optional
     .goto 1429/0,-1355.20,-9469.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ricardo Fino|r
-    .vendor >>Lixo de vendedor
+    .vendor >> Lixo de vendedor
     .target Rallic Finn
     .subzoneskip 88,1
 step
@@ -2180,8 +2180,8 @@ step << Paladin
     .goto 1429/0,-1234.31,-9224.180
     >>|cRXP_WARN_Corra no topo de |cRXP_PICK_Rolf's corpse|r, depois lance|r |T135954:0|t[Proteção Divina] |cRXP_WARN_e depois imediatamente clique em|r |cRXP_PICK_Rolf's corpse|r
     >>|cRXP_WARN_Corra para longe e reinicie os |cRXP_ENEMY_Murlocs|r após completar a missão|r
-    .turnin 45 >>Entregue Descubra o Destino de Rodolfo
-    .accept 71 >>Aceite Apresente-se a Tomás
+    .turnin 45 >> Entregue Descubra o Destino de Rodolfo
+    .accept 71 >> Aceite Apresente-se a Tomás
 step << Paladin
     #hardcore
     #label Prowlers
@@ -2190,8 +2190,8 @@ step << Paladin
     >>|cRXP_WARN_Tome cuidado, pois |cRXP_ENEMY_Murloc Foragers|r irão conjurar|r |T135915:0|t[Beber Poção Menor] |cRXP_WARN_o que cura eles por 61-68 de vida|r
     >>|cRXP_WARN_Puxe os 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_na frente das cabanas, afaste-se e destrua um deles rapidamente. Usar|r |T135954:0|t[Proteção Divina] |cRXP_WARN_e sua cura conforme necessário. Esta é uma boa oportunidade para usar|r |T133581:0|t[Bolsa of Marbles]|cRXP_WARN_. Corra para longe e reinicie uma vez que tenha matado um|r << Paladin
     >>|cRXP_WARN_Lembre-se durante|r |T135954:0|t[Proteção Divina] |cRXP_WARN_que você é incapaz de atacar|r << Paladin
-    .turnin 45 >>Entregue Descubra o Destino de Rodolfo
-    .accept 71 >>Aceite Apresente-se a Tomás
+    .turnin 45 >> Entregue Descubra o Destino de Rodolfo
+    .accept 71 >> Aceite Apresente-se a Tomás
 step << !Paladin
     #label Prowlers
     .goto 1429/0,-1234.31,-9224.180
@@ -2202,8 +2202,8 @@ step << !Paladin
     >>|cRXP_WARN_Acumule 100 Raiva. Puxe os 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_na frente das cabanas, afaste-se e mantenha|r |T132316:0|t[Cortar Tendão] |cRXP_WARN_em um enquanto mata o outro. Também use|r |T133581:0|t[Bolsa of Marbles] |cRXP_WARN_no que você está matando. Corra e reinicie o que está sendo evitado com|r |T132316:0|t[Cortar Tendão] |cRXP_WARN_depois que matar um|r << Warrior
     >>|cRXP_WARN_Puxe os 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_na frente das cabanas, afaste-se e foque em matar um deles. Usar|r |T136205:0|t[Evasão] |cRXP_WARN_uma vez que ambos estão te atacando. Esta é uma boa oportunidade para usar|r |T133581:0|t[Bolsa of Marbles]|cRXP_WARN_. Corra para longe e reinicie uma vez que tenha matado um|r << Rogue
     >>|cRXP_WARN_Puxe os 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_na frente das cabanas, afaste-se e conjure|r |T136183:0|t[Medo] |cRXP_WARN_em um deles constantemente, e tente manter DoTs em ambos|r << Warlock
-    .turnin 45 >>Entregue Descubra o Destino de Rodolfo
-    .accept 71 >>Aceite Apresente-se a Tomás
+    .turnin 45 >> Entregue Descubra o Destino de Rodolfo
+    .accept 71 >> Aceite Apresente-se a Tomás
 step
     #optional
     #label WolfMeatCooking6
@@ -2265,13 +2265,13 @@ step
     #label BundleOT
     .goto 1429/0,-1289.22,-9469.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Supervisora Raquel|r
-    .turnin 5545 >>Entregue Um Feixe de Encrenca
+    .turnin 5545 >> Entregue Um Feixe de Encrenca
     .target Supervisor Raelen
 step
     #xprate <1.5 << !Warlock
     .goto 1429/0,-1222.40,-9531.76
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sara Albernaz|r
-    .accept 83 >>Aceite Tecidos de Linho Vermelho
+    .accept 83 >> Aceite Tecidos de Linho Vermelho
     .target Sara Timberlain
 step
     #optional
@@ -2308,7 +2308,7 @@ step
 step
     .goto 1429/0,-1119.7708,-9603.7687
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ormin Pelford|r
-    .accept 91733 >>Aceite Downstream
+    .accept 91733 >> Aceite Downstream
     .target Ormin Pelford
 step
     >>Pegue o |cRXP_PICK_Serrote Encharcado|r no chão
@@ -2327,7 +2327,7 @@ step
     .group 3
     .goto 1429/0,-1119.800,-9931.300
     >>Mate o |cRXP_ENEMY_Croaky|r. Saqueie-o para obter |T134169:0|t[|cRXP_LOOT_Croaky's Cabeça|r]
-    .use 247826 >>|cRXP_WARN_Use|r |T134169:0|t[|cRXP_LOOT_Croaky's Cabeça|r] |cRXP_WARN_para iniciar a missão|r
+    .use 247826 >> |cRXP_WARN_Use|r |T134169:0|t[|cRXP_LOOT_Croaky's Cabeça|r] |cRXP_WARN_para iniciar a missão|r
     >>|cRXP_WARN_Ele é um elite nível 11. Pule este passo se você for incapaz de matá-lo|r
     .collect 247826,1,91740,1 -- Croaky's Head (1)
     .accept 91740 >>Aceite Croaky's Cabeça
@@ -2357,7 +2357,7 @@ step
     .use 1972>>|cRXP_WARN_Use o |T134939:0|t[|cRXP_LOOT_Escritura de Cerro Oeste|r] para iniciar a missão|r
     >>|cRXP_WARN_A|r |T134939:0|t[|cRXP_LOOT_Escritura de Cerro Oeste|r] |cRXP_WARN_é uma queda muito rara. Ignorar este passo se você não conseguir|r
     .collect 1972,1,184 --Collect Westfall Deed (x1)
-    .accept 184 >>Aceite Escritura de Furlbrow
+    .accept 184 >> Aceite Escritura de Furlbrow
 step
     #xprate <1.5 << !Warlock
     #completewith next
@@ -2374,7 +2374,7 @@ step
     >>|cRXP_WARN_Acumule 100 Raiva antes de enfrentar|r |cRXP_ENEMY_Princesa|r << Warrior
     >>Tenha certeza de que|cRXP_WARN_ |T136205:0|t[Evasão] |cRXP_WARN_está pronta. Se tiver dificuldades, pode usar o Fence com Arremessando Armas para explorar a física e ganhar tempo|r << Rogue
     >>|cRXP_WARN_Esteja pronto para usar uma|r |T134830:0|t[Poção Inferior de Cura]
-    .link https://www.youtube.com/watch?v=GRrXOV-UvD4 >>https://www.youtube.com/watch?v=GRrXOV-UvD4 >> |cRXP_WARN_Clique aqui para referência de vídeo|r << !Warrior
+    .link https://www.youtube.com/watch?v=GRrXOV-UvD4 >> |cRXP_WARN_Clique aqui para referência de vídeo|r << !Warrior
     .complete 88,1 --Collect Brass Collar (x1)
     .mob Princess
 step
@@ -2400,41 +2400,41 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Guarda Tomás|r
     .target Guard Thomas
     .goto 1429/0,-1032.06,-9610.23
-    .turnin 52 >>Entregue Proteja a Fronteira
-    .turnin 71 >>Entregue Apresente-se a Tomás
-    .accept 39 >>Aceite Entregar o Relatório de Tomás
-    .accept 109 >>Aceite Reportar-se a Miguel Mantoforte
+    .turnin 52 >> Entregue Proteja a Fronteira
+    .turnin 71 >> Entregue Apresente-se a Tomás
+    .accept 39 >> Aceite Entregar o Relatório de Tomás
+    .accept 109 >> Aceite Reportar-se a Miguel Mantoforte
     .xp <9,1
 step
     #label DeliverStart
     .goto 1429/0,-1032.06,-9610.23
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Guarda Tomás|r
-    .turnin 52 >>Entregue Proteja a Fronteira
-    .turnin 71 >>Entregue Apresente-se a Tomás
-    .accept 39 >>Aceite Entregar o Relatório de Tomás
+    .turnin 52 >> Entregue Proteja a Fronteira
+    .turnin 71 >> Entregue Apresente-se a Tomás
+    .accept 39 >> Aceite Entregar o Relatório de Tomás
     .target Guard Thomas
 step
     .goto 1429/0,-1119.7708,-9603.7687
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ormin Pelford|r
-    .turnin 91733 >>Entregue em Downstream
+    .turnin 91733 >> Entregue em Downstream
     .target Ormin Pelford
 step << Warlock/Warrior/Rogue/Hunter
     .isQuestNotComplete 91740
 	.goto 1429/0,-877.85,-9778.98
-    .xp 9+3510 >>Suba até 3510+/6500 XP << Warlock/Hunter
-    .xp 9+3420 >>Suba até 3420+/6500 XP << Warrior/Rogue
+    .xp 9+3510 >> Suba até 3510+/6500 XP << Warlock/Hunter
+    .xp 9+3420 >> Suba até 3420+/6500 XP << Warrior/Rogue
 step << Warlock/Warrior/Rogue/Hunter
     .isQuestComplete 91740
     #label Level9Grind
 	.goto 1429/0,-877.85,-9778.98
-    .xp 9+2670 >>Suba até 2670+/6500 XP << Warlock/Hunter
-    .xp 9+2580 >>Suba até 2580+/6500 XP << Warrior/Rogue
+    .xp 9+2670 >> Suba até 2670+/6500 XP << Warlock/Hunter
+    .xp 9+2580 >> Suba até 2580+/6500 XP << Warrior/Rogue
 step << !Warlock
     #season 0,1 << Rogue
     #softcore
     #label EVDeathskip
     #completewith RedridgeS
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     .target Anjo da Cura
     .zoneskip Redridge Mountains
     .xp >10,1 -- shows to 9 and under
@@ -2444,13 +2444,13 @@ step
     #optional << Warlock
     .goto 1429/0,-1222.40,-9531.76
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sara Albernaz|r
-    .turnin 83 >>Entregue Tecidos de Linho Vermelho
+    .turnin 83 >> Entregue Tecidos de Linho Vermelho
     .target Sara Timberlain
     .isQuestComplete 83
 step
     #optional
     #completewith next
-    .subzone 798 >>Vá para Ridgepoint Torre
+    .subzone 798 >> Vá para Ridgepoint Torre
 step
     #optional
     .isQuestComplete 91740
@@ -2488,18 +2488,18 @@ step << !Warlock
 step << !Warlock
     #label RedridgeS
     .goto 1433/0,-1948.56,-9582.75
-    .zone Redridge Mountains >>Viaje para as Montanhas Cristarrubra
+    .zone Redridge Mountains >> Viaje para as Montanhas Cristarrubra
 step << !Warlock
     #optional
     .goto 1433/0,-1906.400,-9606.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Guarda Capitão da Guarda Florestan|r
-    .accept 244 >>Aceite Gnolls Invasores
+    .accept 244 >> Aceite Gnolls Invasores
     .target Guard Parker
     .xp <11,1
 step << !Warlock
     #softcore
     #completewith RRFP
-    .deathskip >>Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
+    .deathskip >> Morra e reviva no |cRXP_FRIENDLY_Anjo da Cura|r
     .target Anjo da Cura
     .xp >10,1 -- shows to 9 and under
 step << !Warlock
@@ -2513,7 +2513,7 @@ step << !Warlock
     #optional
     .goto 1433/0,-2237.93,-9443.60
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
-    .turnin 244 >>Entregue Gnolls Invasores
+    .turnin 244 >> Entregue Gnolls Invasores
     .target Deputy Feldon
     .isOnQuest 244
     .xp <11,1
@@ -2522,12 +2522,12 @@ step << !Warlock
     #label RRFP
     .goto 1433/0,-2234.900,-9435.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena Penafúria|r
-    .fp Redridge Mountains >>Aprenda a rota de voo para Montanhas Cristarrubra
+    .fp Redridge Mountains >> Aprenda a rota de voo para Montanhas Cristarrubra
     .target Ariena Stormfeather
 step
     #optional
     #completewith CollectKelp
-    .hs >>Use sua Pedra de Retorno para Goldshire
+    .hs >> Use sua Pedra de Retorno para Goldshire
 step << Warrior/Rogue
     #optional
     #completewith Escape
@@ -2543,19 +2543,19 @@ step
     #label CollectKelp
     .goto 1429/0,31.92,-9460.38
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Durval Pilão|r
-    .turnin 112 >>Entregue Coletando Alga
+    .turnin 112 >> Entregue Coletando Alga
     .timer 9,Colete alga RP
-    .accept 114 >>Aceite A fuga
+    .accept 114 >> Aceite A fuga
     .target William Pestle
 step << Warrior/Rogue
     #optional
     #completewith next << Warrior
     #completewith RogueOptTrain << Rogue
-    .goto 1429/0,12.52,-9479.85,9 >>Suba na Estalagem
+    .goto 1429/0,12.52,-9479.85,9 >> Suba na Estalagem
 step << Warrior/Rogue
     .goto 1429/0,29.35,-9456.790
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Michelle Belle|r
-    .train 3273 >>Aprenda |T135966:0|t[Primeiros Socorros]
+    .train 3273 >> Aprenda |T135966:0|t[Primeiros Socorros]
     .target Michelle Belle
 step << Rogue
     #optional
@@ -2563,49 +2563,49 @@ step << Rogue
     .goto 1429/0,12.69,-9465.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anabela Cabreira|r
     >>|cRXP_WARN_Aprenda apenas|r |T132147:0|t[Empunhar Duas Armas] |cRXP_WARN_e|r |T132307:0|t[Disparada]|cRXP_WARN_. Não aprenda outras habilidades para economizar seu dinheiro para depois|r
-    .train 674 >>Treine |T132147:0|t[Empunhar Duas Armas]
-    .train 2983 >>Treine |T132307:0|t[Disparada]
+    .train 674 >> Treine |T132147:0|t[Empunhar Duas Armas]
+    .train 2983 >> Treine |T132307:0|t[Disparada]
     .target Keryn Sylvius
     .xp <10,1
 step
     .goto 1429/0,74.02,-9465.52
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Delegado Durão|r
-    .turnin 39 >>Entregue Relatório de Tomás
-    .turnin 76 >>Entregue A Mina de Jaspe
-    .accept 239 >>Aceite Ribeira d'Oeste Precisa de Ajuda
-    .accept 59 >>Aceite Armadura de Pano e Couro << Warlock
-    .accept 109 >>Aceite Reportar-se a Miguel Mantoforte
+    .turnin 39 >> Entregue Relatório de Tomás
+    .turnin 76 >> Entregue A Mina de Jaspe
+    .accept 239 >> Aceite Ribeira d'Oeste Precisa de Ajuda
+    .accept 59 >> Aceite Armadura de Pano e Couro << Warlock
+    .accept 109 >> Aceite Reportar-se a Miguel Mantoforte
     .target Marshal Dughan
 step
     #sticky
     #label GoldshireVendor
     .goto 1429/0,94.01,-9464.8900
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Corina Ácero|r
-    .vendor >>Lixo de Mercador
+    .vendor >> Venda os itens de lixo
     .target Corina Steele
     .money >0.75
 step
     .goto 1429/0,87.87,-9456.65
 	>>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Ferreiro Argus|r
-    .accept 1097 >>Aceite Tarefa de Elmore
+    .accept 1097 >> Aceite Tarefa de Elmore
     .target Smith Argus
 step
     #optional
     #completewith RoughWolfPelts
-    .goto 1429/0,-81.900,-9381.800,5 >>Vá para Helene Peltskinner na casa
+    .goto 1429/0,-81.900,-9381.800,5 >> Vá para Helene Peltskinner na casa
 step
     #optional
     .goto 1429/0,-69.500,-9380.200
     .isQuestComplete 91746
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helene Peltskinner|r
-    .turnin 91746 >>Entregue Cabeça de Elmpaw
+    .turnin 91746 >> Entregue Cabeça de Elmpaw
     .target Helene Peltskinner
 step
     #optional
     .goto 1429/0,-69.500,-9380.200
     .isQuestComplete 97924
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helene Peltskinner|r
-    .turnin 97924 >>Entregue Acampamento 101: Esfolamento
+    .turnin 97924 >> Entregue Acampamento 101: Esfolamento
     .target Helene Peltskinner
 step
     #label RoughWolfPelts
@@ -2613,23 +2613,23 @@ step
     .goto 1429/0,-69.500,-9380.200
     .isQuestComplete 91751
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helene Peltskinner|r
-    .turnin 91751 >>Entregue Peles de Lobo Brutas
+    .turnin 91751 >> Entregue Peles de Lobo Brutas
     .target Helene Peltskinner
 step << Warlock/Warrior/Hunter
     #requires GoldshireVendor
     #optional
-    .xp 10 >>Suba até o nível 10
+    .xp 10 >> Suba até o nível 10
 step << Hunter
     .goto 1429/0,107.200,-9472.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Josephine Carson::251507|r
     .target Josephine Carson::251507
     .accept 94792 >>Aceite Adestramento da Fera - Missão
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
 step << Hunter
     #loop
     .goto 1429/0,28.100,-9768.101,40,0
     .goto 1429/0,-36.100,-9814.500,40,0
-    .use 266158 >>|cRXP_WARN_use o|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Javali Couropedra|r
+    .use 266158 >> |cRXP_WARN_use o|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Javali Couropedra|r
     .complete 94792,1 -- Tame a Rockhide Boar (1)
     .mob Rockhide Boar
 step << Hunter
@@ -2642,7 +2642,7 @@ step << Hunter
     #loop
     .goto 1429/0,-556.600,-9524.300,40,0
     .goto 1429/0,-626.200,-9430.800,40,0
-    .use 266253 >>|cRXP_WARN_use o|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Lobo Cinza da Floresta|r
+    .use 266253 >> |cRXP_WARN_use o|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Lobo Cinza da Floresta|r
     >>|cRXP_WARN_assegure-se de que dispensou seu anterior|r |cRXP_ENEMY_Javali Couropedra|r
     .complete 94863,1 -- Tame a Gray Forest Wolf (1)
     .mob Gray Forest Wolf
@@ -2657,7 +2657,7 @@ step << Hunter
     .goto 1429/0,-14.600,-9797.800,40,0
     .goto 1429/0,-146.800,-9784.500,40,0
     .goto 1429/0,-325.300,-9844.300,40,0
-    .use 266254 >>|cRXP_WARN_use o|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Urso Jovem da Floresta|r
+    .use 266254 >> |cRXP_WARN_use o|r |T132164:0|t[Bastão de Adestramento] |cRXP_WARN_em um|r |cRXP_ENEMY_Urso Jovem da Floresta|r
     >>|cRXP_WARN_assegure-se de que dispensou seu anterior|r |cRXP_ENEMY_Lobo Cinza da Floresta|r
     .complete 94864,1 -- Tame a Young Forest Bear (1)
     .mob Young Forest Bear
@@ -2672,12 +2672,12 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Isaac Chan::258930|r
     .target Isaac Chan::258930
     .turnin 94793 >>Entregue Treinamento da Fera - Missão
-    .trainer >>Treine as magias do seu mascote
+    .trainer >> Treine as magias do seu mascote
 step << Warrior
     .goto 1429/0,109.36,-9461.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lyria Du Lac|r
-    .accept 1638 >>Aceite O Treinamento do Guerreiro
-    .trainer >>Treine suas magias de classe
+    .accept 1638 >> Aceite O Treinamento do Guerreiro
+    .trainer >> Treine suas magias de classe
     .target Lyria Du Lac
     .money <0.5
 step << Warrior
@@ -2685,14 +2685,14 @@ step << Warrior
     .goto 1429/0,109.36,-9461.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Lyria Du Lac|r
     >>|cRXP_WARN_não treine pois você precisa economizar dinheiro para depois|r
-    .accept 1638 >>Aceite O Treinamento do Guerreiro
+    .accept 1638 >> Aceite O Treinamento do Guerreiro
     .target Lyria Du Lac
 step << Paladin
     #optional
     #requires GoldshireVendor
     .goto 1429/0,109.04,-9468.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Irmão Guilhermino|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Brother Wilhelm
     .xp <10,1
     .xp >12,1
@@ -2701,20 +2701,20 @@ step << Paladin
     #requires GoldshireVendor
     .goto 1429/0,109.04,-9468.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Irmão Guilhermino|r
-    .accept 2998 >>Aceite Tomo de Divindade
-    .trainer >>Treine suas magias de classe
+    .accept 2998 >> Aceite Tomo de Divindade
+    .trainer >> Treine suas magias de classe
     .target Brother Wilhelm
     .xp <12,1
 step << Warlock
     #optional
     #completewith next
-    .goto 1429/0,4.78,-9467.21,10 >>Vá para baixo na Estalagem
+    .goto 1429/0,4.78,-9467.21,10 >> Vá para baixo na Estalagem
 step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Wagner Nascimento|r e |cRXP_FRIENDLY_Rêmulo Marcos|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .goto 1429/0,-5.36,-9472.760
     .target +Maximillian Crowe
-    .accept 1685 >>Aceite Convocação de Gakin
+    .accept 1685 >> Aceite Convocação de Gakin
     .goto 1429/0,-8.58,-9473.41
     .target +Remen Marcot
 step << Mage/Priest
@@ -2728,8 +2728,8 @@ step << Priest
     #requires GoldshireVendor
     .goto 1429/0,33.14,-9460.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sacerdotisa Joselita|r
-    .accept 5635 >>Aceite Prece Desesperada
-    .trainer >>Treine suas magias de classe
+    .accept 5635 >> Aceite Prece Desesperada
+    .trainer >> Treine suas magias de classe
     .target Priestess Josetta
     .xp <10,1
 step << Mage
@@ -2737,7 +2737,7 @@ step << Mage
     #requires GoldshireVendor
     .goto 1429/0,34.28,-9471.61
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Zaldimar Wefhellt|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Zaldimar Wefhellt
     .xp <10,1
 step << skip --Rogue
@@ -2746,19 +2746,19 @@ step << skip --Rogue
     .goto 1429/0,12.69,-9465.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Anabela Cabreira|r
     >>|cRXP_WARN_apenas treine|r |T132147:0|t[Empunhar Duas Armas] |cRXP_WARN_e|r |T132307:0|t[Disparada]|cRXP_WARN_. Não treine outros feitiços para economizar dinheiro para depois|r
-    .train 674 >>Treine |T132147:0|t[Empunhar Duas Armas]
-    .train 2983 >>Treine |T132307:0|t[Disparada]
+    .train 674 >> Treine |T132147:0|t[Empunhar Duas Armas]
+    .train 2983 >> Treine |T132307:0|t[Disparada]
     .target Keryn Sylvius
 --XX skip quest, not worth going inside for
 step << !Warlock
     #completewith PrincessFinish
     #optional
-    .abandon 59 >>Abandone Armadura de Pano e Couro
+    .abandon 59 >> Abandone Armadura de Pano e Couro
 
 step
     .goto 1429/0,72.81,-9496.23--c:Elwynn Forest,42.140,67.254
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Remy "Duas Vezes"|r
-    .turnin 99129 >>Entregue A Man About a Murloc
+    .turnin 99129 >> Entregue A Man About a Murloc
     --.accept 99130 >> Accept An Enticing Offer
     .target Remy "Two Times"
     --skipping the follow up. terrible drop rates/respawn times
@@ -2772,13 +2772,13 @@ step << skip
 step << skip
     .goto 1429/0,72.81,-9496.23--c:Elwynn Forest,42.140,67.254
     >>|interface/worldmap/chatbubble_64grey.blp:20|t Fale com |cRXP_FRIENDLY_Remy "Duas Vezes"|r
-    .turnin 99130 >>Entregue Uma Oferta Atraente
-    .accept 99131 >>Aceite Isca para Sucesso
+    .turnin 99130 >> Entregue Uma Oferta Atraente
+    .accept 99131 >> Aceite Isca para Sucesso
     .target Remy "Two Times"
 sstep << skip
     .goto 1429,47.5,62.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jason Mathers|r
-    .turnin 99131 >>Entregue Isca para Sucesso
+    .turnin 99131 >> Entregue Isca para Sucesso
     .target Jason Mathers
 
 
@@ -2817,46 +2817,46 @@ step
     #optional
     #requires GoldshireVendor
     #completewith next
-    .goto 1429/0,37.61,-10014.03,50 >>Viaje para The Maclure Vineyards
+    .goto 1429/0,37.61,-10014.03,50 >> Viaje para The Maclure Vineyards
 step
     #label Escape
     #requires GoldshireVendor
     .goto 1429/0,37.61,-10014.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mabel Madruga|r
-    .turnin 114 >>Entregue A Fuga
+    .turnin 114 >> Entregue A fuga
     .target Maybell Maclure
 step
     #label PrincessFinish
     .goto 1429/0,332.43,-9894.99--c:Elwynn Forest,34.660,84.482
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Mama Campedra|r
-    .turnin 88,1 >>Entregue Princesa Tem que Morrer << Rogue/Hunter
-    .turnin 88,2 >>Entregue Princesa Tem que Morrer << Warrior/Paladin
-    .turnin 88,3 >>Entregue Princesa Tem que Morrer << !Rogue !Hunter !Warrior !Paladin
+    .turnin 88,1 >> Entregue Princesa Tem que Morrer << Rogue/Hunter
+    .turnin 88,2 >> Entregue Princesa Tem que Morrer << Warrior/Paladin
+    .turnin 88,3 >> Entregue Princesa Tem que Morrer << !Rogue !Hunter !Warrior !Paladin
     .target Ma Stonefield
 step << !Warrior !Warlock
     #optional
     #completewith Garrison
-    .xp 9+4510 >>Farme até 4510+/6500xp
+    .xp 9+4510 >> Farme até 4510+/6500xp
     .itemcount 1971,1 --Westfall Deed (1)
 step << !Warrior !Warlock
     #optional
     #completewith Garrison
-    .xp 9+5110 >>Farme até 5110+/6500xp
+    .xp 9+5110 >> Farme até 5110+/6500xp
     .itemcount 1971,<1 --Westfall Deed (0)
 step
     #optional
     #completewith Garrison
-    .goto 1429/0,673.96,-9704.45,80 >>Viaje para Westbrook Garrison
+    .goto 1429/0,673.96,-9704.45,80 >> Viaje para Westbrook Garrison
 step
     #label Garrison
     #season 0,1 << Warrior/Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Delegado Ranieri|r
-    .turnin 239 >>Entregue Ribeira d'Oeste Precisa de Ajuda
-    .accept 11 >>Aceite Caçando gnolls << Warlock
+    .turnin 239 >> Entregue Ribeira d'Oeste Precisa de Ajuda
+    .accept 11 >> Aceite Caçando gnolls << Warlock
     .goto 1429/0,694.29,-9662.790
     .target +Deputy Rainer
     >>Clique no |cRXP_PICK_Cartaz de Procurado|r << Warlock
-    .accept 176 >>Aceite Wanted: "Hogger" << Warlock
+    .accept 176 >> Aceite Wanted: "Hogger" << Warlock
     .goto 1429/0,683.40,-9667.93 << Warlock
 step << Warlock
     #completewith GnollEnd
@@ -2865,7 +2865,7 @@ step << Warlock
     >>|cRXP_WARN_A|r |T134939:0|t[|cRXP_LOOT_Agenda de Coleta de Ouro|r] |cRXP_WARN_é um drop extremamente raro. Ignorar este passo se você não conseguir|r
     >>|cRXP_ENEMY_Rude Mordelogo|r |cRXP_WARN_é um spawn raro, mas tem 100% de chance de drop|r
     .collect 1307,1,123 --Collect Gold Pickup Schedule (x1)
-    .accept 123 >>Aceite O Coletor
+    .accept 123 >> Aceite O Coletor
     .unitscan Gruff Swiftbite
 step << Warlock
     #completewith next
@@ -2916,48 +2916,48 @@ step << Warlock
 step << Warlock
     .goto 1429/0,694.29,-9662.790
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Delegado Ranieri|r
-    .turnin 11 >>Entregue Recompensa Gnoll de Riopatas
+    .turnin 11 >> Entregue Recompensa Gnoll de Riopatas
     .target Deputy Rainer
 step << !Warrior !Warlock !Hunter
     #xprate <1.5
     #optional
     #completewith WestEntry
-    .xp 9+4575 >>Acumule até 4575+/6500xp
+    .xp 9+4575 >> Acumule até 4575+/6500xp
     .itemcount 1971,1 --Westfall Deed (1)
 step << !Warrior !Warlock !Hunter
     #xprate <1.5
     #optional
     #completewith WestEntry
-    .xp 9+5175 >>Acumule até 5175+/6500xp
+    .xp 9+5175 >> Acumule até 5175+/6500xp
     .itemcount 1971,<1 --Westfall Deed (0)
 step << !Warlock
     #optional
     #completewith WestEntry
-    .abandon 123 >>Abandone O Coletor
+    .abandon 123 >> Abandone O Coletor
 step << !Hunter
     #completewith WestEntry
     .goto 1436/0,918.42,-9851.50
-    .zone Westfall >>Viaje até Cerro Oeste
+    .zone Westfall >> Viaje até Cerro Oeste
 step << !Hunter
     #optional
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Fazendeiro Taturana|r e |cRXP_FRIENDLY_Vera Taturana|r
-    .accept 64 >>Aceite A Herança Esquecida
-    .turnin 184 >>Entregue Escritura do Furlbrow
+    .accept 64 >> Aceite A Herança Esquecida
+    .turnin 184 >> Entregue Escritura do Furlbrow
     .goto 1436/0,918.42,-9851.50
     .target +Farmer Furlbrow
-    .accept 151 >>Aceite Pobre Velha Brancurinha
-    .accept 36 >>Aceite Ensopado de Cerro Oeste
+    .accept 151 >> Aceite Pobre Velha Brancurinha
+    .accept 36 >> Aceite Ensopado de Cerro Oeste
     .goto 1436/0,919.47,-9853.13
 	.target +Verna Furlbrow
     .isOnQuest 184
 step << !Hunter
     #label WestEntry
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Fazendeiro Taturana|r e |cRXP_FRIENDLY_Vera Taturana|r
-    .accept 64 >>Aceite A Herança Esquecida
+    .accept 64 >> Aceite A Herança Esquecida
     .goto 1436/0,918.42,-9851.50
     .target +Farmer Furlbrow
-    .accept 151 >>Aceite Pobre Velha Brancurinha
-    .accept 36 >>Aceite Ensopado de Cerro Oeste
+    .accept 151 >> Aceite Pobre Velha Brancurinha
+    .accept 36 >> Aceite Ensopado de Cerro Oeste
     .goto 1436/0,919.47,-9853.13
 	.target +Verna Furlbrow
 step << !Hunter
@@ -2970,19 +2970,19 @@ step << !Hunter
     #label Fields
     .goto 1436/0,1055.27,-10128.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Fazendeiro Saldanha|r
-    .accept 9 >>Aceite Os Campos da Morte
+    .accept 9 >> Aceite Os Campos da Morte
     .target Farmer Saldean
 step << !Hunter
     .goto 1436/0,1042.11,-10112.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Salma Saldanha|r dentro
-    .turnin 36 >>Entregue Cozido de Costa Negra
-    .accept 38 >>Aceite Ensopado de Cerro Oeste
+    .turnin 36 >> Entregue Cozido de Costa Negra
+    .accept 38 >> Aceite Ensopado de Cerro Oeste
     .accept 22 >>Aceite Empadão de Fígado de Goretusco
     .target Salma Saldean
 step << !Hunter
     #requires Fields
     .goto 1436/0,1045.22,-10508.800
-    .xp 9+5775 >>Acumule até 5775+/6500xp
+    .xp 9+5775 >> Acumule até 5775+/6500xp
     .subzoneskip 108
 step << !Hunter
     #xprate >1.49 << !Paladin
@@ -2990,59 +2990,59 @@ step << !Hunter
     #optional
     #requires Fields
     .goto 1436/0,1045.22,-10508.800
-    .xp 9+5410 >>Acumule até 5410+/6500xp
+    .xp 9+5410 >> Acumule até 5410+/6500xp
     .subzoneskip 108
 step << Paladin
     #xprate >1.59
     #optional
     .goto 1436,48.249,46.729
-    .xp 11+5360 >>Acumule até 5360+/8800xp
+    .xp 11+5360 >> Acumule até 5360+/8800xp
 --XX 625+210+85+800 = 1720 x2 = 3440
 step << skip
     #softcore
     #completewith next
-    .deathskip >>Morra e reviva no Anjo da Cura
+    .deathskip >> Morra e reviva no Anjo da Cura
     .target Anjo da Cura
 -- .subzoneskip 108
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel Mantoforte|r e o |cRXP_FRIENDLY_Capitão Danuvin|r << !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel Mantoforte|r << Hunter
-    .turnin 109 >>Entregue Miguel Mantoforte
-    .accept 12 >>Aceite A Milícia do Povo << !Hunter
+    .turnin 109 >> Entregue Miguel Mantoforte
+    .accept 12 >> Aceite A Milícia do Povo << !Hunter
     .goto 1436/0,1045.22,-10508.800
     .target +Gryan Stoutmantle
-    .accept 102 >>Aceite Patrulhando Cerro Oeste << !Hunter
+    .accept 102 >> Aceite Patrulhando Cerro Oeste << !Hunter
     .goto 1436/0,1041.93,-10511.20 << !Hunter
     .target +Captain Danuvin << !Hunter
 step << Human
     #optional
     .goto 1436/0,1055.27,-10128.70
-    .xp 10 >>Suba até o nível 10
+    .xp 10 >> Suba até o nível 10
 step
     .goto 1436/0,1021.60,-10500.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Intendente Ludovico|r
-    .accept 6181 >>Aceite Um Recado Rápido << Human
+    .accept 6181 >> Aceite Um Recado Rápido << Human
     .target Quartermaster Lewis
     .isQuestAvailable 6181 << Human
 step << Human
     .goto 1436/0,1037.42,-10628.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thor|r
-    .turnin 6181 >>Entregue Um Recado Rápido
-    .accept 6281 >>Aceite Continue para Ventobravo
+    .turnin 6181 >> Entregue Um Recado Rápido
+    .accept 6281 >> Aceite Continue para Ventobravo
     .target Thor
 step
     #label FlySW
     .goto 1436/0,1037.42,-10628.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thor|r
-    .fly Stormwind >>Voe para Ventobravo
+    .fly Stormwind >> Voe para Ventobravo
     .target Thor
 step
     #season 0,1 << Paladin
     .goto 1453/0,625.48,-8857.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Morgado Pilão|r
-    .turnin 61,1 >>Entregue Carregamento para Ventobravo
+    .turnin 61,1 >> Entregue Carregamento para Ventobravo
     >>|cRXP_WARN_Escolhemos os|r |T132383:0|t[Explosivo Foguetes] |cRXP_WARN_como a recompensa. Causa bom dano e pode ser usado para \"split pulling\", que é incrivelmente útil|r
-    .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >>https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_Clique aqui para referência em vídeo sobre \"split pulling\". É um vídeo curto e inestimável para aprender|r
+    .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_Clique aqui para referência em vídeo sobre \"split pulling\". É um vídeo curto e inestimável para aprender|r
     .target Morgan Pestle
 step << Rogue
     .goto 1453/0,596.43,-8831.70
@@ -3161,8 +3161,8 @@ step << Rogue
     .xp <11,1
 step
     .goto 1453/0,673.58,-8867.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Estalajadeira Cristine|r
-    .home >>Defina sua Pedra de Retorno em Cidade de Ventobravo
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Estalajadeira Cristine|r
+    .home >> Defina sua Pedra de Retorno em Cidade de Ventobravo
     .target Innkeeper Allison
     .bindlocation 16509
 step << Hunter
@@ -3180,7 +3180,7 @@ step << Hunter
     .target Lina Stover
 step << Hunter
     #completewith next
-    .equip 18,2507 >>|cRXP_WARN_Equipe o|r |T135489:0|t[Arco Recurvo Laminado]
+    .equip 18,2507 >> |cRXP_WARN_Equipe o|r |T135489:0|t[Arco Recurvo Laminado]
     .use 2507
     .itemcount 2507,1 --Hornwood Recurve Bow (1)
 
@@ -3190,12 +3190,12 @@ step << Warlock
     #optional
     #completewith GakinStart
     .goto 1453/0,988.44,-8942.15,20,0
-    .goto 1453/0,1015.33,-8978.9,15 >>Vá para The Slaughtered Lamb e desça
+    .goto 1453/0,1015.33,-8978.9,15 >> Vá para The Slaughtered Lamb e desça
 step << Warlock
     #xprate >1.59
     .goto 1453/0,1029.98,-8971.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ursula Deline|r
-    .train 705 >>Treine suas magias de classe
+    .train 705 >> Treine suas magias de classe
     .target Ursula Deline
     .xp <12,1
     .xp >14,1
@@ -3204,36 +3204,36 @@ step << Warlock
     #optional
     .goto 1453/0,1029.98,-8971.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ursula Deline|r
-    .train 689 >>Treine suas magias de classe
+    .train 689 >> Treine suas magias de classe
     .target Ursula Deline
     .xp <14,1
 step << Warlock
     #label GakinStart
     .goto 1453/0,1041.54,-8983.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gakin, o Neromante|r
-    .turnin 1685 >>Entregue Gakin's Summons
-    .accept 1688 >>Aceite Surena Caledon
+    .turnin 1685 >> Entregue Gakin's Summons
+    .accept 1688 >> Aceite Surena Caledon
     .target Gakin the Darkbinder
 step << Warlock skip
     #softcore
-    .deathskip >>Morra e reapareça no |cRXP_FRIENDLY_Anjo da Cura|r usando |T136126:0|t[Conversão de Vida] e ficando parado sobre a Objetos de Cata ao seu lado
+    .deathskip >> Morra e reapareça no |cRXP_FRIENDLY_Anjo da Cura|r usando |T136126:0|t[Conversão de Vida] e ficando parado sobre a Objetos de Cata ao seu lado
     .target Anjo da Cura
 --  .subzoneskip 87
 step << Warlock
     #hardcore
     #completewith WLHoggerEnd
     .goto 1429/0,74.02,-9465.52
-    .zone Elwynn Forest >>Saia de Ventobravo
+    .zone Elwynn Forest >> Saia de Ventobravo
 step << Warlock
     #completewith WLHoggerEnd
     .goto 1429/0,74.02,-9465.52
-    .subzone 87 >>Voe para Goldshire
+    .subzone 87 >> Voe para Goldshire
 step << Warlock
     .goto 1429/0,74.02,-9465.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Delegado Durão|r
     -->>|cRXP_WARN_Choose the|r |T135145:0|t[Balanced Fighting Stick]
-    .turnin 176 >>Entregue Wanted: "Hogger"
-    .turnin 123 >>Entregue O Coletor
+    .turnin 176 >> Entregue Wanted: "Hogger"
+    .turnin 123 >> Entregue O Coletor
     .target Marshal Dughan
     .isOnQuest 123
 step << Warlock
@@ -3241,7 +3241,7 @@ step << Warlock
     .goto 1429/0,74.02,-9465.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Delegado Durão|r
     -->>|cRXP_WARN_Choose the|r |T135145:0|t[Balanced Fighting Stick]
-    .turnin 176 >>Entregue Wanted: "Hogger"
+    .turnin 176 >> Entregue Wanted: "Hogger"
     .target Marshal Dughan
 step << Warlock
     #optional
@@ -3283,7 +3283,7 @@ step << Warlock
 step << Warlock
     #optional
     #completewith SChoker
-    .subzone 62 >>Vá para o Brackwell Abóbora Mathiaz
+    .subzone 62 >> Vá para o Brackwell Abóbora Mathiaz
     .isOnQuest 1688
 step << Warlock
     #optional
@@ -3292,7 +3292,7 @@ step << Warlock
     .use 1972>>|cRXP_WARN_Use o |T134939:0|t[|cRXP_LOOT_Escritura de Cerro Oeste|r] para iniciar a missão|r
     >>|cRXP_WARN_A|r |T134939:0|t[|cRXP_LOOT_Escritura de Cerro Oeste|r] |cRXP_WARN_é uma queda muito rara. Ignorar este passo se você não conseguir|r
     .collect 1972,1,184 --Collect Westfall Deed (x1)
-    .accept 184 >>Aceite Escritura de Furlbrow
+    .accept 184 >> Aceite Escritura de Furlbrow
 step << Warlock
     #sticky
     #label WLBandanaEnd
@@ -3345,8 +3345,8 @@ step << Warlock
     #requires WLBandanaEnd
     .goto 1429/0,-1222.40,-9531.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sara Albernaz|r
-    .turnin 59 >>Entregue Armadura de Pano e Couro
-    .turnin 83 >>Entregue Tecidos de Linho Vermelho
+    .turnin 59 >> Entregue Armadura de Pano e Couro
+    .turnin 83 >> Entregue Tecidos de Linho Vermelho
     .target Sara Timberlain
     .isOnQuest 83
 step << Warlock
@@ -3354,7 +3354,7 @@ step << Warlock
     #requires WLBandanaEnd
     .goto 1429/0,-1222.40,-9531.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sara Albernaz|r
-    .turnin 59 >>Entregue Armadura de Pano e Couro
+    .turnin 59 >> Entregue Armadura de Pano e Couro
     .target Sara Timberlain
 step << Warlock
     #optional
@@ -3367,48 +3367,48 @@ step << Warlock
     #label WlockRedridge
     #completewith next
     .goto 1433/0,-1948.56,-9582.75
-    .zone Redridge Mountains >>Viaje para as Montanhas Cristarrubra
+    .zone Redridge Mountains >> Viaje para as Montanhas Cristarrubra
 step << Warlock
     #label Gnolls
     #requires SoulShards
     .goto 1433/0,-1906.400,-9606.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Guarda Capitão da Guarda Florestan|r
-    .accept 244 >>Aceite Gnolls Invasores
+    .accept 244 >> Aceite Gnolls Invasores
     .target Guard Parker
 step << Warlock
     .goto 1433/0,-1974.20,-9577.07,15,0
     .goto 1433/0,-2077.18,-9608.42,25,0
     .goto 1433/0,-2212.64,-9558.570,25,0
-    .goto 1433/0,-2238.00,-9443.69,25 >>Voe para Lakeshire
+    .goto 1433/0,-2238.00,-9443.69,25 >> Voe para Lakeshire
     >>|cRXP_WARN_MANTENHA-SE NA ESTRADA PRINCIPAL E EVITE QUALQUER INIMIGO PRÓXIMO NO CAMINHO|r
     .target Deputy Feldon
 step << Warlock
     .goto 1433/0,-2238.00,-9443.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Subdelegado David|r
-    .turnin 244 >>Entregue Gnolls Invasores
+    .turnin 244 >> Entregue Gnolls Invasores
 step << Warlock
     .goto 1433/0,-2234.900,-9435.300
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena Penafúria|r
-    .fp Redridge Mountains >>Aprenda a rota de voo para Montanhas Cristarrubra
-    .fly Stormwind >>Voe para Ventobravo
+    .fp Redridge Mountains >> Aprenda a rota de voo para Montanhas Cristarrubra
+    .fly Stormwind >> Voe para Ventobravo
     .target Ariena Stormfeather
 step << Warlock
     #completewith TheBinding
     .goto 1453/0,988.44,-8942.15,20,0
-    .goto 1453/0,1015.33,-8978.9,15 >>Vá para The Slaughtered Lamb e desça
+    .goto 1453/0,1015.33,-8978.9,15 >> Vá para The Slaughtered Lamb e desça
 step << Warlock
     #optional
     .goto 1453/0,1029.89,-8971.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ursula Deline|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Ursula Deline
     .xp <12,1
 step << Warlock
     #label TheBinding
     .goto 1453/0,1041.54,-8983.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gakin, o Neromante|r
-    .turnin 1688 >>Entregue Surena Caledon
-    .accept 1689 >>Aceite A vinculação
+    .turnin 1688 >> Entregue Surena Caledon
+    .accept 1689 >> Aceite A vinculação
     .target Gakin the Darkbinder
 step << Warlock
     #completewith next
@@ -3417,18 +3417,18 @@ step << Warlock
     .goto 1453/0,1027.43,-8991.45,18,0
     .goto 1453/0,1042.83,-8972.68
     >>Viaje até o subsolo de O Cordeiro Degolado
-    .cast 7728 >>|cRXP_WARN_Use a|r |T133292:0|t[Gargantilha de Pedra-sangrenta] |cRXP_WARN_para invocar um|r |cRXP_ENEMY_Invocado Emissário do Caos|r
+    .cast 7728 >> |cRXP_WARN_Use a|r |T133292:0|t[Gargantilha de Pedra-sangrenta] |cRXP_WARN_para invocar um|r |cRXP_ENEMY_Invocado Emissário do Caos|r
     .use 6928
 step << Warlock
     .goto 1453/0,1042.83,-8972.68
-    .use 6928 >>Abate o |cRXP_ENEMY_Invocado Emissário do Caos|r
+    .use 6928 >> Abate o |cRXP_ENEMY_Invocado Emissário do Caos|r
     .complete 1689,1 --Kill Summoned Voidwalker (x1)
     .mob Summoned Voidwalker
 step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gakin, o Neromante|r
     .target Gakin the Darkbinder
     .goto 1453/0,1041.54,-8983.29
-    .turnin 1689 >>Entregue A Vinculação
+    .turnin 1689 >> Entregue A Vinculação
 
 
 ----Warlock Elwynn Voidwalker Section End----
@@ -3438,15 +3438,15 @@ step << Rogue
     .goto 1453/0,377.47,-8752.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Osborne, o Homem da Madrugada|r
     >>|cRXP_WARN_Treine apenas|r |T132147:0|t[Empunhar Duas Armas] |cRXP_WARN_e|r |T132307:0|t[Disparada]
-    .train 674 >>Treine |T132147:0|t[Empunhar Duas Armas]
-    .train 2983 >>Treine |T132307:0|t[Disparada]
+    .train 674 >> Treine |T132147:0|t[Empunhar Duas Armas]
+    .train 2983 >> Treine |T132307:0|t[Disparada]
     .target Osborne the Night Man
 step << Rogue
     #xprate >1.59
     .goto 1453/0,377.47,-8752.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Osborne, o Homem da Madrugada|r
-    .train 674 >>Treine |T132147:0|t[Empunhar Duas Armas]
-    .train 2983 >>Treine |T132307:0|t[Disparada]
+    .train 674 >> Treine |T132147:0|t[Empunhar Duas Armas]
+    .train 2983 >> Treine |T132307:0|t[Disparada]
     .target Osborne the Night Man
     .xp <10,1
     .xp >12,1
@@ -3454,7 +3454,7 @@ step << Rogue
     #xprate >1.59
     .goto 1453/0,377.47,-8752.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Osborne, o Homem da Madrugada|r
-    .train 1766 >>Treine suas magias de classe
+    .train 1766 >> Treine suas magias de classe
     .target Osborne the Night Man
     .xp <12,1
     .xp >14,1
@@ -3463,7 +3463,7 @@ step << Rogue
     #optional
     .goto 1453/0,377.47,-8752.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Osborne, o Homem da Madrugada|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Osborne the Night Man
     .xp <14,1
 step << Rogue
@@ -3485,20 +3485,20 @@ step << Human
     #label Continue
     .goto 1453/0,382.02,-8702.290
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Larso Norde|r
-    .turnin 6281 >>Entregue Siga para Ventobravo
-    .accept 6261 >>Aceite Dungar Tragolongo << !Hunter
+    .turnin 6281 >> Entregue Siga para Ventobravo
+    .accept 6261 >> Aceite Dungar Tragolongo << !Hunter
     .target Osric Strang
 step << Warrior
     .goto 1453/0,382.86,-8612.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ari Barbotina|r
-    .turnin 1638 >>Entregue A Warrior's Treinamento
-    .accept 1639 >>Aceite Bartolino the Bêbado - Missão
+    .turnin 1638 >> Entregue A Warrior's Treinamento
+    .accept 1639 >> Aceite Bartolino the Bêbado - Missão
     .target Harry Burlguard
 step << Warrior
     .goto 1453/0,389.07,-8604.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bartolino|r
-    .turnin 1639 >>Entregue Bartolino the Bêbado - Missão
-    .accept 1640 >>Aceite Beat Bartolino - Missão
+    .turnin 1639 >> Entregue Bartolino the Bêbado - Missão
+    .accept 1640 >> Aceite Beat Bartolino - Missão
     .target Bartleby
 step << Warrior
     .goto 1453/0,389.07,-8604.43
@@ -3509,30 +3509,30 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bartolino|r
     .target Bartleby
     .goto 1453/0,389.07,-8604.43
-    .turnin 1640 >>Entregue Beat Bartolino - Missão
-    .accept 1665 >>Aceite Caneca do Bartolino
+    .turnin 1640 >> Entregue Beat Bartolino - Missão
+    .accept 1665 >> Aceite Caneca do Bartolino
 step << Warrior
     .goto 1453/0,382.86,-8612.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ari Barbotina|r
-    .turnin 1665 >>Entregue Caneca do Bartolino
+    .turnin 1665 >> Entregue Caneca do Bartolino
     .target Harry Burlguard
 step << Priest
     #optional
     #completewith Prayer
-    .goto 1453/0,809.52,-8579.22,20 >>Entre na Catedral de Ventobravo
+    .goto 1453/0,809.52,-8579.22,20 >> Entre na Catedral de Ventobravo
 step << Priest
     #optional
     .goto 1453/0,862.89,-8519.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Alta-sacerdotisa Laurena|r
-    .turnin 5635 >>Entregue Prece Desesperada
-    .train 8092 >>Treine suas magias de classe
+    .turnin 5635 >> Entregue Prece Desesperada
+    .train 8092 >> Treine suas magias de classe
     .target High Priestess Laurena
     .isOnQuest 5635
 step << Priest
     .goto 1453/0,862.89,-8519.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Alta-sacerdotisa Laurena|r
-    .turnin 5634 >>Entregue Prece Desesperada
-    .train 8092 >>Treine suas magias de classe
+    .turnin 5634 >> Entregue Prece Desesperada
+    .train 8092 >> Treine suas magias de classe
     .target High Priestess Laurena
     .train 13908,1
 step << Priest
@@ -3540,14 +3540,14 @@ step << Priest
     #label Prayer
     .goto 1453/0,862.89,-8519.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Alta-sacerdotisa Laurena|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target High Priestess Laurena
     .train 13908,3
 step
     .goto 1453/0,685.22,-8387.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grimand Elmore|r
-    .turnin 1097 >>Entregue Tarefa de Elmore
-    .accept 353 >>Aceite Entrega para Lançatroz
+    .turnin 1097 >> Entregue Tarefa de Elmore
+    .accept 353 >> Aceite Entrega para Lançatroz
     .target Grimand Elmore
 step << Warrior
     #season 0,1
@@ -3659,7 +3659,7 @@ step
     >>|cRXP_WARN_Você precisará de sua|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_estar em nível 80 para uma missão do nível 24|r << Rogue !Dwarf
     >>|cRXP_WARN_Lance|r |T136221:0|t[Evocar Emissário do Caos] |cRXP_WARN_e|r |T135230:0|t[Criar Pedra de Vida] |cRXP_WARN_enquanto espera pelo Bonde para Ironforge se necessário|r << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r na plataforma do meio no lado de Ironforge do Tram de Profundezas
-    .accept 6661 >>Aceite Caçada aos Ratos das Profundezas
+    .accept 6661 >> Aceite Caçada aos Ratos das Profundezas
     .target Monty
 step
     #xprate <1.59
@@ -3670,7 +3670,7 @@ step
 step
     #xprate <1.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Monty|r dentro do Tram de Profundezas
-    .turnin 6661 >>Entregue Caçada aos Ratos das Profundezas
+    .turnin 6661 >> Entregue Caçada aos Ratos das Profundezas
     .target Monty
 step
     .zone Ironforge >>Entre em Ironforge
@@ -3679,12 +3679,12 @@ step << Warrior
     #optional
     #completewith next
     .goto 1455,67.400,84.909,15,0
-    .goto 1455/0,-1234.65,-5035.67,12 >>Vá para |cRXP_FRIENDLY_Bilban Lançachave|r
+    .goto 1455/0,-1234.65,-5035.67,12 >> Vá para |cRXP_FRIENDLY_Bilban Lançachave|r
 step << Warrior
     .goto 1455/0,-1234.65,-5035.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bilban Arremessaporca|r
     >>|cRXP_WARN_Guarde 20s 70c para depois|r
-    .train 2687 >>Treine suas magias de classe
+    .train 2687 >> Treine suas magias de classe
     .target Bilban Tosslespanner
     .xp <10,1
     .xp >12,1
@@ -3692,13 +3692,13 @@ step << Warrior
     #optional
     #completewith next
     .goto 1455,61.552,85.636,10,0
-    .goto 1455,61.356,88.398,6 >>Entre no Timberline Armas Building
+    .goto 1455,61.356,88.398,6 >> Entre no Timberline Armas Building
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bixi Bateagita|r e |cRXP_FRIENDLY_Bulif Manopedra|r
-    .train 2567 >>Treine Arremesso
+    .train 2567 >> Treine Arremesso
     .goto 1455/0,-1205.65,-5042.12
     .target +Bixi Wobblebonk
-    .train 199 >>Treine Maças de Duas Mãos
+    .train 199 >> Treine Maças de Duas Mãos
     .goto 1455/0,-1197.27,-5041.49
     .target +Buliwyf Stonehand
 step << Warrior
@@ -3738,11 +3738,11 @@ step << Warrior
 step << Warrior
     #optional
     #completewith next
-    .goto 1455,61.356,88.398,6 >>Saia do Timberline Armas Building
+    .goto 1455,61.356,88.398,6 >> Saia do Timberline Armas Building
 step
     .goto 1455/0,-1152.40,-4821.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Trovino|r
-    .fp Ironforge >>Aprenda a rota de voo para Ironforge
+    .fp Ironforge >> Aprenda a rota de voo para Ironforge
     .target Gryth Thurden
 step << Mage/Paladin
     #optional
@@ -3758,17 +3758,17 @@ step << Mage/Paladin
 step << Mage
     .goto 1455/0,-928.40,-4614.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dink|r dentro
-    .train 122 >>Treine suas magias de classe
+    .train 122 >> Treine suas magias de classe
     .target Dink
 step << Paladin
     .goto 1455/0,-896.47,-4601.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Brandur Ferromalho dentro
-    .train 633 >>Treine suas magias de classe
+    .train 633 >> Treine suas magias de classe
     .target Brandur Ironhammer
 step << skip -- for dungeon route only
     .goto 1455/0,-856.69,-4841.490
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Aguardente|r
-    .home >>Defina sua Pedra de Regresso em Ironforge
+    .home >> Defina sua Pedra de Regresso em Ironforge
     .target Innkeeper Firebrew
     .bindlocation 1537
 step
@@ -3823,7 +3823,7 @@ step
 step
     .goto 1426,53.47,35.02
     >>Saia de Altaforja
-    .zone Dun Morogh >>Vá para Dun Morogh
+    .zone Dun Morogh >> Vá para Dun Morogh
 --logout skip - remove if logout skips re-added
 step
     .goto 1426/0,-682.300,-5489.000
@@ -3867,8 +3867,8 @@ step
     .goto 1426,62.778,54.591,0
     .goto 1426,62.538,46.195,0
     +|cRXP_WARN_Atraia |cRXP_ENEMY_Ragash|r para baixo até|r |cRXP_FRIENDLY_Rudra|r
-    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >>https://youtu.be/Zg4FNWw-P5k?t=3815 >>|cRXP_WARN_CLIQUE AQUI se você está tendo dificuldades|r << Mage
-    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >>https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Clique aqui para referência de vídeo|r << !Mage
+    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >>|cRXP_WARN_CLIQUE AQUI se você está tendo dificuldades|r << Mage
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Clique aqui para referência de vídeo|r << !Mage
     .mob Vagash
 step << Warrior/Rogue
     #optional
@@ -3883,7 +3883,7 @@ step
     #label Rudra
     .goto 1426/0,-1304.71,-5513.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Rudra Ambarmanso|r
-    .accept 314 >>Aceite Amarre Sua Cabra Pois Ragash Está Solto
+    .accept 314 >> Aceite Amarre Sua Cabra Pois Ragash Está Solto
     .target Rudra Amberstill
 step
     #label VagashEnd
@@ -3894,14 +3894,14 @@ step
     >>Mate |cRXP_ENEMY_Ragash|r. Saque-o para obter sua |cRXP_LOOT_Dentada|r
     >>|cRXP_WARN_Atraia-o até o guarda ao sul do rancho. Certifique-se de fazer mais de 51% de dano|r
     >>|cRXP_WARN_Vigiar o vídeo abaixo antes de tentar matar |cRXP_ENEMY_Ragash|r. Pode ser feito solo em qualquer classe|r
-    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >>https://youtu.be/Zg4FNWw-P5k?t=3815 >> |cRXP_WARN_Clique aqui para referência de vídeo|r << Mage
-    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >>https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Clique aqui para referência de vídeo|r << !Mage
+    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >> |cRXP_WARN_Clique aqui para referência de vídeo|r << Mage
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Clique aqui para referência de vídeo|r << !Mage
     .complete 314,1 --Collect Fang of Vagash (1)
     .mob Vagash
 step
     .goto 1426/0,-1304.71,-5513.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Rudra Ambarmanso|r
-    .turnin 314 >>Entregue Amarre Sua Cabra Pois Ragash Está Solto
+    .turnin 314 >> Entregue Amarre Sua Cabra Pois Ragash Está Solto
     .target Rudra Amberstill
 step
     #optional
@@ -3929,18 +3929,18 @@ step
     #label QuarryStart
     .goto 1426/0,-1394.24,-5797.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Earthseer Farsen|r
-    .turnin -96408 >>Entregue Uma Visita a Dun Morogh
-    .accept 96392 >>Aceite Vigiar de Farsen
+    .turnin -96408 >> Entregue Uma Visita a Dun Morogh
+    .accept 96392 >> Aceite Vigiar de Farsen
     .target Earthseer Farsen
 step
     .isOnQuest 96392
     .goto 1426/0,-1394.24,-5797.83
-    .gossipoption 139831 >>Fale com |cRXP_FRIENDLY_Earthseer Farsen|r para ver sua visão distante
+    .gossipoption 139831 >> Fale com |cRXP_FRIENDLY_Earthseer Farsen|r para ver sua visão distante
     >>|cRXP_WARN_Você pode cancelar a Visão Distante quando o objetivo for concluído|r
     .target Earthseer Farsen
 step
     .isOnQuest 96392
-    .aura -1293681 >>|cRXP_WARN_Pressione ESCAPE para cancelar a Visão Distante|r
+    .aura -1293681 >> |cRXP_WARN_Pressione ESCAPE para cancelar a Visão Distante|r
 step << skip
     .goto 1426/0,-1394.24,-5797.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Earthseer Farsen|r
@@ -3952,28 +3952,28 @@ step
     .goto 1426/0,-1394.24,-5797.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Earthseer Farsen|r
     >>|cRXP_WARN_Pressione ESCAPE para cancelar a Visão Distante|r
-    .turnin 96392 >>Entregue A Vigília de Farsen
-    .accept 96390 >>Aceite Nip 'Em in the Migo
+    .turnin 96392 >> Entregue A Vigília de Farsen
+    .accept 96390 >> Aceite Nip 'Em in the Migo
     .target Earthseer Farsen
 step
     #optional
     .goto 1426/0,-1565.58,-5666.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Cozinheiro Ghilm|r
-    .train 2550 >>Treine |T133971:0|t[Culinária]
+    .train 2550 >> Aprenda |T133971:0|t[Culinária]
     .target Cook Ghilm
 step << !Human
     .goto 1426/0,-1577.16,-5671.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kazan Mogosh|r
-    .vendor >>|cRXP_BUY_Compre|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_se necessário|r << Warrior/Rogue
-    .vendor >>|cRXP_BUY_Compre|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_e|r |T132815:0|t[Leite Gelado] |cRXP_BUY_se necessário|r << !Warrior !Rogue
+    .vendor >> |cRXP_BUY_Compre|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_se necessário|r << Warrior/Rogue
+    .vendor >> |cRXP_BUY_Compre|r |T133968:0|t[Pão Fresquinho] |cRXP_BUY_e|r |T132815:0|t[Leite Gelado] |cRXP_BUY_se necessário|r << !Warrior !Rogue
     .target Kazan Mogosh
     .xp >15,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Senador Mehr Sacrapetra|r e com o |cRXP_FRIENDLY_Encarregado Pedracenho|r
-    .accept 433 >>Aceite O Funcionário Público
+    .accept 433 >> Aceite O Funcionário Público
     .goto 1426/0,-1579.96,-5714.73
     .target +Senator Mehr Stonehallow
-    .accept 432 >>Aceite Malditos Troggs!
+    .accept 432 >> Aceite Malditos Troggs!
     .goto 1426/0,-1600.30,-5726.590
     .target +Foreman Stonebrow
 step << Warrior/Paladin/Rogue
@@ -3988,7 +3988,7 @@ step << Warrior/Paladin/Rogue
 step << Warrior/Paladin/Rogue
     #optional
     #completewith QuarryEnd
-    .cast 2580 >>|cRXP_WARN_Lance|r |T136025:0|t[Localizar Minérios]
+    .cast 2580 >> |cRXP_WARN_Lance|r |T136025:0|t[Localizar Minérios]
     .usespell 2580
     .train 2575,3 --Mining Trained
 step
@@ -4003,25 +4003,25 @@ step
 step
     #label QuarryEnd
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Encarregado Pedracenho|r e com o |cRXP_FRIENDLY_Senador Mehr Sacrapetra|r
-    .turnin 432 >>Entregue Malditos Troggs!
+    .turnin 432 >> Entregue Malditos Troggs!
     .goto 1426/0,-1600.30,-5726.590
     .target +Foreman Stonebrow
-    .turnin 433 >>Entregue O Funcionário Público
+    .turnin 433 >> Entregue O Funcionário Público
     .goto 1426/0,-1579.96,-5714.73
     .target +Senator Mehr Stonehallow
 step << !Warrior !Rogue !Paladin !Hunter
     .goto 1426/0,-1577.16,-5671.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kazan Mogosh|r
-    .vendor >>|cRXP_BUY_Compre até 20|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r
+    .vendor >> |cRXP_BUY_Compre até 20|r |T132815:0|t[Leite Gelado] |cRXP_BUY_dele|r
     .target Kazan Mogosh
     .xp >15,1
 step
     #completewith OII
     >>Abata |cRXP_ENEMY_Rockjaw Ambushers|r. Saqueie-os para obter |T132621:0|t[|cRXP_LOOT_Barril de Pólvora Vazio|r]
-    .use 268548 >>|cRXP_WARN_Use |r|T132621:0|t[|cRXP_LOOT_Barril de Pólvora Vazio|r] |cRXP_WARN_para iniciar a missão|r
+    .use 268548 >> |cRXP_WARN_Use |r|T132621:0|t[|cRXP_LOOT_Barril de Pólvora Vazio|r] |cRXP_WARN_para iniciar a missão|r
     >>|cRXP_WARN_NOTA: Este item tem uma chance de drop baixa. Pule este passo se você não o encontrar até terminar com o|r |cRXP_ENEMY_Dark Ferro Spies|r
     .collect 268548,1,95213,1 -- Empty Powder Keg (1)
-    .accept 95213 >>Aceite Stolen Impacto Powder
+    .accept 95213 >> Aceite Stolen Impacto Powder
     .mob Rockjaw Ambusher
 step
     .goto 1426/0,-2009.87,-5860.22,40,0
@@ -4030,28 +4030,28 @@ step
     .use 274268 >>|cRXP_WARN_Use o|r |T237385:0|t[|cRXP_LOOT_Dark Ferro Mapa|r] |cRXP_WARN_para iniciar a missão|r
     .complete 96390,1 -- Dark Iron Spy slain 10/10
     .collect 274268,1,96391,1 -- Dark Iron Map (1)
-    .accept 96391 >>Aceite Mapa Subterrâneo
+    .accept 96391 >> Aceite Mapa Subterrâneo
     .mob Dark Iron Spy
 step
     #label OII
     .goto 1426/0,-1394.24,-5797.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Earthseer Farsen|r
-    .turnin 96390 >>Entregue Nip 'Em in the Migo
-    .turnin 96391 >>Entregue Mapa Subterrâneo
-    .accept 96393 >>Aceite Old Ironforge Incursion
+    .turnin 96390 >> Entregue Nip 'Em in the Migo
+    .turnin 96391 >> Entregue Mapa Subterrâneo
+    .accept 96393 >> Aceite Old Ironforge Incursion
     .target Earthseer Farsen
 step
     .isOnQuest 95213
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quarrymaster Thesten|r
-    .turnin 95213 >>Entregue Stolen Impacto Powder
-    .accept 95214 >>Aceite Stolen Impacto Powder
+    .turnin 95213 >> Entregue Stolen Impacto Powder
+    .accept 95214 >> Aceite Stolen Impacto Powder
     .target Quarrymaster Thesten
 step
     .isQuestTurnedIn 95213
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quarrymaster Thesten|r
-    .accept 95214 >>Aceite Stolen Impacto Powder
+    .accept 95214 >> Aceite Stolen Impacto Powder
     .target Quarrymaster Thesten
 step
     .isOnQuest 95214
@@ -4069,19 +4069,19 @@ step
     .isQuestComplete 95214
     .goto 1426/0,-1606.02,-5676.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Quarrymaster Thesten|r
-    .turnin 95214 >>Entregue Stolen Impacto Powder
+    .turnin 95214 >> Entregue Stolen Impacto Powder
     .target Quarrymaster Thesten
 step
     .goto 1426/0,-2197.02,-5279.07,45,0
     .goto 1426/0,-2329.60,-5163.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Piloto Pisafundo|r
-    .accept 419 >>Aceite O Piloto Perdido
+    .accept 419 >> Aceite O Piloto Perdido
     .target Pilot Hammerfoot
 step
     .goto 1426/0,-2121.76,-5064.70
     >>Clique no |cRXP_PICK_Cadáver Anão|r no chão
-    .turnin 419 >>Entregue O Piloto Perdido
-    .accept 417 >>Aceite A Vingança do Piloto
+    .turnin 419 >> Entregue O Piloto Perdido
+    .accept 417 >> Aceite A Vingança do Piloto
 step
     .goto 1426/0,-2087.19,-5096.51
     >>Abate |cRXP_ENEMY_Ronhagarra|r. Saqueie-o para a |cRXP_LOOT_Garra|r
@@ -4091,8 +4091,8 @@ step
     #label Revenge
     .goto 1426/0,-2329.60,-5163.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Piloto Pisafundo|r
-    .turnin 417,1 >>Entregue A Vingança do Piloto << Rogue
-    .turnin 417 >>Entregue A Vingança do Piloto << !Rogue
+    .turnin 417,1 >> Entregue A Vingança do Piloto << Rogue
+    .turnin 417 >> Entregue A Vingança do Piloto << !Rogue
     .target Pilot Hammerfoot
 step << Rogue
     #optional
@@ -4128,14 +4128,14 @@ step
     #completewith next
     .goto 1432/0,-2659.45,-4822.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Gothor Brumn|r
-    .vendor >>Comerciante e Conserto
+    .vendor >>Venda e Repare
     .target Gothor Brumn
 step
     .goto 1432/0,-2676.82,-4825.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Lançatroz|r
     >>|cRXP_WARN_Não aceite Ordens dos Lançatroz ainda|r
-    .turnin 353 >>Entregue Entrega para Lançatroz
-    .accept 307 >>Aceite Patas Nojentas
+    .turnin 353 >> Entregue Entrega para Lançatroz
+    .accept 307 >> Aceite Patas Nojentas
     .target Mountaineer Stormpike
 step
     #optional
@@ -4190,7 +4190,7 @@ step
     #optional
     #completewith next
     #label Thelsamar
-    .subzone 144 >>Vá para Thelsamar
+    .subzone 144 >> Vá para Thelsamar
     .isQuestAvailable 1339
 step
     #requires Thelsamar
@@ -4198,41 +4198,41 @@ step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Kadrell|r
     >>|cRXP_FRIENDLY_Montanhista Kadrell|r |cRXP_WARN_patrulha a estrada através de Thelsamar|r
-    .accept 416 >>Aceite Caçando Ratos
-    .accept 1339 >>Aceite Tarefa de Montanhista Lançatroz
+    .accept 416 >> Aceite Caçando Ratos
+    .accept 1339 >> Aceite Tarefa de Montanhista Lançatroz
     .target Mountaineer Kadrell
 step
     .goto 1432/0,-3003.30,-5376.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grenilda Garranegra|r
-    .accept 86667 >>Aceite Snowbound
+    .accept 86667 >> Aceite Snowbound
     .target Grenhild Darktalon
 step
     #label ThelsamarFirst
     .goto 1432/0,-2954.42,-5394.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Vidra Fornalenha|r
-    .accept 418 >>Aceite Chouriço de Thelsamar
+    .accept 418 >> Aceite Chouriço de Thelsamar
     .target Vidra Hearthstove
 step
     #optional
     .goto 1432/0,-2954.42,-5394.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Vidra Fornalenha|r
-    .turnin 418 >>Entregue Chouriço em Thelsamar
+    .turnin 418 >> Entregue Chouriço em Thelsamar
     .target Vidra Hearthstove
     .isQuestComplete 418
 step
     #optional
     #completewith StormpikeO
-    .abandon 1338 >>Abandone Ordens dos Lançatroz. Isto é para desbloquear a Tarefa de Montanhista Lançatroz, que dará uma entrega grátis de 550 xp
+    .abandon 1338 >> Abandone Ordens dos Lançatroz. Isto é para desbloquear a Tarefa de Montanhista Lançatroz, que dará uma entrega grátis de 550 xp
 step
     #completewith next
     .goto 1432/0,-2952.46,-5381.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Yanni Cuoreforte|r
-    .vendor 1682 >>|cRXP_BUY_Compre até 2|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_dela se necessário|r
+    .vendor 1682 >> |cRXP_BUY_Compre até 2|r |T133634:0|t[Bolsa Marrom Pequena] |cRXP_BUY_dela se necessário|r
     .target Yanni Stoutheart
 step << !Warrior !Rogue !Hunter
     .goto 1432/0,-2973.90,-5377.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Fornalenha|r
-    .vendor 6734 >>|cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_. Procure ter cerca de 20|r
+    .vendor 6734 >> |cRXP_BUY_Compre|r |T132815:0|t[Leite Gelado] |cRXP_BUY_. Procure ter cerca de 20|r
     .target Innkeeper Hearthstove
     .xp >15,1
 step
@@ -4247,36 +4247,36 @@ step
     .goto 1432/0,-3007.99,-5337.390
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Kadrell|r
     >>|cRXP_FRIENDLY_Montanhista Kadrell|r |cRXP_WARN_patrulha a estrada através de Thelsamar|r
-    .accept 416 >>Aceite Caçando Ratos
-    .accept 1339 >>Aceite Tarefa de Montanhista Lançatroz
+    .accept 416 >> Aceite Caçando Ratos
+    .accept 1339 >> Aceite Tarefa de Montanhista Lançatroz
     .target Mountaineer Kadrell
 step
     .goto 1432/0,-2929.87,-5424.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum Borrelson|r
-    .fp Thelsamar >>Pegue a rota de voo de Thelsamar
+    .fp Thelsamar >> Pegue a rota de voo de Thelsamar
     .target Thorgrum Borrelson
 step
     #optional
     #completewith next
     .goto 1432/0,-2677.26,-5778.34,10,0
-    .goto 1432/0,-2648.30,-5876.75,15 >>|cRXP_WARN_Corra pela estrada de terra e depois pule para dentro do bunker|r
+    .goto 1432/0,-2648.30,-5876.75,15 >> |cRXP_WARN_Corra pela estrada de terra e depois pule para dentro do bunker|r
 step
     .goto 1432/0,-2634.59,-5842.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão Balbúrdia|r no bunker
-    .accept 267 >>Aceite A Ameaça Trogg
+    .accept 267 >> Aceite A Ameaça Trogg
     .target Captain Rugelfuss
 step
     #label DefenseStart
     .goto 1432/0,-2602.54,-5832.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Montanhista Sapatorro|r
-    .accept 224 >>Aceite Em Defesa das Terras do Rei
+    .accept 224 >> Aceite Em Defesa das Terras do Rei
     .target Mountaineer Cobbleflint
 step
     #completewith next
     .goto 1432/0,-2534.38,-5648.28,5 >>Vá para a mancha nevada no chão logo fora do túnel da Passagem do Portão Sul
 step
     .goto 1432/0,-2534.38,-5648.28
-    .use 279380 >>|cRXP_WARN_Use o|r |T1387609:0|t[Ceramic Jar] |cRXP_WARN_enquanto estiver em pé na área nevada para coletar o|r |T1387609:0|t[Jar of Neve]
+    .use 279380 >> |cRXP_WARN_Use o|r |T1387609:0|t[Ceramic Jar] |cRXP_WARN_enquanto estiver em pé na área nevada para coletar o|r |T1387609:0|t[Jar of Neve]
     .complete 86667,1 -- Jar of Snow 1/1
 step
     #optional
@@ -4340,13 +4340,13 @@ step
 step
     .goto 1432/0,-3146.73,-4837.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Norric Lochthane|r
-    .turnin 86667 >>Entregue Snowbound
+    .turnin 86667 >> Entregue Snowbound
     .target Norric Lochthane
 step
     #requires BoarBearSpider
     #label SilverStream
     #completewith MinerGear
-    .goto 1432/0,-2972.96,-4835.187,20 >>Entre na Mina do Riacho Prateado, mate |cRXP_ENEMY_Kobolds|r para |T133854:0|t[|cRXP_LOOT_Orelhas|r] no caminho
+    .goto 1432/0,-2972.96,-4835.187,20 >> Entre na Mina do Riacho Prateado, mate |cRXP_ENEMY_Kobolds|r para |T133854:0|t[|cRXP_LOOT_Orelhas|r] no caminho
 step
     #label MinerGear
     .goto 1432/0,-2984.82,-4902.33
@@ -4427,9 +4427,9 @@ step << Human
     #label StormpikeDelivery
     .goto 1432/0,-2676.99,-4825.980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Lançatroz|r
-    .turnin 307 >>Entregue Patas Nojentas
-    .turnin 1339 >>Entregue Tarefa de Montanhista Lançatroz
-    .accept 1338 >>Aceite Ordens dos Lançatroz
+    .turnin 307 >> Entregue Patas Nojentas
+    .turnin 1339 >> Entregue Tarefa de Montanhista Lançatroz
+    .accept 1338 >> Aceite Ordens dos Lançatroz
     .target Mountaineer Stormpike
 step
     #optional
@@ -4503,25 +4503,25 @@ step
     .mob +Forest Lurker
 step
     #completewith FlintTinder
-    .subzone 144 >>Retorne a Thelsamar
+    .subzone 144 >> Retorne a Thelsamar
 step
     #completewith FlintTinder
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Kadrell|r
     >>|cRXP_FRIENDLY_Montanhista Kadrell|r |cRXP_WARN_patrulha a estrada através de Thelsamar|r
     .target Mountaineer Kadrell
-    .turnin 416 >>Entregue Pegando Ratos
+    .turnin 416 >> Entregue Pegando Ratos
     .isQuestComplete 416
 step
     #optional
     #completewith FlintTinder
     .goto 1432,35.273,47.750,10,0
-    .goto 1432,35.433,48.243,12 >>Entre na Stoutlager Estalagem
+    .goto 1432,35.433,48.243,12 >> Entre na Stoutlager Estalagem
 step
     .isQuestComplete 418
     #label FlintTinder
     .goto 1432/0,-2954.42,-5394.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Vidra Fornalenha|r
-    .turnin 418 >>Entregue Chouriço em Thelsamar
+    .turnin 418 >> Entregue Chouriço em Thelsamar
     .target Vidra Hearthstove
 step
     .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
@@ -4535,7 +4535,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Montanhista Kadrell|r
     >>|cRXP_FRIENDLY_Montanhista Kadrell|r |cRXP_WARN_patrulha a estrada através de Thelsamar|r
     .target Mountaineer Kadrell
-    .turnin 416 >>Entregue Pegando Ratos
+    .turnin 416 >> Entregue Pegando Ratos
     .isQuestComplete 416
 step
     .goto 1432/0,-2747.60,-5530.540
@@ -4557,17 +4557,17 @@ step
     #optional
     #completewith next
     .goto 1432/0,-2677.26,-5778.34,10,0
-    .goto 1432/0,-2648.30,-5876.75,15 >>|cRXP_WARN_suba a trilha de terra e depois desça para o bunker|r
+    .goto 1432/0,-2648.30,-5876.75,15 >> |cRXP_WARN_suba a trilha de terra e depois desça para o bunker|r
 step
     .goto 1432/0,-2634.59,-5842.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Capitão Balbúrdia|r
-    .turnin 267 >>Entregue A Ameaça Trogg
+    .turnin 267 >> Entregue A Ameaça Trogg
     .target Captain Rugelfuss
     .isQuestComplete 267
 step
     .goto 1432/0,-2602.54,-5832.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Montanhista Sapatorro|r
-    .turnin 224 >>Entregue Em Defesa das Terras do Rei
+    .turnin 224 >> Entregue Em Defesa das Terras do Rei
     .target Mountaineer Cobbleflint
     .isQuestComplete 224
 
@@ -4596,7 +4596,7 @@ step << Human Warrior -- flying IF to train thrown before going westfall/darksho
     #optional
     .goto 1432/0,-2929.87,-5424.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thorgrum Borrelson|r
-    .fly Ironforge >>Voe para Altaforja
+    .fly Ironforge >> Voe para Altaforja
     .target Thorgrum Borrelson
     .zoneskip Ironforge
 step << Human Warrior
@@ -4609,7 +4609,7 @@ step << Human Warrior
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bilban Arremessaporca|r
     .goto 1455/0,-1234.65,-5035.67
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Bilban Tosslespanner
     .zoneskip Ironforge,1
 
@@ -4617,7 +4617,7 @@ step -- dont delete
     #label NormalRouteEnd
 
 step
-    .hs >>Use sua Pedra de Retorno para ir à Cidade de Ventobravo
+    .hs >> Use sua Pedra de Retorno para ir à Cidade de Ventobravo
     .zoneskip Stormwind City
     .zoneskip Darkshore
     .zoneskip Westfall
@@ -4679,7 +4679,7 @@ step
     .isOnQuest 6261
     .goto 1453/0,489.99,-8835.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
-    .turnin 6261 >>Entregue Dungar Tragolongo
+    .turnin 6261 >> Entregue Dungar Tragolongo
     .target Dungar Longdrink
     .xp <15,1
 step << Warlock/Priest
@@ -4721,35 +4721,35 @@ step << Warlock
     #optional
     #completewith next
     .goto 1453/0,988.44,-8942.15,20,0
-    .goto 1453/0,1015.33,-8978.9,15 >>Vá para The Slaughtered Lamb e desça
+    .goto 1453/0,1015.33,-8978.9,15 >> Vá para The Slaughtered Lamb e desça
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ursula Deline|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Ursula Deline
 step << Warlock
     .goto 1453/0,1035.96,-8974.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Spackle Cardopomo|r
-    .vendor >>|cRXP_BUY_Compre|r |T133738:0|t[Grimório of Consumir Sombras (Rank 1)] |cRXP_BUY_e|r |T133738:0|t[Grimório de Sacrificar (Rank 1)] |cRXP_BUY_se você conseguir pagá-los. Se não, você pode comprá-los mais tarde|r
+    .vendor >> |cRXP_BUY_Compre|r |T133738:0|t[Grimório of Consumir Sombras (Rank 1)] |cRXP_BUY_e|r |T133738:0|t[Grimório de Sacrificar (Rank 1)] |cRXP_BUY_se você conseguir pagá-los. Se não, você pode comprá-los mais tarde|r
     .target Spackle Thornberry
 step << Mage
     #optional
     #completewith next
-    .goto 1453/0,874.32,-9014.67,10 >>Vá para a Torre dos Magos
+    .goto 1453/0,874.32,-9014.67,10 >> Vá para a Torre dos Magos
 step << Mage
     .goto 1453/0,885.34,-9006.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Elsharin|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Elsharin
 step << Priest/Paladin
     #optional
     #completewith next
-    .goto 1453/0,809.52,-8579.22,20 >>Viaje até a Catedral de Ventobravo
+    .goto 1453/0,809.52,-8579.22,20 >> Viaje até a Catedral de Ventobravo
 step << Human Paladin
     .goto 1453/0,845.95,-8545.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com Benedito Brião|r
-    .accept 1641 >>Aceite Tomo de Divindade
-    .turnin 1641 >>Entregue Tomo de Divindade
+    .accept 1641 >> Aceite Tomo de Divindade
+    .turnin 1641 >> Entregue Tomo de Divindade
     .target Duthorian Rall
 step << Human Paladin
     .goto 1453/0,845.95,-8545.70
@@ -4766,56 +4766,56 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Artur, o Fiel|r
     .goto 1453/0,859.13,-8559.14,10,0
     .goto 1453/0,861.14,-8573.03
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Arthur the Faithful
 step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Irmão Joshua|r
     .goto 1453/0,862.89,-8519.61
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Brother Joshua
 step << !Hunter
     #label HumbleBeginnings
     .goto 1453/0,719.67,-8550.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Baros Aleixo|r
-    .accept 399 >>Aceite Humildes Começos
+    .accept 399 >> Aceite Humildes Começos
     .target Baros Alexston
     .xp >15,1 -- shows to 14 and under
 step
     .goto 1453/0,600.07,-8427.22
     .target Furen Longbeard
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Furen Barbalonga|r
-    .turnin 1338 >>Entregue Pedidos de Pico da Tempestade
+    .turnin 1338 >> Entregue Pedidos de Pico da Tempestade
 step << Hunter
     .goto 1453/0,552.78,-8415.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Einris Setalume|r dentro
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Einris Brightspear
 step << Hunter
     .goto 1453/0,553.22,-8422.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Karrina Mekenda|r
-    .trainer >>Treine as magias do seu mascote
+    .trainer >> Treine as magias do seu mascote
     .target Karrina Mekenda
 step << Rogue
     .goto 1453/0,377.47,-8752.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Osborne|r
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Osborne the Night Man
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r
     .goto 1453/0,358.25,-8728.28,15,0
     .goto 1453/0,302.6,-8685.53,15,0
 	.goto 1453/0,323.3,-8689.29
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
     .target Wu Shen
     .target Ilsa Corbin
 step << Human Paladin
     .goto 1453/0,613.66,-8832.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Stephanie Turner|r
-    .turnin 1643 >>Entregue Tomo de Divindade
+    .turnin 1643 >> Entregue Tomo de Divindade
     .target Stephanie Turner
-    .accept 1644 >>Aceite Tomo de Divindade
-    .turnin 1644 >>Entregue Tomo de Divindade
-    .accept 1780 >>Aceite Tomo de Divindade
+    .accept 1644 >> Aceite Tomo de Divindade
+    .turnin 1644 >> Entregue Tomo de Divindade
+    .accept 1780 >> Aceite Tomo de Divindade
 step << Rogue
     #ah
     .goto 1453/0,609.63,-8787.71
@@ -4946,10 +4946,10 @@ step << Hunter
     #optional
     .goto 1453/0,1330.100,-8645.400
     >>|cRXP_WARN_Suba de Nível em|r |T135966:0|t[Primeiros Socorros] |cRXP_WARN_enquanto espera o barco para Costa Negra se necessário|r
-    .zone Darkshore >>Pegue o barco para Costa Negra
+    .zone Darkshore >> Pegue o barco para Costa Negra
     .skill firstaid,<1,1 -- shows if firstaid is >1
 step << Hunter
     #label DarkshoreBoat
     .goto 1453/0,1330.100,-8645.400
-    .zone Darkshore >>Pegue o barco para Costa Negra
+    .zone Darkshore >> Pegue o barco para Costa Negra
 ]])

@@ -22,18 +22,18 @@ step << Druid/Hunter
     .train 410110,1 << Hunter
 step << Druid/Hunter
     .goto Darkshore,35.8,55.6
-    .use 209027 >>|cRXP_WARN_Use the|r |T237270:0|t[|cRXP_LOOT_Petiscos de Caranguejo|r] |cRXP_WARN_on a |cRXP_ENEMY_Tiscoral Jovem|r to receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Lacerar|r] << Druid
-    .use 209027 >>|cRXP_WARN_Use the|r |T237270:0|t[|cRXP_LOOT_Petiscos de Caranguejo|r] |cRXP_WARN_on a |cRXP_ENEMY_Tiscoral Jovem|r to receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Domínio das Feras|r] << Hunter
+    .use 209027 >> |cRXP_WARN_Use the|r |T237270:0|t[|cRXP_LOOT_Petiscos de Caranguejo|r] |cRXP_WARN_on a |cRXP_ENEMY_Tiscoral Jovem|r to receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Lacerar|r] << Druid
+    .use 209027 >> |cRXP_WARN_Use the|r |T237270:0|t[|cRXP_LOOT_Petiscos de Caranguejo|r] |cRXP_WARN_on a |cRXP_ENEMY_Tiscoral Jovem|r to receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Domínio das Feras|r] << Hunter
     .collect 208687,1 << Druid -- Rune of Lacerate (1)
     .collect 208701,1 << Hunter -- Beast Mastery (1)
     .target Young Reef Crawler
     .train 416049,1 << Druid
     .train 410110,1 << Hunter
 step << Druid/Hunter
-    .train 416049 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Lacerar|r] |cRXP_WARN_para treinar|r |T132131:0|t[Lacerar] << Druid
+    .train 416049 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Lacerar|r] |cRXP_WARN_para treinar|r |T132131:0|t[Lacerar] << Druid
     .use 208687 << Druid
     .itemcount 208687,1 << Druid
-    .train 410110 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Domínio das Feras|r] |cRXP_WARN_para treinar|r |T132270:0|t[Domínio das Feras] << Hunter
+    .train 410110 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Domínio das Feras|r] |cRXP_WARN_para aprender|r |T132270:0|t[Domínio das Feras] << Hunter
     .use 208701 << Hunter
     .itemcount 208701,1 << Hunter
 ]])
@@ -57,7 +57,7 @@ step
 step
     #completewith Rune
     #label Teld1
-    .zone Teldrassil >>Viagem para Teldrassil
+    .zone Teldrassil >> Viagem para Teldrassil
     .subzoneskip 262
     .train 410025,1 << Druid
     .train 410123,1 << Hunter
@@ -67,7 +67,7 @@ step
     #label ShadowCave1
     #completewith Rune
     .goto 1438,44.197,58.040
-    .subzone 262 >>Entre no Ban'ethil Barrow Den
+    .subzone 262 >> Entre no Ban'ethil Barrow Den
     .train 410025,1 << Druid
     .train 410123,1 << Hunter
 step
@@ -86,7 +86,7 @@ step
     .goto 1438,43.944,57.918,15,0
     .goto 1438,43.947,57.297,15,0
     .goto 1438,44.731,57.355,15,0
-    .goto 1438,45.118,57.701,20 >>Caminhe em direção ao |cRXP_ENEMY_Patafúria|r dentro
+    .goto 1438,45.118,57.701,20 >> Caminhe em direção ao |cRXP_ENEMY_Patafúria|r dentro
     .train 410025,1 << Druid
     .train 410123,1 << Hunter
 step
@@ -112,11 +112,11 @@ step
     .train 410123,1 << Hunter
     .unitscan Rageclaw
 step << Hunter
-    .train 410123 >>|cRXP_WARN_Use a|r |T134419:0|t|cRXP_LOOT_[Runa de Tiro Explosivo]|r |cRXP_WARN_para aprender|r |T133816:0|t[Gravar Luvas - Tiro Explosivo]
+    .train 410123 >> |cRXP_WARN_Use a|r |T134419:0|t|cRXP_LOOT_[Runa de Tiro Explosivo]|r |cRXP_WARN_para aprender|r |T133816:0|t[Gravar Luvas - Tiro Explosivo]
     .use 206169
     .itemcount 206169,1
 step << Druid
-    .equip 18,206954 >>|cRXP_WARN_Equipe o|r |T136061:0|t|cRXP_LOOT_[Ídolo de Raiva Ursina]|r
+    .equip 18,206954 >> |cRXP_WARN_Equipe o|r |T136061:0|t|cRXP_LOOT_[Ídolo de Raiva Ursina]|r
     .use 206954
     .itemcount 206954,1
     .train 410025,1
@@ -163,7 +163,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     .goto Teldrassil,44.18,58.19
-    .subzone 262 >>Entre no Ban'ethil Barrow Den
+    .subzone 262 >> Entre no Ban'ethil Barrow Den
     .train 424992,1 << Rogue
     .train 403476,1 << Warrior
     .train 425216,1 << Priest
@@ -204,7 +204,7 @@ RXPGuides.RegisterGuide([[
 step << Rogue/Priest
     #completewith next
     .goto Teldrassil,54.68,52.84,20,0
-    .goto Teldrassil,54.42,51.19,15 >>Vá para Vileza Pedra
+    .goto Teldrassil,54.42,51.19,15 >> Vá para Vileza Pedra
     .train 400094,1 << Rogue
     .train 402854,1 << Priest
 step << Rogue/Priest
@@ -218,11 +218,11 @@ step << Rogue/Priest
     .train 400094,1 << Rogue
     .train 402854,1 << Priest
 step << Rogue
-    .train 400094 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Mutilação|r] |cRXP_WARN_to train|r |T132304:0|t[Mutilar]
+    .train 400094 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Mutilação|r] |cRXP_WARN_to train|r |T132304:0|t[Mutilar]
     .use 203990
     .itemcount 203990,1
 step << Priest
-    .train 402854 >>|cRXP_WARN_Use a|r |T136222:0|t[|cRXP_FRIENDLY_Lembrança de um Aprisionado Salvador|r] |cRXP_WARN_para treinar|r |T136160:0|t[Dor Compartilhada]
+    .train 402854 >> |cRXP_WARN_Use a|r |T136222:0|t[|cRXP_FRIENDLY_Lembrança de um Aprisionado Salvador|r] |cRXP_WARN_para treinar|r |T136160:0|t[Dor Compartilhada]
     >>|cRXP_WARN_Você deve ter uma|r |T135934:0|t|T136057:0|t[Meditação] |cRXP_WARN_buff ao digitar /kneel em uma área sagrada, como um poço lunar, Northshire Abbey, Objetos de TBC Cathedral, os Altares de Luz em Anvilmar, Loch Modan ou o Mystic Proteção em Ironforge|r
     .use 205945
     .itemcount 205945,1

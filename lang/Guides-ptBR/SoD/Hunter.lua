@@ -15,14 +15,14 @@ step
 step
     #completewith Rune
     #label Dun1
-    .zone Dun Morogh >>Vá para Dun Morogh
+    .zone Dun Morogh >> Vá para Dun Morogh
     .train 410121,1
 step
     #optional
     #requires Dun1
     #label FrostMCave1
     #completewith Rune
-    .goto 1426,27.098,80.707,20 >>Entre na Frostmane Cave
+    .goto 1426,27.098,80.707,20 >> Entre na Frostmane Cave
     .train 410121,1
 step
     #optional
@@ -30,7 +30,7 @@ step
     #completewith Rune
     .goto 1426,28.298,79.836,15,0
     .goto 1426,29.252,79.043,15,0
-    .goto 1426,30.489,80.165,50 >>Viaje para o |cRXP_PICK_Frostmane Saque Cache|r dentro
+    .goto 1426,30.489,80.165,50 >> Viaje para o |cRXP_PICK_Frostmane Saque Cache|r dentro
     .train 410121,1
 step
     #label Rune
@@ -59,7 +59,7 @@ step
 step
     #completewith Rune
     #label Teld1
-    .zone Teldrassil >>Viagem para Teldrassil
+    .zone Teldrassil >> Viagem para Teldrassil
     .train 410121,1
 step
     #optional
@@ -67,7 +67,7 @@ step
     #label ShadowCave1
     #completewith Rune
     .goto 1438,56.694,31.485
-    .subzone 25 >>Entre na Caverna Shadowthread
+    .subzone 25 >> Entre na Caverna Shadowthread
     .train 410121,1
 step
     #optional
@@ -78,7 +78,7 @@ step
     .goto 1438,56.137,24.971,15,0
     .goto 1438,56.358,25.242,20,0
     .goto 1438,56.654,26.430,50,0
-    .goto 1438,56.874,26.323,10 >>Viagem para o |cRXP_ENEMY_Githyiss the Torpe|r dentro
+    .goto 1438,56.874,26.323,10 >> Viagem para o |cRXP_ENEMY_Githyiss the Torpe|r dentro
     .train 410121,1
 step
     #label Rune
@@ -139,7 +139,7 @@ step
     .train 410123,1
     .xp <10,1
 step
-    .train 410123 >>|cRXP_WARN_Use a|r |T134419:0|t|cRXP_LOOT_[Runa de Tiro Explosivo]|r |cRXP_WARN_para aprender|r |T133816:0|t[Gravar Luvas - Tiro Explosivo]
+    .train 410123 >> |cRXP_WARN_Use a|r |T134419:0|t|cRXP_LOOT_[Runa de Tiro Explosivo]|r |cRXP_WARN_para aprender|r |T133816:0|t[Gravar Luvas - Tiro Explosivo]
     .use 206169
     .itemcount 206169,1
 ]])
@@ -733,7 +733,7 @@ step
     .train 410110,1
 step
     #season 2
-    .train 410110 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Domínio das Feras|r] |cRXP_WARN_para treinar|r |T132270:0|t[Domínio das Feras]
+    .train 410110 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Domínio das Feras|r] |cRXP_WARN_para aprender|r |T132270:0|t[Domínio das Feras]
     .use 208701
     .itemcount 208701,1
 ]])
@@ -763,7 +763,7 @@ step
     .mob Grizzled Protector
 step
     #season 2
-    .train 410110 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Domínio das Feras|r] |cRXP_WARN_para treinar|r |T132270:0|t[Domínio das Feras]
+    .train 410110 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Domínio das Feras|r] |cRXP_WARN_para aprender|r |T132270:0|t[Domínio das Feras]
     .use 208701
     .itemcount 208701,1
 ]])
@@ -1003,7 +1003,7 @@ step
     >>|cRXP_WARN_Use a|r |T237388:0|t[|cRXP_LOOT_Desenho Primitivo|r] |cRXP_WARN_para iniciar a missão|r
     >>|cRXP_WARN_Suas localizações estão marcadas no seu mapa|r
     .collect 211269,1,78823,1 --Primitive Drawing
-    .accept 78823 >>Aceite Terror dos Céus do Deserto
+    .accept 78823 >> Aceite Terror dos Céus do Deserto
     .mob Dustbelcher Ogre
     .mob Dustbelcher Brute
     .mob Dustbelcher Mauler
@@ -1022,8 +1022,8 @@ step
 step
     .goto Stranglethorn Vale,35.658,10.808
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rosarães Guima|r
-    .turnin 78823 >>Entregue Terror dos Céus do Deserto
-    .accept 78830 >>Aceite Terror dos Céus do Deserto
+    .turnin 78823 >> Entregue Terror dos Céus do Deserto
+    .accept 78830 >> Aceite Terror dos Céus do Deserto
     .target Hemet Nesingwary
     .train 410114,1
 step
@@ -1062,7 +1062,7 @@ step
 step
     .goto Stranglethorn Vale,35.658,10.808
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rosarães Guima|r
-    .turnin 78830 >>Entregue Terror dos Céus do Deserto
+    .turnin 78830 >> Entregue Terror dos Céus do Deserto
     .target Hemet Nesingwary
     .train 410114,1
 step
@@ -1261,7 +1261,7 @@ step
     .goto Searing Gorge,14.5,36.5
     >>|cRXP_WARN_Conforme você entra na caverna, pegue o caminho para a direita. Você verá rapidamente um grande tablet chamado |cRXP_FRIENDLY_Gravura Desgastada|r em cima de uma elevação na seção do meio da caverna. Corra para ele e aceite a missão.
     >>DICA: Se você estiver sozinho, tente usar armadilhas e seu mascote para chegar o mais longe possível antes de usar |T132293:0|t[|cRXP_FRIENDLY_Morte Fingida|r] para perder a agressão dos inimigos. Alternativamente, você pode correr o cadáver até o item.
-    .accept 81900 >>Aceite A Fera Ardente
+    .accept 81900 >> Aceite A Fera Ardente
 step
     #completewith next
     .zone Blasted Lands >>Viaje para as Terras Devastadas
@@ -1407,6 +1407,6 @@ step
     .collect 226587,1 --rune of shelling
     .mob Sandworm
 step
-    .train 440560 >>Usar o |T134419:0|t[|cRXP_FRIENDLY_Rune of Shelling|r] para treinar |T236179:0|t[|cRXP_FRIENDLY_Improved Salva|r]
+    .train 440560 >> Usar o |T134419:0|t[|cRXP_FRIENDLY_Rune of Shelling|r] para treinar |T236179:0|t[|cRXP_FRIENDLY_Improved Salva|r]
     .use 226587
 ]])

@@ -8,40 +8,40 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .subzone 2268 >>Vá para a |cRXP_LOOT_Capela Esperança da Luz|r em |cRXP_PICK_Terras Pestilentas Orientais|r
+    .subzone 2268 >> Vá para a |cRXP_LOOT_Capela Esperança da Luz|r em |cRXP_PICK_Terras Pestilentas Orientais|r
 step
     .goto Eastern Plaguelands,81.3,58.75
     >>Clique no quadro de avisos rotulado |cRXP_FRIENDLY_Seeking Seasoned Adventurers|r à direita da entrada da capela
-    .accept 86964 >>Aceite Ouro e Triunfo
+    .accept 86964 >> Aceite Ouro e Triunfo
 step
     .goto Deadwind Pass,43.08,34.22 << Alliance
     .goto Deadwind Pass,51.01,42.19 << Horde
-    .zone Deadwind Pass >>Vá para o |cRXP_PICK_Deadwind Passe|r
+    .zone Deadwind Pass >> Vá para o |cRXP_PICK_Deadwind Passe|r
     .isOnQuest 86964
 step
-    .goto Deadwind Pass,47.36,75.60,100 >>Vá para o sul em direção a |cRXP_LOOT_Karazhan|r
+    .goto Deadwind Pass,47.36,75.60,100 >> Vá para o sul em direção a |cRXP_LOOT_Karazhan|r
     .isOnQuest 86964
 step
     .goto Deadwind Pass,39,74
     >>Procure um cadáver de um |cRXP_FRIENDLY_Aventureiro Morto|r
-    .turnin 86964 >>Entregue Ouro e Triunfo
-    .accept 86965 >>Aceite Sombra fora do Comum
+    .turnin 86964 >> Entregue Ouro e Triunfo
+    .accept 86965 >> Aceite Sombra fora do Comum
     .target Deceased Adventurer
 step
     .goto Deadwind Pass,51.28,39.91,20,0
     .goto Deadwind Pass,52.09,34.10
     >>Vá para o norte em direção ao acampamento do Agente de Dalaran
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Agente de Dalaran <Olho Violeta>|r
-    .turnin 86965 >>Entregue Sombra fora do Comum
-    .accept 86966 >>Aceite Em Busca de Sobreviventes
+    .turnin 86965 >> Entregue Sombra fora do Comum
+    .accept 86966 >> Aceite Em Busca de Sobreviventes
 step
-    .goto Deadwind Pass,59.2,73.4,30 >>Vá para o sul até a entrada da caverna dos Ogres
+    .goto Deadwind Pass,59.2,73.4,30 >> Vá para o sul até a entrada da caverna dos Ogres
     .isOnQuest 86966
 step
     .goto Deadwind Pass,65.0,78.0
     >>Entre na caverna, procure o |cRXP_FRIENDLY_Aventureiro Ferido|r, ele está preso em uma gaiola
-    .turnin 86966 >>Entregue Em Busca de Sobreviventes
-    .accept 86967 >>Aceite Ao Resgate
+    .turnin 86966 >> Entregue Em Busca de Sobreviventes
+    .accept 86967 >> Aceite Ao Resgate
     .target Injured Adventurer
 step
     .goto Deadwind Pass,65.0,78.0
@@ -59,27 +59,27 @@ step
     .goto Deadwind Pass,52.32,34.09
     >>Volte para o acampamento do Agente de Dalaran
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harrison Jones|r
-    .turnin 86967 >>Entregue Ao Resgate
-    .accept 86968 >>Aceite Você Tem Medo do Escuro?
+    .turnin 86967 >> Entregue Ao Resgate
+    .accept 86968 >> Aceite Você Tem Medo do Escuro?
     .target Harrison Jones
 step
     .goto Deadwind Pass,52.09,34.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Agente de Dalaran <Olho Violeta>|r
-    .turnin 86968 >>Entregue Você Tem Medo do Escuro?
-    .accept 86969 >>Aceite A Hipótese
+    .turnin 86968 >> Entregue Você Tem Medo do Escuro?
+    .accept 86969 >> Aceite A Hipótese
     .target Agent Keanna
 step
     #optional
     #completewith Hypothesis
     #label Wetlands
-    .zone Wetlands >>Voe para |cRXP_PICK_Pantanal|r para procurar por |T132839:0|t[Chama da Vida]
+    .zone Wetlands >> Voe para |cRXP_PICK_Pantanal|r para procurar por |T132839:0|t[Chama da Vida]
     .isOnQuest 86969
 step
     #optional
     #completewith Hypothesis
     #requires Wetlands
     #label GrimBatol
-    .goto 1437/0,-3451.700,-3450.800,40 >>Vá para o início do caminho para |cRXP_LOOT_Grim Batol|r
+    .goto 1437/0,-3451.700,-3450.800,40 >> Vá para o início do caminho para |cRXP_LOOT_Grim Batol|r
     .isOnQuest 86969
 step
     #optional
@@ -128,7 +128,7 @@ step
     #optional
     #completewith Hypothesis
     #label Winterspring
-    .zone Winterspring >>Voe para |cRXP_PICK_Hibérnia|r para procurar por |T136116:0|t[NO TRANSLATION FOUND TO THIS ELEMENT]
+    .zone Winterspring >> Voe para |cRXP_PICK_Hibérnia|r para procurar por |T136116:0|t[NO TRANSLATION FOUND TO THIS ELEMENT]
     .isOnQuest 86969
     .itemcount 235788,<1
 step
@@ -136,7 +136,7 @@ step
     #completewith Hypothesis
     #requires Winterspring
     #label Darkwhisper
-    .goto Winterspring,60.39,73.95,50 >>Voe para a |cRXP_LOOT_Garganta do Sussurro Sombrio|r
+    .goto Winterspring,60.39,73.95,50 >> Voe para a |cRXP_LOOT_Garganta do Sussurro Sombrio|r
     .isOnQuest 86969
     .itemcount 235788,<1
 step
@@ -177,15 +177,15 @@ step
 step
     .goto Deadwind Pass,43.08,34.22 << Alliance
     .goto Deadwind Pass,51.01,42.19 << Horde
-    .zone Deadwind Pass >>Vá para |cRXP_PICK_Deadwind Passe|r
+    .zone Deadwind Pass >> Vá para |cRXP_PICK_Deadwind Passe|r
     .isQuestComplete 86969
 step
     .goto Deadwind Pass,51.28,39.91,20,0
     .goto Deadwind Pass,52.09,34.10
     >>Voe para o acampamento do Agente de Dalaran
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Agente de Dalaran <Olho Violeta>|r
-    .turnin 86969 >>Entregue A Hipótese
-    .accept 86970 >>Aceite Testando Nossas Hipóteses
+    .turnin 86969 >> Entregue A Hipótese
+    .accept 86970 >> Aceite Testando Nossas Hipóteses
 step
     .goto Deadwind Pass,45.10,77.96,20,0
     .goto Deadwind Pass,42.20,77.41,20,0
@@ -202,12 +202,12 @@ step
     .goto Deadwind Pass,52.32,34.09
     >>Vá de volta para o norte até o acampamento do Agente de Dalaran
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Agente de Dalaran <Olho Violeta>|r
-    .turnin 86970 >>Entregue Testando Nossa Hipótese
+    .turnin 86970 >> Entregue Testando Nossa Hipótese
     .target Agent Keanna
 step
     >>|cRXP_WARN_Parabéns, agora você está sintonizado com as Catacumbas de Karazhan!|r
     >>Você pode |Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Harrison Jones|r para pegar uma missão dele que pode ser completada dentro da instância
-    .accept 86971 >>Aceite Badulaques Badalados de Karazhan!
+    .accept 86971 >> Aceite Badulaques Badalados de Karazhan!
     .target Harrison Jones
 ]])
 
@@ -220,37 +220,37 @@ RXPGuides.RegisterGuide([[
 
 step
    #completewith next
-   .subzone 2268 >>Vá para a |cRXP_LOOT_Capela da Esperança da Luz|r nas |cRXP_PICK_Terras Pestilentas Orientais|r
+   .subzone 2268 >> Vá para a |cRXP_LOOT_Capela da Esperança da Luz|r nas |cRXP_PICK_Terras Pestilentas Orientais|r
 step
    .goto Eastern Plaguelands,81.73,57.84
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Leonid Bartolomeu, o Venerado|r dentro da capela
-   .accept 87459 >>Aceite Atividades Escarlate
+   .accept 87459 >> Aceite Atividades Escarlate
    .target Leonid Barthalomew the Revered
 step
     #optional
     #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Jessica Dávila|r
-    .home >>Se você quiser |cRXP_WARN_você pode definir sua Pedra de Retorno aqui|r. Isso vai ajudá-lo a voltar de Tirisfal Glades mais rápido
+    .home >> Se você quiser |cRXP_WARN_você pode definir sua Pedra de Retorno aqui|r. Isso vai ajudá-lo a voltar de Tirisfal Glades mais rápido
     .target Jessica Chambers
 step << Alliance
     .goto Eastern Plaguelands,81.64,59.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Khaelyn Asadaço|r lá fora
-    .fly Chillwind >>Voe para Terras Pestilentas Ocidentais
+    .fly Chillwind >> Voe para Terras Pestilentas Ocidentais
     .target Khaelyn Steelwing
     .isOnQuest 87459
 step << Horde
     .goto Eastern Plaguelands,80.23,57.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Georgia|r lá fora
     .target Georgia
-    .fly Undercity >>Voe para Undercity
+    .fly Undercity >> Voe para Cidade Baixa
     .isOnQuest 87459
 step << Horde
-    .goto Tirisfal Glades,61.85,66.59,60 >>Saia de Undercity
+    .goto Tirisfal Glades,61.85,66.59,60 >> Saia de Undercity
     .isOnQuest 87459
 step << Alliance
    #completewith next
    .goto Tirisfal Glades,84.85,70.57
-   .zone Tirisfal Glades >>Vá para Claras da Tirisfal
+   .zone Tirisfal Glades >> Vá para Claras da Tirisfal
    .isOnQuest 87459
 step
    .goto Tirisfal Glades,81.76,58.06
@@ -263,20 +263,20 @@ step
    .isOnQuest 87459
 step
    #completewith next
-   .subzone 2268 >>Entregue em |cRXP_LOOT_Capela de Luz Esperança|r nas |cRXP_PICK_Terras Pestilentas Orientais|r
+   .subzone 2268 >> Entregue em |cRXP_LOOT_Capela de Luz Esperança|r nas |cRXP_PICK_Terras Pestilentas Orientais|r
    .isOnQuest 87459
 step
    .goto Eastern Plaguelands,81.73,57.84
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Leonid Bartolomeu, o Venerado|r dentro da capela
-    .turnin 87459 >>Entregue Atividades Escarlate
-    .accept 87493 >>Aceite Inquietação na Manopla de Tyr
+    .turnin 87459 >> Entregue Atividades Escarlate
+    .accept 87493 >> Aceite Inquietação na Manopla de Tyr
     .target Leonid Barthalomew the Revered
 step
     .goto Eastern Plaguelands,67.8,83.2
     >>Viaje para o sul em direção ao acampamento base escarlate
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Beatrix|r
-    .turnin 87493 >>Entregue Inquietação na Manopla de Tyr
-    .accept 87497 >>Aceite O Cisma
+    .turnin 87493 >> Entregue Inquietação na Manopla de Tyr
+    .accept 87497 >> Aceite O Cisma
     .target Commander Beatrix
 step
     .goto Eastern Plaguelands,67.8,83.2
@@ -288,19 +288,19 @@ step
    .goto Eastern Plaguelands,81.73,57.84
    >>Entregue na Capela Esperança da Luz
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Leonid Bartolomeu, o Venerado|r dentro
-    .turnin 87497 >>Entregue O Cisma
-    .accept 87498 >>Aceite A Reivindicação Escarlate
+    .turnin 87497 >> Entregue O Cisma
+    .accept 87498 >> Aceite A Reivindicação Escarlate
     .target Leonid Barthalomew the Revered
 step
     .goto Eastern Plaguelands,67.8,83.2
     >>Entregue no acampamento base escarlate
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Beatrix|r
-    .turnin 87498 >>Entregue A Reivindicação Escarlate
+    .turnin 87498 >> Entregue A Reivindicação Escarlate
     .target Commander Beatrix
 step
     .goto Eastern Plaguelands,68.25,82.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Inquisidor Escarlate Caldoran|r
-    .accept 87502 >>Aceite Obtendo Informações
+    .accept 87502 >> Aceite Obtendo Informações
     .target Scarlet Inquisitor Caldoran
 step
     .goto Eastern Plaguelands,68.18,82.43
@@ -332,8 +332,8 @@ step
     >>Volte para o acampamento-base Escarlate
     .goto Eastern Plaguelands,68.25,82.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Scarlet Inquisidor Caldoran|r
-    .turnin 87502 >>Entregue Obtendo Informações
-    .accept 87506 >>Aceite Enfraquecimento das Defesas
+    .turnin 87502 >> Entregue Obtendo Informações
+    .accept 87506 >> Aceite Enfraquecimento das Defesas
     .target Scarlet Inquisitor Caldoran
     .unitscan Sarlet Bloodhound
 step
@@ -342,7 +342,7 @@ step
     >>|cRXP_WARN_Agora você pode desbloquear o disfarce escarlate permanente coletando 4 peças de um conjunto escarlate fabricável e depois usando o fornecido|r |T134503:0|t[|cFF0070FFInsígnia Escarlate|r]
     >>Você deve conseguir encontrar aquelas na casa de leilões. Não é obrigatório, mas fará a travessia de Nova Avalon no futuro muito mais fácil.
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Inquisidor Jociphine|r
-    .accept 90510 >>Aceite Nova Avalon
+    .accept 90510 >> Aceite Nova Avalon
     .use 237020 --Scarlet Insignia
 step
     >>Entre em Manopla de Tyr e procure pelos |cRXP_ENEMY_Scarlet Cerco Commanders|r
@@ -353,18 +353,18 @@ step
     .goto Eastern Plaguelands,67.8,83.2
     >>Volte ao acampamento base escarlate
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Comandante Beatrix|r
-    .turnin 87506 >>Entregue Enfraquecimento das Defesas
+    .turnin 87506 >> Entregue Enfraquecimento das Defesas
     .target Commander Beatrix
 step
     .goto Eastern Plaguelands,67.8,83.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Argent Emissário|r
-    .accept 87508 >>Aceite Apresente-se a Lorde Maximiliano Tyrosus
+    .accept 87508 >> Aceite Apresente-se a Lorde Maximiliano Tyrosus
 step
     >>Volte para a Capela Esperança da Luz
     .goto Eastern Plaguelands,81.74,57.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Lorde Maximiliano Tyrosus|r lá dentro
-    .turnin 87508 >>Entregue Apresente-se a Lorde Maximiliano Tyrosus
-    .accept 87509 >>Aceite A Ira da Aurora
+    .turnin 87508 >> Entregue Apresente-se a Lorde Maximiliano Tyrosus
+    .accept 87509 >> Aceite A Ira da Aurora
     .target Lord Maxwell Tyrosus
 step
     .goto Eastern Plaguelands,67.8,83.2
@@ -375,8 +375,8 @@ step
 step
     .goto Eastern Plaguelands,67.8,83.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Comandante Beatrix|r
-    .turnin 87509 >>Entregue A Ira da Aurora
-    .accept 87516 >>Aceite Golpe de Decapitação
+    .turnin 87509 >> Entregue A Ira da Aurora
+    .accept 87516 >> Aceite Golpe de Decapitação
     .target Commander Beatrix
 step
     .goto Eastern Plaguelands,68.36,87.58
@@ -385,7 +385,7 @@ step
     .complete 87516,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Lorde Maximiliano Tyrosus|r dentro da prisão para a qual você será movido após derrotar Balnazzar na incursão
-    .turnin 87516 >>Entregue Golpe de Decapitação
+    .turnin 87516 >> Entregue Golpe de Decapitação
     .target Lord Maxwell Tyrosus
 step
     +|cRXP_WARN_Parabéns, você completou a sequência de missões introdutória do Scarlet Enclave!|r

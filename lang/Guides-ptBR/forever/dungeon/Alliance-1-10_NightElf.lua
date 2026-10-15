@@ -16,7 +16,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor NightElf
 #next 6-11 Teldrassil
 step
-#include RestedXP Forever Guide (A)\1-6 Shadowglen
+#include Guia Forever (A)\1-6 Shadowglen
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -34,5 +34,5 @@ RXPGuides.RegisterGuide([[
 #next 14-16 Costa Negra
 
 step
-#include RestedXP Forever Guide (A)\6-11 Teldrassil
+#include Guia Forever (A)\6-11 Teldrassil
 ]])

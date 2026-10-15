@@ -20,7 +20,7 @@ step
 step
     #season 2
     #completewith next
-    .goto Wetlands,51.914,62.692,30 >>Entre na caverna Thelgen Pedra
+    .goto Wetlands,51.914,62.692,30 >> Entre na caverna Thelgen Pedra
     .train 425446,1 << Warrior
     .train 410115,1 << Hunter
 step
@@ -60,7 +60,7 @@ RXPGuides.RegisterGuide([[
 step
     #season 2
     #completewith next
-	.goto Hillsbrad Foothills,76.72,46.22,60 >>Viagem para Durnholde Keep
+	.goto Hillsbrad Foothills,76.72,46.22,60 >> Viagem para Durnholde Keep
 step
     #season 2
     .goto Hillsbrad Foothills,80.2,39.0
@@ -120,7 +120,7 @@ step
 step
     #season 2
     .goto Duskwood,19.9,44.6
-    .use 210250 >>Equipe ambos anéis e digite /kneel na Estátua para receber |T134419:0|t[|cRXP_FRIENDLY_Runa de Shiving|r]
+    .use 210250 >> Equipe ambos anéis e digite /kneel na Estátua para receber |T134419:0|t[|cRXP_FRIENDLY_Runa de Shiving|r]
     .use 210251
     .collect 210252,1 --Rune of Shiving (1)
     .train 424988,1
@@ -154,14 +154,14 @@ step << Druid
     .mob Grimtotem Ruffian
     .train 410021,1
 step << Druid
-    .equip 18,210534 >>|cRXP_WARN_Equipe o|r |T134233:0|t[|cRXP_FRIENDLY_Ídolo do Selvagem|r]
+    .equip 18,210534 >> |cRXP_WARN_Equipe o|r |T134233:0|t[|cRXP_FRIENDLY_Ídolo do Selvagem|r]
     .use 210534
     .itemcount 210534,1
     .train 410021,1
 step << Druid
     >>|cRXP_WARN_Lance|r |T136085:0|t[Recrescimento] |cRXP_WARN_ou|r |T136041:0|t[Toque de Cura] |cRXP_WARN_em 10 Bestas diferentes e aliadas como Pets de Caçador/Druids em Forma de Urso/Shamans em Lobo Fantasma|r << Horde
     >>|cRXP_WARN_Lance|r |T136085:0|t[Recrescimento] |cRXP_WARN_ou|r |T136041:0|t[Toque de Cura] |cRXP_WARN_Em 10 diferentes bestas aliadas tais como animais de Caçador ou Druidas em Forma de Urso|r << Alliance
-    .train 410021 >>|cRXP_WARN_Use o|r |T134233:0|t[|cRXP_FRIENDLY_Ídolo do Selvagem|r] |cRXP_WARN_para treinar|r |T132143:0|t[Golpes Selvagens]
+    .train 410021 >> |cRXP_WARN_Use o|r |T134233:0|t[|cRXP_FRIENDLY_Ídolo do Selvagem|r] |cRXP_WARN_para treinar|r |T132143:0|t[Golpes Selvagens]
     .itemcount 210534,1
 ]])
 
@@ -199,7 +199,7 @@ step << Druid
     .target Vodyanoi
     .train 424718,1
 step << Druid
-    .train 424718 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa das Estrelas|r] |cRXP_WARN_para treinar|r |T135730:0|t[Surto Estelar]
+    .train 424718 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa das Estrelas|r] |cRXP_WARN_para treinar|r |T135730:0|t[Surto Estelar]
     .use 210500
     .itemcount 210500,1
 ]])
@@ -343,7 +343,7 @@ RXPGuides.RegisterGuide([[
 
 step << Druid
     #completewith next
-    .zone Ashenvale >>Viaje para Vale Gris
+    .zone Ashenvale >> Viaje para Vale Gris
 step << Druid
     .goto Ashenvale,86.963,43.159
     >>Clique na |cRXP_PICK_Owl Estátua|r para começar o evento
@@ -357,11 +357,11 @@ step << Druid
     .goto Duskwood,46.91,58.76,50,0
     .goto Duskwood,45.13,58.26,25,0
     .goto Duskwood,49.520,33.851
-    .subzone 856 >>Viagem para Crepúsculo Grove em Crepúsculo Forest
+    .subzone 856 >> Viagem para Crepúsculo Grove em Crepúsculo Forest
     .train 410028,1
 step << Druid
     .goto Duskwood,49.520,33.851
-    .aura 424310 >>Clique na |cRXP_PICK_Owl Estátua|r para obter o efeito |T132150:0|t[Olhos da Coruja]
+    .aura 424310 >> Clique na |cRXP_PICK_Owl Estátua|r para obter o efeito |T132150:0|t[Olhos da Coruja]
     .train 410028,1
 step << Druid
     .goto Duskwood,45.13,58.26
@@ -382,7 +382,7 @@ step << Druid
     .train 410028,1
 step << Druid
     #completewith next
-    .zone Hillsbrad Foothills >>Vá para Contraforte de Eira dos Montes
+    .zone Hillsbrad Foothills >> Vá para Contraforte de Eira dos Montes
     .train 410028,1
 step << Druid
     .goto Hillsbrad Foothills,36.914,76.142
@@ -403,21 +403,21 @@ step << Druid
     .train 410028,1
 step << Druid
     #completewith next
-    .zone Moonglade >>Teleporte para a Clareira da Lua
+    .zone Moonglade >> Teleporte para a Clareira da Lua
     .train 410028,1
 step << Druid
     #completewith next
-    .zone Moonglade >>Teleporte para a Clareira da Lua
+    .zone Moonglade >> Teleporte para a Clareira da Lua
     .train 410028,1
 step << Druid
     .goto Moonglade,52.53,40.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Loganaar|r
-    .accept 78229 >>Aceite A Prova das Corujas
-    .turnin 78229 >>Entregue A Prova das Corujas
+    .accept 78229 >> Aceite A Prova das Corujas
+    .turnin 78229 >> Entregue A Prova das Corujas
     .target Loganaar
     .train 410028,1
 step << Druid
-    .train 410028 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Crescimento Silvestre|r] |cRXP_WARN_to train|r |T236153:0|t[Crescimento Silvestre]
+    .train 410028 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Crescimento Silvestre|r] |cRXP_WARN_to train|r |T236153:0|t[Crescimento Silvestre]
     .use 210137
     .itemcount 210137,1
 ]])
@@ -436,7 +436,7 @@ RXPGuides.RegisterGuide([[
 
 step << Warrior/Mage
     #completewith next
-    .goto Duskwood,23.630,34.888,15 >>Entre na cripta do nordeste
+    .goto Duskwood,23.630,34.888,15 >> Entre na cripta do nordeste
     .train 403480,1 << Warrior
     .train 415939,1 << Mage
 step << Warrior/Mage
@@ -447,13 +447,13 @@ step << Warrior/Mage
     .train 415939,1 << Mage
 step << Warrior/Mage
     #completewith next
-    .goto Duskwood,15.602,38.621,15 >>Saia desta cripta e desça para a cripta ocidental
+    .goto Duskwood,15.602,38.621,15 >> Saia desta cripta e desça para a cripta ocidental
     .train 403480,1 << Warrior
     .train 415939,1 << Mage
 step << Warrior/Mage
     #completewith next
     .goto Duskwood,18.140,37.940
-    .cast 426182 >>Clique no |cRXP_PICK_Slumbering Ossos|r no pequeno trono|r
+    .cast 426182 >> Clique no |cRXP_PICK_Slumbering Ossos|r no pequeno trono|r
     >>|cRXP_WARN_Isto invocará uma Élite de nível 25|r |cRXP_ENEMY_Desperto Lich|r
     .train 403480,1 << Warrior
     .train 415939,1 << Mage
@@ -468,12 +468,12 @@ step << Warrior/Mage
     .train 403480,1 << Warrior
     .train 415939,1 << Mage
 step << Warrior
-    .train 416050 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Flagelação|r] |cRXP_WARN_para treinar|r |T133495:0|t[Flagelação]
+    .train 416050 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Flagelação|r] |cRXP_WARN_para treinar|r |T133495:0|t[Flagelação]
     .use 210569
     .itemcount 210569,1
     .train 403480,1
 step << Mage
-    .train 416050 >>|cRXP_WARN_Use o|r |T134939:0|t[|cRXP_FRIENDLY_Notas de Feitiço: Regeneração Frenética|r] |cRXP_WARN_para treinar|r |T132870:0|t[Regeneração Frenética]
+    .train 416050 >> |cRXP_WARN_Use o|r |T134939:0|t[|cRXP_FRIENDLY_Notas de Feitiço: Regeneração Frenética|r] |cRXP_WARN_para treinar|r |T132870:0|t[Regeneração Frenética]
     .use 211514
     .itemcount 211514,1
     .train 415939,1
@@ -490,7 +490,7 @@ RXPGuides.RegisterGuide([[
 step << Warrior
     #completewith next
     .goto Wetlands,49.40,16.98
-    .subzone 205 >>Viaje para Dun Modr, nos Ermos
+    .subzone 205 >> Viaje para Dun Modr, nos Ermos
     .train 425444,1
 step << Warrior
     .goto Wetlands,46.92,17.53,15,0
@@ -504,7 +504,7 @@ step << Warrior
 step << Warrior
     #completewith next
     .goto Redridge Mountains,69.928,55.814
-    .subzone 2099 >>Viaje para Stonewatch Keep em Montanhas Cristarrubra
+    .subzone 2099 >> Viaje para Stonewatch Keep em Montanhas Cristarrubra
     .train 425444,1
 step << Warrior
     .goto Redridge Mountains,69.928,55.814
@@ -515,7 +515,7 @@ step << Warrior
     .train 425444,1
 step << Warrior
     #completewith next
-    .subzone 209,2 >>Encontre um grupo e entre em Bastilha da Presa Negra
+    .subzone 209,2 >> Encontre um grupo e entre em Bastilha da Presa Negra
 step << Warrior
     >>Abra o |cRXP_PICK_Elmo Descartado|r. Pegue-o para obter o |cRXP_LOOT_Elmo do Mata-dragões|r
     >>|cRXP_WARN_Isto é encontrado em um banco atrás de|r |cRXP_ENEMY_Comandante Springvale|r
@@ -523,23 +523,23 @@ step << Warrior
     .train 425444,1
 step << Warrior
     #completewith next
-    .zone Ashenvale >>Viaje para Vale Gris
+    .zone Ashenvale >> Viaje para Vale Gris
     .train 425444,1
 step << Warrior
     .goto Ashenvale,43.513,70.463
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Alonso|r
-    .accept 78132 >>Aceite Elmo do Mata-dragões
-    .accept 78134 >>Aceite Lança do Mata-dragões
-    .accept 78133 >>Aceite Escudo do Mata-dragões
-    .turnin 78132 >>Entregue Elmo do Mata-dragões
-    .turnin 78134 >>Entregue Lança do Mata-dragões
-    .turnin 78133 >>Entregue Escudo do Mata-dragões
+    .accept 78132 >> Aceite Elmo do Mata-dragões
+    .accept 78134 >> Aceite Lança do Mata-dragões
+    .accept 78133 >> Aceite Escudo do Mata-dragões
+    .turnin 78132 >> Entregue Elmo do Mata-dragões
+    .turnin 78134 >> Entregue Lança do Mata-dragões
+    .turnin 78133 >> Entregue Escudo do Mata-dragões
     .target Alonso
     .train 425444,1
 step << Warrior
     .goto Ashenvale,43.513,70.463
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Alonso|r
-    .accept 78144 >>Aceite Alonso <Cavaleiro Errante> <Cavaleiro Errante>, o Mata-dragões
+    .accept 78144 >> Aceite Alonso <Cavaleiro Errante> <Cavaleiro Errante>, o Mata-dragões
     .target Alonso
     .train 425444,1
 step << Warrior
@@ -552,11 +552,11 @@ step << Warrior
 step << Warrior
     .goto Ashenvale,42.053,69.187
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Alonso|r
-    .turnin 78144 >>Entregue Alonso <Cavaleiro Errante> <Cavaleiro Errante>, o Mata-dragões
+    .turnin 78144 >> Entregue Alonso <Cavaleiro Errante> <Cavaleiro Errante>, o Mata-dragões
     .target Alonso
     .train 425444,1
 step << Warrior
-    .train 425444 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Golpe Furioso|r] |cRXP_WARN_to train|r |T132215:0|t[Golpe Furioso]
+    .train 425444 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Golpe Furioso|r] |cRXP_WARN_to train|r |T132215:0|t[Golpe Furioso]
     .use 210015
 ]])
 
@@ -595,8 +595,8 @@ step << Priest
     >>Você deve /kneel em qualquer Altar dos Loas, como aquele em Sen'Jin Village ou aquele na Encruzilhada nas Savanas << Troll
     >>Para receber seu segundo buff |T135934:0|t|T136057:0|t[Meditação], você deve se ajoelhar diante de um Sacerdote que possui um |T135934:0|t|T136057:0|t[Meditação] diferente do seu, e eles devem /pray enquanto o visam << Alliance
     >>Para receber seu segundo buff |T237569:0|t|T136077:0|t[Meditação], você deve se ajoelhar diante de um Sacerdote que possui um |T135934:0|t|T136057:0|t[Meditação] diferente do seu, e eles devem /pray enquanto o visam << Horde
-    .train 415997 >>|cRXP_WARN_Quando você tiver ambos|r |T135934:0|t|T136057:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Profecia de Sete Visitantes]|r |cRXP_WARN_para aprender|r |T135911:0|t[Força da Alma] << Alliance
-    .train 415997 >>|cRXP_WARN_Quando você tiver ambos|r |T237569:0|t|T136077:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Profecia de Sete Visitantes]|r |cRXP_WARN_para aprender|r |T135911:0|t[Força da Alma] << Horde
+    .train 415997 >> |cRXP_WARN_Quando você tiver ambos|r |T135934:0|t|T136057:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Profecia de Sete Visitantes]|r |cRXP_WARN_para aprender|r |T135911:0|t[Força da Alma] << Alliance
+    .train 415997 >> |cRXP_WARN_Quando você tiver ambos|r |T237569:0|t|T136077:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Profecia de Sete Visitantes]|r |cRXP_WARN_para aprender|r |T135911:0|t[Força da Alma] << Horde
     .use 211531
     .itemcount 211531,1
 ]])
@@ -611,7 +611,7 @@ RXPGuides.RegisterGuide([[
 
 step << Priest
     #completewith next
-    .zone Redridge Mountains >>Viaje para as Montanhas Cristarrubra
+    .zone Redridge Mountains >> Viaje para as Montanhas Cristarrubra
     .train 425213,1
 step << Priest
     .goto Redridge Mountains,67.2,53.6
@@ -630,8 +630,8 @@ step << Priest
     >>Você deve /kneel em qualquer Altar dos Loas, como aquele em Sen'Jin Village ou aquele na Encruzilhada nas Savanas << Troll
     >>Para receber seu segundo buff |T135934:0|t|T136057:0|t[Meditação], você deve se ajoelhar diante de um Sacerdote que possui um |T135934:0|t|T136057:0|t[Meditação] diferente do seu, e eles devem /pray enquanto o visam << Alliance
     >>Para receber seu segundo buff |T237569:0|t|T136077:0|t[Meditação], você deve se ajoelhar diante de um Sacerdote que possui um |T135934:0|t|T136057:0|t[Meditação] diferente do seu, e eles devem /pray enquanto o visam << Horde
-    .train 425213 >>|cRXP_WARN_Quando você tiver ambos|r |T135934:0|t|T136057:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Profecia de uma Cidade Enfeitiçada|r] |cRXP_WARN_para aprender|r |T253400:0|t[Palavra de Poder: Barreira] << Alliance
-    .train 425213 >>|cRXP_WARN_Quando você tiver ambos|r |T237569:0|t|T136077:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Profecia de uma Cidade Enfeitiçada|r] |cRXP_WARN_para aprender|r |T253400:0|t[Palavra de Poder: Barreira] << Horde
+    .train 425213 >> |cRXP_WARN_Quando você tiver ambos|r |T135934:0|t|T136057:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Profecia de uma Cidade Enfeitiçada|r] |cRXP_WARN_para aprender|r |T253400:0|t[Palavra de Poder: Barreira] << Alliance
+    .train 425213 >> |cRXP_WARN_Quando você tiver ambos|r |T237569:0|t|T136077:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Profecia de uma Cidade Enfeitiçada|r] |cRXP_WARN_para aprender|r |T253400:0|t[Palavra de Poder: Barreira] << Horde
     .use 211530
     .itemcount 211530,1
 ]])
@@ -655,7 +655,7 @@ step << Priest
     .train 402859,1
 step << Priest
     .goto Duskwood,91.11,30.58
-    .use 211528 >>|cRXP_WARN_Use o|r |T135736:0|t[|cRXP_LOOT_Percepção Sombria|r] |cRXP_WARN_na Sepultura Isolada atrás da torre para receber a|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Thousand Lights|r]
+    .use 211528 >> |cRXP_WARN_Use o|r |T135736:0|t[|cRXP_LOOT_Percepção Sombria|r] |cRXP_WARN_na Sepultura Isolada atrás da torre para receber a|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Thousand Lights|r]
     .collect 211490,1 -- Prophecy of a Thousand Lights (1)
     .train 402859,1
 step << Priest
@@ -667,8 +667,8 @@ step << Priest
     >>Você deve /kneel em qualquer Altar dos Loas, como aquele em Sen'Jin Village ou aquele na Encruzilhada nas Savanas << Troll
     >>Para receber seu segundo buff |T135934:0|t|T136057:0|t[Meditação], você deve se ajoelhar diante de um Sacerdote que possui um |T135934:0|t|T136057:0|t[Meditação] diferente do seu, e eles devem /pray enquanto o visam << Alliance
     >>Para receber seu segundo buff |T237569:0|t|T136077:0|t[Meditação], você deve se ajoelhar diante de um Sacerdote que possui um |T135934:0|t|T136057:0|t[Meditação] diferente do seu, e eles devem /pray enquanto o visam << Horde
-    .train 402859 >>|cRXP_WARN_Quando você tiver ambos|r |T135934:0|t|T136057:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Profecia de Mil Luzes]|r |cRXP_WARN_para aprender|r |T135887:0|t[Círculo de Cura] << Alliance
-    .train 402859 >>|cRXP_WARN_Quando você tiver ambos|r |T237569:0|t|T136077:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Profecia de Mil Luzes]|r |cRXP_WARN_para aprender|r |T135887:0|t[Círculo de Cura] << Horde
+    .train 402859 >> |cRXP_WARN_Quando você tiver ambos|r |T135934:0|t|T136057:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Profecia de Mil Luzes]|r |cRXP_WARN_para aprender|r |T135887:0|t[Círculo de Cura] << Alliance
+    .train 402859 >> |cRXP_WARN_Quando você tiver ambos|r |T237569:0|t|T136077:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Profecia de Mil Luzes]|r |cRXP_WARN_para aprender|r |T135887:0|t[Círculo de Cura] << Horde
     .use 211490
     .itemcount 211490,1
 ]])
@@ -739,7 +739,7 @@ step
     .goto Kalimdor,51.95,54.56,20,0
     .goto Kalimdor,52.27,54.65,30,0
     .goto Kalimdor,52.40,55.18
-    .zone 279 >>Entre na Caverna Ululante
+    .zone 279 >> Entre na Caverna Ululante
 step
     #season 2
     >>Mate |cRXP_ENEMY_Mutanus, o Devorador|r. Saqueie-o para obter |T132775:0|t[|cRXP_LOOT_Hypnotic Cristal|r]
@@ -864,7 +864,7 @@ step
     .train 416014,1 << Warlock
     .train 415926,1 << Rogue
     .train 436368,1 << Shaman
-    .equip 13 >>|cRXP_WARN_Equipe|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r]
+    .equip 13 >> |cRXP_WARN_Equipe|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r]
     .use 216941
 step
     .train 425312,1 << Priest
@@ -877,7 +877,7 @@ step
     .train 415926,1 << Rogue
     .train 436368,1 << Shaman
     .goto Deadwind Pass,45.04,28.88
-    .aura 438288 >>|cRXP_WARN_Viagem para a localização da seta. Conforme você se aproxima, você receberá o|r |T237534:0|t[Presença Sombria] |cRXP_WARN_bônus|r
+    .aura 438288 >> |cRXP_WARN_Viagem para a localização da seta. Conforme você se aproxima, você receberá o|r |T237534:0|t[Presença Sombria] |cRXP_WARN_bônus|r
     >>|cRXP_WARN_VOCÊ TAMBÉM DEVE ESTAR DESMONTADO PARA RECEBER O BÔNUS!|r
     >>|cRXP_WARN_Garanta que você tenha|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_equipado|r
     .use 216941
@@ -885,7 +885,7 @@ step
 step
     #completewith next
     .goto Deadwind Pass,45.04,28.88
-    .cast 438305 >>|cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_para revelar o|r |cRXP_ENEMY_Cavalgante Negro|r
+    .cast 438305 >> |cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_para revelar o|r |cRXP_ENEMY_Cavalgante Negro|r
     .use 216941
 step
     .train 425312,1 << Priest
@@ -916,7 +916,7 @@ step
     .train 415926,1 << Rogue
     .train 436368,1 << Shaman
     .goto Swamp of Sorrows,69,28
-    .aura 438288 >>|cRXP_WARN_Viagem para a localização da seta. Conforme você se aproxima, você receberá o|r |T237534:0|t[Presença Sombria] |cRXP_WARN_bônus|r
+    .aura 438288 >> |cRXP_WARN_Viagem para a localização da seta. Conforme você se aproxima, você receberá o|r |T237534:0|t[Presença Sombria] |cRXP_WARN_bônus|r
     >>|cRXP_WARN_VOCÊ TAMBÉM DEVE ESTAR DESMONTADO PARA RECEBER O BÔNUS!|r
     >>|cRXP_WARN_Garanta que você tenha|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_equipado|r
     .use 216941
@@ -924,7 +924,7 @@ step
 step
     #completewith next
     .goto Swamp of Sorrows,69,28
-    .cast 438305 >>|cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_para revelar o|r |cRXP_ENEMY_Cavalgante Negro|r
+    .cast 438305 >> |cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_para revelar o|r |cRXP_ENEMY_Cavalgante Negro|r
     .use 216941
 step
     .train 425312,1 << Priest
@@ -955,7 +955,7 @@ step
     .train 415926,1 << Rogue
     .train 436368,1 << Shaman
     .goto Duskwood,23,47
-    .aura 438288 >>|cRXP_WARN_Viagem para a localização da seta. Conforme você se aproxima, você receberá o|r |T237534:0|t[Presença Sombria] |cRXP_WARN_bônus|r
+    .aura 438288 >> |cRXP_WARN_Viagem para a localização da seta. Conforme você se aproxima, você receberá o|r |T237534:0|t[Presença Sombria] |cRXP_WARN_bônus|r
     >>|cRXP_WARN_VOCÊ TAMBÉM DEVE ESTAR DESMONTADO PARA RECEBER O BÔNUS!|r
     >>|cRXP_WARN_Garanta que você tenha|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_equipado|r
     .use 216941
@@ -963,7 +963,7 @@ step
 step
     #completewith next
     .goto Duskwood,23,47
-    .cast 438305 >>|cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_para revelar o|r |cRXP_ENEMY_Cavalgante Negro|r
+    .cast 438305 >> |cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_para revelar o|r |cRXP_ENEMY_Cavalgante Negro|r
     .use 216941
 step
     .train 425312,1 << Priest
@@ -994,7 +994,7 @@ step
     .train 415926,1 << Rogue
     .train 436368,1 << Shaman
     .goto Badlands,58,54
-    .aura 438288 >>|cRXP_WARN_Viagem para a localização da seta. Conforme você se aproxima, você receberá o|r |T237534:0|t[Presença Sombria] |cRXP_WARN_bônus|r
+    .aura 438288 >> |cRXP_WARN_Viagem para a localização da seta. Conforme você se aproxima, você receberá o|r |T237534:0|t[Presença Sombria] |cRXP_WARN_bônus|r
     >>|cRXP_WARN_VOCÊ TAMBÉM DEVE ESTAR DESMONTADO PARA RECEBER O BÔNUS!|r
     >>|cRXP_WARN_Garanta que você tenha|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_equipado|r
     .use 216941
@@ -1002,7 +1002,7 @@ step
 step
     #completewith next
     .goto Badlands,58,54
-    .cast 438305 >>|cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_para revelar o|r |cRXP_ENEMY_Cavalgante Negro|r
+    .cast 438305 >> |cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_para revelar o|r |cRXP_ENEMY_Cavalgante Negro|r
     .use 216941
 step
     .train 425312,1 << Priest
@@ -1033,7 +1033,7 @@ step
     .train 415926,1 << Rogue
     .train 436368,1 << Shaman
     .goto Arathi Highlands,60,40
-    .aura 438288 >>|cRXP_WARN_Viagem para a localização da seta. Conforme você se aproxima, você receberá o|r |T237534:0|t[Presença Sombria] |cRXP_WARN_bônus|r
+    .aura 438288 >> |cRXP_WARN_Viagem para a localização da seta. Conforme você se aproxima, você receberá o|r |T237534:0|t[Presença Sombria] |cRXP_WARN_bônus|r
     >>|cRXP_WARN_VOCÊ TAMBÉM DEVE ESTAR DESMONTADO PARA RECEBER O BÔNUS!|r
     >>|cRXP_WARN_Garanta que você tenha|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_equipado|r
     .use 216941
@@ -1041,7 +1041,7 @@ step
 step
     #completewith next
     .goto Arathi Highlands,60,40
-    .cast 438305 >>|cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_para revelar o|r |cRXP_ENEMY_Cavalgante Negro|r
+    .cast 438305 >> |cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_para revelar o|r |cRXP_ENEMY_Cavalgante Negro|r
     .use 216941
 step
     .train 425312,1 << Priest
@@ -1072,7 +1072,7 @@ step
     .train 415926,1 << Rogue
     .train 436368,1 << Shaman
     .goto The Barrens,52,36
-    .aura 438288 >>|cRXP_WARN_Viagem para a localização da seta. Conforme você se aproxima, você receberá o|r |T237534:0|t[Presença Sombria] |cRXP_WARN_bônus|r
+    .aura 438288 >> |cRXP_WARN_Viagem para a localização da seta. Conforme você se aproxima, você receberá o|r |T237534:0|t[Presença Sombria] |cRXP_WARN_bônus|r
     >>|cRXP_WARN_VOCÊ TAMBÉM DEVE ESTAR DESMONTADO PARA RECEBER O BÔNUS!|r
     >>|cRXP_WARN_Garanta que você tenha|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_equipado|r
     .use 216941
@@ -1080,7 +1080,7 @@ step
 step
     #completewith next
     .goto The Barrens,52,36
-    .cast 438305 >>|cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_para revelar o|r |cRXP_ENEMY_Cavalgante Negro|r
+    .cast 438305 >> |cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_para revelar o|r |cRXP_ENEMY_Cavalgante Negro|r
     .use 216941
 step
     .train 425312,1 << Priest
@@ -1111,7 +1111,7 @@ step
     .train 415926,1 << Rogue
     .train 436368,1 << Shaman
     .goto Desolace,65,25
-    .aura 438288 >>|cRXP_WARN_Viagem para a localização da seta. Conforme você se aproxima, você receberá o|r |T237534:0|t[Presença Sombria] |cRXP_WARN_bônus|r
+    .aura 438288 >> |cRXP_WARN_Viagem para a localização da seta. Conforme você se aproxima, você receberá o|r |T237534:0|t[Presença Sombria] |cRXP_WARN_bônus|r
     >>|cRXP_WARN_VOCÊ TAMBÉM DEVE ESTAR DESMONTADO PARA RECEBER O BÔNUS!|r
     >>|cRXP_WARN_Garanta que você tenha|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_equipado|r
     .use 216941
@@ -1119,7 +1119,7 @@ step
 step
     #completewith next
     .goto Desolace,65,25
-    .cast 438305 >>|cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_para revelar o|r |cRXP_ENEMY_Cavalgante Negro|r
+    .cast 438305 >> |cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Signo de Ariden|r] |cRXP_WARN_para revelar o|r |cRXP_ENEMY_Cavalgante Negro|r
     .use 216941
 step
     .train 425312,1 << Priest
@@ -1433,7 +1433,7 @@ step
     >>Abra o |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Caixa|r] para o |T134419:0|t[|cRXP_FRIENDLY_Runa do Eclipse - Feitiço - Feitiço|r] << Druid
     >>Abra o |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Caixa|r] para o |T134419:0|t[|cRXP_FRIENDLY_Itens|r] << Warrior
     >>Abra o |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Caixa|r] para a |T134419:0|t[|cRXP_FRIENDLY_Runa da Escuridão Sombria|r] << Warlock
-    >>Abra a |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Caixa|r] para a |T134419:0|t[|cRXP_FRIENDLY_Rune of the Lâmina Envenenada|r] << Rogue
+    >>Abra a |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Caixa|r] para a |T134419:0|t[|cRXP_FRIENDLY_Runa da Lâmina Envenenada|r] << Rogue
     >>Abra o |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Caixa|r] para o |T134419:0|t[|cRXP_FRIENDLY_Runa do Despertar Ancestral|r] << Shaman
     .collect 212552,1 << Priest
     .collect 212551,1 << Paladin
@@ -1453,7 +1453,7 @@ step
     .train 410029 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Eclipse - Feitiço - Feitiço|r] |cRXP_WARN_para treinar|r |T236151:0|t[Eclipse - Feitiço - Feitiço] << Druid
     .train 403467 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Itens|r] |cRXP_WARN_para treinar|r |T132345:0|t[Regeneração Enfurecida] << Warrior
     .train 426452 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa da Escuridão Sombria|r] |cRXP_WARN_para treinar|r |T135823:0|t[Sombra e Chama] << Warlock
-    .train 425102 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Lâmina Envenenada|r] |cRXP_WARN_para treinar|r |T236270:0|t[Faca Envenenada] << Rogue
+    .train 425102 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa da Lâmina Envenenada|r] |cRXP_WARN_para treinar|r |T236270:0|t[Faca Envenenada] << Rogue
     .train 425883 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa do Despertar Ancestral|r] |cRXP_WARN_para treinar|r |T237571:0|t[Despertar Ancestral] << Shaman
     .use 212552 << Priest
     .use 212551 << Paladin
@@ -1516,13 +1516,13 @@ step
     #completewith BuyBook
     >>|cRXP_WARN_Os livros de habilidade agora podem ser comprados com ouro de Objetos de TBC em vez de ter que fazer Monastério Escarlate para obtê-los.|r << Alliance
     >>|cRXP_WARN_Os livros de habilidade agora podem ser comprados com ouro de Orgrimmar em vez de ter que fazer Monastério Escarlate para obtê-los.|r << Horde
-    .zone Stormwind City >>Vá para Ventobravo << Alliance
-    .zone Orgrimmar >>Viaje para Orgrimmar << Horde
+    .zone Stormwind City >> Vá para Ventobravo << Alliance
+    .zone Orgrimmar >> Vá para Orgrimmar << Horde
 step << Alliance
     #optional
     #completewith next
     .goto Stormwind City,70.347,27.208,15,0
-    .goto Stormwind City,72.005,21.542,20 >>Vá para o Castelo de Ventobravo
+    .goto Stormwind City,72.005,21.542,20 >> Vá para o Castelo de Ventobravo
 step
     #label BuyBook
     .goto Stormwind City,74.182,7.465 << Alliance
@@ -1700,8 +1700,8 @@ step
     .skipgossip 217412,1
     .target Amaryllis Webb
 step
-    .train 416089 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Envigorar|r] |cRXP_WARN_para treinar|r |T135125:0|t[Golpe da Mantícora] << Hunter
-    .train 410027 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Instinto|r] |cRXP_WARN_para treinar|r |T132266:0|t[Instintos de Sobrevivência] << Druid
+    .train 416089 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Envigorar|r] |cRXP_WARN_para treinar|r |T135125:0|t[Golpe da Mantícora] << Hunter
+    .train 410027 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Instinto|r] |cRXP_WARN_para treinar|r |T132266:0|t[Instintos de Sobrevivência] << Druid
     .use 213125 << Hunter
     .use 213119 << Druid
 ]])
@@ -1721,81 +1721,81 @@ step
     .xp >14,1
 step << Alliance
     #completewith next
-    .zone Westfall >>Viaje até Cerro Oeste
+    .zone Westfall >> Viaje até Cerro Oeste
 step << Alliance
     .goto Westfall,37.413,50.701
-    >>Clique em |cRXP_PICK_Restos Queimados|r no chão
-    .accept 79008 >>Aceite ...e aquele bilhete que você encontrou
+    >>Clique nos |cRXP_PICK_Restos Queimados|r no chão
+    .accept 79008 >> Aceite ... e aquele bilhete, hein?
 step << Alliance
     #completewith next
-    .zone The Barrens >>Viaje para os Sertões
+    .zone The Barrens >> Viaje para os Sertões
 step << Alliance
     .goto The Barrens,46.361,73.904
-    >>Clique em |cRXP_PICK_Restos Queimados|r no chão
-    .turnin 79008 >>Entregue ... e aquele bilhete, hein?
-    .accept 79192 >>Aceite Degraus
+    >>Clique nos |cRXP_PICK_Restos Queimados|r no chão
+    .turnin 79008 >> Entregue ... e aquele bilhete, hein?
+    .accept 79192 >> Aceite Degraus
 step << Horde
     #completewith next
-    .zone The Barrens >>Viaje para os Sertões
+    .zone The Barrens >> Viaje para os Sertões
 step << Horde
     .goto The Barrens,46.361,73.904
-    >>Clique em |cRXP_PICK_Restos Queimados|r no chão
-    .accept 79007 >>Aceite ...e aquele bilhete que você encontrou
+    >>Clique nos |cRXP_PICK_Restos Queimados|r no chão
+    .accept 79007 >> Aceite ... e aquele bilhete, hein?
 step << Horde
     #completewith next
-    .zone Westfall >>Viaje até Cerro Oeste
+    .zone Westfall >> Viaje até Cerro Oeste
 step << Horde
     .goto Westfall,37.413,50.701
-    >>Clique em |cRXP_PICK_Restos Queimados|r no chão
-    .turnin 79007 >>Entregue ... e aquele bilhete, hein?
-    .accept 79192 >>Aceite Degraus
+    >>Clique nos |cRXP_PICK_Restos Queimados|r no chão
+    .turnin 79007 >> Entregue ... e aquele bilhete, hein?
+    .accept 79192 >> Aceite Degraus
 step
     #completewith next
-    .zone Stonetalon Mountains >>Viaje para as Montanhas de Pedralva
+    .zone Stonetalon Mountains >> Viaje para as Montanhas de Pedralva
 step
     #completewith next
-    .goto Stonetalon Mountains,50.29,52.94,25 >>Voe para cima e ao longo do caminho de terra ao norte de Refúgio da Rocha do Sol
+    .goto Stonetalon Mountains,50.29,52.94,25 >> Suba e siga o caminho de terra ao norte de Refúgio da Rocha do Sol
 step
     .goto Stonetalon Mountains,40.748,52.576
     >>Clique em |cRXP_PICK_Pocket Litter|r na caixa
-    .turnin 79192 >>Entregue Degraus
-    .accept 79980 >>Aceite Rabisco
+    .turnin 79192 >> Entregue Degraus
+    .accept 79980 >> Aceite Rabisco
 step
     #completewith next
-    .goto Stonetalon Mountains,40.19,50.80,15 >>Siga o caminho através das montanhas
+    .goto Stonetalon Mountains,40.19,50.80,15 >> Siga o caminho através das montanhas
 step
     .goto Stonetalon Mountains,39.614,49.783
     >>Clique no |cRXP_PICK_Monte de Terra|r no chão
-    .turnin 79980 >>Entregue Rabisco
-    .accept 79974 >>Aceite Trabalho Suado
+    .turnin 79980 >> Entregue Rabisco
+    .accept 79974 >> Aceite Trabalho Suado
 step
     #completewith next
-    .zone Loch Modan >>Voe para Loch Modan
+    .zone Loch Modan >> Voe para Loch Modan
 step
     #completewith next
     .goto Loch Modan,41.01,12.60,50,0
     .goto Loch Modan,42.86,10.36,60,0
-    .goto Loch Modan,49.4,12.9,8 >>|cRXP_WARN_Suba na parede do Dique de Loch Modan e desça cuidadosamente para a saliência no centro da parede. Siga a seta|r
+    .goto Loch Modan,49.4,12.9,8 >> |cRXP_WARN_Suba na parede da barragem de Loch Modan e desça cuidadosamente para a saliência no centro da barragem. Siga a seta|r
 step
     .goto Loch Modan,49.421,12.917
-    >>Clique em |cRXP_PICK_Figurina Entalhada|r na saliência
-    .turnin 79974 >>Entregue Trabalho Suado
-    .accept 79975 >>Aceite Punho da Águia
+    >>Clique em |cRXP_PICK_Estatueta Entalhada|r na saliência
+    .turnin 79974 >> Entregue Trabalho Suado
+    .accept 79975 >> Aceite Punho da Águia
 step
     #completewith next
-    .goto Hillsbrad Foothills,87.691,48.166,10 >>Voe para Thoradin's Parede no limite de zona do Planalto Arathi/Contraforte de Eira dos Montes
+    .goto Hillsbrad Foothills,87.691,48.166,10 >> Vá para o Muro de Thoradin na fronteira entre Planalto Arathi e Piemonte de Braidosol
 step
     #completewith next
-    .goto Arathi Highlands,24.132,21.470,7 >>Suba no carrinho e caminhe para cima junto à parede
+    .goto Arathi Highlands,24.132,21.470,7 >> Suba no carrinho e suba ao longo da parede
 step
     .goto Arathi Highlands,22.466,24.127
     >>Clique em |cRXP_PICK_Messenger Bolsa|r pendurada na parede
-    .turnin 79975 >>Entregue Punho da Águia
-    .accept 79976 >>Aceite Deve Ser Aqui
+    .turnin 79975 >> Entregue Punho da Águia
+    .accept 79976 >> Aceite Deve Ser Aqui
 step
     .goto Arathi Highlands,22.466,24.127
     >>Clique em |cRXP_PICK_Hastily Rolled-Up Satchel|r no chão
-    .turnin 79976 >>Entregue Deve Ser Aqui
+    .turnin 79976 >> Entregue Deve Ser Aqui
 step
     +|cRXP_WARN_É altamente recomendado que você guarde seu|r |T134057:0|t[|cRXP_LOOT_Ração de Estudante|r] |cRXP_WARN_para níveis mais altos antes de consumi-los. Cada uso de|r |T134057:0|t[|cRXP_LOOT_Ração de Estudante|r] |cRXP_WARN_adiciona 20% de experiência descansada ao seu personagem, portanto é mais eficiente usar em níveis mais altos|r
 ]])
@@ -1979,10 +1979,10 @@ step
     .train 429255,1 << Paladin
     .train 431673,1 << Priest
 step
-    .train 429309 >>|cRXP_WARN_Use qualquer um dos quatro cristais que você coletou para combiná-los e aprender|r |T132171:0|t[Deslocamento] << Mage
-    .train 431745 >>|cRXP_WARN_Use qualquer um dos quatro cristais que você coletou para combiná-los e aprender|r |T236290:0|t[Ignição Explosiva] << Warlock
-    .train 429255 >>|cRXP_WARN_Use qualquer um dos quatro cristais que você coletou para combiná-los e aprender|r |T135950:0|t[Poder Purificador] << Paladin
-    .train 431673 >>|cRXP_WARN_Use qualquer um dos quatro cristais que você coletou para combiná-los e aprender|r |T237555:0|t[Desespero] << Priest
+    .train 429309 >> |cRXP_WARN_Use qualquer um dos quatro cristais que você coletou para combiná-los e aprender|r |T132171:0|t[Deslocamento] << Mage
+    .train 431745 >> |cRXP_WARN_Use qualquer um dos quatro cristais que você coletou para combiná-los e aprender|r |T236290:0|t[Ignição Explosiva] << Warlock
+    .train 429255 >> |cRXP_WARN_Use qualquer um dos quatro cristais que você coletou para combiná-los e aprender|r |T135950:0|t[Poder Purificador] << Paladin
+    .train 431673 >> |cRXP_WARN_Use qualquer um dos quatro cristais que você coletou para combiná-los e aprender|r |T237555:0|t[Desespero] << Priest
     .use 221318 --Azshara Leycryst
 ]])
 
@@ -2095,10 +2095,10 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     >>|cRXP_WARN_Obter esta runa exigirá que você lute contra inimigos em uma área élite. É possível fazer sozinho, mas se você for de nível mais baixo ou não estiver bem equipado, considere procurar alguém para ajudá-lo|r
-    .zone Eastern Plaguelands >>Viaje para as Terras Pestilentas Orientais
+    .zone Eastern Plaguelands >> Viaje para as Terras Pestilentas Orientais
 step
     >>|cRXP_WARN_Você pode obter esta runa ao mesmo tempo que|r |T135883:0|t[|cRXP_FRIENDLY_Cura Vinculada|r] |cRXP_WARN_se você avançar naquela linha de missão primeiro. Vá para|r |T135883:0|t[|cRXP_FRIENDLY_Cura Vinculada|r] |cRXP_WARN_guia de runa se você preferiria obter ambas as runas ao mesmo tempo|r << Priest
-    .goto Eastern Plaguelands,77.5,81.7,50 >>Viagem para Manopla de Tyr, |cRXP_WARN_lembre-se de que esta é uma área élite|r
+    .goto Eastern Plaguelands,77.5,81.7,50 >> Viagem para Manopla de Tyr, |cRXP_WARN_lembre-se de que esta é uma área élite|r
 step
     .goto Eastern Plaguelands,83.6,78.2
     >>|cRXP_WARN_Cabeça para a ala da biblioteca do prédio marcado no seu mapa e procure por um livro localizado no topo de uma estante. Saque-o para obter a runa. Tenha em mente que você não pode saqueá-lo em combate|r
@@ -2107,7 +2107,7 @@ step
     .train 453702,1
 step
     #completewith next
-    .train 453702 >>Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização Sagrada|r] para aprender |T237537:0|t[Especialização Sagrada]
+    .train 453702 >> Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização Sagrada|r] para aprender |T237537:0|t[Especialização Sagrada]
     .train 453702,1
     .itemcount 226418,1
     .use 226418
@@ -2124,9 +2124,9 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     >>|cRXP_WARN_Obter esta runa exigirá que você lute contra inimigos em uma área élite. É possível fazer sozinho, mas se você for de nível mais baixo ou não estiver bem equipado, considere procurar alguém para ajudá-lo|r
-    .zone Western Plaguelands >>Vá para Terras Pestilentas Ocidentais
+    .zone Western Plaguelands >> Vá para Terras Pestilentas Ocidentais
 step
-    .goto Western Plaguelands,48.7,22.4,50 >>Viagem para Hearthglen, |cRXP_WARN_lembre-se de que esta é uma área élite|r
+    .goto Western Plaguelands,48.7,22.4,50 >> Viagem para Hearthglen, |cRXP_WARN_lembre-se de que esta é uma área élite|r
 step
     .goto Western Plaguelands,47.3,13.6
     >>|cRXP_WARN_Vá para o topo da torre marcada no seu mapa. Procure por um livro vermelho deitado em um canto ao lado de uma estante, é guardado por|r |cRXP_ENEMY_Scarlet Sacerdote|r. |cRXP_WARN_Saque-o para obter a runa|r
@@ -2134,7 +2134,7 @@ step
     .train 453702,1
 step
     #completewith next
-    .train 453695 >>Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização Arcana|r] para treinar |T132849:0|t[Especialização Arcana]
+    .train 453695 >> Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização Arcana|r] para treinar |T132849:0|t[Especialização Arcana]
     .train 453695,1
     .itemcount 226413,1
     .use 226413
@@ -2150,16 +2150,16 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Burning Steppes >>Vá para Estepes Ardentes
+    .zone Burning Steppes >> Vá para Estepes Ardentes
 step
-    .goto Burning Steppes,40.3,34.9,100 >>Vá para o Blackrock Baluarte
+    .goto Burning Steppes,40.3,34.9,100 >> Vá para o Blackrock Baluarte
 step
     .goto Burning Steppes,39.9,34.1
     >>|cRXP_WARN_Entre no Baluarte e procure por um livro vermelho deitado no local marcado no seu mapa. Saque-o pela runa|r
     .collect 226407,1 --Rune of Axe Specialization
 step
     #completewith next
-    .train 453688 >>Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Machado|r] para treinar |T132394:0|t[Especialização em Machado]
+    .train 453688 >> Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Machado|r] para treinar |T132394:0|t[Especialização em Machado]
     .itemcount 226407,1
     .use 226407
 ]])
@@ -2174,16 +2174,16 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Burning Steppes >>Vá para Silithus
+    .zone Burning Steppes >> Vá para Silithus
 step
-    .goto Silithus,20,85,50 >>Vá para o sul da zona até uma tenda perto dos portões de Ahn'Qiraj
+    .goto Silithus,20,85,50 >> Vá para o sul da zona até uma tenda perto dos portões de Ahn'Qiraj
 step
     .goto Silithus,20,85
     >>|cRXP_WARN_Entre na tenda e procure por um livro vermelho deitado no local marcado no seu mapa. Saque-o pela runa|r
     .collect 226409,1 --Rune of Dagger Specialization
 step
     #completewith next
-    .train 453690 >>Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Adaga|r] para treinar |T135641:0|t[Especialização em Adaga]
+    .train 453690 >> Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Adaga|r] para treinar |T135641:0|t[Especialização em Adaga]
     .itemcount 226409,1
     .use 226409
 ]])
@@ -2198,18 +2198,18 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone 25 >>Vá para Blackrock Mountain através de Garganta Abrasadora ou das Estepes Ardentes
+    .zone 25 >> Vá para Blackrock Mountain através de Garganta Abrasadora ou das Estepes Ardentes
 step
-    .goto 1415/0,-1232.500,-7612.600,20 >>Vá para o lado leste do círculo abrasador até encontrar uma entrada que leva a um caminho para o Lower Blackrock Spire
+    .goto 1415/0,-1232.500,-7612.600,20 >> Vá para o lado leste do círculo abrasador até encontrar uma entrada que leva a um caminho para o Lower Blackrock Spire
 step
-    .goto 1415/0,-1294.200,-7574.700,5 >>Suba pelo caminho e entre no primeiro quarto lateral à sua direita. |cRXP_WARN_Você pode precisar matar inimigos de elite no seu caminho já que não pode saquear o livro enquanto em combate|r
+    .goto 1415/0,-1294.200,-7574.700,5 >> Suba pelo caminho e entre no primeiro quarto lateral à sua direita. |cRXP_WARN_Você pode precisar matar inimigos de elite no seu caminho já que não pode saquear o livro enquanto em combate|r
 step
     .goto 1415/0,-1302.100,-7583.400
     >>|cRXP_WARN_Procure por um livro vermelho deitado no chão nesta sala. Pode aparecer em múltiplas localizações. Saque-o pela runa|r
     .collect 226694,1 --Rune of Defense Specialization
 step
     #completewith next
-    .train 459313 >>Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização de Defesa|r] para treinar |T134952:0|t[Especialização de Defesa]
+    .train 459313 >> Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização de Defesa|r] para treinar |T134952:0|t[Especialização de Defesa]
     .itemcount 226694,1
     .use 226694
 ]])
@@ -2224,16 +2224,16 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Winterspring >>Vá para Hibérnia
+    .zone Winterspring >> Vá para Hibérnia
 step
-    .goto Winterspring,49.0,8.0,50 >>Vá para o norte em direção à Pedra Sabre-de-gelo
+    .goto Winterspring,49.0,8.0,50 >> Vá para o norte em direção à Pedra Sabre-de-gelo
 step
     .goto Winterspring,49.0,8.0
     >>|cRXP_WARN_Procure por um livro vermelho no local marcado. Pode estar guardado por dois inimigos níveis 55-56|r |cRXP_ENEMY_Frostsabers|r |cRXP_WARN_Saque-o pela runa|r
     .collect 226419,1 --Rune of Feral Combat Specialization
 step
     #completewith next
-    .train 453703 >>Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Combate Feral|r] para treinar |T132116:0|t[Especialização em Combate Feral]
+    .train 453703 >> Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Combate Feral|r] para treinar |T132116:0|t[Especialização em Combate Feral]
     .itemcount 226419,1
     .use 226419
 ]])
@@ -2248,11 +2248,11 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Searing Gorge >>Vá para Garganta Abrasadora
+    .zone Searing Gorge >> Vá para Garganta Abrasadora
 step
-    .goto 1427/0,-1425.800,-6772.400,25 >>Entre em Slag Pits através da entrada da caverna marcada no seu mapa
+    .goto 1427/0,-1425.800,-6772.400,25 >> Entre em Slag Pits através da entrada da caverna marcada no seu mapa
 step
-    .goto 1427/0,-1306.900,-6642.800,25 >>Atravesse a ponte em direção ao norte
+    .goto 1427/0,-1306.900,-6642.800,25 >> Atravesse a ponte em direção ao norte
 step
     .goto 1427/0,-1225.300,-6623.600
     >>|cRXP_WARN_Procure por um livro vermelho em um banco atrás|r |cRXP_ENEMY_Feitor Maltorius|r. |cRXP_WARN_Saque-o pela runa. Tenha em mente que você não pode fazer isso enquanto em combate|r
@@ -2261,7 +2261,7 @@ step
     .collect 226414,1 --Rune of Fire Specialization
 step
     #completewith next
-    .train 453696 >>Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Fogo|r] para treinar |T132847:0|t[Especialização em Fogo]
+    .train 453696 >> Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Fogo|r] para treinar |T132847:0|t[Especialização em Fogo]
     .itemcount 226414,1
     .use 226414
 ]])
@@ -2276,14 +2276,14 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Silithus >>Vá para Silithus
+    .zone Silithus >> Vá para Silithus
 step
     .goto 1427/0,-1225.300,-6623.600
     >>|cRXP_WARN_Procure por um livro vermelho no local marcado. Está envolvido pelo crepúsculo e pode ser um pouco difícil de ver|r
     .collect 226411,1 --Rune of Fist Weapon Specialization
 step
     #completewith next
-    .train 453691 >>Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Arma de Punho|r] para treinar |T133832:0|t[Especialização em Arma de Punho]
+    .train 453691 >> Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Arma de Punho|r] para treinar |T133832:0|t[Especialização em Arma de Punho]
     .itemcount 226411,1
     .use 226411
 ]])
@@ -2298,16 +2298,16 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Winterspring >>Vá para Hibérnia
+    .zone Winterspring >> Vá para Hibérnia
 step
-    .goto Winterspring,59.0,59.0,50 >>Vá para o sul até o Owlbeast Camp
+    .goto Winterspring,59.0,59.0,50 >> Vá para o sul até o Owlbeast Camp
 step
     .goto Winterspring,59.0,59.0
     >>|cRXP_WARN_Procure um livro vermelho no local marcado. Pode estar guarnecido por um par de criaturas nível 57-58|r |cRXP_ENEMY_Owlbeasts|r |cRXP_WARN_Saque-o para obter a runa|r
     .collect 226415,1 --Rune of Frost Specialization
 step
     #completewith next
-    .train 453697 >>Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização Gélida|r] para treinar |T132852:0|t[Especialização Gélida]
+    .train 453697 >> Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização Gélida|r] para treinar |T132852:0|t[Especialização Gélida]
     .itemcount 226415,1
     .use 226415
 ]])
@@ -2322,16 +2322,16 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Felwood >>Voe para Selva Maleva
+    .zone Felwood >> Voe para Selva Maleva
 step
-    .goto Felwood,63.42,7.71,50 >>Vá para o norte até o Felpaw Village
+    .goto Felwood,63.42,7.71,50 >> Vá para o norte até o Felpaw Village
 step
     .goto Felwood,62.8,7.5
     >>|cRXP_WARN_Procure um livro vermelho no local marcado. Está em um acampamento ao lado de|r |cRXP_ENEMY_Chefe Gorjassangue|r |cRXP_WARN_Saque-o para obter a runa|r
     .collect 226416,1 --Rune of Nature Specialization
 step
     #completewith next
-    .train 453698 >>Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Natureza|r] para treinar |T132848:0|t[Especialização em Natureza]
+    .train 453698 >> Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Natureza|r] para treinar |T132848:0|t[Especialização em Natureza]
     .itemcount 226416,1
     .use 226416
 ]])
@@ -2346,18 +2346,18 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Wetlands >>Viagem para Pantanal
+    .zone Wetlands >> Viagem para Pantanal
 step
-    .goto 1437/0,-3451.700,-3450.800,25 >>Vá para o leste até o início do caminho para Grim Batol
+    .goto 1437/0,-3451.700,-3450.800,25 >> Vá para o leste até o início do caminho para Grim Batol
 step
-    .goto 1437/0,-3582.500,-4138.200,25 >>Siga a estrada todo o caminho até Grim Batol. |cRXP_WARN_Não lute contra os dragões vermelhos no caminho. Você consegue chegar lá sem precisar matar nenhum deles|r
+    .goto 1437/0,-3582.500,-4138.200,25 >> Siga a estrada todo o caminho até Grim Batol. |cRXP_WARN_Não lute contra os dragões vermelhos no caminho. Você consegue chegar lá sem precisar matar nenhum deles|r
 step
      .goto 1437/0,-3451.900,-4052.500
     >>|cRXP_WARN_Siga o caminho até o portão de Grim Batol. Procure um livro vermelho no lado direito da entrada. Saque-o para obter a runa|r
     .collect 226408,1 --Rune of Mace Specialization
 step
     #completewith next
-    .train 453689 >>Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Maça|r] para treinar |T133038:0|t[Especialização em Maça]
+    .train 453689 >> Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Maça|r] para treinar |T133038:0|t[Especialização em Maça]
     .itemcount 226408,1
     .use 226408
 ]])
@@ -2372,16 +2372,16 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Azshara >>Voe para Azshara
+    .zone Azshara >> Voe para Azshara
 step
-    .goto Azshara,76.43,43.95,100 >>Vá para o Templo de Arkkoran
+    .goto Azshara,76.43,43.95,100 >> Vá para o Templo de Arkkoran
 step
     .goto Azshara,76.88,44.24
     >>|cRXP_WARN_Procure um livro vermelho em um poço lunar dentro do templo. Saque-o para obter a runa|r
     .collect 226412,1 --Rune of Pole Weapon Specialization
 step
     #completewith next
-    .train 453694 >>Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Arma de Haste|r] para treinar |T135145:0|t[Especialização em Arma de Haste]
+    .train 453694 >> Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Arma de Haste|r] para treinar |T135145:0|t[Especialização em Arma de Haste]
     .itemcount 226412,1
     .use 226412
 ]])
@@ -2396,16 +2396,16 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Blasted Lands >>Viaje para as Terras Devastadas
+    .zone Blasted Lands >> Viaje para as Terras Devastadas
 step
-    .goto Blasted Lands,45.19,55.29,100 >>Vá para o sul até a Cicatriz Maculada. |cRXP_WARN_Você terá que atravessar uma área de Élite com vários inimigos imunes a CC de alto nível. Provavelmente terá que fazer death run até o local da runa|r
+    .goto Blasted Lands,45.19,55.29,100 >> Vá para o sul até a Cicatriz Maculada. |cRXP_WARN_Você terá que atravessar uma área de Élite com vários inimigos imunes a CC de alto nível. Provavelmente terá que fazer death run até o local da runa|r
 step
     .goto Blasted Lands,33.0,48.0
     >>|cRXP_WARN_Procure um livro vermelho em um altar marcado no seu mapa. Saque-o para obter a runa|r
     .collect 226417,1 --Rune of Shadow Specialization
 step
     #completewith next
-    .train 453700 >>Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Sombra|r] para treinar |T132851:0|t[Especialização em Sombra]
+    .train 453700 >> Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Sombra|r] para treinar |T132851:0|t[Especialização em Sombra]
     .itemcount 226417,1
     .use 226417
 ]])
@@ -2420,18 +2420,18 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Deadwind Pass >>Voe para Trilha do Vento Morto
+    .zone Deadwind Pass >> Voe para Trilha do Vento Morto
 step
-    .goto Deadwind Pass,47.40,75.50 >>Vá para Karazhan
+    .goto Deadwind Pass,47.40,75.50 >> Vá para Karazhan
 step
-    .goto 1430/0,-2019.100,-11170.300,10 >>Entre na Adega do Mestre
+    .goto 1430/0,-2019.100,-11170.300,10 >> Entre na Adega do Mestre
 step
     .goto Deadwind Pass,43.06,74.58
     >>|cRXP_WARN_Entre na área da caverna e procure um livro vermelho no local marcado no seu mapa. Saque-o para obter a runa|r
     .collect 226406,1 --Rune of Sword Specialization
 step
     #completewith next
-    .train 453635 >>Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Espada|r] para treinar |T132223:0|t[Especialização em Espada]
+    .train 453635 >> Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Espada|r] para treinar |T132223:0|t[Especialização em Espada]
     .itemcount 226406,1
     .use 226406
 ]])
@@ -2446,16 +2446,16 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Thousand Needles >>Vá para as Planícies Cintilantes em Mil Agulhas
+    .zone Thousand Needles >> Vá para as Planícies Cintilantes em Mil Agulhas
     >>A rota de voo mais próxima para a localização da runa é Gadgetzan
 step
-    .goto Thousand Needles,80,77,10 >>Vá para dentro da cabana marcada no seu mapa
+    .goto Thousand Needles,80,77,10 >> Vá para dentro da cabana marcada no seu mapa
 step
     .goto Thousand Needles,80,77
     >>|cRXP_WARN_Entre na cabana e procure por um |cRXP_WARN_livro cinzento|r deitado em uma prateleira dentro. Saque-o para obter a runa|r
     .collect 231828,1 --Rune of Meditation Specialization
 step
-    .train 468763 >>Usar o |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Meditação|r] para treinar |T135913:0|t[Especialização em Meditação]
+    .train 468763 >> Usar o |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Meditação|r] para treinar |T135913:0|t[Especialização em Meditação]
     .itemcount 231828,1
     .use 231828
 ]])
@@ -2470,16 +2470,16 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Arathi Highlands >>Vá para Planalto Arathi
+    .zone Arathi Highlands >> Vá para Planalto Arathi
 step
-    .goto Arathi Highlands,21.98,79.75,40 >>Vá para Faldir's Cove, siga o caminho entre as montanhas e a parede sudeste de Stromgarde
+    .goto Arathi Highlands,21.98,79.75,40 >> Vá para Faldir's Cove, siga o caminho entre as montanhas e a parede sudeste de Stromgarde
 step
     .goto Arathi Highlands,35.2,79.1
     >>|cRXP_WARN_Cabeça para a fogueira ao lado de |cRXP_FRIENDLY_Professor Bruzundanga|r procure por um |cRXP_WARN_livro cinzento|r deitado em uma caixa ao lado da fogueira. Saque-o para obter a runa|r
     .collect 231829,1 --Rune of Healing Specialization
     .target Professor Phizzlethorpe
 step
-    .train 468761 >>Usar o |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Cura|r] para treinar |T135913:0|t[Especialização em Cura]
+    .train 468761 >> Usar o |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização em Cura|r] para treinar |T135913:0|t[Especialização em Cura]
     .itemcount 231829,1
     .use 231829
 ]])

@@ -73,7 +73,7 @@ step
 step
     #season 2
     .goto The Barrens,64.51,39.32
-    .use 208773 >>Usar o |T135129:0|t[Arpão de Pesca] em |cRXP_ENEMY_Bruuz|r e o mate. Saque-o para obter |T134419:0|t[|cRXP_FRIENDLY_Runa de Golpe Rápido|r] << Warrior
+    .use 208773 >>Use o |T135129:0|t[Arpão de Pesca] em |cRXP_ENEMY_Bruuz|r e mate-o. Pegue dele a |T134419:0|t[|cRXP_FRIENDLY_Runa de Golpe Rápido|r] << Warrior
     .use 208773 >>Usar o |T135129:0|t[Arpão de Pesca] em |cRXP_ENEMY_Bruuz|r e mate-o. Saqueie-o para obter |T134419:0|t[|cRXP_FRIENDLY_Runa do Franco-atirador|r] << Hunter
     >>|cRXP_WARN_Patrulha ao redor do barco afundado na água|r
     .collect 208778,1 << Warrior --Rune of Quick Strike (1)

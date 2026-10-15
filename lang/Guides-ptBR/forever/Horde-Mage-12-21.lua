@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 << Horde Mage
 #name 12-17 Sertões AoE
 #version 1
-#group Guia RestedXP Forever (H)
+#group Guia Forever (H)
 #subgroup Guia Speedrun Mago AoE
 #defaultfor Horde Mage
 #next 17-21 Cordilheira das Torres de Pedra/Sertões AoE
@@ -45,7 +45,7 @@ step
 step
     .goto 1413/1,-2645.40,-406.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Estalajadeiro Boorand Vento das Planícies|r
-    .home >>Defina sua Pedra de Regresso em A Encruzilhada
+    .home >> Defina sua Pedra de Regresso em A Encruzilhada
     .target Innkeeper Boorand Plainswind
 step
     .goto 1413/1,-2595.75,-468.43
@@ -55,7 +55,7 @@ step
     .accept 5041 >>Aceite Suprimentos para a Encruzilhada
 step
     .goto 1413/1,-2595.75,-441.40
-    .fp The Crossroads >>Aprenda a rota de voo da Encruzilhada
+    .fp The Crossroads >> Aprenda a rota de voo da Encruzilhada
 step << Troll Mage
     >>NÃO vá para Orgrimmar
     .goto 1413/1,-2595.75,-434.64
@@ -75,7 +75,7 @@ step
     >>Procure o Barril Vazio do Chen neste local. Pegue-o e inicie a missão; se não estiver aqui, pegue-o depois
     .goto 1413/1,-3021.35,-231.96
     .collect 4926,1,819 --Collect Chen's Empty Keg
-    .accept 819 >>Aceite Barril Vazio do Chen
+    .accept 819 >> Aceite Barril Vazio do Chen
 step
     .goto 1413/1,-3011.22,-184.66
     >>Mate os Javatuscos na área
@@ -179,7 +179,7 @@ step
     .accept 887 >>Aceite Os Flibusteiros dos Mares do Sul
 step
     .goto 1413/1,-3771.22,-894.07
-    .fp Ratchet >>Aprenda a rota de voo de Vila Catraca
+    .fp Ratchet >> Aprenda a rota de voo de Vila Catraca
 step
     .goto 1413/1,-3761.08,-900.83
 .target Sputtervalve
@@ -242,7 +242,7 @@ step
     .accept 888 >>Aceite Butim Roubado
 step
     .goto 1413/1,-3769.19,-898.12
-    .fly Crossroads >>Voe para A Encruzilhada
+    .fly Crossroads >> Voe para A Encruzilhada
 step
     .goto 1413/1,-2595.75,-468.43
 .target Thork
@@ -265,7 +265,7 @@ step
     .goto 1413/1,-1972.55,-306.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Regthar Portões-da-morte|r
     .accept 850 >>Aceite Os líderes Kolkar
-    .accept 855 >>Aceite Braçadeiras de centauro
+    .accept 855 >> Aceite Braçadeiras de centauro
     .target Regthar Deathgate
 step
     #completewith KodobaneTurnin
@@ -336,8 +336,8 @@ step
 step
     #completewith next
     .goto 1413/1,-1815.48,788.24
-    >>Se ainda não conseguiu a Maça Pesada com Pontas, tente comprá-la de Vrang Sanguebravo << Druid/Warrior
-    .vendor >>Venda seus itens a ele se precisar
+    >> Se ainda não conseguiu a Maça Pesada com Pontas, tente comprá-la de Vrang Sanguebravo << Druid/Warrior
+    .vendor >> Venda seus itens a ele se precisar
 step
     #sticky
     #completewith next
@@ -388,7 +388,7 @@ step
     .accept 858 >>Aceite Ignição
 step
     >>Chegue ao nível 16 matando inimigos aqui, pois as próximas 3 missões são bem difíceis.
-	.xp 16 >>Mate inimigos até o nível 16
+	.xp 16 >> Mate inimigos até o nível 16
 step
     >>Mate Supervisor Rancatraca (ele patrulha toda a torre). Pegue a Chave de Ignição
 	.goto 1413/1,-3082.15,1031.46
@@ -414,7 +414,7 @@ step
 	.goto 1454/1,-3841.9,1647.15,40 >>Vá até a entrada oeste de Orgrimmar
 step
     .goto 1454/1,-4224.67,1472.41
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
 step << Troll Mage
     .goto 1454/1,-4440.81,1632.18
 >>Fale com |cRXP_FRIENDLY_Estalajadeira Gryshka|r
@@ -424,7 +424,7 @@ step << Troll Mage
 step
     >>Suba até o Mestre de Voo. NÃO voe para lugar nenhum
     .goto 1454/1,-4313.46,1676.25--c:Orgrimmar,45.120,63.889
-    .fp Orgrimmar >>Aprenda a rota de voo de Orgrimmar << Undead
+    .fp Orgrimmar >> Aprenda a rota de voo de Orgrimmar << Undead
 >>Fale com |cRXP_FRIENDLY_Doraso|r
     .turnin 6385 >>Entregue Doraso, o mestre de mantícoras << Troll Mage
 .target Doras
@@ -468,15 +468,15 @@ step
 step
     .goto 1413/1,-2666.68,-481.94.90
 >>Fale com |cRXP_FRIENDLY_Tonga Runa Totem|r
-    .turnin 870 >>Entregue Os Charcos Esquecidos
+    .turnin 870 >> Entregue Os Charcos Esquecidos
 .target Tonga Runetotem
-    .accept 877 >>Aceite O Oásis Estagnado
+    .accept 877 >> Aceite O Oásis Estagnado
 step
     .goto 1413/1,-2646.42,-522.480
 .target Mankrik
 >>Fale com |cRXP_FRIENDLY_Mankrik|r
-    .accept 899 >>Aceite Consumido pelo ódio
-    .accept 4921 >>Aceite Perdida em combate
+    .accept 899 >> Aceite Consumido pelo ódio
+    .accept 4921 >> Aceite Perdida em combate
 step
     >>No topo da torre
     .goto 1413/1,-2605.88,-475.18
@@ -488,7 +488,7 @@ step
     .goto 1413/1,-2595.75,-427.890
 .target Apothecary Helbrim
 >>Fale com |cRXP_FRIENDLY_Boticário Hermógenes|r
-    .turnin 848 >>Entregue Esporos de Fungos
+    .turnin 848 >> Entregue Esporos de Fungos
 step
     .goto 1413/1,-2595.75,-434.64
     .fly Ratchet >>Voe para Vila Catraca
@@ -496,19 +496,19 @@ step
     .goto 1413/1,-3761.08,-900.83
 >>Fale com |cRXP_FRIENDLY_Cobogó|r
     .turnin 902 >>Entregue A rebimboca
-    .turnin 863 >>Entregue A fuga
+    .turnin 863 >> Entregue A fuga
 .target Sputtervalve
-    .accept 1483 >>Aceite Zé Fízzica
+    .accept 1483 >> Aceite Zé Fízzica
 step
     .goto 1413/1,-3791.48,-981.900
 .target Wharfmaster Dizzywig
 >>Fale com |cRXP_FRIENDLY_Mestre Portuário Caruncho|r
-    .turnin 896 >>Entregue A fortuna do mineiro
+    .turnin 896 >> Entregue A fortuna do mineiro
 step
     .goto 1413/1,-3700.28,-934.610
 .target Mebok Mizzyrix
 >>Fale com |cRXP_FRIENDLY_Cáliper Porcatraca|r
-    .accept 1069 >>Aceite Ovos de Aranha de Fundolimo
+    .accept 1069 >> Aceite Ovos de Aranha de Fundolimo
 step
     >>Pegue o caixote
     .goto 1413/1,-3821.88,-1711.58
@@ -542,7 +542,7 @@ step
     .complete 855,1 --Centaur Bracers (15)
 step
     #label Verog
-    >>Mate Centauros ao redor do lago até Verog aparecer (você verá um grito no chat quando ele aparecer)
+    >> Mate Centauros ao redor do lago até Verog aparecer (você verá um grito no chat quando ele aparecer)
     .goto 1413/1,-2742.68,-1209.59
     .complete 851,1 --Verog's Head (1)
 step
@@ -597,7 +597,7 @@ step
     .accept 878 >>Aceite Tribos em guerra
 step
     .goto 1413/1,-1886.42,-2387.20
-    .fp Camp Taurajo >>Aprenda a rota de voo de Acampamento Taurajo
+    .fp Camp Taurajo >> Aprenda a rota de voo de Acampamento Taurajo
     .fly Crossroads >>Voe para A Encruzilhada
 step
     .goto 1413/1,-2636.28,-434.64
@@ -636,7 +636,7 @@ step
     .goto 1413/1,-1976.6,-308.30
 .target Regthar Deathgate
 >>Fale com |cRXP_FRIENDLY_Regthar Portões-da-morte|r
-    .turnin 855 >>Entregue Braçadeiras de centauro
+    .turnin 855 >> Entregue Braçadeiras de centauro
     .isQuestComplete 855
 step
     .goto 1413/1,-1976.6,-308.30
@@ -651,7 +651,7 @@ step
     .complete 855,1 --Centaur Bracers (15)
 step
     .goto 1413/1,-2025.24,-1144.050
-    >>Hezrul patrulha ao redor do grande lago da Caverna Ululante
+    >> Hezrul patrulha ao redor do grande lago da Caverna Ululante
     .complete 852,1 --Hezrul's Head (1)
 step
 	#requires CeBracers
@@ -659,15 +659,15 @@ step
 .target Regthar Deathgate
 >>Fale com |cRXP_FRIENDLY_Regthar Portões-da-morte|r
     .turnin 852 >>Entregue Hezrul Marca de Sangue
-    .turnin 855 >>Entregue Braçadeiras de centauro
+    .turnin 855 >> Entregue Braçadeiras de centauro
 step
     .goto 1413/1,-1974.58,-308.30
 .target Regthar Deathgate
 >>Fale com |cRXP_FRIENDLY_Regthar Portões-da-morte|r
     .accept 4021 >>Aceite Contra-ataque!
 step
-    >>Esta missão pode ser muito difícil de fazer sozinho. Tente formar um grupo ou atraia o inimigo para perto do edifício de quem oferece a missão, mantendo distância.
-    >>Pule esta etapa se for muito difícil
+    >> Esta missão pode ser muito difícil de fazer sozinho. Tente formar um grupo ou atraia o inimigo para perto do edifício de quem oferece a missão, mantendo distância.
+    >> Pule esta etapa se for muito difícil
     .goto 1413/1,-1869.19,-288.71
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
 --N Link to safespot abuse
@@ -697,12 +697,12 @@ step
 step
     .goto 1413/1,-954.15,-272.49
 >>Fale com |cRXP_FRIENDLY_Seereth Quebra-pedra|r
-    .turnin 1061 >>Entregue Os espíritos das Torres de Pedra
+    .turnin 1061 >> Entregue Os espíritos das Torres de Pedra
 .target Seereth Stonebreak
-    .accept 1062 >>Aceite Invasores goblins
+    .accept 1062 >> Aceite Invasores goblins
 .target Makaba Flathoof
 >>Fale com |cRXP_FRIENDLY_Makaba Casco Chato|r
-    .accept 6548 >>Aceite Vingue minha vila
+    .accept 6548 >> Aceite Vingue minha vila
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -710,7 +710,7 @@ RXPGuides.RegisterGuide([[
 << Horde Mage
 #name 17-21 Cordilheira das Torres de Pedra/Sertões AoE
 #version 1
-#group Guia RestedXP Forever (H)
+#group Guia Forever (H)
 #subgroup Guia Speedrun Mago AoE
 #defaultfor Horde Mage
 #next 21-30 Floresta de Pinhaprata/Contraforte de Eira dos Montes AdE
@@ -730,9 +730,9 @@ step
 step
     .goto 1413/1,-943.1,-265.13
 >>Fale com |cRXP_FRIENDLY_Makaba Casco Chato|r
-    .turnin 6548 >>Entregue Vingue minha vila
+    .turnin 6548 >> Entregue Vingue minha vila
 .target Makaba Flathoof
-    .accept 6629 >>Aceite Mate Grundig Nuvem Negra
+    .accept 6629 >> Aceite Mate Grundig Nuvem Negra
 step
     >>Entre na aldeia pelo caminho oeste. Mate os 6 brutamontes antes de iniciar a missão lá dentro. Mate Grundig Nuvem Negra em frente à tenda principal
     .goto 1442/1,-255.52,93.5,60,0
@@ -744,7 +744,7 @@ step
     .goto 1442/1,-343.42,122.80
 .target Kaya Flathoof
 >>Fale com |cRXP_FRIENDLY_Kaya Casco Chato|r
-    .accept 6523 >>Aceite Proteja Kaya
+    .accept 6523 >> Aceite Proteja Kaya
 step
      >>Escolte Kaya e fique perto dela. 3 Temíveis Totens aparecerão na fogueira. Coma/beba antes que ela chegue ao acampamento
     .goto 1442/1,-455.73,-59.55
@@ -753,7 +753,7 @@ step
     .goto 1442/1,-240.87,-180.03
 .target Xen'Zilla
 >>Fale com |cRXP_FRIENDLY_Xen'Zilla|r
-    .accept 6461 >>Aceite Fome sangrenta
+    .accept 6461 >> Aceite Fome sangrenta
 step
     #sticky
     #label deepmossegg
@@ -776,9 +776,9 @@ step
 step
     .goto 1442/1,365.2,878.29
 >>Fale com |cRXP_FRIENDLY_Zé Fízzica|r
-    .turnin 1483 >>Entregue Zé Fízzica
+    .turnin 1483 >> Entregue Zé Fízzica
 .target Ziz Fizziks
-    .accept 1093 >>Aceite o Super Ceifador 6000
+    .accept 1093 >> Aceite o Super Ceifador 6000
 step
     #sticky
     #requires deepmossegg
@@ -809,11 +809,11 @@ step
 step
     .goto 1442/1,365.2,878.29
 >>Fale com |cRXP_FRIENDLY_Zé Fízzica|r
-    .turnin 1093 >>Entregue o Super Ceifador 6000
+    .turnin 1093 >> Entregue o Super Ceifador 6000
 .target Ziz Fizziks
-    .accept 1094 >>Aceite as instruções adicionais
+    .accept 1094 >> Aceite as instruções adicionais
 step
-    .hs >>Use a Pedra de Regresso para voltar ao Acampamento Taurajo
+    .hs >> Use a Pedra de Regresso para voltar ao Acampamento Taurajo
 step
     .goto 1413/1,-1926.95,-2380.44
 >>Fale com |cRXP_FRIENDLY_Jorn Vidente do Céu|r
@@ -919,16 +919,16 @@ step
     >>No topo da torre
     .goto 1413/1,-2605.88,-475.180
 >>Fale com |cRXP_FRIENDLY_Darsok Punhálacre|r
-    .turnin 875 >>Entregue Tenentes harpias
+    .turnin 875 >> Entregue Tenentes harpias
 .target Darsok Swiftdagger
-    .accept 876 >>Aceite Serena Plumassangue
+    .accept 876 >> Aceite Serena Plumassangue
 step
     >>Isso inicia uma missão com limite de tempo
     .goto 1413/1,-2585.62,-427.89
 >>Fale com |cRXP_FRIENDLY_Boticário Hermógenes|r
     .turnin 848 >>Entregue Esporos de Fungos
 .target Apothecary Helbrim
-    .accept 853 >>Aceite o Boticário Zamah
+    .accept 853 >>Aceite Boticária Zaqueia
 step
     .goto 1413/1,-2595.75,-434.64
     .fly Camp Taurajo >>Voe para o Acampamento Taurajo
@@ -1019,7 +1019,7 @@ step
     >>Entregue seus Estilhaços de Sangue a Denterroto para receber o bônus Espírito do Vento. Se vendeu algum por engano, pule esta etapa
 .target Mangletooth
 >>Fale com |cRXP_FRIENDLY_Denterroto|r
-    .turnin 889 >>Entregue Espírito do vento
+    .turnin 889 >> Entregue Espírito do vento
 step
     .goto 1456/1,182.67,-1315.51,60 >>Vá até o elevador e suba para o Penhasco do Trovão
 step
@@ -1037,10 +1037,10 @@ step
 	.goto 1456/1,276.6,-996.120
 .target Apothecary Zamah
 >>Fale com o |cRXP_FRIENDLY_Boticário Zaqueu|r
-    .turnin 853 >>Entregue para o Boticário Zamah
+    .turnin 853 >> Entregue para o Boticário Zamah
 step
     .goto 1456/1,254.06,-995.78
-    .trainer >>Treine suas magias de classe
+    .trainer >> Treine suas magias de classe
 	>>Não redistribua seus talentos para AoE ainda (se escolheu Fogo)
 step
     .goto 1456/1,220.24,-1042.75
@@ -1049,7 +1049,7 @@ step
     .accept 264 >>Aceite Até que a morte nos separe
 step
 	.goto 1456/1,26.07,-1196.75
-    .fp Thunder Bluff >>Aprenda a rota de voo de Penhasco do Trovão
+    .fp Thunder Bluff >> Aprenda a rota de voo de Penhasco do Trovão
     .fly Crossroads >>Voe para A Encruzilhada
 step
     >>Mate Serena Plumassangue. Pegue sua Cabeça
@@ -1084,36 +1084,36 @@ step
     .turnin 6401 >>Entregue Kaya está viva
 step
     .goto 1442/1,1042.47,968.13
-    .fp Sun Rock>>Aprenda a rota de voo de Retiro Rocha do Sol
+    .fp Sun Rock>> Aprenda a rota de voo de Retiro Rocha do Sol
 step
     #completewith next
-    .hs >>Use a Pedra de Regresso para voltar ao Penhasco do Trovão
+    .hs >> Use a Pedra de Regresso para voltar ao Penhasco do Trovão
 step
     .goto 1456/1,-213.96,-1065.010
 >>Fale com |cRXP_FRIENDLY_Magatha Temível Totem|r
-    .turnin 1063 >>Entregue A Bruxa Anciã
+    .turnin 1063 >> Entregue A Bruxa Anciã
 .target Magatha Grimtotem
-    .accept 1064 >>Aceite Ajuda Renegada
+    .accept 1064 >> Aceite Ajuda Renegada
 step
     .goto 1456/1,-303.93,-1048.73
 >>Fale com |cRXP_FRIENDLY_Arquidruida Hamuul Runa Totem|r
-    .turnin 1489 >>Entregue Hamuul Runa Totem
+    .turnin 1489 >> Entregue Hamuul Runa Totem
 .target Arch Druid Hamuul Runetotem
-    .accept 1490 >>Aceite Nara Juba Agreste
+    .accept 1490 >> Aceite Nara Juba Agreste
 step
     .goto 1456/1,-272.93,-1070.02
 .target Nara Wildmane
 >>Fale com |cRXP_FRIENDLY_Nara Juba Agreste|r
-    .turnin 1490 >>Entregue Nara Juba Agreste
+    .turnin 1490 >> Entregue Nara Juba Agreste
 step
     .goto 1456/1,276.6,-996.12
 >>Fale com o |cRXP_FRIENDLY_Boticário Zaqueu|r
-    .turnin 1064 >>Entregue Ajuda Renegada
+    .turnin 1064 >> Entregue Ajuda Renegada
 .target Apothecary Zamah
-    .accept 1065 >>Aceite A jornada para Serraria Tarren
+    .accept 1065 >> Aceite A jornada para Serraria Tarren
 step
     .goto 1456/1,254.06,-995.78
-    .trainer >>Aprenda os feitiços da sua classe se precisar
+    .trainer >> Aprenda os feitiços da sua classe se precisar
 	>>Redistribua seus talentos para Gélido AoE se ainda não fez isso
 step
     .goto 1456/1,28.19,-1197.92.0
@@ -1123,8 +1123,8 @@ step
 	>>Suba as escadas
 .target Darsok Swiftdagger
 >>Fale com |cRXP_FRIENDLY_Darsok Punhálacre|r
-    .turnin 876 >>Entregue Serena Plumassangue
+    .turnin 876 >> Entregue Serena Plumassangue
 step
     .goto 1413/1,-2595.75,-437.35
-    .fly Orgrimmar >>Voe para Orgrimmar
+    .fly Orgrimmar >> Voe para Orgrimmar
 ]])

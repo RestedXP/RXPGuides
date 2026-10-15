@@ -15,7 +15,7 @@ step
 step
     .goto Burning Steppes,85.820,68.948
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helendis Flumicórnio|r
-    .accept 4182 >>Aceite Ameaça Dracônica
+    .accept 4182 >> Aceite Ameaça Dracônica
     .target Helendis Riverhorn
 step
     #loop
@@ -42,42 +42,42 @@ step
     .isQuestComplete 4182
     .goto Burning Steppes,85.820,68.948
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helendis Flumicórnio|r
-    .turnin 4182 >>Entregue Ameaça Dracônica
-    .accept 4183 >>Aceite The True Masters
+    .turnin 4182 >> Entregue Ameaça Dracônica
+    .accept 4183 >> Aceite The True Masters
     .target Helendis Riverhorn
 step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,85.820,68.948
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Helendis Flumicórnio|r
-    .accept 4183 >>Aceite The True Masters
+    .accept 4183 >> Aceite The True Masters
     .target Helendis Riverhorn
 step
     .isQuestTurnedIn 4182
     #completewith next
     .goto Burning Steppes,84.333,68.328
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Borgus Braçoforte|r
-    .fly Redridge >>Voe para Montanhas Cristarrubra
+    .fly Redridge >> Voe para Montanhas Cristarrubra
     .target Borgus Stoutarm
 step
     .isQuestTurnedIn 4182
     .goto Redridge Mountains,29.98,44.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magistrado Salomão|r
-    .turnin 4183 >>Entregue The True Masters
-    .accept 4184 >>Aceite The True Masters
+    .turnin 4183 >> Entregue The True Masters
+    .accept 4184 >> Aceite The True Masters
     .target Magistrate Solomon
 step
     .isQuestTurnedIn 4182
     .goto Redridge Mountains,30.590,59.410
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena Penafúria|r
-    .fly Stormwind >>Voe para Ventobravo
+    .fly Stormwind >> Voe para Ventobravo
     .target Ariena Stormfeather
     .zoneskip Redridge Mountains,1
 step
     .isQuestTurnedIn 4182
     .goto Stormwind City,78.213,17.980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Grão-lorde Bolvar Fordragon|r
-    .turnin 4184 >>Entregue The True Masters
-    .accept 4185 >>Aceite The True Masters
+    .turnin 4184 >> Entregue The True Masters
+    .accept 4185 >> Aceite The True Masters
     .target Highlord Bolvar Fordragon
 step
     .isQuestTurnedIn 4182
@@ -90,42 +90,42 @@ step
     .isQuestTurnedIn 4182
     .goto Stormwind City,78.213,17.980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Grão-lorde Bolvar Fordragon|r
-    .turnin 4185 >>Entregue The True Masters
-    .accept 4186 >>Aceite The True Masters
+    .turnin 4185 >> Entregue The True Masters
+    .accept 4186 >> Aceite The True Masters
     .target Highlord Bolvar Fordragon
 step
     .isQuestTurnedIn 4182
     #completewith next
     .goto Stormwind City,66.277,62.137
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dungar Tragolongo|r
-    .fly Redridge>>Voe para Montanhas Cristarrubra
+    .fly Redridge>> Voe para Montanhas Cristarrubra
     .target Dungar Longdrink
 step
     .isQuestTurnedIn 4182
     .goto Redridge Mountains,29.98,44.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Magistrado Salomão|r
-    .turnin 4186 >>Entregue The True Masters
-    .accept 4223 >>Aceite The True Masters
+    .turnin 4186 >> Entregue The True Masters
+    .accept 4223 >> Aceite The True Masters
     .target Magistrate Solomon
 step
     .isQuestTurnedIn 4182
     #completewith next
     .goto Redridge Mountains,30.590,59.410
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Ariena Penafúria|r
-    .fly Burning Steppes >>Voe para Estepes Ardentes
+    .fly Burning Steppes >> Voe para Estepes Ardentes
     .target Ariena Stormfeather
 step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,84.744,69.015
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Maximiliano|r
-    .turnin 4223 >>Entregue The True Masters
-    .accept 4224 >>Aceite The True Masters
+    .turnin 4223 >> Entregue The True Masters
+    .accept 4224 >> Aceite The True Masters
     .target Marshal Maxwell
 step
     .isQuestTurnedIn 4182
     #completewith WindsorPickup
     .goto Burning Steppes,65.236,24.007
-    .subzone 251 >>Voe para Cume Flamejante
+    .subzone 251 >> Voe para Cume Flamejante
 step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,65.012,23.757
@@ -138,8 +138,8 @@ step
     .isQuestTurnedIn 4182
     .goto Burning Steppes,84.744,69.015
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Maximiliano|r
-    .turnin 4224 >>Entregue The True Masters
-    .accept 4241 >>Aceite o Marechal Windsor
+    .turnin 4224 >> Entregue The True Masters
+    .accept 4241 >> Aceite o Marechal Windsor
     .target Marshal Maxwell
 step
     #completewith next
@@ -154,8 +154,8 @@ step
     .isQuestTurnedIn 4182
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Marechal Vilasboas|r
     >>|cRXP_WARN_Se seu grupo não tiver um Ladino talvez seja necessário matar|r |cRXP_ENEMY_High Interrogator Gerstahn|r |cRXP_WARN_para o|r |cRXP_LOOT_Prison Cell Chave|r |cRXP_WARN_para abrir as portas|r
-    .turnin 4241 >>Entregue Marechal Vilasboas
-    .accept 4242 >>Aceite Esperança Abandonada
+    .turnin 4241 >> Entregue Marechal Vilasboas
+    .accept 4242 >> Aceite Esperança Abandonada
 step
     .isQuestTurnedIn 4182
     #completewith next
@@ -165,7 +165,7 @@ step
     .goto Burning Steppes,84.744,69.015
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Maximiliano|r
     >>|cRXP_WARN_A cadeia de missões irá parar aqui até você encontrar|r |T134331:0|t[Bilhete Amassado] |cRXP_WARN_em Abismo Rocha Negra|r
-    .turnin 4242 >>Entregue Esperança Abandonada
+    .turnin 4242 >> Entregue Esperança Abandonada
     .target Marshal Maxwell
 step
     #completewith next
@@ -178,20 +178,20 @@ step
 step
     .isQuestTurnedIn 4242
     >>Mate os |cRXP_ENEMY_Anões|r em Abismo Rocha Negra. Saqueie-os para obter |T134331:0|t[Bilhete Amassado]
-    .use 11446 >>|cRXP_WARN_Use o|r |T134331:0|t[Bilhete Amassado] |cRXP_WARN_para iniciar a missão|r
+    .use 11446 >> |cRXP_WARN_Use o|r |T134331:0|t[Bilhete Amassado] |cRXP_WARN_para iniciar a missão|r
     >>|cRXP_WARN_É importante fazer isso antes de matar os chefes |cRXP_ENEMY_General Forjaversa|r e |rLorde Golem Argelmach|cRXP_ENEMY_|r
     >>|cRXP_WARN_Se você ainda não encontrou isso, limpe a área ao redor do Bloco de Detenção até que ele caia|r
     .collect 11446,1,4264,1 -- A Crumpled Up Note (1)
-    .accept 4264 >>Aceite Bilhete Amassado
+    .accept 4264 >> Aceite Bilhete Amassado
 step
     .isOnQuest 4264
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Marechal Vilasboas|r
-    .turnin 4264 >>Entregue Bilhete Amassado
-    .accept 4282 >>Aceite Um fiapo de esperança
+    .turnin 4264 >> Entregue Bilhete Amassado
+    .accept 4282 >> Aceite Um fiapo de esperança
 step
     .isQuestTurnedIn 4264
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Marechal Vilasboas|r
-    .accept 4282 >>Aceite Um fiapo de esperança
+    .accept 4282 >> Aceite Um fiapo de esperança
 step
     .isOnQuest 4282
     >>Mate |cRXP_ENEMY_General Forjaversa|r e |cRXP_ENEMY_Lorde Golem Argelmach|r. Saqueie-os para obter |cRXP_LOOT_Informações Perdidas do Marechal Vilasboas|r
@@ -202,8 +202,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Marechal Vilasboas|r
     >>|cRXP_WARN_CERTIFIQUE-SE DE QUE TODOS OS MEMBROS DO GRUPO ESTEJAM COM A ACEITAÇÃO AUTOMÁTICA DESATIVADA PARA ESTE PASSO! O RestedXP TEM A ACEITAÇÃO AUTOMÁTICA DESATIVADA PARA ESTE PASSO|r
     >>|cRXP_WARN_Aceitar esta missão iniciará a escolta Fuga da Cadeia. Certifique-se de ter limpado toda a área do Bloco de Detenção para facilitar a escolta de |rMarechal Vilasboas|cRXP_FRIENDLY_|r
-    .turnin 4282 >>Entregue Um fiapo de esperança
-    .accept 4322,1 >>Aceite Fuga da Cadeia!
+    .turnin 4282 >> Entregue Um fiapo de esperança
+    .accept 4322,1 >> Aceite Fuga da Cadeia!
 step
     .isOnQuest 4322
     >>Escolte |cRXP_FRIENDLY_Marechal Vilasboas|r pelo Abismo Rocha Negra
@@ -215,15 +215,15 @@ step
     .isQuestComplete 4322
     .goto Burning Steppes,84.744,69.015
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Maximiliano|r
-    .turnin 4322 >>Entregue Fuga da Cadeia!
-    .accept 6402 >>Aceite Encontro em Ventobravo
+    .turnin 4322 >> Entregue Fuga da Cadeia!
+    .accept 6402 >> Aceite Encontro em Ventobravo
     .target Marshal Maxwell
 step
     .isQuestTurnedIn 4322
     #label Rendezvoes
     .goto Burning Steppes,84.744,69.015
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Oficial Maximiliano|r
-    .accept 6402 >>Aceite Encontro em Ventobravo
+    .accept 6402 >> Aceite Encontro em Ventobravo
     .target Marshal Maxwell
 step
     .isQuestTurnedIn 4322
@@ -233,8 +233,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Escudeiro Rowe|r e |cRXP_FRIENDLY_Reginaldo Vilasboas|r
     >>|cRXP_FRIENDLY_Escudeiro Rowe|r chamará |cRXP_FRIENDLY_Reginaldo Vilasboas|r para chegar depois que você falar com ele nos Portões de Ventobravo
     >>|cRXP_WARN_SE VOCÊ ESTIVER EM UM GRUPO, CERTIFIQUE-SE DE QUE NINGUÉM ACEITE AUTOMATICAMENTE O Grande Baile de Máscaras. A ACEITAÇÃO AUTOMÁTICA FOI DESATIVADA PARA ESTE PASSO|r
-    .turnin 6402 >>Entregue Encontro em Ventobravo
-    .accept 6403,1 >>Aceite O Grande Baile de Máscaras
+    .turnin 6402 >> Entregue Encontro em Ventobravo
+    .accept 6403,1 >> Aceite O Grande Baile de Máscaras
     .skipgossip
     .target Squire Rowe
     .target Reginald Windsor
@@ -250,14 +250,14 @@ step
     .isQuestComplete 6403
     .goto StormwindClassic,77.569,18.864
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Grão-lorde Bolvar Fordragon|r
-    .turnin 6403 >>Entregue O Grande Baile de Máscaras
-    .accept 6501 >>Aceite O Olho do Dragão
+    .turnin 6403 >> Entregue O Grande Baile de Máscaras
+    .accept 6501 >> Aceite O Olho do Dragão
     .target Highlord Bolvar Fordragon
 step
     .isQuestTurnedIn 6403
     .goto StormwindClassic,77.569,18.864
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Grão-lorde Bolvar Fordragon|r
-    .accept 6501 >>Aceite O Olho do Dragão
+    .accept 6501 >> Aceite O Olho do Dragão
     .target Highlord Bolvar Fordragon
 step
     #completewith next
@@ -278,7 +278,7 @@ step
     >>|cRXP_WARN_Se você tem|r |T134863:0|t[Noggenfogger Elixirs]|cRXP_WARN_, você pode usá-los para obter|r |T135992:0|t[Queda Lenta] |cRXP_WARN_para facilitar o pulo|r << !Priest !Mage
     >>|cRXP_WARN_Se você tem|r |T134863:0|t[Noggenfogger Elixirs] |cRXP_WARN_ou|r |T132917:0|t[Luz Peninha]|cRXP_WARN_, você pode usá-los para obter|r |T135992:0|t[Queda Lenta] |cRXP_WARN_para facilitar o pulo|r << Mage
     >>|cRXP_WARN_Se você tem|r |T134863:0|t[Noggenfogger Elixirs] |cRXP_WARN_ou|r |T132917:0|t[Luz Peninha]|cRXP_WARN_, você pode usá-los para obter|r |T135992:0|t[Queda Lenta] |cRXP_WARN_ou|r |T135928:0|t[Levitar] |cRXP_WARN_para facilitar o pulo|r << Priest
-    .link https://www.youtube.com/watch?v=qjmkIzbfBbQ&ab_channel=RestedXP >>https://www.youtube.com/watch?v=qjmkIzbfBbQ&ab_channel=RestedXP >> |cRXP_WARN_Clique aqui para referência de vídeo|r
+    .link https://www.youtube.com/watch?v=qjmkIzbfBbQ&ab_channel=RestedXP >> |cRXP_WARN_Clique aqui para referência de vídeo|r
 step
     .isQuestTurnedIn 6403
     .goto Winterspring,54.54,51.21
@@ -317,7 +317,7 @@ step
     >>|cRXP_WARN_Se você tem|r |T134863:0|t[Noggenfogger Elixirs]|cRXP_WARN_, você pode usá-los para obter|r |T135992:0|t[Queda Lenta] |cRXP_WARN_para facilitar o pulo|r << !Priest !Mage
     >>|cRXP_WARN_Se você tem|r |T134863:0|t[Noggenfogger Elixirs] |cRXP_WARN_ou|r |T132917:0|t[Luz Peninha]|cRXP_WARN_, você pode usá-los para obter|r |T135992:0|t[Queda Lenta] |cRXP_WARN_para facilitar o pulo|r << Mage
     >>|cRXP_WARN_Se você tem|r |T134863:0|t[Noggenfogger Elixirs] |cRXP_WARN_ou|r |T132917:0|t[Luz Peninha]|cRXP_WARN_, você pode usá-los para obter|r |T135992:0|t[Queda Lenta] |cRXP_WARN_ou|r |T135928:0|t[Levitar] |cRXP_WARN_para facilitar o pulo|r << Priest
-    .link https://www.youtube.com/watch?v=qjmkIzbfBbQ&ab_channel=RestedXP >>https://www.youtube.com/watch?v=qjmkIzbfBbQ&ab_channel=RestedXP >> |cRXP_WARN_Clique aqui para referência de vídeo|r
+    .link https://www.youtube.com/watch?v=qjmkIzbfBbQ&ab_channel=RestedXP >> |cRXP_WARN_Clique aqui para referência de vídeo|r
 step
     #softcore
     .isQuestTurnedIn 6403
@@ -350,7 +350,7 @@ step
     .subzone 340 >>Voe para Kargath em |cFFfa9602Ermos|r
 step
     .goto Badlands,5.81,47.52
-	>>Fale com o |cRXP_FRIENDLY_Senhor da Guerra Trincador|r para receber |T133473:0|t[|cRXP_LOOT_Comando do Senhor da Guerra Trincador|r]. Usar-o para aceitar a missão
+	>>Fale com |cRXP_FRIENDLY_Senhor da Guerra Trincador|r para receber |T133473:0|t[|cRXP_LOOT_Comando do Senhor da Guerra Trincador|r]. Use-o para aceitar a missão
     .collect 12563,1,4903 --Warlord Goretooth's Command 1/1
     .accept 4903 >>Aceite Comando do Senhor da Guerra Trincador
     .target Warlord Goretooth
@@ -367,10 +367,10 @@ step
     #sticky
     #label ImportantDocuments
     >>Saque o |cRXP_LOOT_Documentos Importantes de Blackrock|r
-    >>Há 4 pontos de reaparecimento diferentes possíveis na masmorra:
-    >>|cRXP_WARN_Aos pés de|r |cRXP_ENEMY_Lorde Supremo Wyrmthalak|r
-    >>|cRXP_WARN_Em um canto vazio ao lado de|r |cRXP_ENEMY_Senhor da Guerra Voone|r
-    >>|cRXP_WARN_Perto de|r |cRXP_ENEMY_Grão-lorde Omokk|r
+    >>Há 4 possíveis pontos de aparecimento na masmorra:
+    >>|cRXP_WARN_Aos pés do|r |cRXP_ENEMY_Lorde Supremo Wyrmthalak|r
+    >>|cRXP_WARN_Em um canto vazio ao lado do|r |cRXP_ENEMY_Senhor da Guerra Voone|r
+    >>|cRXP_WARN_Perto do|r |cRXP_ENEMY_Grão-lorde Omokk|r
     >>|cRXP_WARN_Ao lado da |cRXP_ENEMY_Urok Doomhowl's|r Pilha de Tributo|r
     .complete 4903,4 --Important Blackrock Documents 1/1
 step
@@ -388,8 +388,8 @@ step
 step
     #requires ImportantDocuments
     .goto Badlands,5.81,47.52
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Senhor da Guerra Trincador|r
-    .turnin 4903 >>Entregue Comando do Senhor da Guerra Trincador
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Senhor da Guerra Trincador|r
+    .turnin 4903 >>Entregue O comando do Senhor da Guerra
     .accept 4941 >>Aceite Sabedoria de Eitrigg
     .target Warlord Goretooth
 step
@@ -398,9 +398,9 @@ step
 step
     .goto Orgrimmar,34.27,39.35,10,0
     .goto Orgrimmar,31.74,37.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eitrigg|r e percorra o diálogo, depois fale com |cRXP_FRIENDLY_Thrall|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Eitrigg|r e avance pelo diálogo, depois fale com |cRXP_FRIENDLY_Thrall|r
     .turnin 4941 >>Entregue Sabedoria de Eitrigg
-    .accept 4974 >>Aceite Para a Horda!
+    .accept 4974 >>Aceite Pela Horda!
     .target Eitrigg
     .target Thrall
     .skipgossip
@@ -412,7 +412,7 @@ step
     .subzone 1583,2 >>Entre no Pico da Rocha Negra
     >>|cRXP_WARN_Esta é uma masmorra para 10 jogadores. Você ou alguém do seu grupo deve ter o|r |T133343:0|t[|cRXP_LOOT_Selo da Ascensão|r] |cRXP_WARN_para conseguir entrar no Pico Rocha Negra Superior|r
 step
-    >>Mate |cRXP_ENEMY_Laceral Mão Negra|r. Saqueie a |cRXP_LOOT_Cabeça|r dele
+    >>Mate |cRXP_ENEMY_Laceral Mão Negra|r. Pegue dele a |cRXP_LOOT_Cabeça|r
     .complete 4974,1 --Head of Rend Blackhand 1/1
     .mob Rend Blackhand
 step
@@ -440,7 +440,7 @@ step
     #completewith next
     .goto Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com|r |cRXP_FRIENDLY_Doraso|r
-    .fly Sun Rock Retreat >>Voe para Sol Pedra Recuar
+    .fly Sun Rock Retreat >> Voe para o Retiro Rocha do Sol
     .target Doras
     .zoneskip Stonetalon Mountains
     .zoneskip Desolace
@@ -985,7 +985,7 @@ step
     .collect 12359,2,5801,1 --Thorium Bar x2
 step
     #completewith next
-	.zone Ironforge >>Vá para |cFFfa9602Ironforge|r
+	.zone Ironforge >> Vá para |cFFfa9602Ironforge|r
 step
     #loop
     .goto Ironforge,33.4,20.0,0
@@ -1003,7 +1003,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Mensageiro Desçomalho|r
     >>|cRXP_FRIENDLY_Mensageiro Desçomalho|r |cRXP_WARN_patrulha por todo o Ironforge|r
     >>|cRXP_WARN_Esta missão também pode ser aceita em|r |cFFfa9602Stormwind City|r |cRXP_WARN_ou|r |cFFfa9602Darnassus|r
-    .acceptmultiple 5091,5090,5066 >>Aceite O Chamado às Armas: The Plaguelands!
+    .acceptmultiple 5091,5090,5066 >> Aceite O Chamado às Armas: The Plaguelands!
     .unitscan Courier Hammerfall --IF
     .unitscan Herald Moonstalker --DARN
     .unitscan Crier Goodman --SW
@@ -1018,8 +1018,8 @@ step
     .isOnQuest 5066
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
-    .turnin 5066 >>Entregue Um Chamado às Armas: Terras Pestilentas!
-    .accept 5092 >>Aceite Abrindo Caminho
+    .turnin 5066 >> Entregue Um Chamado às Armas: Terras Pestilentas!
+    .accept 5092 >> Aceite Abrindo Caminho
     .target Commander Ashlam Valorfist
 step
     #requires ThoriumBars
@@ -1027,7 +1027,7 @@ step
     .isQuestTurnedIn 5066
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
-    .accept 5092 >>Aceite Abrindo Caminho
+    .accept 5092 >> Aceite Abrindo Caminho
     .target Commander Ashlam Valorfist
 step
     #requires ThoriumBars
@@ -1035,8 +1035,8 @@ step
     .isOnQuest 5091
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
-    .turnin 5091 >>Entregue Um Chamado às Armas: Terras Pestilentas!
-    .accept 5092 >>Aceite Abrindo Caminho
+    .turnin 5091 >> Entregue Um Chamado às Armas: Terras Pestilentas!
+    .accept 5092 >> Aceite Abrindo Caminho
     .target Commander Ashlam Valorfist
 step
     #requires ThoriumBars
@@ -1044,15 +1044,15 @@ step
     .isQuestTurnedIn 5091
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
-    .accept 5092 >>Aceite Abrindo Caminho
+    .accept 5092 >> Aceite Abrindo Caminho
     .target Commander Ashlam Valorfist
 step
     #requires ThoriumBars
     .isOnQuest 5090
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
-    .turnin 5090 >>Entregue Um Chamado às Armas: Terras Pestilentas!
-    .accept 5092 >>Aceite Abrindo Caminho
+    .turnin 5090 >> Entregue Um Chamado às Armas: Terras Pestilentas!
+    .accept 5092 >> Aceite Abrindo Caminho
     .target Commander Ashlam Valorfist
 step
     #requires ThoriumBars
@@ -1060,7 +1060,7 @@ step
     .isQuestTurnedIn 5090
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
-    .accept 5092 >>Aceite Abrindo Caminho
+    .accept 5092 >> Aceite Abrindo Caminho
     .target Commander Ashlam Valorfist
 step
     #loop
@@ -1077,38 +1077,38 @@ step
 step
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
-    .accept 5098 >>Aceite Tudo ao Longo das Torres de Vigia
+    .accept 5098 >> Aceite Tudo ao Longo das Torres de Vigia
     .target Commander Ashlam Valorfist
 step
     .goto Western Plaguelands,46.681,71.135,-1
     .goto Western Plaguelands,46.558,71.156,-1
-    .use 12815 >>|cRXP_WARN_Use|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem agredir o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r dentro|r
+    .use 12815 >> |cRXP_WARN_Use|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem agredir o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r dentro|r
     .complete 5098,4 --Tower Four marked
 step
     .goto Western Plaguelands,44.217,63.319,-1
     .goto Western Plaguelands,44.247,63.131,-1
-    .use 12815 >>|cRXP_WARN_Use|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem agredir o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r dentro|r
+    .use 12815 >> |cRXP_WARN_Use|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem agredir o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r dentro|r
     .complete 5098,3 --Tower Three marked
 step
     .goto Western Plaguelands,42.326,66.105,-1
     .goto Western Plaguelands,42.422,66.222,-1
-    .use 12815 >>|cRXP_WARN_Use|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem agredir o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r dentro|r
+    .use 12815 >> |cRXP_WARN_Use|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem agredir o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r dentro|r
     .complete 5098,2 --Tower Two marked
 step
     .goto Western Plaguelands,40.116,71.561,-1
     .goto Western Plaguelands,40.038,71.713,-1
-    .use 12815 >>|cRXP_WARN_Use|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem agredir o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r dentro|r
+    .use 12815 >> |cRXP_WARN_Use|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem agredir o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r dentro|r
     .complete 5098,1 --Tower One marked
 step
     .goto Western Plaguelands,42.702,84.031
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Comandante Ashlam Punhobom|r
-    .turnin 5098 >>Entregue All Along the Watchtowers
-    .accept 5533 >>Aceite Scolomântia
+    .turnin 5098 >> Entregue All Along the Watchtowers
+    .accept 5533 >> Aceite Scolomântia
     .target Commander Ashlam Valorfist
 step
     #completewith SkeletalFragments
     .isQuestTurnedIn 5098
-    .destroy 12815 >>Exclua o |T135432:0|t[Tocha Sinalizadora]
+    .destroy 12815 >> Exclua o |T135432:0|t[Tocha Sinalizadora]
 step
     .goto Western Plaguelands,42.665,83.774
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Alquimista Arvignon|r
@@ -1157,7 +1157,7 @@ step
     #completewith next
     .goto Tanaris,51.006,29.345
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Bera Rochamalho|r
-    .fly Un'Goro >>Voe para Cratera Un'Goro
+    .fly Un'Goro >> Voe para Cratera Un'Goro
     .target Bera Stonehammer
     .zoneskip Un'Goro Crater
 step
@@ -1245,7 +1245,7 @@ step
     .collect 12359,2,5801,1 --Thorium Bar x2
 step
     #completewith next
-    .zone Undercity >>Voe para |cFFfa9602Undercity|r
+    .zone Undercity >>Vá para |cFFfa9602Cidade Baixa|r
 step
     #loop
     .goto Undercity,67.43,46.15,0
@@ -1270,7 +1270,7 @@ step
 step
     #requires ThoriumBars
 	#completewith ScarletDiversionsPU
-	.subzone 152 >>Vá para The Baluarte em |cFFfa9602Tirisfal Glades|r
+	.subzone 152 >> Vá para The Baluarte em |cFFfa9602Tirisfal Glades|r
 step
     #optional
     #requires ThoriumBars
@@ -1340,22 +1340,22 @@ step
 step
     .goto Western Plaguelands,46.681,71.135,-1
     .goto Western Plaguelands,46.558,71.156,-1
-    .use 12815 >>|cRXP_WARN_Use|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem agredir o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r dentro|r
+    .use 12815 >> |cRXP_WARN_Use|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem agredir o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r dentro|r
     .complete 5098,4 --Tower Four marked
 step
     .goto Western Plaguelands,44.217,63.319,-1
     .goto Western Plaguelands,44.247,63.131,-1
-    .use 12815 >>|cRXP_WARN_Use|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem agredir o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r dentro|r
+    .use 12815 >> |cRXP_WARN_Use|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem agredir o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r dentro|r
     .complete 5098,3 --Tower Three marked
 step
     .goto Western Plaguelands,42.326,66.105,-1
     .goto Western Plaguelands,42.422,66.222,-1
-    .use 12815 >>|cRXP_WARN_Use|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem agredir o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r dentro|r
+    .use 12815 >> |cRXP_WARN_Use|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem agredir o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r dentro|r
     .complete 5098,2 --Tower Two marked
 step
     .goto Western Plaguelands,40.116,71.561,-1
     .goto Western Plaguelands,40.038,71.713,-1
-    .use 12815 >>|cRXP_WARN_Use|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem agredir o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r dentro|r
+    .use 12815 >> |cRXP_WARN_Use|r |T135432:0|t[Tocha Sinalizadora] |cRXP_WARN_ao lado da entrada da Torre. Você pode fazer isso sem agredir o Élite |cRXP_ENEMY_Senhor da Guerra Descarnado|r dentro|r
     .complete 5098,1 --Tower One marked
 step
     .goto Tirisfal Glades,83.15,68.92
@@ -1366,7 +1366,7 @@ step
  step
     #completewith SkeletalFragments
     .isQuestTurnedIn 5098
-    .destroy 12815 >>Exclua o |T135432:0|t[Tocha Sinalizadora]
+    .destroy 12815 >> Exclua o |T135432:0|t[Tocha Sinalizadora]
 step
  	#era/som
     .goto Tirisfal Glades,83.28,69.23
@@ -1428,7 +1428,7 @@ step
     .complete 5802,1 --Unfinished Skeleton Key (1)
 step
     #completewith next
-	.subzone 152 >>Vá para The Baluarte em |cFFfa9602Tirisfal Glades|r
+	.subzone 152 >> Vá para The Baluarte em |cFFfa9602Tirisfal Glades|r
 step
     .goto Tirisfal Glades,83.28,69.23
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dithers|r
@@ -1504,9 +1504,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Franclorn Forjífice|r
     >>|cRXP_WARN_Você deve ser um|r |T132331:0|t[Fantasma] |cRXP_WARN_para conseguir falar com|r |cRXP_FRIENDLY_Franclorn Forjífice|r
     >>|cRXP_WARN_Morra de propósito na lava em Blackrock Mountain, idealmente perto da localização da entrada do Núcleo Derretido|r
-    .accept 3801 >>Aceite Legado dos Ferros Negros
-    .turnin 3801 >>Entregue Legado dos Ferros Negros
-    .accept 3802 >>Aceite Legado dos Ferros Negros
+    .accept 3801 >> Aceite Legado dos Ferros Negros
+    .turnin 3801 >> Entregue Legado dos Ferros Negros
+    .accept 3802 >> Aceite Legado dos Ferros Negros
     .target Franclorn Forgewright
 step
     #hardcoreserver
@@ -1518,9 +1518,9 @@ step
     .goto 1415,48.624,64.186
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Franclorn Forjífice|r
     >>|cRXP_WARN_Você deve ter a|r |T136215:0|t[Visão de Brilhâmbar] |cRXP_WARN_Penalidade para vê-lo|r
-    .accept 3801 >>Aceite Legado dos Ferros Negros
-    .turnin 3801 >>Entregue Legado dos Ferros Negros
-    .accept 3802 >>Aceite Legado dos Ferros Negros
+    .accept 3801 >> Aceite Legado dos Ferros Negros
+    .turnin 3801 >> Entregue Legado dos Ferros Negros
+    .accept 3802 >> Aceite Legado dos Ferros Negros
     .target Franclorn Forgewright
 step
     #softcore
@@ -1543,7 +1543,7 @@ step
 step
     >>Corra de volta para perto do local acima do Anel da Lei
     >>Clique no |cRXP_PICK_Monumento de Franclorn Forjifícil|r
-    .turnin 3802 >>Entregue Legado dos Ferros Negros
+    .turnin 3802 >> Entregue Legado dos Ferros Negros
     .isQuestComplete 3802
 
     ]])
@@ -1667,12 +1667,12 @@ step
 step
     .goto Felwood,51.4,82.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Emissária Caninegro|r
-    .accept 84384 >>Aceite Artimanha Demônioíaca
+    .accept 84384 >> Aceite Artimanha Demônioíaca
     .target Shadowtooth Emissary
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
     #completewith next
-    .zone Winterspring >>Vá para |cFFfa9602Hibérnia|r
+    .zone Winterspring >> Vá para |cFFfa9602Hibérnia|r
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
 	.line Winterspring,64.0,22.6,65.6,23.2,67.6,22.6,65.6,19.6,63.6,16.2,65.6,19.6,64.0,20.8,64.0,22.6
@@ -1695,7 +1695,7 @@ step
 step
     .goto Felwood,51.4,82.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Emissária Caninegro|r
-    .turnin 84384 >>Entregue Artimanha Demônioíaca
+    .turnin 84384 >> Entregue Artimanha Demônioíaca
     .target Shadowtooth Emissary
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 

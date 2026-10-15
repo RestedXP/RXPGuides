@@ -32,14 +32,14 @@ step
     #optional
     #label FrostMCave1
     #completewith Rune
-    .goto 1426,27.098,80.707,20 >>Entre na Frostmane Cave
+    .goto 1426,27.098,80.707,20 >> Entre na Frostmane Cave
 step
     #optional
     #requires FrostMCave1
     #completewith Rune
     .goto 1426,28.298,79.836,15,0
     .goto 1426,29.252,79.043,15,0
-    .goto 1426,30.489,80.165,50 >>Viaje para o |cRXP_PICK_Frostmane Saque Cache|r dentro
+    .goto 1426,30.489,80.165,50 >> Viaje para o |cRXP_PICK_Frostmane Saque Cache|r dentro
 step
     .goto Dun Morogh,30.773,80.063
     >>Abra o |cRXP_PICK_Frostmane Saque Baú de Saque Jubafria|r no chão lá dentro. Saqueie-o para obter a |T134419:0|t|cRXP_LOOT_[Runa do Golpe Sombrio]|r
@@ -162,7 +162,7 @@ step << Rogue
     .train 398196,1
 step << Rogue
     #season 2
-    .train 400095 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Saque Rápido|r] |cRXP_WARN_para treinar|r |T134536:0|t[Saque Rápido]
+    .train 400095 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Saque Rápido|r] |cRXP_WARN_para treinar|r |T134536:0|t[Saque Rápido]
     .use 203991
     .itemcount 203991,1
 ]])
@@ -238,7 +238,7 @@ step << Rogue
     .train 398196,1
 step << Rogue
     #season 2
-    .train 400095 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Saque Rápido|r] |cRXP_WARN_para treinar|r |T134536:0|t[Saque Rápido]
+    .train 400095 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Saque Rápido|r] |cRXP_WARN_para treinar|r |T134536:0|t[Saque Rápido]
     .use 203991
     .itemcount 203991,1
 ]])
@@ -255,7 +255,7 @@ step << Rogue
     #season 2
     #completewith next
     .goto Teldrassil,54.68,52.84,20,0
-    .goto Teldrassil,54.42,51.19,15 >>Vá para Vileza Pedra
+    .goto Teldrassil,54.42,51.19,15 >> Vá para Vileza Pedra
     .train 398196,1
 step << Rogue
     #season 2
@@ -320,7 +320,7 @@ step << Rogue
     #season 2
     #completewith next
     .goto Darnassus,29.466,41.405
-    .zone Teldrassil >>Pegue o portal púrpura para Rut'theran
+    .zone Teldrassil >> Pegue o portal púrpura para Rut'theran
     .train 398196,1
 step << Rogue
     #season 2
@@ -337,7 +337,7 @@ step << Rogue
     .train 398196,1
 step << Rogue
     #season 2
-    .train 400095 >>|cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Saque Rápido|r] |cRXP_WARN_para treinar|r |T134536:0|t[Saque Rápido]
+    .train 400095 >> |cRXP_WARN_Use a|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Saque Rápido|r] |cRXP_WARN_para treinar|r |T134536:0|t[Saque Rápido]
     .use 203991
     .itemcount 203991,1
 ]])
@@ -401,7 +401,7 @@ step << Rogue
     #season 2
     #completewith next
     .goto Stormwind City,56.93,29.54,8,0
-    .goto Stormwind City,58.65,27.56,10 >>Entre no Beco da Garganta Cortada na Cidade de Objetos de TBC no Distrito dos Anões
+    .goto Stormwind City,58.65,27.56,10 >> Entre no Beco da Garganta Cortada na Cidade de Objetos de TBC no Distrito dos Anões
     .train 400081,1
 step << Rogue
     #season 2
@@ -556,7 +556,7 @@ RXPGuides.RegisterGuide([[
 step << Rogue
     #season 2
     #completewith learnBD
-    .goto Darkshore,55.106,33.621,30 >>Entre na caverna Naga Cliffspring
+    .goto Darkshore,55.106,33.621,30 >> Entre na caverna Naga Cliffspring
     .train 400099,1
 step << Rogue
     #season 2
@@ -606,7 +606,7 @@ step << Rogue
     .train 400094,1
 step << Rogue
     #season 2
-    .cast 402265 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Mutilação|r]
+    .cast 402265 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Mutilação|r]
     .use 203990 -- Rune of Mutilation (1)
     .target Cutty
     .train 400094,1
@@ -637,7 +637,7 @@ step << Rogue
     .train 400094,1
 step << Rogue
     #season 2
-    .cast 402265 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Mutilação|r]
+    .cast 402265 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Mutilação|r]
     .use 203990 -- Rune of Mutilation (1)
     .train 400094,1
 ]])
@@ -663,7 +663,7 @@ step << Rogue
     .train 424785,1
 step << Rogue
     #season 2
-    .cast 402265 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Talho de Sabre|r]
+    .cast 402265 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Talho de Sabre|r]
     .use 208772 -- Rune of Saber Slash (1)
     .train 424785,1
 ]])
@@ -681,7 +681,7 @@ step << Rogue
     #completewith next
     .goto Loch Modan,41.01,12.60,50,0
     .goto Loch Modan,42.86,10.36,60,0
-    .goto Loch Modan,46.20,13.15,10 >>|cRXP_WARN_Vá para a muralha da barragem de Loch Modan e desça cuidadosamente até a saliência no centro. Siga a seta|r
+    .goto Loch Modan,46.20,13.15,10 >> |cRXP_WARN_Vá para a muralha da barragem de Loch Modan e desça cuidadosamente até a saliência no centro. Siga a seta|r
     .train 424785,1
 step << Rogue
     #season 2
@@ -691,13 +691,13 @@ step << Rogue
     .train 424785,1
 step << Rogue
     #season 2
-    .cast 402265 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Talho de Sabre|r]
+    .cast 402265 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Talho de Sabre|r]
     .use 208772 -- Rune of Saber Slash (1)
     .train 424785,1
 step << Rogue
     #season 2
     .goto Loch Modan,45.823,12.652
-    .cast 6477 >>Clique na |cRXP_PICK_Corda de Fuga|r para voltar ao topo
+    .cast 6477 >> Clique na |cRXP_PICK_Corda de Fuga|r para voltar ao topo
     .subzoneskip 146,1
 ]])
 
@@ -712,7 +712,7 @@ RXPGuides.RegisterGuide([[
 step << Rogue
     #season 2
     #completewith next
-    .goto Darkshore,32.80,37.72,20 >>Nade para a pequena ilha com o Farol nela
+    .goto Darkshore,32.80,37.72,20 >> Nade para a pequena ilha com o Farol nela
     .train 424785,1
 step << Rogue
     #season 2
@@ -722,7 +722,7 @@ step << Rogue
     .train 424785,1
 step << Rogue
     #season 2
-    .cast 402265 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Talho de Sabre|r]
+    .cast 402265 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Talho de Sabre|r]
     .use 208772 -- Rune of Saber Slash (1)
     .train 424785,1
 ]])
@@ -780,7 +780,7 @@ RXPGuides.RegisterGuide([[
 step << Undead
     #season 2
     .goto Tirisfal Glades,32.53,65.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_David|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Davi|r
     .accept 77669 >>Aceite A Runa Escarlate
     .target David Trias
 step
@@ -817,7 +817,7 @@ step
 step << Undead
     #season 2
     .goto Tirisfal Glades,32.53,65.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_David|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Davi|r
     .turnin 77669 >>Entregue A Runa Escarlate
     .target David Trias
 ]])
@@ -837,11 +837,11 @@ step
     #season 2
     .goto Silverpine Forest,47.12,71.01
     >>Clique em |cRXP_PICK_Entrega Morta|r em Floresta de Pinhaprata
-    .accept 78261 >>Aceite A Trompa de Xelthos
+    .accept 78261 >> Aceite A Trompa de Xelthos
 step
     #season 2
     #completewith next
-    .zone 209 >>Entre em Bastilha da Presa Negra
+    .zone 209 >> Entre em Bastilha da Presa Negra
     >>|cRXP_WARN_Você tem que fazer a próxima parte sozinho! Se agrupar vai impedir você de obter as chaves que precisa|r
 step << Horde
     #season 2
@@ -887,7 +887,7 @@ step
     #season 2
     .goto Silverpine Forest,47.114,70.974
     >>Clique em |cRXP_PICK_Entrega Morta|r em Floresta de Pinhaprata
-    .turnin 78261 >>Entregue A Trompa de Xelthos
+    .turnin 78261 >> Entregue A Trompa de Xelthos
 step
     #season 2
     #completewith next
@@ -896,8 +896,8 @@ step
 step << Horde
     #season 2
     .goto Silverpine Forest,45.62,42.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Karos|r
-    .fly Undercity >>Voe para Undercity
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Carlos Razok|r
+    .fly Undercity >> Voe para Cidade Baixa
     .target Karos Razok
     .zoneskip Undercity
     .train 400080,1
@@ -905,12 +905,12 @@ step << Alliance
     >>Corra para Costa Sul
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Darla Espargosa|r
     .goto Hillsbrad Foothills,49.338,52.272
-    .fly Ironforge >>Voe para Altaforja
+    .fly Ironforge >> Voe para Altaforja
     .target Darla Harris
     .train 400080,1
 step
-    .goto Undercity,68.290,38.043,5 >>|cRXP_WARN_Entre em Undercity. Verifique sua caixa de correio pela carta de *C*|r << Horde
-    .goto Ironforge,71.485,72.280,5 >>|cRXP_WARN_Entre em Ironforge. Verifique sua caixa de correio para a carta de *C*. Pule este passo se você estiver fazendo em outra cidade importante|r << Alliance
+    .goto Undercity,68.290,38.043,5 >> |cRXP_WARN_Entre em Undercity. Verifique sua caixa de correio pela carta de *C*|r << Horde
+    .goto Ironforge,71.485,72.280,5 >> |cRXP_WARN_Entre em Ironforge. Verifique sua caixa de correio para a carta de *C*. Pule este passo se você estiver fazendo em outra cidade importante|r << Alliance
     .train 400080,1
 step
     #season 2
@@ -921,20 +921,20 @@ step << Horde
     #season 2
     .goto Undercity,63.27,48.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel|r
-    .fly The Sepulcher>>Voe para The Sepulcher
+    .fly The Sepulcher>> Voe para o Sepulcro
     .target Michael Garrett
     .zoneskip Silverpine Forest
     .train 400080,1
 step << Alliance
     .goto Ironforge,55.501,47.742
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Trovino|r
-    .fly Southshore >>Voe para Southshore
+    .fly Southshore >> Voe para Costa Sul
     .target Gryth Thurden
     .zoneskip Silverpine Forest
     .train 400080,1
 step << Alliance
     #completewith next
-    .zone Silverpine Forest >>Vá para Floresta de Pinhaprata
+    .zone Silverpine Forest >> Vá para Floresta de Pinhaprata
     .train 400080,1
 step
     #season 2
@@ -1012,7 +1012,7 @@ step
     .train 400095,1
 step
     #completewith next
-    .goto Durotar,55.12,10.10,60 >>Viaje em direção a Crânio Pedra
+    .goto Durotar,55.12,10.10,60 >> Siga em direção à Rocha da Caveira
 step
     #season 2
     .goto Durotar,54.72,8.78,15,0
@@ -1193,7 +1193,7 @@ step
     #season 2
     .goto Tirisfal Glades,47.39,43.64,150,0
     .goto Tirisfal Glades,52.23,26.91,20,0
-    .goto Tirisfal Glades,52.29,26.40,8 >>Vá para a cripta em Agamand Mills
+    .goto Tirisfal Glades,52.29,26.40,8 >> Vá para a cripta em Agamand Mills
 step
     #season 2
 #loop
@@ -1281,7 +1281,7 @@ RXPGuides.RegisterGuide([[
 step
     #season 2
     #completewith next
-    .goto Durotar,53.18,29.15,50 >>Vá para a Caverna Sopravento
+    .goto Durotar,53.18,29.15,50 >> Vá para a Caverna Sopravento
 step
     #season 2
     .goto Durotar,53.18,29.15,20,0
@@ -1435,7 +1435,7 @@ step
     #season 2
     .goto The Barrens,62.31,54.22
     >>Saqueie o |cRXP_PICK_Stable Hand's Trunk|r no topo do estábulo para |T134419:0|t[|cRXP_FRIENDLY_Runa de Talho de Sabre|r]
-    >>|cRXP_WARN_Corra pela colina acima e pule no topo da muralha do castelo. De lá, você pode pular no topo do estábulo|r
+    >>|cRXP_WARN_Suba a colina e pule para o topo da muralha do castelo. De lá, você pode pular para o telhado do estábulo|r
     .collect 208772,1 --Rune of Saber Slash (1)
     .train 424984,1
 step
@@ -1498,7 +1498,7 @@ step
 step
     #completewith next
     .goto Eastern Kingdoms,47.44,19.69,10,0
-    .goto Eastern Kingdoms,47.73,19.39,5 >>Entre no Monastério Escarlate: masmorra |cRXP_WARN_Graveyard|r |cRXP_WARN_ALONE|r
+    .goto Eastern Kingdoms,47.73,19.39,5 >> Entre no Monastério Escarlate: masmorra |cRXP_WARN_Graveyard|r |cRXP_WARN_ALONE|r
 step
     >>Usar |T133644:0|t[Bater Carteira] em um |cRXP_ENEMY_Áugur Escarlate|r para obter |T134241:0|t[Chave do Áugur]
     >>|cRXP_WARN_Faça uso de|r |T132289:0|t[Distração] |cRXP_WARN_para não ser detectado|r
@@ -1508,7 +1508,7 @@ step
     .train 400101,1
 step
     #completewith next
-    .goto Eastern Kingdoms,47.79,19.59,5 >>Entre no Monastério Escarlate: masmorra |cRXP_WARN_Library|r |cRXP_WARN_ALONE|r
+    .goto Eastern Kingdoms,47.79,19.59,5 >> Entre no Monastério Escarlate: masmorra |cRXP_WARN_Library|r |cRXP_WARN_ALONE|r
 step
     #completewith next
     +|cRXP_WARN_Corra até o corredor antes do último chefe|r
@@ -1520,7 +1520,7 @@ step
     .train 400101,1
 step
     #completewith next
-    .goto Eastern Kingdoms,47.73,19.39,5 >>Entre no Monastério Escarlate: |cRXP_WARN_Cemitério|r masmorra |cRXP_WARN_SOZINHO|r
+    .goto Eastern Kingdoms,47.73,19.39,5 >> Entre no Monastério Escarlate: |cRXP_WARN_Cemitério|r masmorra |cRXP_WARN_SOZINHO|r
 step
     >>|cRXP_WARN_Vá para a área externa dentro da masmorra e procure por um banco entre duas estátuas nas paredes direita e esquerda|r
     *|cRXP_WARN_Dos dois lados|r use /sit (possível enquanto em furtividade) nos bancos até a emote |cRXP_WARN_"Você ouve o som de pedra se movendo"|r apareça no chat.
@@ -1530,7 +1530,7 @@ step
     .train 400101,1
 step
     #completewith next
-    .goto Eastern Kingdoms,47.79,19.59,5 >>Entre no Monastério Escarlate: |cRXP_WARN_Biblioteca|r masmorra |cRXP_WARN_SOZINHO|r
+    .goto Eastern Kingdoms,47.79,19.59,5 >> Entre no Monastério Escarlate: |cRXP_WARN_Biblioteca|r masmorra |cRXP_WARN_SOZINHO|r
 step
     #completewith next
     +|cRXP_WARN_Corra até a "Galeria de Tesouros"|r
@@ -1554,8 +1554,8 @@ step
     .train 400101,1
 step << Horde
     .goto Silverpine Forest,45.62,42.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Karos|r
-    .fly Undercity >>Voe para Undercity
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Carlos Razok|r
+    .fly Undercity >> Voe para Cidade Baixa
     .target Karos Razok
     .zoneskip Undercity
     .train 400101,1
@@ -1563,12 +1563,12 @@ step << Alliance
     >>Corra para Costa Sul
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Darla Espargosa|r
     .goto Hillsbrad Foothills,49.338,52.272
-    .fly Ironforge >>Voe para Altaforja
+    .fly Ironforge >> Voe para Altaforja
     .target Darla Harris
     .train 400101,1
 step
-    .goto Undercity,68.290,38.043,5 >>|cRXP_WARN_Entre em Undercity. Verifique sua caixa de correio pela carta de *C*|r << Horde
-    .goto Ironforge,71.485,72.280,5 >>|cRXP_WARN_Entre em Ironforge. Verifique sua caixa de correio para a carta de *C*. Pule este passo se estiver fazendo isso em outra cidade principal|r << Alliance
+    .goto Undercity,68.290,38.043,5 >> |cRXP_WARN_Entre em Undercity. Verifique sua caixa de correio pela carta de *C*|r << Horde
+    .goto Ironforge,71.485,72.280,5 >> |cRXP_WARN_Entre em Ironforge. Verifique sua caixa de correio para a carta de *C*. Pule este passo se estiver fazendo isso em outra cidade principal|r << Alliance
     .train 400101,1
 step
     #completewith next
@@ -1577,20 +1577,20 @@ step
 step << Horde
     .goto Undercity,63.27,48.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Miguel|r
-    .fly The Sepulcher>>Voe para The Sepulcher
+    .fly The Sepulcher>> Voe para o Sepulcro
     .target Michael Garrett
     .zoneskip Silverpine Forest
     .train 400101,1
 step << Alliance
     .goto Ironforge,55.501,47.742
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Grif Trovino|r
-    .fly Southshore >>Voe para Southshore
+    .fly Southshore >> Voe para Costa Sul
     .target Gryth Thurden
     .zoneskip Silverpine Forest
     .train 400101,1
 step << Alliance
     #completewith next
-    .zone Silverpine Forest >>Vá para Floresta de Pinhaprata
+    .zone Silverpine Forest >> Vá para Floresta de Pinhaprata
     .train 400101,1
 step
     .goto Silverpine Forest,47.114,70.974
@@ -1650,7 +1650,7 @@ step
 step
     .train 425103,1
     #completewith Uniform
-    .goto Stranglethorn Vale,46.30,7.61,30 >>Entre em The Stockpile (Kurzen's Cave)
+    .goto Stranglethorn Vale,46.30,7.61,30 >> Entre em The Stockpile (Kurzen's Cave)
 step
     .train 425103,1
     #completewith next
@@ -1662,7 +1662,7 @@ step
     #label Uniform
     .train 425103,1
     .goto Stranglethorn Vale,49.616,7.743
-    >>Abra o |cRXP_PICK_Caixote de Suprimentos de Kurzen|r. Saque o |cRXP_LOOT_Uniforme do Combatente de Kurzen|r
+    >>Abra o |cRXP_PICK_Caixote de Suprimentos de Kurzen|r. Pegue o |cRXP_LOOT_Uniforme do Combatente de Kurzen|r
     .collect 216617,1
 step
     .train 425103,1
@@ -1676,14 +1676,14 @@ step
 step
     .train 425103,1
     #completewith next
-    .goto Stranglethorn Vale,44.261,7.908,60 >>Saia da caverna. Caminhe em direção a |cRXP_FRIENDLY_Nando Matreiro|r na torre lá fora
+    .goto Stranglethorn Vale,44.261,7.908,60 >> Saia da caverna. Caminhe em direção a |cRXP_FRIENDLY_Nando Matreiro|r na torre lá fora
 step
     .train 425103,1
     .goto Stranglethorn Vale,44.261,7.908
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Nando Matreiro|r na torre
     >>|cRXP_WARN_Ele tem um tempo de reaparição de cerca de 3 minutos|r
-    .destroy 216616 >>Entregue a |cRXP_LOOT_Chave da Jaula Composta|r para ele
-    .destroy 216617 >>Entregue o |cRXP_LOOT_Uniforme do Combatente de Kurzen|r para ele
+    .destroy 216616 >> Entregue a |cRXP_LOOT_Chave da Jaula Composta|r para ele
+    .destroy 216617 >> Entregue o |cRXP_LOOT_Uniforme do Combatente de Kurzen|r para ele
     .skipgossip 218230,1
     .target Wendel Mathers
 step
@@ -1729,7 +1729,7 @@ step
 step
     .train 400093,1
     #completewith next
-    .goto Thousand Needles,18.44,21.58,10 >>Entre na barraca grande no Acampamento E'thok
+    .goto Thousand Needles,18.44,21.58,10 >> Entre na barraca grande no Acampamento E'thok
 step
     .train 400093,1
     .goto Thousand Needles,18.686,21.126
@@ -1742,7 +1742,7 @@ step
     .use 215451
 step
     .train 400093,1
-    .use 215451 >>Abra o |T132597:0|t[|cRXP_LOOT_Cofre Grande|r]. Saqueie-o para obter |T132597:0|t[|cRXP_LOOT_Cofre Médio|r]
+    .use 215451 >> Abra o |T132597:0|t[|cRXP_LOOT_Cofre Grande|r]. Saqueie-o para obter |T132597:0|t[|cRXP_LOOT_Cofre Médio|r]
     .collect 215452,1
 step
     .train 400093,1
@@ -1751,7 +1751,7 @@ step
     .use 215452
 step
     .train 400093,1
-    .use 215452 >>Abra o |T132597:0|t[|cRXP_LOOT_Cofre Médio|r]. Saqueie-o para obter |T132597:0|t[|cRXP_LOOT_Cofre Pequeno|r]
+    .use 215452 >> Abra o |T132597:0|t[|cRXP_LOOT_Cofre Médio|r]. Saqueie-o para obter |T132597:0|t[|cRXP_LOOT_Cofre Pequeno|r]
     .collect 215453,1
 step
     .train 400093,1
@@ -1760,7 +1760,7 @@ step
     .use 215453
 step
     .train 400093,1
-    .use 215453 >>Abra o |T132597:0|t[|cRXP_LOOT_Cofre Pequeno|r]. Saqueie-o para obter |T134419:0|t[|cRXP_FRIENDLY_Runa do Canhoto|r]
+    .use 215453 >> Abra o |T132597:0|t[|cRXP_LOOT_Cofre Pequeno|r]. Saqueie-o para obter |T134419:0|t[|cRXP_FRIENDLY_Runa do Canhoto|r]
     .collect 213138,1
 step
     .itemcount 213138,1
@@ -1835,7 +1835,7 @@ step
     .mob Southsea Freebooter
     .train 432301,1
 step
-    >>Abra a |T133639:0|t|cRXP_LOOT_Kidnapper's Moeda Purse|r e pegue a |T133302:0|t|cRXP_LOOT_Precious Medallion|r
+    >>Abra o |T133639:0|t|cRXP_LOOT_Kidnapper's Moeda Purse|r e pegue |T133302:0|t|cRXP_LOOT_Precious Medallion|r
     .collect 221370,1 -- Precious Medallion 1/1
     .use 221371
     .train 432301,1
@@ -1865,7 +1865,7 @@ step
     .skill lockpicking,225 >>|cRXP_WARN_Você deve aumentar seu|r |T136058:0|t[Arrombamento] |cRXP_WARN_para pelo menos 225 para obter a|r |T236268:0|t[Chacina] |cRXP_WARN_runa|r
 step
     #completewith next
-    .zone Blasted Lands >>Vá para |cFFfa9602Barreira do Inferno|r
+    .zone Blasted Lands >>Vá à |cFFfa9602Barreira do Inferno|r
 step
     #completewith next
     .goto Blasted Lands,45.27,16.52,10 >>Viaje para o topo da torre em frente ao Dreadmaul Segurar
@@ -1936,7 +1936,7 @@ step
     .goto Alterac Mountains,86.11,80.22,10,0
     .goto Alterac Mountains,84.45,80.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Fahrad|r acima
-    .turnin 6681 >>Entregue The Manor, Ravenholdt
+    .turnin 6681 >> Entregue The Manor, Ravenholdt
     .target Fahrad
     .isOnQuest 6681
 step << Alliance
@@ -2108,7 +2108,7 @@ step
 step
     .train 415918,1
     #completewith next
-    .subzone 190 >>Vá para Hearthglen
+    .subzone 190 >> Vá para Hearthglen
 step
     #label ToolboxKey
     .train 415918,1

@@ -19,7 +19,7 @@ step << Priest
     .goto Elwynn Forest,49.808,39.489
     >>|cRXP_WARN_Digite /kneel em seu chat enquanto estiver dentro de Northshire Abbey|r
     >>|cRXP_WARN_Você receberá o|r |T135934:0|t[Meditação da Luz] |cRXP_WARN_aprimoramento|r
-    .cast 410958 >>|cRXP_WARN_Use o|r |T136222:0|t[|cRXP_FRIENDLY_Memória de um Acólito Conturbado|r] |cRXP_WARN_enquanto você tiver o|r |T135934:0|t[Meditação da Luz] |cRXP_WARN_aprimoramento|r
+    .cast 410958 >> |cRXP_WARN_Use o|r |T136222:0|t[|cRXP_FRIENDLY_Memória de um Acólito Conturbado|r] |cRXP_WARN_enquanto você tiver o|r |T135934:0|t[Meditação da Luz] |cRXP_WARN_aprimoramento|r
     .use 205951
     .itemcount 205951,1
     .train 402862,1
@@ -50,7 +50,7 @@ step << Priest
     .train 402862,1
 step << Priest
     #season 2
-    .train 402862 >>|cRXP_WARN_Use a|r |T136222:0|t|cRXP_LOOT_[Memória de um Acólito Conturbado]|r |cRXP_WARN_para aprender|r |T133816:0|t[Gravar Luvas - Penitência]
+    .train 402862 >> |cRXP_WARN_Use a|r |T136222:0|t|cRXP_LOOT_[Memória de um Acólito Conturbado]|r |cRXP_WARN_para aprender|r |T133816:0|t[Gravar Luvas - Penitência]
     .aura -410935
     .use 205951
 ]])
@@ -68,14 +68,14 @@ step << NightElf Priest
     .goto Teldrassil,59.92,41.74,20,0
     .goto Teldrassil,59.174,40.442
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shanda|r no andar de cima
-    .accept 77574 >>Aceite Meditação de Eluna
+    .accept 77574 >> Aceite Meditação de Eluna
     .target Shanda
     .train 402862,1
 step << NightElf Priest
     #season 2
     #completewith next
     .isOnQuest 77574
-    .goto Teldrassil,59.940,33.052,10 >>Viaje para o moonwell em Shadowglen
+    .goto Teldrassil,59.940,33.052,10 >> Viaje para o moonwell em Shadowglen
     .train 402862,1
 step << NightElf Priest
     #season 2
@@ -88,7 +88,7 @@ step << NightElf Priest
     #season 2
     #label PenanceRune
     .isOnQuest 77574
-    .use 205951 >>|cRXP_WARN_Use o|r |T136222:0|t[|cRXP_FRIENDLY_Memória de um Acólito Conturbado|r] |cRXP_WARN_enquanto você tiver o|r |T136057:0|t[Meditação de Eluna] |cRXP_WARN_aprimoramento|r
+    .use 205951 >> |cRXP_WARN_Use o|r |T136222:0|t[|cRXP_FRIENDLY_Memória de um Acólito Conturbado|r] |cRXP_WARN_enquanto você tiver o|r |T136057:0|t[Meditação de Eluna] |cRXP_WARN_aprimoramento|r
     .complete 77574,1 -- Learn: Engrave Gloves - Penance
     .target Altar of the Light
     .train 402862,1
@@ -97,7 +97,7 @@ step << NightElf Priest
     .goto Teldrassil,59.92,41.74,20,0
     .goto Teldrassil,59.174,40.442
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shanda|r no andar de cima
-    .turnin 77574 >>Entregue Meditação de Eluna
+    .turnin 77574 >> Entregue Meditação de Eluna
     .target Shanda
     .train 402862,1
 ]])
@@ -461,7 +461,7 @@ RXPGuides.RegisterGuide([[
 
 step << Priest
     #completewith MinerGear
-    .goto Loch Modan,35.50,18.97,20 >>Entre na Mina do Riacho Prateado
+    .goto Loch Modan,35.50,18.97,20 >> Entre na Mina do Riacho Prateado
     .train 425215,1
 step << Priest
     .goto Loch Modan,35.6,20.6
@@ -472,11 +472,11 @@ step << Priest
     .train 425215,1
 step << Priest
     .goto Loch Modan,36.689,20.964
-    .use 208823 >>|cRXP_WARN_Use a|r |T237281:0|t[|cRXP_LOOT_Moeda de Oferenda|r] |cRXP_WARN_no poço dentro da Prateado Stream Mina|r |cRXP_WARN_para receber a|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devoto Campeão|r]
+    .use 208823 >> |cRXP_WARN_Use a|r |T237281:0|t[|cRXP_LOOT_Moeda de Oferenda|r] |cRXP_WARN_no poço dentro da Prateado Stream Mina|r |cRXP_WARN_para receber a|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devoto Campeão|r]
     .collect 205905,1 -- Memory of a Devout Champion (1)
     .train 425215,1
 step << Priest
-    .train 425215 >>|cRXP_WARN_Use|r |T136222:0|t[|cRXP_FRIENDLY_Lembrança de um Campeão Devoto|r] |cRXP_WARN_para treinar|r |T237566:0|t[Fé Corrompida]
+    .train 425215 >> |cRXP_WARN_Use|r |T136222:0|t[|cRXP_FRIENDLY_Lembrança de um Campeão Devoto|r] |cRXP_WARN_para treinar|r |T237566:0|t[Fé Corrompida]
     >>|cRXP_WARN_Você deve ter um|r |T135934:0|t|T136057:0|t[Meditação] |cRXP_WARN_buff digitando /kneel em uma área sagrada, como a Abadia do Norte, a Catedral de Ventobravo, os Altares da Luz em Bigorna, Modã ou o Bairro Místico em Ironforge|r
     .use 205905
     .itemcount 205905,1
@@ -502,7 +502,7 @@ step << Priest
     .unitscan Undying Laborer
     .train 425215,1
 step << Priest
-    .train 425215 >>|cRXP_WARN_Use|r |T136222:0|t[|cRXP_FRIENDLY_Lembrança de um Campeão Devoto|r] |cRXP_WARN_para treinar|r |T237566:0|t[Fé Corrompida]
+    .train 425215 >> |cRXP_WARN_Use|r |T136222:0|t[|cRXP_FRIENDLY_Lembrança de um Campeão Devoto|r] |cRXP_WARN_para treinar|r |T237566:0|t[Fé Corrompida]
     >>|cRXP_WARN_Você deve ter um|r |T135934:0|t|T136057:0|t[Meditação] |cRXP_WARN_buff digitando /kneel em uma área sagrada, como a Abadia do Norte, a Catedral de Ventobravo, os Altares da Luz em Bigorna, Modã ou o Bairro Místico em Ironforge|r
     .use 205905
     .itemcount 205905,1
@@ -527,11 +527,11 @@ step << Priest
     .train 425215,1
 step << Priest
     .goto Darkshore,59.2,22.6
-    .use 211482 >>|cRXP_WARN_Use|r |T236364:0|t[|cRXP_LOOT_Oferenda de Shatterspear|r] |cRXP_WARN_no Ídolo Shatterspear submerso para receber|r |T136222:0|t[|cRXP_FRIENDLY_Lembrança de um Campeão Devoto|r]
+    .use 211482 >> |cRXP_WARN_Use|r |T236364:0|t[|cRXP_LOOT_Oferenda de Shatterspear|r] |cRXP_WARN_no Ídolo Shatterspear submerso para receber|r |T136222:0|t[|cRXP_FRIENDLY_Lembrança de um Campeão Devoto|r]
     .collect 205905,1 -- Memory of a Devout Champion (1)
     .train 425215,1
 step << Priest
-    .train 425215 >>|cRXP_WARN_Use|r |T136222:0|t[|cRXP_FRIENDLY_Lembrança de um Campeão Devoto|r] |cRXP_WARN_para treinar|r |T237566:0|t[Fé Corrompida]
+    .train 425215 >> |cRXP_WARN_Use|r |T136222:0|t[|cRXP_FRIENDLY_Lembrança de um Campeão Devoto|r] |cRXP_WARN_para treinar|r |T237566:0|t[Fé Corrompida]
     >>|cRXP_WARN_Você deve ter um|r |T135934:0|t|T136057:0|t[Meditação] |cRXP_WARN_buff digitando /kneel em uma área sagrada, como a Abadia do Norte, a Catedral de Ventobravo, os Altares da Luz em Bigorna, Modã ou o Bairro Místico em Ironforge|r
     .use 205905
     .itemcount 205905,1
@@ -552,7 +552,7 @@ step << Priest
     .mob Captain Beld
     .train 402854,1
 step << Priest
-    .train 402854 >>|cRXP_WARN_Use a|r |T136222:0|t[|cRXP_FRIENDLY_Lembrança de um Aprisionado Salvador|r] |cRXP_WARN_para treinar|r |T136160:0|t[Dor Compartilhada]
+    .train 402854 >> |cRXP_WARN_Use a|r |T136222:0|t[|cRXP_FRIENDLY_Lembrança de um Aprisionado Salvador|r] |cRXP_WARN_para treinar|r |T136160:0|t[Dor Compartilhada]
     >>|cRXP_WARN_Você deve ter um|r |T135934:0|t|T136057:0|t[Meditação] |cRXP_WARN_buff digitando /kneel em uma área sagrada, como a Abadia do Norte, a Catedral de Ventobravo, os Altares da Luz em Bigorna, Modã ou o Bairro Místico em Ironforge|r
     .use 205945
     .itemcount 205945,1
@@ -573,7 +573,7 @@ step << Priest
     .mob Kobold Miner
     .train 402854,1
 step << Priest
-    .train 402854 >>|cRXP_WARN_Use a|r |T136222:0|t[|cRXP_FRIENDLY_Lembrança de um Aprisionado Salvador|r] |cRXP_WARN_para treinar|r |T136160:0|t[Dor Compartilhada]
+    .train 402854 >> |cRXP_WARN_Use a|r |T136222:0|t[|cRXP_FRIENDLY_Lembrança de um Aprisionado Salvador|r] |cRXP_WARN_para treinar|r |T136160:0|t[Dor Compartilhada]
     >>|cRXP_WARN_Você deve ter um|r |T135934:0|t|T136057:0|t[Meditação] |cRXP_WARN_buff digitando /kneel em uma área sagrada, como a Abadia do Norte, a Catedral de Ventobravo, os Altares da Luz em Bigorna, Modã ou o Bairro Místico em Ironforge|r
     .use 205945
     .itemcount 205945,1
@@ -595,7 +595,7 @@ step << Priest
     .mob Frostmane Seer
     .train 402852,1
 step << Priest
-    .train 402852 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Profecia de uma Cidadela Profanada|r] |cRXP_WARN_to train|r |T237570:0|t[Homúnculos]
+    .train 402852 >> |cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Profecia de uma Cidadela Profanada|r] |cRXP_WARN_to train|r |T237570:0|t[Homúnculos]
     >>|cRXP_WARN_Você deve ter 2|r |T135934:0|t|T136057:0|t[Meditação] |cRXP_WARN_bônus digitando /kneel em uma área sagrada como Northshire Abbey, Catedral TBC, os Altares da Luz em Anvilmar, Loch Modan ou a Proteção Mística em Ironforge|r
     .use 205947
     .itemcount 205947,1
@@ -616,7 +616,7 @@ step << Priest
     .mob Defias Rogue Wizard
     .train 402852,1
 step << Priest
-    .train 402852 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Profecia de uma Cidadela Profanada|r] |cRXP_WARN_to train|r |T237570:0|t[Homúnculos]
+    .train 402852 >> |cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Profecia de uma Cidadela Profanada|r] |cRXP_WARN_to train|r |T237570:0|t[Homúnculos]
     >>|cRXP_WARN_Você deve ter 2|r |T135934:0|t|T136057:0|t[Meditação] |cRXP_WARN_bônus digitando /kneel em uma área sagrada como Northshire Abbey, Catedral TBC, os Altares da Luz em Anvilmar, Loch Modan ou a Proteção Mística em Ironforge|r
     .use 205947
     .itemcount 205947,1
@@ -633,7 +633,7 @@ RXPGuides.RegisterGuide([[
 step << Priest
     #completewith next
     .goto Teldrassil,54.68,52.84,20,0
-    .goto Teldrassil,54.42,51.19,15 >>Vá para Vileza Pedra
+    .goto Teldrassil,54.42,51.19,15 >> Vá para Vileza Pedra
     .train 402852,1
 step << Priest
     .goto Teldrassil,77.86,61.66
@@ -644,7 +644,7 @@ step << Priest
     .mob Shadow Sprite
     .train 402852,1
 step << Priest
-    .train 402852 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Profecia de uma Cidadela Profanada|r] |cRXP_WARN_to train|r |T237570:0|t[Homúnculos]
+    .train 402852 >> |cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Profecia de uma Cidadela Profanada|r] |cRXP_WARN_to train|r |T237570:0|t[Homúnculos]
     >>|cRXP_WARN_You must have 2|r |T135934:0|t|T136057:0|t[Meditação] |cRXP_WARN_buffs digitando /kneel em uma área sagrada como um poço lunar, Northshire Abbey, Objetos de TBC Cathedral, os Altares da Luz em Anvilmar, Loch Modan ou o Bairro Místico em Ironforge|r
     .use 205947
     .itemcount 205947,1
@@ -730,7 +730,7 @@ step << Priest
     >>Agora você deve obter dois buffs |T135934:0|t|T136057:0|t[Meditação]
     >>Você deve /kneel dentro de um dos seguintes lugares: um poço lunar, Northshire Abbey, Catedral de Ventobravo, os Altares de Luz em Anvilmar, Loch Modan ou o Bairro Místico em Ironforge
     >>Para receber seu segundo buff |T135934:0|t|T136057:0|t[Meditação], você deve se ajoelhar diante de um Sacerdote que possui um |T135934:0|t|T136057:0|t[Meditação] diferente do seu, e eles devem /pray enquanto o visam
-    .train 402849 >>|cRXP_WARN_Assim que tiver ambos os|r |T135934:0|t|T136057:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Óbito]|r |cRXP_WARN_para aprender|r |T136149:0|t[Palavra Sombria: Morte]
+    .train 402849 >> |cRXP_WARN_Assim que tiver ambos os|r |T135934:0|t|T136057:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Óbito]|r |cRXP_WARN_para aprender|r |T136149:0|t[Palavra Sombria: Morte]
     .use 205932
     .itemcount 205932,1
 ]])
@@ -746,7 +746,7 @@ RXPGuides.RegisterGuide([[
 step << Priest
     #completewith next
     .goto Loch Modan,71.8,27.6
-    .subzone 143 >>Vá para o Mo'grosh Baluarte em Loch Modan
+    .subzone 143 >> Vá para o Mo'grosh Baluarte em Loch Modan
 step << Priest
     #season 2
     .goto Loch Modan,71.8,27.6
@@ -759,7 +759,7 @@ step << Priest
     >>Agora você deve obter dois buffs |T135934:0|t|T136057:0|t[Meditação]
     >>Você deve /kneel dentro de um dos seguintes lugares: um poço lunar, Northshire Abbey, Catedral de Ventobravo, os Altares de Luz em Anvilmar, Loch Modan ou o Bairro Místico em Ironforge
     >>Para receber seu segundo buff |T135934:0|t|T136057:0|t[Meditação], você deve se ajoelhar diante de um Sacerdote que possui um |T135934:0|t|T136057:0|t[Meditação] diferente do seu, e eles devem /pray enquanto o visam
-    .train 402849 >>|cRXP_WARN_Assim que tiver ambos os|r |T135934:0|t|T136057:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Óbito]|r |cRXP_WARN_para aprender|r |T136149:0|t[Palavra Sombria: Morte]
+    .train 402849 >> |cRXP_WARN_Assim que tiver ambos os|r |T135934:0|t|T136057:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Óbito]|r |cRXP_WARN_para aprender|r |T136149:0|t[Palavra Sombria: Morte]
     .use 205932
     .itemcount 205932,1
 ]])
@@ -774,7 +774,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone The Barrens >>Viaje para os Sertões
+    .zone The Barrens >> Viaje para os Sertões
 step
     #loop
     .goto The Barrens,54.8,35.6,40,0
@@ -791,7 +791,7 @@ step << Troll
     .goto Durotar,55.32,72.66,0
     .goto The Barrens,51.5,29.5,0
     >>Para receber seu segundo |T237569:0|t|T136077:0|t[Meditação] buff, você deve |cRXP_WARN_/kneel|r em frente a um Sacerdote Morto-vivo que tem |T237569:0|t[Meditação da morte-viva], e ele deve /pray enquanto você é o alvo
-    .train 402849 >>|cRXP_WARN_Assim que tiver ambos os|r |T237569:0|t|T136077:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Óbito]|r |cRXP_WARN_para aprender|r |T136149:0|t[Palavra Sombria: Morte]
+    .train 402849 >> |cRXP_WARN_Assim que tiver ambos os|r |T237569:0|t|T136077:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Óbito]|r |cRXP_WARN_para aprender|r |T136149:0|t[Palavra Sombria: Morte]
     .use 205932
     .itemcount 205932,1
 step << Undead
@@ -801,7 +801,7 @@ step << Undead
     .goto The Barrens,51.5,29.5,0
     .goto The Barrens,50.7,32.7,0
     >>Para receber seu segundo |T237569:0|t|T136077:0|t[Meditação] buff |cRXP_WARN_/kneel|r em um cemitério para obter o |T237569:0|t[Meditação da morte-viva] buff |cRXP_WARN_(o santuário e um cemitério estão marcados no seu mapa, você também pode encontrar qualquer sacerdote com o buff que pode copiá-los para você)|r
-    .train 402849 >>|cRXP_WARN_Assim que tiver ambos os|r |T237569:0|t|T136077:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Óbito]|r |cRXP_WARN_para aprender|r |T136149:0|t[Palavra Sombria: Morte]
+    .train 402849 >> |cRXP_WARN_Assim que tiver ambos os|r |T237569:0|t|T136077:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Óbito]|r |cRXP_WARN_para aprender|r |T136149:0|t[Palavra Sombria: Morte]
     .use 205932
     .itemcount 205932,1
 ]])
@@ -816,7 +816,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Silverpine Forest >>Viaje para a Floresta de Pinhaprata
+    .zone Silverpine Forest >> Viaje para a Floresta de Pinhaprata
 step
     .goto Silverpine Forest,65.8,23.6
     >>Pegue o |cRXP_PICK_Pergaminho|r atrás do |cRXP_ENEMY_Thule Ravenclaw|r (lvl 24 elite) para |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Óbito|r]
@@ -830,7 +830,7 @@ step << Troll
     .goto Durotar,55.32,72.66,0
     .goto The Barrens,51.5,29.5,0
     >>Para receber seu segundo |T237569:0|t|T136077:0|t[Meditação] buff, você deve |cRXP_WARN_/kneel|r em frente a um Sacerdote Morto-vivo que tem |T237569:0|t[Meditação da morte-viva], e ele deve /pray enquanto você é o alvo
-    .train 402849 >>|cRXP_WARN_Assim que tiver ambos os|r |T237569:0|t|T136077:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Óbito]|r |cRXP_WARN_para aprender|r |T136149:0|t[Palavra Sombria: Morte]
+    .train 402849 >> |cRXP_WARN_Assim que tiver ambos os|r |T237569:0|t|T136077:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Óbito]|r |cRXP_WARN_para aprender|r |T136149:0|t[Palavra Sombria: Morte]
     .use 205932
     .itemcount 205932,1
 step << Undead
@@ -841,7 +841,7 @@ step << Undead
     .goto The Barrens,51.5,29.5,0
     .goto Silverpine Forest,44.2,42.7,0
     >>Para receber seu segundo |T237569:0|t|T136077:0|t[Meditação] buff |cRXP_WARN_/kneel|r em um cemitério para obter o |T237569:0|t[Meditação da morte-viva] buff |cRXP_WARN_(o santuário e um cemitério estão marcados no seu mapa, você também pode encontrar qualquer sacerdote com o buff que pode copiá-los para você)|r
-    .train 402849 >>|cRXP_WARN_Assim que tiver ambos os|r |T237569:0|t|T136077:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Óbito]|r |cRXP_WARN_para aprender|r |T136149:0|t[Palavra Sombria: Morte]
+    .train 402849 >> |cRXP_WARN_Assim que tiver ambos os|r |T237569:0|t|T136077:0|t[Meditação] |cRXP_WARN_buffs, use o|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Óbito]|r |cRXP_WARN_para aprender|r |T136149:0|t[Palavra Sombria: Morte]
     .use 205932
     .itemcount 205932,1
 ]])
@@ -856,7 +856,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Silverpine Forest >>Viaje para a Floresta de Pinhaprata
+    .zone Silverpine Forest >> Viaje para a Floresta de Pinhaprata
 step
     .train 425215,1
     >>Mate o Espírito Ululante|cRXP_ENEMY_. Saqueie-o para obter a |T136222:0|t[|rLembrança de um Devoto Campeão|cRXP_FRIENDLY_]
@@ -864,7 +864,7 @@ step
     .collect 205905,1
     .mob Wailing Spirit
 step
-    .train 425215 >>|cRXP_WARN_Use|r |T136222:0|t[|cRXP_FRIENDLY_Lembrança de um Devoto Campeão] |cRXP_WARN_para treinar|r |T237566:0|t[Fé Corrompida]
+    .train 425215 >> |cRXP_WARN_Use|r |T136222:0|t[|cRXP_FRIENDLY_Lembrança de um Devoto Campeão] |cRXP_WARN_para treinar|r |T237566:0|t[Fé Corrompida]
     >>|cRXP_WARN_Você deve ter um|r |T237569:0|t|T136077:0|t[Meditação] |cRXP_WARN_efeito digitando|r /kneel |cRXP_WARN_em frente de|cRXP_PICK_ Loa Altar|r (em Durotar ou The Barrens) ou ajoelhando-se em frente de outro sacerdote com o efeito quando eles /pray para você|r << Troll
     >>|cRXP_WARN_Você deve ter um|r |T237569:0|t|T136077:0|t[Meditação] |cRXP_WARN_efeito digitando|r /kneel |cRXP_WARN_em um cemitério ou ajoelhando-se em frente de outro sacerdote com o efeito quando eles /pray para você|r << Undead
     .goto Durotar,55.32,72.66,0
@@ -884,7 +884,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone The Barrens >>Viaje para os Sertões
+    .zone The Barrens >> Viaje para os Sertões
 step
     .train 425215,1
     >>Abate os Razormanes|cRXP_ENEMY_. Saqueie-os para a |T236248:0|t[|rMão Amiga|cRXP_FRIENDLY_]
@@ -899,7 +899,7 @@ step
     >>|cRXP_WARN_Encontre um jogador morto ou um animal de estimação morto que você possa ressuscitar (com |T135955:0|t[Ressurreição]) para obter a|r |T136222:0|t[|cRXP_FRIENDLY_Lembrança de um Devoto Campeão]
     .collect 205905,1
 step
-    .train 425215 >>|cRXP_WARN_Use|r |T136222:0|t[|cRXP_FRIENDLY_Lembrança de um Devoto Campeão] |cRXP_WARN_para treinar|r |T237566:0|t[Fé Corrompida]
+    .train 425215 >> |cRXP_WARN_Use|r |T136222:0|t[|cRXP_FRIENDLY_Lembrança de um Devoto Campeão] |cRXP_WARN_para treinar|r |T237566:0|t[Fé Corrompida]
     >>|cRXP_WARN_Você deve ter um|r |T237569:0|t|T136077:0|t[Meditação] |cRXP_WARN_efeito digitando|r /kneel |cRXP_WARN_em frente de|cRXP_PICK_ Loa Altar|r (em Durotar ou The Barrens) ou ajoelhando-se em frente de outro sacerdote com o efeito quando eles /pray para você|r << Troll
     >>|cRXP_WARN_Você deve ter um|r |T237569:0|t|T136077:0|t[Meditação] |cRXP_WARN_efeito digitando|r /kneel |cRXP_WARN_em um cemitério ou ajoelhando-se em frente de outro sacerdote com o efeito quando eles /pray para você|r << Undead
     .goto Durotar,55.32,72.66,0
@@ -920,7 +920,7 @@ RXPGuides.RegisterGuide([[
 step << Priest
     #season 2
     #completewith next
-    .goto Elwynn Forest,38.34,81.54,20 >>Entre em Fargodeep Mina
+    .goto Elwynn Forest,38.34,81.54,20 >> Entre em Fargodeep Mina
     .train 425216,1
 step << Priest
     #season 2
@@ -1007,7 +1007,7 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 425309,1
-    .zone Alterac Mountains >>Vá para |cFFfa9602Alterac Mountains|r
+    .zone Alterac Mountains >>Vá às |cFFfa9602Montanhas de Alterac|r
 step
     .train 425309,1
     #loop
@@ -1038,7 +1038,7 @@ RXPGuides.RegisterGuide([[
 step
     #optional
     .train 425310,1
-    .train 605 >>|cRXP_WARN_Você deve ter|r |T136206:0|t[Controle mental] |cRXP_WARN_Treinado para obter a|r |T135923:0|t[Esperança Renovada] |cRXP_WARN_runa|r
+    .train 605 >> |cRXP_WARN_Você deve ter|r |T136206:0|t[Controle mental] |cRXP_WARN_Treinado para obter a|r |T135923:0|t[Esperança Renovada] |cRXP_WARN_runa|r
 step
     #optional
     .train 425310,1
@@ -1076,13 +1076,13 @@ step
     .goto Desolace,38.8,24.0,60,0
     .goto Desolace,34.6,30.0,60,0
     .goto Desolace,34.6,20.2,60,0
-    .aura 435117 >>|cRXP_WARN_Lance|r |T136206:0|t[Controle mental] |cRXP_WARN_em um|r |cRXP_ENEMY_Slitherblade Tide Priestess|r
+    .aura 435117 >> |cRXP_WARN_Lance|r |T136206:0|t[Controle mental] |cRXP_WARN_em um|r |cRXP_ENEMY_Slitherblade Tide Priestess|r
     >>|cRXP_WARN_Enquanto estiver sob os efeitos de|r |T136206:0|t[Controle mental]|cRXP_WARN_, alvo você mesmo e lance|r |T136077:0|t[Meditação no Abismo] |cRXP_WARN_na barra de ações do mascote|r
     >>|cRXP_WARN_Pressione Fuga depois para cancelar o|r |T136206:0|t[Controle mental] |cRXP_WARN_e mate o|r |cRXP_ENEMY_Slitherblade Tide Priestess|r
     .mob Slitherblade Tide Priestess
     .train 425310,1
 step
-    .train 425310 >>|cRXP_WARN_Use a|r |T136222:0|t[|cRXP_LOOT_Visão Perturbadora|r] |cRXP_WARN_para treinar|r |T135923:0|t[Esperança Renovada]
+    .train 425310 >> |cRXP_WARN_Use a|r |T136222:0|t[|cRXP_LOOT_Visão Perturbadora|r] |cRXP_WARN_para treinar|r |T135923:0|t[Esperança Renovada]
     .use 213599
 ]])
 
@@ -1104,7 +1104,7 @@ step
     >>|cRXP_WARN_Você também pode procurar um Sacerdote para compartilhar a missão com você|r
     .collect 216880,1
     .disablecheckbox
-    .accept 79731 >>Aceite O Pergaminho Trólico
+    .accept 79731 >> Aceite O Pergaminho Trólico
 step
     .train 425314,1
     #completewith next
@@ -1119,11 +1119,11 @@ step
     .mob Lord Sakrasis
 step
     #completewith next
-    .subzone 102 >>Viaje para as Ruínas de Zul'Kunda
+    .subzone 102 >> Viaje para as Ruínas de Zul'Kunda
 step
     .train 425314,1
     .goto Stranglethorn Vale,23.569,7.955
-    .cast 3591 >>|cRXP_WARN_Use a|r |T134712:0|t[|cRXP_LOOT_Água da Fonte Abençoada|r] |cRXP_WARN_na pequena fonte|r
+    .cast 3591 >> |cRXP_WARN_Use a|r |T134712:0|t[|cRXP_LOOT_Água da Fonte Abençoada|r] |cRXP_WARN_na pequena fonte|r
     >>|cRXP_WARN_Você pode precisar matar|cRXP_ENEMY_ Gan'zulah|r (nível 41) e um pequeno grupo de|cRXP_ENEMY_ Trolls|r ao seu redor para chegar à pequena fonte|r
     .use 737
     .mob Gan'zulah
@@ -1133,13 +1133,13 @@ step
     >>Clique na |cRXP_PICK_Fonte|r que aparece. Saqueie-a para obter a |T135975:0|t|cRXP_LOOT_[Profecia da Malícia Aprisionada]|r
     .collect 213142,1
 step
-    .train 425314 >>|cRXP_WARN_Use a|r |T135975:0|t|cRXP_LOOT_[Profecia da Malícia Aprisionada]|r |cRXP_WARN_para treinar|r |T237563:0|t[Dispersão]
+    .train 425314 >> |cRXP_WARN_Use a|r |T135975:0|t|cRXP_LOOT_[Profecia da Malícia Aprisionada]|r |cRXP_WARN_para treinar|r |T237563:0|t[Dispersão]
     .use 213142
 step
     .isQuestComplete 79731
     .goto Stranglethorn Vale,35.658,10.808
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Rosarães Guima|r
-    .turnin 79731 >>Entregue O pergaminho trólico
+    .turnin 79731 >> Entregue O pergaminho trólico
     .target Hemet Nesingwary
 ]])
 
@@ -1161,10 +1161,10 @@ step
     .goto 1415,47.44,19.75,10,0
     .goto 1415,47.45,19.69,5,0
     .goto 1415,47.62,19.59,10,0
-    .goto 1415,47.73,19.39,5 >>Entre na Masmorra Mosteiro Escarlate: Cemitério
+    .goto 1415,47.73,19.39,5 >> Entre na Masmorra Mosteiro Escarlate: Cemitério
 step
     >>Clique no |cRXP_PICK_Lápide|r perto da localização de desova do Cavaleiro Sem Cabeça para coletar o |cRXP_LOOT_|T136222:0|t[Eco do Cemitério]|r |cRXP_WARN_É altamente recomendado formar um grupo de 5 jogadores para esta etapa.|r
-    .link https://imgur.com/a/lqRc0i6 >>https://imgur.com/a/lqRc0i6 >> |cRXP_WARN_Clique aqui para uma referência de imagem.|r
+    .link https://imgur.com/a/lqRc0i6 >> |cRXP_WARN_Clique aqui para uma referência de imagem.|r
     .collect 215426,1
 step
     #optional
@@ -1198,7 +1198,7 @@ step
     .train 402855,1
     .goto 1415,47.44,19.75,10,0
     .goto 1415,47.45,19.69,5,0
-    .goto 1415,47.62,19.59,10 >>Entre no Monastério Escarlate, Biblioteca |cRXP_WARN_É altamente recomendado formar um grupo de 5 jogadores para os próximos passos.|r
+    .goto 1415,47.62,19.59,10 >> Entre no Monastério Escarlate, Biblioteca |cRXP_WARN_É altamente recomendado formar um grupo de 5 jogadores para os próximos passos.|r
 step
     .train 402855,1
     .cast 437054 >>Usar o |T136222:0|t[Swamp Eco] em frente da Estátua do Guerreiro.
@@ -1480,25 +1480,25 @@ RXPGuides.RegisterGuide([[
 
 step << Alliance
     #completewith next
-    .zone Stormwind City >>Vá para Ventobravo
+    .zone Stormwind City >> Vá para Ventobravo
 step << Alliance
     .goto Stormwind City,38.8,26.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Alta-sacerdotisa Laurena|r na Catedral de Ventobravo
-    .accept 84320 >>Aceite Herança perdida
+    .accept 84320 >> Aceite Herança perdida
     .target High Priestess Laurena
 step << Horde
     #completewith next
-    .zone Orgrimmar >>Viaje para Orgrimmar
+    .zone Orgrimmar >> Vá para Orgrimmar
 step << Horde
     .goto Orgrimmar,35.8,87.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Petrus Weber|r no Vale dos Espíritos
-    .accept 84405 >>Aceite Herança perdida
+    .accept 84405 >> Aceite Herança perdida
     .target Dietrich Praice
 step
     #completewith next
-    .zone Western Plaguelands >>Vá para Terras Pestilentas Ocidentais
+    .zone Western Plaguelands >> Vá para Terras Pestilentas Ocidentais
 step
-    .goto Western Plaguelands,51.9,82.4,50 >>Vá para a grande cripta localizada ao lado da Colina Tristeza
+    .goto Western Plaguelands,51.9,82.4,50 >> Vá para a grande cripta localizada ao lado da Colina Tristeza
 step
     .goto Western Plaguelands,54.8,81.2
     >>|cRXP_WARN_Entre na cripta e vá para a esquerda. Desça e procure por um pequeno baú de madeira em um pequeno nicho à sua direita. Saque o|r |T133299:0|t[|cRXP_PICK_Herança Familiar|r]
@@ -1510,40 +1510,40 @@ step
     .collect 227748,1 --Survivor Journal
 step << Alliance
     #completewith next
-    .zone Stormwind City >>Retorne para Ventobravo
+    .zone Stormwind City >> Retorne para Ventobravo
 step << Alliance
     .goto Stormwind City,38.8,26.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Alta-sacerdotisa Laurena|r na Catedral de Ventobravo
-    .turnin 84320 >>Entregue Herança perdida
-    .accept 84321 >>Aceite Relíquia da Luz
+    .turnin 84320 >> Entregue Herança perdida
+    .accept 84321 >> Aceite Relíquia da Luz
     .target High Priestess Laurena
 step << Horde
     #completewith next
-    .zone Orgrimmar >>Retorne para Orgrimmar
+    .zone Orgrimmar >> Retorne para Orgrimmar
 step << Horde
     .goto Orgrimmar,35.8,87.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Petrus Weber|r no Vale dos Espíritos
-    .turnin 84405 >>Entregue Herança perdida
-    .accept 84406 >>Aceite Relíquia da Luz
+    .turnin 84405 >> Entregue Herança perdida
+    .accept 84406 >> Aceite Relíquia da Luz
     .target Dietrich Praice
 step
     #completewith next
     >>|cRXP_WARN_A próxima missão exigirá que você saque um item de uma área de elite. É possível fazer solo, mas se você for de nível mais baixo ou não estiver muito equipado, considere procurar alguém para ajudá-lo|r
-    .zone Western Plaguelands >>Retorne para Terras Pestilentas Ocidentais
+    .zone Western Plaguelands >> Retorne para Terras Pestilentas Ocidentais
 step
-    .goto Western Plaguelands,48.2,21.7,50 >>Vá para Hearthglen, |cRXP_WARN_tenha em mente que esta é uma área de elite|r
+    .goto Western Plaguelands,48.2,21.7,50 >> Vá para Hearthglen, |cRXP_WARN_tenha em mente que esta é uma área de elite|r
 step
     .goto Western Plaguelands,42.2,18.1
     >>|cRXP_WARN_Entre na Prefeitura em Hearthglen e interaja com o|r |cRXP_PICK_Registro Escarlate|r |cRXP_WARN_localizado no pódio. Cuidado, pois a área está cheia de inimigos de elite|r
-    .turnin 84406 >>Entregue Relíquia da Luz << Horde
-    .turnin 84321 >>Entregue Relíquia da Luz << Alliance
-    .accept 84322 >>Aceite Pesquisa Escarlate
+    .turnin 84406 >> Entregue Relíquia da Luz << Horde
+    .turnin 84321 >> Entregue Relíquia da Luz << Alliance
+    .accept 84322 >> Aceite Pesquisa Escarlate
 step
     #completewith next
     >>|cRXP_WARN_A próxima missão exigirá que você saque um item de uma área de elite. É possível fazer solo, mas se você for de nível mais baixo ou não estiver muito equipado, considere procurar alguém para ajudá-lo|r
-    .zone Eastern Plaguelands >>Viaje para as Terras Pestilentas Orientais
+    .zone Eastern Plaguelands >> Viaje para as Terras Pestilentas Orientais
 step
-    .goto Eastern Plaguelands,77.5,81.7,50 >>Viagem para Manopla de Tyr, |cRXP_WARN_lembre-se de que esta é uma área élite|r
+    .goto Eastern Plaguelands,77.5,81.7,50 >> Viagem para Manopla de Tyr, |cRXP_WARN_lembre-se de que esta é uma área élite|r
 step
     .goto Eastern Plaguelands,83.6,78.2
     >>|cRXP_WARN_A runa de|r |T237537:0|t[Especialização Sagrada] |cRXP_WARN_também está localizada em Manopla de Tyr, se você não quiser obtê-la agora pule este passo|r
@@ -1553,14 +1553,14 @@ step
     .train 453702,1
 step
     #completewith next
-    .train 453702 >>Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização Sagrada|r] para aprender |T237537:0|t[Especialização Sagrada]
+    .train 453702 >> Usar a |T134419:0|t[|cRXP_FRIENDLY_Runa de Especialização Sagrada|r] para aprender |T237537:0|t[Especialização Sagrada]
     .train 453702,1
     .itemcount 226418,1
 step
     .goto Eastern Plaguelands,83.6,78.2
     >>|cRXP_WARN_Entre na torre dos sinos e vá para o último andar. Interaja com a caixa trancada localizada lá|r
-    .turnin 84322 >>Entregue Pesquisa Escarlate
-    .accept 84323 >>Aceite Dentro, o Prêmio
+    .turnin 84322 >> Entregue Pesquisa Escarlate
+    .accept 84323 >> Aceite Dentro, o Prêmio
 step
     .goto Eastern Plaguelands,83.6,78.2
     >>Mate quaisquer inimigos Escarlate em Manopla de Tyr. Saqueie-os para obter a |T134245:0|t[|cRXP_LOOT_Chave de Armazenamento de Artefatos|r]
@@ -1572,22 +1572,22 @@ step
     .collect 227938,1 --Shard of Light(1)
 step << Alliance
     #completewith next
-    .zone Stormwind City >>Retorne para Ventobravo
+    .zone Stormwind City >> Retorne para Ventobravo
 step << Alliance
     .goto Stormwind City,38.8,26.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Alta-sacerdotisa Laurena|r na Catedral de Ventobravo
-    .turnin 84323 >>Entregue Dentro, o Prêmio
+    .turnin 84323 >> Entregue Dentro, o Prêmio
     .target High Priestess Laurena
 step << Horde
     #completewith next
-    .zone Orgrimmar >>Retorne para Orgrimmar
+    .zone Orgrimmar >> Retorne para Orgrimmar
 step << Horde
     .goto Orgrimmar,35.8,87.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Petrus Weber|r no Vale dos Espíritos
-    .turnin 84323 >>Entregue Dentro, o Prêmio
+    .turnin 84323 >> Entregue Dentro, o Prêmio
     .target Dietrich Praice
 step
-    .train 402853 >>Usar o |T135791:0|t[|cRXP_FRIENDLY_Epifania Jubilosa|r] para treinar |T135883:0|t[|cRXP_FRIENDLY_Cura Vinculada|r]
+    .train 402853 >> Usar o |T135791:0|t[|cRXP_FRIENDLY_Epifania Jubilosa|r] para treinar |T135883:0|t[|cRXP_FRIENDLY_Cura Vinculada|r]
     .use 228123
 ]])
 
@@ -1602,17 +1602,17 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     >>A runa de |T135978:0|t[|cRXP_FRIENDLY_Toque Vampírico|r] cai do chefe final do Cânion do Demônio Caído, a nova masmorra adicionada em SoD
-    .zone Felwood >>|cRXP_WARN_Para entrar na masmorra, você primeiro precisa de um acessório recompensado de uma missão curta, vá para Selva Maleva para iniciá-la|r
+    .zone Felwood >> |cRXP_WARN_Para entrar na masmorra, você primeiro precisa de um acessório recompensado de uma missão curta, vá para Selva Maleva para iniciá-la|r
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
     .goto Felwood,51.4,82.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Emissária Caninegro|r
-    .accept 84384 >>Aceite Artimanha Demônioíaca
+    .accept 84384 >> Aceite Artimanha Demônioíaca
     .target Shadowtooth Emissary
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
     #completewith next
-    .zone Winterspring >>Vá para Hibérnia
+    .zone Winterspring >> Vá para Hibérnia
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
     .goto Winterspring,65.6,21.4
@@ -1622,12 +1622,12 @@ step
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
     #completewith next
-    .zone Felwood >>Vá para Selva Maleva
+    .zone Felwood >> Vá para Selva Maleva
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
     .goto Felwood,51.4,82.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Emissária Caninegro|r
-    .turnin 84384 >>Entregue Artimanha Demônioíaca
+    .turnin 84384 >> Entregue Artimanha Demônioíaca
     .target Shadowtooth Emissary
     .itemcount 228172,<1 --Only shows if you don't have the trinket
 step
@@ -1638,15 +1638,15 @@ step
 step
     >>|cRXP_WARN_A runa de|r |T135978:0|t[|cRXP_FRIENDLY_Toque Vampírico|r] |cRXP_WARN_cai do chefe final do Cânion do Demônio Caído, a nova masmorra adicionada em SoD. Comece a procurar por um grupo para ela enquanto você se dirige para Vale Gris|r
     >>Se você está voando, voe para Ponto Talendris em Azshara em vez de Astranaar. É mais próximo da entrada da masmorra << Alliance
-    .zone Ashenvale >>Viaje para Vale Gris
+    .zone Ashenvale >> Viaje para Vale Gris
 step
-    .goto Ashenvale,84.5,75.0,50 >>Vá para a entrada da masmorra Cânion do Demônio Caído
+    .goto Ashenvale,84.5,75.0,50 >> Vá para a entrada da masmorra Cânion do Demônio Caído
 step
     >>Limpe a masmorra. O |T135791:0|t[|cRXP_FRIENDLY_Epifania Aperitiva|r] que te ensina |T135978:0|t[|cRXP_FRIENDLY_Toque Vampírico|r] cai do chefe final da masmorra, Phantom de |cRXP_ENEMY_Grito Infernal|r. |cRXP_WARN_Certifique-se de saqueá-lo para obter a runa!|r
     .collect 228126,1 --Apperitive Epiphany
     .mob Hellscream's Phantom
 step
-    .train 402857 >>Usar o |T135791:0|t[|cRXP_FRIENDLY_Epifania Aperitiva|r] para treinar |T135978:0|t[|cRXP_FRIENDLY_Toque Vampírico|r]
+    .train 402857 >> Usar o |T135791:0|t[|cRXP_FRIENDLY_Epifania Aperitiva|r] para treinar |T135978:0|t[|cRXP_FRIENDLY_Toque Vampírico|r]
     .use 228126
 ]])
 
@@ -1662,7 +1662,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     >>|cRXP_WARN_A habilidade sacerdotal extra é um desbloqueio em toda o servidor. Isso significa que se alguém já fez isso em seu servidor, você pode pular toda a cadeia de missões e ir direto para Karazhan para treinar sua nova habilidade racial. Se esse não for o caso, você pode usar o guia abaixo para ser a pessoa que o desbloqueia para seu servidor!|r
-    .zone Deadwind Pass >>Viaje para a Trilha do Vento Morto
+    .zone Deadwind Pass >> Viaje para a Trilha do Vento Morto
 step
     .goto Deadwind Pass,40.8,78.4
     >>Vá para um pequeno santuário localizado perto de Karazhan
@@ -1683,7 +1683,7 @@ step
     .collect 13180,4 --Stratholme Holy Water(4)
 step << Alliance
     #completewith next
-    .zone Stormwind City >>Vá para Ventobravo
+    .zone Stormwind City >> Vá para Ventobravo
 step << Alliance
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Leiloeira Jasona|r
@@ -1697,15 +1697,15 @@ step << Alliance
     #label QStart
     .goto Stormwind City,38.8,26.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Alta-sacerdotisa Laurena|r na Catedral de Ventobravo
-    .accept 84324 >>Aceite Propostas Diplomáticas
-    .turnin 84324 >>Entregue Propostas Diplomáticas
+    .accept 84324 >> Aceite Propostas Diplomáticas
+    .turnin 84324 >> Entregue Propostas Diplomáticas
     .target High Priestess Laurena
 step << Horde
     #completewith next
-    .zone Orgrimmar >>Viaje para Orgrimmar
+    .zone Orgrimmar >> Vá para Orgrimmar
 step << Horde
     .goto Orgrimmar,55.59,62.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thathung|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Leiloeiro Bendotado|r
     >>Compre 6 |T133682:0|t[|cRXP_LOOT_Heavy Runatrama Bandages|r], 4 |T134834:0|t[|cRXP_LOOT_Major Cura Potions|r] e 8 |T132834:0|t[|cRXP_LOOT_Giant Eggs|r] do leilão. Você precisará deles para a primeira missão desta cadeia junto com a |T134855:0|t[|cRXP_LOOT_Stratholme Sagrado Água|r] que você já coletou
     .collect 14530,6 --Heavy runecloth bandage (6)
     .collect 13446,4 --Major Healing Potion (4)
@@ -1716,23 +1716,23 @@ step << Horde
     #label QStart
     .goto Orgrimmar,35.8,87.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Petrus Weber|r no Vale dos Espíritos
-    .accept 84408 >>Aceite Propostas Diplomáticas
-    .turnin 84408 >>Entregue Propostas Diplomáticas
+    .accept 84408 >> Aceite Propostas Diplomáticas
+    .turnin 84408 >> Entregue Propostas Diplomáticas
     .target Dietrich Praice
 step
     #completewith next
     >>|cRXP_WARN_Para a próxima parte da missão, você precisará encontrar um sacerdote da facção oposta que também está na mesma linha de história para progredir|r
-    .zone Eastern Plaguelands >>Viaje para as Terras Pestilentas Orientais
+    .zone Eastern Plaguelands >> Viaje para as Terras Pestilentas Orientais
 step
     .goto Eastern Plaguelands,47,58
     >>|cRXP_WARN_Viaje para o|r |cRXP_FRIENDLY_Santuário da cooperação|r |cRXP_WARN_localizado em EPL. Causem dano um ao outro com o sacerdote da facção oposta e então usem o|r |T134918:0|t[|cRXP_FRIENDLY_Proteção Altruísta|r] |cRXP_WARN_item que você recebeu ao entregar a missão anterior para se curarem|r
     >>Se feito corretamente, o |cRXP_FRIENDLY_Santuário da cooperação|r oferecerá uma missão. Aceite-a
-    .accept 84325 >>Aceite Santuário da Cooperação << Alliance
-    .accept 84410 >>Aceite Santuário da Cooperação << Horde
+    .accept 84325 >> Aceite Santuário da Cooperação << Alliance
+    .accept 84410 >> Aceite Santuário da Cooperação << Horde
     .use 228130
 step << Alliance
     #completewith next
-    .zone Stormwind City >>Retorne para Ventobravo
+    .zone Stormwind City >> Retorne para Ventobravo
 step << Alliance
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Leiloeira Jasona|r
@@ -1744,17 +1744,17 @@ step << Alliance
 step << Alliance
     .goto Stormwind City,38.8,26.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Alta-sacerdotisa Laurena|r na Catedral de Ventobravo
-    .turnin 84325 >>Entregue Santuário da Cooperação
-    .accept 84326 >>Aceite Anel de Diplomata
-    .turnin 84326 >>Entregue Anel de Diplomata
-    .accept 84327 >>Aceite Uma Missão Diplomática
+    .turnin 84325 >> Entregue Santuário da Cooperação
+    .accept 84326 >> Aceite Anel de Diplomata
+    .turnin 84326 >> Entregue Anel de Diplomata
+    .accept 84327 >> Aceite Uma Missão Diplomática
     .target High Priestess Laurena
 step << Horde
     #completewith next
-    .zone Orgrimmar >>Retorne para Orgrimmar
+    .zone Orgrimmar >> Retorne para Orgrimmar
 step << Horde
     .goto Orgrimmar,55.59,62.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thathung|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Leiloeiro Bendotado|r
     >>Compre 2 |T134459:0|t[|cRXP_LOOT_Arcanite Bars|r], 2 |T134086:0|t[|cRXP_LOOT_Blood of the Mountain|r] e 3 |T134132:0|t[|cRXP_LOOT_Blue Sapphires|r] do leilão. Você precisará deles para uma entrega de missão em breve. Esses itens podem ser caros
     .collect 12360,2 --Arcanite Bar(2)
     .collect 11382,2 --Blood of the Mountain(2)
@@ -1763,43 +1763,43 @@ step << Horde
 step << Horde
     .goto Orgrimmar,35.8,87.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Petrus Weber|r no Vale dos Espíritos
-    .turnin 84410 >>Entregue Santuário da Cooperação
-    .accept 84411 >>Aceite Anel de Diplomata
-    .turnin 84411 >>Entregue Anel de Diplomata
-    .accept 84412 >>Aceite Uma Missão Diplomática
+    .turnin 84410 >> Entregue Santuário da Cooperação
+    .accept 84411 >> Aceite Anel de Diplomata
+    .turnin 84411 >> Entregue Anel de Diplomata
+    .accept 84412 >> Aceite Uma Missão Diplomática
     .target Dietrich Praice
 step << Horde
     #completewith next
     >>|cRXP_WARN_Para completar esta missão, você precisará novamente encontrar um sacerdote da facção oposta e fazer com que use seu|r |T133396:0|t[|cFF0070FFAnel de Diplomata|r] |cRXP_WARN_em você enquanto você fica próximo aos portões de Objetos de TBC. Isso fará com que os guardas da cidade não o ataquem mais e permitirá que você entre com segurança na capital inimiga|r
     >>|cRXP_WARN_Tenha em mente que jogadores da facção oposta ainda podem atacá-lo em um servidor JxJ!|r
-    .zone Elwynn Forest >>Vá para os portões de Objetos de TBC
+    .zone Elwynn Forest >> Vá para os portões de Objetos de TBC
 step << Horde
     .goto Stormwind City,38.8,26.6
     >>Faça com que um sacerdote da facção oposta use seu |T133396:0|t[|cFF0070FFAnel de Diplomata|r] em você para que os guardas da cidade não o ataquem, e vá para a Catedral de Objetos de TBC. |cRXP_WARN_Você ainda pode ser atacado por outros jogadores!|r
     >>|cRXP_WARN_O sacerdote da facção oposta deve acompanhá-lo até quem oferece a missão, ou você perderá o buff de imunidade diplomática|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Alta-sacerdotisa Laurena|r na Catedral de Ventobravo
-    .turnin 84412 >>Entregue Missão Diplomática
-    .accept 84413 >>Aceite Consertando o Estilhaço
+    .turnin 84412 >> Entregue Missão Diplomática
+    .accept 84413 >> Aceite Consertando o Estilhaço
     .target High Priestess Laurena
 step << Alliance
     #completewith next
     >>|cRXP_WARN_Para completar esta missão, você precisará novamente encontrar um sacerdote da facção oposta e fazer com que use seu|r |T133396:0|t[|cFF0070FFAnel de Diplomata|r] |cRXP_WARN_em você enquanto você fica próximo aos portões de Orgrimmar. Isso fará com que os guardas da cidade não o ataquem mais e permitirá que você entre com segurança na capital inimiga|r
     >>|cRXP_WARN_Tenha em mente que jogadores da facção oposta ainda podem atacá-lo em um servidor JxJ!|r
-    .zone Durotar >>Vá para os portões de Orgrimmar
+    .zone Durotar >> Vá para os portões de Orgrimmar
 step << Alliance
     .goto Orgrimmar,35.8,87.2
     >>Faça com que um sacerdote da facção oposta use seu |T133396:0|t[|cFF0070FFAnel de Diplomata|r] em você para que os guardas da cidade não o ataquem, e vá para o Vale dos Espíritos. |cRXP_WARN_Você ainda pode ser atacado por outros jogadores!|r
     >>|cRXP_WARN_O sacerdote da facção oposta deve acompanhá-lo até quem oferece a missão, ou você perderá o buff de imunidade diplomática|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Petrus Weber|r no Vale dos Espíritos
-    .turnin 84327 >>Entregue Uma Missão Diplomática
-    .accept 84328 >>Aceite Consertando o Estilhaço
+    .turnin 84327 >> Entregue Uma Missão Diplomática
+    .accept 84328 >> Aceite Consertando o Estilhaço
     .target Dietrich Praice
 step
     #completewith next
     >>|cRXP_WARN_Comece a procurar um grupo para a masmorra Martelo do Gládio Cruel West, para a próxima missão você precisa matar|r |cRXP_ENEMY_Magister Kalendris|r |cRXP_WARN_um dos chefes da masmorra|r
-    .zone Feralas >>Viaje para Feralas
+    .zone Feralas >> Viaje para Feralas
 step
-    .goto Feralas,59.1,43.2,100 >>Entre em Martelo do Gládio Cruel Oeste
+    .goto Feralas,59.1,43.2,100 >> Entre em Martelo do Gládio Cruel Oeste
 step
     .goto Feralas,60.4,30.2
     >>Entre em Martelo do Gládio Cruel Oeste e mate |cRXP_ENEMY_Magister Kalendris|r. Saqueie-o para o livro |T133737:0|t[|cRXP_LOOT_Applied Divindade|r]. Ele está localizado na seção de fantasmas da masmorra
@@ -1808,36 +1808,36 @@ step << Horde
     #completewith next
     >>|cRXP_WARN_Para completar esta missão, você precisará novamente encontrar um sacerdote da facção oposta e fazer com que use seu|r |T133396:0|t[|cFF0070FFAnel de Diplomata|r] |cRXP_WARN_em você enquanto você fica próximo aos portões de Objetos de TBC. Isso fará com que os guardas da cidade não o ataquem mais e permitirá que você entre com segurança na capital inimiga|r
     >>|cRXP_WARN_Tenha em mente que jogadores da facção oposta ainda podem atacá-lo em um servidor JxJ!|r
-    .zone Elwynn Forest >>Vá para os portões de Objetos de TBC
+    .zone Elwynn Forest >> Vá para os portões de Objetos de TBC
 step << Horde
     .goto Stormwind City,38.8,26.6
     >>Faça com que um sacerdote da facção oposta use seu |T133396:0|t[|cFF0070FFAnel de Diplomata|r] em você para que os guardas da cidade não o ataquem, e vá para a Catedral de Objetos de TBC. |cRXP_WARN_Você ainda pode ser atacado por outros jogadores!|r
     >>|cRXP_WARN_O sacerdote da facção oposta deve acompanhá-lo até quem oferece a missão, ou você perderá o buff de imunidade diplomática|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Alta-sacerdotisa Laurena|r na Catedral de Ventobravo
-    .turnin 84413 >>Entregue Consertando o Estilhaço
-    .accept 84329 >>Aceite A Convocação se Reúne
+    .turnin 84413 >> Entregue Consertando o Estilhaço
+    .accept 84329 >> Aceite A Convocação se Reúne
     .target High Priestess Laurena
 step << Alliance
     #completewith next
     >>|cRXP_WARN_Para completar esta missão, você precisará novamente encontrar um sacerdote da facção oposta e fazer com que use seu|r |T133396:0|t[|cFF0070FFAnel de Diplomata|r] |cRXP_WARN_em você enquanto você fica próximo aos portões de Orgrimmar. Isso fará com que os guardas da cidade não o ataquem mais e permitirá que você entre com segurança na capital inimiga|r
     >>|cRXP_WARN_Tenha em mente que jogadores da facção oposta ainda podem atacá-lo em um servidor JxJ!|r
-    .zone Durotar >>Vá para os portões de Orgrimmar
+    .zone Durotar >> Vá para os portões de Orgrimmar
 step << Alliance
     .goto Orgrimmar,35.8,87.2
     >>Faça com que um sacerdote da facção oposta use seu |T133396:0|t[|cFF0070FFAnel de Diplomata|r] em você para que os guardas da cidade não o ataquem, e vá para o Vale dos Espíritos. |cRXP_WARN_Você ainda pode ser atacado por outros jogadores!|r
     >>|cRXP_WARN_O sacerdote da facção oposta deve acompanhá-lo até quem oferece a missão, ou você perderá o buff de imunidade diplomática|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Petrus Weber|r no Vale dos Espíritos
-    .turnin 84328 >>Entregue Consertando o Estilhaço
-    .accept 84329 >>Aceite A Convocação se Reúne
+    .turnin 84328 >> Entregue Consertando o Estilhaço
+    .accept 84329 >> Aceite A Convocação se Reúne
     .target Dietrich Praice
 step
     #completewith next
-    .zone Deadwind Pass >>Viaje para a Trilha do Vento Morto
+    .zone Deadwind Pass >> Viaje para a Trilha do Vento Morto
 step
     .goto Deadwind Pass,40.8,78.4
     >>Vá para um pequeno santuário localizado perto de Karazhan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Maethra Almescória|r num santuário ao lado de Karazhan
-    .turnin 84329 >>Entregue A Convocação se Reúne
+    .turnin 84329 >> Entregue A Convocação se Reúne
 step
     +Completar a missão acima deve completar a cadeia de missões e desbloquear a habilidade de treinar uma habilidade de sacerdote racial de outra raça por todo o servidor
 ]])
@@ -1853,7 +1853,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     >>|cRXP_WARN_Para completar esta runa, você precisará completar algumas tarefas dentro de Stratholme masmorra (lado dos vivos e dos mortos). Comece procurando um grupo para isto|r
-    .zone Eastern Plaguelands >>Voe para as Terras Pestilentas Orientais
+    .zone Eastern Plaguelands >> Voe para as Terras Pestilentas Orientais
 step
     .goto Eastern Plaguelands,47.8,24.2
     >>Entre em Stratholme
@@ -1883,6 +1883,6 @@ step
     >>6. Saque o orbe que aparece para sua runa
     .collect 228124,1 --Oneiric Epiphany
 step
-    .train 402850 >>Usar o |T135791:0|t[|cRXP_FRIENDLY_Oneiric Epifania|r] para treinar |T135948:0|t[|cRXP_FRIENDLY_Proteção Anímica|r]
+    .train 402850 >> Usar o |T135791:0|t[|cRXP_FRIENDLY_Oneiric Epifania|r] para treinar |T135948:0|t[|cRXP_FRIENDLY_Proteção Anímica|r]
     .use 228124
 ]])

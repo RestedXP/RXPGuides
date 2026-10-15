@@ -45,7 +45,7 @@ step
     .train 425344,1
     .xp <3,1
 step
-    .equip 18,206388 >>|cRXP_WARN_Equipe o|r |T134918:0|t|cRXP_LOOT_[Ícone Sulfúreo]|r
+    .equip 18,206388 >> |cRXP_WARN_Equipe o|r |T134918:0|t|cRXP_LOOT_[Ícone Sulfúreo]|r
     .use 206388
     .itemcount 206388,1 --Sulfurous Icon (1)
     .train 425344,1
@@ -70,7 +70,7 @@ step
     .xp >13,1
 step
     #completewith Barrens
-    .zone The Barrens >>Viaje para os Sertões
+    .zone The Barrens >> Viaje para os Sertões
     .train 425344,1
     .xp <13,1
 step
@@ -138,7 +138,7 @@ step
     .xp >22,1
 step
     #completewith next
-    .zone Stonetalon Mountains >>Viaje para as Montanhas de Pedralva
+    .zone Stonetalon Mountains >> Viaje para as Montanhas de Pedralva
     .train 425344,1
     .xp <3,1
 step
@@ -193,7 +193,7 @@ step
 step
     #completewith IconS
     #label Durotar1
-    .zone Durotar >>Vá para Durotar
+    .zone Durotar >> Vá para Durotar
     .train 425344,1
     .xp <10,1
 step
@@ -207,7 +207,7 @@ step
 step
     .goto Durotar,54.42,42.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Swart|r
-    .train 8050 >>Treine |T135813:0|t[Choque Flamejante]
+    .train 8050 >> Treine |T135813:0|t[Choque Flamejante]
     .target Swart
     .train 425344,1
     .xp <10,1
@@ -241,7 +241,7 @@ step
     .xp <12,1
 --XX Flametongue and Fire Nova doesn't seem to work
 step
-    .equip 18,206388 >>|cRXP_WARN_Equipe o|r |T134918:0|t|cRXP_LOOT_[Ícone Sulfúreo]|r
+    .equip 18,206388 >> |cRXP_WARN_Equipe o|r |T134918:0|t|cRXP_LOOT_[Ícone Sulfúreo]|r
     .use 206388
     .itemcount 206388,1 --Sulfurous Icon (1)
     .train 425344,1
@@ -264,7 +264,7 @@ step
     .xp >11,1
 step
     #completewith Barrens
-    .zone The Barrens >>Viaje para os Sertões
+    .zone The Barrens >> Viaje para os Sertões
     .train 425344,1
     .xp <10,1
 step
@@ -332,7 +332,7 @@ step
     .xp >22,1
 step
     #completewith next
-    .zone Stonetalon Mountains >>Viaje para as Montanhas de Pedralva
+    .zone Stonetalon Mountains >> Viaje para as Montanhas de Pedralva
     .train 425344,1
     .xp <10,1
 step
@@ -395,14 +395,14 @@ step
 --XX WIP to here
 step
     #completewith next
-    .zone Thunder Bluff >>Vá para Penhasco do Trovão
+    .zone Thunder Bluff >> Siga para o Penhasco do Trovão
     .train 410104,1
     .xp <4,1
 step
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
-    .accept 76156 >>Aceite À Espreita com a Mãe Terra
+    >>|cRXP_WARN_ele é|r |T132320:0|t[Furtivo]
+    .accept 76156 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
     .train 410104,1
     .xp <4,1
@@ -424,7 +424,7 @@ step
     .goto Mulgore,60.99,37.00,15,0
     .goto Mulgore,59.64,36.05,15,0 --Outside
     .goto Mulgore,61.72,35.15,15,0 --Outside
-    >>Abra |cRXP_PICK_Blasting Suprimentos|r dentro da mina e do lado de fora, do outro lado. Saqueie-os para obter |cRXP_LOOT_Seaforium Mineração Cargas|r
+    >>Abra os |cRXP_PICK_Suprimentos de Demolição|r dentro da mina e do lado de fora, na outra saída. Pegue neles as |cRXP_LOOT_Cargas de Mineração de Cequatrum|r
     >>|cRXP_WARN_Fique nos níveis superiores da caverna se possível|r
     .complete 76156,1 --Seaforium Mining Charge (5)
     .train 410104,1
@@ -463,16 +463,16 @@ step
     .xp <4,1
 step
     #completewith next
-    .zone Thunder Bluff >>Vá para Penhasco do Trovão
+    .zone Thunder Bluff >> Siga para o Penhasco do Trovão
     .train 410104,1
     .xp <4,1
 --XX Logout skips take you to Bloodhoof, not worth doing
 step
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
+    >>|cRXP_WARN_ele é|r |T132320:0|t[Furtivo]
     .turnin 76156 >>Entregue À Espreita com a Mãe Terra
-    .accept 76160 >>Aceite À Espreita com a Mãe Terra
+    .accept 76160 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
     .train 410104,1
     .xp <4,1
@@ -510,9 +510,9 @@ step
 step
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
+    >>|cRXP_WARN_ele é|r |T132320:0|t[Furtivo]
     .turnin 76160 >>Entregue À Espreita com a Mãe Terra
-    .accept 76240 >>Aceite À Espreita com a Mãe Terra
+    .accept 76240 >>Aceite À espreita com a Mãe Terra
     .target Boarton Shadetotem
     .train 410104,1
     .xp <4,1
@@ -521,7 +521,7 @@ step
     .goto Thunder Bluff,45.23,59.40,0
     .goto Thunder Bluff,40.41,51.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Leiloeiro Stampi|r
-    >>|cRXP_BUY_Compre um|r |T133894:0|t[Raw Peixinho Brilhante] |cRXP_BUY_na Casa de Leilões|r
+    >>|cRXP_BUY_Compre um|r |T133894:0|t[Peixinho Brilhante Cru] |cRXP_BUY_na Casa de Leilões|r
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
     .target Auctioneer Stampi
     .train 410104,1
@@ -552,7 +552,7 @@ step
     #label Sewa
     .goto Thunder Bluff,55.78,47.02,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sewa Corre com a Névoa|r
-    >>|cRXP_BUY_Compre uma|r |T132932:0|t[Vara de Pescar] |cRXP_BUY_e|r |T134335:0|t[MIçanga Brilhosa] |cRXP_BUY_dela|r
+    >>|cRXP_BUY_Compre uma|r |T132932:0|t[Vara de Pescar] |cRXP_BUY_e uma|r |T134335:0|t[Miçanga Brilhosa] |cRXP_BUY_dela|r
     .collect 6256,1 --Fishing Pole (1)
     .collect 6529,1 --Shiny Bauble (1)
     .target Sewa Mistrunner
@@ -563,7 +563,7 @@ step
     #completewith Fish
     #requires Kah
     #label Pole
-    .equip 16,6256 >>|cRXP_WARN_Equipe o|r |T132932:0|t[Vara de Pescar]
+    .equip 16,6256 >> |cRXP_WARN_Equipe o|r |T132932:0|t[Vara de Pescar]
     .use 6256
     .train 410104,1
     .xp <4,1
@@ -571,7 +571,7 @@ step
     #ssf
     #completewith Fish
     #requires Pole
-    .aura 8087 >>|cRXP_WARN_Prenda o|r |T134335:0|t[MIçanga Brilhosa] |cRXP_WARN_ao seu|r |T132932:0|t[Vara de Pescar]
+    .aura 8087 >> |cRXP_WARN_Aplique a|r |T134335:0|t[Miçanga Brilhosa] |cRXP_WARN_na sua|r |T132932:0|t[Vara de Pescar]
     .use 6529
     .train 410104,1
     .xp <4,1
@@ -580,7 +580,7 @@ step
     #label Fish
     #requires Kah
     .goto Thunder Bluff,40.42,58.55
-    >>Pesque na lagoa até obter um |T133894:0|t[|cRXP_LOOT_Raw Peixinho Brilhante|r]
+    >>Pesque no lago até pegar um |T133894:0|t[|cRXP_LOOT_Peixinho Brilhante Cru|r]
     .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
     .train 410104,1
     .xp <4,1
@@ -593,7 +593,7 @@ step
 step
     .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Javaton Totem das Sombras|r
-    >>|cRXP_WARN_Ele é|r |T132320:0|t[Furtivo]
+    >>|cRXP_WARN_ele é|r |T132320:0|t[Furtivo]
     .turnin 76240 >>Entregue À Espreita com a Mãe Terra
 -- .train 410104 >>|cRXP_WARN_You will train|r |T236289:0|t[Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield] |cRXP_WARN_upon turnin|r
     .target Boarton Shadetotem
@@ -636,8 +636,8 @@ step
 step
     .goto Orgrimmar,38.81,36.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kardris|r
-    .train 8050 >>Treine |T135813:0|t[Choque Flamejante]
-    .train 8056 >>Aprenda |T135849:0|t[Choque Gélido]
+    .train 8050 >> Treine |T135813:0|t[Choque Flamejante]
+    .train 8056 >> Aprenda |T135849:0|t[Choque Gélido]
     .target Kardris Dreamseeker
     .zoneskip Thunder Bluff
     .train 8050,1
@@ -646,7 +646,7 @@ step
 step
     .goto Orgrimmar,38.81,36.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kardris|r
-    .train 8050 >>Treine |T135813:0|t[Choque Flamejante]
+    .train 8050 >> Treine |T135813:0|t[Choque Flamejante]
     .target Kardris Dreamseeker
     .zoneskip Thunder Bluff
     .train 410097,1
@@ -655,7 +655,7 @@ step
     #label OrgTrain
     .goto Orgrimmar,38.81,36.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kardris|r
-    .train 8056 >>Aprenda |T135849:0|t[Choque Gélido]
+    .train 8056 >> Aprenda |T135849:0|t[Choque Gélido]
     .target Kardris Dreamseeker
     .zoneskip Thunder Bluff
     .train 410097,1
@@ -682,8 +682,8 @@ step
 step
     .goto Thunder Bluff,22.82,21.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Siln|r
-    .train 8050 >>Treine |T135813:0|t[Choque Flamejante]
-    .train 8056 >>Aprenda |T135849:0|t[Choque Gélido]
+    .train 8050 >> Treine |T135813:0|t[Choque Flamejante]
+    .train 8056 >> Aprenda |T135849:0|t[Choque Gélido]
     .target Siln Skychaser
     .zoneskip Orgrimmar
     .train 8050,1
@@ -692,7 +692,7 @@ step
 step
     .goto Thunder Bluff,22.82,21.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Siln|r
-    .train 8050 >>Treine |T135813:0|t[Choque Flamejante]
+    .train 8050 >> Treine |T135813:0|t[Choque Flamejante]
     .target Siln Skychaser
     .zoneskip Orgrimmar
     .train 410097,1
@@ -701,7 +701,7 @@ step
     #label TBTrain
     .goto Thunder Bluff,22.82,21.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Siln|r
-    .train 8056 >>Aprenda |T135849:0|t[Choque Gélido]
+    .train 8056 >> Aprenda |T135849:0|t[Choque Gélido]
     .target Siln Skychaser
     .zoneskip Orgrimmar
     .train 410097,1
@@ -751,7 +751,7 @@ step
     .train 410097,1
     .xp <20,1
 step
-    .equip 18,206382 >>|cRXP_WARN_Equipe o|r |T135832:0|t|cRXP_LOOT_Ícone Tempestuoso|r
+    .equip 18,206382 >> |cRXP_WARN_Equipe o|r |T135832:0|t|cRXP_LOOT_Ícone Tempestuoso|r
     .use 206382
     .itemcount 206382,1 --Tempest Icon (1)
     .train 410097,1
@@ -779,7 +779,7 @@ step
     .xp >22,1
 step
     #completewith next
-    .zone Stonetalon Mountains >>Viaje para as Montanhas de Pedralva
+    .zone Stonetalon Mountains >> Viaje para as Montanhas de Pedralva
     .train 410097,1
     .xp <22,1
 step
@@ -848,8 +848,8 @@ step
 step
     .goto Orgrimmar,38.81,36.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kardris|r
-    .train 8050 >>Treine |T135813:0|t[Choque Flamejante]
-    .train 8056 >>Aprenda |T135849:0|t[Choque Gélido]
+    .train 8050 >> Treine |T135813:0|t[Choque Flamejante]
+    .train 8056 >> Aprenda |T135849:0|t[Choque Gélido]
     .target Kardris Dreamseeker
     .zoneskip Thunder Bluff
     .train 8050,1
@@ -858,7 +858,7 @@ step
 step
     .goto Orgrimmar,38.81,36.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kardris|r
-    .train 8050 >>Treine |T135813:0|t[Choque Flamejante]
+    .train 8050 >> Treine |T135813:0|t[Choque Flamejante]
     .target Kardris Dreamseeker
     .zoneskip Thunder Bluff
     .train 410097,1
@@ -867,7 +867,7 @@ step
     #label OrgTrain
     .goto Orgrimmar,38.81,36.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kardris|r
-    .train 8056 >>Aprenda |T135849:0|t[Choque Gélido]
+    .train 8056 >> Aprenda |T135849:0|t[Choque Gélido]
     .target Kardris Dreamseeker
     .zoneskip Thunder Bluff
     .train 410097,1
@@ -881,8 +881,8 @@ step
 step
     .goto Thunder Bluff,22.82,21.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Siln|r
-    .train 8050 >>Treine |T135813:0|t[Choque Flamejante]
-    .train 8056 >>Aprenda |T135849:0|t[Choque Gélido]
+    .train 8050 >> Treine |T135813:0|t[Choque Flamejante]
+    .train 8056 >> Aprenda |T135849:0|t[Choque Gélido]
     .target Siln Skychaser
     .zoneskip Orgrimmar
     .train 8050,1
@@ -891,7 +891,7 @@ step
 step
     .goto Thunder Bluff,22.82,21.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Siln|r
-    .train 8050 >>Treine |T135813:0|t[Choque Flamejante]
+    .train 8050 >> Treine |T135813:0|t[Choque Flamejante]
     .target Siln Skychaser
     .zoneskip Orgrimmar
     .train 410097,1
@@ -900,7 +900,7 @@ step
     #label TBTrain
     .goto Thunder Bluff,22.82,21.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Siln|r
-    .train 8056 >>Aprenda |T135849:0|t[Choque Gélido]
+    .train 8056 >> Aprenda |T135849:0|t[Choque Gélido]
     .target Siln Skychaser
     .zoneskip Orgrimmar
     .train 410097,1
@@ -935,7 +935,7 @@ step
     .train 410097,1
     .xp <20,1
 step
-    .equip 18,206382 >>|cRXP_WARN_Equipe o|r |T135832:0|t|cRXP_LOOT_Ícone Tempestuoso|r
+    .equip 18,206382 >> |cRXP_WARN_Equipe o|r |T135832:0|t|cRXP_LOOT_Ícone Tempestuoso|r
     .use 206382
     .itemcount 206382,1 --Tempest Icon (1)
     .train 410097,1
@@ -987,19 +987,19 @@ step
     .train 410095,1
     .xp <25,1
 step
-    .equip 18,206387 >>|cRXP_WARN_Equipe o|r |T134920:0|t|cRXP_LOOT_[Ícone Jakárico]|r
+    .equip 18,206387 >> |cRXP_WARN_Equipe o|r |T134920:0|t|cRXP_LOOT_[Ícone Jakárico]|r
     .use 206387
     .itemcount 206387,1 --Kajaric Icon (1)
     .train 410095,1
     .xp <25,1
 step
     #completewith next
-    .zone Orgrimmar >>Viaje para Orgrimmar
+    .zone Orgrimmar >> Vá para Orgrimmar
     .train 410095,1
     .xp <25,1
 step
     .goto Orgrimmar,52.77,48.97
-    .subzone 2437 >>Entre em Cavernas Ígneas na Fenda da Sombra
+    .subzone 2437 >> Entre em Cavernas Ígneas na Fenda da Sombra
     .itemStat 18,QUALITY,2
     .train 410095,1
     .xp <25,1
@@ -1052,17 +1052,17 @@ step
     .mob Mudsnout Shaman
     .train 410095,1
 step
-    .equip 18,206387 >>|cRXP_WARN_Equipe o|r |T134920:0|t|cRXP_LOOT_[Ícone Jakárico]|r
+    .equip 18,206387 >> |cRXP_WARN_Equipe o|r |T134920:0|t|cRXP_LOOT_[Ícone Jakárico]|r
     .use 206387
     .itemcount 206387,1 --Kajaric Icon (1)
     .train 410095,1
 step
     #completewith next
-    .zone Orgrimmar >>Viaje para Orgrimmar
+    .zone Orgrimmar >> Vá para Orgrimmar
     .train 410095,1
 step
     .goto Orgrimmar,52.77,48.97
-    .subzone 2437 >>Entre em Cavernas Ígneas na Fenda da Sombra
+    .subzone 2437 >> Entre em Cavernas Ígneas na Fenda da Sombra
     .itemStat 18,QUALITY,2
     .train 410095,1
 step
@@ -1097,7 +1097,7 @@ step
     .xp >3,1
 step
     #completewith IconS
-    .zone Durotar >>Vá para Durotar
+    .zone Durotar >> Vá para Durotar
     .train 410094,1
     .xp <3,1
 step << !Tauren skip
@@ -1166,7 +1166,7 @@ step
     .train 410094,1
     .xp <3,1
 step
-    .equip 18,206381 >>|cRXP_WARN_Equipe o|r |T134918:0|t|cRXP_LOOT_[Ícone Diádico]|r
+    .equip 18,206381 >> |cRXP_WARN_Equipe o|r |T134918:0|t|cRXP_LOOT_[Ícone Diádico]|r
     .use 206381
     .itemcount 206381,1 --Dyadic Icon (1)
     .train 410094,1
@@ -1261,7 +1261,7 @@ step
     .xp >3,1
 step
     #completewith IconS
-    .zone Mulgore >>Vá para Mulgore
+    .zone Mulgore >> Vá para Mulgore
     .train 410094,1
     .xp <3,1
 step << Tauren skip
@@ -1285,7 +1285,7 @@ step
     .train 410094,1
     .xp <3,1
 step
-    .equip 18,206381 >>|cRXP_WARN_Equipe o|r |T134918:0|t|cRXP_LOOT_[Ícone Diádico]|r
+    .equip 18,206381 >> |cRXP_WARN_Equipe o|r |T134918:0|t|cRXP_LOOT_[Ícone Diádico]|r
     .use 206381
     .itemcount 206381,1 --Dyadic Icon (1)
     .train 410094,1
@@ -1341,7 +1341,7 @@ step
     .xp >6,1
 step
     #completewith IconS
-    .zone Durotar >>Vá para Durotar
+    .zone Durotar >> Vá para Durotar
     .train 410098,1
     .xp <3,1
 step
@@ -1365,7 +1365,7 @@ step
     .xp <3,1
 --XX Need to check for more locations
 step
-    .equip 18,206386 >>|cRXP_WARN_Equipe o|r |T134918:0|t|cRXP_LOOT_[Ícone Galvânico]|r
+    .equip 18,206386 >> |cRXP_WARN_Equipe o|r |T134918:0|t|cRXP_LOOT_[Ícone Galvânico]|r
     .use 206386
     .itemcount 206386,1 --Galvanic Icon (1)
     .train 410098,1
@@ -1388,7 +1388,7 @@ step
     .xp >11,1
 step
     #completewith Barrens
-    .zone The Barrens >>Viaje para os Sertões
+    .zone The Barrens >> Viaje para os Sertões
     .train 410098,1
     .xp <3,1
 step
@@ -1456,7 +1456,7 @@ step
     .xp >22,1
 step
     #completewith next
-    .zone Stonetalon Mountains >>Viaje para as Montanhas de Pedralva
+    .zone Stonetalon Mountains >> Viaje para as Montanhas de Pedralva
     .train 410098,1
     .xp <3,1
 step
@@ -1516,7 +1516,7 @@ step
     .xp >6,1
 step
     #completewith IconS
-    .zone Mulgore >>Vá para Mulgore
+    .zone Mulgore >> Vá para Mulgore
     .train 410098,1
     .xp <3,1
 step
@@ -1560,7 +1560,7 @@ step
     .train 410098,1
     .xp <3,1
 step
-    .equip 18,206386 >>|cRXP_WARN_Equipe o|r |T134918:0|t|cRXP_LOOT_[Ícone Galvânico]|r
+    .equip 18,206386 >> |cRXP_WARN_Equipe o|r |T134918:0|t|cRXP_LOOT_[Ícone Galvânico]|r
     .use 206386
     .itemcount 206386,1 --Galvanic Icon (1)
     .train 410098,1
@@ -1598,7 +1598,7 @@ step
     .xp >14,1
 step
     #completewith Barrens
-    .zone The Barrens >>Viaje para os Sertões
+    .zone The Barrens >> Viaje para os Sertões
     .train 410098,1
     .xp <3,1
 step
@@ -1666,7 +1666,7 @@ step
     .xp >22,1
 step
     #completewith next
-    .zone Stonetalon Mountains >>Viaje para as Montanhas de Pedralva
+    .zone Stonetalon Mountains >> Viaje para as Montanhas de Pedralva
     .train 410098,1
     .xp <3,1
 step
@@ -1725,7 +1725,7 @@ step
 step
     #completewith next
     #label Durotar1
-    .zone Durotar >>Vá para Durotar
+    .zone Durotar >> Vá para Durotar
     .train 410099,1
     .xp <3,1
 step
@@ -1780,7 +1780,7 @@ step
 step
     #completewith next
     #label Mulgore1
-    .zone Mulgore >>Vá para Mulgore
+    .zone Mulgore >> Vá para Mulgore
     .train 410099,1
     .xp <3,1
 step
@@ -1862,7 +1862,7 @@ step
 step
     .goto Orgrimmar,38.81,36.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kardris|r
-    .train 370 >>Aprenda |T136075:0|t[Expurgar]
+    .train 370 >> Aprenda |T136075:0|t[Expurgar]
     .target Kardris Dreamseeker
     .zoneskip Thunder Bluff
     .train 410107,1
@@ -1876,7 +1876,7 @@ step
 step
     .goto Thunder Bluff,22.82,21.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Siln|r
-    .train 370 >>Aprenda |T136075:0|t[Expurgar]
+    .train 370 >> Aprenda |T136075:0|t[Expurgar]
     .target Siln Skychaser
     .zoneskip Orgrimmar
     .train 410107,1
@@ -1951,14 +1951,14 @@ step
     .train 410107,1
 step
     #completewith Rune
-    .cast 425285 >>|cRXP_WARN_Use o|r |T136008:0|t|cRXP_LOOT_[Totem de Podridão]|r |cRXP_WARN_para invocar o |cRXP_ENEMY_Decayed Elemental|r
+    .cast 425285 >> |cRXP_WARN_Use o|r |T136008:0|t|cRXP_LOOT_[Totem de Podridão]|r |cRXP_WARN_para invocar o |cRXP_ENEMY_Decayed Elemental|r
     .use 210253 --Rot Hide Totem (1)
     .itemcount 210253,1 --Rot Hide Totem (1)
     .train 410107,1
     .xp <14,1
 step
     #completewith next
-    .cast 425285 >>|cRXP_WARN_Use o|r |T136008:0|t|cRXP_LOOT_[Totem de Podridão]|r |cRXP_WARN_para invocar o |cRXP_ENEMY_Decayed Elemental|r
+    .cast 425285 >> |cRXP_WARN_Use o|r |T136008:0|t|cRXP_LOOT_[Totem de Podridão]|r |cRXP_WARN_para invocar o |cRXP_ENEMY_Decayed Elemental|r
     >>|cRXP_WARN_Tenha cuidado pois lança|r |T135848:0|t[Novane Congelante] |cRXP_WARN_(À Distância Instantâneo: Causa cerca de 50 de dano e imobiliza por 8 segundos) e é nível 15|r
     .use 210253 --Rot Hide Totem (1)
     .itemcount 210253,1 --Rot Hide Totem (1)
@@ -2094,14 +2094,14 @@ step
     .xp <25,1
 step
     #completewith next
-    .zone Ashenvale >>Viaje para Vale Gris
+    .zone Ashenvale >> Viaje para Vale Gris
     .train 410101,1
     .xp <25,1
 step
     #completewith next
     .goto Kalimdor,44.36,34.86
     >>|cRXP_WARN_Ingresse ou crie um novo grupo de incursão (0/7) (10 pessoas) para Profundezas Negras|r
-    .subzone 2797,2 >>Vá até o Portal da instância de Profundezas Negras. Entre na instância
+    .subzone 2797,2 >> Vá até o Portal da instância de Profundezas Negras. Entre na instância
     .train 410101,1
     .xp <25,1
 step
@@ -2120,13 +2120,13 @@ step
 step
     #completewith Baron
     >>|cRXP_WARN_Conclua a incursão se quiser, depois saia de Profundezas Negras|r
-    .zone Ashenvale >>Viaje para Vale Gris
+    .zone Ashenvale >> Viaje para Vale Gris
     .zoneskip 221,1
     .train 410101,1
     .xp <25,1
 step
     #completewith next
-    .zone Ashenvale >>Viaje para Vale Gris
+    .zone Ashenvale >> Viaje para Vale Gris
     .train 410101,1
     .xp <25,1
 step
@@ -2397,7 +2397,7 @@ step
     .target Zor Lonetree
 step
     #completewith next
-    .zone Thunder Bluff >>Voe para |cFFfa9602Thunder Blefe|r
+    .zone Thunder Bluff >>Vá para |cFFfa9602Penhasco do Trovão|r
 step
     .goto Thunder Bluff,78.61,28.55
     .gossip 5769 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com o |cRXP_FRIENDLY_Arquidruida Hamuul Runa Totem|r e selecione a opção de diálogo
@@ -2437,7 +2437,7 @@ step
     .goto The Barrens,43.46,90.18,0
     .goto The Barrens,43.46,90.18,40,0
     .goto 1414,50.877,70.339
-    .subzone 491,2 >>Entre Urzal dos Tuscos
+    .subzone 491,2 >> Entre Urzal dos Tuscos
 step
     .train 410100,1
     >>Abate |cRXP_ENEMY_Charlga Talhaflanco|r. Saque-o pela |T134944:0|t|cRXP_LOOT_Nota Esfarrapada|r. Usar-a para aceitar a missão
@@ -2526,7 +2526,7 @@ step
 step
     .train 410100,1
     #completewith next
-    .zone Badlands >>Voe para |cFFfa9602Ermos|r
+    .zone Badlands >>Vá aos |cFFfa9602Ermos|r
 step
     .train 410100,1
     #loop
@@ -2580,7 +2580,7 @@ step
     .mob Ravaging Tempest
 step
     .train 410100,1
-    .vehicle >>Interaja com a |cRXP_FRIENDLY_Freewind Post Mantícora|r
+    .vehicle >> Interaja com a |cRXP_FRIENDLY_Freewind Post Mantícora|r
     .timer 9,Voo RP
 step
     .train 410100,1
@@ -2699,7 +2699,7 @@ step
     .use 213709 >>|cRXP_WARN_Use suas|r |T133723:0|t[Serpente das Nuvens Presas] |cRXP_WARN_para criar|r |T133291:0|t[Oferenda ao Espírito do Vento]
     .collect 213737,1 --Offering to the Wind Spirit (1x)
 step
-    .goto Thousand Needles,31.47,36.71,30 >>Vá para Darkcloud Pinnacle
+    .goto Thousand Needles,31.47,36.71,30 >> Vá para Darkcloud Pinnacle
 step
     #completewith next
     .goto Thousand Needles,33.08,35.33,20,0
@@ -2709,7 +2709,7 @@ step
     .goto Thousand Needles,32.60,27.51,20,0
     .goto Thousand Needles,34.87,31.76,20,0
     .goto Thousand Needles,34.15,35.77,20,0
-    .goto Thousand Needles,33.32,36.24,20 >>Suba no Darkcloud Pinnacle
+    .goto Thousand Needles,33.32,36.24,20 >> Suba no Darkcloud Pinnacle
 step
     .train 425882,1
     .goto Thousand Needles,39.44,41.98
@@ -3027,7 +3027,7 @@ step
 step
     .goto Feralas,36.0,32.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Manifestação Moderada da Terra|r
-    .turnin 82075 >>Resposta ao Chamado da Terra
+    .turnin 82075 >> Resposta ao Chamado da Terra
     .target Moderate Manifestation of Earth
     .train 432241,1
 step
@@ -3046,7 +3046,7 @@ step
 step
     .goto Feralas,36.0,32.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Manifestação Moderada da Terra|r
-    .turnin 82075 >>Resposta ao Chamado da Terra
+    .turnin 82075 >> Resposta ao Chamado da Terra
     .target Moderate Manifestation of Earth
     .train 432241,1
 step
@@ -3065,7 +3065,7 @@ step
 step
     .goto Feralas,36.0,32.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Manifestação Moderada da Terra|r
-    .turnin 82075 >>Resposta ao Chamado da Terra
+    .turnin 82075 >> Resposta ao Chamado da Terra
     .target Moderate Manifestation of Earth
     .train 432241,1
 step
@@ -3084,7 +3084,7 @@ step
 step
     .goto Feralas,36.0,32.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Manifestação Moderada da Terra|r
-    .turnin 82075 >>Resposta ao Chamado da Terra
+    .turnin 82075 >> Resposta ao Chamado da Terra
     .target Moderate Manifestation of Earth
     .train 432241,1
 step
@@ -3092,7 +3092,7 @@ step
     .collect 220616,1 --1/1 Rune of Overcharged
     .train 432241,1
 step
-    .train 432241 >>|cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Sobrecarga|r] |cRXP_WARN_para treinar|r |T132213:0|t[Sobrecarga]
+    .train 432241 >> |cRXP_WARN_Use o|r |T134419:0|t[|cRXP_FRIENDLY_Runa de Sobrecarga|r] |cRXP_WARN_para treinar|r |T132213:0|t[Sobrecarga]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -3118,7 +3118,7 @@ step
     .mob Deadwood Den Watcher
 step
     .train 440634,1
-    .equip 18,225838 >>|cRXP_WARN_Equipe o|r |T134918:0|t[|cRXP_LOOT_Ícone Voltaico|r]
+    .equip 18,225838 >> |cRXP_WARN_Equipe o|r |T134918:0|t[|cRXP_LOOT_Ícone Voltaico|r]
     .use 225838
 step
     .train 440634,1
@@ -3166,7 +3166,7 @@ step
     .collect 225675,1
 step
     .train 416062,1
-    .use 225675 >>|cRXP_WARN_Abra o|r |T237477:0|t[|cRXP_LOOT_Núcleo Obsidiano Fuliginoso|r] |cRXP_WARN_para receber a|r |T134419:0|t[|cRXP_LOOT_Runa da Compostura|r]
+    .use 225675 >> |cRXP_WARN_Abra o|r |T237477:0|t[|cRXP_LOOT_Núcleo Obsidiano Fuliginoso|r] |cRXP_WARN_para receber a|r |T134419:0|t[|cRXP_LOOT_Runa da Compostura|r]
     .collect 225740,1
 step
     .itemcount 225740,1
@@ -3189,7 +3189,7 @@ step
     >>|cRXP_WARN_Nota: você deve matar um élite nível 60. Considere trazer um amigo|r
 step
     #completewith next
-    .goto Winterspring,67.93,41.44,50 >>Entre na Caverna Yeti
+    .goto Winterspring,67.93,41.44,50 >> Entre na Caverna Yeti
 step
     .goto Winterspring,69.87,37.92
     >>|cRXP_WARN_Vá para o fundo da caverna do Yeti e fale com o elemental acorrentado|r |cRXP_FRIENDLY_Frijidar|r
