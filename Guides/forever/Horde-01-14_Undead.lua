@@ -2746,7 +2746,7 @@ step
     >>Loot the |cRXP_PICK_Bottles of Whispering Elixir|r on the ground and on the walls
     .complete 91316,1 << Paladin--|12/12 Sturdy Lumber
     .complete 95314,1 --|8/8 Bottle of Whispering Elixir
-step
+step << skip
     #softcore
     #completewith next
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
@@ -2783,11 +2783,6 @@ step << !Paladin
     .subzone 159 >> Travel back to Brill
     .subzoneskip 159
     .cooldown item,6948,<0
-step << !Paladin
-    .goto 1420/0,347.600,2265.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolai Anise|r
-    .turnin 95314 >>Turn in That Shadowvale Green Elixir
-    .target Carolai Anise
 step << Priest
     .goto 1420/0,251.14,2265.28--c:Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
@@ -2813,6 +2808,46 @@ step << Rogue
     .target Marion Call
     .xp <12,1
 step << Mage
+    .goto 1420/0,233.52,2256.84--c:Tirisfal Glades,61.96,52.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cain|r inside the inn
+    .train 145 >> Train your class spells
+    .target Cain Firesong
+    .xp <12,1
+step << !Paladin
+    .goto 1420/0,347.600,2265.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolai Anise|r
+    .turnin 95314 >>Turn in That Shadowvale Green Elixir
+    .target Carolai Anise
+step << Priest
+    #optional
+    .goto 1420/0,251.14,2265.28--c:Tirisfal Glades,61.57,52.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
+	.trainer >> Train your class spells
+    .target Dark Cleric Beryl
+    .xp <12,1
+step << Warrior
+    #optional
+    .goto 1420/0,238.49,2255.03--c:Tirisfal Glades,61.85,52.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
+    .train 7384 >>Train your class spells
+    .target Austil de Mon
+    .xp <12,1
+step << Warlock
+    #optional
+    .goto 1420/0,250.24,2259.25--c:Tirisfal Glades,61.59,52.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rupert|r
+    .train 755 >> Train your class spells
+    .target Rupert Boch
+    .xp <12,1
+step << Rogue
+    #optional
+    .goto 1420/0,243.01,2270.70--c:Tirisfal Glades,61.75,52.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r
+    .train 1766 >> Train your class spells
+    .target Marion Call
+    .xp <12,1
+step << Mage
+    #optional
     .goto 1420/0,233.52,2256.84--c:Tirisfal Glades,61.96,52.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cain|r inside the inn
     .train 145 >> Train your class spells
@@ -3790,6 +3825,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allister|r
     .turnin 482 >>Turn in Dalaran's Intentions
     .target Shadow Priest Allister
+step << skip
+    .goto 1421/0,1579.600,461.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tabitha Heartweaver::250686|r
+    .accept 92401 >>Accept A Frightened Request
+    .target Tabitha Heartweaver::250686
+    .xp <15,1
+    .dungeon ROL
+    --TODO: Activate step once .dungeon ROL command works
 step
     .goto 1421/0,1533.96,474.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karos|r

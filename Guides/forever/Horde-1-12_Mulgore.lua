@@ -245,6 +245,13 @@ step << Shaman
     .turnin 3093 >>Turn in Rune-Inscribed Note
     .train 8042 >>Train |T136026:0|t[Earth Shock]
     .target Meela Dawnstrider
+step << Druid
+    .goto 1412/1,-279.37,-2893.73--c:Mulgore,45.30,76.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kawnie Softbreeze|r
+    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r
+	.collect 159,5,383,1 --Collect Refreshing Spring Water (10)
+    .target Kawnie Softbreeze
+    .money <0.0025
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Battleboars|r. Loot them for their |cRXP_LOOT_Flanks|r and |cRXP_LOOT_Snouts|r
