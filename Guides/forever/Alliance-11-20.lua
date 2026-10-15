@@ -5468,6 +5468,10 @@ step << Druid
     .accept 98393 >>Accept The Great Cat Spirit
 
 step << Druid
+    #completewith next
+	.cast 18960 >> Cast Teleport: Moonglade
+    .zoneskip Moonglade
+step << Druid
     .goto 1450/1,-2678.900,8020.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze::11802|r
     .target Dendrite Starblaze::11802

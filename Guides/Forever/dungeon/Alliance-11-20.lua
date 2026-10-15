@@ -1170,8 +1170,6 @@ step
     .zone Darkshore >> Take the boat to Darkshore
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
@@ -1308,11 +1306,6 @@ step
     .zone Ironforge >> Take the tram to Ironforge
     .zoneskip Dun Morogh
 ]])
-
-
-
-
-
 
 RXPGuides.RegisterGuide([[
 #forever
@@ -1546,6 +1539,12 @@ step << Warlock
     .vendor >> |cRXP_BUY_Buy|r |T133738:0|t[Grimoire of Sacrifice (Rank 1)]
     .target Jubahl Corpseseeker
     .train 20381,1
+step
+.dungeon BFD
+    .goto 1455/0,-1115.43,-4598.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerrig Bonegrip|r
+    .accept 971 >> Accept Knowledge in the Deeps
+    .target Gerrig Bonegrip
 step << Warrior/Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regnus Thundergranite|r << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bilban Tosslespanner|r << Warrior
@@ -1555,7 +1554,6 @@ step << Warrior/Hunter
     .target Regnus Thundergranite << Hunter
     .target Bilban Tosslespanner << Warrior
 ]])
-
 
 RXPGuides.RegisterGuide([[
 #forever
@@ -2293,24 +2291,18 @@ step
     .complete 98387,2 -- Stolen Weapon (8)
 step
     #requires IncineratorGarim
-step
-    #optional
-    .isQuestComplete 20
-    .isQuestComplete 98387
-    .isQuestComplete 95999
-    .isQusetComplete 2040
-    .xp 20 >> Grind to 13650/21,300xp
-step
-    .isQuestComplete 20
-    .isQuestComplete 98387
-    .isQusetComplete 2040
-    .xp 20 >> Grind to 16200/21,300xp
 step << Shaman
     #optional
     .isOnQuest 94499
     .goto 1433/0,-3121.100,-9485.000
     .use 265747 >> |cRXP_WARN_Use the|r |T132829:0|t[Unfilled Red Waterskin] |cRXP_WARN_at Stonewatch Falls|r
     .complete 94499,1 --|1/1 Full Red Waterskin
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
+	.target Deputy Feldon
+    .goto 1433/0,-2237.93,-9443.60
+    .turnin 246 >> Turn in Assessing the Threat
+    .turnin 98407 >>Turn in Show of Force
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
 	.target Marshal Marris
@@ -2431,6 +2423,11 @@ step << Priest
     .goto 1453/0,862.89,-8519.61
     .trainer >> Train your class spells
     .target Brother Joshua
+step
+    .goto 1453/0,1093.3,-8779.020
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argos Nightwhisper|r
+    .accept 3765 >> Accept The Corruption Abroad
+    .target Argos Nightwhisper
 step << !Druid
     #optional
     .goto 1453/0,1330.100,-8645.400
@@ -2455,7 +2452,7 @@ RXPGuides.RegisterGuide([[
 #subgroup (WIP) Dungeon Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 20-21 Darkshore/Ashenvale
-#next 21-23 Stonetalon/Ashenvale
+#next 21-23 Ashenvale/Stonetalon
 
 step << Druid
     #completewith catspirit1
@@ -2482,7 +2479,10 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker::4217|r
     .target Mathrengyl Bearwalker::4217
     .accept 98393 >>Accept The Great Cat Spirit
-
+step << Druid
+    #completewith next
+	.cast 18960 >> Cast Teleport: Moonglade
+    .zoneskip Moonglade
 step << Druid
     .goto 1450/1,-2678.900,8020.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze::11802|r
@@ -2573,9 +2573,663 @@ step << Druid
     .target Mathrengyl Bearwalker::4217
     .turnin 98397 >>Turn in To Darnassus
 step << Druid
+    .goto 1457/1,2626.51,9946.11
+    .zone Teldrassil >> Travel through the purple portal to Rut'theran Village
+    .zoneskip Darkshore
+step << Druid
+    .goto 1438/1,841.56,8640.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
+    .fly Darkshore >> Fly to Darkshore
+    .target Vesprystus
+    .zoneskip Darkshore
+step << Warlock
+    .goto 1439/1,515.55,6406.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaussiy|r downstairs
+    .home >> Set your Hearthstone to Auberdine
+    .target Innkeeper Shaussiy
+    .bindlocation 442
+step
+    .goto 1439,37.322,43.640
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
+    .accept 947 >> Accept Cave Mushrooms
+    .target Barithras Moonshade
+step
+    .goto 1439,37.439,41.839
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
+    .accept 729 >> Accept The Absent Minded Prospector
+    .target Archaeologist Hollee
+step
+    .isQuestTurnedIn 4762
+    .goto 1439,37.394,40.128
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
+    .accept 4763 >> Accept The Blackwood Corrupted
+    .target Thundris Windweaver
+step
+    .isOnQuest 3765
+    .goto 1439,38.325,43.039
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
+    .turnin 3765 >> Turn in The Corruption Abroad
+    .target Gershala Nightwhisper
+step
+.dungeon BFD
+    .goto 1439,38.325,43.039
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
+    .accept 1275 >> Accept Researching the Corruption
+    .target Gershala Nightwhisper
+step
+    .isQuestTurnedIn 2138
+    .goto 1439,38.843,43.416
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
+    .accept 2139 >> Accept Tharnariun's Hope
+    .target Tharnariun Treetender
+step
+    .goto 1439,39.043,43.555
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Elissa Starbreeze|r upstairs
+    .accept 965 >> Accept The Tower of Althalaxx
+    .target Sentinel Elissa Starbreeze
+step
+    .isOnQuest 4763
+    .goto 1439/1,467.08,6409.38
+    >>|cRXP_WARN_Use the|r |T133748:0|t[Empty Cleansing Bowl] |cRXP_WARN_at the Auberdine moonwell|r
+    .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
+    .use 12346
+step
+    .isOnQuest 4763
+    #sticky
+    #label Blackwood1
+    #completewith Xabraxxis
+    .goto 1439/1,-489.22,6875.30,0
+    .goto 1439/1,-376.56,6807.62
+    >>Open the |cRXP_PICK_Blackwood Grain Stores|r. Loot it for the |T134059:0|t|cRXP_LOOT_[Blackwood Grain Sample]|r
+    >>|cRXP_WARN_Looting this will spawn 2 |cRXP_ENEMY_Blackwood Furbolgs|r that will aggro and run towards you. Be ready to fight them or reset them|r
+    >>|cRXP_WARN_If you see |cRXP_ENEMY_Xabraxxis|r yell in chat or see someone fighting him, help them. Open the |cRXP_PICK_Xabraxxis' Demon Bag|r he drops on the ground. Loot it for the|r |cRXP_LOOT_Talisman of Corruption|r
+    .collect 12342,1,4763,1 -- Blackwood Grain Stores (1)
+    .complete 4763,1 --Talisman of Corruption (1)
+    .disablecheckbox
+    .itemcount 12355,<1 --Talisman of Corruption (<1)
+step
+    .isOnQuest 2139
+    .goto 1439/1,-503.63,6732.95,45,0
+    .goto 1439/1,-430.27,6662.65
+    >>Kill |cRXP_ENEMY_Den Mother|r
+    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Thistle Cubs|r can cast|r |T132152:0|t[Ravage]|cRXP_WARN_, a melee instant attack which stuns you for 2 seconds|r
+    .complete 2139,1 --Den Mother (1)
+    .mob Den Mother
+step
+    .isOnQuest 4763
+    #sticky
+    #requires Blackwood1
+    #label Blackwood2
+    #completewith Xabraxxis
+    .goto 1439/1,-489.22,6875.30,0
+    .goto 1439/1,-453.20,6870.500
+    >>Open the |cRXP_PICK_Blackwood Nut Stores|r. Loot it for the |T133944:0|t|cRXP_LOOT_[Blackwood Nut Sample]|r
+    >>|cRXP_WARN_Looting this will spawn 2 |cRXP_ENEMY_Blackwood Furbolgs|r that will aggro and run towards you. Be ready to fight them or reset them|r
+    >>|cRXP_WARN_If you see |cRXP_ENEMY_Xabraxxis|r yell in chat or see someone fighting him, help them. Open the |cRXP_PICK_Xabraxxis' Demon Bag|r he drops on the ground. Loot it for the|r |cRXP_LOOT_Talisman of Corruption|r
+    .collect 12343,1,4763,1 -- Blackwood Nut Sample (1)
+    .complete 4763,1 --Talisman of Corruption (1)
+    .disablecheckbox
+    .itemcount 12355,<1 --Talisman of Corruption (<1)
+step
+    .isOnQuest 4763
+    #sticky
+    #requires Blackwood2
+    #label Blackwood3
+    #completewith Xabraxxis
+    .goto 1439/1,-489.22,6875.30,0
+    .goto 1439/1,-520.66,6874.43
+    >>Open the |cRXP_PICK_Blackwood Fruit Stores|r. Loot it for the |T134013:0|t|cRXP_LOOT_[Blackwood Fruit Sample]|r
+    >>|cRXP_WARN_Looting this will spawn 2 |cRXP_ENEMY_Blackwood Furbolgs|r that will aggro and run towards you. Be ready to fight them or reset them|r
+    >>|cRXP_WARN_If you see |cRXP_ENEMY_Xabraxxis|r yell in chat or see someone fighting him, help them. Open the |cRXP_PICK_Xabraxxis' Demon Bag|r he drops on the ground. Loot it for the|r |cRXP_LOOT_Talisman of Corruption|r
+    .collect 12341,1,4763,1 -- Blackwood Fruit Sample (1)
+    .complete 4763,1 --Talisman of Corruption (1)
+    .disablecheckbox
+    .itemcount 12355,<1 --Talisman of Corruption (<1)
+step
+    .isOnQuest 4763
+    #optional
+    #requires Blackwood3
+    #completewith Xabraxxis
+    .goto 1439/1,-489.22,6875.30
+    .cast 16072 >> |cRXP_WARN_Use the|r |T134712:0|t[Filled Cleansing Bowl] |cRXP_WARN_at the |cRXP_PICK_Bonfire|r to summon|r |cRXP_ENEMY_Xabraxxis|r
+    .timer 17,The Blackwood Corrupted RP
+    .use 12347
+step
+    .isOnQuest 4763
+    #requires Blackwood3
+    #label Xabraxxis
+    .goto 1439/1,-489.22,6875.30
+    >>Kill |cRXP_ENEMY_Xabraxxis|r. Open the |cRXP_PICK_Xabraxxis' Demon Bag|r he drops on the ground. Loot it for the |cRXP_LOOT_Talisman of Corruption|r
+    .use 12347
+    .complete 4763,1 -- Talisman of Corruption (1)
+    .mob Xabraxxis
+step
+    #label CaveMushrooms
+    .goto 1439/1,-690.31,6751.29,12,0
+    .goto 1439/1,-706.68,6748.23,12,0
+    .goto 1439/1,-719.13,6787.530,12,0
+    >>Loot the |cRXP_LOOT_Scaber Stalks|r and a |cRXP_LOOT_Death Cap|r on the ground
+    >>|cRXP_WARN_Stay on the upper section. If there is not a |cRXP_LOOT_Death Cap|r at the end of the top side, drop down and get one from the southern room below|r
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Stormscale Wave Riders|r cast|r |T135836:0|t[Aqua Jet] |cRXP_WARN_(Ranged Instant: Deals damage to nearby enemies and knocks them back) - make sure you're not in a position to get knocked off the upper level of the cave|r
+    .complete 947,1 --Scaber Stalk (5)
+    .goto 1439/1,-663.45,6877.49,8,0
+    .goto 1439/1,-679.17,6848.67,8,0
+    .goto 1439/1,-666.73,6819.41,8,0
+    .goto 1439/1,-680.48,6779.67,8,0
+    .goto 1439/1,-663.45,6877.49,8,0
+    .goto 1439/1,-679.17,6848.67,8,0
+    .goto 1439/1,-666.73,6819.41,8,0
+    .goto 1439/1,-680.48,6779.67,8,0
+    .goto 1439/1,-663.45,6877.49
+    .complete 947,2 --Death Cap (1)
+    .goto 1439/1,-685.72,6746.49
+step
+    .goto 1439,54.973,24.885
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
+    .turnin 965 >> Turn in The Tower of Althalaxx
+    .accept 966 >> Accept The Tower of Althalaxx
+    .target Balthule Shadowstrike
+step
+    #loop
+    .goto 1439,55.231,26.508,0
+    .goto 1439,56.194,27.071,0
+    .goto 1439,56.047,26.586,0
+    .goto 1439,55.231,26.508,50,0
+    .goto 1439,55.369,27.025,50,0
+    .goto 1439,55.763,26.695,50,0
+    .goto 1439,55.815,26.972,50,0
+    .goto 1439,56.194,27.071,50,0
+    .goto 1439,56.790,27.621,50,0
+    .goto 1439,57.278,26.311,50,0
+    .goto 1439,57.046,26.234,50,0
+    .goto 1439,56.544,26.598,50,0
+    .goto 1439,56.047,26.586,50,0
+    .goto 1439,55.743,25.915,50,0
+    >>Kill |cRXP_ENEMY_Dark Strand Fanatics|r. Loot them for their |cRXP_LOOT_Worn Parchments|r
+    .complete 966,1 --Worn Parchment (4)
+    .mob Dark Strand Fanatic
+step
+    .goto 1439,54.973,24.885
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
+    .turnin 966 >> Turn in The Tower of Althalaxx
+    .accept 967 >> Accept The Tower of Althalaxx
+    .target Balthule Shadowstrike
+step
+    .goto 1439,56.654,13.484
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelkak Gyromast|r
+    .accept 2098 >> Accept Gyromast's Retrieval
+    .target Gelkak Gyromast
+step
+    #optional
     #completewith next
-    .hs >> Hearth to Lakeshire
-
-
-
+    .goto 1439/1,-732.88,7596.24,0
+    >>Kill |cRXP_ENEMY_Raging Reef Crawlers|r and |cRXP_ENEMY_Encrusted Tide Crawlers|r. Loot them for the |cRXP_LOOT_Bottom of Gelkak's Key|r
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Raging Reef Crawlers|r'|r |T132152:0|t[Thrash] |cRXP_WARN_ability. You can take 200 damage instantly from their melee hits|r
+    .complete 2098,3 -- Bottom of Gelkak's Key (1)
+    .mob Raging Reef Crawler
+    .mob Encrusted Tide Crawler
+step
+    .goto 1439/1,-656.25,7801.04
+    >>Kill |cRXP_ENEMY_Greymist Oracles|r and |cRXP_ENEMY_Greymist Tidehunters|r. Loot them for the |cRXP_LOOT_Middle of Gelkak's Key|r
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Greymist Oracles|r'|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_damage and they can also heal with|r |T136052:0|t[Healing Wave]|r
+    >>Care as |cRXP_ENEMY_Greymist Tidehunters|r can cast |T136016:0|t[|cRXP_FRIENDLY_Poison|r] while in melee leaving a dot dealing 13 damage per 3 seconds for 30 seconds
+    >>|cRXP_WARN_You can LoS (Line of Sight) the |cRXP_ENEMY_Greymist Oracles|r'|r  |T136048:0|t[Lightning Bolts] |cRXP_WARN_around the sunken ship to avoid taking its damage|r
+    .complete 2098,2 -- Middle of Gelkak's Key (1)
+    .mob Greymist Tidehunter
+    .mob Greymist Oracle
+step
+    .goto 1439/1,-699.48,7591.87,45,0
+    .goto 1439/1,-579.61,7505.41,45,0
+    .goto 1439/1,-421.10,7372.67,45,0
+    .goto 1439/1,-767.60,7805.84
+    >>Kill |cRXP_ENEMY_Raging Reef Crawlers|r and |cRXP_ENEMY_Encrusted Tide Crawlers|r. Loot them for the |cRXP_LOOT_Bottom of Gelkak's Key|r
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Raging Reef Crawlers|r'|r |T132152:0|t[Thrash] |cRXP_WARN_ability. You can take 200 damage instantly from their melee hits|r
+    .complete 2098,3 -- Bottom of Gelkak's Key (1)
+    .mob Raging Reef Crawler
+    .mob Encrusted Tide Crawler
+step
+    #sticky
+    #label foreststriders
+    .goto 1439/1,-941.83,7756.06,55,0
+    .goto 1439/1,-1080.03,7922.87,50,0
+    .goto 1439/1,-1087.24,7780.51,50,0
+    .goto 1439/1,-1069.55,7661.74,50,0
+    .goto 1439/1,-1080.03,7922.870
+    >>Kill |cRXP_ENEMY_Giant Foreststriders|r. Loot them for the |cRXP_LOOT_Top of Gelkak's Key|r
+    .complete 2098,1 -- Top of Gelkak's Key (1)
+    .mob Giant Foreststrider
+step << Warrior/Paladin/Rogue/Shaman
+    #requires foreststriders
+    .goto 1439,56.654,13.484
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelkak Gyromast|r
+    >>|cRXP_WARN_Start looking for a group for Gyromast's Revenge/|r|cRXP_ENEMY_The Threshwackonator 4100|r << Warrior/Paladin/Rogue/Shaman
+    .turnin 2098 >> Turn in Gyromast's Retrieval
+    .accept 2078 >> Accept Gyromast's Revenge
+    .target Gelkak Gyromast
+    .solo
+step
+    #requires foreststriders
+    .group 2 << Warrior/Paladin/Rogue/Shaman
+    .goto 1439,56.654,13.484
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelkak Gyromast|r
+    >>|cRXP_WARN_Start looking for a group for Gyromast's Revenge/|r|cRXP_ENEMY_The Threshwackonator 4100|r << Warrior/Paladin/Rogue/Shaman
+    .turnin 2098 >> Turn in Gyromast's Retrieval
+    .accept 2078 >> Accept Gyromast's Revenge
+    .target Gelkak Gyromast
+step
+    #optional
+    #completewith next
+    .goto 1439,55.802,18.290
+    .gossipoption 95406 >> Talk to |cRXP_FRIENDLY_The Threshwackonator 4100|r to start the escort
+--  .gossipoption 87696 >> Talk to |cRXP_FRIENDLY_The Threshwackonator 4100|r to start the escort
+    >>|cRXP_WARN_This quest is VERY difficult|r
+    .target The Threshwackonator 4100
+    .isOnQuest 2078 << Warrior/Paladin/Rogue/Shaman
+step
+    .goto 1439,56.654,13.484
+    #optional
+    >>Escort |cRXP_FRIENDLY_The Threshwackonator 4100|r to |cRXP_FRIENDLY_Gelkak Gyromast|r
+    >>Kill |cRXP_ENEMY_The Threshwackonator 4100|r once it turns hostile
+    >>|cRXP_WARN_This quest is VERY difficult|r
+    *Only use ranged attacks while running from it, avoid being at melee range << Druid
+    >>|cRXP_WARN_Try to do this quest if you can as it'll save you time later as it rewards|r |T134797:0|t[Elixirs of Water Breathing] |cRXP_WARN_for underwater quests later|r << !Druid !Warlock !Shaman
+    >>|cRXP_WARN_Use|r |T136100:0|t[Entangling Roots] |cRXP_WARN_on him when he turns hostile then create distance and kite using instant cast spells|r << Druid
+    >>|cRXP_WARN_If you are unable to kill the |cRXP_ENEMY_The Threshwackonator 4100|r, skip this step|r
+    .complete 2078,1 --Gyromast's Revenge (1)
+    .link https://youtu.be/1WRRmKYBr9s >> |cRXP_WARN_Click here for a video guide|r
+    .mob The Threshwackonator 4100
+    .isOnQuest 2078 << Warrior/Paladin/Rogue/Shaman
+--XX DRUID: Test if you can root
+step
+    #optional << Warrior/Paladin/Rogue/Shaman
+    .goto 1439,56.654,13.484
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelkak Gyromast|r
+    .turnin 2078 >> Turn in Gyromast's Revenge
+    .target Gelkak Gyromast
+    .isQuestComplete 2078
+step
+    .isQuestTurnedIn 4681
+    .goto 1439,53.113,18.099
+    >>Click the |cRXP_PICK_Beached Sea Turtle|r
+    .accept 4727 >> Accept Beached Sea Turtle
+step
+    #completewith ReturnAuberdine
+    .subzone 442 >> Return to Auberdine
+step
+    .isQuestComplete 2139
+    .goto 1439,38.843,43.416
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
+    .turnin 2139 >> Turn in Tharnariun's Hope
+    .target Tharnariun Treetender
+step
+    .isQuestComplete 4763
+    .goto 1439,37.394,40.128
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
+    .turnin 4763 >> Turn in The Blackwood Corrupted
+    .target Thundris Windweaver
+step
+    .goto 1439,37.322,43.640
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
+    .turnin 947 >> Turn in Cave Mushrooms
+    .accept 948 >> Accept Onu
+    .target Barithras Moonshade
+step
+    .goto 1439/1,504.41,6402.39
+    >>Click the |cRXP_PICK_Wanted Poster|r
+    .accept 4740 >> Accept WANTED: Murkdeep!
+step
+    #label ReturnAuberdine
+    .isOnQuest 4727
+    .goto 1439,36.701,45.122,8,0
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 4727 >> Turn in Beached Sea Turtle
+    .target Gwennyth Bly'Leggonde
+step
+    .goto 1439,37.105,62.167
+    >>Click the |cRXP_PICK_Beached Sea Turtle|r
+    .accept 4722 >> Accept Beached Sea Turtle
+    .isQuestTurnedIn 4681
+step
+    .goto 1439,35.429,76.566,0
+    .goto 1439,35.429,76.566,60,0
+    .goto 1439/1,541.75,4991.52
+    >>|cRXP_WARN_Make sure you check if |cRXP_ENEMY_Murkdeep|r is already up in the water (if someone has previously failed the encounter or left the |cRXP_ENEMY_Greymist Hunter|r in the wave that he spawns with alive)|r
+    >>Kill the |cRXP_ENEMY_Greymist Warriors|r and |cRXP_ENEMY_Greymist Hunters|r in the camp
+    >>|cRXP_WARN_Move to the Bonfire in the center of the camp to start the |cRXP_ENEMY_Murkdeep|r encounter:|r
+    >>|cRXP_WARN_3 waves will spawn from the water, each after killing the previous wave: Wave 1 has 3 level 12-13 |cRXP_ENEMY_Greymist Coastrunners|r, Wave 2 has 2 level 15-16 |cRXP_ENEMY_Greymist Warriors|r, and Wave 3 has a level 19 |cRXP_ENEMY_Murkdeep|r and a level 16-17 |cRXP_ENEMY_Greymist Hunter|r. You can move away from the Bonfire to avoid aggroing the next wave|r
+    .complete 4740,1 -- Murkdeep (1)
+    .unitscan Murkdeep
+    .mob Greymist Warrior
+    .mob Greymist Hunter
+    .mob Greymist Coastrunner
+step
+    .goto 1439,43.555,76.293
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onu|r
+    .turnin 948 >> Turn in Onu
+    .accept 944 >> Accept The Master's Glaive
+    .target Onu
+step
+    #label MasterG
+    .goto 1439/1,417.30,4575.82,100 >> Travel to The Master's Glaive
+    .subzoneskip 449
+    .isOnQuest 944
+step
+    #optional
+    #completewith FunandGames
+    >>Kill |cRXP_ENEMY_Twilight Disciples|r and |cRXP_ENEMY_Twilight Thugs|r. Loot them for the |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r]
+    *|cRXP_WARN_Be careful as |cRXP_ENEMY_Twilight Thugs|r can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior/Shaman
+    *|cRXP_WARN_Be careful as |cRXP_ENEMY_Twilight Disciples|r cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
+    .collect 5352,1,968,1 --Book: The Powers Below (1)
+    .mob Twilight Disciple
+    .mob Twilight Thug
+step
+    #optional
+    .goto 1439/1,390.700,4542.700
+    >>Discover The Master's Glaive
+    .complete 944,1 --Enter the Master's Glaive (1)
+step
+    #optional
+    #completewith next
+    .cast 5809 >> |cRXP_WARN_Use the|r |T134715:0|t[Phial of Scrying] |cRXP_WARN_and place it on the ground|r
+    .use 5251
+step
+    .goto 1439/1,417.30,4575.82
+    >>|cRXP_WARN_Click the |cRXP_PICK_Scrying Bowl|r on the ground|r
+    .turnin 944 >> Turn in The Master's Glaive
+    .accept 949 >> Accept The Twilight Camp
+    .use 5251
+step
+    #label FunandGames
+    .goto 1439,38.537,86.050
+    >>Click the |cRXP_PICK_Twilight Tome|r on the northern pedestal
+    .turnin 949 >> Turn in The Twilight Camp
+    .accept 950 >> Accept Return to Onu
+    .accept 98042 >>Accept It's All Fun and Games Until...
+step
+    #completewith TheryluneEnd
+    >>Kill |cRXP_ENEMY_Twilight Disciples|r and |cRXP_ENEMY_Twilight Thugs|r. Loot them for the |cRXP_LOOT_Peerless Eye|r and |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r]
+    *|cRXP_WARN_Be careful as |cRXP_ENEMY_Twilight Thugs|r can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior/Shaman
+    *|cRXP_WARN_Be careful as |cRXP_ENEMY_Twilight Disciples|r cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
+    .complete 98042,1 -- Peerless Eye (1)
+    .mob +Twilight Disciple
+    .mob +Twilight Thug
+    .collect 5352,1,968,1 --Book: The Powers Below (1)
+    .disablecheckbox
+step
+    .goto 1439,38.660,87.305
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therylune|r. This will start an escort
+    >>|cRXP_WARN_Skip this step if she is not there|r
+    .accept 945 >> Accept Therylune's Escape
+    .target Therylune
+step
+    #label TheryluneEnd
+    .goto 1439/1,288.26,4530.40
+    >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Therylune|r out of The Masters Glaive|r
+    .complete 945,1 --Escort Therylune away from the Master's Glaive (1)
+    .isOnQuest 945
+step
+    #loop
+    .goto 1439/1,376.800,4608.600,40,0
+    .goto 1439/1,453.100,4580.200,40,0
+    .goto 1439/1,409.4366,4521.0151,40,0
+    >>Kill |cRXP_ENEMY_Twilight Disciples|r and |cRXP_ENEMY_Twilight Thugs|r. Loot them for the |cRXP_LOOT_Peerless Eye|r and |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r]
+    *|cRXP_WARN_Be careful as |cRXP_ENEMY_Twilight Thugs|r can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior/Shaman
+    *|cRXP_WARN_Be careful as |cRXP_ENEMY_Twilight Disciples|r cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
+    .complete 98042,1 -- Peerless Eye (1)
+    .mob +Twilight Disciple
+    .mob +Twilight Thug
+    .collect 5352,1,968,1 --Book: The Powers Below (1)
+    .disablecheckbox
+step
+    #optional
+    #sticky
+    .isQuestTurnedIn 949
+    .destroy 5251 >> Delete the |T134715:0|t[Phial of Scrying] from your bags, as it's no longer needed
+step
+    .goto 1439,43.555,76.293
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onu|r
+    .turnin 950 >> Turn in Return to Onu
+    .timer 11,Return to Onu RP
+    .target Onu
+step
+    #optional
+    >>|cRXP_WARN_Use the |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r] to start the quest|r
+    .accept 968 >> Accept The Powers Below
+    .use 5352
+    .itemcount 5352,1
+step
+    #sticky
+    #label prospector
+    .goto 1439,35.724,83.696
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Remtravel|r
+    >>|cRXP_WARN_You may have to wait for him to respawn or for others to finish the escort|r
+    .turnin 729 >> Turn in The Absent Minded Prospector
+    .target Prospector Remtravel
+step
+    .goto 1439/1,602.01,4678.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Remtravel|r. This will start an escort
+    .accept 731,1 >> Accept The Absent Minded Prospector
+    .target Prospector Remtravel
+step
+    #requires prospector
+    >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Prospector Remtravel|r through the Excavation|r
+    .complete 731,1
+    .isOnQuest 731
+step
+    .isQuestTurnedIn 4681
+    .goto 1439,32.644,80.711
+    >>Click the |cRXP_PICK_Beached Sea Creature|r
+    .accept 4730 >> Accept Beached Sea Creature
+step
+    .isQuestTurnedIn 4681
+    .goto 1439,31.690,83.700
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Greymist Oracles|r'|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_damage, they can also heal with|r |T136052:0|t[Healing Wave]|r
+    >>Click the |cRXP_PICK_Beached Sea Turtle|r
+    .accept 4731 >> Accept Beached Sea Turtle
+step
+    .isQuestTurnedIn 4681
+    .goto 1439,31.229,85.564
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Greymist Oracles|r'|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_damage, they can also heal with|r |T136052:0|t[Healing Wave]|r
+    >>Click the |cRXP_PICK_Beached Sea Turtle|r
+    .accept 4732 >> Accept Beached Sea Turtle
+step
+    .isQuestTurnedIn 4681
+    .goto 1439,31.251,87.419
+    >>Click the |cRXP_PICK_Beached Sea Creature|r
+    .accept 4733 >> Accept Beached Sea Creature
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Greymist Oracles|r'|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_damage, they can also heal with|r |T136052:0|t[Healing Wave]|r
+step
+    #optional
+    .goto 1439,44.401,76.425
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kerlonian Evershade|r to start the escort
+    >>|cRXP_WARN_Skip this step if he is not there. It can take up to 25 minutes for him to respawn|r
+    >>|cRXP_WARN_This is a timed quest, you have to escort him to his bag in 20 minutes|r
+    .accept 5321 >> Accept The Sleeper Has Awakened
+    .target Kerlonian Evershade
+    .isQuestTurnedIn 731 --Only shows if Prospector was already escorted
+step
+    #optional
+    .isOnQuest 5321
+    .goto 1439/1,34.78,5001.570
+    >>Open |cRXP_PICK_Kerlonian's Chest|r. Loot it for the |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r]
+    .complete 5321,1 -- Horn of Awakening (1)
+    .isQuestTurnedIn 731 --Only shows if Prospector was already escorted
+step
+    .goto 1439,44.401,76.425
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kerlonian Evershade|r to start the escort
+    >>|cRXP_WARN_Skip this step if he is not there. It can take up to 25 minutes for him to respawn|r
+    >>|cRXP_WARN_This is a timed quest, you have to escort him to his bag in 20 minutes|r
+    .accept 5321 >> Accept The Sleeper Has Awakened
+    .target Kerlonian Evershade
+    .itemcount 13536,<1 --Horn of Awakening
+step
+    .isOnQuest 5321
+    .goto 1439/1,34.78,5001.570
+    >>Open |cRXP_PICK_Kerlonian's Chest|r. Loot it for the |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r]
+    .complete 5321,1 -- Horn of Awakening (1)
+    .itemcount 13536,<1 --Horn of Awakening
+step
+    #label Kerlonian
+    .goto 1439/1,206.400,4402.500
+    >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Kerlonian|r to his bag |cRXP_WARN_in Darkshore|r|r
+    .use 13536 >> |cRXP_WARN_Use the|r |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_whenever |cRXP_FRIENDLY_Kerlonian|r falls asleep next to him|r
+    >>|cRXP_WARN_Avoid running on the main road as much as possible. Enemies will only spawn if you're on the road|r
+    .complete 5321,2
+    .isOnQuest 5321
+step
+    #completewith tower
+    .zone Ashenvale >> Travel south to Ashenvale
+    .goto 1440/1,-12.70,4150.17
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liladris Moonriver|r
+	.target Liladris Moonriver
+    .goto 1440/1,128.01,3305.31
+    .turnin 5321 >> Turn in The Sleeper Has Awakened
+    .isQuestComplete 5321
+step
+    #label tower
+    .goto 1440/1,189.71,3185.77
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
+    .turnin 967 >> Turn in The Tower of Althalaxx
+    .accept 970 >> Accept The Tower of Althalaxx
+    .target Delgren the Purifier
+step
+    #optional
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orendil Broadleaf|r
+	.target Orendil Broadleaf
+    .goto 1440/1,175.87,3189.61
+    .accept 1010 >> Accept Bathran's Hair
+    .xp <20,1
+step
+    .goto 1440/1,-102.08,3492.890
+    >>Kill |cRXP_ENEMY_Dark Strand Cultists|r and |cRXP_ENEMY_Dark Strand Adepts|r. Loot them for the |cRXP_LOOT_Glowing Soul Gem|r
+    .complete 970,1
+    .mob Dark Strand Cultist
+    .mob Dark Strand Adept
+step
+    .goto 1440/1,-102.08,3492.890
+    .xp 20-1650 >>Keep killing |cRXP_ENEMY_Dark Strand mobs|r until you have enough xp to reach level 20
+    .mob Dark Strand Cultist
+    .mob Dark Strand Adept
+    .mob Dark Strand Enforcer
+    .mob Dark Strand Excavator
+step
+    #optional
+    .goto 1440/1,-203.58,3849.97,50,0
+    .goto 1440/1,-2.90,3737.73,40,0
+    .goto 1440/1,-138.99,3806.92
+    >>Open the |cRXP_PICK_Plant Bundles|r in the ground. Loot them for |cRXP_LOOT_Bathran's Hairs|r
+    >>|cRXP_WARN_They look like small brown sacks and can be partially buried into the ground. They can be hard to see|r
+    >>|cRXP_WARN_Make sure you have|r |T134916:0|t[Find Herbs] |cRXP_WARN_enabled to see them on the minimap|r
+    .complete 1010,1 --Bathran's Hair (5)
+    .isOnQuest 1010
+    .skill herbalism,<1,1
+step
+    #optional
+    .goto 1440/1,-203.58,3849.97,50,0
+    .goto 1440/1,-2.90,3737.73,40,0
+    .goto 1440/1,-138.99,3806.92
+    >>Open the |cRXP_PICK_Plant Bundles|r in the ground. Loot them for |cRXP_LOOT_Bathran's Hairs|r
+    >>|cRXP_WARN_They look like small brown sacks and can be partially buried into the ground. They can be hard to see|r
+    .complete 1010,1 --Bathran's Hair (5)
+    .isOnQuest 1010
+    .skill herbalism,1,1
+step
+    #optional
+    .goto 1440/1,175.87,3189.61
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orendil Broadleaf|r
+    .turnin 1010 >> Turn in Bathran's Hair
+    .accept 1020 >> Accept Orendil's Cure
+    .target Orendil Broadleaf
+    .isQuestComplete 1010
+step
+    #optional
+    .goto 1440/1,175.87,3189.61
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orendil Broadleaf|r
+    .accept 1020 >> Accept Orendil's Cure
+    .target Orendil Broadleaf
+    .isQuestTurnedIn 1010
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
+	.target Delgren the Purifier
+    .goto 1440/1,189.71,3185.77
+    .turnin 970 >> Turn in The Tower of Althalaxx
+    .accept 973 >> Accept The Tower of Althalaxx
+step
+    .goto 1440/1,-138.99,3806.92
+    .xp 20 >> Grind to level 20
+step
+    .goto 1440/1,175.87,3189.61
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orendil Broadleaf|r
+    .accept 1010 >> Accept Bathran's Hair
+    .target Orendil Broadleaf
+step
+    #optional
+    .goto 1440/1,-203.58,3849.97,50,0
+    .goto 1440/1,-2.90,3737.73,40,0
+    .goto 1440/1,-138.99,3806.92
+    >>Open the |cRXP_PICK_Plant Bundles|r in the ground. Loot them for |cRXP_LOOT_Bathran's Hairs|r
+    >>|cRXP_WARN_They look like small brown sacks and can be partially buried into the ground. They can be hard to see|r
+    >>|cRXP_WARN_Make sure you have|r |T134916:0|t[Find Herbs] |cRXP_WARN_enabled to see them on the minimap|r
+    .complete 1010,1 --Bathran's Hair (5)
+    .skill herbalism,<1,1
+step
+    .goto 1440/1,-203.58,3849.97,50,0
+    .goto 1440/1,-2.90,3737.73,40,0
+    .goto 1440/1,-138.99,3806.92
+    >>Open the |cRXP_PICK_Plant Bundles|r in the ground. Loot them for |cRXP_LOOT_Bathran's Hairs|r
+    >>|cRXP_WARN_They look like small brown sacks and can be partially buried into the ground. They can be hard to see|r
+    .complete 1010,1 --Bathran's Hair (5)
+    .skill herbalism,1,1
+step
+    .goto 1440/1,175.87,3189.61
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orendil Broadleaf|r
+    .turnin 1010 >> Turn in Bathran's Hair
+    .accept 1020 >> Accept Orendil's Cure
+    .target Orendil Broadleaf
+step
+    #optional
+    #completewith TZS
+    .subzone 415 >> Travel to Astranaar
+step
+    #label AshenvaleEnd
+    .goto 1440/1,-283.73,2827.920
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daelyshia|r
+    .fp Astranaar >> Get the Astranaar Flight Path
+	.target Daelyshia
+step
+    #label TZS
+    .goto 1440/1,-299.30,2796.01
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shindrell Swiftfire|r
+    .accept 1008 >> Accept The Zoram Strand
+    .target Shindrell Swiftfire
+step
+    .goto 1440/1,-311.99,2759.11
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Thenysil|r
+    .accept 1070 >> Accept On Guard in Stonetalon
+    .target Sentinel Thenysil
+step
+    .goto 1440/1,-362.16,2785.640
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faldreas Goeth'Shael|r
+    .accept 1056 >> Accept Journey to Stonetalon Peak
+    .target Faldreas Goeth'Shael
+step
+    .goto 1440/1,-411.18,2767.19
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
+    .accept 991 >> Accept Raene's Cleansing
+    .accept 1054 >> Accept Culling the Threat
+    .target Raene Wolfrunner
+step << !Warlock
+    .goto 1440/1,-433.09,2781.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kimlya|r
+    .home 415 >> Set your Hearthstone to Astranaar
+    .target Innkeeper Kimlya
+step
+    .goto 1440/1,-454.43,2682.24
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
+	.target Pelturas Whitemoon
+    .turnin 1020 >> Turn in Orendil's Cure
+    .timer 24,Orendil's Cure RP
+    .accept 1033 >> Accept Elune's Tear
 ]])
